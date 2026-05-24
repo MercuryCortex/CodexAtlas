@@ -1230,9 +1230,9 @@
           // values feed into timeline-chrome.js on each refresh.
           // Persisted to localStorage; reset to defaults below.
           '<div class="forge-fxpanel-section fv-timeline-only">Timeline bands</div>' +
-          '<div class="forge-fxpanel-row fv-timeline-only"><label>fill opacity <span class="forge-fxpanel-val" data-val="tl-band-fill">0.18</span></label><input type="range" data-style="tl-band-fill" min="0" max="0.8" step="0.01" value="0.18"></div>' +
-          '<div class="forge-fxpanel-row fv-timeline-only"><label>stroke opacity <span class="forge-fxpanel-val" data-val="tl-band-stroke">0.60</span></label><input type="range" data-style="tl-band-stroke" min="0" max="1" step="0.01" value="0.60"></div>' +
-          '<div class="forge-fxpanel-row fv-timeline-only"><label>stroke width <span class="forge-fxpanel-val" data-val="tl-band-stroke-w">1.0px</span></label><input type="range" data-style="tl-band-stroke-w" min="0" max="4" step="0.1" value="1.0"></div>' +
+          '<div class="forge-fxpanel-row fv-timeline-only"><label>fill opacity <span class="forge-fxpanel-val" data-val="tl-band-fill">0.02</span></label><input type="range" data-style="tl-band-fill" min="0" max="0.8" step="0.01" value="0.02"></div>' +
+          '<div class="forge-fxpanel-row fv-timeline-only"><label>stroke opacity <span class="forge-fxpanel-val" data-val="tl-band-stroke">0.25</span></label><input type="range" data-style="tl-band-stroke" min="0" max="1" step="0.01" value="0.25"></div>' +
+          '<div class="forge-fxpanel-row fv-timeline-only"><label>stroke width <span class="forge-fxpanel-val" data-val="tl-band-stroke-w">0.5px</span></label><input type="range" data-style="tl-band-stroke-w" min="0" max="4" step="0.1" value="0.5"></div>' +
           '<div class="forge-fxpanel-section fv-timeline-only">Family labels</div>' +
           '<div class="forge-fxpanel-row fv-timeline-only"><label>opacity <span class="forge-fxpanel-val" data-val="tl-label-opacity">0.85</span></label><input type="range" data-style="tl-label-opacity" min="0" max="1" step="0.01" value="0.85"></div>' +
           '<div class="forge-fxpanel-row fv-timeline-only"><label>size <span class="forge-fxpanel-val" data-val="tl-label-size">11px</span></label><input type="range" data-style="tl-label-size" min="8" max="20" step="0.5" value="11"></div>' +
@@ -1246,7 +1246,7 @@
           '<div class="forge-fxpanel-row fv-timeline-only"><label>width <span class="forge-fxpanel-val" data-val="tl-grid-width">1.0px</span></label><input type="range" data-style="tl-grid-width" min="0.5" max="3" step="0.1" value="1.0"></div>' +
           // Phase 22-M (2026-05-24) — Year-0 pivot marker controls.
           '<div class="forge-fxpanel-section fv-timeline-only">Year-0 pivot</div>' +
-          '<div class="forge-fxpanel-row fv-timeline-only"><label>opacity <span class="forge-fxpanel-val" data-val="tl-yr0-opacity">1.00</span></label><input type="range" data-style="tl-yr0-opacity" min="0" max="1" step="0.01" value="1.00"></div>' +
+          '<div class="forge-fxpanel-row fv-timeline-only"><label>opacity <span class="forge-fxpanel-val" data-val="tl-yr0-opacity">0.75</span></label><input type="range" data-style="tl-yr0-opacity" min="0" max="1" step="0.01" value="0.75"></div>' +
           '<div class="forge-fxpanel-row fv-timeline-only"><label>tick size <span class="forge-fxpanel-val" data-val="tl-yr0-size">12px</span></label><input type="range" data-style="tl-yr0-size" min="4" max="32" step="1" value="12"></div>' +
           '<div class="forge-fxpanel-row fv-timeline-only"><label>line width <span class="forge-fxpanel-val" data-val="tl-yr0-width">1.8px</span></label><input type="range" data-style="tl-yr0-width" min="0.5" max="4" step="0.1" value="1.8"></div>' +
           '<button class="forge-fxpanel-reset" id="forge-stylepanel-reset">RESET TO DEFAULTS</button>' +
@@ -1281,6 +1281,16 @@
         '<button class="forge-fxpanel-btn" data-tl-preset="linear-default"          aria-pressed="true"  title="Linear · 9K BCE → today">LIN</button>' +
         '<button class="forge-fxpanel-btn" data-tl-preset="log-centered"            aria-pressed="false" title="Log · year-0 centered">LOG</button>' +
         '<button class="forge-fxpanel-btn" data-tl-preset="compressed-civilization" aria-pressed="false" title="Compressed · era-weighted">CMP</button>' +
+        // Phase 22-AE (2026-05-24) — CALENDAR popup button. Click =
+        // drops up a list of registered calendars (Gregorian, Hebrew,
+        // Hijri, Jalali, Ethiopian to start). Active calendar drives
+        // tick-label formatting + YR 0 pivot text via formatYear().
+        // Same .forge-fxpanel-btn primitive class — pixel parity.
+        '<button class="forge-fxpanel-btn forge-tl-cal-btn" id="forge-tl-cal-btn" aria-haspopup="true" aria-expanded="false" title="Date system — switch between Gregorian / Hebrew / Hijri / Jalali / Ethiopian">' +
+          '<span class="forge-tl-cal-label">CAL</span>' +
+          '<span class="forge-tl-cal-val">GREG</span>' +
+          '<span class="forge-tl-cal-chev">▾</span>' +
+        '</button>' +
         '<input type="text" class="forge-fxpanel-btn forge-tl-focus-in"  id="forge-tl-focus-in"  placeholder="date in"  autocomplete="off" spellcheck="false" title="Type a year (e.g. -3000, 0, 1500). Press FOCUS to zoom." />' +
         '<input type="text" class="forge-fxpanel-btn forge-tl-focus-out" id="forge-tl-focus-out" placeholder="date out" autocomplete="off" spellcheck="false" title="Type a year (e.g. -3000, 0, 1500). Press FOCUS to zoom." />' +
         '<button class="forge-fxpanel-btn forge-tl-focus-go" id="forge-tl-focus-go" title="Zoom + pan so DATE IN sits at the left edge and DATE OUT at the right edge">FOCUS</button>' +

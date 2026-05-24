@@ -83,12 +83,97 @@
     return TICK_CADENCES[TICK_CADENCES.length - 1][1];
   }
 
-  // Year → display label. Uses "BCE" / "CE" + "yr 0" cosmetic for
-  // the boundary. Compact at large magnitudes ("5000 BCE" not "5,000").
+  // ════════════════════════════════════════════════════════════
+  // CALENDAR REGISTRY (Phase 22-AE, 2026-05-24)
+  // ────────────────────────────────────────────────────────────
+  // Each calendar exposes:
+  //   id      — short LS-safe key
+  //   label   — full display name for the picker
+  //   short   — 3-4 char display label for the chip (e.g. "GREG")
+  //   suffix  — usually the year-suffix the calendar prints
+  //   format  — function(yearGregorian) → display string
+  // Active calendar persists in localStorage; tick labels and the
+  // YR-0 pivot route through it. Math is approximate for non-
+  // Gregorian (Hijri lunar offset rounded, Hebrew ignores Rosh
+  // Hashanah split) — sufficient for timeline tick display.
+  // Mayan Long Count + Chinese Sexagenary deferred.
+  // ════════════════════════════════════════════════════════════
+  const CALENDARS = {
+    gregorian: {
+      id: 'gregorian', label: 'Gregorian', short: 'GREG',
+      format: function (y) {
+        if (y === 0) return '0';
+        if (y < 0) return Math.abs(y) + ' BCE';
+        return y + ' CE';
+      },
+    },
+    hebrew: {
+      id: 'hebrew', label: 'Hebrew (Anno Mundi)', short: 'HEB',
+      // Hebrew AM = Gregorian + 3761 (rough — ignores RH split).
+      format: function (y) {
+        const am = y + 3761;
+        return am.toLocaleString('en-US') + ' AM';
+      },
+    },
+    hijri: {
+      id: 'hijri', label: 'Islamic (Hijri)', short: 'HIJ',
+      // AH ≈ (y - 622) × 33/32 since Hijri is lunar.
+      format: function (y) {
+        const ah = Math.round((y - 622) * 33 / 32);
+        if (ah === 0) return '0 AH';
+        if (ah < 0) return Math.abs(ah) + ' BH';
+        return ah + ' AH';
+      },
+    },
+    jalali: {
+      id: 'jalali', label: 'Iranian (Jalali)', short: 'AP',
+      // AP = Gregorian − 621 (solar Hijri, March-anchored — round).
+      format: function (y) {
+        const ap = y - 621;
+        if (ap === 0) return '0 AP';
+        if (ap < 0) return Math.abs(ap) + ' BP';
+        return ap + ' AP';
+      },
+    },
+    ethiopian: {
+      id: 'ethiopian', label: 'Ethiopian (Geez)', short: 'EC',
+      // EC ≈ Gregorian − 8 (Sept-anchored — round).
+      format: function (y) {
+        const ec = y - 8;
+        if (ec === 0) return '0 EC';
+        if (ec < 0) return Math.abs(ec) + ' BEC';
+        return ec + ' EC';
+      },
+    },
+  };
+
+  const LS_CALENDAR = 'codex_atlas_timeline_calendar';
+  let _activeCalendarId = 'gregorian';
+  try {
+    const raw = localStorage.getItem(LS_CALENDAR);
+    if (raw && CALENDARS[raw]) _activeCalendarId = raw;
+  } catch (_) {}
+
+  function setActiveCalendar(id) {
+    if (!CALENDARS[id]) return false;
+    if (id === _activeCalendarId) return false;
+    _activeCalendarId = id;
+    try { localStorage.setItem(LS_CALENDAR, id); } catch (_) {}
+    scheduleRefresh();   // redraw all ticks + labels
+    return true;
+  }
+  function getActiveCalendarId() { return _activeCalendarId; }
+  function listCalendars() {
+    return Object.values(CALENDARS).map(function (c) {
+      return { id: c.id, label: c.label, short: c.short };
+    });
+  }
+
+  // Year → display label. Routes through the active calendar.
+  // Gregorian (default) preserves the original "BCE / CE / 0" rule.
   function formatYear(year) {
-    if (year === 0) return '0';
-    if (year < 0) return Math.abs(year) + ' BCE';
-    return year + ' CE';
+    const cal = CALENDARS[_activeCalendarId] || CALENDARS.gregorian;
+    try { return cal.format(year); } catch (_) { return String(year); }
   }
 
   // ── DOM ──────────────────────────────────────────────────
@@ -117,15 +202,15 @@
   // Live-tunable via the STYLE panel's "Timeline bands" + "Family
   // labels" sections. Reads applied on every refresh() call.
   // Persists to localStorage.
-  // Phase 22-AB-fix (2026-05-24) — bumped to v2 because the
-  // default for `denseTicks` flipped false→true. Users who'd ever
-  // touched any band-style slider had the old default frozen in
-  // their LS, which masked the new default. v2 = fresh start.
-  const LS_BAND_STYLE = 'codex_atlas_timeline_band_style_v2';
+  // Phase 22-AE (2026-05-24) — v3: BAKED defaults from John's
+  // tuned values (screenshot 2026-05-24 evening). Subtler bands,
+  // gentler YR-0 pivot. Bump = LS flush so returning users pick
+  // up the new defaults.
+  const LS_BAND_STYLE = 'codex_atlas_timeline_band_style_v3';
   const BAND_STYLE_DEFAULTS = {
-    fillAlpha:    0.18,
-    strokeAlpha:  0.60,
-    strokeWidth:  1.0,
+    fillAlpha:    0.02,   // was 0.18 — bands now barely tinted
+    strokeAlpha:  0.25,   // was 0.60 — band edges much fainter
+    strokeWidth:  0.5,    // was 1.0  — hairline band edges
     labelOpacity: 0.85,
     labelSize:    11,    // px
     // Phase 22-K (2026-05-24) — axis + grid line controls.
@@ -133,8 +218,8 @@
     axisWidth:    1.5,
     gridOpacity:  0.10,
     gridWidth:    1.0,
-    // Phase 22-M (2026-05-24) — YR 0 pivot marker style.
-    yr0Opacity:   1.0,
+    // Phase 22-M / 22-AE — YR 0 pivot marker style.
+    yr0Opacity:   0.75,   // was 1.0  — pivot less shouty
     yr0Size:      12,
     yr0Width:     1.8,
     // Phase 22-M — dense-ticks toggle (more dates onscreen as
@@ -446,11 +531,77 @@
       wireVDensity(vdensityEl);
     }
 
+    // ─── CALENDAR popup button ──────────────────────────────
+    const calBtn = document.getElementById('forge-tl-cal-btn');
+    function syncCalLabel() {
+      if (!calBtn) return;
+      const v = calBtn.querySelector('.forge-tl-cal-val');
+      const cur = CALENDARS[_activeCalendarId] || CALENDARS.gregorian;
+      if (v) v.textContent = cur.short;
+    }
+    syncCalLabel();
+    function onCalClick(e) {
+      e.preventDefault(); e.stopPropagation();
+      if (document.getElementById('forge-tl-cal-pop')) closeCalPop();
+      else                                            openCalPop();
+    }
+    if (calBtn) calBtn.addEventListener('click', onCalClick);
+
+    // Outside-click + Esc close (covers cal popup too).
+    const onCalOutside = function (e) {
+      const pop = document.getElementById('forge-tl-cal-pop');
+      if (!pop) return;
+      if (pop.contains(e.target)) return;
+      if (calBtn && calBtn.contains(e.target)) return;
+      closeCalPop();
+    };
+    const onCalEsc = function (e) {
+      if (e.key === 'Escape') closeCalPop();
+    };
+    document.addEventListener('mousedown', onCalOutside, true);
+    document.addEventListener('keydown', onCalEsc, true);
+
+    function openCalPop() {
+      if (!calBtn) return;
+      const stageEl = calBtn.closest('.forge-stage') || document.body;
+      const pop = document.createElement('div');
+      pop.className = 'forge-tl-cal-pop is-open';
+      pop.id = 'forge-tl-cal-pop';
+      listCalendars().forEach(function (c) {
+        const row = document.createElement('button');
+        row.type = 'button';
+        row.className = 'forge-tl-cal-row';
+        row.setAttribute('data-cal', c.id);
+        row.setAttribute('aria-pressed', (c.id === _activeCalendarId) ? 'true' : 'false');
+        row.innerHTML =
+          '<span class="forge-tl-cal-row-short">' + c.short + '</span>' +
+          '<span class="forge-tl-cal-row-label">' + c.label + '</span>';
+        row.addEventListener('click', function () {
+          if (setActiveCalendar(c.id)) {
+            syncCalLabel();
+          }
+          closeCalPop();
+        });
+        pop.appendChild(row);
+      });
+      stageEl.appendChild(pop);
+      if (calBtn) calBtn.setAttribute('aria-expanded', 'true');
+    }
+    function closeCalPop() {
+      const pop = document.getElementById('forge-tl-cal-pop');
+      if (pop && pop.parentNode) pop.parentNode.removeChild(pop);
+      if (calBtn) calBtn.setAttribute('aria-expanded', 'false');
+    }
+
     toolbarEl._cleanup = function () {
       toolbarEl.removeEventListener('click', onPresetClick);
       if (goBtn) goBtn.removeEventListener('click', applyFocus);
       if (inEl)  inEl.removeEventListener('keydown',  onFocusKey);
       if (outEl) outEl.removeEventListener('keydown', onFocusKey);
+      if (calBtn) calBtn.removeEventListener('click', onCalClick);
+      document.removeEventListener('mousedown', onCalOutside, true);
+      document.removeEventListener('keydown', onCalEsc, true);
+      closeCalPop();
     };
   }
 
@@ -936,7 +1087,12 @@
         lbl0.style.fontWeight    = '600';
         lbl0.style.letterSpacing = '0.14em';
         lbl0.style.textTransform = 'uppercase';
-        lbl0.textContent = 'YR 0';
+        // Phase 22-AE — pivot label routes through the active
+        // calendar. Gregorian still shows "0"; other calendars
+        // show their year-0-Gregorian value (e.g. "3761 AM",
+        // "622 BH", "-621 AP"). The pivot's special STYLE
+        // (size, brightness) stays regardless of calendar.
+        lbl0.textContent = formatYear(0);
         tickGroupEl.appendChild(lbl0);
       }
     }
@@ -948,12 +1104,16 @@
     unmount,
     refresh: scheduleRefresh,
     isMounted: () => mounted,
-    // Phase 22-I (2026-05-24) — band style API for STYLE panel.
-    // Phase 22-M (2026-05-24) — boolean setter added.
+    // Phase 22-I — band style API for STYLE panel.
+    // Phase 22-M — boolean setter added.
     setBandStyle: setBandStyleKey,
     setBandStyleBoolean: setBandStyleBoolean,
     getBandStyle: getBandStyle,
     resetBandStyle: resetBandStyle,
     bandStyleDefaults: function () { return Object.assign({}, BAND_STYLE_DEFAULTS); },
+    // Phase 22-AE (2026-05-24) — calendar surface for the popup.
+    listCalendars: listCalendars,
+    getActiveCalendarId: getActiveCalendarId,
+    setActiveCalendar: setActiveCalendar,
   };
 })();
