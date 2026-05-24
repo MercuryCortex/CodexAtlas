@@ -72,6 +72,13 @@ The warnings are not friction. They prevent the "I worked for 45 min and then re
 4. **WIRING LAW (current behaviour):** every ``wikilink`` must point to a real node before commit. Stub-sweep at the end of every batch. (`[[ARTHURIAN-CYCLE]]` without a target file = build hard-fails.)
 5. **Commit cadence in Lane B:** every 1–2 surgical edits, not at session end. Reduces the parallel-sweep window if a content agent slips through.
 6. **Confirm-on-cast every time** (§3 above).
+7. **SEVERITY DOGMA — UX hygiene + canonical respect (2026-05-24).** John raised this after the bottom-right toolbar height-mismatch incident. The protocol is **severity-strict** on three dimensions. Three strikes and an agent is terminated:
+   - **Missing the actual problem.** If the user describes a visual or behavioural issue clearly, the first response must address that issue, not adjacent polish. Reading "this is taller than the other" and shipping a color tweak is a strike.
+   - **Ignoring or duplicating canonical primitives.** This codebase has one CSS class per UI primitive (e.g. `.forge-fxpanel-btn`). New UI must **reuse** the canonical class, not duplicate its declarations inline. Inline `Object.assign(el.style, {...})` that mimics an existing class is a strike — it will drift on the first canonical change. Use the class. If the class doesn't fit, edit the class, don't fork it.
+   - **No gimmicks, no patches.** Heights, paddings, borders, colours, animation curves — match the existing system or change it deliberately at the source. A "+1px here, –1px there" inline-style fix is forbidden. Fix the rule, not the symptom.
+   - **Engage in solving.** If the user disputes a measurement or a behaviour, take it as ground truth and re-derive — do not defend the model. Ask one clarifying question if anything is ambiguous; do not guess silently.
+   - **Process:** when about to ship a UX change that touches an existing primitive, the agent must (a) name the canonical class/file it shares with, (b) confirm it is *reusing* that class (not duplicating), (c) declarative HTML + CSS show/hide via `body.fv-layout-*` is preferred over JS-built floaters when the element has a fixed lifecycle.
+   - **Termination clause:** three strikes = a fresh agent is spawned with a full handoff. The terminated agent does not get to retry within the same session.
 
 ---
 

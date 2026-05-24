@@ -390,50 +390,28 @@
     const ENG = window.AtlasEngineLayout || {};
     if (typeof ENG.setTimelineScalePreset !== 'function') return;
 
+    // Phase 22-AB-fix3 (2026-05-24) — SEVERITY DOGMA compliance.
+    // EVERY button below uses the canonical `.forge-fxpanel-btn`
+    // CSS class. NO inline `Object.assign(el.style, {...})` for
+    // sizing or borders or backgrounds. The wrapper is a class-
+    // only flex container (`.forge-timeline-toolbar` in app.css).
+    // Active-segment styling = `aria-pressed="true"` attribute,
+    // which the CSS rule at app.css:8313 styles to gold-tint.
+    // This GUARANTEES pixel parity with LEGEND / VIEW / FX /
+    // STYLE / # — they all share one CSS class, one source of
+    // truth for height/padding/border/font.
     toolbarEl = document.createElement('div');
     toolbarEl.className = 'forge-timeline-toolbar';
-    Object.assign(toolbarEl.style, {
-      position:      'absolute',
-      right:         '14px',
-      bottom:        '14px',
-      display:       'inline-flex',
-      alignItems:    'center',
-      gap:           '8px',
-      pointerEvents: 'auto',
-      zIndex:        '6',
-    });
     hostEl.appendChild(toolbarEl);
 
     // ─── Segmented preset switcher ─────────────────────────
-    // 4 presets, short labels. Click = switch + relayout. Active
-    // segment gets a gold tint + bold weight.
+    // Four sibling .forge-fxpanel-btn buttons (no container border).
+    // Active button gets aria-pressed="true" → CSS gold-tint state.
     presetSegEl = document.createElement('div');
     presetSegEl.className = 'forge-timeline-toolbar-seg';
-    // Phase 22-AB-fix2 (2026-05-24) — NO explicit height. Size
-    // emerges from font + padding + border like .forge-fxpanel-btn
-    // so this row lines up flush with LEGEND / VIEW / etc. Earlier
-    // `height:23px` made the outer height 25px (border-added) which
-    // John's screenshot showed as 2-3px too tall.
-    Object.assign(presetSegEl.style, {
-      display:       'inline-flex',
-      alignItems:    'stretch',
-      background:    'rgba(13,17,25,0.78)',
-      border:        '1px solid rgba(212,165,90,0.22)',
-      borderRadius:  '6px',
-      overflow:      'hidden',
-      fontFamily:    'var(--mono, "JetBrains Mono", Menlo, monospace)',
-      fontSize:      '11px',
-      letterSpacing: '0.08em',
-      cursor:        'pointer',
-      userSelect:    'none',
-      transition:    'border-color 120ms ease',
-    });
-    presetSegEl.addEventListener('mouseenter', function () {
-      presetSegEl.style.borderColor = 'var(--gold-soft, rgba(212,165,90,0.45))';
-    });
-    presetSegEl.addEventListener('mouseleave', function () {
-      presetSegEl.style.borderColor = 'rgba(212,165,90,0.22)';
-    });
+    presetSegEl.style.display = 'inline-flex';
+    presetSegEl.style.gap = '4px';
+    toolbarEl.appendChild(presetSegEl);
 
     const SEGMENTS = [
       { id: 'linear-default',          label: 'LIN',   tip: 'Linear · 9K BCE → today' },
@@ -445,31 +423,14 @@
       presetSegEl.innerHTML = '';
       const activeId = (typeof ENG.getTimelineScalePresetId === 'function')
         ? ENG.getTimelineScalePresetId() : 'linear-default';
-      SEGMENTS.forEach(function (seg, i) {
+      SEGMENTS.forEach(function (seg) {
         const b = document.createElement('button');
         b.type = 'button';
+        b.className = 'forge-fxpanel-btn';   // canonical class — no inline style!
         b.textContent = seg.label;
         b.title = seg.tip;
         b.setAttribute('data-preset', seg.id);
-        const isActive = (seg.id === activeId);
-        Object.assign(b.style, {
-          // Phase 22-AB-fix2 — vertical padding 5px matches
-          // .forge-fxpanel-btn so each segment renders at the
-          // same content-height (~13px line) as the canonical
-          // bottom-bar buttons. Total row height ~22-23px outer.
-          padding:       '5px 10px',
-          lineHeight:    '1',
-          background:    isActive ? 'rgba(212, 165, 90, 0.18)' : 'transparent',
-          color:         isActive ? 'var(--gold-1, #e8c889)' : 'var(--text-2, #9099a8)',
-          border:        'none',
-          borderRight:   (i < SEGMENTS.length - 1) ? '1px solid rgba(212,165,90,0.12)' : 'none',
-          cursor:        'pointer',
-          fontFamily:    'inherit',
-          fontSize:      'inherit',
-          letterSpacing: 'inherit',
-          fontWeight:    isActive ? '600' : '500',
-          textTransform: 'uppercase',
-        });
+        b.setAttribute('aria-pressed', (seg.id === activeId) ? 'true' : 'false');
         b.addEventListener('click', function () {
           const changed = ENG.setTimelineScalePreset(seg.id);
           renderPresetSegs();
@@ -482,11 +443,9 @@
     }
     renderPresetSegs();
     presetSegEl._render = renderPresetSegs;
-    toolbarEl.appendChild(presetSegEl);
 
     // ─── Density button + horizontal popover ───────────────
     if (typeof ENG.getTimelineBandHeightScale === 'function') {
-      // Hydrate band scale from LS first so the visible label is right.
       hydrateBandScaleFromLS();
       const cur = ENG.getTimelineBandHeightScale();
       const bounds = ENG.timelineBandScaleBounds || { min: 0.3, max: 3.0 };
@@ -498,37 +457,11 @@
 
       densityBtn = document.createElement('button');
       densityBtn.type = 'button';
-      densityBtn.className = 'forge-timeline-toolbar-density';
+      densityBtn.className = 'forge-fxpanel-btn forge-timeline-toolbar-density';
       densityBtn.setAttribute('aria-haspopup', 'true');
       densityBtn.setAttribute('aria-expanded', 'false');
       densityBtn.title = 'Band density — click for slider, double-click to reset';
-      // Phase 22-AB-fix2 — no explicit height; padding-driven sizing
-      // matches .forge-fxpanel-btn (LEGEND / VIEW / FX / STYLE / #).
-      Object.assign(densityBtn.style, {
-        padding:       '5px 10px',
-        lineHeight:    '1',
-        background:    'rgba(13,17,25,0.78)',
-        border:        '1px solid rgba(212,165,90,0.22)',
-        borderRadius:  '6px',
-        color:         'var(--text-2, #9099a8)',
-        fontFamily:    'var(--mono, "JetBrains Mono", Menlo, monospace)',
-        fontSize:      '11px',
-        letterSpacing: '0.08em',
-        cursor:        'pointer',
-        userSelect:    'none',
-        display:       'inline-flex',
-        alignItems:    'center',
-        gap:           '6px',
-        transition:    'border-color 120ms ease, color 120ms ease',
-        whiteSpace:    'nowrap',
-      });
-      densityBtn.innerHTML = '<span style="opacity:0.7;text-transform:uppercase">density</span> <span class="_v" style="color:var(--gold,#d4a55a);font-weight:600">' + formatBandScale(cur) + '</span> <span style="opacity:0.6;font-size:9px">▾</span>';
-      densityBtn.addEventListener('mouseenter', function () {
-        densityBtn.style.borderColor = 'var(--gold-soft, rgba(212,165,90,0.45))';
-      });
-      densityBtn.addEventListener('mouseleave', function () {
-        densityBtn.style.borderColor = 'rgba(212,165,90,0.22)';
-      });
+      densityBtn.innerHTML = '<span style="opacity:0.7;text-transform:uppercase">density</span> <span class="_v" style="color:var(--gold,#d4a55a);font-weight:600;margin-left:6px">' + formatBandScale(cur) + '</span> <span style="opacity:0.6;font-size:9px;margin-left:4px">▾</span>';
       densityBtn.addEventListener('click', toggleDensityPopover);
       densityBtn.addEventListener('dblclick', function (e) {
         e.preventDefault(); e.stopPropagation();

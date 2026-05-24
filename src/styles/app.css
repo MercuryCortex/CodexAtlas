@@ -8309,6 +8309,32 @@ body.view-forge.fx-bloom .forge-hulls-overlay {
   color: var(--gold, #d4a55a);
   background: rgba(20,26,38,0.92);
 }
+/* Phase 22-AB-fix3 (2026-05-24) — `aria-pressed="true"` is the
+   canonical active-state modifier for `.forge-fxpanel-btn`. Used by
+   the timeline bottom-right toolbar segmented switcher (LIN / LOG /
+   LOG-R / CMP) so each segment IS a real `.forge-fxpanel-btn` —
+   guaranteeing pixel parity with LEGEND / VIEW / FX / STYLE / #.
+   Severity-dogma compliance: NO inline-style duplication. */
+.forge-fxpanel-btn[aria-pressed="true"] {
+  border-color: var(--gold, #d4a55a);
+  color: var(--gold-1, #e8c889);
+  background: rgba(212, 165, 90, 0.18);
+  font-weight: 600;
+}
+
+/* Phase 22-AB-fix3 — timeline bottom-right toolbar = transparent
+   flex wrapper holding 5 sibling `.forge-fxpanel-btn` elements. No
+   border on the wrapper itself; each button stands on its own. */
+.forge-timeline-toolbar {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  z-index: 6;
+  pointer-events: auto;
+}
 .forge-fxpanel {
   position: absolute;
   bottom: 40px;     /* drops upward */
