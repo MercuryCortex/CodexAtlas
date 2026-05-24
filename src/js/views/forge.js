@@ -1256,6 +1256,33 @@
       // square button next to the present-date box.
       '<button class="forge-debug-btn" id="forge-debug-btn" type="button" title="Show engine stats" aria-expanded="false" aria-controls="forge-debug-panel">⌗</button>',
       '<div class="forge-debug-panel" id="forge-debug-panel" aria-hidden="true"></div>',
+      // Phase 22-AB-fix4 (2026-05-24) — TIMELINE SEGMENT.
+      // Lives inside the canonical .forge-bottombar so it shares
+      // the same flex row + same vertical centering as every other
+      // bottom-bar button. CSS gates visibility via body.fv-layout-
+      // timeline (only shows on Timeline view). Each button uses
+      // .forge-fxpanel-btn — the canonical site-wide button class.
+      // NEW MENUS ANYWHERE IN THE APP MUST FOLLOW THIS PATTERN.
+      //   - Declarative HTML in this bottombar template (or its
+      //     view-specific siblings).
+      //   - Class = .forge-fxpanel-btn (never a custom button class
+      //     that duplicates its declarations).
+      //   - Active state via [aria-pressed="true"] (CSS owns the
+      //     gold tint). Open state via [aria-expanded="true"].
+      //   - Visibility per layout via body.fv-layout-<name>.
+      //   - JS attaches event handlers ONLY — never builds DOM.
+      // See HOW-WE-WORK.md §5 cardinal rule #7 (SEVERITY DOGMA).
+      '<div class="forge-bottombar-right fv-timeline-only" id="forge-bottombar-timeline">' +
+        '<button class="forge-fxpanel-btn" data-tl-preset="linear-default"          aria-pressed="true"  title="Linear · 9K BCE → today">LIN</button>' +
+        '<button class="forge-fxpanel-btn" data-tl-preset="log-centered"            aria-pressed="false" title="Log · year-0 centered">LOG</button>' +
+        '<button class="forge-fxpanel-btn" data-tl-preset="log-recent"              aria-pressed="false" title="Log · recent-emphasis">LOG-R</button>' +
+        '<button class="forge-fxpanel-btn" data-tl-preset="compressed-civilization" aria-pressed="false" title="Compressed · era-weighted">CMP</button>' +
+        '<button class="forge-fxpanel-btn forge-tl-density" id="forge-tl-density-btn" aria-haspopup="true" aria-expanded="false" title="Band density — click for slider, double-click to reset">' +
+          '<span class="forge-tl-density-label">DENSITY</span>' +
+          '<span class="forge-tl-density-val">1.0×</span>' +
+          '<span class="forge-tl-density-chev">▾</span>' +
+        '</button>' +
+      '</div>',
     ].join('');
     stage.appendChild(bottomBar);
 

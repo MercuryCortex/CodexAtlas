@@ -8289,6 +8289,24 @@ body.view-forge.fx-bloom .forge-hulls-overlay {
   display: inline-flex; align-items: center;
   pointer-events: auto;
 }
+/* ════════════════════════════════════════════════════════════
+   CANONICAL BOTTOM-BAR BUTTON — site-wide primitive.
+   Phase 22-AB-fix4 (2026-05-24) locked in as the ONE class that
+   every bottom-bar button MUST use (LIN/LOG/CMP/DENSITY in the
+   timeline segment, FX, STYLE, future menus on Board/Map/Star Map,
+   etc.). Sister classes (.forge-legend-btn, .forge-zoom-gizmo,
+   .forge-scrub-box) exist for historical reasons but duplicate
+   these declarations and should be folded back into this class
+   in a future cleanup batch.
+   Rules (severity-dogma, HOW-WE-WORK.md §5.7):
+     - NEW BUTTONS USE THIS CLASS. Never duplicate declarations
+       in inline styles or a new sibling class.
+     - Active state = [aria-pressed="true"] (rule below).
+     - Open state  = [aria-expanded="true"] (rule below).
+     - Hover state = :hover.
+     - Variants live in app.css as `.forge-fxpanel-btn.foo`, never
+       as full forks.
+   ════════════════════════════════════════════════════════════ */
 .forge-fxpanel-btn {
   /* Phase 21AQ — compact to match LEGEND + VIEW sibling styling. */
   padding: 5px 10px;
@@ -8322,19 +8340,65 @@ body.view-forge.fx-bloom .forge-hulls-overlay {
   font-weight: 600;
 }
 
-/* Phase 22-AB-fix3 — timeline bottom-right toolbar = transparent
-   flex wrapper holding 5 sibling `.forge-fxpanel-btn` elements. No
-   border on the wrapper itself; each button stands on its own. */
-.forge-timeline-toolbar {
-  position: absolute;
-  right: 14px;
-  bottom: 14px;
+/* Phase 22-AB-fix4 (2026-05-24) — TIMELINE-SEGMENT IN BOTTOMBAR.
+   The bottom-right Timeline controls (LIN/LOG/LOG-R/CMP +
+   DENSITY) live INSIDE the canonical `.forge-bottombar` as a
+   flex child. `margin-left: auto` pushes it to the right edge of
+   the flex row, leaving canonical buttons untouched on the left.
+   `.fv-timeline-only` (existing layout-gate class) is already
+   styled at app.css ~line 862 to hide outside the Timeline view.
+   SEVERITY DOGMA: this is the foundation for ALL future view-
+   specific bottom-bar segments. Replicate this pattern for any
+   new menus tied to a specific view (Board / Map / Star Map /
+   future calendars). One bottombar, one flex row, layout-gated
+   children. NEVER spawn `position: absolute` siblings — that's
+   how the 2-3px row-drift bug from Phase 22-AA was born. */
+.forge-bottombar-right {
+  margin-left: auto;       /* pushes this segment to the row's right edge */
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  z-index: 6;
   pointer-events: auto;
 }
+
+/* DENSITY button is a `.forge-fxpanel-btn` variant — needs only
+   internal-span layout, NOT any sizing override (the canonical
+   class owns size). The variant class is for the inner label
+   spacing + popover hook target. */
+.forge-fxpanel-btn.forge-tl-density {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+.forge-tl-density-label { opacity: 0.7; text-transform: uppercase; }
+.forge-tl-density-val   { color: var(--gold, #d4a55a); font-weight: 600; }
+.forge-tl-density-chev  { opacity: 0.6; font-size: 9px; }
+
+/* Density popover — drops UP from the DENSITY button. Same look
+   as `.forge-fxpanel` (FX/Style popovers) so it belongs to the
+   same visual family. */
+.forge-tl-density-pop {
+  position: absolute;
+  bottom: 40px;            /* clears the bottombar's own ~24px + gap */
+  right: 14px;
+  min-width: 240px;
+  padding: 10px 14px 12px;
+  background: rgba(13,17,25,0.92);
+  border: 1px solid rgba(212,165,90,0.22);
+  border-radius: 8px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.45);
+  z-index: 235;
+  font-family: var(--mono, "JetBrains Mono", Menlo, monospace);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--text-2, #9099a8);
+  pointer-events: auto;
+  display: none;
+}
+.forge-tl-density-pop.is-open { display: block; }
 .forge-fxpanel {
   position: absolute;
   bottom: 40px;     /* drops upward */

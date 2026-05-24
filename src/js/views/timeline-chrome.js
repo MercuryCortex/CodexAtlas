@@ -220,10 +220,9 @@
           unsubscribeCamera = camera.onChange(scheduleRefresh);
         }
       }
-      // Phase 22-AA (2026-05-24) — re-sync toolbar readouts from
-      // authority state in case something else mutated them.
-      if (presetSegEl && typeof presetSegEl._render === 'function') {
-        try { presetSegEl._render(); } catch (_) {}
+      // Phase 22-AB-fix4 (2026-05-24) — re-sync toolbar state.
+      if (toolbarEl && typeof toolbarEl._renderPresets === 'function') {
+        try { toolbarEl._renderPresets(); } catch (_) {}
       }
       if (densityInput && densityBtn) {
         const ENG = window.AtlasEngineLayout || {};
@@ -232,8 +231,7 @@
           if (Math.abs(parseFloat(densityInput.value) - cur) > 0.005) {
             densityInput.value = String(cur);
           }
-          const vEl = densityBtn.querySelector('._v');
-          if (vEl) vEl.textContent = formatBandScale(cur);
+          syncDensityReadout(cur);
         }
       }
       scheduleRefresh();
@@ -358,16 +356,16 @@
     if (rafId) { cancelAnimationFrame(rafId); rafId = 0; }
     if (unsubscribeCamera) { try { unsubscribeCamera(); } catch (_) {} unsubscribeCamera = null; }
     if (densityRafId) { cancelAnimationFrame(densityRafId); densityRafId = 0; }
-    // Phase 22-AA (2026-05-24) — single-toolbar cleanup.
+    // Phase 22-AB-fix4 (2026-05-24) — toolbar lives in declarative
+    // HTML now; only events get detached. CSS hides it via
+    // body:not(.fv-layout-timeline) — see app.css `.fv-timeline-only`.
     if (toolbarEl && typeof toolbarEl._cleanup === 'function') {
       try { toolbarEl._cleanup(); } catch (_) {}
     }
-    // Phase 22-L → 22-M (2026-05-24) — restore the wheel's
-    // hull-overlay opacity ownership on unmount.
+    // Restore the wheel's hull-overlay opacity ownership on unmount.
     const hullOverlayEl = document.querySelector('.forge-hulls-overlay');
     if (hullOverlayEl) hullOverlayEl.style.opacity = '';
     if (svgRoot && svgRoot.parentNode) svgRoot.parentNode.removeChild(svgRoot);
-    if (toolbarEl && toolbarEl.parentNode) toolbarEl.parentNode.removeChild(toolbarEl);
     if (densityPopEl && densityPopEl.parentNode) densityPopEl.parentNode.removeChild(densityPopEl);
     svgRoot = null; axisLineEl = null; tickGroupEl = null; gridGroupEl = null;
     bandGroupEl = null; bandLabelGroupEl = null;
@@ -377,75 +375,51 @@
     mounted = false;
   }
 
-  // ── UNIFIED BOTTOM TOOLBAR (Phase 22-AA, 2026-05-24) ─────
-  // After 5+ user asks the bottom-right is now ONE horizontal row
-  // matching the bottom-left button strip (`.forge-fxpanel-btn`):
-  //   [ LIN | LOG | LOG-R | CMP ]  [ DENSITY 1.0× ]
-  // Previously three floating elements (chip + LIN/LOG switch +
-  // vertical density slider) that didn't share a baseline. Now
-  // all children are .forge-fxpanel-btn-styled at 24px height,
-  // sitting at right:14 bottom:14 — mirroring the bottom-left rail.
+  // ── BOTTOM TOOLBAR WIRING (Phase 22-AB-fix4, 2026-05-24) ─
+  // The TIMELINE bottom-right buttons (LIN/LOG/LOG-R/CMP +
+  // DENSITY) are now DECLARED in `index.html` (built by forge.js
+  // into `.forge-bottombar > .forge-bottombar-right`). This
+  // module ONLY wires event handlers + state sync. NO DOM
+  // creation here — that's the canonical pattern per HOW-WE-WORK
+  // §5.7 (SEVERITY DOGMA).
+  //
+  // CSS owns: button styling, popover styling, layout-visibility
+  //   via `body.fv-layout-timeline` + `.fv-timeline-only`.
+  // HTML owns: button presence + order + ARIA attributes.
+  // JS  owns: click handlers + active-state sync + popover lifecycle.
   function buildBottomToolbar() {
-    if (!hostEl) return;
     const ENG = window.AtlasEngineLayout || {};
     if (typeof ENG.setTimelineScalePreset !== 'function') return;
 
-    // Phase 22-AB-fix3 (2026-05-24) — SEVERITY DOGMA compliance.
-    // EVERY button below uses the canonical `.forge-fxpanel-btn`
-    // CSS class. NO inline `Object.assign(el.style, {...})` for
-    // sizing or borders or backgrounds. The wrapper is a class-
-    // only flex container (`.forge-timeline-toolbar` in app.css).
-    // Active-segment styling = `aria-pressed="true"` attribute,
-    // which the CSS rule at app.css:8313 styles to gold-tint.
-    // This GUARANTEES pixel parity with LEGEND / VIEW / FX /
-    // STYLE / # — they all share one CSS class, one source of
-    // truth for height/padding/border/font.
-    toolbarEl = document.createElement('div');
-    toolbarEl.className = 'forge-timeline-toolbar';
-    hostEl.appendChild(toolbarEl);
+    toolbarEl = document.getElementById('forge-bottombar-timeline');
+    if (!toolbarEl) return;   // declarative DOM missing — bail gracefully
+    presetSegEl = toolbarEl;  // same element holds the segment buttons
 
-    // ─── Segmented preset switcher ─────────────────────────
-    // Four sibling .forge-fxpanel-btn buttons (no container border).
-    // Active button gets aria-pressed="true" → CSS gold-tint state.
-    presetSegEl = document.createElement('div');
-    presetSegEl.className = 'forge-timeline-toolbar-seg';
-    presetSegEl.style.display = 'inline-flex';
-    presetSegEl.style.gap = '4px';
-    toolbarEl.appendChild(presetSegEl);
-
-    const SEGMENTS = [
-      { id: 'linear-default',          label: 'LIN',   tip: 'Linear · 9K BCE → today' },
-      { id: 'log-centered',            label: 'LOG',   tip: 'Log · year-0 centered' },
-      { id: 'log-recent',              label: 'LOG-R', tip: 'Log · recent-emphasis' },
-      { id: 'compressed-civilization', label: 'CMP',   tip: 'Compressed · era-weighted' },
-    ];
-    function renderPresetSegs() {
-      presetSegEl.innerHTML = '';
+    // ─── Wire preset segments via delegation ───────────────
+    function syncPresetActive() {
       const activeId = (typeof ENG.getTimelineScalePresetId === 'function')
         ? ENG.getTimelineScalePresetId() : 'linear-default';
-      SEGMENTS.forEach(function (seg) {
-        const b = document.createElement('button');
-        b.type = 'button';
-        b.className = 'forge-fxpanel-btn';   // canonical class — no inline style!
-        b.textContent = seg.label;
-        b.title = seg.tip;
-        b.setAttribute('data-preset', seg.id);
-        b.setAttribute('aria-pressed', (seg.id === activeId) ? 'true' : 'false');
-        b.addEventListener('click', function () {
-          const changed = ENG.setTimelineScalePreset(seg.id);
-          renderPresetSegs();
-          if (changed && window._forge && typeof window._forge.relayout === 'function') {
-            window._forge.relayout();
-          }
-        });
-        presetSegEl.appendChild(b);
+      toolbarEl.querySelectorAll('button[data-tl-preset]').forEach(function (b) {
+        b.setAttribute('aria-pressed', (b.getAttribute('data-tl-preset') === activeId) ? 'true' : 'false');
       });
     }
-    renderPresetSegs();
-    presetSegEl._render = renderPresetSegs;
+    function onPresetClick(e) {
+      const b = e.target.closest('button[data-tl-preset]');
+      if (!b || !toolbarEl.contains(b)) return;
+      const id = b.getAttribute('data-tl-preset');
+      const changed = ENG.setTimelineScalePreset(id);
+      syncPresetActive();
+      if (changed && window._forge && typeof window._forge.relayout === 'function') {
+        window._forge.relayout();
+      }
+    }
+    toolbarEl.addEventListener('click', onPresetClick);
+    syncPresetActive();
+    toolbarEl._renderPresets = syncPresetActive;
 
-    // ─── Density button + horizontal popover ───────────────
-    if (typeof ENG.getTimelineBandHeightScale === 'function') {
+    // ─── Wire DENSITY button + popover ─────────────────────
+    densityBtn = document.getElementById('forge-tl-density-btn');
+    if (densityBtn && typeof ENG.getTimelineBandHeightScale === 'function') {
       hydrateBandScaleFromLS();
       const cur = ENG.getTimelineBandHeightScale();
       const bounds = ENG.timelineBandScaleBounds || { min: 0.3, max: 3.0 };
@@ -455,20 +429,14 @@
       densityInput.value = String(cur);
       densityInput._bounds = bounds;
 
-      densityBtn = document.createElement('button');
-      densityBtn.type = 'button';
-      densityBtn.className = 'forge-fxpanel-btn forge-timeline-toolbar-density';
-      densityBtn.setAttribute('aria-haspopup', 'true');
-      densityBtn.setAttribute('aria-expanded', 'false');
-      densityBtn.title = 'Band density — click for slider, double-click to reset';
-      densityBtn.innerHTML = '<span style="opacity:0.7;text-transform:uppercase">density</span> <span class="_v" style="color:var(--gold,#d4a55a);font-weight:600;margin-left:6px">' + formatBandScale(cur) + '</span> <span style="opacity:0.6;font-size:9px;margin-left:4px">▾</span>';
+      syncDensityReadout(cur);
+
       densityBtn.addEventListener('click', toggleDensityPopover);
       densityBtn.addEventListener('dblclick', function (e) {
         e.preventDefault(); e.stopPropagation();
         applyDensityValue(1.0);
         closeDensityPopover();
       });
-      toolbarEl.appendChild(densityBtn);
     }
 
     // Outside-click + Esc to close popovers.
@@ -484,9 +452,16 @@
     document.addEventListener('mousedown', onOutside, true);
     document.addEventListener('keydown', onEsc, true);
     toolbarEl._cleanup = function () {
+      toolbarEl.removeEventListener('click', onPresetClick);
       document.removeEventListener('mousedown', onOutside, true);
       document.removeEventListener('keydown', onEsc, true);
     };
+  }
+
+  function syncDensityReadout(v) {
+    if (!densityBtn) return;
+    const vEl = densityBtn.querySelector('.forge-tl-density-val');
+    if (vEl) vEl.textContent = formatBandScale(v);
   }
 
   function hydrateBandScaleFromLS() {
@@ -510,31 +485,16 @@
   }
 
   function openDensityPopover() {
-    if (!hostEl || !densityBtn || !densityInput) return;
+    if (!densityBtn || !densityInput) return;
+    const stageEl = densityBtn.closest('.forge-stage') || document.body;
     const bounds = densityInput._bounds || { min: 0.3, max: 3.0 };
     const v = parseFloat(densityInput.value);
 
+    // Canonical class — `.forge-tl-density-pop` in app.css owns
+    // position / colors / typography. JS only builds children +
+    // wires events.
     densityPopEl = document.createElement('div');
-    densityPopEl.className = 'forge-timeline-toolbar-density-pop';
-    Object.assign(densityPopEl.style, {
-      position:      'absolute',
-      right:         '14px',
-      bottom:        '46px',    // 14 (toolbar bottom) + 24 (height) + 8 gap
-      minWidth:      '240px',
-      padding:       '10px 14px 12px',
-      background:    'rgba(13,17,25,0.92)',
-      border:        '1px solid rgba(212,165,90,0.22)',
-      borderRadius:  '8px',
-      backdropFilter:'blur(12px)',
-      WebkitBackdropFilter:'blur(12px)',
-      boxShadow:     '0 6px 24px rgba(0,0,0,0.45)',
-      fontFamily:    'var(--mono, "JetBrains Mono", Menlo, monospace)',
-      fontSize:      '11px',
-      letterSpacing: '0.06em',
-      color:         'var(--text-2, #9099a8)',
-      zIndex:        '7',
-      pointerEvents: 'auto',
-    });
+    densityPopEl.className = 'forge-tl-density-pop is-open';
 
     // Header row — title + live readout.
     const head = document.createElement('div');
@@ -599,7 +559,7 @@
     foot.appendChild(lo); foot.appendChild(reset); foot.appendChild(hi);
     densityPopEl.appendChild(foot);
 
-    hostEl.appendChild(densityPopEl);
+    stageEl.appendChild(densityPopEl);
     if (densityBtn) densityBtn.setAttribute('aria-expanded', 'true');
   }
 
@@ -615,11 +575,7 @@
     const b = densityInput._bounds || { min: 0.3, max: 3.0 };
     const clamped = Math.max(b.min, Math.min(b.max, v));
     densityInput.value = String(clamped);
-    // Sync btn readout
-    if (densityBtn) {
-      const vEl = densityBtn.querySelector('._v');
-      if (vEl) vEl.textContent = formatBandScale(clamped);
-    }
+    syncDensityReadout(clamped);
     if (densityPopEl) {
       const vEl = densityPopEl.querySelector('._pop_v');
       if (vEl) vEl.textContent = formatBandScale(clamped);
