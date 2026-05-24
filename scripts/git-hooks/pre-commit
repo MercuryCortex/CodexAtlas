@@ -2,13 +2,27 @@
 # ============================================================
 # CODEX ATLAS pre-commit hook
 #
-# Catches three failure modes that have bitten the site:
+# Catches six failure modes that have bitten the site:
 #  1. Staging a syntactically broken src/js/*.js (sonnet content
 #     batches sweeping in a stale checkout — observed twice 2026-05-15).
 #  2. Quietly committing a revert that loses recent app-code work
 #     (we run a sanity grep for known-required globals after #1 passes).
 #  3. Cross-lane commits — staging Lane B (UX) paths AND Lane A
 #     (content) paths in the same commit. See 00_meta/LANES.md.
+#  4. NEW (TYRANT Phase 2, 2026-05-25, finding #1+#4): wiring-law
+#     violations — pre-commit now runs `linkcheck.py --baseline` on
+#     Lane A content commits and refuses any NEW dead [[wikilink]]
+#     target not already on AUDIT/dead-link-baseline.txt. The
+#     existing ~593 dead targets are tolerated as the floor;
+#     new ones cannot land.
+#  5. NEW (TYRANT Phase 2, 2026-05-25, finding #3+#4): schema-lint
+#     gate — `lint_yaml.py --strict` runs on Lane A content commits
+#     and refuses any ERROR-level issue (malformed frontmatter,
+#     missing required field, unknown type). 29-type coverage now.
+#  6. NEW (TYRANT Phase 2, 2026-05-25, finding #5): dup-ID gate —
+#     `build_data.py`'s post-commit hard-fail is now PRE-commit.
+#     `ATLAS_ALLOW_DUP_ID=1` escape hatch removed (no longer
+#     readable from the hook).
 #
 # Install:  ln -sf ../../scripts/git-hooks/pre-commit .git/hooks/pre-commit
 # Bypass (NEVER for routine work):  git commit --no-verify
@@ -125,6 +139,73 @@ if [ -n "$STAGED_JS" ]; then
       echo "  --no-verify (after explicit confirmation from John)." >&2
       exit 1
     fi
+  fi
+fi
+
+# ============================================================
+# TYRANT Phase 2 (2026-05-25) — Lane A content gates.
+# Run lint_yaml.py + linkcheck.py --baseline only when the commit
+# touches content folders. Lane B (UX) commits skip these — they
+# don't add/remove [[wikilinks]] or YAML schemas.
+# ============================================================
+
+# Resolve Python binary (same trick as node above — covers macOS
+# where /usr/bin/python3 might not be the user's installed one).
+if ! command -v python3 >/dev/null 2>&1; then
+  PY_BIN="$(ls ~/.local/bin/python3 2>/dev/null || true)"
+  if [ -z "$PY_BIN" ]; then
+    # Quiet skip if python3 truly unavailable — don't break commits
+    # that legitimately don't need it (e.g. pure src/js/ Lane B).
+    PY_BIN=""
+  fi
+else
+  PY_BIN="python3"
+fi
+
+# Only run content gates if there are staged Lane A paths.
+if [ -n "$LANE_A" ] && [ -n "$PY_BIN" ]; then
+  # ---------- 4. linkcheck baseline gate ----------
+  # Refuses NEW dead [[wikilinks]] (regression vs the floor file).
+  # Existing 593 dead targets are tolerated; only new ones fail.
+  if ! "$PY_BIN" linkcheck.py --baseline >/tmp/codex-linkcheck-out 2>&1; then
+    echo "" >&2
+    echo "✗ pre-commit: WIRING LAW regression detected." >&2
+    cat /tmp/codex-linkcheck-out | sed 's/^/    /' >&2
+    echo "" >&2
+    echo "  See HOW-WE-WORK.md §5.4 (cardinal rule #4): every [[wikilink]]" >&2
+    echo "  must point to a real node before commit." >&2
+    echo "  Baseline file: AUDIT/dead-link-baseline.txt" >&2
+    exit 1
+  fi
+
+  # ---------- 5. lint_yaml strict gate ----------
+  # Refuses ERROR-level schema issues (malformed frontmatter,
+  # missing required field, unknown type). 29-type coverage.
+  if ! "$PY_BIN" lint_yaml.py --strict --quiet >/tmp/codex-lint-out 2>&1; then
+    echo "" >&2
+    echo "✗ pre-commit: YAML schema lint failed." >&2
+    cat /tmp/codex-lint-out | sed 's/^/    /' >&2
+    echo "" >&2
+    echo "  See 00_meta/lint-report.md for details." >&2
+    exit 1
+  fi
+
+  # ---------- 6. dup-ID gate (pre-commit; was post-commit) ----------
+  # Calls scripts/check_dup_ids.py — refuses if any staged .md
+  # collides with another node's id. ATLAS_ALLOW_DUP_ID escape
+  # hatch in build_data.py was deleted in TYRANT Phase 2.
+  DUP_OUT="$("$PY_BIN" scripts/check_dup_ids.py 2>&1)"
+  DUP_RC=$?
+  if [ "$DUP_RC" -ne 0 ]; then
+    echo "" >&2
+    echo "✗ pre-commit: duplicate slug-ID across vault nodes." >&2
+    printf '%s\n' "$DUP_OUT" | sed 's/^/    /' >&2
+    echo "" >&2
+    echo "  Two nodes with the same id silently overwrite each other in" >&2
+    echo "  data.js (the loser disappears from the graph). Rename one file" >&2
+    echo "  so the two have distinct slugs; link them via syncretic-edges" >&2
+    echo "  if they conceptually overlap." >&2
+    exit 1
   fi
 fi
 

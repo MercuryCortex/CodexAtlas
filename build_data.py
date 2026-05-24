@@ -1160,18 +1160,20 @@ def main():
                     # to disappear from the Pantheon ring (same-slug symbol/person files
                     # winning the build race). If two nodes really share a concept, give
                     # them distinct slugs with a -person/-symbol/-deity suffix and link
-                    # them via syncretic-edges. Set ATLAS_ALLOW_DUP_ID=1 to downgrade to
-                    # the previous warning behavior (only for emergency builds).
+                    # them via syncretic-edges.
+                    #
+                    # TYRANT remediation Phase 2 (2026-05-25), finding #5:
+                    # `ATLAS_ALLOW_DUP_ID=1` escape hatch DELETED. The pre-commit hook
+                    # (scripts/git-hooks/pre-commit step #6) is the canonical gate now.
+                    # If you reached THIS raise, the hook didn't run — likely a CI build
+                    # or a `--no-verify` bypass. In either case, fix the slug.
                     msg = (
                         f"  ✗ DUPLICATE ID  {node_id!r}\n"
                         f"      first claimed by: {id_sources[node_id]}\n"
                         f"      overwritten by:   {md.relative_to(VAULT)}\n"
                         f"      Fix: rename one file so the two nodes have distinct slugs."
                     )
-                    if os.environ.get("ATLAS_ALLOW_DUP_ID") == "1":
-                        print("  ⚠ " + msg[4:])
-                    else:
-                        raise SystemExit(msg)
+                    raise SystemExit(msg)
                 else:
                     id_sources[node_id] = str(md.relative_to(VAULT))
                     counts[ntype] += 1

@@ -37,14 +37,46 @@ from pathlib import Path
 VAULT = Path(__file__).parent
 META = VAULT / "00_meta"
 
+# TYRANT remediation Phase 2 (2026-05-25) — finding #3:
+# `lint_yaml.py` was validating only 7 of the 29 node types
+# build_data.py recognizes (22 types silently passed through).
+# Locked here as the single source of truth, mirrored from
+# build_data.py NODE_DIRS lines 21–62. If you add a type there,
+# add it here too.
 NODE_DIRS = {
-    "document":   "02_documents",
-    "deity":      "03_deities",
-    "person":     "04_persons",
-    "event":      "05_events",
-    "theme":      "06_themes",
-    "tradition":  "07_traditions",
-    "symbol":     "09_symbols",
+    # Original 16-lens spine (pre-2026-05-18).
+    "document":             "02_documents",
+    "deity":                "03_deities",
+    "person":               "04_persons",
+    "event":                "05_events",
+    "theme":                "06_themes",
+    "tradition":            "07_traditions",
+    "symbol":               "09_symbols",
+    "music":                "10_music",
+    "alphabet":             "11_alphabets",
+    "alchemy":              "12_alchemy",
+    "moral":                "13_morals",
+    "ritual":               "14_rituals",
+    "philosophy":           "15_philosophy",
+    "mathematics":          "16_mathematics",
+    "medicine":             "17_medicine",
+    # 10 lenses added 2026-05-18 (ontology lock pass 2).
+    "place":                "08_places",
+    "language":             "18_languages",
+    "astronomy":            "19_astronomy",
+    "sacred-site":          "20_sacred_architecture",
+    "doctrine":             "21_theology",
+    "practice":             "22_practices",
+    "relic":                "23_material_culture",
+    "substance":            "24_pharmacology",
+    "divination-system":    "25_divination",
+    "calendar-system":      "26_calendars",
+    # 3 lenses added 2026-05-19 (ontology lock pass 3).
+    "attire":               "27_attire",
+    "exchange-network":     "28_exchange_networks",
+    "technology":           "29_technology",
+    # Consciousness seed (2026-05-24).
+    "consciousness-figure": "31_consciousness/figures",
 }
 KNOWN_TYPES = set(NODE_DIRS.keys())
 
@@ -133,6 +165,8 @@ def main():
             stem = Path(md_path).stem
             if stem.startswith("_"):  # _TODO.md and similar
                 continue
+            if stem.upper() == "README":   # TYRANT Phase 2: lens README docs
+                continue                   # are documentation, not nodes
             all_stems.add(stem)
 
     # Read canonical-slugs.md for aliases (lines under "also seen as:")
@@ -157,6 +191,8 @@ def main():
             rel = os.path.relpath(md_path, VAULT)
             stem = Path(md_path).stem
             if stem.startswith("_"):
+                continue
+            if stem.upper() == "README":   # see first-pass note
                 continue
             try:
                 text = open(md_path, encoding="utf-8").read()
