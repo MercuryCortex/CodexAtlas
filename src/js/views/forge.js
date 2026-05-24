@@ -2213,10 +2213,8 @@
           // Phase 21AA (2026-05-22) — wheel default = NICE fit
           // (label-aware), not the pure geometric fit. Gizmo
           // displays ~85% post-click.
-          // Phase 22-K (2026-05-24) — timeline default = 25% gizmo
-          // (scan-the-whole-spine view, John's spec). Was hitting
-          // computeNiceFitScale which doesn't apply to anisotropic
-          // timeline extents.
+          // Phase 22-K → 22-N (2026-05-24) — timeline gizmo-click =
+          // 20% gizmo (scan-the-whole-spine view).
           let targetScale, targetCx = 0, targetCy = 0;
           if (local.layoutId === 'timeline'
               && local.mode && local.mode.xRange
@@ -2224,7 +2222,7 @@
               && window.AtlasEngineLayout.computeTimelineFitScale) {
             const tlFit = window.AtlasEngineLayout.computeTimelineFitScale(
               local.lastSize.w, local.mode.xRange);
-            targetScale = tlFit * 0.25;
+            targetScale = tlFit * 0.20;
           } else {
             targetScale = computeNiceFitScale();
           }
@@ -2441,13 +2439,12 @@
             // across relayouts (band-density slider, preset switch).
             camera.set(savedCamState);
           } else {
-            // Phase 22-K (2026-05-24) — default open zoom = 25% gizmo
-            // (was 20%). John: "25% + slider 2× is the comfortable
-            // widest view; make 2× = 1× default, and gizmo-click =
-            // 25% in timeline". Combined with the doubled band
-            // height defaults, opening at 25% with 1× slider now
-            // shows the same density-comfortable view he tuned to.
-            camera.set({ scale: tlFit * 0.25, centerX: tlCtr.x, centerY: tlCtr.y });
+            // Phase 22-K → 22-N (2026-05-24) — default open zoom = 20%
+            // gizmo (was 25%, before that 20%). Paired with the band-
+            // height ×1.3 multiplier below so the new 1× slider value
+            // produces what was previously 1.3× — the comfortable
+            // scan view at 20% camera zoom.
+            camera.set({ scale: tlFit * 0.20, centerX: tlCtr.x, centerY: tlCtr.y });
           }
         }
         // Phase 5B M-F1 (2026-05-20) — synchronously record the

@@ -79,9 +79,10 @@
   let mounted     = false;
 
   // localStorage key for persisting the band-density preference.
-  // Phase 22-K (2026-05-24) — v2 because base band heights
-  // doubled; old saved 2.0× would now mean 4× of the old default.
-  const LS_BAND_SCALE = 'codex_atlas_timeline_band_scale_v2';
+  // Phase 22-K → 22-N (2026-05-24) — v3 because base band heights
+  // got another ×1.3 multiplier. Old saved 1.3× = new 1.3× would
+  // compound to ~1.69× of new default → restart at 1×.
+  const LS_BAND_SCALE = 'codex_atlas_timeline_band_scale_v3';
 
   // ── BAND STYLE STATE (Phase 22-I, 2026-05-24) ────────────
   // Live-tunable via the STYLE panel's "Timeline bands" + "Family

@@ -66,17 +66,16 @@
   const X_PAD_FRAC    = 0.10;
   const TIME_AXIS_PAD = 40;          // extra top space for the time-axis ribbon
   const UNDATED_PAD   = 28;          // gap above + below the parking lane
-  // Phase 22-K (2026-05-24) — doubled defaults per John: "at 25%
-  // zoom with slider at 2.0× = the most comfortable widest view —
-  // make 2× the new 1× default". Doubling the constants means
-  // slider 1× now produces what was previously 2×. Old LS key
-  // invalidated below so existing users restart at the new 1×.
-  const UNDATED_BAND_H = 120;        // parking lane height (was 60)
+  // Phase 22-K → 22-N (2026-05-24) — band defaults ×1.3 from
+  // Phase 22-K's already-doubled values. John: "current 1.3× slider
+  // value = new 1× default". Net multiplier vs original Phase 7 =
+  // 2.6×. LS key bumped to *_v3 so the 1.3× saved value resets.
+  const UNDATED_BAND_H = 156;        // 120 × 1.3
 
   // Band height allocation per §1.2.
-  const MIN_BAND_H    = 56;          // small families don't compress below this (was 28)
-  const MAX_BAND_H    = 240;         // P1+P2 hybrid ceiling (§2.4) (was 120)
-  const BAND_H_BASE   = 15.0;        // tune so sqrt(280) * 15 ≈ 250 → clamped to MAX (was 7.5)
+  const MIN_BAND_H    = 73;          // 56 × 1.3
+  const MAX_BAND_H    = 312;         // 240 × 1.3
+  const BAND_H_BASE   = 19.5;        // 15 × 1.3 — sqrt(280) * 19.5 ≈ 326 → clamped to MAX
 
   // Sweep-line packer (§2.3).
   const ROW_PAD       = 8;           // top inset inside each band before first row
@@ -209,6 +208,37 @@
       },
       worldXToYear: function (worldX, ctx) {
         return ctx.midYear + worldX / X_SCALE;
+      },
+    },
+    'log-centered': {
+      id:    'log-centered',
+      label: 'Log · year-0 centered',
+      tagline: 'Symmetric log compression — BC/AD pivot at world center',
+      // Year 0 at world X=0. Both sides use log(|years_from_0|+1)
+      // mapped onto [0, halfSpine], with sign carrying direction.
+      // Round-trip is exact at year boundaries.
+      yearToWorldX: function (year, ctx) {
+        const xLo = ctx.xRange.lo, xHi = ctx.xRange.hi;
+        const y = Math.max(xLo, Math.min(xHi, year));
+        const halfWorld = ctx.xSpanWorld / 2;
+        const sign = y < 0 ? -1 : 1;
+        const dist = Math.abs(y);
+        const maxDist = Math.max(Math.abs(xLo), Math.abs(xHi));
+        if (maxDist <= 0) return 0;
+        const logMax = Math.log(maxDist + 1);
+        const t = Math.log(dist + 1) / logMax;             // 0..1
+        return sign * t * halfWorld;
+      },
+      worldXToYear: function (worldX, ctx) {
+        const halfWorld = ctx.xSpanWorld / 2;
+        if (halfWorld <= 0) return 0;
+        const sign = worldX < 0 ? -1 : 1;
+        const t = Math.min(1, Math.abs(worldX) / halfWorld);
+        const xLo = ctx.xRange.lo, xHi = ctx.xRange.hi;
+        const maxDist = Math.max(Math.abs(xLo), Math.abs(xHi));
+        const logMax = Math.log(maxDist + 1);
+        const dist = Math.exp(t * logMax) - 1;
+        return sign * dist;
       },
     },
     'log-recent': {
