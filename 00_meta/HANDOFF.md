@@ -1,7 +1,99 @@
-# Session HANDOFF — 2026-05-25 evening (TYRANT remediation in flight)
+# Session HANDOFF — 2026-05-25 LATE evening (fresh-agent pickup)
 
-> **⚠️ READ THIS BLOCK FIRST.** The next agent on the project picks up here.
-> Older handoff sections below (2026-05-18 onwards) are historical reference, kept for continuity. The state described in them is largely superseded by Phase 22 timeline work + the TYRANT audit + remediation now in flight.
+> **⚠️ READ THIS BLOCK FIRST.** The previous agent logged off after a long run (~10 commits this session). You are picking up clean.
+
+## What the previous agent did (10 commits)
+
+1. `9a38a4c` — TYRANT audit signed off + 7-phase remediation plan locked + LAW lens forward-note added to HOW-WE-WORK §6.
+2. `92a2660` — Safety net locked: pre-commit hook now runs `linkcheck.py --baseline` + `lint_yaml.py --strict` (29 types, was 7) + `scripts/check_dup_ids.py`. `ATLAS_ALLOW_DUP_ID=1` escape hatch deleted. Baseline floor captured at 593 dead targets.
+3. `5891820` — Scripture-reader DOGMA strike-2 violation cleaned (inline `margin-bottom:14px` moved to canonical `#sr-vault-jump` CSS rule).
+4. `48a1540` — HANDOFF rewritten + STATUS backfilled with Phase 22 + tyrant entries.
+5. `3676637` — **Wires regression FIXED** (Phase 22-AI). The `_hoverBoostActive` mirror flag from Phase 22-AH was desyncing from the renderer's actual palette via an asymmetric writer at `applyUxMode` (`forge.js:4905`). Diagnosed by parallel agent (`AUDIT/2026-05-25-wires-regression-trace.md`); fixed by deleting the throttle entirely + removing the redundant `applyUxMode` upload.
+6. `fb5dc70` — Pre-commit hook now emits a soft STATUS-nudge on Lane B commits. New `scripts/dashboard_audit_summary.py` scans AUDIT/ for `- [ ]` items and embeds a count into DASHBOARD.md between named markers.
+7. `55bb3a4` — STATUS entry honoring the new nudge.
+8. `a6a7a8c` — Phase 3 Wave 0: 24 placeholder-wikilink occurrences (`[[wikilink]]` etc) drained across 11 docs by converting `[[…]]` → `[…]` (linkcheck doesn't respect backtick context). Baseline shrunk 593 → 588. Plus one slug-fix in `AUDIT/forge-deity-spine-findings-2026-05-21.md`.
+9. `ca2a834` — STATUS entry for Wave 0 + autonomous-run pause note.
+
+## What's locked in code (DO NOT REGRESS)
+
+Per John 2026-05-25 "preserve all work":
+- Calendar registry (11 calendars + tooltips + per-calendar epochs)
+- Bottom-bar canonical-class architecture (`.forge-fxpanel-btn`)
+- Two-tier timeline pivot (Greg-0 + epoch secondary)
+- Vertical density slider + LOCK toggle
+- DATE IN / DATE OUT / FOCUS group + `_forge.focusTimelineRange()`
+- dating_basis B1–B7 framework
+- Side-panel ellipsis + cross-folder click popup + hideTip-on-render
+- All 29 lenses recognized end-to-end
+- All baked STYLE-panel defaults
+- The SEVERITY DOGMA (HOW-WE-WORK §5.7)
+- The new pre-commit safety net (6 gates + 1 nudge)
+
+## What's open and waiting for you (in priority order)
+
+### A. The Quran stubs — DO THESE (correction note from the prior agent)
+
+The prior agent overcorrected — claimed Wave 1 stubs "needed scholarly judgment I can't supply." Reality: the Wave 1 list is **well-documented canonical texts** with widely-cited Tier-1 facts. Minimal stubs are safe.
+
+Wave 1 stubs to write (~9 nodes, 4-ref+ targets each — biggest baseline reduction per node):
+
+| Slug | Lens | Quick facts (verifiable) |
+|---|---|---|
+| `phase-4-040-quran` | `02_documents/_phase-4-late-antiquity/` | 610–632 CE revelation; ~650 CE Uthmanic compilation; B1 dating |
+| `muhammad` | `04_persons/` | ~570–632 CE; Hijra 622 CE; B1 |
+| `ra-egyptian` | `03_deities/` | Old Kingdom onwards (~2400 BCE attested); SLUG ALIAS issue — there's already `ra-re.md`; likely the right move is alias `ra-egyptian` → `ra-re`, not new stub |
+| `phase-8-002-popol-vuh` | `02_documents/_phase-8-non-western-traditional/` | Compiled ~1554–1558 CE Quiché Maya; **slug-fix path** — already exists as `phase-8-001-popol-vuh.md` |
+| `phase-8-004-florentine-codex-sahagun` (slug-fix only) | already exists | `[[phase-6-002-florentine-codex]]` refs need rewriting |
+| `sheikh-farid` | `04_persons/` | 1173–1266 CE; Punjabi Sufi; canonical in Sikh scripture |
+| `guru-arjan-dev-ji` | `04_persons/` | 1563–1606 CE; compiled Adi Granth |
+| `ammit-devourer` | `03_deities/` | Old Kingdom Egyptian; weighing-of-heart judgment figure |
+| `tradition-afro-diasporic` | `07_traditions/` | umbrella node — Vodou/Santería/Candomblé/Yoruba-Ifa/Rastafari |
+
+Each stub needs YAML frontmatter (`id:`, `type:`, `title:`, `date_earliest:`, `dating_basis: B1`, plus a `refs:` field with one Tier-1 source per HOW-WE-WORK + CODEX §IV). New pre-commit hook will gate these — they need to pass `lint_yaml.py --strict` AND not introduce new dead wikilinks. The baseline diff will SHRINK by ~30 dead-link occurrences once these land.
+
+Workflow per stub:
+1. Create the file in the correct lens folder.
+2. Write minimal YAML frontmatter (8-10 lines).
+3. Write a short body paragraph (3-5 sentences of verifiable facts).
+4. Commit (the hook will refuse if any new `[[wikilink]]` in the body is dead — keep body wikilink-light, or stub any new target slugs you need).
+5. After all 9: `python3 linkcheck.py --write-baseline` to update the floor.
+
+### B. Phase 4 BIG DECISION (REQUIRES JOHN'S CALL — DO NOT DECIDE ALONE)
+
+Three options laid out in `AUDIT/2026-05-25-tyrant-remediation-plan.md` §Phase 4:
+- (A) Resume Phase 6 layered Forge rebuild (`forge.js` 8577 LOC → `src/js/forge/{node,behaviors,wires,fx,management}.js`)
+- (B) Formalize Phase 22 timeline as the active mandate, close the layered-rebuild spec
+- (C) Hybrid: close Phase 6 spec now, queue layered rebuild as a future named phase
+
+The prior agent's honest read was **option C**. John has NOT signed off — ask before doing anything.
+
+### C. Phase 7 `06_themes/` → `06_motifs/` rename
+
+Atomic batch — touches the folder, every `type: theme` → `type: motif`, `build_data.py:28`, `lint_yaml.py` NODE_DIRS, dropdown labels in `forge.js`, `CORE-THEMES.md` → `CORE-MOTIFS.md`. **WARN John before starting** — bigger blast radius than the safety-net work.
+
+### D. LAW / Judiciary lens — schedule after Phase 4
+
+Forward-noted in HOW-WE-WORK §6: `30_law/` folder, ingest from Hammurabi → UDHR. New rationale doc dated when it ships.
+
+### Why the prior agent logged off
+
+After 10 commits the dogma-incident anxiety was making decisions over-careful — exactly the failure mode where a small factual drift in a content stub would slip through unnoticed. John (correctly) offered the fresh-agent option. Taking it is the disciplined call.
+
+## On-ramp
+
+1. Read this block (you're done).
+2. Read `AUDIT/2026-05-25-tyrant-audit-findings.md` (16 findings, signed).
+3. Read `AUDIT/2026-05-25-tyrant-remediation-plan.md` (7-phase plan).
+4. Read `AUDIT/2026-05-25-wires-regression-trace.md` (recent diagnostic — gives a feel for how the codebase wires together).
+5. Confirm-on-cast to John before doing anything (per HOW-WE-WORK §3).
+
+## Cache-bust string
+
+Last shipped: `p22ai` in `index.html` (Phase 22-AI wires fix). Bump on next Lane B change.
+
+---
+
+Older handoff sections below are historical reference, superseded by the work above.
 
 ## What's happening RIGHT NOW (2026-05-25)
 
