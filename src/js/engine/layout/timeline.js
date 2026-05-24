@@ -112,6 +112,19 @@
     }
     return (h >>> 0) / 0xFFFFFFFF;
   }
+  // Phase B-DATING-3 (2026-05-24) — SECOND hash for X-jiggle.
+  // The cluster code sorts by hash AND uses hash for Y index ←
+  // if it ALSO uses the same hash for X offset, the result is
+  // a monotonic diagonal (cluster slants down-right). Use a
+  // salted hash so X jiggle decorrelates from Y position.
+  function _idJiggleHash01(id) {
+    let h = 2166136261;
+    for (let i = 0; i < id.length; i++) {
+      h ^= id.charCodeAt(i) + 13;     // salt
+      h = Math.imul(h, 16777619);
+    }
+    return (h >>> 0) / 0xFFFFFFFF;
+  }
 
   // Sanity clamps for the date range. The SPINE always spans
   // [TIMELINE_FLOOR_BCE, currentYear] — independent of what dates
@@ -378,14 +391,25 @@
     }
 
     // 1. Group by family + partition undated.
+    // Phase B-DATING-3 (2026-05-24) — B7 nodes (genuinely atemporal
+    // residue per the dating_basis framework) are NOT shown in the
+    // timeline. John's epistemology: "everything has a first-mention
+    // date, we just haven't researched it yet." B7 is a staging
+    // state, not a permanent home. The undated lane is GONE; B7
+    // nodes are skipped entirely.
     const byFamily = Object.create(null);   // family → array of nodes
     const allDated = [];
     for (const n of modeNodes) {
       if (!n || !n.id) continue;
+      // Skip B7 entirely — they pollute the timeline visually.
+      // They'll be rescued by the data-sweep goblin / content batches.
+      if (n.dating_basis === 'B7') continue;
       const d = effectiveDate(n);
       if (d == null) {
-        if (parkUndated) undated.ids.push(n.id);
-        // else: skip silently — caller asked to ignore undated
+        // Anything still undated AT THIS POINT (no date_earliest,
+        // no B7 marker) is treated as truly skip-from-timeline.
+        // Build pipeline marks everything B7 if it has no date, so
+        // this branch should be essentially empty.
         continue;
       }
       const f = familyOf(n);
@@ -504,12 +528,16 @@
       const bandMidY = (band.y0 + band.y1) / 2;
       const bandInnerHalf = Math.max(1, band.height / 2 - ROW_PAD);
 
-      // (a) base X per member.
+      // (a) base X per member. Two hashes per node: one for SORT
+      // ORDER inside the cluster (deterministic), a DIFFERENT one
+      // for X-jiggle (so X and Y don't correlate — Phase B-DATING-3
+      // fix for the monotonic-diagonal drift bug).
       const items = byFamily[fam].map(function (m) {
         return {
           id:    m.id,
           baseX: preset.yearToWorldX(effectiveDate(m), ctx),
-          hash:  _idHash01(m.id),
+          hash:  _idHash01(m.id),         // for sort order
+          jhash: _idJiggleHash01(m.id),   // for X jiggle (decorrelated)
         };
       });
       // Sort by X ascending; id tiebreak for stability.
@@ -560,10 +588,12 @@
             const m = sorted[i];
             const k = i - (n - 1) / 2;          // -(n-1)/2 .. +(n-1)/2
             const y = bandMidY + k * spacing;
-            // Tiny X jiggle per node (hash-based so deterministic).
-            // ±SMALL_X_JIGGLE_WU is small enough to keep year
-            // accuracy but enough to break the vertical line look.
-            const xOff = (m.hash - 0.5) * 2 * SMALL_X_JIGGLE_WU;
+            // Phase B-DATING-3 (2026-05-24) — use the DECORRELATED
+            // jiggle-hash (not m.hash, which is the sort-order hash).
+            // m.hash sorted ascending → using it for X jiggle made the
+            // cluster slant diagonal (lowest hash at top + smallest
+            // X offset, highest at bottom + largest X offset).
+            const xOff = (m.jhash - 0.5) * 2 * SMALL_X_JIGGLE_WU;
             positions.set(m.id, { x: m.baseX + xOff, y: y });
           }
         } else {
@@ -586,36 +616,13 @@
       }
     }
 
-    // 6. Undated parking lane (visually distinct band at the bottom).
-    // Phase TL-2 Step 7b — also scaled by _bandHeightScale so the
-    // whole vertical stack compresses/expands as one.
-    let worldBottom = bandStackBottom;
-    if (parkUndated && undated.ids.length) {
-      const laneY0 = bandStackBottom + UNDATED_PAD;
-      const laneY1 = laneY0 + UNDATED_BAND_H * bandScale;
-      undated.y0 = laneY0;
-      undated.y1 = laneY1;
-      // Spread the undated dots evenly across the SPINE — origin-
-      // centered, so x ranges from -halfSpine to +halfSpine.
-      // Phase TL-2 Step 7d — light hash variation on Y row + X
-      // micro-offset; vertically centered in the lane.
-      const N = undated.ids.length;
-      const sortedIds = undated.ids.slice().sort();
-      const laneMidY = (laneY0 + laneY1) / 2;
-      const laneStackH = 4 * 8;                // 5 rows * 8 step = 40
-      const laneTop = laneMidY - laneStackH / 2;
-      for (let i = 0; i < N; i++) {
-        const t   = (i + 0.5) / N;
-        const id  = sortedIds[i];
-        const h01 = _idHash01(id);
-        const xOff = (h01 - 0.5) * 2 * 3.0;    // ±3 wu micro-offset
-        const x   = (t - 0.5) * xSpanWorld + xOff;
-        const row = i % 5;
-        const y   = laneTop + row * 8;
-        positions.set(id, { x, y });
-      }
-      worldBottom = laneY1 + UNDATED_PAD;
-    }
+    // 6. Phase B-DATING-3 (2026-05-24) — Undated lane GONE.
+    // B7 nodes are now skipped entirely at the top of this function
+    // (John 2026-05-24: "intemporal nodes CANT be in a band spread
+    // across the timeline. it ruins the hulls. EVERYTHING has a
+    // date of first mentioned or found"). The `undated` return
+    // field stays in the contract (empty) so consumers don't break.
+    const worldBottom = bandStackBottom;
 
     // Phase TL-2 Step 6 — Y-CENTER the world. The layout above
     // built everything in [0, worldBottom]; shift it UP by

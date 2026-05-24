@@ -1060,45 +1060,11 @@
       }
     }
 
-    // Undated parking lane — distinct treatment: dimmer fill, no
-    // border, italic-ish label ("undated") to mark it as the catch-all.
-    if (undated && (undated.y1 - undated.y0) > 0 && undated.ids && undated.ids.length) {
-      const yTopU = camera.worldToScreen(0, undated.y0, vp).y;
-      const yBotU = camera.worldToScreen(0, undated.y1, vp).y;
-      if (!(yBotU < -40 || yTopU > vp.h + 40)) {
-        const rectU = document.createElementNS(NS, 'rect');
-        rectU.setAttribute('x',      bandX0);
-        rectU.setAttribute('y',      yTopU);
-        rectU.setAttribute('width',  bandWidth);
-        rectU.setAttribute('height', Math.max(0, yBotU - yTopU));
-        rectU.setAttribute('fill',           'rgba(140, 140, 150, 0.06)');
-        rectU.setAttribute('stroke',         'rgba(140, 140, 150, 0.18)');
-        rectU.setAttribute('stroke-width',   '1');
-        rectU.setAttribute('stroke-dasharray', '3 4');
-        bandGroupEl.appendChild(rectU);
-
-        const yCenterU = (yTopU + yBotU) / 2;
-        if (yCenterU >= 0 && yCenterU <= vp.h) {
-          const lblU = document.createElementNS(NS, 'text');
-          lblU.setAttribute('x', 12);
-          lblU.setAttribute('y', yCenterU + 4);
-          lblU.setAttribute('text-anchor', 'start');
-          lblU.setAttribute('class', 'forge-timeline-band-label is-undated');
-          lblU.style.fill          = 'rgba(160, 160, 170, 0.65)';
-          lblU.style.fontFamily    = 'var(--mono, "JetBrains Mono", Menlo, monospace)';
-          lblU.style.fontSize      = '10px';
-          lblU.style.fontWeight    = '500';
-          lblU.style.letterSpacing = '0.14em';
-          lblU.style.textTransform = 'uppercase';
-          // Phase B-DATING-1 (2026-05-24) — relabel the lane.
-          // What was "undated" is now formally B7 "atemporal" —
-          // genuinely without a placeable year. See AUDIT/
-          // 2026-05-24-undated-dating-proposal.md.
-          lblU.textContent = 'atemporal · ' + undated.ids.length;
-          bandLabelGroupEl.appendChild(lblU);
-        }
-      }
-    }
+    // Phase B-DATING-3 (2026-05-24) — Atemporal lane GONE.
+    // John: "intemporal nodes CANT be in a band spread out in a
+    // timeline. it ruins the hulls. EVERYTHING has a date of
+    // first mentioned or found." B7 nodes are skipped at layout
+    // time; nothing to render here.
 
     // Compute tick cadence from the VISIBLE year span (not the full
     // dataset). At deep zoom, the visible span shrinks → finer ticks.
