@@ -303,6 +303,10 @@
     if (densityEl && typeof densityEl._cleanup === 'function') {
       try { densityEl._cleanup(); } catch (_) {}
     }
+    // Phase 22-L (2026-05-24) — restore the wheel's hull-polys
+    // opacity ownership on unmount.
+    const hullPolysEl = document.getElementById('forge-hull-polys');
+    if (hullPolysEl) hullPolysEl.style.opacity = '';
     if (svgRoot && svgRoot.parentNode) svgRoot.parentNode.removeChild(svgRoot);
     if (pickerEl && pickerEl.parentNode) pickerEl.parentNode.removeChild(pickerEl);
     if (densityEl && densityEl.parentNode) densityEl.parentNode.removeChild(densityEl);
@@ -858,6 +862,15 @@
     } catch (_) {}
     bandGroupEl.style.opacity      = String(zoomFade);
     bandLabelGroupEl.style.opacity = String(zoomFade);
+    // Phase 22-L (2026-05-24) — also fade the wheel's hull SVG
+    // in lockstep when timeline is active. John: the hulls in
+    // timeline should disappear at the same speed as the bands.
+    // The hull element belongs to forge's SVG overlay (#forge-
+    // hull-polys); we override its opacity from here while
+    // chrome is mounted, and restore it on unmount so the wheel
+    // resumes ownership of its own fade curve.
+    const hullPolysEl = document.getElementById('forge-hull-polys');
+    if (hullPolysEl) hullPolysEl.style.opacity = String(zoomFade);
 
     // Per-band fade gradient — used by both fill + stroke so the
     // L/R taper is matched on both. Edges 0% opacity, middle 100%.
