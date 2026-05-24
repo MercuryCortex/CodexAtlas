@@ -76,6 +76,7 @@
   let densityInput = null;    // <input range> inside the densityEl wrapper
   let densityValEl = null;    // <span> shows the current scale (e.g. "1.0×")
   let densityRafId = 0;       // rAF coalesce for relayout on slider drag
+  let scaleSwitchEl = null;   // <div> LIN/LOG quick-toggle (TradingView-style)
   let mounted     = false;
 
   // localStorage key for persisting the band-density preference.
@@ -181,6 +182,9 @@
       // case something else (not the user) mutated them. SKIP
       // input-value sync while the user is actively dragging.
       try { refreshPickerLabel(); } catch (_) {}
+      if (scaleSwitchEl && typeof scaleSwitchEl._render === 'function') {
+        try { scaleSwitchEl._render(); } catch (_) {}
+      }
       if (densityInput && !densityInput._isDragging) {
         const ENG = window.AtlasEngineLayout || {};
         if (typeof ENG.getTimelineBandHeightScale === 'function') {
@@ -303,6 +307,12 @@
     // family). Drag DOWN = compress (more families on screen).
     buildBandDensitySlider();
 
+    // Phase 22-O (2026-05-24) — TradingView-style LIN / LOG quick
+    // toggle. Most-used scale switch. The full preset dropdown
+    // (Linear · Log-centered · Log-recent · Compressed) stays in
+    // the chip for advanced cases.
+    buildScaleQuickSwitch();
+
     // Hook into camera so we redraw on every pan/zoom. Forge's camera
     // exposes onChange (camera.js line ~? — same hook the BG image
     // uses to follow zoom).
@@ -329,10 +339,12 @@
     if (svgRoot && svgRoot.parentNode) svgRoot.parentNode.removeChild(svgRoot);
     if (pickerEl && pickerEl.parentNode) pickerEl.parentNode.removeChild(pickerEl);
     if (densityEl && densityEl.parentNode) densityEl.parentNode.removeChild(densityEl);
+    if (scaleSwitchEl && scaleSwitchEl.parentNode) scaleSwitchEl.parentNode.removeChild(scaleSwitchEl);
     svgRoot = null; axisLineEl = null; tickGroupEl = null; gridGroupEl = null;
     bandGroupEl = null; bandLabelGroupEl = null;
     pickerEl = null; pickerMenuEl = null;
     densityEl = null; densityInput = null; densityValEl = null;
+    scaleSwitchEl = null;
     hostEl = null; camera = null; mode = null; xRange = null;
     mounted = false;
   }
@@ -526,12 +538,93 @@
     closePickerMenu();
     if (!changed) return;
     refreshPickerLabel();
+    // Phase 22-O — also re-render the LIN/LOG quick switch so the
+    // segments stay in sync with the chip's choice.
+    if (scaleSwitchEl && typeof scaleSwitchEl._render === 'function') {
+      try { scaleSwitchEl._render(); } catch (_) {}
+    }
     // Force a re-layout — preset state is read at layout time. The
     // _forge.relayout() helper exists for exactly this case (Phase
     // TL-2 Step 6b).
     if (window._forge && typeof window._forge.relayout === 'function') {
       window._forge.relayout();
     }
+  }
+
+  // ── SCALE QUICK SWITCH (Phase 22-O, 2026-05-24) ──────────
+  // TradingView-style LIN / LOG segmented button. Sits to the
+  // LEFT of the dev preset chip — most visible spot for the
+  // most common scale switch. The chip stays available for the
+  // niche presets (compressed-civilization, future calendars).
+  // LOG button maps to 'log-centered' (year 0 at world middle).
+  function buildScaleQuickSwitch() {
+    if (!hostEl) return;
+    const ENG = window.AtlasEngineLayout || {};
+    if (typeof ENG.setTimelineScalePreset !== 'function') return;
+
+    scaleSwitchEl = document.createElement('div');
+    scaleSwitchEl.className = 'forge-timeline-scale-switch';
+    Object.assign(scaleSwitchEl.style, {
+      position:      'absolute',
+      right:         '195px',         // chip is at right:14 (~150 wide) + gap
+      bottom:        '14px',
+      display:       'inline-flex',
+      alignItems:    'stretch',
+      height:        '24px',
+      background:    'rgba(13, 17, 25, 0.85)',
+      border:        '1px solid var(--border, #2a2e3a)',
+      borderRadius:  '4px',
+      overflow:      'hidden',
+      fontFamily:    'var(--mono, "JetBrains Mono", Menlo, monospace)',
+      fontSize:      '11px',
+      letterSpacing: '0.10em',
+      zIndex:        '6',
+      pointerEvents: 'auto',
+      cursor:        'pointer',
+      userSelect:    'none',
+    });
+
+    const SEGMENTS = [
+      { id: 'linear-default', label: 'LIN' },
+      { id: 'log-centered',   label: 'LOG' },
+    ];
+    function renderSegments() {
+      scaleSwitchEl.innerHTML = '';
+      const activeId = ENG.getTimelineScalePresetId ? ENG.getTimelineScalePresetId() : 'linear-default';
+      SEGMENTS.forEach(function (seg, i) {
+        const b = document.createElement('button');
+        b.type = 'button';
+        b.textContent = seg.label;
+        b.setAttribute('data-preset', seg.id);
+        const isActive = (seg.id === activeId);
+        Object.assign(b.style, {
+          padding:      '0 12px',
+          background:   isActive ? 'rgba(212, 165, 90, 0.18)' : 'transparent',
+          color:        isActive ? 'var(--gold-1, #e8c889)' : 'var(--gold, #d4a55a)',
+          border:       'none',
+          borderRight:  (i < SEGMENTS.length - 1) ? '1px solid var(--border, #2a2e3a)' : 'none',
+          cursor:       'pointer',
+          fontFamily:   'inherit',
+          fontSize:     'inherit',
+          letterSpacing:'inherit',
+          fontWeight:   isActive ? '600' : '500',
+        });
+        b.addEventListener('click', function () {
+          if (typeof ENG.setTimelineScalePreset !== 'function') return;
+          const changed = ENG.setTimelineScalePreset(seg.id);
+          renderSegments();
+          // Refresh the chip label too so they stay in sync.
+          try { refreshPickerLabel(); } catch (_) {}
+          if (changed && window._forge && typeof window._forge.relayout === 'function') {
+            window._forge.relayout();
+          }
+        });
+        scaleSwitchEl.appendChild(b);
+      });
+    }
+    renderSegments();
+    scaleSwitchEl._render = renderSegments;
+    hostEl.appendChild(scaleSwitchEl);
   }
 
   // ── BAND DENSITY SLIDER (Phase TL-2 Step 7b, 2026-05-24) ─
