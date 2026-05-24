@@ -3942,21 +3942,7 @@
       // they meet at the threshold).
       const imgAspect    = bgImage._bgAspect || (4 / 3);
       const worldWidthPx = BG_WORLD_WIDTH * camera.state.scale;
-      // Phase 22-Q (2026-05-24) — BG cover-floor multiplier. In
-      // the WHEEL at gizmo 100% (default fit), BG renders at
-      // ~9800 px wide on a 1440 viewport — huge generous halo
-      // around the small wheel data (~2200 wu). In TIMELINE at
-      // gizmo 100% the camera scale is much smaller (because
-      // timeline's fit_scale is ~2× the wheel's), so BG ends up
-      // half the size visually. At the zoom floor (10%), both
-      // collapse toward the cover floor.
-      // Fix: cover floor is 1.6× viewport-cover instead of 1× —
-      // gives a consistent visual halo around data regardless of
-      // layout. Specifically targets timeline at 10%, where John
-      // saw "dramatically cropped" because the floor was kissing
-      // the viewport edge with zero margin.
-      const COVER_FLOOR_MULT = 1.6;
-      const coverWidthPx = Math.max(vp.w, vp.h * imgAspect) * COVER_FLOOR_MULT;
+      const coverWidthPx = Math.max(vp.w, vp.h * imgAspect);
       const widthPx      = Math.max(worldWidthPx, coverWidthPx);
       const heightPx     = widthPx / imgAspect;
       // World (0, 0) → canvas-screen → viewport-screen.
