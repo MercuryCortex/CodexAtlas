@@ -78,16 +78,28 @@
   const ROW_STEP      = 10;          // vertical gap between row centers
   const MIN_X_SPACING = 14;          // 2 * NODE_RADIUS + pad — minimum X gap before a row "frees"
 
-  // Phase TL-2 Step 7c (2026-05-24) — organic packing jitter.
-  // Hash-based, so a given node id ALWAYS gets the same offset:
-  // locks survive reload, scrubber doesn't shimmer, pan/zoom is
-  // stable. The amounts are world-units; they break dead-straight
-  // rows + same-date pile-ups without scrambling the chronology.
-  //   X_JITTER_WU = ±5 world units  ≈ ±10 yr at X_SCALE=0.5
-  //   Y_JITTER_WU = ±1.5 world units (small wave around row line)
-  const X_JITTER_WU = 5.0;
-  const Y_JITTER_WU = 1.5;
-  // FNV-1a 32-bit hash → [-0.5, 0.5]. Deterministic, well-spread.
+  // Phase TL-2 Step 7d (2026-05-24) — CLUSTER-AWARE distribution.
+  // Per John 2026-05-24: random jitter "makes it faker"; we want
+  // either 100% real chronology OR an organic pattern that's
+  // band-aware + node-aware.
+  // Rules:
+  //   - 1 node in a cluster        → placed at band centerline
+  //   - 2..SMALL_CLUSTER_MAX nodes → evenly spaced vertically,
+  //                                   symmetric around centerline
+  //                                   (3 nodes → bandH divided in 4,
+  //                                    nodes at 1/4, 2/4, 3/4)
+  //   - more                        → phyllotaxis sunflower around
+  //                                   centerline (Y-dominant, X
+  //                                   dampened so chronology stays
+  //                                   readable)
+  // A cluster = adjacent nodes (by X) within CLUSTER_X_RADIUS of
+  // each other. Determinism comes from an id-hash sort, not random
+  // offsets — same node id always lands at the same slot.
+  const CLUSTER_X_RADIUS    = 21;     // world units — ~MIN_X_SPACING * 1.5
+  const SMALL_CLUSTER_MAX   = 7;      // ≤7 → even spread; >7 → sunflower
+  const SMALL_X_JIGGLE_WU   = 3.5;    // tiny X variation within small clusters
+  const GOLDEN_ANGLE        = 2.3999632297286535;
+  // FNV-1a 32-bit hash → [0, 1). Deterministic per id.
   function _idHash01(id) {
     let h = 2166136261;
     for (let i = 0; i < id.length; i++) {
@@ -95,18 +107,6 @@
       h = Math.imul(h, 16777619);
     }
     return (h >>> 0) / 0xFFFFFFFF;
-  }
-  function _idJitterX(id) { return (_idHash01(id) - 0.5) * 2 * X_JITTER_WU; }
-  // Use a different bit slice of the hash for Y so X + Y aren't
-  // correlated — otherwise nodes with negative X jitter would all
-  // bias the same way in Y, producing diagonal artifacts.
-  function _idJitterY(id) {
-    let h = 2166136261;
-    for (let i = 0; i < id.length; i++) {
-      h ^= id.charCodeAt(i) + 7;          // salt
-      h = Math.imul(h, 16777619);
-    }
-    return (((h >>> 0) / 0xFFFFFFFF) - 0.5) * 2 * Y_JITTER_WU;
   }
 
   // Sanity clamps for the date range. The SPINE always spans
@@ -421,71 +421,109 @@
     }
     const bandStackBottom = yCursor;
 
-    // 5. Place dots inside each band via the sweep-line rowed packer.
-    //    Phase TL-2 Step 7c (2026-05-24) — organic distribution:
-    //      (a) hash-based X + Y jitter breaks same-date vertical
-    //          columns (deterministic per id → locks stay stable)
-    //      (b) packer + sort use jittered X so left-to-right
-    //          invariant holds
-    //      (c) the row stack is CENTERED vertically in the band so
-    //          sparse bands don't look top-heavy
+    // 5. Place dots inside each band — CLUSTER-AWARE distribution
+    //    (Phase TL-2 Step 7d, 2026-05-24).
+    //    Algorithm per band:
+    //      a) compute each member's base world-X via the active preset
+    //      b) sort by X, then GROUP adjacent members within
+    //         CLUSTER_X_RADIUS into clusters
+    //      c) for each cluster, place:
+    //           1 node       → band centerline
+    //           2..7 nodes   → evenly spaced vertically, symmetric
+    //                          around centerline; tiny X jiggle so
+    //                          the cluster doesn't form a perfect
+    //                          vertical line when MIN_X_SPACING
+    //                          exceeds the cluster's natural width
+    //           >7 nodes     → phyllotaxis sunflower (Y-dominant,
+    //                          X dampened) so chronology stays
+    //                          readable while the cluster packs
+    //                          densely + organically
+    //    Determinism: cluster member order = id-hash ascending, so
+    //    "anchor" + spiral indexing is stable across reloads.
     for (const fam of orderedFamilies) {
       const band = bands[fam];
-      // Pre-compute each member's jittered X. Then sort by it
-      // (with id tiebreak for determinism). The packer's "rows[r]
-      // = rightmost X placed" invariant only works if we process
-      // nodes in left-to-right order over the SAME X they'll
-      // ultimately render at.
+      const bandMidY = (band.y0 + band.y1) / 2;
+      const bandInnerHalf = Math.max(1, band.height / 2 - ROW_PAD);
+
+      // (a) base X per member.
       const items = byFamily[fam].map(function (m) {
-        const baseX = preset.yearToWorldX(effectiveDate(m), ctx);
         return {
-          id:     m.id,
-          jx:     baseX + _idJitterX(m.id),
-          yJit:   _idJitterY(m.id),
+          id:    m.id,
+          baseX: preset.yearToWorldX(effectiveDate(m), ctx),
+          hash:  _idHash01(m.id),
         };
       });
+      // Sort by X ascending; id tiebreak for stability.
       items.sort(function (a, b) {
-        if (a.jx !== b.jx) return a.jx - b.jx;
+        if (a.baseX !== b.baseX) return a.baseX - b.baseX;
         return (a.id < b.id) ? -1 : (a.id > b.id ? 1 : 0);
       });
 
-      // rows[r] = rightmost (jittered) X coordinate placed in row r.
-      const rows = [];
-      const localPlacements = [];   // [{ id, x, rowIndex, yJit }]
+      // (b) build clusters by walking left-to-right.
+      const clusters = [];
       for (const it of items) {
-        let placedRow = -1;
-        for (let r = 0; r < rows.length; r++) {
-          if (it.jx - rows[r] >= MIN_X_SPACING) {
-            rows[r] = it.jx;
-            placedRow = r;
-            break;
-          }
+        const last = clusters.length ? clusters[clusters.length - 1] : null;
+        if (last && (it.baseX - last.maxX) <= CLUSTER_X_RADIUS) {
+          last.members.push(it);
+          last.maxX = it.baseX;
+        } else {
+          clusters.push({ members: [it], maxX: it.baseX });
         }
-        if (placedRow === -1) {
-          rows.push(it.jx);
-          placedRow = rows.length - 1;
-        }
-        localPlacements.push({ id: it.id, x: it.jx, rowIndex: placedRow, yJit: it.yJit });
       }
 
-      // Map rowIndex → Y. Compress ROW_STEP if natural row count
-      // would overflow band height (P1 fallback §2.4).
-      const usableH = band.height - 2 * ROW_PAD;
-      const naturalH = Math.max(1, rows.length) * ROW_STEP;
-      const rowStep = (naturalH > usableH && rows.length > 1)
-        ? Math.max(2, usableH / (rows.length - 1))
-        : ROW_STEP;
+      // (c) place each cluster.
+      for (const c of clusters) {
+        const n = c.members.length;
+        if (n === 1) {
+          const m = c.members[0];
+          positions.set(m.id, { x: m.baseX, y: bandMidY });
+          continue;
+        }
 
-      // Phase TL-2 Step 7c — vertical center the row stack within
-      // the band so sparse bands float in the middle instead of
-      // jamming to the top.
-      const stackH    = Math.max(0, (rows.length - 1) * rowStep);
-      const bandMidY  = (band.y0 + band.y1) / 2;
-      const stackTop  = bandMidY - stackH / 2;
+        // Stable hash sort so anchor/spiral index doesn't shuffle
+        // across reloads (otherwise locks would drift).
+        const sorted = c.members.slice().sort(function (a, b) {
+          if (a.hash !== b.hash) return a.hash - b.hash;
+          return (a.id < b.id) ? -1 : 1;
+        });
 
-      for (const p of localPlacements) {
-        const y = stackTop + p.rowIndex * rowStep + p.yJit;
-        positions.set(p.id, { x: p.x, y: y });
+        if (n <= SMALL_CLUSTER_MAX) {
+          // Even vertical spread, symmetric around bandMidY.
+          // n=2 → -spacing/2, +spacing/2 (or equivalently k=±0.5)
+          // n=3 → -spacing, 0, +spacing
+          // n=4 → -1.5sp, -0.5sp, +0.5sp, +1.5sp
+          // ...
+          // Spacing chosen so the OUTERMOST node sits at 90% of
+          // band-inner-half (10% headroom inside ROW_PAD).
+          const outerExtent = bandInnerHalf * 0.90;
+          const spacing = (n === 1) ? 0 : (2 * outerExtent) / (n - 1);
+          for (let i = 0; i < n; i++) {
+            const m = sorted[i];
+            const k = i - (n - 1) / 2;          // -(n-1)/2 .. +(n-1)/2
+            const y = bandMidY + k * spacing;
+            // Tiny X jiggle per node (hash-based so deterministic).
+            // ±SMALL_X_JIGGLE_WU is small enough to keep year
+            // accuracy but enough to break the vertical line look.
+            const xOff = (m.hash - 0.5) * 2 * SMALL_X_JIGGLE_WU;
+            positions.set(m.id, { x: m.baseX + xOff, y: y });
+          }
+        } else {
+          // Phyllotaxis sunflower around band center. Y-dominant,
+          // X dampened (0.4 ratio) so the cluster mostly grows
+          // vertically and stays close to its chronological X.
+          // Radius scaled so the LAST node (i=n-1) fits inside the
+          // band-inner-half on Y.
+          const yRadiusCap = bandInnerHalf * 0.95;
+          const radiusBase = yRadiusCap / Math.sqrt(n - 1);
+          for (let i = 0; i < n; i++) {
+            const m = sorted[i];
+            const r = radiusBase * Math.sqrt(i);
+            const a = i * GOLDEN_ANGLE;
+            const xOff = r * Math.cos(a) * 0.4;
+            const yOff = r * Math.sin(a);
+            positions.set(m.id, { x: m.baseX + xOff, y: bandMidY + yOff });
+          }
+        }
       }
     }
 
@@ -500,8 +538,8 @@
       undated.y1 = laneY1;
       // Spread the undated dots evenly across the SPINE — origin-
       // centered, so x ranges from -halfSpine to +halfSpine.
-      // Phase TL-2 Step 7c — add hash jitter so the 5-row stripe
-      // doesn't read as a mechanical grid; center vertically.
+      // Phase TL-2 Step 7d — light hash variation on Y row + X
+      // micro-offset; vertically centered in the lane.
       const N = undated.ids.length;
       const sortedIds = undated.ids.slice().sort();
       const laneMidY = (laneY0 + laneY1) / 2;
@@ -510,9 +548,11 @@
       for (let i = 0; i < N; i++) {
         const t   = (i + 0.5) / N;
         const id  = sortedIds[i];
-        const x   = (t - 0.5) * xSpanWorld + _idJitterX(id);
+        const h01 = _idHash01(id);
+        const xOff = (h01 - 0.5) * 2 * 3.0;    // ±3 wu micro-offset
+        const x   = (t - 0.5) * xSpanWorld + xOff;
         const row = i % 5;
-        const y   = laneTop + row * 8 + _idJitterY(id);
+        const y   = laneTop + row * 8;
         positions.set(id, { x, y });
       }
       worldBottom = laneY1 + UNDATED_PAD;

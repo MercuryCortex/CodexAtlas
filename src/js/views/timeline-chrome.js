@@ -153,12 +153,21 @@
     // Phase TL-2 Step 7 (2026-05-24) — family bands. Colored
     // rectangles per family, low alpha, span the full data range.
     // Drawn FIRST (bottom-most) so the grid stripes + ticks +
-    // labels layer cleanly on top. Without bands, the dots float
-    // in space; with them, the eye reads each family as its own
-    // horizontal lane — same idea as the wheel's pie slices, but
-    // unrolled along time.
+    // labels layer cleanly on top.
+    //
+    // Phase 22-G (2026-05-24) — left + right edges fade to 0
+    // alpha via a per-band <linearGradient>, so the bands feel
+    // organic instead of hard-edged. Strokes use the same
+    // gradient → stroke-opacity tapers too.
     bandGroupEl = document.createElementNS(NS, 'g');
     bandGroupEl.setAttribute('class', 'forge-timeline-bands');
+    // <defs> hosts the per-band fade gradient defs we mint on
+    // refresh. Lives alongside the rects so it gets cleared with
+    // them.
+    const bandDefs = document.createElementNS(NS, 'defs');
+    bandDefs.setAttribute('class', 'forge-timeline-band-defs');
+    bandGroupEl.appendChild(bandDefs);
+    bandGroupEl._defs = bandDefs;
     svgRoot.appendChild(bandGroupEl);
 
     // Vertical grid stripes — drawn AFTER bands so the date-lines
@@ -719,8 +728,14 @@
     // world coords — Step 6 origin-centered). Project through the
     // camera so bands track pan + zoom. Low alpha so the bands
     // sit BEHIND the dots + ticks without competing for attention.
+    // Wipe + re-mint the band layer. Defs holds per-band gradients
+    // — clear them too so we don't leak gradient nodes.
     while (bandGroupEl.firstChild)      bandGroupEl.removeChild(bandGroupEl.firstChild);
     while (bandLabelGroupEl.firstChild) bandLabelGroupEl.removeChild(bandLabelGroupEl.firstChild);
+    const bandDefs2 = document.createElementNS(NS, 'defs');
+    bandDefs2.setAttribute('class', 'forge-timeline-band-defs');
+    bandGroupEl.appendChild(bandDefs2);
+
     const bands = (mode && mode.bands) || {};
     const undated = (mode && mode.undated) || null;
     // X range for band rects — extend slightly beyond data to match
@@ -728,6 +743,33 @@
     const bandX0 = Math.max(-200, loScreen.x - 40);
     const bandX1 = Math.min(vp.w + 200, hiScreen.x + 40);
     const bandWidth = Math.max(0, bandX1 - bandX0);
+
+    // Phase 22-G (2026-05-24) — zoom-out band fade. Bands +
+    // labels fade out as gizmo drops from 15% → 11% so the
+    // overview view (zoom-far) reads as a clean field with the
+    // floor-FX bloom, not a forest of stripes.
+    let zoomFade = 1.0;
+    try {
+      const fitForFade = (window.AtlasEngineLayout && window.AtlasEngineLayout.computeTimelineFitScale)
+        ? window.AtlasEngineLayout.computeTimelineFitScale(vp.w, xRange) : 0;
+      if (fitForFade > 0 && camera.state && typeof camera.state.scale === 'number') {
+        const gz = camera.state.scale / fitForFade;
+        if      (gz >= 0.15) zoomFade = 1.0;
+        else if (gz <= 0.11) zoomFade = 0.0;
+        else                 zoomFade = (gz - 0.11) / (0.15 - 0.11);
+      }
+    } catch (_) {}
+    bandGroupEl.style.opacity      = String(zoomFade);
+    bandLabelGroupEl.style.opacity = String(zoomFade);
+
+    // Per-band fade gradient — used by both fill + stroke so the
+    // L/R taper is matched on both. Edges 0% opacity, middle 100%.
+    // Inset 8% on each side: the band feels lifted off the
+    // viewport edges instead of butted hard.
+    function _gradId(name) {
+      return 'forge-timeline-band-grad-' + name.replace(/[^a-z0-9_-]/gi, '_');
+    }
+
     for (const famName in bands) {
       const band = bands[famName];
       if (!band) continue;
@@ -737,18 +779,42 @@
       // Skip bands that are entirely off-screen vertically.
       if (yBotScreen < -40 || yTopScreen > vp.h + 40) continue;
 
-      // Fill rectangle — family color, low alpha. Use the band's
-      // own color from the layout (themed by Color mode in the
-      // VIEW panel — Family / Tradition / Cosmology / Longitude).
+      // Build a per-band horizontal gradient: 0% → 8% ramp in,
+      // 92% → 100% ramp out. Used for both fill + stroke so the
+      // band visually tapers on both ends.
+      const gradId = _gradId(famName);
+      const grad = document.createElementNS(NS, 'linearGradient');
+      grad.setAttribute('id', gradId);
+      grad.setAttribute('x1', '0%'); grad.setAttribute('x2', '100%');
+      grad.setAttribute('y1', '0%'); grad.setAttribute('y2', '0%');
+      grad.setAttribute('gradientUnits', 'objectBoundingBox');
+      const stops = [
+        { o: '0%',   so: '0' },
+        { o: '8%',   so: '1' },
+        { o: '92%',  so: '1' },
+        { o: '100%', so: '0' },
+      ];
+      for (const s of stops) {
+        const st = document.createElementNS(NS, 'stop');
+        st.setAttribute('offset', s.o);
+        st.setAttribute('stop-color', band.color || '#6e7480');
+        st.setAttribute('stop-opacity', s.so);
+        grad.appendChild(st);
+      }
+      bandDefs2.appendChild(grad);
+
+      // Fill rectangle — gradient fill (L/R fade to 0). Stroke
+      // also uses the same gradient via a separate stroke-only
+      // rect so end-caps also taper.
       const rect = document.createElementNS(NS, 'rect');
       rect.setAttribute('x',      bandX0);
       rect.setAttribute('y',      yTopScreen);
       rect.setAttribute('width',  bandWidth);
       rect.setAttribute('height', h);
-      rect.setAttribute('fill',           band.color || '#6e7480');
-      rect.setAttribute('fill-opacity',   '0.08');
-      rect.setAttribute('stroke',         band.color || '#6e7480');
-      rect.setAttribute('stroke-opacity', '0.22');
+      rect.setAttribute('fill',           'url(#' + gradId + ')');
+      rect.setAttribute('fill-opacity',   '0.18');   // gradient peaks at 0.18 in middle
+      rect.setAttribute('stroke',         'url(#' + gradId + ')');
+      rect.setAttribute('stroke-opacity', '0.60');
       rect.setAttribute('stroke-width',   '1');
       bandGroupEl.appendChild(rect);
 

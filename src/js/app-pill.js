@@ -286,7 +286,17 @@
           try { window._forge.setLayout(mv.layout); }
           catch (e) { console.warn('app-pill setLayout failed', e); }
         }
+        // Phase 22-G (2026-05-24) — directly sync the pill label
+        // after setLayout. The codex:layout-changed event should
+        // also trigger syncPillLabel, but a missed fire (early
+        // listener install / cached script) would leave the label
+        // stale on FORGE while the layout flipped to TIMELINE.
+        // Direct call is belt-and-braces.
+        syncPillLabel();
       }, needsViewSwitch ? 50 : 0);
+    } else {
+      // Phase 22-G — also sync for non-forge master switches.
+      syncPillLabel();
     }
   });
 

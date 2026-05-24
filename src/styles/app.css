@@ -849,7 +849,7 @@ body.nav-hidden .side-tab { display: none !important; }
    symbol in front of Forge and Deities." The label is the identity
    on the trigger; same in the dropdown. */
 .app-pill-menu-icon {
-  display: none;
+  display: none !important;   /* belt-and-braces — see notes below */
 }
 .app-pill-label {
   flex: 1 1 auto;
@@ -966,18 +966,10 @@ body.app-pill-no-class .app-pill-divider { display: none; }
   border-left-color: var(--gold, #d4a55a);
   color: var(--gold-1, #e8c889);
 }
-.app-pill-menu-icon {
-  display: inline-block;
-  width: 18px;
-  text-align: center;
-  color: var(--text-2, #9099a8);
-  font-size: 14px;
-  flex: 0 0 auto;
-}
-.app-pill-menu-item:hover .app-pill-menu-icon,
-.app-pill-menu-item.is-active .app-pill-menu-icon {
-  color: var(--gold, #d4a55a);
-}
+/* Phase 22-G (2026-05-24) — Icon override REMOVED. The earlier
+   `display:none` at line 851 was being defeated by this rule
+   (later-wins cascade). John asked 3× to remove the icons; this
+   was the silent reason it kept regressing. */
 .app-pill-menu-label {
   flex: 1 1 auto;
   font-family: var(--mono, "JetBrains Mono", Menlo, monospace);
