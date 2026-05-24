@@ -1485,11 +1485,12 @@
     //       extent (~world span × 0.5 margin on each side).
     //       Between, bounds expand linearly with t.
     // ════════════════════════════════════════════════════════════
-    // Phase 21N (2026-05-21) — camera zoom-out floor at gizmo
-    // 11% (was 10%). Tied to BG_WORLD_WIDTH = 18000 wu so the
-    // BG exactly kisses the viewport at the floor on a 16:9
-    // monitor (no over-sized halo, no exposed gap).
-    const FLOOR_PCT = 0.11;
+    // Phase 21N (2026-05-21) → Phase 22-P (2026-05-24) — camera
+    // zoom-out floor at gizmo 10% (was 11%). The cover-fit
+    // fallback in syncBackgroundImage (max(world-scaled, vp-cover))
+    // means going to 10% no longer leaves BG gaps; the floor can
+    // safely drop.
+    const FLOOR_PCT = 0.10;
     function applyZoomFloor() {
       if (!camera || !camera.setScaleBounds) return;
       const fit = (typeof computeFitScale === 'function') ? computeFitScale() : 0;
@@ -3957,7 +3958,22 @@
       const vpCenterX = window.innerWidth  / 2;
       const vpCenterY = window.innerHeight / 2;
       const dx = wheelVpX - vpCenterX;
-      const dy = wheelVpY - vpCenterY;
+      let   dy = wheelVpY - vpCenterY;
+
+      // Phase 22-P (2026-05-24) — TIMELINE BG vertical-lock.
+      // The timeline's world is anisotropic + tall (5060 wu vs
+      // wheel's ~2200) so as the user pans vertically through
+      // the band stack, the world-origin (where BG is anchored)
+      // moves off-screen and the BG disappears below the dots —
+      // John's "dramatically cropped" report. Fix: in timeline
+      // mode, the BG stays vertically centered on the viewport
+      // (dy = 0). Horizontal pan still follows world X (dx)
+      // because the spine IS the canonical X axis.
+      // Wheel mode keeps the full world-tracking behavior — its
+      // small square world stays inside the BG envelope anyway.
+      if (local.layoutId === 'timeline') {
+        dy = 0;
+      }
 
       bgImage.style.width  = widthPx.toFixed(1)  + 'px';
       bgImage.style.height = heightPx.toFixed(1) + 'px';
