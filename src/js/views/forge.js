@@ -3943,7 +3943,16 @@
       const imgAspect    = bgImage._bgAspect || (4 / 3);
       const worldWidthPx = BG_WORLD_WIDTH * camera.state.scale;
       const coverWidthPx = Math.max(vp.w, vp.h * imgAspect);
-      const widthPx      = Math.max(worldWidthPx, coverWidthPx);
+      let   widthPx      = Math.max(worldWidthPx, coverWidthPx);
+      // Phase 22-R (2026-05-24) — TIMELINE-ONLY BG boost. The
+      // wheel's BG sizing is correct; do NOT touch it. In
+      // timeline mode the camera.scale at floor produces a BG
+      // that barely covers viewport (no halo). Multiply only the
+      // timeline branch by 1.6 — matches the headroom the wheel
+      // naturally has from its world-scaled term.
+      if (local.layoutId === 'timeline') {
+        widthPx *= 1.6;
+      }
       const heightPx     = widthPx / imgAspect;
       // World (0, 0) → canvas-screen → viewport-screen.
       const centerCanvas = camera.worldToScreen(0, 0, vp);
