@@ -68,6 +68,8 @@
   let axisLineEl  = null;     // <line> the 1 px stroke
   let tickGroupEl = null;     // <g> container for ticks + labels
   let gridGroupEl = null;     // <g> container for faint vertical grid stripes
+  let bandGroupEl = null;     // <g> family band rectangles (bottom-most layer)
+  let bandLabelGroupEl = null;// <g> family labels — anchored to screen-left
   let pickerEl    = null;     // <div> bottom-right dev scale-preset picker
   let pickerMenuEl = null;    // <div> the pop-up list
   let mounted     = false;
@@ -106,10 +108,21 @@
     svgRoot.style.pointerEvents  = 'none';
     svgRoot.style.zIndex         = '4';   // above canvas (z=1), below labels (z=10+)
 
-    // Vertical grid stripes — drawn FIRST (under everything else)
-    // so the axis + ticks layer cleanly on top. Each visible tick
-    // gets a faint full-height vertical line so the eye can read
-    // which year any dot sits on without hover.
+    // Phase TL-2 Step 7 (2026-05-24) — family bands. Colored
+    // rectangles per family, low alpha, span the full data range.
+    // Drawn FIRST (bottom-most) so the grid stripes + ticks +
+    // labels layer cleanly on top. Without bands, the dots float
+    // in space; with them, the eye reads each family as its own
+    // horizontal lane — same idea as the wheel's pie slices, but
+    // unrolled along time.
+    bandGroupEl = document.createElementNS(NS, 'g');
+    bandGroupEl.setAttribute('class', 'forge-timeline-bands');
+    svgRoot.appendChild(bandGroupEl);
+
+    // Vertical grid stripes — drawn AFTER bands so the date-lines
+    // are visible over the band fill. Each visible tick gets a
+    // faint full-height vertical line so the eye can read which
+    // year any dot sits on without hover.
     gridGroupEl = document.createElementNS(NS, 'g');
     gridGroupEl.setAttribute('class', 'forge-timeline-grid');
     svgRoot.appendChild(gridGroupEl);
@@ -123,6 +136,14 @@
     tickGroupEl = document.createElementNS(NS, 'g');
     tickGroupEl.setAttribute('class', 'forge-timeline-ticks');
     svgRoot.appendChild(tickGroupEl);
+
+    // Family band labels — TOP-most layer. X is anchored to the
+    // viewport-left (10 px in), Y follows the band's world position
+    // through the camera projection. Same convention the wheel's
+    // family ring labels use, but in horizontal mode.
+    bandLabelGroupEl = document.createElementNS(NS, 'g');
+    bandLabelGroupEl.setAttribute('class', 'forge-timeline-band-labels');
+    svgRoot.appendChild(bandLabelGroupEl);
 
     hostEl.appendChild(svgRoot);
 
@@ -152,6 +173,7 @@
     if (svgRoot && svgRoot.parentNode) svgRoot.parentNode.removeChild(svgRoot);
     if (pickerEl && pickerEl.parentNode) pickerEl.parentNode.removeChild(pickerEl);
     svgRoot = null; axisLineEl = null; tickGroupEl = null; gridGroupEl = null;
+    bandGroupEl = null; bandLabelGroupEl = null;
     pickerEl = null; pickerMenuEl = null;
     hostEl = null; camera = null; mode = null; xRange = null;
     mounted = false;
@@ -395,6 +417,102 @@
     axisLineEl.setAttribute('y1', axisY);
     axisLineEl.setAttribute('x2', lineX1);
     axisLineEl.setAttribute('y2', axisY);
+
+    // ── FAMILY BANDS (Phase TL-2 Step 7, 2026-05-24) ─────────
+    // Paint each family band as a colored rectangle spanning the
+    // full data X range. Y comes from the layout (band.y0/y1 are
+    // world coords — Step 6 origin-centered). Project through the
+    // camera so bands track pan + zoom. Low alpha so the bands
+    // sit BEHIND the dots + ticks without competing for attention.
+    while (bandGroupEl.firstChild)      bandGroupEl.removeChild(bandGroupEl.firstChild);
+    while (bandLabelGroupEl.firstChild) bandLabelGroupEl.removeChild(bandLabelGroupEl.firstChild);
+    const bands = (mode && mode.bands) || {};
+    const undated = (mode && mode.undated) || null;
+    // X range for band rects — extend slightly beyond data to match
+    // the axis line's continuation feel.
+    const bandX0 = Math.max(-200, loScreen.x - 40);
+    const bandX1 = Math.min(vp.w + 200, hiScreen.x + 40);
+    const bandWidth = Math.max(0, bandX1 - bandX0);
+    for (const famName in bands) {
+      const band = bands[famName];
+      if (!band) continue;
+      const yTopScreen = camera.worldToScreen(0, band.y0, vp).y;
+      const yBotScreen = camera.worldToScreen(0, band.y1, vp).y;
+      const h = Math.max(0, yBotScreen - yTopScreen);
+      // Skip bands that are entirely off-screen vertically.
+      if (yBotScreen < -40 || yTopScreen > vp.h + 40) continue;
+
+      // Fill rectangle — family color, low alpha. Use the band's
+      // own color from the layout (themed by Color mode in the
+      // VIEW panel — Family / Tradition / Cosmology / Longitude).
+      const rect = document.createElementNS(NS, 'rect');
+      rect.setAttribute('x',      bandX0);
+      rect.setAttribute('y',      yTopScreen);
+      rect.setAttribute('width',  bandWidth);
+      rect.setAttribute('height', h);
+      rect.setAttribute('fill',           band.color || '#6e7480');
+      rect.setAttribute('fill-opacity',   '0.08');
+      rect.setAttribute('stroke',         band.color || '#6e7480');
+      rect.setAttribute('stroke-opacity', '0.22');
+      rect.setAttribute('stroke-width',   '1');
+      bandGroupEl.appendChild(rect);
+
+      // Left-edge label — fixed at viewport X=12 (so it stays
+      // visible at any horizontal pan) + band's projected Y.
+      const yCenterScreen = (yTopScreen + yBotScreen) / 2;
+      if (yCenterScreen >= 0 && yCenterScreen <= vp.h) {
+        const label = document.createElementNS(NS, 'text');
+        label.setAttribute('x', 12);
+        label.setAttribute('y', yCenterScreen + 4);
+        label.setAttribute('text-anchor', 'start');
+        label.setAttribute('class', 'forge-timeline-band-label');
+        label.style.fill          = band.color || 'rgba(232,200,137,0.85)';
+        label.style.fontFamily    = 'var(--mono, "JetBrains Mono", Menlo, monospace)';
+        label.style.fontSize      = '11px';
+        label.style.fontWeight    = '600';
+        label.style.letterSpacing = '0.12em';
+        label.style.textTransform = 'uppercase';
+        label.style.opacity       = '0.85';
+        label.textContent = band.name || famName;
+        bandLabelGroupEl.appendChild(label);
+      }
+    }
+
+    // Undated parking lane — distinct treatment: dimmer fill, no
+    // border, italic-ish label ("undated") to mark it as the catch-all.
+    if (undated && (undated.y1 - undated.y0) > 0 && undated.ids && undated.ids.length) {
+      const yTopU = camera.worldToScreen(0, undated.y0, vp).y;
+      const yBotU = camera.worldToScreen(0, undated.y1, vp).y;
+      if (!(yBotU < -40 || yTopU > vp.h + 40)) {
+        const rectU = document.createElementNS(NS, 'rect');
+        rectU.setAttribute('x',      bandX0);
+        rectU.setAttribute('y',      yTopU);
+        rectU.setAttribute('width',  bandWidth);
+        rectU.setAttribute('height', Math.max(0, yBotU - yTopU));
+        rectU.setAttribute('fill',           'rgba(140, 140, 150, 0.06)');
+        rectU.setAttribute('stroke',         'rgba(140, 140, 150, 0.18)');
+        rectU.setAttribute('stroke-width',   '1');
+        rectU.setAttribute('stroke-dasharray', '3 4');
+        bandGroupEl.appendChild(rectU);
+
+        const yCenterU = (yTopU + yBotU) / 2;
+        if (yCenterU >= 0 && yCenterU <= vp.h) {
+          const lblU = document.createElementNS(NS, 'text');
+          lblU.setAttribute('x', 12);
+          lblU.setAttribute('y', yCenterU + 4);
+          lblU.setAttribute('text-anchor', 'start');
+          lblU.setAttribute('class', 'forge-timeline-band-label is-undated');
+          lblU.style.fill          = 'rgba(160, 160, 170, 0.65)';
+          lblU.style.fontFamily    = 'var(--mono, "JetBrains Mono", Menlo, monospace)';
+          lblU.style.fontSize      = '10px';
+          lblU.style.fontWeight    = '500';
+          lblU.style.letterSpacing = '0.14em';
+          lblU.style.textTransform = 'uppercase';
+          lblU.textContent = 'undated · ' + undated.ids.length;
+          bandLabelGroupEl.appendChild(lblU);
+        }
+      }
+    }
 
     // Compute tick cadence from the VISIBLE year span (not the full
     // dataset). At deep zoom, the visible span shrinks → finer ticks.
