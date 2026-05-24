@@ -3941,29 +3941,31 @@
       // transition because both expressions are continuous and
       // they meet at the threshold).
       const imgAspect    = bgImage._bgAspect || (4 / 3);
-      // Phase 22-U (2026-05-24) — TIMELINE BG: its own sizing rule.
-      // The wheel's BG and timeline's BG are now fully separate
-      // branches (John 2026-05-24: "each section of our maps and
-      // modes ARE THEIR OWN section with their OWN rules").
+      // Phase 22-V (2026-05-24) — TIMELINE BG: own branch, cover
+      // ALWAYS guaranteed. Earlier Phase 22-U removed the cover
+      // floor + the BG shrank to a tiny image in a black void at
+      // gizmo 10%. NOT what John wanted. He wants BG to ALWAYS
+      // fill the screen.
+      //
+      // Final rule for TIMELINE:
+      //   bgScale  = gizmo% × wheelFitEquivalent  (matches wheel zoom feel)
+      //   worldPx  = BG_WORLD_WIDTH × bgScale
+      //   coverPx  = max(vp.w, vp.h × imgAspect)
+      //   widthPx  = max(worldPx, coverPx)   ← BG can never go below viewport
+      // With wheelFitEq dynamic from viewport, timeline BG visually
+      // matches wheel BG at the same gizmo %. Both layouts hit cover
+      // floor around gizmo 22% (BG fills viewport from there to 10%).
+      // Wheel branch unchanged.
+      const coverWidthPx = Math.max(vp.w, vp.h * imgAspect);
       let widthPx;
       if (local.layoutId === 'timeline') {
-        // TIMELINE: BG shrinks continuously with zoom-out, no
-        // cover-floor. At deep zoom-out the BG appears as a
-        // small image centered in viewport (matches the "stops
-        // growing at 30%" complaint — that stop was the cover
-        // floor kicking in, NOT user-desired behavior).
-        // Wheel-equivalent gizmo scaling computed dynamically
-        // from viewport so BG visually tracks wheel at any
-        // gizmo %.
-        const WHEEL_EXTENT_APPROX = 2200;   // typical radialWedgeLayout span
+        const WHEEL_EXTENT_APPROX = 2200;
         const wheelFitEq = Math.min(vp.w, vp.h) / WHEEL_EXTENT_APPROX;
-        const bgScale   = zoomPct * wheelFitEq;
-        widthPx         = BG_WORLD_WIDTH * bgScale;
+        const bgScale    = zoomPct * wheelFitEq;
+        const worldWidthPx = BG_WORLD_WIDTH * bgScale;
+        widthPx = Math.max(worldWidthPx, coverWidthPx);
       } else {
-        // WHEEL (unchanged from before Phase 22-Q):
-        // worldWidth × camera.scale, capped at viewport-cover.
         const worldWidthPx = BG_WORLD_WIDTH * camera.state.scale;
-        const coverWidthPx = Math.max(vp.w, vp.h * imgAspect);
         widthPx = Math.max(worldWidthPx, coverWidthPx);
       }
       const heightPx = widthPx / imgAspect;
