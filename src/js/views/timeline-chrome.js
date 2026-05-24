@@ -32,43 +32,55 @@
   // Tick cadences by visible-year-span. Picks the most readable
   // tick interval for the current zoom. Coarser at overview,
   // finer when zoomed in. Mirrors TradingView's interval picker.
-  // Phase 22-AB (2026-05-24) — finer cadence table. User asked
-  // for dates to "appear while we zoom" — old table jumped span
-  // 50k → 20k → 10k (only 3 cadence levels until 5k years span).
-  // New table doubles the entries so a slow zoom-in continuously
-  // reveals new tick labels rather than waiting for big jumps.
+  // Phase 22-AB + AB-fix (2026-05-24) — finer cadence table,
+  // SORTED ASCENDING so pickTickStep() returns the first entry
+  // whose maxSpan threshold contains the current visible span.
+  // Original table was sorted descending which combined with the
+  // top-down loop meant tickStep was permanently locked at 5000.
+  // Now: zoom-in shrinks span → matches a small-maxSpan entry →
+  // tickStep shrinks correspondingly → dates appear continuously.
   const TICK_CADENCES = [
-    // [maxSpanYears, tickStep]
-    [50_000, 5000],
-    [30_000, 2500],
-    [20_000, 2000],
-    [15_000, 1500],
-    [10_000, 1000],
-    [ 7_500,  750],
-    [ 5_000,  500],
-    [ 3_000,  250],
-    [ 2_000,  200],
-    [ 1_500,  150],
-    [ 1_000,  100],
-    [   700,   50],
-    [   500,   50],
-    [   300,   25],
-    [   200,   25],
-    [   100,   10],
-    [    70,   10],
-    [    50,    5],
-    [    30,    5],
-    [    20,    2],
+    // [maxSpanYears, tickStep]   ← visible span ≤ maxSpan → use step
+    [     5,    1],   // deep zoom: every year
     [    10,    2],
-    [     5,    1],
-    [     1,    1],
+    [    20,    2],
+    [    30,    5],
+    [    50,    5],
+    [    70,   10],
+    [   100,   10],
+    [   200,   25],
+    [   300,   25],
+    [   500,   50],
+    [   700,   50],
+    [ 1_000,  100],
+    [ 1_500,  150],
+    [ 2_000,  200],
+    [ 3_000,  250],
+    [ 5_000,  500],
+    [ 7_500,  750],
+    [10_000, 1000],
+    [15_000, 1500],
+    [20_000, 2000],
+    [30_000, 2500],
+    [50_000, 5000],   // overview: every 5k years
   ];
 
   function pickTickStep(spanYears) {
+    // Phase 22-AB-fix (2026-05-24) — TABLE-DIRECTION BUG.
+    // The original loop iterated TICK_CADENCES top-down (largest
+    // maxSpan first) and returned the FIRST entry where
+    // `spanYears <= maxSpan`. Since [50_000, 5000] is the first
+    // entry, ANY visible span ≤ 50_000 years matched on iteration
+    // 1 → tickStep was permanently 5000. That's why John never saw
+    // new dates appear while zooming in to the decade.
+    // Fix: iterate from SMALLEST maxSpan and return the first
+    // entry whose threshold contains the current span. The table
+    // is now sorted ascending so the order is unambiguous.
     for (const [maxSpan, step] of TICK_CADENCES) {
       if (spanYears <= maxSpan) return step;
     }
-    return TICK_CADENCES[0][1];
+    // Off the right end (very large span): use the LAST entry.
+    return TICK_CADENCES[TICK_CADENCES.length - 1][1];
   }
 
   // Year → display label. Uses "BCE" / "CE" + "yr 0" cosmetic for
@@ -110,7 +122,11 @@
   // Live-tunable via the STYLE panel's "Timeline bands" + "Family
   // labels" sections. Reads applied on every refresh() call.
   // Persists to localStorage.
-  const LS_BAND_STYLE = 'codex_atlas_timeline_band_style';
+  // Phase 22-AB-fix (2026-05-24) — bumped to v2 because the
+  // default for `denseTicks` flipped false→true. Users who'd ever
+  // touched any band-style slider had the old default frozen in
+  // their LS, which masked the new default. v2 = fresh start.
+  const LS_BAND_STYLE = 'codex_atlas_timeline_band_style_v2';
   const BAND_STYLE_DEFAULTS = {
     fillAlpha:    0.18,
     strokeAlpha:  0.60,
@@ -396,7 +412,7 @@
     Object.assign(presetSegEl.style, {
       display:       'inline-flex',
       alignItems:    'stretch',
-      height:        '24px',
+      height:        '23px',
       background:    'rgba(13,17,25,0.78)',
       border:        '1px solid rgba(212,165,90,0.22)',
       borderRadius:  '6px',
@@ -478,7 +494,7 @@
       densityBtn.setAttribute('aria-expanded', 'false');
       densityBtn.title = 'Band density — click for slider, double-click to reset';
       Object.assign(densityBtn.style, {
-        height:        '24px',
+        height:        '23px',
         padding:       '0 10px',
         background:    'rgba(13,17,25,0.78)',
         border:        '1px solid rgba(212,165,90,0.22)',
