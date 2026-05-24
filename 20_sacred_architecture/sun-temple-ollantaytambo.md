@@ -3,6 +3,10 @@ type: sacred-site
 id: "sun-temple-ollantaytambo"
 name: "Sun Temple, Ollantaytambo"
 status: "stub"
+date-earliest: 1440
+dating-basis: B3
+dating-basis-source: "\"Protzen, J.-P. 1993 *Inca Architecture and Construction at Ollantaytambo*. OUP\""
+dating-basis-notes: "Ollantaytambo Sun Temple Pachacuti c. 1440-1470."
 ---
 
 # Sun Temple Ollantaytambo

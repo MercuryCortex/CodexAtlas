@@ -32,6 +32,10 @@ related-themes:
   - "[[theme-sacred-geometry-giza.md]]"
 date-range: "c. −500 BCE–present"
 geographic-focus: Greece; Renaissance Italy; universal (natural mathematics)
+date-earliest: -300
+dating-basis: B1
+dating-basis-source: "\"Livio, M. 2002 *The Golden Ratio*. Broadway\""
+dating-basis-notes: "Euclid *Elements* VI.30 c. -300; Pythagorean precursor; Renaissance \"divine proportion\" Pacioli 1509."
 ---
 
 # Golden Ratio (φ, Phi)

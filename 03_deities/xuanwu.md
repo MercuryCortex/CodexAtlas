@@ -3,6 +3,10 @@ type: deity
 id: "xuanwu"
 name: "Xuanwu"
 status: "stub"
+date-earliest: 200
+dating-basis: B2
+dating-basis-source: "\"Schipper, K. 1993 *The Taoist Body*. Univ. California\""
+dating-basis-notes: "Xuanwu Daoist deity Han c. 200; Northern direction cult."
 ---
 
 # Xuanwu

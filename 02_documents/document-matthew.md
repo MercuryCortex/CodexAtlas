@@ -3,6 +3,10 @@ type: document
 id: "document-matthew"
 name: "Document Matthew"
 status: "stub"
+date-earliest: 85
+dating-basis: B1
+dating-basis-source: "\"Brown, R.E. 1997 *An Introduction to the New Testament*. Doubleday\""
+dating-basis-notes: "Matthew c. 85-90."
 ---
 
 # Document Matthew

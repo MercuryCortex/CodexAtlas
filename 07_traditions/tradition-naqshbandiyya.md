@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-naqshbandiyya"
 name: "Tradition Naqshbandiyya"
 status: "stub"
+date-earliest: 1389
+dating-basis: B5
+dating-basis-source: "\"Algar, H. 1990 'A Brief History of the Naqshbandi Order' in Gaborieau ed. *Naqshbandis*. Isis\""
+dating-basis-notes: "Naqshbandiyya from Baha-ud-Din Naqshband d. 1389 Bukhara."
 ---
 
 # Tradition Naqshbandiyya

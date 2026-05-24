@@ -41,6 +41,10 @@ refs:
     type: "survey"
     tier: 3
 tags: [theme, cosmogony, creation, indo-european, semitic, chinese, vedic, norse, mesopotamian, comparative-mythology]
+date-earliest: -1200
+dating-basis: B2
+dating-basis-source: "\"Witzel, M. 2012 *The Origins of the World's Mythologies*. OUP\""
+dating-basis-notes: "Cosmic-body cosmogony: Vedic Purusha-Sukta RV 10.90 c. -1200; Norse Ymir Voluspa c. 1000 CE; Chinese Pangu c. 200 CE."
 ---
 
 # Cosmic Body Cosmogony

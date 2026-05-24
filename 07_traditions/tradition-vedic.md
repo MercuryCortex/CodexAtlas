@@ -20,6 +20,9 @@ refs:
   - "Witzel, Michael. 'The Development of the Vedic Canon and Its Schools.' In Inside the Texts, Beyond the Texts. Harvard Oriental Series, 1997."
   - "Jamison, Stephanie W. and Brereton, Joel P. (trans.). 'The Rigveda: The Earliest Religious Poetry of India.' Oxford University Press, 2014."
   - "Staal, Frits. 'Agni: The Vedic Ritual of the Fire Altar.' 2 vols., Asian Humanities Press, 1983."
+dating-basis: B5
+dating-basis-source: "\"Witzel, M. 1995 'Early Indian History: Linguistic and Textual Parameters' in Erdosy ed. *The Indo-Aryans of Ancient South Asia*\""
+dating-basis-notes: "Vedic period c. -1500 to -500; Rigveda core c. -1500 to -1200."
 ---
 
 The Vedic religion is the earliest attested Indo-Aryan religious tradition in South Asia, centered on the Vedas — a corpus of Sanskrit hymns, ritual instructions, and philosophical texts composed from c. 1500–500 BCE and preserved through an extraordinarily rigorous oral transmission tradition (sruti, "that which is heard").

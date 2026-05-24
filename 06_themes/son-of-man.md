@@ -27,6 +27,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, christology, son-of-man, daniel, enoch, jesus]
+date-earliest: -165
+dating-basis: B4
+dating-basis-source: "\"Collins, J.J. 1993 *Daniel*. Hermeneia\""
+dating-basis-notes: "Son-of-Man Daniel 7 c. -165; Ezekiel \"ben adam\" c. -593; gospel use c. 70."
 ---
 
 # Son of Man

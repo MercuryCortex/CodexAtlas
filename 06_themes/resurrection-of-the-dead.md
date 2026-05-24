@@ -31,6 +31,10 @@ refs:
     type: "chapter"
     tier: 1
 tags: [theme, resurrection, eschatology, apocalyptic, zoroastrian, jewish, christian, islamic]
+date-earliest: -165
+dating-basis: B4
+dating-basis-source: "\"Nickelsburg, G. 1972 *Resurrection, Immortality, and Eternal Life in Intertestamental Judaism*. Harvard\""
+dating-basis-notes: "Resurrection Daniel 12:2 c. -165; Zoroastrian Bundahishn precedent older; 2 Maccabees 7 c. -100."
 ---
 
 # Resurrection of the Dead

@@ -31,6 +31,9 @@ cross-music-edges:
   - target: music-sama-veda
     type: ancestor-of
     note: Advaita's Upanishadic sources — especially the Chandogya and Mandukya Upanishads — emerge directly from the Sama Veda tradition; the mahavakya "Tat tvam asi" (Chandogya 6.8–16) is embedded in a text that is itself a musical performance tradition.
+dating-basis: B5
+dating-basis-source: "\"Halbfass, W. 1991 *Tradition and Reflection*. SUNY\""
+dating-basis-notes: "Advaita systematized Adi Shankara c. 800; Upanishadic substrate -700."
 ---
 
 Advaita Vedanta ("Non-Dual Vedanta") is the philosophical school systematized by [[shankara]] (Adi Shankaracharya, 788–820 CE) in his commentaries on the Brahma Sutras (*[[phase-5-005-shankara-brahma-sutra-bhasya]]*), the principal Upanishads, and the Bhagavad Gita. Advaita = "not-two": there is only one reality (Brahman), and the individual self (Atman) is identical with it.

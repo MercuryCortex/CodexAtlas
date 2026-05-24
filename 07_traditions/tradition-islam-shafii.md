@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-islam-shafii"
 name: "Tradition Islam Shafii"
 status: "stub"
+date-earliest: 820
+dating-basis: B5
+dating-basis-source: "\"Schacht, J. 1964 *An Introduction to Islamic Law*\""
+dating-basis-notes: "Shafi'i madhhab founded by al-Shafi'i (d. 820 CE)."
 ---
 
 # Tradition Islam Shafii

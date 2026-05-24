@@ -27,6 +27,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, plato, political-philosophy, utopia, atlantis, kallipolis, allegory]
+date-earliest: -380
+dating-basis: B1
+dating-basis-source: "\"Plato *Republic* (c. -380)\""
+dating-basis-notes: "Plato's kallipolis -380; Atlantis as ideal-state-myth in *Critias* c. -360."
 ---
 
 # Ideal-state myth (Plato's political device)

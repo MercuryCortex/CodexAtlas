@@ -3,6 +3,9 @@ type: sacred-site
 id: "mount-sinai"
 name: "Mount Sinai"
 status: "stub"
+dating-basis: B7
+dating-basis-source: "\"Identification of Jebel Musa as Sinai medieval tradition; theophanic locus rather than dated site.\""
+dating-basis-notes: "Sacred-mountain. Keep B7."
 ---
 
 # Mount Sinai

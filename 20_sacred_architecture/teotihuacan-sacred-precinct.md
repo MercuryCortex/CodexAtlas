@@ -3,6 +3,10 @@ type: sacred-site
 id: "teotihuacan-sacred-precinct"
 name: "Teotihuacan Sacred Precinct"
 status: "stub"
+date-earliest: -100
+dating-basis: B3
+dating-basis-source: "\"Cowgill, G. 2015 *Ancient Teotihuacan*\""
+dating-basis-notes: "Teotihuacan c. -100 to 550; Avenue of the Dead and major precinct c. 100-200."
 ---
 
 # Teotihuacan Sacred Precinct

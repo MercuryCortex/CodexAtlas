@@ -26,6 +26,9 @@ cross-tradition-edges:
   - target: medicine-islamic-golden-age
     type: ancestor-of
     note: Egyptian pharmacological knowledge (Ebers Papyrus plant formularies) entered Arabic medicine via Greek intermediaries — Dioscorides's De Materia Medica (60 CE) drew heavily on Egyptian herbalism, and Dioscorides was translated in the House of Wisdom.
+dating-basis: B3
+dating-basis-source: "\"Nunn, J. 1996 *Ancient Egyptian Medicine*. British Museum\""
+dating-basis-notes: "Egyptian temple medicine from Old Kingdom c. -2700; Edwin Smith Papyrus -1600."
 ---
 
 Egyptian temple medicine represents one of the two founding pillars of Old World healing — simultaneously empirical and magical, rational in its anatomy and supernatural in its causation, institutional in its training and sacred in its authorization. Its texts (the medical papyri) are among the oldest surviving scientific documents in human history.

@@ -3,6 +3,10 @@ type: deity
 id: "takeminakata"
 name: "Takeminakata"
 status: "stub"
+date-earliest: 712
+dating-basis: B4
+dating-basis-source: "\"Philippi, D. 1969 *Kojiki*\""
+dating-basis-notes: "Kojiki 712; Suwa Taisha cult older."
 ---
 
 # Takeminakata

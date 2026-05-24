@@ -3,6 +3,10 @@ type: place
 id: "place-dedan"
 name: "Place Dedan"
 status: "stub"
+date-earliest: -700
+dating-basis: B3
+dating-basis-source: "\"Hoyland, R. 2001 *Arabia and the Arabs*\""
+dating-basis-notes: "Dedan (al-'Ula) Lihyanite kingdom c. -700."
 ---
 
 # Place Dedan

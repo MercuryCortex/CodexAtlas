@@ -3,6 +3,10 @@ type: document
 id: "cassius-dio-roman-history-69"
 name: "Cassius Dio, Roman History Book 69 (Hadrian)"
 status: "stub"
+date-earliest: 220
+dating-basis: B1
+dating-basis-source: "\"Millar, F. 1964 *A Study of Cassius Dio*. Clarendon\""
+dating-basis-notes: "Cassius Dio composed c. 200-230; Book 69 (Hadrian) part of historian's late-period output."
 ---
 
 # Cassius Dio, Roman History Book 69 (Hadrian)

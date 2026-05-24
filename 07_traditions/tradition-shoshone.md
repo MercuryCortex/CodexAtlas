@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-shoshone"
 name: "Tradition Shoshone"
 status: "stub"
+date-earliest: 1500
+dating-basis: B5
+dating-basis-source: "\"Madsen, B. 1980 *The Northern Shoshoni*. Caxton\""
+dating-basis-notes: "Shoshone Numic expansion onto Great Basin/Plains c. 1500."
 ---
 
 # Tradition Shoshone

@@ -3,6 +3,10 @@ type: document
 id: "tipitaka"
 name: "Tipitaka"
 status: "stub"
+date-earliest: -29
+dating-basis: B4
+dating-basis-source: "\"Norman, K.R. 1983 *Pali Literature*. Harrassowitz\""
+dating-basis-notes: "Pali Canon redacted Sri Lanka -29 (Fourth Council)."
 ---
 
 # Tipitaka

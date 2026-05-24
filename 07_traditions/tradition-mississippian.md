@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-mississippian"
 name: "Tradition Mississippian"
 status: "stub"
+date-earliest: 800
+dating-basis: B5
+dating-basis-source: "\"Pauketat, T. 2009 *Cahokia: Ancient America's Great City on the Mississippi*. Viking\""
+dating-basis-notes: "Mississippian period c. 800-1600; Cahokia florescence c. 1050."
 ---
 
 # Tradition Mississippian

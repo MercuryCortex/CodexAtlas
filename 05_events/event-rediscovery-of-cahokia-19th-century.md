@@ -3,6 +3,10 @@ type: event
 id: "event-rediscovery-of-cahokia-19th-century"
 name: "Event Rediscovery Of Cahokia 19Th Century"
 status: "stub"
+date-earliest: 1869
+dating-basis: B1
+dating-basis-source: "\"Pauketat, T. 2009 *Cahokia*\""
+dating-basis-notes: "Brackenridge survey 1813; systematic 1869 (Bandelier). Slug-extractable broadly to 19th c."
 ---
 
 # Event Rediscovery Of Cahokia 19Th Century

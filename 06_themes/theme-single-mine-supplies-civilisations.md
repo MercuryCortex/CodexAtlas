@@ -3,6 +3,10 @@ type: theme
 id: "theme-single-mine-supplies-civilisations"
 name: "Theme Single Mine Supplies Civilisations"
 status: "stub"
+date-earliest: -3000
+dating-basis: B5
+dating-basis-source: "\"Roaf, M. 1990 *Cultural Atlas of Mesopotamia*\""
+dating-basis-notes: "Single-source commodity-monopolies: lapis Badakhshan c. -3000; tin Cornwall/Iberia c. -1700."
 ---
 
 # Theme Single Mine Supplies Civilisations

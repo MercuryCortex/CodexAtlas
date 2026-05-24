@@ -3,6 +3,10 @@ type: sacred-site
 id: "gyeongbokgung-palace"
 name: "Gyeongbokgung Palace"
 status: "stub"
+date-earliest: 1395
+dating-basis: B1
+dating-basis-source: "\"Kim, B. 2014 *Royal Architecture of Joseon Korea*. Cambridge\""
+dating-basis-notes: "Founded 1395 (Joseon founding); destroyed 1592, rebuilt 1867."
 ---
 
 # Gyeongbokgung Palace

@@ -28,6 +28,10 @@ refs:
     type: "monograph"
     tier: 2
 tags: [theme, sacrifice, cosmic-renewal, vedic, aztec, christian, ritual]
+date-earliest: -1200
+dating-basis: B4
+dating-basis-source: "\"Heesterman, J. 1993 *The Broken World of Sacrifice*. Univ. Chicago\""
+dating-basis-notes: "Vedic Purusha-sacrifice RV 10.90 c. -1200; Aztec teotl-renewal Codex Borbonicus c. 1500."
 ---
 
 # Sacrifice as Cosmic Renewal

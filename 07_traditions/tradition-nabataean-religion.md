@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-nabataean-religion"
 name: "Tradition Nabataean Religion"
 status: "stub"
+date-earliest: -300
+dating-basis: B5
+dating-basis-source: "\"Hoyland, R. 2001 *Arabia and the Arabs*\""
+dating-basis-notes: "Nabataean polity c. -300 to 106 CE; Petra capital."
 ---
 
 # Tradition Nabataean Religion

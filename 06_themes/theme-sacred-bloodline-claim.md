@@ -39,6 +39,9 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, bloodline, dynasty, divine-kingship, legitimacy, messianic-genealogy, merovingian, davidic, priestly-lineage, solomonic, roman-imperial, egyptian, sumerian, cross-tradition]
+dating-basis: B7
+dating-basis-source: "\"Cross-tradition (Davidic, Merovingian, Solomonic, Imperial-Japan). Pattern not event.\""
+dating-basis-notes: "Pattern. Keep B7."
 ---
 
 # Sacred Bloodline Claim

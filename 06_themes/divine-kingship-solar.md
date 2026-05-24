@@ -33,6 +33,10 @@ refs:
     type: "monograph"
     tier: 2
 tags: [theme, kingship, solar, egypt, rome, christology, divine-sonship, political-theology]
+date-earliest: -1352
+dating-basis: B4
+dating-basis-source: "\"Assmann, J. 2014 *From Akhenaten to Moses*. AUC Press\""
+dating-basis-notes: "Egyptian solar kingship Old Kingdom c. -2500 (Pyramid Texts); Akhenaten radical solarization c. -1352."
 ---
 
 # Divine Kingship — Solar Theology

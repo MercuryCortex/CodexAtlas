@@ -3,6 +3,10 @@ type: place
 id: "neo-assyrian-empire"
 name: "Neo Assyrian Empire"
 status: "stub"
+date-earliest: -911
+dating-basis: B5
+dating-basis-source: "\"Frahm, E. ed. 2017 *A Companion to Assyria*\""
+dating-basis-notes: "Neo-Assyrian Empire -911 to -609."
 ---
 
 # Neo Assyrian Empire

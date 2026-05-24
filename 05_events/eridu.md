@@ -15,6 +15,10 @@ refs:
     type: "encyclopedia-article"
     tier: 2
 tags: [phase-1, mesopotamian, sumerian, eridu, city, apkallu]
+date-earliest: -5400
+dating-basis: B3
+dating-basis-source: "\"Pollock, S. 1999 *Ancient Mesopotamia*\""
+dating-basis-notes: "Eridu Ubaid period from c. -5400 (Tell Abu Shahrein)."
 ---
 
 # Eridu

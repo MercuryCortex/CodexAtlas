@@ -3,6 +3,10 @@ type: theme
 id: "theme-temple-as-city"
 name: "Theme Temple As City"
 status: "stub"
+date-earliest: -2000
+dating-basis: B5
+dating-basis-source: "\"Postgate, J.N. 1992 *Early Mesopotamia*\""
+dating-basis-notes: "Mesopotamian temple-complex-as-city c. -2000 (Ur Ekishnugal); Angkor Wat 1113."
 ---
 
 # Theme Temple As City

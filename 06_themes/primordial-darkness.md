@@ -34,6 +34,10 @@ depictions:
     caption: "Nun — Egyptian god of the primordial waters (nun), the pre-creation void"
     source: "Wikimedia Commons"
     license: "Public domain"
+date-earliest: -2400
+dating-basis: B2
+dating-basis-source: "\"Allen, J.P. 1988 *Genesis in Egypt*\""
+dating-basis-notes: "Egyptian Nun (primordial waters/darkness) Pyramid Texts c. -2400; Genesis 1:2 c. -540."
 ---
 
 # Primordial Darkness

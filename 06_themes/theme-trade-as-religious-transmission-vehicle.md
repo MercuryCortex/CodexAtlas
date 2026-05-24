@@ -3,6 +3,9 @@ type: theme
 id: "theme-trade-as-religious-transmission-vehicle"
 name: "Theme Trade As Religious Transmission Vehicle"
 status: "stub"
+dating-basis: B7
+dating-basis-source: "\"Methodological category. Pattern not event.\""
+dating-basis-notes: "Methodological. Keep B7."
 ---
 
 # Theme Trade As Religious Transmission Vehicle

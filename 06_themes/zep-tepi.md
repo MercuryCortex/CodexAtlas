@@ -28,6 +28,10 @@ refs:
     tier: 1
     notes: "Jan Assmann's analysis of Egyptian sacred time and the role of the primordial First Time in temple ritual"
 tags: [theme, egypt, cosmology, sacred-time, eternal-return, ritual, creation, osiris, ra, pyramid-texts]
+date-earliest: -2400
+dating-basis: B2
+dating-basis-source: "\"Allen, J.P. 1988 *Genesis in Egypt*\""
+dating-basis-notes: "Egyptian Zep Tepi (\"First Time\") in Pyramid Texts c. -2400."
 ---
 
 # Zep Tepi — The First Time

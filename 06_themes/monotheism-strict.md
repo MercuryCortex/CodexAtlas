@@ -21,6 +21,10 @@ refs:
     type: "monograph"
     tier: 2
 tags: [theme, monotheism, judaism, christianity, islam, tawhid]
+date-earliest: -540
+dating-basis: B4
+dating-basis-source: "\"Smith, M.S. 2001 *The Origins of Biblical Monotheism*\""
+dating-basis-notes: "Strict monotheism Deutero-Isaiah 44-46 c. -540; tawhid Quran 7th c."
 ---
 
 # Strict Monotheism

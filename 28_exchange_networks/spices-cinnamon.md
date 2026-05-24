@@ -3,6 +3,10 @@ type: exchange-network
 id: "spices-cinnamon"
 name: "Spices Cinnamon"
 status: "stub"
+date-earliest: -1500
+dating-basis: B3
+dating-basis-source: "\"Miller, J. 1969 *The Spice Trade of the Roman Empire*\""
+dating-basis-notes: "Same as cinnamon. -1500."
 ---
 
 # Spices Cinnamon

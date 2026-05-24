@@ -27,6 +27,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, election, covenant, israelite, jewish, christian, supersessionism]
+date-earliest: -540
+dating-basis: B4
+dating-basis-source: "\"Kaufmann, Y. 1960 *The Religion of Israel*. Univ. Chicago\""
+dating-basis-notes: "Election theology crystallizes in Deuteronomy redaction c. -620 to -540; Deutero-Isaiah expansion -540."
 ---
 
 # Chosen People

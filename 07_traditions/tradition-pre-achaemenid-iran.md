@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-pre-achaemenid-iran"
 name: "Tradition Pre Achaemenid Iran"
 status: "stub"
+date-earliest: -1500
+dating-basis: B5
+dating-basis-source: "\"Boyce, M. 1975 *A History of Zoroastrianism* vol. 1. Brill\""
+dating-basis-notes: "Pre-Achaemenid Iranian religion from Proto-Iranian split c. -1500; Median consolidation -700."
 ---
 
 # Tradition Pre Achaemenid Iran

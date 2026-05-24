@@ -3,6 +3,9 @@ type: sacred-site
 id: "mount-meru"
 name: "Mount Meru"
 status: "stub"
+dating-basis: B7
+dating-basis-source: "\"Mythological cosmic mountain; not a physical site. Vedic c. -1200 attestation.\""
+dating-basis-notes: "Mythological. Keep B7 OR redirect to a B4 -1200 (Vedic textual first-mention)."
 ---
 
 # Mount Meru

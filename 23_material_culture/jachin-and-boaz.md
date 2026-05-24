@@ -3,6 +3,10 @@ type: relic
 id: "jachin-and-boaz"
 name: "Jachin And Boaz"
 status: "stub"
+date-earliest: -540
+dating-basis: B4
+dating-basis-source: "\"Friedman, R.E. 1987 *Who Wrote the Bible?*\""
+dating-basis-notes: "1 Kings 7:21 c. -540 redaction; Solomonic Temple traditional -950."
 ---
 
 # Jachin And Boaz

@@ -3,6 +3,10 @@ type: document
 id: "jataka-tales"
 name: "Jataka Tales"
 status: "stub"
+date-earliest: -300
+dating-basis: B4
+dating-basis-source: "\"Appleton, N. 2010 *Jataka Stories in Theravada Buddhism*\""
+dating-basis-notes: "Jataka canonical c. -300; commentary form 5th c. CE."
 ---
 
 # Jataka Tales

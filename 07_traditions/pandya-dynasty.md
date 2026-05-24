@@ -3,6 +3,10 @@ type: tradition
 id: "pandya-dynasty"
 name: "Pandya Dynasty"
 status: "stub"
+date-earliest: -300
+dating-basis: B5
+dating-basis-source: "\"Champakalakshmi, R. 1996 *Trade, Ideology and Urbanization: South India 300 BC-AD 1300*. OUP\""
+dating-basis-notes: "Pandya kingdom attested in Sangam literature c. -300; classical dynasty c. -100."
 ---
 
 # Pandya Dynasty

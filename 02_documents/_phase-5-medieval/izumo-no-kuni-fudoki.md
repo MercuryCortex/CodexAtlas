@@ -3,6 +3,10 @@ type: document
 id: "izumo-no-kuni-fudoki"
 name: "Izumo No Kuni Fudoki"
 status: "stub"
+date-earliest: 733
+dating-basis: B1
+dating-basis-source: "\"Aoki, M. 1971 *Records of Wind and Earth*. AAS Monograph\""
+dating-basis-notes: "Izumo Fudoki 733."
 ---
 
 # Izumo No Kuni Fudoki

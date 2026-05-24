@@ -3,6 +3,10 @@ type: place
 id: "place-lucca"
 name: "Place Lucca"
 status: "stub"
+date-earliest: -180
+dating-basis: B3
+dating-basis-source: "\"Bratchel, M. 2008 *Medieval Lucca*. Clarendon\""
+dating-basis-notes: "Roman Lucca c. -180."
 ---
 
 # Place Lucca

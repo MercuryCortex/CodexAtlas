@@ -3,6 +3,10 @@ type: theme
 id: "theme-gothic-light-as-divine-presence"
 name: "Theme Gothic Light As Divine Presence"
 status: "stub"
+date-earliest: 1140
+dating-basis: B1
+dating-basis-source: "\"Panofsky, E. 1979 *Abbot Suger on the Abbey Church of Saint-Denis* 2nd ed. Princeton\""
+dating-basis-notes: "Suger's Saint-Denis chevet 1140-1144; *De Administratione* c. 1145."
 ---
 
 # Theme Gothic Light As Divine Presence

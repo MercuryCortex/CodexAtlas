@@ -21,6 +21,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, initiation, ritual, mystery-cults, mysteries]
+date-earliest: -1450
+dating-basis: B5
+dating-basis-source: "\"Burkert, W. 1987 *Ancient Mystery Cults*\""
+dating-basis-notes: "Mystery initiation: Eleusis archaeological c. -1450; classical Greek -700; Mithraic 2nd c. CE; cross-tradition older substrate."
 ---
 
 # Initiation

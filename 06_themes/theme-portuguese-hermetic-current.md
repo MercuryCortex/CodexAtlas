@@ -3,6 +3,10 @@ type: theme
 id: "theme-portuguese-hermetic-current"
 name: "Theme Portuguese Hermetic Current"
 status: "stub"
+date-earliest: 1888
+dating-basis: B5
+dating-basis-source: "\"Cosme, J. 2018 *Esoterismo em Portugal*\""
+dating-basis-notes: "Portuguese Hermetic current Pessoa-Carvalho Monteiro-Gandra c. 1888-1980."
 ---
 
 # Theme Portuguese Hermetic Current

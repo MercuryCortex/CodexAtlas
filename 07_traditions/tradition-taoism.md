@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-taoism"
 name: "Tradition Taoism"
 status: "stub"
+date-earliest: -300
+dating-basis: B5
+dating-basis-source: "\"Kohn, L. 2001 *Daoism and Chinese Culture*. Three Pines Press\""
+dating-basis-notes: "Daoist philosophical lineage from Daodejing c. -300; institutional Daoism Tianshi c. 142 CE."
 ---
 
 # Tradition Taoism

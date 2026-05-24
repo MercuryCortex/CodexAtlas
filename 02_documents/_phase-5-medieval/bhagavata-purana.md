@@ -3,6 +3,10 @@ type: document
 id: "bhagavata-purana"
 name: "Bhagavata Purana"
 status: "stub"
+date-earliest: 900
+dating-basis: B1
+dating-basis-source: "\"Bryant, E. 2007 *Krishna: A Sourcebook*. OUP\""
+dating-basis-notes: "Bhagavata Purana c. 900-1000."
 ---
 
 # Bhagavata Purana

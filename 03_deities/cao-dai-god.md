@@ -8,6 +8,10 @@ domain: "supreme monotheistic deity, creator of all traditions, eye symbol"
 attested-in: ["[[phase-7-044-cao-dai-canon]]"]
 status: "stub"
 tags: [deity, vietnamese, cao-dai, syncretism, monotheism, supreme-being, eye-of-god]
+date-earliest: 1926
+dating-basis: B1
+dating-basis-source: "\"Hoskins, J. 2015 *The Divine Eye and the Diaspora*. Hawaii\""
+dating-basis-notes: "Cao Dai religion founded 1926 by Ngô Văn Chiêu."
 ---
 
 # Cao Đài — the Supreme Being

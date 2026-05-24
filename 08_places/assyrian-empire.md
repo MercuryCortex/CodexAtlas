@@ -3,6 +3,10 @@ type: place
 id: "assyrian-empire"
 name: "Assyrian Empire"
 status: "stub"
+date-earliest: -911
+dating-basis: B5
+dating-basis-source: "\"Frahm, E. ed. 2017 *A Companion to Assyria*. Wiley\""
+dating-basis-notes: "Neo-Assyrian Empire -911 to -609; Old Assyrian c. -2000."
 ---
 
 # Assyrian Empire

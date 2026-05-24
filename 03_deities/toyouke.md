@@ -3,6 +3,10 @@ type: deity
 id: "toyouke"
 name: "Toyouke"
 status: "stub"
+date-earliest: 712
+dating-basis: B4
+dating-basis-source: "\"Philippi, D. 1969 *Kojiki*\""
+dating-basis-notes: "Toyouke Kojiki 712; Ise Outer Shrine c. 478."
 ---
 
 # Toyouke

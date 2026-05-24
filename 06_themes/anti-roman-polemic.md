@@ -27,6 +27,10 @@ refs:
     type: "edited-volume"
     tier: 1
 tags: [theme, anti-roman, apocalyptic, empire, polemic, babylon, beast]
+date-earliest: 95
+dating-basis: B4
+dating-basis-source: "\"Collins, A.Y. 1984 *Crisis and Catharsis: The Power of the Apocalypse*. Westminster\""
+dating-basis-notes: "Revelation/Apocalypse of John c. 95 CE (Domitianic) as canonical anti-Roman polemic; precursors Daniel c. -165, 4 Ezra c. 100."
 ---
 
 # Anti-Roman Polemic

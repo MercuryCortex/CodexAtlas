@@ -3,6 +3,10 @@ type: doctrine
 id: "doctrine-protestant-priesthood-of-all-believers"
 name: "Doctrine Protestant Priesthood of All Believers"
 status: "stub"
+date-earliest: 1520
+dating-basis: B1
+dating-basis-source: "\"MacCulloch, D. 2003 *Reformation*\""
+dating-basis-notes: "Luther *De Captivitate Babylonica* 1520."
 ---
 
 # Doctrine Protestant Priesthood of All Believers

@@ -27,6 +27,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, philosophy-of-religion, aquinas, scholastic, natural-theology, aristotelian]
+date-earliest: 1265
+dating-basis: B1
+dating-basis-source: "\"Aquinas *Summa Theologiae* I.2.3 (c. 1265-1274)\""
+dating-basis-notes: "Aquinas *ST* 1265-1274; Aristotelian precursors c. -340."
 ---
 
 # The Five Ways (Aquinas)

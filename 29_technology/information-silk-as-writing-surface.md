@@ -3,6 +3,10 @@ type: technology
 id: "information-silk-as-writing-surface"
 name: "Information Silk As Writing Surface"
 status: "stub"
+date-earliest: -200
+dating-basis: B3
+dating-basis-source: "\"Tsien, T.-H. 2004 *Written on Bamboo and Silk* 2nd ed. Univ. Chicago\""
+dating-basis-notes: "Silk writing-surface Warring States c. -300 to Han -200; Mawangdui silk texts -168."
 ---
 
 # Information Silk As Writing Surface

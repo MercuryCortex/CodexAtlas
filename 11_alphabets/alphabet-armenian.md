@@ -8,6 +8,9 @@ date-latest: 405
 region: "Greater Armenia (Vagharshapat / Etchmiadzin)"
 status: full
 tags: [alphabet, armenian, mashtots, missionary, deliberate-invention, identity-weapon, genocide, apostolic, caucasus, sovereign-script]
+dating-basis: B1
+dating-basis-source: "\"Russell, J. 2017 *Yet Another Armenian Mythology*. Princeton\""
+dating-basis-notes: "Mashtots's Armenian alphabet 405 CE."
 ---
 
 ## What it is

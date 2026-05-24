@@ -32,6 +32,10 @@ refs:
     tier: 1
     notes: "The standard English translation of the Irish epic — the most elaborate surviving Celtic cattle-raid narrative"
 tags: [theme, pie, cattle-raid, indra, heracles, geryon, tain, cuchulain, dragon-slaying, solar, liberation, tartessos, iberia, MASSIVE-WIN]
+date-earliest: -1200
+dating-basis: B2
+dating-basis-source: "\"Lincoln, B. 1981 *Priests, Warriors, and Cattle*. Univ. California\""
+dating-basis-notes: "PIE cattle-raid mytheme; Rigveda Indra-Vala c. -1200; Greek Geryon, Irish Táin Bó Cúailnge."
 ---
 
 # The Cattle-Raid Myth — PIE Solar Hero and the Liberation of Cosmic Wealth

@@ -36,6 +36,10 @@ refs:
     tier: 1
     notes: "Argues Upper Paleolithic cave art (Chauvet, Lascaux) reflects shamanic altered-state imagery; traces entoptic phenomena in rock art"
 tags: [theme, shamanism, ecstasy, spirit-travel, healing, prehistoric, ritual, cave-art, trance]
+date-earliest: -25000
+dating-basis: B5
+dating-basis-source: "\"Lewis-Williams, D. 2002 *The Mind in the Cave*. Thames & Hudson\""
+dating-basis-notes: "Shamanism: Lewis-Williams paleolithic-cave-art hypothesis c. -25000; Eliade modern category 1951."
 ---
 
 # Shamanism

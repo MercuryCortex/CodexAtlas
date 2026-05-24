@@ -40,6 +40,10 @@ refs:
     tier: 2
     notes: "Popular but standard English-language Inanna-translation; tier 2 for primary use, tier 1 for the Kramer scholarship"
 tags: [theme, ritual, mystery-initiation, soul-ascent, katabasis, anabasis, descent-to-underworld, ascent-of-the-soul, cross-tradition, hermetic, gnostic, christian]
+date-earliest: -2100
+dating-basis: B2
+dating-basis-source: "\"Foster, B.R. 2005 *Before the Muses* 3rd ed. CDL\""
+dating-basis-notes: "Descent of Inanna c. -2100 (OB recension); Odyssey 11 c. -700; Aeneid 6 c. -19; Dante c. 1308."
 ---
 
 # Katabasis and anabasis (descent and ascent of the soul)

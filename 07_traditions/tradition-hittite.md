@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-hittite"
 name: "Tradition Hittite"
 status: "stub"
+date-earliest: -1650
+dating-basis: B5
+dating-basis-source: "\"Bryce, T. 2005 *The Kingdom of the Hittites*. OUP\""
+dating-basis-notes: "Hittite Old Kingdom from Hattusili I c. -1650; religion documented in Hattusa archives -1400 to -1200."
 ---
 
 # Tradition Hittite

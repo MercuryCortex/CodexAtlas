@@ -53,6 +53,10 @@ refs:
     tier: 2
     notes: "Asín Palacios's controversial but hugely influential argument that Dante's Commedia draws on Islamic eschatology (Mi'raj), which itself draws on Zoroastrian sources including the Arda Viraf; see also the afterlife-geography → Dante contrapasso connection"
 tags: [theme, zoroastrian, afterlife, eschatology, chinvat-bridge, hamistagan, dante-parallel, purgatory-parallel, MASSIVE-WIN, phase-2, cross-tradition]
+date-earliest: -1000
+dating-basis: B4
+dating-basis-source: "\"Boyce, M. 1975 *A History of Zoroastrianism* vol. 1\""
+dating-basis-notes: "Avestan afterlife geography (Hamistagan, Misvan Gatu) c. -1000; Bundahishn c. 800 CE systematization."
 ---
 
 # Zoroastrian Afterlife Geography

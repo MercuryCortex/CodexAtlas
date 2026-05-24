@@ -33,6 +33,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, soteriological, christology, ethiopian, tewahedo, miaphysite, oriental-orthodox, qebat, sost-ledet]
+date-earliest: 451
+dating-basis: B5
+dating-basis-source: "\"Munro-Hay, S. 1991 *Aksum*\""
+dating-basis-notes: "Ethiopian Tewahedo Christology post-Chalcedon 451; Ge'ez systematizations 14th c."
 ---
 
 # Tewahedo Christology

@@ -3,6 +3,10 @@ type: event
 id: "event-suinin-tenno-founding-trad-4-bce"
 name: "Event Suinin Tenno Founding Trad 4 Bce"
 status: "stub"
+date-earliest: -4
+dating-basis: B1
+dating-basis-source: "\"Aston, W.G. 1896 *Nihongi*\""
+dating-basis-notes: "Traditional date -29 to 70 CE for Emperor Suinin reign. Slug-extractable -4 BCE traditional."
 ---
 
 # Event Suinin Tenno Founding Trad 4 Bce

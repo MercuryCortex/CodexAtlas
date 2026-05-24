@@ -27,6 +27,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, ascent, mysticism, merkavah, hermetic, sufi, neoplatonism, miraj]
+date-earliest: -200
+dating-basis: B4
+dating-basis-source: "\"Himmelfarb, M. 1993 *Ascent to Heaven in Jewish and Christian Apocalypses*. OUP\""
+dating-basis-notes: "Ascent motif: 1 Enoch 1-36 (Book of Watchers) c. -200; older Mesopotamian Etana c. -1700."
 ---
 
 # Ascent of the Soul

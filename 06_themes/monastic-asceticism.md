@@ -22,6 +22,10 @@ refs:
     type: "monograph"
     tier: 2
 tags: [theme, asceticism, monasticism, desert-fathers, buddhism, jainism, manichaeism]
+date-earliest: -500
+dating-basis: B4
+dating-basis-source: "\"Brown, P. 1988 *The Body and Society*. Columbia\""
+dating-basis-notes: "Cross-tradition: Buddhist Sangha c. -460; Jain Sangha c. -500; Christian desert fathers c. 270."
 ---
 
 # Monastic Asceticism

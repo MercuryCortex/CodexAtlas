@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-andean-pre-inca"
 name: "Tradition Andean Pre Inca"
 status: "stub"
+date-earliest: -1200
+dating-basis: B5
+dating-basis-source: "\"Burger, R. 1992 *Chavín and the Origins of Andean Civilization*. Thames & Hudson\""
+dating-basis-notes: "Chavín horizon c. -1200; Tiwanaku-Wari c. 500-1000."
 ---
 
 # Tradition Andean Pre Inca

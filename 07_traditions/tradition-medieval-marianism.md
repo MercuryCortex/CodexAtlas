@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-medieval-marianism"
 name: "Tradition Medieval Marianism"
 status: "stub"
+date-earliest: 1100
+dating-basis: B5
+dating-basis-source: "\"Rubin, M. 2009 *Mother of God: A History of the Virgin Mary*. Yale\""
+dating-basis-notes: "High-medieval Marian devotion expansion c. 1100; Bernard of Clairvaux Marian sermons c. 1130."
 ---
 
 # Tradition Medieval Marianism

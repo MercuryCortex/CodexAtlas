@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-buddhism-theravada"
 name: "Tradition Buddhism Theravada"
 status: "stub"
+date-earliest: -247
+dating-basis: B5
+dating-basis-source: "\"Gombrich, R. 1988 *Theravada Buddhism*. Routledge\""
+dating-basis-notes: "Theravada lineage at Third Council under Ashoka c. -247; Tipitaka redacted Sri Lanka -29."
 ---
 
 # Tradition Buddhism Theravada

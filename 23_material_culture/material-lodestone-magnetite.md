@@ -3,6 +3,10 @@ type: relic
 id: "material-lodestone-magnetite"
 name: "Material Lodestone Magnetite"
 status: "stub"
+date-earliest: -600
+dating-basis: B3
+dating-basis-source: "\"Needham, J. 1962 *Science and Civilisation in China* vol. 4\""
+dating-basis-notes: "Lodestone in Greek Thales c. -600; Chinese si nan compass Han c. -200."
 ---
 
 # Material Lodestone Magnetite

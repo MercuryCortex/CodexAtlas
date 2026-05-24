@@ -3,6 +3,10 @@ type: theme
 id: "theme-monumental-religious-sculpture"
 name: "Theme Monumental Religious Sculpture"
 status: "stub"
+date-earliest: -2500
+dating-basis: B3
+dating-basis-source: "\"Wilkinson, T. 2003 *Early Dynastic Egypt*\""
+dating-basis-notes: "Egyptian Sphinx c. -2500; Olmec heads c. -1200; Buddhist Bamiyan c. 550."
 ---
 
 # Theme Monumental Religious Sculpture

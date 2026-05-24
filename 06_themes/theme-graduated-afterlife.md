@@ -17,6 +17,10 @@ refs:
   - "Edmonds, Radcliffe G. *Myths of the Underworld Journey: Plato, Aristophanes, and the 'Orphic' Gold Tablets*. Cambridge UP, 2004. — Tier 1"
   - "Zaleski, Carol. *Otherworld Journeys: Accounts of Near-Death Experience in Medieval and Modern Times*. Oxford UP, 1987. — Tier 2"
 tags: [theme, afterlife, eschatology, graduated-judgment, contrapasso, hell, MASSIVE-WIN, cross-tradition, egypt, zoroastrian, buddhist, christian, islamic, metadata]
+date-earliest: -1300
+dating-basis: B4
+dating-basis-source: "\"Hornung, E. 1999 *The Ancient Egyptian Books of the Afterlife*\""
+dating-basis-notes: "Graduated-judgment afterlife Egyptian Book of the Dead c. -1300; Zoroastrian Hamistagan; Dante c. 1308."
 ---
 
 # Graduated Afterlife (Sin-Matched Judgment)

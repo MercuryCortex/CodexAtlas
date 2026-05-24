@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-marianism"
 name: "Tradition Marianism"
 status: "stub"
+date-earliest: 431
+dating-basis: B5
+dating-basis-source: "\"Pelikan, J. 1996 *Mary Through the Centuries*. Yale\""
+dating-basis-notes: "Mariology consolidates at Council of Ephesus 431 (Theotokos title)."
 ---
 
 # Tradition Marianism

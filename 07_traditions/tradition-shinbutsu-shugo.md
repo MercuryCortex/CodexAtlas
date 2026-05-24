@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-shinbutsu-shugo"
 name: "Tradition Shinbutsu Shugo"
 status: "stub"
+date-earliest: 750
+dating-basis: B5
+dating-basis-source: "\"Teeuwen, M. & Rambelli, F. eds. 2003 *Buddhas and Kami in Japan*. RoutledgeCurzon\""
+dating-basis-notes: "Shinbutsu-shugō (kami-buddha amalgamation) Nara-Heian c. 750-900."
 ---
 
 # Tradition Shinbutsu Shugo

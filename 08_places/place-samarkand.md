@@ -20,6 +20,10 @@ hub-edges:
     source: "de la Vaissière 2005; Foltz 2010; Boyce & Grenet 1991 *History of Zoroastrianism* Vol. 3 — Samarkand hosts the Central-Asian resonance of the 3rd-c. collision: Manichaean + Zoroastrian + Buddhist + Nestorian Christian communities coexist in the Sogdian urban-religious matrix from the 4th c. onward. Panjikent murals (6th-8th c.) depict a uniquely Sogdian Indo-Iranian-Hellenistic syncretic religious iconography continuing the 3rd-c. collision's theological-iconographic afterlife"
     notes: "Cross-lens: 08_places → 06_themes"
 status: "stub"
+date-earliest: -700
+dating-basis: B3
+dating-basis-source: "\"Frumkin, G. 1970 *Archaeology in Soviet Central Asia*. Brill\""
+dating-basis-notes: "Samarkand (Afrasiyab) Iron Age c. -700; Sogdian capital."
 ---
 
 # Place Samarkand

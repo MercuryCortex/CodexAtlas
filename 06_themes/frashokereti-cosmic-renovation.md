@@ -49,6 +49,10 @@ refs:
     type: "encyclopedia"
     tier: 1
 tags: [theme, zoroastrian, eschatology, cosmic-renovation, resurrection, christian-parallel, final-judgment, MASSIVE-WIN]
+date-earliest: -1000
+dating-basis: B4
+dating-basis-source: "\"Boyce, M. 1979 *Zoroastrians*\""
+dating-basis-notes: "Frashokereti in Avestan Gathas Y. 30.9 c. -1000; Bundahishn 9th c. CE systematization."
 ---
 
 # Frashokereti (Cosmic Renovation)

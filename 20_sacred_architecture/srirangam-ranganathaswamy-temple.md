@@ -3,6 +3,10 @@ type: sacred-site
 id: "srirangam-ranganathaswamy-temple"
 name: "Srirangam Ranganathaswamy Temple"
 status: "stub"
+date-earliest: 900
+dating-basis: B3
+dating-basis-source: "\"Hudson, D. 2008 *The Body of God*. OUP\""
+dating-basis-notes: "Srirangam Chola period c. 900; expansion 14th-17th c. (Vijayanagara/Madurai Nayak)."
 ---
 
 # Srirangam Ranganathaswamy Temple

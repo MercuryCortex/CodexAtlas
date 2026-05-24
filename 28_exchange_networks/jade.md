@@ -3,6 +3,10 @@ type: exchange-network
 id: "jade"
 name: "Jade"
 status: "stub"
+date-earliest: -7000
+dating-basis: B3
+dating-basis-source: "\"Liu, L. & Chen, X. 2012 *The Archaeology of China*. Cambridge\""
+dating-basis-notes: "Chinese jade Liangzhu c. -3300; Hongshan c. -4000; earliest -7000."
 ---
 
 # Jade

@@ -21,6 +21,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, dualism, manichaeism, mandaeism, qumran, johannine]
+date-earliest: -100
+dating-basis: B4
+dating-basis-source: "\"Boyce, M. 1979 *Zoroastrians*\""
+dating-basis-notes: "Light/darkness dualism: Qumran 1QS c. -100; Manichaean 3rd c.; Johannine c. 95."
 ---
 
 # Light-and-Darkness Dualism

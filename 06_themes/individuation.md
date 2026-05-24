@@ -27,6 +27,10 @@ refs:
     type: "autobiography"
     tier: 2
 tags: [theme, jung, individuation, depth-psychology, alchemy, archetypes]
+date-earliest: 1921
+dating-basis: B1
+dating-basis-source: "\"Jung, C.G. *Psychologische Typen* (1921)\""
+dating-basis-notes: "Jungian individuation 1921."
 ---
 
 # Individuation

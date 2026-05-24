@@ -111,6 +111,10 @@ refs:
     tier: 2
     notes: "Egyptian Ra-Apophis nightly combat material; the daily ritual reading of *The Overthrowing of Apophis* texts"
 tags: [theme, cosmogony, combat-myth, mesopotamian, canaanite, hebrew, vedic, greek, hittite, egyptian, norse, gunkel, MASSIVE-WIN, PIE-mytheme, dragon-slaying]
+date-earliest: -1200
+dating-basis: B2
+dating-basis-source: "\"West, M.L. 2007 *Indo-European Poetry and Myth*\""
+dating-basis-notes: "Chaoskampf: Enuma Elish c. -1200 (Marduk-Tiamat); Baal-Yam c. -1300 Ugaritic; pre-existing Sumerian Ninurta myth -2000."
 ---
 
 # Chaoskampf (combat with chaos)

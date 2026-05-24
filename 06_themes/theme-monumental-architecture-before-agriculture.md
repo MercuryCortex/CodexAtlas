@@ -3,6 +3,10 @@ type: theme
 id: "theme-monumental-architecture-before-agriculture"
 name: "Theme Monumental Architecture Before Agriculture"
 status: "stub"
+date-earliest: -9500
+dating-basis: B3
+dating-basis-source: "\"Schmidt, K. 2010 'Göbekli Tepe' *Documenta Praehistorica* 37\""
+dating-basis-notes: "Göbekli Tepe pre-agricultural monumental architecture c. -9500."
 ---
 
 # Theme Monumental Architecture Before Agriculture

@@ -21,6 +21,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, ethics, hellenistic-philosophy, stoicism, judaism]
+date-earliest: -300
+dating-basis: B4
+dating-basis-source: "\"Long, A.A. 1986 *Hellenistic Philosophy*\""
+dating-basis-notes: "Stoic apatheia Zeno c. -300; Hellenistic-Jewish 4 Maccabees c. 35 CE."
 ---
 
 # Reason over Passion

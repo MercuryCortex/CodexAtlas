@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-islam-sufi-qadiriyya"
 name: "Tradition Islam Sufi Qadiriyya"
 status: "stub"
+date-earliest: 1166
+dating-basis: B5
+dating-basis-source: "\"Trimingham, J.S. 1971 *The Sufi Orders in Islam*. Clarendon\""
+dating-basis-notes: "Qadiriyya order from Abd al-Qadir al-Jilani d. 1166 Baghdad."
 ---
 
 # Tradition Islam Sufi Qadiriyya

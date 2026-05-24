@@ -3,6 +3,10 @@ type: exchange-network
 id: "salt-saharan-slabs"
 name: "Salt Saharan Slabs"
 status: "stub"
+date-earliest: 1000
+dating-basis: B5
+dating-basis-source: "\"Lovejoy, P. 1986 *Salt of the Desert Sun*. Cambridge\""
+dating-basis-notes: "Trans-Saharan salt-slab trade Taghaza c. 1000."
 ---
 
 # Salt Saharan Slabs

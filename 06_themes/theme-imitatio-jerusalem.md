@@ -3,6 +3,10 @@ type: theme
 id: "theme-imitatio-jerusalem"
 name: "Theme Imitatio Jerusalem"
 status: "stub"
+date-earliest: 1000
+dating-basis: B5
+dating-basis-source: "\"Ousterhout, R. 2009 *Master Builders of Byzantium*. Univ. Pennsylvania\""
+dating-basis-notes: "Imitatio-Jerusalem architecture: Holy Sepulchre copies c. 1000-1300 (Bologna, Northampton)."
 ---
 
 # Theme Imitatio Jerusalem

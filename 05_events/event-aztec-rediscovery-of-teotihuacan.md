@@ -3,6 +3,10 @@ type: event
 id: "event-aztec-rediscovery-of-teotihuacan"
 name: "Event Aztec Rediscovery Of Teotihuacan"
 status: "stub"
+date-earliest: 1400
+dating-basis: B5
+dating-basis-source: "\"Cowgill, G. 2015 *Ancient Teotihuacan*\""
+dating-basis-notes: "Aztec interest in Teotihuacan ruins c. 1400+ (Mexica imperial period)."
 ---
 
 # Event Aztec Rediscovery Of Teotihuacan

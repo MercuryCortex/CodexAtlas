@@ -3,6 +3,10 @@ type: place
 id: "place-berenike"
 name: "Place Berenike"
 status: "stub"
+date-earliest: -275
+dating-basis: B3
+dating-basis-source: "\"Sidebotham, S. 2011 *Berenike*\""
+dating-basis-notes: "Founded by Ptolemy II c. -275; Roman trade emporium."
 ---
 
 # Place Berenike

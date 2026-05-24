@@ -21,6 +21,10 @@ refs:
     type: "commentary"
     tier: 1
 tags: [theme, gospel-of-matthew, typology, christology]
+date-earliest: 85
+dating-basis: B4
+dating-basis-source: "\"Allison, D. 1993 *The New Moses*. Fortress\""
+dating-basis-notes: "Matthean New-Moses typology Matt 5-7 c. 85."
 ---
 
 # New-Moses Typology

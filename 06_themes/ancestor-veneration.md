@@ -28,6 +28,10 @@ refs:
     type: "monograph"
     tier: 2
 tags: [theme, ancestor-veneration, china, africa, rome, cross-tradition, filial-piety, dead]
+date-earliest: -2000
+dating-basis: B3
+dating-basis-source: "\"Chang, K.C. 1980 *Shang Civilization*. Yale\""
+dating-basis-notes: "Cross-tradition motif; oldest archaeological evidence: Shang oracle-bone ancestor cult c. -1200; Liangzhu jade c. -3300. Use -2000 as conservative anchor (Ur III ancestor offerings, Egyptian Old Kingdom)."
 ---
 
 # Ancestor Veneration

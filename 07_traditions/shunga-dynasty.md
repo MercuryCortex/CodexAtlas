@@ -3,6 +3,10 @@ type: tradition
 id: "shunga-dynasty"
 name: "Shunga Dynasty"
 status: "stub"
+date-earliest: -185
+dating-basis: B5
+dating-basis-source: "\"Lahiri, B. 1974 *Indigenous States of Northern India*. Calcutta\""
+dating-basis-notes: "Shunga c. -185 to -75 after Mauryan collapse."
 ---
 
 # Shunga Dynasty

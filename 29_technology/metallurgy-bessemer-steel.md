@@ -3,6 +3,10 @@ type: technology
 id: "metallurgy-bessemer-steel"
 name: "Metallurgy Bessemer Steel"
 status: "stub"
+date-earliest: 1856
+dating-basis: B1
+dating-basis-source: "\"Misa, T. 1995 *A Nation of Steel*. Johns Hopkins\""
+dating-basis-notes: "Bessemer process 1856."
 ---
 
 # Metallurgy Bessemer Steel

@@ -63,6 +63,10 @@ refs:
     tier: 2
     notes: "Classic critical treatment that reviews the Habiru question and defends a complex relationship between biblical Hebrews and Amarna Habiru"
 tags: [theme, habiru, apiru, hebrew, israelite-origins, amarna, canaan, social-model, exodus, massive-win-cross-tradition]
+date-earliest: -1400
+dating-basis: B5
+dating-basis-source: "\"Liverani, M. 2003 *Israel's History and the History of Israel*. Equinox\""
+dating-basis-notes: "Habiru/Apiru in Amarna letters c. -1350; social-model Israelite origins c. -1400 to -1200."
 ---
 
 # Habiru / Apiru and the Social-Model of Israelite Origins

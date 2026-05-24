@@ -3,6 +3,10 @@ type: theme
 id: "theme-warrior-saint-synthesis"
 name: "Theme Warrior Saint Synthesis"
 status: "stub"
+date-earliest: 1095
+dating-basis: B5
+dating-basis-source: "\"Riley-Smith, J. 1997 *The First Crusaders*. Cambridge\""
+dating-basis-notes: "Christian warrior-saint Templars 1119; precursor Bernard *De laude* c. 1135; Sikh khalsa 1699; bushidō 12th c."
 ---
 
 # Theme Warrior Saint Synthesis

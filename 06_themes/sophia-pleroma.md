@@ -27,6 +27,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, gnosticism, valentinian, cosmogony, sophia, pleroma, aeons]
+date-earliest: 150
+dating-basis: B4
+dating-basis-source: "\"Pearson, B. 1990 *Gnosticism, Judaism, and Egyptian Christianity*. Fortress\""
+dating-basis-notes: "Valentinian Sophia-Pleroma cosmology c. 150-180."
 ---
 
 # Sophia and the Pleroma (Valentinian)

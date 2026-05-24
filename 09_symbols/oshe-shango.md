@@ -59,6 +59,10 @@ depictions:
     caption: "An oshe shango, or dance wand, is carried by devotees at the annual festival for Shango, the god of thunder and lightnin"
     source: "Wikimedia Commons"
     license: "CC BY 3.0"
+date-earliest: 1300
+dating-basis: B5
+dating-basis-source: "\"Bascom, W. 1969 *Ifa Divination*\""
+dating-basis-notes: "Shango cult Oyo c. 1300; iconographic double-axe Yoruba bronze period."
 ---
 
 # Oshé Shangó (Double Axe of Shango)

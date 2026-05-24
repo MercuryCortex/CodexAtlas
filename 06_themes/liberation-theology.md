@@ -20,6 +20,10 @@ refs:
     type: "anthology"
     tier: 2
 tags: [theme, liberation-theology, oppression, anti-colonial, gutiérrez, ambedkar, modern, cross-tradition]
+date-earliest: 1971
+dating-basis: B1
+dating-basis-source: "\"Gutiérrez, G. *Teología de la liberación* (1971)\""
+dating-basis-notes: "Gutiérrez 1971; Ambedkar Buddhist 1956; precursors social-gospel 1900."
 ---
 
 # Liberation Theology

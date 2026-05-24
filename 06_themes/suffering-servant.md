@@ -27,6 +27,10 @@ refs:
     type: "edited-volume"
     tier: 1
 tags: [theme, isaiah, christology, judaism, soteriology]
+date-earliest: -540
+dating-basis: B4
+dating-basis-source: "\"Blenkinsopp, J. 2000 *Isaiah 40-55*. Anchor Bible\""
+dating-basis-notes: "Deutero-Isaiah 53 c. -540."
 ---
 
 # Suffering Servant

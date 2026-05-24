@@ -3,6 +3,10 @@ type: sacred-site
 id: "milan-cathedral"
 name: "Milan Cathedral"
 status: "stub"
+date-earliest: 1386
+dating-basis: B1
+dating-basis-source: "\"Welch, E. 1995 *Art and Authority in Renaissance Milan*. Yale\""
+dating-basis-notes: "Construction began 1386 under Gian Galeazzo Visconti."
 ---
 
 # Milan Cathedral

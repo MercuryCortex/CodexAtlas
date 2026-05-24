@@ -7,6 +7,10 @@ parent-tradition: "[[tradition-zen]]"
 status: "metadata"
 refs: []
 tags: [tradition, chan, buddhism, zen, china]
+date-earliest: 520
+dating-basis: B5
+dating-basis-source: "\"Faure, B. 1997 *The Will to Orthodoxy*. Stanford\""
+dating-basis-notes: "Chan tradition traditionally founded by Bodhidharma c. 520; historicized by Faure as 6th-c. lineage."
 ---
 
 # Chan Buddhism

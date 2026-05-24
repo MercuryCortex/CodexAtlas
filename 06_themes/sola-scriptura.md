@@ -27,6 +27,10 @@ refs:
     type: "monograph"
     tier: 3
 tags: [theme, sola-scriptura, reformation, luther, calvin, biblicism]
+date-earliest: 1520
+dating-basis: B1
+dating-basis-source: "\"MacCulloch, D. 2003 *Reformation*. Penguin\""
+dating-basis-notes: "Luther *De Captivitate Babylonica* 1520; *Assertio* 1520."
 ---
 
 # Sola Scriptura

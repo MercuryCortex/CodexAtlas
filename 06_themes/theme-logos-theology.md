@@ -57,6 +57,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, logos, christology, john-1, philo, plotinus, two-powers, ptah, memphite-theology, cross-tradition, MASSIVE-WIN]
+date-earliest: -500
+dating-basis: B4
+dating-basis-source: "\"Kahn, C. 1979 *The Art and Thought of Heraclitus*\""
+dating-basis-notes: "Heraclitean logos c. -500; Memphite Ptah-via-mouth c. -2500 attribution (text); Stoic c. -300; Philo c. 30; John c. 95."
 ---
 
 # Logos Theology

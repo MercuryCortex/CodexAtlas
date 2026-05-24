@@ -3,6 +3,10 @@ type: tradition
 id: "satavahana-dynasty"
 name: "Satavahana Dynasty"
 status: "stub"
+date-earliest: -220
+dating-basis: B5
+dating-basis-source: "\"Sinopoli, C. 2001 *The Political Economy of Craft Production*. Cambridge\""
+dating-basis-notes: "Satavahana c. -220 to 220 CE; founded by Simuka."
 ---
 
 # Satavahana Dynasty

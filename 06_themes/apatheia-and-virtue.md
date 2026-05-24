@@ -21,6 +21,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, stoicism, ethics, patristics, clement-of-alexandria]
+date-earliest: -300
+dating-basis: B4
+dating-basis-source: "\"Long, A.A. & Sedley, D. 1987 *The Hellenistic Philosophers*. Cambridge\""
+dating-basis-notes: "Stoic apatheia from Zeno of Citium c. -300; Christian apatheia via Clement of Alexandria c. 200."
 ---
 
 # Apatheia and Virtue

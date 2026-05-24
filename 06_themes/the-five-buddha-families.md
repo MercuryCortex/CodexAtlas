@@ -21,6 +21,10 @@ refs:
     type: "primary-translation"
     tier: 1
 tags: [theme, vajrayana, tibetan-buddhism, mandala, tantra]
+date-earliest: 700
+dating-basis: B5
+dating-basis-source: "\"Snellgrove, D. 1987 *Indo-Tibetan Buddhism*\""
+dating-basis-notes: "Five Buddha Families Vajrayana mandala system c. 700-800 (Sarvatathagatatattvasamgraha)."
 ---
 
 # The Five Buddha Families

@@ -22,6 +22,9 @@ refs:
   - "White, David Gordon. 'The Alchemical Body: Siddha Traditions in Medieval India.' University of Chicago Press, 1996."
   - "Sanderson, Alexis. 'Shaivism and the Tantric Traditions.' In The World's Religions, Routledge, 1988."
   - "Urban, Hugh B. 'Tantra: Sex, Secrecy, Politics, and Power in the Study of Religion.' University of California Press, 2003."
+dating-basis: B5
+dating-basis-source: "\"Sanderson, A. 2009 'The Saiva Age'\""
+dating-basis-notes: "Hindu-Buddhist Tantra emerges c. 500-700; classical phase 700-1200."
 ---
 
 Tantra is a family of esoteric Hindu and Buddhist traditions that developed c. 500–1200 CE, characterized by the use of ritual techniques — mantra (sacred sound), yantra (sacred diagram), mudra (sacred gesture), and specific meditative practices — to directly access and transform cosmic energies within and through the practitioner's body.

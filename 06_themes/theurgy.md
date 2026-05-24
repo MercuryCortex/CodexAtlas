@@ -22,6 +22,10 @@ refs:
     type: "edited-volume"
     tier: 1
 tags: [theme, theurgy, neoplatonism, ritual, iamblichus, chaldean-oracles]
+date-earliest: 240
+dating-basis: B1
+dating-basis-source: "\"Shaw, G. 1995 *Theurgy and the Soul*. Penn State\""
+dating-basis-notes: "Iamblichus *De Mysteriis* c. 270; Chaldean Oracles c. 175."
 ---
 
 # Theurgy

@@ -3,6 +3,10 @@ type: ritual
 id: "ritual-monastic-profession"
 name: "Ritual Monastic Profession"
 status: "stub"
+date-earliest: 350
+dating-basis: B5
+dating-basis-source: "\"Brown, P. 1988 *The Body and Society*\""
+dating-basis-notes: "Pachomian/Basilian monastic profession c. 350-400."
 ---
 
 # Ritual Monastic Profession

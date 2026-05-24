@@ -27,6 +27,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, monotheism, ethics, prophetic, hermann-cohen, buber, abrahamic]
+date-earliest: -540
+dating-basis: B4
+dating-basis-source: "\"Halbertal & Margalit 1992 *Idolatry*\""
+dating-basis-notes: "Ethical monotheism: Deutero-Isaiah, Jeremiah covenant-renewal theology c. -540; modern category Hermann Cohen 1919."
 ---
 
 # Ethical Monotheism

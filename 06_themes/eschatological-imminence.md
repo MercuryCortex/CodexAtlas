@@ -27,6 +27,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, eschatology, apocalyptic, christianity, judaism]
+date-earliest: 50
+dating-basis: B4
+dating-basis-source: "\"Allison, D. 1998 *Jesus of Nazareth: Millenarian Prophet*. Fortress\""
+dating-basis-notes: "Imminent eschatology in Paul 1 Thess c. 50; Mark 13 c. 70."
 ---
 
 # Eschatological Imminence

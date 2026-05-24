@@ -3,6 +3,10 @@ type: sacred-site
 id: "old-temple-chavin"
 name: "Old Temple, Chavín de Huántar"
 status: "stub"
+date-earliest: -1200
+dating-basis: B3
+dating-basis-source: "\"Burger, R. 1992 *Chavín*\""
+dating-basis-notes: "Old Temple c. -1200 to -500."
 ---
 
 # Old Temple Chavin

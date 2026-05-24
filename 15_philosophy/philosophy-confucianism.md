@@ -27,6 +27,9 @@ cross-music-edges:
   - target: music-greek-musical-ethos
     type: parallel-form
     note: Confucian music theory (specific modes appropriate to specific occasions; music shapes moral character) and Greek ethos theory (Plato's Republic: specific modes should be banned because they form character badly) are the two most developed ancient theories of music's direct ethical-political power. Both treat music as a state-level concern, not merely individual preference. Zero contact; same conclusion.
+dating-basis: B5
+dating-basis-source: "\"Lewis, M.E. 1999 *Writing and Authority in Early China*\""
+dating-basis-notes: "Confucianism from Kong Qiu (-551 to -479); Analects redacted c. -475 to -221."
 ---
 
 Confucianism is the philosophical and ethical tradition founded by [[confucius]] (Kongzi, 551–479 BCE), systematized by Mencius (Mengzi, 372–289 BCE) and Xunzi (310–235 BCE), and given its Neo-Confucian metaphysical elaboration by [[zhu-xi]] (1130–1200 CE). The tradition centers on the cultivation of virtue (*de*), social harmony through ritual propriety (*li*), humaneness (*ren*), and the transformation of society through the exemplary person (*junzi*, the "gentleman" or "superior person").

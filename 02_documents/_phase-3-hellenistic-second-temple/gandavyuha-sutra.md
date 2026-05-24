@@ -3,6 +3,10 @@ type: document
 id: "gandavyuha-sutra"
 name: "Gandavyuha Sutra"
 status: "stub"
+date-earliest: 200
+dating-basis: B1
+dating-basis-source: "\"Cleary, T. 1984 *The Flower Ornament Scripture*\""
+dating-basis-notes: "Gandavyuha c. 200-300 (proto-Mahayana)."
 ---
 
 # Gandavyuha Sutra

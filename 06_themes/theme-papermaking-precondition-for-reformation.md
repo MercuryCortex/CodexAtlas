@@ -3,6 +3,10 @@ type: theme
 id: "theme-papermaking-precondition-for-reformation"
 name: "Theme Papermaking Precondition for Reformation"
 status: "stub"
+date-earliest: 1144
+dating-basis: B5
+dating-basis-source: "\"Bloom, J. 2001 *Paper before Print*\""
+dating-basis-notes: "Paper enters Europe c. 1100s; Italian Fabriano 1276; precondition for Gutenberg 1455."
 ---
 
 # Theme Papermaking Precondition for Reformation

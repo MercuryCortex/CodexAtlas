@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-modernisme-catala"
 name: "Tradition Modernisme Catala"
 status: "stub"
+date-earliest: 1888
+dating-basis: B5
+dating-basis-source: "\"Mendoza, E. & C. 1989 *Barcelona Modernista*. Planeta\""
+dating-basis-notes: "Modernisme Català 1888 (Barcelona Universal Exposition) to 1911."
 ---
 
 # Tradition Modernisme Catala

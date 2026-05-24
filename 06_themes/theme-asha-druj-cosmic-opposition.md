@@ -65,6 +65,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, zoroastrian, asha, druj, cosmic-opposition, truth-lie, cosmic-order, maat-parallel, gnostic-parallel, manichaean-parallel, qumran-parallel, MASSIVE-WIN]
+date-earliest: -1000
+dating-basis: B4
+dating-basis-source: "\"Boyce, M. 1975 *A History of Zoroastrianism* vol. 1\""
+dating-basis-notes: "Asha/Druj in Gathas c. -1000."
 ---
 
 # Asha / Druj — Cosmic Opposition

@@ -3,6 +3,10 @@ type: deity
 id: "shakti"
 name: "Shakti"
 status: "stub"
+date-earliest: -700
+dating-basis: B4
+dating-basis-source: "\"Coburn, T. 1991 *Encountering the Goddess*\""
+dating-basis-notes: "Shakti as theological category Devi Mahatmya c. 500-600; Vedic precursor Vac c. -1000."
 ---
 
 # Shakti

@@ -22,6 +22,9 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, cosmic-order, ma-at, rita, dharma, asha, wisdom, ethics]
+dating-basis: B7
+dating-basis-source: "\"Cross-tradition (Maat, Rta/Dharma, Asha, Hokmah, Logos). Pattern not event.\""
+dating-basis-notes: "Pattern. Keep B7."
 ---
 
 # Wisdom as Cosmic Order

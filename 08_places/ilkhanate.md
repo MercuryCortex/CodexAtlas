@@ -3,6 +3,10 @@ type: place
 id: "ilkhanate"
 name: "Ilkhanate"
 status: "stub"
+date-earliest: 1256
+dating-basis: B5
+dating-basis-source: "\"Allsen, T. 2001 *Culture and Conquest in Mongol Eurasia*. Cambridge\""
+dating-basis-notes: "Ilkhanate 1256-1335."
 ---
 
 # Ilkhanate

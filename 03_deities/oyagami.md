@@ -8,6 +8,10 @@ domain: "supreme deity, creator, parent of humanity, source of joyous life"
 attested-in: ["[[phase-7-043-ofudesaki]]"]
 status: "stub"
 tags: [deity, japanese, tenrikyo, shin-shukyo, creator, healing, joyous-life]
+date-earliest: 1838
+dating-basis: B1
+dating-basis-source: "\"Hardacre, H. 1984 *Lay Buddhism in Contemporary Japan*. Princeton\""
+dating-basis-notes: "Tenrikyo founded by Nakayama Miki 1838."
 ---
 
 # Oyagami — God the Parent

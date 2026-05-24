@@ -3,6 +3,10 @@ type: document
 id: "garcilaso-de-la-vega-comentarios-reales-de-los-incas"
 name: "Garcilaso De La Vega Comentarios Reales De Los Incas"
 status: "stub"
+date-earliest: 1609
+dating-basis: B1
+dating-basis-source: "\"Garcilaso de la Vega *Comentarios Reales de los Incas* (1609)\""
+dating-basis-notes: "Composed 1609."
 ---
 
 # Garcilaso De La Vega Comentarios Reales De Los Incas

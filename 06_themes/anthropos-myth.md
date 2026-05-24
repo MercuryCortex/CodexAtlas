@@ -36,6 +36,10 @@ refs:
     type: "chapter"
     tier: 1
 tags: [theme, anthropos, primordial-man, cosmogony, gnostic, kabbalah, manichaean, purusha, MASSIVE-WIN, cross-tradition, blake, adam-kadmon, metatron, cosmic-human, logos, paul]
+date-earliest: -150
+dating-basis: B4
+dating-basis-source: "\"Jonas, H. 1958 *The Gnostic Religion*. Beacon\""
+dating-basis-notes: "Cosmic Anthropos in Apocryphon of John c. 180; Vedic precursor Purusha-Sukta RV 10.90 c. -1200; later Kabbalistic Adam Kadmon."
 ---
 
 # Anthropos Myth

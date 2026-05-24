@@ -28,6 +28,10 @@ refs:
     type: "anthology"
     tier: 2
 tags: [theme, palamite, orthodox, essence-energies, theosis, kashmir-shaivism, cross-tradition, MASSIVE-WIN]
+date-earliest: 1340
+dating-basis: B5
+dating-basis-source: "\"Meyendorff, J. 1974 *A Study of Gregory Palamas*. St Vladimir's\""
+dating-basis-notes: "Palamite essence-energies formulated 1340s Athonite controversy; Cappadocian roots 4th c."
 ---
 
 # Essence/Energies Distinction

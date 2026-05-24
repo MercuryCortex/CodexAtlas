@@ -21,6 +21,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, eschatology, flood, ekpyrosis, cosmology]
+date-earliest: -2100
+dating-basis: B2
+dating-basis-source: "\"Cohn, N. 1996 *Cosmos, Chaos and the World to Come*. Yale\""
+dating-basis-notes: "Cosmic cataclysm motif: Sumerian flood Ziusudra c. -2100; Stoic ekpyrosis -300."
 ---
 
 # Cosmic Cataclysm

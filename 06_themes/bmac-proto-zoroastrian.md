@@ -56,6 +56,10 @@ refs:
     notes: "Indo-European poetic and theological reconstruction; contextualizes BMAC within the broader Indo-European framework"
 tags: [theme, archaeology, proto-zoroastrian, bmac, bronze-age, indo-iranian, haoma-soma, MASSIVE-WIN]
 status: "metadata"
+date-earliest: -2300
+dating-basis: B3
+dating-basis-source: "\"Sarianidi, V. 2007 *Necropolis of Gonur*. Kapon\""
+dating-basis-notes: "Bactria-Margiana Archaeological Complex c. -2300 to -1700; proto-Zoroastrian substrate hypothesis."
 ---
 
 # BMAC — Bactria-Margiana and the Proto-Zoroastrian Substrate

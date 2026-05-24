@@ -26,6 +26,9 @@ cross-tradition-edges:
   - target: medicine-islamic-golden-age
     type: ancestor-of
     note: Galen practiced in the Pergamon Asklepion before becoming court physician in Rome. His synthesis of Hippocratic rationalism with the Asklepion's empirical case-observation entered Arabic medicine wholesale via Hunayn ibn Ishaq's translations.
+dating-basis: B3
+dating-basis-source: "\"Edelstein, E. & L. 1945 *Asclepius*\""
+dating-basis-notes: "Earliest Asklepion Trikka c. -800 (Hesiod); Epidaurus c. -600."
 ---
 
 The Asklepion network was the most elaborate healing institution in the ancient Mediterranean — hundreds of temple complexes dedicated to [[asclepius-greek]], the divine physician, where the sick came to sleep, dream, and be cured by the god. At its peak (3rd century BCE–3rd century CE), over 400 Asklepeia operated across the Greek world.

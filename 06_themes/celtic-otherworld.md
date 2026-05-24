@@ -37,6 +37,10 @@ refs:
     type: "monograph"
     tier: 3
 tags: [theme, celtic, otherworld, tir-na-nog, avalon, immrama, voyage, paradise, afterlife, western-paradise, atlantic, ireland, wales, arthurian, sebastianism, megalithic, MASSIVE-WIN]
+date-earliest: 700
+dating-basis: B4
+dating-basis-source: "\"Carey, J. 2000 *A Single Ray of the Sun*. Celtic Studies\""
+dating-basis-notes: "Celtic Otherworld in Immrama tradition: Immram Brain c. 700-900; Voyage of St. Brendan c. 900."
 ---
 
 # The Celtic Otherworld — Tír na nÓg, Avalon, and the Western Paradise

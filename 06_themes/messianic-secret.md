@@ -21,6 +21,10 @@ refs:
     type: "commentary"
     tier: 1
 tags: [theme, gospel-of-mark, wrede, christology, narrative-criticism]
+date-earliest: 1901
+dating-basis: B1
+dating-basis-source: "\"Wrede, W. *Das Messiasgeheimnis in den Evangelien* (1901)\""
+dating-basis-notes: "Wrede's hypothesis 1901; underlying Markan motif c. 70."
 ---
 
 # The Messianic Secret

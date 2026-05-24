@@ -8,6 +8,9 @@ date-latest: 1446
 region: "Joseon Korea"
 status: full
 tags: [alphabet, hangul, korean, sejong, deliberate-invention, featural, social-justice, confucianism, phonetic-diagram]
+dating-basis: B1
+dating-basis-source: "\"Lee, K.-M. 1997 *The Origin of Hunminjeongeum*. Seoul Nat. Univ.\""
+dating-basis-notes: "Hangul promulgated 1443; published 1446."
 ---
 
 ## What it is

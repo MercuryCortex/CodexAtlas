@@ -3,6 +3,10 @@ type: sacred-site
 id: "ain-dara-temple-syria"
 name: "Ain Dara Temple Syria"
 status: "stub"
+date-earliest: -1300
+dating-basis: B3
+dating-basis-source: "\"Monson, J. 2000 'The Ain Dara Temple' *BAR* 26\""
+dating-basis-notes: "Ain Dara temple c. -1300 to -740 (LB IIA to Iron II)."
 ---
 
 # Ain Dara Temple Syria

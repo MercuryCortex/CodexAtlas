@@ -41,6 +41,10 @@ refs:
     tier: 1
     notes: "On Asherah in pre-exilic Israelite religion."
 tags: [theme, goddess, divine-feminine, sophia, shekinah, mary, inanna, near-eastern, mediterranean, MASSIVE-WIN, cross-tradition, zoroastrian, hindu, buddhist]
+date-earliest: -3000
+dating-basis: B3
+dating-basis-source: "\"Marinatos, N. 2000 *The Goddess and the Warrior*. Routledge\""
+dating-basis-notes: "Cross-tradition motif; oldest cult evidence: Sumerian Inanna c. -3500 (Uruk); Anatolian goddesses Çatalhöyük c. -7000 (contested goddess-cult readings)."
 ---
 
 # Divine Feminine

@@ -27,6 +27,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, anthropology-of-religion, durkheim, levi-strauss, classification]
+date-earliest: 1910
+dating-basis: B1
+dating-basis-source: "\"Durkheim, E. 1912 *Les formes élémentaires*; Lévi-Strauss, C. 1962 *Le totémisme aujourd'hui*. PUF\""
+dating-basis-notes: "Modern category: Durkheim 1912; Lévi-Strauss critique 1962."
 ---
 
 # Totemism

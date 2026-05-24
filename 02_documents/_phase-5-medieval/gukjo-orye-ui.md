@@ -3,6 +3,10 @@ type: document
 id: "gukjo-orye-ui"
 name: "Gukjo Orye Ui"
 status: "stub"
+date-earliest: 1474
+dating-basis: B1
+dating-basis-source: "\"Deuchler, M. 1992 *The Confucian Transformation of Korea*\""
+dating-basis-notes: "Gukjo Orye Ui (Joseon state ritual code) compiled 1474."
 ---
 
 # Gukjo Orye Ui

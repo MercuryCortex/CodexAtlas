@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-toltec"
 name: "Tradition Toltec"
 status: "stub"
+date-earliest: 900
+dating-basis: B5
+dating-basis-source: "\"Smith, M. 2003 *The Aztecs* 2nd ed. Blackwell\""
+dating-basis-notes: "Toltec polity c. 900-1150 (Tula capital)."
 ---
 
 # Tradition Toltec

@@ -3,6 +3,10 @@ type: sacred-site
 id: "yungang-grottoes"
 name: "Yungang Grottoes"
 status: "stub"
+date-earliest: 460
+dating-basis: B3
+dating-basis-source: "\"Caswell, J. 1988 *Written and Unwritten*. UBC Press\""
+dating-basis-notes: "Yungang c. 460-525 (Northern Wei sponsorship)."
 ---
 
 # Yungang Grottoes

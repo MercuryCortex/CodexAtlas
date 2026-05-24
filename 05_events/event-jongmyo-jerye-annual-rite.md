@@ -3,6 +3,10 @@ type: event
 id: "event-jongmyo-jerye-annual-rite"
 name: "Event Jongmyo Jerye Annual Rite"
 status: "stub"
+date-earliest: 1394
+dating-basis: B1
+dating-basis-source: "\"Deuchler, M. 1992 *The Confucian Transformation of Korea*\""
+dating-basis-notes: "Jongmyo Jerye instituted 1394; ongoing annual rite."
 ---
 
 # Event Jongmyo Jerye Annual Rite

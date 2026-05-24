@@ -33,6 +33,10 @@ refs:
     tier: 1
     notes: "The principal Egyptian-substrate cosmogony behind Hermetic creation accounts — Ptah creates by thought + word"
 tags: [theme, cosmogonic, hermetic, alexandria, egyptian-substrate, creation-by-word]
+date-earliest: 100
+dating-basis: B2
+dating-basis-source: "\"Copenhaver, B. 1992 *Hermetica*\""
+dating-basis-notes: "Poimandres (CH I) c. 100-200."
 ---
 
 # Hermetic cosmogony

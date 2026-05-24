@@ -21,6 +21,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, heresiology, orthodoxy, gnosticism, early-christianity]
+date-earliest: 180
+dating-basis: B4
+dating-basis-source: "\"Pagels, E. 1979 *The Gnostic Gospels*\""
+dating-basis-notes: "Heresiological category Irenaeus *Adversus Haereses* c. 180."
 ---
 
 # Orthodoxy vs Heresy

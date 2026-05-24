@@ -34,6 +34,10 @@ refs:
     tier: 1
     notes: "**Load-bearing.** Documents the substantial post-Avicennian continuation of falsafa in the Persianate East, against the older 'Ghazālī killed falsafa' narrative"
 tags: [theme, islamic, falsafa, philosophy, arabic-aristotle, arabic-plato, greek-arabic-translation-movement, latin-scholastic-source, neoplatonism, abbasid-bayt-al-hikma]
+date-earliest: 820
+dating-basis: B5
+dating-basis-source: "\"Adamson, P. 2016 *Philosophy in the Islamic World*. OUP\""
+dating-basis-notes: "Arabic falsafa from al-Kindi c. 820; Bayt al-Hikma translation movement 8th-9th c."
 ---
 
 # Falsafa (the Greek-Arabic philosophical tradition)

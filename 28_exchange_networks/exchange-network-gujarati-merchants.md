@@ -3,6 +3,10 @@ type: exchange-network
 id: "exchange-network-gujarati-merchants"
 name: "Exchange Network Gujarati Merchants"
 status: "stub"
+date-earliest: 1000
+dating-basis: B5
+dating-basis-source: "\"Pearson, M. 1976 *Merchants and Rulers in Gujarat*. Univ. California\""
+dating-basis-notes: "Gujarati merchant network c. 1000-1800 Indian Ocean."
 ---
 
 # Exchange Network Gujarati Merchants

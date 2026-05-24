@@ -3,6 +3,10 @@ type: exchange-network
 id: "cotton"
 name: "Cotton"
 status: "stub"
+date-earliest: -5000
+dating-basis: B3
+dating-basis-source: "\"Brite, E. & Marston, J. 2013 'Environmental Change, Agricultural Innovation, and the Spread of Cotton Agriculture' *Journal of Anthropological Archaeology* 32\""
+dating-basis-notes: "Cotton Mehrgarh c. -5000; Peruvian c. -3000."
 ---
 
 # Cotton

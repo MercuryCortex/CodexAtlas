@@ -3,6 +3,10 @@ type: place
 id: "place-timbuktu"
 name: "Place Timbuktu"
 status: "stub"
+date-earliest: 1100
+dating-basis: B1
+dating-basis-source: "\"Saad, E. 1983 *Social History of Timbuktu*. Cambridge\""
+dating-basis-notes: "Timbuktu founded c. 1100 Tuareg seasonal camp; Mali absorption 1325."
 ---
 
 # Place Timbuktu

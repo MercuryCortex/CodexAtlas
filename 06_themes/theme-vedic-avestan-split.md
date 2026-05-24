@@ -56,6 +56,10 @@ refs:
     tier: 1
     notes: "Old Avestan is linguistically equivalent in archaic depth to the Rigvedic hymns — both represent cognate archaic strata of a shared ancestor language"
 tags: [theme, zoroastrian, vedic, indo-iranian, comparative, linguistics, deva-daeva, MASSIVE-WIN, phase-2, cross-tradition]
+date-earliest: -1500
+dating-basis: B5
+dating-basis-source: "\"Witzel, M. 1995 'Early Indian History'\""
+dating-basis-notes: "Indo-Iranian linguistic-religious split c. -1500."
 ---
 
 # Vedic–Avestan Split (Deva/Daeva Inversion)

@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-roman-catholicism"
 name: "Tradition Roman Catholicism"
 status: "stub"
+date-earliest: 1054
+dating-basis: B5
+dating-basis-source: "\"MacCulloch, D. 2009 *Christianity: The First Three Thousand Years*. Penguin\""
+dating-basis-notes: "Roman Catholic identity as distinct from Greek Orthodox crystallizes at 1054 schism; ecclesial continuity to 1st c."
 ---
 
 # Tradition Roman Catholicism

@@ -3,6 +3,10 @@ type: document
 id: "corpus-hermeticum"
 name: "Corpus Hermeticum"
 status: "stub"
+date-earliest: 100
+dating-basis: B1
+dating-basis-source: "\"Copenhaver, B. 1992 *Hermetica*\""
+dating-basis-notes: "Corpus Hermeticum c. 100-300."
 ---
 
 # Corpus Hermeticum

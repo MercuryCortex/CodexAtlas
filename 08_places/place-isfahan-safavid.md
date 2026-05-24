@@ -3,6 +3,10 @@ type: place
 id: "place-isfahan-safavid"
 name: "Place Isfahan Safavid"
 status: "stub"
+date-earliest: 1598
+dating-basis: B1
+dating-basis-source: "\"Babaie, S. 2008 *Isfahan and Its Palaces*. Edinburgh\""
+dating-basis-notes: "Safavid capital 1598 (Abbas I)."
 ---
 
 # Place Isfahan Safavid

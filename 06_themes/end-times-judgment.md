@@ -27,6 +27,10 @@ refs:
     type: "chapter"
     tier: 1
 tags: [theme, eschatology, judgment, zoroastrian, jewish, christian, islamic]
+date-earliest: -165
+dating-basis: B4
+dating-basis-source: "\"Collins, J.J. 1998 *The Apocalyptic Imagination*\""
+dating-basis-notes: "Eschatological judgment Daniel 7-12 c. -165; Zoroastrian Yashts older; Christian Revelation 95 CE; Islamic Quran 7th c."
 ---
 
 # End-Times Judgment

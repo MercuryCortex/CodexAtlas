@@ -3,6 +3,10 @@ type: technology
 id: "metallurgy-bronze-casting"
 name: "Metallurgy Bronze Casting"
 status: "stub"
+date-earliest: -3500
+dating-basis: B3
+dating-basis-source: "\"Roberts, B. & Thornton, C. eds. 2014 *Archaeometallurgy*\""
+dating-basis-notes: "Bronze metallurgy c. -3500 (tin-bronze); Cycladic -3200; Chinese -2000."
 ---
 
 # Metallurgy Bronze Casting

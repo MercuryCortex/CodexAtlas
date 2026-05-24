@@ -3,6 +3,10 @@ type: document
 id: "plutarch-life-of-pericles"
 name: "Plutarch, Life of Pericles"
 status: "stub"
+date-earliest: 100
+dating-basis: B1
+dating-basis-source: "\"Stadter, P. 1989 *A Commentary on Plutarch's Pericles*. UNC\""
+dating-basis-notes: "Plutarch's *Lives* c. 100-110."
 ---
 
 # Plutarch, Life of Pericles

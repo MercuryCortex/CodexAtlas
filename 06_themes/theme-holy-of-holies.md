@@ -3,6 +3,10 @@ type: theme
 id: "theme-holy-of-holies"
 name: "Theme Holy Of Holies"
 status: "stub"
+date-earliest: -540
+dating-basis: B4
+dating-basis-source: "\"Friedman, R.E. 1987 *Who Wrote the Bible?*\""
+dating-basis-notes: "Holy of Holies Priestly source Exodus 26 c. -540; Solomonic temple c. -950 traditional."
 ---
 
 # Theme Holy Of Holies

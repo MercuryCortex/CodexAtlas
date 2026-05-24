@@ -106,6 +106,10 @@ tags:
   - resurrection
   - messianism
   - MASSIVE-WIN
+date-earliest: -538
+dating-basis: B5
+dating-basis-source: "\"Boyce, M. 1982 *A History of Zoroastrianism* vol. 2. Brill\""
+dating-basis-notes: "Persian-period Zoroastrian influence on Jewish eschatology c. -538 to -332."
 ---
 
 # Persian Period Injection — Zoroastrian Doctrines into Second Temple Judaism

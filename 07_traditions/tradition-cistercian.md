@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-cistercian"
 name: "Tradition Cistercian"
 status: "stub"
+date-earliest: 1098
+dating-basis: B5
+dating-basis-source: "\"Lekai, L. 1977 *The Cistercians: Ideals and Reality*. Kent State\""
+dating-basis-notes: "Cistercian Order founded at Citeaux 1098 by Robert of Molesme."
 ---
 
 # Tradition Cistercian

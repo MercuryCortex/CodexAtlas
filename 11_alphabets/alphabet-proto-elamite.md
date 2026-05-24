@@ -26,6 +26,9 @@ refs:
   - "Jöran Friberg, 'Preliminary and Preliminary-Looking Remarks on the Structure of the Proto-Elamite Script,' in M. Forsberg (ed.), The Proto-Elamite Script (1978; Tier 2 — early statistical analysis of sign-distribution)"
 alphabet-tradition-context:
   - "[[tradition-elamite]]"
+dating-basis: B3
+dating-basis-source: "\"Englund, R. 1996 *Proto-Cuneiform Texts*. Berlin\""
+dating-basis-notes: "Proto-Elamite c. -3100 to -2900."
 ---
 
 # Proto-Elamite — The World's Oldest Undecoded Writing

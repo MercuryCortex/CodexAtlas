@@ -3,6 +3,10 @@ type: theme
 id: "theme-stupa-landscape-as-cosmographic-field"
 name: "Theme Stupa Landscape As Cosmographic Field"
 status: "stub"
+date-earliest: -250
+dating-basis: B5
+dating-basis-source: "\"Behrendt, K. 2007 *The Art of Gandhara*\""
+dating-basis-notes: "Ashokan stupa-landscape c. -250; Borobudur 800."
 ---
 
 # Theme Stupa Landscape As Cosmographic Field

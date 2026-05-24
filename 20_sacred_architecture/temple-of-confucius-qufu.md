@@ -3,6 +3,10 @@ type: sacred-site
 id: "temple-of-confucius-qufu"
 name: "Temple Of Confucius Qufu"
 status: "stub"
+date-earliest: -478
+dating-basis: B1
+dating-basis-source: "\"Sommer, D. 2002 'The Confucian Temple Cult' in Bell ed. *Confucianism for the Modern World*. Cambridge\""
+dating-basis-notes: "First Qufu temple -478 (year after Confucius's death); expansions Han-Ming."
 ---
 
 # Temple Of Confucius Qufu

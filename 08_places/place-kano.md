@@ -3,6 +3,10 @@ type: place
 id: "place-kano"
 name: "Place Kano"
 status: "stub"
+date-earliest: 900
+dating-basis: B3
+dating-basis-source: "\"Last, M. 1980 'Historical Metrology of the Lower Niger' *Journal of African History* 21\""
+dating-basis-notes: "Kano (Hausa city-state) from c. 900."
 ---
 
 # Place Kano

@@ -30,6 +30,9 @@ cross-music-edges:
   - target: music-gyuto-monks-multiphonic
     type: sibling-of
     note: Gyuto Tantric multiphonic chanting (three simultaneous tones = the trikaya) is a practice lineage that presupposes Madhyamaka's emptiness analysis. The trikaya (dharmakaya / sambhogakaya / nirmanakaya) is the Madhyamaka characterization of Buddha's nature at three ontological levels; the triple-tone chord is its acoustic instantiation.
+dating-basis: B5
+dating-basis-source: "\"Williams, P. 2008 *Mahayana Buddhism*\""
+dating-basis-notes: "Nagarjuna's Madhyamaka c. 150."
 ---
 
 Madhyamaka ("Middle Way" school) is the philosophical tradition founded by [[nagarjuna]] (c. 150–250 CE) in his *[[phase-4-075-mulamadhyamakakarika|Mulamadhyamakakarika]]* (Fundamental Verses on the Middle Way). It was extended by Chandrakirti (c. 600–650 CE) in the Prasannapada commentary, and received its definitive Tibetan systematization by [[tsongkhapa]] (1357–1419 CE) in the Gelug school.

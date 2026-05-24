@@ -33,6 +33,10 @@ refs:
     type: "monograph"
     tier: 2
 tags: [theme, genealogy, messiah, legitimation, matthew, luke, solomonic, quraysh, imams, polynesian, lineage]
+date-earliest: 85
+dating-basis: B4
+dating-basis-source: "\"Brown, R.E. 1993 *The Birth of the Messiah*\""
+dating-basis-notes: "Matt 1:1-17 and Luke 3:23-38 c. 85."
 ---
 
 # Messianic Genealogy — Royal Lineage Claims

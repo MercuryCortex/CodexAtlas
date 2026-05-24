@@ -3,6 +3,10 @@ type: place
 id: "place-china-tang"
 name: "Place China Tang"
 status: "stub"
+date-earliest: 618
+dating-basis: B5
+dating-basis-source: "\"Weinstein, S. 1987 *Buddhism Under the T'ang*\""
+dating-basis-notes: "Tang dynasty 618-907."
 ---
 
 # Place China Tang

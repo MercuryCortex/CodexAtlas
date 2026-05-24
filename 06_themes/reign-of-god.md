@@ -21,6 +21,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, eschatology, jesus, gospels, kingdom]
+date-earliest: 30
+dating-basis: B4
+dating-basis-source: "\"Meier, J.P. 1994 *A Marginal Jew* vol. 2. Doubleday\""
+dating-basis-notes: "Synoptic kingdom-of-God Mark/Q c. 70-80 reflecting Jesus c. 30."
 ---
 
 # Reign of God / Kingdom of God

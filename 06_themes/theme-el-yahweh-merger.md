@@ -58,6 +58,10 @@ refs:
     type: "monograph"
     tier: 2
 tags: [theme, israelite, canaanite, el, yahweh, monotheism, origins, iron-age, ugaritic, convergence, phase-2]
+date-earliest: -1200
+dating-basis: B5
+dating-basis-source: "\"Smith, M.S. 2001 *The Origins of Biblical Monotheism*\""
+dating-basis-notes: "El-YHWH convergence Iron Age c. -1200 to -800 per Smith."
 ---
 
 # El/Yahweh Convergence — The Canaanite Roots of Israelite Monotheism

@@ -21,6 +21,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, johannine, pneumatology, manichaeism]
+date-earliest: 95
+dating-basis: B4
+dating-basis-source: "\"Brown, R.E. 1966 *The Gospel According to John*\""
+dating-basis-notes: "Johannine Paraclete John 14-16 c. 95; Manichaean Mani-as-Paraclete 3rd c."
 ---
 
 # Paraclete / Spirit of Truth

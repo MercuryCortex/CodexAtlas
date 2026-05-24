@@ -21,6 +21,10 @@ refs:
     type: "commentary"
     tier: 1
 tags: [theme, torah, wisdom-literature, judaism, second-temple]
+date-earliest: -200
+dating-basis: B4
+dating-basis-source: "\"Crenshaw, J. 1981 *Old Testament Wisdom*. Westminster\""
+dating-basis-notes: "Sirach 24 identifies Wisdom-and-Torah c. -180; Wisdom of Solomon c. -50."
 ---
 
 # Torah and Wisdom Identified

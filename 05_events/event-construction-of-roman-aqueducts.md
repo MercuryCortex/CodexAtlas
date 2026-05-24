@@ -3,6 +3,10 @@ type: event
 id: "event-construction-of-roman-aqueducts"
 name: "Event Construction of Roman Aqueducts"
 status: "stub"
+date-earliest: -312
+dating-basis: B5
+dating-basis-source: "\"Hodge, A.T. 1992 *Roman Aqueducts and Water Supply*\""
+dating-basis-notes: "Roman aqueducts from Aqua Appia -312."
 ---
 
 # Event Construction of Roman Aqueducts

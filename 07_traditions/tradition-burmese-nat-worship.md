@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-burmese-nat-worship"
 name: "Tradition Burmese Nat Worship"
 status: "stub"
+date-earliest: 1057
+dating-basis: B5
+dating-basis-source: "\"Spiro, M. 1967 *Burmese Supernaturalism*. Prentice-Hall\""
+dating-basis-notes: "Anawrahta's reform of 37 Nats c. 1057 (canonization moment); pre-Buddhist substrate older."
 ---
 
 # Tradition Burmese Nat Worship

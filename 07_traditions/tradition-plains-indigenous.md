@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-plains-indigenous"
 name: "Tradition Plains Indigenous"
 status: "stub"
+date-earliest: 1700
+dating-basis: B5
+dating-basis-source: "\"Ewers, J. 1955 *The Horse in Blackfoot Indian Culture*. Smithsonian\""
+dating-basis-notes: "Plains cultural complex post horse-adoption c. 1700; pre-horse continuity older."
 ---
 
 # Tradition Plains Indigenous

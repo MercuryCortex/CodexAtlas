@@ -3,6 +3,10 @@ type: exchange-network
 id: "gold"
 name: "Gold"
 status: "stub"
+date-earliest: -5000
+dating-basis: B3
+dating-basis-source: "\"Bachmann, H.-G. 2006 *The Lure of Gold*. Abbeville\""
+dating-basis-notes: "Gold metallurgy Varna c. -4500; Egyptian c. -3000."
 ---
 
 # Gold

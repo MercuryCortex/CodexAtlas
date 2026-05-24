@@ -32,6 +32,10 @@ refs:
     type: "monograph"
     tier: 2
 tags: [theme, political-theological, ethiopian, solomonic, davidic, dynastic-claim, kebra-nagast, rastafari]
+date-earliest: 1322
+dating-basis: B5
+dating-basis-source: "\"Marrassini, P. 1995 *Lo Scettro e la Croce: La Campagna di Amda Seyon I*. Liguori\""
+dating-basis-notes: "Solomonic-genealogical claim crystallizes in *Kebra Nagast* c. 1322 redaction (older oral); Ethiopian dynastic from 1270."
 ---
 
 # Solomonic-Genealogical Dynastic Claim

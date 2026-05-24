@@ -3,6 +3,10 @@ type: place
 id: "masada-fortress"
 name: "Masada Fortress"
 status: "stub"
+date-earliest: -37
+dating-basis: B1
+dating-basis-source: "\"Yadin, Y. 1966 *Masada*. Random House\""
+dating-basis-notes: "Built by Herod c. -37 to -31; Sicarii revolt 73 CE."
 ---
 
 # Masada Fortress

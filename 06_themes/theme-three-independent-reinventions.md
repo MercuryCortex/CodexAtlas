@@ -3,6 +3,9 @@ type: theme
 id: "theme-three-independent-reinventions"
 name: "Theme Three Independent Reinventions"
 status: "stub"
+dating-basis: B7
+dating-basis-source: "\"Methodological observation. Pattern not event.\""
+dating-basis-notes: "Methodological. Keep B7."
 ---
 
 # Theme Three Independent Reinventions

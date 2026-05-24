@@ -22,6 +22,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, pluralism, hick, interreligious, post-vatican-ii, bahai, smith]
+date-earliest: 1973
+dating-basis: B1
+dating-basis-source: "\"Hick, J. *God and the Universe of Faiths* (1973)\""
+dating-basis-notes: "Hick's modern pluralism 1973; Vatican II *Nostra Aetate* 1965."
 ---
 
 # Religious Pluralism (Modern Category)

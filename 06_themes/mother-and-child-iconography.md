@@ -54,6 +54,10 @@ depictions:
     caption: "Isis nursing Horus — the Egyptian prototype of the mother-and-child iconographic tradition"
     source: "Wikimedia Commons"
     license: "Public domain"
+date-earliest: -2300
+dating-basis: B3
+dating-basis-source: "\"Wilkinson, R. 2003 *The Complete Gods and Goddesses of Ancient Egypt*. Thames & Hudson\""
+dating-basis-notes: "Isis-Horus iconography from Old Kingdom c. -2300; Christian Theotokos 5th c. (Coptic)."
 ---
 
 # Mother and Child Iconography

@@ -23,6 +23,10 @@ cross-links:
   - janus
   - mandorla
   - spiral
+date-earliest: 922
+dating-basis: B3
+dating-basis-source: "\"Plutschow, H. 1996 *Matsuri: The Festivals of Japan*. Curzon\""
+dating-basis-notes: "Oldest extant torii: Kubo Hachiman 922."
 ---
 
 # Torii Gate

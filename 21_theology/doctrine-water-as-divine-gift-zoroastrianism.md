@@ -3,6 +3,10 @@ type: doctrine
 id: "doctrine-water-as-divine-gift-zoroastrianism"
 name: "Doctrine Water As Divine Gift Zoroastrianism"
 status: "stub"
+date-earliest: -1000
+dating-basis: B4
+dating-basis-source: "\"Boyce, M. 1975 *A History of Zoroastrianism* vol. 1\""
+dating-basis-notes: "Aban Yasht in Avesta c. -1000 (Anahita as water-divinity)."
 ---
 
 # Doctrine Water As Divine Gift Zoroastrianism

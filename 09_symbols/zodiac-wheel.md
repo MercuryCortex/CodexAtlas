@@ -45,6 +45,10 @@ traditions:
 documents:
   - "[[phase-1-019-enuma-anu-enlil]]"
 geo: null
+date-earliest: -500
+dating-basis: B3
+dating-basis-source: "\"Rochberg, F. 2004 *The Heavenly Writing*. Cambridge\""
+dating-basis-notes: "Babylonian zodiacal divisions MUL.APIN c. -700; twelve-sign zodiac c. -500; Hellenistic iconographic wheel -300."
 ---
 
 # Zodiac Wheel

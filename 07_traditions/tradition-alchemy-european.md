@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-alchemy-european"
 name: "Tradition Alchemy European"
 status: "stub"
+date-earliest: 1144
+dating-basis: B5
+dating-basis-source: "\"Principe, L. 2013 *The Secrets of Alchemy*. Univ. Chicago\""
+dating-basis-notes: "European alchemy begins with Robert of Chester's 1144 Latin translation of *Liber de compositione alchemiae*."
 ---
 
 # Tradition Alchemy European

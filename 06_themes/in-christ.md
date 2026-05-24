@@ -27,6 +27,10 @@ refs:
     type: "monograph"
     tier: 2
 tags: [theme, paul, christology, mysticism, christianity]
+date-earliest: 53
+dating-basis: B4
+dating-basis-source: "\"Sanders, E.P. 1977 *Paul and Palestinian Judaism*. Fortress\""
+dating-basis-notes: "Pauline en Christo Galatians, Romans c. 53-57."
 ---
 
 # In Christ (en Christō)

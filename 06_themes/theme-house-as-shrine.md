@@ -3,6 +3,10 @@ type: theme
 id: "theme-house-as-shrine"
 name: "Theme House As Shrine"
 status: "stub"
+date-earliest: -2000
+dating-basis: B5
+dating-basis-source: "\"Bottéro, J. 2001 *Religion in Ancient Mesopotamia*. Univ. Chicago\""
+dating-basis-notes: "Domestic shrines Mesopotamian c. -2000; Roman lararium c. -200; Chinese ancestor altar."
 ---
 
 # Theme House As Shrine

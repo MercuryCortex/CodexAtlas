@@ -21,6 +21,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, ethics, forgiveness, christianity, judaism]
+date-earliest: -700
+dating-basis: B4
+dating-basis-source: "\"Konstan, D. 2010 *Before Forgiveness*. Cambridge\""
+dating-basis-notes: "Forgiveness motif in Hebrew prophets c. -700; Jesus-tradition gospels c. 70-90; Buddhist khanti precursor."
 ---
 
 # Forgiveness

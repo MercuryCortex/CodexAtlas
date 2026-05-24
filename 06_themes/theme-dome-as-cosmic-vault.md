@@ -3,6 +3,10 @@ type: theme
 id: "theme-dome-as-cosmic-vault"
 name: "Theme Dome As Cosmic Vault"
 status: "stub"
+date-earliest: -150
+dating-basis: B3
+dating-basis-source: "\"MacDonald, W. 1986 *The Architecture of the Roman Empire*\""
+dating-basis-notes: "Pantheon dome Rome c. 125 CE (cosmic-vault iconography); earlier Roman concrete domes c. -150."
 ---
 
 # Theme Dome As Cosmic Vault

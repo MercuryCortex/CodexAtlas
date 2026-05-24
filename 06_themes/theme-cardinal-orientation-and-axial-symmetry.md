@@ -3,6 +3,10 @@ type: theme
 id: "theme-cardinal-orientation-and-axial-symmetry"
 name: "Theme Cardinal Orientation And Axial Symmetry"
 status: "stub"
+date-earliest: -3100
+dating-basis: B3
+dating-basis-source: "\"Wilkinson, T. 2003 *Early Dynastic Egypt*\""
+dating-basis-notes: "Cardinal-orientation Egyptian Old Kingdom c. -2600 (Giza); Mesopotamian temples Uruk -3500."
 ---
 
 # Theme Cardinal Orientation And Axial Symmetry

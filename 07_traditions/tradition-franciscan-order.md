@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-franciscan-order"
 name: "Tradition Franciscan Order"
 status: "stub"
+date-earliest: 1209
+dating-basis: B5
+dating-basis-source: "\"Moorman, J. 1968 *A History of the Franciscan Order*. Clarendon\""
+dating-basis-notes: "Franciscan Order confirmed orally by Innocent III 1209; written rule 1223."
 ---
 
 # Tradition Franciscan Order

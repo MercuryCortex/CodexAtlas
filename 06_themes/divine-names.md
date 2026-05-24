@@ -45,6 +45,10 @@ refs:
     tier: 1
     notes: "The Kabbalistic Sefirot as Names-of-God doctrine"
 tags: [theme, divine-names, ibn-arabi, ramon-llull, llull-ars-magna, kabbalah, sufism, sefirot, dignitates, asma-allah, MASSIVE-WIN, cross-tradition]
+date-earliest: 1170
+dating-basis: B4
+dating-basis-source: "\"Wolfson, E. 1989 *Through a Speculum That Shines*. Princeton\""
+dating-basis-notes: "Divine Names mystical theology: Ibn Arabi *Futuhat* c. 1230; Llull *Ars* 1274; Kabbalah Sefer ha-Bahir c. 1175."
 ---
 
 # Divine Names — the cross-tradition mystical-contemplative theology of God's names

@@ -3,6 +3,10 @@ type: place
 id: "place-marib"
 name: "Place Marib"
 status: "stub"
+date-earliest: -1000
+dating-basis: B3
+dating-basis-source: "\"Hoyland, R. 2001 *Arabia and the Arabs*\""
+dating-basis-notes: "Marib Sabaean capital c. -1000."
 ---
 
 # Place Marib

@@ -3,6 +3,10 @@ type: place
 id: "place-aden"
 name: "Place Aden"
 status: "stub"
+date-earliest: -1000
+dating-basis: B3
+dating-basis-source: "\"Hoyland, R. 2001 *Arabia and the Arabs*\""
+dating-basis-notes: "Aden port-city c. -1000; Sabaean phase; Roman name Eudaemon."
 ---
 
 # Place Aden

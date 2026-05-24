@@ -21,6 +21,10 @@ refs:
     type: "commentary"
     tier: 1
 tags: [theme, gospel-of-john, christology, divine-name, judaism]
+date-earliest: 95
+dating-basis: B4
+dating-basis-source: "\"Brown, R.E. 1966 *The Gospel According to John*. Anchor Bible\""
+dating-basis-notes: "Johannine ego eimi sayings Gospel of John c. 95."
 ---
 
 # I-Am Sayings (egō eimi)

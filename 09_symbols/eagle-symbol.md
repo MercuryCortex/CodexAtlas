@@ -58,6 +58,9 @@ connections:
   - target: "[[garuda-symbol]]"
     type: parallel-form
     note: "Garuda is the Vedic/Hindu eagle-deity, divine vehicle of Vishnu and eternal enemy of the Nagas — the eagle-serpent polarity at cosmic scale in South Asian tradition"
+dating-basis: B7
+dating-basis-source: "\"Cross-tradition (Zeus, Garuda, Roman aquila, John the Evangelist, Hopi). Pattern not event.\""
+dating-basis-notes: "Pattern. Keep B7."
 ---
 
 # Eagle (Sacred Symbol)

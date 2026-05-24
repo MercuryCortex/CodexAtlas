@@ -3,6 +3,10 @@ type: place
 id: "place-muziris"
 name: "Place Muziris"
 status: "stub"
+date-earliest: -100
+dating-basis: B3
+dating-basis-source: "\"Sidebotham, S. 2011 *Berenike*\""
+dating-basis-notes: "Muziris (Pattanam) Indo-Roman trade emporium c. -100 to 200 CE."
 ---
 
 # Place Muziris

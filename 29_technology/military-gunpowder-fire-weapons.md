@@ -17,6 +17,10 @@ related-exchange-networks: ["[[silk-road-overland]]", "[[mongol-conquest-corrido
 related-sacred-sites: []
 region: "China → Mongol corridor → Islamic world → Europe → globally"
 themes: ["[[theme-technology-as-religious-transmission-vehicle]]", "[[theme-alchemy-births-secular-technology]]", "[[theme-gunpowder-ends-medieval-warrior-class]]"]
+date-earliest: 904
+dating-basis: B1
+dating-basis-source: "\"Needham, J. 1986 *Science and Civilisation in China* vol. 5 part 7. Cambridge\""
+dating-basis-notes: "Chinese gunpowder fire-arrow 904; flamethrower 919; cannon 1280."
 ---
 
 # Gunpowder and Fire Weapons (Fire Arrow → Cannon)

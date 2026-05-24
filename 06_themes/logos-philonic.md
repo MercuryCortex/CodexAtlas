@@ -34,6 +34,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, theology, logos, philo, hellenistic-judaism, middle-platonism, MASSIVE-WIN, cross-tradition, metatron, johannine, demiurge, wisdom]
+date-earliest: 30
+dating-basis: B4
+dating-basis-source: "\"Runia, D. 1986 *Philo of Alexandria and the Timaeus of Plato*. Brill\""
+dating-basis-notes: "Philo's logos doctrine *De Opificio Mundi* c. 30 CE."
 ---
 
 # Philonic Logos

@@ -27,6 +27,10 @@ refs:
     type: "monograph"
     tier: 2
 tags: [theme, messiah, eschatology, jewish, christian, second-temple]
+date-earliest: -540
+dating-basis: B4
+dating-basis-source: "\"Collins, J.J. 1995 *The Scepter and the Star*\""
+dating-basis-notes: "Davidic-messianic Isaiah 11 c. -540; Royal Psalms older; Qumran 4Q174 c. -100."
 ---
 
 # Messianism

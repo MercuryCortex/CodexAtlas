@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-art-nouveau"
 name: "Tradition Art Nouveau"
 status: "stub"
+date-earliest: 1890
+dating-basis: B5
+dating-basis-source: "\"Greenhalgh, P. 2000 *Art Nouveau 1890-1914*. V&A\""
+dating-basis-notes: "Art Nouveau c. 1890-1910."
 ---
 
 # Tradition Art Nouveau

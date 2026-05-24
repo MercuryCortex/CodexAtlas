@@ -53,6 +53,9 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, persecution, martyrdom, legitimation, girard, scapegoat, christianity, islam, sikhism, bahai, zoroastrianism, judaism, cross-tradition, structural-paradox]
+dating-basis: B7
+dating-basis-source: "\"Pattern (Maccabean, Christian martyrs, Hussite, Sikh shahid, Bahai). Pattern not event.\""
+dating-basis-notes: "Pattern. Keep B7."
 ---
 
 # Persecution as Legitimation

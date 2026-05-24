@@ -3,6 +3,10 @@ type: sacred-site
 id: "pyramid-of-the-moon-teotihuacan"
 name: "Pyramid of the Moon, Teotihuacan"
 status: "stub"
+date-earliest: 100
+dating-basis: B3
+dating-basis-source: "\"Cowgill, G. 2015 *Ancient Teotihuacan*\""
+dating-basis-notes: "Pyramid of the Moon c. 100-450 (multiple construction phases)."
 ---
 
 # Pyramid Of The Moon Teotihuacan

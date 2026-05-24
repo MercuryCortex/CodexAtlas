@@ -3,6 +3,10 @@ type: theme
 id: "theme-silk-road-religious-transmission"
 name: "Theme Silk Road Religious Transmission"
 status: "stub"
+date-earliest: -130
+dating-basis: B5
+dating-basis-source: "\"Whitfield, S. 2018 *Silk Roads: Peoples, Cultures, Landscapes*. Thames & Hudson\""
+dating-basis-notes: "Silk Road consolidation from Zhang Qian's mission c. -130; religious transmission c. -100 onward."
 ---
 
 # Theme Silk Road Religious Transmission

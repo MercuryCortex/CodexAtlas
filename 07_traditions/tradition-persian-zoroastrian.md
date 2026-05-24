@@ -19,6 +19,9 @@ refs:
   - "Boyce, Mary. 'A History of Zoroastrianism.' 3 vols., Brill, 1975–1991."
   - "Skjærvø, P. O. 'The Spirit of Zoroastrianism.' Yale University Press, 2011."
   - "Hintze, Almut. 'A Zoroastrian Liturgy.' Harrassowitz, 2007."
+dating-basis: B5
+dating-basis-source: "\"Boyce, M. 1979 *Zoroastrians: Their Religious Beliefs and Practices*. Routledge\""
+dating-basis-notes: "Zoroaster traditionally c. -1200; Gathas linguistically Old Avestan c. -1500 to -1000."
 ---
 
 The Persian-Zoroastrian tradition encompasses the religious history of Zoroastrianism in its Iranian homeland — from the proto-Zoroastrian period through the Achaemenid Empire (550–330 BCE), Parthian period, Sasanian revival (224–651 CE), and into the post-Islamic minority community.

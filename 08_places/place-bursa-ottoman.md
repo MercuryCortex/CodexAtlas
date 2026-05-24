@@ -3,6 +3,10 @@ type: place
 id: "place-bursa-ottoman"
 name: "Place Bursa Ottoman"
 status: "stub"
+date-earliest: 1326
+dating-basis: B1
+dating-basis-source: "\"Imber, C. 2002 *The Ottoman Empire*\""
+dating-basis-notes: "Ottoman capital 1326-1365."
 ---
 
 # Place Bursa Ottoman

@@ -22,6 +22,10 @@ refs:
     type: "monograph"
     tier: 2
 tags: [theme, prophecy, kingship, political-theology, hebrew, iranian]
+date-earliest: -1000
+dating-basis: B4
+dating-basis-source: "\"Wilson, R. 1980 *Prophecy and Society in Ancient Israel*. Fortress\""
+dating-basis-notes: "Hebrew prophet-king pattern Samuel-Saul-David c. -1000 traditional; texts c. -620 to -540."
 ---
 
 # Prophet and King

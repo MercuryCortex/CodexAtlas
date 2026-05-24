@@ -3,6 +3,10 @@ type: sacred-site
 id: "asukadera"
 name: "Asukadera"
 status: "stub"
+date-earliest: 588
+dating-basis: B1
+dating-basis-source: "\"Como, M. 2008 *Shōtoku*\""
+dating-basis-notes: "Founded by Soga no Umako 588; completed 596."
 ---
 
 # Asukadera

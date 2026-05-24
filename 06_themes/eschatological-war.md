@@ -21,6 +21,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, eschatology, apocalyptic, qumran, judaism]
+date-earliest: -100
+dating-basis: B4
+dating-basis-source: "\"Yadin, Y. 1962 *The Scroll of the War of the Sons of Light against the Sons of Darkness*. OUP\""
+dating-basis-notes: "War Scroll (1QM) c. -100 to -50."
 ---
 
 # Eschatological War

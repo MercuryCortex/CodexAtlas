@@ -3,6 +3,10 @@ type: event
 id: "event-1744-izumo-taisha-rebuild"
 name: "Event 1744 Izumo Taisha Rebuild"
 status: "stub"
+date-earliest: 1744
+dating-basis: B1
+dating-basis-source: "\"Breen, J. & Teeuwen, M. 2010 *A New History of Shinto*\""
+dating-basis-notes: "1744. Slug-extractable."
 ---
 
 # Event 1744 Izumo Taisha Rebuild

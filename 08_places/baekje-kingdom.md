@@ -3,6 +3,10 @@ type: place
 id: "baekje-kingdom"
 name: "Baekje Kingdom"
 status: "stub"
+date-earliest: 18
+dating-basis: B5
+dating-basis-source: "\"Best, J. 2006 *A History of the Early Korean Kingdom of Paekche*. Harvard\""
+dating-basis-notes: "Baekje founded 18 BCE traditional; archaeologically c. 250 CE."
 ---
 
 # Baekje Kingdom

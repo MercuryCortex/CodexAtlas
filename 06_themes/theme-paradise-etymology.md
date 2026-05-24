@@ -86,6 +86,10 @@ tags:
   - linguistic-transmission
   - loanword
   - MASSIVE-WIN
+date-earliest: -500
+dating-basis: B2
+dating-basis-source: "\"Briant, P. 2002 *From Cyrus to Alexander*. Eisenbrauns\""
+dating-basis-notes: "Old Persian *paridaida* attested Achaemenid period c. -500; LXX paradeisos c. -250; Quran firdaws 7th c."
 ---
 
 # Paradise Etymology — *pairidaeza* to Paradise

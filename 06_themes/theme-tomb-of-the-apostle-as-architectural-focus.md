@@ -3,6 +3,10 @@ type: theme
 id: "theme-tomb-of-the-apostle-as-architectural-focus"
 name: "Theme Tomb Of The Apostle As Architectural Focus"
 status: "stub"
+date-earliest: 335
+dating-basis: B5
+dating-basis-source: "\"Krautheimer, R. 1986 *Early Christian and Byzantine Architecture*\""
+dating-basis-notes: "Old St. Peter's Basilica over Petrine tomb c. 335; Santiago de Compostela c. 830."
 ---
 
 # Theme Tomb Of The Apostle As Architectural Focus

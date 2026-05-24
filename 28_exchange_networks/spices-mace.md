@@ -3,6 +3,10 @@ type: exchange-network
 id: "spices-mace"
 name: "Spices Mace"
 status: "stub"
+date-earliest: -100
+dating-basis: B3
+dating-basis-source: "\"Donkin, R. 2003 *Between East and West*\""
+dating-basis-notes: "Mace (Banda Islands) c. -100; Indian Ocean trade."
 ---
 
 # Spices Mace

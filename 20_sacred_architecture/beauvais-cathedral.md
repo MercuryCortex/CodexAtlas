@@ -3,6 +3,10 @@ type: sacred-site
 id: "beauvais-cathedral"
 name: "Beauvais Cathedral"
 status: "stub"
+date-earliest: 1225
+dating-basis: B1
+dating-basis-source: "\"Murray, S. 1989 *Beauvais Cathedral*. Princeton\""
+dating-basis-notes: "Choir begun 1225; collapsed 1284."
 ---
 
 # Beauvais Cathedral

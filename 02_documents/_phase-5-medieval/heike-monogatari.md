@@ -3,6 +3,10 @@ type: document
 id: "heike-monogatari"
 name: "Heike Monogatari"
 status: "stub"
+date-earliest: 1240
+dating-basis: B1
+dating-basis-source: "\"Brown, S. & Yamasaki, M. 1979 *The Tale of the Heike*. Stanford\""
+dating-basis-notes: "Heike Monogatari c. 1240 (oral tradition older)."
 ---
 
 # Heike Monogatari

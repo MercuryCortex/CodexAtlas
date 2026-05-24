@@ -22,6 +22,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, methodology, comparative-religion, history-of-religions, eliade, j-z-smith, asad]
+date-earliest: 1859
+dating-basis: B5
+dating-basis-source: "\"Sharpe, E. 1986 *Comparative Religion: A History* 2nd ed. Open Court\""
+dating-basis-notes: "Comparative religion as discipline from Max Müller c. 1859; Eliade systematization 1949; Asad critique 1993."
 ---
 
 # Comparative Religion as Methodological Theme

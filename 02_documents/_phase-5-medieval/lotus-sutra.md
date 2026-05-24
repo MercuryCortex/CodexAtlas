@@ -3,6 +3,10 @@ type: document
 id: "lotus-sutra"
 name: "Lotus Sutra"
 status: "stub"
+date-earliest: 100
+dating-basis: B1
+dating-basis-source: "\"Williams, P. 2008 *Mahayana Buddhism*\""
+dating-basis-notes: "Lotus Sutra (Saddharmapundarika) c. 100-150."
 ---
 
 # Lotus Sutra

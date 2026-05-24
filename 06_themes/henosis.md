@@ -22,6 +22,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, mysticism, henosis, neoplatonism, sufism, vedanta, christian-mysticism]
+date-earliest: 250
+dating-basis: B4
+dating-basis-source: "\"Wallis, R. 1972 *Neoplatonism*\""
+dating-basis-notes: "Henosis in Plotinus *Enneads* VI c. 250."
 ---
 
 # Henosis (Mystical Union with the One)

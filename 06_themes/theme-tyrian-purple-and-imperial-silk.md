@@ -3,6 +3,10 @@ type: theme
 id: "theme-tyrian-purple-and-imperial-silk"
 name: "Theme Tyrian Purple and Imperial Silk"
 status: "stub"
+date-earliest: -1500
+dating-basis: B5
+dating-basis-source: "\"Pastoureau, M. 2008 *Black*\""
+dating-basis-notes: "Tyrian purple Phoenician c. -1500; Byzantine porphyrogenitus c. 750."
 ---
 
 # Theme Tyrian Purple and Imperial Silk

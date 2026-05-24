@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-portuguese-padroado"
 name: "Tradition Portuguese Padroado"
 status: "stub"
+date-earliest: 1455
+dating-basis: B5
+dating-basis-source: "\"Boxer, C. 1969 *The Portuguese Seaborne Empire*. Knopf\""
+dating-basis-notes: "Padroado granted by Romanus Pontifex 1455; codified Tordesillas 1494."
 ---
 
 # Tradition Portuguese Padroado

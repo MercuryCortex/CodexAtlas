@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-dashanami-sampradaya"
 name: "Tradition Dashanami Sampradaya"
 status: "stub"
+date-earliest: 800
+dating-basis: B5
+dating-basis-source: "\"Clark, M. 2006 *The Dashanami-Samnyasis*. Brill\""
+dating-basis-notes: "Dashanami order founded by Adi Shankara c. 800 CE."
 ---
 
 # Tradition Dashanami Sampradaya

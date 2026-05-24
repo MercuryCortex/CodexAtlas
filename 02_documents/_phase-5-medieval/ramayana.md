@@ -3,6 +3,10 @@ type: document
 id: "ramayana"
 name: "Ramayana"
 status: "stub"
+date-earliest: -400
+dating-basis: B4
+dating-basis-source: "\"Goldman, R. ed. 1984 *The Ramayana of Valmiki* vol. 1. Princeton\""
+dating-basis-notes: "Ramayana core c. -400 to 200 CE."
 ---
 
 # Ramayana

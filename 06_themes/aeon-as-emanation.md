@@ -22,6 +22,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, gnosticism, aeon, emanation, sefirot, hermetism]
+date-earliest: 150
+dating-basis: B4
+dating-basis-source: "\"Rudolph, K. 1987 *Gnosis*. Harper & Row\""
+dating-basis-notes: "Aeon-emanation first textually attested Valentinian Gnostic systems c. 150; Apocryphon of John c. 180."
 ---
 
 # Aeon as Emanation

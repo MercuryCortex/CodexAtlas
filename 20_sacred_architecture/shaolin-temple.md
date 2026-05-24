@@ -3,6 +3,10 @@ type: sacred-site
 id: "shaolin-temple"
 name: "Shaolin Temple"
 status: "stub"
+date-earliest: 495
+dating-basis: B1
+dating-basis-source: "\"Shahar, M. 2008 *The Shaolin Monastery*. Hawaii\""
+dating-basis-notes: "Founded 495 by Emperor Xiaowen."
 ---
 
 # Shaolin Temple

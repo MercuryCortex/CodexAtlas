@@ -39,6 +39,10 @@ refs:
     type: "primary-translation"
     tier: 1
 tags: [theme, zoroastrian, eschatology, judgment, cinvat-bridge, individual-judgment, sirat-parallel, christian-judgment-parallel]
+date-earliest: -1000
+dating-basis: B4
+dating-basis-source: "\"Boyce, M. 1975 *A History of Zoroastrianism* vol. 1\""
+dating-basis-notes: "Chinvat Bridge in Hadhokt Nask and Vendidad; Avestan period c. -1000."
 ---
 
 # Cinvat Bridge

@@ -3,6 +3,9 @@ type: theme
 id: "theme-material-revolution-reshapes-class-structure"
 name: "Theme Material Revolution Reshapes Class Structure"
 status: "stub"
+dating-basis: B7
+dating-basis-source: "\"Cross-tradition pattern (iron, gunpowder, print, steam). Pattern not event.\""
+dating-basis-notes: "Pattern. Keep B7."
 ---
 
 # Theme Material Revolution Reshapes Class Structure

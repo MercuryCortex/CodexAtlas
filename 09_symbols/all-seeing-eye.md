@@ -45,6 +45,10 @@ refs:
   - >
     Webster, N.H. (1921). *World Revolution: The Plot Against Civilization*. Constable.
     Tier 4 — primary source for the Illuminati-Masonic conspiracy narrative; not scholarly.
+date-earliest: -2400
+dating-basis: B2
+dating-basis-source: "\"Wilkinson, R. 1992 *Reading Egyptian Art*. Thames & Hudson\""
+dating-basis-notes: "Wedjat Eye of Horus Egyptian Pyramid Texts c. -2400; Eye of Providence in Christian iconography from 17th c.; Masonic 1797."
 ---
 
 # All-Seeing Eye (Eye of Providence)

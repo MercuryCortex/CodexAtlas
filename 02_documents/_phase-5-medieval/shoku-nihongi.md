@@ -3,6 +3,10 @@ type: document
 id: "shoku-nihongi"
 name: "Shoku Nihongi"
 status: "stub"
+date-earliest: 797
+dating-basis: B1
+dating-basis-source: "\"Sakamoto, T. 1991 *The Six National Histories of Japan*. Univ. British Columbia\""
+dating-basis-notes: "Compiled 797."
 ---
 
 # Shoku Nihongi

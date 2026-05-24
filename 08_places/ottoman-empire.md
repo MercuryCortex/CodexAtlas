@@ -3,6 +3,10 @@ type: place
 id: "ottoman-empire"
 name: "Ottoman Empire"
 status: "stub"
+date-earliest: 1299
+dating-basis: B5
+dating-basis-source: "\"Imber, C. 2002 *The Ottoman Empire*\""
+dating-basis-notes: "Ottoman Empire 1299-1922."
 ---
 
 # Ottoman Empire

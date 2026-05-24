@@ -22,6 +22,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, lamentation, mesopotamian, hebrew, ritual, mourning]
+date-earliest: -2000
+dating-basis: B4
+dating-basis-source: "\"Cooper, J. 1983 *The Curse of Agade*. Johns Hopkins\""
+dating-basis-notes: "Sumerian city-laments c. -2000 (Lament for Ur); Hebrew Lamentations c. -586."
 ---
 
 # Lamentation Genre

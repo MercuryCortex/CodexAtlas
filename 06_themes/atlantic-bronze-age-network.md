@@ -31,6 +31,10 @@ refs:
     tier: 1
     notes: "The European Bronze Age context; connections between Atlantic and Nordic Bronze Age cultures"
 tags: [theme, bronze-age, atlantic, iberia, tartessos, cornwall, ireland, brittany, trade-network, tin, copper, sacred-geography, pre-celtic, megalithic, MASSIVE-WIN]
+date-earliest: -1300
+dating-basis: B5
+dating-basis-source: "\"Cunliffe, B. 2001 *Facing the Ocean: The Atlantic and Its Peoples*. OUP\""
+dating-basis-notes: "Atlantic Bronze Age c. -1300 to -700 per Cunliffe."
 ---
 
 # The Atlantic Bronze Age Network (c. 1300–700 BCE)

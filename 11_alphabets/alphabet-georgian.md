@@ -8,6 +8,9 @@ date-latest: 430
 region: "Kingdom of Iberia (modern Georgia, Caucasus)"
 status: full
 tags: [alphabet, georgian, mashtots, missionary, deliberate-invention, identity-weapon, apostolic, caucasus, three-scripts, asomtavruli, nuskhuri, mkhedruli]
+dating-basis: B1
+dating-basis-source: "\"Rapp, S. 2014 *The Sasanian World through Georgian Eyes*. Ashgate\""
+dating-basis-notes: "Mrgvlovani (Asomtavruli) c. 430; tradition attributes to Mashtots."
 ---
 
 ## What it is

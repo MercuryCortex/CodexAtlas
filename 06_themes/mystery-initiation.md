@@ -32,6 +32,10 @@ refs:
     type: "edited-volume"
     tier: 2
 tags: [theme, ritual, mystery-cults, initiation, eleusis, dionysus, hermetism, MASSIVE-WIN, cross-tradition, baptism, eucharist, christianity, soma-haoma]
+date-earliest: -1450
+dating-basis: B3
+dating-basis-source: "\"Burkert, W. 1987 *Ancient Mystery Cults*\""
+dating-basis-notes: "Eleusinian Mysteries archaeological c. -1450; classical -700."
 ---
 
 # Mystery Initiation

@@ -27,6 +27,10 @@ refs:
     type: "monograph"
     tier: 2
 tags: [theme, martyrdom, christian, jewish, islamic, shahada, persecution, sikhism, bahai, sufism, cross-tradition, girard]
+date-earliest: -167
+dating-basis: B4
+dating-basis-source: "\"Boyarin, D. 1999 *Dying for God*. Stanford\""
+dating-basis-notes: "2 Maccabees 7 c. -100; Martyrdom of Polycarp c. 156; Islamic shahada Quran 7th c.; Sikh shahid 17th c."
 ---
 
 # Martyrdom Theology

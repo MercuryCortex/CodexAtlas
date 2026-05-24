@@ -17,6 +17,10 @@ related-exchange-networks: ["[[silk-road-overland]]", "[[hanseatic-trade-network
 related-sacred-sites: []
 region: "Song China → Goryeo Korea → Mainz / Rhine Valley → Venice → all literate civilizations"
 themes: ["[[theme-technology-as-religious-transmission-vehicle]]", "[[theme-mass-print-enables-reformation]]", "[[theme-three-independent-reinventions]]"]
+date-earliest: 1040
+dating-basis: B1
+dating-basis-source: "\"Tsien, T.-H. 1985 *Science and Civilisation in China* vol. 5 part 1. Cambridge\""
+dating-basis-notes: "Bi Sheng ceramic movable type c. 1040; Korean Jikji 1377; Gutenberg c. 1455."
 ---
 
 # Movable-Type Printing (Bi Sheng → Jikji → Gutenberg)

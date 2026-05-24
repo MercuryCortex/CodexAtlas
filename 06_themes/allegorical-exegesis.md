@@ -28,6 +28,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, exegesis, alexandria, philo, origen, hellenistic-judaism]
+date-earliest: -30
+dating-basis: B4
+dating-basis-source: "\"Dawson, D. 1992 *Allegorical Readers and Cultural Revision in Ancient Alexandria*. Univ. California\""
+dating-basis-notes: "Philo of Alexandria's allegorical exegesis of Torah c. -30 to 50; Origen's Christian extension c. 220."
 ---
 
 # Allegorical Exegesis

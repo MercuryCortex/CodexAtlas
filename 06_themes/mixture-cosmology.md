@@ -27,6 +27,10 @@ refs:
     type: "primary-translation"
     tier: 1
 tags: [theme, manichaeism, cosmology, light-particles, soul-doctrine, mani]
+date-earliest: 250
+dating-basis: B5
+dating-basis-source: "\"BeDuhn, J. 2000 *The Manichaean Body*. Johns Hopkins\""
+dating-basis-notes: "Manichaean mixture cosmology Mani's *Living Gospel* c. 250."
 ---
 
 # Mixture cosmology (Manichaean)

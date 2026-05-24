@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-catalan-catholicism"
 name: "Tradition Catalan Catholicism"
 status: "stub"
+date-earliest: 801
+dating-basis: B5
+dating-basis-source: "\"Salrach, J.M. 1978 *El procés de formació nacional de Catalunya*. Edicions 62\""
+dating-basis-notes: "Catalan Marca Hispanica from 801 (Charlemagne Barcelona); ecclesial province distinct."
 ---
 
 # Tradition Catalan Catholicism

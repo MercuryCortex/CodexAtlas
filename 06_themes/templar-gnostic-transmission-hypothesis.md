@@ -47,6 +47,10 @@ refs:
     tier: 4
     notes: "The foundational 19th-c. Templar-Gnostic-Manichaean-pseudo-Egyptian-hieroglyphic construction"
 tags: [theme, historiographical, reception, templar, gnosticism, occultism, holy-blood-holy-grail, hammer-purgstall, baphomet, masonic-templarism]
+date-earliest: 1818
+dating-basis: B5
+dating-basis-source: "\"Barber, M. 2006 *The Trial of the Templars*\""
+dating-basis-notes: "Modern hypothesis from von Hammer-Purgstall *Mysterium Baphometis Revelatum* 1818; T3-T4 alternative-school."
 ---
 
 # Templar–Gnostic transmission hypothesis

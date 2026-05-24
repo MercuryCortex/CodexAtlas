@@ -18,6 +18,9 @@ tradition-context:
   - "[[tradition-greek-religion]]"
 refs:
   - "Burkert, Walter. *Ancient Mystery Cults*. Harvard University Press, 1987. [T2 — foundational scholarly account]"
+dating-basis: B5
+dating-basis-source: "\"Burkert, W. 1987 *Ancient Mystery Cults*. Harvard\""
+dating-basis-notes: "Eleusinian Mysteries archaeological floor c. -1450; institutional cult c. -700."
 ---
 
 # Greek Mystery Religions

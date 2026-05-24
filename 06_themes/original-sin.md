@@ -27,6 +27,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, soteriology, patristic, augustine, pelagian-controversy, latin-christianity]
+date-earliest: 411
+dating-basis: B4
+dating-basis-source: "\"Brown, P. 1967 *Augustine of Hippo*. Univ. California\""
+dating-basis-notes: "Augustine vs Pelagius c. 411; *De peccatorum meritis* 412."
 ---
 
 # Original Sin (Augustinian doctrine of inherited guilt)

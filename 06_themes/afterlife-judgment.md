@@ -25,6 +25,10 @@ depictions:
     caption: "Ani before the scales of Maat — Papyrus of Ani, Book of the Dead chapter 125"
     source: "Wikimedia Commons / British Museum"
     license: "Public domain"
+date-earliest: -2400
+dating-basis: B2
+dating-basis-source: "\"Hornung, E. 1999 *The Ancient Egyptian Books of the Afterlife*. Cornell\""
+dating-basis-notes: "Egyptian Pyramid Texts c. -2400 contain earliest judgment-of-the-dead motif; Book of Two Ways c. -2050."
 ---
 
 # Afterlife and post-mortem judgment

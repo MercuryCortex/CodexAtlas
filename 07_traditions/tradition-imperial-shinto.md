@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-imperial-shinto"
 name: "Tradition Imperial Shinto"
 status: "stub"
+date-earliest: 1868
+dating-basis: B5
+dating-basis-source: "\"Hardacre, H. 1989 *Shinto and the State, 1868-1988*. Princeton\""
+dating-basis-notes: "State Shinto from Meiji Restoration 1868; disestablished 1945."
 ---
 
 # Tradition Imperial Shinto

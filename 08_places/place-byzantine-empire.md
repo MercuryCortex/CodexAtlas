@@ -3,6 +3,10 @@ type: place
 id: "place-byzantine-empire"
 name: "Place Byzantine Empire"
 status: "stub"
+date-earliest: 330
+dating-basis: B5
+dating-basis-source: "\"Brown, P. 1971 *The World of Late Antiquity*\""
+dating-basis-notes: "Same as byzantine-empire. Constantinople 330."
 ---
 
 # Place Byzantine Empire

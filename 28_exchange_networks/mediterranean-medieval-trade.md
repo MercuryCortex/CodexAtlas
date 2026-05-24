@@ -3,6 +3,10 @@ type: exchange-network
 id: "mediterranean-medieval-trade"
 name: "Mediterranean Medieval Trade"
 status: "stub"
+date-earliest: 1000
+dating-basis: B5
+dating-basis-source: "\"Abulafia, D. 2011 *The Great Sea*. OUP\""
+dating-basis-notes: "Medieval Mediterranean trade c. 1000-1500."
 ---
 
 # Mediterranean Medieval Trade

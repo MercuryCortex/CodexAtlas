@@ -3,6 +3,10 @@ type: theme
 id: "theme-labyrinth-as-pilgrim-path"
 name: "Theme Labyrinth As Pilgrim Path"
 status: "stub"
+date-earliest: 1200
+dating-basis: B5
+dating-basis-source: "\"Wright, C. 2001 *The Maze and the Warrior*. Harvard\""
+dating-basis-notes: "Chartres labyrinth c. 1200; cretan labyrinth motif c. -1500."
 ---
 
 # Theme Labyrinth As Pilgrim Path

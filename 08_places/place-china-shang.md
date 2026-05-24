@@ -3,6 +3,10 @@ type: place
 id: "place-china-shang"
 name: "Place China Shang"
 status: "stub"
+date-earliest: -1600
+dating-basis: B5
+dating-basis-source: "\"Chang, K.C. 1980 *Shang Civilization*\""
+dating-basis-notes: "Shang dynasty c. -1600 to -1046."
 ---
 
 # Place China Shang

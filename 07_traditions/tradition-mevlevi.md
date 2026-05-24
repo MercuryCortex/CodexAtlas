@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-mevlevi"
 name: "Tradition Mevlevi"
 status: "stub"
+date-earliest: 1273
+dating-basis: B5
+dating-basis-source: "\"Lewis, F. 2000 *Rumi: Past and Present, East and West*. Oneworld\""
+dating-basis-notes: "Mevlevi order founded by Sultan Walad after Rumi's death 1273; institutionalized 14th c."
 ---
 
 # Tradition Mevlevi

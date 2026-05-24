@@ -22,6 +22,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, apotheosis, theosis, imperial-cult, deification, christian]
+date-earliest: -323
+dating-basis: B4
+dating-basis-source: "\"Price, S. 1984 *Rituals and Power*\""
+dating-basis-notes: "Greek apotheosis of mortal rulers from Alexander's posthumous cult -323; ruler-cult tradition older (pharaonic)."
 ---
 
 # Apotheosis (Deification of Mortals)

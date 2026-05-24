@@ -54,6 +54,10 @@ refs:
     type: "journal-article"
     tier: 1
 tags: [theme, archetype, trickster, hermes, loki, coyote, eshu, anansi, crossroads, boundary-crossing, universal, jung, radin]
+date-earliest: -1200
+dating-basis: B5
+dating-basis-source: "\"Hyde, L. 1998 *Trickster Makes This World*. Farrar Straus & Giroux\""
+dating-basis-notes: "Trickster motif: Hermes c. -700; Anansi 16th c. attestation but West African older; Loki c. 1000; Coyote."
 ---
 
 # The Trickster Archetype

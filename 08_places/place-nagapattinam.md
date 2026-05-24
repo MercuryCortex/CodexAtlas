@@ -3,6 +3,10 @@ type: place
 id: "place-nagapattinam"
 name: "Place Nagapattinam"
 status: "stub"
+date-earliest: 600
+dating-basis: B3
+dating-basis-source: "\"Karashima, N. 2009 *Ancient and Medieval Commercial Activities in the Indian Ocean*. Manohar\""
+dating-basis-notes: "Nagapattinam Pallava-Chola port from c. 600."
 ---
 
 # Place Nagapattinam

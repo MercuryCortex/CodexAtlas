@@ -3,6 +3,10 @@ type: doctrine
 id: "doctrine-padroado-portuguese-crown-mission"
 name: "Doctrine Padroado Portuguese Crown Mission"
 status: "stub"
+date-earliest: 1455
+dating-basis: B1
+dating-basis-source: "\"Boxer, C. 1969 *The Portuguese Seaborne Empire*\""
+dating-basis-notes: "Romanus Pontifex 1455."
 ---
 
 # Doctrine Padroado Portuguese Crown Mission

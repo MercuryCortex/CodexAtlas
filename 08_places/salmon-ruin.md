@@ -3,6 +3,10 @@ type: place
 id: "salmon-ruin"
 name: "Salmon Ruin"
 status: "stub"
+date-earliest: 1090
+dating-basis: B3
+dating-basis-source: "\"Reed, P. ed. 2008 *Chaco's Northern Prodigies: Salmon, Aztec, and the Ascendancy of the Middle San Juan Region after AD 1100*. Univ. Utah\""
+dating-basis-notes: "Salmon Pueblo Chacoan c. 1090-1280."
 ---
 
 # Salmon Ruin

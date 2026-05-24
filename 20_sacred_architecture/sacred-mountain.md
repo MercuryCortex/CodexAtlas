@@ -3,6 +3,9 @@ type: sacred-site
 id: "sacred-mountain"
 name: "Sacred Mountain"
 status: "stub"
+dating-basis: B7
+dating-basis-source: "\"Generic cross-tradition motif; no single referent.\""
+dating-basis-notes: "Pattern. Keep B7."
 ---
 
 # Sacred Mountain

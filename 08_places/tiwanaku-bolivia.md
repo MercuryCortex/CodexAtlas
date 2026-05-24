@@ -3,6 +3,10 @@ type: place
 id: "tiwanaku-bolivia"
 name: "Tiwanaku Bolivia"
 status: "stub"
+date-earliest: -300
+dating-basis: B3
+dating-basis-source: "\"Kolata, A. 1993 *The Tiwanaku*. Blackwell\""
+dating-basis-notes: "Tiwanaku c. -300 to 1000 CE."
 ---
 
 # Tiwanaku Bolivia

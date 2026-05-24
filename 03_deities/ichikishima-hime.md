@@ -3,6 +3,10 @@ type: deity
 id: "ichikishima-hime"
 name: "Ichikishima Hime"
 status: "stub"
+date-earliest: 712
+dating-basis: B4
+dating-basis-source: "\"Philippi, D. 1969 *Kojiki*\""
+dating-basis-notes: "Munakata triad Kojiki 712 / Nihon Shoki 720."
 ---
 
 # Ichikishima Hime

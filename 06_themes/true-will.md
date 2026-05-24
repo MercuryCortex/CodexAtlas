@@ -21,6 +21,10 @@ refs:
     type: "monograph"
     tier: 2
 tags: [theme, thelema, crowley, ethics, occult]
+date-earliest: 1904
+dating-basis: B1
+dating-basis-source: "\"Crowley, A. *Liber AL vel Legis* (1904)\""
+dating-basis-notes: "Crowley 1904 (Cairo \"Book of the Law\")."
 ---
 
 # True Will (Thelema)

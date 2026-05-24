@@ -14,6 +14,9 @@ tags:
   - plant-medicine
 date_earliest: -40000
 date_latest: 2000
+dating-basis: B7
+dating-basis-source: "\"Cross-tradition (soma c. -1500, kykeon Eleusis, ayahuasca, peyote). Pattern not event.\""
+dating-basis-notes: "Pattern. Keep B7."
 ---
 
 Sacred pharmacology is the cross-tradition practice of using plant substances as vehicles of divine contact, healing, or cosmic insight — not merely as chemical treatments but as sacred agents with their own spiritual authority. The plants heal not only because of their chemical properties but because they are *beings* with which the healer establishes a relationship.

@@ -57,6 +57,10 @@ refs:
     tier: 1
     notes: "Foundational Mexican-scholarly treatment of Nahua cosmology and theology, drawing on the Florentine Codex and other early-colonial sources."
 tags: [theme, mesoamerican, cosmogony, maya, aztec, popol-vuh, five-suns, ceiba, world-tree, world-creation]
+date-earliest: 1554
+dating-basis: B4
+dating-basis-source: "\"Tedlock, D. 1985 *Popol Vuh*. Simon & Schuster\""
+dating-basis-notes: "Mesoamerican cosmogony: Popol Vuh redacted c. 1554; Maya classic-period sources c. 250-900; Aztec Codex Borbonicus c. 1500."
 ---
 
 # Mesoamerican Cosmogony

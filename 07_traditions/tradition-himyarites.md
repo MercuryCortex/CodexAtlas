@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-himyarites"
 name: "Tradition Himyarites"
 status: "stub"
+date-earliest: -110
+dating-basis: B5
+dating-basis-source: "\"Robin, C. 2012 *Arabia and Ethiopia* in Johnson ed. *Late Antiquity*. OUP\""
+dating-basis-notes: "Himyarite kingdom c. -110 to 525 CE; Judaized state-religion 4th-6th c."
 ---
 
 # Tradition Himyarites

@@ -3,6 +3,10 @@ type: exchange-network
 id: "abbasid-trade-network"
 name: "Abbasid Trade Network"
 status: "stub"
+date-earliest: 750
+dating-basis: B5
+dating-basis-source: "\"Hodges, R. & Whitehouse, D. 1983 *Mohammed, Charlemagne and the Origins of Europe*. Duckworth\""
+dating-basis-notes: "Abbasid trade network c. 750-1258."
 ---
 
 # Abbasid Trade Network

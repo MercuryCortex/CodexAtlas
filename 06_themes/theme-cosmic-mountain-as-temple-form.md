@@ -3,6 +3,10 @@ type: theme
 id: "theme-cosmic-mountain-as-temple-form"
 name: "Theme Cosmic Mountain As Temple Form"
 status: "stub"
+date-earliest: -3000
+dating-basis: B3
+dating-basis-source: "\"Pollock, S. 1999 *Ancient Mesopotamia*\""
+dating-basis-notes: "Sumerian ziggurat as cosmic mountain c. -3000 (Uruk White Temple platform)."
 ---
 
 # Theme Cosmic Mountain As Temple Form

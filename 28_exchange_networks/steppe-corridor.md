@@ -3,6 +3,10 @@ type: exchange-network
 id: "steppe-corridor"
 name: "Steppe Corridor"
 status: "stub"
+date-earliest: -3500
+dating-basis: B5
+dating-basis-source: "\"Anthony, D. 2007 *The Horse, the Wheel, and Language*\""
+dating-basis-notes: "Eurasian steppe corridor from Yamnaya c. -3500."
 ---
 
 # Steppe Corridor

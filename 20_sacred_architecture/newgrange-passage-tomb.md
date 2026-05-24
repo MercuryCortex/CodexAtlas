@@ -3,6 +3,10 @@ type: sacred-site
 id: "newgrange-passage-tomb"
 name: "Newgrange Passage Tomb"
 status: "stub"
+date-earliest: -3200
+dating-basis: B3
+dating-basis-source: "\"O'Kelly, M. 1982 *Newgrange*. Thames & Hudson\""
+dating-basis-notes: "Newgrange c. -3200."
 ---
 
 # Newgrange Passage Tomb

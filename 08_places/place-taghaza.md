@@ -3,6 +3,10 @@ type: place
 id: "place-taghaza"
 name: "Place Taghaza"
 status: "stub"
+date-earliest: 1000
+dating-basis: B3
+dating-basis-source: "\"Levtzion, N. 1973 *Ancient Ghana and Mali*\""
+dating-basis-notes: "Taghaza Saharan salt mine c. 1000-1600."
 ---
 
 # Place Taghaza

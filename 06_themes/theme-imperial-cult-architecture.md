@@ -3,6 +3,10 @@ type: theme
 id: "theme-imperial-cult-architecture"
 name: "Theme Imperial Cult Architecture"
 status: "stub"
+date-earliest: -27
+dating-basis: B3
+dating-basis-source: "\"Price, S. 1984 *Rituals and Power*\""
+dating-basis-notes: "Augustan imperial-cult temples from -27."
 ---
 
 # Theme Imperial Cult Architecture

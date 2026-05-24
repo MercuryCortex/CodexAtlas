@@ -3,6 +3,10 @@ type: place
 id: "place-hadramawt-yemen"
 name: "Place Hadramawt Yemen"
 status: "stub"
+date-earliest: -1000
+dating-basis: B5
+dating-basis-source: "\"Hoyland, R. 2001 *Arabia and the Arabs*\""
+dating-basis-notes: "Hadramawt kingdom c. -1000 to 300 CE."
 ---
 
 # Place Hadramawt Yemen

@@ -3,6 +3,10 @@ type: place
 id: "place-quanzhou"
 name: "Place Quanzhou"
 status: "stub"
+date-earliest: 718
+dating-basis: B1
+dating-basis-source: "\"Schottenhammer, A. ed. 2001 *The Emporium of the World: Maritime Quanzhou, 1000-1400*. Brill\""
+dating-basis-notes: "Quanzhou Tang foundation 718; Song-Yuan port-city florescence 1000-1400."
 ---
 
 # Place Quanzhou

@@ -3,6 +3,10 @@ type: technology
 id: "information-offset-lithography"
 name: "Information Offset Lithography"
 status: "stub"
+date-earliest: 1875
+dating-basis: B1
+dating-basis-source: "\"Cave, R. 2014 *The History of the Book in 100 Books*. Firefly\""
+dating-basis-notes: "Robert Barclay's offset lithography 1875."
 ---
 
 # Information Offset Lithography

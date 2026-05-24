@@ -29,6 +29,9 @@ cross-tradition-edges:
   - target: medicine-mesopotamian-temple
     type: inherits-from
     note: Babylonian pharmacological knowledge entered Arabic medicine via Greek intermediaries (Dioscorides's De Materia Medica compiled Babylonian and Egyptian drug lore). The transmission chain: cuneiform tablets → Dioscorides → Arabic translation → Avicenna → European medicine.
+dating-basis: B5
+dating-basis-source: "\"Pormann, P. & Savage-Smith, E. 2007 *Medieval Islamic Medicine*. Edinburgh\""
+dating-basis-notes: "Islamic medical tradition c. 850-1200; al-Razi d. 925; Avicenna *Canon* 1025."
 ---
 
 The Islamic Golden Age (c. 750–1300 CE) accomplished the most consequential medical transmission event in history: the rescue, translation, systematic extension, and re-transmission of ancient medical knowledge from Greek, Indian, and Persian sources into a unified corpus that would form the basis of European medical education from the 12th through the 17th centuries.

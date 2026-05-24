@@ -3,6 +3,10 @@ type: place
 id: "song-dynasty"
 name: "Song Dynasty"
 status: "stub"
+date-earliest: 960
+dating-basis: B5
+dating-basis-source: "\"Smith, P.J. & von Glahn, R. 2003 *The Song-Yuan-Ming Transition*\""
+dating-basis-notes: "Song dynasty 960-1279."
 ---
 
 # Song Dynasty

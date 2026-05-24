@@ -3,6 +3,10 @@ type: theme
 id: "theme-alchemy-births-secular-technology"
 name: "Theme Alchemy Births Secular Technology"
 status: "stub"
+date-earliest: 1660
+dating-basis: B5
+dating-basis-source: "\"Newman, W. & Principe, L. 2002 *Alchemy Tried in the Fire*. Univ. Chicago\""
+dating-basis-notes: "Alchemy-to-chemistry transition c. 1660 (Boyle); paracelsian-iatrochemistry c. 1530."
 ---
 
 # Theme Alchemy Births Secular Technology

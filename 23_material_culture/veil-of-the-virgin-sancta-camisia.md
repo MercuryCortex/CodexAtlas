@@ -3,6 +3,10 @@ type: relic
 id: "veil-of-the-virgin-sancta-camisia"
 name: "Veil Of The Virgin Sancta Camisia"
 status: "stub"
+date-earliest: 876
+dating-basis: B1
+dating-basis-source: "\"Bagnoli, M. et al. eds. 2010 *Treasures of Heaven*\""
+dating-basis-notes: "Sancta Camisia gift to Chartres by Charles the Bald 876."
 ---
 
 # Veil Of The Virgin Sancta Camisia

@@ -21,6 +21,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, wicca, modern-paganism, calendar, ritual]
+date-earliest: 1958
+dating-basis: B1
+dating-basis-source: "\"Hutton, R. 1999 *The Triumph of the Moon*. OUP\""
+dating-basis-notes: "Wheel of the Year (modern Wicca) Aidan Kelly c. 1958-1974; Gardnerian Wicca 1954."
 ---
 
 # Wheel of the Year

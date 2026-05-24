@@ -43,6 +43,9 @@ cross-tradition-edges:
   - target: brahmagupta
     type: child-of
     note: Brahmagupta's Brahmasphutasiddhanta (628 CE) is the founding document of zero as arithmetic rather than placeholder. Earlier texts (Bakhshali, c. 300 CE) use zero as a positional mark; Brahmagupta first states rules for operating with zero as a number.
+dating-basis: B3
+dating-basis-source: "\"Plofker, K. 2009 *Mathematics in India*. Princeton\""
+dating-basis-notes: "Brahmagupta *Brahma-sphuta-siddhanta* 628 (zero arithmetic); Bakhshali manuscript dot-zero possibly older (current dating 8th-12th c. uncertain)."
 ---
 
 The **invention of zero** is one of the most consequential intellectual events in human history — and it happened in India, emerging from a tradition where philosophical concepts of **śūnya** (emptiness, nothingness) were already operative in both Buddhist metaphysics and Vedic mathematical thinking.

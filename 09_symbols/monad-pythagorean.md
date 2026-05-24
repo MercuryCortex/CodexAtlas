@@ -36,6 +36,9 @@ cross-tradition-edges:
   - target: divine-unity
     type: parallel
     note: The Pythagorean Monad as first principle — unitary, indivisible, self-identical, generative — parallels the monotheistic concept of divine unity across traditions. The Neoplatonic reception of the Monad is explicitly theological; Augustine's influence on Christian theology imports Neoplatonic-Pythagorean Monad theology into Christianity's God-concept.
+dating-basis: B5
+dating-basis-source: "\"Burkert, W. 1972 *Lore and Science in Ancient Pythagoreanism*. Harvard\""
+dating-basis-notes: "Pythagorean monad c. -530; Plotinian \"the One\" c. 250."
 ---
 
 # The Monad — Pythagorean First Principle

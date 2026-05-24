@@ -48,6 +48,10 @@ refs:
     tier: 2
     notes: "Best accessible treatment of kundalini as serpent-power in Tantric theology."
 tags: [theme, serpent, symbol, polarity, gnostic, ophite, kundalini, eden, wisdom, chaos, cross-tradition, comparative-religion]
+date-earliest: -1300
+dating-basis: B2
+dating-basis-source: "\"Charlesworth, J. 2010 *The Good and Evil Serpent*. Yale\""
+dating-basis-notes: "Cross-tradition; Egyptian uraeus c. -3000 (positive); Genesis 3 c. -540 (negative); Asclepius staff c. -700 (healing)."
 ---
 
 # Serpent Dual Nature (Enemy and Wisdom)

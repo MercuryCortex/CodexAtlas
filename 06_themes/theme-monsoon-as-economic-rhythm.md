@@ -3,6 +3,10 @@ type: theme
 id: "theme-monsoon-as-economic-rhythm"
 name: "Theme Monsoon As Economic Rhythm"
 status: "stub"
+date-earliest: -100
+dating-basis: B5
+dating-basis-source: "\"Sidebotham, S. 2011 *Berenike and the Ancient Maritime Spice Route*. Univ. California\""
+dating-basis-notes: "Indo-Roman monsoon-trade discovery c. -100 (Hippalus); Tamilakam-Roman trade."
 ---
 
 # Theme Monsoon As Economic Rhythm

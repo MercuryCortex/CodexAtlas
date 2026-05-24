@@ -29,6 +29,9 @@ cross-tradition-edges:
   - target: tradition-sufism
     type: parallel
     note: Tawhid (divine unity) is the central doctrine of Islamic theology — "there is no god but God." Sufi metaphysics (especially Ibn Arabi's wahdat al-wujud, "unity of being") extends tawhid into a complete metaphysical monism paralleling the Neoplatonic One.
+dating-basis: B4
+dating-basis-source: "\"Halbertal, M. & Margalit, A. 1992 *Idolatry*. Harvard\""
+dating-basis-notes: "Strict divine unity Deutero-Isaiah 44-46 c. -540; tawhid Quran 7th c.; advaita Upanishads c. -700."
 ---
 
 # Divine Unity — The Cross-Tradition Doctrine of the One

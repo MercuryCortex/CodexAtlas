@@ -37,6 +37,9 @@ refs:
   - "Thomas, David, ed. *Syrian Christians Under Islam: The First Thousand Years*. Brill, 2001. [T2 — Syriac Christianity under Islamic rule]"
   - "McVey, Kathleen E. *Ephrem the Syrian: Hymns*. Paulist Press, 1989. [T1 — primary translation of Ephrem with scholarly introduction]"
   - "Daniels, Peter T., and William Bright, eds. *The World's Writing Systems*. Oxford University Press, 1996. [T2 — Syriac script and its descendants including Sogdian → Mongolian]"
+dating-basis: B3
+dating-basis-source: "\"Healey, J. 2009 *Aramaic Inscriptions and Documents of the Roman Period*. OUP\""
+dating-basis-notes: "Old Syriac inscriptions from c. 100 CE Edessa."
 ---
 
 # Syriac — The Aramaic Dialect That Carried Christianity to China

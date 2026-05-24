@@ -3,6 +3,10 @@ type: place
 id: "place-sicily-norman"
 name: "Place Sicily Norman"
 status: "stub"
+date-earliest: 1130
+dating-basis: B1
+dating-basis-source: "\"Houben, H. 2002 *Roger II of Sicily*. Cambridge\""
+dating-basis-notes: "Norman Kingdom of Sicily 1130-1194."
 ---
 
 # Place Sicily Norman

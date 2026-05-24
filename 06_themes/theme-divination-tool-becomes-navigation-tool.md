@@ -3,6 +3,10 @@ type: theme
 id: "theme-divination-tool-becomes-navigation-tool"
 name: "Theme Divination Tool Becomes Navigation Tool"
 status: "stub"
+date-earliest: 1100
+dating-basis: B5
+dating-basis-source: "\"Needham, J. 1962 *Science and Civilisation in China* vol. 4\""
+dating-basis-notes: "South-pointing spoon (geomancy) → mariner's compass c. 1100 China."
 ---
 
 # Theme Divination Tool Becomes Navigation Tool

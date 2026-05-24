@@ -40,6 +40,10 @@ refs:
     tier: 1
     notes: "Cerulli's monumental study of Ethiopian Marian devotion; the Te'amre Maryam corpus and its parallels with the Latin Miracula Mariae"
 tags: [theme, ritual, marian, ethiopian, marian-devotion, isis-lactans, marian-feasts, mary-of-zion]
+date-earliest: 431
+dating-basis: B5
+dating-basis-source: "\"Munro-Hay, S. 1991 *Aksum*\""
+dating-basis-notes: "Ethiopian Marian devotion from Aksumite Christianization c. 340; Theotokos definition 431 codifies."
 ---
 
 # Ethiopian Marian Devotion

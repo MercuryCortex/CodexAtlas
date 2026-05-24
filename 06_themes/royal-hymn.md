@@ -22,6 +22,10 @@ refs:
     type: "monograph"
     tier: 2
 tags: [theme, royal, hymn, ane, davidic-psalms, kingship]
+date-earliest: -1000
+dating-basis: B4
+dating-basis-source: "\"Wilson, J. 1956 in Pritchard ed. *ANET*. Princeton\""
+dating-basis-notes: "Egyptian royal hymns Old Kingdom Pyramid Texts c. -2400; Davidic Psalms c. -1000; Mesopotamian Shulgi hymns c. -2050."
 ---
 
 # Royal Hymn

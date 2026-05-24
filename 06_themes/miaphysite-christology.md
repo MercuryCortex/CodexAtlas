@@ -34,6 +34,10 @@ refs:
     type: "encyclopedia"
     tier: 1
 tags: [theme, christology, miaphysite, tewahedo, post-chalcedon, oriental-orthodox, ethiopian]
+date-earliest: 451
+dating-basis: B5
+dating-basis-source: "\"Frend, W.H.C. 1972 *The Rise of the Monophysite Movement*. Cambridge\""
+dating-basis-notes: "Miaphysite Christology from post-Chalcedonian dispute 451; Severus of Antioch c. 512."
 ---
 
 # Miaphysite Christology

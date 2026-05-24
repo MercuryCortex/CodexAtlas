@@ -21,6 +21,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, plato, neoplatonism, eros, ficino, bruno]
+date-earliest: -380
+dating-basis: B4
+dating-basis-source: "\"Plato *Symposium* (c. -380)\""
+dating-basis-notes: "Platonic Eros: *Symposium* / *Phaedrus* c. -380."
 ---
 
 # Eros as Philosophical Motive

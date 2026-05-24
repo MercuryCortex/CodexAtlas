@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-greco-roman-paganism"
 name: "Tradition Greco Roman Paganism"
 status: "stub"
+date-earliest: -700
+dating-basis: B5
+dating-basis-source: "\"Burkert, W. 1985 *Greek Religion*. Harvard\""
+dating-basis-notes: "Classical Greek polis-religion crystallizes archaic period c. -700; Roman parallel c. -500."
 ---
 
 # Tradition Greco Roman Paganism

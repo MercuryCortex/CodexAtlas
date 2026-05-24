@@ -52,6 +52,10 @@ refs:
     tier: 1
     notes: "Foundational study of Bundahishn cosmogony structure; identifies the three-3000-year + 1000-year schema"
 tags: [theme, zoroastrian, cosmogony, creation, bundahishn, cosmic-dualism, gnostic-parallel, genesis-parallel, MASSIVE-WIN, phase-2, cross-tradition]
+date-earliest: 800
+dating-basis: B4
+dating-basis-source: "\"West, E.W. 1880 *Pahlavi Texts* (SBE 5). Clarendon\""
+dating-basis-notes: "Bundahishn (Sasanian/Abbasid Pahlavi) c. 800 CE; oral Avestan substrate older."
 ---
 
 # Zoroastrian Cosmogony (Bundahishn Creation Schema)

@@ -3,6 +3,10 @@ type: symbol
 id: "vastu-purusha-mandala"
 name: "Vastu Purusha Mandala"
 status: "stub"
+date-earliest: 500
+dating-basis: B5
+dating-basis-source: "\"Kramrisch, S. 1946 *The Hindu Temple*\""
+dating-basis-notes: "Vastu Purusha mandala in Shilpa Shastras c. 500-700."
 ---
 
 # Vastu Purusha Mandala

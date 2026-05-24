@@ -3,6 +3,10 @@ type: theme
 id: "theme-immortality-cultivation"
 name: "Theme Immortality Cultivation"
 status: "stub"
+date-earliest: -200
+dating-basis: B5
+dating-basis-source: "\"Pregadio, F. 2006 *Great Clarity*\""
+dating-basis-notes: "Chinese immortality-cultivation (waidan) c. -200; Han Daoism."
 ---
 
 # Theme Immortality Cultivation

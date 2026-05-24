@@ -34,6 +34,10 @@ refs:
     tier: 1
     notes: "Systematic study of the 99 divine names in Islamic theology; locates kun fa-yakun within the tradition of divine speech and creative command."
 tags: [theme, cosmogony, logos, fiat, egyptian, hebrew, islamic, kun-fa-yakun, MASSIVE-WIN, cross-tradition, metadata]
+date-earliest: -2500
+dating-basis: B2
+dating-basis-source: "\"Allen, J.P. 1988 *Genesis in Egypt*. Yale Egyptological Seminar\""
+dating-basis-notes: "Memphite Theology (Shabaka Stone) c. -2500 (text claim; physical stone -700); Genesis 1 c. -540; John 1 c. 90 CE."
 ---
 
 # Creation by Word

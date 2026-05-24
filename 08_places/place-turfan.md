@@ -3,6 +3,10 @@ type: place
 id: "place-turfan"
 name: "Place Turfan"
 status: "stub"
+date-earliest: -100
+dating-basis: B3
+dating-basis-source: "\"Whitfield, S. 2018 *Silk Roads*\""
+dating-basis-notes: "Turfan Han garrison c. -100; Uighur Idiqut 850."
 ---
 
 # Place Turfan

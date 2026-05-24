@@ -22,6 +22,9 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, oral-tradition, transmission, vedic, homeric, talmudic, bardic, methodology]
+dating-basis: B7
+dating-basis-source: "\"Methodological / cross-tradition category. Lord/Parry 1960 modern scholarly framing; underlying practice prehistoric.\""
+dating-basis-notes: "Methodological category. Keep B7."
 ---
 
 # Oral Tradition Transmission

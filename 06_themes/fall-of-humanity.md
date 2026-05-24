@@ -27,6 +27,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, anthropology, fall, sin, gnostic, adam-eve]
+date-earliest: -540
+dating-basis: B4
+dating-basis-source: "\"Westermann, C. 1984 *Genesis 1-11*. Fortress\""
+dating-basis-notes: "Genesis 3 Yahwist redaction c. -540; precursors in Mesopotamian Adapa c. -1700."
 ---
 
 # Fall of Humanity

@@ -3,6 +3,9 @@ type: theme
 id: "theme-blue-as-divine-colour"
 name: "Theme Blue As Divine Colour"
 status: "stub"
+dating-basis: B7
+dating-basis-source: "\"Cross-tradition (Egyptian blue lapis, Greek Athena, Hindu Krishna/Shiva, Christian Mary). Pattern not event.\""
+dating-basis-notes: "Pattern. Keep B7."
 ---
 
 # Theme Blue As Divine Colour

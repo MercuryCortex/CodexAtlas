@@ -30,6 +30,10 @@ connections:
   - target: "[[spiral]]"
     type: visual-cognate
     note: "The heart-form of Sankofa is a double spiral returning to its source — visually and conceptually cognate with the spiral as return-and-renewal"
+date-earliest: 1500
+dating-basis: B5
+dating-basis-source: "\"Quarcoo, A.K. 1972 *The Language of Adinkra Patterns*. Sebewie\""
+dating-basis-notes: "Adinkra symbols Akan c. 1500-1800; Sankofa codified 18th c."
 ---
 
 # Sankofa

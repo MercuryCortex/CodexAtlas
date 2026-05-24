@@ -3,6 +3,10 @@ type: alchemy
 id: "alchemy-elixir-of-immortality"
 name: "Alchemy Elixir of Immortality"
 status: "stub"
+date-earliest: -300
+dating-basis: B5
+dating-basis-source: "\"Pregadio, F. 2006 *Great Clarity*\""
+dating-basis-notes: "Chinese waidan elixir c. -300; Western Latin \"elixir\" 12th c."
 ---
 
 # Alchemy Elixir of Immortality

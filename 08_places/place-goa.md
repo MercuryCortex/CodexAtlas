@@ -3,6 +3,10 @@ type: place
 id: "place-goa"
 name: "Place Goa"
 status: "stub"
+date-earliest: 1510
+dating-basis: B1
+dating-basis-source: "\"Boxer, C. 1969 *The Portuguese Seaborne Empire*\""
+dating-basis-notes: "Portuguese Goa from 1510 (Albuquerque); precedents Bijapur sultanate."
 ---
 
 # Place Goa

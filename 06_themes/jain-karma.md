@@ -23,6 +23,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, jainism, karma, metaphysics, matter, soul, liberation]
+date-earliest: -500
+dating-basis: B4
+dating-basis-source: "\"Jaini, P. 1979 *The Jaina Path of Purification*. Univ. California\""
+dating-basis-notes: "Jain karma as subtle matter Mahavira c. -500; Tattvartha Sutra c. 200 CE systematization."
 ---
 
 # Jain Karma — Karma as Subtle Matter

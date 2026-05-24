@@ -63,6 +63,10 @@ refs:
     tier: 1
     notes: "On early Syriac baptismal theology; the Spirit-as-Mother in baptismal liturgy"
 tags: [theme, holy-spirit, sophia, feminine, ruach, syriac, gnosticism, MASSIVE-WIN, cross-tradition, pneumatology, suppressed, gender, divine-feminine]
+date-earliest: 150
+dating-basis: B4
+dating-basis-source: "\"Brock, S. 2008 'The Holy Spirit as Feminine in Early Syriac Literature' in McEwan-Murray *After Eve*. Marshall Pickering\""
+dating-basis-notes: "Syriac feminine Ruach: Aphrahat c. 340; Odes of Solomon c. 150; Gospel of the Hebrews fragment."
 ---
 
 # Holy Spirit as Sophia — the Suppressed Feminine Third

@@ -22,6 +22,9 @@ refs:
   - "Simek, Rudolf. 'Dictionary of Northern Mythology.' D. S. Brewer, 1993."
   - "Dronke, Ursula (ed. and trans.). 'The Poetic Edda, Vol. I.' Oxford University Press, 1969."
   - "Snorri Sturluson. 'Prose Edda.' Trans. Jesse L. Byock, Penguin Classics, 2005."
+dating-basis: B5
+dating-basis-source: "\"Andrén, A., Jennbert, K. & Raudvere, C. 2006 *Old Norse Religion in Long-Term Perspectives*. Nordic Academic\""
+dating-basis-notes: "Norse-Germanic religion attested from Roman Iron Age c. 200 CE; Migration Period codification."
 ---
 
 Norse-Germanic religion is the polytheistic tradition of the Scandinavian and broader Germanic peoples, attested from c. 500 BCE through the Christianization of Scandinavia (c. 1000–1200 CE). Its primary literary preservation is in the Old Norse Eddas (Poetic Edda and Prose Edda, compiled 12th–13th c. CE) and the Icelandic sagas.

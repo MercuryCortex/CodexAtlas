@@ -3,6 +3,10 @@ type: document
 id: "diamond-sutra-868"
 name: "Diamond Sutra 868"
 status: "stub"
+date-earliest: 868
+dating-basis: B1
+dating-basis-source: "\"Whitfield, S. 1999 *Life along the Silk Road*. Univ. California\""
+dating-basis-notes: "Diamond Sutra Dunhuang printed copy 868 CE. Slug-extractable."
 ---
 
 # Diamond Sutra 868

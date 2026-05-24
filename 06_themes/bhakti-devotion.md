@@ -27,6 +27,10 @@ refs:
     type: "primary-translation"
     tier: 2
 tags: [theme, bhakti, vaishnavism, shaivism, krishna, devotion, hinduism]
+date-earliest: -100
+dating-basis: B4
+dating-basis-source: "\"Hardy, F. 1983 *Viraha-Bhakti*. OUP\""
+dating-basis-notes: "Bhakti as theological category Bhagavad Gita c. -100; Tamil Alvars c. 600-900; North Indian Sants c. 1300."
 ---
 
 # Bhakti (Devotion)

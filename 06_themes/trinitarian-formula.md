@@ -27,6 +27,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, trinity, patristic, tertullian, cappadocian, nicaea, christian-theology]
+date-earliest: 200
+dating-basis: B4
+dating-basis-source: "\"Pelikan, J. 1971 *The Christian Tradition* vol. 1. Univ. Chicago\""
+dating-basis-notes: "Tertullian *Adversus Praxean* c. 200 (una substantia, tres personae); Nicaea 325."
 ---
 
 # Trinitarian formula (una substantia, tres personae)

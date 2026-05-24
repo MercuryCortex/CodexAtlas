@@ -3,6 +3,10 @@ type: theme
 id: "theme-rock-cut-architecture-as-meditation-cosmos"
 name: "Theme Rock Cut Architecture As Meditation Cosmos"
 status: "stub"
+date-earliest: -100
+dating-basis: B3
+dating-basis-source: "\"Michell, G. 1988 *The Hindu Temple*\""
+dating-basis-notes: "Indian rock-cut tradition Ajanta c. -100; Ellora c. 600-1000."
 ---
 
 # Theme Rock Cut Architecture As Meditation Cosmos

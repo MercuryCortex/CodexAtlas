@@ -38,6 +38,10 @@ refs:
     tier: 1
     notes: "The documentary basis for Iberian sacred-site continuities (Endovelicus→São Miguel; Nabia-river sanctuaries→Virgin Mary)"
 tags: [theme, christian-overlay, sacred-site, pagan-christian, continuity, endovelicus, archangel-michael, iberia, celtic, pope-gregory, interpretatio-christiana, MASSIVE-WIN]
+date-earliest: 600
+dating-basis: B5
+dating-basis-source: "\"MacMullen, R. 1997 *Christianity and Paganism in the Fourth to Eighth Centuries*. Yale\""
+dating-basis-notes: "Site-overlay strategy from Gregory I letter to Mellitus 601 explicit policy; earlier ad-hoc 4th-6th c."
 ---
 
 # Christian Sacred Site Overlay — Churches Built on Pre-Christian Sanctuaries

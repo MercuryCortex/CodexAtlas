@@ -26,6 +26,10 @@ depictions:
     caption: "Rigveda manuscript (Devanagari, 19th c.) — the Vedic hymns are a primary source for the yuga cosmic-cycle doctrine, one of the oldest expressions of cyclical time"
     source: "Wikimedia Commons"
     license: "Public Domain"
+date-earliest: -1200
+dating-basis: B4
+dating-basis-source: "\"Eliade, M. 1949 *Le mythe de l'éternel retour*. Gallimard\""
+dating-basis-notes: "Yugic cycles: Mahabharata Vana Parva c. -100; Vedic precursors c. -1200; Hesiod Five Ages c. -700; Stoic ekpyrosis -300."
 ---
 
 # Cosmic Cycles

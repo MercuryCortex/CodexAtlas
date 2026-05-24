@@ -55,6 +55,10 @@ refs:
     tier: 1
     notes: "Northern Arizona University. Revises the standard model: Manichaeism and Zoroastrianism co-formed in 3rd-century Iran against older Iranian traditions rather than Manichaeism simply borrowing from an established Zoroastrianism. Directly relevant to the Zurvanite question: the Zurvanite milieu was part of the shared older Iranian cultural substrate both religions selectively appropriated, not yet consolidated as 'Zoroastrian orthodoxy.' Open access (Ruhr-Universität Bochum, Creative Commons Attribution 4.0)."
 tags: [theme, zoroastrian, zurvan, heterodox, cosmogony, manichaeism, time-deity, gnostic-parallel, phase-2, cross-tradition]
+date-earliest: 200
+dating-basis: B5
+dating-basis-source: "\"Zaehner, R.C. 1955 *Zurvan: A Zoroastrian Dilemma*. Clarendon\""
+dating-basis-notes: "Zurvanite heresy Sasanian period c. 200-651 CE."
 ---
 
 # Zurvanism (Zurvanite Heresy)

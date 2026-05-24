@@ -29,6 +29,9 @@ cross-tradition-edges:
   - target: medicine-shamanic
     type: ancestor-of
     note: Atharva Veda healing hymns (c. 1200 BCE) — the pre-Ayurvedic stratum — are structurally shamanic: disease as supernatural possession, healing as priestly ritual, plant medicines as sacred entities. Ayurveda rationalized this shamanic substratum without eliminating it.
+dating-basis: B5
+dating-basis-source: "\"Wujastyk, D. 2003 *The Roots of Ayurveda*. Penguin\""
+dating-basis-notes: "Charaka Samhita c. -100 to 200; Sushruta c. 600 CE; Vedic Atharva-veda substrate -1000."
 ---
 
 Ayurveda ("the science of long life" — *āyus* = life, *veda* = knowledge) is the oldest continuously practiced comprehensive medical system in the world. Its written tradition spans c. 600 BCE to the present; its oral/ritual roots extend into the Atharva Veda (c. 1200 BCE); its practice is still legally recognized and formally taught in India today.

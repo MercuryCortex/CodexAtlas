@@ -3,6 +3,10 @@ type: document
 id: "karangtengah-inscription-824"
 name: "Karangtengah Inscription (824 CE)"
 status: "stub"
+date-earliest: 824
+dating-basis: B1
+dating-basis-source: "\"Coedès, G. 1968 *The Indianized States of Southeast Asia*\""
+dating-basis-notes: "Karangtengah inscription 824 CE. Slug-extractable."
 ---
 
 # Karangtengah Inscription (824 CE)

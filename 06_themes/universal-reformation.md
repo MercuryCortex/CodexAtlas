@@ -36,6 +36,10 @@ refs:
     tier: 2
     notes: "Studies Comenius' Pansophia project and its connections to the Rosicrucian universal-reformation vision and early-modern scientific reform"
 tags: [theme, rosicrucian, reformation, utopian, comenius, pansofia, joachim, hermetic, phase-6, metadata]
+date-earliest: 1614
+dating-basis: B1
+dating-basis-source: "\"Yates, F. 1972 *The Rosicrucian Enlightenment*. Routledge\""
+dating-basis-notes: "Rosicrucian Manifestos *Fama Fraternitatis* 1614; Comenius *Pansophia* 1644."
 ---
 
 # Universal Reformation

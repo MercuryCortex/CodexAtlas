@@ -31,6 +31,10 @@ refs:
     type: "primary-source"
     tier: 1
 tags: [theme, saudade, portuguese, atlantic, longing, fado, hiraeth, celtic, melancholy, pessoa, camoes, soul-exile, otherworld, identity, MASSIVE-WIN]
+date-earliest: 1200
+dating-basis: B5
+dating-basis-source: "\"Lourenço, E. 1999 *Mitologia da Saudade*. Companhia das Letras\""
+dating-basis-notes: "Saudade as Lusophone affective category from Galician-Portuguese troubadour cantigas c. 1200; modernist Pessoa c. 1915."
 ---
 
 # Saudade — The Atlantic Longing

@@ -68,6 +68,10 @@ refs:
     type: "primary-source-anthology"
     tier: 3
 tags: [symbol, kabbalah, jewish, hermetic, golden-dawn, MASSIVE-WIN, sefirot, etz-chaim, western-esotericism, ten-sefirot]
+date-earliest: 1175
+dating-basis: B4
+dating-basis-source: "\"Scholem, G. 1962 *Origins of the Kabbalah*\""
+dating-basis-notes: "Sefirot in Sefer ha-Bahir c. 1175; ten-sefirot tree icon c. 1300."
 ---
 
 # Sefirot / Kabbalistic Tree of Life

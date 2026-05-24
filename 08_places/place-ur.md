@@ -3,6 +3,10 @@ type: place
 id: "place-ur"
 name: "Place Ur"
 status: "stub"
+date-earliest: -3800
+dating-basis: B3
+dating-basis-source: "\"Pollock, S. 1999 *Ancient Mesopotamia*\""
+dating-basis-notes: "Ur Ubaid period c. -3800; Royal Tombs c. -2500."
 ---
 
 # Place Ur

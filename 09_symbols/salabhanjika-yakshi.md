@@ -3,6 +3,10 @@ type: symbol
 id: "salabhanjika-yakshi"
 name: "Salabhanjika Yakshi"
 status: "stub"
+date-earliest: -200
+dating-basis: B3
+dating-basis-source: "\"Coomaraswamy, A. 1928 *Yakṣas*. Smithsonian\""
+dating-basis-notes: "Yakshi/salabhanjika sculpture Bharhut c. -200; Sanchi c. -100."
 ---
 
 # Salabhanjika Yakshi

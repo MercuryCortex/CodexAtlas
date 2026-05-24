@@ -3,6 +3,10 @@ type: event
 id: "event-third-buddhist-council"
 name: "Event Third Buddhist Council"
 status: "stub"
+date-earliest: -247
+dating-basis: B1
+dating-basis-source: "\"Gombrich, R. 1988 *Theravada Buddhism*\""
+dating-basis-notes: "Third Buddhist Council at Pataliputra c. -247 under Ashoka."
 ---
 
 # Event Third Buddhist Council

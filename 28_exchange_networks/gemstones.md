@@ -3,6 +3,9 @@ type: exchange-network
 id: "gemstones"
 name: "Gemstones"
 status: "stub"
+dating-basis: B7
+dating-basis-source: "\"Generic category. Specific gemstones (lapis, diamond, ruby) have distinct dating.\""
+dating-basis-notes: "Generic. Keep B7."
 ---
 
 # Gemstones

@@ -21,6 +21,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, theology, history, augustine, biblical-theology]
+date-earliest: 413
+dating-basis: B4
+dating-basis-source: "\"Auerbach, E. 1953 *Mimesis*. Princeton\""
+dating-basis-notes: "Augustinian Heilsgeschichte *De Civitate Dei* 413-426."
 ---
 
 # Salvation History (Heilsgeschichte)

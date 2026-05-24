@@ -3,6 +3,10 @@ type: place
 id: "place-sidon"
 name: "Place Sidon"
 status: "stub"
+date-earliest: -1500
+dating-basis: B3
+dating-basis-source: "\"Markoe, G. 2000 *Phoenicians*\""
+dating-basis-notes: "Sidon Bronze Age c. -1500."
 ---
 
 # Place Sidon

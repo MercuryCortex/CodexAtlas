@@ -3,6 +3,10 @@ type: document
 id: "document-numbers"
 name: "Document Numbers"
 status: "stub"
+date-earliest: -540
+dating-basis: B4
+dating-basis-source: "\"Levine, B. 1993 *Numbers 1-20*. Anchor Bible\""
+dating-basis-notes: "Numbers Priestly redaction c. -540."
 ---
 
 # Document Numbers

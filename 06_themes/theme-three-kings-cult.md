@@ -3,6 +3,10 @@ type: theme
 id: "theme-three-kings-cult"
 name: "Theme Three Kings Cult"
 status: "stub"
+date-earliest: 1164
+dating-basis: B5
+dating-basis-source: "\"Bagnoli, M. et al. eds. 2010 *Treasures of Heaven*\""
+dating-basis-notes: "Three Kings cult Cologne 1164."
 ---
 
 # Theme Three Kings Cult

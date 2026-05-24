@@ -3,6 +3,10 @@ type: document
 id: "da-qing-huidian"
 name: "Da Qing Huidian"
 status: "stub"
+date-earliest: 1690
+dating-basis: B1
+dating-basis-source: "\"Wilkinson, E. 2018 *Chinese History: A New Manual*\""
+dating-basis-notes: "Da Qing Huidian 1690 (Kangxi statutes)."
 ---
 
 # Da Qing Huidian

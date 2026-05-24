@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-umayyad"
 name: "Tradition Umayyad"
 status: "stub"
+date-earliest: 661
+dating-basis: B5
+dating-basis-source: "\"Hawting, G. 2000 *The First Dynasty of Islam: The Umayyad Caliphate AD 661-750*. Routledge\""
+dating-basis-notes: "Umayyad Caliphate 661-750."
 ---
 
 # Tradition Umayyad

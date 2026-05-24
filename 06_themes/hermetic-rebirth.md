@@ -35,6 +35,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, soteriological, hermetic, christian-parallel, regeneration, palingenesia]
+date-earliest: 100
+dating-basis: B4
+dating-basis-source: "\"Copenhaver, B. 1992 *Hermetica*\""
+dating-basis-notes: "Palingenesia in CH XIII c. 100-300."
 ---
 
 # Hermetic rebirth (palingenesia)

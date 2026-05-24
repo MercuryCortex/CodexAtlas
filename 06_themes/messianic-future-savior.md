@@ -45,6 +45,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, eschatology, messianism, apocalyptic, buddhist, christian, islamic, zoroastrian, hindu, comparative-religion]
+date-earliest: -540
+dating-basis: B4
+dating-basis-source: "\"Collins, J.J. 1995 *The Scepter and the Star*. Doubleday\""
+dating-basis-notes: "Messianic future-savior motif Isaiah 11 c. -540; Daniel 7 c. -165; Buddhist Maitreya c. -100; Zoroastrian Saoshyant Avesta -1000."
 ---
 
 # Messianic Future Savior

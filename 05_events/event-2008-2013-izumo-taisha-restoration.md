@@ -3,6 +3,10 @@ type: event
 id: "event-2008-2013-izumo-taisha-restoration"
 name: "Event 2008 2013 Izumo Taisha Restoration"
 status: "stub"
+date-earliest: 2008
+dating-basis: B1
+dating-basis-source: "\"Izumo Taisha official records 2008-2013\""
+dating-basis-notes: "2008-2013. Slug-extractable."
 ---
 
 # Event 2008 2013 Izumo Taisha Restoration

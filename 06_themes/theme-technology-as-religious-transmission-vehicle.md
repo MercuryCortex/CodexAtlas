@@ -3,6 +3,9 @@ type: theme
 id: "theme-technology-as-religious-transmission-vehicle"
 name: "Theme Technology As Religious Transmission Vehicle"
 status: "stub"
+dating-basis: B7
+dating-basis-source: "\"Methodological category. Pattern not event.\""
+dating-basis-notes: "Methodological. Keep B7."
 ---
 
 # Theme Technology As Religious Transmission Vehicle

@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-yui-itsu-shinto"
 name: "Tradition Yui Itsu Shinto"
 status: "stub"
+date-earliest: 1484
+dating-basis: B5
+dating-basis-source: "\"Grapard, A. 1992 *The Protocol of the Gods*. Univ. California\""
+dating-basis-notes: "Yoshida Shinto (Yui-Itsu) founded by Yoshida Kanetomo c. 1484."
 ---
 
 # Tradition Yui Itsu Shinto

@@ -21,6 +21,10 @@ hub-edges:
     source: "Boyce 1991 *History of Zoroastrianism* Vol. 3; Daryaee 2009 *Sasanian Persia*; Shaked 1994 *Dualism in Transformation* — Ctesiphon as Sasanian capital (224-637) is the late-antique imperial seat where Zoroastrianism is institutionally reconstituted as state religion; this is the political-historical framework within which Zoroastrian-derived doctrines continue to shape Iranian-Mesopotamian Jewish + Christian + Manichaean theological articulation"
     notes: "Cross-lens: 08_places → 06_themes. The Achaemenid Persian-period injection (-539 to -332) finds its late-antique imperial extension at Ctesiphon"
 status: "stub"
+date-earliest: -129
+dating-basis: B3
+dating-basis-source: "\"Boyce, M. 1982 *A History of Zoroastrianism* vol. 2\""
+dating-basis-notes: "Parthian capital c. -129; Sasanian to 637."
 ---
 
 # Place Ctesiphon

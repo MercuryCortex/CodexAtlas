@@ -3,6 +3,10 @@ type: sacred-site
 id: "seville-cathedral"
 name: "Seville Cathedral"
 status: "stub"
+date-earliest: 1401
+dating-basis: B1
+dating-basis-source: "\"Earl, D. 2012 *The Cathedral of Seville*. Univ. Seville\""
+dating-basis-notes: "Construction began 1401 on Almohad mosque site."
 ---
 
 # Seville Cathedral

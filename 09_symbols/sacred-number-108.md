@@ -42,6 +42,10 @@ documents:
   - "[[phase-2-013-chandogya-upanishad]]"
   - "[[phase-5-029-bardo-thodol]]"
 geo: null
+date-earliest: -800
+dating-basis: B5
+dating-basis-source: "\"Olivelle, P. 1996 *Upanisads*\""
+dating-basis-notes: "Mukhya Upanishads c. -800 numerology; Buddhist texts c. -300."
 ---
 
 # Sacred Number 108

@@ -81,6 +81,10 @@ depictions:
     caption: "Christ Pantokrator, Byzantine mosaic, Hagia Sophia Deesis (c. 1261 CE) — the terminus of the Zeus-ruler transmission"
     source: "Wikimedia Commons"
     license: "Public domain"
+date-earliest: 500
+dating-basis: B5
+dating-basis-source: "\"Mathews, T. 2003 *The Clash of Gods* rev. ed. Princeton\""
+dating-basis-notes: "Phidian Zeus c. -432 to Christ Pantokrator iconographic transmission c. 500 CE (Sinai Christ icon)."
 ---
 
 # The Phidian Zeus → Christ Pantokrator — Iconographic Transmission Hypothesis

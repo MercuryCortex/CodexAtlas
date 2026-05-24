@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-islam-ottoman"
 name: "Tradition Islam Ottoman"
 status: "stub"
+date-earliest: 1299
+dating-basis: B5
+dating-basis-source: "\"Imber, C. 2002 *The Ottoman Empire, 1300-1650*. Palgrave\""
+dating-basis-notes: "Ottoman state c. 1299; caliphate transferred 1517."
 ---
 
 # Tradition Islam Ottoman

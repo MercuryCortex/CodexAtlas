@@ -3,6 +3,10 @@ type: doctrine
 id: "doctrine-doctrine-of-discovery"
 name: "Doctrine Doctrine of Discovery"
 status: "stub"
+date-earliest: 1452
+dating-basis: B1
+dating-basis-source: "\"Newcomb, S. 2008 *Pagans in the Promised Land*. Fulcrum\""
+dating-basis-notes: "Dum Diversas 1452; Romanus Pontifex 1455; Inter Caetera 1493."
 ---
 
 # Doctrine Doctrine of Discovery

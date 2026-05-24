@@ -17,6 +17,10 @@ related-exchange-networks: ["[[silk-road-overland]]", "[[steppe-corridor]]"]
 related-sacred-sites: []
 region: "Central Asia → Near East → China → Eastern Europe → globally on steppe corridor"
 themes: ["[[theme-steppe-warrior-as-civilizational-counterweight]]", "[[theme-laminate-engineering-stores-more-energy]]"]
+date-earliest: -1500
+dating-basis: B3
+dating-basis-source: "\"Bergman, C. et al. 1988 'Examination of Composite Bow Construction'\""
+dating-basis-notes: "Composite bow c. -1500 (Egypt chariotry); steppe earlier -2000."
 ---
 
 # Composite Bow (Eurasian Steppe Recurve Bow)

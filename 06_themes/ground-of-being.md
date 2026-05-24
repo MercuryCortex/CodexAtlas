@@ -27,6 +27,10 @@ refs:
     type: "primary-source"
     tier: 1
 tags: [theme, theology, tillich, existential-theology, philosophical-theology, twentieth-century]
+date-earliest: 1951
+dating-basis: B1
+dating-basis-source: "\"Tillich, P. *Systematic Theology* vol. 1 (1951)\""
+dating-basis-notes: "Tillich's term 1951; Eckhart \"Seinsgrund\" c. 1300 (medieval precursor)."
 ---
 
 # Ground of Being (Tillich)

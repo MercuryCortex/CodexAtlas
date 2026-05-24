@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-theravada"
 name: "Tradition Theravada"
 status: "stub"
+date-earliest: -247
+dating-basis: B5
+dating-basis-source: "\"Gombrich, R. 1988 *Theravada Buddhism*\""
+dating-basis-notes: "Theravada from Third Council c. -247; Sri Lankan transmission via Mahinda."
 ---
 
 # Tradition Theravada

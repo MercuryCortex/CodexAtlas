@@ -3,6 +3,10 @@ type: exchange-network
 id: "wool"
 name: "Wool"
 status: "stub"
+date-earliest: -4000
+dating-basis: B3
+dating-basis-source: "\"Barber, E. 1991 *Prehistoric Textiles*\""
+dating-basis-notes: "Wool textiles c. -4000 (Sumerian); wool-bearing sheep selection c. -4500."
 ---
 
 # Wool

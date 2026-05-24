@@ -3,6 +3,10 @@ type: sacred-site
 id: "selimiye-mosque"
 name: "Selimiye Mosque"
 status: "stub"
+date-earliest: 1568
+dating-basis: B1
+dating-basis-source: "\"Necipoğlu, G. 2005 *The Age of Sinan*. Princeton\""
+dating-basis-notes: "Edirne, built by Sinan 1568-1575."
 ---
 
 # Selimiye Mosque

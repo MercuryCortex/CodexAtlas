@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-andean"
 name: "Tradition Andean"
 status: "stub"
+date-earliest: -3500
+dating-basis: B5
+dating-basis-source: "\"Moseley, M. 2001 *The Incas and Their Ancestors*. Thames & Hudson\""
+dating-basis-notes: "Andean religious continuity from Caral-Supe c. -3500 onward."
 ---
 
 # Tradition Andean

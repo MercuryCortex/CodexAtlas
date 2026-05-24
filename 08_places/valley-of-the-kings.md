@@ -3,6 +3,10 @@ type: place
 id: "valley-of-the-kings"
 name: "Valley of the Kings"
 status: "stub"
+date-earliest: -1539
+dating-basis: B3
+dating-basis-source: "\"Wilkinson, T. & Reeves, N. eds. 2017 *The Complete Valley of the Kings*. Thames & Hudson\""
+dating-basis-notes: "Valley of the Kings c. -1539 (Thutmose I) to -1075."
 ---
 
 # Valley Of The Kings

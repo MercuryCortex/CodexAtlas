@@ -44,6 +44,10 @@ refs:
     tier: 2
     notes: "The standard English-language introduction and critical assessment of Dumézil's work"
 tags: [theme, pie, proto-indo-european, dumezil, trifunctional, sovereignty, warriors, fertility, comparative-mythology, ideology, MASSIVE-WIN]
+date-earliest: 1958
+dating-basis: B1
+dating-basis-source: "\"Dumézil, G. 1958 *L'idéologie tripartite des Indo-Européens*. Latomus\""
+dating-basis-notes: "Dumézil's trifunctional hypothesis: 1958."
 ---
 
 # Dumézil's Trifunctional Theory

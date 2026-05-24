@@ -22,6 +22,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, commentary, exegesis, tafsir, bhashya, summa, methodology]
+date-earliest: -200
+dating-basis: B4
+dating-basis-source: "\"Najman, H. 2003 *Seconding Sinai*. Brill\""
+dating-basis-notes: "Commentary genre: Qumran pesharim c. -150; Mishnaic-Talmudic c. 200 CE; tafsir 9th c. The cross-tradition category emerges with Hellenistic scholarly genre c. -200 (Aristarchus)."
 ---
 
 # Commentary as Genre

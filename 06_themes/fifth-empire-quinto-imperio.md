@@ -32,6 +32,10 @@ refs:
     type: "monograph"
     tier: 4
 tags: [theme, eschatological, political-theological, portugal, sebastianism, quinto-imperio, fifth-empire, daniel-2, joachim-of-fiore, bandarra, vieira, pessoa]
+date-earliest: -165
+dating-basis: B4
+dating-basis-source: "\"Saraiva, A.J. 1992 *António Vieira, Menasseh ben Israel et le Cinquième Empire*. JIH\""
+dating-basis-notes: "Fifth Empire from Daniel 2 c. -165; Bandarra trovas c. 1530; Vieira *Clavis Prophetarum* c. 1700."
 ---
 
 # Fifth Empire (Quinto Império)

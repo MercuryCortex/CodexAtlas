@@ -32,6 +32,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, fall, watchers, angels, second-temple, enochic, nephilim, astrology, enochic-forbidden-astrology]
+date-earliest: -300
+dating-basis: B4
+dating-basis-source: "\"Nickelsburg, G. 2001 *1 Enoch 1*. Hermeneia\""
+dating-basis-notes: "Watchers tradition 1 Enoch 1-36 (Book of Watchers) c. -300; Genesis 6:1-4 redaction earlier."
 ---
 
 # Watchers and Fallen Angels

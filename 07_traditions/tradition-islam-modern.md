@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-islam-modern"
 name: "Tradition Islam Modern"
 status: "stub"
+date-earliest: 1798
+dating-basis: B5
+dating-basis-source: "\"Hourani, A. 1962 *Arabic Thought in the Liberal Age 1798-1939*. Cambridge\""
+dating-basis-notes: "Modernist Islam from Napoleon's Egypt invasion 1798; Afghani-Abduh reform c. 1880."
 ---
 
 # Tradition Islam Modern

@@ -3,6 +3,9 @@ type: theme
 id: "theme-tradition-as-controlled-renewal"
 name: "Theme Tradition As Controlled Renewal"
 status: "stub"
+dating-basis: B7
+dating-basis-source: "\"Methodological category.\""
+dating-basis-notes: "Methodological. Keep B7."
 ---
 
 # Theme Tradition As Controlled Renewal

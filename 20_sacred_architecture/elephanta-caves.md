@@ -3,6 +3,10 @@ type: sacred-site
 id: "elephanta-caves"
 name: "Elephanta Caves"
 status: "stub"
+date-earliest: 500
+dating-basis: B3
+dating-basis-source: "\"Berkson, C. 1983 *Elephanta: The Cave of Shiva*. Princeton\""
+dating-basis-notes: "Elephanta caves c. 500-700."
 ---
 
 # Elephanta Caves

@@ -3,6 +3,9 @@ type: theme
 id: "theme-sacred-island-as-temple-form"
 name: "Theme Sacred Island As Temple Form"
 status: "stub"
+dating-basis: B7
+dating-basis-source: "\"Cross-tradition (Itsukushima, Lindisfarne, Mont-Saint-Michel, Mor). Pattern not event.\""
+dating-basis-notes: "Pattern. Keep B7."
 ---
 
 # Theme Sacred Island As Temple Form

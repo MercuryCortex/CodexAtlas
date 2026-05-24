@@ -3,6 +3,10 @@ type: sacred-site
 id: "mogao-grottoes-dunhuang"
 name: "Mogao Grottoes Dunhuang"
 status: "stub"
+date-earliest: 366
+dating-basis: B3
+dating-basis-source: "\"Whitfield, R. & Sims-Williams, U. 2004 *The Silk Road*. British Library\""
+dating-basis-notes: "First cave excavated 366 by monk Lezun."
 ---
 
 # Mogao Grottoes Dunhuang

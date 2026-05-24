@@ -22,6 +22,10 @@ refs:
     type: "monograph"
     tier: 2
 tags: [theme, civil-religion, bellah, american-religion, roman, state-cult]
+date-earliest: -500
+dating-basis: B5
+dating-basis-source: "\"Bellah, R. 1967 'Civil Religion in America' *Daedalus*\""
+dating-basis-notes: "Greek civic religion polis-cult c. -700 to -500; Roman state-cult parallel; modern \"civic religion\" Bellah 1967."
 ---
 
 # Civic Religion

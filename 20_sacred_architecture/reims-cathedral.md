@@ -3,6 +3,10 @@ type: sacred-site
 id: "reims-cathedral"
 name: "Reims Cathedral"
 status: "stub"
+date-earliest: 1211
+dating-basis: B1
+dating-basis-source: "\"Branner, R. 1965 *Reims Cathedral*. Yale\""
+dating-basis-notes: "Construction began 1211."
 ---
 
 # Reims Cathedral

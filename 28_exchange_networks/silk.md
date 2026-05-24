@@ -3,6 +3,10 @@ type: exchange-network
 id: "silk"
 name: "Silk"
 status: "stub"
+date-earliest: -2700
+dating-basis: B3
+dating-basis-source: "\"Vainker, S. 2004 *Chinese Silk*\""
+dating-basis-notes: "Chinese silk c. -2700; Silk Road c. -130."
 ---
 
 # Silk

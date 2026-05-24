@@ -3,6 +3,10 @@ type: doctrine
 id: "doctrine-incarnation"
 name: "Doctrine Incarnation"
 status: "stub"
+date-earliest: 451
+dating-basis: B1
+dating-basis-source: "\"Pelikan, J. 1971 *The Christian Tradition* vol. 1\""
+dating-basis-notes: "Christological doctrine Nicaea 325; Chalcedon 451 hypostatic union."
 ---
 
 # Doctrine Incarnation

@@ -3,6 +3,10 @@ type: theme
 id: "theme-goddess-centric-temple"
 name: "Theme Goddess Centric Temple"
 status: "stub"
+date-earliest: -3500
+dating-basis: B5
+dating-basis-source: "\"Frankfort, H. 1948 *Kingship and the Gods*\""
+dating-basis-notes: "Cross-tradition; Mesopotamian Inanna temples c. -3500 (Eanna Uruk)."
 ---
 
 # Theme Goddess Centric Temple

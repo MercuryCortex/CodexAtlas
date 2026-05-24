@@ -3,6 +3,10 @@ type: place
 id: "place-ormuz-portuguese"
 name: "Place Ormuz Portuguese"
 status: "stub"
+date-earliest: 1507
+dating-basis: B1
+dating-basis-source: "\"Boxer, C. 1969 *The Portuguese Seaborne Empire*\""
+dating-basis-notes: "Portuguese Hormuz from 1507 (Albuquerque) to 1622."
 ---
 
 # Place Ormuz Portuguese

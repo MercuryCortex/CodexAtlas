@@ -3,6 +3,10 @@ type: document
 id: "codex-syriacus-sinaiticus"
 name: "Codex Syriacus Sinaiticus"
 status: "stub"
+date-earliest: 400
+dating-basis: B1
+dating-basis-source: "\"Lewis, A.S. 1894 *The Four Gospels in Syriac*. Cambridge\""
+dating-basis-notes: "Old Syriac Sinaiticus palimpsest c. 400."
 ---
 
 # Codex Syriacus Sinaiticus

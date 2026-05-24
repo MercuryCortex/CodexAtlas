@@ -3,6 +3,10 @@ type: event
 id: "event-tikal-classic-collapse"
 name: "Event Tikal Classic Collapse"
 status: "stub"
+date-earliest: 869
+dating-basis: B5
+dating-basis-source: "\"Coe, M. 2011 *The Maya*\""
+dating-basis-notes: "Tikal terminal classic collapse c. 869 (last dated stela)."
 ---
 
 # Event Tikal Classic Collapse

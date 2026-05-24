@@ -3,6 +3,10 @@ type: deity
 id: "meenakshi"
 name: "Meenakshi"
 status: "stub"
+date-earliest: 600
+dating-basis: B4
+dating-basis-source: "\"Younger, P. 1995 *The Home of Dancing Sivan*\""
+dating-basis-notes: "Meenakshi Madurai cult Tamil c. 600-1200; Tiruvilaiyadal Puranam c. 1500."
 ---
 
 # Meenakshi

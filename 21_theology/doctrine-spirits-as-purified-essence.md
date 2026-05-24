@@ -3,6 +3,10 @@ type: doctrine
 id: "doctrine-spirits-as-purified-essence"
 name: "Doctrine Spirits As Purified Essence"
 status: "stub"
+date-earliest: 1100
+dating-basis: B5
+dating-basis-source: "\"Newman, W. 2004 *Promethean Ambitions*\""
+dating-basis-notes: "Spirits-as-purified-essence in Latin alchemy c. 1100; Arabic precursor 9th c."
 ---
 
 # Doctrine Spirits As Purified Essence

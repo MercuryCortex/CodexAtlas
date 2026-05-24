@@ -69,6 +69,9 @@ tags:
   - milton
   - romantic-reception
   - MASSIVE-WIN
+dating-basis: B7
+dating-basis-source: "\"Cross-tradition (Satan, Prometheus, Lucifer, Mara). Pattern not event.\""
+dating-basis-notes: "Pattern. Keep B7."
 ---
 
 # Rebel Against the Divine

@@ -3,6 +3,10 @@ type: theme
 id: "theme-spiritual-lineage-silsila"
 name: "Theme Spiritual Lineage Silsila"
 status: "stub"
+date-earliest: 900
+dating-basis: B5
+dating-basis-source: "\"Schimmel, A. 1975 *Mystical Dimensions of Islam*\""
+dating-basis-notes: "Sufi silsila lineage from c. 900 (Junayd's khirqa); cross-tradition (Buddhist guru-parampara older)."
 ---
 
 # Theme Spiritual Lineage Silsila

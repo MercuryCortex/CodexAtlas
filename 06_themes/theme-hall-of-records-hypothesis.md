@@ -62,6 +62,10 @@ depictions:
     caption: "Great Sphinx of Giza — the focal site of Hall of Records hypotheses"
     source: "Wikimedia Commons"
     license: "CC BY-SA 3.0"
+date-earliest: 1934
+dating-basis: B1
+dating-basis-source: "\"Cayce, E. *Readings* (1934)\""
+dating-basis-notes: "Cayce's hypothesis 1934. T4 fabrication."
 ---
 
 # Hall of Records Hypothesis

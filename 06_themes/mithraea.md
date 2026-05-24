@@ -3,6 +3,10 @@ type: theme
 id: "mithraea"
 name: "Mithraea"
 status: "stub"
+date-earliest: 100
+dating-basis: B3
+dating-basis-source: "\"Beck, R. 2006 *The Religion of the Mithras Cult*. OUP\""
+dating-basis-notes: "Mithraea archaeologically attested c. 100 CE Rome; cult c. 100-400."
 ---
 
 # Mithraea

@@ -3,6 +3,10 @@ type: relic
 id: "crown-of-thorns-saint-louis-relic"
 name: "Crown Of Thorns Saint Louis Relic"
 status: "stub"
+date-earliest: 1239
+dating-basis: B1
+dating-basis-source: "\"Mercuri, C. 2004 *Corona Sacra*. CISAM\""
+dating-basis-notes: "Saint Louis purchased Crown of Thorns from Latin Empire 1239."
 ---
 
 # Crown Of Thorns Saint Louis Relic

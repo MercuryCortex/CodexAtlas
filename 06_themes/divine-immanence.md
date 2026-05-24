@@ -27,6 +27,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, theology, mysticism, kabbalah, vedanta]
+date-earliest: -700
+dating-basis: B4
+dating-basis-source: "\"Smith, M.S. 2001 *The Origins of Biblical Monotheism*. OUP\""
+dating-basis-notes: "Divine immanence motif: Upanishadic antaryamin c. -700; kabbalistic Shekhinah c. 1200."
 ---
 
 # Divine Immanence

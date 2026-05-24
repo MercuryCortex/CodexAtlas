@@ -3,6 +3,10 @@ type: place
 id: "parthian-empire"
 name: "Parthian Empire"
 status: "stub"
+date-earliest: -247
+dating-basis: B5
+dating-basis-source: "\"Curtis, V. & Stewart, S. eds. 2007 *The Age of the Parthians*. I.B. Tauris\""
+dating-basis-notes: "Parthian Empire -247 to 224 CE."
 ---
 
 # Parthian Empire

@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-islam-sunni"
 name: "Tradition Islam Sunni"
 status: "stub"
+date-earliest: 850
+dating-basis: B5
+dating-basis-source: "\"Berkey, J. 2003 *The Formation of Islam*. Cambridge\""
+dating-basis-notes: "Sunni-Shi'i bifurcation crystallizes 10th c.; ahl al-sunna self-identity from 9th c."
 ---
 
 # Tradition Islam Sunni

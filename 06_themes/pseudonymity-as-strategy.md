@@ -21,6 +21,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, pseudepigraphy, ancient-authorship, second-temple, gnosticism]
+date-earliest: -300
+dating-basis: B5
+dating-basis-source: "\"Najman, H. 2003 *Seconding Sinai*\""
+dating-basis-notes: "Hellenistic pseudepigraphy strategy from c. -300 (Aristeas); 1 Enoch c. -200; Pythagorean pseudepigrapha c. -200."
 ---
 
 # Pseudonymity as Strategy

@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-buddhism-mahayana"
 name: "Tradition Buddhism Mahayana"
 status: "stub"
+date-earliest: -100
+dating-basis: B5
+dating-basis-source: "\"Williams, P. 2008 *Mahayana Buddhism* 2nd ed. Routledge\""
+dating-basis-notes: "Mahayana emergence c. -100 to 100 CE per Williams; Lotus Sutra core early CE."
 ---
 
 # Tradition Buddhism Mahayana

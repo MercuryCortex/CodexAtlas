@@ -3,6 +3,10 @@ type: theme
 id: "theme-ancestral-veneration-as-state-cult"
 name: "Theme Ancestral Veneration As State Cult"
 status: "stub"
+date-earliest: -1200
+dating-basis: B3
+dating-basis-source: "\"Chang, K.C. 1980 *Shang Civilization*\""
+dating-basis-notes: "Shang oracle-bone royal ancestor cult c. -1200; Zhou continuation c. -1046."
 ---
 
 # Theme Ancestral Veneration As State Cult

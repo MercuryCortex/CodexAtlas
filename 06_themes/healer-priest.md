@@ -14,6 +14,9 @@ tags:
   - sacred-knowledge
 date_earliest: -40000
 date_latest: 2000
+dating-basis: B7
+dating-basis-source: "\"Cross-tradition role across Mesopotamia, Egypt, Greece. Pattern, not event.\""
+dating-basis-notes: "Pattern-recognition. Keep B7."
 ---
 
 The healer-priest is the most universal pre-modern religious-medical figure: the single individual who combines knowledge of the sacred (divine power, ritual, cosmic order) with knowledge of the body (plants, anatomy, technique). This unification is not primitive confusion of religion and medicine — it is a coherent epistemological position: illness is a disturbance in the person's relationship with the sacred order; healing requires restoration of that relationship alongside any material treatment.

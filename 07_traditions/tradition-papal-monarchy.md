@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-papal-monarchy"
 name: "Tradition Papal Monarchy"
 status: "stub"
+date-earliest: 1198
+dating-basis: B5
+dating-basis-source: "\"Morris, C. 1989 *The Papal Monarchy: The Western Church from 1050 to 1250*. Clarendon\""
+dating-basis-notes: "Papal monarchy reaches mature form under Innocent III 1198."
 ---
 
 # Tradition Papal Monarchy

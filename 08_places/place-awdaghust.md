@@ -3,6 +3,10 @@ type: place
 id: "place-awdaghust"
 name: "Place Awdaghust"
 status: "stub"
+date-earliest: 700
+dating-basis: B3
+dating-basis-source: "\"Levtzion, N. & Hopkins, J. 2000 *Corpus of Early Arabic Sources for West African History*. Princeton\""
+dating-basis-notes: "Awdaghust trade-city Sahara c. 700-1100."
 ---
 
 # Place Awdaghust

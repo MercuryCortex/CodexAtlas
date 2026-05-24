@@ -47,6 +47,10 @@ refs:
     tier: 1
     notes: "Demonstrates Blake's Albion = Adam Kadmon via Boehme/Taylor channel"
 tags: [theme, kabbalah, anthropos, primal-man, adam-kadmon, lurianic, partzufim, shevirat-hakelim, tikkun, MASSIVE-WIN, cross-tradition, blake, metatron, cosmic-human, gnostic]
+date-earliest: 1175
+dating-basis: B4
+dating-basis-source: "\"Idel, M. 1988 *Kabbalah: New Perspectives*. Yale\""
+dating-basis-notes: "Adam Kadmon first explicit in Sefer Yetzirah commentary tradition; mature in Bahir c. 1175; Lurianic systematization 1570s."
 ---
 
 # Adam Kadmon

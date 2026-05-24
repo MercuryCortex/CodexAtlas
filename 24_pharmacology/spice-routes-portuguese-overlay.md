@@ -3,6 +3,10 @@ type: substance
 id: "spice-routes-portuguese-overlay"
 name: "Spice Routes Portuguese Overlay"
 status: "stub"
+date-earliest: 1498
+dating-basis: B5
+dating-basis-source: "\"Subrahmanyam, S. 1997 *The Career and Legend of Vasco da Gama*. Cambridge\""
+dating-basis-notes: "Portuguese spice-route overlay from Vasco da Gama 1498."
 ---
 
 # Spice Routes Portuguese Overlay

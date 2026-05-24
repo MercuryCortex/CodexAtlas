@@ -3,6 +3,10 @@ type: document
 id: "ellora-inscriptions"
 name: "Ellora Inscriptions"
 status: "stub"
+date-earliest: 600
+dating-basis: B3
+dating-basis-source: "\"Dhavalikar, M.K. 2003 *Ellora*\""
+dating-basis-notes: "Ellora inscriptions c. 600-1000."
 ---
 
 # Ellora Inscriptions

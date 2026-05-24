@@ -27,6 +27,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, syncretism, afro-diaspora, yoruba, vodou, santeria, catholic, orisha, lwa, colonialism, slavery, resistance, camouflage, cross-tradition]
+date-earliest: 1500
+dating-basis: B5
+dating-basis-source: "\"Thornton, J. 1998 *Africa and Africans in the Making of the Atlantic World*. Cambridge\""
+dating-basis-notes: "Afro-diasporic syncretism crystallizes with Atlantic slave trade c. 1500-1700 (Vodou, Santería, Candomblé)."
 ---
 
 # Afro-Diasporic Syncretism

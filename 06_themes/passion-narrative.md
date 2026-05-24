@@ -29,6 +29,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, christianity, gospels, crucifixion, soteriology]
+date-earliest: 70
+dating-basis: B4
+dating-basis-source: "\"Brown, R.E. 1994 *The Death of the Messiah*. Doubleday\""
+dating-basis-notes: "Markan passion narrative c. 70."
 ---
 
 # Passion Narrative

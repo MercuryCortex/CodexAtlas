@@ -3,6 +3,10 @@ type: theme
 id: "theme-relic-as-architectural-focus"
 name: "Theme Relic As Architectural Focus"
 status: "stub"
+date-earliest: 350
+dating-basis: B5
+dating-basis-source: "\"Brown, P. 1981 *The Cult of the Saints*\""
+dating-basis-notes: "Christian relic-architecture from Constantinian basilicas c. 326; Buddhist stupa-relic c. -500."
 ---
 
 # Theme Relic As Architectural Focus

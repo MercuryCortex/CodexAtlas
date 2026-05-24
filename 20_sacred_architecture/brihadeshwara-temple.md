@@ -3,6 +3,10 @@ type: sacred-site
 id: "brihadeshwara-temple"
 name: "Brihadeshwara Temple"
 status: "stub"
+date-earliest: 1010
+dating-basis: B1
+dating-basis-source: "\"Champakalakshmi, R. 1996 *Trade, Ideology and Urbanization: South India 300 BC-AD 1300*\""
+dating-basis-notes: "Built by Rajaraja Chola I 1003-1010."
 ---
 
 # Brihadeshwara Temple

@@ -3,6 +3,10 @@ type: event
 id: "event-spread-of-falaj-to-oman"
 name: "Event Spread of Falaj to Oman"
 status: "stub"
+date-earliest: -500
+dating-basis: B5
+dating-basis-source: "\"Wilkinson, J.C. 1977 *Water and Tribal Settlement in South-East Arabia*. Clarendon\""
+dating-basis-notes: "Falaj (qanat) system to Oman c. -500 (Achaemenid period); Persian transmission."
 ---
 
 # Event Spread of Falaj to Oman

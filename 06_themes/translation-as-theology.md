@@ -21,6 +21,10 @@ refs:
     type: "monograph"
     tier: 2
 tags: [theme, translation, septuagint, reformation, hermeneutics]
+date-earliest: -250
+dating-basis: B5
+dating-basis-source: "\"Hengel, M. 1989 *The Septuagint as Christian Scripture*. T&T Clark\""
+dating-basis-notes: "LXX c. -250; Vulgate 405; Luther Bible 1522."
 ---
 
 # Translation as Theology

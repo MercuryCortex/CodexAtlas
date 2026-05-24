@@ -28,6 +28,9 @@ cross-music-edges:
   - target: music-pythagorean-harmony
     type: transmitter-of
     note: The Arabic translation movement (Bayt al-Hikma, Baghdad, 9th–10th c.) transmitted the full Pythagorean musical cosmos — the music of the spheres, the numerical ratios governing intervals, the ethical-cosmic significance of harmonic proportion — from Greek through Syriac into Arabic. Al-Farabi's "Kitab al-Musiqa al-Kabir" (Grand Book on Music) is the most comprehensive music theory treatise of the medieval period, surpassing all Latin equivalents. Islamic falsafa was the survival and development channel for Pythagorean musical cosmology across the 600-year gap when Latin Europe had lost it.
+dating-basis: B5
+dating-basis-source: "\"Adamson, P. 2016 *Philosophy in the Islamic World*\""
+dating-basis-notes: "Islamic Neoplatonism al-Farabi c. 900; Avicenna c. 1000."
 ---
 
 Islamic Neoplatonism (*Falsafa*, from Greek *philosophia*) is the philosophical movement spanning roughly 800–1200 CE in which Greek philosophical texts — primarily Aristotle, but also Neoplatonic syntheses passed under Aristotle's name — were translated into Arabic, synthesized with Islamic theology, and developed into original philosophical systems. The three major figures are [[al-farabi]] (c. 872–950 CE), [[ibn-sina]] (Avicenna, 980–1037 CE), and [[ibn-rushd]] (Averroes, 1126–1198 CE).

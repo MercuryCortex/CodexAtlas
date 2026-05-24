@@ -65,6 +65,10 @@ refs:
     tier: 1
     notes: "Documents the Ptolemy I Serapis-cult founding as deliberate political-religious-engineering"
 tags: [theme, syncretism, synthesis, deliberate, royal, cross-tradition, manichaeism, prisca-theologia, mughal, cao-dai, baha-i, serapis]
+date-earliest: -300
+dating-basis: B4
+dating-basis-source: "\"Stewart, C. & Shaw, R. eds. 1994 *Syncretism/Anti-Syncretism*. Routledge\""
+dating-basis-notes: "Deliberate syncretism: Hellenistic Serapis c. -300 (Ptolemy I); Manichaean 3rd c.; Akbar's Din-i-Ilahi 1582; Caodaism 1926."
 ---
 
 # Deliberate Syncretism

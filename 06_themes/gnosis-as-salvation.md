@@ -103,6 +103,10 @@ refs:
     tier: 2
     notes: "Companion to Pagels 1979 *Gnostic Gospels*; useful on the political-theological dimension of gnosis-vs-faith disputes in early Christianity"
 tags: [theme, soteriology, gnosis, gnosticism, hermetism, knowledge, prajna, marifa, jnana, inner-light, MASSIVE-WIN, awakening, epistemic-salvation]
+date-earliest: 150
+dating-basis: B4
+dating-basis-source: "\"Jonas, H. 1958 *The Gnostic Religion*\""
+dating-basis-notes: "Gnostic gnosis-soteriology c. 150-200; Hermetic Poimandres c. 100-300."
 ---
 
 # Gnosis as salvation

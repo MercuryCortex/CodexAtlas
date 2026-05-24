@@ -22,6 +22,10 @@ refs:
     type: "monograph"
     tier: 2
 tags: [theme, secular-spirituality, mindfulness, secular-buddhism, taylor, modernity]
+date-earliest: 1965
+dating-basis: B5
+dating-basis-source: "\"Taylor, C. 2007 *A Secular Age*. Harvard\""
+dating-basis-notes: "Modern secular-spirituality post-Vatican II 1965; mindfulness Kabat-Zinn 1979."
 ---
 
 # Secular Spirituality

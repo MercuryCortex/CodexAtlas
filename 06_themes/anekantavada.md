@@ -23,6 +23,10 @@ refs:
     type: "monograph"
     tier: 2
 tags: [theme, jainism, epistemology, perspectivism, anekantavada, syadvada]
+date-earliest: -500
+dating-basis: B4
+dating-basis-source: "\"Dundas, P. 2002 *The Jains* 2nd ed. Routledge\""
+dating-basis-notes: "Anekantavada attributed to Mahavira c. -500; systematized by Siddhasena Divakara c. 400 CE."
 ---
 
 # Anekāntavāda — Non-Absolutism of Viewpoints

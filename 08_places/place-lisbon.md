@@ -3,6 +3,10 @@ type: place
 id: "place-lisbon"
 name: "Place Lisbon"
 status: "stub"
+date-earliest: -1200
+dating-basis: B3
+dating-basis-source: "\"Mattoso, J. 2005 *História de Portugal*. Estampa\""
+dating-basis-notes: "Olissipo Phoenician c. -1200; Roman -200; Christian reconquest 1147."
 ---
 
 # Place Lisbon

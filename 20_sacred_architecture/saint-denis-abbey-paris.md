@@ -3,6 +3,10 @@ type: sacred-site
 id: "saint-denis-abbey-paris"
 name: "Saint Denis Abbey Paris"
 status: "stub"
+date-earliest: 1135
+dating-basis: B1
+dating-basis-source: "\"Panofsky, E. 1979 *Abbot Suger*\""
+dating-basis-notes: "Suger's chevet 1135-1144; earlier Carolingian church 775; Merovingian foundation c. 475."
 ---
 
 # Saint Denis Abbey Paris

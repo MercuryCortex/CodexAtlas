@@ -3,6 +3,10 @@ type: document
 id: "da-ming-huidian"
 name: "Da Ming Huidian"
 status: "stub"
+date-earliest: 1503
+dating-basis: B1
+dating-basis-source: "\"Wilkinson, E. 2018 *Chinese History: A New Manual*. Harvard\""
+dating-basis-notes: "Da Ming Huidian 1503 (Ming statutes)."
 ---
 
 # Da Ming Huidian

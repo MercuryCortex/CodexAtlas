@@ -3,6 +3,10 @@ type: event
 id: "event-tischendorf-1859-mission"
 name: "Event Tischendorf 1859 Mission"
 status: "stub"
+date-earliest: 1859
+dating-basis: B1
+dating-basis-source: "\"Parker, D. 2010 *Codex Sinaiticus*\""
+dating-basis-notes: "1859. Slug-extractable."
 ---
 
 # Event Tischendorf 1859 Mission

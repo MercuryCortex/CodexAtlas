@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-hinduism-vaishnavism"
 name: "Tradition Hinduism Vaishnavism"
 status: "stub"
+date-earliest: -200
+dating-basis: B5
+dating-basis-source: "\"Flood, G. 1996 *An Introduction to Hinduism*. Cambridge\""
+dating-basis-notes: "Vaishnava bhakti consolidates c. -200 to 200 CE; Bhagavad Gita core c. -100."
 ---
 
 # Tradition Hinduism Vaishnavism

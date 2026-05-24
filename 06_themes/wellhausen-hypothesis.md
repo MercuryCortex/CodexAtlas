@@ -3,6 +3,10 @@ type: theme
 id: "wellhausen-hypothesis"
 name: "Wellhausen Documentary Hypothesis"
 status: "stub"
+date-earliest: 1878
+dating-basis: B1
+dating-basis-source: "\"Wellhausen, J. *Prolegomena zur Geschichte Israels* (1878)\""
+dating-basis-notes: "Wellhausen 1878."
 ---
 
 # Wellhausen Documentary Hypothesis

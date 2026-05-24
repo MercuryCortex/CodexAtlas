@@ -27,6 +27,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, gospel-of-mark, narrative-criticism, christianity]
+date-earliest: 70
+dating-basis: B4
+dating-basis-source: "\"Best, E. 1981 *Following Jesus: Discipleship in the Gospel of Mark*. JSOT\""
+dating-basis-notes: "Markan discipleship-failure motif: Mark c. 70 CE."
 ---
 
 # Discipleship Failure (Markan)

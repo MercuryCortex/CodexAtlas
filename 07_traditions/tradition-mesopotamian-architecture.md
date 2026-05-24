@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-mesopotamian-architecture"
 name: "Tradition Mesopotamian Architecture"
 status: "stub"
+date-earliest: -3500
+dating-basis: B5
+dating-basis-source: "\"Roaf, M. 1990 *Cultural Atlas of Mesopotamia*. Facts on File\""
+dating-basis-notes: "Mesopotamian temple architecture from Uruk period c. -3500 (Eanna)."
 ---
 
 # Tradition Mesopotamian Architecture

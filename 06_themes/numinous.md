@@ -21,6 +21,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, phenomenology-of-religion, otto, eliade]
+date-earliest: 1917
+dating-basis: B1
+dating-basis-source: "\"Otto, R. *Das Heilige* (1917)\""
+dating-basis-notes: "Otto 1917."
 ---
 
 # The Numinous (Mysterium Tremendum)

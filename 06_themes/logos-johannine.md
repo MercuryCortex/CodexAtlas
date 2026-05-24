@@ -35,6 +35,10 @@ refs:
     type: "commentary"
     tier: 1
 tags: [theme, christology, logos, johannine, wisdom, incarnation, MASSIVE-WIN, cross-tradition, philo, metatron, sophia, wisdom-personified]
+date-earliest: 95
+dating-basis: B4
+dating-basis-source: "\"Brown, R.E. 1966 *The Gospel According to John*\""
+dating-basis-notes: "John 1:1-18 c. 95."
 ---
 
 # Johannine Logos

@@ -30,6 +30,9 @@ cross-tradition-edges:
   - target: medicine-hippocratic
     type: parallel
     note: While the Greek tradition moved toward naturalism, Greek rural and folk medicine retained shamanic elements (katharsis, Dionysian ecstasy as healing, mystery cult purification). The Hippocratic tradition is not the entirety of Greek healing — it is one specialized institutional strand.
+dating-basis: B7
+dating-basis-source: "\"Cross-tradition / prehistoric. Lewis-Williams hypothesis c. -25000; Eliade modern category 1951.\""
+dating-basis-notes: "Prehistoric pattern. Keep B7."
 ---
 
 Shamanic medicine is the oldest healing tradition in the world — predating all literate medical systems by tens of thousands of years. Archaeological evidence (cave art, burial sites) suggests shamanic healing practice extends back at least 40,000 years. Every subsequent medical tradition contains shamanic substrate: the healer who crosses between worlds, the sacred plant that opens perception, the ritual performance that restores cosmic order.

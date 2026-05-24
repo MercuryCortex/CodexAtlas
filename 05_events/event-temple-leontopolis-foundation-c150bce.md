@@ -29,6 +29,9 @@ refs:
     type: "monograph"
     tier: 1
 tags: [event, temple, leontopolis, egypt, onias, zadokite, diaspora, second-temple, ptolemaic, jewish-egypt, heliopolitan]
+dating-basis: B1
+dating-basis-source: "\"Capponi, L. 2007 *Il Tempio di Leontopoli in Egitto*. Edizioni ETS\""
+dating-basis-notes: "Onias IV foundation c. -160 to -150. Slug-extractable."
 ---
 
 # Foundation of the Temple of Leontopolis

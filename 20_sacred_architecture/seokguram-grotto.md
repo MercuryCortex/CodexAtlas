@@ -3,6 +3,10 @@ type: sacred-site
 id: "seokguram-grotto"
 name: "Seokguram Grotto"
 status: "stub"
+date-earliest: 751
+dating-basis: B1
+dating-basis-source: "\"Lee, P. 1993 *Sourcebook of Korean Civilization* vol. 1. Columbia\""
+dating-basis-notes: "Built by Kim Daeseong 751."
 ---
 
 # Seokguram Grotto

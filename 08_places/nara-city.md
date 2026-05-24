@@ -3,6 +3,10 @@ type: place
 id: "nara-city"
 name: "Nara City"
 status: "stub"
+date-earliest: 710
+dating-basis: B1
+dating-basis-source: "\"Piggott, J.R. 1997 *The Emergence of Japanese Kingship*. Stanford\""
+dating-basis-notes: "Heijō-kyō (Nara) capital 710-784."
 ---
 
 # Nara City

@@ -39,6 +39,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, mysticism, bridal, christianity, judaism-kabbalah, sufi-parallel, song-of-songs, soul-as-bride, bernard-of-clairvaux, beguine, women-mystics]
+date-earliest: -450
+dating-basis: B4
+dating-basis-source: "\"Pope, M. 1977 *Song of Songs*. Anchor Bible\""
+dating-basis-notes: "Song of Songs c. -450 (Persian period) as foundational text; Bernard of Clairvaux Sermones in Cantica c. 1135-1153 medieval crystallization."
 ---
 
 # Bridal mysticism

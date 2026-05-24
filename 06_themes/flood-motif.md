@@ -22,6 +22,10 @@ refs:
     type: "critical-edition"
     tier: 1
 tags: [theme, flood, mesopotamian, near-eastern, hebrew]
+date-earliest: -2100
+dating-basis: B2
+dating-basis-source: "\"Lambert & Millard 1969 *Atrahasis*\""
+dating-basis-notes: "Sumerian Ziusudra c. -2100; Atrahasis c. -1700; Gilgamesh XI; Genesis 6-9 Priestly redaction c. -540."
 ---
 
 # Flood Motif

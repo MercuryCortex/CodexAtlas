@@ -27,6 +27,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, eschatology, apocalyptic, second-temple, qumran, dualism]
+date-earliest: -165
+dating-basis: B4
+dating-basis-source: "\"Collins, J.J. 1998 *The Apocalyptic Imagination*. Eerdmans\""
+dating-basis-notes: "First Jewish apocalyptic cosmic-warfare layer Daniel 7-12 c. -165; Qumran War Scroll c. -100; Zoroastrian Bundahishn precedent older."
 ---
 
 # Apocalyptic cosmic warfare

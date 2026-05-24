@@ -3,6 +3,10 @@ type: theme
 id: "theme-color-symbolism-liturgical"
 name: "Theme Color Symbolism Liturgical"
 status: "stub"
+date-earliest: 1000
+dating-basis: B5
+dating-basis-source: "\"Pastoureau, M. 2001 *Blue: The History of a Color*. Princeton\""
+dating-basis-notes: "Western liturgical color code crystallizes c. 1000-1200; canonized Innocent III c. 1198."
 ---
 
 # Theme Color Symbolism Liturgical

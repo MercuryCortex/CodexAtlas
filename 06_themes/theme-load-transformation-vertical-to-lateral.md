@@ -3,6 +3,10 @@ type: theme
 id: "theme-load-transformation-vertical-to-lateral"
 name: "Theme Load Transformation Vertical to Lateral"
 status: "stub"
+date-earliest: 1140
+dating-basis: B5
+dating-basis-source: "\"Bony, J. 1983 *French Gothic Architecture*\""
+dating-basis-notes: "Gothic ribbed vault + flying buttress system c. 1140 Saint-Denis."
 ---
 
 # Theme Load Transformation Vertical to Lateral

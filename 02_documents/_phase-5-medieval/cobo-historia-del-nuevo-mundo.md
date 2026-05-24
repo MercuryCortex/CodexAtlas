@@ -3,6 +3,10 @@ type: document
 id: "cobo-historia-del-nuevo-mundo"
 name: "Cobo Historia Del Nuevo Mundo"
 status: "stub"
+date-earliest: 1653
+dating-basis: B1
+dating-basis-source: "\"Cobo, B. *Historia del Nuevo Mundo* (1653)\""
+dating-basis-notes: "Composed 1653."
 ---
 
 # Cobo Historia Del Nuevo Mundo

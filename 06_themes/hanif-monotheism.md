@@ -34,6 +34,10 @@ refs:
     tier: 1
     notes: "Donner's 'Believers' thesis — emergent monotheism in late-antique Arabia is broader than just Muhammad's movement; the hanif-tradition fits this frame"
 tags: [theme, pre-islamic-arabian, monotheism, hanif, abrahamic, late-antique, hijazi, quranic-self-identification]
+date-earliest: 600
+dating-basis: B5
+dating-basis-source: "\"Crone, P. & Cook, M. 1977 *Hagarism*. Cambridge\""
+dating-basis-notes: "Hanif self-identification in Quranic strata c. 610-632; pre-Islamic Hanifism Hijaz c. 600."
 ---
 
 # Ḥanīf monotheism

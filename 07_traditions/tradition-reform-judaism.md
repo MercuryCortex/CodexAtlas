@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-reform-judaism"
 name: "Tradition Reform Judaism"
 status: "stub"
+date-earliest: 1810
+dating-basis: B5
+dating-basis-source: "\"Meyer, M. 1988 *Response to Modernity: A History of the Reform Movement in Judaism*. OUP\""
+dating-basis-notes: "Reform Judaism from Hamburg Temple 1818; Israel Jacobson's Seesen reforms 1810."
 ---
 
 # Tradition Reform Judaism

@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-eurasian-steppe-cultures"
 name: "Tradition Eurasian Steppe Cultures"
 status: "stub"
+date-earliest: -3500
+dating-basis: B5
+dating-basis-source: "\"Anthony, D. 2007 *The Horse, the Wheel, and Language*. Princeton\""
+dating-basis-notes: "Steppe pastoralist religion from Yamnaya horizon c. -3500."
 ---
 
 # Tradition Eurasian Steppe Cultures

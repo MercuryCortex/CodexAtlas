@@ -3,6 +3,10 @@ type: theme
 id: "theme-steppe-warrior-as-civilizational-counterweight"
 name: "Theme Steppe Warrior As Civilizational Counterweight"
 status: "stub"
+date-earliest: -700
+dating-basis: B5
+dating-basis-source: "\"Beckwith, C. 2009 *Empires of the Silk Road*. Princeton\""
+dating-basis-notes: "Steppe-civilizational dialectic Scythian-Achaemenid c. -700; Xiongnu-Han -200; Mongol-Sedentary 1200."
 ---
 
 # Theme Steppe Warrior As Civilizational Counterweight

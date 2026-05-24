@@ -29,6 +29,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, kabbalah, lurianic, cosmogony, MASSIVE-WIN, cross-tradition]
+date-earliest: 1570
+dating-basis: B5
+dating-basis-source: "\"Fine, L. 2003 *Physician of the Soul*\""
+dating-basis-notes: "Lurianic Tzimtzum c. 1570."
 ---
 
 # Tzimtzum (Divine Contraction)

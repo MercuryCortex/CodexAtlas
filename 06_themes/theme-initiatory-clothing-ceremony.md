@@ -3,6 +3,9 @@ type: theme
 id: "theme-initiatory-clothing-ceremony"
 name: "Theme Initiatory Clothing Ceremony"
 status: "stub"
+dating-basis: B7
+dating-basis-source: "\"Cross-tradition (Sikh dastaar, Zoroastrian sudreh-kushti, Christian baptismal white, Tibetan vajrayana). Pattern not event.\""
+dating-basis-notes: "Pattern. Keep B7."
 ---
 
 # Theme Initiatory Clothing Ceremony

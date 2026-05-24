@@ -3,6 +3,10 @@ type: theme
 id: "theme-tidal-architecture"
 name: "Theme Tidal Architecture"
 status: "stub"
+date-earliest: 593
+dating-basis: B5
+dating-basis-source: "\"Watanabe, Y. 1974 *Shinto Art: Ise and Izumo Shrines*. Weatherhill\""
+dating-basis-notes: "Itsukushima Shrine tidal architecture c. 593 founding; current form Taira no Kiyomori 1168."
 ---
 
 # Theme Tidal Architecture

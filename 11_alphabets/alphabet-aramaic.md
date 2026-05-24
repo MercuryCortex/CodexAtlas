@@ -39,6 +39,9 @@ refs:
   - "McNamara, Martin. *Targum and Testament: Aramaic Paraphrases of the Hebrew Bible*. Eerdmans, 1972. [T2 — foundational study of Targum tradition and Memra]"
   - "Naveh, Joseph, and Jonas C. Greenfield. 'Hebrew and Aramaic in the Persian Period.' *The Cambridge History of Judaism*, vol. 1. Cambridge UP, 1984. [T2 — Aramaic as Persian imperial language]"
   - "Daniels, Peter T., and William Bright, eds. *The World's Writing Systems*. Oxford University Press, 1996. [T2 — comprehensive reference for Aramaic's role in global script transmission]"
+dating-basis: B3
+dating-basis-source: "\"Naveh, J. 1987 *Early History of the Alphabet*. Magnes\""
+dating-basis-notes: "Aramaic inscriptions from c. -900 (Tell Halaf, Aleppo)."
 ---
 
 # Aramaic — The Language Everyone Has Heard But No One Knows They've Heard

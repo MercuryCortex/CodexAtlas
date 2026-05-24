@@ -3,6 +3,9 @@ type: event
 id: "event-kuni-yuzuri-mythological"
 name: "Event Kuni Yuzuri Mythological"
 status: "stub"
+dating-basis: B7
+dating-basis-source: "\"Mythological event in Kojiki 712. Not a historical date.\""
+dating-basis-notes: "Mythological. Keep B7 with note pointing to Kojiki B4 712."
 ---
 
 # Event Kuni Yuzuri Mythological

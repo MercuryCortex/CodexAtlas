@@ -3,6 +3,10 @@ type: sacred-site
 id: "etowah-mounds"
 name: "Etowah Mounds"
 status: "stub"
+date-earliest: 1000
+dating-basis: B3
+dating-basis-source: "\"King, A. 2003 *Etowah*. Univ. Alabama\""
+dating-basis-notes: "Etowah c. 1000-1550 (Mississippian)."
 ---
 
 # Etowah Mounds

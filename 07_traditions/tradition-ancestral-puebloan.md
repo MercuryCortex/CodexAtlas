@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-ancestral-puebloan"
 name: "Tradition Ancestral Puebloan"
 status: "stub"
+date-earliest: -100
+dating-basis: B5
+dating-basis-source: "\"Cordell, L. 1997 *Archaeology of the Southwest*. Academic Press\""
+dating-basis-notes: "Ancestral Puebloan (Anasazi) Basketmaker II c. -100 to 500."
 ---
 
 # Tradition Ancestral Puebloan

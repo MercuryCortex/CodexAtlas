@@ -3,6 +3,10 @@ type: document
 id: "sinai-library-corpus"
 name: "Sinai Library Corpus"
 status: "stub"
+date-earliest: 400
+dating-basis: B5
+dating-basis-source: "\"Kamil, M. 1970 *Catalogue of All Manuscripts in the Monastery of St. Catharine on Mount Sinai*. Wiesbaden\""
+dating-basis-notes: "Sinai Library accumulation from 4th c. (St Catherine founded 548); Tischendorf 1844, 1859 missions."
 ---
 
 # Sinai Library Corpus

@@ -3,6 +3,10 @@ type: theme
 id: "theme-mass-print-enables-reformation"
 name: "Theme Mass Print Enables Reformation"
 status: "stub"
+date-earliest: 1517
+dating-basis: B5
+dating-basis-source: "\"Eisenstein, E. 1979 *The Printing Press as an Agent of Change*. Cambridge\""
+dating-basis-notes: "Gutenberg 1455; Luther's 95 theses 1517 disseminated by print."
 ---
 
 # Theme Mass Print Enables Reformation

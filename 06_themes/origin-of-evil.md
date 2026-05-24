@@ -21,6 +21,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, theodicy, problem-of-evil, dualism, gnosticism]
+date-earliest: -540
+dating-basis: B4
+dating-basis-source: "\"Russell, J.B. 1977 *The Devil*. Cornell\""
+dating-basis-notes: "Theodicy in Job c. -540; Zoroastrian Bundahishn earlier; Gnostic Apocryphon of John c. 180."
 ---
 
 # Origin of Evil

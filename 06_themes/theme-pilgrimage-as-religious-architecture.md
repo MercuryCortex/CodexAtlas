@@ -3,6 +3,10 @@ type: theme
 id: "theme-pilgrimage-as-religious-architecture"
 name: "Theme Pilgrimage As Religious Architecture"
 status: "stub"
+date-earliest: 1000
+dating-basis: B5
+dating-basis-source: "\"Webb, D. 1999 *Pilgrims and Pilgrimage in the Medieval West*\""
+dating-basis-notes: "Medieval pilgrimage-architecture (Santiago/Compostela/Rome) c. 1000-1500."
 ---
 
 # Theme Pilgrimage As Religious Architecture

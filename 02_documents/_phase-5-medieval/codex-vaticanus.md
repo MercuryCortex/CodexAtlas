@@ -3,6 +3,10 @@ type: document
 id: "codex-vaticanus"
 name: "Codex Vaticanus"
 status: "stub"
+date-earliest: 325
+dating-basis: B1
+dating-basis-source: "\"Skeat, T.C. 1999 'The Codex Vaticanus in the Fifteenth Century' *JTS* 35\""
+dating-basis-notes: "Codex Vaticanus c. 325-350."
 ---
 
 # Codex Vaticanus

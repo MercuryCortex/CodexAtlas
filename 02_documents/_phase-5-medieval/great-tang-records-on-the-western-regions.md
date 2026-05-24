@@ -3,6 +3,10 @@ type: document
 id: "great-tang-records-on-the-western-regions"
 name: "Great Tang Records On The Western Regions"
 status: "stub"
+date-earliest: 646
+dating-basis: B1
+dating-basis-source: "\"Beal, S. 1884 *Si-Yu-Ki: Buddhist Records of the Western World*. Routledge\""
+dating-basis-notes: "Xuanzang completed 646."
 ---
 
 # Great Tang Records On The Western Regions

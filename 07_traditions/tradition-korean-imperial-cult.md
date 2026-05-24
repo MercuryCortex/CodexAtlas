@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-korean-imperial-cult"
 name: "Tradition Korean Imperial Cult"
 status: "stub"
+date-earliest: 1392
+dating-basis: B5
+dating-basis-source: "\"Deuchler, M. 1992 *The Confucian Transformation of Korea*\""
+dating-basis-notes: "Joseon dynastic ancestor cult institutionalized Jongmyo 1392."
 ---
 
 # Tradition Korean Imperial Cult

@@ -3,6 +3,10 @@ type: technology
 id: "information-bamboo-strip-codex"
 name: "Information Bamboo Strip Codex"
 status: "stub"
+date-earliest: -500
+dating-basis: B3
+dating-basis-source: "\"Lewis, M.E. 1999 *Writing and Authority in Early China*\""
+dating-basis-notes: "Bamboo strip texts (jiandu) from c. -500; mature corpus -300 to 100."
 ---
 
 # Information Bamboo Strip Codex

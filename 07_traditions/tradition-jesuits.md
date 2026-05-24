@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-jesuits"
 name: "Tradition Jesuits"
 status: "stub"
+date-earliest: 1540
+dating-basis: B5
+dating-basis-source: "\"O'Malley, J. 1993 *The First Jesuits*. Harvard\""
+dating-basis-notes: "Society of Jesus confirmed by Paul III 1540."
 ---
 
 # Tradition Jesuits

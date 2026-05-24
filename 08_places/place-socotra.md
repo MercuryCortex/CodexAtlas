@@ -3,6 +3,10 @@ type: place
 id: "place-socotra"
 name: "Place Socotra"
 status: "stub"
+date-earliest: -100
+dating-basis: B3
+dating-basis-source: "\"Casson, L. 1989 *The Periplus Maris Erythraei*. Princeton\""
+dating-basis-notes: "Socotra Indian-Ocean entrepot Periplus c. 50 CE; Hadramawt sphere -100."
 ---
 
 # Place Socotra

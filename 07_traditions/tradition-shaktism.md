@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-shaktism"
 name: "Tradition Shaktism"
 status: "stub"
+date-earliest: 500
+dating-basis: B5
+dating-basis-source: "\"Coburn, T. 1991 *Encountering the Goddess*. SUNY\""
+dating-basis-notes: "Shakta tradition consolidates with Devi Mahatmya c. 500-600."
 ---
 
 # Tradition Shaktism

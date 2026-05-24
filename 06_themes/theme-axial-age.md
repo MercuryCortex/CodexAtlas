@@ -52,6 +52,10 @@ refs:
     tier: 1
     notes: "Eisenstadt's sociological elaboration; the 'transcendental breakthrough' as the defining feature"
 tags: [theme, axial-age, jaspers, comparative-religion, meta-framework, cross-tradition, MASSIVE-WIN, interiority, transcendence, ethics]
+date-earliest: 1949
+dating-basis: B1
+dating-basis-source: "\"Jaspers, K. *Vom Ursprung und Ziel der Geschichte* (1949)\""
+dating-basis-notes: "Jaspers 1949. Axial event -800 to -200."
 ---
 
 # Axial Age

@@ -3,6 +3,10 @@ type: place
 id: "roman-empire"
 name: "Roman Empire"
 status: "stub"
+date-earliest: -27
+dating-basis: B5
+dating-basis-source: "\"Beard, M. 2015 *SPQR*. Profile\""
+dating-basis-notes: "Roman Empire from Augustus -27 to 476 (West) / 1453 (East)."
 ---
 
 # Roman Empire

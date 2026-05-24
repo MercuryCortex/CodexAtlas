@@ -3,6 +3,10 @@ type: document
 id: "shilpa-shastra"
 name: "Shilpa Shastra"
 status: "stub"
+date-earliest: 500
+dating-basis: B5
+dating-basis-source: "\"Kramrisch, S. 1946 *The Hindu Temple*. Univ. Calcutta\""
+dating-basis-notes: "Shilpa Shastra tradition crystallizes c. 500-700; Mayamata c. 800."
 ---
 
 # Shilpa Shastra

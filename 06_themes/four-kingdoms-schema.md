@@ -21,6 +21,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, daniel, apocalyptic, political-theology, judaism]
+date-earliest: -165
+dating-basis: B4
+dating-basis-source: "\"Collins, J.J. 1993 *Daniel*. Hermeneia\""
+dating-basis-notes: "Daniel 2 + 7 four-kingdoms c. -165."
 ---
 
 # Four-Kingdoms Schema

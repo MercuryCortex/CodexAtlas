@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-medieval-pilgrimage"
 name: "Tradition Medieval Pilgrimage"
 status: "stub"
+date-earliest: 1000
+dating-basis: B5
+dating-basis-source: "\"Webb, D. 1999 *Pilgrims and Pilgrimage in the Medieval West*. I.B. Tauris\""
+dating-basis-notes: "Mass pilgrimage culture (Santiago/Rome/Jerusalem) c. 1000-1500."
 ---
 
 # Tradition Medieval Pilgrimage

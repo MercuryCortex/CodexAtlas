@@ -33,6 +33,10 @@ refs:
     type: "monograph"
     tier: 2
 tags: [theme, ritual, ethiopian, tabot, ark-of-covenant, consecratory-object, distinctive-ethiopian]
+date-earliest: 340
+dating-basis: B5
+dating-basis-source: "\"Munro-Hay, S. 1991 *Aksum*\""
+dating-basis-notes: "Ethiopian tabot tradition from Aksumite Christianization c. 340; documented in *Kebra Nagast* c. 1322."
 ---
 
 # Tabot (Ark-of-the-Covenant replica)

@@ -3,6 +3,10 @@ type: document
 id: "vastu-shastra"
 name: "Vastu Shastra"
 status: "stub"
+date-earliest: 500
+dating-basis: B5
+dating-basis-source: "\"Kramrisch, S. 1946 *The Hindu Temple*\""
+dating-basis-notes: "Vastu Shastra tradition c. 500-1500; Brihat Samhita c. 550."
 ---
 
 # Vastu Shastra

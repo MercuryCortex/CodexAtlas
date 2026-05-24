@@ -3,6 +3,9 @@ type: event
 id: "event-izumo-taisha-traditional-founding"
 name: "Event Izumo Taisha Traditional Founding"
 status: "stub"
+dating-basis: B7
+dating-basis-source: "\"Mythological founding via Kuni-yuzuri narrative. Textual attestation Kojiki 712, Engishiki 927. No archaeological founding date.\""
+dating-basis-notes: "Mythological/legendary founding. Keep B7 OR route to B4 712 (Kojiki attestation)."
 ---
 
 # Event Izumo Taisha Traditional Founding

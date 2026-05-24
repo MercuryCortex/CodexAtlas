@@ -3,6 +3,10 @@ type: exchange-network
 id: "exchange-network-tamil-merchants"
 name: "Exchange Network Tamil Merchants"
 status: "stub"
+date-earliest: 850
+dating-basis: B5
+dating-basis-source: "\"Karashima, N. 2009 *Ancient and Medieval Commercial Activities*\""
+dating-basis-notes: "Tamil merchant guilds (Ayyavole, Manigramam) c. 850-1300."
 ---
 
 # Exchange Network Tamil Merchants

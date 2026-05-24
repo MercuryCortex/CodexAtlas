@@ -39,6 +39,10 @@ persons:
 documents:
   - "[[phase-5-029-bardo-thodol]]"
 geo: null
+date-earliest: -540
+dating-basis: B4
+dating-basis-source: "\"Sasson, J. ed. 1995 *Civilizations of the Ancient Near East*. Hendrickson\""
+dating-basis-notes: "Hebrew Bible 40-day/40-year usage c. -540 redaction; Quran 7th c."
 ---
 
 # Sacred Number Forty

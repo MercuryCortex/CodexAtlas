@@ -3,6 +3,10 @@ type: deity
 id: "zhenwu"
 name: "Zhenwu"
 status: "stub"
+date-earliest: 200
+dating-basis: B2
+dating-basis-source: "\"Schipper, K. 1993 *The Taoist Body*\""
+dating-basis-notes: "Same as Xuanwu; later cult name Tang/Song."
 ---
 
 # Zhenwu

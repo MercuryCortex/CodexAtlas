@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-islam-sufi"
 name: "Tradition Islam Sufi"
 status: "stub"
+date-earliest: 800
+dating-basis: B5
+dating-basis-source: "\"Schimmel, A. 1975 *Mystical Dimensions of Islam*. UNC\""
+dating-basis-notes: "Sufism crystallizes c. 800-900 CE per Schimmel; al-Junayd of Baghdad d. 910."
 ---
 
 # Tradition Islam Sufi

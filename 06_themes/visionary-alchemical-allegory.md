@@ -36,6 +36,10 @@ refs:
     tier: 3
     notes: "Comprehensive illustrated survey of alchemical imagery; useful reference for the visual tradition"
 tags: [theme, alchemy, allegory, visionary, splendor-solis, zosimos, jung, hermetic, phase-4, phase-6, metadata]
+date-earliest: 1525
+dating-basis: B5
+dating-basis-source: "\"Roob, A. 1997 *Alchemy & Mysticism*. Taschen\""
+dating-basis-notes: "Splendor Solis 1525; Zosimos's visions c. 300; emblem-books 16th c."
 ---
 
 # Visionary Alchemical Allegory

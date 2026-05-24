@@ -43,6 +43,10 @@ refs:
     tier: 1
     notes: "Pages 196–200 discuss the Baltic sun-goddess Saulė and the PIE solar heritage — key for the feminine-solar vs. masculine-solar distribution question."
 tags: [theme, cosmological, solar-deity, feminine, gender, indo-european, hittite, shinto, baltic, comparative-mythology]
+date-earliest: -1400
+dating-basis: B4
+dating-basis-source: "\"Beckman, G. 1983 *Hittite Birth Rituals*. Harrassowitz\""
+dating-basis-notes: "Hittite Sun-Goddess of Arinna c. -1400; Shinto Amaterasu Kojiki 712 CE."
 ---
 
 # Feminine Solar Deity

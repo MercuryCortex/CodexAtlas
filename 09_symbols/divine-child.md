@@ -30,6 +30,9 @@ cross-links:
   - halo-nimbus
   - divine-twins
   - flood-motif
+dating-basis: B7
+dating-basis-source: "\"Cross-tradition (Horus, Krishna, Christ, Buddha at birth). Pattern not event.\""
+dating-basis-notes: "Pattern. Keep B7."
 ---
 
 # Divine Child

@@ -3,6 +3,10 @@ type: theme
 id: "theme-mnemonic-attire-as-commandment"
 name: "Theme Mnemonic Attire As Commandment"
 status: "stub"
+date-earliest: -540
+dating-basis: B4
+dating-basis-source: "\"Milgrom, J. 1990 *Numbers*. JPS Torah\""
+dating-basis-notes: "Tzitzit Numbers 15:38-41 c. -540; ihram, kāsāya, kachera cross-tradition."
 ---
 
 # Theme Mnemonic Attire As Commandment

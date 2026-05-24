@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-ramanandi"
 name: "Tradition Ramanandi"
 status: "stub"
+date-earliest: 1400
+dating-basis: B5
+dating-basis-source: "\"Hawley, J.S. 2015 *A Storm of Songs: India and the Idea of the Bhakti Movement*. Harvard\""
+dating-basis-notes: "Ramanandi sampradaya from Ramananda c. 1400 Varanasi."
 ---
 
 # Tradition Ramanandi

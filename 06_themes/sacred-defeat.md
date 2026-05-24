@@ -30,6 +30,9 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, sacred-defeat, founding-trauma, thermopylae, masada, numantia, kosovo, alamo, sebastianism, alcacer-quibir, national-mythology, death-before-surrender, MASSIVE-WIN]
+dating-basis: B7
+dating-basis-source: "\"Pattern-recognition motif (Thermopylae -480, Masada 73, Kosovo 1389, Alcácer-Quibir 1578)\""
+dating-basis-notes: "Pattern. Keep B7."
 ---
 
 # The Sacred Defeat — Founding Trauma as National Identity

@@ -3,6 +3,10 @@ type: event
 id: "event-toledo-school-of-translators"
 name: "Event Toledo School of Translators"
 status: "stub"
+date-earliest: 1085
+dating-basis: B5
+dating-basis-source: "\"Burnett, C. 2001 'The Coherence of the Arabic-Latin Translation Programme in Toledo' *Science in Context* 14\""
+dating-basis-notes: "Toledo School c. 1085-1280; major translators Gerard of Cremona c. 1170."
 ---
 
 # Event Toledo School of Translators

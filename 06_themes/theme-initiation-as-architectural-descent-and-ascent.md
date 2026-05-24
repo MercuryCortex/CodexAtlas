@@ -3,6 +3,9 @@ type: theme
 id: "theme-initiation-as-architectural-descent-and-ascent"
 name: "Theme Initiation As Architectural Descent And Ascent"
 status: "stub"
+dating-basis: B7
+dating-basis-source: "\"Cross-tradition (Mithraea, Christian crypt, Hindu rock-cut). Pattern not event.\""
+dating-basis-notes: "Pattern. Keep B7."
 ---
 
 # Theme Initiation As Architectural Descent And Ascent

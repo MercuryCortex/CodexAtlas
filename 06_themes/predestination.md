@@ -21,6 +21,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, augustine, calvin, free-will, theology]
+date-earliest: 411
+dating-basis: B4
+dating-basis-source: "\"Brown, P. 1967 *Augustine of Hippo*\""
+dating-basis-notes: "Augustinian predestination c. 411; Calvin *Institutes* 1536."
 ---
 
 # Predestination

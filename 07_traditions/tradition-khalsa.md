@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-khalsa"
 name: "Tradition Khalsa"
 status: "stub"
+date-earliest: 1699
+dating-basis: B5
+dating-basis-source: "\"Mandair, A. 2013 *Sikhism: A Guide for the Perplexed*. Bloomsbury\""
+dating-basis-notes: "Khalsa founded by Guru Gobind Singh Baisakhi 1699."
 ---
 
 # Tradition Khalsa

@@ -29,6 +29,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, sacred-geography, finisterre, end-of-world, camino, pilgrimage, celtic-otherworld, atlantic, lusitanian, tartessos, solar, eschatology, MASSIVE-WIN]
+date-earliest: -1000
+dating-basis: B4
+dating-basis-source: "\"Cunliffe, B. 2001 *Facing the Ocean*\""
+dating-basis-notes: "Atlantic-end-of-world motif: Pytheas of Massalia c. -325 (Ultima Thule); pre-classical Tartessian and Celtic substrate c. -1000."
 ---
 
 # Finisterre — The Sacred End of the World

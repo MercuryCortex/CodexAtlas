@@ -3,6 +3,10 @@ type: theme
 id: "theme-buddhist-transmission-from-baekje-korea-to-japan"
 name: "Theme Buddhist Transmission From Baekje Korea To Japan"
 status: "stub"
+date-earliest: 538
+dating-basis: B1
+dating-basis-source: "\"Sonoda, K. 1993 'Early Buddha Worship in Yamato' in *Cambridge History of Japan* vol. 1\""
+dating-basis-notes: "Baekje's gift of Buddha image to Yamato 538 CE (traditional 552)."
 ---
 
 # Theme Buddhist Transmission From Baekje Korea To Japan

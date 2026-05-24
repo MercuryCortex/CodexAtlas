@@ -3,6 +3,10 @@ type: exchange-network
 id: "trans-atlantic-slave-trade"
 name: "Trans Atlantic Slave Trade"
 status: "stub"
+date-earliest: 1502
+dating-basis: B1
+dating-basis-source: "\"Klein, H. 2010 *The Atlantic Slave Trade* 2nd ed. Cambridge\""
+dating-basis-notes: "Trans-Atlantic slave trade 1502-1888."
 ---
 
 # Trans Atlantic Slave Trade

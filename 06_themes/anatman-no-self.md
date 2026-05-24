@@ -41,6 +41,10 @@ refs:
     tier: 1
     notes: "The classic philosophical-anthropological study."
 tags: [theme, anthropological, buddhism, foundational, anatman, anatta, no-self, parfit, mahdyamaka]
+date-earliest: -460
+dating-basis: B4
+dating-basis-source: "\"Gombrich, R. 2009 *What the Buddha Thought*. Equinox\""
+dating-basis-notes: "Anatta doctrine in earliest Pali strata (Anattalakkhana Sutta SN 22.59); attributed to Buddha c. -460."
 ---
 
 # Anātman (No-Self)

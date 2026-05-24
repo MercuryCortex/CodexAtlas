@@ -29,6 +29,10 @@ refs:
     type: "monograph"
     tier: 2
 tags: [theme, eliade, cyclical-time, comparative]
+date-earliest: 1949
+dating-basis: B1
+dating-basis-source: "\"Eliade, M. *Le mythe de l'éternel retour* (1949)\""
+dating-basis-notes: "Eliade's category 1949; archaic motifs (yugas/ekpyrosis) date separately."
 ---
 
 # Eternal Return

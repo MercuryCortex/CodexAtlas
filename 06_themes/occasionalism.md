@@ -27,6 +27,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, causation, asharite, al-ghazali, malebranche, cartesian, metaphysics-of-causation]
+date-earliest: 1100
+dating-basis: B5
+dating-basis-source: "\"Frank, R. 1992 *Beings and Their Attributes*. SUNY\""
+dating-basis-notes: "Ash'arite occasionalism al-Ash'ari c. 925; al-Ghazali *Tahafut* 1095; Malebranche 1675."
 ---
 
 # Occasionalism

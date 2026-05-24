@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-conservative-judaism"
 name: "Tradition Conservative Judaism"
 status: "stub"
+date-earliest: 1886
+dating-basis: B5
+dating-basis-source: "\"Sklare, M. 1955 *Conservative Judaism: An American Religious Movement*. Free Press\""
+dating-basis-notes: "Jewish Theological Seminary founded 1886; movement coheres 1913 with United Synagogue."
 ---
 
 # Tradition Conservative Judaism

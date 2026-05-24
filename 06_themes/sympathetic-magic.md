@@ -21,6 +21,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, magic, anthropology, frazer, hermeticism]
+date-earliest: 1890
+dating-basis: B1
+dating-basis-source: "\"Frazer, J.G. *The Golden Bough* (1890)\""
+dating-basis-notes: "Frazer's modern category 1890; underlying practices prehistoric."
 ---
 
 # Sympathetic Magic

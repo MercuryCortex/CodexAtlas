@@ -64,6 +64,10 @@ refs:
     Marchant, G. (pub.) (1485). *La Danse Macabre*. Paris. Tier 1 primary source.
     [Earliest surviving major printed edition; the woodcut tradition from which all subsequent
     printed versions descend; text attributed to Jean Gerson or anonymous Franciscan preachers.]
+date-earliest: 1424
+dating-basis: B3
+dating-basis-source: "\"Oosterwijk, S. & Knoll, S. eds. 2011 *Mixed Metaphors: The Danse Macabre*. Cambridge Scholars\""
+dating-basis-notes: "First documented Danse Macabre Holy Innocents cemetery Paris 1424-1425."
 ---
 
 # Danse Macabre (Dance of Death)

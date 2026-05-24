@@ -33,6 +33,10 @@ hub-edges:
     source: "Hadot 1993 *Plotinus or the Simplicity of Vision*; Armstrong 1967 *The Cambridge History of Later Greek and Early Medieval Philosophy* — Plotinus's formation under [[ammonius-saccas]] in Alexandria (232-243 CE) is the geographic origin of the Plotinian henosis-doctrine that becomes the master-articulation of Western mystical-philosophical anthropology"
     notes: "Cross-lens: 08_places → 06_themes. The place hosts the FORK-POINT teacher (Ammonius Saccas) whose two students (Plotinus + Origen) split into Neoplatonism + Alexandrian Christianity"
 status: "stub"
+date-earliest: -331
+dating-basis: B1
+dating-basis-source: "\"Bowman, A. 1986 *Egypt After the Pharaohs*\""
+dating-basis-notes: "Founded by Alexander -331."
 ---
 
 # Place Alexandria

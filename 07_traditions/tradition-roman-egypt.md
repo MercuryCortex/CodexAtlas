@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-roman-egypt"
 name: "Tradition Roman Egypt"
 status: "stub"
+date-earliest: -30
+dating-basis: B5
+dating-basis-source: "\"Bowman, A. 1986 *Egypt After the Pharaohs*. British Museum\""
+dating-basis-notes: "Roman Egypt from -30 (Augustus annexation) to 641 CE."
 ---
 
 # Tradition Roman Egypt

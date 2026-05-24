@@ -30,6 +30,9 @@ cross-links:
   - djed-pillar
   - omphalos
   - world-axis
+dating-basis: B7
+dating-basis-source: "\"Cross-tradition cosmic mountain. Pattern not event.\""
+dating-basis-notes: "Pattern. Keep B7."
 ---
 
 # World Mountain

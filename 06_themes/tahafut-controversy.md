@@ -38,6 +38,10 @@ depictions:
     caption: "Averroes (Ibn Rushd), detail from Raphael's School of Athens — protagonist of the Tahāfut al-Tahāfut"
     source: "Wikimedia Commons"
     license: "Public domain"
+date-earliest: 1095
+dating-basis: B1
+dating-basis-source: "\"Griffel, F. 2009 *Al-Ghazali's Philosophical Theology*. OUP\""
+dating-basis-notes: "Al-Ghazali *Tahafut al-Falasifa* c. 1095; Averroes *Tahafut al-Tahafut* c. 1180."
 ---
 
 # The Tahafut Controversy (kalām vs. falsafa on the compatibility of revealed religion and Greek philosophy)

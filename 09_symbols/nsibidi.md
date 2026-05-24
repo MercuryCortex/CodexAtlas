@@ -33,6 +33,10 @@ geo:
   lat: 5.97
   lon: 8.32
   label: "Calabar / Cross River region, southeastern Nigeria"
+date-earliest: 400
+dating-basis: B3
+dating-basis-source: "\"MacGregor, J.K. 1909 'Some Notes on Nsibidi' *JRAI* 39\""
+dating-basis-notes: "Nsibidi Cross River area c. 400; documented colonial 1909."
 ---
 
 # Nsibidi

@@ -3,6 +3,10 @@ type: place
 id: "spanish-empire"
 name: "Spanish Empire"
 status: "stub"
+date-earliest: 1492
+dating-basis: B5
+dating-basis-source: "\"Elliott, J.H. 2006 *Empires of the Atlantic World*. Yale\""
+dating-basis-notes: "Spanish Empire from 1492 (Columbus) and 1521 (Tenochtitlan)."
 ---
 
 # Spanish Empire

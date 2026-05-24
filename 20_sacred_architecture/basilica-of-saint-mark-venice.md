@@ -3,6 +3,10 @@ type: sacred-site
 id: "basilica-of-saint-mark-venice"
 name: "Basilica Of Saint Mark Venice"
 status: "stub"
+date-earliest: 828
+dating-basis: B1
+dating-basis-source: "\"Demus, O. 1988 *The Mosaics of San Marco*. Univ. Chicago\""
+dating-basis-notes: "First church 828 (translation of Mark's relics); current c. 1063."
 ---
 
 # Basilica Of Saint Mark Venice

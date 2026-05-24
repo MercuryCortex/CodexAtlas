@@ -3,6 +3,10 @@ type: sacred-site
 id: "esagila-marduk-babylon"
 name: "Esagila Marduk Babylon"
 status: "stub"
+date-earliest: -1900
+dating-basis: B3
+dating-basis-source: "\"George, A. 1992 *Babylonian Topographical Texts*. Peeters\""
+dating-basis-notes: "Esagila Old Babylonian period c. -1900; Neo-Babylonian rebuilding -600."
 ---
 
 # Esagila Marduk Babylon

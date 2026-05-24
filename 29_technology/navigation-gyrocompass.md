@@ -3,6 +3,10 @@ type: technology
 id: "navigation-gyrocompass"
 name: "Navigation Gyrocompass"
 status: "stub"
+date-earliest: 1908
+dating-basis: B1
+dating-basis-source: "\"Britting, K. 1971 *Inertial Navigation Systems Analysis*. Wiley\""
+dating-basis-notes: "Anschütz-Kaempfe gyrocompass 1908."
 ---
 
 # Navigation Gyrocompass

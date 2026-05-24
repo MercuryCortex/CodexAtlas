@@ -3,6 +3,10 @@ type: place
 id: "place-somaliland"
 name: "Place Somaliland"
 status: "stub"
+date-earliest: -2500
+dating-basis: B3
+dating-basis-source: "\"Bard, K. & Fattovich, R. 2007 *Harbor of the Pharaohs to the Land of Punt*. Univ. Naples\""
+dating-basis-notes: "Land of Punt c. -2500 (Egyptian expeditions); medieval Somali trade 10th c."
 ---
 
 # Place Somaliland

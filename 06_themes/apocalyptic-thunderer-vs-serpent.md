@@ -53,6 +53,10 @@ depictions:
     caption: "Zeus fighting Typhon, Apulian red-figure plate, c. 550 BCE (Staatliche Antikensammlungen, Munich)"
     source: "Wikimedia Commons"
     license: "Public domain"
+date-earliest: -1400
+dating-basis: B2
+dating-basis-source: "\"West, M.L. 2007 *Indo-European Poetry and Myth*. OUP\""
+dating-basis-notes: "PIE storm-god-vs-serpent mytheme; first attestation Hittite Illuyanka c. -1400 and Vedic Indra-Vritra c. -1200."
 ---
 
 # Thunderer vs. Serpent (Storm-God Combat)

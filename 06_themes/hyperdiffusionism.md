@@ -37,6 +37,10 @@ refs:
     tier: 1
     notes: "Genetic evidence confirming pre-Columbian Polynesian-South American contact — vindicates soft diffusionism in this specific case while leaving hyperdiffusionism's broader claims unjustified."
 tags: [theme, methodology, diffusionism, anthropology, historiography, discredited, pseudoscholarship, egypt, polynesia, metadata]
+date-earliest: 1911
+dating-basis: B5
+dating-basis-source: "\"Trigger, B. 2006 *A History of Archaeological Thought* 2nd ed. Cambridge\""
+dating-basis-notes: "Modern hyperdiffusionism from Smith & Perry c. 1911-1923 (Egypt-origin school); discredited 20th c."
 ---
 
 # Hyperdiffusionism

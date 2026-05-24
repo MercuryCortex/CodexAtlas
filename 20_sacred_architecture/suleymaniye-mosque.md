@@ -3,6 +3,10 @@ type: sacred-site
 id: "suleymaniye-mosque"
 name: "Suleymaniye Mosque"
 status: "stub"
+date-earliest: 1550
+dating-basis: B1
+dating-basis-source: "\"Necipoğlu, G. 2005 *The Age of Sinan*\""
+dating-basis-notes: "Istanbul, built by Sinan 1550-1557."
 ---
 
 # Suleymaniye Mosque

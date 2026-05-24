@@ -35,6 +35,9 @@ refs:
   - "Jane McIntosh, A Peaceful Realm: The Rise and Fall of the Indus Civilization, Westview Press, 2002 [T2 — comprehensive archaeological synthesis of the Harappan civilization]"
   - "Farmer, Sproat, Witzel, The Collapse of the Indus-Script Thesis: The Myth of a Literate Harappan Civilization, Electronic Journal of Vedic Studies 11 no. 2, 2004 [T3 — the minority view that the inscriptions are not writing; documented as a scholarly position not mainstream consensus]"
   - "John Marshall, Mohenjo-daro and the Indus Civilization, 3 vols., Arthur Probsthain, 1931 [T1 — the foundational archaeological excavation report; first major publication of the script corpus]"
+dating-basis: B3
+dating-basis-source: "\"Possehl, G. 2002 *The Indus Civilization*\""
+dating-basis-notes: "Indus Valley script Mature Harappan c. -2600 to -1900; earlier symbols Ravi phase c. -3300."
 ---
 
 # Indus Valley Script — The Greatest Unsolved Mystery in the History of Writing

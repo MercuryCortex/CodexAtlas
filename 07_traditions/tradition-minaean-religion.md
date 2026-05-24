@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-minaean-religion"
 name: "Tradition Minaean Religion"
 status: "stub"
+date-earliest: -1200
+dating-basis: B5
+dating-basis-source: "\"Hoyland, R. 2001 *Arabia and the Arabs*. Routledge\""
+dating-basis-notes: "Minaean kingdom c. -1200 to -100 South Arabia."
 ---
 
 # Tradition Minaean Religion

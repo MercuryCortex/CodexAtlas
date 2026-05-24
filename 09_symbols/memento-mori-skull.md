@@ -81,6 +81,10 @@ depictions:
     caption: "Philips Gjsels - Memento Mori with a skull and crossbones"
     source: "Wikimedia Commons"
     license: "Public domain"
+date-earliest: -100
+dating-basis: B5
+dating-basis-source: "\"Sorabji, R. 2006 *Self*. Clarendon\""
+dating-basis-notes: "Memento mori motif Greco-Roman c. -100 (Petronius); medieval skull-iconography c. 1300."
 ---
 
 # Memento Mori Skull

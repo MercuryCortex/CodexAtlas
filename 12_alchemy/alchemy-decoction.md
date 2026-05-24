@@ -3,6 +3,10 @@ type: alchemy
 id: "alchemy-decoction"
 name: "Alchemy Decoction"
 status: "stub"
+date-earliest: -300
+dating-basis: B5
+dating-basis-source: "\"Principe, L. 2013 *The Secrets of Alchemy*\""
+dating-basis-notes: "Decoction technique pre-Hellenistic; alchemical use Greek-Egyptian c. -300."
 ---
 
 # Alchemy Decoction

@@ -3,6 +3,10 @@ type: doctrine
 id: "doctrine-dome-as-cosmic-vault"
 name: "Doctrine Dome As Cosmic Vault"
 status: "stub"
+date-earliest: -100
+dating-basis: B5
+dating-basis-source: "\"MacDonald, W. 1986 *The Architecture of the Roman Empire*\""
+dating-basis-notes: "Same as theme-dome-as-cosmic-vault."
 ---
 
 # Doctrine Dome As Cosmic Vault

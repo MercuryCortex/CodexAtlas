@@ -63,6 +63,10 @@ refs:
     tier: 2
     notes: "Analysis of the Year 400 Stela of Ramesses II commemorating a Set-cult anniversary at Avaris"
 tags: [theme, syncretism, egypt, canaan, baal, hyksos, storm-god, second-intermediate-period, phase-1, cross-tradition]
+date-earliest: -1650
+dating-basis: B5
+dating-basis-source: "\"Bietak, M. 1996 *Avaris*. British Museum\""
+dating-basis-notes: "Baal-Set syncretism Hyksos Second Intermediate Period c. -1650 to -1550."
 ---
 
 # Baal–Set Syncretism (Hyksos Period)

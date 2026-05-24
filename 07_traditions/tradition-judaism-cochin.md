@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-judaism-cochin"
 name: "Tradition Judaism Cochin"
 status: "stub"
+date-earliest: 1000
+dating-basis: B5
+dating-basis-source: "\"Katz, N. 2000 *Who Are the Jews of India?* Univ. California\""
+dating-basis-notes: "Cochin Jewish community documented c. 1000 CE Malabar; tradition of 1st-c. arrival."
 ---
 
 # Tradition Judaism Cochin

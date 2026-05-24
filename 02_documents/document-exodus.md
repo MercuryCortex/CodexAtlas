@@ -3,6 +3,10 @@ type: document
 id: "document-exodus"
 name: "Document Exodus"
 status: "stub"
+date-earliest: -540
+dating-basis: B4
+dating-basis-source: "\"Friedman, R.E. 1987 *Who Wrote the Bible?*\""
+dating-basis-notes: "Exodus Pentateuchal redaction c. -540 (Priestly)."
 ---
 
 # Document Exodus

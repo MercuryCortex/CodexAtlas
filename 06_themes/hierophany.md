@@ -23,6 +23,10 @@ refs:
     type: "anthology"
     tier: 2
 tags: [theme, eliade, comparative-religion, methodology]
+date-earliest: 1949
+dating-basis: B1
+dating-basis-source: "\"Eliade, M. *Patterns in Comparative Religion* (1949)\""
+dating-basis-notes: "Eliade's category 1949."
 ---
 
 # Hierophany

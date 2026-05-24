@@ -3,6 +3,10 @@ type: doctrine
 id: "doctrine-sola-scriptura"
 name: "Doctrine Sola Scriptura"
 status: "stub"
+date-earliest: 1520
+dating-basis: B1
+dating-basis-source: "\"MacCulloch, D. 2003 *Reformation*\""
+dating-basis-notes: "Luther 1520."
 ---
 
 # Doctrine Sola Scriptura

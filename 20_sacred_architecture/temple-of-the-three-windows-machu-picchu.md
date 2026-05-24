@@ -3,6 +3,10 @@ type: sacred-site
 id: "temple-of-the-three-windows-machu-picchu"
 name: "Temple of the Three Windows, Machu Picchu"
 status: "stub"
+date-earliest: 1450
+dating-basis: B3
+dating-basis-source: "\"Burger, R. & Salazar, L. 2004 *Machu Picchu: Unveiling the Mystery of the Incas*. Yale\""
+dating-basis-notes: "Machu Picchu Pachacuti c. 1450."
 ---
 
 # Temple Of The Three Windows Machu Picchu

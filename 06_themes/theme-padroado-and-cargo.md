@@ -3,6 +3,10 @@ type: theme
 id: "theme-padroado-and-cargo"
 name: "Theme Padroado and Cargo"
 status: "stub"
+date-earliest: 1455
+dating-basis: B5
+dating-basis-source: "\"Boxer, C. 1969 *The Portuguese Seaborne Empire*\""
+dating-basis-notes: "Portuguese Padroado-cargo system 1455 (Romanus Pontifex)."
 ---
 
 # Theme Padroado and Cargo

@@ -3,6 +3,10 @@ type: place
 id: "place-petra"
 name: "Place Petra"
 status: "stub"
+date-earliest: -300
+dating-basis: B3
+dating-basis-source: "\"Markoe, G. ed. 2003 *Petra Rediscovered*\""
+dating-basis-notes: "Nabataean Petra c. -300."
 ---
 
 # Place Petra

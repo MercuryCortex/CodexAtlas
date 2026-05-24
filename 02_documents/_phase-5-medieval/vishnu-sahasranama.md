@@ -3,6 +3,10 @@ type: document
 id: "vishnu-sahasranama"
 name: "Vishnu Sahasranama"
 status: "stub"
+date-earliest: -100
+dating-basis: B4
+dating-basis-source: "\"Sharma, B.N.K. 1986 *Madhva's Teachings in His Own Words*. Bhavan\""
+dating-basis-notes: "Anushasana Parva Mahabharata 13.135 c. -100 to 200 CE."
 ---
 
 # Vishnu Sahasranama

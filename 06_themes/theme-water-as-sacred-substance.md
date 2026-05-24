@@ -3,6 +3,9 @@ type: theme
 id: "theme-water-as-sacred-substance"
 name: "Theme Water As Sacred Substance"
 status: "stub"
+dating-basis: B7
+dating-basis-source: "\"Cross-tradition (Ganges, Zamzam, baptism, mikveh). Pattern not event.\""
+dating-basis-notes: "Pattern. Keep B7."
 ---
 
 # Theme Water As Sacred Substance

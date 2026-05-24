@@ -27,6 +27,10 @@ refs:
     type: "anthology"
     tier: 2
 tags: [theme, kabbalah, sefirot, emanations, tree-of-life, hebrew]
+date-earliest: 1175
+dating-basis: B4
+dating-basis-source: "\"Scholem, G. 1962 *Origins of the Kabbalah*. Princeton\""
+dating-basis-notes: "Sefirot in Sefer ha-Bahir c. 1175; Sefer Yetzirah c. 200-700 has earlier sefirot-as-numbers."
 ---
 
 # Sefirot

@@ -46,6 +46,9 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, solomon, solomonic, freemasonry, hiram-abiff, ethiopia, rastafari, islam, sulayman, grimoire, key-of-solomon, davidic, transmission, cross-tradition]
+dating-basis: B7
+dating-basis-source: "\"Cross-tradition transmission across Judaism, Islam, Ethiopian, Masonic, Grimoire-magic. Pattern not event.\""
+dating-basis-notes: "Pattern. Keep B7."
 ---
 
 # Solomonic Transmission Spine

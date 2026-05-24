@@ -3,6 +3,10 @@ type: document
 id: "samguk-yusa"
 name: "Samguk Yusa"
 status: "stub"
+date-earliest: 1281
+dating-basis: B1
+dating-basis-source: "\"Ha, T.-H. & Mintz, G. 1972 *Samguk Yusa*. Yonsei Univ. Press\""
+dating-basis-notes: "Iryon c. 1281."
 ---
 
 # Samguk Yusa

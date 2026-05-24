@@ -21,6 +21,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, gnosticism, marcion, transcendent-deity]
+date-earliest: 144
+dating-basis: B5
+dating-basis-source: "\"Harnack, A. 1924 *Marcion: Das Evangelium vom fremden Gott*. Hinrichs\""
+dating-basis-notes: "\"The Alien God\" specifically Marcion's term for the Pauline-revealed Father against the Demiurge; Marcion expelled Rome 144."
 ---
 
 # The Alien God

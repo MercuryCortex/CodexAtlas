@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-han-dynasty-china"
 name: "Tradition Han Dynasty China"
 status: "stub"
+date-earliest: -202
+dating-basis: B5
+dating-basis-source: "\"Lewis, M.E. 2007 *The Early Chinese Empires: Qin and Han*\""
+dating-basis-notes: "Han dynasty -202 to 220 CE; Liu Bang founding emperor."
 ---
 
 # Tradition Han Dynasty China

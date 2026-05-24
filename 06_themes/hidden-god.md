@@ -97,6 +97,10 @@ refs:
     type: "anthology"
     tier: 2
 tags: [theme, theology, apophatic, hidden-god, unknowability, negative-theology, deus-absconditus, MASSIVE-WIN, ein-sof, the-one, al-haqq, the-godhead, dao, brahman]
+date-earliest: -540
+dating-basis: B4
+dating-basis-source: "\"Friedländer, G. 1955 *Pirke de-Rabbi Eliezer*. Hermon\""
+dating-basis-notes: "Deus absconditus Isaiah 45:15 c. -540; Eckhart Gottheit c. 1300; Luther c. 1525."
 ---
 
 # Hidden god (Deus Absconditus)

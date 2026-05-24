@@ -29,6 +29,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, mahayana, madhyamaka, ontology]
+date-earliest: -100
+dating-basis: B4
+dating-basis-source: "\"Williams, P. 2008 *Mahayana Buddhism*\""
+dating-basis-notes: "Sunyata in Astasahasrika Prajnaparamita c. -100; systematized Nagarjuna *MMK* c. 150."
 ---
 
 # Emptiness (Śūnyatā)

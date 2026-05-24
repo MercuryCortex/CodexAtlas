@@ -3,6 +3,10 @@ type: exchange-network
 id: "manila-galleon-trade"
 name: "Manila Galleon Trade"
 status: "stub"
+date-earliest: 1565
+dating-basis: B5
+dating-basis-source: "\"Schurz, W.L. 1939 *The Manila Galleon*. Dutton\""
+dating-basis-notes: "Manila Galleon trade 1565-1815."
 ---
 
 # Manila Galleon Trade

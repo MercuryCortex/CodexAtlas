@@ -29,6 +29,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, neoplatonism, kabbalah, sufism, cosmogony]
+date-earliest: 250
+dating-basis: B4
+dating-basis-source: "\"Wallis, R. 1972 *Neoplatonism*. Duckworth\""
+dating-basis-notes: "Neoplatonic emanation Plotinus *Enneads* c. 250; sefirot in Sefer Yetzirah c. 200-700 CE; ten-sefirot Bahir c. 1175."
 ---
 
 # Divine Emanation

@@ -3,6 +3,10 @@ type: document
 id: "document-leviticus"
 name: "Document Leviticus"
 status: "stub"
+date-earliest: -540
+dating-basis: B4
+dating-basis-source: "\"Milgrom, J. 1991 *Leviticus 1-16*\""
+dating-basis-notes: "Priestly source Leviticus c. -540."
 ---
 
 # Document Leviticus

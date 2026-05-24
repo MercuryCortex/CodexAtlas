@@ -3,6 +3,10 @@ type: sacred-site
 id: "santiago-de-compostela-cathedral"
 name: "Santiago De Compostela Cathedral"
 status: "stub"
+date-earliest: 1075
+dating-basis: B1
+dating-basis-source: "\"Williams, J. 1977 *Santiago de Compostela: The Pilgrim's Goal*. ELLO\""
+dating-basis-notes: "Construction began 1075."
 ---
 
 # Santiago De Compostela Cathedral

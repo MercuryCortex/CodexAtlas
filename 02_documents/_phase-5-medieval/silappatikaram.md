@@ -3,6 +3,10 @@ type: document
 id: "silappatikaram"
 name: "Silappatikaram"
 status: "stub"
+date-earliest: 200
+dating-basis: B1
+dating-basis-source: "\"Parthasarathy, R. 1993 *The Cilappatikaram*. Columbia\""
+dating-basis-notes: "Silappatikaram c. 200-500 CE (Sangam)."
 ---
 
 # Silappatikaram

@@ -47,6 +47,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, alchemy, hermeticism, spiritual-discipline, jungian-reception, principe-revisionism, ritman-mellon-core-theme]
+date-earliest: 200
+dating-basis: B5
+dating-basis-source: "\"Principe, L. 2013 *The Secrets of Alchemy*\""
+dating-basis-notes: "Spiritual-discipline reading of alchemy from Zosimos of Panopolis c. 300; medieval Christian alchemy 13th c.; Jung 20th c. recasting."
 ---
 
 # Alchemy as spiritual discipline

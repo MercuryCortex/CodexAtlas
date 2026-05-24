@@ -3,6 +3,10 @@ type: document
 id: "procopius-de-aedificiis"
 name: "Procopius, De Aedificiis (On the Buildings)"
 status: "stub"
+date-earliest: 554
+dating-basis: B1
+dating-basis-source: "\"Cameron, A. 1985 *Procopius and the Sixth Century*. Routledge\""
+dating-basis-notes: "De Aedificiis c. 554-560."
 ---
 
 # Procopius, De Aedificiis (On the Buildings)

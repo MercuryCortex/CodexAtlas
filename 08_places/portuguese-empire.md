@@ -3,6 +3,10 @@ type: place
 id: "portuguese-empire"
 name: "Portuguese Empire"
 status: "stub"
+date-earliest: 1415
+dating-basis: B5
+dating-basis-source: "\"Boxer, C. 1969 *The Portuguese Seaborne Empire*\""
+dating-basis-notes: "Portuguese Empire from Ceuta 1415; Tordesillas 1494."
 ---
 
 # Portuguese Empire

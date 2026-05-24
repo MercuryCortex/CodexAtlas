@@ -29,6 +29,10 @@ refs:
     type: "primary-source"
     tier: 1
 tags: [theme, reformation, calvinism, lutheranism, soteriology]
+date-earliest: 1536
+dating-basis: B1
+dating-basis-source: "\"Calvin *Institutio Christianae Religionis* (1536)\""
+dating-basis-notes: "Calvin 1536; Luther *De Servo Arbitrio* 1525."
 ---
 
 # Predestination (Protestant Reformation)

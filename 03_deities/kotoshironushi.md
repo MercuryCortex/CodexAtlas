@@ -3,6 +3,10 @@ type: deity
 id: "kotoshironushi"
 name: "Kotoshironushi"
 status: "metadata"
+date-earliest: 712
+dating-basis: B4
+dating-basis-source: "\"Philippi, D. 1969 *Kojiki*\""
+dating-basis-notes: "Kojiki 712."
 ---
 
 # Kotoshironushi

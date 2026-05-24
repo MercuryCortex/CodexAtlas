@@ -3,6 +3,10 @@ type: place
 id: "place-sijilmasa"
 name: "Place Sijilmasa"
 status: "stub"
+date-earliest: 757
+dating-basis: B3
+dating-basis-source: "\"Lightfoot, D. & Miller, J. 1996 'Sijilmasa: The Rise and Fall of a Walled Oasis' *Annals AAG* 86\""
+dating-basis-notes: "Sijilmasa Saharan trade-city founded 757."
 ---
 
 # Place Sijilmasa

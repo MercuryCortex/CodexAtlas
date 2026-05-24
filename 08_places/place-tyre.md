@@ -3,6 +3,10 @@ type: place
 id: "place-tyre"
 name: "Place Tyre"
 status: "stub"
+date-earliest: -2750
+dating-basis: B3
+dating-basis-source: "\"Markoe, G. 2000 *Phoenicians*\""
+dating-basis-notes: "Tyre Bronze Age c. -2750; Iron Age city-state c. -1200."
 ---
 
 # Place Tyre

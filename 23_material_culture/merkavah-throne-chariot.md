@@ -3,6 +3,10 @@ type: relic
 id: "merkavah-throne-chariot"
 name: "Merkavah Throne Chariot"
 status: "stub"
+date-earliest: -580
+dating-basis: B4
+dating-basis-source: "\"Halperin, D. 1988 *The Faces of the Chariot*. Mohr Siebeck\""
+dating-basis-notes: "Merkavah Ezekiel 1 c. -593; merkavah mysticism Hekhalot 3rd-7th c. CE."
 ---
 
 # Merkavah Throne Chariot

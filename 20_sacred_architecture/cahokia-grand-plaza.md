@@ -3,6 +3,10 @@ type: sacred-site
 id: "cahokia-grand-plaza"
 name: "Cahokia Grand Plaza"
 status: "stub"
+date-earliest: 1050
+dating-basis: B3
+dating-basis-source: "\"Pauketat, T. 2009 *Cahokia*\""
+dating-basis-notes: "Cahokia florescence c. 1050; Grand Plaza c. 1050-1200."
 ---
 
 # Cahokia Grand Plaza

@@ -3,6 +3,10 @@ type: exchange-network
 id: "exchange-network-tuareg-caravans"
 name: "Exchange Network Tuareg Caravans"
 status: "stub"
+date-earliest: 1000
+dating-basis: B5
+dating-basis-source: "\"Lydon, G. 2009 *On Trans-Saharan Trails*\""
+dating-basis-notes: "Tuareg caravan trade c. 1000-1900."
 ---
 
 # Exchange Network Tuareg Caravans

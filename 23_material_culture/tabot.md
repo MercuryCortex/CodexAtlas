@@ -3,6 +3,10 @@ type: relic
 id: "tabot"
 name: "Tabot"
 status: "stub"
+date-earliest: 340
+dating-basis: B5
+dating-basis-source: "\"Munro-Hay, S. 1991 *Aksum*\""
+dating-basis-notes: "Ethiopian tabot from Aksumite Christianization c. 340."
 ---
 
 # Tabot

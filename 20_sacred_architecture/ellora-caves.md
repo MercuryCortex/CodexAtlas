@@ -3,6 +3,10 @@ type: sacred-site
 id: "ellora-caves"
 name: "Ellora Caves"
 status: "stub"
+date-earliest: 600
+dating-basis: B3
+dating-basis-source: "\"Dhavalikar, M.K. 2003 *Ellora*. Oxford\""
+dating-basis-notes: "Ellora c. 600-1000 (Hindu/Buddhist/Jain)."
 ---
 
 # Ellora Caves

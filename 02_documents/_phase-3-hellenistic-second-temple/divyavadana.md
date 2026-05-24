@@ -3,6 +3,10 @@ type: document
 id: "divyavadana"
 name: "Divyāvadāna"
 status: "stub"
+date-earliest: 100
+dating-basis: B1
+dating-basis-source: "\"Strong, J. 1983 *The Legend of King Aśoka*. Princeton\""
+dating-basis-notes: "Divyāvadāna c. 100-300 CE (Mūlasarvāstivāda)."
 ---
 
 # Divyāvadāna

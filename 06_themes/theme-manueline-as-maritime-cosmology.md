@@ -3,6 +3,10 @@ type: theme
 id: "theme-manueline-as-maritime-cosmology"
 name: "Theme Manueline As Maritime Cosmology"
 status: "stub"
+date-earliest: 1495
+dating-basis: B5
+dating-basis-source: "\"Pereira, P. 2002 *De Aurea Aetate*. CEPCEP\""
+dating-basis-notes: "Manueline architecture Dom Manuel I 1495-1521."
 ---
 
 # Theme Manueline As Maritime Cosmology

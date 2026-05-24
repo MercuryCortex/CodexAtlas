@@ -21,6 +21,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, gospel-of-thomas, luke, jesus, eschatology]
+date-earliest: 70
+dating-basis: B4
+dating-basis-source: "\"Crossan, J.D. 1991 *The Historical Jesus*. HarperSanFrancisco\""
+dating-basis-notes: "\"Kingdom within you\" Luke 17:21 c. 85; Gospel of Thomas 3, 113 c. 100-150."
 ---
 
 # The Kingdom Within

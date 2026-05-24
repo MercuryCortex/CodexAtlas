@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-orthodox-judaism"
 name: "Tradition Orthodox Judaism"
 status: "stub"
+date-earliest: 1851
+dating-basis: B5
+dating-basis-source: "\"Heilman, S. 1992 *Defenders of the Faith: Inside Ultra-Orthodox Jewry*. Schocken\""
+dating-basis-notes: "Orthodox Judaism as self-conscious movement emerges in response to Reform c. 1851 (Hirsch's *Neunzehn Briefe* 1836; Hungarian Pressburg Yeshiva 1807 anchor)."
 ---
 
 # Tradition Orthodox Judaism

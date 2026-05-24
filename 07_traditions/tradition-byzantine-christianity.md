@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-byzantine-christianity"
 name: "Tradition Byzantine Christianity"
 status: "stub"
+date-earliest: 330
+dating-basis: B5
+dating-basis-source: "\"Brown, P. 1971 *The World of Late Antiquity*. Thames & Hudson\""
+dating-basis-notes: "Byzantine Christianity from Constantinople foundation 330 CE."
 ---
 
 # Tradition Byzantine Christianity

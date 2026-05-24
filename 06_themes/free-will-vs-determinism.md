@@ -21,6 +21,10 @@ refs:
     type: "monograph"
     tier: 2
 tags: [theme, free-will, determinism, augustine, calvin, philosophy]
+date-earliest: -300
+dating-basis: B4
+dating-basis-source: "\"Bobzien, S. 1998 *Determinism and Freedom in Stoic Philosophy*. Clarendon\""
+dating-basis-notes: "Hellenistic problem Chrysippus c. -240; Augustine vs Pelagius c. 411; Quranic kalam 8th c."
 ---
 
 # Free Will vs Determinism

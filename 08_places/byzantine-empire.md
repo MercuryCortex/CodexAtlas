@@ -3,6 +3,10 @@ type: place
 id: "byzantine-empire"
 name: "Byzantine Empire"
 status: "stub"
+date-earliest: 330
+dating-basis: B5
+dating-basis-source: "\"Brown, P. 1971 *The World of Late Antiquity*\""
+dating-basis-notes: "Byzantine Empire from foundation of Constantinople 330; conventional break 476 or 610."
 ---
 
 # Byzantine Empire

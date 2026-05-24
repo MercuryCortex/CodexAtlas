@@ -3,6 +3,10 @@ type: sacred-site
 id: "salisbury-cathedral"
 name: "Salisbury Cathedral"
 status: "stub"
+date-earliest: 1220
+dating-basis: B1
+dating-basis-source: "\"Cocke, T. & Kidson, P. 1993 *Salisbury Cathedral: Perspectives on the Architectural History*. RCHM\""
+dating-basis-notes: "Construction began 1220."
 ---
 
 # Salisbury Cathedral

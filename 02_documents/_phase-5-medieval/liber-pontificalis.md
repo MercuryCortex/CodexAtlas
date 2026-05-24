@@ -3,6 +3,10 @@ type: document
 id: "liber-pontificalis"
 name: "Liber Pontificalis"
 status: "stub"
+date-earliest: 500
+dating-basis: B1
+dating-basis-source: "\"Davis, R. 2000 *The Book of Pontiffs (Liber Pontificalis)*. Liverpool\""
+dating-basis-notes: "Liber Pontificalis first redaction c. 500-535; updated through 9th c."
 ---
 
 # Liber Pontificalis

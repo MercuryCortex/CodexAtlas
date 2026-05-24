@@ -3,6 +3,10 @@ type: theme
 id: "theme-architectural-technique-enables-theology"
 name: "Theme Architectural Technique Enables Theology"
 status: "stub"
+date-earliest: 500
+dating-basis: B5
+dating-basis-source: "\"Krautheimer, R. 1986 *Early Christian and Byzantine Architecture*. Yale\""
+dating-basis-notes: "Pendentive dome enables Byzantine theology Hagia Sophia 537; flying buttress enables Gothic c. 1140."
 ---
 
 # Theme Architectural Technique Enables Theology

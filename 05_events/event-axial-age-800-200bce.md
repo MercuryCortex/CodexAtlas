@@ -55,6 +55,9 @@ refs:
     tier: 1
     notes: "Best modern sociological reassessment of the thesis"
 status: full
+dating-basis: B5
+dating-basis-source: "\"Jaspers, K. 1949 *Vom Ursprung und Ziel der Geschichte*\""
+dating-basis-notes: "Axial Age c. -800 to -200. Slug-extractable; use median -500."
 ---
 
 # The Axial Age — Simultaneous Philosophical Revolution (c. 800–200 BCE)

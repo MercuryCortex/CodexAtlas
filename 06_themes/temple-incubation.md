@@ -14,6 +14,9 @@ tags:
   - sacred-space
 date_earliest: -3000
 date_latest: 1500
+dating-basis: B5
+dating-basis-source: "\"Edelstein, E. & L. 1945 *Asclepius*. Johns Hopkins\""
+dating-basis-notes: "Asclepian incubation Epidaurus c. -450; Egyptian Imhotep incubation older; Mesopotamian precursors -1500."
 ---
 
 Temple incubation is one of the most widely distributed healing technologies in the ancient world: the deliberate practice of sleeping in a sacred space — a temple, a tomb, a healing sanctuary — in order to receive a diagnostic or curative dream from a deity.

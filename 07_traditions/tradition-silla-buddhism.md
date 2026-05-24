@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-silla-buddhism"
 name: "Tradition Silla Buddhism"
 status: "stub"
+date-earliest: 527
+dating-basis: B5
+dating-basis-source: "\"Buswell, R. 1989 *The Formation of Ch'an Ideology*\""
+dating-basis-notes: "Silla adopts Buddhism state-religion 527 under Beopheung."
 ---
 
 # Tradition Silla Buddhism

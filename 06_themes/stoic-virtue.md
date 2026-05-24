@@ -21,6 +21,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, stoicism, ethics, hellenistic-philosophy, virtue]
+date-earliest: -300
+dating-basis: B5
+dating-basis-source: "\"Long, A.A. 1986 *Hellenistic Philosophy*\""
+dating-basis-notes: "Stoic arete Zeno c. -300; Chrysippus c. -240."
 ---
 
 # Stoic Virtue (aretē)

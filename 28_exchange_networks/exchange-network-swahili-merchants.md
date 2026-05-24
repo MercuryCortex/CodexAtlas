@@ -3,6 +3,10 @@ type: exchange-network
 id: "exchange-network-swahili-merchants"
 name: "Exchange Network Swahili Merchants"
 status: "stub"
+date-earliest: 800
+dating-basis: B5
+dating-basis-source: "\"Horton, M. 1996 *Shanga*\""
+dating-basis-notes: "Swahili coast trading network c. 800-1500."
 ---
 
 # Exchange Network Swahili Merchants

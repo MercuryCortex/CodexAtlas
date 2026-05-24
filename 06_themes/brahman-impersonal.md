@@ -28,6 +28,10 @@ refs:
     type: "primary-translation"
     tier: 1
 tags: [theme, metaphysics, advaita-vedanta, hinduism, brahman, absolute, apophatic, non-duality, cross-tradition]
+date-earliest: -700
+dating-basis: B4
+dating-basis-source: "\"Olivelle, P. 1996 *Upanisads*. OUP\""
+dating-basis-notes: "Nirguna Brahman in Brihadaranyaka and Chandogya Upanishads c. -700; Mandukya Upanishad c. -500."
 ---
 
 # Brahman (Nirguṇa — Impersonal Absolute)

@@ -3,6 +3,10 @@ type: theme
 id: "theme-shinbutsu-shugo-shinto-buddhist-fusion"
 name: "Theme Shinbutsu Shugo Shinto Buddhist Fusion"
 status: "stub"
+date-earliest: 750
+dating-basis: B5
+dating-basis-source: "\"Teeuwen, M. & Rambelli, F. eds. 2003 *Buddhas and Kami in Japan*\""
+dating-basis-notes: "Shinbutsu-shugō Nara-Heian c. 750."
 ---
 
 # Theme Shinbutsu Shugo Shinto Buddhist Fusion

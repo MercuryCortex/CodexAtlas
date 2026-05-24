@@ -3,6 +3,10 @@ type: place
 id: "sarnath"
 name: "Sarnath"
 status: "stub"
+date-earliest: -250
+dating-basis: B3
+dating-basis-source: "\"Sarao, K.T.S. 2010 *The History of Mahabodhi Temple at Bodh Gaya*. DPL\""
+dating-basis-notes: "Ashokan archaeology c. -250; Buddha's first sermon traditional c. -528."
 ---
 
 # Sarnath

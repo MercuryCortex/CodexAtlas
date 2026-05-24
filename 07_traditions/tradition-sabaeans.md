@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-sabaeans"
 name: "Tradition Sabaeans"
 status: "stub"
+date-earliest: -1000
+dating-basis: B5
+dating-basis-source: "\"Hoyland, R. 2001 *Arabia and the Arabs*\""
+dating-basis-notes: "Sabaean people-state c. -1000."
 ---
 
 # Tradition Sabaeans

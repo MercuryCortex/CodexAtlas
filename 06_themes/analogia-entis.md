@@ -27,6 +27,10 @@ refs:
     type: "monograph"
     tier: 2
 tags: [theme, metaphysics, aquinas, scotus, suarez, barth, przywara, analogy]
+date-earliest: 1265
+dating-basis: B4
+dating-basis-source: "\"Przywara, E. 1932 *Analogia Entis*. Oldenbourg\""
+dating-basis-notes: "Analogia entis as concept from Aquinas *Summa* I.13 c. 1265; modern recovery Przywara 1932 vs Barth."
 ---
 
 # Analogia entis (analogy of being)

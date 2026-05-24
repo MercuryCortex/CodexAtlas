@@ -3,6 +3,10 @@ type: document
 id: "mahavamsa"
 name: "Mahavamsa"
 status: "stub"
+date-earliest: 500
+dating-basis: B1
+dating-basis-source: "\"Geiger, W. 1912 *The Mahāvaṃsa*. Pali Text Society\""
+dating-basis-notes: "Mahavamsa by Mahanama c. 500 CE."
 ---
 
 # Mahavamsa

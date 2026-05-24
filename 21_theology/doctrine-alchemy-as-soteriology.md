@@ -3,6 +3,10 @@ type: doctrine
 id: "doctrine-alchemy-as-soteriology"
 name: "Doctrine Alchemy As Soteriology"
 status: "stub"
+date-earliest: 200
+dating-basis: B5
+dating-basis-source: "\"Principe, L. 2013 *The Secrets of Alchemy*\""
+dating-basis-notes: "Alchemy-as-soteriology Zosimos c. 300; Jung 1944."
 ---
 
 # Doctrine Alchemy As Soteriology

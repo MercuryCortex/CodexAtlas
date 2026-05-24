@@ -28,6 +28,10 @@ refs:
     type: "monograph"
     tier: 2
 tags: [theme, ane, economy, temple, sacred-economy, mesopotamian, egyptian]
+date-earliest: -3500
+dating-basis: B5
+dating-basis-source: "\"Pollock, S. 1999 *Ancient Mesopotamia*. Cambridge\""
+dating-basis-notes: "Mesopotamian temple-economy from Uruk c. -3500."
 ---
 
 # Temple Economy

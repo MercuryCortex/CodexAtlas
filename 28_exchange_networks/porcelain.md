@@ -3,6 +3,10 @@ type: exchange-network
 id: "porcelain"
 name: "Porcelain"
 status: "stub"
+date-earliest: 600
+dating-basis: B3
+dating-basis-source: "\"Vainker, S. 1995 *Chinese Pottery and Porcelain*. British Museum\""
+dating-basis-notes: "Chinese porcelain Sui-Tang c. 600."
 ---
 
 # Porcelain

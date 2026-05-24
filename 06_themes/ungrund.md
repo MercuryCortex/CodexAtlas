@@ -21,6 +21,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, boehme, mysticism, theology, abyss, german-mysticism]
+date-earliest: 1612
+dating-basis: B1
+dating-basis-source: "\"Boehme, J. *Aurora* (1612); *De Signatura Rerum* (1622)\""
+dating-basis-notes: "Boehme's Ungrund c. 1612."
 ---
 
 # Ungrund (Boehme's Groundless)

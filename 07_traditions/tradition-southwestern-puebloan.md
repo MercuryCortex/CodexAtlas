@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-southwestern-puebloan"
 name: "Tradition Southwestern Puebloan"
 status: "stub"
+date-earliest: -100
+dating-basis: B5
+dating-basis-source: "\"Cordell, L. 1997 *Archaeology of the Southwest*\""
+dating-basis-notes: "Southwestern Puebloan continuity from Basketmaker II c. -100."
 ---
 
 # Tradition Southwestern Puebloan

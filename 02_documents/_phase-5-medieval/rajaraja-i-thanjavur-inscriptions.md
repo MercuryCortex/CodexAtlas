@@ -3,6 +3,10 @@ type: document
 id: "rajaraja-i-thanjavur-inscriptions"
 name: "Rajaraja I Thanjavur Inscriptions"
 status: "stub"
+date-earliest: 1003
+dating-basis: B3
+dating-basis-source: "\"Champakalakshmi, R. 1996 *Trade, Ideology and Urbanization*\""
+dating-basis-notes: "Rajaraja I Brihadeshwara inscriptions 1003-1010."
 ---
 
 # Rajaraja I Thanjavur Inscriptions

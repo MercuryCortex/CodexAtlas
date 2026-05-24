@@ -66,6 +66,10 @@ refs:
     tier: 1
     notes: "The counter-thesis: high Christology does not depend on a second-God tradition but on inclusion of Christ in the divine identity"
 tags: [theme, judaism, second-temple, metatron, christology, boyarin, two-powers, MASSIVE-WIN, cross-tradition, binitarian, logos]
+date-earliest: -100
+dating-basis: B4
+dating-basis-source: "\"Boyarin, D. 2004 *Border Lines*. Univ. Pennsylvania\""
+dating-basis-notes: "Two Powers in Heaven motif Second Temple c. -100 (1 Enoch 71; Daniel 7); rabbinic polemic 2nd c."
 ---
 
 # Two Powers in Heaven

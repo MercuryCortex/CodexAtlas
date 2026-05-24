@@ -22,6 +22,10 @@ refs:
     type: "journal-article"
     tier: 1
 tags: [theme, eschatology, ages, degeneration, hesiod, yuga, daniel]
+date-earliest: -700
+dating-basis: B4
+dating-basis-source: "\"West, M.L. 1978 *Hesiod: Works and Days*. Clarendon\""
+dating-basis-notes: "Hesiod five-ages c. -700; Daniel four-kingdoms c. -165; Hindu yugas Manusmriti c. -200."
 ---
 
 # Four Ages of Degeneration

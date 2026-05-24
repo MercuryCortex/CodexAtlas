@@ -3,6 +3,10 @@ type: theme
 id: "theme-arch-as-foundation-of-monumental-public-space"
 name: "Theme Arch As Foundation of Monumental Public Space"
 status: "stub"
+date-earliest: -200
+dating-basis: B3
+dating-basis-source: "\"MacDonald, W. 1986 *The Architecture of the Roman Empire*. Yale\""
+dating-basis-notes: "Roman true arch in monumental public space c. -200 to 100 CE."
 ---
 
 # Theme Arch As Foundation of Monumental Public Space

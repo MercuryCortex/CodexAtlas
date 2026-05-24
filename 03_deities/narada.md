@@ -21,6 +21,9 @@ refs:
   - "Valmiki, Ramayana (c. 400 BCE–400 CE) — Narada as the first poet and musician"
   - "Vyasa, Mahabharata (c. 400 BCE–400 CE) — Narada as divine messenger and storyteller"
   - "Bhagavata Purana (c. 900–1000 CE) — Narada's biography and role as Vishnu's devotee"
+dating-basis: B4
+dating-basis-source: "\"Witzel, M. 1995 'Early Indian History'\""
+dating-basis-notes: "Narada in Rigveda 8.13.6; Vedic period c. -1000."
 ---
 
 ## Narada — Divine Messenger and Musician

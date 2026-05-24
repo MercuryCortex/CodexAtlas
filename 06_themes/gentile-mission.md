@@ -27,6 +27,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, paul, gentile, mission, christianity, conversion, evangelism]
+date-earliest: 50
+dating-basis: B4
+dating-basis-source: "\"Sanders 1983 *Paul, the Law, and the Jewish People*\""
+dating-basis-notes: "Pauline-Lukan gentile-mission Galatians, Acts c. 50."
 ---
 
 # Gentile Mission

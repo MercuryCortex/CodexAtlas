@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-eastern-woodland-mound-building"
 name: "Tradition Eastern Woodland Mound Building"
 status: "stub"
+date-earliest: -1000
+dating-basis: B5
+dating-basis-source: "\"Milner, G. 2004 *The Moundbuilders*. Thames & Hudson\""
+dating-basis-notes: "Adena culture c. -1000; mound-building tradition continuous through Hopewell and Mississippian."
 ---
 
 # Tradition Eastern Woodland Mound Building

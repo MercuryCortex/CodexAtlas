@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-seon-buddhism"
 name: "Tradition Seon Buddhism"
 status: "stub"
+date-earliest: 630
+dating-basis: B5
+dating-basis-source: "\"Buswell, R. 1992 *The Zen Monastic Experience*\""
+dating-basis-notes: "Korean Seon (Chan) c. 630 with Beomnang's return from Tang."
 ---
 
 # Tradition Seon Buddhism

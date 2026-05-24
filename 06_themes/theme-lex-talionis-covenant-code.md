@@ -57,6 +57,10 @@ refs:
     tier: 3
     notes: "Accessible summary; cites Wright for the specific parallel clauses"
 tags: [theme, law, hammurabi, mosaic-law, lex-talionis, covenant-code, exodus, mesopotamian, israelite, comparative-law, direct-dependence-debate]
+date-earliest: -1750
+dating-basis: B2
+dating-basis-source: "\"Roth, M. 1995 *Law Collections from Mesopotamia and Asia Minor*. Scholars\""
+dating-basis-notes: "Hammurabi Code c. -1750; Covenant Code Exodus 21-23 c. -540."
 ---
 
 # Lex Talionis and the Covenant Code — Hammurabi ↔ Mosaic Law

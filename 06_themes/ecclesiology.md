@@ -21,6 +21,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, ecclesiology, christianity, church, theology]
+date-earliest: 95
+dating-basis: B4
+dating-basis-source: "\"Sullivan, F. 2001 *From Apostles to Bishops*\""
+dating-basis-notes: "Pauline ecclesiology in 1 Cor 12 c. 53; institutionalized 1 Clement c. 95."
 ---
 
 # Ecclesiology

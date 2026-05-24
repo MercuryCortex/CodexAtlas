@@ -3,6 +3,9 @@ type: theme
 id: "theme-invisible-infrastructure-of-civilization"
 name: "Theme Invisible Infrastructure of Civilization"
 status: "stub"
+dating-basis: B7
+dating-basis-source: "\"Methodological observation, not historical event.\""
+dating-basis-notes: "Methodological. Keep B7."
 ---
 
 # Theme Invisible Infrastructure of Civilization

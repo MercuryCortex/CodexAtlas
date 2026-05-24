@@ -21,6 +21,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, historiography, apologetics, eusebius, josephus]
+date-earliest: -90
+dating-basis: B4
+dating-basis-source: "\"Sterling, G. 1992 *Historiography and Self-Definition*. Brill\""
+dating-basis-notes: "Genre from Hellenistic Jewish apologists (Eupolemus, Josephus); Josephus *Antiquities* 94 CE; Christian Eusebius *Hist. Eccl.* 324."
 ---
 
 # Apologetic Historiography

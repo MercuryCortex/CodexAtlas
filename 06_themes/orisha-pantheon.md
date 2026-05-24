@@ -27,6 +27,10 @@ refs:
     type: "monograph"
     tier: 2
 tags: [theme, yoruba, orisha, pantheon, ifa, olodumare, africa, west-africa, santeria, candomble, vodou, diaspora, cross-tradition]
+date-earliest: 1100
+dating-basis: B5
+dating-basis-source: "\"Bascom, W. 1969 *Ifa Divination*. Indiana\""
+dating-basis-notes: "Yoruba orisha pantheon: Ile-Ife c. 1100 (classical period); diasporic Santería/Candomblé 1500+."
 ---
 
 # Orisha Pantheon

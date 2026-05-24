@@ -75,6 +75,10 @@ depictions:
     caption: "James Tissot, 'The Creation' (1896–1902) — representing the antediluvian world before the Flood"
     source: "Wikimedia Commons"
     license: "Public domain"
+date-earliest: -2100
+dating-basis: B4
+dating-basis-source: "\"Lambert, W.G. & Millard, A. 1969 *Atra-Hasis: The Babylonian Story of the Flood*. Clarendon\""
+dating-basis-notes: "Antediluvian sage-kings in Sumerian King List c. -2100; Atrahasis c. -1700; Genesis 5 redacted Persian period."
 ---
 
 # Antediluvian Civilization

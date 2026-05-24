@@ -41,6 +41,10 @@ refs:
     type: "monograph"
     tier: 2
 tags: [theme, soteriology, christology, christianity, cross, atonement, cross-tradition, girard, passion]
+date-earliest: 53
+dating-basis: B4
+dating-basis-source: "\"Hengel, M. 1977 *Crucifixion*. Fortress\""
+dating-basis-notes: "Paul's atonement theology 1 Cor c. 53-55; Mark passion narrative c. 70."
 ---
 
 # Crucifixion Theology

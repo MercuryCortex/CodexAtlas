@@ -3,6 +3,10 @@ type: exchange-network
 id: "wine-grape"
 name: "Wine Grape"
 status: "stub"
+date-earliest: -6000
+dating-basis: B3
+dating-basis-source: "\"McGovern, P. 2003 *Ancient Wine*. Princeton\""
+dating-basis-notes: "Grape wine Georgia c. -6000; Iranian Hajji Firuz c. -5400."
 ---
 
 # Wine Grape

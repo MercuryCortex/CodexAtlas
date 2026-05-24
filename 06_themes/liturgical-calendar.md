@@ -48,6 +48,10 @@ refs:
     type: "monograph"
     tier: 2
 tags: [theme, calendar, liturgy, sacred-time, judaism, christianity, islam, ritual, ethiopian]
+date-earliest: -540
+dating-basis: B4
+dating-basis-source: "\"Yerushalmi, Y.H. 1982 *Zakhor*. Univ. Washington\""
+dating-basis-notes: "Jewish liturgical calendar Priestly Leviticus 23 c. -540; Christian liturgical year Constantinian c. 325; Islamic Hijri 638."
 ---
 
 # Liturgical Calendar — Sacred Time

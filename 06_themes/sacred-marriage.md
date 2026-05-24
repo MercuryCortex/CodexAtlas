@@ -62,6 +62,10 @@ refs:
     tier: 1
     notes: "Jung's analysis of the *coniunctio* as the alchemical image of psychological integration — the most influential modern reading of the sacred marriage as a depth-psychological archetype"
 tags: [theme, ritual, fertility, sumerian, sacred-marriage, hieros-gamos, song-of-songs, alchemy, coniunctio, kabbalah, shabbat, bridal-mysticism, cross-tradition]
+date-earliest: -2100
+dating-basis: B2
+dating-basis-source: "\"Lapinkivi, P. 2004 *The Sumerian Sacred Marriage*. Helsinki\""
+dating-basis-notes: "Inanna-Dumuzi sacred-marriage hymns c. -2100 (OB recension); Vedic ashvamedha c. -1000."
 ---
 
 # Sacred Marriage (Hieros Gamos)

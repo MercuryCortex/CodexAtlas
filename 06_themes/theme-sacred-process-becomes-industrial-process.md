@@ -3,6 +3,10 @@ type: theme
 id: "theme-sacred-process-becomes-industrial-process"
 name: "Theme Sacred Process Becomes Industrial Process"
 status: "stub"
+date-earliest: 1660
+dating-basis: B5
+dating-basis-source: "\"Newman, W. & Principe, L. 2002 *Alchemy Tried in the Fire*\""
+dating-basis-notes: "Alchemy-to-chemistry c. 1660; Paracelsian iatrochemistry c. 1530."
 ---
 
 # Theme Sacred Process Becomes Industrial Process

@@ -3,6 +3,10 @@ type: exchange-network
 id: "paper-as-trade-good"
 name: "Paper As Trade Good"
 status: "stub"
+date-earliest: 100
+dating-basis: B3
+dating-basis-source: "\"Bloom, J. 2001 *Paper before Print*\""
+dating-basis-notes: "Paper Han c. 100; westward via Islamic 750."
 ---
 
 # Paper As Trade Good

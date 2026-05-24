@@ -3,6 +3,10 @@ type: theme
 id: "theme-incense-as-sacrificial-medium"
 name: "Theme Incense As Sacrificial Medium"
 status: "stub"
+date-earliest: -2400
+dating-basis: B3
+dating-basis-source: "\"Nielsen, K. 1986 *Incense in Ancient Israel*. Brill\""
+dating-basis-notes: "Egyptian temple-incense Pyramid Texts c. -2400; Hebrew Exodus 30 c. -540; cross-tradition."
 ---
 
 # Theme Incense As Sacrificial Medium

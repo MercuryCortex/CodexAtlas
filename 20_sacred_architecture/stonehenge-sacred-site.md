@@ -3,6 +3,10 @@ type: sacred-site
 id: "stonehenge-sacred-site"
 name: "Stonehenge Sacred Site"
 status: "stub"
+date-earliest: -3000
+dating-basis: B3
+dating-basis-source: "\"Pearson, M.P. 2012 *Stonehenge*. Simon & Schuster\""
+dating-basis-notes: "Stonehenge phases c. -3000 to -1600; sarsen circle c. -2500."
 ---
 
 # Stonehenge Sacred Site

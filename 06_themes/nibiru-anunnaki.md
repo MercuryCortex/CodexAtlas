@@ -52,6 +52,10 @@ refs:
     type: "primary-source-claim"
     tier: "claim-source"
 tags: [theme, pseudoarchaeology, T4, alternative-history, mesopotamian-pseudoscholarship, sitchin, ancient-astronauts, nibiru, anunnaki, disclaimer-machine]
+date-earliest: 1976
+dating-basis: B1
+dating-basis-source: "\"Sitchin, Z. *The Twelfth Planet* (1976)\""
+dating-basis-notes: "Sitchin 1976. T4 pseudoarchaeology."
 ---
 
 # Nibiru-Anunnaki hypothesis

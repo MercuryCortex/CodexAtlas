@@ -23,6 +23,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, mormonism, nrm, ecclesiology]
+date-earliest: 1830
+dating-basis: B5
+dating-basis-source: "\"Bushman, R. 2005 *Joseph Smith: Rough Stone Rolling*. Knopf\""
+dating-basis-notes: "Mormonism 1830; Stone-Campbell movement c. 1830; Adventist 1844."
 ---
 
 # Restorationism

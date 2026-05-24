@@ -21,6 +21,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, hermeticism, correspondences, emerald-tablet]
+date-earliest: 500
+dating-basis: B2
+dating-basis-source: "\"Faivre, A. 1995 *The Eternal Hermes*. Phanes\""
+dating-basis-notes: "Tabula Smaragdina (Emerald Tablet) earliest Arabic recension c. 500-700; Latin Hortulanus 14th c. (Faivre)."
 ---
 
 # As Above, So Below

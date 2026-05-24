@@ -21,6 +21,10 @@ refs:
     type: "commentary"
     tier: 1
 tags: [theme, judaism, ritual-purity, leviticus, second-temple]
+date-earliest: -540
+dating-basis: B4
+dating-basis-source: "\"Milgrom, J. 1991 *Leviticus 1-16*. Anchor Bible\""
+dating-basis-notes: "Priestly purity code Leviticus 11-15 c. -540 redaction."
 ---
 
 # Priestly Purity

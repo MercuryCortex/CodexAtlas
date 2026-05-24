@@ -27,6 +27,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, soteriology, paul, luther, reformation, justification]
+date-earliest: 53
+dating-basis: B4
+dating-basis-source: "\"Sanders, E.P. 1977 *Paul and Palestinian Judaism*\""
+dating-basis-notes: "Pauline justification-by-faith Galatians, Romans c. 53-57; Luther recovery 1517-1520."
 ---
 
 # Justification by Faith

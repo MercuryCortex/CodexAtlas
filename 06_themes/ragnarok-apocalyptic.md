@@ -27,6 +27,10 @@ refs:
     type: "monograph"
     tier: 2
 tags: [theme, norse, apocalyptic, eschatology, ragnarok, odin, thor, fenrir, loki, end-times, world-renewal, indo-european]
+date-earliest: 1000
+dating-basis: B4
+dating-basis-source: "\"Lindow, J. 2001 *Norse Mythology*. ABC-CLIO\""
+dating-basis-notes: "Voluspa c. 1000 (oral); Snorri Edda c. 1220."
 ---
 
 # Ragnarök: The Apocalyptic Battle

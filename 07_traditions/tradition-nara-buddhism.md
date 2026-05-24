@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-nara-buddhism"
 name: "Tradition Nara Buddhism"
 status: "stub"
+date-earliest: 710
+dating-basis: B5
+dating-basis-source: "\"Sonoda, K. 1993 'Early Buddha Worship in Yamato' in *Cambridge History of Japan* vol. 1\""
+dating-basis-notes: "Nara six schools institutionalized 710 with imperial capital relocation."
 ---
 
 # Tradition Nara Buddhism

@@ -3,6 +3,9 @@ type: theme
 id: "theme-manuscript-as-architectural-treasure"
 name: "Theme Manuscript As Architectural Treasure"
 status: "stub"
+dating-basis: B7
+dating-basis-source: "\"Cross-tradition (Quran-as-mosque-treasure, Torah ark, illuminated Gospels). Pattern not event.\""
+dating-basis-notes: "Pattern. Keep B7."
 ---
 
 # Theme Manuscript As Architectural Treasure

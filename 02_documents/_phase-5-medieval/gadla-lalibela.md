@@ -3,6 +3,10 @@ type: document
 id: "gadla-lalibela"
 name: "Gadla Lalibela (Acts of Lalibela)"
 status: "stub"
+date-earliest: 1430
+dating-basis: B1
+dating-basis-source: "\"Phillipson, D. 2009 *Ancient Churches of Ethiopia*. Yale\""
+dating-basis-notes: "Gadla Lalibela (Acts of Lalibela) c. 1430 (Solomonic period)."
 ---
 
 # Gadla Lalibela (Acts of Lalibela)

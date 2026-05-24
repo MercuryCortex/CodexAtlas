@@ -71,6 +71,10 @@ refs:
     Cambridge University Press, 1953, pp. ix–xxxii.
     [Tier 1 — establishes Origen's philosophical milieu and his likely study under
     Ammonius Saccas alongside Plotinus.]
+date-earliest: 200
+dating-basis: B5
+dating-basis-source: "\"Brown, P. 1971 *The World of Late Antiquity*\""
+dating-basis-notes: "3rd-c. collision zone c. 200-300 (Plotinus, Mani, Origen, Zoroastrian revival)."
 ---
 
 # The 3rd-Century Collision Zone — One Eruption, Five Traditions

@@ -8,6 +8,10 @@ depictions:
     caption: "Sundareshvara feeding sugarcane to the elephant — Tamil temple painting; Metropolitan Museum of Art"
     source: "Wikimedia Commons"
     license: "CC0"
+date-earliest: 600
+dating-basis: B4
+dating-basis-source: "\"Younger, P. 1995 *The Home of Dancing Sivan*\""
+dating-basis-notes: "Sundareswarar (Madurai Shiva) Tamil cult c. 600-1200."
 ---
 
 # Sundareswarar

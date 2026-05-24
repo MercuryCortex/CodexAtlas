@@ -27,6 +27,10 @@ refs:
     type: "monograph"
     tier: 2
 tags: [theme, augustine, political-theology, eschatology, two-cities, christian-empire]
+date-earliest: 413
+dating-basis: B1
+dating-basis-source: "\"Augustine *De Civitate Dei* (413-426)\""
+dating-basis-notes: "Composition begins 413 after sack of Rome 410. Slug-extractable."
 ---
 
 # City of God vs. Earthly City (Augustine)

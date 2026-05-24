@@ -22,6 +22,10 @@ refs:
     tier: 1
     notes: "Compares Eckhart and Shankara"
 tags: [theme, philosophy, vedanta, neoplatonism, mysticism]
+date-earliest: -700
+dating-basis: B4
+dating-basis-source: "\"Olivelle, P. 1996 *Upanisads*\""
+dating-basis-notes: "Upanishadic idealism c. -700; Berkeley *Treatise* 1710; Hegel *Phenomenology* 1807."
 ---
 
 # Metaphysical Idealism

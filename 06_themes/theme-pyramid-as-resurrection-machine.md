@@ -68,6 +68,10 @@ depictions:
     caption: "Great Pyramid of Khufu at Giza — the primary architectural subject of this theme"
     source: "Wikimedia Commons"
     license: "CC BY-SA 3.0"
+date-earliest: -2400
+dating-basis: B4
+dating-basis-source: "\"Hornung, E. 1999 *The Ancient Egyptian Books of the Afterlife*\""
+dating-basis-notes: "Pyramid Texts c. -2400 articulate the resurrection-machine theology of the pyramid."
 ---
 
 # Pyramid as Resurrection Machine

@@ -3,6 +3,10 @@ type: doctrine
 id: "doctrine-vernacular-scripture"
 name: "Doctrine Vernacular Scripture"
 status: "stub"
+date-earliest: 1382
+dating-basis: B1
+dating-basis-source: "\"MacCulloch, D. 2003 *Reformation*\""
+dating-basis-notes: "Wycliffe Bible 1382; Luther German Bible 1522."
 ---
 
 # Doctrine Vernacular Scripture

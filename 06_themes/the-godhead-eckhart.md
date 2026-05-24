@@ -27,6 +27,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, eckhart, godhead, apophatic, mysticism, gottheit, abgrunt]
+date-earliest: 1300
+dating-basis: B5
+dating-basis-source: "\"McGinn, B. 2001 *The Mystical Thought of Meister Eckhart*. Crossroad\""
+dating-basis-notes: "Eckhart's Gottheit/abgrunt sermons c. 1300-1328."
 ---
 
 # The Godhead (Eckhart's *Gottheit*)

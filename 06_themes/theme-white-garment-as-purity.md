@@ -3,6 +3,9 @@ type: theme
 id: "theme-white-garment-as-purity"
 name: "Theme White Garment As Purity"
 status: "stub"
+dating-basis: B7
+dating-basis-source: "\"Cross-tradition (ihram, Hindu wedding, Christian baptismal, Essene). Pattern not event.\""
+dating-basis-notes: "Pattern. Keep B7."
 ---
 
 # Theme White Garment As Purity

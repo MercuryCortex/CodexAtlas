@@ -40,6 +40,10 @@ refs:
     type: "monograph"
     tier: 2
 tags: [theme, genre, ritual, soteriological, cross-tradition, hagiography, saints-lives, martyrology]
+date-earliest: 200
+dating-basis: B5
+dating-basis-source: "\"Brown, P. 1981 *The Cult of the Saints*. Univ. Chicago\""
+dating-basis-notes: "Christian hagiography from Martyrdom of Polycarp c. 156; saints' lives genre Athanasius's *Vita Antonii* 360."
 ---
 
 # Hagiography

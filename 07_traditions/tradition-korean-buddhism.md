@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-korean-buddhism"
 name: "Tradition Korean Buddhism"
 status: "stub"
+date-earliest: 372
+dating-basis: B5
+dating-basis-source: "\"Buswell, R. 1992 *The Zen Monastic Experience*. Princeton\""
+dating-basis-notes: "Buddhism enters Goguryeo 372 CE via Shundao from Former Qin."
 ---
 
 # Tradition Korean Buddhism

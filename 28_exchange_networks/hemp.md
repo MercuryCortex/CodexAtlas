@@ -3,6 +3,10 @@ type: exchange-network
 id: "hemp"
 name: "Hemp"
 status: "stub"
+date-earliest: -5000
+dating-basis: B3
+dating-basis-source: "\"Russo, E. et al. 2008 'Phytochemical and Genetic Analyses of Ancient Cannabis from Central Asia' *Journal of Experimental Botany* 59\""
+dating-basis-notes: "Cannabis use Central Asia c. -5000; ritual c. -2500."
 ---
 
 # Hemp

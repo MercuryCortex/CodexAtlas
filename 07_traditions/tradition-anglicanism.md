@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-anglicanism"
 name: "Tradition Anglicanism"
 status: "stub"
+date-earliest: 1534
+dating-basis: B5
+dating-basis-source: "\"MacCulloch, D. 1996 *Thomas Cranmer*. Yale\""
+dating-basis-notes: "Act of Supremacy 1534; Book of Common Prayer 1549."
 ---
 
 # Tradition Anglicanism

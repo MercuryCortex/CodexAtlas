@@ -28,6 +28,10 @@ refs:
     tier: 1
     notes: "Surveys the contrast between Greek soul-immortality and Jewish bodily resurrection."
 tags: [theme, anthropology, soul, immortality, platonic, vedic, hellenistic-jewish]
+date-earliest: -380
+dating-basis: B4
+dating-basis-source: "\"Plato *Phaedo* (c. -380)\""
+dating-basis-notes: "Platonic soul-immortality *Phaedo* c. -380; Egyptian ba/akh older."
 ---
 
 # Soul Immortality

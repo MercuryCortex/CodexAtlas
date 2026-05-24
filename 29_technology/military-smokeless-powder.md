@@ -3,6 +3,10 @@ type: technology
 id: "military-smokeless-powder"
 name: "Military Smokeless Powder"
 status: "stub"
+date-earliest: 1884
+dating-basis: B1
+dating-basis-source: "\"Davis, T. 1943 *The Chemistry of Powder and Explosives*. Wiley\""
+dating-basis-notes: "Vieille's poudre B 1884; Nobel ballistite 1887."
 ---
 
 # Military Smokeless Powder

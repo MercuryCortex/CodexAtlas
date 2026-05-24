@@ -20,6 +20,10 @@ hub-edges:
     source: "Foltz 2010 *Religions of the Silk Road* (2nd ed.); de la Vaissière 2005 *Sogdian Traders*; Boyce & Grenet 1991 *A History of Zoroastrianism* Vol. 3 — Merv is the principal Buddhist enclave in pre-Islamic Sasanian Khorasan, with archaeologically attested Buddhist stupas + Indian-Buddhist-Greek-Bactrian iconographic continuities feeding from Gandhara into Iran via the Khorasan corridor. The Gandharan-Buddhist transmission's western leg passes through Merv"
     notes: "Cross-lens: 08_places → 06_themes"
 status: "stub"
+date-earliest: -500
+dating-basis: B3
+dating-basis-source: "\"Herrmann, G. 1999 *Monuments of Merv*. Soc. Antiquaries\""
+dating-basis-notes: "Merv Achaemenid satrapy c. -500; Margiana older."
 ---
 
 # Place Merv

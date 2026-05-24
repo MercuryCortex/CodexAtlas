@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-trappist"
 name: "Tradition Trappist"
 status: "stub"
+date-earliest: 1664
+dating-basis: B5
+dating-basis-source: "\"Lekai, L. 1977 *The Cistercians*\""
+dating-basis-notes: "La Trappe reform of Cistercian Order 1664 by Armand-Jean Le Bouthillier de Rancé."
 ---
 
 # Tradition Trappist

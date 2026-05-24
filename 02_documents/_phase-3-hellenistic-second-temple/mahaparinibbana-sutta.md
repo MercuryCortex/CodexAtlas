@@ -3,6 +3,10 @@ type: document
 id: "mahaparinibbana-sutta"
 name: "Mahāparinibbāna Sutta"
 status: "stub"
+date-earliest: -100
+dating-basis: B4
+dating-basis-source: "\"Bareau, A. 1971 *Recherches sur la biographie du Buddha*. EFEO\""
+dating-basis-notes: "Pali strata c. -100; canonical form -29."
 ---
 
 # Mahāparinibbāna Sutta

@@ -35,6 +35,10 @@ refs:
     type: "primary-translation"
     tier: 1
 tags: [theme, ethical, hermetic, eusebeia, optimist-gnosis, cosmos-affirming]
+date-earliest: 100
+dating-basis: B4
+dating-basis-source: "\"Fowden, G. 1986 *The Egyptian Hermes*. Cambridge\""
+dating-basis-notes: "Hermetic eusebeia in CH IV, XIII c. 100-300."
 ---
 
 # Hermetic piety (eusebeia)

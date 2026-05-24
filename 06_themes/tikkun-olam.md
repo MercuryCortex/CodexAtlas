@@ -33,6 +33,10 @@ refs:
     type: "anthology"
     tier: 2
 tags: [theme, kabbalah, lurianic, eschatology, ethics, MASSIVE-WIN, cross-tradition]
+date-earliest: 1570
+dating-basis: B5
+dating-basis-source: "\"Fine, L. 2003 *Physician of the Soul*\""
+dating-basis-notes: "Tikkun Olam in Lurianic Kabbalah c. 1570; rabbinic precursor Aleinu c. 200."
 ---
 
 # Tikkun Olam — Cosmic Repair

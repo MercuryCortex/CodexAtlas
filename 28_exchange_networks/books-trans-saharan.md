@@ -3,6 +3,10 @@ type: exchange-network
 id: "books-trans-saharan"
 name: "Books Trans Saharan"
 status: "stub"
+date-earliest: 1100
+dating-basis: B5
+dating-basis-source: "\"Krätli, G. & Lydon, G. 2010 *The Trans-Saharan Book Trade*. Brill\""
+dating-basis-notes: "Trans-Saharan book trade c. 1100-1900; Timbuktu manuscripts."
 ---
 
 # Books Trans Saharan

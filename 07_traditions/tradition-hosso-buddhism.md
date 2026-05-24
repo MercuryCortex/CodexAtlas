@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-hosso-buddhism"
 name: "Tradition Hosso Buddhism"
 status: "stub"
+date-earliest: 658
+dating-basis: B5
+dating-basis-source: "\"Tanabe, G. 1992 *Myoe the Dreamkeeper*. Harvard\""
+dating-basis-notes: "Hosso (Yogacara) transmitted to Japan from Tang by Dosho 658 CE."
 ---
 
 # Tradition Hosso Buddhism

@@ -3,6 +3,10 @@ type: exchange-network
 id: "textiles"
 name: "Textiles"
 status: "stub"
+date-earliest: -30000
+dating-basis: B3
+dating-basis-source: "\"Barber, E. 1994 *Women's Work: The First 20,000 Years*. Norton\""
+dating-basis-notes: "Textile production from Paleolithic; cord-impressed pottery -30000; loom Neolithic."
 ---
 
 # Textiles

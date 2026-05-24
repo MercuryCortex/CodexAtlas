@@ -3,6 +3,10 @@ type: sacred-site
 id: "la-venta-pyramid"
 name: "La Venta Pyramid"
 status: "stub"
+date-earliest: -900
+dating-basis: B3
+dating-basis-source: "\"Diehl, R. 2004 *The Olmecs*. Thames & Hudson\""
+dating-basis-notes: "La Venta c. -900 to -400."
 ---
 
 # La Venta Pyramid

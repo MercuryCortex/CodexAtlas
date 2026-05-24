@@ -3,6 +3,10 @@ type: sacred-site
 id: "temple-of-earth-beijing"
 name: "Temple Of Earth Beijing"
 status: "stub"
+date-earliest: 1530
+dating-basis: B1
+dating-basis-source: "\"Naquin, S. 2000 *Peking: Temples and City Life 1400-1900*. Univ. California\""
+dating-basis-notes: "Built Ming 1530; companion to Temple of Heaven."
 ---
 
 # Temple Of Earth Beijing

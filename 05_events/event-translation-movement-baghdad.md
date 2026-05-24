@@ -3,6 +3,10 @@ type: event
 id: "event-translation-movement-baghdad"
 name: "Event Translation Movement Baghdad"
 status: "stub"
+date-earliest: 750
+dating-basis: B5
+dating-basis-source: "\"Gutas, D. 1998 *Greek Thought, Arabic Culture*. Routledge\""
+dating-basis-notes: "Baghdad translation movement c. 750-1000."
 ---
 
 # Event Translation Movement Baghdad

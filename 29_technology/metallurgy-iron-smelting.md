@@ -17,6 +17,10 @@ related-exchange-networks: ["[[silk-road-overland]]", "[[trans-saharan-gold-and-
 related-sacred-sites: []
 region: "Anatolia → Mediterranean → Eurasia → Africa"
 themes: ["[[theme-technology-as-religious-transmission-vehicle]]", "[[theme-material-revolution-reshapes-class-structure]]"]
+date-earliest: -1500
+dating-basis: B3
+dating-basis-source: "\"Wertime, T. & Muhly, J. eds. 1980 *The Coming of the Age of Iron*. Yale\""
+dating-basis-notes: "Iron smelting Anatolia c. -1500; widespread post-1200 BCE collapse."
 ---
 
 # Iron Smelting (Bloomery and Blast Furnace)

@@ -3,6 +3,10 @@ type: exchange-network
 id: "linen"
 name: "Linen"
 status: "stub"
+date-earliest: -6500
+dating-basis: B3
+dating-basis-source: "\"Barber, E. 1991 *Prehistoric Textiles*. Princeton\""
+dating-basis-notes: "Linen Egyptian Predynastic c. -5000; flax cultivation Levant c. -6500."
 ---
 
 # Linen

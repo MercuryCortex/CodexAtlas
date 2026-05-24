@@ -3,6 +3,10 @@ type: place
 id: "place-palembang"
 name: "Place Palembang"
 status: "stub"
+date-earliest: 670
+dating-basis: B3
+dating-basis-source: "\"Coedès, G. 1968 *The Indianized States of Southeast Asia*\""
+dating-basis-notes: "Srivijaya capital c. 670 (I-tsing visit); Sumatra hinterland older."
 ---
 
 # Place Palembang

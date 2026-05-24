@@ -28,6 +28,10 @@ refs:
     type: "commentary"
     tier: 1
 tags: [theme, eschatology, johannine, gnostic, christianity]
+date-earliest: 95
+dating-basis: B4
+dating-basis-source: "\"Dodd, C.H. 1936 *The Parables of the Kingdom*. Nisbet\""
+dating-basis-notes: "Johannine realized eschatology John c. 95; Gospel of Thomas c. 100-150."
 ---
 
 # Realized Eschatology

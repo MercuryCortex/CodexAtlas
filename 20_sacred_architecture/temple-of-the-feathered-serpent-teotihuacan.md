@@ -3,6 +3,10 @@ type: sacred-site
 id: "temple-of-the-feathered-serpent-teotihuacan"
 name: "Temple Of The Feathered Serpent Teotihuacan"
 status: "stub"
+date-earliest: 200
+dating-basis: B3
+dating-basis-source: "\"Cowgill, G. 2015 *Ancient Teotihuacan*\""
+dating-basis-notes: "Built c. 200 CE."
 ---
 
 # Temple Of The Feathered Serpent Teotihuacan

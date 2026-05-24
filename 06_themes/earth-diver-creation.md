@@ -41,6 +41,10 @@ refs:
     tier: 2
     notes: "Systematic comparative survey of North American earth-diver traditions across nations"
 tags: [theme, cosmogony, earth-diver, creation, native-american, vedic, finno-karelian, MASSIVE-WIN, cross-tradition, parallel-motif, metadata]
+date-earliest: -1200
+dating-basis: B2
+dating-basis-source: "\"Witzel, M. 2012 *The Origins of the World's Mythologies*\""
+dating-basis-notes: "Earth-diver cosmogony: Vedic precursors Shatapatha Brahmana 14.1.2 c. -800; Algonquian and Siberian parallels."
 ---
 
 # Earth-Diver Creation

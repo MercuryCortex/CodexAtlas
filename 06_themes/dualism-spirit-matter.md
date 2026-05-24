@@ -27,6 +27,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, dualism, gnostic, platonic, hermetic, spirit-matter]
+date-earliest: -360
+dating-basis: B4
+dating-basis-source: "\"Plato *Phaedo* 64c-67b (c. -380)\""
+dating-basis-notes: "Platonic spirit-matter dualism c. -380; Gnostic intensification c. 180."
 ---
 
 # Spirit-Matter Dualism

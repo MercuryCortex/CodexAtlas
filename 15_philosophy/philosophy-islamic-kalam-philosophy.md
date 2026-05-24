@@ -29,6 +29,9 @@ cross-music-edges:
   - target: music-pythagorean-harmony
     type: transmitter-of
     note: Al-Farabi's "Kitab al-Musiqa al-Kabir" (Grand Book of Music, c. 900 CE) is the most comprehensive medieval music theory work in any language — it surpasses Boethius in systematic depth while transmitting and extending the Pythagorean harmony tradition. Al-Farabi classified musical instruments, analyzed rhythm and melodic composition, and embedded music theory within the falsafa project of rationally systematizing all Greek knowledge for Islamic civilization. Kalam's defense of rational philosophy as compatible with revelation made the entire Pythagorean musical cosmos available to Islamic culture.
+dating-basis: B5
+dating-basis-source: "\"Watt, W.M. 1973 *The Formative Period of Islamic Thought*. Edinburgh\""
+dating-basis-notes: "Kalam emerges Mu'tazilite c. 750; Falsafa al-Kindi c. 820."
 ---
 
 Islamic philosophy from the 8th to 13th centuries CE comprises two overlapping but distinct streams: **Kalam** (علم الكلام — "the science of discourse," theological rationalism) and **Falsafa** (فلسفة — "philosophy," from Greek *philosophia*, the Aristotelian-Neoplatonic synthesis). Together they constitute the most significant transmission channel in intellectual history — preserving, transforming, and transmitting Greek philosophy to medieval Europe at the precise moment when the Latin West had lost direct access to it.

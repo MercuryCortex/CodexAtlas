@@ -34,6 +34,10 @@ refs:
     tier: 4
     notes: "Tier 4 — the modern literary appropriation; load-bearing for the 1989 Khomeini fatwa reception-history."
 tags: [theme, islamic, quranic-hermeneutics, gharaniq, satanic-verses, daughters-of-allah, ibn-ishaq, tabari, source-critical, rushdie, reception-history]
+date-earliest: 850
+dating-basis: B5
+dating-basis-source: "\"Ahmed, S. 2017 *Before Orthodoxy: The Satanic Verses in Early Islam*. Harvard\""
+dating-basis-notes: "Tradition first attested Ibn Ishaq *Sirat* c. 770; Tabari c. 920; debate Ahmed 2017."
 ---
 
 # Satanic Verses incident (the *gharānīq* / 'high-flying cranes' tradition)

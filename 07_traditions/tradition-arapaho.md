@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-arapaho"
 name: "Tradition Arapaho"
 status: "stub"
+date-earliest: 1600
+dating-basis: B5
+dating-basis-source: "\"Fowler, L. 1982 *Arapahoe Politics, 1851-1978*. Univ. Nebraska\""
+dating-basis-notes: "Arapaho as distinct people attested in Algonquian-speaking Plains migration c. 1600-1700."
 ---
 
 # Tradition Arapaho

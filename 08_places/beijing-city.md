@@ -3,6 +3,10 @@ type: place
 id: "beijing-city"
 name: "Beijing City"
 status: "stub"
+date-earliest: -1000
+dating-basis: B3
+dating-basis-source: "\"Naquin, S. 2000 *Peking*\""
+dating-basis-notes: "Jicheng c. -1000; Yanjing/Beijing as capital from 1153 CE."
 ---
 
 # Beijing City

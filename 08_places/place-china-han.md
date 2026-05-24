@@ -3,6 +3,10 @@ type: place
 id: "place-china-han"
 name: "Place China Han"
 status: "stub"
+date-earliest: -202
+dating-basis: B5
+dating-basis-source: "\"Lewis, M.E. 2007 *The Early Chinese Empires*\""
+dating-basis-notes: "Han dynasty -202 to 220."
 ---
 
 # Place China Han

@@ -35,6 +35,10 @@ connections:
   - target: "[[tradition-inca-andean]]"
     type: administrative-sacred
     note: "The quipu was the administrative spine of the Inca empire; the ceque system organizing sacred geography was itself encoded in a quipu"
+date-earliest: -2500
+dating-basis: B3
+dating-basis-source: "\"Urton, G. 2003 *Signs of the Inka Khipu*. Univ. Texas\""
+dating-basis-notes: "Caral-Supe quipu c. -2500 (Mann 2005); Inca standardized 1438."
 ---
 
 # Quipu (Khipu)

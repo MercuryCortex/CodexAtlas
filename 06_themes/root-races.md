@@ -33,6 +33,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, theosophy, blavatsky, anthropogenesis, problematic-downstream, ariosophy, root-races]
+date-earliest: 1888
+dating-basis: B1
+dating-basis-source: "\"Blavatsky, H.P. *The Secret Doctrine* (1888)\""
+dating-basis-notes: "Blavatsky 1888. T4 problematic-downstream."
 ---
 
 # Root Races (Theosophical doctrine)

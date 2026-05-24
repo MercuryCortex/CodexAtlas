@@ -28,6 +28,10 @@ refs:
     tier: 1
     notes: "Cornford on the Timaeus."
 tags: [theme, metaphysics, platonism, forms, archetypes, middle-platonism]
+date-earliest: -380
+dating-basis: B1
+dating-basis-source: "\"Plato *Republic* 7 (c. -380)\""
+dating-basis-notes: "Platonic Forms c. -380; Middle Platonist intellectualization c. 100 CE; archetype-coinage Jung 1934."
 ---
 
 # Forms and Archetypes (Platonic)

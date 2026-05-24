@@ -45,6 +45,10 @@ refs:
     type: "primary-source-edition"
     tier: 1
 tags: [theme, historiographical, iconography, reception, templar, baphomet, idolatry-charge, hammer-purgstall, levi, occultism]
+date-earliest: 1307
+dating-basis: B1
+dating-basis-source: "\"Barber, M. 2006 *The Trial of the Templars* 2nd ed. Cambridge\""
+dating-basis-notes: "Baphomet first surfaces Templar trial 1307; modern occult Lévi 1854. Slug-extractable date."
 ---
 
 # Baphomet controversy

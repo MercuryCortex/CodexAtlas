@@ -3,6 +3,10 @@ type: place
 id: "hallstatt-culture"
 name: "Hallstatt Culture"
 status: "stub"
+date-earliest: -1200
+dating-basis: B5
+dating-basis-source: "\"Cunliffe, B. 2008 *Europe Between the Oceans 9000 BC-AD 1000*. Yale\""
+dating-basis-notes: "Hallstatt culture c. -1200 to -450 (Bronze Age D into Iron Age)."
 ---
 
 # Hallstatt Culture

@@ -17,6 +17,10 @@ hub-edges:
     source: "Donner 2010 *Muhammad and the Believers*; Watt 1953 *Muhammad at Mecca*; Madelung 1997 *The Succession to Muhammad* — Mecca is the place where the Quraysh-Hashemite-Banu-Hashim genealogical line of Muhammad is rooted; the prophetic-genealogical claim that downstream Shi'i Imamate (Ali-Fatima-Hasan-Husayn chain) and Bab/Bahá'í descent build on is anchored to the Meccan Quraysh tribal-genealogical framework"
     notes: "Cross-lens: 08_places → 06_themes"
 status: "stub"
+date-earliest: -400
+dating-basis: B5
+dating-basis-source: "\"Hoyland, R. 2001 *Arabia and the Arabs*\""
+dating-basis-notes: "Mecca attested as cult site Hijaz pre-Islamic; archaeological strata c. -400 (contested); Quraysh founding traditional c. 400 CE."
 ---
 
 # Mecca Place

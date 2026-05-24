@@ -26,6 +26,9 @@ refs:
   - "Jacques Guy, 'On a Fragment of the Tahua Tablet,' Journal of the Polynesian Society 99(3) (1990), pp. 317–328 (Tier 2 — rigorous structural analysis of tablet content)"
 alphabet-tradition-context:
   - "[[tradition-polynesian]]"
+dating-basis: B3
+dating-basis-source: "\"Fischer, S. 1997 *Rongorongo: The Easter Island Script*. Clarendon\""
+dating-basis-notes: "First documented Brother Eyraud 1864; tablets c. 1600-1860 (range)."
 ---
 
 # Rongorongo — The Writing That Died With Its Readers

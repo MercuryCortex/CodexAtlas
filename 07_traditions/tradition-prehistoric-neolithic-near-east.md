@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-prehistoric-neolithic-near-east"
 name: "Tradition Prehistoric Neolithic Near East"
 status: "stub"
+date-earliest: -9500
+dating-basis: B5
+dating-basis-source: "\"Mithen, S. 2003 *After the Ice: A Global Human History 20,000-5000 BC*. Phoenix\""
+dating-basis-notes: "Pre-Pottery Neolithic A from Göbekli Tepe c. -9500; Jericho -8500."
 ---
 
 # Tradition Prehistoric Neolithic Near East

@@ -27,6 +27,10 @@ refs:
     type: "monograph"
     tier: 2
 tags: [theme, afterlife, soul, guide, hermes, anubis, ritual]
+date-earliest: -2400
+dating-basis: B2
+dating-basis-source: "\"Hornung, E. 1999 *The Ancient Egyptian Books of the Afterlife*\""
+dating-basis-notes: "Egyptian Anubis as psychopomp Pyramid Texts c. -2400; Greek Hermes psychopompos c. -700."
 ---
 
 # Psychopomp

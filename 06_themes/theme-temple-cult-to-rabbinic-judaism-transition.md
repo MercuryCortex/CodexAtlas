@@ -3,6 +3,10 @@ type: theme
 id: "theme-temple-cult-to-rabbinic-judaism-transition"
 name: "Theme Temple Cult To Rabbinic Judaism Transition"
 status: "stub"
+date-earliest: 70
+dating-basis: B5
+dating-basis-source: "\"Schiffman, L. 1991 *From Text to Tradition*. Ktav\""
+dating-basis-notes: "Post-70 CE rabbinic emergence Yavneh; Mishnah c. 200."
 ---
 
 # Theme Temple Cult To Rabbinic Judaism Transition

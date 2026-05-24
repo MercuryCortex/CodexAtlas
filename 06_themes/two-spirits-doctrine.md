@@ -21,6 +21,10 @@ refs:
     type: "edited-volume"
     tier: 1
 tags: [theme, qumran, zoroastrianism, dualism, judaism]
+date-earliest: -100
+dating-basis: B4
+dating-basis-source: "\"Charlesworth, J.H. ed. 1990 *John and Qumran*\""
+dating-basis-notes: "Qumran 1QS Two-Spirits Treatise c. -100; Zoroastrian Avestan substrate older."
 ---
 
 # Two-Spirits Doctrine

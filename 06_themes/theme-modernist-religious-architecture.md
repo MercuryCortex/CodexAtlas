@@ -3,6 +3,10 @@ type: theme
 id: "theme-modernist-religious-architecture"
 name: "Theme Modernist Religious Architecture"
 status: "stub"
+date-earliest: 1922
+dating-basis: B5
+dating-basis-source: "\"Frampton, K. 1992 *Modern Architecture* 3rd ed. Thames & Hudson\""
+dating-basis-notes: "Modernist religious architecture: Notre-Dame du Raincy 1922 (Perret); Ronchamp 1955 (Le Corbusier)."
 ---
 
 # Theme Modernist Religious Architecture

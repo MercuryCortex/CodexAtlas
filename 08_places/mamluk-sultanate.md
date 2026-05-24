@@ -3,6 +3,10 @@ type: place
 id: "mamluk-sultanate"
 name: "Mamluk Sultanate"
 status: "stub"
+date-earliest: 1250
+dating-basis: B5
+dating-basis-source: "\"Petry, C. 1981 *The Civilian Elite of Cairo in the Later Middle Ages*. Princeton\""
+dating-basis-notes: "Mamluk Sultanate 1250-1517."
 ---
 
 # Mamluk Sultanate

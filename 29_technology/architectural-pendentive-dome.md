@@ -17,6 +17,10 @@ related-exchange-networks: []
 related-sacred-sites: ["[[hagia-sophia]]", "[[suleymaniye-mosque]]", "[[st-peters-basilica]]", "[[dome-of-the-rock-jerusalem]]"]
 region: "Constantinople → Islamic world → Renaissance Italy → modern monumental dome architecture"
 themes: ["[[theme-dome-as-cosmic-vault]]", "[[theme-sacred-geometry-cosmic-proportion]]", "[[theme-architectural-technique-enables-theology]]"]
+date-earliest: 537
+dating-basis: B3
+dating-basis-source: "\"Krautheimer, R. 1986 *Early Christian and Byzantine Architecture*\""
+dating-basis-notes: "Pendentive dome Hagia Sophia 537."
 ---
 
 # Pendentive Dome (Byzantine Engineering)

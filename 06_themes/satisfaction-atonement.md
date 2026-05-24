@@ -33,6 +33,10 @@ refs:
     type: "primary-translation"
     tier: 1
 tags: [theme, soteriology, atonement, anselm, scholastic, latin-christianity]
+date-earliest: 1098
+dating-basis: B1
+dating-basis-source: "\"Anselm *Cur Deus Homo* (1098)\""
+dating-basis-notes: "Anselm c. 1098."
 ---
 
 # Satisfaction Atonement (Anselm)

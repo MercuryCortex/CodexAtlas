@@ -27,6 +27,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, sacred, profane, hierophany, eliade, durkheim, history-of-religions]
+date-earliest: 1912
+dating-basis: B1
+dating-basis-source: "\"Durkheim, E. *Les formes élémentaires* (1912); Eliade, M. *Le sacré et le profane* (1957)\""
+dating-basis-notes: "Durkheim 1912; Eliade 1957."
 ---
 
 # Sacred and Profane

@@ -3,6 +3,10 @@ type: sacred-site
 id: "strasbourg-cathedral"
 name: "Strasbourg Cathedral"
 status: "stub"
+date-earliest: 1015
+dating-basis: B1
+dating-basis-source: "\"Recht, R. 2008 *Believing and Seeing*. Univ. Chicago\""
+dating-basis-notes: "Romanesque c. 1015; Gothic phase 1190-1439."
 ---
 
 # Strasbourg Cathedral

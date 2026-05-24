@@ -21,6 +21,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, magic, hermeticism, occult, crowley]
+date-earliest: 1854
+dating-basis: B5
+dating-basis-source: "\"Hanegraaff, W. 2012 *Esotericism and the Academy*. Cambridge\""
+dating-basis-notes: "Modern ceremonial magick from Eliphas Lévi *Dogme et rituel* 1854; Golden Dawn 1888; Crowley 1904."
 ---
 
 # Ceremonial Magick

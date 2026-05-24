@@ -79,6 +79,10 @@ refs:
     notes: "Philological analysis of the asha (aša) concept and its relation to the asura/ahura word family"
 tags: [theme, indo-iranian, comparative-religion, theology, linguistics, asura, deva, MASSIVE-WIN]
 status: "metadata"
+date-earliest: -1500
+dating-basis: B5
+dating-basis-source: "\"Mallory, J. & Adams, D. 2006 *The Oxford Introduction to Proto-Indo-European*. OUP\""
+dating-basis-notes: "Indo-Iranian Asura/Deva inversion linguistic event c. -1500 (Vedic/Avestan split)."
 ---
 
 # Asura/Deva Inversion — The Indo-Iranian Theological Schism

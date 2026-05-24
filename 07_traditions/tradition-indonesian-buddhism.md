@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-indonesian-buddhism"
 name: "Tradition Indonesian Buddhism"
 status: "stub"
+date-earliest: 450
+dating-basis: B5
+dating-basis-source: "\"Lokesh Chandra 1995 *Cultural Horizons of India*. IGNCA\""
+dating-basis-notes: "Buddhism arrives Indonesia c. 450 CE; Borobudur c. 800."
 ---
 
 # Tradition Indonesian Buddhism

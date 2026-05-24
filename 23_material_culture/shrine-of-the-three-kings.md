@@ -3,6 +3,10 @@ type: relic
 id: "shrine-of-the-three-kings"
 name: "Shrine Of The Three Kings"
 status: "stub"
+date-earliest: 1190
+dating-basis: B1
+dating-basis-source: "\"Bagnoli, M. et al. eds. 2010 *Treasures of Heaven*\""
+dating-basis-notes: "Nicholas of Verdun's Three Kings Shrine, Cologne, c. 1190-1225."
 ---
 
 # Shrine Of The Three Kings

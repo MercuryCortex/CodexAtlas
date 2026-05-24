@@ -3,6 +3,10 @@ type: document
 id: "stela-16-tikal"
 name: "Stela 16 Tikal"
 status: "stub"
+date-earliest: 711
+dating-basis: B3
+dating-basis-source: "\"Martin, S. & Grube, N. 2008 *Chronicle of the Maya Kings and Queens*\""
+dating-basis-notes: "Stela 16 Tikal dated 711."
 ---
 
 # Stela 16 Tikal

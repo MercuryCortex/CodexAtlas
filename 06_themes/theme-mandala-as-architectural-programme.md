@@ -3,6 +3,10 @@ type: theme
 id: "theme-mandala-as-architectural-programme"
 name: "Theme Mandala As Architectural Programme"
 status: "stub"
+date-earliest: 800
+dating-basis: B5
+dating-basis-source: "\"Snellgrove, D. 1987 *Indo-Tibetan Buddhism*\""
+dating-basis-notes: "Vajrayana mandala-as-architecture c. 800 (Borobudur, Tabo); precedents Mesopotamian temple-as-mandala."
 ---
 
 # Theme Mandala As Architectural Programme

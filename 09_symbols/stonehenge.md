@@ -42,6 +42,10 @@ refs:
   - >
     Stukeley, W. (1740). *Stonehenge: A Temple Restor'd to the British Druids*. Innys & Manby.
     Tier 4 as history; primary source for the Romantic Druid invention.
+date-earliest: -3000
+dating-basis: B3
+dating-basis-source: "\"Pearson, M.P. 2012 *Stonehenge*\""
+dating-basis-notes: "Phases c. -3000 to -1600."
 ---
 
 # Stonehenge

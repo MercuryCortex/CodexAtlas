@@ -3,6 +3,10 @@ type: exchange-network
 id: "mongol-conquest-corridor"
 name: "Mongol Conquest Corridor"
 status: "stub"
+date-earliest: 1206
+dating-basis: B5
+dating-basis-source: "\"Allsen, T. 2001 *Culture and Conquest in Mongol Eurasia*\""
+dating-basis-notes: "Mongol corridor 1206-1368 (Pax Mongolica)."
 ---
 
 # Mongol Conquest Corridor

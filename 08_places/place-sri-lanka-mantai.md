@@ -3,6 +3,10 @@ type: place
 id: "place-sri-lanka-mantai"
 name: "Place Sri Lanka Mantai"
 status: "stub"
+date-earliest: -200
+dating-basis: B3
+dating-basis-source: "\"Coningham, R. et al. eds. 2019 *Mantai: City by the Sea*. CSCA\""
+dating-basis-notes: "Mantai port c. -200 to 1000 CE."
 ---
 
 # Place Sri Lanka Mantai

@@ -3,6 +3,10 @@ type: document
 id: "samguk-sagi"
 name: "Samguk Sagi"
 status: "stub"
+date-earliest: 1145
+dating-basis: B1
+dating-basis-source: "\"Lee, P. 1993 *Sourcebook of Korean Civilization*\""
+dating-basis-notes: "Compiled by Kim Bushik 1145."
 ---
 
 # Samguk Sagi

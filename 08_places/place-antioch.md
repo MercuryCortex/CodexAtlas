@@ -21,6 +21,10 @@ hub-edges:
     source: "Norris 2007; Boyarin 2004 *Border Lines*; Behr 2004 *The Way to Nicaea* — the Antiochene-vs-Alexandrian Christological controversies (Council of Chalcedon 451 is the formal resolution; the 'two-natures' formula derives from Antiochene tradition) are the fully-developed institutional articulation of the two-powers-in-heaven inheritance: how does the Father-Son relation work in monotheism? Antioch is the principal place anchoring the historical-figural-emphasis side of the answer"
     notes: "Cross-lens: 08_places → 06_themes"
 status: "stub"
+date-earliest: -300
+dating-basis: B1
+dating-basis-source: "\"Downey, G. 1961 *A History of Antioch in Syria*. Princeton\""
+dating-basis-notes: "Founded by Seleucus I -300."
 ---
 
 # Place Antioch

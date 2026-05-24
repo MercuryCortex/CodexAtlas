@@ -44,6 +44,9 @@ refs:
     type: "monograph"
     tier: 2
 tags: [theme, martyrdom, founders, dying-god, crucifixion, persecution, girard, christianity, islam, sufism, sikhism, bahai, manichaeism, cross-tradition, structural-paradox]
+dating-basis: B7
+dating-basis-source: "\"Pattern (Jesus 30, al-Hallaj 922, Guru Arjan 1606, Bab 1850, Mani 277). Pattern not event.\""
+dating-basis-notes: "Pattern. Keep B7."
 ---
 
 # The Dying Founder Paradigm

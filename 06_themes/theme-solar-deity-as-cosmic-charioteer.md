@@ -3,6 +3,10 @@ type: theme
 id: "theme-solar-deity-as-cosmic-charioteer"
 name: "Theme Solar Deity As Cosmic Charioteer"
 status: "stub"
+date-earliest: -1400
+dating-basis: B2
+dating-basis-source: "\"West, M.L. 2007 *Indo-European Poetry and Myth*\""
+dating-basis-notes: "Solar charioteer PIE; Vedic Surya c. -1200; Greek Helios c. -700; Norse Sol; Trundholm sun-chariot c. -1400."
 ---
 
 # Theme Solar Deity As Cosmic Charioteer

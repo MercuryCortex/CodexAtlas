@@ -3,6 +3,10 @@ type: sacred-site
 id: "tikal-temple-ii"
 name: "Tikal Temple II"
 status: "stub"
+date-earliest: 702
+dating-basis: B3
+dating-basis-source: "\"Coe, M. 2011 *The Maya*\""
+dating-basis-notes: "Temple II c. 702 (built by Jasaw Chan K'awiil I in honor of Lady Lachan Unen Mo')."
 ---
 
 # Tikal Temple Ii

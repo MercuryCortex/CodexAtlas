@@ -27,6 +27,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, scripture, canon, ethiopian, ge'ez, 81-books, broad-canon]
+date-earliest: 1270
+dating-basis: B5
+dating-basis-source: "\"Cowley, R. 1974 'The Biblical Canon of the Ethiopian Orthodox Church' *Ostkirchliche Studien* 23\""
+dating-basis-notes: "Ethiopic 81-book canon codified Solomonic period c. 1270; book inventory in Mashafa Mestir c. 1500."
 ---
 
 # Ethiopic Biblical Canon (81-book Broader Canon)

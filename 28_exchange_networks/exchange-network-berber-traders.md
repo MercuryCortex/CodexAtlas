@@ -3,6 +3,10 @@ type: exchange-network
 id: "exchange-network-berber-traders"
 name: "Exchange Network Berber Traders"
 status: "stub"
+date-earliest: 500
+dating-basis: B5
+dating-basis-source: "\"Lydon, G. 2009 *On Trans-Saharan Trails*. Cambridge\""
+dating-basis-notes: "Berber trans-Saharan trade c. 500-1500."
 ---
 
 # Exchange Network Berber Traders

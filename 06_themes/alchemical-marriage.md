@@ -21,6 +21,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, alchemy, hermeticism, jung, rosicrucianism]
+date-earliest: 200
+dating-basis: B5
+dating-basis-source: "\"Principe, L. 2013 *The Secrets of Alchemy*\""
+dating-basis-notes: "Coniunctio (alchemical marriage) motif in Greek alchemy via Maria Prophetissa c. 200-300; codified Rosarium Philosophorum 1550."
 ---
 
 # Alchemical Marriage (Coniunctio)

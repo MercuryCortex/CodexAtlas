@@ -3,6 +3,10 @@ type: theme
 id: "theme-rock-cut-architecture-as-relic-of-creation"
 name: "Theme Rock Cut Architecture As Relic Of Creation"
 status: "stub"
+date-earliest: -100
+dating-basis: B5
+dating-basis-source: "\"Michell, G. 1988 *The Hindu Temple*\""
+dating-basis-notes: "Rock-cut Buddhist Ajanta c. -100; Hindu Ellora c. 600; concept articulated in Indian aesthetic c. 500."
 ---
 
 # Theme Rock Cut Architecture As Relic Of Creation

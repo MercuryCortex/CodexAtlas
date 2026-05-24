@@ -27,6 +27,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, microcosm, macrocosm, correspondence, hermetic, kabbalah, paracelsus]
+date-earliest: -360
+dating-basis: B4
+dating-basis-source: "\"Conger, G. 1922 *Theories of Macrocosms and Microcosms in the History of Philosophy*. Columbia\""
+dating-basis-notes: "Plato *Timaeus* 30b-d c. -360; Hippocratic *De Hebdomadibus* c. -400; Hermetic CH X c. 200."
 ---
 
 # Microcosm-Macrocosm

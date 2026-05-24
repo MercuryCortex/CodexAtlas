@@ -3,6 +3,10 @@ type: document
 id: "tiruvilaiyadal-puranam"
 name: "Tiruvilaiyadal Puranam"
 status: "stub"
+date-earliest: 1500
+dating-basis: B1
+dating-basis-source: "\"Younger, P. 1995 *The Home of Dancing Sivan: The Traditions of the Hindu Temple in Citamparam*. OUP\""
+dating-basis-notes: "Tiruvilaiyadal Puranam c. 1500 by Paranjothi Munivar; older Tamil Madurai-temple tradition."
 ---
 
 # Tiruvilaiyadal Puranam

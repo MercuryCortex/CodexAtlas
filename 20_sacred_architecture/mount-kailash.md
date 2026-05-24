@@ -3,6 +3,9 @@ type: sacred-site
 id: "mount-kailash"
 name: "Mount Kailash"
 status: "stub"
+dating-basis: B7
+dating-basis-source: "\"Sacred mountain; pilgrimage site; no founding date. Cross-tradition (Bon, Hindu, Buddhist, Jain).\""
+dating-basis-notes: "Sacred-mountain (timeless cult). Keep B7 with notes."
 ---
 
 # Mount Kailash

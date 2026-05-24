@@ -41,6 +41,10 @@ refs:
     type: "monograph"
     tier: 2
 tags: [theme, chain-of-being, hierarchy, plotinus, dionysius, scholasticism, lovejoy]
+date-earliest: 250
+dating-basis: B5
+dating-basis-source: "\"Lovejoy, A. 1936 *The Great Chain of Being*. Harvard\""
+dating-basis-notes: "Concept from Plotinus *Enneads* c. 250; systematized Pseudo-Dionysius *Celestial Hierarchy* c. 500."
 ---
 
 # Great Chain of Being

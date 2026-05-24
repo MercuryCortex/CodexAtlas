@@ -27,6 +27,10 @@ refs:
     type: "commentary"
     tier: 1
 tags: [theme, ethics, dualism, two-ways, qumran, didache, paul]
+date-earliest: -100
+dating-basis: B4
+dating-basis-source: "\"Charlesworth, J.H. ed. 1990 *John and Qumran*. Crossroad\""
+dating-basis-notes: "Two-Ways ethical dualism: Qumran 1QS Two-Spirits c. -100; Didache 1 c. 90 CE."
 ---
 
 # Ethical Dualism

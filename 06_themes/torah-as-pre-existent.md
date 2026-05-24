@@ -21,6 +21,10 @@ refs:
     type: "edited-volume"
     tier: 1
 tags: [theme, torah, wisdom-literature, judaism, second-temple]
+date-earliest: -180
+dating-basis: B4
+dating-basis-source: "\"Schäfer, P. 2002 *Mirror of His Beauty*. Princeton\""
+dating-basis-notes: "Pre-existent Torah Sirach 24 c. -180; rabbinic Bereshit Rabbah c. 400."
 ---
 
 # Torah as Pre-Existent

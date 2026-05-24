@@ -3,6 +3,10 @@ type: exchange-network
 id: "exchange-network-radhanites"
 name: "Exchange Network Radhanites"
 status: "stub"
+date-earliest: 750
+dating-basis: B5
+dating-basis-source: "\"Gil, M. 1974 'The Radhanite Merchants'\""
+dating-basis-notes: "Radhanite Jewish merchant network c. 750-950."
 ---
 
 # Exchange Network Radhanites

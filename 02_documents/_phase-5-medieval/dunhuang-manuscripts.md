@@ -3,6 +3,10 @@ type: document
 id: "dunhuang-manuscripts"
 name: "Dunhuang Manuscripts"
 status: "stub"
+date-earliest: 600
+dating-basis: B3
+dating-basis-source: "\"Whitfield, S. 2018 *Silk Roads*\""
+dating-basis-notes: "Dunhuang Library Cave manuscripts 5th-11th c.; sealed c. 1000."
 ---
 
 # Dunhuang Manuscripts

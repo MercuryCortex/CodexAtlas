@@ -91,6 +91,10 @@ tags:
   - Persian-period
   - achaemenid
   - MASSIVE-WIN
+date-earliest: -538
+dating-basis: B5
+dating-basis-source: "\"Boyce, M. 1982 *A History of Zoroastrianism* vol. 2\""
+dating-basis-notes: "Zoroastrian-Jewish exchange Persian period c. -538 to -332."
 ---
 
 # Zoroastrian–Jewish Exchange

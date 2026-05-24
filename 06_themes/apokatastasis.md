@@ -27,6 +27,10 @@ refs:
     type: "monograph"
     tier: 2
 tags: [theme, eschatology, patristic, origen, universalism, fifth-council]
+date-earliest: 248
+dating-basis: B4
+dating-basis-source: "\"Ramelli, I. 2013 *The Christian Doctrine of Apokatastasis*. Brill\""
+dating-basis-notes: "Origen *De Principiis* c. 230; condemned 553 Constantinople II; precursor in Stoic ekpyrosis -300."
 ---
 
 # Apokatastasis (universal restoration)

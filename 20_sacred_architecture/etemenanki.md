@@ -3,6 +3,10 @@ type: sacred-site
 id: "etemenanki"
 name: "Etemenanki"
 status: "stub"
+date-earliest: -2100
+dating-basis: B3
+dating-basis-source: "\"George, A. 1992 *Babylonian Topographical Texts*\""
+dating-basis-notes: "Earliest Ur III layer c. -2100; Nebuchadnezzar II rebuild c. -600."
 ---
 
 # Etemenanki

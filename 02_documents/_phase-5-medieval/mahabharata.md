@@ -3,6 +3,10 @@ type: document
 id: "mahabharata"
 name: "Mahabharata"
 status: "stub"
+date-earliest: -400
+dating-basis: B4
+dating-basis-source: "\"van Buitenen, J.A.B. 1973 *The Mahabharata* vol. 1. Univ. Chicago\""
+dating-basis-notes: "Mahabharata core c. -400 to 400 CE."
 ---
 
 # Mahabharata

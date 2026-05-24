@@ -3,6 +3,10 @@ type: document
 id: "florentine-codex"
 name: "Florentine Codex"
 status: "stub"
+date-earliest: 1577
+dating-basis: B1
+dating-basis-source: "\"León-Portilla, M. 2002 *Bernardino de Sahagún: First Anthropologist*. Univ. Oklahoma\""
+dating-basis-notes: "Sahagún's Florentine Codex c. 1545-1577 (final form)."
 ---
 
 # Florentine Codex

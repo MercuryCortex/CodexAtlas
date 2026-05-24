@@ -32,6 +32,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, soteriological, buddhism, foundational, eightfold-path, path, three-trainings, sila, samadhi, panna]
+date-earliest: -460
+dating-basis: B4
+dating-basis-source: "\"Gombrich, R. 2009 *What the Buddha Thought*\""
+dating-basis-notes: "Eightfold Path: Dhammacakkappavattana Sutta SN 56.11 c. -460 traditional."
 ---
 
 # Noble Eightfold Path

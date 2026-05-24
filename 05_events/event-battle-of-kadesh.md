@@ -3,6 +3,10 @@ type: event
 id: "event-battle-of-kadesh"
 name: "Event Battle of Kadesh"
 status: "stub"
+date-earliest: -1274
+dating-basis: B1
+dating-basis-source: "\"Murnane, W. 1990 *The Road to Kadesh*. Oriental Institute\""
+dating-basis-notes: "Battle of Kadesh -1274."
 ---
 
 # Event Battle of Kadesh

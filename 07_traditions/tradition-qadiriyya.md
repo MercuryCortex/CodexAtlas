@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-qadiriyya"
 name: "Tradition Qadiriyya"
 status: "stub"
+date-earliest: 1166
+dating-basis: B5
+dating-basis-source: "\"Trimingham, J.S. 1971 *The Sufi Orders in Islam*\""
+dating-basis-notes: "Qadiri silsila from Abd al-Qadir al-Jilani d. 1166 Baghdad."
 ---
 
 # Tradition Qadiriyya

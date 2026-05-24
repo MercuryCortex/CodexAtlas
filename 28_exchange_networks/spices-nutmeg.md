@@ -3,6 +3,10 @@ type: exchange-network
 id: "spices-nutmeg"
 name: "Spices Nutmeg"
 status: "stub"
+date-earliest: -100
+dating-basis: B3
+dating-basis-source: "\"Donkin, R. 2003 *Between East and West*\""
+dating-basis-notes: "Nutmeg (Banda Islands) c. -100."
 ---
 
 # Spices Nutmeg

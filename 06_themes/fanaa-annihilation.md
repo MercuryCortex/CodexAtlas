@@ -50,6 +50,10 @@ refs:
     type: "monograph"
     tier: 2
 tags: [theme, sufism, islam, mysticism, annihilation, ego-dissolution, spiritual-practice]
+date-earliest: 890
+dating-basis: B5
+dating-basis-source: "\"Schimmel, A. 1975 *Mystical Dimensions of Islam*\""
+dating-basis-notes: "Fana motif Junayd c. 890; classical Sufi theology al-Sarraj *Luma* c. 988."
 ---
 
 # Fanāʾ — Mystical Annihilation

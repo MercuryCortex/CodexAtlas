@@ -21,6 +21,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, hermeticism, correspondences, agrippa, paracelsus, astrology, as-above-so-below, sympathetic-cosmology]
+date-earliest: 100
+dating-basis: B2
+dating-basis-source: "\"Copenhaver, B. 1992 *Hermetica*. Cambridge\""
+dating-basis-notes: "Corpus Hermeticum c. 100-300; Asclepius c. 200; Emerald Tablet c. 500."
 ---
 
 # Hermetic Correspondences

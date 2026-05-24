@@ -3,6 +3,10 @@ type: theme
 id: "theme-cheap-substrate-enables-mass-literacy"
 name: "Theme Cheap Substrate Enables Mass Literacy"
 status: "stub"
+date-earliest: 100
+dating-basis: B5
+dating-basis-source: "\"Bloom, J. 2001 *Paper before Print*. Yale\""
+dating-basis-notes: "Paper enables mass literacy: Han China c. 100 CE invention; Islamic adoption 750; European 1100s."
 ---
 
 # Theme Cheap Substrate Enables Mass Literacy

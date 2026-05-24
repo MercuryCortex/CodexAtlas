@@ -22,6 +22,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, iconography, aniconism, iconoclasm, byzantine, islamic, jewish, reformation]
+date-earliest: -700
+dating-basis: B5
+dating-basis-source: "\"Mettinger, T. 1995 *No Graven Image?* Almqvist & Wiksell\""
+dating-basis-notes: "Iconoclasm/aniconism: Israelite c. -700 (Hosea); Byzantine 8th-9th c.; Islamic 7th c.; Reformation 1517."
 ---
 
 # Iconography and Aniconism

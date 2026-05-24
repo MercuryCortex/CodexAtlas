@@ -41,6 +41,10 @@ cross-tradition-edges:
   - target: soul-immortality
     type: sibling
     note: Soul-immortality (the soul survives bodily death) and reincarnation (the soul re-enters a new body) are logically distinct but practically linked claims. All reincarnation doctrines require soul-immortality; the Pythagorean-Platonic tradition holds both. Early Buddhism holds reincarnation but denies a permanent soul (anatta) — transmigration without a transmigrating self.
+date-earliest: -700
+dating-basis: B4
+dating-basis-source: "\"Olivelle, P. 1996 *Upanisads*\""
+dating-basis-notes: "Reincarnation in Brihadaranyaka 4.4 c. -700; Pythagorean -530; Platonic *Phaedo* c. -380."
 ---
 
 # Reincarnation

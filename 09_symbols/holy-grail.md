@@ -37,6 +37,10 @@ related-themes:
   - "[[soul-immortality]]"
 date-range: "c. 1190 CE–present (literary tradition); Celtic antecedents pre-date written record"
 geographic-focus: France; Britain; Western Europe
+date-earliest: 1190
+dating-basis: B1
+dating-basis-source: "\"Loomis, R.S. 1963 *The Grail*\""
+dating-basis-notes: "First textual: Chrétien c. 1190."
 ---
 
 # Holy Grail (Graal / Gradalis)

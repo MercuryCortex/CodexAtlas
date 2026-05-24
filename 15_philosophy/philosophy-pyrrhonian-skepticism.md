@@ -24,6 +24,9 @@ cross-music-edges:
   - target: music-tibetan-sound-cosmology
     type: parallel-form
     note: Dzogchen's "natural sound of dharmata" (chos nyid rang sgra) — the resonance that arises when conceptual grasping is suspended — is the acoustic expression of the same suspension that Pyrrhonian epoché achieves. Both traditions report that releasing fixed positions does not produce nothing; it produces a clarity-peace that was always there beneath the noise of asserting. Pyrrhonism reaches ataraxia by suspending judgment; Dzogchen reaches the natural sound by suspending the grasping mind. The parallel is mediated through their shared structural ancestor (early Buddhist practice in Gandhara, the same region where Pyrrho encountered Indian philosophers), which makes this a convergence with a plausible common root.
+dating-basis: B5
+dating-basis-source: "\"Bett, R. 2010 *The Cambridge Companion to Ancient Scepticism*. Cambridge\""
+dating-basis-notes: "Pyrrho of Elis c. -360 to -270; school revived Aenesidemus c. -50."
 ---
 
 Pyrrhonian Skepticism is the philosophical tradition founded by [[pyrrho-of-elis]] (c. 360–270 BCE) and revived systematically by Sextus Empiricus (c. 160–210 CE) in the *Outlines of Pyrrhonism* (*Pyrrhoneioi Hypotyposeis*). Its defining method is **epoché** (ἐποχή — suspension of judgment on all questions where the evidence for and against is equipollent), and its claimed psychological fruit is **ataraxia** (ἀταραξία — tranquility, undisturbedness). Unlike Academic skepticism (which held the negative thesis "knowledge is impossible"), Pyrrhonism suspends judgment even on the impossibility of knowledge — it makes no claims at all, including negative ones.

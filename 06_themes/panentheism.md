@@ -22,6 +22,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, panentheism, immanence, transcendence, process, cusa, eckhart]
+date-earliest: 1828
+dating-basis: B5
+dating-basis-source: "\"Cooper, J. 2006 *Panentheism: The Other God of the Philosophers*. Baker\""
+dating-basis-notes: "Term coined Krause 1828; Eckhart, Cusanus, Whitehead precursors."
 ---
 
 # Panentheism (All-in-God)

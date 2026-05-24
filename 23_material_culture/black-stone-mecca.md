@@ -3,6 +3,10 @@ type: relic
 id: "black-stone-mecca"
 name: "Black Stone Mecca"
 status: "stub"
+date-earliest: -400
+dating-basis: B5
+dating-basis-source: "\"Hoyland, R. 2001 *Arabia and the Arabs*\""
+dating-basis-notes: "Hajar al-Aswad pre-Islamic Hijaz cult c. -400; Islamic incorporation 630."
 ---
 
 # Black Stone Mecca

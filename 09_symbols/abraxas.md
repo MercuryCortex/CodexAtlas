@@ -31,6 +31,10 @@ related-themes:
   - "[[alchemy-as-spiritual-discipline]]"
 date-range: "c. 125 CE–modern"
 geographic-focus: Alexandria, Egypt; Greco-Roman world
+date-earliest: 100
+dating-basis: B3
+dating-basis-source: "\"Pearson, B. 1990 *Gnosticism, Judaism, and Egyptian Christianity*\""
+dating-basis-notes: "Abraxas Basilidean Gnostic c. 100-150; magical amulets 2nd-4th c."
 ---
 
 # Abraxas (Abrasax)

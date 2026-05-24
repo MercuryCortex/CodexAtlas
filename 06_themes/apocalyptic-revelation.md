@@ -27,6 +27,10 @@ refs:
     type: "commentary"
     tier: 1
 tags: [theme, eschatology, apocalyptic, revelation, second-temple]
+date-earliest: -165
+dating-basis: B4
+dating-basis-source: "\"Collins, J.J. 1998 *The Apocalyptic Imagination*\""
+dating-basis-notes: "Apocalyptic-revelation genre Daniel c. -165 as terminus ante quem."
 ---
 
 # Apocalyptic Revelation

@@ -116,6 +116,10 @@ refs:
     tier: 1
     notes: "The classic philological treatment of the apkallu's roles across Mesopotamian texts; still cited for the textual base"
 tags: [theme, cross-tradition, transmission, mesopotamian-substrate, gnostic-origins, MASSIVE-WIN, apkallu-watchers, hokmah-sophia, archonic-cosmology, babylonian-exile]
+date-earliest: -540
+dating-basis: B5
+dating-basis-source: "\"Pearson, B. 1990 *Gnosticism, Judaism, and Egyptian Christianity*\""
+dating-basis-notes: "Mesopotamian-Gnostic transmission from Babylonian exile c. -540 onward; mature Gnostic 150."
 ---
 
 # Mesopotamian → Gnostic transmission — the load-bearing chains

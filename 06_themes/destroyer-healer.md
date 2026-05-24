@@ -39,6 +39,9 @@ cross-tradition-edges:
   - target: "sacred-pharmacology"
     type: "pharmacological-expression"
     note: "Every medicine is a poison in the wrong dose: opium relieves pain and kills; willow bark reduces fever and causes gastric bleeding; digitalis strengthens the heart and stops it. The dose-makes-the-poison principle (Paracelsus, 16th c.) is the pharmacological expression of the destroyer-healer archetype."
+dating-basis: B7
+dating-basis-source: "\"Cross-tradition motif (Apollo, Shiva, Sekhmet, Asclepius). Use B7 — abstract pattern with no single origin moment.\""
+dating-basis-notes: "Multiple independent origins; abstract pattern. Keep B7 with notes."
 ---
 
 # The Destroyer-Healer — The Same Force Kills and Cures

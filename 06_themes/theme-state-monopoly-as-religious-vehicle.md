@@ -3,6 +3,9 @@ type: theme
 id: "theme-state-monopoly-as-religious-vehicle"
 name: "Theme State Monopoly As Religious Vehicle"
 status: "stub"
+dating-basis: B7
+dating-basis-source: "\"Cross-tradition (Chinese silk, Tyrian purple, frankincense). Pattern not event.\""
+dating-basis-notes: "Pattern. Keep B7."
 ---
 
 # Theme State Monopoly As Religious Vehicle

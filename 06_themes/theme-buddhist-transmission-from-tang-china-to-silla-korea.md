@@ -3,6 +3,10 @@ type: theme
 id: "theme-buddhist-transmission-from-tang-china-to-silla-korea"
 name: "Theme Buddhist Transmission From Tang China To Silla Korea"
 status: "stub"
+date-earliest: 630
+dating-basis: B5
+dating-basis-source: "\"Buswell, R. 1989 *The Formation of Ch'an Ideology*\""
+dating-basis-notes: "Silla pilgrims to Tang Dunhuang c. 630-700."
 ---
 
 # Theme Buddhist Transmission From Tang China To Silla Korea

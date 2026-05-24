@@ -3,6 +3,10 @@ type: theme
 id: "theme-rose-window-as-cosmic-icon"
 name: "Theme Rose Window As Cosmic Icon"
 status: "stub"
+date-earliest: 1150
+dating-basis: B3
+dating-basis-source: "\"von Simson, O. 1956 *The Gothic Cathedral*. Pantheon\""
+dating-basis-notes: "Gothic rose-window Saint-Denis c. 1150; Chartres c. 1200."
 ---
 
 # Theme Rose Window As Cosmic Icon

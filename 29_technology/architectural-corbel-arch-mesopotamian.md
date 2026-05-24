@@ -3,6 +3,10 @@ type: technology
 id: "architectural-corbel-arch-mesopotamian"
 name: "Architectural Corbel Arch Mesopotamian"
 status: "stub"
+date-earliest: -3000
+dating-basis: B3
+dating-basis-source: "\"Pollock, S. 1999 *Ancient Mesopotamia*\""
+dating-basis-notes: "Mesopotamian corbel arch c. -3000."
 ---
 
 # Architectural Corbel Arch Mesopotamian

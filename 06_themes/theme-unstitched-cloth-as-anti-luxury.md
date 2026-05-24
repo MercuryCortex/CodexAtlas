@@ -3,6 +3,9 @@ type: theme
 id: "theme-unstitched-cloth-as-anti-luxury"
 name: "Theme Unstitched Cloth As Anti Luxury"
 status: "stub"
+dating-basis: B7
+dating-basis-source: "\"Cross-tradition (Hindu dhoti, Muslim ihram, Buddhist kasaya). Pattern not event.\""
+dating-basis-notes: "Pattern. Keep B7."
 ---
 
 # Theme Unstitched Cloth As Anti Luxury

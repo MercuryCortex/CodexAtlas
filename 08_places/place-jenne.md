@@ -3,6 +3,10 @@ type: place
 id: "place-jenne"
 name: "Place Jenne"
 status: "stub"
+date-earliest: -250
+dating-basis: B3
+dating-basis-source: "\"McIntosh, R. & S. 1981 *Prehistoric Investigations at Jenne, Mali*. BAR\""
+dating-basis-notes: "Jenne-jeno c. -250 to 1400."
 ---
 
 # Place Jenne

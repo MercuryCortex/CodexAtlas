@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-church-of-the-east"
 name: "Tradition Church of the East"
 status: "stub"
+date-earliest: 410
+dating-basis: B5
+dating-basis-source: "\"Baum, W. & Winkler, D. 2003 *The Church of the East: A Concise History*. Routledge\""
+dating-basis-notes: "Church of the East formal organization at Synod of Seleucia-Ctesiphon 410."
 ---
 
 # Tradition Church of the East

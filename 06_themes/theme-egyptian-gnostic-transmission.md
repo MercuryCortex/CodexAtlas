@@ -126,6 +126,10 @@ refs:
     type: "edited-volume"
     tier: 2
 tags: [theme, cross-tradition, transmission, egyptian-substrate, gnostic-origins, hermetic, MASSIVE-WIN, thoth-hermes, isis-sophia, alexandria, coptic-christianity, imhotep-asklepios]
+date-earliest: 100
+dating-basis: B5
+dating-basis-source: "\"Fowden, G. 1986 *The Egyptian Hermes*\""
+dating-basis-notes: "Alexandrian Egyptian-Gnostic synthesis c. 100-300 (Hermetica, Sethian, Valentinian)."
 ---
 
 # Egyptian → Gnostic transmission — the Alexandrian fusion

@@ -3,6 +3,10 @@ type: document
 id: "nihon-shoki"
 name: "Nihon Shoki"
 status: "stub"
+date-earliest: 720
+dating-basis: B1
+dating-basis-source: "\"Aston, W.G. 1896 *Nihongi*. Kegan Paul\""
+dating-basis-notes: "Compiled 720."
 ---
 
 # Nihon Shoki

@@ -17,6 +17,10 @@ related-exchange-networks: ["[[silk-road-overland]]", "[[abbasid-trade-network]]
 related-sacred-sites: []
 region: "China → Central Asia → Baghdad → al-Andalus → Europe"
 themes: ["[[theme-technology-as-religious-transmission-vehicle]]", "[[theme-cheap-substrate-enables-mass-literacy]]", "[[theme-papermaking-precondition-for-reformation]]"]
+date-earliest: 105
+dating-basis: B1
+dating-basis-source: "\"Bloom, J. 2001 *Paper before Print*\""
+dating-basis-notes: "Cai Lun's papermaking improvement 105 CE; pre-Cai paper sherds Western Han -200."
 ---
 
 # Paper and Papermaking

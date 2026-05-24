@@ -27,6 +27,10 @@ refs:
     type: "chapter"
     tier: 2
 tags: [theme, metaphysics, aristotle, first-mover, theology, scholasticism]
+date-earliest: -340
+dating-basis: B1
+dating-basis-source: "\"Aristotle *Metaphysics* XII (c. -340)\""
+dating-basis-notes: "Aristotle c. -340; Aquinas's Five Ways 1265."
 ---
 
 # Unmoved Mover (Aristotelian)

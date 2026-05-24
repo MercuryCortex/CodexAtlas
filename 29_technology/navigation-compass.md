@@ -17,6 +17,10 @@ related-exchange-networks: ["[[maritime-silk-road]]", "[[indian-ocean-trade]]", 
 related-sacred-sites: []
 region: "China → Indian Ocean → Mediterranean → Atlantic"
 themes: ["[[theme-technology-as-religious-transmission-vehicle]]", "[[theme-divination-tool-becomes-navigation-tool]]", "[[theme-compass-and-age-of-discovery]]"]
+date-earliest: -200
+dating-basis: B1
+dating-basis-source: "\"Needham, J. 1962 *Science and Civilisation in China* vol. 4\""
+dating-basis-notes: "Chinese si nan spoon c. -200 (Han); mariner's compass 11th c.; European c. 1300."
 ---
 
 # Magnetic Compass (South-Pointing Spoon to Mariner's Compass)

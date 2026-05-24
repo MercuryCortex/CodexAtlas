@@ -40,6 +40,9 @@ cross-tradition-edges:
   - target: mathematics-pythagorean-sacred
     type: parallel
     note: Problem 48 of the Rhind Papyrus approximates the area of a circle by computing (8/9 × diameter)² — which gives π ≈ 256/81 ≈ 3.1605. This is the earliest known approximation of π in any documented tradition. The circle-squaring problem — converting circular area to square area — is the Egyptian predecessor of the Greek "quadrature of the circle" problem that occupied Greek mathematics from Pythagoras through Archimedes.
+dating-basis: B1
+dating-basis-source: "\"Robins, G. & Shute, C. 1987 *The Rhind Mathematical Papyrus*. British Museum\""
+dating-basis-notes: "Rhind Papyrus c. -1550 (Ahmes copy of earlier Middle Kingdom)."
 ---
 
 # Rhind Mathematical Papyrus

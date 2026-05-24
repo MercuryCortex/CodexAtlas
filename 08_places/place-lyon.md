@@ -3,6 +3,10 @@ type: place
 id: "place-lyon"
 name: "Place Lyon"
 status: "stub"
+date-earliest: -43
+dating-basis: B1
+dating-basis-source: "\"Pelletier, A. 1997 *Histoire de Lyon des origines à nos jours*. Horvath\""
+dating-basis-notes: "Lugdunum founded by Lucius Munatius Plancus -43."
 ---
 
 # Place Lyon

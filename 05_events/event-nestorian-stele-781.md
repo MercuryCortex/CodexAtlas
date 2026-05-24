@@ -49,6 +49,9 @@ refs:
     type: "primary-translation"
     tier: 3
 tags: [event, christianity, silk-road, china, tang-dynasty, nestorian, stele, transmission, syncretism]
+dating-basis: B1
+dating-basis-source: "\"Pelliot, P. 1996 *L'inscription nestorienne de Si-ngan-fou*. Brepols\""
+dating-basis-notes: "Erected 781."
 ---
 
 # Nestorian Stele — Christianity Arrives in Tang Dynasty China

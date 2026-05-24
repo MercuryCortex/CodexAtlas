@@ -14,6 +14,9 @@ tags:
   - church-of-the-east
   - syriac
   - thomas-christians
+dating-basis: B5
+dating-basis-source: "\"Baum, W. & Winkler, D. 2003 *The Church of the East: A Concise History*\""
+dating-basis-notes: "Nestorian breach at Council of Ephesus 431; Church of the East distinct lineage."
 ---
 
 # Church of the East (Nestorian Christianity)

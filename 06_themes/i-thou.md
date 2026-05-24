@@ -27,6 +27,10 @@ refs:
     type: "primary-source"
     tier: 1
 tags: [theme, dialogical-philosophy, buber, jewish-philosophy, ethics, twentieth-century]
+date-earliest: 1923
+dating-basis: B1
+dating-basis-source: "\"Buber, M. *Ich und Du* (1923)\""
+dating-basis-notes: "Buber 1923."
 ---
 
 # I-Thou (Buber's dialogical philosophy)

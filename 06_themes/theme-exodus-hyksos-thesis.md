@@ -41,6 +41,10 @@ refs:
     tier: 2
     notes: "The first explicit ancient equation of the Hyksos with the Israelites; Josephus reads Manetho as confirming Jewish antiquity in Egypt"
 tags: [theme, exodus, hyksos, egypt, canaan, historiography, phase-2, israel-egypt-link, abraham-moses-gap]
+date-earliest: -1550
+dating-basis: B5
+dating-basis-source: "\"Redford, D. 1992 *Egypt, Canaan, and Israel in Ancient Times*. Princeton\""
+dating-basis-notes: "Hyksos expulsion c. -1550; Exodus-Hyksos thesis Manetho via Josephus c. 94 CE."
 ---
 
 # Exodus-as-Hyksos-Expulsion Thesis

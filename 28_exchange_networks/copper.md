@@ -3,6 +3,10 @@ type: exchange-network
 id: "copper"
 name: "Copper"
 status: "stub"
+date-earliest: -4500
+dating-basis: B3
+dating-basis-source: "\"Roberts, B. & Thornton, C. eds. 2014 *Archaeometallurgy in Global Perspective*. Springer\""
+dating-basis-notes: "Copper metallurgy c. -4500 (Vinča / Anatolia); pre-Bronze."
 ---
 
 # Copper

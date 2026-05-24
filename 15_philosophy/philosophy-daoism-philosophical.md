@@ -31,6 +31,9 @@ cross-music-edges:
   - target: music-creation-by-sound
     type: parallel-form
     note: The Dao De Jing's "The Tao that can be named is not the eternal Tao" places the absolute beyond language — and by extension, beyond music. But the pre-linguistic Dao is described through water and wind metaphors that are inherently acoustic. The Daoist endpoint (wu-wei effortless alignment) is sonically equivalent to John Cage's 4'33" — stop producing sound and hear what was always there.
+dating-basis: B5
+dating-basis-source: "\"Roth, H. 1999 *Original Tao*\""
+dating-basis-notes: "Daodejing c. -300; Zhuangzi c. -300 to -250."
 ---
 
 Philosophical Daoism (*Daojia*) refers to the philosophical systems articulated in the *Dao De Jing* (attributed to Laozi, c. 400–300 BCE) and the *[[phase-2-022-zhuangzi|Zhuangzi]]* (c. 350–250 BCE), distinguished from the later institutionalized religion of Daoism (*Daojiao*). The Dao (道, "Way") is the unnameable source from which all things emerge and to which they return — simultaneously cosmic principle, ethical standard, and the ground of meditative practice.

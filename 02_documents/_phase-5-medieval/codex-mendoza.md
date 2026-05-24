@@ -3,6 +3,10 @@ type: document
 id: "codex-mendoza"
 name: "Codex Mendoza"
 status: "stub"
+date-earliest: 1541
+dating-basis: B1
+dating-basis-source: "\"Berdan, F. & Anawalt, P. eds. 1992 *The Codex Mendoza*. Univ. California\""
+dating-basis-notes: "Composed c. 1541-1542."
 ---
 
 # Codex Mendoza

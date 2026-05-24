@@ -3,6 +3,10 @@ type: place
 id: "place-mogador"
 name: "Place Mogador"
 status: "stub"
+date-earliest: -650
+dating-basis: B3
+dating-basis-source: "\"Markoe, G. 2000 *Phoenicians*\""
+dating-basis-notes: "Mogador (Essaouira) Phoenician outpost c. -650."
 ---
 
 # Place Mogador

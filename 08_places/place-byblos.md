@@ -3,6 +3,10 @@ type: place
 id: "place-byblos"
 name: "Place Byblos"
 status: "stub"
+date-earliest: -3000
+dating-basis: B3
+dating-basis-source: "\"Markoe, G. 2000 *Phoenicians*. Univ. California\""
+dating-basis-notes: "Byblos continuous occupation from c. -5000; Bronze Age c. -3000."
 ---
 
 # Place Byblos

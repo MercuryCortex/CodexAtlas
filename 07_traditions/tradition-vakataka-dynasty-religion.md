@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-vakataka-dynasty-religion"
 name: "Tradition Vakataka Dynasty Religion"
 status: "stub"
+date-earliest: 250
+dating-basis: B5
+dating-basis-source: "\"Bakker, H. 1997 *The Vākāṭakas*. Egbert Forsten\""
+dating-basis-notes: "Vakataka dynasty c. 250-500; Ajanta caves Phase II under Harisena 460s-470s."
 ---
 
 # Tradition Vakataka Dynasty Religion

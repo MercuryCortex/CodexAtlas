@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-dominican-order"
 name: "Tradition Dominican Order"
 status: "stub"
+date-earliest: 1216
+dating-basis: B5
+dating-basis-source: "\"Tugwell, S. 1982 *Early Dominicans*. Paulist\""
+dating-basis-notes: "Dominican Order confirmed by Honorius III 1216."
 ---
 
 # Tradition Dominican Order

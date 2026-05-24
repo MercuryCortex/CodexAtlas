@@ -3,6 +3,10 @@ type: theme
 id: "theme-kuni-yuzuri-transfer-of-the-land"
 name: "Theme Kuni Yuzuri Transfer Of The Land"
 status: "stub"
+date-earliest: 712
+dating-basis: B4
+dating-basis-source: "\"Philippi, D. 1969 *Kojiki*. Univ. Tokyo\""
+dating-basis-notes: "Kuni-yuzuri Kojiki 712; Nihon Shoki 720."
 ---
 
 # Theme Kuni Yuzuri Transfer Of The Land

@@ -39,6 +39,10 @@ refs:
     tier: 1
     notes: "Foundational early-20th-c. survey; partly superseded but still load-bearing for the Giyorgis / Zarʼa Yaʼqob corpus."
 tags: [theme, soteriological, christology, ethiopian, tewahedo, systematic-theology, giyorgis-of-sagla, zara-yaqob, geez]
+date-earliest: 1330
+dating-basis: B5
+dating-basis-source: "\"Kaplan, S. 1984 *The Monastic Holy Man and the Christianization of Early Solomonic Ethiopia*. Steiner\""
+dating-basis-notes: "Ethiopian systematic theology Giyorgis of Sagla c. 1330; Zara Yaqob c. 1450."
 ---
 
 # Ethiopian Systematic Theology

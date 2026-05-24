@@ -21,6 +21,10 @@ refs:
     type: "commentary"
     tier: 1
 tags: [theme, soteriology, atonement, christianity, judaism]
+date-earliest: -540
+dating-basis: B4
+dating-basis-source: "\"Hengel, M. 1981 *The Atonement*. Fortress\""
+dating-basis-notes: "Isaiah 53 vicarious atonement c. -540; Pauline Romans 3:25 c. 57; Anselm *Cur Deus Homo* 1098."
 ---
 
 # Vicarious Atonement

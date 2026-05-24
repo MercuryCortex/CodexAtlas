@@ -27,6 +27,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, sufism, ibn-arabi, akbari, metaphysics, monism, islamic-philosophy]
+date-earliest: 1240
+dating-basis: B5
+dating-basis-source: "\"Chittick, W. 1989 *The Sufi Path of Knowledge*. SUNY\""
+dating-basis-notes: "Ibn Arabi's wahdat al-wujud c. 1240; Akbari school 13th-14th c."
 ---
 
 # Waḥdat al-Wujūd (unity of being)

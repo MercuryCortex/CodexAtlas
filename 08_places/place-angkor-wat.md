@@ -3,6 +3,10 @@ type: place
 id: "place-angkor-wat"
 name: "Place Angkor Wat"
 status: "stub"
+date-earliest: 1113
+dating-basis: B1
+dating-basis-source: "\"Coedès, G. 1968 *The Indianized States of Southeast Asia*\""
+dating-basis-notes: "Built by Suryavarman II 1113-1150."
 ---
 
 # Place Angkor Wat

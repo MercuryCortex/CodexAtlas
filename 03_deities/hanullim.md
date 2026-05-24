@@ -8,6 +8,10 @@ domain: "supreme deity, creator, immanent divine presence"
 attested-in: ["[[phase-7-042-donggyeong-daejeon]]"]
 status: "stub"
 tags: [deity, korean, donghak, cheondogyo, heaven, monotheism, immanence]
+date-earliest: 1860
+dating-basis: B1
+dating-basis-source: "\"Baker, D. 2008 *Korean Spirituality*. Hawaii\""
+dating-basis-notes: "Hanullim in Donghak from 1860 (Choe Je-u); older Korean folk substrate."
 ---
 
 # Hanullim — Lord of Heaven

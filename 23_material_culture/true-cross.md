@@ -3,6 +3,10 @@ type: relic
 id: "true-cross"
 name: "True Cross"
 status: "stub"
+date-earliest: 326
+dating-basis: B5
+dating-basis-source: "\"Borgehammar, S. 1991 *How the Holy Cross Was Found*. Almqvist & Wiksell\""
+dating-basis-notes: "True Cross relic-tradition from Helena's pilgrimage c. 326."
 ---
 
 # True Cross

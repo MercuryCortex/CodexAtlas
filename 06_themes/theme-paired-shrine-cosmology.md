@@ -3,6 +3,9 @@ type: theme
 id: "theme-paired-shrine-cosmology"
 name: "Theme Paired Shrine Cosmology"
 status: "stub"
+dating-basis: B7
+dating-basis-source: "\"Cross-tradition (Ise inner/outer, Shinto miyaza, Egyptian double-shrine). Pattern not event.\""
+dating-basis-notes: "Pattern. Keep B7."
 ---
 
 # Theme Paired Shrine Cosmology

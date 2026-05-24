@@ -3,6 +3,9 @@ type: theme
 id: "theme-circumambulation-as-cosmic-orientation"
 name: "Theme Circumambulation As Cosmic Orientation"
 status: "stub"
+dating-basis: B7
+dating-basis-source: "\"Cross-tradition (Hindu pradakshina, Buddhist parikrama, Hajj tawaf). Pattern not event.\""
+dating-basis-notes: "Pattern. Keep B7."
 ---
 
 # Theme Circumambulation As Cosmic Orientation

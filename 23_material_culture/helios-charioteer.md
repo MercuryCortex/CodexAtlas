@@ -3,6 +3,10 @@ type: relic
 id: "helios-charioteer"
 name: "Helios Charioteer"
 status: "stub"
+date-earliest: -700
+dating-basis: B2
+dating-basis-source: "\"West, M.L. 2007 *Indo-European Poetry and Myth*\""
+dating-basis-notes: "Helios in Homeric Hymns c. -700; Trundholm sun-chariot -1400."
 ---
 
 # Helios Charioteer

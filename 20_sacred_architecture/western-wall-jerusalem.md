@@ -3,6 +3,10 @@ type: sacred-site
 id: "western-wall-jerusalem"
 name: "Western Wall Jerusalem"
 status: "stub"
+date-earliest: -19
+dating-basis: B3
+dating-basis-source: "\"Magness, J. 2012 *The Archaeology of the Holy Land*. Cambridge\""
+dating-basis-notes: "Herodian retaining wall c. -19 (Herod's Second Temple expansion)."
 ---
 
 # Western Wall Jerusalem

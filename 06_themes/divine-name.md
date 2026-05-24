@@ -27,6 +27,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, divine-name, tetragrammaton, kabbalah, dhikr, mantra, magical-name]
+date-earliest: -1200
+dating-basis: B2
+dating-basis-source: "\"Mettinger, T. 1988 *In Search of God*. Fortress\""
+dating-basis-notes: "Tetragrammaton attested earliest in Mesha Stele c. -840; Israelite use c. -1200 inscriptions."
 ---
 
 # Divine Name

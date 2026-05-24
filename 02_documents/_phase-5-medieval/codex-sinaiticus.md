@@ -3,6 +3,10 @@ type: document
 id: "codex-sinaiticus"
 name: "Codex Sinaiticus"
 status: "stub"
+date-earliest: 340
+dating-basis: B1
+dating-basis-source: "\"Parker, D. 2010 *Codex Sinaiticus*. British Library\""
+dating-basis-notes: "Codex Sinaiticus c. 330-360."
 ---
 
 # Codex Sinaiticus

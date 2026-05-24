@@ -3,6 +3,10 @@ type: theme
 id: "theme-saffron-as-renunciation"
 name: "Theme Saffron As Renunciation"
 status: "stub"
+date-earliest: -300
+dating-basis: B5
+dating-basis-source: "\"Olivelle, P. 1992 *Samnyasa Upanisads*. OUP\""
+dating-basis-notes: "Saffron renunciate robe Indian samnyasa c. -300; cross-Buddhist/Hindu/Jain."
 ---
 
 # Theme Saffron As Renunciation

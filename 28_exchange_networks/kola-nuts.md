@@ -3,6 +3,10 @@ type: exchange-network
 id: "kola-nuts"
 name: "Kola Nuts"
 status: "stub"
+date-earliest: 1000
+dating-basis: B5
+dating-basis-source: "\"Lovejoy, P. 1980 *Caravans of Kola*\""
+dating-basis-notes: "Kola-nut trade West African c. 1000-1900."
 ---
 
 # Kola Nuts

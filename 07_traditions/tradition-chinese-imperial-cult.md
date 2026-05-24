@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-chinese-imperial-cult"
 name: "Tradition Chinese Imperial Cult"
 status: "stub"
+date-earliest: -221
+dating-basis: B5
+dating-basis-source: "\"Lewis, M.E. 2007 *The Early Chinese Empires: Qin and Han*. Harvard\""
+dating-basis-notes: "Imperial cult institutionalized at Qin unification -221; precursors in Western Zhou."
 ---
 
 # Tradition Chinese Imperial Cult

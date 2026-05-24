@@ -45,6 +45,10 @@ refs:
     tier: 3
     notes: "Tier 3 — useful for reception-history but not load-bearing for primary claims."
 tags: [theme, grail, sacred-vessel, quest, templar, celtic, christian, eucharist, arthurian, parzival, wolfram, chrétien, eschatological, sacred-quest]
+date-earliest: 1190
+dating-basis: B1
+dating-basis-source: "\"Loomis, R.S. 1963 *The Grail*. Princeton\""
+dating-basis-notes: "First textual: Chrétien de Troyes *Perceval* c. 1180-1191; pre-Christian Celtic vessel-of-abundance B5 ancestor."
 ---
 
 # Holy Grail (Sacred Vessel / Object of Divine Quest)

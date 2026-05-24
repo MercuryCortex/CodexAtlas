@@ -3,6 +3,10 @@ type: document
 id: "document-ezekiel"
 name: "Document Ezekiel"
 status: "stub"
+date-earliest: -580
+dating-basis: B4
+dating-basis-source: "\"Greenberg, M. 1983 *Ezekiel 1-20*. Anchor Bible\""
+dating-basis-notes: "Ezekiel c. -593 to -571 (prophetic activity); editorial closure c. -540."
 ---
 
 # Document Ezekiel

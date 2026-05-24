@@ -3,6 +3,10 @@ type: document
 id: "document-1-kings"
 name: "Document 1 Kings"
 status: "stub"
+date-earliest: -540
+dating-basis: B4
+dating-basis-source: "\"Friedman, R.E. 1987 *Who Wrote the Bible?*\""
+dating-basis-notes: "Deuteronomistic History redacted c. -620 to -540."
 ---
 
 # Document 1 Kings

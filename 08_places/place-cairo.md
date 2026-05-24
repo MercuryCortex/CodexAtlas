@@ -3,6 +3,10 @@ type: place
 id: "place-cairo"
 name: "Place Cairo"
 status: "stub"
+date-earliest: 969
+dating-basis: B1
+dating-basis-source: "\"Petry, C. ed. 1998 *The Cambridge History of Egypt* vol. 1. Cambridge\""
+dating-basis-notes: "Al-Qahira founded 969 by Fatimids; predecessor Fustat 641."
 ---
 
 # Place Cairo

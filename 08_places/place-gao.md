@@ -3,6 +3,10 @@ type: place
 id: "place-gao"
 name: "Place Gao"
 status: "stub"
+date-earliest: 700
+dating-basis: B3
+dating-basis-source: "\"Levtzion, N. 1973 *Ancient Ghana and Mali*. Methuen\""
+dating-basis-notes: "Gao Songhai capital from c. 700; Islamized c. 1000."
 ---
 
 # Place Gao

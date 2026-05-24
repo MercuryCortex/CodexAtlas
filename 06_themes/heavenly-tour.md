@@ -27,6 +27,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, apocalyptic, enoch, merkavah, ascent-mysticism]
+date-earliest: -200
+dating-basis: B4
+dating-basis-source: "\"Himmelfarb, M. 1993 *Ascent to Heaven*\""
+dating-basis-notes: "Apocalyptic heavenly tour 1 Enoch 1-36 c. -200; 2 Enoch c. 50 CE; Apocalypse of Paul."
 ---
 
 # Heavenly Tour

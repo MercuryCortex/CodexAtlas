@@ -3,6 +3,10 @@ type: theme
 id: "theme-round-heaven-square-earth"
 name: "Theme Round Heaven Square Earth"
 status: "stub"
+date-earliest: -200
+dating-basis: B4
+dating-basis-source: "\"Lewis, M.E. 1999 *Writing and Authority in Early China*. SUNY\""
+dating-basis-notes: "Chinese tianyuan-difang cosmology Han c. -200; Mingtang and Temple of Heaven later."
 ---
 
 # Theme Round Heaven Square Earth

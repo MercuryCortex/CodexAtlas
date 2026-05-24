@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-korean-folk-religion"
 name: "Tradition Korean Folk Religion"
 status: "stub"
+date-earliest: -100
+dating-basis: B5
+dating-basis-source: "\"Walraven, B. 1993 'Religion and the City: Seoul in the Nineteenth Century' *Review of Korean Studies* \""
+dating-basis-notes: "Korean folk-religion (mu shamanism) continuity from proto-historic Three Kingdoms substrate."
 ---
 
 # Tradition Korean Folk Religion

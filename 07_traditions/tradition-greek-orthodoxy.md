@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-greek-orthodoxy"
 name: "Tradition Greek Orthodoxy"
 status: "stub"
+date-earliest: 1054
+dating-basis: B5
+dating-basis-source: "\"Runciman, S. 1955 *The Eastern Schism*. Clarendon\""
+dating-basis-notes: "Great Schism formalizes Greek/Latin separation 1054; ecclesial continuity Byzantine."
 ---
 
 # Tradition Greek Orthodoxy

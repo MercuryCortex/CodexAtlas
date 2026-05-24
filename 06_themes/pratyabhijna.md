@@ -28,6 +28,10 @@ refs:
     type: "monograph"
     tier: 2
 tags: [theme, pratyabhijna, recognition, liberation, kashmir-shaivism, non-dual, gnosis, cross-tradition, consciousness]
+date-earliest: 950
+dating-basis: B5
+dating-basis-source: "\"Sanderson, A. 2009 'The Saiva Age'\""
+dating-basis-notes: "Pratyabhijna of Kashmir Shaivism: Somananda *Sivadrsti* c. 925; Utpaladeva *Isvarapratyabhijna* c. 950."
 ---
 
 # Pratyabhijñā (Recognition-Liberation)

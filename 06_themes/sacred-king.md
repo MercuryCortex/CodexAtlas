@@ -27,6 +27,10 @@ refs:
     type: "edited-volume"
     tier: 1
 tags: [theme, kingship, ancient-near-east, ritual, frazer]
+date-earliest: -3100
+dating-basis: B3
+dating-basis-source: "\"Frankfort, H. 1948 *Kingship and the Gods*\""
+dating-basis-notes: "Cross-tradition. Egyptian Narmer c. -3100; Mesopotamian Uruk -3500; Frazer 1890 modern category."
 ---
 
 # Sacred King

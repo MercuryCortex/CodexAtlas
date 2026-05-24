@@ -3,6 +3,10 @@ type: doctrine
 id: "doctrine-mass-literacy-as-religious-prerequisite"
 name: "Doctrine Mass Literacy As Religious Prerequisite"
 status: "stub"
+date-earliest: 1517
+dating-basis: B5
+dating-basis-source: "\"Eisenstein, E. 1979 *The Printing Press as an Agent of Change*\""
+dating-basis-notes: "Reformation sola scriptura requires mass literacy; print 1455 enables; Luther 1517."
 ---
 
 # Doctrine Mass Literacy As Religious Prerequisite

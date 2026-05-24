@@ -21,6 +21,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, gnosticism, manichaeism, world-rejection]
+date-earliest: 150
+dating-basis: B5
+dating-basis-source: "\"Jonas, H. 1958 *The Gnostic Religion*\""
+dating-basis-notes: "Anticosmic dualism in Gnostic and Manichaean traditions c. 150-300."
 ---
 
 # Anticosmic

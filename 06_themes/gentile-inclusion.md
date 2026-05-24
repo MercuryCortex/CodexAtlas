@@ -27,6 +27,10 @@ refs:
     type: "edited-volume"
     tier: 1
 tags: [theme, paul, christianity, judaism, mission]
+date-earliest: 50
+dating-basis: B4
+dating-basis-source: "\"Sanders, E.P. 1983 *Paul, the Law, and the Jewish People*. Fortress\""
+dating-basis-notes: "Pauline gentile-inclusion Galatians c. 50."
 ---
 
 # Gentile Inclusion

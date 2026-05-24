@@ -3,6 +3,10 @@ type: exchange-network
 id: "horses-ferghana"
 name: "Horses Ferghana"
 status: "stub"
+date-earliest: -200
+dating-basis: B3
+dating-basis-source: "\"Lewis, M.E. 2007 *The Early Chinese Empires*\""
+dating-basis-notes: "Ferghana horses Han imports from c. -200 (Zhang Qian)."
 ---
 
 # Horses Ferghana

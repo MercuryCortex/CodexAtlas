@@ -34,6 +34,9 @@ cross-music-edges:
   - target: music-chaldean-oracles-sound
     type: parent-of
     note: The Chaldean Oracles are Iamblichus's primary theurgic text; their description of the iynx (whirling sound-fire mediating between Father and cosmos) is the sonic engine of the Neoplatonic emanation schema made ritually actionable.
+dating-basis: B5
+dating-basis-source: "\"Wallis, R. 1972 *Neoplatonism*\""
+dating-basis-notes: "Plotinus *Enneads* c. 250; Porphyry c. 270; Iamblichus c. 280."
 ---
 
 Neoplatonism is the philosophical system formalized by [[plotinus]] (204–270 CE) in the *[[phase-4-019-plotinus-enneads|Enneads]]*, systematized by [[porphyry]], extended liturgically by [[iamblichus]], and brought to full scholastic completion by [[proclus]]. Its central structure is a descending emanation of being from a single, ineffable absolute — **The One** ([[the-one-plotinus]]) — through Nous (divine Intellect), through World Soul, into Matter. The reverse movement — the soul's ascent through contemplation back toward The One — is the framework's ethical and soteriological core.

@@ -3,6 +3,10 @@ type: exchange-network
 id: "pearls"
 name: "Pearls"
 status: "stub"
+date-earliest: -2500
+dating-basis: B3
+dating-basis-source: "\"Donkin, R. 1998 *Beyond Price: Pearls and Pearl-Fishing*. American Philosophical Society\""
+dating-basis-notes: "Pearl trade Persian Gulf c. -2500."
 ---
 
 # Pearls

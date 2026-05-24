@@ -21,6 +21,10 @@ refs:
     type: "monograph"
     tier: 3
 tags: [theme, authority, magisterium, reformation, apostolic-succession]
+date-earliest: 95
+dating-basis: B4
+dating-basis-source: "\"Sullivan, F. 2001 *From Apostles to Bishops*. Newman\""
+dating-basis-notes: "Ecclesial authority motif 1 Clement c. 95 CE; episcopal monepiscopacy Ignatius c. 110."
 ---
 
 # Ecclesial Authority

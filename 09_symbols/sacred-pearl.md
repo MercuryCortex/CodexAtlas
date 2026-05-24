@@ -40,6 +40,10 @@ related-themes:
   - "[[resurrection-of-the-dead]]"
 date-range: "c. 200 CE (*Acts of Thomas*) to present; Chinese dragon-pearl tradition: pre-Han dynasty"
 geographic-focus: Syria/Edessa (Gnostic); China (dragon-pearl); Arabia/Islamic world; India
+date-earliest: 200
+dating-basis: B5
+dating-basis-source: "\"Layton, B. 1987 *The Gnostic Scriptures*. Doubleday\""
+dating-basis-notes: "Hymn of the Pearl (Acts of Thomas) c. 200; Chinese dragon-pearl Tang."
 ---
 
 # Sacred Pearl (Lóng Zhū / Lulu / Mani)

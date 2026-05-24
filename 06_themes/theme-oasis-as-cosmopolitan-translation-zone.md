@@ -3,6 +3,9 @@ type: theme
 id: "theme-oasis-as-cosmopolitan-translation-zone"
 name: "Theme Oasis As Cosmopolitan Translation Zone"
 status: "stub"
+dating-basis: B7
+dating-basis-source: "\"Cross-tradition (Dunhuang, Bukhara, Merv, Sijilmasa). Pattern not event.\""
+dating-basis-notes: "Pattern. Keep B7."
 ---
 
 # Theme Oasis As Cosmopolitan Translation Zone

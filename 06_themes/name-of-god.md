@@ -22,6 +22,10 @@ refs:
     type: "monograph"
     tier: 2
 tags: [theme, divine-name, tetragrammaton, jewish, christian, islamic, kabbalistic]
+date-earliest: -840
+dating-basis: B2
+dating-basis-source: "\"Mettinger, T. 1988 *In Search of God*\""
+dating-basis-notes: "Tetragrammaton Mesha Stele -840; Hebrew Bible composition older oral."
 ---
 
 # Name of God

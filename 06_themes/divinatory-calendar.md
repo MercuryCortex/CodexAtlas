@@ -64,6 +64,10 @@ refs:
     tier: 2
     notes: "Reception-history of the I Ching and the broader Chinese divinatory-calendrical tradition."
 tags: [theme, divination, calendar, cross-tradition, mesopotamian, mesoamerican, chinese, hemerology, tzolkin, tonalpohualli]
+date-earliest: -2000
+dating-basis: B2
+dating-basis-source: "\"Brown, D. 2000 *Mesopotamian Planetary Astronomy-Astrology*. Styx\""
+dating-basis-notes: "Enuma Anu Enlil c. -1500 OB recension (older oral); Mesoamerican Tzolkin c. -600. Anchor at Old Babylonian -2000."
 ---
 
 # Divinatory Calendar

@@ -51,6 +51,10 @@ refs:
     type: "primary-source"
     tier: 1
 tags: [theme, eleusinian, mystery-cult, hierophant, kykeon, revelation, christianity-mystery-overlap]
+date-earliest: -1450
+dating-basis: B3
+dating-basis-source: "\"Mylonas, G. 1961 *Eleusis and the Eleusinian Mysteries*. Princeton\""
+dating-basis-notes: "Eleusis Mycenaean substrate c. -1450; classical Mysteries c. -700."
 ---
 
 # Eleusinian Mystery Revelation

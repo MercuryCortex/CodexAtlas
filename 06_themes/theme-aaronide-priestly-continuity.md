@@ -45,6 +45,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, priesthood, aaronide, zadokite, priestly-lineage, dead-sea-scrolls, qumran, cohanim, cohen, genetics, temple, leontopolis, second-temple, sadducees, essenes]
+date-earliest: -540
+dating-basis: B4
+dating-basis-source: "\"Friedman, R.E. 1987 *Who Wrote the Bible?*\""
+dating-basis-notes: "Aaronide-Zadokite priesthood texts: Priestly source c. -540; Qumran sectarian texts c. -150; archaeological cohanim Y-chromosome studies modern."
 ---
 
 # Aaronide-Zadokite Priestly Continuity

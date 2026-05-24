@@ -3,6 +3,10 @@ type: document
 id: "bagan-stone-inscriptions"
 name: "Bagan Stone Inscriptions"
 status: "stub"
+date-earliest: 1057
+dating-basis: B3
+dating-basis-source: "\"Aung-Thwin, M. 1985 *Pagan: The Origins of Modern Burma*. Hawaii\""
+dating-basis-notes: "Bagan inscriptions from Anawrahta 1057."
 ---
 
 # Bagan Stone Inscriptions

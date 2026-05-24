@@ -45,6 +45,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, cosmological, buddhism, foundational, pratityasamutpada, paticcasamuppada, dependent-origination, twelvefold-chain, emptiness, mahdyamaka]
+date-earliest: -460
+dating-basis: B4
+dating-basis-source: "\"Gombrich, R. 2009 *What the Buddha Thought*\""
+dating-basis-notes: "Dependent origination in Pali canon c. -460 (Mahanidana Sutta DN 15)."
 ---
 
 # Pratītyasamutpāda (Dependent Origination)

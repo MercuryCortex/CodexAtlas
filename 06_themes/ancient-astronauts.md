@@ -49,6 +49,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, pseudoarchaeology, T4, alternative-history, ancient-astronauts, von-daniken, sitchin, disclaimer-machine, stub]
+date-earliest: 1968
+dating-basis: B1
+dating-basis-source: "\"von Däniken, E. 1968 *Erinnerungen an die Zukunft*. Econ\""
+dating-basis-notes: "Modern pseudoarchaeology hypothesis from von Däniken 1968; Sitchin's twist 1976. T4 (rejected)."
 ---
 
 # Ancient-astronauts hypothesis

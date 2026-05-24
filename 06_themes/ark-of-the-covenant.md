@@ -60,6 +60,10 @@ refs:
     tier: 4
     notes: "Tier 4 — reception-history. Hancock's investigation of the Ethiopian Ark tradition and the Temple-Mount-to-Templar chain. Ethiopian fieldwork is documented; the Templar connection is inference with no archaeological support."
 tags: [theme, ark, judaism, israelite-cult, holy-of-holies, ethiopia, solomon, templar, freemasonry, sacred-object, shekhinah, kebra-nagast, temple-mount]
+date-earliest: -540
+dating-basis: B4
+dating-basis-source: "\"Friedman, R.E. 1987 *Who Wrote the Bible?* Summit\""
+dating-basis-notes: "Ark first textual: Priestly source Exodus 25 c. -540 redaction; historical Solomonic ark c. -950 not archaeologically attested."
 ---
 
 # Ark of the Covenant

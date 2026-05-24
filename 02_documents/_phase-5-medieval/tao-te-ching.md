@@ -3,6 +3,10 @@ type: document
 id: "tao-te-ching"
 name: "Tao Te Ching"
 status: "stub"
+date-earliest: -300
+dating-basis: B1
+dating-basis-source: "\"Roth, H. 1999 *Original Tao*. Columbia\""
+dating-basis-notes: "Daodejing core compilation c. -300 (Roth); Guodian fragments c. -300."
 ---
 
 # Tao Te Ching

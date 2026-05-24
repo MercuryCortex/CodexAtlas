@@ -36,6 +36,9 @@ cross-tradition-edges:
   - target: mathematics-zero-india
     type: parallel
     note: The Jiuzhang includes negative numbers (Chapter 8) — treated as debts, opposite to assets. This is the first documented use of negative numbers in any mathematical tradition. India's treatment of zero (Brahmagupta, 628 CE) and China's treatment of negative numbers are parallel steps in the same cognitive development: extending number systems to include operations that have no physical magnitude counterpart. Both emerged from accounting/administrative contexts.
+dating-basis: B1
+dating-basis-source: "\"Lewis, M.E. 1999 *Writing and Authority in Early China*\""
+dating-basis-notes: "Jiuzhang Suanshu c. -100 to 100 (Han compilation)."
 ---
 
 # Jiuzhang Suanshu — Nine Chapters on the Mathematical Art

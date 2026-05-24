@@ -109,6 +109,10 @@ refs:
     type: "primary-translation"
     tier: 2
 tags: [theme, non-duality, advaita, sufism, mahayana, neoplatonism, mysticism, MASSIVE-WIN, eckhart, ibn-arabi, shankara, dao]
+date-earliest: -700
+dating-basis: B4
+dating-basis-source: "\"Olivelle, P. 1996 *Upanisads*\""
+dating-basis-notes: "Advaita non-duality Chandogya 6.8.7 (tat tvam asi) c. -700; Mahayana sunyata Nagarjuna 150; Daoist Zhuangzi c. -300."
 ---
 
 # Non-duality

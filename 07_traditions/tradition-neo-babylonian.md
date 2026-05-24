@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-neo-babylonian"
 name: "Tradition Neo Babylonian"
 status: "stub"
+date-earliest: -626
+dating-basis: B5
+dating-basis-source: "\"Beaulieu, P.-A. 2018 *A History of Babylon*. Wiley\""
+dating-basis-notes: "Neo-Babylonian empire -626 to -539; Nabopolassar founding."
 ---
 
 # Tradition Neo Babylonian

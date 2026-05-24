@@ -3,6 +3,10 @@ type: theme
 id: "theme-relic-veneration-as-architectural-programme"
 name: "Theme Relic Veneration As Architectural Programme"
 status: "stub"
+date-earliest: 400
+dating-basis: B5
+dating-basis-source: "\"Brown, P. 1981 *The Cult of the Saints*\""
+dating-basis-notes: "Relic veneration shapes Christian basilica c. 400+ (martyrium, ambulatory)."
 ---
 
 # Theme Relic Veneration As Architectural Programme

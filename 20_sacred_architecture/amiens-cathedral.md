@@ -3,6 +3,10 @@ type: sacred-site
 id: "amiens-cathedral"
 name: "Amiens Cathedral"
 status: "stub"
+date-earliest: 1220
+dating-basis: B1
+dating-basis-source: "\"Murray, S. 1996 *Notre-Dame, Cathedral of Amiens*. Cambridge\""
+dating-basis-notes: "Construction 1220-1270 under Robert de Luzarches."
 ---
 
 # Amiens Cathedral

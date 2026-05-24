@@ -3,6 +3,10 @@ type: theme
 id: "theme-jataka-tales-as-buddhist-curriculum"
 name: "Theme Jataka Tales As Buddhist Curriculum"
 status: "stub"
+date-earliest: -300
+dating-basis: B4
+dating-basis-source: "\"Appleton, N. 2010 *Jataka Stories in Theravada Buddhism*. Ashgate\""
+dating-basis-notes: "Jataka canonical strata c. -300 to 100 CE."
 ---
 
 # Theme Jataka Tales As Buddhist Curriculum

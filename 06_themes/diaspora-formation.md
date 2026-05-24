@@ -19,6 +19,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, diaspora, exile, dispersal, jewish, sephardic, identity, cross-tradition]
+date-earliest: -722
+dating-basis: B5
+dating-basis-source: "\"Mendels, D. 1992 *The Rise and Fall of Jewish Nationalism*. Doubleday\""
+dating-basis-notes: "Cross-tradition; first major diaspora pattern: Israelite c. -722 / -586; Greek apoikia c. -700."
 ---
 
 # Diaspora Formation

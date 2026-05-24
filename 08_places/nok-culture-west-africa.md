@@ -3,6 +3,10 @@ type: place
 id: "nok-culture-west-africa"
 name: "Nok Culture West Africa"
 status: "stub"
+date-earliest: -1500
+dating-basis: B3
+dating-basis-source: "\"Breunig, P. ed. 2014 *Nok: African Sculpture in Archaeological Context*. Africa Magna\""
+dating-basis-notes: "Nok culture c. -1500 to 500 CE."
 ---
 
 # Nok Culture West Africa

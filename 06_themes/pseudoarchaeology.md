@@ -56,6 +56,10 @@ refs:
     tier: 1
     notes: "Foundational 1962 critique of Atlantis-Mu-Lost-Tribes diffusionism in Americanist archaeology"
 tags: [theme, pseudoarchaeology, fringe-archaeology, atlantis, lost-continent, hyperdiffusionism, modern-scholarly-category, controversial]
+date-earliest: 1882
+dating-basis: B5
+dating-basis-source: "\"Williams, S. 1991 *Fantastic Archaeology*. Univ. Pennsylvania\""
+dating-basis-notes: "Modern category from Ignatius Donnelly *Atlantis* 1882; discipline-formalized 1960s."
 ---
 
 # Pseudoarchaeology

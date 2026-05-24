@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-mon-buddhism"
 name: "Tradition Mon Buddhism"
 status: "stub"
+date-earliest: 450
+dating-basis: B5
+dating-basis-source: "\"Aung-Thwin, M. 2005 *The Mists of Rāmañña*. Hawaii\""
+dating-basis-notes: "Mon Theravada Buddhism c. 450 CE Dvaravati polity."
 ---
 
 # Tradition Mon Buddhism

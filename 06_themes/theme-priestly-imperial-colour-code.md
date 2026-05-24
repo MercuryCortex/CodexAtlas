@@ -3,6 +3,10 @@ type: theme
 id: "theme-priestly-imperial-colour-code"
 name: "Theme Priestly Imperial Colour Code"
 status: "stub"
+date-earliest: -2000
+dating-basis: B5
+dating-basis-source: "\"Pastoureau, M. 2008 *Black: The History of a Color*. Princeton\""
+dating-basis-notes: "Tyrian purple imperial monopoly Phoenician c. -1500 to Byzantine 1453."
 ---
 
 # Theme Priestly Imperial Colour Code

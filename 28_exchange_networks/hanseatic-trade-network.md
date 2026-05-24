@@ -3,6 +3,10 @@ type: exchange-network
 id: "hanseatic-trade-network"
 name: "Hanseatic Trade Network"
 status: "stub"
+date-earliest: 1158
+dating-basis: B5
+dating-basis-source: "\"Dollinger, P. 1970 *The German Hansa*. Macmillan\""
+dating-basis-notes: "Hanseatic League c. 1158 (Lübeck); formal 1356."
 ---
 
 # Hanseatic Trade Network

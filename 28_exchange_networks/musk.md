@@ -3,6 +3,10 @@ type: exchange-network
 id: "musk"
 name: "Musk"
 status: "stub"
+date-earliest: -100
+dating-basis: B3
+dating-basis-source: "\"King, A. 2017 *Scent from the Garden of Paradise*. Brill\""
+dating-basis-notes: "Musk Tibetan deer source; Sasanian Persian trade c. 200 CE; pre-Islamic Arabian."
 ---
 
 # Musk

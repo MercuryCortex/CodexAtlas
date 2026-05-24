@@ -3,6 +3,10 @@ type: exchange-network
 id: "ivory"
 name: "Ivory"
 status: "stub"
+date-earliest: -30000
+dating-basis: B3
+dating-basis-source: "\"White, R. 2017 *Mammoth Ivory* in Cunliffe ed. *Prehistoric Europe*. OUP\""
+dating-basis-notes: "Ivory carving Aurignacian c. -30000; trade-commodity status Phoenician c. -1000."
 ---
 
 # Ivory

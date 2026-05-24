@@ -3,6 +3,10 @@ type: event
 id: "event-inti-raymi-festival"
 name: "Event Inti Raymi Festival"
 status: "stub"
+date-earliest: 1430
+dating-basis: B5
+dating-basis-source: "\"D'Altroy, T. 2002 *The Incas*\""
+dating-basis-notes: "Inti Raymi as imperial festival from Pachacuti c. 1430; modern revival 1944."
 ---
 
 # Event Inti Raymi Festival

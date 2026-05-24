@@ -3,6 +3,10 @@ type: exchange-network
 id: "exchange-network-arab-mariners"
 name: "Exchange Network Arab Mariners"
 status: "stub"
+date-earliest: 630
+dating-basis: B5
+dating-basis-source: "\"Hourani, G. 1995 *Arab Seafaring* expanded ed. Princeton\""
+dating-basis-notes: "Arab maritime network from 7th c. (Islamic expansion); pre-Islamic substrate."
 ---
 
 # Exchange Network Arab Mariners

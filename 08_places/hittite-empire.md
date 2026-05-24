@@ -3,6 +3,10 @@ type: place
 id: "hittite-empire"
 name: "Hittite Empire"
 status: "stub"
+date-earliest: -1650
+dating-basis: B5
+dating-basis-source: "\"Bryce, T. 2005 *The Kingdom of the Hittites*\""
+dating-basis-notes: "Hittite Empire c. -1650 to -1180."
 ---
 
 # Hittite Empire

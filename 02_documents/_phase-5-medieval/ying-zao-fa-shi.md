@@ -3,6 +3,10 @@ type: document
 id: "ying-zao-fa-shi"
 name: "Ying Zao Fa Shi"
 status: "stub"
+date-earliest: 1103
+dating-basis: B1
+dating-basis-source: "\"Demieville, P. 1925 'Que Sais-je de l'Architecture Chinoise' *BEFEO* 25\""
+dating-basis-notes: "Compiled by Li Jie 1103 (Song architectural treatise)."
 ---
 
 # Ying Zao Fa Shi

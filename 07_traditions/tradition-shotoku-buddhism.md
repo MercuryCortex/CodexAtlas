@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-shotoku-buddhism"
 name: "Tradition Shotoku Buddhism"
 status: "stub"
+date-earliest: 574
+dating-basis: B5
+dating-basis-source: "\"Como, M. 2008 *Shōtoku: Ethnicity, Ritual, and Violence in the Japanese Buddhist Tradition*. OUP\""
+dating-basis-notes: "Shōtoku Taishi (574-622); Hōryū-ji 607; period-figure for early Asuka Buddhism."
 ---
 
 # Tradition Shotoku Buddhism

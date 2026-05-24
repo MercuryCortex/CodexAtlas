@@ -3,6 +3,10 @@ type: deity
 id: "tagitsu-hime"
 name: "Tagitsu Hime"
 status: "stub"
+date-earliest: 712
+dating-basis: B4
+dating-basis-source: "\"Philippi, D. 1969 *Kojiki*\""
+dating-basis-notes: "Munakata triad Kojiki 712."
 ---
 
 # Tagitsu Hime

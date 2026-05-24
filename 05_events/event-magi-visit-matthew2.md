@@ -48,6 +48,9 @@ refs:
     type: "monograph"
     tier: 2
 tags: [event, christianity, zoroastrianism, astrology, magi, epiphany, MASSIVE-WIN, cross-tradition, matthew, nativity, persia, babylon]
+dating-basis: B1
+dating-basis-source: "\"Brown, R.E. 1993 *The Birth of the Messiah*\""
+dating-basis-notes: "Matthean nativity narrative c. 85 CE."
 ---
 
 # The Visit of the Magi (Matthew 2)

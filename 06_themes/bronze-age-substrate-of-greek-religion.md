@@ -58,6 +58,10 @@ refs:
     tier: 1
     notes: "Argues for continuous Aegean-Anatolian poetic-religious transmission from the Late Bronze Age into the Archaic Greek epic tradition."
 tags: [theme, historiography, mycenaean, linear-b, greek-religion, bronze-age, continuity-question]
+date-earliest: -1450
+dating-basis: B5
+dating-basis-source: "\"Burkert, W. 1985 *Greek Religion*\""
+dating-basis-notes: "Mycenaean Bronze Age substrate documented Linear B tablets c. -1450 to -1200."
 ---
 
 # Bronze Age Substrate of Greek Religion

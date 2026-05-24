@@ -3,6 +3,10 @@ type: place
 id: "place-borobudur"
 name: "Place Borobudur"
 status: "stub"
+date-earliest: 780
+dating-basis: B1
+dating-basis-source: "\"Coedès, G. 1968 *The Indianized States of Southeast Asia*\""
+dating-basis-notes: "Borobudur c. 780-825."
 ---
 
 # Place Borobudur

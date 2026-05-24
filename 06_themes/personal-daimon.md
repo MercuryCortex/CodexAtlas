@@ -22,6 +22,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, daimon, guardian-angel, genius, fravashi, anthropology]
+date-earliest: -380
+dating-basis: B4
+dating-basis-source: "\"Plato *Apology* 31d; *Phaedo* 107d (c. -380)\""
+dating-basis-notes: "Socratic daimonion c. -399; Zoroastrian fravashi older; Christian guardian-angel synthesis 2nd c."
 ---
 
 # Personal Daimon / Guardian Spirit

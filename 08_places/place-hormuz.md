@@ -3,6 +3,10 @@ type: place
 id: "place-hormuz"
 name: "Place Hormuz"
 status: "stub"
+date-earliest: 1300
+dating-basis: B5
+dating-basis-source: "\"Aubin, J. 1953 'Les princes d'Ormuz' *Journal Asiatique* 241\""
+dating-basis-notes: "New Hormuz c. 1300; medieval port."
 ---
 
 # Place Hormuz

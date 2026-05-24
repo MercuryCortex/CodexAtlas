@@ -22,6 +22,10 @@ hub-edges:
     source: "Hawting 2000; Donner 2010 *Muhammad and the Believers*; Hoyland 1997 *Seeing Islam as Others Saw It* — the Umayyad conquest of the Sasanian empire (637) + most of Byzantine Syria-Egypt (634-642) creates an Islamic-imperial political resolution of the post-3rd-c. Byzantine-Sasanian institutional configuration; the long-term theological-cultural integration of Greek philosophical material into Islamic intellectual life (the Greek-to-Arabic translation movement of the early Abbasid period) builds on this Umayyad-established framework"
     notes: "Cross-lens: 08_places → 06_themes"
 status: "stub"
+date-earliest: 661
+dating-basis: B5
+dating-basis-source: "\"Hawting, G. 2000 *The First Dynasty of Islam*\""
+dating-basis-notes: "Umayyad Caliphate 661-750."
 ---
 
 # Umayyad Caliphate

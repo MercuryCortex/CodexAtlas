@@ -36,6 +36,10 @@ refs:
     tier: 2
     notes: "Pre-Ulansey; reads the tauroctony as Iranian-cosmological-religious"
 tags: [theme, iconography, mithraic-mysteries, tauroctony, precession-of-the-equinoxes, ulansey-thesis, beck-mithraism, astronomical-iconography]
+date-earliest: 1989
+dating-basis: B1
+dating-basis-source: "\"Ulansey, D. *The Origins of the Mithraic Mysteries* (1989); Beck, R. 2006 *The Religion of the Mithras Cult*\""
+dating-basis-notes: "Ulansey hypothesis 1989; tauroctony iconography itself c. 100 CE."
 ---
 
 # Tauroctony as cosmic icon (Ulansey-Beck thesis)

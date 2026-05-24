@@ -3,6 +3,10 @@ type: place
 id: "place-guangzhou"
 name: "Place Guangzhou"
 status: "stub"
+date-earliest: -214
+dating-basis: B3
+dating-basis-source: "\"Lewis, M.E. 2007 *The Early Chinese Empires*\""
+dating-basis-notes: "Guangzhou (Panyu) from c. -214 (Qin annexation)."
 ---
 
 # Place Guangzhou

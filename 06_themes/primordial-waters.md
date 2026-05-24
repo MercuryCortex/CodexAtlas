@@ -20,6 +20,10 @@ refs:
     type: "monograph"
     tier: 2
 tags: [theme, cosmogony, waters, chaos]
+date-earliest: -2400
+dating-basis: B2
+dating-basis-source: "\"Allen, J.P. 1988 *Genesis in Egypt*\""
+dating-basis-notes: "Egyptian Nun c. -2400; Mesopotamian Apsu/Tiamat c. -1200; Genesis 1:2 c. -540."
 ---
 
 # Primordial Waters

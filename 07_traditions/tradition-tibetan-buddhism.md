@@ -18,6 +18,9 @@ refs:
   - "Kapstein, Matthew T. 'The Tibetan Assimilation of Buddhism.' Oxford University Press, 2000."
   - "Powers, John. 'Introduction to Tibetan Buddhism.' Snow Lion, 2007."
   - "Dalton, Jacob P. 'The Taming of the Demons: Violence and Liberation in Tibetan Buddhism.' Yale University Press, 2011."
+dating-basis: B5
+dating-basis-source: "\"Snellgrove, D. 1987 *Indo-Tibetan Buddhism*. Serindia\""
+dating-basis-notes: "First diffusion (snga dar) from Samye monastery 779 under Trisong Detsen."
 ---
 
 Tibetan Buddhism is the comprehensive form of Buddhist practice that developed in Tibet from the 7th century CE onward, synthesizing Indian Mahayana and Vajrayana Buddhism with indigenous Tibetan religious practices (Bon). It is preserved in four major school-lineages (Nyingma, Kagyu, Sakya, Gelug) and remains the primary living form of Vajrayana Buddhism.

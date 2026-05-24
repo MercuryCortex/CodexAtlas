@@ -16,6 +16,9 @@ tags:
 refs:
   - "David Keightley, Sources of Shang History: The Oracle-Bone Inscriptions of Bronze Age China, University of California Press, 1978 [T1]"
   - "Constance Cook and Paul Goldin (eds.), A Source Book of Ancient Chinese Bronze Inscriptions, Society for the Study of Early China, 2016 [T1]"
+dating-basis: B5
+dating-basis-source: "\"Chang, K.C. 1980 *Shang Civilization*\""
+dating-basis-notes: "Shang dynasty c. -1600 to -1046."
 ---
 
 # Shang Dynasty

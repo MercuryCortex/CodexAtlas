@@ -3,6 +3,10 @@ type: theme
 id: "theme-naturalist-architectural-form"
 name: "Theme Naturalist Architectural Form"
 status: "stub"
+date-earliest: 1882
+dating-basis: B5
+dating-basis-source: "\"Bassegoda, J. 1985 *El Gran Gaudí*. Ausa\""
+dating-basis-notes: "Gaudí's biomorphic architecture from 1882 (Casa Vicens, Sagrada Família)."
 ---
 
 # Theme Naturalist Architectural Form

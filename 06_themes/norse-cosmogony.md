@@ -27,6 +27,10 @@ refs:
     type: "monograph"
     tier: 2
 tags: [theme, norse, cosmogony, creation-myth, ymir, odin, ginnungagap, nine-worlds, yggdrasil, dismemberment, primordial-giant]
+date-earliest: 1000
+dating-basis: B4
+dating-basis-source: "\"Faulkes, A. 1995 *Snorri Sturluson Edda*. Everyman\""
+dating-basis-notes: "Norse cosmogony Voluspa c. 1000 (oral); Snorri's Prose Edda c. 1220."
 ---
 
 # Norse Cosmogony

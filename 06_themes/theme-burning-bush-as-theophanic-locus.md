@@ -3,6 +3,10 @@ type: theme
 id: "theme-burning-bush-as-theophanic-locus"
 name: "Theme Burning Bush As Theophanic Locus"
 status: "stub"
+date-earliest: -540
+dating-basis: B4
+dating-basis-source: "\"Friedman, R.E. 1987 *Who Wrote the Bible?*\""
+dating-basis-notes: "Exodus 3 Yahwist redaction c. -540 (Friedman)."
 ---
 
 # Theme Burning Bush As Theophanic Locus

@@ -22,6 +22,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, divine-darkness, apophatic, mysticism, dionysian, eckhart, boehme]
+date-earliest: 500
+dating-basis: B4
+dating-basis-source: "\"Louth, A. 2007 *The Origins of the Christian Mystical Tradition* 2nd ed. OUP\""
+dating-basis-notes: "Divine Darkness (gnophos) Pseudo-Dionysius *Mystical Theology* c. 500; precursors Gregory of Nyssa c. 380."
 ---
 
 # Divine Darkness

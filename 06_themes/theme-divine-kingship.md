@@ -3,6 +3,10 @@ type: theme
 id: "theme-divine-kingship"
 name: "Theme Divine Kingship"
 status: "stub"
+date-earliest: -3100
+dating-basis: B3
+dating-basis-source: "\"Frankfort, H. 1948 *Kingship and the Gods*\""
+dating-basis-notes: "Same as divine-kingship. Egyptian Narmer c. -3100."
 ---
 
 # Theme Divine Kingship

@@ -17,6 +17,10 @@ related-exchange-networks: ["[[silk-road-overland]]", "[[mediterranean-roman-tra
 related-sacred-sites: ["[[pantheon-rome]]", "[[colosseum-rome]]", "[[pont-du-gard]]"]
 region: "Mesopotamia → Mediterranean → all subsequent monumental architecture"
 themes: ["[[theme-load-transformation-vertical-to-lateral]]", "[[theme-arch-as-foundation-of-monumental-public-space]]"]
+date-earliest: -300
+dating-basis: B3
+dating-basis-source: "\"MacDonald, W. 1986 *The Architecture of the Roman Empire*\""
+dating-basis-notes: "Roman true voussoir arch c. -300 (Pons Aemilius); Etruscan precursors."
 ---
 
 # True Arch (Voussoir / Roman Arch)

@@ -3,6 +3,10 @@ type: document
 id: "duran-historia-de-las-indias-de-nueva-espana"
 name: "Duran Historia De Las Indias De Nueva Espana"
 status: "stub"
+date-earliest: 1581
+dating-basis: B1
+dating-basis-source: "\"Durán, D. *Historia de las Indias de Nueva España* (1581)\""
+dating-basis-notes: "Diego Durán composed 1576-1581."
 ---
 
 # Duran Historia De Las Indias De Nueva Espana

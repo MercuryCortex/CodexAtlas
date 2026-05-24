@@ -41,6 +41,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, soteriological, buddhism, foundational, dharmacakra, dhammacakka, first-sermon, four-truths]
+date-earliest: -460
+dating-basis: B4
+dating-basis-source: "\"Gombrich, R. 2009 *What the Buddha Thought*\""
+dating-basis-notes: "Dhammacakkappavattana Sutta SN 56.11 c. -460 traditional; Pali recension -29."
 ---
 
 # Four Noble Truths

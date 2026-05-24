@@ -26,6 +26,9 @@ refs:
   - "Yves Duhoux, 'Linear A: Problems of Method and Results,' in Y. Duhoux and A. Morpurgo Davies (eds.), Companion to Linear B, Vol. 2, pp. 355–396 (Peeters, 2011; Tier 2 — state-of-the-field survey on decipherment attempts)"
 alphabet-tradition-context:
   - "[[tradition-minoan-religion]]"
+dating-basis: B3
+dating-basis-source: "\"Younger, J. 2002 'Linear A' *Aegean Scripts* online corpus, Univ. Kansas\""
+dating-basis-notes: "Linear A Middle Minoan IIA c. -1800 to -1450."
 ---
 
 # Linear A — The Undecoded Voice of Minoan Crete

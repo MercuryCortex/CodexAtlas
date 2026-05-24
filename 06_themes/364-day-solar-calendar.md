@@ -21,6 +21,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, calendar, qumran, jubilees, enoch, second-temple]
+date-earliest: -200
+dating-basis: B4
+dating-basis-source: "\"VanderKam, J. 1998 *Calendars in the Dead Sea Scrolls*. Routledge\""
+dating-basis-notes: "First attestation: 1 Enoch 72-82 (Astronomical Book) c. -200; Jubilees c. -150."
 ---
 
 # 364-Day Solar Calendar

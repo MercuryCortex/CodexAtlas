@@ -53,6 +53,10 @@ refs:
     tier: 2
     notes: "The 'Plato's Pharmacy' essay reads the Platonic pharmakon / pharmakos through the inside/outside, poison/cure undecidability — influential for modern use of the concept."
 tags: [theme, greek, ritual, purification, miasma, scapegoat, pharmakos, sacrifice, burkert, girard, cross-tradition]
+date-earliest: -700
+dating-basis: B5
+dating-basis-source: "\"Burkert, W. 1979 *Structure and History in Greek Mythology and Ritual*. Univ. California\""
+dating-basis-notes: "Greek pharmakos ritual Athens c. -700 (Thargelia); analyzed Girard 1972, Burkert 1979."
 ---
 
 # Pharmakos (Greek Ritual Scapegoat)

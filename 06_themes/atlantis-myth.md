@@ -44,6 +44,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, atlantis, plato, tartessos, myth, western-esoteric, neoplatonism, lost-civilization, iberia, atlantic, eschatology, proclus, theosophy, occult, MASSIVE-WIN]
+date-earliest: -360
+dating-basis: B1
+dating-basis-source: "\"Plato *Timaeus* 21e-25d and *Critias* (c. -360)\""
+dating-basis-notes: "First textual: Plato c. -360. Source-tier T1 myth; later Neoplatonic and modern receptions are separate nodes."
 ---
 
 # The Atlantis Myth — From Tartessos to the Western Esoteric Tradition

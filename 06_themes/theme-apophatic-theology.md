@@ -62,6 +62,10 @@ refs:
     tier: 1
     notes: "Definitive on Eckhart's apophatic theology; includes comparative discussion with Jewish and Islamic parallels"
 tags: [theme, apophatic, via-negativa, cross-tradition, convergence, eckhart, maimonides, ibn-arabi, pseudo-dionysius, sunyata, daodejing, massive-win, metadata]
+date-earliest: 500
+dating-basis: B4
+dating-basis-source: "\"Mortley, R. 1986 *From Word to Silence*\""
+dating-basis-notes: "Apophatic theology systematized Pseudo-Dionysius c. 500; precursors Philo c. 30, Plotinus c. 250."
 ---
 
 # Apophatic Theology — The Cross-Tradition Convergence of the Via Negativa

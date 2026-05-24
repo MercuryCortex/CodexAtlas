@@ -28,6 +28,9 @@ refs:
     type: "monograph"
     tier: 2
 tags: [theme, possession, trance, ritual, vodou, santeria, shamanism, zar, pentecostalism, altered-state, cross-tradition, universal-pattern]
+dating-basis: B7
+dating-basis-source: "\"Cross-tradition (shamanic, Vodou, zar, Pentecostal). Pattern not event.\""
+dating-basis-notes: "Pattern. Keep B7."
 ---
 
 # Possession Ritual

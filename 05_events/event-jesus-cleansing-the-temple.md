@@ -3,6 +3,10 @@ type: event
 id: "event-jesus-cleansing-the-temple"
 name: "Event Jesus Cleansing The Temple"
 status: "stub"
+date-earliest: 30
+dating-basis: B1
+dating-basis-source: "\"Sanders, E.P. 1985 *Jesus and Judaism*. Fortress\""
+dating-basis-notes: "c. 30 CE; cross-referenced in all four gospels."
 ---
 
 # Event Jesus Cleansing The Temple

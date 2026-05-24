@@ -8,6 +8,10 @@ depictions:
     caption: "Viracocha — Inca creator deity; Tiwanaku-stylization line drawing (Wiener/Tintin)"
     source: "Wikimedia Commons"
     license: "Public Domain"
+date-earliest: -500
+dating-basis: B5
+dating-basis-source: "\"Cook, A. 1994 *Wari y Tiwanaku*. Lima\""
+dating-basis-notes: "Wari/Tiwanaku Staff-God iconography c. -500 to 1000 CE; Wiraqocha synthesized Inca period c. 1450."
 ---
 
 # Wiraqocha

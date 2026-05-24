@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-izumo-shinto"
 name: "Tradition Izumo Shinto"
 status: "stub"
+date-earliest: 700
+dating-basis: B5
+dating-basis-source: "\"Breen, J. & Teeuwen, M. 2010 *A New History of Shinto*. Wiley-Blackwell\""
+dating-basis-notes: "Izumo Taisha first recorded Engishiki 927 CE; legendary founding pre-Kojiki (712)."
 ---
 
 # Tradition Izumo Shinto

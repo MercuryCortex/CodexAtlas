@@ -3,6 +3,10 @@ type: relic
 id: "burning-bush"
 name: "Burning Bush"
 status: "stub"
+date-earliest: -540
+dating-basis: B4
+dating-basis-source: "\"Friedman, R.E. 1987 *Who Wrote the Bible?*\""
+dating-basis-notes: "Exodus 3 c. -540 Yahwist redaction."
 ---
 
 # Burning Bush

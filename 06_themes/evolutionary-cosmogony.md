@@ -29,6 +29,10 @@ refs:
     tier: 2
     notes: "Cosmogonic typology and the emergence pattern in world religious traditions"
 tags: [theme, cosmogony, creation-myth, evolution, stages, pacific, polynesian, hawaiian, maori, cross-tradition]
+date-earliest: 1850
+dating-basis: B4
+dating-basis-source: "\"Westervelt, W.D. 1915 *Legends of Old Honolulu*. Ellis\""
+dating-basis-notes: "Polynesian evolutionary cosmogony Kumulipo c. 1700 (Hawaiian creation chant); first recording 1850s."
 ---
 
 # Evolutionary Cosmogony

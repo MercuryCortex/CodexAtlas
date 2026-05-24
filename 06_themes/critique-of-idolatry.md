@@ -27,6 +27,10 @@ refs:
     type: "edited-volume"
     tier: 2
 tags: [theme, idolatry, iconoclasm, monotheism, prophetic, polemic]
+date-earliest: -540
+dating-basis: B4
+dating-basis-source: "\"Levenson, J. 1985 *Sinai and Zion*. HarperSanFrancisco\""
+dating-basis-notes: "Anti-idolatry polemic Deutero-Isaiah 40-48 c. -540; Jeremiah 10 redacted Babylonian exile."
 ---
 
 # Critique of Idolatry

@@ -63,6 +63,9 @@ refs:
     type: "monograph"
     tier: 1
 tags: [event, jesus, crucifixion, passion, jerusalem, roman, second-temple, christianity, golgotha, pontius-pilate, atonement, martyrdom, resurrection]
+dating-basis: B1
+dating-basis-source: "\"Brown, R.E. 1994 *The Death of the Messiah*\""
+dating-basis-notes: "c. 30-33 CE. Slug-extractable."
 ---
 
 # Crucifixion of Jesus of Nazareth

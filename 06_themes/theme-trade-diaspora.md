@@ -3,6 +3,10 @@ type: theme
 id: "theme-trade-diaspora"
 name: "Theme Trade Diaspora"
 status: "stub"
+date-earliest: -1500
+dating-basis: B5
+dating-basis-source: "\"Curtin, P. 1984 *Cross-Cultural Trade in World History*. Cambridge\""
+dating-basis-notes: "Trade-diaspora pattern: Phoenician c. -1200; Radhanite 9th c.; Sogdian 4th-9th c.; Armenian; Gujarati."
 ---
 
 # Theme Trade Diaspora

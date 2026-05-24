@@ -8,6 +8,9 @@ date-latest: 893
 region: "Byzantine Empire / Great Moravia (modern Czechia/Slovakia)"
 status: full
 tags: [alphabet, glagolitic, cyrillic, slavic, byzantine, missionary, deliberate-invention, geopolitics, eastern-orthodox, latin-christianity]
+dating-basis: B1
+dating-basis-source: "\"Cubberley, P. 1996 'The Slavic Alphabets' in Daniels & Bright eds. *The World's Writing Systems*. OUP\""
+dating-basis-notes: "Glagolitic by Cyril and Methodius 862; Cyrillic c. 893 (Preslav)."
 ---
 
 ## What it is

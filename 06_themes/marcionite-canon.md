@@ -27,6 +27,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, canon, marcion, second-century, anti-yahweh, pauline, christian-canon-formation]
+date-earliest: 144
+dating-basis: B1
+dating-basis-source: "\"Lieu, J. 2015 *Marcion and the Making of a Heretic*. Cambridge\""
+dating-basis-notes: "Marcion's canon redacted c. 144; expelled Rome same year."
 ---
 
 # Marcionite canon (first New-Testament-style canon)

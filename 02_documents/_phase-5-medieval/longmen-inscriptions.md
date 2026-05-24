@@ -3,6 +3,10 @@ type: document
 id: "longmen-inscriptions"
 name: "Longmen Inscriptions"
 status: "stub"
+date-earliest: 493
+dating-basis: B3
+dating-basis-source: "\"McNair, A. 2007 *Donors of Longmen*. Hawaii\""
+dating-basis-notes: "Longmen Grottoes inscriptions Northern Wei 493 onward."
 ---
 
 # Longmen Inscriptions

@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-tang-buddhism"
 name: "Tradition Tang Buddhism"
 status: "stub"
+date-earliest: 618
+dating-basis: B5
+dating-basis-source: "\"Weinstein, S. 1987 *Buddhism Under the T'ang*. Cambridge\""
+dating-basis-notes: "Tang dynasty 618-907; Buddhist florescence under Empress Wu c. 690s."
 ---
 
 # Tradition Tang Buddhism

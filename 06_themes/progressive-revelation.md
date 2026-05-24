@@ -21,6 +21,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, baha-i, revelation, dispensationalism]
+date-earliest: 1863
+dating-basis: B5
+dating-basis-source: "\"Smith, P. 2008 *An Introduction to the Baha'i Faith*. Cambridge\""
+dating-basis-notes: "Baha'i progressive revelation Baha'ullah c. 1863; dispensationalism Darby c. 1830."
 ---
 
 # Progressive Revelation

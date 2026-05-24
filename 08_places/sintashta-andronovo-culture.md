@@ -3,6 +3,10 @@ type: place
 id: "sintashta-andronovo-culture"
 name: "Sintashta Andronovo Culture"
 status: "stub"
+date-earliest: -2100
+dating-basis: B3
+dating-basis-source: "\"Anthony, D. 2007 *The Horse, the Wheel, and Language*\""
+dating-basis-notes: "Sintashta-Andronovo c. -2100 to -1400."
 ---
 
 # Sintashta Andronovo Culture

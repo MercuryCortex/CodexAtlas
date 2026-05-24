@@ -29,6 +29,10 @@ refs:
     type: "chapter"
     tier: 1
 tags: [theme, dualism, zoroastrian, manichaean, qumran, two-principles]
+date-earliest: -1000
+dating-basis: B4
+dating-basis-source: "\"Boyce, M. 1979 *Zoroastrians*\""
+dating-basis-notes: "Cosmic dualism in Avestan Gathas c. -1000; Qumran Two-Spirits c. -100."
 ---
 
 # Cosmic Dualism

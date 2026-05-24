@@ -3,6 +3,10 @@ type: exchange-network
 id: "exchange-network-wangara"
 name: "Exchange Network Wangara"
 status: "stub"
+date-earliest: 1100
+dating-basis: B5
+dating-basis-source: "\"Lovejoy, P. 1973 'The Wangara: An Old Soninke Diaspora in West Africa' *Cahiers d'Études Africaines* 13\""
+dating-basis-notes: "Wangara gold-merchant network c. 1100-1500."
 ---
 
 # Exchange Network Wangara

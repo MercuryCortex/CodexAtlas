@@ -3,6 +3,10 @@ type: event
 id: "event-collapse-of-bronze-age"
 name: "Event Collapse of Bronze Age"
 status: "stub"
+date-earliest: -1177
+dating-basis: B5
+dating-basis-source: "\"Cline, E. 2014 *1177 B.C.: The Year Civilization Collapsed*. Princeton\""
+dating-basis-notes: "Bronze Age Collapse c. -1200 to -1150; Cline's anchor -1177."
 ---
 
 # Event Collapse of Bronze Age

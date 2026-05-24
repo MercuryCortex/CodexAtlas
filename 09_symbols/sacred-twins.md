@@ -29,6 +29,10 @@ cross-links:
   - djed-pillar
   - thread-of-fate
   - axis-mundi
+date-earliest: -1200
+dating-basis: B2
+dating-basis-source: "\"West, M.L. 2007 *Indo-European Poetry and Myth*\""
+dating-basis-notes: "Vedic Ashvins c. -1200; Dioskouroi c. -700; Castor/Pollux."
 ---
 
 # Sacred Twins

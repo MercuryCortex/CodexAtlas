@@ -20,6 +20,10 @@ hub-edges:
     source: "Yates 1964 *Giordano Bruno and the Hermetic Tradition*; Hankins 1990 *Plato in the Italian Renaissance*; Woodhouse 1986 *Plethon: The Last of the Hellenes* — Constantinople is the Byzantine-phase host city of the hermetic-transmission-chain: the Greek Hermetic manuscripts that Renaissance humanists hunt in the 15th c. (Leonardo da Pistoia's recovered Pimander, the Bessarion + Plethon Greek-manuscript diaspora) come out of Constantinople and its Byzantine scholarly networks. The 1453 fall is the trigger for the manuscript-diaspora that culminates in Ficino's 1463 translation"
     notes: "Cross-lens: 08_places → 06_themes. The Byzantine phase of the chain is geographically anchored here"
 status: "stub"
+date-earliest: 330
+dating-basis: B1
+dating-basis-source: "\"Mango, C. 1985 *Le développement urbain de Constantinople*. De Boccard\""
+dating-basis-notes: "Constantinople 330 (Constantine)."
 ---
 
 # Place Constantinople

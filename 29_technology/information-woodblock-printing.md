@@ -3,6 +3,10 @@ type: technology
 id: "information-woodblock-printing"
 name: "Information Woodblock Printing"
 status: "stub"
+date-earliest: 220
+dating-basis: B3
+dating-basis-source: "\"Tsien, T.-H. 1985 *Science and Civilisation in China* vol. 5 part 1\""
+dating-basis-notes: "Chinese woodblock printing from c. 200-600; Diamond Sutra 868 earliest dated print."
 ---
 
 # Information Woodblock Printing

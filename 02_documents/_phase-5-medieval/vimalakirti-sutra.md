@@ -3,6 +3,10 @@ type: document
 id: "vimalakirti-sutra"
 name: "Vimalakirti Sutra"
 status: "stub"
+date-earliest: 100
+dating-basis: B1
+dating-basis-source: "\"Lamotte, É. 1962 *L'enseignement de Vimalakīrti*. Université de Louvain\""
+dating-basis-notes: "Vimalakirti c. 100-150 (Indian Mahayana)."
 ---
 
 # Vimalakirti Sutra

@@ -3,6 +3,9 @@ type: theme
 id: "theme-religious-architectural-longue-duree"
 name: "Theme Religious Architectural Longue Duree"
 status: "stub"
+dating-basis: B7
+dating-basis-source: "\"Methodological category. Pattern not event.\""
+dating-basis-notes: "Methodological. Keep B7."
 ---
 
 # Theme Religious Architectural Longue Duree

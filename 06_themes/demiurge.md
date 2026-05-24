@@ -32,6 +32,10 @@ depictions:
     caption: "William Blake — The Ancient of Days (1794), Urizen as demiurge/creator"
     source: "Wikimedia Commons / British Museum"
     license: "Public domain"
+date-earliest: -360
+dating-basis: B4
+dating-basis-source: "\"Plato *Timaeus* 28a-29a, 41a-d (c. -360)\""
+dating-basis-notes: "Platonic demiurge from *Timaeus* c. -360; Gnostic inversion (Yaldabaoth as ignorant demiurge) c. 180."
 ---
 
 # Demiurge

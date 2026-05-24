@@ -42,6 +42,9 @@ cross-tradition-edges:
   - target: "pythagoras"
     type: "possible-origin"
     note: "Ludwig Edelstein's 1943 thesis argued that the Hippocratic Oath was composed not by mainstream Hippocratic physicians but by a Pythagorean minority within Greek medicine. Evidence: (1) the anti-surgery clause (Pythagoreans held body-integrity as sacred); (2) the anti-abortion/anti-euthanasia clauses (Pythagorean reverence for life); (3) the oath-swearing structure (Pythagorean brotherhood ritual); (4) 'in purity and holiness I will guard my life and my art' (Pythagorean purity ethics). If Edelstein is right, the foundational document of Western medical ethics is a mystery-school sectarian text that achieved universal adoption."
+dating-basis: B7
+dating-basis-source: "\"Cross-tradition (Hippocratic c. -400, Charaka c. -100, Sushruta c. 600). Pattern not event.\""
+dating-basis-notes: "Pattern. Keep B7."
 ---
 
 # The Physician's Oath — A Cross-Tradition Sacred Form

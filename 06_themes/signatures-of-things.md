@@ -22,6 +22,10 @@ refs:
     type: "primary"
     tier: 1
 tags: [theme, signatures, paracelsus, boehme, hermetic, natural-philosophy, alchemy]
+date-earliest: 1530
+dating-basis: B5
+dating-basis-source: "\"Foucault, M. 1966 *Les mots et les choses*. Gallimard\""
+dating-basis-notes: "Doctrine of Signatures: Paracelsus c. 1530; Boehme *De Signatura Rerum* 1622."
 ---
 
 # Doctrine of Signatures

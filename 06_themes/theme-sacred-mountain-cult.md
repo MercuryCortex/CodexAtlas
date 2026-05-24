@@ -3,6 +3,9 @@ type: theme
 id: "theme-sacred-mountain-cult"
 name: "Theme Sacred Mountain Cult"
 status: "stub"
+dating-basis: B7
+dating-basis-source: "\"Cross-tradition. Pattern not event.\""
+dating-basis-notes: "Pattern. Keep B7."
 ---
 
 # Theme Sacred Mountain Cult

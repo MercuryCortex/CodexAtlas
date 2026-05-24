@@ -22,6 +22,10 @@ refs:
     type: "monograph"
     tier: 2
 tags: [theme, q-source, sociology-of-early-christianity, jesus-movement]
+date-earliest: 50
+dating-basis: B4
+dating-basis-source: "\"Theissen, G. 1978 *Sociology of Early Palestinian Christianity*. Fortress\""
+dating-basis-notes: "Q-source itinerant ethos c. 50; Markan c. 70."
 ---
 
 # Itinerant Discipleship

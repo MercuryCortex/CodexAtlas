@@ -69,6 +69,10 @@ refs:
     notes: "Specifically on Zoroastrian → Shi'a structural continuities in Iranian religious culture; Tier 2 (some claims over-read the continuities but the framework is productive)"
 tags: [theme, shia-islam, zoroastrian-parallel, messianism, eschatology, hidden-savior, MASSIVE-WIN]
 status: "metadata"
+date-earliest: 874
+dating-basis: B5
+dating-basis-source: "\"Daftary, F. 1990 *The Isma'ilis: Their History and Doctrines*. Cambridge\""
+dating-basis-notes: "Twelver Shi'i Greater Occultation 941; Lesser Occultation 874-941."
 ---
 
 # The Occultation — Shi'a Doctrine of the Hidden Imam

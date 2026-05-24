@@ -8,6 +8,9 @@ date-latest: 1825
 region: "Cherokee Nation (eastern North America)"
 status: full
 tags: [alphabet, cherokee, syllabary, sequoyah, deliberate-invention, indigenous, resistance, native-american, colonial]
+dating-basis: B1
+dating-basis-source: "\"Cushman, E. 2011 *The Cherokee Syllabary*. Univ. Oklahoma\""
+dating-basis-notes: "Sequoyah's syllabary 1821."
 ---
 
 ## What it is

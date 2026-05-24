@@ -21,6 +21,9 @@ refs:
   - "Ussishkin, David. 'King Solomon's Palaces.' Biblical Archaeologist 36(3), 1973. [T2 — archaeological study of Solomonic building]"
   - "Meyers, Carol. 'Temple, Jerusalem.' Anchor Bible Dictionary, 1992. [T2 — comprehensive survey of Temple scholarship]"
   - "Haran, Menahem. Temples and Temple-Service in Ancient Israel. Clarendon Press, 1978. [T1 — foundational study of the Jerusalem Temple in its ancient Near Eastern context]"
+dating-basis: B5
+dating-basis-source: "\"Mazar, A. 1992 *Archaeology of the Land of the Bible*. Doubleday\""
+dating-basis-notes: "Solomonic First Temple traditional c. -950; archaeological attestation contested."
 ---
 
 # Solomon's Temple — First Temple Jerusalem

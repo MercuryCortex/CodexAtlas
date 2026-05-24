@@ -3,6 +3,10 @@ type: document
 id: "document-2-chronicles"
 name: "Document 2 Chronicles"
 status: "stub"
+date-earliest: -400
+dating-basis: B4
+dating-basis-source: "\"Knoppers, G. 2003 *I Chronicles 1-9*. Anchor Bible\""
+dating-basis-notes: "Chronicles c. -400 to -350."
 ---
 
 # Document 2 Chronicles

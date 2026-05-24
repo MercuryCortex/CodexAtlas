@@ -100,6 +100,9 @@ refs:
     Canterbury: The Major Works*, ed. B. Davies & G. Evans. Oxford University Press. Tier 1
     primary source. [The foundational text of satisfaction atonement theory; Book II establishes
     that Christ's death was a substitutionary payment of humanity's debt to divine honor.]
+dating-basis: B7
+dating-basis-source: "\"Cross-tradition (Akedah, Eid al-Adha, Christian atonement). Pattern not event.\""
+dating-basis-notes: "Pattern. Keep B7."
 ---
 
 # Sacrifice by Substitution

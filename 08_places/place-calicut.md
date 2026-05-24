@@ -3,6 +3,10 @@ type: place
 id: "place-calicut"
 name: "Place Calicut"
 status: "stub"
+date-earliest: 1300
+dating-basis: B3
+dating-basis-source: "\"Logan, W. 1887 *Malabar Manual*. Madras\""
+dating-basis-notes: "Calicut Zamorin capital c. 1300; Cheras earlier."
 ---
 
 # Place Calicut

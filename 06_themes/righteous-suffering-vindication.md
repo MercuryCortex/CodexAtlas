@@ -21,6 +21,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, judaism, christianity, martyrdom, vindication]
+date-earliest: -540
+dating-basis: B4
+dating-basis-source: "\"Nickelsburg, G. 1972 *Resurrection, Immortality, and Eternal Life*\""
+dating-basis-notes: "Suffering Servant Isaiah 53 c. -540; Wisdom of Solomon 2-5 c. -50."
 ---
 
 # Righteous Sufferer / Vindication

@@ -18,6 +18,10 @@ hub-edges:
     source: "Lieu 1992 *Manichaeism in the Later Roman Empire and Medieval China*; Mikkelsen 2006 *Dictionary of Manichaean Texts Volume III* — the Dunhuang manuscripts include the principal Tang-Chinese Manichaean documents (the *Hymnscroll*, the *Compendium of the Religion of Mani*, the *Traité Pelliot Chinois 3884*), preserved in Chinese translation; the 8th-9th c. Manichaean reception in Tang China is documented from this corpus. The synthesis's geographic-religious arc reaches its eastward terminus here"
     notes: "Cross-lens: 08_places → 06_themes. Geographic-east-most articulation of the synthesis hub"
 status: "stub"
+date-earliest: -111
+dating-basis: B1
+dating-basis-source: "\"Whitfield, S. 2018 *Silk Roads*\""
+dating-basis-notes: "Dunhuang commandery -111 Han; Mogao caves from 366."
 ---
 
 # Place Dunhuang

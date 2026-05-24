@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-three-kings-cult"
 name: "Tradition Three Kings Cult"
 status: "stub"
+date-earliest: 1164
+dating-basis: B5
+dating-basis-source: "\"Bagnoli, M. et al. eds. 2010 *Treasures of Heaven*. Cleveland Museum\""
+dating-basis-notes: "Three Kings cult at Cologne from translation of relics by Rainald of Dassel 1164."
 ---
 
 # Tradition Three Kings Cult

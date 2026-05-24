@@ -3,6 +3,9 @@ type: theme
 id: "theme-commodity-monopoly-and-sacrality"
 name: "Theme Commodity Monopoly and Sacrality"
 status: "stub"
+dating-basis: B7
+dating-basis-source: "\"Cross-tradition (Tyrian purple, Chinese silk, frankincense). Pattern not event.\""
+dating-basis-notes: "Pattern. Keep B7."
 ---
 
 # Theme Commodity Monopoly and Sacrality

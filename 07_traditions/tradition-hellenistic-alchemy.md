@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-hellenistic-alchemy"
 name: "Tradition Hellenistic Alchemy"
 status: "stub"
+date-earliest: -300
+dating-basis: B5
+dating-basis-source: "\"Principe, L. 2013 *The Secrets of Alchemy*\""
+dating-basis-notes: "Hellenistic alchemy at Alexandria c. -300 to 300; Bolus of Mendes early author."
 ---
 
 # Tradition Hellenistic Alchemy

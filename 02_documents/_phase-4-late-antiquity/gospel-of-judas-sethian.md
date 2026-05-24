@@ -38,6 +38,9 @@ refs:
     type: "monograph"
     tier: 1
 tags: [document, gnostic, sethian, gospel-of-judas, codex-tchacos, irenaeus, judas-iscariot, 2nd-c]
+dating-basis: B1
+dating-basis-source: "\"Kasser, R. et al. 2006 *The Gospel of Judas*. National Geographic\""
+dating-basis-notes: "Composed mid-2nd c.; Codex Tchacos copy c. 280."
 ---
 
 # Gospel of Judas (Sethian Gnostic, ~140–160 CE)

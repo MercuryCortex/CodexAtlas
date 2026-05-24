@@ -38,6 +38,9 @@ depictions:
     caption: "The Elysian Fields, 19th-century painting (after Hesiod's Works and Days)"
     source: "Wikimedia Commons"
     license: "Public domain"
+dating-basis: B7
+dating-basis-source: "\"Cross-tradition (Elysium, Tir na nOg, Sukhavati, Jannah, Svarga, Ilha dos Amores). Pattern not event.\""
+dating-basis-notes: "Pattern. Keep B7."
 ---
 
 # Heroes' Paradise Island (Divine Reward as Sacred Realm)

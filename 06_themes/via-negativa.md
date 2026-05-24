@@ -22,6 +22,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, apophatic, via-negativa, dionysius, maimonides, advaita, tanzih]
+date-earliest: 500
+dating-basis: B4
+dating-basis-source: "\"Mortley, R. 1986 *From Word to Silence*\""
+dating-basis-notes: "Pseudo-Dionysius *MT* c. 500; Maimonides *Guide* c. 1190; Eckhart c. 1300."
 ---
 
 # Via Negativa (Apophatic Theology)

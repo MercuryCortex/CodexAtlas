@@ -3,6 +3,10 @@ type: place
 id: "place-najran"
 name: "Place Najran"
 status: "stub"
+date-earliest: -500
+dating-basis: B3
+dating-basis-source: "\"Robin, C. 2012 *Arabia and Ethiopia*\""
+dating-basis-notes: "Najran South Arabian Christian center c. 500 CE; settlement older c. -500."
 ---
 
 # Place Najran

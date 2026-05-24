@@ -70,6 +70,10 @@ depictions:
     caption: "Akhenaten and Nefertiti with daughters beneath the Aten sun-disk — Amarna Period limestone relief"
     source: "Wikimedia Commons / Ägyptisches Museum Berlin"
     license: "Public domain"
+date-earliest: 1937
+dating-basis: B5
+dating-basis-source: "\"Freud, S. *Moses and Monotheism* (1939); Assmann, J. 1997 *Moses the Egyptian*. Harvard\""
+dating-basis-notes: "Modern thesis: Freud 1937-1939; Assmann 1997. Akhenaten event c. -1352."
 ---
 
 # Akhenaten–Moses Monotheism Thesis

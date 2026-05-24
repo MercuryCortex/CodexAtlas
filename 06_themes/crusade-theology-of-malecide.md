@@ -33,6 +33,10 @@ refs:
     type: "primary-edition"
     tier: 1
 tags: [theme, christianity, crusade, just-war, malecide, bernard-of-clairvaux, augustine, templar-theology]
+date-earliest: 1146
+dating-basis: B1
+dating-basis-source: "\"Riley-Smith, J. 1986 *The First Crusade and the Idea of Crusading*. Athlone\""
+dating-basis-notes: "Bernard of Clairvaux *De laude novae militiae* c. 1135 (malicide doctrine); Urban II's Clermont sermon 1095."
 ---
 
 # Crusade theology of malecide

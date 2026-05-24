@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-shrine-shinto"
 name: "Tradition Shrine Shinto"
 status: "stub"
+date-earliest: 1868
+dating-basis: B5
+dating-basis-source: "\"Breen, J. & Teeuwen, M. 2010 *A New History of Shinto*\""
+dating-basis-notes: "Shrine Shinto codified Meiji 1868; shrine institutions older but unified state framework Meiji."
 ---
 
 # Tradition Shrine Shinto

@@ -29,6 +29,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, vaishnavism, bhakti, hinduism]
+date-earliest: -100
+dating-basis: B4
+dating-basis-source: "\"Matchett, F. 2001 *Krishna: Lord or Avatara?* Curzon\""
+dating-basis-notes: "Avatara doctrine systematized Bhagavad Gita 4.7-8 c. -100; ten-avatar list Vishnu Purana c. 300-400."
 ---
 
 # Avatar Doctrine (Avatāra)

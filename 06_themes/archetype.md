@@ -29,6 +29,10 @@ refs:
     type: "monograph"
     tier: 2
 tags: [theme, jung, depth-psychology, platonism]
+date-earliest: -380
+dating-basis: B4
+dating-basis-source: "\"Plato *Republic* 7.514a; Jung, C.G. 1934 'Über die Archetypen des kollektiven Unbewußten' *Eranos-Jahrbuch*\""
+dating-basis-notes: "Platonic Forms c. -380 as proto-archetype; Jungian re-coinage 1934."
 ---
 
 # Archetype

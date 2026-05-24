@@ -3,6 +3,10 @@ type: document
 id: "magna-carta"
 name: "Magna Carta (1215)"
 status: "stub"
+date-earliest: 1215
+dating-basis: B1
+dating-basis-source: "\"Carpenter, D. 2015 *Magna Carta*. Penguin\""
+dating-basis-notes: "1215."
 ---
 
 # Magna Carta (1215)

@@ -23,6 +23,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, kabbalah, lurianic, cosmogony]
+date-earliest: 1570
+dating-basis: B5
+dating-basis-source: "\"Fine, L. 2003 *Physician of the Soul*\""
+dating-basis-notes: "Lurianic Shevirat ha-Kelim c. 1570."
 ---
 
 # Shevirat ha-Kelim — Breaking of the Vessels

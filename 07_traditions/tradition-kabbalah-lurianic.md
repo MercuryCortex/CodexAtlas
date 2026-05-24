@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-kabbalah-lurianic"
 name: "Tradition Kabbalah Lurianic"
 status: "stub"
+date-earliest: 1570
+dating-basis: B5
+dating-basis-source: "\"Fine, L. 2003 *Physician of the Soul, Healer of the Cosmos*. Stanford\""
+dating-basis-notes: "Lurianic Kabbalah at Safed c. 1570 under Isaac Luria (d. 1572)."
 ---
 
 # Tradition Kabbalah Lurianic

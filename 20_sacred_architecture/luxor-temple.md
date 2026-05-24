@@ -3,6 +3,10 @@ type: sacred-site
 id: "luxor-temple"
 name: "Luxor Temple"
 status: "stub"
+date-earliest: -1380
+dating-basis: B1
+dating-basis-source: "\"Wilkinson, R. 2000 *The Complete Temples of Ancient Egypt*. Thames & Hudson\""
+dating-basis-notes: "Amenhotep III c. -1380; Ramesses II additions -1279."
 ---
 
 # Luxor Temple

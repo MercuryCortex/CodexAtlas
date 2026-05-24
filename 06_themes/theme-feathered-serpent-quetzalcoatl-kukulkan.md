@@ -3,6 +3,10 @@ type: theme
 id: "theme-feathered-serpent-quetzalcoatl-kukulkan"
 name: "Theme Feathered Serpent Quetzalcoatl Kukulkan"
 status: "stub"
+date-earliest: -200
+dating-basis: B3
+dating-basis-source: "\"Carrasco, D. 1982 *Quetzalcoatl and the Irony of Empire*. Univ. Chicago\""
+dating-basis-notes: "Feathered serpent iconography Teotihuacan c. 200 CE (Temple of the Feathered Serpent); Olmec precedents c. -1200."
 ---
 
 # Theme Feathered Serpent Quetzalcoatl Kukulkan

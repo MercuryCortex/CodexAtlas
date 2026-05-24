@@ -27,6 +27,10 @@ refs:
     type: "primary-translation"
     tier: 1
 tags: [theme, dualism, manichaeism, cosmogony, light-darkness, two-roots]
+date-earliest: 250
+dating-basis: B5
+dating-basis-source: "\"BeDuhn, J. 2000 *The Manichaean Body*\""
+dating-basis-notes: "Manichaean Two Principles Mani's *Living Gospel* c. 250."
 ---
 
 # Two Principles (Manichaean Light/Darkness)

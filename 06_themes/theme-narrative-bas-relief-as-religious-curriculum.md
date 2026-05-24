@@ -3,6 +3,10 @@ type: theme
 id: "theme-narrative-bas-relief-as-religious-curriculum"
 name: "Theme Narrative Bas Relief As Religious Curriculum"
 status: "stub"
+date-earliest: -2500
+dating-basis: B3
+dating-basis-source: "\"Robins, G. 2008 *The Art of Ancient Egypt* 2nd ed. Harvard\""
+dating-basis-notes: "Egyptian Old Kingdom narrative reliefs c. -2500; Ashurnasirpal palace -865; Borobudur 800."
 ---
 
 # Theme Narrative Bas Relief As Religious Curriculum

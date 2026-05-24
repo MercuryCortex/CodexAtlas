@@ -91,6 +91,10 @@ tags:
   - cosmic-adversary
   - transmission
   - MASSIVE-WIN
+date-earliest: -538
+dating-basis: B5
+dating-basis-source: "\"Russell, J.B. 1977 *The Devil*\""
+dating-basis-notes: "Zoroastrian Angra Mainyu → Jewish Satan transfer Persian period c. -538 onward; Job Satan as accuser c. -540; mature Christian Satan 1st-2nd c."
 ---
 
 # Satan / Angra Mainyu Transfer — From Court Functionary to Cosmic Adversary

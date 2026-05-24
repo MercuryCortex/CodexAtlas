@@ -3,6 +3,10 @@ type: place
 id: "cieza-de-leon-cronica-del-peru"
 name: "Cieza De Leon Cronica Del Peru"
 status: "stub"
+date-earliest: 1553
+dating-basis: B1
+dating-basis-source: "\"Cieza de León *Crónica del Perú* primera parte (1553)\""
+dating-basis-notes: "Composed 1550, published Seville 1553."
 ---
 
 # Cieza De Leon Cronica Del Peru

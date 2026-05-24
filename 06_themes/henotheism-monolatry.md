@@ -20,6 +20,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, monotheism, monolatry, henotheism, akhenaten, israelite]
+date-earliest: -1352
+dating-basis: B5
+dating-basis-source: "\"Smith, M.S. 2001 *The Origins of Biblical Monotheism*\""
+dating-basis-notes: "Akhenaten henotheism c. -1352; Israelite YHWH-monolatry c. -800 to -540."
 ---
 
 # Henotheism, Monolatry, Monotheism

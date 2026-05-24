@@ -3,6 +3,10 @@ type: exchange-network
 id: "exchange-network-chinese-junks"
 name: "Exchange Network Chinese Junks"
 status: "stub"
+date-earliest: 1000
+dating-basis: B5
+dating-basis-source: "\"Needham, J. 1971 *Science and Civilisation in China* vol. 4 part 3\""
+dating-basis-notes: "Chinese junk maritime trade Song-Yuan-Ming c. 1000-1433."
 ---
 
 # Exchange Network Chinese Junks

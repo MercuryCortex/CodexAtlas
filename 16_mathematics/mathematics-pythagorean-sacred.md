@@ -58,6 +58,9 @@ cross-tradition-edges:
   - target: nicomachus
     type: child-of
     note: Nicomachus of Gerasa (c. 60–120 CE) transmitted Pythagorean number theology and music-cosmos homology into late antiquity via his Introduction to Arithmetic (→ Boethius → medieval quadrivium) and Manual of Harmonics (7 strings = 7 planets = 7 vowels).
+dating-basis: B5
+dating-basis-source: "\"Burkert, W. 1972 *Lore and Science in Ancient Pythagoreanism*\""
+dating-basis-notes: "Pythagoras c. -530; Pythagorean mathematical school c. -500 to -300."
 ---
 
 Pythagoreanism is the oldest documented tradition in which **mathematics was practiced as religion** — not as a tool for describing the divine, but as the direct experience of it. For the Pythagorean community founded by [[pythagoras]] at Croton (c. 530 BCE), numbers were not abstractions applied to reality; they **were** reality, the fundamental substance of the cosmos.

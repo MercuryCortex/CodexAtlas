@@ -29,6 +29,9 @@ cross-tradition-edges:
   - target: medicine-ayurveda
     type: parallel
     note: Vedic Atharva Veda healing hymns (c. 1000 BCE) are structurally identical to Babylonian medical incantations — both combine empirical plant remedies with supernatural causation theory and priestly performance. Independent development on parallel institutional tracks.
+dating-basis: B3
+dating-basis-source: "\"Geller, M. 2010 *Ancient Babylonian Medicine*. Wiley-Blackwell\""
+dating-basis-notes: "Mesopotamian asu/asipu medicine from Early Dynastic c. -2700; Sumerian medical tablet Nippur -2200."
 ---
 
 Mesopotamian temple medicine is the oldest systematically documented healing tradition in the world, attested in cuneiform tablets from as early as 2700 BCE and continuous through the Neo-Babylonian period (c. 600 BCE). It is the foundational case study for the universal pattern: **healing is a priestly function before it becomes a scientific one**.

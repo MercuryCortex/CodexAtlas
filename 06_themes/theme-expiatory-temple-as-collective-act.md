@@ -3,6 +3,10 @@ type: theme
 id: "theme-expiatory-temple-as-collective-act"
 name: "Theme Expiatory Temple As Collective Act"
 status: "stub"
+date-earliest: 1882
+dating-basis: B5
+dating-basis-source: "\"Sola-Morales, I. 2003 *Sagrada Família*. Triangle\""
+dating-basis-notes: "Sagrada Família as expiatory temple Gaudí from 1882."
 ---
 
 # Theme Expiatory Temple As Collective Act

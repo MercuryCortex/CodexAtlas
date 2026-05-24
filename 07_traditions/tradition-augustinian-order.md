@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-augustinian-order"
 name: "Tradition Augustinian Order"
 status: "stub"
+date-earliest: 1244
+dating-basis: B5
+dating-basis-source: "\"Lawless, G. 1987 *Augustine of Hippo and His Monastic Rule*. Clarendon\""
+dating-basis-notes: "Augustinian Order formally constituted 1244 (Grand Union); Rule of Augustine c. 397."
 ---
 
 # Tradition Augustinian Order

@@ -20,6 +20,10 @@ refs:
     type: "monograph"
     tier: 2
 tags: [theme, divine-assembly, council-of-gods, mesopotamian, ugaritic, hebrew]
+date-earliest: -1300
+dating-basis: B2
+dating-basis-source: "\"Mullen, E.T. 1980 *The Divine Council in Canaanite and Early Hebrew Literature*. Scholars Press\""
+dating-basis-notes: "Ugaritic divine council c. -1300 (Baal Cycle); Hebrew Psalm 82 c. -800 redaction."
 ---
 
 # Divine Council

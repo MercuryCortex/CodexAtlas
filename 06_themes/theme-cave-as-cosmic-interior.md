@@ -3,6 +3,9 @@ type: theme
 id: "theme-cave-as-cosmic-interior"
 name: "Theme Cave As Cosmic Interior"
 status: "stub"
+dating-basis: B7
+dating-basis-source: "\"Cross-tradition (paleolithic painted caves, Mithraea, Hindu rock-cut). Pattern not event.\""
+dating-basis-notes: "Pattern. Keep B7."
 ---
 
 # Theme Cave As Cosmic Interior

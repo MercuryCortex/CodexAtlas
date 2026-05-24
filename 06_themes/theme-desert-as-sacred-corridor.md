@@ -3,6 +3,9 @@ type: theme
 id: "theme-desert-as-sacred-corridor"
 name: "Theme Desert As Sacred Corridor"
 status: "stub"
+dating-basis: B7
+dating-basis-source: "\"Cross-tradition (Israelite Exodus, Egyptian desert necropoli, Bedouin Hajj routes). Pattern not event.\""
+dating-basis-notes: "Pattern. Keep B7."
 ---
 
 # Theme Desert As Sacred Corridor

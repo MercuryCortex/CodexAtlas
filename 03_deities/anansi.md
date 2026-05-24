@@ -58,6 +58,9 @@ refs:
     tier: 3
     notes: "Tier 3 — popular fiction; Anansi's portrayal in Gaiman's novel (and its sequel *Anansi Boys*) is the most widely-read contemporary Western engagement with the character, influencing popular understanding"
 tags: [deity, african, akan, ashanti, trickster, spider, stories, wisdom, diaspora, caribbean, west-african]
+dating-basis: B5
+dating-basis-source: "\"Marshall, E. 2007 *Anansi's Journey: A Story of Jamaican Cultural Resistance*. Univ. West Indies\""
+dating-basis-notes: "Anansi Akan/Ashanti pre-Atlantic; documented diasporic from 1700s; West African substrate c. 1500."
 ---
 
 # Anansi

@@ -21,6 +21,9 @@ refs:
   - "Graf, Fritz and Sarah Iles Johnston. *Ritual Texts for the Afterlife: Orpheus and the Bacchic Gold Tablets*. Routledge, 2007. — Tier 1"
   - "Zaleski, Carol. *Otherworld Journeys: Accounts of Near-Death Experience in Medieval and Modern Times*. Oxford UP, 1987. — Tier 2"
 tags: [theme, afterlife, guide, psychopomp, underworld, katabasis, dante, anubis, hermes, gabriel, MASSIVE-WIN, cross-tradition, metadata]
+dating-basis: B7
+dating-basis-source: "\"Cross-tradition (Anubis, Hermes, Virgil, Gabriel). Pattern not event.\""
+dating-basis-notes: "Pattern. Keep B7."
 ---
 
 # Guide Through the Underworld / Afterlife

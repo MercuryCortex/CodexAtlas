@@ -22,6 +22,10 @@ hub-edges:
     source: "Boyce 1991; Skjærvø 2011; Daryaee 2009 — the canonical Pahlavi cosmogonic texts (*Bundahishn* / *Wizidagiha i Zadspram* / *Selections of Zadspram*) are compiled in late-Sasanian and immediately-post-Sasanian Persian under imperial-religious-establishment patronage; the *theme-zoroastrian-cosmogony* hub's classic articulation is institutionally rooted in Sasanian-imperial religious framework"
     notes: "Cross-lens: 08_places → 06_themes"
 status: "stub"
+date-earliest: 224
+dating-basis: B5
+dating-basis-source: "\"Daryaee, T. 2009 *Sasanian Persia*. I.B. Tauris\""
+dating-basis-notes: "Sasanian Empire 224-651."
 ---
 
 # Sasanian Empire

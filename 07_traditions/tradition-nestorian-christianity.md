@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-nestorian-christianity"
 name: "Tradition Nestorian Christianity"
 status: "stub"
+date-earliest: 431
+dating-basis: B5
+dating-basis-source: "\"Baum, W. & Winkler, D. 2003 *The Church of the East*\""
+dating-basis-notes: "Duplicate of tradition-nestorian; same dating basis."
 ---
 
 # Tradition Nestorian Christianity

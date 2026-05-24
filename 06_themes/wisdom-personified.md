@@ -33,6 +33,10 @@ refs:
     type: "monograph"
     tier: 2
 tags: [theme, wisdom, sophia, hokmah, divine-feminine, hellenistic-judaism, MASSIVE-WIN, cross-tradition, vak, vedic, logos, axial-age]
+date-earliest: -180
+dating-basis: B4
+dating-basis-source: "\"Schäfer, P. 2002 *Mirror of His Beauty*\""
+dating-basis-notes: "Sophia/Hokmah Sirach 24 c. -180; Proverbs 8 c. -300; Wisdom of Solomon c. -50."
 ---
 
 # Wisdom Personified

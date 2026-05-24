@@ -3,6 +3,10 @@ type: document
 id: "palenque-tablet-of-the-sun"
 name: "Palenque Tablet Of The Sun"
 status: "stub"
+date-earliest: 692
+dating-basis: B3
+dating-basis-source: "\"Schele, L. & Mathews, P. 1998 *The Code of Kings*\""
+dating-basis-notes: "Dated 692."
 ---
 
 # Palenque Tablet Of The Sun

@@ -3,6 +3,10 @@ type: doctrine
 id: "doctrine-end-of-feudal-cavalry-aristocracy"
 name: "Doctrine End of Feudal Cavalry Aristocracy"
 status: "stub"
+date-earliest: 1500
+dating-basis: B5
+dating-basis-source: "\"Parker, G. 1996 *The Military Revolution*\""
+dating-basis-notes: "Gunpowder revolution c. 1500-1600."
 ---
 
 # Doctrine End of Feudal Cavalry Aristocracy

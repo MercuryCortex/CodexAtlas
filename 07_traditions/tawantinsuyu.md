@@ -3,6 +3,10 @@ type: tradition
 id: "tawantinsuyu"
 name: "Tawantinsuyu"
 status: "stub"
+date-earliest: 1438
+dating-basis: B5
+dating-basis-source: "\"D'Altroy, T. 2002 *The Incas*. Blackwell\""
+dating-basis-notes: "Tawantinsuyu (Inca Empire) c. 1438-1533; founded by Pachacuti."
 ---
 
 # Tawantinsuyu

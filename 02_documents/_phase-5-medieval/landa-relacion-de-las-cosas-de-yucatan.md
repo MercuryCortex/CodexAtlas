@@ -3,6 +3,10 @@ type: document
 id: "landa-relacion-de-las-cosas-de-yucatan"
 name: "Landa Relacion De Las Cosas De Yucatan"
 status: "stub"
+date-earliest: 1566
+dating-basis: B1
+dating-basis-source: "\"Tozzer, A. 1941 *Landa's Relación de las Cosas de Yucatán*. Peabody Museum\""
+dating-basis-notes: "Composed c. 1566."
 ---
 
 # Landa Relacion De Las Cosas De Yucatan

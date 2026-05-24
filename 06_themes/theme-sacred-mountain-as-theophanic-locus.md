@@ -3,6 +3,9 @@ type: theme
 id: "theme-sacred-mountain-as-theophanic-locus"
 name: "Theme Sacred Mountain As Theophanic Locus"
 status: "stub"
+dating-basis: B7
+dating-basis-source: "\"Cross-tradition (Sinai, Olympus, Meru, Kailash, Olymp). Pattern not event.\""
+dating-basis-notes: "Pattern. Keep B7."
 ---
 
 # Theme Sacred Mountain As Theophanic Locus

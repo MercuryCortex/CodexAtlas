@@ -3,6 +3,10 @@ type: document
 id: "avatamsaka-sutra"
 name: "Avatamsaka Sutra"
 status: "stub"
+date-earliest: 350
+dating-basis: B1
+dating-basis-source: "\"Cleary, T. 1984 *The Flower Ornament Scripture*. Shambhala\""
+dating-basis-notes: "Composed c. 350-420 (Sanskrit); Chinese translation Buddhabhadra 421."
 ---
 
 # Avatamsaka Sutra

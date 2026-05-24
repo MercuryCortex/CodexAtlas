@@ -3,6 +3,10 @@ type: tradition
 id: "chandela-dynasty"
 name: "Chandela Dynasty"
 status: "stub"
+date-earliest: 831
+dating-basis: B5
+dating-basis-source: "\"Mitra, S.K. 1958 *The Early Rulers of Khajurāho*. Munshiram Manoharlal\""
+dating-basis-notes: "Chandela dynasty c. 831-1308; first ruler Nannuka c. 831."
 ---
 
 # Chandela Dynasty

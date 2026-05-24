@@ -48,6 +48,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, syncretism, hellenistic-egyptian, hermes, isis, serapis]
+date-earliest: -323
+dating-basis: B5
+dating-basis-source: "\"Bowman, A. 1986 *Egypt After the Pharaohs*\""
+dating-basis-notes: "Egyptian-Greek syncretism from Alexander -331; Serapis Ptolemaic -300."
 ---
 
 # Egyptian-Greek Syncretism

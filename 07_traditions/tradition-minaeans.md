@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-minaeans"
 name: "Tradition Minaeans"
 status: "stub"
+date-earliest: -1200
+dating-basis: B5
+dating-basis-source: "\"Hoyland, R. 2001 *Arabia and the Arabs*\""
+dating-basis-notes: "Minaean polity c. -1200 to -100."
 ---
 
 # Tradition Minaeans

@@ -3,6 +3,10 @@ type: place
 id: "place-kilwa"
 name: "Place Kilwa"
 status: "stub"
+date-earliest: 800
+dating-basis: B3
+dating-basis-source: "\"Horton, M. 1996 *Shanga: The Archaeology of a Muslim Trading Community on the Coast of East Africa*. British Institute\""
+dating-basis-notes: "Kilwa Swahili from c. 800; sultanate 957."
 ---
 
 # Place Kilwa

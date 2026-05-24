@@ -3,6 +3,10 @@ type: tradition
 id: "khmer-empire"
 name: "Khmer Empire"
 status: "stub"
+date-earliest: 802
+dating-basis: B5
+dating-basis-source: "\"Coedès, G. 1968 *The Indianized States of Southeast Asia*. Univ. Hawaii\""
+dating-basis-notes: "Khmer Empire founded by Jayavarman II 802 CE."
 ---
 
 # Khmer Empire

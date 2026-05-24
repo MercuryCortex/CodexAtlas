@@ -3,6 +3,10 @@ type: sacred-site
 id: "malta-temples-c-3600-2500-bce"
 name: "Malta Temples C 3600 2500 Bce"
 status: "stub"
+date-earliest: -3600
+dating-basis: B1
+dating-basis-source: "\"Pace, A. 2004 *The Hal Saflieni Hypogeum*. Heritage Books\""
+dating-basis-notes: "Malta megalithic temples c. -3600 to -2500. Slug-extractable."
 ---
 
 # Malta Temples C 3600 2500 Bce

@@ -17,6 +17,10 @@ related-exchange-networks: ["[[silk-road-overland]]", "[[trans-saharan-gold-and-
 related-sacred-sites: []
 region: "Iranian plateau → all arid zones of the Old World"
 themes: ["[[theme-water-as-sacred-substance]]", "[[theme-invisible-infrastructure-of-civilization]]", "[[theme-arid-zone-religion-and-water]]"]
+date-earliest: -700
+dating-basis: B3
+dating-basis-source: "\"Wilkinson, J.C. 1977 *Water and Tribal Settlement*\""
+dating-basis-notes: "Qanat earliest Achaemenid c. -700; Urartian precedents -750."
 ---
 
 # Qanāt (Persian Underground Aqueduct)

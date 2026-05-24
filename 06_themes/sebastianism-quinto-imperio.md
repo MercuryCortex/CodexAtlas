@@ -29,6 +29,10 @@ refs:
     type: "monograph"
     tier: 2
 tags: [theme, portugal, messianism, sebastianism, fifth-empire, pessoa, vieira, bandarra, prophecy, eschatology]
+date-earliest: 1578
+dating-basis: B5
+dating-basis-source: "\"Hermann, J. 1998 *No Reino do Desejado*. Companhia das Letras\""
+dating-basis-notes: "Sebastianism from Alcácer-Quibir 1578; Bandarra trovas c. 1530; Vieira 1700."
 ---
 
 # Sebastianism and the Fifth Empire (Quinto Império)

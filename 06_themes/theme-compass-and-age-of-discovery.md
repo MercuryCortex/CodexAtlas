@@ -3,6 +3,10 @@ type: theme
 id: "theme-compass-and-age-of-discovery"
 name: "Theme Compass and Age of Discovery"
 status: "stub"
+date-earliest: 1300
+dating-basis: B5
+dating-basis-source: "\"Needham, J. 1962 *Science and Civilisation in China* vol. 4. Cambridge\""
+dating-basis-notes: "Mariner's compass Western adoption c. 1300; Chinese south-pointing spoon Han."
 ---
 
 # Theme Compass and Age of Discovery

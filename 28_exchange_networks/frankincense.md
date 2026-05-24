@@ -3,6 +3,10 @@ type: exchange-network
 id: "frankincense"
 name: "Frankincense"
 status: "stub"
+date-earliest: -1500
+dating-basis: B3
+dating-basis-source: "\"Sidebotham, S. 2011 *Berenike*\""
+dating-basis-notes: "Frankincense Dhofar source -1500; incense-route to Mediterranean."
 ---
 
 # Frankincense

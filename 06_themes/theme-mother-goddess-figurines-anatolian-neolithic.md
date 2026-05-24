@@ -3,6 +3,10 @@ type: theme
 id: "theme-mother-goddess-figurines-anatolian-neolithic"
 name: "Theme Mother Goddess Figurines Anatolian Neolithic"
 status: "stub"
+date-earliest: -7000
+dating-basis: B3
+dating-basis-source: "\"Mellaart, J. 1967 *Çatal Hüyük*. Thames & Hudson\""
+dating-basis-notes: "Çatalhöyük figurines c. -7000; goddess-cult reading contested (Hodder)."
 ---
 
 # Theme Mother Goddess Figurines Anatolian Neolithic

@@ -26,6 +26,9 @@ cross-tradition-edges:
   - target: medicine-islamic-golden-age
     type: ancestor-of
     note: The entire Hippocratic corpus and Galenic synthesis was translated into Arabic at the House of Wisdom (8th–9th century CE). Avicenna's Canon is explicitly organized around Galenic/Hippocratic categories. The humoral system survived in Islamic medicine for 900 years after Hippocrates.
+dating-basis: B1
+dating-basis-source: "\"Lloyd, G.E.R. 1979 *Magic, Reason and Experience*. Cambridge\""
+dating-basis-notes: "Hippocratic Corpus c. -460 to -370."
 ---
 
 Hippocratic medicine (c. 460–360 BCE and the tradition it spawned) represents the most consequential intellectual event in Western medical history: the attempt to explain disease entirely through natural causes — the first systematic rejection of divine or demonic causation as a sufficient medical explanation.

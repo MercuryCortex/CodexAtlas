@@ -3,6 +3,10 @@ type: sacred-site
 id: "petra-nabataean-sanctuary"
 name: "Petra Nabataean Sanctuary"
 status: "stub"
+date-earliest: -300
+dating-basis: B3
+dating-basis-source: "\"Markoe, G. ed. 2003 *Petra Rediscovered*. Abrams\""
+dating-basis-notes: "Nabataean Petra c. -300 to 106 CE; Khazneh c. -100."
 ---
 
 # Petra Nabataean Sanctuary

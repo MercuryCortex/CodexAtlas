@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-islam-maliki"
 name: "Tradition Islam Maliki"
 status: "stub"
+date-earliest: 795
+dating-basis: B5
+dating-basis-source: "\"Schacht, J. 1964 *An Introduction to Islamic Law*. Clarendon\""
+dating-basis-notes: "Maliki madhhab founded by Malik ibn Anas (d. 795 CE)."
 ---
 
 # Tradition Islam Maliki

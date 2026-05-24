@@ -3,6 +3,10 @@ type: place
 id: "place-dhofar-oman"
 name: "Place Dhofar Oman"
 status: "stub"
+date-earliest: -1200
+dating-basis: B3
+dating-basis-source: "\"Sidebotham, S. 2011 *Berenike*\""
+dating-basis-notes: "Dhofar frankincense source from c. -1200."
 ---
 
 # Place Dhofar Oman

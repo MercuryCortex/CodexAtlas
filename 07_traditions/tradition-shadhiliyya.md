@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-shadhiliyya"
 name: "Tradition Shadhiliyya"
 status: "stub"
+date-earliest: 1258
+dating-basis: B5
+dating-basis-source: "\"Trimingham, J.S. 1971 *The Sufi Orders in Islam*\""
+dating-basis-notes: "Shadhiliyya from Abu al-Hasan al-Shadhili d. 1258 Egypt."
 ---
 
 # Tradition Shadhiliyya

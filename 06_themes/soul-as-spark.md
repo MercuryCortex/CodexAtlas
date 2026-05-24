@@ -27,6 +27,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, anthropology, soul, divine-spark, gnosticism, hermetism, manichaeism]
+date-earliest: 150
+dating-basis: B4
+dating-basis-source: "\"Jonas, H. 1958 *The Gnostic Religion*\""
+dating-basis-notes: "Gnostic divine-spark in Apocryphon of John c. 180; Hermetic CH I c. 100-300."
 ---
 
 # Soul as Divine Spark

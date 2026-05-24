@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-cheyenne"
 name: "Tradition Cheyenne"
 status: "stub"
+date-earliest: 1700
+dating-basis: B5
+dating-basis-source: "\"Moore, J. 1996 *The Cheyenne*. Blackwell\""
+dating-basis-notes: "Cheyenne emerge on Plains c. 1700 after Algonquian migration from Great Lakes."
 ---
 
 # Tradition Cheyenne

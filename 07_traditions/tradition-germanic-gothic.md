@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-germanic-gothic"
 name: "Tradition Germanic Gothic"
 status: "stub"
+date-earliest: -100
+dating-basis: B5
+dating-basis-source: "\"Heather, P. 1996 *The Goths*. Blackwell\""
+dating-basis-notes: "Gothic religion (East Germanic) attested c. -100 in Wielbark culture; Christianized 4th c. via Ulfilas."
 ---
 
 # Tradition Germanic Gothic

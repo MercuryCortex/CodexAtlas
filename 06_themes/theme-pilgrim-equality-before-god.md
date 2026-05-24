@@ -3,6 +3,10 @@ type: theme
 id: "theme-pilgrim-equality-before-god"
 name: "Theme Pilgrim Equality Before God"
 status: "stub"
+date-earliest: 630
+dating-basis: B5
+dating-basis-source: "\"Peters, F.E. 1994 *The Hajj*. Princeton\""
+dating-basis-notes: "Islamic Hajj ihram c. 630; Christian Camino c. 1000; cross-tradition."
 ---
 
 # Theme Pilgrim Equality Before God

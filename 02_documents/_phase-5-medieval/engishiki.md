@@ -3,6 +3,10 @@ type: document
 id: "engishiki"
 name: "Engishiki"
 status: "stub"
+date-earliest: 927
+dating-basis: B1
+dating-basis-source: "\"Bock, F. 1970 *Engi-Shiki: Procedures of the Engi Era*. Sophia Univ.\""
+dating-basis-notes: "Compiled 927."
 ---
 
 # Engishiki

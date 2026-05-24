@@ -101,6 +101,10 @@ refs:
     tier: 1
     notes: "The definitive medieval-Christian treatment — the king as simultaneously mortal natural body and immortal political/mystical body. Anchors the rex-imago-Christi tradition that links late-antique imperial theology to medieval European kingship"
 tags: [theme, kingship, sacred-rule, mesopotamian, egyptian, chinese, japanese, andean, christian, hindu, frankfort, kantorowicz, MASSIVE-WIN, cosmic-axis, mandate-of-heaven, devaraja]
+date-earliest: -3100
+dating-basis: B3
+dating-basis-source: "\"Frankfort, H. 1948 *Kingship and the Gods*. Univ. Chicago\""
+dating-basis-notes: "Egyptian divine kingship from First Dynasty c. -3100 (Narmer Palette); Mesopotamian Ur III divinization c. -2100."
 ---
 
 # Divine kingship

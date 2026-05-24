@@ -35,6 +35,9 @@ refs:
     type: "monograph"
     tier: 2
 tags: [event, stephen, martyrdom, christianity, jerusalem, paul, stoning, first-martyr, persecution, acts-of-apostles]
+dating-basis: B1
+dating-basis-source: "\"Hengel, M. 1983 *Between Jesus and Paul*. Fortress\""
+dating-basis-notes: "c. 35 CE. Slug-extractable."
 ---
 
 # Stoning of Stephen (~35 CE)

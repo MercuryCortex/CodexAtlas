@@ -21,6 +21,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, prophecy, fulfillment, gospel-of-matthew, christology]
+date-earliest: 85
+dating-basis: B4
+dating-basis-source: "\"Brown, R.E. 1993 *The Birth of the Messiah* 2nd ed. Doubleday\""
+dating-basis-notes: "Matthean fulfillment formulas in Matt 1-2 c. 85."
 ---
 
 # Fulfillment of Prophecy

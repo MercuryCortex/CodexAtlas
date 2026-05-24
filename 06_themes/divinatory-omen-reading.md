@@ -22,6 +22,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, divination, omen, ane, akkadian, mesopotamian]
+date-earliest: -1900
+dating-basis: B2
+dating-basis-source: "\"Maul, S. 2018 *The Art of Divination in the Ancient Near East*. Baylor\""
+dating-basis-notes: "Old Babylonian omen literature c. -1900; Sumerian precursors -2200."
 ---
 
 # Divinatory Omen Reading

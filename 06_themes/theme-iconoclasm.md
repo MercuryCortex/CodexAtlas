@@ -3,6 +3,10 @@ type: theme
 id: "theme-iconoclasm"
 name: "Theme Iconoclasm"
 status: "stub"
+date-earliest: 726
+dating-basis: B5
+dating-basis-source: "\"Brubaker, L. & Haldon, J. 2011 *Byzantium in the Iconoclast Era*. Cambridge\""
+dating-basis-notes: "Byzantine iconoclasm 726-843; Hezekian Israelite c. -700; Islamic 7th c.; Reformation 1522."
 ---
 
 # Theme Iconoclasm

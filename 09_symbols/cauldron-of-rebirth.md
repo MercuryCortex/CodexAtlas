@@ -81,6 +81,10 @@ refs:
     Principe, L.M. (2013). *The Secrets of Alchemy*. University of Chicago Press. Tier 1.
     [Chapter 3 documents the alchemical vessel (*vas hermeticum*, *athanor*) as the container
     of transformation; the feminine symbolic grammar of the vessel in Paracelsian and earlier traditions.]
+date-earliest: 1100
+dating-basis: B4
+dating-basis-source: "\"Ford, P. 2008 *The Mabinogi and Other Medieval Welsh Tales*. Univ. California\""
+dating-basis-notes: "Cauldron of Rebirth in Welsh Branwen 12th-13th c.; older Celtic vessel-of-abundance."
 ---
 
 # Cauldron of Rebirth

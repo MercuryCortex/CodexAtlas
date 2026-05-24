@@ -27,6 +27,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, judaism, hellenistic, diaspora, alexandria]
+date-earliest: -586
+dating-basis: B5
+dating-basis-source: "\"Grabbe, L. 2008 *A History of the Jews and Judaism in the Second Temple Period*\""
+dating-basis-notes: "Hellenistic-Jewish diaspora consolidates Babylonian exile -586; Alexandrian community from -331."
 ---
 
 # Diaspora Judaism

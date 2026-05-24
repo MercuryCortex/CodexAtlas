@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-ptolemaic-egypt"
 name: "Tradition Ptolemaic Egypt"
 status: "stub"
+date-earliest: -305
+dating-basis: B5
+dating-basis-source: "\"Hölbl, G. 2001 *A History of the Ptolemaic Empire*. Routledge\""
+dating-basis-notes: "Ptolemaic Egypt -305 to -30 from Ptolemy I Soter."
 ---
 
 # Tradition Ptolemaic Egypt

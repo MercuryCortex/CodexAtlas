@@ -42,6 +42,10 @@ refs:
     type: "monograph"
     tier: 2
 tags: [theme, mysticism, apophatic, via-negativa, christianity, islam, judaism, neoplatonism, hermeticism, trans-tradition]
+date-earliest: -380
+dating-basis: B4
+dating-basis-source: "\"Mortley, R. 1986 *From Word to Silence*. Hanstein\""
+dating-basis-notes: "Plato *Parmenides* c. -380 first apophatic anchor; Pseudo-Dionysius *MT* c. 500 CE Christian crystallization."
 ---
 
 # Apophatic mysticism

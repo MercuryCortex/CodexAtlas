@@ -21,6 +21,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, luke-acts, pneumatology, mission, christianity]
+date-earliest: 85
+dating-basis: B4
+dating-basis-source: "\"Marshall, I.H. 1970 *Luke: Historian and Theologian*. Paternoster\""
+dating-basis-notes: "Lukan pneumatology Luke-Acts c. 85."
 ---
 
 # Holy-Spirit-Empowered Witness (Lukan)

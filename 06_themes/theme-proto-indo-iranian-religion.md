@@ -56,6 +56,10 @@ refs:
     tier: 1
     notes: "Most recent scholarly translation; introduction treats the Vedic-Avestan comparison systematically"
 tags: [theme, proto-indo-iranian, comparative, linguistics, steppe, reconstruction, vedic, avestan, MASSIVE-WIN, phase-2, cross-tradition]
+date-earliest: -2000
+dating-basis: B5
+dating-basis-source: "\"Anthony, D. 2007 *The Horse, the Wheel, and Language*\""
+dating-basis-notes: "Proto-Indo-Iranian period c. -2000 to -1500 (Sintashta-Andronovo)."
 ---
 
 # Proto-Indo-Iranian Religion (Reconstructed)

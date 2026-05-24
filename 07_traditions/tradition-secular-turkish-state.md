@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-secular-turkish-state"
 name: "Tradition Secular Turkish State"
 status: "stub"
+date-earliest: 1923
+dating-basis: B5
+dating-basis-source: "\"Zürcher, E. 2017 *Turkey: A Modern History* 4th ed. I.B. Tauris\""
+dating-basis-notes: "Turkish Republic 1923; secularism (laiklik) constitutional 1937."
 ---
 
 # Tradition Secular Turkish State

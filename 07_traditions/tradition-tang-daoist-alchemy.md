@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-tang-daoist-alchemy"
 name: "Tradition Tang Daoist Alchemy"
 status: "stub"
+date-earliest: 650
+dating-basis: B5
+dating-basis-source: "\"Pregadio, F. 2006 *Great Clarity: Daoism and Alchemy in Early Medieval China*. Stanford\""
+dating-basis-notes: "Tang waidan (external alchemy) florescence c. 650-850."
 ---
 
 # Tradition Tang Daoist Alchemy

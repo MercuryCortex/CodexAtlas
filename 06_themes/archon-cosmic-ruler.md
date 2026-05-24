@@ -22,6 +22,10 @@ refs:
     type: "monograph"
     tier: 2
 tags: [theme, gnosticism, archon, powers, planetary-rulers, paul]
+date-earliest: 180
+dating-basis: B4
+dating-basis-source: "\"King, K. 2003 *What Is Gnosticism?* Harvard\""
+dating-basis-notes: "Archontic cosmology first systematic Apocryphon of John c. 180; Paul's \"rulers of this age\" 1 Cor 2:6-8 c. 53."
 ---
 
 # Archon (Cosmic Ruler)

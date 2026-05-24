@@ -3,6 +3,10 @@ type: place
 id: "place-macau"
 name: "Place Macau"
 status: "stub"
+date-earliest: 1557
+dating-basis: B1
+dating-basis-source: "\"Boxer, C. 1969 *The Portuguese Seaborne Empire*\""
+dating-basis-notes: "Portuguese settlement 1557."
 ---
 
 # Place Macau

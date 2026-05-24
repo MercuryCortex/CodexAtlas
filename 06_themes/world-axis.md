@@ -22,6 +22,9 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, axis-mundi, cosmic-mountain, world-tree, eliade]
+dating-basis: B7
+dating-basis-source: "\"Eliade's 1949 scholarly category; underlying motifs (DUR.AN.KI, skambha, axis mundi) span -2500 onward. The motif as such has no single first-attestation moment.\""
+dating-basis-notes: "Cross-tradition motif. Keep B7 OR split into theme/world-axis-motif (B2 -2500 Sumerian) vs scholarly/axis-mundi-eliade (B1 1949)."
 ---
 
 # World Axis (Axis Mundi)

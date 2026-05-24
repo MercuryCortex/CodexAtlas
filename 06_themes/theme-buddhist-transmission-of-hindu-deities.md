@@ -82,6 +82,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, transmission, buddhism, hinduism, syncretism, east-asia, MASSIVE-WIN, cross-tradition, soteriological, political-theological]
+date-earliest: 200
+dating-basis: B5
+dating-basis-source: "\"Williams, P. 2008 *Mahayana Buddhism*\""
+dating-basis-notes: "Buddhist absorption of Hindu deities (Indra→Sakka, Brahma→Brahma-as-disciple) c. -100 to 200; Vajrayana intensification 600-1200."
 ---
 
 # Buddhist transmission of Hindu deities

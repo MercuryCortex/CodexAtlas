@@ -3,6 +3,10 @@ type: exchange-network
 id: "myrrh"
 name: "Myrrh"
 status: "stub"
+date-earliest: -1500
+dating-basis: B3
+dating-basis-source: "\"Sidebotham, S. 2011 *Berenike*\""
+dating-basis-notes: "Myrrh Hadramawt source; Egyptian Punt expeditions -1500."
 ---
 
 # Myrrh

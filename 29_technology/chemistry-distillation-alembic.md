@@ -17,6 +17,10 @@ related-exchange-networks: ["[[silk-road-overland]]", "[[mediterranean-medieval-
 related-sacred-sites: []
 region: "Alexandria → Baghdad → Cordoba / Toledo → Europe"
 themes: ["[[theme-alchemy-births-secular-technology]]", "[[theme-spirit-as-volatile-essence]]", "[[theme-sacred-process-becomes-industrial-process]]"]
+date-earliest: 200
+dating-basis: B3
+dating-basis-source: "\"Principe, L. 2013 *The Secrets of Alchemy*\""
+dating-basis-notes: "Alembic (ambix) Maria Prophetissa c. 200; Mesopotamian terracotta distillation c. -3500."
 ---
 
 # Distillation (Alembic and Still)

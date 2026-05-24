@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-song-dynasty-china"
 name: "Tradition Song Dynasty China"
 status: "stub"
+date-earliest: 960
+dating-basis: B5
+dating-basis-source: "\"Smith, P.J. & von Glahn, R. 2003 *The Song-Yuan-Ming Transition in Chinese History*. Harvard\""
+dating-basis-notes: "Song dynasty 960-1279."
 ---
 
 # Tradition Song Dynasty China

@@ -3,6 +3,10 @@ type: document
 id: "surya-shataka"
 name: "Surya Shataka"
 status: "stub"
+date-earliest: 630
+dating-basis: B1
+dating-basis-source: "\"Quackenbos, G. 1917 *The Sanskrit Poems of Mayūra*. Columbia\""
+dating-basis-notes: "Mayura's Surya Shataka c. 630."
 ---
 
 # Surya Shataka

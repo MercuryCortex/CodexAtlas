@@ -3,6 +3,10 @@ type: exchange-network
 id: "cinnamon"
 name: "Cinnamon"
 status: "stub"
+date-earliest: -1500
+dating-basis: B3
+dating-basis-source: "\"Miller, J. 1969 *The Spice Trade of the Roman Empire*. Clarendon\""
+dating-basis-notes: "Cinnamon Egyptian mummification c. -1500; Sri Lanka source."
 ---
 
 # Cinnamon

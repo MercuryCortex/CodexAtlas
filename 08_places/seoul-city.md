@@ -3,6 +3,10 @@ type: place
 id: "seoul-city"
 name: "Seoul City"
 status: "stub"
+date-earliest: 1394
+dating-basis: B1
+dating-basis-source: "\"Sohn, P.-K. 1999 *The History of Seoul*. Seoul Development Institute\""
+dating-basis-notes: "Hanyang Joseon capital 1394; earlier Goguryeo/Baekje settlement."
 ---
 
 # Seoul City

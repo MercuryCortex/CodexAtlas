@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-quanzhen-taoism"
 name: "Tradition Quanzhen Taoism"
 status: "stub"
+date-earliest: 1167
+dating-basis: B5
+dating-basis-source: "\"Goossaert, V. 2007 *The Taoists of Peking, 1800-1949*. Harvard\""
+dating-basis-notes: "Quanzhen (Complete Perfection) founded by Wang Chongyang 1167."
 ---
 
 # Tradition Quanzhen Taoism

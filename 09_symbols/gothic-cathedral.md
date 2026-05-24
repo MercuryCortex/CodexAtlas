@@ -43,6 +43,10 @@ refs:
   - >
     Suger of St-Denis (trans. Panofsky, E., 1946). *Abbot Suger on the Abbey Church
     of St.-Denis and Its Art Treasures*. Princeton University Press. Tier 1 primary source.
+date-earliest: 1140
+dating-basis: B5
+dating-basis-source: "\"Bony, J. 1983 *French Gothic Architecture*\""
+dating-basis-notes: "Gothic cathedral as form Saint-Denis 1140."
 ---
 
 # Gothic Cathedral

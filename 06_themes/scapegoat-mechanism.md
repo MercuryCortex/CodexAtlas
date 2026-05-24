@@ -65,6 +65,10 @@ refs:
     tier: 2
     notes: "Sustained critique of Girard's universalizing framework; argues the scapegoat reading misreads Israelite sacrifice."
 tags: [theme, sacrifice, scapegoat, girard, burkert, mimetic-theory, ritual, founding-violence, cross-tradition, pharmakos, leviticus]
+date-earliest: -540
+dating-basis: B5
+dating-basis-source: "\"Girard, R. 1972 *La violence et le sacré*. Grasset\""
+dating-basis-notes: "Leviticus 16 scapegoat c. -540; Greek pharmakos c. -700; Girard's modern theory 1972."
 ---
 
 # Scapegoat Mechanism

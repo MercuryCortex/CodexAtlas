@@ -3,6 +3,10 @@ type: document
 id: "kojiki"
 name: "Kojiki"
 status: "stub"
+date-earliest: 712
+dating-basis: B1
+dating-basis-source: "\"Philippi, D. 1969 *Kojiki*\""
+dating-basis-notes: "Compiled by Ō no Yasumaro 712."
 ---
 
 # Kojiki

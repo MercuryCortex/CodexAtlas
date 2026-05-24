@@ -3,6 +3,9 @@ type: sacred-site
 id: "tower-of-babel"
 name: "Tower Of Babel"
 status: "stub"
+dating-basis: B7
+dating-basis-source: "\"Mythological structure; Etemenanki ziggurat is the historical referent (see node etemenanki, B3 -2100).\""
+dating-basis-notes: "Mythological. Keep B7 with redirect to etemenanki."
 ---
 
 # Tower Of Babel

@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-shaivism"
 name: "Tradition Shaivism"
 status: "stub"
+date-earliest: -100
+dating-basis: B5
+dating-basis-source: "\"Sanderson, A. 2009 'The Saiva Age' in Einoo ed. *Genesis and Development of Tantrism*. Tokyo\""
+dating-basis-notes: "Pashupata Shaivism c. -100 to 200 CE per Sanderson; classical Shaivism c. 400-1200."
 ---
 
 # Tradition Shaivism

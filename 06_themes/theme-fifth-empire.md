@@ -3,6 +3,10 @@ type: theme
 id: "theme-fifth-empire"
 name: "Theme Fifth Empire"
 status: "stub"
+date-earliest: -165
+dating-basis: B4
+dating-basis-source: "\"Saraiva, A.J. 1992 *António Vieira, Menasseh ben Israel et le Cinquième Empire*\""
+dating-basis-notes: "Daniel 2 c. -165; Portuguese sebastianism 1578+."
 ---
 
 # Theme Fifth Empire

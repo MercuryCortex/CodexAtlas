@@ -21,6 +21,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, sociology-of-religion, durkheim, ritual]
+date-earliest: 1912
+dating-basis: B1
+dating-basis-source: "\"Durkheim, E. *Les formes élémentaires de la vie religieuse* (1912)\""
+dating-basis-notes: "Coined Durkheim 1912."
 ---
 
 # Collective Effervescence

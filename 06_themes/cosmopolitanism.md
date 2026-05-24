@@ -21,6 +21,10 @@ refs:
     type: "edited-volume"
     tier: 1
 tags: [theme, stoicism, hellenistic-philosophy, ethics, judaism]
+date-earliest: -300
+dating-basis: B5
+dating-basis-source: "\"Long, A.A. 1986 *Hellenistic Philosophy* 2nd ed. Univ. California\""
+dating-basis-notes: "Stoic kosmopolites from Zeno of Citium c. -300; Diogenes the Cynic earlier."
 ---
 
 # Cosmopolitanism (Hellenistic)

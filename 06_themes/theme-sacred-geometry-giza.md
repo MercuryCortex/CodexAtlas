@@ -58,6 +58,10 @@ depictions:
     caption: "The three Giza pyramids — Khufu, Khafre, Menkaure — center of sacred-geometry claims"
     source: "Wikimedia Commons"
     license: "CC BY-SA 2.0"
+date-earliest: 1864
+dating-basis: B5
+dating-basis-source: "\"Lehner, M. 1997 *The Complete Pyramids*. Thames & Hudson\""
+dating-basis-notes: "Sacred-geometry-of-Giza modern tradition Piazzi Smyth 1864; Petrie's debunking 1883."
 ---
 
 # Sacred Geometry of Giza

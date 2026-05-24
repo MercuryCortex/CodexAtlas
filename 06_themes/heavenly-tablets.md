@@ -21,6 +21,10 @@ refs:
     type: "commentary"
     tier: 1
 tags: [theme, jubilees, enoch, apocalyptic, judaism]
+date-earliest: -150
+dating-basis: B4
+dating-basis-source: "\"VanderKam, J. 1989 *The Book of Jubilees*. Peeters\""
+dating-basis-notes: "Heavenly Tablets in Jubilees c. -150; 1 Enoch 81."
 ---
 
 # Heavenly Tablets

@@ -41,6 +41,9 @@ syncretic-edges:
 refs:
   - "Simon Martin and Nikolai Grube, Chronicle of the Maya Kings and Queens, Thames and Hudson, 2000 [T1/T2]"
   - "David Freidel, Linda Schele, Joy Parker, Maya Cosmos: Three Thousand Years on the Shaman's Path, Morrow, 1993 [T2]"
+dating-basis: B3
+dating-basis-source: "\"Coe, M. 2011 *The Maya*\""
+dating-basis-notes: "Chaac Maya rain-deity Preclassic to Postclassic; iconographically attested c. -200 (long-nosed god)."
 ---
 
 # Chaac

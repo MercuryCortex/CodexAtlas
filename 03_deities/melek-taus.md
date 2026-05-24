@@ -16,6 +16,10 @@ key-themes:
   - "[[theme-persecution-as-legitimation]]"
 status: "metadata"
 tags: [deity, yazidi, angel, peacock, kurdish, melek-taus, contested, angelology]
+date-earliest: 1162
+dating-basis: B5
+dating-basis-source: "\"Kreyenbroek, P. 1995 *Yezidism: Its Background, Observances and Textual Tradition*. Mellen\""
+dating-basis-notes: "Melek Taus in Yazidi tradition codified Sheikh Adi c. 1162."
 ---
 
 # Melek Taus (Peacock Angel)

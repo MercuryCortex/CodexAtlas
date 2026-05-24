@@ -3,6 +3,10 @@ type: place
 id: "place-kashgar"
 name: "Place Kashgar"
 status: "stub"
+date-earliest: -200
+dating-basis: B3
+dating-basis-source: "\"Whitfield, S. 2018 *Silk Roads*\""
+dating-basis-notes: "Kashgar (Shule) Han embassy c. -200."
 ---
 
 # Place Kashgar

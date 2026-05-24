@@ -3,6 +3,10 @@ type: document
 id: "ajanta-inscriptions"
 name: "Ajanta Inscriptions"
 status: "stub"
+date-earliest: -100
+dating-basis: B3
+dating-basis-source: "\"Spink, W. 2005 *Ajanta: History and Development* vol. 1. Brill\""
+dating-basis-notes: "Ajanta cave inscriptions Phase I c. -100 to 100; Phase II c. 460-480 Vakataka period."
 ---
 
 # Ajanta Inscriptions

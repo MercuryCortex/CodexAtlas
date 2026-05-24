@@ -29,6 +29,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, cosmogony, creation-myth, archetype, world-parents, sky-earth, comparative-mythology, MASSIVE-WIN]
+date-earliest: -1200
+dating-basis: B2
+dating-basis-source: "\"Witzel, M. 2012 *The Origins of the World's Mythologies*\""
+dating-basis-notes: "World-parent cosmogony Vedic Dyaus-Prithivi c. -1200; Greek Ouranos-Gaia Hesiod c. -700; Polynesian Rangi-Papa."
 ---
 
 # World-Parent Cosmogony

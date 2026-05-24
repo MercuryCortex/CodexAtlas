@@ -21,6 +21,9 @@ refs:
   - "Kapstein, Matthew T. 'The Tibetan Assimilation of Buddhism.' Oxford University Press, 2000."
   - "Dalton, Jacob P. 'The Taming of the Demons: Violence and Liberation in Tibetan Buddhism.' Yale University Press, 2011."
   - "Beer, Robert. 'The Handbook of Tibetan Buddhist Symbols.' Serindia Publications, 2003."
+dating-basis: B5
+dating-basis-source: "\"Davidson, R. 2002 *Indian Esoteric Buddhism*. Columbia\""
+dating-basis-notes: "Vajrayana emergence c. 600-700; mature phase 8th-12th c."
 ---
 
 Vajrayana ("Diamond Vehicle" or "Thunderbolt Vehicle") is the esoteric form of Buddhism that developed in India c. 600–900 CE and was transmitted to Tibet, Nepal, Mongolia, and East Asia. It builds on the Mahayana bodhisattva ideal and adds a framework of tantric practices — mantra, mandala, mudra, and deity yoga — as accelerated paths to enlightenment.

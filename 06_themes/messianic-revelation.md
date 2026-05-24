@@ -38,6 +38,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, eschatology, messiah, apocalyptic, revelation, second-temple, daniel, enoch, islam, mahdi, zoroastrian]
+date-earliest: -165
+dating-basis: B4
+dating-basis-source: "\"Collins, J.J. 1998 *The Apocalyptic Imagination*\""
+dating-basis-notes: "Apocalyptic messianic revelation Daniel 7 c. -165."
 ---
 
 # Messianic Revelation — Apocalyptic Disclosure

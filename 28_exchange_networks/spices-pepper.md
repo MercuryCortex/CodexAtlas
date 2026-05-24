@@ -3,6 +3,10 @@ type: exchange-network
 id: "spices-pepper"
 name: "Spices Pepper"
 status: "stub"
+date-earliest: -1500
+dating-basis: B3
+dating-basis-source: "\"Sidebotham, S. 2011 *Berenike*\""
+dating-basis-notes: "Black pepper Indian source; Egyptian -1500 (Ramesses II); Roman trade -100 to 300."
 ---
 
 # Spices Pepper

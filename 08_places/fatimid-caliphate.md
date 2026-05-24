@@ -3,6 +3,10 @@ type: place
 id: "fatimid-caliphate"
 name: "Fatimid Caliphate"
 status: "stub"
+date-earliest: 909
+dating-basis: B5
+dating-basis-source: "\"Daftary, F. 1990 *The Ismailis*\""
+dating-basis-notes: "Fatimid Caliphate 909-1171."
 ---
 
 # Fatimid Caliphate

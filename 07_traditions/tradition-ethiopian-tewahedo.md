@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-ethiopian-tewahedo"
 name: "Tradition Ethiopian Tewahedo"
 status: "stub"
+date-earliest: 340
+dating-basis: B5
+dating-basis-source: "\"Munro-Hay, S. 1991 *Aksum: An African Civilisation of Late Antiquity*. Edinburgh\""
+dating-basis-notes: "Aksum converts under Ezana c. 340; Frumentius first bishop."
 ---
 
 # Tradition Ethiopian Tewahedo

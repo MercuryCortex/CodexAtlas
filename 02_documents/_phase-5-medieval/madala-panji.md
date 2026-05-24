@@ -3,6 +3,10 @@ type: document
 id: "madala-panji"
 name: "Madala Panji"
 status: "stub"
+date-earliest: 1100
+dating-basis: B1
+dating-basis-source: "\"Eschmann, A. et al. eds. 1978 *The Cult of Jagannath and the Regional Tradition of Orissa*. Manohar\""
+dating-basis-notes: "Madala Panji oral tradition c. 1100; written form 12th-13th c."
 ---
 
 # Madala Panji

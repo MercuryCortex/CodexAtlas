@@ -42,6 +42,10 @@ refs:
     tier: 2
     notes: "Co-authored expansion focused on the Western European cave painted record."
 tags: [theme, ritual, prehistory, shamanism, contested, lewis-williams, cave-art]
+date-earliest: 1991
+dating-basis: B1
+dating-basis-source: "\"Lewis-Williams, D. & Dowson, T. 1988 'The Signs of All Times' *Current Anthropology* 29\""
+dating-basis-notes: "Lewis-Williams entoptic hypothesis 1988-1991."
 ---
 
 # Shamanism hypothesis (in prehistoric ritual)

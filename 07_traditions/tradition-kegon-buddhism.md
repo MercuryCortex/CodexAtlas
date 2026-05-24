@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-kegon-buddhism"
 name: "Tradition Kegon Buddhism"
 status: "stub"
+date-earliest: 740
+dating-basis: B5
+dating-basis-source: "\"Tanabe, G. & W.J. 1989 *The Lotus Sutra in Japanese Culture*. Hawaii\""
+dating-basis-notes: "Kegon (Huayan) school to Japan via Shinjō 736; institutionalized Tōdai-ji 740s."
 ---
 
 # Tradition Kegon Buddhism

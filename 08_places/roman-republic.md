@@ -3,6 +3,10 @@ type: place
 id: "roman-republic"
 name: "Roman Republic"
 status: "stub"
+date-earliest: -509
+dating-basis: B5
+dating-basis-source: "\"Beard, M. 2015 *SPQR*\""
+dating-basis-notes: "Roman Republic -509 to -27."
 ---
 
 # Roman Republic

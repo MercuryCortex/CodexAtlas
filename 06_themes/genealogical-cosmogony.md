@@ -28,6 +28,10 @@ refs:
     type: "monograph"
     tier: 2
 tags: [theme, cosmogony, creation-myth, genealogy, pacific, polynesian, greek, vedic, cross-tradition]
+date-earliest: -700
+dating-basis: B2
+dating-basis-source: "\"Witzel, M. 2012 *The Origins of the World's Mythologies*\""
+dating-basis-notes: "Hesiod Theogony c. -700; Polynesian Kumulipo c. 1700; Vedic Brihadaranyaka."
 ---
 
 # Genealogical Cosmogony

@@ -60,6 +60,10 @@ refs:
     tier: 3
     notes: "The 10,500 BCE precessional extension — more speculative; the Sphinx-Leo alignment claim."
 tags: [theme, egypt, giza, pyramid, orion, stars, stellar-alignment, shaft-alignment, osiris, sirius, isis, precession, bauval, investigation]
+date-earliest: 1989
+dating-basis: B1
+dating-basis-source: "\"Bauval, R. & Gilbert, A. *The Orion Mystery* (1989); journal article 1989\""
+dating-basis-notes: "Bauval-Gilbert hypothesis 1989. T3 alternative-school."
 ---
 
 # Orion Correlation Theory

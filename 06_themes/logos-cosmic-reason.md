@@ -39,6 +39,10 @@ refs:
     type: "monograph"
     tier: 2
 tags: [theme, theology, logos, stoic, philonic, johannine, hellenistic-philosophy, MASSIVE-WIN, cross-tradition, vak, dao, memphite, axial-age]
+date-earliest: -500
+dating-basis: B4
+dating-basis-source: "\"Kahn, C. 1979 *The Art and Thought of Heraclitus*. Cambridge\""
+dating-basis-notes: "Heraclitean logos c. -500; Stoic Zeno c. -300; Philo c. 30; John 1 c. 95."
 ---
 
 # Logos as Cosmic Reason

@@ -22,6 +22,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, mysticism, bridal, eckhart, rumi, bhakti, sufism]
+date-earliest: 1135
+dating-basis: B4
+dating-basis-source: "\"Astell, A. 1990 *The Song of Songs in the Middle Ages*. Cornell\""
+dating-basis-notes: "Bernard of Clairvaux Sermones c. 1135; Eckhart 1300; Rumi 1273."
 ---
 
 # Soul as Bride

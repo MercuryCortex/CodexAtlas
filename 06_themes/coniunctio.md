@@ -29,6 +29,10 @@ refs:
     type: "monograph"
     tier: 2
 tags: [theme, alchemy, jung, individuation, depth-psychology]
+date-earliest: 300
+dating-basis: B5
+dating-basis-source: "\"Principe, L. 2013 *The Secrets of Alchemy*\""
+dating-basis-notes: "Coniunctio motif in Greek alchemy c. 300 (Zosimos); Jungian reading 1940s-50s."
 ---
 
 # Coniunctio — Union of Opposites

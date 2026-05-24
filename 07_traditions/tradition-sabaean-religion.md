@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-sabaean-religion"
 name: "Tradition Sabaean Religion"
 status: "stub"
+date-earliest: -1000
+dating-basis: B5
+dating-basis-source: "\"Hoyland, R. 2001 *Arabia and the Arabs*\""
+dating-basis-notes: "Sabaean kingdom c. -1000 to 275 CE; Marib temples c. -700."
 ---
 
 # Tradition Sabaean Religion

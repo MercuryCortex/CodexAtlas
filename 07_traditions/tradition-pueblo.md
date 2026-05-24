@@ -3,6 +3,10 @@ type: tradition
 id: "tradition-pueblo"
 name: "Tradition Pueblo"
 status: "stub"
+date-earliest: 1300
+dating-basis: B5
+dating-basis-source: "\"Ortiz, A. 1969 *The Tewa World*. Univ. Chicago\""
+dating-basis-notes: "Pueblo II to Pueblo IV transition c. 1300 (consolidated villages); modern Pueblo identity post-Pueblo Revolt 1680."
 ---
 
 # Tradition Pueblo

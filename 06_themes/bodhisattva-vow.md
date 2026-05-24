@@ -40,6 +40,10 @@ refs:
     tier: 1
     notes: "Translation of Śāntideva's 8th-c. bodhisattva-ideal manifesto."
 tags: [theme, soteriological, mahayana, foundational, bodhisattva, bodhicitta, four-vows, six-paramitas]
+date-earliest: -100
+dating-basis: B4
+dating-basis-source: "\"Williams, P. 2008 *Mahayana Buddhism*\""
+dating-basis-notes: "Bodhisattva-vow in early Mahayana sutras c. -100 (Astasahasrika Prajnaparamita)."
 ---
 
 # Bodhisattva-vow

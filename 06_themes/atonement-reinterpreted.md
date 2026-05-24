@@ -27,6 +27,10 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, soteriology, gnosticism, christology, docetism]
+date-earliest: 150
+dating-basis: B5
+dating-basis-source: "\"Pagels, E. 1979 *The Gnostic Gospels*. Random House\""
+dating-basis-notes: "Gnostic alternative atonement systems c. 150-200 (Valentinian, Sethian); Marcion 144."
 ---
 
 # Atonement Reinterpreted

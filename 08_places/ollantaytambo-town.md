@@ -3,6 +3,10 @@ type: place
 id: "ollantaytambo-town"
 name: "Ollantaytambo (town)"
 status: "stub"
+date-earliest: 1440
+dating-basis: B3
+dating-basis-source: "\"Protzen, J.-P. 1993 *Inca Architecture and Construction at Ollantaytambo*\""
+dating-basis-notes: "Inca-period construction c. 1440; pre-Inca occupation c. 600."
 ---
 
 # Ollantaytambo Town

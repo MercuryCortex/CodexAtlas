@@ -45,6 +45,10 @@ connections:
   - target: "[[orunmila]]"
     type: oracle-vehicle
     note: "Ifá is the living oracle of Orunmila, Yoruba deity of wisdom and divination"
+date-earliest: 1100
+dating-basis: B5
+dating-basis-source: "\"Bascom, W. 1969 *Ifa Divination*\""
+dating-basis-notes: "Yoruba Ifa from Ile-Ife classical period c. 1100; cross-Atlantic diasporic 1500+."
 ---
 
 # Ifá Divination

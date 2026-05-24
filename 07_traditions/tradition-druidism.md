@@ -21,6 +21,9 @@ refs:
   - "Hutton, Ronald. 'The Pagan Religions of the Ancient British Isles.' Blackwell, 1991."
   - "Cunliffe, Barry. 'The Ancient Celts.' Oxford University Press, 1997."
   - "Caesar, Julius. 'De Bello Gallico' Book VI, c. 52 BCE. (Primary source account of Gallic druids.)"
+dating-basis: B5
+dating-basis-source: "\"Hutton, R. 2009 *Blood and Mistletoe: The History of the Druids in Britain*. Yale\""
+dating-basis-notes: "Druidic priesthood attested in Caesar (BG 6.13-18) c. -50 CE; archaeological/linguistic continuity to La Tène c. -400."
 ---
 
 The druids were the priestly-scholarly-judicial class of ancient Celtic society, attested by Classical authors (Caesar, Strabo, Diodorus Siculus) and preserved in Irish and Welsh medieval literature. They combined the functions of priest, judge, scholar, astronomer, and poet in a single hereditary-and-trained role.

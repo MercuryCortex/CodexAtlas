@@ -41,6 +41,10 @@ refs:
     type: "monograph"
     tier: 2
 tags: [theme, mythology, twins, indo-european, mesoamerican, vodou, roman, greek, vedic, comparative-mythology]
+date-earliest: -1200
+dating-basis: B2
+dating-basis-source: "\"West, M.L. 2007 *Indo-European Poetry and Myth*\""
+dating-basis-notes: "PIE divine twins motif; Vedic Ashvins c. -1200; Greek Dioskouroi c. -700; Roman Castor/Pollux."
 ---
 
 # Divine Twins

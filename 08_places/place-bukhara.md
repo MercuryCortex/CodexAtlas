@@ -19,6 +19,10 @@ hub-edges:
     source: "de la Vaissière 2005 *Sogdian Traders*; Foltz 2010 *Religions of the Silk Road*; Frye 1996 *The Heritage of Central Asia* — pre-Islamic Bukhara (Sogdian phase, 4th-8th c.) hosts Buddhist, Manichaean, Nestorian Christian, and Zoroastrian communities in the same urban-religious matrix that characterizes Samarkand; the city is part of the Central Asian afterlife of the 3rd-c. collision configuration"
     notes: "Cross-lens: 08_places → 06_themes"
 status: "stub"
+date-earliest: -500
+dating-basis: B3
+dating-basis-source: "\"Frye, R. 1965 *Bukhara: The Medieval Achievement*. Univ. Oklahoma\""
+dating-basis-notes: "Bukhara Achaemenid period c. -500; Samanid capital 875."
 ---
 
 # Place Bukhara
