@@ -968,7 +968,10 @@ body.app-pill-no-class .app-pill-divider { display: none; }
 .app-pill-menu {
   position: fixed;
   top: 0; left: 0;       /* JS overrides on open */
-  min-width: 220px;
+  /* Phase 22-X (2026-05-24) — tighter menu. Was 220px which was
+     wider than the trigger button + had redundant horizontal
+     padding. 140px lets labels alone size the dropdown. */
+  min-width: 140px;
   max-height: calc(100vh - 80px);
   overflow-y: auto;
   border-radius: 10px;

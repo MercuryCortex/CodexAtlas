@@ -3909,6 +3909,36 @@
     // AUDIT/forge-zoom-world-system-2026-05-21.md
     const BG_WORLD_WIDTH = 18000; // wu
 
+    // ════════════════════════════════════════════════════════════
+    //  BG SIZING + OPACITY RULES — CANONICAL (Phase 22-W, 2026-05-24)
+    // ════════════════════════════════════════════════════════════
+    //  Future agents: DO NOT modify these without an explicit John
+    //  greenlight (he's been burned multiple times by well-meaning
+    //  refactors that broke one layout while fixing the other).
+    //
+    //  WHEEL layout BG sizing (unchanged since Phase 21AJ):
+    //    widthPx = max(BG_WORLD_WIDTH × camera.scale, cover)
+    //    cover    = max(vp.w, vp.h × imgAspect)
+    //    World-scaled with viewport-cover floor.
+    //
+    //  TIMELINE layout BG sizing (Phase 22-W, John's literal spec):
+    //    widthPx = cover × max(1, gizmo% / FLOOR_PCT)
+    //    At gizmo 10% (= FLOOR_PCT): BG = cover (fills viewport)
+    //    Every tenth of a percent above 10%: BG grows linearly.
+    //    No flat zone, no "stops growing" lock. EVER.
+    //
+    //  OPACITY ramp (BOTH layouts, John 2026-05-24):
+    //    gizmo ≥ 30%:  opacity 0   (invisible — wheel/timeline is hero)
+    //    15% ≤ gizmo < 30%:  linear fade 100→0%
+    //    gizmo ≤ 15%:  opacity 1   (full)
+    //    Was 10% / 50% — tightened to 15% / 30% per John's spec.
+    //
+    //  VERTICAL anchor for TIMELINE (Phase 22-P):
+    //    dy = 0 when timeline — BG vertical-locks to viewport
+    //    center so panning through the tall band stack doesn't
+    //    move the BG off-screen vertically. Horizontal dx still
+    //    follows world-X.
+    // ════════════════════════════════════════════════════════════
     function syncBackgroundImage() {
       if (!bgImage) return;
       if (!camera || !camera.state) return;
@@ -3918,11 +3948,13 @@
       if (!fitScale || fitScale <= 0) return;
 
       const zoomPct = camera.state.scale / fitScale;
-      // Opacity ramp (gizmo terms): invisible ≥ 50%, full ≤ 10%.
+      // Phase 22-X (2026-05-24) — Opacity ramp: 15% / 30%.
+      // John's literal spec: full opacity at gizmo 15% (and below
+      // to floor 10%), 0% by gizmo 30%, linear between.
       let bgFade;
-      if      (zoomPct >= 0.50) bgFade = 0;
-      else if (zoomPct <= 0.10) bgFade = 1;
-      else                      bgFade = (0.50 - zoomPct) / (0.50 - 0.10);
+      if      (zoomPct >= 0.30) bgFade = 0;
+      else if (zoomPct <= 0.15) bgFade = 1;
+      else                      bgFade = (0.30 - zoomPct) / (0.30 - 0.15);
       bgImage.style.opacity = bgFade.toFixed(3);
 
       // ── BG WORLD-OBJECT TRANSFORM (Phase 21AJ, 2026-05-22) ────
