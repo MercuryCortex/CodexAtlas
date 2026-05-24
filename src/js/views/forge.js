@@ -1272,19 +1272,45 @@
       //   - Visibility per layout via body.fv-layout-<name>.
       //   - JS attaches event handlers ONLY — never builds DOM.
       // See HOW-WE-WORK.md §5 cardinal rule #7 (SEVERITY DOGMA).
+      // Phase 22-AD (2026-05-24) — three preset buttons (LIN/LOG/
+      // CMP), then a focus group (DATE IN | DATE OUT | FOCUS) for
+      // zoom-to-range navigation. LOG-R dropped per John's spec.
+      // DENSITY moved OUT of the bar into its own always-visible
+      // vertical slider primitive (see #forge-tl-vdensity below).
       '<div class="forge-bottombar-right fv-timeline-only" id="forge-bottombar-timeline">' +
         '<button class="forge-fxpanel-btn" data-tl-preset="linear-default"          aria-pressed="true"  title="Linear · 9K BCE → today">LIN</button>' +
         '<button class="forge-fxpanel-btn" data-tl-preset="log-centered"            aria-pressed="false" title="Log · year-0 centered">LOG</button>' +
-        '<button class="forge-fxpanel-btn" data-tl-preset="log-recent"              aria-pressed="false" title="Log · recent-emphasis">LOG-R</button>' +
         '<button class="forge-fxpanel-btn" data-tl-preset="compressed-civilization" aria-pressed="false" title="Compressed · era-weighted">CMP</button>' +
-        '<button class="forge-fxpanel-btn forge-tl-density" id="forge-tl-density-btn" aria-haspopup="true" aria-expanded="false" title="Band density — click for slider, double-click to reset">' +
-          '<span class="forge-tl-density-label">DENSITY</span>' +
-          '<span class="forge-tl-density-val">1.0×</span>' +
-          '<span class="forge-tl-density-chev">▾</span>' +
-        '</button>' +
+        '<input type="text" class="forge-fxpanel-btn forge-tl-focus-in"  id="forge-tl-focus-in"  placeholder="date in"  autocomplete="off" spellcheck="false" title="Type a year (e.g. -3000, 0, 1500). Press FOCUS to zoom." />' +
+        '<input type="text" class="forge-fxpanel-btn forge-tl-focus-out" id="forge-tl-focus-out" placeholder="date out" autocomplete="off" spellcheck="false" title="Type a year (e.g. -3000, 0, 1500). Press FOCUS to zoom." />' +
+        '<button class="forge-fxpanel-btn forge-tl-focus-go" id="forge-tl-focus-go" title="Zoom + pan so DATE IN sits at the left edge and DATE OUT at the right edge">FOCUS</button>' +
       '</div>',
     ].join('');
     stage.appendChild(bottomBar);
+
+    // Phase 22-AD (2026-05-24) — ALWAYS-VISIBLE VERTICAL DENSITY
+    // SLIDER. Forked out of the bottombar into its own primitive
+    // anchored bottom-right above the bottombar. Persistent on
+    // Timeline view (hidden elsewhere via .fv-timeline-only).
+    // John's brief: "always present vertical slider that the user
+    // can always access and scrub while navigating not having to
+    // click to open it — making it vertical also helps functionality
+    // intuitive for human, and saves us horizontal space on UX
+    // bottom menu." This is a SPECIALITY primitive that lives next
+    // to the bottombar but is NOT a bottombar cell. Owns its own
+    // shape (vertical), its own height (~150px), its own drag
+    // semantics. Declarative DOM — JS in timeline-chrome.js only
+    // wires pointer events.
+    const vdensity = document.createElement('div');
+    vdensity.className = 'forge-tl-vdensity fv-timeline-only';
+    vdensity.id = 'forge-tl-vdensity';
+    vdensity.innerHTML =
+      '<div class="forge-tl-vdensity-readout" id="forge-tl-vdensity-readout">1.0×</div>' +
+      '<div class="forge-tl-vdensity-track"   id="forge-tl-vdensity-track">' +
+        '<div class="forge-tl-vdensity-thumb" id="forge-tl-vdensity-thumb"></div>' +
+      '</div>' +
+      '<div class="forge-tl-vdensity-label">DENS</div>';
+    stage.appendChild(vdensity);
 
     // Phase 20F (2026-05-21) — backdrop image (star-field / nebula).
     // Sits BELOW the canvas in z-order so the wheel paints on top.
@@ -5158,6 +5184,46 @@
           return true;
         } catch (e) {
           console.warn('[forge] relayout failed', e);
+          return false;
+        }
+      };
+      // Phase 22-AD (2026-05-24) — FOCUS-RANGE API.
+      // Zooms + pans the camera so that `yearLo` lands at the LEFT
+      // edge of the viewport and `yearHi` lands at the RIGHT edge.
+      // Used by the FOCUS button in the timeline bottombar. Works
+      // for any active scale preset because it routes through the
+      // preset's timelineYearToWorldX → world coords are correct
+      // regardless of LIN / LOG / CMP.
+      window._forge.focusTimelineRange = function (yearLo, yearHi) {
+        if (local.destroyed) return false;
+        if (local.layoutId !== 'timeline') return false;
+        if (!isFinite(yearLo) || !isFinite(yearHi)) return false;
+        if (yearLo >= yearHi) return false;
+        const ENG = window.AtlasEngineLayout;
+        if (!ENG || !ENG.timelineYearToWorldX) return false;
+        const vp = local.lastSize;
+        if (!vp || !vp.w) return false;
+        const xRange = local.mode && local.mode.xRange;
+        if (!xRange) return false;
+        try {
+          const wxLo = ENG.timelineYearToWorldX(yearLo, xRange);
+          const wxHi = ENG.timelineYearToWorldX(yearHi, xRange);
+          const worldSpan = Math.max(1e-6, wxHi - wxLo);
+          // Leave a small horizontal margin so the endpoints don't
+          // jam against the viewport edges (8% inset on each side).
+          const usableW = vp.w * 0.92;
+          const newScale = usableW / worldSpan;
+          const midWorldX = (wxLo + wxHi) / 2;
+          // Y stays at origin — timeline world is origin-centered.
+          // camera.set() emits onChange internally so subscribers
+          // (chrome, BG sync, etc.) re-fire automatically.
+          camera.set({ centerX: midWorldX, centerY: 0, scale: newScale });
+          // Refresh pan bounds + scale-bounds since the new scale
+          // may sit above/below the fit-relative dead-lock zone.
+          if (typeof applyZoomFloor === 'function') applyZoomFloor();
+          return true;
+        } catch (e) {
+          console.warn('[forge] focusTimelineRange failed', e);
           return false;
         }
       };

@@ -6781,6 +6781,20 @@ body.nav-collapsed .nav-more > summary .lbl { display: none; }
    were tied to the deleted top-status row. Both removed; the live
    bottom-bar search (`.forge-bottom-search`) handles search now. */
 
+/* ════════════════════════════════════════════════════════════
+   BOTTOMBAR FOUNDATION  (Phase 22-AD, 2026-05-24)
+   ────────────────────────────────────────────────────────────
+   `--bottombar-cell-h` is the SITE-WIDE canonical height for
+   every clickable / editable / display cell in the bottom row.
+   Every primitive — buttons, inputs, scrubber boxes — snaps to
+   this height via `height: var(...)` + `box-sizing: border-box`.
+   Change this ONCE, every cell follows. The single source of
+   truth referenced by the height-parity rule below.
+   ════════════════════════════════════════════════════════════ */
+:root {
+  --bottombar-cell-h: 24px;
+}
+
 /* Phase 6d — bottom bar inside .forge-stage. Floating row at
    the bottom edge holding the search input + zoom gizmo.
    Behind the dev panel z-stack so the panel can cover it. */
@@ -6794,6 +6808,20 @@ body.nav-collapsed .nav-more > summary .lbl { display: none; }
   gap: 10px;
   z-index: 12;
   pointer-events: none;   /* children re-enable below */
+}
+
+/* Height parity — every interactive cell directly in or
+   nested under .forge-bottombar gets the canonical height +
+   border-box sizing. New primitives inherit this for free.
+   The rule sits ABOVE per-primitive declarations so per-primitive
+   padding still applies, but height is locked. */
+.forge-bottombar button,
+.forge-bottombar input,
+.forge-bottombar .forge-scrub-box,
+.forge-bottombar .forge-debug-btn {
+  height: var(--bottombar-cell-h);
+  box-sizing: border-box;
+  line-height: 1;
 }
 .forge-zoom-gizmo,
 .forge-bottom-search {
@@ -8361,44 +8389,114 @@ body.view-forge.fx-bloom .forge-hulls-overlay {
   pointer-events: auto;
 }
 
-/* DENSITY button is a `.forge-fxpanel-btn` variant — needs only
-   internal-span layout, NOT any sizing override (the canonical
-   class owns size). The variant class is for the inner label
-   spacing + popover hook target. */
-.forge-fxpanel-btn.forge-tl-density {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  white-space: nowrap;
+/* ════════════════════════════════════════════════════════════
+   TIMELINE FOCUS GROUP — DATE IN / DATE OUT / FOCUS
+   Phase 22-AD (2026-05-24). Three more `.forge-fxpanel-btn`
+   children that live in `.forge-bottombar-right`. The two inputs
+   look identical to the buttons but accept text. The FOCUS button
+   reads them and calls `_forge.focusTimelineRange()`.
+   ════════════════════════════════════════════════════════════ */
+.forge-tl-focus-in,
+.forge-tl-focus-out {
+  width: 78px;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+  outline: none;
 }
-.forge-tl-density-label { opacity: 0.7; text-transform: uppercase; }
-.forge-tl-density-val   { color: var(--gold, #d4a55a); font-weight: 600; }
-.forge-tl-density-chev  { opacity: 0.6; font-size: 9px; }
+.forge-tl-focus-in::placeholder,
+.forge-tl-focus-out::placeholder {
+  color: var(--text-3, #6b7280);
+  opacity: 0.7;
+  text-transform: uppercase;
+  letter-spacing: 0.10em;
+}
+.forge-tl-focus-in:focus,
+.forge-tl-focus-out:focus {
+  border-color: var(--gold, #d4a55a);
+  color: var(--gold-1, #e8c889);
+}
+.forge-tl-focus-go {
+  font-weight: 600;
+  color: var(--gold, #d4a55a);
+}
 
-/* Density popover — drops UP from the DENSITY button. Same look
-   as `.forge-fxpanel` (FX/Style popovers) so it belongs to the
-   same visual family. */
-.forge-tl-density-pop {
+/* ════════════════════════════════════════════════════════════
+   VERTICAL DENSITY SLIDER — its own primitive
+   Phase 22-AD (2026-05-24). Forked out of the bottombar. Always
+   visible on Timeline view. Anchored bottom-right above the
+   bottombar. Vertical drag = expand/compress band heights.
+   ────────────────────────────────────────────────────────────
+   Why its own class family (`.forge-tl-vdensity-*`):
+   - it has a different SHAPE than bottombar cells (tall, narrow)
+   - different INTERACTION (vertical drag vs click)
+   - different LIFETIME (persistent, no popover)
+   Variants under the SAME canonical look (gold accent on dark
+   panel) so it belongs to the visual family even while having
+   its own geometry.
+   ════════════════════════════════════════════════════════════ */
+.forge-tl-vdensity {
   position: absolute;
-  bottom: 40px;            /* clears the bottombar's own ~24px + gap */
   right: 14px;
-  min-width: 240px;
-  padding: 10px 14px 12px;
-  background: rgba(13,17,25,0.92);
+  bottom: 48px;            /* clears the bottombar (14 + 24 + 10 gap) */
+  width: 32px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 4px;
+  background: rgba(13,17,25,0.78);
   border: 1px solid rgba(212,165,90,0.22);
-  border-radius: 8px;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  box-shadow: 0 6px 24px rgba(0,0,0,0.45);
-  z-index: 235;
-  font-family: var(--mono, "JetBrains Mono", Menlo, monospace);
-  font-size: 11px;
-  letter-spacing: 0.06em;
+  border-radius: 6px;
   color: var(--text-2, #9099a8);
+  font-family: var(--mono, "JetBrains Mono", Menlo, monospace);
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  z-index: 6;
   pointer-events: auto;
-  display: none;
+  user-select: none;
+  box-sizing: border-box;
+  transition: border-color 120ms ease;
 }
-.forge-tl-density-pop.is-open { display: block; }
+.forge-tl-vdensity:hover {
+  border-color: var(--gold-soft, rgba(212,165,90,0.45));
+}
+.forge-tl-vdensity-readout {
+  color: var(--gold, #d4a55a);
+  font-weight: 600;
+  font-size: 10px;
+  text-align: center;
+  cursor: pointer;         /* double-click to reset */
+}
+.forge-tl-vdensity-track {
+  flex: 1 1 auto;
+  width: 4px;
+  margin: 6px 0;
+  position: relative;
+  background: rgba(212,165,90,0.20);
+  border-radius: 3px;
+  cursor: ns-resize;
+}
+.forge-tl-vdensity-thumb {
+  position: absolute;
+  left: 50%;
+  width: 14px;
+  height: 14px;
+  margin-left: -7px;
+  margin-top: -7px;
+  border-radius: 50%;
+  background: var(--gold, #d4a55a);
+  border: 1px solid rgba(20,16,10,0.85);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.45);
+  cursor: grab;
+  touch-action: none;
+}
+.forge-tl-vdensity-thumb:active { cursor: grabbing; }
+.forge-tl-vdensity-label {
+  opacity: 0.7;
+  text-transform: uppercase;
+  text-align: center;
+}
 .forge-fxpanel {
   position: absolute;
   bottom: 40px;     /* drops upward */

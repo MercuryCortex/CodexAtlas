@@ -98,19 +98,14 @@
   let gridGroupEl = null;     // <g> container for faint vertical grid stripes
   let bandGroupEl = null;     // <g> family band rectangles (bottom-most layer)
   let bandLabelGroupEl = null;// <g> family labels — anchored to screen-left
-  // Phase 22-AA (2026-05-24) — UNIFIED BOTTOM-RIGHT TOOLBAR.
-  // Three previously-floating elements (chip picker, LIN/LOG switch,
-  // vertical density slider) collapsed into ONE horizontal row that
-  // mirrors the bottom-left button-strip layout. After 5+ asks. All
-  // children use `.forge-fxpanel-btn` styling so any future restyle
-  // of the bottom-left buttons propagates automatically here too.
-  let toolbarEl   = null;     // <div> single container: [LIN|LOG|LOG-R|CMP] [DENSITY 1.0×]
-  let presetSegEl = null;     // <div> segmented preset switcher
-  let densityBtn  = null;     // <button> density popover trigger ("DENSITY 1.0×")
-  let densityPopEl= null;     // <div> popover with horizontal slider (above the btn)
-  let densityInput= null;     // <input type=hidden> holds the current band-scale value
-  let densityRafId= 0;        // rAF coalesce for relayout on slider drag
-  let mounted     = false;
+  // Phase 22-AD (2026-05-24) — Bottombar toolbar lives in HTML;
+  // density forked into its own persistent vertical slider. JS
+  // only wires events on declarative DOM here.
+  let toolbarEl    = null;    // <div#forge-bottombar-timeline> — bottombar right segment
+  let vdensityEl   = null;    // <div#forge-tl-vdensity> — persistent vertical slider
+  let vdensityRafId= 0;       // rAF coalesce for relayout on slider drag
+  let densityVal   = 1.0;     // current band-density scalar (mirrors LS)
+  let mounted      = false;
 
   // localStorage key for persisting the band-density preference.
   // Phase 22-K → 22-N (2026-05-24) — v3 because base band heights
@@ -220,18 +215,15 @@
           unsubscribeCamera = camera.onChange(scheduleRefresh);
         }
       }
-      // Phase 22-AB-fix4 (2026-05-24) — re-sync toolbar state.
+      // Phase 22-AD (2026-05-24) — re-sync toolbar + vdensity state.
       if (toolbarEl && typeof toolbarEl._renderPresets === 'function') {
         try { toolbarEl._renderPresets(); } catch (_) {}
       }
-      if (densityInput && densityBtn) {
+      if (vdensityEl) {
         const ENG = window.AtlasEngineLayout || {};
         if (typeof ENG.getTimelineBandHeightScale === 'function') {
-          const cur = ENG.getTimelineBandHeightScale();
-          if (Math.abs(parseFloat(densityInput.value) - cur) > 0.005) {
-            densityInput.value = String(cur);
-          }
-          syncDensityReadout(cur);
+          densityVal = ENG.getTimelineBandHeightScale();
+          syncVDensity();
         }
       }
       scheduleRefresh();
@@ -355,47 +347,39 @@
   function unmount() {
     if (rafId) { cancelAnimationFrame(rafId); rafId = 0; }
     if (unsubscribeCamera) { try { unsubscribeCamera(); } catch (_) {} unsubscribeCamera = null; }
-    if (densityRafId) { cancelAnimationFrame(densityRafId); densityRafId = 0; }
-    // Phase 22-AB-fix4 (2026-05-24) — toolbar lives in declarative
-    // HTML now; only events get detached. CSS hides it via
-    // body:not(.fv-layout-timeline) — see app.css `.fv-timeline-only`.
+    if (vdensityRafId) { cancelAnimationFrame(vdensityRafId); vdensityRafId = 0; }
+    // Toolbar + vdensity live in declarative HTML; only events detach.
     if (toolbarEl && typeof toolbarEl._cleanup === 'function') {
       try { toolbarEl._cleanup(); } catch (_) {}
+    }
+    if (vdensityEl && typeof vdensityEl._cleanup === 'function') {
+      try { vdensityEl._cleanup(); } catch (_) {}
     }
     // Restore the wheel's hull-overlay opacity ownership on unmount.
     const hullOverlayEl = document.querySelector('.forge-hulls-overlay');
     if (hullOverlayEl) hullOverlayEl.style.opacity = '';
     if (svgRoot && svgRoot.parentNode) svgRoot.parentNode.removeChild(svgRoot);
-    if (densityPopEl && densityPopEl.parentNode) densityPopEl.parentNode.removeChild(densityPopEl);
     svgRoot = null; axisLineEl = null; tickGroupEl = null; gridGroupEl = null;
     bandGroupEl = null; bandLabelGroupEl = null;
-    toolbarEl = null; presetSegEl = null;
-    densityBtn = null; densityPopEl = null; densityInput = null;
+    toolbarEl = null; vdensityEl = null;
     hostEl = null; camera = null; mode = null; xRange = null;
     mounted = false;
   }
 
-  // ── BOTTOM TOOLBAR WIRING (Phase 22-AB-fix4, 2026-05-24) ─
-  // The TIMELINE bottom-right buttons (LIN/LOG/LOG-R/CMP +
-  // DENSITY) are now DECLARED in `index.html` (built by forge.js
-  // into `.forge-bottombar > .forge-bottombar-right`). This
-  // module ONLY wires event handlers + state sync. NO DOM
-  // creation here — that's the canonical pattern per HOW-WE-WORK
-  // §5.7 (SEVERITY DOGMA).
-  //
-  // CSS owns: button styling, popover styling, layout-visibility
-  //   via `body.fv-layout-timeline` + `.fv-timeline-only`.
-  // HTML owns: button presence + order + ARIA attributes.
-  // JS  owns: click handlers + active-state sync + popover lifecycle.
+  // ── BOTTOMBAR + VDENSITY WIRING (Phase 22-AD, 2026-05-24) ─
+  // The TIMELINE bottom-right segment + the vertical density
+  // slider are both DECLARED in `forge.js` bottombar template
+  // (HTML in app.css-owned classes). This module ONLY wires
+  // event handlers + state sync. NO DOM creation here.
+  // SEVERITY DOGMA compliance (HOW-WE-WORK §5.7).
   function buildBottomToolbar() {
     const ENG = window.AtlasEngineLayout || {};
     if (typeof ENG.setTimelineScalePreset !== 'function') return;
 
     toolbarEl = document.getElementById('forge-bottombar-timeline');
-    if (!toolbarEl) return;   // declarative DOM missing — bail gracefully
-    presetSegEl = toolbarEl;  // same element holds the segment buttons
+    if (!toolbarEl) return;
 
-    // ─── Wire preset segments via delegation ───────────────
+    // ─── Preset segments (LIN / LOG / CMP) via delegation ──
     function syncPresetActive() {
       const activeId = (typeof ENG.getTimelineScalePresetId === 'function')
         ? ENG.getTimelineScalePresetId() : 'linear-default';
@@ -417,51 +401,122 @@
     syncPresetActive();
     toolbarEl._renderPresets = syncPresetActive;
 
-    // ─── Wire DENSITY button + popover ─────────────────────
-    densityBtn = document.getElementById('forge-tl-density-btn');
-    if (densityBtn && typeof ENG.getTimelineBandHeightScale === 'function') {
+    // ─── DATE IN / DATE OUT / FOCUS button group ────────────
+    const inEl   = document.getElementById('forge-tl-focus-in');
+    const outEl  = document.getElementById('forge-tl-focus-out');
+    const goBtn  = document.getElementById('forge-tl-focus-go');
+    function parseYear(s) {
+      if (!s) return null;
+      s = String(s).trim();
+      if (!s) return null;
+      // Accept: "1500", "-3000", "1500 CE", "3000 BCE", "0".
+      let m = s.match(/^(-?\d+)\s*(BCE|BC|CE|AD)?\s*$/i);
+      if (!m) return null;
+      let y = parseInt(m[1], 10);
+      const tag = (m[2] || '').toUpperCase();
+      if (tag === 'BCE' || tag === 'BC') y = -Math.abs(y);
+      return isFinite(y) ? y : null;
+    }
+    function applyFocus() {
+      const lo = parseYear(inEl  && inEl.value);
+      const hi = parseYear(outEl && outEl.value);
+      if (lo == null || hi == null) {
+        if (inEl)  inEl.style.borderColor  = (lo == null ? '#7a2a2a' : '');
+        if (outEl) outEl.style.borderColor = (hi == null ? '#7a2a2a' : '');
+        return;
+      }
+      if (inEl)  inEl.style.borderColor  = '';
+      if (outEl) outEl.style.borderColor = '';
+      const a = Math.min(lo, hi), b = Math.max(lo, hi);
+      if (window._forge && typeof window._forge.focusTimelineRange === 'function') {
+        window._forge.focusTimelineRange(a, b);
+      }
+    }
+    if (goBtn) goBtn.addEventListener('click', applyFocus);
+    function onFocusKey(e) {
+      if (e.key === 'Enter') { e.preventDefault(); applyFocus(); }
+    }
+    if (inEl)  inEl.addEventListener('keydown',  onFocusKey);
+    if (outEl) outEl.addEventListener('keydown', onFocusKey);
+
+    // ─── Vertical density slider (persistent primitive) ─────
+    vdensityEl = document.getElementById('forge-tl-vdensity');
+    if (vdensityEl && typeof ENG.getTimelineBandHeightScale === 'function') {
       hydrateBandScaleFromLS();
-      const cur = ENG.getTimelineBandHeightScale();
-      const bounds = ENG.timelineBandScaleBounds || { min: 0.3, max: 3.0 };
-
-      densityInput = document.createElement('input');
-      densityInput.type  = 'hidden';
-      densityInput.value = String(cur);
-      densityInput._bounds = bounds;
-
-      syncDensityReadout(cur);
-
-      densityBtn.addEventListener('click', toggleDensityPopover);
-      densityBtn.addEventListener('dblclick', function (e) {
-        e.preventDefault(); e.stopPropagation();
-        applyDensityValue(1.0);
-        closeDensityPopover();
-      });
+      wireVDensity(vdensityEl);
     }
 
-    // Outside-click + Esc to close popovers.
-    const onOutside = function (e) {
-      if (!densityPopEl) return;
-      if (densityPopEl.contains(e.target)) return;
-      if (densityBtn && densityBtn.contains(e.target)) return;
-      closeDensityPopover();
-    };
-    const onEsc = function (e) {
-      if (e.key === 'Escape') closeDensityPopover();
-    };
-    document.addEventListener('mousedown', onOutside, true);
-    document.addEventListener('keydown', onEsc, true);
     toolbarEl._cleanup = function () {
       toolbarEl.removeEventListener('click', onPresetClick);
-      document.removeEventListener('mousedown', onOutside, true);
-      document.removeEventListener('keydown', onEsc, true);
+      if (goBtn) goBtn.removeEventListener('click', applyFocus);
+      if (inEl)  inEl.removeEventListener('keydown',  onFocusKey);
+      if (outEl) outEl.removeEventListener('keydown', onFocusKey);
     };
   }
 
-  function syncDensityReadout(v) {
-    if (!densityBtn) return;
-    const vEl = densityBtn.querySelector('.forge-tl-density-val');
-    if (vEl) vEl.textContent = formatBandScale(v);
+  // ── VERTICAL DENSITY SLIDER (Phase 22-AD, 2026-05-24) ───
+  // Pointer-event driven. Track + thumb live in declarative HTML
+  // (`#forge-tl-vdensity`), this just wires drag → value.
+  function wireVDensity(rootEl) {
+    const ENG = window.AtlasEngineLayout || {};
+    const bounds = ENG.timelineBandScaleBounds || { min: 0.3, max: 3.0 };
+    const trackEl  = rootEl.querySelector('#forge-tl-vdensity-track');
+    const thumbEl  = rootEl.querySelector('#forge-tl-vdensity-thumb');
+    const readoutEl= rootEl.querySelector('#forge-tl-vdensity-readout');
+    if (!trackEl || !thumbEl || !readoutEl) return;
+
+    densityVal = ENG.getTimelineBandHeightScale();
+    syncVDensity();
+
+    function clientYToValue(clientY) {
+      const r = trackEl.getBoundingClientRect();
+      if (r.height <= 0) return densityVal;
+      // top of track = max, bottom = min (drag UP = expand).
+      const t = 1 - Math.max(0, Math.min(1, (clientY - r.top) / r.height));
+      return bounds.min + t * (bounds.max - bounds.min);
+    }
+    function snap(v) { return Math.round(v / 0.05) * 0.05; }
+    let dragging = false;
+    function onPointerDown(e) {
+      e.preventDefault();
+      dragging = true;
+      thumbEl.style.cursor = 'grabbing';
+      try { thumbEl.setPointerCapture && e.pointerId != null && thumbEl.setPointerCapture(e.pointerId); } catch(_){}
+      applyDensityValue(snap(clientYToValue(e.clientY)));
+    }
+    function onPointerMove(e) {
+      if (!dragging) return;
+      e.preventDefault();
+      applyDensityValue(snap(clientYToValue(e.clientY)));
+    }
+    function onPointerUp(e) {
+      if (!dragging) return;
+      dragging = false;
+      thumbEl.style.cursor = 'grab';
+      try { thumbEl.releasePointerCapture && e.pointerId != null && thumbEl.releasePointerCapture(e.pointerId); } catch(_){}
+    }
+    trackEl.addEventListener('pointerdown', onPointerDown);
+    thumbEl.addEventListener('pointerdown', onPointerDown);
+    window.addEventListener('pointermove', onPointerMove);
+    window.addEventListener('pointerup',   onPointerUp);
+    window.addEventListener('pointercancel', onPointerUp);
+    readoutEl.addEventListener('dblclick', function () { applyDensityValue(1.0); });
+    // Stash cleanup
+    rootEl._cleanup = function () {
+      window.removeEventListener('pointermove', onPointerMove);
+      window.removeEventListener('pointerup',   onPointerUp);
+      window.removeEventListener('pointercancel', onPointerUp);
+    };
+  }
+
+  function syncVDensity() {
+    if (!vdensityEl) return;
+    const bounds = (window.AtlasEngineLayout && window.AtlasEngineLayout.timelineBandScaleBounds) || { min: 0.3, max: 3.0 };
+    const t = (densityVal - bounds.min) / (bounds.max - bounds.min);   // 0..1
+    const thumbEl   = vdensityEl.querySelector('#forge-tl-vdensity-thumb');
+    const readoutEl = vdensityEl.querySelector('#forge-tl-vdensity-readout');
+    if (thumbEl)   thumbEl.style.top = ((1 - t) * 100).toFixed(2) + '%';
+    if (readoutEl) readoutEl.textContent = formatBandScale(densityVal);
   }
 
   function hydrateBandScaleFromLS() {
@@ -479,115 +534,20 @@
     return (Math.round(v * 10) / 10).toFixed(1) + '×';
   }
 
-  function toggleDensityPopover() {
-    if (densityPopEl) closeDensityPopover();
-    else              openDensityPopover();
-  }
-
-  function openDensityPopover() {
-    if (!densityBtn || !densityInput) return;
-    const stageEl = densityBtn.closest('.forge-stage') || document.body;
-    const bounds = densityInput._bounds || { min: 0.3, max: 3.0 };
-    const v = parseFloat(densityInput.value);
-
-    // Canonical class — `.forge-tl-density-pop` in app.css owns
-    // position / colors / typography. JS only builds children +
-    // wires events.
-    densityPopEl = document.createElement('div');
-    densityPopEl.className = 'forge-tl-density-pop is-open';
-
-    // Header row — title + live readout.
-    const head = document.createElement('div');
-    head.style.display = 'flex';
-    head.style.justifyContent = 'space-between';
-    head.style.alignItems = 'baseline';
-    head.style.marginBottom = '8px';
-    head.style.textTransform = 'uppercase';
-    const title = document.createElement('span');
-    title.textContent = 'Band density';
-    title.style.opacity = '0.7';
-    head.appendChild(title);
-    const readout = document.createElement('span');
-    readout.className = '_pop_v';
-    readout.textContent = formatBandScale(v);
-    readout.style.color = 'var(--gold, #d4a55a)';
-    readout.style.fontWeight = '600';
-    head.appendChild(readout);
-    densityPopEl.appendChild(head);
-
-    // HORIZONTAL native range input — keeps interaction simple, no
-    // pointer-event gymnastics needed (vertical slider had drag issues).
-    const range = document.createElement('input');
-    range.type  = 'range';
-    range.min   = String(bounds.min);
-    range.max   = String(bounds.max);
-    range.step  = '0.05';
-    range.value = String(v);
-    Object.assign(range.style, {
-      width:       '100%',
-      accentColor: 'var(--gold, #d4a55a)',
-      cursor:      'ew-resize',
-    });
-    range.addEventListener('input', function () {
-      const nv = parseFloat(range.value);
-      readout.textContent = formatBandScale(nv);
-      applyDensityValue(nv);
-    });
-    densityPopEl.appendChild(range);
-
-    // Foot row — min/reset/max ticks.
-    const foot = document.createElement('div');
-    foot.style.display = 'flex';
-    foot.style.justifyContent = 'space-between';
-    foot.style.marginTop = '6px';
-    foot.style.opacity = '0.6';
-    foot.style.fontSize = '9px';
-    foot.style.letterSpacing = '0.10em';
-    foot.style.textTransform = 'uppercase';
-    const lo = document.createElement('span'); lo.textContent = bounds.min.toFixed(1) + '×';
-    const reset = document.createElement('a');
-    reset.href = '#'; reset.textContent = 'reset 1.0×';
-    reset.style.color = 'var(--gold, #d4a55a)';
-    reset.style.textDecoration = 'none';
-    reset.addEventListener('click', function (e) {
-      e.preventDefault();
-      range.value = '1';
-      readout.textContent = '1.0×';
-      applyDensityValue(1.0);
-    });
-    const hi = document.createElement('span'); hi.textContent = bounds.max.toFixed(1) + '×';
-    foot.appendChild(lo); foot.appendChild(reset); foot.appendChild(hi);
-    densityPopEl.appendChild(foot);
-
-    stageEl.appendChild(densityPopEl);
-    if (densityBtn) densityBtn.setAttribute('aria-expanded', 'true');
-  }
-
-  function closeDensityPopover() {
-    if (densityPopEl && densityPopEl.parentNode) densityPopEl.parentNode.removeChild(densityPopEl);
-    densityPopEl = null;
-    if (densityBtn) densityBtn.setAttribute('aria-expanded', 'false');
-  }
-
   function applyDensityValue(v) {
-    if (!densityInput) return;
     if (!isFinite(v)) return;
-    const b = densityInput._bounds || { min: 0.3, max: 3.0 };
-    const clamped = Math.max(b.min, Math.min(b.max, v));
-    densityInput.value = String(clamped);
-    syncDensityReadout(clamped);
-    if (densityPopEl) {
-      const vEl = densityPopEl.querySelector('._pop_v');
-      if (vEl) vEl.textContent = formatBandScale(clamped);
-    }
-    try { localStorage.setItem(LS_BAND_SCALE, String(clamped)); } catch (_) {}
     const ENG = window.AtlasEngineLayout || {};
+    const bounds = (ENG && ENG.timelineBandScaleBounds) || { min: 0.3, max: 3.0 };
+    const clamped = Math.max(bounds.min, Math.min(bounds.max, v));
+    densityVal = clamped;
+    syncVDensity();
+    try { localStorage.setItem(LS_BAND_SCALE, String(clamped)); } catch (_) {}
     const changed = (typeof ENG.setTimelineBandHeightScale === 'function')
       && ENG.setTimelineBandHeightScale(clamped);
     if (!changed) return;
-    if (densityRafId) return;
-    densityRafId = requestAnimationFrame(function () {
-      densityRafId = 0;
+    if (vdensityRafId) return;
+    vdensityRafId = requestAnimationFrame(function () {
+      vdensityRafId = 0;
       if (window._forge && typeof window._forge.relayout === 'function') {
         window._forge.relayout();
       }
@@ -847,6 +807,31 @@
     const Y0_LO = xRange.lo, Y0_HI = xRange.hi;
     const renderYearZeroSeparately = (0 >= Y0_LO && 0 <= Y0_HI);
 
+    // Phase 22-AD (2026-05-24) — LABEL COLLISION DETECTION.
+    // Tick MARKS always render (so the user has a visual scale),
+    // but LABELS skip if they'd overlap the last-drawn label.
+    // Estimate width from char count × ~7px/char at 11px mono +
+    // a 10px breathing-gap on each side. Track the right-edge
+    // of the last drawn label; if next label's left-edge collides,
+    // skip the label (keep the tick mark). The non-log presets
+    // produce evenly-spaced ticks so this is monotonic L→R.
+    // YR 0 occupies a "guaranteed slot" so we seed lastLabelRight
+    // with its right edge if it falls in view.
+    function estLabelWidth(text) {
+      return Math.max(20, text.length * 7) + 10;
+    }
+    let lastLabelRight = -Infinity;
+    // Seed with year-0's slot if visible (always rendered).
+    if (renderYearZeroSeparately) {
+      const sp0x = camera.worldToScreen(yToX(0, xRange), 0, vp).x;
+      const w0 = estLabelWidth('YR 0');
+      lastLabelRight = sp0x - w0 / 2 - 4; // we'll allow ticks LEFT of yr 0 to draw if they fit
+      // We don't actually skip ticks based on this — collision
+      // is decided per-tick in the loop with `lastLabelRight` mutated forward.
+      // Reset for the loop pass; YR 0 will be drawn separately later.
+      lastLabelRight = -Infinity;
+    }
+
     for (let yr = tickLo; yr <= tickHi; yr += tickStep) {
       if (renderYearZeroSeparately && yr === 0) continue;   // skip — drawn after as pivot
       const wx = yToX(yr, xRange);
@@ -880,9 +865,19 @@
       tick.setAttribute('stroke-width', '1.25');
       tickGroupEl.appendChild(tick);
 
-      // Year label — uniform style for every tick. Bright, mono,
-      // 11 px, gold-1. Tick-mark length is the only thing that
-      // changes between emphasized + non-emphasized.
+      // Year label — uniform style. Phase 22-AD collision rule:
+      // estimate text width and SKIP the label if it would overlap
+      // the previously-drawn one. Tick MARK still renders (the
+      // user keeps a scale reference) — only the text is dropped.
+      const labelText = formatYear(yr);
+      const lw = estLabelWidth(labelText);
+      const leftEdge = sp.x - lw / 2;
+      if (leftEdge < lastLabelRight) {
+        // Collision — keep the tick, drop the label.
+        continue;
+      }
+      lastLabelRight = sp.x + lw / 2;
+
       const label = document.createElementNS(NS, 'text');
       label.setAttribute('x', sp.x);
       label.setAttribute('y', axisY - (emphasized ? 14 : 12));
@@ -894,7 +889,7 @@
       label.style.fontWeight    = '500';
       label.style.letterSpacing = '0.10em';
       label.style.textTransform = 'uppercase';
-      label.textContent = formatYear(yr);
+      label.textContent = labelText;
       tickGroupEl.appendChild(label);
     }
 
