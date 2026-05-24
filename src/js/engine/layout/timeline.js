@@ -78,6 +78,37 @@
   const ROW_STEP      = 10;          // vertical gap between row centers
   const MIN_X_SPACING = 14;          // 2 * NODE_RADIUS + pad — minimum X gap before a row "frees"
 
+  // Phase TL-2 Step 7c (2026-05-24) — organic packing jitter.
+  // Hash-based, so a given node id ALWAYS gets the same offset:
+  // locks survive reload, scrubber doesn't shimmer, pan/zoom is
+  // stable. The amounts are world-units; they break dead-straight
+  // rows + same-date pile-ups without scrambling the chronology.
+  //   X_JITTER_WU = ±5 world units  ≈ ±10 yr at X_SCALE=0.5
+  //   Y_JITTER_WU = ±1.5 world units (small wave around row line)
+  const X_JITTER_WU = 5.0;
+  const Y_JITTER_WU = 1.5;
+  // FNV-1a 32-bit hash → [-0.5, 0.5]. Deterministic, well-spread.
+  function _idHash01(id) {
+    let h = 2166136261;
+    for (let i = 0; i < id.length; i++) {
+      h ^= id.charCodeAt(i);
+      h = Math.imul(h, 16777619);
+    }
+    return (h >>> 0) / 0xFFFFFFFF;
+  }
+  function _idJitterX(id) { return (_idHash01(id) - 0.5) * 2 * X_JITTER_WU; }
+  // Use a different bit slice of the hash for Y so X + Y aren't
+  // correlated — otherwise nodes with negative X jitter would all
+  // bias the same way in Y, producing diagonal artifacts.
+  function _idJitterY(id) {
+    let h = 2166136261;
+    for (let i = 0; i < id.length; i++) {
+      h ^= id.charCodeAt(i) + 7;          // salt
+      h = Math.imul(h, 16777619);
+    }
+    return (((h >>> 0) / 0xFFFFFFFF) - 0.5) * 2 * Y_JITTER_WU;
+  }
+
   // Sanity clamps for the date range. The SPINE always spans
   // [TIMELINE_FLOOR_BCE, currentYear] — independent of what dates
   // actually exist in the data. Per John's spec (2026-05-24): the
@@ -391,51 +422,70 @@
     const bandStackBottom = yCursor;
 
     // 5. Place dots inside each band via the sweep-line rowed packer.
-    //    Per-band local determinism: sort by (date_earliest, id).
+    //    Phase TL-2 Step 7c (2026-05-24) — organic distribution:
+    //      (a) hash-based X + Y jitter breaks same-date vertical
+    //          columns (deterministic per id → locks stay stable)
+    //      (b) packer + sort use jittered X so left-to-right
+    //          invariant holds
+    //      (c) the row stack is CENTERED vertically in the band so
+    //          sparse bands don't look top-heavy
     for (const fam of orderedFamilies) {
       const band = bands[fam];
-      const members = byFamily[fam].slice();
-      members.sort((a, b) => {
-        const da = effectiveDate(a), db = effectiveDate(b);
-        if (da !== db) return da - db;
+      // Pre-compute each member's jittered X. Then sort by it
+      // (with id tiebreak for determinism). The packer's "rows[r]
+      // = rightmost X placed" invariant only works if we process
+      // nodes in left-to-right order over the SAME X they'll
+      // ultimately render at.
+      const items = byFamily[fam].map(function (m) {
+        const baseX = preset.yearToWorldX(effectiveDate(m), ctx);
+        return {
+          id:     m.id,
+          jx:     baseX + _idJitterX(m.id),
+          yJit:   _idJitterY(m.id),
+        };
+      });
+      items.sort(function (a, b) {
+        if (a.jx !== b.jx) return a.jx - b.jx;
         return (a.id < b.id) ? -1 : (a.id > b.id ? 1 : 0);
       });
-      // rows[r] = rightmost X coordinate placed in row r. New nodes
-      // try each row in order; first row with enough gap accepts them.
+
+      // rows[r] = rightmost (jittered) X coordinate placed in row r.
       const rows = [];
-      // Compute band-local ROW_STEP — compress if natural row count
-      // would overflow the band's allocated height (P1 fallback §2.4).
-      // We don't know maxRowsActual until we pack; first pass uses
-      // ROW_STEP, then we measure + scale Y down if needed.
-      const localPlacements = [];   // [{ id, x, rowIndex }]
-      for (const m of members) {
-        // Phase TL-2 Step 6 — origin-centered. Phase TL-2 Step 6b —
-        // dispatched through the active scale preset so the year→X
-        // distribution is swappable at runtime.
-        const x = preset.yearToWorldX(effectiveDate(m), ctx);
+      const localPlacements = [];   // [{ id, x, rowIndex, yJit }]
+      for (const it of items) {
         let placedRow = -1;
         for (let r = 0; r < rows.length; r++) {
-          if (x - rows[r] >= MIN_X_SPACING) {
-            rows[r] = x;
+          if (it.jx - rows[r] >= MIN_X_SPACING) {
+            rows[r] = it.jx;
             placedRow = r;
             break;
           }
         }
         if (placedRow === -1) {
-          rows.push(x);
+          rows.push(it.jx);
           placedRow = rows.length - 1;
         }
-        localPlacements.push({ id: m.id, x, rowIndex: placedRow });
+        localPlacements.push({ id: it.id, x: it.jx, rowIndex: placedRow, yJit: it.yJit });
       }
-      // Map rowIndex → Y. Compress ROW_STEP if needed (P1).
+
+      // Map rowIndex → Y. Compress ROW_STEP if natural row count
+      // would overflow band height (P1 fallback §2.4).
       const usableH = band.height - 2 * ROW_PAD;
       const naturalH = Math.max(1, rows.length) * ROW_STEP;
       const rowStep = (naturalH > usableH && rows.length > 1)
         ? Math.max(2, usableH / (rows.length - 1))
         : ROW_STEP;
+
+      // Phase TL-2 Step 7c — vertical center the row stack within
+      // the band so sparse bands float in the middle instead of
+      // jamming to the top.
+      const stackH    = Math.max(0, (rows.length - 1) * rowStep);
+      const bandMidY  = (band.y0 + band.y1) / 2;
+      const stackTop  = bandMidY - stackH / 2;
+
       for (const p of localPlacements) {
-        const y = band.y0 + ROW_PAD + p.rowIndex * rowStep;
-        positions.set(p.id, { x: p.x, y });
+        const y = stackTop + p.rowIndex * rowStep + p.yJit;
+        positions.set(p.id, { x: p.x, y: y });
       }
     }
 
@@ -449,17 +499,21 @@
       undated.y0 = laneY0;
       undated.y1 = laneY1;
       // Spread the undated dots evenly across the SPINE — origin-
-      // centered, so x ranges from -halfSpine to +halfSpine. Used
-      // to be `t * xSpanWorld` (0..xSpanWorld), which clumped them
-      // right of the new origin.
+      // centered, so x ranges from -halfSpine to +halfSpine.
+      // Phase TL-2 Step 7c — add hash jitter so the 5-row stripe
+      // doesn't read as a mechanical grid; center vertically.
       const N = undated.ids.length;
       const sortedIds = undated.ids.slice().sort();
+      const laneMidY = (laneY0 + laneY1) / 2;
+      const laneStackH = 4 * 8;                // 5 rows * 8 step = 40
+      const laneTop = laneMidY - laneStackH / 2;
       for (let i = 0; i < N; i++) {
-        const t = (i + 0.5) / N;
-        const x = (t - 0.5) * xSpanWorld;
-        const row = i % 5;     // 5-row stripe for visual breathing
-        const y = laneY0 + ROW_PAD + row * 8;
-        positions.set(sortedIds[i], { x, y });
+        const t   = (i + 0.5) / N;
+        const id  = sortedIds[i];
+        const x   = (t - 0.5) * xSpanWorld + _idJitterX(id);
+        const row = i % 5;
+        const y   = laneTop + row * 8 + _idJitterY(id);
+        positions.set(id, { x, y });
       }
       worldBottom = laneY1 + UNDATED_PAD;
     }
