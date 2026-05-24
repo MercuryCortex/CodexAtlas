@@ -109,6 +109,60 @@
   // year_t → (year - midYear) × 0.5. Maps the full 9000 BCE→2026 CE
   // spine linearly to ~5500 world units, centered on world X=0.
   // Future slots: log, density-compressed, era-bucketed, etc.
+  // Era-weighted compression table (Phase TL-2 Step 8, 2026-05-24).
+  // Hand-tuned distribution: deep prehistory is sparse so it
+  // compresses; classical + modern eras hold most of the vault's
+  // mass so they expand. Total weight is normalized internally; the
+  // numbers below are relative. Update freely as the vault evolves.
+  //   Era              Years        Weight   % of world-X
+  //   ─────────────────────────────────────────────────────────
+  //   deep prehistory  -9000..-3000   5      ~6%
+  //   ancient civs     -3000..-1000  15      ~19%
+  //   classical        -1000..  500  25      ~31%
+  //   medieval           500.. 1500  20      ~25%
+  //   modern            1500.. 9999  35      ~44% (cap > today)
+  const COMPRESSED_ERAS = [
+    { lo: -9000, hi: -3000, w:  5 },
+    { lo: -3000, hi: -1000, w: 15 },
+    { lo: -1000, hi:   500, w: 25 },
+    { lo:   500, hi:  1500, w: 20 },
+    { lo:  1500, hi:  9999, w: 35 },
+  ];
+  // Memoize the clipped-and-cumulative era table — same xRange
+  // means same table; layout calls yearToWorldX ~4500 times per
+  // rebuild so caching matters.
+  let _erasCache = null;
+  let _erasCacheKey = null;
+  function _eraSlices(ctx) {
+    const key = ctx.xRange.lo + ':' + ctx.xRange.hi;
+    if (key === _erasCacheKey && _erasCache) return _erasCache;
+    const xLo = ctx.xRange.lo, xHi = ctx.xRange.hi;
+    const clipped = [];
+    let totalW = 0;
+    for (const e of COMPRESSED_ERAS) {
+      const lo = Math.max(e.lo, xLo);
+      const hi = Math.min(e.hi, xHi);
+      if (hi <= lo) continue;
+      // Pro-rate weight by the portion of the original era still
+      // inside the spine (so a spine that ends partway through the
+      // modern era doesn't give modern its full weight).
+      const orig = e.hi - e.lo;
+      const portion = (hi - lo) / orig;
+      const w = e.w * portion;
+      clipped.push({ lo, hi, w, cumStart: 0, cumEnd: 0 });
+      totalW += w;
+    }
+    let cum = 0;
+    for (const e of clipped) {
+      e.cumStart = cum;
+      cum += e.w;
+      e.cumEnd = cum;
+    }
+    _erasCacheKey = key;
+    _erasCache = { eras: clipped, totalW };
+    return _erasCache;
+  }
+
   const SCALE_PRESETS = {
     'linear-default': {
       id:    'linear-default',
@@ -119,6 +173,38 @@
       },
       worldXToYear: function (worldX, ctx) {
         return ctx.midYear + worldX / X_SCALE;
+      },
+    },
+    'compressed-civilization': {
+      id:    'compressed-civilization',
+      label: 'Compressed · era-weighted',
+      tagline: 'Recent eras get more space; deep prehistory compresses',
+      yearToWorldX: function (year, ctx) {
+        const slices = _eraSlices(ctx);
+        const xSpanWorld = ctx.xSpanWorld;
+        const y = Math.max(ctx.xRange.lo, Math.min(ctx.xRange.hi, year));
+        for (const e of slices.eras) {
+          if (y >= e.lo && y <= e.hi) {
+            const t   = (y - e.lo) / (e.hi - e.lo);
+            const cum = e.cumStart + t * e.w;
+            const norm = cum / slices.totalW;   // 0..1
+            return (norm - 0.5) * xSpanWorld;   // map to -half..+half
+          }
+        }
+        return (y < ctx.xRange.lo) ? -xSpanWorld / 2 : xSpanWorld / 2;
+      },
+      worldXToYear: function (worldX, ctx) {
+        const slices = _eraSlices(ctx);
+        const xSpanWorld = ctx.xSpanWorld;
+        const norm = worldX / xSpanWorld + 0.5;     // 0..1
+        const targetCum = norm * slices.totalW;
+        for (const e of slices.eras) {
+          if (targetCum >= e.cumStart && targetCum <= e.cumEnd) {
+            const t = (e.w > 0) ? (targetCum - e.cumStart) / e.w : 0;
+            return e.lo + t * (e.hi - e.lo);
+          }
+        }
+        return (norm < 0) ? ctx.xRange.lo : ctx.xRange.hi;
       },
     },
   };

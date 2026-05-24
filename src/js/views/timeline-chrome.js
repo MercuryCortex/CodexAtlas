@@ -457,9 +457,14 @@
     topLbl.style.fontSize = '8px';
     densityEl.appendChild(topLbl);
 
-    // Slider — uses CSS rotation so it reads as VERTICAL. Native
-    // <input orient="vertical"> is Firefox-only; rotation works
-    // everywhere consistently.
+    // Phase TL-2 Step 7b fix (2026-05-24) — DON'T use rotation.
+    // CSS transform:rotate(-90deg) breaks the input's drag math —
+    // mouse delta stays in the original horizontal axis while the
+    // user moves vertically, so drags die after one click.
+    // The right way: writing-mode:vertical-lr + direction:rtl
+    // makes the browser render + handle the input natively as
+    // vertical, with the thumb-up = max value. Works in modern
+    // Chrome / Firefox / Safari without rotation hacks.
     const sliderWrap = document.createElement('div');
     Object.assign(sliderWrap.style, {
       flex:          '1 1 auto',
@@ -468,6 +473,7 @@
       alignItems:    'center',
       justifyContent:'center',
       position:      'relative',
+      padding:       '4px 0',
     });
     densityInput = document.createElement('input');
     densityInput.type  = 'range';
@@ -476,14 +482,21 @@
     densityInput.step  = '0.05';
     densityInput.value = String(cur);
     densityInput.setAttribute('aria-label', 'Family band vertical density');
+    densityInput.setAttribute('orient', 'vertical');   // Firefox legacy hint
     densityInput.setAttribute('title', 'Family band density — drag up to expand, down to compress');
-    // Rotate -90deg so up = increase. Width becomes vertical length.
     Object.assign(densityInput.style, {
-      width:        '120px',
-      transform:    'rotate(-90deg)',
-      transformOrigin: 'center center',
-      accentColor:  'var(--gold, #d4a55a)',
-      cursor:       'ns-resize',
+      // Native vertical orientation — modern standard.
+      writingMode:   'vertical-lr',
+      direction:     'rtl',          // top = max value
+      // Legacy fallback for Chromium < 130 / Safari < 17 where
+      // appearance:slider-vertical is honored.
+      appearance:    'slider-vertical',
+      WebkitAppearance: 'slider-vertical',
+      width:         '20px',
+      height:        '100%',
+      accentColor:   'var(--gold, #d4a55a)',
+      cursor:        'ns-resize',
+      margin:        '0',
     });
     sliderWrap.appendChild(densityInput);
     densityEl.appendChild(sliderWrap);
