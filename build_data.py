@@ -1056,14 +1056,17 @@ def main():
                     "label": fm.get("label", ""),
                     "category": fm.get("category", ""),
                     "phase": phase,
-                    # Phase B-DATING-1 (2026-05-24) — extended coalesce per
-                    # AUDIT/2026-05-24-undated-dating-proposal.md §0.
+                    # Phase B-DATING-1 → B-DATING-3 (2026-05-24) — extended
+                    # coalesce per AUDIT/2026-05-24-dating-sweep-summary.md.
                     # Recovers nodes that already carry parseable dates under
                     # field names the old coalesce ignored. Order matters:
                     # composition / start / born first (B1 primary), then
                     # building / attestation / emergence (B1 primary for the
                     # entity type), then redaction / manuscript (B1/B3 last-
-                    # resort).
+                    # resort), then UNDERSCORED variants (304 nodes had dates
+                    # under date_earliest:, date_composed_earliest:, etc. —
+                    # build was reading hyphenated only; that was a silent
+                    # pipeline blind spot).
                     "date_earliest": (
                         fm.get("date-composed-earliest")
                         or fm.get("period-active-earliest")
@@ -1082,6 +1085,20 @@ def main():
                         # (hard lower bound on the text's existence).
                         or fm.get("date-redacted")
                         or fm.get("date-physical-mss-earliest")
+                        # Phase B-DATING-3 (2026-05-24) — UNDERSCORE variants.
+                        # Agent-authored content batches (music, rituals,
+                        # alphabets, alchemy, …) used underscored YAML keys
+                        # that didn't match the build's hyphenated lookups.
+                        # 304-node recovery — pure field-rename, no inference.
+                        or fm.get("date_earliest")
+                        or fm.get("date_composed_earliest")
+                        or fm.get("date_emergence")
+                        or fm.get("date_attested_earliest")
+                        or fm.get("date_built_earliest")
+                        or fm.get("date_founded_earliest")
+                        or fm.get("date_composed")
+                        or fm.get("date_start")
+                        or fm.get("date_born")
                     ),
                     "date_latest":   fm.get("date-composed-latest")   or fm.get("period-active-latest")   or fm.get("date-end")   or fm.get("date-died") or fm.get("period-latest"),
                     # Phase B-DATING-1 — dating_basis: B1..B7. Set
