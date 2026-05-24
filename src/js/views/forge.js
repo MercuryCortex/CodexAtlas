@@ -3941,24 +3941,26 @@
       // transition because both expressions are continuous and
       // they meet at the threshold).
       const imgAspect    = bgImage._bgAspect || (4 / 3);
-      const worldWidthPx = BG_WORLD_WIDTH * camera.state.scale;
-      const coverWidthPx = Math.max(vp.w, vp.h * imgAspect);
-      let   widthPx      = Math.max(worldWidthPx, coverWidthPx);
-      // Phase 22-R → 22-S (2026-05-24) — TIMELINE-ONLY BG CLAMP.
-      // John: "BG IS BIG, on timeline it's cropped substantially
-      // more than on the chart." Diagnosis: at gizmo 10% in
-      // timeline, worldWidthPx = 18000 × (0.10 × tlFit ≈ 0.098)
-      // ≈ 1764 px, which EXCEEDS the cover floor (1440 = vp.w).
-      // The wheel at the same gizmo has worldWidthPx ≈ 990 (since
-      // wheelFit ≈ 0.55), so cover wins → BG = vp.w = the whole
-      // image fits the viewport. Timeline's BG ends up bigger →
-      // user sees only the cropped center.
-      // Fix: in timeline ONLY, clamp BG to cover-floor (never let
-      // the world-scaled term win). Same visual size + crop as
-      // wheel-at-floor. Wheel branch unchanged.
+      // Phase 22-T (2026-05-24) — TIMELINE has its OWN BG sizing
+      // rule, not a band-aid on the wheel's. John was right that
+      // each section deserves its own logic.
+      // The right normalization: timeline BG at gizmo X% should
+      // look visually identical to wheel BG at gizmo X%. The
+      // wheel's BG zooms via camera.scale (which already encodes
+      // wheelFit ≈ 0.55 at gizmo 100%); timeline's tlFit ≈ 0.98
+      // makes its raw scale ~2× the wheel's. So substitute a
+      // wheel-equivalent scale = gizmo × WHEEL_FIT_EQUIVALENT.
+      // 22-S clamp killed the zoom feel (BG never grew with
+      // zoom-in); this restores it AND keeps the floor crop
+      // matched to the wheel.
+      let bgEffectiveScale = camera.state.scale;
       if (local.layoutId === 'timeline') {
-        widthPx = coverWidthPx;
+        const WHEEL_FIT_EQUIVALENT = 0.55;   // empirical: wheelFit on 1440 vp
+        bgEffectiveScale = zoomPct * WHEEL_FIT_EQUIVALENT;
       }
+      const worldWidthPx = BG_WORLD_WIDTH * bgEffectiveScale;
+      const coverWidthPx = Math.max(vp.w, vp.h * imgAspect);
+      const widthPx      = Math.max(worldWidthPx, coverWidthPx);
       const heightPx     = widthPx / imgAspect;
       // World (0, 0) → canvas-screen → viewport-screen.
       const centerCanvas = camera.worldToScreen(0, 0, vp);
