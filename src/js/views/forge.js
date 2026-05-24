@@ -1320,7 +1320,11 @@
       '<div class="forge-tl-vdensity-track"   id="forge-tl-vdensity-track">' +
         '<div class="forge-tl-vdensity-thumb" id="forge-tl-vdensity-thumb"></div>' +
       '</div>' +
-      '<div class="forge-tl-vdensity-label">DENS</div>';
+      '<div class="forge-tl-vdensity-label">DENS</div>' +
+      // Phase 22-AG (2026-05-24) — LOCK toggle. When ON: zoom drives
+      // density linearly (zoom 20% → density 1.0×; zoom 100% → 0.3×;
+      // zoom out → density expands). OFF: independent controls.
+      '<button class="forge-tl-vdensity-lock" id="forge-tl-vdensity-lock" type="button" aria-pressed="false" title="LOCK — zoom drives density when on">LOCK</button>';
     stage.appendChild(vdensity);
 
     // Phase 20F (2026-05-21) — backdrop image (star-field / nebula).

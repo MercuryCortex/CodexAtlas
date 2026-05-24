@@ -115,6 +115,7 @@
     gregorian: {
       id: 'gregorian', label: 'Gregorian', short: 'GREG',
       epochGregYear: 0,
+      tip: 'Solar, 365.2425 days/year. Modern civil calendar adopted 1582 (papal reform of Julian). Year-0 marks the BCE/CE pivot.',
       format: function (y) {
         if (y === 0) return '0';
         if (y < 0) return Math.abs(y) + ' BCE';
@@ -123,8 +124,8 @@
     },
     hebrew: {
       id: 'hebrew', label: 'Hebrew (Anno Mundi)', short: 'HEB',
-      // Year 1 AM = 3761 BCE.
       epochGregYear: -3760,
+      tip: 'Lunisolar. Year 1 AM = 3761 BCE — counted from the rabbinic date of creation. Months start at the new moon; intercalated to keep Pesach in spring.',
       format: function (y) {
         const am = y + 3761;
         return am.toLocaleString('en-US') + ' AM';
@@ -132,8 +133,8 @@
     },
     hijri: {
       id: 'hijri', label: 'Islamic (Hijri)', short: 'HIJ',
-      // Year 1 AH = 622 CE. Lunar approx (×33/32).
       epochGregYear: 622,
+      tip: 'Purely lunar, 12 months × ~29.5 days = ~354 days/year. Year 1 AH = 622 CE (Muhammad\'s migration from Mecca to Medina). Drifts ~11 days/year vs solar.',
       format: function (y) {
         const ah = Math.round((y - 622) * 33 / 32);
         if (ah === 0) return '0 AH';
@@ -143,8 +144,8 @@
     },
     jalali: {
       id: 'jalali', label: 'Iranian (Jalali)', short: 'AP',
-      // Solar Hijri year 1 = 622 CE.
       epochGregYear: 622,
+      tip: 'Solar Hijri. Omar Khayyam-era (1079 CE) calendar, more accurate than Gregorian. Year starts at March equinox; Year 1 AP = 622 CE.',
       format: function (y) {
         const ap = y - 621;
         if (ap === 0) return '0 AP';
@@ -155,6 +156,7 @@
     ethiopian: {
       id: 'ethiopian', label: 'Ethiopian (Geez)', short: 'EC',
       epochGregYear: 8,
+      tip: 'Solar, 13 months (12 × 30 days + a 5/6-day epagomenal month). Runs ~7–8 years behind Gregorian. Still the civil calendar of Ethiopia + Eritrea.',
       format: function (y) {
         const ec = y - 8;
         if (ec === 0) return '0 EC';
@@ -164,6 +166,7 @@
     },
     mayan: {
       id: 'mayan', label: 'Mayan Long Count', short: 'MAY',
+      tip: 'Vigesimal day-counter (baktun.katun.tun.uinal.kin). Epoch = 11 Aug 3114 BCE. Day 13.0.0.0.0 (current era end) fell on 21 Dec 2012. Used alongside Tzolkin + Haab ritual cycles.',
       // Long-count epoch = 11 Aug 3114 BCE = year −3113 (proleptic).
       epochGregYear: -3113,
       // Show baktun.katun.tun derived from days-since-epoch / 360.
@@ -184,30 +187,29 @@
     },
     egyptian: {
       id: 'egyptian', label: 'Egyptian Civil', short: 'EGY',
-      // Sothic-anchored civil year — earliest documented use ~2782 BCE.
       epochGregYear: -2781,
+      tip: 'Civil calendar: 12 months × 30 days + 5 epagomenal days = 365 (no leap). Drifts 1 day every 4 years vs the Sothic year. Used continuously ~2700 BCE → Roman era.',
       format: function (y) {
-        const ec = y - (-2781);   // year-in-civil
+        const ec = y - (-2781);
         return ec + ' EgC';
       },
     },
     olympiad: {
       id: 'olympiad', label: 'Greek (Olympiad)', short: 'OLY',
-      // Olympiad 1, year 1 = 776 BCE. Each olympiad = 4 years.
       epochGregYear: -775,
+      tip: 'Greek historiographic timekeeping. Olympiad 1, Year 1 = 776 BCE (first Olympic Games). Format: Oly N.Y where Y = 1–4 within the 4-year cycle. Used by Diodorus, Eusebius et al.',
       format: function (y) {
-        // year offset from 776 BCE (= year -775). Yr1.1 = -775.
         const offs = y - (-776);
         const ol  = Math.floor(offs / 4) + 1;
-        const yr  = (offs % 4 + 4) % 4 + 1;     // 1..4 within olympiad
+        const yr  = (offs % 4 + 4) % 4 + 1;
         if (ol < 1) return 'pre-Oly ' + (-ol + 1);
         return 'Oly ' + ol + '.' + yr;
       },
     },
     auc: {
       id: 'auc', label: 'Roman (Ab Urbe Condita)', short: 'AUC',
-      // Year 1 AUC = 753 BCE (Varro reckoning).
       epochGregYear: -752,
+      tip: '"From the founding of the city" of Rome. Year 1 AUC = 753 BCE (Varro reckoning, used by Livy + Plutarch). Year 2776 AUC = 2024 CE.',
       format: function (y) {
         const auc = y + 753;
         if (auc <= 0) return Math.abs(auc - 1) + ' pre-AUC';
@@ -216,9 +218,8 @@
     },
     buddhist: {
       id: 'buddhist', label: 'Buddhist Era', short: 'BE',
-      // Year 1 BE = 544 BCE (Theravada — parinirvana). Other
-      // traditions place it at 543 BCE; we round.
       epochGregYear: -543,
+      tip: 'Anchored to the Buddha\'s parinirvana. Theravada places Year 1 BE = 544 BCE. Current civil calendar in Thailand, Sri Lanka, Cambodia, Laos, Myanmar.',
       format: function (y) {
         const be = y + 544;
         if (be <= 0) return Math.abs(be - 1) + ' pre-BE';
@@ -227,8 +228,8 @@
     },
     bahai: {
       id: 'bahai', label: 'Baháʼí (Badíʿ)', short: 'BBE',
-      // Year 1 BE = 1844 CE (declaration of the Báb).
       epochGregYear: 1844,
+      tip: 'Badíʿ ("Wondrous") calendar. Year 1 = 1844 CE (the Báb\'s declaration). 19 months × 19 days + 4–5 intercalary days. Year starts at March equinox.',
       format: function (y) {
         const b = y - 1843;
         if (b <= 0) return Math.abs(b - 1) + ' pre-Baháʼí';
@@ -237,8 +238,8 @@
     },
     holocene: {
       id: 'holocene', label: 'Holocene Era', short: 'HE',
-      // Year 1 HE = 10000 BCE (Cesare Emiliani's proposed shift).
       epochGregYear: -9999,
+      tip: 'Cesare Emiliani 1993 proposal. Same year-length as Gregorian, shifted +10,000: Year 1 HE = 10000 BCE (rough start of Holocene + agriculture). Removes negative dates from prehistory.',
       format: function (y) {
         const he = y + 10000;
         return he + ' HE';
@@ -264,7 +265,7 @@
   function getActiveCalendarId() { return _activeCalendarId; }
   function listCalendars() {
     return Object.values(CALENDARS).map(function (c) {
-      return { id: c.id, label: c.label, short: c.short };
+      return { id: c.id, label: c.label, short: c.short, tip: c.tip || '' };
     });
   }
 
@@ -289,6 +290,9 @@
   let vdensityEl   = null;    // <div#forge-tl-vdensity> — persistent vertical slider
   let vdensityRafId= 0;       // rAF coalesce for relayout on slider drag
   let densityVal   = 1.0;     // current band-density scalar (mirrors LS)
+  // Phase 22-AG (2026-05-24) — zoom↔density LOCK state.
+  let _zoomDensityLocked = false;
+  const LS_ZOOM_DENSITY_LOCK = 'codex_atlas_timeline_zoom_density_lock';
   let mounted      = false;
 
   // localStorage key for persisting the band-density preference.
@@ -634,6 +638,24 @@
       wireVDensity(vdensityEl);
     }
 
+    // ─── LOCK toggle (zoom drives density linearly) ─────────
+    // Persists in LS. When ON, the camera-change handler maps
+    // gizmo % → density ×, so the two controls move together.
+    const lockBtn = document.getElementById('forge-tl-vdensity-lock');
+    try {
+      const lsLock = localStorage.getItem(LS_ZOOM_DENSITY_LOCK);
+      _zoomDensityLocked = (lsLock === '1');
+      if (lockBtn) lockBtn.setAttribute('aria-pressed', _zoomDensityLocked ? 'true' : 'false');
+    } catch (_) {}
+    if (lockBtn) {
+      lockBtn.addEventListener('click', function () {
+        _zoomDensityLocked = !_zoomDensityLocked;
+        lockBtn.setAttribute('aria-pressed', _zoomDensityLocked ? 'true' : 'false');
+        try { localStorage.setItem(LS_ZOOM_DENSITY_LOCK, _zoomDensityLocked ? '1' : '0'); } catch (_) {}
+        if (_zoomDensityLocked) applyZoomDrivenDensity();
+      });
+    }
+
     // ─── CALENDAR popup button ──────────────────────────────
     const calBtn = document.getElementById('forge-tl-cal-btn');
     function syncCalLabel() {
@@ -664,6 +686,36 @@
     document.addEventListener('mousedown', onCalOutside, true);
     document.addEventListener('keydown', onCalEsc, true);
 
+    // Phase 22-AG (2026-05-24) — 500 ms dwell tooltip on row hover.
+    // Single tooltip element re-used across rows. Re-positions to
+    // the hovered row's top-right. Cleared on mouseleave + popup
+    // close. The text comes from CALENDARS[id].tip.
+    let _calTipEl = null;
+    let _calTipTimer = 0;
+    function clearCalTip() {
+      if (_calTipTimer) { clearTimeout(_calTipTimer); _calTipTimer = 0; }
+      if (_calTipEl && _calTipEl.parentNode) _calTipEl.parentNode.removeChild(_calTipEl);
+      _calTipEl = null;
+    }
+    function showCalTip(rowEl, calObj) {
+      if (!rowEl || !calObj || !calObj.tip) return;
+      clearCalTip();
+      const stageEl = rowEl.closest('.forge-stage') || document.body;
+      _calTipEl = document.createElement('div');
+      _calTipEl.className = 'forge-tl-cal-tip';
+      _calTipEl.innerHTML =
+        '<div class="forge-tl-cal-tip-title">' + calObj.label + '</div>' +
+        '<div class="forge-tl-cal-tip-body">' + calObj.tip + '</div>';
+      // Position: to the LEFT of the popup row (popup is on the
+      // right edge; tooltip drops left so it doesn't go off-screen).
+      const rRow = rowEl.getBoundingClientRect();
+      const rStage = stageEl.getBoundingClientRect();
+      _calTipEl.style.position = 'absolute';
+      _calTipEl.style.right    = (rStage.right - rRow.left + 10) + 'px';
+      _calTipEl.style.top      = (rRow.top - rStage.top - 2)     + 'px';
+      stageEl.appendChild(_calTipEl);
+    }
+
     function openCalPop() {
       if (!calBtn) return;
       const stageEl = calBtn.closest('.forge-stage') || document.body;
@@ -683,7 +735,20 @@
           if (setActiveCalendar(c.id)) {
             syncCalLabel();
           }
+          clearCalTip();
           closeCalPop();
+        });
+        // 500 ms dwell tooltip.
+        row.addEventListener('mouseenter', function () {
+          if (_calTipTimer) clearTimeout(_calTipTimer);
+          _calTipTimer = setTimeout(function () {
+            _calTipTimer = 0;
+            showCalTip(row, CALENDARS[c.id]);
+          }, 500);
+        });
+        row.addEventListener('mouseleave', function () {
+          if (_calTipTimer) { clearTimeout(_calTipTimer); _calTipTimer = 0; }
+          clearCalTip();
         });
         pop.appendChild(row);
       });
@@ -693,6 +758,7 @@
     function closeCalPop() {
       const pop = document.getElementById('forge-tl-cal-pop');
       if (pop && pop.parentNode) pop.parentNode.removeChild(pop);
+      clearCalTip();
       if (calBtn) calBtn.setAttribute('aria-expanded', 'false');
     }
 
@@ -763,6 +829,33 @@
     };
   }
 
+  // Phase 22-AG (2026-05-24) — LOCK linkage.
+  // When zoom↔density LOCK is ON: map the current gizmo % to a
+  // density scalar so the two controls move together. Curve is
+  // anchored at the default pair (gizmo 20% ↔ density 1.0×) and
+  // linear from there: zooming in shrinks density, zooming out
+  // expands. Clamped to the slider's [min, max] bounds.
+  function applyZoomDrivenDensity() {
+    if (!_zoomDensityLocked) return;
+    if (!camera || !camera.state) return;
+    const ENG = window.AtlasEngineLayout || {};
+    const computeFit = ENG.computeTimelineFitScale;
+    if (!computeFit) return;
+    const vp = { w: hostEl ? hostEl.clientWidth : 0 };
+    if (!vp.w || !xRange) return;
+    const fit = computeFit(vp.w, xRange);
+    if (fit <= 0) return;
+    const gizmo = camera.state.scale / fit;        // 0..N
+    // Anchor pair: (gizmo 0.20 → density 1.0). Mapping curve:
+    //   density = 1.0 * (0.20 / gizmo)
+    // → at gizmo 0.10 density = 2.0× (max-ish), at gizmo 0.40
+    //   density = 0.5×, at gizmo 1.00 density = 0.2× etc.
+    // The slider min/max clamp does the safety net.
+    if (gizmo <= 0) return;
+    const target = 0.20 / gizmo;
+    applyDensityValue(target);
+  }
+
   function syncVDensity() {
     if (!vdensityEl) return;
     const bounds = (window.AtlasEngineLayout && window.AtlasEngineLayout.timelineBandScaleBounds) || { min: 0.3, max: 3.0 };
@@ -824,6 +917,11 @@
     if (!mounted || !svgRoot || !camera || !xRange) return;
     const vp = { w: hostEl.clientWidth, h: hostEl.clientHeight };
     if (!vp.w || !vp.h) return;
+
+    // Phase 22-AG (2026-05-24) — zoom↔density LOCK propagation.
+    // If the user toggled LOCK on, every camera tick re-applies
+    // the linkage so density tracks zoom continuously.
+    if (_zoomDensityLocked) applyZoomDrivenDensity();
 
     // SVG viewport. Match host dimensions so 1 SVG-unit = 1 CSS pixel.
     svgRoot.setAttribute('viewBox', '0 0 ' + vp.w + ' ' + vp.h);
@@ -1058,15 +1156,24 @@
     // brighter + slightly heavier style. Skip the dup if the
     // normal loop also lands on 0 (it always will when 0 is in
     // [tickLo, tickHi] since 0 % N === 0 for any N).
-    // Phase 22-AF (2026-05-24) — pivot mark routes through the
-    // active calendar's epoch. Gregorian → pivot at year 0; Hebrew
-    // → pivot at -3760; Hijri → at 622; etc. The pivot tick + zero
-    // label both move to that Gregorian year so the user sees the
-    // FOUNDING YEAR of their chosen system as the visual anchor.
+    // Phase 22-AG (2026-05-24) — TWO PIVOT TIERS:
+    //   PRIMARY  = Gregorian year 0 (ALWAYS rendered, regardless
+    //              of active calendar). John: "preserve the Greg 0
+    //              as a common reference to the entire world to
+    //              understand the difference."
+    //   SECONDARY = active calendar's own epoch (rendered ONLY
+    //              when the active calendar is non-Gregorian, with
+    //              a lower-emphasis style — gold-soft, smaller).
+    // Both display labels through formatYear() so each pivot shows
+    // its respective year-in-calendar text.
     const _activeCal = CALENDARS[_activeCalendarId] || CALENDARS.gregorian;
-    const _pivotYear = (typeof _activeCal.epochGregYear === 'number') ? _activeCal.epochGregYear : 0;
+    const _epochYear = (typeof _activeCal.epochGregYear === 'number') ? _activeCal.epochGregYear : 0;
     const Y0_LO = xRange.lo, Y0_HI = xRange.hi;
-    const renderYearZeroSeparately = (_pivotYear >= Y0_LO && _pivotYear <= Y0_HI);
+    const renderGregPivot  = (0 >= Y0_LO && 0 <= Y0_HI);                       // always-on Greg anchor
+    const renderEpochPivot = (_epochYear !== 0) && (_epochYear >= Y0_LO && _epochYear <= Y0_HI);
+    // Backwards-compat alias — older code paths still reference these.
+    const _pivotYear = 0;
+    const renderYearZeroSeparately = renderGregPivot;
 
     // Phase 22-AD (2026-05-24) — LABEL COLLISION DETECTION.
     // Tick MARKS always render (so the user has a visual scale),
@@ -1076,25 +1183,44 @@
     // of the last drawn label; if next label's left-edge collides,
     // skip the label (keep the tick mark). The non-log presets
     // produce evenly-spaced ticks so this is monotonic L→R.
-    // YR 0 occupies a "guaranteed slot" so we seed lastLabelRight
-    // with its right edge if it falls in view.
+    // Phase 22-AG (2026-05-24) — COLLISION RESERVATION.
+    // Both pivots (Greg-0 always; calendar epoch when non-Greg)
+    // reserve their visual slot UP FRONT so loop ticks that would
+    // collide with them are skipped. Build a sorted list of
+    // [leftEdge, rightEdge] reservation intervals; the loop walks
+    // L→R and tests against the next reservation. Fixes the user-
+    // visible "YR 0 trampled by 250 BCE at wide zoom" bug.
     function estLabelWidth(text) {
       return Math.max(20, text.length * 7) + 10;
     }
-    let lastLabelRight = -Infinity;
-    // Seed with year-0's slot if visible (always rendered).
-    if (renderYearZeroSeparately) {
-      const sp0x = camera.worldToScreen(yToX(0, xRange), 0, vp).x;
-      const w0 = estLabelWidth('YR 0');
-      lastLabelRight = sp0x - w0 / 2 - 4; // we'll allow ticks LEFT of yr 0 to draw if they fit
-      // We don't actually skip ticks based on this — collision
-      // is decided per-tick in the loop with `lastLabelRight` mutated forward.
-      // Reset for the loop pass; YR 0 will be drawn separately later.
-      lastLabelRight = -Infinity;
+    const _reservedSlots = [];
+    if (renderGregPivot) {
+      const sx = camera.worldToScreen(yToX(0, xRange), 0, vp).x;
+      const w  = estLabelWidth(CALENDARS.gregorian.format(0));
+      _reservedSlots.push({ leftX: sx - w/2 - 4, rightX: sx + w/2 + 4, pivotYear: 0 });
     }
+    if (renderEpochPivot) {
+      const sx = camera.worldToScreen(yToX(_epochYear, xRange), 0, vp).x;
+      const w  = estLabelWidth(formatYear(_epochYear));
+      _reservedSlots.push({ leftX: sx - w/2 - 4, rightX: sx + w/2 + 4, pivotYear: _epochYear });
+    }
+    _reservedSlots.sort(function (a, b) { return a.leftX - b.leftX; });
+    function collidesWithReservedSlot(leftX, rightX) {
+      for (let i = 0; i < _reservedSlots.length; i++) {
+        const s = _reservedSlots[i];
+        if (rightX < s.leftX) return false;        // labels are sorted L→R; safe to short-circuit
+        if (leftX  > s.rightX) continue;
+        return true;
+      }
+      return false;
+    }
+    let lastLabelRight = -Infinity;
 
     for (let yr = tickLo; yr <= tickHi; yr += tickStep) {
-      if (renderYearZeroSeparately && yr === _pivotYear) continue;   // skip — drawn after as pivot
+      // Phase 22-AG (2026-05-24) — skip ticks that coincide with
+      // EITHER pivot (Greg 0 always; calendar epoch when non-Greg).
+      if (renderGregPivot  && yr === 0)            continue;
+      if (renderEpochPivot && yr === _epochYear)   continue;
       const wx = yToX(yr, xRange);
       const sp = camera.worldToScreen(wx, 0, vp);
       // Off-screen guards (margin so near-edge labels still draw).
@@ -1126,18 +1252,19 @@
       tick.setAttribute('stroke-width', '1.25');
       tickGroupEl.appendChild(tick);
 
-      // Year label — uniform style. Phase 22-AD collision rule:
-      // estimate text width and SKIP the label if it would overlap
-      // the previously-drawn one. Tick MARK still renders (the
-      // user keeps a scale reference) — only the text is dropped.
+      // Year label — uniform style. Collision rules (Phase 22-AG):
+      //   - skip if would overlap the previously-drawn label
+      //   - skip if would overlap a reserved pivot slot (Greg-0
+      //     and/or active-calendar epoch)
+      // Tick MARK still renders either way so the user keeps a
+      // visual scale reference.
       const labelText = formatYear(yr);
       const lw = estLabelWidth(labelText);
-      const leftEdge = sp.x - lw / 2;
-      if (leftEdge < lastLabelRight) {
-        // Collision — keep the tick, drop the label.
-        continue;
-      }
-      lastLabelRight = sp.x + lw / 2;
+      const leftEdge  = sp.x - lw / 2;
+      const rightEdge = sp.x + lw / 2;
+      if (leftEdge < lastLabelRight) continue;
+      if (collidesWithReservedSlot(leftEdge, rightEdge)) continue;
+      lastLabelRight = rightEdge;
 
       const label = document.createElementNS(NS, 'text');
       label.setAttribute('x', sp.x);
@@ -1154,58 +1281,55 @@
       tickGroupEl.appendChild(label);
     }
 
-    // Phase 22-F (2026-05-24) — ALWAYS-ON year-0 pivot marker.
-    // Year 0 is the BC/AD hinge — render it distinctly at every
-    // zoom level regardless of cadence. Brighter stripe, taller
-    // tick, bolder "yr 0" label.
-    if (renderYearZeroSeparately) {
-      const wx0 = yToX(_pivotYear, xRange);
-      const sp0 = camera.worldToScreen(wx0, 0, vp);
-      if (sp0.x >= -120 && sp0.x <= vp.w + 120) {
-        // Phase 22-M (2026-05-24) — STYLE-tunable pivot mark.
-        const y0op = _bandStyle.yr0Opacity;
-        const y0sz = _bandStyle.yr0Size;
-        const y0wd = _bandStyle.yr0Width;
-        // Pivot grid stripe — brighter + wider than peer ticks.
-        const grid0 = document.createElementNS(NS, 'line');
-        grid0.setAttribute('x1', sp0.x); grid0.setAttribute('x2', sp0.x);
-        grid0.setAttribute('y1', 0);     grid0.setAttribute('y2', vp.h);
-        grid0.setAttribute('stroke', 'rgba(212, 165, 90, ' + (0.34 * y0op).toFixed(3) + ')');
-        grid0.setAttribute('stroke-width', String(Math.max(1, y0wd * 0.83)));
-        gridGroupEl.appendChild(grid0);
-
-        // Tick mark.
-        const tickHalf = y0sz;
-        const tick0 = document.createElementNS(NS, 'line');
-        tick0.setAttribute('x1', sp0.x);
-        tick0.setAttribute('y1', axisY - tickHalf);
-        tick0.setAttribute('x2', sp0.x);
-        tick0.setAttribute('y2', axisY + tickHalf);
-        tick0.setAttribute('stroke', 'rgba(245, 220, 160, ' + y0op.toFixed(3) + ')');
-        tick0.setAttribute('stroke-width', String(y0wd));
-        tickGroupEl.appendChild(tick0);
-
-        // Label — heavier weight + slightly larger, bright gold.
-        const lbl0 = document.createElementNS(NS, 'text');
-        lbl0.setAttribute('x', sp0.x);
-        lbl0.setAttribute('y', axisY - (tickHalf + 6));
-        lbl0.setAttribute('text-anchor', 'middle');
-        lbl0.setAttribute('class', 'forge-timeline-year-label forge-timeline-year-zero');
-        lbl0.style.fill          = 'rgba(245, 220, 160, ' + y0op.toFixed(3) + ')';
-        lbl0.style.fontFamily    = 'var(--mono, "JetBrains Mono", Menlo, monospace)';
-        lbl0.style.fontSize      = (y0sz + 0) + 'px';
-        lbl0.style.fontWeight    = '600';
-        lbl0.style.letterSpacing = '0.14em';
-        lbl0.style.textTransform = 'uppercase';
-        // Phase 22-AF (2026-05-24) — pivot label = the active
-        // calendar's epoch year label. Gregorian → "0". Hebrew →
-        // "1 AM" (since epoch-1 is treated as year 1). Hijri →
-        // "1 AH". And so on. The pivot's special STYLE (size,
-        // brightness) stays regardless of calendar.
-        lbl0.textContent = formatYear(_pivotYear);
-        tickGroupEl.appendChild(lbl0);
-      }
+    // Phase 22-AG (2026-05-24) — TWO-TIER PIVOTS.
+    // PRIMARY = Gregorian year 0 (always rendered, full emphasis).
+    // SECONDARY = active calendar's epoch year (rendered when
+    //             non-Gregorian, dimmer + slightly smaller — it's
+    //             a navigational note, not the world's anchor).
+    function _drawPivot(year, primary) {
+      const wx = yToX(year, xRange);
+      const sp = camera.worldToScreen(wx, 0, vp);
+      if (sp.x < -120 || sp.x > vp.w + 120) return;
+      // STYLE-tunable. Secondary pivot dims to 55% of primary
+      // opacity and 80% of primary tick-size so the eye reads
+      // Greg-0 as the canonical anchor.
+      const dim = primary ? 1.0 : 0.55;
+      const sz  = (primary ? 1.0 : 0.80) * _bandStyle.yr0Size;
+      const op  = _bandStyle.yr0Opacity * dim;
+      const wd  = _bandStyle.yr0Width;
+      // Pivot grid stripe — secondary is half-stripe opacity.
+      const grid0 = document.createElementNS(NS, 'line');
+      grid0.setAttribute('x1', sp.x); grid0.setAttribute('x2', sp.x);
+      grid0.setAttribute('y1', 0);    grid0.setAttribute('y2', vp.h);
+      grid0.setAttribute('stroke', 'rgba(212, 165, 90, ' + (0.34 * op).toFixed(3) + ')');
+      grid0.setAttribute('stroke-width', String(Math.max(1, wd * 0.83)));
+      gridGroupEl.appendChild(grid0);
+      // Tick mark.
+      const tick0 = document.createElementNS(NS, 'line');
+      tick0.setAttribute('x1', sp.x);
+      tick0.setAttribute('y1', axisY - sz);
+      tick0.setAttribute('x2', sp.x);
+      tick0.setAttribute('y2', axisY + sz);
+      tick0.setAttribute('stroke', 'rgba(245, 220, 160, ' + op.toFixed(3) + ')');
+      tick0.setAttribute('stroke-width', String(wd));
+      tickGroupEl.appendChild(tick0);
+      // Label.
+      const lbl0 = document.createElementNS(NS, 'text');
+      lbl0.setAttribute('x', sp.x);
+      lbl0.setAttribute('y', axisY - (sz + 6));
+      lbl0.setAttribute('text-anchor', 'middle');
+      lbl0.setAttribute('class', 'forge-timeline-year-label' + (primary ? ' forge-timeline-year-zero' : ' forge-timeline-year-epoch'));
+      lbl0.style.fill          = 'rgba(245, 220, 160, ' + op.toFixed(3) + ')';
+      lbl0.style.fontFamily    = 'var(--mono, "JetBrains Mono", Menlo, monospace)';
+      lbl0.style.fontSize      = sz + 'px';
+      lbl0.style.fontWeight    = '600';
+      lbl0.style.letterSpacing = '0.14em';
+      lbl0.style.textTransform = 'uppercase';
+      lbl0.textContent = formatYear(year);
+      tickGroupEl.appendChild(lbl0);
     }
+    if (renderGregPivot)  _drawPivot(0, true);
+    if (renderEpochPivot) _drawPivot(_epochYear, false);
   }
 
   // ── EXPORT ───────────────────────────────────────────────
