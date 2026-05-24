@@ -200,19 +200,15 @@
     // multiple of tickStep.
     const firstTick = Math.ceil(visLoYear / tickStep) * tickStep;
 
-    // Phase TL-2 Step 5 (2026-05-24) — major / minor tick split.
-    // Every Nth tick is MAJOR (bright label + extended vertical
-    // grid stripe full-viewport-height); the rest are MINOR
-    // (smaller tick mark + dimmer label or no label). N is chosen
-    // so the major cadence reads at ~5x the minor.
-    const majorEvery = (tickStep >= 5000) ? 2
-                     : (tickStep >= 1000) ? 5
-                     : (tickStep >= 100)  ? 5
-                     : (tickStep >= 10)   ? 5
-                     : 5;
-    // Render grid stripes + ticks. Clear + rebuild — typical zoom
-    // levels show ~10–30 ticks, so the full rebuild per frame is
-    // cheap (well under 1 ms).
+    // Phase TL-2 Step 5b (2026-05-24) — ONE style for every tick.
+    // Earlier (Step 5) the major/minor split made minor labels too
+    // dim (10px 55%) — John flagged them as "ghostly gap dates."
+    // Now every visible year tick gets the same bright label, same
+    // mark, same grid stripe. Major-vs-minor distinction stays only
+    // as a thin visual hint: ticks at multiples of (tickStep × 5)
+    // get a slightly TALLER mark for orientation, but the LABEL
+    // brightness + size stay constant across the row.
+    const emphasisModulus = tickStep * 5;
     while (gridGroupEl.firstChild) gridGroupEl.removeChild(gridGroupEl.firstChild);
     while (tickGroupEl.firstChild) tickGroupEl.removeChild(tickGroupEl.firstChild);
     for (let yr = firstTick; yr <= visHiYear; yr += tickStep) {
@@ -220,38 +216,41 @@
       const sp = camera.worldToScreen(wx, 0, vp);
       // Off-screen guards (margin so near-edge labels still draw).
       if (sp.x < -80 || sp.x > vp.w + 80) continue;
-      const isMajor = (yr % (tickStep * majorEvery) === 0);
+      const emphasized = (yr % emphasisModulus === 0);
 
-      // Faint vertical grid stripe (full viewport height). Major
-      // gets a slightly brighter line so the eye snaps to it.
+      // Faint vertical grid stripe (full viewport height). All
+      // ticks get the same stripe so the eye can read any year
+      // by tracing vertically. Emphasized = marginally brighter.
       const grid = document.createElementNS(NS, 'line');
       grid.setAttribute('x1', sp.x); grid.setAttribute('x2', sp.x);
       grid.setAttribute('y1', 0);    grid.setAttribute('y2', vp.h);
-      grid.setAttribute('stroke', isMajor ? 'rgba(212,165,90,0.10)' : 'rgba(212,165,90,0.04)');
+      grid.setAttribute('stroke', emphasized ? 'rgba(212,165,90,0.16)' : 'rgba(212,165,90,0.10)');
       grid.setAttribute('stroke-width', '1');
       gridGroupEl.appendChild(grid);
 
-      // Tick mark on the axis. Major ticks are taller + brighter.
-      const tickHalf = isMajor ? 8 : 4;
+      // Tick mark on the axis. Emphasized ticks slightly taller.
+      const tickHalf = emphasized ? 8 : 5;
       const tick = document.createElementNS(NS, 'line');
       tick.setAttribute('x1', sp.x);
       tick.setAttribute('y1', axisY - tickHalf);
       tick.setAttribute('x2', sp.x);
       tick.setAttribute('y2', axisY + tickHalf);
-      tick.setAttribute('stroke', isMajor ? 'rgba(232,200,137,0.95)' : 'rgba(212,165,90,0.55)');
-      tick.setAttribute('stroke-width', isMajor ? '1.5' : '1');
+      tick.setAttribute('stroke', 'rgba(232, 200, 137, 0.95)');
+      tick.setAttribute('stroke-width', '1.25');
       tickGroupEl.appendChild(tick);
 
-      // Year label. Major = bigger + brighter; minor = smaller + dimmer.
+      // Year label — uniform style for every tick. Bright, mono,
+      // 11 px, gold-1. Tick-mark length is the only thing that
+      // changes between emphasized + non-emphasized.
       const label = document.createElementNS(NS, 'text');
       label.setAttribute('x', sp.x);
-      label.setAttribute('y', axisY - (isMajor ? 14 : 10));
+      label.setAttribute('y', axisY - (emphasized ? 14 : 12));
       label.setAttribute('text-anchor', 'middle');
-      label.setAttribute('class', 'forge-timeline-year-label' + (isMajor ? ' is-major' : ''));
-      label.style.fill          = isMajor ? 'rgba(232,200,137,0.95)' : 'rgba(212,165,90,0.55)';
+      label.setAttribute('class', 'forge-timeline-year-label');
+      label.style.fill          = 'rgba(232, 200, 137, 0.95)';
       label.style.fontFamily    = 'var(--mono, "JetBrains Mono", Menlo, monospace)';
-      label.style.fontSize      = isMajor ? '12px' : '10px';
-      label.style.fontWeight    = isMajor ? '600'  : '400';
+      label.style.fontSize      = '11px';
+      label.style.fontWeight    = '500';
       label.style.letterSpacing = '0.10em';
       label.style.textTransform = 'uppercase';
       label.textContent = formatYear(yr);
