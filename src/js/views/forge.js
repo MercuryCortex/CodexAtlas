@@ -7835,6 +7835,24 @@
     }
     function labelHierarchyFromParams() {
       const p = local.params;
+      // Phase TL-2 Step 5 (2026-05-24) — timeline-mode label policy.
+      // The wheel uses a 6-tier zoom ladder (T0 always-on, T1 at
+      // 120% zoom, ...) tuned for the radial wheel's spatial
+      // density. In timeline mode that policy hides most deity
+      // names at the overview zoom (gizmo 20%) precisely when the
+      // user needs them to identify dots. Per John 2026-05-24:
+      // "the nodes here DON'T fade out — until we are there, we
+      // need to see them here." So timeline mode drops ALL tier
+      // thresholds to a low value — every label is eligible at
+      // any zoom; collision-prune still trims at extreme overlap.
+      if (local.layoutId === 'timeline') {
+        return {
+          tierZoomThresholds: [0.01, 0.05, 0.10, 0.15, 0.20, 0.25],
+          maxLabels:          p.label_idle_max,
+          labelSizePx:        p.label_size,
+          collisionPaddingPx: p.label_collision_pad,
+        };
+      }
       return {
         // Phase 18 (2026-05-21) — 6-tier ladder. The bottom 60% of
         // nodes (former single "tier 3") is now split into 3 sub-

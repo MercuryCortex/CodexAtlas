@@ -67,6 +67,7 @@
   let svgRoot     = null;     // <svg> overlay
   let axisLineEl  = null;     // <line> the 1 px stroke
   let tickGroupEl = null;     // <g> container for ticks + labels
+  let gridGroupEl = null;     // <g> container for faint vertical grid stripes
   let mounted     = false;
 
   // ── STATE ────────────────────────────────────────────────
@@ -103,10 +104,18 @@
     svgRoot.style.pointerEvents  = 'none';
     svgRoot.style.zIndex         = '4';   // above canvas (z=1), below labels (z=10+)
 
+    // Vertical grid stripes — drawn FIRST (under everything else)
+    // so the axis + ticks layer cleanly on top. Each visible tick
+    // gets a faint full-height vertical line so the eye can read
+    // which year any dot sits on without hover.
+    gridGroupEl = document.createElementNS(NS, 'g');
+    gridGroupEl.setAttribute('class', 'forge-timeline-grid');
+    svgRoot.appendChild(gridGroupEl);
+
     axisLineEl = document.createElementNS(NS, 'line');
     axisLineEl.setAttribute('class', 'forge-timeline-axis');
-    axisLineEl.setAttribute('stroke', 'rgba(212, 165, 90, 0.55)');
-    axisLineEl.setAttribute('stroke-width', '1');
+    axisLineEl.setAttribute('stroke', 'rgba(212, 165, 90, 0.70)');
+    axisLineEl.setAttribute('stroke-width', '1.5');
     svgRoot.appendChild(axisLineEl);
 
     tickGroupEl = document.createElementNS(NS, 'g');
@@ -131,7 +140,7 @@
     if (rafId) { cancelAnimationFrame(rafId); rafId = 0; }
     if (unsubscribeCamera) { try { unsubscribeCamera(); } catch (_) {} unsubscribeCamera = null; }
     if (svgRoot && svgRoot.parentNode) svgRoot.parentNode.removeChild(svgRoot);
-    svgRoot = null; axisLineEl = null; tickGroupEl = null;
+    svgRoot = null; axisLineEl = null; tickGroupEl = null; gridGroupEl = null;
     hostEl = null; camera = null; mode = null; xRange = null;
     mounted = false;
   }
@@ -191,35 +200,59 @@
     // multiple of tickStep.
     const firstTick = Math.ceil(visLoYear / tickStep) * tickStep;
 
-    // Render ticks. Clear + rebuild — at typical zoom levels there
-    // are ~10-30 ticks, so full rebuild per frame is cheap.
+    // Phase TL-2 Step 5 (2026-05-24) — major / minor tick split.
+    // Every Nth tick is MAJOR (bright label + extended vertical
+    // grid stripe full-viewport-height); the rest are MINOR
+    // (smaller tick mark + dimmer label or no label). N is chosen
+    // so the major cadence reads at ~5x the minor.
+    const majorEvery = (tickStep >= 5000) ? 2
+                     : (tickStep >= 1000) ? 5
+                     : (tickStep >= 100)  ? 5
+                     : (tickStep >= 10)   ? 5
+                     : 5;
+    // Render grid stripes + ticks. Clear + rebuild — typical zoom
+    // levels show ~10–30 ticks, so the full rebuild per frame is
+    // cheap (well under 1 ms).
+    while (gridGroupEl.firstChild) gridGroupEl.removeChild(gridGroupEl.firstChild);
     while (tickGroupEl.firstChild) tickGroupEl.removeChild(tickGroupEl.firstChild);
     for (let yr = firstTick; yr <= visHiYear; yr += tickStep) {
       const wx = yToX(yr, xRange);
       const sp = camera.worldToScreen(wx, 0, vp);
-      // Off-screen guards (small margin so labels near edges still draw).
-      if (sp.x < -50 || sp.x > vp.w + 50) continue;
+      // Off-screen guards (margin so near-edge labels still draw).
+      if (sp.x < -80 || sp.x > vp.w + 80) continue;
+      const isMajor = (yr % (tickStep * majorEvery) === 0);
 
-      // Tick mark (short vertical, both sides of axis).
+      // Faint vertical grid stripe (full viewport height). Major
+      // gets a slightly brighter line so the eye snaps to it.
+      const grid = document.createElementNS(NS, 'line');
+      grid.setAttribute('x1', sp.x); grid.setAttribute('x2', sp.x);
+      grid.setAttribute('y1', 0);    grid.setAttribute('y2', vp.h);
+      grid.setAttribute('stroke', isMajor ? 'rgba(212,165,90,0.10)' : 'rgba(212,165,90,0.04)');
+      grid.setAttribute('stroke-width', '1');
+      gridGroupEl.appendChild(grid);
+
+      // Tick mark on the axis. Major ticks are taller + brighter.
+      const tickHalf = isMajor ? 8 : 4;
       const tick = document.createElementNS(NS, 'line');
       tick.setAttribute('x1', sp.x);
-      tick.setAttribute('y1', axisY - 5);
+      tick.setAttribute('y1', axisY - tickHalf);
       tick.setAttribute('x2', sp.x);
-      tick.setAttribute('y2', axisY + 5);
-      tick.setAttribute('stroke', 'rgba(212, 165, 90, 0.55)');
-      tick.setAttribute('stroke-width', '1');
+      tick.setAttribute('y2', axisY + tickHalf);
+      tick.setAttribute('stroke', isMajor ? 'rgba(232,200,137,0.95)' : 'rgba(212,165,90,0.55)');
+      tick.setAttribute('stroke-width', isMajor ? '1.5' : '1');
       tickGroupEl.appendChild(tick);
 
-      // Year label above the tick.
+      // Year label. Major = bigger + brighter; minor = smaller + dimmer.
       const label = document.createElementNS(NS, 'text');
       label.setAttribute('x', sp.x);
-      label.setAttribute('y', axisY - 10);
+      label.setAttribute('y', axisY - (isMajor ? 14 : 10));
       label.setAttribute('text-anchor', 'middle');
-      label.setAttribute('class', 'forge-timeline-year-label');
-      label.style.fill        = 'rgba(212, 165, 90, 0.82)';
-      label.style.fontFamily  = 'var(--mono, "JetBrains Mono", Menlo, monospace)';
-      label.style.fontSize    = '10px';
-      label.style.letterSpacing = '0.08em';
+      label.setAttribute('class', 'forge-timeline-year-label' + (isMajor ? ' is-major' : ''));
+      label.style.fill          = isMajor ? 'rgba(232,200,137,0.95)' : 'rgba(212,165,90,0.55)';
+      label.style.fontFamily    = 'var(--mono, "JetBrains Mono", Menlo, monospace)';
+      label.style.fontSize      = isMajor ? '12px' : '10px';
+      label.style.fontWeight    = isMajor ? '600'  : '400';
+      label.style.letterSpacing = '0.10em';
       label.style.textTransform = 'uppercase';
       label.textContent = formatYear(yr);
       tickGroupEl.appendChild(label);
