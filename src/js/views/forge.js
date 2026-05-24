@@ -2350,7 +2350,16 @@
             local.lastSize.w, lay.xRange);
           const tlCtr = window.AtlasEngineLayout.computeTimelineCenter(
             lay.xRange, ext);
-          camera.set({ scale: tlFit, centerX: tlCtr.x, centerY: tlCtr.y });
+          // Phase TL-2 Step 7b-fix2 (2026-05-24) — default open zoom
+          // = 20% gizmo. That means data range fills 90% of viewport
+          // width (per John's spec 2026-05-24). Was opening at 100%
+          // gizmo (4.5× wider than viewport — TradingView-detail-
+          // mode), which forced the user to immediately zoom out to
+          // see context. The 20% default gives them the full-spine
+          // scan view first; they can zoom IN for detail.
+          //   gizmo % = scale / fit_scale
+          //   want gizmo = 0.20  →  scale = 0.20 × tlFit
+          camera.set({ scale: tlFit * 0.20, centerX: tlCtr.x, centerY: tlCtr.y });
         }
         // Phase 5B M-F1 (2026-05-20) — synchronously record the
         // new pack-scale BEFORE the listener-emit from fitToExtent

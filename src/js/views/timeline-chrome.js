@@ -93,6 +93,41 @@
   // ── MOUNT ────────────────────────────────────────────────
   // opts: { hostEl, camera, mode, xRange }
   function mount(opts) {
+    // Phase TL-2 Step 7b-fix (2026-05-24) — SOFT REMOUNT.
+    // If we're already mounted to the same hostEl, don't tear
+    // down the DOM. forge.js calls chrome.mount() on every
+    // rebuildForMode — including when the user drags the band-
+    // density slider (each tick → _forge.relayout → mount). A
+    // hard unmount/mount would destroy the slider DOM mid-drag,
+    // breaking the pointer-event chain after one click.
+    if (mounted && opts && hostEl === opts.hostEl) {
+      mode   = opts.mode  || mode;
+      xRange = opts.xRange || xRange;
+      if (opts.camera && camera !== opts.camera) {
+        if (unsubscribeCamera) { try { unsubscribeCamera(); } catch (_) {} unsubscribeCamera = null; }
+        camera = opts.camera;
+        if (typeof camera.onChange === 'function') {
+          unsubscribeCamera = camera.onChange(scheduleRefresh);
+        }
+      }
+      // Re-sync chip + slider readouts from authority state in
+      // case something else (not the user) mutated them. SKIP
+      // input-value sync while the user is actively dragging.
+      try { refreshPickerLabel(); } catch (_) {}
+      if (densityInput && !densityInput._isDragging) {
+        const ENG = window.AtlasEngineLayout || {};
+        if (typeof ENG.getTimelineBandHeightScale === 'function') {
+          const cur = ENG.getTimelineBandHeightScale();
+          if (Math.abs(parseFloat(densityInput.value) - cur) > 0.005) {
+            densityInput.value = String(cur);
+          }
+          if (densityValEl) densityValEl.textContent = formatBandScale(cur);
+          syncDensityThumbPos();
+        }
+      }
+      scheduleRefresh();
+      return;
+    }
     if (mounted) unmount();
     hostEl = opts.hostEl;
     camera = opts.camera;
@@ -191,6 +226,9 @@
     if (rafId) { cancelAnimationFrame(rafId); rafId = 0; }
     if (unsubscribeCamera) { try { unsubscribeCamera(); } catch (_) {} unsubscribeCamera = null; }
     if (densityRafId) { cancelAnimationFrame(densityRafId); densityRafId = 0; }
+    if (densityEl && typeof densityEl._cleanup === 'function') {
+      try { densityEl._cleanup(); } catch (_) {}
+    }
     if (svgRoot && svgRoot.parentNode) svgRoot.parentNode.removeChild(svgRoot);
     if (pickerEl && pickerEl.parentNode) pickerEl.parentNode.removeChild(pickerEl);
     if (densityEl && densityEl.parentNode) densityEl.parentNode.removeChild(densityEl);
@@ -457,14 +495,18 @@
     topLbl.style.fontSize = '8px';
     densityEl.appendChild(topLbl);
 
-    // Phase TL-2 Step 7b fix (2026-05-24) — DON'T use rotation.
-    // CSS transform:rotate(-90deg) breaks the input's drag math —
-    // mouse delta stays in the original horizontal axis while the
-    // user moves vertically, so drags die after one click.
-    // The right way: writing-mode:vertical-lr + direction:rtl
-    // makes the browser render + handle the input natively as
-    // vertical, with the thumb-up = max value. Works in modern
-    // Chrome / Firefox / Safari without rotation hacks.
+    // Phase TL-2 Step 7b-fix2 (2026-05-24) — CUSTOM slider.
+    // Two prior attempts failed:
+    //  (1) CSS transform:rotate(-90deg) — input's drag delta
+    //      stayed in the horizontal axis while the user moved
+    //      vertically → drag died after one click.
+    //  (2) writing-mode:vertical-lr + appearance:slider-vertical —
+    //      input event fired but chrome.mount on each relayout
+    //      destroyed the slider DOM mid-drag.
+    // Going custom: a track div + thumb div + pointer-event
+    // handlers. Drag delta is computed from the host viewport;
+    // can't be derailed by browser quirks. Soft-remount keeps
+    // the DOM alive across relayouts.
     const sliderWrap = document.createElement('div');
     Object.assign(sliderWrap.style, {
       flex:          '1 1 auto',
@@ -475,31 +517,102 @@
       position:      'relative',
       padding:       '4px 0',
     });
+
+    // The "input" is now a hidden state holder so external code +
+    // localStorage round-trip keep working unchanged.
     densityInput = document.createElement('input');
-    densityInput.type  = 'range';
-    densityInput.min   = String(bounds.min);
-    densityInput.max   = String(bounds.max);
-    densityInput.step  = '0.05';
+    densityInput.type  = 'hidden';
     densityInput.value = String(cur);
-    densityInput.setAttribute('aria-label', 'Family band vertical density');
-    densityInput.setAttribute('orient', 'vertical');   // Firefox legacy hint
-    densityInput.setAttribute('title', 'Family band density — drag up to expand, down to compress');
-    Object.assign(densityInput.style, {
-      // Native vertical orientation — modern standard.
-      writingMode:   'vertical-lr',
-      direction:     'rtl',          // top = max value
-      // Legacy fallback for Chromium < 130 / Safari < 17 where
-      // appearance:slider-vertical is honored.
-      appearance:    'slider-vertical',
-      WebkitAppearance: 'slider-vertical',
-      width:         '20px',
-      height:        '100%',
-      accentColor:   'var(--gold, #d4a55a)',
-      cursor:        'ns-resize',
-      margin:        '0',
+    densityInput._isDragging = false;
+    densityInput._bounds = bounds;
+
+    // Visible track — vertical bar the thumb runs along.
+    const track = document.createElement('div');
+    track.className = 'forge-timeline-density-track';
+    Object.assign(track.style, {
+      position:     'relative',
+      width:        '4px',
+      height:       '100%',
+      minHeight:    '120px',
+      background:   'rgba(212,165,90,0.20)',
+      borderRadius: '3px',
+      cursor:       'ns-resize',
     });
+    sliderWrap.appendChild(track);
+
+    // Thumb — circle anchored at the current value's vertical
+    // position. Translated via top% from value.
+    const thumb = document.createElement('div');
+    thumb.className = 'forge-timeline-density-thumb';
+    Object.assign(thumb.style, {
+      position:     'absolute',
+      left:         '50%',
+      width:        '14px',
+      height:       '14px',
+      marginLeft:   '-7px',
+      marginTop:    '-7px',
+      borderRadius: '50%',
+      background:   'var(--gold, #d4a55a)',
+      border:       '1px solid rgba(20,16,10,0.85)',
+      boxShadow:    '0 1px 3px rgba(0,0,0,0.45)',
+      cursor:       'grab',
+      touchAction:  'none',
+    });
+    track.appendChild(thumb);
+    densityEl._track = track;
+    densityEl._thumb = thumb;
     sliderWrap.appendChild(densityInput);
     densityEl.appendChild(sliderWrap);
+
+    // Initial thumb position.
+    setTimeout(syncDensityThumbPos, 0);   // wait for layout
+
+    // Pointer-event handlers — pure mouse Y deltas, no input
+    // events, no rotation. Works on mouse + touch + pen.
+    function clientYToValue(clientY) {
+      const r = track.getBoundingClientRect();
+      if (r.height <= 0) return parseFloat(densityInput.value);
+      // top of track = max, bottom = min (drag UP = expand).
+      const t = 1 - Math.max(0, Math.min(1, (clientY - r.top) / r.height));
+      const b = densityInput._bounds;
+      return b.min + t * (b.max - b.min);
+    }
+    function snap(v) {
+      return Math.round(v / 0.05) * 0.05;
+    }
+    function onPointerDown(e) {
+      e.preventDefault();
+      densityInput._isDragging = true;
+      thumb.style.cursor = 'grabbing';
+      thumb.setPointerCapture && e.pointerId != null && thumb.setPointerCapture(e.pointerId);
+      // Jump to clicked position immediately.
+      const v = snap(clientYToValue(e.clientY));
+      applyDensityValue(v);
+    }
+    function onPointerMove(e) {
+      if (!densityInput._isDragging) return;
+      e.preventDefault();
+      const v = snap(clientYToValue(e.clientY));
+      applyDensityValue(v);
+    }
+    function onPointerUp(e) {
+      if (!densityInput._isDragging) return;
+      densityInput._isDragging = false;
+      thumb.style.cursor = 'grab';
+      try { thumb.releasePointerCapture && e.pointerId != null && thumb.releasePointerCapture(e.pointerId); } catch(_) {}
+    }
+    // Bind to track (click anywhere on track) AND thumb (drag).
+    track.addEventListener('pointerdown', onPointerDown);
+    thumb.addEventListener('pointerdown', onPointerDown);
+    window.addEventListener('pointermove', onPointerMove);
+    window.addEventListener('pointerup',   onPointerUp);
+    window.addEventListener('pointercancel', onPointerUp);
+    // Stash for unmount cleanup.
+    densityEl._cleanup = function () {
+      window.removeEventListener('pointermove', onPointerMove);
+      window.removeEventListener('pointerup',   onPointerUp);
+      window.removeEventListener('pointercancel', onPointerUp);
+    };
 
     // Bottom value readout — "1.0×" — also doubles as the
     // double-click reset target.
@@ -515,10 +628,8 @@
 
     hostEl.appendChild(densityEl);
 
-    densityInput.addEventListener('input', onDensityInput);
     densityValEl.addEventListener('dblclick', function () {
-      densityInput.value = '1.0';
-      onDensityInput();
+      applyDensityValue(1.0);
     });
   }
 
@@ -526,15 +637,29 @@
     return (Math.round(v * 10) / 10).toFixed(1) + '×';
   }
 
-  function onDensityInput() {
-    if (!densityInput) return;
+  // Translate the current densityInput.value into a top-% on the track.
+  function syncDensityThumbPos() {
+    if (!densityEl || !densityEl._thumb || !densityInput) return;
+    const b = densityInput._bounds || { min: 0.3, max: 3.0 };
     const v = parseFloat(densityInput.value);
     if (!isFinite(v)) return;
+    const t = (v - b.min) / (b.max - b.min);   // 0..1
+    // Drag UP = max → top of track. So top% = (1 - t).
+    densityEl._thumb.style.top = ((1 - t) * 100).toFixed(2) + '%';
+  }
+
+  function applyDensityValue(v) {
+    if (!densityInput) return;
+    if (!isFinite(v)) return;
+    const b = densityInput._bounds || { min: 0.3, max: 3.0 };
+    const clamped = Math.max(b.min, Math.min(b.max, v));
+    densityInput.value = String(clamped);
+    if (densityValEl) densityValEl.textContent = formatBandScale(clamped);
+    syncDensityThumbPos();
+    try { localStorage.setItem(LS_BAND_SCALE, String(clamped)); } catch (_) {}
     const ENG = window.AtlasEngineLayout || {};
     const changed = (typeof ENG.setTimelineBandHeightScale === 'function')
-      && ENG.setTimelineBandHeightScale(v);
-    if (densityValEl) densityValEl.textContent = formatBandScale(v);
-    try { localStorage.setItem(LS_BAND_SCALE, String(v)); } catch (_) {}
+      && ENG.setTimelineBandHeightScale(clamped);
     if (!changed) return;
     // rAF-coalesce so a fast drag still updates per-frame, not per-event.
     if (densityRafId) return;
