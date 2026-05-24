@@ -72,7 +72,14 @@
   let bandLabelGroupEl = null;// <g> family labels — anchored to screen-left
   let pickerEl    = null;     // <div> bottom-right dev scale-preset picker
   let pickerMenuEl = null;    // <div> the pop-up list
+  let densityEl   = null;     // <div> right-edge vertical band-density slider
+  let densityInput = null;    // <input range> inside the densityEl wrapper
+  let densityValEl = null;    // <span> shows the current scale (e.g. "1.0×")
+  let densityRafId = 0;       // rAF coalesce for relayout on slider drag
   let mounted     = false;
+
+  // localStorage key for persisting the band-density preference.
+  const LS_BAND_SCALE = 'codex_atlas_timeline_band_scale';
 
   // ── STATE ────────────────────────────────────────────────
   // Provided by the host (forge.js) at mount-time:
@@ -147,6 +154,14 @@
 
     hostEl.appendChild(svgRoot);
 
+    // Phase TL-2 Step 7b (2026-05-24) — hydrate the band-height
+    // scale from localStorage BEFORE building the slider, so the
+    // initial slider position reflects the persisted preference.
+    // (Layout has ALREADY been computed by this point — that's OK;
+    // forge.js will trigger a relayout when the slider's "init"
+    // event handler fires, OR the user can drag for it to update.)
+    hydrateBandScaleFromLS();
+
     // Phase TL-2 Step 6b — bottom-right DEV scale-preset picker.
     // Small chip showing the active preset label + a chevron. Click
     // pops a list of registered presets. Picking one calls
@@ -154,6 +169,11 @@
     // here (not its own module) since it's chrome-lifecycle-tied —
     // mounts when timeline mounts, unmounts when it leaves.
     buildScalePicker();
+
+    // Phase TL-2 Step 7b — vertical band-density slider on the
+    // right edge. Drag UP = expand bands (more breathing room per
+    // family). Drag DOWN = compress (more families on screen).
+    buildBandDensitySlider();
 
     // Hook into camera so we redraw on every pan/zoom. Forge's camera
     // exposes onChange (camera.js line ~? — same hook the BG image
@@ -170,11 +190,14 @@
   function unmount() {
     if (rafId) { cancelAnimationFrame(rafId); rafId = 0; }
     if (unsubscribeCamera) { try { unsubscribeCamera(); } catch (_) {} unsubscribeCamera = null; }
+    if (densityRafId) { cancelAnimationFrame(densityRafId); densityRafId = 0; }
     if (svgRoot && svgRoot.parentNode) svgRoot.parentNode.removeChild(svgRoot);
     if (pickerEl && pickerEl.parentNode) pickerEl.parentNode.removeChild(pickerEl);
+    if (densityEl && densityEl.parentNode) densityEl.parentNode.removeChild(densityEl);
     svgRoot = null; axisLineEl = null; tickGroupEl = null; gridGroupEl = null;
     bandGroupEl = null; bandLabelGroupEl = null;
     pickerEl = null; pickerMenuEl = null;
+    densityEl = null; densityInput = null; densityValEl = null;
     hostEl = null; camera = null; mode = null; xRange = null;
     mounted = false;
   }
@@ -374,6 +397,140 @@
     if (window._forge && typeof window._forge.relayout === 'function') {
       window._forge.relayout();
     }
+  }
+
+  // ── BAND DENSITY SLIDER (Phase TL-2 Step 7b, 2026-05-24) ─
+  // Vertical slider on the right edge. Controls band height +
+  // dot Y density. Drag UP = expand, DOWN = compress. Persists
+  // to localStorage. Drives a relayout (rAF-coalesced so a fast
+  // drag doesn't queue dozens of full rebuilds).
+  function hydrateBandScaleFromLS() {
+    const ENG = window.AtlasEngineLayout || {};
+    if (typeof ENG.setTimelineBandHeightScale !== 'function') return;
+    try {
+      const raw = localStorage.getItem(LS_BAND_SCALE);
+      if (raw == null) return;
+      const v = parseFloat(raw);
+      if (isFinite(v)) ENG.setTimelineBandHeightScale(v);
+    } catch (_) {}
+  }
+
+  function buildBandDensitySlider() {
+    if (!hostEl) return;
+    const ENG = window.AtlasEngineLayout || {};
+    if (typeof ENG.getTimelineBandHeightScale !== 'function') return;
+    const bounds = ENG.timelineBandScaleBounds || { min: 0.3, max: 3.0 };
+    const cur    = ENG.getTimelineBandHeightScale();
+
+    densityEl = document.createElement('div');
+    densityEl.className = 'forge-timeline-band-density';
+    // Right-edge column. Sits ABOVE the dev preset chip so they
+    // share the right-edge real estate cleanly.
+    Object.assign(densityEl.style, {
+      position:      'absolute',
+      right:         '14px',
+      bottom:        '54px',           // 14 (chip bottom) + 24 (chip h) + ~16 gap
+      width:         '32px',
+      height:        '180px',
+      display:       'flex',
+      flexDirection: 'column',
+      alignItems:    'center',
+      justifyContent:'space-between',
+      padding:       '8px 4px',
+      background:    'rgba(13, 17, 25, 0.85)',
+      border:        '1px solid var(--border, #2a2e3a)',
+      borderRadius:  '4px',
+      color:         'var(--gold, #d4a55a)',
+      fontFamily:    'var(--mono, "JetBrains Mono", Menlo, monospace)',
+      fontSize:      '9px',
+      letterSpacing: '0.08em',
+      zIndex:        '6',
+      pointerEvents: 'auto',
+      userSelect:    'none',
+      boxSizing:     'border-box',
+    });
+
+    // Top label — expand cap "▲"
+    const topLbl = document.createElement('span');
+    topLbl.textContent = '▲';
+    topLbl.style.opacity = '0.6';
+    topLbl.style.fontSize = '8px';
+    densityEl.appendChild(topLbl);
+
+    // Slider — uses CSS rotation so it reads as VERTICAL. Native
+    // <input orient="vertical"> is Firefox-only; rotation works
+    // everywhere consistently.
+    const sliderWrap = document.createElement('div');
+    Object.assign(sliderWrap.style, {
+      flex:          '1 1 auto',
+      width:         '100%',
+      display:       'flex',
+      alignItems:    'center',
+      justifyContent:'center',
+      position:      'relative',
+    });
+    densityInput = document.createElement('input');
+    densityInput.type  = 'range';
+    densityInput.min   = String(bounds.min);
+    densityInput.max   = String(bounds.max);
+    densityInput.step  = '0.05';
+    densityInput.value = String(cur);
+    densityInput.setAttribute('aria-label', 'Family band vertical density');
+    densityInput.setAttribute('title', 'Family band density — drag up to expand, down to compress');
+    // Rotate -90deg so up = increase. Width becomes vertical length.
+    Object.assign(densityInput.style, {
+      width:        '120px',
+      transform:    'rotate(-90deg)',
+      transformOrigin: 'center center',
+      accentColor:  'var(--gold, #d4a55a)',
+      cursor:       'ns-resize',
+    });
+    sliderWrap.appendChild(densityInput);
+    densityEl.appendChild(sliderWrap);
+
+    // Bottom value readout — "1.0×" — also doubles as the
+    // double-click reset target.
+    densityValEl = document.createElement('span');
+    densityValEl.textContent = formatBandScale(cur);
+    Object.assign(densityValEl.style, {
+      opacity:       '0.85',
+      cursor:        'pointer',
+      padding:       '2px 0',
+    });
+    densityValEl.setAttribute('title', 'Double-click to reset to 1.0×');
+    densityEl.appendChild(densityValEl);
+
+    hostEl.appendChild(densityEl);
+
+    densityInput.addEventListener('input', onDensityInput);
+    densityValEl.addEventListener('dblclick', function () {
+      densityInput.value = '1.0';
+      onDensityInput();
+    });
+  }
+
+  function formatBandScale(v) {
+    return (Math.round(v * 10) / 10).toFixed(1) + '×';
+  }
+
+  function onDensityInput() {
+    if (!densityInput) return;
+    const v = parseFloat(densityInput.value);
+    if (!isFinite(v)) return;
+    const ENG = window.AtlasEngineLayout || {};
+    const changed = (typeof ENG.setTimelineBandHeightScale === 'function')
+      && ENG.setTimelineBandHeightScale(v);
+    if (densityValEl) densityValEl.textContent = formatBandScale(v);
+    try { localStorage.setItem(LS_BAND_SCALE, String(v)); } catch (_) {}
+    if (!changed) return;
+    // rAF-coalesce so a fast drag still updates per-frame, not per-event.
+    if (densityRafId) return;
+    densityRafId = requestAnimationFrame(function () {
+      densityRafId = 0;
+      if (window._forge && typeof window._forge.relayout === 'function') {
+        window._forge.relayout();
+      }
+    });
   }
 
   // ── REFRESH ──────────────────────────────────────────────

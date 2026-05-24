@@ -127,6 +127,27 @@
   function _activePreset() {
     return SCALE_PRESETS[_activePresetId] || SCALE_PRESETS['linear-default'];
   }
+
+  // ── BAND HEIGHT SCALE (Phase TL-2 Step 7b, 2026-05-24) ───
+  // Vertical density control. Multiplies every band's allocated
+  // height (and every dot's Y position within a band) by this
+  // factor. UI surfaces it as a vertical slider on the right edge
+  // of the timeline view. Persisted in localStorage so the user's
+  // density preference survives reloads.
+  //   1.0  = baseline (original Step 7 heights)
+  //   < 1  = compress vertically, more families fit on screen
+  //   > 1  = expand vertically, more breathing room per family
+  const BAND_SCALE_MIN = 0.30;
+  const BAND_SCALE_MAX = 3.00;
+  let _bandHeightScale = 1.0;
+  function setBandHeightScale(v) {
+    if (typeof v !== 'number' || !isFinite(v)) return false;
+    const clamped = Math.max(BAND_SCALE_MIN, Math.min(BAND_SCALE_MAX, v));
+    if (Math.abs(clamped - _bandHeightScale) < 0.001) return false;
+    _bandHeightScale = clamped;
+    return true;
+  }
+  function getBandHeightScale() { return _bandHeightScale; }
   function _ctxFromRange(xRange) {
     const xLo = xRange.lo, xHi = xRange.hi;
     const xSpanYears = Math.max(1, xHi - xLo);
@@ -249,10 +270,13 @@
     // raw cursor starting at TIME_AXIS_PAD; we'll re-center the whole
     // stack around world Y=0 at the end so the world is origin-
     // centered (matches the wheel's anchor convention).
+    // Phase TL-2 Step 7b — scale every band height by _bandHeightScale
+    // (UI slider). Affects band rects AND dot Y placement together.
+    const bandScale = _bandHeightScale;
     let yCursor = TIME_AXIS_PAD;
     for (const fam of orderedFamilies) {
       const members = byFamily[fam];
-      const h = bandHeightFor(members.length);
+      const h = bandHeightFor(members.length) * bandScale;
       const y0 = yCursor;
       const y1 = yCursor + h;
       // Color resolution: prefer caller's override; otherwise pull
@@ -330,10 +354,12 @@
     }
 
     // 6. Undated parking lane (visually distinct band at the bottom).
+    // Phase TL-2 Step 7b — also scaled by _bandHeightScale so the
+    // whole vertical stack compresses/expands as one.
     let worldBottom = bandStackBottom;
     if (parkUndated && undated.ids.length) {
       const laneY0 = bandStackBottom + UNDATED_PAD;
-      const laneY1 = laneY0 + UNDATED_BAND_H;
+      const laneY1 = laneY0 + UNDATED_BAND_H * bandScale;
       undated.y0 = laneY0;
       undated.y1 = laneY1;
       // Spread the undated dots evenly across the SPINE — origin-
@@ -463,6 +489,12 @@
   window.AtlasEngineLayout.setTimelineScalePreset   = setScalePreset;
   window.AtlasEngineLayout.getTimelineScalePresetId = getScalePresetId;
   window.AtlasEngineLayout.listTimelineScalePresets = listScalePresets;
+  // Phase TL-2 Step 7b — band-height scale (vertical density slider).
+  window.AtlasEngineLayout.setTimelineBandHeightScale = setBandHeightScale;
+  window.AtlasEngineLayout.getTimelineBandHeightScale = getBandHeightScale;
+  window.AtlasEngineLayout.timelineBandScaleBounds    = Object.freeze({
+    min: BAND_SCALE_MIN, max: BAND_SCALE_MAX
+  });
   // Also export the constants so the view layer can use them when
   // rendering the time-axis ribbon + undated lane chrome.
   window.AtlasEngineLayout.timelineConstants = Object.freeze({
