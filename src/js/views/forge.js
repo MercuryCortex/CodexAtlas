@@ -6944,6 +6944,24 @@
           : (de != null && dl != null && de !== dl) ? (fmtYear(de) + ' – ' + fmtYear(dl))
           : fmtYear(de != null ? de : dl);
 
+        // Phase B-DATING-2 (2026-05-24) — dating_basis surface.
+        // Always show the basis tier so the user can audit WHY a
+        // node sits where it does on the timeline. Source + notes
+        // are optional rows below.
+        const dbasis    = node.dating_basis || '';
+        const dbSource  = node.dating_basis_source || '';
+        const dbNotes   = node.dating_basis_notes || '';
+        const DATING_BASIS_LABELS = {
+          'B1': 'B1 · primary date',
+          'B2': 'B2 · first textual attestation',
+          'B3': 'B3 · oldest archaeology',
+          'B4': 'B4 · first scripture appearance',
+          'B5': 'B5 · scholarly consensus',
+          'B6': 'B6 · family-median (soft)',
+          'B7': 'B7 · atemporal',
+        };
+        const dbLabel = DATING_BASIS_LABELS[dbasis] || dbasis;
+
         const safe = (s) => String(s || '').replace(/[&<>"']/g, c => (
           { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]
         ));
@@ -7014,6 +7032,11 @@
           + (pills ? '<div class="forge-side-panel-wires">' + pills + '</div>' : '')
           + '<dl class="forge-side-panel-meta">'
           +   (dateStr ? '<dt>Date</dt><dd>' + safe(dateStr) + '</dd>' : '')
+          // Phase B-DATING-2 (2026-05-24) — dating-basis rows.
+          // Always show the basis tier; source + notes optional.
+          +   (dbLabel  ? '<dt>Basis</dt><dd class="forge-side-panel-dating-basis forge-side-panel-dating-basis--' + safeAttr(dbasis.toLowerCase()) + '">' + safe(dbLabel) + '</dd>' : '')
+          +   (dbSource ? '<dt>Source</dt><dd>' + safe(dbSource) + '</dd>' : '')
+          +   (dbNotes  ? '<dt>Notes</dt><dd class="forge-side-panel-dating-notes">' + safe(dbNotes) + '</dd>' : '')
           +   (place   ? '<dt>Place</dt><dd>' + safe(place)   + '</dd>' : '')
           +   (domains ? '<dt>Domains</dt><dd>' + safe(domains) + '</dd>' : '')
           + '</dl>'

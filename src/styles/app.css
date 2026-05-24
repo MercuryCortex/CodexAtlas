@@ -867,6 +867,50 @@ body:not(.fv-layout-timeline) .fv-timeline-only {
 body.fv-hide-tl-bands       .forge-timeline-bands       { display: none !important; }
 body.fv-hide-tl-band-labels .forge-timeline-band-labels { display: none !important; }
 
+/* Phase B-DATING-2 (2026-05-24) — Side-panel dating-basis pill.
+   Each basis tier gets a distinct color so the user reads the
+   confidence at a glance:
+     B1-B4 = primary evidence → gold + neutral
+     B5    = consensus emergence → amber (soft)
+     B6    = family-median synth → grey (lowest dated)
+     B7    = atemporal → faded grey */
+.forge-side-panel-dating-basis {
+  font-family: var(--mono, "JetBrains Mono", Menlo, monospace);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  padding: 2px 6px;
+  border-radius: 3px;
+  display: inline-block;
+}
+.forge-side-panel-dating-basis--b1,
+.forge-side-panel-dating-basis--b2,
+.forge-side-panel-dating-basis--b3,
+.forge-side-panel-dating-basis--b4 {
+  color: var(--gold-1, #e8c889);
+  background: rgba(212,165,90,0.10);
+  border: 1px solid rgba(212,165,90,0.30);
+}
+.forge-side-panel-dating-basis--b5 {
+  color: rgba(212,165,90,0.75);
+  background: rgba(212,165,90,0.06);
+  border: 1px solid rgba(212,165,90,0.20);
+}
+.forge-side-panel-dating-basis--b6 {
+  color: rgba(180,180,190,0.85);
+  background: rgba(140,140,150,0.10);
+  border: 1px solid rgba(140,140,150,0.28);
+}
+.forge-side-panel-dating-basis--b7 {
+  color: rgba(160,160,170,0.65);
+  background: rgba(140,140,150,0.06);
+  border: 1px dashed rgba(140,140,150,0.30);
+}
+.forge-side-panel-dating-notes {
+  opacity: 0.78;
+  font-size: 11px;
+  font-style: italic;
+}
+
 /* Phase 22-J (2026-05-24) → Phase 22-K (2026-05-24) — Force-hide
    WHEEL SVG overlays in timeline mode. These elements are
    positioned for the radial wheel layout. John kept hulls

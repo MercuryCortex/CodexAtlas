@@ -178,6 +178,24 @@
       }
       const col = parseColor(overrideHex || n.family_color || n.tradition_color, fallbackColor);
 
+      // Phase B-DATING-2 (2026-05-24) — dating-confidence rim chrome.
+      // Multiply the baked alpha by a basis-dependent factor so soft-
+      // placed nodes (B5/B6) and atemporal nodes (B7) read as less-
+      // anchored than B1-B4 primary-evidence nodes. Effects EVERY view
+      // (wheel + timeline) since dating_basis is a node-level property,
+      // not a layout concern.
+      //   B1..B4 → 1.00 (full)
+      //   B5    → 0.65
+      //   B6    → 0.45  (family-median synth, lowest confidence dated)
+      //   B7    → 0.30  (atemporal — still visible but clearly soft)
+      //   no basis → 1.00
+      let basisAlpha = 1.0;
+      const _db = n.dating_basis;
+      if      (_db === 'B5') basisAlpha = 0.65;
+      else if (_db === 'B6') basisAlpha = 0.45;
+      else if (_db === 'B7') basisAlpha = 0.30;
+      const finalAlpha = col[3] * basisAlpha;
+
       const off = i * FLOATS_PER_INSTANCE;
       data[off + 0] = pos.x;
       data[off + 1] = pos.y;
@@ -186,7 +204,7 @@
       data[off + 4] = col[0];
       data[off + 5] = col[1];
       data[off + 6] = col[2];
-      data[off + 7] = col[3];
+      data[off + 7] = finalAlpha;
 
       idIndex[i] = n.id;
     }
