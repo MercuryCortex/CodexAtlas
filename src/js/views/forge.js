@@ -4926,6 +4926,21 @@
       window._forge.getLayout = function () {
         return local.layoutId || 'wheel';
       };
+      // Phase TL-2 Step 6b (2026-05-24) — force a layout rebuild
+      // at the CURRENT layoutId. Needed when a downstream module
+      // (e.g. the timeline scale-preset picker) mutates state that
+      // is only read at layout time. Same internal call setLayout
+      // makes, but without the same-id early return.
+      window._forge.relayout = function () {
+        if (local.destroyed) return false;
+        try {
+          rebuildForMode(local.mode.id, { preserveLocks: true });
+          return true;
+        } catch (e) {
+          console.warn('[forge] relayout failed', e);
+          return false;
+        }
+      };
     }
 
     // ════════════════════════════════════════════════════════════

@@ -90,6 +90,56 @@
   // crossing the new year doesn't ship a stale upper bound.
   function spineHi() { return currentYear(); }
 
+  // ── SCALE PRESETS (Phase TL-2 Step 6b, 2026-05-24) ───────
+  // Each preset is a YEAR → WORLD-X distribution. The registry is
+  // the experimentation surface for trying different scale ideas
+  // without rewiring the layout each time. Each preset implements:
+  //   yearToWorldX(year, ctx) → number
+  //   worldXToYear(worldX, ctx) → number   (inverse — needed by
+  //                                          chrome for tick math)
+  // ctx carries the spine fields the formula may need:
+  //   { xRange:{lo,hi}, midYear, halfSpine, xSpanYears, xSpanWorld }
+  //
+  // Active preset is module-level state, selected via setScalePreset
+  // and read by both the layout body AND the chrome's tick code.
+  // Switching presets requires a layout rebuild (forge exposes
+  // _forge.relayout() for that).
+  //
+  // Slot 1: 'linear-default' — the original 2026-05-24 distribution.
+  // year_t → (year - midYear) × 0.5. Maps the full 9000 BCE→2026 CE
+  // spine linearly to ~5500 world units, centered on world X=0.
+  // Future slots: log, density-compressed, era-bucketed, etc.
+  const SCALE_PRESETS = {
+    'linear-default': {
+      id:    'linear-default',
+      label: 'Linear · 9K BCE → today',
+      tagline: 'Original spine-fixed linear (Step 6 baseline)',
+      yearToWorldX: function (year, ctx) {
+        return (year - ctx.midYear) * X_SCALE;
+      },
+      worldXToYear: function (worldX, ctx) {
+        return ctx.midYear + worldX / X_SCALE;
+      },
+    },
+  };
+  let _activePresetId = 'linear-default';
+
+  function _activePreset() {
+    return SCALE_PRESETS[_activePresetId] || SCALE_PRESETS['linear-default'];
+  }
+  function _ctxFromRange(xRange) {
+    const xLo = xRange.lo, xHi = xRange.hi;
+    const xSpanYears = Math.max(1, xHi - xLo);
+    const xSpanWorld = xSpanYears * X_SCALE;
+    return {
+      xRange:     xRange,
+      midYear:    (xLo + xHi) / 2,
+      halfSpine:  xSpanWorld / 2,
+      xSpanYears: xSpanYears,
+      xSpanWorld: xSpanWorld
+    };
+  }
+
   // ── HELPERS ──────────────────────────────────────────────
   function effectiveDate(n) {
     // Same selection radial.js + scrubber use: date_earliest first,
@@ -176,9 +226,29 @@
     const xHi = spineHi();
     const xSpanYears = Math.max(1, xHi - xLo);
     const xSpanWorld = xSpanYears * X_SCALE;
+    // Phase TL-2 Step 6 — origin-centered world. spine midpoint =
+    // (xLo+xHi)/2 (year). World-X = 0 at that midpoint year. Half-
+    // width = xSpanWorld / 2 = distance from origin to each spine
+    // endpoint.
+    const midYear   = (xLo + xHi) / 2;
+    const halfSpine = xSpanWorld / 2;
 
-    // 4. Allocate band heights. Stack top-down, leaving TIME_AXIS_PAD
-    //    at the top for the axis ribbon.
+    // Phase TL-2 Step 6b — scale preset dispatch. The active preset
+    // owns the year→world-X formula. Layout body + chrome both call
+    // through this, so swapping presets is a single re-layout away.
+    const preset = _activePreset();
+    const ctx    = {
+      xRange:     { lo: xLo, hi: xHi },
+      midYear:    midYear,
+      halfSpine:  halfSpine,
+      xSpanYears: xSpanYears,
+      xSpanWorld: xSpanWorld
+    };
+
+    // 4. Allocate band heights. Stack top-down. First-pass uses a
+    // raw cursor starting at TIME_AXIS_PAD; we'll re-center the whole
+    // stack around world Y=0 at the end so the world is origin-
+    // centered (matches the wheel's anchor convention).
     let yCursor = TIME_AXIS_PAD;
     for (const fam of orderedFamilies) {
       const members = byFamily[fam];
@@ -229,7 +299,10 @@
       // ROW_STEP, then we measure + scale Y down if needed.
       const localPlacements = [];   // [{ id, x, rowIndex }]
       for (const m of members) {
-        const x = (effectiveDate(m) - xLo) * X_SCALE;
+        // Phase TL-2 Step 6 — origin-centered. Phase TL-2 Step 6b —
+        // dispatched through the active scale preset so the year→X
+        // distribution is swappable at runtime.
+        const x = preset.yearToWorldX(effectiveDate(m), ctx);
         let placedRow = -1;
         for (let r = 0; r < rows.length; r++) {
           if (x - rows[r] >= MIN_X_SPACING) {
@@ -263,13 +336,15 @@
       const laneY1 = laneY0 + UNDATED_BAND_H;
       undated.y0 = laneY0;
       undated.y1 = laneY1;
-      // Spread the undated dots evenly across the X range so they
-      // don't clump at x=0. Use deterministic index-based X.
+      // Spread the undated dots evenly across the SPINE — origin-
+      // centered, so x ranges from -halfSpine to +halfSpine. Used
+      // to be `t * xSpanWorld` (0..xSpanWorld), which clumped them
+      // right of the new origin.
       const N = undated.ids.length;
       const sortedIds = undated.ids.slice().sort();
       for (let i = 0; i < N; i++) {
         const t = (i + 0.5) / N;
-        const x = t * xSpanWorld;
+        const x = (t - 0.5) * xSpanWorld;
         const row = i % 5;     // 5-row stripe for visual breathing
         const y = laneY0 + ROW_PAD + row * 8;
         positions.set(sortedIds[i], { x, y });
@@ -277,14 +352,37 @@
       worldBottom = laneY1 + UNDATED_PAD;
     }
 
-    // 7. World extent (anisotropic — see §3.2). 10% reserve on each
-    // X side so the date-axis endpoints don't kiss the viewport edges.
+    // Phase TL-2 Step 6 — Y-CENTER the world. The layout above
+    // built everything in [0, worldBottom]; shift it UP by
+    // worldBottom/2 so the vertical mid sits at world Y=0. Now
+    // BG image (anchored at world 0,0) and timeline (centered at
+    // world 0,0) co-align at zoom-out — no caos.
+    const yShift = -worldBottom / 2;
+    for (const fam of orderedFamilies) {
+      const band = bands[fam];
+      band.y0 += yShift;
+      band.y1 += yShift;
+      band.yCenter += yShift;
+    }
+    if (parkUndated && undated.ids.length) {
+      undated.y0 += yShift;
+      undated.y1 += yShift;
+    }
+    for (const [id, p] of positions) {
+      positions.set(id, { x: p.x, y: p.y + yShift });
+    }
+    const yWorldTop    = -worldBottom / 2 - PAD;
+    const yWorldBottom =  worldBottom / 2 + PAD;
+
+    // 7. World extent (anisotropic — see §3.2). Symmetric around
+    // origin on BOTH axes. 10% reserve on each X side so the date-
+    // axis endpoints don't kiss the viewport edges.
     const xPadWorld = xSpanWorld * X_PAD_FRAC;
     const worldExtent = {
-      x0: -xPadWorld,
-      y0: 0,
-      x1: xSpanWorld + xPadWorld,
-      y1: worldBottom + PAD
+      x0: -halfSpine - xPadWorld,
+      y0: yWorldTop,
+      x1:  halfSpine + xPadWorld,
+      y1: yWorldBottom
     };
 
     return {
@@ -292,21 +390,26 @@
       positions,
       worldExtent,
       xRange: { lo: xLo, hi: xHi },
-      yRange: { lo: 0, hi: worldBottom },
-      undated
+      yRange: { lo: yWorldTop, hi: yWorldBottom },
+      undated,
+      // Phase TL-2 Step 6b — expose active scale preset so the chrome
+      // + dev picker can read it without going through the global API.
+      scalePreset: { id: preset.id, label: preset.label }
     };
   }
 
   // ── HELPER: world-X ↔ year conversion ────────────────────
-  // Exposed so the chrome layer (timeline-chrome.js) can render tick
-  // marks at year coordinates without duplicating the math. Inputs:
-  //   xRange.lo, xRange.hi from the layout result
-  //   X_SCALE constant (same one the layout uses)
+  // Phase TL-2 Step 6 (2026-05-24) — ORIGIN-CENTERED. Phase TL-2
+  // Step 6b — dispatched through the active scale preset. Same
+  // signature (year, xRange) so callers (timeline-chrome.js) don't
+  // need to know about the preset registry — they just call and
+  // the active distribution does the math.
+  function spineMid(xRange) { return (xRange.lo + xRange.hi) / 2; }
   function yearToWorldX(year, xRange) {
-    return (year - xRange.lo) * X_SCALE;
+    return _activePreset().yearToWorldX(year, _ctxFromRange(xRange));
   }
   function worldXToYear(worldX, xRange) {
-    return xRange.lo + worldX / X_SCALE;
+    return _activePreset().worldXToYear(worldX, _ctxFromRange(xRange));
   }
 
   // Phase TL-2 Step 4 (2026-05-24) — timeline-specific fit-scale
@@ -320,21 +423,33 @@
     if (dataWidthWorld <= 0) return 1;
     return (FIT_OVERSCAN * viewportW) / dataWidthWorld;
   }
-  function computeTimelineCenter(xRange, worldExtent) {
-    // Spine range center in world coords (X) + worldExtent vertical
-    // midpoint (Y). Layout places year=xRange.lo at world-X 0, so
-    // the spine midpoint sits at spineWidthWorld / 2 (= half the
-    // line length). Per John's spec the LINE always endpoints at
-    // 9000 BCE → today, so this midpoint is the natural visual
-    // center the camera should rest at when zoomed out.
-    // Returns {x, y} — same shape applyZoomFloor's deadLockCenter
-    // contract expects (NOT the old {cx, cy} shape).
-    const spineWidthWorld = (xRange.hi - xRange.lo) * X_SCALE;
-    const x = spineWidthWorld / 2;
-    const y0 = (worldExtent && worldExtent.y0) || 0;
-    const y1 = (worldExtent && worldExtent.y1) || 0;
-    const y = y0 + (y1 - y0) / 2;
-    return { x, y };
+  function computeTimelineCenter(/* xRange, worldExtent */) {
+    // Phase TL-2 Step 6 (2026-05-24) — ORIGIN-CENTERED. Since the
+    // layout now positions everything symmetric around world (0,0),
+    // the visual center is just the origin. Matches the wheel's
+    // deadLockCenter (also 0,0), so BG image + timeline + wheel
+    // all share one world-anchor.
+    return { x: 0, y: 0 };
+  }
+
+  // ── SCALE PRESET API ─────────────────────────────────────
+  // Phase TL-2 Step 6b (2026-05-24) — public surface for the dev
+  // scale picker. Switching a preset just mutates module state;
+  // the next layout call picks it up. To redraw with the new
+  // preset, the caller fires window._forge.relayout().
+  function setScalePreset(id) {
+    if (!SCALE_PRESETS[id]) {
+      console.warn('[timeline] unknown scale preset:', id);
+      return false;
+    }
+    _activePresetId = id;
+    return true;
+  }
+  function getScalePresetId() { return _activePresetId; }
+  function listScalePresets() {
+    return Object.values(SCALE_PRESETS).map(function (p) {
+      return { id: p.id, label: p.label, tagline: p.tagline || '' };
+    });
   }
 
   // ── EXPORT ───────────────────────────────────────────────
@@ -344,6 +459,10 @@
   window.AtlasEngineLayout.timelineWorldXToYear = worldXToYear;
   window.AtlasEngineLayout.computeTimelineFitScale = computeTimelineFitScale;
   window.AtlasEngineLayout.computeTimelineCenter   = computeTimelineCenter;
+  // Phase TL-2 Step 6b — scale preset surface.
+  window.AtlasEngineLayout.setTimelineScalePreset   = setScalePreset;
+  window.AtlasEngineLayout.getTimelineScalePresetId = getScalePresetId;
+  window.AtlasEngineLayout.listTimelineScalePresets = listScalePresets;
   // Also export the constants so the view layer can use them when
   // rendering the time-axis ribbon + undated lane chrome.
   window.AtlasEngineLayout.timelineConstants = Object.freeze({

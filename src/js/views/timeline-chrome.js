@@ -68,6 +68,8 @@
   let axisLineEl  = null;     // <line> the 1 px stroke
   let tickGroupEl = null;     // <g> container for ticks + labels
   let gridGroupEl = null;     // <g> container for faint vertical grid stripes
+  let pickerEl    = null;     // <div> bottom-right dev scale-preset picker
+  let pickerMenuEl = null;    // <div> the pop-up list
   let mounted     = false;
 
   // ── STATE ────────────────────────────────────────────────
@@ -124,6 +126,14 @@
 
     hostEl.appendChild(svgRoot);
 
+    // Phase TL-2 Step 6b — bottom-right DEV scale-preset picker.
+    // Small chip showing the active preset label + a chevron. Click
+    // pops a list of registered presets. Picking one calls
+    // setTimelineScalePreset() + _forge.relayout(). Hosted inline
+    // here (not its own module) since it's chrome-lifecycle-tied —
+    // mounts when timeline mounts, unmounts when it leaves.
+    buildScalePicker();
+
     // Hook into camera so we redraw on every pan/zoom. Forge's camera
     // exposes onChange (camera.js line ~? — same hook the BG image
     // uses to follow zoom).
@@ -140,9 +150,207 @@
     if (rafId) { cancelAnimationFrame(rafId); rafId = 0; }
     if (unsubscribeCamera) { try { unsubscribeCamera(); } catch (_) {} unsubscribeCamera = null; }
     if (svgRoot && svgRoot.parentNode) svgRoot.parentNode.removeChild(svgRoot);
+    if (pickerEl && pickerEl.parentNode) pickerEl.parentNode.removeChild(pickerEl);
     svgRoot = null; axisLineEl = null; tickGroupEl = null; gridGroupEl = null;
+    pickerEl = null; pickerMenuEl = null;
     hostEl = null; camera = null; mode = null; xRange = null;
     mounted = false;
+  }
+
+  // ── SCALE PICKER (Phase TL-2 Step 6b, 2026-05-24) ────────
+  // DEV-tagged bottom-right chip. Lets us swap scale-distribution
+  // presets at runtime (linear, compressed, log, …) without
+  // rebuilding the engine. Today only 'linear-default' is wired;
+  // the slot exists for future experiments.
+  function buildScalePicker() {
+    if (!hostEl) return;
+    const ENG = window.AtlasEngineLayout || {};
+    if (typeof ENG.listTimelineScalePresets !== 'function') return;
+
+    pickerEl = document.createElement('div');
+    pickerEl.className = 'forge-timeline-scale-picker';
+    pickerEl.setAttribute('role', 'button');
+    pickerEl.setAttribute('aria-haspopup', 'listbox');
+    pickerEl.setAttribute('aria-expanded', 'false');
+    pickerEl.setAttribute('tabindex', '0');
+    // Inline styles — same pattern as the SVG overlay (no extra
+    // stylesheet entry for a dev-only widget).
+    Object.assign(pickerEl.style, {
+      position:      'absolute',
+      right:         '18px',
+      bottom:        '18px',
+      display:       'flex',
+      alignItems:    'center',
+      gap:           '8px',
+      padding:       '6px 10px 6px 12px',
+      background:    'rgba(20, 18, 14, 0.78)',
+      border:        '1px solid rgba(212, 165, 90, 0.30)',
+      borderRadius: '8px',
+      color:         'rgba(232, 200, 137, 0.92)',
+      fontFamily:    'var(--mono, "JetBrains Mono", Menlo, monospace)',
+      fontSize:      '10px',
+      fontWeight:    '500',
+      letterSpacing: '0.12em',
+      textTransform: 'uppercase',
+      cursor:        'pointer',
+      pointerEvents: 'auto',
+      zIndex:        '6',
+      userSelect:    'none',
+      backdropFilter:'blur(6px)',
+      WebkitBackdropFilter:'blur(6px)',
+    });
+
+    // DEV tag
+    const tag = document.createElement('span');
+    tag.textContent = 'DEV';
+    Object.assign(tag.style, {
+      color:        'rgba(212, 165, 90, 0.55)',
+      fontSize:     '9px',
+      letterSpacing:'0.18em',
+    });
+    pickerEl.appendChild(tag);
+
+    // Active preset label
+    const label = document.createElement('span');
+    label.className = '_label';
+    pickerEl.appendChild(label);
+
+    // Chevron
+    const chev = document.createElement('span');
+    chev.textContent = '▾';
+    chev.style.opacity = '0.7';
+    pickerEl.appendChild(chev);
+
+    hostEl.appendChild(pickerEl);
+    refreshPickerLabel();
+
+    pickerEl.addEventListener('click', togglePickerMenu);
+    pickerEl.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); togglePickerMenu(); }
+      else if (e.key === 'Escape')             { closePickerMenu(); }
+    });
+  }
+
+  function refreshPickerLabel() {
+    if (!pickerEl) return;
+    const ENG = window.AtlasEngineLayout || {};
+    const id  = (typeof ENG.getTimelineScalePresetId === 'function') ? ENG.getTimelineScalePresetId() : '?';
+    const list = (typeof ENG.listTimelineScalePresets === 'function') ? ENG.listTimelineScalePresets() : [];
+    const active = list.find(function (p) { return p.id === id; });
+    const lbl = pickerEl.querySelector('._label');
+    if (lbl) lbl.textContent = (active && active.label) || id;
+  }
+
+  function togglePickerMenu() {
+    if (pickerMenuEl) closePickerMenu();
+    else              openPickerMenu();
+  }
+
+  function openPickerMenu() {
+    if (!pickerEl || !hostEl) return;
+    const ENG = window.AtlasEngineLayout || {};
+    const list = (typeof ENG.listTimelineScalePresets === 'function') ? ENG.listTimelineScalePresets() : [];
+    const activeId = (typeof ENG.getTimelineScalePresetId === 'function') ? ENG.getTimelineScalePresetId() : null;
+
+    pickerMenuEl = document.createElement('div');
+    pickerMenuEl.className = 'forge-timeline-scale-picker-menu';
+    pickerMenuEl.setAttribute('role', 'listbox');
+    Object.assign(pickerMenuEl.style, {
+      position:      'absolute',
+      right:         '18px',
+      bottom:        '54px',
+      minWidth:      '260px',
+      maxWidth:      '340px',
+      padding:       '6px',
+      background:    'rgba(16, 14, 11, 0.94)',
+      border:        '1px solid rgba(212, 165, 90, 0.32)',
+      borderRadius: '8px',
+      color:         'rgba(232, 200, 137, 0.92)',
+      fontFamily:    'var(--mono, "JetBrains Mono", Menlo, monospace)',
+      fontSize:      '11px',
+      letterSpacing: '0.05em',
+      zIndex:        '7',
+      pointerEvents: 'auto',
+      backdropFilter:'blur(8px)',
+      WebkitBackdropFilter:'blur(8px)',
+      boxShadow:     '0 8px 24px rgba(0,0,0,0.45)',
+    });
+
+    list.forEach(function (p) {
+      const row = document.createElement('div');
+      row.setAttribute('role', 'option');
+      row.setAttribute('data-preset', p.id);
+      row.setAttribute('aria-selected', p.id === activeId ? 'true' : 'false');
+      Object.assign(row.style, {
+        display:      'flex',
+        flexDirection:'column',
+        gap:          '2px',
+        padding:      '8px 10px',
+        borderRadius:'6px',
+        cursor:       'pointer',
+        background:   p.id === activeId ? 'rgba(212, 165, 90, 0.12)' : 'transparent',
+        border:       '1px solid ' + (p.id === activeId ? 'rgba(212, 165, 90, 0.35)' : 'transparent'),
+      });
+      const top = document.createElement('span');
+      top.textContent = p.label;
+      top.style.textTransform = 'uppercase';
+      top.style.letterSpacing = '0.10em';
+      top.style.fontSize = '11px';
+      row.appendChild(top);
+      if (p.tagline) {
+        const sub = document.createElement('span');
+        sub.textContent = p.tagline;
+        sub.style.opacity = '0.55';
+        sub.style.fontSize = '10px';
+        sub.style.textTransform = 'none';
+        sub.style.letterSpacing = '0.02em';
+        row.appendChild(sub);
+      }
+      row.addEventListener('mouseenter', function () { if (p.id !== activeId) row.style.background = 'rgba(212, 165, 90, 0.06)'; });
+      row.addEventListener('mouseleave', function () { if (p.id !== activeId) row.style.background = 'transparent'; });
+      row.addEventListener('click', function () { applyPresetPick(p.id); });
+      pickerMenuEl.appendChild(row);
+    });
+
+    hostEl.appendChild(pickerMenuEl);
+    pickerEl.setAttribute('aria-expanded', 'true');
+
+    // Outside-click + Esc to close.
+    setTimeout(function () { document.addEventListener('mousedown', _onOutsideClick, true); }, 0);
+    document.addEventListener('keydown', _onMenuKey, true);
+  }
+
+  function closePickerMenu() {
+    if (pickerMenuEl && pickerMenuEl.parentNode) pickerMenuEl.parentNode.removeChild(pickerMenuEl);
+    pickerMenuEl = null;
+    if (pickerEl) pickerEl.setAttribute('aria-expanded', 'false');
+    document.removeEventListener('mousedown', _onOutsideClick, true);
+    document.removeEventListener('keydown', _onMenuKey, true);
+  }
+
+  function _onOutsideClick(e) {
+    if (!pickerMenuEl) return;
+    if (pickerMenuEl.contains(e.target)) return;
+    if (pickerEl && pickerEl.contains(e.target)) return;
+    closePickerMenu();
+  }
+  function _onMenuKey(e) {
+    if (e.key === 'Escape') closePickerMenu();
+  }
+
+  function applyPresetPick(id) {
+    const ENG = window.AtlasEngineLayout || {};
+    if (typeof ENG.setTimelineScalePreset !== 'function') return;
+    const changed = ENG.setTimelineScalePreset(id);
+    closePickerMenu();
+    if (!changed) return;
+    refreshPickerLabel();
+    // Force a re-layout — preset state is read at layout time. The
+    // _forge.relayout() helper exists for exactly this case (Phase
+    // TL-2 Step 6b).
+    if (window._forge && typeof window._forge.relayout === 'function') {
+      window._forge.relayout();
+    }
   }
 
   // ── REFRESH ──────────────────────────────────────────────
@@ -200,6 +408,15 @@
     // multiple of tickStep.
     const firstTick = Math.ceil(visLoYear / tickStep) * tickStep;
 
+    // Phase TL-2 Step 6 — CLAMP tick iteration to the spine range.
+    // Per John's spec (2026-05-24): the timeline only shows dates
+    // within [9000 BCE, currentYear]. Anything outside that is OFF
+    // — no "5000 CE" ghost labels past the right endpoint, no
+    // "-15000 BCE" past the left. Loop is bounded by both visibility
+    // (visHiYear) AND spine cap (xRange.hi); same on the lo side.
+    const tickLo = Math.max(firstTick, xRange.lo);
+    const tickHi = Math.min(visHiYear, xRange.hi);
+
     // Phase TL-2 Step 5b (2026-05-24) — ONE style for every tick.
     // Earlier (Step 5) the major/minor split made minor labels too
     // dim (10px 55%) — John flagged them as "ghostly gap dates."
@@ -211,7 +428,7 @@
     const emphasisModulus = tickStep * 5;
     while (gridGroupEl.firstChild) gridGroupEl.removeChild(gridGroupEl.firstChild);
     while (tickGroupEl.firstChild) tickGroupEl.removeChild(tickGroupEl.firstChild);
-    for (let yr = firstTick; yr <= visHiYear; yr += tickStep) {
+    for (let yr = tickLo; yr <= tickHi; yr += tickStep) {
       const wx = yToX(yr, xRange);
       const sp = camera.worldToScreen(wx, 0, vp);
       // Off-screen guards (margin so near-edge labels still draw).
