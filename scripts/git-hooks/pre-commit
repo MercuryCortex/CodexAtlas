@@ -209,4 +209,23 @@ if [ -n "$LANE_A" ] && [ -n "$PY_BIN" ]; then
   fi
 fi
 
+# ============================================================
+# TYRANT Phase 6 (2026-05-25) — SOFT STATUS nudge.
+# Warns (does NOT block) when a Lane B commit lands without
+# touching 00_meta/STATUS.md. Closes the 52:1 ratio finding #8
+# by surfacing the missing entry at commit time instead of after.
+# Bypass: just continue committing — the warning is informational.
+# ============================================================
+if [ -n "$LANE_B" ]; then
+  STAGED_STATUS="$(printf '%s\n' "$STAGED_ALL" | grep -E '^00_meta/STATUS\.md$' || true)"
+  if [ -z "$STAGED_STATUS" ]; then
+    echo "" >&2
+    echo "ⓘ pre-commit (nudge): this Lane B commit does not touch" >&2
+    echo "  00_meta/STATUS.md. HOW-WE-WORK §11 expects one batch" >&2
+    echo "  entry per shipped batch. Commit will proceed; consider" >&2
+    echo "  adding a STATUS entry in the next commit." >&2
+    echo "" >&2
+  fi
+fi
+
 exit 0
