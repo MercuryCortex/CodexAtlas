@@ -227,31 +227,50 @@
       id:    'log-centered',
       label: 'Log · year-0 centered',
       tagline: 'Symmetric log compression — BC/AD pivot at world center',
-      // Year 0 at world X=0. Both sides use log(|years_from_0|+1)
-      // mapped onto [0, halfSpine], with sign carrying direction.
-      // Round-trip is exact at year boundaries.
+      // Phase 22-AC (2026-05-24) — AUDIT FIX. The old version used
+      // `maxDist = max(|xLo|, |xHi|)` for BOTH sides, which made the
+      // CE side bottom-out short of +halfWorld when xLo=-9000 vs
+      // xHi=2026 (CE only reached log(2027)/log(9001) ≈ 0.836 of
+      // half-spine). Now each side is normalized to ITS OWN range,
+      // so:
+      //   year = xLo  → worldX = -halfWorld
+      //   year = 0    → worldX = 0
+      //   year = xHi  → worldX = +halfWorld
+      // …and the entire spine fills the world. Fixes the "broken
+      // feeling" John flagged on LOG.
       yearToWorldX: function (year, ctx) {
         const xLo = ctx.xRange.lo, xHi = ctx.xRange.hi;
         const y = Math.max(xLo, Math.min(xHi, year));
         const halfWorld = ctx.xSpanWorld / 2;
-        const sign = y < 0 ? -1 : 1;
-        const dist = Math.abs(y);
-        const maxDist = Math.max(Math.abs(xLo), Math.abs(xHi));
-        if (maxDist <= 0) return 0;
-        const logMax = Math.log(maxDist + 1);
-        const t = Math.log(dist + 1) / logMax;             // 0..1
-        return sign * t * halfWorld;
+        if (y >= 0) {
+          if (xHi <= 0) return 0;
+          const logMax = Math.log(xHi + 1);
+          if (logMax <= 0) return 0;
+          const t = Math.log(y + 1) / logMax;            // 0..1
+          return +t * halfWorld;
+        } else {
+          if (xLo >= 0) return 0;
+          const logMax = Math.log(-xLo + 1);
+          if (logMax <= 0) return 0;
+          const t = Math.log(-y + 1) / logMax;           // 0..1
+          return -t * halfWorld;
+        }
       },
       worldXToYear: function (worldX, ctx) {
         const halfWorld = ctx.xSpanWorld / 2;
         if (halfWorld <= 0) return 0;
-        const sign = worldX < 0 ? -1 : 1;
-        const t = Math.min(1, Math.abs(worldX) / halfWorld);
         const xLo = ctx.xRange.lo, xHi = ctx.xRange.hi;
-        const maxDist = Math.max(Math.abs(xLo), Math.abs(xHi));
-        const logMax = Math.log(maxDist + 1);
-        const dist = Math.exp(t * logMax) - 1;
-        return sign * dist;
+        if (worldX >= 0) {
+          if (xHi <= 0) return 0;
+          const t = Math.min(1, worldX / halfWorld);
+          const logMax = Math.log(xHi + 1);
+          return Math.exp(t * logMax) - 1;
+        } else {
+          if (xLo >= 0) return 0;
+          const t = Math.min(1, -worldX / halfWorld);
+          const logMax = Math.log(-xLo + 1);
+          return -(Math.exp(t * logMax) - 1);
+        }
       },
     },
     'log-recent': {

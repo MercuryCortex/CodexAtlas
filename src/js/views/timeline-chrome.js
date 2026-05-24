@@ -32,19 +32,35 @@
   // Tick cadences by visible-year-span. Picks the most readable
   // tick interval for the current zoom. Coarser at overview,
   // finer when zoomed in. Mirrors TradingView's interval picker.
+  // Phase 22-AB (2026-05-24) — finer cadence table. User asked
+  // for dates to "appear while we zoom" — old table jumped span
+  // 50k → 20k → 10k (only 3 cadence levels until 5k years span).
+  // New table doubles the entries so a slow zoom-in continuously
+  // reveals new tick labels rather than waiting for big jumps.
   const TICK_CADENCES = [
     // [maxSpanYears, tickStep]
-    [50_000, 5000],   // overview      → tick every 5000 yr
+    [50_000, 5000],
+    [30_000, 2500],
     [20_000, 2000],
+    [15_000, 1500],
     [10_000, 1000],
+    [ 7_500,  750],
     [ 5_000,  500],
-    [ 2_000,  250],
+    [ 3_000,  250],
+    [ 2_000,  200],
+    [ 1_500,  150],
     [ 1_000,  100],
+    [   700,   50],
     [   500,   50],
+    [   300,   25],
     [   200,   25],
     [   100,   10],
+    [    70,   10],
     [    50,    5],
+    [    30,    5],
     [    20,    2],
+    [    10,    2],
+    [     5,    1],
     [     1,    1],
   ];
 
@@ -70,13 +86,18 @@
   let gridGroupEl = null;     // <g> container for faint vertical grid stripes
   let bandGroupEl = null;     // <g> family band rectangles (bottom-most layer)
   let bandLabelGroupEl = null;// <g> family labels — anchored to screen-left
-  let pickerEl    = null;     // <div> bottom-right dev scale-preset picker
-  let pickerMenuEl = null;    // <div> the pop-up list
-  let densityEl   = null;     // <div> right-edge vertical band-density slider
-  let densityInput = null;    // <input range> inside the densityEl wrapper
-  let densityValEl = null;    // <span> shows the current scale (e.g. "1.0×")
-  let densityRafId = 0;       // rAF coalesce for relayout on slider drag
-  let scaleSwitchEl = null;   // <div> LIN/LOG quick-toggle (TradingView-style)
+  // Phase 22-AA (2026-05-24) — UNIFIED BOTTOM-RIGHT TOOLBAR.
+  // Three previously-floating elements (chip picker, LIN/LOG switch,
+  // vertical density slider) collapsed into ONE horizontal row that
+  // mirrors the bottom-left button-strip layout. After 5+ asks. All
+  // children use `.forge-fxpanel-btn` styling so any future restyle
+  // of the bottom-left buttons propagates automatically here too.
+  let toolbarEl   = null;     // <div> single container: [LIN|LOG|LOG-R|CMP] [DENSITY 1.0×]
+  let presetSegEl = null;     // <div> segmented preset switcher
+  let densityBtn  = null;     // <button> density popover trigger ("DENSITY 1.0×")
+  let densityPopEl= null;     // <div> popover with horizontal slider (above the btn)
+  let densityInput= null;     // <input type=hidden> holds the current band-scale value
+  let densityRafId= 0;        // rAF coalesce for relayout on slider drag
   let mounted     = false;
 
   // localStorage key for persisting the band-density preference.
@@ -108,7 +129,12 @@
     // Phase 22-M — dense-ticks toggle (more dates onscreen as
     // you zoom in). When ON, the cadence picker uses one step
     // finer than auto.
-    denseTicks:   false,
+    // Phase 22-AB (2026-05-24) — DEFAULT-ON. User: "the dates on
+    // the timeline STILL MISSING — i don't want just a couple, i
+    // want them TO appear while we zoom". Dense + finer ticks at
+    // EVERY zoom level. The toggle stays in STYLE panel for users
+    // who want the sparser overview look.
+    denseTicks:   true,
   };
   let _bandStyle = Object.assign({}, BAND_STYLE_DEFAULTS);
   try {
@@ -178,22 +204,20 @@
           unsubscribeCamera = camera.onChange(scheduleRefresh);
         }
       }
-      // Re-sync chip + slider readouts from authority state in
-      // case something else (not the user) mutated them. SKIP
-      // input-value sync while the user is actively dragging.
-      try { refreshPickerLabel(); } catch (_) {}
-      if (scaleSwitchEl && typeof scaleSwitchEl._render === 'function') {
-        try { scaleSwitchEl._render(); } catch (_) {}
+      // Phase 22-AA (2026-05-24) — re-sync toolbar readouts from
+      // authority state in case something else mutated them.
+      if (presetSegEl && typeof presetSegEl._render === 'function') {
+        try { presetSegEl._render(); } catch (_) {}
       }
-      if (densityInput && !densityInput._isDragging) {
+      if (densityInput && densityBtn) {
         const ENG = window.AtlasEngineLayout || {};
         if (typeof ENG.getTimelineBandHeightScale === 'function') {
           const cur = ENG.getTimelineBandHeightScale();
           if (Math.abs(parseFloat(densityInput.value) - cur) > 0.005) {
             densityInput.value = String(cur);
           }
-          if (densityValEl) densityValEl.textContent = formatBandScale(cur);
-          syncDensityThumbPos();
+          const vEl = densityBtn.querySelector('._v');
+          if (vEl) vEl.textContent = formatBandScale(cur);
         }
       }
       scheduleRefresh();
@@ -294,24 +318,13 @@
     // event handler fires, OR the user can drag for it to update.)
     hydrateBandScaleFromLS();
 
-    // Phase TL-2 Step 6b — bottom-right DEV scale-preset picker.
-    // Small chip showing the active preset label + a chevron. Click
-    // pops a list of registered presets. Picking one calls
-    // setTimelineScalePreset() + _forge.relayout(). Hosted inline
-    // here (not its own module) since it's chrome-lifecycle-tied —
-    // mounts when timeline mounts, unmounts when it leaves.
-    buildScalePicker();
-
-    // Phase TL-2 Step 7b — vertical band-density slider on the
-    // right edge. Drag UP = expand bands (more breathing room per
-    // family). Drag DOWN = compress (more families on screen).
-    buildBandDensitySlider();
-
-    // Phase 22-O (2026-05-24) — TradingView-style LIN / LOG quick
-    // toggle. Most-used scale switch. The full preset dropdown
-    // (Linear · Log-centered · Log-recent · Compressed) stays in
-    // the chip for advanced cases.
-    buildScaleQuickSwitch();
+    // Phase 22-AA (2026-05-24) — UNIFIED BOTTOM-RIGHT TOOLBAR.
+    // Was three separate floating elements (chip + LIN/LOG switch +
+    // vertical density slider) — now one horizontal row that
+    // matches the bottom-left button strip's height + padding +
+    // visual rhythm. Children styled via `.forge-fxpanel-btn` so
+    // the look stays in lockstep with the rest of the chrome.
+    buildBottomToolbar();
 
     // Hook into camera so we redraw on every pan/zoom. Forge's camera
     // exposes onChange (camera.js line ~? — same hook the BG image
@@ -329,245 +342,58 @@
     if (rafId) { cancelAnimationFrame(rafId); rafId = 0; }
     if (unsubscribeCamera) { try { unsubscribeCamera(); } catch (_) {} unsubscribeCamera = null; }
     if (densityRafId) { cancelAnimationFrame(densityRafId); densityRafId = 0; }
-    if (densityEl && typeof densityEl._cleanup === 'function') {
-      try { densityEl._cleanup(); } catch (_) {}
+    // Phase 22-AA (2026-05-24) — single-toolbar cleanup.
+    if (toolbarEl && typeof toolbarEl._cleanup === 'function') {
+      try { toolbarEl._cleanup(); } catch (_) {}
     }
     // Phase 22-L → 22-M (2026-05-24) — restore the wheel's
     // hull-overlay opacity ownership on unmount.
     const hullOverlayEl = document.querySelector('.forge-hulls-overlay');
     if (hullOverlayEl) hullOverlayEl.style.opacity = '';
     if (svgRoot && svgRoot.parentNode) svgRoot.parentNode.removeChild(svgRoot);
-    if (pickerEl && pickerEl.parentNode) pickerEl.parentNode.removeChild(pickerEl);
-    if (densityEl && densityEl.parentNode) densityEl.parentNode.removeChild(densityEl);
-    if (scaleSwitchEl && scaleSwitchEl.parentNode) scaleSwitchEl.parentNode.removeChild(scaleSwitchEl);
+    if (toolbarEl && toolbarEl.parentNode) toolbarEl.parentNode.removeChild(toolbarEl);
+    if (densityPopEl && densityPopEl.parentNode) densityPopEl.parentNode.removeChild(densityPopEl);
     svgRoot = null; axisLineEl = null; tickGroupEl = null; gridGroupEl = null;
     bandGroupEl = null; bandLabelGroupEl = null;
-    pickerEl = null; pickerMenuEl = null;
-    densityEl = null; densityInput = null; densityValEl = null;
-    scaleSwitchEl = null;
+    toolbarEl = null; presetSegEl = null;
+    densityBtn = null; densityPopEl = null; densityInput = null;
     hostEl = null; camera = null; mode = null; xRange = null;
     mounted = false;
   }
 
-  // ── SCALE PICKER (Phase TL-2 Step 6b, 2026-05-24) ────────
-  // DEV-tagged bottom-right chip. Lets us swap scale-distribution
-  // presets at runtime (linear, compressed, log, …) without
-  // rebuilding the engine. Today only 'linear-default' is wired;
-  // the slot exists for future experiments.
-  function buildScalePicker() {
+  // ── UNIFIED BOTTOM TOOLBAR (Phase 22-AA, 2026-05-24) ─────
+  // After 5+ user asks the bottom-right is now ONE horizontal row
+  // matching the bottom-left button strip (`.forge-fxpanel-btn`):
+  //   [ LIN | LOG | LOG-R | CMP ]  [ DENSITY 1.0× ]
+  // Previously three floating elements (chip + LIN/LOG switch +
+  // vertical density slider) that didn't share a baseline. Now
+  // all children are .forge-fxpanel-btn-styled at 24px height,
+  // sitting at right:14 bottom:14 — mirroring the bottom-left rail.
+  function buildBottomToolbar() {
     if (!hostEl) return;
     const ENG = window.AtlasEngineLayout || {};
-    if (typeof ENG.listTimelineScalePresets !== 'function') return;
+    if (typeof ENG.setTimelineScalePreset !== 'function') return;
 
-    pickerEl = document.createElement('div');
-    pickerEl.className = 'forge-timeline-scale-picker';
-    pickerEl.setAttribute('role', 'button');
-    pickerEl.setAttribute('aria-haspopup', 'listbox');
-    pickerEl.setAttribute('aria-expanded', 'false');
-    pickerEl.setAttribute('tabindex', '0');
-    // Phase 22-F (2026-05-24) — match the .forge-zoom-gizmo /
-    // .forge-bottom-search aesthetic exactly. Same background,
-    // border, radius, font family, sizing — so the bottom-right
-    // chip belongs to the same button family as the zoom % box,
-    // the scrubber boxes, and the search input. No DEV tag.
-    Object.assign(pickerEl.style, {
+    toolbarEl = document.createElement('div');
+    toolbarEl.className = 'forge-timeline-toolbar';
+    Object.assign(toolbarEl.style, {
       position:      'absolute',
       right:         '14px',
       bottom:        '14px',
-      display:       'flex',
+      display:       'inline-flex',
       alignItems:    'center',
       gap:           '8px',
-      padding:       '5px 10px',
-      background:    'rgba(13,17,25,0.78)',
-      border:        '1px solid rgba(212,165,90,0.22)',
-      borderRadius: '6px',
-      color:         'var(--text-2, #9099a8)',
-      fontFamily:    'var(--mono, "JetBrains Mono", Menlo, monospace)',
-      fontSize:      '11px',
-      fontWeight:    '500',
-      letterSpacing: '0.08em',
-      cursor:        'pointer',
       pointerEvents: 'auto',
       zIndex:        '6',
-      userSelect:    'none',
-      lineHeight:    '1',
-      height:        '24px',
-      boxSizing:     'border-box',
-      transition:    'border-color 100ms ease, color 100ms ease',
     });
-    pickerEl.addEventListener('mouseenter', function () {
-      pickerEl.style.borderColor = 'var(--gold-soft, rgba(212,165,90,0.45))';
-    });
-    pickerEl.addEventListener('mouseleave', function () {
-      pickerEl.style.borderColor = 'var(--border, #2a2e3a)';
-    });
+    hostEl.appendChild(toolbarEl);
 
-    // Active preset label (no DEV tag).
-    const label = document.createElement('span');
-    label.className = '_label';
-    pickerEl.appendChild(label);
-
-    // Chevron — tiny gradient-triangle glyph, matches .app-pill caret.
-    const chev = document.createElement('span');
-    chev.textContent = '▾';
-    chev.style.opacity = '0.7';
-    chev.style.fontSize = '9px';
-    pickerEl.appendChild(chev);
-
-    hostEl.appendChild(pickerEl);
-    refreshPickerLabel();
-
-    pickerEl.addEventListener('click', togglePickerMenu);
-    pickerEl.addEventListener('keydown', function (e) {
-      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); togglePickerMenu(); }
-      else if (e.key === 'Escape')             { closePickerMenu(); }
-    });
-  }
-
-  function refreshPickerLabel() {
-    if (!pickerEl) return;
-    const ENG = window.AtlasEngineLayout || {};
-    const id  = (typeof ENG.getTimelineScalePresetId === 'function') ? ENG.getTimelineScalePresetId() : '?';
-    const list = (typeof ENG.listTimelineScalePresets === 'function') ? ENG.listTimelineScalePresets() : [];
-    const active = list.find(function (p) { return p.id === id; });
-    const lbl = pickerEl.querySelector('._label');
-    if (lbl) lbl.textContent = (active && active.label) || id;
-  }
-
-  function togglePickerMenu() {
-    if (pickerMenuEl) closePickerMenu();
-    else              openPickerMenu();
-  }
-
-  function openPickerMenu() {
-    if (!pickerEl || !hostEl) return;
-    const ENG = window.AtlasEngineLayout || {};
-    const list = (typeof ENG.listTimelineScalePresets === 'function') ? ENG.listTimelineScalePresets() : [];
-    const activeId = (typeof ENG.getTimelineScalePresetId === 'function') ? ENG.getTimelineScalePresetId() : null;
-
-    pickerMenuEl = document.createElement('div');
-    pickerMenuEl.className = 'forge-timeline-scale-picker-menu';
-    pickerMenuEl.setAttribute('role', 'listbox');
-    // Phase 22-F (2026-05-24) — same dark-amber chrome family as
-    // the chip + zoom gizmo + scrubber boxes.
-    Object.assign(pickerMenuEl.style, {
-      position:      'absolute',
-      right:         '14px',
-      bottom:        '46px',
-      minWidth:      '260px',
-      maxWidth:      '340px',
-      padding:       '4px',
-      background:    'rgba(13, 17, 25, 0.94)',
-      border:        '1px solid rgba(212,165,90,0.22)',
-      borderRadius: '6px',
-      color:         'var(--text-2, #9099a8)',
-      fontFamily:    'var(--mono, "JetBrains Mono", Menlo, monospace)',
-      fontSize:      '11px',
-      letterSpacing: '0.05em',
-      zIndex:        '7',
-      pointerEvents: 'auto',
-      boxShadow:     '0 8px 24px rgba(0,0,0,0.45)',
-    });
-
-    list.forEach(function (p) {
-      const row = document.createElement('div');
-      row.setAttribute('role', 'option');
-      row.setAttribute('data-preset', p.id);
-      row.setAttribute('aria-selected', p.id === activeId ? 'true' : 'false');
-      Object.assign(row.style, {
-        display:      'flex',
-        flexDirection:'column',
-        gap:          '2px',
-        padding:      '8px 10px',
-        borderRadius:'6px',
-        cursor:       'pointer',
-        background:   p.id === activeId ? 'rgba(212, 165, 90, 0.12)' : 'transparent',
-        border:       '1px solid ' + (p.id === activeId ? 'rgba(212, 165, 90, 0.35)' : 'transparent'),
-      });
-      const top = document.createElement('span');
-      top.textContent = p.label;
-      top.style.textTransform = 'uppercase';
-      top.style.letterSpacing = '0.10em';
-      top.style.fontSize = '11px';
-      row.appendChild(top);
-      if (p.tagline) {
-        const sub = document.createElement('span');
-        sub.textContent = p.tagline;
-        sub.style.opacity = '0.55';
-        sub.style.fontSize = '10px';
-        sub.style.textTransform = 'none';
-        sub.style.letterSpacing = '0.02em';
-        row.appendChild(sub);
-      }
-      row.addEventListener('mouseenter', function () { if (p.id !== activeId) row.style.background = 'rgba(212, 165, 90, 0.06)'; });
-      row.addEventListener('mouseleave', function () { if (p.id !== activeId) row.style.background = 'transparent'; });
-      row.addEventListener('click', function () { applyPresetPick(p.id); });
-      pickerMenuEl.appendChild(row);
-    });
-
-    hostEl.appendChild(pickerMenuEl);
-    pickerEl.setAttribute('aria-expanded', 'true');
-
-    // Outside-click + Esc to close.
-    setTimeout(function () { document.addEventListener('mousedown', _onOutsideClick, true); }, 0);
-    document.addEventListener('keydown', _onMenuKey, true);
-  }
-
-  function closePickerMenu() {
-    if (pickerMenuEl && pickerMenuEl.parentNode) pickerMenuEl.parentNode.removeChild(pickerMenuEl);
-    pickerMenuEl = null;
-    if (pickerEl) pickerEl.setAttribute('aria-expanded', 'false');
-    document.removeEventListener('mousedown', _onOutsideClick, true);
-    document.removeEventListener('keydown', _onMenuKey, true);
-  }
-
-  function _onOutsideClick(e) {
-    if (!pickerMenuEl) return;
-    if (pickerMenuEl.contains(e.target)) return;
-    if (pickerEl && pickerEl.contains(e.target)) return;
-    closePickerMenu();
-  }
-  function _onMenuKey(e) {
-    if (e.key === 'Escape') closePickerMenu();
-  }
-
-  function applyPresetPick(id) {
-    const ENG = window.AtlasEngineLayout || {};
-    if (typeof ENG.setTimelineScalePreset !== 'function') return;
-    const changed = ENG.setTimelineScalePreset(id);
-    closePickerMenu();
-    if (!changed) return;
-    refreshPickerLabel();
-    // Phase 22-O — also re-render the LIN/LOG quick switch so the
-    // segments stay in sync with the chip's choice.
-    if (scaleSwitchEl && typeof scaleSwitchEl._render === 'function') {
-      try { scaleSwitchEl._render(); } catch (_) {}
-    }
-    // Force a re-layout — preset state is read at layout time. The
-    // _forge.relayout() helper exists for exactly this case (Phase
-    // TL-2 Step 6b).
-    if (window._forge && typeof window._forge.relayout === 'function') {
-      window._forge.relayout();
-    }
-  }
-
-  // ── SCALE QUICK SWITCH (Phase 22-O, 2026-05-24) ──────────
-  // TradingView-style LIN / LOG segmented button. Sits to the
-  // LEFT of the dev preset chip — most visible spot for the
-  // most common scale switch. The chip stays available for the
-  // niche presets (compressed-civilization, future calendars).
-  // LOG button maps to 'log-centered' (year 0 at world middle).
-  function buildScaleQuickSwitch() {
-    if (!hostEl) return;
-    const ENG = window.AtlasEngineLayout || {};
-    if (typeof ENG.setTimelineScalePreset !== 'function') return;
-
-    scaleSwitchEl = document.createElement('div');
-    scaleSwitchEl.className = 'forge-timeline-scale-switch';
-    Object.assign(scaleSwitchEl.style, {
-      position:      'absolute',
-      right:         '195px',         // chip is at right:14 (~150 wide) + gap
-      bottom:        '14px',
+    // ─── Segmented preset switcher ─────────────────────────
+    // 4 presets, short labels. Click = switch + relayout. Active
+    // segment gets a gold tint + bold weight.
+    presetSegEl = document.createElement('div');
+    presetSegEl.className = 'forge-timeline-toolbar-seg';
+    Object.assign(presetSegEl.style, {
       display:       'inline-flex',
       alignItems:    'stretch',
       height:        '24px',
@@ -577,61 +403,132 @@
       overflow:      'hidden',
       fontFamily:    'var(--mono, "JetBrains Mono", Menlo, monospace)',
       fontSize:      '11px',
-      letterSpacing: '0.10em',
-      zIndex:        '6',
-      pointerEvents: 'auto',
+      letterSpacing: '0.08em',
       cursor:        'pointer',
       userSelect:    'none',
+      transition:    'border-color 120ms ease',
+    });
+    presetSegEl.addEventListener('mouseenter', function () {
+      presetSegEl.style.borderColor = 'var(--gold-soft, rgba(212,165,90,0.45))';
+    });
+    presetSegEl.addEventListener('mouseleave', function () {
+      presetSegEl.style.borderColor = 'rgba(212,165,90,0.22)';
     });
 
     const SEGMENTS = [
-      { id: 'linear-default', label: 'LIN' },
-      { id: 'log-centered',   label: 'LOG' },
+      { id: 'linear-default',          label: 'LIN',   tip: 'Linear · 9K BCE → today' },
+      { id: 'log-centered',            label: 'LOG',   tip: 'Log · year-0 centered' },
+      { id: 'log-recent',              label: 'LOG-R', tip: 'Log · recent-emphasis' },
+      { id: 'compressed-civilization', label: 'CMP',   tip: 'Compressed · era-weighted' },
     ];
-    function renderSegments() {
-      scaleSwitchEl.innerHTML = '';
-      const activeId = ENG.getTimelineScalePresetId ? ENG.getTimelineScalePresetId() : 'linear-default';
+    function renderPresetSegs() {
+      presetSegEl.innerHTML = '';
+      const activeId = (typeof ENG.getTimelineScalePresetId === 'function')
+        ? ENG.getTimelineScalePresetId() : 'linear-default';
       SEGMENTS.forEach(function (seg, i) {
         const b = document.createElement('button');
         b.type = 'button';
         b.textContent = seg.label;
+        b.title = seg.tip;
         b.setAttribute('data-preset', seg.id);
         const isActive = (seg.id === activeId);
         Object.assign(b.style, {
-          padding:      '0 12px',
-          background:   isActive ? 'rgba(212, 165, 90, 0.18)' : 'transparent',
-          color:        isActive ? 'var(--gold-1, #e8c889)' : 'var(--gold, #d4a55a)',
-          border:       'none',
-          borderRight:  (i < SEGMENTS.length - 1) ? '1px solid var(--border, #2a2e3a)' : 'none',
-          cursor:       'pointer',
-          fontFamily:   'inherit',
-          fontSize:     'inherit',
-          letterSpacing:'inherit',
-          fontWeight:   isActive ? '600' : '500',
+          padding:       '0 10px',
+          background:    isActive ? 'rgba(212, 165, 90, 0.18)' : 'transparent',
+          color:         isActive ? 'var(--gold-1, #e8c889)' : 'var(--text-2, #9099a8)',
+          border:        'none',
+          borderRight:   (i < SEGMENTS.length - 1) ? '1px solid rgba(212,165,90,0.12)' : 'none',
+          cursor:        'pointer',
+          fontFamily:    'inherit',
+          fontSize:      'inherit',
+          letterSpacing: 'inherit',
+          fontWeight:    isActive ? '600' : '500',
+          textTransform: 'uppercase',
         });
         b.addEventListener('click', function () {
-          if (typeof ENG.setTimelineScalePreset !== 'function') return;
           const changed = ENG.setTimelineScalePreset(seg.id);
-          renderSegments();
-          // Refresh the chip label too so they stay in sync.
-          try { refreshPickerLabel(); } catch (_) {}
+          renderPresetSegs();
           if (changed && window._forge && typeof window._forge.relayout === 'function') {
             window._forge.relayout();
           }
         });
-        scaleSwitchEl.appendChild(b);
+        presetSegEl.appendChild(b);
       });
     }
-    renderSegments();
-    scaleSwitchEl._render = renderSegments;
-    hostEl.appendChild(scaleSwitchEl);
+    renderPresetSegs();
+    presetSegEl._render = renderPresetSegs;
+    toolbarEl.appendChild(presetSegEl);
+
+    // ─── Density button + horizontal popover ───────────────
+    if (typeof ENG.getTimelineBandHeightScale === 'function') {
+      // Hydrate band scale from LS first so the visible label is right.
+      hydrateBandScaleFromLS();
+      const cur = ENG.getTimelineBandHeightScale();
+      const bounds = ENG.timelineBandScaleBounds || { min: 0.3, max: 3.0 };
+
+      densityInput = document.createElement('input');
+      densityInput.type  = 'hidden';
+      densityInput.value = String(cur);
+      densityInput._bounds = bounds;
+
+      densityBtn = document.createElement('button');
+      densityBtn.type = 'button';
+      densityBtn.className = 'forge-timeline-toolbar-density';
+      densityBtn.setAttribute('aria-haspopup', 'true');
+      densityBtn.setAttribute('aria-expanded', 'false');
+      densityBtn.title = 'Band density — click for slider, double-click to reset';
+      Object.assign(densityBtn.style, {
+        height:        '24px',
+        padding:       '0 10px',
+        background:    'rgba(13,17,25,0.78)',
+        border:        '1px solid rgba(212,165,90,0.22)',
+        borderRadius:  '6px',
+        color:         'var(--text-2, #9099a8)',
+        fontFamily:    'var(--mono, "JetBrains Mono", Menlo, monospace)',
+        fontSize:      '11px',
+        letterSpacing: '0.08em',
+        cursor:        'pointer',
+        userSelect:    'none',
+        display:       'inline-flex',
+        alignItems:    'center',
+        gap:           '6px',
+        transition:    'border-color 120ms ease, color 120ms ease',
+        whiteSpace:    'nowrap',
+      });
+      densityBtn.innerHTML = '<span style="opacity:0.7;text-transform:uppercase">density</span> <span class="_v" style="color:var(--gold,#d4a55a);font-weight:600">' + formatBandScale(cur) + '</span> <span style="opacity:0.6;font-size:9px">▾</span>';
+      densityBtn.addEventListener('mouseenter', function () {
+        densityBtn.style.borderColor = 'var(--gold-soft, rgba(212,165,90,0.45))';
+      });
+      densityBtn.addEventListener('mouseleave', function () {
+        densityBtn.style.borderColor = 'rgba(212,165,90,0.22)';
+      });
+      densityBtn.addEventListener('click', toggleDensityPopover);
+      densityBtn.addEventListener('dblclick', function (e) {
+        e.preventDefault(); e.stopPropagation();
+        applyDensityValue(1.0);
+        closeDensityPopover();
+      });
+      toolbarEl.appendChild(densityBtn);
+    }
+
+    // Outside-click + Esc to close popovers.
+    const onOutside = function (e) {
+      if (!densityPopEl) return;
+      if (densityPopEl.contains(e.target)) return;
+      if (densityBtn && densityBtn.contains(e.target)) return;
+      closeDensityPopover();
+    };
+    const onEsc = function (e) {
+      if (e.key === 'Escape') closeDensityPopover();
+    };
+    document.addEventListener('mousedown', onOutside, true);
+    document.addEventListener('keydown', onEsc, true);
+    toolbarEl._cleanup = function () {
+      document.removeEventListener('mousedown', onOutside, true);
+      document.removeEventListener('keydown', onEsc, true);
+    };
   }
 
-  // ── BAND DENSITY SLIDER (Phase TL-2 Step 7b, 2026-05-24) ─
-  // Vertical slider on the right edge. Controls band height +
-  // dot Y density. Drag UP = expand, DOWN = compress. Persists
-  // to localStorage. Drives a relayout (rAF-coalesced so a fast
-  // drag doesn't queue dozens of full rebuilds).
   function hydrateBandScaleFromLS() {
     const ENG = window.AtlasEngineLayout || {};
     if (typeof ENG.setTimelineBandHeightScale !== 'function') return;
@@ -643,199 +540,113 @@
     } catch (_) {}
   }
 
-  function buildBandDensitySlider() {
-    if (!hostEl) return;
-    const ENG = window.AtlasEngineLayout || {};
-    if (typeof ENG.getTimelineBandHeightScale !== 'function') return;
-    const bounds = ENG.timelineBandScaleBounds || { min: 0.3, max: 3.0 };
-    const cur    = ENG.getTimelineBandHeightScale();
-
-    densityEl = document.createElement('div');
-    densityEl.className = 'forge-timeline-band-density';
-    // Right-edge column. Sits ABOVE the dev preset chip so they
-    // share the right-edge real estate cleanly.
-    Object.assign(densityEl.style, {
-      position:      'absolute',
-      right:         '14px',
-      bottom:        '54px',           // 14 (chip bottom) + 24 (chip h) + ~16 gap
-      width:         '32px',
-      height:        '180px',
-      display:       'flex',
-      flexDirection: 'column',
-      alignItems:    'center',
-      justifyContent:'space-between',
-      padding:       '8px 4px',
-      background:    'rgba(13,17,25,0.78)',
-      border:        '1px solid rgba(212,165,90,0.22)',
-      borderRadius:  '6px',
-      color:         'var(--text-2, #9099a8)',
-      fontFamily:    'var(--mono, "JetBrains Mono", Menlo, monospace)',
-      fontSize:      '9px',
-      letterSpacing: '0.08em',
-      zIndex:        '6',
-      pointerEvents: 'auto',
-      userSelect:    'none',
-      boxSizing:     'border-box',
-    });
-
-    // Top label — expand cap "▲"
-    const topLbl = document.createElement('span');
-    topLbl.textContent = '▲';
-    topLbl.style.opacity = '0.6';
-    topLbl.style.fontSize = '8px';
-    densityEl.appendChild(topLbl);
-
-    // Phase TL-2 Step 7b-fix2 (2026-05-24) — CUSTOM slider.
-    // Two prior attempts failed:
-    //  (1) CSS transform:rotate(-90deg) — input's drag delta
-    //      stayed in the horizontal axis while the user moved
-    //      vertically → drag died after one click.
-    //  (2) writing-mode:vertical-lr + appearance:slider-vertical —
-    //      input event fired but chrome.mount on each relayout
-    //      destroyed the slider DOM mid-drag.
-    // Going custom: a track div + thumb div + pointer-event
-    // handlers. Drag delta is computed from the host viewport;
-    // can't be derailed by browser quirks. Soft-remount keeps
-    // the DOM alive across relayouts.
-    const sliderWrap = document.createElement('div');
-    Object.assign(sliderWrap.style, {
-      flex:          '1 1 auto',
-      width:         '100%',
-      display:       'flex',
-      alignItems:    'center',
-      justifyContent:'center',
-      position:      'relative',
-      padding:       '4px 0',
-    });
-
-    // The "input" is now a hidden state holder so external code +
-    // localStorage round-trip keep working unchanged.
-    densityInput = document.createElement('input');
-    densityInput.type  = 'hidden';
-    densityInput.value = String(cur);
-    densityInput._isDragging = false;
-    densityInput._bounds = bounds;
-
-    // Visible track — vertical bar the thumb runs along.
-    const track = document.createElement('div');
-    track.className = 'forge-timeline-density-track';
-    Object.assign(track.style, {
-      position:     'relative',
-      width:        '4px',
-      height:       '100%',
-      minHeight:    '120px',
-      background:   'rgba(212,165,90,0.20)',
-      borderRadius: '3px',
-      cursor:       'ns-resize',
-    });
-    sliderWrap.appendChild(track);
-
-    // Thumb — circle anchored at the current value's vertical
-    // position. Translated via top% from value.
-    const thumb = document.createElement('div');
-    thumb.className = 'forge-timeline-density-thumb';
-    Object.assign(thumb.style, {
-      position:     'absolute',
-      left:         '50%',
-      width:        '14px',
-      height:       '14px',
-      marginLeft:   '-7px',
-      marginTop:    '-7px',
-      borderRadius: '50%',
-      background:   'var(--gold, #d4a55a)',
-      border:       '1px solid rgba(20,16,10,0.85)',
-      boxShadow:    '0 1px 3px rgba(0,0,0,0.45)',
-      cursor:       'grab',
-      touchAction:  'none',
-    });
-    track.appendChild(thumb);
-    densityEl._track = track;
-    densityEl._thumb = thumb;
-    sliderWrap.appendChild(densityInput);
-    densityEl.appendChild(sliderWrap);
-
-    // Initial thumb position.
-    setTimeout(syncDensityThumbPos, 0);   // wait for layout
-
-    // Pointer-event handlers — pure mouse Y deltas, no input
-    // events, no rotation. Works on mouse + touch + pen.
-    function clientYToValue(clientY) {
-      const r = track.getBoundingClientRect();
-      if (r.height <= 0) return parseFloat(densityInput.value);
-      // top of track = max, bottom = min (drag UP = expand).
-      const t = 1 - Math.max(0, Math.min(1, (clientY - r.top) / r.height));
-      const b = densityInput._bounds;
-      return b.min + t * (b.max - b.min);
-    }
-    function snap(v) {
-      return Math.round(v / 0.05) * 0.05;
-    }
-    function onPointerDown(e) {
-      e.preventDefault();
-      densityInput._isDragging = true;
-      thumb.style.cursor = 'grabbing';
-      thumb.setPointerCapture && e.pointerId != null && thumb.setPointerCapture(e.pointerId);
-      // Jump to clicked position immediately.
-      const v = snap(clientYToValue(e.clientY));
-      applyDensityValue(v);
-    }
-    function onPointerMove(e) {
-      if (!densityInput._isDragging) return;
-      e.preventDefault();
-      const v = snap(clientYToValue(e.clientY));
-      applyDensityValue(v);
-    }
-    function onPointerUp(e) {
-      if (!densityInput._isDragging) return;
-      densityInput._isDragging = false;
-      thumb.style.cursor = 'grab';
-      try { thumb.releasePointerCapture && e.pointerId != null && thumb.releasePointerCapture(e.pointerId); } catch(_) {}
-    }
-    // Bind to track (click anywhere on track) AND thumb (drag).
-    track.addEventListener('pointerdown', onPointerDown);
-    thumb.addEventListener('pointerdown', onPointerDown);
-    window.addEventListener('pointermove', onPointerMove);
-    window.addEventListener('pointerup',   onPointerUp);
-    window.addEventListener('pointercancel', onPointerUp);
-    // Stash for unmount cleanup.
-    densityEl._cleanup = function () {
-      window.removeEventListener('pointermove', onPointerMove);
-      window.removeEventListener('pointerup',   onPointerUp);
-      window.removeEventListener('pointercancel', onPointerUp);
-    };
-
-    // Bottom value readout — "1.0×" — also doubles as the
-    // double-click reset target.
-    densityValEl = document.createElement('span');
-    densityValEl.textContent = formatBandScale(cur);
-    Object.assign(densityValEl.style, {
-      opacity:       '0.85',
-      cursor:        'pointer',
-      padding:       '2px 0',
-    });
-    densityValEl.setAttribute('title', 'Double-click to reset to 1.0×');
-    densityEl.appendChild(densityValEl);
-
-    hostEl.appendChild(densityEl);
-
-    densityValEl.addEventListener('dblclick', function () {
-      applyDensityValue(1.0);
-    });
-  }
-
   function formatBandScale(v) {
     return (Math.round(v * 10) / 10).toFixed(1) + '×';
   }
 
-  // Translate the current densityInput.value into a top-% on the track.
-  function syncDensityThumbPos() {
-    if (!densityEl || !densityEl._thumb || !densityInput) return;
-    const b = densityInput._bounds || { min: 0.3, max: 3.0 };
+  function toggleDensityPopover() {
+    if (densityPopEl) closeDensityPopover();
+    else              openDensityPopover();
+  }
+
+  function openDensityPopover() {
+    if (!hostEl || !densityBtn || !densityInput) return;
+    const bounds = densityInput._bounds || { min: 0.3, max: 3.0 };
     const v = parseFloat(densityInput.value);
-    if (!isFinite(v)) return;
-    const t = (v - b.min) / (b.max - b.min);   // 0..1
-    // Drag UP = max → top of track. So top% = (1 - t).
-    densityEl._thumb.style.top = ((1 - t) * 100).toFixed(2) + '%';
+
+    densityPopEl = document.createElement('div');
+    densityPopEl.className = 'forge-timeline-toolbar-density-pop';
+    Object.assign(densityPopEl.style, {
+      position:      'absolute',
+      right:         '14px',
+      bottom:        '46px',    // 14 (toolbar bottom) + 24 (height) + 8 gap
+      minWidth:      '240px',
+      padding:       '10px 14px 12px',
+      background:    'rgba(13,17,25,0.92)',
+      border:        '1px solid rgba(212,165,90,0.22)',
+      borderRadius:  '8px',
+      backdropFilter:'blur(12px)',
+      WebkitBackdropFilter:'blur(12px)',
+      boxShadow:     '0 6px 24px rgba(0,0,0,0.45)',
+      fontFamily:    'var(--mono, "JetBrains Mono", Menlo, monospace)',
+      fontSize:      '11px',
+      letterSpacing: '0.06em',
+      color:         'var(--text-2, #9099a8)',
+      zIndex:        '7',
+      pointerEvents: 'auto',
+    });
+
+    // Header row — title + live readout.
+    const head = document.createElement('div');
+    head.style.display = 'flex';
+    head.style.justifyContent = 'space-between';
+    head.style.alignItems = 'baseline';
+    head.style.marginBottom = '8px';
+    head.style.textTransform = 'uppercase';
+    const title = document.createElement('span');
+    title.textContent = 'Band density';
+    title.style.opacity = '0.7';
+    head.appendChild(title);
+    const readout = document.createElement('span');
+    readout.className = '_pop_v';
+    readout.textContent = formatBandScale(v);
+    readout.style.color = 'var(--gold, #d4a55a)';
+    readout.style.fontWeight = '600';
+    head.appendChild(readout);
+    densityPopEl.appendChild(head);
+
+    // HORIZONTAL native range input — keeps interaction simple, no
+    // pointer-event gymnastics needed (vertical slider had drag issues).
+    const range = document.createElement('input');
+    range.type  = 'range';
+    range.min   = String(bounds.min);
+    range.max   = String(bounds.max);
+    range.step  = '0.05';
+    range.value = String(v);
+    Object.assign(range.style, {
+      width:       '100%',
+      accentColor: 'var(--gold, #d4a55a)',
+      cursor:      'ew-resize',
+    });
+    range.addEventListener('input', function () {
+      const nv = parseFloat(range.value);
+      readout.textContent = formatBandScale(nv);
+      applyDensityValue(nv);
+    });
+    densityPopEl.appendChild(range);
+
+    // Foot row — min/reset/max ticks.
+    const foot = document.createElement('div');
+    foot.style.display = 'flex';
+    foot.style.justifyContent = 'space-between';
+    foot.style.marginTop = '6px';
+    foot.style.opacity = '0.6';
+    foot.style.fontSize = '9px';
+    foot.style.letterSpacing = '0.10em';
+    foot.style.textTransform = 'uppercase';
+    const lo = document.createElement('span'); lo.textContent = bounds.min.toFixed(1) + '×';
+    const reset = document.createElement('a');
+    reset.href = '#'; reset.textContent = 'reset 1.0×';
+    reset.style.color = 'var(--gold, #d4a55a)';
+    reset.style.textDecoration = 'none';
+    reset.addEventListener('click', function (e) {
+      e.preventDefault();
+      range.value = '1';
+      readout.textContent = '1.0×';
+      applyDensityValue(1.0);
+    });
+    const hi = document.createElement('span'); hi.textContent = bounds.max.toFixed(1) + '×';
+    foot.appendChild(lo); foot.appendChild(reset); foot.appendChild(hi);
+    densityPopEl.appendChild(foot);
+
+    hostEl.appendChild(densityPopEl);
+    if (densityBtn) densityBtn.setAttribute('aria-expanded', 'true');
+  }
+
+  function closeDensityPopover() {
+    if (densityPopEl && densityPopEl.parentNode) densityPopEl.parentNode.removeChild(densityPopEl);
+    densityPopEl = null;
+    if (densityBtn) densityBtn.setAttribute('aria-expanded', 'false');
   }
 
   function applyDensityValue(v) {
@@ -844,14 +655,20 @@
     const b = densityInput._bounds || { min: 0.3, max: 3.0 };
     const clamped = Math.max(b.min, Math.min(b.max, v));
     densityInput.value = String(clamped);
-    if (densityValEl) densityValEl.textContent = formatBandScale(clamped);
-    syncDensityThumbPos();
+    // Sync btn readout
+    if (densityBtn) {
+      const vEl = densityBtn.querySelector('._v');
+      if (vEl) vEl.textContent = formatBandScale(clamped);
+    }
+    if (densityPopEl) {
+      const vEl = densityPopEl.querySelector('._pop_v');
+      if (vEl) vEl.textContent = formatBandScale(clamped);
+    }
     try { localStorage.setItem(LS_BAND_SCALE, String(clamped)); } catch (_) {}
     const ENG = window.AtlasEngineLayout || {};
     const changed = (typeof ENG.setTimelineBandHeightScale === 'function')
       && ENG.setTimelineBandHeightScale(clamped);
     if (!changed) return;
-    // rAF-coalesce so a fast drag still updates per-frame, not per-event.
     if (densityRafId) return;
     densityRafId = requestAnimationFrame(function () {
       densityRafId = 0;
@@ -860,6 +677,7 @@
       }
     });
   }
+
 
   // ── REFRESH ──────────────────────────────────────────────
   // rAF-coalesced so multiple camera-change events per frame collapse
