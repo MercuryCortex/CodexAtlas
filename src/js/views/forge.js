@@ -3941,27 +3941,32 @@
       // transition because both expressions are continuous and
       // they meet at the threshold).
       const imgAspect    = bgImage._bgAspect || (4 / 3);
-      // Phase 22-T (2026-05-24) — TIMELINE has its OWN BG sizing
-      // rule, not a band-aid on the wheel's. John was right that
-      // each section deserves its own logic.
-      // The right normalization: timeline BG at gizmo X% should
-      // look visually identical to wheel BG at gizmo X%. The
-      // wheel's BG zooms via camera.scale (which already encodes
-      // wheelFit ≈ 0.55 at gizmo 100%); timeline's tlFit ≈ 0.98
-      // makes its raw scale ~2× the wheel's. So substitute a
-      // wheel-equivalent scale = gizmo × WHEEL_FIT_EQUIVALENT.
-      // 22-S clamp killed the zoom feel (BG never grew with
-      // zoom-in); this restores it AND keeps the floor crop
-      // matched to the wheel.
-      let bgEffectiveScale = camera.state.scale;
+      // Phase 22-U (2026-05-24) — TIMELINE BG: its own sizing rule.
+      // The wheel's BG and timeline's BG are now fully separate
+      // branches (John 2026-05-24: "each section of our maps and
+      // modes ARE THEIR OWN section with their OWN rules").
+      let widthPx;
       if (local.layoutId === 'timeline') {
-        const WHEEL_FIT_EQUIVALENT = 0.55;   // empirical: wheelFit on 1440 vp
-        bgEffectiveScale = zoomPct * WHEEL_FIT_EQUIVALENT;
+        // TIMELINE: BG shrinks continuously with zoom-out, no
+        // cover-floor. At deep zoom-out the BG appears as a
+        // small image centered in viewport (matches the "stops
+        // growing at 30%" complaint — that stop was the cover
+        // floor kicking in, NOT user-desired behavior).
+        // Wheel-equivalent gizmo scaling computed dynamically
+        // from viewport so BG visually tracks wheel at any
+        // gizmo %.
+        const WHEEL_EXTENT_APPROX = 2200;   // typical radialWedgeLayout span
+        const wheelFitEq = Math.min(vp.w, vp.h) / WHEEL_EXTENT_APPROX;
+        const bgScale   = zoomPct * wheelFitEq;
+        widthPx         = BG_WORLD_WIDTH * bgScale;
+      } else {
+        // WHEEL (unchanged from before Phase 22-Q):
+        // worldWidth × camera.scale, capped at viewport-cover.
+        const worldWidthPx = BG_WORLD_WIDTH * camera.state.scale;
+        const coverWidthPx = Math.max(vp.w, vp.h * imgAspect);
+        widthPx = Math.max(worldWidthPx, coverWidthPx);
       }
-      const worldWidthPx = BG_WORLD_WIDTH * bgEffectiveScale;
-      const coverWidthPx = Math.max(vp.w, vp.h * imgAspect);
-      const widthPx      = Math.max(worldWidthPx, coverWidthPx);
-      const heightPx     = widthPx / imgAspect;
+      const heightPx = widthPx / imgAspect;
       // World (0, 0) → canvas-screen → viewport-screen.
       const centerCanvas = camera.worldToScreen(0, 0, vp);
       let offX = 0, offY = 0;
