@@ -4355,18 +4355,19 @@
       const idx       = local.mode.nodePacked.idIndex;
       local.focusedSet  = graph.focusedSetFor(local.hoverId, local.lockedSet, local.mode.adjacency);
       local.selectedSet = computeSelectedSet(local.hoverId, local.lockedSet);
-      // Phase 21R → 22-AH (2026-05-25) — palette boost trigger.
-      // Re-upload on EITHER hover-state transition OR lock-set
-      // empty/non-empty transition so steady-state focus reads at
-      // 1.0 alpha. Boost lives in hotPaletteFromParams(); this
-      // site is the throttled trigger.
-      const wantBoost = (local.hoverId != null) || !!(local.lockedSet && local.lockedSet.size > 0);
-      if (local._hoverBoostActive !== wantBoost) {
-        local._hoverBoostActive = wantBoost;
-        if (local.renderer && local.renderer.setBucketPalette) {
-          try { local.renderer.setBucketPalette(hotPaletteFromParams()); }
-          catch (_) { /* ignore — renderer may be tearing down */ }
-        }
+      // Phase 22-AI (2026-05-25) — palette upload, UNTHROTTLED.
+      // The Phase 22-AH `_hoverBoostActive` mirror flag desynced
+      // from the renderer's actual bucketPalette via the asymmetric
+      // writer at applyUxMode (forge.js:~4900) which uploads but
+      // doesn't update the flag. Symptom: click → wires stay at
+      // baseline, then move → wires jump to 1.0 (audit at AUDIT/
+      // 2026-05-25-wires-regression-trace.md). Re-uploading
+      // unconditionally on every recomputeFocus costs 32 floats +
+      // one memcpy per hover/lock change (≤60Hz, never per frame),
+      // and removes the entire class of mirror-flag desync bugs.
+      if (local.renderer && local.renderer.setBucketPalette) {
+        try { local.renderer.setBucketPalette(hotPaletteFromParams()); }
+        catch (_) { /* ignore — renderer may be tearing down */ }
       }
       const states    = graph.computeNodeStates(idx, local.focusedSet);
       const selectFlags = graph.computeSelectedStates
@@ -4898,13 +4899,12 @@
       // 20% timeline default on every theme click, undoing the
       // user's zoom + the band-density slider's visual reality.
       rebuildForMode(local.mode.id, { preserveLocks: true, preserveZoom: true });
-      // Hover-boost palette could have stale alphas (the boost path
-      // tracks _hoverBoostActive); refresh it now to be safe.
-      try {
-        if (local.renderer && local.renderer.setBucketPalette) {
-          local.renderer.setBucketPalette(hotPaletteFromParams());
-        }
-      } catch (_) { /* ignore */ }
+      // Phase 22-AI (2026-05-25) — belt-and-braces palette refresh
+      // here is REDUNDANT now that recomputeFocus uploads on every
+      // call (see forge.js:~4358). rebuildForMode → recomputeFocus
+      // chain ends with a fresh palette write. Keeping this site
+      // would be the SAME asymmetric writer that caused the
+      // wires-regression we just fixed. DELETED.
       saveRuntimeState();
     }
 
