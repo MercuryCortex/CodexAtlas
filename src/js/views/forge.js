@@ -3941,29 +3941,24 @@
       // transition because both expressions are continuous and
       // they meet at the threshold).
       const imgAspect    = bgImage._bgAspect || (4 / 3);
-      // Phase 22-V (2026-05-24) — TIMELINE BG: own branch, cover
-      // ALWAYS guaranteed. Earlier Phase 22-U removed the cover
-      // floor + the BG shrank to a tiny image in a black void at
-      // gizmo 10%. NOT what John wanted. He wants BG to ALWAYS
-      // fill the screen.
+      // Phase 22-W (2026-05-24) — TIMELINE BG: linear growth from
+      // cover at gizmo 10%. John's spec, explicitly:
+      //   gizmo 10.0% → BG = cover (fills viewport exactly)
+      //   gizmo 10.1% → BG slightly bigger
+      //   gizmo 10.x% → BG keeps growing every tenth of a percent
+      //   …all the way up.
+      // No flat zone, no "stops growing at 22%". The BG is
+      // anchored at viewport-cover at the zoom floor + scales
+      // linearly with gizmo above it.
       //
-      // Final rule for TIMELINE:
-      //   bgScale  = gizmo% × wheelFitEquivalent  (matches wheel zoom feel)
-      //   worldPx  = BG_WORLD_WIDTH × bgScale
-      //   coverPx  = max(vp.w, vp.h × imgAspect)
-      //   widthPx  = max(worldPx, coverPx)   ← BG can never go below viewport
-      // With wheelFitEq dynamic from viewport, timeline BG visually
-      // matches wheel BG at the same gizmo %. Both layouts hit cover
-      // floor around gizmo 22% (BG fills viewport from there to 10%).
-      // Wheel branch unchanged.
+      //   ratio   = gizmo / floor   → 1.0 at the floor, grows above
+      //   widthPx = coverPx × ratio (clamped to ≥ coverPx)
+      // Wheel branch untouched.
       const coverWidthPx = Math.max(vp.w, vp.h * imgAspect);
       let widthPx;
       if (local.layoutId === 'timeline') {
-        const WHEEL_EXTENT_APPROX = 2200;
-        const wheelFitEq = Math.min(vp.w, vp.h) / WHEEL_EXTENT_APPROX;
-        const bgScale    = zoomPct * wheelFitEq;
-        const worldWidthPx = BG_WORLD_WIDTH * bgScale;
-        widthPx = Math.max(worldWidthPx, coverWidthPx);
+        const ratio = Math.max(1, zoomPct / FLOOR_PCT);   // 1.0 at floor (10%), grows
+        widthPx = coverWidthPx * ratio;
       } else {
         const worldWidthPx = BG_WORLD_WIDTH * camera.state.scale;
         widthPx = Math.max(worldWidthPx, coverWidthPx);
