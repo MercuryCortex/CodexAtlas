@@ -5784,6 +5784,13 @@ mark.sr-ent-demo {
   transition: color 120ms, border-color 120ms;
 }
 .sr-atlas-btn:hover { color: var(--gold); border-color: var(--gold-soft); }
+/* TYRANT remediation Phase 5 (2026-05-25) — finding #12.
+   The vault-jump button needs a bottom gap before the body
+   below it. Spacing lives in CSS, not as a `style="..."` inline
+   on the JS template (which was a SEVERITY DOGMA strike-2
+   violation per HOW-WE-WORK §5.7). Targeted by id since this
+   is the only `.sr-atlas-btn` that needs the gap. */
+#sr-vault-jump { margin-bottom: 14px; }
 
 /* ── Transmissions index ──────────────────────────────────────── */
 .sr-trans-body { overflow-y: auto; overflow-x: hidden; }

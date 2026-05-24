@@ -489,8 +489,11 @@ window.ScriptureReader = (function () {
          </div>`
       : '';
 
+    // TYRANT Phase 5 (2026-05-25) — inline style removed; spacing
+    // moved to `#sr-vault-jump` rule in app.css per SEVERITY DOGMA
+    // (HOW-WE-WORK §5.7) — no canonical-primitive duplication.
     const vaultBtn = (ent.node && window.NODES_BY_ID && NODES_BY_ID[ent.node])
-      ? `<button class="sr-atlas-btn" id="sr-vault-jump" style="margin-bottom:14px">↗ Open in Vault: ${esc(ent.node)}</button>` : '';
+      ? `<button class="sr-atlas-btn" id="sr-vault-jump">↗ Open in Vault: ${esc(ent.node)}</button>` : '';
 
     el.innerHTML = `<div class="sr-detail-card">
       <div class="sr-card-word">${esc(ent.word)}</div>
