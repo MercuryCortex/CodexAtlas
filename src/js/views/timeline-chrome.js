@@ -98,9 +98,23 @@
   // Hashanah split) — sufficient for timeline tick display.
   // Mayan Long Count + Chinese Sexagenary deferred.
   // ════════════════════════════════════════════════════════════
+  // Each calendar exposes:
+  //   id, label, short, format(y)
+  //   epochGregYear — Gregorian year that equals THAT calendar's
+  //   year 1 / year 0 (whichever the calendar treats as the
+  //   meaningful origin). The pivot tick + zero-label move to
+  //   this Gregorian year when the calendar is active, so the
+  //   user sees the founding moment of their chosen system as
+  //   the "year 0" mark on the timeline.
+  // Phase 22-AF (2026-05-24) — registry expanded to cover most
+  // atlas-relevant traditions: Mayan Long Count, Egyptian Civil
+  // (Sothic), Greek Olympiad, Roman Ab Urbe Condita, Buddhist
+  // Era, Holocene Era. Chinese sexagenary cycle deferred (needs
+  // cyclic anchoring — not a monotonic counter).
   const CALENDARS = {
     gregorian: {
       id: 'gregorian', label: 'Gregorian', short: 'GREG',
+      epochGregYear: 0,
       format: function (y) {
         if (y === 0) return '0';
         if (y < 0) return Math.abs(y) + ' BCE';
@@ -109,7 +123,8 @@
     },
     hebrew: {
       id: 'hebrew', label: 'Hebrew (Anno Mundi)', short: 'HEB',
-      // Hebrew AM = Gregorian + 3761 (rough — ignores RH split).
+      // Year 1 AM = 3761 BCE.
+      epochGregYear: -3760,
       format: function (y) {
         const am = y + 3761;
         return am.toLocaleString('en-US') + ' AM';
@@ -117,7 +132,8 @@
     },
     hijri: {
       id: 'hijri', label: 'Islamic (Hijri)', short: 'HIJ',
-      // AH ≈ (y - 622) × 33/32 since Hijri is lunar.
+      // Year 1 AH = 622 CE. Lunar approx (×33/32).
+      epochGregYear: 622,
       format: function (y) {
         const ah = Math.round((y - 622) * 33 / 32);
         if (ah === 0) return '0 AH';
@@ -127,7 +143,8 @@
     },
     jalali: {
       id: 'jalali', label: 'Iranian (Jalali)', short: 'AP',
-      // AP = Gregorian − 621 (solar Hijri, March-anchored — round).
+      // Solar Hijri year 1 = 622 CE.
+      epochGregYear: 622,
       format: function (y) {
         const ap = y - 621;
         if (ap === 0) return '0 AP';
@@ -137,12 +154,94 @@
     },
     ethiopian: {
       id: 'ethiopian', label: 'Ethiopian (Geez)', short: 'EC',
-      // EC ≈ Gregorian − 8 (Sept-anchored — round).
+      epochGregYear: 8,
       format: function (y) {
         const ec = y - 8;
         if (ec === 0) return '0 EC';
         if (ec < 0) return Math.abs(ec) + ' BEC';
         return ec + ' EC';
+      },
+    },
+    mayan: {
+      id: 'mayan', label: 'Mayan Long Count', short: 'MAY',
+      // Long-count epoch = 11 Aug 3114 BCE = year −3113 (proleptic).
+      epochGregYear: -3113,
+      // Show baktun.katun.tun derived from days-since-epoch / 360.
+      // Tropical-year approximation 365.2425. Adequate for tick
+      // labels at year resolution (kin/uinal day-level precision
+      // not useful on a 11k-year spine).
+      format: function (y) {
+        const yearsSince = y - (-3113);
+        const tunTotal = Math.floor(yearsSince * 365.2425 / 360);
+        if (tunTotal < 0) {
+          return '−' + Math.abs(tunTotal) + ' tun';   // pre-epoch
+        }
+        const baktun = Math.floor(tunTotal / 400);
+        const katun  = Math.floor((tunTotal % 400) / 20);
+        const tun    = tunTotal % 20;
+        return baktun + '.' + katun + '.' + tun;
+      },
+    },
+    egyptian: {
+      id: 'egyptian', label: 'Egyptian Civil', short: 'EGY',
+      // Sothic-anchored civil year — earliest documented use ~2782 BCE.
+      epochGregYear: -2781,
+      format: function (y) {
+        const ec = y - (-2781);   // year-in-civil
+        return ec + ' EgC';
+      },
+    },
+    olympiad: {
+      id: 'olympiad', label: 'Greek (Olympiad)', short: 'OLY',
+      // Olympiad 1, year 1 = 776 BCE. Each olympiad = 4 years.
+      epochGregYear: -775,
+      format: function (y) {
+        // year offset from 776 BCE (= year -775). Yr1.1 = -775.
+        const offs = y - (-776);
+        const ol  = Math.floor(offs / 4) + 1;
+        const yr  = (offs % 4 + 4) % 4 + 1;     // 1..4 within olympiad
+        if (ol < 1) return 'pre-Oly ' + (-ol + 1);
+        return 'Oly ' + ol + '.' + yr;
+      },
+    },
+    auc: {
+      id: 'auc', label: 'Roman (Ab Urbe Condita)', short: 'AUC',
+      // Year 1 AUC = 753 BCE (Varro reckoning).
+      epochGregYear: -752,
+      format: function (y) {
+        const auc = y + 753;
+        if (auc <= 0) return Math.abs(auc - 1) + ' pre-AUC';
+        return auc + ' AUC';
+      },
+    },
+    buddhist: {
+      id: 'buddhist', label: 'Buddhist Era', short: 'BE',
+      // Year 1 BE = 544 BCE (Theravada — parinirvana). Other
+      // traditions place it at 543 BCE; we round.
+      epochGregYear: -543,
+      format: function (y) {
+        const be = y + 544;
+        if (be <= 0) return Math.abs(be - 1) + ' pre-BE';
+        return be + ' BE';
+      },
+    },
+    bahai: {
+      id: 'bahai', label: 'Baháʼí (Badíʿ)', short: 'BBE',
+      // Year 1 BE = 1844 CE (declaration of the Báb).
+      epochGregYear: 1844,
+      format: function (y) {
+        const b = y - 1843;
+        if (b <= 0) return Math.abs(b - 1) + ' pre-Baháʼí';
+        return b + ' BBE';
+      },
+    },
+    holocene: {
+      id: 'holocene', label: 'Holocene Era', short: 'HE',
+      // Year 1 HE = 10000 BCE (Cesare Emiliani's proposed shift).
+      epochGregYear: -9999,
+      format: function (y) {
+        const he = y + 10000;
+        return he + ' HE';
       },
     },
   };
@@ -196,7 +295,11 @@
   // Phase 22-K → 22-N (2026-05-24) — v3 because base band heights
   // got another ×1.3 multiplier. Old saved 1.3× = new 1.3× would
   // compound to ~1.69× of new default → restart at 1×.
-  const LS_BAND_SCALE = 'codex_atlas_timeline_band_scale_v3';
+  // Phase 22-AF (2026-05-24) — v4 because BAND_H_BASE got another
+  // ×1.3 bake. Old 1.0 saved value × new 1.3× baseline would feel
+  // identical to before; we want the user to see the NEW default
+  // unless they've explicitly chosen something else.
+  const LS_BAND_SCALE = 'codex_atlas_timeline_band_scale_v4';
 
   // ── BAND STYLE STATE (Phase 22-I, 2026-05-24) ────────────
   // Live-tunable via the STYLE panel's "Timeline bands" + "Family
@@ -955,8 +1058,15 @@
     // brighter + slightly heavier style. Skip the dup if the
     // normal loop also lands on 0 (it always will when 0 is in
     // [tickLo, tickHi] since 0 % N === 0 for any N).
+    // Phase 22-AF (2026-05-24) — pivot mark routes through the
+    // active calendar's epoch. Gregorian → pivot at year 0; Hebrew
+    // → pivot at -3760; Hijri → at 622; etc. The pivot tick + zero
+    // label both move to that Gregorian year so the user sees the
+    // FOUNDING YEAR of their chosen system as the visual anchor.
+    const _activeCal = CALENDARS[_activeCalendarId] || CALENDARS.gregorian;
+    const _pivotYear = (typeof _activeCal.epochGregYear === 'number') ? _activeCal.epochGregYear : 0;
     const Y0_LO = xRange.lo, Y0_HI = xRange.hi;
-    const renderYearZeroSeparately = (0 >= Y0_LO && 0 <= Y0_HI);
+    const renderYearZeroSeparately = (_pivotYear >= Y0_LO && _pivotYear <= Y0_HI);
 
     // Phase 22-AD (2026-05-24) — LABEL COLLISION DETECTION.
     // Tick MARKS always render (so the user has a visual scale),
@@ -984,7 +1094,7 @@
     }
 
     for (let yr = tickLo; yr <= tickHi; yr += tickStep) {
-      if (renderYearZeroSeparately && yr === 0) continue;   // skip — drawn after as pivot
+      if (renderYearZeroSeparately && yr === _pivotYear) continue;   // skip — drawn after as pivot
       const wx = yToX(yr, xRange);
       const sp = camera.worldToScreen(wx, 0, vp);
       // Off-screen guards (margin so near-edge labels still draw).
@@ -1049,7 +1159,7 @@
     // zoom level regardless of cadence. Brighter stripe, taller
     // tick, bolder "yr 0" label.
     if (renderYearZeroSeparately) {
-      const wx0 = yToX(0, xRange);
+      const wx0 = yToX(_pivotYear, xRange);
       const sp0 = camera.worldToScreen(wx0, 0, vp);
       if (sp0.x >= -120 && sp0.x <= vp.w + 120) {
         // Phase 22-M (2026-05-24) — STYLE-tunable pivot mark.
@@ -1087,12 +1197,12 @@
         lbl0.style.fontWeight    = '600';
         lbl0.style.letterSpacing = '0.14em';
         lbl0.style.textTransform = 'uppercase';
-        // Phase 22-AE — pivot label routes through the active
-        // calendar. Gregorian still shows "0"; other calendars
-        // show their year-0-Gregorian value (e.g. "3761 AM",
-        // "622 BH", "-621 AP"). The pivot's special STYLE
-        // (size, brightness) stays regardless of calendar.
-        lbl0.textContent = formatYear(0);
+        // Phase 22-AF (2026-05-24) — pivot label = the active
+        // calendar's epoch year label. Gregorian → "0". Hebrew →
+        // "1 AM" (since epoch-1 is treated as year 1). Hijri →
+        // "1 AH". And so on. The pivot's special STYLE (size,
+        // brightness) stays regardless of calendar.
+        lbl0.textContent = formatYear(_pivotYear);
         tickGroupEl.appendChild(lbl0);
       }
     }

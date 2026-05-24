@@ -7331,6 +7331,25 @@ details.forge-side-panel-wire[open] .forge-side-panel-wire-caret {
   display: flex;
   flex-direction: column;
   gap: 2px;
+  /* Phase 22-AF (2026-05-24) — belt-and-braces overflow guard.
+     John has flagged the right-hand overflow N times. The title's
+     ellipsis CSS was already there but wasn't firing because the
+     <details> + <div class="...wire-list"> parents weren't
+     enforcing horizontal containment. With `min-width: 0` they
+     can collapse below their content-size, which is the precondition
+     for the flex children (the wire-items) to actually clip. */
+  min-width: 0;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+.forge-side-panel-wire {
+  min-width: 0;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 .forge-side-panel-wire-item {
   display: flex;
@@ -7368,12 +7387,14 @@ details.forge-side-panel-wire[open] .forge-side-panel-wire-caret {
   flex: 0 0 auto;
 }
 .forge-side-panel-wire-item-title {
-  flex: 1 1 auto;
-  /* Required for text-overflow: ellipsis to take effect inside a
-     flex item. The default min-width is "auto" (= content size),
-     which prevents shrinking. min-width: 0 lets the title actually
-     reach the ellipsis threshold instead of pushing siblings out. */
+  /* Phase 22-AF (2026-05-24) — `flex: 1 1 0` (not 1 1 auto) so the
+     basis is 0 and the title can shrink all the way down to the
+     ellipsis without being pushed by content-size. Same trick as
+     the canonical "ellipsis inside flex" pattern. min-width: 0
+     stays as the precondition. */
+  flex: 1 1 0;
   min-width: 0;
+  max-width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;

@@ -66,16 +66,16 @@
   const X_PAD_FRAC    = 0.10;
   const TIME_AXIS_PAD = 40;          // extra top space for the time-axis ribbon
   const UNDATED_PAD   = 28;          // gap above + below the parking lane
-  // Phase 22-K → 22-N (2026-05-24) — band defaults ×1.3 from
-  // Phase 22-K's already-doubled values. John: "current 1.3× slider
-  // value = new 1× default". Net multiplier vs original Phase 7 =
-  // 2.6×. LS key bumped to *_v3 so the 1.3× saved value resets.
-  const UNDATED_BAND_H = 156;        // 120 × 1.3
+  // Phase 22-AF (2026-05-24) — SECOND ×1.3 bake. John: "make the
+  // current 1.3× the new 1× default". Stacked vs Phase 22-N's
+  // already-1.3× baseline: net multiplier vs original Phase 7 =
+  // 2.6 × 1.3 ≈ 3.38×. LS key bumped to *_v4 so old saves reset.
+  const UNDATED_BAND_H = 203;        // 156 × 1.3 ≈ 203
 
   // Band height allocation per §1.2.
-  const MIN_BAND_H    = 73;          // 56 × 1.3
-  const MAX_BAND_H    = 312;         // 240 × 1.3
-  const BAND_H_BASE   = 19.5;        // 15 × 1.3 — sqrt(280) * 19.5 ≈ 326 → clamped to MAX
+  const MIN_BAND_H    = 95;          // 73 × 1.3 ≈ 95
+  const MAX_BAND_H    = 406;         // 312 × 1.3 ≈ 406
+  const BAND_H_BASE   = 25.4;        // 19.5 × 1.3 ≈ 25.4
 
   // Sweep-line packer (§2.3).
   const ROW_PAD       = 8;           // top inset inside each band before first row
@@ -729,6 +729,9 @@
   // the next layout call picks it up. To redraw with the new
   // preset, the caller fires window._forge.relayout().
   function setScalePreset(id) {
+    // Phase 22-AF (2026-05-24) — LOG (`log-centered`) dropped from
+    // the UI; migrate stale runtime/LS values silently to linear.
+    if (id === 'log-centered' || id === 'log-recent') id = 'linear-default';
     if (!SCALE_PRESETS[id]) {
       console.warn('[timeline] unknown scale preset:', id);
       return false;

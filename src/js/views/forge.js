@@ -1278,8 +1278,9 @@
       // DENSITY moved OUT of the bar into its own always-visible
       // vertical slider primitive (see #forge-tl-vdensity below).
       '<div class="forge-bottombar-right fv-timeline-only" id="forge-bottombar-timeline">' +
+        // Phase 22-AF (2026-05-24) — LOG dropped. CMP already behaves
+        // as the log-style compressed scale, so LOG was redundant.
         '<button class="forge-fxpanel-btn" data-tl-preset="linear-default"          aria-pressed="true"  title="Linear · 9K BCE → today">LIN</button>' +
-        '<button class="forge-fxpanel-btn" data-tl-preset="log-centered"            aria-pressed="false" title="Log · year-0 centered">LOG</button>' +
         '<button class="forge-fxpanel-btn" data-tl-preset="compressed-civilization" aria-pressed="false" title="Compressed · era-weighted">CMP</button>' +
         // Phase 22-AE (2026-05-24) — CALENDAR popup button. Click =
         // drops up a list of registered calendars (Gregorian, Hebrew,
@@ -2295,6 +2296,20 @@
             scale:   targetScale,
           }, 0.35);
           if (camera.isAnimating()) startAnimLoop();
+          // Phase 22-AF (2026-05-24) — Timeline only: zoom-button
+          // click ALSO resets band density to the default 1.0×.
+          // John: "when we click on the zoom button it should also
+          // slide the density to default". Skipped for wheel mode
+          // where there's no density slider.
+          if (local.layoutId === 'timeline'
+              && window.AtlasEngineLayout
+              && typeof window.AtlasEngineLayout.setTimelineBandHeightScale === 'function') {
+            const changed = window.AtlasEngineLayout.setTimelineBandHeightScale(1.0);
+            try { localStorage.setItem('codex_atlas_timeline_band_scale_v4', '1'); } catch (_) {}
+            if (changed && typeof window._forge.relayout === 'function') {
+              window._forge.relayout();
+            }
+          }
         });
       }
       updateZoomGizmo();
