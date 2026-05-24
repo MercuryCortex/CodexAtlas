@@ -1216,6 +1216,13 @@
     }
     let lastLabelRight = -Infinity;
 
+    // Phase 22-AH (2026-05-25) — audit A: universal label cap.
+    // Per-frame ceiling so DOM ops + main-thread cost stay bounded
+    // regardless of zoom level or visible span. 120 is the same
+    // ceiling the wheel's `label_cap` uses comfortably. Tick MARKS
+    // still draw without limit — only the text labels cap.
+    const TICK_LABEL_CAP = 120;
+    let _labelsRendered = 0;
     for (let yr = tickLo; yr <= tickHi; yr += tickStep) {
       // Phase 22-AG (2026-05-24) — skip ticks that coincide with
       // EITHER pivot (Greg 0 always; calendar epoch when non-Greg).
@@ -1264,6 +1271,9 @@
       const rightEdge = sp.x + lw / 2;
       if (leftEdge < lastLabelRight) continue;
       if (collidesWithReservedSlot(leftEdge, rightEdge)) continue;
+      // Phase 22-AH (2026-05-25) — universal label cap.
+      if (_labelsRendered >= TICK_LABEL_CAP) continue;
+      _labelsRendered++;
       lastLabelRight = rightEdge;
 
       const label = document.createElementNS(NS, 'text');

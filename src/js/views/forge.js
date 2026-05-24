@@ -1089,7 +1089,10 @@
           '<button class="forge-viewset-row fv-wheel-only" data-toggle="dividers"><span class="vs-check"></span>Show family separators</button>' +
           '<button class="forge-viewset-row fv-wheel-only" data-toggle="dividersConverging"><span class="vs-check"></span>Show converging separators <em>(solid → fade)</em></button>' +
           '<button class="forge-viewset-row fv-wheel-only" data-toggle="guideRings"><span class="vs-check"></span>Show guide rings <em>(inner / mid / outer)</em></button>' +
-          '<button class="forge-viewset-row" data-toggle="wires"><span class="vs-check"></span>Show wires</button>' +
+          // Phase 22-AH (2026-05-25) — renamed per audit B: this
+          // toggle controls IDLE wires only (Phase 21AI design).
+          // Active wires from lock/hover focus are unaffected.
+          '<button class="forge-viewset-row" data-toggle="wires"><span class="vs-check"></span>Show idle wires</button>' +
           '<button class="forge-viewset-row" data-toggle="sfx"><span class="vs-check"></span>Soundtrack <em>(zoom-tied)</em></button>' +
           '<button class="forge-viewset-row" data-toggle="map" disabled><span class="vs-check"></span>Show map <em>(coming soon)</em></button>' +
           // Phase 22-I — timeline-only Layers (band rectangles + labels).
@@ -2258,7 +2261,12 @@
         const camScale = camera.state.scale;
         const lastScale = local.packedAtScale || camScale;
         const N = (local.mode && local.mode.nodePacked && local.mode.nodePacked.instanceCount) || 0;
-        const driftBand = N < 1000 ? 0.05 : N < 10000 ? 0.15 : 0.30;
+        // Phase 22-AH (2026-05-25) — audit A: timeline navigation
+        // chokes because the rebake-band-cross fires mid-wheel-gesture
+        // every ~20 ticks at 5% drift. Widened the <1k tier from 0.05
+        // → 0.10 — at 663 deities the screen-px-clamp difference is
+        // perceptually zero but rebake-frequency halves.
+        const driftBand = N < 1000 ? 0.10 : N < 10000 ? 0.15 : 0.30;
         const driftLo = 1 - driftBand;
         const driftHi = 1 + driftBand;
         if (lastScale > 0) {
@@ -4347,11 +4355,12 @@
       const idx       = local.mode.nodePacked.idIndex;
       local.focusedSet  = graph.focusedSetFor(local.hoverId, local.lockedSet, local.mode.adjacency);
       local.selectedSet = computeSelectedSet(local.hoverId, local.lockedSet);
-      // Phase 21R (2026-05-22) — hover-boost wire palette. Re-upload
-      // only on hover-state transitions (null ↔ non-null) so steady-
-      // state hover doesn't burn writes. The boost itself lives in
-      // hotPaletteFromParams() — this site is just the trigger.
-      const wantBoost = (local.hoverId != null);
+      // Phase 21R → 22-AH (2026-05-25) — palette boost trigger.
+      // Re-upload on EITHER hover-state transition OR lock-set
+      // empty/non-empty transition so steady-state focus reads at
+      // 1.0 alpha. Boost lives in hotPaletteFromParams(); this
+      // site is the throttled trigger.
+      const wantBoost = (local.hoverId != null) || !!(local.lockedSet && local.lockedSet.size > 0);
       if (local._hoverBoostActive !== wantBoost) {
         local._hoverBoostActive = wantBoost;
         if (local.renderer && local.renderer.setBucketPalette) {
@@ -6853,6 +6862,13 @@
 
       // Renders the deity inspector content into #detail-inner.
       function render() {
+        // Phase 22-AH (2026-05-24) — D-fix. Any path that wipes the
+        // side panel via `inner.innerHTML = ...` detaches the row
+        // the hover-tip is anchored to WITHOUT firing mouseout.
+        // The tip then sticks at top-left because positionTip reads
+        // zero-rect from the detached row. Symmetric hideTip()
+        // before the wipe kills the tip alongside its anchor row.
+        try { if (typeof hideTip === 'function') hideTip(); } catch (_) {}
         const id = local.openTabId;
         const m = local.mode;
         const node = (id && m && m.nodesById && m.nodesById.get) ? m.nodesById.get(id) : null;
@@ -7294,12 +7310,17 @@
         if (!item) return;
         const targetId = item.getAttribute('data-id');
         if (!targetId) return;
-        // Phase 21AV (2026-05-23) — cross-folder neighbors aren't on
-        // the deity wheel so toggleLock can't do anything useful with
-        // them. The row still shows the tier badge + disclaimer
-        // tooltip; clicking is a no-op so the user doesn't get a
-        // ghost-tab that points nowhere.
-        if (item.getAttribute('data-in-mode') !== '1') return;
+        // Phase 22-AH (2026-05-25) — cross-folder click handler.
+        // Per audit C: pre-22-AH this early-returned silently. Now
+        // cross-folder rows open an action popup with the target
+        // info + "Open in <view>" button so the user can FOLLOW
+        // the wire across master-view types (Themes / Persons /
+        // Events / etc). The popup is also a slot for future
+        // actions (Show reference, Copy link, Open in new tab, …).
+        if (item.getAttribute('data-in-mode') !== '1') {
+          showCrossFolderPopup(item);
+          return;
+        }
         // Lock only if not already locked (toggleLock toggles).
         if (!local.lockedSet.has(targetId)) {
           toggleLock(targetId);    // adds + pulses tab + (if open) renders
@@ -7310,6 +7331,106 @@
           renderTabs();
         }
       });
+
+      // Phase 22-AH (2026-05-25) — cross-folder popup. Anchored to
+      // the clicked row; offers "Open in <view> view" + dismiss.
+      // Reusable shell — future commits can stack more actions
+      // (Show reference, Copy link, Open thumb modal, etc.).
+      function showCrossFolderPopup(rowEl) {
+        if (!rowEl) return;
+        const targetId   = rowEl.getAttribute('data-id') || '';
+        const targetName = rowEl.getAttribute('data-edge-target-title') || targetId;
+        const subtype    = rowEl.getAttribute('data-edge-target-subtype') || '';
+        // Subtype → master view name. Today only the Deities wheel
+        // is fully wired; other targets stay informational until
+        // their master views ship.
+        const VIEW_FOR = {
+          deity:       { id: 'forge',  label: 'Deities',  available: true  },
+          theme:       { id: 'forge',  label: 'Themes',   available: true  },
+          person:      { id: 'forge',  label: 'Persons',  available: true  },
+          event:       { id: 'forge',  label: 'Events',   available: true  },
+          tradition:   { id: 'forge',  label: 'Traditions', available: true  },
+          symbol:      { id: 'forge',  label: 'Symbols',  available: true  },
+          music:       { id: 'forge',  label: 'Music',    available: false },
+          alphabet:    { id: 'forge',  label: 'Alphabets',available: false },
+          alchemy:     { id: 'forge',  label: 'Alchemy',  available: false },
+          ritual:      { id: 'forge',  label: 'Practices',available: false },
+          moral:       { id: 'forge',  label: 'Moral',    available: false },
+          philosophy:  { id: 'forge',  label: 'Philosophy',available: false },
+          mathematics: { id: 'forge',  label: 'Mathematics',available: false },
+          medicine:    { id: 'forge',  label: 'Medicine', available: false },
+        };
+        const dest = VIEW_FOR[subtype] || { label: subtype || 'this folder', available: false };
+
+        // Remove any existing popup first (single-instance).
+        const old = document.getElementById('forge-side-cross-pop');
+        if (old && old.parentNode) old.parentNode.removeChild(old);
+
+        const pop = document.createElement('div');
+        pop.id = 'forge-side-cross-pop';
+        pop.className = 'forge-side-cross-pop';
+        pop.innerHTML =
+          '<div class="forge-side-cross-pop-head">' +
+            '<span class="forge-side-cross-pop-title">' + safeAttr(targetName) + '</span>' +
+            '<button class="forge-side-cross-pop-close" type="button" aria-label="Close">×</button>' +
+          '</div>' +
+          '<div class="forge-side-cross-pop-sub">' + safeAttr(subtype || 'cross-folder') + '</div>' +
+          '<div class="forge-side-cross-pop-actions">' +
+            (dest.available
+              ? '<button class="forge-side-cross-pop-action" data-action="open-mode" data-mode="' + safeAttr(subtype) + '">Switch master view → ' + safeAttr(dest.label) + '</button>'
+              : '<div class="forge-side-cross-pop-pending">' + safeAttr(dest.label) + ' view — coming soon</div>') +
+          '</div>';
+
+        // Anchor: drop the popup to the LEFT of the clicked row
+        // (side panel is right-anchored). Use fixed positioning so
+        // panel scroll doesn't drag it along.
+        const rRow = rowEl.getBoundingClientRect();
+        pop.style.position = 'fixed';
+        pop.style.top  = (rRow.top - 4) + 'px';
+        pop.style.right = (window.innerWidth - rRow.left + 12) + 'px';
+        document.body.appendChild(pop);
+
+        function close() {
+          if (pop.parentNode) pop.parentNode.removeChild(pop);
+          document.removeEventListener('mousedown', onOutside, true);
+          document.removeEventListener('keydown', onEsc, true);
+        }
+        function onOutside(e) {
+          if (pop.contains(e.target)) return;
+          if (rowEl.contains(e.target)) return;
+          close();
+        }
+        function onEsc(e) { if (e.key === 'Escape') close(); }
+        pop.querySelector('.forge-side-cross-pop-close').addEventListener('click', close);
+        const actBtn = pop.querySelector('.forge-side-cross-pop-action');
+        if (actBtn) {
+          actBtn.addEventListener('click', function () {
+            // Switch class filter to the target's subtype mode if
+            // it's a recognized one. Today this maps subtypes onto
+            // the Deities wheel's mode list — a placeholder until
+            // the other master views land. Future expansion: emit
+            // a `codex:nav` event the shell catches.
+            const mode = actBtn.getAttribute('data-mode');
+            if (mode && window._forge && typeof window._forge.setClassFilter === 'function') {
+              try { window._forge.setClassFilter(mode); } catch (_) {}
+            }
+            // Try to lock the target after the mode switch.
+            try {
+              setTimeout(function () {
+                if (local.lockedSet && !local.lockedSet.has(targetId)) {
+                  toggleLock(targetId);
+                }
+                local.openTabId = targetId;
+                render();
+                renderTabs();
+              }, 60);
+            } catch (_) {}
+            close();
+          });
+        }
+        document.addEventListener('mousedown', onOutside, true);
+        document.addEventListener('keydown', onEsc, true);
+      }
 
       // ─── Phase 21AU (2026-05-23) — custom side-panel tooltip ──
       //
@@ -7390,8 +7511,14 @@
         return html;
       }
       function positionTip(row) {
-        // Measure once visible — display block already; just need rect.
+        // Phase 22-AH (2026-05-24) — D-fix defensive guard.
+        // If the row got detached from the DOM (innerHTML replaced
+        // the side-panel while a tip was still anchored to it), its
+        // bounding-rect reads zeros → tip clamps to (10, 10) top-
+        // left. Detect detachment + hide instead of paint-then-stick.
+        if (!row || !row.isConnected) { hideTip(); return; }
         const rRow = row.getBoundingClientRect();
+        if (rRow.width === 0 && rRow.height === 0) { hideTip(); return; }
         const rTip = tipEl.getBoundingClientRect();
         const margin = 10;
         // Default to LEFT of the row (side panel is on the right).
@@ -8241,7 +8368,16 @@
     const HOVER_BOOST_ALPHA = 1.0;
     function hotPaletteFromParams() {
       const p = local.params;
-      const boost = (local.hoverId != null);
+      // Phase 22-AH (2026-05-25) — audit B fix. Active wires now
+      // reach alpha 1.0 on EITHER hover OR lock-only focus. John:
+      // "the wires NEVER get the 1 opacity value." Audit traced
+      // the cap to per-bucket `active_opacity_*` defaults (0.74–
+      // 0.90) gated to hover only. New rule: any active focus
+      // (hover OR locked set non-empty) boosts the palette so a
+      // sustained selection reads decisively.
+      const hasHover = (local.hoverId != null);
+      const hasLock  = !!(local.lockedSet && local.lockedSet.size > 0);
+      const boost = hasHover || hasLock;
       return BUCKET_ORDER.map(b => {
         const baseA = p['active_opacity_' + b];
         const a = boost ? Math.min(1.0, Math.max(baseA, HOVER_BOOST_ALPHA)) : baseA;

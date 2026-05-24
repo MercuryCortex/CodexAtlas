@@ -8563,6 +8563,91 @@ body.view-forge.fx-bloom .forge-hulls-overlay {
   font-style: italic;
 }
 
+/* Phase 22-AH (2026-05-25) — cross-folder action popup. Pops up
+   when a side-panel wire-item that points to a non-deity target
+   is clicked. Offers a "Switch master view" action + dismiss.
+   Slot for future actions (Show reference, Copy link, etc.).
+   Same dark + gold visual family as the calendar picker. */
+.forge-side-cross-pop {
+  width: 260px;
+  padding: 10px 12px 12px;
+  background: rgba(13,17,25,0.96);
+  border: 1px solid rgba(212,165,90,0.35);
+  border-radius: 8px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.55);
+  font-family: var(--mono, "JetBrains Mono", Menlo, monospace);
+  font-size: 11px;
+  color: var(--text-2, #9099a8);
+  z-index: 300;
+  pointer-events: auto;
+}
+.forge-side-cross-pop-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+.forge-side-cross-pop-title {
+  flex: 1 1 auto;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--gold-1, #e8c889);
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.forge-side-cross-pop-close {
+  flex: 0 0 auto;
+  background: transparent;
+  border: 0;
+  color: var(--text-3, #6b7280);
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0 2px;
+}
+.forge-side-cross-pop-close:hover { color: var(--gold, #d4a55a); }
+.forge-side-cross-pop-sub {
+  font-size: 10px;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: var(--text-3, #6b7280);
+  margin-bottom: 10px;
+}
+.forge-side-cross-pop-actions { display: flex; flex-direction: column; gap: 6px; }
+.forge-side-cross-pop-action {
+  padding: 6px 10px;
+  background: rgba(212,165,90,0.12);
+  border: 1px solid rgba(212,165,90,0.35);
+  border-radius: 6px;
+  color: var(--gold-1, #e8c889);
+  font-family: inherit;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  text-align: left;
+  cursor: pointer;
+  transition: background 120ms ease, border-color 120ms ease;
+}
+.forge-side-cross-pop-action:hover {
+  background: rgba(212,165,90,0.22);
+  border-color: var(--gold, #d4a55a);
+}
+.forge-side-cross-pop-pending {
+  padding: 6px 10px;
+  background: rgba(255,255,255,0.03);
+  border: 1px dashed rgba(212,165,90,0.20);
+  border-radius: 6px;
+  color: var(--text-3, #6b7280);
+  font-size: 10px;
+  font-style: italic;
+  letter-spacing: 0.04em;
+  text-align: center;
+}
+
 /* ════════════════════════════════════════════════════════════
    VERTICAL DENSITY SLIDER — its own primitive
    Phase 22-AD (2026-05-24). Forked out of the bottombar. Always
