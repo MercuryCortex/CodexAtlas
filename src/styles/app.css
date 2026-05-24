@@ -843,6 +843,14 @@ body.nav-hidden .side-tab { display: none !important; }
      it so the chrome reads like the old .forge-status pill. */
   display: none;
 }
+/* Phase 22-F (2026-05-24) — also strip the random glyph icons from
+   the dropdown menu items (FORGE/TIMELINE/BOARD/MAP/STAR MAP rows
+   and the Deities/Persons/… class rows). John: "remove the random
+   symbol in front of Forge and Deities." The label is the identity
+   on the trigger; same in the dropdown. */
+.app-pill-menu-icon {
+  display: none;
+}
 .app-pill-label {
   flex: 1 1 auto;
   white-space: nowrap;
@@ -1364,6 +1372,10 @@ body.fv-hide-wires         .forge-canvas { /* the actual hide is renderer-side: 
   /* Bottom-bar parent is pointer-events: none — opt in so the
      autocomplete suggestion list can receive clicks. */
   pointer-events: auto;
+  /* Phase 22-F (2026-05-24) — search wrap grows to fill bottom-bar
+     so the input inside can hit 2/3 viewport width. */
+  flex: 1 1 auto;
+  min-width: 0;
 }
 .forge-search-suggest {
   position: absolute;
@@ -6756,9 +6768,14 @@ body.nav-collapsed .nav-more > summary .lbl { display: none; }
   border-radius: 4px;
   padding: 5px 10px;
   outline: none;
-  /* 2026-05-20 — halved per John's spec (was 320/360 → 160/180). */
-  flex: 0 1 160px;
-  max-width: 180px;
+  /* Phase 22-F (2026-05-24) — search input is 2/3 viewport width
+     (was 160/180px since 2026-05-20). The bottom-bar parent uses
+     flex so neighboring controls keep their natural width and the
+     search expands to occupy the remaining 2/3. */
+  flex: 1 1 0;
+  width: 66vw;
+  max-width: 66vw;
+  min-width: 320px;
 }
 .forge-bottom-search::placeholder { color: var(--text-3); }
 .forge-bottom-search:hover { border-color: var(--gold-soft); }

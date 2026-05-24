@@ -173,52 +173,53 @@
     pickerEl.setAttribute('aria-haspopup', 'listbox');
     pickerEl.setAttribute('aria-expanded', 'false');
     pickerEl.setAttribute('tabindex', '0');
-    // Inline styles — same pattern as the SVG overlay (no extra
-    // stylesheet entry for a dev-only widget).
+    // Phase 22-F (2026-05-24) — match the .forge-zoom-gizmo /
+    // .forge-bottom-search aesthetic exactly. Same background,
+    // border, radius, font family, sizing — so the bottom-right
+    // chip belongs to the same button family as the zoom % box,
+    // the scrubber boxes, and the search input. No DEV tag.
     Object.assign(pickerEl.style, {
       position:      'absolute',
-      right:         '18px',
-      bottom:        '18px',
+      right:         '14px',
+      bottom:        '14px',
       display:       'flex',
       alignItems:    'center',
       gap:           '8px',
-      padding:       '6px 10px 6px 12px',
-      background:    'rgba(20, 18, 14, 0.78)',
-      border:        '1px solid rgba(212, 165, 90, 0.30)',
-      borderRadius: '8px',
-      color:         'rgba(232, 200, 137, 0.92)',
+      padding:       '5px 10px',
+      background:    'rgba(13, 17, 25, 0.85)',
+      border:        '1px solid var(--border, #2a2e3a)',
+      borderRadius: '4px',
+      color:         'var(--gold, #d4a55a)',
       fontFamily:    'var(--mono, "JetBrains Mono", Menlo, monospace)',
-      fontSize:      '10px',
+      fontSize:      '11px',
       fontWeight:    '500',
-      letterSpacing: '0.12em',
-      textTransform: 'uppercase',
+      letterSpacing: '0.08em',
       cursor:        'pointer',
       pointerEvents: 'auto',
       zIndex:        '6',
       userSelect:    'none',
-      backdropFilter:'blur(6px)',
-      WebkitBackdropFilter:'blur(6px)',
+      lineHeight:    '1',
+      height:        '24px',
+      boxSizing:     'border-box',
+      transition:    'border-color 100ms ease, color 100ms ease',
+    });
+    pickerEl.addEventListener('mouseenter', function () {
+      pickerEl.style.borderColor = 'var(--gold-soft, rgba(212,165,90,0.45))';
+    });
+    pickerEl.addEventListener('mouseleave', function () {
+      pickerEl.style.borderColor = 'var(--border, #2a2e3a)';
     });
 
-    // DEV tag
-    const tag = document.createElement('span');
-    tag.textContent = 'DEV';
-    Object.assign(tag.style, {
-      color:        'rgba(212, 165, 90, 0.55)',
-      fontSize:     '9px',
-      letterSpacing:'0.18em',
-    });
-    pickerEl.appendChild(tag);
-
-    // Active preset label
+    // Active preset label (no DEV tag).
     const label = document.createElement('span');
     label.className = '_label';
     pickerEl.appendChild(label);
 
-    // Chevron
+    // Chevron — tiny gradient-triangle glyph, matches .app-pill caret.
     const chev = document.createElement('span');
     chev.textContent = '▾';
     chev.style.opacity = '0.7';
+    chev.style.fontSize = '9px';
     pickerEl.appendChild(chev);
 
     hostEl.appendChild(pickerEl);
@@ -255,24 +256,24 @@
     pickerMenuEl = document.createElement('div');
     pickerMenuEl.className = 'forge-timeline-scale-picker-menu';
     pickerMenuEl.setAttribute('role', 'listbox');
+    // Phase 22-F (2026-05-24) — same dark-amber chrome family as
+    // the chip + zoom gizmo + scrubber boxes.
     Object.assign(pickerMenuEl.style, {
       position:      'absolute',
-      right:         '18px',
-      bottom:        '54px',
+      right:         '14px',
+      bottom:        '46px',
       minWidth:      '260px',
       maxWidth:      '340px',
-      padding:       '6px',
-      background:    'rgba(16, 14, 11, 0.94)',
-      border:        '1px solid rgba(212, 165, 90, 0.32)',
-      borderRadius: '8px',
-      color:         'rgba(232, 200, 137, 0.92)',
+      padding:       '4px',
+      background:    'rgba(13, 17, 25, 0.94)',
+      border:        '1px solid var(--border, #2a2e3a)',
+      borderRadius: '4px',
+      color:         'var(--gold, #d4a55a)',
       fontFamily:    'var(--mono, "JetBrains Mono", Menlo, monospace)',
       fontSize:      '11px',
       letterSpacing: '0.05em',
       zIndex:        '7',
       pointerEvents: 'auto',
-      backdropFilter:'blur(8px)',
-      WebkitBackdropFilter:'blur(8px)',
       boxShadow:     '0 8px 24px rgba(0,0,0,0.45)',
     });
 
@@ -428,7 +429,16 @@
     const emphasisModulus = tickStep * 5;
     while (gridGroupEl.firstChild) gridGroupEl.removeChild(gridGroupEl.firstChild);
     while (tickGroupEl.firstChild) tickGroupEl.removeChild(tickGroupEl.firstChild);
+    // Phase 22-F (2026-05-24) — year 0 is the BC/AD pivot. ALWAYS
+    // render it, regardless of tick cadence, with a distinct
+    // brighter + slightly heavier style. Skip the dup if the
+    // normal loop also lands on 0 (it always will when 0 is in
+    // [tickLo, tickHi] since 0 % N === 0 for any N).
+    const Y0_LO = xRange.lo, Y0_HI = xRange.hi;
+    const renderYearZeroSeparately = (0 >= Y0_LO && 0 <= Y0_HI);
+
     for (let yr = tickLo; yr <= tickHi; yr += tickStep) {
+      if (renderYearZeroSeparately && yr === 0) continue;   // skip — drawn after as pivot
       const wx = yToX(yr, xRange);
       const sp = camera.worldToScreen(wx, 0, vp);
       // Off-screen guards (margin so near-edge labels still draw).
@@ -472,6 +482,49 @@
       label.style.textTransform = 'uppercase';
       label.textContent = formatYear(yr);
       tickGroupEl.appendChild(label);
+    }
+
+    // Phase 22-F (2026-05-24) — ALWAYS-ON year-0 pivot marker.
+    // Year 0 is the BC/AD hinge — render it distinctly at every
+    // zoom level regardless of cadence. Brighter stripe, taller
+    // tick, bolder "yr 0" label.
+    if (renderYearZeroSeparately) {
+      const wx0 = yToX(0, xRange);
+      const sp0 = camera.worldToScreen(wx0, 0, vp);
+      if (sp0.x >= -120 && sp0.x <= vp.w + 120) {
+        // Pivot grid stripe — brighter + wider than peer ticks.
+        const grid0 = document.createElementNS(NS, 'line');
+        grid0.setAttribute('x1', sp0.x); grid0.setAttribute('x2', sp0.x);
+        grid0.setAttribute('y1', 0);     grid0.setAttribute('y2', vp.h);
+        grid0.setAttribute('stroke', 'rgba(212, 165, 90, 0.34)');
+        grid0.setAttribute('stroke-width', '1.5');
+        gridGroupEl.appendChild(grid0);
+
+        // Tick mark — taller than emphasized peers.
+        const tick0 = document.createElementNS(NS, 'line');
+        tick0.setAttribute('x1', sp0.x);
+        tick0.setAttribute('y1', axisY - 12);
+        tick0.setAttribute('x2', sp0.x);
+        tick0.setAttribute('y2', axisY + 12);
+        tick0.setAttribute('stroke', 'rgba(245, 220, 160, 1.0)');
+        tick0.setAttribute('stroke-width', '1.8');
+        tickGroupEl.appendChild(tick0);
+
+        // Label — heavier weight + slightly larger, bright gold.
+        const lbl0 = document.createElementNS(NS, 'text');
+        lbl0.setAttribute('x', sp0.x);
+        lbl0.setAttribute('y', axisY - 18);
+        lbl0.setAttribute('text-anchor', 'middle');
+        lbl0.setAttribute('class', 'forge-timeline-year-label forge-timeline-year-zero');
+        lbl0.style.fill          = 'rgba(245, 220, 160, 1.0)';
+        lbl0.style.fontFamily    = 'var(--mono, "JetBrains Mono", Menlo, monospace)';
+        lbl0.style.fontSize      = '12px';
+        lbl0.style.fontWeight    = '600';
+        lbl0.style.letterSpacing = '0.14em';
+        lbl0.style.textTransform = 'uppercase';
+        lbl0.textContent = 'YR 0';
+        tickGroupEl.appendChild(lbl0);
+      }
     }
   }
 

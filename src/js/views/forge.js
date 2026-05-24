@@ -2954,12 +2954,17 @@
           if      (zp >= 1.0) wireZoomFade = 0;
           else if (zp <= 0.5) wireZoomFade = 1;
           else                wireZoomFade = (1.0 - zp) / 0.5;
-          // FX bloom class toggle (hysteresis 0.25 / 0.30).
-          if (!fxBloomActive && zp <= 0.25) fxBloomActive = true;
-          else if (fxBloomActive && zp >= 0.30) fxBloomActive = false;
-          // Below-15% class toggle (hysteresis 0.15 / 0.17).
-          if (!belowFifteen && zp <= 0.15) belowFifteen = true;
-          else if (belowFifteen && zp >= 0.17) belowFifteen = false;
+          // Phase 22-F (2026-05-24) — push floor-FX BELOW 15%
+          // entirely. At gizmo 15% the canvas should be CLEAN (no
+          // blur, no bloom, no heartbeat). Bloom now enters only
+          // when zoom <= 13% and exits at 15%. (Was 25%/30% — much
+          // earlier — and stacked on top of belowFifteen breath.)
+          if (!fxBloomActive && zp <= 0.13) fxBloomActive = true;
+          else if (fxBloomActive && zp >= 0.15) fxBloomActive = false;
+          // Below-15% class toggle (hysteresis 0.13 / 0.15 —
+          // synced with bloom so they enter + exit together).
+          if (!belowFifteen && zp <= 0.13) belowFifteen = true;
+          else if (belowFifteen && zp >= 0.15) belowFifteen = false;
         }
       }
       if (fxBloomActive !== local._fxBloomActive) {
