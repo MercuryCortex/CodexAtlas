@@ -2271,6 +2271,19 @@
       // ids don't carry between modes.
       const preserveLocks = !!(opts && opts.preserveLocks);
       const savedLocks    = preserveLocks ? Array.from(local.lockedSet || []) : null;
+      // Phase TL-2 Step 7b-fix3 (2026-05-24) — preserveZoom.
+      // When TRUE, the post-fit camera override is skipped so the
+      // user's current pan + zoom state survives the relayout. Used
+      // by _forge.relayout() (band-density slider tick, scale-preset
+      // switch) where the dataset isn't actually changing — only the
+      // mapping. Without this, every slider tick would yank the
+      // camera back to the 20% default, undoing the user's zoom-in.
+      // Fresh mounts + class-filter switches leave this false so the
+      // 20% scan-view default still applies.
+      const preserveZoom  = !!(opts && opts.preserveZoom);
+      const savedCamState = (preserveZoom && camera && camera.state)
+        ? { scale: camera.state.scale, centerX: camera.state.centerX, centerY: camera.state.centerY }
+        : null;
 
       // Phase 2B B2 (2026-05-20) — drain any pending hover-coalesce
       // BEFORE swapping local.mode. Without this, the pending rAF
@@ -2350,16 +2363,21 @@
             local.lastSize.w, lay.xRange);
           const tlCtr = window.AtlasEngineLayout.computeTimelineCenter(
             lay.xRange, ext);
-          // Phase TL-2 Step 7b-fix2 (2026-05-24) — default open zoom
-          // = 20% gizmo. That means data range fills 90% of viewport
-          // width (per John's spec 2026-05-24). Was opening at 100%
-          // gizmo (4.5× wider than viewport — TradingView-detail-
-          // mode), which forced the user to immediately zoom out to
-          // see context. The 20% default gives them the full-spine
-          // scan view first; they can zoom IN for detail.
-          //   gizmo % = scale / fit_scale
-          //   want gizmo = 0.20  →  scale = 0.20 × tlFit
-          camera.set({ scale: tlFit * 0.20, centerX: tlCtr.x, centerY: tlCtr.y });
+          if (preserveZoom && savedCamState) {
+            // Phase TL-2 Step 7b-fix3 — keep the user's zoom + pan
+            // across relayouts (band-density slider, preset switch).
+            camera.set(savedCamState);
+          } else {
+            // Phase TL-2 Step 7b-fix2 — default open zoom = 20% gizmo.
+            // Data range fills 90% of viewport width (John's spec
+            // 2026-05-24). 100% gizmo would be TradingView-detail-
+            // mode (data 4.5× wider than viewport) — too tight an
+            // opening view. Fresh mounts + class switches get this
+            // scan-view default; the user zooms IN for detail.
+            //   gizmo % = scale / fit_scale
+            //   want gizmo = 0.20  →  scale = 0.20 × tlFit
+            camera.set({ scale: tlFit * 0.20, centerX: tlCtr.x, centerY: tlCtr.y });
+          }
         }
         // Phase 5B M-F1 (2026-05-20) — synchronously record the
         // new pack-scale BEFORE the listener-emit from fitToExtent
@@ -4948,7 +4966,10 @@
       window._forge.relayout = function () {
         if (local.destroyed) return false;
         try {
-          rebuildForMode(local.mode.id, { preserveLocks: true });
+          // Phase TL-2 Step 7b-fix3 (2026-05-24) — pass preserveZoom
+          // so the band-density slider + scale-preset switch don't
+          // reset the camera to the 20% default on every tick.
+          rebuildForMode(local.mode.id, { preserveLocks: true, preserveZoom: true });
           return true;
         } catch (e) {
           console.warn('[forge] relayout failed', e);
