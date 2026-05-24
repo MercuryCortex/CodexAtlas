@@ -99,6 +99,14 @@
     axisWidth:    1.5,
     gridOpacity:  0.10,
     gridWidth:    1.0,
+    // Phase 22-M (2026-05-24) — YR 0 pivot marker style.
+    yr0Opacity:   1.0,
+    yr0Size:      12,
+    yr0Width:     1.8,
+    // Phase 22-M — dense-ticks toggle (more dates onscreen as
+    // you zoom in). When ON, the cadence picker uses one step
+    // finer than auto.
+    denseTicks:   false,
   };
   let _bandStyle = Object.assign({}, BAND_STYLE_DEFAULTS);
   try {
@@ -118,6 +126,16 @@
     if (typeof val !== 'number' || !isFinite(val)) return false;
     if (Math.abs(_bandStyle[key] - val) < 1e-4) return false;
     _bandStyle[key] = val;
+    _persistBandStyle();
+    scheduleRefresh();
+    return true;
+  }
+  // Phase 22-M (2026-05-24) — boolean variant (denseTicks etc.).
+  function setBandStyleBoolean(key, val) {
+    if (!(key in BAND_STYLE_DEFAULTS)) return false;
+    const bool = !!val;
+    if (_bandStyle[key] === bool) return false;
+    _bandStyle[key] = bool;
     _persistBandStyle();
     scheduleRefresh();
     return true;
@@ -303,10 +321,10 @@
     if (densityEl && typeof densityEl._cleanup === 'function') {
       try { densityEl._cleanup(); } catch (_) {}
     }
-    // Phase 22-L (2026-05-24) — restore the wheel's hull-polys
-    // opacity ownership on unmount.
-    const hullPolysEl = document.getElementById('forge-hull-polys');
-    if (hullPolysEl) hullPolysEl.style.opacity = '';
+    // Phase 22-L → 22-M (2026-05-24) — restore the wheel's
+    // hull-overlay opacity ownership on unmount.
+    const hullOverlayEl = document.querySelector('.forge-hulls-overlay');
+    if (hullOverlayEl) hullOverlayEl.style.opacity = '';
     if (svgRoot && svgRoot.parentNode) svgRoot.parentNode.removeChild(svgRoot);
     if (pickerEl && pickerEl.parentNode) pickerEl.parentNode.removeChild(pickerEl);
     if (densityEl && densityEl.parentNode) densityEl.parentNode.removeChild(densityEl);
@@ -862,15 +880,14 @@
     } catch (_) {}
     bandGroupEl.style.opacity      = String(zoomFade);
     bandLabelGroupEl.style.opacity = String(zoomFade);
-    // Phase 22-L (2026-05-24) — also fade the wheel's hull SVG
-    // in lockstep when timeline is active. John: the hulls in
-    // timeline should disappear at the same speed as the bands.
-    // The hull element belongs to forge's SVG overlay (#forge-
-    // hull-polys); we override its opacity from here while
-    // chrome is mounted, and restore it on unmount so the wheel
-    // resumes ownership of its own fade curve.
-    const hullPolysEl = document.getElementById('forge-hull-polys');
-    if (hullPolysEl) hullPolysEl.style.opacity = String(zoomFade);
+    // Phase 22-L → 22-M (2026-05-24) — fade the wheel's HULL
+    // OVERLAY parent in lockstep with bands. The wheel's
+    // syncHulls() owns the .forge-hulls-overlay opacity in wheel
+    // mode (50→25% curve); forge.js now early-skips that write
+    // when local.layoutId === 'timeline' so this override sticks
+    // every frame.
+    const hullOverlayEl = document.querySelector('.forge-hulls-overlay');
+    if (hullOverlayEl) hullOverlayEl.style.opacity = String(zoomFade);
 
     // Per-band fade gradient — used by both fill + stroke so the
     // L/R taper is matched on both. Edges 0% opacity, middle 100%.
@@ -992,7 +1009,13 @@
     const visHiYear = window.AtlasEngineLayout.timelineWorldXToYear(
       camera.screenToWorld(vp.w, axisY, vp).x, xRange);
     const visSpan = Math.max(1, visHiYear - visLoYear);
-    const tickStep = pickTickStep(visSpan);
+    // Phase 22-M (2026-05-24) — dense-ticks toggle. When ON,
+    // pick one step finer than the auto cadence by halving
+    // (clamped to step >= 1). User control via VIEW > Layers.
+    let tickStep = pickTickStep(visSpan);
+    if (_bandStyle.denseTicks) {
+      tickStep = Math.max(1, Math.floor(tickStep / 2));
+    }
 
     // Compute the first tick at or AFTER visLoYear, snapped to a
     // multiple of tickStep.
@@ -1085,33 +1108,38 @@
       const wx0 = yToX(0, xRange);
       const sp0 = camera.worldToScreen(wx0, 0, vp);
       if (sp0.x >= -120 && sp0.x <= vp.w + 120) {
+        // Phase 22-M (2026-05-24) — STYLE-tunable pivot mark.
+        const y0op = _bandStyle.yr0Opacity;
+        const y0sz = _bandStyle.yr0Size;
+        const y0wd = _bandStyle.yr0Width;
         // Pivot grid stripe — brighter + wider than peer ticks.
         const grid0 = document.createElementNS(NS, 'line');
         grid0.setAttribute('x1', sp0.x); grid0.setAttribute('x2', sp0.x);
         grid0.setAttribute('y1', 0);     grid0.setAttribute('y2', vp.h);
-        grid0.setAttribute('stroke', 'rgba(212, 165, 90, 0.34)');
-        grid0.setAttribute('stroke-width', '1.5');
+        grid0.setAttribute('stroke', 'rgba(212, 165, 90, ' + (0.34 * y0op).toFixed(3) + ')');
+        grid0.setAttribute('stroke-width', String(Math.max(1, y0wd * 0.83)));
         gridGroupEl.appendChild(grid0);
 
-        // Tick mark — taller than emphasized peers.
+        // Tick mark.
+        const tickHalf = y0sz;
         const tick0 = document.createElementNS(NS, 'line');
         tick0.setAttribute('x1', sp0.x);
-        tick0.setAttribute('y1', axisY - 12);
+        tick0.setAttribute('y1', axisY - tickHalf);
         tick0.setAttribute('x2', sp0.x);
-        tick0.setAttribute('y2', axisY + 12);
-        tick0.setAttribute('stroke', 'rgba(245, 220, 160, 1.0)');
-        tick0.setAttribute('stroke-width', '1.8');
+        tick0.setAttribute('y2', axisY + tickHalf);
+        tick0.setAttribute('stroke', 'rgba(245, 220, 160, ' + y0op.toFixed(3) + ')');
+        tick0.setAttribute('stroke-width', String(y0wd));
         tickGroupEl.appendChild(tick0);
 
         // Label — heavier weight + slightly larger, bright gold.
         const lbl0 = document.createElementNS(NS, 'text');
         lbl0.setAttribute('x', sp0.x);
-        lbl0.setAttribute('y', axisY - 18);
+        lbl0.setAttribute('y', axisY - (tickHalf + 6));
         lbl0.setAttribute('text-anchor', 'middle');
         lbl0.setAttribute('class', 'forge-timeline-year-label forge-timeline-year-zero');
-        lbl0.style.fill          = 'rgba(245, 220, 160, 1.0)';
+        lbl0.style.fill          = 'rgba(245, 220, 160, ' + y0op.toFixed(3) + ')';
         lbl0.style.fontFamily    = 'var(--mono, "JetBrains Mono", Menlo, monospace)';
-        lbl0.style.fontSize      = '12px';
+        lbl0.style.fontSize      = (y0sz + 0) + 'px';
         lbl0.style.fontWeight    = '600';
         lbl0.style.letterSpacing = '0.14em';
         lbl0.style.textTransform = 'uppercase';
@@ -1128,7 +1156,9 @@
     refresh: scheduleRefresh,
     isMounted: () => mounted,
     // Phase 22-I (2026-05-24) — band style API for STYLE panel.
+    // Phase 22-M (2026-05-24) — boolean setter added.
     setBandStyle: setBandStyleKey,
+    setBandStyleBoolean: setBandStyleBoolean,
     getBandStyle: getBandStyle,
     resetBandStyle: resetBandStyle,
     bandStyleDefaults: function () { return Object.assign({}, BAND_STYLE_DEFAULTS); },

@@ -1095,6 +1095,9 @@
           // Phase 22-I — timeline-only Layers (band rectangles + labels).
           '<button class="forge-viewset-row fv-timeline-only" data-toggle="tlBands"><span class="vs-check"></span>Show family bands</button>' +
           '<button class="forge-viewset-row fv-timeline-only" data-toggle="tlBandLabels"><span class="vs-check"></span>Show family band labels</button>' +
+          // Phase 22-M (2026-05-24) — denser tick cadence (more
+          // dates onscreen as you zoom in). Off = auto cadence.
+          '<button class="forge-viewset-row fv-timeline-only" data-toggle="tlDenseTicks"><span class="vs-check"></span>Dense date ticks</button>' +
           '<div class="forge-viewset-divider"></div>' +
           '<div class="forge-viewset-section">Color theme</div>' +
           '<button class="forge-viewset-row" data-color="default"><span class="vs-radio"></span>Atlas <em>(curated)</em></button>' +
@@ -1241,6 +1244,11 @@
           '<div class="forge-fxpanel-section fv-timeline-only">Vertical year stripes</div>' +
           '<div class="forge-fxpanel-row fv-timeline-only"><label>opacity <span class="forge-fxpanel-val" data-val="tl-grid-opacity">0.10</span></label><input type="range" data-style="tl-grid-opacity" min="0" max="0.6" step="0.01" value="0.10"></div>' +
           '<div class="forge-fxpanel-row fv-timeline-only"><label>width <span class="forge-fxpanel-val" data-val="tl-grid-width">1.0px</span></label><input type="range" data-style="tl-grid-width" min="0.5" max="3" step="0.1" value="1.0"></div>' +
+          // Phase 22-M (2026-05-24) — Year-0 pivot marker controls.
+          '<div class="forge-fxpanel-section fv-timeline-only">Year-0 pivot</div>' +
+          '<div class="forge-fxpanel-row fv-timeline-only"><label>opacity <span class="forge-fxpanel-val" data-val="tl-yr0-opacity">1.00</span></label><input type="range" data-style="tl-yr0-opacity" min="0" max="1" step="0.01" value="1.00"></div>' +
+          '<div class="forge-fxpanel-row fv-timeline-only"><label>tick size <span class="forge-fxpanel-val" data-val="tl-yr0-size">12px</span></label><input type="range" data-style="tl-yr0-size" min="4" max="32" step="1" value="12"></div>' +
+          '<div class="forge-fxpanel-row fv-timeline-only"><label>line width <span class="forge-fxpanel-val" data-val="tl-yr0-width">1.8px</span></label><input type="range" data-style="tl-yr0-width" min="0.5" max="4" step="0.1" value="1.8"></div>' +
           '<button class="forge-fxpanel-reset" id="forge-stylepanel-reset">RESET TO DEFAULTS</button>' +
         '</div>' +
       '</div>',
@@ -1508,10 +1516,22 @@
         // own choice; wheel mode leaves it undefined → defaults to
         // (0, 0) preserving the Phase 21K behavior.
         const dlc = (local.mode && local.mode.deadLockCenter) || { x: 0, y: 0 };
-        const x0 = dlc.x + ((ext.x0 - maxMrg) - dlc.x) * t;
-        const y0 = dlc.y + ((ext.y0 - maxMrg) - dlc.y) * t;
-        const x1 = dlc.x + ((ext.x1 + maxMrg) - dlc.x) * t;
-        const y1 = dlc.y + ((ext.y1 + maxMrg) - dlc.y) * t;
+        // Phase 22-M (2026-05-24) — gentler pan-bound curve for
+        // TIMELINE. The wheel's linear t-interpolation collapses
+        // bounds aggressively at low zoom (gizmo 24% → t=0.16 →
+        // bounds at 16% of extent), which clips tall band stacks
+        // (esp. with high band-density slider values). Timeline
+        // gets t^0.5 — reaches 50% bounds at gizmo 27%, 80% at
+        // gizmo 75% — giving freedom to pan once you're off the
+        // zoom floor. Wheel keeps linear (radial layouts are
+        // already self-fitting at any zoom).
+        const tCurve = (local.layoutId === 'timeline')
+          ? Math.sqrt(t)
+          : t;
+        const x0 = dlc.x + ((ext.x0 - maxMrg) - dlc.x) * tCurve;
+        const y0 = dlc.y + ((ext.y0 - maxMrg) - dlc.y) * tCurve;
+        const x1 = dlc.x + ((ext.x1 + maxMrg) - dlc.x) * tCurve;
+        const y1 = dlc.y + ((ext.y1 + maxMrg) - dlc.y) * tCurve;
         camera.setPanBounds(x0, y0, x1, y1);
       }
     }
@@ -3640,8 +3660,19 @@
       if      (camScale <= 2.0) deepZoomFade = 1;
       else if (camScale >= 3.0) deepZoomFade = 0;
       else                      deepZoomFade = (3.0 - camScale);
-      const fade = Math.min(lowZoomFade, deepZoomFade);
-      hullsOverlay.style.opacity = fade.toFixed(3);
+      let fade = Math.min(lowZoomFade, deepZoomFade);
+      // Phase 22-M (2026-05-24) — timeline owns hull fade (15→11
+      // gizmo ramp, matching bands). The wheel's 50→25 curve would
+      // overwrite the timeline-chrome opacity write every frame
+      // otherwise. Skip the assignment + the early-return when the
+      // timeline layout is active.
+      if (local.layoutId === 'timeline') {
+        // Don't write opacity — chrome owns it. But still keep
+        // building the geometry so toggles + camera changes apply.
+        fade = 1.0;
+      } else {
+        hullsOverlay.style.opacity = fade.toFixed(3);
+      }
       if (fade <= 0.001) return;
 
       // Outer-ring radius in WORLD units + screen units.
@@ -5116,6 +5147,8 @@
           reverseAge: false,
           // Phase 22-I (2026-05-24) — timeline layer toggles.
           tlBands: true, tlBandLabels: true,
+          // Phase 22-M (2026-05-24) — dense-ticks toggle.
+          tlDenseTicks: false,
         };
       })();
       // Defensive defaults — additive.
@@ -5127,6 +5160,7 @@
       if (typeof state.reverseAge         !== 'boolean') state.reverseAge         = false;
       if (typeof state.tlBands            !== 'boolean') state.tlBands            = true;
       if (typeof state.tlBandLabels       !== 'boolean') state.tlBandLabels       = true;
+      if (typeof state.tlDenseTicks       !== 'boolean') state.tlDenseTicks       = false;
       function applyState() {
         document.body.classList.toggle('fv-hide-hulls',         !state.hulls);
         document.body.classList.toggle('fv-hide-family-titles', !state.familyTitles);
@@ -5140,6 +5174,23 @@
         // .forge-timeline-band-labels under these classes.
         document.body.classList.toggle('fv-hide-tl-bands',       !state.tlBands);
         document.body.classList.toggle('fv-hide-tl-band-labels', !state.tlBandLabels);
+        // Phase 22-M (2026-05-24) — dense-ticks toggle dispatched
+        // to chrome via setBandStyle (it's a boolean key but the
+        // setter coerces via in-key check; we set it directly).
+        if (window.AtlasTimelineChrome
+            && typeof window.AtlasTimelineChrome.setBandStyle === 'function') {
+          try {
+            // setBandStyle accepts only numeric values. For the
+            // boolean denseTicks, use getBandStyle/mutate/refresh
+            // via the resetBandStyle pattern — quickest: write
+            // directly through a thin helper exposed below.
+            const tlcs = window.AtlasTimelineChrome.getBandStyle();
+            if (tlcs && tlcs.denseTicks !== state.tlDenseTicks) {
+              window.AtlasTimelineChrome.setBandStyleBoolean &&
+                window.AtlasTimelineChrome.setBandStyleBoolean('denseTicks', !!state.tlDenseTicks);
+            }
+          } catch (_) {}
+        }
         // Phase 21AS (2026-05-23) — source-tier filter. Update body
         // classes for CSS hooks AND build the active-tier set the
         // renderer will read in recomputeFocus. The wire-filter
@@ -5577,23 +5628,23 @@
         const n = parseFloat(raw);
         if (key === 'ring-width' || key === 'sep-width') return n.toFixed(1) + 'px';
         if (key === 'tl-band-stroke-w' || key === 'tl-label-size'
-            || key === 'tl-axis-width' || key === 'tl-grid-width') return n.toFixed(1) + 'px';
+            || key === 'tl-axis-width' || key === 'tl-grid-width'
+            || key === 'tl-yr0-size' || key === 'tl-yr0-width') return n.toFixed(1) + 'px';
         if (/opacity$/.test(key))                        return n.toFixed(2);
-        if (/^tl-(band-fill|band-stroke|label-opacity|axis-opacity|grid-opacity)$/.test(key)) return n.toFixed(2);
+        if (/^tl-(band-fill|band-stroke|label-opacity|axis-opacity|grid-opacity|yr0-opacity)$/.test(key)) return n.toFixed(2);
         // Color pickers: raw value is already a #rrggbb string.
         return raw;
       }
       function formatForDisplay(key, raw) {
         const n = parseFloat(raw);
         if (key === 'ring-width' || key === 'sep-width') return n.toFixed(1) + 'px';
-        if (key === 'tl-band-stroke-w' || key === 'tl-axis-width' || key === 'tl-grid-width') return n.toFixed(1) + 'px';
-        if (key === 'tl-label-size')                     return Math.round(n) + 'px';
+        if (key === 'tl-band-stroke-w' || key === 'tl-axis-width' || key === 'tl-grid-width' || key === 'tl-yr0-width') return n.toFixed(1) + 'px';
+        if (key === 'tl-label-size' || key === 'tl-yr0-size') return Math.round(n) + 'px';
         if (/opacity$/.test(key))                        return n.toFixed(2);
-        if (/^tl-(band-fill|band-stroke|label-opacity|axis-opacity|grid-opacity)$/.test(key)) return n.toFixed(2);
+        if (/^tl-(band-fill|band-stroke|label-opacity|axis-opacity|grid-opacity|yr0-opacity)$/.test(key)) return n.toFixed(2);
         return raw;
       }
-      // Phase 22-I (2026-05-24) — timeline keys map to chrome state.
-      // Phase 22-K — axis + grid keys added.
+      // Phase 22-I → 22-M (2026-05-24) — timeline keys map to chrome state.
       const TL_BAND_KEY_MAP = {
         'tl-band-fill':     'fillAlpha',
         'tl-band-stroke':   'strokeAlpha',
@@ -5604,6 +5655,9 @@
         'tl-axis-width':    'axisWidth',
         'tl-grid-opacity':  'gridOpacity',
         'tl-grid-width':    'gridWidth',
+        'tl-yr0-opacity':   'yr0Opacity',
+        'tl-yr0-size':      'yr0Size',
+        'tl-yr0-width':     'yr0Width',
       };
       function applyOne(key, val) {
         document.body.style.setProperty('--style-' + key, formatForCss(key, val));

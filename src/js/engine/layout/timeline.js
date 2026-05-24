@@ -211,6 +211,30 @@
         return ctx.midYear + worldX / X_SCALE;
       },
     },
+    'log-recent': {
+      id:    'log-recent',
+      label: 'Log · recent-emphasis',
+      tagline: 'Time-since-today on a log scale; modern era dominates',
+      // Pure log compression toward the right (today). years_ago
+      // is the distance from xHi (today); log(years_ago + 1)
+      // gives a smoothly-tightening compression of the past.
+      // Inverted so recent = right, ancient = left.
+      yearToWorldX: function (year, ctx) {
+        const xLo = ctx.xRange.lo, xHi = ctx.xRange.hi;
+        const y = Math.max(xLo, Math.min(xHi, year));
+        const span = xHi - xLo;
+        const logMax = Math.log(span + 1);
+        const t = 1 - Math.log((xHi - y) + 1) / logMax;   // 0..1
+        return (t - 0.5) * ctx.xSpanWorld;
+      },
+      worldXToYear: function (worldX, ctx) {
+        const t = worldX / ctx.xSpanWorld + 0.5;
+        const span = ctx.xRange.hi - ctx.xRange.lo;
+        const logMax = Math.log(span + 1);
+        const yearsAgo = Math.exp((1 - t) * logMax) - 1;
+        return ctx.xRange.hi - yearsAgo;
+      },
+    },
     'compressed-civilization': {
       id:    'compressed-civilization',
       label: 'Compressed · era-weighted',
