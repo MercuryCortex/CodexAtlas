@@ -866,6 +866,21 @@ body:not(.fv-layout-timeline) .fv-timeline-only {
    targets the SVG groups owned by timeline-chrome.js. */
 body.fv-hide-tl-bands       .forge-timeline-bands       { display: none !important; }
 body.fv-hide-tl-band-labels .forge-timeline-band-labels { display: none !important; }
+
+/* Phase 22-J (2026-05-24) — Force-hide WHEEL SVG overlays in
+   timeline mode. These elements (hulls, rim labels, guide rings,
+   converging separator) are positioned for the radial wheel
+   layout — in timeline they project to garbage coords + bleed
+   visible artifacts that the VIEW toggles can't reach (the
+   toggle rows themselves are hidden via .fv-wheel-only).
+   Force-hide regardless of toggle state. When band-hulls feature
+   ships, drop the #forge-hull-polys rule. */
+body.fv-layout-timeline #forge-hull-polys,
+body.fv-layout-timeline #forge-hull-labels,
+body.fv-layout-timeline #forge-hull-dividers,
+body.fv-layout-timeline #forge-hull-guide-rings {
+  display: none !important;
+}
 .app-pill-label {
   flex: 1 1 auto;
   white-space: nowrap;

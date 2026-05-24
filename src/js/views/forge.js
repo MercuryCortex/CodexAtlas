@@ -4685,7 +4685,12 @@
     // user doesn't lose their selection when toggling a theme.
     function applyUxMode() {
       if (!local.mode || !local.mode.id) return;
-      rebuildForMode(local.mode.id, { preserveLocks: true });
+      // Phase 22-J (2026-05-24) — preserveZoom: color theme or
+      // family order doesn't change the dataset, only the coloring/
+      // sort. Without preserveZoom the camera would snap to the
+      // 20% timeline default on every theme click, undoing the
+      // user's zoom + the band-density slider's visual reality.
+      rebuildForMode(local.mode.id, { preserveLocks: true, preserveZoom: true });
       // Hover-boost palette could have stale alphas (the boost path
       // tracks _hoverBoostActive); refresh it now to be safe.
       try {
@@ -5142,7 +5147,10 @@
         const ageDirChanged = document.body.classList.contains('fv-reverse-age') !== !!state.reverseAge;
         document.body.classList.toggle('fv-reverse-age',         !!state.reverseAge);
         if (ageDirChanged && typeof rebuildForMode === 'function') {
-          try { rebuildForMode(local.mode.id, { preserveLocks: true }); } catch (_) {}
+          // Phase 22-J — preserveZoom for the reverse-age toggle
+          // (wheel-only but harmless to pass; same rationale as
+          // applyUxMode above — geometry shifts, dataset doesn't).
+          try { rebuildForMode(local.mode.id, { preserveLocks: true, preserveZoom: true }); } catch (_) {}
         }
         // Push the divider mode into the layout layer.
         const newMode = state.dividersConverging ? 'long-centered'
