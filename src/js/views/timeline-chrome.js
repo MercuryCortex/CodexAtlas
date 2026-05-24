@@ -409,10 +409,14 @@
     // segment gets a gold tint + bold weight.
     presetSegEl = document.createElement('div');
     presetSegEl.className = 'forge-timeline-toolbar-seg';
+    // Phase 22-AB-fix2 (2026-05-24) — NO explicit height. Size
+    // emerges from font + padding + border like .forge-fxpanel-btn
+    // so this row lines up flush with LEGEND / VIEW / etc. Earlier
+    // `height:23px` made the outer height 25px (border-added) which
+    // John's screenshot showed as 2-3px too tall.
     Object.assign(presetSegEl.style, {
       display:       'inline-flex',
       alignItems:    'stretch',
-      height:        '23px',
       background:    'rgba(13,17,25,0.78)',
       border:        '1px solid rgba(212,165,90,0.22)',
       borderRadius:  '6px',
@@ -449,7 +453,12 @@
         b.setAttribute('data-preset', seg.id);
         const isActive = (seg.id === activeId);
         Object.assign(b.style, {
-          padding:       '0 10px',
+          // Phase 22-AB-fix2 — vertical padding 5px matches
+          // .forge-fxpanel-btn so each segment renders at the
+          // same content-height (~13px line) as the canonical
+          // bottom-bar buttons. Total row height ~22-23px outer.
+          padding:       '5px 10px',
+          lineHeight:    '1',
           background:    isActive ? 'rgba(212, 165, 90, 0.18)' : 'transparent',
           color:         isActive ? 'var(--gold-1, #e8c889)' : 'var(--text-2, #9099a8)',
           border:        'none',
@@ -493,9 +502,11 @@
       densityBtn.setAttribute('aria-haspopup', 'true');
       densityBtn.setAttribute('aria-expanded', 'false');
       densityBtn.title = 'Band density — click for slider, double-click to reset';
+      // Phase 22-AB-fix2 — no explicit height; padding-driven sizing
+      // matches .forge-fxpanel-btn (LEGEND / VIEW / FX / STYLE / #).
       Object.assign(densityBtn.style, {
-        height:        '23px',
-        padding:       '0 10px',
+        padding:       '5px 10px',
+        lineHeight:    '1',
         background:    'rgba(13,17,25,0.78)',
         border:        '1px solid rgba(212,165,90,0.22)',
         borderRadius:  '6px',
