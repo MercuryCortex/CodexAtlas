@@ -3944,14 +3944,20 @@
       const worldWidthPx = BG_WORLD_WIDTH * camera.state.scale;
       const coverWidthPx = Math.max(vp.w, vp.h * imgAspect);
       let   widthPx      = Math.max(worldWidthPx, coverWidthPx);
-      // Phase 22-R (2026-05-24) — TIMELINE-ONLY BG boost. The
-      // wheel's BG sizing is correct; do NOT touch it. In
-      // timeline mode the camera.scale at floor produces a BG
-      // that barely covers viewport (no halo). Multiply only the
-      // timeline branch by 1.6 — matches the headroom the wheel
-      // naturally has from its world-scaled term.
+      // Phase 22-R → 22-S (2026-05-24) — TIMELINE-ONLY BG CLAMP.
+      // John: "BG IS BIG, on timeline it's cropped substantially
+      // more than on the chart." Diagnosis: at gizmo 10% in
+      // timeline, worldWidthPx = 18000 × (0.10 × tlFit ≈ 0.098)
+      // ≈ 1764 px, which EXCEEDS the cover floor (1440 = vp.w).
+      // The wheel at the same gizmo has worldWidthPx ≈ 990 (since
+      // wheelFit ≈ 0.55), so cover wins → BG = vp.w = the whole
+      // image fits the viewport. Timeline's BG ends up bigger →
+      // user sees only the cropped center.
+      // Fix: in timeline ONLY, clamp BG to cover-floor (never let
+      // the world-scaled term win). Same visual size + crop as
+      // wheel-at-floor. Wheel branch unchanged.
       if (local.layoutId === 'timeline') {
-        widthPx *= 1.6;
+        widthPx = coverWidthPx;
       }
       const heightPx     = widthPx / imgAspect;
       // World (0, 0) → canvas-screen → viewport-screen.
