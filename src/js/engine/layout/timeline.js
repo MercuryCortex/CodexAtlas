@@ -41,7 +41,17 @@
   // World-space convention: 1 year = X_SCALE world units. A 5000-
   // year span at 0.5 wu/yr = 2500 wu wide. Matches the audit's §1.2.
   const X_SCALE       = 0.5;
-  const PAD           = 60;          // world-edge padding (top/bottom/sides)
+  const PAD           = 60;          // world-edge padding (top/bottom)
+  // Phase TL-2 Step 3 (2026-05-24) — 10% horizontal reserve on both
+  // sides of the data range so the leftmost (9000 BCE) and rightmost
+  // (2026 CE) ticks DON'T kiss the screen edges. The user's spec
+  // (2026-05-24) — "keep like 10% on left and right open, so becomes
+  // organic and allows the user to center dates when they close to
+  // the limits". Implemented by widening worldExtent.x0/x1 by
+  // X_PAD_FRAC × span. When camera.fitToExtent fits this widened
+  // extent, the actual data sits centered with the reserve visible
+  // as empty space on either side.
+  const X_PAD_FRAC    = 0.10;
   const TIME_AXIS_PAD = 40;          // extra top space for the time-axis ribbon
   const UNDATED_PAD   = 28;          // gap above + below the parking lane
   const UNDATED_BAND_H = 60;         // parking lane height
@@ -252,11 +262,13 @@
       worldBottom = laneY1 + UNDATED_PAD;
     }
 
-    // 7. World extent (anisotropic — see §3.2). Inclusive of side pad.
+    // 7. World extent (anisotropic — see §3.2). 10% reserve on each
+    // X side so the date-axis endpoints don't kiss the viewport edges.
+    const xPadWorld = xSpanWorld * X_PAD_FRAC;
     const worldExtent = {
-      x0: -PAD,
+      x0: -xPadWorld,
       y0: 0,
-      x1: xSpanWorld + PAD,
+      x1: xSpanWorld + xPadWorld,
       y1: worldBottom + PAD
     };
 
@@ -270,13 +282,27 @@
     };
   }
 
+  // ── HELPER: world-X ↔ year conversion ────────────────────
+  // Exposed so the chrome layer (timeline-chrome.js) can render tick
+  // marks at year coordinates without duplicating the math. Inputs:
+  //   xRange.lo, xRange.hi from the layout result
+  //   X_SCALE constant (same one the layout uses)
+  function yearToWorldX(year, xRange) {
+    return (year - xRange.lo) * X_SCALE;
+  }
+  function worldXToYear(worldX, xRange) {
+    return xRange.lo + worldX / X_SCALE;
+  }
+
   // ── EXPORT ───────────────────────────────────────────────
   window.AtlasEngineLayout = window.AtlasEngineLayout || {};
   window.AtlasEngineLayout.timelineLayout = timelineLayout;
+  window.AtlasEngineLayout.timelineYearToWorldX = yearToWorldX;
+  window.AtlasEngineLayout.timelineWorldXToYear = worldXToYear;
   // Also export the constants so the view layer can use them when
   // rendering the time-axis ribbon + undated lane chrome.
   window.AtlasEngineLayout.timelineConstants = Object.freeze({
-    X_SCALE, PAD, TIME_AXIS_PAD,
+    X_SCALE, PAD, X_PAD_FRAC, TIME_AXIS_PAD,
     MIN_BAND_H, MAX_BAND_H, BAND_H_BASE,
     ROW_PAD, ROW_STEP, MIN_X_SPACING,
     UNDATED_PAD, UNDATED_BAND_H,

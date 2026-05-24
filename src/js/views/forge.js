@@ -1615,6 +1615,14 @@
         cancelHoverCoalesce();
         cancelIdleLabelRaf();
         cancelScrubCoalesce();
+        // Phase TL-2 Step 3 (2026-05-24) — unmount the timeline
+        // chrome (SVG axis + ticks) if active. Safe to call even
+        // when in wheel mode (chrome.unmount is a no-op then).
+        try {
+          if (window.AtlasTimelineChrome && window.AtlasTimelineChrome.isMounted()) {
+            window.AtlasTimelineChrome.unmount();
+          }
+        } catch (e) { /* ignore */ }
         if (local.resizeObs) {
           try { local.resizeObs.disconnect(); } catch (e) { /* ignore */ }
           local.resizeObs = null;
@@ -2407,7 +2415,34 @@
         hitById:     hitByIdNew,
         hitGrid:     hitGridNew,
         worldExtent: ext,
+        // Phase TL-2 Step 3 (2026-05-24) — timeline-layout-specific
+        // metadata that the chrome layer reads. Empty/null in wheel
+        // mode; populated by timelineLayout's return shape.
+        xRange:      lay.xRange   || null,
+        yRange:      lay.yRange   || null,
+        bands:       lay.bands    || null,
+        undated:     lay.undated  || null,
       };
+      // Phase TL-2 Step 3 (2026-05-24) — mount/unmount the timeline
+      // chrome (axis line + tick metrics) based on the active layout.
+      // The chrome owns its own SVG overlay and camera-change refresh
+      // loop; we just bridge mount/unmount on rebuildForMode boundaries.
+      try {
+        const chrome = window.AtlasTimelineChrome;
+        if (chrome) {
+          if (local.layoutId === 'timeline' && lay.xRange) {
+            const stageEl = (rootEl && rootEl.querySelector) ? rootEl.querySelector('.forge-stage') : null;
+            chrome.mount({
+              hostEl: stageEl || rootEl,
+              camera: camera,
+              mode:   local.mode,
+              xRange: lay.xRange,
+            });
+          } else {
+            chrome.unmount();
+          }
+        }
+      } catch (e) { console.warn('[forge] timeline chrome mount failed', e); }
       // Phase 21O (2026-05-21) — keep the FORGE | <label> button
       // face + the open-menu active-row marker in sync with the
       // current mode. Safe no-op if the button isn't mounted yet.
