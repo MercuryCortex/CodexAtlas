@@ -1455,18 +1455,23 @@
         const span    = Math.max(ext.x1 - ext.x0, ext.y1 - ext.y0);
         const maxMrg  = span * 0.5;
         const t       = Math.max(0, Math.min(1, (camera.state.scale - floor) / Math.max(1e-6, fit - floor)));
-        // Phase 21K (2026-05-21) — INTERPOLATE THE BOUNDS, not
-        // just the margin. The previous formula collapsed only
-        // the extra margin at t = 0, leaving bounds at the full
-        // world extent (~±564 wu) — plenty of room to drag the
-        // wheel around at the floor. Now the bounds COLLAPSE TO
-        // A SINGLE POINT (0, 0, 0, 0) at t = 0 (floor), so the
-        // camera centre is dead-locked there, and expand linearly
-        // out to (ext ± margin) at t = 1 (fit zoom).
-        const x0 = (ext.x0 - maxMrg) * t;
-        const y0 = (ext.y0 - maxMrg) * t;
-        const x1 = (ext.x1 + maxMrg) * t;
-        const y1 = (ext.y1 + maxMrg) * t;
+        // Phase 21K (2026-05-21) + Phase TL-2 Step 4b (2026-05-24)
+        // INTERPOLATE THE BOUNDS toward a dead-lock CENTER point at
+        // t = 0 (zoom floor). For the wheel, that center is (0, 0)
+        // — the wheel's own origin. For an off-origin layout like
+        // the timeline (data midpoint at world-X ≈ +2750 wu), the
+        // dead-lock center MUST be the layout's natural center; if
+        // we collapse toward (0, 0), the camera gets clamped LEFT
+        // of the data and the timeline visually shifts RIGHT off-
+        // center at zoom-out — exactly the bug John screen-shotted.
+        // local.mode.deadLockCenter (optional) carries the layout's
+        // own choice; wheel mode leaves it undefined → defaults to
+        // (0, 0) preserving the Phase 21K behavior.
+        const dlc = (local.mode && local.mode.deadLockCenter) || { x: 0, y: 0 };
+        const x0 = dlc.x + ((ext.x0 - maxMrg) - dlc.x) * t;
+        const y0 = dlc.y + ((ext.y0 - maxMrg) - dlc.y) * t;
+        const x1 = dlc.x + ((ext.x1 + maxMrg) - dlc.x) * t;
+        const y1 = dlc.y + ((ext.y1 + maxMrg) - dlc.y) * t;
         camera.setPanBounds(x0, y0, x1, y1);
       }
     }
@@ -2345,7 +2350,7 @@
             local.lastSize.w, lay.xRange);
           const tlCtr = window.AtlasEngineLayout.computeTimelineCenter(
             lay.xRange, ext);
-          camera.set({ scale: tlFit, centerX: tlCtr.cx, centerY: tlCtr.cy });
+          camera.set({ scale: tlFit, centerX: tlCtr.x, centerY: tlCtr.y });
         }
         // Phase 5B M-F1 (2026-05-20) — synchronously record the
         // new pack-scale BEFORE the listener-emit from fitToExtent
@@ -2439,6 +2444,14 @@
         yRange:      lay.yRange   || null,
         bands:       lay.bands    || null,
         undated:     lay.undated  || null,
+        // Phase TL-2 Step 4b (2026-05-24) — dead-lock center for
+        // applyZoomFloor's pan-bound interpolation. Wheel leaves
+        // undefined → defaults to (0, 0). Timeline writes its
+        // natural center so zoom-out doesn't shift the line off-
+        // center to the right.
+        deadLockCenter: (local.layoutId === 'timeline' && lay.xRange && window.AtlasEngineLayout && window.AtlasEngineLayout.computeTimelineCenter)
+          ? window.AtlasEngineLayout.computeTimelineCenter(lay.xRange, ext)
+          : null,
       };
       // Phase TL-2 Step 3 (2026-05-24) — mount/unmount the timeline
       // chrome (axis line + tick metrics) based on the active layout.

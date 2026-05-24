@@ -78,11 +78,17 @@
   const ROW_STEP      = 10;          // vertical gap between row centers
   const MIN_X_SPACING = 14;          // 2 * NODE_RADIUS + pad — minimum X gap before a row "frees"
 
-  // Sanity clamps for the date range. The scrubber clamps to
-  // TIMELINE_FLOOR_BCE (= -9000) in forge.js; the upper bound is
-  // 2025 (HIST_HI matching scrubber's cosmetic ceiling).
+  // Sanity clamps for the date range. The SPINE always spans
+  // [TIMELINE_FLOOR_BCE, currentYear] — independent of what dates
+  // actually exist in the data. Per John's spec (2026-05-24): the
+  // line ALWAYS ends at 9000 BCE on the left and at today's year
+  // on the right, regardless of dataset. Dots populate within that
+  // spine based on their actual date_earliest.
   const TIMELINE_FLOOR_BCE = -9000;
-  const HIST_HI            = 2025;
+  function currentYear() { return new Date().getFullYear(); }
+  // HIST_HI is read at call time, not at module-init, so a build
+  // crossing the new year doesn't ship a stale upper bound.
+  function spineHi() { return currentYear(); }
 
   // ── HELPERS ──────────────────────────────────────────────
   function effectiveDate(n) {
@@ -161,16 +167,13 @@
       }
     }
 
-    // 3. X range from the dated set.
-    let xLoRaw = +Infinity, xHiRaw = -Infinity;
-    for (const n of allDated) {
-      const d = effectiveDate(n);
-      if (d < xLoRaw) xLoRaw = d;
-      if (d > xHiRaw) xHiRaw = d;
-    }
-    if (!isFinite(xLoRaw)) { xLoRaw = -1000; xHiRaw = 2000; }   // pure-undated dataset edge case
-    const xLo = Math.max(xLoRaw, TIMELINE_FLOOR_BCE);
-    const xHi = Math.min(xHiRaw, HIST_HI);
+    // 3. SPINE range — ALWAYS [TIMELINE_FLOOR_BCE, currentYear].
+    //    Per John's spec the timeline LINE endpoints are spine-fixed
+    //    (9000 BCE → today), independent of what dates exist in the
+    //    data. Dots populate within the spine; line + ticks + camera
+    //    fit + center all key off the spine, not the data range.
+    const xLo = TIMELINE_FLOOR_BCE;
+    const xHi = spineHi();
     const xSpanYears = Math.max(1, xHi - xLo);
     const xSpanWorld = xSpanYears * X_SCALE;
 
@@ -318,14 +321,20 @@
     return (FIT_OVERSCAN * viewportW) / dataWidthWorld;
   }
   function computeTimelineCenter(xRange, worldExtent) {
-    // Data range center in world coords (X) + worldExtent vertical
-    // midpoint (Y). The xPad on each side means xRange.lo maps to
-    // world-X 0 (with the layout placing date_lo at worldX=0). So
-    // data center is at dataWidthWorld / 2.
-    const dataWidthWorld = (xRange.hi - xRange.lo) * X_SCALE;
-    const cx = dataWidthWorld / 2;
-    const cy = ((worldExtent && worldExtent.y0) || 0) + (((worldExtent && worldExtent.y1) || 0) - ((worldExtent && worldExtent.y0) || 0)) / 2;
-    return { cx, cy };
+    // Spine range center in world coords (X) + worldExtent vertical
+    // midpoint (Y). Layout places year=xRange.lo at world-X 0, so
+    // the spine midpoint sits at spineWidthWorld / 2 (= half the
+    // line length). Per John's spec the LINE always endpoints at
+    // 9000 BCE → today, so this midpoint is the natural visual
+    // center the camera should rest at when zoomed out.
+    // Returns {x, y} — same shape applyZoomFloor's deadLockCenter
+    // contract expects (NOT the old {cx, cy} shape).
+    const spineWidthWorld = (xRange.hi - xRange.lo) * X_SCALE;
+    const x = spineWidthWorld / 2;
+    const y0 = (worldExtent && worldExtent.y0) || 0;
+    const y1 = (worldExtent && worldExtent.y1) || 0;
+    const y = y0 + (y1 - y0) / 2;
+    return { x, y };
   }
 
   // ── EXPORT ───────────────────────────────────────────────
@@ -342,6 +351,9 @@
     MIN_BAND_H, MAX_BAND_H, BAND_H_BASE,
     ROW_PAD, ROW_STEP, MIN_X_SPACING,
     UNDATED_PAD, UNDATED_BAND_H,
-    TIMELINE_FLOOR_BCE, HIST_HI
+    TIMELINE_FLOOR_BCE
+    // (HIST_HI removed — spine upper bound is now dynamic per
+    // currentYear(); use AtlasEngineLayout.timelineSpineHi() instead.)
   });
+  window.AtlasEngineLayout.timelineSpineHi = spineHi;
 })();
