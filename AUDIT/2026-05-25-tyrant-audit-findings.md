@@ -57,10 +57,10 @@
   - `ammit-devourer` — 3 refs
   - `tradition-afro-diasporic` — 3 refs
 - Bucket breakdown (STRUCTURE-GOBLIN):
-  - (a) Typos/malformed placeholders (`[[wikilink]]`, `[[wikilinks]]`, `[[document-slug]]`): **20 occurrences** — build-fixable
+  - (a) Typos/malformed placeholders (`[wikilink]`, `[wikilinks]`, `[document-slug]`): **20 occurrences** — build-fixable
   - (b) Genuinely missing nodes that should be stubbed: **732 occurrences across 574 targets**
   - (c) Decorative prose wikilinks needing backtick conversion: 0 identified
-- **The lie:** HOW-WE-WORK §5 cardinal rule #4: *"every `[[wikilink]]` must point to a real node before commit."* The pre-commit hook does not enforce this. Dead wikilinks ship at will.
+- **The lie:** HOW-WE-WORK §5 cardinal rule #4: *"every `[wikilink]` must point to a real node before commit."* The pre-commit hook does not enforce this. Dead wikilinks ship at will.
 
 #### 2. CODEX §IV source-tier mandate is unenforced (~0% compliance)
 

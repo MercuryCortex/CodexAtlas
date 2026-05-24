@@ -61,7 +61,7 @@ encoded-figures: []                   # [[deity-slug]] or [[theme-slug]] this ge
 encoded-cosmology: ""                 # one-line gloss: "the body of the Cosmic Purusha", "tawhid (divine
                                       # unity manifest in non-repeating tiling)", "the two natures of Christ
                                       # intersecting"
-attested-in: []                       # [[document-slug]] texts where the figure is described
+attested-in: []                       # [document-slug] texts where the figure is described
                                       # (Mayamatam, Manasara, Saundarya-Lahari, Topkapi Scroll, Vitruvius)
 instantiated-in: []                   # [[architecture-slug]] specific buildings that realize this figure
                                       # (Chartres rose window for Vesica Piscis; Khajuraho Kandariya for
@@ -72,7 +72,7 @@ constructed-by: []                    # [[person-slug]] historical figures who c
 encoded-color: []                     # [[color-slug]] canonical colors attached to this figure
                                       # (Sri Yantra → red; Tibetan Five-Buddha mandala → see five-color array)
                                       # Cross-references the canonical-colors table (sibling deliverable).
-equivalents: []                       # cross-tradition parallel figures — MUST be [[wikilinks]]
+equivalents: []                       # cross-tradition parallel figures — MUST be [wikilinks]
                                       # Vesica Piscis ↔ [[mandorla]] ↔ [[two-fish-yin-yang]]
 cross-geometry-edges:                 # structured form (preferred over equivalents for nuanced claims)
   - target: "[[other-figure-slug]]"

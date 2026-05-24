@@ -159,7 +159,7 @@ The law has FOUR sub-rules. All four must hold by commit time.
 
 **(a) No dead wikilinks.** Every ``wikilink`` you write must point to a real node when you commit. If the target doesn't exist, you create it — minimum a stub with the correct YAML skeleton — before you close. Run `python3 linkcheck.py`; zero new dead links is the close-bar.
 
-**(b) Targets must BE wikilinks.** When you write a `syncretic-edges:` entry, its `target:` field MUST be a `[[wikilink]]`, never a raw prose string. Same for `equivalents:` — every entry MUST be a `[[wikilink]]`. The graph can only traverse wikilinks. Scholarship nuance goes in the `notes:` field, not in the target.
+**(b) Targets must BE wikilinks.** When you write a `syncretic-edges:` entry, its `target:` field MUST be a `[wikilink]`, never a raw prose string. Same for `equivalents:` — every entry MUST be a `[wikilink]`. The graph can only traverse wikilinks. Scholarship nuance goes in the `notes:` field, not in the target.
 
 ```yaml
 # ❌ WRONG — the graph can't follow this
@@ -175,12 +175,12 @@ syncretic-edges:
     notes: "Wednesday/Wōdnesdæg = Mercurii dies; the weekday calque is the load-bearing evidence for the Roman→Germanic interpretatio identification"
 ```
 
-**(c) Body prose must be wired.** Every cross-tradition figure you name in body prose ("through Buddhist transmission she became Benzaiten in Japan", "the Roman interpretatio identified Odin with Mercury") MUST also appear as a structured `[[wikilink]]` entry in `equivalents:` or `syncretic-edges:`. Body prose is for human readers; the graph reads only the structured fields. Both must agree.
+**(c) Body prose must be wired.** Every cross-tradition figure you name in body prose ("through Buddhist transmission she became Benzaiten in Japan", "the Roman interpretatio identified Odin with Mercury") MUST also appear as a structured `[wikilink]` entry in `equivalents:` or `syncretic-edges:`. Body prose is for human readers; the graph reads only the structured fields. Both must agree.
 
 **(d) Reciprocity.** When you add A→B in A's file, add B→A in B's file (or in the case of an asymmetric relationship like `polemic-inversion`, document the asymmetry in the `notes:` of A's edge). Asymmetric back-links accumulate into the audit problem documented in `AUDIT/cross-tradition-deity-bridges-2026-05-23.md`.
 
 **Sweep order at batch close:**
-1. Body-prose sweep — re-read every cross-tradition figure named in your prose; ensure each has a `[[wikilink]]` entry in the right structured field.
+1. Body-prose sweep — re-read every cross-tradition figure named in your prose; ensure each has a `[wikilink]` entry in the right structured field.
 2. Stub sweep — `python3 linkcheck.py` then create stubs for every unresolved target.
 3. Reciprocity sweep — for every new A→B edge, open B's file and add B→A.
 4. Build — `python3 build_data.py`.
@@ -195,7 +195,7 @@ into ONTOLOGY first. Each type maps to a Wikidata property where applicable
 
 ```yaml
 syncretic-edges:
-  - target: "[[wikilink]]"            # REQUIRED — never raw prose
+  - target: "[wikilink]"            # REQUIRED — never raw prose
     type: "<one-of-21-types>"          # REQUIRED — per the table below
     source: "Author Year Work, page"   # REQUIRED — who is making the claim
     source-tier: "T1"|"T2"|"T3"|"T4"|"T5"  # REQUIRED — per CODEX §IV
@@ -216,7 +216,7 @@ machine cannot run without it):
 
 `equivalents:` is a flat-list convenience field carrying the strongest
 identifications (`same-as`, `cognate`, `composite-deity`). Entries are
-just `[[wikilinks]]`; the type-source-tier metadata lives in
+just `[wikilinks]`; the type-source-tier metadata lives in
 `syncretic-edges:` of the same node.
 
 ##### Methodological pluralism — read this FIRST
@@ -536,10 +536,10 @@ child-of: []
 consort: []
 attributes: []                      # iconographic — bull, double-axe, ankh, halo
 attested-in: []                     # links to 02_documents/
-equivalents: []                     # cross-tradition syncretic identifications — MUST be [[wikilinks]], never raw prose
+equivalents: []                     # cross-tradition syncretic identifications — MUST be [wikilinks], never raw prose
                                     # Example: ["[[jupiter]]", "[[dyaus-pita]]", "[[tyr]]"]
 syncretic-edges:                    # structured form — use when you need type/source/notes
-                                    # `target:` MUST be a [[wikilink]]; nuance goes in `notes:` (see PROTOCOL §3.1)
+                                    # `target:` MUST be a [wikilink]; nuance goes in `notes:` (see PROTOCOL §3.1)
   - target: "[[other-deity-slug]]"
     type: ""                        # same-as | cognate | interpretatio-romana/graeca/germanica | direct-borrowing |
                                     # ancient-identification | substrate-influence | scholarly-parallel |

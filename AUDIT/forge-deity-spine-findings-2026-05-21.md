@@ -235,7 +235,7 @@ Both files are 105 lines, both `status: "full"`, both cover the same Greek deity
 **Fixes applied:**
 
 - 5 status flips stub → metadata (catequil, centeotl, ceres-roman, cerridwen, chaac). `chaac.md` had `status: stub` (unquoted) instead of the more common `status: "stub"` — quote-styles vary file-to-file across the lens; both YAML-valid; the sed pattern in my flip-script missed unquoted form. Caught it on the spot-check.
-- `centeotl.md` — fixed dead `[[phase-6-002-florentine-codex]]` → `[[phase-8-004-florentine-codex-sahagun]]`. **Third instance of the phase-6 / phase-8 misnumbering** pattern in three batches (Chilam Balam x2 in batch 11, now Florentine Codex). Looks like a single authoring batch consistently put non-western primary texts into phase 6 (early modern) when they belong in phase 8.
+- `centeotl.md` — fixed dead `[phase-6-002-florentine-codex]` → `[[phase-8-004-florentine-codex-sahagun]]`. **Third instance of the phase-6 / phase-8 misnumbering** pattern in three batches (Chilam Balam x2 in batch 11, now Florentine Codex). Looks like a single authoring batch consistently put non-western primary texts into phase 6 (early modern) when they belong in phase 8.
 - `cernunnos.md` — unwrapped `[[methodology]]` (refers to `00_meta/methodology.md` — a meta doc, not a graph node; the dead link was a passing methodological aside).
 - `bunjil.md` referenced `[[waa-the-crow]]` which didn't exist. Created `03_deities/waa-the-crow.md` as a metadata-tier stub (Kulin moiety-ancestor binary Bunjil/Waa, fire-bringer tradition, Howitt 1904 citation). The Bunjil/Waa binary is structurally important for the Aboriginal-Australian section so the wikilink shouldn't be unwrapped.
 
@@ -252,7 +252,7 @@ Both files are 105 lines, both `status: "full"`, both cover the same Greek deity
 **Fixes applied:**
 
 - 1 status flip stub → metadata (chicomecoatl).
-- `chicomecoatl.md` — fixed dead `[[phase-6-002-florentine-codex]]` → `[[phase-8-004-florentine-codex-sahagun]]`. **Fourth Florentine-Codex phase-misnumbering** in three batches. At this rate, recommended to a do a vault-wide `grep -r 'phase-6-002-florentine-codex'` after the sweep completes; this batch's fix may not be the last instance.
+- `chicomecoatl.md` — fixed dead `[phase-6-002-florentine-codex]` → `[[phase-8-004-florentine-codex-sahagun]]`. **Fourth Florentine-Codex phase-misnumbering** in three batches. At this rate, recommended to a do a vault-wide `grep -r 'phase-6-002-florentine-codex'` after the sweep completes; this batch's fix may not be the last instance.
 - `chandra.md` — unwrapped `[[atri-rishi]]` (Vedic Saptarishi sage) to plain text in `child-of:`. Atri is a Vedic person/sage; would belong in `04_persons/`, not `03_deities/`. The reference is one passing Puranic genealogical note, not load-bearing — unwrapping rather than out-of-lens-stubbing keeps scope tight.
 
 **Wikilinks scanned:** ~115 unique targets. 1 dead-link fixed + 1 unwrap.

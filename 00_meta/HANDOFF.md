@@ -14,7 +14,7 @@ A vault-wide **TYRANT-MODE audit** ran 2026-05-25 and found 16 issues across cor
 
 - ✅ **Phase 1** — audit signoff + plan + LAW lens forward-note (commit `9a38a4c`).
 - ✅ **Phase 2** — safety net locked (commit `92a2660`):
-  - Pre-commit hook now gates Lane A content commits with **linkcheck baseline** (refuses new dead `[[wikilinks]]` past the 593-target floor), **lint_yaml --strict** (29-type coverage), and **dup-ID pre-commit gate** (via `scripts/check_dup_ids.py`).
+  - Pre-commit hook now gates Lane A content commits with **linkcheck baseline** (refuses new dead `[wikilinks]` past the 593-target floor), **lint_yaml --strict** (29-type coverage), and **dup-ID pre-commit gate** (via `scripts/check_dup_ids.py`).
   - `ATLAS_ALLOW_DUP_ID=1` escape hatch DELETED from `build_data.py`.
   - `AUDIT/dead-link-baseline.txt` captures the 593-target floor.
   - HOW-WE-WORK §6 line 122 stale claim fixed.

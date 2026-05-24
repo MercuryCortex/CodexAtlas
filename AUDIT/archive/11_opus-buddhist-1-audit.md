@@ -63,7 +63,7 @@ If a follow-up agent wants 30 minutes of pure graph-integrity gain: stub these t
 
 ## 5. The ``document`` dead-link (6 refs) is a copy-paste artifact
 
-Six nodes have wikilinks to literally ``document`` — the schema template at [schema-document.md](../00_meta/schema-document.md) uses `[[other-document]]` and similar as illustrations, and some agents have replicated this as a placeholder that escaped into live nodes. Trivial cleanup: grep and rewrite or comment out. 5-minute fix.
+Six nodes have wikilinks to literally ``document`` — the schema template at [schema-document.md](../00_meta/schema-document.md) uses `[other-document]` and similar as illustrations, and some agents have replicated this as a placeholder that escaped into live nodes. Trivial cleanup: grep and rewrite or comment out. 5-minute fix.
 
 ---
 

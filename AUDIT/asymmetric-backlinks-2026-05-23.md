@@ -729,5 +729,5 @@ Unknown edge types: any containing `-of`, `-source`, `-endpoint`, `-substrate`, 
 **Caveats:**
 
 - Reciprocity check is by file identity, not by edge-type match. So a back-link of any type counts as 'reciprocated'. This is intentional — once both nodes mention each other, the graph is bidirectional.
-- Multi-link prose like `child-of: ["[[izanagi]]", "[[izanami]] (some prose)"]` is parsed per-`[[wikilink]]` (parentheticals stripped).
+- Multi-link prose like `child-of: ["[[izanagi]]", "[[izanami]] (some prose)"]` is parsed per-`[wikilink]` (parentheticals stripped).
 - The audit treats `equivalents:` membership as symmetric by definition (saying A is equivalent to B claims identity; B's file should say so too).

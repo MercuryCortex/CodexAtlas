@@ -33,7 +33,7 @@ This is **incorrect at the file level**. `03_deities/god-the-father-christian.md
 | **Structural bugs (broken wikilinks, dupes, self-loops)** | **7** |
 | Probable new nodes needed | ~5 (most cases want existing-node links, not new nodes) |
 
-**The dominant pattern is not missing nodes. It is missing edges between nodes that already exist on both sides** — asymmetric links, raw-string targets that should be `[[wikilinks]]`, and empty `equivalents:` lists on top-tier deities.
+**The dominant pattern is not missing nodes. It is missing edges between nodes that already exist on both sides** — asymmetric links, raw-string targets that should be `[wikilinks]`, and empty `equivalents:` lists on top-tier deities.
 
 ---
 
@@ -329,7 +329,7 @@ Confirmed instances:
 **How candidate pairs were selected.**
 1. Glob-enumerated `03_deities/*.md` (676 files).
 2. Mechanically scanned for files where the `equivalents:` field is empty or absent.
-3. Mechanically scanned for `syncretic-edges` entries whose `target:` is a raw string rather than a `[[wikilink]]`.
+3. Mechanically scanned for `syncretic-edges` entries whose `target:` is a raw string rather than a `[wikilink]`.
 4. Hand-read 40+ canonical-pantheon files (Greek, Roman, Egyptian, Mesopotamian, Hindu, Buddhist, Norse, Slavic, Celtic, Japanese, Mesoamerican, Yoruba, Christian) to spot asymmetric back-links.
 5. Cross-checked the task brief's premise about `god-the-father-christian` (found to be incorrect at file level — file exists and is wired).
 

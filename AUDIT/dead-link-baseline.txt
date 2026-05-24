@@ -4,7 +4,7 @@
 # To accept current state as the new floor, run:
 #     python3 linkcheck.py --write-baseline
 # See AUDIT/2026-05-25-tyrant-remediation-plan.md Phase 2.
-# Captured 593 targets on first write.
+# Captured 588 targets on first write.
 
 ...
 08_quran-scripture-wiring-brief.md
@@ -169,7 +169,6 @@ doctrine-...
 document-1
 document-2
 document-deir-alla-inscription
-document-slug
 doge-enrico-dandolo
 dominic-de-guzman
 dominicans
@@ -364,7 +363,6 @@ origen-of-alexandria
 os-lusiadas
 other-deity
 other-deity-slug
-other-document
 other-figure-slug
 other-node
 other-tradition
@@ -425,7 +423,6 @@ phase-5-045-ibn-rushd-tahafut-al-tahafut
 phase-5-046-al-ghazali-tahafut-al-falasifa
 phase-5-046-ibn-tufayl-hayy-ibn-yaqdhan
 phase-5-x-zohar
-phase-6-002-florentine-codex
 phase-6-006-chilam-balam
 phase-6-006-paracelsus-archidoxes
 phase-6-017-boehme-aurora-mysterium-magmum
@@ -587,8 +584,6 @@ walter-burkert
 was-sceptre
 watchers-fallen-angels
 wei-boyang
-wikilink
-wikilinks
 wisdom-literature
 xenophon
 yam-canaanite

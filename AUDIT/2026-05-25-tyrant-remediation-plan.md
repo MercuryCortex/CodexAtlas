@@ -51,7 +51,7 @@
 
 **Substeps:**
 1. **Categorize the 594 dead targets** (~3 hours one-time):
-   - Bucket A (~20): typos/malformed placeholders (`[[wikilink]]`, `[[wikilinks]]`, `[[document-slug]]`) — find-replace cleanup.
+   - Bucket A (~20): typos/malformed placeholders (`[wikilink]`, `[wikilinks]`, `[document-slug]`) — find-replace cleanup.
    - Bucket B (~574): genuine missing nodes that should be stubbed OR backticked.
 2. **Bucket A: fix in one Lane A batch.** Mechanical find-replace.
 3. **Bucket B: drain in waves.** Each wave reduces baseline by 50–100 dead targets:
