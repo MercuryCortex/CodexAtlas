@@ -98,10 +98,16 @@
   // of the pill hides entirely (CSS `body.no-class-side .app-pill-
   // class, .app-pill-divider { display:none }`).
   function currentClassApi() {
-    // Currently only Forge has a class-selector. Timeline / Map etc.
-    // will return their own API objects once they install one.
+    // Phase 22-Z (2026-05-24) — match by mv.target, not mv.id.
+    // Both FORGE (id='forge') and TIMELINE (id='timeline') route
+    // to the Forge engine (target='forge') and share its class
+    // API. Previously this matched only mv.id === 'forge' →
+    // Deities pill disappeared the moment user switched to
+    // TIMELINE.
     const mv = currentMaster();
-    if (mv.id === 'forge' && window._forge && typeof window._forge.setClassFilter === 'function') {
+    if (mv.target === 'forge'
+        && window._forge
+        && typeof window._forge.setClassFilter === 'function') {
       return window._forge;
     }
     return null;
