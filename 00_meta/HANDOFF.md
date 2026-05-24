@@ -1,3 +1,73 @@
+# Session HANDOFF — 2026-05-25 evening (TYRANT remediation in flight)
+
+> **⚠️ READ THIS BLOCK FIRST.** The next agent on the project picks up here.
+> Older handoff sections below (2026-05-18 onwards) are historical reference, kept for continuity. The state described in them is largely superseded by Phase 22 timeline work + the TYRANT audit + remediation now in flight.
+
+## What's happening RIGHT NOW (2026-05-25)
+
+A vault-wide **TYRANT-MODE audit** ran 2026-05-25 and found 16 issues across correctness / canonical / structure / ambition / process. Findings signed off; remediation plan locked.
+
+- **Audit (signed, append-only):** `AUDIT/2026-05-25-tyrant-audit-findings.md`
+- **Remediation plan:** `AUDIT/2026-05-25-tyrant-remediation-plan.md`
+
+### Phases done
+
+- ✅ **Phase 1** — audit signoff + plan + LAW lens forward-note (commit `9a38a4c`).
+- ✅ **Phase 2** — safety net locked (commit `92a2660`):
+  - Pre-commit hook now gates Lane A content commits with **linkcheck baseline** (refuses new dead `[[wikilinks]]` past the 593-target floor), **lint_yaml --strict** (29-type coverage), and **dup-ID pre-commit gate** (via `scripts/check_dup_ids.py`).
+  - `ATLAS_ALLOW_DUP_ID=1` escape hatch DELETED from `build_data.py`.
+  - `AUDIT/dead-link-baseline.txt` captures the 593-target floor.
+  - HOW-WE-WORK §6 line 122 stale claim fixed.
+- ✅ **Phase 5a** — `scripture-reader.js:493` DOGMA strike-2 violation cleaned (inline `margin-bottom:14px` moved to canonical `#sr-vault-jump` CSS rule — commit `5891820`).
+
+### Phases in flight / queued
+
+- 🔄 **Phase 5b** — wires regression diagnostic. A read-only audit agent is running NOW against the wires-half-opacity bug introduced by Phase 22-AH. When it deposits findings to `AUDIT/2026-05-25-wires-regression-trace.md`, fix per its trace.
+- ⏭️ **Phase 6** — STATUS / HANDOFF / DASHBOARD discipline restored. THIS handoff rewrite is part of it. STATUS backfill + DASHBOARD AUDIT-surfacing still pending.
+- ⏭️ **Phase 3** — Lane A drain of 593 dead-link targets in waves. Bucket A (~20 typos) is mechanical; Bucket B (~574 genuine missing nodes) is investigation work.
+- ⚠️ **Phase 4 — BIG DECISION (REQUIRES JOHN'S CALL):** resume the layered Forge rebuild (Phase 6 of `AUDIT/forge-rebuild-layered-spec-2026-05-20.md` — decompose `forge.js` 8577 LOC into `src/js/forge/{node,behaviors,wires,fx,management}.js`) OR formalize Phase 22 timeline polish as the active mandate and close the layered-rebuild spec. See remediation plan §Phase 4 for the three options.
+- ⏭️ **Phase 7** — cleanup pass (`06_themes/` → `06_motifs/` rename, console.* removal, TODO/FIXME resolution).
+- 🆕 **LAW / Judiciary lens** — forward-noted in HOW-WE-WORK §6 (added 2026-05-25 per John): future folder `30_law/`, ingest sources from Hammurabi → UDHR. Schedule after Phase 4 settles.
+
+### What's locked in code (DO NOT REGRESS)
+
+Per John's constraint at remediation signoff: **preserve all work**. The following primitives are foundation-grade and must survive any refactor:
+
+- Calendar registry (11 calendars + tooltips + per-calendar epochs) — Phase 22-AE / 22-AF / 22-AG
+- Bottom-bar canonical-class architecture (`.forge-fxpanel-btn` site-wide) — Phase 22-AB-fix4
+- Two-tier timeline pivot (Greg-0 always + epoch secondary) — Phase 22-AG
+- Vertical density slider primitive (`.forge-tl-vdensity*`) — Phase 22-AD
+- LOCK toggle (zoom-density linkage) — Phase 22-AG
+- DATE IN / DATE OUT / FOCUS group + `_forge.focusTimelineRange()` — Phase 22-AD
+- dating_basis B1–B7 framework — Phase B-DATING-1+2+3
+- Side-panel ellipsis fix + cross-folder click popup + hideTip-on-render — Phase 22-AH
+- All 26+ existing lenses (29 types in build_data.py + lint_yaml.py)
+- All baked STYLE-panel defaults (Phase 22-AE)
+- The SEVERITY DOGMA (HOW-WE-WORK §5.7) — three-strike termination clause
+
+### Cardinal rules added since the previous HANDOFF
+
+- **SEVERITY DOGMA** (2026-05-24, HOW-WE-WORK §5.7) — three-strike termination for UX agents who: miss the actual problem, duplicate canonical primitives with inline styles, +1px patch instead of fixing the rule, defend the model against user observations, or guess silently.
+- **WIRING LAW now has a mechanism** (pre-commit baseline gate, Phase 2 of TYRANT remediation).
+
+### Files to read on fresh-session pickup, in order
+
+1. This HANDOFF block.
+2. `AUDIT/2026-05-25-tyrant-audit-findings.md` (the 16 findings).
+3. `AUDIT/2026-05-25-tyrant-remediation-plan.md` (the 7-phase plan + don't-touch list).
+4. `00_meta/HOW-WE-WORK.md` (especially §5 cardinal rules).
+5. `00_meta/STATUS.md` top entry.
+
+### Cache-bust string
+
+Last shipped: `p22ah` in `index.html` (Phase 22-AH). Bump when next Lane B change ships.
+
+---
+
+# Older handoff (2026-05-18) — historical reference
+
+The original handoff body below describes pre-Phase-22 state. Most action items it queued were superseded by Phase 22 timeline polish + the TYRANT audit. Kept for archeological continuity; don't act on its instructions without checking the current state above first.
+
 # Session HANDOFF — 2026-05-18 evening (after ontology lock pass 2)
 
 **Last work:**
