@@ -66,12 +66,17 @@
   const X_PAD_FRAC    = 0.10;
   const TIME_AXIS_PAD = 40;          // extra top space for the time-axis ribbon
   const UNDATED_PAD   = 28;          // gap above + below the parking lane
-  const UNDATED_BAND_H = 60;         // parking lane height
+  // Phase 22-K (2026-05-24) — doubled defaults per John: "at 25%
+  // zoom with slider at 2.0× = the most comfortable widest view —
+  // make 2× the new 1× default". Doubling the constants means
+  // slider 1× now produces what was previously 2×. Old LS key
+  // invalidated below so existing users restart at the new 1×.
+  const UNDATED_BAND_H = 120;        // parking lane height (was 60)
 
   // Band height allocation per §1.2.
-  const MIN_BAND_H    = 28;          // small families don't compress below this
-  const MAX_BAND_H    = 120;         // P1+P2 hybrid ceiling (§2.4)
-  const BAND_H_BASE   = 7.5;         // tune so sqrt(280) * 7.5 ≈ 125 → clamped to MAX
+  const MIN_BAND_H    = 56;          // small families don't compress below this (was 28)
+  const MAX_BAND_H    = 240;         // P1+P2 hybrid ceiling (§2.4) (was 120)
+  const BAND_H_BASE   = 15.0;        // tune so sqrt(280) * 15 ≈ 250 → clamped to MAX (was 7.5)
 
   // Sweep-line packer (§2.3).
   const ROW_PAD       = 8;           // top inset inside each band before first row

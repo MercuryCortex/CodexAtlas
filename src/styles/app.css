@@ -867,15 +867,11 @@ body:not(.fv-layout-timeline) .fv-timeline-only {
 body.fv-hide-tl-bands       .forge-timeline-bands       { display: none !important; }
 body.fv-hide-tl-band-labels .forge-timeline-band-labels { display: none !important; }
 
-/* Phase 22-J (2026-05-24) — Force-hide WHEEL SVG overlays in
-   timeline mode. These elements (hulls, rim labels, guide rings,
-   converging separator) are positioned for the radial wheel
-   layout — in timeline they project to garbage coords + bleed
-   visible artifacts that the VIEW toggles can't reach (the
-   toggle rows themselves are hidden via .fv-wheel-only).
-   Force-hide regardless of toggle state. When band-hulls feature
-   ships, drop the #forge-hull-polys rule. */
-body.fv-layout-timeline #forge-hull-polys,
+/* Phase 22-J (2026-05-24) → Phase 22-K (2026-05-24) — Force-hide
+   WHEEL SVG overlays in timeline mode. These elements are
+   positioned for the radial wheel layout. John kept hulls
+   visible in timeline ("useful, exploring") — only family
+   rim labels, dividers, and guide rings are hidden. */
 body.fv-layout-timeline #forge-hull-labels,
 body.fv-layout-timeline #forge-hull-dividers,
 body.fv-layout-timeline #forge-hull-guide-rings {

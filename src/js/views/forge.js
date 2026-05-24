@@ -1082,7 +1082,9 @@
           // family titles, converging separators, guide rings —
           // all radial-only geometry. Wires + soundtrack + map
           // apply in both layouts so stay unhided.
-          '<button class="forge-viewset-row fv-wheel-only" data-toggle="hulls"><span class="vs-check"></span>Show family hulls</button>' +
+          // Phase 22-K (2026-05-24) — hulls toggle available in
+          // BOTH layouts now. John: "the hulls here are useful".
+          '<button class="forge-viewset-row" data-toggle="hulls"><span class="vs-check"></span>Show family hulls</button>' +
           '<button class="forge-viewset-row fv-wheel-only" data-toggle="familyTitles"><span class="vs-check"></span>Show family titles</button>' +
           '<button class="forge-viewset-row fv-wheel-only" data-toggle="dividers"><span class="vs-check"></span>Show family separators</button>' +
           '<button class="forge-viewset-row fv-wheel-only" data-toggle="dividersConverging"><span class="vs-check"></span>Show converging separators <em>(solid → fade)</em></button>' +
@@ -1231,6 +1233,14 @@
           '<div class="forge-fxpanel-section fv-timeline-only">Family labels</div>' +
           '<div class="forge-fxpanel-row fv-timeline-only"><label>opacity <span class="forge-fxpanel-val" data-val="tl-label-opacity">0.85</span></label><input type="range" data-style="tl-label-opacity" min="0" max="1" step="0.01" value="0.85"></div>' +
           '<div class="forge-fxpanel-row fv-timeline-only"><label>size <span class="forge-fxpanel-val" data-val="tl-label-size">11px</span></label><input type="range" data-style="tl-label-size" min="8" max="20" step="0.5" value="11"></div>' +
+          // Phase 22-K (2026-05-24) — axis (horizontal) + grid
+          // (vertical year stripes) live STYLE controls.
+          '<div class="forge-fxpanel-section fv-timeline-only">Horizontal axis</div>' +
+          '<div class="forge-fxpanel-row fv-timeline-only"><label>opacity <span class="forge-fxpanel-val" data-val="tl-axis-opacity">0.70</span></label><input type="range" data-style="tl-axis-opacity" min="0" max="1" step="0.01" value="0.70"></div>' +
+          '<div class="forge-fxpanel-row fv-timeline-only"><label>width <span class="forge-fxpanel-val" data-val="tl-axis-width">1.5px</span></label><input type="range" data-style="tl-axis-width" min="0.5" max="4" step="0.1" value="1.5"></div>' +
+          '<div class="forge-fxpanel-section fv-timeline-only">Vertical year stripes</div>' +
+          '<div class="forge-fxpanel-row fv-timeline-only"><label>opacity <span class="forge-fxpanel-val" data-val="tl-grid-opacity">0.10</span></label><input type="range" data-style="tl-grid-opacity" min="0" max="0.6" step="0.01" value="0.10"></div>' +
+          '<div class="forge-fxpanel-row fv-timeline-only"><label>width <span class="forge-fxpanel-val" data-val="tl-grid-width">1.0px</span></label><input type="range" data-style="tl-grid-width" min="0.5" max="3" step="0.1" value="1.0"></div>' +
           '<button class="forge-fxpanel-reset" id="forge-stylepanel-reset">RESET TO DEFAULTS</button>' +
         '</div>' +
       '</div>',
@@ -2180,14 +2190,27 @@
       const gizmoEl = document.getElementById('forge-zoom-gizmo');
       if (gizmoEl) {
         gizmoEl.addEventListener('click', () => {
-          // Phase 21AA (2026-05-22) — click target is the NICE fit
-          // (label-aware), not the pure geometric fit. The gizmo's
-          // own % readout stays referenced to computeFitScale, so
-          // after this click the gizmo will display ~85% — that's
-          // intended: "comfortable viewing zoom, not math-max fit".
+          // Phase 21AA (2026-05-22) — wheel default = NICE fit
+          // (label-aware), not the pure geometric fit. Gizmo
+          // displays ~85% post-click.
+          // Phase 22-K (2026-05-24) — timeline default = 25% gizmo
+          // (scan-the-whole-spine view, John's spec). Was hitting
+          // computeNiceFitScale which doesn't apply to anisotropic
+          // timeline extents.
+          let targetScale, targetCx = 0, targetCy = 0;
+          if (local.layoutId === 'timeline'
+              && local.mode && local.mode.xRange
+              && window.AtlasEngineLayout
+              && window.AtlasEngineLayout.computeTimelineFitScale) {
+            const tlFit = window.AtlasEngineLayout.computeTimelineFitScale(
+              local.lastSize.w, local.mode.xRange);
+            targetScale = tlFit * 0.25;
+          } else {
+            targetScale = computeNiceFitScale();
+          }
           camera.flyTo({
-            centerX: 0, centerY: 0,
-            scale:   computeNiceFitScale(),
+            centerX: targetCx, centerY: targetCy,
+            scale:   targetScale,
           }, 0.35);
           if (camera.isAnimating()) startAnimLoop();
         });
@@ -2398,15 +2421,13 @@
             // across relayouts (band-density slider, preset switch).
             camera.set(savedCamState);
           } else {
-            // Phase TL-2 Step 7b-fix2 — default open zoom = 20% gizmo.
-            // Data range fills 90% of viewport width (John's spec
-            // 2026-05-24). 100% gizmo would be TradingView-detail-
-            // mode (data 4.5× wider than viewport) — too tight an
-            // opening view. Fresh mounts + class switches get this
-            // scan-view default; the user zooms IN for detail.
-            //   gizmo % = scale / fit_scale
-            //   want gizmo = 0.20  →  scale = 0.20 × tlFit
-            camera.set({ scale: tlFit * 0.20, centerX: tlCtr.x, centerY: tlCtr.y });
+            // Phase 22-K (2026-05-24) — default open zoom = 25% gizmo
+            // (was 20%). John: "25% + slider 2× is the comfortable
+            // widest view; make 2× = 1× default, and gizmo-click =
+            // 25% in timeline". Combined with the doubled band
+            // height defaults, opening at 25% with 1× slider now
+            // shows the same density-comfortable view he tuned to.
+            camera.set({ scale: tlFit * 0.25, centerX: tlCtr.x, centerY: tlCtr.y });
           }
         }
         // Phase 5B M-F1 (2026-05-20) — synchronously record the
@@ -5555,28 +5576,34 @@
       function formatForCss(key, raw) {
         const n = parseFloat(raw);
         if (key === 'ring-width' || key === 'sep-width') return n.toFixed(1) + 'px';
-        if (key === 'tl-band-stroke-w' || key === 'tl-label-size') return n.toFixed(1) + 'px';
+        if (key === 'tl-band-stroke-w' || key === 'tl-label-size'
+            || key === 'tl-axis-width' || key === 'tl-grid-width') return n.toFixed(1) + 'px';
         if (/opacity$/.test(key))                        return n.toFixed(2);
-        if (/^tl-(band-fill|band-stroke|label-opacity)$/.test(key)) return n.toFixed(2);
+        if (/^tl-(band-fill|band-stroke|label-opacity|axis-opacity|grid-opacity)$/.test(key)) return n.toFixed(2);
         // Color pickers: raw value is already a #rrggbb string.
         return raw;
       }
       function formatForDisplay(key, raw) {
         const n = parseFloat(raw);
         if (key === 'ring-width' || key === 'sep-width') return n.toFixed(1) + 'px';
-        if (key === 'tl-band-stroke-w')                  return n.toFixed(1) + 'px';
+        if (key === 'tl-band-stroke-w' || key === 'tl-axis-width' || key === 'tl-grid-width') return n.toFixed(1) + 'px';
         if (key === 'tl-label-size')                     return Math.round(n) + 'px';
         if (/opacity$/.test(key))                        return n.toFixed(2);
-        if (/^tl-(band-fill|band-stroke|label-opacity)$/.test(key)) return n.toFixed(2);
+        if (/^tl-(band-fill|band-stroke|label-opacity|axis-opacity|grid-opacity)$/.test(key)) return n.toFixed(2);
         return raw;
       }
       // Phase 22-I (2026-05-24) — timeline keys map to chrome state.
+      // Phase 22-K — axis + grid keys added.
       const TL_BAND_KEY_MAP = {
         'tl-band-fill':     'fillAlpha',
         'tl-band-stroke':   'strokeAlpha',
         'tl-band-stroke-w': 'strokeWidth',
         'tl-label-opacity': 'labelOpacity',
         'tl-label-size':    'labelSize',
+        'tl-axis-opacity':  'axisOpacity',
+        'tl-axis-width':    'axisWidth',
+        'tl-grid-opacity':  'gridOpacity',
+        'tl-grid-width':    'gridWidth',
       };
       function applyOne(key, val) {
         document.body.style.setProperty('--style-' + key, formatForCss(key, val));

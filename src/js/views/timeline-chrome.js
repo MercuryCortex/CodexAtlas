@@ -79,7 +79,9 @@
   let mounted     = false;
 
   // localStorage key for persisting the band-density preference.
-  const LS_BAND_SCALE = 'codex_atlas_timeline_band_scale';
+  // Phase 22-K (2026-05-24) — v2 because base band heights
+  // doubled; old saved 2.0× would now mean 4× of the old default.
+  const LS_BAND_SCALE = 'codex_atlas_timeline_band_scale_v2';
 
   // ── BAND STYLE STATE (Phase 22-I, 2026-05-24) ────────────
   // Live-tunable via the STYLE panel's "Timeline bands" + "Family
@@ -92,6 +94,11 @@
     strokeWidth:  1.0,
     labelOpacity: 0.85,
     labelSize:    11,    // px
+    // Phase 22-K (2026-05-24) — axis + grid line controls.
+    axisOpacity:  0.70,
+    axisWidth:    1.5,
+    gridOpacity:  0.10,
+    gridWidth:    1.0,
   };
   let _bandStyle = Object.assign({}, BAND_STYLE_DEFAULTS);
   try {
@@ -219,9 +226,26 @@
     gridGroupEl.setAttribute('class', 'forge-timeline-grid');
     svgRoot.appendChild(gridGroupEl);
 
+    // Phase 22-K (2026-05-24) — axis line spans full viewport with
+    // a horizontal gradient that fades to 0 alpha beyond the spine
+    // endpoints (9000 BCE / current year). Defs at top so the
+    // gradient is reachable by url(#).
+    const axisDefs = document.createElementNS(NS, 'defs');
+    axisDefs.setAttribute('class', 'forge-timeline-axis-defs');
+    const axisGrad = document.createElementNS(NS, 'linearGradient');
+    axisGrad.setAttribute('id', 'forge-timeline-axis-fade');
+    axisGrad.setAttribute('gradientUnits', 'userSpaceOnUse');
+    // Stop colors + offsets minted on every refresh — see below.
+    for (let i = 0; i < 4; i++) {
+      const s = document.createElementNS(NS, 'stop');
+      axisGrad.appendChild(s);
+    }
+    axisDefs.appendChild(axisGrad);
+    svgRoot.appendChild(axisDefs);
+
     axisLineEl = document.createElementNS(NS, 'line');
     axisLineEl.setAttribute('class', 'forge-timeline-axis');
-    axisLineEl.setAttribute('stroke', 'rgba(212, 165, 90, 0.70)');
+    axisLineEl.setAttribute('stroke', 'url(#forge-timeline-axis-fade)');
     axisLineEl.setAttribute('stroke-width', '1.5');
     svgRoot.appendChild(axisLineEl);
 
@@ -753,15 +777,47 @@
     const loScreen = camera.worldToScreen(yToX(xRange.lo, xRange), 0, vp);
     const hiScreen = camera.worldToScreen(yToX(xRange.hi, xRange), 0, vp);
 
-    // Axis line: extend slightly past the data range so the eye reads
-    // it as continuous across the viewport. Use viewport width as a
-    // ceiling so we don't draw out of bounds.
-    const lineX0 = Math.max(0,    loScreen.x - 40);
-    const lineX1 = Math.min(vp.w, hiScreen.x + 40);
-    axisLineEl.setAttribute('x1', lineX0);
+    // Phase 22-K (2026-05-24) — axis line spans FULL viewport
+    // width; the gradient handles the fade-to-0-alpha outside
+    // the spine endpoints. Color + width come from band-style
+    // state (live STYLE-panel sliders).
+    axisLineEl.setAttribute('x1', 0);
     axisLineEl.setAttribute('y1', axisY);
-    axisLineEl.setAttribute('x2', lineX1);
+    axisLineEl.setAttribute('x2', vp.w);
     axisLineEl.setAttribute('y2', axisY);
+    axisLineEl.setAttribute('stroke-width', String(_bandStyle.axisWidth));
+    // Re-bake the linearGradient stops. Coordinate system =
+    // userSpaceOnUse with x=0 → x=vp.w. Stops 0% + 100% are
+    // ALWAYS at the viewport edges; stops 2/3 sit at the spine
+    // endpoints (clamped if zoomed in past them).
+    const axisGradEl = svgRoot.querySelector('#forge-timeline-axis-fade');
+    if (axisGradEl) {
+      axisGradEl.setAttribute('x1', 0);
+      axisGradEl.setAttribute('x2', vp.w);
+      const stops = axisGradEl.querySelectorAll('stop');
+      const tLo = loScreen.x / vp.w;            // spine left as 0..1
+      const tHi = hiScreen.x / vp.w;            // spine right as 0..1
+      const lo  = Math.max(0, Math.min(1, tLo));
+      const hi  = Math.max(0, Math.min(1, tHi));
+      // If spine left is past the left viewport edge (tLo < 0),
+      // the left stop should START at full alpha (no fade-in
+      // needed). Same for right.
+      const aLeft  = (tLo > 0) ? 0 : _bandStyle.axisOpacity;
+      const aRight = (tHi < 1) ? 0 : _bandStyle.axisOpacity;
+      const aInner = _bandStyle.axisOpacity;
+      const baseCol = 'rgba(212, 165, 90, 1)';
+      const stopSpec = [
+        { off: '0%',                 col: baseCol, op: aLeft  },
+        { off: (lo * 100) + '%',     col: baseCol, op: aInner },
+        { off: (hi * 100) + '%',     col: baseCol, op: aInner },
+        { off: '100%',               col: baseCol, op: aRight },
+      ];
+      for (let i = 0; i < stops.length; i++) {
+        stops[i].setAttribute('offset',       stopSpec[i].off);
+        stops[i].setAttribute('stop-color',   stopSpec[i].col);
+        stops[i].setAttribute('stop-opacity', String(stopSpec[i].op));
+      }
+    }
 
     // ── FAMILY BANDS (Phase TL-2 Step 7, 2026-05-24) ─────────
     // Paint each family band as a colored rectangle spanning the
@@ -971,8 +1027,12 @@
       const grid = document.createElementNS(NS, 'line');
       grid.setAttribute('x1', sp.x); grid.setAttribute('x2', sp.x);
       grid.setAttribute('y1', 0);    grid.setAttribute('y2', vp.h);
-      grid.setAttribute('stroke', emphasized ? 'rgba(212,165,90,0.16)' : 'rgba(212,165,90,0.10)');
-      grid.setAttribute('stroke-width', '1');
+      // Phase 22-K (2026-05-24) — live opacity + width from STYLE panel.
+      // Emphasized ticks get 60% boost on opacity for a subtle hint.
+      const baseOp  = _bandStyle.gridOpacity;
+      const emphOp  = Math.min(1, baseOp * 1.6);
+      grid.setAttribute('stroke', 'rgba(212,165,90,' + (emphasized ? emphOp : baseOp) + ')');
+      grid.setAttribute('stroke-width', String(_bandStyle.gridWidth));
       gridGroupEl.appendChild(grid);
 
       // Tick mark on the axis. Emphasized ticks slightly taller.
