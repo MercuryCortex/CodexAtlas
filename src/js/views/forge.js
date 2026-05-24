@@ -1077,14 +1077,22 @@
         // the user's selection survives the swap.
         '<div class="forge-viewset-panel" id="forge-viewset-panel" aria-hidden="true">' +
           '<div class="forge-viewset-section">Layers</div>' +
-          '<button class="forge-viewset-row" data-toggle="hulls"><span class="vs-check"></span>Show family hulls</button>' +
-          '<button class="forge-viewset-row" data-toggle="familyTitles"><span class="vs-check"></span>Show family titles</button>' +
-          '<button class="forge-viewset-row" data-toggle="dividers"><span class="vs-check"></span>Show family separators</button>' +
-          '<button class="forge-viewset-row" data-toggle="dividersConverging"><span class="vs-check"></span>Show converging separators <em>(solid → fade)</em></button>' +
-          '<button class="forge-viewset-row" data-toggle="guideRings"><span class="vs-check"></span>Show guide rings <em>(inner / mid / outer)</em></button>' +
+          // Phase 22-I (2026-05-24) — wheel-only layers hidden in
+          // timeline mode via body.fv-layout-timeline. Hulls,
+          // family titles, converging separators, guide rings —
+          // all radial-only geometry. Wires + soundtrack + map
+          // apply in both layouts so stay unhided.
+          '<button class="forge-viewset-row fv-wheel-only" data-toggle="hulls"><span class="vs-check"></span>Show family hulls</button>' +
+          '<button class="forge-viewset-row fv-wheel-only" data-toggle="familyTitles"><span class="vs-check"></span>Show family titles</button>' +
+          '<button class="forge-viewset-row fv-wheel-only" data-toggle="dividers"><span class="vs-check"></span>Show family separators</button>' +
+          '<button class="forge-viewset-row fv-wheel-only" data-toggle="dividersConverging"><span class="vs-check"></span>Show converging separators <em>(solid → fade)</em></button>' +
+          '<button class="forge-viewset-row fv-wheel-only" data-toggle="guideRings"><span class="vs-check"></span>Show guide rings <em>(inner / mid / outer)</em></button>' +
           '<button class="forge-viewset-row" data-toggle="wires"><span class="vs-check"></span>Show wires</button>' +
           '<button class="forge-viewset-row" data-toggle="sfx"><span class="vs-check"></span>Soundtrack <em>(zoom-tied)</em></button>' +
           '<button class="forge-viewset-row" data-toggle="map" disabled><span class="vs-check"></span>Show map <em>(coming soon)</em></button>' +
+          // Phase 22-I — timeline-only Layers (band rectangles + labels).
+          '<button class="forge-viewset-row fv-timeline-only" data-toggle="tlBands"><span class="vs-check"></span>Show family bands</button>' +
+          '<button class="forge-viewset-row fv-timeline-only" data-toggle="tlBandLabels"><span class="vs-check"></span>Show family band labels</button>' +
           '<div class="forge-viewset-divider"></div>' +
           '<div class="forge-viewset-section">Color theme</div>' +
           '<button class="forge-viewset-row" data-color="default"><span class="vs-radio"></span>Atlas <em>(curated)</em></button>' +
@@ -1094,17 +1102,24 @@
           '<button class="forge-viewset-row" data-color="cosmology"><span class="vs-radio"></span>Cosmology <em>(theology)</em></button>' +
           '<button class="forge-viewset-row" data-color="time"><span class="vs-radio"></span>Time <em>(era)</em></button>' +
           '<div class="forge-viewset-divider"></div>' +
+          // Phase 22-I — Family order works in both; only the
+          // "Opposites (default)" choice is wheel-specific (radial-
+          // pairing logic). Keep the section shown in both modes
+          // but mark "opposites" wheel-only.
           '<div class="forge-viewset-section">Family order</div>' +
-          '<button class="forge-viewset-row" data-order="opposites"><span class="vs-radio"></span>Opposites <em>(default)</em></button>' +
+          '<button class="forge-viewset-row fv-wheel-only" data-order="opposites"><span class="vs-radio"></span>Opposites <em>(default)</em></button>' +
           '<button class="forge-viewset-row" data-order="roots"><span class="vs-radio"></span>Roots clustered</button>' +
           '<button class="forge-viewset-row" data-order="chronological"><span class="vs-radio"></span>Chronological</button>' +
           '<button class="forge-viewset-row" data-order="geography"><span class="vs-radio"></span>Geographic sweep</button>' +
-          '<div class="forge-viewset-divider"></div>' +
-          '<div class="forge-viewset-section">Node distribution</div>' +
-          '<button class="forge-viewset-row" data-distribution="organic"><span class="vs-radio"></span>Organic <em>(age-radial fan)</em></button>' +
-          '<button class="forge-viewset-row" data-distribution="age-bands"><span class="vs-radio"></span>Age bands <em>(scholarly chart)</em></button>' +
-          '<button class="forge-viewset-row" data-distribution="vogel"><span class="vs-radio"></span>Vogel sunflower <em>(phyllotaxis)</em></button>' +
-          '<button class="forge-viewset-row" data-toggle="reverseAge"><span class="vs-check"></span>Reverse age direction <em>(rim = oldest)</em></button>' +
+          // Phase 22-I — Node distribution section: WHEEL-only.
+          // Timeline uses its own cluster-aware packer (Step 7d);
+          // these radio options are wheel-specific algorithms.
+          '<div class="forge-viewset-divider fv-wheel-only"></div>' +
+          '<div class="forge-viewset-section fv-wheel-only">Node distribution</div>' +
+          '<button class="forge-viewset-row fv-wheel-only" data-distribution="organic"><span class="vs-radio"></span>Organic <em>(age-radial fan)</em></button>' +
+          '<button class="forge-viewset-row fv-wheel-only" data-distribution="age-bands"><span class="vs-radio"></span>Age bands <em>(scholarly chart)</em></button>' +
+          '<button class="forge-viewset-row fv-wheel-only" data-distribution="vogel"><span class="vs-radio"></span>Vogel sunflower <em>(phyllotaxis)</em></button>' +
+          '<button class="forge-viewset-row fv-wheel-only" data-toggle="reverseAge"><span class="vs-check"></span>Reverse age direction <em>(rim = oldest)</em></button>' +
           // Phase 21AY (2026-05-23) — Source-tier + political-risk
           // toggles MOVED to the LEGEND panel where the tier vocabulary
           // is documented. Same vocabulary in one place — the legend's
@@ -1172,10 +1187,12 @@
           '<button class="forge-fxpanel-toggle" data-fx-toggle="pulse-enabled" type="button"><span class="vs-check"></span>Pulse on hover / click</button>' +
           '<div class="forge-fxpanel-row"><label>pulse size <span class="forge-fxpanel-val" data-val="pulse-size-mult">4.0</span></label><input type="range" data-fx="pulse-size-mult" min="0.5" max="10" step="0.1" value="4.0"></div>' +
           '<div class="forge-fxpanel-row"><label>pulse duration <span class="forge-fxpanel-val" data-val="pulse-duration">0.8s</span></label><input type="range" data-fx="pulse-duration" min="0.2" max="2.0" step="0.05" value="0.8"></div>' +
-          '<div class="forge-fxpanel-section">Hulls (calm layer)</div>' +
-          '<div class="forge-fxpanel-row"><label>brightness <span class="forge-fxpanel-val" data-val="hull-bright-peak">1.30</span></label><input type="range" data-fx="hull-bright-peak" min="0.8" max="2" step="0.01" value="1.30"></div>' +
-          '<div class="forge-fxpanel-row"><label>saturate <span class="forge-fxpanel-val" data-val="hull-sat-peak">1.55</span></label><input type="range" data-fx="hull-sat-peak" min="0.5" max="2.5" step="0.01" value="1.55"></div>' +
-          '<div class="forge-fxpanel-row"><label>hue shift <span class="forge-fxpanel-val" data-val="hull-hue-peak">10°</span></label><input type="range" data-fx="hull-hue-peak" min="-60" max="60" step="1" value="10"></div>' +
+          // Phase 22-I (2026-05-24) — Hulls section is WHEEL-only.
+          // Timeline has no convex hulls (band rectangles instead).
+          '<div class="forge-fxpanel-section fv-wheel-only">Hulls (calm layer)</div>' +
+          '<div class="forge-fxpanel-row fv-wheel-only"><label>brightness <span class="forge-fxpanel-val" data-val="hull-bright-peak">1.30</span></label><input type="range" data-fx="hull-bright-peak" min="0.8" max="2" step="0.01" value="1.30"></div>' +
+          '<div class="forge-fxpanel-row fv-wheel-only"><label>saturate <span class="forge-fxpanel-val" data-val="hull-sat-peak">1.55</span></label><input type="range" data-fx="hull-sat-peak" min="0.5" max="2.5" step="0.01" value="1.55"></div>' +
+          '<div class="forge-fxpanel-row fv-wheel-only"><label>hue shift <span class="forge-fxpanel-val" data-val="hull-hue-peak">10°</span></label><input type="range" data-fx="hull-hue-peak" min="-60" max="60" step="1" value="10"></div>' +
           '<button class="forge-fxpanel-reset" id="forge-fxpanel-reset">RESET TO DEFAULTS</button>' +
         '</div>' +
       '</div>',
@@ -1187,20 +1204,33 @@
       '<div class="forge-stylepanel-wrap">' +
         '<button class="forge-stylepanel-btn" id="forge-stylepanel-btn" title="Stroke style tuning" aria-expanded="false">STYLE</button>' +
         '<div class="forge-stylepanel" id="forge-stylepanel" aria-hidden="true">' +
-          '<div class="forge-fxpanel-section">Guide rings</div>' +
-          '<div class="forge-stylepanel-rowcolor"><label>inner color</label><input type="color" data-style="ring-inner-color" value="#6f8aaf"></div>' +
-          '<div class="forge-stylepanel-rowcolor"><label>mid color</label><input type="color" data-style="ring-mid-color" value="#6f8aaf"></div>' +
-          '<div class="forge-stylepanel-rowcolor"><label>outer color</label><input type="color" data-style="ring-outer-color" value="#6f8aaf"></div>' +
-          '<div class="forge-fxpanel-row"><label>stroke width <span class="forge-fxpanel-val" data-val="ring-width">0.5px</span></label><input type="range" data-style="ring-width" min="0.2" max="6" step="0.1" value="0.5"></div>' +
-          '<div class="forge-fxpanel-row"><label>opacity <span class="forge-fxpanel-val" data-val="ring-opacity">0.50</span></label><input type="range" data-style="ring-opacity" min="0" max="1" step="0.01" value="0.5"></div>' +
-          '<div class="forge-fxpanel-section">Separators (both modes)</div>' +
-          '<div class="forge-fxpanel-row"><label>stroke width <span class="forge-fxpanel-val" data-val="sep-width">0.5px</span></label><input type="range" data-style="sep-width" min="0.2" max="6" step="0.1" value="0.5"></div>' +
-          '<div class="forge-fxpanel-row"><label>opacity <span class="forge-fxpanel-val" data-val="sep-opacity">0.50</span></label><input type="range" data-style="sep-opacity" min="0" max="1" step="0.01" value="0.5"></div>' +
-          '<div class="forge-fxpanel-section">Converging separator</div>' +
-          '<div class="forge-stylepanel-rowcolor"><label>center color</label><input type="color" data-style="conv-center-color" value="#6f8aaf"></div>' +
-          '<div class="forge-fxpanel-row"><label>center opacity <span class="forge-fxpanel-val" data-val="conv-center-opacity">1.00</span></label><input type="range" data-style="conv-center-opacity" min="0" max="1" step="0.01" value="1.0"></div>' +
-          '<div class="forge-stylepanel-rowcolor"><label>outer color</label><input type="color" data-style="conv-edge-color" value="#6f8aaf"></div>' +
-          '<div class="forge-fxpanel-row"><label>outer opacity <span class="forge-fxpanel-val" data-val="conv-edge-opacity">0.00</span></label><input type="range" data-style="conv-edge-opacity" min="0" max="1" step="0.01" value="0.0"></div>' +
+          // Phase 22-I (2026-05-24) — Guide rings + Converging
+          // separator are RADIAL-only geometry. Hidden in
+          // timeline mode via body.fv-layout-timeline.
+          '<div class="forge-fxpanel-section fv-wheel-only">Guide rings</div>' +
+          '<div class="forge-stylepanel-rowcolor fv-wheel-only"><label>inner color</label><input type="color" data-style="ring-inner-color" value="#6f8aaf"></div>' +
+          '<div class="forge-stylepanel-rowcolor fv-wheel-only"><label>mid color</label><input type="color" data-style="ring-mid-color" value="#6f8aaf"></div>' +
+          '<div class="forge-stylepanel-rowcolor fv-wheel-only"><label>outer color</label><input type="color" data-style="ring-outer-color" value="#6f8aaf"></div>' +
+          '<div class="forge-fxpanel-row fv-wheel-only"><label>stroke width <span class="forge-fxpanel-val" data-val="ring-width">0.5px</span></label><input type="range" data-style="ring-width" min="0.2" max="6" step="0.1" value="0.5"></div>' +
+          '<div class="forge-fxpanel-row fv-wheel-only"><label>opacity <span class="forge-fxpanel-val" data-val="ring-opacity">0.50</span></label><input type="range" data-style="ring-opacity" min="0" max="1" step="0.01" value="0.5"></div>' +
+          '<div class="forge-fxpanel-section fv-wheel-only">Separators</div>' +
+          '<div class="forge-fxpanel-row fv-wheel-only"><label>stroke width <span class="forge-fxpanel-val" data-val="sep-width">0.5px</span></label><input type="range" data-style="sep-width" min="0.2" max="6" step="0.1" value="0.5"></div>' +
+          '<div class="forge-fxpanel-row fv-wheel-only"><label>opacity <span class="forge-fxpanel-val" data-val="sep-opacity">0.50</span></label><input type="range" data-style="sep-opacity" min="0" max="1" step="0.01" value="0.5"></div>' +
+          '<div class="forge-fxpanel-section fv-wheel-only">Converging separator</div>' +
+          '<div class="forge-stylepanel-rowcolor fv-wheel-only"><label>center color</label><input type="color" data-style="conv-center-color" value="#6f8aaf"></div>' +
+          '<div class="forge-fxpanel-row fv-wheel-only"><label>center opacity <span class="forge-fxpanel-val" data-val="conv-center-opacity">1.00</span></label><input type="range" data-style="conv-center-opacity" min="0" max="1" step="0.01" value="1.0"></div>' +
+          '<div class="forge-stylepanel-rowcolor fv-wheel-only"><label>outer color</label><input type="color" data-style="conv-edge-color" value="#6f8aaf"></div>' +
+          '<div class="forge-fxpanel-row fv-wheel-only"><label>outer opacity <span class="forge-fxpanel-val" data-val="conv-edge-opacity">0.00</span></label><input type="range" data-style="conv-edge-opacity" min="0" max="1" step="0.01" value="0.0"></div>' +
+          // Phase 22-I (2026-05-24) — Timeline band styling. Live
+          // values feed into timeline-chrome.js on each refresh.
+          // Persisted to localStorage; reset to defaults below.
+          '<div class="forge-fxpanel-section fv-timeline-only">Timeline bands</div>' +
+          '<div class="forge-fxpanel-row fv-timeline-only"><label>fill opacity <span class="forge-fxpanel-val" data-val="tl-band-fill">0.18</span></label><input type="range" data-style="tl-band-fill" min="0" max="0.8" step="0.01" value="0.18"></div>' +
+          '<div class="forge-fxpanel-row fv-timeline-only"><label>stroke opacity <span class="forge-fxpanel-val" data-val="tl-band-stroke">0.60</span></label><input type="range" data-style="tl-band-stroke" min="0" max="1" step="0.01" value="0.60"></div>' +
+          '<div class="forge-fxpanel-row fv-timeline-only"><label>stroke width <span class="forge-fxpanel-val" data-val="tl-band-stroke-w">1.0px</span></label><input type="range" data-style="tl-band-stroke-w" min="0" max="4" step="0.1" value="1.0"></div>' +
+          '<div class="forge-fxpanel-section fv-timeline-only">Family labels</div>' +
+          '<div class="forge-fxpanel-row fv-timeline-only"><label>opacity <span class="forge-fxpanel-val" data-val="tl-label-opacity">0.85</span></label><input type="range" data-style="tl-label-opacity" min="0" max="1" step="0.01" value="0.85"></div>' +
+          '<div class="forge-fxpanel-row fv-timeline-only"><label>size <span class="forge-fxpanel-val" data-val="tl-label-size">11px</span></label><input type="range" data-style="tl-label-size" min="8" max="20" step="0.5" value="11"></div>' +
           '<button class="forge-fxpanel-reset" id="forge-stylepanel-reset">RESET TO DEFAULTS</button>' +
         '</div>' +
       '</div>',
@@ -2485,6 +2515,13 @@
       // The chrome owns its own SVG overlay and camera-change refresh
       // loop; we just bridge mount/unmount on rebuildForMode boundaries.
       try {
+        // Phase 22-I (2026-05-24) — body class for layout-aware
+        // panels. CSS rules hide .fv-wheel-only sections under
+        // body.fv-layout-timeline and .fv-timeline-only under
+        // body.fv-layout-wheel. Set BEFORE mounting the chrome so
+        // the panels paint with the right visibility on first render.
+        document.body.classList.toggle('fv-layout-timeline', local.layoutId === 'timeline');
+        document.body.classList.toggle('fv-layout-wheel',    local.layoutId !== 'timeline');
         const chrome = window.AtlasTimelineChrome;
         if (chrome) {
           if (local.layoutId === 'timeline' && lay.xRange) {
@@ -5051,6 +5088,8 @@
           guideRings: false,
           wires: true, sfx: true, map: false,
           reverseAge: false,
+          // Phase 22-I (2026-05-24) — timeline layer toggles.
+          tlBands: true, tlBandLabels: true,
         };
       })();
       // Defensive defaults — additive.
@@ -5060,6 +5099,8 @@
       if (typeof state.guideRings         !== 'boolean') state.guideRings         = false;
       if (typeof state.sfx                !== 'boolean') state.sfx                = true;
       if (typeof state.reverseAge         !== 'boolean') state.reverseAge         = false;
+      if (typeof state.tlBands            !== 'boolean') state.tlBands            = true;
+      if (typeof state.tlBandLabels       !== 'boolean') state.tlBandLabels       = true;
       function applyState() {
         document.body.classList.toggle('fv-hide-hulls',         !state.hulls);
         document.body.classList.toggle('fv-hide-family-titles', !state.familyTitles);
@@ -5068,6 +5109,11 @@
         document.body.classList.toggle('fv-hide-wires',         !state.wires);
         document.body.classList.toggle('fv-hide-map',           !state.map);
         document.body.classList.toggle('fv-hide-guide-rings',   !state.guideRings);
+        // Phase 22-I — timeline-only layer toggles via body classes.
+        // CSS in app.css hides .forge-timeline-bands and
+        // .forge-timeline-band-labels under these classes.
+        document.body.classList.toggle('fv-hide-tl-bands',       !state.tlBands);
+        document.body.classList.toggle('fv-hide-tl-band-labels', !state.tlBandLabels);
         // Phase 21AS (2026-05-23) — source-tier filter. Update body
         // classes for CSS hooks AND build the active-tier set the
         // renderer will read in recomputeFocus. The wire-filter
@@ -5501,20 +5547,41 @@
       function formatForCss(key, raw) {
         const n = parseFloat(raw);
         if (key === 'ring-width' || key === 'sep-width') return n.toFixed(1) + 'px';
+        if (key === 'tl-band-stroke-w' || key === 'tl-label-size') return n.toFixed(1) + 'px';
         if (/opacity$/.test(key))                        return n.toFixed(2);
+        if (/^tl-(band-fill|band-stroke|label-opacity)$/.test(key)) return n.toFixed(2);
         // Color pickers: raw value is already a #rrggbb string.
         return raw;
       }
       function formatForDisplay(key, raw) {
         const n = parseFloat(raw);
         if (key === 'ring-width' || key === 'sep-width') return n.toFixed(1) + 'px';
+        if (key === 'tl-band-stroke-w')                  return n.toFixed(1) + 'px';
+        if (key === 'tl-label-size')                     return Math.round(n) + 'px';
         if (/opacity$/.test(key))                        return n.toFixed(2);
+        if (/^tl-(band-fill|band-stroke|label-opacity)$/.test(key)) return n.toFixed(2);
         return raw;
       }
+      // Phase 22-I (2026-05-24) — timeline keys map to chrome state.
+      const TL_BAND_KEY_MAP = {
+        'tl-band-fill':     'fillAlpha',
+        'tl-band-stroke':   'strokeAlpha',
+        'tl-band-stroke-w': 'strokeWidth',
+        'tl-label-opacity': 'labelOpacity',
+        'tl-label-size':    'labelSize',
+      };
       function applyOne(key, val) {
         document.body.style.setProperty('--style-' + key, formatForCss(key, val));
         const valEl = panel.querySelector('[data-val="' + key + '"]');
         if (valEl) valEl.textContent = formatForDisplay(key, val);
+        // Phase 22-I — timeline band style keys: dispatch to
+        // AtlasTimelineChrome.setBandStyle so the SVG redraws.
+        if (TL_BAND_KEY_MAP[key] && window.AtlasTimelineChrome
+            && typeof window.AtlasTimelineChrome.setBandStyle === 'function') {
+          try { window.AtlasTimelineChrome.setBandStyle(TL_BAND_KEY_MAP[key], parseFloat(val)); }
+          catch (_) {}
+          return;
+        }
         // Converging gradient stops cache aggressively in SVG; any
         // conv-* change forces a clean rebuild + sync to flush.
         if (key.indexOf('conv-') === 0 && local._dividerMode === 'long-centered') {

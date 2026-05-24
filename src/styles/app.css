@@ -851,6 +851,21 @@ body.nav-hidden .side-tab { display: none !important; }
 .app-pill-menu-icon {
   display: none !important;   /* belt-and-braces — see notes below */
 }
+
+/* Phase 22-I (2026-05-24) — layout-aware VIEW / STYLE / FX panels.
+   body.fv-layout-timeline hides .fv-wheel-only rows (radial-only
+   controls); body.fv-layout-wheel hides .fv-timeline-only rows
+   (band controls). Default state (no body class yet) acts like
+   wheel so the first paint doesn't show timeline-only widgets. */
+body.fv-layout-timeline .fv-wheel-only,
+body.fv-layout-wheel    .fv-timeline-only,
+body:not(.fv-layout-timeline) .fv-timeline-only {
+  display: none !important;
+}
+/* Phase 22-I — VIEW > Layers timeline-only toggles. CSS class
+   targets the SVG groups owned by timeline-chrome.js. */
+body.fv-hide-tl-bands       .forge-timeline-bands       { display: none !important; }
+body.fv-hide-tl-band-labels .forge-timeline-band-labels { display: none !important; }
 .app-pill-label {
   flex: 1 1 auto;
   white-space: nowrap;

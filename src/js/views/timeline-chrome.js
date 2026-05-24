@@ -81,6 +81,47 @@
   // localStorage key for persisting the band-density preference.
   const LS_BAND_SCALE = 'codex_atlas_timeline_band_scale';
 
+  // ── BAND STYLE STATE (Phase 22-I, 2026-05-24) ────────────
+  // Live-tunable via the STYLE panel's "Timeline bands" + "Family
+  // labels" sections. Reads applied on every refresh() call.
+  // Persists to localStorage.
+  const LS_BAND_STYLE = 'codex_atlas_timeline_band_style';
+  const BAND_STYLE_DEFAULTS = {
+    fillAlpha:    0.18,
+    strokeAlpha:  0.60,
+    strokeWidth:  1.0,
+    labelOpacity: 0.85,
+    labelSize:    11,    // px
+  };
+  let _bandStyle = Object.assign({}, BAND_STYLE_DEFAULTS);
+  try {
+    const raw = localStorage.getItem(LS_BAND_STYLE);
+    if (raw) {
+      const parsed = JSON.parse(raw);
+      if (parsed && typeof parsed === 'object') {
+        Object.assign(_bandStyle, parsed);
+      }
+    }
+  } catch (_) {}
+  function _persistBandStyle() {
+    try { localStorage.setItem(LS_BAND_STYLE, JSON.stringify(_bandStyle)); } catch (_) {}
+  }
+  function setBandStyleKey(key, val) {
+    if (!(key in BAND_STYLE_DEFAULTS)) return false;
+    if (typeof val !== 'number' || !isFinite(val)) return false;
+    if (Math.abs(_bandStyle[key] - val) < 1e-4) return false;
+    _bandStyle[key] = val;
+    _persistBandStyle();
+    scheduleRefresh();
+    return true;
+  }
+  function getBandStyle() { return Object.assign({}, _bandStyle); }
+  function resetBandStyle() {
+    _bandStyle = Object.assign({}, BAND_STYLE_DEFAULTS);
+    _persistBandStyle();
+    scheduleRefresh();
+  }
+
   // ── STATE ────────────────────────────────────────────────
   // Provided by the host (forge.js) at mount-time:
   let hostEl   = null;        // The .forge-stage div (parent for the overlay)
@@ -805,17 +846,17 @@
 
       // Fill rectangle — gradient fill (L/R fade to 0). Stroke
       // also uses the same gradient via a separate stroke-only
-      // rect so end-caps also taper.
+      // rect so end-caps also taper. Live-tunable via STYLE panel.
       const rect = document.createElementNS(NS, 'rect');
       rect.setAttribute('x',      bandX0);
       rect.setAttribute('y',      yTopScreen);
       rect.setAttribute('width',  bandWidth);
       rect.setAttribute('height', h);
       rect.setAttribute('fill',           'url(#' + gradId + ')');
-      rect.setAttribute('fill-opacity',   '0.18');   // gradient peaks at 0.18 in middle
+      rect.setAttribute('fill-opacity',   String(_bandStyle.fillAlpha));
       rect.setAttribute('stroke',         'url(#' + gradId + ')');
-      rect.setAttribute('stroke-opacity', '0.60');
-      rect.setAttribute('stroke-width',   '1');
+      rect.setAttribute('stroke-opacity', String(_bandStyle.strokeAlpha));
+      rect.setAttribute('stroke-width',   String(_bandStyle.strokeWidth));
       bandGroupEl.appendChild(rect);
 
       // Left-edge label — fixed at viewport X=12 (so it stays
@@ -829,11 +870,11 @@
         label.setAttribute('class', 'forge-timeline-band-label');
         label.style.fill          = band.color || 'rgba(232,200,137,0.85)';
         label.style.fontFamily    = 'var(--mono, "JetBrains Mono", Menlo, monospace)';
-        label.style.fontSize      = '11px';
+        label.style.fontSize      = _bandStyle.labelSize + 'px';
         label.style.fontWeight    = '600';
         label.style.letterSpacing = '0.12em';
         label.style.textTransform = 'uppercase';
-        label.style.opacity       = '0.85';
+        label.style.opacity       = String(_bandStyle.labelOpacity);
         label.textContent = band.name || famName;
         bandLabelGroupEl.appendChild(label);
       }
@@ -1013,5 +1054,10 @@
     unmount,
     refresh: scheduleRefresh,
     isMounted: () => mounted,
+    // Phase 22-I (2026-05-24) — band style API for STYLE panel.
+    setBandStyle: setBandStyleKey,
+    getBandStyle: getBandStyle,
+    resetBandStyle: resetBandStyle,
+    bandStyleDefaults: function () { return Object.assign({}, BAND_STYLE_DEFAULTS); },
   };
 })();
