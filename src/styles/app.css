@@ -1372,10 +1372,6 @@ body.fv-hide-wires         .forge-canvas { /* the actual hide is renderer-side: 
   /* Bottom-bar parent is pointer-events: none — opt in so the
      autocomplete suggestion list can receive clicks. */
   pointer-events: auto;
-  /* Phase 22-F (2026-05-24) — search wrap grows to fill bottom-bar
-     so the input inside can hit 2/3 viewport width. */
-  flex: 1 1 auto;
-  min-width: 0;
 }
 .forge-search-suggest {
   position: absolute;
@@ -6768,14 +6764,11 @@ body.nav-collapsed .nav-more > summary .lbl { display: none; }
   border-radius: 4px;
   padding: 5px 10px;
   outline: none;
-  /* Phase 22-F (2026-05-24) — search input is 2/3 viewport width
-     (was 160/180px since 2026-05-20). The bottom-bar parent uses
-     flex so neighboring controls keep their natural width and the
-     search expands to occupy the remaining 2/3. */
-  flex: 1 1 0;
-  width: 66vw;
-  max-width: 66vw;
-  min-width: 320px;
+  /* Phase 22-F-fix (2026-05-24) — 2/3 of the previous size, not
+     2/3 of viewport. Was 160/180 (2026-05-20). Now 107/120 ≈ 2/3
+     of that — a smaller, tighter input. */
+  flex: 0 1 107px;
+  max-width: 120px;
 }
 .forge-bottom-search::placeholder { color: var(--text-3); }
 .forge-bottom-search:hover { border-color: var(--gold-soft); }
