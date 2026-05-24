@@ -1090,7 +1090,11 @@
           lblU.style.fontWeight    = '500';
           lblU.style.letterSpacing = '0.14em';
           lblU.style.textTransform = 'uppercase';
-          lblU.textContent = 'undated · ' + undated.ids.length;
+          // Phase B-DATING-1 (2026-05-24) — relabel the lane.
+          // What was "undated" is now formally B7 "atemporal" —
+          // genuinely without a placeable year. See AUDIT/
+          // 2026-05-24-undated-dating-proposal.md.
+          lblU.textContent = 'atemporal · ' + undated.ids.length;
           bandLabelGroupEl.appendChild(lblU);
         }
       }

@@ -538,6 +538,45 @@ def tradition_family(t: str) -> str:
     return "Other"
 
 
+# ── Phase B-DATING-1 (2026-05-24) — slug-extracted year for events ──
+# Some event nodes carry the year in the slug (e.g.,
+#   event-cahokia-foundation-c-1050-ce
+#   event-imjin-war-burning-of-bulguksa-1593
+# ) but have empty frontmatter. The audit estimated ~50 such nodes.
+# This helper recovers the year from the slug as a last-resort B1.
+# Pattern matches: optional 'c-' or 'c' prefix + 3-4 digit year +
+# optional '-bce' / '-ce' suffix + end-of-string.
+import re as _re
+_EVENT_YEAR_RE = _re.compile(r"-(c-?-?)?(\d{2,4})(?:-(bce|ce|bc|ad))?$", _re.IGNORECASE)
+_EVENT_YEAR_RE_MIDPART = _re.compile(r"-(c-?-?)?(\d{2,4})-(\d{2,4})(?:-(bce|ce|bc|ad))?(-[a-z]+)?$", _re.IGNORECASE)
+def extract_year_from_slug(slug: str):
+    """Return integer year if recoverable from a node id, else None."""
+    if not slug:
+        return None
+    # Try range pattern first ("1939-1945-ww2"). Take the earlier year.
+    m = _EVENT_YEAR_RE_MIDPART.search(slug)
+    if m:
+        try:
+            y = int(m.group(2))
+            era = (m.group(4) or "").lower()
+            if era in ("bce", "bc"):
+                y = -y
+            return y
+        except (ValueError, TypeError):
+            pass
+    m = _EVENT_YEAR_RE.search(slug)
+    if m:
+        try:
+            y = int(m.group(2))
+            era = (m.group(3) or "").lower()
+            if era in ("bce", "bc"):
+                y = -y
+            return y
+        except (ValueError, TypeError):
+            pass
+    return None
+
+
 def parse_influences_md(path: Path):
     """Pull edges out of _graph/influences.md (raw text block format)."""
     if not path.exists():
@@ -1017,8 +1056,41 @@ def main():
                     "label": fm.get("label", ""),
                     "category": fm.get("category", ""),
                     "phase": phase,
-                    "date_earliest": fm.get("date-composed-earliest") or fm.get("period-active-earliest") or fm.get("date-start") or fm.get("date-born") or fm.get("period-earliest"),
+                    # Phase B-DATING-1 (2026-05-24) — extended coalesce per
+                    # AUDIT/2026-05-24-undated-dating-proposal.md §0.
+                    # Recovers nodes that already carry parseable dates under
+                    # field names the old coalesce ignored. Order matters:
+                    # composition / start / born first (B1 primary), then
+                    # building / attestation / emergence (B1 primary for the
+                    # entity type), then redaction / manuscript (B1/B3 last-
+                    # resort).
+                    "date_earliest": (
+                        fm.get("date-composed-earliest")
+                        or fm.get("period-active-earliest")
+                        or fm.get("date-start")
+                        or fm.get("date-born")
+                        or fm.get("period-earliest")
+                        # B1 primary for non-composition entity types
+                        or fm.get("date-built-earliest")
+                        or fm.get("date-attested-earliest")
+                        or fm.get("date-emergence")
+                        or fm.get("date-emergence-earliest")
+                        or fm.get("date-founded-earliest")
+                        or fm.get("date-composed")
+                        # Last-resort fallbacks — redaction / canonization
+                        # date (still primary), oldest extant manuscript
+                        # (hard lower bound on the text's existence).
+                        or fm.get("date-redacted")
+                        or fm.get("date-physical-mss-earliest")
+                    ),
                     "date_latest":   fm.get("date-composed-latest")   or fm.get("period-active-latest")   or fm.get("date-end")   or fm.get("date-died") or fm.get("period-latest"),
+                    # Phase B-DATING-1 — dating_basis: B1..B7. Set
+                    # by author for B2..B5 (with cited source). B6
+                    # is auto-synthesized below (family median).
+                    # B7 is the residue marker for genuinely-undatable.
+                    "dating_basis":        fm.get("dating-basis") or fm.get("dating_basis"),
+                    "dating_basis_source": fm.get("dating-basis-source") or fm.get("dating_basis_source"),
+                    "dating_basis_notes":  fm.get("dating-basis-notes") or fm.get("dating_basis_notes"),
                     "region": fm.get("region", ""),
                     "language": fm.get("language", []),
                     "themes": fm.get("themes", []),
@@ -1101,6 +1173,81 @@ def main():
         deduped.append(e)
 
     nodes = list(nodes_by_id.values())
+
+    # ── Phase B-DATING-1 (2026-05-24) — Slug-extracted year for events ──
+    # Per AUDIT §8 step 3. Event nodes that carry the year in the slug
+    # (event-cahokia-foundation-c-1050-ce) but have empty frontmatter
+    # date fields get the year recovered here. Tags as dating_basis: B1
+    # because the year is the event itself.
+    _slug_recovered = 0
+    for n in nodes:
+        if n.get("date_earliest") is None and n.get("type") == "event":
+            y = extract_year_from_slug(n.get("id", ""))
+            if y is not None:
+                n["date_earliest"]  = y
+                n["dating_basis"]   = n.get("dating_basis") or "B1"
+                n["dating_basis_notes"] = (n.get("dating_basis_notes")
+                    or "year extracted from event slug (no frontmatter)")
+                _slug_recovered += 1
+    if _slug_recovered:
+        print(f"OK  slug-extracted {_slug_recovered} event years")
+
+    # ── Phase B-DATING-1 — B6 family-median synthesizer ──────
+    # Per AUDIT §8 step 4. For nodes still undated AFTER the coalesce
+    # + slug extraction, AND carrying a tradition, synthesize
+    # date_earliest from the tradition's median. Soft placement —
+    # marked dating_basis: B6 so the UI can render reduced-confidence
+    # chrome.
+    # Compute tradition medians once.
+    _by_tradition_dates = {}
+    for n in nodes:
+        d = n.get("date_earliest")
+        t = n.get("tradition")
+        if d is None or t is None:
+            continue
+        if not isinstance(d, (int, float)):
+            continue
+        _by_tradition_dates.setdefault(t, []).append(d)
+    _tradition_median = {}
+    for t, ds in _by_tradition_dates.items():
+        if len(ds) >= 3:        # require >=3 dated members for stability
+            srt = sorted(ds)
+            mid = len(srt) // 2
+            _tradition_median[t] = srt[mid] if len(srt) % 2 else (srt[mid - 1] + srt[mid]) // 2
+    _b6_recovered = 0
+    for n in nodes:
+        if n.get("date_earliest") is not None:
+            continue
+        t = n.get("tradition")
+        if t and t in _tradition_median:
+            n["date_earliest"]  = _tradition_median[t]
+            n["dating_basis"]   = "B6"
+            n["dating_basis_notes"] = (
+                f"Inherited from tradition '{t}' median (c. {_tradition_median[t]}). "
+                "No primary evidence in YAML; soft placement per AUDIT B-DATING-1.")
+            _b6_recovered += 1
+    if _b6_recovered:
+        print(f"OK  B6 family-median synthesized {_b6_recovered} dates")
+
+    # ── Phase B-DATING-1 — B7 residue marker ─────────────────
+    # Anything still undated after all the above gets dating_basis: B7
+    # (genuinely atemporal). The timeline UI places these in a
+    # dedicated atemporal lane rather than the main spine.
+    _b7_residue = 0
+    for n in nodes:
+        if n.get("date_earliest") is None and n.get("dating_basis") is None:
+            n["dating_basis"]      = "B7"
+            n["dating_basis_notes"] = (n.get("dating_basis_notes")
+                or "No date evidence located + no tradition median available — atemporal.")
+            _b7_residue += 1
+    if _b7_residue:
+        print(f"OK  marked {_b7_residue} nodes as B7 (atemporal)")
+
+    # For nodes with explicit date_earliest but no dating_basis,
+    # default to B1 (primary date). Idempotent + harmless.
+    for n in nodes:
+        if n.get("date_earliest") is not None and not n.get("dating_basis"):
+            n["dating_basis"] = "B1"
 
     # strip frontmatter out of the final payload to keep file lean — keep refs separately
     for n in nodes:

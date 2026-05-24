@@ -422,6 +422,52 @@ Lane B (UX) is single-slot — see [`LANES.md`](LANES.md). Content agents may no
 - For oral-then-written texts: both `date-composed-earliest` (presumed oral origin) and `date-redacted` (writing / canonization).
 - Use absolute dates when converting relative-time mentions ("Thursday" → `2026-03-05`).
 
+### 5.1 Dating basis — B1-B7 (2026-05-24)
+
+When a node has no explicit primary date (`date-composed-earliest`,
+`date-born`, etc.), we still want it on the timeline spine. The
+`dating_basis` field records WHICH evidence-class anchors the node's
+year, on a 7-tier scale **orthogonal** to `source-tier` (which is
+about mainstream acceptance, not dating evidence).
+
+| Basis | What | Confidence | Typical anchor |
+|---|---|---|---|
+| **B1** | Primary date — the canonical `date-earliest` | high | birth-year, regnal year, composition year |
+| **B2** | First textual attestation in a cited source | high | "Marduk first attested in the Adab tablet, c. -2400" |
+| **B3** | Oldest dated archaeology | high | cult site, inscription, iconographic find |
+| **B4** | First scripture appearance in a dated text | medium-high | "Suffering Servant: Deutero-Isaiah c. -540" |
+| **B5** | Scholarly-consensus emergence period | medium | "Sufism c. 800-900 per Schimmel 1975" |
+| **B6** | Family / tradition median (SYNTHESIZED) | low | auto from tradition median when no other evidence |
+| **B7** | Genuinely undatable / atemporal | n/a | abstract motifs, PIE reconstructions, cosmological-only places |
+
+Schema:
+
+```yaml
+date-earliest:        -1500          # the canonical scalar (UNCHANGED)
+dating-basis:         B4             # B1..B7; required when inferring
+dating-basis-source:  "Blenkinsopp 2000 *Isaiah 40-55* (Anchor)"
+                                     # REQUIRED for B2/B3/B4/B5
+                                     # OPTIONAL for B1 (already cited via refs[]) + B6
+dating-basis-notes:   "..."          # OPTIONAL free-text
+```
+
+**Rules.** B2/B3/B4/B5 require `dating-basis-source` (the cited
+reference, not "Wikipedia"). B6 is **computed by build, never
+hand-written** — emitted automatically when a node lacks other
+evidence but carries a `tradition:` field. B7 must explain WHY in
+notes; the timeline puts B7 nodes in a dedicated atemporal lane
+rather than the main spine.
+
+**Build coalesce.** `date-earliest` falls through (in order):
+`date-composed-earliest` · `period-active-earliest` · `date-start` ·
+`date-born` · `period-earliest` · `date-built-earliest` ·
+`date-attested-earliest` · `date-emergence` · `date-emergence-earliest` ·
+`date-founded-earliest` · `date-composed` ·
+slug-extracted year (events only) · tradition median (B6 synth).
+
+See `AUDIT/2026-05-24-undated-dating-proposal.md` for the full
+framework, per-category strategy, and edge cases.
+
 ---
 
 ## 6. YAML skeletons (the 17 node types)
