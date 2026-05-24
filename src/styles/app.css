@@ -864,20 +864,18 @@ body.nav-hidden .side-tab { display: none !important; }
 .app-pill-caret {
   display: none;     /* hide the textual ▾; replace with gradient triangle */
 }
+/* Phase 22-H (2026-05-24) — drop the gradient-triangle caret on
+   each pill side. John flagged them as "really annoying" — the
+   labels are the identity; no dropdown indicator needed. The
+   pills still open menus on click + keyboard. */
 .app-pill-side::after {
-  content: "";
-  position: absolute;
-  right: 7px;
-  top: 50%;
-  width: 4px; height: 4px;
-  transform: translateY(-50%);
-  background-image:
-    linear-gradient(45deg, transparent 50%, var(--gold-soft, #a87f3e) 50%),
-    linear-gradient(135deg, var(--gold-soft, #a87f3e) 50%, transparent 50%);
-  background-position: 0 0, 0 0;
-  background-size: 4px 4px;
-  background-repeat: no-repeat;
-  pointer-events: none;
+  content: none;
+}
+/* Tighten right padding now that the caret slot is gone. The pill
+   had 22px right padding to reserve room for the gradient
+   triangle; without it 12px is enough. */
+.app-pill-side {
+  padding-right: 12px;
 }
 .app-pill-divider {
   width: 1px;
