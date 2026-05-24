@@ -41,6 +41,18 @@
   // World-space convention: 1 year = X_SCALE world units. A 5000-
   // year span at 0.5 wu/yr = 2500 wu wide. Matches the audit's §1.2.
   const X_SCALE       = 0.5;
+  // Phase TL-2 Step 4 (2026-05-24) — fit-scale override target.
+  // Per John's spec (2026-05-24): "at 20% zoom, the timeline main
+  // date range fills 90% of viewport width." Gizmo % = scale /
+  // fit_scale, so scale_at_20 = 0.2 × fit_scale. Setting:
+  //   fit_scale = (4.5 × viewport_w) / data_range_world
+  // gives at gizmo 20%:
+  //   data_range_world × 0.2 × fit_scale = 0.9 × viewport_w  ✓
+  // At gizmo 100% (default), the data range fills 4.5× viewport —
+  // i.e., only ~22% of the timeline is visible at default zoom.
+  // TradingView-style: default zoom shows detail, zoom out for the
+  // overview. The user pans horizontally to read across eras.
+  const FIT_OVERSCAN  = 4.5;
   const PAD           = 60;          // world-edge padding (top/bottom)
   // Phase TL-2 Step 3 (2026-05-24) — 10% horizontal reserve on both
   // sides of the data range so the leftmost (9000 BCE) and rightmost
@@ -294,15 +306,39 @@
     return xRange.lo + worldX / X_SCALE;
   }
 
+  // Phase TL-2 Step 4 (2026-05-24) — timeline-specific fit-scale
+  // override. Returns the camera scale that places the data range
+  // at FIT_OVERSCAN × viewport_w pixels wide. Used by forge.js
+  // computeFitScale() + the post-fit camera override in
+  // rebuildForMode for timeline mode only.
+  function computeTimelineFitScale(viewportW, xRange) {
+    if (!xRange || !viewportW) return 1;
+    const dataWidthWorld = (xRange.hi - xRange.lo) * X_SCALE;
+    if (dataWidthWorld <= 0) return 1;
+    return (FIT_OVERSCAN * viewportW) / dataWidthWorld;
+  }
+  function computeTimelineCenter(xRange, worldExtent) {
+    // Data range center in world coords (X) + worldExtent vertical
+    // midpoint (Y). The xPad on each side means xRange.lo maps to
+    // world-X 0 (with the layout placing date_lo at worldX=0). So
+    // data center is at dataWidthWorld / 2.
+    const dataWidthWorld = (xRange.hi - xRange.lo) * X_SCALE;
+    const cx = dataWidthWorld / 2;
+    const cy = ((worldExtent && worldExtent.y0) || 0) + (((worldExtent && worldExtent.y1) || 0) - ((worldExtent && worldExtent.y0) || 0)) / 2;
+    return { cx, cy };
+  }
+
   // ── EXPORT ───────────────────────────────────────────────
   window.AtlasEngineLayout = window.AtlasEngineLayout || {};
   window.AtlasEngineLayout.timelineLayout = timelineLayout;
   window.AtlasEngineLayout.timelineYearToWorldX = yearToWorldX;
   window.AtlasEngineLayout.timelineWorldXToYear = worldXToYear;
+  window.AtlasEngineLayout.computeTimelineFitScale = computeTimelineFitScale;
+  window.AtlasEngineLayout.computeTimelineCenter   = computeTimelineCenter;
   // Also export the constants so the view layer can use them when
   // rendering the time-axis ribbon + undated lane chrome.
   window.AtlasEngineLayout.timelineConstants = Object.freeze({
-    X_SCALE, PAD, X_PAD_FRAC, TIME_AXIS_PAD,
+    X_SCALE, FIT_OVERSCAN, PAD, X_PAD_FRAC, TIME_AXIS_PAD,
     MIN_BAND_H, MAX_BAND_H, BAND_H_BASE,
     ROW_PAD, ROW_STEP, MIN_X_SPACING,
     UNDATED_PAD, UNDATED_BAND_H,

@@ -2330,6 +2330,23 @@
       camera.stopAnim();
       if (local.lastSize.w && local.lastSize.h) {
         camera.fitToExtent(ext, local.lastSize, 0);
+        // Phase TL-2 Step 4 (2026-05-24) — timeline-mode fit override.
+        // fitToExtent picks min(vp.w/world_w, vp.h/world_h) which for
+        // an anisotropic 6000×2050 timeline picks the X-dimension and
+        // shrinks the visible content to the tiny side of viewport.
+        // John's spec wants the timeline 4.5× wider than viewport at
+        // "fit" (gizmo 100%) so the user pans/zooms like TradingView.
+        // After fitToExtent, override camera.scale + center for the
+        // timeline-specific feel.
+        if (local.layoutId === 'timeline' && lay.xRange
+            && window.AtlasEngineLayout
+            && window.AtlasEngineLayout.computeTimelineFitScale) {
+          const tlFit = window.AtlasEngineLayout.computeTimelineFitScale(
+            local.lastSize.w, lay.xRange);
+          const tlCtr = window.AtlasEngineLayout.computeTimelineCenter(
+            lay.xRange, ext);
+          camera.set({ scale: tlFit, centerX: tlCtr.cx, centerY: tlCtr.cy });
+        }
         // Phase 5B M-F1 (2026-05-20) — synchronously record the
         // new pack-scale BEFORE the listener-emit from fitToExtent
         // propagates. Otherwise the onChange listener (camera.js
@@ -2713,6 +2730,19 @@
     function computeFitScale() {
       const vp = local.lastSize;
       if (!vp.w || !vp.h || !local.mode || !local.mode.worldExtent) return 1;
+      // Phase TL-2 Step 4 (2026-05-24) — timeline mode has its own
+      // fit-scale semantics. Per John's spec: at gizmo 20% the date
+      // range fills 90% of viewport — i.e., at fit (gizmo 100%) the
+      // data range is 4.5× viewport-wide (only ~22% visible). This
+      // gives the TradingView feel where the default zoom shows
+      // detail and zoom-out gives the overview. See
+      // layout/timeline.js FIT_OVERSCAN.
+      if (local.layoutId === 'timeline'
+          && local.mode.xRange
+          && window.AtlasEngineLayout
+          && window.AtlasEngineLayout.computeTimelineFitScale) {
+        return window.AtlasEngineLayout.computeTimelineFitScale(vp.w, local.mode.xRange);
+      }
       const ext = local.mode.worldExtent;
       const wx = ext.x1 - ext.x0;
       const wy = ext.y1 - ext.y0;
