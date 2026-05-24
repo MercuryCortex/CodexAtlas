@@ -375,6 +375,13 @@
   // with a delay between switches, then resets to Forge. Useful for
   // verifying the pill drives every view cleanly. Run from console
   // when validating after Forge mounts.
+  // Phase 22-Y (2026-05-24) — guard the assignment. Without this
+  // line, `window._appPill.smoke = ...` throws because _appPill
+  // was never initialized → the WHOLE script crashes here and the
+  // class-button click handler (line 397) never gets attached →
+  // clicking Deities does nothing. Bug confirmed by John's console
+  // screenshot 2026-05-24: TypeError exactly at this point.
+  window._appPill = window._appPill || {};
   window._appPill.smoke = function (delay) {
     delay = delay || 1200;
     const list = MASTER_VIEWS.slice();
