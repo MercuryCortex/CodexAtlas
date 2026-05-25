@@ -2411,7 +2411,20 @@
 
       // Bind interaction handlers AFTER renderer is ready.
       attachInteractions();
-    })();
+    })().catch(err => {
+      // 2026-05-25 — safety net learned from the Phase 23.1 carve
+      // incident: when the bootstrap IIFE is `async`, any synchronous
+      // throw turns into an unhandled Promise rejection. Some browsers
+      // silently swallow these (or surface them only in the dedicated
+      // "unhandledrejection" channel, not the regular console). That
+      // hid a wireLegend-style ReferenceError for hours.
+      //
+      // This .catch() makes ANY bootstrap failure LOUD on the regular
+      // console.error channel — even silent-async ones. Costs nothing
+      // when the bootstrap succeeds (catch() on a resolved promise is
+      // a no-op).
+      console.error('[forge] bootstrap failed (interactions may not be bound):', err && err.stack ? err.stack : err);
+    });
 
     // ── rebuildForMode (Phase 4d) ──────────────────────
     // Filter nodes for the mode, recompute the radial layout,
