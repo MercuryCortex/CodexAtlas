@@ -68,7 +68,7 @@ The Polynesian-South American contact hypothesis — associated with Heyerdahl's
 ## Connections (provisional)
 - → [[pseudoarchaeology]] — *related*: modern pseudoarchaeological claims (Atlantis-origin hypotheses, ancient astronaut theory) often recycle hyperdiffusionist assumptions in secular or extraterrestrial dress.
 - → [[theme-akhenaten-moses-monotheism-thesis]] — *related*: Freud's Moses and Monotheism (1939) has a partial structural resemblance to hyperdiffusionist argument (Egypt as source) — though Freud is engaging psychoanalytic, not anthropological, methodology.
-- → [[tradition-afro-diasporic-syncretism]] — *contrast*: Afrocentric challenges to Eurocentric historiography share the impulse of challenging default narratives, but operate with different empirical and ideological frameworks than Smith-Perry hyperdiffusionism.
+- → [[tradition-afro-diasporic]] — *contrast*: Afrocentric challenges to Eurocentric historiography share the impulse of challenging default narratives, but operate with different empirical and ideological frameworks than Smith-Perry hyperdiffusionism.
 - → [[phase-7-007-golden-bough]] — *shared-milieu*: Frazer's *Golden Bough* (same period) also attempted grand comparative synthesis; methodological critique of both emerged from the same generation of professional anthropology.
 
 ## MASSIVE-wins connections

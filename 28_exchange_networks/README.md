@@ -56,7 +56,7 @@ Naming chosen academically. "Exchange networks" is the disciplinary term used in
 - `date-attested-latest` — when route is documented as no longer in use
 - `region-span` — geographic extent
 - `key-commodities` — `[[silk]], [[lapis-lazuli]], [[frankincense]]` (cross-link to commodity nodes)
-- `key-traditions-transmitted` — `[[tradition-buddhism-...]]` etc.
+- `key-traditions-transmitted` — `[tradition-buddhism-...]` etc.
 - `key-hubs` — `[[place-alexandria]], [[place-samarkand]]` (cross-link to `08_places/`)
 - `key-trading-peoples` — `[[exchange-network-sogdians]]` etc.
 - `parallel-routes` — routes serving structurally analogous functions

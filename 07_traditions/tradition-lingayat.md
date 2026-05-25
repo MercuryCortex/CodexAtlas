@@ -7,7 +7,7 @@ period-earliest: 1100
 period-latest: 2026
 region: "Karnataka + Andhra Pradesh + Maharashtra (Deccan, India)"
 tradition-context:
-  - "[[tradition-shaiva]]"
+  - "[[tradition-shaivism]]"
   - "[[tradition-hinduism]]"
 related-persons:
   - "[[basavanna]]"
@@ -68,7 +68,7 @@ The contemporary political-legal status of Lingayatism (whether it should be cla
 
 - [[basavanna]] — the founder
 - `allama-prabhu` + `akka-mahadevi` — the major *vacanakāra* poet-saints
-- [[tradition-shaiva]] — the broader Shaiva tradition
+- [[tradition-shaivism]] — the broader Shaiva tradition
 - [[tradition-kashmir-shaivism]] — the sister tradition (Kashmir vs. Karnataka Shaivism)
 
 ## Refs

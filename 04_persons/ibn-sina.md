@@ -13,7 +13,7 @@ texts-authored: ["[[phase-5-044-ibn-sina-kitab-al-shifa]] *Kitāb al-Shifāʾ* (
 texts-attributed-to: []
 originator-of: ["the *essence / existence distinction* (māhiyya / wujūd) — Avicenna's foundational metaphysical move", "the *flying-man* thought-experiment (proof of substantial self-existence apart from sensible body)", "the *Necessary Being / contingent being* argument for God's existence (*wājib al-wujūd* / *mumkin al-wujūd*) — the principal Avicennian natural-theology argument that becomes Aquinas's Third Way", "the *floating-physician* / clinical-observation method in medicine"]
 events-participated: []
-mentioned-in: ["[[phase-5-019-maimonides-guide-for-the-perplexed]]", "[[phase-5-024-aquinas-summa-theologiae]]", "[[phase-5-045-ibn-rushd-tahafut-al-tahafut]]", "[[phase-5-046-al-ghazali-tahafut-al-falasifa]] (Ghazali's principal target is Avicenna-via-Farabi)"]
+mentioned-in: ["[[phase-5-019-maimonides-guide-for-the-perplexed]]", "[[phase-5-024-aquinas-summa-theologiae]]", "[[phase-5-046-ibn-rushd-tahafut-al-tahafut]]", "[[phase-5-045-al-ghazali-tahafut-al-falasifa]] (Ghazali's principal target is Avicenna-via-Farabi)"]
 status: "metadata"
 refs:
   - title: "Avicenna and the Aristotelian Tradition: Introduction to Reading Avicenna's Philosophical Works"

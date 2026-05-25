@@ -14,7 +14,7 @@ parent-of: []
 child-of: []
 consort: ["Śacī / Sujā (his queen in Buddhist sources, same name as Vedic Indra's consort)"]
 attributes: ["vajra (thunderbolt) — inherited from Vedic Indra", "white elephant Airāvata", "throne in Trāyastriṃśa heaven on Mount Sumeru", "in East Asian Esoteric Buddhism: warrior-armor + vajra + crown"]
-attested-in: ["[[phase-2-018-pali-canon-suttas]] (Sakka-saṃyutta in the Saṃyutta Nikāya is largely about him)", "[[phase-4-138-lotus-sutra]] (his role as Dharma-protector)", "[[phase-3-095-mahabharata]] (some narrative overlap)"]
+attested-in: ["[[phase-2-018-pali-canon-suttas]] (Sakka-saṃyutta in the Saṃyutta Nikāya is largely about him)", "[[phase-4-101-lotus-sutra]] (his role as Dharma-protector)", "[[phase-3-095-mahabharata]] (some narrative overlap)"]
 equivalents: ["[[indra]]"]
 syncretic-edges:
   - target: "[[indra]]"

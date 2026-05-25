@@ -6,7 +6,7 @@ aka: ["soul-weighing", "judgment of the dead", "weighing of the heart", "last ju
 category: "eschatological / soteriological"
 appearances:
   - "[[phase-1-002-pyramid-texts]]"
-  - "[[phase-1-007-book-of-the-dead]]"
+  - "[[phase-1-010-book-of-the-dead]]"
   - "[[tradition-egyptian]]"
   - "[[osiris]]"
   - "[[ma-at]]"

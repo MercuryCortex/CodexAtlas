@@ -2,7 +2,7 @@
 type: tradition
 id: "tradition-hashshashin"
 name: "Nizari Ismaili State (Hashshashin / Assassins)"
-parent-tradition: "[[tradition-ismaili-shia]]"
+parent-tradition: "[[tradition-ismailism]]"
 date-emergence: 1090
 date-end: 1275
 region-origin: "Persia (Alamut Castle, Alborz mountains, near Qazvin)"
@@ -10,7 +10,7 @@ regions-spread: ["Persia (Alborz mountains, 40+ mountain castles)", "Syria (Masy
 key-deities: []
 key-persons: ["Hassan-i Sabbah (founder, the 'Old Man of the Mountain' in Crusader sources; 1050–1124)"]
 key-documents: []
-sister-traditions: ["[[tradition-knights-templar]] (documented contact — mutual non-aggression agreements, tribute, intelligence exchange in Syria; one of the most remarkable cross-religious institutional relationships of the medieval world)", "[[tradition-ismaili-shia]] (parent tradition)", "[[tradition-sufism]] (some scholarly overlap — contested)"]
+sister-traditions: ["[[tradition-knights-templar]] (documented contact — mutual non-aggression agreements, tribute, intelligence exchange in Syria; one of the most remarkable cross-religious institutional relationships of the medieval world)", "[[tradition-ismailism]] (parent tradition)", "[[tradition-sufism]] (some scholarly overlap — contested)"]
 status: "metadata"
 refs:
   - title: "The Assassins: A Radical Sect in Islam"

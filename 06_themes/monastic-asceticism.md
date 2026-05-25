@@ -5,7 +5,7 @@ name: "Monastic Asceticism"
 aka: ["*askēsis*", "desert tradition", "*bhikṣu* / *bhikkhu*", "*shramana* withdrawal", "Manichaean elect"]
 category: "ritual"
 traditions-where-attested: ["Christian desert fathers and cenobitic monasticism", "Buddhist *sangha*", "Jain", "Manichaean (elect vs. hearers)", "Hindu *sannyāsa* / *sādhus*", "Sufi *taṣawwuf* (proto-monastic)"]
-appearances: ["[[phase-4-026-apophthegmata-patrum]]", "[[phase-4-025-life-of-antony]]", "[[phase-2-016-early-buddhist-suttas]]", "[[phase-4-014-cologne-mani-codex]]"]
+appearances: ["[[phase-4-043-apophthegmata-patrum]]", "[[phase-4-041-athanasius-life-of-antony]]", "[[phase-2-016-early-buddhist-suttas]]", "[[phase-4-014-cologne-mani-codex]]"]
 deity-instances: []
 status: "stub"
 refs:
@@ -34,7 +34,7 @@ The institutional and practiced discipline of *askēsis* (training, exercise) �
 
 ## Manifestations
 
-- **Christian desert fathers and mothers.** [[phase-4-025-life-of-antony]] Athanasius's *Life of Antony* (~360 CE) — the foundational hagiography; Antony withdraws into the Egyptian desert ~285 CE. [[phase-4-026-apophthegmata-patrum]] — the *Sayings of the Desert Fathers* corpus. Pachomius founds cenobitic monasticism (~320 CE); Basil the Great's *Asketika* (Greek-East rules); Cassian's *Institutes* and *Conferences* (transmitting Egyptian practice west). Benedict's *Rule* (~540) becomes the standard Western model. Brown 1988 is the classic study of the *body* and sexual renunciation in the development of Christian asceticism.
+- **Christian desert fathers and mothers.** [[phase-4-041-athanasius-life-of-antony]] Athanasius's *Life of Antony* (~360 CE) — the foundational hagiography; Antony withdraws into the Egyptian desert ~285 CE. [[phase-4-043-apophthegmata-patrum]] — the *Sayings of the Desert Fathers* corpus. Pachomius founds cenobitic monasticism (~320 CE); Basil the Great's *Asketika* (Greek-East rules); Cassian's *Institutes* and *Conferences* (transmitting Egyptian practice west). Benedict's *Rule* (~540) becomes the standard Western model. Brown 1988 is the classic study of the *body* and sexual renunciation in the development of Christian asceticism.
 - **Buddhist *sangha*.** [[phase-2-016-early-buddhist-suttas]] — the *bhikkhu* / *bhikkhunī* lifestyle codified in the *Vinaya Piṭaka*: shaven head, three robes, one meal before noon, celibacy, no money, dependence on the lay sangha for food. Theravada preserves the strictest form; Mahayana monasticism develops variant patterns; Vajrayana monasticism interlocks with tantric practice.
 - **Jain monasticism.** Mahavira (5th c. BCE) — the most physically extreme ancient ascetic discipline: total non-violence (*ahimsa*) extended to microorganisms, the Digambara "sky-clad" nakedness, *sallekhana* (ritual fasting unto death).
 - **Manichaean.** [[phase-4-014-cologne-mani-codex]] — the two-class structure: *electi* (perfect, ascetic, celibate, vegetarian, dependent on the Hearers for food) and *auditores* (hearers, lay supporters, who can marry, eat meat, but earn rebirth as electi). The cleanest institutional form of the renunciate-supported-by-laity pattern. Manichaean monasticism spread from Mesopotamia to North Africa to Central Asia and China; influenced Bogomil and Cathar dualist movements.

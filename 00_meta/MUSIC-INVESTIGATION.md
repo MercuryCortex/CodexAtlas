@@ -52,7 +52,7 @@ cross-music-edges:
 
 # Links into the main vault graph
 music-tradition-context:
-  - [[tradition-slug]]        # tradition nodes this music belongs to
+  - [tradition-slug]        # tradition nodes this music belongs to
 music-deity-connections:
   - [[deity-slug]]            # deity nodes connected to this music
 music-appearances:

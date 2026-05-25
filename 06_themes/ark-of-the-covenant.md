@@ -4,7 +4,7 @@ id: "ark-of-the-covenant"
 name: "Ark of the Covenant"
 aka: ["aron ha-berit", "aron ha-edut (Ark of the Testimony)", "kappōret / mercy seat", "Ark of God"]
 category: "ritual / sacred object"
-appearances: ["[[phase-2-011-hebrew-bible-d-source]]", "[[phase-2-010-hebrew-bible-early-prophets]]", "[[phase-2-007-hebrew-bible-e-source]]", "[[phase-2-008-hebrew-bible-p-source]]", "[[tradition-ethiopian-orthodox-tewahedo]] (Ethiopian tradition: the original Ark is in Aksum)"]
+appearances: ["[[phase-2-011-hebrew-bible-d-source]]", "[[phase-2-010-hebrew-bible-early-prophets]]", "[[phase-2-007-hebrew-bible-e-source]]", "[[phase-2-018-hebrew-bible-p-source]]", "[[tradition-ethiopian-orthodox-tewahedo]] (Ethiopian tradition: the original Ark is in Aksum)"]
 deity-instances: ["[[yahweh]] (the Ark is Yahweh's portable throne; his presence — the *shekinah* — dwells between the cherubim)"]
 syncretic-edges:
   - target: "tradition-ethiopian-orthodox-tewahedo"

@@ -24,7 +24,7 @@ variants:
   - id: "copal-mesoamerican"
     description: "Mesoamerican copal (*copalli*) — the primary Aztec and Maya sacred resin, burned in specialized braziers (*copalero*). Offered at temple summits during human sacrifice to accompany the released heart. Still central to Day of the Dead (*Día de Muertos*) observance and to many contemporary Nahua and Maya ritual contexts."
 appearances:
-  - "[[phase-1-001-book-of-the-dead]]"
+  - "[[phase-1-010-book-of-the-dead]]"
   - "[[phase-2-004-old-testament-hebrew-bible]]"
   - "[[phase-4-014-revelation]]"
 deity-instances:

@@ -76,7 +76,7 @@ The tradition ends with the Mycenaean conquest of Crete (~1450 BCE) and the subs
 ## Relations to neighbors
 - vs. Mycenaean Greek religion: Mycenaean Greeks conquered Crete ~1450 BCE; their religion absorbed Minoan elements (Potnia, the "Lady," persists as a Mycenaean deity title; bull sacrifice; linear B lists divine names including Dionysus and Poseidon). The relationship is **absorption with transformation**.
 - vs. [[tradition-egyptian]]: Trade contact between Crete and Egypt is documented from ~2000 BCE (Minoan pottery in Egypt; Egyptian luxury goods in Crete; Minoan frescoes at Avaris/Tell el-Dab'a in Egypt, ~1600 BCE). Religious exchange possible but hard to specify.
-- vs. [[tradition-canaanite]]: Shared bull-deity iconography and dying-rising-consort patterns. The vectors of influence run through the Bronze Age eastern Mediterranean trade network.
+- vs. [[tradition-canaanite-ugaritic]]: Shared bull-deity iconography and dying-rising-consort patterns. The vectors of influence run through the Bronze Age eastern Mediterranean trade network.
 
 ## Refs
 1. Marinatos, Nanno (1993). *Minoan Religion: Ritual, Image and Symbol*. University of South Carolina Press.

@@ -4,7 +4,7 @@ id: "archetype"
 name: "Archetype"
 aka: ["archetypal image", "ur-Bild", "primordial image"]
 traditions-where-attested: ["Platonism (forms-and-archetypes)", "Jungian depth psychology", "Eliade's comparative religion", "Joseph Campbell's monomyth"]
-documents-attested: ["[[phase-3-002-plato-dialogues]]", "[[phase-7-017-psychology-and-alchemy]]", "[[phase-7-018-jung-aion]]"]
+documents-attested: ["[[phase-3-002-plato-dialogues]]", "[[phase-7-017-psychology-and-alchemy]]", "[[phase-7-018-aion]]"]
 deities-associated: []
 parent-theme: ""
 child-themes: ["[[forms-and-archetypes]]", "[[individuation]]"]
@@ -42,5 +42,5 @@ In Jung's depth psychology, archetypes are universal, inherited patterns of psyc
 Jung explicitly drew the term from Platonism and Augustine — archetypes function as the psychic analog of Platonic Forms (see [[forms-and-archetypes]]). Eliade's category of "archaic religion" presupposes a Jungian-inflected universalism of religious form. Joseph Campbell's "monomyth" (hero's journey) is a derivative concept.
 
 - [[phase-7-017-psychology-and-alchemy]] — alchemical symbolism as archetypal projection
-- [[phase-7-018-jung-aion]] — the Christ-archetype, the self
+- [[phase-7-018-aion]] — the Christ-archetype, the self
 - Critics (Noll, Shamdasani) argue Jung's clinical evidence for inherited archetypal content is weak and the concept is unfalsifiable

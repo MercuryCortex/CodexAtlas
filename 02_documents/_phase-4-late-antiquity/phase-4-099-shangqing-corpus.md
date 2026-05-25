@@ -35,8 +35,8 @@ influences:
   - "all later Daoist canonical tradition (Daozang)"
   - "Tang Daoist court religion"
 parallels:
-  - "[[phase-3-005-book-of-1-enoch]]"
-  - "[[phase-4-009-nag-hammadi-apocryphon-of-john]]"
+  - "[[phase-3-004-1-enoch]]"
+  - "[[phase-4-002-apocryphon-of-john]]"
 tags: [document, chinese, daoist, shangqing, maoshan, revelation, automatic-writing, yang-xi, tao-hongjing, meditation, immortality, body-visualization, phase-4]
 ---
 

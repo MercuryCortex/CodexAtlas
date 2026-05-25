@@ -3,7 +3,7 @@ type: theme
 id: "messianic-future-savior"
 name: "Messianic Future Savior"
 category: "eschatological"
-appearances: ["[[phase-4-095-new-testament-canon]]", "[[phase-4-003-quran]]", "[[phase-3-014-book-of-daniel]]"]
+appearances: ["[[phase-4-095-new-testament-canon]]", "[[phase-4-034-quran]]", "[[phase-3-008-book-of-daniel]]"]
 deity-instances: ["[[maitreya]]", "[[jesus-christ-deity]]", "[[saoshyant]]", "[[kalki]]", "[[muhammad-al-mahdi]]"]
 status: "metadata"
 refs:

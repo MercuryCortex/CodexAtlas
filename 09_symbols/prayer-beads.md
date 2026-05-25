@@ -28,7 +28,7 @@ tradition-context:
   - "[[tradition-pure-land-buddhism]]"
   - "[[tradition-christianity-canonical]]"
   - "[[tradition-medieval-christianity]]"
-  - "[[tradition-eastern-orthodox]]"
+  - "[[tradition-eastern-orthodoxy]]"
   - "[[tradition-islam]]"
   - "[[tradition-sufism]]"
 cross-symbol-edges:

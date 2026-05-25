@@ -5,7 +5,7 @@ name: "Wisdom as Cosmic Order"
 aka: ["*rita*", "*dharma*", "*ma'at*", "*asha*", "*chokhmah* (in the cosmic-order sense)", "Heraclitean *logos*"]
 category: "ethical"
 traditions-where-attested: ["Egyptian (Ma'at)", "Vedic (Rita / Dharma)", "Zoroastrian (Asha)", "Hebrew Wisdom literature (Chokhmah)", "Heraclitean (Logos)", "Stoic (Logos)", "Confucian (Tian / Dao)"]
-appearances: ["[[phase-1-005-instruction-of-ptahhotep]]", "[[phase-2-001-rig-veda-family-books]]", "[[phase-2-002-gathas-of-zarathustra]]", "[[phase-2-021-proverbs]]", "[[phase-3-005-stoic-foundational-texts]]"]
+appearances: ["[[phase-1-005-instruction-of-ptahhotep]]", "[[phase-2-001-rig-veda-family-books]]", "[[phase-2-002-gathas-of-zarathustra]]", "[[phase-2-041-book-of-proverbs]]", "[[phase-3-005-stoic-foundational-texts]]"]
 deity-instances: ["[[ma-at]]", "[[asha-vahishta]]"]
 status: "stub"
 refs:
@@ -36,7 +36,7 @@ The recurring premise — across Egyptian, Vedic, Iranian, Hebrew, Greek, and Ch
 - **Egyptian *Ma'at*.** [[phase-1-005-instruction-of-ptahhotep]] and the wider sapiential corpus — *ma'at* is simultaneously a goddess, a cosmic principle, the right ordering of speech, the standard the pharaoh must uphold, the weighing-standard at post-mortem judgment (Book of the Dead Spell 125). Karenga's monograph is the major modern treatment.
 - **Vedic *ṛta*.** [[phase-2-001-rig-veda-family-books]] — *ṛta* as the cosmic-moral truth-order upheld by Varuna (and Mitra); the sun moves on the path of *ṛta*; truth-speech is alignment with *ṛta*. Later Vedic and Brahmanical thought transitions to *dharma* as the more central term (though *ṛta* persists residually).
 - **Avestan *aša*.** [[phase-2-002-gathas-of-zarathustra]] — *aša* (truth, right-order) opposed to *druj* (falsehood, dis-order); Asha Vahishta as Amesha Spenta; ethical dualism organized around *aša*-vs-*druj*.
-- **Hebrew Wisdom.** [[phase-2-021-proverbs]] — *chokhmah* personified (Prov 8:22–31) as present at creation, the master-craftsman beside YHWH; aligned-with-creation-order; the fear of YHWH as wisdom's beginning. The Wisdom-as-cosmic-order strand develops further in Sirach 24, Wisdom of Solomon 7.
+- **Hebrew Wisdom.** [[phase-2-041-book-of-proverbs]] — *chokhmah* personified (Prov 8:22–31) as present at creation, the master-craftsman beside YHWH; aligned-with-creation-order; the fear of YHWH as wisdom's beginning. The Wisdom-as-cosmic-order strand develops further in Sirach 24, Wisdom of Solomon 7.
 - **Heraclitean *logos*.** Heraclitus B1, B2, B50 — the *logos* by which all things come to pass, common but most live as if private; the soul that is in *logos*-attunement is wise.
 - **Stoic *logos*.** [[phase-3-005-stoic-foundational-texts]] — the Stoic *logos* as both cosmic reason and individual reason; the wise person aligns will with cosmic *logos*; virtue is *living according to nature* (= *logos*).
 - **Confucian *dao* / *li*.** *Tian-dao* (Heaven's way) and *li* (pattern, principle) as the cosmic order in the Confucian and Neo-Confucian tradition.

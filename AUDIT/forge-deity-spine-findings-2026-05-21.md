@@ -220,7 +220,7 @@ Both files are 105 lines, both `status: "full"`, both cover the same Greek deity
 **Fixes applied:**
 
 - 4 status flips stub → metadata (bolon-tzakab, bondye-vodou, bragi, bran-the-blessed).
-- `bolon-tzakab.md` AND `hunab-ku.md` (out-of-batch) — fixed phase-misnumbered wikilink `[[phase-6-006-chilam-balam]]` → `[[phase-8-005-chilam-balam]]`. The Chilam Balam books are filed under phase 8 (non-western traditional) not phase 6 (early modern). Both Maya deities that cited it had the same wrong slug — likely from the same authoring batch.
+- `bolon-tzakab.md` AND `hunab-ku.md` (out-of-batch) — fixed phase-misnumbered wikilink `[phase-8-005-chilam-balam]` → `[phase-8-005-chilam-balam]`. The Chilam Balam books are filed under phase 8 (non-western traditional) not phase 6 (early modern). Both Maya deities that cited it had the same wrong slug — likely from the same authoring batch.
 
 **Recurring-bug pattern:** wikilinks that reference a specific phase-NNN-NNN-slug pattern can drift away from the canonical filename when an agent guesses the phase number. The fix is mechanical (grep + s/// across files) once the canonical is known.
 
@@ -235,7 +235,7 @@ Both files are 105 lines, both `status: "full"`, both cover the same Greek deity
 **Fixes applied:**
 
 - 5 status flips stub → metadata (catequil, centeotl, ceres-roman, cerridwen, chaac). `chaac.md` had `status: stub` (unquoted) instead of the more common `status: "stub"` — quote-styles vary file-to-file across the lens; both YAML-valid; the sed pattern in my flip-script missed unquoted form. Caught it on the spot-check.
-- `centeotl.md` — fixed dead `[phase-6-002-florentine-codex]` → `[[phase-8-004-florentine-codex-sahagun]]`. **Third instance of the phase-6 / phase-8 misnumbering** pattern in three batches (Chilam Balam x2 in batch 11, now Florentine Codex). Looks like a single authoring batch consistently put non-western primary texts into phase 6 (early modern) when they belong in phase 8.
+- `centeotl.md` — fixed dead `[phase-6-002-florentine-codex]` → `[phase-8-004-florentine-codex-sahagun]`. **Third instance of the phase-6 / phase-8 misnumbering** pattern in three batches (Chilam Balam x2 in batch 11, now Florentine Codex). Looks like a single authoring batch consistently put non-western primary texts into phase 6 (early modern) when they belong in phase 8.
 - `cernunnos.md` — unwrapped `[[methodology]]` (refers to `00_meta/methodology.md` — a meta doc, not a graph node; the dead link was a passing methodological aside).
 - `bunjil.md` referenced `[[waa-the-crow]]` which didn't exist. Created `03_deities/waa-the-crow.md` as a metadata-tier stub (Kulin moiety-ancestor binary Bunjil/Waa, fire-bringer tradition, Howitt 1904 citation). The Bunjil/Waa binary is structurally important for the Aboriginal-Australian section so the wikilink shouldn't be unwrapped.
 
@@ -252,7 +252,7 @@ Both files are 105 lines, both `status: "full"`, both cover the same Greek deity
 **Fixes applied:**
 
 - 1 status flip stub → metadata (chicomecoatl).
-- `chicomecoatl.md` — fixed dead `[phase-6-002-florentine-codex]` → `[[phase-8-004-florentine-codex-sahagun]]`. **Fourth Florentine-Codex phase-misnumbering** in three batches. At this rate, recommended to a do a vault-wide `grep -r 'phase-6-002-florentine-codex'` after the sweep completes; this batch's fix may not be the last instance.
+- `chicomecoatl.md` — fixed dead `[phase-6-002-florentine-codex]` → `[phase-8-004-florentine-codex-sahagun]`. **Fourth Florentine-Codex phase-misnumbering** in three batches. At this rate, recommended to a do a vault-wide `grep -r 'phase-6-002-florentine-codex'` after the sweep completes; this batch's fix may not be the last instance.
 - `chandra.md` — unwrapped `[[atri-rishi]]` (Vedic Saptarishi sage) to plain text in `child-of:`. Atri is a Vedic person/sage; would belong in `04_persons/`, not `03_deities/`. The reference is one passing Puranic genealogical note, not load-bearing — unwrapping rather than out-of-lens-stubbing keeps scope tight.
 
 **Wikilinks scanned:** ~115 unique targets. 1 dead-link fixed + 1 unwrap.
@@ -313,7 +313,7 @@ Per-batch summaries kept terse from here on; full details in commit messages.
 - **Batch 17** (druj–el-elohim-hebrew): 4 status flips; 1 unwrap (`[[shahar-shalim]]` — Canaanite twin Dawn/Dusk gods; no node yet, left as plain-text trail).
 - **Batch 18** (el-shaddai–erra-akkadian): 2 status flips (enki-ea, enlil — both high-in-degree spine nodes at #15 and #21 per the stubs audit); cleaned 3 trailing-`?` wikilinks in `erra-akkadian.md`.
 - **Batch 19** (erzulie–frigg): 1 status flip (flint-deity); 0 dead links.
-- **Batch 20** (fujin–geshtinanna): 3 status flips (gabriel-archangel, gaia, ganesha); 2 dead-link rewrites (`[[phase-4-040-quran]]` → `[[phase-4-034-quran]]` in `gabriel-archangel.md` + 3 vault-wide instances in `suwa`/`yaghuth`/`yauq`); 2 unwraps (`[[tellus-roman]]`/`[[terra-roman]]` in gaia, `[[ninsun]]` in geshtinanna — Roman/Mesopotamian deities not yet nodes).
+- **Batch 20** (fujin–geshtinanna): 3 status flips (gabriel-archangel, gaia, ganesha); 2 dead-link rewrites (`[phase-4-034-quran]` → `[phase-4-034-quran]` in `gabriel-archangel.md` + 3 vault-wide instances in `suwa`/`yaghuth`/`yauq`); 2 unwraps (`[tellus-roman]`/`[terra-roman]` in gaia, `[ninsun]` in geshtinanna — Roman/Mesopotamian deities not yet nodes).
 
 **Recurring phase-misnumbering catalog (so far):**
 - `phase-6-006-chilam-balam` (wrong) → `phase-8-005-chilam-balam` (canonical) — 2 instances, swept in batch 11

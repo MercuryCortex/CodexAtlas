@@ -4,7 +4,7 @@ id: "world-parent-cosmogony"
 name: "World-Parent Cosmogony"
 aka: ["sky-father/earth-mother", "creator couple", "primordial parents", "cosmic couple separation"]
 traditions-where-attested: ["Shinto", "Greek religion", "Egyptian religion", "Mesopotamian religion", "Maori / Polynesian religion", "Norse religion"]
-documents-attested: ["[[phase-1-001-enuma-elish]]", "[[phase-2-009-hesiod-theogony-works-and-days]]"]
+documents-attested: ["[[phase-1-008-enuma-elish]]", "[[phase-2-009-hesiod-theogony-works-and-days]]"]
 deities-associated: ["[[izanagi]]", "[[izanami]]", "[[uranus-greek]]", "[[gaia]]", "[[apsu]]", "[[tiamat]]"]
 parent-theme: ""
 child-themes: []

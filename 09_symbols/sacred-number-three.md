@@ -51,9 +51,9 @@ tradition-context:
   - "[[tradition-buddhism]]"
   - "[[tradition-taoism]]"
   - "[[tradition-egyptian-religion]]"
-  - "[[tradition-celtic-religion]]"
-  - "[[tradition-norse-germanic-religion]]"
-  - "[[tradition-kabbalism]]"
+  - "[[tradition-celtic]]"
+  - "[[tradition-norse-germanic]]"
+  - "[[tradition-kabbalah]]"
   - "[[tradition-hermeticism]]"
 appearances: []
 deity-instances: []

@@ -5,7 +5,7 @@ name: "Theurgy"
 aka: ["*theourgia*", "ritual ascent", "the Iamblichean way"]
 category: "ritual"
 traditions-where-attested: ["Chaldean Oracles", "Late Neoplatonism (Iamblichus, Proclus, Damascius, Julian)", "Christian sacramental theology (limited Pseudo-Dionysian reception)", "Renaissance Hermetism (Ficino, Bruno)"]
-appearances: ["[[phase-4-022-chaldean-oracles]]", "[[phase-4-021-iamblichus-de-mysteriis]]", "[[phase-4-019-plotinus-enneads]]", "[[phase-4-030-pseudo-dionysius]]"]
+appearances: ["[[phase-4-022-chaldean-oracles]]", "[[phase-4-020-iamblichus-on-the-mysteries]]", "[[phase-4-019-plotinus-enneads]]", "[[phase-4-030-pseudo-dionysius]]"]
 deity-instances: []
 status: "stub"
 refs:
@@ -35,7 +35,7 @@ The late-Platonic ritual practice of *divine work* (*theos* + *ergon*) — perfo
 ## Manifestations
 
 - **Chaldean Oracles.** [[phase-4-022-chaldean-oracles]] (2nd c. CE, ascribed to Julian the Chaldean and Julian the Theurgist) — the originating text of theurgic literature: hieratic invocations of the Father, the Paternal Intellect, the Iynges; ritual ascent through the planetary spheres; the "Telesticon" mysteries.
-- **Iamblichus.** [[phase-4-021-iamblichus-de-mysteriis]] — the systematic defense of theurgy. Against the rationalist objection (Porphyry) that ritual cannot influence gods who are above all action, Iamblichus argues that the gods have established sympathetic correspondences (*synthemata* and *symbola*) in matter through which ritual operates *non-rationally*. The lower soul, embodied and unable to ascend by pure intellection alone, needs ritual.
+- **Iamblichus.** [[phase-4-020-iamblichus-on-the-mysteries]] — the systematic defense of theurgy. Against the rationalist objection (Porphyry) that ritual cannot influence gods who are above all action, Iamblichus argues that the gods have established sympathetic correspondences (*synthemata* and *symbola*) in matter through which ritual operates *non-rationally*. The lower soul, embodied and unable to ascend by pure intellection alone, needs ritual.
 - **Proclus.** *Platonic Theology* and various theurgic prayers — the most systematic Neoplatonic theurgist. Develops the doctrine of *one* in the soul that corresponds to the One Itself, and is touched by theurgic practice.
 - **Emperor Julian.** Theurgy as the spiritual practice of Julian "the Apostate" (r. 361–363) — the emperor's attempted pagan restoration was theurgically-grounded.
 - **Plotinus's resistance.** [[phase-4-019-plotinus-enneads]] — Plotinus did *not* practice theurgy, regarded the philosopher's path as intellectual-contemplative; Porphyry (*Life of Plotinus* 10) recounts Plotinus's refusal to attend rituals.

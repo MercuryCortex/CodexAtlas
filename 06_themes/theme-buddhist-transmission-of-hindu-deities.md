@@ -6,7 +6,7 @@ category: "soteriological / political-theological"
 appearances:
   - "[[phase-2-018-pali-canon-suttas]] (Sakka-saṃyutta — Śakra as Buddha's disciple)"
   - "Suvarṇaprabhāsa Sūtra (Sutra of Golden Light — Sarasvatī → Biancaitian transmission vehicle)"
-  - "[[phase-4-138-lotus-sutra]]"
+  - "[[phase-4-101-lotus-sutra]]"
   - "Sutra of the Ten Kings (Shíwáng-jīng 十王經, ~9th-10th c. CE — Yama → Yánluó tribunal)"
   - "Konkōmyō-saishō-ō-kyō (Japanese transmission ~750 CE)"
 deity-instances:

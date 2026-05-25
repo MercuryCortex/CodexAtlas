@@ -103,7 +103,7 @@ This node treats the **Ge'ez recension** as a textual artifact. The parent node 
 - → [[event-bruce-recovers-enoch-1773]] — *manuscript-transmission*: James Bruce's recovery of the Ge'ez codices from Gondar in 1773 inaugurates modern European Enochic studies.
 - → [[event-dead-sea-scrolls-discovery]] — *parallel-witness*: the 1947 Qumran finds confirm the Ge'ez tradition as a faithful textual witness.
 - → Mary Magdalene-related Gnostic traditions and the *[[phase-4-005-gospel-of-mary]]* etc. — *parallel-motif*: the Enochic visionary-ascent tradition feeds into Christian-Gnostic ascent literature.
-- → [[phase-7-001-blavatsky-secret-doctrine]] etc. — *parallel-motif*: 19th–20th c. Theosophical and esoteric reception of the Watchers / Nephilim / antediluvian-civilization material; the Watchers tradition is the textual root of much modern "ancient-aliens" interpretation (Sitchin, von Däniken — Tier 4).
+- → [[phase-7-006-secret-doctrine]] etc. — *parallel-motif*: 19th–20th c. Theosophical and esoteric reception of the Watchers / Nephilim / antediluvian-civilization material; the Watchers tradition is the textual root of much modern "ancient-aliens" interpretation (Sitchin, von Däniken — Tier 4).
 
 ## Disputes
 - **Date of the *Similitudes* (chs. 37–71).** The latest stratum of the corpus; absent from the Qumran fragments (which suggested to some scholars a Christian-era composition). Most current scholarship dates the Similitudes 1st c. BCE to 1st c. CE; the Christian-composition hypothesis is largely rejected (Nickelsburg-VanderKam 2001).

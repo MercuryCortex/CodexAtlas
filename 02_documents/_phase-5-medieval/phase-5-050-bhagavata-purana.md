@@ -162,7 +162,7 @@ The story of the Gajendra Moksha ("liberation of the elephant") is the *Bhāgava
 
 The theological structure: liberation (*mokṣa*) comes not through effort (*karma*), knowledge (*jñāna*), or even conventional devotion, but through total surrender (*śaraṇāgati* / *prapatti*) at the moment when all self-reliance is abandoned. This is identical in structure to:
 
-**Pure Land Buddhism's Eighteenth Vow** (*tariki*, "other-power"): Amitābha Buddha vows that any being who places its whole trust in him will be received into the Pure Land. Shinran's *Jōdo Shinshū* (~1224 CE) radicalizes this: *tariki* (relying entirely on the Other Power of Amida) is the only path available to beings in the degenerate age (*mappō*) — just as Gajendra, in exhaustion, could only surrender. The parallel with the [[phase-4-094-larger-sukhavativyuha-sutra]] node's tariki-soteriology is exact in structure.
+**Pure Land Buddhism's Eighteenth Vow** (*tariki*, "other-power"): Amitābha Buddha vows that any being who places its whole trust in him will be received into the Pure Land. Shinran's *Jōdo Shinshū* (~1224 CE) radicalizes this: *tariki* (relying entirely on the Other Power of Amida) is the only path available to beings in the degenerate age (*mappō*) — just as Gajendra, in exhaustion, could only surrender. The parallel with the [[phase-4-104-sukhavativyuha-larger]] node's tariki-soteriology is exact in structure.
 
 **Lutheran *sola fide*:** Martin Luther's theology of justification (1517 onward): the human being is entirely incapable of contributing to their own salvation; faith is itself a gift of grace, not a human achievement; the moment of surrender to God's mercy — *sola fide* — is the moment of liberation. Luther's discovery of this in Paul's letter to the Romans structurally recapitulates the Gajendra-moment.
 
@@ -180,7 +180,7 @@ This is the most important philosophical operation in the *Bhāgavata* — and i
 - → [[phase-5-050-bhagavata-purana]]: this is the companion node in the vault (earlier slug assignment); the two nodes together cover the full scholarly apparatus.
 - → [[phase-2-027-bhagavad-gita]]: *ancestor-of* — the *Bhāgavata* continues and amplifies the Gītā's avatāra-and-bhakti theology into a full narrative world.
 - → [[soul-as-bride]]: the Rāsa-līlā is the Hindu instance of the erotic-mystical god-soul substrate shared with Christian bridal mysticism and Sufi *firāq*.
-- → [[phase-4-094-larger-sukhavativyuha-sutra]]: structural parallel on grace soteriology (*prapatti* / Gajendra Moksha ↔ *tariki* / Eighteenth Vow).
+- → [[phase-4-104-sukhavativyuha-larger]]: structural parallel on grace soteriology (*prapatti* / Gajendra Moksha ↔ *tariki* / Eighteenth Vow).
 - → [[bhakti-devotion]]: the *Bhāgavata* is the supreme literary expression of *bhakti* as soteriology.
 - → [[divine-immanence]]: Krishna's playful presence in Vrindavan — God in the world rather than above it.
 - → [[reincarnation]]: the cosmological and karmic framework across all twelve books.

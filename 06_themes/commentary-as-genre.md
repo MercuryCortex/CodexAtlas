@@ -41,7 +41,7 @@ The technology by which religious traditions *reproduce themselves* over centuri
 - **Vedantic *bhāṣya*.** [[phase-5-005-shankara-brahma-sutra-bhasya]] — Shankara's commentary on Bādarāyaṇa's *Brahma-sūtras*; Ramanuja's *Śrībhāṣya* on the same; Madhva's *bhāṣya*. The three major Vedānta schools constitute themselves as *commentaries* on the same foundational sutras. *Bhāṣya*-on-*bhāṣya* layering follows.
 - **Sufi *tafsīr*.** Sahl al-Tustarī, Sulamī's *Ḥaqāʾiq al-Tafsīr*, Qushayrī's *Laṭāʾif al-ishārāt*, Ibn ʿArabī's *Futūḥāt* (commentary-in-spirit), Rūzbihān Baqlī. Esoteric-mystical commentary as a distinct subgenre within Islamic *tafsīr*.
 - **Scholastic Christian *summa* / *quaestio*.** Peter Lombard's *Sentences* (~1150) and the entire scholastic commentary-tradition on it (Aquinas's *Scriptum super Sententiis*, Bonaventure's, Duns Scotus's). [[phase-5-024-aquinas-summa-theologiae]] is a self-conscious systematic-commentary on the entire prior tradition's debates. The scholastic *quaestio* / *disputatio* form ritualizes the commentary-conversation.
-- **Zoharic on Tanakh.** [[phase-5-x-zohar]] (13th c., Moshe de León) is structurally a Kabbalistic commentary on the Torah; subsequent Kabbalistic literature commentates on the Zohar.
+- **Zoharic on Tanakh.** [phase-5-x-zohar] (13th c., Moshe de León) is structurally a Kabbalistic commentary on the Torah; subsequent Kabbalistic literature commentates on the Zohar.
 
 ## Significance
 

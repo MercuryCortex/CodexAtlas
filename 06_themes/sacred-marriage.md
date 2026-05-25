@@ -8,7 +8,7 @@ appearances:
   - "[[inanna-sumerian]]"
   - "[[dumuzi-tammuz]]"
   - "[[baal]]"
-  - "[[phase-1-007-book-of-the-dead]]"
+  - "[[phase-1-010-book-of-the-dead]]"
   - "[[phase-4-004-gospel-of-philip]]"
   - "[[phase-3-035-homeric-hymns]]"
 related-themes:
