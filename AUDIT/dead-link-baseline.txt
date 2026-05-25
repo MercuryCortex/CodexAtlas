@@ -4,7 +4,7 @@
 # To accept current state as the new floor, run:
 #     python3 linkcheck.py --write-baseline
 # See AUDIT/2026-05-25-tyrant-remediation-plan.md Phase 2.
-# Captured 523 targets on first write.
+# Captured 511 targets on first write.
 
 ...
 08_quran-scripture-wiring-brief.md
@@ -353,35 +353,23 @@ phanes
 phase-1-005-gilgamesh-epic
 phase-1-005-instruction-of-ptahhotep
 phase-1-028-daniel
-phase-2-001-iliad
 phase-2-001-plato-timaeus
 phase-2-002-plato-critias
 phase-2-004-old-testament-hebrew-bible
-phase-2-005-davidic-psalms
 phase-2-014-ramayana
 phase-2-015-mahabharata
 phase-2-017-hebrew-bible-j-source
 phase-2-018-pali-canon-suttas
 phase-2-baruch
 phase-3-012-hesychast-controversy
-phase-3-014-enneads-plotinus
 phase-3-019-catholic-epistles
-phase-3-024-suetonius-twelve-caesars
-phase-3-095-mahabharata
 phase-4-014-revelation
 phase-4-061-lotus-sutra
 phase-4-083-apuleius-metamorphoses-book-11
 phase-4-090-apuleius-metamorphoses-bk-11
-phase-5-021-cusa-de-docta-ignorantia
-phase-5-029-dogen-shobogenzo
-phase-5-035-physiologus
 phase-5-046-ibn-tufayl-hayy-ibn-yaqdhan
 phase-6-006-paracelsus-archidoxes
-phase-6-026-jacob-frank-words-of-the-lord
 phase-7-002-doctrine-and-covenants
-phase-7-013-eliade-myth-of-eternal-return
-phase-7-014-bellah-civil-religion-essay
-phase-7-022-hick-interpretation-of-religion
 phase-8-001-blake-songs-of-innocence-experience
 phase-N-NNN-source-doc
 phosphoros
