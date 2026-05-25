@@ -594,7 +594,7 @@ function setView(name) {
       }
     } catch (e) { /* not fatal */ }
   }
-  document.querySelectorAll('.list-pane,.about-pane,.alch-toolbox,.alch-palette,.tl-zoom-presets,.alch-board-root,.alch-menu,.astrology-pane,.alpha-pane').forEach(el => el.remove());
+  document.querySelectorAll('.list-pane,.about-pane,.legacy-pane,.alch-toolbox,.alch-palette,.tl-zoom-presets,.alch-board-root,.alch-menu,.astrology-pane,.alpha-pane').forEach(el => el.remove());
   hideTooltip();
   // Map thumbnail only on geo-relevant views; hide elsewhere.
   // Atlas view uses MapLibre (no SVG map-thumb); zoom meter shown separately.
@@ -10273,6 +10273,29 @@ VIEWS.chains = {
     }
 
     document.getElementById('canvas').appendChild(pane);
+  }
+};
+
+// ============================================================
+// VIEWS.legacy — Phase 24 V1 Legacy/Archive viewer
+// ============================================================
+// Side-nav pill → read-only browser into closed specs, audits,
+// archived STATUS, and historical HANDOFFs. Implementation lives
+// in src/js/views/legacy.js; data lives in src/data/legacy-index.json
+// (built by scripts/build_legacy_index.py). Spec:
+// AUDIT/2026-05-25-phase-24-legacy-viewer-spec.md. NOT historical
+// site snapshots (V1.1).
+VIEWS.legacy = {
+  title: 'Legacy',
+  subtitle: 'closed specs · audits · archived status · handoffs',
+  render() {
+    if (window._legacy && typeof window._legacy.mount === 'function') {
+      window._legacy.mount(document.getElementById('canvas'));
+    } else {
+      const pane = document.createElement('div'); pane.className = 'legacy-pane';
+      pane.innerHTML = '<div class="lg-error">Legacy view module not loaded. Check that <code>src/js/views/legacy.js</code> is included in <code>index.html</code> after <code>app.js</code>.</div>';
+      document.getElementById('canvas').appendChild(pane);
+    }
   }
 };
 

@@ -4984,6 +4984,148 @@ body.view-transmutation .zoom-meter { display: none !important; }
 .about-pane p, .about-pane li { font-size: 13.5px; line-height: 1.7; color: var(--text-1); }
 .about-pane code { background: var(--bg-2); padding: 1px 5px; font-family: var(--mono); font-size: 11.5px; border-radius: 2px; }
 
+/* ============================================================
+   LEGACY / ARCHIVE VIEWER — Phase 24 V1 (2026-05-25)
+   Reuses .about-pane typography conventions (serif headers,
+   gold accents, mono code) per SEVERITY DOGMA §5.7.
+   ============================================================ */
+.legacy-pane {
+  position: absolute; inset: 56px 0 0;
+  display: grid; grid-template-columns: 280px 1fr;
+  gap: 0; overflow: hidden;
+}
+.legacy-pane .lg-sidebar {
+  border-right: 1px solid var(--line-1);
+  background: var(--bg-1);
+  overflow-y: auto; padding: 12px 0;
+  font-size: 12.5px;
+}
+.legacy-pane .lg-sidebar-title {
+  font-family: var(--serif);
+  color: var(--gold); font-size: 13px; letter-spacing: 0.12em;
+  text-transform: uppercase; padding: 4px 16px 12px;
+}
+.legacy-pane .lg-cat { margin: 0; padding: 0; border-top: 1px solid var(--line-1); }
+.legacy-pane .lg-cat > summary {
+  padding: 10px 16px; cursor: pointer;
+  font-family: var(--serif); color: var(--text-1);
+  font-size: 13px; letter-spacing: 0.04em;
+  display: flex; justify-content: space-between; align-items: center;
+  list-style: none;
+}
+.legacy-pane .lg-cat > summary::-webkit-details-marker { display: none; }
+.legacy-pane .lg-cat > summary:hover { background: var(--bg-2); color: var(--text-0); }
+.legacy-pane .lg-cat[open] > summary { color: var(--text-0); }
+.legacy-pane .lg-cat-count {
+  font-family: var(--mono); font-size: 11px; color: var(--text-3);
+  background: var(--bg-2); padding: 1px 8px; border-radius: 8px;
+}
+.legacy-pane .lg-cat-body { padding: 2px 0 8px; }
+.legacy-pane .lg-item {
+  display: block; width: 100%; text-align: left;
+  background: transparent; border: 0; border-left: 2px solid transparent;
+  padding: 7px 16px 7px 22px; cursor: pointer;
+  color: var(--text-1); font-family: inherit; font-size: 12.5px;
+  line-height: 1.35;
+}
+.legacy-pane .lg-item:hover { background: var(--bg-2); color: var(--text-0); }
+.legacy-pane .lg-item.active {
+  background: var(--bg-2); color: var(--text-0);
+  border-left-color: var(--gold);
+}
+.legacy-pane .lg-item-title { display: block; }
+.legacy-pane .lg-item-meta {
+  display: block;
+  font-family: var(--mono); font-size: 10.5px; color: var(--text-3);
+  margin-top: 2px; letter-spacing: 0.04em;
+}
+
+.legacy-pane .lg-detail {
+  overflow-y: auto; padding: 32px 56px 64px;
+  max-width: 900px; margin: 0 auto;
+}
+.legacy-pane .lg-empty h2 {
+  font-family: var(--serif); color: var(--gold);
+  font-size: 24px; letter-spacing: 0.06em; font-weight: 500;
+  margin-top: 24px;
+}
+.legacy-pane .lg-empty p {
+  font-size: 13.5px; line-height: 1.7; color: var(--text-1);
+}
+.legacy-pane .lg-counts {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 10px; margin: 28px 0;
+}
+.legacy-pane .lg-count-card {
+  background: var(--bg-1); border: 1px solid var(--line-1);
+  padding: 14px 12px; text-align: center;
+}
+.legacy-pane .lg-count-card strong {
+  display: block; font-family: var(--serif); font-size: 28px;
+  color: var(--gold); margin-bottom: 4px; font-weight: 400;
+}
+.legacy-pane .lg-count-card span {
+  display: block; font-family: var(--mono); font-size: 10.5px;
+  color: var(--text-2); letter-spacing: 0.06em;
+}
+.legacy-pane .lg-meta {
+  margin-top: 20px; font-family: var(--mono); font-size: 11px;
+  color: var(--text-3); letter-spacing: 0.04em;
+}
+
+.legacy-pane .lg-doc-header {
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding-bottom: 12px; margin-bottom: 16px;
+  border-bottom: 1px solid var(--line-1);
+}
+.legacy-pane .lg-doc-path {
+  font-family: var(--mono); font-size: 11.5px; color: var(--text-2);
+  word-break: break-all;
+}
+.legacy-pane .lg-doc-cat {
+  font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.08em;
+  color: var(--gold); text-transform: uppercase;
+}
+.legacy-pane .lg-doc-body { font-size: 13.5px; line-height: 1.7; color: var(--text-1); }
+.legacy-pane .lg-doc-body h1 { font-family: var(--serif); color: var(--gold); font-size: 22px; letter-spacing: 0.06em; margin-top: 0.6em; font-weight: 500; }
+.legacy-pane .lg-doc-body h2 { font-family: var(--serif); color: var(--gold); font-size: 18px; letter-spacing: 0.06em; margin-top: 1.6em; font-weight: 500; }
+.legacy-pane .lg-doc-body h3 { font-family: var(--serif); color: var(--text-0); font-size: 16px; letter-spacing: 0.04em; margin-top: 1.4em; font-weight: 500; }
+.legacy-pane .lg-doc-body h4, .legacy-pane .lg-doc-body h5, .legacy-pane .lg-doc-body h6 { font-family: var(--serif); color: var(--text-1); font-size: 14px; margin-top: 1.2em; font-weight: 500; }
+.legacy-pane .lg-doc-body p { margin: 0.7em 0; }
+.legacy-pane .lg-doc-body ul { padding-left: 1.4em; margin: 0.6em 0; }
+.legacy-pane .lg-doc-body li { margin: 0.2em 0; }
+.legacy-pane .lg-doc-body code { background: var(--bg-2); padding: 1px 5px; font-family: var(--mono); font-size: 11.5px; border-radius: 2px; color: var(--text-0); }
+.legacy-pane .lg-doc-body pre.lg-code { background: var(--bg-1); border: 1px solid var(--line-1); padding: 12px 14px; font-family: var(--mono); font-size: 11.5px; color: var(--text-1); overflow-x: auto; margin: 0.8em 0; }
+.legacy-pane .lg-doc-body hr { border: 0; border-top: 1px solid var(--line-1); margin: 1.8em 0; }
+.legacy-pane .lg-doc-body strong { color: var(--text-0); }
+.legacy-pane .lg-doc-body em { color: var(--text-0); }
+.legacy-pane .lg-doc-body a { color: var(--gold-soft); text-decoration: none; border-bottom: 1px dotted var(--gold-soft); }
+.legacy-pane .lg-doc-body a:hover { color: var(--gold); border-bottom-style: solid; }
+.legacy-pane .lg-doc-body .lg-wiki {
+  font-family: var(--mono); font-size: 12px; color: var(--text-2);
+  background: var(--bg-1); padding: 0 4px; border-radius: 2px;
+}
+.legacy-pane .lg-doc-body table.lg-table {
+  border-collapse: collapse; width: 100%; margin: 0.8em 0;
+  font-size: 12.5px;
+}
+.legacy-pane .lg-doc-body table.lg-table th,
+.legacy-pane .lg-doc-body table.lg-table td {
+  border: 1px solid var(--line-1); padding: 6px 10px; text-align: left;
+  vertical-align: top;
+}
+.legacy-pane .lg-doc-body table.lg-table th {
+  background: var(--bg-1); font-family: var(--serif);
+  color: var(--gold); font-weight: 500;
+}
+
+.legacy-pane .lg-loading,
+.legacy-pane .lg-error {
+  padding: 24px; font-family: var(--mono); font-size: 12.5px;
+  color: var(--text-2);
+}
+.legacy-pane .lg-error { color: var(--accent-warn, #c44a5a); }
+
 /* SCROLLBARS */
 ::-webkit-scrollbar { width: 10px; height: 10px; }
 ::-webkit-scrollbar-track { background: transparent; }

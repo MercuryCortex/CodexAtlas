@@ -1,0 +1,428 @@
+{
+  "generated_at_utc": "2026-05-25T02:30:54Z",
+  "counts": {
+    "specs": 14,
+    "audits": 49,
+    "status": 1,
+    "handoffs": 4
+  },
+  "totals": 68,
+  "entries": {
+    "specs": [
+      {
+        "path": "AUDIT/2026-05-25-phase-4-tradeoff.md",
+        "title": "Phase 4 — THE BIG DECISION: Tradeoff Brief",
+        "date": "2026-05-25",
+        "category": "specs"
+      },
+      {
+        "path": "AUDIT/2026-05-25-foundation-locked-epilogue.md",
+        "title": "Foundation Rebuild — LOCKED EPILOGUE",
+        "date": "2026-05-25",
+        "category": "specs"
+      },
+      {
+        "path": "AUDIT/2026-05-25-phase-23-decomposition-spec.md",
+        "title": "Phase 23 — Forge Monolith Decomposition Spec",
+        "date": "2026-05-25",
+        "category": "specs"
+      },
+      {
+        "path": "AUDIT/2026-05-25-tyrant-remediation-plan.md",
+        "title": "TYRANT-MODE REMEDIATION PLAN",
+        "date": "2026-05-25",
+        "category": "specs"
+      },
+      {
+        "path": "AUDIT/2026-05-25-timeline-v1-spec.md",
+        "title": "Timeline V1 — Spec",
+        "date": "2026-05-25",
+        "category": "specs"
+      },
+      {
+        "path": "AUDIT/2026-05-25-phase-24-legacy-viewer-spec.md",
+        "title": "Phase 24 — Legacy / Archive Viewer V1 Spec",
+        "date": "2026-05-25",
+        "category": "specs"
+      },
+      {
+        "path": "AUDIT/sacred-geometry-lens-spec-2026-05-23.md",
+        "title": "Sacred Geometry Lens (`27_geometry/`) — design spec",
+        "date": "2026-05-23",
+        "category": "specs"
+      },
+      {
+        "path": "AUDIT/politics-lens-spec-2026-05-23.md",
+        "title": "Politics Lens (`30_politics/`) — design spec",
+        "date": "2026-05-23",
+        "category": "specs"
+      },
+      {
+        "path": "AUDIT/philosophy-lens-spec-2026-05-23.md",
+        "title": "Philosophy Lens (`29_philosophy/`) — design spec",
+        "date": "2026-05-23",
+        "category": "specs"
+      },
+      {
+        "path": "AUDIT/consciousness-lens-spec-2026-05-23.md",
+        "title": "Consciousness Lens (`31_consciousness/`) — design spec",
+        "date": "2026-05-23",
+        "category": "specs"
+      },
+      {
+        "path": "AUDIT/forge-rebuild-layered-spec-2026-05-20.md",
+        "title": "Forge — Layered Ground-Up Rebuild Spec",
+        "date": "2026-05-20",
+        "category": "specs"
+      },
+      {
+        "path": "AUDIT/deferred-laneb-batch-spec-2026-05-18.md",
+        "title": "Deferred Lane B Batch — Runbook & Spec",
+        "date": "2026-05-18",
+        "category": "specs"
+      },
+      {
+        "path": "AUDIT/edge-color-spec-2026-05-17.md",
+        "title": "Canonical Edge Color + Gradient Spec — Codex Atlas",
+        "date": "2026-05-17",
+        "category": "specs"
+      },
+      {
+        "path": "AUDIT/edge-logic-spec-2026-05-17.md",
+        "title": "Canonical Edge Visual-Logic Spec — Codex Atlas",
+        "date": "2026-05-17",
+        "category": "specs"
+      }
+    ],
+    "audits": [
+      {
+        "path": "AUDIT/2026-05-25-wave-3b-flagged-cases.md",
+        "title": "TYRANT Wave 3b — Flagged Ambiguous Cases",
+        "date": "2026-05-25",
+        "category": "audits"
+      },
+      {
+        "path": "AUDIT/2026-05-25-wires-regression-trace.md",
+        "title": "Wires-regression trace — 2026-05-25",
+        "date": "2026-05-25",
+        "category": "audits"
+      },
+      {
+        "path": "AUDIT/2026-05-25-tyrant-audit-findings.md",
+        "title": "TYRANT-MODE AUDIT — FINDINGS",
+        "date": "2026-05-25",
+        "category": "audits"
+      },
+      {
+        "path": "AUDIT/2026-05-25-foundation-perf-and-wires-notes.md",
+        "title": "Foundation perf + wires regression — notes for parallel agents",
+        "date": "2026-05-25",
+        "category": "audits"
+      },
+      {
+        "path": "AUDIT/2026-05-24-undated-dating-proposal.md",
+        "title": "Undated-node Dating Framework — Proposal",
+        "date": "2026-05-24",
+        "category": "audits"
+      },
+      {
+        "path": "AUDIT/2026-05-24-forge-late-audit.md",
+        "title": "Forge late audit — 2026-05-24",
+        "date": "2026-05-24",
+        "category": "audits"
+      },
+      {
+        "path": "AUDIT/2026-05-24-dating-sweep-summary.md",
+        "title": "Dating-basis sweep summary — 2026-05-24",
+        "date": "2026-05-24",
+        "category": "audits"
+      },
+      {
+        "path": "AUDIT/2026-05-24-scale-presets-audit.md",
+        "title": "Timeline Scale-Preset Audit · Phase 22-AC",
+        "date": "2026-05-24",
+        "category": "audits"
+      },
+      {
+        "path": "AUDIT/asymmetric-backlinks-2026-05-23.md",
+        "title": "Asymmetric back-link audit (2026-05-23)",
+        "date": "2026-05-23",
+        "category": "audits"
+      },
+      {
+        "path": "AUDIT/canonical-colors-deity-table-2026-05-23.md",
+        "title": "Canonical Deity Colors — academic reference",
+        "date": "2026-05-23",
+        "category": "audits"
+      },
+      {
+        "path": "AUDIT/edge-vocabulary-deep-audit-2026-05-23.md",
+        "title": "Edge-Vocabulary Deep Audit — 2026-05-23",
+        "date": "2026-05-23",
+        "category": "audits"
+      },
+      {
+        "path": "AUDIT/cross-tradition-deity-bridges-2026-05-23.md",
+        "title": "Cross-tradition deity-bridge audit (2026-05-23)",
+        "date": "2026-05-23",
+        "category": "audits"
+      },
+      {
+        "path": "AUDIT/consciousness-key-figures-2026-05-23.md",
+        "title": "Consciousness Key Figures — canonical inventory",
+        "date": "2026-05-23",
+        "category": "audits"
+      },
+      {
+        "path": "AUDIT/philosophy-key-figures-2026-05-23.md",
+        "title": "Philosophy Lens — key figures catalog",
+        "date": "2026-05-23",
+        "category": "audits"
+      },
+      {
+        "path": "AUDIT/alternative-school-inventory-2026-05-23.md",
+        "title": "Alternative-School Inventory — T2 / T3 / T4 Authors + Claims (2026-05-23)",
+        "date": "2026-05-23",
+        "category": "audits"
+      },
+      {
+        "path": "AUDIT/topbar-pill-refactor-design-2026-05-23.md",
+        "title": "Top-Bar Pill Refactor — App-Level Macro-Navigation Design",
+        "date": "2026-05-23",
+        "category": "audits"
+      },
+      {
+        "path": "AUDIT/political-theology-key-figures-2026-05-23.md",
+        "title": "Political-Theology Key Figures — canonical thinkers inventory",
+        "date": "2026-05-23",
+        "category": "audits"
+      },
+      {
+        "path": "AUDIT/forge-timeline-mode-design-2026-05-23.md",
+        "title": "Forge — Timeline Mode Design Spec",
+        "date": "2026-05-23",
+        "category": "audits"
+      },
+      {
+        "path": "AUDIT/forge-stubs-quality-audit-2026-05-21.md",
+        "title": "Stubs Quality Audit — 2026-05-21",
+        "date": "2026-05-21",
+        "category": "audits"
+      },
+      {
+        "path": "AUDIT/forge-deity-spine-findings-2026-05-21.md",
+        "title": "Forge Deity Spine — Sentinel Findings Log",
+        "date": "2026-05-21",
+        "category": "audits"
+      },
+      {
+        "path": "AUDIT/forge-zoom-world-system-2026-05-21.md",
+        "title": "Forge — Zoom, World-Units & Backdrop Architecture",
+        "date": "2026-05-21",
+        "category": "audits"
+      },
+      {
+        "path": "AUDIT/forge-ontology-audit-2026-05-21.md",
+        "title": "Ontology Audit — 2026-05-21",
+        "date": "2026-05-21",
+        "category": "audits"
+      },
+      {
+        "path": "AUDIT/forge-deadlinks-orphans-audit-2026-05-21.md",
+        "title": "Dead-link + Orphan Audit — 2026-05-21",
+        "date": "2026-05-21",
+        "category": "audits"
+      },
+      {
+        "path": "AUDIT/forge-robustness-03-lifecycle-invariants-2026-05-20.md",
+        "title": "Forge robustness audit 03 — lifecycle invariants + order-of-ops",
+        "date": "2026-05-20",
+        "category": "audits"
+      },
+      {
+        "path": "AUDIT/forge-glyph-migration-handoff-2026-05-20.md",
+        "title": "Forge glyph migration — full handoff for fresh agents",
+        "date": "2026-05-20",
+        "category": "audits"
+      },
+      {
+        "path": "AUDIT/forge-rebuild-2A-behaviors-2026-05-20.md",
+        "title": "Forge rebuild — Phase 2A · BEHAVIORS micro-audit",
+        "date": "2026-05-20",
+        "category": "audits"
+      },
+      {
+        "path": "AUDIT/forge-robustness-lock-plan-2026-05-20.md",
+        "title": "Forge Robustness Lock Plan — synthesis of audits 01–05",
+        "date": "2026-05-20",
+        "category": "audits"
+      },
+      {
+        "path": "AUDIT/forge-robustness-01-scale-2026-05-20.md",
+        "title": "Forge robustness audit · 01 · SCALE + ADAPTIVE-CONSTRAINT READINESS",
+        "date": "2026-05-20",
+        "category": "audits"
+      },
+      {
+        "path": "AUDIT/forge-robustness-05-gpu-pipeline-2026-05-20.md",
+        "title": "Forge robustness audit #05 — GPU pipeline correctness + robustness",
+        "date": "2026-05-20",
+        "category": "audits"
+      },
+      {
+        "path": "AUDIT/forge-rebuild-1A-node-atom-2026-05-20.md",
+        "title": "Forge rebuild — Phase 1A · NODE atom micro-audit",
+        "date": "2026-05-20",
+        "category": "audits"
+      },
+      {
+        "path": "AUDIT/forge-rebuild-4A-fx-2026-05-20.md",
+        "title": "Forge rebuild — Phase 4A · FX micro-audit",
+        "date": "2026-05-20",
+        "category": "audits"
+      },
+      {
+        "path": "AUDIT/forge-hulls-integration-plan-2026-05-20.md",
+        "title": "Forge hulls integration plan",
+        "date": "2026-05-20",
+        "category": "audits"
+      },
+      {
+        "path": "AUDIT/forge-rebuild-3A-wires-2026-05-20.md",
+        "title": "Forge rebuild — Phase 3A · WIRES micro-audit",
+        "date": "2026-05-20",
+        "category": "audits"
+      },
+      {
+        "path": "AUDIT/forge-robustness-02-state-ownership-2026-05-20.md",
+        "title": "Forge — State Ownership + Drift-Class Map (Audit 02)",
+        "date": "2026-05-20",
+        "category": "audits"
+      },
+      {
+        "path": "AUDIT/forge-robustness-04-animation-pipeline-2026-05-20.md",
+        "title": "Forge robustness audit — 04. Animation + interaction pipeline (ground-up)",
+        "date": "2026-05-20",
+        "category": "audits"
+      },
+      {
+        "path": "AUDIT/forge-rebuild-5A-management-2026-05-20.md",
+        "title": "Forge Rebuild — Phase 5A — MANAGEMENT micro-audit",
+        "date": "2026-05-20",
+        "category": "audits"
+      },
+      {
+        "path": "AUDIT/forge-animation-pipeline-2026-05-20.md",
+        "title": "Forge animation pipeline — complete history + architecture log",
+        "date": "2026-05-20",
+        "category": "audits"
+      },
+      {
+        "path": "AUDIT/lens-expansion-audit-2026-05-19.md",
+        "title": "Lens expansion audit — three proposed additions",
+        "date": "2026-05-19",
+        "category": "audits"
+      },
+      {
+        "path": "AUDIT/new-lens-candidates-2026-05-18.md",
+        "title": "Candidates for the 10 new lenses — backlog from existing vault",
+        "date": "2026-05-18",
+        "category": "audits"
+      },
+      {
+        "path": "AUDIT/pagan-usage-verdict-2026-05-18.md",
+        "title": "\"Pagan\" usage in the vault — verdict, 2026-05-18",
+        "date": "2026-05-18",
+        "category": "audits"
+      },
+      {
+        "path": "AUDIT/forge-edge-state-invariant-2026-05-18.md",
+        "title": "Forge Edge-State Invariant — Audit + Fix",
+        "date": "2026-05-18",
+        "category": "audits"
+      },
+      {
+        "path": "AUDIT/premium-dynamics-research-2026-05-17.md",
+        "title": "Premium Interactive Graph Dynamics — Research",
+        "date": "2026-05-17",
+        "category": "audits"
+      },
+      {
+        "path": "AUDIT/p2-edge-audit-2026-05-17.md",
+        "title": "Pantheon-v2 Edge Stroke Styling — Exhaustive Audit (2026-05-17)",
+        "date": "2026-05-17",
+        "category": "audits"
+      },
+      {
+        "path": "AUDIT/ontology-pantheon-bucket-routing-2026-05-17.md",
+        "title": "Ontology-Master Report — Universal Edge-Bucket Routing",
+        "date": "2026-05-17",
+        "category": "audits"
+      },
+      {
+        "path": "AUDIT/pantheon-v2-parity-2026-05-16.md",
+        "title": "Pantheon-v2 parity audit · 2026-05-16",
+        "date": "2026-05-16",
+        "category": "audits"
+      },
+      {
+        "path": "AUDIT/dev-panel-inventory-2026-05-16.md",
+        "title": "Pantheon-v2 Visual Constants Inventory",
+        "date": "2026-05-16",
+        "category": "audits"
+      },
+      {
+        "path": "AUDIT/02_coverage_gaps_by_tradition.md",
+        "title": "Coverage Gaps by Tradition",
+        "date": "2026-05-14",
+        "category": "audits"
+      },
+      {
+        "path": "AUDIT/00_AUDIT_OVERVIEW.md",
+        "title": "Codex Atlas — External Audit (2026-05-14)",
+        "date": "2026-05-14",
+        "category": "audits"
+      },
+      {
+        "path": "AUDIT/05_priority_queue.md",
+        "title": "Priority Queue — Top 10 Highest-Leverage Adds",
+        "date": "2026-05-14",
+        "category": "audits"
+      }
+    ],
+    "status": [
+      {
+        "path": "00_meta/status-archive/2026-05-pre-W3.md",
+        "title": "Status archive — pre-2026-05-16",
+        "date": "2026-05-14",
+        "category": "status"
+      }
+    ],
+    "handoffs": [
+      {
+        "path": "00_meta/HANDOFF-2026-05-24-evening.md",
+        "title": "Session HANDOFF — 2026-05-24 evening",
+        "date": "2026-05-24",
+        "category": "handoffs"
+      },
+      {
+        "path": "00_meta/HANDOFF-2026-05-21-bridge-wiring.md",
+        "title": "HANDOFF — Bridge-Hub Cross-Lens Wiring (2026-05-21)",
+        "date": "2026-05-21",
+        "category": "handoffs"
+      },
+      {
+        "path": "00_meta/HANDOFF-2026-05-20-evening.md",
+        "title": "HANDOFF — 2026-05-20 evening — Forge node-render bug, post Phase 5C",
+        "date": "2026-05-20",
+        "category": "handoffs"
+      },
+      {
+        "path": "00_meta/HANDOFF-2026-05-15-evening.md",
+        "title": "Handoff — Atlas Map V3 + class-icons + persistent connections (2026-05-15 evening)",
+        "date": "2026-05-15",
+        "category": "handoffs"
+      }
+    ]
+  }
+}
