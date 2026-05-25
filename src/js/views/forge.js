@@ -600,7 +600,15 @@
     label_idle_zoom_tier4: 2.00,   // T3
     label_idle_zoom_tier5: 2.50,   // T4
     label_idle_zoom_tier6: 3.50,   // T5
-    label_idle_max:        750,    // bumped from 800 → 1200 in step-01, settled at 750 in step-02
+    // SAFARI-WORKAROUND (2026-05-26): was 750. At moderate zoom (100-
+    // 200%) that allowed ~500-700 DOM labels to be visible
+    // simultaneously, each composited as its own GPU layer in Safari
+    // with text-stroke + transform. The cap is the dominant remaining
+    // per-frame cost. Cut to 200 — past that, labels overlap into
+    // visual noise anyway (you can't readably show 500+ labels in a
+    // 1440×900 viewport). User can still dial up via FX panel
+    // (Phase 21AE) if they want more density.
+    label_idle_max:        200,    // was 750 (Safari composite cliff). 2026-05-26.
     label_size:            12,
     label_cap:             120,
     label_collision_pad:   6,
