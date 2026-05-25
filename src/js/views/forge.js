@@ -1551,17 +1551,27 @@
       const _qs = new URLSearchParams(location.search);
       local._debugNoLabels = (_qs.get('no-labels') === '1');
       local._debugNoNodes  = (_qs.get('no-nodes')  === '1');
-      if (_qs.get('no-hulls') === '1') {
-        // Hide all hull SVG sub-layers via the existing body-class
-        // toggles (already CSS-wired).
-        document.body.classList.add('fv-hide-hulls', 'fv-hide-dividers',
-          'fv-hide-family-titles', 'fv-hide-guide-rings');
+      const _noHulls = (_qs.get('no-hulls') === '1');
+      // ?no-labels=1 — kill ALL text on screen:
+      //   • deity names (canvas labels — handled inside renderLabelsCanvas)
+      //   • family titles (SVG — body.fv-hide-family-titles)
+      //   • timeline tick labels (SVG — body.fv-hide-tl-* would work too
+      //     but simpler: gate inside timeline-chrome later if needed)
+      if (local._debugNoLabels) {
+        document.body.classList.add('fv-hide-family-titles');
       }
-      if (local._debugNoLabels || local._debugNoNodes || _qs.get('no-hulls') === '1') {
+      // ?no-hulls=1 — kill all hull geometry (pie slices + dividers
+      //   + guide rings) but NOT the family-title text (that's controlled
+      //   by ?no-labels=1 above so the two toggles are independent).
+      if (_noHulls) {
+        document.body.classList.add('fv-hide-hulls', 'fv-hide-dividers',
+          'fv-hide-guide-rings');
+      }
+      if (local._debugNoLabels || local._debugNoNodes || _noHulls) {
         console.log('[forge debug] layer toggles:',
           'no-labels=' + (local._debugNoLabels ? 'ON' : 'off'),
           'no-nodes=' + (local._debugNoNodes ? 'ON' : 'off'),
-          'no-hulls=' + (_qs.get('no-hulls') === '1' ? 'ON' : 'off'));
+          'no-hulls=' + (_noHulls ? 'ON' : 'off'));
       }
     } catch (_) {}
 
