@@ -2648,6 +2648,20 @@
       const _colorOverride = currentColorOverride();
       const _distribution = currentDistribution();
       const _reverseAge = !!document.body.classList.contains('fv-reverse-age');
+      // 2026-05-27 — DENSITY-SLIDER FIX. Timeline layout reads
+      // _bandHeightScale at compute time; if we omit it from the
+      // cache key the slider becomes a no-op (relayout fires, cache
+      // returns stale band heights, world looks identical). Include
+      // the engine's current scale in the key. radial layouts ignore
+      // it (default 1.0), so this doesn't perturb their cache hits.
+      // Also include the active scale-preset id for the same reason
+      // — switching LIN / LOG / CMP changes year→world-X mapping.
+      const _bandScale = (window.AtlasEngineLayout
+        && typeof window.AtlasEngineLayout.getTimelineBandHeightScale === 'function')
+          ? window.AtlasEngineLayout.getTimelineBandHeightScale() : 1.0;
+      const _scalePreset = (window.AtlasEngineLayout
+        && typeof window.AtlasEngineLayout.getTimelineScalePresetId === 'function')
+          ? window.AtlasEngineLayout.getTimelineScalePresetId() : '';
       // Build a cheap-to-hash key. modeId + layoutId + a stable
       // string for each input. familyOrder + colorOverride may be
       // arrays/objects; JSON.stringify is fast enough at the sizes
@@ -2657,7 +2671,9 @@
         + '|' + JSON.stringify(_familyOrder)
         + '|' + JSON.stringify(_colorOverride)
         + '|' + JSON.stringify(_distribution)
-        + '|' + (_reverseAge ? '1' : '0');
+        + '|' + (_reverseAge ? '1' : '0')
+        + '|bs=' + _bandScale.toFixed(3)
+        + '|sp=' + _scalePreset;
       if (!local._layoutCache) local._layoutCache = new Map();
       let lay = local._layoutCache.get(_layoutKey);
       const _layoutCacheHit = !!lay;
