@@ -1325,18 +1325,16 @@
     const vdensity = document.createElement('div');
     vdensity.className = 'forge-tl-vdensity fv-timeline-only';
     vdensity.id = 'forge-tl-vdensity';
-    // 2026-05-26 — Layout simplified: track on top, label, then a
-    // readout-button at the bottom (where LOCK used to be). The
-    // readout shows the current density (e.g. "1.0×"); clicking it
-    // resets density to 1.0×. The old standalone-readout div + the
-    // zoom↔density LOCK toggle were both removed: LOCK was rarely
-    // used and the readout duplicated the new button's value.
     vdensity.innerHTML =
+      '<div class="forge-tl-vdensity-readout" id="forge-tl-vdensity-readout">1.0×</div>' +
       '<div class="forge-tl-vdensity-track"   id="forge-tl-vdensity-track">' +
         '<div class="forge-tl-vdensity-thumb" id="forge-tl-vdensity-thumb"></div>' +
       '</div>' +
       '<div class="forge-tl-vdensity-label">DENS</div>' +
-      '<button class="forge-tl-vdensity-readout" id="forge-tl-vdensity-readout" type="button" title="Click to reset density to 1.0×">1.0×</button>';
+      // Phase 22-AG (2026-05-24) — LOCK toggle. When ON: zoom drives
+      // density linearly (zoom 20% → density 1.0×; zoom 100% → 0.3×;
+      // zoom out → density expands). OFF: independent controls.
+      '<button class="forge-tl-vdensity-lock" id="forge-tl-vdensity-lock" type="button" aria-pressed="false" title="LOCK — zoom drives density when on">LOCK</button>';
     stage.appendChild(vdensity);
 
     // Phase 20F (2026-05-21) — backdrop image (star-field / nebula).
@@ -2367,30 +2365,6 @@
           if (ratio < driftLo || ratio > driftHi) {
             rebakeNodes();
             updateZoomGizmo();
-            // 2026-05-26 — VIEWPORT-CULL refresh on significant zoom.
-            // Phase 24A v1 only ran cull on rebuildForMode (mode/layout
-            // switch). Comment in viewport-filter.js literally said
-            // "Phase 24A v2 will add a camera.onChange hook". This is
-            // it. Without this, zooming OUT after a density change
-            // (or any layout change that mutated worldExtent) left
-            // the cull set frozen at the smaller viewport — nodes
-            // that should now be visible stayed culled until the
-            // next rebuildForMode. Layout cache (Phase 24B + density
-            // fix 2026-05-26) makes relayout() cheap: layout-compute
-            // is a HIT, only the post-layout pipeline (cull + pack +
-            // hit-grid + draw) re-runs. Coalesce in rAF so a
-            // multi-tick wheel gesture collapses to one refresh.
-            if (!local._cullRefreshRaf) {
-              local._cullRefreshRaf = requestAnimationFrame(() => {
-                local._cullRefreshRaf = 0;
-                if (local.destroyed) return;
-                try {
-                  if (window._forge && typeof window._forge.relayout === 'function') {
-                    window._forge.relayout();
-                  }
-                } catch (_) {}
-              });
-            }
             return;
           }
         }
