@@ -4498,11 +4498,13 @@
       ctx.textBaseline = 'bottom';
       ctx.lineJoin = 'round';
       ctx.miterLimit = 2;
-      // SAFARI-WORKAROUND (2026-05-27): halo stroke 4px → 2px.
-      // Safari's text-stroke rasterizer cost scales with line width;
-      // 2px still provides readable separation over the wire layer
-      // without paying the 4px cost (~30% paint reduction per label).
-      ctx.lineWidth = 2;
+      // Restored 2026-05-27: was reduced to 2px as a Safari paint-cost
+      // optimization, but the camera-idle skip (above) already eliminates
+      // most paint calls. With idle-skip in place, the per-paint cost
+      // matters less, so going back to 4px for the chunkier halo look
+      // is fine for Safari fluidity. If pan stutters return, drop back
+      // to 2px or 3px.
+      ctx.lineWidth = 4;
       ctx.strokeStyle = _labelsHaloColor;
       ctx.fillStyle = _labelsTextColor;
       for (const id of visible) {
