@@ -10748,7 +10748,11 @@ updateResetButton();
 // view module and read inside its render() — app.js only routes top-level.
 // Whitelist guards against URL-poking landing on a non-existent view.
 (function () {
-  let v = 'pantheon';
+  // 2026-05-27 — default view is FORGE (was pantheon, the legacy
+  // circular view that predates the Forge wheel work). Forge is the
+  // primary product surface; pantheon stays accessible via
+  // ?view=pantheon for the legacy users / archive lookups.
+  let v = 'forge';
   try {
     const sp = new URLSearchParams(location.search);
     const q = sp.get('view');
@@ -10762,7 +10766,7 @@ updateResetButton();
 window.addEventListener('popstate', function () {
   try {
     const sp = new URLSearchParams(location.search);
-    const q = sp.get('view') || 'pantheon';
+    const q = sp.get('view') || 'forge';
     if (q !== STATE.view && VIEWS && Object.prototype.hasOwnProperty.call(VIEWS, q)) {
       setView(q);
     }
