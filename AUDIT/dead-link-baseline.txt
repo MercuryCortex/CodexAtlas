@@ -4,7 +4,7 @@
 # To accept current state as the new floor, run:
 #     python3 linkcheck.py --write-baseline
 # See AUDIT/2026-05-25-tyrant-remediation-plan.md Phase 2.
-# Captured 501 targets on first write.
+# Captured 493 targets on first write.
 
 ...
 08_quran-scripture-wiring-brief.md
@@ -13,23 +13,15 @@ P5-002-heart-sutra
 _phase-4-late-antiquity
 abaye
 abjesus
-abreha-of-himyar
 acts-of-thomas
-adad
 adonis-greek
 adonis-hellenistic
 ahriman
 al-aql-al-awwal
-al-kirmani
-al-muizz-fatimid
 al-nafs-al-kulliyyah
 alchemy-corpus-hermeticum
-alexios-iv
-amelius
-ammi
 ammon
 anagarika-dharmapala
-anahita-zoroastrian
 ancestral-beings
 ancestral-pact
 ancient-of-days
