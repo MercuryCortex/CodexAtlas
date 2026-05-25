@@ -600,16 +600,14 @@
     label_idle_zoom_tier4: 2.00,   // T3
     label_idle_zoom_tier5: 2.50,   // T4
     label_idle_zoom_tier6: 3.50,   // T5
-    // Phase 25 (2026-05-26) — bumped 100 → 300 now that labels are
-    // canvas-rendered. Canvas has effectively no per-label cost
-    // (one paint call covers all visible labels), so the Safari-
-    // composite cliff that constrained DOM labels to ~100 is gone.
-    // 300 gives ~9 labels per family at default zoom — actually
-    // readable density. With center-weight 0.7 the center gets
-    // ~210 labels (T0-T3 visible there) and the edge gets ~90
-    // (mostly T0-T1 hubs). Visual cliff disappears progressively
-    // as the user zooms in.
-    label_idle_max:        300,    // was 100. Phase 25 canvas raises the ceiling.
+    // Reverted to 100 (2026-05-26): canvas labels are CHEAPER than
+    // DOM labels per-element, but they're NOT free — each label is
+    // still a strokeText + fillText GPU op. 100 → 300 added 400
+    // text operations per frame, which Safari pays for. 100 stays
+    // a fluid baseline. To raise this, the remaining DOM
+    // compositors (SVG hulls + timeline chrome) need canvas
+    // treatment first — Phase 25b. Until then, 100 is the safe cap.
+    label_idle_max:        100,    // canvas is cheaper than DOM but NOT free.
     label_size:            12,
     label_cap:             120,
     label_collision_pad:   6,
