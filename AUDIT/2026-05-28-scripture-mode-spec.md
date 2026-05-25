@@ -157,8 +157,8 @@ Each step is independently committable and pixel-equivalent to the prior step un
 
 | Step | What | LOC delta | Risk |
 |---|---|---|---|
-| **1** | Add `scriptures` mode to `engine/graph/mode.js` + `SCRIPTURE_IDS` set + `isScripture` predicate. No UI change yet. | +60 | Low |
-| **2** | Add `Scriptures` row to view-settings.js class-pill. Selecting it filters the wheel. No reader yet. | +10 | Low |
+| **1** ✓ | Add `scriptures` mode to `engine/graph/mode.js` + `SCRIPTURE_IDS` set + `isScripture` predicate. No UI change yet. **SHIPPED 2026-05-28 commit `b1e0557`.** | +134 | Low |
+| **2** ✓ | ~~Add `Scriptures` row to view-settings.js class-pill.~~ **NOT NEEDED** — `src/js/app-pill.js:129 buildClassMenu()` auto-iterates `_forge.supportedClasses()` which is `AtlasEngineMode.MODES`. The new ✶ Scriptures row appears in the class-pill dropdown automatically. Selection routes through `_forge.setClassFilter('scriptures')` → wheel rebuilds with 109 nodes. **Verified via DevTools console.** | 0 | None |
 | **3** | Build `src/js/forge/scripture-reader.js` skeleton — attach + empty overlay DOM. Installed but never opened. Public API `_forge.openReader/closeReader` added (no-op until step 4). | +200 | Low |
 | **4** | Port legacy `_buildSections` + `_annotate` + `_verseText` + `_buildCtx` from `scripture-reader.js` into the carved module. Reader can RENDER but doesn't open from anywhere yet. Manually testable via `window._forge.openReader('genesis-1')`. | +400 | Med — line-for-line port |
 | **5** | Wire side-panel "Open reader" button — clicking a locked scripture node in the wheel exposes a button that calls `_forge.openReader(node.id)`. First end-to-end flow lights up. | +30 | Low |
