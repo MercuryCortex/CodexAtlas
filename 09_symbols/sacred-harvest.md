@@ -145,23 +145,23 @@ The deepest structural insight: the dying-and-rising pattern maps onto the annua
 
 ### Osiris (Egypt, c. −3000 BCE onward)
 
-[[Osiris]] is murdered by Set, dismembered across Egypt, reassembled by [[isis-egyptian]]. The **[[djed-pillar]]** ceremony — the annual raising of the Djed — enacts his resurrection. The deceased pharaoh *becomes* Osiris; every initiate into Egyptian funerary religion participates in Osiris's resurrection. Osiris is simultaneously the paradigm of death (he reigns in the underworld) and the paradigm of renewal (his body IS the fertile Nile flood-silt). See [[tradition-egyptian-religion]].
+[[osiris]] is murdered by Set, dismembered across Egypt, reassembled by [[isis-egyptian]]. The **[[djed-pillar]]** ceremony — the annual raising of the Djed — enacts his resurrection. The deceased pharaoh *becomes* Osiris; every initiate into Egyptian funerary religion participates in Osiris's resurrection. Osiris is simultaneously the paradigm of death (he reigns in the underworld) and the paradigm of renewal (his body IS the fertile Nile flood-silt). See [[tradition-egyptian-religion]].
 
 ### Dumuzi/Tammuz (Mesopotamia, c. −2000 BCE onward)
 
-[[Dumuzi-tammuz]] is the shepherd-consort of [[inanna-sumerian]]. After [[inanna-sumerian]]'s descent to the underworld, Dumuzi is given as her substitute price of return. He spends half the year below (= summer drought, the flocks absent) and half above (= spring, the flocks return). The weeping for Tammuz is attested in the Hebrew Bible (Ezekiel 8:14), demonstrating the cult's reach into Israel. See [[tradition-sumerian-mesopotamian]].
+[[dumuzi-tammuz]] is the shepherd-consort of [[inanna-sumerian]]. After [[inanna-sumerian]]'s descent to the underworld, Dumuzi is given as her substitute price of return. He spends half the year below (= summer drought, the flocks absent) and half above (= spring, the flocks return). The weeping for Tammuz is attested in the Hebrew Bible (Ezekiel 8:14), demonstrating the cult's reach into Israel. See [[tradition-sumerian-mesopotamian]].
 
 ### Baal (Ugarit, c. −1400 BCE)
 
-[[Baal-hadad]] dies in combat with Mot (Death) and descends; his death = drought; his resurrection = rain restoring the land. The Ugaritic Baal Cycle provides the most explicit textual parallel between the ancient Near Eastern dying god and later traditions. See [[tradition-canaanite-ugaritic]].
+[[baal-hadad]] dies in combat with Mot (Death) and descends; his death = drought; his resurrection = rain restoring the land. The Ugaritic Baal Cycle provides the most explicit textual parallel between the ancient Near Eastern dying god and later traditions. See [[tradition-canaanite-ugaritic]].
 
 ### Persephone and the Eleusinian Mysteries (Greece)
 
-[[Persephone-greek]] descends to [[hades]]; [[demeter]]'s grief creates winter; Persephone's return creates spring. The [[tradition-eleusinian-mysteries]] — the most important mystery cult in ancient Greece — were built on this story. Initiates at Eleusis witnessed or participated in a theatrical enactment of Persephone's descent and return; the promise was that initiates would not fear death (they had witnessed the return of the dead). Plutarch (*De Iside et Osiride*) explicitly equated Osiris and Persephone.
+[[persephone-greek]] descends to [[hades]]; [[demeter]]'s grief creates winter; Persephone's return creates spring. The [[tradition-eleusinian-mysteries]] — the most important mystery cult in ancient Greece — were built on this story. Initiates at Eleusis witnessed or participated in a theatrical enactment of Persephone's descent and return; the promise was that initiates would not fear death (they had witnessed the return of the dead). Plutarch (*De Iside et Osiride*) explicitly equated Osiris and Persephone.
 
 ### Christ (Christianity)
 
-[[Jesus-christ-deity]] dies on the cross, descends to hell (*descensus ad inferos*, affirmed in the Apostles' Creed), and rises on the third day. Paul's argument in 1 Corinthians 15 makes Christ's resurrection the pattern for all human resurrection: "For since death came through a human being, the resurrection of the dead comes also through a human being." The structural logic is identical to the Osiris pattern: the god's resurrection is the template and guarantee of the initiate's own resurrection.
+[[jesus-christ-deity]] dies on the cross, descends to hell (*descensus ad inferos*, affirmed in the Apostles' Creed), and rises on the third day. Paul's argument in 1 Corinthians 15 makes Christ's resurrection the pattern for all human resurrection: "For since death came through a human being, the resurrection of the dead comes also through a human being." The structural logic is identical to the Osiris pattern: the god's resurrection is the template and guarantee of the initiate's own resurrection.
 
 The degree of direct influence from Near Eastern dying-god cults on early Christianity remains contested. Mettinger (2001) argues for genuine influence channels; Smith (1987) urges caution about homogenization. What is not in dispute: the structural parallel is real.
 

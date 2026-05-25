@@ -10,9 +10,9 @@ period-latest: 2026
 region: "Global"
 variants:
   - id: "egyptian-nun"
-    description: "**Nun** (nwn): the primordial ocean of inertness, darkness, and potential that existed before the first moment of creation. [[Atum]] emerges from Nun as the primordial hill (the [[ben-ben]]). At the end of time, the created world will dissolve back into Nun — it is simultaneously origin and eschatological destination. Primary sources: *Pyramid Texts*, *Coffin Texts*, Memphite Theology. See [[nun-primordial-waters]]."
+    description: "**Nun** (nwn): the primordial ocean of inertness, darkness, and potential that existed before the first moment of creation. [[atum]] emerges from Nun as the primordial hill (the [[ben-ben]]). At the end of time, the created world will dissolve back into Nun — it is simultaneously origin and eschatological destination. Primary sources: *Pyramid Texts*, *Coffin Texts*, Memphite Theology. See [[nun-primordial-waters]]."
   - id: "mesopotamian-apsu-tiamat"
-    description: "[[Apsu]] (sweet/fresh water) and [[tiamat]] (salt/sea water) are the two primordial oceans whose intermingling produces the first gods (*Enuma Elish*, c. −1800 BCE). Apsu is killed by [[marduk]]'s father Ea; [[tiamat]] raises an army; [[marduk]] kills Tiamat and creates heaven and earth from her body. The primordial waters are gendered (male freshwater = Apsu; female saltwater = Tiamat = [[chaos-primordial-symbol]]). See [[tradition-mesopotamian]]."
+    description: "[[apsu]] (sweet/fresh water) and [[tiamat]] (salt/sea water) are the two primordial oceans whose intermingling produces the first gods (*Enuma Elish*, c. −1800 BCE). Apsu is killed by [[marduk]]'s father Ea; [[tiamat]] raises an army; [[marduk]] kills Tiamat and creates heaven and earth from her body. The primordial waters are gendered (male freshwater = Apsu; female saltwater = Tiamat = [[chaos-primordial-symbol]]). See [[tradition-mesopotamian]]."
   - id: "hebrew-tehom"
     description: "**Tehom** (תְּהוֹם): Genesis 1:2 — 'the earth was without form and void, and darkness was over the face of the *tehom*, and the Spirit of God was hovering over the face of the waters.' The cognate relationship of *tehom* with Akkadian *Tiāmat* is one of the most documented cases of Mesopotamian influence on Hebrew cosmology (Gunkel 1895). The 'waters above the firmament' and 'waters below' are the separated primordial waters of Genesis 1:7."
   - id: "hindu-milky-ocean"
@@ -20,7 +20,7 @@ variants:
   - id: "norse-ginnungagap"
     description: "**Ginnungagap** ('the gaping void'): the void between Niflheim (ice) and Muspelheim (fire). Drops of ice and fire meet to create the first giant Ymir and the cosmic cow Audhumbla. The Ginnungagap is void rather than water per se — the Norse cognate of the formless-before-creation theme operating without the water metaphor, yet filling the same structural slot."
   - id: "greek-okeanos"
-    description: "**Okeanos** (Ὠκεανός): the river/ocean surrounding the known world; Homer (*Iliad* 14.246) calls him 'Ocean, from whom the gods are sprung.' **Thales** (c. −585 BCE) proposed water as the *archē* (first principle) — the earliest documented philosophical statement of the primordial-waters thesis, translating mythological tradition into philosophical cosmology. [[Gaia]] and [[nyx-primordial]] emerge from this cosmological background."
+    description: "**Okeanos** (Ὠκεανός): the river/ocean surrounding the known world; Homer (*Iliad* 14.246) calls him 'Ocean, from whom the gods are sprung.' **Thales** (c. −585 BCE) proposed water as the *archē* (first principle) — the earliest documented philosophical statement of the primordial-waters thesis, translating mythological tradition into philosophical cosmology. [[gaia]] and [[nyx-primordial]] emerge from this cosmological background."
   - id: "pacific-island-ocean"
     description: "Numerous Pacific Islander creation traditions begin with primordial ocean from which islands emerge — closely related to the [[earth-diver-creation]] pattern in which a being dives into the primordial waters to bring up the earth. The ocean-as-substrate is one of the most globally distributed creation cosmology features."
 appearances:
@@ -124,7 +124,7 @@ The primordial waters concept has three consistent features across traditions:
 
 ## The Egyptian Nun
 
-**[[Nun-primordial-waters]]** is the Egyptian instantiation of the cosmic ocean — the primordial state before the first moment of creation. From Nun, the creator god [[Atum]] arose as the primordial hill (the **[[ben-ben]]**): the first point of distinction in an undifferentiated infinite. The Pyramid Texts describe the creator as "he who came forth from Nun when there was as yet no sky, when there was as yet no earth."
+**[[Nun-primordial-waters]]** is the Egyptian instantiation of the cosmic ocean — the primordial state before the first moment of creation. From Nun, the creator god [[atum]] arose as the primordial hill (the **[[ben-ben]]**): the first point of distinction in an undifferentiated infinite. The Pyramid Texts describe the creator as "he who came forth from Nun when there was as yet no sky, when there was as yet no earth."
 
 The Nun is simultaneously:
 - The cosmological substrate before creation
@@ -137,7 +137,7 @@ See [[tradition-egyptian-religion]].
 
 The *Enuma Elish* (c. −1800 BCE) opens with the primordial waters in their most fully developed narrative form: "When on high the heavens had not yet been named, nor below the earth called by name — primordial Apsu was their progenitor, and matrix Tiamat, who bore them all; they were mingling their waters together, and no pasture land had been formed, no marsh had appeared."
 
-**[[Apsu]]** (fresh water) and **[[tiamat]]** (salt water) are the two primordial oceans. Their intermingling — without boundary or distinct form — is the state before creation. The younger gods disturb the primordial silence; **[[marduk]]** defeats **[[tiamat]]** and constructs heaven and earth from her body, fixing the seas in place. Creation is the violent defeat and ordering of the primordial chaos-waters. See **[[chaos-primordial-symbol]]** and [[tradition-mesopotamian]].
+**[[apsu]]** (fresh water) and **[[tiamat]]** (salt water) are the two primordial oceans. Their intermingling — without boundary or distinct form — is the state before creation. The younger gods disturb the primordial silence; **[[marduk]]** defeats **[[tiamat]]** and constructs heaven and earth from her body, fixing the seas in place. Creation is the violent defeat and ordering of the primordial chaos-waters. See **[[chaos-primordial-symbol]]** and [[tradition-mesopotamian]].
 
 ## The Hebrew Tehom
 
@@ -147,11 +147,11 @@ The cosmic battle returns in Psalms 74:13 ("You divided the sea by your might; y
 
 ## The Hindu Kshira Sagara
 
-[[Vishnu]] sleeps on the thousand-headed cosmic serpent Shesha (Ananta) floating on the **Kshira Sagara** (Milky Ocean) between cycles of creation. This is the cosmic ocean as the substrate of divine rest — the state of pure potential before manifestation begins. The churning of the Milky Ocean (*Samudra Manthan*) in which the gods and demons cooperate to extract cosmic gifts parallels the Mesopotamian narrative: the primordial ocean yields treasures when it is violated or stirred. See [[tradition-vedic-hinduism]].
+[[vishnu]] sleeps on the thousand-headed cosmic serpent Shesha (Ananta) floating on the **Kshira Sagara** (Milky Ocean) between cycles of creation. This is the cosmic ocean as the substrate of divine rest — the state of pure potential before manifestation begins. The churning of the Milky Ocean (*Samudra Manthan*) in which the gods and demons cooperate to extract cosmic gifts parallels the Mesopotamian narrative: the primordial ocean yields treasures when it is violated or stirred. See [[tradition-vedic-hinduism]].
 
 ## Greek Okeanos and Philosophical Residue
 
-Homer's **Okeanos** (the world-encircling river from which all rivers flow and from which the gods themselves descend) is the Greek mythological form of the cosmic ocean. **Thales of Miletus** (c. −585 BCE) proposed water (*hudōr*) as the *archē* — the first principle of all things. This is the earliest documented philosophical restatement of the primordial-waters theology: the mythological Okeanos becomes the philosophical water-as-substance. **[[Gaia]]** and **[[nyx-primordial]]** emerge from the same cosmological background.
+Homer's **Okeanos** (the world-encircling river from which all rivers flow and from which the gods themselves descend) is the Greek mythological form of the cosmic ocean. **Thales of Miletus** (c. −585 BCE) proposed water (*hudōr*) as the *archē* — the first principle of all things. This is the earliest documented philosophical restatement of the primordial-waters theology: the mythological Okeanos becomes the philosophical water-as-substance. **[[gaia]]** and **[[nyx-primordial]]** emerge from the same cosmological background.
 
 The connection between Thales's philosophical argument and the mythological tradition is not merely formal: Thales's Egypt visits are documented in ancient sources, suggesting he encountered the Nun theology directly.
 

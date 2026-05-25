@@ -31,7 +31,7 @@ Norse-Germanic religion is the polytheistic tradition of the Scandinavian and br
 
 ## Cosmological Structure
 
-**Yggdrasil:** The World Tree — a cosmic ash or yew connecting nine worlds. Its roots reach Hel (the land of the dead), Jotunheimr (the giants' world), and the underworld spring of wisdom. [[Odin]] hung on this tree for nine nights to obtain the runes.
+**Yggdrasil:** The World Tree — a cosmic ash or yew connecting nine worlds. Its roots reach Hel (the land of the dead), Jotunheimr (the giants' world), and the underworld spring of wisdom. [[odin]] hung on this tree for nine nights to obtain the runes.
 
 **The Nine Worlds:** Asgard (gods), Midgard (humans), Jotunheimr (giants), Helheim (dead), Niflheim (primordial cold), Muspelheim (primordial fire), Vanaheim (Vanir gods), Alfheim (light elves), Svartalfheim (dark elves/dwarves).
 

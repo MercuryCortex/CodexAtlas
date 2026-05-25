@@ -4,7 +4,7 @@
 # To accept current state as the new floor, run:
 #     python3 linkcheck.py --write-baseline
 # See AUDIT/2026-05-25-tyrant-remediation-plan.md Phase 2.
-# Captured 588 targets on first write.
+# Captured 574 targets on first write.
 
 ...
 08_quran-scripture-wiring-brief.md
@@ -12,29 +12,12 @@
 <stub-id>
 ACTIVE-AGENTS
 ARTHURIAN-CYCLE
-Apsu
-Atum
-Baal-hadad
-Dumuzi-tammuz
-Gaia
-Indra
-Jesus-christ-deity
-Jupiter
-Marduk
 Nun-primordial-waters
-Odin
-Osiris
 P5-002-heart-sutra
 PX-NNN-slug
-Persephone-greek
-Perun
 Proto-cuneiform tablets
-Sekhmet
 The Complete Pyramids
-Thor
-Tiamat
 Ullendorff 1968
-Vishnu
 Zeus
 _phase-4-late-antiquity
 abaye
@@ -423,6 +406,7 @@ phase-5-045-ibn-rushd-tahafut-al-tahafut
 phase-5-046-al-ghazali-tahafut-al-falasifa
 phase-5-046-ibn-tufayl-hayy-ibn-yaqdhan
 phase-5-x-zohar
+phase-6-002-florentine-codex
 phase-6-006-chilam-balam
 phase-6-006-paracelsus-archidoxes
 phase-6-017-boehme-aurora-mysterium-magmum
@@ -584,6 +568,7 @@ walter-burkert
 was-sceptre
 watchers-fallen-angels
 wei-boyang
+wikilink
 wisdom-literature
 xenophon
 yam-canaanite
@@ -594,3 +579,4 @@ yochanan-bar-nappaha
 yoshamin
 zara-yaqob-theological-centralization
 zema-ethiopian-chant
+…

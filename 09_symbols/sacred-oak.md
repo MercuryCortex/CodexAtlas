@@ -12,7 +12,7 @@ variants:
   - id: "dodona-oracle-oak"
     description: "The oracle oak at **Dodona** — the most ancient oracle in the Greek world, predating Delphi. The oracle of [[zeus]] was delivered through the rustling of the sacred oak leaves and the cooing of sacred doves. Priestesses (*Peleiades* = 'doves') interpreted the rustling. The oak's voice = the voice of the storm god. See [[tradition-greek-religion]]."
   - id: "roman-jupiter-oak"
-    description: "The oak (*robur*, *Quercus*) is **[[Jupiter]]'s** tree on the Capitoline Hill. The highest military honor was the *corona civica* — a wreath of oak leaves. Jupiter's priests (Flamines Diales) observed oak-related taboos. The oak-wreath triumphal crown encodes the same oak = storm-god theology as Dodona."
+    description: "The oak (*robur*, *Quercus*) is **[[jupiter]]'s** tree on the Capitoline Hill. The highest military honor was the *corona civica* — a wreath of oak leaves. Jupiter's priests (Flamines Diales) observed oak-related taboos. The oak-wreath triumphal crown encodes the same oak = storm-god theology as Dodona."
   - id: "celtic-druid-oak"
     description: "The **Druid oak**: Pliny (*Naturalis Historia* 16.249) records that Druids 'do not perform any sacred rites without the leaves of that tree.' The word 'Druid' likely derives from Proto-Celtic *dru-wid-* = 'oak-knower' or 'oak-wisdom.' The mistletoe cut from the sacred oak with a golden sickle is the supreme Druidic ritual object. The *nemeton* (sacred grove) centers on the oak. See [[tradition-celtic]]."
   - id: "norse-germanic-sacred-oak"
@@ -121,7 +121,7 @@ The most important structural fact about the sacred oak is that it is a **Proto-
 | Celtic | (storm association) | Druidic oak rites; *nemeton* |
 | Norse/Germanic | [[thor]] | Geismar oak; Irminsul |
 | Slavic | [[perun]] | Perun's oak groves; perpetual oak-fire |
-| Vedic | [[Indra]] | Thunderbolt from wood; Indra's sacred tree |
+| Vedic | [[indra]] | Thunderbolt from wood; Indra's sacred tree |
 
 The probability that this equation arose independently in all six branches is negligible. It is a PIE-level theological feature — the oldest demonstrably shared mythological belief we can reconstruct, arising from the accurate observation that oaks attract lightning and confirming that the PIE thunder god was associated with the oak tree before the dispersal c. −3500 BCE.
 
@@ -135,7 +135,7 @@ The oak's rustling voice = the storm god's speech = the medium of divine revelat
 
 ## Roman Jupiter and the Oak Crown
 
-[[Jupiter]]'s oak on the Capitoline Hill was the founding sacred site of Roman state religion. The **corona civica** (civic crown) — the highest military honor, awarded for saving a Roman citizen's life — was woven from oak leaves. The man who received it stood beneath the oak, as if sheltered by Jupiter himself.
+[[jupiter]]'s oak on the Capitoline Hill was the founding sacred site of Roman state religion. The **corona civica** (civic crown) — the highest military honor, awarded for saving a Roman citizen's life — was woven from oak leaves. The man who received it stood beneath the oak, as if sheltered by Jupiter himself.
 
 Jupiter's priests (Flamines Diales) maintained extensive taboos relating to the oak: they could not eat or even name certain plants, but the oak was the one tree they were ritually required to maintain contact with. The oak = Jupiter's body in vegetative form.
 
