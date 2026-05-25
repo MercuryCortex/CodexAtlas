@@ -4334,11 +4334,28 @@
         dy = 0;
       }
 
-      bgImage.style.width  = widthPx.toFixed(1)  + 'px';
-      bgImage.style.height = heightPx.toFixed(1) + 'px';
+      // Phase 24-PRIMITIVE-FIX (2026-05-26) — was per-frame
+      // style.width + style.height writes, both of which trigger
+      // browser LAYOUT every camera tick. Replaced with a fixed
+      // CSS base-size set ONCE at first call + a per-frame scale()
+      // baked into the transform string. Scale runs on the GPU
+      // compositor thread — zero layout cost. Same final pixel
+      // size for the user, different mechanism.
+      if (!local._bgImageBaseSize) {
+        // Pick a stable base size that gives near-1.0 scale at the
+        // typical zoom range so font/image quality stays crisp.
+        // Use the initial cover width — at the floor zoom it's
+        // exactly 1× scale. As the user zooms, scale grows above
+        // 1.0 (browsers handle 1-3× scale-ups well).
+        bgImage.style.width  = coverWidthPx.toFixed(1) + 'px';
+        bgImage.style.height = (coverWidthPx / imgAspect).toFixed(1) + 'px';
+        local._bgImageBaseSize = coverWidthPx;
+      }
+      const bgScale = widthPx / local._bgImageBaseSize;
       bgImage.style.transform =
         'translate(-50%, -50%) ' +
-        'translate(' + dx.toFixed(1) + 'px,' + dy.toFixed(1) + 'px)';
+        'translate3d(' + dx.toFixed(1) + 'px,' + dy.toFixed(1) + 'px,0) ' +
+        'scale(' + bgScale.toFixed(4) + ')';
       // Phase 21AL — soundtrack volume rides the same per-frame
       // zoom curve as the BG opacity.
       syncSoundtrack();

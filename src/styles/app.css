@@ -8218,7 +8218,11 @@ body.view-forge #detail-inner {
   pointer-events: none;
   user-select: none;
   opacity: 0;
-  will-change: opacity, transform, width, height;
+  /* Phase 24-PRIMITIVE-FIX (2026-05-26) — width/height removed from
+     will-change because they're no longer animated; we use transform:
+     scale() instead so all per-frame motion stays on the GPU
+     compositor (zero browser layout). */
+  will-change: opacity, transform;
 }
 .forge-hulls-overlay {
   position: absolute; inset: 0;
