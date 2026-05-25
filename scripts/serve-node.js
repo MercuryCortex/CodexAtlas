@@ -56,7 +56,13 @@ http.createServer((req, res) => {
         'Content-Length': stat.size,
         'Accept-Ranges': 'bytes',
         'Access-Control-Allow-Origin': '*',
-        'Cache-Control': 'no-cache',
+        // 2026-05-26 — strengthened from no-cache to no-store +
+        // must-revalidate so Safari can NEVER serve stale dev code.
+        // Cost is bandwidth (every refresh re-fetches every asset);
+        // benefit is debug certainty. Revisit before release.
+        'Cache-Control': 'no-store, no-cache, must-revalidate, max-age=0',
+        'Pragma': 'no-cache',
+        'Expires': '0',
       });
       fs.createReadStream(filepath).pipe(res);
     }

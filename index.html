@@ -11,6 +11,26 @@
 <link rel="stylesheet" href="src/styles/app.css?v=20260525-phase24-v1" />
 </head>
 <body class="nav-hidden detail-collapsed footer-collapsed">
+<!-- 24-HARDDEBUG inline banner (2026-05-26, removable). Paints
+     immediately on load if ?debug-cap=N is in the URL — does NOT
+     depend on forge.js or any module being loaded. If you DON'T
+     see this banner with the param in the URL, your browser is
+     using cached index.html (impossible after the server's
+     no-store headers landed). -->
+<script>
+(function () {
+  try {
+    var u = parseInt(new URLSearchParams(location.search).get('debug-cap'), 10);
+    if (!(u > 0)) return;
+    var b = document.createElement('div');
+    b.id = 'forge-hard-debug-banner-inline';
+    b.style.cssText = 'position:fixed;top:10px;left:50%;transform:translateX(-50%);background:#e22;color:#fff;padding:8px 16px;z-index:99999;font:bold 14px ui-monospace,Menlo,Monaco,monospace;border-radius:6px;pointer-events:none;box-shadow:0 4px 12px rgba(0,0,0,.5);';
+    b.textContent = '🔴 INLINE HARD-DEBUG cap=' + u + ' · script loaded';
+    document.body.appendChild(b);
+    console.log('[index] inline debug-cap banner painted, cap=' + u);
+  } catch (e) { console.error('[index] inline debug-cap failed', e); }
+})();
+</script>
 
 <!-- Phase 21A (2026-05-21) — the persistent sidebar is gone.
      The brand glyph at top-left is now a floating button that
