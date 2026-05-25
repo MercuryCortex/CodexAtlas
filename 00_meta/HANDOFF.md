@@ -1,155 +1,206 @@
-# Session HANDOFF — 2026-05-26 EARLY (fresh-agent pickup)
+# Session HANDOFF — 2026-05-27 (Safari perf mission accomplished)
 
-> **⚠️ READ THIS BLOCK FIRST.** The Phase 23.1 retry shipped clean — **15 commits**, **forge.js 8590 → 6011 LOC (−30%)**, bundled into one script tag, **3 latent bugs fixed** as bonus. Phase 24 viewport-filter spec filed + v1 mechanism live but **perf-inert** (cull is in wrong pipeline position — bottleneck is upstream). Honest profiling revealed the renderer architecture is already Google-Maps-shaped (GPU instancing, sub-µs hit-test); the next surgical move requires picking the right target. **John picked "sleep, fresh session" to make that pick with energy.**
-
----
-
-## 60-second TL;DR for fresh agent
-
-1. **The app works.** http://localhost:8742/?view=forge boots clean. All interactions live.
-2. **Phase 23.1 retry COMPLETE.** Bullet-proof this time — AST scanner + smoke gate + bootstrap-catch caught every issue pre-commit. See "What landed tonight" below.
-3. **Phase 24A v1 shipped** (commit 79a2d7a) but doesn't move perf. Mechanism + public API in place; the perf win requires either v2 (camera.onChange re-cull) or moving cull upstream of layout (Phase 24B pre-baked positions).
-4. **THE GOOGLE MAPS BAR is now the cardinal perf framing.** Memory: `feedback_google_maps_bar_2026-05-25`. Read before any perf/architecture call. Constant-factor wins (JIT carving) aren't enough; the architectural changes are what scale.
-5. **Open queue** (§ "Next surgical move — pick one" below).
+> **⚠️ READ THIS BLOCK FIRST.** 49-commit session that took the Forge view from **24fps in Safari → consistent 60fps in Safari** at vault scale (4476 nodes / 682 active deities). Brave at 60fps with headroom. The architecture is now READY to receive content growth toward the real scale targets. The MISSION (Google Maps bar at hundreds of thousands of nodes) is NOT done — perf foundation is now sound, the next phase is data architecture + content ingestion. See § "Roadmap state" below.
 
 ---
 
-## What landed tonight (15 commits, all on main)
+## 60-second TL;DR for the fresh agent
 
-| Commit | What | Effect |
-|---|---|---|
-| `6299e2a` | Phase 23.1a retry — wireTimelineScrubber carve | −340 LOC |
-| `a5745c8` | Phase 23.1b retry — wireLegend carve | −273 LOC |
-| `15e6ee7` | Phase 23.1c retry — wireFXPanel **fresh carve** (cherry-pick over-declared `renderer` and failed) | −139 LOC |
-| `844307d` | Phase 23.1d retry — wireStylePanel fresh carve | −112 LOC |
-| `cae7f22` | Phase 23.1e retry — wireSearchAutocomplete fresh carve | −103 LOC |
-| `e0e01e6` | Phase 23.1f retry — wireHoverCard fresh carve | −311 LOC |
-| `469948c` | Phase 23.1g retry — wireSidePanel fresh carve **THE BIG ONE** + fixed latent `safeAttr` sibling-scope bug | −854 LOC |
-| `d27ee32` | Phase 23.1h retry — wireDebugStats fresh carve | −50 LOC |
-| `78dbe84` | Phase 23.1i retry — wireViewSettings fresh carve | −301 LOC |
-| `6889192` | Phase 23.1j retry — installPublicApi fresh carve **SERIES COMPLETE** | −103 LOC |
-| `d39afb8` | Phase 23.1-bundle — concatenate 10 modules into one `<script>` | bundle |
-| `6b3eddf` | Phase 23.1j HOTFIX — `modemod is forge.js-scope, not window` | bug fix |
-| `d63d1c0` | AUDIT — Phase 24A viewport-filter spec | spec |
-| `79a2d7a` | Phase 24A v1 — viewport cull primitive (mechanism only, NOT perf win) | mechanism |
-| _(this commit)_ | HANDOFF + STATUS update | bookkeeping |
-
-**Net result: forge.js 8590 → 6011 LOC (−30%).** Beats the original (failed) carve series's −25.1% endpoint by 5 percentage points, AND with 3 latent bugs fixed.
-
-### The 3 latent bugs fixed tonight
-
-1. **`renderer` over-declare (23.1c)** — original cherry-picked stub passed `renderer` to the carved fx-panel module. `renderer` doesn't exist at forge.js scope (only `local.renderer` as a member access). Cherry-pick was unsafe because the original commit's stub encoded pre-revert deps that may not exist in current scope. **Lesson: don't cherry-pick carves; fresh-carve only, use AST-validated deps.**
-
-2. **`safeAttr` sibling-scope (23.1g)** — `const safeAttr = ...` declared inside `render()` but referenced from sibling function `showCrossFolderPopup()`. Lexical scope mismatch — would have thrown `ReferenceError` the first time a user clicked a cross-folder neighbor row. Latent because the click path was never fired in testing. **Carved module hoists `safeAttr` to module-scope, fixing both the carve and the original bug.**
-
-3. **`modemod` scope (23.1j hotfix)** — `const modemod = window.AtlasEngineMode` at forge.js:630. The alias is forge.js-scope only. AST scanner's `SAFE_GLOBALS` list wrongly whitelisted `modemod`, `gpu`, `glyphmod`, `edgemod` as window globals. installPublicApi referenced bare `modemod` → fine at boot, throws on first public API call. **Fixed: install-public-api.js uses `window.AtlasEngineMode.*` directly; SAFE_GLOBALS updated with explanatory comment.**
+1. **Forge view is buttery in BOTH Safari AND Brave at the current 4476-node vault.** No further perf work needed at this scale.
+2. **Phase 25 (canvas labels)** was the big architectural unlock — DOM labels were Safari's compositor cliff.
+3. **The pattern that WORKED for Safari specifically:** camera-idle skip (any per-frame render function) + minimal stroke widths + canvas for many-small elements + SVG for few-large elements. Full checklist saved at `memory/feedback_safari_perf_unlocks_2026-05-27.md`.
+4. **The pattern that DIDN'T work:** canvas for hulls (tried + reverted). Few-large-elements stay SVG.
+5. **The mission isn't finished.** Current vault is 4476 nodes; real target is hundreds of thousands → millions. The next architectural phase is data (slim render data split, lazy load by viewport, LOD clusters). See § "Roadmap state".
 
 ---
 
-## Tonight's profile data (memorialized — do NOT re-collect unless code changed)
+## What landed tonight (49 commits, all on main)
 
-### Vault baseline
-- **Total nodes:** 4476
-- **Total edges:** 21405
-- **Avg node JSON:** 6 KB (35 fields, most are detail-on-demand: body, refs, thumb_extract, themes, domains, ...)
-- **Avg edge JSON:** 183 bytes
-- **Heap at idle:** 99 MB (mostly JS runtime baseline + node JSON; per-node delta is much smaller than the headline number)
+### Phase 23.1 — forge.js decomposition (the carve series RETRY, validated)
 
-### Renderer architecture facts
-- **GPU instancing IS in place.** `vboNodeWrites`, `vboEdgeWrites`, `vboGlyphWrites` are all 1 per rebuild. 12 owned GPU resources. The renderer is architecturally right.
-- **Hit-test is sub-µs.** `hitTestAt`: 0.34 µs per call. Spatial grid: 4×4 cells, 682 entries, avg 42.6/cell. Scales to 100k with finer cells.
-- **Camera state shape:** `camera.state = { centerX, centerY, scale }`. `camera.onChange(fn)` is the hook.
+After last session's revert, retried the carve cleanly with the AST-scanner + smoke-gate + bootstrap-catch safety net. 10 carves a → j:
 
-### Per-mode rebuild cost (rebuildForMode)
-| Mode | Active nodes | ms | ms/node |
-|---|---:|---:|---:|
-| places | 111 | 16 | 0.15 |
-| symbols | 280 | 56 | 0.20 |
-| traditions | 307 | 29 | 0.10 |
-| events | 309 | 113 | **0.36** (outlier — date math in timeline layout?) |
-| themes | 497 | 73 | 0.15 |
-| deities | 682 | 82 | 0.12 |
+| Commit | Module | LOC out |
+|---|---|---:|
+| `6299e2a` | timeline-scrubber | −340 |
+| `a5745c8` | legend | −273 |
+| `15e6ee7` | fx-panel (fresh — cherry-pick of `renderer` over-declare failed) | −139 |
+| `844307d` | style-panel | −112 |
+| `cae7f22` | search-autocomplete | −103 |
+| `e0e01e6` | hover-card | −311 |
+| `469948c` | side-panel **THE BIG ONE** + fixed latent `safeAttr` sibling-scope bug | −854 |
+| `d27ee32` | debug-stats | −50 |
+| `78dbe84` | view-settings | −301 |
+| `6889192` | install-public-api ★ SERIES COMPLETE ★ | −103 |
+| `d39afb8` | bundle (10 modules → 1 script tag) | — |
+| `6b3eddf` | HOTFIX — modemod was forge.js-scope, not window global | bug fix |
 
-### Linear projection at ~0.15 ms/active node
-- 1k active = 150 ms
-- 5k active = 750 ms (page freeze visible)
-- 10k active = 1.5 s (broken)
-- 50k active = 7.5 s (hung)
+**Net: forge.js 8590 → 6011 LOC (−30%).** Beat last session's failed series by 5pp AND fixed 3 latent bugs as bonus.
 
-### Phase 24A v1 perf reality
-- Default margin (1.5): full wheel fits viewport at default zoom; cull keeps 100% of nodes → no perf change.
-- Aggressive margin (0.3, drops 90%+ of nodes): rebuild time barely moves (themes 53→54 ms, deities 85→80 ms).
-- **Conclusion:** mode-switch rebuild bottleneck is UPSTREAM of cull (filterNodesByMode + computeDegree + layout + DOM rebuild). Post-cull pipeline (packNodes/packEdges/hit-grid) is already fast.
+### Phase 24 — viewport-aware architecture
+
+| Commit | What |
+|---|---|
+| `d63d1c0` | AUDIT spec filed for viewport-filter |
+| `79a2d7a` | Phase 24A v1 — viewport cull primitive (mechanism only — NOT a perf win on its own) |
+| `e0a20c6` | **Phase 24B v1 — layout-position cache (6–10× mode-switch speedup)** |
+| `016271e` | Phase 24C v1 — viewport-cull labels (off-screen labels skipped) |
+| `148be33` | Phase 24-CENTER-WEIGHT — center-weighted label density + smoother tier curve |
+
+### Phase 25 — DOM → canvas migration (the Safari unlock)
+
+| Commit | What |
+|---|---|
+| `3195a61` | **Phase 25 — CANVAS LABELS (the cliff-breaker for Safari)** |
+| `c0f1892`+revert | Phase 25b canvas hulls — TRIED + REVERTED. Wrong shape of problem (few large elements should stay SVG). |
+
+### Primitive fixes (1-line API choices that broke compositor budget)
+
+| Commit | What |
+|---|---|
+| `61c658d` | labels: `style.left/top` → `translate3d` |
+| `79d5390` | BG image: `width/height` → `transform scale` |
+| `2eb7099` | hover-card: `display:none` → opacity-fade |
+| `492a676` | pulse FX: `void offsetWidth` → `getAnimations().cancel()` |
+
+### Safari-specific workarounds (10 commits tagged SAFARI-WORKAROUND)
+
+The catalog is at `memory/feedback_safari_perf_unlocks_2026-05-27.md`. Highlights:
+- `c40544b` — cached no-op setAttribute writes in syncHulls
+- `8e1807b` — `text-stroke` halo (vs 5-shadow), selective will-change
+- `ab0b20c` — throttle scheduleIdleLabelSync 60Hz → 10Hz
+- `fe6cf2e` — SVG syncHulls camera-idle skip
+- `8605d2f` — labels canvas camera-idle skip + 2px halo (the final unlock)
+
+### Instrumentation (kept, removable later)
+
+| Commit | What |
+|---|---|
+| `fac2bd8` + `aa247bc` + `e408228` | Live perf HUD overlay (rAF interval, frame time, hover time, longtask count, color-coded) |
+| `8f3c393` + `580a1f3` + `4973618` | `?debug-cap=N` URL param for active-set bisection |
+
+### UX polish (after the perf win)
+
+| Commit | What |
+|---|---|
+| `3ebf7ec` | halo 4px restored (canvas idle-skip carries the win) |
+| `ae04c00` | label size 12 → 14, wired canvas font to `params.label_size` |
 
 ---
 
-## Next surgical move — pick one (with John)
+## Memories saved tonight (read on session start)
 
-These are the honest options. Each has a clear gain and cost.
+| File | Purpose |
+|---|---|
+| `feedback_safari_is_the_truth_2026-05-26.md` | CARDINAL: Safari is the perf truth-teller; Brave is the canary. When they diverge, it's a Safari quirk. Don't conflate. |
+| `feedback_execute_dont_menu_2026-05-26.md` | Workflow correction: in fix mode the plan exists; agent executes; John reviews outputs. Stop using AskUserQuestion as a progress check-in. |
+| `feedback_safari_perf_unlocks_2026-05-27.md` | The full checklist of 10 fixes that compounded to crack Safari 60fps + the 2-pattern playbook for future per-frame work + what DIDN'T work. |
 
-### Option A — Instrument rebuildForMode phase-by-phase (~30 min)
-Add `performance.mark`/`measure` around each step. Find where the 80 ms actually goes. Could be layout, could be DOM rebuild (hull SVG, deity tabs, labels), could be a specific subroutine. **Highest information-per-minute** — tells us where to fix next.
-
-### Option B — Phase 24A v2 (camera.onChange re-cull)
-Extract the post-layout pipeline from rebuildForMode into a callable function. Add debounced `camera.onChange` that re-runs ONLY the post-layout pipeline on pan/zoom. Layout doesn't re-run. Moves the cull benefit from "mode switches only" to "every pan/zoom." ~1–2 hr work; medium risk; depends on the extraction being clean.
-
-### Option C — Phase 24B (pre-baked layout positions)
-Compute positions once per mode-set, cache in `local.worldPositions`. rebuildForMode becomes cull-then-pack; layout doesn't re-run on pan/zoom OR mode change (cached per mode). Layout cache invalidation: family-order change, color-override change, distribution change. ~3–4 hr work; bigger risk; biggest mode-switch win.
-
-### Option D — Phase 24E (slim render data — memory ceiling)
-Split node JSON into `{render: ~50 bytes}` + `{detail: lazy on hover/click}`. Solves the 27 MB-of-mostly-unused-data problem. At 1M nodes: render data = 50 MB (loads), detail = never load >100 at once. Doesn't help mode-switch latency directly but unlocks the memory ceiling for scale. ~2–3 hr work; medium risk; requires changes to side-panel (which queries detail fields).
-
-**Recommended: A first** (cheap, decisive). Then either B, C, or D based on what A reveals.
+(Plus the existing `feedback_google_maps_bar_2026-05-25.md` cardinal still in force.)
 
 ---
 
-## What's open (uncommitted on disk)
+## Roadmap state — WHERE WE ARE on the mission
 
-These are NOT from tonight's perf work — they were already uncommitted at session start and never touched:
+**The mission:** Codex Atlas at Google Maps fluidity, scaling to hundreds of thousands → millions of nodes. Mac users (Safari primary), Brave fine.
 
-- `M 00_meta/MASSIVE-WIN-essays/executed-divine-claimant.md` — dating-basis YAML added by the dating-sweep agent; **YAML has double-escaped quotes** (`dating-basis-source: "\"...\""`). Needs a YAML hygiene pass before commit.
-- `M 00_meta/MASSIVE-WIN-essays/soul-exile-longing.md` — same as above.
-- `M 00_meta/lint-report.md` — auto-regenerated; fine.
-- `?? AUDIT/2026-05-24-dating-sweep-proposals.tsv` — 1357 dating-basis proposals from the dating-sweep agent. **Has 40 duplicate IDs** (per earlier audit) and section-table count drift from the summary doc. NOT safe to batch-apply as-is.
-- `?? AUDIT/2026-05-24-dating-sweep-summary.md` — companion summary doc. Misframes a "304-node pipeline bug" — the underlying pipeline patch (`fm.get("date_earliest")` fallback) is already in `scripts/build_data.py:1093-1101`.
+```
+PHASE STATUS                                       SCALE TARGET
+─────────────────────────────────────────────────  ─────────────
+✅ Phase 23.1 — forge.js decomposition              (any vault)
+✅ Phase 24A — viewport cull (active set)           (any vault)
+✅ Phase 24B — layout-position cache                (any vault)
+✅ Phase 24C — label viewport-cull + center weight  (any vault)
+✅ Phase 25  — canvas labels                        (any vault)
+✅ Safari perf — 60fps consistent                   ≤ ~10k nodes ← WE ARE HERE
+─────────────────────────────────────────────────
+🚧 Phase 24E — slim render data (next)              10k–100k
+   (Split node JSON: render fields ~50 bytes stay
+    loaded, detail fields ~6 KB lazy on hover/click.
+    Currently every node loads 35 fields × ~6 KB ≈
+    27 MB upfront for the 4476-node vault. At 100k
+    nodes that becomes ~600 MB — past browser heap.
+    Spec: forge.js loads slim records into a flat
+    array; on hover/click, fetch detail for the
+    specific node from a per-node JSON file or a
+    chunked endpoint.)
 
-**Recommendation for these:** don't commit until the dating-sweep agent (or a follow-up) cleans the dup IDs, reconciles the section counts, and fixes the YAML escapes on the two essays.
+⏳ Phase 24D — LOD cluster glyphs at extreme zoom-out  100k+
+   (Replace dense node regions with aggregate cluster
+    glyphs. Already kinda happens with hulls; needs to
+    formalize as a proper LOD ladder.)
+
+⏳ Phase 26 — viewport-driven data loading            500k+
+   (Tile-based quadtree fetch — only load nodes whose
+    world position intersects current viewport bbox +
+    margin. Standard "Google Maps style" technique.)
+
+⏳ Phase 27 — worker-thread layout                    1M+
+   (Move layout compute off main thread. Pre-bake
+    positions in a Web Worker so even mode-switch is
+    instant.)
+```
+
+**You are at the ✅ line.** The architecture handles the current 4476-node vault buttery in both browsers. The next 3 phases (24E, 24D, 26) are what unlocks growth toward your real ambition. Each is a multi-session focused project.
+
+**Important framing:** finishing tonight's perf push is NOT mission complete. It's the FOUNDATION done. The runway is cleared. Content ingestion can resume in parallel with the next architectural phase.
+
+---
+
+## What's open (uncommitted on disk, NOT touched tonight)
+
+These were uncommitted at session start and stayed so:
+
+- `M 00_meta/MASSIVE-WIN-essays/executed-divine-claimant.md` — has malformed YAML (double-escaped quotes from a prior dating-sweep agent)
+- `M 00_meta/MASSIVE-WIN-essays/soul-exile-longing.md` — same
+- `M 00_meta/lint-report.md` — auto-regenerated; harmless
+- `?? AUDIT/2026-05-24-dating-sweep-proposals.tsv` — 1357 dating-basis proposals; has 40 dup IDs per the earlier audit; NOT safe to batch-apply
+- `?? AUDIT/2026-05-24-dating-sweep-summary.md` — companion; misframes a "304-node pipeline bug" that's already fixed
+
+**Recommendation:** clean these up in a dedicated dating-sweep follow-up session. They're unrelated to perf.
+
+---
+
+## What's queued / not done yet
+
+1. **Phase 24E (slim render data)** — the next big architectural unlock. ~1–2 hour focused refactor with a clear spec. Doesn't affect current felt perf but unlocks 10k+ node growth.
+2. **Timeline view canvas-idle-skip** — timeline chrome (date axis SVG) hasn't gotten the camera-idle skip pattern. Timeline view is "a bit less than 60fps" per the user. Apply the same pattern from `syncHulls` to it. ~15 min.
+3. **FX panel slider for `label_idle_max`** — currently hardcoded 100. User asked about higher density; a slider would let them dial without code edits. ~30 min.
+4. **Dating-sweep cleanup** (the open items above) — separate workstream, content-side.
+5. **Remove instrumentation when no longer useful** — HUD overlay, debug-cap URL param, _profileRebuild hooks. Keep them for now as live diagnostics; remove before release.
 
 ---
 
 ## Tools live for next session
 
-- `scripts/forge_carve_deps.py` — AST-based dep scanner. **SAFE_GLOBALS now correctly excludes** `gpu`, `glyphmod`, `modemod`, `edgemod` (the forge.js-scope aliases). Future carves will flag those as deps.
-- `scripts/smoke-test-forge.js` — 10-check interactive harness.
+- `scripts/forge_carve_deps.py` — AST dep scanner. SAFE_GLOBALS list now correctly excludes the forge.js-scope aliases (`gpu`, `glyphmod`, `modemod`, `edgemod`) — those were the hotfix that broke 23.1j.
+- `scripts/smoke-test-forge.js` — 10-check interactive smoke harness.
 - `scripts/build-forge-bundle.sh` — concatenates the 10 carved modules into `src/js/forge/_bundle.js`. Re-run after editing any module.
-
-### Debug API installed on `window._forgeDebug` (33 methods)
-hit-test: `hitTestAt`, `hitNodesAt`, `hitNodeCount`
-camera/view: `cameraState`, `lastSize`
-GPU pipeline: `countNodeVboWrites`, `countEdgeVboWrites`, `countGlyphVboWrites`, `ownedCount`, `dumpAtlasInfo`
-animation: `tickAnim`, `isAnimating`, `currentMode`
-diagnostics: `dumpHitGrid`, `dumpPackedAtScale`, `dumpRuntime`, `dumpLsRuntime`, `dumpBugState`
-
-### Public API installed on `window._forge` (10 methods incl. viewport filter)
-mode/layout: `setClassFilter`, `getClassFilter`, `supportedClasses`, `setLayout`, `getLayout`, `relayout`, `focusTimelineRange`, `render`
-**Phase 24A:** `setViewportFilter(enabled, opts)`, `getViewportFilterState()`
+- HUD overlay (inline in index.html) — live rAF interval, frame time, hover time, longtask count.
+- `?debug-cap=N` URL param — hard-cap active set for perf bisection.
+- `window._forge.profileRebuild(true)` + `getLastRebuildPhases()` — per-phase rebuildForMode timing.
 
 ---
 
-## Cardinal rules in force (from memory)
+## Cardinal rules in force
 
-1. **THE GOOGLE MAPS BAR** — must feel like Google Maps at scale. Less = wrong path. Constant-factor refactors don't solve scale; the real fixes are architectural (GPU instancing ✓ already done, spatial index ✓ already done, viewport culling 🚧 in progress, edge culling, worker-thread layout, lazy load + LOD, slim render data).
-2. **SEVERITY DOGMA** — three strikes = agent terminated. Missing the actual problem counts as a strike. Tonight I struck once at session start (read "audit" → dating-sweep instead of asking which audit). John forgave; future sessions should ASK first when terms are ambiguous.
-3. **Carve methodology** — fresh-carve only, AST-validated deps, smoke-gate per carve, never cherry-pick. Documented in `feedback_closure_carve_perf_gift_2026-05-25`.
+1. **THE GOOGLE MAPS BAR** — must feel like Google Maps at scale. Less = wrong path. (`feedback_google_maps_bar_2026-05-25.md`)
+2. **SAFARI IS THE TRUTH** — build for Safari (Mac users). Brave is the canary; when they diverge, write a SAFARI-WORKAROUND, don't refactor blindly. (`feedback_safari_is_the_truth_2026-05-26.md`)
+3. **EXECUTE, DON'T MENU-PICK** — in fix mode, the plan exists; agent executes; John reviews outputs. (`feedback_execute_dont_menu_2026-05-26.md`)
+4. **SEVERITY DOGMA** — three strikes = agent terminated. Missing the actual problem counts. (`feedback_severity_dogma_2026-05-24.md`)
+5. **Canvas for many-small elements; SVG for few-large elements.** (`feedback_safari_perf_unlocks_2026-05-27.md`)
 
 ---
 
 ## Session-end state
 
 - **Branch:** `main`
-- **HEAD:** `79a2d7a` Phase 24A v1
-- **Working tree:** clean except for the open items above (none touched tonight)
-- **App live at:** http://localhost:8742/?view=forge (preview server running)
+- **HEAD:** `ae04c00` (Label size 12 → 14)
+- **Working tree:** clean except for the dating-sweep open items above (none touched tonight)
+- **App live at:** http://localhost:8742/?view=forge (preview server can be restarted via `mcp__Claude_Preview__preview_start` if dropped)
 - **Vault:** 4476 nodes / 21405 edges (unchanged tonight)
+- **Felt fluidity:** ✅ Safari ~60fps, ✅ Brave ~60fps
 
-**Pickup for tomorrow's fresh session:** read this doc + `memory/MEMORY.md`, then read `AUDIT/2026-05-25-viewport-filter-spec.md` for the Phase 24 spec context, then ask John to pick A/B/C/D from "Next surgical move" above.
+**Pickup for next session:** read this doc + `memory/MEMORY.md` + the three new memory files cited above. Then ask John whether to push Phase 24E (real-scale architecture) or do something different.
+
+**Mission status: foundation complete. Scale runway cleared. Content + architecture growth is the next chapter.**
