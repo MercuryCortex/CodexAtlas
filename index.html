@@ -11,24 +11,39 @@
 <link rel="stylesheet" href="src/styles/app.css?v=20260525-phase24-v1" />
 </head>
 <body class="nav-hidden detail-collapsed footer-collapsed">
-<!-- 24-HARDDEBUG inline banner (2026-05-26, removable). Paints
-     immediately on load if ?debug-cap=N is in the URL — does NOT
-     depend on forge.js or any module being loaded. If you DON'T
-     see this banner with the param in the URL, your browser is
-     using cached index.html (impossible after the server's
-     no-store headers landed). -->
+<!-- 24-HUD inline live perf overlay (2026-05-26, removable).
+     Paints unconditionally; polls window._forgeDebug.frameStats()
+     every 250ms once forge mounts. Shows live frame time so we
+     can see if a fix moves the needle. -->
 <script>
 (function () {
   try {
-    var u = parseInt(new URLSearchParams(location.search).get('debug-cap'), 10);
-    if (!(u > 0)) return;
+    var u = parseInt(new URLSearchParams(location.search).get('debug-cap'), 10) || 0;
     var b = document.createElement('div');
-    b.id = 'forge-hard-debug-banner-inline';
-    b.style.cssText = 'position:fixed;top:10px;left:50%;transform:translateX(-50%);background:#e22;color:#fff;padding:8px 16px;z-index:99999;font:bold 14px ui-monospace,Menlo,Monaco,monospace;border-radius:6px;pointer-events:none;box-shadow:0 4px 12px rgba(0,0,0,.5);';
-    b.textContent = '🔴 INLINE HARD-DEBUG cap=' + u + ' · script loaded';
+    b.id = 'forge-hud-banner';
+    b.style.cssText = 'position:fixed;top:10px;left:50%;transform:translateX(-50%);background:#e22;color:#fff;padding:8px 16px;z-index:99999;font:bold 13px ui-monospace,Menlo,Monaco,monospace;border-radius:6px;pointer-events:none;box-shadow:0 4px 12px rgba(0,0,0,.5);min-width:540px;text-align:center;';
+    b.textContent = '🔴 HUD loading… (cap=' + (u || 'none') + ')';
     document.body.appendChild(b);
-    console.log('[index] inline debug-cap banner painted, cap=' + u);
-  } catch (e) { console.error('[index] inline debug-cap failed', e); }
+    function colorFor(ms) {
+      if (ms < 8) return '#1a8';   // 120fps territory — green
+      if (ms < 17) return '#2a6';  // 60fps — green
+      if (ms < 33) return '#c81';  // 30-60fps — amber
+      return '#e22';               // <30fps — red
+    }
+    setInterval(function () {
+      try {
+        if (!window._forgeDebug || !window._forgeDebug.frameStats) return;
+        var s = window._forgeDebug.frameStats();
+        if (s.count === 0) {
+          b.textContent = '🔴 HUD · ' + s.activeNodes + ' nodes · no frames drawn yet';
+          return;
+        }
+        b.style.background = colorFor(s.avg);
+        b.textContent = '● ' + s.activeNodes + ' nodes · last ' + s.last + 'ms · avg ' + s.avg + 'ms · p95 ' + s.p95 + 'ms · max ' + s.max + 'ms · n=' + s.count + (u ? ' · CAP=' + u : '');
+      } catch (e) { /* ignore */ }
+    }, 250);
+    console.log('[hud] live perf overlay armed');
+  } catch (e) { console.error('[hud] failed to arm', e); }
 })();
 </script>
 

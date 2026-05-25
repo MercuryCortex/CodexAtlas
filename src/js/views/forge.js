@@ -1816,6 +1816,22 @@
     // hover state from outside the closure. Safe to leave on in
     // dev; gated to dev once we add user gating.
     window._forgeDebug = {
+      // 24-HUD (2026-05-26, removable) — full per-frame timing
+      // (GPU draw + syncLabels + syncHulls + syncBackgroundImage).
+      // Returns rolling window stats over last N frames (max 120).
+      frameStats: () => {
+        const arr = local._frameTimes || [];
+        if (!arr.length) return { count: 0, last: 0, avg: 0, p95: 0, max: 0 };
+        const sorted = arr.slice().sort((a, b) => a - b);
+        return {
+          count: arr.length,
+          last: +(local._lastFullFrameMs || 0).toFixed(2),
+          avg: +(arr.reduce((s, v) => s + v, 0) / arr.length).toFixed(2),
+          p95: +sorted[Math.floor(sorted.length * 0.95)].toFixed(2),
+          max: +sorted[sorted.length - 1].toFixed(2),
+          activeNodes: (local.mode && local.mode.nodes) ? local.mode.nodes.length : 0,
+        };
+      },
       hitTestAt:    (x, y) => hitTestAt(x, y),
       cameraState:  () => camera.state,
       lastSize:     () => ({ w: local.lastSize.w, h: local.lastSize.h }),
@@ -3481,6 +3497,18 @@
       // Glyphs are now in the WebGPU canvas (GPU glyph pass) so
       // they project via the same view-uniform as disks/edges —
       // no per-frame DOM sync needed.
+
+      // ─── 24-HUD (2026-05-26, removable) ────────────────────
+      // Full per-frame timing — captures GPU draw + syncLabels +
+      // syncHulls + syncBackgroundImage (the WHOLE per-frame cost,
+      // not just the GPU portion measured by `dt` at line ~3463).
+      // Rolling window of 120 frames. Exposed via window._forgeDebug
+      // .frameStats() for live HUD polling.
+      const fullMs = performance.now() - t0;
+      if (!local._frameTimes) { local._frameTimes = []; local._frameTimesIdx = 0; }
+      local._frameTimes[local._frameTimesIdx % 120] = fullMs;
+      local._frameTimesIdx++;
+      local._lastFullFrameMs = fullMs;
     }
 
     // Phase 4B FX9 (2026-05-20) — `syncGlyphPositions` /
