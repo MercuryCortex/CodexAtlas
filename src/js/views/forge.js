@@ -1551,27 +1551,29 @@
       const _qs = new URLSearchParams(location.search);
       local._debugNoLabels = (_qs.get('no-labels') === '1');
       local._debugNoNodes  = (_qs.get('no-nodes')  === '1');
-      const _noHulls = (_qs.get('no-hulls') === '1');
-      // ?no-labels=1 — kill ALL text on screen:
-      //   • deity names (canvas labels — handled inside renderLabelsCanvas)
-      //   • family titles (SVG — body.fv-hide-family-titles)
-      //   • timeline tick labels (SVG — body.fv-hide-tl-* would work too
-      //     but simpler: gate inside timeline-chrome later if needed)
-      if (local._debugNoLabels) {
-        document.body.classList.add('fv-hide-family-titles');
-      }
-      // ?no-hulls=1 — kill all hull geometry (pie slices + dividers
-      //   + guide rings) but NOT the family-title text (that's controlled
-      //   by ?no-labels=1 above so the two toggles are independent).
-      if (_noHulls) {
-        document.body.classList.add('fv-hide-hulls', 'fv-hide-dividers',
-          'fv-hide-guide-rings');
-      }
-      if (local._debugNoLabels || local._debugNoNodes || _noHulls) {
+      local._debugNoHulls  = (_qs.get('no-hulls')  === '1');
+      // Simple rule: each flag kills the ENTIRE layer ELEMENT.
+      // The element-hiding happens AFTER each element is created
+      // (deferred via setTimeout so the JS variables are in scope).
+      // The work-skip (renderLabelsCanvas / drawFrame / syncHulls)
+      // is gated separately on the same flag so we don't waste CPU
+      // on a hidden layer.
+      setTimeout(() => {
+        if (local._debugNoLabels && typeof labelsCanvas !== 'undefined') {
+          labelsCanvas.style.display = 'none';
+        }
+        if (local._debugNoHulls && typeof hullsOverlay !== 'undefined') {
+          hullsOverlay.style.display = 'none';
+        }
+        if (local._debugNoNodes && typeof canvas !== 'undefined') {
+          canvas.style.display = 'none';
+        }
+      }, 0);
+      if (local._debugNoLabels || local._debugNoNodes || local._debugNoHulls) {
         console.log('[forge debug] layer toggles:',
           'no-labels=' + (local._debugNoLabels ? 'ON' : 'off'),
           'no-nodes=' + (local._debugNoNodes ? 'ON' : 'off'),
-          'no-hulls=' + (_noHulls ? 'ON' : 'off'));
+          'no-hulls=' + (local._debugNoHulls ? 'ON' : 'off'));
       }
     } catch (_) {}
 
@@ -3932,6 +3934,10 @@
       }
     }
     function syncHulls() {
+      // DEBUG (2026-05-27): ?no-hulls=1 skips ALL SVG hull work +
+      // the element is already display:none from the mount-time
+      // URL-param handler. Cheapest possible early-return.
+      if (local._debugNoHulls) return;
       const vp = local.lastSize;
       if (!vp.w || !vp.h) return;
       const data = (local.mode && local.mode.hullData);
