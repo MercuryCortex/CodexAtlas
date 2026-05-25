@@ -5797,6 +5797,17 @@
       } else if (typeof console !== 'undefined' && console.warn) {
         console.warn('[forge] window._forgeSidePanel not loaded — side panel inert.');
       }
+
+      // Scripture reader overlay (2026-05-28, step 3 of scripture-mode
+      // carve). Mounts a hidden .forge-reader-pane inside .forge-pane
+      // and installs local.scriptureReader = { open, close, isOpen }.
+      // External callers use window._forge.openReader/closeReader,
+      // wired by install-public-api.js. Step 4 ports verse rendering.
+      if (window._forgeScriptureReader && typeof window._forgeScriptureReader.attach === 'function') {
+        window._forgeScriptureReader.attach({ local, toggleLock, triggerClickPulse });
+      } else if (typeof console !== 'undefined' && console.warn) {
+        console.warn('[forge] window._forgeScriptureReader not loaded — reader overlay inert.');
+      }
     }
 
     function wireTimelineScrubber() {

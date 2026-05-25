@@ -135,6 +135,27 @@
     // for any active scale preset because it routes through the
     // preset's timelineYearToWorldX → world coords are correct
     // regardless of LIN / LOG / CMP.
+    // Scripture-reader overlay (2026-05-28, step 3 skeleton).
+    // Delegates to the carved module's local.scriptureReader API.
+    // Step 4+ will give the overlay real verse-rendering body.
+    // Calling openReader before the reader module loads = no-op.
+    window._forge.openReader = function (textKey) {
+      if (local.destroyed) return false;
+      if (!local.scriptureReader || typeof local.scriptureReader.open !== 'function') {
+        console.warn('[forge] openReader called before scripture-reader module attached');
+        return false;
+      }
+      return local.scriptureReader.open(textKey);
+    };
+    window._forge.closeReader = function () {
+      if (local.destroyed) return false;
+      if (!local.scriptureReader || typeof local.scriptureReader.close !== 'function') return false;
+      return local.scriptureReader.close();
+    };
+    window._forge.isReaderOpen = function () {
+      return !!(local.scriptureReader && local.scriptureReader.isOpen && local.scriptureReader.isOpen());
+    };
+
     window._forge.focusTimelineRange = function (yearLo, yearHi) {
       if (local.destroyed) return false;
       if (local.layoutId !== 'timeline') return false;
