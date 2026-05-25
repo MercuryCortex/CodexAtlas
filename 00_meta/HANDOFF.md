@@ -1,6 +1,6 @@
 # Session HANDOFF — 2026-05-25 LATE evening (fresh-agent pickup)
 
-> **⚠️ READ THIS BLOCK FIRST.** A long TYRANT-mode remediation session just closed. 16 commits total. Picking up clean. Phase 4 BIG DECISION resolved by John (Option B). 4 specs ready to fire, 0 implementation started.
+> **⚠️ READ THIS BLOCK FIRST.** A long TYRANT-mode remediation session just closed. 25 commits total (10 by first agent + 15 by lead). Picking up clean. Phase 4 BIG DECISION resolved by John (Option B). 4 specs ready to fire, 0 implementation started. Dead-link baseline **594 → 493 (−101, −17.0%)**. Source-tier ~0% → ~99% on edges-with-source. Zero master-file violations shipped. Zero strikes shipped.
 
 ---
 
@@ -38,16 +38,23 @@ Per John 2026-05-25 *"preserve all work"*:
 9. `ca2a834` — STATUS for Wave 0.
 10. `a749f93` — HANDOFF refresh + Wave 1 stub plan (note: that plan turned out to be misleading — see "Key discovery" below).
 
-### Phase 4 BIG DECISION execution + dead-link expansion + tier pilot (lead — 6 commits)
+### Phase 4 BIG DECISION execution + dead-link expansion + tier sweep + Wave 3b stub batches (lead — 15 commits)
 
-11. `9e1c0a4` — **Phase 4 tradeoff doc** written autonomously while waiting for John's call: `AUDIT/2026-05-25-phase-4-tradeoff.md`.
-12. `3db5383` — **TYRANT Wave 1** — case-fold sweep on capitalized deity wikilinks across 5 content files + 1 meta archive. Baseline 588 → 574 / 736 → 715. **Pre-commit hook caught a meta-recursion in my STATUS entry on first push attempt — safety net works as designed.**
-13. `fad4dba` — **TYRANT Wave 2** — citation + placeholder + slug-drift sweep. 4 slug-drift fixes + 8 single-bracket conversions. Baseline 574 → 562 / 715 → 702.
-14. `704b114` — **TYRANT Wave 3a** — Python fix-map applied 37 high-confidence slug renames + 5 placeholder conversions across 33 files. Baseline 562 → 522 / 702 → 649. **NEAR-MISS DOGMA**: initial Python walk descended into `.claude/worktrees/` (7 sub-agent branches) AND touched `00_meta/PROTOCOL.md` (master file). Both reverted before commit.
-15. `68848ba` — **Phase 4 Option B spec package** (4 specs). John picked Option B 2026-05-25.
-16. `22f1451` — **TYRANT source-tier backfill pilot** — 23 T1 cross-tradition edges tagged across 6 high-traffic deity nodes (osiris, thoth, hermes-greek, isis-egyptian, mithra-zoroastrian, asclepius-greek). First touch of audit finding #2 P0.
+11. `9e1c0a4` — Phase 4 tradeoff doc written autonomously: `AUDIT/2026-05-25-phase-4-tradeoff.md`.
+12. `3db5383` — **Wave 1** case-fold sweep on capitalized deity wikilinks. Baseline 588 → 574. Hook caught meta-recursion in STATUS — fixed on second push.
+13. `fad4dba` — **Wave 2** citation + placeholder + slug-drift. Baseline 574 → 562.
+14. `704b114` — **Wave 3a** Python fix-map: 37 slug renames + 5 placeholder conversions across 33 files. Baseline 562 → 522. **Near-miss DOGMA**: walked into `.claude/worktrees/` + touched `00_meta/PROTOCOL.md` (master). Both reverted before commit.
+15. `68848ba` — **Phase 4 Option B spec package** (4 specs): foundation-locked-epilogue / timeline-v1-spec / phase-23-decomposition-spec / phase-24-legacy-viewer-spec.
+16. `22f1451` — **Source-tier pilot** — 23 T1 edges across 6 deities.
+17. `98d09c4` — HANDOFF refresh (mid-session).
+18. `bed7107` — **Source-tier FULL-SWEEP**: 2,318 tier inserts across 665 files in 19 lens folders (T1×2311 + T3×5 + T4×2). Improved Python with `.claude` exclude + master-file SKIP_PATHS + T3/T4-keyword detection. Zero leaks.
+19. `bbda64d` — **Wave 3b stubs** — 12 tier-1 historical document stubs (Iliad / Davidic Psalms / Plotinus Enneads / Suetonius / Mahabharata / Cusa / Dōgen / Physiologus / Frank / Eliade / Bellah / Hick). 4 ambiguous cases flagged in `AUDIT/2026-05-25-wave-3b-flagged-cases.md`. Baseline 523 → 511.
+20. `a174f1e` — **Tier receipt-fix** — #1 ark/templar T3→T4 (Hancock self-labels Tier 4 in source string); #7 schoch/sphinx T3→T2 (CODEX §IV explicit T2 prototype).
+21. `3559868` — **Wave 3b-tail** — meta-recursion in HANDOFF "Key discovery" + 2 case-folds (Zeus, Nun-primordial-waters) + 5 person stubs (xenophon, walter-burkert, vivekananda, anaxagoras, al-bukhari). Baseline 511 → 501.
+22. `939bda2` — **Wave 3b-tail-2** — 8 tier-1 stubs (adad, anahita-zoroastrian, alexios-iv, ammi, al-muizz-fatimid, al-kirmani, amelius, abreha-of-himyar). Baseline 501 → 493. **Broke 100-target reduction + 500-baseline milestones.**
+23-25. STATUS/ACTIVE-CONTENT bookkeeping batched in.
 
-**Cumulative TYRANT progress**: 594 → **522** dead-link targets (−72, **−12.1%**) · 752 → **649** occurrences (−103, **−13.7%**) · **9 of 16 findings fully closed** · 3 more partially closed · 2 deferred correctly · **0 master-file violations shipped** · **0 hook bypasses** · **0 strikes shipped**.
+**Cumulative TYRANT progress**: 594 → **493** dead-link targets (−101, **−17.0%**) · 752 → **611** occurrences (−141, **−18.8%**) · source-tier ~0% → **~99%** on edges-with-source (2,341 tagged) · **10 of 16 findings fully closed** · 4 more partially closed · 2 deferred correctly · **0 master-file violations shipped** · **0 hook bypasses** · **0 strikes shipped**.
 
 ---
 
