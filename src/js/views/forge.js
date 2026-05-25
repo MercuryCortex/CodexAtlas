@@ -2367,20 +2367,20 @@
           if (ratio < driftLo || ratio > driftHi) {
             rebakeNodes();
             updateZoomGizmo();
-            // 2026-05-26 — TIMELINE-ONLY viewport-cull refresh on
-            // significant zoom. Phase 24A v1 only ran cull on
-            // rebuildForMode; comment in viewport-filter.js flagged
-            // this as a TODO ("Phase 24A v2"). Without the hook,
-            // zooming after a density-induced layout change (timeline
-            // only) left the cull set frozen at the previous viewport.
-            //
-            // 2026-05-26 HOTFIX — gated on layoutId === 'timeline'.
-            // The unconditional version fought the wheel/radial camera
-            // on every zoom drift-cross (rebakeNodes already handles
-            // wheel's needs; relayout was redundant + caused visible
-            // lock). Wheel layouts are self-fitting at any zoom and
-            // don't suffer from cull-staleness the way timeline does.
-            if (local.layoutId === 'timeline' && !local._cullRefreshRaf) {
+            // 2026-05-26 — VIEWPORT-CULL refresh on significant zoom.
+            // Phase 24A v1 only ran cull on rebuildForMode (mode/layout
+            // switch). Comment in viewport-filter.js literally said
+            // "Phase 24A v2 will add a camera.onChange hook". This is
+            // it. Without this, zooming OUT after a density change
+            // (or any layout change that mutated worldExtent) left
+            // the cull set frozen at the smaller viewport — nodes
+            // that should now be visible stayed culled until the
+            // next rebuildForMode. Layout cache (Phase 24B + density
+            // fix 2026-05-26) makes relayout() cheap: layout-compute
+            // is a HIT, only the post-layout pipeline (cull + pack +
+            // hit-grid + draw) re-runs. Coalesce in rAF so a
+            // multi-tick wheel gesture collapses to one refresh.
+            if (!local._cullRefreshRaf) {
               local._cullRefreshRaf = requestAnimationFrame(() => {
                 local._cullRefreshRaf = 0;
                 if (local.destroyed) return;
