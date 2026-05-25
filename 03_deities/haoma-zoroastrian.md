@@ -17,6 +17,11 @@ attributes: ["golden-yellow plant", "golden-eyed deity", "the pressed ritual jui
 attested-in: []
 equivalents: ["[[soma]] — definitive etymological and functional cognate (Proto-Indo-Iranian *sauma)"]
 syncretic-edges:
+  - target: "[[substance-haoma]]"
+    type: "constituent-of"
+    source: "Boyce 1975 *History of Zoroastrianism* vol. 1; Skjærvø 2011 *Spirit of Zoroastrianism*"
+    source-tier: "T1"
+    notes: "The deified Haoma + the substance haoma are not separable in Zoroastrian theology — the substance IS the deity in pressed form, and the haoma-pressing ritual at the heart of the Yasna is a participation in the divine substance. Reciprocal back-edge for the new [[substance-haoma]] node in 24_pharmacology; see that node for the substance-lens treatment including the continuous-tradition Ephedra evidence."
   - target: "soma"
     type: "ancient-identification"
     source: "Mayrhofer, Manfred (EWAI 1992); Burrow, T. (1955) — The Sanskrit Language; Boyce, Mary (1975)"

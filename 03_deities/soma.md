@@ -17,6 +17,11 @@ attributes: ["pressed in stone mortars", "filtered through wool", "mixed with mi
 attested-in: ["[[phase-2-001-rig-veda-family-books]]", "Rig Veda Maṇḍala 9 (the entire book is dedicated to Soma Pavamāna)"]
 equivalents: ["[[haoma-zoroastrian]]"]
 syncretic-edges:
+  - target: "[[substance-soma]]"
+    type: "constituent-of"
+    source: "Jamison & Brereton 2014 *The Rigveda*; Doniger 1981 *The Rig Veda*"
+    source-tier: "T1"
+    notes: "The deified Soma + the substance soma are not separable in Vedic theology — the substance IS the deity in pressed-and-filtered form. Reciprocal back-edge for the new [[substance-soma]] node in 24_pharmacology; see that node for the substance-lens treatment + botanical-candidate discussion (Falk-Ephedra T1 / Wasson-Amanita T3 / Flattery-Schwartz-Peganum T2)."
   - target: "haoma-zoroastrian"
     type: "scholarly-parallel"
     source: "Boyce 1975; cognate Indo-Iranian ritual substance"
