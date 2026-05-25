@@ -8860,12 +8860,34 @@ body.view-forge.fx-bloom .forge-hulls-overlay {
 .forge-tl-vdensity:hover {
   border-color: var(--gold-soft, rgba(212,165,90,0.45));
 }
+/* 2026-05-26 — readout is now a <button> sitting BELOW the track
+   (where the LOCK toggle used to be). Single click resets density
+   to 1.0×. Inherits the dark-pill + gold-border styling the retired
+   LOCK button used so the bottom-right control cluster stays
+   visually balanced. */
 .forge-tl-vdensity-readout {
+  margin-top: 6px;
+  width: 100%;
+  padding: 4px 0;
+  background: rgba(13,17,25,0.78);
+  border: 1px solid rgba(212,165,90,0.22);
+  border-radius: 4px;
   color: var(--gold, #d4a55a);
-  font-weight: 600;
+  font-family: var(--mono, "JetBrains Mono", Menlo, monospace);
   font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
   text-align: center;
-  cursor: pointer;         /* double-click to reset */
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: border-color 120ms ease, color 120ms ease, background 120ms ease;
+}
+.forge-tl-vdensity-readout:hover {
+  border-color: var(--gold-soft, rgba(212,165,90,0.45));
+  color: var(--gold-1, #e8c889);
+}
+.forge-tl-vdensity-readout:active {
+  background: rgba(212, 165, 90, 0.18);
 }
 .forge-tl-vdensity-track {
   flex: 1 1 auto;
@@ -8897,36 +8919,9 @@ body.view-forge.fx-bloom .forge-hulls-overlay {
   text-align: center;
 }
 
-/* Phase 22-AG (2026-05-24) — LOCK toggle button below the DENS
-   label. Same canonical `.forge-fxpanel-btn` style (so size + look
-   match site-wide), just sized to fit the 32px-wide vdensity column. */
-.forge-tl-vdensity-lock {
-  margin-top: 6px;
-  width: 100%;
-  padding: 4px 0;
-  background: rgba(13,17,25,0.78);
-  border: 1px solid rgba(212,165,90,0.22);
-  border-radius: 4px;
-  color: var(--text-2, #9099a8);
-  font-family: var(--mono, "JetBrains Mono", Menlo, monospace);
-  font-size: 9px;
-  letter-spacing: 0.10em;
-  text-transform: uppercase;
-  cursor: pointer;
-  box-sizing: border-box;
-  transition: border-color 120ms ease, color 120ms ease, background 120ms ease;
-}
-.forge-tl-vdensity-lock:hover {
-  border-color: var(--gold-soft, rgba(212,165,90,0.45));
-  color: var(--gold, #d4a55a);
-}
-.forge-tl-vdensity-lock[aria-pressed="true"] {
-  background: rgba(212, 165, 90, 0.18);
-  border-color: var(--gold, #d4a55a);
-  color: var(--gold-1, #e8c889);
-  font-weight: 600;
-}
-/* Vdensity wrapper needs box-sizing so the LOCK button respects width. */
+/* 2026-05-26 — LOCK toggle styles removed (system retired).
+   Vdensity wrapper still needs box-sizing so the readout-button
+   respects column width. */
 .forge-tl-vdensity > * { box-sizing: border-box; }
 .forge-fxpanel {
   position: absolute;

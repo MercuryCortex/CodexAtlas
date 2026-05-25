@@ -290,9 +290,9 @@
   let vdensityEl   = null;    // <div#forge-tl-vdensity> — persistent vertical slider
   let vdensityRafId= 0;       // rAF coalesce for relayout on slider drag
   let densityVal   = 1.0;     // current band-density scalar (mirrors LS)
-  // Phase 22-AG (2026-05-24) — zoom↔density LOCK state.
-  let _zoomDensityLocked = false;
-  const LS_ZOOM_DENSITY_LOCK = 'codex_atlas_timeline_zoom_density_lock';
+  // 2026-05-26 — zoom↔density LOCK system removed (rarely used).
+  // The readout is now a click-to-reset button (was a separate div +
+  // dblclick). See wireVDensity() below.
   let mounted      = false;
 
   // localStorage key for persisting the band-density preference.
@@ -638,23 +638,9 @@
       wireVDensity(vdensityEl);
     }
 
-    // ─── LOCK toggle (zoom drives density linearly) ─────────
-    // Persists in LS. When ON, the camera-change handler maps
-    // gizmo % → density ×, so the two controls move together.
-    const lockBtn = document.getElementById('forge-tl-vdensity-lock');
-    try {
-      const lsLock = localStorage.getItem(LS_ZOOM_DENSITY_LOCK);
-      _zoomDensityLocked = (lsLock === '1');
-      if (lockBtn) lockBtn.setAttribute('aria-pressed', _zoomDensityLocked ? 'true' : 'false');
-    } catch (_) {}
-    if (lockBtn) {
-      lockBtn.addEventListener('click', function () {
-        _zoomDensityLocked = !_zoomDensityLocked;
-        lockBtn.setAttribute('aria-pressed', _zoomDensityLocked ? 'true' : 'false');
-        try { localStorage.setItem(LS_ZOOM_DENSITY_LOCK, _zoomDensityLocked ? '1' : '0'); } catch (_) {}
-        if (_zoomDensityLocked) applyZoomDrivenDensity();
-      });
-    }
+    // 2026-05-26 — LOCK toggle removed. Density-reset moved into the
+    // readout-button at the bottom of the slider (wired in
+    // wireVDensity()).
 
     // ─── CALENDAR popup button ──────────────────────────────
     const calBtn = document.getElementById('forge-tl-cal-btn');
@@ -820,7 +806,10 @@
     window.addEventListener('pointermove', onPointerMove);
     window.addEventListener('pointerup',   onPointerUp);
     window.addEventListener('pointercancel', onPointerUp);
-    readoutEl.addEventListener('dblclick', function () { applyDensityValue(1.0); });
+    // 2026-05-26 — readout is now a <button>; single click resets
+    // density to 1.0× (was dblclick on a div). Matches the button
+    // affordance + replaces the LOCK toggle that used to sit here.
+    readoutEl.addEventListener('click', function () { applyDensityValue(1.0); });
     // Stash cleanup
     rootEl._cleanup = function () {
       window.removeEventListener('pointermove', onPointerMove);
@@ -829,32 +818,7 @@
     };
   }
 
-  // Phase 22-AG (2026-05-24) — LOCK linkage.
-  // When zoom↔density LOCK is ON: map the current gizmo % to a
-  // density scalar so the two controls move together. Curve is
-  // anchored at the default pair (gizmo 20% ↔ density 1.0×) and
-  // linear from there: zooming in shrinks density, zooming out
-  // expands. Clamped to the slider's [min, max] bounds.
-  function applyZoomDrivenDensity() {
-    if (!_zoomDensityLocked) return;
-    if (!camera || !camera.state) return;
-    const ENG = window.AtlasEngineLayout || {};
-    const computeFit = ENG.computeTimelineFitScale;
-    if (!computeFit) return;
-    const vp = { w: hostEl ? hostEl.clientWidth : 0 };
-    if (!vp.w || !xRange) return;
-    const fit = computeFit(vp.w, xRange);
-    if (fit <= 0) return;
-    const gizmo = camera.state.scale / fit;        // 0..N
-    // Anchor pair: (gizmo 0.20 → density 1.0). Mapping curve:
-    //   density = 1.0 * (0.20 / gizmo)
-    // → at gizmo 0.10 density = 2.0× (max-ish), at gizmo 0.40
-    //   density = 0.5×, at gizmo 1.00 density = 0.2× etc.
-    // The slider min/max clamp does the safety net.
-    if (gizmo <= 0) return;
-    const target = 0.20 / gizmo;
-    applyDensityValue(target);
-  }
+  // 2026-05-26 — applyZoomDrivenDensity() + LOCK system removed.
 
   function syncVDensity() {
     if (!vdensityEl) return;
@@ -918,10 +882,7 @@
     const vp = { w: hostEl.clientWidth, h: hostEl.clientHeight };
     if (!vp.w || !vp.h) return;
 
-    // Phase 22-AG (2026-05-24) — zoom↔density LOCK propagation.
-    // If the user toggled LOCK on, every camera tick re-applies
-    // the linkage so density tracks zoom continuously.
-    if (_zoomDensityLocked) applyZoomDrivenDensity();
+    // 2026-05-26 — LOCK propagation removed (system retired).
 
     // SVG viewport. Match host dimensions so 1 SVG-unit = 1 CSS pixel.
     svgRoot.setAttribute('viewBox', '0 0 ' + vp.w + ' ' + vp.h);
