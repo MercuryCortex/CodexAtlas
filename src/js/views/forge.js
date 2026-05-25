@@ -4410,8 +4410,20 @@
         if (el.style.display === 'none') el.style.display = '';
         const px = s.x;
         const py = s.y - n.r * camScale - 6;
-        el.style.left = px + 'px';
-        el.style.top  = py + 'px';
+        // Phase 24-PRIMITIVE-FIX (2026-05-26) — was el.style.left/top.
+        // Writing left/top triggers browser LAYOUT every frame for
+        // EVERY label (200+ in deity wheel at moderate zoom). At
+        // 60fps that's 12k layout invalidations per second per label
+        // × 200 labels = compositor death. translate3d() runs on the
+        // GPU compositor thread — zero main-thread layout, zero
+        // reflow, just a transform matrix update per label.
+        //
+        // CSS `.forge-label` previously did `transform: translate(-50%,
+        // -100%)` to center text horizontally on the anchor + lift it
+        // above the disk. We compose both: first translate3d to the
+        // anchor screen pos, then translate(-50%, -100%) to recenter.
+        // Translate order is right-to-left in CSS — innermost first.
+        el.style.transform = 'translate3d(' + px + 'px,' + py + 'px,0) translate(-50%,-100%)';
       }
     }
 

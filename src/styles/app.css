@@ -8281,9 +8281,17 @@ body.view-forge #detail-inner {
 }
 .forge-label {
   position: absolute;
-  /* (left, top) are set inline; translate centres the text on
-     the anchor point + lifts it just above the disk top edge. */
-  transform: translate(-50%, -100%);
+  /* Phase 24-PRIMITIVE-FIX (2026-05-26): syncLabelPositions now
+     writes the FULL transform inline (translate3d for GPU compositing
+     + the -50%/-100% centering composed). Removing the CSS rule that
+     used to live here so the inline JS transform isn't fighting it.
+     Default top:0 left:0 ⇒ the inline translate3d places the anchor. */
+  top: 0;
+  left: 0;
+  /* will-change tells the browser to promote each label to its own
+     compositor layer — slight memory cost (each label gets a tiny
+     GPU texture) but eliminates per-frame layer-creation churn. */
+  will-change: transform;
   font-family: var(--forge-font-label, var(--sans));
   font-size: var(--forge-label-size, 11px);
   font-weight: 500;
