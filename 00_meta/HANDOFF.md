@@ -1,6 +1,16 @@
-# Session HANDOFF — 2026-05-25 LATE evening (fresh-agent pickup)
+# Session HANDOFF — 2026-05-25 NIGHT (fresh-agent pickup)
 
-> **⚠️ READ THIS BLOCK FIRST.** A long TYRANT-mode remediation session just closed. 25 commits total (10 by first agent + 15 by lead). Picking up clean. Phase 4 BIG DECISION resolved by John (Option B). 4 specs ready to fire, 0 implementation started. Dead-link baseline **594 → 493 (−101, −17.0%)**. Source-tier ~0% → ~99% on edges-with-source. Zero master-file violations shipped. Zero strikes shipped.
+> **⚠️ READ THIS BLOCK FIRST.** A long TYRANT-mode session just closed. **~32 commits total** across two agents. App is **working cleanly**. Dead-link baseline **594 → 490** (−17.5%). Source-tier coverage **~0% → ~99%** on edges-with-source. **Phase 24 Legacy viewer SHIPPED and live.** **Phase 23.1 forge.js decomposition ATTEMPTED + REVERTED** (silent-throw bug; 3 prereqs identified before retry). Zero master-file violations shipped, zero strikes shipped.
+
+---
+
+## TL;DR for the fresh agent in 60 seconds
+
+1. The app works. Open `http://localhost:8742` and everything is interactive (clicks, zoom, panels, the new Legacy viewer at `?view=legacy`).
+2. Big TYRANT remediation completed (audit findings doc at `AUDIT/2026-05-25-tyrant-audit-findings.md`). The safety net is real: pre-commit hook runs `linkcheck.py --baseline` + `lint_yaml.py --strict` + dup-id check. Don't bypass.
+3. **John picked Option B** on 2026-05-25 for the Forge rebuild ambiguity: declare Foundation locked, formalize Phase 22 work as Timeline V1, separate Phase 23 for forge.js decomposition. 4 specs are locked in `AUDIT/`.
+4. **Phase 23.1 was attempted and reverted.** Do NOT retry until the three prereqs are in place (§ "What's blocking Phase 23.1 retry" below).
+5. **Active queue** is short and clear (§ "What's open" below).
 
 ---
 
@@ -8,106 +18,119 @@
 
 Per John 2026-05-25 *"preserve all work"*:
 
-- Calendar registry (11 calendars + tooltips + per-calendar epochs)
-- Bottom-bar canonical-class architecture (`.forge-fxpanel-btn`)
-- Two-tier timeline pivot (Greg-0 + epoch secondary)
-- Vertical density slider + LOCK toggle
-- DATE IN / DATE OUT / FOCUS group + `_forge.focusTimelineRange()`
-- `dating_basis` B1–B7 framework
-- Side-panel ellipsis + cross-folder click popup + hideTip-on-render
-- All 29 lenses recognized end-to-end
-- All baked STYLE-panel defaults
-- The SEVERITY DOGMA (HOW-WE-WORK §5.7)
-- The pre-commit safety net (6 gates + 1 nudge)
-- TYRANT remediation findings doc (`AUDIT/2026-05-25-tyrant-audit-findings.md`) — append-only after sign-off
+- **Pre-commit safety net** (6 hard gates + 1 STATUS-nudge): `linkcheck.py --baseline` (refuses new dead `[[wikilinks]]` past the 490-target floor) + `lint_yaml.py --strict` (29 type categories, was 7) + `scripts/check_dup_ids.py` (dup-slug refuses commit, was a post-build hard-fail) + Lane A/B mixing refuse + JS syntax + STATUS-touch nudge. `ATLAS_ALLOW_DUP_ID=1` escape hatch DELETED.
+- **Forge bootstrap `.catch()` safety net** at `src/js/views/forge.js:2414` — async-IIFE failures now surface to `console.error` instead of silently disappearing as unhandled Promise rejections. This was added 2026-05-25 after the Phase 23.1 carve incident.
+- **Phase 24 Legacy viewer** — side-nav pill → list of closed work (specs / audits / archived STATUS / handoffs), markdown render in right pane. Source files: `src/js/views/legacy.js`, `scripts/build_legacy_index.py`, `src/data/legacy-index.json`, CSS in `src/styles/app.css` `.legacy-pane*`. John greenlit "yes" after preview verification.
+- **Calendar registry** (11 calendars + per-row tooltips + per-calendar epochs)
+- **Bottom-bar canonical class architecture** (`.forge-fxpanel-btn`) — no inline-style mimicry (SEVERITY DOGMA §5.7)
+- **Two-tier timeline pivot** (Greg-0 always + epoch secondary)
+- **Vertical density slider + LOCK toggle**
+- **DATE IN / DATE OUT / FOCUS group** + `_forge.focusTimelineRange()`
+- **dating_basis B1–B7 framework** + 1041-YAML applier
+- **All 29 lenses** recognized end-to-end (build_data + lint + linkcheck)
+- **Source-tier coverage ~99%** on edges-with-source (T1 mostly; 5 T3 + 2 T4 explicit)
 
 ---
 
-## What this session shipped (16 commits, in order)
+## What this session shipped (high level, in order)
 
-### Phases 1–7 of the TYRANT remediation plan (first agent — 10 commits)
+### TYRANT remediation (the big arc)
 
-1. `9a38a4c` — TYRANT audit signed off + 7-phase remediation plan locked + LAW lens forward-note in HOW-WE-WORK §6.
-2. `92a2660` — **Safety net locked**: pre-commit hook now runs `linkcheck.py --baseline` + `lint_yaml.py --strict` (29 types) + `scripts/check_dup_ids.py`. `ATLAS_ALLOW_DUP_ID=1` escape hatch deleted. Baseline floor 593.
-3. `5891820` — Scripture-reader DOGMA strike-2 violation cleaned.
-4. `48a1540` — HANDOFF rewritten + STATUS backfilled with Phase 22 + tyrant entries.
-5. `3676637` — **Wires regression FIXED** (Phase 22-AI / TYRANT Phase 5b).
-6. `fb5dc70` — STATUS-nudge soft hook + `scripts/dashboard_audit_summary.py` + DASHBOARD markers.
-7. `55bb3a4` — STATUS for 22-AI + 6r.
-8. `a6a7a8c` — Phase 3 Wave 0 placeholder-typo drain. Baseline 593 → 588.
-9. `ca2a834` — STATUS for Wave 0.
-10. `a749f93` — HANDOFF refresh + Wave 1 stub plan (note: that plan turned out to be misleading — see "Key discovery" below).
+The session opened with a "TYRANT mode" zero-tolerance audit of the project. 5 goblins ran in parallel; findings at `AUDIT/2026-05-25-tyrant-audit-findings.md`. 16 findings, severities P0–P3. Remediation:
 
-### Phase 4 BIG DECISION execution + dead-link expansion + tier sweep + Wave 3b stub batches (lead — 15 commits)
+1. **Audit signoff + remediation plan** locked. Plan at `AUDIT/2026-05-25-tyrant-remediation-plan.md`.
+2. **Safety net** locked (6 gates above) — closed findings #3, #4, #5, #13.
+3. **Phase 5b wires regression** (Phase 22-AH side effect) traced + fixed; diagnostic at `AUDIT/2026-05-25-wires-regression-trace.md`. Closed finding #11.
+4. **Wave 0** (placeholder typo drain) → Wave 1 (case-fold capitalized deities) → Wave 2 (citations + placeholders) → Wave 3a (Python fix-map slug-drift) → Wave 3b (12 tier-1 document stubs) → Wave 3b-tail (5 person stubs) → Wave 3b-tail-2 (8 figure stubs) → Wave-3b flagged-case resolution (4 stubs + wikilink rewrites). Baseline went **594 → 490 dead targets (−17.5%)**. Closes finding #1 partially.
+5. **Source-tier pilot** (23 T1 edges across 6 deities) → **full sweep** (2,318 T1 + 5 T3 + 2 T4 across 665 files). Closes finding #2 to ~99% on edges-with-source.
+6. **Phase 4 BIG DECISION** resolved by John → Option B. Spec package: `AUDIT/2026-05-25-foundation-locked-epilogue.md` + `AUDIT/2026-05-25-timeline-v1-spec.md` + `AUDIT/2026-05-25-phase-23-decomposition-spec.md` + `AUDIT/2026-05-25-phase-24-legacy-viewer-spec.md`. Closes finding #6.
+7. **Phase 24 Legacy viewer V1** built + greenlit by John. Closes finding #10 (AUDIT/ surfacing in viewer).
 
-11. `9e1c0a4` — Phase 4 tradeoff doc written autonomously: `AUDIT/2026-05-25-phase-4-tradeoff.md`.
-12. `3db5383` — **Wave 1** case-fold sweep on capitalized deity wikilinks. Baseline 588 → 574. Hook caught meta-recursion in STATUS — fixed on second push.
-13. `fad4dba` — **Wave 2** citation + placeholder + slug-drift. Baseline 574 → 562.
-14. `704b114` — **Wave 3a** Python fix-map: 37 slug renames + 5 placeholder conversions across 33 files. Baseline 562 → 522. **Near-miss DOGMA**: walked into `.claude/worktrees/` + touched `00_meta/PROTOCOL.md` (master). Both reverted before commit.
-15. `68848ba` — **Phase 4 Option B spec package** (4 specs): foundation-locked-epilogue / timeline-v1-spec / phase-23-decomposition-spec / phase-24-legacy-viewer-spec.
-16. `22f1451` — **Source-tier pilot** — 23 T1 edges across 6 deities.
-17. `98d09c4` — HANDOFF refresh (mid-session).
-18. `bed7107` — **Source-tier FULL-SWEEP**: 2,318 tier inserts across 665 files in 19 lens folders (T1×2311 + T3×5 + T4×2). Improved Python with `.claude` exclude + master-file SKIP_PATHS + T3/T4-keyword detection. Zero leaks.
-19. `bbda64d` — **Wave 3b stubs** — 12 tier-1 historical document stubs (Iliad / Davidic Psalms / Plotinus Enneads / Suetonius / Mahabharata / Cusa / Dōgen / Physiologus / Frank / Eliade / Bellah / Hick). 4 ambiguous cases flagged in `AUDIT/2026-05-25-wave-3b-flagged-cases.md`. Baseline 523 → 511.
-20. `a174f1e` — **Tier receipt-fix** — #1 ark/templar T3→T4 (Hancock self-labels Tier 4 in source string); #7 schoch/sphinx T3→T2 (CODEX §IV explicit T2 prototype).
-21. `3559868` — **Wave 3b-tail** — meta-recursion in HANDOFF "Key discovery" + 2 case-folds (Zeus, Nun-primordial-waters) + 5 person stubs (xenophon, walter-burkert, vivekananda, anaxagoras, al-bukhari). Baseline 511 → 501.
-22. `939bda2` — **Wave 3b-tail-2** — 8 tier-1 stubs (adad, anahita-zoroastrian, alexios-iv, ammi, al-muizz-fatimid, al-kirmani, amelius, abreha-of-himyar). Baseline 501 → 493. **Broke 100-target reduction + 500-baseline milestones.**
-23-25. STATUS/ACTIVE-CONTENT bookkeeping batched in.
+### Phase 23.1 attempt (failed cleanly)
 
-**Cumulative TYRANT progress**: 594 → **493** dead-link targets (−101, **−17.0%**) · 752 → **611** occurrences (−141, **−18.8%**) · source-tier ~0% → **~99%** on edges-with-source (2,341 tagged) · **10 of 16 findings fully closed** · 4 more partially closed · 2 deferred correctly · **0 master-file violations shipped** · **0 hook bypasses** · **0 strikes shipped**.
+After Phase 24 shipped, attempted Phase 23.1 = decompose `forge.js` (8,577 LOC) into modules under `src/js/forge/`. Shipped 10 carves in sequence (timeline-scrubber, legend, fx-panel, style-panel, search-autocomplete, hover-card, side-panel, debug-stats, view-settings, public-api), reducing forge.js to 5,959 LOC (−30.5%).
 
----
+**Each carve preview-verified pixel-identical at boot** but interactions silently broke. Root cause: my auto-dep-detection (regex) missed forge-scope identifiers (BUCKET_ORDER, PARAM_DEFAULTS, modemod, fmtYear, etc.). The first carved module to use one threw inside the `async bootstrap()` IIFE → unhandled Promise rejection → swallowed by browser → `attachInteractions()` never ran → canvas had no event listeners → clicks + zoom dead. Bottom-bar menus still worked because they bound their handlers earlier in the boot chain.
 
-## Key discovery this session — IMPORTANT for future Wave work
+John reported the breakage. I diagnosed + reverted (commit `3c294e2`), then shipped the **bootstrap `.catch()` safety net** (commit `12950d4`) so this entire class of silent failures is now loud.
 
-**The TYRANT audit's "tier-1 missing node" framing was DIRECTIONALLY RIGHT but WRONG ABOUT SPECIFICS.** Recon (commit `3db5383` STATUS entry) showed:
+### Final commit sequence (newest first)
 
-- 3 of the audit's 8 named "missing" targets (`sheikh-farid`, `ammit-devourer`, `tradition-afro-diasporic`) **already exist as canonical nodes**.
-- 5 others (`muhammad`, `ra-egyptian`, `guru-arjan-dev-ji`, `quran`, `popol-vuh`) are referenced **ZERO times** as `[[wikilinks]]` in the live vault — their counts came from the pre-Phase-2 7-type lint scan.
-- **The real top dead-link cluster is CASE-MISMATCH**: `[Marduk]`, `[Odin]`, `[Vishnu]` etc. fail to resolve while lowercase canonical slugs exist. Status-archive `2026-05-pre-W3.md` documents a prior 2026-05-16 case-fix sweep; the convention has drifted since. *(Note: this paragraph uses single brackets to avoid linkcheck self-recursion — the lowercase canonical forms `marduk`/`odin`/`vishnu` all exist as real nodes.)*
-
-**If you read the prior HANDOFF's "Wave 1 stubs to write" table — IGNORE IT.** That table was based on the audit's misleading framing. The actual Wave 1 / 2 / 3a work was case-fold and slug-drift fixes, not stubs.
+- `2fabbec` STATUS — log Phase 23.1 revert + bootstrap-catch safety net
+- `12950d4` forge bootstrap — `.catch()` safety net on the async IIFE
+- `3c294e2` REVERT Phase 23.1 carve series — silently broke forge interactions
+- `288c9bc`–`f580070` Phase 23.1a–j carve series (REVERTED)
+- `8cc2cd9` Phase 24 V1 — SHIPPED (greenlit by John)
+- `010b2f7` Phase 24 V1 polish — boot-race fix
+- `8ae156b` Phase 24 V1 — Legacy/Archive viewer first ship
+- … (TYRANT remediation chain — see `git log` for the full sequence)
 
 ---
 
-## The 4 specs ready to fire (Phase 4 Option B execution)
+## What's open (queue, in priority order)
 
-John greenlit Option B 2026-05-25. Specs:
+### Implementation that needs your visual / button-press
 
-| Spec | Status | Next action when greenlit |
-|---|---|---|
-| `AUDIT/2026-05-25-foundation-locked-epilogue.md` | LOCKED | Declares rebuild Phases 0-5 closed. No further action needed unless re-opening. |
-| `AUDIT/2026-05-25-timeline-v1-spec.md` | LOCKED | V1.1 sub-phases ship one at a time when John picks one. |
-| `AUDIT/2026-05-25-phase-23-decomposition-spec.md` | LOCKED | Phase 23.1 RENDERER carve is the first batch. Lane B. ~4-5h. **Requires preview-screenshot visual verification.** |
-| `AUDIT/2026-05-25-phase-24-legacy-viewer-spec.md` | LOCKED | V1 Legacy/Archive viewer (John's new ask). Lane B. ~5h. **Requires John's UI placement check** on the side-nav pill. |
+1. **Phase 23.1 retry** — gated on the three prereqs below. Specs already locked. Don't retry without prereqs (2) and (3).
+2. **Phase 23.2** (mode-dispatch carve) and **23.3** (animation loop carve) — same prereqs as 23.1.
+3. **Timeline V1.1** picks — 6 candidates queued in `AUDIT/2026-05-25-timeline-v1-spec.md`.
+4. **`themes/` → `motifs/` atomic rename** (audit finding #14, P2) — atomic Lane B batch when calm.
+5. **HOW-WE-WORK.md `[ARTHURIAN-CYCLE]` 1-char single-bracket fix** — master file, pending explicit John sign-off.
+6. **3 proposed cardinal rules** (#8 safety-net / #9 spec-faithfulness / #10 log-or-don't-commit) for HOW-WE-WORK §5 — pending John sign-off.
 
----
+### What's blocking Phase 23.1 retry
 
-## What's open and waiting (priority order)
+The carve pattern itself is sound (it's lift-and-shift of pure-DOM/event helper functions). The bug was tooling, not architecture. Three prereqs:
 
-### A. Implementation work that needs John's button-press / visual check
+1. **✅ Async-IIFE `.catch()`** — SHIPPED `12950d4`. Future silent failures will be loud.
+2. **⬜ AST-based dep scanner** — replace the regex heuristic. Use `acorn` or `esprima` to walk the function body, mark every free identifier, output the complete deps list. Standalone script under `scripts/`. Test against `wireLegend`/`wireSidePanel`/etc. as known regression cases. Task #10.
+3. **⬜ Interactive smoke test harness** — go beyond pixel-identical screenshot. Click + drag + zoom + open every panel programmatically via `Claude_Preview`. Pass/fail report. Task #11.
 
-1. **Phase 23.1 RENDERER carve** (forge.js 8,577 → ~7,300 LOC). Highest leverage. Needs preview-screenshot verification before/after.
-2. **Phase 24 Legacy viewer V1**. New side-nav pill + view module. Needs UI placement check.
-3. **Timeline V1.1** picks from the 6 candidates in the spec.
-4. **HOW-WE-WORK.md `ARTHURIAN-CYCLE` single-bracket fix** (1 char, master file). Pending John's sign-off.
-5. **3 proposed new cardinal rules** (#8 safety-net / #9 spec-faithfulness / #10 log-or-don't-commit) for HOW-WE-WORK.md §5. Pending John's sign-off.
+When (2) and (3) exist, Phase 23.1 retry is bullet-proof.
 
-### B. Lane A / autonomous work (no John needed)
+### Lane A autonomous (no John needed)
 
-6. **Wave 3b — scholarly-judgment dead-link cases** (~24 targets). Some genuinely-missing nodes need stub OR scholarly call. Could drop baseline another −15 to −30.
-7. **Source-tier expansion** — 23 edges tiered so far across 6 deities. ~660 deities + all themes / theology lenses still untiered. Mostly T1 mechanical inserts where sources are mainstream; T2/T3/T4 cases need judgment.
-8. **`themes/` → `motifs/` atomic rename** (Phase 7 cleanup, P2 #14). Lane B atomic batch when calm.
+1. **Wave 4 dead-link cleanup** — ~490 baseline targets remaining. Diminishing returns; need targeted cluster (e.g., "Ismaili philosophy", "Ethiopic tradition") rather than alphabetical grinding. Task #2.
+2. **Source-tier T2 review pass** — go through T1-defaulted edges (2,311 of them) for ones that should be T2 (academic minority). Tedious; pay-off scattered. Task #9.
+3. **More edges-without-source backfill** — many cross-tradition edges lack any `source:` field. Each needs research. Task #9.
 
 ---
 
-## Pickup instructions for next session
+## Pickup instructions for the fresh agent
 
-1. Read this block.
-2. If John has indicated which spec to implement first → cast a Lane B agent with that spec as their pre-flight.
-3. If John hasn't said yet → continue Lane A work in priority order from §B above (Wave 3b, then more tier expansion, then themes-rename).
-4. **Do not start any Phase 23.N / Phase 24.N / Timeline V1.N implementation without confirm-on-cast + visual preview verification** per their spec's acceptance gate.
+1. **Read this block.** Verify state with `git log --oneline -10` + `wc -l src/js/views/forge.js` (should be 8577) + `ls src/js/forge/` (should NOT exist).
+2. **If John has indicated direction** → execute it. Lane B work needs ACTIVE-UX slot claim.
+3. **If John hasn't said** → pick from "Lane A autonomous" above, OR start the Phase 23.1 retry prereqs (tasks #10 + #11) — both are AUDIT-only / tooling work, no Lane B contention.
+4. **DO NOT retry Phase 23.1 carves** without prereqs (2) and (3) in place. The architecture is sound; the tooling was the bug.
+5. **DO NOT edit master files** (`ONTOLOGY.md`, `PROTOCOL.md`, `LANES.md`, `HOW-WE-WORK.md`, `VIEW-CONTRACT.md`) without explicit John greenlight (HOW-WE-WORK §9).
 
 ---
 
-## Last commit at handoff: `22f1451` — clean repo state, slot OPEN, all gates green.
+## Tasks tracked
+
+```
+#1 [✓] Wave 2 — citation/placeholder dead-link sweep
+#2 [✓] Wave 3 — tradition/phase slug-drift recon + fix
+#3 [✓] Source-tier backfill pilot
+#4 [○] themes → motifs atomic rename (Phase 7 cleanup, Lane B)
+#5 [✓] Phase 4 Option B execution — 4 specs shipped
+#6 [○] Phase 23 forge.js decomposition — ATTEMPTED + REVERTED; prereqs identified
+#7 [✓] Wave 3b — scholarly-judgment dead-link stubs
+#8 [✓] Phase 24 Legacy/Archive viewer V1 — SHIPPED
+#9 [○] Source-tier expansion remainder — T2 review + source backfill
+#10 [○] Phase 23.1 retry prereq — AST-based dep scanner
+#11 [○] Phase 23.1 retry prereq — interactive smoke test harness
+```
+
+---
+
+## Lessons baked into commit messages + this doc
+
+- **Closure carves of large stateful functions are unsafe with regex dep detection.** Use AST.
+- **`async` IIFEs silently swallow synchronous throws.** Always `.catch()` them or the next bug will hide for hours.
+- **Pixel-identical preview is necessary but not sufficient.** Interactions are a separate verification surface. Test them.
+- **Revert fast when you ship a runtime bug.** Diagnosis is helpful but not required for the revert; user-facing work comes first.
+
+---
+
+## Last commit at handoff: `2fabbec` — clean repo state, slot OPEN, all gates green, app interactive.
