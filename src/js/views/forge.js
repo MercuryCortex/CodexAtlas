@@ -3922,6 +3922,36 @@
         }
         return;
       }
+      // PERF FIX (2026-05-26): skip the entire canvas redraw when
+      // (camera + toggles + hull data + viewport) is unchanged since
+      // the last paint. drawFrame calls syncHulls every animation
+      // frame even when only node states change (hover-tween).
+      // Canvas hull paint costs 5-15ms in Safari; this guard drops
+      // idle frames to ~0.1ms.
+      const _cs = camera.state.scale;
+      const _cx = camera.state.centerX;
+      const _cy = camera.state.centerY;
+      const _bc = document.body.className;
+      const _dm = local._dividerMode || 'short';
+      if (local._hullsLastCamS === _cs
+          && local._hullsLastCamCx === _cx
+          && local._hullsLastCamCy === _cy
+          && local._hullsLastBody === _bc
+          && local._hullsLastDivM === _dm
+          && local._hullsLastData === data
+          && local._hullsLastW === vp.w
+          && local._hullsLastH === vp.h) {
+        return; // canvas pixels still correct — keep them
+      }
+      local._hullsLastCamS = _cs;
+      local._hullsLastCamCx = _cx;
+      local._hullsLastCamCy = _cy;
+      local._hullsLastBody = _bc;
+      local._hullsLastDivM = _dm;
+      local._hullsLastData = data;
+      local._hullsLastW = vp.w;
+      local._hullsLastH = vp.h;
+
       const ctx = hullsCanvasCtx;
       const dpr = window.devicePixelRatio || 1;
       if (vp.w !== _hullsCssW || vp.h !== _hullsCssH || dpr !== _hullsDpr) {
@@ -3968,20 +3998,24 @@
       const cx = centerScreen.x, cy = centerScreen.y;
 
       // ── Pie slices (annular sectors) ──
-      ctx.lineWidth = 1.25;
-      ctx.lineJoin = 'round';
-      for (let i = 0; i < data.hulls.length; i++) {
-        const h = data.hulls[i];
-        if (h.a0 == null || h.a1 == null) continue;
-        ctx.beginPath();
-        ctx.arc(cx, cy, pieOuterPx, h.a0, h.a1, false);
-        ctx.arc(cx, cy, pieInnerPx, h.a1, h.a0, true);
-        ctx.closePath();
-        const color = h.color || '#888888';
-        ctx.fillStyle   = _hexToRgba(color, 0.05);
-        ctx.strokeStyle = _hexToRgba(color, 0.32);
-        ctx.fill();
-        ctx.stroke();
+      // Honor body.fv-hide-hulls (was on #forge-hull-polys in CSS;
+      // canvas equivalent = skip the draw loop).
+      if (!document.body.classList.contains('fv-hide-hulls')) {
+        ctx.lineWidth = 1.25;
+        ctx.lineJoin = 'round';
+        for (let i = 0; i < data.hulls.length; i++) {
+          const h = data.hulls[i];
+          if (h.a0 == null || h.a1 == null) continue;
+          ctx.beginPath();
+          ctx.arc(cx, cy, pieOuterPx, h.a0, h.a1, false);
+          ctx.arc(cx, cy, pieInnerPx, h.a1, h.a0, true);
+          ctx.closePath();
+          const color = h.color || '#888888';
+          ctx.fillStyle   = _hexToRgba(color, 0.05);
+          ctx.strokeStyle = _hexToRgba(color, 0.32);
+          ctx.fill();
+          ctx.stroke();
+        }
       }
 
       // ── Guide rings (inner / mid / outer) ──
