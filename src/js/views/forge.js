@@ -3766,13 +3766,26 @@
     // depend on scale + pan. We only need to RECOMPUTE the
     // visibility set when scale crosses a tier threshold, but
     // it's cheap (1 ms at 663 nodes) so we just rAF-debounce.
+    //
+    // SAFARI-WORKAROUND (2026-05-26): the original "rAF-debounce"
+    // comment was wrong about cost. syncLabels walks all 682 hit
+    // nodes through tier-thresholds + AABB collision + DOM diff
+    // every camera change. Original comment said 1ms; actual cost
+    // in Safari with 200+ visible labels is 5-15ms. Firing this
+    // on EVERY pan tick stole frame budget that the user perceived
+    // as "gag" during pan + hover-release. Throttled to 100ms
+    // (10Hz) instead of rAF-coalesce (60Hz). Pan stays smooth;
+    // labels update at 10Hz which is still imperceptibly live —
+    // syncLabelPositions still runs at 60fps inside drawFrame so
+    // already-visible labels track the camera continuously. Only
+    // the SET membership update is throttled.
     function scheduleIdleLabelSync() {
       if (local.idleLabelRaf) return;
-      local.idleLabelRaf = requestAnimationFrame(() => {
+      local.idleLabelRaf = setTimeout(() => {
         local.idleLabelRaf = 0;
         if (local.destroyed) return;
         syncLabels();
-      });
+      }, 100);
     }
     // ════════════════════════════════════════════════════════════
     //  Hulls overlay  —  Phase 20 (2026-05-21)
@@ -5147,7 +5160,10 @@
     }
     function cancelIdleLabelRaf() {
       if (local.idleLabelRaf) {
-        try { cancelAnimationFrame(local.idleLabelRaf); } catch (e) { /* ignore */ }
+        // SAFARI-WORKAROUND (2026-05-26) — idleLabelRaf is now a
+        // setTimeout token (was requestAnimationFrame). clearTimeout
+        // is the correct canceller.
+        try { clearTimeout(local.idleLabelRaf); } catch (e) { /* ignore */ }
         local.idleLabelRaf = 0;
       }
     }
