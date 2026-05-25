@@ -78,15 +78,23 @@ John reported the breakage. I diagnosed + reverted (commit `3c294e2`), then ship
 5. **HOW-WE-WORK.md `[ARTHURIAN-CYCLE]` 1-char single-bracket fix** — master file, pending explicit John sign-off.
 6. **3 proposed cardinal rules** (#8 safety-net / #9 spec-faithfulness / #10 log-or-don't-commit) for HOW-WE-WORK §5 — pending John sign-off.
 
-### What's blocking Phase 23.1 retry
+### Phase 23.1 retry — UNBLOCKED 2026-05-25 NIGHT
 
-The carve pattern itself is sound (it's lift-and-shift of pure-DOM/event helper functions). The bug was tooling, not architecture. Three prereqs:
+All three prereqs are SHIPPED. Carve retry is bullet-proof.
 
-1. **✅ Async-IIFE `.catch()`** — SHIPPED `12950d4`. Future silent failures will be loud.
-2. **⬜ AST-based dep scanner** — replace the regex heuristic. Use `acorn` or `esprima` to walk the function body, mark every free identifier, output the complete deps list. Standalone script under `scripts/`. Test against `wireLegend`/`wireSidePanel`/etc. as known regression cases. Task #10.
-3. **⬜ Interactive smoke test harness** — go beyond pixel-identical screenshot. Click + drag + zoom + open every panel programmatically via `Claude_Preview`. Pass/fail report. Task #11.
+1. **✅ Async-IIFE `.catch()`** — `src/js/views/forge.js:2414` (commit `12950d4`). Silent rejections now hit `console.error` loudly.
+2. **✅ AST-based dep scanner** — `scripts/forge_carve_deps.py` (commit `af4040e`). Uses esprima to walk the function body, marks every free identifier, outputs complete deps. `pip3 install esprima` then run: `python3 scripts/forge_carve_deps.py src/js/views/forge.js wireHoverCard`.
+3. **✅ Interactive smoke test harness** — `scripts/smoke-test-forge.js` (commit `a06344f`). 10 checks (mount + canvas + wheel-zoom + pointer-pan + click-toggles-lock + 3 panels open + search focusable + zero console.error). Verified live: all 10 PASS against current forge.js. Usage: `await runForgeSmokeTest()` in browser console OR via preview_eval after fetching the file.
 
-When (2) and (3) exist, Phase 23.1 retry is bullet-proof.
+### Future carve workflow (documented in `a06344f` commit body)
+
+For each function to carve:
+1. Run `forge_carve_deps.py` → get the complete deps list
+2. Build the carved module declaring every dep from step 1
+3. Update the stub in forge.js to pass them
+4. Reload via Claude_Preview
+5. `await runForgeSmokeTest()`
+6. **Ship only if `summary === "PASS"` AND all 10 checks pass**
 
 ### Lane A autonomous (no John needed)
 
