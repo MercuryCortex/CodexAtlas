@@ -297,7 +297,12 @@
      Loaded BEFORE forge.js so the global window.AtlasTimelineChrome is
      available when rebuildForMode tries to mount() it. -->
 <script src="src/js/views/timeline-chrome.js?v=20260525-phase24-v1"></script>
-<script src="src/js/views/forge.js?v=20260525-phase24-v1"></script>
+<!-- Phase 23.1a carve (2026-05-25): timeline-scrubber lifted out
+     of forge.js into its own module. Must load BEFORE forge.js so
+     window._forgeTimelineScrubber is defined when wireTimelineScrubber
+     stub fires during forge mount. -->
+<script src="src/js/forge/timeline-scrubber.js?v=20260525-phase23-1a"></script>
+<script src="src/js/views/forge.js?v=20260525-phase23-1a"></script>
 
 <script src="src/js/graph/theme.js?v=20260517-handoff"></script>
 <script src="src/js/graph/layout.js?v=20260517-handoff"></script>
