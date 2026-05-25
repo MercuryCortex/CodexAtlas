@@ -12,7 +12,7 @@ The chronological spine of the vault. Every document, event, and (where dated) d
 
 | Date (earliest) | Node | Type | Tradition | Notes |
 |---:|---|---|---|---|
-| -3300 | [[Proto-cuneiform tablets]] | event | Sumerian | Earliest writing; not yet religious literature |
+| -3300 | [Proto-cuneiform tablets] | event | Sumerian | Earliest writing; not yet religious literature |
 | -2600 | [[phase-1-001-kesh-temple-hymn]] | document | Sumerian | Oldest known religious text |
 | -2400 | [[phase-1-002-pyramid-texts]] | document | Egyptian | Unas pyramid onward |
 | -2300 | [[phase-1-003-enheduanna-hymns]] | document | Sumerian/Akkadian | Earliest *named* author in human history |

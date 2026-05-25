@@ -82,7 +82,7 @@ The auto-build (`build_dashboard.py`) regenerated `dead-links.md`; check there b
 Per [[methodology]]:
 1. Read **DASHBOARD.md** first.
 2. Check **canonical-slugs.md** before naming. All 73 of my new slugs are now in the registry (auto-regenerated).
-3. **Register your batch in [[ACTIVE-AGENTS]] AND [[STATUS]] before starting.** This batch occupies the `opus-pantheon-eyeball-1` slot, finished 2026-05-14 ~22:30.
+3. **Register your batch in [ACTIVE-AGENTS] AND [[STATUS]] before starting.** This batch occupies the `opus-pantheon-eyeball-1` slot, finished 2026-05-14 ~22:30.
 4. **Don't collapse syncretic identifications prematurely.** Each cross-tradition pairing should be edges + sources, not node-mergers. I followed this rule throughout (e.g., yama-vedic ↔ yima-iranian ↔ yamantaka are three nodes, not one).
 5. **`parallel-form` is the default** for cross-cultural visual similarity without documented transmission. I used this explicitly for the Cernunnos↔Pashupati case so a follow-up doesn't accidentally upgrade it to `ancestor-of`.
 6. After your batch run **both** `python3 build_data.py` AND `python3 build_dashboard.py`.

@@ -4,20 +4,13 @@
 # To accept current state as the new floor, run:
 #     python3 linkcheck.py --write-baseline
 # See AUDIT/2026-05-25-tyrant-remediation-plan.md Phase 2.
-# Captured 574 targets on first write.
+# Captured 562 targets on first write.
 
 ...
 08_quran-scripture-wiring-brief.md
-:space:
-<stub-id>
-ACTIVE-AGENTS
 ARTHURIAN-CYCLE
 Nun-primordial-waters
 P5-002-heart-sutra
-PX-NNN-slug
-Proto-cuneiform tablets
-The Complete Pyramids
-Ullendorff 1968
 Zeus
 _phase-4-late-antiquity
 abaye
@@ -38,7 +31,6 @@ alexios-iv
 amelius
 ammi
 ammon
-amun.md
 anagarika-dharmapala
 anahita-zoroastrian
 anaxagoras
@@ -76,9 +68,7 @@ augustine
 augustine-of-canterbury
 augustus
 axial-age-simultaneity
-axis mundi
 azar
-baal.md
 babylonian-talmud
 badarayana
 baraies-the-teacher
@@ -282,14 +272,12 @@ kshemaraja
 lalita
 landscape-cosmogony
 lapis-lazuli
-lasiren-vodou (sister-aspect)
 liberation-moksha
 lie-yukou-liezi
 linji-yixuan
 liu-an-prince-of-huainan
 logos-christian
 logos-platonic
-lotus.md
 louis-viii-of-france
 love-mysticism
 lwa-pantheon

@@ -2,7 +2,7 @@
 
 **Scope.** Read-only inventory and quality audit of every node in the Codex Atlas vault whose YAML frontmatter `status:` is `stub` (any quoting). The vault is ~2,660 nodes across 30 lenses.
 
-**Method.** Files identified with `grep -rli -E '^status:[[:space:]]*["'\'']?stub["'\'']?[[:space:]]*$'` against `0?_*/`, `1?_*/`, `2?_*/`, then excluded `00_meta/` (schema docs and PROTOCOL.md contain literal `status: "stub"` examples inside code-fence blocks — they are not real nodes).
+**Method.** Files identified with `grep -rli -E '^status:[:space:]*["'\'']?stub["'\'']?[:space:]*$'` against `0?_*/`, `1?_*/`, `2?_*/`, then excluded `00_meta/` (schema docs and PROTOCOL.md contain literal `status: "stub"` examples inside code-fence blocks — they are not real nodes).
 
 ---
 
@@ -73,7 +73,7 @@ Stubs were tallied by audit-trail markers in their bodies:
 
 ## Top 50 promotion priorities
 
-Stubs ranked by **in-degree** (how many vault files contain `[[<stub-id>]]`). All counts derived from the full wikilink index built by scanning every `.md` under `0?_*/`, `1?_*/`, `2?_*/`. Self-references excluded from "who-cites-it sample".
+Stubs ranked by **in-degree** (how many vault files contain `[<stub-id>]`). All counts derived from the full wikilink index built by scanning every `.md` under `0?_*/`, `1?_*/`, `2?_*/`. Self-references excluded from "who-cites-it sample".
 
 | Rank | In-deg | Stub id | Lens | Who-cites-it (sample) |
 |---:|---:|---|---|---|

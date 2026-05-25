@@ -39,7 +39,7 @@ refs:
     publisher: "Oxford University Press"
     type: "monograph"
     tier: 1
-    notes: "**Load-bearing.** Standard scholarly reference for Nefertem and the Memphite triad; documents the lotus-cosmogony in detail. Already cited at [[lotus.md]]."
+    notes: "**Load-bearing.** Standard scholarly reference for Nefertem and the Memphite triad; documents the lotus-cosmogony in detail. Already cited at [[lotus]]."
   - title: "Conceptions of God in Ancient Egypt: The One and the Many"
     author: "Hornung, Erik"
     year: 1982

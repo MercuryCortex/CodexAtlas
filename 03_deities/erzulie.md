@@ -10,7 +10,7 @@ period-active-latest:
 domains: ["love", "beauty", "wealth (Freda); revolutionary motherhood, fierce protection (Dantor)"]
 gender: "feminine"
 role: "love/beauty lwa (Freda) / fierce protective-mother lwa (Dantor)"
-parent-of: ["[[lasiren-vodou (sister-aspect)]]"]
+parent-of: ["[lasiren-vodou] (sister-aspect)"]
 child-of: []
 consort: ["Damballa (Freda); Ti-Jean Petwo (Dantor, in some lineages)"]
 attributes: ["pink and pale blue (Freda); red and blue (Dantor)", "heart-pierced-by-sword (Freda)", "knife (Dantor)", "perfume, jewelry, mirror (Freda); silent / mute (Dantor)"]

@@ -125,7 +125,7 @@ This Set-Baal channel makes Set the gateway through which:
 - Levantine storm-god iconography (Baal's double-forked lightning, his mountain-throne) entered Egyptian religious imagery
 - Egyptian chaos-theology influenced Canaanite mythology (the Baal Cycle's Baal-vs-Yam and Baal-vs-Mot conflicts show structural similarities to Horus-Set)
 
-See [[baal-hadad]], [[baal.md]], and [[tradition-canaanite-ugaritic]].
+See [[baal-hadad]], [[baal]], and [[tradition-canaanite-ugaritic]].
 
 ## Relations
 

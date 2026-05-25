@@ -60,7 +60,7 @@ The tabot makes the Ethiopian Orthodox church *uniquely* an Ark-centered Christi
 
 ## Connections claimed
 
-- **Pre-Christian Israelite substrate hypothesis.** [[Ullendorff 1968]] and earlier scholars argue that Ethiopian tabot devotion reflects a deep pre-Christian Jewish stratum in Ethiopian religion — connecting to circumcision, Sabbath observance, Old-Testament dietary practice, and Levitical-style priesthood. On this reading, the tabot is the Christianized continuation of a pre-existing Israelite-style Ark cult.
+- **Pre-Christian Israelite substrate hypothesis.** [Ullendorff 1968] and earlier scholars argue that Ethiopian tabot devotion reflects a deep pre-Christian Jewish stratum in Ethiopian religion — connecting to circumcision, Sabbath observance, Old-Testament dietary practice, and Levitical-style priesthood. On this reading, the tabot is the Christianized continuation of a pre-existing Israelite-style Ark cult.
 - **Medieval emulation hypothesis.** Rodinson 1964 and later scholars argue the tabot tradition is a medieval Christian emulation of Old Testament practice, not continuation of a pre-Christian substrate. On this reading, the Solomonic-era theological-political ideology (Kebra Nagast, Solomonic-genealogical claim) generates the tabot devotion as part of its broader Israelite-imperial self-imagining.
 - **Both positions are partially compatible.** Modern scholarship tends to see *some* genuine continuity with earlier Levitical / pre-Christian Israelite-style cult (the circumcision practice in particular is too universally attested to be purely medieval emulation) combined with substantial medieval-Christian elaboration centered on the Kebra Nagast narrative.
 

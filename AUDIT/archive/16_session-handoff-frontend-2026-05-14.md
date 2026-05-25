@@ -51,7 +51,7 @@ The detail panel occupies a grid column. Opening/closing it RESIZES the canvas (
 
 ### 4. Vault-wide slug-drift is patched at runtime, not at build
 
-Many wikilinks across the vault write `[[tradition-christianity-canonical]]` but the actual node id is `christianity-canonical` (no `tradition-` prefix). Same for `[[phase-X-NNN-slug]]` vs canonical `[[PX-NNN-slug]]`. I patched this at app init via `_resolveNodeId()` in `app.js` (~line 50) which canonicalizes edge source/target on the way in. ~4,800 previously-dead edges now resolve.
+Many wikilinks across the vault write `[[tradition-christianity-canonical]]` but the actual node id is `christianity-canonical` (no `tradition-` prefix). Same for `[[phase-X-NNN-slug]]` vs canonical `[PX-NNN-slug]`. I patched this at app init via `_resolveNodeId()` in `app.js` (~line 50) which canonicalizes edge source/target on the way in. ~4,800 previously-dead edges now resolve.
 
 The right fix is in `build_data.py`'s `wikilinks()` resolution — recognize both forms and emit canonical IDs in `data.js`. That'd fix:
 
