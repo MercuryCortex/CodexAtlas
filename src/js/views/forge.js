@@ -2491,6 +2491,37 @@
       // pan/zoom — only the SET of nodes that get packed shrinks.
       let modeNodes = modemod.filterNodesByMode(modeId, allNodes, allEdges);
       _tick('filterNodesByMode');
+
+      // ─── 24-HARDDEBUG (2026-05-26, removable) ─────────────────
+      // If ?debug-cap=N in URL, HARD-SLICE modeNodes to N RIGHT NOW,
+      // before degree/layout/cull/pack — ALL downstream work runs on
+      // N nodes only. Bypasses every other filter so there's zero
+      // way for a stale cache or filter-toggle to hide the effect.
+      // Paints a red banner on-screen so the user has visual proof
+      // the code is live.
+      let _hardCap = 0;
+      try {
+        const u = parseInt(new URLSearchParams(location.search).get('debug-cap'), 10);
+        if (u > 0) _hardCap = u;
+      } catch (_) {}
+      if (_hardCap > 0 && Array.isArray(modeNodes) && modeNodes.length > _hardCap) {
+        const beforeN = modeNodes.length;
+        modeNodes = modeNodes.slice(0, _hardCap);
+        console.log('[forge HARD-DEBUG] sliced modeNodes:', beforeN, '→', modeNodes.length, '(cap=' + _hardCap + ')');
+        let banner = document.getElementById('forge-hard-debug-banner');
+        if (!banner) {
+          banner = document.createElement('div');
+          banner.id = 'forge-hard-debug-banner';
+          banner.style.cssText = 'position:fixed;top:10px;left:50%;transform:translateX(-50%);background:#e22;color:#fff;padding:8px 16px;z-index:99999;font:bold 14px ui-monospace,Menlo,Monaco,monospace;border-radius:6px;pointer-events:none;box-shadow:0 4px 12px rgba(0,0,0,.5);';
+          document.body.appendChild(banner);
+        }
+        banner.textContent = '🔴 HARD-DEBUG cap=' + _hardCap + ' · ' + modeNodes.length + '/' + beforeN + ' nodes · mode=' + modeId;
+      } else {
+        const banner = document.getElementById('forge-hard-debug-banner');
+        if (banner && banner.parentNode) banner.parentNode.removeChild(banner);
+      }
+      // ──────────────────────────────────────────────────────────
+
       let modeEdges = layout.filterEdgesByNodes(allEdges, modeNodes);
       _tick('filterEdgesByNodes');
       const degree    = layout.computeDegree(modeNodes, modeEdges);
