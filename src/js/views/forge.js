@@ -3613,6 +3613,11 @@
         const vp       = local.lastSize;
         const opts     = labelHierarchyFromParams();
         opts.worldToScreen = (x, y) => camera.worldToScreen(x, y, vp);
+        // Phase 24C v1 (2026-05-26) — viewport cull. Pass canvas
+        // dimensions so the label hierarchy can skip off-screen
+        // candidates BEFORE the AABB-collision loop.
+        opts.viewport = vp;
+        opts.viewportMarginPx = 100;
         const idleSet = graph.computeIdleLabelVisibility(local.mode.hitNodes, camScale, opts);
         // Phase 11C (2026-05-21) — filter out HIDDEN nodes. Labels
         // shouldn't render for nodes the timeline has hidden.
@@ -4301,14 +4306,29 @@
       const visible = local.visibleLabelEls;
       if (!visible || visible.size === 0) return;
       const hitById = local.mode.hitById;
+      const camScale = camera.state.scale;
+      // Phase 24C v1 (2026-05-26) — defensive viewport cull at the
+      // position layer. Even though computeIdleLabelVisibility now
+      // viewport-prunes the set, focused-set labels + lazy-revealed
+      // labels can still ride out a pan offscreen between visibility
+      // re-computes. Set display:none for off-screen so the DOM does
+      // ZERO layout/compositing on them.
+      const vMargin = 100;
       for (const id of visible) {
         const el = local.labelEls.get(id);
         if (!el) continue;
         const n = hitById ? hitById.get(id) : null;
         if (!n) continue;
         const s = camera.worldToScreen(n.x, n.y, vp);
+        if (s.x < -vMargin || s.x > vp.w + vMargin
+            || s.y < -vMargin || s.y > vp.h + vMargin) {
+          // Off-screen — hide; skip the position write entirely.
+          if (el.style.display !== 'none') el.style.display = 'none';
+          continue;
+        }
+        if (el.style.display === 'none') el.style.display = '';
         const px = s.x;
-        const py = s.y - n.r * camera.state.scale - 6;
+        const py = s.y - n.r * camScale - 6;
         el.style.left = px + 'px';
         el.style.top  = py + 'px';
       }

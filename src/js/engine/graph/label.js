@@ -56,6 +56,20 @@
     const padPx   = (opts && opts.collisionPaddingPx) || 4;
     const w2s     = opts && opts.worldToScreen;
     const estW    = (opts && opts.estimateLabelWidth) || ((id) => Math.max(40, id.length * sizePx * 0.55));
+    // Phase 24C v1 (2026-05-26) — viewport cull. When `opts.viewport`
+    // (= {w, h}) is provided, skip any candidate whose screen position
+    // falls outside the viewport plus `viewportMarginPx` (default 100).
+    // Previously the function iterated ALL hitNodes and applied AABB
+    // collision to all of them, producing screen-space layouts for
+    // hundreds of off-screen labels at moderate zoom-in. At 181% zoom
+    // on the deity wheel, ~270 candidate labels became collision
+    // boxes even though only ~80 of them were actually on-screen.
+    // The pruning gives the per-frame label pipeline a sub-linear
+    // floor: as you zoom in, more nodes fall off-screen and fewer
+    // labels enter the collision pass.
+    const vp      = opts && opts.viewport;
+    const vMargin = (opts && opts.viewportMarginPx) || 100;
+    const useVpCull = !!(vp && typeof vp.w === 'number' && typeof vp.h === 'number');
 
     if (!w2s) return new Set();
 
@@ -104,6 +118,12 @@
         if (addedThisTier >= budget) break;
         const n = bucket[i];
         const s = w2s(n.x, n.y);
+        // Phase 24C v1 — viewport cull. Cheap test BEFORE the AABB
+        // collision loop (which is O(boxes.length) per candidate).
+        if (useVpCull && (s.x < -vMargin || s.x > vp.w + vMargin
+                       || s.y < -vMargin || s.y > vp.h + vMargin)) {
+          continue;
+        }
         const halfW = estW(n.id) * 0.5 + padPx;
         const cy = s.y - n.r * camScale - 6;
         const cx = s.x;
