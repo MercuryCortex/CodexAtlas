@@ -78,9 +78,15 @@ SAFE_GLOBALS = {
     'Element', 'Node', 'NodeFilter', 'Range', 'Selection',
     'globalThis', 'self', 'top', 'parent', 'frames',
     'crypto', 'atob', 'btoa',
-    # Project-internal globals that legitimately load before forge.js
-    # via <script> tags (window._foo namespaces). NOT forge-scope refs.
-    'gpu', 'glyphmod', 'modemod', 'edgemod',
+    # NOTE: previous versions whitelisted `gpu`, `glyphmod`, `modemod`,
+    # `edgemod` here on the assumption they were window globals. They are
+    # NOT — they're forge.js-scope aliases (e.g. `const modemod =
+    # window.AtlasEngineMode`). Any carved module referencing them by the
+    # alias name will fail with ReferenceError. Removed from this list so
+    # the scanner flags them as deps (forcing carvers to either pass them
+    # explicitly or use the underlying window global directly). Discovered
+    # 2026-05-25 NIGHT when install-public-api.js threw on first
+    # public-API call due to bare `modemod` usage.
     # Symbols used in JSON-style data + frequently in templates
     'arguments', 'this',
     # Function-special names esprima may emit

@@ -2709,7 +2709,7 @@
     window._forge = window._forge || {};
     window._forge.setClassFilter = function (modeId) {
       if (local.destroyed) return false;
-      if (!modemod.isValidMode || !modemod.isValidMode(modeId)) return false;
+      if (!window.AtlasEngineMode.isValidMode || !window.AtlasEngineMode.isValidMode(modeId)) return false;
       if (modeId === (local.mode && local.mode.id)) return true;
       try {
         rebuildForMode(modeId);
@@ -2722,10 +2722,10 @@
       }
     };
     window._forge.getClassFilter = function () {
-      return (local.mode && local.mode.id) || (modemod.defaultMode && modemod.defaultMode()) || 'deities';
+      return (local.mode && local.mode.id) || (window.AtlasEngineMode.defaultMode && window.AtlasEngineMode.defaultMode()) || 'deities';
     };
     window._forge.supportedClasses = function () {
-      return (modemod.MODES || []).slice();
+      return (window.AtlasEngineMode.MODES || []).slice();
     };
     // Phase TL-2 Step 1 (2026-05-24) — layout selector. The
     // engine supports two layouts today: 'wheel' (radialWedgeLayout
