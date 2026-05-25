@@ -4434,6 +4434,35 @@
     function renderLabelsCanvas() {
       const vp = local.lastSize;
       if (!vp.w || !vp.h || !labelsCanvasCtx) return;
+      // SAFARI-WORKAROUND (2026-05-27): camera-idle skip. Same
+      // pattern that worked for syncHulls. drawFrame fires every
+      // animation frame even during hover-tween where the camera
+      // is idle but node states are tweening. Label canvas paint
+      // costs ~3-8ms in Safari at 100 visible labels (each strokeText
+      // is expensive). Skip the entire re-paint when nothing the
+      // labels depend on has changed.
+      const _lcs = camera.state.scale;
+      const _lcx = camera.state.centerX;
+      const _lcy = camera.state.centerY;
+      const visSet = local.visibleLabelEls;
+      const _lvs = visSet ? visSet.size : 0;
+      if (local._labelsIdleCamS === _lcs
+          && local._labelsIdleCamCx === _lcx
+          && local._labelsIdleCamCy === _lcy
+          && local._labelsIdleVisSet === visSet
+          && local._labelsIdleVisSize === _lvs
+          && local._labelsIdleW === vp.w
+          && local._labelsIdleH === vp.h) {
+        return; // canvas pixels still valid
+      }
+      local._labelsIdleCamS = _lcs;
+      local._labelsIdleCamCx = _lcx;
+      local._labelsIdleCamCy = _lcy;
+      local._labelsIdleVisSet = visSet;
+      local._labelsIdleVisSize = _lvs;
+      local._labelsIdleW = vp.w;
+      local._labelsIdleH = vp.h;
+
       const dpr = window.devicePixelRatio || 1;
       // Resize backing store if dimensions changed (viewport or DPR).
       if (vp.w !== _labelsCssW || vp.h !== _labelsCssH || dpr !== _labelsDpr) {
@@ -4469,7 +4498,11 @@
       ctx.textBaseline = 'bottom';
       ctx.lineJoin = 'round';
       ctx.miterLimit = 2;
-      ctx.lineWidth = 4;
+      // SAFARI-WORKAROUND (2026-05-27): halo stroke 4px → 2px.
+      // Safari's text-stroke rasterizer cost scales with line width;
+      // 2px still provides readable separation over the wire layer
+      // without paying the 4px cost (~30% paint reduction per label).
+      ctx.lineWidth = 2;
       ctx.strokeStyle = _labelsHaloColor;
       ctx.fillStyle = _labelsTextColor;
       for (const id of visible) {
