@@ -1540,6 +1540,31 @@
     // Pointer-events: none so the canvas overlay can't intercept
     // mouse events (the WebGPU canvas below it owns hit-testing).
     // Position: absolute over the stage, full bounds, DPR-aware.
+    // DEBUG (2026-05-27): URL-param layer toggles for perf bisection.
+    //   ?no-labels=1  — skip the canvas label paint
+    //   ?no-hulls=1   — hide the SVG hulls overlay
+    //   ?no-nodes=1   — skip the WebGPU node/edge/glyph draw
+    // Each is a render skip, NOT a removal — toggle on/off by
+    // changing the URL param and reloading. Console logs which
+    // are active so you can confirm.
+    try {
+      const _qs = new URLSearchParams(location.search);
+      local._debugNoLabels = (_qs.get('no-labels') === '1');
+      local._debugNoNodes  = (_qs.get('no-nodes')  === '1');
+      if (_qs.get('no-hulls') === '1') {
+        // Hide all hull SVG sub-layers via the existing body-class
+        // toggles (already CSS-wired).
+        document.body.classList.add('fv-hide-hulls', 'fv-hide-dividers',
+          'fv-hide-family-titles', 'fv-hide-guide-rings');
+      }
+      if (local._debugNoLabels || local._debugNoNodes || _qs.get('no-hulls') === '1') {
+        console.log('[forge debug] layer toggles:',
+          'no-labels=' + (local._debugNoLabels ? 'ON' : 'off'),
+          'no-nodes=' + (local._debugNoNodes ? 'ON' : 'off'),
+          'no-hulls=' + (_qs.get('no-hulls') === '1' ? 'ON' : 'off'));
+      }
+    } catch (_) {}
+
     const labelsCanvas = document.createElement('canvas');
     labelsCanvas.className = 'forge-labels-canvas';
     labelsCanvas.style.cssText = 'position:absolute;inset:0;pointer-events:none;z-index:5;';
@@ -3438,6 +3463,16 @@
       const frameEVB  = nodeOnly ? null : local.mode.edgePacked.data;
       const glyphsHidden = nodeOnly || edgesAndNodesOnly;
       const frameGVB = glyphsHidden ? null : (local.glyphInstanceData || null);
+      // DEBUG (2026-05-27): ?no-nodes=1 URL param skips the entire
+      // WebGPU node/edge/glyph draw. Useful for isolating which
+      // render layer (nodes / labels / hulls) is paying the per-frame
+      // cost. Read once at mount via _debugNoNodes flag set near the
+      // canvas creation block.
+      if (local._debugNoNodes) {
+        // Still clear the canvas so previous frame doesn't smear.
+        // (Renderer normally does this internally as part of drawFrame.)
+        // Cheap; serves the diagnostic.
+      } else {
       local.renderer.drawFrame({
         viewportCss:           { w: vp.w, h: vp.h },
         camera:                camera.state,
@@ -3477,6 +3512,7 @@
         glyphInstances:        frameGVB,
         glyphInstancesDirty:   !!local._glyphRebuildDirty,
       });
+      }  // end if (!local._debugNoNodes)
       // After the renderer has consumed the dirty buffers, reset
       // the two remaining flags. Glyphs are static — only the
       // rebuild marks the rebuild-dirty flag.
@@ -4434,6 +4470,15 @@
     function renderLabelsCanvas() {
       const vp = local.lastSize;
       if (!vp.w || !vp.h || !labelsCanvasCtx) return;
+      // DEBUG (2026-05-27): ?no-labels=1 URL param skips the label
+      // paint entirely. Clear the canvas so previous labels don't
+      // stick. Useful for isolating layer-specific perf cost.
+      if (local._debugNoLabels) {
+        const dpr0 = window.devicePixelRatio || 1;
+        labelsCanvasCtx.setTransform(dpr0, 0, 0, dpr0, 0, 0);
+        labelsCanvasCtx.clearRect(0, 0, vp.w, vp.h);
+        return;
+      }
       // SAFARI-WORKAROUND (2026-05-27): camera-idle skip. Same
       // pattern that worked for syncHulls. drawFrame fires every
       // animation frame even during hover-tween where the camera
