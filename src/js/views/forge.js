@@ -2659,7 +2659,17 @@
       if (window.AtlasViewportFilter && local._viewportFilterEnabled !== false) {
         const vfOpts = local._viewportFilterOpts || {};
         const margin = (vfOpts.margin != null) ? vfOpts.margin : 1.5;
-        const cap = (vfOpts.capActive != null) ? vfOpts.capActive : 5000;
+        // Phase 24-DEBUG (2026-05-26): URL param ?debug-cap=N hard-caps
+        // the active set to N regardless of opts. For perf-bisection:
+        // visit /?view=forge&debug-cap=50 to force a 50-node render,
+        // then compare felt fluidity to the uncapped baseline. Tells us
+        // whether the bottleneck scales with active-node count or is
+        // a fixed cost (DOM compositing, hull SVG, etc.).
+        let cap = (vfOpts.capActive != null) ? vfOpts.capActive : 5000;
+        try {
+          const urlCap = parseInt(new URLSearchParams(location.search).get('debug-cap'), 10);
+          if (urlCap > 0) cap = urlCap;
+        } catch (_) {}
         const canvasEl = document.querySelector('.forge-pane canvas');
         const bbox = window.AtlasViewportFilter.viewportWorldBbox(camera, canvasEl, margin);
         const cullResult = window.AtlasViewportFilter.cull(modeNodes, lay.positions, bbox, cap);
