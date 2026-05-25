@@ -1532,21 +1532,28 @@
     // ─── Phase 25 (2026-05-26) — CANVAS LABEL LAYER ──────────
     // The DOM label layer (labelsOverlay above) is now NEVER
     // populated. All labels render on this 2D canvas — one
-    // element composited as a single GPU layer. Eliminates the
-    // per-label compositor cost that was Safari's last cliff
-    // after the DOM-cap workaround (~100 labels). With canvas
-    // we can show 500-1000+ labels with zero perf impact.
-    //
-    // Pointer-events: none so the canvas overlay can't intercept
-    // mouse events (the WebGPU canvas below it owns hit-testing).
-    // Position: absolute over the stage, full bounds, DPR-aware.
+    // element composited as a single GPU layer.
     const labelsCanvas = document.createElement('canvas');
     labelsCanvas.className = 'forge-labels-canvas';
     labelsCanvas.style.cssText = 'position:absolute;inset:0;pointer-events:none;z-index:5;';
     stage.appendChild(labelsCanvas);
     const labelsCanvasCtx = labelsCanvas.getContext('2d');
-    // labelsCanvas size is set lazily inside renderLabelsCanvas()
-    // when local.lastSize first becomes valid.
+
+    // ─── Phase 25b (2026-05-26) — CANVAS HULLS LAYER ─────────
+    // Same fix pattern as Phase 25 labels but for the hulls
+    // overlay (pie-slices, dividers, guide rings, family labels).
+    // The SVG hullsOverlay (created above) is HIDDEN via inline
+    // style; all hull rendering happens on this canvas. Eliminates
+    // ~400 SVG setAttribute calls per camera change + Safari's
+    // slow SVG compositor cost. z-index 3 to sit BELOW labels but
+    // above the WebGPU canvas.
+    hullsOverlay.style.display = 'none';
+    const hullsCanvas = document.createElement('canvas');
+    hullsCanvas.className = 'forge-hulls-canvas';
+    hullsCanvas.style.cssText = 'position:absolute;inset:0;pointer-events:none;z-index:3;';
+    stage.appendChild(hullsCanvas);
+    const hullsCanvasCtx = hullsCanvas.getContext('2d');
+    let _hullsDpr = 0, _hullsCssW = 0, _hullsCssH = 0;
 
     // Phase 19B (2026-05-21) — Forge uses the existing GLOBAL
     // aside.detail panel from index.html for the deity inspector.
@@ -3886,37 +3893,48 @@
       }
     }
     function syncHulls() {
+      // Phase 25b (2026-05-26) — canvas-rendered. The SVG hullsOverlay
+      // is display:none (set in mount). All hull geometry now paints
+      // on hullsCanvas. Same visual, none of Safari's SVG compositor
+      // tax. See feedback_safari_is_the_truth_2026-05-26.
+      renderHullsCanvas();
+    }
+    function _hexToRgba(hex, alpha) {
+      if (!hex || typeof hex !== 'string') return 'rgba(136,136,136,' + alpha + ')';
+      if (hex.charAt(0) === '#') hex = hex.slice(1);
+      if (hex.length === 3) hex = hex[0]+hex[0]+hex[1]+hex[1]+hex[2]+hex[2];
+      if (hex.length !== 6) return 'rgba(136,136,136,' + alpha + ')';
+      const r = parseInt(hex.slice(0,2), 16);
+      const g = parseInt(hex.slice(2,4), 16);
+      const b = parseInt(hex.slice(4,6), 16);
+      return 'rgba(' + r + ',' + g + ',' + b + ',' + alpha + ')';
+    }
+    function renderHullsCanvas() {
       const vp = local.lastSize;
-      if (!vp.w || !vp.h) return;
+      if (!vp.w || !vp.h || !hullsCanvasCtx) return;
       const data = (local.mode && local.mode.hullData);
-      if (!data || !data.hulls || !data.hulls.length) return;
-      // SAFARI-WORKAROUND (2026-05-26): viewBox/width/height only change
-      // on viewport RESIZE, not on camera pan/zoom. Writing them every
-      // frame forces Safari to re-validate the SVG root layer each tick
-      // (Safari's SVG compositor is ~3× slower than Blink's). Cache and
-      // skip the writes when unchanged. Blink doesn't need this but it
-      // also doesn't suffer from it. See memory:
-      // feedback_safari_is_the_truth_2026-05-26.
-      if (local._hullsLastVpW !== vp.w || local._hullsLastVpH !== vp.h) {
-        hullsOverlay.setAttribute('viewBox', '0 0 ' + vp.w + ' ' + vp.h);
-        hullsOverlay.setAttribute('width',  vp.w);
-        hullsOverlay.setAttribute('height', vp.h);
-        local._hullsLastVpW = vp.w;
-        local._hullsLastVpH = vp.h;
+      if (!data || !data.hulls || !data.hulls.length) {
+        // Nothing to draw — clear and exit.
+        if (hullsCanvas.width > 0) {
+          const dpr0 = window.devicePixelRatio || 1;
+          hullsCanvasCtx.setTransform(dpr0, 0, 0, dpr0, 0, 0);
+          hullsCanvasCtx.clearRect(0, 0, vp.w, vp.h);
+        }
+        return;
       }
+      const ctx = hullsCanvasCtx;
+      const dpr = window.devicePixelRatio || 1;
+      if (vp.w !== _hullsCssW || vp.h !== _hullsCssH || dpr !== _hullsDpr) {
+        hullsCanvas.width  = Math.round(vp.w * dpr);
+        hullsCanvas.height = Math.round(vp.h * dpr);
+        hullsCanvas.style.width  = vp.w + 'px';
+        hullsCanvas.style.height = vp.h + 'px';
+        _hullsCssW = vp.w; _hullsCssH = vp.h; _hullsDpr = dpr;
+      }
+
+      // Fade computation — preserves Phase 20K low-zoom + deep-zoom
+      // ramps. Same numerics as the old SVG path.
       const camScale = camera.state.scale;
-      // Phase 20K (2026-05-21) — hull fade now matches the
-      // family-label fade so the WHOLE family-zone overlay
-      // (pie slices + dividers + labels) breathes together as
-      // the user zooms in / out.
-      //   • Low-zoom fade (zoom-out): opacity 1 at gizmo ≥ 50%,
-      //     0 at gizmo ≤ 25%. Same range as the label fade.
-      //   • Deep-zoom fade (zoom-in):  opacity 1 at scale ≤ 2.0,
-      //     0 at scale ≥ 3.0 (so deep-zoom inspection of an
-      //     individual deity isn't crowded by overlay chrome).
-      // The two ramps combine via min() — overlay fades when
-      // either extreme is hit. The hullLabelsG no longer gets
-      // its own opacity (the WHOLE overlay carries the fade).
       const hullFitScale = computeFitScale();
       const hullZoomPct  = (hullFitScale > 0) ? (camScale / hullFitScale) : 1;
       let lowZoomFade;
@@ -3928,240 +3946,120 @@
       else if (camScale >= 3.0) deepZoomFade = 0;
       else                      deepZoomFade = (3.0 - camScale);
       let fade = Math.min(lowZoomFade, deepZoomFade);
-      // Phase 22-M (2026-05-24) — timeline owns hull fade (15→11
-      // gizmo ramp, matching bands). The wheel's 50→25 curve would
-      // overwrite the timeline-chrome opacity write every frame
-      // otherwise. Skip the assignment + the early-return when the
-      // timeline layout is active.
-      if (local.layoutId === 'timeline') {
-        // Don't write opacity — chrome owns it. But still keep
-        // building the geometry so toggles + camera changes apply.
-        fade = 1.0;
-      } else {
-        hullsOverlay.style.opacity = fade.toFixed(3);
-      }
-      if (fade <= 0.001) return;
+      if (local.layoutId === 'timeline') fade = 1.0;
 
-      // Outer-ring radius in WORLD units + screen units.
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      ctx.clearRect(0, 0, vp.w, vp.h);
+      if (fade <= 0.001) return;
+      ctx.globalAlpha = fade;
+
+      // Pie-slice geometry (identical to the old SVG path).
       const outerWorld = data.outerRadius || 0;
       const innerWorld = data.innerRadius || 0;
       const centerWorld = data.center || { x: 0, y: 0 };
       const centerScreen = camera.worldToScreen(centerWorld.x, centerWorld.y, vp);
-      // Screen-radius for the outer ring (use one node along +x to
-      // measure the scale — robust to any view aspect / pan).
-      const ringEdgeScreen = camera.worldToScreen(centerWorld.x + outerWorld, centerWorld.y, vp);
-      const ringPxRadius = Math.hypot(ringEdgeScreen.x - centerScreen.x, ringEdgeScreen.y - centerScreen.y);
+      const ringEdgeScreen  = camera.worldToScreen(centerWorld.x + outerWorld, centerWorld.y, vp);
+      const ringPxRadius    = Math.hypot(ringEdgeScreen.x - centerScreen.x, ringEdgeScreen.y - centerScreen.y);
       const innerEdgeScreen = camera.worldToScreen(centerWorld.x + innerWorld, centerWorld.y, vp);
-      const innerPxRadius = Math.hypot(innerEdgeScreen.x - centerScreen.x, innerEdgeScreen.y - centerScreen.y);
-      // Phase 20H (2026-05-21) — pie-slice radial padding. The
-      // padding is SPLIT into two parts so the breathing room is
-      // visually obvious:
-      //   • DISK_CONTAIN_PAD covers the disk radius itself (so the
-      //     disk EDGES, not just centres, fit inside the arc).
-      //   • DISK_BREATHE_PAD is the visible buffer between disk
-      //     edge and slice arc — needs to read clearly at default
-      //     zoom, so we set it generously.
-      // Total = 28 px outward from ringPxRadius; same inward from
-      // innerPxRadius. Dividers + family labels use these padded
-      // radii so the whole overlay shares one outer/inner boundary.
-      const DISK_CONTAIN_PAD = 10;
-      const DISK_BREATHE_PAD = 18;
-      const DISK_FIT_PAD     = DISK_CONTAIN_PAD + DISK_BREATHE_PAD;
+      const innerPxRadius   = Math.hypot(innerEdgeScreen.x - centerScreen.x, innerEdgeScreen.y - centerScreen.y);
+      const DISK_FIT_PAD = 28;          // 10 contain + 18 breathe (Phase 20H)
       const pieOuterPx = ringPxRadius + DISK_FIT_PAD;
       const pieInnerPx = Math.max(0, innerPxRadius - DISK_FIT_PAD);
+      const cx = centerScreen.x, cy = centerScreen.y;
 
-      // ── Pie-slice paths (one annular sector per family).
-      // Outer arc at ringPxRadius (the data-driven outer rim),
-      // inner arc at innerPxRadius. Angular extent = wedge
-      // [a0, a1]. The wedges are contiguous (gap is between
-      // adjacent wedges' a1 / a0), so adjacent pie slices share
-      // a tiny gap where the divider line lives.
-      const polyGroups = hullPolysG.children;
-      for (let i = 0; i < data.hulls.length && i < polyGroups.length; i++) {
+      // ── Pie slices (annular sectors) ──
+      ctx.lineWidth = 1.25;
+      ctx.lineJoin = 'round';
+      for (let i = 0; i < data.hulls.length; i++) {
         const h = data.hulls[i];
-        const polyEl = polyGroups[i].firstChild;
-        let d;
-        if (h.a0 != null && h.a1 != null) {
-          // Annular sector path.
-          //   M (a0, rIn) → L (a0, rOut) → A outer-arc to (a1, rOut)
-          //   → L (a1, rIn) → A inner-arc back to (a0, rIn) → Z
-          const a0 = h.a0, a1 = h.a1;
-          const cx = centerScreen.x, cy = centerScreen.y;
-          const rIn  = pieInnerPx;
-          const rOut = pieOuterPx;
-          const x0 = cx + Math.cos(a0) * rIn;
-          const y0 = cy + Math.sin(a0) * rIn;
-          const x1 = cx + Math.cos(a0) * rOut;
-          const y1 = cy + Math.sin(a0) * rOut;
-          const x2 = cx + Math.cos(a1) * rOut;
-          const y2 = cy + Math.sin(a1) * rOut;
-          const x3 = cx + Math.cos(a1) * rIn;
-          const y3 = cy + Math.sin(a1) * rIn;
-          let delta = a1 - a0;
-          while (delta < 0)            delta += 2 * Math.PI;
-          while (delta >= 2 * Math.PI) delta -= 2 * Math.PI;
-          const largeArc = delta > Math.PI ? 1 : 0;
-          // SVG y-axis is flipped vs math, so a math-CCW arc
-          // reads as CW in SVG → sweep-flag 1 for the outer arc
-          // (going a0→a1 forwards), sweep-flag 0 for the inner
-          // arc (returning a1→a0).
-          d = 'M ' + x0.toFixed(1) + ',' + y0.toFixed(1)
-            + ' L ' + x1.toFixed(1) + ',' + y1.toFixed(1)
-            + ' A ' + rOut.toFixed(1) + ',' + rOut.toFixed(1) + ' 0 ' + largeArc + ' 1 ' + x2.toFixed(1) + ',' + y2.toFixed(1)
-            + ' L ' + x3.toFixed(1) + ',' + y3.toFixed(1)
-            + ' A ' + rIn.toFixed(1)  + ',' + rIn.toFixed(1)  + ' 0 ' + largeArc + ' 0 ' + x0.toFixed(1) + ',' + y0.toFixed(1)
-            + ' Z';
-        } else {
-          // Fallback — convex-hull polygon as before.
-          let pts = '';
-          for (let j = 0; j < h.polygon.length; j++) {
-            const s = camera.worldToScreen(h.polygon[j].x, h.polygon[j].y, vp);
-            pts += (j ? ' L ' : 'M ') + s.x.toFixed(1) + ',' + s.y.toFixed(1);
+        if (h.a0 == null || h.a1 == null) continue;
+        ctx.beginPath();
+        ctx.arc(cx, cy, pieOuterPx, h.a0, h.a1, false);
+        ctx.arc(cx, cy, pieInnerPx, h.a1, h.a0, true);
+        ctx.closePath();
+        const color = h.color || '#888888';
+        ctx.fillStyle   = _hexToRgba(color, 0.05);
+        ctx.strokeStyle = _hexToRgba(color, 0.32);
+        ctx.fill();
+        ctx.stroke();
+      }
+
+      // ── Guide rings (inner / mid / outer) ──
+      if (!document.body.classList.contains('fv-hide-guide-rings')) {
+        const RING_INSET = 10;
+        const rInner = Math.max(0, pieInnerPx + RING_INSET);
+        const rOuter = pieOuterPx - RING_INSET;
+        const rMid   = (rInner + rOuter) / 2;
+        ctx.strokeStyle = 'rgba(255,255,255,0.10)';
+        ctx.lineWidth = 0.5;
+        for (const r of [rInner, rMid, rOuter]) {
+          ctx.beginPath();
+          ctx.arc(cx, cy, r, 0, Math.PI * 2);
+          ctx.stroke();
+        }
+      }
+
+      // ── Radial dividers between adjacent families ──
+      if (!document.body.classList.contains('fv-hide-dividers')) {
+        const INNER_EXTRA       = 30;
+        const LONG_OUTER_EXTRA  = 500;
+        const LONG_INNER_RADIUS = 4;
+        const mode = local._dividerMode || 'short';
+        const isLongMode = (mode === 'long-centered');
+        ctx.lineWidth = 1.5;
+        for (let i = 0; i < data.dividers.length; i++) {
+          const d = data.dividers[i];
+          const a = d.angle;
+          let r0, r1;
+          if (isLongMode) { r0 = LONG_INNER_RADIUS; r1 = pieOuterPx + LONG_OUTER_EXTRA; }
+          else            { r0 = Math.max(0, pieInnerPx - INNER_EXTRA); r1 = pieOuterPx; }
+          const x1 = cx + Math.cos(a) * r0;
+          const y1 = cy + Math.sin(a) * r0;
+          const x2 = cx + Math.cos(a) * r1;
+          const y2 = cy + Math.sin(a) * r1;
+          const grad = ctx.createLinearGradient(x1, y1, x2, y2);
+          if (isLongMode) {
+            grad.addColorStop(0.00, 'rgba(111,138,175,1.00)');
+            grad.addColorStop(0.30, 'rgba(111,138,175,0.85)');
+            grad.addColorStop(0.55, 'rgba(111,138,175,0.45)');
+            grad.addColorStop(1.00, 'rgba(111,138,175,0.00)');
+          } else {
+            grad.addColorStop(0.00, 'rgba(111,138,175,0.00)');
+            grad.addColorStop(0.20, 'rgba(111,138,175,0.55)');
+            grad.addColorStop(0.80, 'rgba(111,138,175,0.55)');
+            grad.addColorStop(1.00, 'rgba(111,138,175,0.00)');
           }
-          d = pts + ' Z';
-        }
-        // SAFARI-WORKAROUND (2026-05-26): skip setAttribute when the
-        // computed `d` matches what we already wrote. Safari pays per
-        // setAttribute even when value is identical (re-validates +
-        // marks layer dirty). Per-hull cache hit during pure pan/zoom
-        // is common when the rounded floats (toFixed 1) don't change.
-        if (polyEl._lastD !== d) {
-          polyEl.setAttribute('d', d);
-          polyEl._lastD = d;
+          ctx.strokeStyle = grad;
+          ctx.beginPath();
+          ctx.moveTo(x1, y1);
+          ctx.lineTo(x2, y2);
+          ctx.stroke();
         }
       }
 
-      // ── Family labels: angle = wedge centre, radius = outer+pad.
-      // Labels sit OUTSIDE the wheel rim, NEVER inside the cluttered
-      // node cloud. Phase 20E (2026-05-21) — was h.centroidAngle
-      // (computed from drifted member positions); now h.wedgeCenter
-      // (the wedge's canonical centre angle) so labels sit DIRECTLY
-      // above their pie slice.
-      //
-      // Phase 20F (2026-05-21) — labels also fade by zoom: full
-      // opacity at scale ≥ 0.50, fully invisible at scale ≤ 0.25.
-      // Labels sit OUTSIDE the padded pie-slice outer arc so they
-      // never overlap the slice fill or its outer boundary.
-      // Phase 20K (2026-05-21) — per-label-group opacity REMOVED.
-      // The whole hullsOverlay carries the zoom fade now (see
-      // the lowZoomFade / deepZoomFade block above), so labels
-      // breathe together with the pie slices + dividers as a
-      // single overlay layer. Setting this explicitly to 1 in
-      // case any prior frame stamped a lower value.
-      // Phase 21R (2026-05-22) — labels shifted further outward
-      // (was 24). Decouples the title band from the dividers so
-      // they read clearly when both are visible.
-      const LABEL_OUTSIDE_PAD = 44;
-      hullLabelsG.style.opacity = '1';
-      const labelGroups = hullLabelsG.children;
-      for (let i = 0; i < data.hulls.length && i < labelGroups.length; i++) {
-        const h = data.hulls[i];
-        const a = (h.wedgeCenter != null) ? h.wedgeCenter : h.centroidAngle;
-        const rPx = pieOuterPx + LABEL_OUTSIDE_PAD;
-        const lx = centerScreen.x + Math.cos(a) * rPx;
-        const ly = centerScreen.y + Math.sin(a) * rPx;
-        const labelEl = labelGroups[i].firstChild;
-        // SAFARI-WORKAROUND (2026-05-26): skip no-op x/y writes.
-        const lxStr = lx.toFixed(1);
-        const lyStr = ly.toFixed(1);
-        if (labelEl._lastX !== lxStr) { labelEl.setAttribute('x', lxStr); labelEl._lastX = lxStr; }
-        if (labelEl._lastY !== lyStr) { labelEl.setAttribute('y', lyStr); labelEl._lastY = lyStr; }
-      }
-
-      // ── Radial separators between adjacent families.
-      // Each line is PERFECTLY RADIAL from the wheel centre at
-      // its wedge-boundary angle (Phase 20D-4 — was previously
-      // a centroid bisector that could drift off the boundary
-      // after relaxation).
-      //
-      // Length: from (inner − INNER_OVERSHOOT) to (outer +
-      // OUTER_OVERSHOOT). Phase 20D-4 reduced OUTER_OVERSHOOT
-      // from 50 px to 8 px so the line ends just past the outer
-      // node ring instead of intruding into the family-label
-      // band at +28 px. Inner overshoot stays at 50 px so the
-      // line still reads through the centre void.
-      // Phase 20G (2026-05-21) — dividers now share the SAME
-      // outer + inner radii as the pie-slice arcs (pieOuterPx /
-      // pieInnerPx). The line is the wedge boundary between two
-      // slices, so it should start exactly at the slice inner
-      // arc and end exactly at the slice outer arc — no
-      // overshoot past either, no gap.
-      // Phase 21AI (2026-05-22) — position guide rings. inner = a
-      // bit INSIDE the inner hull boundary (so it traces the
-      // innermost-node arc without overlapping the hull line);
-      // outer = a bit OUTSIDE the outer hull boundary; mid =
-      // midpoint between the two. Visibility is CSS-driven via
-      // body.fv-hide-guide-rings.
-      if (hullGuideRingsG) {
-        const RING_INSET = 10;     // pull-in from the hull boundary
-        const rInner  = Math.max(0, pieInnerPx + RING_INSET);
-        const rOuter  = pieOuterPx - RING_INSET;
-        const rMid    = (rInner + rOuter) / 2;
-        const radii   = { inner: rInner, mid: rMid, outer: rOuter };
-        for (let i = 0; i < hullGuideRingsG.children.length; i++) {
-          const c = hullGuideRingsG.children[i];
-          const role = c.getAttribute('data-ring');
-          const r = radii[role];
-          if (r == null) continue;
-          // SAFARI-WORKAROUND (2026-05-26): skip no-op writes.
-          const cxStr = centerScreen.x.toFixed(1);
-          const cyStr = centerScreen.y.toFixed(1);
-          const rStr  = Math.max(0, r).toFixed(1);
-          if (c._lastCx !== cxStr) { c.setAttribute('cx', cxStr); c._lastCx = cxStr; }
-          if (c._lastCy !== cyStr) { c.setAttribute('cy', cyStr); c._lastCy = cyStr; }
-          if (c._lastR  !== rStr)  { c.setAttribute('r',  rStr);  c._lastR  = rStr;  }
+      // ── Family labels (text with halo) ──
+      if (!document.body.classList.contains('fv-hide-family-titles')) {
+        const LABEL_OUTSIDE_PAD = 44;
+        ctx.font = '600 12px "EB Garamond", Georgia, serif';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.lineWidth = 4;
+        ctx.lineJoin = 'round';
+        ctx.miterLimit = 2;
+        ctx.strokeStyle = 'rgba(10,13,18,0.95)';
+        for (const h of data.hulls) {
+          const a = (h.wedgeCenter != null) ? h.wedgeCenter : h.centroidAngle;
+          if (a == null) continue;
+          const rPx = pieOuterPx + LABEL_OUTSIDE_PAD;
+          const lx = cx + Math.cos(a) * rPx;
+          const ly = cy + Math.sin(a) * rPx;
+          ctx.strokeText(h.family || '', lx, ly);
+          ctx.fillStyle = h.color || '#a8b0c2';
+          ctx.fillText(h.family || '', lx, ly);
         }
       }
 
-      // Phase 21AH (2026-05-22) — divider geometry depends on mode:
-      //   • 'short' (default) — line spans the hull band only, from
-      //     pieInnerPx (− small inner-overshoot) to pieOuterPx.
-      //   • 'long'  — radial spokes from the centre all the way out
-      //     past the hull rim by ~500 px. Reads as "this slice
-      //     reaches from the heart of the wheel into the distance."
-      //   • 'off'   — the hullDividersG group is `display:none` via
-      //     body.fv-hide-dividers, so we still write geometry but
-      //     nothing renders.
-      const INNER_EXTRA       = 30;     // short-mode inner overshoot
-      const LONG_OUTER_EXTRA  = 500;    // long-mode outer extension (px)
-      const LONG_INNER_RADIUS = 4;      // pull-in from exact (0,0) to avoid AA
-      const mode = local._dividerMode || 'short';
-      // Phase 21AK — only 'long-centered' uses the long geometry now
-      // (the long-faded mode was removed). 'short' / 'off' use the
-      // hull-band geometry.
-      const isLongMode = (mode === 'long-centered');
-      const lines = hullDividersG.children;
-      for (let i = 0; i < data.dividers.length && i < lines.length; i++) {
-        const d = data.dividers[i];
-        const a = d.angle;
-        let r0, r1;
-        if (isLongMode) {
-          r0 = LONG_INNER_RADIUS;
-          r1 = pieOuterPx + LONG_OUTER_EXTRA;
-        } else {
-          r0 = Math.max(0, pieInnerPx - INNER_EXTRA);
-          r1 = pieOuterPx;
-        }
-        const x1 = centerScreen.x + Math.cos(a) * r0;
-        const y1 = centerScreen.y + Math.sin(a) * r0;
-        const x2 = centerScreen.x + Math.cos(a) * r1;
-        const y2 = centerScreen.y + Math.sin(a) * r1;
-        const line = lines[i];
-        // SAFARI-WORKAROUND (2026-05-26): skip no-op coord writes.
-        const x1s = x1.toFixed(1), y1s = y1.toFixed(1);
-        const x2s = x2.toFixed(1), y2s = y2.toFixed(1);
-        if (line._lastX1 !== x1s) { line.setAttribute('x1', x1s); line._lastX1 = x1s; }
-        if (line._lastY1 !== y1s) { line.setAttribute('y1', y1s); line._lastY1 = y1s; }
-        if (line._lastX2 !== x2s) { line.setAttribute('x2', x2s); line._lastX2 = x2s; }
-        if (line._lastY2 !== y2s) { line.setAttribute('y2', y2s); line._lastY2 = y2s; }
-        const grad = document.getElementById('forge-hull-divgrad-' + i);
-        if (grad) {
-          if (grad._lastX1 !== x1s) { grad.setAttribute('x1', x1s); grad._lastX1 = x1s; }
-          if (grad._lastY1 !== y1s) { grad.setAttribute('y1', y1s); grad._lastY1 = y1s; }
-          if (grad._lastX2 !== x2s) { grad.setAttribute('x2', x2s); grad._lastX2 = x2s; }
-          if (grad._lastY2 !== y2s) { grad.setAttribute('y2', y2s); grad._lastY2 = y2s; }
-        }
-      }
+      ctx.globalAlpha = 1;
     }
 
     // ════════════════════════════════════════════════════════════
