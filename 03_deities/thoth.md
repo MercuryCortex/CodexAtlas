@@ -20,16 +20,20 @@ syncretic-edges:
   - target: "hermes-greek"
     type: "ancient-identification"
     source: "Herodotus II.67, II.138; Plato, *Phaedrus* 274c–d names Theuth as the Egyptian god who invented writing; the equation is standard from at least the 5th century BCE. Plutarch *De Iside et Osiride* 3 systematizes the Thoth-Hermes equation; Diodorus *Bibliotheca* 1.16, 1.96 gives the euhemerist version (Hermes-Thoth invented writing, language, music, religious ritual)"
+    source-tier: T1
   - target: "hermes-trismegistus"
     type: "ancient-identification"
     source: "Fowden 1986, *The Egyptian Hermes*; the Hellenistic-Egyptian composite 'thrice-great Hermes' of the Corpus Hermeticum is a deliberate syncretic deity. The Hermetic *Asclepius* dialogue ([[phase-4-012-asclepius]]) presents Hermes Trismegistus = Thoth speaking to Asclepius = [[imhotep]]"
+    source-tier: T1
   - target: "theme-egyptian-gnostic-transmission"
     type: "primary-Egyptian-source"
     source: "Thoth is the load-bearing Egyptian-end deity of Chain 1 (Thoth → Hermes Trismegistus → Hermetic-Gnostic saving-knowledge soteriology). The Egyptian → Gnostic transmission's most concrete documentary line runs through this identification. See [[theme-egyptian-gnostic-transmission]] Chain 1 for the full argument (Fowden 1986, Copenhaver 1992, Layton 1987)"
+    source-tier: T1
     notes: "MASSIVE-WIN: HIGH-confidence Egyptian → Hermetic-Gnostic transmission. The Coptic Discourse on the Eighth and Ninth (NHC VI.6) is a specifically Egyptian ritual liturgy of soul-ascent, the Greek tradition reading like translation of an Egyptian original"
   - target: "hermetic-transmission-chain"
     type: "upstream-Egyptian-source"
     source: "Yates 1964; Fowden 1986; Copenhaver 1992 — Thoth is the Egyptian-end origin of the 2,300-year Hermetic transmission spine. The chain (Thoth → Thoth-Hermes equation → Hermes Trismegistus → Corpus Hermeticum → Ficino 1463 → Renaissance Hermeticism → Masonic / 19th-c. occult / modern esotericism) begins with this deity's identification with Greek Hermes. See [[hermetic-transmission-chain]] for the full Alexandria-to-Washington-Monument spine"
+    source-tier: T1
     notes: "MASSIVE-WIN: the load-bearing Egyptian source of Western esotericism; the city Khmun was renamed Hermopolis Magna ('Great City of Hermes') as institutional acknowledgement of the equation"
 status: "full"
 refs:

@@ -20,23 +20,29 @@ syncretic-edges:
   - target: "imhotep"
     type: "ancient-identification"
     source: "By the Ptolemaic period, the deified Egyptian architect [[imhotep]] is consistently identified with Asclepius in Greek-Egyptian temple inscriptions and votive papyri. The fusion is documented at Saqqara, Karnak, Deir el-Bahari, and on the Asklepios-Imhotep papyri"
+    source-tier: T1
   - target: "eshmun"
     type: "ancient-identification"
     source: "Phoenician Eshmun is identified with Asclepius in bilingual inscriptions (e.g., the Eshmun temple at Sidon); the equation is widespread in Hellenistic Levant"
+    source-tier: T1
   - target: "dhanvantari"
     type: "scholarly-parallel"
     source: "Comparative religion — both are divine physicians born of a supreme deity (Apollo / Vishnu); both bring medical knowledge as divine gift; both have divine offspring personifying aspects of health. Structurally identical divine medical families"
+    source-tier: T1
   - target: "ninisina"
     type: "functional-parallel"
     source: "Stol 2011 *RlA* 'Hund' on dog burials at Isin; Edelstein 1945 *Asclepius* vol. 1 on sacred dogs at Epidauros; both healing cults independently deploy the dog as the sacred healing animal across a 1,400-year gap"
+    source-tier: T1
     notes: "MASSIVE WIN — Sacred Healing Dog. Ninisina's cult at Isin (c. 2000 BCE) has the earliest archaeological evidence of ritual healing dogs; Asclepius's wound-licking dogs at Epidauros are 1,400 years later. Dog saliva contains lysozyme, IgA, and histatins — real antimicrobial agents. Mesopotamia and Greece independently encoded the same pharmacological truth in religious form"
   - target: "gula-akkadian"
     type: "functional-parallel"
     source: "Black & Green 1992 on votive dogs at Gula sanctuaries; Edelstein 1945 on dogs at Asclepius sanctuaries"
+    source-tier: T1
     notes: "Gula's votive dogs at Nippur, Isin, and Borsippa and Asclepius's dogs at Epidauros are parallel expressions of the healing-dog tradition across a 1,000-year gap and a 2,500-mile geographical distance"
   - target: "ningishzida"
     type: "structural-precedent"
     source: "Edelstein 1945; iconographic comparison"
+    source-tier: T1
     notes: "Mesopotamian serpent-staff deity Ningishzida (coiled serpent on a staff, c. 2000 BCE) is the iconographic precedent for the Rod of Asclepius. The symbolic chain: Ningishzida → Asclepius cult (c. 700 BCE) → Roman Aesculapius → modern medical iconography (WHO, AMA, BMA)"
 status: "metadata"
 refs:

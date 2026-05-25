@@ -20,6 +20,7 @@ syncretic-edges:
   - target: "[[mercury-roman]]"
     type: "interpretatio-nominal"
     source: "Standard Roman interpretatio graeca — attested from Plautus onward; Versnel 2011 *Coping with the Gods*"
+    source-tier: T1
     notes: "Roman interpretatio-graeca (Greek→Roman name-mapping). Mercury IS Hermes — the Hermes-Mercury identity is classical and uncontested. Wednesday/Wōdnesdæg = Mercurii dies = Hermes-day via the Roman calendric calque, which is also what mediates the Mercury ↔ Odin interpretatio germanica"
   - target: "[[thoth]]"
     type: "ancient-identification"

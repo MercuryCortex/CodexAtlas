@@ -20,26 +20,32 @@ syncretic-edges:
   - target: "[[mitra-vedic]]"
     type: "cognate"
     source: "Boyce 1975; Thieme 1960 'The Aryan Gods of the Mitanni Treaties'; Mayrhofer 1966"
+    source-tier: T1
     notes: "Both inherit Proto-Indo-Iranian *Mitra (covenant). Avestan Mithra is more militarized and solar; Vedic Mitra is more abstract sovereign-of-contract. The PII root *mitra = 'covenant, contract' is preserved in both"
   - target: "[[mithras-roman]]"
     type: "cognate"
     source: "Cumont 1903 (continuity); Beck 2006 *The Religion of the Mithras Cult* (limits continuity); Clauss 2000 *The Roman Cult of Mithras*"
+    source-tier: T1
     notes: "The Roman mystery-cult Mithras (1st-4th c. CE) takes the name and a few iconographic elements (Phrygian cap, bull-slaying tauroctony) but substantially reinvents the figure. The tauroctony has no Iranian precedent. Beck and current scholarship treat the Roman cult as a Roman-period construction with Iranian veneer, not a transplant of Iranian Mithra-worship"
   - target: "[[sol-invictus]]"
     type: "scholarly-parallel"
     source: "Turcan 1996; Beck 2006"
+    source-tier: T1
     notes: "Roman Sol Invictus (Unconquered Sun, official Roman state cult from 274 CE under Aurelian) shares the solar domain with Mithra. The two cults were sometimes conflated in the Roman period. Structural parallel in the solar, warrior, and covenant domains but no direct equation; Sol Invictus draws on multiple solar traditions."
   - target: "angel-michael"
     type: "scholarly-parallel"
     source: "Boyce 1975; Hultgård 1995"
+    source-tier: T1
     notes: "The archangel Michael in Second Temple Judaism and Christianity functions as warrior-leader, covenant enforcer, and psychopomp — structural functions that overlap with Mithra's in the Zoroastrian system. Hultgård notes that the angelic warrior-protector complex in Jewish apocalypticism may carry Iranian Mithra-complex influence."
   - target: "theme-soma-haoma-eucharist"
     type: "Iranian-branch-substrate-of-transmission-chain"
     source: "Boyce 1975 *History of Zoroastrianism* vol. I; Clauss 2000; Beck 2006 — the Zoroastrian Mithra-complex is the Iranian substrate from which the Roman mystery Mithras inherits the name + Persian-cave + tauroctony bull-slaying, and through which the Iranian haoma-tradition feeds the Mediterranean sacred-meal cult. The Mithraic bull-blood substitution for haoma-juice may be the Roman-period transformation point of the Indo-Iranian sacred-drink chain. See [[theme-soma-haoma-eucharist]]"
+    source-tier: T1
     notes: "Cross-lens: 03_deities → 06_themes. Mithra-Z is the Iranian-side anchor; Mithras-R (separate node) is the Roman-period mystery-cult endpoint. Both edges into the chain represent different stages of the same Iranian-substrate transmission"
   - target: "asura-deva-inversion"
     type: "restored-yazata-after-Gathic-reform"
     source: "Boyce 1975 vol. 1; Gershevitch 1959 *The Mihr Yasht*; Skjærvø 1993 EIr 'Daēva' — Mithra is the rare case of a yazata that was *initially suppressed* by the Gathic reform (absent from the Gathas, where *mithra* appears only as common noun 'covenant') and *then restored* in the Younger Avestan Mihr Yašt (Yašt 10) as a great divine figure second only to Ahura Mazda. The restoration shows that the asura-deva inversion was not uniformly applied — the *ahura/asura*-class deities of cosmic-contract (Mithra + Varuna) were preserved or restored on both sides of the schism. See [[asura-deva-inversion]]"
+    source-tier: T1
     notes: "Cross-lens: 03_deities → 06_themes. Mithra-Z documents the selective application of the asura-deva inversion: cosmic-contract deities survived/were-restored while warrior-cult deities (Indra) were permanently condemned"
 status: "full"
 refs:

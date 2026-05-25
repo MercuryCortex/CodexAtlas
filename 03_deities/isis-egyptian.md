@@ -20,9 +20,11 @@ syncretic-edges:
   - target: "demeter"
     type: "ancient-identification"
     source: "Plutarch, *On Isis and Osiris*; Herodotus II.59; the Hellenistic-period equation was already standard"
+    source-tier: T1
   - target: "mary-mother-of-jesus"
     type: "scholarly-parallel"
     source: "Witt 1971, *Isis in the Graeco-Roman World*; iconographic continuities between Isis-with-Horus and Mary-with-Jesus are documented; the question of direct iconographic influence on Christian Marian imagery is debated"
+    source-tier: T1
 status: "full"
 refs:
   - title: "Isis in the Greco-Roman World"
