@@ -12,41 +12,88 @@
 </head>
 <body class="nav-hidden detail-collapsed footer-collapsed">
 <!-- 24-HUD inline live perf overlay (2026-05-26, removable).
-     Paints unconditionally; polls window._forgeDebug.frameStats()
-     every 250ms once forge mounts. Shows live frame time so we
-     can see if a fix moves the needle. -->
+     Measures the things JS-internal timing misses:
+       1. rAF INTERVAL (gap between consecutive rAF callbacks)
+          — this is the REAL FPS measure. If interval > 16ms even
+          when frame work is cheap, the browser compositor or
+          rAF throttling is the bottleneck (DOM weight, GPU sync,
+          Safari quirks).
+       2. Long tasks (PerformanceObserver longtask entries) — any
+          main-thread work >50ms that blocks responsiveness.
+       3. Frame internal time + recomputeFocus time (from forge). -->
 <script>
 (function () {
   try {
     var u = parseInt(new URLSearchParams(location.search).get('debug-cap'), 10) || 0;
     var b = document.createElement('div');
     b.id = 'forge-hud-banner';
-    b.style.cssText = 'position:fixed;top:10px;left:50%;transform:translateX(-50%);background:#e22;color:#fff;padding:8px 16px;z-index:99999;font:bold 13px ui-monospace,Menlo,Monaco,monospace;border-radius:6px;pointer-events:none;box-shadow:0 4px 12px rgba(0,0,0,.5);min-width:540px;text-align:center;';
+    b.style.cssText = 'position:fixed;top:10px;left:50%;transform:translateX(-50%);background:#e22;color:#fff;padding:8px 16px;z-index:99999;font:bold 12px ui-monospace,Menlo,Monaco,monospace;border-radius:6px;pointer-events:none;box-shadow:0 4px 12px rgba(0,0,0,.5);min-width:680px;text-align:center;';
     b.textContent = '🔴 HUD loading… (cap=' + (u || 'none') + ')';
     document.body.appendChild(b);
+
+    // ─── rAF INTERVAL tracker — the real FPS measure ───
+    var rafIntervals = [];
+    var lastRafT = 0;
+    function rafTick(t) {
+      if (lastRafT) {
+        var gap = t - lastRafT;
+        rafIntervals.push(gap);
+        if (rafIntervals.length > 120) rafIntervals.shift();
+      }
+      lastRafT = t;
+      requestAnimationFrame(rafTick);
+    }
+    requestAnimationFrame(rafTick);
+
+    // ─── Long task observer — catches main-thread blockers ───
+    var longTaskCount = 0;
+    var longTaskTotalMs = 0;
+    try {
+      if (typeof PerformanceObserver === 'function') {
+        var po = new PerformanceObserver(function (list) {
+          list.getEntries().forEach(function (e) {
+            longTaskCount++;
+            longTaskTotalMs += e.duration;
+          });
+        });
+        po.observe({ entryTypes: ['longtask'] });
+      }
+    } catch (e) { /* Safari may not support longtask */ }
+
     function colorFor(ms) {
-      if (ms < 8) return '#1a8';   // 120fps territory — green
-      if (ms < 17) return '#2a6';  // 60fps — green
-      if (ms < 33) return '#c81';  // 30-60fps — amber
-      return '#e22';               // <30fps — red
+      if (ms < 8) return '#1a8';
+      if (ms < 17) return '#2a6';
+      if (ms < 33) return '#c81';
+      return '#e22';
+    }
+    function stats(arr) {
+      if (!arr.length) return { avg: 0, p95: 0, max: 0 };
+      var sorted = arr.slice().sort(function (a, c) { return a - c; });
+      return {
+        avg: +(arr.reduce(function (s, v) { return s + v; }, 0) / arr.length).toFixed(1),
+        p95: +sorted[Math.floor(sorted.length * 0.95)].toFixed(1),
+        max: +sorted[sorted.length - 1].toFixed(1),
+      };
     }
     setInterval(function () {
       try {
-        if (!window._forgeDebug || !window._forgeDebug.frameStats) return;
-        var s = window._forgeDebug.frameStats();
-        if (s.count === 0) {
-          b.textContent = '🔴 HUD · ' + s.activeNodes + ' nodes · no frames drawn yet';
-          return;
-        }
-        // Color by the WORST of frame-avg vs recomputeFocus-avg
-        // because hover lag is dominated by whichever blows the
-        // 16ms budget first.
-        var worst = Math.max(s.avg || 0, s.rfAvg || 0);
-        b.style.background = colorFor(worst);
-        b.textContent = '● ' + s.activeNodes + ' n · frame ' + s.last + '/' + s.avg + '/' + s.p95 + 'ms · HOVER ' + s.rfLast + '/' + s.rfAvg + '/' + s.rfMax + 'ms (n=' + s.rfCount + ')' + (u ? ' · CAP=' + u : '');
+        var rafS = stats(rafIntervals);
+        var fps = rafS.avg ? Math.round(1000 / rafS.avg) : 0;
+        var s = (window._forgeDebug && window._forgeDebug.frameStats) ? window._forgeDebug.frameStats() : null;
+        // Color by the WORST signal: rAF interval is king (true FPS).
+        var worstMs = rafS.avg || 0;
+        if (s) worstMs = Math.max(worstMs, s.avg || 0, s.rfAvg || 0);
+        b.style.background = colorFor(worstMs);
+        var line = '● ' + (s ? s.activeNodes + 'n' : '?') + ' · '
+          + 'rAF ' + rafS.avg + '/' + rafS.p95 + '/' + rafS.max + 'ms (' + fps + 'fps)'
+          + ' · frame ' + (s ? s.avg + '/' + s.p95 : '?') + 'ms'
+          + ' · hover ' + (s ? s.rfAvg + '/' + s.rfMax : '?') + 'ms'
+          + ' · longtasks ' + longTaskCount + ' (' + Math.round(longTaskTotalMs) + 'ms)'
+          + (u ? ' · CAP=' + u : '');
+        b.textContent = line;
       } catch (e) { /* ignore */ }
     }, 250);
-    console.log('[hud] live perf overlay armed');
+    console.log('[hud] live perf overlay armed with rAF + longtask tracking');
   } catch (e) { console.error('[hud] failed to arm', e); }
 })();
 </script>
