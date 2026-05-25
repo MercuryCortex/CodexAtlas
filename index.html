@@ -38,8 +38,12 @@
           b.textContent = '🔴 HUD · ' + s.activeNodes + ' nodes · no frames drawn yet';
           return;
         }
-        b.style.background = colorFor(s.avg);
-        b.textContent = '● ' + s.activeNodes + ' nodes · last ' + s.last + 'ms · avg ' + s.avg + 'ms · p95 ' + s.p95 + 'ms · max ' + s.max + 'ms · n=' + s.count + (u ? ' · CAP=' + u : '');
+        // Color by the WORST of frame-avg vs recomputeFocus-avg
+        // because hover lag is dominated by whichever blows the
+        // 16ms budget first.
+        var worst = Math.max(s.avg || 0, s.rfAvg || 0);
+        b.style.background = colorFor(worst);
+        b.textContent = '● ' + s.activeNodes + ' n · frame ' + s.last + '/' + s.avg + '/' + s.p95 + 'ms · HOVER ' + s.rfLast + '/' + s.rfAvg + '/' + s.rfMax + 'ms (n=' + s.rfCount + ')' + (u ? ' · CAP=' + u : '');
       } catch (e) { /* ignore */ }
     }, 250);
     console.log('[hud] live perf overlay armed');

@@ -1821,16 +1821,28 @@
       // Returns rolling window stats over last N frames (max 120).
       frameStats: () => {
         const arr = local._frameTimes || [];
-        if (!arr.length) return { count: 0, last: 0, avg: 0, p95: 0, max: 0 };
-        const sorted = arr.slice().sort((a, b) => a - b);
-        return {
+        const rf  = local._rfTimes || [];
+        const rfSorted = rf.length ? rf.slice().sort((a, b) => a - b) : [];
+        const out = {
           count: arr.length,
-          last: +(local._lastFullFrameMs || 0).toFixed(2),
-          avg: +(arr.reduce((s, v) => s + v, 0) / arr.length).toFixed(2),
-          p95: +sorted[Math.floor(sorted.length * 0.95)].toFixed(2),
-          max: +sorted[sorted.length - 1].toFixed(2),
           activeNodes: (local.mode && local.mode.nodes) ? local.mode.nodes.length : 0,
+          last: 0, avg: 0, p95: 0, max: 0,
+          rfLast: +(local._lastRecomputeFocusMs || 0).toFixed(2),
+          rfAvg: 0, rfP95: 0, rfMax: 0, rfCount: rf.length,
         };
+        if (arr.length) {
+          const sorted = arr.slice().sort((a, b) => a - b);
+          out.last = +(local._lastFullFrameMs || 0).toFixed(2);
+          out.avg = +(arr.reduce((s, v) => s + v, 0) / arr.length).toFixed(2);
+          out.p95 = +sorted[Math.floor(sorted.length * 0.95)].toFixed(2);
+          out.max = +sorted[sorted.length - 1].toFixed(2);
+        }
+        if (rf.length) {
+          out.rfAvg = +(rf.reduce((s, v) => s + v, 0) / rf.length).toFixed(2);
+          out.rfP95 = +rfSorted[Math.floor(rfSorted.length * 0.95)].toFixed(2);
+          out.rfMax = +rfSorted[rfSorted.length - 1].toFixed(2);
+        }
+        return out;
       },
       hitTestAt:    (x, y) => hitTestAt(x, y),
       cameraState:  () => camera.state,
@@ -4573,6 +4585,10 @@
     // Selected nodes get glow + size mult in the shader; the
     // node-state attribute is bumped from 1 float to vec2(state, selected).
     function recomputeFocus() {
+      // 24-HUD (2026-05-26, removable) — time the full recomputeFocus.
+      // This is the heavy work per hover/lock change. Surfaced in the
+      // on-screen HUD to make hover lag visible.
+      const _rfT0 = performance.now();
       const idx       = local.mode.nodePacked.idIndex;
       local.focusedSet  = graph.focusedSetFor(local.hoverId, local.lockedSet, local.mode.adjacency);
       local.selectedSet = computeSelectedSet(local.hoverId, local.lockedSet);
@@ -4757,6 +4773,13 @@
       // next drawFrame without any per-instance buffer write.
       startAnimLoop();
       syncLabels();
+      // 24-HUD (2026-05-26, removable) — record recomputeFocus
+      // duration (full method, including syncLabels at the end).
+      const _rfMs = performance.now() - _rfT0;
+      if (!local._rfTimes) { local._rfTimes = []; local._rfTimesIdx = 0; }
+      local._rfTimes[local._rfTimesIdx % 60] = _rfMs;
+      local._rfTimesIdx++;
+      local._lastRecomputeFocusMs = _rfMs;
     }
 
     // 2026-05-19 — advance per-edge state toward its target by
