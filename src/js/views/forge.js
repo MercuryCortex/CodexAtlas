@@ -600,13 +600,16 @@
     label_idle_zoom_tier4: 2.00,   // T3
     label_idle_zoom_tier5: 2.50,   // T4
     label_idle_zoom_tier6: 3.50,   // T5
-    // SAFARI-WORKAROUND (2026-05-26): cap binary-searching for the
-    // sweet spot between Safari fluidity + visual density.
-    // Confirmed: cap=10 → consistent 60fps Safari (proves labels are
-    // the dominant remaining cost). cap=200 → gags. Trying 100.
-    // ~3 labels per family at default zoom; user can dial via a
-    // future FX panel slider (not yet wired).
-    label_idle_max:        100,    // was 10 (diagnostic), 200, 750. 2026-05-26.
+    // Phase 25 (2026-05-26) — bumped 100 → 300 now that labels are
+    // canvas-rendered. Canvas has effectively no per-label cost
+    // (one paint call covers all visible labels), so the Safari-
+    // composite cliff that constrained DOM labels to ~100 is gone.
+    // 300 gives ~9 labels per family at default zoom — actually
+    // readable density. With center-weight 0.7 the center gets
+    // ~210 labels (T0-T3 visible there) and the edge gets ~90
+    // (mostly T0-T1 hubs). Visual cliff disappears progressively
+    // as the user zooms in.
+    label_idle_max:        300,    // was 100. Phase 25 canvas raises the ceiling.
     label_size:            12,
     label_cap:             120,
     label_collision_pad:   6,
