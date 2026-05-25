@@ -600,15 +600,14 @@
     label_idle_zoom_tier4: 2.00,   // T3
     label_idle_zoom_tier5: 2.50,   // T4
     label_idle_zoom_tier6: 3.50,   // T5
-    // SAFARI-WORKAROUND (2026-05-26): was 750. At moderate zoom (100-
-    // 200%) that allowed ~500-700 DOM labels to be visible
-    // simultaneously, each composited as its own GPU layer in Safari
-    // with text-stroke + transform. The cap is the dominant remaining
-    // per-frame cost. Cut to 200 — past that, labels overlap into
-    // visual noise anyway (you can't readably show 500+ labels in a
-    // 1440×900 viewport). User can still dial up via FX panel
-    // (Phase 21AE) if they want more density.
-    label_idle_max:        200,    // was 750 (Safari composite cliff). 2026-05-26.
+    // SAFARI-DIAGNOSTIC (2026-05-26): cap reduced to 10 at John's
+    // request. Aggressive test — at cap=10 the per-frame label
+    // composite cost is essentially zero. If Safari STILL gags at
+    // this cap, labels weren't the dominant remaining cost; we look
+    // elsewhere (SVG hulls, BG image, WebGPU pipeline overhead).
+    // If Safari flies = labels were the cliff and we know our
+    // headroom. User can dial back up via FX panel.
+    label_idle_max:        10,     // was 200, 750 before that. 2026-05-26 diagnostic.
     label_size:            12,
     label_cap:             120,
     label_collision_pad:   6,
