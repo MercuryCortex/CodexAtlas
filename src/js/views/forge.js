@@ -5013,6 +5013,21 @@
       if (!playing) return false;
       return local._fxPulseNodeId === nodeId;
     }
+    // Phase 24-PRIMITIVE-FIX (2026-05-26) — replaced `void dot.offsetWidth`
+    // (which forced synchronous reflow of the ENTIRE document, including
+    // all 200+ labels, hulls SVG, BG image) with getAnimations().cancel().
+    // The reflow trick was the worst per-hover primitive failure in the
+    // codebase: every cursor-move-to-new-node triggered a full layout
+    // pass, perceived as the "gag" between hover frames. Cancelling via
+    // the Web Animations API releases the running animation cleanly so
+    // the next classList.add() picks up fresh keyframes — same restart
+    // behavior, zero layout invalidation.
+    function _cancelPulseAnimations(dot) {
+      try {
+        const anims = dot.getAnimations ? dot.getAnimations() : null;
+        if (anims) { for (const a of anims) { try { a.cancel(); } catch (_) {} } }
+      } catch (_) { /* getAnimations may not exist on very old browsers */ }
+    }
     function triggerHoverFlash() {
       const id = local.hoverId;
       if (id == null) return;
@@ -5021,7 +5036,7 @@
       if (!dot) return;
       if (local._hoverFlashTimer) { clearTimeout(local._hoverFlashTimer); local._hoverFlashTimer = 0; }
       dot.classList.remove('fx-hover-flash', 'fx-click-pulse');
-      void dot.offsetWidth;
+      _cancelPulseAnimations(dot);     // was: void dot.offsetWidth (forced reflow)
       dot.classList.add('fx-hover-flash');
       local._fxPulseNodeId = id;
       local._hoverFlashTimer = setTimeout(() => {
@@ -5036,7 +5051,7 @@
       if (!dot) return;
       if (local._clickPulseTimer) { clearTimeout(local._clickPulseTimer); local._clickPulseTimer = 0; }
       dot.classList.remove('fx-hover-flash', 'fx-click-pulse');
-      void dot.offsetWidth;
+      _cancelPulseAnimations(dot);     // was: void dot.offsetWidth (forced reflow)
       dot.classList.add('fx-click-pulse');
       local._fxPulseNodeId = nodeId;
       local._clickPulseTimer = setTimeout(() => {
