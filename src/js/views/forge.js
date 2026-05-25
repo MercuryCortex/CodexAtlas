@@ -3940,9 +3940,20 @@
       if (!vp.w || !vp.h) return;
       const data = (local.mode && local.mode.hullData);
       if (!data || !data.hulls || !data.hulls.length) return;
-      hullsOverlay.setAttribute('viewBox', '0 0 ' + vp.w + ' ' + vp.h);
-      hullsOverlay.setAttribute('width',  vp.w);
-      hullsOverlay.setAttribute('height', vp.h);
+      // SAFARI-WORKAROUND (2026-05-26): viewBox/width/height only change
+      // on viewport RESIZE, not on camera pan/zoom. Writing them every
+      // frame forces Safari to re-validate the SVG root layer each tick
+      // (Safari's SVG compositor is ~3× slower than Blink's). Cache and
+      // skip the writes when unchanged. Blink doesn't need this but it
+      // also doesn't suffer from it. See memory:
+      // feedback_safari_is_the_truth_2026-05-26.
+      if (local._hullsLastVpW !== vp.w || local._hullsLastVpH !== vp.h) {
+        hullsOverlay.setAttribute('viewBox', '0 0 ' + vp.w + ' ' + vp.h);
+        hullsOverlay.setAttribute('width',  vp.w);
+        hullsOverlay.setAttribute('height', vp.h);
+        local._hullsLastVpW = vp.w;
+        local._hullsLastVpH = vp.h;
+      }
       const camScale = camera.state.scale;
       // Phase 20K (2026-05-21) — hull fade now matches the
       // family-label fade so the WHOLE family-zone overlay
@@ -4059,7 +4070,15 @@
           }
           d = pts + ' Z';
         }
-        polyEl.setAttribute('d', d);
+        // SAFARI-WORKAROUND (2026-05-26): skip setAttribute when the
+        // computed `d` matches what we already wrote. Safari pays per
+        // setAttribute even when value is identical (re-validates +
+        // marks layer dirty). Per-hull cache hit during pure pan/zoom
+        // is common when the rounded floats (toFixed 1) don't change.
+        if (polyEl._lastD !== d) {
+          polyEl.setAttribute('d', d);
+          polyEl._lastD = d;
+        }
       }
 
       // ── Family labels: angle = wedge centre, radius = outer+pad.
@@ -4092,8 +4111,11 @@
         const lx = centerScreen.x + Math.cos(a) * rPx;
         const ly = centerScreen.y + Math.sin(a) * rPx;
         const labelEl = labelGroups[i].firstChild;
-        labelEl.setAttribute('x', lx.toFixed(1));
-        labelEl.setAttribute('y', ly.toFixed(1));
+        // SAFARI-WORKAROUND (2026-05-26): skip no-op x/y writes.
+        const lxStr = lx.toFixed(1);
+        const lyStr = ly.toFixed(1);
+        if (labelEl._lastX !== lxStr) { labelEl.setAttribute('x', lxStr); labelEl._lastX = lxStr; }
+        if (labelEl._lastY !== lyStr) { labelEl.setAttribute('y', lyStr); labelEl._lastY = lyStr; }
       }
 
       // ── Radial separators between adjacent families.
@@ -4131,9 +4153,13 @@
           const role = c.getAttribute('data-ring');
           const r = radii[role];
           if (r == null) continue;
-          c.setAttribute('cx', centerScreen.x.toFixed(1));
-          c.setAttribute('cy', centerScreen.y.toFixed(1));
-          c.setAttribute('r',  Math.max(0, r).toFixed(1));
+          // SAFARI-WORKAROUND (2026-05-26): skip no-op writes.
+          const cxStr = centerScreen.x.toFixed(1);
+          const cyStr = centerScreen.y.toFixed(1);
+          const rStr  = Math.max(0, r).toFixed(1);
+          if (c._lastCx !== cxStr) { c.setAttribute('cx', cxStr); c._lastCx = cxStr; }
+          if (c._lastCy !== cyStr) { c.setAttribute('cy', cyStr); c._lastCy = cyStr; }
+          if (c._lastR  !== rStr)  { c.setAttribute('r',  rStr);  c._lastR  = rStr;  }
         }
       }
 
@@ -4171,16 +4197,19 @@
         const x2 = centerScreen.x + Math.cos(a) * r1;
         const y2 = centerScreen.y + Math.sin(a) * r1;
         const line = lines[i];
-        line.setAttribute('x1', x1.toFixed(1));
-        line.setAttribute('y1', y1.toFixed(1));
-        line.setAttribute('x2', x2.toFixed(1));
-        line.setAttribute('y2', y2.toFixed(1));
+        // SAFARI-WORKAROUND (2026-05-26): skip no-op coord writes.
+        const x1s = x1.toFixed(1), y1s = y1.toFixed(1);
+        const x2s = x2.toFixed(1), y2s = y2.toFixed(1);
+        if (line._lastX1 !== x1s) { line.setAttribute('x1', x1s); line._lastX1 = x1s; }
+        if (line._lastY1 !== y1s) { line.setAttribute('y1', y1s); line._lastY1 = y1s; }
+        if (line._lastX2 !== x2s) { line.setAttribute('x2', x2s); line._lastX2 = x2s; }
+        if (line._lastY2 !== y2s) { line.setAttribute('y2', y2s); line._lastY2 = y2s; }
         const grad = document.getElementById('forge-hull-divgrad-' + i);
         if (grad) {
-          grad.setAttribute('x1', x1.toFixed(1));
-          grad.setAttribute('y1', y1.toFixed(1));
-          grad.setAttribute('x2', x2.toFixed(1));
-          grad.setAttribute('y2', y2.toFixed(1));
+          if (grad._lastX1 !== x1s) { grad.setAttribute('x1', x1s); grad._lastX1 = x1s; }
+          if (grad._lastY1 !== y1s) { grad.setAttribute('y1', y1s); grad._lastY1 = y1s; }
+          if (grad._lastX2 !== x2s) { grad.setAttribute('x2', x2s); grad._lastX2 = x2s; }
+          if (grad._lastY2 !== y2s) { grad.setAttribute('y2', y2s); grad._lastY2 = y2s; }
         }
       }
     }
