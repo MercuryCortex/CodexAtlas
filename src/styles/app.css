@@ -8292,44 +8292,47 @@ body.view-forge #detail-inner {
 }
 .forge-label {
   position: absolute;
-  /* Phase 24-PRIMITIVE-FIX (2026-05-26): syncLabelPositions now
-     writes the FULL transform inline (translate3d for GPU compositing
-     + the -50%/-100% centering composed). Removing the CSS rule that
-     used to live here so the inline JS transform isn't fighting it.
-     Default top:0 left:0 ⇒ the inline translate3d places the anchor. */
+  /* Phase 24-PRIMITIVE-FIX (2026-05-26): syncLabelPositions writes
+     the FULL transform inline (translate3d for GPU compositing
+     + the -50%/-100% centering composed). */
   top: 0;
   left: 0;
-  /* will-change tells the browser to promote each label to its own
-     compositor layer — slight memory cost (each label gets a tiny
-     GPU texture) but eliminates per-frame layer-creation churn. */
-  will-change: transform;
   font-family: var(--forge-font-label, var(--sans));
   font-size: var(--forge-label-size, 11px);
   font-weight: 500;
   letter-spacing: 0.01em;
   color: var(--forge-label-text, var(--text-0));
   white-space: nowrap;
-  /* Halo so labels read over the wire constellation. The 4-corner
-     text-shadow trick mimics paint-order:stroke without requiring
-     SVG. Keeps anti-aliasing native. Phase 6: halo color is a
-     CSS var so the dev panel can dial it. */
-  text-shadow:
-    0 0 3px var(--forge-label-halo, var(--bg-0)),
-     1px  1px 0 var(--forge-label-halo, var(--bg-0)),
-    -1px  1px 0 var(--forge-label-halo, var(--bg-0)),
-     1px -1px 0 var(--forge-label-halo, var(--bg-0)),
-    -1px -1px 0 var(--forge-label-halo, var(--bg-0));
+  /* SAFARI-WORKAROUND (2026-05-26): replaced the 5-shadow halo
+     (1 blur + 4 corner offsets) with -webkit-text-stroke. Safari
+     paints each text-shadow as a separate text rasterization pass;
+     200 labels × 5 shadows = 1000 text rasterizations per repaint.
+     -webkit-text-stroke is one GPU-accelerated stroke per character.
+     Visually near-identical (1px outline in halo color);
+     Blink/Chromium honor -webkit-text-stroke too — both browsers win.
+     The user-tunable --forge-label-halo CSS var still drives the
+     color via -webkit-text-stroke-color. */
+  -webkit-text-stroke: 2px var(--forge-label-halo, var(--bg-0));
+  paint-order: stroke fill;
+  text-shadow: none;
   /* 2026-05-19 — opacity-driven hide instead of display:none so
      labels ease in/out across focus transitions. JS sets
      `data-visible="1"` on shown labels, opacity follows via the
-     transition rule below. Hidden labels stay in DOM at opacity:0
-     with pointer-events:none — same perf cost as before once the
-     transition settles. */
+     transition rule below. */
   pointer-events: none;
   opacity: 0;
   transition: opacity 0.15s ease-out;
+  /* SAFARI-WORKAROUND (2026-05-26): will-change ONLY on labels
+     currently shown — see [data-visible="1"] rule below. Promoting
+     all 600+ DOM labels to GPU layers (regardless of visibility)
+     creates Safari memory pressure and layer-eviction cliffs.
+     Default state: no will-change. Only the ~20-200 visible labels
+     at any given moment get layer promotion. */
 }
-.forge-label[data-visible="1"] { opacity: 1; }
+.forge-label[data-visible="1"] {
+  opacity: 1;
+  will-change: transform;
+}
 /* (Glyph fade transition removed 2026-05-20 — glyphs are now GPU
    instanced quads with alpha refreshed per frame from nodeStates,
    inheriting the same fade timing as their parent disks.) */
