@@ -20,7 +20,7 @@ syncretic-edges:
   - target: "tradition-knights-templar"
     type: "structural-parallel"
     source: "Barber, Malcolm (1994). The New Knighthood. Cambridge UP. / Hancock, Graham (1992). The Sign and the Seal. Heinemann. [Tier 4]"
-    source-tier: T3
+    source-tier: T4
     notes: "The Templars' original HQ (1119–1127 CE) was the Al-Aqsa Mosque on the Temple Mount — the Crusaders believed this was the site of Solomon's Temple, hence 'Knights of the Temple.' Historical: the Templars occupied the site of the Ark's last known location in Western memory. Speculative (Hancock 1992, Tier 4): the Templars excavated beneath the mosque and found documentary evidence of the Ark's Ethiopian location. Barber (1994) finds no medieval source associating the Templars with Ark-searching; no archaeological documentation supports the excavation claim."
   - target: "tradition-freemasonry"
     type: "structural-parallel"

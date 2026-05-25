@@ -15,8 +15,8 @@ syncretic-edges:
   - target: "sphinx-of-giza"
     type: "investigated-by"
     source: "Schoch 1992, 1999"
-    source-tier: T3
-    notes: "Geological field analysis of Sphinx enclosure walls; identified vertical precipitation erosion inconsistent with 4th Dynasty dating; presented to Geological Society of America 1992"
+    source-tier: T2
+    notes: "Geological field analysis of Sphinx enclosure walls; identified vertical precipitation erosion inconsistent with 4th Dynasty dating; presented to Geological Society of America 1992. CODEX §IV names Schoch as the T2 academic-minority prototype — Boston U geologist with peer-reviewed credentials, contested conclusion engaged-with by Egyptology."
 refs:
   - title: "Redating the Great Sphinx of Giza"
     author: "Schoch, Robert M."
