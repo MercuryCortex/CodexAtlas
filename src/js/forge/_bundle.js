@@ -2734,6 +2734,18 @@
         lastCull: local._lastViewportCull || null,
       };
     };
+    // Phase 24A-PROFILE (2026-05-26, removable) — gate per-phase
+    // instrumentation in rebuildForMode + expose last results.
+    window._forge.profileRebuild = function (enabled) {
+      local._profileRebuild = !!enabled;
+      return local._profileRebuild;
+    };
+    window._forge.getLastRebuildPhases = function () {
+      return {
+        total_ms: local._lastRebuildTotal || null,
+        phases: local._lastRebuildPhases || null,
+      };
+    };
 
     window._forge = window._forge || {};
     window._forge.setClassFilter = function (modeId) {

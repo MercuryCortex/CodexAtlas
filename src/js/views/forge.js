@@ -2437,6 +2437,18 @@
     // the whole vault — `documents` at 700+ nodes is the busiest
     // and still finishes in <20 ms on modern hardware.
     function rebuildForMode(modeId, opts) {
+      // ─── Phase 24A-PROFILE (2026-05-26, removable) ────────────
+      // Per-phase timing. Gated by local._profileRebuild flag —
+      // zero overhead when off. Results land on
+      // local._lastRebuildPhases as [{name, ms}, ...].
+      // Toggle via window._forge.profileRebuild(true/false).
+      // Read via window._forge.getLastRebuildPhases().
+      const _PROFILE_ON = !!local._profileRebuild;
+      const _PROFILE = _PROFILE_ON ? [] : null;
+      let _phaseStart = _PROFILE_ON ? performance.now() : 0;
+      const _tick = _PROFILE_ON
+        ? (name) => { const now = performance.now(); _PROFILE.push({ name, ms: +(now - _phaseStart).toFixed(2) }); _phaseStart = now; }
+        : () => {};
       if (!modemod.isValidMode(modeId)) modeId = modemod.defaultMode();
       // Phase 21S (2026-05-22) — `opts.preserveLocks` skips the
       // cross-mode lock-clear. Used by the ux-mode (color/order)
@@ -2469,6 +2481,7 @@
       // local.hoverId = null is correct but doesn't address the
       // pending recompute the rAF still holds.
       cancelHoverCoalesce();
+      _tick('preamble');
 
       // Phase 24A v1 (2026-05-25 NIGHT): `modeNodes` and `modeEdges`
       // are `let` (not `const`) so the viewport-cull block below the
@@ -2477,8 +2490,11 @@
       // sizing (which uses degree-as-importance) stays stable across
       // pan/zoom — only the SET of nodes that get packed shrinks.
       let modeNodes = modemod.filterNodesByMode(modeId, allNodes, allEdges);
+      _tick('filterNodesByMode');
       let modeEdges = layout.filterEdgesByNodes(allEdges, modeNodes);
+      _tick('filterEdgesByNodes');
       const degree    = layout.computeDegree(modeNodes, modeEdges);
+      _tick('computeDegree');
       // Phase TL-2 Step 1 (2026-05-24) — layout-aware. local.layoutId
       // picks between the radial wheel and the horizontal timeline.
       // Default 'wheel' preserves existing behavior; setLayout('timeline')
@@ -2490,20 +2506,57 @@
       // Phase 21S (2026-05-22) — order + color from the active
       // ux-mode (radio selections in View settings; LS-persisted).
       const _layoutId = local.layoutId || 'wheel';
-      let lay;
-      if (_layoutId === 'timeline' && typeof layout.timelineLayout === 'function') {
-        lay = layout.timelineLayout(modeNodes, currentFamilyOrder(), {
-          colorOverride: currentColorOverride(),
+      // ─── Phase 24B v1 (2026-05-26) — layout-position cache ───
+      // The profile (commit TBD) showed `layout` is 60-90% of every
+      // rebuildForMode call. radialWedgeLayout is deterministic given
+      // (modeNodes-set, familyOrder, colorOverride, distribution,
+      // layoutId, reverseAge); cache by a key built from those and
+      // skip recompute on cache hit. Switching deities → themes →
+      // deities used to recompute deities layout (~80 ms); now it's
+      // a Map lookup (<1 ms).
+      //
+      // Cache lives on local._layoutCache: Map<keyStr, layResult>.
+      // Each `lay` object is structurally shared with the engine —
+      // we hand the SAME object back on hit (positions Map etc.).
+      // Mutations to lay.positions would corrupt the cache; the
+      // downstream pipeline (packNodes, packEdges, etc.) is read-only
+      // against lay.positions so this is safe today. If a future
+      // change mutates lay, switch to deep-clone on hit.
+      const _familyOrder = currentFamilyOrder();
+      const _colorOverride = currentColorOverride();
+      const _distribution = currentDistribution();
+      const _reverseAge = !!document.body.classList.contains('fv-reverse-age');
+      // Build a cheap-to-hash key. modeId + layoutId + a stable
+      // string for each input. familyOrder + colorOverride may be
+      // arrays/objects; JSON.stringify is fast enough at the sizes
+      // involved (~20 families × short strings).
+      const _layoutKey = modeId
+        + '|' + _layoutId
+        + '|' + JSON.stringify(_familyOrder)
+        + '|' + JSON.stringify(_colorOverride)
+        + '|' + JSON.stringify(_distribution)
+        + '|' + (_reverseAge ? '1' : '0');
+      if (!local._layoutCache) local._layoutCache = new Map();
+      let lay = local._layoutCache.get(_layoutKey);
+      const _layoutCacheHit = !!lay;
+      if (_layoutCacheHit) {
+        // Cache hit — skip the recompute.
+      } else if (_layoutId === 'timeline' && typeof layout.timelineLayout === 'function') {
+        lay = layout.timelineLayout(modeNodes, _familyOrder, {
+          colorOverride: _colorOverride,
           parkUndated:   true,
         });
+        local._layoutCache.set(_layoutKey, lay);
       } else {
-        lay = layout.radialWedgeLayout(modeNodes, currentFamilyOrder(), {
+        lay = layout.radialWedgeLayout(modeNodes, _familyOrder, {
           degree,
-          colorOverride: currentColorOverride(),
-          distribution:  currentDistribution(),
-          reverseAge:    !!document.body.classList.contains('fv-reverse-age'),
+          colorOverride: _colorOverride,
+          distribution:  _distribution,
+          reverseAge:    _reverseAge,
         });
+        local._layoutCache.set(_layoutKey, lay);
       }
+      _tick(_layoutCacheHit ? 'layout (CACHED)' : 'layout');
 
       // 2026-05-19 — pack-scale-fix. packNodes bakes the world
       // radius using `camScale` at pack time (the screen-px clamp
@@ -2572,6 +2625,7 @@
         // covers any non-fit packNodes call sites.
         local.packedAtScale = (camera && camera.state) ? camera.state.scale : 1;
       }
+      _tick('camera-fit');
       // 2026-05-19 — pan bounds. Allow the user to pan a half-
       // viewport-worth beyond each edge of the wheel so the
       // outermost nodes can be brought toward center, but stop
@@ -2625,8 +2679,10 @@
           modeEdges = layout.filterEdgesByNodes(allEdges, modeNodes);
         }
       }
+      _tick('viewport-cull');
 
       const nodePack  = graph.packNodes(modeNodes, lay.positions, degree, nodeOverridesFromParams());
+      _tick('packNodes');
       // N4 (2026-05-20) — pack-scale invariant: every site that
       // calls packNodes must immediately record the scale the pack
       // was made at. Saves the `||` fallback in camera.onChange
@@ -2638,7 +2694,9 @@
       // instead of bundling them all at the center.
       const radiiById = buildRadiiMap(nodePack);
       const edgePack  = graph.packEdges(modeEdges, lay.positions, Object.assign({}, edgeOverridesFromParams(), { nodeRadii: radiiById }));
+      _tick('packEdges');
       const adj       = graph.buildAdjacency(modeEdges);
+      _tick('buildAdjacency');
       // N6 (Phase 1B) — reuse the classifier built inside packNodes
       // instead of recomputing. Eliminates two redundant O(N log N)
       // sorts per mode rebuild and the drift risk if classifier
@@ -2670,6 +2728,7 @@
         if (hn.r > maxRadius) maxRadius = hn.r;
       }
       const hitGridNew = buildHitGrid(hitNodesNew, ext, maxRadius);
+      _tick('hit-grid');
 
       local.mode = {
         id:          modeId,
@@ -2726,6 +2785,7 @@
           }
         }
       } catch (e) { console.warn('[forge] timeline chrome mount failed', e); }
+      _tick('mode-state + timeline-chrome');
       // Phase 21O (2026-05-21) — keep the FORGE | <label> button
       // face + the open-menu active-row marker in sync with the
       // current mode. Safe no-op if the button isn't mounted yet.
@@ -2780,6 +2840,7 @@
       local.nodeTargets = new Float32Array(nodePack.instanceCount * 2);
       local.edgeStates  = new Float32Array(edgePack.instanceCount);
       local.edgeTargets = new Float32Array(edgePack.instanceCount);
+      _tick('fade-pipeline-replace');
 
       // Cross-mode hover/lock cleared — node ids don't map
       // between modes.
@@ -2821,6 +2882,7 @@
       // Phase 4B FX6 (2026-05-20) — clear the visibility tracker
       // alongside labelEls so syncLabels starts from a clean slate.
       if (local.visibleLabelEls) local.visibleLabelEls.clear();
+      _tick('label-DOM-clear');
 
       // 2026-05-20 — DOM glyph overlay removed. The 663-span
       // DOM layer was the perf cliff (syncGlyphPositions ran
@@ -2881,7 +2943,9 @@
             rOuter: lay.rOuter || 1,
           })
         : { hulls: [], center: { x: 0, y: 0 }, innerRadius: 0, outerRadius: 0, dividers: [] };
+      _tick('hull-data');
       rebuildHullElements();
+      _tick('rebuildHullElements');
 
       // 2026-05-20 — pre-create label DOM so a first hover doesn't
       // pay the appendChild + reflow cost mid-interaction.
@@ -2921,6 +2985,7 @@
         local.labelEls.set(id, el);
       }
       labelsOverlay.appendChild(labelFrag);
+      _tick('label-pre-create');
 
       // Status strip counters + dropdown selection sync.
       const nEl = document.getElementById('forge-status-nodes');
@@ -2937,11 +3002,13 @@
       // Now a single typed array → one GPU buffer write → drawn
       // as instanced quads sampling the atlas.
       rebuildGlyphInstanceBuffer();
+      _tick('glyph-buffer');
       // Phase 5B M-F5 (2026-05-20) — eager search index for the
       // new mode. O(N) one-shot; findBestMatch then walks this
       // instead of re-lowercasing strings + looking up adjacency
       // on every call.
       buildSearchIndex();
+      _tick('search-index');
       // Phase 5B M-F3 (2026-05-20) — re-derive scrubber bounds for
       // the new mode. local.scrubber.refreshBounds preserves the
       // user's in/out/center when they fit the new lo/hi; clamps
@@ -2952,6 +3019,11 @@
       // Camera fit already done above (before packNodes) so the
       // pack ran at the correct scale. Just draw.
       drawFrame();
+      _tick('drawFrame');
+      if (_PROFILE_ON) {
+        local._lastRebuildPhases = _PROFILE;
+        local._lastRebuildTotal = _PROFILE.reduce((s, p) => s + p.ms, 0);
+      }
     }
 
     // ════════════════════════════════════════════════════════════
