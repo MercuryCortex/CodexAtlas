@@ -1160,7 +1160,9 @@
     const card = document.createElement('div');
     card.className   = 'forge-hover-card';
     card.id          = 'forge-hover-card';
-    card.style.display = 'none';
+    // Phase 24-PRIMITIVE-FIX (2026-05-26) — opacity-fade visibility.
+    // Default state (no is-shown class) = CSS opacity:0. Show toggles
+    // the class for a smooth 140ms fade.
     card.innerHTML = ''
       + '<div class="forge-hover-card-thumb">'
       +   '<img id="forge-hover-card-img" alt="" />'
@@ -1250,7 +1252,9 @@
     function hide() {
       if (showId) { clearTimeout(showId); showId = 0; }
       if (posRafId) { cancelAnimationFrame(posRafId); posRafId = 0; }
-      card.style.display = 'none';
+      // Phase 24-PRIMITIVE-FIX — opacity-fade out, no display change
+      // (CSS .is-shown class flip triggers the 140ms fade).
+      card.classList.remove('is-shown');
     }
 
     function measure() {
@@ -1360,7 +1364,8 @@
         };
         img.src = entry.src;
       }
-      card.style.display = '';
+      // Phase 24-PRIMITIVE-FIX — opacity-fade in via CSS class.
+      card.classList.add('is-shown');
       measure();
       pickAnchor();
       applyTransform();
@@ -1369,7 +1374,8 @@
     canvas.addEventListener('mousemove', (e) => {
       lastClientX = e.clientX;
       lastClientY = e.clientY;
-      if (card.style.display !== 'none') schedulePosition();
+      // Phase 24-PRIMITIVE-FIX — check class instead of display style.
+      if (card.classList.contains('is-shown')) schedulePosition();
     });
 
     window.addEventListener('resize', hide);
