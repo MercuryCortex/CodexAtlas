@@ -10753,12 +10753,28 @@ updateResetButton();
   // primary product surface; pantheon stays accessible via
   // ?view=pantheon for the legacy users / archive lookups.
   let v = 'forge';
+  let explicit = null;
   try {
     const sp = new URLSearchParams(location.search);
-    const q = sp.get('view');
-    if (q && VIEWS && Object.prototype.hasOwnProperty.call(VIEWS, q)) v = q;
+    explicit = sp.get('view');
+    if (explicit && VIEWS && Object.prototype.hasOwnProperty.call(VIEWS, explicit)) v = explicit;
   } catch (e) {}
   setView(v);
+  // 2026-05-27 NIGHT — keep the root URL BARE on cold-boot to the default
+  // view. setView's hash router pushed `?view=forge` even when the user
+  // typed plain `http://localhost:8742/` — John reported "can't open the
+  // bare URL, it adds ?view=forge automatically." Fix: if there was no
+  // explicit `?view=` in the URL at boot, strip whatever setView added.
+  // Replaces (not pushes) so the back-stack stays clean too.
+  if (!explicit) {
+    try {
+      const cleanSp = new URLSearchParams(location.search);
+      cleanSp.delete('view');
+      const qs = cleanSp.toString();
+      const newUrl = location.pathname + (qs ? '?' + qs : '') + location.hash;
+      history.replaceState({}, '', newUrl);
+    } catch (e) { /* not fatal — URL just has the extra param */ }
+  }
 })();
 // popstate — back/forward across views. The view module's own popstate
 // listener handles intra-view state (mode/filter/focus). Here we only
