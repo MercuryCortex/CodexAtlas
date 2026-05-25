@@ -2470,8 +2470,14 @@
       // pending recompute the rAF still holds.
       cancelHoverCoalesce();
 
-      const modeNodes = modemod.filterNodesByMode(modeId, allNodes, allEdges);
-      const modeEdges = layout.filterEdgesByNodes(allEdges, modeNodes);
+      // Phase 24A v1 (2026-05-25 NIGHT): `modeNodes` and `modeEdges`
+      // are `let` (not `const`) so the viewport-cull block below the
+      // camera-fit can reassign them to the in-view subset. `degree`
+      // stays computed against the full type-matching set so visual
+      // sizing (which uses degree-as-importance) stays stable across
+      // pan/zoom — only the SET of nodes that get packed shrinks.
+      let modeNodes = modemod.filterNodesByMode(modeId, allNodes, allEdges);
+      let modeEdges = layout.filterEdgesByNodes(allEdges, modeNodes);
       const degree    = layout.computeDegree(modeNodes, modeEdges);
       // Phase TL-2 Step 1 (2026-05-24) — layout-aware. local.layoutId
       // picks between the radial wheel and the horizontal timeline.
@@ -2578,6 +2584,47 @@
       // read; the actual setPanBounds call lives inside
       // applyZoomFloor. Below we kick the first computation
       // right after rebuildForMode populates local.mode.
+
+      // ─── Phase 24A v1 (2026-05-25 NIGHT) — viewport cull ────────
+      // Camera is now fit. Before we pack nodes + edges + build hit
+      // grid, reduce the active set to nodes whose layout position
+      // is inside the viewport (+ margin). Vault stays loaded; what
+      // shrinks is the set the downstream pipeline operates on.
+      //
+      // This bounds rebuildForMode cost to active-in-viewport, not
+      // active-in-mode. On a 50k-node vault zoomed to default scan
+      // view, the difference is ~7s freeze → ~30ms.
+      //
+      // V1 limitation: only fires on rebuildForMode (mode/layout
+      // switch). Pan/zoom does NOT re-cull yet. V2 will extract the
+      // post-layout pipeline into a callable function and add a
+      // debounced camera.onChange hook. For now, mode switches at
+      // arbitrary zoom levels get the active-set bound.
+      //
+      // Toggle off via window._forge.setViewportFilter(false) to A/B.
+      if (window.AtlasViewportFilter && local._viewportFilterEnabled !== false) {
+        const vfOpts = local._viewportFilterOpts || {};
+        const margin = (vfOpts.margin != null) ? vfOpts.margin : 1.5;
+        const cap = (vfOpts.capActive != null) ? vfOpts.capActive : 5000;
+        const canvasEl = document.querySelector('.forge-pane canvas');
+        const bbox = window.AtlasViewportFilter.viewportWorldBbox(camera, canvasEl, margin);
+        const cullResult = window.AtlasViewportFilter.cull(modeNodes, lay.positions, bbox, cap);
+        local._lastViewportCull = {
+          ms: cullResult.ms,
+          total: cullResult.total,
+          kept: cullResult.kept,
+          truncated: cullResult.truncated,
+          bbox,
+          margin,
+          cap,
+        };
+        // Only apply if cull kept SOMETHING (defensive — degenerate
+        // bbox or early-mount pre-fit could otherwise zero the set).
+        if (cullResult.kept > 0) {
+          modeNodes = cullResult.nodes;
+          modeEdges = layout.filterEdgesByNodes(allEdges, modeNodes);
+        }
+      }
 
       const nodePack  = graph.packNodes(modeNodes, lay.positions, degree, nodeOverridesFromParams());
       // N4 (2026-05-20) — pack-scale invariant: every site that

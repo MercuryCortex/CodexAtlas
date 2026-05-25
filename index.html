@@ -307,8 +307,13 @@
      replaces ten, eliminating the per-module boot cost. Source-of-truth
      is the individual files in src/js/forge/; re-run the build script
      after editing any of them. -->
-<script src="src/js/forge/_bundle.js?v=20260525-phase23-1-bundle-modemod-fix"></script>
-<script src="src/js/views/forge.js?v=20260525-phase23-1-bundle-modemod-fix"></script>
+<!-- Phase 24A v1 (2026-05-25 NIGHT) — viewport filter primitive
+     (pure functions: viewportWorldBbox + cull). Must load BEFORE
+     forge.js so window.AtlasViewportFilter exists when
+     rebuildForMode tries to cull the active set. -->
+<script src="src/js/engine/graph/viewport-filter.js?v=20260525-phase24a-v1"></script>
+<script src="src/js/forge/_bundle.js?v=20260525-phase24a-v1"></script>
+<script src="src/js/views/forge.js?v=20260525-phase24a-v1"></script>
 
 <script src="src/js/graph/theme.js?v=20260517-handoff"></script>
 <script src="src/js/graph/layout.js?v=20260517-handoff"></script>

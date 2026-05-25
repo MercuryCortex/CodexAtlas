@@ -15,6 +15,35 @@
 // ============================================================
 (function () {
   function attach({ applyZoomFloor, camera, local, rebuildForMode, saveRuntimeState, syncModeButtonLabel }) {
+    // Phase 24A v1 (2026-05-25 NIGHT) — viewport-filter toggle.
+    // setViewportFilter(true) is the default at mount (handled by
+    // forge.js reading local._viewportFilterEnabled !== false).
+    // Pass {margin, capActive} to tune; both have safe defaults.
+    window._forge = window._forge || {};
+    window._forge.setViewportFilter = function (enabled, opts) {
+      local._viewportFilterEnabled = !!enabled;
+      if (opts && typeof opts === 'object') {
+        local._viewportFilterOpts = {
+          margin:    (opts.margin    != null) ? +opts.margin    : 1.5,
+          capActive: (opts.capActive != null) ? +opts.capActive : 5000,
+        };
+      }
+      // Trigger a rebuild so the change takes effect immediately
+      // at the current mode + camera state.
+      try {
+        const curMode = (local.mode && local.mode.id) || 'deities';
+        rebuildForMode(curMode, { preserveLocks: true, preserveZoom: true });
+      } catch (e) { /* best-effort */ }
+      return true;
+    };
+    window._forge.getViewportFilterState = function () {
+      return {
+        enabled: local._viewportFilterEnabled !== false,
+        opts: local._viewportFilterOpts || { margin: 1.5, capActive: 5000 },
+        lastCull: local._lastViewportCull || null,
+      };
+    };
+
     window._forge = window._forge || {};
     window._forge.setClassFilter = function (modeId) {
       if (local.destroyed) return false;
