@@ -4,17 +4,12 @@
 # To accept current state as the new floor, run:
 #     python3 linkcheck.py --write-baseline
 # See AUDIT/2026-05-25-tyrant-remediation-plan.md Phase 2.
-# Captured 511 targets on first write.
+# Captured 501 targets on first write.
 
 ...
 08_quran-scripture-wiring-brief.md
 ARTHURIAN-CYCLE
-Marduk
-Nun-primordial-waters
-Odin
 P5-002-heart-sutra
-Vishnu
-Zeus
 _phase-4-late-antiquity
 abaye
 abjesus
@@ -25,7 +20,6 @@ adonis-greek
 adonis-hellenistic
 ahriman
 al-aql-al-awwal
-al-bukhari
 al-kirmani
 al-muizz-fatimid
 al-nafs-al-kulliyyah
@@ -36,7 +30,6 @@ ammi
 ammon
 anagarika-dharmapala
 anahita-zoroastrian
-anaxagoras
 ancestral-beings
 ancestral-pact
 ancient-of-days
@@ -501,14 +494,11 @@ vasudeva-vrishni
 venus-cycle
 verethraghna
 vishtaspa
-vivekananda
-walter-burkert
 was-sceptre
 watchers-fallen-angels
 wei-boyang
 wikilinks
 wisdom-literature
-xenophon
 yam-canaanite
 yamuna
 yang-xi-shangqing

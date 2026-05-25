@@ -57,7 +57,7 @@ Per John 2026-05-25 *"preserve all work"*:
 
 - 3 of the audit's 8 named "missing" targets (`sheikh-farid`, `ammit-devourer`, `tradition-afro-diasporic`) **already exist as canonical nodes**.
 - 5 others (`muhammad`, `ra-egyptian`, `guru-arjan-dev-ji`, `quran`, `popol-vuh`) are referenced **ZERO times** as `[[wikilinks]]` in the live vault — their counts came from the pre-Phase-2 7-type lint scan.
-- **The real top dead-link cluster is CASE-MISMATCH**: `[[Marduk]]`, `[[Odin]]`, `[[Vishnu]]` etc. fail to resolve while lowercase canonical slugs exist. Status-archive `2026-05-pre-W3.md` documents a prior 2026-05-16 case-fix sweep; the convention has drifted since.
+- **The real top dead-link cluster is CASE-MISMATCH**: `[Marduk]`, `[Odin]`, `[Vishnu]` etc. fail to resolve while lowercase canonical slugs exist. Status-archive `2026-05-pre-W3.md` documents a prior 2026-05-16 case-fix sweep; the convention has drifted since. *(Note: this paragraph uses single brackets to avoid linkcheck self-recursion — the lowercase canonical forms `marduk`/`odin`/`vishnu` all exist as real nodes.)*
 
 **If you read the prior HANDOFF's "Wave 1 stubs to write" table — IGNORE IT.** That table was based on the audit's misleading framing. The actual Wave 1 / 2 / 3a work was case-fold and slug-drift fixes, not stubs.
 

@@ -129,7 +129,7 @@ This is the vault's most securely documented example of a mythological belief ar
 
 ## The Oracle Oak at Dodona
 
-Dodona (in northwestern Greece) was the most ancient oracle in the Greek world — Herodotus (2.52) says it predated Delphi and was established by Egyptian priests, though this is disputed. The oracle of [[Zeus]] operated through the **rustling of the sacred oak's leaves**: the priestesses (*Peleiades*, "doves") interpreted the sound of the wind in the leaves as Zeus's voice. Homer's *Iliad* (16.233) invokes "Zeus of Dodona, Pelasgian Zeus, you who dwell far away and rule over Dodona of the harsh winters."
+Dodona (in northwestern Greece) was the most ancient oracle in the Greek world — Herodotus (2.52) says it predated Delphi and was established by Egyptian priests, though this is disputed. The oracle of [[zeus]] operated through the **rustling of the sacred oak's leaves**: the priestesses (*Peleiades*, "doves") interpreted the sound of the wind in the leaves as Zeus's voice. Homer's *Iliad* (16.233) invokes "Zeus of Dodona, Pelasgian Zeus, you who dwell far away and rule over Dodona of the harsh winters."
 
 The oak's rustling voice = the storm god's speech = the medium of divine revelation. The oracle tree is the living axis mundi — the point where the sky speaks through the earth's vegetation. See [[tradition-greek-religion]].
 

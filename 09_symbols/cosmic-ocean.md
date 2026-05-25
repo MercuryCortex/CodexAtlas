@@ -124,7 +124,7 @@ The primordial waters concept has three consistent features across traditions:
 
 ## The Egyptian Nun
 
-**[[Nun-primordial-waters]]** is the Egyptian instantiation of the cosmic ocean — the primordial state before the first moment of creation. From Nun, the creator god [[atum]] arose as the primordial hill (the **[[ben-ben]]**): the first point of distinction in an undifferentiated infinite. The Pyramid Texts describe the creator as "he who came forth from Nun when there was as yet no sky, when there was as yet no earth."
+**[[nun-primordial-waters]]** is the Egyptian instantiation of the cosmic ocean — the primordial state before the first moment of creation. From Nun, the creator god [[atum]] arose as the primordial hill (the **[[ben-ben]]**): the first point of distinction in an undifferentiated infinite. The Pyramid Texts describe the creator as "he who came forth from Nun when there was as yet no sky, when there was as yet no earth."
 
 The Nun is simultaneously:
 - The cosmological substrate before creation
