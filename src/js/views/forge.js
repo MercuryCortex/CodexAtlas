@@ -2366,13 +2366,49 @@
           if (ratio < driftLo || ratio > driftHi) {
             rebakeNodes();
             updateZoomGizmo();
+            scheduleTimelineCullRefresh();
             return;
           }
         }
         drawFrame();
         scheduleIdleLabelSync();
         updateZoomGizmo();
+        scheduleTimelineCullRefresh();
       });
+
+      // 2026-05-26 — TIMELINE-ONLY viewport-cull refresh, debounced.
+      // Background: Phase 24A v1's viewport cull only ran inside
+      // rebuildForMode. If the user changed density at one zoom
+      // level (which re-culls at THAT viewport, often dropping half
+      // the nodes) and then zoomed out, the cull stayed frozen
+      // at the smaller viewport — nodes that should now be visible
+      // stayed culled until another rebuildForMode fired. Felt like
+      // "nodes disappear after zoom-back".
+      //
+      // Earlier attempt (commit 6e79085) hooked the refresh into
+      // every camera-drift cross via rAF — chart felt LOCKED because
+      // the relayout pipeline ran continuously during the gesture.
+      //
+      // This version uses setTimeout debounce: ONE relayout fires
+      // ~280ms AFTER the camera settles, not during the gesture.
+      // Strictly gated on layoutId === 'timeline' so the wheel/radial
+      // chart is never touched. Per John: "doesnt need to be
+      // imediate theres brething room if it takes a bit but dont
+      // break the flow".
+      function scheduleTimelineCullRefresh() {
+        if (local.layoutId !== 'timeline') return;
+        if (local._cullRefreshTimer) clearTimeout(local._cullRefreshTimer);
+        local._cullRefreshTimer = setTimeout(function () {
+          local._cullRefreshTimer = 0;
+          if (local.destroyed) return;
+          if (local.layoutId !== 'timeline') return;
+          try {
+            if (window._forge && typeof window._forge.relayout === 'function') {
+              window._forge.relayout();
+            }
+          } catch (_) {}
+        }, 280);
+      }
 
       // Phase 6d — zoom gizmo wire-up. Shows current camera
       // scale as a %, click resets to the fit-the-wheel scale.
