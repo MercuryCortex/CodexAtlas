@@ -3890,13 +3890,43 @@
       if (!vp.w || !vp.h) return;
       const data = (local.mode && local.mode.hullData);
       if (!data || !data.hulls || !data.hulls.length) return;
+      // SAFARI-WORKAROUND (2026-05-27): camera-idle skip.
+      // drawFrame calls syncHulls every animation frame even when
+      // ONLY node states change (hover-tween). The previous
+      // _lastD/X/Y attr-write cache saved the setAttribute cost but
+      // not the geometry math (worldToScreen + hypot + arc path
+      // construction for 36 hulls + 36 dividers + 3 rings every
+      // frame). Now we cache (camera state + body class + divider
+      // mode + hull data + viewport) and return immediately when
+      // unchanged. Idle hover/anim frames drop from ~5-15ms in
+      // Safari to ~0.05ms here.
+      const _hcs = camera.state.scale;
+      const _hcx = camera.state.centerX;
+      const _hcy = camera.state.centerY;
+      const _hbc = document.body.className;
+      const _hdm = local._dividerMode || 'short';
+      if (local._hullsIdleCamS === _hcs
+          && local._hullsIdleCamCx === _hcx
+          && local._hullsIdleCamCy === _hcy
+          && local._hullsIdleBody === _hbc
+          && local._hullsIdleDivM === _hdm
+          && local._hullsIdleData === data
+          && local._hullsIdleW === vp.w
+          && local._hullsIdleH === vp.h) {
+        return; // SVG attrs from last call are still correct
+      }
+      local._hullsIdleCamS = _hcs;
+      local._hullsIdleCamCx = _hcx;
+      local._hullsIdleCamCy = _hcy;
+      local._hullsIdleBody = _hbc;
+      local._hullsIdleDivM = _hdm;
+      local._hullsIdleData = data;
+      local._hullsIdleW = vp.w;
+      local._hullsIdleH = vp.h;
+
       // SAFARI-WORKAROUND (2026-05-26): viewBox/width/height only change
       // on viewport RESIZE, not on camera pan/zoom. Writing them every
-      // frame forces Safari to re-validate the SVG root layer each tick
-      // (Safari's SVG compositor is ~3× slower than Blink's). Cache and
-      // skip the writes when unchanged. Blink doesn't need this but it
-      // also doesn't suffer from it. See memory:
-      // feedback_safari_is_the_truth_2026-05-26.
+      // frame forces Safari to re-validate the SVG root layer each tick.
       if (local._hullsLastVpW !== vp.w || local._hullsLastVpH !== vp.h) {
         hullsOverlay.setAttribute('viewBox', '0 0 ' + vp.w + ' ' + vp.h);
         hullsOverlay.setAttribute('width',  vp.w);
