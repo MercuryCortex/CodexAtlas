@@ -913,48 +913,10 @@
     });
   }
 
-  // SAFARI-WORKAROUND (2026-05-27): module-scope cache for the
-  // camera-idle skip in refresh(). Same pattern that cracked the
-  // Forge view's syncHulls and renderLabelsCanvas: if the camera +
-  // style state + viewport haven't changed since the last call,
-  // skip the entire refresh — the SVG is already in the right
-  // state. refresh() rebuilds ALL bands + grid + ticks every call
-  // (wipe-and-recreate of ~100 SVG elements). At 60fps during pan
-  // that was the Safari cliff for timeline view; the skip carries
-  // most hover-tween + idle frames at ~0.05ms.
-  let _tlIdleCamS = null, _tlIdleCamCx = null, _tlIdleCamCy = null;
-  let _tlIdleVpW = 0, _tlIdleVpH = 0;
-  let _tlIdleBandStyle = null, _tlIdleDensityLocked = null, _tlIdleMode = null;
-
   function refresh() {
     if (!mounted || !svgRoot || !camera || !xRange) return;
     const vp = { w: hostEl.clientWidth, h: hostEl.clientHeight };
     if (!vp.w || !vp.h) return;
-
-    // Camera-idle skip — see comment block above.
-    const _tcs = camera.state.scale;
-    const _tcx = camera.state.centerX;
-    const _tcy = camera.state.centerY;
-    // _bandStyle is mutable; stringify a stable signature.
-    const _tbs = _bandStyle ? JSON.stringify(_bandStyle) : '';
-    if (_tlIdleCamS === _tcs
-        && _tlIdleCamCx === _tcx
-        && _tlIdleCamCy === _tcy
-        && _tlIdleVpW === vp.w
-        && _tlIdleVpH === vp.h
-        && _tlIdleBandStyle === _tbs
-        && _tlIdleDensityLocked === _zoomDensityLocked
-        && _tlIdleMode === mode) {
-      return; // SVG state still correct — skip the rebuild
-    }
-    _tlIdleCamS = _tcs;
-    _tlIdleCamCx = _tcx;
-    _tlIdleCamCy = _tcy;
-    _tlIdleVpW = vp.w;
-    _tlIdleVpH = vp.h;
-    _tlIdleBandStyle = _tbs;
-    _tlIdleDensityLocked = _zoomDensityLocked;
-    _tlIdleMode = mode;
 
     // Phase 22-AG (2026-05-24) — zoom↔density LOCK propagation.
     // If the user toggled LOCK on, every camera tick re-applies
