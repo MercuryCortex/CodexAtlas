@@ -8,7 +8,7 @@
 
 | Handle | Scope | Owned files (explicit) | Started | Status |
 |---|---|---|---|---|
-| watcher-claude-phase-24-legacy-v1 | Phase 24 — Legacy/Archive viewer V1 per `AUDIT/2026-05-25-phase-24-legacy-viewer-spec.md`. New side-nav pill → list of closed specs + closed audits + archived STATUS + archived HANDOFFs (4 categories, read-only browse, click → markdown render in side panel). NOT historical site snapshots (V1.1). Reuses canonical primitives per SEVERITY DOGMA §5.7. | `src/js/views/legacy.js` (new), `src/js/app.js`, `index.html`, `src/styles/app.css`, `scripts/build_legacy_index.py` (new), `src/data/legacy-index.json` (new) | 2026-05-25 LATE | started |
+| watcher-claude-phase-24-legacy-v1 | Phase 24 — Legacy/Archive viewer V1 per `AUDIT/2026-05-25-phase-24-legacy-viewer-spec.md`. New side-nav pill → list of closed specs + closed audits + archived STATUS + archived HANDOFFs (4 categories, read-only browse, click → markdown render in side panel). NOT historical site snapshots (V1.1). Reuses canonical primitives per SEVERITY DOGMA §5.7. **Preview-verified clean** (Claude_Preview, port 8742): 68 entries indexed, all 4 category groups render, click→markdown render works on Foundation Epilogue (table + headers + inline code all clean). Boot-race patched (legacy.js IIFE checks for stale fallback on init and re-mounts). Awaiting John's eyeball. | `src/js/views/legacy.js` (new), `src/js/app.js`, `index.html`, `src/styles/app.css`, `scripts/build_legacy_index.py` (new), `src/data/legacy-index.json` (new) | 2026-05-25 LATE | awaiting John verify |
 
 _Slot is taken._
 
