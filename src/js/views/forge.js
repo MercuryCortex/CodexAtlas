@@ -608,7 +608,7 @@
     // compositors (SVG hulls + timeline chrome) need canvas
     // treatment first — Phase 25b. Until then, 100 is the safe cap.
     label_idle_max:        100,    // canvas is cheaper than DOM but NOT free.
-    label_size:            12,
+    label_size:            14,    // bumped 12 → 14 for readability (2026-05-27)
     label_cap:             120,
     label_collision_pad:   6,
 
@@ -4493,7 +4493,11 @@
       const camScale = camera.state.scale;
       const vMargin = 100;
       // Style setup ONCE per frame (not per label).
-      ctx.font = '500 11px Inter, system-ui, -apple-system, sans-serif';
+      // Font size read from params (label_size, default 14) so the
+      // canvas size matches the AABB collision math in label.js +
+      // any future FX-panel tuning slider stays the single source.
+      const _labelSize = (local.params && local.params.label_size) || 14;
+      ctx.font = '500 ' + _labelSize + 'px Inter, system-ui, -apple-system, sans-serif';
       ctx.textAlign = 'center';
       ctx.textBaseline = 'bottom';
       ctx.lineJoin = 'round';
