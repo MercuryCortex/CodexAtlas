@@ -20,9 +20,11 @@ syncretic-edges:
   - target: "mithras-roman"
     type: "ancient-identification"
     source: "Pervasive dedicatory inscriptions DEO SOLI INVICTO MITHRAE ('to the unconquered sun-god Mithras') from 2nd–3rd c. CE military and civilian Mithraic monuments"
+    source-tier: T1
   - target: "apollo"
     type: "ancient-identification"
     source: "Hijmans 2009; from Augustus's Apollo-patronage through the Tetrarchic-period imperial-Apollo-solar imagery (Constantine's 310 Grand vision of Apollo-Sol)"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Sol: The Sun in the Art and Religions of Rome (2 vols.)"

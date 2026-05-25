@@ -25,22 +25,27 @@ cross-tradition-edges:
   - target: "saint-denis-abbey-paris"
     type: "stylistic-descendant"
     source: "Frankl 1962; Bony 1983"
+    source-tier: T1
     notes: "The Saint-Denis ambulatory + chevet (Abbot Suger, completed 1144) is the architectural birth-moment of Gothic style; Chartres (1194–1220) is the first **mature** Gothic cathedral and the canonical model for all later Gothic. The transmission chain Saint-Denis → Chartres → Reims → Amiens → Beauvais is the cleanest documented architectural transmission line in medieval Europe."
   - target: "notre-dame-de-paris"
     type: "stylistic-cousin"
     source: "Bony 1983; Murray 1989"
+    source-tier: T1
     notes: "Both are early French High Gothic cathedrals (Chartres begun 1194; Notre-Dame de Paris begun 1163 but its early-Gothic interior was reworked in the High Gothic vocabulary in the early 13th c.). Chartres' three-storey elevation (arcade + triforium + clerestory, omitting the *galleria*-storey of Notre-Dame Paris) is the defining innovation."
   - target: "cologne-cathedral"
     type: "stylistic-descendant"
     source: "Frankl 1962; Wolff 1990"
+    source-tier: T1
     notes: "Cologne (begun 1248) deploys the French High Gothic vocabulary that Chartres canonised; the design is by Master Gerhard, who travelled and trained at Amiens (which itself descended directly from Chartres)."
   - target: "salisbury-cathedral"
     type: "stylistic-cousin"
     source: "Bony 1983"
+    source-tier: T1
     notes: "English Gothic adaptation (Salisbury, ~1220–1258) of the French High Gothic vocabulary canonised by Chartres."
   - target: "theme-marian-cult"
     type: "exemplifies"
     source: "Spitzer 1994; Williamson 1990"
+    source-tier: T1
     notes: "Chartres is the most architecturally elaborate Marian pilgrimage cathedral in medieval France, centred on the Veil of the Virgin relic. The 175 surviving stained-glass windows depict an extensive Marian narrative programme."
 status: "metadata"
 refs:

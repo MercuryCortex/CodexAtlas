@@ -20,18 +20,23 @@ syncretic-edges:
   - target: "ein-sof"
     type: "scholarly-parallel"
     source: "Scholarly parallel — Kabbalistic Ein Sof (Without End) is the infinite, boundless divine ground from which all emanates; structurally identical to Aditi as the unconditioned Infinite that generates the Adityas (divine emanations). Independent theological convergence."
+    source-tier: T1
   - target: "the-one-plotinus"
     type: "scholarly-parallel"
     source: "Scholarly parallel — Plotinus's The One is beyond all predication, the unconditioned source from which Nous and Soul emanate; Aditi as the Infinite pre-conditions the Adityas in an analogous emanatory logic. Independent Neoplatonic convergence."
+    source-tier: T1
   - target: "nyx-primordial"
     type: "scholarly-parallel"
     source: "Scholarly parallel — Greek primordial Night (Nyx) as mother of all beings; Aditi as primordial mother of all gods; parallel divine-meta-mother roles. Independent Greek convergence."
+    source-tier: T1
   - target: "tiamat"
     type: "scholarly-parallel"
     source: "Scholarly parallel — Babylonian Tiamat as primordial mother from whom the first gods emerge; Aditi as divine mother of the Adityas; parallel cosmogonic-mother roles. No transmission."
+    source-tier: T1
   - target: "gaia"
     type: "scholarly-parallel"
     source: "Scholarly parallel — Gaia as mother of Titans and Olympians (divine meta-mother); Aditi as mother of all Adityas. Parallel function; PIE relationship is to Pṛthivī, not Aditi directly."
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Vedic Mythology"

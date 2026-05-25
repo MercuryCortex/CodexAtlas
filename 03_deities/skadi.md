@@ -18,6 +18,7 @@ syncretic-edges:
   - target: "[[artemis]]"
     type: "scholarly-parallel"
     source: "Bow-hunting wilderness goddess; the *huntress of the cold uplands* type"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Norse Mythology"

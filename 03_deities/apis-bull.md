@@ -20,12 +20,15 @@ syncretic-edges:
   - target: "osiris"
     type: "ancient-identification"
     source: "Each Apis bull at death was merged with Osiris and worshipped as Osor-Hapi (Osiris-Apis); attested in the Serapeum at Saqqara from at least the New Kingdom"
+    source-tier: T1
   - target: "serapis"
     type: "ancient-identification"
     source: "Under Ptolemy I Soter (~-305) the Memphite Osor-Hapi was Hellenized into [[serapis]] as the syncretic state-cult deity of Ptolemaic Egypt; the etymology Serapis < Wsr-Ḥp / Oserapis is uncontested"
+    source-tier: T1
   - target: "ptah"
     type: "ancient-identification"
     source: "The living Apis bull was the *bꜢ* (living manifestation) of Ptah, the Memphite creator-god"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Complete Gods and Goddesses of Ancient Egypt"

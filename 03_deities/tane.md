@@ -19,17 +19,21 @@ syncretic-edges:
   - target: "kane-hawaiian"
     type: "ancient-identification"
     source: "Best, *Maori Religion and Mythology* (1924); Beckwith, *Hawaiian Mythology* (1940) — Maori Tāne and Hawaiian Kāne are linguistic-and-functional cognates of the same Proto-Polynesian deity"
+    source-tier: T1
     notes: "Proto-Polynesian deity-cognate (Tane/Kane same proto-form)"
   - target: "cernunnos"
     type: "scholarly-parallel"
     source: "Best 1924; Eliade 1958 — Celtic Cernunnos as horned forest-god; Tāne as Maori forest-god"
+    source-tier: T1
     notes: "Forest-god cross-cultural archetype"
   - target: "pan-greek"
     type: "scholarly-parallel"
     source: "Best 1924; Eliade 1958 — Greek Pan as forest-and-wilderness god"
+    source-tier: T1
   - target: "shu"
     type: "scholarly-parallel"
     source: "Best 1924; Wilkinson 2003 — Egyptian Shu as the air-god who separates earth (Geb) from sky (Nut); Tāne is the Maori sky-earth-separator who pushes Ranginui from Papatuanuku. The cosmogonic-separator function is structurally identical"
+    source-tier: T1
     notes: "MASSIVE WIN: cosmic-separator-of-sky-and-earth convergence Egyptian-Maori (Shu/Tane separating Nut-Geb / Ranginui-Papatuanuku)"
 status: "metadata"
 refs:

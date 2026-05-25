@@ -20,6 +20,7 @@ syncretic-edges:
   - target: "nanna-sin"
     type: "scholarly-parallel"
     source: "Robin 2012 — South-Arabian moon-deity-supreme pattern is structurally parallel to but historically distinct from Mesopotamian Nanna/Sin"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Arabia and the Arabs from the Bronze Age to the Coming of Islam"

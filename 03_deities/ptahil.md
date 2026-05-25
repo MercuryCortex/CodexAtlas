@@ -17,9 +17,11 @@ syncretic-edges:
   - target: "demiurge-gnostic"
     type: "scholarly-parallel"
     source: "Buckley 2002"
+    source-tier: T1
   - target: "ptah-egyptian"
     type: "scholarly-parallel"
     source: "Name almost certainly derives from Egyptian Ptah + Aramaic -il; degree of theological continuity disputed"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Mandaeans: The Last Gnostics"

@@ -20,6 +20,7 @@ syncretic-edges:
   - target: "[[ra]]"
     type: "ancient-identification"
     source: "Pyramid Texts already attest the composite Ra-Horakhty ('Ra-Horus-of-the-Horizon'); two distinct Horus traditions (Horus the elder sky-god and Horus son of Isis) merge over time"
+    source-tier: T1
 status: "full"
 refs:
   - title: "The Followers of Horus"

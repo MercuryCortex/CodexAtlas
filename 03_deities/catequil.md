@@ -20,6 +20,7 @@ syncretic-edges:
   - target: "[[illapa]]"
     type: "ancient-identification"
     source: "Topic, *Huamachuco Archaeological Project* (1992); MacCormack, *Religion in the Andes* (1991) — the Conchucos pre-Inca Catequil cult was the most prestigious provincial oracle-shrine of the Inca empire; Inca Atahualpa famously destroyed the Catequil shrine in 1532 in retribution for an unfavourable oracle, and was killed by the Spanish later the same year — a coincidence the Andean tradition retrospectively read as Catequil's revenge"
+    source-tier: T1
     notes: "Catequil and Illapa converge functionally (both thunder-and-lightning) but remained nominally distinct; the Inca state administered both"
 status: "metadata"
 refs:

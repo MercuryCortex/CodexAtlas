@@ -17,12 +17,15 @@ syncretic-edges:
   - target: "[[purusha]]"
     type: "scholarly-parallel"
     source: "Cosmic-body anthropogony — universe formed from the dismembered primordial body (Bodde 1961, *Myths of Ancient China*; the Pangu corpse → cosmos parallel to Rig Veda 10.90 Puruṣasūkta)"
+    source-tier: T1
   - target: "[[tiamat]]"
     type: "scholarly-parallel"
     source: "Enuma Elish IV — Marduk splits Tiamat's body into heaven and earth; structural parallel"
+    source-tier: T1
   - target: "[[ymir]]"
     type: "scholarly-parallel"
     source: "Norse: Odin and brothers form the cosmos from Ymir's body (Prose Edda Gylfaginning 8); Indo-European cosmic-giant cognate to Puruṣa per Lincoln 1986 *Myth, Cosmos, and Society*"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Myths of Ancient China"

@@ -20,6 +20,7 @@ syncretic-edges:
   - target: "[[laozi]] (the philosophical-Daoism founder; the Eight Immortals are within the broader Daoist immortality-tradition Laozi inaugurated)"
     type: "shared-tradition"
     source: "Kohn, *Daoism Handbook* (2000); Despeux & Kohn, *Women in Daoism* (2003) — the Ba Xian crystallized as a fixed grouping in the Yuan dynasty (13-14th c.) from earlier individual immortal-cults; they became the principal popular Daoist deity-group of late-imperial China"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Daoism Handbook"

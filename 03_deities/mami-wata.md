@@ -20,27 +20,35 @@ syncretic-edges:
   - target: "[[yemoja]]"
     type: "scholarly-parallel"
     source: "Yoruba ocean-mother deity; one of the primary West African water-deity antecedents that merged into and coexists with Mami Wata. In Brazil (Candomblé), Yemanjá and Mami Wata traditions overlap and influence each other."
+    source-tier: T1
   - target: "[[oshun]]"
     type: "scholarly-parallel"
     source: "Yoruba river and fertility deity; shares Mami Wata's domains of beauty, wealth, and feminine water power. In the diaspora, Oshun and Mami Wata iconography and attributes frequently overlap."
+    source-tier: T1
   - target: "[[oya]]"
     type: "scholarly-parallel"
     source: "Yoruba deity of the Niger River and storms; part of the Yoruba water-deity complex from which Mami Wata's iconographic language partly derives."
+    source-tier: T1
   - target: "[[olokun]]"
     type: "scholarly-parallel"
     source: "Yoruba/Benin deity of the deep ocean — androgynous, powerful, associated with the Middle Passage and the drowned dead of the transatlantic slave trade. Olokun and Mami Wata share domain (deep water, the sea bottom) and the connection to diaspora trauma."
+    source-tier: T1
   - target: "[[erzulie]]"
     type: "folk-syncretism"
     source: "Haitian Vodou Lwa of love and beauty; closely related to La Sirène (the Mami Wata form in Vodou). Erzulie Freda and La Sirène are sometimes distinguished as land-beauty vs. sea-beauty aspects of the same feminine power."
+    source-tier: T1
   - target: "[[bondye-vodou]]"
     type: "tradition-internal"
     source: "Mami Wata in Haitian Vodou appears as La Sirène, subordinate to the Vodou theological structure centered on Bondye; she operates as a Lwa within the Vodou pantheon."
+    source-tier: T1
   - target: "[[sedna-inuit]]"
     type: "scholarly-parallel"
     source: "Arctic ocean-mother who was thrown into the sea and whose fingers became sea creatures; both are feminine water-sovereigns who command sea animals and whose mythology encodes a foundational violence or loss. Mami Wata's association with the sea's gifts and dangers parallels Sedna's control of Arctic sea life."
+    source-tier: T1
   - target: "[[tangaroa]]"
     type: "scholarly-parallel"
     source: "Pacific ocean deity; Mami Wata and Tangaroa both embody the sea as a sovereign power whose moods govern human fishing, sailing, and prosperity. Different traditions, parallel oceanic sovereignty."
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Mami Wata: Arts for Water Spirits in Africa and Its Diasporas"

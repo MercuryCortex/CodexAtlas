@@ -20,34 +20,44 @@ syncretic-edges:
   - target: "Bondye (Haitian Vodou high god)"
     type: "scholarly-parallel"
     source: "Brandon 1993; Murphy 1988"
+    source-tier: T1
   - target: "Olófin (Cuban Lucumí high-being designation)"
     type: "manuscript-transmission"
     source: "Brandon 1993; Mason 1996"
+    source-tier: T1
   - target: "ein-sof"
     type: "scholarly-parallel"
     source: "Idowu, *Olodumare: God in Yoruba Belief* (1962); Mbiti, *African Religions and Philosophy* (1969); Scholem, *Major Trends in Jewish Mysticism* (1941) — Olodumare as the Yoruba transcendent-supreme who is approached only through the orisha intermediaries; Ein Sof as the Kabbalistic transcendent-unmanifest approached only through the Sefirot. Both are deus-otiosus + apophatic-transcendent supreme"
+    source-tier: T1
     notes: "MASSIVE WIN: apophatic-transcendent primordial — Olodumare joins the Ein-Sof / Awonawilona / Nana-Buluku / Samantabhadra / Io-matua-kore cluster — now 6 traditions across 6 continents (Yoruba, Kabbalah, Zuni, Fon, Buddhism, Polynesia), zero contact, same theological structure"
   - target: "awonawilona"
     type: "scholarly-parallel"
     source: "Mbiti 1969; Cushing, *Zuni Creation Myths* (1896) — both are transcendent-supreme deus-otiosus from which the working pantheon emerges via emanation/intermediaries"
+    source-tier: T1
   - target: "nana-buluku"
     type: "scholarly-parallel"
     source: "Mbiti 1969; Herskovits *Dahomey* (1938) — both are West-African transcendent-supreme deities; the regional Yoruba and Fon counterparts"
+    source-tier: T1
   - target: "io-matua-kore"
     type: "scholarly-parallel"
     source: "Mbiti 1969; Best *Maori Religion and Mythology* (1924) — Polynesian Io-matua-kore as primordial-parentless transcendent; Olodumare as Yoruba transcendent-supreme"
+    source-tier: T1
   - target: "brahma"
     type: "scholarly-parallel"
     source: "Mbiti 1969 — Vedic Brahma as deus-otiosus creator-supreme who is rarely directly worshipped; structural parallel to Olodumare's distant-supreme position in Yoruba cult"
+    source-tier: T1
   - target: "tian-heaven"
     type: "scholarly-parallel"
     source: "Mbiti 1969; Eliade 1958 — Chinese Tian as impersonal cosmic supreme; Olodumare as remote-supreme creator"
+    source-tier: T1
   - target: "ahura-mazda"
     type: "scholarly-parallel"
     source: "Mbiti 1969 — Iranian supreme-light deity parallel; both are the supreme being whose name is invoked but whose direct cult is mediated"
+    source-tier: T1
   - target: "afro-diasporic-syncretism"
     type: "supreme-deity-of-diaspora-substrate"
     source: "Murphy 1988, *Santería*; Brandon 1993; Desmangles 1992 — Olódùmarè is the supreme-being apex of the Yoruba pantheon whose deus-otiosus structure (approached only through the orisha intermediaries) survives the Atlantic crossing largely intact as Cuban Lucumí *Olófin* and as Haitian Vodou *Bondye* ('Good God', from French *Bon Dieu*). The supreme being is loosely identified with God the Father in Catholic syncretism, but unlike the orishas it lacks a specific saint-pairing — its transcendence makes one-to-one correspondence theologically unnecessary. See [[afro-diasporic-syncretism]]"
+    source-tier: T1
     notes: "MASSIVE-WIN: Olódùmarè/Bondye demonstrates that the orisha-saint syncretism mechanism applies to the *operational mediator deities* of the pantheon but is bypassed for the *supreme transcendent* — the apex translates directly as 'God' without needing a saint surrogate, evidence that the syncretism operates at the working-pantheon level rather than the metaphysical-supreme level"
 status: "metadata"
 refs:

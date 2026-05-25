@@ -20,12 +20,15 @@ syncretic-edges:
   - target: "hermes-greek"
     type: "ancient-identification"
     source: "Roman *interpretatio Graeca*; cult imported ~-495 with Hermes-iconography"
+    source-tier: T1
   - target: "hermes-trismegistus"
     type: "ancient-identification"
     source: "Latin Hermetica translate Hermes Trismegistus as Mercurius Ter Maximus"
+    source-tier: T1
   - target: "lugus"
     type: "ancient-identification"
     source: "Caesar *De Bello Gallico* 6.17: the Gauls 'worship most of all Mercury' — interpreted as the Celtic Lugus"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Religions of Rome"

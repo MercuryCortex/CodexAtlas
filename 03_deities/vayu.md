@@ -20,15 +20,19 @@ syncretic-edges:
   - target: "enlil"
     type: "scholarly-parallel"
     source: "Macdonell 1897 — Enlil (Sumerian/Akkadian wind-air supreme deity) and Vāyu share the wind-as-first-breath-of-cosmos structure; no transmission documented"
+    source-tier: T1
   - target: "fujin"
     type: "scholarly-parallel"
     source: "Scholarly parallel — Japanese wind-god; structural parallel as invisible cosmic force; no transmission"
+    source-tier: T1
   - target: "stribog"
     type: "scholarly-parallel"
     source: "Scholarly parallel — Slavic wind-deity; possible distant Indo-European inheritance; underdetermined"
+    source-tier: T1
   - target: "ahura-mazda"
     type: "ancient-identification"
     source: "Avesta — in Zoroastrian reform, Vayu/Vata is split: good Vayu aligns with Ahura Mazda, evil Vata aligns with Angra Mainyu; documented in Boyce 1975"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Vedic Mythology"

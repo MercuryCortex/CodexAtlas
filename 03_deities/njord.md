@@ -20,9 +20,11 @@ syncretic-edges:
   - target: "Nerthus (Germanic earth-goddess, Tacitus *Germania* 40)"
     type: "scholarly-parallel"
     source: "The Nerthus / Njörðr etymological connection (both from Proto-Germanic *Nerþuz) was proposed by Grimm (1835) and remains the standard comparative-religion hypothesis; the gender inversion (Nerthus = goddess; Njörðr = god) is parallel to the Freyr/Freyja cognate pair. West 2007 §12.3; de Vries 1956."
+    source-tier: T1
   - target: "[[poseidon]] / Neptune (Greek / Roman sea-gods)"
     type: "scholarly-parallel"
     source: "Sea-god typological parallel; no genetic connection. Domain parallel only."
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Prose Edda"

@@ -20,21 +20,27 @@ syncretic-edges:
   - target: "[[demeter]]"
     type: "structural-parallel"
     source: "The most direct structural parallel in world mythology: both are mother-goddesses whose bodies and grief/sacrifice are the source of agricultural abundance. Demeter's daughter taken = no grain; Corn Mother sacrificed = corn grows from her body. Frazer's The Golden Bough devotes extensive analysis to the structural identity of the grain-mother and the agricultural cycle. The parallel was noted early in comparative mythology — Frazer (1890/1907-15) treats the Corn Mother alongside Demeter as exemplars of the same pattern."
+    source-tier: T1
   - target: "[[ceres-roman]]"
     type: "structural-parallel"
     source: "Ceres as Roman grain goddess is structurally equivalent to the Corn Mother — both govern the agricultural cycle and the community's relation to the grain that sustains life."
+    source-tier: T1
   - target: "[[nisaba]]"
     type: "structural-parallel"
     source: "Nisaba, the Mesopotamian goddess of grain and writing, is the earliest Near Eastern grain-mother figure. The grain-goddess archetype appears independently in Mesopotamia, Greece/Rome, and the Americas — attesting the universal pattern of feminine divine governance over the cereal crop that sustains civilization."
+    source-tier: T1
   - target: "[[osiris]]"
     type: "structural-parallel"
     source: "In the Cherokee Selu narrative, Corn Mother's body is killed and corn grows from the blood and body — death as the source of grain. In the Osiris tradition, Osiris's dismembered body scattered across Egypt fertilizes the land; his return coincides with the inundation and planting season. Both encode the same logic: the god's/goddess's death = the grain's germination."
+    source-tier: T1
   - target: "[[pachamama]]"
     type: "structural-parallel"
     source: "Pachamama (Andean Earth Mother) and the Corn Mother both represent the feminine earth as the source of food; both require ritual reciprocity; both govern the specific crops on which their cultures depend. Corn Mother governs maize in North America as Pachamama governs all agricultural production in the Andes."
+    source-tier: T1
   - target: "[[changing-woman]]"
     type: "structural-parallel"
     source: "Changing Woman (Diné/Navajo) and the Corn Mother are the two most important female agricultural figures in the North American tradition — both embody the cycles of growth, harvest, and renewal; both are connected to women's ceremony."
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Golden Bough: A Study in Magic and Religion"

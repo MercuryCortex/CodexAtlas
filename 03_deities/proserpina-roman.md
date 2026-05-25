@@ -20,9 +20,11 @@ syncretic-edges:
   - target: "persephone-greek"
     type: "ancient-identification"
     source: "Standard interpretatio Graeca from late Republic; Cicero and Ovid (Fasti, Metamorphoses) treat them as identical"
+    source-tier: T1
   - target: "isis-hellenistic"
     type: "syncretic-identification"
     source: "Apuleius, Metamorphoses Book 11 — Isis declares herself to be Proserpina among her many names"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Religions of Rome"

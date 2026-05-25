@@ -20,10 +20,12 @@ syncretic-edges:
   - target: "saule"
     type: "cosmic-couple"
     source: "Greimas (1992). Of Gods and Men. Indiana UP.; Gimbutas (1963). The Balts."
+    source-tier: T1
     notes: "The Baltic cosmic couple: Saule (sun, feminine) and Mēness (moon, masculine) are paired as husband and wife, but their mythological relationship is one of conflict and infidelity. Mēness is said to have taken another wife (Auseklis, the morning star); the thunder-deity Perkūnas punishes him by cutting him with a sword (the waning moon = the wound). This mythology explains the moon's phases through divine domestic drama."
   - target: "selene"
     type: "structural-parallel"
     source: "West (2007). Indo-European Poetry and Myth. pp. 196–200."
+    source-tier: T1
     notes: "GENDER INVERSION: in most Indo-European traditions the moon is female (Selene/Luna/Chandra) and the sun male. Baltic is the paradigmatic exception: [[saule]] is female (sun) and Mēness is male (moon). West (2007) uses this Baltic evidence to argue that the PIE solar deity may have been feminine, with the masculine-solar pattern being a later development in some branches. Mēness's masculinity is thus cosmologically significant beyond Baltic religion."
 status: "metadata"
 refs:

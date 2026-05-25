@@ -20,10 +20,12 @@ syncretic-edges:
   - target: "amaterasu"
     type: "narrative-complement"
     source: "Kojiki 1.17 — the Ama-no-Iwato (heavenly rock-cave) myth"
+    source-tier: T1
     notes: "Uzume's ecstatic dance is the decisive act that ends Amaterasu's cave-withdrawal: her comedy and erotic exposure provoke laughter from the 800 assembled gods, which makes Amaterasu curious enough to peek out, allowing Futodama to pull her out. Uzume performs what no other deity could — a shamanic-comedic-ecstatic act that operates outside the register of force or prayer."
   - target: "hathor"
     type: "structural-parallel"
     source: "Pinch, Geraldine (1994). Magic in Ancient Egypt. British Museum Press."
+    source-tier: T1
     notes: "Hathor appears in the Egyptian myth of Ra's withdrawal: Ra retreats in anger and Hathor's laughter and erotic display (in some versions) restores his joy. The structural parallel — solar deity withdraws, goddess of joy and sexuality restores them through display and laughter — is striking. No transmission relationship; typological parallel in how solar withdrawal myths are resolved."
 status: "metadata"
 refs:

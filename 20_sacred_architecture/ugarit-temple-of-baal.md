@@ -23,22 +23,27 @@ cross-tradition-edges:
   - target: "solomons-temple-first"
     type: "deep-architectural-and-theological-ancestor"
     source: "Margueron 1995; Yon 2006; Smith 1990"
+    source-tier: T1
     notes: "**This is one of the most consequential transmission-chains in the religion-architecture record.** Ugarit's Temple of Baal — and its paired Temple of Dagan — are the **direct architectural-theological ancestors** of [[solomons-temple-first|Solomon's First Temple]]: same broader **migdol** (tower-temple) architectural type; same tripartite-cella + porch ground-plan family; same paired-temple cosmology (Baal-Dagan at Ugarit ↔ Yahweh-temple in dialogue with Asherah at Israel's high places). The famous Israelite polemic against the Baal cult (1 Kings 18, the Elijah-on-Carmel narrative) is the **direct Hebrew rejection of the Late Bronze Age Levantine architectural-theological system that Ugarit embodies in pure form**."
   - target: "hazor-canaanite-temples"
     type: "cognate-and-contemporary"
     source: "Ben-Tor 2016; Mazar 1990"
+    source-tier: T1
     notes: "Ugarit (NW Syrian coast) and Hazor (Galilee) are the **two best-preserved Late Bronze Age Canaanite temple sites**, illuminating the same Bronze Age Levantine religious architecture from northern and southern poles of the region."
   - target: "ain-dara-temple-syria"
     type: "architectural-cognate"
     source: "Monson 2000"
+    source-tier: T1
     notes: "Ain Dara (Iron Age N Syria, ~10th–8th c. BCE) is the **closest known architectural parallel to Solomon's First Temple** in plan; Ugarit's Baal temple sits in the deeper Bronze Age architectural background from which both Ain Dara and Solomon's Temple descend."
   - target: "tradition-judaism"
     type: "polemicised-ancestor-of"
     source: "Smith 1990; Day 2000"
+    source-tier: T1
     notes: "Iron Age Israelite religion's most-developed theological position is its **rejection of Baal worship** (the prophetic literature, especially Hosea and Jeremiah; the Elijah-on-Carmel narrative). Ugarit is the **principal evidence-base** for the Baalist religion that Israelite tradition rejects — and shows that **Yahwism and Baalism share more than they differ in their Bronze Age substrate**. (See Mark Smith's *Early History of God*.) The Ugaritic evidence is therefore foundational both for the polemicised-other Israel defined itself against, and for the shared West Semitic substrate that Israelite religion grew from."
   - target: "theme-baal-set-syncretism"
     type: "anchor-site"
     source: "Smith 1994"
+    source-tier: T1
     notes: "Ugarit is the site at which the Baal-Yamm-Mot mythological complex is best attested; the Baal Cycle is the single most extensive source for Bronze Age Levantine theology."
 status: "metadata"
 refs:

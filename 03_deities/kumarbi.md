@@ -20,18 +20,22 @@ syncretic-edges:
   - target: "kronos"
     type: "ancient-identification"
     source: "Lucian, On the Syrian Goddess; Philo of Byblos (preserved in Eusebius, Praeparatio Evangelica I.10) — Phoenician 'Elos who is Kronos' is the same succession-myth role; West 1997; Bachvarova 2016"
+    source-tier: T1
     notes: "Direct mythological source for the Hesiodic Kronos: Kumarbi castrates Anu by biting off his genitals (cf. Kronos castrating Uranus with the sickle); Kumarbi is then overthrown by his son Teshub (cf. Kronos overthrown by Zeus). The single cleanest cross-Mediterranean myth-transfer case in the entire ANE→Greek record."
   - target: "saturn-roman"
     type: "scholarly-parallel"
     source: "via Kronos identification (Roman interpretatio)"
+    source-tier: T1
     notes: "Inherits via Kronos."
   - target: "enlil"
     type: "ancient-identification"
     source: "Hurrian-Mesopotamian theological lists equate Kumarbi with Enlil (head of the older pantheon)"
+    source-tier: T1
     notes: "In Hurrian god-lists Kumarbi is identified with Sumero-Akkadian Enlil — both as the displaced/older head of the divine assembly."
   - target: "dagon"
     type: "ancient-identification"
     source: "Hurrian-Syrian god-lists; Ugaritic Dagan as Kumarbi's equivalent"
+    source-tier: T1
     notes: "In the Syrian-Hurrian zone, Kumarbi and Dagan (Dagon) — both grain-fathers of the storm-god (Dagan fathers Baal in the Ugaritic tradition) — are identified."
 status: "full"
 refs:

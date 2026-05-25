@@ -18,6 +18,7 @@ syncretic-edges:
   - target: "[[poseidon]]"
     type: "ancient-identification"
     source: "*interpretatio romana* — Neptune assumes Poseidon's full sea-domain; the original Italic Neptune appears to have been a fresh-water deity"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Religions of Rome"

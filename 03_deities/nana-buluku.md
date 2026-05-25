@@ -20,10 +20,12 @@ syncretic-edges:
   - target: "[[ein-sof]]"
     type: "scholarly-parallel"
     source: "Awolalu, *Yoruba Beliefs and Sacrificial Rites* (1979); Bay, *Vodun: A Way of Life of the Old Slave Coast* (1998) — Nana Buluku is the apophatic-transcendent primordial-feminine that operates the same theological function as Ein Sof in Kabbalah, Awonawilona in Zuni cosmology, and the Dharmakaya in Mahayana Buddhism: the unmanifest-prior-to-manifestation, the origin from which the operative gods emerge"
+    source-tier: T1
     notes: "MASSIVE WIN: a West African instance of the apophatic-unmanifest-primordial theological category, structurally parallel to (and historically independent of) Kabbalistic Ein Sof, Zuni Awonawilona, and Mahayana Dharmakaya"
   - target: "[[awonawilona]]"
     type: "scholarly-parallel"
     source: "Both are apophatic-transcendent primordial-beings from which the cosmos emerges via emanation/self-thought"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Yoruba Beliefs and Sacrificial Rites"

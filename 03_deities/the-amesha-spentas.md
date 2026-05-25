@@ -21,14 +21,17 @@ syncretic-edges:
   - target: "archangels-jewish-christian"
     type: "scholarly-parallel"
     source: "Boyce & Grenet 1991; Barr 1985"
+    source-tier: T1
     notes: "The seven Amesha Spentas have been compared with the seven archangels of late Second Temple Jewish (1 Enoch, Tobit) and early Christian angelology. Mechanism: Persian-period contact."
   - target: "persian-period-injection"
     type: "source-deity-of-transmission"
     source: "Boyce & Grenet 1991; Shaked 1984; Hultgård 1998; Collins 1998 — the Amesha Spentas (seven-member cosmic-administrator architecture under Ahura Mazda, each presiding over one creation) are the load-bearing Persian source for Channel 4 (angelology — emergence of named seven-archangel hierarchies in 1 Enoch 20 + Daniel 10-12) of the [[persian-period-injection]] event. The numerical + structural + chronological convergence with Second Temple Jewish angelology is the strongest single piece of evidence for Iranian influence on Jewish angelology"
+    source-tier: T1
     notes: "MASSIVE-WIN: the Persian source for the seven-archangel architecture that defines Jewish-Christian-Islamic angelology; Michael / Gabriel / Raphael / Uriel / Raguel / Saraqael / Remiel inherit the seven-cosmic-administrator template here"
   - target: "theme-zoroastrian-jewish-exchange"
     type: "source-deity-of-transmission"
     source: "Boyce 1975-1991; Shaked 1984 — Channel 3 (angelology — messengers to cosmic administrators) of the broader six-channel exchange; the Amesha Spentas + Ahura Mazda heptad is the cleanest source-structure for the 1 Enoch 20 seven-archangel scheme"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "A History of Zoroastrianism, vol. I-III"

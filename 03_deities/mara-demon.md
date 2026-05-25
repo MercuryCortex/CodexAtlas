@@ -20,9 +20,11 @@ syncretic-edges:
   - target: "satan-christian"
     type: "scholarly-parallel"
     source: "The three temptations of the Buddha under the Bodhi Tree (Pāli Canon, Sutta Nipāta, Buddhavamsa) are structurally parallel to Satan's three temptations of Christ in the wilderness (Matthew 4:1–11 / Luke 4:1–13): a supreme teacher at the threshold of cosmic mission is confronted by the cosmic adversary, offered pleasure/power/fear in sequence, and defeats each temptation through mastery of spiritual truth. The structural parallel is one of the most-cited in comparative religion; no direct historical borrowing is established — likely parallel mythic patterning of initiatory temptation."
+    source-tier: T1
   - target: "angra-mainyu-ahriman"
     type: "scholarly-parallel"
     source: "Both Māra and Ahriman (Angra Mainyu) function as the cosmic principle opposing the salvific holy — Māra opposes Buddhahood / enlightenment; Ahriman opposes Ahura Mazdā / Asha. Both command hosts of demonic beings; both are conceived as ultimately defeatable (Zoroastrianism: Frashegird; Buddhism: Māra is transcended by each Buddha). Iranian-Buddhist contact in Gandhara makes some cross-influence possible."
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Buddhism: A History"

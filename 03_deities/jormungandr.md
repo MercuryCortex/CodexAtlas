@@ -20,16 +20,20 @@ syncretic-edges:
   - target: "ouroboros"
     type: "parallel-form"
     source: "Lindow 2001 *Norse Mythology*; Larrington 2014 *The Poetic Edda* — Jörmungandr's tail-biting world-encircling form is iconographically near-identical to the Egyptian-Hellenistic ouroboros, but the Norse attestation is **independent**; the Mediterranean-alchemical iconographic line did not reach Iron Age Scandinavia, and the Norse tail-biting world-serpent emerges from the Germanic-Indo-European chaoskampf inheritance rather than from Egyptian / alchemical transmission"
+    source-tier: T1
     notes: "Lindow 2001 makes the parallel-form-vs-transmission point explicitly"
   - target: "vritra"
     type: "parallel-form"
     source: "Watkins 1995 *How to Kill a Dragon* — Indo-European inherited *HERO SLAY SERPENT* poetic-formula cognate; Indra-slays-Vritra and Thor-slays-Jörmungandr instantiate the same inherited PIE formula"
+    source-tier: T1
   - target: "leviathan"
     type: "parallel-form"
     source: "Day 1985 *God's Conflict with the Dragon and the Sea* — chaos-serpent cosmic-enemy parallel; not direct transmission"
+    source-tier: T1
   - target: "serpent-dual-nature"
     type: "chaos-pole-of-serpent-symbolism"
     source: "Watkins 1995 *How to Kill a Dragon*; West 2007 — Jörmungandr is the Norse-end instance of the PIE *HERO SLAY SERPENT* poetic formula (Thor-slays-Jörmungandr cognate with Indra-slays-Vṛtra). The ouroboros-encircling-Midgard motif adds cosmic-boundary symbolism on top of the chaos-pole. See [[serpent-dual-nature]]"
+    source-tier: T1
     notes: "Cross-lens: 03_deities → 06_themes"
 status: "metadata"
 refs:

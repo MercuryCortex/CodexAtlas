@@ -16,14 +16,17 @@ syncretic-edges:
   - target: "tradition-ethiopian-orthodox-tewahedo"
     type: "structural-parallel"
     source: "Salvadore, Matteo (2016). The African Prester John and the Birth of Ethiopian-European Relations, 1402–1555. Routledge."
+    source-tier: T1
     notes: "The Portuguese eventually 'found' Prester John in the Emperor of Ethiopia — but the identification was a projection, not a discovery. The real Ethiopian emperors (Negus Negest / King of Kings) had no connection to the legendary Prester John; they were heads of the ancient Solomonic dynasty of the Ethiopian Orthodox Tewahedo Church. When the Portuguese embassy arrived (~1520), Emperor Lebna Dengel received them with puzzlement — he was not 'Prester John.' The encounter shows how the legend was a European imaginative projection onto a real African Christian civilization, which had been developing independently for 1,500 years."
   - target: "event-jesuit-mission-ethiopia-1557-1632"
     type: "precursor-to"
     source: "Salvadore (2016); Diffie & Winius (1977)"
+    source-tier: T1
     notes: "The Portuguese-Ethiopian relationship, initiated under the Prester John search motivation, eventually led to the Jesuit mission to Ethiopia (1557–1632). The Jesuits attempted to convert the Ethiopian Orthodox Church to Roman Catholicism — catastrophically; the Ethiopian church expelled them in 1632 after a violent anti-Catholic reaction. The legend that drove the contact ended in one of the most spectacular missionary failures in Jesuit history."
   - target: "lalibela-king"
     type: "structural-parallel"
     source: "Salvadore (2016)"
+    source-tier: T1
     notes: "King Lalibela (~1181–1221), who commissioned the rock-hewn churches of Lalibela that are among the most remarkable architectural achievements in sub-Saharan Africa, was later conflated in some European accounts with Prester John — a 'real priest-king' who had built a Jerusalem in Africa. The actual historical context (Ethiopian Orthodox Christianity; Solomonic dynasty theology) is entirely distinct from the European legend."
 status: "metadata"
 refs:

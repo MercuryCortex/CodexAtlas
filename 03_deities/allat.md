@@ -20,14 +20,17 @@ syncretic-edges:
   - target: "athena"
     type: "ancient-identification"
     source: "Hoyland 2001 *Arabia and the Arabs*; Hawting 1999 *The Idea of Idolatry and the Emergence of Islam* — Palmyrene Aramaic-Greek bilingual inscriptions (1st-3rd c. CE) explicitly identify Allat with Athena; the Palmyrene Allat-temple iconography uses lion + helmet + spear Athena-type iconography"
+    source-tier: T1
     notes: "This is *interpretatio graeca* in a multilingual Roman-period city — NOT a claim that pre-Islamic Arabian Allat was Athena-derived; the syncretic identification is Palmyrene-specific"
   - target: "allah"
     type: "polemic-against"
     source: "Quran 53:19-22 (Sūrat al-Najm) — 'Have you considered al-Lāt and al-ʿUzzā? And Manāt, the third — the other one? Is the male for you and for Him the female? That, then, is an unfair division. They are not but [mere] names you have named them'"
+    source-tier: T1
     notes: "MASSIVE WIN edge: the Quran 53 passage is the direct polemical engagement between Islamic monotheism and the pre-Islamic Hijazi *banāt Allāh* ('daughters of Allāh') doctrine. The pre-Islamic Quraysh held that al-Lāt, al-ʿUzzā, and Manāt were daughters/intercessors of Allāh; the Quran rejects this in language that PRESUPPOSES the existing cult"
   - target: "asherah"
     type: "scholarly-parallel"
     source: "Hoyland 2001; Healey 2001 *The Religion of the Nabataeans*; Krone 1992 *Die altarabische Gottheit al-Lāt* — Allat is the West-Semitic *al-ʾIlāhah* ('the goddess'), feminine of *al-ʾIlāh* ('the god'); structurally the Arabian analogue of the Northwest-Semitic Athirat/Asherah great-goddess"
+    source-tier: T1
     notes: "Etymological-structural cognate (same Semitic grammatical pattern), not a transmission claim"
 status: "metadata"
 refs:

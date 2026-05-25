@@ -20,10 +20,12 @@ syncretic-edges:
   - target: "athena"
     type: "ancient-identification"
     source: "Agathangelos; Russell 1987"
+    source-tier: T1
     notes: "Greek interpretatio directly identified Nane with Athena — the war-wisdom goddess. Agathangelos (5th c. CE) reports Gregory the Illuminator destroying the statue of 'Nane' at Thil, describing her in terms that match Athena-iconography. Like Athena, Nane is a daughter of the sky-father (Aramazd / Zeus) who personifies both warrior strength and protective wisdom."
   - target: "anahit-armenian"
     type: "associated"
     source: "Russell 1987"
+    source-tier: T1
     notes: "Nane and Anahit are the two major female deities of the Armenian pantheon, daughters of Aramazd. Anahit is the love-fertility goddess (Aphrodite equivalent); Nane is the war-wisdom goddess (Athena equivalent). Together they mirror the Greek pairing of Aphrodite + Athena as daughters of Zeus."
 status: "metadata"
 refs:

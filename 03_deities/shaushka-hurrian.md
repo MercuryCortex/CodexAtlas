@@ -20,14 +20,17 @@ syncretic-edges:
   - target: "ishtar-akkadian"
     type: "syncretism"
     source: "Hittite ritual texts; Hurrian mythological texts"
+    source-tier: T1
     notes: "Direct Hurrian–Mesopotamian syncretism; Hittite texts explicitly identify Shaushka with Ishtar of Nineveh. The Amarna letter EA 23 (c. 1350 BCE) records Mitanni king Tushratta sending a statue of Shaushka of Nineveh to Amenhotep IV — treating the two as fully equivalent. The cult of Ishtar at Nineveh was the primary Mesopotamian contact point."
   - target: "teshub"
     type: "associated"
     source: "Kumarbi Cycle; Hurrian pantheon texts"
+    source-tier: T1
     notes: "Shaushka's brother in the Hurrian pantheon. Teshub (storm-god) and Shaushka (love-war goddess) form the principal divine sibling pair, paralleling the Mesopotamian Enlil–Ishtar / Inanna–Utu pairing."
   - target: "hebat"
     type: "associated"
     source: "Kumarbi Cycle; Hittite ritual texts"
+    source-tier: T1
     notes: "Sister-goddess relationship in the Hurrian pantheon. Both Shaushka and Hebat are queen-level female deities; Hebat is Teshub's consort. The two goddesses operate in complementary roles in the Kumarbi Cycle mythology."
 status: "metadata"
 refs:

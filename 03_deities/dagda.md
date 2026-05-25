@@ -19,6 +19,7 @@ syncretic-edges:
   - target: "[[odin]]"
     type: "scholarly-parallel"
     source: "Father-god / chief of pantheon / lord of magical knowledge"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Celtic Mythology"

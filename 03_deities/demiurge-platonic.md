@@ -20,9 +20,11 @@ syncretic-edges:
   - target: "demiurge-gnostic"
     type: "polemical-inversion"
     source: "Sethian Gnostics invert the Platonic good demiurge into Yaldabaoth; Plotinus *Ennead* II.9 polemicizes back. Turner 2001."
+    source-tier: T1
   - target: "yahweh"
     type: "philo-identification"
     source: "Philo of Alexandria identifies the Mosaic Creator with the Platonic Demiurge; Christian-Platonist tradition follows."
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Plato's Cosmology: The Timaeus of Plato"

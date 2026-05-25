@@ -20,10 +20,12 @@ syncretic-edges:
   - target: "ashur"
     type: "ancient-identification"
     source: "Wiggermann 1992 *Mesopotamian Protective Spirits*; Reade 1983 *Assyrian Sculpture* — the colossal Lamassu/aladlammû figures stand at the gates of every major Aššur-cult royal palace (Nimrud Northwest Palace of Assurnasirpal II, Khorsabad of Sargon II, Nineveh of Sennacherib); they are the visible apotropaic incarnation of Aššur-state protective theology"
+    source-tier: T1
     notes: "The lamassu are not Aššur themselves — they are subordinate apotropaic spirits — but their cultic placement is bound to Aššur-state royal architecture"
   - target: "kerubu-cherubim"
     type: "scholarly-parallel"
     source: "Wiggermann 1992; Albright 1938 ('What Were the Cherubim?', *BA* 1); Mettinger 1979 — the biblical *kərûbîm* (cherubim) of the Hebrew Bible (Ezekiel 1; 1 Kings 6–8; Ark of the Covenant) are widely held to be the West-Semitic continuation of the Mesopotamian *kerubu* (a class of apotropaic winged hybrid spirit, of which the lamassu/aladlammû is the most monumental form). The cognate is linguistic and iconographic"
+    source-tier: T1
     notes: "Albright's classic article 'What Were the Cherubim?' established the parallel; the etymology *kerubu* → *kərûb* is widely accepted"
 status: "metadata"
 refs:

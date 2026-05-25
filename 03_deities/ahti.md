@@ -19,21 +19,27 @@ syncretic-edges:
   - target: "[[enki-ea]] (lord of the Abzu / underground fresh water; abundance of water)"
     type: "scholarly-parallel"
     source: "Typological: fresh-water deity whose domain produces abundance for humanity; Kramer 1963"
+    source-tier: T1
   - target: "[[poseidon]] (Greek deity of sea and fresh springs; patron of fishers)"
     type: "scholarly-parallel"
     source: "Typological: water-sovereignty = food-sovereignty through marine life; West 2007"
+    source-tier: T1
   - target: "[[njord]] (Norse coastal fishing deity; sea's generosity to human fishers)"
     type: "scholarly-parallel"
     source: "Functional parallel: northern European water-deity as patron of fishing communities"
+    source-tier: T1
   - target: "[[ryujin]] (Shinto underwater palace; sea-sovereignty)"
     type: "scholarly-parallel"
     source: "Typological: the underwater royal realm and its divine sovereign who controls marine life"
+    source-tier: T1
   - target: "[[sedna-inuit]] (Inuit sea-mistress controlling marine animal supply)"
     type: "scholarly-parallel"
     source: "Typological: the deity beneath the water who must be appeased to release marine life for hunters/fishers"
+    source-tier: T1
   - target: "[[manannan-mac-lir]] (Celtic sea-deity with underwater realm Tír na nÓg)"
     type: "scholarly-parallel"
     source: "Typological: deity-sovereign of the sea-depth with underwater kingdom; parallel independent development"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Kalevala"

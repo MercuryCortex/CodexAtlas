@@ -20,9 +20,11 @@ syncretic-edges:
   - target: "gabriel-archangel"
     type: "scholarly-parallel"
     source: "Both are principal angelic-messenger figures + announcers (Sraosha announces with the rooster; Gabriel announces the dawn of the new age in Lk 1). Structural parallel; direct Zoroastrian → Jewish-Christian angelology influence is documented at the Second-Temple-Judaism level (Boyce 1991, Hultgård 1998)"
+    source-tier: T1
   - target: "aeshma"
     type: "polemic-against"
     source: "Sraosha-vs-Aeshma is the canonical Zoroastrian opposed-pair structure: obedience-and-prayer (good) vs. wrath-and-violence (evil). The Sraosha Yasht (Yasna 57) is structurally a counter-litany against the Aeshma-Yasht. The pairing is itself a theological-structural template for Christian angel-vs-demon binary opposition"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "A History of Zoroastrianism, Vol. 1"

@@ -24,18 +24,22 @@ cross-tradition-edges:
   - target: "solomons-temple-first"
     type: "descendant-of"
     source: "Levine 2002; Bahat 1990"
+    source-tier: T1
     notes: "Direct successor: rebuilt 520–516 BCE on the same site as the destroyed First Temple, by returnees from the Babylonian Exile under [[zerubbabel|Zerubbabel]] and the high priest Joshua. Massively expanded under [[herod-the-great]] from ~20 BCE onwards. The complete Second-Temple-period site is what the New Testament + Josephus + the Mishnah describe."
   - target: "western-wall-jerusalem"
     type: "physical-surviving-remnant"
     source: "Bahat 1990; Reich 2011"
+    source-tier: T1
     notes: "The **Western Wall** (HaKotel HaMaaravi) is the surviving western retaining-wall of [[herod-the-great|Herod]]'s expanded Temple-Mount platform — NOT a wall of the Temple itself, but of the enclosure terrace Herod built around it. It is the most accessible physical remnant of the entire Second-Temple complex and the most important pilgrimage-and-prayer site in Judaism."
   - target: "dome-of-the-rock-jerusalem"
     type: "later-built-over-same-foundation-stone"
     source: "Murphy-O'Connor 2008; Grabar 2006"
+    source-tier: T1
     notes: "The Umayyad Dome of the Rock (691 CE) was built over the Foundation Stone — the same stone the Second Temple had been built around. The architectural-religious continuity at this single site spans ~1700 years (Solomon's First Temple ~966 BCE → Second Temple ~516 BCE → Roman destruction 70 CE → Dome of the Rock 691 CE → present)."
   - target: "tradition-rabbinic-judaism"
     type: "transformation-target-after-destruction"
     source: "Schwartz 2001; Cohen 1987"
+    source-tier: T1
     notes: "The destruction of the Second Temple in 70 CE is the **architectural cause of the rabbinic-Judaic turn**. With the sacrificial system architecturally impossible, the Pharisaic-rabbinic move of replacing **Temple sacrifice** with **prayer + Torah study + acts of loving-kindness** (the Mishnaic *Avot d'Rabbi Nathan* 4: 'Acts of loving-kindness replace sacrifice') becomes the basis of rabbinic Judaism. The Temple's architectural absence is the **negative space** around which rabbinic Judaism organises."
 status: "metadata"
 refs:

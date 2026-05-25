@@ -20,12 +20,15 @@ syncretic-edges:
   - target: "[[bes]]"
     type: "scholarly-parallel"
     source: "Both Pazuzu and Bes are grotesque, monstrous divine figures whose frightening appearance is specifically deployed to repel evil spirits and protect vulnerable spaces (childbirth, sleep, thresholds). Black and Green (1992, Gods, Demons and Symbols of Ancient Mesopotamia) note this as a trans-cultural pattern of 'apotropaic monster theology' — the terrifying face that repels terror."
+    source-tier: T1
   - target: "[[ereshkigal]]"
     type: "scholarly-parallel"
     source: "Pazuzu operates in the zone between the underworld and the living world — the liminal space of illness, demonic attack, and the wind that carries disease from below. Ereshkigal as queen of the dead presides over the same threshold from the other side. Both are figures whose power resides in the dangerous borderland between life and death."
+    source-tier: T1
   - target: "[[angra-mainyu-ahriman]]"
     type: "scholarly-parallel"
     source: "Both Pazuzu and Ahriman (Zoroastrian evil principle) are powerful demonic forces associated with disease, death, and destruction — but Pazuzu's role is more complex than Ahriman's: Pazuzu can be invoked *against* other demons, giving him a protective dimension Ahriman lacks. The shared domain is demonic control of the wind as a vector of disease."
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Gods, Demons and Symbols of Ancient Mesopotamia"

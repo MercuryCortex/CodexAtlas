@@ -19,6 +19,7 @@ syncretic-edges:
   - target: "[[saraswati]]"
     type: "scholarly-parallel"
     source: "Goddess of poetic-intellectual flowing — memory and inspiration as feminine-divine"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Ritual Texts for the Afterlife: Orpheus and the Bacchic Gold Tablets"

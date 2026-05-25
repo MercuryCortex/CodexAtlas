@@ -19,18 +19,23 @@ syncretic-edges:
   - target: "[[lucifer]]"
     type: "scholarly-parallel"
     source: "Light-bringer / fire-bringer rebellious-against-supreme-deity — Romantic reception (Shelley's *Prometheus Unbound* 1820, Byron's *Prometheus* 1816) made the identification explicit and influential"
+    source-tier: T1
   - target: "[[loki]]"
     type: "scholarly-parallel"
     source: "Trickster who benefits humans against the high god"
+    source-tier: T1
   - target: "[[enki-ea]]"
     type: "scholarly-parallel"
     source: "Mesopotamian god who tricks humans free of divine punishment (Atrahasis flood-warning); West 1997 *East Face of Helicon* identifies Enki-Prometheus as one of the cleaner Mesopotamian-Greek mythological transmissions"
+    source-tier: T1
   - target: "[[nuwa]]"
     type: "scholarly-parallel"
     source: "Clay-anthropogony — Prometheus fashions humans from clay (Apollodorus 1.7.1; Pausanias 10.4.4 cites a Phocian clay-remnant tradition)"
+    source-tier: T1
   - target: "theme-rebel-against-the-divine"
     type: "Greek-rebel-figure"
     source: "Forsyth 1987 *The Old Enemy*; Hesiod *Theogony* + *Works and Days*; Aeschylus *Prometheus Bound* — Prometheus is THE Greek-tradition instance of the cosmic rebel: the Titan who steals fire from Zeus to give to humanity, is chained to the Caucasus, and endures eternal eagle-liver-devouring punishment. Mary Shelley's *Frankenstein* subtitle 'The Modern Prometheus' (1818) + Byron *Cain* + Shelley *Prometheus Unbound* (1820) make him the Romantic-era prototype of the noble rebel. See [[theme-rebel-against-the-divine]]"
+    source-tier: T1
     notes: "MASSIVE-WIN: Prometheus is the *valorized* rebel (rebel-as-culture-hero) — the polar opposite valuation from the *demonized* Christian Lucifer despite occupying the same structural slot. Cross-lens: 03_deities → 06_themes"
 status: "metadata"
 refs:

@@ -19,28 +19,35 @@ syncretic-edges:
   - target: "Christian God (in 19th-c. missionary translation)"
     type: "folk-syncretism"
     source: "Swain 1993; Sutton 2003"
+    source-tier: T1
   - target: "bunjil"
     type: "scholarly-parallel"
     source: "Howitt, *The Native Tribes of South-East Australia* (1904); Stanner, *White Man Got No Dreaming* (1979) — the south-eastern Australian All-Father takes locally-distinct names (Baiame in Wiradjuri/Gamilaroi/Kamilaroi inland NSW; Bunjil in Kulin Victoria; Daramulan in Yuin coastal NSW; Nurrundere in Ngarrindjeri Murray-mouth). Structurally the same eagle-sky-creator-lawgiver figure"
+    source-tier: T1
     notes: "Australian All-Father regional-name cluster"
   - target: "daramulan"
     type: "scholarly-parallel"
     source: "Howitt 1904 — Daramulan repeatedly couples with Baiame as son/junior or alternate name for the sky-being who presides over male initiation"
+    source-tier: T1
   - target: "tian-heaven"
     type: "scholarly-parallel"
     source: "Eliade, *Patterns in Comparative Religion* (1958), Ch. II — supreme-sky-father convergence; Chinese Tian as impersonal sky-heaven and Baiame as Australian sky-father share the supreme-celestial-deity function"
+    source-tier: T1
     notes: "Supreme-sky-deity cross-cultural archetype"
   - target: "wakan-tanka"
     type: "scholarly-parallel"
     source: "Eliade 1958; both are All-Father/Great-Spirit figures who are simultaneously personal-divine-being and impersonal-cosmic-principle in their respective traditions"
+    source-tier: T1
     notes: "MASSIVE WIN: All-Father convergence Australia/Lakota — Stanner explicitly compared Australian Aboriginal religion to North American Plains traditions on the All-Father question"
   - target: "olodumare"
     type: "scholarly-parallel"
     source: "Eliade 1958; Awolalu, *Yoruba Beliefs and Sacrificial Rites* (1979) — both are remote-supreme-sky-creator who underwrite the working pantheon but are rarely directly addressed in cult; the *deus otiosus* pattern"
+    source-tier: T1
     notes: "Deus otiosus supreme-creator convergence"
   - target: "brahma"
     type: "scholarly-parallel"
     source: "Eliade 1958 — Vedic Brahma as supreme-creator-deity who is rarely directly worshipped (deus otiosus); structural parallel to Baiame's distant-supreme position in Aboriginal cult"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "A Place for Strangers: Towards a History of Australian Aboriginal Being"

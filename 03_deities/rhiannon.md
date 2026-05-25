@@ -19,27 +19,35 @@ syncretic-edges:
   - target: "[[epona]] (Gaulish horse-goddess)"
     type: "scholarly-parallel"
     source: "Epona (Gaulish, widely attested in Roman-period inscriptions across the empire) is the closest Celtic cognate: horse-goddess, sovereignty associations, otherworld-guide function; Rhiannon as the Welsh literary reflex of the pan-Celtic *Rigantona* / horse-sovereignty-goddess; Green 1992 *Animals in Celtic Life and Myth*; MacCana 1983 *Celtic Mythology*"
+    source-tier: T1
   - target: "[[macha]] (Irish sovereignty-and-horse goddess)"
     type: "scholarly-parallel"
     source: "Macha is the Irish triple-sovereignty goddess with explicit horse associations (forced to race while pregnant in the Ulster Cycle) and wrongful-ordeal narrative — structural parallel to Rhiannon's wrongful-accusation ordeal; both are sovereignty goddesses punished through forced horse-labor"
+    source-tier: T1
   - target: "[[the-morrigan]] (Irish war-sovereignty goddess)"
     type: "scholarly-parallel"
     source: "The Morrígan as triple sovereignty-goddess of Ireland (Badb / Macha / Morrígan cluster) is the Irish functional equivalent of Rhiannon as sovereignty-goddess; both embody the land's sovereignty and choose/test the king; both have bird associations (the Morrígan as crow/raven; Rhiannon's birds)"
+    source-tier: T1
   - target: "[[manannan-mac-lir]] (Irish otherworld lord)"
     type: "scholarly-parallel"
     source: "Manawydan fab Llŷr — Rhiannon's second husband in the Third Branch — is explicitly the Welsh form of Manannán mac Lir; Rhiannon's connection to Annwn (the Welsh otherworld) and to Manawydan places her in the otherworld-sovereignty cluster alongside the lord of the Celtic otherworld"
+    source-tier: T1
   - target: "[[cerridwen]] (Welsh otherworld-goddess)"
     type: "scholarly-parallel"
     source: "Cerridwen as the Welsh otherworld goddess of transformation and wisdom; both Cerridwen and Rhiannon are powerful pre-Christian feminine divine figures in the Welsh tradition preserved in medieval manuscripts"
+    source-tier: T1
   - target: "[[brigid]] (Irish sovereignty and healing goddess)"
     type: "scholarly-parallel"
     source: "Brigid as the pan-Celtic divine feminine with sovereignty and healing aspects; comparative parallel to Rhiannon as the Welsh sovereignty-goddess tradition"
+    source-tier: T1
   - target: "[[lugh]] (Irish solar-hero sovereign)"
     type: "mythological-partner"
     source: "Lugh and Rhiannon both represent the Welsh/Irish sovereignty traditions in their respective cultural branches; comparative Celtic mythology treats them as belonging to the same tier of pre-Christian divine sovereignty"
+    source-tier: T1
   - target: "[[dagda]] (Irish divine-father)"
     type: "mythological-partner"
     source: "The Dagda and Rhiannon both represent the senior tier of Celtic divine figures preserved in medieval literary sources; the Dagda's sovereignty function in Ireland mirrors the sovereignty context in which Rhiannon operates in Wales"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Mabinogion"

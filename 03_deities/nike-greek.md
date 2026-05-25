@@ -20,6 +20,7 @@ syncretic-edges:
   - target: "victoria-roman"
     type: "ancient-identification"
     source: "Standard interpretatio Latina; Victoria is the Latin name for Nike throughout Roman literary and cultic tradition"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Oxford Classical Dictionary"

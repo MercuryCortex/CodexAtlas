@@ -23,30 +23,37 @@ cross-tradition-edges:
   - target: "machu-picchu"
     type: "ancestor-of-tradition"
     source: "Burger 1992"
+    source-tier: T1
     notes: "Chavín (1200–500 BCE) is the foundational Andean religious-architectural tradition that lies ~2000 years upstream of the Inca empire. Iconographic + architectural elements (feline-snake-bird composite imagery, terraced platforms, cardinal alignments) propagate forward through the long Andean tradition. The Inca are the latest beneficiaries of a cumulative Andean religious-architectural inheritance going back to Chavín."
   - target: "sacsayhuaman"
     type: "ancestor-of-tradition"
     source: "Burger 1992; Janusek 2008"
+    source-tier: T1
     notes: "Andean cyclopean / megalithic construction traditions are anchored in Chavín — the Old Temple's cut-and-fitted stone walls predate Inca cyclopean stonework by ~2000 years."
   - target: "gobekli-tepe"
     type: "parallel-form"
     source: "(general)"
+    source-tier: T1
     notes: "Both: pre-state ritual centers built before urban civilization; massive labour-mobilization for sacred-architectural construction. Göbekli Tepe ~9500 BCE (pre-pottery Neolithic Anatolia); Chavín ~1200 BCE (Andean Initial / Early Horizon). Both reshape the conventional 'state-precedes-monumentalism' story."
   - target: "delphi"
     type: "parallel-form"
     source: "Burger 1992"
+    source-tier: T1
     notes: "Pilgrimage-oracle center drawing visitors from across the cultural region. Chavín drew pilgrims from across the Andes (~1200–500 BCE); Delphi drew them from across the Greek world (~800–390 CE). The oracle-center-as-trans-regional-religious-hub model is broadly parallel."
   - target: "elephanta-caves"
     type: "parallel-form"
     source: "(general)"
+    source-tier: T1
     notes: "Subterranean ritual architecture — Chavín's complex underground gallery system parallels the cave-temple tradition of South Asia (Elephanta, Ajanta) in its underground-sacred-space programming."
   - target: "gallery-of-the-lanzon"
     type: "contains"
     source: "Burger 1992"
+    source-tier: T1
     notes: "The narrow underground gallery containing the 4.5m carved-granite Lanzón monolith — the central cult-image of Chavín. The Lanzón is one of the most distinctive sacred objects in Andean religion."
   - target: "tradition-andean-pre-inca"
     type: "iconic-monument-of"
     source: "Burger 1992"
+    source-tier: T1
     notes: "Chavín de Huántar is the canonical Early Horizon ritual centre — the architectural-iconographic type-source of the Early Andean religious tradition that anchors all subsequent Andean religious-architectural development."
 status: "metadata"
 refs:

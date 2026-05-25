@@ -20,14 +20,17 @@ syncretic-edges:
   - target: "verethragna"
     type: "ancient-identification"
     source: "Russell 1987; Boyce & Grenet 1991"
+    source-tier: T1
     notes: "Vahagn is the Armenian development of Zoroastrian Verethragna (Vahram in Parthian) — the victory-deity and obstacle-destroyer. The name Vahagn derives from Vahram/Verethragna via Parthian transmission."
   - target: "indra"
     type: "scholarly-parallel"
     source: "Russell 1987; Mallory & Adams 2006"
+    source-tier: T1
     notes: "Both are Indo-European thunder-gods who slay the great serpent/dragon (Indra vs. Vritra; Vahagn vs. vishap). Probable common Indo-Iranian heritage via the Vritra-slaying myth."
   - target: "thor"
     type: "scholarly-parallel"
     source: "Mallory & Adams 2006 *The Oxford Introduction to Proto-Indo-European*"
+    source-tier: T1
     notes: "Germanic parallel: Thor vs. Jörmungandr maps structurally onto Vahagn vs. the dragon. Both are thunder-beings whose dragon-slaying is cosmologically necessary."
 status: "metadata"
 refs:

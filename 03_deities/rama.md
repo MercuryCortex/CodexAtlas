@@ -20,6 +20,7 @@ syncretic-edges:
   - target: "[[vishnu]]"
     type: "avatara-of"
     source: "Vālmīki Rāmāyaṇa; Puranic daśāvatāra tradition; Bhāgavata Purāṇa 9.10-11"
+    source-tier: T1
     notes: "Rama is the seventh avatara (*saptama avatāra*) of Vishnu in the classical daśāvatāra scheme. In Rāmānanda + later Rāmāvat traditions Rama becomes the supreme God himself, with Vishnu as his transcendent aspect"
 status: "metadata"
 refs:

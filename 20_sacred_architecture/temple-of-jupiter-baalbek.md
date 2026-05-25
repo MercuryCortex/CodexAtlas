@@ -23,26 +23,32 @@ cross-tradition-edges:
   - target: "temple-of-jupiter-optimus-maximus-rome"
     type: "provincial-imperial-cognate"
     source: "Ball 2000; Stamper 2005; Segal 2013"
+    source-tier: T1
     notes: "The Temple of Jupiter at Baalbek is the **largest Roman peristyle temple ever built in the eastern Mediterranean**, dwarfing even the Capitoline Temple of Jupiter Optimus Maximus at Rome in raw scale (Baalbek's columns are 19.9 m tall — the tallest in the entire Roman empire). It is the **architectural-imperial declaration** of Roman religion's reach into the East."
   - target: "temple-of-bacchus-baalbek"
     type: "adjacent-and-paired"
     source: "Ball 2000; Segal 2013"
+    source-tier: T1
     notes: "Built within the same Heliopolitan sanctuary, the Temple of Bacchus is the second great temple of the precinct — smaller (by Baalbek standards) and **better-preserved** than the Temple of Jupiter, and one of the most ornately-decorated Roman temples surviving."
   - target: "temple-of-bel-palmyra"
     type: "parallel-syncretic-roman-east-temple"
     source: "Ball 2000; Raja 2018"
+    source-tier: T1
     notes: "Baalbek's Jupiter-Heliopolitanus (Roman+local Baal) and Palmyra's Bel (Roman+local Aramaic) are the **two greatest exemplars of Roman-imperial-and-local-Semitic syncretic temple architecture in the Roman East**. Both produce monumental sanctuaries that fuse Roman peristyle classicism with eastern courtyard-and-tower temple traditions."
   - target: "ugarit-temple-of-baal"
     type: "deep-cultural-ancestor-of-the-local-substrate"
     source: "Ball 2000; Smith 1990"
+    source-tier: T1
     notes: "The pre-Roman cult at Baalbek is the **Phoenician/Canaanite Baal of the Beqaa** — directly descended from the broader Late Bronze Age Levantine Baal tradition of which [[ugarit-temple-of-baal|Ugarit]] is the textual centre. **Baalbek's name itself preserves this**: Ba'al-bekaa = 'Lord of the Beqaa [Valley]'."
   - target: "tradition-imperial-cult"
     type: "anchor-site"
     source: "Beard, North & Price 1998; Segal 2013"
+    source-tier: T1
     notes: "Baalbek is a **flagship architectural project of the Roman imperial cult in the East** — the imperial mechanism by which Roman religion projected itself into provincial Semitic cult-territory was to **rebuild the local high god as Jupiter-with-local-epithet**, fund vast new temple architecture, and integrate the resulting sanctuary into the imperial cult network."
   - target: "theme-baal-set-syncretism"
     type: "anchor-site"
     source: "Ball 2000; Smith 1990"
+    source-tier: T1
     notes: "Baalbek is the **architectural-monumental form** of the broader Roman-period syncretism of Baal with Greco-Roman storm-gods."
 status: "metadata"
 refs:

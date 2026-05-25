@@ -23,14 +23,17 @@ cross-tradition-edges:
   - target: "amun-ra"
     type: "principal-cult-locus"
     source: "Wilkinson 2000; Shaw 2000"
+    source-tier: T1
     notes: "Karnak is the principal cult locus of [[amun-ra|Amun]] / [[amun-ra|Amun-Re]] throughout the New Kingdom and Late Period — for ~1700 years the centre of Egypt's most powerful priesthood and one of the wealthiest religious institutions in the ancient world."
   - target: "pyramid-of-khufu"
     type: "successor-form-egyptian"
     source: "Wilkinson 2000; Arnold 2003"
+    source-tier: T1
     notes: "Old-Kingdom Egyptian monumental sacred architecture centred on **the pyramid** (royal tomb-machine). New-Kingdom Egyptian monumental sacred architecture centres on **the temple** (cult-centre of a deity). Karnak is the apex expression of the temple-as-form, as the Great Pyramid was the apex of the pyramid-as-form. Different theological emphases — pharaoh-ascending vs. god-dwelling — within the same religious tradition."
   - target: "parthenon-athens"
     type: "parallel-form-cult-temple"
     source: "Wescoat 2012"
+    source-tier: T1
     notes: "Parallel between Egyptian and Greek conceptions of the cult-temple: a *naos* / *adyton* housing the deity's image, accessed only by priests, surrounded by progressively more public spaces. Independent emergence; Karnak's form is unambiguously Egyptian, Parthenon's unambiguously Greek, but the **typological move** ('temple = house of the deity's image, with restricted innermost access') is convergent."
 status: "metadata"
 refs:

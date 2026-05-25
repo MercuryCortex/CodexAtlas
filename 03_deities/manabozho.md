@@ -20,21 +20,27 @@ syncretic-edges:
   - target: "[[coyote-navajo]]"
     type: "structural-parallel"
     source: "The most direct North American parallel — both are shapeshifting trickster-culture-heroes whose myth cycles document the foundational narrative structure of the North American trickster. Radin's The Trickster (1956) is organized around the Winnebago trickster cycle (adjacent to the Manabozho tradition) and explicitly compares with Coyote and Raven."
+    source-tier: T1
   - target: "[[raven-trickster]]"
     type: "structural-parallel"
     source: "Raven (Pacific Northwest) and Manabozho (Great Lakes/Algonquian) represent the same narrative archetype — shapeshifting trickster-creator — realized in adjacent geographic traditions. Both steal fire/light; both reshape the earth after flood."
+    source-tier: T1
   - target: "[[prometheus]]"
     type: "structural-parallel"
     source: "Manabozho steals fire from the spirit world for humanity — the same narrative as Prometheus stealing fire from Olympus. Cross-cultural fire-theft motif documented by Frazer (Myths of the Origin of Fire, 1930) as one of the most globally distributed mythological patterns."
+    source-tier: T1
   - target: "[[loki]]"
     type: "structural-parallel"
     source: "Both are shapeshifting tricksters who navigate between divine and human worlds; both have episodes where transgressive action has cosmic consequences; both are simultaneous helpers and disruptors."
+    source-tier: T1
   - target: "[[maui-polynesian]]"
     type: "structural-parallel"
     source: "Maui steals fire; Manabozho steals fire. Both are culture-heroes of comparable narrative scope — extensive multi-episode myth cycles that cover creation, fire-theft, the origin of death, and the shaping of the present world."
+    source-tier: T1
   - target: "[[bergelmir]]"
     type: "structural-parallel"
     source: "Manabozho survives the great flood on a raft (with animals) and rebuilds the earth from a piece of mud brought up by a small animal (muskrat or otter) — the Earth-Diver motif. Bergelmir is the Norse flood survivor. Both flood-survival myths encode the theme of cosmic reshaping after destruction."
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Algic Researches"

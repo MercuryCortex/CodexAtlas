@@ -20,6 +20,7 @@ syncretic-edges:
   - target: "[[enki-ea]]"
     type: "manifestation-of"
     source: "Atrahasis Tablet I — Enki and Ninhursag co-create humanity from clay mixed with the blood of the slain god We-ila"
+    source-tier: T1
     notes: "Co-creation-of-humanity mythologem. Ninhursag shapes the clay; Enki provides the divine component (the *temu* or breath/intelligence). Standard Sumerian cosmogonic-mythology, NOT a genetic-engineering protocol per Sitchin pseudoarchaeology — see [[nibiru-anunnaki]]"
 status: "stub"
 refs:

@@ -17,14 +17,17 @@ syncretic-edges:
   - target: "[[tyche-greek]]"
     type: "interpretatio-cultic"
     source: "Champeaux 1982-1987, Fortuna (2 vols.); Beard/North/Price 1998 Religions of Rome vol. 1"
+    source-tier: T1
     notes: "interpretatio-romana with shared cult: Greek Tyche imported wholesale into Roman religion at the level of cult-practice. The Praeneste cult of Fortuna Primigenia predates and influences imperial-era Hellenization — the relationship is older than a simple name-mapping and involves the actual sanctuary cult"
   - target: "[[the-moirai]]"
     type: "scholarly-parallel"
     source: "Champeaux 1982-1987"
+    source-tier: T1
     notes: "Substitutive at the Hellenistic moment — Fortuna takes over functions previously divided among the Moirai (apportionment of fate)"
   - target: "[[lakshmi]]"
     type: "scholarly-parallel"
     source: "Comparative religion — feminine personification of variable fortune; the unsteady divine gift; no historical transmission claim"
+    source-tier: T1
     notes: "Structural parallel — both Lakshmi and Fortuna personify the FEMININE-GIFT-OF-PROSPERITY divine role; this is NOT a transmission claim, only a typological one"
 status: "metadata"
 refs:

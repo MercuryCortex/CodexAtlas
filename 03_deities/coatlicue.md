@@ -19,6 +19,7 @@ syncretic-edges:
   - target: "Tonantzin / Our Lady of Guadalupe"
     type: "folk-syncretism"
     source: "Lafaye 1976 (contested)"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Coatlicue: The Earth Goddess of the Aztecs"

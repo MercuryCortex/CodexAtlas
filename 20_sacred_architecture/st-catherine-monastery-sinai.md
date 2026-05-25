@@ -25,22 +25,27 @@ cross-tradition-edges:
   - target: "mount-sinai"
     type: "houses-pilgrimage-to"
     source: "Tsafrir 1986; Weitzmann 1976"
+    source-tier: T1
     notes: "The monastery is the architectural focus of Christian pilgrimage to Mount Sinai — the biblical mountain of Moses' Theophany + the Burning Bush + the Ten Commandments. The monastery's chapel directly enshrines the traditional site of the **Burning Bush** (Exodus 3:1–6), still botanically present (a *Rubus sanctus* bush in the garden)."
   - target: "hagia-sophia"
     type: "stylistic-cousin"
     source: "Krautheimer 1986"
+    source-tier: T1
     notes: "Both [[hagia-sophia]] (537 CE, Constantinople) and St. Catherine's Monastery (548–565 CE, Sinai) are foundational monuments of [[justinian-i|Justinian's]] architectural patronage. The two represent the urban-imperial (Hagia Sophia) and monastic-frontier (Sinai) poles of the Justinianic building programme."
   - target: "church-of-the-holy-sepulchre-jerusalem"
     type: "parallel-form"
     source: "Krautheimer 1986; Tsafrir 1986"
+    source-tier: T1
     notes: "Both are foundational early Byzantine pilgrimage churches: the Holy Sepulchre (Constantine I, 4th c., Jerusalem) housing Christ's tomb; St. Catherine's (Justinian, 6th c., Sinai) housing the Burning Bush + later the Catherine relics. The two anchor the broader medieval Christian pilgrimage circuit (Jerusalem-Sinai-Bethlehem)."
   - target: "lalibela-rock-hewn-churches"
     type: "parallel-form"
     source: "Phillipson 2009"
+    source-tier: T1
     notes: "Lalibela (12th–13th c., Ethiopia) and St. Catherine's (6th c., Sinai) are both apex Eastern-Christian monastery-pilgrimage complexes in the broader Coptic-Ethiopian-Sinaitic Christian sphere. St. Catherine's is the much older of the two."
   - target: "codex-sinaiticus"
     type: "discovery-site-of"
     source: "Tischendorf 1860; Parker 2010"
+    source-tier: T1
     notes: "The [[codex-sinaiticus]] — the 4th-c. uncial Greek Bible, one of the two oldest complete Christian Bibles surviving — was discovered at St. Catherine's by [[constantine-von-tischendorf]] in 1844 (first 43 leaves) and 1859 (the bulk of the manuscript). The find fundamentally reshaped New Testament textual criticism."
 status: "metadata"
 refs:

@@ -20,12 +20,15 @@ syncretic-edges:
   - target: "[[sun-goddess-of-arinna]]"
     type: "scholarly-parallel"
     source: "Cross-tradition sun-goddess (rather than sun-god) typology — comparatively rare"
+    source-tier: T1
   - target: "[[ra]]"
     type: "scholarly-parallel"
     source: "Solar-sovereign-ancestor type (Pharaoh ↔ Tennō); Aston 1905, Naumann 2000"
+    source-tier: T1
   - target: "[[mary-theotokos]]"
     type: "folk-syncretism"
     source: "Honji-suijaku Shinto-Buddhist syncretic equation with Mahāvairocana; later Catholic missionaries (Xavier 1549–) leveraged Marian-Amaterasu typology"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Kojiki"

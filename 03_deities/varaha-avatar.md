@@ -16,6 +16,7 @@ syncretic-edges:
   - target: "[[earth-diver-creation]]"
     type: "parallel-motif"
     source: "Structural parallel to North American earth-diver creation motif (Sky Woman / Muskrat / Turtle Island); in both cases a divine being rescues or creates the earth from beneath the cosmic ocean. No transmission documented — parallel-form convergence. Dundes (1962) and Eliade (1958) document the earth-diver as a globally distributed cosmogonic pattern."
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Shatapatha Brahmana 14.1.2.11"

@@ -17,22 +17,28 @@ syncretic-edges:
   - target: "[[amaterasu]]"
     type: "folk-syncretism"
     source: "Honji-suijaku doctrine: medieval Japanese Buddhism declares Amaterasu the *suijaku* (Shinto trace) of Mahāvairocana the *honji* (Buddhist origin) — a thousand-year theological synthesis until forcibly separated by Meiji *shinbutsu bunri* in 1868"
+    source-tier: T1
   - target: "[[amitabha]]"
     type: "ancient-identification"
     source: "Center vs. West of the Five Dhyani Buddha mandala (with [[akshobhya]] East, [[ratnasambhava]] South, [[amoghasiddhi]] North)"
+    source-tier: T1
   - target: "ahura-mazda"
     type: "scholarly-parallel"
     source: "Boyce, *History of Zoroastrianism* (1975); Snellgrove, *Indo-Tibetan Buddhism* (1987) — Vairocana as the Mahayana cosmic-illumination Buddha at the centre of the mandala; Ahura Mazda as Zoroastrian supreme-light deity. The Iranian-Buddhist scholarly tradition documents direct influence of Zoroastrian light-cosmology on the Mahayana Vairocana cult via Sogdian/Parthian Buddhist transmission"
+    source-tier: T1
     notes: "MASSIVE WIN: Iranian-Buddhist transmission — Zoroastrian supreme-light deity influence on the Vairocana cosmic-illumination cult"
   - target: "ra"
     type: "scholarly-parallel"
     source: "Snellgrove 1987 — solar-cosmic-illumination deity parallel; both Ra and Vairocana centre the cosmos on a luminous-source-deity"
+    source-tier: T1
   - target: "aten"
     type: "scholarly-parallel"
     source: "Snellgrove 1987; Hornung, *Akhenaten and the Religion of Light* (1999) — Aten as solar disk and supreme deity in Akhenaten's monotheistic reform; Vairocana as central cosmic-light Buddha"
+    source-tier: T1
   - target: "shangdi"
     type: "ancient-identification"
     source: "Chinese Tiantai and Huayan Buddhism integrated Vairocana with Shangdi (the Shang-dynasty high god) in some imperial-cult contexts"
+    source-tier: T1
     notes: "Chinese reception — imperial-cult identification"
 status: "metadata"
 refs:

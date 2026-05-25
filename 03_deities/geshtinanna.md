@@ -20,6 +20,7 @@ syncretic-edges:
   - target: "[[belet-seri-akkadian]]"
     type: "ancient-identification"
     source: "Belet-Seri ('Lady of the Steppe') is the Akkadian rendering of Geshtinanna in her netherworld-scribe function; the equation is explicit in OB and SB sources including the Standard Babylonian Gilgamesh Tablet VII"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Inanna's Descent to the Netherworld"

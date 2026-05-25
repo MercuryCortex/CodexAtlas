@@ -20,9 +20,11 @@ syncretic-edges:
   - target: "[[gitche-manitou]]"
     type: "scholarly-parallel"
     source: "comparative-religion convention: both are aniconic 'Great Spirit' concepts in adjacent North-American religious systems; conceptual parallel, not historical identification"
+    source-tier: T1
   - target: "Christian God (in post-contact Lakota theological appropriations)"
     type: "folk-syncretism"
     source: "DeMallie 1984"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Sacred Pipe: Black Elk's Account of the Seven Rites of the Oglala Sioux"

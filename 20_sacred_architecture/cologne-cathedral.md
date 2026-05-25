@@ -25,22 +25,27 @@ cross-tradition-edges:
   - target: "chartres-cathedral"
     type: "stylistic-descendant"
     source: "Frankl 1962; Wolff 1990"
+    source-tier: T1
     notes: "Cologne (begun 1248) deploys the French High Gothic vocabulary canonised by [[chartres-cathedral|Chartres]] (1194–1220). The transmission is direct: Master Gerhard trained at [[amiens-cathedral|Amiens]] (begun 1220), which directly descended from Chartres + Reims."
   - target: "amiens-cathedral"
     type: "stylistic-predecessor"
     source: "Wolff 1990; Murray 1996"
+    source-tier: T1
     notes: "Master Gerhard trained at Amiens (begun 1220, the largest cathedral interior in France) before designing Cologne; Cologne's plan and elevation are direct adaptations of the Amiens model to German conditions + the 5-aisle requirement of the Three Kings shrine programme."
   - target: "notre-dame-de-paris"
     type: "stylistic-cousin"
     source: "Bony 1983"
+    source-tier: T1
     notes: "Both are major medieval French-Gothic cathedrals; Notre-Dame de Paris (begun 1163) is the older four-storey early Gothic experiment, Cologne (begun 1248) the later three-storey High Gothic German implementation."
   - target: "saint-denis-abbey-paris"
     type: "deep-ancestor"
     source: "Frankl 1962"
+    source-tier: T1
     notes: "Saint-Denis (Abbot Suger, ~1140) is the upstream origin of the entire French Gothic tradition that Cologne ultimately descends from."
   - target: "shrine-of-the-three-kings"
     type: "houses-the-relic-of"
     source: "Schade 1973; Lasko 1972"
+    source-tier: T1
     notes: "Cologne Cathedral was *specifically rebuilt to house* the Shrine of the Three Kings (~1190–1225, Nicholas of Verdun) — the principal relic of the Magi acquired in 1164 from Milan by Archbishop Rainald of Dassel after Frederick Barbarossa's sack of Milan. The cathedral's 5-aisle plan + monumental scale are dictated by the requirement of accommodating mass pilgrimage to the shrine."
 status: "metadata"
 refs:

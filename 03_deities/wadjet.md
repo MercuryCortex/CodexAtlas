@@ -20,13 +20,16 @@ syncretic-edges:
   - target: "Nekhbet (Upper Egyptian vulture-goddess; no node yet)"
     type: "ancient-identification"
     source: "The pharaonic *Nebty* (Two Ladies) titulary names Wadjet and Nekhbet jointly as the divine protectresses of the unified Two Lands; this is the Egyptian state-religion's most explicit binary-deity pairing, attested from the Early Dynastic Period (Wilkinson 1999)"
+    source-tier: T1
     notes: "Wadjet (cobra, Lower Egypt, Red Crown) + Nekhbet (vulture, Upper Egypt, White Crown) = the binary tutelary pair encoded in pharaonic titulary from c. -3000 to the Roman Period — the longest continuous binary-deity pairing in any documented religion"
   - target: "[[hathor]]"
     type: "ancient-identification"
     source: "Many Coffin Text and New Kingdom theological texts identify Wadjet, Hathor, and Sekhmet collectively as the *Eye of Ra* — the rage-and-protection complex of the solar god; the three are interchangeable manifestations of the solar feminine principle"
+    source-tier: T1
   - target: "Kerubu / Cherubim (Mesopotamian/Hebrew winged-guardian motif; concept-level, no node yet)"
     type: "scholarly-parallel"
     source: "Wadjet as the *uraeus* protective spirit at the threshold (the pharaoh's brow, the temple gate) is the Egyptian counterpart to the wider Near Eastern apotropaic-cobra-and-winged-guardian complex"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Early Dynastic Egypt"

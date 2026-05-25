@@ -20,23 +20,29 @@ syncretic-edges:
   - target: "guanyin"
     type: "gender-transformation"
     source: "From ~10th c. CE the Chinese reception of Avalokiteśvara progressively feminizes the deity; by Ming period Guanyin is fully feminine in popular religion. Yü 2001."
+    source-tier: T1
   - target: "amitabha"
     type: "emanation-source"
     source: "Pure Land theology — Avalokiteśvara is Amitābha's cosmic emanation; the dying Pure Land devotee is met by Amitābha attended by Avalokiteśvara and Mahāsthāmaprāpta"
+    source-tier: T1
   - target: "dalai-lama"
     type: "incarnation-claim"
     source: "Tibetan tradition — the Dalai Lama is an incarnation of Avalokiteśvara / Chenrezig"
+    source-tier: T1
   - target: "mary-theotokos"
     type: "scholarly-parallel"
     source: "Conze, *Buddhist Wisdom* (1958); Yü, *Kuan-yin* (2001) — both are *compassionate-savior-mother* figures (Avalokitesvara's gender shifts from masculine to feminine in East Asian reception precisely because the compassion-mother role draws iconography toward the feminine). Conze and Yü both compare the Avalokitesvara-Guanyin-Marian compassion-cult triad as the principal saviouress-of-suffering cult complex worldwide"
+    source-tier: T1
     notes: "MASSIVE WIN: compassion-saviouress-mother cross-tradition convergence Buddhist-Christian"
   - target: "tara"
     type: "ancient-identification"
     source: "Tara is born from Avalokiteśvara's tear; the two are the Tibetan compassion-cult pair"
+    source-tier: T1
     notes: "Within-family pairing"
   - target: "jesus-christ-deity"
     type: "scholarly-parallel"
     source: "Conze 1958; Suzuki, *Mysticism: Christian and Buddhist* (1957) — both are suffering-compassion saviors who postpone their own salvation/glorification to remain with sentient beings; the bodhisattva-vow of Avalokitesvara parallels Christ's redemptive-suffering-for-humanity vocation"
+    source-tier: T1
     notes: "Suffering-compassion savior partial parallel (Suzuki)"
 status: "metadata"
 refs:

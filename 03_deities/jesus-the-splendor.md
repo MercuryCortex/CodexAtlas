@@ -15,6 +15,7 @@ syncretic-edges:
   - target: "theme-manichaeism-synthesis"
     type: "redeemer-figure-of-syncretic-religion"
     source: "Lieu 1992 *Manichaeism in the Later Roman Empire and Medieval China*; Gardner 1995 *The Kephalaia of the Teacher*; Tardieu 2008 — Jesus the Splendor is the Christian-derived redeemer-figure of the Manichaean synthesis, the cosmic-Logos who reveals to Adam the truth of the light trapped in matter. Together with the cosmologically-distributed *Jesus patibilis* ('the suffering Jesus' — the divine light suffering in every fruit, plant, and human body), this figure represents Mani's Docetic Christology grafted onto Zoroastrian cosmic dualism + Buddhist liberation-teaching. See [[theme-manichaeism-synthesis]]"
+    source-tier: T1
     notes: "Cross-lens: 03_deities → 06_themes. MASSIVE-WIN: Jesus the Splendor is the *Christian* synthesis-component of the first global religious synthesis — Mani's claim to be the Paraclete promised by Jesus (John 14:16) gives apostolic authority to this figure. The Augustinian anti-Manichaean polemic targets this Docetic Christology directly"
 status: "metadata"
 refs:

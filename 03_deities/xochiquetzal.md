@@ -20,23 +20,29 @@ syncretic-edges:
   - target: "ixchel"
     type: "scholarly-parallel"
     source: "Parallels in domain (weaving, love, female sexuality, moon associations); Coe 2015; typological, no direct transmission claim"
+    source-tier: T1
   - target: "aphrodite-greek"
     type: "scholarly-parallel"
     source: "Eliade 1958, Ch. VI; general typology of beauty-and-desire goddess; no transmission"
+    source-tier: T1
     notes: "Love-beauty-flower deity cross-cultural archetype"
   - target: "venus-roman"
     type: "scholarly-parallel"
     source: "Latin parallel to Aphrodite; same structural pole as Xochiquetzal"
+    source-tier: T1
   - target: "hathor"
     type: "scholarly-parallel"
     source: "Wilkinson 2003 — Egyptian Hathor as love/beauty/music goddess; the love-beauty-female-fertility complex"
+    source-tier: T1
   - target: "lakshmi"
     type: "scholarly-parallel"
     source: "Eliade 1958; Vedic Lakshmi as goddess of beauty, prosperity, and the lotus parallel"
+    source-tier: T1
     notes: "Beauty-prosperity-flower goddess convergence"
   - target: "freyja"
     type: "scholarly-parallel"
     source: "Eliade 1958; Norse Freyja as love-and-fertility goddess parallel"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Florentine Codex: General History of the Things of New Spain"

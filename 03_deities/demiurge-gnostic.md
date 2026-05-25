@@ -20,9 +20,11 @@ syncretic-edges:
   - target: "plato-demiurge"
     type: "scholarly-parallel"
     source: "Turner 2001, Sethian Gnosticism and the Platonic Tradition"
+    source-tier: T1
   - target: "yahweh"
     type: "ancient-identification"
     source: "Sethian Gnostic texts identify the demiurge with the OT creator; cf. Pearson 1990, King 2006"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Secret Revelation of John"

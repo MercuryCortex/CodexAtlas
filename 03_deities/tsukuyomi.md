@@ -19,9 +19,11 @@ syncretic-edges:
   - target: "[[amaterasu]]"
     type: "ancient-identification"
     source: "Sibling pair (sun + moon) born from Izanagi's two eyes — Kojiki book 1"
+    source-tier: T1
   - target: "[[nanna-sin]]"
     type: "scholarly-parallel"
     source: "Cross-tradition lunar deity associated with time-reckoning and calendrics"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Kojiki"

@@ -20,15 +20,19 @@ syncretic-edges:
   - target: "osiris"
     type: "ancient-identification"
     source: "Plutarch *De Iside et Osiride* 28; Tacitus *Histories* 4.83–84"
+    source-tier: T1
   - target: "apis-bull"
     type: "ancient-identification"
     source: "Name etymology: Osor-Hapi = Osiris+Apis; Plutarch *DIO* 29"
+    source-tier: T1
   - target: "zeus"
     type: "ancient-identification"
     source: "Aretalogies addressing Serapis as 'Zeus Sarapis'; Apuleius *Met.* 11"
+    source-tier: T1
   - target: "hades"
     type: "ancient-identification"
     source: "Tacitus *Histories* 4.83–84 explicitly identifies Serapis with Pluto/Hades"
+    source-tier: T1
 status: "full"
 refs:
   - title: "Plutarch: De Iside et Osiride (Moralia)"

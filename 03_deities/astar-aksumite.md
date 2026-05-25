@@ -20,9 +20,11 @@ syncretic-edges:
   - target: "ishtar-akkadian"
     type: "ancient-identification"
     source: "Same Semitic root *ʿṯtr; the South-Arabian / Aksumite form is etymologically identical to East-Semitic Ishtar but masculinized (a feature shared with North-Arabian and some Levantine Aṯtar variants)"
+    source-tier: T1
   - target: "astarte-canaanite"
     type: "ancient-identification"
     source: "Direct etymological cognate; gender-variation between South-Semitic (masculine) and Northwest-Semitic (feminine) is a well-attested feature of the Semitic deity-system"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Arabia and the Arabs from the Bronze Age to the Coming of Islam"

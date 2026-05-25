@@ -19,15 +19,19 @@ syncretic-edges:
   - target: "[[cernunnos]] (Celtic horned lord of animals)"
     type: "scholarly-parallel"
     source: "Typological: the male deity who is lord of all wild animals, whose permission must be sought before hunting; Green 1992"
+    source-tier: T1
   - target: "[[artemis]] (Greek patroness of the hunt whose permission and respect are required)"
     type: "scholarly-parallel"
     source: "Typological: the divine sovereign who owns the wild animals; hunting as ritual negotiation with the divine; Burkert 1985"
+    source-tier: T1
   - target: "[[anansi]] (by contrast — where Anansi trickster-owns stories, Tapio owns the forest; both are sovereign over their domains)"
     type: "scholarly-parallel"
     source: "Typological: domain-sovereignty as divine archetype"
+    source-tier: T1
   - target: "[[diana-roman]] (Roman goddess of the forest and hunt)"
     type: "scholarly-parallel"
     source: "Functional parallel: deity of the wild woodland whose domain requires respectful approach"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Kalevala"

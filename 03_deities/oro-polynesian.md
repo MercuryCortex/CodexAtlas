@@ -20,18 +20,23 @@ syncretic-edges:
   - target: "[[huitzilopochtli]]"
     type: "scholarly-parallel"
     source: "Most precise structural parallel: both are war deities at the apex of a state religion requiring human sacrifice to sustain the cosmic/social order. Both cults were at their height of power just before European colonial disruption. Both demanded institutionalized sacrifice on a large scale."
+    source-tier: T1
   - target: "[[mars-roman]]"
     type: "scholarly-parallel"
     source: "War deity elevated to supreme political-theological status; both embody the equation of martial power with divine sovereignty."
+    source-tier: T1
   - target: "[[ares]]"
     type: "scholarly-parallel"
     source: "Both are war deities whose worship involves warrior-dedication and whose cult is less moralized than the surrounding theological system. Ares is simultaneously feared and propitiated."
+    source-tier: T1
   - target: "[[kali]]"
     type: "scholarly-parallel"
     source: "Both have devotional communities (the 'Arioi / Tantric Kali worshippers) who perform rituals that invert normative social structures — the 'Arioi practice infanticide and sexual freedom; Kali's Tantric venerators engage transgressive practices. Both cults use what normative society prohibits."
+    source-tier: T1
   - target: "[[shango]]"
     type: "scholarly-parallel"
     source: "Both are warrior deities whose worship involves oracular/performative community (the 'Arioi performances / Shango possession ceremonies) and a strong aesthetic dimension alongside the martial function."
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Ancient Tahiti"

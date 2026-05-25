@@ -20,23 +20,29 @@ syncretic-edges:
   - target: "Our Lady of Mercy (Las Mercedes)"
     type: "folk-syncretism"
     source: "Brandon 1993; Murphy 1988"
+    source-tier: T1
   - target: "ptah"
     type: "scholarly-parallel"
     source: "Idowu, *Olodumare: God in Yoruba Belief* (1962); Wilkinson, *Complete Gods and Goddesses of Ancient Egypt* (2003) — Ptah as Egyptian creator who shaped humanity from clay on the potter's wheel; Obatala as Yoruba creator commissioned by Olodumare to shape humans from clay. The clay-shaper-creator-of-humanity convergence"
+    source-tier: T1
     notes: "MASSIVE WIN: creator-shaped-humans-from-clay convergence — Yoruba Obatala / Egyptian Ptah / Vedic Prajapati / Hebrew Yahweh-Genesis-2:7"
   - target: "prajapati"
     type: "scholarly-parallel"
     source: "Idowu 1962; Mbiti, *African Religions and Philosophy* (1969) — Vedic Prajapati as cosmic creator-of-beings; Obatala as Yoruba shaper-of-humans. The cosmic-creator-architect parallel"
+    source-tier: T1
   - target: "yahweh"
     type: "scholarly-parallel"
     source: "Idowu 1962 — Genesis 2:7 'God formed man from the dust of the ground' parallels Obatala's clay-shaping creation-of-humans. The earth-clay creation-of-humanity is one of the most widely-attested cosmogonic motifs (Sumerian, Egyptian, Yoruba, Hebrew)"
+    source-tier: T1
     notes: "Clay-creation-of-humans Yahweh/Obatala parallel"
   - target: "khnum"
     type: "scholarly-parallel"
     source: "Wilkinson 2003 — Egyptian Khnum as ram-headed potter-god who shapes humans on the potter's wheel; the closest Egyptian parallel to Obatala's clay-shaping function"
+    source-tier: T1
   - target: "afro-diasporic-syncretism"
     type: "source-deity-of-diaspora-fusion"
     source: "Murphy 1988, *Santería* p. 91; Brandon 1993; Desmangles 1992 — Obatalá/Oxalá's canonical Cuban-Lucumí pairing with Our Lady of Mercy (Las Mercedes — the white-garbed Marian figure) is the canonical purity/creation-domain syncretism. In Brazilian Candomblé, Oxalá is identified with Jesus Christ himself — one of the most theologically sophisticated Orisha-Christian identifications, going beyond surface iconography to structural theological equivalence (creative-Logos + purity + suffering + protection of vulnerable). See [[afro-diasporic-syncretism]]"
+    source-tier: T1
     notes: "MASSIVE-WIN: the Oxalá-Christ identification in Candomblé is the rare case where the syncretic mapping reaches Christological depth — the orisha-saint correspondence pattern collapses into orisha-Christ correspondence, suggesting the deepest theological move the syncretism can make"
 status: "metadata"
 refs:

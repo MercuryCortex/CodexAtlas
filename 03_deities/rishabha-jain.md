@@ -20,22 +20,27 @@ syncretic-edges:
   - target: "vishnu"
     type: "folk-syncretism"
     source: "Bhagavata Purana 5.3–6; Dundas 2002"
+    source-tier: T1
     notes: "The Hindu Bhagavata Purana (c. 9th–10th c. CE) includes Rishabha as an avatar of Vishnu — a deliberate Brahmanical appropriation of the Jain first Tirthankara into the Vaishnava avatar framework. The same absorptive mechanism was used against the Buddha (also made a Vishnu avatar)."
   - target: "prometheus"
     type: "scholarly-parallel"
     source: "Dundas 2002; Jaini 1979"
+    source-tier: T1
     notes: "Both are culture-heroes who give humanity its complete civilizational toolkit: Rishabha teaches agriculture, cooking, writing, mathematics, and social organization; Prometheus gives fire and all the arts. The deity-as-founding-teacher-of-civilization is a cross-cultural pattern."
   - target: "enki-ea"
     type: "scholarly-parallel"
     source: "Jaini 1979"
+    source-tier: T1
     notes: "Enki/Ea as possessor of the *me* (all civilizational arts and norms) and transmitter to humanity; Rishabha as teacher of all civilizational arts. The divine keeper and dispenser of the complete civilizational package."
   - target: "thoth"
     type: "scholarly-parallel"
     source: "Jaini 1979"
+    source-tier: T1
     notes: "Thoth as inventor of writing and all arts and sciences; Rishabha as teacher of writing, mathematics, and all civilizational skills. The god who invented and gave humanity its intellectual toolkit."
   - target: "quetzalcoatl"
     type: "scholarly-parallel"
     source: "Jaini 1979"
+    source-tier: T1
     notes: "Quetzalcoatl as giver of maize, calendars, and civilization to humanity; the Mesoamerican parallel to Rishabha's role as complete civilizational culture-hero."
 status: "metadata"
 refs:

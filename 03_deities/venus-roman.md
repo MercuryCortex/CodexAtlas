@@ -20,9 +20,11 @@ syncretic-edges:
   - target: "aphrodite-greek"
     type: "ancient-identification"
     source: "Standard *interpretatio Graeca* from late Republic; Aeneid 1 explicitly identifies them"
+    source-tier: T1
   - target: "astarte-canaanite"
     type: "ancient-identification"
     source: "Cult of Venus Erycina (from Eryx in Sicily) imports a Phoenician Astarte cult under Venus's name (~-217)"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Religions of Rome"

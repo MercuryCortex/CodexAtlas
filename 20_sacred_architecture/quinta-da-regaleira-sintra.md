@@ -22,18 +22,22 @@ cross-tradition-edges:
   - target: "convent-of-christ-tomar"
     type: "successor-portuguese-esoteric-site"
     source: "Gandra 2010; Gandra 2015"
+    source-tier: T1
     notes: "In the Portuguese-esoteric topography (per Gandra), Tomar (medieval Templar centre) and Regaleira (fin-de-siècle Templar-Masonic-Rosicrucian gesture) are the **medieval** and **modern** poles of the Portuguese esoteric architectural lineage. Manini's Manueline-revival citations in Regaleira's main palace deliberately quote Tomar's [[convent-of-christ-tomar|Manueline programme]]."
   - target: "tradition-portuguese-hermeticism"
     type: "principal-modern-monument-of"
     source: "Gandra 2010; Gandra 2015"
+    source-tier: T1
     notes: "Regaleira is the **most elaborate single architectural-symbolic expression of late-19th/early-20th c. Portuguese esoteric thought**. Carvalho Monteiro's library held first editions of [[corpus-hermeticum]], alchemical manuscripts, [[tradition-freemasonry]] texts, and the Portuguese Renaissance literature ([[camões]], [[bandarra]]) that ties Portuguese hermeticism to the [[theme-fifth-empire]] tradition."
   - target: "tradition-rosicrucianism"
     type: "iconographic-commemoration"
     source: "Gandra 2010"
+    source-tier: T1
     notes: "Rosicrucian iconography (rose-and-cross, the Initiation Well's nine-tier descent reading as Dantean cosmology + Rosicrucian initiation) is built into the estate's programme."
   - target: "theme-initiation-as-architectural-descent-and-ascent"
     type: "anchor-site"
     source: "Gandra 2010"
+    source-tier: T1
     notes: "The **Initiation Well** (Poço Iniciático) is the estate's central architectural element: a 27-m deep inverted-tower with nine levels of spiral staircase, opening to the sky from an octagonal moss-covered well-mouth concealed in the gardens. The well-mouth lid is a stone with a Templar Cross. The descent-and-ascent reads as initiatic-symbolic — the visitor's body re-enacts a journey through nine levels (Dante's Inferno; Rosicrucian initiation grades; the nine spheres of medieval cosmology)."
 status: "metadata"
 refs:

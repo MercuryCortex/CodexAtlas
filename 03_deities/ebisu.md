@@ -20,18 +20,23 @@ syncretic-edges:
   - target: "[[okuninushi]]"
     type: "folk-syncretism"
     source: "Ebisu sometimes identified as child of Okuninushi (Kotoshironushi tradition); fishing-and-sea-harvest domain overlap"
+    source-tier: T1
   - target: "[[saraswati]]"
     type: "folk-syncretism"
     source: "Saraswati → Benzaiten (one of the Seven Lucky Gods alongside Ebisu); the Shichifukujin synthesis embeds this direct Hindu-to-Shinto transmission; the Seven Lucky Gods as a whole represent Japan's deliberate inter-tradition deity fusion"
+    source-tier: T1
   - target: "[[kubera]]"
     type: "folk-syncretism"
     source: "Kubera → Bishamonten (another of the Seven Lucky Gods); wealth-deity transmission from Vedic through Buddhist to Japanese iconographic tradition; shares Ebisu's prosperity domain within Shichifukujin"
+    source-tier: T1
   - target: "[[inari]]"
     type: "folk-syncretism"
     source: "Overlapping prosperity and agricultural abundance domains; both associated with good fortune and commercial success in Japanese folk practice"
+    source-tier: T1
   - target: "[[sophia-gnostic]]"
     type: "scholarly-parallel"
     source: "The failed/fallen first creation who is cast out yet ultimately redeemed / elevated — Hiruko as Ebisu parallels the Gnostic Sophia's fall and redemption arc; the 'rejected creation becomes sacred protector' mytheme"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Kojiki"

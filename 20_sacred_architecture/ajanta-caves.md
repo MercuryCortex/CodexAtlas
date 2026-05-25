@@ -25,22 +25,27 @@ cross-tradition-edges:
   - target: "ellora-cave-complex"
     type: "stylistic-descendant"
     source: "Spink 2005–2014; Behl 1998"
+    source-tier: T1
     notes: "Ajanta (~200 BCE–650 CE) is the deep-predecessor; [[ellora-cave-complex|Ellora]]'s Buddhist work (~600–730 CE) continues the Ajanta tradition after Ajanta itself was abandoned in the mid-7th c."
   - target: "bamiyan-buddhas-rock-cut"
     type: "parallel-form"
     source: "Behrendt 2007"
+    source-tier: T1
     notes: "Both Ajanta and [[bamiyan-buddhas-rock-cut|Bamiyan]] are major rock-cut Buddhist monuments in the broader Indo-Gandharan tradition; Bamiyan's monumental Buddhas (~507/554 CE) overlap chronologically with Ajanta's Phase II Mahayana work."
   - target: "mogao-grottoes-dunhuang"
     type: "stylistic-ancestor"
     source: "Williams 1973; Behl 1998"
+    source-tier: T1
     notes: "Ajanta is one of the upstream sources of the Buddhist rock-cut-and-painted cave tradition that reaches China at Dunhuang (Mogao Grottoes, ~4th c. CE onwards) via the Silk Road. The painting-programme tradition is partially continuous."
   - target: "borobudur-stupa-mandala"
     type: "stylistic-predecessor"
     source: "Snodgrass 1985"
+    source-tier: T1
     notes: "Ajanta's narrative-bas-relief programme (Jataka tales + Buddha-biography) is a deep predecessor of Borobudur's monumental narrative-relief programme (~800 CE) — same iconographic tradition, different architectural medium."
   - target: "lascaux-cave-paintings"
     type: "parallel-form-deep"
     source: "Aniconic"
+    source-tier: T1
     notes: "Cave-painting as religious art — independent emergence: Lascaux (~17,000 BCE, Upper Palaeolithic) and Ajanta (~2nd c. BCE–7th c. CE, Buddhist). The architectural-iconographic mode is the same (interior of a cave decorated with figural painting for ritual purposes); the cultural-religious traditions are entirely unrelated."
 status: "metadata"
 refs:

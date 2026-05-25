@@ -19,6 +19,7 @@ syncretic-edges:
   - target: "Odin (typological — both wandering wise-old singers with shamanic / poetic mastery)"
     type: "scholarly-parallel"
     source: "Pentikäinen 1989; Siikala 2002"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Kalevala Mythology"

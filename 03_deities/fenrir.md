@@ -20,9 +20,11 @@ syncretic-edges:
   - target: "[[jormungandr]]"
     type: "ancient-identification"
     source: "Sibling — both children of Loki and Angrboða, both bound until Ragnarök, both kill a primary Æsir god at the end"
+    source-tier: T1
   - target: "[[loki]]"
     type: "ancient-identification"
     source: "Father (with the giantess Angrboða)"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Norse Mythology"

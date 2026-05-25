@@ -19,18 +19,23 @@ syncretic-edges:
   - target: "Hephaestus / Hephaistos (Greek smith-god)"
     type: "ancient-identification"
     source: "*Hypatian Chronicle* gloss on Malalas's *Chronographia* — the chronicler explicitly identifies Svarog with Hephaestus in the euhemerizing Hellenized framework Malalas applied to the Egyptian gods (Hephaestus-Vulcan-Svarog → Helios-Sol-Dazhbog). This is the SOLE ancient textual identification of a Slavic deity with a Mediterranean god, making it methodologically load-bearing. Note: the gloss is by a Christian chronicler, not a pagan source — it is *interpretatio christiana* applied retroactively"
+    source-tier: T1
   - target: "[[dazhbog]] (Svarog's son in the Hypatian Chronicle gloss)"
     type: "ancient-identification"
     source: "*Hypatian Chronicle* — Dazhbog son-of-Svarog parallels Helios son-of-Hephaestus in the Malalas framework"
+    source-tier: T1
   - target: "Vedic Tvaṣṭṛ / Tvashtar (artificer-god, father of Indra in some Rgvedic passages)"
     type: "scholarly-parallel"
     source: "Ivanov & Toporov 1974; West 2007 §3.5 — IE artificer-god typology; the etymological *Svarog ← *suer- 'to heat / to forge' is sometimes paired with Tvaṣṭṛ but the etymology is debated"
+    source-tier: T1
   - target: "Vulcan / Hephaestus (Roman / Greek smith-gods)"
     type: "scholarly-parallel"
     source: "Pan-IE smith-god type; cited by the Hypatian Chronicle gloss"
+    source-tier: T1
   - target: "Norse Volundr / Wayland the Smith"
     type: "scholarly-parallel"
     source: "Heroic-mythic smith-figure parallel; West 2007"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "*Issledovaniya v oblasti slavyanskikh drevnostey*"

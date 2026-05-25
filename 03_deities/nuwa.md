@@ -18,12 +18,15 @@ syncretic-edges:
   - target: "[[fuxi]]"
     type: "ancient-identification"
     source: "Han iconographic pairing — serpent-tailed brother-sister primordial pair"
+    source-tier: T1
   - target: "[[ninhursag-nintud]]"
     type: "scholarly-parallel"
     source: "Mother-goddess fashions humans from clay/earth"
+    source-tier: T1
   - target: "[[prometheus]]"
     type: "scholarly-parallel"
     source: "Hesiod *Works and Days* + Apollodorus *Library* — Prometheus fashions humans from clay; the same anthropogonic motif"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Huainanzi"

@@ -20,10 +20,12 @@ syncretic-edges:
   - target: "prithivi-vedic"
     type: "scholarly-parallel"
     source: "West 2007"
+    source-tier: T1
     notes: "Indo-European reflexes of the Earth-Mother are scattered (Vedic Pṛthivī, Greek Gaia / Demeter, Roman Tellus, Norse Jǫrð); but the precise pairing of Earth-Mother + Sky-Father in primordial-couple form is widespread and may be IE."
   - target: "ki-sumerian"
     type: "scholarly-parallel"
     source: "Burkert 1992"
+    source-tier: T1
     notes: "Mesopotamian Ki (Earth) paired with An (Sky) is the closest Near Eastern primordial-couple parallel."
 status: "metadata"
 refs:

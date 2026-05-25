@@ -20,6 +20,7 @@ syncretic-edges:
   - target: "[[nabu]]"
     type: "ancient-identification"
     source: "From the Old Babylonian period, Nisaba's scribal patronage is progressively transferred to the Babylonian god Nabu — patron of writing and the scribe of the gods; by the Neo-Assyrian period Nabu has replaced Nisaba in scribal colophons, though Nisaba's grain function remains hers"
+    source-tier: T1
 tags: [deity, sumerian, nisaba, nidaba, scribes, writing, grain, eresh]
 status: "metadata"
 refs:

@@ -20,12 +20,15 @@ syncretic-edges:
   - target: "[[vishnu]]"
     type: "ancient-identification"
     source: "Garuda is Vishnu's *vāhana*; the inseparable iconographic pairing"
+    source-tier: T1
   - target: "Roc / Anqa / Simurgh"
     type: "scholarly-parallel"
     source: "The great bird of Persian (Simurgh) and Arabic (Anqa, Rukh/Roc) mythology — cross-tradition cosmic-bird type"
+    source-tier: T1
   - target: "the Phoenix (Greek/Egyptian Bennu)"
     type: "scholarly-parallel"
     source: "Cosmic-bird symbol"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Garuda in Indian Art and Iconography"

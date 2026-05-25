@@ -20,6 +20,7 @@ syncretic-edges:
   - target: "jade-emperor"
     type: "folk-syncretism"
     source: "Erlang Shen serves as the Jade Emperor's supreme celestial general; in some traditions he refuses the Emperor's rewards for his service, maintaining an independent, semi-autonomous divine status — he is subordinate but not fully domesticated."
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Journey to the West"

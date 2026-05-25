@@ -23,30 +23,37 @@ cross-tradition-edges:
   - target: "pyramid-of-khufu"
     type: "parallel-form"
     source: "Schele & Miller 1986; Sharer & Traxler 2006"
+    source-tier: T1
     notes: "Independent emergence of the monumental-stepped-pyramid-as-royal-tomb. Tikal Temple I (c. 730 CE) is the Maya structural analogue to Khufu's pyramid (c. 2580 BCE): pyramid raised over a royal tomb, embodying the king's death-transfiguration through architectural form. No documented Old-World contact; convergent religious-architectural reasoning on cosmic-mountain-as-royal-resurrection-device."
   - target: "step-pyramid-djoser-saqqara"
     type: "parallel-form"
     source: "Sharer & Traxler 2006"
+    source-tier: T1
     notes: "Stepped architectural form: nine receding terraces at Tikal mirror the six steps of Djoser. Both are 'stairways' for the dead ruler's ascent."
   - target: "ziggurat-of-ur"
     type: "parallel-form"
     source: "Schele & Miller 1986"
+    source-tier: T1
     notes: "Stepped monumental ritual-mountain type-class; Mesoamerican vs. Mesopotamian instance with no contact."
   - target: "borobudur-stupa-mandala"
     type: "parallel-form"
     source: "Snodgrass 1985"
+    source-tier: T1
     notes: "Stepped pyramidal sacred-mountain form in independent civilizations — Maya (~700 CE) vs Buddhist Java (~800 CE), close in time but with zero contact."
   - target: "temple-of-the-inscriptions-palenque"
     type: "cognate-form"
     source: "Schele & Miller 1986; Martin & Grube 2008"
+    source-tier: T1
     notes: "Both are Classic-period Maya funerary pyramids built over royal tombs (Pakal at Palenque, Jasaw at Tikal). Different Maya polities; same conceptual program. Pakal's pyramid is 50 years earlier; Jasaw's design likely knew of it."
   - target: "theme-pyramid-as-resurrection-machine"
     type: "exemplifies"
     source: "Schele & Miller 1986"
+    source-tier: T1
     notes: "Architectural enactment of the K'inich (sun-resurrected) divine-king ideology; the pyramid is the ruler's death-and-stellar-ascent device."
   - target: "tradition-maya-religion"
     type: "iconic-monument-of"
     source: "Sharer & Traxler 2006"
+    source-tier: T1
     notes: "Temple I + the Tikal Great Plaza are arguably the iconic image of Classic Maya monumental religious architecture in the popular and scholarly imagination."
 status: "metadata"
 refs:

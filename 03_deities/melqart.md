@@ -20,17 +20,21 @@ syncretic-edges:
   - target: "heracles"
     type: "ancient-identification"
     source: "Herodotus II.44. Multiple Greek-Phoenician identification inscriptions from the 5th c. BCE onward."
+    source-tier: T1
     notes: "The identification of Melqart with Heracles is one of the oldest documented cross-tradition deity equivocations in Western history. Herodotus visited the Gades temple and was explicitly told by the priests that their deity was *not* the Greek hero Heracles but an older eastern divinity. The Greek identification nevertheless became standard. The Heracles myths set in the far west (Geryon's cattle; the Pillars; the Apples of the Hesperides) are almost certainly Phoenician-Melqart myths absorbed into Greek heroic mythology through the Phoenician colonial presence in the western Mediterranean."
   - target: "baal-hadad"
     type: "structural-parallel"
     source: "Cross, Frank Moore. (1973). *Canaanite Myth and Hebrew Epic*. Harvard UP."
+    source-tier: T1
     notes: "Both Melqart and Baal Hadad are Canaanite/Levantine divine kings who exercise sovereignty over cosmic boundaries and who undergo annual ritual death-and-return cycles. Cross argued for a deep continuity between the Ugaritic Baal cycle (14th c. BCE) and the Melqart egersis tradition."
   - target: "dying-rising-god"
     type: "structural-parallel"
     source: "Bonnet, Corinne. (1988). *Melqart: Cultes et mythes de l'Héraclès tyrien en Méditerranée*. Namur."
+    source-tier: T1
   - target: "tradition-lusitanian-religion"
     type: "presence-in"
     source: "Phoenician temple at Gades; Phoenician commercial presence in Tartessian zone from ~1100 BCE"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Melqart: Cultes et mythes de l'Héraclès tyrien en Méditerranée"

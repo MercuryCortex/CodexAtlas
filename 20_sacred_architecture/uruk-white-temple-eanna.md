@@ -23,26 +23,32 @@ cross-tradition-edges:
   - target: "eridu-temple-of-enki"
     type: "architectural-successor-of"
     source: "Crawford 1991; Liverani 2006"
+    source-tier: T1
     notes: "Uruk's monumental temple platforms (the Kullaba terrace supporting the White Temple, the Eanna terraces) are the **next major development** after the Eridu temple sequence — formalising into a monumental architectural type what at Eridu had been accreted over millennia. The Eridu→Uruk transition is the Mesopotamian temple-architecture going **from accreted to designed**."
   - target: "ziggurat-of-ur"
     type: "architectural-ancestor-of"
     source: "Crawford 1991; Liverani 2006"
+    source-tier: T1
     notes: "The White Temple's elevated platform (~12 m above plain level) is the **direct prototype** of the Ur III standardised ziggurat form. Ur-Nammu's construction programme later rebuilt the Anu Ziggurat at Uruk alongside [[ziggurat-of-ur]] in identical form."
   - target: "etemenanki"
     type: "architectural-ancestor-of"
     source: "George 1992; Crawford 1991"
+    source-tier: T1
     notes: "Direct typological lineage Eanna/Anu-Ziggurat → Ur Ziggurat → Babylonian Etemenanki seven-tiered ziggurat (the [[tower-of-babel]] referent)."
   - target: "step-pyramid-djoser-saqqara"
     type: "parallel-form"
     source: "Crawford 1991; Lehner 1997"
+    source-tier: T1
     notes: "Roughly contemporary emergence of monumental stepped sacred architecture at opposite ends of the Fertile Crescent — Uruk White Temple platform (~3200 BCE) and Egyptian mastaba-to-step-pyramid trajectory culminating at Djoser (~2670 BCE), with no documented architectural contact."
   - target: "borobudur-stupa-mandala"
     type: "parallel-form"
     source: "Snodgrass 1985"
+    source-tier: T1
     notes: "Independent emergence of stepped-platform-temple form ~4 millennia later in Buddhist Java."
   - target: "theme-ziggurat-as-stairway-to-heaven"
     type: "early-anchor-site"
     source: "Crawford 1991; George 1992"
+    source-tier: T1
     notes: "Uruk's White Temple is the **earliest fully-monumental example** of the elevated-platform-as-stairway form — Eanna's Sumerian name (E-anna, 'House of Heaven') is itself the architectural-theological proposition."
 status: "metadata"
 refs:

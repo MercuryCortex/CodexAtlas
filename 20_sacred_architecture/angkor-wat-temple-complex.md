@@ -24,22 +24,27 @@ cross-tradition-edges:
   - target: "borobudur-stupa-mandala"
     type: "parallel-form"
     source: "Mannikka 1996; Snodgrass 1985"
+    source-tier: T1
     notes: "Borobudur (~800 CE, Mahayana Buddhist, Java) and Angkor Wat (~1120 CE, Vaishnava Hindu, Cambodia) — both monumental SE-Asian cosmic-mountain implementations within the broader Indic temple-mountain tradition. Borobudur is the older Buddhist implementation, Angkor Wat the later Hindu implementation; both deploy stepped-pyramidal silhouettes rising from a rectangular base."
   - target: "brihadeeswarar-temple-thanjavur"
     type: "stylistic-cousin"
     source: "Mannikka 1996; Hardy 2007"
+    source-tier: T1
     notes: "Both are royal-imperial cosmic-mountain temples of the early-mid medieval period: Chola Brihadeeswarar (~1010, Tamil Nadu) and Khmer Angkor Wat (~1120, Cambodia). Cross-Bay-of-Bengal Tamil-Khmer contact in the Chola period is epigraphically documented; Angkor Wat's Dravida-like vimana-form is partially a downstream of South-Indian models."
   - target: "mount-meru"
     type: "architectural-embodiment-of"
     source: "Coedes 1968; Mannikka 1996"
+    source-tier: T1
     notes: "Angkor Wat is the most explicit single architectural model of Mount Meru ever built — the five central towers map the five peaks of Meru, the three concentric galleries the cosmic continents, the outer moat (~1.5 × 1.3 km) the cosmic ocean."
   - target: "kandariya-mahadeva-khajuraho"
     type: "parallel-form"
     source: "Hardy 2007"
+    source-tier: T1
     notes: "Both are early-medieval Hindu cosmic-mountain temples with central clustered-peak / quincunx silhouettes; Kandariya Mahadeva (~1030, Chandela Nagara) and Angkor Wat (~1120, Khmer derivative) realise the cosmic-mountain motif in stylistically distinct grammars."
   - target: "ziggurat-of-ur"
     type: "parallel-form"
     source: "Snodgrass 1985"
+    source-tier: T1
     notes: "Independent emergence of the monumental stepped cosmic-mountain form; Sumerian Ur ~2100 BCE and Khmer Angkor Wat ~1120 CE — no documented architectural transmission."
 status: "metadata"
 refs:

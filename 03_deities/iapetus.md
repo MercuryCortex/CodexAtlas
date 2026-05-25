@@ -19,6 +19,7 @@ syncretic-edges:
   - target: "Japheth (Genesis 10)"
     type: "scholarly-parallel"
     source: "From the early modern period (Bochart 1646 *Geographia Sacra*) through 19th-c. comparative philology, the etymological identification *Iapetos* ↔ *Yepheth* / *Japheth* has been proposed as the Greek-Hebrew naming-pair for the ancestor of the (Indo-)European peoples; West 1997 considers it suggestive but not established — keep `[claim: contested]`"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Hesiod: Theogony"

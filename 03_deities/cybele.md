@@ -20,12 +20,15 @@ syncretic-edges:
   - target: "rhea"
     type: "ancient-identification"
     source: "Greek identification from Pindar / Euripides; Rhea-Cybele cultic merger in Hellenistic period"
+    source-tier: T1
   - target: "demeter"
     type: "scholarly-parallel"
     source: "Both are mother-of-grain / earth-mother figures; parallel rather than direct equation"
+    source-tier: T1
   - target: "isis-hellenistic"
     type: "ancient-identification"
     source: "Apuleius *Met.* 11.5: Isis identifies herself among other names as 'Mother of the Gods... whom the Phrygians call'"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "In Search of God the Mother: The Cult of Anatolian Cybele"

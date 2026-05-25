@@ -20,6 +20,7 @@ syncretic-edges:
   - target: "[[vishnu]]"
     type: "same-as"
     source: "Mahānārāyaṇopaniṣad; Bhāgavata Purāṇa 1.1; Mahabharata, Bhagavad Gita passim"
+    source-tier: T1
     notes: "Nārāyaṇa is Vishnu in his supreme transcendent-resting aspect — same divine subject, iconographically distinct (sleeping on Śeṣa on the cosmic ocean vs the standing four-armed Vishnu pose)"
 status: "metadata"
 refs:

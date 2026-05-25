@@ -20,21 +20,27 @@ syncretic-edges:
   - target: "gaia"
     type: "scholarly-parallel"
     source: "Watkins 1995; Macdonell 1897 — PIE *pl̥th₂wíh₂ (The Broad One) is a cognate naming pattern; Dyaus+Prithvi and Zeus+Gaia share the sky-father/earth-mother pair from PIE inheritance"
+    source-tier: T1
   - target: "pachamama"
     type: "scholarly-parallel"
     source: "Scholarly parallel — Andean earth goddess; independent convergence on earth-as-nourishing-mother; no transmission"
+    source-tier: T1
   - target: "papatuanuku"
     type: "scholarly-parallel"
     source: "Scholarly parallel — Maori earth goddess paired with Ranginui (sky god); exact structural parallel to Prithvi + Dyaus; independent convergence or very early Pacific transmission"
+    source-tier: T1
   - target: "ki-sumerian"
     type: "scholarly-parallel"
     source: "Scholarly parallel — Sumerian earth goddess Ki paired with An (sky); same sky-earth divine pair pattern in Mesopotamia; no documented transmission"
+    source-tier: T1
   - target: "ninhursag-nintud"
     type: "scholarly-parallel"
     source: "Scholarly parallel — Sumerian earth/mother goddess; earth fertility goddess parallel; no transmission"
+    source-tier: T1
   - target: "asase-yaa"
     type: "scholarly-parallel"
     source: "Scholarly parallel — Akan (West African) earth goddess; independent earth-mother convergence"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Vedic Mythology"

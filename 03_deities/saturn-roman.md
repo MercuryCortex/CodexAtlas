@@ -20,6 +20,7 @@ syncretic-edges:
   - target: "kronos"
     type: "ancient-identification"
     source: "Standard Roman *interpretatio Graeca* from late Republic (Ennius, Cicero); Saturn becomes the recipient of all Kronos-mythology in Latin literature"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Religions of Rome (2 vols.)"

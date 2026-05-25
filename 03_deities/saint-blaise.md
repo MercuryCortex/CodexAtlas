@@ -20,6 +20,7 @@ syncretic-edges:
   - target: "[[veles]]"
     type: "folk-syncretism"
     source: "Tokarev 1957 *Religioznye verovaniya vostochnoslavyanskikh narodov*; Fedotov 1948 *The Russian Religious Mind*; Ivanov & Toporov 1974"
+    source-tier: T1
     notes: "Eastern Slavic dvoeverie textbook case. Phonetic alignment Volos/Veles ↔ Vlas(iy)/Blasius + functional alignment 'god of cattle' / 'protector of cattle' made the transfer near-seamless after 988 Christianization. The 'destruction of *idoly Volosa*' in Rostov and Yaroslavl in 11th-c. Russian Lives of Saints marks the moment of overlay. Saint Blaise's 11 February (Old Style 3 February) feast in Eastern Orthodoxy + the cattle-blessing rituals associated with it preserve Veles's livestock-blessing role. The classic Slavic pagan-deity → Christian-saint identity transfer alongside Perun → Elijah"
 status: "stub"
 refs:

@@ -20,16 +20,20 @@ syncretic-edges:
   - target: "[[rainbow-serpent]]"
     type: "shared-tradition"
     source: "Crawford, *The Art of the Wandjina* (1968); Mowaljarlai & Malnic, *Yorro Yorro: Everything Standing Up Alive* (1993) — the Wandjina and the Rainbow Serpent are the two principal Australian Aboriginal creation-ancestor traditions; the Kimberley Wandjina tradition is regionally specific (western Kimberley) while the Rainbow Serpent extends more broadly across the continent"
+    source-tier: T1
   - target: "tlaloc"
     type: "scholarly-parallel"
     source: "Crawford 1968; Eliade 1958 — both are rain-storm ancestor-spirits depicted with distinctive goggle-eye iconography; Wandjina's halo-of-clouds and Tlaloc's goggle-eyes are independent emergences of the rain-deity-with-circular-eye-motif"
+    source-tier: T1
     notes: "Rain-deity-with-goggle-eye convergence"
   - target: "chaac"
     type: "scholarly-parallel"
     source: "Eliade 1958 — Maya Chaac as rain-deity with goggle-eyes; parallels Wandjina's halo-and-large-eyes iconography"
+    source-tier: T1
   - target: "baiame"
     type: "shared-tradition"
     source: "Berndt & Berndt, *The World of the First Australians* (1988) — Wandjina and Baiame represent two of the principal regional Australian Aboriginal creation-ancestor traditions (western Kimberley and south-eastern Australia respectively)"
+    source-tier: T1
     notes: "Australian regional creation-ancestor pairing"
 status: "metadata"
 status: "metadata"

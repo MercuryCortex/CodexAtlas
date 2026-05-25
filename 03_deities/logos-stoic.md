@@ -20,15 +20,19 @@ syncretic-edges:
   - target: "zeus"
     type: "scholarly-parallel"
     source: "Stoic theology identifies Zeus with the cosmic logos (Cleanthes *Hymn to Zeus*)"
+    source-tier: T1
   - target: "logos-philonic"
     type: "direct-influence"
     source: "Philo of Alexandria's Logos derives from Stoic logos fused with Platonic Forms"
+    source-tier: T1
   - target: "logos-johannine"
     type: "direct-influence"
     source: "John 1:1's Logos is the third step in the Stoic→Philo→John transmission chain (Hengel, Dodd, Boyarin)"
+    source-tier: T1
   - target: "theme-two-powers-in-heaven"
     type: "philosophical-substrate-of-cross-tradition-pattern"
     source: "Boyarin 2004 *Border Lines* + 2012; Segal 1977; Hengel 1989 *The Pre-Christian Paul* — the Stoic Logos (cosmic-rational immanent divinity) is the philosophical substrate that, fused with Platonic Forms by Philo, provides the conceptual vocabulary that allows the Two-Powers binitarian theology to articulate itself as second God / Logos / Lesser YHWH / Christ. The Stoic→Philo→John transmission chain is the philosophical scaffolding of the Two-Powers figure's theological elaboration. See [[theme-two-powers-in-heaven]]"
+    source-tier: T1
     notes: "Cross-lens: 03_deities → 06_themes. logos-stoic is the *concept-deity* (philosophical not cultic) substrate; metatron + the-elect-one + jesus-christ are the *named-deity* instantiations that the Stoic-Philonic Logos vocabulary supports"
 status: "metadata"
 refs:

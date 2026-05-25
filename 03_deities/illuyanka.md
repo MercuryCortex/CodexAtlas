@@ -20,26 +20,32 @@ syncretic-edges:
   - target: "tiamat"
     type: "scholarly-parallel"
     source: "Day 1985; Watkins 1995, How to Kill a Dragon"
+    source-tier: T1
     notes: "Both are chaos-monsters defeated by the storm-warrior cosmic king (Tiamat by Marduk; Illuyanka by the Storm-God of Hatti / Teshub). Chaoskampf type."
   - target: "yam"
     type: "scholarly-parallel"
     source: "Day 1985"
+    source-tier: T1
     notes: "Ugaritic Yam (Sea) defeated by Baal — Levantine instance of the same chaoskampf type as Illuyanka."
   - target: "typhon"
     type: "scholarly-parallel"
     source: "West 1997, East Face of Helicon; Watkins 1995"
+    source-tier: T1
     notes: "Hesiodic Typhon defeated by Zeus (Theog. 820–880) shares motifs with the Illuyanka myth, including the serpentine body and the storm-god's combat. West argues direct transmission via Anatolian intermediaries."
   - target: "leviathan"
     type: "scholarly-parallel"
     source: "Day 1985; Smith 2010"
+    source-tier: T1
     notes: "Hebrew Bible chaoskampf residues (Job 26, Ps 74, Isa 27, 51) preserve the same combat-with-the-serpent type."
   - target: "vritra"
     type: "scholarly-parallel"
     source: "Watkins 1995; West 2007"
+    source-tier: T1
     notes: "Vedic Indra-vs-Vritra is the Indo-European serpent-slaying formula (PIE *gʷhen- 'to slay' + serpent); Illuyanka is its Anatolian Indo-European instance, semantically continuous (Hittite *kuenta* 'he slew' < same PIE root)."
   - target: "serpent-dual-nature"
     type: "chaos-pole-of-serpent-symbolism"
     source: "Watkins 1995 *How to Kill a Dragon*; West 2007; Day 1985 — Illuyanka is the Anatolian-Hittite instance of the PIE serpent-slaying mytheme, defeated by the storm-god Tarhunna/Teshub in the Purulli-festival narrative. See [[serpent-dual-nature]]"
+    source-tier: T1
     notes: "Cross-lens: 03_deities → 06_themes"
 status: "metadata"
 refs:

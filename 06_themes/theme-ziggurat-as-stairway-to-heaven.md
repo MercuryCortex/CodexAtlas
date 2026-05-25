@@ -13,22 +13,27 @@ syncretic-edges:
   - target: "ziggurat-of-ur"
     type: "applies-to"
     source: "Crawford 1991; George 1993"
+    source-tier: T1
     notes: "Ur's Etemenniguru ('House Whose Foundation Creates Awe') is the **best-preserved Mesopotamian ziggurat** and the type-specimen of the form. The architectural function is the **stepped ascent** between earthly plain and the gods' summit-dwelling — the building IS the stairway."
   - target: "tower-of-babel"
     type: "polemic-inversion-of"
     source: "Speiser 1964; Day 2013"
+    source-tier: T1
     notes: "Genesis 11:1–9 (the Tower of Babel narrative) is the **Israelite polemic-inversion** of the Mesopotamian ziggurat-as-stairway-to-heaven motif. Akkadian *bāb-ili* ('gate of the gods') is folk-etymologically rewritten as Hebrew *bālal* ('to confuse') — same building, opposite valence: the Mesopotamian original is piety; the Hebrew reframing is hubris."
   - target: "etemenanki"
     type: "applies-to-architectural-archetype"
     source: "George 1993"
+    source-tier: T1
     notes: "Etemenanki ('House of the Foundation of Heaven and Earth') at Babylon, rebuilt by [[nebuchadnezzar-ii|Nebuchadnezzar II]] in the 6th c. BCE, is the **principal candidate** for the historical referent of the Genesis Tower of Babel narrative. Seven-tiered ziggurat ~91 m tall."
   - target: "theme-stupa-as-cosmic-mountain"
     type: "sibling-motif"
     source: "Snodgrass 1985"
+    source-tier: T1
     notes: "Sibling motif in the cross-civilizational pattern of **monumental stepped sacred building as cosmic axis**. The Mesopotamian ziggurat and the Buddhist stupa are the two best-documented architectural-typological realisations of the cosmic-axis-as-monumental-building problem; the Egyptian pyramid and Mesoamerican stepped pyramid are the other principal cross-tradition convergences."
   - target: "step-pyramid-djoser-saqqara"
     type: "cross-tradition-parallel"
     source: "Crawford 1991; Lehner 1997"
+    source-tier: T1
     notes: "Egyptian Step Pyramid (~2670 BCE) and Mesopotamian ziggurat (Ur-Nammu form ~2100 BCE, with deeper Ubaid roots ~5500 BCE) — parallel stepped-monumental-axis-mundi forms emerging in the same era at opposite ends of the Fertile Crescent."
 refs:
   - title: "House Most High: The Temples of Ancient Mesopotamia"

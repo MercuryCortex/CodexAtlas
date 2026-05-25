@@ -20,6 +20,7 @@ syncretic-edges:
   - target: "[[nin-gal-sumerian]]"
     type: "ancient-identification"
     source: "Black & Green 1992; van der Toorn et al. (DDD 1999); Nikkal is the Akkadian/West-Semitic phonological evolution of Ningal — the cult passes via Harran into Aramaic and Ugaritic contexts (Ugaritic *Nkl wa-Ib*, the *Marriage of Nikkal*) and survives into Late Antique Harran among the Sabians"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Gods, Demons and Symbols of Ancient Mesopotamia: An Illustrated Dictionary"

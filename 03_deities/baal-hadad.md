@@ -20,12 +20,15 @@ syncretic-edges:
   - target: "[[set]]"
     type: "ancient-identification"
     source: "Hyksos and 19th-Dynasty Egyptian Ramessides identified Set with Baal; the Set-Baal cult at Avaris and Pi-Ramesses is well-attested"
+    source-tier: T1
   - target: "adad-akkadian"
     type: "ancient-identification"
     source: "Akkadian and Aramaic Hadad is linguistically and functionally the same deity"
+    source-tier: T1
   - target: "zeus"
     type: "scholarly-parallel"
     source: "Both are sky-storm-warrior chief gods; structural parallels noted from antiquity (Lucian's *De Dea Syria* equates Hadad with Zeus)"
+    source-tier: T1
 status: "full"
 cross-tradition-edges:
   - type: "parallel-form"

@@ -23,30 +23,37 @@ cross-tradition-edges:
   - target: "templo-mayor-tenochtitlan"
     type: "parallel-form"
     source: "Pauketat 2009"
+    source-tier: T1
     notes: "Both: central platform-pyramid at the heart of a Mesoamerican-influenced state-religious capital. Cahokia (1050–1350 CE) and the Mexica capital (1325–1521 CE) are different cultural traditions but share the platform-mound-as-state-temple architectural concept. Some scholars (Pauketat 2004) argue for limited Mesoamerican-Mississippian conceptual contact via long-distance trade; most argue convergent emergence."
   - target: "pyramid-of-the-sun-teotihuacan"
     type: "parallel-form"
     source: "Pauketat 2009"
+    source-tier: T1
     notes: "Earthen platform pyramid (Monks Mound, ~30m, ~622,000 m³) ↔ stone-faced platform pyramid (Teotihuacan, ~65m, ~1.2 million m³). Same type-class (monumental platform centered on an urban capital); different materials + scale; mutually no contact."
   - target: "ziggurat-of-ur"
     type: "parallel-form"
     source: "(general)"
+    source-tier: T1
     notes: "Stepped earthen / mud-brick platform structure at urban centre; both rise above flat alluvial floodplains as the dominant artificial-mountain. Mississippian + Sumerian independent emergences."
   - target: "step-pyramid-djoser-saqqara"
     type: "parallel-form"
     source: "(general)"
+    source-tier: T1
     notes: "Earliest monumental stepped platform in respective traditions. Djoser (~2670 BCE) and Cahokia's first major mound-construction phases (~950 CE)."
   - target: "stonehenge-sacred-site"
     type: "parallel-form"
     source: "Pauketat 2009; Wittry 1969"
+    source-tier: T1
     notes: "Cahokia's adjacent **Woodhenge** — a series of large circular post-arrangements (the most complete dated to ~1100 CE) — explicitly marks solstice + equinox sunrises. The Cahokia Woodhenge is a direct architectural-functional parallel to British Neolithic henges (Stonehenge, Avebury, Woodhenge in Wiltshire). Independent emergence."
   - target: "pueblo-bonito-chaco-canyon"
     type: "cognate-form"
     source: "Pauketat 2009; Mathien 2005"
+    source-tier: T1
     notes: "Two great pre-Columbian North-American ceremonial centers, contemporary (~1000–1250 CE), in different culture-areas (Mississippian / Ancestral Puebloan). Both show solar / celestial alignments, large planned urban precincts, and population-collapse around 1350 CE. Possibly some long-distance contact through Plains intermediaries (turquoise + macaw trade is documented), but the two cultures are largely independent."
   - target: "newgrange-passage-tomb"
     type: "parallel-form"
     source: "(general)"
+    source-tier: T1
     notes: "Earthen monumental constructions associated with astronomical alignment + the dead. Newgrange (~3200 BCE Ireland) is a passage-tomb; Cahokia's mounds include burial mounds (Mound 72 — the Birdman burial) + temple platforms (Monks Mound). Same large category."
 status: "metadata"
 refs:

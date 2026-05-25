@@ -20,15 +20,19 @@ syncretic-edges:
   - target: "sol-invictus"
     type: "ancient-identification"
     source: "From Aurelian's institution of the Sol Invictus cult (~+274), Helios and Sol Invictus are theologically merged; the Helios-Sol Invictus identification is institutional, not folk-syncretic"
+    source-tier: T1
   - target: "ra"
     type: "ancient-identification"
     source: "Greek-Egyptian *interpretatio*: Helios = Ra in Greek-language Egyptian inscriptions and in Plutarch *De Iside* (Helios for the Egyptian sun-god is standard)"
+    source-tier: T1
   - target: "mithras-roman"
     type: "ancient-identification"
     source: "Roman Mithraic cult addresses Mithras as 'Sol Invictus Mithras' and pairs him iconographically with Helios; the two are sometimes shown together as separate deities in handshake (the Mithraic *dexiosis*) and sometimes merged"
+    source-tier: T1
   - target: "apollo"
     type: "ancient-identification"
     source: "By the late Hellenistic period (5th c. BCE onward; consolidated in Hellenistic-Roman times) Apollo is identified with Helios in literary and philosophical contexts (already in Euripides; standard from Stoic period). Original Greek religion kept them distinct"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Sol: The Sun in the Art and Religions of Rome"

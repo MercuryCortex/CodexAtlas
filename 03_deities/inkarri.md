@@ -20,10 +20,12 @@ syncretic-edges:
   - target: "[[muhammad-al-mahdi]]"
     type: "structural-parallel"
     source: "Ortiz Rescaniere, *De Adaneva a Inkarri* (1973); Pease, *El dios creador andino* (1973) — the post-conquest Inkarri-myth is the Andean instance of the universal eschatological-returning-savior pattern; the Andean variant is distinctive in encoding *resistance-to-conquest* in the mythology — the savior returns not at general world's end but at the end of colonial subordination"
+    source-tier: T1
     notes: "MASSIVE WIN: the Inkarri myth is a 16th-century-emergent instance of a universal eschatological-returning-savior pattern that the vault already documents in Islamic (Mahdi), Christian (Parousia), Buddhist (Maitreya), Hindu (Kalki), and Zoroastrian (Saoshyant) variants. Inkarri demonstrates that the pattern can emerge *de novo* in response to specific historical trauma (Spanish conquest) — it is not necessarily an ancient inheritance. This is direct evidence for the cognitive-universal-versus-cultural-transmission debate in comparative religion"
   - target: "[[viracocha]]"
     type: "scholarly-parallel"
     source: "Some Inkarri-myth recensions identify Inkarri with the returning Viracocha (the Inca creator-god who departed across the sea, prophesied to return); the conflation is uneven across regional variants"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "De Adaneva a Inkarri: Una visión indígena del Perú"

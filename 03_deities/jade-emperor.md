@@ -17,12 +17,15 @@ syncretic-edges:
   - target: "[[shangdi]]"
     type: "ancient-identification"
     source: "Song-imperial assimilation: Shangdi (Shang/Zhou high god) re-codified as the personal Jade Emperor under Daoist celestial-bureaucracy theology"
+    source-tier: T1
   - target: "[[tian-heaven]]"
     type: "ancient-identification"
     source: "Tian/Heaven personalized as the Jade Emperor; the abstract Heaven of Confucian discourse vs. the personal sovereign of Daoist devotion"
+    source-tier: T1
   - target: "[[three-pure-ones]]"
     type: "scholarly-parallel"
     source: "Daoist supreme triad; the Jade Emperor administers the cosmos under (or as emanation of) the Three Pure Ones depending on sect"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Encyclopedia of Taoism"

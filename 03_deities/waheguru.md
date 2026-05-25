@@ -20,18 +20,22 @@ syncretic-edges:
   - target: "ein-sof"
     type: "scholarly-parallel"
     source: "Singh, Nikky-Guninder Kaur 1993; McLeod 1968"
+    source-tier: T1
     notes: "Both are formless, infinite, and beyond all attributes; both are the absolute reality underlying all creation; both are approached through contemplative practice rather than anthropomorphic image. Ein Sof (Kabbalistic) = Waheguru as the infinite that cannot be bounded or visualized."
   - target: "the-one-plotinus"
     type: "scholarly-parallel"
     source: "Schimmel 1975; Singh 1993"
+    source-tier: T1
     notes: "The Plotinian One — formless, beyond being, the source from which all emanates — is structurally parallel to Waheguru as Nirankar (formless) and Akal Purkh (beyond time). The Sikh tradition absorbed Neoplatonic theological concepts through Sufi and Islamic philosophical channels."
   - target: "allah"
     type: "scholarly-parallel"
     source: "McLeod 1968 *Guru Nanak and the Sikh Religion*"
+    source-tier: T1
     notes: "Islamic theological conception of Allah as absolutely one, formless, beyond comparison (tanzih) — parallels Waheguru as Ik Onkar and Nirankar. Guru Nanak's formative theological context included substantial engagement with Islamic monotheistic thought."
   - target: "the-monad-gnostic"
     type: "scholarly-parallel"
     source: "Singh 1993"
+    source-tier: T1
     notes: "The Gnostic Monad — the primal, undivided, formless source of all being — parallels Waheguru as the singular, unbounded reality underlying all apparent multiplicity."
 status: "metadata"
 refs:

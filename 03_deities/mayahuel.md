@@ -20,6 +20,7 @@ syncretic-edges:
   - target: "[[corn-mother]]"
     type: "scholarly-parallel"
     source: "Both are female deities embodied IN the plant (Mayahuel IS the maguey; Selu/Corn Mother IS the corn) — the body-of-the-goddess as the cultivar is one of the most distinctive Mesoamerican-Native-American religious patterns"
+    source-tier: T1
     notes: "Independent emergence in two Mesoamerican-and-North-American agricultural traditions; not a transmission claim, a structural parallel"
 status: "metadata"
 refs:

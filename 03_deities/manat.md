@@ -20,17 +20,21 @@ syncretic-edges:
   - target: "allat"
     type: "ancient-identification"
     source: "Quran 53:19-22 — al-Lāt, al-ʿUzzā, Manāt are the triadic 'daughters of Allāh' in pre-Islamic Hijazi religion"
+    source-tier: T1
     notes: "Close cultic associate; theologically distinct but invoked together"
   - target: "al-uzza"
     type: "ancient-identification"
     source: "Quran 53:19-22 — same"
+    source-tier: T1
   - target: "allah"
     type: "polemic-against"
     source: "Quran 53:19-22 (Sūrat al-Najm) — the *banāt Allāh* polemic names Manāt as third of the three goddesses claimed as daughters/intercessors of Allāh by the pre-Islamic Quraysh; the Quran rejects the claim"
+    source-tier: T1
     notes: "Direct polemical Quranic engagement; Manāt was the patron of the Aws and Khazraj tribes of Yathrib/Medina"
   - target: "nemesis-greek"
     type: "scholarly-parallel"
     source: "Healey 2001 *The Religion of the Nabataeans* — Nabataean Manawat at Hegra appears in funerary curse-formulas as protector-of-tomb / avenger-of-tomb-violation; the structural parallel with Greek Nemesis (retributive justice, fate as moral force) is documented in Nabataean trilingual contexts. The *manā-* stem semantics (fate, allotment, apportioned death) underwrites the Nemesis-Manat conceptual parallel"
+    source-tier: T1
     notes: "Functional-structural parallel through the fate-and-retribution semantic domain, not an identity-claim"
 status: "metadata"
 refs:

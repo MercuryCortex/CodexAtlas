@@ -20,12 +20,15 @@ syncretic-edges:
   - target: "ishtar-akkadian"
     type: "scholarly-parallel"
     source: "West 1997; Smith 2002. The West Semitic Astarte and East Semitic Ishtar derive from a common Semitic *ʿAṯtar-; functional and iconographic parallels are extensive."
+    source-tier: T1
   - target: "aphrodite-greek"
     type: "scholarly-parallel"
     source: "Burkert 1992, *The Orientalizing Revolution*; Budin 2003, *The Origin of Aphrodite*. The Phoenician colonization of Cyprus (Paphos sanctuary) is the principal transmission node from Astarte to Aphrodite."
+    source-tier: T1
   - target: "anat"
     type: "folk-syncretism"
     source: "In some Egyptian New Kingdom syncretic forms, Anat and Astarte are conflated (compound goddess 'Antit-Anat'); in distinct cultic contexts at Ugarit they are separate goddesses with overlapping war-aspect."
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Origin of Aphrodite"

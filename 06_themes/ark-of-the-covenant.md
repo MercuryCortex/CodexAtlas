@@ -10,18 +10,22 @@ syncretic-edges:
   - target: "tradition-ethiopian-orthodox-tewahedo"
     type: "part-of"
     source: "Ullendorff, Edward (1968). Ethiopia and the Bible. British Academy."
+    source-tier: T1
     notes: "Ethiopian Orthodox theology holds that the original Ark rests in the Chapel of the Tablet at Aksum — accessible only to its hereditary guardian. It was brought from Jerusalem to Ethiopia by Menelik I (son of Solomon and Makeda/Queen of Sheba) during his return journey. Every Ethiopian church contains a *tabot* (replica tablet) as its central liturgical object — a participation in the Aksum Ark's holiness."
   - target: "menelik-i-legendary"
     type: "part-of"
     source: "Budge, E.A. Wallis (trans.) (1932). The Queen of Sheba and Her Only Son Menyelek. London: Martin Hopkinson."
+    source-tier: T1
     notes: "The Kebra Nagast (~13th c. redaction) narrates Menelik I as the institutional transmitter of the Ark from Jerusalem to Aksum. The theft narrative — Menelik's companions smuggle the Ark, substituting a copy Solomon does not notice — is the founding charter of Ethiopian sacred kingship and the Solomonic dynastic legitimacy claim."
   - target: "tradition-knights-templar"
     type: "structural-parallel"
     source: "Barber, Malcolm (1994). The New Knighthood. Cambridge UP. / Hancock, Graham (1992). The Sign and the Seal. Heinemann. [Tier 4]"
+    source-tier: T3
     notes: "The Templars' original HQ (1119–1127 CE) was the Al-Aqsa Mosque on the Temple Mount — the Crusaders believed this was the site of Solomon's Temple, hence 'Knights of the Temple.' Historical: the Templars occupied the site of the Ark's last known location in Western memory. Speculative (Hancock 1992, Tier 4): the Templars excavated beneath the mosque and found documentary evidence of the Ark's Ethiopian location. Barber (1994) finds no medieval source associating the Templars with Ark-searching; no archaeological documentation supports the excavation claim."
   - target: "tradition-freemasonry"
     type: "structural-parallel"
     source: "Pike, Albert (1871). Morals and Dogma of the Ancient and Accepted Scottish Rite. / Stevenson, David (1988). The Origins of Freemasonry. Cambridge UP."
+    source-tier: T1
     notes: "Scottish Rite Freemasonry (18th c.) incorporated recovery of the Ark's secret — the divine name hidden beneath the Temple in a cubic stone — as the central dramatic narrative of the Royal Arch degrees. Lodge architecture models the Temple of Solomon. This is 18th-c. ritual invention (Stevenson 1988), not medieval Templar transmission, but gave the Ark a second life in Western initiatory culture influencing everything from Mozart's *Magic Flute* to modern conspiracy literature."
 status: "metadata"
 refs:

@@ -20,18 +20,22 @@ syncretic-edges:
   - target: "[[adonis]]"
     type: "direct-borrowing"
     source: "Lucian, De Dea Syria 6-7; West 1997 The East Face of Helicon; Burkert 1992 The Orientalizing Revolution"
+    source-tier: T1
     notes: "Adonis IS Tammuz/Dumuzi. The name 'Adonis' derives from Semitic *adon* ('lord') — the same title as the Phoenician/Hebrew *Adonai*. The Byblos cult of Adonis is a direct Hellenization of the Phoenician-Mesopotamian Tammuz cult; Aphrodite = Ishtar/Inanna mourning her dead lover. The six-month underworld / six-month return cycle maps exactly onto Inanna's-Descent narrative"
   - target: "[[osiris]]"
     type: "scholarly-parallel"
     source: "Frazer 1906–1915 *Adonis Attis Osiris*; Mettinger 2001 *The Riddle of Resurrection*"
+    source-tier: T1
     notes: "Frazer generalized the dying-rising-god pattern using Adonis + Osiris + Tammuz as core cases; Mettinger 2001 defends Dumuzi-Tammuz, Baal, and Osiris as genuine cases while criticizing Frazer's over-generalizations"
   - target: "[[attis]]"
     type: "scholarly-parallel"
     source: "Frazer 1906–1915; the Phrygian Cybele-Attis cult shares the violent-death-mourned-by-divine-consort pattern"
+    source-tier: T1
     notes: "Attis is the Phrygian instance of the dying-rising vegetation god, parallel to Tammuz/Adonis but mediated through Cybele rather than Ishtar/Aphrodite"
   - target: "[[baal-hadad]]"
     type: "parallel-motif"
     source: "Smith 1994 *The Ugaritic Baal Cycle* — Baal's death and return parallels Dumuzi's"
+    source-tier: T1
     notes: "Ugaritic Baal's descent to the underworld at the hands of Mot is the West-Semitic instance of the dying-rising-deity pattern; Anat mourns Baal as Inanna mourns Dumuzi"
 status: "metadata"
 refs:

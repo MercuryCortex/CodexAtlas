@@ -20,12 +20,15 @@ syncretic-edges:
   - target: "avalokitesvara"
     type: "gender-transformation"
     source: "Yü 2001 — the Chinese reception of Avalokiteśvara progressively feminizes the deity from ~7th–10th c.; the Miaoshan legend (~10th–12th c.) gives the female-form biography its definitive popular shape."
+    source-tier: T1
   - target: "mary"
     type: "iconographic-borrowing"
     source: "Late-Ming / Qing 'Songzi Guanyin' (Child-giving Guanyin) iconography is sometimes thought to have been influenced by Jesuit missionary Madonna-and-child images, though direction of influence is disputed."
+    source-tier: T1
   - target: "mazu"
     type: "popular-religious-parallel"
     source: "Mazu (Lin Moniang) — Chinese sea-goddess; both function as compassionate feminine saviours in popular religion; sometimes assimilated."
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Kuan-yin: The Chinese Transformation of Avalokitesvara"

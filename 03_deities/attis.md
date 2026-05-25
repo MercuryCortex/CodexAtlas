@@ -20,12 +20,15 @@ syncretic-edges:
   - target: "adonis"
     type: "scholarly-parallel"
     source: "Frazer (1906–15) classifies Attis with Adonis, Osiris, Tammuz as 'dying-and-rising gods'; modern scholarship (Mettinger 2001, Smith 2017) is more cautious"
+    source-tier: T1
   - target: "osiris"
     type: "scholarly-parallel"
     source: "Plutarch (DIO 69) groups Attis with Osiris as mourning-and-renewal deities"
+    source-tier: T1
   - target: "dumuzi-tammuz"
     type: "scholarly-parallel"
     source: "Mesopotamian Dumuzi-Tammuz is the structural ancestor of dying-vegetation-god type; influence chain via Levant possible but not direct"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "In Search of God the Mother: The Cult of Anatolian Cybele"

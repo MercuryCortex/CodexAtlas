@@ -20,20 +20,25 @@ syncretic-edges:
   - target: "jesus-christ-deity"
     type: "scholarly-parallel"
     source: "**THE MASSIVE-WIN ZOROASTRIAN-CHRISTIAN EDGE.** The Saoshyant figure — virgin-born future-savior who raises the dead and inaugurates cosmic renovation — provides the **principal pre-Christian Near Eastern messiah-figure parallel** to Christian Christology. Boyce 1975-1991 *History of Zoroastrianism* (3 vols.) and Hultgård 1998 *Persian Apocalypticism* argue substantial influence on Second-Temple Jewish apocalyptic-messianism (1 Enoch's Son-of-Man, Daniel's eschatology, the Qumran Two-Messiahs scheme, the Pauline Second-Coming structure) via the Achaemenid-and-Parthian-period Jewish-Persian contact. **The scholarly debate is about direction and degree of influence, not about the structural parallel — that is uncontested.**"
+    source-tier: T1
   - target: "muhammad-al-mahdi"
     type: "structural-parallel"
     source: "Boyce, Mary (1984). *Textual Sources for the Study of Zoroastrianism*. Chicago UP.; Gnoli, Gherardo (1987). 'Zoroastrianism and Islam' in *Encyclopaedia Iranica*."
+    source-tier: T1
     notes: "**MASSIVE-WIN: Saoshyant ↔ Hidden Imam / Mahdi.** The Zoroastrian world-renovating savior (born of Zarathustra's preserved seed, exists in a hidden/preserved state, emerges to defeat Angra Mainyu at frashokereti) and the Shi'a Hidden Imam / Mahdi (in occultation since 874 CE, will return at history's end to fill the earth with justice) share identical structural logic: a savior who *already exists* in a hidden/preserved state, will *emerge* at history's end, and will trigger *cosmic renovation*. Iran's population was majority Zoroastrian through the same centuries that produced the Twelver occultation doctrine — the Zoroastrian template was culturally available in precisely the milieu where Shi'a eschatology crystallized. See [[muhammad-al-mahdi]] and [[occultation-hidden-imam]]."
   - target: "persian-period-injection"
     type: "source-deity-of-transmission"
     source: "Boyce 1975-1991; Hultgård 1998; Skjærvø 2012 (EIr eschatology) — Saoshyant is the Persian-end source-deity for Channel 3 (messianic-savior-figure) of the Persian-period injection. The structural template — future-savior, virgin-birth, raises-the-dead, defeats cosmic evil, inaugurates renovation — enters Jewish apocalyptic-messianism through Achaemenid-and-Parthian-period contact and becomes a substrate for Christian Christology + Islamic Mahdi"
+    source-tier: T1
     notes: "MASSIVE-WIN: the deity-end origin of the future-messiah-template that the [[persian-period-injection]] documents as one of its five doctrinal channels (alongside Isaiah 45:1's *mashiach*-Cyrus instantiation-point)"
   - target: "theme-zoroastrian-jewish-exchange"
     type: "source-deity-of-transmission"
     source: "Boyce 1975-1991 vol. 3 ch. 12; Hultgård 1998; Shaked 1984 — Saoshyant → Davidic Messiah → Christian Second Coming → Islamic Mahdi is one evolutionary chain Boyce & Hultgård document as transmitted across four traditions through the Persian-period Jewish-Persian exchange and its downstream eschatological descendants"
+    source-tier: T1
   - target: "occultation-hidden-imam"
     type: "Zoroastrian-source-of-occultation-pattern"
     source: "Gnoli 1987 EIr 'Zoroastrianism and Islam'; Amir-Moezzi 1994 *The Divine Guide in Early Shiʿism*; Sachedina 1981 *Islamic Messianism*; Boyce 1984 *Textual Sources for the Study of Zoroastrianism* — the Saoshyant is the Zoroastrian source-template of the occultation-hidden-savior pattern that the Twelver Shiʿa doctrine instantiates in Muhammad al-Mahdi: a savior who already exists in a preserved state (Zarathustra's seed preserved in Lake Kąsaoiia / al-ʿAskarī's son in ghayba), emerges at history's end, defeats cosmic evil, inaugurates cosmic renovation/universal justice. See [[occultation-hidden-imam]]"
+    source-tier: T1
     notes: "MASSIVE-WIN: Iran's population was majority-Zoroastrian through the 7th–10th centuries — the precise window when Twelver Shiʿa theology crystallized the occultation doctrine into its definitive form. The Saoshyant template was culturally available in exactly the milieu where the Hidden Imam doctrine developed. Cross-lens: 03_deities → 06_themes"
 status: "metadata"
 refs:

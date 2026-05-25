@@ -20,18 +20,23 @@ syncretic-edges:
   - target: "[[poseidon]]"
     type: "scholarly-parallel"
     source: "Sea-sovereign who controls the waters with a divine instrument (trident / tide-jewels); ruler of the oceanic domain and its creatures"
+    source-tier: T1
   - target: "[[tangaroa]]"
     type: "scholarly-parallel"
     source: "Polynesian sea god and creator of sea creatures; sovereign of the ocean realm; parallel to Ryūjin's dominion over all marine life"
+    source-tier: T1
   - target: "[[aegir-norse]]"
     type: "scholarly-parallel"
     source: "Norse undersea king who hosts feasts in his hall beneath the sea; the underwater-palace-of-the-sea-king motif is structurally identical"
+    source-tier: T1
   - target: "[[tiamat]]"
     type: "scholarly-parallel"
     source: "Primordial sea-dragon; Ryūjin's dragon nature and aquatic sovereignty parallel the Babylonian salt-water dragon-deity"
+    source-tier: T1
   - target: "[[varuna]]"
     type: "scholarly-parallel"
     source: "Vedic sovereign of cosmic waters and divine order; Varuna's cord / Ryūjin's tide-jewels as tools of water-dominion"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Kojiki"

@@ -19,12 +19,15 @@ syncretic-edges:
   - target: "[[isis-egyptian]] (devoted wife who never abandons the broken/scattered divine body)"
     type: "scholarly-parallel"
     source: "Typological: the wife-who-stays as cross-tradition archetype of absolute fidelity; Orchard 1997"
+    source-tier: T1
   - target: "[[parvati]] (devoted service to Shiva even through his ascetic withdrawal)"
     type: "scholarly-parallel"
     source: "Typological: female divine devotion persisting through male god's extremity"
+    source-tier: T1
   - target: "[[osiris]] (recipient of devoted spousal loyalty after his destruction)"
     type: "scholarly-parallel"
     source: "Typological: the destroyed/bound god whose consort refuses to abandon him"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Edda (Gylfaginning 50)"

@@ -17,6 +17,7 @@ syncretic-edges:
   - target: "[[tyr]]"
     type: "scholarly-parallel"
     source: "Both lose a hand/arm in a foundational binding/battle and remain associated with sovereignty-by-sacrifice (Dumézil 1948 *Mitra-Varuna* on the one-handed sovereign motif)"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Celtic Mythology"

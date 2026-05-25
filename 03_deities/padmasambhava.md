@@ -16,14 +16,17 @@ syncretic-edges:
   - target: "hermes-trismegistus"
     type: "scholarly-parallel"
     source: "Snellgrove, *Indo-Tibetan Buddhism* (1987); Faivre, *Access to Western Esotericism* (1994) — both are tantric/hermetic *founder-magicians* — wisdom-transmitters who conceal sacred texts (Padmasambhava's *terma* / the Hermetic Corpus's late-antique mystical pseudepigrapha) for later predestined revealers"
+    source-tier: T1
     notes: "MASSIVE WIN: magician-founder-of-tradition who hides scriptures for future discovery — cross-tradition convergence of the *terma* / *pseudepigraphic* pattern"
   - target: "shiva"
     type: "scholarly-parallel"
     source: "Snellgrove 1987 — Padmasambhava's tantric-Vajrayana practice inherits directly from Indian Shaivite tantra; Shiva as supreme tantric guru and Padmasambhava as supreme Nyingma guru are functionally homologous"
+    source-tier: T1
     notes: "Direct Shaiva-Vajrayana tantric-lineage parallel"
   - target: "jesus-christ-deity"
     type: "scholarly-parallel"
     source: "Snellgrove 1987 — both have miraculous-divine births (Padmasambhava 'lotus-born' from the pollen of a sacred flower; Christ virgin-born); both are tradition-founding saviors whose ongoing presence is accessible to devotees through ritual practice"
+    source-tier: T1
     notes: "Miraculous-birth tradition-founder partial parallel"
 status: "metadata"
 refs:

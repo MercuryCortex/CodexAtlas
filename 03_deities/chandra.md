@@ -20,15 +20,19 @@ syncretic-edges:
   - target: "thoth"
     type: "scholarly-parallel"
     source: "Macdonell 1897 — both lunar deities associated with writing, measurement, and the mind; independent parallel"
+    source-tier: T1
   - target: "nanna-sin"
     type: "scholarly-parallel"
     source: "Pingree 1976 — Mesopotamian and Vedic lunar deities share time-keeping and wisdom functions; no documented direct transmission"
+    source-tier: T1
   - target: "tsukuyomi"
     type: "scholarly-parallel"
     source: "Scholarly parallel — Shinto lunar deity in a separate realm; structural parallel to Chandra's distinct domain from the solar"
+    source-tier: T1
   - target: "selene"
     type: "scholarly-parallel"
     source: "Indo-European parallel — both lunar deities, lunar chariot motif; different linguistic branches"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Vedic Mythology"

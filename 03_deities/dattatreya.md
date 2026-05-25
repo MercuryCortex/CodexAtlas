@@ -20,12 +20,15 @@ syncretic-edges:
   - target: "[[vishnu]]"
     type: "aspect-of"
     source: "one of the three faces."
+    source-tier: T1
   - target: "[[shiva]]"
     type: "aspect-of"
     source: "one of the three faces."
+    source-tier: T1
   - target: "[[matsyendranath]]"
     type: "lineage-claim"
     source: "the Nāth sampradāya treats Dattatreya as one of the lineage's foundational masters."
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Datta Tradition: A Critical Introduction"

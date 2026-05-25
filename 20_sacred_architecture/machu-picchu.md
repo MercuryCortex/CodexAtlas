@@ -23,30 +23,37 @@ cross-tradition-edges:
   - target: "sacsayhuaman"
     type: "cognate-form"
     source: "Bauer 1998; Protzen 1993"
+    source-tier: T1
     notes: "Both are masterworks of Inca cyclopean stonework; both are Pachacuti-era constructions in the imperial-court architectural language. Sacsayhuamán above Cusco; Machu Picchu in the Vilcabamba range."
   - target: "ollantaytambo"
     type: "cognate-form"
     source: "Protzen 1993"
+    source-tier: T1
     notes: "Both: Pachacuti-era Inca ritual + agricultural terrace + temple complexes in the Sacred Valley. Ollantaytambo specifically is the closest formal parallel in stonework style and terrace integration."
   - target: "stonehenge-sacred-site"
     type: "parallel-form"
     source: "Aveni 2008"
+    source-tier: T1
     notes: "Astronomical-alignment sacred monument. Machu Picchu's Torreón has a window precisely aligned to the June-solstice sunrise (winter solstice in the southern hemisphere — the Inca Inti Raymi festival). Stonehenge: summer-solstice sunrise alignment. Independent cultural emergence of solstice-aligned sacred monumental architecture."
   - target: "pueblo-bonito-chaco-canyon"
     type: "parallel-form"
     source: "Aveni 2008"
+    source-tier: T1
     notes: "Astronomical-alignment ritual landscape. Inca + Ancestral Puebloan; mountain-Andean vs canyon-desert. Same architectural-religious problem (encoding solstice in stone)."
   - target: "intihuatana-machu-picchu"
     type: "contains"
     source: "Bauer & Dearborn 1995"
+    source-tier: T1
     notes: "The Intihuatana stone ('hitching post of the sun') is one of the few intact such stones in any Inca site (most were systematically destroyed by Spanish extirpation campaigns)."
   - target: "tradition-inca-andean"
     type: "iconic-monument-of"
     source: "D'Altroy 2014"
+    source-tier: T1
     notes: "Machu Picchu is the iconic image of Inca civilization in the popular and scholarly imagination — partly because it is the best-preserved major Inca site (escaping Spanish destruction by being unknown to them)."
   - target: "pyramid-of-khufu"
     type: "weak-parallel"
     source: "(general)"
+    source-tier: T1
     notes: "Both are the iconic single-monument image of their parent civilization in modern popular consciousness, despite neither being typical of their tradition (Khufu is the largest Egyptian pyramid; Machu Picchu is an unusually-well-preserved royal estate, not a paradigmatic Inca city)."
 status: "metadata"
 refs:

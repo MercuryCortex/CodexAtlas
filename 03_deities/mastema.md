@@ -20,12 +20,15 @@ syncretic-edges:
   - target: "satan-christian"
     type: "scholarly-parallel"
     source: "VanderKam 2001 *Jubilees* commentary — Mastema is one of the load-bearing pre-Christian Jewish developments of the satanic adversary-figure; structurally parallel to but distinct from Job-and-Zechariah's 'the satan' (the accuser)"
+    source-tier: T1
   - target: "belial-qumran"
     type: "scholarly-parallel"
     source: "Stuckenbruck 2014 — Mastema and Qumran-sectarian Belial are closely-related Second-Temple Jewish demonological developments"
+    source-tier: T1
   - target: "azazel"
     type: "scholarly-parallel"
     source: "Reed 2005 — Mastema and Azazel are parallel cosmic-evil-leader figures across distinct Second-Temple texts (Jubilees vs. 1 Enoch)"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Book of Jubilees (2 vols.: Translation + Commentary)"

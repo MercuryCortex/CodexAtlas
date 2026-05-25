@@ -20,9 +20,11 @@ syncretic-edges:
   - target: "[[apollo]]"
     type: "ancient-identification"
     source: "Tertullian, Apologeticus 24; Herodian, Ab Excessu Divi Marci III.14.6 — classical sources equate Belenus directly with Apollo; the formula 'Apollo Belenus' appears in inscriptions at Aquileia"
+    source-tier: T1
   - target: "[[lugh]]"
     type: "scholarly-parallel"
     source: "Green, Miranda — The Gods of the Celts (1986); both are pan-Celtic solar-skilled deities; Lughnasadh (Lugh's harvest festival, Aug 1) and Beltane (Bel's fire festival, May 1) form the summer quarter-bracket"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Gods of the Celts"

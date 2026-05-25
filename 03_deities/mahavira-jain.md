@@ -20,10 +20,12 @@ syncretic-edges:
   - target: "buddha-shakyamuni"
     type: "scholarly-parallel"
     source: "Dundas 2002 *The Jains*; Basham 1951 *History and Doctrines of the Ajivikas*"
+    source-tier: T1
     notes: "Near-contemporary reformers (same century, same region, same kshatriya social class, same critique of Vedic sacrifice), arriving at structurally different liberation paths. Pali Buddhist texts mention Mahavira as 'Nirgantha Nataputta' — confirming historical contact."
   - target: "shiva"
     type: "folk-syncretism"
     source: "Dundas 2002"
+    source-tier: T1
     notes: "Some scholars identify an early Jain-Shaivite entanglement in the figure of the ascetic conqueror; Mahavira's extreme asceticism parallels Shiva's tapas tradition. Disputed."
 status: "metadata"
 refs:

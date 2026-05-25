@@ -16,6 +16,7 @@ syncretic-edges:
   - target: "[[benzaiten]]"
     type: "direct-borrowing"
     source: "Ludvik, Catherine (2007). *Sarasvatī: Riverine Goddess of Knowledge*. Brill"
+    source-tier: T1
     notes: "MASSIVE-WIN: Buddhist transmission of Sarasvatī to East Asia via the Suvarṇaprabhāsa Sūtra produces Chinese Biancaitian and Japanese Benzaiten. The biwa-as-vīṇā iconographic continuity + the riverine→island-shrine continuity make this one of the cleanest documented Vedic→Japanese transmissions"
 status: "metadata"
 refs:

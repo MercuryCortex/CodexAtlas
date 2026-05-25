@@ -20,6 +20,7 @@ syncretic-edges:
   - target: "brahma-vedic"
     type: "scholarly-parallel"
     source: "Gonda 1985"
+    source-tier: T1
     notes: "Prajāpati is in many respects superseded by Brahmā in classical Hindu cosmology; functional continuity."
 status: "metadata"
 refs:

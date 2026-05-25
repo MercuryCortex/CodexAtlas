@@ -20,6 +20,7 @@ syncretic-edges:
   - target: "hera"
     type: "ancient-identification"
     source: "Standard Roman *interpretatio Graeca* from the late Republic onward; Juno inherits all of Hera's mythology in Latin literature"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Religions of Rome (2 vols.)"

@@ -20,19 +20,24 @@ syncretic-edges:
   - target: "[[bau-sumerian]]"
     type: "ancient-identification"
     source: "Black & Green 1992; from the Old Babylonian period the Lagashite Bau is absorbed into Gula, transferring the dog-iconography and medical function to the Babylonian pantheon as Lagash declines politically"
+    source-tier: T1
   - target: "[[ninisina]]"
     type: "ancient-identification"
     source: "Westenholz 2010; Ninisina ('Lady of Isin') is identified with Gula in Old Babylonian Isin-Larsa sources; the two share temple, cult, and the dog-attribute"
+    source-tier: T1
   - target: "[[ninkarrak]]"
     type: "ancient-identification"
     source: "Old Babylonian god lists equate Gula with Ninkarrak; the West-Semitic Ninkarrak appears in personal names from Mari and the Hammurabi Code epilogue"
+    source-tier: T1
   - target: "sekhmet"
     type: "cross-tradition-archetype"
     source: "Comparative religion — Stol 2000 *Epilepsy in Babylonia*; Lesko 1999 *The Great Goddesses of Egypt*; both are the supreme healing deity who sends disease and cures it; both have institutionalized priest-healer corps"
+    source-tier: T1
     notes: "Destroyer-healer archetype: Gula (Mesopotamia) and Sekhmet (Egypt) are independent instantiations of the same theological structure — the deity who commands disease commands the cure. Gula's *āšipu* and *asû* practitioners parallel Sekhmet's *wabw-Sḫmt* priest-physicians."
   - target: "asclepius-greek"
     type: "functional-parallel"
     source: "Comparative religion — Edelstein 1945 on Asklepios cult dogs at Epidauros; Black & Green 1992 on dog-figurine votives at Gula/Ninisina sanctuaries"
+    source-tier: T1
     notes: "Sacred Healing Dog parallel: votive dog deposits at Gula's sanctuaries (Isin, Nippur, Borsippa) and sacred dogs at Asklepios's Epidauros are 1,000–1,400 years apart. Both encode the pharmacological truth that dog saliva is antimicrobial (lysozyme, IgA, histatins). Independent cross-cultural convergence on the same empirical observation."
 status: "metadata"
 refs:

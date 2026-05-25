@@ -20,30 +20,39 @@ syncretic-edges:
   - target: "[[thor]]"
     type: "scholarly-parallel"
     source: "Thunder deity with distinctive weapon/instrument who brings rain and battles chaos; cross-cultural storm-god cluster (Puhvel 1987)"
+    source-tier: T1
   - target: "[[indra]]"
     type: "scholarly-parallel"
     source: "Vedic king of gods and thunder deity; rain-bringer, dragon-slayer, warrior-thunder archetype — the most extensively documented cross-tradition parallel"
+    source-tier: T1
   - target: "[[zeus]]"
     type: "scholarly-parallel"
     source: "Greek sky-and-thunder sovereign; thunder-deity as highest or near-highest god is the most universally attested deity archetype"
+    source-tier: T1
   - target: "[[perun]]"
     type: "scholarly-parallel"
     source: "Slavic thunder deity; Perun-vs-Veles battle structurally parallels storm-deity chaos-combat mythemes"
+    source-tier: T1
   - target: "[[leigong]]"
     type: "scholarly-parallel"
     source: "Chinese thunder deity; Leigong's drum instrument directly parallels Raijin's drum-ring iconography; probable iconographic transmission via Buddhist art"
+    source-tier: T1
   - target: "[[teshub]]"
     type: "scholarly-parallel"
     source: "Hittite storm deity; thunder weapon and weather-sovereignty parallel"
+    source-tier: T1
   - target: "[[baal-hadad]]"
     type: "scholarly-parallel"
     source: "Canaanite storm-king; bringer of rain and fertility through storm combat — parallel agricultural-fertility-through-thunder function"
+    source-tier: T1
   - target: "[[shango]]"
     type: "scholarly-parallel"
     source: "Yoruba thunder deity who deploys thunder-axe and who has drums as sacred instruments; cross-cultural drums-as-thunder-voice pattern"
+    source-tier: T1
   - target: "[[fujin]]"
     type: "ancient-identification"
     source: "Wind-and-thunder paired guardian dyad; theologically and iconographically inseparable in Japanese tradition"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Kojiki"

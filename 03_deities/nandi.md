@@ -20,13 +20,16 @@ syncretic-edges:
   - target: "shiva"
     type: "ancient-identification"
     source: "Doniger 1975 *Hindu Myths*; Dimmitt & van Buitenen 1978 *Classical Hindu Mythology* — Nandi is Shiva's *vāhana* and chief devotee; in the Nandīśvara theology (esp. in the *Linga Purāṇa* and the *Vāyu Purāṇa*) Nandi is an aspect or partial-incarnation of Shiva himself, the bull-form of the god"
+    source-tier: T1
     notes: "The Shaiva theology holds an ontological-identity between Shiva and his bull at the deepest level; the bull is not merely a mount but a partial-form of the god"
   - target: "rudra-shiva-early"
     type: "ancient-identification"
     source: "Doniger 1981 *Śiva: The Erotic Ascetic*; Kramrisch 1981 *The Presence of Śiva* — early Rudra-Shiva is already associated with cattle and the bull in the Vedic period (Rig Veda 2.33, the *Śatarudrīya*); Nandi is the iconographic crystallization of this older Vedic substrate"
+    source-tier: T1
   - target: "apis-bull"
     type: "scholarly-parallel"
     source: "the Egyptian Apis cult and the Indian Nandi cult are independent sacred-bull traditions; the scholarly parallel is structural (sacred-bull-cult typology, see Mallory 1989) — not direct genetic relation"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Hindu Myths: A Sourcebook Translated from the Sanskrit"

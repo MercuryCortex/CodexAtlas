@@ -24,15 +24,18 @@ cross-tradition-edges:
   - target: "gobekli-tepe"
     type: "successor-context"
     source: "Hodder 2006; Schmidt 2012"
+    source-tier: T1
     notes: "Çatalhöyük (~7400–6200 BCE) is the post-agricultural Neolithic Anatolian sacred-architectural horizon **following** Göbekli Tepe (~9500–8000 BCE). Where Göbekli Tepe is monumental-communal-pre-agricultural, Çatalhöyük is **domestic-integrated-post-agricultural** — the sacred has moved into the house."
   - target: "theme-house-as-shrine"
     type: "anchor-site"
     source: "Mellaart 1967; Hodder 2006"
+    source-tier: T1
     notes: "Çatalhöyük is the canonical example of the 'every house is a shrine' Neolithic Anatolian pattern — wall paintings, bull bucrania mounted on walls, burials beneath floors, figurines in storage bins. The sacred is woven into domestic space; there is no separate temple building."
 syncretic-edges:
   - target: "theme-mother-goddess-figurines-anatolian-neolithic"
     type: "primary-evidence-base"
     source: "Mellaart 1967; Gimbutas 1989; Meskell 1995; Meece 2006"
+    source-tier: T1
     notes: "Çatalhöyük is the primary evidence-base for the 'Neolithic Mother Goddess' hypothesis (Gimbutas et al.). The hypothesis has been substantially critiqued post-2000 — particularly the seated-female-with-felines figurine — but the figurine-cache evidence is real; the contested issue is the *theological interpretation*. Vault carries both: the figurines as evidence, the Mother-Goddess reading as one (criticised) interpretive frame."
 status: "metadata"
 refs:

@@ -23,27 +23,33 @@ cross-tradition-edges:
   - target: "church-of-the-holy-sepulchre-jerusalem"
     type: "descendant-of-form"
     source: "Grabar 1959; Krautheimer 1969"
+    source-tier: T1
     notes: "Architectural-form descendant: rotunda + ambulatory + dome over sacred rock — direct response in Umayyad-Islamic architectural language to the Anastasis Rotunda (which dominates the Christian quarter visually). Same height as the Holy Sepulchre dome. Grabar's classic argument: this is Umayyad architectural statement that Islam now owns the holy city's vertical skyline."
   - target: "solomons-temple-first"
     type: "located-over"
     source: "Murphy-O'Connor 2008; Grabar 2006"
+    source-tier: T1
     notes: "The Foundation Stone (al-Sakhra) is by Rabbinic tradition the *Even haShetiyya* — the stone from which the world was founded and over which the Holy of Holies of Solomon's Temple stood. The Dome of the Rock is built directly over this stone."
   - target: "convent-of-christ-tomar"
     type: "intermediate-link"
     source: "Pereira 2012; Genin 2011"
+    source-tier: T1
     notes: "Crusader-era Templars used the Dome of the Rock as their headquarters (1119–1187) and called it *Templum Domini*. They built rotundas back in Europe — including Tomar's Charola — modeled on what they had occupied. The Dome is the transmission relay between Anastasis and Templar Europe."
   - target: "temple-church-london"
     type: "intermediate-link"
     source: "Wilson 2010; Lees 1935"
+    source-tier: T1
     notes: "London Temple Church (1185) is part of the same Templar round-church programme, transmitted via the Dome of the Rock as occupied-headquarters."
   - target: "tradition-knights-templar"
     type: "headquarters-of"
     source: "Barber 1994; Nicholson 2001"
+    source-tier: T1
     notes: "The Templars were quartered in the al-Aqsa Mosque adjacent to the Dome between 1119 and 1187 — the name 'Templars' (Knights of the Temple) refers to their occupation of this complex. They called the Dome itself *Templum Domini* and the al-Aqsa mosque *Templum Salomonis*."
 syncretic-edges:
   - target: "foundation-stone-judaism"
     type: "shared-locus"
     source: "Murphy-O'Connor 2008"
+    source-tier: T1
     notes: "The same physical rock is sacred to three traditions: Jewish (foundation of creation + Holy of Holies), Christian (some traditions place the Akedah here; Crusaders consecrated it as Templum Domini), and Islamic (Miʿraj ascent-site)."
 status: "metadata"
 refs:

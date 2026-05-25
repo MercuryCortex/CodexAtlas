@@ -20,12 +20,15 @@ syncretic-edges:
   - target: "[[amaterasu]]"
     type: "ancient-identification"
     source: "Sibling rivalry in Kojiki — storm-god vs. sun-goddess, the cosmological chaos-vs-order pairing"
+    source-tier: T1
   - target: "[[marduk]]"
     type: "scholarly-parallel"
     source: "Chaoskampf — Susanoo slays the eight-headed Yamata-no-Orochi serpent (cf. Marduk vs Tiamat, Indra vs Vritra)"
+    source-tier: T1
   - target: "[[indra]]"
     type: "scholarly-parallel"
     source: "Storm-god slays multi-headed dragon, frees waters/maiden (Vritra parallel; Watkins 1995 *How to Kill a Dragon*)"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Kojiki"

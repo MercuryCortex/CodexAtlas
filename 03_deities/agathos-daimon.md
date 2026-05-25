@@ -20,24 +20,31 @@ syncretic-edges:
   - target: "[[hermes-trismegistus]]"
     type: "ancient-identification"
     source: "In several Hermetic texts (Corpus Hermeticum XVI and the Stobaean Fragments), the Agathos Daimon appears as a revealer-figure who instructs Hermes Trismegistus himself — a remarkable inversion in which the teacher of all wisdom has his own higher teacher. Some texts identify the Agathos Daimon with Hermes' own higher principle or divine self. Fowden (The Egyptian Hermes, 1986) treats the Agathos Daimon as the divine teacher-prototype that the Hermetic corpus places at the apex of the revelation chain."
+    source-tier: T1
   - target: "[[nous-hermetic]]"
     type: "ancient-identification"
     source: "The Agathos Daimon as revealer-teacher in the Hermetic texts is closely associated with, or identified as, the divine Nous (Cosmic Mind) that reveals cosmic truth to those who seek it. In Hermetic theology, the Agathos Daimon may be a personified form of the Nous's benevolent guidance function."
+    source-tier: T1
   - target: "[[sophia-gnostic]]"
     type: "structural-parallel"
     source: "Sophia (Wisdom) in Gnostic texts serves as a divine intermediary and revealer of cosmic truth — the same structural function as the Agathos Daimon in Hermetic texts. Both are intermediate divine beings who transmit knowledge of the higher realm to human seekers. The Agathos Daimon as 'Good Daemon' anticipates Sophia's role as the revealer in the Gnostic schema."
+    source-tier: T1
   - target: "[[ningishzida]]"
     type: "structural-parallel"
     source: "Ningishzida, the Mesopotamian serpent deity and lord of the 'good tree,' shares the serpent iconography with the Agathos Daimon (both depicted as serpents or associated with serpent forms) and the role of a beneficial underworld/wisdom deity who guides souls. The serpent-as-wisdom figure is one of the most widespread symbolic patterns in ancient religion."
+    source-tier: T1
   - target: "[[asclepius-greek]]"
     type: "structural-parallel"
     source: "Asclepius's primary iconographic attribute is the serpent staff (caduceus/rod of Asclepius) — the healing serpent. The Agathos Daimon's serpent form in Greco-Egyptian tradition parallels Asclepius's serpent as the vehicle of divine beneficence, healing, and wisdom. Both are beneficial serpent deities active in the Hellenistic period; both were associated with shrines in Egypt."
+    source-tier: T1
   - target: "[[the-shepherd-angel-of-repentance]]"
     type: "structural-parallel"
     source: "The Shepherd in the Shepherd of Hermas (2nd c. CE Hermetic-adjacent Christian text) serves as a divine guide figure whose instruction leads the narrator toward cosmic truth — structurally equivalent to the Agathos Daimon's role as the divine teacher who guides Hermes in Corpus Hermeticum XVI. Both are beneficial intermediary figures who appear to human seekers and reveal divine guidance."
+    source-tier: T1
   - target: "[[poimandres]]"
     type: "ancient-identification"
     source: "Poimandres ('Shepherd of Men' or 'Man-Shepherd') in Corpus Hermeticum I serves as the divine revealer who appears to Hermes and reveals the cosmogony — the same revelatory function as the Agathos Daimon in CH XVI. Whether Poimandres and the Agathos Daimon are the same figure differently named, or different beings in the Hermetic celestial hierarchy, is a question of Hermetic scholarship."
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Egyptian Hermes: A Historical Approach to the Late Pagan Mind"

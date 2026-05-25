@@ -19,26 +19,33 @@ syncretic-edges:
   - target: "Saint Martin de Porres / Saint Gerard / Saint Expedite (regional variation)"
     type: "folk-syncretism"
     source: "McAlister 2002"
+    source-tier: T1
   - target: "hades"
     type: "scholarly-parallel"
     source: "McAlister 2002; Eliade *Patterns in Comparative Religion* (1958), Ch. VII on death — Baron Samedi as Vodou lord of the dead and ruler of cemeteries; Hades as Greek lord of the underworld. Both are sovereign-of-the-dead"
+    source-tier: T1
     notes: "Lord-of-the-dead cross-cultural archetype"
   - target: "anubis"
     type: "scholarly-parallel"
     source: "Eliade 1958; Wilkinson 2003 — Egyptian Anubis as god of cemeteries and embalming; Baron Samedi as Vodou cemetery-god"
+    source-tier: T1
   - target: "mictlantecuhtli"
     type: "scholarly-parallel"
     source: "Eliade 1958 — Aztec Mictlantecuhtli as lord of the dead and the cemetery realm"
+    source-tier: T1
   - target: "yama-vedic"
     type: "scholarly-parallel"
     source: "Eliade 1958 — Vedic Yama as first-mortal-become-lord-of-the-dead"
+    source-tier: T1
   - target: "ah-puch"
     type: "scholarly-parallel"
     source: "Eliade 1958 — Maya Ah-Puch as death-god"
+    source-tier: T1
     notes: "MASSIVE WIN: 6-tradition lord-of-the-dead convergence (Vodou Baron Samedi, Greek Hades, Egyptian Anubis, Aztec Mictlantecuhtli, Vedic Yama, Maya Ah-Puch)"
   - target: "afro-diasporic-syncretism"
     type: "source-deity-of-diaspora-fusion"
     source: "McAlister 2002, *Rara!*; Cosentino 1995, *Sacred Arts of Haitian Vodou*; Brown 1991, *Mama Lola* — Baron Samedi (and the broader Gede nasyon) is the death/cemetery-domain Atlantic-diaspora syncretism with Saint Martin de Porres / Saint Gerard / Saint Expedite (regional variation). The Gede liturgy + the November 1–2 Fèt Gede synchronization with All Saints / All Souls is one of the calendrically-locked Vodou-Catholic fusions. See [[afro-diasporic-syncretism]]"
+    source-tier: T1
     notes: "MASSIVE-WIN: the calendrical alignment of Fèt Gede with All Saints/All Souls is the cleanest example of the Catholic liturgical calendar absorbing the African ancestor-festival cycle — bidirectional rather than purely camouflage"
 status: "metadata"
 refs:

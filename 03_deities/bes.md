@@ -20,6 +20,7 @@ syncretic-edges:
   - target: "pataikos"
     type: "ancient-identification"
     source: "Phoenician dwarf-amulets called *Pataikoi* (Herodotus 3.37 describes them) are essentially Bes-iconography exported; the Phoenicians spread Bes-amulets across the Mediterranean"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Bes: The Ancient Egyptian Way of Protecting Children and Pregnant Women"

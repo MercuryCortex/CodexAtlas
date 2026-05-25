@@ -16,17 +16,21 @@ syncretic-edges:
   - target: "vajradhara"
     type: "scholarly-parallel"
     source: "Snellgrove 1987 — Vajrasattva and Vajradhara are closely related Vajra-family principal Buddhas; doctrinal usage varies by school"
+    source-tier: T1
   - target: "akshobhya"
     type: "scholarly-parallel"
     source: "Snellgrove 1987 — Akshobhya is the head of the Vajra family; Vajrasattva is in some doctrines the unified essence of all Five Dhyani Buddhas in their vajra-aspect"
+    source-tier: T1
     notes: "Within-family vajra-family pairing"
   - target: "shiva"
     type: "scholarly-parallel"
     source: "Snellgrove 1987 — Vajrasattva as purification-Buddha; Shiva as Hindu purification-and-destruction deity; both encode the purification-through-tantric-essence theological function"
+    source-tier: T1
     notes: "Tantric-purification deity parallel"
   - target: "vajrapani"
     type: "scholarly-parallel"
     source: "Snellgrove 1987 — both bear the vajra; Vajrapani as wrathful protector-bodhisattva and Vajrasattva as peaceful purification-Buddha are the wrathful/peaceful pair within the vajra-family"
+    source-tier: T1
     notes: "Within-family vajra-pairing (peaceful/wrathful)"
 status: "metadata"
 refs:

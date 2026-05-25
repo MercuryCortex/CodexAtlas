@@ -20,29 +20,36 @@ syncretic-edges:
   - target: "asclepius-greek"
     type: "structural-parallel"
     source: "Murphy, Joseph M.; Sanford, Mei-Mei (eds.) (2001). Osun Across the Waters. Indiana UP."
+    source-tier: T1
     notes: "Both are divine healers who oversee the domain of illness, both have specific cultic practices (Asclepian incubation; Babalu-Aye's specific taboos, foods, and ritual protocols), and both are associated with dogs. The parallel is typological — no historical connection."
   - target: "jesus-christ-deity"
     type: "syncretic-overlay"
     source: "Brandon, George (1993). Santeria from Africa to the New World. Indiana UP."
+    source-tier: T1
     notes: "In Cuban Lucumí Santería, Babalu-Aye is syncretically identified with Saint Lazarus — the biblical figure Jesus raises from the dead (John 11) and the parable figure covered in sores (Luke 16:20–21). The Yoruba deity of disease and the Christian figure of illness-and-resurrection are fused in the colonial Cuban context. The syncretic identification is one of the most theologically rich cases of orisha-saint correspondence in the entire Santería system."
   - target: "olodumare"
     type: "agent-of"
     source: "Idowu (1962)"
+    source-tier: T1
     notes: "Babalu-Aye's diseases are understood as divinely sent — illness is not random but carries theological meaning (punishment, purification, or test). This makes Babalu-Aye simultaneously the sender and withdrawer of disease, an agent of divine justice rather than a separate malevolent force."
   - target: "bhaisajyaguru"
     type: "scholarly-parallel"
     source: "Murphy & Sanford, *Osun Across the Waters* (2001); Birnbaum, *The Healing Buddha* (1979) — Bhaisajyaguru as Mahayana Buddhist Medicine Buddha; Babalu-Aye as Yoruba disease-and-healing orisha. Both are divine healers whose specific domain is bodily suffering"
+    source-tier: T1
     notes: "Cosmic-medicine-deity cross-cultural parallel"
   - target: "dhanvantari"
     type: "scholarly-parallel"
     source: "Murphy & Sanford 2001 — Vedic Dhanvantari as god of Ayurveda; Babalu-Aye as Yoruba medicine-deity"
+    source-tier: T1
   - target: "sekhmet"
     type: "scholarly-parallel"
     source: "Wilkinson 2003 — Egyptian Sekhmet as destroyer-and-healer (her arrows bring plague but her priests cure); Babalu-Aye as sender-and-withdrawer of disease. Both encode the destroyer-healer dual-aspect"
+    source-tier: T1
     notes: "Destroyer-and-healer dual-aspect archetype"
   - target: "imhotep"
     type: "scholarly-parallel"
     source: "Murphy & Sanford 2001 — Egyptian Imhotep as deified-healer; Babalu-Aye as Yoruba healing orisha"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Notes sur le culte des Orisha et Vodun à Bahia"

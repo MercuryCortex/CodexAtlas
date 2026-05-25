@@ -23,34 +23,42 @@ cross-tradition-edges:
   - target: "pyramid-of-khufu"
     type: "parallel-form"
     source: "Lehner 1997; Sugiyama 2010"
+    source-tier: T1
     notes: "By volume the Pyramid of the Sun is the **third-largest pyramid in the world** (~1.2 million m³), behind only Khufu (~2.6M m³) and Cholula (~4.5M m³ — but Cholula is more accreted than constructed-as-one). Built in a single century-and-a-half campaign (Khufu in 20 years). Both monuments are the iconic architectural symbols of their civilizations. Independent emergence at maximum civilizational scale."
   - target: "step-pyramid-djoser-saqqara"
     type: "parallel-form"
     source: "Sugiyama 2010"
+    source-tier: T1
     notes: "Both are early monumental stepped pyramids in their respective traditions. Both involve a cavity / chamber programme underneath (Djoser's burial shaft; Teotihuacan's natural lava-tube cave below the Pyramid of the Sun discovered 1971)."
   - target: "ziggurat-of-ur"
     type: "parallel-form"
     source: "Crawford 1991; Sugiyama 2010"
+    source-tier: T1
     notes: "Mesopotamian stepped sacred mountain ↔ Teotihuacan stepped sacred mountain. Same architectural type-class."
   - target: "borobudur-stupa-mandala"
     type: "parallel-form"
     source: "Snodgrass 1985"
+    source-tier: T1
     notes: "Stepped pyramidal sacred-mountain form, Buddhist Java vs. Mesoamerican central Mexico — no contact."
   - target: "tikal-temple-i"
     type: "ancestor-of-mesoamerican-form"
     source: "Sharer & Traxler 2006"
+    source-tier: T1
     notes: "Teotihuacan is the central-Mexican type-source of the Mesoamerican monumental stepped pyramid (post-Olmec, pre-Toltec/Maya-Late-Classic). The form propagated outward to the Maya area. Documented Mesoamerican-internal transmission."
   - target: "temple-of-the-feathered-serpent-teotihuacan"
     type: "neighbouring-monument"
     source: "Sugiyama 2005"
+    source-tier: T1
     notes: "Part of the same Teotihuacan city centre — the Sun is the largest, the Moon (north) the second-largest, the Feathered Serpent (south, in the Ciudadela) the smaller but iconographically most-detailed. Together they form Teotihuacan's central triad."
   - target: "pyramid-of-the-moon-teotihuacan"
     type: "paired-monument"
     source: "Sugiyama 2007"
+    source-tier: T1
     notes: "Northern terminus of the Avenue of the Dead, paired with the Sun pyramid on the east-west axis. Smaller (height 43m) but iconographically and ritually-functionally central. Recent excavations have found multiple human + animal sacrificial burials inside Moon Pyramid construction phases."
   - target: "theme-cosmic-mountain-as-temple-form"
     type: "exemplifies"
     source: "Sugiyama 2010"
+    source-tier: T1
     notes: "The Pyramid of the Sun is a built mountain — explicitly architecturally so, its terraced form modeled on the nearby Cerro Gordo (which it visually mirrors when seen from the Pyramid of the Moon)."
 status: "metadata"
 refs:

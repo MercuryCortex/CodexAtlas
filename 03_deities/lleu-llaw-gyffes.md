@@ -19,36 +19,47 @@ syncretic-edges:
   - target: "[[lugh]] (Irish cognate — direct linguistic reflex)"
     type: "etymological-cognate"
     source: "Lleu and Lugh descend from the same Proto-Celtic divine name *Lugus (*'shining one'); Lleu Llaw Gyffes ('Bright One of the Skillful Hand') = Lugh Lámhfhada ('Lugh of the Long Arm') — both names encode the luminous deity's supreme manual skill; the Irish Lugh (sun-god, master of all crafts, 'samildánach' = 'many-skilled') is the closest functional cognate; MacCana 1983; Koch 2006"
+    source-tier: T1
   - target: "[[lugus]] (Gaulish cognate — inscriptional attestation)"
     type: "etymological-cognate"
     source: "Gaulish Lugus is attested in dedications at Avenches and in the place-name Lugdunum ('Fort/hill of Lugus') — the city that became Lyon, France; other Lugdunum place-names: Leiden (Netherlands), Laon, Loudun; the cult of Lugus/Lugh/Lleu is the most widely documented pan-Celtic divine tradition; Delamarre 2003 *Dictionnaire de la langue gauloise*"
+    source-tier: T1
   - target: "[[baldr]] (Norse dying-and-rising beloved god)"
     type: "cross-tradition-parallel"
     source: "MASSIVE WIN: Baldr is the most beautiful and beloved of the gods, killed at the height of his beauty through a magical weapon (mistletoe arranged by Loki), his death mourns the entire cosmos; Lleu is struck through the side by a magically-forged spear at the height of his sovereignty; both are luminous divine youths killed by supernatural treachery at a moment of apparent invulnerability; both represent the Pan-Indo-European dying-divine-youth mytheme — the luminous solar hero whose death is the world's greatest loss"
+    source-tier: T1
   - target: "[[osiris]] (Egyptian dying-and-rising sovereignty deity)"
     type: "cross-tradition-parallel"
     source: "MASSIVE WIN: Osiris is the lord of the land whose betrayal and death (Set's spear and dismemberment) triggers the great mourning and resurrection quest; Lleu is the legitimate lord of Gwynedd whose betrayal (Blodeuwedd's conspiracy) results in a spear-wound and transformation; both are sovereignty-gods who die by treachery, are lost in a transformed/incomplete state, and are restored through the search of a devoted helper (Gwydion / Isis); the spear-through-side wound is shared"
+    source-tier: T1
   - target: "[[jesus-christ-deity]] (Christian dying-and-rising savior)"
     type: "cross-tradition-parallel"
     source: "Structural parallel: the spear-through-the-side wound (John 19:34 — the soldier's spear piercing Christ's side) is shared between Lleu and the Crucifixion; both are divine figures of light killed by betrayal at the height of their power; the dying-and-rising pattern (death → transformation → restoration) maps the same mythological grammar; the parallel is typological, not genetic — it reflects the ancient Near Eastern dying-god mytheme that underlies both"
+    source-tier: T1
   - target: "[[apollo]] (Greek solar-divine craftsman)"
     type: "cross-tradition-parallel"
     source: "Apollo as solar deity of light, mastery of all arts, craft, and music — the Greek reflex of the PIE luminous-divine-craftsman type; Lleu/Lugh as the Celtic reflex of the same type; both are supreme in all skills and associated with solar light; the *samildánach* ('master of all crafts') title of Lugh in Irish tradition maps directly onto Apollo's multiple domains"
+    source-tier: T1
   - target: "[[adonis]] (dying-beloved-youth vegetation deity)"
     type: "cross-tradition-parallel"
     source: "Adonis is loved by Aphrodite (and therefore by nature itself), killed at his beauty's peak; Lleu's flower-wife Blodeuwedd (literally made of flowers — oak blossom, meadowsweet, broom) represents the earth's beauty given to Lleu; when Blodeuwedd betrays him, the flower-world turns against him — parallel to Adonis killed by a boar through the intervention of Ares/nature"
+    source-tier: T1
   - target: "[[gwydion]] (his creator and guardian)"
     type: "mythological-partner"
     source: "Gwydion circumvents Arianrhod's three prohibitions to give Lleu name, arms, and wife; rescues Lleu after the spear-wound by finding him as an eagle in an oak tree and singing him back to human form; Gwydion is effectively Lleu's divine-craftsman father, the older magical tradition that produces and protects the luminous hero"
+    source-tier: T1
   - target: "[[cerridwen]] (Welsh transformation-goddess)"
     type: "mythological-partner"
     source: "Cerridwen and the Fourth Branch characters (Math, Gwydion, Lleu) inhabit the same Welsh mythological space; the transformation theme (eagle/human) in Lleu's narrative parallels Cerridwen's cauldron-transformation in the Taliesin tradition"
+    source-tier: T1
   - target: "[[the-morrigan]] (Irish sovereignty-goddess whose tests define heroism)"
     type: "scholarly-parallel"
     source: "The Morrígan's testing-and-betrayal of heroes (Cú Chulainn) parallels the Arianrhod-Blodeuwedd double-feminine structure that curses and betrays Lleu; the sovereignty-goddess as both the hero's legitimation and his potential destruction is the shared structural pattern"
+    source-tier: T1
   - target: "[[rhiannon]] (Welsh sovereignty goddess)"
     type: "mythological-partner"
     source: "Both Rhiannon and Lleu are the central sovereignty figures of the Welsh Mabinogi (Branches 1–3 and Branch 4 respectively); together they represent the full span of pre-Christian Welsh mythology as preserved in the medieval manuscripts"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Mabinogion"

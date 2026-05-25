@@ -20,34 +20,42 @@ syncretic-edges:
   - target: "[[thor]]"
     type: "cognate"
     source: "West 2007 *Indo-European Poetry and Myth* §6; Ivanov & Toporov 1965"
+    source-tier: T1
     notes: "Proto-Indo-European *Perkʷūnos thunder-god cluster — Perun is the Slavic instance closest to the PIE root *Perkʷ-; Thor is the Germanic instance; both inherit the storm-warrior + dragon-slayer mytheme"
   - target: "[[indra]]"
     type: "cognate"
     source: "Watkins 1995 *How to Kill a Dragon* — the IE storm-god-vs-serpent formula; Ivanov & Toporov read Perun's combat with Veles as the same mytheme"
+    source-tier: T1
     notes: "PIE storm-warrior; Ivanov-Toporov 'fundamental myth' (Perun vs Veles serpent) parallels Indra vs Vritra at the chaoskampf level"
   - target: "[[zeus]]"
     type: "cognate"
     source: "West 2007 §6 — PIE *Perkʷūnos / thunder-warrior cluster"
+    source-tier: T1
     notes: "Greek instance of the PIE thunder-warrior; sky-and-thunder fusion"
   - target: "[[jupiter]]"
     type: "cognate"
     source: "West 2007 §6"
+    source-tier: T1
     notes: "Roman instance of the PIE thunder-warrior + sky-father cluster"
   - target: "[[taranis]]"
     type: "cognate"
     source: "West 2007 §6 — Celtic *Toranos / Taranis"
+    source-tier: T1
     notes: "Celtic instance of the PIE thunderer; cognate via the wheel-and-thunder iconography"
   - target: "[[raijin]]"
     type: "parallel-motif"
     source: "Shinto thunder-god"
+    source-tier: T1
     notes: "Non-PIE Japanese instance of the storm-deity type; raijin.md notes Perun in its equivalents — reciprocal back-link"
   - target: "[[susanoo]]"
     type: "parallel-motif"
     source: "Shinto storm-warrior; Susanoo's slaying of Yamata-no-Orochi parallels Perun-Veles myth"
+    source-tier: T1
     notes: "Non-PIE storm-warrior + cosmic-serpent slayer parallel from Shinto"
   - target: "[[elijah-prophet]]"
     type: "folk-syncretism"
     source: "Fedotov 1948 *The Russian Religious Mind*; Levin 1993; Ivanov & Toporov 1974"
+    source-tier: T1
     notes: "Eastern Slavic folk-syncretism — *Ilya-Prorok / Ilya-Gromovnik* 'Elijah the Thunderer' is Perun under a Christian saint's name. Post-988 Christianization assimilated Perun's domains to Elijah, whose 2 Kings 2:11 fiery-chariot ascension provided the Christian-canonical hook. Feast 20 July (Old Style) inherits Perun's harvest-storm timing. Textbook dvoeverie case alongside Veles → Saint Blaise"
 status: "metadata"
 refs:

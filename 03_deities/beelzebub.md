@@ -17,9 +17,11 @@ syncretic-edges:
   - target: "[[baal-hadad]]"
     type: "ancient-identification"
     source: "Ba'al Zebul ('Lord of the Lofty Abode' or 'Prince Ba'al') is a known West-Semitic Ba'al epithet attested at Ugarit; the Hebrew Bible's 'Ba'al Zebub' (Lord of Flies) is most likely a polemical pun-distortion by the Deuteronomistic editors"
+    source-tier: T1
   - target: "[[satan-christian]]"
     type: "ancient-identification"
     source: "Synoptic Gospels (Mark 3:22 etc.) treat Beelzeboul as another name for the prince of demons / Satan"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Satan: A Biography"

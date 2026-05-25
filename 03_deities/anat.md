@@ -20,9 +20,11 @@ syncretic-edges:
   - target: "athena-greek"
     type: "scholarly-parallel"
     source: "Both are warrior-virgin goddesses; structural parallel without direct genetic claim"
+    source-tier: T1
   - target: "[[ishtar-akkadian]]"
     type: "scholarly-parallel"
     source: "Both combine sexuality and violence; functionally similar though distinct"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Anat: Warrior Virgin of the Ancient Levant"

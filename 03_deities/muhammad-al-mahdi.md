@@ -20,18 +20,22 @@ syncretic-edges:
   - target: "saoshyant"
     type: "structural-parallel"
     source: "Boyce, Mary (1984). Textual Sources for the Study of Zoroastrianism. Chicago UP.; Gnoli, Gherardo (1987). 'Zoroastrianism and Islam' in Encyclopaedia Iranica."
+    source-tier: T1
     notes: "Structural parallel: both arrive at cosmic nadir to restore justice and defeat evil. The Iranian-Islamic scholarly tradition notes the possibility of Zoroastrian eschatological influence on early Islamic hadith traditions via the Iranian convert community in early Islam, though direct textual transmission is unproven."
   - target: "maitreya"
     type: "structural-parallel"
     source: "Sponberg & Hardacre (eds.) (1988). Maitreya, the Future Buddha. Cambridge UP."
+    source-tier: T1
     notes: "Both await in a kind of suspended state (occultation vs. Tuṣita heaven) and will emerge to transform the world. Key difference: Maitreya transforms through dharma-teaching; the Mahdi through political-military restoration of justice."
   - target: "jesus-christ-deity"
     type: "theological-identification"
     source: "Sunan Abu Dawud 4310; al-Bukhārī (partial); Madelung, Wilferd, EI2 'al-Mahdī'"
+    source-tier: T1
     notes: "In mainstream Islamic eschatology, Jesus (ʿĪsā) descends from heaven alongside or shortly after the Mahdi — Jesus kills the Dajjāl (Antichrist), prays behind the Mahdi, and acknowledges the Mahdi as leader. This is a deliberate Islamic reordering of Christian eschatology: Jesus returns but is subordinated to a Muslim leader, a theological counter-claim to the Christian parousia."
   - target: "occultation-hidden-imam"
     type: "central-figure-of-occultation-doctrine"
     source: "Madelung, EI2 'al-Mahdī'; Amir-Moezzi 1994 *The Divine Guide in Early Shiʿism*; Sachedina 1981 *Islamic Messianism*; Gnoli 1987 EIr 'Zoroastrianism and Islam' — Muhammad al-Mahdi IS the central figure of the Twelver Shiʿa occultation doctrine: the Twelfth Imam (Muḥammad ibn al-Ḥasan al-ʿAskarī) who entered the Lesser Occultation (*al-ghayba al-sughra*) in 874 CE upon his father's death, then the Greater Occultation (*al-ghayba al-kubra*) in 941 CE upon the death of the last special representative. The doctrine that this specific individual still lives in occultation and will return at the end of times to restore justice is the load-bearing eschatological claim of Twelver Shiʿism. See [[occultation-hidden-imam]]"
+    source-tier: T1
     notes: "MASSIVE-WIN: Iranian Shiʿa eschatology's Hidden-Imam doctrine is the cleanest documented case of Zoroastrian Saoshyant-template structural inheritance into Islam — the preserved-savior-who-emerges pattern, transferred to a specific historical figure (al-ʿAskarī's son) in 9th-c. Iran during precisely the century when Iran's population was still majority-Zoroastrian. Cross-lens: 03_deities → 06_themes"
 status: "metadata"
 refs:

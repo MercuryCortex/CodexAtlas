@@ -24,31 +24,38 @@ cross-tradition-edges:
   - target: "borobudur-stupa-mandala"
     type: "parallel-form"
     source: "Steinhardt 2019; Snodgrass 1985"
+    source-tier: T1
     notes: "Stepped circular-and-square monumental sacred building anchored in an explicit cosmological doctrine. The Temple of Heaven's three-tiered round altar + circular Hall + square enclosing wall instantiates the Chinese **round-heaven / square-earth** cosmology in the same architectural register that Borobudur's stepped-mandala instantiates the Mahayana *Trailokya*. Independent traditions; convergent architectural logic."
   - target: "ziggurat-of-ur"
     type: "parallel-form"
     source: "Steinhardt 2019"
+    source-tier: T1
     notes: "Stepped monumental-altar form for state-cult sacrifice; cosmological-political function (ruler-as-mediator-between-realms). Mesopotamian (-2100) and Chinese-imperial (1420 CE) cases are independent."
   - target: "pyramid-of-khufu"
     type: "parallel-form"
     source: "Steinhardt 2019"
+    source-tier: T1
     notes: "Egyptian and Chinese monumental sacred building anchored in cardinal alignment + ruler-divinity ritual programme — parallel without contact."
   - target: "jongmyo-shrine-seoul"
     type: "parallel-form-state-confucian-cult"
     source: "Steinhardt 2019; Yi 2010"
+    source-tier: T1
     notes: "Temple of Heaven, [[temple-of-confucius-qufu|Confucius Temple at Qufu]], and [[jongmyo-shrine-seoul|Jongmyo]] (Seoul) form a tight regional cluster of **state-Confucian ritual architecture** across the Ming–Qing–Joseon period. The shared programme: dynastic-imperial sacrifice, axial symmetry, cardinal orientation, white-marble + dark-tile or red-pillared classical Confucian vocabulary."
   - target: "forbidden-city-beijing"
     type: "ritual-complement-to"
     source: "Steinhardt 2019"
+    source-tier: T1
     notes: "Temple of Heaven (south of the Forbidden City) and Temple of Earth (north), Temple of the Sun (east), Temple of the Moon (west) form a four-altar **cardinal ritual ring around the Forbidden City**, with the imperial palace at the cosmic centre. Beijing-as-cosmogram is unintelligible without all five components together."
   - target: "tradition-confucianism"
     type: "principal-architectural-monument-of-state-confucian-cult"
     source: "Wechsler 1985; Zito 1997"
+    source-tier: T1
     notes: "The Temple of Heaven is the **principal architectural monument of the Chinese state-cult of Heaven** — the highest level of the Confucian ritual programme, performed only by the [[mandate-of-heaven|Son of Heaven]]. Local Confucian temples (Qufu, etc.) are the wide base of the same ritual hierarchy."
 syncretic-edges:
   - target: "tradition-chinese-imperial-cult"
     type: "architectural-emblem-of"
     source: "Zito 1997; Wechsler 1985"
+    source-tier: T1
     notes: "If any single building represents the Chinese imperial cult of Heaven — the **highest ritual responsibility of the emperor**, the annual winter-solstice sacrifice at the southern altar — it is the Temple of Heaven complex."
 status: "metadata"
 refs:

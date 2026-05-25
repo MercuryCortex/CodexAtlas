@@ -26,23 +26,28 @@ cross-tradition-edges:
   - target: "pantheon-rome"
     type: "successor-of-monumental-domed-religious-architecture"
     source: "Mark & Çakmak 1992; MacDonald 1976"
+    source-tier: T1
     notes: "Hagia Sophia (537) is the principal successor to the [[pantheon-rome|Roman Pantheon]] (~125 CE) in the typological lineage of monumental-domed religious buildings. Justinian's architects solved the structural problem the Pantheon avoided (the Pantheon is a hemispherical-dome-over-cylinder; Hagia Sophia is a dome-over-rectangular-nave, requiring the invention of the *pendentive* — the curved triangular surface that transitions a circular dome onto a square plan)."
   - target: "dome-of-the-rock-jerusalem"
     type: "predecessor-to-islamic-monumental-domed-architecture"
     source: "Grabar 1959; Necipoğlu 2005"
+    source-tier: T1
     notes: "Hagia Sophia is the architectural template the early-Islamic builders engaged with when commissioning [[dome-of-the-rock-jerusalem|the Dome of the Rock]] (691 CE) in Jerusalem. The Dome of the Rock's interior dome is in the typological lineage descending from Hagia Sophia (and behind it, the Pantheon)."
   - target: "suleymaniye-mosque"
     type: "ancestor-of-ottoman-mosque-form"
     source: "Necipoğlu 2005"
+    source-tier: T1
     notes: "When [[mimar-sinan]] (1490–1588) designed the great imperial Ottoman mosques (Süleymaniye 1557, Selimiye 1575), he was in **explicit architectural dialogue with Hagia Sophia** — the Ottoman conquerors had already converted the Byzantine cathedral to a mosque in 1453, and the great classical Ottoman mosque-form is Sinan's response to and reworking of the Hagia Sophia dome-and-half-dome system."
   - target: "tradition-eastern-orthodoxy"
     type: "principal-cathedral-of"
     source: "Mango 1985; Ousterhout 1999"
+    source-tier: T1
     notes: "From 537 to 1453, Hagia Sophia was the **principal cathedral of Eastern Christendom** and the architectural and liturgical heart of the Byzantine Empire. The Greek-Orthodox liturgy crystallises in this building."
 syncretic-edges:
   - target: "tradition-byzantine-christianity"
     type: "architectural-symbol-of"
     source: "Mango 1985"
+    source-tier: T1
     notes: "If any single building represents the Byzantine synthesis of Roman imperial form + Christian theological content + Hellenistic-Greek language + Justinianic engineering, it is Hagia Sophia."
 status: "metadata"
 refs:

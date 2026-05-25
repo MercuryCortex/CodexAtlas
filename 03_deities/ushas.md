@@ -20,9 +20,11 @@ syncretic-edges:
   - target: "amaterasu"
     type: "scholarly-parallel"
     source: "Watkins 1995 — dawn emergence from darkness as the structural parallel; cave-emergence myth parallels daily dawn revelation"
+    source-tier: T1
   - target: "ra"
     type: "scholarly-parallel"
     source: "Macdonell 1897 — Egyptian solar barque re-emerging from Duat = daily dawn; parallel cosmological function, no transmission"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Vedic Mythology"

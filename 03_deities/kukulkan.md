@@ -20,13 +20,16 @@ syncretic-edges:
   - target: "quetzalcoatl"
     type: "ancient-identification"
     source: "Yucatec-Toltec contact at Chichén Itzá ~9th-10th c.; Coe & Houston 2015"
+    source-tier: T1
   - target: "enki-ea"
     type: "scholarly-parallel"
     source: "Eliade, *Patterns in Comparative Religion* (1958), Ch. V on water/serpent; the Mesoamerican feathered-serpent-as-civilizer parallels the Mesopotamian Enki/Ea as wisdom-and-water deity who teaches humanity the arts"
+    source-tier: T1
     notes: "Feathered-serpent-as-civilizer convergence; not a transmission claim"
   - target: "dagon"
     type: "scholarly-parallel"
     source: "Eliade 1958 — fish/water/serpent civilizer-deity type attested in Philistia and parallel structurally to the Mesoamerican feathered-serpent civilizer"
+    source-tier: T1
     notes: "Water-serpent civilizer parallel"
 status: "metadata"
 refs:

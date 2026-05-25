@@ -20,14 +20,17 @@ syncretic-edges:
   - target: "[[vishnu]]"
     type: "avatara-of"
     source: "Vishnu Purana, Bhagavata Purana 7.2-10 — Narasimha IS Vishnu, the fourth avatara"
+    source-tier: T1
     notes: "The man-lion avatara who slays Hiraṇyakaśipu; one of the canonical daśāvatāra"
   - target: "[[ganesha]]"
     type: "parallel-motif"
     source: "Hindu iconography — theriomorphic divine forms (man + animal) transgressing the human/animal ontological boundary"
+    source-tier: T1
     notes: "Structural parallel within Hindu iconography, not a transmission claim"
   - target: "coatlicue"
     type: "scholarly-parallel"
     source: "Scholarly parallel — Aztec multi-form deity combining human and animal elements (skirt of serpents, claws, skull); hybrid-divine-form parallel; no transmission"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Vishnu Purana"

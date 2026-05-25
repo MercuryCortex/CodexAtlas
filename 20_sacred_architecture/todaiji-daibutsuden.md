@@ -25,27 +25,33 @@ cross-tradition-edges:
   - target: "longmen-grottoes"
     type: "stylistic-and-iconographic-ancestor"
     source: "Coaldrake 1996; McNair 2007"
+    source-tier: T1
     notes: "The Todaiji **Vairocana Buddha (*Birushana*)** is the direct Japanese iconographic and theological cognate of the **Vairocana Buddha of Fengxian Si at [[longmen-grottoes|Longmen]]** (Wu Zetian's commission, ~672–675 CE). Both are colossal seated Vairocanas, both are imperial-state-Buddhist patronage monuments, both draw on the same [[avatamsaka-sutra|*Avatamsaka Sutra*]] doctrinal source identifying Vairocana as the cosmic-illuminator Buddha. The Japanese Todaiji commission (~745–752 CE) **post-dates Wu Zetian's Longmen Vairocana by ~70 years** and is in direct architectural-iconographic dialogue with the Tang precedent."
   - target: "bulguksa-temple-and-seokguram-grotto"
     type: "korean-buddhist-counterpart"
     source: "Steinhardt 2019; Kim 2010"
+    source-tier: T1
     notes: "Todaiji Daibutsuden (~752 CE, Nara) and [[bulguksa-temple-and-seokguram-grotto|Bulguksa / Seokguram]] (~774 CE, Silla Korea) are **near-contemporary state-Buddhist commissions** of the **same Vairocana-centric Mahayana iconographic programme**, transmitted from Tang China via the Silk-Road / Korean corridor. The Seokguram Buddha is the Korean stylistic cognate of the Todaiji Daibutsu."
   - target: "horyuji-temple"
     type: "older-sister-temple-different-architectural-mode"
     source: "Coaldrake 1996"
+    source-tier: T1
     notes: "[[horyuji-temple|Hōryū-ji]] (~607 CE, Asuka-era; oldest surviving wooden buildings in the world) and Tōdaiji (~752 CE, Nara) are both principal monuments of early Japanese Buddhism but in different architectural modes: Hōryū-ji is **modest-scale Asuka-period transmitted form from Baekje Korea**; Tōdaiji is **monumental Nara-period state-cult Vairocana commission**. Together they document the Asuka-to-Nara development of Japanese temple architecture."
   - target: "ise-grand-shrine"
     type: "parallel-yet-distinct-religious-architectural-idiom"
     source: "Coaldrake 1996"
+    source-tier: T1
     notes: "Tōdaiji (~752 CE) and the **first completed *shikinen sengū* of [[ise-grand-shrine|Ise]] (690 CE)** are roughly contemporary monumental religious-architectural programmes in Japan — one Buddhist Chinese-derived ([[todaiji-daibutsuden|Todaiji]]), one native Shinto ([[ise-grand-shrine|Ise]]). They define the **two opposed architectural-religious idioms of Nara-period Japan**."
   - target: "tradition-kegon-buddhism"
     type: "principal-architectural-monument-of"
     source: "Sharf 2002; Tanabe 2010"
+    source-tier: T1
     notes: "Todaiji is the **principal architectural monument of the [[tradition-kegon-buddhism|Kegon (Huayan) school]] of Buddhism in Japan** — the school that elevated the *Avatamsaka Sutra* and the cosmic Vairocana Buddha to doctrinal centre."
 syncretic-edges:
   - target: "tradition-shinbutsu-shugo"
     type: "anchor-of-medieval-honji-suijaku-doctrine"
     source: "Teeuwen & Rambelli 2003"
+    source-tier: T1
     notes: "In the medieval *honji suijaku* (Original Ground / Manifest Trace) doctrine of Shinto-Buddhist fusion, the **Vairocana Buddha of Tōdaiji was identified as the *honji* (original ground / Buddha-form) of [[amaterasu|Amaterasu]]** (the sun-goddess of Ise). This identification is one of the **most consequential single Shinbutsu-shūgō doctrinal moves** of medieval Japan."
 status: "metadata"
 refs:

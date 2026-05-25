@@ -19,21 +19,27 @@ syncretic-edges:
   - target: "[[poseidon]] (Greek sovereignty over the sea and the drowned)"
     type: "scholarly-parallel"
     source: "Typological: both receive the sea-dead into an underwater domain; Lindow 2001"
+    source-tier: T1
   - target: "[[ryujin]] (Shinto underwater palace)"
     type: "scholarly-parallel"
     source: "Typological: sovereign of the underwater realm across traditions; separate independent development"
+    source-tier: T1
   - target: "[[olokun]] (Yoruba deity of the deep sea and the dead)"
     type: "scholarly-parallel"
     source: "Typological: deep-sea sovereign who receives the dead; no genetic connection"
+    source-tier: T1
   - target: "[[sedna-inuit]] (Inuit sea-mistress of the drowned and marine animals)"
     type: "scholarly-parallel"
     source: "Typological: female sea-deity controlling the domain of those who die at sea"
+    source-tier: T1
   - target: "[[varuna]] (Vedic cosmic net binding the guilty)"
     type: "scholarly-parallel"
     source: "Net as fate/entrapment instrument — Rán's net parallels Varuna's pāśa (noose/net); West 2007"
+    source-tier: T1
   - target: "[[enki-ea]] (Sumerian net of the gods; Enlil's cosmic net in lamentation texts)"
     type: "scholarly-parallel"
     source: "Typological: net as divine instrument of capture/fate across Mesopotamian and Norse traditions"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Norse Mythology: A Guide to the Gods, Heroes, Rituals, and Beliefs"

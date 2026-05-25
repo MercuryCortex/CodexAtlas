@@ -20,9 +20,11 @@ syncretic-edges:
   - target: "Murugan (Tamil)"
     type: "ancient-identification"
     source: "Sangam-era Tamil tradition identifies the Tamil Murugan with the Sanskrit Skanda; the two have been canonically identified since the early classical period."
+    source-tier: T1
   - target: "Kataragama Deviyo (Sinhala Buddhist)"
     type: "folk-syncretism"
     source: "the Murugan-Skanda cult at Kataragama in Sri Lanka is shared by Hindu Tamils and Sinhala Buddhists; the deity is identified across both communities."
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Tamil Temple Myths: Sacrifice and Divine Marriage in the South Indian Saiva Tradition"

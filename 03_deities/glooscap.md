@@ -20,10 +20,12 @@ syncretic-edges:
   - target: "[[manabozho]]"
     type: "scholarly-parallel"
     source: "Hultkrantz, *The Religions of the American Indians* (1979); Brown, *The Spiritual Legacy of the American Indian* (1982) — both are Algonquian-family culture-heroes with extensive overlap in narrative structure (twin-with-malevolent-brother; landscape-shaping; teaching-and-departing); the regional variants (Glooscap northeast / Manabozho Great Lakes) preserve a probable common Algonquian substrate"
+    source-tier: T1
     notes: "The Algonquian language family stretches across the entire forested east of North America; Glooscap and Manabozho mark the northeastern and Great Lakes terminuses of a single underlying culture-hero tradition"
   - target: "[[raven-trickster]]"
     type: "scholarly-parallel"
     source: "Across North America, the **culture-hero-and-trickster** is one figure (Glooscap, Manabozho, Coyote, Raven, Wisakedjak) — the same theological-narrative role is filled by regionally appropriate animal-or-anthropomorphic figures; the cross-tradition pattern is universal across the continent"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Algonquin Legends of New England"

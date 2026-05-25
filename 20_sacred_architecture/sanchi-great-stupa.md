@@ -23,18 +23,22 @@ cross-tradition-edges:
   - target: "borobudur-stupa-mandala"
     type: "form-ancestor"
     source: "Snodgrass 1985"
+    source-tier: T1
     notes: "Sanchi (~250 BCE onwards) is the deep architectural ancestor of the stupa form. Borobudur (~800 CE) is the Mahayana-Javanese monumental elaboration of the form, ~1000 years later. Form-transmission from India to Southeast Asia is well-documented through Sri Lankan, Burmese, and Indonesian intermediaries."
   - target: "tradition-buddhism"
     type: "principal-surviving-early-monument-of"
     source: "Marshall 1940; Dehejia 1972"
+    source-tier: T1
     notes: "Sanchi Stupa No. 1 is the **principal surviving Ashokan-era Buddhist monument** and the **type-specimen of the early Indian stupa form**. The four monumental gateways (*toranas*) carry the earliest extensive surviving Buddhist narrative-relief programme (~50 BCE–50 CE)."
   - target: "ashoka"
     type: "principal-architectural-legacy-of"
     source: "Thapar 1997; Strong 1983"
+    source-tier: T1
     notes: "Of the ~84,000 stupas Ashoka tradition holds him to have commissioned (a symbolic number), Sanchi is the **most architecturally consequential surviving structure**. Of the Ashokan pillars (one of which originally stood at Sanchi — the broken upper section is preserved at the on-site museum), Sanchi gives one of the best surviving lion-capital fragments outside of [[sarnath]]."
   - target: "mount-meru"
     type: "architectural-emblem-of"
     source: "Snodgrass 1985"
+    source-tier: T1
     notes: "The stupa form is read by the canonical sources (Buddhaghosa's *Visuddhimagga* and following commentarial tradition) as architectural emblem of [[mount-meru]] / the cosmic mountain. Sanchi is among the earliest architectural realisations of this reading."
 status: "metadata"
 refs:

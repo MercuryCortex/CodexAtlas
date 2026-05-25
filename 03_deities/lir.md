@@ -20,12 +20,15 @@ syncretic-edges:
   - target: "[[poseidon]]"
     type: "scholarly-parallel"
     source: "Both are primordial sea-fathers whose active oceanic role is largely superseded by a more active divine figure (Manannan / Poseidon as ruler vs. Lir / Okeanos as primordial depth). Mac Cana, Celtic Mythology (1970)."
+    source-tier: T1
   - target: "[[njord]]"
     type: "scholarly-parallel"
     source: "Norse sea-deity of the older generation, associated with the deep and calming of storms; like Lir, more primordial presence than active sovereign. Both are fathers whose children (Freyr/Freyja; Manannan) are more active in the tradition."
+    source-tier: T1
   - target: "[[manannan-mac-lir]]"
     type: "ancient-identification"
     source: "Lir's son Manannán mac Lir becomes the active sea-god of the Tuatha Dé Danann — the relationship is the Irish tradition's split between primordial depth (Lir) and active oceanic governance (Manannán)"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Oidheadh Chlainne Lir (The Fate of the Children of Lir)"

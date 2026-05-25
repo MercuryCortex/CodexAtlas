@@ -20,6 +20,7 @@ syncretic-edges:
   - target: "thoth"
     type: "scholarly-parallel"
     source: "Nickelsburg-VanderKam 2012 *1 Enoch 2* — the forbidden-arts narrative pattern parallels Promethean / Thothian culture-bringer myths"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "1 Enoch 2: A Commentary on the Book of 1 Enoch Chapters 37–82"

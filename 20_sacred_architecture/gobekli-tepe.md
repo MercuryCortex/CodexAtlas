@@ -24,18 +24,22 @@ cross-tradition-edges:
   - target: "catalhoyuk-sacred-site"
     type: "successor-context"
     source: "Hodder 2006; Schmidt 2012"
+    source-tier: T1
     notes: "Çatalhöyük (~7400–6200 BCE) is the Neolithic Anatolian successor site where sacred-and-domestic architectural integration evolves; Göbekli Tepe's T-pillar enclosures predate it by ~2000 years and represent a different mode (monumental-communal, pre-agricultural)."
   - target: "ziggurat-of-ur"
     type: "deep-ancestor-of-monumental-sacred-architecture"
     source: "Schmidt 2012; Lehner 1997"
+    source-tier: T1
     notes: "Göbekli Tepe is the **earliest known monumental sacred architecture in the world** by ~7000 years. It establishes that human communities organised collective monumental building **for ritual purposes before agriculture stabilised** — reversing the previous assumption that sedentary agriculture preceded monumental sacred building. Mesopotamian ziggurats and Egyptian pyramids stand at the other end of the deep timeline this site opens."
   - target: "stonehenge-sacred-site"
     type: "parallel-form"
     source: "Schmidt 2012"
+    source-tier: T1
     notes: "Independent megalithic-circle convergence ~4000–6000 years later, Northwestern Europe. Structural parallel: stone-pillar-enclosure with cosmic-axis interpretation."
   - target: "theme-monumental-architecture-before-agriculture"
     type: "anchor-site"
     source: "Schmidt 2006; Schmidt 2012; Clare et al. 2024"
+    source-tier: T1
     notes: "The Schmidt thesis: hunter-gatherer-foragers organised the building of T-pillar enclosures **before** they had domesticated wheat. The site sits ~30 km from Karaca Dağ — the genetic origin-locus of domesticated einkorn wheat (Heun et al. 1997). Schmidt's argument: the labour-organisation demands of building Göbekli Tepe *drove* the transition to agriculture, not vice versa. The Clare et al. 2024 reassessment substantially complicates this — the enclosures may have been built and used over a longer period with mixed domestic/ritual function — but the deep-time monumentality remains uncontested."
 status: "metadata"
 refs:

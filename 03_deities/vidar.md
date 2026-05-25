@@ -19,9 +19,11 @@ syncretic-edges:
   - target: "[[kalki]] (Vishnu's final avatar who comes after the Kali Yuga to restore order)"
     type: "scholarly-parallel"
     source: "Typological: the figure who survives or arrives after the cosmic catastrophe to restore order; independent development"
+    source-tier: T1
   - target: "[[saoshyant]] (Zoroastrian savior who defeats evil after the final battle)"
     type: "scholarly-parallel"
     source: "Typological: post-apocalyptic restorer; comparative eschatology parallel; Lincoln 1986"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Edda (Gylfaginning)"

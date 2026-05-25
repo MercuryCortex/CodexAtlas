@@ -20,6 +20,7 @@ syncretic-edges:
   - target: "[[nikkal-akkadian]]"
     type: "ancient-identification"
     source: "Nikkal is the Akkadian/West-Semitic form of Ningal; the cult passed via Harran into Aramaic and Ugaritic contexts (cf. Ugaritic *Nkl wa-Ib*, the *Marriage of Nikkal*) and survived into Late Antique Harran"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Götterepitheta des sumerischen Pantheons"

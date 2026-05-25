@@ -19,26 +19,33 @@ syncretic-edges:
   - target: "Saint Patrick (because of the snake imagery)"
     type: "folk-syncretism"
     source: "Métraux 1959; Desmangles 1992"
+    source-tier: T1
   - target: "quetzalcoatl"
     type: "scholarly-parallel"
     source: "Métraux 1959; Eliade *Patterns in Comparative Religion* (1958), Ch. V on water-and-serpent — Damballa as Vodou cosmic-serpent encircling the cosmos; Quetzalcoatl as Mesoamerican feathered-cosmic-serpent. Both are cosmic-serpent-as-creator/sustainer"
+    source-tier: T1
     notes: "Cosmic-serpent cross-Atlantic convergence"
   - target: "apep"
     type: "scholarly-parallel"
     source: "Eliade 1958; Wilkinson 2003 — Egyptian Apep/Apophis as cosmic-serpent; Damballa as Vodou cosmic-serpent. The cosmic-serpent encompassing/threatening cosmos archetype"
+    source-tier: T1
   - target: "rainbow-serpent"
     type: "scholarly-parallel"
     source: "Eliade 1958 — Australian Rainbow Serpent as cosmic primordial water-and-fertility serpent"
+    source-tier: T1
     notes: "MASSIVE WIN: 4-tradition cosmic-serpent convergence (Vodou Damballa, Australian Rainbow Serpent, Mesoamerican Quetzalcoatl, Egyptian Apep) with zero contact"
   - target: "nidhogg"
     type: "scholarly-parallel"
     source: "Eliade 1958 — Norse Níðhöggr as cosmic-serpent at root of Yggdrasil"
+    source-tier: T1
   - target: "ouroboros"
     type: "scholarly-parallel"
     source: "Eliade 1958 — Damballa-and-Aida-Wedo (his consort) coiled together encircling the cosmos parallels the Ouroboros encircling iconography"
+    source-tier: T1
   - target: "afro-diasporic-syncretism"
     type: "source-deity-of-diaspora-fusion"
     source: "Métraux 1959, *Le Vaudou haïtien*; Desmangles 1992, *The Faces of the Gods*; Thompson 1983, *Flash of the Spirit* — Damballa/Danbala Wèdo (direct West-African Fon transmission from Dan / Aida-Hwedo) is the serpent/sky-domain Atlantic-diaspora syncretism with Saint Patrick (snake-iconography, paradoxically the saint who *removed* snakes from Ireland) and in some lineages Moses (serpent-staff). The Saint Patrick pairing is the cleanest example of operational (iconographic) rather than theological syncretism — the icons share serpent-imagery without any theological alignment. See [[afro-diasporic-syncretism]]"
+    source-tier: T1
     notes: "MASSIVE-WIN: the Damballa-Saint Patrick pairing is the textbook case of camouflage-without-theological-fusion — pure iconographic operational syncretism that the Desmangles 1992 three-mechanism framework explicitly accommodates"
 status: "metadata"
 refs:

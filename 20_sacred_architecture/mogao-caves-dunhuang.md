@@ -25,27 +25,33 @@ cross-tradition-edges:
   - target: "longmen-grottoes"
     type: "successor-cave-temple-complex"
     source: "Wong 2018; Whitfield 2015"
+    source-tier: T1
     notes: "Mogao (366 CE onward), Yungang (~460 CE), and [[longmen-grottoes|Longmen]] (~493 CE) form the three principal monumental Buddhist cave-temple complexes of imperial China. Mogao is the **westernmost**, the **longest-lived** (~900 years of continuous patronage), and the **best-preserved iconographic programme**."
   - target: "ajanta-caves"
     type: "ancestor-cave-temple-form"
     source: "Whitfield 2015; Behl 1998"
+    source-tier: T1
     notes: "The Buddhist cave-temple form originates in [[ajanta-caves|Ajanta]] (~2nd c. BCE) and other Indian rock-cut Buddhist sanctuaries. Travels via the Silk Road through Bamiyan, Kucha (Kizil caves), and the Tarim Basin oasis-monasteries to reach Dunhuang. **Mogao is the Chinese terminus of this transmission corridor** and the place where the Indian rock-cut form is fully Sinified."
   - target: "bamiyan-buddhas"
     type: "predecessor-on-silk-road-corridor"
     source: "Whitfield 2015"
+    source-tier: T1
     notes: "[[bamiyan-buddhas|Bamiyan]] (~6th c. CE Afghanistan; destroyed 2001) and Mogao are stations on the same Silk-Road Buddhist-art transmission corridor. Mogao's earliest caves (Northern Liang and Northern Wei) show direct stylistic continuity with the Bamiyan / Gandharan visual programme."
   - target: "tradition-mahayana-buddhism"
     type: "principal-iconographic-archive-of"
     source: "Whitfield 2015; Wong 2018"
+    source-tier: T1
     notes: "Mogao's 492 surviving caves contain **the most extensive sustained Mahayana Buddhist mural and sculpture programme in any single site** — ~45,000 m² of murals, ~2400 painted clay sculptures, with thematic content spanning **~900 years of continuous Mahayana iconographic development** (Northern Wei → Sui → Tang → Five Dynasties → Song → Western Xia → Yuan). It is the single richest archive of Mahayana iconography on earth."
   - target: "borobudur-stupa-mandala"
     type: "parallel-mahayana-iconographic-programme"
     source: "Whitfield 2015; Snodgrass 1985"
+    source-tier: T1
     notes: "[[borobudur-stupa-mandala|Borobudur]] (Java, ~800 CE) and contemporaneous Mogao Tang-era caves are the two great monumental Mahayana iconographic projects of the late-first-millennium Buddhist world — one (Borobudur) a stepped stupa-mandala building, one (Mogao) a cave-cliff array — but both deploying full programmes of [[gandavyuha-sutra|*Gandavyuha*]], jataka, and Pure-Land iconography."
 syncretic-edges:
   - target: "silk-road-as-religious-transmission-corridor"
     type: "principal-archaeological-archive-of"
     source: "Whitfield 2015"
+    source-tier: T1
     notes: "The Mogao Library Cave (Cave 17) preserved ~50,000 documents in **Chinese, Tibetan, Sanskrit, Sogdian, Khotanese, Uighur, Hebrew, and other Silk-Road languages** — Buddhist, Daoist, Manichaean, Nestorian Christian, and Jewish texts. It is the **single richest archive of the religious + cultural transmissions along the Silk Road** ever recovered."
 status: "metadata"
 refs:

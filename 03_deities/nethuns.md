@@ -20,26 +20,32 @@ syncretic-edges:
   - target: "neptune-roman"
     type: "ancient-identification"
     source: "Roman *interpretatio*; Nethuns → Neptune is one of the most phonologically direct Etruscan-to-Latin divine name transmissions; both preside over water"
+    source-tier: T1
     notes: "The name Neptune (Neptunus) likely derives from Nethuns via Etruscan phonological adaptation; the water-deity role transferred with the name."
   - target: "poseidon"
     type: "ancient-identification"
     source: "Etruscan interpretatio Graeca; Nethuns identified with Poseidon as Greek contact expanded"
+    source-tier: T1
     notes: "Nethuns adopted Poseidon's sea-god iconography as Etruscan-Greek interaction deepened in the 5th–4th century BCE."
   - target: "enki-ea"
     type: "scholarly-parallel"
     source: "Water-deity-as-wisdom and sacred-spring comparative framework; Enki/Ea governs the abzu (sweet underground water) as sacred domain"
+    source-tier: T1
     notes: "Both preside over the sacred waters beneath and around human civilization; Nethuns's freshwater-spring emphasis parallels Enki's abzu domain."
   - target: "varuna"
     type: "scholarly-parallel"
     source: "Sky-sovereign-to-water-deity trajectory; Varuna began as cosmic sovereign and shifted toward water-lord — the same domain-expansion Nethuns underwent (freshwater spring → sea)"
+    source-tier: T1
     notes: "Both began in one domain (spring/sky) and expanded into water-sovereignty through cultural contact and theological development."
   - target: "njord"
     type: "scholarly-parallel"
     source: "Norse water/sea deity comparative framework; Njord presides over coastal waters, fishing, and seafaring — the maritime water-deity role"
+    source-tier: T1
     notes: "Both represent the water-deity in traditions that developed from inland/freshwater bases into maritime contexts."
   - target: "aegir-norse"
     type: "scholarly-parallel"
     source: "Sea-deity comparative framework; Aegir is the Norse personification of the ocean as a primal force"
+    source-tier: T1
     notes: "Nethuns's later sea-god aspect (via Roman contact) parallels Aegir's domain as ocean-sovereign."
 status: "metadata"
 refs:

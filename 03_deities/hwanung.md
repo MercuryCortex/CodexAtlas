@@ -20,14 +20,17 @@ syncretic-edges:
   - target: "hwanin"
     type: "child-of"
     source: "Samguk Yusa 1.1"
+    source-tier: T1
     notes: "Hwanung acts under his father Hwanin's authorization and with the Three Heavenly Seals — legitimacy and authority flow down from the heavenly realm."
   - target: "tangun"
     type: "parent-of"
     source: "Samguk Yusa 1.1"
+    source-tier: T1
     notes: "Hwanung mates with Ungnyeo (a bear who transformed into a woman by enduring 21 days in a cave eating garlic and mugwort) to father Tangun, the founder of Gojoseon and the first Korean king."
   - target: "prometheus"
     type: "structural-parallel"
     source: "Grayson (2002)"
+    source-tier: T1
     notes: "Both are divine figures who descend to the human world to give civilization — culture, law, agriculture, medicine. Hwanung governs all 360 aspects of human affairs; Prometheus gives fire and technical knowledge. Both are partially divine figures mediating between the heavenly and human realms. Typological parallel only."
 status: "metadata"
 refs:

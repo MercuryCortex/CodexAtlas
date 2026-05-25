@@ -20,6 +20,7 @@ syncretic-edges:
   - target: "juno-roman"
     type: "syncretic-identification"
     source: "Roman interpretatio graeca"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Greek Religion"

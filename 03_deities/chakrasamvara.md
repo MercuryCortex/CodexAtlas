@@ -20,22 +20,27 @@ syncretic-edges:
   - target: "bhairava"
     type: "direct-influence"
     source: "Sanderson 2009 — 'The Śaiva Age'"
+    source-tier: T1
     notes: "Cakrasaṃvara tramples Bhairava (a form of Śiva) underfoot — an explicit Buddhist ritual overwriting of Śaiva sacred geography. Sanderson 2009 documents that the 64 pīṭhas (sacred sites) of the Cakrasaṃvara mandala are directly derived from the Śaiva pīṭha system, with Buddhist deities replacing Śaiva ones at each site."
   - target: "shiva"
     type: "direct-influence"
     source: "Sanderson 2009"
+    source-tier: T1
     notes: "Śiva-Bhairava is literally trampled by Cakrasaṃvara — the iconography enacts Buddhist supersession of Śaiva tradition. This is the most explicit case of one tradition's god becoming another tradition's footstool in all of comparative religion."
   - target: "mahakala"
     type: "direct-influence"
     source: "Snellgrove 1987"
+    source-tier: T1
     notes: "Mahākāla is the principal dharmapāla of the Cakrasaṃvara system; the two deities are functionally complementary — Cakrasaṃvara as the yidam, Mahākāla as the protector."
   - target: "shekhinah"
     type: "scholarly-parallel"
     source: "comparative mysticism — sacred union as cosmological principle"
+    source-tier: T1
     notes: "The yab-yum (father-mother) union of Cakrasaṃvara and Vajrayoginī as the embodied philosophical union of compassion (upāya/male) and wisdom (prajñā/female) parallels the Kabbalistic union of the Holy One and the Shekhinah as the ground of cosmic creativity."
   - target: "avalokitesvara"
     type: "scholarly-parallel"
     source: "Tibetan Buddhist doctrinal context"
+    source-tier: T1
     notes: "Both are personifications of karuṇā (compassion) in the Tibetan system; Avalokiteśvara is peaceful-compassionate, Cakrasaṃvara is wrathful-compassionate."
 status: "metadata"
 refs:

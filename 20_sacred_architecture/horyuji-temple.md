@@ -23,27 +23,33 @@ cross-tradition-edges:
   - target: "todaiji-daibutsuden"
     type: "earlier-japanese-buddhist-temple-different-period"
     source: "Coaldrake 1996; Steinhardt 2019"
+    source-tier: T1
     notes: "Hōryū-ji (~607 CE, Asuka period) and [[todaiji-daibutsuden|Tōdaiji]] (~752 CE, Nara period) are both principal monuments of early Japanese Buddhism but ~150 years apart. Hōryū-ji preserves the **Asuka-period architectural vocabulary** (transmitted via Baekje Korea); Tōdaiji deploys the **Nara-period imperial monumental vocabulary** (transmitted via Tang China). Together they document the development from Asuka to Nara Japanese Buddhist architecture."
   - target: "bulguksa-temple-and-seokguram-grotto"
     type: "korean-counterpart-different-period"
     source: "Steinhardt 2019; Kim 2010"
+    source-tier: T1
     notes: "Hōryū-ji (~607 CE) **predates [[bulguksa-temple-and-seokguram-grotto|Bulguksa]] (~774 CE) by ~170 years** — even though Buddhism transmitted from Korea (specifically Baekje, in 538 CE) **to** Japan. The temporal anomaly reflects a key transmission fact: **Baekje (~4th–6th c. CE) was the Korean state that transmitted Buddhism to Japan, and Baekje fell in 660 CE**; the surviving Korean monumental Buddhist temples are mostly Silla (post-668) and Goryeo (post-918), all later than Hōryū-ji. The Korean Buddhist architectural tradition that produced Hōryū-ji's Baekje-derived form has no surviving Korean exemplars."
   - target: "mogao-caves-dunhuang"
     type: "parallel-east-asian-buddhist-iconographic-programme"
     source: "Whitfield 2015; Coaldrake 1996"
+    source-tier: T1
     notes: "[[mogao-caves-dunhuang|Mogao]]'s mid-Asuka-contemporary caves (Northern Wei–Sui era, ~500–600 CE) and Hōryū-ji's Shaka Triad altarpiece (623 CE) deploy stylistically related Buddhist iconographic vocabularies — both descended from the Northern Wei stylistic synthesis."
   - target: "prince-shotoku"
     type: "principal-cultic-monument-of"
     source: "Como 2008; Lee 2007"
+    source-tier: T1
     notes: "Hōryū-ji is the **principal architectural and cultic monument of [[prince-shotoku|Prince Shōtoku]]** — the Asuka-era prince-regent (574–622 CE) who established Japanese Buddhism as a state-supported religion. The cult of Shōtoku as a Buddhist saint develops at Hōryū-ji and is one of the most consequential personal-cults in Japanese Buddhist history, anchoring the legitimacy of Japanese imperial-Buddhist statehood for centuries."
   - target: "tradition-mahayana-buddhism"
     type: "earliest-surviving-major-architectural-monument-of-japanese-buddhism"
     source: "Coaldrake 1996; Steinhardt 2019"
+    source-tier: T1
     notes: "Hōryū-ji's pagoda + golden hall + central gate constitute the **oldest surviving wooden buildings in the world** (dendrochronology dates the principal timbers to ~594 CE for the central gate, ~670s for the pagoda). They are the **earliest surviving major architectural monuments of Japanese Buddhism** and the **principal surviving exemplars of Asuka-period East Asian Buddhist temple architecture**."
 syncretic-edges:
   - target: "tradition-shotoku-buddhism"
     type: "principal-cultic-centre-of"
     source: "Como 2008"
+    source-tier: T1
     notes: "The cult of Prince Shōtoku as a Buddhist saint (development from the 8th–9th centuries through medieval period) is centred on Hōryū-ji. The temple houses the principal Shōtoku-cult imagery including the **Yumedono Kannon (the *Guze Kannon*)** — a wooden statue traditionally held to be a portrait-statue of Shōtoku himself in the form of Kannon."
 status: "metadata"
 refs:

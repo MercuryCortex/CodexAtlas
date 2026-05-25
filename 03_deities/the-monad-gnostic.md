@@ -17,6 +17,7 @@ syncretic-edges:
   - target: "the-one-plotinus"
     type: "scholarly-parallel"
     source: "Turner 2001, Sethian Gnosticism and the Platonic Tradition"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Secret Revelation of John"

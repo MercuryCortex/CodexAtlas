@@ -20,21 +20,26 @@ syncretic-edges:
   - target: "[[mama-quilla]]"
     type: "structural-parallel"
     source: "Both Pacific moon-goddess identifications point to the same theological structure (lunar feminine principle, makes cloth in the moon, lights the night); the parallel is independent emergence across Polynesia and the Andes"
+    source-tier: T1
   - target: "selene"
     type: "scholarly-parallel"
     source: "Beckwith, *Hawaiian Mythology* (1940); Eliade 1958 — Hina as pan-Polynesian moon-goddess; Selene as Greek moon-goddess. The personified-lunar-feminine archetype"
+    source-tier: T1
     notes: "Lunar-feminine cross-cultural archetype"
   - target: "chang-e"
     type: "scholarly-parallel"
     source: "Eliade 1958 — Chinese Chang'e as moon-goddess living in the moon; Hina as Polynesian moon-goddess living in the moon. The goddess-INSIDE-the-moon convergence is structurally precise"
+    source-tier: T1
     notes: "Goddess-inside-the-moon parallel"
   - target: "ixchel"
     type: "scholarly-parallel"
     source: "Eliade 1958 — Maya Ixchel as lunar weaving-goddess; Hina as Polynesian lunar tapa-beating goddess. The moon-as-feminine-textile-work archetype across Mesoamerica and Polynesia"
+    source-tier: T1
     notes: "MASSIVE WIN: lunar-feminine-textile-craft convergence Pacific-Mesoamerica"
   - target: "artemis"
     type: "scholarly-parallel"
     source: "Eliade 1958 — Greek Artemis as moon-and-wilderness virgin goddess; partial parallel to Hina as moon-goddess and protector of women"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Hawaiian Mythology"

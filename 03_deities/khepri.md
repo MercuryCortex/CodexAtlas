@@ -20,12 +20,15 @@ syncretic-edges:
   - target: "[[atum]]"
     type: "ancient-identification"
     source: "Pyramid Texts and Coffin Texts: Khepri (dawn), Ra (noon), Atum (dusk) form the three aspects of the solar journey — same sun-god at different stations. The Amduat explicitly names Khepri as the regenerated form of Ra at the end of the night journey."
+    source-tier: T1
   - target: "[[ra]]"
     type: "ancient-identification"
     source: "Amduat (New Kingdom royal funerary text): the god who emerges from the underworld at dawn is named Khepri — Ra-as-dawn, the sun reborn each morning. The three-fold Ra formula (Khepri / Ra / Atum) is standard in royal theology."
+    source-tier: T1
   - target: "[[amun]]"
     type: "scholarly-parallel"
     source: "Theban theology synthesizes the hidden god (Amun) with the self-created solar power (Khepri-Ra): Amun-Ra as the great hidden power that nevertheless becomes manifest — structurally parallel self-caused deity."
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Ancient Egyptian Books of the Afterlife"

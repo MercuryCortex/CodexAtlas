@@ -20,6 +20,7 @@ syncretic-edges:
   - target: "[[allatu-akkadian]]"
     type: "ancient-identification"
     source: "Allatu is the standard Akkadian rendering of Ereshkigal; identity of cult and figure"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Inanna's Descent to the Netherworld"

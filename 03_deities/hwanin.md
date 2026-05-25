@@ -20,10 +20,12 @@ syncretic-edges:
   - target: "hwanung"
     type: "parent-of"
     source: "Samguk Yusa 1.1 (Dangun Wanggeom chapter)"
+    source-tier: T1
     notes: "Hwanin permits his son Hwanung to descend to earth with 3,000 followers to govern and civilize the human world — a divine mandate for cultural ordering from the heavenly father to the earthly son."
   - target: "zeus"
     type: "structural-parallel"
     source: "Grayson, James Huntley (2002). Korea: A Religious History. Routledge."
+    source-tier: T1
     notes: "Hwanin is the supreme heavenly deity whose son descends to order the earthly realm — structurally parallel to Zeus's role in Greek cosmology (supreme sky-father; his children intervene in earthly affairs). Typological parallel only — no transmission."
 status: "metadata"
 refs:

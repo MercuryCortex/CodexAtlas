@@ -20,12 +20,15 @@ syncretic-edges:
   - target: "[[ma-at]]"
     type: "scholarly-parallel"
     source: "Both enforce cosmic order through the correction of excess and imbalance; Ma'at's feather-weighing and Nemesis's wheel both function as mechanisms of cosmic accounting. The 'scales as justice' imagery is directly cognate in function."
+    source-tier: T1
   - target: "[[themis]]"
     type: "scholarly-parallel"
     source: "Themis (divine Law) and Nemesis (divine Retribution) are functionally complementary in Greek theology: Themis establishes what is ordered; Nemesis enforces the correction when the order is violated. Frequently paired in Greek literature."
+    source-tier: T1
   - target: "[[asha-vahishta]]"
     type: "scholarly-parallel"
     source: "Zoroastrian cosmic Truth (Asha) as the principle of right order whose violation brings consequences — functionally parallel to Nemesis's automatic retribution for hubris. Both are impersonal corrections rather than personal vengeance."
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Theogony"

@@ -17,15 +17,19 @@ syncretic-edges:
   - target: "[[satan-christian]]"
     type: "ancient-identification"
     source: "Jerome's Vulgate reading of Isaiah 14:12 ('How are you fallen from heaven, O Lucifer, son of the morning') as referring to the fall of Satan — Tertullian and Origen establish the identification, Augustine canonizes it (*City of God* 11.15); originally Isaiah is a taunt against the king of Babylon"
+    source-tier: T1
   - target: "[[prometheus]]"
     type: "scholarly-parallel"
     source: "The Romantic-era equation: Byron's *Cain* (1821), Shelley's preface to *Prometheus Unbound* (1820) explicitly compares the two; Mary Shelley's *Frankenstein* subtitled 'The Modern Prometheus' (1818) draws the same parallel"
+    source-tier: T1
   - target: "[[phosphoros|Phosphoros (planet Venus)]]"
     type: "ancient-identification"
     source: "Literally — the Latin 'Lucifer' is the morning-star Venus, named for the same celestial body before any Satanic identification"
+    source-tier: T1
   - target: "theme-rebel-against-the-divine"
     type: "Christian-rebel-figure"
     source: "Forsyth 1987 *The Old Enemy*; Russell 1984 *Lucifer: The Devil in the Middle Ages*; Milton's *Paradise Lost* (1667) — Lucifer (via Jerome's Vulgate Isaiah 14:12 interpretation of *Heylel ben-Shahar*) is the Christianized cosmic-rebel: the highest-of-the-angels who falls from heaven through pride, the explicit Christian-tradition instantiation of the rebel-against-supreme-power pattern. See [[theme-rebel-against-the-divine]]"
+    source-tier: T1
     notes: "MASSIVE-WIN: Milton's *Paradise Lost* Lucifer is the literary-canonical figure that fuses the entire combat-myth substrate (Tiamat + Titans + Prometheus + Watchers + Belial + Christian Lucifer) into one Romantically-charged rebel-figure. Cross-lens: 03_deities → 06_themes"
 status: "metadata"
 refs:

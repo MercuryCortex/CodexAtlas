@@ -19,29 +19,37 @@ syncretic-edges:
   - target: "Saint Barbara (Santa Bárbara)"
     type: "folk-syncretism"
     source: "Brandon 1993; Murphy 1988"
+    source-tier: T1
   - target: "baal-hadad"
     type: "scholarly-parallel"
     source: "Thompson 1983 (comparative observation only — no historical connection claimed)"
+    source-tier: T1
   - target: "indra"
     type: "scholarly-parallel"
     source: "Awolalu, *Yoruba Beliefs and Sacrificial Rites* (1979); Eliade, *Patterns in Comparative Religion* (1958), Ch. II — Vedic Indra as Indo-European storm-thunder-and-axe deity; Shango as Yoruba thunder-and-double-axe deity. The thunder-deity-with-axe-attribute cross-cultural archetype"
+    source-tier: T1
     notes: "Storm-god-with-axe cross-cultural archetype"
   - target: "thor"
     type: "scholarly-parallel"
     source: "Eliade 1958 — Norse Thor with Mjölnir (storm-hammer); Shango with oshe (double-axe). Both are warrior-thunder-deities with iconic axe/hammer weapon"
+    source-tier: T1
   - target: "zeus"
     type: "scholarly-parallel"
     source: "Eliade 1958 — Greek Zeus as thunderbolt-wielding sky-king; Shango as thunder-king (his cult-form is the historical fourth Alaafin of Oyo deified)"
+    source-tier: T1
   - target: "perun"
     type: "scholarly-parallel"
     source: "Eliade 1958 — Slavic Perun as storm-god with axe; structural parallel to Shango"
+    source-tier: T1
   - target: "tlaloc"
     type: "scholarly-parallel"
     source: "Eliade 1958 — Aztec Tlaloc as storm-rain god"
+    source-tier: T1
     notes: "MASSIVE WIN: 7-tradition storm-deity-with-axe/hammer/thunderbolt convergence (Vedic Indra, Norse Thor, Greek Zeus, Slavic Perun, Canaanite Baal-Hadad, Yoruba Shango, Aztec Tlaloc) — one of the most-universally-attested mythological constellations"
   - target: "afro-diasporic-syncretism"
     type: "source-deity-of-diaspora-fusion"
     source: "Murphy 1988, *Santería*; Brandon 1993; Desmangles 1992 — Shango/Changó's canonical Atlantic-diaspora syncretism with Santa Bárbara (martyred-with-lightning Catholic virgin-saint) is the load-bearing thunder-domain instance of the lwa/orisha-to-saint correspondence pattern. The Shango-Bárbara pairing is the most globally visible afro-Catholic syncretism (Cuban Lucumí, Brazilian Candomblé). See [[afro-diasporic-syncretism]]"
+    source-tier: T1
     notes: "MASSIVE-WIN: Shango → Santa Bárbara is the textbook example of cross-gender orisha-saint mapping where shared functional domain (thunder/lightning) overrides gender match — used by Murphy + Desmangles as the introductory case for the syncretism mechanism"
 status: "metadata"
 refs:

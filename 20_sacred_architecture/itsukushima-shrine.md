@@ -23,23 +23,28 @@ cross-tradition-edges:
   - target: "ise-grand-shrine"
     type: "parallel-shinto-shrine-architecture"
     source: "Coaldrake 1996; Cali & Dougill 2013"
+    source-tier: T1
     notes: "[[ise-grand-shrine|Ise]] (raised-floor *shinmei-zukuri* on dry land, plain cypress, 20-year-rebuilt) and Itsukushima (raised-floor on tidal water, painted vermilion, Heian-aristocratic *shinden-zukuri*-influenced) are the **two most architecturally distinctive Shinto shrine programmes** in Japan — one austere-archaic, one Heian-aristocratic-flamboyant."
   - target: "izumo-taisha"
     type: "sister-shinto-shrine-distinct-form"
     source: "Coaldrake 1996"
+    source-tier: T1
     notes: "Itsukushima and [[izumo-taisha|Izumo]] are both ancient Shinto shrines but architecturally different: Izumo is *taisha-zukuri* (ancient massive-pillar form, mountain-context); Itsukushima is the Heian-Kiyomori *shinden-zukuri*-influenced over-water form. Together they document the **range of pre-modern Shinto shrine architectural vocabularies**."
   - target: "tradition-shinto"
     type: "distinctive-architectural-programme-of"
     source: "Cali & Dougill 2013; Coaldrake 1996"
+    source-tier: T1
     notes: "Itsukushima's defining innovation — building the shrine **on stilts over the tidal flat**, so the entire complex appears to **float at high tide** — is one of the most distinctive religious-architectural conceits in world building. Combined with the **giant vermilion *torii* gate standing in the water offshore**, the visual result is among the most iconic single religious-architectural images of Japan."
   - target: "tradition-shinbutsu-shugo"
     type: "principal-medieval-syncretic-site-of"
     source: "Teeuwen & Rambelli 2003"
+    source-tier: T1
     notes: "Itsukushima was a major medieval-Japanese **Shinbutsu-shūgō** (Shinto-Buddhist fusion) site, with both Shinto shrines and the *Daiganji* + *Misen* Buddhist complexes administered as a single integrated religious centre until the Meiji-era *shinbutsu bunri* (forced separation) of 1868."
 syncretic-edges:
   - target: "tradition-shinbutsu-shugo"
     type: "architectural-archive-of-medieval-shinto-buddhist-fusion"
     source: "Teeuwen & Rambelli 2003"
+    source-tier: T1
     notes: "Itsukushima preserves an unusually complete medieval Shinbutsu-shūgō architectural record: the principal Shinto shrine (Itsukushima Jinja) survives intact, the associated Buddhist complexes (Daiganji at the shrine; Daishōin and Misenzan complexes on Mt. Misen above) survive on the island, and the relationships between them remain legible despite the Meiji separation."
 status: "metadata"
 refs:

@@ -19,6 +19,7 @@ syncretic-edges:
   - target: "Christ (dying-and-resurrecting parallel — contested)"
     type: "scholarly-parallel"
     source: "Lindow 1997; contested whether Christian-influenced or independent"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Murder and Vengeance among the Gods: Baldr in Scandinavian Mythology"

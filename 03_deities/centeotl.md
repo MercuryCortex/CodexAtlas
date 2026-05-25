@@ -20,6 +20,7 @@ syncretic-edges:
   - target: "[[corn-mother]]"
     type: "structural-parallel"
     source: "Both are deities whose body IS the maize plant; the Aztec cluster is gendered (Centeotl male / Chicomecoatl mature female / Xilonen young female) while the Cherokee Selu / Pueblo Corn Maidens are exclusively female"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Aztec Religion and the Cosmovision"

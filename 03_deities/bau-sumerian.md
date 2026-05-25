@@ -20,6 +20,7 @@ syncretic-edges:
   - target: "[[gula-akkadian]]"
     type: "ancient-identification"
     source: "The Lagashite Bau is identified with the Babylonian healing-goddess Gula from the Old Babylonian period onward; the equation transfers Bau's medical function to the Babylonian pantheon while her city-goddess function fades with Lagash's political decline"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Untersuchungen zur Götterwelt des altsumerischen Stadtstaates von Lagaš"

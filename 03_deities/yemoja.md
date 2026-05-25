@@ -19,29 +19,37 @@ syncretic-edges:
   - target: "Our Lady of Regla (Virgen de Regla — patroness of Havana's harbor)"
     type: "folk-syncretism"
     source: "Brandon 1993; Murphy 1988"
+    source-tier: T1
   - target: "mami-wata"
     type: "scholarly-parallel"
     source: "Drewal 2008"
+    source-tier: T1
   - target: "tiamat"
     type: "scholarly-parallel"
     source: "Awolalu, *Yoruba Beliefs and Sacrificial Rites* (1979); Eliade, *Patterns in Comparative Religion* (1958), Ch. V on water — both are primordial cosmic-water mothers; Tiamat as Mesopotamian primordial salt-water mother of the gods; Yemoja as Yoruba ocean-mother of (many) orisha"
+    source-tier: T1
     notes: "Primordial-cosmic-water-mother cross-cultural archetype"
   - target: "tethys-titan"
     type: "scholarly-parallel"
     source: "Eliade 1958 — Greek Tethys as Titan mother of the rivers; Yemoja as ocean-mother of life and orisha"
+    source-tier: T1
   - target: "tiamat"
     type: "scholarly-parallel"
     source: "Eliade 1958 — Babylonian Tiamat as primordial-cosmic-mother of all gods (split into heaven and earth by Marduk); Yemoja as cosmic-ocean-mother of orisha"
+    source-tier: T1
   - target: "papatuanuku"
     type: "scholarly-parallel"
     source: "Eliade 1958 — Maori Papatuanuku as cosmic earth-mother; Yemoja as Yoruba cosmic-ocean-mother. Both are primordial-cosmic-female-principle"
+    source-tier: T1
   - target: "mary-theotokos"
     type: "scholarly-parallel"
     source: "Brandon 1993 — Cuban Lucumí Yemaya is identified with Our Lady of Regla (the Black Madonna of the Havana harbor); the cosmic-mother-of-the-sea function parallels the Marian title 'Stella Maris' (Star of the Sea, the Marian patroness of sailors)"
+    source-tier: T1
     notes: "Marian Stella Maris ocean-mother parallel"
   - target: "afro-diasporic-syncretism"
     type: "source-deity-of-diaspora-fusion"
     source: "Murphy 1988, *Santería*; Brandon 1993; Drewal 2008, *Mami Wata*; Desmangles 1992 — Yemọja's canonical Cuban-Lucumí pairing with Our Lady of Regla (the dark-skinned Marian patroness of Regla, the harbor town across the bay from Havana — both protectors of sailors and the harbor) is the maternal-ocean-domain syncretism. The river-to-ocean reconfiguration of Yemọja (Ogun River in West Africa → Atlantic Ocean in diaspora) is itself a Middle-Passage theological transformation — the orisha's domain stretches to accommodate the new geography. In Brazil, Iemanjá's New Year's Eve festivities at Rio de Janeiro draw millions. See [[afro-diasporic-syncretism]]"
+    source-tier: T1
     notes: "MASSIVE-WIN: the domain-shift Yemọja-river→Yemayá/Iemanjá-ocean as the cleanest case of African theology being reshaped by the Atlantic experience — the orisha's water-jurisdiction grew to encompass the sea that defined the Middle Passage"
 status: "metadata"
 refs:

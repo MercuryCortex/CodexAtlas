@@ -20,24 +20,31 @@ syncretic-edges:
   - target: "[[mictlantecuhtli]]"
     type: "scholarly-parallel"
     source: "Aztec counterpart: skeletal lord of Mictlan (underworld) with analogous iconography — skull-face, bone body, owl associations, presiding over the dead. Most precise structural parallel within Mesoamerica. Independent Aztec development of the same Mesoamerican death-lord archetype."
+    source-tier: T1
   - target: "[[hades]]"
     type: "scholarly-parallel"
     source: "Both are lords of a structured underworld beneath the living world; both are feared rather than celebrated; both rule the dead with an invisible sovereignty. Hades as 'the Unseen One' / Ah Puch as death itself personified."
+    source-tier: T1
   - target: "[[osiris]]"
     type: "scholarly-parallel"
     source: "Both are kings of the dead whose domain is the realm of judgment and transition. Osiris's black/green skin signals decomposition and renewal; Ah Puch's skeletal iconography signals death as process. Both are simultaneously terrifying and juridical."
+    source-tier: T1
   - target: "[[ereshkigal]]"
     type: "scholarly-parallel"
     source: "Both rule the underworld as its highest sovereign, with a structured multi-level realm with named regions. Xibalba's 12 lords / the Sumerian Great Below with Ereshkigal as queen."
+    source-tier: T1
   - target: "[[yama-vedic]]"
     type: "scholarly-parallel"
     source: "Vedic lord of death and the dead, judge of the deceased. Both Yama and Ah Puch preside over the transition of souls through a structured afterlife with named regions and differential fates."
+    source-tier: T1
   - target: "[[baron-samedi]]"
     type: "scholarly-parallel"
     source: "Haitian Vodou Lwa of death: shares Ah Puch's skeletal/decomposition iconography, skull imagery, and dark humor about mortality. Baron Samedi's simultaneous grotesqueness and cosmic necessity parallels Ah Puch's role."
+    source-tier: T1
   - target: "[[anubis]]"
     type: "scholarly-parallel"
     source: "Both are death-associated figures with animal messengers (Anubis as jackal / Ah Puch's owls) who serve as psychopomp/underworld functionaries. Both associate the transition of the dead with specific sacred animals."
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Popol Vuh: The Definitive Edition of the Mayan Book of the Dawn of Life"

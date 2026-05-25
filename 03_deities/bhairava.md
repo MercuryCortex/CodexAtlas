@@ -20,10 +20,12 @@ syncretic-edges:
   - target: "[[shiva]]"
     type: "same-as"
     source: "Vijñāna-Bhairava Tantra; Sanderson 2009 *The Śaiva Age*"
+    source-tier: T1
     notes: "Bhairava is Shiva in his fierce / cremation-grounds form — naked, ash-smeared, skull-garlanded, drinking from a kapāla. Kashmir Trika Shaivism makes Bhairava the supreme consciousness directly; doctrinally identical to Shiva, iconographically distinct"
   - target: "[[mahakala]]"
     type: "direct-borrowing"
     source: "Sanderson 2009 — Vajrayāna Mahākāla is iconographically and structurally Bhairava-derivative; substantial directional borrowing from medieval Śaivism"
+    source-tier: T1
     notes: "Buddhist Mahākāla descends from Bhairava (which descends from Shiva), inheriting wrathful iconography wholesale"
 status: "metadata"
 refs:

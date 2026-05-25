@@ -20,10 +20,12 @@ syncretic-edges:
   - target: "[[centeotl]]"
     type: "ancient-identification"
     source: "Sahagún, *Florentine Codex* Book 1 and Book 2; Townsend, *The Aztecs* (1992) — Chicomecoatl and Centeotl are paired in the Aztec maize-deity cluster as female-mature and male-young respectively; the Ochpaniztli festival (September) ritualizes their pairing as the harvest concludes"
+    source-tier: T1
     notes: "Ochpaniztli sacrificial rite — a young woman impersonating Chicomecoatl was sacrificed, her skin worn by a priest in subsequent ritual dancing; the deity-embodied-in-the-victim pattern is one of the most distinctive Aztec ritual-theological forms"
   - target: "[[corn-mother]]"
     type: "structural-parallel"
     source: "Both are mature female maize goddesses whose body IS the harvest"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Aztecs"

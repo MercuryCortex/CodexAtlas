@@ -20,10 +20,12 @@ syncretic-edges:
   - target: "aengus-og"
     type: "parent-of"
     source: "Aislinge Óenguso; Dindshenchas — Boand entry"
+    source-tier: T1
     notes: "Mother of Aengus Óg by the Dagda. His very conception required cosmic time-manipulation (the Dagda caused the sun to stand still so nine months passed as one day). Boann's affair with the Dagda while her husband Nechtan was away, and her subsequent fate (creating the Boyne), anchors Aengus in the sacred river valley."
   - target: "saraswati"
     type: "structural-parallel"
     source: "Olmsted, Garrett (1994). The Gods of the Celts and the Indo-Europeans. Archaeolingua."
+    source-tier: T1
     notes: "Both are river goddesses associated with poetic and sacred inspiration: Saraswati (Vedic river goddess of sacred speech and arts), Boann (Irish river goddess whose sacred waters inspire). The Indo-European river-goddess-of-inspiration type is well-attested (Saraswati, possibly the Rhine/Rhenus, possibly the Boyne via Boann). Olmsted reconstructs a PIE sacred-river-goddess tradition."
 status: "metadata"
 refs:

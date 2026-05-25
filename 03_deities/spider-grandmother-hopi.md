@@ -20,9 +20,11 @@ syncretic-edges:
   - target: "[[creation-by-word]]"
     type: "parallel-motif"
     source: "Independent parallel: Hopi creation-by-thought-and-song is structurally equivalent to Memphite Ptah (creation by heart and tongue), Genesis 1 fiat, Quranic kun fa-yakun, and Vedic nada brahman. No transmission documented — independent theological articulation of the same cosmogonic logic."
+    source-tier: T1
   - target: "[[spider-woman-navajo]]"
     type: "parallel-form"
     source: "The Hopi Kokyangwuti and the Navajo Na'ashjé'ii Asdzáá share the spider-woman-as-weaver-and-wisdom-figure pattern; both Southwest traditions develop the figure differently. No origin-dependency established."
+    source-tier: T1
 status: metadata
 refs:
   - title: "The Fourth World of the Hopis"

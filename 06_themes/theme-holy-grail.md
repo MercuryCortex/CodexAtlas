@@ -9,10 +9,12 @@ syncretic-edges:
   - target: "ark-of-the-covenant"
     type: "structural-parallel"
     source: "Barber, Richard (2004). The Holy Grail. Harvard UP. / Hoffmeier, James K. (2020). The Ark of the Covenant. Eisenbrauns."
+    source-tier: T1
     notes: "Both the Grail and the Ark are sacred vessels that mediate divine presence, are accessible only through purity/worthiness, and whose location is perennially uncertain (the Ark since 586 BCE; the Grail is never permanently located in the romances). The typological parallel — sacred container of divine power, found only by the worthy — is the cross-tradition sacred-vessel pattern that both instantiate. Some modern esoteric writing (Hancock 1992) collapses the two: the Grail is the Ark. This is a modern confection; no medieval source makes the identification."
   - target: "tradition-catharism"
     type: "structural-parallel"
     source: "Rahn, Otto (1933). Crusade Against the Grail. / Goodrick-Clarke, Nicholas (2002). Black Sun. NYU Press."
+    source-tier: T1
     notes: "The Cathar-Grail identification (Montségur = Wolfram's *Munsalvæsche*; Cathar Perfecti = the *Templeise*) is Otto Rahn's 1933 construction — no medieval source connects Wolfram's poem to Catharism. Rahn later joined the SS; Himmler's Ahnenerbe weaponized the identification for SS ideological mysticism. As reception-history, this is one of the most consequential misreadings of a medieval text in Western cultural history."
 status: "metadata"
 refs:

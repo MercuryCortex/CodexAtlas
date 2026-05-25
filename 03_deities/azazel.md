@@ -20,6 +20,7 @@ syncretic-edges:
   - target: "satanael"
     type: "scholarly-parallel"
     source: "Stuckenbruck 1997"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Book of Giants from Qumran: Texts, Translation, and Commentary"

@@ -20,9 +20,11 @@ syncretic-edges:
   - target: "artemis"
     type: "ancient-identification"
     source: "Herodotus *Histories* 2.137, 2.156: 'Boubastis is in the Greek language Artemis'"
+    source-tier: T1
   - target: "sekhmet"
     type: "ancient-identification"
     source: "Bastet (gentle cat) and Sekhmet (wrathful lioness) are theologically twin manifestations of feline divine power; their iconography is interchangeable in earlier periods"
+    source-tier: T1
 status: "partial"
 refs:
   - title: "Tell Basta: Preliminary Report"

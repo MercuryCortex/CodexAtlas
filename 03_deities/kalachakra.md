@@ -16,18 +16,22 @@ syncretic-edges:
   - target: "ein-sof"
     type: "scholarly-parallel"
     source: "Newman, *The Outer Wheel of Time* (1987); Scholem, *Major Trends in Jewish Mysticism* (1941) — Kālacakra's primordial time-as-source and Kabbalistic Ein-Sof's primordial unmanifest both function as the eternal undifferentiated ground from which manifestation emerges"
+    source-tier: T1
     notes: "Primordial-time-and-cosmos cosmogonic parallel"
   - target: "saoshyant"
     type: "scholarly-parallel"
     source: "Boyce, *History of Zoroastrianism* Vol. 1 (1975); Newman 1987 — the Kālacakra Tantra prophesies the eschatological battle of Shambhala when the savior-king Kalki of Shambhala emerges to defeat dark forces and renew cosmic order; structural parallel with Zoroastrian Saoshyant's renewal of cosmos at frashokereti"
+    source-tier: T1
     notes: "MASSIVE WIN: Kālacakra-Shambhala eschatology and Zoroastrian frashokereti are independent cosmic-cycle-renewal-by-savior-king traditions"
   - target: "maitreya"
     type: "scholarly-parallel"
     source: "Newman 1987 — Maitreya as next Buddha at end of current dharma-age; Kālacakra as the cosmic-time-cycle complex within which Maitreya's arrival is mapped"
+    source-tier: T1
     notes: "Within-family eschatological pairing"
   - target: "mithras-roman"
     type: "scholarly-parallel"
     source: "Newman 1987; Hinnells, *Mithraic Studies* (1975) — Roman Mithras's cosmic-time-cycle iconography (tauroctony's astrological dating) parallels Kālacakra's astrological-cosmogonic time-mandala"
+    source-tier: T1
     notes: "Cosmic-time-mandala structural parallel"
 status: "metadata"
 refs:

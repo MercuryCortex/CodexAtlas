@@ -20,9 +20,11 @@ syncretic-edges:
   - target: "zeus"
     type: "scholarly-parallel"
     source: "West 2007, *Indo-European Poetry and Myth*; Mallory-Adams 2006, *Oxford Introduction to PIE*. Greek Ζεύς (vocative Ζεῦ πάτερ 'Zeu pater') is the regular phonological reflex of PIE *dyḗws ph₂tḗr"
+    source-tier: T1
   - target: "jupiter"
     type: "scholarly-parallel"
     source: "Latin *Iuppiter* < *Diēs-piter* < *dyḗws ph₂tḗr; the most directly preserved PIE inheritance among the major IE chief-deity names"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Indo-European Poetry and Myth"

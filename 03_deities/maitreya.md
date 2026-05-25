@@ -17,18 +17,23 @@ syncretic-edges:
   - target: "[[jesus-christ-deity]]"
     type: "scholarly-parallel"
     source: "Future-savior typology; the structural parallel of Second-Coming-Christ to Future-Buddha-Maitreya is the cleanest cross-tradition messianic comparand (Sponberg & Hardacre 1988 *Maitreya, the Future Buddha*)"
+    source-tier: T1
   - target: "[[muhammad-al-mahdi]]"
     type: "scholarly-parallel"
     source: "Eschatological savior who restores the dharma/dīn after a period of decline"
+    source-tier: T1
   - target: "Kalki"
     type: "scholarly-parallel"
     source: "Tenth and final avatar of [[vishnu]] who appears at the end of the present (degenerate) Kali Yuga to restore dharma — the Hindu future-savior cognate"
+    source-tier: T1
   - target: "Saoshyant"
     type: "scholarly-parallel"
     source: "Zoroastrian eschatological savior born of a virgin from Zarathustra's seed who renovates the world at the end of time"
+    source-tier: T1
   - target: "occultation-hidden-imam"
     type: "Buddhist-parallel-of-occultation-pattern"
     source: "Sponberg & Hardacre 1988 *Maitreya, the Future Buddha*; Gnoli 1987 EIr 'Zoroastrianism and Islam' — Maitreya is the Buddhist-tradition parallel of the occultation-hidden-savior pattern: currently residing in the Tuṣita heaven awaiting his future descent as the next Buddha; the structural analog of the Shiʿa Hidden Imam in *ghayba*. The Saoshyant ↔ Hidden Imam ↔ Maitreya ↔ Kalki cluster is the four-tradition cross-cultural convergence on the preserved-future-savior template. See [[occultation-hidden-imam]]"
+    source-tier: T1
     notes: "Cross-lens: 03_deities → 06_themes. Key structural difference: Maitreya transforms through dharma-teaching (Buddhist soteriology); Mahdi through political-military restoration of justice (Islamic eschatology); Saoshyant through cosmic-renovation combat (Zoroastrian apocalyptic). Same preserved-and-emerging template; different transformation mechanism per tradition"
 status: "metadata"
 refs:

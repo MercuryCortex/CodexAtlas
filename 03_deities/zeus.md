@@ -20,19 +20,24 @@ syncretic-edges:
   - target: "indra"
     type: "scholarly-parallel"
     source: "Watkins 1995, How to Kill a Dragon; West 2007"
+    source-tier: T1
     notes: "Indo-European *Dyēus-pətēr (Sky-Father), reflexes in Greek Zeus, Vedic Dyauṣ Pitṛ, Latin Diespiter / Jupiter."
   - target: "jupiter-roman"
     type: "syncretic-identification"
     source: "Roman interpretatio graeca; explicit identification from early Republican period."
+    source-tier: T1
   - target: "amun"
     type: "ancient-identification"
     source: "[[herodotus]] *Histories* 2.42, 2.55: 'Zeus is called Ammon by the Egyptians.' Institutionalized in the Siwa Oasis oracle, where Alexander the Great is hailed as son of Zeus-Ammon (-332). Zeus-Ammon iconography (Zeus with ram's horns) is standard on Hellenistic-Roman coinage and statuary."
+    source-tier: T1
   - target: "phanes-protogonos"
     type: "ancient-identification"
     source: "Orphic Rhapsodic Theogony: Zeus swallows [[phanes-protogonos]] (the first-born from the cosmic egg laid by [[nyx-primordial]]) and re-originates the cosmos from within himself — the Orphic basis for the Zeus-is-all henotheist articulation"
+    source-tier: T1
   - target: "christ-pantokrator"
     type: "iconographic-transmission-hypothesis"
     source: "Grabar 1968, *Christian Iconography*; Mathews 1993, *The Clash of Gods*; Mango 1972, *The Art of the Byzantine Empire* — Phidias' chryselephantine Zeus at Olympia (c. 435 BCE) → reportedly transported to the Lauseion palace in Constantinople (~391–426 CE, per Cedrenus and the Suda) → its enthroned-frontal-bearded-right-hand-raised posture is the only well-attested antecedent in Mediterranean culture for the Christ Pantokrator iconographic type that crystallizes in the 5th–6th c. CE precisely when the Zeus was documented in the imperial city. See [[zeus-pantokrator-transmission]]"
+    source-tier: T1
     notes: "MASSIVE-WIN: contested Tier-2/3 transmission hypothesis (Lauseion gap is permanent; Jensen 2005 is Tier-1 skeptic) — but if even partially correct it is the longest documented religious transmission chain in the vault (~2,400 years from Phidias' chisel to global Christian iconography)"
 status: "metadata"
 refs:

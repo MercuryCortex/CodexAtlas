@@ -20,6 +20,7 @@ syncretic-edges:
   - target: "satan-christian"
     type: "ancient-identification"
     source: "1 Enoch 69:6 explicitly assigns the Eve-seduction to Gadreel — the Watcher-tradition identification of the Genesis 3 serpent prior to or parallel with the broader Satan-as-serpent identification that becomes Christian-mainstream"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "1 Enoch 2: A Commentary on the Book of 1 Enoch Chapters 37–82"

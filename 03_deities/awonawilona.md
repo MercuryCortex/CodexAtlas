@@ -20,10 +20,12 @@ syncretic-edges:
   - target: "[[ein-sof]]"
     type: "scholarly-parallel"
     source: "Tedlock, *The Spoken Word and the Work of Interpretation* (1983) explicitly notes the structural parallel between Zuni Awonawilona and Kabbalistic Ein Sof — both are the unmanifest principle from which manifestation begins through self-contraction or self-thought"
+    source-tier: T1
     notes: "MASSIVE WIN: a Pueblo theological category that maps precisely onto Kabbalistic apophatic theology — zero possible contact between 13th-century Castilian Kabbalists and pre-Conquest Zuni; convergent emergence of the unmanifest-prior-to-manifestation theological structure"
   - target: "[[chaos-primordial]]"
     type: "scholarly-parallel"
     source: "Both are the pre-cosmic substrate from which the cosmos emerges; Awonawilona is the more apophatic / mind-centred pole, Chaos the more spatial / void-centred"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Outlines of Zuni Creation Myths"

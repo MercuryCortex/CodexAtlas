@@ -20,13 +20,16 @@ syncretic-edges:
   - target: "tishpak"
     type: "ancient-identification"
     source: "Wiggermann 1992, *Mesopotamian Protective Spirits* — Tishpak (Akkadian warrior-god of Eshnunna) is the direct cult-successor to Ninazu at Eshnunna in the Akkadian/Ur III period, inheriting his temple, his iconography, and his snake-dragon *mušḫuššu*"
+    source-tier: T1
     notes: "The Eshnunna substitution is one of the better-documented cases of a Sumerian-to-Akkadian god replacement in Mesopotamian religion"
   - target: "ningishzida"
     type: "ancient-identification"
     source: "Black & Green 1992 — Ningishzida is Ninazu's son and inherits much of his snake-and-chthonic-healing profile; the two are sometimes interchangeable in the cult"
+    source-tier: T1
   - target: "ereshkigal"
     type: "ancient-identification"
     source: "Wiggermann *RlA*; Black & Green 1992 — in the Enegi tradition Ninazu is the son of Ereshkigal, the underworld queen, establishing his chthonic credentials directly"
+    source-tier: T1
 tags:
   - medicine
   - healing-deity

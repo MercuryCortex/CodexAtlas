@@ -19,14 +19,17 @@ syncretic-edges:
   - target: "demeter"
     type: "scholarly-parallel"
     source: "Best, *Maori Religion and Mythology* (1924); Eliade, *Patterns in Comparative Religion* (1958) — Haumia as Maori god of wild-gathered plants (fernroot, uncultivated foods); Demeter as Greek goddess of cultivated grain. Both govern the food-deity domain"
+    source-tier: T1
     notes: "Wild-plants gathering-food deity parallel"
   - target: "rongo-maori"
     type: "shared-tradition"
     source: "Best 1924 — Haumia and Rongo are the Maori brother-pair of food deities: Haumia governs wild gathered foods (fernroot, berries), Rongo governs cultivated foods (kumara/sweet potato)"
+    source-tier: T1
     notes: "Within-family wild-cultivated complementarity"
   - target: "corn-mother"
     type: "scholarly-parallel"
     source: "Best 1924; Eliade 1958 — North American Corn Mother as cultivated-grain goddess; Haumia as Maori uncultivated-gathered-foods god. Cross-Pacific gathering-and-agriculture deity parallel"
+    source-tier: T1
 mentioned-in:
   - "[[tradition-maori]]"
   - "[[ranginui]]"

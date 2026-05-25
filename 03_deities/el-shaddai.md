@@ -35,9 +35,11 @@ syncretic-edges:
   - target: "yahweh"
     type: "ancient-identification"
     source: "Exodus 6:2–3 (P source): 'God also spoke to Moses and said to him: I am Yahweh. I appeared to Abraham, Isaac, and Jacob as El Shaddai, but by my name Yahweh I did not make myself known to them.' — The Priestly author explicitly bridges the patriarchal El Shaddai tradition with the Mosaic Yahweh revelation."
+    source-tier: T1
   - target: "el-canaanite"
     type: "scholarly-parallel"
     source: "Cross 1973, pp. 52–60; Smith 2001, p. 135. El Shaddai belongs to the same Northwest Semitic El-epithet cluster that also produced El Elyon, El Olam, El Bethel — all of which designate aspects of the Canaanite high god El later absorbed by Yahweh."
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Canaanite Myth and Hebrew Epic"

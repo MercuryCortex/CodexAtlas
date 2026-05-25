@@ -20,14 +20,17 @@ syncretic-edges:
   - target: "sun-goddess-of-arinna"
     type: "ancient-identification"
     source: "Prayer of Puduhepa, CTH 384; van Gessel 1998"
+    source-tier: T1
     notes: "Queen Puduhepa explicitly identifies Hebat (her Kizzuwatnan / Hurrian goddess) with the Sun Goddess of Arinna (the Hittite imperial chief goddess). Imperial-era theological merger, not original equivalence."
   - target: "hera"
     type: "scholarly-parallel"
     source: "Bachvarova 2016, From Hittite to Homer"
+    source-tier: T1
     notes: "Queen-consort of the storm-warrior cosmic king; structurally parallel to Hera-Zeus in the Greek system."
   - target: "ishtar-akkadian"
     type: "scholarly-parallel"
     source: "Hutter 1996"
+    source-tier: T1
     notes: "Distinct from Hurrian Šauška (the Ishtar-counterpart in the Hurrian system); but Hebat sometimes occupies overlapping iconographic space."
 status: "metadata"
 refs:

@@ -20,26 +20,32 @@ syncretic-edges:
   - target: "soma"
     type: "ancient-identification"
     source: "Mayrhofer, Manfred (EWAI 1992); Burrow, T. (1955) — The Sanskrit Language; Boyce, Mary (1975)"
+    source-tier: T1
     notes: "Haoma and Soma are reflexes of Proto-Indo-Iranian *sauma — the same sacred plant-deity, the same ritual pressing-and-drinking, the same hymns of praise, separated only by the Indo-Iranian split (~2000–1500 BCE). This is one of the most precisely documented etymological-religious cognate pairs in all of comparative religion: Avestan /h/ < Proto-IE *s parallels Vedic /s/, yielding *sauma > Avestan haoma / Sanskrit soma. The plant identity, ritual structure, and divine personality are functionally identical."
   - target: "dionysus"
     type: "scholarly-parallel"
     source: "comparative religion — divine intoxicant pattern"
+    source-tier: T1
     notes: "Dionysus (god of wine = the wine itself) and Haoma (god of the sacred drink = the drink itself) both instantiate the pattern of the divine intoxicant who is simultaneously deity and substance. The worshipper consumes the god; the god grants power through consumption."
   - target: "bacchus"
     type: "scholarly-parallel"
     source: "Roman cognate of Dionysus"
+    source-tier: T1
     notes: "Bacchus as the Roman sacred-wine-as-deity pattern — same divine-drink typology as Haoma."
   - target: "ninkasi"
     type: "scholarly-parallel"
     source: "comparative Mesopotamian-Iranian religion — sacred drink deity"
+    source-tier: T1
     notes: "Ninkasi (Mesopotamian beer goddess, 'Lady Who Fills the Mouth') and Haoma are both personified sacred ritual drinks. Ninkasi is the beer-goddess; Haoma is the pressed-plant deity. Both represent the sanctification of fermented/psychoactive substances as divine mediators."
   - target: "the-amesha-spentas"
     type: "direct-influence"
     source: "Boyce 1975"
+    source-tier: T1
     notes: "Haoma, while not one of the seven Amesha Spentas, is a Yazata (divine being) of the Zoroastrian hierarchy; he is often treated as a divine embodiment in the same mode as the Amesha Spentas — a principle that is both a cosmic force and its material embodiment."
   - target: "asha-vahishta"
     type: "direct-influence"
     source: "Avestan ritual context"
+    source-tier: T1
     notes: "The Yasna ritual in which Haoma is pressed and offered is performed in honor of Ahura Mazda and aligned with Asha Vahishta (Truth/Righteousness) — the ritual itself being an act of Asha."
 status: "metadata"
 refs:

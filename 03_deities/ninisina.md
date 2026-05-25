@@ -20,20 +20,25 @@ syncretic-edges:
   - target: "gula-akkadian"
     type: "ancient-identification"
     source: "Black & Green 1992, *Gods, Demons and Symbols of Ancient Mesopotamia*; Wiggermann *RlA* — by the Old Babylonian period Ninisina, Gula, Ninkarrak, and Bau form a syncretic cluster of healing-goddesses identified with one another in the cult, especially after the rise of Isin"
+    source-tier: T1
     notes: "The Isin-dynasty (~-2017 to -1794) royal patronage of Ninisina is the political-theological driver for the Sumerian-to-Akkadian-Babylonian transmission of her cult, with Gula as the Akkadian/Babylonian equivalent surviving into the first millennium"
   - target: "bau-sumerian"
     type: "ancient-identification"
     source: "Black & Green 1992; Wiggermann *RlA* — Bau (of Lagash) and Ninisina (of Isin) are functionally parallel healing-goddesses, identified in later cultic compendia"
+    source-tier: T1
   - target: "damu"
     type: "ancient-identification"
     source: "Black & Green 1992 — Damu, the dying-and-restored young healing god, is consistently named as Ninisina's son"
+    source-tier: T1
   - target: "asclepius-greek"
     type: "functional-parallel"
     source: "Comparative religion — Stol 2011 *RlA* 'Hund' on dog burials at Isin healing-cult sites; Edelstein 1945 on sacred dogs at Epidauros; both healing traditions independently deploy the dog as the sacred healing animal"
+    source-tier: T1
     notes: "MASSIVE WIN: Sacred Healing Dog. Dog burials at Ninisina's Egalmah temple (Isin, c. 2000 BCE) are the oldest archaeological evidence of ritual healing dogs; Asklepios's wound-licking dogs at Epidauros (c. 600 BCE) are 1,400 years later. Pharmacological truth: dog saliva contains lysozyme, IgA, and histatins — antimicrobial agents. Both traditions encoded empirical wound-treatment knowledge in religious form."
   - target: "sekhmet"
     type: "cross-tradition-archetype"
     source: "Comparative religion — both are healing goddesses whose authority over disease derives from domain over disease; Lesko 1999 on Sekhmet; Stol 2000 *Epilepsy in Babylonia* on Gula/Ninisina as disease-senders"
+    source-tier: T1
     notes: "Destroyer-healer archetype: both send disease AND heal it; both have a corp of priest-healers (*wabw-Sḫmt* / *āšipu*-*asû*); both embody the logic that authority over affliction belongs to the being who inflicts it. Independent development in Mesopotamia and Egypt."
 status: "metadata"
 refs:

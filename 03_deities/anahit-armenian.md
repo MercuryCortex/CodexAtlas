@@ -20,18 +20,22 @@ syncretic-edges:
   - target: "anahita"
     type: "ancient-identification"
     source: "Russell 1987; Boyce & Grenet 1991"
+    source-tier: T1
     notes: "Anahit is a direct development of the Zoroastrian Anahita (water, fertility, rivers), transformed in the Armenian context into a fully anthropomorphic golden-statued warrior-mother with independent temple and statue cult."
   - target: "aphrodite-greek"
     type: "ancient-identification"
     source: "Strabo, *Geographica* XI.14.16"
+    source-tier: T1
     notes: "Strabo identifies the goddess worshipped at the temple of Erez with Aphrodite. The temple's cult-prostitution practices fit Hellenistic conventions of identifying eastern goddesses with Aphrodite."
   - target: "athena"
     type: "ancient-identification"
     source: "Agathangelos; Russell 1987"
+    source-tier: T1
     notes: "Anahit's wisdom and warrior aspects led some ancient observers to identify her with Athena. Agathangelos calls her 'the glory of our nation and life-giver.'"
   - target: "mary-theotokos"
     type: "folk-syncretism"
     source: "Russell 1987; Petrosyan 2002"
+    source-tier: T1
     notes: "After Christianization (301 CE) many functions and feast days of Anahit were absorbed into the cult of Mary Theotokos in Armenian Christianity — a classic Christianization-of-goddess-cult pattern."
 status: "metadata"
 refs:

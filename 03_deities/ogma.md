@@ -20,14 +20,17 @@ syncretic-edges:
   - target: "hermes-greek"
     type: "structural-parallel"
     source: "Mac Cana (1970). Celtic Mythology. Newnes.; Green (1986). The Gods of the Celts."
+    source-tier: T1
     notes: "Both are deities of eloquence, communication, and the mediation of knowledge through language. The parallel is functional — no genealogical connection. Ogma's invention of the Ogham script parallels Hermes/Thoth as inventor of writing."
   - target: "thoth"
     type: "structural-parallel"
     source: "MacCulloch, J.A. (1918). Mythology of All Races vol. 3."
+    source-tier: T1
     notes: "Both are credited with inventing their tradition's script (Ogham / hieroglyphs). Thoth is the Egyptian deity of writing, magic, and wisdom; Ogma is the Celtic deity credited with Ogham. The parallel — divine inventor of script as guardian of cultural memory — is one of the most consistent cross-tradition patterns in the vault."
   - target: "heracles"
     type: "ancient-identification"
     source: "Lucian, Hercules (~160 CE)"
+    source-tier: T1
     notes: "Lucian of Samosata (2nd c. CE) describes seeing a Gaulish painting of 'Hercules' (Ogmios) as an old man with lion-skin and club — but the chains that bind his followers connect from his tongue, not from force. A Gaul explains: 'We Gauls do not agree with the Greeks in thinking that Hermes is the god of eloquence, but we identify it with Hercules because he is much stronger.' This is one of the rare ancient interpretatio cases between Celtic and Greek deity systems recorded by a non-Christian Greek author."
 status: "metadata"
 refs:

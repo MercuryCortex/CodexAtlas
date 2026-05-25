@@ -18,10 +18,12 @@ syncretic-edges:
   - target: "poseidon-greek"
     type: "structural-parallel"
     source: "Celtic sea-god parallel — both rule the sea and the realm beneath/beyond it"
+    source-tier: T1
     notes: "The identification is functional but limited: Poseidon is also an earthquake god and political deity; Manannán is primarily an otherworld guardian. The apple-giving function (Manannán's apples of immortality → Otherworld) connects more directly to the Hesperides than to Poseidon."
   - target: "charon"
     type: "structural-parallel"
     source: "Typological — both ferry the dead/heroes to the afterlife realm across water"
+    source-tier: T1
     notes: "Manannán's boat Sguabuisce carries souls to Tír na nÓg as Charon's boat carries souls across the Styx. The ferryman-to-the-dead function is a cross-tradition archetype appearing also in Anubis (weighing before admission), Hermes Psychopompos (guide, not ferryman), and the Norse Valkyries."
 status: "metadata"
 refs:

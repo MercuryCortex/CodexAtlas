@@ -20,10 +20,12 @@ syncretic-edges:
   - target: "[[faunus-roman]]"
     type: "interpretatio-nominal"
     source: "Standard Roman interpretatio — Faunus is the Roman Pan, with comparable rustic/sylvan domain"
+    source-tier: T1
     notes: "Roman interpretatio-graeca (Greek→Roman name-mapping). Roman interpretatio assigns the rustic/sylvan god slot to Faunus; the Pan-Faunus identity is uncontested in classical sources"
   - target: "[[banebdjedet]]"
     type: "ancient-identification"
     source: "Herodotus, Histories 2.46"
+    source-tier: T1
     notes: "Herodotus equates Pan with the Egyptian ram-god of Mendes (Banebdjedet) via shared caprid imagery; the ancient identification is uncontested, though most modern Egyptologists view Mendesian Banebdjedet's primary role differently than Pan's"
 status: "metadata"
 refs:

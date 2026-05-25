@@ -19,22 +19,28 @@ syncretic-edges:
   - target: "indra"
     type: "scholarly-parallel"
     source: "Best, *Maori Religion and Mythology* (1924); Eliade, *Patterns in Comparative Religion* (1958), Ch. II — Maori Tāwhirimātea as storm-god; Vedic Indra as Indo-European storm-and-thunder god"
+    source-tier: T1
     notes: "Storm-god cross-cultural archetype"
   - target: "thor"
     type: "scholarly-parallel"
     source: "Best 1924; Eliade 1958 — Norse Thor as storm-and-thunder; Tāwhirimātea as Maori storm-of-anger"
+    source-tier: T1
   - target: "perun"
     type: "scholarly-parallel"
     source: "Eliade 1958 — Slavic Perun as storm-god"
+    source-tier: T1
   - target: "tlaloc"
     type: "scholarly-parallel"
     source: "Eliade 1958 — Aztec Tlaloc as rain-storm-god; both govern the meteorological-violence pole of the pantheon"
+    source-tier: T1
   - target: "raijin"
     type: "scholarly-parallel"
     source: "Best 1924; Eliade 1958 — Shinto Raijin as thunder-god"
+    source-tier: T1
   - target: "fujin"
     type: "scholarly-parallel"
     source: "Eliade 1958 — Shinto Fūjin as wind-god; closest Asian parallel to Tāwhirimātea's wind-and-storm primary domain"
+    source-tier: T1
 mentioned-in:
   - "[[tradition-maori]]"
   - "[[ranginui]]"

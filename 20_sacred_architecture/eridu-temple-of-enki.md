@@ -23,26 +23,32 @@ cross-tradition-edges:
   - target: "ziggurat-of-ur"
     type: "architectural-ancestor-of"
     source: "Crawford 1991; Margueron 2003; Roaf 1990"
+    source-tier: T1
     notes: "The Eridu temple sequence (~5400–3500 BCE) is the **deepest known root of the Mesopotamian temple-platform tradition** that produces, three millennia later, the Ur-Nammu ziggurat at Ur (~2100 BCE). At Eridu, successive temples (XVI through I in the Lloyd / Safar numbering) were each built on the leveled rubble of the previous, gradually accumulating a sacred mound. This stratigraphic accumulation **is the original mechanism by which the Mesopotamian sacred platform came into being** — not designed top-down but built up over centuries as one temple replaced another atop the same charged ground."
   - target: "uruk-white-temple-eanna"
     type: "architectural-ancestor-of"
     source: "Crawford 1991; Liverani 2006"
+    source-tier: T1
     notes: "Eridu Temple VII (Ubaid 3 period, ~4500 BCE) is already a tripartite cella-on-platform — the architectural type that flowers at Uruk's White Temple (~3200 BCE) into the explicit elevated-temple-on-monumental-platform form."
   - target: "etemenanki"
     type: "architectural-ancestor-of"
     source: "George 1992; Crawford 1991"
+    source-tier: T1
     notes: "Direct typological-and-theological lineage: Eridu (5400 BCE) → Uruk White Temple (3200 BCE) → Ur-Nammu's [[ziggurat-of-ur]] (2100 BCE) → Babylonian [[etemenanki]] (rebuilt 6th c. BCE), the seven-tiered ziggurat that is the probable historical referent of the [[tower-of-babel]] narrative. One continuous architectural lineage of ~5000 years."
   - target: "step-pyramid-djoser-saqqara"
     type: "parallel-form"
     source: "Crawford 1991; Lehner 1997"
+    source-tier: T1
     notes: "Eridu's stratified temple-platform is roughly contemporary in form-emergence with the earliest Egyptian mastaba-to-step-pyramid trajectory (Djoser ~2670 BCE), with no documented architectural contact. Two independent solutions to the problem of monumental sacred verticality."
   - target: "tower-of-babel"
     type: "ultimate-typological-source-of"
     source: "Speiser 1964; Day 2013; George 1992"
+    source-tier: T1
     notes: "Eridu is the **deep architectural ancestor** of the building-form the Hebrew Tower of Babel narrative polemicises against. The Eridu → Uruk → Ur → Babylon chain is the architectural lineage; the Hebrew tradition reframes the lineage's late representative (Etemenanki at Babylon) as hubristic over-reach."
   - target: "theme-monumental-architecture-before-agriculture"
     type: "boundary-case"
     source: "Liverani 2006"
+    source-tier: T1
     notes: "Eridu's earliest temple (Temple XVII, Ubaid 1/Hajji Muhammad, ~5400 BCE) is **post-agriculture** — Eridu represents not the pre-agricultural monumental-religion problem (Göbekli Tepe, Çatalhöyük) but the **post-agricultural urban-temple emergence**. Eridu is where 'temple comes before city' becomes a Mesopotamian theological doctrine, encoded in the Sumerian King List."
 status: "metadata"
 refs:

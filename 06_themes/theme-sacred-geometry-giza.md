@@ -10,26 +10,32 @@ syncretic-edges:
   - target: "great-pyramid-of-khufu"
     type: "applies-to"
     source: "multiple"
+    source-tier: T1
     notes: "The Great Pyramid is the primary subject of sacred geometry claims"
   - target: "grand-gallery-great-pyramid"
     type: "applies-to"
     source: "Petrie 1883"
+    source-tier: T1
     notes: "Royal Cubit encoding is genuinely present; Pyramid Inch claims are debunked"
   - target: "kings-chamber-great-pyramid"
     type: "applies-to"
     source: "Petrie 1883"
+    source-tier: T1
     notes: "Double-square geometry (10 × 20 Royal Cubits) is genuine; coffer-as-Ark-of-Covenant dimensional claim is tier 4"
   - target: "flinders-petrie"
     type: "investigated-by"
     source: "Petrie 1883"
+    source-tier: T1
     notes: "Petrie's precise measurements deliberately falsified the Pyramid Inch hypothesis; the debunking is published in his 1883 primary source"
   - target: "tradition-hermeticism"
     type: "influenced"
     source: "Yates 1964"
+    source-tier: T1
     notes: "Sacred geometry is a Hermetic concept: the cosmos was created according to mathematical principles that can be read in nature and in divinely-inspired architecture"
   - target: "tradition-freemasonry"
     type: "influenced"
     source: "Curl 2002"
+    source-tier: T1
     notes: "The Great Pyramid's proportions are invoked in Masonic architectural symbolism alongside Solomon's Temple"
 refs:
   - title: "The Pyramids and Temples of Gizeh"

@@ -23,31 +23,38 @@ cross-tradition-edges:
   - target: "yungang-grottoes"
     type: "direct-successor-and-architectural-continuation-of"
     source: "Steinhardt 2019; McNair 2007"
+    source-tier: T1
     notes: "When [[emperor-xiaowen-of-northern-wei|Emperor Xiaowen]] relocated the Northern Wei capital from Datong (~493) to Luoyang, **the imperial Buddhist cave-temple programme moved with him** — from [[yungang-grottoes|Yungang]] (in Datong) to Longmen. The earliest Longmen caves are stylistically continuous with the latest Yungang caves; Longmen is the direct programmatic successor."
   - target: "mogao-caves-dunhuang"
     type: "sister-cave-temple-complex"
     source: "Steinhardt 2019; Wong 2018"
+    source-tier: T1
     notes: "[[mogao-caves-dunhuang|Mogao]] (Dunhuang, west), [[yungang-grottoes|Yungang]] (Datong, north), and Longmen (Luoyang, central plains) are the three principal monumental Buddhist cave-temple complexes of imperial China. Each anchored to a distinct period and region; together they constitute the architectural archive of Chinese Buddhist sculpture from the 5th–13th centuries."
   - target: "ajanta-caves"
     type: "form-ancestor-via-silk-road"
     source: "McNair 2007; Whitfield 2015"
+    source-tier: T1
     notes: "Buddhist rock-cut cave architecture originates in [[ajanta-caves|Ajanta]] and other Indian sites and travels eastward via the Silk Road. Longmen is the **central-plains terminus** of this transmission; by the Tang era the form is fully Sinified."
   - target: "borobudur-stupa-mandala"
     type: "parallel-contemporary-mahayana-iconographic-programme"
     source: "Steinhardt 2019"
+    source-tier: T1
     notes: "Late-Tang Longmen and Sailendra-Java [[borobudur-stupa-mandala|Borobudur]] (~800 CE) are contemporary monumental Mahayana sculptural programmes in different architectural modes — cliff-carved vs stepped-stupa-mandala — but sharing the iconographic vocabulary of bodhisattva ensembles + Pure-Land paradise scenes + the *Avatamsaka* cosmological programme."
   - target: "empress-wu-zetian"
     type: "principal-architectural-monument-of-imperial-patronage-by"
     source: "Forte 1976; McNair 2007"
+    source-tier: T1
     notes: "The colossal **Vairocana Buddha of Fengxian Si** (~17.4 m seated, ~672–675 CE) was commissioned by [[empress-wu-zetian|Empress Wu]] (then Empress-Dowager regent for her husband Gaozong, later sole emperor) using funds from her own cosmetic-fund allocation per the dedicatory inscription. Tradition holds the Buddha's face was modelled on Wu herself. This is **the single greatest sculptural monument of female imperial patronage in Chinese history** and the largest Buddha at Longmen."
   - target: "tradition-mahayana-buddhism"
     type: "principal-northern-wei-and-tang-iconographic-monument-of"
     source: "McNair 2007; Steinhardt 2019"
+    source-tier: T1
     notes: "Longmen's ~2345 caves and niches + ~100,000 statues + ~2800 inscriptions constitute one of the **principal iconographic archives of Northern Wei and Tang Mahayana Buddhism** — and the **principal monument of imperial patronage of Buddhism** in those periods."
 syncretic-edges:
   - target: "tradition-northern-wei-buddhism"
     type: "architectural-emblem-of"
     source: "McNair 2007"
+    source-tier: T1
     notes: "Longmen is the architectural high-water mark of Northern Wei imperial Buddhism — the period when the non-Han Tuoba-Wei rulers used monumental Buddhist patronage as their principal mode of legitimation in the central plains."
 status: "metadata"
 refs:

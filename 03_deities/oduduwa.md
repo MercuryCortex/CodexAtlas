@@ -20,25 +20,31 @@ syncretic-edges:
   - target: "olodumare"
     type: "child-of"
     source: "Idowu, Bolaji (1962). Olodumare: God in Yoruba Belief. Longmans Green."
+    source-tier: T1
     notes: "Oduduwa was sent by Olodumare (the supreme deity) to create the earth from the primordial waters. He descended on an iron chain from heaven carrying a calabash of sand and a five-toed hen. The hen scattered the sand to form land; the chameleon tested its firmness. Ile-Ife became the first dry land — the navel of the earth in Yoruba cosmology."
   - target: "ogun"
     type: "parent-of"
     source: "Bascom, William (1969). Ifa Divination. Indiana UP."
+    source-tier: T1
     notes: "In many Yoruba traditions, Ogun (deity of iron and war) is Oduduwa's son. This genealogical relationship anchors Ogun's warrior-iron domain within the founding-creation lineage."
   - target: "orunmila"
     type: "narrative-complement"
     source: "Abimbola, Wande (1976). Ifa: An Exposition of Ifa Literary Corpus. Oxford UP."
+    source-tier: T1
     notes: "While Oduduwa creates the earth and founds the physical Yoruba world, Orunmila (deity of wisdom and Ifá divination) was present at creation as the divine witness and repository of all knowledge. The two together anchor the dual foundations of Yoruba civilization: physical creation (Oduduwa) and epistemological order (Orunmila/Ifá)."
   - target: "yima-jamshid"
     type: "scholarly-parallel"
     source: "Idowu, *Olodumare* (1962); Mbiti, *African Religions and Philosophy* (1969) — Iranian Yima as primordial first-king and founder of human civilization; Oduduwa as Yoruba primordial-founder-king of Ile-Ife (the founding-king of the Yoruba people). Both are first-king-and-founder-of-civilization figures"
+    source-tier: T1
     notes: "First-king-founder-of-civilization cross-cultural archetype"
   - target: "gilgamesh-king"
     type: "scholarly-parallel"
     source: "Idowu 1962 — Mesopotamian Gilgamesh as founder-king of Uruk; Oduduwa as founder-king of Ile-Ife. The historical-and-mythological first-ruler parallel"
+    source-tier: T1
   - target: "romulus-and-remus"
     type: "scholarly-parallel"
     source: "Idowu 1962 — Roman founder-twins; Oduduwa as Yoruba founder. The founding-king-of-the-people archetype"
+    source-tier: T1
   # Vedic Manu parallel preserved as note — no Manu node yet. Idowu 1962 — Vedic Manu as primordial-first-man-and-lawgiver; Oduduwa as Yoruba primordial-founder.
 status: "metadata"
 refs:

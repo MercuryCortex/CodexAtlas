@@ -20,9 +20,11 @@ syncretic-edges:
   - target: "helios"
     type: "scholarly-parallel"
     source: "Macdonell 1897 *Vedic Mythology*; Pingree 1976 — both Indo-European-Vedic and Greek solar deities; share inherited PIE solar-vocabulary (Surya, Greek Hēlios, Latin Sol — same PIE root *seh₂uel-)"
+    source-tier: T1
   - target: "ra"
     type: "scholarly-parallel"
     source: "Macdonell 1897; Pingree 1976 — parallel-form only; no documented Bronze Age Egypt → India transmission"
+    source-tier: T1
     notes: "The Pingree 1976 article is key for the LATER (Hellenistic / Sasanian) iconographic exchange — the Surya iconography with boots and Iranian dress in some Puranic images reflects Sasanian / Magi-Brahmin syncretism, not Bronze Age Egyptian transmission"
 status: "metadata"
 refs:

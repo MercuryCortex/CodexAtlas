@@ -19,14 +19,17 @@ syncretic-edges:
   - target: "hippocrates"
     type: "structural-parallel"
     source: "Sivin, Nathan (1968). *Chinese Alchemy: Preliminary Studies*. Harvard UP.; Unschuld 1985 — both physicians wrote ethical frameworks for medical practice that remained normative for their traditions; both became the patron-saint figure of their tradition"
+    source-tier: T1
     notes: "Medical-ethics founder parallel: Sun Simiao's 'Treatise on the Absolute Sincerity of Great Physicians' (Dayi Jing Cheng, in Qianjin Yao Fang, 652 CE) is the Chinese tradition's equivalent of the Hippocratic Oath — establishing duties to patients regardless of wealth, status, or relationship; prohibitions on exploitation; obligations of continued learning. Both documents became the ethical foundation of their traditions' medical guilds. Independent Chinese/Greek convergence on the physician's oath as the organizing document of medical ethics."
   - target: "avicenna"
     type: "structural-parallel"
     source: "Comparative medicine history — Unschuld 1985; Nutton 2004 — both are the defining synthesizer figures of their traditions; both wrote encyclopedic medical summae (Qianjin Yao Fang 652 CE / Canon of Medicine 1025 CE) that organized all prior knowledge into systematic frameworks; both integrated philosophy/cosmology with clinical practice"
+    source-tier: T1
     notes: "Great Synthesizer parallel: Sun Simiao (Tang China, 652 CE) and Avicenna (Islamic Golden Age, 1025 CE) are the two defining medical synthesizers of the medieval world. Both wrote encyclopedic summa works that organized their tradition's complete pharmacopeia and theory; both were polymaths integrating cosmology, philosophy, and clinical medicine; both works became the canonical text taught to physicians for centuries. Independent convergence on the physician-philosopher-encyclopedist as the ideal type."
   - target: "medicine-chinese-traditional"
     type: "attested-in"
     source: "Qianjin Yao Fang (30 volumes, 652 CE) — Sun Simiao's work is the Tang dynasty synthesis of the entire TCM tradition; his ethical treatise remains the normative document for Chinese medical ethics"
+    source-tier: T1
     notes: "Sun Simiao represents the mature articulation of TCM as a systematic tradition — pharmacopeia, theory, clinical practice, and ethics unified in a single authoritative work. His veneration as Yaowang (King of Medicine) after death makes him the Chinese tradition's equivalent of both Hippocrates (as ethical founder) and Asklepios (as divine patron of healers)."
 status: full
 tier: 1

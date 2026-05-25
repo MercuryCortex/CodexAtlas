@@ -20,6 +20,7 @@ syncretic-edges:
   - target: "[[ereshkigal]]"
     type: "ancient-identification"
     source: "Black & Green 1992; Allatu (also Allatum) is the standard Akkadian rendering of Sumerian Ereshkigal; the equation is uncontested. The Akkadian *Descent of Ishtar* uses Allatu/Ereshkigal interchangeably with the latter as the more frequent form in the literary register"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Gods, Demons and Symbols of Ancient Mesopotamia: An Illustrated Dictionary"

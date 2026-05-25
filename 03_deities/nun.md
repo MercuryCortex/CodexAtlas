@@ -20,15 +20,19 @@ syncretic-edges:
   - target: "[[apsu]]"
     type: "scholarly-parallel"
     source: "Both are personified primordial waters in their respective traditions; structural parallel without genetic relationship"
+    source-tier: T1
   - target: "[[tiamat]]"
     type: "scholarly-parallel"
     source: "Less close than Apsu, but the primordial-waters motif is shared"
+    source-tier: T1
   - target: "tehom-hebrew-concept"
     type: "scholarly-parallel"
     source: "The 'deep' of Gen 1:2 functions similarly to Nun as primordial water from which creation emerges; Genesis's account demythologizes the waters but the structural role parallels Nun"
+    source-tier: T1
   - target: "theme-egyptian-gnostic-transmission"
     type: "primary-Egyptian-source"
     source: "Nun is the load-bearing Egyptian-end deity of Chain 2 (Nun = Tiamat = Tehom primordial-waters cosmogonic substrate). The cluster of Egyptian Nun + Akkadian Tiamat + Hebrew Tehom forms the Bronze-Age Near Eastern primordial-waters vocabulary that fuses in Alexandrian Hellenistic-Jewish-Egyptian intellectual life into the Gnostic and Hermetic cosmogonies. See [[theme-egyptian-gnostic-transmission]] Chain 2"
+    source-tier: T1
     notes: "MASSIVE-WIN: convergent vocabulary cluster across three Bronze-Age Near Eastern traditions feeding the Gnostic-Hermetic synthesis"
 status: "metadata"
 refs:

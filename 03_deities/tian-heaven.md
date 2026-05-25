@@ -20,6 +20,7 @@ syncretic-edges:
   - target: "shangdi"
     type: "scholarly-parallel"
     source: "Eno 1990; Puett 2002"
+    source-tier: T1
     notes: "Tian gradually replaces Shangdi as the supreme principle through the Zhou; the two terms overlap and partly distinguish in early Zhou usage."
 status: "metadata"
 refs:

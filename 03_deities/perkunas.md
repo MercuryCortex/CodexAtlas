@@ -17,9 +17,11 @@ syncretic-edges:
   - target: "[[perun]]"
     type: "scholarly-parallel"
     source: "Baltic-Slavic Indo-European cognate — both descend from PIE *Perkʷunos (Watkins 1995; Mallory & Adams 2006)"
+    source-tier: T1
   - target: "[[thor]]"
     type: "scholarly-parallel"
     source: "Indo-European thunderer with axe-weapon, oak-association, and dragon-slaying mytheme"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Of Gods and Men: Studies in Lithuanian Mythology"

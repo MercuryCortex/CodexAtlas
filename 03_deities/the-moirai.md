@@ -18,12 +18,15 @@ syncretic-edges:
   - target: "Norns"
     type: "scholarly-parallel"
     source: "Norse triad of fate-women (Urðr/Verðandi/Skuld) at the well at the foot of Yggdrasil; Indo-European fate-triad cognate (West 2007 *Indo-European Poetry and Myth*)"
+    source-tier: T1
   - target: "[[mokosh]]"
     type: "scholarly-parallel"
     source: "Spinner-of-fate; Slavic Sudenice/Rozhanitsy"
+    source-tier: T1
   - target: "[[themis]]"
     type: "ancient-identification"
     source: "Mother of the Moirai per Hesiod *Theogony* 904"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Indo-European Poetry and Myth"

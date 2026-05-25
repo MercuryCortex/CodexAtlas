@@ -20,6 +20,7 @@ syncretic-edges:
   - target: "[[pachamama]]"
     type: "shared-tradition"
     source: "Allen, *The Hold Life Has* (1988) — Apus and Pachamama are the two principal categories of contemporary Andean deity-recipients-of-offering: Apus are the masculine mountain-lords, Pachamama the feminine earth-substrate. Quechua peasant offerings (the *despacho* / *pago a la tierra*) are addressed to both, often with explicit gendered division"
+    source-tier: T1
     notes: "The Apu/Pachamama complementarity is the structural backbone of contemporary Andean ritual practice — far more central to lived religion than the Inca state-pantheon (Inti, Viracocha) which is now mostly historical-cultural identification"
 status: "metadata"
 refs:

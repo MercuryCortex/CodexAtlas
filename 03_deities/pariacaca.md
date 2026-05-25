@@ -20,18 +20,23 @@ syncretic-edges:
   - target: "[[tlaloc]]"
     type: "scholarly-parallel"
     source: "Both are mountain-associated rain deities at the heart of agricultural religion; both send the rains that make the world fertile and floods that destroy when angered. Tlaloc's mountain temples / Pariacaca's peak-cult are parallel instances of the mountain-as-rain-deity archetype."
+    source-tier: T1
   - target: "[[teshub]]"
     type: "scholarly-parallel"
     source: "Hittite/Hurrian storm deity born on a mountain, bringing storm and rain as divine sovereignty. Pariacaca's storm-eagle aspects / Teshub's mountain-storm dominion share the structure: the mountain deity IS the storm."
+    source-tier: T1
   - target: "[[indra]]"
     type: "scholarly-parallel"
     source: "Vedic storm-deity who releases the cosmic waters and brings rain after defeating the drought-demon Vritra. Pariacaca brings irrigation water to the coast; both embody the storm-deity-as-giver-of-rain function essential to agricultural civilization."
+    source-tier: T1
   - target: "[[zeus]]"
     type: "scholarly-parallel"
     source: "Zeus as storm-sovereign of Olympus / Pariacaca as storm-sovereign of his mountain peak. Both send rain and flood from mountain heights as expressions of divine authority over the landscape."
+    source-tier: T1
   - target: "[[illapa]]"
     type: "tradition-internal"
     source: "Inca state-religion storm deity Illapa is the imperial-theological parallel to Pariacaca within the same Andean tradition. Pariacaca is the regional/local huaca; Illapa is the Inca imperial storm deity. Their coexistence documents the Andean multi-level sacred geography."
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Huarochirí Manuscript: A Testament of Ancient and Colonial Andean Religion"

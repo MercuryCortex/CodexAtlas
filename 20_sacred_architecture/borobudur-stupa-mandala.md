@@ -25,22 +25,27 @@ cross-tradition-edges:
   - target: "ziggurat-of-ur"
     type: "parallel-form"
     source: "Snodgrass 1985"
+    source-tier: T1
     notes: "Stepped monumental sacred building emerging in a different tradition with no direct architectural contact. The ziggurat-as-cosmic-mountain and the stupa-mandala-as-cosmic-mountain are independent typological convergences."
   - target: "pyramid-of-khufu"
     type: "parallel-form"
     source: "Snodgrass 1985"
+    source-tier: T1
     notes: "Egyptian pyramid and Javanese Buddhist stepped stupa-mandala — independent emergence of the monumental stepped-axis-mundi building type."
   - target: "step-pyramid-djoser-saqqara"
     type: "parallel-form"
     source: "Snodgrass 1985"
+    source-tier: T1
     notes: "Stepped form (Djoser ~2670 BCE, Egypt) and stepped form (Borobudur ~800 CE, Java) — same architectural type-class, ~3500 years apart, no documented transmission."
   - target: "mount-meru"
     type: "architectural-embodiment-of"
     source: "Snodgrass 1985; Kinney 2003"
+    source-tier: T1
     notes: "Borobudur is one of the most explicit cases of a building **as architectural model of the cosmic mountain**: the stupa's three levels map to the [[tradition-mahayana-buddhism|Mahayana]] *Trailokya* (Three Worlds): *kāmadhātu* (realm of desire, lower five terraces), *rūpadhātu* (realm of form, terraces with relief galleries), *arūpadhātu* (formless realm, three upper circular platforms with 72 perforated stupas + the great central stupa). The pilgrim's ascent IS the architectural-cosmological journey from the realm of desire to the formless realm."
   - target: "sanchi-great-stupa"
     type: "form-ancestor"
     source: "Snodgrass 1985"
+    source-tier: T1
     notes: "Indian stupa-form (Sanchi, ~250 BCE onwards) is the deep ancestor; Borobudur is the most monumental and architecturally complex Southeast Asian elaboration of the stupa form."
 status: "metadata"
 refs:

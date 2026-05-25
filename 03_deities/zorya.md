@@ -19,12 +19,15 @@ syncretic-edges:
   - target: "[[dazhbog]] (sun-god whose palace they guard and whose daily journey they open/close)"
     type: "scholarly-parallel"
     source: "Functional: Zorya open and close Dazhbog's gate; Afanasyev 1869; Jakobson 1985"
+    source-tier: T1
   - target: "[[perun]] (in warrior-protection invocations, Zorya covers warriors with her veil)"
     type: "scholarly-parallel"
     source: "Folk-spell manuscripts 17th c.; Rybakov 1987"
+    source-tier: T1
   - target: "[[fenrir]] (Norse parallel: chained destroyer whose release ends the world)"
     type: "scholarly-parallel"
     source: "Typological: the imprisoned destroyer whose breaking-free = world-end; Simargl at Polaris mirrors Fenrir's binding; Jakobson 1985"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Poeticheskie vozzreniya slavyan na prirodu (Poetic Views of the Slavs on Nature)"

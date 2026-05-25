@@ -20,10 +20,12 @@ syncretic-edges:
   - target: "[[vishnu]]"
     type: "avatara-of"
     source: "Bhagavad Gita 4.6-8; Bhāgavata Purāṇa 1.3.28; Hardy 1983 *Viraha-Bhakti*"
+    source-tier: T1
     notes: "Krishna is the eighth (or in Bhāgavata + Gauḍīya theology the supreme) avatara of Vishnu — *pūrṇa avatāra*, the complete descent. In Gauḍīya Vaishnavism the polarity inverts: Krishna is *svayaṃ bhagavān* (God Himself) and Vishnu is his expansion"
   - target: "[[vasudeva-vrishni]]"
     type: "historical-merger"
     source: "Hardy 1983 — the cult of Vāsudeva-Kṛṣṇa, the cult of the Yādava-Vrishni hero Kṛṣṇa, the Gopāla cowherd-deity, and the Vedic dark-deity Kṛṣṇa-Aṅgirasa were originally distinct streams that the Mahābhārata, Harivaṃśa, and later Purāṇas combined into the single classical Kṛṣṇa"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Viraha-Bhakti: The Early History of Kṛṣṇa Devotion in South India"

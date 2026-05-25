@@ -20,10 +20,12 @@ syncretic-edges:
   - target: "[[indra]]"
     type: "cognate"
     source: "Boyce 1975, History of Zoroastrianism vol. 1; West 2007 Indo-European Poetry and Myth"
+    source-tier: T1
     notes: "Vedic Indra and Zoroastrian Verethraghna both descend from Indo-Iranian *Vr̥tra-ghna ('dragon-slayer') — the epithet that became a separate god in the Zoroastrian branch after Indra himself was demoted to a daēva in the Zarathustrian reform. The split is the textbook case of how a divine epithet becomes an independent deity when the original god is theologically rejected"
   - target: "[[asura-deva-inversion]]"
     type: "structural-consequence"
     source: "Boyce 1975; Skjærvø 1993 EIr 'Daēva'"
+    source-tier: T1
     notes: "Verethraghna's emergence as an independent yazata is the positive flipside of Indra's demotion. The dragon-slaying function had to go somewhere when Indra was condemned; it crystallized around the Indra-epithet 'Vr̥tra-ghna' as a separate divine persona"
 status: "stub"
 refs:

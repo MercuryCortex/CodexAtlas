@@ -19,30 +19,39 @@ syncretic-edges:
   - target: "[[loki]] (Norse shapeshifter-trickster)"
     type: "cross-tradition-parallel"
     source: "Loki: shapeshifter, instigator of divine conflict, trickster who causes war through deception; Gwydion: shapeshifter, instigates the war against Pryderi through illusion and theft of magical pigs, trickster who circumvents the three prohibitions on Lleu through cunning; both are the divine-trickster-conflict-instigator archetype; Gwydion's punishment (transformed into animals with his brother) parallels Loki's shape-changes; MacCana 1983"
+    source-tier: T1
   - target: "[[odin]] (Norse wandering disguise-master)"
     type: "cross-tradition-parallel"
     source: "Odin as the master of disguise, *seiðr*-sorcery, and illusion-magic who wanders under false names; Gwydion as the wandering enchanter who uses disguise and illusion-magic to achieve his ends; both are the divine-magician-wanderer archetype in their respective Indo-European branches"
+    source-tier: T1
   - target: "[[hermes-greek]] (Greek divine trickster-messenger)"
     type: "cross-tradition-parallel"
     source: "Hermes as divine trickster, thief, messenger, and guide-across-boundaries; Gwydion as the Celtic trickster-enchanter who crosses boundaries between the magical and mortal worlds; the PIE divine-trickster type (Odin / Hermes / Gwydion / Loki) is one of the most coherent cross-tradition parallels in Indo-European mythology"
+    source-tier: T1
   - target: "[[coyote-navajo]] (Native American trickster)"
     type: "cross-tradition-parallel"
     source: "Cross-cultural trickster-creator parallel: Coyote as trickster whose deceptions shape the world and instigate consequences; Gwydion's story (deception → war → punishment → creation of Lleu) follows the trickster-as-world-shaper pattern"
+    source-tier: T1
   - target: "[[lugh]] (Irish cognate — *Lugus* PIE root)"
     type: "etymological-cognate"
     source: "Scholarly debate: Gwydion and Lugh (Irish) / Lugus (Gaulish) may share a PIE divine-type rather than a direct linguistic connection; both are the supreme divine craftsman-magician-warrior of their branch; Gwydion's creation of Lleu (whose name = Lugh) suggests Gwydion is the senior magical figure whose craft produces the luminous hero-deity; MacCana 1983; Ford 1977"
+    source-tier: T1
   - target: "[[cerridwen]] (Welsh otherworld-goddess of transformation)"
     type: "scholarly-parallel"
     source: "Both Cerridwen and Gwydion are the preeminent magic-workers of the Welsh tradition; Cerridwen's cauldron of transformation and Gwydion's shape-changing are the two supreme examples of Welsh magical transformation literature"
+    source-tier: T1
   - target: "[[the-morrigan]] (Irish war-and-magic goddess)"
     type: "scholarly-parallel"
     source: "The Morrígan as divine magical warrior who uses illusion and shapeshifting to affect the outcome of battle; Gwydion instigating war through illusion-magic and fighting the war against Pryderi through enchantment rather than direct combat — both use magic as the weapon of divine warfare"
+    source-tier: T1
   - target: "[[manannan-mac-lir]] (Celtic otherworld lord)"
     type: "scholarly-parallel"
     source: "Manawydan (Welsh form of Manannán mac Lir) as the supreme otherworld lord in Wales; Gwydion operates in the same Fourth Branch world but as the supreme human-world enchanter; the two represent the otherworld-magic and this-world-magic poles of the Welsh divine-magical tradition"
+    source-tier: T1
   - target: "[[rhiannon]] (Welsh sovereignty goddess)"
     type: "mythological-partner"
     source: "Both Gwydion and Rhiannon are the dominant supernatural figures of the Welsh Mabinogi — Rhiannon in Branches 1 and 3, Gwydion in Branch 4; their respective narratives share the Welsh mythological framework"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Mabinogion"

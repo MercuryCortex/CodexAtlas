@@ -20,6 +20,7 @@ syncretic-edges:
   - target: "mars-roman"
     type: "syncretic-identification"
     source: "interpretatio graeca — though Mars is a much more central / dignified Roman god than Ares is Greek"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Greek Religion"

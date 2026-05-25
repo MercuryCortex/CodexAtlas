@@ -20,9 +20,11 @@ syncretic-edges:
   - target: "thoth"
     type: "ancient-identification"
     source: "Both are lunar deities; in some New Kingdom and Late Period contexts they are interchangeable as 'moon-god', though their cult identities remain distinct"
+    source-tier: T1
   - target: "heracles"
     type: "ancient-identification"
     source: "Herodotus *Histories* 2.43–44 identifies the Theban Heracles with an Egyptian god dated 17,000 years before Amasis — most plausibly Khonsu of Thebes"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Studien zum Gott Chons"

@@ -19,6 +19,7 @@ syncretic-edges:
   - target: "Wóhpé (Falling Star)"
     type: "ancient-identification"
     source: "Walker 1980 (Lakota holy men identify White Buffalo Calf Woman with Wóhpé, the Falling Star, one of the Associate Wakan Beings in the Sixteen Wakan system)"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Sacred Pipe: Black Elk's Account of the Seven Rites of the Oglala Sioux"

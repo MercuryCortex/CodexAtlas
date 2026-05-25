@@ -20,6 +20,7 @@ syncretic-edges:
   - target: "[[ninkasi]]"
     type: "ancient-identification"
     source: "Stol 1994 (RlA); Old Babylonian god lists treat Siris/Siraš and Ninkasi interchangeably as beer-deities; some sources treat them as a single goddess under Sumerian and Akkadian names, others as a paired-pair — the linguistic doublet is well attested"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Siris/Siraš"

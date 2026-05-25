@@ -20,14 +20,17 @@ syncretic-edges:
   - target: "dagda"
     type: "child-of"
     source: "Aislinge Óenguso; Mac Cana, Proinsias (1970). Celtic Mythology. Newnes."
+    source-tier: T1
     notes: "Aengus is the son of the [[dagda]] (the Good God, the chief deity of the Tuatha Dé Danann) and Boann (river goddess of the Boyne). His conception involved the Dagda prolonging the night so that Aengus's gestation took a single magical day — a mythological inversion of normal time that signals his liminal, Otherworld nature."
   - target: "boann"
     type: "child-of"
     source: "Aislinge Óenguso"
+    source-tier: T1
     notes: "Son of [[boann]], the divine source of the River Boyne — connecting Aengus to the most sacred river in Irish mythology and to Brú na Bóinne (Newgrange), which sits in the Boyne valley."
   - target: "eros-primordial"
     type: "structural-parallel"
     source: "Green, Miranda (1992). Dictionary of Celtic Myth and Legend. Thames & Hudson."
+    source-tier: T1
     notes: "Both are young love-deities associated with desire that transcends ordinary boundaries (Aengus's love for the swan-maiden Caer requires his annual alternation between human and swan; Eros's love for Psyche transcends mortal/immortal separation). The parallel is typological — no transmission."
 status: "metadata"
 refs:

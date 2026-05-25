@@ -20,15 +20,19 @@ syncretic-edges:
   - target: "[[raijin]]"
     type: "ancient-identification"
     source: "Paired wind-and-thunder guardian dyad; inseparable in Japanese iconography and temple-gate function from Heian period onward"
+    source-tier: T1
   - target: "[[enlil]]"
     type: "scholarly-parallel"
     source: "Wind as first breath of cosmic creation; Enlil's divine wind separates heaven and earth in Sumerian cosmogony (Jacobsen 1976)"
+    source-tier: T1
   - target: "[[shu]]"
     type: "scholarly-parallel"
     source: "Egyptian personification of air and wind; Shu separates Geb and Nut as Fujin's first wind dried the primordial ocean-mist"
+    source-tier: T1
   - target: "[[pazuzu]]"
     type: "scholarly-parallel"
     source: "Babylonian wind-demon with fearsome demon-form iconography; cross-tradition convergence of wind-deity as monstrous guardian"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Nihon Shoki (Chronicles of Japan)"

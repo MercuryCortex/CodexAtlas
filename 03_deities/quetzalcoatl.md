@@ -20,9 +20,11 @@ syncretic-edges:
   - target: "[[kukulkan]]"
     type: "ancient-identification"
     source: "Late Postclassic Yucatec Maya identification; Coe 2015"
+    source-tier: T1
   - target: "Christ (colonial Mexican syncretism)"
     type: "folk-syncretism"
     source: "Lafaye 1976; Carrasco 1982"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Quetzalcoatl and the Irony of Empire"

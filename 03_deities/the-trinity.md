@@ -20,15 +20,19 @@ syncretic-edges:
   - target: "[[god-the-father-christian]]"
     type: "ancient-identification"
     source: "First person of the Trinity"
+    source-tier: T1
   - target: "[[jesus-christ-deity]]"
     type: "ancient-identification"
     source: "Second person of the Trinity"
+    source-tier: T1
   - target: "[[holy-spirit]]"
     type: "ancient-identification"
     source: "Third person of the Trinity"
+    source-tier: T1
   - target: "[[the-amesha-spentas]]"
     type: "scholarly-parallel"
     source: "Some scholars (controversial — Boyce, Hultgård) note structural parallels between Trinitarian dogma and Zoroastrian Amesha Spenta heptad through Ahura Mazda; majority view sees no direct dependence"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Early Christian Doctrines"

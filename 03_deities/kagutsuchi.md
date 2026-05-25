@@ -20,14 +20,17 @@ syncretic-edges:
   - target: "izanami"
     type: "narrative-cause"
     source: "Kojiki 1.8 — Kagutsuchi's birth burns Izanami fatally"
+    source-tier: T1
     notes: "The most structurally significant relationship: Kagutsuchi's birth *kills* his mother, making him the mechanism of Izanami's death and therefore of death entering the world (Izanami becomes the ruler of Yomi, the underworld). Fire's creative power and destructive power are unified in a single act."
   - target: "izanagi"
     type: "narrative-cause"
     source: "Kojiki 1.9 — Izanagi kills Kagutsuchi with his sword"
+    source-tier: T1
     notes: "In grief over Izanami's death, Izanagi draws his sword and dismembers Kagutsuchi into eight pieces. Each piece of the corpse becomes a new kami — a [[cosmic-body-cosmogony]] pattern in miniature, within the Shinto mythological corpus."
   - target: "hephaestus"
     type: "structural-parallel"
     source: "Ashkenazi, Michael (2003). Japanese Mythology. ABC-CLIO."
+    source-tier: T1
     notes: "Both are fire/forge deities associated with creation and physical deformity or violence in their origin stories (Hephaestus thrown from Olympus; Kagutsuchi killed at birth). The parallel is typological — fire deity as simultaneously creative and destructive — with no transmission relationship."
 status: "metadata"
 refs:

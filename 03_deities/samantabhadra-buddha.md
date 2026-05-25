@@ -16,16 +16,20 @@ syncretic-edges:
   - target: "vajradhara"
     type: "scholarly-parallel"
     source: "Same primordial-Buddha function across Nyingma and Sarma schools; sectarian iconographic difference"
+    source-tier: T1
   - target: "ein-sof"
     type: "scholarly-parallel"
     source: "Snellgrove, *Indo-Tibetan Buddhism* (1987); Scholem, *Major Trends in Jewish Mysticism* (1941) — Samantabhadra as Adi-Buddha (primordial Buddha) in the Nyingma school represents the unmanifest-source from which all manifestation emerges; structurally parallel to Kabbalistic Ein Sof. Both are apophatic-transcendent primordial-being"
+    source-tier: T1
     notes: "MASSIVE WIN: apophatic-transcendent primordial — Samantabhadra joins the Ein-Sof / Awonawilona / Nana-Buluku cluster (Buddhist + Kabbalistic + Zuni + Fon convergence; 4 continents, 0 contact, same theological structure)"
   - target: "awonawilona"
     type: "scholarly-parallel"
     source: "Snellgrove 1987; Cushing, *Zuni Creation Myths* (1896) — both are primordial unmanifest deities who self-emanate the manifest cosmos through cosmic-thought / cosmic-self-articulation"
+    source-tier: T1
   - target: "vishnu"
     type: "scholarly-parallel"
     source: "Snellgrove 1987 — both are cosmic-preserver / all-pervading deities; Samantabhadra ('all-good') and Vishnu (the cosmic preserver-of-dharma) share the omnipresent-cosmic-principle function"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Practice of Dzogchen: Longchen Rabjam's Writings on the Great Perfection"

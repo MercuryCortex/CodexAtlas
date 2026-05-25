@@ -16,12 +16,15 @@ syncretic-edges:
   - target: "[[earth-diver-creation]]"
     type: "parallel-motif"
     source: "Ilmatar as floating cosmic-mother parallel to Sky Woman (Haudenosaunee): both are primordial feminine figures floating on the cosmic ocean through/from whom the world is created. The Finnish Kalevala variant bridges earth-diver and cosmic-egg motifs. Eliade (1958) catalogs both as instances of the earth-diver / primordial-waters cosmogonic type."
+    source-tier: T1
   - target: "[[sky-woman-haudenosaunee]]"
     type: "parallel-motif"
     source: "Structural parallel: both are primordial feminine figures floating on primordial waters through whom the world is created; no transmission documented"
+    source-tier: T1
   - target: "[[cosmic-egg]]"
     type: "attested-in"
     source: "The cosmic egg is laid on Ilmatar's knee; Ilmatar is the floating medium for the cosmic egg cosmogony in the Kalevala"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Kalevala"

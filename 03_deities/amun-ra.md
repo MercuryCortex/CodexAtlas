@@ -20,12 +20,15 @@ syncretic-edges:
   - target: "amun"
     type: "syncretic-fusion"
     source: "Egyptian theological synthesis — hidden Amun fused with visible Ra produces Amun-Ra, attested already in the 18th Dynasty"
+    source-tier: T1
   - target: "ra"
     type: "syncretic-fusion"
     source: "Heliopolitan solar Ra integrated into the Theban theology of Amun under the 18th Dynasty"
+    source-tier: T1
   - target: "ptah"
     type: "ancient-identification"
     source: "Leiden Hymn to Amun (Papyrus Leiden I 350): 'All gods are three — Amun, Re, and Ptah' — a single divinity with three aspects"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Egyptian Solar Religion in the New Kingdom: Re, Amun, and the Crisis of Polytheism"

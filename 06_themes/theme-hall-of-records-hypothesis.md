@@ -10,22 +10,27 @@ syncretic-edges:
   - target: "sphinx-of-giza"
     type: "applies-to"
     source: "Cayce readings 1920s–1940s; Schor Foundation 1990s"
+    source-tier: T4
     notes: "The Hall of Records is predicted to be beneath the right paw of the Sphinx; seismic surveys detected anomalies; no hall found"
   - target: "queens-chamber-great-pyramid"
     type: "applies-to"
     source: "various"
+    source-tier: T1
     notes: "The sealed Queen's Chamber shaft 'doors' (Gantenbrink 1993; behind which nothing has yet been reached) are a candidate site for hidden documents or objects"
   - target: "great-pyramid-of-khufu"
     type: "applies-to"
     source: "Hancock 1995"
+    source-tier: T3
     notes: "The 'Big Void' (2017 muon tomography discovery) above the Grand Gallery is a new candidate for unexplored interior space"
   - target: "robert-schoch"
     type: "adjacent-to"
     source: "Schoch 1999"
+    source-tier: T3
     notes: "Schoch's geological work is sometimes cited in support of an older civilization at Giza — but Schoch does not claim a Hall of Records"
   - target: "tradition-theosophy"
     type: "grounded-in"
     source: "Blavatsky 1888; Cayce readings"
+    source-tier: T4
     notes: "The Hall of Records concept derives from Theosophical Atlantis mythology (Blavatsky → Cayce); not an Egyptian source"
 refs:
   - title: "Edgar Cayce on Atlantis"

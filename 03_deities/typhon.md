@@ -20,23 +20,29 @@ syncretic-edges:
   - target: "illuyanka"
     type: "scholarly-parallel"
     source: "M. L. West 1997 *The East Face of Helicon* and 2007 *Indo-European Poetry and Myth* — West argues for direct Anatolian-Hittite transmission of the Illuyanka chaoskampf into Hesiod's Typhonomachy"
+    source-tier: T1
     notes: "The Cilician localization of Typhon's combat with Zeus in Hesiod (Theog. 820ff.) and Apollodorus is the textual fingerprint of the Anatolian transmission route"
   - target: "tiamat"
     type: "parallel-form"
     source: "West 1997, 2007; Watkins 1995 *How to Kill a Dragon* — Typhon is the Greek instance of the wider Near-Eastern chaoskampf serpent-monster type"
+    source-tier: T1
   - target: "lotan"
     type: "parallel-form"
     source: "Day 1985 *God's Conflict with the Dragon and the Sea*; West 1997 — Ugaritic Lotan and Greek Typhon are parallel instances of the seven/multi-headed chaos-serpent type"
+    source-tier: T1
   - target: "vritra"
     type: "parallel-form"
     source: "Watkins 1995 — Vedic Vritra and Greek Typhon are both Indo-European instances of the inherited PIE *gʷhen- ogʷhim ('to slay the serpent') formula"
+    source-tier: T1
   - target: "apophis"
     type: "parallel-form"
     source: "Hornung 1982 *Conceptions of God in Ancient Egypt* §V; Plutarch *De Iside et Osiride* — Egyptian Apophis is the parallel-form chaos-serpent enemy of the king-god (Ra); Plutarch interprets Egyptian Set-Apophis through the Greek Typhon"
+    source-tier: T1
     notes: "Plutarch's *Greek interpretatio* (Typhon = Set, by extension associated with Apophis) is a *folk-syncretism* / *ancient-identification* layer atop the deeper *parallel-form* relation"
   - target: "satan-christian"
     type: "scholarly-parallel"
     source: "Day 1985; Forsyth 1987 *The Old Enemy: Satan and the Combat Myth* — the chaoskampf serpent (Typhon, Tiamat, Lotan/Leviathan, Vritra) is the deep mythological substrate of the Christian Satan-as-dragon (Revelation 12:9 — *ho drakōn ho megas, ho ophis ho archaios*)"
+    source-tier: T1
     notes: "Candidate *ancestor-of* in Forsyth's account; preserved here as scholarly-parallel pending Symbology Phase A's edge-typing"
 status: "metadata"
 refs:

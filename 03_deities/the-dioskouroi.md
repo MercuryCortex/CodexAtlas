@@ -20,14 +20,17 @@ syncretic-edges:
   - target: "the-ashvins"
     type: "etymological-cognate"
     source: "West, M.L. (2007). Indo-European Poetry and Myth. Oxford UP, pp. 186–208; Ward, Donald (1968). The Divine Twins. UC Press."
+    source-tier: T1
     notes: "Both pairs are PIE Divine Twins (*Di-uó Nāp̄ōts, 'sons of Dyēus'): young divine horsemen who rescue distressed humans (especially at sea or in darkness), associated with dawn. The horse-association (Aśvins = 'horsemen'; Dioskouroi = mounted warriors) and the rescue function are the primary PIE inheritance markers."
   - target: "romulus"
     type: "parallel-motif"
     source: "Wiseman, T.P. (1995). Remus: A Roman Myth. Cambridge UP."
+    source-tier: T1
     notes: "Romulus and Remus share the twin-pair structure but with the unique fratricidal inversion: rather than shared immortality, one twin kills the other. Romulus's apotheosis as Quirinus partially recovers the immortality motif. The two pairs are NOT genealogically related — Roman myth consciously uses Greek structural models but transforms them."
   - target: "jesus-christ-deity"
     type: "parallel-motif"
     source: "Doherty, Earl (1999); disputed; see note"
+    source-tier: T1
     notes: "Some scholars have noted the Dioskouroi as patrons of sailors parallel the apostles (fishermen); and the mortal/immortal alternation parallel as a structural antecedent to resurrection theology. This is a *parallel-motif* NOT a genealogical claim — contested in scholarship."
 status: "metadata"
 refs:

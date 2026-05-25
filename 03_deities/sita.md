@@ -18,9 +18,11 @@ syncretic-edges:
   - target: "[[lakshmi]]"
     type: "ancient-identification"
     source: "Vaishnava theology: Sita is the avatar-form of Lakshmi who descends to be consort of Vishnu's Rama-avatar"
+    source-tier: T1
   - target: "[[radha]]"
     type: "scholarly-parallel"
     source: "Cross-avatar consort parallel: Sita to Rama as Radha to Krishna — the two paradigmatic Vaishnava divine couples"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Ramayana of Valmiki: An Epic of Ancient India"

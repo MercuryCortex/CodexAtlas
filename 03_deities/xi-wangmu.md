@@ -17,9 +17,11 @@ syncretic-edges:
   - target: "[[jade-emperor]]"
     type: "ancient-identification"
     source: "Late-imperial Daoist canon pairs the Queen Mother of the West with the Jade Emperor as cosmic consort; an originally independent female sovereign absorbed into the celestial-bureaucracy framework"
+    source-tier: T1
   - target: "[[guanyin]]"
     type: "scholarly-parallel"
     source: "Female sovereign-of-mercy figure"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Queen Mother of the West"

@@ -20,9 +20,11 @@ syncretic-edges:
   - target: "brigid"
     type: "scholarly-parallel"
     source: "Both Áine and Brigid are Irish feminine deities of sun-light, fertility, and sovereignty, corresponding to the seasonal poles of the Celtic year: Brigid presides over Imbolc (February 1, the return of light) and Áine presides over midsummer (Midsummer Eve / June 23 was celebrated with fire-rites on Knockainy into the 19th century). Both represent the feminine solar-sovereignty cluster in Irish tradition. Green (1986)."
+    source-tier: T1
   - target: "lugh"
     type: "folk-syncretism"
     source: "In some traditions Áine is the mother of Lugh (or his foster-mother / consort); in others she is his sister; the solar character they share marks them as related aspects of the Irish solar-divine cluster. MacKillop (1998)."
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Celtic Mythology"

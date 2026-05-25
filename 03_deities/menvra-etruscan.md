@@ -20,18 +20,22 @@ syncretic-edges:
   - target: "minerva-roman"
     type: "ancient-identification"
     source: "Direct name cognate and Capitoline Triad transfer; both names derive from PIE *men- 'mind/thinking'; Roman Minerva is the Latinized form of Etruscan Menvra"
+    source-tier: T1
     notes: "This is the most linguistically secure Etruscan-to-Roman divine name transmission in the record."
   - target: "athena"
     type: "ancient-identification"
     source: "Etruscan interpretatio Graeca; Menvra depicted in full Athena-type (helmet, lance, owl, aegis) from ~-550 BCE onward; the birth-from-Tinia's-head myth mirrors Athena from Zeus's head"
+    source-tier: T1
     notes: "The shared birth-from-the-sky-father's-head mytheme is either PIE inheritance or East-to-West transmission — either way the same story at both ends."
   - target: "saraswati"
     type: "scholarly-parallel"
     source: "Goddess-of-wisdom-arts-crafts comparative framework; both preside over intellectual and creative domains"
+    source-tier: T1
     notes: "Saraswati (Vedic) governs arts, speech, and learning; Menvra governs crafts, arts, and wisdom. Parallel divine function within different traditions."
   - target: "neith"
     type: "scholarly-parallel"
     source: "War-and-weaving goddess pattern; Neith (Egyptian) is armed, associated with weaving/craft, and with wisdom-war strategy — the same combination Menvra/Athena represents"
+    source-tier: T1
     notes: "Herodotus (2.28) identifies Neith with Athena, completing the Neith → Athena ↔ Menvra parallel."
 status: "metadata"
 refs:

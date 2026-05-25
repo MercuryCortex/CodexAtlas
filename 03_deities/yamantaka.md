@@ -17,12 +17,15 @@ syncretic-edges:
   - target: "[[manjushri]]"
     type: "ancient-identification"
     source: "Yamāntaka is the wrathful emanation of Mañjuśrī, bodhisattva of wisdom — wisdom takes terrifying form to destroy ignorance (death-as-ignorance)"
+    source-tier: T1
   - target: "[[yama-vedic]]"
     type: "polemic-inversion"
     source: "Yamāntaka = 'Ender of Yama' — the Vedic-Hindu death-god repurposed as the cosmic enemy whom Buddhist wisdom defeats; Buddhist tantric polemical-redeployment of a Hindu deity"
+    source-tier: T1
   - target: "[[mahakala]]"
     type: "scholarly-parallel"
     source: "Co-yidam wrathful protector"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Indo-Tibetan Buddhism: Indian Buddhists and Their Tibetan Successors"

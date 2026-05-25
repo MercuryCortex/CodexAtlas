@@ -20,25 +20,31 @@ syncretic-edges:
   - target: "quetzalcoatl"
     type: "scholarly-parallel"
     source: "Nicholson 1971; Klein 2000 — the four-directional Tezcatlipoca schema assigns Xipe the East / Red color quarter in some sources; the identification is contested"
+    source-tier: T1
     notes: "Within-family; Red Tezcatlipoca aspect"
   - target: "dionysus"
     type: "scholarly-parallel"
     source: "Frazer 1911 *The Golden Bough*; Carrasco 1999 — Dionysus's death-and-dismemberment (Orphic Zagreus) and seasonal-rebirth-as-vegetation parallels Xipe Totec's flayed-skin renewal-as-spring-vegetation ritual"
+    source-tier: T1
     notes: "Dying-rising vegetation-god convergence; independent emergence, no transmission"
   - target: "attis"
     type: "scholarly-parallel"
     source: "Frazer 1911; the Phrygian Attis's self-castration-death and the Hilaria festival's mourning-then-resurrection cycle is the closest Old-World structural parallel to the Xipe Totec flaying-and-renewal cycle"
+    source-tier: T1
     notes: "Frazer-tier dying-rising vegetation-god parallel"
   - target: "osiris"
     type: "scholarly-parallel"
     source: "Frazer 1911; Carrasco 1999 — Osiris's death-dismemberment-resurrection as the grain that emerges from the earth structurally parallels Xipe Totec's flayed-skin-as-spring-foliage. The flayed-skin / new-vegetation symbolism is the same theological logic across both"
+    source-tier: T1
     notes: "MASSIVE WIN: Frazer's full dying-rising-flayed-vegetation convergence — Xipe Totec / Dionysus / Attis / Osiris / Adonis / Dumuzi — five Old-World traditions plus one independent Mesoamerican emergence of the same theological structure"
   - target: "adonis"
     type: "scholarly-parallel"
     source: "Frazer 1911 — Adonis as the Hellenistic dying-rising-vegetation god; the Adonia mourning festival parallels Xipe Totec's flaying-renewal ritual structurally"
+    source-tier: T1
   - target: "dumuzi-tammuz"
     type: "scholarly-parallel"
     source: "Frazer 1911; Mettinger, *The Riddle of Resurrection* (2001) — Sumerian/Akkadian shepherd-god whose descent and return is the oldest Old-World dying-rising vegetation pattern"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Florentine Codex: General History of the Things of New Spain"

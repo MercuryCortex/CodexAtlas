@@ -13,26 +13,32 @@ syncretic-edges:
   - target: "church-of-the-holy-sepulchre-jerusalem"
     type: "source-of"
     source: "Krautheimer 1942; Ousterhout 1990"
+    source-tier: T1
     notes: "Constantine's Anastasis Rotunda (~326–335 CE) is the originating type-specimen. The medieval architectural-iconographic *imitatio*-tradition that propagates the form is the subject of Krautheimer's foundational 1942 study (*Iconography of Mediaeval Architecture*, JWCI 5: 1–33)."
   - target: "dome-of-the-rock-jerusalem"
     type: "applies-to"
     source: "Grabar 1959"
+    source-tier: T1
     notes: "The Dome of the Rock (691 CE) is the first major Islamic appropriation of the rotunda-form language for an Islamic sacred-architectural programme (the Foundation Stone)."
   - target: "convent-of-christ-tomar"
     type: "applies-to"
     source: "Pereira 2012; Genin 2011"
+    source-tier: T1
     notes: "Templar Charola (~1160) is one of the highest-fidelity surviving examples of the Templar round-church programme."
   - target: "temple-church-london"
     type: "applies-to"
     source: "Wilson 2010"
+    source-tier: T1
     notes: "London Temple Church (1185) is the English exemplar."
   - target: "lalibela-rock-hewn-churches"
     type: "applies-to-broadly"
     source: "Heldman 1992; Phillipson 2009"
+    source-tier: T1
     notes: "Lalibela (~1181–1221) is an Ethiopian-Zagwe *imitatio Jerusalemii* programme — not a single rotunda, but a complex of churches that re-maps the Jerusalem topography (including Bēta Maryām + Bēta Golgotā). A different formal solution to the same theological problem."
   - target: "tradition-knights-templar"
     type: "principal-architectural-vehicle"
     source: "Barber 1994; Wilson 2010"
+    source-tier: T1
     notes: "The Templars were the principal carriers of the Holy-Sepulchre-imitatio architectural programme in medieval Europe — building round-naved churches across France, England, Portugal, Italy, Spain, Germany, the Levant in deliberate architectural memorial of the [[dome-of-the-rock-jerusalem|Dome of the Rock]] (which they had occupied as Templum Domini) and through it the [[church-of-the-holy-sepulchre-jerusalem|Holy Sepulchre]]."
 refs:
   - title: "Introduction to an 'Iconography of Mediaeval Architecture'"

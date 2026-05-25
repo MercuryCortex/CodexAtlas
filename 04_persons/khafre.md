@@ -15,10 +15,12 @@ syncretic-edges:
   - target: "pyramid-of-khafre-giza"
     type: "built-by"
     source: "Lehner 1997"
+    source-tier: T1
     notes: "Second Giza pyramid with Valley Temple; Khafre's diorite statue is among the finest Egyptian royal portraits"
   - target: "sphinx-of-giza"
     type: "built-by"
     source: "Lehner 1997"
+    source-tier: T1
     notes: "Conventional attribution based on the Valley Temple alignment and facial resemblance to Khafre's diorite statue; disputed by Schoch geological hypothesis"
 refs:
   - title: "The Complete Pyramids"

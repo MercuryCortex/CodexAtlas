@@ -20,10 +20,12 @@ syncretic-edges:
   - target: "[[venus-roman]]"
     type: "interpretatio-nominal"
     source: "weekday-calque Friday — some philologists assign Friday to Frigg, others to Freyja; both interpretations exist in the early medieval glossary tradition"
+    source-tier: T1
     notes: "interpretatio-romana (Germanic→Roman name-mapping via weekday calque). The Friday-calque could refer to either Frigg or Freyja (or to a conflated Proto-Germanic source goddess) — the assignment is disputed"
   - target: "[[freyja]]"
     type: "scholarly-parallel"
     source: "Grimm 1844; Lindow 2001; Näsström 1995 — the Frigg/Freyja doublet question"
+    source-tier: T1
     notes: "Disputed conflation: some scholars (Grundy 1996, Näsström 1995) argue Frigg and Freyja descend from a single Proto-Germanic goddess; current Norse-studies consensus (Lindow 2001) keeps them distinct but acknowledges the parallel"
 status: "metadata"
 refs:

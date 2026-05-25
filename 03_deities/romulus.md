@@ -20,14 +20,17 @@ syncretic-edges:
   - target: "the-dioskouroi"
     type: "parallel-motif"
     source: "Wiseman, T.P. (1995). Remus: A Roman Myth. Cambridge UP.; West, M.L. (2007). Indo-European Poetry and Myth. Oxford UP."
+    source-tier: T1
     notes: "Romulus and Remus share the Indo-European divine-twins structural template but with a unique inversion: one twin kills the other. The fratricidal founding violence (Romulus kills Remus over the boundary/wall dispute) and Romulus's subsequent apotheosis as Quirinus partially reassembles the Dioskouroi mortal/immortal alternation pattern in a new form."
   - target: "cain-and-abel"
     type: "structural-parallel"
     source: "Girard, René (1977). Violence and the Sacred. Johns Hopkins UP.; Burkert, Walter (1983). Homo Necans. UC Press."
+    source-tier: T1
     notes: "Both are twin-killing-founding-violence myths (Cain/Abel, Romulus/Remus). Girard's scapegoat analysis explicitly treats both as examples of founding violence — the killing that precedes and enables social order. No direct genealogical relationship; structural parallel within the ancient Mediterranean."
   - target: "mars-roman"
     type: "child-of"
     source: "Livy 1.4; Plutarch Romulus 2–3"
+    source-tier: T1
     notes: "Romulus and Remus are the sons of the war god Mars and the Vestal Rhea Silvia — divine paternity from the god of war gives the Roman state its martial divine mandate."
 status: "metadata"
 refs:

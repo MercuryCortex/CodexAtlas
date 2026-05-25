@@ -19,12 +19,15 @@ syncretic-edges:
   - target: "[[artemis]] (Greek patroness of the hunt, protector of young animals)"
     type: "scholarly-parallel"
     source: "Typological: female deity governing the hunt and protecting the animals of the wilderness; Burkert 1985"
+    source-tier: T1
   - target: "[[diana-roman]] (Roman goddess of the forest and hunt)"
     type: "scholarly-parallel"
     source: "Functional parallel: female deity of the woodland hunt"
+    source-tier: T1
   - target: "[[asclepius-greek]] (healing as sacred obligation; Mielikki's care for injured animals)"
     type: "scholarly-parallel"
     source: "Typological: the healer-deity who tends those who suffer; Mielikki's woodland medicine as the forest's compassionate face"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Kalevala"

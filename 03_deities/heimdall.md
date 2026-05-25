@@ -17,6 +17,7 @@ syncretic-edges:
   - target: "[[gabriel-archangel]]"
     type: "scholarly-parallel"
     source: "Both sound the eschatological horn/trumpet announcing the end-time judgment (Heimdall's Gjallarhorn at Ragnarök / Gabriel's trumpet of resurrection); structural parallel only — no direct historical transmission"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Norse Mythology: A Guide to the Gods, Heroes, Rituals, and Beliefs"

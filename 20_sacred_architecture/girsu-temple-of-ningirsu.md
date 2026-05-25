@@ -23,26 +23,32 @@ cross-tradition-edges:
   - target: "ziggurat-of-ur"
     type: "contemporary-and-cognate"
     source: "Crawford 1991; Suter 2000"
+    source-tier: T1
     notes: "Gudea's Eninnu (c. 2125 BCE) and Ur-Nammu's [[ziggurat-of-ur]] (c. 2100 BCE) are **contemporary** — Gudea's Lagash is the immediately-preceding southern Mesopotamian temple-building hegemon, and Ur-Nammu's empire-wide construction programme grows directly out of the architectural-theological vocabulary Gudea articulates at the Eninnu."
   - target: "solomons-temple-first"
     type: "deep-typological-ancestor-and-direct-textual-parallel"
     source: "Hurowitz 1992"
+    source-tier: T1
     notes: "The Gudea Cylinders are the **single closest pre-Israelite parallel** to the biblical Solomon-builds-the-Temple narrative (1 Kings 5–8 / 2 Chronicles 2–7). The narrative grammar is identical: divine commission via dream-vision (Gudea Cylinder A column i; Solomon at Gibeon 1 Kings 3) → preparation of materials (cedar from foreign lands; Gudea brings cedar from Lebanon — the same cedar Solomon imports from [[hiram-of-tyre-king|Hiram of Tyre]]) → ritual purification of the site → construction with elaborate cosmological symbolism → dedication ceremony → divine indwelling. Hurowitz 1992 documents the parallel structure point-by-point. **Either the biblical narrative draws from a shared West Asian temple-building literary genre of which Gudea is the principal extant ancestor, or both descend from a common source.**"
   - target: "eridu-temple-of-enki"
     type: "architectural-successor-of"
     source: "Crawford 1991"
+    source-tier: T1
     notes: "The Eninnu stands in the Mesopotamian temple-platform lineage that begins at Eridu."
   - target: "etemenanki"
     type: "architectural-cognate-of"
     source: "George 1992"
+    source-tier: T1
     notes: "Same architectural-theological tradition that culminates in the Babylonian [[etemenanki]]."
   - target: "tower-of-babel"
     type: "deep-typological-source-of"
     source: "Suter 2000; Hurowitz 1992"
+    source-tier: T1
     notes: "The Eninnu and the Gudea Cylinders are part of the West Asian temple-building theology against which the Hebrew Tower of Babel narrative polemicises."
   - target: "theme-divine-kingship-and-temple-as-royal-pact"
     type: "anchor-text-and-site"
     source: "Suter 2000; Hurowitz 1992"
+    source-tier: T1
     notes: "Gudea Cylinder A–B is **the single most articulated ancient document** of the doctrine that the king builds the god's house and the god in return guarantees the king's rule. Eninnu is the architectural object that the doctrine produces."
 status: "metadata"
 refs:

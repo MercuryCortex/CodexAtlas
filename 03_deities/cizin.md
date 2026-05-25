@@ -20,19 +20,24 @@ syncretic-edges:
   - target: "[[ah-puch]]"
     type: "ancient-identification"
     source: "Thompson, *Maya History and Religion* (1970); Taube, *The Major Gods of Ancient Yucatan* (1992) — the relationship between Ah Puch (the death-god in Landa's accounts) and Cizin/Kisin (the earthquake-and-stink spirit in Lacandon Maya tradition) is contested; some sources identify them, others distinguish them as separate underworld figures. The contemporary **Lacandon Maya** continue Kisin worship; the connection to the Classic-period 'God Q' glyph in the codices is debated"
+    source-tier: T1
   - target: "hades"
     type: "scholarly-parallel"
     source: "Eliade 1958, Ch. VII on death; Greek Hades as underworld-rulership-and-decomposition parallel; Cizin and Hades both inherit the broader Indo-European-and-beyond death-as-decay theological function"
+    source-tier: T1
     notes: "Underworld-death-decay deity cross-cultural archetype"
   - target: "hel"
     type: "scholarly-parallel"
     source: "Eliade 1958; Norse Hel as goddess of the dishonoured dead in the underworld; cizin and Hel share the decomposition-as-death-state theological emphasis"
+    source-tier: T1
   - target: "anubis"
     type: "scholarly-parallel"
     source: "Wilkinson 2003 — Egyptian Anubis as death-god of embalming and decomposition; partial structural parallel to Cizin's earthquake-and-stink underworld function"
+    source-tier: T1
   - target: "ereshkigal"
     type: "scholarly-parallel"
     source: "Eliade 1958; Sumerian Ereshkigal as queen of the underworld; the underworld-rulership pole that Cizin/Ah Puch occupy in the Maya pantheon"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Major Gods of Ancient Yucatan"

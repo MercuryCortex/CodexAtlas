@@ -24,22 +24,27 @@ cross-tradition-edges:
   - target: "temple-of-bacchus-baalbek"
     type: "imperial-roman-temple-bookend"
     source: "Stamper 2005; Anderson 2013"
+    source-tier: T1
     notes: "**Maison Carrée (Augustan, ~16 BCE, Nîmes) and the [[temple-of-bacchus-baalbek|Temple of Bacchus at Baalbek]] (Antonine, ~150 CE) are the two best-preserved Roman temples in the empire** — western and eastern bookends, separated by 170 years and 4,000 km. Maison Carrée gives us the Augustan-Republican-derived form at the start of the imperial period in a near-complete state; the Bacchus Temple gives us the high-Antonine elaborated form 170 years later. Together they bracket the period of Roman imperial temple architecture's apogee."
   - target: "pantheon-rome"
     type: "augustan-roman-architectural-context"
     source: "Stamper 2005"
+    source-tier: T1
     notes: "The Maison Carrée (~16 BCE) is roughly contemporary with the **first Pantheon** built by Agrippa (~25 BCE) — both belong to the Augustan-Agrippan religious-architectural building programme. The original Pantheon does not survive; the Maison Carrée does. The Maison Carrée therefore documents what Augustan-Agrippan temple architecture actually looked like at the imperial moment."
   - target: "temple-of-jupiter-optimus-maximus-rome"
     type: "architectural-descendant-of"
     source: "Stamper 2005"
+    source-tier: T1
     notes: "The Maison Carrée preserves the Roman temple-architectural form descended from the Etruscan-Republican Capitoline tradition: high podium, frontal staircase, deep porch, pseudoperipteral colonnade. **It is the best-preserved single document of this Italic-Roman temple type.**"
   - target: "parthenon-athens"
     type: "architectural-contrast-with-greek-temple-type"
     source: "Stamper 2005"
+    source-tier: T1
     notes: "Maison Carrée and Parthenon represent the two principal Mediterranean temple-architectural types — Roman frontal-podium-pseudoperipteral vs Greek peripteral-isolated-stylobate. **Both survive in nearly complete architectural form**, making them the principal type-specimens of their respective traditions."
   - target: "tradition-imperial-cult"
     type: "anchor-site"
     source: "Beard, North & Price 1998; Anderson 2013"
+    source-tier: T1
     notes: "**One of the best-preserved imperial-cult temples in the empire.** Dedicated to Augustus's two grandsons/adopted-heirs — making it an architectural document for the imperial-cult mechanism of dynastic succession-ratification through temple dedication."
 status: "metadata"
 refs:

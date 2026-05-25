@@ -20,6 +20,7 @@ syncretic-edges:
   - target: "the-morrigan"
     type: "structural-parallel"
     source: "Typological — both are Celtic-adjacent sovereignty-battle goddesses associated with the land and its defense"
+    source-tier: T1
     notes: "The Morrigan (Irish: sovereignty/battle/death; appears as crow on battlefield; her domains include land-sovereignty and the slaughter that defends it) is the closest Irish parallel to Trebaruna's reconstruction. Both combine the homestead/sovereignty function with the martial-defense function in a female divine figure. Neither is simply a war goddess or simply a hearth goddess — both occupy the zone where protection of the community AND power over life and death intersect."
 status: "metadata"
 refs:

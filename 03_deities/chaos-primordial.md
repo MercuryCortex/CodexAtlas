@@ -20,9 +20,11 @@ syncretic-edges:
   - target: "nun"
     type: "scholarly-parallel"
     source: "Both Greek Chaos and Egyptian Nun are the primordial undifferentiated state from which the cosmos emerges; West 1997 *East Face of Helicon* documents structural parallels"
+    source-tier: T1
   - target: "apsu"
     type: "scholarly-parallel"
     source: "Mesopotamian Apsu/Tiamat as primordial waters of pre-cosmic chaos; *Enuma Elish* structurally parallel to Hesiod's *Theogony*; documented by West 1997 and others"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Hesiod, Theogony, edited with prolegomena and commentary"

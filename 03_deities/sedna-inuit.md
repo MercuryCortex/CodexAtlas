@@ -20,27 +20,35 @@ syncretic-edges:
   - target: "[[mama-cocha]]"
     type: "structural-parallel"
     source: "Mama Cocha (Andean sea goddess) and Sedna are the two most prominent indigenous American sea-mother figures. Both govern marine animals and determine whether humans receive them. Both require ritual attention. No transmission; independent development in geographically separated coastal-maritime traditions."
+    source-tier: T1
   - target: "[[olokun]]"
     type: "structural-parallel"
     source: "Olokun (Yoruba deep-sea deity) rules the deep ocean as Sedna rules the Arctic sea floor. Both are associated with the depths inaccessible to ordinary humans; both require specialist intermediaries (divers/shamans) to approach. Both are ambivalent — capable of withholding or bestowing abundance."
+    source-tier: T1
   - target: "[[yemoja]]"
     type: "structural-parallel"
     source: "Yemoja as Yoruba sea-mother who governs sea creatures parallels Sedna's dominion over marine animals. Both are essential to the food supply of their communities and require ongoing propitiation."
+    source-tier: T1
   - target: "[[tangaroa]]"
     type: "structural-parallel"
     source: "Tangaroa (Polynesian sea deity) rules the ocean and marine life as Sedna does. Both are essential to fishing cultures and require ritual acknowledgment. The fact that major sea-deity figures appear in both Arctic and Pacific traditions — geographically distant — marks the sea-deity as a universal archetype in maritime cultures."
+    source-tier: T1
   - target: "[[tiamat]]"
     type: "structural-parallel"
     source: "Creation-by-dismemberment: Sedna's severed finger joints become the marine animals; Tiamat's dismembered body becomes the cosmos. Both are female bodies that generate the world through violent fragmentation. Leeming (2010) surveys the global distribution of the dismemberment-creation motif."
+    source-tier: T1
   - target: "[[osiris]]"
     type: "structural-parallel"
     source: "Dismemberment-as-creation/generation: Osiris's dismembered body, scattered across Egypt, generates the Nile flood and agricultural abundance. Sedna's severed fingers generate the marine species. Both bodies are the source of life through an act of dismembering violence."
+    source-tier: T1
   - target: "[[inanna-sumerian]]"
     type: "structural-parallel"
     source: "Shamanic descent-and-return structure: Inanna descends to the underworld and her return is necessary for life on earth; the angakkuq's descent to Sedna's ocean-floor dwelling and return with released animals is structurally identical. Both require a specialist (Inanna's attendant Ninshubur; the shaman) to effect the return. Both descents address a crisis of abundance."
+    source-tier: T1
   - target: "[[persephone-greek]]"
     type: "structural-parallel"
     source: "The shamanic descent to Sedna parallels the Persephone descent myth: life above is linked to the condition of a female figure below; abundance or scarcity in the living world mirrors conditions in the underworld. Persephone's return = spring; Sedna's hair combed = animals released = successful hunting season."
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Central Eskimo"

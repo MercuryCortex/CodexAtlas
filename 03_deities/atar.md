@@ -20,6 +20,7 @@ syncretic-edges:
   - target: "agni"
     type: "ancient-identification"
     source: "**Direct Indo-Iranian etymological-and-functional cognate.** Both Avestan *Ātar* and Vedic *Agni* are personified-divine-fire figures inherited from the Proto-Indo-Iranian period; both are the visible-divine-presence in temple-and-household cult. The cognate-divinity is one of the cleanest Indo-Iranian shared-theology cases"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "A History of Zoroastrianism, Vol. 1"

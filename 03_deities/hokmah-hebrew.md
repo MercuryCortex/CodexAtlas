@@ -25,9 +25,11 @@ syncretic-edges:
   - target: "sophia-gnostic"
     type: "ancestor-of"
     source: "Pearson 1990; MacRae 1970 — Gnostic Sophia directly inherits the Hokmah-figure, transforming her from God's instrument to a fallen aeon"
+    source-tier: T1
   - target: "logos-johannine"
     type: "ancestor-of"
     source: "Witherington 1994; Dunn 1980 — John 1:1–14 Logos hymn structurally parallels Proverbs 8:22–31 and Sirach 24; Wisdom-Christology is the probable matrix"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Wisdom and the Hebrew Epic: Ben Sira's Hymn in Praise of the Fathers"

@@ -20,12 +20,15 @@ syncretic-edges:
   - target: "dionysus-mystery"
     type: "ancient-identification"
     source: "Aristophanes *Frogs* 316–353 (the Iacchus-procession chorus); Sophocles *Antigone* 1146–1152; Strabo 10.3.10. The Iacchus-Dionysus identification is so standard that Aristophanes can simply assume it"
+    source-tier: T1
   - target: "zagreus"
     type: "ancient-identification"
     source: "Orphic-Eleusinian synthesis identifies Iacchus = Zagreus = the child-Dionysus dismembered by the Titans (Diodorus 4.4; the late-antique Orphic theologians)"
+    source-tier: T1
   - target: "demeter"
     type: "parallel-motif"
     source: "Some Eleusinian traditions make Iacchus the son of Demeter (not of Persephone); the variant reflects the Mother-Daughter-Child triadic structure of the Eleusinian cult"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Eleusis: Archetypal Image of Mother and Daughter"

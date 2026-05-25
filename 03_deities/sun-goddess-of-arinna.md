@@ -20,10 +20,12 @@ syncretic-edges:
   - target: "hebat"
     type: "ancient-identification"
     source: "Prayer of Puduhepa, CTH 384"
+    source-tier: T1
     notes: "Imperial theological merger ~13th c. BCE — Puduhepa identifies her Kizzuwatnan goddess Hebat with the older Hittite imperial Sun Goddess of Arinna. Originally distinct; merger reflects political integration of Hurrian cult into Hittite imperial religion."
   - target: "shamash-akkadian"
     type: "scholarly-parallel"
     source: "Schwemer; Beckman 1995"
+    source-tier: T1
     notes: "Both are 'sun deity of royal sovereignty,' but the Hittite Sun Goddess is feminine — contrasting with Mesopotamian Shamash (masculine) and aligning with Anatolian theological convention."
 status: "metadata"
 refs:

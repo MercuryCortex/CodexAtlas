@@ -20,18 +20,23 @@ syncretic-edges:
   - target: "[[gabriel-archangel]]"
     type: "shared-tradition"
     source: "Gabriel (Jibrīl) and Isrāfīl are both principal angels of Islamic theology; Gabriel carries revelation (the Quran delivered to Muhammad) while Isrāfīl carries the eschatological trumpet signal. Together they represent the two fundamental divine messages: the prophetic word (Gabriel) and the final command (Isrāfīl). Both are mentioned in hadith as the four archangels alongside Michael (Mīkā'īl) and the Angel of Death (ʿIzrā'īl)."
+    source-tier: T1
   - target: "[[raphael-archangel]]"
     type: "scholarly-parallel"
     source: "Some Jewish and early Christian sources identify the angel of the Last Trump with Raphael. The four-archangel schema (Gabriel, Michael, Raphael, Uriel in Judaism/Christianity; Jibrīl, Mīkā'īl, Isrāfīl, ʿIzrā'īl in Islam) maps the same structural positions differently — Isrāfīl occupies a position parallel to Raphael's as the eschatological herald in the alternate reckoning."
+    source-tier: T1
   - target: "[[heimdall]]"
     type: "structural-parallel"
     source: "The most striking cross-tradition structural parallel: Heimdall the Norse watchman stands at the bridge Bifröst holding the Gjallarhorn, waiting to sound it at Ragnarök — just as Isrāfīl stands with the Ṣūr pressed to his lips, waiting for Allah's command to sound it at Yawm al-Qiyāma. Both figures are defined by this suspended-trumpet motif: the cosmic pause before the end. No transmission; independent development of the eschatological-trumpet-herald archetype."
+    source-tier: T1
   - target: "[[saoshyant]]"
     type: "structural-parallel"
     source: "Saoshyant is the Zoroastrian eschatological savior who initiates the final renovation (Frashokereti) at the end of time — paralleling Isrāfīl's role as the herald of Yawm al-Qiyāma. Both are eschatological figures who trigger the transition from the present world to the ultimate divine judgment and renewal. The Zoroastrian influence on Islamic eschatology through the Sasanian-Iranian substrate is widely documented (Boyce, A History of Zoroastrianism)."
+    source-tier: T1
   - target: "[[metatron]]"
     type: "structural-parallel"
     source: "Metatron in Jewish mystical tradition (Enoch literature, Sefer Hekhalot) is the supreme angelic intermediary who stands before the Divine Throne and transmits divine commands — paralleling Isrāfīl's position of fixed attention on the Divine Throne, awaiting the command to blow. Both are angels whose defining posture is readiness before the highest divine presence."
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Study Quran"

@@ -20,6 +20,7 @@ syncretic-edges:
   - target: "[[yama-vedic]]"
     type: "direct-borrowing"
     source: "Teiser, Stephen F. (1988). *The Ghost Festival in Medieval China*. Princeton; Teiser (1994). *The Scripture on the Ten Kings*. Hawaii; Glassman, Hank (2012). *The Face of Jizō*. Hawaii"
+    source-tier: T1
     notes: "MASSIVE-WIN: direct phonetic descent. Sanskrit *Yama* → Middle-Chinese 閻摩 *Yán-mó* → Chinese 閻羅王 *Yánluó-wáng* → Japanese 閻魔王 *Enma-Ō*. The Vedic god of the underworld (the first mortal, who became king of the dead in the Rigveda) is preserved by name across the Buddhist transmission, with Chinese Buddhism elaborating his role into the Ten Kings of Hell tribunal — a syncretic blend of Buddhist karmic-judgment doctrine with Chinese imperial-bureaucracy iconography. The result is Yama as a Chinese-style judge in court robes presiding over a celestial-bureaucracy court of ten kings, each ruling one of the ten hells"
 status: "metadata"
 refs:

@@ -25,22 +25,27 @@ cross-tradition-edges:
   - target: "ajanta-caves"
     type: "parallel-form"
     source: "Behrendt 2007; Behl 1998"
+    source-tier: T1
     notes: "Both Bamiyan (~507/554 CE) and Ajanta Phase II (~460–478 CE) are major rock-cut Buddhist monuments of the 5th–6th c.; both deploy mural painting + sculpted figures. Ajanta is upstream Indic; Bamiyan is the Central Asian Greco-Buddhist branch."
   - target: "ellora-cave-complex"
     type: "parallel-form"
     source: "Behrendt 2007"
+    source-tier: T1
     notes: "Both rock-cut Buddhist + cross-tradition monuments; Bamiyan (Afghanistan, ~507/554) and Ellora Buddhist caves (Maharashtra, ~600–730 CE)."
   - target: "mogao-grottoes-dunhuang"
     type: "stylistic-ancestor"
     source: "Whitfield 2015"
+    source-tier: T1
     notes: "Bamiyan is one of the principal upstream stylistic ancestors of the Buddhist cave-art tradition at Dunhuang (Mogao Grottoes, ~4th–14th c. CE); the Hellenistic-Buddhist iconographic vocabulary transmits eastward along the Silk Road via Bamiyan + the broader Khotan-Kucha network."
   - target: "tradition-greco-buddhism"
     type: "exemplifies"
     source: "Behrendt 2007; Foucher 1905-1923"
+    source-tier: T1
     notes: "Bamiyan is the most monumental surviving (now destroyed) implementation of Greco-Buddhist sculpture — the iconographic-stylistic fusion of Hellenistic figural conventions (drapery, contrapposto, naturalistic anatomy) with Buddhist iconographic subject-matter."
   - target: "parthenon-athens"
     type: "deep-iconographic-ancestor"
     source: "Foucher 1905-1923; Boardman 1994"
+    source-tier: T1
     notes: "The Hellenistic sculptural vocabulary that Greco-Buddhist art deploys (and that the Bamiyan Buddhas embody at monumental scale) descends from the Classical Greek sculptural tradition. The Parthenon (5th c. BCE) is one of the deep iconographic ancestors of the Bamiyan figural style via the Bactrian Greek successor kingdoms."
 status: "metadata"
 refs:

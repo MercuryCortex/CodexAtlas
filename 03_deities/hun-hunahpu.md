@@ -20,10 +20,12 @@ syncretic-edges:
   - target: "[[osiris]]"
     type: "scholarly-parallel"
     source: "Mathews & Henderson, *Animal Bones and Resurrection* (1985); Schele & Freidel, *A Forest of Kings* (1990) — both are killed by an underworld antagonist, scattered/severed, gathered/restored by a female figure, and resurrected as the food (Osiris→grain; Hun Hunahpu→maize). Independent emergence across the Atlantic"
+    source-tier: T1
     notes: "MASSIVE WIN: the cross-Atlantic resurrection-via-vegetal-rebirth parallel between Osiris (Egypt, c. -2400) and Hun Hunahpu (K'iche' Maya, recorded c. 1550 from oral tradition reaching back to Classic Maya c. 250-900 CE) is one of the strongest cases of structural-parallel independent emergence in world religion. Zero documented contact"
   - target: "[[hunahpu]]"
     type: "ancient-identification"
     source: "Popol Vuh, Parts I-III — Hun Hunahpu is the father; Hunahpu is one of the twin sons. The names overlap in modern misreadings"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Popol Vuh: The Mayan Book of the Dawn of Life"

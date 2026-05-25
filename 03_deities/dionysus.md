@@ -20,18 +20,22 @@ syncretic-edges:
   - target: "[[osiris]]"
     type: "ancient-identification"
     source: "Herodotus 2.42, 2.144; Plutarch, On Isis and Osiris"
+    source-tier: T1
     notes: "Greeks identified Dionysus with Egyptian Osiris from Herodotus onward; both are dying-and-rising vegetation gods. The ancient identification stands across multiple late-classical sources"
   - target: "[[shiva]]"
     type: "scholarly-parallel"
     source: "Daniélou, Alain (1979). *Shiva and Dionysus: The Religion of Nature and Eros*. Inner Traditions; Detienne 1989 *Dionysos at Large*"
+    source-tier: T1
     notes: "Daniélou's full-book argument: Shiva and Dionysus are two articulations of the same archaic Eurasian wild-vegetation-god, both descended from a pre-Aryan / pre-Hellenic substrate. Convergence on ascetic-erotic paradox, wild-ecstatic ritual, bull/horn iconography, cosmic-dance/sparagmos, and outsider divine origin myth. Mainstream scholarship reads it as structural rather than historical, but the parallel is the canonical Indo-European comparative pairing"
   - target: "[[zagreus-orphic]]"
     type: "ancient-identification"
     source: "Orphic theogonies; Dionysus-Zagreus is dismembered by Titans and reborn — the central Orphic mystery"
+    source-tier: T1
     notes: "Orphic re-identification of Dionysus through the dismemberment-rebirth myth; foundational to the mystery-cult tradition"
   - target: "[[theme-soma-haoma-eucharist]]"
     type: "Greek-branch-of-transmission-chain"
     source: "Kerényi 1976 *Dionysos*; Wasson/Hofmann/Ruck 1978 *The Road to Eleusis* — Dionysus is the Greek node of the sacred-drink transmission chain. Wine as divine blood + *entheos* (god-within) ritual logic + the Greek-Iranian Thrace/Scythia contact zone connecting Dionysian and haoma traditions. The vine-god IS the vine; drinking the wine is drinking the god — the same ritual logic that emerges in Vedic Soma (Mandala 9) and downstream as the Christian Eucharist. See [[theme-soma-haoma-eucharist]]"
+    source-tier: T1
     notes: "MASSIVE-WIN: Dionysus is the Mediterranean-end pivot of the 3,500-year sacred-drink chain — the bridge between the Indo-Iranian *\\*sauma-* tradition (via Thracian/Scythian contact) and the Christian Eucharist. Cross-lens: 03_deities → 06_themes"
 status: "metadata"
 refs:

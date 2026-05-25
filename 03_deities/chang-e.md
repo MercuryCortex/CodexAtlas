@@ -20,15 +20,19 @@ syncretic-edges:
   - target: "[[selene]]"
     type: "scholarly-parallel"
     source: "Moon goddess who drives/inhabits the celestial realm; associated with beauty and solitude. Greek Selene loves the sleeping Endymion; Chang'e lives alone on the moon. Both embody the isolated, luminous feminine in the sky."
+    source-tier: T1
   - target: "[[tsukuyomi]]"
     type: "scholarly-parallel"
     source: "Both moon deities inhabit a realm separated from the primary solar deity (Amaterasu / the sun). Tsukuyomi's separation from Amaterasu after murdering Ukemochi parallels Chang'e's solitary exile on the moon."
+    source-tier: T1
   - target: "[[mama-quilla]]"
     type: "scholarly-parallel"
     source: "Both are feminine moon deities whose veneration anchors a major cyclical festival — Mama Quilla governs Inca lunar calendar; Chang'e anchors the Mid-Autumn Festival."
+    source-tier: T1
   - target: "[[chandra]]"
     type: "scholarly-parallel"
     source: "Vedic moon deity sharing the Chang'e domain cluster: immortality-associated substance (soma / elixir), cyclical disappearance and return, celestial residence. Chandra wanes and waxes; Chang'e drank the elixir of immortality."
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Huainanzi"

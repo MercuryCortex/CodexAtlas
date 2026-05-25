@@ -20,12 +20,15 @@ syncretic-edges:
   - target: "[[gabriel-archangel]]"
     type: "scholarly-parallel"
     source: "Co-archangel"
+    source-tier: T1
   - target: "[[michael-archangel]]"
     type: "scholarly-parallel"
     source: "Co-archangel"
+    source-tier: T1
   - target: "[[raphael-archangel]]"
     type: "scholarly-parallel"
     source: "Co-archangel — together they form the apocalyptic four"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "1 Enoch: A Commentary"

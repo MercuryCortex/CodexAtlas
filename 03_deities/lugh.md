@@ -18,9 +18,11 @@ syncretic-edges:
   - target: "[[lugus]]"
     type: "ancient-identification"
     source: "Insular Lugh = Continental Lugus (Caesar *BG* 6.17 lists Mercury — i.e. Lugus — as the chief god of the Gauls)"
+    source-tier: T1
   - target: "[[mercury-roman]]"
     type: "ancient-identification"
     source: "*interpretatio romana* — Caesar identifies the Gaulish chief god (Lugus) with Mercury; the Gallo-Roman cult of Mercury fuses both"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Celtic Mythology"

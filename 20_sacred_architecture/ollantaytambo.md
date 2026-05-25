@@ -23,22 +23,27 @@ cross-tradition-edges:
   - target: "sacsayhuaman"
     type: "cognate-form"
     source: "Protzen 1993"
+    source-tier: T1
     notes: "Both Pachacuti-era Inca constructions in the Cusco region with cyclopean stonework. Sacsayhuamán uses larger individual stones; Ollantaytambo's stonework is somewhat smaller but more architecturally varied + integrated with terrace agriculture."
   - target: "machu-picchu"
     type: "cognate-form"
     source: "Niles 1999; Protzen 1993"
+    source-tier: T1
     notes: "Both: Pachacuti's private royal estates with integrated ritual + agricultural + residential functions. Ollantaytambo is in the Sacred Valley floor + adjacent mountainside; Machu Picchu is on a high mountain saddle further west."
   - target: "borobudur-stupa-mandala"
     type: "parallel-form"
     source: "Snodgrass 1985"
+    source-tier: T1
     notes: "Terraced stepped religious-architecture climbing a mountainside. Inca + Buddhist independent emergences of mountain-ascending sacred-architectural progression."
   - target: "gobekli-tepe"
     type: "parallel-form"
     source: "(general)"
+    source-tier: T1
     notes: "Megalithic construction in service of ritual function."
   - target: "great-wall-of-china"
     type: "parallel-form"
     source: "(general)"
+    source-tier: T1
     notes: "Massive labour-intensive imperial-state construction project; Inca Sacred Valley terraces ↔ Chinese imperial wall — both demonstrating empire's capacity to mobilize colossal labour."
 status: "metadata"
 refs:

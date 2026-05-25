@@ -20,14 +20,17 @@ syncretic-edges:
   - target: "nabu"
     type: "scholarly-parallel"
     source: "Russell 1987"
+    source-tier: T1
     notes: "Tir and Nabu (Babylonian god of writing and scribal arts) occupy the same divine role: the scribe-god who records human fate, patron of scribes and scholars. The Mesopotamian substrate in Armenian religion (via Urartian and then Parthian channels) makes a direct influence plausible. Both are messengers of the sky-father and keepers of the tablet of destiny."
   - target: "mercury-roman"
     type: "ancient-identification"
     source: "Russell 1987; Agathangelos"
+    source-tier: T1
     notes: "Greek/Roman interpretatio identified Tir with Hermes/Mercury — messenger of the gods, patron of communications, arts, and trade. The Armenian Tir covers Mercury's full portfolio: messenger, scribe, guide of souls, god of eloquence and learning."
   - target: "aramazd"
     type: "associated"
     source: "Russell 1987"
+    source-tier: T1
     notes: "Tir serves as messenger and scribe of Aramazd (the Armenian Zeus/Ahura Mazda) — recording the fate of human souls, delivering divine decrees, and presiding over prophetic dreams."
 status: "metadata"
 refs:

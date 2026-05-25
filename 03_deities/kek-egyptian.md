@@ -20,12 +20,15 @@ syncretic-edges:
   - target: "[[nun]]"
     type: "scholarly-parallel"
     source: "Both Nun and Kek personify aspects of the pre-creation state in Hermopolitan theology: Nun = the primordial water-chaos; Kek = the primordial darkness. They are co-members of the Ogdoad and together constitute the full characterization of what existed before the first sunrise. Hornung (1982) treats them as complementary, not identical."
+    source-tier: T1
   - target: "[[apophis]]"
     type: "scholarly-parallel"
     source: "Apophis (the serpent of chaos who threatens the solar bark each night) and Kek (primordial darkness) share the darkness-domain, but the theological valence differs: Kek is pre-creative and morally neutral — the darkness before creation; Apophis is anti-creative and actively malevolent — the darkness that would undo creation. Kek is origin; Apophis is threat."
+    source-tier: T1
   - target: "[[atum]]"
     type: "scholarly-parallel"
     source: "Atum's self-creation from the primordial mound (in Heliopolitan theology) is the moment when differentiated existence emerges from the Ogdoad-state — from the undifferentiated waters (Nun), darkness (Kek), hiddenness (Amun/Amaunet), and infinity (Heh/Hauhet). Atum's creation is the end of Kek's reign and the beginning of light, form, and time."
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Conceptions of God in Ancient Egypt: The One and the Many"

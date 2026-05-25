@@ -20,14 +20,17 @@ syncretic-edges:
   - target: "[[holy-spirit]]"
     type: "substrate-influence"
     source: "Boyce & Grenet 1991 *A History of Zoroastrianism* vol. 3"
+    source-tier: T1
     notes: "The trans-religious 'Holy Spirit' (ruaḥ ha-qodesh, pneuma hagion) concept may have absorbed Zoroastrian Spenta Mainyu vocabulary in the post-exilic and Hellenistic Jewish/Christian milieu. The translation of Avestan *Spenta Mainyu* = 'Holy Spirit' is structurally striking. Heavily contested mechanism but the structural parallel is uncontested"
   - target: "[[persian-period-injection]]"
     type: "source-deity-of-transmission"
     source: "Alexander 2010 on the Qumran 1QS 3:13–4:26 Two-Spirits tractate; Boyce 1975, *History of Zoroastrianism* vol. I — Spenta Mainyu is the Bounteous-Spirit pole of the Gathic primordial pair whose Spirit-of-Truth / Spirit-of-Deceit structure is the closest documented Persian source for the Essene Two Spirits doctrine. See [[persian-period-injection]] Channel 1 (cosmic dualism)"
+    source-tier: T1
     notes: "Spenta Mainyu's role is theologically subtler than Angra Mainyu's — in Younger-Avestan + Pahlavi Zoroastrianism Spenta Mainyu is increasingly identified WITH Ahura Mazda, leaving Ahriman as the standalone adversary; this collapse is one of the source-templates for the Jewish/Christian Holy Spirit (pneuma hagion) developing as God's own active-creative aspect rather than a separate hypostasis"
   - target: "theme-zoroastrian-jewish-exchange"
     type: "source-deity-of-transmission"
     source: "Boyce 1975-1991; Shaked 1984 — Spenta Mainyu's structural pairing with Angra Mainyu and the eventual collapse-into-Ahura-Mazda is one of the Persian-side reference points for the Holy Spirit / Ruaḥ-ha-Qodesh vocabulary cluster"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "A History of Zoroastrianism, vol. I"

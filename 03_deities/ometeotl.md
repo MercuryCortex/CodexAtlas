@@ -20,15 +20,19 @@ syncretic-edges:
   - target: "[[ein-sof]]"
     type: "scholarly-parallel"
     source: "León-Portilla 1963; both are the unmanifest infinite source above all intermediaries, never directly worshipped"
+    source-tier: T1
   - target: "[[the-one-plotinus]]"
     type: "scholarly-parallel"
     source: "Comparative theology: both are the ineffable first principle beyond being, from which all else emanates"
+    source-tier: T1
   - target: "[[the-monad-gnostic]]"
     type: "scholarly-parallel"
     source: "Both are the primordial unity above the demiurgic level, the hidden source prior to creation"
+    source-tier: T1
   - target: "[[tian-heaven]]"
     type: "scholarly-parallel"
     source: "Both are impersonal supreme principles — never directly anthropomorphic cult objects, governing cosmic order from transcendence"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Aztec Thought and Culture"

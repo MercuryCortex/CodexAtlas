@@ -23,6 +23,7 @@ syncretic-edges:
   - target: "hermes-greek"
     type: "syncretic-identification"
     source: "Hellenistic-Roman Hermanubis — composite figure combining Anubis's psychopomp role with Hermes's; especially attested in Roman Egypt. Plutarch, De Iside et Osiride §61 (c. 100 CE): explicitly parallels Anubis with Hermes as guide of souls"
+    source-tier: T1
 parallels:
   - target: "[[psychostasia-soul-weighing]]"
     type: "parallel-motif"

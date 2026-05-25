@@ -20,12 +20,15 @@ syncretic-edges:
   - target: "mithra-zoroastrian"
     type: "scholarly-parallel"
     source: "Name shared and likely a Roman-Iranian transmission point, but Roman cult content (tauroctony, mysteries, planetary cosmology) has no Iranian parallel; the relationship is contested"
+    source-tier: T1
   - target: "sol-invictus"
     type: "ancient-identification"
     source: "Mithraeum dedications: *Deo Soli Invicto Mithrae* — explicit fusion in cult titulature"
+    source-tier: T1
   - target: "theme-soma-haoma-eucharist"
     type: "parallel-branch-of-transmission-chain"
     source: "Justin Martyr, *First Apology* 66 (~150 CE) — explicitly identified the Mithraic bread-and-wine meal as a 'diabolical imitation' of the Christian Eucharist; Clauss 2000; Beck 2006 — the Mithraic *agapē* meal of the spelaeum (bread marked with cross + wine) consumed after the tauroctony reflects the same Iranian-substrate sacred-meal logic that runs through the soma-haoma-eucharist transmission chain. The tauroctony may preserve an earlier Iranian sacrifice where bull's blood substitutes for haoma juice as the divine-substance medium. See [[theme-soma-haoma-eucharist]]"
+    source-tier: T1
     notes: "Cross-lens: 03_deities → 06_themes. The Justin Martyr 'diabolical imitation' charge is theologically revealing — the early Christians noticed the parallel and felt obliged to assert priority, which itself is evidence the parallel was conspicuous"
 status: "metadata"
 refs:

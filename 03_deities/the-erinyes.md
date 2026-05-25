@@ -18,6 +18,7 @@ syncretic-edges:
   - target: "[[mastema]]"
     type: "scholarly-parallel"
     source: "Punitive-adversarial divine agents permitted to enact vengeance against transgressors"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Aeschylus, Oresteia"

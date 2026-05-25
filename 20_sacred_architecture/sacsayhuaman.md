@@ -23,26 +23,32 @@ cross-tradition-edges:
   - target: "machu-picchu"
     type: "cognate-form"
     source: "Bauer 1998; Protzen 1993"
+    source-tier: T1
     notes: "Both: Pachacuti-era major Inca monumental construction in the Cusco region. Sacsayhuamán is the larger and the explicitly civic/imperial site (overlooking Cusco); Machu Picchu is the rural-private royal estate. Same imperial architectural language."
   - target: "ollantaytambo"
     type: "cognate-form"
     source: "Protzen 1993"
+    source-tier: T1
     notes: "Both: cyclopean Inca stonework with carved-rock terrace integration. Sacsayhuamán uses larger individual stones (some over 100 tonnes) than Ollantaytambo."
   - target: "stonehenge-sacred-site"
     type: "parallel-form"
     source: "(general)"
+    source-tier: T1
     notes: "Cyclopean / megalithic sacred-architecture. Stonehenge: ~25-tonne sarsens. Sacsayhuamán: ~150-tonne polygonal blocks. Independent cultural emergence of megalithic ritual architecture."
   - target: "malta-temples-c-3600-2500-bce"
     type: "parallel-form"
     source: "(general)"
+    source-tier: T1
     notes: "Megalithic sacred construction with cyclopean blocks fitted without mortar."
   - target: "gobekli-tepe"
     type: "parallel-form"
     source: "(general)"
+    source-tier: T1
     notes: "Earliest known megalithic ritual architecture (~9500 BCE) ↔ latest sustained megalithic-traditional ritual architecture (Inca, ~1450 CE). 11,000 years apart, mutually independent."
   - target: "tradition-inca-andean"
     type: "iconic-monument-of"
     source: "D'Altroy 2014"
+    source-tier: T1
     notes: "Sacsayhuamán's cyclopean walls are the canonical image of Inca stonework. With Machu Picchu the most internationally-recognized Inca monument."
 status: "metadata"
 refs:

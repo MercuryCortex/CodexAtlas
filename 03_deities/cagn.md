@@ -20,30 +20,37 @@ syncretic-edges:
   - target: "anansi"
     type: "scholarly-parallel"
     source: "Pelton 1980; comparative trickster literature"
+    source-tier: T1
     notes: "Both are trickster-creators in West/Southern African traditions — insect/spider form, creative cunning, ability to shape the world through deception and dream."
   - target: "eshu"
     type: "scholarly-parallel"
     source: "Pelton 1980 — comparative trickster typology"
+    source-tier: T1
     notes: "Eshu as the ambiguous crossroads trickster and ǀKaggen as the shapeshifting creator-trickster share the trickster-as-cosmic-hinge function."
   - target: "loki"
     type: "scholarly-parallel"
     source: "comparative trickster literature"
+    source-tier: T1
     notes: "Both are shapeshifters whose creative-destructive ambivalence is constitutive of the cosmos; both are ultimately uncontainable by social order."
   - target: "coyote-navajo"
     type: "scholarly-parallel"
     source: "Hyde 1998 — Trickster Makes This World"
+    source-tier: T1
     notes: "Coyote as shapeshifting trickster-creator of North American tradition is typologically parallel to ǀKaggen. Both are associated with creative error and transformation."
   - target: "thoth"
     type: "scholarly-parallel"
     source: "comparative religion — animal-headed creator"
+    source-tier: T1
     notes: "Thoth in ibis and baboon form as a creator/mediator god parallels ǀKaggen's primary animal form (mantis) as a creative-divine principle."
   - target: "nuwa"
     type: "scholarly-parallel"
     source: "comparative creation mythology"
+    source-tier: T1
     notes: "Nüwa creates humans from clay; ǀKaggen creates the eland from his son's shoe-leather. Both represent creation-from-transformed-humble-materials — the sacred made from the mundane."
   - target: "rainbow-serpent"
     type: "scholarly-parallel"
     source: "Australian-African comparative framework"
+    source-tier: T1
     notes: "Both are shapeshifting creator beings of hunter-gatherer religious traditions associated with rain, transformation, and the ambiguous boundary between nature and sacred."
 status: "metadata"
 refs:

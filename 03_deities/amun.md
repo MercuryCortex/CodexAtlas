@@ -20,12 +20,15 @@ syncretic-edges:
   - target: "ra"
     type: "ancient-identification"
     source: "Egyptian theological fusion from the Middle Kingdom onward — Amun-Ra becomes the high-god of Egypt's New Kingdom; attested already in 18th-Dynasty hymnody"
+    source-tier: T1
   - target: "zeus"
     type: "ancient-identification"
     source: "Herodotus *Histories* 2.42, 2.55: 'Zeus is called Ammon by the Egyptians'; the Siwa oracle is consulted by Alexander the Great who is hailed there as son of Zeus-Ammon"
+    source-tier: T1
   - target: "amun-ra"
     type: "syncretic-fusion"
     source: "Egyptian theological synthesis — Amun (hidden) + Ra (visible solar) → composite high-god of the New Kingdom"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Egyptian Solar Religion in the New Kingdom: Re, Amun, and the Crisis of Polytheism"

@@ -20,14 +20,17 @@ syncretic-edges:
   - target: "apollo"
     type: "ancient-identification"
     source: "Encarnação, José d' (1975). Divindades Indígenas sob o Domínio Romano em Portugal."
+    source-tier: T1
     notes: "Roman dedicators occasionally identified Endovélico with Apollo based on the shared oracle function, though most inscriptions retain his indigenous name without Roman equivalent — suggesting the identification was partial. The boar sacrifice at his sanctuary has no Apollo parallel and marks the distinctiveness of his cult."
   - target: "asclepius"
     type: "structural-parallel"
     source: "Gamito, Teresa Júdice (2005). 'Endovélico' in *Enciclopédia de Mitologia Portuguesa*. Verbo."
+    source-tier: T1
     notes: "The most precise functional parallel: both are healing deities whose cults center on incubation (ritual sleep in the sanctuary to receive a prophetic/diagnostic dream). Asclepian sanctuaries (Epidaurus, Pergamon) and the Endovélico sanctuary at São Miguel da Mota show the same ritual structure: pilgrimage, purification, incubation sleep, votive anatomical deposit. Whether this reflects Mediterranean-wide ritual diffusion or independent convergence on the same healing logic is debated."
   - target: "tradition-lusitanian-religion"
     type: "part-of"
     source: "Encarnação (1975)"
+    source-tier: T1
     notes: "Endovélico is the most important Lusitanian deity by attestation density and geographic reach of his cult — the nodal deity of the pre-Roman western Iberian religious system."
 status: "metadata"
 refs:

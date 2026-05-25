@@ -20,24 +20,31 @@ syncretic-edges:
   - target: "illuyanka"
     type: "parallel-form"
     source: "Watkins 1995 *How to Kill a Dragon* — Vedic Vṛtra and Hittite Illuyanka share the inherited PIE serpent-slaying poetic formula *gʷhen- ogʷhim ('to slay the serpent'); Rig Veda 1.32.1's *áhann áhim* ('he slew the dragon,' of Indra) and Hittite *MUŠilluyankan kuenta* ('he slew the serpent') are the same formula in two Indo-European branches"
+    source-tier: T1
   - target: "typhon"
     type: "parallel-form"
     source: "Watkins 1995; West 2007 *Indo-European Poetry and Myth* — the Indo-European serpent-slaying formula instances; West argues the Greek tradition combines inherited PIE material with Anatolian-substrate influence"
+    source-tier: T1
   - target: "tiamat"
     type: "parallel-form"
     source: "Day 1985 *God's Conflict with the Dragon and the Sea*; West 2007 — Mesopotamian and Indo-European chaoskampf serpents as parallel-form within the wider Old World mythological pattern"
+    source-tier: T1
   - target: "lotan"
     type: "parallel-form"
     source: "Watkins 1995; West 2007 — Ugaritic-Northwest-Semitic instance"
+    source-tier: T1
   - target: "apophis"
     type: "parallel-form"
     source: "Hornung 1982 *Conceptions of God in Ancient Egypt* — Egyptian (non-Indo-European) instance of the wider chaos-serpent type; structural-not-genetic parallel"
+    source-tier: T1
   - target: "apaosha"
     type: "ancient-identification"
     source: "Macdonell 1897 *Vedic Mythology*; Boyce 1975 *A History of Zoroastrianism* vol. 1 — Apaosha (the Avestan drought-demon defeated by Tištrya in Yašt 8) is the closest Iranian cognate of Vedic Vṛtra; both Indo-Iranian dragons obstruct the waters/rain"
+    source-tier: T1
   - target: "serpent-dual-nature"
     type: "chaos-pole-of-serpent-symbolism"
     source: "Watkins 1995 *How to Kill a Dragon*; West 2007 *Indo-European Poetry and Myth* — Vṛtra is the Vedic-end instance of the PIE serpent-slaying formula (*gʷhen- h₃gʷhi-* 'slew serpent'); the dragon-of-obstruction whose slaying releases the waters. The Indra-Vṛtra mytheme is the most-cited Indo-European exemplar of the serpent-as-cosmic-chaos pole. See [[serpent-dual-nature]]"
+    source-tier: T1
     notes: "Cross-lens: 03_deities → 06_themes"
 status: "metadata"
 refs:

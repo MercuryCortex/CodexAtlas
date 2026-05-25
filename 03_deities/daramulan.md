@@ -20,16 +20,20 @@ syncretic-edges:
   - target: "[[baiame]]"
     type: "shared-tradition"
     source: "Howitt, *The Native Tribes of South-East Australia* (1904); Mathews, *Aboriginal Religion in Australia* (1973) — the south-eastern Australian All-Father complex repeatedly couples Baiame (the supreme sky-father) with Daramulan (the initiating sky-being); the pairing functions as senior/junior or father/son depending on the local tradition"
+    source-tier: T1
   - target: "bunjil"
     type: "scholarly-parallel"
     source: "Howitt 1904 — south-eastern Australian All-Father cluster"
+    source-tier: T1
   - target: "indra"
     type: "scholarly-parallel"
     source: "Eliade 1958 — Vedic Indra as thunder-and-initiation sky-being; Daramulan as Australian thunder-and-initiation sky-being. Both are agents of male initiation rites and both speak through the thunder"
+    source-tier: T1
     notes: "Thunder-as-divine-voice-of-initiation cross-cultural parallel"
   - target: "thor"
     type: "scholarly-parallel"
     source: "Eliade 1958; Norse Thor as thunder-god; the bullroarer-as-divine-voice (Daramulan) parallels the thunder-as-divine-voice motif in Indo-European storm-gods"
+    source-tier: T1
 status: "metadata"
 status: "metadata"
 refs:

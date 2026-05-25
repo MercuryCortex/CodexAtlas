@@ -10,38 +10,47 @@ syncretic-edges:
   - target: "great-pyramid-of-khufu"
     type: "applies-to"
     source: "Lehner 1997; Allen 1988"
+    source-tier: T1
     notes: "The Great Pyramid is the architectural expression of this theology; its spatial sequence embodies the pharaoh's death-transfiguration-resurrection journey"
   - target: "subterranean-chamber-great-pyramid"
     type: "applies-to"
     source: "Lehner 1997"
+    source-tier: T1
     notes: "Chthonic/Osirian level — the underworld and primal chaos (*Nun*)"
   - target: "queens-chamber-great-pyramid"
     type: "applies-to"
     source: "Bauval 1994; Lehner 1997"
+    source-tier: T1
     notes: "Intermediate station; associated with Isis/Sirius; the *ka*"
   - target: "grand-gallery-great-pyramid"
     type: "applies-to"
     source: "Lehner 1997"
+    source-tier: T1
     notes: "The ascending approach — architectural embodiment of the soul's ascent"
   - target: "kings-chamber-great-pyramid"
     type: "applies-to"
     source: "Lehner 1997; Trimble 1964"
+    source-tier: T1
     notes: "Solar transformation (*akh*); union with Re; stellar shafts as soul-conduits to Orion and Thuban"
   - target: "step-pyramid-djoser-saqqara"
     type: "applies-to"
     source: "Lehner 1997"
+    source-tier: T1
     notes: "Prototype: the six-step stairway to heaven as the pharaoh's ascent"
   - target: "temple-of-inscriptions-palenque"
     type: "structural-parallel"
     source: "Schele & Miller 1986"
+    source-tier: T1
     notes: "Independent Maya convergence: nine-level pyramid as nine underworld levels; Pakal's sarcophagus lid shows death-and-resurrection cosmology"
   - target: "tradition-egyptian-religion"
     type: "grounded-in"
     source: "Allen 1988; Shaw 2000"
+    source-tier: T1
     notes: "The theology is inscribed in the Pyramid Texts (Unas, ~2375 BCE) and embodies Old Kingdom solar theology"
   - target: "tradition-hermeticism"
     type: "influenced"
     source: "Yates 1964"
+    source-tier: T1
     notes: "The Hermetic tradition absorbed Egyptian royal transfiguration theology via Neoplatonism; the pyramid as emblem of encoded gnosis"
 refs:
   - title: "The Egyptian Book of the Dead"

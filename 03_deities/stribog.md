@@ -20,18 +20,22 @@ syncretic-edges:
   - target: "perun"
     type: "pantheon-member"
     source: "Primary Chronicle (PVL) s.a. 980 — Vladimir I erected idols of Perun, Khors, Dazhbog, Stribog, Simargl, and Mokosh in Kiev"
+    source-tier: T1
     notes: "One of the six deities of Vladimir I's official 980 CE Kievan Rus pantheon — the only documented pre-Christian Slavic state religion. All six were superseded by the Christianization of Kievan Rus in 988 CE."
   - target: "aeolus"
     type: "structural-parallel"
     source: "Dixon-Kennedy, Mike (1998). Encyclopedia of Russian and Slavic Myth and Legend. ABC-CLIO."
+    source-tier: T1
     notes: "Both are wind-deity figures governing air and storms; typological parallel — no transmission."
   - target: "veles"
     type: "pantheon-member"
     source: "Primary Chronicle (PVL) s.a. 980"
+    source-tier: T1
     notes: "Co-member of the Vladimir 980 CE Kievan Rus official pantheon; Veles is the underworld / cattle deity, Stribog the wind deity — paired opposites (chthonic vs. aerial) within the same official cult."
   - target: "svarog"
     type: "structural-parallel"
     source: "Ivanits, Linda J. (1989). Slavic Mythology. M.E. Sharpe."
+    source-tier: T1
     notes: "Both Stribog (wind/air) and Svarog (celestial fire/sky forge) are sky-realm deities in Slavic cosmology; Stribog as atmospheric, Svarog as fire — complementary upper-world domains."
 traditions: ["[[tradition-slavic]]"]
 status: "metadata"

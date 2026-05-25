@@ -10,26 +10,32 @@ syncretic-edges:
   - target: "great-pyramid-of-khufu"
     type: "applies-to"
     source: "Bauval & Gilbert 1994"
+    source-tier: T1
     notes: "The three Giza pyramids as a ground map of Orion's Belt; Khufu = Al Nitak, Khafre = Al Nilam, Menkaure = Mintaka"
   - target: "kings-chamber-great-pyramid"
     type: "applies-to"
     source: "Bauval 1994; Trimble 1964"
+    source-tier: T1
     notes: "South shaft → Al Nitak (Osiris/Orion) at lower culmination; north shaft → Thuban (pole star); these alignments are accepted by mainstream Egyptology"
   - target: "queens-chamber-great-pyramid"
     type: "applies-to"
     source: "Bauval 1994"
+    source-tier: T1
     notes: "South shaft → Sirius (Isis/Sopdet); north shaft → Kochab"
   - target: "sphinx-of-giza"
     type: "applies-to"
     source: "Bauval & Hancock 1996"
+    source-tier: T3
     notes: "Sphinx faces Leo on the horizon at vernal equinox c. 10,500 BCE — extended precessional argument"
   - target: "robert-bauval"
     type: "originated-by"
     source: "Bauval 1989"
+    source-tier: T1
     notes: "Bauval first published the correlation in Discussions in Egyptology 1989"
   - target: "tradition-egyptian-religion"
     type: "grounded-in"
     source: "Shaw 2000; Lehner 1997"
+    source-tier: T1
     notes: "The theological basis is real: Orion was identified with Osiris; Sirius with Isis; the *ba* soul ascending to the stars is attested in the Pyramid Texts"
 refs:
   - title: "The Orion Mystery"

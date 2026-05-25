@@ -19,6 +19,7 @@ syncretic-edges:
   - target: "Christian God (in 19th-c. Lönnrot-era translation and earlier missionary period)"
     type: "folk-syncretism"
     source: "Pentikäinen 1989"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Kalevala Mythology"

@@ -20,10 +20,12 @@ syncretic-edges:
   - target: "the-moirai"
     type: "structural-parallel"
     source: "West, M.L. (2007). Indo-European Poetry and Myth. Oxford UP. pp. 378–384."
+    source-tier: T1
     notes: "Both are fate-deity figures who determine the span and quality of human life. The Baltic Laima is a single goddess (unlike the Greek triple Moirai) but performs the same function of birth-fate determination. West reconstructs a PIE fate-goddess tradition from which both descend."
   - target: "saule"
     type: "theological-companion"
     source: "Greimas (1992). Of Gods and Men."
+    source-tier: T1
     notes: "Laima and Saule (the sun goddess) appear together in many Lithuanian dainas as companion-deities governing human life. Saule governs the daily-seasonal cycle; Laima governs individual life-fate. The pairing suggests a complementary cosmological system: cosmic order (sun) and individual destiny (fate)."
 status: "metadata"
 refs:

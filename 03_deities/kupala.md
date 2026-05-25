@@ -19,18 +19,23 @@ syncretic-edges:
   - target: "[[jarilo]] (spring/summer divine pair; Kupala's partner in some regional traditions)"
     type: "folk-syncretism"
     source: "East Slavic and South Slavic folk tradition; the Kupala-Jarilo sibling/couple pair as summer-completion of Jarilo's spring arrival; Propp 1963"
+    source-tier: T1
   - target: "[[marzanna]] (winter/death deity whose defeat Kupala's summer celebrates)"
     type: "scholarly-parallel"
     source: "The Marzanna-drowning / Kupala-bonfire opposition as the folk calendar's life-death axis; Afanasyev 1869"
+    source-tier: T1
   - target: "[[perun]] (fire as Perun's instrument; Kupala bonfires may contain thunderfire mythology)"
     type: "scholarly-parallel"
     source: "Rybakov 1981 — the Kupala fire as sacred fire with possible thunder-god connection"
+    source-tier: T1
   - target: "[[belenos]] (Celtic midsummer fire-festival parallel — Beltane)"
     type: "scholarly-parallel"
     source: "Typological: midsummer fire-festival across European traditions; no genetic connection; MacKillop 1998"
+    source-tier: T1
   - target: "[[brigid]] (Celtic fire-goddess and festival parallel; St Brigid's fires as sacred seasonal fire)"
     type: "scholarly-parallel"
     source: "Typological: sacred fire at seasonal threshold; both figures partially Christianized"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Poeticheskie vozzreniya slavyan na prirodu"

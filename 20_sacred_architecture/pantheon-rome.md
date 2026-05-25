@@ -24,14 +24,17 @@ cross-tradition-edges:
   - target: "parthenon-athens"
     type: "indirect-typological-predecessor"
     source: "Stamper 2005; MacDonald 1976"
+    source-tier: T1
     notes: "The Roman temple-form is a synthesis of Greek (orders, pediment, decoration) and Etruscan-Italic (frontal entry, podium, deep porch) traditions. The Pantheon's portico is overtly Greek-classicising (eight Corinthian columns, pediment); the interior rotunda is **emphatically Roman** — a concrete-vaulted form Greek architecture had not developed. The Pantheon is therefore not a copy of any single Greek temple but the **Roman synthesis** of which the Parthenon is one ancestral source."
   - target: "hagia-sophia"
     type: "ancestor-of-monumental-domed-religious-architecture"
     source: "Mark & Çakmak 1992; MacDonald 1976"
+    source-tier: T1
     notes: "The Pantheon's 43.3 m concrete dome is the **largest unreinforced concrete dome ever built** and **the architectural ancestor** of the monumental-domed religious building. Its successors include Justinian's Hagia Sophia (537 — pendentive-dome solution, much larger but structurally distinct), the Dome of the Rock (691), and ultimately the Renaissance domes (Brunelleschi's Florence Duomo 1436; Michelangelo's St. Peter's). The Pantheon dome is the origin-text of the architectural type."
   - target: "dome-of-the-rock-jerusalem"
     type: "deep-typological-ancestor"
     source: "Krautheimer 1942; Grabar 1959"
+    source-tier: T1
     notes: "Long-range typological ancestor of the centrally-planned-domed religious building, of which the Dome of the Rock is the first Islamic exemplar. Direct architectural transmission cannot be proven; the typological lineage is well-established (Krautheimer)."
 status: "metadata"
 refs:

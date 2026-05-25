@@ -20,14 +20,17 @@ syncretic-edges:
   - target: "anshar-kishar"
     type: "ancient-identification"
     source: "Lambert 1983, *Iraq* 45 — the political-theological identification of Aššur with the cosmological An-šár (the older creator-principle of *Enuma Elish*) was a Neo-Assyrian programmatic move that promoted Aššur to the role Marduk held in Babylonian theology"
+    source-tier: T1
     notes: "Sennacherib's *Aššur-version of Enuma Elish* substitutes Aššur for Marduk; the identification with Anshar gives Aššur the role of primordial creator"
   - target: "enlil"
     type: "scholarly-parallel"
     source: "Lambert 1983; Saggs 1962/Routledge — Aššur absorbs Enlil's traditional functions of supreme decree-giver and king-of-the-gods in Assyrian state cult"
+    source-tier: T1
     notes: "Aššur's epithets and rituals show direct calque on Enlil's at Nippur"
   - target: "marduk"
     type: "scholarly-parallel"
     source: "Lambert 1983 — Neo-Assyrian programmatic substitution: where Babylonian theology places Marduk, Assyrian theology places Aššur"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The God Aššur"

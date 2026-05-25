@@ -21,18 +21,22 @@ syncretic-edges:
   - target: "asclepius-greek"
     type: "child-of"
     source: "Pausanias 1.23.4 — Hygieia worshipped alongside Asklepios on the Acropolis; daughter in standard genealogy"
+    source-tier: T1
     notes: "Hygieia and her father Asklepios are always worshipped together; she represents the maintenance of health, he the restoration of health after illness. The pairing encodes a medical philosophy: prevention alongside cure."
   - target: "panacea"
     type: "sibling-of"
     source: "Hippocratic Oath — both invoked as divine witnesses; both daughters of Asklepios in standard genealogy"
+    source-tier: T1
     notes: "Hygieia (prevention/maintenance) and Panacea (universal cure) represent the two poles of medical thinking. Their co-invocation in the Oath is not accidental — it encodes the full scope of medicine: keeping the healthy well AND healing the sick."
   - target: "apollo"
     type: "grandchild-of"
     source: "Standard Greek divine genealogy: Apollo → Asklepios → Hygieia"
+    source-tier: T1
     notes: "Hygieia is Apollo's granddaughter. The Hippocratic Oath invokes Apollo, then Asklepios, then Hygieia and Panacea — in exact divine genealogical order. The Oath's divine witness list encodes the family tree of healing."
   - target: "bhaisajyaguru"
     type: "structural-parallel"
     source: "Comparative religion — Edelstein 1945; Birnbaum 1979 *The Healing Buddha*; Bhaisajyaguru's first of twelve vows guarantees that all beings in his realm are entirely free from disease and physical defect — proactive health-maintenance; Hygieia represents prevention and health-maintenance within the Asklepian healing family"
+    source-tier: T1
     notes: "Prevention-first archetype: Hygieia (Greek goddess of health-maintenance, hygiene, and prevention — her name roots the English word 'hygiene') and Bhaisajyaguru (whose first vow is freedom from disease for all beings in his eastern Pure Land) both represent the proactive dimension of divine medicine: keeping beings healthy rather than restoring the already-sick. Independent Greek/Buddhist convergence on prevention-as-the-highest-form-of-medicine."
 tags:
   - medicine

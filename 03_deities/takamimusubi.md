@@ -20,15 +20,19 @@ syncretic-edges:
   - target: "[[three-pure-ones]]"
     type: "structural-parallel"
     source: "The Zōka-Sanshin (three primal Shinto creator deities: Amenominakanushi, Takamimusubi, Kamimusubi) and the Three Pure Ones (Daoist supreme triad: Yuanshi Tianzun, Lingbao Tianzun, Daode Tianzun) are both primordial creator triads in adjacent East Asian traditions. Both triads generate reality through successive emanation; both occupy the supreme tier of their respective divine hierarchies. No direct transmission, but the geographic proximity and the long history of Japanese-Chinese cultural exchange make structural comparison inevitable."
+    source-tier: T1
   - target: "[[the-trinity]]"
     type: "structural-parallel"
     source: "The Christian Trinity (Father / Son / Holy Spirit) and the Zōka-Sanshin (three-separated-heavenly-creators) both represent primordial creator triads. Both are characterized by unity of action despite triple personhood; both involve a creative will, a generative principle, and a life-giving force. The parallel is structural (same triadic-creator logic) not genetic."
+    source-tier: T1
   - target: "[[shangdi]]"
     type: "structural-parallel"
     source: "Shangdi (Chinese High Lord / High God) and Takamimusubi both represent the supreme sovereign divine will operating from the high heavens before all other creation. Both are invisible, non-anthropomorphic (or minimally anthropomorphic) ultimate authorities. Japanese cultural debt to Chinese cosmological frameworks makes this comparison particularly significant."
+    source-tier: T1
   - target: "[[izanagi]]"
     type: "sequential-relationship"
     source: "In the Kojiki cosmological sequence, Takamimusubi and the other Zōka-Sanshin are the primordial creators who precede and authorize Izanagi and Izanami. The primal triad creates the conditions for Izanagi and Izanami's world-generation. Takamimusubi later gives instructions to Izanagi's descendants, particularly directing Ninigi's descent."
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Kojiki"

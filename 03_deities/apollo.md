@@ -20,30 +20,37 @@ syncretic-edges:
   - target: "[[horus]]"
     type: "ancient-identification"
     source: "Herodotus 2.144, 2.156"
+    source-tier: T1
     notes: "Herodotus equates Apollo with the Egyptian Horus."
   - target: "[[asclepius-greek]]"
     type: "parent-of"
     source: "Hesiod (Coronis myth); Pindar Pythian 3; Homeric Hymn to Asklepios"
+    source-tier: T1
     notes: "Apollo fathered Asclepius on the mortal Coronis; raised him via Chiron; Asclepius became the divine physician, eclipsing Apollo's healing function."
   - target: "[[sekhmet]]"
     type: "parallel-motif"
     source: "Iliad 1.43–52 (Apollo sends plague-arrows); Lesko 1999 on Sekhmet as plague-sender and healer; both are sun-associated divine figures who send plague as punishment and preside over healing"
+    source-tier: T1
     notes: "Destroyer-healer archetype: Apollo sends plague (Iliad I arrows), is called 'Apollo Physician,' and fathers the divine physician Asklepios. Sekhmet sends plague as the Eye of Ra and is patron of Egypt's priest-physicians. Independent Greek and Egyptian convergence on the destroyer-healer theological structure."
   - target: "[[sol-invictus]]"
     type: "syncretic-fusion"
     source: "Macrobius, Saturnalia 1.17 (~430 CE) identifies Apollo with Sol; 3rd-c. CE imperial cult of Sol Invictus absorbs Apollo's solar functions"
+    source-tier: T1
     notes: "Late-antique Roman religion fuses Apollo into Sol Invictus; the Apollo-Helios-Sol triple identification stabilizes by Aurelian's reign (270 CE) and feeds the eventual Christian Sol-Christ iconographic parallels"
   - target: "[[belenos]]"
     type: "interpretatio-cultic"
     source: "Tertullian, Apology 24; CIL inscriptions from Noricum and Cisalpine Gaul show ALTAR DEO BELENO with Apolline iconography"
+    source-tier: T1
     notes: "Roman interpretatio-romana with shared cult: the Celtic solar-healer Belenos was identified with Apollo at the level of cult-practice — the sanctuary cult of Belenos at Aquileia is the best-documented case of the Celtic-Apollo fusion, with altars dedicated DEO BELENO carrying Apolline iconography"
   - target: "[[murugan]]"
     type: "scholarly-parallel"
     source: "Clothey 1978, The Many Faces of Murugan; comparative scholarship on archery + youth + healing + light archetypes between Greek Apollo and Tamil Murugan"
+    source-tier: T1
     notes: "Scholarly parallel (NOT a historical transmission claim) — both are youthful archer-gods of light and healing; the comparison is structural, not genealogical"
   - target: "[[theme-gandharan-buddhism]]"
     type: "iconographic-source"
     source: "Boardman 1994; Foucher 1905-1951; theme-gandharan-buddhism — the Gandhāran sculptors who created the first anthropomorphic Buddha images (1st-2nd c. CE) drew on Apollo's iconographic conventions: idealized Greek facial features, straight Greek nose / 'Greek profile', eyes modeled on classical Greek sculpture, wavy hair, idealized athletic body proportions. The ushnisha (cranial protuberance) may derive from the Hellenistic solar crown (radiate crown of Apollo / Helios) localized as a physical mark. The standing-Buddha contrapposto draws on Greek classical sculpture's weight-shift stance. The Buddha's halo descends from Apollo's solar nimbus"
+    source-tier: T1
     notes: "MASSIVE-WIN: every Buddha image in every Buddhist tradition worldwide carries Apollo's iconographic DNA via the Gandhāran synthesis. The visual form of Buddhism was invented by Greek sculptors trained in the Apolline tradition. See [[theme-gandharan-buddhism]] for the full case"
 tags:
   - medicine

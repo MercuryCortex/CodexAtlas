@@ -20,18 +20,23 @@ syncretic-edges:
   - target: "[[viracocha]]"
     type: "ancient-identification"
     source: "The Huarochirí Manuscript itself names him 'Cuniraya Viracocha' — assimilating the regional trickster Coniraya with Viracocha, the Inca supreme creator deity. Scholars debate whether this is a local theological merger or a colonial-era conflation."
+    source-tier: T1
   - target: "[[odin]]"
     type: "scholarly-parallel"
     source: "Both are supreme/creator-level deities who disguise themselves as wandering beggars to interact with the world; both test mortals; both carry the wisdom and cunning that underpins cosmic order. Odin's Wanderer-disguise (the gray-cloak stranger) is structurally identical to Coniraya's beggar guise."
+    source-tier: T1
   - target: "[[zeus]]"
     type: "scholarly-parallel"
     source: "Both are powerful deities who impregnate women through deception — Zeus's seductions via disguise (swan, bull, golden rain); Coniraya's impregnation of Cavillaca through the lucuma fruit. The divine trickster-seducer as cosmogonic figure."
+    source-tier: T1
   - target: "[[coyote-navajo]]"
     type: "scholarly-parallel"
     source: "Both are trickster-creator figures who use deception and desire to generate the world's features; both cause consequences they do not fully intend; both are simultaneously revered and suspect within their traditions."
+    source-tier: T1
   - target: "[[anansi]]"
     type: "scholarly-parallel"
     source: "Both are trickster-creator deities who shape the world through cleverness rather than power; both operate through deception and transformation; both belong to the global trickster-creator archetype."
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Huarochirí Manuscript: A Testament of Ancient and Colonial Andean Religion"

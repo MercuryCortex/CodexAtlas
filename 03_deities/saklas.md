@@ -22,12 +22,15 @@ syncretic-edges:
   - target: "yaldabaoth"
     type: "same-entity-alternate-name"
     source: "Apocryphon of John NHC II.1; Gospel of Judas (Codex Tchacos): Saklas, Yaldabaoth, and Samael are three names for the same entity, each naming a different aspect of his nature"
+    source-tier: T1
   - target: "demiurge-gnostic"
     type: "primary-instance"
     source: "The name Saklas appears across Sethian texts as a second name for the demiurge alongside Yaldabaoth; scholarly consensus (Turner 2001, Williams 1996) treats them as a name-cluster for a single figure"
+    source-tier: T1
   - target: "iblis-shaytan"
     type: "structural-parallel"
     source: "Structural: both Saklas/Yaldabaoth and Iblis refuse to acknowledge a being above themselves (Iblis refuses to bow to Adam; Saklas declares 'I am God and there is no other'); both are defined by a refusal of higher authority"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Gospel of Judas (Critical Edition)"

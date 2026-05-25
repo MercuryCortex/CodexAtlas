@@ -25,28 +25,36 @@ syncretic-edges:
   - target: "el-elohim-hebrew"
     type: "polemic-inversion"
     source: "ApocJohn: Yaldabaoth cites Isaiah 45:5 / Exodus 20:3 ('I am God and there is no other') — the Sethians read the OT monotheism claim as proof of the creator's ignorance of higher realms"
+    source-tier: T1
   - target: "demiurge-gnostic"
     type: "primary-instance"
     source: "Sethian texts; Yaldabaoth = the Sethian name for the generic Gnostic demiurge concept"
+    source-tier: T1
   - target: "demiurge-platonic"
     type: "polemic-inversion"
     source: "Sethians invert Plato's Timaeus: Plato's craftsman-God is benevolent; Yaldabaoth is ignorant. Both create from a higher model they dimly perceive."
+    source-tier: T1
   - target: "urizen"
     type: "structural-parallel"
     source: "Blake independently reconstructed the same figure: reason asserting itself as the sole God, binding humans in law, unaware of higher imaginative reality (Los/Urthona)"
+    source-tier: T1
   - target: "marduk"
     type: "polemic-inversion"
     source: "Pearson 1984/2007 — Sethian Gnostic cosmogony inverts the Babylonian Marduk-Tiamat chaos-cosmogony structure: where Marduk is the legitimate warrior-king whose cosmogonic violence founds order, Yaldabaoth is the illegitimate demiurge whose cosmogonic ignorance founds bondage. The same structural slot (cosmogonic-combat-establishing-cosmic-order) filled with opposite theological content. See [[theme-mesopotamian-gnostic-transmission]] Chain 2 for the load-bearing argument"
+    source-tier: T1
     notes: "MASSIVE-WIN — load-bearing chain in the Mesopotamian → Gnostic transmission. Confidence MEDIUM-HIGH: structural parallel uncontroversial; transmission-vs-independent-emergence debated"
   - target: "theme-mesopotamian-gnostic-transmission"
     type: "documented-substrate"
     source: "Pearson 1984/2007; the Sethian cosmogony's structural inheritance of Mesopotamian chaos-cosmogony, mediated through Persian-period and Hellenistic-Jewish reception"
+    source-tier: T1
   - target: "abrasax"
     type: "comparative-Gnostic"
     source: "Both Yaldabaoth and Abrasax are Gnostic demiurgic / supreme-archon figures; the Basilidean Abrasax 365-aeon system shares the Mesopotamian-Hellenistic astrological substrate (Babylonian calendar science) that the Sethian seven-archon system also draws on. See [[theme-mesopotamian-gnostic-transmission]] Chain 5"
+    source-tier: T1
   - target: "templar-gnostic-transmission-hypothesis"
     type: "polemic-inversion-figure-of-occult-reception"
     source: "Hammer-Purgstall 1818, *Mysterium Baphometis revelatum*; Goodrick-Clarke 1985 — the Hammer-Purgstall Gnostic-variant of the Templar-Gnostic transmission hypothesis claims the Templars' alleged renunciation of Christ in the trial confessions was a renunciation of the *demiurgic Yahwistic Christ* (i.e. Yaldabaoth) in favor of a Gnostic *true* Christ. While the Tier-1 historical claim is unsupported, the figure of Yaldabaoth-as-demiurgic-false-creator becomes load-bearing for the 19th–21st-c. esoteric reconstruction of an alleged Templar Gnostic theology. See [[templar-gnostic-transmission-hypothesis]]"
+    source-tier: T1
     notes: "Reception-history Tier-3 edge: Yaldabaoth as the Gnostic anti-creator is invoked in the imagined Templar-Gnostic theology (Hammer-Purgstall 1818 → Lévi 1854 → modern occult continuator literature) to explain the Templar trial-confession renunciation. The historical claim is unsupported; the reception is the actual edge"
 status: "full"
 refs:

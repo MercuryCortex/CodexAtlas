@@ -25,12 +25,15 @@ syncretic-edges:
   - target: "manda-d-hayyi"
     type: "structural-parallel"
     source: "Buckley 2002: both Gnostic Christos and Manda d'Hayyi are descending revealer-beings who awaken souls imprisoned in the material world; both operate in the late-antique Syro-Egyptian milieu"
+    source-tier: T1
   - target: "jesus-christ-deity"
     type: "polemic-distinction"
     source: "Apocryphon of John; Gospel of Philip: Gnostic texts deliberately split the earthly Jesus (vessel or simulacrum) from the heavenly Christos (eternal Pleroma-aeon)"
+    source-tier: T1
   - target: "prometheus"
     type: "structural-parallel"
     source: "Jonas 1958: the figure who descends to transmit prohibited divine knowledge is the cross-tradition archetype linking Prometheus, Gnostic Christ, and Manda d'Hayyi"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Tripartite Tractate (NHC I,5)"

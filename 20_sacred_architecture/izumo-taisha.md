@@ -24,27 +24,33 @@ cross-tradition-edges:
   - target: "ise-grand-shrine"
     type: "paired-with-cosmological-counterpole"
     source: "Bocking 1996; Teeuwen & Breen 2017"
+    source-tier: T1
     notes: "Izumo Taisha and [[ise-grand-shrine|Ise]] form the **two-pole structure of classical Japanese Shintō**: Ise = heavenly/imperial/Amaterasu; Izumo = terrestrial/non-imperial/Ōkuninushi. The [[kojiki|*Kojiki*]]'s narrative of the *kuni-yuzuri* ('transfer of the land') is the mythological articulation of the relationship: Ōkuninushi yields the visible world to Amaterasu's grandson Ninigi in exchange for the great shrine at Izumo where he will be eternally worshipped. The cosmological doctrine is **directly architecturally expressed**: Ise oversees the visible / political realm; Izumo oversees the invisible / spiritual realm."
   - target: "todaiji-daibutsuden"
     type: "parallel-monumental-religious-architecture-distinct-tradition"
     source: "Coaldrake 1996"
+    source-tier: T1
     notes: "Izumo Taisha (ancient *taisha-zukuri* — possibly originally ~48 m high per medieval records) and [[todaiji-daibutsuden|Todaiji]] (Buddhist Chinese-derived hall ~49 m present height) are roughly contemporary monumental religious buildings of pre-modern Japan, both extraordinarily tall, in opposed architectural-religious idioms (native Shinto vs Buddhist continental)."
   - target: "itsukushima-shrine"
     type: "sister-ancient-shinto-shrine-distinct-architectural-form"
     source: "Coaldrake 1996"
+    source-tier: T1
     notes: "Izumo (*taisha-zukuri*, ancient massive-pillar form), [[itsukushima-shrine|Itsukushima]] (Heian-aristocratic over-water *shinden*-influenced), and [[ise-grand-shrine|Ise]] (*shinmei-zukuri* austere-archaic) are the **three most architecturally distinctive Shinto shrine programmes** in Japan."
   - target: "okuninushi"
     type: "principal-shrine-of"
     source: "Bocking 1996; Cali & Dougill 2013"
+    source-tier: T1
     notes: "Izumo Taisha is the **principal shrine of [[okuninushi|Ōkuninushi]]** — the great earth-deity of Japanese mythology, ancestor of the terrestrial pantheon, central figure of the *Kojiki*'s 'Izumo cycle' (a major portion of the first scroll), and the deity who 'made the land' before yielding it to the heavenly pantheon."
   - target: "tradition-shinto"
     type: "one-of-two-principal-architectural-monuments-of"
     source: "Teeuwen & Breen 2017; Bocking 1996"
+    source-tier: T1
     notes: "Izumo Taisha and [[ise-grand-shrine|Ise]] are the **two principal architectural monuments of [[tradition-shinto|Shintō]]**. Together they exhaust the highest level of the Shintō ritual hierarchy: Ise as the imperial-Amaterasu cult-centre, Izumo as the non-imperial Ōkuninushi cult-centre."
 syncretic-edges:
   - target: "tradition-izumo-shinto"
     type: "principal-institutional-and-doctrinal-centre-of"
     source: "Teeuwen & Breen 2017; Cali & Dougill 2013"
+    source-tier: T1
     notes: "Izumo Taisha is the institutional and doctrinal centre of the distinctive **Izumo Shintō** tradition — a Shintō lineage with somewhat distinct theological emphases (more focus on the *kami* of yin / death / the invisible realm) and an independent priestly hierarchy under the **Izumo-no-Kuni-no-Miyatsuko** lineage that continues unbroken from antiquity (the present incumbent is the 84th generation)."
 status: "metadata"
 refs:

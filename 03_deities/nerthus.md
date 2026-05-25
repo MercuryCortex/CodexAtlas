@@ -19,36 +19,47 @@ syncretic-edges:
   - target: "[[njord]] (Norse sea/prosperity deity, etymological cognate)"
     type: "etymological-cognate"
     source: "Nerthus and Njörðr are cognates from Proto-Germanic *Nerþuz — the same divine name bifurcated by gender or tradition; Dumézil 1973; de Vries 1956"
+    source-tier: T1
   - target: "[[frigg]] (Norse sovereign earth-goddess)"
     type: "scholarly-parallel"
     source: "Frigg as Odin's wife, linked to earth/fertility, earth-sovereignty; possible development of the Proto-Germanic earth-mother figure that Nerthus represents in her earlier Germanic form"
+    source-tier: T1
   - target: "[[freyr]] (Vanir prosperity deity)"
     type: "scholarly-parallel"
     source: "The Vanir (Njörðr, Freyr, Freyja) preserve the older Germanic earth-fertility divine cluster of which Nerthus is an early form; Freyr's wagon-procession cult (Gesta Danorum; Adam of Bremen) directly parallels Nerthus's wagon cult in Tacitus"
+    source-tier: T1
   - target: "[[freyja]] (Vanir love/fertility goddess)"
     type: "scholarly-parallel"
     source: "Same Vanir fertility cluster; Freyja's domains of love, land-fertility, and abundance continue what Tacitus's Nerthus represents"
+    source-tier: T1
   - target: "[[gaia]] (Greek earth-mother)"
     type: "cross-tradition-parallel"
     source: "Earth-mother archetype; primordial female deity identified with the land itself; the Germanic Nerthus / Greek Gaia parallel illustrates the Proto-Indo-European *dʰéǵʰōm (earth) divine-feminine"
+    source-tier: T1
   - target: "[[pachamama]] (Andean earth-mother)"
     type: "cross-tradition-parallel"
     source: "Cross-cultural earth-mother parallel: Pachamama as the living earth deity venerated by agricultural peoples; both represent the earth as a sacred feminine presence demanding ceremonial attention"
+    source-tier: T1
   - target: "[[ki-sumerian]] (Sumerian earth deity)"
     type: "cross-tradition-parallel"
     source: "Ki as the primordial earth, separated from An (sky) — the sky/earth split and its personification is one of the oldest religious structures; Nerthus participates in the same earth-as-sacred-feminine typology"
+    source-tier: T1
   - target: "[[zemyna]] (Baltic earth-goddess)"
     type: "cross-tradition-parallel"
     source: "Zemyna (Lithuanian earth-goddess, etymologically cognate with *dʰéǵʰōm) is the closest Baltic parallel to Nerthus; both receive offerings poured to the ground, both personify the living earth"
+    source-tier: T1
   - target: "[[asase-yaa]] (Akan earth-goddess)"
     type: "cross-tradition-parallel"
     source: "Cross-cultural earth-mother parallel: Asase Yaa as the Akan female earth deity, mother of humanity and the dead; both represent the earth's sacred maternal function"
+    source-tier: T1
   - target: "[[papatuanuku]] (Māori earth-mother)"
     type: "cross-tradition-parallel"
     source: "Papatuanuku as Earth-Mother separated from Ranginui (Sky-Father) — the primordial earth-sky separation and its feminine earth-personification parallels the Germanic Nerthus / Erce figure in the same cosmological slot"
+    source-tier: T1
   - target: "[[cybele]] (Phrygian Magna Mater)"
     type: "cross-tradition-parallel"
     source: "Cybele's wagon procession — drawn by lions, attended by ecstatic priests, passing through cities and countryside — is the most direct structural parallel to Tacitus's description of Nerthus's veiled wagon procession; both are earth-mother deities transported on wheeled vehicles as moving sacred presences; both bring peace and abundance while passing"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Germania"

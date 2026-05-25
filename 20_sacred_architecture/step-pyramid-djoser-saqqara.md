@@ -22,14 +22,17 @@ cross-tradition-edges:
   - target: "pyramid-of-khufu"
     type: "ancestor-of"
     source: "Lehner 1997; Arnold 1991"
+    source-tier: T1
     notes: "Djoser's Step Pyramid (~2670 BCE) originates the pyramid form via stacked mastaba — six steps rising ~62 m. Sneferu's experiments (~2600 BCE, Dahshur — Bent + Red Pyramids) achieve the true-geometric form. Khufu (~2570 BCE, Giza) brings the form to apex. The transmission Djoser → Sneferu → Khufu is one of the cleanest architectural-evolutionary sequences in human history."
   - target: "ziggurat-of-ur"
     type: "parallel-form"
     source: "Lehner 1997; Crawford 1991"
+    source-tier: T1
     notes: "Sumerian stepped ziggurats and Egyptian stepped pyramids emerge in roughly the same era (3rd millennium BCE) at opposite ends of the Fertile Crescent, with **no documented contact** between the architectural traditions. Parallel emergence of stepped-monumental-axis-mundi building."
   - target: "imhotep"
     type: "principal-work-of"
     source: "Wilkinson 2000; Shaw 2000"
+    source-tier: T1
     notes: "Imhotep's authorship of the Step Pyramid is established by inscriptions on a statue base at the site (and is one of the few personal architectural attributions surviving from the Old Kingdom). He was later deified — the **only Egyptian non-royal to attain full-deity status** before Imhotep was syncretised with the Greek Asclepius in the Late Period."
 status: "metadata"
 refs:

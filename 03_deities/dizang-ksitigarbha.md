@@ -20,30 +20,37 @@ syncretic-edges:
   - target: "avalokitesvara"
     type: "direct-influence"
     source: "Williams 2009 — Mahayana Buddhism"
+    source-tier: T1
     notes: "Kṣitigarbha and Avalokiteśvara are the two great compassion-bodhisattvas of East Asian Buddhism; Avalokiteśvara is the universal refuge from all suffering, Kṣitigarbha is the specific refuge of beings in the hells and liminal death-realms. They are often paired."
   - target: "guanyin"
     type: "direct-influence"
     source: "East Asian Buddhist popular tradition"
+    source-tier: T1
     notes: "Guanyin (Chinese Avalokiteśvara) and Dìzàng are the two most widely worshipped bodhisattvas in Chinese Buddhism. Guanyin saves those in the world; Dìzàng saves those in the hells."
   - target: "inanna-sumerian"
     type: "scholarly-parallel"
     source: "comparative underworld-descent mythology"
+    source-tier: T1
     notes: "Inanna's descent to the Great Below to confront Ereshkigal parallels Kṣitigarbha's willingness to descend and remain in the hell realms. Both are presence-in-the-underworld as redemptive act."
   - target: "persephone-greek"
     type: "scholarly-parallel"
     source: "comparative underworld-descent mythology"
+    source-tier: T1
     notes: "Persephone's half-year in Hades and Kṣitigarbha's permanent presence in the hells share the archetype of the compassionate/queen figure who willingly inhabits the realm of the dead."
   - target: "jesus-christ-deity"
     type: "scholarly-parallel"
     source: "comparative soteriology — harrowing of hell"
+    source-tier: T1
     notes: "The Christian doctrine of the Harrowing of Hell (Christ descending to Sheol/Hades between crucifixion and resurrection to liberate the dead) is structurally parallel to Kṣitigarbha's vow to descend into and liberate all hell realms. Both are salvific-descent narratives."
   - target: "yan-wang"
     type: "direct-influence"
     source: "Chinese Buddhist-folk religious synthesis"
+    source-tier: T1
     notes: "In Chinese religious tradition, Kṣitigarbha/Dìzàng is closely associated with Yán Wáng (the King of Hell/Yama) and the ten kings of the underworld. Dìzàng intercedes with Yán Wáng on behalf of the dead."
   - target: "hariti"
     type: "scholarly-parallel"
     source: "Buddhist protective-deity typology"
+    source-tier: T1
     notes: "Hāritī is the Buddhist goddess of children (reformed demoness who became a protector of children); Kṣitigarbha/Jizō is also a guardian of children (especially dead children in Japanese tradition). Both represent the transformation of threat into protection."
 status: "metadata"
 refs:

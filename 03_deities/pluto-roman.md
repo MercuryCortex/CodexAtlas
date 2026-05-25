@@ -20,9 +20,11 @@ syncretic-edges:
   - target: "hades"
     type: "ancient-identification"
     source: "Greek Plouton identified with Roman Dis Pater / Pluto from late Republic; Cicero, De Natura Deorum 2.26"
+    source-tier: T1
   - target: "osiris"
     type: "syncretic-identification"
     source: "Plutarch, De Iside et Osiride — identifies Osiris as the generative power Pluto rules; Serapis cult bridges both"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Religions of Rome"

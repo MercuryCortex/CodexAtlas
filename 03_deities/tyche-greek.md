@@ -20,19 +20,24 @@ syncretic-edges:
   - target: "[[fortuna]]"
     type: "ancient-identification"
     source: "Roman Fortuna is the direct identification of Tyche; the iconography (cornucopia, rudder, wheel) transfers wholesale into Roman religion. The equation is standard from the Hellenistic period forward."
+    source-tier: T1
   - target: "[[lakshmi]]"
     type: "scholarly-parallel"
     source: "Both are feminine fortune/prosperity deities whose favor brings material abundance; both emerge from water (Lakshmi from the churning of the ocean; Tyche associated with the sea's unpredictability). The fortune-goddess pattern crosses both traditions independently."
+    source-tier: T1
   - target: "[[nemesis-greek]]"
     type: "scholarly-parallel"
     source: "Tyche and Nemesis are explicitly paired in Greek thought as Fortune's rise and Nemesis's correction — the same wheel from opposite perspectives. Where Tyche raises and lowers at random, Nemesis corrects what has gone too high."
+    source-tier: T1
   - target: "hariti"
     type: "iconographic-transmission-eastward"
     source: "Foucher 1905; Quagliotti 1996 — Tyche's Hellenistic iconographic conventions (cornucopia, mural crown, enthroned-mother-with-children) transfer eastward through Bactrian and Indo-Greek workshops into the Gandhāran Buddhist representation of Hārītī. The visual vocabulary is Hellenistic Tyche-Cybele; the theology is Buddhist child-protector / converted-demoness. See [[theme-gandharan-buddhism]]"
+    source-tier: T1
     notes: "MASSIVE-WIN: Greek city-goddess iconography becomes a Buddhist protector-deity figure at Gandhara, then via Silk Road potentially feeds the Christian Madonna-and-Child"
   - target: "theme-gandharan-buddhism"
     type: "Greek-iconographic-source"
     source: "Tyche's Hellenistic iconographic conventions are the load-bearing Greek-end of the Tyche→Hārītī chain at Gandhāra"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Olympian Ode 12"

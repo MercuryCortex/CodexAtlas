@@ -23,30 +23,37 @@ cross-tradition-edges:
   - target: "pyramid-of-khufu"
     type: "parallel-form"
     source: "Sharer & Traxler 2006; Aveni 2001"
+    source-tier: T1
     notes: "Stepped-pyramid-as-cosmic-mountain. El Castillo embeds the Mesoamerican solar-calendar (365) in its architecture: 91 steps × 4 sides + 1 summit platform = 365. Khufu encodes solar theology in vertical-chamber sequence. Two solar-religion monuments in mutually-impossible-contact civilizations."
   - target: "tikal-temple-i"
     type: "cognate-form"
     source: "Sharer & Traxler 2006"
+    source-tier: T1
     notes: "Both Maya stepped pyramids. El Castillo (Postclassic, ~1000 CE) is the late-tradition descendant of the Classic Maya tradition typified by Tikal Temple I (~730 CE). Continuity through fall of Classic + Toltec contact."
   - target: "temple-of-the-feathered-serpent-teotihuacan"
     type: "transmission-of-deity"
     source: "Schele & Freidel 1990; Davies 1980"
+    source-tier: T1
     notes: "Feathered-Serpent cult: Teotihuacan (~200–300 CE) → Toltec (~900–1100 CE) → Yucatec Maya Chichén Itzá (~1000 CE; renamed Kukulkan). Documented transmission of deity + architectural form across 800 years and three Mesoamerican civilizations."
   - target: "tradition-toltec"
     type: "shaped-by"
     source: "Kowalski & Kristan-Graham 2007; Davies 1980"
+    source-tier: T1
     notes: "Chichén Itzá's monumental phase (~900–1200 CE) shows extensive Toltec influence — Toltec-style chacmools, Atlantean columns, Temple of the Warriors. The 'Toltec invasion' thesis (Tula → Chichén) is now nuanced: bidirectional cultural exchange + local-elite agency, but the formal-architectural Toltec presence is undeniable."
   - target: "borobudur-stupa-mandala"
     type: "parallel-form"
     source: "Snodgrass 1985"
+    source-tier: T1
     notes: "Stepped pyramidal sacred-architecture independently in Buddhist Java (~800 CE) and Yucatec Maya (~1000 CE). Roughly contemporary; geographic separation absolute; same architectural type-class."
   - target: "ziggurat-of-ur"
     type: "parallel-form"
     source: "Lehner 1997; Aveni 2001"
+    source-tier: T1
     notes: "Stepped sacred monument type-class. Mesopotamian and Mesoamerican instances."
   - target: "kukulkan"
     type: "dedicated-to"
     source: "Schele & Freidel 1990"
+    source-tier: T1
     notes: "The Yucatec-Maya form of the Feathered Serpent deity — equivalent to [[quetzalcoatl]] in central Mexico."
 status: "metadata"
 refs:

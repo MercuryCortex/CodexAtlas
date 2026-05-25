@@ -20,15 +20,19 @@ syncretic-edges:
   - target: "[[osiris]]"
     type: "scholarly-parallel"
     source: "Dying-and-rising sovereign: killed repeatedly, each time restored; ruler of the hidden/underworld realm after yielding terrestrial sovereignty"
+    source-tier: T1
   - target: "[[baldr]]"
     type: "scholarly-parallel"
     source: "Repeatedly killed and indestructible; beloved figure whose death and restoration is the pivot of cosmic order"
+    source-tier: T1
   - target: "[[saturn-roman]]"
     type: "scholarly-parallel"
     source: "Golden-Age king who yields sovereignty to a newer divine dynasty (Jupiter/Amaterasu lineage) while retaining care of the earth"
+    source-tier: T1
   - target: "[[inari]]"
     type: "folk-syncretism"
     source: "Overlapping agricultural and rice-prosperity domains; both venerated at Izumo-affiliated sites"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Kojiki"

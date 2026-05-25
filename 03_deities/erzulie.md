@@ -19,23 +19,29 @@ syncretic-edges:
   - target: "Mater Dolorosa (Erzulie Freda) / Our Lady of Czestochowa (Erzulie Dantor)"
     type: "folk-syncretism"
     source: "McAlister 2002; Brown 1991"
+    source-tier: T1
   - target: "oshun"
     type: "ancient-identification"
     source: "Brown, *Mama Lola* (1991); Murphy & Sanford, *Osun Across the Waters* (2001) — Erzulie is the Vodou reception of Yoruba Oshun via the Atlantic slave trade. The two are the same Afro-Atlantic love-beauty-river-feminine principle in West-African (Oshun) and Haitian-Vodou (Erzulie) cult"
+    source-tier: T1
     notes: "Direct Atlantic-diaspora Yoruba-Vodou transmission"
   - target: "aphrodite-greek"
     type: "scholarly-parallel"
     source: "Brown 1991; Eliade 1958 — love-beauty-feminine cross-cultural archetype"
+    source-tier: T1
   - target: "venus-roman"
     type: "scholarly-parallel"
     source: "Brown 1991 — love-beauty goddess parallel"
+    source-tier: T1
   - target: "mary-theotokos"
     type: "ancient-identification"
     source: "Brown 1991; McAlister 2002 — the Mater Dolorosa folk-syncretism with Erzulie Freda (love-pole) and the Black Madonna of Czestochowa with Erzulie Dantor (warrior-mother pole) are the most theologically rich Haitian Vodou-Catholic syncretisms"
+    source-tier: T1
     notes: "MASSIVE WIN: Vodou-Marian syncretism — the Black Madonna/Mater Dolorosa to Erzulie Dantor/Freda identification documented since the early colonial period"
   - target: "afro-diasporic-syncretism"
     type: "source-deity-of-diaspora-fusion"
     source: "Brown 1991, *Mama Lola*; McAlister 2002, *Rara!*; Desmangles 1992 — Erzulie is the love/beauty-domain Atlantic-diaspora syncretism, split across the Rada/Petwo bifurcation: Erzulie Freda ↔ Mater Dolorosa / Our Lady of Sorrows (heart-pierced-by-sword shared iconography); Erzulie Dantor ↔ Our Lady of Czestochowa (the Polish Black Madonna whose image arrived in Haiti via Polish soldiers sent by Napoleon ~1802–1803 who defected to the Haitian Revolution). See [[afro-diasporic-syncretism]]"
+    source-tier: T1
     notes: "MASSIVE-WIN: the historical accident of Polish soldiers carrying the Black Madonna of Czestochowa into Saint-Domingue during the Haitian Revolution is one of the cleanest documented cases of a specific Catholic image becoming load-bearing for a specific orisha/lwa identification — material-iconographic transmission via a tiny named historical episode"
 status: "metadata"
 refs:

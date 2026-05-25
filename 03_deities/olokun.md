@@ -20,14 +20,17 @@ syncretic-edges:
   - target: "yemoja"
     type: "structural-complement"
     source: "Drewal, Henry John; Mason, John (1998). Beads, Body, and Soul: Art and Light in the Yoruba Universe. UCLA Fowler Museum."
+    source-tier: T1
     notes: "Yemoja governs the surface waters, rivers, and the connection of water to human life and fertility; Olokun governs the deep ocean floor, inaccessible and mysterious. The two together constitute the complete Yoruba theology of water. Their pairing parallels depth-and-surface divisions in other oceanic cosmologies."
   - target: "poseidon"
     type: "structural-parallel"
     source: "Mbiti (1991). Religions of Africa."
+    source-tier: T1
     notes: "Both are deities of the ocean associated with wealth, power, and the dangers of the deep. The parallel is typological. Olokun's gender ambiguity (male in Benin, female or androgynous in diaspora) contrasts with Poseidon's fixed masculine gender."
   - target: "olodumare"
     type: "emanation-of"
     source: "Idowu (1962). Olodumare: God in Yoruba Belief."
+    source-tier: T1
     notes: "In some Yoruba theological accounts, Olokun is the orisha who most closely represents the unfathomable, inscrutable aspect of Olodumare (the supreme deity) — because the deep ocean floor is literally beyond human sight or comprehension, like the divine essence itself."
 status: "metadata"
 refs:

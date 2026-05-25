@@ -23,26 +23,32 @@ cross-tradition-edges:
   - target: "pyramid-of-khufu"
     type: "parallel-form"
     source: "Schele & Miller 1986; Robertson 1983"
+    source-tier: T1
     notes: "Both: monumental pyramid built around a single named royal tomb deep in the interior, with hieroglyphic theological programme on the walls. Pakal's tomb (c. 683 CE) is the closest Maya analogue to a documented-name Egyptian royal-tomb pyramid. Pakal's sarcophagus lid shows him descending into the underworld along the World Tree — *exactly* the cosmological grammar of the Egyptian descent-and-ascent through the Duat. The motif convergence is so close that without the geographic + chronological separation a transmission would be the obvious reading. Independent emergence is the only available conclusion."
   - target: "step-pyramid-djoser-saqqara"
     type: "parallel-form"
     source: "Schele & Miller 1986"
+    source-tier: T1
     notes: "Both have an interior corbel-vaulted stairway descending from the summit-temple to the tomb chamber. Djoser's tomb is *beneath* the original mastaba reached by a vertical shaft; Pakal's tomb is at the *base* of the pyramid reached by a corbelled stairway from the summit. The basic engineering problem (royal tomb inside an artificial mountain) gets a strikingly similar architectural solution."
   - target: "tikal-temple-i"
     type: "cognate-form"
     source: "Sharer & Traxler 2006; Martin & Grube 2008"
+    source-tier: T1
     notes: "Both are Classic-Maya funerary pyramids over a named ruler's tomb. Palenque (c. 683 CE) precedes Tikal Temple I (c. 730 CE) by ~50 years. Different Maya polities; tightly cognate design grammar; some kind of inter-court awareness likely but no documented direct lineage."
   - target: "borobudur-stupa-mandala"
     type: "parallel-form"
     source: "Snodgrass 1985; Schele & Miller 1986"
+    source-tier: T1
     notes: "Both are nine-level stepped-pyramidal forms read as cosmological diagrams of the soul's journey through levels — Maya nine Xibalba levels at Palenque; Buddhist three-realm (Kāmadhātu / Rūpadhātu / Arūpadhātu) at Borobudur. Independent traditions, parallel architectural-cosmological vertical reading."
   - target: "theme-pyramid-as-resurrection-machine"
     type: "exemplifies"
     source: "Schele & Miller 1986"
+    source-tier: T1
     notes: "The architectural-as-theological reading: the pyramid is a transformation device, not just a tomb. Pakal's sarcophagus lid is the iconographic key to the architectural programme."
   - target: "pakal-sarcophagus-lid"
     type: "contains"
     source: "Ruz 1973"
+    source-tier: T1
     notes: "The carved limestone sarcophagus lid (3.8m x 2.2m) in Pakal's tomb chamber is one of the single most-reproduced images in Mesoamerican art. Shows Pakal descending into the maw of the underworld along the World Tree (Wakah Chan)."
 status: "metadata"
 refs:

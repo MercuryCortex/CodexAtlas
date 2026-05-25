@@ -20,6 +20,7 @@ syncretic-edges:
   - target: "krishna"
     type: "sacred-marriage"
     source: "Gaudiya Vaishnava theology — Radha-Krishna as the primal divine couple; Chaitanya Mahaprabhu (~1500 CE) identified as the simultaneous embodiment of both"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Journey Through the Twelve Forests: An Encounter with Krishna"

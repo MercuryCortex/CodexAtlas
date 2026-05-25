@@ -20,22 +20,27 @@ syncretic-edges:
   - target: "ptah"
     type: "scholarly-parallel"
     source: "Griaule & Dieterlen 1965; Leeming 2010"
+    source-tier: T1
     notes: "Both supreme creator deities create through spoken word / vibrating utterance; Amma's Kize Uzi parallels Ptah's Heka-charged utterance in Memphite theology."
   - target: "vac-goddess"
     type: "scholarly-parallel"
     source: "Leeming 2010 — comparative survey"
+    source-tier: T1
     notes: "Amma's primordial creative speech (Kize Uzi) structurally parallels Vāc as the self-creating divine word."
   - target: "phanes-protogonos"
     type: "scholarly-parallel"
     source: "Griaule 1948; comparative cosmogony literature"
+    source-tier: T1
     notes: "Both involve a cosmic egg from which the ordered cosmos emerges; Amma's spinning egg parallels the Orphic Phanes-egg."
   - target: "brahma"
     type: "scholarly-parallel"
     source: "Leeming 2010"
+    source-tier: T1
     notes: "The golden egg (Hiranyagarbha) in Vedic-Hindu tradition and Amma's cosmic egg are the same cosmogonic type — world-egg from which creation differentiates."
   - target: "yaldabaoth"
     type: "scholarly-parallel"
     source: "comparative mythology — Gnostic demiurge typology"
+    source-tier: T1
     notes: "Amma's first union with Earth is impeded by the termite mound (her clitoris), producing chaos and Ogo (Pale Fox). This impeded-creation-yielding-disorder structurally parallels Sophia's fall and Yaldabaoth's flawed creation."
 status: "metadata"
 refs:

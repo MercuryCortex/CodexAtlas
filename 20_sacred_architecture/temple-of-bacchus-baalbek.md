@@ -23,18 +23,22 @@ cross-tradition-edges:
   - target: "temple-of-jupiter-baalbek"
     type: "adjacent-paired-temple"
     source: "Ball 2000; Wiegand 1921; Segal 2013"
+    source-tier: T1
     notes: "Built within the same Heliopolitan sanctuary, ~50 m SW of the Temple of Jupiter. Architecturally a deliberate stylistic complement — smaller in plan but **more elaborately ornamented**, in the developed Antonine style. Together they form the **paired temple precinct** characteristic of major Roman provincial sanctuaries."
   - target: "pantheon-rome"
     type: "contemporary-roman-architecture"
     source: "MacDonald 1976; Ball 2000"
+    source-tier: T1
     notes: "The Temple of Bacchus (Antonine, ~150–180 CE) is roughly contemporary with the late phases of the Hadrianic Pantheon and represents the **provincial high-point of Antonine Roman architectural ornament** — comparable in date to the Pantheon's interior detailing."
   - target: "maison-carree-nimes"
     type: "imperial-roman-temple-cognate"
     source: "Stamper 2005"
+    source-tier: T1
     notes: "The Maison Carrée (Augustan, ~16 BCE, Nîmes) and Bacchus at Baalbek (Antonine, ~150 CE) are the **two best-preserved Roman temples in the empire** — west and east poles of imperial Roman temple-architecture survival."
   - target: "temple-of-bel-palmyra"
     type: "parallel-syncretic-roman-east-temple"
     source: "Ball 2000; Raja 2018"
+    source-tier: T1
     notes: "Paired Roman-East provincial monumental temples representing the apex of Antonine-Severan imperial religious architecture in the eastern provinces."
 status: "metadata"
 refs:

@@ -20,6 +20,7 @@ syncretic-edges:
   - target: "[[geshtinanna]]"
     type: "ancient-identification"
     source: "Black & Green 1992; Belet-Seri is the standard Akkadian rendering of Geshtinanna in her netherworld-scribe function; the equation is explicit in the Standard Babylonian Gilgamesh Tablet VII, where Belet-Seri is named as scribe of the netherworld in Enkidu's dream"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Gods, Demons and Symbols of Ancient Mesopotamia: An Illustrated Dictionary"

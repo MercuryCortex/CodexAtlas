@@ -16,9 +16,11 @@ syncretic-edges:
   - target: "[[purusha]]"
     type: "scholarly-parallel"
     source: "Indo-European cosmic-giant cognate; Lincoln 1986 *Myth, Cosmos, and Society* argues the Vedic Puruṣasūkta, the Iranian Yima-tradition, the Roman Romulus-and-Remus cosmogony, and the Norse Ymir myth all descend from a PIE primordial-giant-dismemberment template *\*Yemo-* (twin)"
+    source-tier: T1
   - target: "[[pangu]]"
     type: "scholarly-parallel"
     source: "Cosmic-body cosmogony (Lincoln 1986 includes Pangu in the comparative dossier; the transmission-vs-independent-invention status remains contested)"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Norse Mythology"

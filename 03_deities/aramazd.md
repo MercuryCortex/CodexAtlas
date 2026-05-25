@@ -20,14 +20,17 @@ syncretic-edges:
   - target: "ahura-mazda"
     type: "ancient-identification"
     source: "Boyce & Grenet 1991; Russell 1987 *Zoroastrianism in Armenia*"
+    source-tier: T1
     notes: "Aramazd is a direct linguistic and theological derivative of Ahura Mazda through the Parthian form Aramazd. The Armenian development embedded the deity in a polytheistic pantheon, diverging fundamentally from Zoroastrian monotheism."
   - target: "zeus"
     type: "ancient-identification"
     source: "Agathangelos, *History of the Armenians*; Russell 1987"
+    source-tier: T1
     notes: "Greek and Roman visitors identified Aramazd with Zeus / Jupiter as the Armenian sky-father and chief deity."
   - target: "zeus"
     type: "ancient-identification"
     source: "Agathangelos"
+    source-tier: T1
     notes: "Hellenistic period interpretatio graeca: Aramazd = Zeus as supreme sky-father."
 status: "metadata"
 refs:

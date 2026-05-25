@@ -20,15 +20,19 @@ syncretic-edges:
   - target: "[[ein-sof]]"
     type: "scholarly-parallel"
     source: "Unmanifest, iconless first principle above all manifest divine beings; Kabbalistic parallel (Idel, Kasulis)"
+    source-tier: T1
   - target: "[[the-one-plotinus]]"
     type: "scholarly-parallel"
     source: "Plotinian absolute: beyond predication, beyond being, the source from which emanation proceeds without acting"
+    source-tier: T1
   - target: "[[ometeotl]]"
     type: "scholarly-parallel"
     source: "Aztec dual absolute: no cult, no temple in formal religion, utterly transcendent — five independent traditions' hidden first principle"
+    source-tier: T1
   - target: "[[takamimusubi]]"
     type: "ancient-identification"
     source: "Fellow Zoka Sanshin (Three Separate Heavenly Deities); primordial triad of creation in Kojiki"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Kojiki"

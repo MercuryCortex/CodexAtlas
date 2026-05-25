@@ -20,6 +20,7 @@ syncretic-edges:
   - target: "gilgamesh-king"
     type: "ancient-identification"
     source: "Direct textual identification: the Aramaic *glgmš* of Book of Giants 4Q530 and the Manichaean canonical Book of Giants's *Gilgamos* are scholarly-consensus identifications of the Mesopotamian-epic Gilgamesh (Milik 1976; Stuckenbruck 1997; Reeves 1992). One of the most concrete cross-tradition documentary tracing edges in late-Second-Temple-Jewish apocalyptic literature."
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Book of Giants from Qumran"

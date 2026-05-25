@@ -20,22 +20,28 @@ syncretic-edges:
   - target: "leviathan"
     type: "ancient-identification"
     source: "Day 1985 *God's Conflict with the Dragon and the Sea*; M. S. Smith 1994 *The Ugaritic Baal Cycle* vol. 1 — Lotan (*ltn*) and Hebrew Leviathan (*lwytn*) are the same Northwest Semitic root, the same seven-headed chaos-serpent type. Isaiah 27:1 calls Leviathan *nāḥāš bāriaḥ* (fleeing serpent) and *nāḥāš ʿăqallātôn* (writhing serpent) — the exact Hebrew calque of the Ugaritic epithet pair"
+    source-tier: T1
     notes: "Day argues the Hebrew chaoskampf passages (Job 26, Ps 74, Ps 89, Isa 27, Isa 51) preserve a Yahwistic recension of the same myth: in Ugarit Baal defeats Lotan; in Israel Yahweh defeats Leviathan/Rahab"
   - target: "yam"
     type: "ancient-identification"
     source: "Smith 1994; Smith & Pitard 2009 *The Ugaritic Baal Cycle* vol. 2 — Lotan is closely associated with Yam (Sea); in some readings Lotan is Yam's serpentine form, in others a distinct chaos-monster within Yam's domain"
+    source-tier: T1
   - target: "tiamat"
     type: "parallel-form"
     source: "Day 1985; Smith 1994 — both are sea-chaos antagonists defeated by the storm-warrior king (Tiamat by Marduk; Lotan by Baal)"
+    source-tier: T1
   - target: "illuyanka"
     type: "parallel-form"
     source: "Watkins 1995 *How to Kill a Dragon*; West 1997 *The East Face of Helicon* — Anatolian parallel"
+    source-tier: T1
   - target: "typhon"
     type: "parallel-form"
     source: "West 1997; Day 1985 — Greek parallel; the multi-headed serpent type"
+    source-tier: T1
   - target: "vritra"
     type: "parallel-form"
     source: "Watkins 1995 — Indo-European parallel via the inherited serpent-slaying formula"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Ugaritic Baal Cycle, vol. 1: Introduction with Text, Translation and Commentary of KTU 1.1–1.2"

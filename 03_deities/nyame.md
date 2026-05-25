@@ -20,26 +20,33 @@ syncretic-edges:
   - target: "Allah (Islamic concept as adopted by Muslim Akan)"
     type: "folk-syncretism"
     source: "Mbiti 1969; Opoku 1978"
+    source-tier: T1
   - target: "Christian God (translated into Akan as Nyame by missionaries)"
     type: "folk-syncretism"
     source: "Danquah 1944; Mbiti 1969"
+    source-tier: T1
   - target: "olodumare"
     type: "scholarly-parallel"
     source: "Mbiti, *African Religions and Philosophy* (1969); Idowu, *African Traditional Religion* (1973) — Nyame (Akan) and Olodumare (Yoruba) are the two principal West-African supreme-sky-deity traditions; both are deus-otiosus supreme creators approached through intermediaries"
+    source-tier: T1
     notes: "Akan-Yoruba supreme-sky-deity regional parallel"
   - target: "ein-sof"
     type: "scholarly-parallel"
     source: "Mbiti 1969 — Nyame as transcendent-remote supreme; structural parallel to Ein Sof's transcendent-unmanifest position"
+    source-tier: T1
     notes: "Apophatic-transcendent supreme parallel"
   - target: "zeus"
     type: "scholarly-parallel"
     source: "Mbiti 1969 — Nyame as sky-king-supreme; Zeus as sky-thunder-king. Both are masculine sky-supreme"
+    source-tier: T1
   - target: "tian-heaven"
     type: "scholarly-parallel"
     source: "Mbiti 1969 — Chinese Tian as impersonal sky-supreme; Nyame as Akan sky-supreme"
+    source-tier: T1
   - target: "anansi"
     type: "parent-of"
     source: "Mbiti 1969 — Anansi (the trickster-spider) is Nyame's son in most Akan traditions; the cosmic father-trickster-son pair anchors Akan folkloric cosmology"
+    source-tier: T1
     notes: "Within-family Akan father-son"
 status: "metadata"
 refs:

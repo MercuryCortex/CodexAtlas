@@ -21,16 +21,20 @@ syncretic-edges:
   - target: "ishtar-akkadian"
     type: "scholarly-parallel"
     source: "West 1997; Burkert 1992, The Orientalizing Revolution"
+    source-tier: T1
     notes: "The Eastern Mediterranean love-and-war goddess chain: Sumerian Inanna → Akkadian Ishtar → Canaanite/Phoenician Astarte → Cypriot Aphrodite → Greek Aphrodite. Iconography (nudity, dove, role) and cult (Cyprus's Paphos was a Phoenician colony) trace the transmission."
   - target: "astarte-canaanite"
     type: "scholarly-parallel"
     source: "West 1997; Burkert 1992"
+    source-tier: T1
   - target: "venus-roman"
     type: "syncretic-identification"
     source: "interpretatio graeca"
+    source-tier: T1
   - target: "anahita"
     type: "ancient-identification"
     source: "Berossus via Clement of Alexandria — Achaemenid period Anāhitā ≡ Aphrodite/Artemis."
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Greek Religion"

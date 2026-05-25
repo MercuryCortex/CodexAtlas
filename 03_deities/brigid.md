@@ -20,9 +20,11 @@ syncretic-edges:
   - target: "Saint Brigid of Kildare"
     type: "folk-syncretism"
     source: "**THE paradigmatic Celtic-pagan-to-Christian-saint syncretism case**: pre-Christian fire-and-poetry triple-goddess transformed into the 6th-c. Christian Saint Brigid of Kildare; perpetual flame at Kildare maintained continuously from pre-Christian to medieval times (Bitel 2009 *Landscape with Two Saints*; Ó hÓgáin 1991)"
+    source-tier: T1
   - target: "[[hestia]] / [[vesta]]"
     type: "scholarly-parallel"
     source: "Hearth-fire goddess with attendant women maintaining perpetual flame"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Landscape with Two Saints: How Genovefa of Paris and Brigit of Kildare Built Christianity in Barbarian Europe"

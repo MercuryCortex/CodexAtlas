@@ -20,6 +20,7 @@ syncretic-edges:
   - target: "mercury-roman"
     type: "ancient-identification"
     source: "Caesar *De Bello Gallico* 6.17: 'Of the gods they worship Mercury most.' Modern scholarship (Maier 1997, Olmsted 1994) identifies Caesar's Gaulish 'Mercury' with Lugus on the basis of theophoric place-names and Lugoves dedications"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Gods of the Celts"

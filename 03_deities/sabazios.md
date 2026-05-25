@@ -20,9 +20,11 @@ syncretic-edges:
   - target: "dionysus-mystery"
     type: "ancient-identification"
     source: "Aristophanes *Birds* 875 and *Wasps* 9–10; the 'Sabazian rites' are mocked as foreign Bacchic-style mysteries; the identification with Dionysus is stable from the 5th c. BCE onward"
+    source-tier: T1
   - target: "zeus"
     type: "ancient-identification"
     source: "In Phrygian-Anatolian contexts Sabazios is sovereign-sky god, equated with Zeus-Sabazios in many Hellenistic and Roman dedications"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Cults of the Roman Empire"

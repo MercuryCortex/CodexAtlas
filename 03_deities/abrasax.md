@@ -21,9 +21,11 @@ syncretic-edges:
   - target: "the-monad-gnostic"
     type: "structural-parallel"
     source: "The Basilidean supreme deity Abrasax parallels the Sethian Monad: both are the apex of a cosmic hierarchy of aeons/powers above the material world; both are the true God above any named creator"
+    source-tier: T1
   - target: "ein-sof"
     type: "structural-parallel"
     source: "Abrasax (365 = cosmic completeness) and Ein Sof ('without limit' = infinite completeness) are both supreme divine designations whose very names encode the scope of divinity"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Irenaeus of Lyons: Against the Heresies (Book I)"

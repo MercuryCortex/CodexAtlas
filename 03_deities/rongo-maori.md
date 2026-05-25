@@ -22,16 +22,20 @@ syncretic-edges:
   - target: "demeter"
     type: "scholarly-parallel"
     source: "Best, *Maori Religion and Mythology* (1924); Eliade 1958 — Demeter as Greek agricultural goddess; Rongo as Maori agriculture-and-peace god (gender-inverted parallel)"
+    source-tier: T1
     notes: "Agricultural-fertility deity parallel"
   - target: "osiris"
     type: "scholarly-parallel"
     source: "Sahlins, *Islands of History* (1985) — applied via Lono parallel; Rongo's agricultural-peace domain parallels Osiris's grain-fertility role"
+    source-tier: T1
   - target: "tammuz-dumuzi"
     type: "scholarly-parallel"
     source: "Frazer, *The Golden Bough* (1911) — Tammuz as Mesopotamian fertility god; Rongo as Maori cognate"
+    source-tier: T1
   - target: "haumia-tiketike"
     type: "shared-tradition"
     source: "Best 1924 — within Maori pantheon Haumia governs wild-gathered foods, Rongo governs cultivated foods"
+    source-tier: T1
     notes: "Within-family wild-cultivated complementarity"
 mentioned-in:
   - "[[tradition-maori]]"

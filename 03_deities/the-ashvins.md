@@ -19,9 +19,11 @@ syncretic-edges:
   - target: "Dioskouroi (Castor & Pollux)"
     type: "scholarly-parallel"
     source: "Indo-European divine-twins type — Vedic Aśvins, Greek Dioskouroi, Lithuanian Aśvieniai, Latvian Dieva Dēli all descend from PIE *diwós sunū́ ('Sons of the Sky'); Ward 1968 *The Divine Twins*, West 2007"
+    source-tier: T1
   - target: "Marassa (Vodou)"
     type: "scholarly-parallel"
     source: "African-Caribbean divine-twins type — independent of IE but a structural cognate of the twin-divinity"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Divine Twins: An Indo-European Myth in Germanic Tradition"

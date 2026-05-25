@@ -16,15 +16,19 @@ syncretic-edges:
   - target: "[[the-good-god-cathar]]"
     type: "ancient-identification"
     source: "Cosmic-dualist opposite — absolute Cathar dualism (John of Lugio) treats the two as coeternal independent principles; moderate Cathar dualism (Concorezzo) treats Rex Mundi as a fallen son of the Good God"
+    source-tier: T1
   - target: "[[yaldabaoth]]"
     type: "scholarly-parallel"
     source: "Gnostic-Sethian demiurge identification — material-world-creator misidentifying himself as the supreme god; Cathar theology is the direct medieval-Latin survival of this Gnostic anti-cosmic structure (Stoyanov 2000 *The Other God*)"
+    source-tier: T1
   - target: "[[satanael]]"
     type: "ancient-identification"
     source: "Direct Bogomil → Cathar transmission: the Bogomil Satanael (firstborn son of God who fell) becomes the Cathar Rex Mundi (Stoyanov 2000)"
+    source-tier: T1
   - target: "[[angra-mainyu-ahriman]]"
     type: "scholarly-parallel"
     source: "Absolute Zoroastrian dualism's evil principle; the Cathar absolute-dualist recension structurally cognate"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Other God: Dualist Religions from Antiquity to the Cathar Heresy"

@@ -20,12 +20,15 @@ syncretic-edges:
   - target: "[[mama-cocha]]"
     type: "scholarly-parallel"
     source: "Both are Andean/Mesoamerican water-mother figures governing coastal and freshwater realms; water-skirt iconography parallels"
+    source-tier: T1
   - target: "[[tiamat]]"
     type: "scholarly-parallel"
     source: "Both are primordial water powers associated with the chaos-flood that precedes or dissolves a world age; the Fourth Sun flood echoes Tiamat's primordial ocean"
+    source-tier: T1
   - target: "[[nun]]"
     type: "scholarly-parallel"
     source: "Nun (Egyptian primordial waters) parallels Chalchiuhtlicue's role as the watery medium of the world's dissolution and re-creation; both are the formless water prior to/after structured creation"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "General History of the Things of New Spain (Florentine Codex)"

@@ -24,27 +24,33 @@ cross-tradition-edges:
   - target: "temple-of-heaven-beijing"
     type: "ritual-complement-to"
     source: "Steinhardt 2019; Meyer 1991"
+    source-tier: T1
     notes: "The Forbidden City (the imperial palace at the **cosmic centre**) and the Temple of Heaven (the southern altar of the imperial sacrifice) are the two principal nodes of the Beijing cosmogram — palace + altar of the [[mandate-of-heaven|Son of Heaven]]. Plus the Temples of Earth (north), Sun (east), and Moon (west), the five form a cardinal ritual ring with the palace at centre."
   - target: "karnak-temple-complex"
     type: "parallel-form-imperial-temple-axis"
     source: "Steinhardt 2019"
+    source-tier: T1
     notes: "Egyptian Karnak's processional axis (Amun-Mut-Khonsu) and the Forbidden City's central N–S axis (Meridian Gate → Hall of Supreme Harmony → Hall of Central Harmony → Hall of Preserving Harmony) are typological parallels: monumental processional axes embodying ruler-divinity ritual programmes. Independent traditions; convergent architectural logic."
   - target: "hagia-sophia"
     type: "parallel-form-imperial-throne-cult"
     source: "Steinhardt 2019; Ousterhout 1999"
+    source-tier: T1
     notes: "Justinianic Constantinople (Hagia Sophia + Great Palace + Mese axis) and Ming–Qing Beijing (Forbidden City + Temple of Heaven + central axis) are typologically cognate **imperial cosmological capital-plans** — though Hagia Sophia is a basilica and the Forbidden City is a palace, both serve as the architectural anchor of an empire's ruler-divinity ritual programme."
   - target: "jongmyo-shrine-seoul"
     type: "ancestor-of-east-asian-imperial-ritual-architecture"
     source: "Steinhardt 2019; Kim 2010"
+    source-tier: T1
     notes: "Joseon-Korean royal architecture (Gyeongbokgung Palace + [[jongmyo-shrine-seoul|Jongmyo]] ancestral shrine) is in direct architectural dialogue with the Ming Beijing model — courtyard layout, axial symmetry, cardinal orientation, throne-hall-on-triple-terrace form. Joseon court explicitly took Ming as its imperial-architectural template."
   - target: "tradition-confucianism"
     type: "principal-imperial-palace-of-confucian-state-cult"
     source: "Meyer 1991; Steinhardt 2019"
+    source-tier: T1
     notes: "The Forbidden City is the **principal architectural seat of the Chinese imperial Confucian state-cult** for nearly 500 years (1420–1912)."
 syncretic-edges:
   - target: "tradition-chinese-imperial-cult"
     type: "architectural-centre-of"
     source: "Meyer 1991; Steinhardt 2019"
+    source-tier: T1
     notes: "The Forbidden City is the architectural embodiment of **Beijing-as-cosmogram** — the palace of the Son of Heaven at the diagrammatic centre of the four-altar cardinal ritual ring (Heaven south, Earth north, Sun east, Moon west)."
 status: "metadata"
 refs:

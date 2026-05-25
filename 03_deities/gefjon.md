@@ -19,15 +19,19 @@ syncretic-edges:
   - target: "[[demeter]] (Greek goddess whose plow is the gift of agriculture to humanity)"
     type: "scholarly-parallel"
     source: "Typological: plow as world-making / sacred-land instrument; Dumézil 1973"
+    source-tier: T1
   - target: "[[athena]] (virgin goddess sovereign over male domains)"
     type: "scholarly-parallel"
     source: "Typological: virgin-goddess archetype with sovereign authority; West 2007"
+    source-tier: T1
   - target: "[[nerthus]] (Germanic earth-goddess with fertility/agricultural domain)"
     type: "scholarly-parallel"
     source: "Possible functional overlap; both associated with agricultural fertility and feminine-divine sovereignty in early Germanic/Norse context; Turville-Petre 1964"
+    source-tier: T1
   - target: "[[freyja]] (Snorri explicitly equates Gefjon and Freyja in one passage)"
     type: "ancient-identification"
     source: "Prose Edda (Gylfaginning 35): Snorri states Gefjon is a virgin and all women who die as virgins serve her; elsewhere Freyja is called Gefn (possibly the same name). The identification is debated."
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Edda (Gylfaginning 1; Skáldskaparmál)"

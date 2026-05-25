@@ -20,12 +20,15 @@ syncretic-edges:
   - target: "[[hades]]"
     type: "scholarly-parallel"
     source: "Both are lords of the dead who dwell in a realm separated from the living by water; both have epithet-meanings of darkness/invisibility (Hades = 'the unseen'; Donn = 'the dark/brown one'). Mac Cana, Celtic Mythology (1970)."
+    source-tier: T1
   - target: "[[osiris]]"
     type: "scholarly-parallel"
     source: "Both are divine lords of the dead realm to which souls travel; both were originally living figures who became rulers of the dead through death/transition. The divine-king-becomes-death-lord pattern is cross-cultural."
+    source-tier: T1
   - target: "[[manannan-mac-lir]]"
     type: "scholarly-parallel"
     source: "Both govern the otherworld across the western sea — Donn rules the island of the dead (Tech Duinn), Manannán rules the living otherworld (Tír na nÓg, Mag Mell). They represent the two faces of the Irish western otherworld: death and bliss."
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Lebor Gabála Érenn (The Book of the Taking of Ireland)"

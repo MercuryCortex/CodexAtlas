@@ -20,12 +20,15 @@ syncretic-edges:
   - target: "[[apollo]]"
     type: "scholarly-parallel"
     source: "Both are divine archers whose skill defines them; both cause devastating consequences with their arrows; both embody the tragic dimension of divine excellence. Apollo's arrows bring plague; Hou Yi's arrows save the world but cost him heaven."
+    source-tier: T1
   - target: "[[indra]]"
     type: "scholarly-parallel"
     source: "Both act as solar-restorers — Indra defeats Vritra who blocks the sun; Hou Yi shoots down excess suns that are destroying the earth. Both are warrior-champions whose triumph is ambivalent: celebrated yet exiled/diminished."
+    source-tier: T1
   - target: "[[prometheus]]"
     type: "scholarly-parallel"
     source: "Both are divine servants who perform the supreme act of world-rescue and are punished by exile/suffering for it. Prometheus brings fire; Hou Yi shoots down the suns. Both are tragic figures whose gift to humanity costs them their divine status."
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Huainanzi"

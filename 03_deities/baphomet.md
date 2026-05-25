@@ -20,18 +20,22 @@ syncretic-edges:
   - target: "hermes-greek"
     type: "structural-parallel"
     source: "Lévi, Éliphas (1854). Dogme et Rituel de la Haute Magie. Paris. / Godwin, Joscelyn (1994). The Theosophical Enlightenment. SUNY Press."
+    source-tier: T1
     notes: "Lévi designed the Baphomet figure as an explicitly Hermetic synthesis: the caduceus at the groin = Hermes/Mercury; the torch = illumination/intelligence; *solve et coagula* on the arms = the alchemical maxim; the androgyny = the alchemical *hieros gamos* (sacred marriage of opposites). For Lévi, Baphomet IS the Hermetic Principle — the resolution of all dualities into a single figure. His design is one of the most cited images in the history of Western esotericism."
   - target: "satan-christian"
     type: "ancient-identification"
     source: "LaVey, Anton (1969). The Satanic Bible. Avon. / Petersen, Jesper Aagaard (ed.) (2009). Contemporary Religious Satanism. Ashgate."
+    source-tier: T1
     notes: "Modern Satanism (LaVey, The Satanic Temple) adopted the Lévi Baphomet as its primary symbol, identifying it with Satan. This is a 20th-century identification: Lévi himself explicitly denied any connection between his Baphomet and the Christian devil. The adoption collapsed Lévi's Hermetic symbol into the Satanic identification — a classic case of an occult symbol being re-semanticized by later tradition. The Satanic Temple's bronze Baphomet statue (2019, Greeley, Colorado) is a 3D realization of the Lévi design."
   - target: "tradition-knights-templar"
     type: "part-of"
     source: "Barber, Malcolm (2006). The Trial of the Templars. Cambridge UP. (2nd ed.) / Frale, Barbara (2007). Processus Contra Templarios. Vatican Secret Archives."
+    source-tier: T1
     notes: "The Baphomet accusation (that Templars worshipped an idol called 'Baphomet') appears in the 1307–1314 trial records — but only in confessions obtained under torture, with wildly inconsistent descriptions (a head, a cat, a man, a woman, a skull, a figure with two faces). The Chinon Parchment (rediscovered 2001) shows that Pope Clement V privately absolved the Templars of heresy while publicly condemning them under pressure from Philip IV. Malcolm Barber (2006) and Barbara Frale (2007) — the two leading scholars — both conclude the idol-worship accusation was likely fabricated or wildly distorted by the torture process. The historical Templars almost certainly did not worship any 'Baphomet'."
   - target: "templar-gnostic-transmission-hypothesis"
     type: "central-figure-of-occult-reception"
     source: "Hammer-Purgstall 1818 (Tier 4 primary); Lévi 1854; Goodrick-Clarke 1985 (Tier 1 reception-historian); Barber 2006 (Tier 1 — definitive debunking of the historical idol-worship claim) — Baphomet is THE load-bearing figure of the Templar-Gnostic transmission hypothesis. The trajectory: (a) Tier-1 historical claim (Templars worshipped a Gnostic Baphomet idol) — rejected by current scholarship; (b) Tier-3 occult reconstruction — Hammer-Purgstall 1818 identifies Baphomet as a Gnostic/Ophite/Manichaean image; Lévi 1854 designs the goat-headed androgynous figure; (c) Reception-history fact — uncontestable: the *idea* of Baphomet has been one of the most generative engines of modern Western esoteric thought. See [[templar-gnostic-transmission-hypothesis]]"
+    source-tier: T1
     notes: "MASSIVE-WIN-AS-FABRICATION: Baphomet is the textbook case of a deity whose entire substance lies in the reception-history Tier — there is no historical Templar Baphomet but the post-1700 imagined Baphomet has shaped Crowley + LaVey + The Satanic Temple + global occult iconography. The vault must label which tier each invocation claims (Tier-1 historical vs Tier-3 reception)"
 status: "metadata"
 refs:

@@ -24,18 +24,22 @@ cross-tradition-edges:
   - target: "saint-denis-abbey-paris"
     type: "stylistic-predecessor"
     source: "Bony 1983; Murray 1989"
+    source-tier: T1
     notes: "Saint-Denis Abbey (Abbot Suger, ~1135–1144) is the birth of Gothic; Notre-Dame de Paris (begun 1163) is the second-major early Gothic cathedral and the principal early Gothic experiment with the *four-storey elevation* — soon superseded by Chartres' three-storey elevation."
   - target: "chartres-cathedral"
     type: "stylistic-precursor-of"
     source: "Bony 1983"
+    source-tier: T1
     notes: "Notre-Dame de Paris (four-storey early Gothic, begun 1163) precedes Chartres (three-storey High Gothic, 1194–1220) by a generation. Chartres' three-storey innovation supersedes Notre-Dame's four-storey form for all subsequent French High Gothic cathedrals."
   - target: "cologne-cathedral"
     type: "stylistic-cousin"
     source: "Bony 1983; Wolff 1990"
+    source-tier: T1
     notes: "Both deploy the principal French Gothic vocabulary; Cologne (begun 1248) is the Germanic descendant of the broader French Gothic tradition."
   - target: "theme-flying-buttress-as-structural-innovation"
     type: "exemplifies"
     source: "Murray 1989"
+    source-tier: T1
     notes: "Notre-Dame de Paris is the principal early-Gothic site where the **flying buttress** was developed in its mature form. The original 1180s buttressing was modest; the great flying buttresses around the chevet were added ~1220–1230 to enable the larger clerestory windows and stabilise the very tall (35 m) vaults."
 status: "metadata"
 refs:

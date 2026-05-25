@@ -20,24 +20,31 @@ syncretic-edges:
   - target: "[[thor]]"
     type: "structural-parallel"
     source: "Thor and Léi Gōng are structurally the two most prominent thunder deities in their respective traditions. Both wield thunder as their primary weapon; both enforce cosmic order through destructive power; both are widely propitiated in folk religion. The thunder-deity is the most globally distributed divine archetype — every major tradition has a thunder-deity figure."
+    source-tier: T1
   - target: "[[indra]]"
     type: "structural-parallel"
     source: "Indra is the Vedic thunder/storm god who defeats the cosmic serpent Vritra and releases the waters — the Indo-European thunder-deity archetype. Léi Gōng and Indra represent the independent Chinese and Indian instantiations of the thunder-deity as cosmic punisher and storm-bringer. The Indo-European *Dyeus Pter / thunder-deity reconstruction (Mallory & Adams, Encyclopedia of Indo-European Culture, 1997) contrasts with Léi Gōng's Chinese-bureaucratic framing."
+    source-tier: T1
   - target: "[[perun]]"
     type: "structural-parallel"
     source: "Perun is the Slavic thunder god who battles the serpent Veles — the Indo-European Thunderer in yet another instantiation. The global thunder-deity comparative table runs: Indra (Vedic) / Zeus (Greek) / Jupiter (Roman) / Thor (Norse) / Perun (Slavic) / Teshub (Hittite) / Taranis (Celtic) / Léi Gōng (Chinese) / Raijin (Japanese)."
+    source-tier: T1
   - target: "[[teshub]]"
     type: "structural-parallel"
     source: "Teshub the Hittite storm/thunder god represents the Near Eastern branch of the thunder-deity archetype; as with Léi Gōng, storm power is associated with divine justice and the defeat of chaos-monsters."
+    source-tier: T1
   - target: "[[susanoo]]"
     type: "structural-parallel"
     source: "Susanoo (Japanese storm deity) is the most geographically proximate parallel to Léi Gōng and the most likely case of direct cultural contact shaping the thunder-deity figure in the East Asian tradition. Both govern storms; both are ambivalent (destructive and creative); both interact with a solar sibling (Amaterasu / Jade Emperor's celestial court)."
+    source-tier: T1
   - target: "[[tlaloc]]"
     type: "structural-parallel"
     source: "Tlaloc (Aztec rain/thunder deity) and Léi Gōng represent the independent development of the rain-and-thunder deity in the Americas and China — both govern storms, both are associated with agricultural abundance through rainfall, both require propitiation for the crops to grow."
+    source-tier: T1
   - target: "[[jade-emperor]]"
     type: "subordinate-relationship"
     source: "Léi Gōng operates within the celestial bureaucracy under the Jade Emperor's authority — he executes the punishment of evildoers on divine instruction. This is the distinctively Chinese framing: thunder as divine punishment within a cosmic civil service rather than as an independent force."
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Encyclopedia of Taoism"

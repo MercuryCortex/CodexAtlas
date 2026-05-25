@@ -24,12 +24,15 @@ syncretic-edges:
   - target: "adam-kadmon"
     type: "structural-parallel"
     source: "Scholem 1941; Idel 1988: both Adamas and Adam Kadmon posit a heavenly human archetype whose earthly manifestation is a diminished copy; both serve as macrocosmic blueprints"
+    source-tier: T1
   - target: "purusha"
     type: "structural-parallel"
     source: "Jonas 1958 ch. 4: the Heavenly Human as cosmic archetype appears across traditions; Purusha (RV 10.90) and Adamas both function as the macrocosmic person whose structure orders reality"
+    source-tier: T1
   - target: "anthropos-gnostic"
     type: "tradition-variant"
     source: "Pearson 1990: Adamas (Sethian) and the Hermetic Anthropos (Poimandres CH I) are variant forms of the same late-antique Heavenly Man myth"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Secret Revelation of John"

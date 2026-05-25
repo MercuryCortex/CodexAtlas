@@ -25,42 +25,53 @@ syncretic-edges:
   - target: "hokmah-hebrew"
     type: "ancestor-of"
     source: "Pearson 1990; MacRae 1970 — Gnostic Sophia inherits then inverts the Hebrew Wisdom figure"
+    source-tier: T1
   - target: "shekhinah"
     type: "structural-parallel"
     source: "Scholem 1941: both are divine feminine figures in exile from the divine plenum, both are the condition for cosmic repair"
+    source-tier: T1
   - target: "inanna-sumerian"
     type: "structural-parallel"
     source: "Pearson 1984/2007 — Sophia's fall through the aeons structurally parallels Inanna's descent through the seven gates of the underworld. At each stratified level, divine attribute surrendered; at the lowest point, the goddess is trapped and must be rescued. The seven-gated descent pattern is a Mesopotamian inheritance via the Babylonian-Hellenistic astrological mediation (seven-planetary-spheres). See [[theme-mesopotamian-gnostic-transmission]] Chains 4 + 5"
+    source-tier: T1
     notes: "MASSIVE-WIN — typological transmission via the Hellenistic astrological substrate"
   - target: "tiamat"
     type: "polemic-inversion"
     source: "Pearson 1984/2007 — in the Mesopotamian Marduk-Tiamat cosmogony, the chaos-mother is the obstacle the warrior-king must defeat to create cosmic order. In the Gnostic Sophia-Yaldabaoth cosmogony, the wisdom-mother's unsanctioned generative act produces the demiurge who creates the lower cosmos. Both narratives use the mother-source's diminishment as the cosmogonic mechanism — Tiamat killed, Sophia fallen — but with opposite moral valence (Tiamat is the monster; Sophia is the wronged divine mother). See [[theme-mesopotamian-gnostic-transmission]] Chain 2"
+    source-tier: T1
   - target: "theme-mesopotamian-gnostic-transmission"
     type: "documented-substrate"
     source: "Pearson 2007 + Quispel 1974; the Hokmah-Sophia chain runs Mesopotamian *nēmequ* → Hellenistic Jewish Hokmah → Philonic Sophia → Gnostic Sophia. See [[theme-mesopotamian-gnostic-transmission]] Chain 3 for the load-bearing argument"
+    source-tier: T1
     notes: "MASSIVE-WIN: HIGH-confidence chain. Mesopotamian wisdom literature's *nēmequ* feeds personified Hokmah (Proverbs 8, Sirach 24, Wisdom 7-9), which Philo fuses with Greek Sophia and Platonic Logos, which becomes the Gnostic Sophia. Cleanest documentable transmission line"
   - target: "isis-hellenistic"
     type: "Alexandrian-milieu-parallel"
     source: "Witt 1971 + Pearson 2007 — Hellenistic Isis and Gnostic Sophia share structural-and-iconographic continuity in the same 1st-3rd c. Alexandrian milieu. Both: cosmic-feminine principles, fall-loss-mourning narratives, active recovery agents, saving-mother figures invoked by initiates. Workshop-level iconographic continuity at Alexandrian icon-production. See [[theme-egyptian-gnostic-transmission]] Chain 3"
+    source-tier: T1
   - target: "theme-egyptian-gnostic-transmission"
     type: "documented-substrate"
     source: "Sophia receives the Egyptian Isis-substrate alongside the Mesopotamian Hokmah-substrate, both fusing in the Alexandrian milieu. The Gnostic Sophia is the synthesis-endpoint of both bridges"
+    source-tier: T1
     notes: "MASSIVE-WIN: Sophia is the convergence point where the Mesopotamian and Egyptian bridges into Gnosticism meet — the cleanest single locus of the dual-substrate documentation"
   - target: "theme-solomonic-transmission-spine"
     type: "Christological-substrate"
     source: "Hahn 2008, *King and Messiah as Son of God*; Pearson 1990 — the Wisdom-Christology tradition (Jesus as the personified Wisdom/Sophia of Proverbs 8 and Wisdom of Solomon) is Thread 5 of the Solomonic transmission spine. The Solomonic Wisdom-corpus (Proverbs, Ecclesiastes, Song of Songs, Wisdom of Solomon, Sirach) is the substrate that Hellenistic Jewish Sophia + Philonic Sophia/Logos + Johannine Logos all draw on for the personified-Wisdom Christology that the Gnostic Sophia inherits and inverts. See [[theme-solomonic-transmission-spine]] Thread 5"
+    source-tier: T1
     notes: "MASSIVE-WIN: Sophia is the figure that converts the Solomonic Wisdom-literature attribution into a divine-feminine cosmological principle — the link between 'Solomon as paradigmatic Wisdom-bearer' and 'Christ as Wisdom incarnate' runs through this hypostatized Sophia"
   - target: "templar-gnostic-transmission-hypothesis"
     type: "core-figure-of-occult-reception"
     source: "Hammer-Purgstall 1818, *Mysterium Baphometis revelatum* (Tier 4 primary); Goodrick-Clarke 1985 (Tier 1 reception-historian); Lévi 1854; Picknett & Prince 1997 — the Hammer-Purgstall Gnostic-variant of the Templar-Gnostic transmission hypothesis identifies the alleged Templar 'Baphomet head' as a Gnostic Sophia-image. While the Tier-1 historical claim is rejected by current scholarship (Barber 2006), the *reception-history* of the post-1700 Templar-occult tradition genuinely makes Sophia load-bearing for the imagined Gnostic-Templar continuity. See [[templar-gnostic-transmission-hypothesis]]"
+    source-tier: T1
     notes: "Reception-history Tier-3 edge: Sophia features in the 19th-c. occult reconstruction (Hammer-Purgstall → Lévi → Theosophy → Holy-Blood-Holy-Grail) of an alleged Gnostic Templar tradition. The historical claim is unsupported; the reception is the actual edge"
   - target: "theme-holy-spirit-sophia"
     type: "core-figure-of-feminine-third-pattern"
     source: "Quispel 1974 'The Spirit as Mother in the Gospel of the Hebrews' *Eranos-Jahrbuch*; Engelsman 1979 *The Feminine Dimension of the Divine*; Scholem 1941 — the Gnostic Sophia is one of two named deity-instances in the Holy-Spirit-Sophia hub (alongside [[shekhinah]]). The hub documents the cross-tradition pattern of a *suppressed feminine third* in monotheist-Trinitarian theology — Sophia in Gnosticism, Shekhinah in Kabbalah, the Spirit-as-Mother in Syriac Christianity + the lost Gospel of the Hebrews (Origen citation: 'My mother the Holy Spirit took me by one of my hairs'). See [[theme-holy-spirit-sophia]]"
+    source-tier: T1
     notes: "MASSIVE-WIN: Sophia + Shekhinah + Holy Spirit (feminine in Hebrew + Syriac) are three names of the same theological problem — what happens to the divine feminine in a Trinitarian/monotheist tradition that has decided the supreme is fatherly/masculine? Cross-lens: 03_deities → 06_themes"
   - target: "soul-exile-longing"
     type: "primary-instance-of-cross-tradition-pattern"
     source: "Jonas 1963, *The Gnostic Religion* ch. 'Gnosticism, Existentialism, and Nihilism'; King 2006; *Apocryphon of John* + *Gospel of Truth* + *Letter to Flora* — Sophia is one of three named deity-instances in the soul-exile-longing hub. Her fall from the Pleroma and her *pneuma* trapped in matter (after Yaldabaoth steals it from her and breathes it into Adam) is the *Gnostic* version of the cross-tradition exile-longing pattern that also appears in Plotinian Neoplatonism, Sufi *ghurba*, Vedāntic *avidyā*, Buddhist *dukkha*, and Rumi's *Nay-nāmeh*. See [[soul-exile-longing]]"
+    source-tier: T1
     notes: "Cross-lens: 03_deities → 06_themes. The hub also lists key-figures across 04_persons (rumi, plotinus, suhrawardi, shankara, siddhartha-gautama-buddha, ibn-arabi) and traditions across 07_traditions (sufism, neoplatonism, gnosticism, advaita-vedanta, buddhism) — those lens-back-edges still pending. MASSIVE-WIN: Sophia is the figure whose *trapped pneuma* gives the exile-longing cluster its sharpest cosmic-drama formulation"
 status: "full"
 refs:

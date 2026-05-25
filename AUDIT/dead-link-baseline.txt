@@ -4,13 +4,16 @@
 # To accept current state as the new floor, run:
 #     python3 linkcheck.py --write-baseline
 # See AUDIT/2026-05-25-tyrant-remediation-plan.md Phase 2.
-# Captured 522 targets on first write.
+# Captured 523 targets on first write.
 
 ...
 08_quran-scripture-wiring-brief.md
 ARTHURIAN-CYCLE
+Marduk
 Nun-primordial-waters
+Odin
 P5-002-heart-sutra
+Vishnu
 Zeus
 _phase-4-late-antiquity
 abaye
@@ -373,7 +376,6 @@ phase-5-021-cusa-de-docta-ignorantia
 phase-5-029-dogen-shobogenzo
 phase-5-035-physiologus
 phase-5-046-ibn-tufayl-hayy-ibn-yaqdhan
-phase-6-002-florentine-codex
 phase-6-006-paracelsus-archidoxes
 phase-6-026-jacob-frank-words-of-the-lord
 phase-7-002-doctrine-and-covenants
@@ -516,7 +518,7 @@ walter-burkert
 was-sceptre
 watchers-fallen-angels
 wei-boyang
-wikilink
+wikilinks
 wisdom-literature
 xenophon
 yam-canaanite
@@ -527,4 +529,3 @@ yochanan-bar-nappaha
 yoshamin
 zara-yaqob-theological-centralization
 zema-ethiopian-chant
-…

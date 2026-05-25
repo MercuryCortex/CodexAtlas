@@ -20,6 +20,7 @@ syncretic-edges:
   - target: "ge-greek"
     type: "scholarly-parallel"
     source: "Munro-Hay 1991 — structural cognate; the Aksumite Meder occupies the earth-deity position in the cosmic pantheon"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Aksum: An African Civilisation of Late Antiquity"

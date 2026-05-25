@@ -23,22 +23,27 @@ cross-tradition-edges:
   - target: "step-pyramid-djoser-saqqara"
     type: "descendant-of-form"
     source: "Lehner 1997; Arnold 1991"
+    source-tier: T1
     notes: "Architectural lineage: the Djoser Step Pyramid (~2670 BCE; [[imhotep]]) is the world's first monumental stone building, originating the pyramid form from the stacked-mastaba. Khufu's Great Pyramid is the apex (~120 years later) of the 4th-Dynasty refinement of the true geometric pyramid."
   - target: "pyramid-of-khafre-giza"
     type: "neighbouring-cognate"
     source: "Lehner 1997"
+    source-tier: T1
     notes: "Khufu's son [[khafre]] built the slightly smaller adjacent pyramid (and the [[great-sphinx-of-giza]] is part of his complex). The two Giza pyramids + Menkaure's smaller third compose the canonical Giza triad."
   - target: "ziggurat-of-ur"
     type: "parallel-form"
     source: "Lehner 1997; Crawford 1991"
+    source-tier: T1
     notes: "Mesopotamian ziggurats (Ur, Babylon) are the **stepped** architectural analogue to Egyptian pyramids. Both are stairway-to-heaven monumental ritual buildings emerging within roughly the same millennium (3rd–2nd millennium BCE), with **no documented contact** between the two civilisations at the architectural level. Independent convergence on the cosmic-mountain-as-monumental-form. (Trade-goods contact yes — architectural-form transmission no.)"
   - target: "borobudur-stupa-mandala"
     type: "parallel-form"
     source: "Snodgrass 1985"
+    source-tier: T1
     notes: "Independent Buddhist stepped-pyramid-as-cosmic-mountain (Java, ~800 CE). Same architectural type-class (stepped monumental ritual building) emerging in a different tradition with no contact. Cosmic-mountain motif convergence."
   - target: "tradition-hermeticism"
     type: "iconic-symbol-of"
     source: "Yates 1964"
+    source-tier: T1
     notes: "From Late Antiquity onward the Great Pyramid is the iconic visual emblem of Egypt-as-source-of-all-wisdom in the Hermetic tradition. The Yates thesis: Renaissance Hermeticism re-imports Egyptian wisdom via the *Corpus Hermeticum* and uses the pyramid as its visual signifier. By the 18th c. the pyramid is on the US Great Seal as Masonic-Hermetic emblem ([[tradition-freemasonry]])."
 status: "metadata"
 refs:

@@ -20,16 +20,20 @@ syncretic-edges:
   - target: "[[enma-japanese]]"
     type: "direct-borrowing"
     source: "Teiser 1988 *The Ghost Festival in Medieval China*; Teiser 1994 *The Scripture on the Ten Kings*; Glassman 2012 *The Face of Jizō*"
+    source-tier: T1
     notes: "MASSIVE-WIN: direct phonetic descent. Sanskrit Yama → Middle Chinese 閻摩 Yán-mó → Chinese 閻羅王 Yánluó-wáng → Japanese 閻魔王 Enma-Ō. The Vedic underworld-king is preserved by name across the Buddhist transmission, with Chinese Buddhism elaborating his role into the Ten Kings of Hell tribunal. Cleanest documented Vedic→East-Asian deity transmission alongside Sarasvatī→Benzaiten and Indra→Śakra"
   - target: "[[yima-jamshid]]"
     type: "cognate"
     source: "Lincoln 1986; PIE *Yemo- 'twin'; Vedic Yama and Avestan Yima both descend from the same PIE source — the first mortal who founds the realm of the dead — the cleanest deity-cognacy across the Indo-Iranian split"
+    source-tier: T1
   - target: "[[yamantaka]]"
     type: "scholarly-parallel"
     source: "Vajrayana Yamāntaka is *the conqueror of Yama* (yamāntaka = 'ender of Yama') — Yama redeployed as antagonist; the Buddhist tantric *yidam* deity"
+    source-tier: T1
   - target: "[[hades]]"
     type: "scholarly-parallel"
     source: "Cross-tradition death-god / ruler of the dead"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Rig Veda: An Anthology"

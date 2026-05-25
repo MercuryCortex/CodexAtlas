@@ -20,6 +20,7 @@ syncretic-edges:
   - target: "[[siris-akkadian]]"
     type: "ancient-identification"
     source: "The Akkadian goddess Siris/Siraš (also a beer goddess) is functionally identical to Ninkasi and appears interchangeably in Old Babylonian god lists; some scholars treat them as the same deity under two names, others as a pair"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Hymn to Ninkasi: An Anthology of Sumerian Literature"

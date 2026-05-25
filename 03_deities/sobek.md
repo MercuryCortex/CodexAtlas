@@ -20,9 +20,11 @@ syncretic-edges:
   - target: "ra"
     type: "ancient-identification"
     source: "In the Middle Kingdom Fayum cult, Sobek is fused with Ra as Sobek-Ra, a solar-crocodile creator"
+    source-tier: T1
   - target: "horus"
     type: "ancient-identification"
     source: "At Kom Ombo, Sobek and Horus the Elder share temple dedication; theological identification of Sobek with Horus's regal aspect"
+    source-tier: T1
 status: "partial"
 refs:
   - title: "Le crocodile et son culte dans l'Égypte ancienne"

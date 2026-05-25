@@ -20,6 +20,7 @@ syncretic-edges:
   - target: "[[dionysus]]"
     type: "same-as"
     source: "Orphic theogony; Olympiodorus In Phaedonem 1.3-6; West 1983 *The Orphic Poems* (Oxford)"
+    source-tier: T1
     notes: "Zagreus is the primordial Dionysus of Orphic mythology — son of Zeus and Persephone, dismembered by the Titans in bull-form, his heart preserved by Athena and reborn as the 'second' Dionysus through Semele. The Zagreus dismemberment is the central Orphic myth from which humanity inherits both a Titanic (material) and a Dionysian (divine) nature — the theological substrate of the Orphic-Pythagorean reincarnation doctrine"
 status: "stub"
 refs:

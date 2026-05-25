@@ -20,9 +20,11 @@ syncretic-edges:
   - target: "thoth"
     type: "scholarly-parallel"
     source: "Modern comparative; both are scribal-wisdom gods of writing and destiny in their respective Bronze-Age contexts"
+    source-tier: T1
   - target: "hermes-trismegistus"
     type: "scholarly-parallel"
     source: "Hellenistic-Mesopotamian-Egyptian syncretism in the late antique Near East linked Nabu with Hermes/Hermes Trismegistus as the scribe-mediator type"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Mesopotamian Religion"

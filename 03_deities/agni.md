@@ -20,6 +20,7 @@ syncretic-edges:
   - target: "atar"
     type: "shared-inheritance"
     source: "Boyce 1975, A History of Zoroastrianism vol. I — Agni and Atar are Indo-Iranian cognates, not parallels: both descend from a common pre-Indo-Iranian fire-cult and ritual vocabulary (Vedic *hotṛ* ↔ Avestan *zaotar*). The relationship is shared inheritance, not later borrowing."
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Rigveda: The Earliest Religious Poetry of India"

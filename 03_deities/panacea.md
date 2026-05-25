@@ -21,22 +21,27 @@ syncretic-edges:
   - target: "hygieia"
     type: "sibling-of"
     source: "Hippocratic Oath; standard Asklepian genealogy — both daughters of Asklepios"
+    source-tier: T1
     notes: "Hygieia and Panacea represent the two poles of medicine — maintenance of health (Hygieia) vs. universal cure (Panacea). Their co-invocation in the Oath's opening line encodes a complete medical philosophy in two names."
   - target: "asclepius-greek"
     type: "child-of"
     source: "Standard Asklepian genealogy; confirmed in cult inscriptions at Epidauros and Pergamon"
+    source-tier: T1
     notes: "Daughter of Asklepios and Epione; her healing power is the pharmacological aspect of her father's general healing dominion."
   - target: "sacred-pharmacology"
     type: "patron-of"
     source: "Etymological and cult evidence — Panacea's domain is specifically remedies and medicines, making her the divine patron of pharmacology"
+    source-tier: T1
     notes: "The entire tradition of plant-based healing, sacred pharmacology, and the search for universal remedies is conceptually organized under her name."
   - target: "dhanvantari"
     type: "cross-tradition-archetype"
     source: "Comparative religion — Burkert 1985; Wujastyk 2003 *Roots of Ayurveda* — Panacea as 'all-remedy' and Dhanvantari as bearer of amrita (the nectar that cures all and grants immortality) occupy the same theological slot in their traditions"
+    source-tier: T1
     notes: "Universal-remedy archetype: Panacea's name encodes the complete pharmacopeia (pan-akos = all-remedy); Dhanvantari bears amrita, the Hindu divine substance complete enough to cure all disease and grant immortality. Both personify a medicine so comprehensive it addresses every affliction. Independent Greek/Hindu convergence, no documented contact."
   - target: "bhaisajyaguru"
     type: "cross-tradition-archetype"
     source: "Comparative religion — Birnbaum 1979 *The Healing Buddha*; Bhaisajyaguru Sutra — the Medicine Buddha's right hand holds myrobalan fruit (haritaki, the 'king of medicines' in Tibetan pharmacopeia, believed to treat all disease); Panacea's domain is the all-cure remedy"
+    source-tier: T1
     notes: "Complete-pharmacopeia archetype: Bhaisajyaguru holds myrobalan — the Tibetan pharmacopeia's 'king of all medicines' (triphala complex: haritaki/amalaki/bibhitaki) believed to treat every major condition; Panacea's name encodes the same concept (all-remedy). Independent Buddhist/Greek convergence on the deity whose specific domain is the pharmacopeia complete enough to cure everything."
 tags:
   - medicine

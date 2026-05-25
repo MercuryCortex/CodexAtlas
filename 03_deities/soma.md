@@ -20,26 +20,32 @@ syncretic-edges:
   - target: "haoma-zoroastrian"
     type: "scholarly-parallel"
     source: "Boyce 1975; cognate Indo-Iranian ritual substance"
+    source-tier: T1
     notes: "Vedic Soma and Avestan Haoma are cognate names for cognate ritual substances pressed and consumed in cognate liturgies. This is one of the strongest pieces of evidence for Indo-Iranian religious unity."
   - target: "dhanvantari"
     type: "structural-parallel"
     source: "Bhagavata Purana 8.8 — Dhanvantari emerges from the Samudra Manthan bearing amrita; Jamison & Brereton 2014 *Rigveda* — soma is the pressed plant of immortality; multiple Puranic texts identify amrita and soma as the same substance"
+    source-tier: T1
     notes: "Amrita = Soma theological equation: Soma is the deified plant pressed for immortality in Vedic sacrifice; Dhanvantari bears amrita (nectar of immortality) from the same cosmic ocean churning. In Vedic theology, soma IS the immortality drink that sustains divine life. Dhanvantari is the god-form who holds and delivers the substance that Soma-as-deity personifies: the divine carrier of the supreme sacred plant-medicine."
   - target: "sacred-pharmacology"
     type: "attested-in"
     source: "Rigveda Mandala 9 (~114 hymns entirely dedicated to Soma Pavamana); Falk 1989 *Bulletin SOAS*"
+    source-tier: T1
     notes: "Soma is the paradigmatic case of sacred pharmacology in the vault: a plant-substance so central to ritual that it was deified, given an entire book of the Rig Veda, and became the theological template for divine plant-medicine across the Indo-Iranian world. The hymns describe pressing, filtering, and divine ascent — the full apparatus of ritual pharmacology."
   - target: "medicine-ayurveda"
     type: "foundational"
     source: "Wujastyk 2003 *Roots of Ayurveda*; Charaka Samhita — Soma listed as *oshadhi-raja* ('king of plants') in Ayurvedic pharmacology; the concept of ojas (vital essence) derives from Soma theology"
+    source-tier: T1
     notes: "Soma is the theoretical root of Ayurvedic pharmacology: identified as *oshadhi-raja* ('king of plants') in the Charaka Samhita; the Ayurvedic concept of *ojas* (vital essence produced by perfect digestion and health) derives directly from Vedic soma theology. The plant that powered Vedic sacrifice became the conceptual foundation of the first systematic pharmacopeia."
   - target: "theme-soma-haoma-eucharist"
     type: "origin-deity-of-transmission-chain"
     source: "Jamison & Brereton 2014 *Rigveda* (esp. Mandala 9); Falk 1989 on PII *\\*sauma-*; Flattery & Schwartz 1989 — Soma is the Vedic-branch origin-deity of the 3,500-year sacred-drink transmission chain (PII *\\*sauma-* → Vedic Soma → Avestan Haoma → Dionysian wine → Passover *kos ha-berakha* → Christian Eucharist → Mithraic agape meal). The drinking-the-substance = drinking-the-god ritual logic is the conceptual core; soma-as-deity (the entire Rigveda Mandala 9 devoted to Soma Pavamāna) is its earliest documented articulation. See [[theme-soma-haoma-eucharist]]"
+    source-tier: T1
     notes: "MASSIVE-WIN: Soma is the headwater deity of the vault's longest documented ritual-transmission chain. Cross-lens: 03_deities → 06_themes. Hub also lists across 02_documents ([[phase-1-031-rigveda]], [[phase-2-002-gathas-of-zarathustra]], [[phase-2-004-yasna-younger-avesta]]), 07_traditions ([[tradition-vedic-hinduism]], [[tradition-zoroastrianism]], [[tradition-dionysian-mysteries]], [[tradition-christianity-canonical]], [[tradition-mithraic-mysteries]], [[tradition-eleusinian-mysteries]]), and 09_symbols ([[vine-grape]], [[wheat-grain]], [[tauroctony]]) — back-edges from those lenses still pending"
   - target: "bmac-proto-zoroastrian"
     type: "archaeologically-attested-PII-substrate"
     source: "Sarianidi 1998 *Margiana and Protozoroastrianism* (Gonur Tepe excavations); Falk 1989 *Bulletin SOAS*; Anthony 2007 ch. 16 — BMAC ritual deposits at Gonur Tepe (~1800 BCE) included *Ephedra* stems alongside mortar-and-pestle equipment, providing the strongest direct archaeological evidence for the Proto-Indo-Iranian *\\*sauma-* ritual *as a Bronze-Age archaeological reality* prior to its bifurcation into Vedic Soma + Avestan Haoma. See [[bmac-proto-zoroastrian]]"
+    source-tier: T1
     notes: "Cross-lens: 03_deities → 06_themes. BMAC is the rare case where the *archaeological substrate* of a deity is recoverable; Soma is one of the few deities whose pre-textual ritual practice has direct material evidence"
 status: "metadata"
 refs:

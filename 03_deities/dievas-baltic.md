@@ -17,9 +17,11 @@ syncretic-edges:
   - target: "[[dyaus-pita]]"
     type: "scholarly-parallel"
     source: "Baltic Dievas and Vedic Dyaus Pitar both descend from PIE *Dyēus ph2tēr ('Sky Father') — the most direct reflexes preserved (Mallory & Adams 2006); Latvian retains *Dievs tēvs* 'God the Father'"
+    source-tier: T1
   - target: "[[zeus]] / [[jupiter]]"
     type: "scholarly-parallel"
     source: "Same PIE root *Dyēus"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Of Gods and Men: Studies in Lithuanian Mythology"

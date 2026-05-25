@@ -20,9 +20,11 @@ syncretic-edges:
   - target: "pluto-roman"
     type: "syncretic-identification"
     source: "interpretatio graeca"
+    source-tier: T1
   - target: "serapis-hellenistic"
     type: "syncretic-identification"
     source: "Plutarch, On Isis and Osiris; Hellenistic Serapis combines Osiris and Hades/Pluton."
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Greek Religion"

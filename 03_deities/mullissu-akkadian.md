@@ -20,9 +20,11 @@ syncretic-edges:
   - target: "[[nin-lil-sumerian]]"
     type: "ancient-identification"
     source: "Lambert 2004 (RlA); the Mullissu = Ninlil equation is fully realized by the Old Babylonian period and uncontested in Assyriology; in the Neo-Assyrian period Mullissu is consort of Ashur (a translation of the Enlil-consort role to the new imperial high god)"
+    source-tier: T1
   - target: "[[ashur]]"
     type: "scholarly-parallel"
     source: "Parpola 1997; in the Neo-Assyrian period Mullissu is paired with Ashur as imperial queen-consort, replacing the older Enlil-Ninlil pairing as Ashur replaces Enlil at the head of the Assyrian state pantheon"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Mullissu, Mulissu"

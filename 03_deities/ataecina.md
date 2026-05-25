@@ -20,10 +20,12 @@ syncretic-edges:
   - target: "persephone-greek"
     type: "ancient-identification"
     source: "Multiple Latin inscriptions: 'Deae Sanctae Ataecinae Turibrigensi Proserpinae' — the two names appear in compound. Encarnação (1975)."
+    source-tier: T1
     notes: "The Roman identification is explicit and documentarily attested — unusual for Lusitanian deities, most of which received only partial Roman interpretatio. The compound 'Ataecina Proserpinae' means Roman dedicators understood her as functionally equivalent to Proserpina (the underworld queen who spends half the year below ground). The agricultural cycle encoded in Proserpina's myth — descent → winter → return → spring — maps directly onto an Iberian vegetation-death-regeneration goddess."
   - target: "inanna-sumerian"
     type: "structural-parallel"
     source: "Typological — the descent-to-the-underworld pattern."
+    source-tier: T1
     notes: "Inanna's descent to the Great Below (Sumerian text, ~2100 BCE), Persephone's abduction by Hades, and the Ataecina-as-Proserpina identification all encode the same mythological structure: a goddess who crosses the threshold between the living and dead, transforming through that crossing, and whose return marks the regeneration of the earth. Inanna is the oldest attested version of this myth-type; Ataecina is the westernmost."
 status: "metadata"
 refs:

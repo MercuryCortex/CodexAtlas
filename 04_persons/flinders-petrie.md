@@ -15,6 +15,7 @@ syncretic-edges:
   - target: "great-pyramid-of-khufu"
     type: "investigated-by"
     source: "Petrie 1883"
+    source-tier: T1
     notes: "His 1883 survey remains the baseline metrological reference; deliberately demolished the Piazzi Smyth 'Pyramid Inch' hypothesis with precision measurement"
 refs:
   - title: "The Pyramids and Temples of Gizeh"

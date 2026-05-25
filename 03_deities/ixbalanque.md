@@ -20,21 +20,27 @@ syncretic-edges:
   - target: "[[hunahpu]]"
     type: "tradition-internal"
     source: "Twin pair; Hunahpu (Sun) and Ixbalanque (Moon/Venus) are inseparable — the two poles of a single mythological unit. The Hero Twins function as a dyad; neither is fully comprehensible without the other."
+    source-tier: T1
   - target: "[[the-dioskouroi]]"
     type: "scholarly-parallel"
     source: "The Greek divine twins Castor and Pollux (Dioscuri): one mortal / one immortal, alternating between Olympus and Hades, ascending to become stars. The Hero Twins' alternation between death and life, and their final ascent to the sky, structurally parallels the Dioscuri. The divine-twins-who-alternate-death pattern is one of the oldest reconstructable mythological structures (Bruce Lincoln; Calvert Watkins)."
+    source-tier: T1
   - target: "[[osiris]]"
     type: "scholarly-parallel"
     source: "Both die and are resurrected — Osiris dismembered and reassembled; the Hero Twins ground to powder and scattered in the river, then self-reassembled. Both resurrection narratives involve a scattered/destroyed body that reconstitutes. Both involve trickery of the death-power."
+    source-tier: T1
   - target: "[[persephone-greek]]"
     type: "scholarly-parallel"
     source: "Both involve a descent into the underworld and an eventual return/transformation. Persephone's capture and release / the Twins' voluntary descent and triumph. Both katabasis narratives end with a new celestial-order relationship between the underworld and the upper world."
+    source-tier: T1
   - target: "[[inanna-sumerian]]"
     type: "scholarly-parallel"
     source: "The most complete parallel to the Hero Twins' Xibalba descent: Inanna descends voluntarily into the Great Below, passes through gates and is stripped, is killed, then resurrected through Enki's intervention. Both are underworld-descent-and-return narratives involving sacrifice, transformation, and the defeat of the underworld's sovereignty."
+    source-tier: T1
   - target: "[[izanagi]]"
     type: "scholarly-parallel"
     source: "Shinto deity who descends into Yomi (the underworld) to retrieve his dead wife, is confronted by the horror of the underworld, and escapes. The katabasis structure: descent, underworld encounter, escape/transformation."
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Popol Vuh: The Definitive Edition of the Mayan Book of the Dawn of Life"

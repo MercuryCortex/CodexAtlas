@@ -18,9 +18,11 @@ syncretic-edges:
   - target: "[[nuwa]]"
     type: "ancient-identification"
     source: "Brother-sister primordial pair, depicted in Han iconography with entwined serpentine tails (Wu Liang Shrine, 151 CE)"
+    source-tier: T1
   - target: "[[thoth]] / [[hermes-trismegistus]]"
     type: "scholarly-parallel"
     source: "Culture-hero credited with the invention of writing/divination — Egyptian/Hermetic cognate"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Fathoming the Cosmos and Ordering the World: The Yijing and Its Evolution in China"

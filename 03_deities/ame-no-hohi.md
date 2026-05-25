@@ -20,10 +20,12 @@ syncretic-edges:
   - target: "amaterasu"
     type: "child-of"
     source: "Kojiki 1.13; Philippi (trans., 1968)"
+    source-tier: T1
     notes: "Ame-no-Hohi is one of five male kami born when Susanoo chews and spits out Amaterasu's *magatama* beads during the *ukehi* contest at the Heavenly Plain. The five are formally Amaterasu's sons because they came from her beads."
   - target: "okuninushi"
     type: "failed-emissary-to"
     source: "Kojiki 1.32"
+    source-tier: T1
     notes: "Sent by Amaterasu to demand that Ōkuninushi (the earthly sovereign of Izumo) surrender the land to the heavenly kami. Instead of negotiating, Ame-no-Hohi befriended Ōkuninushi and lived in Izumo for three years without reporting back. The mission's failure required a second emissary (Ame-no-Wakahiko) and eventually a third (Takemikazuchi)."
 status: "metadata"
 refs:

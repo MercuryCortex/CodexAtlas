@@ -19,6 +19,7 @@ syncretic-edges:
   - target: "Christian Hell (etymological)"
     type: "manuscript-transmission"
     source: "the English word *hell* derives from Old English *hel* < *Hel*"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Old Norse Myths, Literature and Society"

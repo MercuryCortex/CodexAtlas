@@ -20,6 +20,7 @@ syncretic-edges:
   - target: "[[ninurta]]"
     type: "ancient-identification"
     source: "From the Ur III period and definitively by the Old Babylonian period Ningirsu and Ninurta are treated as the same god under different cultic names — Ningirsu the local Lagashite form, Ninurta the Nippur-centered standard form; both are warrior-agricultural sons of Enlil"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Gudea and His Dynasty"

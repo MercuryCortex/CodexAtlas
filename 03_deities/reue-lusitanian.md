@@ -20,10 +20,12 @@ syncretic-edges:
   - target: "taranis"
     type: "structural-parallel"
     source: "Celtic cognate tradition — both are the thunder/sky deity of Atlantic Celtic peoples"
+    source-tier: T1
     notes: "Taranis (Gaulish: *taran* = thunder; cognate with Welsh *taran*, Breton *taran*, Irish *toirneach*) is the Gaulish/Brythonic manifestation of the same PIE thunderer type. If Lusitanian is Celtic or para-Celtic (the Prósper debate), Reue and Taranis are near-cognates."
   - target: "jupiter-roman"
     type: "partial-identification"
     source: "No direct inscriptional identification known, but the sky/thunder function would map to Jupiter in Roman interpretatio"
+    source-tier: T1
     notes: "Unlike [[endovelicus]] (→ Silvanus/Dis Pater) or [[nabia]] (→ Vittoria), Reue does not appear in direct compound dedications with Roman deities, suggesting Roman interpretatio was incomplete or locally variable."
 status: "metadata"
 refs:

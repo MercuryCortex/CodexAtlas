@@ -24,27 +24,33 @@ cross-tradition-edges:
   - target: "temple-of-heaven-beijing"
     type: "parallel-state-confucian-ritual-architecture"
     source: "Steinhardt 2019; Yi 2010"
+    source-tier: T1
     notes: "Jongmyo and the [[temple-of-heaven-beijing|Temple of Heaven]] (Beijing) are **the two principal architectural monuments of the state-Confucian ritual cult in early-modern East Asia** — the Joseon Korean royal-ancestral programme (Jongmyo) and the Ming-Qing Chinese imperial Heaven-sacrifice programme (Temple of Heaven). Together with the [[temple-of-confucius-qufu|Temple of Confucius at Qufu]] they form a tight regional cluster of state-Confucian ritual architecture across Ming-Qing China + Joseon Korea."
   - target: "forbidden-city-beijing"
     type: "model-for-joseon-royal-architectural-programme"
     source: "Steinhardt 2019; Yi 2010"
+    source-tier: T1
     notes: "The Joseon royal-architectural programme of Seoul — [[gyeongbokgung-palace|Gyeongbokgung Palace]] + Jongmyo + Sajikdan altar — explicitly takes the **Ming-Beijing model** ([[forbidden-city-beijing|Forbidden City]] + ancestral temple + altars) as its template. The Joseon court studied the [[zhou-li|*Zhou Li*]] and Ming ritual codes carefully and constructed Seoul as a smaller-scale East Asian Confucian-imperial capital."
   - target: "ise-grand-shrine"
     type: "parallel-distinct-ancestral-cult-architecture"
     source: "Bocking 1996; Yi 2010"
+    source-tier: T1
     notes: "Jongmyo (Confucian royal-ancestral cult, structured around the [[mandate-of-heaven|cosmic ruler-mandate]] doctrine) and [[ise-grand-shrine|Ise]] (Shinto imperial-ancestral cult of Amaterasu) are typologically cognate: **both are the principal ancestral-cult shrines of their respective East Asian monarchies**. The doctrinal substrates are very different (Confucian-classical vs Shinto-mythological), but the architectural function is parallel."
   - target: "tradition-confucianism"
     type: "principal-royal-architectural-monument-of"
     source: "Yi 2010; Deuchler 1992"
+    source-tier: T1
     notes: "Jongmyo is the **principal royal architectural monument of [[tradition-confucianism|Confucianism]] in Korea** and one of the most rigorously executed state-Confucian ritual programmes anywhere in East Asia. The Joseon dynasty's commitment to Confucian orthodoxy was the deepest of any Confucian state — and Jongmyo is its architectural expression."
   - target: "tradition-joseon-confucianism"
     type: "principal-architectural-monument-of"
     source: "Deuchler 1992; Haboush 2009"
+    source-tier: T1
     notes: "Jongmyo is the architectural anchor of Joseon-era Korean Neo-Confucianism — the most thoroughgoing Confucian state-religious programme in East Asian history."
 syncretic-edges:
   - target: "tradition-korean-imperial-cult"
     type: "architectural-emblem-of"
     source: "Yi 2010"
+    source-tier: T1
     notes: "Jongmyo is the principal architectural emblem of the Korean royal cult — specifically the Joseon-era institutional articulation of the cult of the royal ancestors."
 status: "metadata"
 refs:

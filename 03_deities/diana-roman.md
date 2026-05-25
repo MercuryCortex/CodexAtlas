@@ -17,12 +17,15 @@ syncretic-edges:
   - target: "[[artemis]]"
     type: "ancient-identification"
     source: "*interpretatio romana* — Diana is the Roman Artemis"
+    source-tier: T1
   - target: "[[hekate]]"
     type: "ancient-identification"
     source: "Diana Trivia ('three roads') = Hecate of the crossroads; the chthonic-lunar aspect"
+    source-tier: T1
   - target: "[[mary-theotokos]]"
     type: "polemic-against"
     source: "Acts 19:23–41 — the riot at Ephesus pits Paul against the Artemision (Latin: *Templum Dianae*); Diana of Ephesus is the principal pagan-rival cult addressed in Christian-mission narrative"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Religions of Rome"

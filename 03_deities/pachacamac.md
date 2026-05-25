@@ -20,15 +20,19 @@ syncretic-edges:
   - target: "[[viracocha]]"
     type: "structural-parallel"
     source: "Salomon 1991: Pachacamac (coastal) vs. Viracocha (highland) represents the great Andean theological divide — two creator-gods whose traditions competed and were partially harmonized under Inca synthesis"
+    source-tier: T1
   - target: "[[apollo]]"
     type: "scholarly-parallel"
     source: "Both are oracle-gods whose shrines drew pilgrims from across their respective worlds; both combine solar/light aspects with prophetic function; Pachacamac oracle at Lurín parallels Delphi"
+    source-tier: T1
   - target: "[[enki-ea]]"
     type: "scholarly-parallel"
     source: "Both combine creator-wisdom function with water/coastal domain; both created humans but in ways that created problems requiring correction; trickster-creative parallels"
+    source-tier: T1
   - target: "[[poseidon]]"
     type: "scholarly-parallel"
     source: "Both are earth-shakers: Poseidon's earthquake domain (Enosichthon, 'Earth-Shaker') directly parallels Pachacamac's earthquake power as the animate earth-body's movement"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Huarochirí Manuscript"

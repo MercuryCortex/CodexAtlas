@@ -20,15 +20,19 @@ syncretic-edges:
   - target: "osiris"
     type: "ancient-identification"
     source: "Herodotus *Histories* 2.42, 2.144 identifies Dionysus with Osiris; Plutarch DIO confirms"
+    source-tier: T1
   - target: "zagreus"
     type: "ancient-identification"
     source: "Orphic theology: Zagreus = the child-Dionysus, son of Zeus and Persephone, dismembered by the Titans"
+    source-tier: T1
   - target: "sabazios"
     type: "ancient-identification"
     source: "Phrygian-Thracian Sabazios was identified by Greeks with Dionysus in ecstatic-mystery aspects"
+    source-tier: T1
   - target: "theme-soma-haoma-eucharist"
     type: "mystery-cult-branch-of-transmission-chain"
     source: "Kerényi 1976; Wasson/Hofmann/Ruck 1978; Otto 1933; Graf & Johnston 2007 *Ritual Texts for the Afterlife* — the mystery-cult Dionysus (Bacchic + Orphic-Zagreus + gold-tablet initiations) is the cult-form through which the sacred-drink transmission chain operates in its initiatory register. The *entheos* logic (drinking the wine = god in-dwelling) generates the same conceptual ground as the Vedic Soma and the Christian Eucharist. See [[theme-soma-haoma-eucharist]]"
+    source-tier: T1
     notes: "Cross-lens: 03_deities → 06_themes. Companion to civic-Olympian dionysus.md — this mystery-Dionysus carries the soteriological weight of the transmission chain (the dismemberment/rebirth + initiatory wine + gold-tablet death-navigation pattern)"
 status: "metadata"
 refs:

@@ -20,6 +20,7 @@ syncretic-edges:
   - target: "[[wadd]]"
     type: "shared-tradition"
     source: "Quran 71:23 — the five antediluvian Arabian deities (Wadd, Suwāʿ, Yaghūth, Yaʿūq, Nasr) are named together as a single theological category — the gods of Noah's people that the Quraysh-era Arabs adopted"
+    source-tier: T1
     notes: "The Quranic listing is the load-bearing textual source for treating these five as a coherent unit; Ibn al-Kalbi elaborates with tribal assignments (Wadd → Banu Kalb at Dūmat al-Jandal; Suwāʿ → Hudhayl at Yanbū; Yaghūth → Madhḥij; Yaʿūq → Hamdān; Nasr → Ḥimyar)"
 status: "metadata"
 refs:

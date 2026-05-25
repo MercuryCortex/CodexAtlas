@@ -24,18 +24,22 @@ cross-tradition-edges:
   - target: "church-of-the-holy-sepulchre-jerusalem"
     type: "imitatio-of"
     source: "Wilson 2010; Lees 1935; Krautheimer 1942"
+    source-tier: T1
     notes: "The Round Church (consecrated 1185) is a round-naved Templar church explicitly modeled on the Anastasis Rotunda. Krautheimer's *iconographic copy*: round nave + dedication = architectural memorial of the Holy Sepulchre."
   - target: "dome-of-the-rock-jerusalem"
     type: "intermediate-link"
     source: "Wilson 2010; Barber 1994"
+    source-tier: T1
     notes: "The Templars occupied the Dome of the Rock as *Templum Domini* 1119–1187; the London Round Church is in their Europe-wide programme of round-naved churches built as architectural memorials of their Jerusalem complex."
   - target: "convent-of-christ-tomar"
     type: "parallel-form"
     source: "Wilson 2010; Genin 2011"
+    source-tier: T1
     notes: "Both are 12th-c. Templar round-naved churches in the same architectural programme. Tomar (Charola, ~1160) and London (1185) are independently built within roughly the same generation of Templar building activity."
   - target: "tradition-knights-templar"
     type: "headquarters-of"
     source: "Lees 1935; Barber 1994"
+    source-tier: T1
     notes: "Was the English headquarters of the Order. The 'Temple' in 'Inner Temple' / 'Middle Temple' (two of the four Inns of Court) literally refers to this complex — the Templars' London real estate passed to the Knights Hospitaller after 1312 and was leased to lawyers, becoming the legal precinct it remains."
 status: "metadata"
 refs:

@@ -20,6 +20,7 @@ syncretic-edges:
   - target: "noah"
     type: "scholarly-parallel"
     source: "Norse flood-survivor as parallel-form to the Hebrew Noah; structural cognate via Indo-European or Laurasian substrate (Witzel 2012)"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Prose Edda"

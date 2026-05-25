@@ -23,34 +23,42 @@ cross-tradition-edges:
   - target: "pyramid-of-the-sun-teotihuacan"
     type: "descendant-form"
     source: "Matos Moctezuma 1988; López Austin & López Luján 2009"
+    source-tier: T1
     notes: "The Mexica explicitly modelled their state religion + capital on the ruins of Teotihuacan, which they had rediscovered and made a pilgrimage site. The Templo Mayor is the late descendant of the Teotihuacan stepped-pyramid form, ~1300 years after Teotihuacan's height. Documented Mesoamerican-internal architectural-religious transmission."
   - target: "tikal-temple-i"
     type: "cognate-form"
     source: "Sharer & Traxler 2006"
+    source-tier: T1
     notes: "Both are stepped Mesoamerican monumental temples crowning a city. Maya (Classic, ~730 CE) vs. Mexica (Late Postclassic, ~1487 CE). The Mexica had no direct Classic-Maya contact but shared a continuous Mesoamerican stepped-pyramid tradition."
   - target: "ziggurat-of-ur"
     type: "parallel-form"
     source: "Matos Moctezuma 1988"
+    source-tier: T1
     notes: "Stepped monumental dual-deity temple atop a stepped platform. Both: ascend the structure to the high shrine where the god resides. Both: civic-state temple at the centre of the imperial capital."
   - target: "pyramid-of-khufu"
     type: "parallel-form"
     source: "Matos Moctezuma 1988"
+    source-tier: T1
     notes: "Imperial monumental pyramid as state-religious centrepiece. Khufu in Old Kingdom Egypt; Templo Mayor in Late Postclassic Mexica empire."
   - target: "solomons-temple-first"
     type: "parallel-form"
     source: "Matos Moctezuma 1988"
+    source-tier: T1
     notes: "Both: state temples at the centre of an imperial capital, embodying the tribal/imperial deity (Yahweh / Huitzilopochtli) and serving as the cosmic-political axis of the kingdom. The destruction of both temples by foreign powers (Babylonians 586 BCE / Spanish 1521 CE) symbolised the end of the polity in each case."
   - target: "huitzilopochtli"
     type: "dedicated-to"
     source: "Sahagun"
+    source-tier: T1
     notes: "South shrine on the summit."
   - target: "tlaloc"
     type: "dedicated-to"
     source: "Sahagun"
+    source-tier: T1
     notes: "North shrine on the summit. The dual-shrine architecture expresses the Mexica's fundamental cosmological dualism: war/sun (south, Huitzilopochtli, dry season, blood) + rain/agriculture (north, Tlaloc, wet season, water)."
   - target: "theme-cosmic-mountain-as-temple-form"
     type: "exemplifies"
     source: "López Austin & López Luján 2009"
+    source-tier: T1
     notes: "The Templo Mayor is explicitly the **Coatepec** ('Snake Mountain') — the mythic mountain where Huitzilopochtli was born and where he dismembered his sister Coyolxauhqui. The architecture re-enacts the foundational myth."
 status: "metadata"
 refs:

@@ -19,23 +19,29 @@ syncretic-edges:
   - target: "ku"
     type: "ancient-identification"
     source: "Best, *Maori Religion and Mythology* (1924); Beckwith, *Hawaiian Mythology* (1940) — Maori Tū-mata-uenga and Hawaiian Kū are linguistic-and-functional cognates of the same Proto-Polynesian war-god"
+    source-tier: T1
     notes: "Proto-Polynesian war-god cognate"
   - target: "ares"
     type: "scholarly-parallel"
     source: "Best 1924; Eliade 1958 — Greek Ares as war-god"
+    source-tier: T1
     notes: "War-god cross-cultural archetype"
   - target: "mars-roman"
     type: "scholarly-parallel"
     source: "Eliade 1958 — Roman Mars as state war-god"
+    source-tier: T1
   - target: "tyr"
     type: "scholarly-parallel"
     source: "Eliade 1958; Dumézil, *Mitra-Varuna* (1948) — Norse Tyr as warrior-sky-god"
+    source-tier: T1
   - target: "morrigan"
     type: "scholarly-parallel"
     source: "Eliade 1958 — Celtic Morrigan as war-goddess (gender-inverse)"
+    source-tier: T1
   - target: "ogun"
     type: "scholarly-parallel"
     source: "Eliade 1958; Awolalu 1979 — Yoruba Ogun as war-and-iron god"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Maori Religion and Mythology"

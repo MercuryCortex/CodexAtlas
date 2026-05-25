@@ -20,10 +20,12 @@ syncretic-edges:
   - target: "ame-no-uzume"
     type: "consort-of"
     source: "Kojiki 1.33–35; Philippi (trans., 1968)"
+    source-tier: T1
     notes: "Ame-no-Uzume is sent by Amaterasu to identify the imposing kami blocking the Heavenly Descent path; her boldness and laughter disarm Sarutahiko, who reveals himself as a friendly earthly guide. He escorts the heavenly host down and is then escorted back to his home shrine by Uzume — folk-tradition reads this as their marriage."
   - target: "hermes-greek"
     type: "scholarly-parallel"
     source: "Naumann 1996, Die Mythen des alten Japan; structural — the road-crossing guide-deity is a recurring divine type"
+    source-tier: T1
     notes: "Both are crossroads-guide deities whose function is the safe transit between divine and human worlds. Independent emergence."
 status: "metadata"
 refs:

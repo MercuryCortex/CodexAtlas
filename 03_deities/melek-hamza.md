@@ -20,26 +20,32 @@ syncretic-edges:
   - target: "nous-plotinus"
     type: "scholarly-parallel"
     source: "De Smet 1995; Leaman 2002 *Islamic Philosophy*"
+    source-tier: T1
     notes: "Hamza ibn Ali as the al-ʿaql al-kullī (Universal Intellect) maps directly onto the Plotinian Nous (the second hypostasis of The One — Pure Mind, the first emanation). The Druze theological system is a Neoplatonic emanation scheme in Islamic dress, with Hamza occupying the Nous position."
   - target: "nous-hermetic"
     type: "scholarly-parallel"
     source: "De Smet 1995"
+    source-tier: T1
     notes: "The Hermetic Nous as divine mind manifesting in the world parallels Hamza's role as Universal Intellect who appears historically to reveal esoteric truth."
   - target: "logos-stoic"
     type: "scholarly-parallel"
     source: "Leaman 2002"
+    source-tier: T1
     notes: "The Stoic Logos as the rational principle pervading and ordering all reality parallels the Druze Universal Intellect as the cosmic ordering principle that Hamza embodies."
   - target: "sophia-gnostic"
     type: "scholarly-parallel"
     source: "De Smet 1995; Walker 1993 *Hamid al-Din al-Kirmani*"
+    source-tier: T1
     notes: "The Gnostic Sophia (the divine Wisdom that descends from the Pleroma to organize and guide) parallels the role of Hamza as the cosmic wisdom-principle made historical. Both participate in the Gnostic-Neoplatonic tradition of a divine Mind-Wisdom hypostasis that mediates between the absolute and creation."
   - target: "melek-taus"
     type: "scholarly-parallel"
     source: "Leaman 2002"
+    source-tier: T1
     notes: "The Yazidi Melek Taus as the supreme angelic-divine intermediary between the hidden God and creation parallels Hamza's role as the Universal Intellect who mediates between the divine Unity (al-Hakim as the divine manifestation) and the world. Both are hidden intermediary-deities in closed esoteric traditions."
   - target: "the-one-plotinus"
     type: "scholarly-parallel"
     source: "De Smet 1995"
+    source-tier: T1
     notes: "In the Druze system, al-Hakim bi-Amr Allah (the Fatimid caliph) is the divine manifestation (tajalli) of the One; Hamza as Universal Intellect is the first emanation from this One — precisely replicating the Plotinian One → Nous structure."
 status: "metadata"
 refs:

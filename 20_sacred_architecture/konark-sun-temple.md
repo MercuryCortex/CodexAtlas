@@ -25,18 +25,22 @@ cross-tradition-edges:
   - target: "kandariya-mahadeva-khajuraho"
     type: "parallel-form"
     source: "Hardy 2007; Donaldson 1985"
+    source-tier: T1
     notes: "Nagara-Kalinga (Odishan) cosmic-mountain (Konark, ~1250 CE) and Nagara-Bundelkhand (Khajuraho, ~1030 CE) — two regional variants of the *same* North-Indian Nagara macro-style, separated by ~220 years."
   - target: "brihadeeswarar-temple-thanjavur"
     type: "parallel-form"
     source: "Hardy 2007"
+    source-tier: T1
     notes: "Royal-monumental Hindu temple of the early-mid medieval period; Eastern Ganga Konark (~1250) vs Chola Brihadeeswarar (~1010) — Nagara-Kalinga vs Dravida — both ~70-m-tall sanctum-towers (though Konark's *deul* collapsed)."
   - target: "borobudur-stupa-mandala"
     type: "parallel-form"
     source: "Snodgrass 1985"
+    source-tier: T1
     notes: "Both monuments are explicit architectural realisations of a cosmological structure (Borobudur = Trailokya, Konark = the chariot of [[surya|Surya]] traversing the heavens). Independent Buddhist + Hindu implementations of the building-as-cosmogram principle."
   - target: "surya"
     type: "dedicated-to"
     source: "Donaldson 1985; ASI"
+    source-tier: T1
     notes: "Konark is the apex Indian temple to [[surya]] — the Vedic and post-Vedic Sun-god. The temple is conceived as Surya's solar chariot, drawn by seven horses, with twelve pairs of wheels representing the twelve months / twelve zodiacal divisions."
 status: "metadata"
 refs:

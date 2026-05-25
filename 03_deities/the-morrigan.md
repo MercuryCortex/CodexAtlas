@@ -17,9 +17,11 @@ syncretic-edges:
   - target: "[[the-erinyes]]"
     type: "scholarly-parallel"
     source: "Triadic feminine vengeance/war/death powers"
+    source-tier: T1
   - target: "[[freyja]]"
     type: "scholarly-parallel"
     source: "Battle-goddess who claims half the slain"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Gods of the Celts"

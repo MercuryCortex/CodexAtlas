@@ -23,22 +23,27 @@ cross-tradition-edges:
   - target: "dome-of-the-rock-jerusalem"
     type: "ancestor-of"
     source: "Grabar 1959; Krautheimer 1969"
+    source-tier: T1
     notes: "Architectural transmission: the Dome of the Rock (691 CE) is the first major Islamic monumental building and is widely read by Grabar and Krautheimer as an Umayyad rotunda-response to the Anastasis Rotunda. Same height, same rotunda+ambulatory typology, same gilded dome over a sacred rock/tomb. Cross-tradition transfer of *form* from Christianity (rotunda over tomb) to Islam (rotunda over Foundation Stone)."
   - target: "convent-of-christ-tomar"
     type: "ancestor-of"
     source: "Genin 2011; Pereira 2012"
+    source-tier: T1
     notes: "The 12th-c. Templar Charola at Tomar is a sixteen-sided rotunda explicitly modeled on the Holy Sepulchre — by direct architectural lineage through the Dome of the Rock (which the Templars used as their Jerusalem HQ, calling it *Templum Domini*) and through a deliberate program of building Templar round-naves throughout Europe as *imitationes* of the Anastasis."
   - target: "temple-church-london"
     type: "ancestor-of"
     source: "Wilson 2010; Lees 1935"
+    source-tier: T1
     notes: "London's Temple Church (consecrated 1185) is a round-naved Templar church explicitly modeled on the Anastasis Rotunda. The Templars built round-naved churches across Europe as architectural memorials of the Holy Sepulchre — a deliberate program."
   - target: "lalibela-rock-hewn-churches"
     type: "imitatio-of"
     source: "Phillipson 2009; Heldman 1992"
+    source-tier: T1
     notes: "Lalibela's 12th–13th c. rock-cut churches are organised as a 'New Jerusalem' — site-names re-map the Holy Sepulchre programme (the stream is the Jordan, churches named Bēta Golgotā / Bēta Maryām etc.). Direct iconographic and topographic *imitatio* of the Anastasis programme by King Lalibela's Ethiopian court."
   - target: "tradition-knights-templar"
     type: "raison-d-etre"
     source: "Barber 1994; Nicholson 2001"
+    source-tier: T1
     notes: "Founded c.1119 to protect pilgrims to the Holy Sepulchre. The Templars' raison d'être is *literally* the protection of and pilgrimage to this building."
 status: "metadata"
 refs:

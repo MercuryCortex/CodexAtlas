@@ -20,18 +20,22 @@ syncretic-edges:
   - target: "[[vishnu]]"
     type: "avatara-of"
     source: "Vishnu Purāṇa 4.24; Bhāgavata Purāṇa 12.2; Kalki Purāṇa"
+    source-tier: T1
     notes: "Kalki is the tenth and future avatara of Vishnu — the one yet to come, who will end the Kali Yuga and restore dharma. Closes the daśāvatāra cycle with the eschatological-warrior return"
   - target: "[[maitreya]]"
     type: "parallel-motif"
     source: "Sponberg & Hardacre (eds.) 1988 *Maitreya, the Future Buddha*; Collins 2009 *Messianism, Apocalypticism, and Redemption*"
+    source-tier: T1
     notes: "Both are future savior figures expected to arrive when the current age declines to its nadir. Maitreya waits in Tuṣita heaven; Kalki exists in potential as Vishnu's tenth avatar. The key difference: Maitreya achieves renewal through enlightenment and teaching; Kalki achieves it through military destruction"
   - target: "[[saoshyant]]"
     type: "parallel-motif"
     source: "Boyce 1984 *Textual Sources for the Study of Zoroastrianism*"
+    source-tier: T1
     notes: "Both arrive at the end of a cosmic cycle to defeat evil and renew the world. The white-horse imagery + martial eschatology parallels. Possible Iranian influence on the Puranic Kalki figure via northwest Indian contact, though direct transmission is unproven"
   - target: "[[jesus-christ-deity]]"
     type: "parallel-motif"
     source: "Revelation 19:11–16 (white horse, sword, judgment); Collins 2009"
+    source-tier: T1
     notes: "The Apocalypse's rider on a white horse wielding a sword (Rev 19:11–16) is structurally parallel to Kalki's white horse and flaming sword. Direct influence is extremely unlikely; more probably shared Indo-European warrior-at-end-of-time imagery, possibly mediated through Persian channels"
 status: "metadata"
 refs:

@@ -23,27 +23,33 @@ cross-tradition-edges:
   - target: "todaiji-daibutsuden"
     type: "japanese-counterpart-different-architectural-mode"
     source: "Steinhardt 2019; Kim 2010"
+    source-tier: T1
     notes: "Bulguksa / Seokguram (~751–774 CE) and [[todaiji-daibutsuden|Todaiji]] (~745–752 CE) are **near-contemporary state-Buddhist commissions** of the **same Vairocana / Mahayana iconographic programme** in their respective East Asian states. Different architectural modes (Bulguksa's terraced courtyard temple + Seokguram's stone-built grotto; Todaiji's colossal wooden hall + bronze Buddha) — but the doctrinal-iconographic substrate is shared and traceable to the same Tang-Chinese sources."
   - target: "longmen-grottoes"
     type: "chinese-ancestor-of-seokguram-buddha"
     source: "McNair 2007; Kim 2010"
+    source-tier: T1
     notes: "The principal seated Buddha of [[seokguram-grotto|Seokguram]] is in direct iconographic dialogue with the Vairocana of the **Fengxian Si at [[longmen-grottoes|Longmen]]** ([[empress-wu-zetian|Wu Zetian]]'s commission, ~672–675 CE). The Seokguram Buddha is roughly **a century later** than the Longmen Vairocana and is the closest **freestanding-statue Korean cognate** of the Tang colossal Buddha tradition."
   - target: "horyuji-temple"
     type: "older-japanese-counterpart-distinct-transmission-wave"
     source: "Steinhardt 2019; Coaldrake 1996"
+    source-tier: T1
     notes: "[[horyuji-temple|Hōryū-ji]] (~607 CE, Asuka Japan; Baekje transmission) **predates** Bulguksa (~774 CE) by ~170 years — the East Asian Buddhist transmission ran in multiple directional and temporal waves, not a single Korea → Japan progression. Bulguksa belongs to the **second wave (Tang → Silla → Nara)** in which Korean Silla and Japanese Nara built simultaneously after both receiving Tang materials."
   - target: "mogao-caves-dunhuang"
     type: "silk-road-iconographic-archive-upstream-of"
     source: "Whitfield 2015; Kim 2010"
+    source-tier: T1
     notes: "[[mogao-caves-dunhuang|Mogao]]'s Tang-era Vairocana and bodhisattva iconography is the **principal Silk-Road archive** from which the Bulguksa / Seokguram iconographic programme was transmitted to Silla via Tang China."
   - target: "tradition-hwaom-buddhism"
     type: "principal-architectural-monument-of"
     source: "Buswell 1989; Kim 2010"
+    source-tier: T1
     notes: "Bulguksa is the **principal architectural monument of Korean [[tradition-hwaom-buddhism|Hwaom (Avatamsaka) Buddhism]]** — the doctrinal tradition founded in Korea by Uisang (625–702) and developed in continuous engagement with Chinese Huayan and Japanese Kegon. The temple's name 'Bulguksa' (佛國寺 — 'Temple of the Buddha Land') refers to the Avatamsaka conception of all reality as a single Buddha-land (*Buddha-kṣetra*)."
 syncretic-edges:
   - target: "tradition-silla-buddhism"
     type: "architectural-emblem-of"
     source: "Buswell 1989; Kim 2010"
+    source-tier: T1
     notes: "Bulguksa and Seokguram together are the **architectural emblem of Silla-era Korean Buddhism** at its 8th-c. peak — the principal monumental expression of unified-Silla state-Buddhism (after the unification of the peninsula in 668)."
 status: "metadata"
 refs:

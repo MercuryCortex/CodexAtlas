@@ -28,22 +28,27 @@ cross-tradition-edges:
   - target: "st-peters-basilica-vatican"
     type: "successor-form"
     source: "Collins 1960; Bassegoda Nonell 1989"
+    source-tier: T1
     notes: "St. Peter's (1506–1626) is the apex Renaissance-classical basilica; Sagrada Família (1882–present) is the apex modernist-organic basilica. Both reinterpret the centralised-domed-basilica type in distinct period idioms. Gaudí explicitly designed Sagrada Família in dialogue with the European basilica tradition while seeking a wholly organic architectural language."
   - target: "chartres-cathedral"
     type: "stylistic-descendant"
     source: "Bassegoda Nonell 1989; Cassinello 2013"
+    source-tier: T1
     notes: "Sagrada Família's tall narrow nave + extensive stained glass + cosmic-narrative iconographic programme are Gaudí's modernist-organic reinterpretation of the French High Gothic vocabulary of which [[chartres-cathedral|Chartres]] is the canonical model."
   - target: "cologne-cathedral"
     type: "stylistic-cousin"
     source: "Cassinello 2013"
+    source-tier: T1
     notes: "Both are tall multi-spired Catholic basilicas / cathedrals; Cologne (~157 m twin spires, completed 1880) is the Gothic-revival precedent for the multi-spire monumental basilica that Sagrada Família (18 spires planned, the tallest ~172 m) will surpass."
   - target: "theme-naturalist-architectural-form"
     type: "exemplifies"
     source: "Collins 1960; Burry 1993"
+    source-tier: T1
     notes: "Gaudí's architecture is the canonical case of *naturalistic architectural form* — columns shaped like trees with branching capitals, vaults shaped like double-hyperboloid surfaces, the interior as a forest of organic forms. Sagrada Família is the apex implementation."
   - target: "theme-expiatory-temple-as-collective-act"
     type: "exemplifies"
     source: "Bassegoda Nonell 1989; Bonet 1991"
+    source-tier: T1
     notes: "Sagrada Família is formally an **expiatory temple** (*templo expiatorio*) — funded ONLY by alms and donations from the faithful, never by government or institutional Catholic Church funds. This funding model — the cathedral as an act of collective lay devotion — has been the project's principal sustaining principle for 140+ years."
 status: "metadata"
 refs:

@@ -19,18 +19,23 @@ syncretic-edges:
   - target: "[[bran-the-blessed]] (Celtic severed-head oracle)"
     type: "cross-tradition-parallel"
     source: "Both are severed heads that continue to speak and prophesy; Bran's head entertains companions for eighty years; Mímir's head counsels Odin — the severed-head-oracle motif is the clearest parallel; Ward 1970; Lindow 2001"
+    source-tier: T1
   - target: "[[enki-ea]] (Abzu/apsu wisdom-well)"
     type: "cross-tradition-parallel"
     source: "Mímisbrunnr (the well of wisdom at the world-tree root) structurally parallels Enki's Abzu — the primordial fresh-water abyss as the source of divine wisdom and cosmic order; both are primordial waters accessed by a supreme deity at great cost"
+    source-tier: T1
   - target: "[[thoth]] (Egyptian wisdom deity)"
     type: "cross-tradition-parallel"
     source: "Both are the supremely wise counselors of the divine assembly, repositories of all knowledge and cosmic memory; Thoth = scribe of the gods, Mímir = counselor of Odin and the gods"
+    source-tier: T1
   - target: "[[nabu]] (Mesopotamian wisdom-scribe)"
     type: "cross-tradition-parallel"
     source: "Nabu as lord of all wisdom and the tablet of fates; Mímir as guardian of cosmological memory; both represent the divine-counselor / wisdom-repository archetype"
+    source-tier: T1
   - target: "[[odin]] (eye-sacrifice for the well)"
     type: "mythological-partner"
     source: "Odin sacrificed his left eye to Mímir for a single drink from Mímisbrunnr; the relationship defines both figures — Odin's one-eyed wisdom and Mímir's role as gatekeeper of cosmic knowledge; Vǫluspá 28–29"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Handbook of Norse Mythology"

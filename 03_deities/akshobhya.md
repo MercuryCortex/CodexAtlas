@@ -18,17 +18,21 @@ syncretic-edges:
   - target: "[[vairocana]]"
     type: "ancient-identification"
     source: "Eastern position of the Five Dhyani Buddha mandala"
+    source-tier: T1
   - target: "indra"
     type: "scholarly-parallel"
     source: "Snellgrove, *Indo-Tibetan Buddhism* (1987) — Akshobhya's primary attribute is the *vajra* (thunderbolt), inherited directly from the Vedic Indra; the Buddhist absorption of Indra's vajra into Akshobhya's iconography is one of the clearest Vedic-Buddhist deity-attribute transmissions"
+    source-tier: T1
     notes: "MASSIVE WIN: vajra-thunderbolt-as-divine-attribute transmission Vedic→Buddhist — Akshobhya inherits Indra's signature weapon"
   - target: "varuna"
     type: "scholarly-parallel"
     source: "Snellgrove 1987; Lamotte, *History of Indian Buddhism* (1958) — Varuna as Vedic guardian of cosmic order (rta) and Akshobhya as 'the Imperturbable' both encode the immovable-cosmic-order-as-deity theological function"
+    source-tier: T1
     notes: "Immovable-cosmic-order deity parallel"
   - target: "vajrapani"
     type: "scholarly-parallel"
     source: "Snellgrove 1987 — Akshobhya is the head of the Vajra family of Buddhas; Vajrapani is the wrathful bodhisattva of that family; both inherit Indra's vajra"
+    source-tier: T1
     notes: "Within-family vajra-cluster pairing"
 status: "metadata"
 refs:

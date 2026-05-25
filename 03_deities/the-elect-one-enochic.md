@@ -20,9 +20,11 @@ syncretic-edges:
   - target: "jesus-of-nazareth"
     type: "scholarly-parallel"
     source: "Boyarin 2012 *The Jewish Gospels* argues Gospel Son-of-Man Christology presupposes Enochic tradition; Vermes 1973 *Jesus the Jew* and Charles 1912 long-standing debate"
+    source-tier: T1
   - target: "theme-two-powers-in-heaven"
     type: "primary-figure-of-cross-tradition-pattern"
     source: "Segal 1977 *Two Powers in Heaven*; Boyarin 2012 *The Jewish Gospels*; Hannah 1999 *Michael and Christ* — the Enochic Son of Man / Elect One (1 Enoch 37–71, the Book of Parables) is the pre-Christian Jewish 'second God' figure: pre-existent (1 En 48:3), enthroned (62:2, 69:29), bears the divine Name (48:2-3), executes universal judgment (62:5-9). Segal documents the rabbinic 'two powers' designation as a reaction-formation against this Enochic tradition. Direct upstream of both Christological Son-of-Man + Metatron 'Lesser YHWH'. See [[theme-two-powers-in-heaven]]"
+    source-tier: T1
     notes: "MASSIVE-WIN: the Elect-One/Son-of-Man is the *Enochic-Apocalyptic* form of the Two-Powers figure (predating its Hekhalot Metatron-form by 200+ years and its Christological Jesus-form contemporaneously). Cross-lens: 03_deities → 06_themes"
 status: "metadata"
 refs:

@@ -20,6 +20,7 @@ syncretic-edges:
   - target: "prajapati"
     type: "ancient-identification"
     source: "Bailey 1983 *The Mythology of Brahmā*; Doniger 1976 *The Origins of Evil in Hindu Mythology* — Prajapati, the Vedic-Brahmanic creator (e.g., RV 10.121 *Hiranyagarbha hymn*, Shatapatha Brahmana cosmogonies), is the proto-Brahmā figure; the Puranic Brahmā absorbs Prajapati's cosmogonic functions while acquiring the four-faced iconography and the Trimurti structural position"
+    source-tier: T1
     notes: "Bailey 1983 traces the historical-textual transition from Prajapati to Brahmā in detail"
 status: "metadata"
 refs:

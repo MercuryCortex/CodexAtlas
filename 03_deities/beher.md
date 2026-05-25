@@ -20,18 +20,23 @@ syncretic-edges:
   - target: "poseidon"
     type: "scholarly-parallel"
     source: "Munro-Hay 1991 — Beher's sea/water role is structurally parallel to Greek Poseidon, though no ancient identification is attested"
+    source-tier: T1
   - target: "neptune"
     type: "scholarly-parallel"
     source: "Munro-Hay 1991 — Roman Neptune as sea-god parallel"
+    source-tier: T1
   - target: "tangaroa"
     type: "scholarly-parallel"
     source: "Beckwith 1940; Munro-Hay 1991 — Polynesian Tangaroa as sea-god; Beher as Aksumite sea-god"
+    source-tier: T1
   - target: "varuna"
     type: "scholarly-parallel"
     source: "Eliade 1958 — Vedic Varuna as god of cosmic-waters and cosmic-order; Beher as Aksumite sea-god"
+    source-tier: T1
   - target: "yemoja"
     type: "scholarly-parallel"
     source: "Munro-Hay 1991 — Yoruba ocean-mother; structural parallel to Beher as Aksumite sea-deity"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Aksum: An African Civilisation of Late Antiquity"

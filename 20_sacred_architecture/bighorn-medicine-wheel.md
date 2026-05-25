@@ -23,30 +23,37 @@ cross-tradition-edges:
   - target: "stonehenge-sacred-site"
     type: "parallel-form"
     source: "Eddy 1974; Aveni 2008"
+    source-tier: T1
     notes: "Both: circular stone constructions aligned to summer-solstice sunrise. Stonehenge (~2500 BCE) and Bighorn (~1700 CE) — 4000 years apart, mutually no contact. Both also encode lesser alignments (Stonehenge to lunar standstills; Bighorn to bright-star rises). The cross-civilization convergence on the **solstice-aligned stone circle** is one of the strongest cases of convergent religious-architectural reasoning in world religion."
   - title-target: "pueblo-bonito-chaco-canyon"
     type: "cognate-form"
     source: "Aveni 2008"
+    source-tier: T1
     notes: "Two pre-modern North American solar-alignment ceremonial sites; in different culture-areas (Plains Plateau vs Ancestral Puebloan / Pueblo). Both encode solstice events in stone."
   - target: "newgrange-passage-tomb"
     type: "parallel-form"
     source: "(general)"
+    source-tier: T1
     notes: "Both: monuments aligned to a solar extreme. Newgrange (~3200 BCE Ireland) to winter-solstice dawn; Bighorn to summer-solstice sunrise + sunset."
   - target: "el-castillo-chichen-itza"
     type: "parallel-form"
     source: "Aveni 2008"
+    source-tier: T1
     notes: "Both: astronomical-alignment ceremonial monuments. Bighorn marks solstice rises + bright-star rises; El Castillo marks the equinox feathered-serpent-shadow descent. Independent Mesoamerican vs. Plains-Native convergent emergence."
   - target: "machu-picchu"
     type: "parallel-form"
     source: "(general)"
+    source-tier: T1
     notes: "Inca solstice-aligned mountain temple (~3000m) ↔ Plains medicine wheel solstice-aligned mountain ceremonial site (~3000m). Both: high-elevation ritual sites for solar observation."
   - target: "gobekli-tepe"
     type: "parallel-form"
     source: "(general)"
+    source-tier: T1
     notes: "Both: monumental circular stone constructions for ritual function. Göbekli Tepe (~9500 BCE) is the oldest known; Bighorn (~1700 CE) is the latest major exemplar. Independent traditions, 11,000 years apart."
   - target: "tradition-plains-indigenous"
     type: "exemplar-of"
     source: "Brumley 1988"
+    source-tier: T1
     notes: "Bighorn is one of ~135 documented Plains medicine wheels (distributed across Wyoming, Montana, Alberta, Saskatchewan). Bighorn is by far the most-studied and the most astronomically-elaborated."
 status: "metadata"
 refs:

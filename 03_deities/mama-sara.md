@@ -20,15 +20,19 @@ syncretic-edges:
   - target: "[[demeter]]"
     type: "scholarly-parallel"
     source: "Demeter (Greek grain-mother) and Mama Sara (Andean grain-mother) are structurally parallel: both are the personification of the grain as a living divine mother; both receive agricultural ritual at harvest; both represent the feminine sacred as the productive earth's fertility specifically directed at food-grain"
+    source-tier: T1
   - target: "[[ceres-roman]]"
     type: "scholarly-parallel"
     source: "Ceres (Roman grain-goddess) is the Roman parallel — also a grain-mother receiving harvest festival worship and protection of the grain supply"
+    source-tier: T1
   - target: "[[nisaba]]"
     type: "scholarly-parallel"
     source: "Nisaba (Sumerian grain goddess, also goddess of writing) governs grain and harvest in Mesopotamia; the Mama Sara-Nisaba parallel represents the convergent anthropomorphization of grain as a divine feminine figure across independent traditions"
+    source-tier: T1
   - target: "[[pachamama]]"
     type: "tradition-internal"
     source: "Mama Sara is the grain-specific feminine sacred; Pachamama is the earth in its totality; in Andean theology they are distinct but related aspects of feminine earth-power — Sara is Pachamama's grain-manifestation"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Huarochirí Manuscript"

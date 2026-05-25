@@ -20,15 +20,19 @@ syncretic-edges:
   - target: "[[veles]] (chthonic pairing)"
     type: "scholarly-parallel"
     source: "The underworld complex of pre-Christian Slavic religion; Veles as male chthonic god, Marzanna as female death / winter figure. Ivanov & Toporov 1974; but the pairing is reconstructed, not attested in pre-Christian sources."
+    source-tier: T1
   - target: "[[perun]] (cosmic opposition)"
     type: "scholarly-parallel"
     source: "As [[perun]] governs the living sky and spring thunder, Marzanna governs winter death — the sky/earth, life/death opposition structures pre-Christian Slavic cosmology. Ivanov & Toporov 1974."
+    source-tier: T1
   - target: "Persephone / Proserpina (Greek / Roman seasonal death-goddess)"
     type: "scholarly-parallel"
     source: "Typological: Persephone's descent and return governs the seasons in Greek religion; Marzanna's ritual drowning/burning enacts the same seasonal death. The parallel is domain-based, not genetic. West 2007."
+    source-tier: T1
   - target: "Hel (Norse death-goddess)"
     type: "scholarly-parallel"
     source: "Both are female personifications of death / the underworld / the realm of the dead. Domain-parallel only; no Indo-European etymological connection proposed."
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Slavic and Baltic Linguistics and Mythology"

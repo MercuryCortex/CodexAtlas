@@ -18,12 +18,15 @@ syncretic-edges:
   - target: "tradition-confucianism"
     type: "syncretic-identification"
     source: "Guan Yu embodies zhong (loyalty) and yi (righteousness) — the two central Confucian virtues of the loyal official"
+    source-tier: T1
   - target: "tradition-daoism"
     type: "syncretic-identification"
     source: "Guan Yu worshipped in Daoist temples as deity of war and commerce (Cai Shen overlap)"
+    source-tier: T1
   - target: "tradition-buddhism"
     type: "syncretic-identification"
     source: "Guan Yu appears to the Chan master Zhiyi (~594 CE) and vows to protect the Dharma; recognized as Sangharama Bodhisattva (guardian deity of monasteries)"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The God of War as Peacemaker: A Study of Kuan Ti"

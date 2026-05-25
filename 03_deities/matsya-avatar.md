@@ -20,9 +20,11 @@ syncretic-edges:
   - target: "vishnu"
     type: "ancient-identification"
     source: "Within Vaishnavism, Matsya is the first of the ten avatars (*dashavatara*) of Vishnu — direct theological-doctrinal identity"
+    source-tier: T1
   - target: "enki-ea"
     type: "scholarly-parallel"
     source: "Witzel 2012 — structural parallel as the flood-warning deity who rescues the human flood-hero; not direct cognate"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "On Hinduism"

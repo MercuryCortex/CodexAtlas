@@ -20,12 +20,15 @@ syncretic-edges:
   - target: "[[tiamat]]"
     type: "scholarly-parallel"
     source: "Most direct parallel: Marduk kills and dismembers Tiamat to create the earth; Quetzalcoatl/Tezcatlipoca kill and dismember Cipactli to create the earth. Dismembered-body cosmogony, primordial water-monster."
+    source-tier: T1
   - target: "[[ymir]]"
     type: "scholarly-parallel"
     source: "Odin and his brothers kill and dismember the primordial giant Ymir; from his body they fashion the earth, sky, seas, and heavens. Structural identity with the Cipactli cosmogony."
+    source-tier: T1
   - target: "[[purusha]]"
     type: "scholarly-parallel"
     source: "Rigveda 10.90: the gods sacrifice and dismember the cosmic giant Purusha; from his body they create the cosmos, the social orders, the animals, the plants. Same dismembered-body cosmogony."
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "General History of the Things of New Spain (Florentine Codex)"

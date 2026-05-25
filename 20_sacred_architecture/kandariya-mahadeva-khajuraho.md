@@ -23,22 +23,27 @@ cross-tradition-edges:
   - target: "borobudur-stupa-mandala"
     type: "parallel-form"
     source: "Snodgrass 1985; Kramrisch 1946; Michell 1988"
+    source-tier: T1
     notes: "Stepped-vimana cosmic-mountain (Khajuraho, ~1030 CE, Hindu Nagara) and stepped-stupa-mandala (Borobudur, ~800 CE, Mahayana Buddhist) are architectural cousins in the broader Indic cosmic-mountain typology — the Buddhist Borobudur is the older South-east Asian implementation, the Hindu Kandariya Mahadeva is the apex Nagara-style implementation."
   - target: "brihadeeswarar-temple-thanjavur"
     type: "parallel-form"
     source: "Hardy 2007; Michell 1988"
+    source-tier: T1
     notes: "Nagara (North-Indian curvilinear) cosmic-mountain (Kandariya Mahadeva, ~1030, Chandela) vs Dravida (South-Indian stepped-pyramidal) cosmic-mountain (Brihadeeswarar, ~1010, Chola) — the two great regional styles realising the *same* cosmic-mountain theology in two architecturally distinct grammars in the same generation."
   - target: "ziggurat-of-ur"
     type: "parallel-form"
     source: "Kramrisch 1946; Snodgrass 1985"
+    source-tier: T1
     notes: "Independent emergence of the cosmic-mountain-as-monumental-building type: Sumerian ziggurat (~2100 BCE) and North-Indian Nagara vimana (~1030 CE) realise the *same* theological problem with no documented architectural transmission."
   - target: "mount-meru"
     type: "architectural-embodiment-of"
     source: "Kramrisch 1946; Desai 1996"
+    source-tier: T1
     notes: "The 84 sub-shrines and the apex *shikhara* directly model Mount Meru's clustered peak-form; the temple is a 3-D architectural realisation of the [[mount-meru]] cosmogram."
   - target: "theme-cosmic-mountain-as-temple-form"
     type: "exemplifies"
     source: "Kramrisch 1946; Michell 1988"
+    source-tier: T1
     notes: "Kandariya Mahadeva is one of the canonical exemplars of Stella Kramrisch's reading of the Hindu temple as architectural cosmic-mountain."
 status: "metadata"
 refs:

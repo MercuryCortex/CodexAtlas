@@ -19,27 +19,35 @@ syncretic-edges:
   - target: "[[brahma]] (Hindu four-faced creator)"
     type: "cross-tradition-parallel"
     source: "Brahma's four faces looking to the four cardinal directions is the closest iconographic parallel in any tradition; both are supreme four-faced deities whose multiple heads encode cosmic totality / omniscience in four directions; the parallel is typological (cosmic-deity expressed through quadripartite-face iconography) not genetic"
+    source-tier: T1
   - target: "[[janus]] (Roman two-faced liminal god)"
     type: "cross-tradition-parallel"
     source: "Janus's two faces (past/future, entrance/exit) encode omniscient vision across temporal or spatial axes — a structural parallel to Svantovit's four-faced omniscience across the four directions; both use multiplied faces to express a god's total perceptual sovereignty over a domain"
+    source-tier: T1
   - target: "[[perun]] (Slavic thunder-god, prior supreme deity)"
     type: "mythological-partner"
     source: "In East-Slavic Kievan tradition, Perun was the chief deity (980 Kiev pantheon); in West-Slavic Polabian tradition, Svantovit of Arkona held that position; the two figures represent regional variants of West vs. East Slavic supreme-deity traditions; Łowmiański 1979 argued Perun's 'primacy' was druzhina-specific, not pan-Slavic"
+    source-tier: T1
   - target: "[[veles]] (Slavic underworld deity)"
     type: "mythological-partner"
     source: "Svantovit's white horse divination and harvest-victory oracle functions complement the Perun-Veles cosmological axis; Svantovit occupies the war-and-prosperity pole that in East Slavic tradition belongs to Perun"
+    source-tier: T1
   - target: "[[svarog]] (Slavic sky-fire deity)"
     type: "mythological-partner"
     source: "Svarog as the Slavic sky/celestial divine principle; Svantovit as the four-directional supreme deity — both operate in the uppermost tier of the Slavic divine hierarchy"
+    source-tier: T1
   - target: "[[dazhbog]] (Slavic sun/prosperity deity)"
     type: "mythological-partner"
     source: "Dazhbog as divine-giver and sun; Svantovit's harvest-oracle and abundance function partially overlaps; both occupy the prosperity/beneficence cluster of Slavic divine typology"
+    source-tier: T1
   - target: "[[mokosh]] (Slavic earth/fate goddess)"
     type: "mythological-partner"
     source: "Mokosh as the fate/earth/prosperity complement to Svantovit's war-and-harvest sovereignty in the West Slavic context"
+    source-tier: T1
   - target: "[[epona]] (Celtic horse-goddess)"
     type: "cross-tradition-parallel"
     source: "The white horse at Arkona — kept sacred, never ridden by mortals, used for oracular divination by watching how it stepped over crossed spears — parallels the sacred horse of Epona; both traditions center a white horse as divine property with oracular or sacred significance"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Gesta Danorum (Deeds of the Danes)"

@@ -23,22 +23,27 @@ cross-tradition-edges:
   - target: "church-of-the-holy-sepulchre-jerusalem"
     type: "imitatio-of"
     source: "Genin 2011; Pereira 2012; UNESCO 1983"
+    source-tier: T1
     notes: "The Charola (rotunda, ~1160) is a sixteen-sided polygonal structure with central altar-baldachin, modeled on the Anastasis Rotunda — at one architectural remove via the Templar occupation of the Dome of the Rock. Krautheimer's *iconographic copy* category."
   - target: "dome-of-the-rock-jerusalem"
     type: "imitatio-of"
     source: "Pereira 2012; Barber 1994"
+    source-tier: T1
     notes: "Direct transmission line: Templars occupied the Dome of the Rock as Templum Domini in Jerusalem 1119–1187; built Tomar's rotunda in Portugal as architectural memorial."
   - target: "temple-church-london"
     type: "parallel-form"
     source: "Wilson 2010; Genin 2011"
+    source-tier: T1
     notes: "Both are 12th-c. Templar round-naved churches in the European programme of Anastasis-imitatio. Independent constructions, same architectural vocabulary."
   - target: "quinta-da-regaleira-sintra"
     type: "parallel-portuguese-esoteric-site"
     source: "Gandra 2010"
+    source-tier: T1
     notes: "Tomar is the medieval Templar centre of Portuguese sacred architecture; Regaleira (1904–1910) is the modern esoteric / neo-Templar / Rosicrucian elaboration of the same Portuguese tradition. Carvalho Monteiro's Sintra estate consciously cites the Tomar programme."
   - target: "tradition-portuguese-hermeticism"
     type: "anchor-site"
     source: "Gandra 1991; Gandra 2010"
+    source-tier: T1
     notes: "Tomar + Sintra + Mafra are the three pillars of Portuguese esoteric topography in Gandra's scheme."
 status: "metadata"
 refs:

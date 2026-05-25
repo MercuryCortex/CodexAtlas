@@ -18,6 +18,7 @@ syncretic-edges:
   - target: "[[demeter]]"
     type: "ancient-identification"
     source: "*interpretatio romana* — Ceres is the Roman Demeter; the Eleusinian-mystery iconography imports wholesale"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Religions of Rome"

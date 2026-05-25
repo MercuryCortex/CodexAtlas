@@ -20,10 +20,12 @@ syncretic-edges:
   - target: "anu-hittite"
     type: "scholarly-parallel"
     source: "West 1997, East Face of Helicon"
+    source-tier: T1
     notes: "Hittite Anu (sky-god, derived in turn from Mesopotamian An) is castrated by Kumarbi, paralleling Uranus's castration by Kronos. The succession-myth genealogical parallel is one of the cleanest cross-cultural mythological cognates known."
   - target: "dyaus-pita-vedic"
     type: "scholarly-parallel"
     source: "West 2007, Indo-European Poetry and Myth"
+    source-tier: T1
     notes: "Indo-European *Dyēus 'Sky' reflexes split into the sovereign type (Zeus/Jupiter/Dyauṣ Pitṛ) and the displaced primordial-sky type (Uranus). Uranus's name *ourani- is unclear etymologically — possibly non-Indo-European."
 status: "metadata"
 refs:

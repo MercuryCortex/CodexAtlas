@@ -20,28 +20,35 @@ syncretic-edges:
   - target: "prajnaparamita-goddess"
     type: "scholarly-parallel"
     source: "Conze, *The Prajñāpāramitā Literature* (1960); Snellgrove, *Indo-Tibetan Buddhism* (1987) — Manjushri (Crown Prince of Wisdom) and Prajñāpāramitā (Mother of Wisdom) are the masculine and feminine poles of the Mahāyāna wisdom-personification complex"
+    source-tier: T1
     notes: "Within-family pairing"
   - target: "thoth"
     type: "scholarly-parallel"
     source: "Wilkinson, *Complete Gods and Goddesses of Ancient Egypt* (2003); Lamotte, *History of Indian Buddhism* (1958) — both are deities-of-writing-and-discernment; Thoth invented the scribal arts, Manjushri wields the sword of wisdom that severs ignorance"
+    source-tier: T1
     notes: "MASSIVE WIN: scribal-wisdom-deity convergence across Egypt and Buddhism"
   - target: "nabu"
     type: "scholarly-parallel"
     source: "Black & Green, *Gods, Demons and Symbols of Ancient Mesopotamia* (1992) — Mesopotamian Nabu as scribe-of-the-gods; structural parallel to Manjushri's scribal-wisdom role"
+    source-tier: T1
   - target: "sophia-gnostic"
     type: "scholarly-parallel"
     source: "Conze, *Buddhist Wisdom* (1958) — Conze's classic parallel: Manjushri/Prajñāpāramitā/Sophia/Chokmah form a cross-tradition wisdom-personification cluster"
+    source-tier: T1
     notes: "MASSIVE WIN: Mahāyāna-Gnostic wisdom-personification parallel (Conze)"
   - target: "athena"
     type: "scholarly-parallel"
     source: "Conze 1958; both are wisdom-deities depicted with weapons (Athena's spear / Manjushri's sword); the wisdom-as-weapon iconography"
+    source-tier: T1
   - target: "saraswati"
     type: "scholarly-parallel"
     source: "Snellgrove 1987 — Vedic Saraswati as goddess of learning/wisdom; Saraswati appears as a Buddhist bodhisattva in some Tibetan traditions"
+    source-tier: T1
     notes: "Vedic-Buddhist wisdom-deity shared inheritance"
   - target: "hermes-trismegistus"
     type: "scholarly-parallel"
     source: "Conze 1958 — Hermes Trismegistus as Hellenistic wisdom-revealer; partial parallel to Manjushri's transmitter-of-esoteric-tantric-wisdom role"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Indo-Tibetan Buddhism"

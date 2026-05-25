@@ -20,10 +20,12 @@ syncretic-edges:
   - target: "[[ereshkigal]]"
     type: "ancient-identification"
     source: "Descent of Inanna (ETCSL 1.4.1); George, *The Babylonian Gilgamesh Epic* (2003) Tablet VI — Gugalanna's death is the precondition for Inanna's underworld descent; the literary chronology is consistent across Sumerian and Akkadian recensions"
+    source-tier: T1
     notes: "The Descent narrative requires Gugalanna's prior death; this establishes Gugalanna's role as the antagonist whose killing triggers the underworld plot in Mesopotamian literature"
   - target: "[[bull]]"
     type: "structural-parallel"
     source: "Gugalanna is the canonical Mesopotamian instance of the cosmic-bull motif that recurs across the ancient Near East — the Apis bull, the Cretan Minotaur, the Mithraic tauroctony"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Babylonian Gilgamesh Epic: Introduction, Critical Edition, and Cuneiform Texts"

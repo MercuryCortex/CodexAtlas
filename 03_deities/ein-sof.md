@@ -19,15 +19,19 @@ syncretic-edges:
   - target: "the-godhead-eckhart"
     type: "structural-parallel"
     source: "McGinn 2001; Wolfson 2005 — both name the absolute divine ground prior to all relational predicates; structurally identical apophatic moves in 13th-14th c. Catholic mysticism and 13th-c. Kabbalah"
+    source-tier: T1
   - target: "al-haqq"
     type: "structural-parallel"
     source: "Sells 1994, *Mystical Languages of Unsaying* — both name the Real-in-itself beyond all manifestation; apophasis as the shared mystical grammar"
+    source-tier: T1
   - target: "the-one-plotinus"
     type: "structural-parallel"
     source: "Scholem 1941, Altmann 1944 — Neoplatonic emanation structure (One → Nous → Soul → Matter) maps onto Ein Sof → Sefirot → World; Provence Kabbalah almost certainly absorbed Neoplatonism through Arabic philosophical transmission"
+    source-tier: T1
   - target: "ungrund"
     type: "structural-parallel"
     source: "Boehme (1612–1624); Weeks 1991 — Boehme's Ungrund (the divine groundless prior to Wrath/Love distinction) is structurally identical to Ein Sof; the structural convergence may involve indirect Christian Kabbalistic influence (Khunrath 1609)"
+    source-tier: T1
 status: "full"
 refs:
   - title: "Major Trends in Jewish Mysticism"

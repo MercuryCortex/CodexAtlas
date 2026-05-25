@@ -19,33 +19,43 @@ syncretic-edges:
   - target: "[[osiris]] (Egyptian dying-and-rising grain god)"
     type: "cross-tradition-parallel"
     source: "MASSIVE WIN: Osiris is the paradigmatic dying-and-rising grain deity of the ancient world — killed, dismembered, resurrected, with grain growing from his body; Jarilo's death at summer's end and his return each spring maps onto the same mythological structure; both are vegetation-sovereignty deities whose death and resurrection encode the grain cycle; Frazer 1890/1906 *The Golden Bough* establishes this typological family"
+    source-tier: T1
   - target: "[[dumuzi-tammuz]] (Mesopotamian shepherd-vegetation deity)"
     type: "cross-tradition-parallel"
     source: "Dumuzi/Tammuz: taken to the underworld, mourned by Inanna/Ishtar, partly returned through a seasonal substitution rite; Jarilo's narrative (born in winter, stolen to the underworld, returns in spring, killed at harvest) is structurally near-identical; both involve divine-sister-bride mourning and a seasonal death-return cycle; the Inanna-Dumuzi relationship mirrors Marzanna-Jarilo's sister-bride dynamic"
+    source-tier: T1
   - target: "[[adonis]] (Greek-Semitic dying vegetation deity)"
     type: "cross-tradition-parallel"
     source: "Adonis: born of a tree, beloved by Aphrodite, killed at the height of his beauty (by a boar), mourned and partly returned; Jarilo as perpetually young, flower-crowned, killed at summer's peak — the parallel is the dying-beautiful-youth-as-vegetation-deity typology; both attract universal mourning at death"
+    source-tier: T1
   - target: "[[baldr]] (Norse dying-and-rising god)"
     type: "cross-tradition-parallel"
     source: "Baldr: the most beautiful and beloved of the gods, killed at his prime (by mistletoe), his death mourns the entire cosmos; parallels Jarilo's youth, beauty, flower-associations, and his death that signals the end of summer; both are Pan-Indo-European reflex of the dying-divine-youth mytheme"
+    source-tier: T1
   - target: "[[dionysus]] (Greek mystery vegetation deity)"
     type: "cross-tradition-parallel"
     source: "Dionysus Zagreus: torn apart and reborn, god of wine and vegetation, ecstatic spring festivals; Jarilo's festival cycle includes ecstatic communal ritual, sexual license, spring vegetation rites — the overall festival *structure* closely parallels Dionysian spring ritual (Anthesteria)"
+    source-tier: T1
   - target: "[[attis]] (Phrygian dying-and-rising deity)"
     type: "cross-tradition-parallel"
     source: "Attis: self-castrated, killed, mourned by Cybele, partly resurrected; spring festival (March 22–25) includes effigy burial and resurrection rite — the same ritual grammar as Jarilo's effigy-drowning/burning and spring return; both belong to the Near Eastern–Anatolian dying-god cluster"
+    source-tier: T1
   - target: "[[marzanna]] (Slavic death-and-winter goddess — Jarilo's sister-bride)"
     type: "mythological-partner"
     source: "Marzanna and Jarilo are divine siblings who are also seasonal consorts: their sacred union enables the growing season; Marzanna kills Jarilo at summer's end; the brother-sister divine-marriage pattern mirrors Inanna-Dumuzi and Isis-Osiris; the Marzanna effigy-drowning (Czech *Morana*, Slovak *Morena* rites, still performed each spring) is the best-documented living Slavic pagan ritual"
+    source-tier: T1
   - target: "[[veles]] (Slavic underworld deity)"
     type: "mythological-partner"
     source: "Jarilo is reconstructed as born in winter while his parents Perun and Mokosh were separated — he falls into Veles's underworld domain and is raised by Veles, then returns to the living world in spring; this makes Veles the underworld-foster-father who holds the vegetation deity over winter"
+    source-tier: T1
   - target: "[[mokosh]] (Slavic earth/fate goddess)"
     type: "mythological-partner"
     source: "Mokosh as earth-mother and Jarilo as her spring-fertility son — the mother-earth / vegetation-son divine pair common across IE traditions (Demeter/Persephone at the structural level)"
+    source-tier: T1
   - target: "[[svarog]] (Slavic sky deity)"
     type: "mythological-partner"
     source: "Svarog as the Slavic celestial principle whose seasonal cycle governs Jarilo's rise and fall"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Poeticheskie vozzreniya slavyan na prirodu (Poetic Views of the Slavs on Nature)"

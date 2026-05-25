@@ -20,18 +20,22 @@ syncretic-edges:
   - target: "[[huitzilopochtli]]"
     type: "ancient-identification"
     source: "Sahagún, *Historia General* Book 3 chap. 1; Matos Moctezuma, *Templo Mayor* (1988) — the foundational Mexica myth: Coatlicue, sweeping at Coatepec ('Snake Mountain'), is impregnated by a feather; her existing daughter Coyolxauhqui and 400 sons (the *Centzon Huitznahua*) plot to kill her in shame; Huitzilopochtli is born fully-armed from Coatlicue's womb and beheads Coyolxauhqui, dismembering her and throwing her body down the mountain. The Templo Mayor pyramid is Coatepec; the great stone Coyolxauhqui disc at its base depicts the dismembered goddess — every Mexica human sacrifice is ritualized re-enactment of this primal cosmic violence"
+    source-tier: T1
     notes: "MASSIVE WIN: the most spectacular surviving Aztec sculpture (the 3.25-metre stone disk discovered in 1978 beneath Mexico City's cathedral) is Coyolxauhqui's dismembered body — recovered from the foot of the Templo Mayor pyramid; the disk's location reproduces the mountain-foot mythology in stone. Every prisoner sacrificed at the Templo Mayor's summit was thrown down the steps to land on Coyolxauhqui's image at the base, re-enacting the cosmic dismemberment that founds Aztec state theology"
   - target: "tiamat"
     type: "scholarly-parallel"
     source: "Matos Moctezuma 1988; Carrasco, *City of Sacrifice* (1999) — Tiamat's dismemberment by Marduk in the *Enuma Elish* (heaven and earth made from her divided body) structurally parallels Coyolxauhqui's dismemberment by Huitzilopochtli (her scattered body parts encode the cosmos of the Templo Mayor). Both are foundational-violence cosmogonies in which the dismembered female-cosmic-body becomes the architecture of the manifested world"
+    source-tier: T1
     notes: "MASSIVE WIN: cosmic-dismemberment-of-female-primordial structural parallel across Babylon and Mexica; both are state-theological foundation-narratives that ritually re-enact the primordial violence"
   - target: "inanna-sumerian"
     type: "scholarly-parallel"
     source: "Carrasco 1999 — Inanna's *Descent to the Underworld* and stripping-to-death at the seven gates parallels Coyolxauhqui's progressive stripping/dismemberment; both are dismembered-female-cosmic-principle narratives, though Inanna returns and Coyolxauhqui does not"
+    source-tier: T1
     notes: "Dismembered-cosmic-feminine partial parallel"
   - target: "persephone-greek"
     type: "scholarly-parallel"
     source: "Carrasco 1999 — Persephone's underworld-abduction and seasonal-bound annual return; structurally related to the dismembered-female-principle pattern through the seasonal-mythology lens"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Great Temple of the Aztecs (Templo Mayor)"

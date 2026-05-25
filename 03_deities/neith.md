@@ -20,6 +20,7 @@ syncretic-edges:
   - target: "athena"
     type: "ancient-identification"
     source: "Plato *Timaeus* 21E: the Saite priests tell Solon that the goddess of Saïs is the same as the Greek Athena. Herodotus 2.59, 2.62, 2.83 also equates Neith and Athena"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Neith of Sais"

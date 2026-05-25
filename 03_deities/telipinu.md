@@ -20,14 +20,17 @@ syncretic-edges:
   - target: "dumuzi-tammuz"
     type: "scholarly-parallel"
     source: "Mazoyer 2003, Télipinu, le dieu au marécage; Hoffner 1998"
+    source-tier: T1
     notes: "Disappearing-and-returning vegetation god — same myth-pattern as Sumerian Dumuzi's descent / Akkadian Tammuz."
   - target: "baal-hadad"
     type: "scholarly-parallel"
     source: "Mazoyer 2003"
+    source-tier: T1
     notes: "Ugaritic Baal also vanishes (into the underworld, devoured by Mot) and returns; the Telipinu pattern is the Anatolian instance of this widespread Levantine-Anatolian motif."
   - target: "adonis"
     type: "scholarly-parallel"
     source: "later instance of the dying-and-returning vegetation god type"
+    source-tier: T1
     notes: "Adonis is a Hellenistic continuation of the same Levantine type, via Byblos-Aphrodite cult; Telipinu is its Bronze Age Anatolian cognate."
 status: "metadata"
 refs:

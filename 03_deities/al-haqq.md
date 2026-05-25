@@ -16,9 +16,11 @@ syncretic-edges:
   - target: "ein-sof"
     type: "scholarly-parallel"
     source: "Sells 1994, *Mystical Languages of Unsaying* — both name the Real-in-itself beyond manifestation, structurally parallel apophatic moves in Islamic and Jewish mystical metaphysics"
+    source-tier: T1
   - target: "the-godhead-eckhart"
     type: "scholarly-parallel"
     source: "Sells 1994; structurally parallel apophatic-Real-beyond-manifestation"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Ibn al-ʿArabī's Metaphysics of Imagination: The Sufi Path of Knowledge"

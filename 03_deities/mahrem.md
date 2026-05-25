@@ -20,6 +20,7 @@ syncretic-edges:
   - target: "ares"
     type: "ancient-identification"
     source: "Ezana's own Greek-language inscription RIE 270 translates Mahrem as *Ares* — the most direct ancient documentary identification of an Aksumite deity with a Mediterranean deity"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Aksum: An African Civilisation of Late Antiquity"

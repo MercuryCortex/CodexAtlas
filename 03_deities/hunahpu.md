@@ -20,23 +20,29 @@ syncretic-edges:
   - target: "[[kukulkan]] (Maya solar / hero deity)"
     type: "scholarly-parallel"
     source: "Both are K'iche' / Yucatec solar-divine figures; the twins' solar apotheosis connects to the broader Maya solar-deity complex. Coe 2015; Tedlock 1985."
+    source-tier: T1
   - target: "[[xipe-totec]] (dying-rising pattern)"
     type: "scholarly-parallel"
     source: "The twins' descent, death, dismemberment, and resurrection in Xibalba is the clearest Mesoamerican parallel to the dying-rising deity pattern documented in Mesopotamian (Inanna), Egyptian (Osiris), and Near Eastern traditions. Freidel, Schele & Parker 1993."
+    source-tier: T1
   - target: "osiris"
     type: "scholarly-parallel"
     source: "Typological: both narratives involve descent to the underworld, death/dismemberment, and resurrection; in both cases the resurrection involves deception of underworld lords. Freidel, Schele & Parker 1993 *Maya Cosmos*. No transmission."
+    source-tier: T1
   - target: "ixbalanque"
     type: "ancient-identification"
     source: "Popol Vuh — Hunahpu and Ixbalanque are the inseparable Hero Twins of K'iche' Maya cosmogony; the twin-pair narrative requires both names to be linked"
+    source-tier: T1
     notes: "Within-family twin-pair"
   - target: "heracles"
     type: "scholarly-parallel"
     source: "Freidel, Schele, Parker 1993; both are mortal-heroes who descend to the underworld and emerge transformed/divinized; both are sons of a divine father whose underworld-trials end in apotheosis"
+    source-tier: T1
     notes: "Hero-twins-underworld-descent partial parallel"
   - target: "dumuzi-tammuz"
     type: "scholarly-parallel"
     source: "Freidel, Schele, Parker 1993 — Mesopotamian Dumuzi's descent and Hunahpu's descent both encode the seasonal-agricultural cycle as underworld-mythology"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Popol Vuh: The Definitive Edition of the Mayan Book of the Dawn of Life and the Glories of Gods and Kings"

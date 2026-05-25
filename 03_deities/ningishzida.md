@@ -20,9 +20,11 @@ syncretic-edges:
   - target: "ninazu"
     type: "ancient-identification"
     source: "Wiggermann 1992 *Mesopotamian Protective Spirits*; Black & Green 1992 *Gods, Demons and Symbols of Ancient Mesopotamia* — Ningishzida and his father Ninazu share the chthonic-serpent iconographic complex; both wear the horned-serpent emblem and are doorkeepers of underworld / heavenly thresholds"
+    source-tier: T1
   - target: "dumuzi-tammuz"
     type: "ancient-identification"
     source: "Black & Green 1992 — Ningishzida and Dumuzi are paired in the *Descent of Inanna* sequence as the two young gods who alternate periods in the underworld; both are dying-and-returning vegetation figures"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Mesopotamian Protective Spirits: The Ritual Texts"

@@ -20,10 +20,12 @@ syncretic-edges:
   - target: "[[raven-trickster]]"
     type: "scholarly-parallel"
     source: "Erdoes & Ortiz, *American Indian Trickster Tales* (1998); Hyde, *Trickster Makes This World* (1998) — the trickster-as-culture-hero is one of the most-universally-attested figure-types in North American religions; Iktomi (Lakota), Coyote (Plains/Southwest), Raven (Pacific Northwest), Manabozho (Great Lakes), Glooscap (Northeast), Hare (Southeast) — the same theological role is filled by regionally appropriate animal-or-anthropomorphic figures"
+    source-tier: T1
     notes: "MASSIVE WIN: cross-continental North American trickster convergence — six independently-attested traditions in different language families and geographies all centre the same teaching-through-disruption figure"
   - target: "[[hermes-greek]]"
     type: "scholarly-parallel"
     source: "Hyde, *Trickster Makes This World* (1998) compares the Lakota Iktomi, Greek Hermes, Norse Loki, and West African Eshu as cross-cultural instances of the trickster archetype — boundary-crosser, language-inventor, thief, deceiver-who-also-teaches"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Lakota Belief and Ritual"

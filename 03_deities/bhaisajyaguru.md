@@ -20,37 +20,46 @@ syncretic-edges:
   - target: "amitabha"
     type: "structural-parallel"
     source: "Birnbaum, Raoul (1979). The Healing Buddha. Shambhala.; Bhaisajyaguru Sutra (T 449–451)"
+    source-tier: T1
     notes: "Bhaisajyaguru rules the Eastern Pure Land (Vaiḍūryanirbhāsa — 'Pure Lapis Lazuli') while Amitabha rules the Western Pure Land (Sukhavati). The two Pure Land architectures are parallel: both offer rebirth in a realm of no suffering as the path to eventual liberation. Bhaisajyaguru's 12 vows address material suffering (illness, poverty, gender inequality, social oppression) in ways Amitabha's focus on rebirth does not."
   - target: "asclepius-greek"
     type: "structural-parallel"
     source: "Birnbaum (1979); Zysk, Kenneth (1998). Asceticism and Healing in Ancient India. Motilal Banarsidass."
+    source-tier: T1
     notes: "Both are divine healers who address bodily suffering, both are associated with specific cultic healing practices (temple incubation / mantra recitation), and both sit adjacent to but distinct from the supreme deity of their tradition (Asclepius vs. Apollo/Zeus; Bhaisajyaguru vs. Amitabha/Sakyamuni). The parallel is typological — no historical connection."
   - target: "vairocana"
     type: "structural-parallel"
     source: "Studholme, Alexander (2002). The Origins of Om Manipadme Hum. SUNY Press."
+    source-tier: T1
     notes: "Within Five-Buddha cosmology, Bhaisajyaguru sometimes functions as a sixth or parallel Tathagata; Yakushi Nyorai in Japanese Tendai and Shingon traditions is paired with Vairocana in temple iconography."
   - target: "imhotep"
     type: "scholarly-parallel"
     source: "Birnbaum 1979; Hurry, *Imhotep* (1928) — Imhotep as the Egyptian Old Kingdom polymath who was deified ~2,500 years after his death as the patron-god of medicine; Bhaisajyaguru as the cosmic Medicine Buddha. Both are divine-healers approached through temple-incubation and ritual healing practices"
+    source-tier: T1
     notes: "MASSIVE WIN: cosmic-medicine-deity convergence Egyptian-Buddhist"
   - target: "dhanvantari"
     type: "scholarly-parallel"
     source: "Zysk, *Asceticism and Healing in Ancient India* (1998) — Vedic Dhanvantari as god of Ayurveda; emerged with the kalasha of amrita at the churning of the cosmic ocean. Both Dhanvantari and Bhaisajyaguru bear the medicine-bowl iconography; the Indian medical-deity cluster informs the Buddhist Medicine Buddha cult"
+    source-tier: T1
     notes: "Vedic-Buddhist medicine-deity inheritance"
   - target: "serapis"
     type: "scholarly-parallel"
     source: "Birnbaum 1979; Hornblower & Spawforth, *Oxford Classical Dictionary* — Hellenistic Serapis as composite Egyptian-Greek healing deity at Alexandria; the Serapeum's incubation-healing cult parallels Bhaisajyaguru's healing-vows"
+    source-tier: T1
   - target: "panacea"
     type: "cross-tradition-archetype"
     source: "Comparative religion — Birnbaum 1979; Burkert 1985 *Greek Religion* — Bhaisajyaguru holds myrobalan (haritaki, the Tibetan 'king of all medicines,' believed to treat all disease) and Panacea's domain is the universal remedy; both personify the pharmacopeia complete enough to cure everything"
+    source-tier: T1
     notes: "Complete-pharmacopeia archetype: Bhaisajyaguru's right hand holds myrobalan fruit — the Tibetan pharmacopeia's supreme medicine plant (triphala: haritaki/amalaki/bibhitaki), depicted in his hand because it treats every condition; Panacea's name encodes the same concept (pan-akos = all-remedy). Independent Buddhist/Greek convergence on the deity whose specific domain is the universally sufficient medicine."
   - target: "hygieia"
     type: "structural-parallel"
     source: "Comparative religion — Edelstein 1945; Birnbaum 1979; Bhaisajyaguru's first vow (of twelve) guarantees freedom from disease for all beings in his realm — proactive prevention; Hygieia represents health-maintenance and prevention within the Asklepian healing family"
+    source-tier: T1
     notes: "Prevention-first archetype: Bhaisajyaguru's first vow is that all beings in his eastern Pure Land are entirely free from disease and physical defect — healing by eliminating disease before it strikes; Hygieia (Greek, 'health') represents the same preventive dimension of medicine. Both stand in contrast to the reactive/curative figures in their traditions (Asklepios who heals the sick; the other Buddhas who address rebirth and liberation)."
   - target: "nefertem"
     type: "cross-tradition-archetype"
     source: "Comparative religion — Wilkinson 2003 *Complete Gods and Goddesses of Ancient Egypt*; Birnbaum 1979; Ebers Papyrus on blue lotus (*Nymphaea caerulea*) in Egyptian medicine; lotus iconography in Bhaisajyaguru cult across East Asia"
+    source-tier: T1
     notes: "Lotus-medicine deity archetype: Nefertem (Egyptian, c. 2700 BCE) is defined by the blue water-lily (*Nymphaea caerulea*), used medicinally in Egyptian medical papyri and as a psychoactive ritual perfume; Bhaisajyaguru sits on a lotus throne and holds myrobalan as the supreme healing plant. Both link the lotus specifically to divine medicine and healing. Independent Egyptian/Buddhist convergence across a 2,800-year gap."
 status: "metadata"
 refs:

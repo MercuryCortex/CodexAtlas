@@ -20,6 +20,7 @@ syncretic-edges:
   - target: "ashur"
     type: "ancient-identification"
     source: "Lambert 2013 *Babylonian Creation Myths*; Dalley 1989 *Myths from Mesopotamia* — late Assyrian theology, particularly under Sennacherib and the Sargonid kings, identifies Anshar with Ashur (the Assyrian national god), elevating Ashur to cosmogonic-primordial status and effectively rewriting the *Enūma Eliš* with Ashur in Marduk's role. This is a politically-motivated theological identification consonant with Assyrian imperial-religious centralization"
+    source-tier: T1
     notes: "The Anshar = Ashur identification is documented in the Assyrian recensions of the *Enūma Eliš*"
 status: "metadata"
 refs:

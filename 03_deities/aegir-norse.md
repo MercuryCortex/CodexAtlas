@@ -19,30 +19,39 @@ syncretic-edges:
   - target: "[[nun]] (Egyptian primordial ocean)"
     type: "cross-tradition-parallel"
     source: "Ægir as the primordial ocean itself — the sea that pre-existed the gods and into which all things return — parallels Nun, the Egyptian primordial waters before creation; both represent the pre-cosmic ocean as a category distinct from later divine sea-patrons"
+    source-tier: T1
   - target: "[[apsu]] (Mesopotamian primordial freshwater ocean)"
     type: "cross-tradition-parallel"
     source: "Apsu as the primordial freshwater abyss beneath the earth parallels Ægir as the pre-Aesir primordial sea; both are older-stratum ocean powers who existed before the ruling divine generation and whose nature is fundamentally different from the sea-patron deities of their respective pantheons"
+    source-tier: T1
   - target: "[[tiamat]] (Mesopotamian primordial saltwater ocean)"
     type: "cross-tradition-parallel"
     source: "Tiamat as the primordial saltwater ocean — a pre-cosmic power — parallels Ægir in the same cosmological slot; both are primordial sea-beings that predate the ruling divine generation; Tiamat is slain and dismembered to create the cosmos, Ægir is integrated as a host/ally"
+    source-tier: T1
   - target: "[[poseidon]] (Greek sea-god)"
     type: "cross-tradition-parallel"
     source: "Sea-ruler parallel; but Ægir is explicitly a jotun (pre-Aesir), not a member of the ruling divine assembly like Poseidon — this distinguishes Ægir from the sea-patron archetype; both are nonetheless the preeminent sea powers of their respective traditions"
+    source-tier: T1
   - target: "[[tangaroa]] (Polynesian sea-god)"
     type: "cross-tradition-parallel"
     source: "Tangaroa as primordial god of the ocean; the sea-as-supreme-power archetype across Pacific and Norse traditions"
+    source-tier: T1
   - target: "[[olokun]] (Yoruba/Ifa deep-ocean deity)"
     type: "cross-tradition-parallel"
     source: "Olokun as the lord of the deep ocean, keeper of great wealth, associated with the bottom of the sea; Ægir's golden-lit undersea hall and his role as ocean-wealth parallel Olokun's domain of deep-sea abundance and mystery"
+    source-tier: T1
   - target: "[[dagda]] (Celtic cauldron-god, feasting parallel)"
     type: "cross-tradition-parallel"
     source: "Ægir's defining mythological act is brewing ale for the gods in his great cauldron — the feasting deity who provides divine sustenance; the Dagda's inexhaustible cauldron (*Undry*) is the closest Celtic structural parallel — both are the divine providers of communal feast"
+    source-tier: T1
   - target: "[[njord]] (Norse sea-patron — distinguished from Ægir)"
     type: "mythological-partner"
     source: "Ægir (primordial jotun ocean) and Njörðr (Vanir divine patron of seafarers and fishing) occupy different layers of Norse sea-religion; Njörðr is the sea-god sailors pray to; Ægir is the sea itself in its pre-divine, primordial aspect; the distinction maps onto the wider pattern of primordial-power vs. divine-patron"
+    source-tier: T1
   - target: "[[loki]]"
     type: "mythological-partner"
     source: "Loki's flyting speech at Ægir's feast (Lokasenna) is a major Eddic poem; the feast-hall of Ægir is the setting for the most comprehensive mythological insult-exchange in Norse literature"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Handbook of Norse Mythology"

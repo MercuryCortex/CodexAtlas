@@ -20,18 +20,22 @@ syncretic-edges:
   - target: "aphrodite-greek"
     type: "ancient-identification"
     source: "Hoyland 2001 *Arabia and the Arabs*; Hawting 1999 *The Idea of Idolatry and the Emergence of Islam*. The Hellenistic-period interpretatio graeca on a Nabataean / North-Arabian context identifies al-ʿUzzā with Aphrodite-Venus; the morning-star astral association is consistent with the Northwest-Semitic ʿAṯtar / Inanna / Ishtar-Venus pattern."
+    source-tier: T1
     notes: "Interpretatio graeca, not a derivation claim — al-ʿUzzā is Northwest-Semitic in origin."
   - target: "allat"
     type: "ancient-identification"
     source: "Quran 53:19-22 names al-Lāt + al-ʿUzzā + Manāt as the triadic 'daughters of Allāh'; the close cultic association is attested in pre-Islamic Hijazi religion"
+    source-tier: T1
     notes: "Close cultic associate; the three goddesses are theologically distinct but invoked together"
   - target: "allah"
     type: "polemic-against"
     source: "Quran 53:19-22 (Sūrat al-Najm) — the *banāt Allāh* polemic explicitly names al-ʿUzzā as second of the three; Quran rejects the pre-Islamic Quraysh claim that the three goddesses are daughters/intercessors of Allāh"
+    source-tier: T1
     notes: "Direct polemical Quranic engagement with pre-Islamic Quraysh religion; al-ʿUzzā was the Quraysh tribal patron"
   - target: "venus-roman"
     type: "ancient-identification"
     source: "Healey 2001 *The Religion of the Nabataeans* — the Nabataean al-ʿUzzā is identified with Aphrodite-Venus in Greek and Latin epigraphy from the Nabataean cultural zone (Petra, Hegra, Hauran); the morning-star astral association underwrites the identification across the Greek/Latin/Nabataean trilingual zone"
+    source-tier: T1
     notes: "Interpretatio Romana in Nabataean trilingual contexts; complements the al-uzza→aphrodite-greek identification"
 status: "metadata"
 refs:

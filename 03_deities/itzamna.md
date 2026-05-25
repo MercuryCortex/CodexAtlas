@@ -19,18 +19,22 @@ syncretic-edges:
   - target: "thoth"
     type: "scholarly-parallel"
     source: "Taube, *The Major Gods of Ancient Yucatan* (1992); Wilkinson, *Complete Gods and Goddesses of Ancient Egypt* (2003) — both are scribal-creator deities credited with inventing writing, calendar, and divinatory knowledge. Both are old-male figures associated with the moon (Thoth as lunar god; Itzamna in some traditions associated with celestial old-male iconography)"
+    source-tier: T1
     notes: "MASSIVE WIN: scribal-creator-old-male deity-type convergence across Egypt and Maya. The deity-who-gave-writing is one of the most-consistently-attested cross-cultural divine functions"
   - target: "enki-ea"
     type: "scholarly-parallel"
     source: "Black & Green, *Gods, Demons and Symbols of Ancient Mesopotamia* (1992); Taube 1992 — both are wisdom-bestowing creator-deities; both are old-male figures associated with civilization, healing, and the bestowal of divine knowledge"
+    source-tier: T1
     notes: "Wisdom-creator convergence; the Apkallu (Mesopotamian sage-emissaries) parallel the Maya tradition of celestial-civilizing-figures"
   - target: "vairocana"
     type: "scholarly-parallel"
     source: "Taube 1992; Snellgrove, *Indo-Tibetan Buddhism* (1987) — both are illuminator-deities at the cosmic centre; Itzamna's celestial-creator role and Vairocana's Mahayana cosmic-Buddha role both centre the cosmos on a luminous wisdom-source"
+    source-tier: T1
     notes: "Structural cosmic-illuminator parallel; not a transmission claim"
   - target: "brahma"
     type: "scholarly-parallel"
     source: "Taube 1992 cites the Itzamna-Brahma parallel for the four-faced creator iconography — Itzamna in some Classic Maya depictions has four aspects; Brahma's four faces look in the four directions"
+    source-tier: T1
     notes: "Four-faced/four-directional cosmic-creator parallel"
 status: "metadata"
 refs:

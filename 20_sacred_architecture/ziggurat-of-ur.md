@@ -23,22 +23,27 @@ cross-tradition-edges:
   - target: "step-pyramid-djoser-saqqara"
     type: "parallel-form"
     source: "Crawford 1991; Lehner 1997"
+    source-tier: T1
     notes: "Sumerian stepped ziggurats (~2100 BCE Ur-Nammu form, with deeper Ubaid roots ~5500 BCE) and Egyptian stepped pyramids (~2670 BCE Djoser) emerge in roughly the same era at opposite ends of the Fertile Crescent with **no documented architectural-form contact** between them. Independent convergence on stepped-monumental-axis-mundi-temple-form."
   - target: "pyramid-of-khufu"
     type: "parallel-form"
     source: "Crawford 1991"
+    source-tier: T1
     notes: "True-geometric pyramid (Egyptian, ~2570 BCE) and stepped-platform ziggurat (Mesopotamian, ~2100 BCE) — different geometric resolutions of the same theological problem (monumental axis between heaven and earth)."
   - target: "borobudur-stupa-mandala"
     type: "parallel-form"
     source: "Snodgrass 1985"
+    source-tier: T1
     notes: "Independent emergence (Buddhist Java, ~800 CE) of stepped-monumental-axis-mundi-form. The ziggurat → stupa → pyramid → Mesoamerican pyramid set is one of the most striking convergence-clusters in religious architecture."
   - target: "theme-ziggurat-as-stairway-to-heaven"
     type: "anchor-site"
     source: "Crawford 1991; George 1993"
+    source-tier: T1
     notes: "The Mesopotamian ziggurat is the canonical example of the 'stairway-to-heaven' / 'tower-to-the-gods' motif (Akkadian *bāb-ili* = 'gate of the gods', the name from which 'Babylon' derives, and from which the Genesis 11 [[tower-of-babel]] narrative is folk-etymological response)."
   - target: "tower-of-babel"
     type: "polemic-inversion-of"
     source: "Speiser 1960; Day 2013"
+    source-tier: T1
     notes: "Genesis 11:1–9 (the Tower of Babel narrative) is the Israelite polemic-inversion of the Mesopotamian ziggurat-as-stairway-to-heaven motif. The Mesopotamian original: the *bab-ili* connects earth to heaven, sanctifying the city. The Israelite reframing: the same building is hubristic over-reach, divinely punished by language-confusion. Same architectural type-class, opposite valence."
 status: "metadata"
 refs:

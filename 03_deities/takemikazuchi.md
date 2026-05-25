@@ -20,15 +20,19 @@ syncretic-edges:
   - target: "[[indra]]"
     type: "scholarly-parallel"
     source: "Thunder-weapon deity sent on divine military mission; the vajra (thunderbolt-weapon) of Indra parallels Takemikazuchi's sword-thunder combination"
+    source-tier: T1
   - target: "[[michael-archangel]]"
     type: "scholarly-parallel"
     source: "Sword-bearing heavenly warrior sent as divine emissary to pacify and establish celestial sovereignty over earthly realm"
+    source-tier: T1
   - target: "[[ogun]]"
     type: "scholarly-parallel"
     source: "Yoruba deity of iron and war born from divine power; patron of warriors, hunters, and smiths — the martial-divine patron cross-tradition archetype"
+    source-tier: T1
   - target: "[[okuninushi]]"
     type: "ancient-identification"
     source: "Takemikazuchi was sent to negotiate the transfer of the land from Ōkuninushi to the heavenly dynasty; the two are permanently linked by this pivotal diplomatic-military encounter in Kojiki"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Kojiki"

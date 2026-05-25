@@ -20,14 +20,17 @@ syncretic-edges:
   - target: "[[venus-roman]]"
     type: "interpretatio-nominal"
     source: "Lindow 2001; weekday-calque Friday/Freyjudagr = Veneris dies"
+    source-tier: T1
     notes: "interpretatio-romana (Germanic→Roman name-mapping via weekday calque). Roman interpretatio identified Freyja with Venus via the weekday calque. The Frigg/Freyja confusion in late sources (both linked to Friday) is a separate post-conversion conflation"
   - target: "[[aphrodite-greek]]"
     type: "interpretatio-nominal"
     source: "Via Venus — the Aphrodite-Venus identity is classical"
+    source-tier: T1
     notes: "interpretatio-graeca (transitive Germanic→Greek name-mapping via the classical Venus-Aphrodite pair). Transitive identification through the Aphrodite-Venus pair"
   - target: "[[frigg]]"
     type: "scholarly-parallel"
     source: "Lindow 2001; Simek 1993 — the Freyja/Frigg conflation question is one of the oldest open problems in Norse studies"
+    source-tier: T1
     notes: "Some scholars (Grundy 1996, Näsström 1995) argue Freyja and Frigg are doublets of a single Proto-Germanic goddess; others (Lindow 2001) keep them distinct. The Friday-calque applies to both, which complicates the Venus identification"
 status: "metadata"
 refs:

@@ -20,18 +20,22 @@ syncretic-edges:
   - target: "zeus"
     type: "scholarly-parallel"
     source: "Bachvarova 2016, From Hittite to Homer; West 1997, East Face of Helicon"
+    source-tier: T1
     notes: "Storm-warrior cosmic king who overthrows his father; structural model for Hesiod's Zeus via the Kumarbi-cycle succession chain. Not an ancient identification — comparative scholarship."
   - target: "baal-hadad"
     type: "ancient-identification"
     source: "Hittite–Ugaritic diplomatic correspondence; Hurrian theonyms borrowed at Ugarit; Schwemer 2008"
+    source-tier: T1
     notes: "The Anatolian–Syrian storm-god continuum: Hurrian Teššub, Hittite Tarḫunna, Luwian Tarhunza, Ugaritic Baʿlu (Hadad), and Aleppine Hadad were treated as the same god across cult-centers."
   - target: "marduk"
     type: "scholarly-parallel"
     source: "Beckman 2011; Bachvarova 2016"
+    source-tier: T1
     notes: "Both storm-warrior gods who attain cosmic kingship after defeating a chaos-monster (Marduk vs. Tiamat; Teshub vs. Ullikummi / Hedammu)."
   - target: "tarhunta-luwian"
     type: "ancient-identification"
     source: "Hittite–Luwian theonym equivalence in royal cult"
+    source-tier: T1
     notes: "Tarḫunta / Tarhunza is the Anatolian Indo-European name for the same storm-god; Teshub is the Hurrian name. The two were merged in Hittite imperial cult."
 status: "full"
 refs:

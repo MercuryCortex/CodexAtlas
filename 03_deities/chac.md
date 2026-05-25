@@ -20,20 +20,25 @@ syncretic-edges:
   - target: "tlaloc"
     type: "scholarly-parallel"
     source: "Coe & Houston 2015"
+    source-tier: T1
   - target: "indra"
     type: "scholarly-parallel"
     source: "Eliade 1958, Ch. II on sky-and-storm; Vedic Indra and Maya Chac are both rain-thunder-axe-wielding storm-deities at the centre of their pantheons' agricultural cult"
+    source-tier: T1
     notes: "Storm-deity-with-axe/thunderbolt cross-cultural archetype"
   - target: "baal-hadad"
     type: "scholarly-parallel"
     source: "Eliade 1958; the Canaanite Baal as storm-god with thunderbolt and Maya Chac with lightning-axe converge on the rain-deity-as-bringer-of-life-water"
+    source-tier: T1
     notes: "Storm-god convergence"
   - target: "perun"
     type: "scholarly-parallel"
     source: "Eliade 1958; Slavic Perun as thunder-and-rain god parallels Chac structurally"
+    source-tier: T1
   - target: "thor"
     type: "scholarly-parallel"
     source: "Eliade 1958; Norse Thor with Mjölnir as storm-axe-wielder parallels Chac's lightning-axe"
+    source-tier: T1
     notes: "MASSIVE WIN: storm-god-with-axe/hammer/thunderbolt cross-cultural convergence — Indo-European (Indra, Thor, Perun, Zeus) + Northwest-Semitic (Baal-Hadad) + Mesoamerican (Chac/Chaac, Tlaloc); the storm-deity-as-rain-giver-of-life is one of the most universally-attested deity types"
 status: "metadata"
 refs:

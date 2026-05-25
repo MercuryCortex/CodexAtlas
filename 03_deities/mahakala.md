@@ -16,14 +16,17 @@ syncretic-edges:
   - target: "[[shiva]]"
     type: "direct-borrowing"
     source: "Sanderson 2009 *The Śaiva Age*; Stein 2010"
+    source-tier: T1
     notes: "Buddhist Mahākāla is Shiva's wrathful Tantric form appropriated wholesale as a dharmapāla. Sanderson 2009 treats this as a textbook case of Vajrayāna's directional borrowing from medieval Śaivism. East-Asian Buddhism preserved Mahākāla as 大黒天 Daikokuten (Japanese Shichifukujin) — the same name softened into a wealth-and-kitchen god"
   - target: "[[rudra-shiva-early]]"
     type: "substrate-influence"
     source: "Sanderson 2009"
+    source-tier: T1
     notes: "The Vedic Rudra is the pre-classical source of Shiva's wrathful aspect that Mahākāla inherits via the Shiva → Buddhist-Tantric transmission"
   - target: "[[bhairava]]"
     type: "parallel-motif"
     source: "Sanderson 2009"
+    source-tier: T1
     notes: "Mahākāla and Bhairava are sibling wrathful forms — both derive from Shiva's terrifying-cremation-grounds aspect; Bhairava remains within Shaiva tradition while Mahākāla crosses into Buddhism"
 status: "metadata"
 refs:

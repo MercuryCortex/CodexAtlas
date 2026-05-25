@@ -13,26 +13,32 @@ syncretic-edges:
   - target: "borobudur-stupa-mandala"
     type: "applies-to"
     source: "Snodgrass 1985; Kinney 2003"
+    source-tier: T1
     notes: "Borobudur (~750–825 CE) is the most architecturally explicit case: the building's three levels map exactly to the [[tradition-mahayana-buddhism|Mahayana]] *Trailokya* (Three Worlds), and the visitor's ascent IS the cosmological journey from realm of desire to formless realm."
   - target: "sanchi-great-stupa"
     type: "applies-to"
     source: "Snodgrass 1985"
+    source-tier: T1
     notes: "Sanchi (~250 BCE onwards) is the early Indian type-specimen of the stupa form; the building's hemispherical dome + harmika + chattravali is read by Buddhaghosa and following commentarial tradition as architectural emblem of [[mount-meru]] / the cosmic mountain."
   - target: "ziggurat-of-ur"
     type: "cross-tradition-parallel"
     source: "Snodgrass 1985; Crawford 1991"
+    source-tier: T1
     notes: "Mesopotamian ziggurat (~2100 BCE) is the cross-tradition parallel — independent emergence of the same architectural type-class (stepped monumental sacred building as cosmic axis)."
   - target: "step-pyramid-djoser-saqqara"
     type: "cross-tradition-parallel"
     source: "Snodgrass 1985; Lehner 1997"
+    source-tier: T1
     notes: "Egyptian Step Pyramid (Djoser, ~2670 BCE) is the cross-tradition parallel — earliest documented monumental stepped sacred building."
   - target: "pyramid-of-khufu"
     type: "cross-tradition-parallel"
     source: "Snodgrass 1985; Lehner 1997"
+    source-tier: T1
     notes: "Egyptian Great Pyramid (~2570 BCE) — true-geometric resolution of the stepped-cosmic-axis form."
   - target: "mount-meru"
     type: "architectural-embodiment-of"
     source: "Snodgrass 1985"
+    source-tier: T1
     notes: "Mount Meru — the cosmic mountain at the centre of every Buddhist + Hindu cosmology — is the **theological referent** of the stupa-form. The architectural axis (the central pole, *yasti*, of the stupa under the chattravali umbrella) IS Mount Meru's axis."
 refs:
   - title: "The Symbolism of the Stupa"

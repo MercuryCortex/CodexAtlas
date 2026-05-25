@@ -20,14 +20,17 @@ syncretic-edges:
   - target: "hwanung"
     type: "child-of"
     source: "Samguk Yusa 1.1"
+    source-tier: T1
     notes: "Son of Hwanung (divine) and Ungnyeo (bear-transformed-into-woman) — a liminal origin combining the heavenly-civilizing and the chthonic-animal-totemic strands of Korean cosmology."
   - target: "romulus"
     type: "structural-parallel"
     source: "Grayson (2002)"
+    source-tier: T1
     notes: "Both are semi-divine founders of a nation (divine paternity; human or animal-transformed mother), both establish the founding city, and both are deified/become sacred figures at death. The key difference: Romulus kills his twin; Tangun is a unifying figure with no fratricidal shadow. Typological parallel — no transmission."
   - target: "tangun-religion"
     type: "inspired"
     source: "Cha, Boo-Keun (1998). Korean Religions. Yonsei UP."
+    source-tier: T1
     notes: "Tangun is the central figure of Cheondogyo (Religion of the Heavenly Way, est. 1860) and its predecessor Donghak; also the foundation of the Daejonggyo religion (est. 1909), which worships Tangun as a god. The 20th-century Korean nationalist movement used Tangun as the symbol of Korean national identity and resistance to Japanese colonial rule."
 status: "metadata"
 refs:

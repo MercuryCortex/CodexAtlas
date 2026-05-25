@@ -20,14 +20,17 @@ syncretic-edges:
   - target: "aphrodite-greek"
     type: "ancient-identification"
     source: "Agathangelos; Russell 1987"
+    source-tier: T1
     notes: "Greek interpretatio identified Astghik with Aphrodite as the Armenian goddess of love and beauty. The Vardavar festival's water and rose elements match Aphrodite's sea-birth and rose associations."
   - target: "astarte-canaanite"
     type: "scholarly-parallel"
     source: "Russell 1987"
+    source-tier: T1
     notes: "Structural parallel: Astghik as the Armenian instantiation of the widespread Semitic-Near Eastern love-goddess-as-Venus-star pattern (Astarte = Ishtar = Astghik as 'star')."
   - target: "inanna-sumerian"
     type: "scholarly-parallel"
     source: "Russell 1987; Jacobsen 1987"
+    source-tier: T1
     notes: "The love-goddess as morning star / Venus planet is a pattern originating with Inanna/Ishtar; Astghik participates in this ancient tradition through the Iranian-Armenian cultural sphere."
 status: "metadata"
 refs:

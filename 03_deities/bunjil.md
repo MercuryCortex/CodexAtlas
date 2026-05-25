@@ -20,20 +20,25 @@ syncretic-edges:
   - target: "[[baiame]]"
     type: "scholarly-parallel"
     source: "Howitt, *The Native Tribes of South-East Australia* (1904) — the major creator-ancestor of south-eastern Australia takes locally-distinct names (Bunjil, Baiame, Daramulan, Nurrundere) within a structurally consistent tradition of the **All-Father** as eagle/eaglehawk creator-lawgiver"
+    source-tier: T1
     notes: "The south-eastern Australian All-Father pattern is one of the most-clearly-attested cases of structural-religious-continuity across language and territorial boundaries in pre-colonial Australia"
   - target: "wakan-tanka"
     type: "scholarly-parallel"
     source: "Stanner, *White Man Got No Dreaming* (1979); Eliade 1958 — All-Father / Great-Spirit cross-tradition supreme-creator convergence"
+    source-tier: T1
   - target: "zeus"
     type: "scholarly-parallel"
     source: "Eliade, *Patterns in Comparative Religion* (1958) — Zeus as sky-father with eagle-attribute; Bunjil as eaglehawk sky-creator. The eagle-as-sky-deity-attribute convergence is one of the most-universally-attested mythological motifs"
+    source-tier: T1
     notes: "Eagle-sky-father cross-cultural archetype"
   - target: "horus"
     type: "scholarly-parallel"
     source: "Eliade 1958; Wilkinson, *Complete Gods and Goddesses of Ancient Egypt* (2003) — Horus as falcon-sky-god; Bunjil as eaglehawk-sky-creator; the raptor-as-sky-deity parallel"
+    source-tier: T1
   - target: "thunderbird"
     type: "scholarly-parallel"
     source: "Hultkrantz, *The Religions of the American Indians* (1979) — Native American thunderbird as great-raptor sky-being; structural parallel to Bunjil as eaglehawk sky-creator"
+    source-tier: T1
 status: "metadata"
 status: "stub"
 refs:

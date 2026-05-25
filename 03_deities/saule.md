@@ -18,9 +18,11 @@ syncretic-edges:
   - target: "[[sun-goddess-of-arinna]]"
     type: "scholarly-parallel"
     source: "Feminine-solar typology (rather than masculine); Baltic preserves the rare IE feminine-sun (cf. Old Norse *Sól*, German *Sonne* feminine, vs. masculine Latin *Sol*) — Watkins 1995, West 2007"
+    source-tier: T1
   - target: "[[amaterasu]]"
     type: "scholarly-parallel"
     source: "Feminine sun-deity"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Indo-European Poetry and Myth"

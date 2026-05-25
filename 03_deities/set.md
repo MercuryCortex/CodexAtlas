@@ -23,9 +23,11 @@ syncretic-edges:
   - target: "[[baal-hadad]]"
     type: "ancient-identification"
     source: "Hyksos and New Kingdom Egyptians identified Set with the Levantine storm-god Baal; the 19th Dynasty Ramessides traced ancestry through Avaris and worshipped Set-Baal"
+    source-tier: T1
   - target: "[[typhon]]"
     type: "syncretic-identification"
     source: "Plutarch, De Iside et Osiride §49 (c. 100 CE): explicit equation of Set with Typhon, the chaos-monster defeated by Zeus; Hornung (1982) documents the full trajectory"
+    source-tier: T1
 parallels:
   - target: "[[chaoskampf]]"
     type: "parallel-motif"

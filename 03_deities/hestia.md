@@ -20,6 +20,7 @@ syncretic-edges:
   - target: "vesta"
     type: "ancient-identification"
     source: "Standard Roman *interpretatio*; the Roman Vesta cult is structurally identical in function (hearth-fire of state maintained by the Vestal Virgins) and theologically aligned, though more institutionally central in Roman religion"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Greek Religion"

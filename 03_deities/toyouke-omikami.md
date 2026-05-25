@@ -20,18 +20,23 @@ syncretic-edges:
   - target: "[[demeter]]"
     type: "scholarly-parallel"
     source: "Earth-and-grain mother goddess who sustains divine and human life through agricultural abundance; the food-goddess enshrined as essential partner to the supreme deity (Demeter-Zeus / Toyouke-Amaterasu)"
+    source-tier: T1
   - target: "[[ceres-roman]]"
     type: "scholarly-parallel"
     source: "Roman grain goddess; state cult of essential food-provision parallels Toyouke's perpetual Ise ritual"
+    source-tier: T1
   - target: "[[nisaba]]"
     type: "scholarly-parallel"
     source: "Sumerian grain goddess who serves in the divine household of Enlil; structural parallel: grain-goddess serving as food-provider to the supreme deity household"
+    source-tier: T1
   - target: "[[inari]]"
     type: "folk-syncretism"
     source: "Overlapping domains of rice, harvest, and agricultural prosperity; both venerated widely in Japan's rice-farming tradition; sometimes conflated in regional folk practice"
+    source-tier: T1
   - target: "[[amaterasu]]"
     type: "ancient-identification"
     source: "Toyouke's entire cultic identity is defined by her relationship with Amaterasu: enshrined at Ise's Outer Shrine specifically to provide daily food offerings to the Inner Shrine's Amaterasu — the heaven-earth feeding relationship"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Nihon Shoki (Chronicles of Japan)"

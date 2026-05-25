@@ -17,9 +17,11 @@ syncretic-edges:
   - target: "[[amitabha]]"
     type: "folk-syncretism"
     source: "Honji-suijaku — Hachiman as suijaku-trace of the Buddha Amida; first declared *Daibosatsu* (Great Bodhisattva) by imperial edict in 783, the earliest Shinto-kami-as-bodhisattva canonization"
+    source-tier: T1
   - target: "[[ares]]"
     type: "scholarly-parallel"
     source: "War-god patron of warriors"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Hachiman and the Samurai"

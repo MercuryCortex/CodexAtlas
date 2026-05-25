@@ -20,6 +20,7 @@ syncretic-edges:
   - target: "an-sumerian"
     type: "child-of"
     source: "Old Babylonian theogonies place Amurru/Martu as son of Anu — the Mesopotamian pantheon's way of integrating the foreign Amorite tutelary deity into its kinship hierarchy"
+    source-tier: T1
 status: "stub"
 refs:
   - title: "Gods, Demons and Symbols of Ancient Mesopotamia: An Illustrated Dictionary"

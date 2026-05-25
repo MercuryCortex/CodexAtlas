@@ -20,9 +20,11 @@ syncretic-edges:
   - target: "dionysus-mystery"
     type: "ancient-identification"
     source: "Bacchus IS the Roman name for Dionysus; the identification is essentially total. *Bakkhos* was already a cult-epithet of Dionysus in Greek before becoming the Latin primary name. This node exists separately to carry the specifically *Roman* cultic-historical material (Bacchanalia, Senatus Consultum, Roman-period mystery initiation), while [[dionysus-mystery]] carries the Greek-and-Hellenistic mystery material"
+    source-tier: T1
   - target: "dionysus"
     type: "ancient-identification"
     source: "Standard Roman *interpretatio Graeca*; Bacchus = Dionysus in all Latin literary contexts"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Bacchanalia and Roman Religion (Senatus Consultum de Bacchanalibus, -186)"

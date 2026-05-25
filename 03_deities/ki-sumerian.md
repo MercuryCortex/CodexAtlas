@@ -20,6 +20,7 @@ syncretic-edges:
   - target: "gaia"
     type: "scholarly-parallel"
     source: "Modern comparative; structural Earth-Mother paired with Sky-Father (Ki-An ≈ Gaia-Uranus), though Ki is much less narratively developed than Gaia in Hesiod"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Treasures of Darkness: A History of Mesopotamian Religion"

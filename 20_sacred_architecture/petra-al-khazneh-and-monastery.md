@@ -23,22 +23,27 @@ cross-tradition-edges:
   - target: "lalibela-rock-hewn-churches"
     type: "parallel-rock-cut-sacred-architecture"
     source: "Phillipson 2009; Markoe 2003"
+    source-tier: T1
     notes: "**Petra (~1st c. BCE – 2nd c. CE) and [[lalibela-rock-hewn-churches|Lalibela]] (~12th c. CE) are the two greatest examples of monumental rock-cut sacred architecture in the Levantine-East-African world.** Different traditions, different periods, different theologies — but both produce the same striking architectural-religious effect of **carving sacred buildings out of living rock** rather than constructing them block-by-block. The theological proposition is similar: the building is one with the mountain, not separate from it."
   - target: "ain-dara-temple-syria"
     type: "regional-cognate"
     source: "Markoe 2003"
+    source-tier: T1
     notes: "Petra and Ain Dara represent different facets of the Iron-Age-to-Hellenistic Levantine religious-architectural tradition — Ain Dara is the conservative Iron Age plan-tradition; Petra is the Hellenistic-Nabataean synthesis with classical orders."
   - target: "pantheon-rome"
     type: "broader-roman-architectural-context"
     source: "Markoe 2003"
+    source-tier: T1
     notes: "Petra's façades — especially the late ones like Al-Deir (the Monastery, ~mid-1st c. CE) — are in dialogue with the broader Hellenistic-Roman architectural language that the Pantheon synthesises at the imperial centre."
   - target: "theme-rock-cut-architecture-as-relic-of-creation"
     type: "anchor-site"
     source: "Markoe 2003; Phillipson 2009"
+    source-tier: T1
     notes: "Petra is one of the canonical anchor-sites of the rock-cut-sacred-architecture motif; the rock itself is part of the sacred object."
   - target: "syncretism-deliberate"
     type: "anchor-site"
     source: "Markoe 2003"
+    source-tier: T1
     notes: "Petra is a textbook example of the Hellenistic-Semitic architectural synthesis — Nabataean Aramaic religion expressed in Hellenistic-classical architectural vocabulary."
 status: "metadata"
 refs:

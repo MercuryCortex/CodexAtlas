@@ -20,9 +20,11 @@ syncretic-edges:
   - target: "[[hun-hunahpu]]"
     type: "ancient-identification"
     source: "Taube, *The Major Gods of Ancient Yucatan* (1992) — Yum Kaax is the post-Classic Yucatec continuation of the Classic Maya Maize God tradition (Hun Nal Ye / Hun Hunahpu)"
+    source-tier: T1
   - target: "[[corn-mother]]"
     type: "structural-parallel"
     source: "Body-of-the-deity-is-the-cultivar pattern; in the Maya tradition the maize-god is male (Hun Hunahpu, Yum Kaax), in Cherokee/Pueblo the maize-deity is female (Selu, the Corn Maidens) — the same theological logic with opposite gender assignment"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Major Gods of Ancient Yucatan"

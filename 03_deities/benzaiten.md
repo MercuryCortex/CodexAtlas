@@ -20,6 +20,7 @@ syncretic-edges:
   - target: "[[saraswati]]"
     type: "direct-borrowing"
     source: "Ludvik, Catherine (2007). *Sarasvatī: Riverine Goddess of Knowledge*. Brill. The Suvarṇaprabhāsa Sūtra (Sutra of Golden Light) is the explicit Buddhist canonical vehicle that transmits Sarasvatī into East Asian Buddhism as Biancaitian / Benzaiten"
+    source-tier: T1
     notes: "MASSIVE-WIN: Vedic Sarasvatī → Buddhist Sarasvatī → Chinese Biancaitian → Japanese Benzaiten is a directly-documented 1500-year transmission chain via canonical Buddhist scripture. The biwa (Japanese lute) Benzaiten holds is the East-Asian re-instantiation of Sarasvatī's vīṇā (Indian lute) — the instrument-as-iconographic-marker survives intact across the transmission. Her water-association also survives: Sarasvatī's riverine identity becomes Benzaiten's lakeside/island shrine convention (Enoshima, Chikubushima, Itsukushima — all island shrines to Benzaiten)"
 status: "metadata"
 refs:

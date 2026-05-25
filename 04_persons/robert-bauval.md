@@ -15,6 +15,7 @@ syncretic-edges:
   - target: "theme-orion-correlation-theory"
     type: "originated-by"
     source: "Bauval & Gilbert 1994"
+    source-tier: T1
     notes: "Bauval identified the three-pyramid / Orion's Belt correspondence and the stellar shaft alignments; shaft alignments accepted by mainstream, pyramid-constellation map disputed"
 refs:
   - title: "The Orion Mystery"

@@ -19,19 +19,24 @@ syncretic-edges:
   - target: "[[mary-theotokos]]"
     type: "scholarly-parallel"
     source: "**MASSIVE-win cross-tradition iconography**: Hārītī's mother-with-child-on-hip Gandhāran sculptural type (1st–4th c. CE, Peshawar workshops) is *the* most-cited prototype for Buddhist-to-Christian iconographic transmission of the Madonna-and-Child image, since Gandhāra's Greco-Buddhist sculptural milieu is contemporary with and connected to early Christian Egypt via the Silk Road / Red Sea trade (Foucher 1905; Foltz 2010; Quagliotti 1996)"
+    source-tier: T1
   - target: "[[isis-egyptian]]"
     type: "scholarly-parallel"
     source: "Isis-Lactans nursing-Horus iconography — also a candidate for the Madonna-and-Child source, parallel route via Coptic Egypt"
+    source-tier: T1
   - target: "[[demeter]]"
     type: "scholarly-parallel"
     source: "Pomegranate-fertility-mother typology (Demeter / Persephone pomegranate, Hārītī pomegranate)"
+    source-tier: T1
   - target: "tyche-greek"
     type: "iconographic-source"
     source: "Foucher 1905; Quagliotti 1996 — the Hellenistic Tyche (city-fortune goddess with cornucopia + mural crown) and Cybele (mother-goddess) iconographic conventions transfer into Hārītī's Gandhāran sculptural type. Tyche's cornucopia becomes Hārītī's cornucopia / pomegranate; Cybele's enthroned-children iconography parallels Hārītī's many-children-at-her-feet. The visual vocabulary is Hellenistic, the theology Buddhist"
+    source-tier: T1
     notes: "MASSIVE-WIN: Greek city-goddess iconography becomes a major Buddhist protector-deity figure, then forms the iconographic precursor of the Christian Madonna"
   - target: "theme-gandharan-buddhism"
     type: "load-bearing-Greco-Buddhist-instance"
     source: "Hārītī's Peshawar-workshop sculptural type (1st-4th c. CE) is one of the canonical examples of Greek-iconography-on-Buddhist-theological-frame. See [[theme-gandharan-buddhism]] for the full bridge analysis and the Hārītī → Madonna-and-Child transmission hypothesis"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "L'art gréco-bouddhique du Gandhâra"

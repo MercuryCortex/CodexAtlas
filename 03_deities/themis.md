@@ -20,9 +20,11 @@ syncretic-edges:
   - target: "[[ma-at]]"
     type: "scholarly-parallel"
     source: "Egyptian divine truth / cosmic order personified as feminine deity — Themis is the structural cognate (West 1997)"
+    source-tier: T1
   - target: "[[the-moirai]]"
     type: "ancient-identification"
     source: "Hesiod *Theogony* 904 names Themis as mother of the Moirai by Zeus"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Hesiod: Theogony, Works and Days, Shield"

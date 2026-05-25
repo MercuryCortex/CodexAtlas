@@ -20,34 +20,42 @@ syncretic-edges:
   - target: "[[rudra-shiva-early]]"
     type: "continuous-development"
     source: "Witzel 1997; Doniger 1973 *Asceticism and Eroticism in the Mythology of Śiva*; Sanderson 2009 *The Śaiva Age*"
+    source-tier: T1
     notes: "Shiva develops from the Vedic Rudra through continuous elaboration; the Śvetāśvatara Upaniṣad is the transitional text. The outsider storm-howler of the Rig Veda → the classical supreme deity of medieval Shaivism is one of the principal long-arc deity-transformations in Hindu religion"
   - target: "[[mahakala]]"
     type: "direct-borrowing"
     source: "Sanderson 2009 *The Śaiva Age*; Stein 2010 *Vajrayāna Buddhism in Tibet*"
+    source-tier: T1
     notes: "Mahākāla is Shiva's wrathful Tantric form, absorbed wholesale into Vajrayāna Buddhism as a dharmapāla (Dharma-protector). Sanderson 2009 argues that medieval Śaivism's influence on Vajrayāna was substantial and directional — Mahākāla is the textbook case. East-Asian Buddhism preserved Mahākāla as 大黒天 Daikokuten (one of the Shichifukujin in Japan), via a separate transmission chain that softened the wrathful aspect into a wealth-and-kitchen god"
   - target: "[[bhairava]]"
     type: "same-as"
     source: "Vijñāna-Bhairava Tantra; Sanderson 2009"
+    source-tier: T1
     notes: "Bhairava is Shiva in his terrifying-cremation-grounds form — naked, ash-smeared, skull-garlanded. Doctrinally the same divine subject as Shiva (the Kashmir Trika tradition makes Bhairava the supreme consciousness directly); iconographically distinct"
   - target: "[[dionysus]]"
     type: "scholarly-parallel"
     source: "Daniélou, Alain (1979). *Shiva and Dionysus: The Religion of Nature and Eros*. Inner Traditions; Doniger 1973; Detienne 1989 *Dionysos at Large*"
+    source-tier: T1
     notes: "MASSIVE-WIN candidate (contested): Daniélou's full-book argument is that Shiva and Dionysus are two articulations of the SAME archaic Eurasian wild-vegetation-god, both descended from a pre-Aryan / pre-Hellenic substrate. Mainstream scholarship treats it as a structural parallel rather than historical transmission — but the convergence (ascetic-erotic paradox + wild-ecstatic ritual + bull / horn iconography + cosmic-dance / sparagmos + outsider divine origin myth) is dense enough to make it the canonical comparative-religion pairing"
   - target: "[[cernunnos]]"
     type: "parallel-motif"
     source: "Marshall 1931 (Pashupati seal identification); Olmsted 1994 *The Gods of the Celts and the Indo-Europeans*"
+    source-tier: T1
     notes: "MASSIVE-WIN: the horned lord-of-animals (Potnios Theron) cluster. Shiva-Paśupati ('Lord of Beasts') and Cernunnos are iconographically and functionally near-identical. The Pashupati seal at Mohenjo-Daro (~-2500) shows a cross-legged, horned/antlered figure surrounded by animals — iconographically identical to Cernunnos on the Gundestrup Cauldron (~-150 BCE). Three independently attested instantiations of the horned lord-of-animals archetype: Pashupati seal → Shiva-Paśupati → Cernunnos. Marshall's proto-Shiva identification of the seal remains influential despite Parpola + Srinivasan critiques"
   - target: "[[pan-greek]]"
     type: "scholarly-parallel"
     source: "Daniélou 1979; Doniger 1973; comparative Indo-European"
+    source-tier: T1
     notes: "Both Shiva and Pan are wild, ithyphallic nature gods associated with the untamed landscape, sexuality, fertility, and music; both inspire a form of divine madness/frenzy; both are ambivalent — dangerous and generative simultaneously. Daniélou treats Pan as a Greek instantiation of the same archetype as Shiva-Dionysus"
   - target: "[[ahura-mazda]]"
     type: "parallel-motif"
     source: "Comparative Indo-Iranian; Boyce 1975 — supreme-deity parallels emerging from sister-tradition substrates"
+    source-tier: T1
     notes: "Shiva and Ahura Mazda are both supreme deities of their respective Indo-Iranian successor traditions, but with very different theological development trajectories — Shiva emerges from Vedic Rudra via continuous absorption of pre-Aryan substrate; Ahura Mazda emerges from Indo-Iranian *Asura via Zarathustra's monotheistic reform. The convergence is structural"
   - target: "[[the-one-plotinus]]"
     type: "scholarly-parallel"
     source: "Halbfass 1988 *India and Europe*; Daniélou 1957 *The Method of the Vedanta*"
+    source-tier: T1
     notes: "Kashmir Trika non-dualist Shaivism (Vasugupta, Utpaladeva, Abhinavagupta) and Plotinian Neoplatonism are sometimes treated as parallel articulations of supreme transcendent consciousness — both posit a unitary source from which all manifestation descends. The comparison is structural; mediation through Islamic-Hellenistic intermediaries to medieval Kashmir is plausible but unproven"
 status: "metadata"
 refs:

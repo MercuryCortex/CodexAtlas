@@ -20,18 +20,22 @@ syncretic-edges:
   - target: "apkallu"
     type: "scholarly-parallel"
     source: "Leeming 2010; comparative mythology literature"
+    source-tier: T1
     notes: "Both are primordial semi-aquatic beings (fish-sages / fish-ancestors) who bring civilization, speech, and order to humanity from the primordial waters. The Apkallu are seven; the Nommo are eight — the numerological difference is significant."
   - target: "matsya-avatar"
     type: "scholarly-parallel"
     source: "comparative cosmology — fish-ancestor/savior pattern"
+    source-tier: T1
     notes: "The fish-form of divine beings as primordial civilizers or saviors is a cross-cultural typological pattern. Matsya (Vishnu's fish avatar) saves Manu/humanity from the flood; the Nommo are fish-beings who bring order."
   - target: "nun"
     type: "scholarly-parallel"
     source: "comparative creation mythology"
+    source-tier: T1
     notes: "Both Nun (Egyptian primordial waters) and the Nommo inhabit and embody the primordial waters; the Nommo descend into the primordial ocean and ascend to the sky — a pattern of watery-cosmic axis."
   - target: "amaunet"
     type: "scholarly-parallel"
     source: "Hermopolitan Ogdoad comparison"
+    source-tier: T1
     notes: "The Hermopolitan Ogdoad (eight primordial forces including Amaunet) is the same numerological-cosmological type as the eight Nommo: eight primordial beings constituting the complete matrix of creation."
 status: "metadata"
 refs:

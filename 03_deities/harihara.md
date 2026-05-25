@@ -20,9 +20,11 @@ syncretic-edges:
   - target: "[[vishnu]]"
     type: "ancient-identification"
     source: "the right half of Harihara is Vishnu; the iconographic-theological identification is the explicit point."
+    source-tier: T1
   - target: "[[shiva]]"
     type: "ancient-identification"
     source: "the left half of Harihara is Shiva; same."
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Harihara Cult in India and Cambodia"

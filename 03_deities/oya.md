@@ -19,22 +19,28 @@ syncretic-edges:
   - target: "Our Lady of Candelaria / Saint Theresa"
     type: "folk-syncretism"
     source: "Brandon 1993"
+    source-tier: T1
   - target: "kali"
     type: "scholarly-parallel"
     source: "Awolalu, *Yoruba Beliefs and Sacrificial Rites* (1979); Eliade 1958 — Oya as Yoruba storm-and-cemetery goddess of rage; Kali as Hindu warrior-and-death goddess of rage. Both are divine-feminine-warrior-rage poles of their pantheons"
+    source-tier: T1
     notes: "Warrior-mother-of-rage cross-cultural archetype"
   - target: "the-morrigan"
     type: "scholarly-parallel"
     source: "Eliade 1958 — Celtic Morrigan as war-goddess; Oya as Yoruba storm-and-war goddess. The warrior-goddess parallel"
+    source-tier: T1
   - target: "sekhmet"
     type: "scholarly-parallel"
     source: "Wilkinson 2003 — Egyptian Sekhmet as warrior-destructive lioness; Oya as Yoruba warrior-storm goddess"
+    source-tier: T1
   - target: "durga"
     type: "scholarly-parallel"
     source: "Eliade 1958 — Hindu Durga as warrior-mother riding a tiger/lion; Oya as warrior-mother. Both are the divine-feminine-warrior pole"
+    source-tier: T1
   - target: "shango"
     type: "consort"
     source: "Awolalu 1979 — Oya is the wife of Shango and accompanies his storms with her winds; the storm-couple in the Yoruba pantheon"
+    source-tier: T1
     notes: "Within-family storm-couple"
 status: "metadata"
 refs:

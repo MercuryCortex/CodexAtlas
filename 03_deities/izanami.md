@@ -18,12 +18,15 @@ syncretic-edges:
   - target: "[[izanagi]]"
     type: "ancient-identification"
     source: "Primordial creator-pair"
+    source-tier: T1
   - target: "[[ereshkigal]]"
     type: "scholarly-parallel"
     source: "Underworld-queen (Sumero-Akkadian); both rule the dead and bar return"
+    source-tier: T1
   - target: "[[persephone-greek]]"
     type: "scholarly-parallel"
     source: "Living goddess who becomes underworld-queen via taboo (eats food of the dead → cannot return)"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Kojiki"

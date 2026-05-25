@@ -19,27 +19,35 @@ syncretic-edges:
   - target: "[[odin]] (Norse all-father, sovereign over fate)"
     type: "cross-tradition-parallel"
     source: "Odin as All-Father who determines the fate of gods and men; Rod as the Slavic supreme deity who determines fate at birth; both occupy the all-father/supreme-fate-sovereign position in their respective traditions; both are linked to death (Odin collects the slain; Rod determines the moment of death); Ivanov & Toporov 1974"
+    source-tier: T1
   - target: "[[ahura-mazda]] (Zoroastrian supreme creator, sovereign over asha/fate)"
     type: "cross-tradition-parallel"
     source: "Ahura Mazda as the omniscient supreme creator whose wisdom encompasses all fate and cosmic order; Rod as the pre-Perun supreme creator-fate deity; both are the supreme divine principle who precedes and underlies the more specific functional deities (Amesha Spentas / Perun-Veles)"
+    source-tier: T1
   - target: "[[laima]] (Baltic fate-goddess)"
     type: "cross-tradition-parallel"
     source: "Laima (Lithuanian-Latvian fate goddess who determines one's lot at birth) is the closest Baltic parallel to Rod's Rozhanitsy — both are fate-goddesses who attend birth and fix life's course; Laima and Rod's Rozhanitsy belong to the same Balto-Slavic fate-at-birth divine complex; Greimas 1992 *Of Gods and Men*"
+    source-tier: T1
   - target: "[[perun]] (Slavic thunder-chief — later supersedes Rod in Kievan tradition)"
     type: "mythological-partner"
     source: "Byzantine polemics explicitly state the Slavs worshipped Rod 'before they began to worship Perun' — Rod represents the pre-Kievan, pre-druzhina layer of Slavic supreme deity; Perun's elevation to chief god under the Kievan princes (980 CE Vladimir pantheon) displaced Rod's role as supreme divine principle in the official cult; both remain in the folk tradition"
+    source-tier: T1
   - target: "[[mokosh]] (Slavic earth/fate goddess)"
     type: "mythological-partner"
     source: "Mokosh as the Slavic fate-spinner and earth-mother is the closest female counterpart to Rod's fate-determination function; the Rod-and-Rozhanitsy cluster (supreme fate deity + female birth-fate companions) mirrors the Mokosh + weaving/fate complex; some scholars identify the Rozhanitsy as an earlier form of the Mokosh function"
+    source-tier: T1
   - target: "[[veles]] (Slavic underworld deity)"
     type: "mythological-partner"
     source: "Veles governs the realm of the dead and ancestral powers; Rod governs kinship and ancestral fate — together they form the chthonic/ancestral cluster in Slavic religion, distinct from Perun's sky-and-warrior domain"
+    source-tier: T1
   - target: "[[svarog]] (Slavic sky deity)"
     type: "mythological-partner"
     source: "Svarog as the celestial forge-god and sky-principle; Rod as the primordial fate-creator; both are proposed as high-tier Slavic divine principles operating above the level of the functional gods (Perun/Veles/Mokosh)"
+    source-tier: T1
   - target: "[[dazhbog]] (Slavic sun/prosperity deity)"
     type: "mythological-partner"
     source: "Dazhbog as the giving-god and prosperity principle; Rod as the fate-and-birth principle — complementary aspects of the upper-tier Slavic divine complex"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Slovo Sv. Grigoria (Sermon of St. Gregory)"

@@ -18,9 +18,11 @@ syncretic-edges:
   - target: "[[xi-wangmu]]"
     type: "scholarly-parallel"
     source: "Goddess who keeps the fruit of immortality that gods consume to remain ageless"
+    source-tier: T1
   - target: "Hesperides (Greek)"
     type: "scholarly-parallel"
     source: "Nymphs who guard the golden apples at the edge of the world"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Norse Mythology"

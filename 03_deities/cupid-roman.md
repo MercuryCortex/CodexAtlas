@@ -20,6 +20,7 @@ syncretic-edges:
   - target: "eros-primordial"
     type: "ancient-identification"
     source: "Ovid, Metamorphoses 1.452–567; Virgil, Aeneid 1.658 — Cupid is consistently used as the Latin name for Greek Eros in literary sources"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Apuleius: The Golden Ass (Metamorphoses)"

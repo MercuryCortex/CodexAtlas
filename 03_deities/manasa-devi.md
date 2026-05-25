@@ -20,12 +20,15 @@ syncretic-edges:
   - target: "[[shiva]]"
     type: "ancient-identification"
     source: "In the dominant Bengali mythological tradition, Manasa is the daughter of Shiva — born from his mind (manasa = 'from the mind') or his semen falling on a lotus. This parentage gives her Shaiva legitimacy and connects her folk serpentine powers to the great Shaiva tradition. Shiva himself is associated with serpents (Vasuki coiled around his neck)."
+    source-tier: T1
   - target: "[[kali]]"
     type: "scholarly-parallel"
     source: "Both Manasa and Kali are fierce, dark goddesses associated with death-adjacent powers (poison; death itself) who demand worship from reluctant devotees and punish non-compliance with devastating consequences. The 'goddess who forces worship' is a significant Bengali Shakta theme connecting Manasa's mythology directly to Kali's. Both represent the fierce, non-assimilable feminine power that cannot be domesticated."
+    source-tier: T1
   - target: "[[wadjet]]"
     type: "scholarly-parallel"
     source: "Wadjet (cobra-headed Egyptian protective goddess of Lower Egypt) and Manasa are both serpent goddesses who protect sovereigns and devotees from serpentine harm, and both represent the dangerous-yet-protective snake-power that must be propitiated. Both are among the oldest strata of their respective traditions, suggesting a deep stratum of snake-goddess theology across ancient agricultural civilizations. No direct transmission — structural parallel."
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Goddess and the Demon: A Study of the Skanda-Purana"

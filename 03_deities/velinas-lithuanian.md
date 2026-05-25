@@ -20,10 +20,12 @@ syncretic-edges:
   - target: "[[veles]]"
     type: "cognate"
     source: "Gimbutas, Marija (1963). *The Balts*. Praeger; Greimas, Algirdas Julius (1992). *Of Gods and Men: Studies in Lithuanian Mythology*. Indiana UP; Ivanov & Toporov 1974"
+    source-tier: T1
     notes: "Balto-Slavic cognate pair. Both descend from Proto-Balto-Slavic *Vels- / *Wel- ('the dead'); both are chthonic + magical + ambivalent figures; both governed cattle and the deceased in their respective pagan traditions. The cognacy is etymologically uncontested. Crucially, both share the same Christianization fate: reduced to 'devil' (Lithuanian *velnias* = modern word for 'devil'; Slavic *Veles* condemned in 12th-c. Russian sermons as a demon). The convergent demonization across both branches is documented by Gimbutas + Greimas as one of the cleanest cases of dual-tradition Christianization-as-demonization (parallel to Zoroastrian asura → daēva demonization of Vedic devas)"
   - target: "[[asura-deva-inversion]]"
     type: "parallel-motif"
     source: "Greimas 1992; comparative Indo-European Christianization studies"
+    source-tier: T1
     notes: "The Christianization-as-demonization of Velinas + Veles is the European-pagan parallel of the Zoroastrian asura/deva inversion: an absorbing tradition condemns the predecessor's deity-class wholesale, transforming gods into demons. Same mechanism, different historical contexts"
 status: "stub"
 refs:

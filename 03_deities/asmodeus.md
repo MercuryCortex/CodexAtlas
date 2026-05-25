@@ -17,9 +17,11 @@ syncretic-edges:
   - target: "Aēšma daēva"
     type: "ancient-identification"
     source: "Avestan *Aēšma daēva* ('demon of wrath') is the etymological source of Hebrew Ashmedai — one of the clearest cases of a Persian-Zoroastrian demon imported into Second Temple Jewish demonology (Boyce 1975; Hultgård 1998)"
+    source-tier: T1
   - target: "[[satan-christian]]"
     type: "scholarly-parallel"
     source: "Demon-prince; sometimes equated, more often distinguished as one of several principalities"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Satan: A Biography"

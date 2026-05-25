@@ -20,14 +20,17 @@ syncretic-edges:
   - target: "veles"
     type: "etymological-cognate"
     source: "Ivanov, Vyacheslav; Toporov, Vladimir (1973). Baltistica 9/1.; Puhvel, Jaan (1987). Comparative Mythology. Johns Hopkins UP."
+    source-tier: T1
     notes: "Velnias (Baltic) and Veles (Slavic) are etymological cognates from PIE *\*u̯el- (the dead, cattle, wealth). Both are chthonic deity-opponents of the thunderer (Perkūnas/Perun) in the reconstructed PIE thunderer-vs-serpent myth. The cattle-theft-and-recovery narrative (Perkūnas chases Velnias who has stolen his cattle into the underworld) is the most completely preserved PIE myth in the Baltic tradition."
   - target: "perkunas"
     type: "cosmic-opponent"
     source: "Greimas (1992). Of Gods and Men. Indiana UP.; West (2007). Indo-European Poetry and Myth. Oxford UP."
+    source-tier: T1
     notes: "The Perkūnas-Velnias opposition is the Baltic form of the PIE thunderer-vs-serpent/underworld myth. Perkūnas (sky/thunder/cattle-owner) vs. Velnias (earth/underworld/cattle-thief) — the annual conflict drives the seasonal cycle: Velnias steals the cattle (winter, drought), Perkūnas chases him through the World Tree, the combat releases rain. This is arguably the most completely preserved version of the original PIE myth."
   - target: "hades"
     type: "structural-parallel"
     source: "West (2007)"
+    source-tier: T1
     notes: "Both are rulers of the underworld and the dead. Hades' realm is strictly the underworld; Velnias additionally governs cattle, wealth, and music — a broader chthonic domain suggesting an older layer of divine function than the purely death-focused Greek model."
 status: "metadata"
 refs:

@@ -23,22 +23,27 @@ cross-tradition-edges:
   - target: "ugarit-temple-of-baal"
     type: "cognate-canaanite-architecture"
     source: "Ben-Tor 2016; Mazar 1990; Yadin 1972"
+    source-tier: T1
     notes: "Hazor (southern Canaan / Galilee) and Ugarit (northern Canaan / Syrian coast) are the **two best-attested Late Bronze Age Canaanite temple sites**. Hazor's multi-temple precinct + tripartite long-temple plan + paired-temple architecture is **cognate with the Ugarit Baal-Dagan twin** at the southern pole of the Canaanite cultural sphere. Together they bracket the architectural-theological tradition that Solomon's Temple inherits."
   - target: "solomons-temple-first"
     type: "direct-architectural-ancestor"
     source: "Mazar 1990; Monson 2000; Ben-Tor 2016"
+    source-tier: T1
     notes: "**The Long Temple at Hazor (Area H, Late Bronze Age) is one of the closest known plan-parallels to [[solomons-temple-first|Solomon's First Temple]] in the southern Levant.** Same tripartite plan (porch + main hall + raised inner sanctum); same orthostat-faced walls (the same architectural technique that 1 Kings 6 describes for Solomon's Temple — *gazit*, dressed stone walls); same elevated bāmôt-style platform setting. Solomon's Temple is the **direct heir of the Late Bronze Age Canaanite temple tradition** of which Hazor is the southern-Levantine type-specimen and Ugarit is the northern-Syrian-coast type-specimen."
   - target: "ain-dara-temple-syria"
     type: "iron-age-cognate"
     source: "Monson 2000"
+    source-tier: T1
     notes: "[[ain-dara-temple-syria|Ain Dara]] (Iron Age N Syria, ~10th-8th c. BCE) is the **closest known Iron Age plan-parallel** to Solomon's Temple. Hazor + Ugarit are the **Bronze Age background** from which both Ain Dara and Solomon's Temple descend."
   - target: "theme-baal-set-syncretism"
     type: "anchor-site"
     source: "Beck 1989"
+    source-tier: T1
     notes: "Hazor's Area H stele depicts a storm-god figure with crescent-and-stars iconography consistent with the broader West Semitic Baal/Hadad iconographic programme."
   - target: "theme-divine-kingship-and-temple-as-royal-pact"
     type: "anchor-site"
     source: "Ben-Tor 2016"
+    source-tier: T1
     notes: "Hazor's monumental ceremonial palace (Area A) adjacent to its temples documents the **integrated royal-and-cult architectural programme** of a Late Bronze Age Canaanite city-state — the architectural pattern Solomon would inherit and replicate at Jerusalem (Solomon's Palace adjacent to Solomon's Temple)."
 status: "metadata"
 refs:

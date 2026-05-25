@@ -20,50 +20,62 @@ syncretic-edges:
   - target: "[[sakra-buddhist]]"
     type: "direct-borrowing"
     source: "Sumi 2014; DeCaroli 2004; Boucher 2008"
+    source-tier: T1
     notes: "MASSIVE-WIN: Buddhism preserves Indra by name in the canonical form *Śakra Devānām Indra* — Pali Sakka, Chinese Dìshìtiān, Japanese Taishakuten. The doctrinal move is subordination not demonization (contrast Zoroastrian Verethraghna): Śakra remains king of his heaven but is positioned below the Buddha. Cleanest documented Vedic→East-Asian deity transmission alongside Sarasvatī→Benzaiten and Yama→Enma"
   - target: "[[verethraghna-zoroastrian]]"
     type: "cognate"
     source: "Boyce 1975, History of Zoroastrianism vol. 1"
+    source-tier: T1
     notes: "Vedic Indra and Zoroastrian Verethraghna both descend from Indo-Iranian *Vr̥tra-ghna ('dragon-slayer'), the epithet that became a separate god in the Zoroastrian branch after Indra was demoted to a daēva. Direct etymological cognate via shared epithet"
   - target: "[[zeus]]"
     type: "cognate"
     source: "Watkins 1995, How to Kill a Dragon; West 2007 ch. 6"
+    source-tier: T1
     notes: "PIE *Perkʷūnos thunder-god cluster — Greek Zeus inherits the thunder-warrior function. Zeus and Indra are the two most-attested IE thunder-warriors"
   - target: "[[jupiter]]"
     type: "cognate"
     source: "West 2007 ch. 6"
+    source-tier: T1
     notes: "PIE thunder-warrior — Roman Jupiter inherits the storm + kingship combination Indra also bears"
   - target: "[[thor]]"
     type: "cognate"
     source: "West 2007 ch. 6 — Germanic instance of PIE *Perkʷūnos"
+    source-tier: T1
     notes: "Germanic instance of the IE thunder-warrior — Thor's hammer parallels Indra's vajra"
   - target: "[[perun]]"
     type: "cognate"
     source: "West 2007 ch. 6 — Slavic instance, closest etymologically to PIE *Perkʷūnos"
+    source-tier: T1
     notes: "PIE *Perkʷūnos preserved most directly in the Slavic theonym"
   - target: "[[taranis]]"
     type: "cognate"
     source: "West 2007 ch. 6 — Celtic thunderer"
+    source-tier: T1
     notes: "Celtic instance"
   - target: "[[raijin]]"
     type: "parallel-motif"
     source: "Shinto thunder-deity"
+    source-tier: T1
     notes: "Non-PIE storm-god convergence"
   - target: "[[susanoo]]"
     type: "parallel-motif"
     source: "Shinto storm-warrior"
+    source-tier: T1
     notes: "Non-PIE storm-warrior parallel"
   - target: "[[marduk]]"
     type: "parallel-motif"
     source: "Lambert 2013 — Mesopotamian non-PIE storm-warrior + chaoskampf"
+    source-tier: T1
     notes: "Non-PIE Mesopotamian storm-warrior; Marduk vs. Tiamat = Indra vs. Vritra at the chaoskampf level"
   - target: "[[baal-hadad]]"
     type: "parallel-motif"
     source: "Smith 1994, The Ugaritic Baal Cycle"
+    source-tier: T1
     notes: "Non-PIE Semitic storm-warrior"
   - target: "[[asura-deva-inversion]]"
     type: "principal-target-deity-of-Zoroastrian-reform"
     source: "Vendidad 10.9 (names Indra explicitly as a *daēva*); West 2007 *Indo-European Poetry and Myth* ch. 7; Boyce 1975 vol. 1; Skjærvø 1993 EIr 'Daēva' — Indra is THE most consequential deity of the asura/deva inversion. As king of the Vedic devas (more Rigvedic hymns to him than any other god) and as the explicit *daēva* condemned by name in Vidēvdad 10.9, Indra is the most prestigious deity of the sibling tradition that the Zoroastrian reform specifically targeted. The greatest-god-of-X-becomes-demon-of-Y move with him as test case becomes the structural template for every later 'old gods are now demons' inversion (Justin Martyr's daimones, Christian recasting of Greek gods, Tantric subduing of devas as dharmapālas, etc.). See [[asura-deva-inversion]]"
+    source-tier: T1
     notes: "MASSIVE-WIN: Indra-as-demoted-daēva is the oldest documented prototype of the Satan/Adversary narrative — greatest-of-the-gods → cast out for wrong theology → cosmic adversary. Cross-lens: 03_deities → 06_themes"
 status: "metadata"
 refs:

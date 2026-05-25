@@ -20,6 +20,7 @@ syncretic-edges:
   - target: "varuna"
     type: "scholarly-parallel"
     source: "The name *Danu* and the Vedic *Dānu* (mother of the Danavas, the anti-gods) share the same Proto-Indo-European root *dʰen- ('to flow / river'). This is one of the clearest Indo-European goddess cognates: an ancestral divine mother whose name means 'the flowing one' appears as both the source of the Celtic divine race (Tuatha Dé Danann) and as the mother of the opposing cosmic force in Vedic mythology (Dānu / Danavas vs. Indra). The parallel is studied by scholars of Proto-Indo-European religion including Mallory and Adams (2006)."
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Oxford Introduction to Proto-Indo-European and the Proto-Indo-European World"

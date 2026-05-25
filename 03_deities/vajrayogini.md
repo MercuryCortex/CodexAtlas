@@ -20,26 +20,32 @@ syncretic-edges:
   - target: "kali"
     type: "scholarly-parallel"
     source: "Kinsley 1997; Samuel 2008"
+    source-tier: T1
     notes: "Both are fierce naked goddesses adorned with skulls who wield cutting weapons and embody the destruction of ego/ignorance. Sanderson 2009 documents Buddhist tantric appropriation of Shaiva iconographic traditions — Vajrayogini inherits structural iconographic elements from Kali/Bhairavi."
   - target: "durga"
     type: "scholarly-parallel"
     source: "Samuel 2008"
+    source-tier: T1
     notes: "Both are warrior goddesses who destroy cosmic enemies (Durga destroys Mahishasura; Vajrayogini destroys the three poisons of ignorance/attachment/aversion)."
   - target: "tara"
     type: "direct-influence"
     source: "Shaw 2006 — Buddhist Goddesses of India"
+    source-tier: T1
     notes: "Tara and Vajrayogini are the two primary female yidams in Tibetan Buddhism; Tara is peaceful-protective, Vajrayogini semi-wrathful. Both embody prajña (wisdom)."
   - target: "prajnaparamita-goddess"
     type: "direct-influence"
     source: "Shaw 2006"
+    source-tier: T1
     notes: "The Prajnaparamita goddess (wisdom-perfection personified) is the doctrinal grandmother of Vajrayogini — both personify prajña/wisdom as feminine principle."
   - target: "sekhmet"
     type: "scholarly-parallel"
     source: "comparative iconography — fierce feminine destroyer"
+    source-tier: T1
     notes: "Sekhmet as the Egyptian fierce lioness-goddess who destroys the enemies of Ra parallels Vajrayogini's wrathful-destroyer function."
   - target: "coatlicue"
     type: "scholarly-parallel"
     source: "comparative religion — earth-devourer pattern"
+    source-tier: T1
     notes: "Coatlicue (earth-devourer, necklace of skulls/severed hands) and Vajrayogini (skull-cup, naked, fierce) represent the same archetype: the feminine power of radical transformation through death-and-rebirth."
 status: "metadata"
 refs:

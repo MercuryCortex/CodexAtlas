@@ -20,6 +20,7 @@ syncretic-edges:
   - target: "[[pan-greek]]"
     type: "ancient-identification"
     source: "Herodotus, Histories 2.46"
+    source-tier: T1
     notes: "Herodotus identifies the ram-god of Mendes with the Greek Pan via shared caprid imagery. Modern Egyptology treats Banebdjedet's primary role (the ba-soul of Osiris, fertility) as distinct from Pan's rustic-sylvan domain, but the ancient identification stands"
 status: "stub"
 refs:

@@ -20,6 +20,7 @@ syncretic-edges:
   - target: "paśupati-indus-valley"
     type: "scholarly-parallel"
     source: "Marshall 1931 (proposed); Doniger 2009 (contested)"
+    source-tier: T1
     notes: "The 'Paśupati seal' (Mohenjo-Daro, ~-2500) shows a horned figure surrounded by animals — Marshall proposed proto-Śiva; many scholars now reject."
 status: "metadata"
 refs:

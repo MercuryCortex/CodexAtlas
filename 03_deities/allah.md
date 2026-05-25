@@ -16,12 +16,15 @@ syncretic-edges:
   - target: "el-canaanite"
     type: "scholarly-parallel"
     source: "The Semitic root *'l, common across West Semitic languages including pre-Islamic Arabic, attests deep linguistic continuity. Cf. Hawting 1999, The Idea of Idolatry and the Emergence of Islam"
+    source-tier: T1
   - target: "el-elohim-hebrew"
     type: "scholarly-parallel"
     source: "Same Semitic root; Islamic theology explicitly continues Abrahamic monotheism. Cf. Donner 2010"
+    source-tier: T1
   - target: "yahweh"
     type: "scholarly-parallel"
     source: "Islamic theology identifies Allah as the same God worshiped by Abraham, Moses, David, and Jesus; the Quran's narrative engagement with biblical material formalizes this continuity"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Study Quran"

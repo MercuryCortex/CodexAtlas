@@ -20,22 +20,27 @@ syncretic-edges:
   - target: "juno"
     type: "ancient-identification"
     source: "Roman *interpretatio*; Uni → Iuno (Juno) through Etruscan-to-Latin phonological transmission; the Capitoline Triad transfer from Etruscan to Roman religion (~-509 BCE)"
+    source-tier: T1
     notes: "The name Iuno (Juno) is almost certainly derived from Uni; Uni's role and iconography transferred directly to Rome's Juno."
   - target: "hera"
     type: "ancient-identification"
     source: "Etruscan interpretatio Graeca; Uni depicted in Hera-type iconography in Etruscan art from ~-550 BCE onward"
+    source-tier: T1
     notes: "Greek Hera and Etruscan Uni share the queen-of-heaven/consort-of-sky-father role; Uni adopted Hera iconographic type."
   - target: "astarte-canaanite"
     type: "ancient-identification"
     source: "**Pyrgi Tablets** (~-500 BCE) — bilingual Etruscan-Phoenician gold tablets from the sanctuary at Caere (modern Cerveteri): 'lqrt ... l'štrt' (Phoenician text equates the goddess of the sanctuary with Astarte); the Etruscan text names the sanctuary as Uni's. This is one of the most important surviving documents of Etruscan-Phoenician religious exchange."
+    source-tier: T1
     notes: "The Pyrgi equation is explicit and contemporary — not a later scholarly inference. Uni IS Astarte in this sanctuary context (~-500 BCE)."
   - target: "inanna-sumerian"
     type: "scholarly-parallel"
     source: "Queen-of-heaven cluster; Inanna → Ishtar → Astarte → Uni transmission chain documented via Pyrgi Tablets"
+    source-tier: T1
     notes: "The Pyrgi equation (Uni = Astarte) places Uni at the western end of the Inanna-Ishtar-Astarte transmission."
   - target: "ishtar-akkadian"
     type: "scholarly-parallel"
     source: "Astarte is the Levantine name for Ishtar; Pyrgi equation (Uni = Astarte = Ishtar) links Uni to the Mesopotamian love-war goddess."
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Pyrgi Tablets"

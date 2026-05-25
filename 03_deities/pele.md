@@ -19,16 +19,20 @@ syncretic-edges:
   - target: "sekhmet"
     type: "scholarly-parallel"
     source: "Beckwith, *Hawaiian Mythology* (1940); Wilkinson, *Complete Gods and Goddesses of Ancient Egypt* (2003) — Pele as volcanic-destruction goddess and Sekhmet as Egyptian fire-and-destruction lioness; both encode the divine-feminine-destructive-fire principle"
+    source-tier: T1
     notes: "Divine-feminine-destructive-fire cross-cultural parallel"
   - target: "agni"
     type: "scholarly-parallel"
     source: "Beckwith 1940; Eliade, *Patterns in Comparative Religion* (1958) — Vedic Agni as fire-god; Pele as Hawaiian fire/volcano goddess (gender-inverted parallel)"
+    source-tier: T1
   - target: "vulcan"
     type: "scholarly-parallel"
     source: "Eliade 1958 — Roman Vulcan as fire-and-forge god"
+    source-tier: T1
   - target: "hephaestus"
     type: "scholarly-parallel"
     source: "Eliade 1958 — Greek Hephaestus as forge-god associated with volcanic islands (Lemnos); Pele as volcanic-island goddess"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Pele and Hi'iaka: A Myth from Hawaii"

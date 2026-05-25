@@ -20,9 +20,11 @@ syncretic-edges:
   - target: "aphrodite-greek"
     type: "ancient-identification"
     source: "Standard Greco-Egyptian *interpretatio*; Herodotus 2.41 and the Ptolemaic temple inscriptions identify Hathor with Aphrodite"
+    source-tier: T1
   - target: "isis-egyptian"
     type: "folk-syncretism"
     source: "Late Period and Ptolemaic Hathor-Isis assimilation; many of Hathor's attributes (sun-disk-and-horns crown, mother-of-Horus role) are transferred to Isis"
+    source-tier: T1
 status: "partial"
 refs:
   - title: "The Complete Gods and Goddesses of Ancient Egypt"

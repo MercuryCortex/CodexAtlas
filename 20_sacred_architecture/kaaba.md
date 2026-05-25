@@ -23,14 +23,17 @@ cross-tradition-edges:
   - target: "black-stone-mecca"
     type: "contains-relic"
     source: "Hawting 1999"
+    source-tier: T1
     notes: "The Black Stone (al-Ḥajar al-Aswad) is set into the eastern corner of the Kaaba. Islamic tradition holds the stone was gifted to Adam from Paradise; geological analysis suggests it is most likely a meteorite or impactite. The stone is the focal point of the *istilam* greeting during *tawaf* (circumambulation)."
   - target: "tradition-islam"
     type: "qibla-of"
     source: "Hawting 1999; Peters 1994"
+    source-tier: T1
     notes: "All Muslims pray facing the Kaaba (the *qibla*). This is the single most-architecturally-consequential religious orientation in human history: every mosque, every prayer mat, every Muslim's body, faces this building five times per day. The directional architecture of ~2 billion people anchors to a single point."
   - target: "dome-of-the-rock-jerusalem"
     type: "qibla-predecessor"
     source: "Hawting 1999; Peters 1994"
+    source-tier: T1
     notes: "Before c. 624 CE, Muslim prayer faced Jerusalem (specifically the Foundation Stone, later the site of the [[dome-of-the-rock-jerusalem|Dome of the Rock]]). The change of *qibla* from Jerusalem to Mecca is recorded in Sūrat al-Baqara 2:142–145 and is one of the most consequential ritual-architectural reorientations in religious history."
 status: "metadata"
 refs:

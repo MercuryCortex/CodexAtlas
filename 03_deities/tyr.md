@@ -20,18 +20,22 @@ syncretic-edges:
   - target: "[[mars-roman]]"
     type: "interpretatio-nominal"
     source: "Tacitus, Germania 9; weekday-calque Tuesday/Tīwesdæg = Martis dies"
+    source-tier: T1
     notes: "Tacitus interpretatio-romana (Germanic→Roman name-mapping). Roman interpretatio assigned Týr the war-god role of Mars; the Tuesday-calque is the load-bearing evidence. Note Týr's primary role had already shifted from sky-father to war-god by historical times — the IE *Dyēus sky-father function was largely taken over by Thor and Odin in the Germanic branch"
   - target: "[[zeus]]"
     type: "cognate"
     source: "West 2007 ch. 4; Watkins 1995; the Indo-European *Dyḗus ph₂tḗr → Proto-Germanic *Tīwaz → Old Norse Týr / Old English Tīw"
+    source-tier: T1
     notes: "PIE sky-father *Dyḗus — the etymology is uncontested. Sanskrit Dyaus Pita, Greek Zeus Pater, Latin Iuppiter (Diespiter), and Germanic *Tīwaz are direct cognates of the same theonym. Týr's etymological seniority is preserved even though his cultic prominence faded by the Viking Age"
   - target: "[[jupiter]]"
     type: "cognate"
     source: "West 2007 ch. 4 — Latin Iuppiter / Diespiter is the closest Italic cognate to PIE *Dyḗus ph₂tḗr"
+    source-tier: T1
     notes: "Cognate via PIE *Dyḗus"
   - target: "[[dyaus-pita]]"
     type: "cognate"
     source: "West 2007 ch. 4 — Sanskrit Dyaus Pita is the closest Indo-Aryan cognate to PIE *Dyḗus ph₂tḗr"
+    source-tier: T1
     notes: "Cognate via PIE *Dyḗus — the Sanskrit Dyaus Pita preserves the full PIE compound (sky + father) most transparently"
 status: "metadata"
 refs:

@@ -20,19 +20,24 @@ syncretic-edges:
   - target: "lotan"
     type: "ancient-identification"
     source: "Day 1985 *God's Conflict with the Dragon and the Sea*; Smith 1994 *The Ugaritic Baal Cycle* vol. 1 — Ugaritic *ltn* and Hebrew *lwytn* are the same Northwest Semitic root *lwy* ('to twist, coil'); the Hebrew Leviathan is the Yahwistic continuation of the Canaanite Lotan with Yahweh in Baal's role. Isaiah 27:1 — *nāḥāš bāriaḥ* ('fleeing serpent') and *nāḥāš ʿăqallātôn* ('writhing serpent') — is a direct verbal calque of the Ugaritic epithet pair *bṯn brḥ* / *bṯn ʿqltn* in KTU 1.5.i.1–3"
+    source-tier: T1
     notes: "This is the load-bearing edge; Day 1985 is the canonical treatment"
   - target: "yam"
     type: "ancient-identification"
     source: "Day 1985; Wakeman 1973 *God's Battle with the Monster* — Leviathan is closely associated with Yam (Sea) in the Hebrew Bible's chaoskampf vocabulary; Psalm 74:13-14 pairs the sea (*yām*) with Leviathan; Isaiah 51:9-10 pairs Rahab with the sea"
+    source-tier: T1
   - target: "tiamat"
     type: "parallel-form"
     source: "Day 1985 — both are primordial sea-chaos defeated by the storm-warrior king (Tiamat by Marduk; Leviathan by Yahweh)"
+    source-tier: T1
   - target: "apophis"
     type: "parallel-form"
     source: "Day 1985; Wakeman 1973 — Egyptian cosmic-serpent parallel"
+    source-tier: T1
   - target: "serpent-dual-nature"
     type: "chaos-pole-of-serpent-symbolism"
     source: "Joines 1974 *The Symbolism of the Serpent in the Abrahamic Religions*; Day 1985 *God's Conflict with the Dragon and the Sea*; Forsyth 1987 — Leviathan is the Hebrew-Bible instance of the cosmic-serpent chaos-pole. Job 26:12-13 + Ps 74:14 + Isa 27:1 preserve the chaoskampf tradition Genesis 1 demythologizes. See [[serpent-dual-nature]]"
+    source-tier: T1
     notes: "Cross-lens: 03_deities → 06_themes"
 status: "metadata"
 refs:

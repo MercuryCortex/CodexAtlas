@@ -16,12 +16,15 @@ syncretic-edges:
   - target: "[[the-trinity]]"
     type: "scholarly-parallel"
     source: "Triadic supreme-deity structure; scholarly comparison only — no historical transmission claim"
+    source-tier: T1
   - target: "Trikāya (Mahāyāna)"
     type: "scholarly-parallel"
     source: "Daoist Sanqing crystallized during the Six Dynasties period under heavy contact with imported Buddhist Trikāya doctrine; mutual influence likely (Mollier 2008, *Buddhism and Taoism Face to Face*)"
+    source-tier: T1
   - target: "[[laozi]]"
     type: "ancient-identification"
     source: "The third of the Three Pure Ones (Daode Tianzun) is identified with the deified Laozi as personal revealer of scripture"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Encyclopedia of Taoism"

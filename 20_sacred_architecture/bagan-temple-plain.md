@@ -23,18 +23,22 @@ cross-tradition-edges:
   - target: "borobudur-stupa-mandala"
     type: "stylistic-cousin"
     source: "Snodgrass 1985; Strachan 1989"
+    source-tier: T1
     notes: "Both Borobudur (~800 CE, Mahayana Buddhist, Java) and the Bagan plain (~1044–1287 CE, Theravada Buddhist, Myanmar) are major SE-Asian Buddhist temple-stupa landscapes. Borobudur is the older monumental single-stupa; Bagan is the later vast field of ~10,000 originally-constructed (~2200 surviving) temples and stupas. Architectural-iconographic continuity through the Indic Buddhist tradition."
   - target: "sanchi-great-stupa"
     type: "form-ancestor"
     source: "Snodgrass 1985"
+    source-tier: T1
     notes: "Sanchi (~250 BCE, Indian) is the deep-ancestor stupa-form; Bagan stupas (~1044+ CE, Burmese) are the most extensive later regional implementation. The intermediate transmission is through Sri Lankan and Mon Buddhist traditions."
   - target: "angkor-wat-temple-complex"
     type: "parallel-form"
     source: "Coe 2003; Strachan 1989"
+    source-tier: T1
     notes: "Angkor (~890–1430 CE, Khmer, Cambodia) and Bagan (~1044–1287 CE, Burmese, Myanmar) are the two great mainland SE-Asian imperial Buddhist + Hindu temple-landscapes of the early-mid medieval period; near-contemporary, geographically adjacent, distinct architectural traditions."
   - target: "ajanta-caves"
     type: "stylistic-descendant"
     source: "Behl 1998"
+    source-tier: T1
     notes: "Bagan's Buddhist painting tradition (in the temple interiors) descends from the broader Indic Buddhist painting tradition that Ajanta (~2nd c. BCE–7th c. CE) anchors. Transmission via Bengal-Burma overland routes + Sri Lankan maritime routes."
 status: "metadata"
 refs:

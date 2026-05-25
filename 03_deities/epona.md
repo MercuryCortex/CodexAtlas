@@ -20,9 +20,11 @@ syncretic-edges:
   - target: "venus-roman"
     type: "folk-syncretism"
     source: "Epona received a Roman festival on December 18 (attested in the Roman calendar), making her one of the only Celtic deities fully absorbed into the Roman state cult. The festival-date and Roman epithet *Regina* ('Queen') document the depth of her integration. No direct iconographic fusion with Venus, but the Roman December 18 festival places her within the Roman sacred calendar alongside Roman deities."
+    source-tier: T1
   - target: "brigid"
     type: "scholarly-parallel"
     source: "Both Gaulish/Celtic feminine deities associated with abundance, fertility, and land-sovereignty within the Celtic cultural sphere. Green (1986) notes both as examples of the Celtic feminine sovereignty-and-nourishment cluster."
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Gods of the Celts"

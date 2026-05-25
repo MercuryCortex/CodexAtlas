@@ -18,9 +18,11 @@ syncretic-edges:
   - target: "[[hephaestus]]"
     type: "ancient-identification"
     source: "*interpretatio romana* — Vulcan is the Roman Hephaestus"
+    source-tier: T1
   - target: "[[svarog]]"
     type: "ancient-identification"
     source: "Hypatian Chronicle 1114 glosses Hephaestus=Svarog; transitively Vulcan↔Svarog through the Greek pivot"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Religions of Rome"

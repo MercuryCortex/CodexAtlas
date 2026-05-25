@@ -17,12 +17,15 @@ syncretic-edges:
   - target: "[[guanyin]]"
     type: "folk-syncretism"
     source: "Mazu and Guanyin frequently co-enshrined and iconographically conflated in maritime Fujianese-Taiwanese practice"
+    source-tier: T1
   - target: "[[isis-egyptian]]"
     type: "scholarly-parallel"
     source: "*Isis Pelagia* / Mary Stella Maris / Mazu — cross-tradition maritime-protectress feminine-divine type"
+    source-tier: T1
   - target: "[[mary-theotokos]]"
     type: "scholarly-parallel"
     source: "Star of the Sea / Stella Maris Marian devotion — maritime female-divine protector"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Empress of Heaven and Earth: Empire and Imperial Strategy in the Cult of the Tianfei"

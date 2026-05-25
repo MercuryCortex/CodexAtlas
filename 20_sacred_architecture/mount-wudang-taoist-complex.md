@@ -23,27 +23,33 @@ cross-tradition-edges:
   - target: "mount-kailash"
     type: "parallel-form-sacred-mountain-pilgrimage"
     source: "Steinhardt 2019; Naquin & Yu 1992"
+    source-tier: T1
     notes: "[[mount-kailash|Mount Kailash]] (Tibet — sacred to Hindu, Buddhist, Jain, Bön) and Mount Wudang (China — sacred to Taoism) are typological parallels: **sacred-mountain pilgrimage centres** with extensive temple architecture, where the mountain itself + the built shrines on its slopes together form the sacred site. Wudang's distinctive feature is the **Ming imperial patronage** that produced an unusually monumental and architecturally coherent temple programme."
   - target: "mount-meru"
     type: "parallel-cosmic-mountain-doctrine"
     source: "Snodgrass 1985; Naquin & Yu 1992"
+    source-tier: T1
     notes: "[[mount-meru|Mount Meru]] (Indic-Buddhist cosmic mountain), [[mount-kailash|Kailash]] (its earthly identification in Tibet), and Wudang occupy parallel theological positions as **axis-mundi mountains** in their respective traditions. Wudang is uniquely **identified with the deity [[zhenwu|Zhenwu / Xuanwu]]** — the cosmic-warrior of the north — rather than being primarily a Buddhist cosmic-mountain identification."
   - target: "temple-of-heaven-beijing"
     type: "parallel-ming-imperial-cosmological-architecture"
     source: "Steinhardt 2019; Lagerwey 1992"
+    source-tier: T1
     notes: "Mount Wudang's great 1412–1424 building campaign and the [[temple-of-heaven-beijing|Temple of Heaven]]'s 1406–1420 construction are **the two principal Ming-imperial sacred-architectural programmes of the [[yongle-emperor|Yongle Emperor]]** — one Daoist (Wudang), one Confucian-imperial-cult (Heaven). Together they document Yongle's strategy of **dual cosmological patronage** legitimating his usurpation of the throne from his nephew."
   - target: "tradition-taoism"
     type: "principal-monumental-architectural-monument-of"
     source: "Lagerwey 1992; Naquin & Yu 1992"
+    source-tier: T1
     notes: "Mount Wudang is the **principal monumental architectural site of [[tradition-taoism|Taoism]] in China** — the Daoist counterpart to the Buddhist cave-temple complexes ([[mogao-caves-dunhuang|Mogao]], [[yungang-grottoes|Yungang]], [[longmen-grottoes|Longmen]]) and to the Confucian imperial-cult architecture ([[temple-of-heaven-beijing|Temple of Heaven]], [[temple-of-confucius-qufu|Confucius Temple at Qufu]])."
   - target: "zhang-sanfeng"
     type: "traditional-home-of"
     source: "Wong 2008; Henning 1981"
+    source-tier: T1
     notes: "Wudang is the traditional home of [[zhang-sanfeng|Zhang Sanfeng]] (~13th–14th c.; possibly composite legendary figure), the reputed founder of **Wudang neijia** (internal martial arts) including the precursor traditions of **Taijiquan (Tai Chi)**. Whether or not Zhang Sanfeng historically existed in the form tradition gives, Wudang is the **principal institutional home of the internal-martial-arts tradition** that traces lineage to him."
 syncretic-edges:
   - target: "tradition-quanzhen-taoism"
     type: "principal-mountain-of"
     source: "Lagerwey 1992; Naquin & Yu 1992"
+    source-tier: T1
     notes: "From the Yuan period onward, the Quanzhen (Complete Perfection) school becomes the dominant Daoist tradition on Wudang. The mountain's monastic + ritual + martial-arts programme has been principally Quanzhen-administered since."
 status: "metadata"
 refs:

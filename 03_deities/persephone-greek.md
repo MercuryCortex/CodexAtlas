@@ -20,6 +20,7 @@ syncretic-edges:
   - target: "[[proserpina-roman]]"
     type: "interpretatio-cultic"
     source: "Roman interpretatio graeca — Proserpina is the Latin transliteration/translation of Persephone, with full functional identity in Roman cult"
+    source-tier: T1
     notes: "interpretatio-romana with shared cult: Direct Roman adoption of the Eleusinian-cycle goddess into Roman cult-practice (full functional identity in Roman cult). The Latin name persists into medieval and Renaissance literature"
 status: "metadata"
 refs:

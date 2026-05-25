@@ -15,10 +15,12 @@ syncretic-edges:
   - target: "great-pyramid-of-khufu"
     type: "built-by"
     source: "Lehner 1997; Hassan 1960"
+    source-tier: T1
     notes: "His mastaba tomb (G4000) at Giza is adjacent to the Great Pyramid; his title 'Overseer of All Royal Works' makes him the probable chief architect; a seated statue of him was found in his mastaba (Roemer-Pelizaeus Museum, Hildesheim)"
   - target: "khufu"
     type: "part-of"
     source: "Lehner 1997"
+    source-tier: T1
     notes: "Hemiunu was Khufu's nephew (son of Prince Nefermaat, Sneferu's son); the family relationship means the pyramid was a royal family enterprise"
 refs:
   - title: "The Complete Pyramids"

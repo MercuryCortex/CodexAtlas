@@ -20,9 +20,11 @@ syncretic-edges:
   - target: "ra"
     type: "ancient-identification"
     source: "At Esna in the Greco-Roman period, Khnum is identified with Ra and Shu in a triadic creator-god theology preserved in the Esna temple inscriptions"
+    source-tier: T1
   - target: "chnoubis"
     type: "ancient-identification"
     source: "Greco-Roman magical-gem corpus (Bonner 1950) renders Khnum as the lion-headed serpent 'Chnoubis' — a syncretic magical entity in the wider Greco-Egyptian magic tradition"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Temple of Khnum at Esna: A Religious-Historical Study"

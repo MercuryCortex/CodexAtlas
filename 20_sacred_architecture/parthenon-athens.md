@@ -22,10 +22,12 @@ cross-tradition-edges:
   - target: "pantheon-rome"
     type: "successor-form-classical"
     source: "Wescoat 2012; Stamper 2005"
+    source-tier: T1
     notes: "Greek temple (the Parthenon as type-specimen) → Roman temple (Hadrian's Pantheon as a typological successor with very different formal solutions). The Roman Pantheon is **not** a copy of the Parthenon; rather, the Roman temple-form synthesises Greek decoration (Corinthian columns, pediment) with Etruscan-Italic ground-plan (frontal entry, podium, deep porch) — and in the Pantheon's case, an entirely Roman concrete-dome interior. Stamper's *Architecture of Roman Temples* (2005) is the principal treatment of the Greek→Roman temple-form transmission."
   - target: "karnak-temple-complex"
     type: "parallel-form"
     source: "Wescoat 2012"
+    source-tier: T1
     notes: "Parallel convergence on the temple-as-form: a closed *naos* / *adyton* housing the deity's cult-image, accessed only by priests, surrounded by progressively more public spaces. Egyptian and Greek temples are independently derived, but the **typological move** is the same."
 status: "metadata"
 refs:

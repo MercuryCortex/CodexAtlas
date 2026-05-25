@@ -20,9 +20,11 @@ syncretic-edges:
   - target: "sekhmet"
     type: "ancient-identification"
     source: "Mut's lioness-headed form is theologically identified with the wrathful aspect Sekhmet; especially attested at the Mut precinct's 'litany' inscriptions"
+    source-tier: T1
   - target: "hera"
     type: "ancient-identification"
     source: "Late-period and Hellenistic Greek-Egyptian equation — as consort of Zeus-Ammon, Mut is identified with Hera; implicit in Herodotus 2.42 and explicit in Ptolemaic-era temple inscriptions"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Goddess Mut and the Vulture"

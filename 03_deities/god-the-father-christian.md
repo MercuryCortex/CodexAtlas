@@ -28,12 +28,15 @@ syncretic-edges:
   - target: "[[yahweh]]"
     type: "ancient-identification"
     source: "Christianity self-identifies the Father with YHWH of the Hebrew Bible; canonical from earliest period"
+    source-tier: T1
   - target: "[[el-elohim-hebrew]]"
     type: "ancient-identification"
     source: "Continuation of Israelite high-God theology"
+    source-tier: T1
   - target: "[[the-monad-gnostic]]"
     type: "polemic-against"
     source: "Sethian Gnostic systems distinguish the Father from the OT creator; Apocryphon of John identifies the OT creator as Yaldabaoth and the true Father as the Monad"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Christian Tradition, vol. 1: The Emergence of the Catholic Tradition (100-600)"

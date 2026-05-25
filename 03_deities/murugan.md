@@ -20,12 +20,15 @@ syncretic-edges:
   - target: "[[skanda-karthikeya]]"
     type: "ancient-identification"
     source: "The identification of the Tamil Murugan with the Sanskrit Skanda/Karthikeya was a gradual process of Brahminic synthesis beginning in the post-Vedic period (ca. 300 BCE–300 CE). The Mahabharata gives Skanda a full mythological biography (book 3, Vana Parva). Some scholars (Clothey 1978, Hart 1975) argue the Tamil Murugan tradition is partly independent and older than the Sanskrit Skanda; the identification created a synthesis where Tamil and Sanskrit traditions merged. The Six Abodes of Murugan (Aarupadai Veedu) in Tamil Nadu are among the most ancient Murugan sacred sites, predating full Sanskritization."
+    source-tier: T1
   - target: "[[shiva]]"
     type: "ancient-identification"
     source: "Murugan is the son of Shiva (and Parvati) in both Tamil and Sanskrit traditions, though the mythology of his birth varies: in some accounts he is born from Shiva's third eye or the Pleiades stars (Krittika); in others from Agni (fire). His relationship with Shiva is foundational to his iconographic and theological identity."
+    source-tier: T1
   - target: "[[apollo]]"
     type: "scholarly-parallel"
     source: "Both Murugan/Skanda and Apollo are young male divine figures combining martial power with aesthetic grace and intellectual excellence (music and arts for Apollo; eloquence and the vel's piercing wisdom for Murugan). Both are associated with solar imagery, youth that never ages, and the patronage of human creative and martial excellence. Clothey (1978) notes the comparison but does not argue transmission."
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Many Faces of Murukan: The History and Meaning of a South Indian God"

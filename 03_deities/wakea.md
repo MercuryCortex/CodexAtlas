@@ -20,15 +20,19 @@ syncretic-edges:
   - target: "[[ranginui]]"
     type: "scholarly-parallel"
     source: "Most precise structural parallel: Māori Ranginui (Sky Father) + Papatūānuku (Earth Mother) = Hawaiian Wākea (Sky Father) + Papa. Cognate pairs from a shared Ancestral Polynesian cosmogony; linguistic and mythological evidence confirms direct ancestral relationship. Both sky-earth unions create the world through their separation."
+    source-tier: T1
   - target: "[[dyaus-pita]]"
     type: "scholarly-parallel"
     source: "Vedic sky father (Dyaus Pitā / 'Father Sky') + Prithvī (Earth) = the same sky-father / earth-mother pair found in Wākea + Papa. Both are primordial cosmogonic couples. PIE *Dyēus Ph₂tēr (Father Sky) cognate."
+    source-tier: T1
   - target: "[[uranus-greek]]"
     type: "scholarly-parallel"
     source: "Greek Uranus (Sky) + Gaia (Earth) = structurally parallel sky-earth primordial couple whose union is also followed by separation and the generation of the world. No transmission; convergent cosmogony."
+    source-tier: T1
   - target: "[[papatuanuku]]"
     type: "ancient-identification"
     source: "Papa (the Hawaiian earth mother) and Papatūānuku (Māori earth mother) are cognate figures from the same ancestral Polynesian cosmogonic tradition."
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Kumulipo: A Hawaiian Creation Chant"

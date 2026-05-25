@@ -20,14 +20,17 @@ syncretic-edges:
   - target: "yama-vedic"
     type: "descendant-of"
     source: "Teiser, Stephen F. (1994). The Scripture on the Ten Kings. Hawaii UP.; Lessing, Ferdinand (1942). Yung-ho-kung."
+    source-tier: T1
     notes: "Yan Wang is the Chinese Buddhist transformation of Vedic [[yama-vedic]], transmitted via Indian Buddhism into China from the 2nd century CE onward. The transformation is radical: Vedic Yama is a god-king of the dead; Chinese Yan Wang operates within a fully bureaucratic afterlife court system — reflecting China's imperial administrative culture. The Ten Courts of Hell (each presided by a different king) reflect a juridical-administrative model of cosmic justice that has no parallel in Vedic religion."
   - target: "osiris"
     type: "structural-parallel"
     source: "Teiser (1994)"
+    source-tier: T1
     notes: "Both preside over the judgment of the dead in an underworld court; both use a record-system (Book of the Dead / scroll of life-and-death); both are surrounded by divine assistants who carry out punishments. The parallel is typological — no documented transmission between Egyptian and Chinese death-court theologies."
   - target: "chitragupta"
     type: "structural-parallel"
     source: "Garuda Purana; Teiser (1994)"
+    source-tier: T1
     notes: "Both traditions have a divine judge (Yama/Yan Wang) supported by a divine scribe (Chitragupta / the Registrar of the Ten Courts). The administrative structure of cosmic justice — judge + scribe + record — appears in both Hindu and Chinese afterlife theology independently."
   - target: "[[zao-jun]]"
     type: "structural-parallel"

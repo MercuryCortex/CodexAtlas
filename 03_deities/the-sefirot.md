@@ -16,6 +16,7 @@ syncretic-edges:
   - target: "the-pleroma"
     type: "scholarly-parallel"
     source: "Scholem 1941, 1962 — argued structural parallel between Sefirotic emanations and Sethian Gnostic Pleroma. Contested by Idel 1988"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Origins of the Kabbalah"

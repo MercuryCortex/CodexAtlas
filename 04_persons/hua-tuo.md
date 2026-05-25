@@ -19,10 +19,12 @@ syncretic-edges:
   - target: "hippocrates"
     type: "structural-parallel"
     source: "Comparative medicine history — Unschuld 1985; Nutton, Vivian (2004). *Ancient Medicine*. Routledge — both are the founding figures of their tradition's surgical/clinical practice, working within the same approximate era (Hippocrates c. 460–370 BCE; Hua Tuo c. 145–208 CE), both treating military and royal patients"
+    source-tier: T1
     notes: "Founder-surgeon parallel: Hippocrates and Hua Tuo are the named founding figures of systematic clinical medicine in their respective traditions. Both treated high-status patients (Greek aristocracy / Cao Cao); both left clinical case records; both practiced surgery alongside internal medicine. Hua Tuo extends beyond Hippocratic practice through documented surgery under general anesthesia."
   - target: "medicine-chinese-traditional"
     type: "attested-in"
     source: "Sanguozhi — Hua Tuo's techniques presuppose and extend the Huangdi Neijing theoretical framework; his surgeries and acupuncture practice are the clinical application of TCM theory"
+    source-tier: T1
     notes: "Hua Tuo is TCM's first fully documented clinical practitioner — the Sanguozhi records dozens of specific cases with diagnoses, treatments, and outcomes, making his case files the oldest surviving clinical records in Chinese medicine."
 status: full
 tier: 1

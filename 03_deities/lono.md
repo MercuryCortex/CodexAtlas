@@ -19,24 +19,30 @@ syncretic-edges:
   - target: "Captain James Cook (historical mis-identification, 1779)"
     type: "folk-syncretism"
     source: "Sahlins 1985 / Obeyesekere 1992 (the famous Sahlins-Obeyesekere debate)"
+    source-tier: T1
   - target: "rongo-maori"
     type: "ancient-identification"
     source: "Beckwith, *Hawaiian Mythology* (1940); Best, *Maori Religion and Mythology* (1924) — Hawaiian Lono and Maori Rongo are linguistic-and-functional cognates of the same Proto-Polynesian deity of agriculture, peace, rain, and fertility"
+    source-tier: T1
     notes: "Proto-Polynesian agriculture-and-peace cognate"
   - target: "dionysus"
     type: "scholarly-parallel"
     source: "Sahlins, *Islands of History* (1985) — Sahlins's famous reading of the Makahiki festival treats Lono as the dying-and-returning fertility god whose annual cycle parallels the Dionysian/Adonis pattern. Sahlins's broader argument: Lono and Dionysus are structurally homologous as agricultural-fertility deities whose return marks the season of renewal"
+    source-tier: T1
     notes: "Sahlins dying-and-returning agricultural-deity parallel"
   - target: "osiris"
     type: "scholarly-parallel"
     source: "Sahlins 1985; Frazer, *The Golden Bough* (1911) — Lono's Makahiki seasonal return parallels Osiris's annual flood-return cycle in the dying-and-returning agricultural-deity pattern"
+    source-tier: T1
     notes: "Frazerian dying-and-returning fertility-god parallel"
   - target: "tammuz-dumuzi"
     type: "scholarly-parallel"
     source: "Frazer 1911 — Tammuz/Dumuzi as Mesopotamian shepherd-king whose annual death-return is the oldest documented Old-World dying-and-returning fertility pattern; Lono's Makahiki cycle is the Hawaiian instance"
+    source-tier: T1
   - target: "demeter"
     type: "scholarly-parallel"
     source: "Eliade 1958 — agricultural-and-peace deity parallel; both Lono and Demeter govern the seasonal-agricultural cycle"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Islands of History"

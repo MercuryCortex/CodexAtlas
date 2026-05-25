@@ -20,30 +20,37 @@ syncretic-edges:
   - target: "indra"
     type: "scholarly-parallel"
     source: "Boyce 1975; West 2007 — Indo-European Poetry and Myth"
+    source-tier: T1
     notes: "Indra vs. Vṛtra is the Vedic storm-warrior-god defeating the drought-demon/snake to release the cosmic waters. Tištrya vs. Apaosha is the structurally identical mytheme in the Avestan tradition: the divine warrior-of-light defeats the drought-demon to release the rains. This is a Proto-Indo-Iranian mytheme — both traditions preserve the same divine-weather-combat pattern."
   - target: "vritra"
     type: "scholarly-parallel"
     source: "West 2007 — comparative Indo-European mythology"
+    source-tier: T1
     notes: "Vṛtra (the drought-serpent/blockage that Indra smashes to release the waters) and Apaosha (the drought-demon Tištrya defeats) are cognate mythological adversaries in the Indo-Iranian drought-combat pattern."
   - target: "thor"
     type: "scholarly-parallel"
     source: "West 2007 — Indo-European storm-combat typology"
+    source-tier: T1
     notes: "Thor vs. Jörmungandr (the world-serpent blocking cosmic order) and Tištrya vs. Apaosha (drought-demon) share the broader Indo-European storm-god vs. chaos-serpent/demon-of-blockage combat pattern."
   - target: "perun"
     type: "scholarly-parallel"
     source: "Ivanov & Toporov — Perun/Veles combat; West 2007"
+    source-tier: T1
     notes: "The Slavic Perun vs. Veles combat (storm-god vs. underworld-serpent releasing the cattle/waters) is the same mythemic structure as Tištrya vs. Apaosha. Both are instances of the Indo-European weather-combat myth (dragon-slaying / drought-breaking)."
   - target: "epona"
     type: "scholarly-parallel"
     source: "comparative horse-deity typology"
+    source-tier: T1
     notes: "Tištrya's white horse form with golden ears connects to the widespread Indo-European horse-deity iconography. Epona (Gaulish horse goddess) shares the sacred horse typology, though the gender and function differ."
   - target: "the-ashvins"
     type: "scholarly-parallel"
     source: "Proto-Indo-Iranian horse-deity heritage"
+    source-tier: T1
     notes: "The Ashvins (Vedic divine twins, horse-riders, bringers of health/dawn) and Tištrya (divine horse-rider/stellar archer) both participate in the Proto-Indo-Iranian sacred horse complex. Both are associated with beneficial astral phenomena."
   - target: "ahura-mazda"
     type: "direct-influence"
     source: "Tištar Yašt — Avestan theological hierarchy"
+    source-tier: T1
     notes: "Tištrya is a Yazata who acts in service of Ahura Mazda's cosmic order (Asha). His victory over Apaosha is explicitly said to depend on Ahura Mazda's power and the worship of the faithful."
 status: "metadata"
 refs:

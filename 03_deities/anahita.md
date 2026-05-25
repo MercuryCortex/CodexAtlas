@@ -20,10 +20,12 @@ syncretic-edges:
   - target: "ishtar-akkadian"
     type: "scholarly-parallel"
     source: "Boyce 1982; Chaumont 1965"
+    source-tier: T1
     notes: "Hellenistic-period syncretism: under Achaemenid and Seleucid rule, Anāhitā was identified with Mesopotamian Ishtar and Greek Aphrodite/Artemis."
   - target: "aphrodite-greek"
     type: "syncretic-identification"
     source: "Berossus (via Clement of Alexandria) reports Artaxerxes II set up Anāhitā statues identified with Aphrodite/Hera/Athena/Artemis"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "A History of Zoroastrianism, vol. II"

@@ -20,9 +20,11 @@ syncretic-edges:
   - target: "eos-greek"
     type: "ancient-identification"
     source: "Standard interpretatio Graeca; Ovid, Metamorphoses — Aurora is the Latin name for Greek Eos throughout"
+    source-tier: T1
   - target: "ushas"
     type: "parallel-motif"
     source: "Dumézil, Georges (1954). La religion romaine archaïque; Watkins, Calvert (2011). How to Kill a Dragon — PIE *H₂ewsōs reconstructed as common ancestor"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "La religion romaine archaïque"

@@ -20,13 +20,16 @@ syncretic-edges:
   - target: "angra-mainyu-ahriman"
     type: "scholarly-parallel"
     source: "Collins 1998 *The Apocalyptic Imagination*; Russell 1977 *The Devil*; Alexander 2010 — Belial in the Dead Sea Scrolls (especially the Community Rule 1QS 3:13–4:26 Two-Spirits tractate + the War Scroll 1QM) is the cosmic-adversary commander of the Army of Darkness opposing the Prince of Light. The structural parallel with Zoroastrian Angra Mainyu commanding the daēvas is the closest documented Iranian-influence case in Qumran sectarian writings"
+    source-tier: T1
     notes: "Cross-lens: 03_deities → 03_deities"
   - target: "satan-christian"
     type: "ancestor-of"
     source: "Russell 1977; Pagels 1995 *The Origin of Satan*; Forsyth 1987 *The Old Enemy* — Belial in 2 Cor 6:15 ('what concord hath Christ with Belial?') is Paul's only use of the name; subsequent Christian tradition absorbs Belial as one name among many for the cosmic adversary later unified as Satan"
+    source-tier: T1
   - target: "theme-satan-angra-mainyu-transfer"
     type: "intermediate-figure-of-transfer"
     source: "Collins 1998; Russell 1977; Alexander 2010; Forsyth 1987 — Belial is the *intermediate* form of the cosmic-adversary in the transformation pre-exilic *ha-satan* (court functionary) → Qumran Belial (cosmic-army commander) → New Testament Satan (universal adversary of God's purposes). The Qumran sectarian Belial-figure is the missing-link between the Hebrew Bible's prosecutorial-satan and the developed Christian Satanology. See [[theme-satan-angra-mainyu-transfer]]"
+    source-tier: T1
     notes: "MASSIVE-WIN: Belial is the deity-end documentary evidence of the Second-Temple transformation; the Qumran community's Belial-vs-Prince-of-Light cosmology IS the Zoroastrian dualism transposed into Jewish-sectarian vocabulary. Cross-lens: 03_deities → 06_themes"
 status: "metadata"
 refs:

@@ -15,10 +15,12 @@ syncretic-edges:
   - target: "great-pyramid-of-khufu"
     type: "built-by"
     source: "Lehner 1997"
+    source-tier: T1
     notes: "The pyramid is the central expression of Khufu's reign; his only confirmed portrait is a 7.5cm ivory figurine"
   - target: "tradition-egyptian-religion"
     type: "part-of"
     source: "Shaw 2000"
+    source-tier: T1
     notes: "Khufu embodies Old Kingdom divine kingship — the pharaoh as Horus incarnate and Osiris at death"
 refs:
   - title: "The Complete Pyramids"

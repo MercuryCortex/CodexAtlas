@@ -20,6 +20,7 @@ syncretic-edges:
   - target: "[[ushas]]"
     type: "scholarly-parallel"
     source: "West 2007, Indo-European Poetry and Myth; Mallory & Adams 2006 — PIE *h₂ewsṓs (dawn-goddess) yields Vedic Uṣas, Greek Eos, Latin Aurora, Lithuanian Aušrinė. The most securely reconstructed PIE goddess; cognate names, cognate epithets ('Daughter of Heaven'), cognate chariot-imagery."
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Theogony"

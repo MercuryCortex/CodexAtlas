@@ -20,22 +20,27 @@ syncretic-edges:
   - target: "zeus"
     type: "ancient-identification"
     source: "Roman and Greek authors; Etruscan iconography directly borrows Zeus-type imagery from Magna Graecia"
+    source-tier: T1
     notes: "Tinia depicted enthroned with thunderbolt in the Zeus-type. Capitoline Triad (Tinia/Uni/Menvra) directly parallels Olympian Zeus/Hera/Athena."
   - target: "jupiter"
     type: "ancient-identification"
     source: "Roman *interpretatio*; Tinia's Capitoline Triad (Tinia/Uni/Menvra) was adopted wholesale as Jupiter/Juno/Minerva when Rome absorbed Etruscan religious structures (~-509 BCE)"
+    source-tier: T1
     notes: "The Roman Capitoline Temple on the Capitoline Hill was built by Etruscan craftsmen under Tarquinius Superbus; its triad is Etruscan in origin."
   - target: "dyaus-pita"
     type: "scholarly-parallel"
     source: "PIE *Dyēus ph₂tēr comparative mythology (West 2007, Indo-European Poetry and Myth)"
+    source-tier: T1
     notes: "Tinia represents the Etruscan reflex of the Mediterranean sky-father-as-sovereign pattern; linguistic connection indirect."
   - target: "teshub"
     type: "scholarly-parallel"
     source: "East Mediterranean storm-god-as-king comparative framework"
+    source-tier: T1
     notes: "Both storm-sovereigns with divine council structures."
   - target: "baal-hadad"
     type: "scholarly-parallel"
     source: "Mediterranean sky-storm-king pattern; Etruscans had documented Phoenician contact (Pyrgi Tablets, ~-500 BCE)"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Etruscans"

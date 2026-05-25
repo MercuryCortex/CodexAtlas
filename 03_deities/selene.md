@@ -20,12 +20,15 @@ syncretic-edges:
   - target: "hekate"
     type: "ancient-identification"
     source: "Late-Hellenistic and Roman magical-papyri syncretism: Selene-Hekate-Artemis as the lunar triple-goddess. Standard in PGM (Greek Magical Papyri) lunar invocations"
+    source-tier: T1
   - target: "isis-hellenistic"
     type: "ancient-identification"
     source: "Apuleius *Metamorphoses* 11.2 has Isis identify herself as 'Queen of the Heavens... ruling the silent rays of the moon' — the lunar Isis absorbs Selene"
+    source-tier: T1
   - target: "artemis"
     type: "ancient-identification"
     source: "Late-Hellenistic conflation: Artemis as lunar goddess in Hellenistic literary and philosophical contexts (Plutarch, Apuleius); not original to classical Greek religion"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Greek Religion"

@@ -23,22 +23,27 @@ cross-tradition-edges:
   - target: "ajanta-caves"
     type: "stylistic-predecessor"
     source: "Spink 2005–2014; Behl 1998"
+    source-tier: T1
     notes: "Ajanta (~200 BCE–650 CE) is the Buddhist deep-predecessor of the Ellora Buddhist caves (~600–730 CE); the Ellora Buddhist work continues the Ajanta tradition after Ajanta itself was abandoned in the mid-6th c."
   - target: "borobudur-stupa-mandala"
     type: "parallel-form"
     source: "Snodgrass 1985"
+    source-tier: T1
     notes: "Both Ellora's Kailasa Temple (~765 CE) and Borobudur (~800 CE) are monumental architectural realisations of the cosmic-mountain motif from roughly the same generation — one excavated from solid rock, one built up from stones. The architectural-engineering achievements are parallel in monumentality."
   - target: "mount-kailash"
     type: "architectural-embodiment-of"
     source: "Goetz 1952; Michell 1988"
+    source-tier: T1
     notes: "The Kailasa Temple (Cave 16) is named for and modelled on [[mount-kailash]] — Shiva's mythological mountain abode. The temple is a 3-D architectural realisation of the sacred mountain, excavated from the living cliff face."
   - target: "bamiyan-buddhas-rock-cut"
     type: "parallel-form"
     source: "Behrendt 2007"
+    source-tier: T1
     notes: "Both Ellora and [[bamiyan-buddhas-rock-cut|Bamiyan]] are examples of large-scale rock-cut Buddhist architecture; Bamiyan (~507/554 CE) is the deeper predecessor; Ellora's Buddhist work continues the tradition further east into Deccan India."
   - target: "kandariya-mahadeva-khajuraho"
     type: "stylistic-cousin"
     source: "Hardy 2007"
+    source-tier: T1
     notes: "The Kailasa Temple (~765) is a *carved* Dravida-style temple in stone-relief that prefigures the *constructed* monumental temples of the later Chola-Chandela period; the architectural-grammar continuity from rock-cut to constructed temple is documented."
 status: "metadata"
 refs:

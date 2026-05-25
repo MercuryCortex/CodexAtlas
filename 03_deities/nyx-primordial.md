@@ -20,6 +20,7 @@ syncretic-edges:
   - target: "hekate"
     type: "scholarly-parallel"
     source: "Both are dark-feminine cosmic powers; late-Hellenistic syncretism partially merges Nyx-Hekate in theurgic and Orphic contexts"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Hesiod, Theogony, edited with prolegomena and commentary"

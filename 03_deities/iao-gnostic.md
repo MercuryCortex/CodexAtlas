@@ -22,12 +22,15 @@ syncretic-edges:
   - target: "yahweh"
     type: "transliteration"
     source: "Origen Contra Celsum VI.32; Diodorus Siculus; Varro: ancient sources identify IAO as the Greek form of the Hebrew divine name YHWH/Yahweh; the transliteration crosses the Jewish-Greek boundary"
+    source-tier: T1
   - target: "ein-sof"
     type: "structural-parallel"
     source: "Kabbalistic tradition: the Tetragrammaton (YHWH → IAO in Greek) and Ein Sof are two registers of the same supreme divine reality — named vs. infinite; Scholem 1941 discusses their relationship in early Kabbalah"
+    source-tier: T1
   - target: "the-monad-gnostic"
     type: "tradition-overlap"
     source: "In some Ophite-Gnostic hierarchies (Origen CC VI.31-32), IAO is an archon-name; in other Gnostic and magical contexts, IAO is the supreme divine name — the same name functions at opposite ends of the cosmic hierarchy depending on the system"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Greek Magical Papyri in Translation"

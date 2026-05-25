@@ -20,6 +20,7 @@ syncretic-edges:
   - target: "sophia-gnostic"
     type: "scholarly-parallel"
     source: "Osiek 1999 — the Lady-Ecclesia of Hermas is structurally parallel to the Sophia personifications of Jewish Wisdom literature and proto-Gnostic Sophia traditions; the rejuvenation-motif is distinctive to Hermas"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Shepherd of Hermas: A Commentary"

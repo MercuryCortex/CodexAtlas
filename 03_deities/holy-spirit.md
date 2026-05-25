@@ -29,18 +29,22 @@ syncretic-edges:
   - target: "[[spenta-mainyu]]"
     type: "substrate-influence"
     source: "Boyce & Grenet 1991 *A History of Zoroastrianism* vol. 3; Barr 1985 *The Question of Religious Influence: The Case of Zoroastrianism, Judaism, and Christianity*"
+    source-tier: T1
     notes: "The trans-religious 'Holy Spirit' / *ruach ha-qodesh* / *pneuma hagion* concept may have absorbed Zoroastrian Spenta Mainyu ('Bounteous/Holy Spirit') vocabulary in the post-exilic and Hellenistic Jewish/Christian milieu. The translation of Avestan *Spenta Mainyu* = 'Holy Spirit' is structurally striking; whether direct linguistic-conceptual borrowing or convergent terminology in shared Achaemenid-period contact is debated. Heavily contested mechanism but the structural parallel is uncontested"
   - target: "[[sophia-gnostic]]"
     type: "scholarly-parallel"
     source: "Quispel 1974 'The Spirit as Mother in the Gospel of the Hebrews' *Eranos-Jahrbuch*; Engelsman 1979 *The Feminine Dimension of the Divine*"
+    source-tier: T1
     notes: "The Spirit-as-Mother tradition in Syriac Christianity + the lost Gospel of the Hebrews (Origen citation: 'My mother the Holy Spirit took me by one of my hairs') preserves the Hebrew-feminine *ruach* substrate that the Greek-neuter *pneuma* + Latin-masculine *spiritus* progressively obscured. Sophia-as-Spirit-as-Wisdom is the same theological figure across three traditions"
   - target: "[[shekhinah]]"
     type: "scholarly-parallel"
     source: "Scholem 1941 *Major Trends in Jewish Mysticism*; Quispel 1974"
+    source-tier: T1
     notes: "The Kabbalistic Shekhinah is the Jewish-mystical articulation of the same Hebrew-feminine *ruach ha-qodesh* substrate that the Christian Holy Spirit + Gnostic Sophia inherit. Three traditions, three names for the same theological problem of divine-indwelling-as-feminine within masculinized monotheism"
   - target: "[[theme-holy-spirit-sophia]]"
     type: "central-figure-of-feminine-third-pattern"
     source: "Quispel 1974; Engelsman 1979; Scholem 1941; Blenkinsopp 1995 *Spirit and Wisdom*"
+    source-tier: T1
     notes: "MASSIVE-WIN: the Holy-Spirit figure embeds the entire suppressed-feminine-third problem in its own grammatical history — the gender of the noun changes across the transmission chain in lockstep with the figure's theological subordination. Cross-lens: 03_deities → 06_themes"
 status: "metadata"
 refs:

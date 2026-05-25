@@ -25,22 +25,27 @@ cross-tradition-edges:
   - target: "pantheon-rome"
     type: "dome-form-ancestor"
     source: "Krautheimer 1980; Saalman 1980"
+    source-tier: T1
     notes: "The Pantheon's hemispheric dome (~125 CE, ~43.3 m interior diameter) is the principal classical predecessor for the St. Peter's dome (Michelangelo, ~42.5 m). Michelangelo studied the Pantheon dome's geometry and explicitly designed St. Peter's dome as the Christian-Renaissance re-engineering of the Pantheon-form."
   - target: "hagia-sophia"
     type: "dome-form-predecessor"
     source: "Krautheimer 1980; Saalman 1980"
+    source-tier: T1
     notes: "Hagia Sophia's pendentive-dome (537 CE, ~31 m diameter) is the principal Christian-architectural predecessor for the centralised-domed-basilica form that Bramante adapted at St. Peter's. The Byzantine tradition transmits the dome-on-pendentives type that the Renaissance Roman tradition then reworks."
   - target: "church-of-the-holy-sepulchre-jerusalem"
     type: "imitatio-of"
     source: "Krautheimer 1942; 1980"
+    source-tier: T1
     notes: "The [[theme-round-church-as-anastasis-imitatio]] motif culminates at St. Peter's: Bramante's original centralised Greek-cross design (1506) explicitly invokes the Anastasis-rotunda form (round centralised plan crowned by a dome over the tomb of the saint). The classical-Renaissance vocabulary refigures the Constantinian-Anastasis form."
   - target: "tomb-of-saint-peter"
     type: "houses-the-tomb-of"
     source: "Toynbee & Ward-Perkins 1956"
+    source-tier: T1
     notes: "St. Peter's is the architectural extension of the tomb of [[saint-peter]] — the apostle traditionally martyred in Rome ~64 CE under Nero and buried at the Vatican Hill necropolis. Pius XII's 1939–1949 archaeological excavations beneath the Basilica identified what is plausibly Peter's tomb at the geometric centre of the Basilica."
   - target: "old-st-peters-basilica"
     type: "successor-of"
     source: "Krautheimer 1980; Brandenburg 2005"
+    source-tier: T1
     notes: "The current St. Peter's Basilica (1506–1626) replaced the Constantinian Old St. Peter's Basilica (~326 CE). The Old Basilica was the principal Western-Christian church for ~1200 years; its demolition (~1505) and replacement is one of the most-debated architectural decisions in Christian history."
 status: "metadata"
 refs:

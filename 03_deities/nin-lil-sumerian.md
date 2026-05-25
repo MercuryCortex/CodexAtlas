@@ -20,6 +20,7 @@ syncretic-edges:
   - target: "[[mullissu-akkadian]]"
     type: "ancient-identification"
     source: "Akkadian sources from the Old Babylonian period onward identify Ninlil with Mullissu (later read Mylitta by Herodotus); the equation is fully realized by the Neo-Assyrian period when Mullissu is consort of Ashur"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Götter und Mythen im Vorderen Orient"

@@ -20,6 +20,7 @@ syncretic-edges:
   - target: "thoth"
     type: "mythological-descent"
     source: "Fowden 1986: Hermes Trismegistus is the Hellenized Thoth; Tat as Hermes's son maps onto Thoth's divine scribal lineage in the Egyptian tradition"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Hermetica"

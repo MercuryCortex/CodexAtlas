@@ -16,17 +16,21 @@ syncretic-edges:
   - target: "samantabhadra-buddha"
     type: "scholarly-parallel"
     source: "Same primordial-Buddha role across different Tibetan Buddhist schools; Sarma schools use Vajradhara, Nyingma uses Samantabhadra. Cf. Snellgrove 1987"
+    source-tier: T1
   - target: "shiva"
     type: "scholarly-parallel"
     source: "Snellgrove, *Indo-Tibetan Buddhism* (1987) — Vajradhara as primordial Vajra-holder Buddha in the Sarma schools; the *vajra* and the *lingam* both encode the supreme-cosmic-male-principle. Shiva and Vajradhara are functionally homologous as tantric supreme deity"
+    source-tier: T1
     notes: "Shaiva-Vajrayana tantric supreme-deity parallel"
   - target: "ein-sof"
     type: "scholarly-parallel"
     source: "Snellgrove 1987; Scholem, *Major Trends in Jewish Mysticism* (1941) — Vajradhara as primordial-unmanifest Vajra-essence; parallel to Kabbalistic Ein Sof as primordial-unmanifest"
+    source-tier: T1
     notes: "Primordial-unmanifest apophatic deity parallel"
   - target: "vairocana"
     type: "scholarly-parallel"
     source: "Snellgrove 1987 — Vajradhara and Vairocana are alternate primordial-Buddha conceptions; Vairocana as cosmic-illumination (dharmakaya) and Vajradhara as cosmic-vajra-essence are parallel doctrinal articulations"
+    source-tier: T1
     notes: "Within-family alternate-primordial parallel"
 status: "metadata"
 refs:

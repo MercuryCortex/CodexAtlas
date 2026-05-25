@@ -20,16 +20,20 @@ syncretic-edges:
   - target: "ninisina"
     type: "ancient-identification"
     source: "Black & Green 1992 *Gods, Demons and Symbols of Ancient Mesopotamia*; Krebernik *RlA* — by the Old Babylonian period Ninkarrak is part of the four-way healing-goddess syncretic cluster with Ninisina, Gula, and Bau; Ninkarrak and Ninisina are explicitly identified in cultic compendia"
+    source-tier: T1
     notes: "Wiggermann 2000 *RlA* 'Nin-Isina' treats Ninkarrak as a closely-identified but originally-distinct goddess merged into the Ninisina-Gula cluster"
   - target: "gula-akkadian"
     type: "ancient-identification"
     source: "Black & Green 1992; Krebernik *RlA* — Gula absorbs the Ninkarrak cult in the first millennium; by the Neo-Babylonian period Ninkarrak is functionally Gula under a localized name"
+    source-tier: T1
   - target: "bau-sumerian"
     type: "ancient-identification"
     source: "Black & Green 1992 — Bau of Lagash, Ninisina of Isin, Ninkarrak of Karrak, and Gula form the four-way healing-goddess syncretic cluster"
+    source-tier: T1
   - target: "sekhmet"
     type: "cross-tradition-archetype"
     source: "Comparative religion — Lesko 1999 *The Great Goddesses of Egypt*; both are feminine healing-deity archetypes in which authority over disease derives from domain over disease; both have institutionalized priest-healer corps operating in their name"
+    source-tier: T1
     notes: "Destroyer-healer archetype: Ninkarrak (Mesopotamia, attested c. 2500 BCE via Hammurabi Code) and Sekhmet (Egypt, c. 2500 BCE) are the two earliest attested instances of the theological pattern in which the same divine being sends plague and cures it."
 status: "metadata"
 refs:

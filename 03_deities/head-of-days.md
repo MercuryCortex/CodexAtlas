@@ -20,6 +20,7 @@ syncretic-edges:
   - target: "yahweh"
     type: "ancient-identification"
     source: "The Head of Days is the Enochic high-god, theologically continuous with YHWH; the title is a reverence-substitute akin to 'Lord of Spirits' and 'Most High'"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "1 Enoch 2: A Commentary on the Book of 1 Enoch Chapters 37–82"

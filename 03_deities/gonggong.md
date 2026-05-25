@@ -20,6 +20,7 @@ syncretic-edges:
   - target: "enlil"
     type: "scholarly-parallel"
     source: "Lewis 2006 — structural parallel as the deity whose action *causes* the flood (rather than the deity who warns the flood-hero); not direct cognate but typologically related"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Flood Myths of Early China"

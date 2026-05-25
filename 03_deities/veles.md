@@ -20,26 +20,32 @@ syncretic-edges:
   - target: "[[hermes-greek]]"
     type: "parallel-motif"
     source: "Ivanov & Toporov 1974 *Issledovaniya v oblasti slavyanskikh drevnostey*"
+    source-tier: T1
     notes: "Both are chthonic boundary-crossers, both patrons of trade / oaths / the dead; the parallel is typological, not genetic. The chthonic-pastoral-trickster cluster Ivanov-Toporov reconstruct for Veles maps onto Hermes's psychopomp + commerce-patron role"
   - target: "[[mercury-roman]]"
     type: "parallel-motif"
     source: "Ivanov-Toporov 1974; via the Hermes-Mercury interpretatio chain"
+    source-tier: T1
     notes: "Through Hermes, Veles aligns with Mercury's wealth + trade + psychopomp + boundary functions"
   - target: "[[odin]]"
     type: "parallel-motif"
     source: "Ivanov-Toporov 1974"
+    source-tier: T1
     notes: "Functional overlap with Odin's wealth-magic-poetry-dead-god aspect (poetry-patron, sorcery, lord of the dead). Ivanov-Toporov explicitly distinguish this Veles-Odin parallel from the Perun-Thor IE storm-god cluster — Veles sits in the chthonic-magical first-function cell rather than the storm-warrior second-function cell"
   - target: "[[hades]]"
     type: "parallel-motif"
     source: "Comparative IE; Ivanov-Toporov; West 2007"
+    source-tier: T1
     notes: "Underworld-sovereign parallel; both Veles and Hades govern the realm of the dead. The Slavic chthonic god demoted to 'devil' under Christianization is a structural parallel to the Greek underworld king (though Hades was never himself demonized to that degree)"
   - target: "[[saint-blaise]]"
     type: "folk-syncretism"
     source: "Tokarev 1957 *Religioznye verovaniya vostochnoslavyanskikh narodov*; Fedotov 1948 *The Russian Religious Mind*"
+    source-tier: T1
     notes: "Eastern Slavic dvoeverie textbook case: Volos / Veles ↔ Vlas(iy) / Blasius — both 'god of cattle' / 'protector of cattle'; St Blaise's 11 February (Old Style 3 February) feast inherits Veles's livestock-blessing role. The classic Slavic pagan-deity → Christian-saint identity transfer alongside Perun → Elijah"
   - target: "[[velinas-lithuanian]]"
     type: "cognate"
     source: "Gimbutas 1963 *The Balts*; Greimas 1992 *Of Gods and Men*"
+    source-tier: T1
     notes: "Balto-Slavic cognate pair. Both descend from Proto-Balto-Slavic *Vels- / *Wel- ('the dead'); both chthonic + magical figures; both share the same Christianization fate — reduced to 'devil' under absorption (modern Lithuanian *velnias* = 'devil'). Same Christianization-as-demonization mechanism across the Balto-Slavic split"
 status: "metadata"
 refs:

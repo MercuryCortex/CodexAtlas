@@ -20,10 +20,12 @@ syncretic-edges:
   - target: "veles"
     type: "scholarly-parallel"
     source: "Ivanov, Vyacheslav; Toporov, Vladimir (1973). 'A Comparative Study of the Group of Baltic Mythological Terms from the Root *vel-'. Baltistica 9/1."
+    source-tier: T1
     notes: "Some scholars (Ivanov, Toporov) identify or closely associate Chernobog with Veles as aspects of the same chthonic-dark principle. Both represent the underworld/darkness opposition to the heavenly-thunderer (Perun). The identification is disputed — Veles is far better attested and has a complete mythology; Chernobog may be a later theological abstraction of a darkness-principle."
   - target: "angra-mainyu-ahriman"
     type: "structural-parallel"
     source: "Jakobson, Roman (1985). 'Slavic Gods and Demons' in Selected Writings VII. Mouton."
+    source-tier: T1
     notes: "Both are dark-principle deities in a cosmological dualism; the Zoroastrian Angra Mainyu is far better attested and theologically developed. Whether the Slavic Chernobog/Belobog dualism reflects genuine pre-Christian Slavic theology or a medieval-Christian overlay imposing God/Devil categories onto indigenous religion is a live scholarly debate."
 status: "metadata"
 refs:

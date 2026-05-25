@@ -20,12 +20,15 @@ syncretic-edges:
   - target: "[[isis-hellenistic]]"
     type: "scholarly-parallel"
     source: "Iconographic continuity from Isis-with-Horus to Mary-with-Christ-child documented in late-antique Egypt (Witt, *Isis in the Graeco-Roman World* 1971); transmission debated — see [[event-council-of-ephesus-431]]"
+    source-tier: T1
   - target: "[[divine-feminine]]"
     type: "scholarly-parallel"
     source: "Mariology functions as the divine-feminine pole in otherwise male-coded Trinitarian Christianity (Warner, *Alone of All Her Sex* 1976)"
+    source-tier: T1
   - target: "[[wisdom-personified]]"
     type: "scholarly-parallel"
     source: "Patristic and medieval allegorical exegesis read Wisdom-passages (Prov 8, Wisd 7) as Marian"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Alone of All Her Sex: The Myth and the Cult of the Virgin Mary"

@@ -20,14 +20,17 @@ syncretic-edges:
   - target: "[[indra]]"
     type: "ancient-identification"
     source: "Snellgrove, *Indo-Tibetan Buddhism* (1987), Vol. 1, pp. 134-135; Lamotte, *The Treatise on the Great Virtue of Wisdom of Nāgārjuna* (Mahāprajñāpāramitāśāstra), Vol. 1 — the Buddhist Vajrapāṇi is explicitly the Vedic Indra demoted into a Buddha-attendant role"
+    source-tier: T1
     notes: "One of the clearest documented cases of a Vedic deity being institutionally absorbed into Buddhism with a downgrade in status — Indra becomes Sakra/Śakra (lord of the Trāyastriṃśa heaven) AND simultaneously becomes Vajrapāṇi the protector-attendant of the Buddha"
   - target: "[[heracles]]"
     type: "scholarly-parallel"
     source: "Tanabe, K. (2003) 'Why is Vajrapāṇi-Heracles depicted in Gandhāran Buddhist art?' — Greco-Buddhist Gandhāran reliefs (1st-3rd c. CE) depict Vajrapāṇi with the muscular nude torso, lion-skin, and club of Heracles, the closest documented iconographic fusion between Greek and Buddhist religion"
+    source-tier: T1
     notes: "Bactrian / Gandhāran Greek-Buddhist fusion; the Heraclean iconography travels east to Japan as the Niō temple-guardian (Kongōrikishi) — Heracles → Vajrapāṇi → Japanese temple-gate guardian is a documented 2,000-year visual-cognate chain"
   - target: "theme-gandharan-buddhism"
     type: "documented-transmission-locus"
     source: "Tanabe 2003; Foucher 1905-1951; Boardman 1994 — Vajrapāṇi is the SINGLE most-iconographically-documented Greco-Buddhist transmission case. The Hercules-bodied Vajrapāṇi at Gandhāra is the load-bearing visual evidence for the Greek-Buddhist synthesis. See [[theme-gandharan-buddhism]] for the full bridge analysis"
+    source-tier: T1
     notes: "MASSIVE-WIN: the Hercules → Vajrapani → Niō chain runs Mediterranean → Gandhara → China → Japan over 2000 years with visual continuity"
 status: "metadata"
 refs:

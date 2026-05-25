@@ -20,21 +20,27 @@ syncretic-edges:
   - target: "[[atum]]"
     type: "syncretic-identification"
     source: "Heliopolitan theology fuses Atum (the self-emergent creator) with Ra (the daytime sun) into Atum-Ra; the Pyramid Texts already attest the composite"
+    source-tier: T1
   - target: "[[amun-ra]]"
     type: "syncretic-fusion"
     source: "New Kingdom (~1550 BCE onward) theological fusion of Theban Amun with Heliopolitan Ra; produces the Egyptian high-god through most of subsequent Egyptian history. Leiden Hymn (Pap. Leiden I 350): Amun + Re + Ptah as three aspects of one god (Assmann 1995, Egyptian Solar Religion)."
+    source-tier: T1
   - target: "[[aten]]"
     type: "ancestor-of"
     source: "Akhenaten's Aten is the visible solar disc abstracted out of Ra's iconographic complex; the Atenist program is a radicalization within the Ra-tradition. Hornung 1999, Aldred 1988."
+    source-tier: T1
   - target: "[[osiris]]"
     type: "syncretic-fusion"
     source: "The Ra-Osiris midnight union in the Amduat: at the sixth hour of the night journey, the solar barque passes through the deepest point of the underworld and Ra temporarily merges with the mummified Osiris, the union producing the renewed dawn sun. Documented in the Amduat and the Book of Gates."
+    source-tier: T1
   - target: "[[helios]]"
     type: "ancient-identification"
     source: "Standard Greek interpretatio graeca: Herodotus, Plutarch De Iside, Diodorus Bibliotheca 1.11 all use Helios for the Egyptian solar deity; Greek Magical Papyri employ Ra-Helios syncretism extensively."
+    source-tier: T1
   - target: "[[sol-invictus]]"
     type: "ancestor-of"
     source: "Egyptian Ra-theology fed via Hellenistic Helios into Roman Sol Invictus. Documented transmission through Alexandrian religious syncretism (Dunand & Zivie-Coche 2004 Gods and Men in Egypt). Sol Invictus formalized by Aurelian 274 CE."
+    source-tier: T1
 status: "full"
 refs:
   - title: "Conceptions of God in Ancient Egypt: The One and the Many"

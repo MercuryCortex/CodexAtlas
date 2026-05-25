@@ -20,22 +20,27 @@ syncretic-edges:
   - target: "hades"
     type: "scholarly-parallel"
     source: "Underworld sovereign comparative framework; both preside over the realm of the dead"
+    source-tier: T1
     notes: "Charun is not an exact parallel to Hades — Hades is sovereign and neutral, Charun is active and terrifying. The Etruscan underworld theology is distinctly more demonic than the Greek."
   - target: "anubis"
     type: "scholarly-parallel"
     source: "Guardian-of-the-dead-and-threshold comparative framework"
+    source-tier: T1
     notes: "Anubis guards and guides at the threshold of death; Charun guards the entrance to the Etruscan underworld. Both occupy the door between worlds."
   - target: "yama-vedic"
     type: "scholarly-parallel"
     source: "Death-sovereign and judge comparative framework; Yama (Vedic) is the first mortal to die, becoming lord of the dead"
+    source-tier: T1
     notes: "Charun shares the death-sovereign role though in a more demonic, less judicial form."
   - target: "osiris"
     type: "scholarly-parallel"
     source: "Dark-skinned/green-skinned death deity pattern; Osiris's green or black skin (decomposition symbolism) parallels Charun's blue-grey skin"
+    source-tier: T1
     notes: "Blue, green, or dark skin as death-deity marker recurs cross-culturally as pigment iconography for chthonic/mortuary deities."
   - target: "kali"
     type: "scholarly-parallel"
     source: "Dark-skinned active death-deity pattern; Kali's blue-black skin and role as active consumer of the dead parallels Charun's blue skin and hammer-wielding terror"
+    source-tier: T1
     notes: "Both are actively terrifying death-figures (not neutral sovereigns) with dark or blue skin as their primary visual marker."
 status: "metadata"
 refs:

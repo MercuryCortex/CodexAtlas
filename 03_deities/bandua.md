@@ -20,6 +20,7 @@ syncretic-edges:
   - target: "mars-roman"
     type: "partial-identification"
     source: "Several late inscriptions pair 'Mars Bandua' — the Roman interpretatio attached the nearest available equivalent. Encarnação (1975)."
+    source-tier: T1
     notes: "The identification is functional rather than theological: Bandua's protective-martial domain made him the obvious candidate for Roman *interpretatio* as Mars. But unlike Ares/Mars (a god of offensive war and military glory), Bandua's domain appears to be specifically territorial defense and the protection of the community — the etymology points toward 'binding/obligation' rather than violent aggression."
 status: "metadata"
 refs:

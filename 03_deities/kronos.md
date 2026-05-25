@@ -20,10 +20,12 @@ syncretic-edges:
   - target: "saturn-roman"
     type: "syncretic-identification"
     source: "interpretatio graeca; identification from early Republican period"
+    source-tier: T1
     notes: "Roman Saturn inherits the Golden Age association; the Saturnalia preserved this."
   - target: "kumarbi-hittite"
     type: "scholarly-parallel"
     source: "West 1997, East Face of Helicon"
+    source-tier: T1
     notes: "Hittite Kumarbi castrates Anu by biting off his genitals — the structural parallel to Kronos castrating Uranus."
 status: "metadata"
 refs:

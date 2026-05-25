@@ -20,9 +20,11 @@ syncretic-edges:
   - target: "zeus"
     type: "ancient-identification"
     source: "Roman *interpretatio Graeca*; standard from late Republic onward (Cicero, Vergil)"
+    source-tier: T1
   - target: "dyaus-pita"
     type: "scholarly-parallel"
     source: "PIE *Dyḗws ph₂tḗr — linguistic reconstruction (Watkins, Mallory)"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Religions of Rome (2 vols.)"

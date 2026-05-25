@@ -17,6 +17,7 @@ syncretic-edges:
   - target: "[[hekate]]"
     type: "scholarly-parallel"
     source: "Threshold-deity, though Hecate is feminine-triadic and Janus masculine-binary"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Religions of Rome, Vol. 1: A History"

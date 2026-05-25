@@ -20,9 +20,11 @@ syncretic-edges:
   - target: "mary-theotokos"
     type: "ancient-identification"
     source: "Direct cult-development: Mary-of-Zion is the Aksumite-Ethiopian instantiation of the same Marian-Theotokos figure"
+    source-tier: T1
   - target: "isis-hellenistic"
     type: "scholarly-parallel"
     source: "Witt 1971 + Frankfurter 1998 — Egyptian Isis-Lactans → Coptic Mary → Ethiopian Mary-of-Zion iconographic continuity"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Mary in Ethiopian Christianity"

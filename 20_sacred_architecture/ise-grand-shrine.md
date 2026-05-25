@@ -25,27 +25,33 @@ cross-tradition-edges:
   - target: "izumo-taisha"
     type: "paired-with"
     source: "Bocking 1996; Coaldrake 1996"
+    source-tier: T1
     notes: "Ise (sun-goddess Amaterasu, imperial line) and [[izumo-taisha|Izumo Taisha]] (earth-deity Ōkuninushi, terrestrial lineage) form the **two-pole structure of classical Japanese Shinto**. In the *Kojiki*'s mythography Ōkuninushi yields the visible land to Amaterasu's grandson Ninigi (the *kuni-yuzuri* — 'transfer of the land') — Ise gets the heavenly/imperial cult, Izumo gets the terrestrial/folk cult."
   - target: "todaiji-daibutsuden"
     type: "parallel-yet-distinct-religious-architecture"
     source: "Coaldrake 1996"
+    source-tier: T1
     notes: "Ise (~690; native Shinto wooden-shrine vocabulary, pure-cypress non-painted, 20-year-rebuilt) and [[todaiji-daibutsuden|Todaiji]] (~752; Buddhist Chinese-derived bracket-and-painted-vermilion vocabulary, permanent) are the **two opposed architectural-religious idioms of classical Japan**. The deliberate non-incorporation of continental Buddhist architectural features at Ise is one of the principal markers of Shinto's identity as the **native Japanese religious idiom** versus the imported Buddhist register."
   - target: "tradition-shinto"
     type: "principal-cultic-and-architectural-centre-of"
     source: "Bocking 1996; Teeuwen & Breen 2017"
+    source-tier: T1
     notes: "Ise is the **principal cultic centre of Shinto** and the only Shinto shrine of the *jingū* (神宮 — 'divine palace') class to which all other major shrines defer in ritual hierarchy. The Ise priestly office (formerly held by an imperial *saiō* princess) is the apex of the Shinto priestly system."
   - target: "amaterasu"
     type: "principal-shrine-of"
     source: "Bocking 1996; Teeuwen 2002"
+    source-tier: T1
     notes: "Ise's Inner Shrine (*Naikū*) is the **principal cult-site of [[amaterasu|Amaterasu]]** — the sun-goddess and ancestral deity of the imperial line. The shrine houses one of the **Three Sacred Treasures** (*Sanshu no Jingi*) — the Yata-no-Kagami (sacred mirror), traditionally held to be the same mirror Amaterasu used to recover herself from the cave."
   - target: "borobudur-stupa-mandala"
     type: "parallel-form-monumental-religious-architecture-with-fixed-cosmological-programme"
     source: "Coaldrake 1996"
+    source-tier: T1
     notes: "Ise and [[borobudur-stupa-mandala|Borobudur]] are both monumental religious architecture-programmes anchored in fixed cosmological doctrine. The architectural difference is total: Borobudur is **stone, permanent, cosmological-diagram**; Ise is **cypress wood, deliberately impermanent, ritual-renewal**. The contrast highlights the **distinctive Shinto philosophy of impermanence-as-purity** — the building is renewed every 20 years precisely because permanence is **not** the value sought."
 syncretic-edges:
   - target: "tradition-imperial-shinto"
     type: "principal-architectural-monument-of"
     source: "Hardacre 2017"
+    source-tier: T1
     notes: "From the Meiji Restoration (1868) through 1945, Ise was the **principal architectural monument of state-Shinto (*kokka shintō*)** — the imperial-Shinto religious system that anchored Meiji-Showa ideology. Postwar disestablishment (1945–1947) returned Ise to the *Jinja Honchō* (Association of Shinto Shrines) network but the symbolic centrality of Ise to Japanese imperial identity persists."
 status: "metadata"
 refs:

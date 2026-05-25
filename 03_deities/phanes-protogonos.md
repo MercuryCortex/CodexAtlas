@@ -20,9 +20,11 @@ syncretic-edges:
   - target: "eros-primordial"
     type: "ancient-identification"
     source: "Orphic theogony: Phanes is identified with Eros (the cosmic love-principle, distinct from Aphrodite's son Eros). Aristophanes *Birds* 693–702 parodies this Phanes-Eros emerging from the cosmic egg"
+    source-tier: T1
   - target: "metis"
     type: "ancient-identification"
     source: "Orphic Rhapsodic Theogony: Zeus swallows Phanes (= Metis, 'wisdom') to absorb the primordial creative principle into himself and restart cosmogony; this is the Orphic explanation of Zeus's supreme kingship"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Orphic Poems"

@@ -20,6 +20,7 @@ syncretic-edges:
   - target: "romulus"
     type: "ancient-identification"
     source: "Livy 1.16; Ovid, Metamorphoses 14.805–828; Cicero, De Re Publica 2.10 — Romulus after his apotheosis was worshipped as Quirinus"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Religions of Rome"

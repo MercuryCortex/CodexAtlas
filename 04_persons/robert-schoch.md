@@ -15,6 +15,7 @@ syncretic-edges:
   - target: "sphinx-of-giza"
     type: "investigated-by"
     source: "Schoch 1992, 1999"
+    source-tier: T3
     notes: "Geological field analysis of Sphinx enclosure walls; identified vertical precipitation erosion inconsistent with 4th Dynasty dating; presented to Geological Society of America 1992"
 refs:
   - title: "Redating the Great Sphinx of Giza"

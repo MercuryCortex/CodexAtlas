@@ -20,12 +20,15 @@ syncretic-edges:
   - target: "metatron"
     type: "scholarly-parallel"
     source: "Orlov 2005 *The Enoch-Metatron Tradition* — the Angel of the Presence is one of the load-bearing pre-Hekhalot precursors of the rabbinic Metatron"
+    source-tier: T1
   - target: "michael-archangel"
     type: "scholarly-parallel"
     source: "Some Second-Temple traditions identify the Angel of the Presence with Michael as chief of the holy angels; not universal"
+    source-tier: T1
   - target: "melchizedek"
     type: "scholarly-parallel"
     source: "11QMelchizedek presents a heavenly-priestly figure structurally parallel to the Angel of the Presence (Kobelski 1981)"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Book of Jubilees (commentary)"

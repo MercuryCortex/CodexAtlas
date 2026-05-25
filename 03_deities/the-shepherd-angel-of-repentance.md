@@ -20,6 +20,7 @@ syncretic-edges:
   - target: "jesus-of-nazareth"
     type: "scholarly-parallel"
     source: "Osiek 1999 — the Shepherd figure shares iconography with the Good Shepherd Christ-type of Johannine + early-Christian art, though Hermas's Shepherd is a distinct angelic mediator-figure, not Christ directly"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Shepherd of Hermas: A Commentary"

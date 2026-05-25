@@ -20,9 +20,11 @@ syncretic-edges:
   - target: "[[wakan-tanka]]"
     type: "scholarly-parallel"
     source: "comparative convention: both are aniconic 'Great Spirit' concepts in adjacent North-American religious systems (Algonquian and Siouan); conceptual parallel, not historical identification"
+    source-tier: T1
   - target: "Christian God (post-contact)"
     type: "folk-syncretism"
     source: "Hallowell 1960; Vecsey 1983"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Paths of Kateri's Kin"

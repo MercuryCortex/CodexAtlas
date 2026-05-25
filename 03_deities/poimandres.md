@@ -15,6 +15,7 @@ syncretic-edges:
   - target: "theme-egyptian-gnostic-transmission"
     type: "Hermetic-Egyptian-revealer"
     source: "Fowden 1986 — Poimandres is the revealer-figure that delivers the Hermetic saving-knowledge to the visionary; his Egyptian etymology (*p-eime n-rê* = 'Knowledge of Re') makes him the structural Egyptian-end deity of Chain 1 (Thoth → Hermes Trismegistus → Hermetic saving-knowledge soteriology). Poimandres functions as the Hermetic equivalent of the Gnostic revealer-figures (Sophia, Christos) — same structural slot, same Alexandrian milieu. See [[theme-egyptian-gnostic-transmission]] Chain 1"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Hermetica"

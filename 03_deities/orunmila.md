@@ -20,9 +20,11 @@ syncretic-edges:
   - target: "[[thoth]] / [[hermes-trismegistus]]"
     type: "scholarly-parallel"
     source: "Divine patron of writing/knowledge/divination/destiny — the Egyptian-Hellenistic and Yoruba parallels are closest in functional content (Drewal 1992 *Ifá: A Forest of Mystery*; Abimbola 1976 *Ifá: An Exposition of Ifá Literary Corpus*)"
+    source-tier: T1
   - target: "Saint Francis of Assisi"
     type: "folk-syncretism"
     source: "Santería (Lucumí) Cuban-syncretic equation: Orunmila ↔ San Francisco de Asís — one of the principal Yoruba-orisha-to-Catholic-saint syncretizations (Brandon 1993 *Santería from Africa to the New World*)"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Ifá: An Exposition of Ifá Literary Corpus"

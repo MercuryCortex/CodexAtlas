@@ -20,6 +20,7 @@ syncretic-edges:
   - target: "[[itzamna]]"
     type: "ancient-identification"
     source: "Landa, *Relación de las Cosas de Yucatán* (1566); contested scholarly readings — Hunab Ku appears in colonial Maya sources as 'the only god' or 'the one god', sometimes as the father of Itzamna, sometimes as Itzamna's transcendent aspect. The relationship is ambiguous in the primary sources"
+    source-tier: T1
     notes: "**Important disclaimer:** The historicity of Hunab Ku as a *pre-Conquest* Yucatec Maya deity is sharply contested. The name appears in **colonial-period** sources written under missionary influence (Landa 1566; Chilam Balam books); the term may reflect a **missionary projection of the Christian One-God category onto Maya religion** rather than an authentic pre-Conquest Yucatec category. The pre-Conquest Maya pantheon attested in the Dresden and Madrid Codices is polytheistic without a clear supreme-being category. Modern non-academic appropriations (the 'Mayan calendar' New Age industry, José Argüelles's writings, Mexicayotl movements) have treated Hunab Ku as cosmic-source-of-everything, none of which has any pre-Conquest textual or iconographic support"
 status: "metadata"
 refs:

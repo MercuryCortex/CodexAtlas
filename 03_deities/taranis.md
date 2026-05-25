@@ -20,12 +20,15 @@ syncretic-edges:
   - target: "[[jupiter]]"
     type: "ancient-identification"
     source: "Inscriptions: *Iovi Optimo Maximo Tarani* (CIL XIII) — the Roman formula fuses Taranis with Jupiter in the standard Gallo-Roman interpretatio formula"
+    source-tier: T1
   - target: "[[thor]]"
     type: "scholarly-parallel"
     source: "Both are thunder-wielding gods associated with the oak and the weapon (Thor's Mjolnir; Taranis's wheel/thunderbolt); both head the storm-deity tier of the respective pantheons. West 2007, Indo-European Poetry and Myth."
+    source-tier: T1
   - target: "[[indra]]"
     type: "scholarly-parallel"
     source: "Indo-European thunder-god cluster: Taranis / Jupiter / Thor / Indra / Perun / Teshub — all reflexes of PIE *perkwunos (oak-thunder deity) or cognate storm-sovereign patterns. Mallory & Adams, Oxford Introduction to Proto-Indo-European."
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Bellum Gallicum (Gallic Wars)"

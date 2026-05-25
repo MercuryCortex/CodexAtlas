@@ -20,6 +20,7 @@ syncretic-edges:
   - target: "[[erra-akkadian]]"
     type: "ancient-identification"
     source: "Erra is functionally identified with Nergal from the Old Babylonian period; the Erra Epic is sometimes called the Nergal Epic; the two names persist in parallel use through the Neo-Assyrian period"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Nergal and Ereshkigal"

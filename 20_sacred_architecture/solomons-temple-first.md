@@ -23,18 +23,22 @@ cross-tradition-edges:
   - target: "ain-dara-temple-syria"
     type: "architectural-parallel"
     source: "Monson 2000; Stager 1999"
+    source-tier: T1
     notes: "The Iron-Age Syrian temple at Ain Dara (~10th–8th c. BCE) is the **closest architectural parallel** to the Solomonic Temple yet discovered — tripartite plan (porch + main hall + inner sanctuary), similar dimensions, similar carved-cherub iconography. The architectural-form of the Temple is unambiguously **Levantine-Syro-Phoenician**, not unique to Israel. This is consistent with the biblical account of [[hiram-of-tyre-king|Hiram of Tyre]] supplying Phoenician craftsmen."
   - target: "dome-of-the-rock-jerusalem"
     type: "later-built-over-the-same-foundation-stone"
     source: "Murphy-O'Connor 2008; Grabar 2006"
+    source-tier: T1
     notes: "The Foundation Stone (al-Sakhra, *Even haShetiyya*) over which the Holy of Holies of Solomon's Temple traditionally stood is the same stone over which the Umayyad Dome of the Rock was built in 691 CE. Same sacred locus, three traditions, two architectural moments separated by ~1600 years."
   - target: "solomons-temple-second"
     type: "ancestor-of"
     source: "Bahat 1990; Levine 2002"
+    source-tier: T1
     notes: "Direct successor: the Second Temple (built 516 BCE by the returnees from Babylonian exile; massively expanded by Herod ~20 BCE) was built on the same site as the First Temple and continued its sacrificial cult."
   - target: "tradition-knights-templar"
     type: "namesake-of"
     source: "Barber 1994"
+    source-tier: T1
     notes: "The Knights Templar are named for the **Temple of Solomon**: their full title is *Pauperes commilitones Christi Templique Solomonici Hierosolymitanis* ('Poor Fellow-Soldiers of Christ and of the Temple of Solomon in Jerusalem'). Their Jerusalem headquarters was al-Aqsa Mosque (which medieval Christians identified with the Temple of Solomon) and the [[dome-of-the-rock-jerusalem]] (Templum Domini). The Order's name reaches back across the entire Christian-Islamic-Jewish palimpsest to this First-Temple-founding moment in the 10th century BCE."
 status: "metadata"
 refs:

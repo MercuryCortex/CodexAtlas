@@ -19,18 +19,23 @@ syncretic-edges:
   - target: "Helios / Sol (Greek / Roman sun-gods)"
     type: "ancient-identification"
     source: "*Hypatian Chronicle* gloss on Malalas's *Chronographia* — 'Dazhbog ... is the Sun, son of Svarog' parallels Helios son of Hephaestus. Same caveats as for Svarog: this is the Christian chronicler's Hellenizing identification, not a pagan-period source"
+    source-tier: T1
   - target: "[[svarog]] (father, in the Hypatian Chronicle gloss)"
     type: "ancient-identification"
     source: "Same Hypatian gloss"
+    source-tier: T1
   - target: "Vedic Bhaga / Avestan Baga ('Sharer/Distributor'; Indo-Iranian giver-god type, etymological cognate of Slavic *bog* 'god')"
     type: "scholarly-parallel"
     source: "The Slavic word *bog* 'god' is borrowed/inherited from Iranian *baga-* 'distributor/god' (Vasmer 1953; Trubachev 1958ff.); Dažd-bog 'giver-god' is a transparent Slavic formation paralleling the Indo-Iranian function. West 2007 §3.2"
+    source-tier: T1
   - target: "Sol Invictus (Roman late-imperial sun-god)"
     type: "scholarly-parallel"
     source: "General sun-god typology; no transmission claim"
+    source-tier: T1
   - target: "Apollo-Helios (Mediterranean)"
     type: "scholarly-parallel"
     source: "Sun-god typology"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "*Issledovaniya v oblasti slavyanskikh drevnostey*"

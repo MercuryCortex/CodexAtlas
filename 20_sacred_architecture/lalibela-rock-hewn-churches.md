@@ -22,18 +22,22 @@ cross-tradition-edges:
   - target: "church-of-the-holy-sepulchre-jerusalem"
     type: "imitatio-of"
     source: "Phillipson 2009; Heldman 1992"
+    source-tier: T1
     notes: "Lalibela is **the most architecturally elaborate medieval *imitatio Jerusalemii*** outside the Mediterranean. King Lalibela's stated programme: build a New Jerusalem in Ethiopia after the [[saladin]]-era Muslim restrictions on Christian pilgrimage to the Holy Land made Jerusalem effectively unreachable from Ethiopia. Site features are **named for** the Jerusalem topography: the river running through Lalibela is renamed *Yordanos* (Jordan); churches are named *Bēta Golgotā* (House of Golgotha), *Bēta Maryām* (House of Mary), *Bēta Mēdhanē ʿAlam* (House of the Saviour of the World), with topographic locations mapping to the Jerusalem programme."
   - target: "convent-of-christ-tomar"
     type: "parallel-imitatio-jerusalemii"
     source: "Phillipson 2009; Krautheimer 1942"
+    source-tier: T1
     notes: "Parallel architectural programme — both Tomar's Charola (~1160) and Lalibela's complex (~1181–1221) are 12th–13th c. *imitationes* of the Anastasis-Holy Sepulchre, undertaken in two different cultural-religious contexts (Templar Portugal + Zagwe Ethiopia) with no documented direct architectural contact between them. The convergent timing reflects the **wider Mediterranean and Red Sea Christian world's response** to the loss of free access to Jerusalem after Saladin's recapture (1187)."
   - target: "tradition-ethiopian-tewahedo"
     type: "principal-architectural-monument-of"
     source: "Phillipson 2009; Mercier & Lepage 2012"
+    source-tier: T1
     notes: "Lalibela is the single most important architectural monument of the [[tradition-ethiopian-tewahedo|Ethiopian Tewahedo Orthodox Church]] and one of the most theologically dense single sacred-architectural sites in Africa."
   - target: "ark-of-the-covenant"
     type: "houses-tabot-replicas"
     source: "Heldman 1992"
+    source-tier: T1
     notes: "Each Lalibela church houses a [[tabot]] (Ethiopian Tewahedo replica / continuation of the Ark of the Covenant), wrapped in cloth on the church's central altar. The Tewahedo tradition holds that the original Ark resides at the Church of Our Lady Mary of Zion in Aksum, with tabot replicas in every Tewahedo church carrying the cult-presence."
 status: "metadata"
 refs:

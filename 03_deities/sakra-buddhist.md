@@ -20,10 +20,12 @@ syncretic-edges:
   - target: "[[indra]]"
     type: "direct-borrowing"
     source: "Sumi, Toshihiko (2014). *Indra in Buddhist Texts*; DeCaroli, R. (2004). *Haunting the Buddha: Indian Popular Religions and the Formation of Buddhism*. Oxford UP; Boucher, D. (2008). *Bodhisattvas of the Forest and the Formation of the Mahāyāna*"
+    source-tier: T1
     notes: "MASSIVE-WIN: Vedic Indra is preserved by name in the Buddhist canonical retention of his honorific *Devānām Indra* ('king of the gods'), which becomes the Buddhist proper name 'Śakra Devānām Indra'. The Pāli form *Sakka* and the Sanskrit *Śakra* both descend from Indra's Vedic epithet. The doctrinal move is striking: rather than demonize Indra (as Zoroastrianism did, demoting him to a daēva — see [[asura-deva-inversion]]), Buddhism subordinates him — Śakra is still king of his heaven (Trāyastriṃśa on Mount Sumeru), but is doctrinally below the Buddha and below the bodhisattvas. The Indra-Buddha encounter narratives (esp. Sakka-pañha Sutta DN 21) dramatize this demotion: Śakra approaches the Buddha as a disciple"
   - target: "[[verethraghna-zoroastrian]]"
     type: "parallel-divergence"
     source: "Boyce 1975 — divergent fates of Indra-derived figures across Indo-Iranian sister-traditions"
+    source-tier: T1
     notes: "Buddhist Śakra and Zoroastrian Verethraghna are the two divergent retentions of Indra across the Indo-Iranian split — Buddhism kept him as subordinated-king-of-devas; Zoroastrianism demoted him but kept his epithet *Vr̥tra-ghna* as an independent yazata. Three sibling responses to the same Vedic source"
 status: "metadata"
 refs:

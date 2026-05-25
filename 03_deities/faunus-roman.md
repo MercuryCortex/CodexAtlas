@@ -20,9 +20,11 @@ syncretic-edges:
   - target: "pan-greek"
     type: "ancient-identification"
     source: "Virgil, Aeneid 8.314–315; Ovid, Fasti 2 — Faunus explicitly identified with Pan in literary sources"
+    source-tier: T1
   - target: "cernunnos"
     type: "parallel-motif"
     source: "Both are antlered/horned lord-of-animals figures; no documented direct identification — parallel-motif across Celtic and Italic traditions"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Religions of Rome"

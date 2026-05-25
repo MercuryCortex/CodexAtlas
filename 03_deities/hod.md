@@ -20,9 +20,11 @@ syncretic-edges:
   - target: "baldr"
     type: "ancient-identification"
     source: "Höðr and Baldr are brothers — light and dark, sight and blindness, life and the instrument of death — who are severed by Loki's manipulation and reunited after Ragnarök. Snorri Sturluson, Prose Edda (Gylfaginning 49): after Ragnarök, Höðr and Baldr return from Hel and dwell together in the new world. Their paired fate is the structural heart of the Baldr myth."
+    source-tier: T1
   - target: "loki"
     type: "folk-syncretism"
     source: "Höðr is the instrument through which Loki executes his plan: Loki guides Höðr's hand and provides the mistletoe arrow. Their relationship is the defining pairing of Höðr's mythology — Loki as intentional agent, Höðr as unwitting hand. Prose Edda (Gylfaginning 49)."
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Prose Edda"

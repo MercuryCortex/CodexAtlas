@@ -20,6 +20,7 @@ syncretic-edges:
   - target: "[[ishtar-akkadian]]"
     type: "scholarly-parallel"
     source: "Some functional overlap as great-goddess but the two are distinct figures; closer Canaanite parallel to Ishtar is Astarte/Ashtart"
+    source-tier: T1
 status: "full"
 cross-tradition-edges:
   - type: "parallel-form"

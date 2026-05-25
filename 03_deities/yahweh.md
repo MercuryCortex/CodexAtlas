@@ -20,30 +20,37 @@ syncretic-edges:
   - target: "el-elohim-hebrew"
     type: "syncretic-identification"
     source: "Smith 2002, The Early History of God; Day 2000"
+    source-tier: T1
     notes: "Pre-exilic Israelite religion identifies YHWH with the Canaanite high god El; many Hebrew Bible texts use El / Elohim and YHWH interchangeably."
   - target: "el-canaanite"
     type: "syncretic-identification"
     source: "Smith 2002; Cross 1973, Canaanite Myth and Hebrew Epic"
+    source-tier: T1
     notes: "The Israelite El is the Canaanite El localized; YHWH is identified with this El. Deut 32:8-9 (in the Dead Sea Scrolls / LXX reading) preserves an older theology in which El Elyon assigns nations to subordinate gods including YHWH."
   - target: "theme-el-yahweh-merger"
     type: "endpoint-deity-of-merger"
     source: "Cross 1973; Smith 2002, *The Early History of God* (esp. ch. 1-2 on Iron Age I convergence + Iron Age II differentiation); Day 2000; Dever 2005 *Did God Have a Wife?* — YHWH is the merger-endpoint: the localized El + storm-warrior Baal profile + (in pre-exilic popular religion) consort Asherah → systematic absorption of El's cosmic-sovereignty profile by Iron Age I → expulsion of Baal-warrior + Asherah-consort in Iron Age II → exilic monotheism crystallization. See [[theme-el-yahweh-merger]]"
+    source-tier: T1
     notes: "MASSIVE-WIN: the monotheism of Judaism + Christianity + Islam descends from an Iron Age West-Semitic divine-council apparatus through the YHWH-absorbs-El merger documented at the hub. The Mesha Stele + Kuntillet Ajrud + Khirbet el-Qom inscriptions provide the archaeological pre-exilic baseline showing YHWH still as one god among many with Asherah-consort. Cross-lens: 03_deities → 06_themes"
   - target: "theme-akhenaten-moses-monotheism-thesis"
     type: "Israelite-pole-of-monotheism-origin-hypothesis"
     source: "Assmann 1997 *Moses the Egyptian* + 2008 *The Price of Monotheism*; Redford 1984; Freud 1939 (Tier 4 founding); Hoffmeier 2015 — YHWH is the Israelite-end deity of the Akhenaten-Moses monotheism hypothesis: did the exclusive monotheism of Atenism (~1353 BCE) shape (directly or via cultural memory) the exclusive monotheism of YHWH that crystallizes in the Deuteronomic + post-exilic phases? Assmann's *mnemohistory* reformulation shifts the question from historical derivation to memory-transmission. See [[theme-akhenaten-moses-monotheism-thesis]]"
+    source-tier: T1
     notes: "Cross-lens: 03_deities → 06_themes. YHWH at this hub is the *thesis-target* — what the Akhenaten-Atenism hypothesis claims to be downstream of. Redford 1984 separates the Exodus tradition from Atenism (Exodus → Hyksos-expulsion memory); Assmann reads YHWH-monotheism as carrying Atenist *memory* even if not direct doctrinal transmission"
   - target: "baal-canaanite"
     type: "polemic-against"
     source: "Day 2000, Yahweh and the Gods and Goddesses of Canaan; Smith 2002"
+    source-tier: T1
     notes: "YHWH absorbs storm-warrior attributes of Baal; the prophets polemicize against Baal worship; iconographic and functional overlap is extensive."
   - target: "ahura-mazda"
     type: "scholarly-parallel"
     source: "Boyce & Grenet 1991; Barr 1985"
+    source-tier: T1
     notes: "Persian-period transcendent-creator monotheism parallels in Judah and Iran; structural rather than direct."
   - target: "messianic-genealogy"
     type: "covenant-source-of-Davidic-genealogy"
     source: "Brown 1977 *The Birth of the Messiah*; Vermes 1973 — YHWH is the covenant-grounding source of the Davidic-genealogy tradition. 2 Samuel 7 (Nathan's oracle: 'I will establish his kingdom forever') is the covenantal source; Psalm 89, Psalm 132, and the post-exilic prophets (Isaiah 9, 11; Jeremiah 23, 33; Ezekiel 34, 37; Zechariah) re-state it in messianic terms. The genealogical claim only matters because the covenant promises require a Davidic-descended fulfillment. See [[messianic-genealogy]]"
+    source-tier: T1
     notes: "Cross-lens: 03_deities → 06_themes. The genealogy-as-theology pattern is YHWH-grounded — without the 2 Sam 7 covenantal premise, the genealogical legitimation has no force"
 status: "metadata"
 refs:

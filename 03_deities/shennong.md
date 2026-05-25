@@ -20,18 +20,22 @@ syncretic-edges:
   - target: "dhanvantari"
     type: "cross-tradition-archetype"
     source: "Comparative religion — Wujastyk 2003 *Roots of Ayurveda*; Unschuld 1985 *Medicine in China: A History of Ideas* — both are divine physician-culture-heroes who bring complete pharmacological knowledge to humanity: Dhanvantari emerges from the churning of the cosmic ocean bearing amrita; Shennong tastes 365 herbs personally to classify them for humanity"
+    source-tier: T1
     notes: "Divine-pharmacologist archetype: Shennong (Chinese) and Dhanvantari (Hindu) are the two great 'divine pharmacologist' culture-heroes — divine or semi-divine beings who personally taste/acquire medicinal substances so that humanity has access to complete pharmacological knowledge. Both emerge from a mythological act of acquisition (cosmic-ocean churning / personal tasting of poisons). Both establish the canonical pharmacopeia of their tradition. Independent Chinese/Hindu convergence, no documented contact."
   - target: "asclepius-greek"
     type: "cross-tradition-archetype"
     source: "Comparative religion — both are culture-hero divine physicians who establish the canonical medicine of their tradition; Edelstein 1945 on Asklepios; Unschuld 1985 on Shennong"
+    source-tier: T1
     notes: "Divine-physician culture-hero archetype: Shennong's personal tasting of medicinal plants to establish Chinese pharmacopeia parallels Asklepios's role as the divine founder of Greek healing cult. Both are the first practitioner of their tradition's medicine; both become the patron deity invoked by later practitioners. Chinese and Greek convergence on the figure of the divine founder-physician."
   - target: "sacred-pharmacology"
     type: "patron-of"
     source: "Shennong Bencao Jing — the title itself invokes Shennong as the divine authority for Chinese pharmacology; the mythological founding act (tasting 365 herbs) is the Chinese tradition's paradigmatic expression of sacred pharmacology"
+    source-tier: T1
     notes: "Shennong's tasting of 365 herbs and 72 poisons is the paradigmatic act of sacred pharmacology in the Chinese tradition: the divine being who personally submits to plant substances so humanity gains complete pharmaceutical knowledge. This parallels the logic of Sekhmet (who sends disease and cures it), Soma (the plant that becomes a god by being consumed), and psilocybin-shamanism's figure of the healer who undergoes transformation for the community."
   - target: "medicine-chinese-traditional"
     type: "patron-of"
     source: "Shennong Bencao Jing — the foundational text of TCM pharmacopeia bears his name as divine author; all later Chinese herbalism traces its authority to Shennong"
+    source-tier: T1
     notes: "Shennong is the divine patron of the entire TCM pharmacological tradition — the Shennong Bencao Jing (Divine Farmer's Materia Medica) claims his divine authorship as the source of its authority, a pattern repeated in all major TCM pharmacopeia compilations through the Tang and Ming dynasties."
 tags:
   - medicine

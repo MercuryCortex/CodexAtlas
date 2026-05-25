@@ -20,10 +20,12 @@ syncretic-edges:
   - target: "[[heracles]]"
     type: "ancient-identification"
     source: "Livy, *Ab Urbe Condita* 1.7 (the founding of the Ara Maxima); Virgil, *Aeneid* 8.184-279 (the Cacus episode); Dionysius of Halicarnassus, *Roman Antiquities* 1.39-44 — the Roman reception of the Greek Heracles is one of the earliest and most explicit *interpretatio Romana* cases"
+    source-tier: T1
     notes: "The Romans received Heracles through Etruscan intermediaries (Etruscan Hercle, attested on bronze mirrors and at sanctuaries); the Ara Maxima cult in the Forum Boarium predates the Greek-imitative Hercules Victor / Hercules Invictus cults of the late Republic. The 'Roman Hercules' is therefore a layered figure with both Etruscan and Hellenistic Greek strata"
   - target: "[[melqart]]"
     type: "ancient-identification"
     source: "Herodotus 2.44 (the equation of Heracles and the Tyrian Melqart, with caution); Livy 21.21 (Hannibal sacrifices at the Hercules-Melqart temple at Gades / Cádiz)"
+    source-tier: T1
     notes: "The Tyrian-Phoenician Heracles-Melqart equation is older than the Roman reception and explains the Punic-Roman cult continuity at Cádiz, Carthage, and the Forum Boarium"
 status: "metadata"
 refs:

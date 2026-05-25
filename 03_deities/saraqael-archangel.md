@@ -20,6 +20,7 @@ syncretic-edges:
   - target: "uriel-archangel"
     type: "scholarly-parallel"
     source: "Recensional variants between 'Sariel' and 'Saraqael' in 1 Enoch 20:6 mss; some scholars treat as the same figure under variant names"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "1 Enoch 1"

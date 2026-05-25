@@ -20,17 +20,21 @@ syncretic-edges:
   - target: "shango"
     type: "parent-of"
     source: "Gonzalez-Wippler, Migene (1989). Santeria: The Religion. Harmony Books."
+    source-tier: T1
     notes: "In some Yoruba-Cuban traditions, Aganju is the father of Shango (the thunder orisha) — a genealogical relationship that anchors the fire-within-the-earth (volcano) and fire-from-the-sky (lightning) as father-and-son."
   - target: "vulcan-roman"
     type: "structural-parallel"
     source: "Mbiti (1991)"
+    source-tier: T1
     notes: "Both are fire/volcanic deities associated with the raw power of the earth's interior. Typological parallel — no transmission."
   - target: "hephaestus"
     type: "scholarly-parallel"
     source: "Mbiti 1991; Eliade 1958 — Greek Hephaestus as volcanic-fire-and-forge god"
+    source-tier: T1
   - target: "pele"
     type: "scholarly-parallel"
     source: "Mbiti 1991 — Hawaiian Pele as volcano goddess (gender-inverted parallel); Aganju as Yoruba volcano-and-fire-of-earth god"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Notes sur le culte des Orisha et Vodun à Bahia"

@@ -20,24 +20,30 @@ syncretic-edges:
   - target: "Christian God (Nzambi adopted as the name of the Christian God by Kongo converts)"
     type: "folk-syncretism"
     source: "Thompson 1983; MacGaffey 1986"
+    source-tier: T1
   - target: "bondye-vodou"
     type: "scholarly-parallel"
     source: "Thompson 1983; Desmangles 1992 — Kongo Nzambi → Haitian Bondye direct Atlantic transmission (Kongo deportees to Saint-Domingue contributed the Nzambi concept)"
+    source-tier: T1
     notes: "Direct Atlantic-diaspora Bantu-Vodou transmission"
   - target: "olodumare"
     type: "scholarly-parallel"
     source: "Mbiti, *African Religions and Philosophy* (1969) — Nzambi (Kongo/Bantu) and Olodumare (Yoruba) are the two principal sub-Saharan supreme-being traditions; structural parallel deus-otiosus supremes"
+    source-tier: T1
     notes: "Bantu-Yoruba supreme-being parallel"
   - target: "nyame"
     type: "scholarly-parallel"
     source: "Mbiti 1969 — pan-West-African supreme-sky-deity cluster (Nzambi/Olodumare/Nyame)"
+    source-tier: T1
   - target: "ein-sof"
     type: "scholarly-parallel"
     source: "Mbiti 1969 — transcendent-supreme apophatic parallel"
+    source-tier: T1
     notes: "Apophatic-transcendent supreme parallel"
   - target: "tian-heaven"
     type: "scholarly-parallel"
     source: "Mbiti 1969 — impersonal-supreme parallel"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Flash of the Spirit: African and Afro-American Art and Philosophy"

@@ -19,20 +19,25 @@ syncretic-edges:
   - target: "tane"
     type: "ancient-identification"
     source: "Beckwith, *Hawaiian Mythology* (1940); Best, *Maori Religion and Mythology* (1924) — Hawaiian Kāne and Maori Tāne are linguistic-and-functional cognates of the same Proto-Polynesian deity; both govern forests, light/life, and the procreative principle"
+    source-tier: T1
     notes: "Proto-Polynesian deity-cognate (Kane/Tane same proto-form)"
   - target: "ra"
     type: "scholarly-parallel"
     source: "Beckwith 1940; Eliade, *Patterns in Comparative Religion* (1958) — Kāne as Hawaiian god of light, life, and procreative principle; Ra as Egyptian solar-creator. Both are light-and-life cosmic principles"
+    source-tier: T1
     notes: "Solar-creator-of-life cross-cultural parallel"
   - target: "aten"
     type: "scholarly-parallel"
     source: "Eliade 1958 — Aten as Egyptian solar disk; Kāne as Hawaiian creator-light; both are supreme-light-as-source-of-life"
+    source-tier: T1
   - target: "vairocana"
     type: "scholarly-parallel"
     source: "Eliade 1958 — Vairocana as Mahayana cosmic-illuminator Buddha; Kāne as Hawaiian creator-of-light"
+    source-tier: T1
   - target: "amaterasu"
     type: "scholarly-parallel"
     source: "Beckwith 1940 — Pacific-rim solar-creator parallel; Amaterasu as Shinto solar ancestress and Kāne as Hawaiian solar-creator both centre on the light-source as cosmic origin"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Hawaiian Mythology"

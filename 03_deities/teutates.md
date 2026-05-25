@@ -20,9 +20,11 @@ syncretic-edges:
   - target: "[[mars-roman]]"
     type: "ancient-identification"
     source: "Lucan's scholiast: Teutates is identified with Mars (war) or Mercury (commerce/tribe) depending on source; inscriptions show both 'Mars Toutatis' and 'Mercury Toutatis' formulations (CIL VII)"
+    source-tier: T1
   - target: "[[dagda]]"
     type: "scholarly-parallel"
     source: "Both are tribal father-protector deities in Celtic traditions — Teutates as Gaulish, Dagda as Irish; Dumézil's trifunctional analysis places both in the sovereignty-protection tier"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Bellum Gallicum (Gallic Wars)"

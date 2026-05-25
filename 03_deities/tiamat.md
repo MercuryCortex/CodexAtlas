@@ -20,37 +20,46 @@ syncretic-edges:
   - target: "[[typhon]]"
     type: "parallel-motif"
     source: "West 1997 *The East Face of Helicon* ch. 4 — Hesiod's Typhonomachy as Greek reception of the Enuma Elish via Phoenician/Hittite intermediaries"
+    source-tier: T1
     notes: "Tiamat and Typhon both serve as the cosmic-monster slain by the storm-warrior to establish kingship — the chaoskampf mytheme. West documents the eastern influence on Hesiod's Theogony"
   - target: "[[vritra]]"
     type: "parallel-motif"
     source: "Watkins 1995 *How to Kill a Dragon*; West 2007"
+    source-tier: T1
     notes: "Tiamat-Marduk and Vritra-Indra are the two most-attested cosmic-dragon-slain-by-storm-warrior pairs in ancient religion; same divine-type, independent traditions"
   - target: "[[lotan]]"
     type: "parallel-motif"
     source: "Smith 1994 *The Ugaritic Baal Cycle*"
+    source-tier: T1
     notes: "West-Semitic cosmic serpent slain by Baal — Ugaritic instance of the chaoskampf serpent"
   - target: "[[apophis]]"
     type: "parallel-motif"
     source: "Egyptian chaos-serpent fought by Ra each night"
+    source-tier: T1
     notes: "Egyptian instance of the chaos-serpent; structural parallel rather than transmission"
   - target: "[[illuyanka]]"
     type: "parallel-motif"
     source: "Hittite chaoskampf serpent — Beckman 1982; West 2007"
+    source-tier: T1
     notes: "Hittite-Anatolian chaos-serpent fought by the Storm-God; mediating link between Mesopotamian and Greek chaoskampf via Anatolia"
   - target: "[[sophia-gnostic]]"
     type: "polemic-inversion"
     source: "Pearson 1984/2007"
+    source-tier: T1
     notes: "Tiamat and Sophia occupy structurally parallel positions (the divine mother-source whose diminishment makes the lower cosmos possible) but with opposite moral valence. Tiamat is the chaos-monster Marduk must defeat; Sophia is the wronged divine mother whose unsanctioned generative act produces the demiurge. The Gnostic narrative inverts the Mesopotamian moral charge while preserving the structural slot. See [[theme-mesopotamian-gnostic-transmission]] Chain 2"
   - target: "[[theme-mesopotamian-gnostic-transmission]]"
     type: "documented-substrate"
     source: "Tiamat-as-cosmogonic-mother-source is Chain 2 of the Mesopotamian → Gnostic transmission documentation"
+    source-tier: T1
   - target: "[[serpent-dual-nature]]"
     type: "primordial-chaos-pole-of-serpent-symbolism"
     source: "Joines 1974; Forsyth 1987; Day 1985"
+    source-tier: T1
     notes: "Tiamat is the *primordial* chaos-serpent of Mesopotamian cosmogony; her dismemberment by Marduk in Enuma Elish is the founding chaoskampf narrative. Cross-lens: 03_deities → 06_themes"
   - target: "theme-rebel-against-the-divine"
     type: "primordial-rebel-figure"
     source: "Forsyth 1987 *The Old Enemy: Satan and the Combat Myth*; Russell 1977 — Tiamat is the *original* divine rebel in the cosmogonic-combat substrate that runs from Enuma Elish through Greek Typhon/Titans → Jewish Belial → Christian Satan. See [[theme-rebel-against-the-divine]]"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Babylonian Genesis"

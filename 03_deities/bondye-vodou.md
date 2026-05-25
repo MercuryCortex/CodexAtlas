@@ -20,23 +20,29 @@ syncretic-edges:
   - target: "[[olodumare]] (Yoruba supreme being)"
     type: "manuscript-transmission"
     source: "Brandon 1993; Desmangles 1992 — Middle Passage transmission of Yoruba Olódùmarè concept"
+    source-tier: T1
   - target: "Christian God (Catholic Bon Dieu absorbed into Vodou's supreme-being concept)"
     type: "folk-syncretism"
     source: "Desmangles 1992; Métraux 1959"
+    source-tier: T1
   - target: "[[nzambi]] (Kongo supreme being)"
     type: "scholarly-parallel"
     source: "Thompson 1983 — Kongo population in Saint-Domingue contributed to the Bondye concept"
+    source-tier: T1
   - target: "ein-sof"
     type: "scholarly-parallel"
     source: "Desmangles 1992; Mbiti 1969 — Bondye as Vodou transcendent-supreme approached through the lwa intermediaries; Ein Sof as Kabbalistic transcendent-unmanifest approached through the Sefirot. Both are apophatic-transcendent supreme"
+    source-tier: T1
     notes: "Apophatic-transcendent supreme parallel"
   - target: "god-the-father-christian"
     type: "ancient-identification"
     source: "Desmangles, *The Faces of the Gods* (1992) — Bondye in Haitian Vodou IS the Catholic God: the Catholic Mass and the Vodou lwa coexist in the same religious household. The Bon Dieu/Bondye identity is one of the most-thoroughly-documented cases of African-Catholic syncretism"
+    source-tier: T1
     notes: "MASSIVE WIN: direct Vodou-Catholic supreme-being identity (Bondye = Bon Dieu)"
   - target: "ahura-mazda"
     type: "scholarly-parallel"
     source: "Mbiti 1969 — Iranian supreme-light deity parallel"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Faces of the Gods: Vodou and Roman Catholicism in Haiti"

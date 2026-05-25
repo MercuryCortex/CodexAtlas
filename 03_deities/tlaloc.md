@@ -20,6 +20,7 @@ syncretic-edges:
   - target: "[[chac]]"
     type: "scholarly-parallel"
     source: "Coe & Houston 2015"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Aztecs"

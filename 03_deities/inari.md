@@ -17,9 +17,11 @@ syncretic-edges:
   - target: "Dakiniten"
     type: "folk-syncretism"
     source: "Honji-suijaku medieval doctrine identifies Inari with the Buddhist ḍākinī Dakiniten — one of the densest Shinto-Buddhist syncretic equations (Smyers 1999)"
+    source-tier: T1
   - target: "[[demeter]]"
     type: "scholarly-parallel"
     source: "Grain/agricultural deity"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Fox and the Jewel: Shared and Private Meanings in Contemporary Japanese Inari Worship"

@@ -20,9 +20,11 @@ syncretic-edges:
   - target: "minerva-roman"
     type: "syncretic-identification"
     source: "interpretatio graeca"
+    source-tier: T1
   - target: "neith-egyptian"
     type: "ancient-identification"
     source: "Herodotus 2.59, 2.169-170; Plato Timaeus 21e"
+    source-tier: T1
     notes: "Herodotus and Plato identified Athena with the Egyptian goddess Neith of Sais."
 status: "metadata"
 refs:

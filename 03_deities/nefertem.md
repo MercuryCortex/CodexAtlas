@@ -20,16 +20,20 @@ syncretic-edges:
   - target: "atum"
     type: "ancient-identification"
     source: "Pinch 2002 *Egyptian Mythology*; Hornung 1982 *Conceptions of God in Ancient Egypt* — Nefertem's lotus is the cosmogonic seat from which Atum / Re emerges at the first dawn; in some Memphite-theology readings Nefertem IS the young Atum"
+    source-tier: T1
   - target: "ra"
     type: "ancient-identification"
     source: "Pinch 2002 — the dawning sun rising from Nefertem's lotus is identified with Re; the *Book of the Dead* spell 174 explicitly identifies the deceased with Nefertem-as-lotus-of-Re"
+    source-tier: T1
   - target: "bhaisajyaguru"
     type: "cross-tradition-archetype"
     source: "Comparative religion — Wilkinson 2003; Birnbaum 1979 *The Healing Buddha*; Ebers Papyrus (c. 1550 BCE) documents blue lotus (*Nymphaea caerulea*) in Egyptian medical spells; Bhaisajyaguru's lotus-throne iconography across East Asian Buddhist art"
+    source-tier: T1
     notes: "Lotus-medicine deity archetype: Nefertem (Egyptian, c. 2700 BCE) is the god whose defining attribute is the blue water-lily (*Nymphaea caerulea*) — used medicinally in Egyptian papyri (Ebers Papyrus) and as a ritual perfume with mild psychoactive properties; Bhaisajyaguru (Buddhist, c. 100 CE) sits on a lotus throne and holds myrobalan as the supreme healing plant. Both locate divine healing power in a botanical object, and both use the lotus as their primary emblem. Independent Egyptian/Buddhist convergence, 2,800-year gap."
   - target: "sekhmet"
     type: "child-of"
     source: "Memphite theology — Ptah + Sekhmet + Nefertem = the divine triad of Memphis; Wilkinson 2003; Pinch 2002"
+    source-tier: T1
     notes: "From the destroyer-healer (Sekhmet, who sends plague and cures it) comes the lotus-deity of fragrance and regenerative dawn (Nefertem). The medicinal and ritual lotus grows from the same divine lineage that commands plague — destruction and healing as aspects of the same family."
 status: "metadata"
 refs:

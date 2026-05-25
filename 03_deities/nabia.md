@@ -20,14 +20,17 @@ syncretic-edges:
   - target: "boann"
     type: "structural-parallel"
     source: "Prósper, Blanca María (2002). Lusitanian and Continental Celtic. Salamanca. / Olmsted, Garrett (1994). The Gods of the Celts and the Indo-Europeans. Archaeolingua."
+    source-tier: T1
     notes: "Both are river goddesses in the Celtic/para-Celtic tradition of the Atlantic fringe: Nabia in the westernmost Iberian Peninsula; Boann in Ireland. Both are associated with sacred waters that carry divine power. The parallel is typological within the PIE sacred-river-goddess tradition — no documented transmission. The River Navia (Galicia) likely preserves Nabia's name in the same way the River Boyne preserves Boann's."
   - target: "saraswati"
     type: "structural-parallel"
     source: "Olmsted (1994)"
+    source-tier: T1
     notes: "Saraswati (Vedic) is the river goddess of sacred speech, knowledge, and divine inspiration — the PIE river-goddess-of-sacred-power type reconstructed by Olmsted. Nabia's water associations and possible compound with Vittoria (victory/sovereignty) suggest a similar sovereign-sacred-river function. The three together — Saraswati, Boann, Nabia — are the strongest evidence for the PIE sacred-river-goddess as a reconstructable religious type across three IE branches (Indo-Iranian, Goedelic Celtic, Lusitanian/Gallaecian)."
   - target: "tradition-lusitanian-religion"
     type: "part-of"
     source: "Encarnação (1975)"
+    source-tier: T1
     notes: "Nabia is the principal water-deity of the Gallaecian-Lusitanian religion; her 30+ inscriptions make her one of the best-attested female deities in the indigenous Iberian corpus."
 status: "metadata"
 refs:

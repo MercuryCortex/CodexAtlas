@@ -20,9 +20,11 @@ syncretic-edges:
   - target: "[[tiamat]]"
     type: "scholarly-parallel"
     source: "Day 1985: Yam-vs.-Baal and Tiamat-vs.-Marduk are structurally identical chaoskampf instances; whether genetically related or independently inherited from a common Bronze Age Near Eastern complex is debated"
+    source-tier: T1
   - target: "leviathan-hebrew"
     type: "ancient-identification"
     source: "Ugaritic *ltn* (Lotan) and Hebrew *liwyātān* are linguistically the same word; the Hebrew Bible's Leviathan / Rahab / Yam serpent-of-the-sea poetry continues the Canaanite Yam complex"
+    source-tier: T1
 status: "full"
 cross-tradition-edges:
   - type: "parallel-form"

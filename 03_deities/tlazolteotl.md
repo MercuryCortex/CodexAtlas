@@ -20,16 +20,20 @@ syncretic-edges:
   - target: "coatlicue"
     type: "structural-parallel"
     source: "Both are earth-mother / female-generative figures with primal-filth aspects; Tlazolteotl is the more specifically erotic-and-confessional pole of the earth-mother complex"
+    source-tier: T1
   - target: "inanna-sumerian"
     type: "scholarly-parallel"
     source: "Carrasco 1999; both are female-deities-of-sexual-power who govern erotic transgression and its consequences. Inanna's underworld-descent and bodily-violation parallels Tlazolteotl's filth-eating absorption of human sexual transgression"
+    source-tier: T1
     notes: "Female-sexual-power deity parallel"
   - target: "hathor"
     type: "scholarly-parallel"
     source: "Wilkinson 2003 — Egyptian Hathor as goddess of love, music, and sexuality with a rage-aspect (Sekhmet) absorbing transgression"
+    source-tier: T1
   - target: "demeter"
     type: "scholarly-parallel"
     source: "Eliade 1958 — earth-mother / fertility-grief parallel; Demeter as Greek earth-fertility-mother with chthonic aspect"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Aztecs"

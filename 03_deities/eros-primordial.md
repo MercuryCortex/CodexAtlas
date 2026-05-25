@@ -20,9 +20,11 @@ syncretic-edges:
   - target: "phanes-protogonos"
     type: "ancient-identification"
     source: "Orphic theogonic tradition: primordial Eros = Phanes = first-born from the cosmic egg. Aristophanes *Birds* 693–702 (-414) parodies this identification — Eros hatches golden-winged from the cosmic egg laid by Nyx"
+    source-tier: T1
   - target: "aphrodite-greek"
     type: "polemic-against"
     source: "The primordial Eros must be distinguished from the *later* Eros (Aphrodite's son, Roman Cupid). Hesiod *Theogony* 116–122 places primordial Eros at the very origin of being; Aphrodite's-son Eros is a much later generative offspring"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Hesiod, Theogony"

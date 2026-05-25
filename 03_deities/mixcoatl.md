@@ -20,10 +20,12 @@ syncretic-edges:
   - target: "[[quetzalcoatl]]"
     type: "ancient-identification"
     source: "Sahagún, *Florentine Codex* Book 3; *Anales de Cuauhtitlán* — Mixcoatl is the father of Topiltzin Quetzalcoatl (the legendary Toltec priest-king identified with the deity Quetzalcoatl)"
+    source-tier: T1
     notes: "Tlaxcala (Aztec rival city-state) made Mixcoatl-Camaxtli their patron deity in deliberate contrast to Tenochtitlán's Huitzilopochtli — Camaxtli's cult at Tlaxcala continued through the Spanish Conquest; the Tlaxcalan alliance with Cortés in 1519 was the central enabling factor in the Aztec defeat"
   - target: "[[tezcatlipoca]]"
     type: "ancient-identification"
     source: "Some Aztec theological texts treat the four Tezcatlipocas (black, red, white, blue) as aspects of a single deity; Mixcoatl/Camaxtli is the red Tezcatlipoca in this scheme"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Aztecs"

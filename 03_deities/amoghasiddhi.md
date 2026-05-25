@@ -18,16 +18,20 @@ syncretic-edges:
   - target: "[[vairocana]]"
     type: "ancient-identification"
     source: "Northern position of the Five Dhyani Buddha mandala"
+    source-tier: T1
   - target: "[[tara]]"
     type: "ancient-identification"
     source: "Green Tārā is canonical consort of Amoghasiddhi"
+    source-tier: T1
   - target: "vishnu"
     type: "scholarly-parallel"
     source: "Snellgrove, *Indo-Tibetan Buddhism* (1987) — Amoghasiddhi ('Unfailing Accomplishment') displays the *abhaya-mudra* (fearlessness gesture); Vishnu as preserver-of-dharma and fearlessness-bestower shares the protective-savior function"
+    source-tier: T1
     notes: "Preserver/protector deity parallel"
   - target: "varuna"
     type: "scholarly-parallel"
     source: "Snellgrove 1987 — Varuna as the Vedic guardian of the northern direction; Amoghasiddhi occupies the northern position of the Five Dhyani Buddha mandala"
+    source-tier: T1
     notes: "Directional-guardian parallel (north)"
 status: "metadata"
 refs:

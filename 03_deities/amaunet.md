@@ -20,12 +20,15 @@ syncretic-edges:
   - target: "[[amun]]"
     type: "ancient-identification"
     source: "Hermopolitan Ogdoad theology: Amaunet is the direct female complement of Amun — both names mean 'the hidden one' (masculine/feminine). Together they personify the principle of hiddenness/invisibility as a primordial creative force. Pyramid Texts (Utterance 446) reference the pair."
+    source-tier: T1
   - target: "[[neith]]"
     type: "folk-syncretism"
     source: "In later Egyptian theology (post-New Kingdom), Amaunet's role as personification of the north wind and primordial mystery was partially absorbed into Neith, who also carries primordial, self-created, and wind-associated attributes. The conflation is attested in Sais-based theology."
+    source-tier: T1
   - target: "[[mut]]"
     type: "ancient-identification"
     source: "In Theban theology (Middle Kingdom onward), Mut displaced Amaunet as Amun's primary consort, relegating Amaunet to an archaic/primordial role. Amaunet retained presence at Karnak as the 'ancient mother' preceding Mut."
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Eight Gods of Hermopolis"

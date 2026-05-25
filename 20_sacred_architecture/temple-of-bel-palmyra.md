@@ -23,22 +23,27 @@ cross-tradition-edges:
   - target: "temple-of-jupiter-baalbek"
     type: "parallel-syncretic-roman-east-temple"
     source: "Ball 2000; Raja 2018; Smith 2013"
+    source-tier: T1
     notes: "Baalbek's Jupiter-Heliopolitanus (Roman+Phoenician Baal) and Palmyra's Bel (Roman+Aramaic-Mesopotamian Bel) are the **two greatest exemplars of Roman-imperial-and-local-Semitic syncretic temple architecture in the Roman East**. Both produce monumental sanctuaries that fuse Roman peristyle classicism with eastern local cult-traditions. Palmyra's fusion is even more architecturally hybrid — adding Parthian and Mesopotamian elements that Baalbek lacks."
   - target: "pantheon-rome"
     type: "contemporary-roman-architecture"
     source: "MacDonald 1976; Smith 2013"
+    source-tier: T1
     notes: "Palmyra's Bel Temple (dedicated 32 CE) and the Pantheon (Hadrianic, ~125 CE) are both **Roman imperial-architectural projects** of the high Empire — at opposite ends of the Mediterranean world, displaying the same broader Roman imperial architectural language with characteristic local inflection."
   - target: "ugarit-temple-of-baal"
     type: "deep-cultural-ancestor-of-the-local-substrate"
     source: "Smith 2013; Kaizer 2002"
+    source-tier: T1
     notes: "**Palmyrene Bel descends ultimately from the broader West Semitic Baal tradition** that [[ugarit-temple-of-baal|Ugarit's Late Bronze Age Baal Temple]] textualises. The Aramaic Bel = Babylonian Bēl = ultimately the same Late Bronze Age Levantine storm-god complex. Palmyra is the Roman-period inheritor of this tradition."
   - target: "etemenanki"
     type: "babylonian-cult-ancestor"
     source: "Kaizer 2002"
+    source-tier: T1
     notes: "The name **Bel** is the Aramaic form of Babylonian **Bēl** = 'Lord' — the principal epithet of [[marduk|Marduk]] in [[phase-1-008-enuma-elish|Enuma Elish]] and the Neo-Babylonian theological literature. Palmyrene Bel is therefore in direct cultic descent from the Marduk cult at [[etemenanki|Esagila/Etemenanki]] in Babylon."
   - target: "tradition-imperial-cult"
     type: "anchor-site"
     source: "Beard, North & Price 1998; Kaizer 2002"
+    source-tier: T1
     notes: "The Bel Temple is integrated into the Roman imperial cult network — Roman governors and emperors were honoured here alongside the Palmyrene triad."
 status: "metadata"
 refs:

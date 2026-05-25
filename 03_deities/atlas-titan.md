@@ -19,9 +19,11 @@ syncretic-edges:
   - target: "[[purusha]]"
     type: "scholarly-parallel"
     source: "Cosmic-pillar — primordial figure who supports / is the universe"
+    source-tier: T1
   - target: "[[ymir]]"
     type: "scholarly-parallel"
     source: "Cosmic-frame primordial body"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Hesiod: Theogony, Works and Days, Shield"

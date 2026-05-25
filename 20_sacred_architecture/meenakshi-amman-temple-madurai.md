@@ -24,18 +24,22 @@ cross-tradition-edges:
   - target: "brihadeeswarar-temple-thanjavur"
     type: "stylistic-descendant"
     source: "Branfoot 2007; Michell 1995"
+    source-tier: T1
     notes: "Both temples are Dravida-style monumental temples; Brihadeeswarar (~1010, Chola) is the earlier sanctum-vimana-centric implementation, Meenakshi (~1623 current form, Nayak) the later **gopuram**-centric implementation. The architectural focus has shifted from the central *vimana* to the multiple peripheral *gopurams* — the same Dravida grammar with a different compositional emphasis."
   - target: "kandariya-mahadeva-khajuraho"
     type: "parallel-form"
     source: "Hardy 2007"
+    source-tier: T1
     notes: "Dravida-Madurai (Meenakshi) vs Nagara-Bundelkhand (Kandariya Mahadeva) — both implementations of the [[theme-cosmic-mountain-as-temple-form]] motif, ~600 years apart, in geographically and stylistically distinct regions."
   - target: "angkor-wat-temple-complex"
     type: "stylistic-cousin"
     source: "Mannikka 1996; Branfoot 2007"
+    source-tier: T1
     notes: "Both deploy massive enclosure walls + monumental towers; Angkor Wat is the Khmer Hindu adaptation of the South-Indian Dravida temple-city principle."
   - target: "parvati"
     type: "dedicated-to"
     source: "Branfoot 2007"
+    source-tier: T1
     notes: "Meenakshi is identified with [[parvati]] / [[shakti]] but is uniquely the *principal* deity of her own temple — unusual for major Indian temple traditions where the male consort (Shiva, Vishnu) is normally the principal."
 status: "metadata"
 refs:

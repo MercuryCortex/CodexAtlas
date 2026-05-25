@@ -24,22 +24,27 @@ cross-tradition-edges:
   - target: "kandariya-mahadeva-khajuraho"
     type: "parallel-form"
     source: "Hardy 2007; Michell 1988"
+    source-tier: T1
     notes: "Two regional implementations of the *same* cosmic-mountain theology in the *same* generation: Brihadeeswarar (Dravida, ~1010, Chola South-Indian stepped-pyramidal vimana) and Kandariya Mahadeva (Nagara, ~1030, Chandela North-Indian curvilinear shikhara)."
   - target: "borobudur-stupa-mandala"
     type: "parallel-form"
     source: "Snodgrass 1985; Kramrisch 1946"
+    source-tier: T1
     notes: "Stepped-pyramidal cosmic-mountain (Brihadeeswarar's *vimana*, ~1010, Hindu Dravida) and stepped stupa-mandala (Borobudur, ~800, Mahayana Buddhist) — both deploy the **stepped** silhouette for the cosmic-mountain motif, distinct from the curvilinear Nagara *shikhara*."
   - target: "angkor-wat-temple-complex"
     type: "stylistic-cousin"
     source: "Mannikka 1996; Hardy 2007"
+    source-tier: T1
     notes: "Khmer royal temple-mountains (Angkor Wat ~1120 CE) develop architecturally cousin to South-Indian Dravida vimanas — both deploy the stepped-pyramidal cosmic-mountain form, both are royal-imperial state temples. Cross-Bay-of-Bengal Tamil-Khmer contact is documented epigraphically in the Chola period."
   - target: "mount-meru"
     type: "architectural-embodiment-of"
     source: "Kramrisch 1946; Branfoot 2007"
+    source-tier: T1
     notes: "Brihadeeswarar's 66-m *vimana* is one of the most monumental architectural realisations of the Meru cosmic-mountain motif in surviving Hindu architecture."
   - target: "ziggurat-of-ur"
     type: "parallel-form"
     source: "Snodgrass 1985"
+    source-tier: T1
     notes: "Independent emergence of the stepped-monumental cosmic-mountain form: Sumerian ziggurat (~2100 BCE) and South-Indian Dravida vimana (~1010 CE). Same theological problem, no documented architectural transmission."
 status: "metadata"
 refs:

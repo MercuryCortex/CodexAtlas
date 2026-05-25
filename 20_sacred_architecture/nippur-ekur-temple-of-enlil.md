@@ -23,26 +23,32 @@ cross-tradition-edges:
   - target: "ziggurat-of-ur"
     type: "parallel-form-and-contemporary"
     source: "Gibson 1993; Crawford 1991; George 1992"
+    source-tier: T1
     notes: "Ur-Nammu's construction programme built **near-identical ziggurats at Ur, Nippur, Uruk, and Eridu** c. 2100 BCE. The Nippur ziggurat is the **counterpart** of [[ziggurat-of-ur]] — same plan, same scale, same time. **The first attested instance of a standardised architectural type being imposed across an empire.**"
   - target: "eridu-temple-of-enki"
     type: "architectural-successor-of"
     source: "George 1992"
+    source-tier: T1
     notes: "Nippur's Ekur sits in the deep Mesopotamian temple-platform lineage that begins at Eridu."
   - target: "etemenanki"
     type: "architectural-ancestor-of"
     source: "George 1992"
+    source-tier: T1
     notes: "The Ekur is one node in the lineage that culminates in the Babylonian [[etemenanki]] — the [[tower-of-babel]] referent."
   - target: "solomons-temple-first"
     type: "deep-typological-ancestor"
     source: "Hurowitz 1992"
+    source-tier: T1
     notes: "Mesopotamian temple-building theology (the king as divine vassal commissioning the god's house; the temple as the *bīt ilāni* / house of the god) is the **broader West Asian context** within which the Israelite tradition develops its own theology of Solomon's Temple. Hurowitz's 1992 *I Have Built You an Exalted House* documents the Sumero-Akkadian–Israelite continuity in temple-building rhetoric in detail."
   - target: "tower-of-babel"
     type: "deep-typological-source-of"
     source: "George 1992; Speiser 1964"
+    source-tier: T1
     notes: "Nippur is one of the principal Sumerian sites at which the architectural-theological vocabulary of 'tower-to-heaven' / 'bond-of-heaven-and-earth' (the Sumerian epithet for the Ekur is **Duranki**, 'Bond Heaven-Earth') is developed. The Hebrew Tower of Babel narrative polemicises against this lineage of theology."
   - target: "theme-ziggurat-as-stairway-to-heaven"
     type: "anchor-site"
     source: "George 1992; Gibson 1993"
+    source-tier: T1
     notes: "The Sumerian name **Ekur**, 'Mountain House', is the **architectural-theological proposition itself** — the temple **is** the cosmic mountain, the **Duranki** is the axis joining sky and earth. Nippur is one of the canonical anchor-sites of the motif."
 status: "metadata"
 refs:

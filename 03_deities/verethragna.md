@@ -20,9 +20,11 @@ syncretic-edges:
   - target: "indra"
     type: "ancient-identification"
     source: "**Direct etymological cognate.** Avestan *Vərəθraγna* and Vedic *Vṛtrahán* ('slayer of Vṛtra, the obstacle/resistance') are the **same Indo-Iranian theonym**. The two religions inherit the same warrior-victory-god figure from the Proto-Indo-Iranian period and develop it differently: Vedic Indra becomes a high-god; Avestan Verethragna remains a yazata (subordinate to Ahura Mazda). The pairing is one of the **clearest Indo-Iranian shared-religious-vocabulary cases** in comparative religion"
+    source-tier: T1
   - target: "ares"
     type: "ancient-identification"
     source: "Hellenistic *interpretatio*: Greek-Achaemenid contact zones identify Verethragna with Ares. Standard in Hellenistic-Iranian religious-historical writing"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "A History of Zoroastrianism, Vol. 1"

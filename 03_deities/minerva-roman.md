@@ -17,9 +17,11 @@ syncretic-edges:
   - target: "[[athena]]"
     type: "ancient-identification"
     source: "*interpretatio romana* — Minerva is the Roman Athena from the Etruscan-period assimilation onward (Mnerva/Menerva → Minerva)"
+    source-tier: T1
   - target: "[[neith]]"
     type: "scholarly-parallel"
     source: "Plato *Timaeus* 21e–22b identifies the Egyptian Neith of Sais with Athena (and hence with Minerva via Roman absorption) — the deepest ancient cross-tradition wisdom-warrior-craftswoman identification"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Religions of Rome"

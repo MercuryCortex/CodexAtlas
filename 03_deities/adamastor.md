@@ -20,18 +20,22 @@ syncretic-edges:
   - target: "ymir"
     type: "structural-parallel"
     source: "Saraiva, António José (1950). *História da Literatura Portuguesa*. Porto Editora. / Quint, David (1993). *Epic and Empire*. Princeton UP."
+    source-tier: T1
     notes: "Both are giants whose bodies ARE the landscape: Ymir's flesh becomes earth, his bones mountains, his skull the sky-dome (Prose Edda); Adamastor's body becomes the Cape of Good Hope — he is not merely associated with the Cape but literally petrified into it. The 'giant-as-geography' theophany-type appears independently in Norse cosmogony and in Camões's Renaissance epic synthesis. The parallel extends: both Ymir and Adamastor are overcome by a superior divine-heroic order (the Aesir; the Portuguese navigators authorized by Venus/Providence). Both are tragic figures — Ymir is primordial chaos destroyed to make cosmos; Adamastor is a Titan destroyed by unrequited love transformed to stone."
   - target: "poseidon"
     type: "structural-parallel"
     source: "Camões, Luís de. Os Lusíadas, Canto V. / Quint (1993)"
+    source-tier: T1
     notes: "Adamastor's tragedy is structured around unrequited love for Thetis — a Nereid, a sea-nymph in Poseidon's domain. The plot echoes myths of giants/sea-gods who desire sea-nymphs (Polyphemus/Galatea; Poseidon/Amphitrite). Thetis deceives Adamastor with a false Thetis made of rock and cloud; he embraces it and is fused into the Cape. The sea-as-refusal-of-love motif — the ocean itself as the site of the Titan's eternal unrequited longing — connects Adamastor to the Poseidonic domain of ocean-as-divine-power and divine-jealousy."
   - target: "olokun"
     type: "structural-parallel"
     source: "Camões, Os Lusíadas V; Bascom, William (1969). Ifa Divination. Indiana UP."
+    source-tier: T1
     notes: "Both represent the terrifying, unfathomable dimension of the deep ocean — the ocean as a divine power that resists human navigation. Olokun (Yoruba) is chained at the ocean bottom by Obatala to prevent flooding; Adamastor is petrified at the Cape by the logic of failed love. Both are chained/frozen divine ocean powers. The typological parallel — the ocean's deepest terror as a bound giant/deity — has no documented transmission between the Yoruba West African and Portuguese Renaissance traditions; it is an independent resolution of the same theological problem: how to represent the sea's most extreme hostility as a divine figure."
   - target: "phase-6-041-camoes-os-lusiadas"
     type: "part-of"
     source: "Camões, Os Lusíadas V.37–60"
+    source-tier: T1
     notes: "Adamastor is Camões's most original poetic creation — a figure with no antecedent in classical or medieval tradition. He is synthesized from the Titan tradition (Hesiod's Titanomachy; Virgil's giants), the Polyphemus topos (unrequited love for a sea-nymph), and the navigational reality of Cape Agulhas/Cape of Good Hope as the most feared geographical obstacle of the Age of Discovery. His prophecies in Canto V accurately foretell the disasters of later Portuguese navigators (Bartolomeu Dias's death, Francisco de Almeida's killing on the Cape shore) — structuring the epic's tragedy as foretold by the landscape itself."
 status: "metadata"
 refs:

@@ -19,12 +19,15 @@ syncretic-edges:
   - target: "[[durga]]"
     type: "ancient-identification"
     source: "Puranic theology treats Parvati and Durga as forms of the same supreme goddess (Mahādevī); Devi Mahatmya 1.78–80"
+    source-tier: T1
   - target: "[[kali]]"
     type: "ancient-identification"
     source: "Devi Mahatmya 7: Kali emerges from Parvati's furrowed brow when she takes on terrifying aspect to destroy Chanda and Munda"
+    source-tier: T1
   - target: "[[shiva]]"
     type: "ancient-identification"
     source: "Inseparable cosmic-consort; the *Ardhanārīśvara* iconographic form is the half-Shiva-half-Parvati figure — non-duality of male and female cosmic principles"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Hindu Goddesses: Visions of the Divine Feminine in the Hindu Religious Tradition"

@@ -20,12 +20,15 @@ syncretic-edges:
   - target: "[[izanami]]"
     type: "ancient-identification"
     source: "Primordial creator-pair; sky/male + earth/female mytheme"
+    source-tier: T1
   - target: "[[ranginui]]"
     type: "scholarly-parallel"
     source: "Polynesian Sky-Father/Earth-Mother creator-pair (Rangi-Papa); separation-of-cosmic-parents structural parallel"
+    source-tier: T1
   - target: "[[apsu]]"
     type: "scholarly-parallel"
     source: "Primordial creator-couple in Mesopotamian Enuma Elish (Apsu/Tiamat)"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Kojiki"

@@ -20,9 +20,11 @@ syncretic-edges:
   - target: "Geb (Egyptian earth deity)"
     type: "parallel-form"
     source: "Mbiti 1969"
+    source-tier: T1
   - target: "Pacha Mama (Andean earth goddess)"
     type: "parallel-form"
     source: "Mbiti 1969; typological"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "West African Traditional Religion"

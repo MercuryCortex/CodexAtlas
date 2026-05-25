@@ -20,19 +20,24 @@ syncretic-edges:
   - target: "khonsu"
     type: "ancient-identification"
     source: "[[herodotus]] *Histories* 2.43–44: a Greek Heracles identified with an Egyptian god dated 17,000 years before Amasis; most plausibly Khonsu of Thebes (Lloyd 1976 commentary)"
+    source-tier: T1
   - target: "melqart"
     type: "ancient-identification"
     source: "Phoenician Melkart (Baal-of-Tyre) is consistently identified with Heracles in Greek-Phoenician contact zones (Tyre, Cyprus, Cadiz / Gadir, Sicily). The Heracles temple at Gadir (Cadiz, founded ~-1100) was actually a Melkart temple — Greek-Phoenician syncretism predates Greek-Egyptian"
+    source-tier: T1
   - target: "hercules"
     type: "ancient-identification"
     source: "Standard Roman *interpretatio*; Heracles cult arrived in Italy via Greek colonies in southern Italy (Magna Graecia) and was institutionally absorbed early"
+    source-tier: T1
   - target: "vajrapani"
     type: "iconographic-transmission-eastward"
     source: "Tanabe 2003; Foucher 1905-1951; Boardman 1994 — Gandhāran Buddhist reliefs (1st-3rd c. CE) depict Vajrapāṇi with Heracles's muscular nude torso, lion-skin, and club (substituted by vajra). The iconography then travels east as Niō (Kongōrikishi) temple-gate guardians in Japanese Buddhism. Heracles → Vajrapāṇi → Niō is a documented 2000-year visual-cognate chain. See [[theme-gandharan-buddhism]]"
+    source-tier: T1
     notes: "MASSIVE-WIN: Greek hero iconography becomes the most important Buddhist protector-deity figure across all of East Asia"
   - target: "theme-gandharan-buddhism"
     type: "primary-Greek-source"
     source: "Heracles is the load-bearing Greek-end deity of the Hercules→Vajrapāṇi chain — the most-iconographically-documented Greco-Buddhist transmission case. See [[theme-gandharan-buddhism]] for the full bridge analysis"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Greek Religion"

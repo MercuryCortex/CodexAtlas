@@ -20,6 +20,7 @@ syncretic-edges:
   - target: "[[nergal]]"
     type: "ancient-identification"
     source: "Cagni 1977; from the Old Babylonian period Erra is functionally identified with Nergal — the Erra Epic is sometimes called the Nergal Epic, and the two names persist in parallel use through the Neo-Assyrian period at the shared Emeslam temple at Kutha"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "L'epopea di Erra"

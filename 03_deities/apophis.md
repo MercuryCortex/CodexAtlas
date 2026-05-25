@@ -20,24 +20,31 @@ syncretic-edges:
   - target: "set"
     type: "ancient-identification"
     source: "Hornung 1982 *Conceptions of God in Ancient Egypt* §V; te Velde 1967 *Seth, God of Confusion* — in the Third Intermediate / Late Period, the formerly-ambivalent Set is demonized and assimilated to Apophis as a chaos-figure; the merger is partial and politically motivated (anti-Hyksos memory, Ramesside dynastic shifts)"
+    source-tier: T1
   - target: "typhon"
     type: "parallel-form"
     source: "Hornung 1982; Plutarch *De Iside et Osiride* — Egyptian Apophis and Greek Typhon are independent (non-IE, non-Semitic) instances of the chaos-serpent type. Plutarch's *interpretatio Graeca* maps the Egyptian Typhon-Set complex onto Greek Typhon"
+    source-tier: T1
   - target: "tiamat"
     type: "parallel-form"
     source: "Hornung 1982; Day 1985 *God's Conflict with the Dragon and the Sea* — Mesopotamian and Egyptian chaos-serpents as parallel-form within the broader Old World mythological pattern"
+    source-tier: T1
   - target: "lotan"
     type: "parallel-form"
     source: "Day 1985 — Ugaritic instance"
+    source-tier: T1
   - target: "illuyanka"
     type: "parallel-form"
     source: "West 1997 *The East Face of Helicon* — Anatolian instance"
+    source-tier: T1
   - target: "vritra"
     type: "parallel-form"
     source: "Watkins 1995 *How to Kill a Dragon* — Indo-European-Vedic instance; Egyptian-Vedic parallel is structural, not genetic"
+    source-tier: T1
   - target: "serpent-dual-nature"
     type: "chaos-pole-of-serpent-symbolism"
     source: "Joines 1974 *The Symbolism of the Serpent*; Forsyth 1987 *The Old Enemy*; Hornung 1982 — Apophis is the Egyptian-end instance of the serpent-as-cosmic-chaos pole; Ra's nightly battle with Apep is the paradigm Egyptian chaoskampf and the cosmic enemy par excellence. See [[serpent-dual-nature]]"
+    source-tier: T1
     notes: "Cross-lens: 03_deities → 06_themes"
 status: "metadata"
 refs:

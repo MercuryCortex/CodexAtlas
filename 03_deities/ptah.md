@@ -20,6 +20,7 @@ syncretic-edges:
   - target: "[[atum]]"
     type: "syncretic-identification"
     source: "The Memphite Theology (Shabaka Stone) explicitly subordinates Atum to Ptah, presenting Ptah as the creator who *thinks and speaks* Atum and the Heliopolitan ennead into being"
+    source-tier: T1
 parallels:
   - target: "[[logos-cosmic-reason]]"
     type: "parallel-motif"

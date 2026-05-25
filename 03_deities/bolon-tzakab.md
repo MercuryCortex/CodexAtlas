@@ -20,6 +20,7 @@ syncretic-edges:
   - target: "[[hun-hunahpu]]"
     type: "scholarly-parallel"
     source: "Freidel, Schele, Parker, *Maya Cosmos* (1993); Stuart, *The Inscriptions from Temple XIX at Palenque* (2005) — God K and the Maize God (Hun Hunahpu / Hun Nal Ye) are paired in Classic Maya royal theology: the Maize God is the king-at-resurrection; God K is the king-at-dynastic-legitimation. The two are conceptually linked but iconographically distinct"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Maya Cosmos: Three Thousand Years on the Shaman's Path"

@@ -20,10 +20,12 @@ syncretic-edges:
   - target: "[[mercury-roman]]"
     type: "interpretatio-nominal"
     source: "Tacitus, Germania 9 (~98 CE); Lindow 2001"
+    source-tier: T1
     notes: "Tacitus interpretatio-romana (Germanic→Roman name-mapping per Germania ch.9). Tacitus identifies the chief god of the Germanic peoples as Mercury; the calque is load-bearing — Wednesday/Wōdnesdæg = Mercurii dies. Cunning + wanderer + psychopomp + magic = the shared Mercury/Wōden cluster"
   - target: "[[hermes-greek]]"
     type: "interpretatio-nominal"
     source: "Tacitus, Germania 9; Hermes-Mercury identification is classical (Plautus onward)"
+    source-tier: T1
     notes: "interpretatio-graeca (transitive Germanic→Greek name-mapping). Via Mercury — the Greek-Latin pair Hermes-Mercury was already identified, so the Germanic interpretatio transitively places Odin near Hermes too"
 status: "metadata"
 refs:

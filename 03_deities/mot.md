@@ -20,6 +20,7 @@ syncretic-edges:
   - target: "thanatos-greek"
     type: "scholarly-parallel"
     source: "Both are personified Death; structural parallel without genetic claim"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Ugaritic Baal Cycle: Volume II"

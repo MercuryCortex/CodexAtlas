@@ -20,12 +20,15 @@ syncretic-edges:
   - target: "[[papatuanuku]]"
     type: "parallel-motif"
     source: "Comparative mythological parallel: both are primordial earth-creating mothers; Papatuanuku is literally the earth; Sky Woman creates the earth by falling onto a turtle in the primordial waters. Both are cosmogonic mothers foundational to their traditions. No transmission documented."
+    source-tier: T1
   - target: "[[primordial-waters]]"
     type: "parallel-motif"
     source: "Sky Woman falls into the primordial ocean, a universal cosmogonic substrate; parallel to Norse Ginnungagap, Vedic Ap, Egyptian Nun, and Genesis 1's tehom"
+    source-tier: T1
   - target: "[[ilmatar]]"
     type: "parallel-motif"
     source: "Eliade, Mircea. Patterns in Comparative Religion (1958), ch. 7 — earth-diver motif; Ilmatar (Finnish Water-Mother) floats on primordial waters as the medium for earth-creation, parallel to Sky Woman's role"
+    source-tier: T1
 status: metadata
 refs:
   - title: "Iroquoian Cosmology (Two Parts)"

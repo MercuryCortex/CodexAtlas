@@ -20,6 +20,7 @@ syncretic-edges:
   - target: "hestia"
     type: "ancient-identification"
     source: "Plutarch, Cicero passim"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Religions of Rome"

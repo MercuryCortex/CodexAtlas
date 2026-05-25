@@ -19,9 +19,11 @@ syncretic-edges:
   - target: "Saint Peter / Saint James (Santiago)"
     type: "folk-syncretism"
     source: "Brandon 1993 (regional variation in saint-pairing)"
+    source-tier: T1
   - target: "afro-diasporic-syncretism"
     type: "source-deity-of-diaspora-fusion"
     source: "Murphy 1988, *Santería*; Brandon 1993; Barnes 1989, *Africa's Ogun: Old World and New* — Ogún/Ogou's Atlantic-diaspora syncretism with Saint Peter (keys-as-iron / gatekeeper at the path) and Saint James / Santiago Matamoros (the warrior-saint; the Iberian Reconquista *Santiago* iconography pairs with Ogún's warrior aspect) is the iron/war-domain instance of the saint-orisha correspondence. The Ogou family of related lwa in Haitian Vodou (Ogou Feray, Ogou Badagri, Ogou Balindjo) is the direct West-African-to-Vodou transmission documented at [[afro-diasporic-syncretism]]"
+    source-tier: T1
     notes: "MASSIVE-WIN: Ogún → Santiago is one of the rare cases where the Catholic-saint pairing carries political-historical weight (Reconquista warrior-saint mapping onto African iron-warrior orisha within the colonial slave system); the regional variation between Saint Peter and Santiago is itself an artifact of the local Catholic devotional landscape"
 status: "metadata"
 refs:

@@ -20,10 +20,12 @@ syncretic-edges:
   - target: "the-morrigan"
     type: "part-of"
     source: "Mac Cana (1970). Celtic Mythology.; Aldhouse-Green (1986). The Gods of the Celts."
+    source-tier: T1
     notes: "The Morrígan is a triple goddess whose three aspects are Badb (crow/battle-fury), Macha (sovereignty/land/horses), and either Nemain or Anand depending on the source. Macha is the land-sovereignty aspect — she IS the Irish landscape in a literal sense. Her name derives from PIE *\*makó-* ('plain'), making her etymology identical to the land itself."
   - target: "epona"
     type: "structural-parallel"
     source: "Green, Miranda (1992). Symbol and Image in Celtic Religious Art. Routledge."
+    source-tier: T1
     notes: "Both are horse-goddess figures in Celtic tradition (Epona continental; Macha insular Irish). Macha's racing of the Ulster king's horses while pregnant (and her subsequent curse when she wins and gives birth) is the most explicit connection of a Celtic deity to horses-and-sovereignty."
 status: "metadata"
 refs:

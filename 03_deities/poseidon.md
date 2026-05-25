@@ -20,6 +20,7 @@ syncretic-edges:
   - target: "neptune-roman"
     type: "syncretic-identification"
     source: "interpretatio graeca"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Greek Religion"

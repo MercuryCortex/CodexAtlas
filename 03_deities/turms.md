@@ -20,18 +20,22 @@ syncretic-edges:
   - target: "hermes-greek"
     type: "ancient-identification"
     source: "Etruscan interpretatio Graeca; Turms depicted with full Hermes iconographic program (winged sandals, caduceus, petasos) from earliest attestation; Etruscan tomb paintings show Turms guiding the dead — Hermes' psychopomp role"
+    source-tier: T1
     notes: "The iconographic borrowing is complete and early, demonstrating deep Greek-Etruscan religious contact through Magna Graecia."
   - target: "mercury-roman"
     type: "ancient-identification"
     source: "Roman interpretatio; Mercury is the Latin name for the same deity function (messenger + commerce + psychopomp)"
+    source-tier: T1
     notes: "Mercury absorbed both Greek Hermes and Etruscan Turms traditions."
   - target: "thoth"
     type: "scholarly-parallel"
     source: "Messenger-god-as-psychopomp and scribe comparative pattern; Thoth guides and weighs the dead in the Duat; Turms guides the dead in Etruscan tomb paintings"
+    source-tier: T1
     notes: "The psychopomp function (guide of souls between living and dead worlds) links Turms, Hermes, Thoth, and Anubis as a cross-traditional cluster."
   - target: "nabu"
     type: "scholarly-parallel"
     source: "Messenger-scribe deity pattern; Nabu is Babylonian divine scribe and herald"
+    source-tier: T1
     notes: "Both preside over communication between divine and human/mortal realms."
 status: "metadata"
 refs:

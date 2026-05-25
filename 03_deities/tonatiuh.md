@@ -19,20 +19,25 @@ syncretic-edges:
   - target: "ra"
     type: "scholarly-parallel"
     source: "Carrasco, *Religions of Mesoamerica* (2014); Wilkinson, *The Complete Gods and Goddesses of Ancient Egypt* (2003) — Tonatiuh and Ra are independent solar-sovereign deities whose iconography centres on the daily sun-journey requiring divine sustenance (Ra's nightly Underworld passage / Tonatiuh's blood-tribute). Both are the eye-of-cosmos that legitimates kingship"
+    source-tier: T1
     notes: "Independent emergence on opposite hemispheres; the canonical solar-pantheon convergence the vault exists to map"
   - target: "surya"
     type: "scholarly-parallel"
     source: "Eliade, *Patterns in Comparative Religion* (1958), Ch. III on the sun; the Vedic Surya as sky-traversing sovereign with seven-horse chariot parallels Tonatiuh's daily traverse"
+    source-tier: T1
     notes: "Indo-European and Mesoamerican solar-deity structural cognate"
   - target: "helios"
     type: "scholarly-parallel"
     source: "Eliade 1958; both are personified solar disks driving the cosmic chariot; Helios's daily journey from east to west and night-return parallels Tonatiuh's blood-sustained traverse"
+    source-tier: T1
   - target: "amaterasu"
     type: "scholarly-parallel"
     source: "Eliade 1958; both are solar sovereigns underwriting royal legitimacy (Amaterasu as ancestress of the Japanese imperial line; Tonatiuh as patron of the Mexica state). The Pacific-cross solar parallel emerges independently"
+    source-tier: T1
   - target: "sol-invictus"
     type: "scholarly-parallel"
     source: "Halsberghe, *The Cult of Sol Invictus* (1972) — late-Roman state solar-cult parallels the Mexica imperial Tonatiuh-cult: solar-sovereign as the divine guarantor of empire"
+    source-tier: T1
     notes: "MASSIVE WIN: 5-tradition solar-sovereign-of-empire convergence (Egyptian Ra / Vedic Surya / Greek Helios / Japanese Amaterasu / Mexica Tonatiuh) — solar-pantheon-as-imperial-legitimation is one of the most-consistently-attested cross-cultural deity types in world religion"
 status: "metadata"
 refs:

@@ -23,30 +23,37 @@ cross-tradition-edges:
   - target: "cahokia-monks-mound"
     type: "cognate-form"
     source: "Pauketat 2009; Lekson 2015"
+    source-tier: T1
     notes: "Two great pre-Columbian ceremonial centers north of central Mexico, contemporary (~1000–1200 CE), in different culture-areas. Both show solar / celestial alignments + large planned ceremonial precincts + population decline ~1300 CE. Some long-distance contact via Plains intermediaries (Chaco macaw + turquoise trade reaches into Mesoamerica + the Mississippian east) but the two cultures are largely independent."
   - target: "stonehenge-sacred-site"
     type: "parallel-form"
     source: "Sofaer et al. 1979; Aveni 2008"
+    source-tier: T1
     notes: "Architectural-astronomical instrument marking solstice + equinox events. Chaco's Sun Dagger spiral on Fajada Butte (~1000 CE), the Casa Rinconada great kiva's astronomical alignments, and Pueblo Bonito's solstice-window features are an integrated landscape-scale solar observatory. Stonehenge: similar solstice-aligned monument 4000 years earlier. Independent emergence."
   - target: "machu-picchu"
     type: "parallel-form"
     source: "Aveni 2008"
+    source-tier: T1
     notes: "Astronomically-aligned ceremonial complex at the centre of a sacred landscape, with cosmographic positioning relative to surrounding mountains + celestial events."
   - target: "gobekli-tepe"
     type: "parallel-form"
     source: "(general)"
+    source-tier: T1
     notes: "Pre-state or proto-state ceremonial center with monumental construction predating any clearly hierarchical political development. Chaco's social organisation has been debated (state? complex chiefdom? confederation?). Both: religion-as-organizing-principle for major architectural construction."
   - target: "templo-mayor-tenochtitlan"
     type: "parallel-form"
     source: "(general)"
+    source-tier: T1
     notes: "Both are central ceremonial complexes of their respective civilizations encoding state cosmography in architecture."
   - target: "fajada-butte-sun-dagger"
     type: "system-component"
     source: "Sofaer et al. 1979"
+    source-tier: T1
     notes: "The Sun Dagger spiral atop Fajada Butte (visible from Chaco Canyon floor) is part of the integrated Chaco astronomical-observation system. The Dagger marks all four solar extremes (summer solstice, winter solstice, both equinoxes) on a carved-rock spiral — one of the most-precise pre-Columbian astronomical instruments known."
   - target: "casa-rinconada-chaco-canyon"
     type: "neighbouring-monument"
     source: "Lekson 2015"
+    source-tier: T1
     notes: "The largest **great kiva** in Chaco Canyon, ~19m diameter, with cardinal alignment + solstice window. Across the canyon from Pueblo Bonito; together they form the principal Chaco ceremonial precinct."
 status: "metadata"
 refs:

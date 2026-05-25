@@ -16,9 +16,11 @@ syncretic-edges:
   - target: "the-monad-gnostic"
     type: "scholarly-parallel"
     source: "Stoyanov 2000 — structural parallel between Cathar Good God and Sethian transcendent Monad / Father, both separated from a material-creating demiurge"
+    source-tier: T1
   - target: "father-of-greatness"
     type: "scholarly-parallel"
     source: "Manichaean Father of Greatness as parallel supreme good principle in two-principles cosmology"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Heresies of the High Middle Ages"

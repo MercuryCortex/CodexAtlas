@@ -20,9 +20,11 @@ syncretic-edges:
   - target: "vulcan-roman"
     type: "syncretic-identification"
     source: "interpretatio graeca"
+    source-tier: T1
   - target: "ptah-egyptian"
     type: "ancient-identification"
     source: "Herodotus 2.3, 2.99 — identifies Egyptian Ptah with Greek Hephaestus."
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Greek Religion"

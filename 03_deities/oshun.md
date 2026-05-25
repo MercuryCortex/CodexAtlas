@@ -19,29 +19,37 @@ syncretic-edges:
   - target: "Our Lady of Charity of El Cobre (Virgen de la Caridad del Cobre — Cuba's patron Virgin)"
     type: "folk-syncretism"
     source: "Brandon 1993; Murphy 1988"
+    source-tier: T1
   - target: "aphrodite-greek"
     type: "scholarly-parallel"
     source: "Murphy & Sanford (eds.), *Osun Across the Waters* (2001); Eliade 1958 — Oshun as Yoruba goddess of love, beauty, and the river; Aphrodite as Greek goddess of love and beauty (born of the sea). Both are the divine-feminine-love-and-fertility pole of their pantheons"
+    source-tier: T1
     notes: "Love-beauty-water-feminine archetype"
   - target: "venus-roman"
     type: "scholarly-parallel"
     source: "Murphy & Sanford 2001 — Roman Venus / Greek Aphrodite parallel"
+    source-tier: T1
   - target: "lakshmi"
     type: "scholarly-parallel"
     source: "Eliade 1958 — Vedic Lakshmi as goddess of beauty, prosperity, and water (born of the cosmic ocean churning); Oshun as Yoruba river-and-beauty goddess"
+    source-tier: T1
   - target: "freyja"
     type: "scholarly-parallel"
     source: "Eliade 1958 — Norse Freyja as love-fertility goddess"
+    source-tier: T1
   - target: "hathor"
     type: "scholarly-parallel"
     source: "Wilkinson 2003 — Egyptian Hathor as love-beauty-music-fertility goddess"
+    source-tier: T1
   - target: "xochiquetzal"
     type: "scholarly-parallel"
     source: "Carrasco 1999 — Aztec Xochiquetzal as flower-love-beauty goddess"
+    source-tier: T1
     notes: "MASSIVE WIN: 6-tradition love-beauty-fertility goddess convergence (Greek Aphrodite, Roman Venus, Vedic Lakshmi, Norse Freyja, Egyptian Hathor, Aztec Xochiquetzal, Yoruba Oshun)"
   - target: "afro-diasporic-syncretism"
     type: "source-deity-of-diaspora-fusion"
     source: "Murphy 1988; Brandon 1993; Murphy & Sanford 2001 — Oshun/Ochún's canonical Cuban-Lucumí pairing with Our Lady of Charity (*Virgen de la Caridad del Cobre*), Cuba's national patroness whose 1612 sea-rescue legend (three fishermen saved in Bay of Nipe) was assimilated into the Oshun-Yemayá water-protection schema. The yellow iconography, the river/sea connection, and the universality of protection define one of the politically most-freighted syncretisms in modern religion: Cuba's national Marian patroness IS its primary Santería orisha. See [[afro-diasporic-syncretism]]"
+    source-tier: T1
     notes: "MASSIVE-WIN: the Cuban-Marian convergence as 'genuine theological synthesis' rather than mere camouflage — Desmangles 1992's mid-channel mechanism, where Cubans across four centuries came to see the orisha-saint as truly correspondent"
 status: "metadata"
 refs:

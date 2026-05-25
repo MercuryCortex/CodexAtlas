@@ -17,16 +17,20 @@ syncretic-edges:
   - target: "[[vairocana]]"
     type: "ancient-identification"
     source: "Southern position of the Five Dhyani Buddha mandala"
+    source-tier: T1
   - target: "kubera"
     type: "scholarly-parallel"
     source: "Snellgrove, *Indo-Tibetan Buddhism* (1987) — Kubera as Vedic god of wealth and jewels; Ratnasambhava as 'Jewel-Born' Buddha bestowing the wish-fulfilling gem. Both encode the wealth-jewel-bestowing deity function; Ratnasambhava is in part a Buddhist absorption of the Vedic Kubera"
+    source-tier: T1
     notes: "MASSIVE WIN: Vedic-Buddhist wealth-jewel-deity transmission"
   - target: "lakshmi"
     type: "scholarly-parallel"
     source: "Snellgrove 1987 — Lakshmi as Vedic goddess of prosperity and the lotus; the prosperity-bestowing female-principle parallels Ratnasambhava's jewel-bestowing function"
+    source-tier: T1
   - target: "surya"
     type: "scholarly-parallel"
     source: "Snellgrove 1987 — Surya as Vedic sun god of the southern direction in some directional schemes; the gold-yellow color of Ratnasambhava reflects the solar-southern association"
+    source-tier: T1
     notes: "Solar-southern directional parallel"
 status: "metadata"
 refs:

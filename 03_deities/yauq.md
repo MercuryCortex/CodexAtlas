@@ -20,6 +20,7 @@ syncretic-edges:
   - target: "[[suwa]]"
     type: "shared-tradition"
     source: "Quran 71:23 — the five antediluvian Arabian deities named together"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Book of Idols (Kitāb al-Aṣnām)"

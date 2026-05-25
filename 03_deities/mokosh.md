@@ -19,15 +19,19 @@ syncretic-edges:
   - target: "Saint Paraskeva-Friday (*Paraskeva-Pyatnitsa*; East Slavic *dvoeverie*)"
     type: "folk-syncretism"
     source: "Paraskeva of Iconium (3rd-c. martyr, feast 28 October) became *Paraskeva-Pyatnitsa* ('Paraskeva-Friday') in Russian folk-Christianity; she inherits Mokosh's Friday-taboo, spinning-weaving prohibitions, and well/spring cult. The phonetic + functional alignment is the standard *dvoeverie* example for goddess-syncretism. Fedotov 1948; Hubbs 1988"
+    source-tier: T1
   - target: "Earth-mother (*mat'-syra-zemlya*, 'moist mother earth') in East Slavic folk religion"
     type: "folk-syncretism"
     source: "Mokosh's domain bleeds into the broader pan-Slavic earth-mother veneration; the *mat'-syra-zemlya* oath-formula (swearing on a clod of earth) persists into 19th-c. Russian peasant practice and is closely linked to Mokosh's domain. Ivanitskaya 1890; Fedotov 1948"
+    source-tier: T1
   - target: "Demeter / Cybele / Magna Mater (Mediterranean earth-mother cluster)"
     type: "scholarly-parallel"
     source: "Ivanov-Toporov / Gimbutas 1989 *The Language of the Goddess* — typological parallel only; no genetic transmission claim. Gimbutas read Mokosh as a survival of an Old European 'Great Goddess' substrate predating Indo-European arrival; this is a controversial position (see Disputes)"
+    source-tier: T1
   - target: "Vedic Bhūmi / Pṛthivī (Vedic earth-goddess); Roman Tellus"
     type: "scholarly-parallel"
     source: "Pan-IE earth-goddess typology; West 2007 §5 (Earth)"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "*Issledovaniya v oblasti slavyanskikh drevnostey*"

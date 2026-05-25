@@ -24,22 +24,27 @@ cross-tradition-edges:
   - target: "temple-of-jupiter-baalbek"
     type: "imperial-projection-of"
     source: "Stamper 2005; Ball 2000"
+    source-tier: T1
     notes: "The Capitoline temple is the **architectural-theological original** of which [[temple-of-jupiter-baalbek|Baalbek]] is the **eastern provincial monumental projection**. The Capitoline temple is the home-state temple of Jupiter Optimus Maximus; Baalbek is the imperial-provincial syncretic monumental temple that identifies the local Phoenician Baal with Roman Jupiter and rebuilds the local cult at a scale that *exceeds* the Roman home temple. **The two together document Roman imperial religious architecture in its centre-and-provincial forms.**"
   - target: "pantheon-rome"
     type: "imperial-roman-architectural-successor"
     source: "Stamper 2005; MacDonald 1976"
+    source-tier: T1
     notes: "The Capitoline Temple (Republican, dedicated 509 BCE) and the Pantheon (Hadrianic, ~125 CE) are the two principal sacred monuments of Roman state religion in the city of Rome — the Republican-Etruscan-podium-temple tradition (Capitoline) and the imperial concrete-rotunda tradition (Pantheon), 600 years apart."
   - target: "parthenon-athens"
     type: "western-mediterranean-architectural-cognate"
     source: "Stamper 2005"
+    source-tier: T1
     notes: "Roughly contemporary Mediterranean state-temples — Parthenon dedicated 432 BCE Athens; Capitoline Temple dedicated 509 BCE Rome. Both are the principal state-temples of their respective city-state polities at their republican democratic / aristocratic-republican foundation."
   - target: "ziggurat-of-ur"
     type: "parallel-state-foundational-temple"
     source: "Stamper 2005"
+    source-tier: T1
     notes: "Cross-tradition parallel: both temples are the architectural founding-act of a state-religious-political programme — Ur-Nammu's ziggurat as the architectural enactment of the Third Dynasty of Ur; the Capitoline temple as the architectural enactment of the Roman Republic."
   - target: "theme-divine-kingship-and-temple-as-royal-pact"
     type: "anchor-site-roman"
     source: "Beard, North & Price 1998; Stamper 2005"
+    source-tier: T1
     notes: "The Capitoline Temple is the **architectural anchor of the Roman state-religion-and-political-order pact** — every triumphal procession ended at the Temple of Jupiter Optimus Maximus; every Roman consul began his year of office with a sacrifice there; the Senate met in adjacent temples. The temple is the architectural-religious centre of the Roman political-religious order."
 status: "metadata"
 refs:

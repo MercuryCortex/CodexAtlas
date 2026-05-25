@@ -20,24 +20,31 @@ syncretic-edges:
   - target: "[[coyote-navajo]]"
     type: "structural-parallel"
     source: "Both are pan-tradition Native American trickster-creators; both introduce conditions of existence through amoral disruptive action. Radin (1956) and Hyde (1998) both treat Raven alongside Coyote as the paradigmatic North American tricksters."
+    source-tier: T1
   - target: "[[anansi]]"
     type: "structural-parallel"
     source: "Spider and Raven are the two most globally prominent trickster figures associated with creative theft — Anansi steals/owns all stories; Raven steals light. Both are shapeshifters; both obtain something essential for humanity through deception. No transmission."
+    source-tier: T1
   - target: "[[loki]]"
     type: "structural-parallel"
     source: "Lévi-Strauss (Mythologiques, 1964-71) identifies Raven as a key binary operator in Northwest Coast myth; structurally parallels Loki as necessary disruptor-transformer whose actions reshape cosmological conditions. Both use metamorphosis as primary tool."
+    source-tier: T1
   - target: "[[prometheus]]"
     type: "structural-parallel"
     source: "Raven steals light (the sun, moon, stars) from a box and releases it into the world — structural cognate to Prometheus stealing fire from the gods and giving it to humanity. Both: a transgressor enters the domain of a jealous possessor and steals a luminous/energetic substance, releasing it for the benefit of all. No transmission; the motif may be a genuine cross-cultural archetype. Frazer, *Myths of the Origin of Fire* (1930) surveys parallel theft-of-fire myths globally."
+    source-tier: T1
   - target: "[[agni]]"
     type: "structural-parallel"
     source: "Agni as Vedic fire-bringer (both hidden and revealed) parallels the Raven light-release motif. The theme of luminous creative power concealed and then disclosed through a transgressive act is shared."
+    source-tier: T1
   - target: "[[eshu]]"
     type: "structural-parallel"
     source: "Both are crossroads figures whose unpredictable intervention mediates between cosmic domains. Both are amoral rather than evil; both are necessary."
+    source-tier: T1
   - target: "[[maui-polynesian]]"
     type: "structural-parallel"
     source: "Maui steals fire from Mahuika and snares the sun — both parallel Raven's theft of the boxes of light. Maui and Raven are each the most prominent trickster-culture-heroes of their regional traditions."
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Mythologiques (4 vols.)"

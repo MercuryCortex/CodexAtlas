@@ -17,17 +17,21 @@ syncretic-edges:
   - target: "the-monad-gnostic"
     type: "scholarly-parallel"
     source: "Turner 2001"
+    source-tier: T1
   - target: "soul-exile-longing"
     type: "primary-instance-of-cross-tradition-pattern"
     source: "Plotinus *Enneads* I.6 (On Beauty) + IV.8 (On the Soul's Descent into Body); Jonas 1963; Schimmel 1975 — the One is the source FROM which the soul descends (*katábasis*) and TO which it returns (*epistrophē*) in the Plotinian version of the cross-tradition exile-longing pattern. The soul's *anamnesis* (remembrance) when it encounters Beauty is the homeward movement of an exile recognizing its true source. See [[soul-exile-longing]]"
+    source-tier: T1
     notes: "Cross-lens: 03_deities → 06_themes. Hub also lists [[plotinus]] (04_persons) and [[tradition-neoplatonism]] (07_traditions) — back-edges from those lenses still pending. MASSIVE-WIN: the One is the *destination* pole of the cross-tradition exile-longing structure (along with Pleroma in Gnosticism, God in Sufism, Brahman in Advaita, the reed bed in Rumi)"
   - target: "third-century-collision-zone"
     type: "concept-deity-of-late-antique-synthesis-window"
     source: "Porphyry *Life of Plotinus* §16 (Plotinus engages Gnostics in his Roman school); Plotinus *Enneads* II.9 'Against the Gnostics' (~250 CE); BeDuhn 'The Co-formation of the Manichaean and Zoroastrian Religions' — the One is the Plotinian-Neoplatonist contribution to the 3rd-century collision zone (~200–280 CE) where Plotinus + Mani + Origen + Augustine + Ammonius-Saccas + Porphyry all operate in overlapping Alexandrian-Roman-Babylonian intellectual networks. See [[third-century-collision-zone]]"
+    source-tier: T1
     notes: "Cross-lens: 03_deities → 06_themes. Hub heavily cross-lens to 04_persons (the 6 named individuals working the same intellectual problem in the same 80-year window); the deity-end is the *concept-deities* (One + Father-of-Greatness + Jesus-Christ) that each of those persons articulated"
   - target: "neoplatonic-henosis"
     type: "destination-of-mystical-union"
     source: "Plotinus *Enneads* VI.9 'On the Good, or the One'; Porphyry *Life of Plotinus* §23 (Plotinus achieved union with the One four times in his life); Sells 1994 *Mystical Languages of Unsaying*; McGinn 1991 — the One is the destination-pole of *henosis* (mystical union), the Plotinian term that becomes the structural template for Sufi *fanā'* + Kabbalistic *devekut* + Hindu *samādhi* + Christian *theosis*. The Enneads VI.9 is the founding text of Western mystical-union theology. See [[neoplatonic-henosis]]"
+    source-tier: T1
     notes: "MASSIVE-WIN: *henosis* (Plotinian) → *theosis* (Eastern Orthodox) → *fanā'* (Sufi) → *devekut* (Kabbalistic) → *samādhi* (Hindu) is the canonical cross-tradition mystical-union convergence; the One is the upstream destination-pole. Cross-lens: 03_deities → 06_themes"
 status: "metadata"
 refs:

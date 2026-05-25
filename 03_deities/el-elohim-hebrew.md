@@ -20,10 +20,12 @@ syncretic-edges:
   - target: "el-canaanite"
     type: "syncretic-identification"
     source: "Smith 2002, The Early History of God; Cross 1973"
+    source-tier: T1
     notes: "The Israelite El is substantially the same figure as the Canaanite El: high god of the divine council, called 'father of years', often paired with Asherah. The continuity is one of the firmest reconstructions in Hebrew Bible scholarship."
   - target: "yahweh"
     type: "syncretic-identification"
     source: "Smith 2002; Day 2000"
+    source-tier: T1
     notes: "YHWH is identified with El at some early stage in Israelite religion. The Tetragrammaton's *use* with the *patriarchal El-names* marks the textual editing of this identification."
 status: "metadata"
 refs:

@@ -16,6 +16,7 @@ syncretic-edges:
   - target: "kali"
     type: "ancient-identification"
     source: "Devi Mahatmya itself: Durgā produces Kālī from her forehead in episode 3, suggesting same-goddess-different-manifestations"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Hindu Goddesses: Visions of the Divine Feminine in the Hindu Religious Tradition"

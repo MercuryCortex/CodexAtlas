@@ -20,9 +20,11 @@ syncretic-edges:
   - target: "ishara"
     type: "scholarly-parallel"
     source: "Mesopotamian Ishara is the chief scorpion-goddess of the Akkadian / Hurrian / Hittite zone; the structural parallel with Selket is independent semantic isomorphism (scorpion as feminine-divine emblem of venom-control and oath-binding), not documented transmission. Wilkinson 2003 + Black & Green 1992 catalogue both without claiming derivation."
+    source-tier: T1
   - target: "isis-egyptian"
     type: "paired-twin"
     source: "Selket is one of the four canopic-shrine sisters (Isis south; Nephthys north; Neith east; Selket west — the orientation varies by tomb); the four operate as an iconographic-ritual quartet rather than as separate cults. Wilkinson 2003."
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Complete Gods and Goddesses of Ancient Egypt"

@@ -20,12 +20,15 @@ syncretic-edges:
   - target: "anansi"
     type: "scholarly-parallel"
     source: "Both are trickster figures whose cunning overcomes brute power; both inhabit liminal space between human, animal, and divine. Comparative-mythology alignment (no historical contact)."
+    source-tier: T1
   - target: "loki"
     type: "scholarly-parallel"
     source: "Heaven-challenging shapeshifting trickster who disrupts divine order and is ultimately constrained. Structural parallel noted in comparative mythology; no historical contact."
+    source-tier: T1
   - target: "narada"
     type: "scholarly-parallel"
     source: "Divine mischief-maker who moves freely between cosmic realms. Both carry a cosmic instrument (Narada's vīṇā / Sun Wukong's staff) and instigate transformative events through irreverence."
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Journey to the West"

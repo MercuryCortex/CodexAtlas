@@ -20,6 +20,7 @@ syncretic-edges:
   - target: "nike-greek"
     type: "ancient-identification"
     source: "Standard interpretatio Graeca; Victoria is the Latin translation of Nike from late Republic onward"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Religions of Rome"

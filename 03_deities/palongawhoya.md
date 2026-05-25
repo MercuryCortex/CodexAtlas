@@ -18,6 +18,7 @@ syncretic-edges:
   - target: "[[creation-by-word]]"
     type: "parallel-motif"
     source: "Palöngawhoya's cosmic function — keeping the world alive through vibration and sound — is structurally closest to the Vedic concept of nada brahman (cosmic sound as the sustaining creative force). Both posit that the world requires ongoing sonic/vibrational maintenance, not just an initial creative act."
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Fourth World of the Hopis"

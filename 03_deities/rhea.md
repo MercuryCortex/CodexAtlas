@@ -20,9 +20,11 @@ syncretic-edges:
   - target: "[[cybele]]"
     type: "ancient-identification"
     source: "From at least Pindar (Dithyramb 2) the Greek Rhea is identified with Phrygian Cybele/Magna Mater; the assimilation crystallizes in Hellenistic and Roman religion (Roller 1999 *In Search of God the Mother*)"
+    source-tier: T1
   - target: "[[gaia]]"
     type: "scholarly-parallel"
     source: "Earth-mother typology; in some recensions Rhea = a generation closer to humans, Gaia the deeper primordial"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "In Search of God the Mother: The Cult of Anatolian Cybele"

@@ -20,6 +20,7 @@ syncretic-edges:
   - target: "ares"
     type: "ancient-identification"
     source: "Roman *interpretatio Graeca*; standard from Ennius onward — but with significant differences in cultic seriousness (Mars is dignified; Ares is comparatively disreputable)"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Religions of Rome"

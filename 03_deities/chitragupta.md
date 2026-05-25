@@ -20,18 +20,22 @@ syncretic-edges:
   - target: "thoth"
     type: "structural-parallel"
     source: "Hornung, Erik (1999). The Ancient Egyptian Books of the Afterlife. Cornell UP.; Bowker, John (2000). The Concise Oxford Dictionary of World Religions."
+    source-tier: T1
     notes: "**MASSIVE-WIN cross-tradition edge.** Both are divine scribes who record deeds and present the written account at the judgment of the dead. Thoth: records the result of the weighing of the heart against Maat's feather in the Hall of Two Truths; Chitragupta: reads aloud from the *Agrasandhāni* (the book of all deeds) before Yama delivers judgment. Same divine function — the accountant-scribe at the judgment of the soul — independently developed in Egyptian and Hindu traditions. The parallel extends to their both being associated with writing, learning, and recording-as-divine-act."
   - target: "orunmila"
     type: "structural-parallel"
     source: "Abimbola, Wande (1976). Ifa: An Exposition of Ifa Literary Corpus. Oxford UP."
+    source-tier: T1
     notes: "Orunmila in Yoruba/Ifá theology is *Eleri-Ipin* ('Witness of Creation' / 'Witness of Destiny') — he was present at the creation of each soul and witnessed the destiny each chose before incarnating. Chitragupta records every deed from birth to death. Both function as divine witnesses who hold the complete record of each soul: Orunmila holds the original destiny-template; Chitragupta holds the lifetime's accounting. Together they frame the soul's entire arc — beginning and end recorded by divine witnesses."
   - target: "yama-vedic"
     type: "assistant-of"
     source: "Garuda Purana 2.1–4"
+    source-tier: T1
     notes: "Chitragupta serves in [[yama-vedic]]'s court as the accountant-scribe. He does not judge — Yama judges. Chitragupta presents the evidence. The division of functions (scribe/judge) mirrors the divine court structure in Egyptian theology (Thoth as scribe / Osiris as judge). Both pairs share the same functional architecture."
   - target: "brahma"
     type: "child-of"
     source: "Garuda Purana 2.1"
+    source-tier: T1
     notes: "Brahma meditated for 11,000 years and Chitragupta emerged from his body (*chitra* = picture/secret; *gupta* = hidden) — a deity born as the externalization of Brahma's internalized knowledge and record-keeping. His origin from Brahma's body parallels other Puranic deities born from Brahma's mental or physical substance."
   - target: "[[zao-jun]]"
     type: "structural-parallel"

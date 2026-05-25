@@ -20,38 +20,47 @@ syncretic-edges:
   - target: "[[jupiter]]"
     type: "interpretatio-nominal"
     source: "Lindow 2001; weekday-calque Thursday/Þórsdagr = Jovis dies"
+    source-tier: T1
     notes: "interpretatio-romana / interpretatio-germanica (Germanic↔Roman name-mapping). Roman interpretatio germanica identifies the Germanic thunderer with Jupiter. The Thursday-calque is the load-bearing evidence."
   - target: "[[zeus]]"
     type: "interpretatio-nominal"
     source: "Via Jupiter — Zeus-Jupiter pair is classical"
+    source-tier: T1
     notes: "interpretatio-graeca (transitive Germanic→Greek name-mapping). Through the Greek-Latin Zeus-Jupiter identity, the interpretatio reaches Zeus transitively"
   - target: "[[indra]]"
     type: "cognate"
     source: "West 2007 ch. 6; Mallory & Adams 2006 (Proto-Indo-European *Perkʷūnos thunderer)"
+    source-tier: T1
     notes: "Proto-Indo-European thunder-god *Perkʷūnos cluster — same divine type across IE branches"
   - target: "[[perun]]"
     type: "cognate"
     source: "West 2007 ch. 6"
+    source-tier: T1
     notes: "PIE *Perkʷūnos — Slavic Perun is the closest etymological cognate to the *Perkʷūnos root"
   - target: "[[taranis]]"
     type: "cognate"
     source: "West 2007 ch. 6 — Celtic thunderer parallel"
+    source-tier: T1
     notes: "PIE thunder-god cluster — Celtic instance"
   - target: "[[susanoo]]"
     type: "parallel-motif"
     source: "Raijin.md notes Susanoo-Indra-Thor-Perun-Shango cluster"
+    source-tier: T1
     notes: "Non-PIE storm-god parallel from Shinto tradition — same divine type, independent transmission"
   - target: "[[raijin]]"
     type: "parallel-motif"
     source: "Shinto thunder-deity"
+    source-tier: T1
     notes: "Best-wired thunder-god in the corpus; reciprocal back-link"
   - target: "[[baal-hadad]]"
     type: "parallel-motif"
     source: "Smith 1994 *The Ugaritic Baal Cycle*"
+    source-tier: T1
     notes: "Semitic non-PIE storm-warrior parallel"
   - target: "[[marduk]]"
     type: "parallel-motif"
     source: "Lambert 2013 *Babylonian Creation Myths*"
+    source-tier: T1
     notes: "Mesopotamian storm-warrior + chaoskampf parallel"
 status: "metadata"
 refs:
