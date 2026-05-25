@@ -5045,9 +5045,58 @@
     //  shared MutationObserver on the hidden status spans.
     // ════════════════════════════════════════════════════════════
     function wireDebugStats() {
-      if (window._forgeDebugStats && typeof window._forgeDebugStats.attach === "function") {
-        window._forgeDebugStats.attach({ local });
+      const btn   = document.getElementById('forge-debug-btn');
+      const panel = document.getElementById('forge-debug-panel');
+      if (!btn || !panel) return;
+      const FIELDS = [
+        { id: 'forge-status-device', label: 'device' },
+        { id: 'forge-status-nodes',  label: 'nodes'  },
+        { id: 'forge-status-edges',  label: 'edges'  },
+        { id: 'forge-status-hover',  label: 'hover'  },
+        { id: 'forge-status-lock',   label: 'lock'   },
+        { id: 'forge-status-frame',  label: 'frame'  },
+      ];
+      // One row per field. We CLONE the live span into the panel
+      // each refresh so the displayed text always tracks the source.
+      function renderRows() {
+        panel.innerHTML = FIELDS.map(f => {
+          const src = document.getElementById(f.id);
+          const v = src ? src.textContent : '—';
+          return '<div class="forge-debug-row">' +
+            '<span class="forge-debug-k">' + f.label + '</span>' +
+            '<span class="forge-debug-v">' + v + '</span>' +
+          '</div>';
+        }).join('');
       }
+      function open() {
+        renderRows();
+        panel.classList.add('is-open');
+        panel.setAttribute('aria-hidden', 'false');
+        btn.setAttribute('aria-expanded', 'true');
+        // While open, refresh on every frame's status update.
+        local._debugStatsTimer = setInterval(renderRows, 250);
+      }
+      function close() {
+        panel.classList.remove('is-open');
+        panel.setAttribute('aria-hidden', 'true');
+        btn.setAttribute('aria-expanded', 'false');
+        if (local._debugStatsTimer) {
+          clearInterval(local._debugStatsTimer);
+          local._debugStatsTimer = 0;
+        }
+      }
+      btn.addEventListener('click', (ev) => {
+        ev.stopPropagation();
+        if (panel.classList.contains('is-open')) close(); else open();
+      });
+      document.addEventListener('click', (ev) => {
+        if (!panel.classList.contains('is-open')) return;
+        if (panel.contains(ev.target) || btn.contains(ev.target)) return;
+        close();
+      });
+      document.addEventListener('keydown', (ev) => {
+        if (ev.key === 'Escape' && panel.classList.contains('is-open')) close();
+      });
     }
 
     // ════════════════════════════════════════════════════════════
@@ -5104,9 +5153,118 @@
     //  surfaces under window._forge / window._timeline / etc.
     // ════════════════════════════════════════════════════════════
     function installPublicApi() {
-      if (window._forgePublicApi && typeof window._forgePublicApi.attach === "function") {
-        window._forgePublicApi.attach({ camera, local, rebuildForMode, saveRuntimeState });
-      }
+      window._forge = window._forge || {};
+      window._forge.setClassFilter = function (modeId) {
+        if (local.destroyed) return false;
+        if (!modemod.isValidMode || !modemod.isValidMode(modeId)) return false;
+        if (modeId === (local.mode && local.mode.id)) return true;
+        try {
+          rebuildForMode(modeId);
+          syncModeButtonLabel(modeId);
+          saveRuntimeState();
+          return true;
+        } catch (e) {
+          console.warn('[forge] setClassFilter failed', e);
+          return false;
+        }
+      };
+      window._forge.getClassFilter = function () {
+        return (local.mode && local.mode.id) || (modemod.defaultMode && modemod.defaultMode()) || 'deities';
+      };
+      window._forge.supportedClasses = function () {
+        return (modemod.MODES || []).slice();
+      };
+      // Phase TL-2 Step 1 (2026-05-24) — layout selector. The
+      // engine supports two layouts today: 'wheel' (radialWedgeLayout
+      // — the default; what's shipped since Phase 20D) and 'timeline'
+      // (timelineLayout — TL-1 module). Picking a layout triggers a
+      // rebuildForMode at the current modeId, with locks preserved.
+      // The Forge view stays the same view; only the geometry of
+      // node placement changes. Future master views (Map, Star Map)
+      // will register their own setLayout in their own _<view>.* API.
+      window._forge.setLayout = function (layoutId) {
+        if (local.destroyed) return false;
+        const valid = (layoutId === 'wheel' || layoutId === 'timeline');
+        if (!valid) {
+          console.warn('[forge] unknown layoutId:', layoutId);
+          return false;
+        }
+        if (layoutId === local.layoutId) return true;
+        try {
+          local.layoutId = layoutId;
+          rebuildForMode(local.mode.id, { preserveLocks: true });
+          // Emit so app-pill can update the LEFT pill label to
+          // reflect the new master view (timeline vs wheel).
+          document.dispatchEvent(new CustomEvent('codex:layout-changed', {
+            detail: { layoutId }
+          }));
+          return true;
+        } catch (e) {
+          console.warn('[forge] setLayout failed', e);
+          return false;
+        }
+      };
+      window._forge.getLayout = function () {
+        return local.layoutId || 'wheel';
+      };
+      // Phase TL-2 Step 6b (2026-05-24) — force a layout rebuild
+      // at the CURRENT layoutId. Needed when a downstream module
+      // (e.g. the timeline scale-preset picker) mutates state that
+      // is only read at layout time. Same internal call setLayout
+      // makes, but without the same-id early return.
+      window._forge.relayout = function () {
+        if (local.destroyed) return false;
+        try {
+          // Phase TL-2 Step 7b-fix3 (2026-05-24) — pass preserveZoom
+          // so the band-density slider + scale-preset switch don't
+          // reset the camera to the 20% default on every tick.
+          rebuildForMode(local.mode.id, { preserveLocks: true, preserveZoom: true });
+          return true;
+        } catch (e) {
+          console.warn('[forge] relayout failed', e);
+          return false;
+        }
+      };
+      // Phase 22-AD (2026-05-24) — FOCUS-RANGE API.
+      // Zooms + pans the camera so that `yearLo` lands at the LEFT
+      // edge of the viewport and `yearHi` lands at the RIGHT edge.
+      // Used by the FOCUS button in the timeline bottombar. Works
+      // for any active scale preset because it routes through the
+      // preset's timelineYearToWorldX → world coords are correct
+      // regardless of LIN / LOG / CMP.
+      window._forge.focusTimelineRange = function (yearLo, yearHi) {
+        if (local.destroyed) return false;
+        if (local.layoutId !== 'timeline') return false;
+        if (!isFinite(yearLo) || !isFinite(yearHi)) return false;
+        if (yearLo >= yearHi) return false;
+        const ENG = window.AtlasEngineLayout;
+        if (!ENG || !ENG.timelineYearToWorldX) return false;
+        const vp = local.lastSize;
+        if (!vp || !vp.w) return false;
+        const xRange = local.mode && local.mode.xRange;
+        if (!xRange) return false;
+        try {
+          const wxLo = ENG.timelineYearToWorldX(yearLo, xRange);
+          const wxHi = ENG.timelineYearToWorldX(yearHi, xRange);
+          const worldSpan = Math.max(1e-6, wxHi - wxLo);
+          // Leave a small horizontal margin so the endpoints don't
+          // jam against the viewport edges (8% inset on each side).
+          const usableW = vp.w * 0.92;
+          const newScale = usableW / worldSpan;
+          const midWorldX = (wxLo + wxHi) / 2;
+          // Y stays at origin — timeline world is origin-centered.
+          // camera.set() emits onChange internally so subscribers
+          // (chrome, BG sync, etc.) re-fire automatically.
+          camera.set({ centerX: midWorldX, centerY: 0, scale: newScale });
+          // Refresh pan bounds + scale-bounds since the new scale
+          // may sit above/below the fit-relative dead-lock zone.
+          if (typeof applyZoomFloor === 'function') applyZoomFloor();
+          return true;
+        } catch (e) {
+          console.warn('[forge] focusTimelineRange failed', e);
+          return false;
+        }
+      };
     }
 
     // ════════════════════════════════════════════════════════════
@@ -5163,9 +5321,318 @@
     };
 
     function wireViewSettings() {
-      if (window._forgeViewSettings && typeof window._forgeViewSettings.attach === "function") {
-        window._forgeViewSettings.attach({ drawFrame, local, rebuildForMode, recomputeFocus, renderer });
+      const btn   = document.getElementById('forge-viewset-btn');
+      const panel = document.getElementById('forge-viewset-panel');
+      if (!btn || !panel) return;
+      // Phase 21AY (2026-05-23) — schema v7 (kept; legend reads tier
+      // keys directly from same LS key). VIEW panel owns: layer
+      // toggles, color theme, family order, node distribution.
+      // LEGEND panel owns: tier filters + political-risk-flag toggle.
+      const LS_KEY = 'forge.viewSettings.v7';
+      const state = (() => {
+        try {
+          const raw = localStorage.getItem(LS_KEY);
+          if (raw) return JSON.parse(raw);
+        } catch (_) {}
+        return {
+          hulls: true, familyTitles: true,
+          dividers: true, dividersConverging: false,
+          guideRings: false,
+          wires: true, sfx: true, map: false,
+          reverseAge: false,
+          // Phase 22-I (2026-05-24) — timeline layer toggles.
+          tlBands: true, tlBandLabels: true,
+          // Phase 22-M (2026-05-24) — dense-ticks toggle.
+          tlDenseTicks: false,
+        };
+      })();
+      // Defensive defaults — additive.
+      if (typeof state.familyTitles       !== 'boolean') state.familyTitles       = true;
+      if (typeof state.dividers           !== 'boolean') state.dividers           = true;
+      if (typeof state.dividersConverging !== 'boolean') state.dividersConverging = false;
+      if (typeof state.guideRings         !== 'boolean') state.guideRings         = false;
+      if (typeof state.sfx                !== 'boolean') state.sfx                = true;
+      if (typeof state.reverseAge         !== 'boolean') state.reverseAge         = false;
+      if (typeof state.tlBands            !== 'boolean') state.tlBands            = true;
+      if (typeof state.tlBandLabels       !== 'boolean') state.tlBandLabels       = true;
+      if (typeof state.tlDenseTicks       !== 'boolean') state.tlDenseTicks       = false;
+      function applyState() {
+        document.body.classList.toggle('fv-hide-hulls',         !state.hulls);
+        document.body.classList.toggle('fv-hide-family-titles', !state.familyTitles);
+        const noDividers = !state.dividers && !state.dividersConverging;
+        document.body.classList.toggle('fv-hide-dividers',      noDividers);
+        document.body.classList.toggle('fv-hide-wires',         !state.wires);
+        document.body.classList.toggle('fv-hide-map',           !state.map);
+        document.body.classList.toggle('fv-hide-guide-rings',   !state.guideRings);
+        // Phase 22-I — timeline-only layer toggles via body classes.
+        // CSS in app.css hides .forge-timeline-bands and
+        // .forge-timeline-band-labels under these classes.
+        document.body.classList.toggle('fv-hide-tl-bands',       !state.tlBands);
+        document.body.classList.toggle('fv-hide-tl-band-labels', !state.tlBandLabels);
+        // Phase 22-M (2026-05-24) — dense-ticks toggle dispatched
+        // to chrome via setBandStyle (it's a boolean key but the
+        // setter coerces via in-key check; we set it directly).
+        if (window.AtlasTimelineChrome
+            && typeof window.AtlasTimelineChrome.setBandStyle === 'function') {
+          try {
+            // setBandStyle accepts only numeric values. For the
+            // boolean denseTicks, use getBandStyle/mutate/refresh
+            // via the resetBandStyle pattern — quickest: write
+            // directly through a thin helper exposed below.
+            const tlcs = window.AtlasTimelineChrome.getBandStyle();
+            if (tlcs && tlcs.denseTicks !== state.tlDenseTicks) {
+              window.AtlasTimelineChrome.setBandStyleBoolean &&
+                window.AtlasTimelineChrome.setBandStyleBoolean('denseTicks', !!state.tlDenseTicks);
+            }
+          } catch (_) {}
+        }
+        // Phase 21AS (2026-05-23) — source-tier filter. Update body
+        // classes for CSS hooks AND build the active-tier set the
+        // renderer will read in recomputeFocus. The wire-filter
+        // is the real teeth: any edge whose source_tier is NOT in
+        // the active set gets HIDDEN (state=2.0 → alpha 0). The
+        // body classes are mostly for future legend chrome / side-
+        // panel disclaimer styling.
+        // Phase 21AY (2026-05-23) — tier + political-risk toggles
+        // MOVED to the LEGEND panel (see wireLegend(): syncLegendTierUI).
+        // The VIEW panel no longer touches `local._activeTiers` or
+        // `local._showPoliticalRisk` — those flags are owned by the
+        // legend now. VIEW's applyState only handles layer / theme /
+        // distribution settings. tiersChanged below stays false from
+        // this code path because none of the VIEW toggles affect
+        // tier state.
+        const tiersChanged         = false;
+        // Phase 21AL (2026-05-23) — SFX toggle: when OFF, body
+        // class signals the audio sync loop to force volume 0.
+        document.body.classList.toggle('fv-hide-sfx',           !state.sfx);
+        local._sfxEnabled = !!state.sfx;
+        // Phase 21AM (2026-05-23) — reverseAge toggle: when ON, the
+        // layout inverts the chronological mapping (rim = oldest
+        // instead of center = oldest). The class is read by
+        // rebuildForMode → radialWedgeLayout via the opts.reverseAge
+        // flag. Toggling requires a full re-layout to take effect.
+        const ageDirChanged = document.body.classList.contains('fv-reverse-age') !== !!state.reverseAge;
+        document.body.classList.toggle('fv-reverse-age',         !!state.reverseAge);
+        if (ageDirChanged && typeof rebuildForMode === 'function') {
+          // Phase 22-J — preserveZoom for the reverse-age toggle
+          // (wheel-only but harmless to pass; same rationale as
+          // applyUxMode above — geometry shifts, dataset doesn't).
+          try { rebuildForMode(local.mode.id, { preserveLocks: true, preserveZoom: true }); } catch (_) {}
+        }
+        // Push the divider mode into the layout layer.
+        const newMode = state.dividersConverging ? 'long-centered'
+                      : state.dividers           ? 'short'
+                      : 'off';
+        const modeChanged = (local._dividerMode !== newMode);
+        local._dividerMode = newMode;
+        if (modeChanged) {
+          // Rebuild the gradient stops (they depend on mode) and
+          // re-layout the geometry.
+          if (typeof rebuildHullElements === 'function') {
+            try { rebuildHullElements(); syncHulls(); } catch (_) {}
+          }
+        }
+        // Mark each toggle row's checkbox state for CSS.
+        panel.querySelectorAll('.forge-viewset-row[data-toggle]').forEach(row => {
+          const key = row.dataset.toggle;
+          row.classList.toggle('is-on', !!state[key]);
+        });
+        // Phase 21S (2026-05-22) — radio-style highlight for the
+        // active color theme + family order rows.
+        const ux = local.uxMode || DEFAULT_UX_MODE;
+        panel.querySelectorAll('.forge-viewset-row[data-color]').forEach(row => {
+          row.classList.toggle('is-on', row.dataset.color === ux.colorMode);
+        });
+        panel.querySelectorAll('.forge-viewset-row[data-order]').forEach(row => {
+          row.classList.toggle('is-on', row.dataset.order === ux.orderMode);
+        });
+        panel.querySelectorAll('.forge-viewset-row[data-distribution]').forEach(row => {
+          row.classList.toggle('is-on', row.dataset.distribution === (ux.distributionMode || 'organic'));
+        });
+        // Phase 21AS (2026-05-23) — when the source-tier set changes,
+        // re-run recomputeFocus so edgeTargets pick up the tier-filter
+        // (edges whose source_tier ∉ activeTiers get HIDDEN). Skip if
+        // the renderer isn't mounted yet (first applyState fires before
+        // mount completes).
+        if (tiersChanged && typeof recomputeFocus === 'function' && local.mode && local.mode.edges) {
+          try { recomputeFocus(); } catch (_) {}
+          // Phase 21AX (2026-05-23) — also re-render the side panel
+          // so its filtered connection list stays consistent with the
+          // wheel. Without this, toggling politicalRisk would update
+          // the wires but leave the side panel showing stale rows.
+          if (typeof local._renderSidePanel === 'function') {
+            try { local._renderSidePanel(); } catch (_) {}
+          }
+        }
+        try { localStorage.setItem(LS_KEY, JSON.stringify(state)); } catch (_) {}
       }
+      function open() {
+        panel.classList.add('is-open');
+        panel.setAttribute('aria-hidden', 'false');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+      function close() {
+        panel.classList.remove('is-open');
+        panel.setAttribute('aria-hidden', 'true');
+        btn.setAttribute('aria-expanded', 'false');
+      }
+      btn.addEventListener('click', (ev) => {
+        ev.stopPropagation();
+        if (panel.classList.contains('is-open')) close(); else open();
+      });
+      panel.addEventListener('click', (ev) => {
+        const row = ev.target.closest('.forge-viewset-row');
+        if (!row || row.disabled) return;
+        // Layer toggle (boolean).
+        if (row.dataset.toggle) {
+          const key = row.dataset.toggle;
+          if (!(key in state)) return;
+          state[key] = !state[key];
+          // Phase 21AL (2026-05-23) — force a redraw on layer-toggle
+          // change. The wires toggle in particular reads body.fv-hide-
+          // wires inside drawFrame to zero idle alpha; without a draw
+          // tick triggered here the canvas keeps showing the previous
+          // frame until something else (hover, zoom, …) calls drawFrame.
+          // Safe one-line: drawFrame is in the same closure scope.
+          try { if (typeof drawFrame === 'function') setTimeout(drawFrame, 0); } catch (_) {}
+          // Phase 21AK — separator modes are mutually exclusive
+          // (short ↔ converging). Turning one ON forces the other OFF.
+          if (key === 'dividers' && state.dividers) {
+            state.dividersConverging = false;
+          }
+          if (key === 'dividersConverging' && state.dividersConverging) {
+            state.dividers = false;
+          }
+          applyState();
+          return;
+        }
+        // Phase 21S (2026-05-22) — color-theme radio.
+        if (row.dataset.color) {
+          const v = row.dataset.color;
+          if (!COLOR_THEMES.hasOwnProperty(v)) return;
+          if (local.uxMode.colorMode === v) return;   // no-op if already
+          local.uxMode.colorMode = v;
+          applyState();
+          applyUxMode();
+          return;
+        }
+        // Phase 21S (2026-05-22) — order radio.
+        if (row.dataset.order) {
+          const v = row.dataset.order;
+          if (!ORDER_THEMES.hasOwnProperty(v)) return;
+          if (local.uxMode.orderMode === v) return;
+          local.uxMode.orderMode = v;
+          applyState();
+          applyUxMode();
+          return;
+        }
+        // Phase 21AL (2026-05-23) — node distribution radio.
+        if (row.dataset.distribution) {
+          const v = row.dataset.distribution;
+          if (!DISTRIBUTION_THEMES.hasOwnProperty(v)) return;
+          if ((local.uxMode.distributionMode || 'organic') === v) return;
+          local.uxMode.distributionMode = v;
+          applyState();
+          applyUxMode();
+          return;
+        }
+      });
+      document.addEventListener('click', (ev) => {
+        if (!panel.classList.contains('is-open')) return;
+        if (panel.contains(ev.target) || btn.contains(ev.target)) return;
+        close();
+      });
+      document.addEventListener('keydown', (ev) => {
+        if (ev.key === 'Escape' && panel.classList.contains('is-open')) close();
+      });
+
+      // ─── Phase 21T (2026-05-22) — criterion tooltips ──────────
+      // Dwell ~1 s on a color/order radio → tooltip appears with
+      // the criterion text. Reuses the legend-tooltip element so
+      // we don't grow a second floating-box CSS surface.
+      let tipEl = document.getElementById('forge-legend-tooltip');
+      if (!tipEl) {
+        // Defensive: if wireLegend hasn't created it (load-order),
+        // make our own with the same class.
+        tipEl = document.createElement('div');
+        tipEl.className = 'forge-legend-tooltip';
+        tipEl.id = 'forge-legend-tooltip';
+        tipEl.setAttribute('aria-hidden', 'true');
+        document.body.appendChild(tipEl);
+      }
+      let dwellTimer = 0;
+      let dwellRow   = null;
+      function getCriterion(row) {
+        if (!row) return null;
+        if (row.dataset.color && VIEWSET_CRITERIA.color[row.dataset.color])
+          return VIEWSET_CRITERIA.color[row.dataset.color];
+        if (row.dataset.order && VIEWSET_CRITERIA.order[row.dataset.order])
+          return VIEWSET_CRITERIA.order[row.dataset.order];
+        if (row.dataset.distribution && VIEWSET_CRITERIA.distribution[row.dataset.distribution])
+          return VIEWSET_CRITERIA.distribution[row.dataset.distribution];
+        return null;
+      }
+      function positionTooltip(row) {
+        const rPanel = panel.getBoundingClientRect();
+        const rRow   = row.getBoundingClientRect();
+        const rTip   = tipEl.getBoundingClientRect();
+        const margin = 8;
+        // Default: place to the RIGHT of the panel, top-aligned with
+        // the hovered row. Same mirror-clamp rules as the legend.
+        let left = rPanel.right + margin;
+        if (left + rTip.width + margin > window.innerWidth) {
+          left = rPanel.left - rTip.width - margin;
+        }
+        if (left < margin) left = margin;
+        let top = rRow.top;
+        if (top + rTip.height + margin > window.innerHeight) {
+          top = window.innerHeight - rTip.height - margin;
+        }
+        if (top < margin) top = margin;
+        tipEl.style.left = left + 'px';
+        tipEl.style.top  = top  + 'px';
+      }
+      function showTip(row) {
+        const text = getCriterion(row);
+        if (!text) return;
+        // Phase 21U (2026-05-22) — innerHTML so color-name spans
+        // render with their inline color. The criterion strings are
+        // assembled from controlled constants in VIEWSET_CRITERIA;
+        // no user input, so this is safe.
+        tipEl.innerHTML = text;
+        tipEl.style.display = '';
+        tipEl.setAttribute('aria-hidden', 'false');
+        positionTooltip(row);
+      }
+      function hideTip() {
+        tipEl.setAttribute('aria-hidden', 'true');
+        tipEl.style.display = 'none';
+      }
+      function clearDwell() {
+        if (dwellTimer) { clearTimeout(dwellTimer); dwellTimer = 0; }
+        dwellRow = null;
+      }
+      panel.addEventListener('mousemove', (ev) => {
+        const row = ev.target.closest('.forge-viewset-row');
+        if (!row || (!row.dataset.color && !row.dataset.order && !row.dataset.distribution)) {
+          clearDwell();
+          hideTip();
+          return;
+        }
+        if (row === dwellRow) return;       // already counting this row
+        clearDwell();
+        hideTip();
+        dwellRow = row;
+        dwellTimer = setTimeout(() => {
+          if (dwellRow === row) showTip(row);
+        }, 1000);
+      });
+      panel.addEventListener('mouseleave', () => {
+        clearDwell();
+        hideTip();
+      });
+
+      applyState();
     }
 
     // ════════════════════════════════════════════════════════════
@@ -5183,13 +5650,154 @@
     //  Units (px / deg) are baked into the format() helper.
     // ════════════════════════════════════════════════════════════
     function wireFXPanel() {
-      // Phase 23.1c carve (2026-05-25): body lifted to
-      // src/js/forge/fx-panel.js.
-      if (window._forgeFXPanel && typeof window._forgeFXPanel.attach === "function") {
-        window._forgeFXPanel.attach({ local, recomputeFocus, renderer });
-      } else if (typeof console !== "undefined" && console.warn) {
-        console.warn("[forge] window._forgeFXPanel not loaded — FX panel inert.");
+      const btn   = document.getElementById('forge-fxpanel-btn');
+      const panel = document.getElementById('forge-fxpanel');
+      if (!btn || !panel) return;
+      // Phase 21AC (2026-05-22) — bumped from v1 → v2 when we
+      // swapped the flicker-spike model for the heartbeat. v1
+      // values reference dead keys (bright-flicker, -big) and
+      // outdated defaults; ignore them silently on first load.
+      const LS_KEY = 'forge.fxParams.v4';
+
+      // Format each slider's value for the on-screen readout AND
+      // for the CSS var write. Three flavors:
+      //   - blur-*       → "<n>px"
+      //   - *-hue-peak   → "<n>deg" (CSS) / "<n>°" (display)
+      //   - everything   → bare number (1.30 etc.)
+      function formatForCss(key, raw) {
+        const n = parseFloat(raw);
+        if (key === 'period')                 return n.toFixed(1) + 's';
+        if (key === 'pulse-duration')         return n.toFixed(2) + 's';
+        if (key === 'pulse-size-mult')        return n.toFixed(1);          // unitless (read by JS)
+        if (key.indexOf('blur') === 0)        return n.toFixed(1) + 'px';
+        if (key.indexOf('hue-') === 0 || key.indexOf('-hue-') > 0) return n.toFixed(0) + 'deg';
+        if (key.indexOf('hull-hue') === 0)    return n.toFixed(0) + 'deg';
+        return n.toFixed(2);
       }
+      function formatForDisplay(key, raw) {
+        const n = parseFloat(raw);
+        if (key === 'period')                 return n.toFixed(1) + 's';
+        if (key === 'pulse-duration')         return n.toFixed(2) + 's';
+        if (key === 'pulse-size-mult')        return n.toFixed(1) + '×';
+        if (key.indexOf('blur') === 0)        return n.toFixed(1) + 'px';
+        if (key.indexOf('hue-') === 0 || key.indexOf('-hue-') > 0 || key.indexOf('hull-hue') === 0) {
+          return (n > 0 ? '+' : '') + n.toFixed(0) + '°';
+        }
+        return n.toFixed(2);
+      }
+
+      const sliders = Array.from(panel.querySelectorAll('input[type="range"]'));
+      const toggles = Array.from(panel.querySelectorAll('[data-fx-toggle]'));
+      // Snapshot of defaults from the markup so RESET works.
+      const defaults = Object.create(null);
+      for (const s of sliders) defaults[s.getAttribute('data-fx')] = s.value;
+      // Toggle defaults — all OFF in markup.
+      const toggleDefaults = Object.create(null);
+      for (const t of toggles) toggleDefaults[t.getAttribute('data-fx-toggle')] = false;
+
+      function applyOne(key, val) {
+        document.body.style.setProperty('--fx-' + key, formatForCss(key, val));
+        const valEl = panel.querySelector('[data-val="' + key + '"]');
+        if (valEl) valEl.textContent = formatForDisplay(key, val);
+      }
+
+      function applyToggle(key, on) {
+        const cls = 'fx-' + key;     // e.g. 'fx-pulse-enabled'
+        document.body.classList.toggle(cls, !!on);
+        // Mirror UI state on the corresponding button.
+        const btn = panel.querySelector('[data-fx-toggle="' + key + '"]');
+        if (btn) btn.classList.toggle('is-on', !!on);
+        // Expose for the JS-side hover/click handlers.
+        local._fxToggles = local._fxToggles || Object.create(null);
+        local._fxToggles[key] = !!on;
+      }
+      // Load saved values (if any) and push to body + sliders + readouts.
+      function loadSaved() {
+        let saved = null;
+        try {
+          const raw = localStorage.getItem(LS_KEY);
+          if (raw) saved = JSON.parse(raw);
+        } catch (_) {}
+        for (const s of sliders) {
+          const key = s.getAttribute('data-fx');
+          if (saved && typeof saved[key] === 'string') s.value = saved[key];
+          applyOne(key, s.value);
+        }
+        const savedToggles = (saved && saved._toggles) || null;
+        for (const t of toggles) {
+          const key = t.getAttribute('data-fx-toggle');
+          const on  = savedToggles && typeof savedToggles[key] === 'boolean'
+            ? savedToggles[key]
+            : toggleDefaults[key];
+          applyToggle(key, on);
+        }
+      }
+      function saveAll() {
+        try {
+          const state = {};
+          for (const s of sliders) state[s.getAttribute('data-fx')] = s.value;
+          const togState = Object.create(null);
+          for (const t of toggles) {
+            const key = t.getAttribute('data-fx-toggle');
+            togState[key] = !!(local._fxToggles && local._fxToggles[key]);
+          }
+          state._toggles = togState;
+          localStorage.setItem(LS_KEY, JSON.stringify(state));
+        } catch (_) {}
+      }
+      function resetAll() {
+        for (const s of sliders) {
+          const key = s.getAttribute('data-fx');
+          s.value = defaults[key];
+          applyOne(key, s.value);
+        }
+        for (const t of toggles) {
+          const key = t.getAttribute('data-fx-toggle');
+          applyToggle(key, toggleDefaults[key]);
+        }
+        saveAll();
+      }
+
+      // Slider drag → live-update var + readout (+ debounced LS write).
+      let savePending = 0;
+      panel.addEventListener('input', (ev) => {
+        const s = ev.target;
+        if (!s || s.tagName !== 'INPUT' || !s.hasAttribute('data-fx')) return;
+        const key = s.getAttribute('data-fx');
+        applyOne(key, s.value);
+        if (savePending) clearTimeout(savePending);
+        savePending = setTimeout(() => { savePending = 0; saveAll(); }, 250);
+      });
+      const resetBtn = document.getElementById('forge-fxpanel-reset');
+      if (resetBtn) resetBtn.addEventListener('click', resetAll);
+
+      // Toggle-row clicks (Phase 21AE) — pulse-enabled, etc.
+      panel.addEventListener('click', (ev) => {
+        const btn = ev.target.closest('[data-fx-toggle]');
+        if (!btn) return;
+        const key = btn.getAttribute('data-fx-toggle');
+        const on = !(local._fxToggles && local._fxToggles[key]);
+        applyToggle(key, on);
+        saveAll();
+      });
+
+      // Open / close (same pattern as wireViewSettings).
+      function open()  { panel.classList.add('is-open');  panel.setAttribute('aria-hidden', 'false'); btn.setAttribute('aria-expanded', 'true');  }
+      function close() { panel.classList.remove('is-open'); panel.setAttribute('aria-hidden', 'true');  btn.setAttribute('aria-expanded', 'false'); }
+      btn.addEventListener('click', (ev) => {
+        ev.stopPropagation();
+        if (panel.classList.contains('is-open')) close(); else open();
+      });
+      document.addEventListener('click', (ev) => {
+        if (!panel.classList.contains('is-open')) return;
+        if (panel.contains(ev.target) || btn.contains(ev.target)) return;
+        close();
+      });
+      document.addEventListener('keydown', (ev) => {
+        if (ev.key === 'Escape' && panel.classList.contains('is-open')) close();
+      });
+
+      loadSaved();
     }
 
     // ════════════════════════════════════════════════════════════
@@ -5203,12 +5811,126 @@
     //  Persists state under forge.styleParams.v1.
     // ════════════════════════════════════════════════════════════
     function wireStylePanel() {
-      // Phase 23.1d carve (2026-05-25): body → src/js/forge/style-panel.js
-      if (window._forgeStylePanel && typeof window._forgeStylePanel.attach === "function") {
-        window._forgeStylePanel.attach({ camera, local });
-      } else if (typeof console !== "undefined" && console.warn) {
-        console.warn("[forge] window._forgeStylePanel not loaded — style panel inert.");
+      const btn   = document.getElementById('forge-stylepanel-btn');
+      const panel = document.getElementById('forge-stylepanel');
+      if (!btn || !panel) return;
+      const LS_KEY = 'forge.styleParams.v1';
+      const controls = Array.from(panel.querySelectorAll('[data-style]'));
+      const defaults = Object.create(null);
+      for (const c of controls) defaults[c.getAttribute('data-style')] = c.value;
+
+      function formatForCss(key, raw) {
+        const n = parseFloat(raw);
+        if (key === 'ring-width' || key === 'sep-width') return n.toFixed(1) + 'px';
+        if (key === 'tl-band-stroke-w' || key === 'tl-label-size'
+            || key === 'tl-axis-width' || key === 'tl-grid-width'
+            || key === 'tl-yr0-size' || key === 'tl-yr0-width') return n.toFixed(1) + 'px';
+        if (/opacity$/.test(key))                        return n.toFixed(2);
+        if (/^tl-(band-fill|band-stroke|label-opacity|axis-opacity|grid-opacity|yr0-opacity)$/.test(key)) return n.toFixed(2);
+        // Color pickers: raw value is already a #rrggbb string.
+        return raw;
       }
+      function formatForDisplay(key, raw) {
+        const n = parseFloat(raw);
+        if (key === 'ring-width' || key === 'sep-width') return n.toFixed(1) + 'px';
+        if (key === 'tl-band-stroke-w' || key === 'tl-axis-width' || key === 'tl-grid-width' || key === 'tl-yr0-width') return n.toFixed(1) + 'px';
+        if (key === 'tl-label-size' || key === 'tl-yr0-size') return Math.round(n) + 'px';
+        if (/opacity$/.test(key))                        return n.toFixed(2);
+        if (/^tl-(band-fill|band-stroke|label-opacity|axis-opacity|grid-opacity|yr0-opacity)$/.test(key)) return n.toFixed(2);
+        return raw;
+      }
+      // Phase 22-I → 22-M (2026-05-24) — timeline keys map to chrome state.
+      const TL_BAND_KEY_MAP = {
+        'tl-band-fill':     'fillAlpha',
+        'tl-band-stroke':   'strokeAlpha',
+        'tl-band-stroke-w': 'strokeWidth',
+        'tl-label-opacity': 'labelOpacity',
+        'tl-label-size':    'labelSize',
+        'tl-axis-opacity':  'axisOpacity',
+        'tl-axis-width':    'axisWidth',
+        'tl-grid-opacity':  'gridOpacity',
+        'tl-grid-width':    'gridWidth',
+        'tl-yr0-opacity':   'yr0Opacity',
+        'tl-yr0-size':      'yr0Size',
+        'tl-yr0-width':     'yr0Width',
+      };
+      function applyOne(key, val) {
+        document.body.style.setProperty('--style-' + key, formatForCss(key, val));
+        const valEl = panel.querySelector('[data-val="' + key + '"]');
+        if (valEl) valEl.textContent = formatForDisplay(key, val);
+        // Phase 22-I — timeline band style keys: dispatch to
+        // AtlasTimelineChrome.setBandStyle so the SVG redraws.
+        if (TL_BAND_KEY_MAP[key] && window.AtlasTimelineChrome
+            && typeof window.AtlasTimelineChrome.setBandStyle === 'function') {
+          try { window.AtlasTimelineChrome.setBandStyle(TL_BAND_KEY_MAP[key], parseFloat(val)); }
+          catch (_) {}
+          return;
+        }
+        // Converging gradient stops cache aggressively in SVG; any
+        // conv-* change forces a clean rebuild + sync to flush.
+        if (key.indexOf('conv-') === 0 && local._dividerMode === 'long-centered') {
+          try { rebuildHullElements(); syncHulls(); } catch (_) {}
+        }
+        // Force a redraw so the changes appear without waiting for
+        // a camera tick (same reason as the layer-toggle fix).
+        try { if (typeof drawFrame === 'function') setTimeout(drawFrame, 0); } catch (_) {}
+      }
+      function loadSaved() {
+        let saved = null;
+        try {
+          const raw = localStorage.getItem(LS_KEY);
+          if (raw) saved = JSON.parse(raw);
+        } catch (_) {}
+        for (const c of controls) {
+          const key = c.getAttribute('data-style');
+          if (saved && typeof saved[key] === 'string') c.value = saved[key];
+          applyOne(key, c.value);
+        }
+      }
+      function saveAll() {
+        try {
+          const state = {};
+          for (const c of controls) state[c.getAttribute('data-style')] = c.value;
+          localStorage.setItem(LS_KEY, JSON.stringify(state));
+        } catch (_) {}
+      }
+      function resetAll() {
+        for (const c of controls) {
+          const key = c.getAttribute('data-style');
+          c.value = defaults[key];
+          applyOne(key, c.value);
+        }
+        saveAll();
+      }
+
+      let savePending = 0;
+      panel.addEventListener('input', (ev) => {
+        const c = ev.target;
+        if (!c || !c.hasAttribute('data-style')) return;
+        const key = c.getAttribute('data-style');
+        applyOne(key, c.value);
+        if (savePending) clearTimeout(savePending);
+        savePending = setTimeout(() => { savePending = 0; saveAll(); }, 250);
+      });
+      const resetBtn = document.getElementById('forge-stylepanel-reset');
+      if (resetBtn) resetBtn.addEventListener('click', resetAll);
+
+      function open()  { panel.classList.add('is-open');  panel.setAttribute('aria-hidden', 'false'); btn.setAttribute('aria-expanded', 'true');  }
+      function close() { panel.classList.remove('is-open'); panel.setAttribute('aria-hidden', 'true');  btn.setAttribute('aria-expanded', 'false'); }
+      btn.addEventListener('click', (ev) => {
+        ev.stopPropagation();
+        if (panel.classList.contains('is-open')) close(); else open();
+      });
+      document.addEventListener('click', (ev) => {
+        if (!panel.classList.contains('is-open')) return;
+        if (panel.contains(ev.target) || btn.contains(ev.target)) return;
+        close();
+      });
+      document.addEventListener('keydown', (ev) => {
+        if (ev.key === 'Escape' && panel.classList.contains('is-open')) close();
+      });
+
+      loadSaved();
     }
 
     //  wireSearchAutocomplete()  —  Phase 21B (2026-05-21)
@@ -5220,19 +5942,399 @@
     //  flies to the node via the existing lock pipeline.
     // ════════════════════════════════════════════════════════════
     function wireSearchAutocomplete() {
-      if (window._forgeSearchAutocomplete && typeof window._forgeSearchAutocomplete.attach === "function") {
-        window._forgeSearchAutocomplete.attach({ local, recomputeFocus, toggleLock });
+      const inp     = document.getElementById('forge-status-search');
+      const suggest = document.getElementById('forge-search-suggest');
+      if (!inp || !suggest) return;
+
+      function modeNodes() {
+        return (local.mode && local.mode.nodes) || [];
       }
+      function escapeHtml(s) {
+        return String(s || '')
+          .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+      }
+      function render(matches) {
+        if (!matches.length) {
+          suggest.innerHTML = '';
+          suggest.classList.remove('is-open');
+          suggest.setAttribute('aria-hidden', 'true');
+          return;
+        }
+        suggest.innerHTML = matches.slice(0, 8).map(m => {
+          return '<button class="forge-search-suggest-item" data-id="' + escapeHtml(m.id) + '">'
+            + '<span class="fss-dot" style="background:' + escapeHtml(m.color || '#888') + '"></span>'
+            + '<span class="fss-title">' + escapeHtml(m.title || m.id) + '</span>'
+            + '<span class="fss-fam">' + escapeHtml(m.family || '') + '</span>'
+            + '</button>';
+        }).join('');
+        suggest.classList.add('is-open');
+        suggest.setAttribute('aria-hidden', 'false');
+      }
+      function search(q) {
+        q = (q || '').trim().toLowerCase();
+        if (!q) return [];
+        const all = modeNodes();
+        const out = [];
+        for (let i = 0; i < all.length && out.length < 12; i++) {
+          const n = all[i];
+          const title = (n.title || n.id || '').toLowerCase();
+          if (title.indexOf(q) === -1) {
+            // Also try alias hits via n.aka if present.
+            const aka = Array.isArray(n.aka) ? n.aka.join(' ').toLowerCase() : '';
+            if (!aka || aka.indexOf(q) === -1) continue;
+          }
+          out.push({
+            id:     n.id,
+            title:  n.title || n.id,
+            family: n.family || '',
+            color:  n.family_color || n.tradition_color || '#888',
+          });
+        }
+        // Sort: title-startsWith ranks above title-contains.
+        out.sort((a, b) => {
+          const ai = a.title.toLowerCase().startsWith(q) ? 0 : 1;
+          const bi = b.title.toLowerCase().startsWith(q) ? 0 : 1;
+          return ai - bi || a.title.localeCompare(b.title);
+        });
+        return out;
+      }
+      inp.addEventListener('input', () => render(search(inp.value)));
+      inp.addEventListener('focus', () => {
+        if (inp.value.trim()) render(search(inp.value));
+      });
+      inp.addEventListener('keydown', (ev) => {
+        if (ev.key === 'Escape') {
+          suggest.innerHTML = '';
+          suggest.classList.remove('is-open');
+          suggest.setAttribute('aria-hidden', 'true');
+        } else if (ev.key === 'Enter') {
+          const first = suggest.querySelector('.forge-search-suggest-item');
+          if (first) {
+            ev.preventDefault();
+            first.click();
+          }
+        }
+      });
+      suggest.addEventListener('mousedown', (ev) => {
+        // mousedown not click — so the input doesn't blur before
+        // we read data-id.
+        const item = ev.target.closest('.forge-search-suggest-item');
+        if (!item) return;
+        ev.preventDefault();
+        const id = item.dataset.id;
+        if (id) {
+          // Phase 21L (2026-05-21) — go through the canonical lock
+          // pipeline so the side-panel + lock-pill chrome updates,
+          // not just lockedSet + recomputeFocus.
+          try {
+            if (local && local.lockedSet) {
+              // Clear any prior locks first so a single click on a
+              // suggestion produces a single-locked state (not an
+              // additive multi-lock).
+              if (local.lockedSet.size) {
+                for (const oldId of Array.from(local.lockedSet)) {
+                  if (typeof toggleLock === 'function') toggleLock(oldId);
+                }
+              }
+              if (typeof toggleLock === 'function') toggleLock(id);
+            }
+          } catch (e) { /* best-effort */ }
+        }
+        inp.value = '';
+        suggest.innerHTML = '';
+        suggest.classList.remove('is-open');
+        suggest.setAttribute('aria-hidden', 'true');
+        inp.blur();
+      });
+      document.addEventListener('click', (ev) => {
+        if (suggest.contains(ev.target) || inp.contains(ev.target)) return;
+        suggest.classList.remove('is-open');
+        suggest.setAttribute('aria-hidden', 'true');
+      });
     }
 
     function wireLegend() {
-      // Phase 23.1b carve (2026-05-25): body lifted to
-      // src/js/forge/legend.js. Stub preserves the call site.
-      if (window._forgeLegend && typeof window._forgeLegend.attach === "function") {
-        window._forgeLegend.attach({ local, recomputeFocus });
-      } else if (typeof console !== "undefined" && console.warn) {
-        console.warn("[forge] window._forgeLegend not loaded — legend panel inert.");
+      const btn     = document.getElementById('forge-legend-btn');
+      const panel   = document.getElementById('forge-legend-panel');
+      const tooltip = document.getElementById('forge-legend-tooltip');
+      if (!btn || !panel || !tooltip) return;
+      // Per-bucket meta. Order = BUCKET_ORDER (shader bucket_index).
+      // `title` is the row label; `body` is the explainer-tooltip
+      // text (what it means + our criteria for using it).
+      const BUCKETS = [
+        { key: 'transmission',  param: 'active_color_transmission', title: 'Transmission',
+          body: 'One tradition adopted from another. Documented contact, dated borrowing, or direct lineage. Use when there is evidence A INFLUENCED B (texts cite, archaeology, missionary record, trade-route attestation).' },
+        { key: 'parallel',      param: 'active_color_parallel',     title: 'Parallel',
+          body: 'Independent same-shape phenomena across traditions with NO documented contact. Use when two cultures separately arrived at structurally identical motif/figure/practice — strongest when geographically isolated.' },
+        { key: 'association',   param: 'active_color_association',  title: 'Association',
+          body: 'Co-appearance in the same texts, sites, or rituals without one causing the other. Use when items recur together in primary sources but the relationship is contextual, not generative.' },
+        { key: 'kinship',       param: 'active_color_kinship',      title: 'Kinship',
+          body: 'Family relationships INSIDE a pantheon or tradition: parent-child, sibling, consort. Use only for in-tradition genealogy.' },
+        { key: 'attestation',   param: 'active_color_attestation',  title: 'Attestation',
+          body: 'Source → claim. One node is a textual or archaeological witness to another. Use when a text/inscription/artifact attests to a deity, practice, or event.' },
+        { key: 'polemic',       param: 'active_color_polemic',      title: 'Polemic',
+          body: 'Contested or contradicting relationship. One tradition denies, refutes, or polemicizes against another. Use for theological disputes, heresies, refutations.' },
+        { key: 'fusion',        param: 'active_color_fusion',       title: 'Fusion',
+          body: 'Two figures or practices merged into one new identity over time. Use when historical blending produced a combined entity that absorbs both originals — e.g. Serapis = Osiris + Apis; Hermes Trismegistus = Hermes + Thoth.' },
+      ];
+      // Build rows ONCE. Colors read from local.params so the
+      // legend stays in sync if PARAM_DEFAULTS ever changes.
+      const rowsHtml = BUCKETS.map(b => {
+        const hex = (local.params && local.params[b.param]) || '#999999';
+        return '<div class="forge-legend-row" data-bucket="' + b.key + '">'
+          + '<span class="forge-legend-swatch" style="background:' + hex + '"></span>'
+          + '<span class="forge-legend-name">' + b.title + '</span>'
+          + '</div>';
+      }).join('');
+      // Phase 21AT (2026-05-23) — Source-tier legend section. The
+      // five tiers from CODEX §IV. Each row reuses the same vs-tier-
+      // pill styling as the side-panel and view-settings so the
+      // vocabulary is visually identical everywhere. Hover-tooltip
+      // body explains the criterion + example author / school.
+      const TIERS = [
+        { key: 't1', label: 'T1',
+          title: 'Mainstream',
+          body: 'Peer-reviewed mainstream scholarship. Standard academic consensus. The silent default — most edges in the atlas are T1.' },
+        { key: 't2', label: 'T2',
+          title: 'Academic minority',
+          body: 'Contested but legitimate position within the field. Defended in peer-reviewed work by a minority of credentialed scholars. Disagreement is real but inside the academy.' },
+        { key: 't3', label: 'T3',
+          title: 'Alternative school',
+          body: 'Serious, well-researched fringe that mainstream archaeology rejects but engages — Hancock-class. Author cites primary evidence; rejected on interpretation, not on fabrication.' },
+        { key: 't4', label: 'T4',
+          title: 'Popular claim, rejected',
+          body: 'Popular pseudoarchaeology with broad audience reach but no peer-reviewed defense — Sitchin / von Däniken class. Atlas includes for in-graph rebuttal of widely-known claims.' },
+        { key: 't5', label: 'T5',
+          title: 'High-risk · disclaimer required',
+          body: 'Claims with political-risk implications (antisemitic / racist conspiracy adjacency, ethno-nationalist mobilization) — Icke / Evola-political class. OFF by default in view-settings. Opt-in only; tooltip leads with disclaimer.' },
+      ];
+      // Phase 21AY (2026-05-23) — tier rows are now INTERACTIVE
+      // toggles, not just legend swatches. The VIEW panel's tier
+      // section has been removed; the tier vocabulary lives where
+      // it's documented (the legend) and the filter ops on it
+      // directly. Render as <button> with the same .vs-check the
+      // VIEW panel toggles use; clicking flips the state in
+      // local._tierState + persists to LS + re-runs recomputeFocus.
+      const tierRowsHtml = TIERS.map(t => (
+        '<button class="forge-legend-row forge-legend-row--tier forge-legend-row--toggle" data-tier-key="' + t.key + '" data-tier-uc="' + t.label + '">'
+        + '<span class="vs-check"></span>'
+        + '<span class="forge-legend-swatch vs-tier-pill vs-tier-pill--' + t.key + '" style="background:transparent">' + t.label + '</span>'
+        + '<span class="forge-legend-name">' + t.title + '</span>'
+        + '</button>'
+      )).join('');
+      // Phase 21AX (2026-05-23) — CODEX v1.2 §IV.5 — political-risk
+      // toggle is ORTHOGONAL to tier. Now lives next to the tier
+      // section in the legend window. Same visual treatment as the
+      // ⛔ BLACK ALERT row had in VIEW. Hover surfaces the orthogonal-
+      // axes explainer.
+      const politicalRiskBody = 'Political-risk-flag is ORTHOGONAL to tier. It marks content with documented real-world harm-wiring (ethno-nationalist reception, antisemitic networks, racial-hierarchy mobilization) — independently of how mainstream-accepted the claim is. A T1 mainstream-academic claim about a politically-dangerous movement gets the flag if the content is harm-wired. OFF by default; requires explicit opt-in. See CODEX §IV.5.';
+      panel.innerHTML = ''
+        + '<div class="forge-legend-section">Wire color · type of connection</div>'
+        + rowsHtml
+        + '<div class="forge-legend-divider"></div>'
+        + '<div class="forge-legend-section">Source tier · click to toggle</div>'
+        + tierRowsHtml
+        + '<div class="forge-legend-divider"></div>'
+        + '<div class="forge-legend-section">High-alert · orthogonal to tier</div>'
+        + '<button class="forge-legend-row forge-legend-row--toggle forge-legend-row--black-alert" data-political-risk="1">'
+        +   '<span class="vs-check"></span>'
+        +   '<span class="forge-legend-swatch vs-alert-badge">⛔</span>'
+        +   '<span class="forge-legend-name">Show political-risk content</span>'
+        + '</button>';
+      // Map for fast lookup on hover.
+      const bodyByKey = Object.create(null);
+      for (const b of BUCKETS) bodyByKey[b.key] = b.body;
+      const bodyByTier = Object.create(null);
+      for (const t of TIERS) bodyByTier[t.key] = t.body;
+
+      // Phase 21AY (2026-05-23) — interactive toggles in the legend.
+      // The legend now OWNS the tier-filter + political-risk toggles
+      // (moved from VIEW panel). The legend's tier rows are buttons;
+      // clicking flips the corresponding flag in `local._tierState`
+      // (and `local._showPoliticalRisk` for the orthogonal row), then
+      // triggers recomputeFocus + side-panel re-render. LS persistence
+      // shares the v7 schema from the VIEW panel so an upgrade from
+      // VIEW-tier-toggles to LEGEND-tier-toggles is seamless.
+      const LEGEND_LS_KEY = 'forge.viewSettings.v7';
+      function readTierState() {
+        let s = {};
+        try {
+          const raw = localStorage.getItem(LEGEND_LS_KEY);
+          if (raw) s = JSON.parse(raw) || {};
+        } catch (_) {}
+        return {
+          T1: typeof s.tierT1 === 'boolean' ? s.tierT1 : true,
+          T2: typeof s.tierT2 === 'boolean' ? s.tierT2 : true,
+          T3: typeof s.tierT3 === 'boolean' ? s.tierT3 : true,
+          T4: typeof s.tierT4 === 'boolean' ? s.tierT4 : true,
+          T5: typeof s.tierT5 === 'boolean' ? s.tierT5 : false,
+          politicalRisk: typeof s.politicalRisk === 'boolean' ? s.politicalRisk : false,
+        };
       }
+      function writeTierState(ts) {
+        try {
+          const raw = localStorage.getItem(LEGEND_LS_KEY);
+          const s = raw ? JSON.parse(raw) : {};
+          s.tierT1 = !!ts.T1;
+          s.tierT2 = !!ts.T2;
+          s.tierT3 = !!ts.T3;
+          s.tierT4 = !!ts.T4;
+          s.tierT5 = !!ts.T5;
+          s.politicalRisk = !!ts.politicalRisk;
+          localStorage.setItem(LEGEND_LS_KEY, JSON.stringify(s));
+        } catch (_) {}
+      }
+      function syncLegendTierUI() {
+        const ts = readTierState();
+        panel.querySelectorAll('.forge-legend-row--tier').forEach(row => {
+          const uc = row.getAttribute('data-tier-uc') || '';
+          row.classList.toggle('is-on', !!ts[uc]);
+        });
+        const prRow = panel.querySelector('.forge-legend-row[data-political-risk]');
+        if (prRow) prRow.classList.toggle('is-on', !!ts.politicalRisk);
+        // Push to the engine and refresh filtered state.
+        const tiers = new Set();
+        if (ts.T1) tiers.add('T1');
+        if (ts.T2) tiers.add('T2');
+        if (ts.T3) tiers.add('T3');
+        if (ts.T4) tiers.add('T4');
+        if (ts.T5) tiers.add('T5');
+        local._activeTiers       = tiers;
+        local._activeTiersSig    = [...tiers].sort().join(',') + '|' + (ts.politicalRisk ? 'PR' : '');
+        local._showPoliticalRisk = !!ts.politicalRisk;
+        // Body classes for any CSS that keys off them (none yet but
+        // future legend/SFW chrome will).
+        document.body.classList.toggle('fv-hide-tier-t1', !ts.T1);
+        document.body.classList.toggle('fv-hide-tier-t2', !ts.T2);
+        document.body.classList.toggle('fv-hide-tier-t3', !ts.T3);
+        document.body.classList.toggle('fv-hide-tier-t4', !ts.T4);
+        document.body.classList.toggle('fv-hide-tier-t5', !ts.T5);
+        document.body.classList.toggle('fv-show-political-risk', !!ts.politicalRisk);
+      }
+      // Click delegation on the legend panel.
+      panel.addEventListener('click', (e) => {
+        const tierRow = e.target.closest('.forge-legend-row--tier');
+        const prRow   = e.target.closest('.forge-legend-row[data-political-risk]');
+        if (!tierRow && !prRow) return;
+        e.stopPropagation();
+        const ts = readTierState();
+        if (tierRow) {
+          const uc = tierRow.getAttribute('data-tier-uc');
+          if (!uc) return;
+          ts[uc] = !ts[uc];
+        } else {
+          ts.politicalRisk = !ts.politicalRisk;
+        }
+        writeTierState(ts);
+        syncLegendTierUI();
+        // Hide the hover tooltip — the row's just been clicked,
+        // tooltip is stale until the next dwell.
+        hideTooltip();
+        // Re-run focus + side panel so filtered wires + side-panel
+        // rows refresh immediately.
+        if (typeof recomputeFocus === 'function' && local.mode && local.mode.edges) {
+          try { recomputeFocus(); } catch (_) {}
+        }
+        if (typeof local._renderSidePanel === 'function') {
+          try { local._renderSidePanel(); } catch (_) {}
+        }
+      });
+      // Hover tooltip body for the political-risk row.
+      bodyByTier['__politicalRisk'] = politicalRiskBody;
+      // Initial sync — read LS + apply check state + push to engine
+      // BEFORE the first recomputeFocus the mount flow runs.
+      syncLegendTierUI();
+
+      let isOpen = false;
+      function openPanel()  {
+        isOpen = true;
+        btn.setAttribute('aria-expanded', 'true');
+        panel.setAttribute('aria-hidden', 'false');
+        panel.style.display = '';
+      }
+      function closePanel() {
+        isOpen = false;
+        btn.setAttribute('aria-expanded', 'false');
+        panel.setAttribute('aria-hidden', 'true');
+        panel.style.display = 'none';
+        hideTooltip();
+      }
+      closePanel();
+
+      btn.addEventListener('click', () => {
+        if (isOpen) closePanel(); else openPanel();
+      });
+
+      // Row-hover → explainer tooltip.
+      // Phase 15 (2026-05-21) — viewport-clamped positioning. Default
+      // placement is to the right of the legend panel, top-aligned
+      // with the hovered row. But the tooltip can be tall (200+ px),
+      // and the legend opens NEAR the bottom of the screen — so the
+      // default position often overflowed BELOW the viewport. Fix:
+      // measure the tooltip's actual height after rendering content,
+      // then clamp into [margin, viewport - tooltipHeight - margin].
+      // Same for the horizontal axis: if the right side would
+      // overflow, place it to the LEFT of the panel instead.
+      function showTooltipFor(row) {
+        // Phase 21AT (2026-05-23) — the legend now has two row classes:
+        // bucket rows (data-bucket) and tier rows (data-tier-key).
+        // Phase 21AY (2026-05-23) — third row class: political-risk
+        // toggle (data-political-risk). Same tooltip element + clamp
+        // logic; only the body lookup differs.
+        const bKey = row.getAttribute('data-bucket');
+        const tKey = row.getAttribute('data-tier-key');
+        const pr   = row.getAttribute('data-political-risk');
+        const body = bKey ? bodyByKey[bKey]
+                   : tKey ? bodyByTier[tKey]
+                   : pr   ? bodyByTier['__politicalRisk']
+                   : null;
+        if (!body) return;
+        tooltip.textContent = body;
+        // Reveal first so we can measure dimensions.
+        tooltip.style.display = '';
+        tooltip.setAttribute('aria-hidden', 'false');
+        const rPanel = panel.getBoundingClientRect();
+        const rRow   = row.getBoundingClientRect();
+        const rTip   = tooltip.getBoundingClientRect();
+        const margin = 8;
+        // Horizontal: default to the right of the panel; if that
+        // would overflow the right edge, switch to the left of the
+        // panel; clamp to viewport in either case.
+        let left = rPanel.right + margin;
+        if (left + rTip.width + margin > window.innerWidth) {
+          left = rPanel.left - rTip.width - margin;
+        }
+        if (left < margin) left = margin;
+        // Vertical: top-align with the hovered row, then clamp so
+        // the tooltip fits inside the viewport. If the row sits near
+        // the bottom, the tooltip slides up until its bottom touches
+        // the viewport bottom (minus margin).
+        let top = rRow.top;
+        if (top + rTip.height + margin > window.innerHeight) {
+          top = window.innerHeight - rTip.height - margin;
+        }
+        if (top < margin) top = margin;
+        tooltip.style.left = left + 'px';
+        tooltip.style.top  = top  + 'px';
+      }
+      function hideTooltip() {
+        tooltip.setAttribute('aria-hidden', 'true');
+        tooltip.style.display = 'none';
+      }
+      panel.addEventListener('mouseover', (e) => {
+        const row = e.target.closest('.forge-legend-row');
+        if (row) showTooltipFor(row);
+      });
+      panel.addEventListener('mouseleave', hideTooltip);
+
+      // Click outside → close.
+      document.addEventListener('click', (e) => {
+        if (!isOpen) return;
+        if (e.target === btn || btn.contains(e.target)) return;
+        if (panel.contains(e.target)) return;
+        closePanel();
+      });
     }
 
     // ════════════════════════════════════════════════════════════
@@ -5258,9 +6360,327 @@
     //     short enough to feel responsive.
     // ════════════════════════════════════════════════════════════
     function wireHoverCard() {
-      if (window._forgeHoverCard && typeof window._forgeHoverCard.attach === "function") {
-        window._forgeHoverCard.attach({ local, setHoverId });
+      // ── Thumbnails cache ────────────────────────────────────
+      // Wikipedia thumbnails live in _assets/thumbs_cache.json as
+      // { id: { src, title, page, extract, width, height } }.
+      // Fetched once at view mount; lookup on hover is then a free
+      // Map.get(). The fetch is best-effort — if it fails, the card
+      // still renders text but with the thumbnail row hidden.
+      let thumbs = null;
+      fetch('_assets/thumbs_cache.json', { cache: 'force-cache' })
+        .then(r => r.ok ? r.json() : null)
+        .then(j => {
+          thumbs = j || {};
+          // Phase 19 — share the cache with the side panel so both
+          // surfaces lookup from the same in-memory map.
+          local._thumbsCache = thumbs;
+        })
+        .catch(() => { thumbs = {}; local._thumbsCache = {}; });
+
+      const card = document.createElement('div');
+      card.className   = 'forge-hover-card';
+      card.id          = 'forge-hover-card';
+      card.style.display = 'none';
+      // Layout: thumbnail on top, then header (name + tradition),
+      // then the data rows (description, connections, date, place).
+      card.innerHTML = ''
+        + '<div class="forge-hover-card-thumb">'
+        +   '<img id="forge-hover-card-img" alt="" />'
+        + '</div>'
+        + '<div class="forge-hover-card-body">'
+        +   '<div class="forge-hover-card-name" id="forge-hover-card-name"></div>'
+        +   '<div class="forge-hover-card-tradition" id="forge-hover-card-tradition"></div>'
+        +   '<div class="forge-hover-card-desc" id="forge-hover-card-desc"></div>'
+        +   '<div class="forge-hover-card-wires" id="forge-hover-card-wires"></div>'
+        +   '<div class="forge-hover-card-meta" id="forge-hover-card-meta"></div>'
+        + '</div>';
+      stage.appendChild(card);
+      const img       = card.querySelector('#forge-hover-card-img');
+      const nameEl    = card.querySelector('#forge-hover-card-name');
+      const tradEl    = card.querySelector('#forge-hover-card-tradition');
+      const descEl    = card.querySelector('#forge-hover-card-desc');
+      const wiresEl   = card.querySelector('#forge-hover-card-wires');
+      const metaEl    = card.querySelector('#forge-hover-card-meta');
+
+      // Param-derived bucket → hex color map. Built once per show
+      // call so the legend stays the SSOT.
+      function bucketHex(bucket) {
+        const p = local.params || {};
+        return p['active_color_' + bucket] || '#999999';
       }
+      // Catchy "role" / brief-description picker. Tries multiple
+      // YAML fields in vault-convention order. Empty string if none.
+      function pickDescription(n) {
+        const candidates = [
+          n.role, n.description, n.brief, n.subtitle,
+          Array.isArray(n.domains) ? n.domains.join(', ') : null,
+        ];
+        for (const c of candidates) if (c && typeof c === 'string') return c;
+        return '';
+      }
+      function pickPlace(n) {
+        return n.region
+            || n['place-of-origin']
+            || n['originating-place']
+            || n.location
+            || n.origin
+            || '';
+      }
+      function pickTradition(n) {
+        return n.tradition || n.family || n.religion || '';
+      }
+      // Year formatter — same shape as the scrubber's formatYear.
+      function fmtYear(y) {
+        if (typeof y !== 'number' || !isFinite(y)) return '';
+        if (y < 0) return Math.abs(y) + ' BCE';
+        if (y === 0) return '0';
+        return y + ' CE';
+      }
+      function pickDate(n) {
+        // Normalized fields from build_data.py first; YAML raw as fallback.
+        const e = (typeof n.date_earliest === 'number') ? n.date_earliest
+                : (typeof n['period-active-earliest'] === 'number') ? n['period-active-earliest']
+                : null;
+        const l = (typeof n.date_latest === 'number') ? n.date_latest
+                : (typeof n['period-active-latest'] === 'number') ? n['period-active-latest']
+                : null;
+        if (e == null && l == null) return '';
+        if (e != null && l != null && e !== l) return fmtYear(e) + ' – ' + fmtYear(l);
+        return fmtYear(e != null ? e : l);
+      }
+      // Count edges connected to `id`, grouped by bucket. Walks
+      // local.mode.edges once. O(E) per show — cheap at 3k edges,
+      // could be precomputed if hover frequency demands it.
+      function countWires(id) {
+        const counts = Object.create(null);
+        const edges = local.mode && local.mode.edges;
+        if (!edges) return counts;
+        const EB = window.EDGE_BUCKET || {};
+        for (let i = 0; i < edges.length; i++) {
+          const e = edges[i];
+          if (e.source !== id && e.target !== id) continue;
+          const b = EB[e.type] || 'association';
+          counts[b] = (counts[b] || 0) + 1;
+        }
+        return counts;
+      }
+      // Bucket render order — matches the legend's BUCKET_ORDER.
+      const BUCKET_ORDER = ['transmission','parallel','association','kinship','attestation','polemic','fusion'];
+
+      // ── Position state ──────────────────────────────────────
+      // Phase 17 (2026-05-21) — anchor-once positioning.
+      //
+      // The card's anchor quadrant (top-right / top-left / bottom-
+      // right / bottom-left of the cursor) is picked ONCE at show
+      // time and STAYS THERE while the cursor moves. mousemove
+      // just translates the card by (cursor + anchor offset) using
+      // cached dimensions — no re-measurement, no quadrant
+      // re-evaluation, no flicker near screen corners.
+      //
+      // Re-flip happens only when the cursor moves far enough that
+      // the current anchor genuinely doesn't fit (the card would
+      // overflow the viewport). That's hysteresis built in for
+      // free.
+      //
+      // Cached dimensions: re-measured (1 layout read) only when
+      // content changes — on showFor() and on image-load callback.
+      // mousemove does ZERO layout reads. rAF-coalesced so we
+      // never write transform more than once per frame.
+      //
+      // OFFSET = a fixed pad large enough that even a max-clamped
+      // selected disk (22 px × 1.5 size_mult ≈ 33 px) doesn't sit
+      // under the card. Generous 38 px gives breathing room.
+      const OFFSET = 38;
+      const MARGIN = 8;
+
+      let showId      = 0;     // setTimeout token
+      let posRafId    = 0;     // rAF coalesce token for position updates
+      let lastClientX = 0;
+      let lastClientY = 0;
+      let cachedW     = 0;     // last measured card width
+      let cachedH     = 0;     // last measured card height
+      let anchorX     = +1;    // +1 = right of cursor, -1 = left
+      let anchorY     = +1;    // +1 = below cursor, -1 = above
+
+      function hide() {
+        if (showId) { clearTimeout(showId); showId = 0; }
+        if (posRafId) { cancelAnimationFrame(posRafId); posRafId = 0; }
+        card.style.display = 'none';
+      }
+
+      // Single layout read. Stores width + height. Call AFTER
+      // content swap and image load — never on mousemove.
+      function measure() {
+        const r = card.getBoundingClientRect();
+        if (r.width > 0)  cachedW = r.width;
+        if (r.height > 0) cachedH = r.height;
+      }
+
+      // Pick the anchor quadrant that fully fits the card at the
+      // current cursor position. Default preference: bottom-right.
+      // Falls back through the other 3 quadrants in order. Final
+      // fallback: bottom-right + clamp on output.
+      function pickAnchor() {
+        const w = cachedW, h = cachedH;
+        const winW = window.innerWidth, winH = window.innerHeight;
+        const cx = lastClientX, cy = lastClientY;
+        const tries = [[+1, +1], [-1, +1], [+1, -1], [-1, -1]];
+        for (const [qx, qy] of tries) {
+          let x = qx > 0 ? cx + OFFSET            : cx - OFFSET - w;
+          let y = qy > 0 ? cy + OFFSET            : cy - OFFSET - h;
+          if (x >= MARGIN && x + w + MARGIN <= winW
+              && y >= MARGIN && y + h + MARGIN <= winH) {
+            anchorX = qx;
+            anchorY = qy;
+            return;
+          }
+        }
+        anchorX = +1; anchorY = +1;
+      }
+
+      // Write the transform. No layout reads. Uses cached dims +
+      // current anchor + last cursor. If the chosen anchor would
+      // now overflow (cursor crossed the edge), flips ONCE and
+      // re-evaluates — that's the hysteresis line.
+      function applyTransform() {
+        const w = cachedW, h = cachedH;
+        if (!w || !h) return;
+        const winW = window.innerWidth, winH = window.innerHeight;
+        const cx = lastClientX, cy = lastClientY;
+        let x = anchorX > 0 ? cx + OFFSET : cx - OFFSET - w;
+        let y = anchorY > 0 ? cy + OFFSET : cy - OFFSET - h;
+        // Flip X if overflowing.
+        if (x < MARGIN || x + w + MARGIN > winW) {
+          anchorX = -anchorX;
+          x = anchorX > 0 ? cx + OFFSET : cx - OFFSET - w;
+        }
+        // Flip Y if overflowing.
+        if (y < MARGIN || y + h + MARGIN > winH) {
+          anchorY = -anchorY;
+          y = anchorY > 0 ? cy + OFFSET : cy - OFFSET - h;
+        }
+        // Hard clamp to keep card inside viewport even if both
+        // sides overflow (e.g. tiny viewport).
+        if (x < MARGIN) x = MARGIN;
+        if (x + w + MARGIN > winW) x = winW - w - MARGIN;
+        if (y < MARGIN) y = MARGIN;
+        if (y + h + MARGIN > winH) y = winH - h - MARGIN;
+        card.style.transform = 'translate3d(' + x + 'px, ' + y + 'px, 0)';
+      }
+
+      function schedulePosition() {
+        if (posRafId) return;
+        posRafId = requestAnimationFrame(() => {
+          posRafId = 0;
+          applyTransform();
+        });
+      }
+
+      function showFor(id) {
+        const m = local.mode;
+        const node = (m && m.nodesById && m.nodesById.get) ? m.nodesById.get(id) : null;
+        if (!node) return;
+        // ── Header
+        nameEl.textContent = node.name || id;
+        tradEl.textContent = pickTradition(node);
+        tradEl.style.display = tradEl.textContent ? '' : 'none';
+        // ── Description: try YAML role/description first; fall back
+        //    to the cache's Wikipedia extract (first sentence only).
+        let desc = pickDescription(node);
+        if (!desc && thumbs && thumbs[id] && thumbs[id].extract) {
+          const ext = String(thumbs[id].extract);
+          // First sentence; cap at 180 chars to keep card compact.
+          const cut = ext.split(/(?<=[.!?])\s/)[0] || ext;
+          desc = cut.length > 180 ? cut.slice(0, 177) + '…' : cut;
+        }
+        descEl.textContent = desc || '';
+        descEl.style.display = desc ? '' : 'none';
+        // ── Wires (colored pills with bucket-edge counts)
+        const counts = countWires(id);
+        const pills = [];
+        for (const b of BUCKET_ORDER) {
+          const n = counts[b] || 0;
+          if (!n) continue;
+          pills.push(
+            '<span class="forge-hover-card-wire" style="color:' + bucketHex(b) + '">'
+            +   '<span class="forge-hover-card-wire-dot" style="background:' + bucketHex(b) + '"></span>'
+            +   n
+            + '</span>'
+          );
+        }
+        wiresEl.innerHTML = pills.join('');
+        wiresEl.style.display = pills.length ? '' : 'none';
+        // ── Meta (Date + Place)
+        const date  = pickDate(node);
+        const place = pickPlace(node);
+        const metaParts = [];
+        if (date)  metaParts.push('<div class="forge-hover-card-meta-row"><span class="forge-hover-card-meta-k">Date</span><span class="forge-hover-card-meta-v">' + date  + '</span></div>');
+        if (place) metaParts.push('<div class="forge-hover-card-meta-row"><span class="forge-hover-card-meta-k">Place</span><span class="forge-hover-card-meta-v">' + place + '</span></div>');
+        metaEl.innerHTML = metaParts.join('');
+        metaEl.style.display = metaParts.length ? '' : 'none';
+        // ── Thumbnail: lookup the URL in the cache. The cache's
+        //    `src` is a fully-resolved Wikipedia URL; we don't need
+        //    a probe.onload chain — just set src directly. onload
+        //    re-measures + repositions (image adds height). onerror
+        //    hides the image.
+        const entry = (thumbs && thumbs[id]) ? thumbs[id] : null;
+        img.style.display = 'none';
+        img.removeAttribute('src');
+        if (entry && entry.src) {
+          img.onload  = function () {
+            img.style.display = 'block';
+            // Phase 21AD (2026-05-22) — face-aware object-position.
+            // Portrait images shift upward so the head/face stays in
+            // the visible square crop. See computeFaceObjectPosition.
+            img.style.objectPosition = computeFaceObjectPosition(img.naturalWidth, img.naturalHeight);
+            // Image just added height — re-measure + reposition.
+            measure();
+            schedulePosition();
+          };
+          img.onerror = function () {
+            img.style.display = 'none';
+            measure();
+            schedulePosition();
+          };
+          img.src = entry.src;
+        }
+        // ── Show + initial position
+        card.style.display = '';
+        measure();
+        pickAnchor();
+        applyTransform();
+      }
+
+      // mousemove on canvas: track cursor + schedule a position update.
+      canvas.addEventListener('mousemove', (e) => {
+        lastClientX = e.clientX;
+        lastClientY = e.clientY;
+        if (card.style.display !== 'none') schedulePosition();
+      });
+
+      // window resize invalidates anchor choice (viewport changed).
+      // Recompute on next show; for now just hide so user gets a
+      // fresh anchor when they hover again.
+      window.addEventListener('resize', hide);
+
+      // Drive show/hide from the existing hover pipeline. Phase 2B
+      // setHoverId already coalesces; we hook into it via a hover
+      // observer in local. setHoverId is the SSOT for "which node
+      // is the cursor over."
+      //
+      // Phase 16 (2026-05-21) — show on locked nodes too. The card
+      // was previously hidden when the hovered node was the locked
+      // anchor (rationale: lock UI is sufficient). John pushed
+      // back: when you point at a locked deity you still want the
+      // info card; the lock visual + the card are complementary,
+      // not redundant. Removed the lockedSet check.
+      local._onHoverChange = function (id) {
+        if (showId) { clearTimeout(showId); showId = 0; }
+        if (!id) { hide(); return; }
+        showId = setTimeout(() => { showId = 0; showFor(id); }, 150);
+      };
+      // Also hide on canvas leave.
+      canvas.addEventListener('mouseleave', hide);
     }
 
     // ════════════════════════════════════════════════════════════
@@ -5301,25 +6721,1223 @@
     //     .date_earliest / .date_latest / .family_color
     // ════════════════════════════════════════════════════════════
     function wireSidePanel() {
-      if (window._forgeSidePanel && typeof window._forgeSidePanel.attach === "function") {
-        window._forgeSidePanel.attach({ local, renderer, toggleLock, triggerClickPulse });
-      } else if (typeof console !== "undefined" && console.warn) {
-        console.warn("[forge] window._forgeSidePanel not loaded — side panel inert.");
+      const inner = document.getElementById('detail-inner');
+      if (!inner) return;
+
+      // Build the floating tabs container at the viewport level.
+      // Appended to body so it isn't constrained by the forge-stage
+      // bounding box — that way it can shift across the panel edge
+      // smoothly when the panel opens.
+      const tabsEl = document.createElement('div');
+      tabsEl.className = 'forge-deity-tabs';
+      tabsEl.id        = 'forge-deity-tabs';
+      document.body.appendChild(tabsEl);
+
+      local.deityTabs = [];
+      local.openTabId = null;
+
+      function setPanelOpen(open) {
+        // The existing global panel is collapsed via body.detail-
+        // collapsed. In Forge view, our CSS hides aside.detail
+        // entirely when that class is present, so toggling it is
+        // the SAME as opening/closing for our purposes.
+        document.body.classList.toggle('detail-collapsed', !open);
+        // Sync data attribute so CSS can shift the tabs column.
+        tabsEl.classList.toggle('panel-open', !!open);
       }
+      // Phase 21AF (2026-05-22) — expose so the canvas click handler
+      // can open the panel on double-click. Local-scope hooks so
+      // there's no global pollution.
+      local._setPanelOpen = setPanelOpen;
+      // Initial state — panel closed.
+      setPanelOpen(false);
+
+      // Renders the tab stack from local.deityTabs.
+      function renderTabs() {
+        // Hide the whole container when empty.
+        if (!local.deityTabs.length) {
+          tabsEl.innerHTML = '';
+          tabsEl.style.display = 'none';
+          return;
+        }
+        tabsEl.style.display = '';
+        const m = local.mode;
+        const nodesById = (m && m.nodesById) ? m.nodesById : new Map();
+        const safe = (s) => String(s || '').replace(/[&<>"']/g, c => (
+          { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]
+        ));
+        const html = local.deityTabs.map(id => {
+          const n = nodesById.get ? nodesById.get(id) : null;
+          const color = (n && (n.family_color || n.tradition_color)) || '#999';
+          const title = (n && n.title) || id;
+          const isActive = (id === local.openTabId);
+          return '<button class="forge-deity-tab' + (isActive ? ' is-active' : '') + '"'
+               + ' data-id="' + safe(id) + '"'
+               + ' title="' + safe(title) + '">'
+               +   '<span class="forge-deity-tab-chevron">' + (isActive ? '›' : '‹') + '</span>'
+               +   '<span class="forge-deity-tab-dot" style="background:' + safe(color) + '"></span>'
+               + '</button>';
+        }).join('');
+        tabsEl.innerHTML = html;
+      }
+
+      // Trigger pulse animation on a specific tab DOM element.
+      function pulseTab(id) {
+        renderTabs();   // ensure the tab exists
+        const el = tabsEl.querySelector('.forge-deity-tab[data-id="' + id.replace(/"/g, '\\"') + '"]');
+        if (!el) return;
+        el.classList.remove('pulsing');
+        void el.offsetWidth;
+        el.classList.add('pulsing');
+        clearTimeout(local._sidePanelPulseTimer);
+        local._sidePanelPulseTimer = setTimeout(() => {
+          el.classList.remove('pulsing');
+        }, 2400);
+      }
+
+      // Tab click — event delegation on the container.
+      tabsEl.addEventListener('click', (e) => {
+        const btn = e.target.closest('.forge-deity-tab');
+        if (!btn) return;
+        const id = btn.getAttribute('data-id');
+        if (!id) return;
+        if (id === local.openTabId) {
+          // Click active tab → close panel.
+          local.openTabId = null;
+          setPanelOpen(false);
+          renderTabs();
+        } else {
+          // Switch to this deity.
+          local.openTabId = id;
+          setPanelOpen(true);
+          render();
+          renderTabs();
+        }
+      });
+
+      // Lock-change observer — called by toggleLock with (id, action).
+      // action: 'add' | 'remove' | 'clear'.
+      local._onLockChange = function (id, action) {
+        if (action === 'clear') {
+          local.deityTabs = [];
+          local.openTabId = null;
+          setPanelOpen(false);
+          renderTabs();
+          return;
+        }
+        if (action === 'remove' && id != null) {
+          const idx = local.deityTabs.indexOf(id);
+          if (idx >= 0) local.deityTabs.splice(idx, 1);
+          if (local.openTabId === id) {
+            local.openTabId = null;
+            setPanelOpen(false);
+          }
+          renderTabs();
+          return;
+        }
+        if (action === 'add' && id != null) {
+          if (local.deityTabs.indexOf(id) < 0) local.deityTabs.push(id);
+          // Phase 21X (2026-05-22) — fresh lock starts at image #1
+          // of the carousel. If the user re-locks the same node, the
+          // index resets so they see the curated lead image again.
+          if (local._sidePanelImageIdx) delete local._sidePanelImageIdx[id];
+          // Phase 21AE+AF (2026-05-22) — optional per-node click
+          // pulse on the clicked node. Gated by pulse-enabled +
+          // non-floor zoom (floor has its own heartbeat).
+          if (local._fxToggles && local._fxToggles['pulse-enabled'] && !local._fxBloomActive) {
+            triggerClickPulse(id);
+          }
+          renderTabs();
+          pulseTab(id);
+          // If the panel is already open, switch the active deity
+          // to the newest add — fresh focus wins.
+          if (local.openTabId != null) {
+            local.openTabId = id;
+            render();
+            renderTabs();
+          }
+          return;
+        }
+      };
+
+      // Renders the deity inspector content into #detail-inner.
+      function render() {
+        // Phase 22-AH (2026-05-24) — D-fix. Any path that wipes the
+        // side panel via `inner.innerHTML = ...` detaches the row
+        // the hover-tip is anchored to WITHOUT firing mouseout.
+        // The tip then sticks at top-left because positionTip reads
+        // zero-rect from the detached row. Symmetric hideTip()
+        // before the wipe kills the tip alongside its anchor row.
+        try { if (typeof hideTip === 'function') hideTip(); } catch (_) {}
+        const id = local.openTabId;
+        const m = local.mode;
+        const node = (id && m && m.nodesById && m.nodesById.get) ? m.nodesById.get(id) : null;
+        if (!node) {
+          inner.innerHTML = '<div class="empty">Select a deity to inspect.</div>';
+          return;
+        }
+        // Field readers — use BAKED data.js fields. Falls back
+        // through alternates for robustness.
+        const title    = node.title || node.name || id;
+        const tradition = (node.tradition || node.family || node.religion || '');
+        const aka       = Array.isArray(node.aka) ? node.aka.filter(Boolean) : [];
+        let desc        = (node.role || node.description || node.brief || node.subtitle || '');
+        if (!desc && Array.isArray(node.domains) && node.domains.length) {
+          desc = node.domains.join(', ');
+        }
+        const thumbSrc   = node.thumbnail || '';
+        const extract    = String(node.thumb_extract || '');
+        const wikiPage   = node.thumb_page || '';
+        const place      = (node.region || node['place-of-origin'] || node['originating-place'] || node.location || node.origin || '');
+        const domains    = Array.isArray(node.domains) ? node.domains.join(', ') : '';
+        const familyCol  = (node.family_color || node.tradition_color || '#888');
+
+        // Wire-bucket counts + per-bucket neighbor lists.
+        // Each bucket: { count, neighbors: [{ id, title, family_color, dir, … }] }.
+        // dir = 'out' (this node → other) or 'in' (other → this node).
+        //
+        // Phase 21AV (2026-05-23) — read from the FULL vault.edges set
+        // (not local.mode.edges). The deity wedge mode filters edges to
+        // deity-deity only — so all cross-folder connections (e.g. a
+        // deity → theme/event/person syncretic-edge) were dropped before
+        // the side panel ever saw them. That hid every T4 / T5 disclaimer
+        // that lives on a deity→theme edge (the entire Sitchin / nibiru-
+        // anunnaki batch is exactly this shape). Now the panel surfaces
+        // ALL connections incident on this node; out-of-mode neighbors
+        // get a subtype tag + are click-disabled (they're not on the
+        // wheel to lock). The wheel itself still only paints in-mode
+        // wires — that's correct, the wheel is the deity wheel.
+        const buckets = Object.create(null);
+        // Cache the full vault.nodes by id; reuse across renders.
+        if (!local._vaultNodesById) {
+          const vd = window.VAULT_DATA;
+          const map = new Map();
+          if (vd && Array.isArray(vd.nodes)) {
+            for (let i = 0; i < vd.nodes.length; i++) {
+              const n = vd.nodes[i];
+              if (n && n.id) map.set(n.id, n);
+            }
+          }
+          local._vaultNodesById = map;
+        }
+        const vaultNodesById = local._vaultNodesById;
+        const modeNodesById  = (m && m.nodesById) ? m.nodesById : null;
+        const vaultEdges     = (window.VAULT_DATA && window.VAULT_DATA.edges) || [];
+        // Phase 21AX (2026-05-23) — apply the same tier + political-risk
+        // filters in the side panel that the wire renderer uses. The
+        // side panel is the disclaimer-machine surface; if the user
+        // toggled T5 OFF or politicalRisk OFF, those edges shouldn't
+        // leak into the panel either (otherwise the chrome lies about
+        // what's "active"). Same composition: tier filter AND political-
+        // risk filter, both must pass.
+        const sideActiveTiers   = local._activeTiers;
+        const sideShowPolitical = !!local._showPoliticalRisk;
+        const sideTierFilterOn  = sideActiveTiers && sideActiveTiers.size < 5;
+        if (vaultEdges) {
+          const EB = window.EDGE_BUCKET || {};
+          for (let i = 0; i < vaultEdges.length; i++) {
+            const e = vaultEdges[i];
+            const isSrc = e.source === id;
+            const isTgt = e.target === id;
+            if (!isSrc && !isTgt) continue;
+            // Apply tier-filter to side panel too.
+            const eTier = e.source_tier || 'T1';
+            if (sideTierFilterOn && !sideActiveTiers.has(eTier)) continue;
+            // Apply political-risk filter to side panel too.
+            if (!sideShowPolitical && e.political_risk_flag) continue;
+            const b = EB[e.type] || 'association';
+            if (!buckets[b]) buckets[b] = { count: 0, neighbors: [] };
+            buckets[b].count++;
+            const otherId = isSrc ? e.target : e.source;
+            const otherNode = vaultNodesById.get(otherId) || null;
+            // out-of-mode = the wheel doesn't have this node, so the
+            // click-to-lock handler can't do anything useful with it.
+            const inMode = !!(modeNodesById && modeNodesById.has && modeNodesById.has(otherId));
+            const subtype = otherNode ? (otherNode.type || '') : '';
+            buckets[b].neighbors.push({
+              id: otherId,
+              title: (otherNode && (otherNode.title || otherNode.id)) || otherId,
+              color: (otherNode && (otherNode.family_color || otherNode.tradition_color)) || '#888',
+              dir: isSrc ? 'out' : 'in',
+              inMode,
+              subtype,           // 'deity' | 'theme' | 'person' | 'event' | …
+              edgeType:  e.type || '',
+              tier:      e.source_tier || 'T1',
+              source:    e.edge_source || '',
+              notes:     e.edge_notes  || '',
+              polRisk:   !!e.political_risk_flag,
+            });
+          }
+        }
+        const BUCKET_ORDER = ['transmission','parallel','association','kinship','attestation','polemic','fusion'];
+        const bucketHex = (b) => (local.params && local.params['active_color_' + b]) || '#999999';
+        // Phase 21AV (2026-05-23) — human-readable headers + tooltip
+        // labels. Replaces the raw kebab-case slugs (`parallel-form`,
+        // `syncretic-negative-identification`) the panel was showing
+        // earlier with plain-English phrases the reader can actually
+        // parse. Keys cover every type emitted by build_data.py:
+        // - the 21 PROTOCOL §3.1 edge types
+        // - the syncretic- prefixed variants from syncretic-edges
+        // - the legacy types still in older nodes
+        // - the plain-list kinship fields (consort/child-of/…)
+        const BUCKET_HUMAN = {
+          transmission: 'Transmission',
+          parallel:     'Parallel',
+          association:  'Association',
+          kinship:      'Kinship',
+          attestation:  'Attestation',
+          polemic:      'Polemic',
+          fusion:       'Fusion',
+        };
+        const TYPE_HUMAN = {
+          // PROTOCOL §3.1 — Transmission
+          'cognate':                     'Cognate (shared linguistic root)',
+          'direct-borrowing':            'Direct borrowing',
+          'iconographic-borrowing':      'Iconographic borrowing',
+          'substrate-influence':         'Substrate influence',
+          'continuous-development':      'Continuous development',
+          // PROTOCOL §3.1 — Parallel
+          'scholarly-parallel':          'Scholarly parallel',
+          'parallel-motif':              'Same motif, independent origin',
+          'functional-equivalent':       'Functional equivalent',
+          'interpretatio-nominal':       'Name mapping across traditions',
+          // PROTOCOL §3.1 — Fusion / identification
+          'same-as':                     'Identified as same figure',
+          'interpretatio-cultic':        'Cult / ritual mapping across traditions',
+          'ancient-identification':      'Ancient identification',
+          'composite-deity':             'Composite deity (merger)',
+          'folk-syncretism':             'Folk syncretism',
+          'identification':              'Identification',
+          // PROTOCOL §3.1 — Kinship / hierarchy
+          'manifestation-of':            'Manifestation / aspect of',
+          'avatara-of':                  'Avatara / incarnation of',
+          'constituent-of':              'Constituent of',
+          // PROTOCOL §3.1 — Polemic
+          'polemic-against':             'Polemic — rejects / refutes',
+          'polemic-inversion':           'Polemic — inverts opponent',
+          'demonization':                'Demonized rival figure',
+          'prefiguration-claim':         'Claimed as prefiguration',
+          'negative-identification':     'Rejected identification',
+          // Legacy / build_data.py defaults
+          'parallel-form':               'Parallel form',
+          'visual-cognate':              'Visual cognate',
+          'ancestor-of':                 'Ancestor of',
+          'connects-to':                 'Connected to',
+          // Plain-list kinship fields
+          'consort':                     'Consort',
+          'child-of':                    'Child of',
+          'parent-of':                   'Parent of',
+          'attested-in':                 'Attested in',
+        };
+        function humanType(t) {
+          if (!t) return '';
+          if (TYPE_HUMAN[t]) return TYPE_HUMAN[t];
+          // Strip the syncretic- prefix that build_data.py adds for
+          // anything from a syncretic-edges block.
+          if (t.indexOf('syncretic-') === 0) {
+            const tail = t.slice(10);
+            if (TYPE_HUMAN[tail]) return TYPE_HUMAN[tail];
+            return tail.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+          }
+          // Fallback: kebab → Title Case.
+          return t.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+        }
+        // Phase 21AV (2026-05-23) — subtype label shown after the
+        // neighbor name when the neighbor is NOT a deity (i.e. lives
+        // outside the current wheel mode). Keeps the panel honest
+        // about cross-folder relationships without misrepresenting
+        // them as wheel-clickable.
+        const SUBTYPE_HUMAN = {
+          theme:       'theme',
+          person:      'person',
+          event:       'event',
+          tradition:   'tradition',
+          symbol:      'symbol',
+          music:       'music',
+          alphabet:    'alphabet',
+          alchemy:     'alchemy',
+          ritual:      'ritual',
+          moral:       'moral',
+          philosophy:  'philosophy',
+          mathematics: 'mathematics',
+          medicine:    'medicine',
+        };
+        // Each bucket → a <details> block. Summary = colored pill
+        // with count + bucket name. Open content = list of neighbor
+        // titles (clickable to lock-and-switch to that deity).
+        const safeAttr = (s) => String(s || '').replace(/[&<>"']/g, c => (
+          { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]
+        ));
+        const pills = BUCKET_ORDER.map(b => {
+          const data = buckets[b];
+          if (!data) return '';
+          // Sort neighbors by title for predictable ordering.
+          data.neighbors.sort((x, y) => x.title.localeCompare(y.title));
+          const items = data.neighbors.map(n => {
+            // Phase 21AS (2026-05-23) — disclaimer-machine row chrome.
+            // Phase 21AT (2026-05-23) — tier badge on EVERY row.
+            // Phase 21AU (2026-05-23) — store tooltip data on data-*
+            // attrs instead of the title="" attribute.
+            // Phase 21AV (2026-05-23) — cross-folder neighbors (theme/
+            // event/person targets) render with a small subtype tag +
+            // are click-disabled (the wheel doesn't have them). The
+            // tier badge + tooltip still surface so the disclaimer
+            // machine works for cross-folder T4/T5 edges.
+            // Phase 21AX (2026-05-23) — CODEX v1.2 — separate the two
+            // axes. `risky` (tier===T5) gets the soft ⚠ contested
+            // marker; `blackAlert` (political_risk_flag=true) gets
+            // the ⛔ HIGH ALERT escalation. The two can co-occur
+            // (Icke is both T5 AND political-risk); the visual chrome
+            // composes — black left-border + ⛔ + the tier pill.
+            const tier        = n.tier || 'T1';
+            const tierRisky   = (tier === 'T5');
+            const blackAlert  = !!n.polRisk;
+            const risky       = tierRisky || blackAlert;   // for legacy is-risky class
+            const pillHtml = '<span class="forge-side-panel-wire-item-tier vs-tier-pill vs-tier-pill--' + tier.toLowerCase() + '">' + tier + '</span>';
+            const warnHtml = blackAlert
+              ? '<span class="forge-side-panel-wire-item-warn forge-side-panel-wire-item-warn--alert" aria-hidden="true">⛔</span>'
+              : (tierRisky
+                  ? '<span class="forge-side-panel-wire-item-warn" aria-hidden="true">⚠</span>'
+                  : '');
+            const subTagHtml = (!n.inMode && n.subtype && SUBTYPE_HUMAN[n.subtype])
+              ? '<span class="forge-side-panel-wire-item-subtype">' + SUBTYPE_HUMAN[n.subtype] + '</span>'
+              : '';
+            const classNames = 'forge-side-panel-wire-item'
+              + (risky       ? ' is-risky'       : '')
+              + (blackAlert  ? ' is-black-alert' : '')
+              + (!n.inMode   ? ' is-cross-folder' : '');
+            return '<button class="' + classNames + '"'
+              + ' data-id="' + safeAttr(n.id) + '"'
+              + ' data-in-mode="' + (n.inMode ? '1' : '0') + '"'
+              + ' data-tier="' + safeAttr(tier) + '"'
+              + ' data-edge-type="' + safeAttr(n.edgeType || '') + '"'
+              + ' data-edge-type-human="' + safeAttr(humanType(n.edgeType)) + '"'
+              + ' data-edge-source="' + safeAttr(n.source || '') + '"'
+              + ' data-edge-notes="' + safeAttr(n.notes || '') + '"'
+              + ' data-edge-dir="' + safeAttr(n.dir) + '"'
+              + ' data-edge-target-title="' + safeAttr(n.title) + '"'
+              + ' data-edge-target-subtype="' + safeAttr(n.subtype || '') + '"'
+              + ' data-edge-risky="' + (risky ? '1' : '0') + '">'
+              + '<span class="forge-side-panel-wire-item-dir">' + (n.dir === 'out' ? '→' : '←') + '</span>'
+              + '<span class="forge-side-panel-wire-item-dot" style="background:' + safeAttr(n.color) + '"></span>'
+              + warnHtml
+              + '<span class="forge-side-panel-wire-item-title">' + safeAttr(n.title) + '</span>'
+              + subTagHtml
+              + pillHtml
+              + '</button>';
+          }).join('');
+          return '<details class="forge-side-panel-wire" data-bucket="' + b + '" style="--bucket-color:' + bucketHex(b) + '">'
+            + '<summary class="forge-side-panel-wire-summary">'
+            +   '<span class="forge-side-panel-wire-dot" style="background:' + bucketHex(b) + '"></span>'
+            +   '<span class="forge-side-panel-wire-count">' + data.count + '</span>'
+            +   '<em class="forge-side-panel-wire-name">' + (BUCKET_HUMAN[b] || b) + '</em>'
+            +   '<span class="forge-side-panel-wire-caret">▾</span>'
+            + '</summary>'
+            + '<div class="forge-side-panel-wire-list">' + items + '</div>'
+            + '</details>';
+        }).filter(Boolean).join('');
+
+        const fmtYear = (y) => {
+          if (typeof y !== 'number' || !isFinite(y)) return '';
+          if (y < 0) return Math.abs(y) + ' BCE';
+          if (y === 0) return '0';
+          return y + ' CE';
+        };
+        const de = (typeof node.date_earliest === 'number') ? node.date_earliest : null;
+        const dl = (typeof node.date_latest   === 'number') ? node.date_latest   : null;
+        const dateStr = (de == null && dl == null) ? ''
+          : (de != null && dl != null && de !== dl) ? (fmtYear(de) + ' – ' + fmtYear(dl))
+          : fmtYear(de != null ? de : dl);
+
+        // Phase B-DATING-2 (2026-05-24) — dating_basis surface.
+        // Always show the basis tier so the user can audit WHY a
+        // node sits where it does on the timeline. Source + notes
+        // are optional rows below.
+        const dbasis    = node.dating_basis || '';
+        const dbSource  = node.dating_basis_source || '';
+        const dbNotes   = node.dating_basis_notes || '';
+        const DATING_BASIS_LABELS = {
+          'B1': 'B1 · primary date',
+          'B2': 'B2 · first textual attestation',
+          'B3': 'B3 · oldest archaeology',
+          'B4': 'B4 · first scripture appearance',
+          'B5': 'B5 · scholarly consensus',
+          'B6': 'B6 · family-median (soft)',
+          'B7': 'B7 · atemporal',
+        };
+        const dbLabel = DATING_BASIS_LABELS[dbasis] || dbasis;
+
+        const safe = (s) => String(s || '').replace(/[&<>"']/g, c => (
+          { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]
+        ));
+        // Phase 21X (2026-05-22) — multi-image carousel.
+        // Combine node.depictions[] (curated, with captions + license)
+        // + node.thumbnail (auto-fetched from Wikipedia) into a single
+        // list. Dedupe by URL. If length > 1, show ← / → arrows + a
+        // running index (e.g. "2 / 5"). Index is tracked per-node in
+        // local._sidePanelImageIdx so cycling persists while the panel
+        // is open, but a fresh lock resets to 0.
+        const depictionsList = Array.isArray(node.depictions) ? node.depictions : [];
+        const imageList = [];
+        const seenUrls = new Set();
+        for (const d of depictionsList) {
+          if (!d || typeof d.source !== 'string') continue;
+          if (seenUrls.has(d.source)) continue;
+          seenUrls.add(d.source);
+          imageList.push({
+            src:         d.source,
+            caption:     d.caption || '',
+            license:     d.license || '',
+            attribution: d.attribution || '',
+          });
+        }
+        if (thumbSrc && !seenUrls.has(thumbSrc)) {
+          seenUrls.add(thumbSrc);
+          imageList.push({ src: thumbSrc, caption: '', license: '', attribution: 'Wikipedia' });
+        }
+        if (!local._sidePanelImageIdx) local._sidePanelImageIdx = Object.create(null);
+        // Initialize OR clamp the saved index (a re-render after a
+        // depictions edit may have shrunk the list).
+        let curIdx = local._sidePanelImageIdx[id];
+        if (typeof curIdx !== 'number') curIdx = 0;
+        if (curIdx < 0) curIdx = 0;
+        if (curIdx >= imageList.length) curIdx = Math.max(0, imageList.length - 1);
+        local._sidePanelImageIdx[id] = curIdx;
+
+        function carouselHtml() {
+          if (!imageList.length) return '';
+          const img = imageList[curIdx];
+          const total = imageList.length;
+          const showArrows = total > 1;
+          const captionLine = img.caption ? safe(img.caption) : '';
+          const attribLine  = img.attribution ? safe(img.attribution) : '';
+          return '<div class="forge-side-panel-thumb' + (showArrows ? ' has-carousel' : '') + '" data-node-id="' + safeAttr(id) + '">'
+            + '<img src="' + safe(img.src) + '" alt="' + safe(img.caption || title) + '" />'
+            + (showArrows
+                ? '<button class="forge-side-panel-thumb-prev" data-thumb-nav="prev" aria-label="Previous image">‹</button>'
+                + '<button class="forge-side-panel-thumb-next" data-thumb-nav="next" aria-label="Next image">›</button>'
+                : '')
+            + (showArrows || captionLine || attribLine
+                ? '<div class="forge-side-panel-thumb-meta">'
+                  + (captionLine ? '<div class="forge-side-panel-thumb-caption">' + captionLine + '</div>' : '')
+                  + (attribLine  ? '<div class="forge-side-panel-thumb-attribution">' + attribLine + '</div>' : '')
+                  + (showArrows  ? '<div class="forge-side-panel-thumb-index">' + (curIdx + 1) + ' / ' + total + '</div>' : '')
+                  + '</div>'
+                : '')
+            + '</div>';
+        }
+        inner.innerHTML = '<div class="forge-side-panel-content" style="--family-color:' + safe(familyCol) + '">'
+          + carouselHtml()
+          + '<div class="forge-side-panel-header">'
+          +   '<div class="forge-side-panel-name">' + safe(title) + '</div>'
+          +   (aka.length ? '<div class="forge-side-panel-aka">' + aka.map(safe).join(' · ') + '</div>' : '')
+          +   (tradition ? '<div class="forge-side-panel-tradition">' + safe(tradition) + '</div>' : '')
+          + '</div>'
+          + (desc ? '<div class="forge-side-panel-desc">' + safe(desc) + '</div>' : '')
+          + (pills ? '<div class="forge-side-panel-wires">' + pills + '</div>' : '')
+          + '<dl class="forge-side-panel-meta">'
+          +   (dateStr ? '<dt>Date</dt><dd>' + safe(dateStr) + '</dd>' : '')
+          // Phase B-DATING-2 (2026-05-24) — dating-basis rows.
+          // Always show the basis tier; source + notes optional.
+          +   (dbLabel  ? '<dt>Basis</dt><dd class="forge-side-panel-dating-basis forge-side-panel-dating-basis--' + safeAttr(dbasis.toLowerCase()) + '">' + safe(dbLabel) + '</dd>' : '')
+          +   (dbSource ? '<dt>Source</dt><dd>' + safe(dbSource) + '</dd>' : '')
+          +   (dbNotes  ? '<dt>Notes</dt><dd class="forge-side-panel-dating-notes">' + safe(dbNotes) + '</dd>' : '')
+          +   (place   ? '<dt>Place</dt><dd>' + safe(place)   + '</dd>' : '')
+          +   (domains ? '<dt>Domains</dt><dd>' + safe(domains) + '</dd>' : '')
+          + '</dl>'
+          + (extract ? '<div class="forge-side-panel-extract">' + safe(extract) + '</div>' : '')
+          + (wikiPage ? '<a class="forge-side-panel-wikilink" href="' + safe(wikiPage) + '" target="_blank" rel="noopener noreferrer">Open Wikipedia ↗</a>' : '')
+          + '</div>';
+
+        // Phase 21AD (2026-05-22) — face-aware object-position on the
+        // carousel image. Same heuristic as the hover card: portraits
+        // shift up to keep the head visible inside the square crop.
+        const thumbImg = inner.querySelector('.forge-side-panel-thumb img');
+        if (thumbImg) {
+          const setPos = () => {
+            thumbImg.style.objectPosition = computeFaceObjectPosition(
+              thumbImg.naturalWidth, thumbImg.naturalHeight
+            );
+          };
+          if (thumbImg.complete && thumbImg.naturalWidth > 0) setPos();
+          else thumbImg.addEventListener('load', setPos, { once: true });
+        }
+      }
+
+      local._renderSidePanel = render;
+      // Phase 21AG (2026-05-22) — expose renderTabs so the canvas
+      // double-click handler can refresh the active-tab marker
+      // immediately when it switches openTabId.
+      local._renderTabs = renderTabs;
+
+      // Phase 19D — click a neighbor inside an expanded wire list →
+      // lock + switch the panel to that deity. Event-delegated on
+      // the global inner so it works for every render pass without
+      // re-binding.
+      inner.addEventListener('click', (e) => {
+        // Phase 21X (2026-05-22) — carousel arrows. Check first since
+        // the buttons live inside .forge-side-panel-thumb which would
+        // otherwise pass through to other handlers.
+        const navBtn = e.target.closest('[data-thumb-nav]');
+        if (navBtn) {
+          e.stopPropagation();
+          const direction = navBtn.getAttribute('data-thumb-nav');
+          const thumbBox  = navBtn.closest('.forge-side-panel-thumb');
+          const targetId  = thumbBox && thumbBox.getAttribute('data-node-id');
+          if (!targetId || !local._renderSidePanel) return;
+          // Compute total via the node's combined image list, mirror
+          // of the render-time logic. We re-derive instead of caching
+          // so the count stays correct if the data changes underneath.
+          const nodeRec = (local.mode && local.mode.nodesById && local.mode.nodesById.get(targetId)) || null;
+          if (!nodeRec) return;
+          const deps  = Array.isArray(nodeRec.depictions) ? nodeRec.depictions : [];
+          const seen  = new Set();
+          let total   = 0;
+          for (const d of deps) { if (d && d.source && !seen.has(d.source)) { seen.add(d.source); total++; } }
+          if (nodeRec.thumbnail && !seen.has(nodeRec.thumbnail)) total++;
+          if (total <= 1) return;
+          if (!local._sidePanelImageIdx) local._sidePanelImageIdx = Object.create(null);
+          let cur = local._sidePanelImageIdx[targetId];
+          if (typeof cur !== 'number') cur = 0;
+          if (direction === 'next') cur = (cur + 1) % total;
+          else                      cur = (cur - 1 + total) % total;
+          local._sidePanelImageIdx[targetId] = cur;
+          // Re-render the side panel (cheap; the panel is small).
+          local._renderSidePanel();
+          return;
+        }
+        const item = e.target.closest('.forge-side-panel-wire-item');
+        if (!item) return;
+        const targetId = item.getAttribute('data-id');
+        if (!targetId) return;
+        // Phase 22-AH (2026-05-25) — cross-folder click handler.
+        // Per audit C: pre-22-AH this early-returned silently. Now
+        // cross-folder rows open an action popup with the target
+        // info + "Open in <view>" button so the user can FOLLOW
+        // the wire across master-view types (Themes / Persons /
+        // Events / etc). The popup is also a slot for future
+        // actions (Show reference, Copy link, Open in new tab, …).
+        if (item.getAttribute('data-in-mode') !== '1') {
+          showCrossFolderPopup(item);
+          return;
+        }
+        // Lock only if not already locked (toggleLock toggles).
+        if (!local.lockedSet.has(targetId)) {
+          toggleLock(targetId);    // adds + pulses tab + (if open) renders
+        } else {
+          // Already locked: just switch the panel to it.
+          local.openTabId = targetId;
+          render();
+          renderTabs();
+        }
+      });
+
+      // Phase 22-AH (2026-05-25) — cross-folder popup. Anchored to
+      // the clicked row; offers "Open in <view> view" + dismiss.
+      // Reusable shell — future commits can stack more actions
+      // (Show reference, Copy link, Open thumb modal, etc.).
+      function showCrossFolderPopup(rowEl) {
+        if (!rowEl) return;
+        const targetId   = rowEl.getAttribute('data-id') || '';
+        const targetName = rowEl.getAttribute('data-edge-target-title') || targetId;
+        const subtype    = rowEl.getAttribute('data-edge-target-subtype') || '';
+        // Subtype → master view name. Today only the Deities wheel
+        // is fully wired; other targets stay informational until
+        // their master views ship.
+        const VIEW_FOR = {
+          deity:       { id: 'forge',  label: 'Deities',  available: true  },
+          theme:       { id: 'forge',  label: 'Themes',   available: true  },
+          person:      { id: 'forge',  label: 'Persons',  available: true  },
+          event:       { id: 'forge',  label: 'Events',   available: true  },
+          tradition:   { id: 'forge',  label: 'Traditions', available: true  },
+          symbol:      { id: 'forge',  label: 'Symbols',  available: true  },
+          music:       { id: 'forge',  label: 'Music',    available: false },
+          alphabet:    { id: 'forge',  label: 'Alphabets',available: false },
+          alchemy:     { id: 'forge',  label: 'Alchemy',  available: false },
+          ritual:      { id: 'forge',  label: 'Practices',available: false },
+          moral:       { id: 'forge',  label: 'Moral',    available: false },
+          philosophy:  { id: 'forge',  label: 'Philosophy',available: false },
+          mathematics: { id: 'forge',  label: 'Mathematics',available: false },
+          medicine:    { id: 'forge',  label: 'Medicine', available: false },
+        };
+        const dest = VIEW_FOR[subtype] || { label: subtype || 'this folder', available: false };
+
+        // Remove any existing popup first (single-instance).
+        const old = document.getElementById('forge-side-cross-pop');
+        if (old && old.parentNode) old.parentNode.removeChild(old);
+
+        const pop = document.createElement('div');
+        pop.id = 'forge-side-cross-pop';
+        pop.className = 'forge-side-cross-pop';
+        pop.innerHTML =
+          '<div class="forge-side-cross-pop-head">' +
+            '<span class="forge-side-cross-pop-title">' + safeAttr(targetName) + '</span>' +
+            '<button class="forge-side-cross-pop-close" type="button" aria-label="Close">×</button>' +
+          '</div>' +
+          '<div class="forge-side-cross-pop-sub">' + safeAttr(subtype || 'cross-folder') + '</div>' +
+          '<div class="forge-side-cross-pop-actions">' +
+            (dest.available
+              ? '<button class="forge-side-cross-pop-action" data-action="open-mode" data-mode="' + safeAttr(subtype) + '">Switch master view → ' + safeAttr(dest.label) + '</button>'
+              : '<div class="forge-side-cross-pop-pending">' + safeAttr(dest.label) + ' view — coming soon</div>') +
+          '</div>';
+
+        // Anchor: drop the popup to the LEFT of the clicked row
+        // (side panel is right-anchored). Use fixed positioning so
+        // panel scroll doesn't drag it along.
+        const rRow = rowEl.getBoundingClientRect();
+        pop.style.position = 'fixed';
+        pop.style.top  = (rRow.top - 4) + 'px';
+        pop.style.right = (window.innerWidth - rRow.left + 12) + 'px';
+        document.body.appendChild(pop);
+
+        function close() {
+          if (pop.parentNode) pop.parentNode.removeChild(pop);
+          document.removeEventListener('mousedown', onOutside, true);
+          document.removeEventListener('keydown', onEsc, true);
+        }
+        function onOutside(e) {
+          if (pop.contains(e.target)) return;
+          if (rowEl.contains(e.target)) return;
+          close();
+        }
+        function onEsc(e) { if (e.key === 'Escape') close(); }
+        pop.querySelector('.forge-side-cross-pop-close').addEventListener('click', close);
+        const actBtn = pop.querySelector('.forge-side-cross-pop-action');
+        if (actBtn) {
+          actBtn.addEventListener('click', function () {
+            // Switch class filter to the target's subtype mode if
+            // it's a recognized one. Today this maps subtypes onto
+            // the Deities wheel's mode list — a placeholder until
+            // the other master views land. Future expansion: emit
+            // a `codex:nav` event the shell catches.
+            const mode = actBtn.getAttribute('data-mode');
+            if (mode && window._forge && typeof window._forge.setClassFilter === 'function') {
+              try { window._forge.setClassFilter(mode); } catch (_) {}
+            }
+            // Try to lock the target after the mode switch.
+            try {
+              setTimeout(function () {
+                if (local.lockedSet && !local.lockedSet.has(targetId)) {
+                  toggleLock(targetId);
+                }
+                local.openTabId = targetId;
+                render();
+                renderTabs();
+              }, 60);
+            } catch (_) {}
+            close();
+          });
+        }
+        document.addEventListener('mousedown', onOutside, true);
+        document.addEventListener('keydown', onEsc, true);
+      }
+
+      // ─── Phase 21AU (2026-05-23) — custom side-panel tooltip ──
+      //
+      // Replaces the OS-native title="..." tooltip (ugly + slow,
+      // ~1.5s delay) with an atlas-styled floating box that fires
+      // at 500 ms. The tooltip element is created once and reused;
+      // it lives in document.body so it can escape the side panel
+      // clip + overflow. Position rule: try LEFT of the side panel
+      // first (the panel is right-anchored), fall back to RIGHT if
+      // left would overflow.
+      //
+      // Content per row is read from data-* attrs set in the row
+      // HTML: tier, edge-type, edge-source, edge-notes, edge-dir,
+      // edge-target-title, edge-risky. T5 / political-risk rows
+      // lead with the disclaimer caveat row before the claim.
+      let tipEl = document.getElementById('forge-side-tip');
+      if (!tipEl) {
+        tipEl = document.createElement('div');
+        tipEl.id = 'forge-side-tip';
+        tipEl.className = 'forge-side-tip';
+        tipEl.setAttribute('aria-hidden', 'true');
+        document.body.appendChild(tipEl);
+      }
+      let tipShowTimer = 0;
+      let tipHideTimer = 0;
+      let tipCurrentRow = null;
+      const TIP_DELAY_MS = 500;
+      function escTip(s) {
+        return String(s == null ? '' : s).replace(/[&<>"']/g, c => (
+          { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]
+        ));
+      }
+      function buildTipHtml(row) {
+        const tier      = row.getAttribute('data-tier') || 'T1';
+        const dir       = row.getAttribute('data-edge-dir') === 'out' ? '→' : '←';
+        const target    = row.getAttribute('data-edge-target-title') || '';
+        // Phase 21AV (2026-05-23) — surface the HUMAN-READABLE type
+        // label instead of the raw kebab-case slug (e.g. "Rejected
+        // identification" instead of "syncretic-negative-identification").
+        const typeHuman = row.getAttribute('data-edge-type-human') || '';
+        const src       = row.getAttribute('data-edge-source') || '';
+        const notes     = row.getAttribute('data-edge-notes') || '';
+        const risky     = row.getAttribute('data-edge-risky') === '1';
+        // Phase 21AX (2026-05-23) — black-alert is the political-risk-
+        // flag axis (CODEX v1.2 §IV.5). Read directly from the row's
+        // is-black-alert class, set by the renderer when polRisk=true.
+        const blackAlert = row.classList.contains('is-black-alert');
+        const inMode    = row.getAttribute('data-in-mode') === '1';
+        const subtype   = row.getAttribute('data-edge-target-subtype') || '';
+        const tierClass = 'vs-tier-pill--' + tier.toLowerCase();
+        let html = '';
+        if (blackAlert) {
+          html += '<div class="forge-side-tip-risk forge-side-tip-risk--alert">⛔ HIGH ALERT — political-risk content (real-world harm-wiring documented)</div>';
+        } else if (risky) {
+          html += '<div class="forge-side-tip-risk">⚠ Disclaimer required — claim rejected by mainstream</div>';
+        }
+        html += '<div class="forge-side-tip-head">'
+          +    '<span class="forge-side-tip-dir">' + dir + '</span>'
+          +    '<span class="forge-side-tip-title">' + escTip(target) + '</span>'
+          +    '<span class="vs-tier-pill ' + tierClass + '">' + escTip(tier) + '</span>'
+          +    '</div>';
+        // Cross-folder subtype line — e.g., "→ a theme node (not on
+        // the deity wheel)" so the user understands why the row isn't
+        // clickable.
+        if (!inMode && subtype) {
+          html += '<div class="forge-side-tip-row"><span class="k">node</span><span class="v">a ' + escTip(subtype) + ' node — not on the deity wheel</span></div>';
+        }
+        if (typeHuman) {
+          html += '<div class="forge-side-tip-row"><span class="k">type</span><span class="v">' + escTip(typeHuman) + '</span></div>';
+        }
+        if (src) {
+          html += '<div class="forge-side-tip-row"><span class="k">source</span><span class="v">' + escTip(src) + '</span></div>';
+        }
+        if (notes) {
+          html += '<div class="forge-side-tip-notes">' + escTip(notes) + '</div>';
+        }
+        html += '<div class="forge-side-tip-hint">' + (inMode ? 'Click to lock + inspect' : 'Not on the deity wheel — view-only') + '</div>';
+        return html;
+      }
+      function positionTip(row) {
+        // Phase 22-AH (2026-05-24) — D-fix defensive guard.
+        // If the row got detached from the DOM (innerHTML replaced
+        // the side-panel while a tip was still anchored to it), its
+        // bounding-rect reads zeros → tip clamps to (10, 10) top-
+        // left. Detect detachment + hide instead of paint-then-stick.
+        if (!row || !row.isConnected) { hideTip(); return; }
+        const rRow = row.getBoundingClientRect();
+        if (rRow.width === 0 && rRow.height === 0) { hideTip(); return; }
+        const rTip = tipEl.getBoundingClientRect();
+        const margin = 10;
+        // Default to LEFT of the row (side panel is on the right).
+        // If that would overflow off-screen left, fall back to RIGHT.
+        let left = rRow.left - rTip.width - margin;
+        if (left < margin) left = rRow.right + margin;
+        // Clamp horizontally so we never paint off-screen right.
+        if (left + rTip.width + margin > window.innerWidth) {
+          left = Math.max(margin, window.innerWidth - rTip.width - margin);
+        }
+        // Vertical: align top of tip with top of row, clamp to fit.
+        let top = rRow.top;
+        if (top + rTip.height + margin > window.innerHeight) {
+          top = window.innerHeight - rTip.height - margin;
+        }
+        if (top < margin) top = margin;
+        tipEl.style.left = left + 'px';
+        tipEl.style.top  = top  + 'px';
+      }
+      function showTipFor(row) {
+        tipCurrentRow = row;
+        tipEl.innerHTML = buildTipHtml(row);
+        tipEl.setAttribute('data-tier', row.getAttribute('data-tier') || 'T1');
+        tipEl.setAttribute('data-risky', row.getAttribute('data-edge-risky') === '1' ? '1' : '0');
+        // Phase 21AX (2026-05-23) — propagate black-alert state to
+        // the tip element so CSS can escalate the chrome (black
+        // top border instead of red, ⛔ icon coloring, etc.).
+        tipEl.setAttribute('data-alert', row.classList.contains('is-black-alert') ? '1' : '0');
+        tipEl.classList.add('is-visible');
+        tipEl.setAttribute('aria-hidden', 'false');
+        positionTip(row);
+      }
+      function hideTip() {
+        tipEl.classList.remove('is-visible');
+        tipEl.setAttribute('aria-hidden', 'true');
+        tipCurrentRow = null;
+      }
+      inner.addEventListener('mouseover', (e) => {
+        const row = e.target.closest('.forge-side-panel-wire-item');
+        if (!row || row === tipCurrentRow) return;
+        if (tipShowTimer) { clearTimeout(tipShowTimer); tipShowTimer = 0; }
+        if (tipHideTimer) { clearTimeout(tipHideTimer); tipHideTimer = 0; }
+        tipShowTimer = setTimeout(() => {
+          tipShowTimer = 0;
+          showTipFor(row);
+        }, TIP_DELAY_MS);
+      });
+      inner.addEventListener('mouseout', (e) => {
+        const row = e.target.closest('.forge-side-panel-wire-item');
+        if (!row) return;
+        if (tipShowTimer) { clearTimeout(tipShowTimer); tipShowTimer = 0; }
+        // Short defer so moving from one row to another doesn't
+        // flash the tip out + back in — let the next mouseover
+        // cancel the hide.
+        if (tipHideTimer) { clearTimeout(tipHideTimer); }
+        tipHideTimer = setTimeout(() => {
+          tipHideTimer = 0;
+          hideTip();
+        }, 80);
+      });
+      // Hide on any scroll inside the panel (the row moved).
+      inner.addEventListener('scroll', hideTip, true);
+      // Hide on click — the panel's about to re-render and the
+      // old tip would be orphaned.
+      inner.addEventListener('click', hideTip, true);
     }
 
     function wireTimelineScrubber() {
-      // Phase 23.1a carve (2026-05-25): body lifted to
-      // src/js/forge/timeline-scrubber.js. This stub preserves the
-      // existing call site + handles the (rare) load-order case
-      // where this view mounts before the carved module finishes
-      // loading. window._forgeTimelineScrubber is set by the IIFE
-      // in that file; load via <script> tag before forge.js.
-      if (window._forgeTimelineScrubber && typeof window._forgeTimelineScrubber.attach === "function") {
-        window._forgeTimelineScrubber.attach({ local, recomputeFocus, saveRuntimeState });
-      } else if (typeof console !== "undefined" && console.warn) {
-        console.warn("[forge] window._forgeTimelineScrubber not loaded — timeline scrubber inert.");
+      const slider  = document.getElementById('forge-scrub-slider');
+      if (!slider) return;
+      const track   = slider.querySelector('.forge-scrub-track');
+      const rangeEl = slider.querySelector('#forge-scrub-range');
+      const inEl    = slider.querySelector('#forge-scrub-in-thumb');
+      const ctrEl   = slider.querySelector('#forge-scrub-center-thumb');
+      const outEl   = slider.querySelector('#forge-scrub-out-thumb');
+      const yearZeroEl = slider.querySelector('#forge-scrub-year-zero');
+      const inBox      = document.getElementById('forge-scrub-in');
+      const outBox     = document.getElementById('forge-scrub-out');
+      const presentBox = document.getElementById('forge-scrub-present');
+
+      // Derive [minYear, maxYear] from the current mode's nodes.
+      // Negative = BCE per the vault convention.
+      // Field naming: the YAML uses kebab-case (date-start,
+      // date-attested-earliest, etc.) but build_data.py normalizes
+      // to underscored snake_case (date_earliest, date_latest) in
+      // data.js. Read the normalized form first, fall back to raw
+      // for safety.
+      function deriveBounds() {
+        const nodes = local.mode && local.mode.nodes;
+        if (!nodes || !nodes.length) return null;
+        let lo = Infinity, hi = -Infinity;
+        for (const n of nodes) {
+          const candidates = [
+            n.date_earliest, n.date_latest,                // normalized
+            n['date-start'],  n['date-end'],               // raw fallback
+            n['date-attested-earliest'], n['date-attested-latest'],
+            n['originating-date'], n['date-composed-earliest'],
+            n['date-composed-latest'], n['date-formulated'],
+            n['date-founded'], n['date-built-earliest'],
+            n['date-built-latest'], n['date-birth'], n['date-death'],
+          ];
+          for (const v of candidates) {
+            if (v == null) continue;
+            const num = typeof v === 'number' ? v : parseInt(v, 10);
+            if (!isFinite(num)) continue;
+            if (num < lo) lo = num;
+            if (num > hi) hi = num;
+          }
+        }
+        if (!isFinite(lo) || !isFinite(hi) || lo >= hi) return null;
+        // Sanity clamp. Some nodes carry cosmological / pre-history
+        // dates (e.g., date_earliest = -1e9 for Big Bang / Earth
+        // formation references in cosmogonic-motif nodes). Those
+        // skew the timeline so far that the human-history span is
+        // a hairline.
+        //
+        // Phase 11 (2026-05-20):
+        //   - HIST_LO is the OLDEST entry's clamped lower bound
+        //     (no fixed floor; -15000 was just a safety net and we
+        //     still keep it for cosmogonic outliers).
+        //   - HIST_HI is TODAY'S year — the future ceiling is now
+        //     pinned to "now", not an arbitrary 3000. Past-only
+        //     timeline; nothing in the chart is in the future of
+        //     the user.
+        const HIST_LO = -15000;                    // 15,000 BCE safety floor
+        const HIST_HI = new Date().getFullYear();  // today (Phase 11)
+        if (lo < HIST_LO) lo = HIST_LO;
+        if (hi > HIST_HI) hi = HIST_HI;
+        // Round outward to nice century-edges so the readout looks
+        // tidy. -3142 → -3200. Phase 11: do NOT round PAST today.
+        // If the century-ceiling would exceed HIST_HI (e.g. 2024 →
+        // 2100), clamp back to HIST_HI. The upper bound is "now",
+        // not "next century."
+        const lopad = Math.floor(lo / 100) * 100;
+        let   hipad = Math.ceil(hi / 100) * 100;
+        if (hipad > HIST_HI) hipad = HIST_HI;
+        return [lopad, hipad];
       }
+
+      // Phase 5B M-F3 (2026-05-20) — refreshBounds is the per-mode
+      // entry point. wireTimelineScrubber runs ONCE at boot to set
+      // up DOM + handlers + a first refresh; rebuildForMode calls
+      // local.scrubber.refreshBounds() at the end to re-derive
+      // lo/hi for the new mode + preserve-or-clamp the user's
+      // in/out/center. Preserves user state when it fits the new
+      // mode's date span; clamps to nearest valid bound otherwise.
+      // Phase 21B (2026-05-21) — cosmetic floor on the timeline's
+      // left bracket. The vault has a handful of outlier deities
+      // older than 9000 BCE (Aboriginal Dreamtime, San Bushmen)
+      // plus one YAML bug (rishabha-jain at -999,999,999). They
+      // distort the slider's effective range. John's directive:
+      // cap the visible LEFT bracket at -9000 BCE and display
+      // "+9000 BCE" when the IN handle is fully left, meaning
+      // "includes every deity dated before that too". Wiring is
+      // untouched — the filter still passes every deity whose
+      // date is ≤ outDate when inDate is at the cosmetic floor.
+      const TIMELINE_FLOOR_BCE = -9000;
+      function refreshBounds() {
+        const b = deriveBounds();
+        if (!b) {
+          slider.style.display = 'none';
+          if (inBox)      inBox.style.display = 'none';
+          if (outBox)     outBox.style.display = 'none';
+          if (presentBox) presentBox.style.display = 'none';
+          local.timeline = null;
+          return;
+        }
+        let [lo, hi] = b;
+        // Cosmetic floor: never let the slider's left edge go
+        // below TIMELINE_FLOOR_BCE. The "real" minimum is kept
+        // around in case any future code needs it.
+        if (lo < TIMELINE_FLOOR_BCE) lo = TIMELINE_FLOOR_BCE;
+        const prev = local.timeline;
+        const inDate     = prev && typeof prev.inDate     === 'number'
+          ? Math.max(lo, Math.min(hi, prev.inDate))   : lo;
+        const outDate    = prev && typeof prev.outDate    === 'number'
+          ? Math.max(inDate, Math.min(hi, prev.outDate)) : hi;
+        const centerDate = prev && typeof prev.centerDate === 'number'
+          ? Math.max(inDate, Math.min(outDate, prev.centerDate))
+          : Math.floor((inDate + outDate) / 2);
+        local.timeline = { lo, hi, inDate, outDate, centerDate };
+        // Re-show in case a previous mode had no dated nodes.
+        slider.style.display = '';
+        if (inBox)      inBox.style.display = '';
+        if (outBox)     outBox.style.display = '';
+        if (presentBox) presentBox.style.display = '';
+        refreshUI();
+      }
+
+      // Date → fraction along track (0..1). Reads from
+      // local.timeline (NOT closure-local lo/hi) so it picks up
+      // the current mode's bounds after refreshBounds().
+      function dateToFrac(d) {
+        const tl = local.timeline;
+        if (!tl) return 0;
+        return (d - tl.lo) / (tl.hi - tl.lo);
+      }
+      function fracToDate(f) {
+        const tl = local.timeline;
+        if (!tl) return 0;
+        f = Math.max(0, Math.min(1, f));
+        return Math.round(tl.lo + f * (tl.hi - tl.lo));
+      }
+      function formatYear(y) {
+        if (y < 0) return Math.abs(y) + ' BCE';
+        if (y === 0) return '0';
+        return y + ' CE';
+      }
+      function refreshUI() {
+        const t = local.timeline;
+        if (!t) return;
+        const inF  = dateToFrac(t.inDate)     * 100;
+        const outF = dateToFrac(t.outDate)    * 100;
+        const ctrF = dateToFrac(t.centerDate) * 100;
+        inEl.style.left   = inF  + '%';
+        outEl.style.left  = outF + '%';
+        ctrEl.style.left  = ctrF + '%';
+        rangeEl.style.left  = inF + '%';
+        rangeEl.style.width = (outF - inF) + '%';
+        // Phase 11 — Year-0 marker. Visible only when the bounds
+        // straddle year 0 (almost always, but defensive). Positioned
+        // by the same dateToFrac map the thumbs use; CSS makes it
+        // a faint grey tick that doesn't compete with the thumbs.
+        if (yearZeroEl) {
+          if (t.lo < 0 && t.hi > 0) {
+            const zeroF = dateToFrac(0) * 100;
+            yearZeroEl.style.left    = zeroF + '%';
+            yearZeroEl.style.display = '';
+          } else {
+            yearZeroEl.style.display = 'none';
+          }
+        }
+        // 4-box readouts. Each box gets just the year (no
+        // separator) so it stays compact at fixed height.
+        // Phase 21B (2026-05-21) — IN box shows "+9000 BCE" when
+        // the handle is at the cosmetic floor: the "+" signals
+        // that everything earlier is also included.
+        // Phase 21R (2026-05-22) — IN / OUT are now <input>s. Use
+        // .value for them; skip the write while the user is
+        // actively typing (document.activeElement check) so we
+        // don't clobber a partial entry. PRESENT stays a <div>
+        // (read-only playhead readout) — uses .textContent.
+        if (inBox && document.activeElement !== inBox) {
+          const atFloor = (t.inDate <= t.lo + 0.5);
+          inBox.value = atFloor
+            ? ('+' + Math.abs(t.lo) + ' BCE')
+            : formatYear(t.inDate);
+        }
+        if (outBox && document.activeElement !== outBox) {
+          outBox.value = formatYear(t.outDate);
+        }
+        if (presentBox) presentBox.textContent = formatYear(t.centerDate);
+      }
+
+      // Phase 5B M-F3 (2026-05-20) — apply LS-saved timeline state
+      // (clamped to current mode's lo/hi) + refreshUI. Called once
+      // at boot AFTER wireTimelineScrubber + after initial
+      // rebuildForMode populates local.timeline.lo/hi. Safe when
+      // saved is null or saved.timeline missing.
+      function applySavedTimeline(saved) {
+        if (!saved || !local.timeline) return;
+        const tl = local.timeline;
+        const lo = tl.lo, hi = tl.hi;
+        if (typeof saved.in === 'number')     tl.inDate     = Math.max(lo, Math.min(hi, saved.in));
+        if (typeof saved.out === 'number')    tl.outDate    = Math.max(tl.inDate, Math.min(hi, saved.out));
+        if (typeof saved.center === 'number') tl.centerDate = Math.max(tl.inDate, Math.min(tl.outDate, saved.center));
+        refreshUI();
+      }
+
+      // Drag state. Pointer events on track + thumbs; track captures
+      // so dragging outside the track still updates.
+      let dragHandle = null;
+      function onPointerDown(ev) {
+        const handle = ev.target && ev.target.dataset && ev.target.dataset.handle;
+        if (!handle) return;
+        dragHandle = handle;
+        track.setPointerCapture(ev.pointerId);
+        ev.preventDefault();
+      }
+      function onPointerMove(ev) {
+        if (!dragHandle) return;
+        const rect = track.getBoundingClientRect();
+        const frac = (ev.clientX - rect.left) / rect.width;
+        const date = fracToDate(frac);
+        const t = local.timeline;
+        let rangeChanged = false;
+        if (dragHandle === 'in') {
+          const newIn = Math.min(date, t.outDate - 1);
+          if (newIn !== t.inDate) { t.inDate = newIn; rangeChanged = true; }
+          if (t.centerDate < t.inDate) t.centerDate = t.inDate;
+        } else if (dragHandle === 'out') {
+          const newOut = Math.max(date, t.inDate + 1);
+          if (newOut !== t.outDate) { t.outDate = newOut; rangeChanged = true; }
+          if (t.centerDate > t.outDate) t.centerDate = t.outDate;
+        } else if (dragHandle === 'center') {
+          t.centerDate = Math.max(t.inDate, Math.min(t.outDate, date));
+          // Center scrub doesn't re-filter (no IN/OUT change), just
+          // updates the playhead readout.
+        }
+        refreshUI();
+        // Filter wiring: when IN or OUT change, re-run focus so
+        // the date-range-dim is applied to nodes outside the
+        // range. Center moves don't change the filter.
+        //
+        // Phase 2B B4 (2026-05-20) — rAF-coalesce the recompute.
+        // Scrubber drag fires pointermove at up to 120Hz; without
+        // this gate `recomputeFocus` runs synchronously per move,
+        // burning the JS thread on full-buffer fade-target writes.
+        // Mirrors the setHoverId pattern from commit 98bc609.
+        // refreshUI (cheap DOM text updates) stays synchronous so
+        // drag feedback feels immediate.
+        if (rangeChanged) {
+          local.scrubPendingChange = true;
+          if (!local.scrubRafId) {
+            local.scrubRafId = requestAnimationFrame(() => {
+              local.scrubRafId = 0;
+              local.scrubPendingChange = false;
+              if (local.destroyed) return;
+              recomputeFocus();
+            });
+          }
+        }
+      }
+      function onPointerUp(ev) {
+        if (!dragHandle) return;
+        dragHandle = null;
+        try { track.releasePointerCapture(ev.pointerId); } catch (e) { /* ignore */ }
+        // Phase 5B M-F2 (2026-05-20) — persist timeline state on
+        // drag release. Saves all three (mode + timeline + lockedSet).
+        saveRuntimeState();
+      }
+      track.addEventListener('pointerdown', onPointerDown);
+      track.addEventListener('pointermove', onPointerMove);
+      track.addEventListener('pointerup',   onPointerUp);
+      track.addEventListener('pointercancel', onPointerUp);
+
+      // ─── Phase 21R (2026-05-22) — typable date boxes ──────────
+      // Accept several formats and clamp to the current mode's
+      // [lo, hi]. After commit: write back canonical formatted
+      // text, push to local.timeline, re-position the thumb, and
+      // re-run the filter (recomputeFocus). Cancel on Escape.
+      //
+      // Parse rules — case-insensitive, whitespace-tolerant:
+      //   "1500 BCE" / "1500 BC" / "-1500"   →  -1500
+      //   "200 CE"   / "200 AD"  / "+200" / "200"  →   200
+      //   "0"  →  0
+      //   empty / unparseable → reject, restore prior text
+      function parseYearText(raw) {
+        if (raw == null) return null;
+        const s = String(raw).trim().toLowerCase();
+        if (!s) return null;
+        // "+9000 bce" (timeline floor cosmetic) — strip leading +
+        // so the BCE branch below handles it as a magnitude.
+        const stripped = s.replace(/^\+\s*/, '');
+        const bceMatch = stripped.match(/^(\d+)\s*(?:bce|bc)$/);
+        if (bceMatch) return -parseInt(bceMatch[1], 10);
+        const ceMatch  = stripped.match(/^(\d+)\s*(?:ce|ad)$/);
+        if (ceMatch)   return  parseInt(ceMatch[1], 10);
+        // Bare integer (signed or unsigned). Negative = BCE.
+        const num = parseInt(stripped, 10);
+        if (Number.isFinite(num) && /^-?\d+$/.test(stripped)) return num;
+        return null;
+      }
+      function commitDateBox(boxEl, kind) {
+        const t = local.timeline;
+        if (!t || !boxEl) return;
+        const raw = boxEl.value;
+        const parsed = parseYearText(raw);
+        if (parsed == null) {
+          // Reject — restore current displayed value.
+          refreshUI();
+          return;
+        }
+        // Clamp to bounds + maintain in < out ordering.
+        let y = parsed;
+        if (y < t.lo) y = t.lo;
+        if (y > t.hi) y = t.hi;
+        if (kind === 'in') {
+          if (y >= t.outDate) y = t.outDate - 1;
+          t.inDate = y;
+          if (t.centerDate < t.inDate) t.centerDate = t.inDate;
+        } else { // 'out'
+          if (y <= t.inDate) y = t.inDate + 1;
+          t.outDate = y;
+          if (t.centerDate > t.outDate) t.centerDate = t.outDate;
+        }
+        refreshUI();
+        if (!local.destroyed) {
+          recomputeFocus();
+          saveRuntimeState();
+        }
+      }
+      function wireDateBox(boxEl, kind) {
+        if (!boxEl) return;
+        // Select-all on focus so a click is "ready to retype".
+        boxEl.addEventListener('focus', () => { boxEl.select(); });
+        boxEl.addEventListener('keydown', (ev) => {
+          if (ev.key === 'Enter')  { ev.preventDefault(); boxEl.blur(); }
+          if (ev.key === 'Escape') { ev.preventDefault(); refreshUI(); boxEl.blur(); }
+        });
+        boxEl.addEventListener('blur', () => commitDateBox(boxEl, kind));
+      }
+      wireDateBox(inBox,  'in');
+      wireDateBox(outBox, 'out');
+
+      // Phase 5B M-F3 (2026-05-20) — expose the per-mode refresh
+      // entry on `local.scrubber` so rebuildForMode + LS-hydrate
+      // can drive it. Each call re-derives lo/hi for the current
+      // mode + clamps any preserved in/out/center to the new
+      // bounds + refreshes UI.
+      local.scrubber = {
+        refreshBounds,
+        refreshUI,
+        applySavedTimeline,
+      };
+
+      // First render — populates local.timeline from the current
+      // mode's bounds + paints the UI.
+      refreshBounds();
     }
 
     // Submit a search query. On match: lock the node, fly the
