@@ -45,17 +45,30 @@
   //                 }
   // @returns Set<nodeId>  the ids that SHOULD show a label at idle.
   function computeIdleLabelVisibility(hitNodes, camScale, opts) {
-    // Phase 18 (2026-05-21) — 6-tier thresholds. T3 is no longer the
-    // long-tail catch-all that dumped 400+ labels at one zoom step;
-    // it's now the FIRST of three sub-tiers (3 / 4 / 5) each at its
-    // own threshold, so the reveal is progressive instead of a
-    // cluttered cliff at ~2.0×.
-    const thresh  = (opts && opts.tierZoomThresholds) || [0, 1.0, 1.8, 2.0, 2.5, 3.5];
+    // Phase 24-CENTER-WEIGHT (2026-05-26) — smoother tier progression.
+    // Was [0, 1.0, 1.8, 2.0, 2.5, 3.5] which had a cliff at 1.8→2.0
+    // (T2 and T3 revealed at almost the same zoom = visual dump).
+    // New evenly-spaced [0, 0.8, 1.2, 1.6, 2.0, 2.8] — 0.4 between
+    // each adjacent tier, T1 reveals at default zoom, T2 reveals
+    // sooner (1.2 vs 1.8), no two-tier overlap cliff.
+    const thresh  = (opts && opts.tierZoomThresholds) || [0, 0.8, 1.2, 1.6, 2.0, 2.8];
     const cap     = (opts && opts.maxLabels)          || 200;
     const sizePx  = (opts && opts.labelSizePx)        || 11;
     const padPx   = (opts && opts.collisionPaddingPx) || 4;
     const w2s     = opts && opts.worldToScreen;
     const estW    = (opts && opts.estimateLabelWidth) || ((id) => Math.max(40, id.length * sizePx * 0.55));
+    // Phase 24-CENTER-WEIGHT (2026-05-26) — label density bias toward
+    // the viewport center. Split each tier's budget into center vs
+    // edge: a label whose screen position falls inside a center
+    // radius (default 35% of min(vp.w, vp.h)) competes for the
+    // center-share; outside competes for the edge-share. Default
+    // centerWeight = 0.7 means 70% of each tier's budget can land
+    // in the center, 30% at the edges. Result: more labels where
+    // the user is looking, less clutter at the periphery.
+    const centerWeight = (opts && typeof opts.centerWeight === 'number')
+      ? Math.max(0, Math.min(1, opts.centerWeight)) : 0.7;
+    const centerRadiusRatio = (opts && typeof opts.centerRadiusRatio === 'number')
+      ? opts.centerRadiusRatio : 0.35;
     // Phase 24C v1 (2026-05-26) — viewport cull. When `opts.viewport`
     // (= {w, h}) is provided, skip any candidate whose screen position
     // falls outside the viewport plus `viewportMarginPx` (default 100).
@@ -109,13 +122,34 @@
       Math.floor(cap * 0.30),  // T4  long-tail-b
       cap,                     // T5  long-tail-c (uncapped — only `cap` limits)
     ];
+    // Phase 24-CENTER-WEIGHT — split each tier's budget into
+    // center-share + edge-share. Center gets `centerWeight`, edge
+    // gets the remainder. Floor so neither half over-spends.
+    const tierBudgetCenter = tierBudget.map(b => Math.floor(b * centerWeight));
+    const tierBudgetEdge   = tierBudget.map((b, i) => b - tierBudgetCenter[i]);
+    // Center region: a disc centered on the viewport mid-point with
+    // radius = centerRadiusRatio × min(vp.w, vp.h). Default 35% of
+    // the short axis ⇒ center disc covers ~10% of viewport area but
+    // takes 70% of label budget = ~7× density in the focus zone.
+    const useCenterWeight = useVpCull;
+    const cxC = useCenterWeight ? vp.w / 2 : 0;
+    const cyC = useCenterWeight ? vp.h / 2 : 0;
+    const centerRadius = useCenterWeight ? Math.min(vp.w, vp.h) * centerRadiusRatio : 0;
+    const centerRadiusSq = centerRadius * centerRadius;
     for (let T = 0; T < NUM_TIERS; T++) {
       const bucket = tierBuckets[T];
-      const budget = tierBudget[T];
-      let addedThisTier = 0;
+      const budgetCenter = tierBudgetCenter[T];
+      const budgetEdge   = tierBudgetEdge[T];
+      let addedCenter = 0;
+      let addedEdge   = 0;
       for (let i = 0; i < bucket.length; i++) {
         if (out.size >= cap) return out;
-        if (addedThisTier >= budget) break;
+        // Skip tier entirely once both center+edge are full.
+        if (useCenterWeight) {
+          if (addedCenter >= budgetCenter && addedEdge >= budgetEdge) break;
+        } else {
+          if (addedCenter + addedEdge >= budgetCenter + budgetEdge) break;
+        }
         const n = bucket[i];
         const s = w2s(n.x, n.y);
         // Phase 24C v1 — viewport cull. Cheap test BEFORE the AABB
@@ -123,6 +157,15 @@
         if (useVpCull && (s.x < -vMargin || s.x > vp.w + vMargin
                        || s.y < -vMargin || s.y > vp.h + vMargin)) {
           continue;
+        }
+        // Phase 24-CENTER-WEIGHT — classify center vs edge by screen
+        // position; check the appropriate budget BEFORE AABB collision.
+        let inCenter = false;
+        if (useCenterWeight) {
+          const dx = s.x - cxC, dy = s.y - cyC;
+          inCenter = (dx * dx + dy * dy) <= centerRadiusSq;
+          if (inCenter && addedCenter >= budgetCenter) continue;
+          if (!inCenter && addedEdge >= budgetEdge) continue;
         }
         const halfW = estW(n.id) * 0.5 + padPx;
         const cy = s.y - n.r * camScale - 6;
@@ -138,7 +181,8 @@
         if (collides) continue;
         out.add(n.id);
         boxes.push(x0, y0, x1, y1);
-        addedThisTier++;
+        if (inCenter) addedCenter++;
+        else          addedEdge++;
       }
     }
     return out;
