@@ -20,7 +20,7 @@ variants:
   - id: "orthodox-prayer-rope"
     description: "The Eastern Orthodox *chotki* (Russian) / *komboskini* (Greek) / prayer rope: a knotted rope with variable bead counts (33, 50, 100, 300 or more knots). Used for the **Jesus Prayer**: *'Lord Jesus Christ, Son of God, have mercy on me a sinner'* — one repetition per knot. The komboskini is typically made of wool, knotted in a specific way attributed to St. Anthony the Great. The Jesus Prayer tradition (*hesychasm*) is the Orthodox contemplative analog to Hindu *japa* and Buddhist mantra recitation — same technology, same purpose, completely different doctrinal framework."
 appearances:
-  - "[[phase-3-012-hesychast-controversy]]"
+  - "[[event-hesychast-controversy]]"
 tradition-context:
   - "[[tradition-hinduism]]"
   - "[[tradition-theravada-buddhism]]"

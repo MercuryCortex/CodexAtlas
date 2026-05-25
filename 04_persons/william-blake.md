@@ -10,7 +10,7 @@ date-born: 1757
 date-died: 1827
 historicity: "documented"
 texts-authored:
-  - "[[phase-8-001-blake-songs-of-innocence-experience]] (*Songs of Innocence and of Experience*, 1789/1794)"
+  - "[[phase-7-047-blake-songs-of-innocence-experience]] (*Songs of Innocence and of Experience*, 1789/1794)"
   - "*The Book of Urizen* (1794) — the founding myth of his cosmogony"
   - "*The Book of Los* (1795)"
   - "*The Four Zoas* (~1797–1807, unpublished in his lifetime)"

@@ -17,7 +17,7 @@ city-of-origin: "Jerusalem / Yavneh region (most likely)"
 authorship: "anonymous, pseudonymously attributed to the post-exilic scribe Ezra; one of the most theologically powerful post-Temple-destruction Jewish apocalypses"
 key-figures: ["[[ezra-scribe]]", "[[uriel-archangel]]", "[[remiel-archangel]] (as Jeremiel in 4 Ezra 4:36)"]
 themes: ["[[apocalyptic-revelation]]", "[[theodicy]]", "[[final-judgment]]", "[[messianic-revelation]]", "[[ethiopic-canon-broad]]"]
-parallels: ["[[phase-3-004-1-enoch]]", "[[phase-2-baruch]]", "[[phase-3-008-book-of-daniel]]", "[[phase-3-010-sibylline-oracles]]"]
+parallels: ["[[phase-3-004-1-enoch]]", "[[phase-3-096-baruch]]", "[[phase-3-008-book-of-daniel]]", "[[phase-3-010-sibylline-oracles]]"]
 influenced-by: ["[[phase-3-008-book-of-daniel]] (the seven-eagles-and-twelve-wings vision of 4 Ezra 11–12 elaborates Daniel 7's four-beasts)", "[[event-destruction-of-second-temple-70]] (the constitutive theological problem the text addresses)"]
 influences: ["NT Revelation (genre + eschatology)", "later Jewish apocalyptic literature", "early Christian eschatology (Lactantius cites 4 Ezra extensively)"]
 deities-mentioned: ["[[yahweh]]", "[[uriel-archangel]]", "[[remiel-archangel]]", "the messianic 'Man from the Sea' (4 Ezra 13)", "the suffering 'Son'/Messiah (4 Ezra 7:28–29)"]

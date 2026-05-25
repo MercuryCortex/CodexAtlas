@@ -4,7 +4,7 @@
 # To accept current state as the new floor, run:
 #     python3 linkcheck.py --write-baseline
 # See AUDIT/2026-05-25-tyrant-remediation-plan.md Phase 2.
-# Captured 493 targets on first write.
+# Captured 490 targets on first write.
 
 ...
 08_quran-scripture-wiring-brief.md
@@ -345,8 +345,6 @@ phase-2-014-ramayana
 phase-2-015-mahabharata
 phase-2-017-hebrew-bible-j-source
 phase-2-018-pali-canon-suttas
-phase-2-baruch
-phase-3-012-hesychast-controversy
 phase-3-019-catholic-epistles
 phase-4-014-revelation
 phase-4-061-lotus-sutra
@@ -355,7 +353,6 @@ phase-4-090-apuleius-metamorphoses-bk-11
 phase-5-046-ibn-tufayl-hayy-ibn-yaqdhan
 phase-6-006-paracelsus-archidoxes
 phase-7-002-doctrine-and-covenants
-phase-8-001-blake-songs-of-innocence-experience
 phase-N-NNN-source-doc
 phosphoros
 pico-della-mirandola
