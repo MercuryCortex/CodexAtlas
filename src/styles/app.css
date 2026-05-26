@@ -133,6 +133,41 @@ html, body {
   transition: background 320ms ease, color 320ms ease;
 }
 
+/* ─── Global scrollbar primitive (2026-05-28) ───
+   Thin gold-translucent bar with breathing room top + bottom so it
+   doesn't kiss the container edges. Applies to every scrollable
+   box (.app-pill-menu, .forge-side-panel, .forge-reader-body,
+   .forge-viewset-panel, .dp-body, .sr-* etc.). Container-specific
+   rules already in this file override these for the bits that
+   need different aesthetic (e.g. dp-body had its own 6px rule —
+   now redundant with this primitive, left intact for now).
+   Firefox: scrollbar-width:thin only allows 2 width steps (thin/
+   auto) — width is a hint, not exact. Webkit honors the 6px. */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(212,165,90,0.28) transparent;
+}
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+  margin: 10px 0;          /* top/bottom breathing room — vertical bars */
+}
+*::-webkit-scrollbar-track:horizontal {
+  margin: 0 10px;          /* left/right breathing room — horizontal bars */
+}
+*::-webkit-scrollbar-thumb {
+  background: rgba(212,165,90,0.22);
+  border-radius: 3px;
+  transition: background 120ms ease;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: rgba(212,165,90,0.40);
+}
+*::-webkit-scrollbar-corner { background: transparent; }
+
 /* FOCUS-VISIBLE UTILITY — every keyboard-reachable control gets a visible ring.
    Per architecture §4: any selector that overrides this must provide a replacement,
    never `outline: none` alone. Mouse-click focus is suppressed (no ring) — only
