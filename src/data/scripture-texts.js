@@ -22,7 +22,7 @@ SCRIPTURE_TEXTS['genesis-1'] = {
   corpus: 'Hebrew Bible (Torah)',
   tradId: 'tradition-second-temple-judaism',
   date: 'c. 6th–9th century BCE (Priestly source)',
-  docNode: 'phase-2-006-genesis',
+  docNode:    'phase-2-018-hebrew-bible-p-source',  // docNode chosen because: phase-2-006-genesis does not exist; Genesis 1 is the canonical P (Priestly) source — Wellhausen.
   language: 'Hebrew · King James Version (1611)',
   translations: [
     { id: 'kjv',    label: 'KJV (1611)',      note: 'King James Version — the classic literary English rendering' },
@@ -188,7 +188,7 @@ SCRIPTURE_TEXTS['enuma-elish-1'] = {
   corpus: 'Mesopotamian · Babylonian',
   tradId: 'tradition-mesopotamian',
   date: 'c. 1800–1100 BCE (Old Babylonian to Kassite period)',
-  docNode: 'phase-1-002-enuma-elish',
+  docNode:    'phase-1-008-enuma-elish',
   language: 'Akkadian · L.W. King translation (1902)',
   translations: [
     { id: 'king-1902', label: 'King (1902)',   note: 'L.W. King 1902 public domain — standard literary English rendering' },
@@ -409,6 +409,7 @@ SCRIPTURE_TEXTS['descent-inanna'] = {
 // ── MEMPHITE THEOLOGY (SHABAKA STONE) ────────────────────────────────────────
 SCRIPTURE_TEXTS['memphite-theology'] = {
   id: 'memphite-theology',
+  docNode:    'phase-1-027-memphite-theology-shabaka-stone',
   title: 'The Memphite Theology',
   shortTitle: 'Memphite Theology',
   corpus: 'Ancient Egyptian scripture',
@@ -810,7 +811,7 @@ SCRIPTURE_TEXTS['tao-te-ching-1'] = {
   corpus:     'Daoist · Classical Chinese',
   tradId:     'tradition-daoism',
   date:       'c. 4th–3rd century BCE (attributed to Laozi)',
-  docNode:    'laozi',
+  docNode:    'phase-2-014-daodejing',  // docNode chosen because: point to the scripture document, not the author Laozi.
   language:   'Classical Chinese · James Legge translation (1891)',
   translations: [
     { id: 'legge',   label: 'Legge (1891)', note: 'James Legge, The Texts of Taoism (1891) — public domain scholarly English' },
@@ -884,7 +885,7 @@ SCRIPTURE_TEXTS['poimandres'] = {
   corpus:     'Hermetic · Greco-Egyptian',
   tradId:     'tradition-hermeticism',
   date:       'c. 1st–3rd century CE (written); claims Egyptian antiquity',
-  docNode:    'hermes-trismegistus-pseudepigraphic-author',
+  docNode:    'phase-4-011-corpus-hermeticum-i',  // docNode chosen because: Poimandres = Corpus Hermeticum I — the scripture node, not the pseudepigraphic author.
   language:   'Greek Koine · G.R.S. Mead translation (1906)',
   translations: [
     { id: 'mead',  label: 'Mead (1906)', note: 'G.R.S. Mead, Thrice Greatest Hermes (1906) — public domain scholarly English' },
@@ -1226,6 +1227,7 @@ SCRIPTURE_TEXTS['chandogya-621'] = {
 // ── 12. YASNA 30 — THE GATHAS OF ZOROASTER ────────────────────────────────
 SCRIPTURE_TEXTS['yasna-30'] = {
   title      : 'Yasna 30 — The Two Spirits',
+  docNode: 'phase-2-002-gathas-of-zarathustra',
   shortTitle : 'Yasna 30',
   tradition  : 'Zoroastrianism',
   date       : 'c. 1200–1000 BCE (Gathic Avestan)',
@@ -1360,6 +1362,7 @@ SCRIPTURE_TEXTS['yasna-30'] = {
 // ── 13. GOSPEL OF THOMAS — SELECTED LOGIA ─────────────────────────────────
 SCRIPTURE_TEXTS['gospel-of-thomas'] = {
   title      : 'Gospel of Thomas — Selected Logia',
+  docNode: 'phase-4-001-gospel-of-thomas',
   shortTitle : 'Gospel of Thomas',
   tradition  : 'Gnostic / Early Christianity',
   date       : 'c. 50–140 CE (Greek original lost; Coptic Nag Hammadi ms. c. 340 CE)',
@@ -1473,6 +1476,7 @@ SCRIPTURE_TEXTS['gospel-of-thomas'] = {
 // ── 14. SEFER YETZIRAH — CHAPTERS 1–2 ─────────────────────────────────────
 SCRIPTURE_TEXTS['sefer-yetzirah'] = {
   title      : 'Sefer Yetzirah — Book of Formation (Chs. 1–2)',
+  docNode: 'phase-5-012-sefer-yetzirah',
   shortTitle : 'Sefer Yetzirah',
   tradition  : 'Kabbalistic / Jewish',
   date       : 'c. 3rd–6th century CE (attributed to Abraham; oldest surviving Kabbalistic text)',
@@ -1573,6 +1577,7 @@ SCRIPTURE_TEXTS['sefer-yetzirah'] = {
 // ── 15. QURAN — AL-FATIHA + AYAT AL-KURSI + NUR VERSE ─────────────────────
 SCRIPTURE_TEXTS['quran-fatiha-nur'] = {
   title      : 'Quran — Al-Fatiha · Ayat al-Kursi · Nur Verse',
+  docNode: 'phase-4-034-quran',
   shortTitle : 'Quran — Key Verses',
   tradition  : 'Islam',
   date       : 'c. 610–632 CE (recited); compiled c. 650 CE',
@@ -1675,6 +1680,7 @@ SCRIPTURE_TEXTS['quran-fatiha-nur'] = {
 // ── 16. JOB 38 — GOD FROM THE WHIRLWIND ──────────────────────────────────
 SCRIPTURE_TEXTS['job-38'] = {
   title      : 'Job 38–42 — The Voice from the Whirlwind',
+  docNode: 'phase-2-job',
   shortTitle : 'Job 38 — Whirlwind',
   tradition  : 'Hebrew Bible / Wisdom Literature',
   date       : 'c. 6th–4th century BCE (text); the story may be pre-Israelite',
@@ -1795,6 +1801,7 @@ SCRIPTURE_TEXTS['job-38'] = {
 // ── 17. ORPHIC THEOGONY — NIGHT, THE EGG, AND PHANES ──────────────────────
 SCRIPTURE_TEXTS['orphic-theogony'] = {
   title      : 'Orphic Theogony — Night, the Cosmic Egg, Phanes',
+  docNode: 'phase-3-028-orphic-hymns',  // docNode chosen because: no Orphic Theogony doc; using Orphic Hymns corpus.
   shortTitle : 'Orphic Theogony',
   tradition  : 'Orphic / Greek Mystery Religion',
   date       : 'c. 6th–4th century BCE (Derveni Papyrus c. 330 BCE; Orphic Hymns c. 2nd–4th CE for text, doctrine older)',
@@ -1906,6 +1913,7 @@ SCRIPTURE_TEXTS['orphic-theogony'] = {
 // ── 18. CORPUS HERMETICUM III — THE SACRED BOOK ──────────────────────────────
 SCRIPTURE_TEXTS['corpus-hermeticum-3'] = {
   title: 'Corpus Hermeticum III — The Sacred Book of Hermes',
+  docNode: 'phase-3-021-hermetic-corpus-earliest',  // docNode chosen because: no individual CH III node; using earliest-stratum Hermetica.
   shortTitle: 'CH III — Sacred Book',
   tradition: 'Hermeticism / Egyptian-Greek',
   date: 'c. 1st–3rd CE (Greek; Egyptian antecedents ancient)',
@@ -1998,6 +2006,7 @@ SCRIPTURE_TEXTS['corpus-hermeticum-3'] = {
 // ── 19. CORPUS HERMETICUM IV — THE MIXING BOWL ───────────────────────────────
 SCRIPTURE_TEXTS['corpus-hermeticum-4'] = {
   title: 'Corpus Hermeticum IV — The Mixing Bowl (Krater)',
+  docNode: 'phase-3-021-hermetic-corpus-earliest',  // docNode chosen because: no individual CH IV node; using earliest-stratum Hermetica.
   shortTitle: 'CH IV — The Krater',
   tradition: 'Hermeticism / Egyptian-Greek',
   date: 'c. 1st–3rd CE',
@@ -2089,6 +2098,7 @@ SCRIPTURE_TEXTS['corpus-hermeticum-4'] = {
 // ── 20. CORPUS HERMETICUM VII — THE GREATEST EVIL ────────────────────────────
 SCRIPTURE_TEXTS['corpus-hermeticum-7'] = {
   title: 'Corpus Hermeticum VII — The Greatest Evil Among Men',
+  docNode: 'phase-3-021-hermetic-corpus-earliest',  // docNode chosen because: no individual CH VII node; using earliest-stratum Hermetica.
   shortTitle: 'CH VII — Ignorance',
   tradition: 'Hermeticism / Egyptian-Greek',
   date: 'c. 1st–3rd CE',
@@ -2173,6 +2183,7 @@ SCRIPTURE_TEXTS['corpus-hermeticum-7'] = {
 // ── 21. CORPUS HERMETICUM XI — THE MIND TO HERMES ────────────────────────────
 SCRIPTURE_TEXTS['corpus-hermeticum-11'] = {
   title: 'Corpus Hermeticum XI — The Mind Addresses Hermes',
+  docNode: 'phase-3-021-hermetic-corpus-earliest',  // docNode chosen because: no individual CH XI node; using earliest-stratum Hermetica.
   shortTitle: 'CH XI — The Mind',
   tradition: 'Hermeticism / Egyptian-Greek',
   date: 'c. 1st–3rd CE',
@@ -2259,6 +2270,7 @@ SCRIPTURE_TEXTS['corpus-hermeticum-11'] = {
 // ── 22. CORPUS HERMETICUM XIII — REBIRTH ─────────────────────────────────────
 SCRIPTURE_TEXTS['corpus-hermeticum-13'] = {
   title: 'Corpus Hermeticum XIII — The Secret Discourse on the Mountain (Rebirth)',
+  docNode: 'phase-4-075-corpus-hermeticum-xiii-rebirth',
   shortTitle: 'CH XIII — Rebirth',
   tradition: 'Hermeticism / Egyptian-Greek',
   date: 'c. 1st–3rd CE',
@@ -2380,6 +2392,7 @@ SCRIPTURE_TEXTS['corpus-hermeticum-13'] = {
 // ── 23. HYMN TO THE ATEN ─────────────────────────────────────────────────────
 SCRIPTURE_TEXTS['hymn-to-aten'] = {
   title: 'The Great Hymn to the Aten',
+  docNode: 'phase-1-011-great-hymn-to-aten',
   shortTitle: 'Hymn to the Aten',
   tradition: 'Ancient Egyptian / Amarna Period',
   date: 'c. 1345 BCE (reign of Akhenaten / Amenhotep IV)',
@@ -2494,6 +2507,7 @@ SCRIPTURE_TEXTS['hymn-to-aten'] = {
 // ── 24. BOOK OF THE DEAD CHAPTER 125 ─────────────────────────────────────────
 SCRIPTURE_TEXTS['book-of-dead-125'] = {
   title: 'Book of the Dead — Chapter 125: The Weighing of the Heart',
+  docNode: 'phase-1-010-book-of-the-dead',
   shortTitle: 'Book of the Dead 125',
   tradition: 'Ancient Egyptian',
   date: 'c. 1550–50 BCE (New Kingdom through Late Period)',
@@ -2604,6 +2618,7 @@ SCRIPTURE_TEXTS['book-of-dead-125'] = {
 // ── 25. PYRAMID TEXTS — UTTERANCES 217 & 222 ─────────────────────────────────
 SCRIPTURE_TEXTS['pyramid-texts'] = {
   title: 'Pyramid Texts — Utterances 217 & 222 (Resurrection)',
+  docNode: 'phase-1-002-pyramid-texts',
   shortTitle: 'Pyramid Texts',
   tradition: 'Ancient Egyptian / Old Kingdom',
   date: 'c. 2375–2181 BCE (pyramid of Unas at Saqqara; oldest surviving religious texts)',
@@ -2678,6 +2693,7 @@ SCRIPTURE_TEXTS['pyramid-texts'] = {
 // ── 26. COFFIN TEXT SPELL 1130 ────────────────────────────────────────────────
 SCRIPTURE_TEXTS['coffin-text-1130'] = {
   title: 'Coffin Text Spell 1130 — The Creator Addresses All Humanity',
+  docNode: 'phase-1-009-coffin-texts',
   shortTitle: 'Coffin Text 1130',
   tradition: 'Ancient Egyptian / Middle Kingdom',
   date: 'c. 2100–1650 BCE (Middle Kingdom; coffin inscriptions at Asyut and Bersheh)',
@@ -2776,6 +2792,7 @@ SCRIPTURE_TEXTS['coffin-text-1130'] = {
 // ── 27. PROVERBS 8 — LADY WISDOM ─────────────────────────────────────────────
 SCRIPTURE_TEXTS['proverbs-8'] = {
   title: 'Proverbs 8 — Lady Wisdom at the Beginning of Creation',
+  docNode: 'phase-2-041-book-of-proverbs',
   shortTitle: 'Proverbs 8 — Lady Wisdom',
   tradition: 'Hebrew Bible / Wisdom Literature',
   date: 'c. 6th–5th BCE (compiled; Wisdom poem may be older)',
@@ -2874,6 +2891,7 @@ SCRIPTURE_TEXTS['proverbs-8'] = {
 // ── 28. PSALM 82 — THE DIVINE COUNCIL ────────────────────────────────────────
 SCRIPTURE_TEXTS['psalm-82'] = {
   title: 'Psalm 82 — God Judges the Divine Council',
+  docNode: 'phase-2-005-davidic-psalms',
   shortTitle: 'Psalm 82 — Divine Council',
   tradition: 'Hebrew Bible / Psalms',
   date: 'c. 9th–7th BCE (possibly reflecting older Canaanite source)',
@@ -2943,6 +2961,7 @@ SCRIPTURE_TEXTS['psalm-82'] = {
 // ── 29. ISAIAH 45 — CYRUS THE ANOINTED ───────────────────────────────────────
 SCRIPTURE_TEXTS['isaiah-45'] = {
   title: 'Isaiah 45 — Cyrus, YHWH\'s Anointed; the Creator of Light and Darkness',
+  docNode: 'phase-3-001-second-third-isaiah',
   shortTitle: 'Isaiah 45 — Cyrus',
   tradition: 'Hebrew Bible / Deutero-Isaiah',
   date: 'c. 550–540 BCE (Deutero-Isaiah, exilic period)',
@@ -3024,6 +3043,7 @@ SCRIPTURE_TEXTS['isaiah-45'] = {
 // ── 30. REVELATION 12 — WOMAN CLOTHED WITH THE SUN ───────────────────────────
 SCRIPTURE_TEXTS['revelation-12'] = {
   title: 'Revelation 12 — The Woman Clothed with the Sun',
+  docNode: 'phase-5-041-revelations-of-divine-love',  // docNode chosen because: no Book-of-Revelation doc in vault. phase-5-041 is actually Julian of Norwich. Vault gap — FUTURE LANE A.
   shortTitle: 'Revelation 12 — The Woman',
   tradition: 'Christian / Jewish Apocalyptic',
   date: 'c. 90–100 CE (reign of Domitian)',
@@ -3131,6 +3151,7 @@ SCRIPTURE_TEXTS['revelation-12'] = {
 // ── 31. HEART SUTRA ──────────────────────────────────────────────────────────
 SCRIPTURE_TEXTS['heart-sutra'] = {
   title: 'The Heart Sutra (Prajñāpāramitā Hṛdaya)',
+  docNode: 'phase-5-002-heart-sutra',
   shortTitle: 'Heart Sutra',
   tradition: 'Mahayana Buddhism',
   date: 'c. 1st–2nd CE (Sanskrit; Chinese translation by Xuanzang 649 CE)',
@@ -3223,6 +3244,7 @@ SCRIPTURE_TEXTS['heart-sutra'] = {
 // ── 32. DHAMMAPADA — CHAPTER 1 ────────────────────────────────────────────────
 SCRIPTURE_TEXTS['dhammapada-1'] = {
   title: 'Dhammapada — Chapter 1: The Twin Verses (Yamakavagga)',
+  docNode: 'phase-2-029-dhammapada',
   shortTitle: 'Dhammapada 1',
   tradition: 'Theravada Buddhism / Pali Canon',
   date: 'c. 3rd BCE (Pali; attributed to the Buddha, c. 5th BCE)',
@@ -3292,6 +3314,7 @@ SCRIPTURE_TEXTS['dhammapada-1'] = {
 // ── 33. PLATO'S TIMAEUS — THE DEMIURGE ───────────────────────────────────────
 SCRIPTURE_TEXTS['plato-timaeus'] = {
   title: 'Plato\'s Timaeus — The Demiurge and the World-Soul',
+  docNode: 'phase-3-022-plato-timaeus-critias-atlantis',
   shortTitle: 'Plato — Timaeus',
   tradition: 'Ancient Greek Philosophy / Platonic',
   date: 'c. 360 BCE',
@@ -3401,6 +3424,7 @@ SCRIPTURE_TEXTS['plato-timaeus'] = {
 // ── 34. EPIC OF GILGAMESH ─────────────────────────────────────────────────────
 SCRIPTURE_TEXTS['gilgamesh'] = {
   title: 'Epic of Gilgamesh — The Flood and the Search for Immortality',
+  docNode: 'phase-1-004-gilgamesh-old-babylonian',
   shortTitle: 'Gilgamesh',
   tradition: 'Ancient Mesopotamian',
   date: 'c. 2100 BCE (Sumerian sources); Standard Version c. 1300–1000 BCE (Old Babylonian)',
@@ -3492,6 +3516,7 @@ SCRIPTURE_TEXTS['gilgamesh'] = {
 // ── 35. RIG VEDA 10.90 — PURUSHA SUKTA ───────────────────────────────────────
 SCRIPTURE_TEXTS['purusha-sukta'] = {
   title: 'Rig Veda 10.90 — The Purusha Sukta (Hymn of the Cosmic Person)',
+  docNode: 'phase-1-031-rigveda',
   shortTitle: 'Purusha Sukta',
   tradition: 'Vedic / Hindu',
   date: 'c. 1200–900 BCE (late Rig Veda)',
@@ -3584,6 +3609,7 @@ SCRIPTURE_TEXTS['purusha-sukta'] = {
 // ── 36. VÖLUSPÁ — THE SEERESS'S PROPHECY ─────────────────────────────────────
 SCRIPTURE_TEXTS['voluspa'] = {
   title: 'Völuspá — The Seeress\'s Prophecy',
+  docNode: 'phase-8-014-poetic-edda',  // docNode chosen because: Voluspa opens the Poetic Edda; using Poetic Edda doc.
   shortTitle: 'Völuspá',
   tradition: 'Norse / Old Norse Eddic Poetry',
   date: 'c. 900–1000 CE (written down c. 1270 CE; oral tradition much older)',
@@ -3716,6 +3742,7 @@ SCRIPTURE_TEXTS['voluspa'] = {
 // ── 37. RUMI — MASNAVI BOOK I PROLOGUE ───────────────────────────────────────
 SCRIPTURE_TEXTS['rumi-masnavi'] = {
   title: 'Rumi — Masnavi Book I: The Reed\'s Lament',
+  docNode: 'phase-5-054-rumi-masnavi',
   shortTitle: 'Rumi — The Reed',
   tradition: 'Sufism / Islamic Mysticism',
   date: 'c. 1258–1273 CE (Konya; Jalāl al-Dīn Muḥammad Rūmī)',
@@ -3785,6 +3812,7 @@ SCRIPTURE_TEXTS['rumi-masnavi'] = {
 // ── 38. APOCRYPHON OF JOHN ────────────────────────────────────────────────────
 SCRIPTURE_TEXTS['apocryphon-of-john'] = {
   title: 'Apocryphon of John — The Monad, Sophia\'s Fall, and the Demiurge',
+  docNode: 'phase-4-002-apocryphon-of-john',
   shortTitle: 'Apocryphon of John',
   tradition: 'Sethian Gnosticism / Early Christianity',
   date: 'c. 2nd–3rd CE (Coptic; extant in Nag Hammadi Codices II, III, IV)',
@@ -3891,6 +3919,7 @@ SCRIPTURE_TEXTS['apocryphon-of-john'] = {
 
 SCRIPTURE_TEXTS['ezekiel-1'] = {
   title: 'Ezekiel 1 — The Chariot Vision (Merkabah)',
+  docNode: 'document-ezekiel',
   shortTitle: 'Ezekiel 1',
   tradition: 'Hebrew Bible',
   date: 'c. 593 BCE',
@@ -4014,6 +4043,7 @@ SCRIPTURE_TEXTS['ezekiel-1'] = {
 
 SCRIPTURE_TEXTS['john-3'] = {
   title: 'John 3 — Born Again / Born from Above',
+  docNode: 'phase-3-020-gospel-of-john',
   shortTitle: 'John 3',
   tradition: 'New Testament',
   date: 'c. 90–100 CE',
@@ -4149,6 +4179,7 @@ SCRIPTURE_TEXTS['john-3'] = {
 
 SCRIPTURE_TEXTS['bhagavad-gita-11'] = {
   title: 'Bhagavad Gita 11 — The Cosmic Vision (Vishvarupa)',
+  docNode: 'phase-2-027-bhagavad-gita',
   shortTitle: 'BG 11',
   tradition: 'Hindu',
   date: 'c. 200 BCE–200 CE',
@@ -4271,6 +4302,7 @@ SCRIPTURE_TEXTS['bhagavad-gita-11'] = {
 
 SCRIPTURE_TEXTS['zhuangzi'] = {
   title: 'Zhuangzi — Butterfly Dream & Cook Ding',
+  docNode: 'phase-2-022-zhuangzi',
   shortTitle: 'Zhuangzi',
   tradition: 'Taoist',
   date: 'c. 369–286 BCE',
@@ -4381,6 +4413,7 @@ SCRIPTURE_TEXTS['zhuangzi'] = {
 
 SCRIPTURE_TEXTS['isaiah-6'] = {
   title: 'Isaiah 6 — The Throne Vision & the Trishagion',
+  docNode: 'phase-3-001-second-third-isaiah',  // docNode chosen because: no First-Isaiah doc in vault; using Second-Third Isaiah doc.
   shortTitle: 'Isaiah 6',
   tradition: 'Hebrew Bible',
   date: 'c. 740 BCE',
@@ -4487,6 +4520,7 @@ SCRIPTURE_TEXTS['isaiah-6'] = {
 
 SCRIPTURE_TEXTS['1-corinthians-15'] = {
   title: '1 Corinthians 15 — The Resurrection Body',
+  docNode: 'phase-3-015-pauline-epistles',
   shortTitle: '1 Cor 15',
   tradition: 'New Testament',
   date: 'c. 54 CE',
@@ -4589,6 +4623,7 @@ SCRIPTURE_TEXTS['1-corinthians-15'] = {
 
 SCRIPTURE_TEXTS['plotinus-enneads'] = {
   title: 'Plotinus — Enneads VI.9: The Flight of the Alone to the Alone',
+  docNode: 'phase-4-019-plotinus-enneads',  // docNode chosen because: two Plotinus nodes exist; using phase-4 for corpus consistency.
   shortTitle: 'Enneads VI.9',
   tradition: 'Neoplatonist',
   date: 'c. 253–270 CE',
@@ -4676,6 +4711,7 @@ SCRIPTURE_TEXTS['plotinus-enneads'] = {
 
 SCRIPTURE_TEXTS['bardo-thodol'] = {
   title: 'Bardo Thodol — The Tibetan Book of the Dead',
+  docNode: 'phase-5-029-bardo-thodol',
   shortTitle: 'Bardo Thodol',
   tradition: 'Tibetan Buddhist',
   date: 'c. 8th–14th CE (compiled)',
@@ -4758,6 +4794,7 @@ SCRIPTURE_TEXTS['bardo-thodol'] = {
 
 SCRIPTURE_TEXTS['atrahasis-epic'] = {
   title: 'The Atrahasis Epic — Flood and Human Creation',
+  docNode: 'phase-1-006-atrahasis',
   shortTitle: 'Atrahasis',
   tradition: 'Babylonian',
   date: 'c. 1700 BCE (Old Babylonian)',
@@ -4837,6 +4874,7 @@ SCRIPTURE_TEXTS['atrahasis-epic'] = {
 
 SCRIPTURE_TEXTS['gospel-of-thomas'] = {
   title: 'Gospel of Thomas — The Sayings of the Living Jesus',
+  docNode: 'phase-4-001-gospel-of-thomas',
   shortTitle: 'Gospel of Thomas',
   tradition: 'Gnostic / Early Christian',
   date: 'c. 50–140 CE (sayings core possibly 1st century)',
@@ -4956,6 +4994,7 @@ SCRIPTURE_TEXTS['gospel-of-thomas'] = {
 
 SCRIPTURE_TEXTS['ibn-arabi-fusus'] = {
   title: 'Ibn Arabi — Fusus al-Hikam (Bezels of Wisdom)',
+  docNode: 'phase-5-021-ibn-arabi-fusus-al-hikam',
   shortTitle: 'Fusus al-Hikam',
   tradition: 'Islamic / Sufi',
   date: 'c. 1229 CE',
@@ -5042,6 +5081,7 @@ SCRIPTURE_TEXTS['ibn-arabi-fusus'] = {
 
 SCRIPTURE_TEXTS['psalm-22'] = {
   title: 'Psalm 22 — My God, Why Have You Forsaken Me',
+  docNode: 'phase-2-005-davidic-psalms',
   shortTitle: 'Psalm 22',
   tradition: 'Hebrew Bible',
   date: 'c. 1000–500 BCE',
@@ -5144,6 +5184,7 @@ SCRIPTURE_TEXTS['psalm-22'] = {
 
 SCRIPTURE_TEXTS['i-ching-1'] = {
   title: 'I Ching — Hexagram 1: Qian (The Creative)',
+  docNode: 'phase-1-026-yijing',
   shortTitle: 'I Ching Hex. 1',
   tradition: 'Chinese Classical',
   date: 'c. 1000–500 BCE (core); commentaries c. 200 BCE–200 CE',
@@ -5244,6 +5285,7 @@ SCRIPTURE_TEXTS['i-ching-1'] = {
 
 SCRIPTURE_TEXTS['katha-upanishad'] = {
   title: 'Katha Upanishad — Nachiketa and the Teaching of Death',
+  docNode: 'phase-2-021-shvetashvatara-upanishad',  // docNode chosen because: no Katha doc; using Shvetashvatara. Vault gap.
   shortTitle: 'Katha Upanishad',
   tradition: 'Hindu',
   date: 'c. 600–400 BCE',
@@ -5341,6 +5383,7 @@ SCRIPTURE_TEXTS['katha-upanishad'] = {
 
 SCRIPTURE_TEXTS['romans-8'] = {
   title: 'Romans 8 — The Spirit and the Groaning of Creation',
+  docNode: 'phase-3-015-pauline-epistles',
   shortTitle: 'Romans 8',
   tradition: 'New Testament',
   date: 'c. 57 CE',
@@ -5447,6 +5490,7 @@ SCRIPTURE_TEXTS['romans-8'] = {
 
 SCRIPTURE_TEXTS['ecclesiastes-1'] = {
   title: 'Ecclesiastes — Vanity of Vanities',
+  docNode: 'phase-2-ecclesiastes',
   shortTitle: 'Ecclesiastes',
   tradition: 'Hebrew Bible',
   date: 'c. 450–200 BCE',
@@ -5550,6 +5594,7 @@ SCRIPTURE_TEXTS['ecclesiastes-1'] = {
 
 SCRIPTURE_TEXTS['mandukya-upanishad'] = {
   title: 'Mandukya Upanishad — The Four States and OM',
+  docNode: 'phase-2-021-shvetashvatara-upanishad',  // docNode chosen because: no Mandukya doc; using Shvetashvatara as closest Upanishad doc. Vault gap.
   shortTitle: 'Mandukya',
   tradition: 'Hindu',
   date: 'c. 500–200 BCE',
@@ -5652,6 +5697,7 @@ SCRIPTURE_TEXTS['mandukya-upanishad'] = {
 
 SCRIPTURE_TEXTS['plato-cave'] = {
   title: 'Plato — The Allegory of the Cave (Republic VII)',
+  docNode: 'phase-3-002-plato-dialogues',  // docNode chosen because: no Republic doc; using collective Plato dialogues doc.
   shortTitle: 'Allegory of the Cave',
   tradition: 'Greek Philosophy',
   date: 'c. 380 BCE',
@@ -5753,6 +5799,7 @@ SCRIPTURE_TEXTS['plato-cave'] = {
 
 SCRIPTURE_TEXTS['surah-ya-sin'] = {
   title: 'Surah Ya-Sin (36) — The Heart of the Quran',
+  docNode: 'phase-4-034-quran',
   shortTitle: 'Surah Ya-Sin',
   tradition: 'Islamic',
   date: 'c. 615–620 CE (Meccan)',
@@ -5853,6 +5900,7 @@ SCRIPTURE_TEXTS['surah-ya-sin'] = {
 
 SCRIPTURE_TEXTS['book-of-enoch'] = {
   title: 'Book of Enoch (1 Enoch)',
+  docNode: 'phase-3-004-1-enoch',
   shortTitle: '1 Enoch',
   tradition: 'Second Temple Judaism',
   date: 'c. 300–200 BCE',
@@ -5997,6 +6045,7 @@ SCRIPTURE_TEXTS['book-of-enoch'] = {
 
 SCRIPTURE_TEXTS['pseudo-dionysius-mystical-theology'] = {
   title: 'The Mystical Theology (Pseudo-Dionysius)',
+  docNode: 'phase-4-030-pseudo-dionysius',
   shortTitle: 'Mystical Theology',
   tradition: 'Christian Neoplatonism',
   date: 'c. 500 CE',
@@ -6094,6 +6143,7 @@ SCRIPTURE_TEXTS['pseudo-dionysius-mystical-theology'] = {
 
 SCRIPTURE_TEXTS['brihadaranyaka-neti-neti'] = {
   title: 'Brihadaranyaka Upanishad — Neti Neti',
+  docNode: 'phase-2-012-brihadaranyaka-upanishad',
   shortTitle: 'Brihadaranyaka',
   tradition: 'Upanishadic / Early Vedanta',
   date: 'c. 700 BCE',
@@ -6202,6 +6252,7 @@ SCRIPTURE_TEXTS['brihadaranyaka-neti-neti'] = {
 
 SCRIPTURE_TEXTS['meister-eckhart-godhead'] = {
   title: 'Meister Eckhart — The Desert of the Godhead',
+  docNode: 'phase-5-028-meister-eckhart-sermons',
   shortTitle: 'Eckhart: Godhead',
   tradition: 'Rhineland Christian Mysticism',
   date: 'c. 1300–1327 CE',
@@ -6324,6 +6375,7 @@ SCRIPTURE_TEXTS['meister-eckhart-godhead'] = {
 
 SCRIPTURE_TEXTS['zohar-ein-sof'] = {
   title: 'Zohar — Ein Sof and the First Emanation',
+  docNode: 'phase-5-027-sefer-ha-zohar',
   shortTitle: 'Zohar: Ein Sof',
   tradition: 'Kabbalah / Jewish Mysticism',
   date: 'c. 1280 CE (attributed to Shimon bar Yochai, 2nd c. CE)',
@@ -6438,6 +6490,7 @@ SCRIPTURE_TEXTS['zohar-ein-sof'] = {
 
 SCRIPTURE_TEXTS['isha-upanishad'] = {
   title: 'Isha Upanishad',
+  docNode: 'phase-2-021-shvetashvatara-upanishad',  // docNode chosen because: no Isha doc; using Shvetashvatara. Vault gap.
   shortTitle: 'Isha Upanishad',
   tradition: 'Upanishadic / Vedanta',
   date: 'c. 800–600 BCE',
@@ -6541,6 +6594,7 @@ SCRIPTURE_TEXTS['isha-upanishad'] = {
 
 SCRIPTURE_TEXTS['matthew-sermon-mount'] = {
   title: 'Matthew 5–7 — The Sermon on the Mount',
+  docNode: 'phase-3-017-gospel-of-matthew',
   shortTitle: 'Sermon on Mount',
   tradition: 'New Testament',
   date: 'c. 80–90 CE',
@@ -6649,6 +6703,7 @@ SCRIPTURE_TEXTS['matthew-sermon-mount'] = {
 
 SCRIPTURE_TEXTS['acts-17-areopagus'] = {
   title: 'Acts 17:22–34 — Paul at the Areopagus',
+  docNode: 'phase-3-018-luke-acts',
   shortTitle: 'Acts 17: Areopagus',
   tradition: 'New Testament',
   date: 'c. 80–90 CE',
@@ -6731,6 +6786,7 @@ SCRIPTURE_TEXTS['acts-17-areopagus'] = {
 
 SCRIPTURE_TEXTS['luke-15-prodigal'] = {
   title: 'Luke 15 — The Prodigal Son',
+  docNode: 'phase-3-018-luke-acts',
   shortTitle: 'Prodigal Son',
   tradition: 'Christianity',
   date: 'c. 80–90 CE',
@@ -6842,6 +6898,7 @@ SCRIPTURE_TEXTS['luke-15-prodigal'] = {
 
 SCRIPTURE_TEXTS['ezekiel-37-dry-bones'] = {
   title: 'Ezekiel 37 — Valley of Dry Bones',
+  docNode: 'document-ezekiel',
   shortTitle: 'Dry Bones',
   tradition: 'Judaism',
   date: 'c. 593–571 BCE',
@@ -6942,6 +6999,7 @@ SCRIPTURE_TEXTS['ezekiel-37-dry-bones'] = {
 
 SCRIPTURE_TEXTS['gospel-of-philip'] = {
   title: 'Gospel of Philip (Nag Hammadi)',
+  docNode: 'phase-4-004-gospel-of-philip',
   shortTitle: 'Gospel of Philip',
   tradition: 'Christianity',
   date: 'c. 150–250 CE',
@@ -7029,6 +7087,7 @@ SCRIPTURE_TEXTS['gospel-of-philip'] = {
 
 SCRIPTURE_TEXTS['julian-of-norwich'] = {
   title: 'Julian of Norwich — Revelations of Divine Love',
+  docNode: 'phase-5-041-revelations-of-divine-love',
   shortTitle: 'Julian of Norwich',
   tradition: 'Christianity',
   date: 'c. 1373–1393 CE',
@@ -7108,6 +7167,7 @@ SCRIPTURE_TEXTS['julian-of-norwich'] = {
 
 SCRIPTURE_TEXTS['wisdom-of-solomon'] = {
   title: 'Wisdom of Solomon',
+  docNode: 'phase-3-012-wisdom-of-solomon',
   shortTitle: 'Wisdom of Solomon',
   tradition: 'Christianity',
   date: 'c. 100–50 BCE',
@@ -7197,6 +7257,7 @@ SCRIPTURE_TEXTS['wisdom-of-solomon'] = {
 
 SCRIPTURE_TEXTS['colossians-1'] = {
   title: 'Colossians 1 — The Cosmic Christ Hymn',
+  docNode: 'phase-3-015-pauline-epistles',
   shortTitle: 'Colossians 1',
   tradition: 'Christianity',
   date: 'c. 60–80 CE',
@@ -7269,6 +7330,7 @@ SCRIPTURE_TEXTS['colossians-1'] = {
 
 SCRIPTURE_TEXTS['philippians-2'] = {
   title: 'Philippians 2 — The Kenosis Hymn',
+  docNode: 'phase-3-015-pauline-epistles',
   shortTitle: 'Philippians 2',
   tradition: 'Christianity',
   date: 'c. 54–62 CE',
@@ -7346,6 +7408,7 @@ SCRIPTURE_TEXTS['philippians-2'] = {
 
 SCRIPTURE_TEXTS['song-of-songs'] = {
   title: 'Song of Songs',
+  docNode: 'phase-2-song-of-songs',
   shortTitle: 'Song of Songs',
   tradition: 'Christianity',
   date: 'c. 10th–3rd century BCE',
@@ -7481,6 +7544,7 @@ SCRIPTURE_TEXTS['song-of-songs'] = {
 
 SCRIPTURE_TEXTS['exodus-3'] = {
   title: 'Exodus 3 — The Burning Bush',
+  docNode: 'document-exodus',
   shortTitle: 'Exodus 3',
   tradition: 'Christianity',
   date: 'c. 9th–6th century BCE',
@@ -7568,6 +7632,7 @@ SCRIPTURE_TEXTS['exodus-3'] = {
 
 SCRIPTURE_TEXTS['thunder-perfect-mind'] = {
   title: 'Thunder: Perfect Mind (Nag Hammadi)',
+  docNode: 'phase-4-058-thunder-perfect-mind',
   shortTitle: 'Thunder: Perfect Mind',
   tradition: 'Christianity',
   date: 'c. 100–300 CE',
@@ -7659,6 +7724,7 @@ SCRIPTURE_TEXTS['thunder-perfect-mind'] = {
 
 SCRIPTURE_TEXTS['1-john-4'] = {
   title: '1 John 4 — God Is Love',
+  docNode: 'phase-3-015-pauline-epistles',  // docNode chosen because: no 1-John doc; using collective Pauline-epistles doc. Vault gap.
   shortTitle: '1 John 4',
   tradition: 'Christianity',
   date: 'c. 90–110 CE',
@@ -7753,6 +7819,7 @@ SCRIPTURE_TEXTS['1-john-4'] = {
 
 SCRIPTURE_TEXTS['hebrews-11'] = {
   title: 'Hebrews 11 — The Faith Chapter',
+  docNode: 'phase-3-015-pauline-epistles',  // docNode chosen because: no Hebrews doc; canonically grouped with Pauline epistles.
   shortTitle: 'Hebrews 11',
   tradition: 'Christianity',
   date: 'c. 60–90 CE',
@@ -7859,6 +7926,7 @@ SCRIPTURE_TEXTS['hebrews-11'] = {
 
 SCRIPTURE_TEXTS['deuteronomy-6'] = {
   title: 'Deuteronomy 6 — The Shema',
+  docNode: 'phase-2-011-hebrew-bible-d-source',
   shortTitle: 'Deuteronomy 6',
   tradition: 'Christianity',
   date: 'c. 7th–6th century BCE',
@@ -7931,6 +7999,7 @@ SCRIPTURE_TEXTS['deuteronomy-6'] = {
 
 SCRIPTURE_TEXTS['daniel-7'] = {
   title: 'Daniel 7 — The Ancient of Days and the Son of Man',
+  docNode: 'phase-3-008-book-of-daniel',
   shortTitle: 'Daniel 7',
   tradition: 'Christianity',
   date: 'c. 167–164 BCE',
@@ -8014,6 +8083,7 @@ SCRIPTURE_TEXTS['daniel-7'] = {
 
 SCRIPTURE_TEXTS['book-of-jubilees'] = {
   title: 'Book of Jubilees — Heavenly Tablets',
+  docNode: 'phase-3-009-jubilees',
   shortTitle: 'Book of Jubilees',
   tradition: 'Christianity',
   date: 'c. 160–150 BCE',
@@ -8074,6 +8144,7 @@ SCRIPTURE_TEXTS['book-of-jubilees'] = {
 
 SCRIPTURE_TEXTS['3-enoch-metatron'] = {
   title: '3 Enoch — Metatron, the Lesser YHWH',
+  docNode: 'phase-5-013-hekhalot-literature',  // docNode chosen because: no 3-Enoch doc; using Hekhalot literature parent doc.
   shortTitle: '3 Enoch / Metatron',
   tradition: 'Christianity',
   date: 'c. 5th–6th century CE (traditions much older)',
@@ -8137,6 +8208,7 @@ SCRIPTURE_TEXTS['3-enoch-metatron'] = {
 
 SCRIPTURE_TEXTS['john-of-the-cross-dark-night'] = {
   title: 'John of the Cross — Dark Night of the Soul',
+  docNode: 'phase-6-039-dark-night-of-the-soul',
   shortTitle: 'Dark Night of the Soul',
   tradition: 'Christianity',
   date: 'c. 1578–1579 CE',
@@ -8231,6 +8303,7 @@ SCRIPTURE_TEXTS['john-of-the-cross-dark-night'] = {
 
 SCRIPTURE_TEXTS['kebra-nagast'] = {
   title: 'Kebra Nagast — Glory of Kings',
+  docNode: 'phase-8-008-kebra-nagast',
   shortTitle: 'Kebra Nagast',
   tradition: 'Christianity',
   date: 'c. 14th century CE (core traditions much older)',
@@ -8291,6 +8364,7 @@ SCRIPTURE_TEXTS['kebra-nagast'] = {
 
 SCRIPTURE_TEXTS['sirach'] = {
   title: 'Sirach — Wisdom and the Fear of the Lord',
+  docNode: 'phase-3-007-sirach',
   shortTitle: 'Sirach (Ben Sira)',
   tradition: 'Christianity',
   date: 'c. 180 BCE (Hebrew); c. 132 BCE (Greek translation)',
@@ -8373,6 +8447,7 @@ SCRIPTURE_TEXTS['sirach'] = {
 
 SCRIPTURE_TEXTS['confucius-analects'] = {
   title: 'Confucius — The Analects',
+  docNode: 'phase-2-015-analects-of-confucius',
   shortTitle: 'Analects',
   tradition: 'Chinese Philosophy',
   date: 'c. 479–221 BCE (compiled after Confucius\'s death in 479 BCE)',
@@ -8476,6 +8551,7 @@ SCRIPTURE_TEXTS['confucius-analects'] = {
 
 SCRIPTURE_TEXTS['4-ezra'] = {
   title: '4 Ezra (2 Esdras 3–14)',
+  docNode: 'phase-3-032-4-ezra-ethiopic-recension',
   shortTitle: '4 Ezra',
   tradition: 'Jewish-Christian Apocrypha',
   date: 'c. 100 CE',
@@ -8572,6 +8648,7 @@ SCRIPTURE_TEXTS['4-ezra'] = {
 
 SCRIPTURE_TEXTS['cloud-of-unknowing'] = {
   title: 'The Cloud of Unknowing',
+  docNode: 'phase-5-031-cloud-of-unknowing',
   shortTitle: 'Cloud of Unknowing',
   tradition: 'English Christian Mysticism',
   date: 'c. 1375 CE',
@@ -8644,6 +8721,7 @@ SCRIPTURE_TEXTS['cloud-of-unknowing'] = {
 
 SCRIPTURE_TEXTS['gospel-of-mary'] = {
   title: 'Gospel of Mary Magdalene',
+  docNode: 'phase-4-005-gospel-of-mary',
   shortTitle: 'Gospel of Mary',
   tradition: 'Gnostic / Nag Hammadi',
   date: 'c. 2nd–3rd century CE',
@@ -8723,6 +8801,7 @@ SCRIPTURE_TEXTS['gospel-of-mary'] = {
 
 SCRIPTURE_TEXTS['yasna-44'] = {
   title: 'Yasna 44 — The Questions of Zarathustra',
+  docNode: 'phase-2-002-gathas-of-zarathustra',
   shortTitle: 'Yasna 44',
   tradition: 'Zoroastrian — Gathas of Zarathustra',
   date: 'c. 1500–1000 BCE (oral); written c. 6th century BCE',
@@ -8805,6 +8884,7 @@ SCRIPTURE_TEXTS['yasna-44'] = {
 
 SCRIPTURE_TEXTS['jeremiah-31'] = {
   title: 'Jeremiah 31 — The New Covenant',
+  docNode: 'jeremiah',  // docNode chosen because: no Jeremiah-book doc — using prophet node. Vault gap.
   shortTitle: 'Jeremiah 31',
   tradition: 'Hebrew Bible / Old Testament',
   date: 'c. 627–587 BCE',
@@ -8873,6 +8953,7 @@ SCRIPTURE_TEXTS['jeremiah-31'] = {
 
 SCRIPTURE_TEXTS['gospel-of-truth'] = {
   title: 'Gospel of Truth (Valentinus)',
+  docNode: 'phase-4-003-gospel-of-truth',
   shortTitle: 'Gospel of Truth',
   tradition: 'Gnostic / Valentinian',
   date: 'c. 140–180 CE',
@@ -8957,6 +9038,7 @@ SCRIPTURE_TEXTS['gospel-of-truth'] = {
 
 SCRIPTURE_TEXTS['mundaka-upanishad'] = {
   title: 'Mundaka Upanishad',
+  docNode: 'phase-2-021-shvetashvatara-upanishad',  // docNode chosen because: no Mundaka doc; using Shvetashvatara. Vault gap.
   shortTitle: 'Mundaka Upanishad',
   tradition: 'Hindu — Atharva Veda',
   date: 'c. 800–400 BCE',
@@ -9055,6 +9137,7 @@ SCRIPTURE_TEXTS['mundaka-upanishad'] = {
 
 SCRIPTURE_TEXTS['thomas-a-kempis'] = {
   title: 'The Imitation of Christ (Thomas à Kempis)',
+  docNode: 'phase-5-031-cloud-of-unknowing',  // docNode chosen because: no Imitation of Christ doc; using cloud-of-unknowing as adjacent. Vault gap.
   shortTitle: 'Imitation of Christ',
   tradition: 'Christian Devotional',
   date: 'c. 1418–1427 CE',
@@ -9141,6 +9224,7 @@ SCRIPTURE_TEXTS['thomas-a-kempis'] = {
 
 SCRIPTURE_TEXTS['john-17'] = {
   title: 'John 17 — The High Priestly Prayer',
+  docNode: 'phase-3-020-gospel-of-john',
   shortTitle: 'John 17',
   tradition: 'New Testament',
   date: 'c. 90–100 CE',
@@ -9209,6 +9293,7 @@ SCRIPTURE_TEXTS['john-17'] = {
 
 SCRIPTURE_TEXTS['matthew-25'] = {
   title: 'Matthew 25 — The Sheep and the Goats',
+  docNode: 'phase-3-017-gospel-of-matthew',
   shortTitle: 'Matthew 25',
   tradition: 'New Testament',
   date: 'c. 85–90 CE',
@@ -9276,6 +9361,7 @@ SCRIPTURE_TEXTS['matthew-25'] = {
 
 SCRIPTURE_TEXTS['japji-sahib'] = {
   title: 'Japji Sahib — Guru Nanak',
+  docNode: 'phase-6-016-guru-granth-sahib',
   shortTitle: 'Japji Sahib',
   tradition: 'Sikh — Guru Granth Sahib',
   date: 'c. 1500–1522 CE',
@@ -9361,6 +9447,7 @@ SCRIPTURE_TEXTS['japji-sahib'] = {
 
 SCRIPTURE_TEXTS['amos-5'] = {
   title: 'Amos 5 — Let Justice Roll',
+  docNode: 'amos-prophet',  // docNode chosen because: no Amos-book doc — using prophet node. Vault gap.
   shortTitle: 'Amos 5',
   tradition: 'Hebrew Bible / Old Testament',
   date: 'c. 760–750 BCE',
@@ -9430,6 +9517,7 @@ SCRIPTURE_TEXTS['amos-5'] = {
 
 SCRIPTURE_TEXTS['luke-1-magnificat'] = {
   title: 'Luke 1 — The Magnificat',
+  docNode: 'phase-3-018-luke-acts',
   shortTitle: 'Magnificat',
   tradition: 'New Testament',
   date: 'c. 85–90 CE',
@@ -9498,6 +9586,7 @@ SCRIPTURE_TEXTS['luke-1-magnificat'] = {
 
 SCRIPTURE_TEXTS['john-15-vine'] = {
   title: 'John 15 — The Vine and the Branches',
+  docNode: 'phase-3-020-gospel-of-john',
   shortTitle: 'John 15',
   tradition: 'New Testament',
   date: 'c. 90–100 CE',
@@ -9573,6 +9662,7 @@ SCRIPTURE_TEXTS['john-15-vine'] = {
 
 SCRIPTURE_TEXTS['isaiah-40'] = {
   title: 'Isaiah 40 — Comfort My People',
+  docNode: 'phase-3-001-second-third-isaiah',
   shortTitle: 'Isaiah 40',
   tradition: 'Hebrew Bible / Old Testament',
   date: 'c. 550–540 BCE (Deutero-Isaiah)',
@@ -9652,6 +9742,7 @@ SCRIPTURE_TEXTS['isaiah-40'] = {
 
 SCRIPTURE_TEXTS['lotus-sutra-2'] = {
   title: 'Lotus Sutra — Chapter 2: Skillful Means',
+  docNode: 'phase-4-101-lotus-sutra',
   shortTitle: 'Lotus Sutra 2',
   tradition: 'Mahayana Buddhism',
   date: 'c. 1st century BCE – 1st century CE',
@@ -9728,6 +9819,7 @@ SCRIPTURE_TEXTS['lotus-sutra-2'] = {
 
 SCRIPTURE_TEXTS['acts-2-pentecost'] = {
   title: 'Acts 2 — The Day of Pentecost',
+  docNode: 'phase-3-018-luke-acts',
   shortTitle: 'Acts 2',
   tradition: 'New Testament',
   date: 'c. 85–90 CE',
@@ -9807,6 +9899,7 @@ SCRIPTURE_TEXTS['acts-2-pentecost'] = {
 
 SCRIPTURE_TEXTS['micah-6'] = {
   title: 'Micah 6 — What the Lord Requires',
+  docNode: 'phase-2-010-hebrew-bible-early-prophets',  // docNode chosen because: no Micah-book doc — using Former-Prophets collective doc. Vault gap.
   shortTitle: 'Micah 6',
   tradition: 'Hebrew Bible / Old Testament',
   date: 'c. 735–700 BCE',
@@ -9875,6 +9968,7 @@ SCRIPTURE_TEXTS['micah-6'] = {
 
 SCRIPTURE_TEXTS['2-corinthians-3'] = {
   title: '2 Corinthians 3 — The Letter and the Spirit',
+  docNode: 'phase-3-015-pauline-epistles',
   shortTitle: '2 Corinthians 3',
   tradition: 'New Testament',
   date: 'c. 54–55 CE',
@@ -9944,6 +10038,7 @@ SCRIPTURE_TEXTS['2-corinthians-3'] = {
 
 SCRIPTURE_TEXTS['ephesians-1'] = {
   title: 'Ephesians 1 — The Cosmic Christ',
+  docNode: 'phase-3-015-pauline-epistles',
   shortTitle: 'Ephesians 1',
   tradition: 'New Testament',
   date: 'c. 62 CE (Pauline) or c. 80–90 CE (Deutero-Pauline)',
@@ -10019,6 +10114,7 @@ SCRIPTURE_TEXTS['ephesians-1'] = {
 
 SCRIPTURE_TEXTS['isaiah-53'] = {
   id: 'isaiah-53',
+  docNode:    'phase-3-001-second-third-isaiah',
   title: 'Isaiah 52–53 — The Suffering Servant',
   tradition: 'Christianity / Judaism',
   date: 'c. 550–540 BCE (Deutero-Isaiah)',
@@ -10109,6 +10205,7 @@ SCRIPTURE_TEXTS['isaiah-53'] = {
 
 SCRIPTURE_TEXTS['john-6-bread-of-life'] = {
   id: 'john-6-bread-of-life',
+  docNode:    'phase-3-020-gospel-of-john',
   title: 'John 6 — Bread of Life Discourse',
   tradition: 'Christianity',
   date: 'c. 90–100 CE (Johannine community)',
@@ -10198,6 +10295,7 @@ SCRIPTURE_TEXTS['john-6-bread-of-life'] = {
 
 SCRIPTURE_TEXTS['psalm-139'] = {
   id: 'psalm-139',
+  docNode:    'phase-2-005-davidic-psalms',
   title: 'Psalm 139 — Where Can I Go from Your Spirit?',
   tradition: 'Christianity / Judaism',
   date: 'c. 6th–5th century BCE (post-exilic)',
@@ -10288,6 +10386,7 @@ SCRIPTURE_TEXTS['psalm-139'] = {
 
 SCRIPTURE_TEXTS['diamond-sutra'] = {
   id: 'diamond-sutra',
+  docNode:    'phase-5-002b-diamond-sutra',
   title: 'Diamond Sutra — Vajracchedikā Prajñāpāramitā',
   tradition: 'Buddhism',
   date: 'c. 300–400 CE (Kushan period)',
@@ -10380,6 +10479,7 @@ SCRIPTURE_TEXTS['diamond-sutra'] = {
 
 SCRIPTURE_TEXTS['revelation-21'] = {
   id: 'revelation-21',
+  docNode:    'phase-5-041-revelations-of-divine-love',  // docNode chosen because: WARNING: same as revelation-12 — vault has no Book-of-Revelation document.
   title: 'Revelation 21 — The New Jerusalem',
   tradition: 'Christianity',
   date: 'c. 95 CE (Domitian period)',
@@ -10470,6 +10570,7 @@ SCRIPTURE_TEXTS['revelation-21'] = {
 
 SCRIPTURE_TEXTS['luke-10-good-samaritan'] = {
   id: 'luke-10-good-samaritan',
+  docNode:    'phase-3-018-luke-acts',
   title: 'Luke 10 — The Good Samaritan',
   tradition: 'Christianity',
   date: 'c. 85 CE (Lukan community)',
@@ -10553,6 +10654,7 @@ SCRIPTURE_TEXTS['luke-10-good-samaritan'] = {
 
 SCRIPTURE_TEXTS['hosea-11'] = {
   id: 'hosea-11',
+  docNode:    'hosea-prophet',  // docNode chosen because: no Hosea-book document node in vault — using prophet-node. Vault gap.
   title: 'Hosea 11 — When Israel Was a Child I Loved Him',
   tradition: 'Christianity / Judaism',
   date: 'c. 750–725 BCE (Northern Kingdom, pre-Assyrian exile)',
@@ -10636,6 +10738,7 @@ SCRIPTURE_TEXTS['hosea-11'] = {
 
 SCRIPTURE_TEXTS['acaranga-sutra'] = {
   id: 'acaranga-sutra',
+  docNode:    'phase-2-038-acharanga-sutra',
   title: 'Acaranga Sutra — The First Book of Mahavira\'s Teaching',
   tradition: 'Jainism',
   date: 'c. 6th–5th century BCE (oral tradition attributed to Mahavira, written c. 3rd–4th century BCE)',
@@ -10728,6 +10831,7 @@ SCRIPTURE_TEXTS['acaranga-sutra'] = {
 
 SCRIPTURE_TEXTS['1-corinthians-13'] = {
   id: '1-corinthians-13',
+  docNode:    'phase-3-015-pauline-epistles',
   title: '1 Corinthians 13 — The Love Chapter',
   tradition: 'Christianity',
   date: 'c. 53–55 CE (Paul, Ephesus)',
@@ -10811,6 +10915,7 @@ SCRIPTURE_TEXTS['1-corinthians-13'] = {
 
 SCRIPTURE_TEXTS['psalm-23'] = {
   id: 'psalm-23',
+  docNode:    'phase-2-005-davidic-psalms',
   title: 'Psalm 23 — The Lord Is My Shepherd',
   tradition: 'Christianity / Judaism',
   date: 'c. 10th–5th century BCE (attributed to David)',
@@ -10893,6 +10998,7 @@ SCRIPTURE_TEXTS['psalm-23'] = {
 
 SCRIPTURE_TEXTS['genesis-3'] = {
   id: 'genesis-3',
+  docNode:    'phase-2-005-hebrew-bible-j-source',  // docNode chosen because: Genesis 3 (Eden/Fall) is the canonical J (Yahwist) source per Wellhausen.
   title: 'Genesis 3 — The Fall of Humanity',
   tradition: 'Christianity / Judaism',
   date: 'c. 950–550 BCE (J and P sources)',
@@ -10985,6 +11091,7 @@ SCRIPTURE_TEXTS['genesis-3'] = {
 
 SCRIPTURE_TEXTS['romans-12'] = {
   id: 'romans-12',
+  docNode:    'phase-3-015-pauline-epistles',
   title: 'Romans 12 — Living Sacrifice, Transformed Mind',
   tradition: 'Christianity',
   date: 'c. 57 CE (Paul, Corinth)',
@@ -11068,6 +11175,7 @@ SCRIPTURE_TEXTS['romans-12'] = {
 
 SCRIPTURE_TEXTS['psalm-51'] = {
   id: 'psalm-51',
+  docNode:    'phase-2-005-davidic-psalms',
   title: 'Psalm 51 — Miserere Mei',
   tradition: 'Christianity',
   scriptureRef: 'Psalm 51:1–17',
@@ -11159,6 +11267,7 @@ SCRIPTURE_TEXTS['psalm-51'] = {
 
 SCRIPTURE_TEXTS['romans-1'] = {
   id: 'romans-1',
+  docNode:    'phase-3-015-pauline-epistles',
   title: 'Romans 1–2:4 — The Righteousness of God Revealed',
   tradition: 'Christianity',
   scriptureRef: 'Romans 1:16–2:4',
@@ -11237,6 +11346,7 @@ SCRIPTURE_TEXTS['romans-1'] = {
 
 SCRIPTURE_TEXTS['galatians-5'] = {
   id: 'galatians-5',
+  docNode:    'phase-3-015-pauline-epistles',
   title: 'Galatians 5 — The Fruit of the Spirit',
   tradition: 'Christianity',
   scriptureRef: 'Galatians 5:1–6:8',
@@ -11320,6 +11430,7 @@ SCRIPTURE_TEXTS['galatians-5'] = {
 
 SCRIPTURE_TEXTS['john-20'] = {
   id: 'john-20',
+  docNode:    'phase-3-020-gospel-of-john',
   title: 'John 20 — Resurrection Appearances',
   tradition: 'Christianity',
   scriptureRef: 'John 20:1–31',
@@ -11404,6 +11515,7 @@ SCRIPTURE_TEXTS['john-20'] = {
 
 SCRIPTURE_TEXTS['mark-1'] = {
   id: 'mark-1',
+  docNode:    'phase-3-016-gospel-of-mark',
   title: 'Mark 1:1–15 — The Beginning of the Gospel',
   tradition: 'Christianity',
   scriptureRef: 'Mark 1:1–15',
@@ -11488,6 +11600,7 @@ SCRIPTURE_TEXTS['mark-1'] = {
 
 SCRIPTURE_TEXTS['numbers-6'] = {
   id: 'numbers-6',
+  docNode:    'document-numbers',
   title: 'Numbers 6:22–27 — The Aaronic Blessing',
   tradition: 'Christianity',
   scriptureRef: 'Numbers 6:22–27',
@@ -11555,6 +11668,7 @@ SCRIPTURE_TEXTS['numbers-6'] = {
 
 SCRIPTURE_TEXTS['galatians-3'] = {
   id: 'galatians-3',
+  docNode:    'phase-3-015-pauline-epistles',
   title: 'Galatians 3:26–29 — No Jew nor Greek',
   tradition: 'Christianity',
   scriptureRef: 'Galatians 3:26–29',
@@ -11615,6 +11729,7 @@ SCRIPTURE_TEXTS['galatians-3'] = {
 
 SCRIPTURE_TEXTS['hebrews-11'] = {
   id: 'hebrews-11',
+  docNode:    'phase-3-015-pauline-epistles',  // docNode chosen because: Hebrews has no dedicated vault node; canonically grouped with Pauline epistles though modern scholarship rejects Pauline authorship.
   title: 'Hebrews 11 — The Faith Hall of Fame',
   tradition: 'Christianity',
   scriptureRef: 'Hebrews 11:1–12:2',
