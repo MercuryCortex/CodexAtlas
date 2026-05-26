@@ -126,6 +126,22 @@ Palette / family colors / bucket hex / dim levels / hot alphas / stroke widths /
 
 ---
 
+## Capture-quality rule (2026-05-28) — applies to any agent fetching external text
+
+When pulling text from Wikipedia, Britannica, or any other source for `thumb_extract`, scripture intros, side-panel content, or essay quotes:
+
+**DO NOT cut mid-sentence.** Always extend the capture window to a sentence boundary (period, exclamation, question mark, em-dash followed by capital). The atlas displays this content in narrow side panels and mid-sentence cuts read as broken UI.
+
+Practical rules:
+- If targeting "first N characters" — find the last `. ` (period + space) before N and cut there.
+- If targeting "first paragraph" — keep the WHOLE paragraph; never truncate.
+- If the source uses non-Latin punctuation (Arabic ، Chinese 。 etc.) — treat those as sentence terminators too.
+- When unclear: capture MORE rather than less. Side panel scroll is fine; mid-sentence is not.
+
+Triggered by John's note 2026-05-28 on a deity-panel cut-off. Affects `scripts/fetch_thumbnails.py`, scripture-text intro fetches, any content backfill.
+
+---
+
 ## Critical files (quick links)
 
 | File | Purpose |
