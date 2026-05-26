@@ -63,6 +63,15 @@
     // its own predicate via SCRIPTURE_IDS below — does NOT match a
     // unique `node.type` (every scripture is `type: "document"`).
     { value: 'scriptures',          label: 'Codex',               glyph: '✶', nodeType: 'document' },
+    // Figures lens added 2026-05-28 — historical religious / political
+    // leaders (popes, pharaohs, prophets, founders, caliphs, kings,
+    // rabbis, gurus, imams, etc.). Sub-filter of the persons lens:
+    // 319 role-curated entries via FIGURES_IDS predicate below.
+    // Distinct from Authors (writers of documents) and the broader
+    // Persons mode (every person). John's note: 'figures' is
+    // intentionally softer than 'rulers' — covers spiritual founders
+    // too (Jesus, Buddha, Laozi, Guru Nanak).
+    { value: 'figures',             label: 'Figures',             glyph: '⚜', nodeType: 'person' },
   ]);
 
   // ── Scripture sub-filter set ──────────────────────────────────────
@@ -186,6 +195,103 @@
     'vimalakirti-sutra',
   ]);
 
+  // ── Figures sub-filter set ──────────────────────────────────────
+  //
+  // Curated 2026-05-28 from `data.js` person-type nodes via
+  // role-substring match (king, queen, emperor, pharaoh, pope,
+  // caliph, sultan, prophet, apostle, founder, rabbi, guru, imam,
+  // saint, martyr, etc.). 319 entries. By family distribution:
+  //   Christian 75  Israelite 44  Other 38  Islamic 31  Vedic 31
+  //   Buddhist 16  Mesopotamian 16  Roman 12  Egyptian 10
+  //   Greek 8  Modern-Esoteric 8  Gnostic 5  Chinese 5  ...
+  //
+  // Heuristic misses nodes whose `role:` is blank (~486 of 1198
+  // persons have no role field). Lane A follow-up: backfill role
+  // metadata so coverage grows organically — no need to maintain
+  // this list by hand once that lands.
+  const FIGURES_IDS = new Set([
+    'abba-garima', 'abraham-patriarch', 'abu-bakr', 'abya-meqabyan',
+    'aeschylus', 'ahmose-i', 'akbar-mughal', 'akhenaten',
+    'akiva-ben-yosef', 'al-hakim-bi-amr-allah', 'al-hallaj', 'al-shafii',
+    'aleister-crowley', 'ali-al-hadi', 'ali-al-rida', 'ali-ibn-abi-talib',
+    'ali-zayn-al-abidin', 'ambedkar', 'amos-prophet', 'ananda-disciple',
+    'andal', 'andrew-apostle', 'anselm-of-canterbury', 'antiochus-iv-epiphanes',
+    'anton-lavey', 'antony-the-great', 'arganthonius', 'asanga',
+    'ashurbanipal', 'asoka-maurya', 'atrahasis-flood-hero', 'aurangzeb-emperor',
+    'baal-shem-tov', 'bahaullah', 'barnabas', 'bartholomew-apostle',
+    'basava', 'basavanna', 'benedict-of-nursia', 'bernard-raymond-fabre-palaprat',
+    'blandina', 'bodhidharma', 'bogomil-priest', 'bonaventure',
+    'brigham-young', 'cainan-son-of-arpachshad', 'carl-gustav-jung', 'chaitanya-mahaprabhu',
+    'charlemagne', 'charles-taze-russell', 'choe-je-u', 'christian-rosenkreutz',
+    'cleopatra-vii', 'constantine-i', 'cyprian-of-carthage', 'cyrus-the-great',
+    'daniel-prophet', 'darius-i-the-great', 'david-king', 'dayananda-saraswati',
+    'decius-emperor', 'deganawidah-peacemaker', 'dhu-al-qarnayn', 'dinis-i-portugal',
+    'diocletian-emperor', 'diodore-of-tarsus', 'dioscorus-of-alexandria', 'dogen',
+    'domitian-emperor', 'doreen-valiente', 'edgar-cayce', 'eliezer-ben-hyrcanus',
+    'elijah-prophet', 'elisha-prophet', 'enmebaragesi', 'enoch',
+    'esau', 'ewostatewos', 'ezana-of-aksum', 'ezekiel',
+    'fatima-bint-muhammad', 'fentos-meqabyan', 'flinders-petrie', 'frumentius',
+    'g-i-gurdjieff', 'galawdewos-emperor', 'gamaliel-ii', 'gamaliel-the-elder',
+    'gerald-gardner', 'gershom-scholem', 'gilgamesh-king', 'goncalo-annes-bandarra',
+    'gorakhnath', 'gregory-palamas', 'gregory-the-great', 'gudea-of-lagash',
+    'guru-arjan', 'guru-gobind-singh', 'guru-gobind-singh-ji', 'guru-nanak',
+    'guru-tegh-bahadur-ji', 'haci-bektas-veli', 'hadrian-emperor', 'hagar-matriarch',
+    'hammurabi', 'hamza-ibn-ali', 'hasan-al-askari', 'hasan-ibn-ali',
+    'hatshepsut', 'helena-blavatsky', 'hemiunu', 'henry-steel-olcott',
+    'henry-the-navigator', 'hermas', 'hermas-of-rome', 'herod-antipas',
+    'herod-the-great', 'hiawatha-haudenosaunee', 'hillel-the-elder', 'hippocrates',
+    'hippolytus-of-rome', 'hongren', 'hosea-prophet', 'hua-tuo',
+    'hud-prophet', 'hugues-de-payens', 'huineng', 'husayn-ibn-ali',
+    'ibn-ishaq', 'ibn-tufayl', 'ignatius-of-antioch', 'imhotep',
+    'ines-de-castro', 'isaac-patriarch', 'isaiah-first', 'ishmael-ben-elisha',
+    'ishmael-son-of-abraham', 'jacob-israel', 'jafar-al-sadiq', 'james-brother-of-jesus',
+    'james-hillman', 'james-son-of-alphaeus', 'james-son-of-zebedee', 'jan-hus',
+    'jean-francois-champollion', 'jeremiah', 'jesus-of-nazareth', 'john-of-patmos',
+    'john-son-of-zebedee', 'john-the-baptist', 'joseph-father-of-jesus', 'joseph-patriarch',
+    'joseph-ratzinger-benedict-xvi', 'joseph-smith', 'joshua-ben-hananiah', 'josiah-king',
+    'judah-ha-nasi', 'judas-iscariot', 'julian-the-apostate', 'justinian-i',
+    'kaleb-of-aksum', 'kanishka', 'karl-gotthelf-von-hund', 'khafre',
+    'khufu', 'l-ron-hubbard', 'lal-ded', 'lalibela-king',
+    'lanz-von-liebenfels', 'laozi', 'leo-the-great', 'lipit-ishtar',
+    'lucian-of-antioch', 'lut', 'madhva', 'mahavira',
+    'makeda-queen-of-sheba', 'mani', 'manikkavacakar', 'marcus-aurelius-emperor',
+    'marie-laveau', 'marshall-vian-summers', 'mary-baker-eddy', 'mary-mother-of-jesus',
+    'matsyendranath', 'matthew-apostle', 'maximus-the-confessor', 'melchizedek',
+    'menander-i-soter', 'menelik-i-legendary', 'mes-anepada', 'mirabai',
+    'miriam-prophetess', 'montanus', 'moses', 'moses-cordovero',
+    'mozi-person', 'muawiya-ibn-abi-sufyan', 'muhammad-al-baqir', 'muhammad-al-jawad',
+    'muhammad-al-mahdi-person', 'muhammad-ibn-abdullah', 'musa-al-kazim', 'nagarjuna',
+    'nakayama-miki', 'nammalvar', 'naram-sin', 'nathan-of-gaza',
+    'nebuchadnezzar-ii', 'nefertiti', 'nero-emperor', 'nestorius',
+    'ngo-van-chieu', 'nimbarka', 'noah', 'nund-rishi',
+    'onias-iii', 'onias-iv', 'orpheus', 'pachomius',
+    'padmasambhava-person', 'paramahansa-yogananda', 'paul-of-tarsus', 'perpetua-and-felicity',
+    'peter-apostle', 'peter-j-carroll', 'philip-apostle', 'philip-iv-of-france',
+    'pliny-the-younger', 'plotinus', 'polycarp-of-smyrna', 'pope-clement-v',
+    'pope-francis', 'pope-innocent-iii', 'pope-urban-ii', 'pothinus-of-lyon',
+    'prester-john', 'ptolemy-i-soter', 'ptolemy-ii-philadelphus', 'pyrrho-of-elis',
+    'pythagoras', 'quetzalcoatl-historical', 'rabbi-akiva', 'rabbi-judah-loew',
+    'rabbi-shimon-bar-yochai', 'ram-mohan-roy', 'ramakrishna', 'rinchen-zangpo',
+    'rishabha', 'rowan-williams', 'rudolf-ii-habsburg', 'rudolf-steiner',
+    'saladin', 'salih-prophet', 'samuel-prophet', 'sarada-devi',
+    'sarah-matriarch', 'sargon-of-akkad', 'sebastian-i-portugal', 'seela-meqabyan',
+    'septimius-severus', 'seth', 'severus-of-antioch', 'shammai',
+    'shankara', 'shariputra', 'shenxiu', 'shuayb-prophet',
+    'shulgi', 'siddhartha-gautama-buddha', 'simeon-the-stylite', 'simon-the-zealot',
+    'solomon-king', 'sri-aurobindo', 'sri-yukteswar', 'stephen-mcnallen',
+    'stephen-protomartyr', 'sun-myung-moon', 'sun-simiao', 'surdas',
+    'swami-vivekananda', 'takla-haymanot', 'thaddaeus-jude-apostle', 'the-bab',
+    'thecla', 'theodosius-i', 'thomas-apostle', 'thutmose-iv',
+    'tomas-de-torquemada', 'trajan-emperor', 'triptolemus-legendary', 'tsongkhapa',
+    'tulsidas', 'tutankhamun', 'umar-ibn-al-khattab', 'unas',
+    'ur-bau', 'ur-nammu', 'uthman', 'utnapishtim',
+    'utpaladeva', 'valerian-emperor', 'vallabhacharya', 'vasubandhu',
+    'vasugupta', 'victor-hugo', 'wang-yangming', 'william-james',
+    'william-sinclair-rosslyn', 'wolega-tafari-makonnen-haile-selassie', 'wovoka', 'yared-the-deacon',
+    'yohanan-ben-zakkai', 'yu-the-great', 'zadok-priest', 'zara-yaqob-emperor',
+    'zarathustra', 'zerubbabel', 'ziusudra',
+  ]);
+
   const MODE_INDEX = Object.create(null);
   for (const m of MODES) MODE_INDEX[m.value] = m;
 
@@ -222,6 +328,14 @@
     // for inclusion rationale.
     if (mode === 'scriptures') {
       return nodes.filter(n => n && n.type === 'document' && SCRIPTURE_IDS.has(n.id));
+    }
+
+    // Figures mode (2026-05-28): persons lens, intersected with the
+    // curated FIGURES_IDS set above. Historical religious/political
+    // leaders — distinct from authors (writers) and the broader
+    // persons set.
+    if (mode === 'figures') {
+      return nodes.filter(n => n && n.type === 'person' && FIGURES_IDS.has(n.id));
     }
 
     // Default: simple type match.
