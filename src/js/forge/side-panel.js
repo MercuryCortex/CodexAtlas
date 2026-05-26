@@ -170,6 +170,33 @@
     };
 
     // Renders the deity inspector content into #detail-inner.
+    // Atlas Codex step 5 (2026-05-28) — docNode → textKey reverse
+    // index, built lazily once per session. The forward map lives
+    // on SCRIPTURE_TEXTS[k].docNode; we invert it so the side panel
+    // can ask "given a locked vault doc node id, does it have a
+    // reader text we can open?"
+    function textKeyForDoc(docNodeId) {
+      if (!docNodeId) return null;
+      if (!local._docnodeToTextKey) {
+        const map = Object.create(null);
+        const T = window.SCRIPTURE_TEXTS || {};
+        for (const k in T) {
+          const t = T[k];
+          if (t && t.docNode && typeof t.docNode === 'string') {
+            // First-write wins. If two text-keys claim the same
+            // docNode, the alphabetically-earlier key takes the
+            // slot — a rare collision; the agent's backfill
+            // collapsed pauline-epistles to one docNode for many
+            // epistle keys, so 'colossians-1' lands first over
+            // 'romans-12' alphabetically.
+            if (!map[t.docNode]) map[t.docNode] = k;
+          }
+        }
+        local._docnodeToTextKey = map;
+      }
+      return local._docnodeToTextKey[docNodeId] || null;
+    }
+
     function render() {
       // Phase 22-AH (2026-05-24) — D-fix. Any path that wipes the
       // side panel via `inner.innerHTML = ...` detaches the row
@@ -556,6 +583,16 @@
         + '</dl>'
         + (extract ? '<div class="forge-side-panel-extract">' + safe(extract) + '</div>' : '')
         + (wikiPage ? '<a class="forge-side-panel-wikilink" href="' + safe(wikiPage) + '" target="_blank" rel="noopener noreferrer">Open Wikipedia ↗</a>' : '')
+        // Atlas Codex step 5 (2026-05-28) — Open-in-reader button
+        // for any locked doc node whose docNode field is claimed
+        // by a SCRIPTURE_TEXTS entry. The reader overlay handles
+        // the rest (Step 3 module already wired).
+        + (() => {
+            if (!node || node.type !== 'document') return '';
+            const tk = textKeyForDoc(id);
+            if (!tk) return '';
+            return '<button class="forge-side-panel-read-btn" data-codex-read="' + safeAttr(tk) + '" type="button">✠ Open in reader</button>';
+          })()
         + '</div>';
 
       // Phase 21AD (2026-05-22) — face-aware object-position on the
@@ -584,6 +621,19 @@
     // the global inner so it works for every render pass without
     // re-binding.
     inner.addEventListener('click', (e) => {
+      // Atlas Codex step 5 (2026-05-28) — Open-in-reader button.
+      // Check FIRST so it short-circuits before the carousel /
+      // neighbor-click paths. Reader API installed by
+      // install-public-api.js attaches to window._forge.openReader.
+      const readBtn = e.target.closest('[data-codex-read]');
+      if (readBtn) {
+        e.stopPropagation();
+        const tk = readBtn.getAttribute('data-codex-read');
+        if (tk && window._forge && typeof window._forge.openReader === 'function') {
+          window._forge.openReader(tk);
+        }
+        return;
+      }
       // Phase 21X (2026-05-22) — carousel arrows. Check first since
       // the buttons live inside .forge-side-panel-thumb which would
       // otherwise pass through to other handlers.

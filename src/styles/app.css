@@ -8241,6 +8241,31 @@ body.view-forge #detail-inner {
 .forge-side-panel-wikilink:hover {
   color: var(--text-1, #e5e7eb);
 }
+/* Atlas Codex step 5 (2026-05-28) — Open-in-reader CTA for any
+   locked doc node whose docNode is claimed by a SCRIPTURE_TEXTS
+   entry. More prominent than the inline wikilink because it's
+   the primary scripture action; matches the gold-border-on-hover
+   chrome of .forge-debug-pin-btn. */
+.forge-side-panel-read-btn {
+  appearance: none;
+  display: block;
+  margin-top: 14px;
+  padding: 7px 14px;
+  background: rgba(212,165,90,0.08);
+  border: 1px solid rgba(212,165,90,0.34);
+  border-radius: 4px;
+  color: var(--gold, #d4a55a);
+  font-family: var(--mono, "JetBrains Mono", Menlo, monospace);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  transition: background 120ms ease, border-color 120ms ease, color 120ms ease;
+}
+.forge-side-panel-read-btn:hover {
+  background: rgba(212,165,90,0.16);
+  border-color: var(--gold, #d4a55a);
+  color: var(--gold-1, #e8c889);
+}
 
 .forge-stage {
   flex: 1 1 auto;
