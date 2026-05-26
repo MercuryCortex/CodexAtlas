@@ -959,6 +959,15 @@ body.fv-layout-timeline #forge-hull-guide-rings {
    still works; the pill visually collapses to just the LEFT half. */
 body.app-pill-no-class .app-pill-class,
 body.app-pill-no-class .app-pill-divider { display: none; }
+/* Phase scripture-mode step 4 (2026-05-28) — Atlas Codex secondary
+   pill. Sibling .app-pill inside the same .app-pill-wrap as the
+   master/class pill, so it inherits z-index:245 + pointer-events
+   + stacking context. Visible only when class === 'scriptures'
+   (codex-controls.js toggles body.app-pill-codex-visible). Hidden
+   by default — body class drives reveal, same pattern as
+   .app-pill-no-class above. */
+.app-pill--codex { margin-left: 8px; display: none; }
+body.app-pill-codex-visible .app-pill--codex { display: inline-flex; }
 /* Dropdown panels — anchored under their trigger button via JS
    (app-pill.js positionMenu() reads getBoundingClientRect on open
    and sets top/left inline). The pill itself lives at top:14
