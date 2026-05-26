@@ -2584,6 +2584,30 @@
       let modeNodes = modemod.filterNodesByMode(modeId, allNodes, allEdges);
       _tick('filterNodesByMode');
 
+      // Atlas Codex contextual filter (2026-05-28). When class === scriptures
+      // AND a family is selected (via Family ▾ in the Codex top-bar pill),
+      // narrow to that corpus's book IDs. When no family is selected,
+      // fall through to the curated 109-node SCRIPTURE_IDS set (the default
+      // "All families" view). Family pick BYPASSES SCRIPTURE_IDS — the
+      // corpus is the truth for "what books are in this canon."
+      if (modeId === 'scriptures' && local.codexFamily && window.SCRIPTURE_CORPORA) {
+        const corpus = window.SCRIPTURE_CORPORA[local.codexFamily];
+        if (corpus && corpus.sections) {
+          const allowed = new Set();
+          for (const sec of corpus.sections) {
+            for (const book of (sec.books || [])) {
+              if (book && book.id) allowed.add(book.id);
+            }
+          }
+          // Union with allNodes (NOT modeNodes) because the corpus may
+          // reference nodes that don't pass the SCRIPTURE_IDS gate — the
+          // corpus list is hand-curated and overrides the SCRIPTURE_IDS
+          // heuristic when explicit.
+          modeNodes = allNodes.filter(n => n && allowed.has(n.id));
+          _tick('codexFamilyFilter');
+        }
+      }
+
       // ─── 24-HARDDEBUG (2026-05-26, removable) ─────────────────
       // If ?debug-cap=N in URL, HARD-SLICE modeNodes to N RIGHT NOW,
       // before degree/layout/cull/pack — ALL downstream work runs on
@@ -5807,6 +5831,17 @@
         window._forgeScriptureReader.attach({ local, toggleLock, triggerClickPulse });
       } else if (typeof console !== 'undefined' && console.warn) {
         console.warn('[forge] window._forgeScriptureReader not loaded — reader overlay inert.');
+      }
+
+      // Atlas Codex contextual controls (2026-05-28, step 4 of
+      // scripture-mode carve). Family + Lens pill that appears in
+      // the top bar only when class === 'scriptures'. Reads
+      // window.SCRIPTURE_CORPORA, writes local.codexFamily, calls
+      // rebuildForMode to re-filter on Family pick.
+      if (window._forgeCodexControls && typeof window._forgeCodexControls.attach === 'function') {
+        window._forgeCodexControls.attach({ local, rebuildForMode });
+      } else if (typeof console !== 'undefined' && console.warn) {
+        console.warn('[forge] window._forgeCodexControls not loaded — codex pill inert.');
       }
     }
 

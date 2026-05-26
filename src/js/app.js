@@ -4080,6 +4080,10 @@ const SCRIPTURE_CORPORA = {
     ],
   },
 };
+// Atlas Codex contextual filter reads this — same object, exposed on window.
+// (2026-05-28: corpora data is the truth for "what books are in the Bible /
+// Egyptian / etc. canon"; Codex's Family ▾ enumerates these keys.)
+window.SCRIPTURE_CORPORA = SCRIPTURE_CORPORA;
 
 // Edge types that bind a person/deity/event to a document for the Scripture view.
 // `attests` → deity mentioned in the doc (from doc's `deities-mentioned`).
