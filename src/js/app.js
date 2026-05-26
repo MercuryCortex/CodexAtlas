@@ -1172,8 +1172,8 @@ VIEWS.pantheon = {
 // See src/js/views/forge.js and src/js/engine/README.md.
 // ═════════════════════════════════════════════════════════════════════
 VIEWS.forge = {
-  title: 'Forge',
-  subtitle: 'proprietary engine — phase 0 scaffold',
+  title: 'Atlas',
+  subtitle: 'the wheel of everything',
   render() {
     const canvasEl = document.getElementById('canvas');
     const pane = document.createElement('div');

@@ -48,7 +48,7 @@
   // still go to the legacy views until they migrate to the Forge
   // engine in their own builds.
   const MASTER_VIEWS = [
-    { id: 'forge',    target: 'forge',          layout: 'wheel',    icon: '⚒', label: 'FORGE'    },
+    { id: 'forge',    target: 'forge',          layout: 'wheel',    icon: '⚒', label: 'ATLAS'    },
     { id: 'timeline', target: 'forge',          layout: 'timeline', icon: '⎯', label: 'TIMELINE' },
     { id: 'board',    target: 'transmutation',                       icon: '⚗', label: 'BOARD'    },
     { id: 'map',      target: 'atlas',                               icon: '⌖', label: 'MAP'      },

@@ -62,7 +62,7 @@
     // nodes (see AUDIT/2026-05-28-scripture-ids-enumeration.md). Uses
     // its own predicate via SCRIPTURE_IDS below — does NOT match a
     // unique `node.type` (every scripture is `type: "document"`).
-    { value: 'scriptures',          label: 'Scriptures',          glyph: '✶', nodeType: 'document' },
+    { value: 'scriptures',          label: 'Codex',               glyph: '✶', nodeType: 'document' },
   ]);
 
   // ── Scripture sub-filter set ──────────────────────────────────────
