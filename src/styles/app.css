@@ -1197,6 +1197,52 @@ body.app-pill-codex-visible .app-pill--codex { display: inline-flex; }
 .forge-debug-panel .forge-debug-v {
   color: var(--text-1, #e5e7eb);
 }
+/* ── Phase debug-bar-move (2026-05-28) ──
+   The opt-in floating perf bar (pinned via the # popover).
+   Was inline-styled in index.html until 2026-05-28; now a real
+   primitive so JS doesn't need to ship style text. Background
+   color set by JS to color-code rAF interval performance. */
+.forge-hud-banner {
+  position: fixed;
+  top: 10px; left: 50%;
+  transform: translateX(-50%);
+  background: #2a6;        /* default green — JS recolors per perf */
+  color: #fff;
+  padding: 8px 16px;
+  z-index: 250;            /* above app-pill (245-246), under modals */
+  font: bold 12px var(--mono, ui-monospace, Menlo, Monaco, monospace);
+  border-radius: 6px;
+  pointer-events: none;    /* purely informational — never blocks clicks */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  min-width: 680px;
+  text-align: center;
+}
+/* Pin-toggle button inside the # debug popover. Pinned/unpinned
+   reads from atlas.debug.pinned in LS. Matches existing popover
+   row chrome. */
+.forge-debug-panel .forge-debug-pin-row {
+  margin-top: 8px;
+  padding-top: 8px !important;
+  border-top: 1px solid rgba(212,165,90,0.18);
+  border-bottom: 0 !important;
+}
+.forge-debug-pin-btn {
+  appearance: none;
+  background: transparent;
+  border: 1px solid rgba(212,165,90,0.32);
+  border-radius: 4px;
+  color: var(--gold, #d4a55a);
+  padding: 2px 10px;
+  font: inherit;
+  font-size: 10.5px;
+  cursor: pointer;
+  letter-spacing: 0.06em;
+  transition: background 120ms ease, border-color 120ms ease;
+}
+.forge-debug-pin-btn:hover {
+  background: rgba(212,165,90,0.10);
+  border-color: var(--gold, #d4a55a);
+}
 
 /* ── Phase 21B (2026-05-21) — BG-image visibility fixes ── */
 /* The body-root `.forge-bg-image` was being covered by the

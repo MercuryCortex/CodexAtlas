@@ -8,95 +8,14 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=EB+Garamond:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&family=Noto+Serif+Hebrew:wght@400;700&family=Noto+Sans+Egyptian+Hieroglyphs&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="_assets/vendor/maplibre/maplibre-gl.css?v=5.24.0" />
-<link rel="stylesheet" href="src/styles/app.css?v=20260528-scrollbar-people" />
+<link rel="stylesheet" href="src/styles/app.css?v=20260528-debug-bar-move" />
 </head>
 <body class="nav-hidden detail-collapsed footer-collapsed">
-<!-- 24-HUD inline live perf overlay (2026-05-26, removable).
-     Measures the things JS-internal timing misses:
-       1. rAF INTERVAL (gap between consecutive rAF callbacks)
-          — this is the REAL FPS measure. If interval > 16ms even
-          when frame work is cheap, the browser compositor or
-          rAF throttling is the bottleneck (DOM weight, GPU sync,
-          Safari quirks).
-       2. Long tasks (PerformanceObserver longtask entries) — any
-          main-thread work >50ms that blocks responsiveness.
-       3. Frame internal time + recomputeFocus time (from forge). -->
-<script>
-(function () {
-  try {
-    var u = parseInt(new URLSearchParams(location.search).get('debug-cap'), 10) || 0;
-    var b = document.createElement('div');
-    b.id = 'forge-hud-banner';
-    b.style.cssText = 'position:fixed;top:10px;left:50%;transform:translateX(-50%);background:#e22;color:#fff;padding:8px 16px;z-index:99999;font:bold 12px ui-monospace,Menlo,Monaco,monospace;border-radius:6px;pointer-events:none;box-shadow:0 4px 12px rgba(0,0,0,.5);min-width:680px;text-align:center;';
-    b.textContent = '🔴 HUD loading… (cap=' + (u || 'none') + ')';
-    document.body.appendChild(b);
-
-    // ─── rAF INTERVAL tracker — the real FPS measure ───
-    var rafIntervals = [];
-    var lastRafT = 0;
-    function rafTick(t) {
-      if (lastRafT) {
-        var gap = t - lastRafT;
-        rafIntervals.push(gap);
-        if (rafIntervals.length > 120) rafIntervals.shift();
-      }
-      lastRafT = t;
-      requestAnimationFrame(rafTick);
-    }
-    requestAnimationFrame(rafTick);
-
-    // ─── Long task observer — catches main-thread blockers ───
-    var longTaskCount = 0;
-    var longTaskTotalMs = 0;
-    try {
-      if (typeof PerformanceObserver === 'function') {
-        var po = new PerformanceObserver(function (list) {
-          list.getEntries().forEach(function (e) {
-            longTaskCount++;
-            longTaskTotalMs += e.duration;
-          });
-        });
-        po.observe({ entryTypes: ['longtask'] });
-      }
-    } catch (e) { /* Safari may not support longtask */ }
-
-    function colorFor(ms) {
-      if (ms < 8) return '#1a8';
-      if (ms < 17) return '#2a6';
-      if (ms < 33) return '#c81';
-      return '#e22';
-    }
-    function stats(arr) {
-      if (!arr.length) return { avg: 0, p95: 0, max: 0 };
-      var sorted = arr.slice().sort(function (a, c) { return a - c; });
-      return {
-        avg: +(arr.reduce(function (s, v) { return s + v; }, 0) / arr.length).toFixed(1),
-        p95: +sorted[Math.floor(sorted.length * 0.95)].toFixed(1),
-        max: +sorted[sorted.length - 1].toFixed(1),
-      };
-    }
-    setInterval(function () {
-      try {
-        var rafS = stats(rafIntervals);
-        var fps = rafS.avg ? Math.round(1000 / rafS.avg) : 0;
-        var s = (window._forgeDebug && window._forgeDebug.frameStats) ? window._forgeDebug.frameStats() : null;
-        // Color by the WORST signal: rAF interval is king (true FPS).
-        var worstMs = rafS.avg || 0;
-        if (s) worstMs = Math.max(worstMs, s.avg || 0, s.rfAvg || 0);
-        b.style.background = colorFor(worstMs);
-        var line = '● ' + (s ? s.activeNodes + 'n' : '?') + ' · '
-          + 'rAF ' + rafS.avg + '/' + rafS.p95 + '/' + rafS.max + 'ms (' + fps + 'fps)'
-          + ' · frame ' + (s ? s.avg + '/' + s.p95 : '?') + 'ms'
-          + ' · hover ' + (s ? s.rfAvg + '/' + s.rfMax : '?') + 'ms'
-          + ' · longtasks ' + longTaskCount + ' (' + Math.round(longTaskTotalMs) + 'ms)'
-          + (u ? ' · CAP=' + u : '');
-        b.textContent = line;
-      } catch (e) { /* ignore */ }
-    }, 250);
-    console.log('[hud] live perf overlay armed with rAF + longtask tracking');
-  } catch (e) { console.error('[hud] failed to arm', e); }
-})();
-</script>
+<!-- Perf HUD removed from inline script 2026-05-28 — moved into
+     src/js/forge/debug-stats.js (popover content + pin-to-top
+     toggle). The floating top-center bar is now opt-in via the
+     # button → "pin perf bar" toggle (state persists in LS at
+     atlas.debug.pinned). -->
 
 <!-- Phase 21A (2026-05-21) — the persistent sidebar is gone.
      The brand glyph at top-left is now a floating button that
@@ -398,8 +317,8 @@
      forge.js so window.AtlasViewportFilter exists when
      rebuildForMode tries to cull the active set. -->
 <script src="src/js/engine/graph/viewport-filter.js?v=20260527T0625-reverted-blinking"></script>
-<script src="src/js/forge/_bundle.js?v=20260528-scrollbar-people"></script>
-<script src="src/js/views/forge.js?v=20260528-scrollbar-people"></script>
+<script src="src/js/forge/_bundle.js?v=20260528-debug-bar-move"></script>
+<script src="src/js/views/forge.js?v=20260528-debug-bar-move"></script>
 
 <script src="src/js/graph/theme.js?v=20260517-handoff"></script>
 <script src="src/js/graph/layout.js?v=20260517-handoff"></script>
@@ -409,11 +328,11 @@
 <script src="src/data/patterns.js?v=20260516-patterns-tab"></script>
 <script src="src/data/observations.js?v=20260516-observations-tab"></script>
 <script src="src/data/chains.js?v=20260516-chains-2"></script>
-<script src="src/js/app.js?v=20260528-scrollbar-people"></script>
+<script src="src/js/app.js?v=20260528-debug-bar-move"></script>
 <!-- Phase 22-B (2026-05-23) — app-shell top-bar pill wiring.
      Loads AFTER app.js so window.STATE + window.setView are defined.
      Self-installing IIFE; exposes window._appPill for debug. -->
-<script src="src/js/app-pill.js?v=20260528-scrollbar-people"></script>
+<script src="src/js/app-pill.js?v=20260528-debug-bar-move"></script>
 <script src="src/js/alchemy/board.js?v=20260517-handoff"></script>
 <script src="src/js/astrology/spine.js?v=20260517-handoff"></script>
 <script src="src/js/astrology/decanic.js?v=20260515-decanic-clarity"></script>
