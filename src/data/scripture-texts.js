@@ -13529,3 +13529,425 @@ SCRIPTURE_TEXTS['bahai-kitab-i-iqan'] = {
     },
   ]
 };
+
+// ── HEBREW BIBLE — LAMENTATIONS 3 (ACROSTIC LAMENT FROM 587 BCE) ─────────────
+SCRIPTURE_TEXTS['lamentations-3'] = {
+  id:         'lamentations-3',
+  title:      'Lamentations 3 — The Central Acrostic of the Dirge over Jerusalem',
+  shortTitle: 'Lamentations 3',
+  corpus:     'Hebrew Bible · Eikhah (אֵיכָה)',
+  tradId:     'tradition-second-temple-judaism',
+  date:       '~586–540 BCE (Jerusalem, the generation after the Babylonian destruction)',
+  docNode:    'phase-2-020-lamentations',
+  language:   'Biblical Hebrew (original) · NRSV 1989 English (canonical scholarly translation)',
+  translations: [
+    { id: 'nrsv', label: 'New Revised Standard Version 1989 (T1, ecumenical)', note: 'Used as the default scholarly English text for the Hebrew Bible across most Anglophone academic theology and biblical-studies departments.' },
+    { id: 'hillers', label: 'Delbert R. Hillers 1992 (Anchor Bible)', note: 'The textually-most-rigorous English commentary translation; reads the chapter as a male-voiced gever lament within a deliberately polyphonic five-chapter book.' },
+    { id: 'hebrew', label: 'Masoretic Hebrew (Biblia Hebraica Stuttgartensia)' },
+  ],
+  intro: 'Lamentations 3 stands at the centre of a five-poem book composed in Jerusalem in the generation after the Babylonian destruction of the city and the First Temple in 587/586 BCE. The book\'s five chapters are graded acrostics — chs. 1, 2 and 4 are 22-verse alphabetic acrostics (one verse per Hebrew letter); ch. 5 has 22 verses but is not formally alphabetic; ch. 3 is the most ornamented form, a triple acrostic in which each Hebrew letter governs three consecutive verses (so 22 × 3 = 66 verses). The form encodes completeness — "from א to ת" — exactly when the content is registering total ruin, an aesthetic choice that scholars (F. W. Dobbs-Allsopp 2002, Delbert Hillers 1992, Adele Berlin 2002) read as a deliberate counterpoint between formal order and historical chaos. Chapter 3 is also distinct in voice: the speaker is an individual male sufferer (the gever of v. 1) standing in for collective Israel, a form that comparative Hebrew Bible study links to the lament-psalm tradition (Pss 22, 38, 88, 102) and which Hermann Gunkel\'s form-critical work treats as the most highly conventionalised genre of Israelite poetic theology. The chapter\'s structural centre — verses 22–24 — is the famous turn from total despair to a confession of divine ḥesed, used liturgically in Jewish, Christian, and modern (the hymn "Great Is Thy Faithfulness" by Thomas Chisholm 1923) practice. Traditional attribution of the book to Jeremiah is preserved in the Septuagint and Vulgate but rejected by virtually all critical scholarship since Wilhelm Rudolph 1939; the Hebrew Bible itself is anonymous on authorship, and the book\'s Hebrew dialect, vocabulary, and theological emphases differ from the Jeremiah scroll in ways that point to a different (probably collective Jerusalem) authorial setting.',
+  crossTradition: [
+    { label: 'Job 38 — the theodicy lineage', textId: 'job-38',
+      note: 'Lamentations and Job are the two Hebrew Bible centres of the theodicy question — how to speak of God in the face of unbearable suffering. Both texts refuse the standard wisdom-tradition answer (suffering = punishment for sin) and develop a more complex theological grammar: Job by staging the divine speeches as overwhelming transcendence, Lamentations by holding catastrophe and ḥesed in unresolved tension within the same acrostic verse-set. Adele Berlin 2002 and Carol Newsom 2003 read them as paired experiments in keeping faith without explanation.' },
+    { label: 'Psalm 22 — the lament-psalm form behind the chapter', textId: 'psalm-22',
+      note: 'Lamentations 3 inherits the Israelite individual-lament form crystallised in Psalms 22, 38, 88, and 102. The structural pattern — opening cry of abandonment, catalogue of suffering, turn to remembered divine faithfulness, closing petition — is the form on which the chapter is built. The verses 19–20 ("Remember my affliction and my bitterness") explicitly echo the lament-psalm vocabulary of zākhar (remember).' },
+    { label: '4 Ezra — the post-70-CE recapitulation of the lament', textId: '4-ezra',
+      note: 'When the Romans destroy the Second Temple in 70 CE, the apocalyptic-lament genre returns with extraordinary intensity in 4 Ezra (c. 90 CE), composed as a meditation on the same destruction-and-meaning question that Lamentations had asked five and a half centuries earlier. Michael Stone 1990 (Hermeneia) and Bruce Longenecker 1995 both read 4 Ezra as a direct genre-descendant of Lamentations, with the same alternation of accusation, divine silence, and partial consolation.' },
+    { label: 'Jeremiah 31 — the consolation companion piece', textId: 'jeremiah-31',
+      note: 'Jeremiah 31 (the "new covenant" oracle) is the canonical companion to Lamentations\' suffering: where Lam 3 holds catastrophe and ḥesed together without final resolution, Jer 31 projects the resolution forward into eschatological consolation. The traditional pairing of the two texts in Jewish and Christian liturgy (Tisha B\'Av readings, Holy Saturday lectionary) treats them as a single emotional arc.' },
+  ],
+  sections: [
+    {
+      heading: 'I. The Depth of the Lament — Verses 1–18',
+      verses: [
+        {
+          ref: 'Lamentations 3:1–3',
+          text: 'I am one who has seen affliction under the rod of God\'s wrath; he has driven and brought me into darkness without any light; against me alone he turns his hand, again and again, all day long.',
+          textVersions: {
+            nrsv:   'I am one who has seen affliction under the rod of God\'s wrath; he has driven and brought me into darkness without any light; against me alone he turns his hand, again and again, all day long.',
+            hillers: 'I am the man who has seen affliction by the rod of his fury. He has driven me, and brought me into darkness, not light. Surely against me he turns again and again his hand, all day long.',
+            hebrew: 'אֲנִ֤י הַגֶּ֙בֶר֙ רָאָ֣ה עֳנִ֔י בְּשֵׁ֖בֶט עֶבְרָתֽוֹ׃ אוֹתִ֥י נָהַ֛ג וַיֹּלַ֖ךְ חֹ֥שֶׁךְ וְלֹא־אֽוֹר׃ אַ֣ךְ בִּ֥י יָשֻׁ֛ב יַהֲפֹ֥ךְ יָד֖וֹ כָּל־הַיּֽוֹם׃',
+          },
+          entities: [
+            { word: 'I am one who has seen affliction', node: 'tradition-second-temple-judaism', type: 'genre-form',
+              note: 'אֲנִי הַגֶּבֶר — "I am the gever." Gever in Biblical Hebrew is the strong/heroic-male word (cognate of gibbor, "warrior"), here deployed paradoxically: the strongest of men is reduced to total powerlessness. The opening "I" sets up the first-person collective-representative voice that distinguishes ch. 3 from chs. 1, 2, 4, and 5 of the book. Hillers 1992 and Berlin 2002 both note that the gever is not a private individual but a corporate representative of Jerusalem-in-suffering, a form that recurs in Isaiah 53 (the suffering servant) and is later picked up by the New Testament passion narratives as a Christological vocabulary.',
+              parallels: [
+                { label: 'Isaiah 53 — the suffering servant as corporate representative', textId: 'isaiah-53',
+                  note: 'The Deutero-Isaianic servant of Isaiah 53 is the closest formal parallel within the Hebrew Bible to the Lamentations 3 gever: an individual figure who carries collective suffering, whose voice oscillates between first-person and third-person, and whose meaning is left deliberately under-determined. The textual relationship between the two passages is one of the major topics of late-twentieth-century Hebrew Bible scholarship (J. J. M. Roberts, John Goldingay, and others).' },
+                { label: 'Psalm 22 — the abandoned-righteous-sufferer form', textId: 'psalm-22',
+                  note: 'Psalm 22\'s opening "My God, my God, why have you forsaken me" inaugurates the same first-person voice of abandoned-righteous-suffering that Lam 3:1 enters. The two texts share vocabulary (ʿoni "affliction," ḥōshekh "darkness") and structure (descent into ruin followed by remembered praise).' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'II. The Turn to Hope — Verses 21–26 (the structural centre of the book)',
+      verses: [
+        {
+          ref: 'Lamentations 3:22–23',
+          text: 'The steadfast love of the LORD never ceases; his mercies never come to an end; they are new every morning; great is your faithfulness.',
+          textVersions: {
+            nrsv:   'The steadfast love of the LORD never ceases; his mercies never come to an end; they are new every morning; great is your faithfulness.',
+            hillers: 'The kindnesses of the LORD have not ceased; his compassions have not failed; they are new every morning. Great is your faithfulness.',
+            hebrew: 'חַֽסְדֵ֤י יְהוָה֙ כִּ֣י לֹא־תָ֔מְנוּ כִּ֥י לֹא־כָל֖וּ רַחֲמָֽיו׃ חֲדָשִׁים֙ לַבְּקָרִ֔ים רַבָּ֖ה אֱמוּנָתֶֽךָ׃',
+          },
+          entities: [
+            { word: 'The steadfast love of the LORD never ceases', node: 'tradition-second-temple-judaism', type: 'theological-vocabulary',
+              note: 'חַסְדֵי יְהוָה — ḥasdei YHWH, "the ḥesed-acts of YHWH." Ḥesed is one of the most theologically loaded words in Biblical Hebrew, defying easy English rendering — "steadfast love," "covenant faithfulness," "loyalty," and "kindness" are all standard glosses. In the Hebrew Bible\'s covenantal vocabulary it names the disposition that holds the divine-human relationship together across human failure. The plural ḥasdei here (rather than singular ḥesed) intensifies it — the concrete, repeated acts of ḥesed, day by day, that sustain life even in catastrophe. Norman Snaith 1944, Katharine Doob Sakenfeld 1978, and Gordon Clark 1993 all treat this verse as the locus classicus for ḥesed as a structural concept in Israelite theology.',
+              parallels: [
+                { label: 'Exodus 34:6 — the ḥesed self-revelation at Sinai', textId: 'exodus-3',
+                  note: 'The Sinai theophany of Exodus 34:6–7 ("YHWH, YHWH, a God merciful and gracious, slow to anger, abounding in ḥesed and faithfulness") establishes the canonical ḥesed-vocabulary that Lam 3:22 invokes. The Lamentations poet is, in effect, citing the Sinai self-revelation against the present catastrophe — "you said this; we believe it." The intertextual pattern is one of the strongest in the Hebrew Bible.' },
+                { label: 'Hosea 11 — the divine compassion that refuses to be exhausted', textId: 'hosea-11',
+                  note: 'Hosea 11:8 ("How can I give you up, O Ephraim? ... my compassion grows warm and tender") is the prophetic counterpart of Lam 3:22\'s claim about rāḥămāyw (compassions). Both texts hold catastrophic judgment and persistent divine mercy together in the same theological breath.' },
+              ]
+            },
+            { word: 'they are new every morning', node: 'tradition-rabbinic-judaism', type: 'liturgical-vocabulary',
+              note: 'חֲדָשִׁים לַבְּקָרִים — "renewed-things to the mornings." The verse becomes one of the most influential lines in subsequent Jewish and Christian liturgy. In the Jewish morning blessings (Birkot HaShachar) the daily renewal-of-mercies theology is built directly on this verse; in Christian use the line is the source of the 1923 hymn "Great Is Thy Faithfulness" (Thomas Chisholm), which adopts the verse as its central metaphor. The Hebrew imagery of dawn-as-fresh-mercy structures both traditions\' morning-prayer theology.',
+              parallels: [
+                { label: 'Psalm 51 — the morning of repentance and renewal', textId: 'psalm-51',
+                  note: 'Psalm 51\'s "create in me a clean heart, O God" inhabits the same daily-renewal grammar that Lam 3:23 inaugurates. The link between morning prayer and renewed mercies is a structural feature of Israelite-Jewish liturgical theology that flows directly into Christian Lauds and Matins traditions.' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: 'Lamentations 3:24–26',
+          text: '"The LORD is my portion," says my soul, "therefore I will hope in him." The LORD is good to those who wait for him, to the soul that seeks him. It is good that one should wait quietly for the salvation of the LORD.',
+          textVersions: {
+            nrsv:   '"The LORD is my portion," says my soul, "therefore I will hope in him." The LORD is good to those who wait for him, to the soul that seeks him. It is good that one should wait quietly for the salvation of the LORD.',
+            hillers: '"The LORD is my portion," says my soul, "therefore I will hope in him." The LORD is good to those who hope in him, to the soul that seeks him. Good it is to wait silently for the salvation of the LORD.',
+            hebrew: 'חֶלְקִ֤י יְהוָה֙ אָמְרָ֣ה נַפְשִׁ֔י עַל־כֵּ֖ן אוֹחִ֥יל לֽוֹ׃ ט֤וֹב יְהוָה֙ לְקֹוָ֔ו לְנֶ֖פֶשׁ תִּדְרְשֶֽׁנּוּ׃ ט֤וֹב וְיָחִיל֙ וְדוּמָ֔ם לִתְשׁוּעַ֖ת יְהוָֽה׃',
+          },
+          entities: [
+            { word: 'The LORD is my portion', node: 'tradition-second-temple-judaism', type: 'doctrine',
+              note: 'YHWH ḥelqi — "YHWH is my portion." Ḥeleq in priestly-Levitical vocabulary names the inheritance-share each tribe received in the land — except the Levites, who were promised that YHWH himself would be their ḥeleq (Num 18:20, Deut 10:9, Josh 13:33). Lamentations 3 universalises that Levitical theology: in the catastrophe, when every other ḥeleq has been lost (land, temple, kingship), what remains is YHWH-as-portion. The move from priestly-tribal to existential application of ḥeleq is one of the chapter\'s most quietly radical theological turns and a deep source for later Jewish and Christian "God alone is enough" mystical vocabulary (Teresa of Ávila\'s "Solo Dios basta" is in this same lineage).' },
+            { word: 'It is good that one should wait quietly', node: 'tradition-second-temple-judaism', type: 'practice',
+              note: 'דוּמָם — dûmām, "in silence/stillness." The closing verse of the central section commends silent waiting for divine salvation — a posture later picked up by the contemplative-quietist strand of both Jewish and Christian spirituality. The Hebrew dûmām is the same vocabulary that names the silence of the dead (Ps 115:17) and the silence of attentive listening (Ps 62:1), creating a deliberate ambiguity between the silence of grief and the silence of trust.',
+              parallels: [
+                { label: 'Psalm 23 — "he leads me beside still waters"', textId: 'psalm-23',
+                  note: 'The contemplative-trust posture commended by Lam 3:26 finds its lyrical counterpart in Psalm 23, where the still waters and the dark valley name the same alternation of catastrophe and trust that Lamentations 3 works out in acrostic-poetic form.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+// ── SEPTUAGINT — ISAIAH 7:14 (THE PARTHENOS TRANSLATION HINGE) ───────────────
+SCRIPTURE_TEXTS['septuagint-isaiah-7-14'] = {
+  id:         'septuagint-isaiah-7-14',
+  title:      'Septuagint Isaiah 7:14 — The παρθένος / ʿalmâ Translation Hinge',
+  shortTitle: 'LXX Isaiah 7:14',
+  corpus:     'Septuagint · Old Greek Isaiah (Ἠσαΐας)',
+  tradId:     'tradition-second-temple-judaism',
+  date:       '~150–130 BCE (Alexandria — Old Greek Isaiah within the broader 3rd–2nd c. BCE Septuagint project)',
+  docNode:    'phase-3-006-septuagint',
+  language:   'Koine Greek (LXX) · Biblical Hebrew (Vorlage) · NETS 2007 English (academic-standard translation of the Greek)',
+  translations: [
+    { id: 'nets', label: 'New English Translation of the Septuagint 2007 (T1, Pietersma & Wright)', note: 'The canonical English translation of the Septuagint as a text in its own right (not as a witness to the Hebrew). Used as the default LXX reference in Anglophone biblical-studies departments since publication.' },
+    { id: 'rahlfs', label: 'Rahlfs–Hanhart 2006 Greek (Septuaginta editio altera)', note: 'The current Stuttgart critical edition of the LXX Greek text.' },
+    { id: 'hebrew', label: 'Masoretic Hebrew (Biblia Hebraica Stuttgartensia)' },
+    { id: 'greek', label: 'Greek (Rahlfs–Hanhart)' },
+  ],
+  intro: 'Isaiah 7:14 is the single most consequential translation choice in the entire Septuagint corpus — and arguably one of the most consequential translation choices in the history of religious literature. The Hebrew text reads הָעַלְמָה (hā-ʿalmâ), "the young woman," a word that does not specify virginity (the dedicated Hebrew word for "virgin" is betûlâ). The Septuagint translators (Alexandria, c. 150–130 BCE for Isaiah) rendered ʿalmâ with the Greek παρθένος (parthenos), a word that in Hellenistic Greek does carry a primary semantic load of "virgin." Whether this was a deliberate theological interpretation by the LXX translator, a reflection of an alternate Hebrew Vorlage now lost, or simply a contextual translation choice (parthenos in earlier classical Greek can sometimes name a young marriageable woman without strict virginity-implication) has been debated for two millennia. What is uncontested is the downstream effect: the Greek-speaking Jewish translator\'s choice of parthenos became, in Matthew 1:23\'s citation of LXX Isaiah 7:14 as fulfillment-prophecy for the birth of Jesus, the textual basis for the entire Christian virgin-birth doctrine. The pivot is exact and traceable: Matthew quotes the LXX wording verbatim (παρθένος), not the Hebrew (ʿalmâ); his Greek-reading audience receives the Christian claim through the LXX\'s lexical lens. The history of Jewish-Christian textual polemic from the second century CE onward — Justin Martyr, Origen, Aphrahat, the rabbinic literature, Jerome\'s Hebraica veritas program — circles continuously around this single word. Modern scholarly treatments (Adam Kamesar 1990, Karen Jobes & Moisés Silva 2015, Ronald Troxel 2008, Mogens Müller 1996) read the Isaiah 7:14 LXX choice as a paradigmatic example of how translation IS interpretation, and of how the LXX functions structurally as a Greek-Jewish theological text in its own right rather than a transparent window onto the Hebrew.',
+  crossTradition: [
+    { label: 'Matthew 1:23 — the Christian fulfilment-citation', textId: 'matthew-sermon-mount',
+      note: 'Matthew 1:22–23 cites LXX Isaiah 7:14 verbatim ("Behold, the parthenos shall conceive in her womb and bear a son") as the fulfilment-prophecy for the birth of Jesus. The citation is exact to the LXX text; the Hebrew Vorlage would not have supported the same Christian-theological reading. Matthew\'s gospel as a whole leans heavily on LXX fulfilment-citations, but Isaiah 7:14 is the most consequential of them all — establishing the textual basis for the Christian virgin-birth tradition that runs through Luke 1, the Nicene-Constantinopolitan Creed, and the entire Marian theological history.' },
+    { label: 'Isaiah 53 — the parallel LXX/Christian reception hinge', textId: 'isaiah-53',
+      note: 'Isaiah 53 (the Suffering Servant) is the second great LXX/Christian reception-hinge in the Isaiah corpus alongside 7:14. As with 7:14, the LXX vocabulary choices in 53 (particularly the verbal forms in vv. 4–6 and the rendering of ʾāshām in v. 10) shape the available Christian theological readings in ways that the Hebrew text does not constrain. Reading 7:14 and 53 together is the standard scholarly entry-point into the question of how LXX translation choices constituted the textual substrate of subsequent Christology.' },
+    { label: 'John 1 — the Logos that takes the LXX framework forward', textId: 'john-1',
+      note: 'The fourth gospel\'s prologue presupposes the LXX as its operative scripture — every Old Testament allusion in John 1 reads through Greek vocabulary, not Hebrew. The Johannine "Logos-became-flesh" theology depends structurally on the same LXX-as-canonical-text disposition that makes Matthew\'s Isaiah-7:14 citation possible. John 1 and LXX Isaiah 7:14 together form the textual foundation of patristic Christology.' },
+  ],
+  sections: [
+    {
+      heading: 'I. The Translation Choice — Hebrew ʿalmâ vs. Greek parthenos',
+      verses: [
+        {
+          ref: 'Isaiah 7:14 (Hebrew Masoretic Text and LXX Greek side-by-side)',
+          text: 'Therefore the Lord himself will give you a sign. Look, the young woman is with child and shall bear a son, and shall name him Immanuel. (Hebrew) // Therefore the Lord himself will give you a sign: Look, the parthenos shall conceive in her womb and bear a son, and you shall name him Emmanouel. (LXX, NETS)',
+          textVersions: {
+            nets:   'Therefore the Lord himself will give you a sign: Look, the virgin shall conceive in the womb, and shall bear a son, and you shall call his name Emmanouel.',
+            greek:  'διὰ τοῦτο δώσει κύριος αὐτὸς ὑμῖν σημεῖον· ἰδοὺ ἡ παρθένος ἐν γαστρὶ ἕξει καὶ τέξεται υἱόν, καὶ καλέσεις τὸ ὄνομα αὐτοῦ Εμμανουηλ.',
+            hebrew: 'לָ֠כֵן יִתֵּ֨ן אֲדֹנָ֥י ה֛וּא לָכֶ֖ם א֑וֹת הִנֵּ֣ה הָעַלְמָ֗ה הָרָה֙ וְיֹלֶ֣דֶת בֵּ֔ן וְקָרָ֥את שְׁמ֖וֹ עִמָּ֥נוּ אֵֽל׃',
+          },
+          entities: [
+            { word: 'the parthenos shall conceive', node: 'tradition-second-temple-judaism', type: 'translation-choice',
+              note: 'παρθένος (parthenos) is the LXX rendering of Hebrew הָעַלְמָה (hā-ʿalmâ). The Hebrew ʿalmâ names a young woman of marriageable age; it does not lexically encode virginity (the Hebrew word for that is betûlâ). The Greek parthenos in Hellenistic usage primarily names a virgin, though in earlier classical Greek the term could be applied more broadly to young women. The translator\'s choice is the textual hinge on which the entire downstream Christian virgin-birth doctrine swings. Scholars debate whether the choice was (a) deliberate theological interpretation, (b) a reflection of an alternate Hebrew Vorlage now lost, (c) a translator\'s normalisation given the contextual emphasis on miraculous-sign, or (d) a contextual reading of ʿalmâ as referring to a specific recognisable young woman (Ahaz\'s wife, the prophet\'s wife) for whom the virginity claim would have been incidental at the moment of translation. The argument is irresolvable from the LXX text alone; what is resolvable is the consequence — that Matthew\'s gospel chose the LXX wording, and that choice fixed Christian theology.',
+              parallels: [
+                { label: 'LXX Isaiah 53 — the parallel translation-choice hinge', textId: 'isaiah-53',
+                  note: 'The Suffering Servant of Isaiah 52–53 is the second great LXX/Christian translation-hinge in the Isaiah corpus, where the Greek vocabulary (particularly ἁμαρτίας ἡμῶν φέρει in v. 4 and the passive constructions in vv. 5–6) makes the Christian-substitutionary reading natural in ways the Hebrew does not require. Reading 7:14 and 53 together is the standard scholarly entry-point into LXX-as-interpretation.' },
+                { label: 'Matthew 1:23 — the citation that fixes the choice', textId: 'matthew-sermon-mount',
+                  note: 'Matthew quotes Isaiah 7:14 verbatim from the LXX, parthenos and all, with an explicit fulfilment-frame ("All this took place to fulfil what had been spoken by the Lord through the prophet"). The verbatim citation rules out any reading on which Matthew was working from a Hebrew Vorlage; the gospel\'s entire scriptural intertext is the LXX.' },
+              ]
+            },
+            { word: 'Emmanouel', node: 'tradition-early-christianity', type: 'name-doctrine',
+              note: 'עִמָּנוּ אֵל / Ἐμμανουήλ — "God-with-us." The child\'s name carries the central theological claim independent of the parthenos question: the birth is a divine-presence event. In the Christian reception (Matt 1:23 explicitly glosses it: "which means \'God-with-us\'") the name becomes the operative title for the Incarnation doctrine — the claim that the Word becomes flesh in this specific child. The Hebrew compound name (ʿimmānû "with-us" + ʾēl "God") is the structural ancestor of the Johannine Logos-becomes-flesh theology and is referenced as the type-passage in patristic Christology from Ignatius onward.',
+              parallels: [
+                { label: 'John 1 — the Logos becomes flesh', textId: 'john-1',
+                  note: 'The Johannine "the Word became flesh and dwelt among us" (1:14) is the Greek-Christian theological completion of the Isaianic Emmanouel-promise: divine presence taking concrete-human form. The textual lineage runs Isaiah 7:14 (Hebrew) → LXX Isaiah 7:14 (parthenos) → Matt 1:23 (citation + gloss) → John 1:14 (Logos-incarnation). The four texts form one continuous scriptural-theological argument across roughly eight centuries.' },
+                { label: 'Doctrine of Incarnation — the patristic-credal articulation', textId: 'bahai-kitab-i-aqdas',
+                  note: 'The Christian Incarnation doctrine, codified in the Nicene-Constantinopolitan Creed (381) and the Chalcedonian Definition (451), is the systematic theological development of the Isaiah-7:14 / John-1:14 textual cluster. The Bahá\'í tradition (Aqdas reference) and Christian Incarnation doctrine share the structural commitment that divine presence enters history in a specific human person, but differ on whether that entry is a unique event (Christianity) or one in a continuing series of Manifestations (Bahá\'í).' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'II. The Christian Reception — Matthew\'s Quotation as Textual Foundation',
+      verses: [
+        {
+          ref: 'Matthew 1:22–23 (citing LXX Isaiah 7:14)',
+          text: 'All this took place to fulfil what had been spoken by the Lord through the prophet: "Look, the parthenos shall conceive and bear a son, and they shall name him Emmanouel," which means, "God is with us."',
+          textVersions: {
+            nrsv:  'All this took place to fulfil what had been spoken by the Lord through the prophet: "Look, the virgin shall conceive and bear a son, and they shall name him Emmanouel," which means, "God is with us."',
+            greek: 'τοῦτο δὲ ὅλον γέγονεν ἵνα πληρωθῇ τὸ ῥηθὲν ὑπὸ κυρίου διὰ τοῦ προφήτου λέγοντος· ἰδοὺ ἡ παρθένος ἐν γαστρὶ ἕξει καὶ τέξεται υἱόν, καὶ καλέσουσιν τὸ ὄνομα αὐτοῦ Ἐμμανουήλ, ὅ ἐστιν μεθερμηνευόμενον μεθ\' ἡμῶν ὁ θεός.',
+          },
+          entities: [
+            { word: 'to fulfil what had been spoken by the Lord through the prophet', node: 'tradition-early-christianity', type: 'hermeneutic',
+              note: 'πληρωθῇ — "fulfilled." Matthew\'s gospel is built around a network of formula-citations (1:22–23, 2:5–6, 2:15, 2:17–18, 2:23, 4:14–16, 8:17, 12:17–21, 13:14–15, 13:35, 21:4–5, 27:9–10) that present Jesus\' life as the structured fulfilment of LXX scripture. Isaiah 7:14 is the first of these and the most theologically consequential. The hermeneutical pattern — typological/prophetic-fulfilment reading of the Hebrew Bible as testifying-to-Christ — becomes the constitutive Christian way of reading the Old Testament for the next two millennia. Krister Stendahl 1968, Donald Hagner 1993, and Richard Hays 2016 have all treated Matthew\'s formula-citations as the key to the gospel\'s scriptural-theological method.',
+              parallels: [
+                { label: 'Acts 2 — Peter\'s Pentecost sermon as paradigmatic LXX-fulfilment reading', textId: 'acts-2-pentecost',
+                  note: 'Acts 2 establishes the same fulfilment-citation hermeneutic on a different scale: Peter reads Joel 2:28–32 (LXX) and Psalm 16 (LXX) as fulfilled in the Pentecost event and the resurrection of Jesus. The hermeneutical method is identical to Matthew\'s Isaiah 7:14 citation; the entire early-Christian preaching tradition runs on this LXX-fulfilment grammar.' },
+                { label: 'Hebrews 1–2 — the structured catena of LXX fulfilment citations', textId: 'hebrews-11',
+                  note: 'The opening chapters of Hebrews stack LXX citations (Pss 2, 8, 22, 45, 102, 104, 110; 2 Sam 7) into a continuous Christological argument. The cumulative effect demonstrates how thoroughly the LXX functioned as the scriptural substrate of early-Christian theology — the OT-as-Greek was the operative Christian Bible.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+// ── PESHITTA — JOHN 1 IN SYRIAC (OLDEST CONTINUOUS BIBLE TRANSLATION) ────────
+SCRIPTURE_TEXTS['peshitta-john-1'] = {
+  id:         'peshitta-john-1',
+  title:      'Peshitta John 1 — The Syriac Reception of the Greek Logos Prologue',
+  shortTitle: 'Peshitta John 1',
+  corpus:     'Peshitta · ܦܫܝܛܬܐ (Pšīṭtâ) · "the simple/common" version',
+  tradId:     'tradition-syriac-christianity',
+  date:       '~411 CE final standardisation (the Peshitta NT replaced the earlier Diatessaron and Old Syriac versions in the Syriac-speaking churches in the early 5th century)',
+  docNode:    'phase-4-108-peshitta',
+  language:   'Classical Syriac (Aramaic dialect) · Greek (Nestle–Aland NT vorlage) · Brock 1981 English (canonical Syriac-studies translation)',
+  translations: [
+    { id: 'brock',  label: 'Sebastian Brock 1981 / 2006 (T1, Cambridge)', note: 'Brock is the senior figure of Syriac biblical studies; his Peshitta translation work is the academic-standard English rendering, paired with his The Bible in the Syriac Tradition (Gorgias 2006) which contextualises every translation choice.' },
+    { id: 'lamsa',  label: 'George Lamsa 1933 (popular)', note: 'Influential but methodologically dated — Lamsa\'s "Aramaic primacy" thesis (that the Peshitta is older than the Greek NT) is rejected by all critical scholarship; useful as a literal rendering of the Syriac text only.' },
+    { id: 'syriac', label: 'Classical Syriac (British and Foreign Bible Society 1920 critical edition)' },
+    { id: 'greek',  label: 'Greek vorlage (Nestle–Aland NA28)' },
+  ],
+  intro: 'The Peshitta is the oldest continuously-used Bible translation still in liturgical use today — the Syriac-language version that has been read every Sunday in the Church of the East, the Syriac Orthodox Church, the Maronite Church, the Syro-Malabar and Syro-Malankara Catholic Churches of India, and the Assyrian Church of the East continuously from the early fifth century to the present. Its Hebrew Bible portion (the Peshitta Old Testament) was translated directly from a Hebrew Vorlage in the 1st and 2nd centuries CE — making it not just the oldest continuous Christian translation but also one of the earliest external textual witnesses to the Hebrew Bible itself, predating the standardised Masoretic Text by half a millennium. The Peshitta New Testament, finalised c. 411 CE under Bishop Rabbula of Edessa, replaced the earlier Diatessaron (Tatian\'s gospel-harmony — see [[diatessaron-prologue]]) and the Old Syriac gospels with a Greek-based four-gospel translation. John 1 is the doctrinally most-loaded chapter of the Peshitta NT, because the Syriac language has its own native theological vocabulary (Memra, Iqara, Shekinta) that overlaps with — but does not exactly map onto — the Greek Logos / Doxa / Skēnē of the Johannine prologue. The Peshitta\'s translation choices in John 1 thus document one of the most important cross-linguistic-theological transmissions in late-antique religious history: how the Aramaic-Christian tradition (the linguistic-cultural matrix in which Jesus himself spoke) received the Greek-Christian theological vocabulary of the fourth gospel. Sebastian Brock\'s Singer of the Word and Bridge of Friendship studies (1992, 2006) have made this transmission a major area of contemporary Syriac-studies scholarship.',
+  crossTradition: [
+    { label: 'Greek John 1 — the canonical Greek Logos-prologue', textId: 'john-1',
+      note: 'The Peshitta\'s John 1 is a translation of the Greek Johannine prologue. Reading the two side-by-side surfaces every translation choice the Syriac translators had to make: how to render Logos (they used Meltā, "Word"), how to render skēnoun "tabernacled" (they used aggen, "overshadowed"), how to render plērēs charitos kai alētheias "full of grace and truth" (they used the doublet ṭaybûtā w-qûshtā). Each choice routes the Christian-Greek vocabulary through the Aramaic-Christian theological lexicon.' },
+    { label: 'Zohar — the Memra/Sefirot kinship', textId: 'zohar-ein-sof',
+      note: 'The Targumic-Aramaic Memra ("the Word of the LORD" as a hypostatised mediating figure in the Aramaic translation-paraphrases of the Hebrew Bible) and the Johannine Logos are widely treated as parallel responses to the same theological problem: how to speak of divine-world relation without collapsing transcendence. Daniel Boyarin\'s Border Lines (2004) treats the Targumic Memra as the Aramaic-Jewish counterpart of the Christian Logos, and the Zohar\'s later Sefirot system as a continuation of the same hypostatising-mediator vocabulary. The Peshitta\'s Syriac Meltā sits exactly at the linguistic-theological intersection of these two trajectories.' },
+    { label: 'Corpus Hermeticum 11 — the Greek-Egyptian Logos-cosmology', textId: 'corpus-hermeticum-11',
+      note: 'The Greek-Egyptian Hermetic tradition (1st–3rd c. CE, the same window as the Old Syriac → Peshitta transition) develops its own Logos-as-cosmic-mediator vocabulary in continuous dialogue with the same Hellenistic Jewish (Philo) and Christian (Johannine) milieu. Reading Corpus Hermeticum 11\'s Logos passages alongside Peshitta John 1\'s Meltā renderings shows how the late-antique Mediterranean basin operated a polyglot Logos-vocabulary that was being simultaneously translated, contested, and re-routed across Greek, Syriac, Coptic, and Hebrew.' },
+    { label: 'Diatessaron — the Syriac gospel-text that preceded the Peshitta', textId: 'diatessaron-prologue',
+      note: 'The Diatessaron (Tatian, c. 170 CE) was the operative Syriac gospel-text for two and a half centuries before the Peshitta replaced it. Reading Peshitta John 1 in light of the Diatessaron tradition is necessary for understanding what the Peshitta translators were displacing: a harmony-tradition that had already integrated all four canonical gospels into a single Syriac narrative.' },
+  ],
+  sections: [
+    {
+      heading: 'I. The Syriac Meltā — Translating the Greek Logos',
+      verses: [
+        {
+          ref: 'Peshitta John 1:1–3 (Syriac and English)',
+          text: 'In the beginning was the Word (Meltā), and the Word (Meltā) was with God, and the Word (Meltā) was God. He was in the beginning with God. Through him everything came to be, and apart from him not even one thing came to be that came to be.',
+          textVersions: {
+            brock:  'In the beginning was the Word, and the Word was with God, and the Word was God. This was in the beginning with God. Everything came to be by him, and without him not even one thing came to be of what came to be.',
+            syriac: 'ܒ݁ܪܺܫܺܝܬ݂ ܐܺܝܬ݂ܰܘܗ݈ܝ ܗ݈ܘܳܐ ܡܶܠܬ݂ܳܐ ܘܗܽܘ ܡܶܠܬ݂ܳܐ ܐܺܝܬ݂ܰܘܗ݈ܝ ܗ݈ܘܳܐ ܠܘܳܬ݂ ܐܰܠܳܗܳܐ ܘܰܐܠܳܗܳܐ ܐܺܝܬ݂ܰܘܗ݈ܝ ܗ݈ܘܳܐ ܗܽܘ ܡܶܠܬ݂ܳܐ܂ ܗܳܢܳܐ ܐܺܝܬ݂ܰܘܗ݈ܝ ܗ݈ܘܳܐ ܒ݁ܪܺܫܺܝܬ݂ ܠܘܳܬ݂ ܐܰܠܳܗܳܐ܂ ܟ݁ܽܠ ܒ݁ܺܐܝܕ݂ܶܗ ܗܘܳܐ ܘܒ݂ܶܠܥܳܕ݂ܰܘܗ݈ܝ ܐܳܦ݂ܠܳܐ ܚܕ݂ܳܐ ܗܘܳܬ݂ ܡܶܢ ܡܳܐ ܕ݁ܰܗܘܳܐ܂',
+            greek:  'Ἐν ἀρχῇ ἦν ὁ λόγος, καὶ ὁ λόγος ἦν πρὸς τὸν θεόν, καὶ θεὸς ἦν ὁ λόγος. οὗτος ἦν ἐν ἀρχῇ πρὸς τὸν θεόν. πάντα δι\' αὐτοῦ ἐγένετο, καὶ χωρὶς αὐτοῦ ἐγένετο οὐδὲ ἕν ὃ γέγονεν.',
+          },
+          entities: [
+            { word: 'In the beginning was the Word (Meltā)', node: 'tradition-syriac-christianity', type: 'translation-choice',
+              note: 'ܡܶܠܬ݂ܳܐ — Meltā. The Syriac rendering of Greek Logos. The choice is more theologically loaded than the English "Word" suggests: Syriac Meltā shares its semantic field with the Targumic Aramaic Memra, the mediating-Word figure that the Aramaic Targums (Onqelos, Pseudo-Jonathan, Neofiti) use to render anthropomorphic-divine actions in the Hebrew Bible ("the Memra of YHWH walked in the garden," "the Memra of YHWH created the heavens"). Sebastian Brock argues that the Peshitta\'s choice of Meltā for Logos is not a linguistic accident but a deliberate theological move that routes the Greek Christology through an already-existing Aramaic-Jewish mediating-Word vocabulary. The effect: the Syriac-Christian reader hears the Johannine Logos as a continuation of the Targumic Memra tradition, with the difference that the Memra-figure has now taken concrete flesh.',
+              parallels: [
+                { label: 'Zohar — the Memra/Sefirot continuation', textId: 'zohar-ein-sof',
+                  note: 'The Memra-as-mediating-Word vocabulary of the Targums (which Peshitta Meltā continues into Christian use) is itself one root of the later Kabbalistic Sefirot system. The Zohar\'s articulation of the Sefirot as a sequenced mediation between Ein Sof and creation works structurally similar territory to the Memra/Logos/Meltā cluster — how to speak of divine-world relation without collapsing transcendence. Both traditions develop hypostatised mediator-figures from the same Aramaic theological substrate.' },
+                { label: 'Greek John 1 — the Logos that Meltā is translating', textId: 'john-1',
+                  note: 'The Peshitta\'s Meltā is a direct translation of the Greek Logos of John 1. Reading the two together shows how each language\'s native theological vocabulary subtly re-routes the same doctrinal claim — Meltā via Targumic Memra into the Aramaic-Jewish mediating-Word tradition, Logos via Stoic philosophical and Philonic Greek-Jewish vocabulary into the rational-cosmic-order tradition.' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: 'Peshitta John 1:14',
+          text: 'And the Word (Meltā) became flesh and overshadowed (aggen) us, and we saw his glory, the glory as of the only-begotten from the Father, full of grace and truth.',
+          textVersions: {
+            brock:  'And the Word became flesh, and tabernacled among us, and we saw his glory, the glory as of the unique one from the Father, full of grace and truth.',
+            syriac: 'ܘܡܶܠܬ݂ܳܐ ܒ݁ܶܣܪܳܐ ܗܘܳܐ ܘܰܐܓ݁ܶܢ ܒ݁ܰܢ ܘܰܚܙܰܝܢ ܫܽܘܒ݂ܚܶܗ ܫܽܘܒ݂ܚܳܐ ܐܰܝܟ݂ ܕ݁ܺܝܚܺܝܕ݂ܳܝܳܐ ܕ݁ܡܶܢ ܐܰܒ݂ܳܐ ܕ݁ܰܡܠܶܐ ܛܰܝܒ݁ܽܘܬ݂ܳܐ ܘܩܽܘܫܬ݁ܳܐ܂',
+            greek:  'Καὶ ὁ λόγος σὰρξ ἐγένετο καὶ ἐσκήνωσεν ἐν ἡμῖν, καὶ ἐθεασάμεθα τὴν δόξαν αὐτοῦ, δόξαν ὡς μονογενοῦς παρὰ πατρός, πλήρης χάριτος καὶ ἀληθείας.',
+          },
+          entities: [
+            { word: 'overshadowed (aggen) us', node: 'tradition-syriac-christianity', type: 'translation-choice',
+              note: 'ܐܰܓ݁ܶܢ — aggen. The Peshitta\'s rendering of Greek ἐσκήνωσεν (eskēnōsen, "tabernacled / pitched a tent"). Aggen in Syriac is the verb of overshadowing-presence that the Aramaic Targums use for the Shekinta (Shekinah) — the indwelling-glory of YHWH that overshadows the Tabernacle (Exod 40:35) and the Temple (1 Kgs 8:10–11). The Peshitta translator\'s choice of aggen for skēnoun thus does for Johannine incarnation what the Aramaic Targums do for the Hebrew Bible\'s tabernacle-theology: it activates the Shekinta-vocabulary as the operative imagery for divine-presence-in-flesh. The Christian-Syriac reading of John 1:14 is therefore inflected through the Aramaic-Jewish Shekinta tradition in a way the Greek text alone does not require. Brock 1992 treats this as one of the clearest examples of how Peshitta translation choices route Christology through Aramaic-Jewish mediating-presence vocabulary.',
+              parallels: [
+                { label: 'Exodus 40 — the Shekinta-glory that overshadows the Tabernacle', textId: 'exodus-3',
+                  note: 'Exodus 40:34–35 ("the cloud covered the tent of meeting, and the glory of the LORD filled the tabernacle... and Moses could not enter the tent of meeting because the cloud settled upon it, and the glory of the LORD filled the tabernacle") establishes the Hebrew Bible vocabulary of divine-glory-overshadowing-the-Tabernacle that the Aramaic Targumic Shekinta and Peshitta\'s aggen both continue. The line from Sinai-Tabernacle to Johannine-Incarnation runs through Targumic and Peshitta Aramaic.' },
+                { label: 'Luke 1 — the Annunciation\'s overshadowing-vocabulary', textId: 'luke-1-magnificat',
+                  note: 'Luke 1:35 ("the Holy Spirit will come upon you, and the power of the Most High will overshadow you") uses the same overshadowing-vocabulary (Greek episkiazō; Syriac Peshitta naggen) that John 1:14 invokes via aggen. The two passages read together form the Christian-Aramaic-Greek tabernacle-incarnation lineage: the Shekinta-glory that overshadowed the Tabernacle overshadows Mary; the Word that overshadowed Mary tabernacles among us.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+// ── DIATESSARON — TATIAN'S GOSPEL HARMONY (~170 CE) ──────────────────────────
+SCRIPTURE_TEXTS['diatessaron-prologue'] = {
+  id:         'diatessaron-prologue',
+  title:      'The Diatessaron — Tatian\'s Four-into-One Gospel Harmony',
+  shortTitle: 'Diatessaron',
+  corpus:     'Diatessaron · ܐܘܢܓܠܝܘܢ ܕܡܚܠܛܐ (Ewangeliyon da-Mḥallṭē, "Gospel of the Mixed")',
+  tradId:     'tradition-syriac-christianity',
+  date:       '~170 CE (composed by Tatian; operative gospel-text in Syriac-speaking churches until replaced by the Peshitta\'s separated gospels in the early 5th century)',
+  docNode:    'phase-4-037-diatessaron',
+  language:   'Syriac (the most likely original language per Petersen 1994) · Arabic (the most complete extant translation) · William Petersen 1994 English (canonical Diatessaron-studies translation)',
+  translations: [
+    { id: 'petersen', label: 'William L. Petersen 1994 (T1, Brill / Vigiliae Christianae Suppl.)', note: 'The standard critical reconstruction of the Diatessaron, drawing together Eastern (Syriac, Arabic, Persian, Armenian) and Western (Latin, Old High German, Middle English, Old Dutch, Old Italian) Diatessaron-witness traditions into a single text-critical analysis.' },
+    { id: 'hill',     label: 'J. Hamlyn Hill 1894 (Edinburgh — Arabic Diatessaron)', note: 'The first major English translation of the Arabic Diatessaron (the most complete surviving witness); methodologically dated but textually important as the standard English reference for the Arabic recension.' },
+    { id: 'arabic',   label: 'Arabic Diatessaron (Vatican Borgia MS, the fullest extant text)' },
+  ],
+  intro: 'The Diatessaron (Greek dia tessarōn, "through four") is the Christian gospel-harmony that Tatian the Syrian composed around 170 CE, weaving the four canonical gospels — Matthew, Mark, Luke, and John — into a single continuous narrative. For the next two and a half centuries it was the operative gospel-text of the Syriac-speaking churches: read in liturgy, cited by the great Syriac fathers (Aphrahat, Ephrem the Syrian, who wrote a complete commentary on it), and treated as the canonical gospel form in the entire eastern Christian world from the Euphrates to the Iranian plateau. The text was so deeply rooted that Bishop Rabbula of Edessa\'s 5th-century campaign to replace it with the four-separate-gospels Peshitta required actively confiscating Diatessaron manuscripts from churches and replacing them with Peshitta copies. The Diatessaron\'s original-language status (Syriac per William Petersen 1994 and most contemporary scholarship; Greek per an older minority position) is debated; what is uncontested is that no original-language complete manuscript survives — the text is reconstructed by triangulating among Ephrem\'s Syriac commentary, the Arabic Diatessaron (the fullest extant continuous text), a few Latin / Persian / Armenian / Middle Dutch / Old High German derivative harmonies, and the Dura-Europos Greek parchment fragment of 1933. The Diatessaron is doubly important to Codex Atlas: as the operative scriptural form of Syriac Christianity for its formative centuries, and as a witness to a now-lost gospel-text-type that occasionally preserves readings older than the standard Greek manuscript tradition. Petersen 1994, Robert F. Shedinger 2001, and Tjitze Baarda 1969 are the standard modern entry-points.',
+  crossTradition: [
+    { label: 'John 1 — the canonical prologue Tatian opened the harmony with', textId: 'john-1',
+      note: 'Most textual reconstructions of the Diatessaron (Petersen, Baarda, the older Hugo Grotius / Eusebian witness tradition) agree that Tatian opened the harmony not with Matthew\'s genealogy nor Mark\'s Baptism-prologue, but with the Johannine Logos-prologue (John 1:1–5). This choice is theologically consequential: the Diatessaron presents the gospel as cosmic-Logos narrative from the first word, with the Synoptic infancy and baptism material woven in after the prologue had established the Christological frame. Ephrem\'s Syriac commentary opens with extensive meditation on the Logos verses, confirming the structural priority.' },
+    { label: 'Mark 1 — the Synoptic baptism-prologue that Tatian wove in after John 1', textId: 'mark-1',
+      note: 'After the Johannine Logos-prologue, the Diatessaron weaves in Mark\'s John-the-Baptist material (Mark 1:1–8) alongside Matthew 3 and Luke 3. The harmonising-strategy is consistent throughout: take the longest available form of each scene, fill in supplementary detail from the parallel gospels, eliminate strict duplication. The effect is a smoother, more continuous narrative than any individual gospel — but at the cost of erasing each evangelist\'s distinctive theological voice.' },
+    { label: 'Matthew\'s genealogy — what Tatian moved later', textId: 'matthew-sermon-mount',
+      note: 'Matthew 1\'s genealogy of Jesus (which the canonical Matthew uses as its opening hook into Davidic-kingship theology) is repositioned in the Diatessaron after the Johannine prologue and the John-the-Baptist material. The repositioning reveals Tatian\'s theological priorities: cosmic-Logos first, prophetic-precursor second, Davidic-genealogical legitimation third. The reordering is one of the clearest examples of harmonisation-as-interpretation in early Christian textual culture.' },
+    { label: 'Peshitta John 1 — the gospel-form that displaced the Diatessaron', textId: 'peshitta-john-1',
+      note: 'The Peshitta\'s four-separate-gospels form was specifically created to displace the Diatessaron in the Syriac-speaking churches in the early fifth century. Reading the two side-by-side is the standard scholarly entry-point into the Diatessaron\'s "afterlife" — many Peshitta readings still echo Diatessaron-text-type variants, and many Old Syriac (Curetonian and Sinaiticus) Gospel readings preserve a transitional form between the Diatessaron and the standardised Peshitta.' },
+  ],
+  sections: [
+    {
+      heading: 'I. The Opening — Tatian Begins the Harmony with the Johannine Logos',
+      verses: [
+        {
+          ref: 'Diatessaron 1:1–5 (Arabic recension, reflecting John 1:1–5)',
+          text: 'In the beginning was the Word, and the Word was with God, and God was the Word. This was in the beginning with God. Everything was by his hand, and without him not even one existing thing was. In him was life, and the life is the light of men. And the light shines in the darkness, and the darkness did not overtake it.',
+          textVersions: {
+            petersen: 'In the beginning was the Word, and the Word was with God, and God is the Word. This was in the beginning with God. Everything was by his hand, and without him not even one thing that was, was. In him was life, and the life is the light of men. And the light shines in the darkness, and the darkness did not apprehend it.',
+            arabic:   'في البدء كان الكلمة، والكلمة كان عند الله، والله كان الكلمة. هذا كان في البدء عند الله. كلّ شيء به كان، وبغيره لم يكن شيء ممّا كان. به كانت الحياة، والحياة كانت نور النّاس. والنّور في الظّلمة يضيء، والظّلمة لم تدركه.',
+          },
+          entities: [
+            { word: 'In the beginning was the Word', node: 'tatian-the-syrian', type: 'editorial-choice',
+              note: 'Tatian\'s decision to open the four-gospel harmony with the Johannine Logos-prologue (rather than with Matthew\'s genealogy, Mark\'s baptism, or Luke\'s historical prologue) is the single most consequential editorial choice in the Diatessaron. By opening with the Logos, Tatian frames the entire gospel narrative as cosmic-Logos history: the incarnation that follows is the descent of the pre-existing Logos into the historical Jesus, not the elevation of a historical Jesus to divine status. The choice is consistent with Tatian\'s broader theological positioning — he was a student of Justin Martyr at Rome before returning east, and his Oratio ad Graecos (~165 CE) develops a Logos-theology drawing on both Johannine Christianity and Middle Platonic philosophical vocabulary.',
+              parallels: [
+                { label: 'Aphrahat and Ephrem — the Syriac fathers who commented on the Diatessaron-as-canonical', textId: 'peshitta-john-1',
+                  note: 'Aphrahat (d. ~345) and Ephrem the Syrian (d. 373) — the two great Syriac fathers of the fourth century — both commented on the Diatessaron as their operative gospel-text. Ephrem\'s Commentary on the Diatessaron survives in Syriac fragments and in a complete Armenian translation, and is the single most important external witness to the Diatessaron\'s text. The fact that the Syriac fathers worked with the Diatessaron, not with separated gospels, until the Peshitta\'s 5th-century introduction is one of the foundational facts of Syriac patristics.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'II. The Structural Weave — How Tatian Harmonised the Four',
+      verses: [
+        {
+          ref: 'Diatessaron 4:1–11 (Arabic recension, harmonising John 1:6–14 with the Synoptic baptism narratives)',
+          text: 'There was a man whose name was John, sent from God, that he might bear witness of the light, that everyone might believe through him. He was not the light, but to bear witness of the light. The true light, which lights every man, was coming into the world. And he came in spirit and in the power of Elijah, preaching the baptism of repentance for the forgiveness of sins.',
+          textVersions: {
+            petersen: 'There was a man whose name was John, sent from God, that he might bear witness of the light, that every man might believe through him. He was not the light, but to bear witness of the light. The true light, which lights every man, was coming into the world. And he came in the spirit and power of Elijah, preaching the baptism of repentance for the forgiveness of sins.',
+          },
+          entities: [
+            { word: 'And he came in spirit and in the power of Elijah', node: 'tatian-the-syrian', type: 'harmonisation-strategy',
+              note: 'This verse is a classic Diatessaron weave: the opening half is straight John 1:6–9 (the Baptist as witness-to-the-light); the closing half "in the spirit and power of Elijah" is straight Luke 1:17 (Gabriel\'s prophecy to Zechariah about John); the closing clause "preaching the baptism of repentance for the forgiveness of sins" is Mark 1:4. Three different gospels are stitched into one continuous sentence. The Diatessaron\'s entire method is visible in this single verse: take the longest available form, supplement from parallel gospels, eliminate duplication, smooth into one narrative. The cost: each evangelist\'s distinctive voice (Johannine cosmic-witness theology, Lukan prophetic-historical framing, Markan apocalyptic-urgency) is flattened into a single Tatianic harmony.',
+              parallels: [
+                { label: 'Luke 1 — the prophetic-historical baptism-context', textId: 'luke-1-magnificat',
+                  note: 'The Lukan infancy narrative (Luke 1) provides Tatian with the John-the-Baptist back-story (Zechariah, Elizabeth, the Magnificat) that the Johannine prologue lacks. Tatian weaves Luke\'s prophetic-historical material into the Johannine cosmic-Logos frame, producing a gospel-opening that is structurally Johannine but narratively Lukan.' },
+                { label: 'Mark 1 — the apocalyptic baptism-of-repentance', textId: 'mark-1',
+                  note: 'Mark 1\'s "baptism of repentance for the forgiveness of sins" provides Tatian\'s harmony with the apocalyptic-urgency vocabulary that the Johannine prologue\'s cosmic-Logos register does not supply. The Diatessaron\'s synthesis of cosmic-Logos and apocalyptic-baptism is one of its enduring theological achievements.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+// ── ETHIOPIC BIBLICAL CANON (THE 81-BOOK CANON) ──────────────────────────────
+SCRIPTURE_TEXTS['ethiopic-canon-note'] = {
+  id:         'ethiopic-canon-note',
+  title:      'The Ethiopic 81-Book Biblical Canon — Narrower and Broader',
+  shortTitle: 'Ethiopic Canon',
+  corpus:     'Maṣḥafa Qeddus · መጽሐፍ ቅዱስ ("Holy Book")',
+  tradId:     'tradition-ethiopian-tewahedo',
+  date:       'c. 4th–6th c. CE (canon-formation period) · 14th c. (Kebra Nagast articulates the broader theological frame) · contemporary (the 81-book canon remains in use)',
+  docNode:    'phase-4-082-ethiopic-biblical-canon',
+  language:   'Classical Geʿez (Ethiopic) — the liturgical and scriptural language of the Ethiopian Orthodox Tewahedo Church and the Eritrean Orthodox Tewahedo Church',
+  translations: [
+    { id: 'cowley',   label: 'Roger W. Cowley 1974 (Ostkirchliche Studien)', note: 'The single most-cited modern scholarly article on the Ethiopian biblical canon. Cowley articulates the distinction between "narrower" and "broader" canon-lists and traces the textual transmission of each constituent book.' },
+    { id: 'bausi',    label: 'Alessandro Bausi 2006 / 2014 (the Comparative Oriental Manuscript Studies project)', note: 'Bausi\'s ongoing research at Hamburg has produced the modern critical apparatus for the Ethiopic biblical and patristic manuscript tradition.' },
+    { id: 'mikre',    label: 'Mikre-Sellassie Gebre-Ammanuel 1993', note: 'Insider scholarly articulation of the canon from within the Ethiopian Orthodox tradition — useful as the counterpart-perspective to Cowley\'s Western-academic framing.' },
+  ],
+  intro: 'The Ethiopian Orthodox Tewahedo Church (and the Eritrean Orthodox Tewahedo Church) maintains a biblical canon larger than any other Christian tradition — by the standard count, 81 books (46 in the Old Testament, 35 in the New, by certain reckonings). Scholars distinguish two canonical lists: the "narrower" canon used in standard ecclesiastical printing (closer in scope to the Septuagint plus the New Testament), and the "broader" canon (Maṣḥafa qālē, "books of the speech") that includes additional works treated as scripturally authoritative — most consequentially the Book of Jubilees (Kufale), the Ethiopic 1 Enoch (Maṣḥafa Henok), the Book of the Covenant (Maṣḥafa Kidan), the Sinodos, the Didascalia, and the Octateuch of Clement. The Ethiopic canon is the only Christian canon in which Jubilees and 1 Enoch are treated as fully scriptural rather than apocryphal or pseudepigraphal; the only complete text of 1 Enoch ever to survive does so because the Ethiopian tradition continued copying it as Maṣḥafa Henok long after Greek and Latin Christianity had stopped, until the Geʿez was rediscovered by James Bruce in the 1770s. The canon\'s formation is bound up with the Aksumite kingdom\'s 4th-century Christianisation under Frumentius and Ezana, the 6th-century Nine Saints (Garima and his companions, who brought monasticism and translated scripture into Geʿez), and the 14th-century re-articulation of national-theological identity in the Kebra Nagast. Modern study of the canon begins with August Dillmann\'s 19th-century catalogues and runs through Cowley 1974 to the contemporary Hamburg-based comparative-manuscript-studies program (Bausi et al.).',
+  crossTradition: [
+    { label: 'Book of Jubilees — fully scriptural in Ethiopic canon, deuterocanonical/apocryphal elsewhere', textId: 'book-of-jubilees',
+      note: 'Jubilees (Kufale in Geʿez) is canonical in the Ethiopian Orthodox Tewahedo broader canon, treated as authoritative scripture on equal footing with Genesis. In Catholic, Orthodox, and Protestant Christianity, Jubilees is treated as Second Temple Jewish pseudepigraphal literature — historically interesting but non-canonical. The Ethiopian tradition preserves Jubilees because of a continuous transmission from the early Aksumite church\'s contact with Egyptian-Coptic Christianity (which itself preserved Jubilees from a wider Hellenistic-Jewish library), where Greek and Latin Christianities later dropped it.' },
+    { label: '1 Enoch — fully scriptural in Ethiopic canon (Maṣḥafa Henok)', textId: 'book-of-enoch',
+      note: '1 Enoch (Maṣḥafa Henok in Geʿez, hundred-and-eight chapters covering five sub-books) is the most famous case of Ethiopic canonical-uniqueness. The Geʿez text is the only complete extant version of 1 Enoch; the Greek and Aramaic Qumran fragments are partial, and Latin and Hebrew traditions preserve only references and short excerpts. James Bruce\'s 1773 rediscovery of three Geʿez manuscripts in Ethiopia and their subsequent publication by Richard Laurence (1821) and August Dillmann (1851) returned 1 Enoch to broader Western scholarship — but the text had been canonically read in Ethiopia continuously throughout the millennium-and-a-half during which European Christianity had no access to it.' },
+    { label: 'Kebra Nagast — the national-theological frame', textId: 'kebra-nagast',
+      note: 'The Kebra Nagast ("Glory of the Kings," 14th c. Geʿez compilation drawing on earlier Coptic, Syriac, and Arabic sources) is the foundational national-theological narrative of Ethiopian Christianity: the visit of the Queen of Sheba (Makeda) to Solomon, the birth of Menelik I, the transfer of the Ark of the Covenant from Jerusalem to Aksum, and the establishment of Ethiopia as the new Israel. The Kebra Nagast articulates the theological frame within which the broader Ethiopic biblical canon makes sense — a tradition that sees itself as the continuation of Israel\'s covenant under a different geographical-political-ecclesial form.' },
+    { label: 'Septuagint — the textual base of the Ethiopic Old Testament', textId: 'septuagint-isaiah-7-14',
+      note: 'The Ethiopic Old Testament is translated from a Greek (Septuagint) Vorlage, not directly from Hebrew. This shared Septuagintal substrate is what allows the broader Ethiopic canon to include all the deuterocanonical-Septuagintal books (Sirach, Wisdom, Tobit, Judith, Maccabees, Baruch, Letter of Jeremiah, additions to Daniel and Esther) — the Ethiopian church inherited the wider Greek-Christian Bible-shape from the Aksumite-Egyptian contact period (4th–6th c.), where Latin and Greek Christianities later narrowed.' },
+  ],
+  sections: [
+    {
+      heading: 'I. The Narrower and Broader Canons',
+      verses: [
+        {
+          ref: 'Ethiopic canon-list — narrower form, 46 OT + 35 NT = 81 books (Cowley 1974 listing)',
+          text: 'The narrower Ethiopic canon comprises the Septuagintal Old Testament (Pentateuch, the historical books including 1–4 Maccabees, the wisdom books including Sirach and Wisdom of Solomon, the prophets including additions to Daniel and Esther), plus the Book of Jubilees and the Ethiopic 1 Enoch, plus the Book of Joseph ben Gorion (Yosippon), plus a New Testament that includes the standard 27 books plus 8 additional books grouped as the Sinodos and related church-order texts.',
+          textVersions: {
+            cowley: 'The narrower canon of the Ethiopian Orthodox Tewahedo Church comprises 81 books in the traditional reckoning, drawing the New Testament canon broader than the standard 27-book Protestant/Catholic/Orthodox list by the addition of 8 books in the Sinodos and Didascalia corpus — the Order of Sion, the Order of the Disciples, the Order of the Apostles, the Order of the Heads, the Book of the Covenant, the Octateuch of Clement, and two additional church-order books.',
+          },
+          entities: [
+            { word: 'narrower Ethiopic canon', node: 'tradition-ethiopian-tewahedo', type: 'canon-formation',
+              note: 'The "narrower" Ethiopic canon is the canon-list used in standard ecclesiastical printing (e.g. the 1986 Addis Ababa printed Bible). Even the narrower list contains books that no other Christian tradition has as scripture: Jubilees, 1 Enoch, parts of the Sinodos corpus. The boundary between "narrower" and "broader" Ethiopic canon is itself an internal-Ethiopian theological-scholarly question rather than a fixed line — different monastic and ecclesial traditions in Ethiopia historically used somewhat different lists, and the modern printed-Bible canon represents a 19th–20th century standardisation.',
+              parallels: [
+                { label: 'Kebra Nagast — the national-canon-defining narrative', textId: 'kebra-nagast',
+                  note: 'The Kebra Nagast is itself NOT in the biblical canon (narrower or broader) but functions as the national-theological narrative within which the canon is read. The relationship is structurally similar to the way the Talmud functions in Rabbinic Judaism vis-à-vis the Tanakh, or the way the writings of John of Damascus function in Eastern Orthodoxy vis-à-vis the New Testament — authoritative-tradition-around-the-canon rather than canon proper.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'II. The Unique Books — What Ethiopic Preserves That Nothing Else Does',
+      verses: [
+        {
+          ref: 'Maṣḥafa Henok 1:1–3 (incipit of the only complete extant 1 Enoch)',
+          text: 'The blessing of Enoch, with which he blessed the chosen and the righteous who would live in the day of distress, when all the wicked and the impious would be removed. And he answered and said — Enoch, the righteous man whose eyes were opened by God, who had a vision of the Holy One in the heavens, which the angels showed to me, and from them I heard everything, and from them I understood what I saw — but it is not for this generation but for a generation that is far off that I speak.',
+          textVersions: {
+            knibb:  'The blessing of Enoch, with which he blessed the chosen and the righteous who will be present on the day of tribulation, to remove all the enemies; and the righteous will be saved. And he answered and said: "Enoch, a righteous man whose eyes were opened by God, who had the vision of the Holy One and of heaven, which he showed me. From the words of the watchers and holy ones I heard everything, and as I heard everything from them, I also understood what I saw; but not for this generation, but for a far-off generation which is to come, do I speak."',
+            geez:   'ቡራኬ ዘሄኖክ ዘይባርክ ኅሩያነ ወጻድቃነ እለ ይከውኑ በመዋዕለ ምንዳቤ ለአስተራግዐ ኩሉ እኩያን ወዕልዋን ወረሰዮ ወይቤ ሄኖክ ብእሲ ጻድቅ ዘርእየ ቅዱስ ዘበሰማይ ዘአርአዩኒ መላእክት እምኔሆሙ ሰማዕኩ ኩሎ ወእምኔሆሙ ለለበውኩ ዘርእኩ።',
+          },
+          entities: [
+            { word: 'the only complete extant 1 Enoch', node: 'tradition-ethiopian-tewahedo', type: 'manuscript-preservation',
+              note: 'Maṣḥafa Henok is the only complete surviving recension of the entire 108-chapter book of 1 Enoch (five sub-books: the Book of the Watchers, the Book of Parables, the Astronomical Book, the Book of Dream Visions, the Epistle of Enoch). The Aramaic Qumran fragments (11 manuscripts, 1QEn, 4QEn, etc.) preserve substantial parts of four of the five sub-books but not the Book of Parables; the Greek fragments (Codex Panopolitanus, the Chester Beatty papyrus, citations in Syncellus) preserve perhaps a third of the whole; only the Ethiopic Geʿez preserves the complete text. The text was canonically read in Ethiopia continuously from Aksumite times to the present, while Greek and Latin Christianities lost it after the 5th century; James Bruce\'s 1773 rediscovery in Ethiopia returned the complete text to Western scholarship.',
+              parallels: [
+                { label: '1 Enoch in Qumran and the Watchers tradition', textId: 'book-of-enoch',
+                  note: 'The Aramaic Qumran 1 Enoch fragments confirm that the text was canonically read in the Second Temple period and influenced (via the Watchers tradition, the Son-of-Man figure in the Parables, and the apocalyptic-cosmological vocabulary) the New Testament — Jude 14–15 quotes 1 Enoch 1:9 as authoritative scripture. The fact that the only complete extant 1 Enoch is in Ethiopic Geʿez means that for the entire history of New Testament reception-criticism, the Ethiopian church preserved a witness that no other Christian tradition retained.' },
+                { label: 'Jubilees — the canonical pair to 1 Enoch in Ethiopic', textId: 'book-of-jubilees',
+                  note: 'Jubilees and 1 Enoch are the two great Second Temple pseudepigraphal works that the Ethiopic canon preserves as fully scriptural where every other Christian tradition relegated them to non-canonical status. The two texts share a calendar-system (the 364-day solar calendar), an angelology (the named angels Michael, Gabriel, Phanuel, Saraqael etc.), and a chronological-cosmological frame. They are reciprocally canonical in Ethiopia in a way they are in no other Christian tradition.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+
