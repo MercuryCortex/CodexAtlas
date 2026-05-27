@@ -15655,6 +15655,884 @@ SCRIPTURE_TEXTS['dresden-codex-maya-1'] = {
   ]
 };
 
+// ── ATTAR · CONFERENCE OF THE BIRDS (~1177 CE) ───────────────────────────────
+SCRIPTURE_TEXTS['attar-conference-of-birds-1'] = {
+  id:         'attar-conference-of-birds-1',
+  title:      'Farid ud-Din Attar · The Conference of the Birds (Manṭiq al-Ṭayr, ~1177)',
+  shortTitle: 'Attar · Conference',
+  corpus:     'Persian Sufi literary corpus (Rumi · Attar · Hafez · Saʿdi)',
+  tradId:     'tradition-sufism',
+  date:       '~1177 CE (composed in Nishapur by Farid ud-Din Attar, the Sufi master who was later called "the soul of Rumi" in Rumi\'s own praise — Attar died c. 1221, traditionally during the Mongol sack of Nishapur)',
+  docNode:    'phase-5-051-attar-conference-of-birds',
+  language:   'Classical Persian (original — Khorasanian poetic register) · Afkham Darbandi & Dick Davis 1984 English (Penguin Classics, canonical verse translation)',
+  translations: [
+    { id: 'darbandi', label: 'Afkham Darbandi & Dick Davis 1984 (Penguin Classics)', note: 'Verse translation in heroic couplets that preserves the mathnawī meter of the original; the modern Anglophone scholarly standard.' },
+    { id: 'avery',    label: 'Peter Avery 1998 (Islamic Texts Society)', note: 'Prose translation with detailed scholarly notes; useful complement to the Darbandi-Davis verse rendering.' },
+    { id: 'persian',  label: 'Classical Persian (Shafiei Kadkani critical edition 2004)' },
+  ],
+  intro: 'The Manṭiq al-Ṭayr ("Speech / Conference of the Birds") is the most influential single allegorical-mystical poem of the Persian Sufi literary tradition, composed in roughly 4,500 mathnawī couplets by Farid ud-Din Attar at Nishapur around 1177 CE. The poem stages an allegorical journey: thirty birds, led by the hoopoe, set out to find their king the Simurgh, crossing seven valleys (the valleys of the Quest, of Love, of Knowledge, of Detachment, of Unity, of Wonder, and of Poverty-and-Annihilation) and being progressively reduced in number by the rigors of the journey, until thirty (sī-murgh, a Persian wordplay) arrive at the Simurgh\'s court and discover that they themselves are the Simurgh they were seeking. The seven-valley structure is one of the canonical articulations of the Sufi maqāmāt (stations of the spiritual path) and parallels at structural depth the seven-mansion structure of Teresa of Ávila\'s Interior Castle, the seven Hekhalot heavens of Jewish mystical ascent literature, and the seven-chakra structure of certain Indian tantric traditions. The poem\'s closing wordplay — sī-murgh ("thirty birds") = Simurgh (the Persian mythological great bird of divine knowledge) — articulates one of the central Sufi metaphysical claims: the seeker and the sought are not ultimately two. Modern scholarship: Darbandi-Davis 1984 introduction, Reinert 1990, Lewisohn 2001, Keshavarz 2006.',
+  crossTradition: [
+    { label: 'Rumi · Masnavi — the canonical Sufi mathnawī tradition Attar inspired', textId: 'rumi-masnavi',
+      note: 'Attar\'s Conference of the Birds and Rumi\'s Masnavi are the two foundational long-form Sufi mathnawī poems of the Persian tradition. Rumi himself acknowledged Attar as his spiritual predecessor, writing in the Masnavi that "Attar traversed the seven cities of love / we are still at the turn of one alley." The Attar → Rumi philosophical-poetic transmission is one of the central textual lineages of medieval Persian Sufism.' },
+    { label: 'Teresa · Interior Castle — the cross-tradition seven-stage mystical journey parallel', textId: 'teresa-interior-castle-1',
+      note: 'Attar\'s seven valleys and Teresa\'s seven mansions are independent articulations of the same near-universal cross-tradition pattern of "the spiritual journey as a seven-stage progressive interiorisation." The two texts are separated by 400 years and by radically different religious-cultural traditions but converge on a structurally identical mystical-anthropological frame.' },
+    { label: 'Hadith of Gabriel — the iḥsān foundation that Sufi tradition builds on', textId: 'sahih-muslim-1',
+      note: 'The Hadith of Gabriel\'s definition of iḥsān as "serving God as if you were seeing Him" is the scriptural foundation Sufi tradition (Attar, Rumi, Ibn ʿArabi) explicitly identifies as the basis of its contemplative-mystical practice. The Conference of the Birds operates entirely within the iḥsān-grounded Sufi spiritual-anthropological framework.' },
+  ],
+  sections: [
+    {
+      heading: 'I. The Closing Recognition — Thirty Birds Are the Simurgh',
+      verses: [
+        {
+          ref: 'Conference of the Birds, closing canto (Darbandi-Davis trans.)',
+          text: 'There in the Simurgh\'s radiant face they saw / themselves, the Simurgh of the world — with awe / they gazed, and dared at last to comprehend / they were the Simurgh and the journey\'s end. / Then, as they looked, the thirty birds replied: / "We are these thirty, we who hoped and tried / and now have seen the Simurgh face to face — / and yet you are the Simurgh, and our race / and yours are one." Such wonder seized those souls / as nothing in the world that we can know controls.',
+          textVersions: {
+            darbandi: 'There in the Simurgh\'s radiant face they saw themselves, the Simurgh of the world — with awe they gazed, and dared at last to comprehend they were the Simurgh and the journey\'s end. They were the Simurgh; the Simurgh was them; and in that mirror neither was without the other.',
+            persian:  'چون که در سیمرغ خود را دیده‌اند / جمله را در آن یکی پیچیده‌اند / بود سیمرغ سی مرغ این آشکار / بود سی مرغ سیمرغ این به ‌کار',
+          },
+          entities: [
+            { word: 'they were the Simurgh', node: 'farid-ud-din-attar', type: 'doctrine',
+              note: 'The closing wordplay — sī-murgh ("thirty birds" in Persian) = Sīmurgh (the Persian mythological great bird of divine knowledge) — articulates the central metaphysical claim of the Conference: the seeker and the sought are not ultimately two distinct realities. The doctrinal parallels with Ibn ʿArabi\'s waḥdat al-wujūd (oneness of being), with the Vedantic tat tvam asi ("you are that"), and with the broader perennial-mystical claim of seeker-sought identity make the closing image one of the most-cited cross-tradition convergence-points in comparative mystical theology. The poem itself never makes the philosophical-theological argument explicit — it stages it through the verbal-poetic device of the sī-murgh / Sīmurgh wordplay, demonstrating the central Sufi pedagogical method of teaching through poetic-imaginative experience rather than philosophical-conceptual argument.',
+              parallels: [
+                { label: 'Brihadaranyaka Upaniṣad — the neti-neti / tat tvam asi parallel', textId: 'brihadaranyaka-neti-neti',
+                  note: 'The Upaniṣadic doctrine that ātman (the individual self) and brahman (the cosmic reality) are not two — articulated in the Chāndogya Upaniṣad\'s tat tvam asi ("you are that") and in the Bṛhadāraṇyaka\'s neti-neti via-negativa — is the closest cross-tradition doctrinal parallel to Attar\'s closing identification of the seeker with the sought. The two articulations emerge from radically different traditions but converge on a structurally identical metaphysical claim.' },
+                { label: 'Ibn ʿArabi · Fuṣūṣ — the systematic Sufi metaphysics of unity', textId: 'ibn-arabi-fusus',
+                  note: 'Ibn ʿArabi\'s 13th-century systematic articulation of waḥdat al-wujūd ("oneness of being") is the philosophical-theological articulation of the same seeker-sought identity that Attar stages through the Conference\'s closing wordplay. Reading Attar and Ibn ʿArabi together documents the poetic-experiential and the philosophical-systematic poles of the same Sufi metaphysical vision.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+// ── HAFEZ · DIVAN (~1370 CE) ─────────────────────────────────────────────────
+SCRIPTURE_TEXTS['hafez-divan-1'] = {
+  id:         'hafez-divan-1',
+  title:      'Hafez · Divan (the ghazal corpus, ~1340–1390 CE)',
+  shortTitle: 'Hafez · Divan',
+  corpus:     'Persian Sufi literary corpus (Rumi · Attar · Hafez · Saʿdi)',
+  tradId:     'tradition-sufism',
+  date:       '~1340–1390 CE (composed over Hafez\'s lifetime at Shiraz under the Inju and Muzaffarid dynasties; the canonical Divan of approximately 500 ghazals was compiled posthumously by Muhammad Gulandam, Hafez\'s contemporary and friend)',
+  docNode:    'phase-5-053-hafez-divan',
+  language:   'Classical Persian (Shirazi register) · Dick Davis 2012 English (Penguin, "Faces of Love") + Avery-Heath-Stubbs 1952 (Murray) canonical translations',
+  translations: [
+    { id: 'davis',   label: 'Dick Davis 2012 (Penguin, "Faces of Love")', note: 'The current Anglophone scholarly standard, translating Hafez alongside his contemporaries Jahan Khatun and Obayd-e Zakani — the three-poet Shirazi cluster of mid-14th-century Persian lyric.' },
+    { id: 'avery',   label: 'Peter Avery & John Heath-Stubbs 1952 (Allen & Unwin) + Avery 2007 critical edition', note: 'The classical 20th-century Anglophone Hafez. Avery\'s later complete prose translation (2007) is the most-extensive scholarly Hafez available in English.' },
+    { id: 'persian', label: 'Classical Persian (Khanlari critical edition 1980, the modern scholarly standard)' },
+  ],
+  intro: 'The Divan of Shams ud-Din Muhammad Hafez of Shiraz (c. 1315–1390) is the canonical lyric-poetic corpus of the Persian Sufi tradition — approximately 500 ghazals composed over Hafez\'s lifetime in his native Shiraz and compiled posthumously by his friend Muhammad Gulandam. The Divan occupies a position in Persian literary-religious culture comparable to Shakespeare in English or Dante in Italian: a national-poetic foundation that is also a religious-mystical reference text. Hafez\'s ghazals work simultaneously on multiple interpretive registers — as love poetry addressed to a beloved (which may be human, divine, or both at once); as wine poetry celebrating the symbolic-mystical wine of Sufi spiritual intoxication; as poems of social-political critique aimed at hypocritical religious authorities of the Muzaffarid period; and as deeply allusive intertextual engagements with the entire prior Persian-Sufi poetic tradition (Sanai, Attar, Rumi). The Divan has been continuously consulted as a fāl-namah (divinatory text) — Persian and broader Persianate cultures from the 15th century to the present have used random consultation of the Divan as a religious-divinatory practice, treating Hafez as a saint whose verses respond providentially to questions put to them. Modern scholarship: Davis 2012, Avery 2007, Lewisohn 2010, Meisami 1987.',
+  crossTradition: [
+    { label: 'Rumi · Masnavi — the canonical Sufi-poetic predecessor', textId: 'rumi-masnavi',
+      note: 'Rumi\'s 13th-century Masnavi and Hafez\'s 14th-century Divan are the two foundational masterworks of the Persian Sufi poetic tradition — Rumi in the long-form mathnawī mystical-narrative mode, Hafez in the short-form ghazal lyric mode. Reading them together documents the two great poetic-formal traditions through which Persian Sufism articulates its spiritual-philosophical vision.' },
+    { label: 'Saʿdi · Gulistan — the Shirazi-contemporary tradition', textId: 'sadi-gulistan-1',
+      note: 'Hafez and Saʿdi are the two great medieval Persian poets of Shiraz (Saʿdi a century earlier, c. 1210–1291; Hafez c. 1315–1390). Reading the two together documents the continuous Shirazi tradition of Persian-Sufi literary excellence across a century and a half — Saʿdi\'s ethical-pedagogical orientation in the Gulistan and Bustan, Hafez\'s lyrical-mystical orientation in the Divan.' },
+    { label: 'Attar · Conference of the Birds — the older Sufi-allegorical lineage', textId: 'attar-conference-of-birds-1',
+      note: 'Attar\'s 12th-century mystical-allegorical poetic tradition is the older Persian-Sufi literary inheritance that Hafez engages with in lyric form. Hafez\'s ghazals are filled with allusions to the Attar-Rumi mathnawī tradition, transposing the Sufi spiritual-philosophical vocabulary into the more compressed form of the ghazal lyric.' },
+  ],
+  sections: [
+    {
+      heading: 'I. The Beloved as Both Human and Divine',
+      verses: [
+        {
+          ref: 'Hafez Ghazal 1 (Khanlari numbering; Davis trans.)',
+          text: 'Come, cup-bearer, pass round and offer the bowl / for love seemed easy at first, but difficulties have arisen. / By the perfume of the morning breeze that may at last release / the lock of musk-scented curls — what blood has fallen from our hearts! / For my own ease, what likelihood is there in love\'s halting-place / when at every moment the bell cries out: "Bind on your burdens!"',
+          textVersions: {
+            davis:   'Come, cup-bearer, pass round and offer the bowl — / for love seemed easy at first, but difficulties have arisen. / By the perfume of the morning breeze that may at last release / the lock of musk-scented curls, what blood has fallen from our hearts!',
+            persian: 'الا یا ایها الساقی ادر کأسا و ناولها / که عشق آسان نمود اول ولی افتاد مشکل‌ها / به بوی نافه‌ای کاخر صبا زان طره بگشاید / ز تاب جعد مشکینش چه خون افتاد در دل‌ها',
+          },
+          entities: [
+            { word: 'love seemed easy at first, but difficulties have arisen', node: 'hafez', type: 'lyric-thesis',
+              note: 'The opening line of Hafez\'s Divan (the canonical ordering places this ghazal first by the alphabetic-rhyme convention of the ghazal corpus) articulates one of the most-cited single lines in Persian literature — "ʿishq āsān namūd avval, valī uftād mushkilhā." The line works simultaneously on the literal-erotic register (love starts simple, becomes complicated) and on the mystical-spiritual register (the Sufi spiritual path appears easy at the outset but its difficulties reveal themselves progressively). The ambiguity is deliberate and constitutive — Hafez\'s ghazals are read across the entire spectrum from purely-erotic to purely-mystical interpretation, and the Persian literary tradition has consistently treated this ambiguity as a feature rather than a bug, a deliberate cultivation of multiple-register meaning that mirrors the Sufi metaphysical claim that the divine reality is encountered in and through human reality rather than apart from it.' },
+            { word: 'cup-bearer', node: 'tradition-sufism', type: 'symbol',
+              note: 'The sāqī (cup-bearer) is one of the most-deployed symbols of Persian Sufi poetry — the figure who offers the wine of divine love-intoxication to the seeker. The "wine" symbolism throughout the Persian Sufi corpus (Hafez, Rumi, Attar, Saʿdi, ʿUmar Khayyam) is the canonical case-study in mystical-allegorical interpretation: the literal-prohibited beverage of Islamic law becomes the symbol of divine-experiential intoxication that transcends the limits of legal-rational religion. The Sufi-poetic deployment of wine-symbolism was a deliberate transgressive-mystical gesture that orthodox Islamic authorities periodically condemned but that the broader Persian-cultural tradition embraced as the canonical mode of articulating mystical experience.',
+              parallels: [
+                { label: 'Rumi · Masnavi — the same wine-as-divine-intoxication symbolism', textId: 'rumi-masnavi',
+                  note: 'Rumi\'s extensive use of wine-and-intoxication symbolism throughout the Masnavi establishes the canonical Sufi-poetic framework that Hafez\'s ghazals subsequently inherit and refine. The Rumi → Hafez wine-symbolism transmission is one of the central tropes of Persian Sufi literary self-understanding.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+// ── SAʿDI · GULISTAN (1258 CE) ───────────────────────────────────────────────
+SCRIPTURE_TEXTS['sadi-gulistan-1'] = {
+  id:         'sadi-gulistan-1',
+  title:      'Saʿdi of Shiraz · Gulistan (The Rose Garden, 1258)',
+  shortTitle: 'Saʿdi · Gulistan',
+  corpus:     'Persian Sufi literary corpus (Rumi · Attar · Hafez · Saʿdi)',
+  tradId:     'tradition-sufism',
+  date:       '1258 CE (composed by Saʿdi at Shiraz the same year the Mongol Hulagu sacked Baghdad and ended the Abbasid Caliphate; one of the two foundational Persian prose-and-verse compositions of Saʿdi, with the Bustan ("The Orchard") of 1257 as its verse companion)',
+  docNode:    'phase-5-052-sadi-gulistan',
+  language:   'Classical Persian + Arabic poetic citations (the original; Saʿdi alternates prose narrative with verse-aphorisms in both languages) · Edward Rehatsek 1888 / Wheeler M. Thackston 2008 English',
+  translations: [
+    { id: 'thackston', label: 'Wheeler M. Thackston 2008 (Ibex)', note: 'The current Anglophone scholarly standard, with the Persian text on facing pages.' },
+    { id: 'rehatsek',  label: 'Edward Rehatsek 1888 (Kama Shastra Society)', note: 'The classical 19th-century English translation; methodologically dated but still widely cited in older Persian-studies scholarship.' },
+    { id: 'persian',   label: 'Classical Persian (Foroughi critical edition 1937, the modern scholarly standard)' },
+  ],
+  intro: 'Saʿdi\'s Gulistan ("Rose Garden") is one of the two foundational compositions of Saʿdi of Shiraz (c. 1210–1291) and the single most widely-read Persian prose work of the pre-modern period. Composed in 1258 — the same year as the Mongol Hulagu\'s sack of Baghdad and the end of the Abbasid Caliphate — the Gulistan is structured as eight chapters of mixed prose narrative and verse aphorism, treating the subjects of "The Manners of Kings," "The Morals of Dervishes," "The Excellence of Contentment," "The Advantages of Silence," "Love and Youth," "Weakness and Old Age," "The Effects of Education," and "Rules for the Conduct of Life." The Gulistan became the canonical text through which generations of Persian-language students learned literary Persian — for roughly seven centuries the Gulistan was the standard reading text of Persian-language education across the Persianate world (Iran, Afghanistan, Central Asia, Mughal India, the Ottoman Empire). The work is also one of the most-translated Persian texts in world literature, having been rendered into Latin, French, German, English, and most major European and Asian languages from the 17th century onward. Its famous opening — "Bani Ādam aʿḍāʾ-i yak paykarand" ("The children of Adam are limbs of one body") — was placed at the entrance of the United Nations building in New York in 2005, demonstrating the work\'s continuing relevance to contemporary global moral imagination. Modern scholarship: Thackston 2008, Lewis 2000, Yarshater 1988.',
+  crossTradition: [
+    { label: 'Hafez · Divan — the Shirazi-tradition lyrical-mystical contemporary', textId: 'hafez-divan-1',
+      note: 'Saʿdi (c. 1210–1291) and Hafez (c. 1315–1390) are the two great medieval poets of Shiraz, separated by roughly a century. The two together constitute the canonical "Shirazi school" of medieval Persian poetry — Saʿdi the master of ethical-narrative prose-and-verse, Hafez the master of mystical-lyrical ghazal. Reading them together is the standard scholarly entry-point to medieval Persian Shirazi literary culture.' },
+    { label: 'Attar · Conference of the Birds — the older Sufi-allegorical tradition', textId: 'attar-conference-of-birds-1',
+      note: 'Attar\'s 12th-century Sufi-allegorical poetic tradition is the older Persian-Sufi literary inheritance that Saʿdi engages with in a more ethically-pedagogical mode. Where Attar\'s Conference operates allegorically, Saʿdi\'s Gulistan operates ethically — telling exemplary stories that articulate the same Sufi-ethical vision in pragmatic-narrative form.' },
+    { label: 'Rumi · Masnavi — the canonical Sufi-mystical contemporary', textId: 'rumi-masnavi',
+      note: 'Saʿdi and Rumi (1207–1273) were rough contemporaries, both writing in the great mid-13th-century Persian Sufi efflorescence. The two represent complementary modes of the Sufi literary tradition: Rumi\'s long-form mystical-philosophical mathnawī and Saʿdi\'s ethical-pragmatic prose-and-verse exemplary tradition. Reading them together documents the full breadth of mid-13th-century Persian Sufi literary culture.' },
+  ],
+  sections: [
+    {
+      heading: 'I. The Children of Adam — One Body',
+      verses: [
+        {
+          ref: 'Gulistan Chapter 1, story 10 (Thackston trans.)',
+          text: 'The children of Adam are limbs of one body — for in their creation they are of one essence. When the affliction of time has injured one limb, the other limbs cannot remain at rest. If you have no sympathy for the troubles of others, you are unworthy to be called by the name of a human.',
+          textVersions: {
+            thackston: 'The children of Adam are limbs of one body, for in their creation they are of one essence. When the affliction of time has injured one limb, the other limbs cannot remain at rest. If you have no sympathy for the troubles of others, you are unworthy to be called by the name of a human.',
+            persian:   'بنی آدم اعضای یک پیکرند / که در آفرینش ز یک گوهرند / چو عضوی بدرد آورد روزگار / دگر عضوها را نماند قرار / تو کز محنت دیگران بی غمی / نشاید که نامت نهند آدمی',
+          },
+          entities: [
+            { word: 'The children of Adam are limbs of one body', node: 'sadi-of-shiraz', type: 'ethical-thesis',
+              note: 'The opening verses of Gulistan Chapter 1 — "Bani Ādam aʿḍāʾ-i yak paykarand" — articulate one of the most enduring single ethical-religious propositions in Persian literature: the unity of the human family understood as ontological-cosmological reality ("in their creation they are of one essence") rather than as an aspiration. The verse was inscribed on a large carpet placed at the entrance of the United Nations building in New York in 2005 as a single-line summation of the UN\'s founding ethical claim. The doctrinal substance is recognisable across the broader Abrahamic tradition (Genesis 1\'s "in the image of God," Galatians 3\'s "neither Jew nor Greek, slave nor free," the Islamic hadith "all of Adam, and Adam is from dust"), but Saʿdi\'s articulation is unique in its ontological-poetic framing — the unity is not a precept commanded but a fact described.',
+              parallels: [
+                { label: 'Galatians 3:28 — neither Jew nor Greek', textId: 'galatians-3',
+                  note: 'Paul\'s "there is neither Jew nor Greek, slave nor free, male nor female; for you are all one in Christ Jesus" (Gal 3:28) articulates the same ontological-anthropological unity Saʿdi articulates in Gulistan Chapter 1. The two passages — separated by 12 centuries and two distinct religious traditions — converge on the same proposition that humanity\'s underlying ontological unity is the moral foundation for ethical sympathy across difference.' },
+                { label: 'Bahá\'í Kitáb-i-Aqdas — the modern legal-doctrinal articulation', textId: 'bahai-kitab-i-aqdas',
+                  note: 'Bahá\'u\'lláh\'s Aqdas and the broader Bahá\'í teaching on the oneness of humanity ("the earth is but one country and mankind its citizens") are recognisable continuations of the same theological-anthropological vision Saʿdi\'s Gulistan articulates in the 13th century. The trajectory runs from Saʿdi\'s 1258 articulation through 19th-century Bahá\'í systematic-doctrinal codification to the 20th-century United Nations adoption of the verse as universal-ethical motto.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+// ── MISHNAH — JUDAH HA-NASI'S RABBINIC CODIFICATION (~200 CE) ────────────────
+SCRIPTURE_TEXTS['mishnah-1'] = {
+  id:         'mishnah-1',
+  title:      'The Mishnah — Judah ha-Nasi\'s Codification of Rabbinic Tradition (~200 CE)',
+  shortTitle: 'Mishnah',
+  corpus:     'Rabbinic corpus (Mishnah · Talmud · Hekhalot)',
+  tradId:     'tradition-rabbinic-judaism',
+  date:       '~200 CE (redacted by Judah ha-Nasi at Sepphoris/Bet Sheʿarim in the Galilee, drawing on roughly four centuries of oral-rabbinic tradition stretching back through Hillel and Shammai in the late 1st century BCE to the foundational figures of the Pharisaic-Pharisaic period)',
+  docNode:    'phase-4-031-mishnah',
+  language:   'Mishnaic Hebrew (a distinct dialect from Biblical Hebrew, closer to spoken first-century Aramaic-influenced Hebrew) · Herbert Danby 1933 English (Oxford, canonical scholarly translation) · Jacob Neusner 1988 alternative full translation',
+  translations: [
+    { id: 'danby',   label: 'Herbert Danby 1933 (Oxford University Press)', note: 'The classical single-volume English Mishnah translation — still the most-cited Anglophone scholarly reference.' },
+    { id: 'neusner', label: 'Jacob Neusner 1988 (Yale University Press)', note: 'The mid-late 20th-century scholarly alternative translation; Neusner emphasises tractate-by-tractate compositional analysis.' },
+    { id: 'hebrew',  label: 'Mishnaic Hebrew (Kaufmann manuscript critical edition + the standard Albeck text)' },
+  ],
+  intro: 'The Mishnah ("repetition / teaching") is the foundational text of Rabbinic Judaism — the first written codification of the oral Jewish legal-religious tradition, redacted by Judah ha-Nasi ("the Prince," in his role as patriarch of the Galilean Jewish community under Roman rule) at Sepphoris and Bet Sheʿarim around 200 CE. The text is organised into six "Orders" (Sedarim) — Zeraim (Seeds: agriculture and blessings), Moed (Appointed times: Sabbath, festivals, fasts), Nashim (Women: marriage, divorce, vows), Nezikin (Damages: civil and criminal law), Kodashim (Holy things: Temple service, sacrifices), and Tohorot (Purities: ritual purity, the menstrual laws, the laws of corpse-impurity) — totalling 63 tractates of legal-religious teaching transmitted from the great rabbinic teachers of the prior four centuries (Hillel and Shammai in the late 1st century BCE; Yohanan ben Zakkai and Gamaliel the Elder in the immediate post-Temple period; Rabbi Akiva and his disciples in the early 2nd century; Judah ha-Nasi\'s own immediate teachers). The Mishnah is the textual foundation upon which all subsequent Rabbinic Judaism is built: the Jerusalem Talmud (c. 400 CE) and Babylonian Talmud (c. 500 CE) are both extended commentaries on the Mishnah; the entire halakhic legal tradition from the Geonim through Maimonides to Joseph Karo to contemporary Orthodox responsa proceeds Mishnah-tractate by Mishnah-tractate. Modern scholarship: Neusner 1988, Goldenberg 1984, Albeck 1958, Stemberger 1991.',
+  crossTradition: [
+    { label: 'Babylonian Talmud — the major commentary that the Mishnah inaugurates', textId: 'babylonian-talmud-1',
+      note: 'The Babylonian Talmud (c. 500 CE) and the Jerusalem Talmud (c. 400 CE) are both extended commentaries on the Mishnah, organising rabbinic discussion across roughly three centuries (the Amoraic period, ~200–500 CE) around each Mishnah tractate. The Mishnah is the foundational text; the two Talmuds are the discussions of it. The Mishnah-Talmud relationship is the structural core of Rabbinic Judaism\'s textual tradition.' },
+    { label: 'Sefer Yetzirah — the older Jewish-mystical companion tradition', textId: 'sefer-yetzirah',
+      note: 'Sefer Yetzirah and the Mishnah occupy structurally different but historically-overlapping positions in early Rabbinic Judaism: the Mishnah codifies the legal-religious tradition; Sefer Yetzirah preserves the proto-mystical-cosmological tradition that subsequently develops into Hekhalot literature, Kabbalah, and broader Jewish-mystical thought. Reading them together documents the legal-and-mystical pair of early Rabbinic textual traditions.' },
+    { label: 'Sahih Muslim — the structurally-parallel Sunni Islamic codification', textId: 'sahih-muslim-1',
+      note: 'The Mishnah and the Sahih hadith collections of al-Bukhari and Muslim occupy structurally similar positions in their respective traditions: the codified-canonical preservation of an originally-oral teaching tradition. The Mishnah is the Rabbinic Jewish parallel to the Sunni Sahihayn — both crystallise the operative authoritative-non-scriptural textual layer of their respective traditions.' },
+  ],
+  sections: [
+    {
+      heading: 'I. The Opening of Pirkei Avot — The Transmission Chain',
+      verses: [
+        {
+          ref: 'Mishnah Avot 1:1 (Danby trans.)',
+          text: 'Moses received the Torah from Sinai and committed it to Joshua, and Joshua to the elders, and the elders to the prophets, and the prophets committed it to the men of the Great Synagogue. They said three things: Be deliberate in judgment, raise up many disciples, and make a fence around the Torah.',
+          textVersions: {
+            danby:  'Moses received the Law from Sinai and committed it to Joshua, and Joshua to the elders, and the elders to the prophets; and the prophets committed it to the men of the Great Synagogue. They said three things: Be deliberate in judgment, raise up many disciples, and make a fence around the Law.',
+            hebrew: 'משה קבל תורה מסיני ומסרה ליהושע ויהושע לזקנים וזקנים לנביאים ונביאים מסרוה לאנשי כנסת הגדולה הם אמרו שלשה דברים הוו מתונים בדין והעמידו תלמידים הרבה ועשו סייג לתורה',
+          },
+          entities: [
+            { word: 'Moses received the Torah from Sinai', node: 'judah-ha-nasi', type: 'chain-of-transmission',
+              note: 'The opening of Pirkei Avot articulates the foundational Rabbinic-Jewish doctrine of the unbroken chain of transmission (shalshelet ha-qabbalah) from Sinai to the Rabbinic teachers of the early common era: Moses → Joshua → the Elders → the Prophets → the Men of the Great Synagogue → the early Sages (Antigonus of Sokho, the Zugot pairs, Hillel and Shammai) → Yohanan ben Zakkai → Gamaliel and his contemporaries → the Tannaim → Judah ha-Nasi himself. The chain functions both historically (preserving the actual teachers from whom the oral tradition was received) and theologically (establishing the divine-authoritative origin of the Mishnah\'s legal-religious teaching). The doctrine of the "two Torahs" — the Written Torah (the Pentateuch) and the Oral Torah (the Mishnah and its successor literature) — both deriving from Sinai, becomes the operative theological frame within which the Mishnah and the entire subsequent Rabbinic-Jewish tradition understand their authority.',
+              parallels: [
+                { label: 'Deuteronomy 6 — the Pentateuchal Sinai foundation', textId: 'deuteronomy-6',
+                  note: 'The Pirkei Avot transmission-chain begins with "Moses received the Torah from Sinai" — the Pentateuchal foundation that the entire Rabbinic-Jewish tradition treats as the operative source of religious authority. The Deuteronomy-Sinai textual cluster is the scriptural ground that Mishnah Avot 1:1 builds its transmission-chain doctrine upon.' },
+                { label: 'Sahih Muslim Hadith of Gabriel — the parallel chain-of-transmission doctrine in Islam', textId: 'sahih-muslim-1',
+                  note: 'The Sunni Islamic chain-of-transmission (isnād) doctrine — every authentic hadith must be traceable through an unbroken chain of reliable transmitters back to the Prophet — is the structurally parallel Islamic articulation of the same chain-of-transmission theological move that Mishnah Avot 1:1 articulates for Rabbinic Judaism. The two traditions (Mishnah ~200 CE, hadith literature ~870 CE) operate the same chain-of-transmission authority-establishment device in different idioms.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+// ── JERUSALEM TALMUD — THE PALESTINIAN GEMARA (~400 CE) ──────────────────────
+SCRIPTURE_TEXTS['jerusalem-talmud-1'] = {
+  id:         'jerusalem-talmud-1',
+  title:      'The Jerusalem Talmud — The Palestinian Gemara (~400 CE)',
+  shortTitle: 'Jerusalem Talmud',
+  corpus:     'Rabbinic corpus (Mishnah · Talmud · Hekhalot)',
+  tradId:     'tradition-rabbinic-judaism',
+  date:       '~400 CE (redacted at Tiberias by the Palestinian Amoraim under the increasingly difficult conditions of late-Roman Palestinian Jewish life; the redaction process was effectively halted by Byzantine-period persecutions in the early 5th century, leaving the text in a less polished state than the contemporary Babylonian Talmud)',
+  docNode:    'phase-4-032-jerusalem-talmud',
+  language:   'Mishnaic Hebrew + Galilean Aramaic (a distinct Western Aramaic dialect from the Babylonian Aramaic of the Bavli) · Jacob Neusner 1982–1995 English (the only complete Anglophone scholarly translation) + The Schottenstein Edition in progress',
+  translations: [
+    { id: 'neusner',     label: 'Jacob Neusner 1982–1995 (Chicago, "The Talmud of the Land of Israel" — 35 volumes)', note: 'The only complete English translation of the Jerusalem Talmud. Neusner\'s introductions provide the most-cited modern scholarly framing.' },
+    { id: 'schottenstein', label: 'Artscroll Schottenstein Edition (in progress, multi-volume)', note: 'The major ongoing 21st-century English commentary edition of the Jerusalem Talmud, complementing the older Schottenstein Bavli.' },
+    { id: 'aramaic',     label: 'Galilean Aramaic + Mishnaic Hebrew (the Venice 1523 first printed edition; modern Bar-Ilan critical edition)' },
+  ],
+  intro: 'The Jerusalem Talmud (Yerushalmi or Talmud of the Land of Israel) is the Palestinian rabbinic commentary on the Mishnah, redacted at Tiberias around 400 CE under the worsening conditions of late-Roman/early-Byzantine Palestinian Jewish life. The text covers the first four orders of the Mishnah (Zeraim, Moed, Nashim, Nezikin) plus most of Tractate Niddah from the sixth order, totalling roughly 38 of the 63 Mishnah tractates — incomplete compared to the Babylonian Talmud (which covers 37 tractates from orders 2–5, but treats them in much greater depth). The Yerushalmi\'s relatively unpolished redaction reflects the difficult historical conditions of its composition: persecution under Constantius II in the 350s, the failed Julian-supported temple-rebuilding attempt of 363, increasing legal restrictions on Jewish life under the post-Constantinian Christian Roman empire, and the eventual abolition of the Palestinian patriarchate by Theodosius II in 425. The Yerushalmi\'s authority in subsequent Jewish legal tradition is correspondingly weaker than the Bavli\'s — most halakhic disputes are resolved by reference to the Babylonian Talmud rather than the Jerusalem — but the Yerushalmi preserves important materials (Palestinian-traditional readings of Mishnah passages, distinctive theological-mystical materials, traditions about specific rabbinic figures) not available in the Bavli. Modern scholarship: Neusner 1982–1995, Lieberman 1934, Sussmann 2012.',
+  crossTradition: [
+    { label: 'Babylonian Talmud — the Mesopotamian parallel and the dominant halakhic authority', textId: 'babylonian-talmud-1',
+      note: 'The Jerusalem Talmud and the Babylonian Talmud are the two great Amoraic-period commentaries on the Mishnah, composed in parallel across the 3rd–6th centuries CE in their respective rabbinic centers (Tiberias in Palestine, Sura and Pumbedita in Sasanian Babylonia). The Bavli is more polished, more extensive, and historically more authoritative in subsequent Jewish legal tradition; the Yerushalmi is shorter, less polished, but preserves important Palestinian-traditional materials. Reading them together is the standard scholarly entry-point to Amoraic-period rabbinic literature.' },
+    { label: 'Mishnah — the foundational text both Talmuds comment on', textId: 'mishnah-1',
+      note: 'The Mishnah is the foundational text on which both Talmuds are extended commentaries. The Mishnah-Talmud relationship — Mishnah text + Gemara discussion — is the structural core of rabbinic literature.' },
+    { label: '3 Enoch / Hekhalot — the parallel Jewish-mystical Palestinian tradition', textId: '3-enoch-metatron',
+      note: 'The Yerushalmi and the Hekhalot mystical-ascent literature both emerged from late-Roman Palestinian Jewish religious culture, with overlapping figures (Rabbi Akiva, Yohanan ben Zakkai\'s school, the "four who entered the orchard" tradition). Reading them together documents the legal-and-mystical pair of late-antique Palestinian-Jewish textual traditions.' },
+  ],
+  sections: [
+    {
+      heading: 'I. The Sanctification of the Divine Name — Berakhot 9:5',
+      verses: [
+        {
+          ref: 'Jerusalem Talmud Berakhot 9:5 / 14b (Neusner trans.)',
+          text: 'It is taught: One should bless God for the bad just as one blesses God for the good. As it is written, "You shall love the Lord your God with all your heart, and with all your soul, and with all your might" (Deuteronomy 6:5). "With all your heart" — with both your impulses, the impulse to good and the impulse to evil. "With all your soul" — even if He takes your soul. "With all your might" — with all your possessions.',
+          textVersions: {
+            neusner: 'It is taught: One should bless God for the bad just as one blesses God for the good. As it is written, "You shall love the Lord your God with all your heart, and with all your soul, and with all your might" (Deuteronomy 6:5). "With all your heart" — with both your impulses, the impulse to good and the impulse to evil. "With all your soul" — even if He takes your soul. "With all your might" — with all your possessions.',
+            aramaic: 'תני: חייב אדם לברך על הרעה כשם שמברך על הטובה. שנאמר ואהבת את ה\' אלהיך בכל לבבך ובכל נפשך ובכל מאדך. בכל לבבך — בשני יצריך, ביצר טוב וביצר רע. בכל נפשך — אפילו נוטל את נפשך. בכל מאדך — בכל ממונך.',
+          },
+          entities: [
+            { word: 'with both your impulses, the impulse to good and the impulse to evil', node: 'tradition-rabbinic-judaism', type: 'doctrine',
+              note: 'The doctrine of the yetzer ha-tov ("impulse to good") and yetzer ha-ra ("impulse to evil") is one of the most distinctive theological-anthropological articulations of Rabbinic Judaism. The dual-impulses doctrine treats the human being as constituted by two opposing-but-both-divinely-created drives, with religious practice (love of God "with all your heart" = with both impulses) requiring the integration rather than the suppression of the evil-impulse. Rabbinic literature explicitly notes that the yetzer ha-ra is necessary for the basic functioning of human life (sexual desire, ambition, competition, accumulation) and that the religious task is its directing-toward-good rather than its elimination. The doctrine parallels but does not equate the Qumran Two-Spirits doctrine (which treats the dual principles as opposing cosmic powers rather than as both-divinely-given human impulses), and it provides one of the major theological-anthropological alternatives to Augustinian-Christian and Manichaean-dualist articulations of the same human-psychology phenomenon.',
+              parallels: [
+                { label: '1QS Two-Spirits doctrine — the Qumran parallel', textId: '1qs-community-rule',
+                  note: 'The Qumran Two-Spirits doctrine of 1QS III:13–IV:26 articulates a more cosmologically-dualistic version of the same dual-impulses theological-anthropological insight that the Rabbinic yetzer ha-tov / yetzer ha-ra doctrine articulates more interiorly. The two traditions share a Second-Temple-period origin but develop the doctrine in different directions: Qumran toward cosmological dualism, the Rabbis toward integrated-human-psychology.' },
+                { label: 'Romans 7 — Paul\'s flesh / spirit dichotomy', textId: 'romans-8',
+                  note: 'Paul\'s discussion of the conflict between flesh and spirit in Romans 7 ("the good that I would I do not; but the evil which I would not, that I do") articulates the same dual-impulses phenomenon in the Pauline-Christian vocabulary that he develops in dialogue with both his Second-Temple-Jewish background and the broader Hellenistic philosophical tradition. The Mishnaic-Talmudic dual-impulses, the Qumran dualism, and the Pauline flesh-spirit dichotomy are three related-but-distinct articulations of the same human-psychological-religious insight.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+// ── BABYLONIAN TALMUD — THE BAVLI (~500 CE) ──────────────────────────────────
+SCRIPTURE_TEXTS['babylonian-talmud-1'] = {
+  id:         'babylonian-talmud-1',
+  title:      'The Babylonian Talmud (Bavli) — The Major Mesopotamian Rabbinic Commentary (~500 CE)',
+  shortTitle: 'Babylonian Talmud',
+  corpus:     'Rabbinic corpus (Mishnah · Talmud · Hekhalot)',
+  tradId:     'tradition-rabbinic-judaism',
+  date:       '~500 CE (redaction primarily under Rav Ashi at Sura and Ravina at Pumbedita in the late 5th century, drawing on roughly three centuries of Amoraic-rabbinic discussion at the great Babylonian academies; final editorial layers were added by the Saboraim in the 6th and early 7th centuries)',
+  docNode:    'phase-4-033-babylonian-talmud',
+  language:   'Mishnaic Hebrew + Babylonian Aramaic (Eastern Aramaic dialect distinct from the Galilean Aramaic of the Yerushalmi) · Soncino Talmud 1935–1948 English + the Steinsaltz / Koren English 1989–2020 + Artscroll Schottenstein 1990–2005',
+  translations: [
+    { id: 'koren-steinsaltz', label: 'Adin Steinsaltz / Koren Talmud Bavli (Hebrew-English, 42 volumes, 2012–2020)', note: 'The current Anglophone scholarly-and-readable standard. Steinsaltz\'s commentary is the major late-20th-and-early-21st-century Talmud-pedagogical work.' },
+    { id: 'soncino',         label: 'Soncino Talmud 1935–1948 (Isidore Epstein ed., 35 volumes)', note: 'The classical mid-20th-century English Talmud; still widely cited in older Jewish-studies scholarship.' },
+    { id: 'schottenstein',   label: 'Artscroll Schottenstein Edition 1990–2005 (73 volumes)', note: 'The major Orthodox-scholarly Talmud edition with extensive commentary apparatus.' },
+    { id: 'aramaic',         label: 'Mishnaic Hebrew + Babylonian Aramaic (Vilna Shas standard text; Friedman-Schremer critical editions in progress)' },
+  ],
+  intro: 'The Babylonian Talmud (the Bavli, simply "the Talmud" in most Jewish-traditional usage) is the central textual monument of Rabbinic Judaism — a vast compilation of legal-religious discussion, narrative-aggadic material, biblical exegesis, philosophical reflection, and folkloric tradition, redacted at the great Babylonian rabbinic academies of Sura and Pumbedita around 500 CE under the editorial leadership of Rav Ashi and Ravina. The text covers 37 of the 63 Mishnah tractates (focusing on the second through fifth orders — Moed, Nashim, Nezikin, Kodashim — and treating each tractate in extraordinarily detailed multi-generational rabbinic discussion). At roughly 2.5 million words across 5,894 folios, the Bavli is one of the largest religious texts in any tradition. Its authority in subsequent Jewish life is foundational: virtually every major figure of post-Talmudic Jewish thought (the Geonim, Rashi, Maimonides, Joseph Karo, the Vilna Gaon, Hasidic Masters, contemporary halakhic authorities) is engaged in interpretation of the Bavli rather than in independent legal reasoning from biblical sources. The Bavli is also the major preserver of the late-antique rabbinic-narrative tradition that Christian-medieval Europe later partly absorbed (through Christian-anti-Jewish polemic that produced the burnings of the Talmud at Paris in 1242 and later) and that 19th–21st-century critical scholarship has progressively rehabilitated as a major historical-literary monument. Modern scholarship: Steinsaltz 1976, Halivni 2013, Boyarin 2009, Rubenstein 2003.',
+  crossTradition: [
+    { label: 'Mishnah — the foundational text the Bavli comments on', textId: 'mishnah-1',
+      note: 'The Bavli is structurally a commentary on the Mishnah: each tractate of the Bavli proceeds Mishnah-passage by Mishnah-passage, with the rabbinic discussion (Gemara) following each Mishnah pericope. The Mishnah-Bavli structural relationship is the operative form of the rabbinic textual tradition.' },
+    { label: 'Jerusalem Talmud — the Palestinian parallel commentary', textId: 'jerusalem-talmud-1',
+      note: 'The Bavli and the Yerushalmi are the two great Amoraic-period Talmuds. The Bavli is the longer, more polished, and historically more authoritative; the Yerushalmi is shorter and less polished but preserves distinctive Palestinian-traditional materials. Reading them in parallel is the standard scholarly entry-point to Amoraic-period rabbinic literature.' },
+    { label: 'Sahih Muslim — the structurally-parallel Sunni Islamic commentary tradition', textId: 'sahih-muslim-1',
+      note: 'The Babylonian Talmud and the Sunni Hadith collections occupy structurally parallel positions in their respective traditions — the major canonical-authoritative non-scriptural textual layer. The two traditions emerged in geographically adjacent Mesopotamian-Iraqi/Iranian contexts in overlapping periods (Bavli ~500 CE, Sunni hadith ~870 CE) and shaped the textual cultures of their respective religions for the next millennium.' },
+  ],
+  sections: [
+    {
+      heading: 'I. "Whoever Saves One Life..." — Sanhedrin 37a',
+      verses: [
+        {
+          ref: 'Babylonian Talmud Sanhedrin 37a (Koren-Steinsaltz trans.)',
+          text: 'Therefore Adam was created alone, to teach you that whoever destroys a single soul of Israel — Scripture imputes it to him as though he had destroyed the entire world; and whoever saves a single soul of Israel — Scripture imputes it to him as though he had saved the entire world. And it was created alone for the sake of peace among mankind, so that no one should say to his fellow, "My father was greater than yours"; and so that the heretics should not say, "There are many powers in heaven"; and to demonstrate the greatness of the Holy One, blessed be He: for a person stamps many coins with one seal, and they are all alike, but the King of kings, the Holy One, blessed be He, stamped every person with the seal of Adam, and not one of them is like another.',
+          textVersions: {
+            'koren-steinsaltz': 'Therefore Adam was created alone, to teach you that whoever destroys a single soul of Israel — Scripture imputes it to him as though he had destroyed the entire world; and whoever saves a single soul of Israel — Scripture imputes it to him as though he had saved the entire world.',
+            aramaic:            'לפיכך נברא אדם יחידי ללמדך שכל המאבד נפש אחת מישראל מעלה עליו הכתוב כאילו איבד עולם מלא וכל המקיים נפש אחת מישראל מעלה עליו הכתוב כאילו קיים עולם מלא',
+          },
+          entities: [
+            { word: 'whoever saves a single soul... as though he had saved the entire world', node: 'tradition-rabbinic-judaism', type: 'ethical-doctrine',
+              note: 'Sanhedrin 37a — the "whoever saves a single soul saves an entire world" passage — is one of the most-cited single texts of Rabbinic ethical-religious teaching, articulating the principle that each human life carries infinite moral worth. The passage was placed at the entrance of Yad Vashem and is invoked across global ethical-religious discourse. The Qurʾān 5:32 quotes a closely related formulation ("whoever kills a soul... it is as if he had killed all of mankind, and whoever saves a soul... it is as if he had saved all of mankind") in what most scholars treat as a direct echo of the Talmudic passage, attributing the principle "to the children of Israel" — making this one of the clearest cases of Sanhedrin 37a entering the Islamic textual tradition. The doctrine is also one of the foundational sources of modern Jewish and broader-religious medical-ethical and human-rights theology.',
+              parallels: [
+                { label: 'Qurʾān 5:32 — the explicit Islamic echo', textId: 'quran-fatiha-nur',
+                  note: 'Sūrat al-Māʾida 5:32 ("We decreed for the Children of Israel that whoever kills a soul... it is as if he had killed all mankind, and whoever saves a soul... it is as if he had saved all mankind") is the direct Islamic-scriptural echo of Sanhedrin 37a. The Qurʾanic citation explicitly attributes the principle to the prior Israelite-Jewish tradition, making it one of the clearest documented instances of Talmudic-rabbinic material entering the Islamic scriptural tradition.' },
+                { label: 'Matthew 25 — the parallel "what you did to the least" articulation', textId: 'matthew-25',
+                  note: 'Matthew 25:40 ("inasmuch as you did it to one of the least of these my brethren, you did it to me") articulates a structurally parallel ethical-theological claim that the moral significance of action toward a single individual carries cosmic weight. The Matthean and Talmudic articulations are not in direct textual relation but converge on the same ethical-theological insight about the infinite moral worth of each human person.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+// ── MANDAEAN BOOK OF JOHN — ENISHBAI'S NATIVITY (DRAŠA D-IAHIA) ──────────────
+SCRIPTURE_TEXTS['mandaean-book-of-john-1'] = {
+  id:         'mandaean-book-of-john-1',
+  title:      'The Mandaean Book of John — Drāšā d-Iahia (composed ~7th–8th c. CE, oral material older)',
+  shortTitle: 'Mandaean Book of John',
+  corpus:     'Mandaean + Manichaean sacred corpus',
+  tradId:     'tradition-mandaeism',
+  date:       '~7th–8th c. CE redaction (the underlying Mandaean oral-baptismal tradition is substantially older — late Second Temple Jewish-Christian baptist movements of the Jordan valley, with continuous Mandaean community history from late antiquity to the present in southern Iraq and Khuzestan)',
+  docNode:    'phase-4-018-mandaean-book-of-john',
+  language:   'Classical Mandaic (an Eastern Aramaic dialect cognate to Babylonian Talmudic Aramaic) · Charles Häberl & James McGrath 2020 English (the canonical modern critical translation)',
+  translations: [
+    { id: 'haberl-mcgrath', label: 'Charles Häberl & James McGrath 2020 (Open-Access, Brill)', note: 'The canonical modern critical English translation, the first complete scholarly Anglophone Mandaean Book of John in a century.' },
+    { id: 'lidzbarski',     label: 'Mark Lidzbarski 1915 German (Das Johannesbuch der Mandäer)', note: 'The foundational early-20th-century scholarly German translation that established Mandaean-studies as a discipline.' },
+    { id: 'mandaic',        label: 'Classical Mandaic (Lidzbarski critical edition + Häberl-McGrath revised critical text)' },
+  ],
+  intro: 'The Mandaean Book of John (Drāšā d-Iahia, "The Discourses of John") is one of the central canonical scriptures of the Mandaean religion — the surviving Gnostic-baptismal tradition of the southern Iraqi marshlands that traces its religious identity back to John the Baptist (whom Mandaeans revere as the chief prophet) and its broader religious-historical descent from the late Second Temple Jewish-Christian baptist movements of the Jordan valley. The Mandaean community is one of the few surviving religious traditions of late antiquity to have maintained continuous identity from the 1st-millennium origins to the present (Mandaean communities still exist in southern Iraq, Khuzestan in Iran, and a global diaspora that grew significantly after the 2003 Iraq War). The Book of John is organised as a collection of discourses presented as the teaching of John the Baptist, framed within a broader Mandaean cosmology of light and darkness, the Great Life (Hayyi Rabbi) as the supreme divine principle, and the soul\'s salvific ascent through the planetary spheres back to the World of Light. The work has gained particular importance in modern New-Testament-and-Gnostic-studies scholarship for what it preserves of the early-Jordanian baptist tradition that lay behind both Christian and Mandaean origins. Modern scholarship: Häberl-McGrath 2020, Buckley 2002, Lupieri 2002.',
+  crossTradition: [
+    { label: 'Manichaean Psalms — the parallel Mesopotamian Gnostic tradition', textId: 'manichaean-psalms',
+      note: 'Mandaeism and Manichaeism are the two great surviving Gnostic-religious traditions of late antiquity — both emerged from the same 1st-3rd-century CE Mesopotamian Jewish-Christian baptist milieu, both develop dualistic cosmologies of light-and-darkness, but they diverged radically in subsequent religious history (Mandaeism remained a small continuous community; Manichaeism spread as a world religion across Eurasia before being progressively suppressed). Reading them together is the standard scholarly entry-point to late-antique Mesopotamian Gnostic religion.' },
+    { label: 'Apocryphon of John — the broader Sethian-Christian-Gnostic tradition', textId: 'apocryphon-of-john',
+      note: 'The Apocryphon of John (Sethian-Christian Gnostic text preserved in the Nag Hammadi codices) and the Mandaean Book of John share the figure of John the Baptist and the broader Gnostic-cosmological vocabulary, though the Sethian Christian and the Mandaean traditions diverge in their relations to Christianity. Both texts document the broader range of late-antique baptist-Gnostic religious thought that the orthodox Christian tradition later excluded.' },
+    { label: 'Cologne Mani Codex — the contemporary Manichaean autobiographical source', textId: 'cologne-mani-codex-1',
+      note: 'The Cologne Mani Codex preserves Mani\'s own account of his early life in an Elchasaite baptist community in 3rd-century Babylonia — the same Mesopotamian Jewish-Christian baptist religious environment from which the Mandaean tradition also emerged. Reading the Cologne Mani Codex and the Mandaean Book of John together documents the shared late-Second-Temple-to-late-antique Mesopotamian baptist religious culture that produced both Manichaeism and Mandaeism.' },
+  ],
+  sections: [
+    {
+      heading: 'I. The Birth of John — Enishbai\'s Annunciation',
+      verses: [
+        {
+          ref: 'Mandaean Book of John 18 (Häberl-McGrath trans.)',
+          text: 'A child shall be born to Enishbai, who shall make himself the guardian of the Jordan, who shall baptize and become the prophet of the Mandaeans. Yahia, the prophet of Truth, shall make known the praise of the Great Life and shall reveal the speech of Truth in Jerusalem. Whoever shall hear and accept his speech shall find life eternal in the World of Light.',
+          textVersions: {
+            'haberl-mcgrath': 'A child shall be born to Enishbai, who shall make himself the guardian of the Jordan, who shall baptize and become the prophet of the Mandaeans. Yahia, the prophet of Truth, shall make known the praise of the Great Life and shall reveal the speech of Truth in Jerusalem.',
+          },
+          entities: [
+            { word: 'Yahia, the prophet of Truth', node: 'john-the-baptist', type: 'prophet',
+              note: 'Yahia (Mandaic for John, cognate with Greek Iōannēs / Hebrew Yoḥanan) is the central prophetic figure of Mandaean religion — the "guardian of the Jordan," the baptist whose teaching the Mandaeans claim to preserve, and the chief human teacher of the Mandaean tradition. The figure historically corresponds to the same John the Baptist who appears in the Gospels as the precursor of Jesus, but in the Mandaean tradition John is the major prophet and Jesus is a false prophet who deviated from John\'s baptist teaching. The Mandaean construction is one of the only surviving non-Christian first-millennium religious traditions that gives John the Baptist a primary religious-historical role — preserving, scholars argue, traces of an originally-distinct Jordanian baptist movement that the Christian gospel tradition partially absorbed and partially erased.',
+              parallels: [
+                { label: 'Gospel of John 1:6-8 — the canonical-Christian account of John the Baptist', textId: 'john-1',
+                  note: 'The Johannine prologue\'s presentation of John the Baptist as the witness "sent from God... to bear witness of the light, that everyone might believe through him; he was not the light, but to bear witness of the light" (John 1:6-8) is the canonical-Christian counter-articulation of the figure the Mandaeans treat as their chief prophet. Reading the two articulations together — the Christian Gospel placing John subordinately to Jesus, the Mandaean tradition placing John primarily and treating Jesus as a deviant — documents the divergent receptions of the early-1st-century Jordanian baptist tradition.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+// ── COLOGNE MANI CODEX — MANI'S YOUTH IN ELCHASAITE COMMUNITY (~4th c.) ─────
+SCRIPTURE_TEXTS['cologne-mani-codex-1'] = {
+  id:         'cologne-mani-codex-1',
+  title:      'The Cologne Mani Codex — Mani\'s Account of His Early Life (~4th c. CE manuscript)',
+  shortTitle: 'Cologne Mani Codex',
+  corpus:     'Mandaean + Manichaean sacred corpus',
+  tradId:     'tradition-manichaeism',
+  date:       'manuscript ~4th–5th c. CE (the surviving Greek miniature parchment codex discovered in Egypt in 1969; the underlying material is Mani\'s own 3rd-century-CE testimony about his upbringing in the Elchasaite Jewish-Christian baptist community of southern Babylonia)',
+  docNode:    'phase-4-014-cologne-mani-codex',
+  language:   'Greek (the surviving Cologne codex; Mani\'s original Syriac autobiographical writings are lost) · Ron Cameron & Arthur Dewey 1979 English (Society of Biblical Literature, canonical critical translation)',
+  translations: [
+    { id: 'cameron-dewey', label: 'Ron Cameron & Arthur Dewey 1979 (SBL Texts and Translations 15)', note: 'The canonical Anglophone scholarly translation, with the Greek text on facing pages and full critical apparatus.' },
+    { id: 'henrichs-koenen', label: 'Albert Henrichs & Ludwig Koenen 1970–1982 (German foundational publications)', note: 'The German scholarly editions that established the codex\'s scholarly importance after its 1969 discovery.' },
+    { id: 'greek',         label: 'Greek (Henrichs-Koenen critical edition + Brill 1988 Bonn corpus)' },
+  ],
+  intro: 'The Cologne Mani Codex is a small Greek parchment codex (4.5 × 3.5 cm — one of the smallest surviving Greek manuscripts) discovered in 1969 in Egypt and now held at the University of Cologne, preserving Mani\'s own account of his upbringing in the Elchasaite Jewish-Christian baptist community of southern Babylonia in the 3rd century CE. The text is one of the single most-important discoveries in 20th-century history-of-religions scholarship: it documents in extraordinary detail the immediate religious-historical environment from which Mani — the founder of Manichaeism, the late-antique world religion that spread across Eurasia from Roman Africa to Tang China — emerged. The codex preserves Mani\'s recollection of growing up in the Elchasaite community, his progressive doubts about the community\'s baptist practices (which he came to see as ineffective ritual purifications that did not address the underlying problem of light-trapped-in-darkness), the visions in which his celestial Twin revealed to him the cosmological-revelatory truth that became Manichaeism, and his decision at age 24 (in 240 CE) to leave the Elchasaite community and begin his independent missionary preaching. The codex is theologically foundational to Manichaean self-understanding (it documents the founder\'s revelatory experience and his break with his birth-religion) and historically foundational to scholarship\'s understanding of late-antique Mesopotamian Jewish-Christian baptist religion. Modern scholarship: Cameron-Dewey 1979, Henrichs-Koenen 1970–1982, BeDuhn 2000, Gardner-Lieu 2004.',
+  crossTradition: [
+    { label: 'Manichaean Psalms — the Manichaean liturgical-poetic tradition', textId: 'manichaean-psalms',
+      note: 'The Cologne Mani Codex preserves the founder\'s own autobiographical-revelatory testimony; the Manichaean Psalms preserve the subsequent Manichaean community\'s liturgical-devotional poetry. Reading them together documents Manichaean religion at its origin and in its devotional self-expression.' },
+    { label: 'Mandaean Book of John — the parallel Mesopotamian baptist-Gnostic tradition', textId: 'mandaean-book-of-john-1',
+      note: 'The Elchasaite community in which Mani was raised and the Mandaean community that produced the Book of John both emerged from the same broader 1st–3rd-century-CE Mesopotamian Jewish-Christian baptist religious environment. The Cologne Mani Codex documents one of the major moments of religious divergence within that broader baptist culture — Mani\'s break with his birth-community to found a new world religion.' },
+    { label: 'Liber de Duobus Principiis — the medieval dualist heir', textId: 'liber-de-duobus-principiis-1',
+      note: 'The Cologne Mani Codex documents the origin of the dualist religious tradition that subsequently spread across Eurasia and entered medieval Europe through the Bogomil-Cathar transmission. The Mani → Manichaean → Paulician → Bogomil → Cathar dualist religious-textual lineage runs across more than a thousand years and most of Eurasia, making the Cologne Mani Codex one of the most consequential single religious-historical documents of late antiquity.' },
+  ],
+  sections: [
+    {
+      heading: 'I. The Revelation of the Twin',
+      verses: [
+        {
+          ref: 'Cologne Mani Codex 21:2–24:14 (Cameron-Dewey trans.)',
+          text: 'At the time when my body had reached its full development, immediately there flew down and appeared before me that most beautiful and greatest mirror image of myself. When I was twenty-four years old, in the year in which Dariadaxar the king of Persia subjugated the city of Hatra, and in which Sapor his son donned the diadem — in that year, on the eighth day of the month Pharmuthi, the most blessed Lord had compassion upon me, and called me into his grace, and sent to me my Syzygos, my Twin: with great glory of countenance, with abundant light from the Holy Spirit.',
+          textVersions: {
+            'cameron-dewey': 'At the time when my body had reached its full development, immediately there flew down and appeared before me that most beautiful and greatest mirror image of myself. When I was twenty-four years old, in the year in which Dariadaxar the king of Persia subjugated the city of Hatra, and in which Sapor his son donned the diadem — in that year, on the eighth day of the month Pharmuthi, the most blessed Lord had compassion upon me, and called me into his grace, and sent to me my Syzygos, my Twin: with great glory of countenance, with abundant light from the Holy Spirit.',
+            greek:           'ὅτε δὲ τὸ σῶμά μου τὴν ἐντελῆ ἕξιν ἀπείληφεν, εὐθὺς κατεπτάμενος ἐφάνη μοι ἐκεῖνο τὸ ὡραιότατον καὶ μέγιστον κάτοπτρον τοῦ ἐμοῦ ἑαυτοῦ.',
+          },
+          entities: [
+            { word: 'my Syzygos, my Twin', node: 'mani', type: 'revelatory-figure',
+              note: 'The Syzygos (Greek "yoke-fellow / paired companion") is the central revelatory figure of Mani\'s religious experience — the celestial counterpart-being who appears to Mani at age 12 and again at age 24 and progressively reveals to him the Manichaean cosmology. The Twin doctrine has deep roots in the late-Second-Temple-Jewish "celestial counterpart" tradition (the doppelgänger / heavenly twin of various apocalyptic visionaries; the broader "guardian angel" tradition; the Thomasine "twin" tradition by which the apostle Thomas is the twin of Jesus). Mani\'s deployment of the Syzygos doctrine in his autobiographical-revelatory testimony makes the Cologne Mani Codex one of the most-cited sources for the late-antique "celestial twin" religious phenomenon.' },
+            { word: 'on the eighth day of the month Pharmuthi', node: 'mani', type: 'dating',
+              note: 'Mani\'s precise dating of his revelatory experience (8th of Pharmuthi in the regnal year of the Sasanian Shapur I) places the central revelatory event of Manichaean religion at April 19, 240 CE — making Manichaeism one of the few world religions whose foundational moment can be dated to a specific day. The historical-chronological specificity of the Cologne Mani Codex is one of the features that distinguishes it from comparable late-antique religious-foundational texts (where the founder\'s biography is typically much more legendary-mythological in form).',
+              parallels: [
+                { label: 'Apocryphon of John — the parallel Gnostic revelatory tradition', textId: 'apocryphon-of-john',
+                  note: 'The Sethian-Gnostic Apocryphon of John frames its cosmological-revelatory teaching as a vision granted to John the apostle by the Lord; the Cologne Mani Codex frames Manichaean cosmology as a vision granted to Mani by his Syzygos. The two texts document the broader late-antique Gnostic-religious convention of presenting cosmological teaching as a recorded revelatory experience.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+// ── ŠĀBUHRAGĀN — MANI'S MIDDLE PERSIAN BOOK FOR SHAPUR I (~242 CE) ───────────
+SCRIPTURE_TEXTS['shabuhragan-1'] = {
+  id:         'shabuhragan-1',
+  title:      'Šābuhragān — Mani\'s Middle Persian Book Dedicated to Shapur I (~242 CE)',
+  shortTitle: 'Šābuhragān',
+  corpus:     'Mandaean + Manichaean sacred corpus',
+  tradId:     'tradition-manichaeism',
+  date:       '~242 CE (composed by Mani in Middle Persian shortly after his public ministry began under Shapur I; the only one of Mani\'s seven canonical scriptures composed in Middle Persian rather than Syriac, deliberately written for the Sasanian court and its Iranian intellectual culture)',
+  docNode:    'phase-4-016-shabuhragan',
+  language:   'Middle Persian (the only one of Mani\'s seven canonical scriptures composed in Middle Persian rather than Syriac) · D. N. MacKenzie 1979–1980 English (Bulletin of SOAS, canonical scholarly reconstruction)',
+  translations: [
+    { id: 'mackenzie', label: 'D. N. MacKenzie 1979–1980 (BSOAS — "Mani\'s Šābuhragān")', note: 'MacKenzie\'s reconstruction and translation from the Turfan Manichaean Middle Persian fragments is the canonical Anglophone scholarly text. The Šābuhragān does not survive complete — MacKenzie\'s text is reconstructed from Central Asian manuscript fragments discovered by the German Turfan expeditions of 1902–1914.' },
+    { id: 'middle-persian', label: 'Middle Persian (Turfan fragments, Berlin Brandenburgische Akademie corpus)' },
+  ],
+  intro: 'The Šābuhragān is the one of Mani\'s seven canonical scriptures composed in Middle Persian rather than his native Syriac, deliberately written for the Sasanian king Shapur I (whose name it bears in the title: Šābuhragān = "Book for Shapur") around 242 CE shortly after Mani\'s public preaching began. The work was Mani\'s attempt to articulate the Manichaean cosmological and eschatological teaching in the religious-philosophical vocabulary of the Iranian intellectual culture surrounding the Sasanian court — using terminology drawn from Zoroastrian religious culture (Ohrmazd / Ahriman, the cosmic struggle of light and darkness, the eschatological reckoning) to present Manichaean cosmology as the fulfillment-and-extension of the Iranian religious tradition. The strategic-rhetorical move was largely successful at first: Shapur I extended formal toleration to Mani\'s preaching, and the Šābuhragān\'s vocabulary subsequently structured the Manichaean self-presentation within the Iranian cultural sphere. The work does not survive complete — its text has been reconstructed by D. N. MacKenzie 1979–1980 from the Manichaean Middle Persian fragments discovered by the German Turfan expeditions of 1902–1914 in Central Asia, where Manichaean communities survived in the Uyghur kingdom until the 13th century and preserved fragments of works lost in the Iranian and Mediterranean cores of the religion. Modern scholarship: MacKenzie 1979–1980, Sundermann 1981, BeDuhn 2000, Gardner-Lieu 2004.',
+  crossTradition: [
+    { label: 'Cologne Mani Codex — the parallel founder-document', textId: 'cologne-mani-codex-1',
+      note: 'The Cologne Mani Codex preserves Mani\'s autobiographical testimony in Greek; the Šābuhragān preserves Mani\'s doctrinal articulation in Middle Persian. The two surviving direct-from-Mani textual sources document the founder\'s presentation of his teaching to two different cultural audiences — the Hellenistic Mediterranean / Egyptian milieu and the Iranian Sasanian court.' },
+    { label: 'Yasna 30 — the Zoroastrian dualist tradition Mani engages', textId: 'yasna-30',
+      note: 'Mani\'s Šābuhragān deliberately uses Zoroastrian religious vocabulary (Ohrmazd / Ahriman, the cosmic light-darkness struggle) to present Manichaean teaching as the fulfillment of the Iranian religious tradition. Reading the Šābuhragān alongside Yasna 30\'s Gathic Two-Spirits doctrine documents the textual strategy by which Manichaeism positioned itself within the Iranian cultural sphere.' },
+    { label: 'Bundahishn — the parallel Sasanian-Zoroastrian cosmological articulation', textId: 'bundahishn-1',
+      note: 'The Šābuhragān (Manichaean, ~242 CE) and the Bundahishn (Zoroastrian, redaction continued through the 9th century) are the two great Sasanian-period cosmological-eschatological systematizations in the Iranian cultural sphere. Reading them in parallel documents the broader Sasanian intellectual environment in which both works took shape — and the religious-rivalry context in which Manichaeism progressively lost the contest for Sasanian religious patronage to the Zoroastrian establishment.' },
+  ],
+  sections: [
+    {
+      heading: 'I. The Eschatological Judgment and the Great Fire',
+      verses: [
+        {
+          ref: 'Šābuhragān eschatological section (MacKenzie reconstruction)',
+          text: 'When the time comes for the dissolution of the universe, the Great War shall begin between the powers of Light and the powers of Darkness. The First Man shall ride forth as the eschatological Jesus, with the Twelve Diadems and the Three Days of darkness preceding. The Great Fire shall consume all material substance for one thousand four hundred sixty-eight years, until the last particle of trapped light is liberated and rejoins the World of Light. The dark substance shall be sealed forever in the Globe of Darkness, and the cosmos shall return to its original state — Light and Darkness wholly separated, never again to mix.',
+          textVersions: {
+            mackenzie: 'When the time comes for the dissolution of the universe, the Great War shall begin between the powers of Light and the powers of Darkness. The First Man shall ride forth as the eschatological Jesus, with the Twelve Diadems and the Three Days of darkness preceding. The Great Fire shall consume all material substance until the last particle of trapped light is liberated and rejoins the World of Light.',
+          },
+          entities: [
+            { word: 'the Great War shall begin between the powers of Light and the powers of Darkness', node: 'tradition-manichaeism', type: 'cosmology',
+              note: 'The Manichaean eschatology articulated in the Šābuhragān is the doctrinal completion of the Manichaean cosmological narrative that begins with the original separation of Light and Darkness, proceeds through their tragic mixing (the cosmos itself being the consequence of that mixing), and ends with the eschatological re-separation. The cosmological-eschatological framework is structurally cognate with the Zoroastrian Frashokereti (the eschatological renewal of the cosmos), the Christian apocalyptic-eschatological tradition (Revelation\'s final separation of the saved and the damned), and the Buddhist cosmological-temporal frameworks of kalpa and pralaya. The Šābuhragān\'s deliberate articulation of Manichaean eschatology in Iranian-religious vocabulary documents the textual strategy by which Mani positioned his teaching within the Sasanian cultural sphere.',
+              parallels: [
+                { label: 'Yasna 30 — the Zoroastrian eschatological framework', textId: 'yasna-30',
+                  note: 'Zarathustra\'s Two-Spirits doctrine and the broader Avestan-Zoroastrian eschatological tradition (the Frashokereti, the renewal of the world at the end of time, the final battle between Ohrmazd and Ahriman) is the immediate Iranian-religious context within which Mani articulates his Manichaean eschatology in the Šābuhragān. The textual-doctrinal continuity is deliberate: Mani is positioning Manichaeism as the fulfillment of the Iranian religious tradition rather than as a foreign import.' },
+                { label: 'Revelation 21 — the parallel Christian apocalyptic-eschatological tradition', textId: 'revelation-21',
+                  note: 'The Christian apocalyptic-eschatological tradition (Revelation\'s "new heaven and new earth," the final separation of the saved and the damned) is the parallel Mediterranean-Christian eschatological vocabulary that Mani also engages — Manichaeism positions itself as the synthesis of the Iranian-Zoroastrian, the Christian, and the Buddhist religious traditions, and the Šābuhragān documents the Iranian side of that synthesis explicitly.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+// ── YASNA (YOUNGER AVESTA) — POST-GATHIC ZOROASTRIAN LITURGICAL CORPUS ───────
+SCRIPTURE_TEXTS['yasna-younger-avesta-1'] = {
+  id:         'yasna-younger-avesta-1',
+  title:      'Yasna (Younger Avestan portions) — Post-Gathic Liturgical Corpus',
+  shortTitle: 'Yasna (Younger Avesta)',
+  corpus:     'Avesta · Zoroastrian sacred corpus',
+  tradId:     'tradition-zoroastrianism',
+  date:       '~9th–4th c. BCE (the Younger Avestan portions of the Yasna preserve liturgical-ritual material composed across the post-Gathic Iranian religious tradition; the compositional language Younger Avestan is a later stage of Old Iranian than the Old Avestan of the Gāthās of Yasna 28–53)',
+  docNode:    'phase-2-004-yasna-younger-avesta',
+  language:   'Younger Avestan (Old Iranian, later stage than Old Avestan) · William Malandra 1983 English + Helmut Humbach 1991 critical edition translation',
+  translations: [
+    { id: 'malandra', label: 'William W. Malandra 1983 (An Introduction to Ancient Iranian Religion)', note: 'Selected Younger Avestan texts with introduction; the standard Anglophone scholarly anthology.' },
+    { id: 'humbach',  label: 'Helmut Humbach 1991 (The Gāthās of Zarathushtra) + parallel Younger Avesta apparatus', note: 'The major modern critical-edition treatment that pairs Old Avestan Gathic and Younger Avestan post-Gathic material.' },
+    { id: 'avestan',  label: 'Younger Avestan (Geldner critical edition 1886–1895)' },
+  ],
+  intro: 'The Yasna ("worship / sacrifice") is the central liturgical corpus of the Zoroastrian Avesta — a 72-chapter compilation that combines the older Old Avestan Gāthās attributed to Zarathushtra himself (chapters 28–34, 43–51, 53; Yasna 30 is filed separately as `yasna-30`) with substantially newer Younger Avestan material composed across the post-Gathic Iranian religious tradition between roughly the 9th and 4th centuries BCE. The Younger Avestan portions document the development of Zoroastrian liturgical practice after Zarathushtra: the elaborated yazata-hierarchy (the named angelic-divine powers under Ahura Mazda), the increasingly detailed haoma-ritual that structures the daily Yasna ceremony, the elaboration of the cosmological-eschatological doctrine that the Bundahishn would later systematise, and the integration of pre-Zoroastrian Indo-Iranian religious material (the great Mithra-Yašt, the Ardvī Sūrā Anāhitā-Yašt celebrating the waters-goddess, the Fravarane confessional formula). The Yasna as a whole is recited in full as the central daily liturgical ceremony of orthodox Zoroastrian worship — a ritual continuously performed in Iranian and Parsi communities for more than two and a half millennia. Modern scholarship: Malandra 1983, Humbach 1991, Boyce 1975–1991, Skjærvø 2011.',
+  crossTradition: [
+    { label: 'Yasna 30 — the Old Avestan Gathic foundation', textId: 'yasna-30',
+      note: 'Yasna 30 (the Old Avestan Gathic Two-Spirits doctrine attributed to Zarathushtra himself) is the foundational text of the Yasna corpus; the Younger Avestan portions are the post-Zarathushtran liturgical-ritual development that grew up around the Old Avestan core. Reading Yasna 30 and the Younger Avestan material together is the standard scholarly entry-point to the structural composition of the Avestan corpus.' },
+    { label: 'Bundahishn — the later systematic cosmological articulation', textId: 'bundahishn-1',
+      note: 'The Bundahishn (Middle Persian, redaction completed in the 9th century CE) is the later systematic theological-cosmological articulation of Zoroastrian doctrine that builds on the Younger Avestan ritual-liturgical-cosmological material. Reading the Yasna and the Bundahishn together documents the long-arc development of Zoroastrian doctrine from the 2nd-millennium-BCE Iranian religious matrix through the Younger Avestan period to the Sasanian-and-Islamic-period systematic theology.' },
+    { label: 'Rig-Veda Family Books — the Indo-Iranian religious-poetic kinship', textId: 'purusha-sukta',
+      note: 'The Younger Avesta and the early Vedic corpus share the Indo-Iranian religious-cultural inheritance: cognate divine names (Avestan Mithra ↔ Vedic Mitra, Avestan Vata ↔ Vedic Vata, Avestan Yima ↔ Vedic Yama), cognate ritual vocabulary (Avestan yasna ↔ Vedic yajña, Avestan haoma ↔ Vedic soma — see substance-haoma + substance-soma in the vault), and shared poetic conventions. The Indo-Iranian religious split (with the Iranian asura-deva inversion making Avestan ahura the supreme principle and daēva the demonic, against Vedic deva = god and asura = demon in the later Vedic period) is one of the most-studied single religious-historical divergences in Indo-European studies.' },
+  ],
+  sections: [
+    {
+      heading: 'I. The Yasna Haptaŋhāiti — the Seven-Chapter Liturgy',
+      verses: [
+        {
+          ref: 'Yasna 35.2 (Yasna Haptaŋhāiti opening, Malandra trans.)',
+          text: 'Good thoughts, good words, good deeds — these we praise, these we choose, these we hold to. Of all good thoughts, words, and deeds, we now declare ourselves to be the offerers — and we renounce all evil thoughts, words, and deeds. With deeds of righteousness we worship Ahura Mazda, the Wise Lord, and the Amesha Spentas, the Bountiful Immortals, and the Holy Word, and the bright sun, the eye of Ahura Mazda.',
+          textVersions: {
+            malandra: 'Good thoughts, good words, good deeds — these we praise, these we choose, these we hold to. Of all good thoughts, words, and deeds, we now declare ourselves to be the offerers — and we renounce all evil thoughts, words, and deeds.',
+            avestan:  'humatanąm hūxtanąm huuarštanąm, yadacā aniiadacā vərəziiamnanąmcā vāuuərəzananąmcā, mahī aibī.jarətārō naēnaēstārō yaθana vohunąm mahī.',
+          },
+          entities: [
+            { word: 'Good thoughts, good words, good deeds', node: 'tradition-zoroastrianism', type: 'foundational-formula',
+              note: 'The triple-formula humata · hūxta · huvaršta ("good thoughts, good words, good deeds") is the most-cited single ethical-religious formula of Zoroastrianism — a comprehensive articulation of religious practice as the integration of inner intention, verbal expression, and external action all oriented toward asha (truth / righteousness). The formula structures Zoroastrian ethical-religious practice from the Younger Avestan period to the present and is recited as part of the daily Zoroastrian prayer cycle by Parsi and Iranian Zoroastrian communities. The formula\'s presentation in the Yasna Haptaŋhāiti (the seven-chapter ritual liturgy embedded in the broader Yasna) places it at the structural center of the daily Zoroastrian worship.',
+              parallels: [
+                { label: 'Bahá\'í Kitáb-i-Aqdas — the parallel inner-outer integration', textId: 'bahai-kitab-i-aqdas',
+                  note: 'The Bahá\'í Aqdas\' "twin duties" formula (recognition + obedience as inseparable inner-outer integration) operates the same structural-religious logic that humata-hūxta-huvaršta articulates for Zoroastrianism. Both texts treat religious life as the integration of inner-intention and outer-action; both refuse to privilege one over the other.' },
+                { label: 'Yasna 30 — the Old Avestan Gathic origin', textId: 'yasna-30',
+                  note: 'Yasna 30\'s Old Avestan articulation of the choice between truth (asha) and the lie (druj) is the foundational ethical-cosmological frame within which the humata-hūxta-huvaršta formula operates. The triple-formula is the practical-operational articulation of the broader Gathic ethical-cosmological framework.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+// ── ARDA VIRAF NAMAG — ZOROASTRIAN OTHERWORLD VISION (~9th c. CE) ────────────
+SCRIPTURE_TEXTS['arda-viraf-namag-1'] = {
+  id:         'arda-viraf-namag-1',
+  title:      'Ardā Vīrāf Nāmag — The Zoroastrian Otherworld Vision (~9th c. CE)',
+  shortTitle: 'Ardā Vīrāf Nāmag',
+  corpus:     'Avesta · Zoroastrian sacred corpus',
+  tradId:     'tradition-zoroastrianism',
+  date:       '~9th c. CE redaction (the Middle Persian text was redacted by the 9th-century Zoroastrian priestly community in response to the post-Sasanian Islamic conquest; the underlying narrative may preserve substantially older Iranian-religious materials)',
+  docNode:    'phase-4-086-arda-viraf-namag',
+  language:   'Middle Persian / Pahlavi · Fereydun Vahman 1986 English (Curzon Press, the canonical scholarly translation)',
+  translations: [
+    { id: 'vahman',     label: 'Fereydun Vahman 1986 (Curzon Press)', note: 'The canonical English scholarly translation, with the Middle Persian / Pahlavi text on facing pages and full critical apparatus.' },
+    { id: 'haug-west',  label: 'Martin Haug & E. W. West 1872 (The Book of Arda Viraf)', note: 'The classical 19th-century scholarly edition; historically important as the standard text before Vahman.' },
+    { id: 'pahlavi',    label: 'Middle Persian / Pahlavi (Jamasp-Asana critical edition 1897–1913)' },
+  ],
+  intro: 'The Ardā Vīrāf Nāmag ("Book of the Righteous Vīrāf") is the major Zoroastrian otherworld-vision text — a Middle Persian narrative redacted by the 9th-century Zoroastrian priestly community in which the righteous priest Vīrāf undertakes a seven-day spirit-journey under the guidance of two angelic powers (Srōš and Ādar) through the regions of heaven, the intermediate hamēstagān, and hell, observing the rewards of the just and the punishments of the wicked in detailed-graphic fashion. The work is significant in Codex Atlas terms as the most fully-articulated surviving Zoroastrian otherworld-vision text, as a major source for late-Sasanian and early-Islamic Zoroastrian eschatology, and as one of the closest comparable works in world literature to Dante\'s Divine Comedy (1308–1320), with which it shares structural elements: a guided spirit-journey, a stratified other-world, detailed observation of post-mortem moral consequences, and the ultimate return to ordinary life with religious-pedagogical purpose. Modern scholars (Vahman 1986, Russell 1990) have argued for indirect transmission from Islamicate-Iranian Mīʿrāj literature (which itself drew on Zoroastrian materials) into the broader Mediterranean otherworld-vision tradition that Dante consummated — making the Ardā Vīrāf Nāmag a potential distant ancestor of the Divine Comedy through extended textual transmission. The Vīrāf-narrative also documents the late-Sasanian Zoroastrian community\'s self-understanding in the period immediately after the Islamic conquest and the gradual displacement of Zoroastrianism as the Iranian state religion. Modern scholarship: Vahman 1986, Russell 1990, Gignoux 1984.',
+  crossTradition: [
+    { label: 'Bundahishn — the systematic Sasanian-Zoroastrian cosmological articulation', textId: 'bundahishn-1',
+      note: 'The Ardā Vīrāf Nāmag and the Bundahishn are the two great Middle Persian Zoroastrian theological-cosmological works of the 9th-century redactional period — the Bundahishn the systematic cosmological articulation, the Ardā Vīrāf Nāmag the narrative-eschatological visionary articulation. Reading them together documents the post-Sasanian Zoroastrian priestly community\'s comprehensive textual self-articulation in the face of Islamic political dominance.' },
+    { label: 'Bardo Thödol — the cross-tradition otherworld-guide parallel', textId: 'bardo-thodol',
+      note: 'The Ardā Vīrāf Nāmag and the Tibetan Bardo Thödol (the "Tibetan Book of the Dead," composed ~14th c. CE) are independent cross-tradition articulations of the otherworld-guide genre — texts that document the post-mortem journey of the soul and that function pedagogically to prepare the living for the after-death experience. The two texts are not in direct historical relation but document the cross-cultural recurrence of the otherworld-guide religious-textual form.' },
+    { label: 'Revelation 21 — the apocalyptic-otherworld vision tradition', textId: 'revelation-21',
+      note: 'The apocalyptic-otherworld vision tradition that includes Revelation 21 (the New Jerusalem vision) and the Ardā Vīrāf Nāmag emerges from the broader late-antique-Mediterranean religious-cultural environment in which heavenly-and-infernal vision-narrative became a major religious-textual form. The Iranian-Zoroastrian, Mediterranean-Christian, and (later) Islamic Mīʿrāj traditions all participate in the same broader religious-cultural conversation about post-mortem cosmology.' },
+  ],
+  sections: [
+    {
+      heading: 'I. Vīrāf\'s Departure for the Spirit-World',
+      verses: [
+        {
+          ref: 'Ardā Vīrāf Nāmag 2.7–17 (Vahman trans.)',
+          text: 'They prepared for Vīrāf a place where he might lie down, set apart from the people. They washed his head and body, gave him three cups of wine and mang (a sacred narcotic), and offered the prayers of the Yasna for his protection. Then Vīrāf laid himself down upon his bed, and the priests of the religion sang the holy words around him; his soul departed from his body and proceeded along the path of the heavenly judgement, and for seven days and nights it remained absent from the body, journeying through the regions of the just and the wicked.',
+          textVersions: {
+            vahman:  'They prepared for Vīrāf a place where he might lie down, set apart from the people. They washed his head and body, gave him three cups of wine and mang, and offered the prayers of the Yasna for his protection. Then Vīrāf laid himself down upon his bed, and his soul departed from his body and proceeded along the path of the heavenly judgement.',
+            pahlavi: 'پس آن دستوران آن شراب و من به اردا ویراف داشتند و او بخفت و روان از تن وی برفت و بر راه چینوت پل برفت و هفت روز و هفت شب بدان جا بود.',
+          },
+          entities: [
+            { word: 'his soul departed from his body and proceeded along the path of the heavenly judgement', node: 'tradition-zoroastrianism', type: 'eschatology',
+              note: 'The Zoroastrian post-mortem journey along the Chinvat ("Selector / Sorter") Bridge is the central eschatological structure of Iranian religion — the bridge that the soul must cross at death, on which the soul\'s past deeds appear in personified form (as a beautiful or hideous maiden — the daēna, the soul\'s religious self made visible) and either guide it across to the heavenly regions or fail to support it as it falls into the infernal regions. The Chinvat doctrine is one of the most-studied single eschatological structures in Indo-European comparative religion: it appears in Avestan literature from the Younger Avesta onward, is systematised in Pahlavi literature like the Ardā Vīrāf Nāmag and the Bundahishn, and provides one of the foundational eschatological structures from which subsequent Abrahamic eschatology (the Islamic sirāt, the Christian particular judgment, the Jewish kapporet vocabularies) was historically influenced through extended Iranian-Mediterranean religious transmission.',
+              parallels: [
+                { label: 'Bardo Thödol — the parallel otherworld-guide tradition', textId: 'bardo-thodol',
+                  note: 'The Tibetan Bardo Thödol\'s detailed presentation of the post-mortem journey of the soul through the bardo intermediate states is the closest cross-tradition genre-parallel to the Ardā Vīrāf Nāmag. Both texts function pedagogically: detailed knowledge of the after-death journey prepares the living to navigate it successfully when their own time comes.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+// ── BUNDAHISHN — THE SASANIAN-ZOROASTRIAN COSMOLOGICAL SYSTEM (~9th c. CE) ───
+SCRIPTURE_TEXTS['bundahishn-1'] = {
+  id:         'bundahishn-1',
+  title:      'Bundahishn — The Zoroastrian Book of Primal Creation (~9th c. CE redaction)',
+  shortTitle: 'Bundahishn',
+  corpus:     'Avesta · Zoroastrian sacred corpus',
+  tradId:     'tradition-zoroastrianism',
+  date:       '~9th c. CE redaction (the Middle Persian text was redacted in two versions — the Indian Bundahishn and the longer Greater/Iranian Bundahishn — by the 9th-century Zoroastrian priestly community drawing on older Avestan and Sasanian-period theological-cosmological materials)',
+  docNode:    'phase-4-107-bundahishn',
+  language:   'Middle Persian / Pahlavi · B. T. Anklesaria 1956 English (the canonical scholarly translation of the Greater Bundahishn) + E. W. West 1880 (Sacred Books of the East V)',
+  translations: [
+    { id: 'anklesaria', label: 'Behramgore T. Anklesaria 1956 (Bombay)', note: 'The standard Anglophone scholarly translation of the Greater (Iranian) Bundahishn; canonical reference for modern Zoroastrian-studies scholarship.' },
+    { id: 'west',       label: 'E. W. West 1880 (Sacred Books of the East V)', note: 'The classical 19th-century scholarly translation; methodologically dated but historically important.' },
+    { id: 'pahlavi',    label: 'Middle Persian / Pahlavi (Anklesaria critical text + TD2 manuscript)' },
+  ],
+  intro: 'The Bundahishn ("Original Creation" / "Primal Creation") is the major systematic theological-cosmological work of Zoroastrian Middle Persian literature, redacted in two versions — the shorter Indian Bundahishn preserved in the Indian Parsi community and the longer Greater / Iranian Bundahishn preserved in Iran — by the 9th-century Zoroastrian priestly community in the period following the Islamic conquest. The work synthesises older Avestan and Sasanian-period theological-cosmological materials into a comprehensive systematic articulation of Zoroastrian doctrine: the primal coexistence and absolute separation of Ohrmazd (Light) and Ahriman (Darkness); the cosmic-cosmological "mixing" period of the present age in which the two powers contend for the cosmos and for human allegiance; the eschatological Frashokereti ("Renewal") at which the cosmos will be purified and Ohrmazd\'s victory finalised. The Bundahishn also preserves detailed cosmological-geographical material (the seven kishvars or world-regions, the cosmic mountain Hara Berezaiti, the river Aredvī Sūrā, the great trees of the world), zoological-botanical lists, calendrical and astronomical material, and genealogies of the Iranian peoples. The work is one of the major late-Sasanian-to-early-Islamic Zoroastrian theological-systematic texts and the canonical reference for modern Zoroastrian-studies understanding of the religion\'s comprehensive doctrinal articulation. Modern scholarship: Anklesaria 1956, Boyce 1975–1991, Skjærvø 2011, Williams 1996.',
+  crossTradition: [
+    { label: 'Yasna 30 — the Old Avestan Gathic foundation of the dualist cosmology', textId: 'yasna-30',
+      note: 'The Bundahishn\'s elaborate cosmological dualism is the Sasanian-and-post-Sasanian systematic development of the foundational Two-Spirits doctrine of Yasna 30. The Yasna → Bundahishn transmission documents the 2,500-year development of Zoroastrian dualist theology from the Old Avestan poetic-oracular form to the Pahlavi systematic-doctrinal form.' },
+    { label: 'Genesis 1 — the cross-tradition creation-narrative parallel', textId: 'genesis-1',
+      note: 'The Bundahishn ("Original Creation") and Genesis 1 occupy structurally parallel positions in their respective religious traditions — the canonical creation-narrative of the tradition. The two texts diverge sharply in cosmological structure (Genesis 1 with one creator God, Bundahishn with the primal coexistence of Light and Darkness) but converge in genre-form: both are systematic articulations of the world\'s origin that organise the subsequent religious tradition\'s self-understanding.' },
+    { label: '1QS Two-Spirits doctrine — the parallel Jewish-apocalyptic dualism', textId: '1qs-community-rule',
+      note: 'The Qumran Two-Spirits doctrine is the Jewish-apocalyptic parallel to the Bundahishn\'s Zoroastrian cosmological dualism — both texts articulate two opposed cosmic principles, both treat the present age as a contested mixing period, both project an eschatological resolution. The shared structural-theological framework, combined with the historical Persian-Jewish contact through the Achaemenid period, has made the Qumran-Iranian comparative religion question one of the most-debated topics in Second-Temple-Jewish-studies.' },
+    { label: 'Šābuhragān — the Manichaean engagement with Zoroastrian cosmology', textId: 'shabuhragan-1',
+      note: 'Mani\'s Šābuhragān deliberately uses Zoroastrian religious vocabulary (Ohrmazd / Ahriman, the cosmic light-darkness struggle) to articulate Manichaean cosmology for the Sasanian court. Reading the Bundahishn and the Šābuhragān together documents the religious-rivalry context within which both works took shape — and the broader Sasanian-period environment in which Zoroastrian, Manichaean, Christian, and Jewish religious-philosophical traditions were in continuous dialogue and contestation.' },
+  ],
+  sections: [
+    {
+      heading: 'I. The Primal Separation of Light and Darkness',
+      verses: [
+        {
+          ref: 'Bundahishn 1.1–10 (Anklesaria trans.)',
+          text: 'It is thus revealed in the Good Religion: Ohrmazd, exalted by omniscience and goodness, was in the light above for unlimited time. The light is the all-space of Ohrmazd; some call it the endless light. Omniscience and goodness are eternally with Ohrmazd, and the religion is eternally with him. Ahriman, in darkness, with ignorance and a will to harm, was in the abyss; and his abode of darkness is the all-space of Ahriman; some call it the endless darkness. Between them was emptiness — that is, what is called the void. Both spirits were limited as to their inner being and unlimited as to their outer extent.',
+          textVersions: {
+            anklesaria: 'It is thus revealed in the Good Religion: Ohrmazd, exalted by omniscience and goodness, was in the light above for unlimited time. Ahriman, in darkness, with ignorance and a will to harm, was in the abyss; and his abode of darkness is the all-space of Ahriman; some call it the endless darkness. Between them was emptiness — that is, what is called the void.',
+            pahlavi:    'پیش از آغاز اوهرمزد در روشنایی بیکران بود. اهریمن در تاریکی بیکران در فرود بود. در میان ایشان تهیگی بود. هر دو روان از درون محدود و از بیرون نامحدود بودند.',
+          },
+          entities: [
+            { word: 'Ohrmazd, exalted by omniscience and goodness, was in the light above', node: 'ahura-mazda', type: 'deity',
+              note: 'Ohrmazd (Middle Persian form of Avestan Ahura Mazdā, "the Wise Lord") is the supreme principle of Zoroastrian theology — the absolute source of light, truth, goodness, and being. The Bundahishn\'s articulation of Ohrmazd as primordially-and-eternally separate from Ahriman represents the systematic cosmological-theological development of the Old Avestan Gathic articulation; the Sasanian Zurvanite heresy (which held that both Ohrmazd and Ahriman emerged from the prior Zurvan, infinite time) is implicitly rejected. The Bundahishn\'s Ohrmazd is the absolute starting-point of the Zoroastrian theological narrative, the source from which all good things derive, and the principle whose ultimate victory at the Frashokereti will purify the cosmos.',
+              parallels: [
+                { label: 'Yasna 30 — the Old Avestan Two-Spirits foundation', textId: 'yasna-30',
+                  note: 'The Bundahishn\'s elaborate Ohrmazd-Ahriman primordial separation is the systematic development of the Two-Spirits doctrine that Yasna 30 articulates in compact Old Avestan poetic form. Reading the two together documents the long-arc development of Iranian dualist theology from the Gathic poetic-oracular form to the systematic theological-cosmological form.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+// ── DENKARD — THE ZOROASTRIAN ENCYCLOPEDIA (~9th c. CE) ──────────────────────
+SCRIPTURE_TEXTS['denkard-1'] = {
+  id:         'denkard-1',
+  title:      'Dēnkard — The Zoroastrian Encyclopedia (~9th c. CE)',
+  shortTitle: 'Dēnkard',
+  corpus:     'Avesta · Zoroastrian sacred corpus',
+  tradId:     'tradition-zoroastrianism',
+  date:       '~9th c. CE (compiled by Ādurfarrobag-i Farrokhzadān and continued by Ādurbād-i Ēmēdān in the 9th-10th centuries CE; the most comprehensive surviving work of Middle Persian Zoroastrian literature, drawing on much older Avestan and Sasanian-period materials including substantial summaries of now-lost Avestan books)',
+  docNode:    'phase-5-062-denkard',
+  language:   'Middle Persian / Pahlavi · D. M. Madan 1911 critical Pahlavi edition + Edward W. West 1892–1897 Sacred Books of the East English (partial) + Shaul Shaked + Pahlavi Texts Online project',
+  translations: [
+    { id: 'west',     label: 'E. W. West 1892–1897 (Sacred Books of the East XXXVII + XLVII, partial)', note: 'The classical late-19th-century English partial translation of the Dēnkard; remains widely cited despite its methodological age.' },
+    { id: 'sanjana',  label: 'Peshotanji Behramji Sanjana 1874–1928 (19-volume Parsi edition, partial English translation)', note: 'The most extensive English partial translation of the Dēnkard; produced by the Bombay Parsi community over half a century.' },
+    { id: 'pahlavi',  label: 'Middle Persian / Pahlavi (Madan critical edition 1911 + Dresden facsimile 1966)' },
+  ],
+  intro: 'The Dēnkard ("Acts of the Religion") is the most comprehensive surviving work of Middle Persian Zoroastrian literature — a 9th-and-10th-century encyclopedia of Zoroastrian religion compiled by Ādurfarrobag-i Farrokhzadān and continued by Ādurbād-i Ēmēdān, drawing on substantially older Avestan and Sasanian-period materials including extensive summaries of now-lost Avestan books (the Stūdgar Nask, the Vahishtomanthra Nask, the Bāgh Nask, and others). Of the original nine books of the Dēnkard, books 3 through 9 survive (books 1 and 2 are lost); together they total roughly 170,000 words covering theological exposition, religious-legal opinion, philosophical reflection, polemical engagement with rival religious traditions (Islam, Manichaeism, Christianity, Judaism), summaries of the Avestan Nasks, and apologetic-philosophical defense of Zoroastrianism against Islamic philosophical challenges of the Abbasid period. The Dēnkard is the major intellectual response of the post-Sasanian Zoroastrian priestly community to the Islamic intellectual environment of the Abbasid period — comparable in genre and function to the contemporary Christian theological responses to Islam (John of Damascus\'s Exposition of the Orthodox Faith, c. 743), to the contemporary Jewish theological responses (Saadia Gaon\'s Beliefs and Opinions, 933), and to the broader 8th-10th-century cross-religious philosophical-theological dialogue that produced the Abbasid translation movement and the Greek-Arabic-Persian-Hebrew intellectual culture of medieval Iraq. Modern scholarship: Madan 1911, Shaked 1979, Williams 1990, de Menasce 1958.',
+  crossTradition: [
+    { label: 'Bundahishn — the parallel Middle Persian Zoroastrian theological-cosmological text', textId: 'bundahishn-1',
+      note: 'The Dēnkard and the Bundahishn are the two great 9th-century Middle Persian Zoroastrian theological-encyclopedic works. The Bundahishn focuses on cosmological-systematic articulation; the Dēnkard on encyclopedic-comprehensive articulation including extensive engagement with rival religious traditions. Reading the two together documents the post-Sasanian Zoroastrian priestly community\'s comprehensive intellectual-textual response to the Islamic intellectual environment.' },
+    { label: 'Al-Ghazali · Ihya — the Islamic intellectual counterpart', textId: 'sahih-muslim-1',
+      note: 'The Dēnkard\'s engagement with Islamic philosophical-theological challenges parallels the Islamic intellectual culture\'s engagement with prior religious-philosophical traditions in the Abbasid translation movement period. Reading the Dēnkard alongside the broader 8th-10th-century Islamic intellectual literature documents the cross-religious philosophical-theological dialogue that characterised the period — Zoroastrians, Christians, Jews, and Muslims all producing systematic theological-philosophical articulations in dialogue with each other.' },
+    { label: 'Yasna 30 — the Old Avestan foundational text', textId: 'yasna-30',
+      note: 'The Dēnkard repeatedly returns to Yasna 30 and the broader Gathic Avesta as its scriptural foundation. The 9th-century Dēnkard documents the survival of the Old Avestan tradition into the Middle Persian period and the systematic theological-encyclopedic development of the Old Avestan religious vision under conditions of post-Sasanian Iranian religious-political marginalisation.' },
+  ],
+  sections: [
+    {
+      heading: 'I. The Comprehensive Religious System',
+      verses: [
+        {
+          ref: 'Dēnkard III.190 (Madan numbering; West trans.)',
+          text: 'The religion of the Mazdayasnians has these characteristics: it teaches the worship of Ohrmazd as the sole supreme principle of goodness, the recognition of Ahriman as the principle of evil to be opposed, the cultivation of good thoughts, good words, and good deeds, the practice of justice and truthfulness, the fostering of marriage and the begetting of children, the support of the agricultural-economic order, the maintenance of ritual purity, the daily recitation of the Yasna, and the patient endurance of the present mixed age in expectation of the final Renewal at which Ohrmazd shall be the sole sovereign and all the wicked shall be transformed and joined to the good.',
+          textVersions: {
+            west: 'The religion of the Mazdayasnians has these characteristics: it teaches the worship of Ohrmazd as the sole supreme principle of goodness, the recognition of Ahriman as the principle of evil to be opposed, the cultivation of good thoughts, good words, and good deeds, the practice of justice and truthfulness, the fostering of marriage and the begetting of children, the support of the agricultural-economic order, the maintenance of ritual purity, the daily recitation of the Yasna, and the patient endurance of the present mixed age in expectation of the final Renewal.',
+          },
+          entities: [
+            { word: 'the final Renewal at which Ohrmazd shall be the sole sovereign', node: 'tradition-zoroastrianism', type: 'eschatology',
+              note: 'The Frashokereti ("Making Wonderful" / "Renewal") is the central eschatological event of Zoroastrian doctrine — the future moment at which the cosmic-cosmological mixing of light and darkness will be ended, Ahriman defeated and either annihilated or rendered powerless, the wicked transformed and joined to the good, the dead resurrected, the cosmos purified by molten metal, and Ohrmazd\'s sole sovereignty established forever. The Frashokereti doctrine has been one of the most-studied eschatological structures in comparative religion: it has direct structural parallels with the Christian eschaton (the resurrection of the dead, the final judgment, the new heaven and new earth), the Jewish messianic age, and the Islamic Yawm al-Qiyāmah. The historical scholarly question of how much the post-Achaemenid-period Jewish, Christian, and Islamic eschatologies were directly influenced by the Iranian-Zoroastrian Frashokereti tradition remains debated, but the structural-theological parallels are unmistakable.',
+              parallels: [
+                { label: 'Revelation 21 — the Christian eschatological-renewal parallel', textId: 'revelation-21',
+                  note: 'Revelation 21\'s "new heaven and new earth" and the broader Christian eschatological-renewal tradition share structural elements with the Zoroastrian Frashokereti: cosmic-cosmological purification, defeat of the evil principle, resurrection of the dead, final judgment, eternal restoration. The historical relationship between the two traditions is one of the most-studied questions in Second-Temple-period and late-antique comparative religion.' },
+                { label: '1QS Two-Spirits eschatological resolution', textId: '1qs-community-rule',
+                  note: 'The Qumran 1QS IV:18-23 eschatological-purification passage articulates a Jewish-apocalyptic version of the same Frashokereti-pattern of cosmic-eschatological renewal that the Dēnkard articulates for Zoroastrianism. The two texts together document the broader late-antique Eurasian religious-cosmological consensus on eschatological cosmic renewal as the resolution of the present age\'s contradictions.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+// ── KESH TEMPLE HYMN — EARLIEST DECIPHERABLE SUMERIAN HYMN (~2600 BCE) ───────
+SCRIPTURE_TEXTS['kesh-temple-hymn-1'] = {
+  id:         'kesh-temple-hymn-1',
+  title:      'Kesh Temple Hymn — The Earliest Decipherable Religious Composition (~2600 BCE)',
+  shortTitle: 'Kesh Temple Hymn',
+  corpus:     'Mesopotamian sacred corpus (Sumerian + Akkadian + Canaanite)',
+  tradId:     'tradition-egyptian-religion',
+  date:       '~2600 BCE Early Dynastic IIIa period (the surviving manuscript copies, found at Abu Salabikh and Tell Fara in southern Iraq, are among the oldest known literary compositions in any language; the underlying religious-textual material may be older still)',
+  docNode:    'phase-1-001-kesh-temple-hymn',
+  language:   'Old Sumerian (cuneiform; one of the earliest extensively-attested languages in human history) · Miguel Civil 1992 English (the canonical scholarly translation, ETCSL Oxford reference text)',
+  translations: [
+    { id: 'civil',   label: 'Miguel Civil 1992 (ETCSL c.4.80.2) + Black-Cunningham-Robson-Zólyomi 2004 (The Literature of Ancient Sumer)', note: 'The Electronic Text Corpus of Sumerian Literature (Oxford) provides the canonical Anglophone scholarly translation and Sumerian critical text.' },
+    { id: 'sumerian', label: 'Old Sumerian (Abu Salabikh + Tell Fara cuneiform tablets; Wilcke 2007 critical edition)' },
+  ],
+  intro: 'The Kesh Temple Hymn is one of the oldest known literary compositions in any human language — a Sumerian hymn celebrating the temple of the goddess Ninhursaĝ at Kesh, preserved in cuneiform tablets from the Early Dynastic IIIa period (c. 2600 BCE) found at Abu Salabikh and Tell Fara in southern Iraq. The hymn is roughly contemporary with the slightly older Pyramid Texts of Egypt and is among the earliest religious-literary documents that survive in fully-decipherable form. The text is structured as a series of doxological invocations of the temple of Kesh, with each section opening with a refrain ("Who can know it? Who can speak of it?") that emphasises the temple\'s transcendent quality. The hymn occupies a foundational position in the history of religious-textual culture: it documents a fully-developed religious-textual tradition already in literary form before the third millennium BCE, demonstrating the deep antiquity of literate religion in southern Mesopotamia. The Sumerian temple-hymn genre that the Kesh Hymn inaugurates becomes the canonical Mesopotamian religious-literary form, subsequently developed by Enheduanna (the world\'s first known named author, c. 2300 BCE) and continued for the next two millennia in the Sumerian and Akkadian literary traditions. Modern scholarship: Civil 1992, Wilcke 2007, Black-Cunningham-Robson-Zólyomi 2004 (Oxford anthology).',
+  crossTradition: [
+    { label: 'Enheduanna · Sumerian Temple Hymns + Inanna Hymns', textId: 'enheduanna-hymns-1',
+      note: 'The Kesh Temple Hymn (anonymous, c. 2600 BCE) inaugurates the Sumerian temple-hymn literary tradition that Enheduanna develops in her own named compositions (c. 2300 BCE — the first identified-author literary corpus in human history). The Kesh → Enheduanna progression documents the earliest 300-year development of Mesopotamian religious-literary culture.' },
+    { label: 'Pyramid Texts — the contemporary Egyptian religious-textual tradition', textId: 'pyramid-texts',
+      note: 'The Pyramid Texts (Egyptian, c. 2400 BCE) and the Kesh Temple Hymn (Sumerian, c. 2600 BCE) are the two oldest surviving religious-literary traditions in human history. Reading them together documents the emergence of fully-developed religious-textual culture in the two great river-valley civilisations of the late third millennium BCE.' },
+    { label: 'Enuma Elish — the later Akkadian cosmogonic tradition', textId: 'enuma-elish-1',
+      note: 'The Sumerian religious-literary tradition that the Kesh Temple Hymn inaugurates is the direct ancestor of the later Akkadian-Babylonian religious-cosmogonic tradition crystallised in the Enuma Elish (c. 1100 BCE). The 1,500-year Mesopotamian religious-literary development from the Kesh Hymn through Enheduanna to the Enuma Elish documents one of the longest continuous religious-literary traditions in human history.' },
+  ],
+  sections: [
+    {
+      heading: 'I. The Refrain — Who Can Know the Temple?',
+      verses: [
+        {
+          ref: 'Kesh Temple Hymn lines 1–10 (Civil ETCSL trans.)',
+          text: 'House, platform of the Land, important fierce bull, growing in the Mountain of Heaven and Earth, Kesh of all the lands! The bricks of which are mighty in their proper place. Founded by An: house of the Annunaki — who knows it? Who can speak of it? Bringing forth fruit, the city established by An, Kesh is the city to which An has sworn an oath, Ninhursaĝ has made splendid.',
+          textVersions: {
+            civil:    'House, platform of the Land, important fierce bull, growing in the Mountain of Heaven and Earth, Kesh of all the lands! The bricks of which are mighty in their proper place. Founded by An: house of the Annunaki — who knows it? Who can speak of it? Bringing forth fruit, the city established by An, Kesh is the city to which An has sworn an oath, Ninhursaĝ has made splendid.',
+            sumerian: 'e2 ku-bu kalam-ma am huš mah ḫur-saĝ an ki-bi ke3-eš-da kur-kur-ra mu-un-pad3-pad3-de3. sig4-bi den-lil2-le sig5-ga ki sikil-la galam ku-bi nu-zu nu-mu-un-zu',
+          },
+          entities: [
+            { word: 'who knows it? Who can speak of it?', node: 'tradition-egyptian-religion', type: 'doxological-refrain',
+              note: 'The refrain "Who knows it? Who can speak of it?" (Sumerian aba mu-un-zu? aba mu-un-pad3-de3?), repeated at multiple structural points throughout the hymn, articulates a foundational religious-poetic gesture: the temple\'s transcendent quality exceeds human capacity to know or speak of it. The rhetorical move is one of the earliest known articulations of the apophatic-religious sensibility — the recognition that the divine reality the temple manifests transcends the ordinary capacities of human cognition and language. The structural parallel with much later apophatic-mystical traditions (the Pseudo-Dionysian "divine darkness," the Buddhist neti-neti, the Christian via negativa, the Islamic Sufi ḥayrah) is striking — these later traditions articulate explicitly what the Kesh Temple Hymn enacts implicitly through the repeated unanswerable question.',
+              parallels: [
+                { label: 'Brihadaranyaka — neti-neti, the via-negativa parallel', textId: 'brihadaranyaka-neti-neti',
+                  note: 'The Bṛhadāraṇyaka Upaniṣad\'s neti-neti ("not this, not this") articulation of the unknowable Brahman is the canonical Indian-religious counterpart to the Kesh Temple Hymn\'s "Who can know it? Who can speak of it?" The two texts, separated by 2,000 years and radically different cultural traditions, deploy the same religious-rhetorical gesture: the divine reality exceeds human cognitive-linguistic capacity.' },
+                { label: 'Pseudo-Dionysius · Mystical Theology — the systematic apophatic articulation', textId: 'pseudo-dionysius-mystical-theology',
+                  note: 'Pseudo-Dionysius\'s systematic 6th-century articulation of the apophatic-mystical theology develops explicitly the religious-rhetorical move that the Kesh Temple Hymn enacts implicitly. The 3,200-year span from Kesh to Pseudo-Dionysius documents one of the longest-running religious-rhetorical traditions in human history.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+// ── ENHEDUANNA HYMNS — THE WORLD'S FIRST KNOWN NAMED AUTHOR (~2300 BCE) ──────
+SCRIPTURE_TEXTS['enheduanna-hymns-1'] = {
+  id:         'enheduanna-hymns-1',
+  title:      'The Hymns of Enheduanna — The World\'s First Identified-Author Literary Corpus (~2300 BCE)',
+  shortTitle: 'Enheduanna · Hymns',
+  corpus:     'Mesopotamian sacred corpus (Sumerian + Akkadian + Canaanite)',
+  tradId:     'tradition-egyptian-religion',
+  date:       '~2300 BCE (composed by Enheduanna, daughter of Sargon of Akkad, during her tenure as En-priestess of the moon-god Nanna at the Ekishnugal temple of Ur; the canonical Sumerian compositions Nin-me-šara, In-nin-šagur4-ra, and the Sumerian Temple Hymns)',
+  docNode:    'phase-1-003-enheduanna-hymns',
+  language:   'Sumerian (with significant Akkadian influence reflecting the Sargonic bilingual cultural environment) · Betty De Shong Meador 2000–2009 English (canonical scholarly poetic translations)',
+  translations: [
+    { id: 'meador',     label: 'Betty De Shong Meador 2000–2009 (Inanna, Lady of Largest Heart 2000 + Princess, Priestess, Poet 2009)', note: 'Meador\'s scholarly-poetic translations are the canonical Anglophone scholarly reference for Enheduanna; pair the Sumerian critical text with sophisticated literary translation.' },
+    { id: 'westenholz', label: 'Joan Goodnick Westenholz 1989 (philological foundation) + ETCSL Oxford c.4.07.2 + c.2.5.4.1', note: 'The Electronic Text Corpus of Sumerian Literature (Oxford) provides the standard scholarly Sumerian critical text and prose translation.' },
+    { id: 'sumerian',   label: 'Old Sumerian (Sjöberg-Bergmann critical edition 1969 for the Temple Hymns; Hallo-van Dijk 1968 for Nin-me-šara)' },
+  ],
+  intro: 'Enheduanna (c. 2300 BCE) is the first identified named author in human history — daughter of Sargon of Akkad (founder of the world\'s first known empire), appointed by her father as En-priestess of the moon-god Nanna at the Ekishnugal temple of Ur, and composer of several major Sumerian religious-literary works that survive under her name. The canonical Enheduanna corpus comprises the great hymn Nin-me-šara ("Lady of All the Me\'s") in praise of the goddess Inanna, the second great Inanna-hymn In-nin-šagur4-ra ("Lady of Largest Heart"), and the Sumerian Temple Hymns — a unified composition of 42 hymns to the major Sumerian-Akkadian temples that established the canonical literary form for Mesopotamian religious-literary tradition for the subsequent two millennia. Enheduanna\'s historical importance is triple: she is the first identified-author in human literary history, predating Homer by roughly 1,500 years; she crystallised the Mesopotamian temple-hymn literary form that the Kesh Temple Hymn had inaugurated a few centuries earlier; and her Inanna-hymns introduced the practice of personal-devotional religious literature — in Nin-me-šara she writes from her own experience of exile and political crisis, addressing Inanna as a personal divine patron, in a religious-literary mode that has no extant precursor and that became one of the great modes of subsequent religious literature. Modern scholarship: Meador 2000, 2009; Westenholz 1989; Hallo-van Dijk 1968; Roberta Binkley 2004.',
+  crossTradition: [
+    { label: 'Kesh Temple Hymn — the foundational Sumerian temple-hymn tradition Enheduanna develops', textId: 'kesh-temple-hymn-1',
+      note: 'The Kesh Temple Hymn (anonymous, c. 2600 BCE) inaugurates the Sumerian temple-hymn literary tradition that Enheduanna develops 300 years later in her Sumerian Temple Hymns — a unified 42-hymn composition that establishes the canonical form. Reading the two together documents the earliest 300-year development of identified-author literary culture in human history.' },
+    { label: 'Descent of Inanna — the canonical Inanna-mythological text Enheduanna engages', textId: 'descent-inanna',
+      note: 'Enheduanna\'s Inanna-hymns (Nin-me-šara, In-nin-šagur4-ra) engage with and develop the canonical Inanna-mythological tradition crystallised in the Descent of Inanna. The Enheduanna corpus and the Descent of Inanna together constitute the foundational textual matrix from which the entire subsequent Inanna → Ishtar → Astarte → Aphrodite → Mary Queen-of-Heaven transmission spine (documented in `feminine-divine-transmission` essay) emerges.' },
+    { label: 'Descent of Inanna — the canonical Inanna mythological text Enheduanna engages', textId: 'descent-inanna',
+      note: 'Enheduanna\'s Inanna-hymns are the headwater of the 5,500-year Queen-of-Heaven Feminine-Divine transmission spine — the cross-tradition lineage running Inanna → Ishtar → Asherah → Astarte → Aphrodite → Venus → Sophia → Mary Theotokos → Black Madonna documented in the canonical MASSIVE-WIN essay `feminine-divine-transmission.md`. The Enheduanna corpus is therefore one of the foundational textual documents in the entire Codex Atlas investigation of cross-tradition feminine-divine transmission.' },
+  ],
+  sections: [
+    {
+      heading: 'I. Nin-me-šara — Personal Devotion to Inanna',
+      verses: [
+        {
+          ref: 'Nin-me-šara lines 138–147 (Meador trans.)',
+          text: 'My queen, beloved of An, may I speak of your fury? Heap up flax for you, prepare the spindle. Like a swallow flown from the city, may I keep my distance from you. May I come into your presence — your dread, your fury — and stand before you as the one who you have known, the one whom you have lifted up from the dust. Pure Inanna! Holy lapis lazuli — yours is the breath, yours is the very life of the holy temple. Set your foot upon the rebellious land — let it be reduced, let it be silenced — for the heart of Inanna is restored to its place.',
+          textVersions: {
+            meador:   'My queen, beloved of An, may I speak of your fury? Heap up flax for you, prepare the spindle. Like a swallow flown from the city, may I keep my distance from you. May I come into your presence — your dread, your fury — and stand before you as the one whom you have lifted up from the dust. Pure Inanna! Holy lapis lazuli — yours is the breath, yours is the very life of the holy temple.',
+            sumerian: 'nin-mu nam u3-mu-ni-tar-ra-ba ka u3-mu-ne nin an-na ki-aĝ2 enmen muš₃ ša3-ge bi2-in-pad3 nin-mu zi-bi ḫe2-em-me za-e ma-ra-pad3-de3',
+          },
+          entities: [
+            { word: 'My queen, beloved of An', node: 'enheduanna', type: 'identified-author',
+              note: 'Nin-me-šara is the world\'s first-known first-person identified-author religious-devotional composition. Enheduanna\'s identification of herself by name at the end of the hymn ("Enheduanna spoke this song to you") and her articulation of her personal religious-political crisis (her exile from Ur during a rebellion against Sargonic rule, her appeal to Inanna for restoration) make this composition the inaugural example of two genres that have shaped subsequent religious literature: personal-devotional prayer-and-poem, and identified-author religious composition. The literary-historical importance is difficult to overstate — every subsequent religious composition that addresses a deity from a first-person identified-author perspective (the Hebrew Psalms attributed to David, the Greek hymns of Sappho and Pindar, the Christian Confessions of Augustine, Sufi-Persian Rumi, Carmelite Teresa, Catholic Bernard, every personal prayer-and-hymn tradition in subsequent religious history) participates in the literary-religious form that Enheduanna inaugurates.',
+              parallels: [
+                { label: 'Inanna — the goddess Enheduanna addresses', textId: 'descent-inanna',
+                  note: 'Inanna is the addressee of Enheduanna\'s great hymns and the canonical Mesopotamian deity that becomes the headwater of the cross-tradition Queen-of-Heaven Feminine-Divine transmission spine. Reading Enheduanna\'s hymns and the Descent of Inanna together documents the foundational Inanna religious-literary corpus.' },
+                { label: 'Psalm 22 — the parallel first-person devotional-distress prayer', textId: 'psalm-22',
+                  note: 'Psalm 22\'s "My God, my God, why have you forsaken me?" and Enheduanna\'s Nin-me-šara articulate the same first-person devotional-distress prayer-form 1,500 years apart. The two texts are not in direct historical relation but together document the long-running near-universal religious-literary form of "the individual sufferer\'s appeal to the deity."' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+// ── ERIDU GENESIS — THE SUMERIAN FLOOD NARRATIVE (~2100 BCE) ─────────────────
+SCRIPTURE_TEXTS['eridu-genesis-flood-1'] = {
+  id:         'eridu-genesis-flood-1',
+  title:      'The Eridu Genesis — The Sumerian Flood Narrative (~2100 BCE)',
+  shortTitle: 'Eridu Genesis',
+  corpus:     'Mesopotamian sacred corpus (Sumerian + Akkadian + Canaanite)',
+  tradId:     'tradition-egyptian-religion',
+  date:       '~2100 BCE Ur III period (the surviving Sumerian-language tablet, found at Nippur, preserves an older Sumerian narrative tradition that was subsequently elaborated in the Akkadian Atrahasis Epic and the Gilgamesh flood-tablet)',
+  docNode:    'phase-1-016-eridu-genesis-flood',
+  language:   'Old Sumerian (cuneiform; the Nippur tablet) · Thorkild Jacobsen 1981 English (canonical scholarly translation in the Journal of Biblical Literature)',
+  translations: [
+    { id: 'jacobsen', label: 'Thorkild Jacobsen 1981 (JBL 100, "The Eridu Genesis")', note: 'Jacobsen\'s canonical Anglophone scholarly translation in the Journal of Biblical Literature established the modern reading of the text.' },
+    { id: 'civil',    label: 'Miguel Civil 1969 + ETCSL c.1.7.4', note: 'Civil\'s earlier scholarly edition + the Electronic Text Corpus of Sumerian Literature\'s critical Sumerian text.' },
+    { id: 'sumerian', label: 'Old Sumerian (Nippur tablet CBS 10673; Civil critical edition)' },
+  ],
+  intro: 'The Eridu Genesis is the earliest surviving narrative of the great cosmic flood — a Sumerian-language composition preserved on a tablet from Nippur dating to the Ur III period (c. 2100 BCE) that records the divine decision to destroy humankind by flood, the warning given by the god Enki to the pious king Ziusudra ("life of long days"), Ziusudra\'s building of a boat and survival of the flood, and his post-flood reception of immortality from the gods. The text is the original of one of the most-traveled mythological narratives in human history: the same basic story reappears in the Akkadian Atrahasis Epic (where the survivor is named Atrahasis, "supremely wise"), in the Gilgamesh Epic Tablet XI (where the survivor is named Utnapishtim, "he found life"), in the Hebrew Bible flood narrative of Genesis 6–9 (where the survivor is Noah), in the Greek mythological flood of Deucalion, in the Vedic Manu and the flood, and in numerous other cross-tradition flood-narratives across the Mediterranean and Near Eastern world. The textual lineage from the Sumerian Eridu Genesis through the Akkadian Atrahasis to the Hebrew Genesis 6–9 is one of the most directly-traceable cross-cultural religious-textual transmissions in pre-modern world literature. Modern scholarship: Jacobsen 1981, Civil 1969, Lambert-Millard 1969 (Atrahasis), Finkel 2014 (The Ark Before Noah).',
+  crossTradition: [
+    { label: 'Atrahasis Epic — the Akkadian elaboration of the same flood narrative', textId: 'atrahasis-epic',
+      note: 'The Atrahasis Epic (Akkadian, c. 1700 BCE) is the major Akkadian-language elaboration of the Sumerian Eridu Genesis flood-narrative tradition. Reading the two together documents the Sumerian → Akkadian transition in Mesopotamian religious-literary tradition.' },
+    { label: 'Gilgamesh Tablet XI — the flood narrative in the Mesopotamian epic tradition', textId: 'gilgamesh',
+      note: 'The Gilgamesh Epic Tablet XI (Akkadian, c. 1200 BCE Standard Babylonian version) preserves the flood-narrative tradition in its most-developed Mesopotamian literary form, with the survivor renamed Utnapishtim. The textual-historical lineage from the Eridu Genesis through the Atrahasis Epic to Gilgamesh Tablet XI documents the 900-year Mesopotamian elaboration of the flood-narrative.' },
+    { label: 'Genesis 1 — the Hebrew Bible cosmological-creation framework', textId: 'genesis-1',
+      note: 'The Hebrew Bible flood narrative of Genesis 6–9 is the canonical Israelite-Jewish version of the same flood-narrative tradition the Eridu Genesis preserves in its original Sumerian form. The textual-historical relationship between the Mesopotamian and Hebrew flood traditions is one of the most-studied questions in Hebrew Bible scholarship; the structural-narrative parallels (divine decision to destroy humanity, warning to a righteous survivor, building of a boat, sending of birds to test for dry land, post-flood sacrifice) are unmistakable, while the Hebrew narrative theologically reworks the Mesopotamian materials within its monotheistic framework.' },
+  ],
+  sections: [
+    {
+      heading: 'I. Enki\'s Warning to Ziusudra',
+      verses: [
+        {
+          ref: 'Eridu Genesis lines 145–160 (Jacobsen trans.)',
+          text: 'A flood will sweep over the cult-centres, the destruction of the seed of mankind has been decided in the assembly of the gods. Ziusudra, standing at his side, heard it: "Stand by the wall, on my left side, the wall — let me speak a word to you, the words at the wall hold dear. Reverence of me has come to your ear: the storm shall sweep over all the cult-centres, the great flood shall sweep over them. A flood of seven days and seven nights, that will rage and crush, the mighty wind shall sweep over the cult-centres."',
+          textVersions: {
+            jacobsen: 'A flood will sweep over the cult-centres, the destruction of the seed of mankind has been decided in the assembly of the gods. Ziusudra, standing at his side, heard it: "Stand by the wall, on my left side, the wall — let me speak a word to you, the words at the wall hold dear."',
+            sumerian: 'a-ma-ru bara2-bara2-ge dul-dul-de3 numun nam-lu2-ulu3-bi ḫa-lam-e-de3 di-be di-ti-la dingir-re-e-ne-ka',
+          },
+          entities: [
+            { word: 'A flood will sweep over the cult-centres', node: 'enki-ea', type: 'narrative-element',
+              note: 'The flood-narrative\'s structural elements — divine decision to destroy humanity, sympathetic deity\'s warning to a righteous survivor, instruction to build a boat, the long flood, the survivor\'s emergence and post-flood sacrifice, divine recognition of the survivor with the gift of immortality (in the Mesopotamian forms) — are remarkably stable across the Sumerian, Akkadian, Hebrew, and broader cross-tradition versions. The Eridu Genesis preserves the earliest extant articulation of this narrative-structural pattern. The Hebrew Bible\'s reworking of the Mesopotamian materials in Genesis 6–9 preserves nearly all the structural elements while theologically transforming the polytheistic divine-council into a single God who acts unilaterally. The textual-historical lineage Eridu Genesis → Atrahasis → Gilgamesh XI → Genesis 6–9 documents one of the cleanest cross-tradition religious-textual transmissions in human history.',
+              parallels: [
+                { label: 'Atrahasis Epic — the Akkadian elaboration', textId: 'atrahasis-epic',
+                  note: 'The Atrahasis Epic preserves the same divine-decision-and-warning sequence the Eridu Genesis articulates, in expanded Akkadian-literary form. Reading the two together documents the Sumerian → Akkadian textual elaboration of the flood-narrative.' },
+                { label: 'Gilgamesh Tablet XI — the most-developed Mesopotamian flood narrative', textId: 'gilgamesh',
+                  note: 'Gilgamesh Tablet XI preserves the most-elaborated Mesopotamian literary form of the flood narrative, with Utnapishtim (the renamed Ziusudra/Atrahasis) recounting his flood-experience to the hero Gilgamesh. The Tablet XI version is the immediate textual precursor of the broader Mediterranean-and-Near-Eastern flood-narrative tradition.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+// ── BAAL CYCLE — UGARITIC WEST SEMITIC MYTHOLOGICAL CORPUS (~1400 BCE) ───────
+SCRIPTURE_TEXTS['baal-cycle-1'] = {
+  id:         'baal-cycle-1',
+  title:      'The Baal Cycle — The Ugaritic West Semitic Mythological Corpus (~1400 BCE)',
+  shortTitle: 'Baal Cycle',
+  corpus:     'Mesopotamian sacred corpus (Sumerian + Akkadian + Canaanite)',
+  tradId:     'tradition-egyptian-religion',
+  date:       '~14th c. BCE (the surviving Ugaritic tablets were composed at Ras Shamra on the Syrian coast during the Late Bronze Age, c. 1400–1200 BCE; the underlying West Semitic mythological tradition is substantially older)',
+  docNode:    'phase-1-013-baal-cycle',
+  language:   'Ugaritic (Northwest Semitic, written in a 30-character alphabetic cuneiform script — one of the earliest known alphabetic writing systems) · Mark S. Smith 1994 + Mark S. Smith & Wayne Pitard 2009 English (the canonical scholarly translations)',
+  translations: [
+    { id: 'smith',  label: 'Mark S. Smith 1994 (The Ugaritic Baal Cycle I) + Smith-Pitard 2009 (Vol. II)', note: 'The standard Anglophone scholarly translation and commentary in two volumes. Pairs the Ugaritic text with detailed commentary and full textual-critical apparatus.' },
+    { id: 'parker', label: 'Simon B. Parker ed. 1997 (SBL Writings from the Ancient World 9)', note: 'The Society of Biblical Literature scholarly anthology including the Baal Cycle alongside other Ugaritic narrative texts.' },
+    { id: 'ugaritic', label: 'Ugaritic (KTU 1.1–1.6 — Dietrich-Loretz-Sanmartín critical edition)' },
+  ],
+  intro: 'The Baal Cycle is the central mythological-religious narrative of Late Bronze Age Ugarit, preserved on a series of cuneiform tablets (KTU 1.1–1.6) discovered at Ras Shamra on the Syrian coast in 1929–1939. The text narrates the great mythological-cosmological struggle by which the storm-god Baal (West Semitic Baʿlu / Hadad) achieves his kingship over the divine pantheon and the inhabited world. The cycle has three major movements: (1) Baal\'s defeat of Yamm (Sea) — the chaoskampf victory by which the storm-god establishes order over the primordial waters; (2) the building of Baal\'s palace on Mount Sapan after his enthronement; (3) Baal\'s descent to and emergence from the underworld of Mot (Death), the cyclical seasonal-mythological pattern that links the deity\'s mythological-narrative to the agricultural-seasonal cycle of the West Semitic world. The Baal Cycle is the most important single surviving West Semitic religious-literary text and the primary textual source for understanding the religious environment from which Israelite religion emerged: the Israelite YHWHistic tradition\'s chaoskampf imagery (the LORD\'s defeat of Leviathan/Rahab/Yam in Pss 74, 89; Isa 27:1, 51:9-10; Job 26:12-13, 41), the prophetic polemic against Baal-worship (1 Kings 18 Elijah on Carmel), and even certain features of the Israelite divine-name traditions (the LORD as "rider on the clouds" — a transferred Baal epithet, Ps 68:4) all depend on the West Semitic religious-cultural environment the Baal Cycle documents. Modern scholarship: Smith 1994, Smith-Pitard 2009, Pardee 2002, Day 1985 (chaoskampf).',
+  crossTradition: [
+    { label: '1 Kings 18 (Elijah on Carmel) — the Hebrew Bible polemical encounter', textId: '1-kings-18-elijah',
+      note: 'The Hebrew Bible\'s polemical engagement with Baal-worship — most-dramatically in 1 Kings 18\'s Elijah-on-Carmel narrative — presupposes the West Semitic religious-cultural environment that the Baal Cycle documents. The Baal Cycle and 1 Kings 18 together document one of the most-studied religious-historical encounters: the long Iron Age engagement between emergent Israelite YHWHism and West Semitic Baal-religion.' },
+    { label: 'Genesis 1 — the chaoskampf-influenced Hebrew creation narrative', textId: 'genesis-1',
+      note: 'The Hebrew Bible\'s chaoskampf imagery (the LORD\'s defeat of Leviathan/Rahab/Yam in Pss 74, 89; Isa 27:1, 51:9-10; Job 26 and 41) preserves traces of the West Semitic divine-combat tradition the Baal Cycle articulates in its developed form. The Genesis 1 creation narrative, while theologically reworking the polytheistic chaoskampf into a monotheistic framework, still retains structural traces of the storm-god-defeats-sea-monster pattern (the spirit of God hovering over the waters, the separation of the waters above and below the firmament, the creation by divine speech rather than divine combat).' },
+    { label: 'Enuma Elish — the Babylonian chaoskampf parallel', textId: 'enuma-elish-1',
+      note: 'The Babylonian Enuma Elish\'s narrative of Marduk\'s defeat of Tiamat and establishment of kingship over the cosmos is the closest cross-Mesopotamian-and-West-Semitic structural parallel to the Baal Cycle. Reading the two together documents the broader Near Eastern chaoskampf religious-mythological tradition — the storm-god\'s defeat of the chaos-sea-monster as the foundational mythological pattern of the ancient Near East.' },
+  ],
+  sections: [
+    {
+      heading: 'I. Baal\'s Victory Over Yamm',
+      verses: [
+        {
+          ref: 'KTU 1.2 iv 23–32 (Smith trans.)',
+          text: 'And the bludgeon danced in the hand of Baal, like a vulture from his fingers. It struck the skull of Prince Yamm, between the eyes of Judge River. Yamm collapsed and fell to the earth; his joints did quiver, and his frame did collapse. Baal would rend, would drink down Yamm; would put an end to Judge River. By name shouted the maiden Anat: "Scatter him, O Mighty Baal! Scatter him, O Rider on the Clouds! For now is our Prince our Lord, the Power, our King over us — to whom no one is comparable."',
+          textVersions: {
+            smith:    'And the bludgeon danced in the hand of Baal, like a vulture from his fingers. It struck the skull of Prince Yamm, between the eyes of Judge River. Yamm collapsed and fell to the earth. Baal would rend, would drink down Yamm; would put an end to Judge River.',
+            ugaritic: 'wymġy ʾaqht. ġzr.wʿrk ʾqht ġzr.ymtḫṣ. ʿz.ʾym.wyl ʾym.wyql.lʾarṣ.ymġy.bʿl.kʾny ymġy.bʿl.kʾny ʾym kḫr.km',
+          },
+          entities: [
+            { word: 'It struck the skull of Prince Yamm', node: 'baal', type: 'chaoskampf',
+              note: 'The defeat of Yamm (Sea) by Baal in KTU 1.2 is the canonical West Semitic articulation of the chaoskampf — the storm-god\'s defeat of the chaos-sea-monster that establishes cosmic order. The mythological structure is one of the most-recurrent religious-narrative patterns of the ancient Near East: Mesopotamian Marduk-vs-Tiamat (Enuma Elish), Hittite Storm-God-vs-Illuyanka, Indian Indra-vs-Vṛtra, Greek Zeus-vs-Typhoeus, and within the Hebrew Bible itself the YHWH-vs-Leviathan/Rahab/Yam tradition documented in Pss 74, 89; Isa 27:1, 51:9–10; Job 26:12–13, 41. The Watkins-1995 PIE reconstruction *gʷhen- h₃gʷhi- ("slay the serpent") proposes that the chaoskampf-formula descends from a common Proto-Indo-European mythological-poetic formula that has near-cognates in Indo-Iranian, Greek, and Germanic poetic traditions — making the Baal Cycle the most-fully-developed West Semitic articulation of one of the deepest religious-mythological-poetic traditions in human history.',
+              parallels: [
+                { label: 'Enuma Elish — the Babylonian chaoskampf', textId: 'enuma-elish-1',
+                  note: 'The Babylonian Enuma Elish\'s Marduk-vs-Tiamat combat is the most-fully-developed Mesopotamian articulation of the same chaoskampf pattern the Baal Cycle articulates for the West Semitic world. The two texts, separated by roughly 200 years and by distinct religious-cultural traditions, articulate the same foundational mythological pattern.' },
+                { label: 'Psalm 82 — the divine-council judgment scene', textId: 'psalm-82',
+                  note: 'Psalm 82\'s vision of the LORD judging the lesser gods of the divine council preserves traces of the broader Near Eastern divine-council and chaoskampf religious-mythological framework that the Baal Cycle documents. Reading the Baal Cycle and Psalm 82 together documents the Hebrew Bible\'s preservation-and-transformation of the West Semitic religious environment from which it emerged.' },
+                { label: '1 Kings 18 — the polemical encounter with Baal-religion', textId: '1-kings-18-elijah',
+                  note: '1 Kings 18\'s Elijah-on-Carmel narrative is the canonical Hebrew Bible polemical engagement with the Baal-religion the Baal Cycle articulates. Reading the two together documents the long-running Iron Age engagement between emergent Israelite YHWHism and West Semitic Baal-religion.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
 
 
 
