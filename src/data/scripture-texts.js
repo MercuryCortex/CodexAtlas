@@ -877,6 +877,69 @@ SCRIPTURE_TEXTS['tao-te-ching-1'] = {
   ]
 };
 
+// ── TAO TE CHING — CHAPTER 11 (THE USEFULNESS OF EMPTINESS) ──────────────────
+SCRIPTURE_TEXTS['tao-te-ching-11'] = {
+  id:         'tao-te-ching-11',
+  title:      'Tao Te Ching — Chapter 11: The Usefulness of Emptiness',
+  shortTitle: 'Tao Te Ching 11',
+  corpus:     'Daoist · Classical Chinese',
+  tradId:     'tradition-daoism',
+  date:       'c. 4th–3rd century BCE (attributed to Laozi)',
+  docNode:    'phase-2-014-daodejing',
+  language:   'Classical Chinese · James Legge translation (1891)',
+  translations: [
+    { id: 'legge',   label: 'Legge (1891)',  note: 'James Legge, The Texts of Taoism — public domain scholarly English' },
+    { id: 'mitchell',label: 'Mitchell (1988)', note: 'Stephen Mitchell rendering — modern poetic English (T2)' },
+    { id: 'chinese', label: 'Chinese',       note: 'Wang Bi recension — standard Classical Chinese with pinyin' },
+  ],
+  intro: 'Chapter 11 is the Tao Te Ching\'s most concrete teaching on the productive power of emptiness. Three everyday examples — a wheel, a vessel, a room — show that what is USEFUL in each is precisely what is NOT there: the hollow at the hub, the hollow inside the clay, the hollow of doors and windows. The teaching reverses ordinary perception: we credit the material (the spokes, the clay, the walls) but the actual function depends on what was carved away. This is the Taoist parallel to the Buddhist śūnyatā (emptiness as the condition of phenomena) and to the Hermetic / apophatic insight that the Divine is precisely the no-thing from which all things emerge. The line "profit comes from what is there; usefulness from what is not there" is one of the most quoted in world philosophy.',
+  crossTradition: [
+    { label: 'Heart Sutra — form is emptiness, emptiness is form', textId: 'heart-sutra',
+      note: 'The Heart Sutra\'s "form is emptiness; emptiness is form" and Tao 11\'s "profit from being, usefulness from non-being" are the same insight in different vocabularies. The Buddhist śūnyatā and the Daoist wú (non-being) are not nihilistic categories but functional ones: the empty hub is what lets the wheel turn; emptiness of inherent existence is what lets form appear.' },
+    { label: 'Genesis 1:2 — the formless void as the substrate of creation', textId: 'genesis-1',
+      note: 'Tōhū wā-bōhū (formless and void) precedes God\'s creative speech — the Hebrew cosmogonic insight that emptiness is the precondition of form. Same structural position as the empty wheel-hub from which usefulness arises: the void is not nothing, it is the field that enables.' },
+    { label: 'CH XI — God as the boundless that contains all', textId: 'corpus-hermeticum-11',
+      note: 'CH XI.6: "If you grasp this, that there is nothing impossible for you... think there is nothing you cannot do." The Hermetic divine is boundless precisely because it is no-thing in particular — same logic as Tao 11\'s vessel: usefulness comes from what is NOT specified.' },
+    { label: 'Nasadiya Sukta — neither existence nor non-existence', textId: 'nasadiya-sukta',
+      note: 'The Vedic refusal to assign the primordial state to either existence or non-existence parallels Tao 11\'s teaching that being and non-being are mutually constitutive. The wheel\'s function is neither in the spokes alone nor in the hollow alone — it is in their mutual dependence.' },
+  ],
+  sections: [
+    {
+      heading: 'Three Images of Productive Emptiness',
+      verses: [
+        { ref: 'Ch. 11 (full)',
+          text: 'Thirty spokes share the hub of a wheel — but it is the empty space at the centre that makes the wheel useful.\nShape clay into a vessel — but it is the empty hollow within that makes the vessel useful.\nCut doors and windows for a room — but it is the empty spaces that make the room useful.\nTherefore: profit comes from what is there; usefulness from what is not there.',
+          textVersions: {
+            legge:    'The thirty spokes unite in the one nave; but it is on the empty space (for the axle), that the use of the wheel depends. Clay is fashioned into vessels; but it is on their empty hollowness, that their use depends. The door and windows are cut out (from the walls) to form an apartment; but it is on the empty space (within), that its use depends. Therefore, what has a (positive) existence serves for profitable adaptation, and what has not that for (actual) usefulness.',
+            mitchell: 'We join spokes together in a wheel,\nbut it is the center hole\nthat makes the wagon move.\nWe shape clay into a pot,\nbut it is the emptiness inside\nthat holds whatever we want.\nWe hammer wood for a house,\nbut it is the inner space\nthat makes it livable.\nWe work with being,\nbut non-being is what we use.',
+            chinese:  '三十輻，共一轂，當其無，有車之用。\n埏埴以為器，當其無，有器之用。\n鑿戶牖以為室，當其無，有室之用。\n故有之以為利，無之以為用。\n\nsān shí fú, gòng yì gǔ, dāng qí wú, yǒu chē zhī yòng.\nshān zhí yǐ wéi qì, dāng qí wú, yǒu qì zhī yòng.\nzáo hù yǒu yǐ wéi shì, dāng qí wú, yǒu shì zhī yòng.\ngù yǒu zhī yǐ wéi lì, wú zhī yǐ wéi yòng.\n\n[Thirty spokes share one hub — at its non-being (wú), exists the cart\'s use]\n[Knead clay to make a vessel — at its non-being, exists the vessel\'s use]\n[Cut doors-windows to make a room — at its non-being, exists the room\'s use]\n[Therefore: being (yǒu) serves as profit (lì); non-being (wú) serves as use (yòng)]\n\nNote: wú (無) = "not, no, non-being" — paired with yǒu (有 = being, having). The chapter\'s pivot is wú zhī yǐ wéi yòng — "non-being is what is used." Not absence as deficiency but absence as functional condition.',
+          },
+          entities: [
+            { word: 'empty space at the centre', node: 'apophatic-mysticism', type: 'concept',
+              note: 'The wheel-hub example (三十輻共一轂) is the Tao Te Ching\'s most concrete demonstration that wú (non-being) is not deficiency but operative principle. The thirty spokes converge at a single empty point; without that emptiness the wheel cannot rotate. This is the same logic underlying every apophatic theology: the Divine is "no-thing" not because it is absent but because it is the operative ground that enables all things to be. Pseudo-Dionysius calls this the "super-essential darkness"; Meister Eckhart calls it "the desert of the Godhead"; the Mahayana calls it śūnyatā.',
+              parallels: [
+                { label: 'Heart Sutra — śūnyatā as the condition of phenomena', textId: 'heart-sutra',
+                  note: 'The Mahayana śūnyatā is the philosophical articulation of what Tao 11 shows through everyday examples: emptiness is what allows things to function as what they are. Form is empty (of inherent existence) and that emptiness IS form (its mode of appearing).' },
+                { label: 'Genesis 1:2 — the formless void', textId: 'genesis-1',
+                  note: 'Tōhū wā-bōhū as the cosmogonic substrate is the Hebrew version of the wheel-hub principle: the formless precedes and enables the formed. Creation works ON the void, not against it.' },
+              ]
+            },
+            { word: 'profit comes from what is there; usefulness from what is not there', node: 'tradition-daoism', type: 'principle',
+              note: 'The closing aphorism (故有之以為利，無之以為用) is one of the most quoted lines in world philosophy. It splits reality into two interdependent registers: yǒu (being, having, the material/positive) provides "profit" (lì) — the substrate; wú (non-being, emptiness, the negative/spacious) provides "use" (yòng) — the function. Neither alone suffices. This is the structural foundation for Daoist political philosophy (the wise ruler creates space rather than imposing presence), for Daoist aesthetics (the unpainted space in a Chinese landscape IS the painting), and for Daoist practice (wu wei is not inaction but acting from the empty centre).',
+              parallels: [
+                { label: 'CH XI — boundlessness as the source of all capacity', textId: 'corpus-hermeticum-11',
+                  note: 'Hermetic teaching that the divine is boundless precisely because it is no-particular-thing parallels the Daoist principle that the empty hub enables every spoke. The unlimited is generative; the specified is limited.' },
+                { label: 'Nasadiya Sukta — that One Thing beyond categories', textId: 'nasadiya-sukta',
+                  note: 'Vedic refusal to categorize the primordial as either existing or non-existing is the cosmogonic version of Tao 11\'s functional teaching: the most generative is precisely what cannot be pinned to a single side of the being / non-being dichotomy.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
 // ── CORPUS HERMETICUM I — THE POIMANDRES ─────────────────────────────────────
 SCRIPTURE_TEXTS['poimandres'] = {
   id:         'poimandres',
@@ -3216,7 +3279,69 @@ SCRIPTURE_TEXTS['heart-sutra'] = {
       ]
     },
     {
-      heading: 'II. The Mantra Beyond Understanding',
+      heading: 'II. The Radical Negation',
+      verses: [
+        {
+          ref: 'Heart Sutra §6',
+          text: 'There is no realm of sight, and so on, up to no realm of consciousness. There is no ignorance, and no ending of ignorance, and so on, up to no aging and death, and no ending of aging and death. There is no suffering, no origin of suffering, no cessation, no path. There is no wisdom and no attainment, because there is nothing to attain.',
+          textVersions: {
+            conze:    'There is no ignorance, no extinction of ignorance... no decay and death, no extinction of decay and death. There is no suffering, no origination, no stopping, no path. There is no cognition, no attainment, and no non-attainment.',
+            'red-pine': 'No realm of sight... no realm of consciousness; no ignorance or end of ignorance... no old age and death or end of old age and death; no suffering, no source, no relief, no path; no knowledge, no attainment and no non-attainment.',
+            sanskrit: 'na vidyā nāvidyā na vidyākṣayo nāvidyākṣayo yāvan na jarāmaraṇaṃ na jarāmaraṇakṣayo. na duḥkhasamudayanirodhamārgā na jñānaṃ na prāptir nāprāptiḥ.',
+          },
+          entities: [
+            { word: 'no suffering, no origin of suffering, no cessation, no path', node: 'tradition-mahayana-buddhism', type: 'concept',
+              note: 'The most radical move in the Heart Sutra: it negates the Four Noble Truths themselves — the foundational Buddhist teaching. This is not a rejection of the Four Truths but a higher-order claim: at the level of ultimate emptiness, even the framework of suffering / cause / cessation / path is empty of inherent existence. The Four Truths remain perfectly valid as a relative teaching for conventional consciousness; they dissolve only at the level of prajñāpāramitā where there is no separate self to suffer and no separate path to traverse. The structural parallel to Meister Eckhart\'s "praying God to free me of God" (Sermon 52) is exact: the deepest religious move is to negate even the religion that brought you here.',
+              parallels: [
+                { label: 'Gospel of Thomas L.42 — "Be passers-by"', textId: 'gospel-of-thomas',
+                  note: 'Thomas\'s injunction to be passers-by (genesthe parerchomenoi) is the Christian-mystical version of the same move: do not cling even to the path. The Buddhist negation of the Eightfold Path AS a thing-to-cling-to and the Thomasine "passing by" are cognate insights.' },
+                { label: 'Job 38 — YHWH\'s questions dissolve Job\'s framework', textId: 'job-38',
+                  note: 'YHWH\'s whirlwind speech does not answer Job\'s theological questions — it dissolves the framework in which they were asked. Same apophatic move as the Heart Sutra\'s dissolution of the Four-Truths framework: the highest answer is the unmaking of the question.' },
+              ]
+            },
+            { word: 'there is nothing to attain', node: 'apophatic-mysticism', type: 'concept',
+              note: 'na prāptir nāprāptiḥ — "no attainment, no non-attainment." The double negation is the technical apophatic move: even the category "non-attainment" must be negated, otherwise it becomes its own subtle goal. The bodhisattva path culminates not in arrival but in the recognition that the path-and-goal structure was always a provisional teaching. The Hermetic parallel: gnosis is not knowledge OF something separate; gnosis is the recognition that the seeker IS what was sought.',
+              parallels: [
+                { label: 'CH XIII — "You ARE what you have become"', textId: 'corpus-hermeticum-13',
+                  note: 'The Hermetic rebirth dialogue ends with Tat\'s recognition that he IS the rebirth he sought — not that he attained something separate. Same logic as the Heart Sutra\'s "nothing to attain": the seeker discovers they were never separate from the goal.' },
+                { label: 'Chandogya 6.2 — tat tvam asi', textId: 'chandogya-621',
+                  note: 'The Upanishadic "that thou art" makes the same move in the Advaita key: Atman = Brahman was never the case for attaining; it was the case from the beginning. The Heart Sutra\'s "no attainment" and the Chandogya\'s tat tvam asi are the same insight in different philosophical vocabularies.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'III. The Bodhisattva\'s Fearlessness',
+      verses: [
+        {
+          ref: 'Heart Sutra §7',
+          text: 'Therefore, Śāriputra, because the bodhisattvas have no attainment, they rely on the Perfection of Wisdom — and their minds are without obstruction. Without obstruction, there is no fear. Far from every inverted view, every dream-state, they realize complete nirvāṇa. All the buddhas of the three times — past, present, and future — rely on the Perfection of Wisdom and so attain the highest, perfect awakening.',
+          textVersions: {
+            conze:    'Therefore, Śāriputra, owing to a Bodhisattva\'s indifference to any kind of personal attainment, and through his having relied on the perfection of wisdom, he dwells without thought-coverings. In the absence of thought-coverings he has not been made to tremble, he has overcome what can upset, and in the end he attains to Nirvana.',
+            'red-pine': 'Without attainment, bodhisattvas take refuge in Prajnaparamita and live without walls of the mind. Without walls of the mind and thus without fears, they see through delusions and finally nirvana. All buddhas past, present, and future also take refuge in Prajnaparamita and realize unexcelled, perfect enlightenment.',
+            sanskrit: 'tasmāc Chāriputra aprāptitvād bodhisattvasya prajñāpāramitām āśritya viharati acittāvaraṇaḥ. cittāvaraṇanāstitvād atrasto viparyāsātikrānto niṣṭhā nirvāṇaṃ.',
+          },
+          entities: [
+            { word: 'without obstruction, there is no fear', node: 'tradition-mahayana-buddhism', type: 'concept',
+              note: 'a-citta-āvaraṇa = without mind-obstruction. The bodhisattva\'s mind has no walls because there is no separate "self" to defend, no fixed "attainment" to protect. From this absence of obstruction comes a-trasta — fearlessness. This is one of the most psychologically precise teachings in the canon: fear arises from the mind\'s walls (the constructed self defending its constructed goals); when the walls are recognized as empty, fear has no architecture to live in. The parallel to 1 John 4:18 ("perfect love casts out fear") is structural: in both, fear is dissolved by a higher recognition, not by suppression.',
+              parallels: [
+                { label: '1 John 4:18 — perfect love casts out fear', textId: '1-john-4',
+                  note: 'The Johannine "perfect love casts out fear" (teleia agapē exō ballei ton phobon) and the Heart Sutra\'s "no obstruction → no fear" are the same psychology: fearlessness is the natural fruit of a particular kind of consciousness, not a virtue cultivated separately.' },
+                { label: 'Bhagavad Gita — the steady mind beyond fear', textId: 'bhagavad-gita-4',
+                  note: 'The Gita\'s sthitaprajña (one of steady wisdom) is fearless because identification with the changeable body-mind has been seen through. Same logic as the bodhisattva\'s fearlessness: the architecture of fear collapses when its substrate is seen as empty.' },
+              ]
+            },
+            { word: 'all the buddhas of the three times', node: 'tradition-mahayana-buddhism', type: 'concept',
+              note: 'The three times (try-adhva) — past, present, future — are themselves part of the conventional framework being negated. The line "all buddhas of the three times rely on prajñāpāramitā" is doing double work: (1) authorizing the teaching by appeal to universal buddhic precedent; (2) quietly noting that even "past / present / future" is a conventional framing — the Perfection of Wisdom is timeless, available now, not located somewhere along the time-line. The same paradox runs through John 8:58 ("before Abraham was, I AM") and the Vedantic claim that Brahman is sarva-kāla — all-times, beyond time.',
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'IV. The Mantra Beyond Understanding',
       verses: [
         {
           ref: 'Heart Sutra §8–9',
@@ -3262,46 +3387,278 @@ SCRIPTURE_TEXTS['dhammapada-1'] = {
   ],
   sections: [
     {
-      heading: 'I. Mind as the Forerunner',
+      heading: 'I. Mind as the Forerunner (Dhp 1–2)',
       verses: [
         {
-          ref: 'Dhp 1:1–2',
-          text: 'Mind is the forerunner of all actions. All deeds are led by mind, created by mind. If one speaks or acts with a corrupt mind, suffering follows as the wheel follows the hoof of an ox.\n\nMind is the forerunner of all actions. All deeds are led by mind, created by mind. If one speaks or acts with a serene mind, happiness follows like a shadow that never departs.',
+          ref: 'Dhp 1',
+          text: 'Mind is the forerunner of all actions. All deeds are led by mind, created by mind. If one speaks or acts with a corrupted mind, suffering follows as the wheel follows the hoof of the ox that draws the cart.',
           textVersions: {
-            buddharakkhita: 'Mind is the forerunner of all actions. All deeds are led by mind, created by mind. If one speaks or acts with a corrupt mind, suffering follows, as the wheel follows the hoof of an ox... If one speaks or acts with a serene mind, happiness follows, as a shadow that never departs.',
-            thanissaro:     'Phenomena are preceded by the heart, ruled by the heart, made of the heart. If you speak or act with a corrupted heart, then suffering follows you — as the wheel of the cart, the track of the ox that pulls it... If you speak or act with a calm, bright heart, then happiness follows you, like a shadow that never leaves.',
-            pali:           'Manopubbañgamā dhammā manoseṭṭhā manomayā· manasā ce paduṭṭhena bhāsati vā karoti vā tato naṃ dukkhaṃ anveti cakkaṃ va vahato padaṃ',
+            buddharakkhita: 'Mind precedes all mental states. Mind is their chief; they are all mind-wrought. If with an impure mind a person speaks or acts, suffering follows him like the wheel that follows the foot of the ox.',
+            thanissaro:     'Phenomena are preceded by the heart, ruled by the heart, made of the heart. If you speak or act with a corrupted heart, then suffering follows you — as the wheel of the cart, the track of the ox that pulls it.',
+            pali:           'Manopubbaṅgamā dhammā manoseṭṭhā manomayā · manasā ce paduṭṭhena bhāsati vā karoti vā · tato naṃ dukkhaṃ anveti cakkaṃ va vahato padaṃ.',
           },
           entities: [
             { word: 'Mind is the forerunner', node: 'nous-hermetic', type: 'concept',
               note: 'The Pali word mano (mind/heart/intention) as the "forerunner" (pubbaṅgama) of all actions is the Buddhist psychological claim that corresponds to the Hermetic cosmological claim about Nous. In the Hermetic system, Nous precedes and generates the cosmos; in the Dhammapada, mano precedes and generates all personal experience. The Hermetic macrocosm-microcosm principle (as above, so below) connects both claims: the same Mind that creates the universe creates personal reality when it operates through individual consciousness.',
               parallels: [
-                { label: 'Poimandres — Nous as the first creative principle', textId: 'poimandres', note: 'CH I opens with Nous appearing to Hermes and declaring itself the first principle of all things. The Dhammapada\'s "mano is the forerunner of all actions" and Poimandres\' "I am Nous, the first God" are the same claim at different scales: the Mind that generates the cosmos also generates personal experience.' },
-                { label: 'Bhagavad Gita — consciousness before action', textId: 'bhagavad-gita-4', note: 'The Gita\'s teaching on the quality of consciousness in action (nishkama karma — desireless action) and the Dhammapada\'s teaching on the quality of mind (pure/corrupt) as determining the quality of consequence are the same teaching from adjacent Indian traditions.' },
-              ]
-            },
-            { word: 'shadow that never departs', node: 'tradition-theravada-buddhism', type: 'concept',
-              note: 'The shadow-image for happiness following a pure mind is one of the most precise similes in the Pali canon: a shadow cannot be separated from what casts it; it goes where you go; it is always the same shape as you. Happiness arising from a pure mind is not a reward that follows later — it is the immediate, inseparable quality of that very mind. This parallels the Hermetic teaching that gnosis IS the good, not a path TO the good.',
-              parallels: [
-                { label: 'Gospel of Thomas — the Kingdom is already here', textId: 'gospel-of-thomas', note: 'Thomas L.3: "The Kingdom is inside you and outside you." The Heart Sutra\'s śūnyatā, the Dhammapada\'s happiness-as-shadow, and the Thomasine Kingdom-already-present are all the same claim: the goal is not reached by going somewhere but by being what you already are.' },
+                { label: 'Poimandres — Nous as the first creative principle', textId: 'poimandres', note: 'CH I opens with Nous appearing to Hermes and declaring itself the first principle of all things. The Dhammapada\'s "mano is the forerunner" and Poimandres\' "I am Nous, the first God" are the same claim at different scales.' },
+                { label: 'Bhagavad Gita — consciousness before action', textId: 'bhagavad-gita-4', note: 'The Gita\'s nishkama karma (desireless action) and the Dhammapada\'s pure-mind teaching are the same teaching from adjacent Indian traditions.' },
               ]
             },
           ]
         },
         {
-          ref: 'Dhp 1:21 (Appamāda — heedfulness)',
-          text: 'Heedfulness is the path to the deathless. Heedlessness is the path to death. The heedful do not die; the heedless are as if already dead.',
+          ref: 'Dhp 2',
+          text: 'Mind is the forerunner of all actions. All deeds are led by mind, created by mind. If one speaks or acts with a serene mind, happiness follows like a shadow that never departs.',
           textVersions: {
-            buddharakkhita: 'Heedfulness is the path to the Deathless. Heedlessness is the path to death. The heedful do not die; the heedless are as if already dead.',
-            thanissaro:     'Heedfulness: the path to the deathless. Heedlessness: the path to death. The heedful do not die. The heedless are as if already dead.',
-            pali:           'Appamādo amatapadaṃ pamādo maccuno padaṃ· appamattā na māyanti ye pamattā yathā matā',
+            buddharakkhita: 'Mind precedes all mental states. Mind is their chief; they are all mind-wrought. If with a pure mind a person speaks or acts, happiness follows him like his never-departing shadow.',
+            thanissaro:     'Phenomena are preceded by the heart, ruled by the heart, made of the heart. If you speak or act with a calm, bright heart, then happiness follows you, like a shadow that never leaves.',
+            pali:           'Manopubbaṅgamā dhammā manoseṭṭhā manomayā · manasā ce pasannena bhāsati vā karoti vā · tato naṃ sukhaṃ anveti chāyāva anapāyinī.',
           },
           entities: [
-            { word: 'path to the deathless', node: 'apophatic-mysticism', type: 'concept',
-              note: 'The "deathless" (amata, from a-mṛta = not-dead, the same root as Sanskrit amṛta and Greek ambrosía/ambrosia — the food of immortality) is the Buddhist name for nirvāṇa: the unconditioned state beyond birth and death. The parallel to the Hermetic "you have not gone dead, you have gone alive" (Pyramid Texts) and the Johannine "whoever believes in me will never die" (John 11:26) is the same claim made in Buddhist philosophical vocabulary: there exists a mode of being untouched by death.',
+            { word: 'shadow that never departs', node: 'tradition-theravada-buddhism', type: 'concept',
+              note: 'The shadow-image (chāyā anapāyinī) is one of the most precise similes in the Pali canon: a shadow cannot be separated from what casts it; it goes where you go; it is always the same shape as you. Happiness arising from a pure mind is not a reward that follows later — it is the immediate, inseparable quality of that very mind.',
               parallels: [
-                { label: 'Pyramid Texts — "you have not gone dead, you have gone alive"', textId: 'pyramid-texts', note: 'The Pyramid Texts\' royal resurrection proclamation "n mwt.k N, n ʿnḫ.k N" (you have not gone dead, you have gone alive) and the Dhammapada\'s "the heedful do not die" are the same theological claim at different scales: the deathless is available to those who properly orient their consciousness.' },
-                { label: 'Gospel of Thomas — whoever finds the meaning will not taste death', textId: 'gospel-of-thomas', note: 'Thomas L.1: "Whoever finds the interpretation of these sayings will not experience death." The Thomasine and Buddhist deathless are the same claim: there is a mode of understanding/heedfulness that is beyond death, available in this life.' },
+                { label: 'Gospel of Thomas L.3 — the Kingdom is inside and outside', textId: 'gospel-of-thomas', note: 'The Thomasine Kingdom-already-present and the Dhammapada\'s happiness-as-shadow are the same claim: the goal is not reached by going somewhere but by being what you already are.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'II. The Quenching of Hatred (Dhp 3–6)',
+      verses: [
+        {
+          ref: 'Dhp 3',
+          text: '"He insulted me, he struck me, he defeated me, he robbed me" — those who harbour such thoughts do not still their hatred.',
+          textVersions: {
+            buddharakkhita: '"He abused me, he struck me, he overpowered me, he robbed me." Those who harbour such thoughts do not still their hatred.',
+            thanissaro:     '"He insulted me, hit me, beat me, robbed me" — for those who brood on this, hostility isn\'t stilled.',
+            pali:           'Akkocchi maṃ avadhi maṃ ajini maṃ ahāsi me · ye taṃ upanayhanti veraṃ tesaṃ na sammati.',
+          },
+        },
+        {
+          ref: 'Dhp 4',
+          text: '"He insulted me, he struck me, he defeated me, he robbed me" — those who do not harbour such thoughts still their hatred.',
+          textVersions: {
+            buddharakkhita: '"He abused me, he struck me, he overpowered me, he robbed me." Those who do not harbour such thoughts still their hatred.',
+            thanissaro:     '"He insulted me, hit me, beat me, robbed me" — for those who don\'t brood on this, hostility is stilled.',
+            pali:           'Akkocchi maṃ avadhi maṃ ajini maṃ ahāsi me · ye taṃ na upanayhanti veraṃ tesūpasammati.',
+          },
+        },
+        {
+          ref: 'Dhp 5',
+          text: 'Hatred is never appeased by hatred in this world. By non-hatred alone is hatred appeased. This is a law eternal.',
+          textVersions: {
+            buddharakkhita: 'Hatred is never appeased by hatred in this world. By non-hatred alone is hatred appeased. This is a law eternal.',
+            thanissaro:     'Hostilities aren\'t stilled through hostility, regardless. Hostilities are stilled through non-hostility: this, an unending truth.',
+            pali:           'Na hi verena verāni sammantīdha kudācanaṃ · averena ca sammanti esa dhammo sanantano.',
+          },
+          entities: [
+            { word: 'By non-hatred alone is hatred appeased', node: 'tradition-theravada-buddhism', type: 'principle',
+              note: 'esa dhammo sanantano = "this is a law eternal." The verse is one of the most quoted in the Pali canon — Gandhi, Ambedkar, the Dalai Lama, and Martin Luther King Jr. all cited it. The structural claim: hatred is a self-perpetuating mental state that cannot be ended by adding more of itself to the situation. Only by the introduction of a different quality of mind (avera = non-hatred, often translated as loving-kindness) is the loop broken. This is the psychological substrate of the Buddhist ethics of forgiveness — and the precise mechanism behind the later Mahāyāna development of mettā (loving-kindness) practice.',
+              parallels: [
+                { label: 'Matthew 5:44 — love your enemies', textId: 'matthew-sermon-mount',
+                  note: 'Jesus\'s "love your enemies and pray for those who persecute you" makes the same psychological claim: the cycle of injury → resentment → retaliation can only be broken by introducing a different quality of consciousness. Same mechanism, different vocabulary.' },
+                { label: 'Romans 12:21 — overcome evil with good', textId: 'romans-12',
+                  note: 'Paul\'s "do not be overcome by evil, but overcome evil with good" (mē nikō hypo tou kakou, alla nika en tō agathō tō kakon) is the same principle expressed in Greek ethical vocabulary: evil is overcome by introducing its opposite, not by responding in kind.' },
+                { label: 'Tao Te Ching — answer hatred with virtue', textId: 'tao-te-ching-1',
+                  note: 'Tao 63: "Requite injury with kindness" (報怨以德 bào yuàn yǐ dé). The Daoist formulation pre-dates the Buddhist diffusion to China and reaches the same conclusion through different cultural mechanisms.' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: 'Dhp 6',
+          text: 'There are those who do not realise that one day we all must die. But those who do realise this — settle their quarrels.',
+          textVersions: {
+            buddharakkhita: 'There are those who do not realise that one day we all must die. But those who do realise this settle their quarrels.',
+            thanissaro:     'Unlike those who don\'t realise that we\'re here on the verge of perishing, those who do: their quarrels are stilled.',
+            pali:           'Pare ca na vijānanti mayam ettha yamāmase · ye ca tattha vijānanti tato sammanti medhagā.',
+          },
+        },
+      ]
+    },
+    {
+      heading: 'III. Discipline and the Stable Mind (Dhp 7–14)',
+      verses: [
+        {
+          ref: 'Dhp 7',
+          text: 'Just as a storm throws down a weak tree, so does Māra overpower one who lives for sense-pleasures, uncontrolled in the senses, immoderate in eating, indolent and dissipated.',
+          textVersions: {
+            buddharakkhita: 'Just as a storm throws down a weak tree, so does Māra overpower the man who lives for the pursuit of pleasures, who is uncontrolled in his senses, immoderate in eating, indolent, and dissipated.',
+            thanissaro:     'One who stays focused on the beautiful, unrestrained in the senses, knowing no moderation in food, apathetic, unenergetic — Māra overcomes such a one, as the wind, a brittle tree.',
+            pali:           'Subhānupassiṃ viharantaṃ indriyesu asaṃvutaṃ · bhojanamhi cāmattaññuṃ kusītaṃ hīnavīriyaṃ · taṃ ve pasahati Māro vāto rukkhaṃ va dubbalaṃ.',
+          },
+        },
+        {
+          ref: 'Dhp 8',
+          text: 'Just as a storm cannot throw down a rocky mountain, so Māra cannot overpower one who lives reflecting on impermanence, controlled in the senses, moderate in eating, and filled with faith and steady effort.',
+          textVersions: {
+            buddharakkhita: 'Just as a storm cannot throw down a rocky mountain, so Māra cannot overpower the man who lives meditating on the impurities, who is controlled in his senses, moderate in eating, and filled with faith and earnest effort.',
+            thanissaro:     'One who stays focused on the foul, restrained with regard to the senses, knowing moderation in food, full of conviction, energetic — Māra does not overcome that one, as the wind, a rocky mountain.',
+            pali:           'Asubhānupassiṃ viharantaṃ indriyesu susaṃvutaṃ · bhojanamhi ca mattaññuṃ saddhaṃ āraddhavīriyaṃ · taṃ ve nappasahati Māro vāto selaṃ va pabbataṃ.',
+          },
+          entities: [
+            { word: 'Māra', node: 'tradition-theravada-buddhism', type: 'figure',
+              note: 'Māra (lit. "the killer," from the root mṛ — death) is the Buddhist personification of the forces that obstruct awakening: sensory craving, restlessness, doubt, fear of liberation. Not a separate metaphysical adversary like the Christian Satan or the Zoroastrian Angra Mainyu, but a name for the structural tendencies within consciousness itself that resist insight. The wind / tree / mountain similes here are the canonical figure for Māra\'s relationship to a mind: he is wind, the mind is either weak tree or rocky mountain depending on its preparation.',
+              parallels: [
+                { label: 'Genesis 3 — the serpent as inner adversary', textId: 'genesis-3',
+                  note: 'The serpent in Eden functions as the structural figure of the resistance-to-the-good within consciousness — same architectural role as Māra in the Buddhist canon, though embedded in narrative rather than psychological discourse.' },
+                { label: 'Zohar — the sitra ahra (other side)', textId: 'zohar-ein-sof',
+                  note: 'Kabbalistic sitra ahra (the Other Side) — not a metaphysical evil but the side of reality that resists the divine flow. Same structural function as Māra: the systemic resistance to alignment.' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: 'Dhp 9',
+          text: 'Whoever, lacking self-control and truthfulness, dons the saffron robe — he is not worthy of it.',
+          textVersions: {
+            buddharakkhita: 'Whoever being depraved, devoid of self-control and truthfulness, should don the monk\'s yellow robe, he surely is not worthy of the robe.',
+            thanissaro:     'One who, without being free from defilement, who, devoid of truthfulness and self-control, would don the ochre robe is not worthy of the ochre.',
+            pali:           'Anikkasāvo kāsāvaṃ yo vatthaṃ paridahessati · apeto damasaccena na so kāsāvam arahati.',
+          },
+        },
+        {
+          ref: 'Dhp 10',
+          text: 'But whoever is cleansed of defilements, well-established in moral discipline, endowed with self-control and truthfulness — he indeed is worthy of the saffron robe.',
+          textVersions: {
+            buddharakkhita: 'But whoever is purged of depravity, well-established in virtues and filled with self-control and truthfulness, he indeed is worthy of the yellow robe.',
+            thanissaro:     'But one who is free from defilement, who is well-established in the virtues and endowed with self-control and truthfulness — that one is indeed worthy of the ochre robe.',
+            pali:           'Yo ca vantakasāvassa sīlesu susamāhito · upeto damasaccena sa ve kāsāvam arahati.',
+          },
+        },
+        {
+          ref: 'Dhp 11',
+          text: 'Those who mistake the unessential for essential, and the essential for unessential, dwelling in wrong thoughts, never arrive at the essential.',
+          textVersions: {
+            buddharakkhita: 'Those who mistake the unessential to be essential and the essential to be unessential, dwelling in wrong thoughts, never arrive at the essential.',
+            thanissaro:     'Those who regard non-essence as essence and see essence as non-essence don\'t get to the essence, ranging about in wrong resolves.',
+            pali:           'Asāre sāramatino sāre cāsāradassino · te sāraṃ nādhigacchanti micchāsaṅkappagocarā.',
+          },
+        },
+        {
+          ref: 'Dhp 12',
+          text: 'Those who know the essential as essential, and the unessential as unessential, dwelling in right thoughts, do arrive at the essential.',
+          textVersions: {
+            buddharakkhita: 'Those who know the essential to be essential and the unessential to be unessential, dwelling in right thoughts, do arrive at the essential.',
+            thanissaro:     'But those who know essence as essence, and non-essence as non-essence, get to the essence, ranging about in right resolves.',
+            pali:           'Sārañca sārato ñatvā asārañca asārato · te sāraṃ adhigacchanti sammāsaṅkappagocarā.',
+          },
+        },
+        {
+          ref: 'Dhp 13',
+          text: 'Just as rain breaks through an ill-thatched house, so passion penetrates an undeveloped mind.',
+          textVersions: {
+            buddharakkhita: 'Just as rain breaks through an ill-thatched house, so passion penetrates an undeveloped mind.',
+            thanissaro:     'As rain seeps into an ill-thatched hut, so passion, the undeveloped mind.',
+            pali:           'Yathā agāraṃ ducchannaṃ vuṭṭhī samativijjhati · evaṃ abhāvitaṃ cittaṃ rāgo samativijjhati.',
+          },
+        },
+        {
+          ref: 'Dhp 14',
+          text: 'Just as rain does not break through a well-thatched house, so passion never penetrates a well-developed mind.',
+          textVersions: {
+            buddharakkhita: 'Just as rain does not break through a well-thatched house, so passion never penetrates a well-developed mind.',
+            thanissaro:     'As rain doesn\'t seep into a well-thatched hut, so passion, the well-developed mind.',
+            pali:           'Yathā agāraṃ succhannaṃ vuṭṭhī na samativijjhati · evaṃ subhāvitaṃ cittaṃ rāgo na samativijjhati.',
+          },
+        },
+      ]
+    },
+    {
+      heading: 'IV. The Doer of Good and the Doer of Evil (Dhp 15–18)',
+      verses: [
+        {
+          ref: 'Dhp 15',
+          text: 'The evil-doer grieves here and hereafter; he grieves in both worlds. He laments and is afflicted, recalling his own impure deeds.',
+          textVersions: {
+            buddharakkhita: 'The evil-doer grieves here and hereafter; he grieves in both the worlds. He laments and is afflicted, recollecting his own impure deeds.',
+            thanissaro:     'Here he grieves; hereafter he grieves. In both worlds the wrongdoer grieves. He grieves, he\'s afflicted, seeing the corruption of his deeds.',
+            pali:           'Idha socati pecca socati pāpakārī ubhayattha socati · so socati so vihaññati disvā kammakiliṭṭham attano.',
+          },
+        },
+        {
+          ref: 'Dhp 16',
+          text: 'The doer of good rejoices here and hereafter; he rejoices in both worlds. He rejoices and exults, recalling his own pure deeds.',
+          textVersions: {
+            buddharakkhita: 'The doer of good rejoices here and hereafter; he rejoices in both the worlds. He rejoices and exults, recollecting his own pure deeds.',
+            thanissaro:     'Here he rejoices; hereafter he rejoices. In both worlds the meritorious one rejoices. He rejoices, is jubilant, seeing the purity of his deeds.',
+            pali:           'Idha modati pecca modati katapuñño ubhayattha modati · so modati so pamodati disvā kammavisuddhim attano.',
+          },
+          entities: [
+            { word: 'rejoices here and hereafter', node: 'tradition-theravada-buddhism', type: 'principle',
+              note: 'The four-fold structure of Dhp 15-18 (grief here / grief hereafter / suffering here / suffering hereafter for the evil-doer; the mirror for the doer of good) is the canonical Buddhist formulation of karma as a direct quality-of-mind consequence — NOT as a court-of-judgement reward / punishment. The good person rejoices "here" because the act of doing good IS the rejoicing (same instant), and "hereafter" because the imprint of that quality of mind shapes the next moment. Unlike the Christian post-mortem judgment, the Buddhist "hereafter" is a continuous quality propagating moment-to-moment.',
+              parallels: [
+                { label: 'Galatians 6:7 — whatever a person sows', textId: 'galatians-5',
+                  note: 'Paul\'s "whatever a person sows, that they shall also reap" makes the same causal claim in agricultural metaphor, but Christian eschatology locates the harvest in a future judgement rather than the present moment of action.' },
+                { label: 'Matthew 25 — judgement of nations', textId: 'matthew-25',
+                  note: 'The Matthean separation of sheep and goats is the same moral causality embedded in a final-judgement framework: action → consequence. The Dhammapada version is immediate; the Matthean version is deferred.' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: 'Dhp 17',
+          text: 'The evil-doer suffers here and hereafter; he suffers in both worlds. The thought "evil have I done" torments him; and even more does he suffer, having gone to a realm of woe.',
+          textVersions: {
+            buddharakkhita: 'The evil-doer suffers here and hereafter; he suffers in both the worlds. The thought "Evil have I done" torments him, and he suffers even more when gone to realms of woe.',
+            thanissaro:     'Here he\'s tormented; hereafter tormented. In both worlds the wrongdoer is tormented. "I\'ve done wrong," tormented he is. Gone to a bad destination, all the more tormented.',
+            pali:           'Idha tappati pecca tappati pāpakārī ubhayattha tappati · pāpaṃ me katanti tappati bhiyyo tappati duggatiṃ gato.',
+          },
+        },
+        {
+          ref: 'Dhp 18',
+          text: 'The doer of good delights here and hereafter; he delights in both worlds. The thought "good have I done" delights him; and even more does he delight, having gone to a realm of bliss.',
+          textVersions: {
+            buddharakkhita: 'The doer of good delights here and hereafter; he delights in both the worlds. The thought "Good have I done" delights him, and he delights even more when gone to realms of bliss.',
+            thanissaro:     'Here he\'s delighted; hereafter delighted. In both worlds the meritorious one is delighted. "I\'ve made merit," delighted he is. Gone to a good destination, all the more delighted.',
+            pali:           'Idha nandati pecca nandati katapuñño ubhayattha nandati · puññaṃ me katanti nandati bhiyyo nandati suggatiṃ gato.',
+          },
+        },
+      ]
+    },
+    {
+      heading: 'V. Practice Over Recitation (Dhp 19–20)',
+      verses: [
+        {
+          ref: 'Dhp 19',
+          text: 'Much though he recites the sacred texts, but acts not accordingly, that heedless man is like a cowherd who only counts the cows of others — he does not partake of the blessings of the holy life.',
+          textVersions: {
+            buddharakkhita: 'Much though he recites the sacred texts, but acts not accordingly, that heedless man is like a cowherd who only counts the cows of others — he does not partake of the blessings of the holy life.',
+            thanissaro:     'If one, though reciting much of texts, is not a doer thereof, a heedless man — like a cowherd counting cattle of others — does not partake of the contemplative life.',
+            pali:           'Bahum pi ce sahitaṃ bhāsamāno na takkaro hoti naro pamatto · gopo va gāvo gaṇayaṃ paresaṃ na bhāgavā sāmaññassa hoti.',
+          },
+          entities: [
+            { word: 'cowherd who only counts the cows of others', node: 'tradition-theravada-buddhism', type: 'principle',
+              note: 'The cowherd-image is the canonical Dhammapada attack on intellectual religion divorced from practice. The recitations are "other people\'s cows" — the wisdom doesn\'t become yours by counting / reciting / memorising; it becomes yours by living it. This is the same critique that runs through the Sermon on the Mount (Matt 7:21 — "not everyone who says \'Lord, Lord\' will enter"), the Epistle of James (faith without works is dead), and the Gospel of Thomas (knowing the sayings vs. living from them). The Buddhist version is the most pointed: even MASSIVE recitation, without practice, is just counting livestock for someone else.',
+              parallels: [
+                { label: 'Matthew 7:21 — not everyone who says Lord, Lord', textId: 'matthew-sermon-mount',
+                  note: 'Jesus\'s warning that verbal profession without lived obedience does not open the Kingdom is the Christian formulation of the same critique. Recitation ≠ realisation.' },
+                { label: 'Gospel of Thomas L.39 — the Pharisees took the keys of knowledge', textId: 'gospel-of-thomas',
+                  note: 'Thomas L.39 attacks the religious authorities who possess the keys of knowledge but neither enter themselves nor permit others to enter. Same target as the Dhammapada\'s cowherd: technical religious mastery as a substitute for living practice.' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: 'Dhp 20',
+          text: 'Little though he may recite of the sacred texts, but who lives the Teaching, forsaking lust, hatred, and delusion, with true wisdom and emancipated mind, clinging to nothing here or hereafter — he indeed partakes of the blessings of the holy life.',
+          textVersions: {
+            buddharakkhita: 'Little though he recites the sacred texts, but puts the Teaching into practice, forsaking lust, hatred, and delusion, with true wisdom and emancipated mind, clinging to nothing of this or any other world — he indeed partakes of the blessings of a holy life.',
+            thanissaro:     'If one, though reciting little of texts, lives in line with the Dhamma — having abandoned passion, aversion, delusion — alert, with mind well-released, not clinging either here or hereafter, partakes of the contemplative life.',
+            pali:           'Appam pi ce sahitaṃ bhāsamāno dhammassa hoti anudhammacārī · rāgañca dosañca pahāya mohaṃ sammappajāno suvimuttacitto · anupādiyāno idha vā huraṃ vā sa bhāgavā sāmaññassa hoti.',
+          },
+          entities: [
+            { word: 'clinging to nothing here or hereafter', node: 'apophatic-mysticism', type: 'concept',
+              note: 'anupādiyāno (non-clinging) is the operative term in early Buddhist soteriology: liberation is the cessation of upādāna (clinging, grasping). The clinging is the disease; the cessation of clinging IS the liberation, not a means to it. "Here or hereafter" makes the radical claim — the practitioner clings neither to this life NOR to a transcendent reward in the next. This is structurally identical to the Heart Sutra\'s "no attainment" (na prāptiḥ) and to the Eckhartian "praying God to free me of God." Liberation cannot be a grasped object; it is the recognition that grasping was always the problem.',
+              parallels: [
+                { label: 'Heart Sutra — no attainment, no non-attainment', textId: 'heart-sutra',
+                  note: 'The Mahāyāna development of the Theravāda anupādāna into the Heart Sutra\'s aprāpti is the same insight refined: not only is there no clinging, there is no thing-to-be-attained that one could cling to.' },
+                { label: 'Matthew 6:19-21 — store up no treasures on earth', textId: 'matthew-sermon-mount',
+                  note: 'Jesus\'s "store up for yourselves no treasures on earth" addresses the same disease — the gathering-and-holding posture that creates suffering. Dhammapada anupādāna and Matthew\'s anti-treasure teaching converge on: do not let possession be the structure of your relationship to reality.' },
               ]
             },
           ]
