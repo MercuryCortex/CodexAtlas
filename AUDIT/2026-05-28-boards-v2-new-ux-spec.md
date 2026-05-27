@@ -1,7 +1,7 @@
 # BOARDS V2 — New-UX Rebuild Spec
 
 **Filed:** 2026-05-28
-**Status:** PROPOSED — awaiting John's full brief
+**Status:** LOCKED — John's brief landed 2026-05-27 (see §5 answered brief below)
 **Frame:** "BOARDS from the old prototype — prepare using our new UX"
 **Reference (legacy, do-not-touch — REBUILD-FROM target):**
   - `src/js/alchemy/board.js` (1,025 LOC) — free-form pinboard, drag-pan-zoom, right-click expand, LS persistence
@@ -94,20 +94,35 @@ Plus the `.boards-card` / `.boards-stage` / `.boards-edges` styling — carved f
 
 ---
 
-## 5 · Architecture decisions to confirm with John before any code
+## 5 · Architecture decisions — ANSWERED BRIEF (2026-05-27)
 
-These are real forks. Don't guess; ask.
+All 8 architectural forks resolved by John on 2026-05-27. The decisions below are LOCKED for V1; revisit in V2 if usage data signals otherwise.
 
-| Q | Default if no preference |
-|---|---|
-| **Naming**: should the view be called `Boards`, `Workbench`, `Investigation`, `Pinboard`? | `Boards` (matches your brief) |
-| **Single board or multiple boards**: can the user maintain N saved boards at once and switch between them, or is there one always-active board + a "save snapshot" model? | **N boards** (each named, switchable from a `[My boards ▾]` dropdown) |
-| **Card interaction**: single-click = lock (like Atlas), double-click = open reader. Right-click = expand menu. | Yes |
-| **Cards-only or cards + free-text annotations**: should the user be able to drop text notes onto the board between nodes? | **Cards-only V1**; notes V2 |
-| **Default zoom and pan on mount**: fit-to-cards or zoom-1.0 centered? | fit-to-cards |
-| **Edges between cards**: auto-drawn from vault edges when both endpoints are on the board, or user-drawn only? | Auto-drawn (legacy behavior); user-curated visibility toggle |
-| **Cross-board behavior**: when user adds a node to Board-A while Board-B is active, where does it go? | Active board only — no global "pin" concept |
-| **Mobile / small screen**: in scope V1 or desktop only? | Desktop only (matches Atlas) |
+| # | Question | John's answer | Notes |
+|---|---|---|---|
+| 1 | Naming | **Boards** (placeholder) | "agree on boards, but don't love it — not comparable with Atlas + Codex, not same gravitas or coolness. proceed, can change later if better ideas." Filed as an open question to revisit. |
+| 2 | Single vs N boards | **N saved user boards + pre-loaded Investigation Library** | The Investigation Library is the differentiator — pre-populated with everything: AI-found connections from prototype + transmissions the user mentioned + MASSIVE-WIN findings + winnings. All organized in categories. |
+| 3 | Card interaction | **Match Atlas exactly** | Single-click = lock + 1-hop highlight; double-click = open side-panel + reader; right-click = expansion menu (connections / neighbours / shortest-path-to). Atlas muscle-memory carries over. |
+| 4 | V1 scope: cards-only vs +notes | **Cards only — V1** | Notes deferred to V2. |
+| 5 | Default zoom/pan on mount | **fit-to-cards** (spec default, not contested) | When loading an investigation, frame the cards. |
+| 6 | Edges between cards | **Auto-drawn from vault edges + visibility toggle** | When both endpoints of a vault edge are on the board, draw the edge. Per-board show/hide toggle for noise control. Edges re-route on card drag. |
+| 7 | Add-node target board | **Active board only** | No global pin concept. To put a node on multiple boards, user explicitly adds to each. |
+| 8 | Mobile/small-screen V1 | **Desktop only** | Matches Atlas + Codex. |
+
+### Derived from the brief — Investigation Library taxonomy (4 categories)
+
+The `[Investigation ▾]` dropdown lists boards under 4 grouped headers:
+
+1. **MY BOARDS** — user-saved investigations from previous sessions (LS-persisted at `atlas.boards.v1`)
+2. **MASSIVE WINS** — the 43 cross-tradition spine findings from `00_meta/MASSIVE-WINS-INDEX.md`, each as a one-click loadable board (cards = the nodes wired in the corresponding essay)
+3. **AI PRESETS** — the 30+ existing `ALCHEMY_PRESETS` from the prototype, retaining their original `PRESET_CATEGORY_ORDER` sub-grouping
+4. **TRANSMISSIONS** — the multi-text lineages we wired in the 2026-05-27 session (Akhenaten → Christianity, Queen of Heaven, Mani → Bogomil → Cathar dualist, Eridu Genesis → Genesis 6-9 flood, Enheduanna → Inanna → Mary, Yasna 30 → 1QS → Pauline → Johannine dualism, etc.) — each as a curated board
+
+The 4-category split is the spine of V1 — without it Boards is just "the legacy with new chrome." With it, Boards becomes a genuine investigation-construction tool from day one.
+
+### Open question (not blocking)
+
+- **Naming**: "Boards" was accepted but not loved. If a name with more gravitas surfaces (something with the register of "Atlas" / "Codex" — possibilities the user might workshop: "Lattice", "Threadboard", "Synthesis", "Atelier", "Forum"), revisit. The internal DOM IDs already use `boards-*` — renaming to a different word later is a CSS-class + label change, not a structural rewrite.
 
 ---
 
@@ -165,4 +180,4 @@ The MASSIVE-WINS index becomes BOARDABLE — every documented transmission is on
 
 ---
 
-*Spec ends. Awaiting John's brief on the 8 architecture-questions in §5 before any code lands.*
+*Spec ends. **Brief landed 2026-05-27.** Carve plan §6 unblocked — implementation can proceed.*
