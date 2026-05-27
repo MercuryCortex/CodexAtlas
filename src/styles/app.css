@@ -9472,6 +9472,61 @@ body.view-forge.fx-belowfifteen .forge-labels-overlay { display: none !important
   position: absolute;
   inset: 0;
   overflow: hidden;
+  cursor: grab;
+  touch-action: none;        /* let pointermove drive pan instead of browser scroll */
+}
+.boards-stage.is-panning { cursor: grabbing; }
+
+/* Inner div the pan/zoom transform applies to. transform-origin is the
+   top-left so coordinates stay simple — card.x/card.y are world-space
+   positions, and the stage→world transform handles the rest. */
+.boards-world {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  transform-origin: 0 0;
+  will-change: transform;
+}
+
+/* Individual card — V2 native; gold accent, dark blur, JetBrains Mono. No
+   `.alch-*` class names reused. Steps 4-7 will extend with type-glyph,
+   thumb, pill tags, expansion arrows, etc.; this is the bare-minimum
+   primitive that proves pan/zoom + drag-card work. */
+.boards-card {
+  position: absolute;
+  min-width: 140px;
+  max-width: 220px;
+  padding: 8px 10px;
+  background: rgba(13,17,25,0.92);
+  border: 1px solid rgba(212,165,90,0.22);
+  border-radius: 8px;
+  color: var(--text-0, #e6e6e6);
+  font-family: var(--mono, "JetBrains Mono", Menlo, monospace);
+  font-size: 11px;
+  letter-spacing: 0.02em;
+  cursor: grab;
+  user-select: none;
+  -webkit-user-select: none;
+  transition: border-color 100ms ease, box-shadow 100ms ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.32);
+}
+.boards-card:hover {
+  border-color: rgba(212,165,90,0.45);
+}
+.boards-card.is-dragging {
+  cursor: grabbing;
+  transition: none;
+  border-color: rgba(212,165,90,0.65);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.5);
+  z-index: 10;
+}
+.boards-card.is-selected {
+  border-color: var(--gold, #d4a55a);
+  box-shadow: 0 0 0 1px var(--gold, #d4a55a), 0 2px 8px rgba(0,0,0,0.32);
+}
+.boards-card-label {
+  display: block;
+  line-height: 1.4;
 }
 
 /* ============================================================
