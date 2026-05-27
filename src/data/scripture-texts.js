@@ -15348,6 +15348,313 @@ SCRIPTURE_TEXTS['kalevala-1'] = {
   ]
 };
 
+// ── SŪTRAKṚTĀṄGA — JAIN ŚVETĀMBARA SECOND ANGA (~3rd c. BCE STRATA) ──────────
+SCRIPTURE_TEXTS['sutrakritanga-1'] = {
+  id:         'sutrakritanga-1',
+  title:      'Sūtrakṛtāṅga — The Second Aṅga of the Śvetāmbara Jain Canon',
+  shortTitle: 'Sūtrakṛtāṅga',
+  corpus:     'Jain Āgamas · canonical Mahavira tradition',
+  tradId:     'tradition-jainism',
+  date:       'oldest strata ~3rd c. BCE (the verse portions of Book I are considered among the earliest Jain canonical material, contemporary with the Ācārāṅga); compiled in its present form at the Council of Vallabhī ~454 CE',
+  docNode:    'phase-2-039-sutrakritanga',
+  language:   'Ardha-Māgadhī Prakrit (original — the eastern Indo-Aryan vernacular Mahavira taught in) · Hermann Jacobi 1895 English (canonical Sacred Books of the East translation)',
+  translations: [
+    { id: 'jacobi', label: 'Hermann Jacobi 1895 (Sacred Books of the East XLV)', note: 'Jacobi\'s English translation remains the standard Anglophone scholarly text. Includes both Books I (verse, older) and II (prose, later) with extensive philological notes.' },
+    { id: 'prakrit', label: 'Ardha-Māgadhī Prakrit (Schubring critical edition + Walther Schubring 1962)' },
+  ],
+  intro: 'The Sūtrakṛtāṅga ("Book of Discourses") is the second of the twelve Aṅgas of the Śvetāmbara Jain canon, treated alongside the Ācārāṅga (the first Aṅga) as preserving the oldest stratum of canonical Jain literature directly traceable to the teaching of Mahāvīra (the 24th Tīrthaṅkara, traditionally 599–527 BCE; the historically attested figure of late 6th to early 5th century BCE). Book I of the Sūtrakṛtāṅga consists of sixteen chapters of metrical verse in Ardha-Māgadhī Prakrit — the vernacular Mahāvīra taught in — and is one of the most important surviving documents of pre-classical Indian religious thought. The text engages in sustained polemic against rival philosophical positions: materialism (the Cārvāka / Ājīvika positions), ritualistic Brahmanism, fatalism, and various forms of false-ascetic practice. It articulates the core Jain doctrines (ahiṃsā as the supreme virtue, anekāntavāda as the doctrine of the many-sidedness of reality, the soul as inherently knowing and obscured by karmic matter) in a form that pre-dates the systematic philosophical articulations of later Jain literature (the Tattvārtha Sūtra of Umāsvāti, c. 2nd–3rd century CE). The Sūtrakṛtāṅga is therefore a primary document for the study of axial-age (Karl Jaspers 1949) religious-philosophical thought in north India alongside the early Pali Buddhist suttas, the late Vedic Upaniṣads, and the Bhagavad Gītā. Modern scholarship: Jacobi 1895 introduction, Schubring 1962, Jaini 1979, Dundas 2002.',
+  crossTradition: [
+    { label: 'Ācārāṅga — the canonical pair, the first Aṅga', textId: 'acaranga-sutra',
+      note: 'The Ācārāṅga and the Sūtrakṛtāṅga form the canonical pair of oldest-stratum Śvetāmbara Jain texts. The Ācārāṅga sets out the disciplinary code and the ascetic life; the Sūtrakṛtāṅga sets out the doctrinal-polemical articulation of Jain teaching against rival positions. Reading the two together is the standard scholarly entry-point to early Jain literature.' },
+    { label: 'Dhammapada — the contemporary Buddhist verse-articulation parallel', textId: 'dhammapada-1',
+      note: 'The Pali Dhammapada (compiled c. 3rd–2nd c. BCE) and the verse portions of the Sūtrakṛtāṅga (similar period) are the closest cross-tradition genre-parallels: collections of pithy verse-aphorisms preserving the early teaching of the founder-figure of each tradition. The two texts together document the shared north-Indian axial-age genre of "the founder\'s teaching in canonical verse form."' },
+    { label: 'Bhagavad Gītā 4 — the parallel north-Indian axial-age dharma articulation', textId: 'bhagavad-gita-4',
+      note: 'The Bhagavad Gītā and the Sūtrakṛtāṅga both crystallise distinct articulations of dharma in late-axial-age north India, with overlapping but distinct philosophical-religious vocabularies. The Sūtrakṛtāṅga\'s ahiṃsā-and-anekāntavāda framework and the Gītā\'s karma-yoga and Krishna-incarnation framework represent two of the major systematisations of the axial-age religious-philosophical synthesis emerging in this period.' },
+  ],
+  sections: [
+    {
+      heading: 'I. The Doctrine of Non-Violence',
+      verses: [
+        {
+          ref: 'Sūtrakṛtāṅga I.11.33 (Jacobi)',
+          text: 'All breathing, existing, living, sentient creatures should not be slain, nor treated with violence, nor abused, nor tormented, nor driven away. This is the pure, unchangeable, eternal law which the clever ones, who understand the world, have declared.',
+          textVersions: {
+            jacobi:  'All breathing, existing, living, sentient creatures should not be slain, nor treated with violence, nor abused, nor tormented, nor driven away. This is the pure, unchangeable, eternal law which the clever ones, who understand the world, have declared.',
+            prakrit: 'सव्वे पाणा पियाउया सुहसाया दुक्खपडिकूला अप्पियवहा पियजीविणो जीविउकामा सव्वेसिं जीवियं पियं। तं नो हन्ने नो अज्जावेज्जा।',
+          },
+          entities: [
+            { word: 'should not be slain, nor treated with violence', node: 'tradition-jainism', type: 'doctrine',
+              note: 'Ahiṃsā — "non-violence / non-harming." The Sūtrakṛtāṅga articulates ahiṃsā in its sharpest axial-age form: the absolute and universal prohibition extending to all breathing, sentient creatures. Where Buddhist and Hindu traditions developed ahiṃsā as a virtue or precept, Jainism makes it the foundational ontological-ethical principle that organises the entire religious life. The doctrine subsequently entered the broader Indian religious-political tradition through Mahatma Gandhi\'s 20th-century articulation of satyāgraha (truth-force / non-violent resistance), explicitly grounded by Gandhi in Jain teaching he encountered in his youth from the lay-Jain scholar Shrimad Rajchandra. The lineage runs Mahāvīra → Sūtrakṛtāṅga → Jain monastic tradition → Shrimad Rajchandra → Gandhi → Martin Luther King Jr. → the broader modern non-violent-resistance tradition.',
+              parallels: [
+                { label: 'Dhammapada — the parallel Buddhist non-harming articulation', textId: 'dhammapada-1',
+                  note: 'The Pali Dhammapada (especially the Yamaka Vagga and the Daṇḍa Vagga) articulates a parallel non-harming ethics rooted in the Buddhist understanding of the karmic consequence of action. The two traditions — Jain absolute-ahiṃsā and Buddhist karma-based non-harming — together constitute the deep Indic religious-philosophical foundation of the non-violence ethic that subsequently entered global religious-political vocabulary.' },
+                { label: 'Ācārāṅga — the disciplinary-pair canonical articulation', textId: 'acaranga-sutra',
+                  note: 'The Ācārāṅga\'s articulation of ahiṃsā in disciplinary-monastic-practice form (the detailed rules for monks to avoid harming any living being, including microorganisms in water and air) is the practical-disciplinary counterpart of the Sūtrakṛtāṅga\'s doctrinal-polemical articulation of the same principle.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+// ── LIBER DE DUOBUS PRINCIPIIS — CATHAR THEOLOGICAL TREATISE (~1240) ─────────
+SCRIPTURE_TEXTS['liber-de-duobus-principiis-1'] = {
+  id:         'liber-de-duobus-principiis-1',
+  title:      'Liber de Duobus Principiis — The Cathar Book of the Two Principles (~1240)',
+  shortTitle: 'Liber de Duobus Principiis',
+  corpus:     'Cathar + Bogomil sacred corpus',
+  tradId:     'tradition-catharism',
+  date:       '~1240 CE (Lombardy or Languedoc — composed by John of Lugio or a member of his school, the doctrinally most-elaborated surviving Cathar text from the absolute-dualist branch of the movement, just decades before the Cathar movement was effectively destroyed by the Albigensian Crusade of 1209–1229 and the subsequent Inquisition)',
+  docNode:    'phase-5-023-liber-de-duobus-principiis',
+  language:   'Medieval Latin (original) · Walter L. Wakefield & Austin P. Evans 1969 English (the canonical Anglophone scholarly translation)',
+  translations: [
+    { id: 'wakefield', label: 'Wakefield & Evans 1969 (Heresies of the High Middle Ages, Columbia)', note: 'The standard Anglophone scholarly translation of the Liber de Duobus Principiis alongside other medieval heretical documents. Companion to the Latin critical edition of Antoine Dondaine 1939.' },
+    { id: 'dondaine',  label: 'Antoine Dondaine 1939 (Un traité néo-manichéen du XIIIe siècle)', note: 'Dondaine\'s critical Latin edition published from the unique surviving Florence Magliabechiana manuscript. The textual foundation for all subsequent scholarship.' },
+    { id: 'latin',     label: 'Medieval Latin (Dondaine critical text)' },
+  ],
+  intro: 'The Liber de Duobus Principiis ("Book of the Two Principles") is the most extensively-articulated surviving theological treatise of the medieval Cathar movement, composed around 1240 in Lombardy or Languedoc by John of Lugio or a member of his school. The Cathar movement — also called the Albigensian heresy, after the southern French town of Albi where it took strongest root — was the dominant religious-dissident movement of high-medieval Latin Christendom from the mid-12th century until its effective destruction in the Albigensian Crusade of 1209–1229 and the subsequent decades of Inquisitorial repression. The Cathars held a dualistic theology that taught the existence of two principles, a good God of spirit and an evil principle (variously identified with Satan, the Hebrew Bible YHWH, or a separate evil god) responsible for the material world. The Liber represents the "absolute dualist" branch of the movement (which held that the two principles are co-eternal and uncreated), as distinct from the "moderate dualist" branch (which held that the evil principle was a created being who rebelled). The treatise is theologically significant in Codex Atlas terms because it is one of the major surviving documents of the broader Manichaean-Bogomil-Cathar dualist transmission — a religious-philosophical lineage running from 3rd-century Persia (Mani) through Byzantine-era Bulgaria (the Bogomils, c. 10th century) into 12th–13th-century Western Europe, all sharing a dualist cosmological framework that the orthodox Christian tradition rejected as heresy. Modern scholarship: Wakefield & Evans 1969, Lambert 1998, Stoyanov 2000, Hamilton 2012.',
+  crossTradition: [
+    { label: 'Interrogatio Iohannis — the Cathar-Bogomil narrative pair', textId: 'interrogatio-iohannis',
+      note: 'The Interrogatio Iohannis ("Questions of John") is the cosmological-narrative companion to the Liber de Duobus Principiis: where the Liber gives the systematic theological argument for two-principle dualism, the Interrogatio gives the cosmological narrative (the fall of Satan, the creation of the material world by the evil principle, the redemptive descent of Christ as pure spirit). Reading the two together is the standard scholarly entry-point to Cathar theology.' },
+    { label: 'Manichaean Psalms — the older Manichaean dualist tradition the Cathars continue', textId: 'manichaean-psalms',
+      note: 'The Manichaean Psalms (Coptic-Manichaean liturgical literature, 3rd–4th century CE) and the Liber de Duobus Principiis are both major surviving documents of the broader Manichaean-Bogomil-Cathar dualist tradition that runs across a millennium of Mediterranean and European religious history. The textual-religious lineage that connects them — Manichaean → Paulician → Bogomil → Cathar — is one of the major heretical-religious transmission threads in pre-modern Eurasian religious history.' },
+    { label: 'Apocryphon of John — the Gnostic dualist-cosmology precursor', textId: 'apocryphon-of-john',
+      note: 'The Sethian-Gnostic Apocryphon of John (preserved in the Nag Hammadi codices, composition c. 2nd century CE) is the deeper Gnostic-dualist textual precursor for the kind of two-principle cosmology that the Cathar Liber would later articulate in a different cultural-historical setting. The Gnostic → Manichaean → Bogomil → Cathar lineage is the major surviving heretical-religious transmission thread of late-antique and medieval Christianity.' },
+  ],
+  sections: [
+    {
+      heading: 'I. The Argument for Two Principles',
+      verses: [
+        {
+          ref: 'Liber de Duobus Principiis 1 (Wakefield-Evans trans.)',
+          text: 'There are certain heretics in our days, called Cathars, who confess that there is one true God, omnipotent, incorruptible, immortal, eternal, who is the Father of all things in the spiritual world: that is, of the angels, the souls of the just, the apostles, prophets, and patriarchs. But there is another principle, the principle of evil, the prince of darkness, who is the cause of all temporal things visible and corruptible, and the cause of the evil works that come to pass in the world.',
+          textVersions: {
+            wakefield: 'There are certain heretics in our days, called Cathars, who confess that there is one true God, omnipotent, incorruptible, immortal, eternal, who is the Father of all things in the spiritual world: that is, of the angels, the souls of the just, the apostles, prophets, and patriarchs. But there is another principle, the principle of evil, the prince of darkness, who is the cause of all temporal things visible and corruptible, and the cause of the evil works that come to pass in the world.',
+            latin:     'Sunt nonnulli haeretici nostri temporis, Cathari dicti, qui fatentur unum esse Deum verum, omnipotentem, incorruptibilem, immortalem, aeternum, qui est Pater omnium in mundo spirituali, scilicet angelorum, animarum iustorum, apostolorum, prophetarum, et patriarcharum. Sed est aliud principium, principium mali, princeps tenebrarum, qui est causa omnium rerum temporalium visibilium et corruptibilium, et causa malarum operum quae fiunt in mundo.',
+          },
+          entities: [
+            { word: 'one true God... another principle, the principle of evil', node: 'tradition-catharism', type: 'doctrine',
+              note: 'The two-principles doctrine of absolute Cathar dualism: the good God (of the spiritual world: angels, just souls, the spiritual Christ) and the evil principle (responsible for the material world, the Hebrew Bible YHWH-figure in many Cathar readings, the suffering and corruption of bodily existence). The doctrine is the heretical-theological move that distinguished Cathar theology from orthodox-Latin-Christian creational monotheism, and that orthodox theologians from Bernard of Clairvaux through Dominic of Caleruega to Aquinas treated as the central error of the Cathar position. The two-principles framework has deep Gnostic-Manichaean-Bogomil roots stretching back nearly a thousand years before the Liber\'s composition; the Cathars were the European inheritors of a religious-textual lineage that ran from late-antique Mediterranean Christianity through Byzantine-Slavic intermediaries.',
+              parallels: [
+                { label: '1QS Two-Spirits doctrine — the deeper Jewish-apocalyptic dualist substrate', textId: '1qs-community-rule',
+                  note: 'The Qumran 1QS Two-Spirits doctrine (1QS III:13–IV:26) is the deeper Jewish-apocalyptic dualist substrate from which both the Manichaean dualist tradition and (through it) the Cathar two-principles doctrine ultimately draw. The four-text lineage — 1QS → Manichaean Psalms → Bogomil tradition → Cathar Liber — documents one of the longest cross-cultural religious-theological transmissions in Mediterranean-European religious history.' },
+                { label: 'Yasna 30 — the deeper Zoroastrian dualist source', textId: 'yasna-30',
+                  note: 'The Zoroastrian Gathic Two-Spirits doctrine of Yasna 30 is the deepest extant Iranian source of the cosmological-dualist tradition that subsequently emerges in Manichaean, Bogomil, and Cathar form. The Cathar Liber\'s absolute-dualist framework is the Western-medieval far-end of a religious-philosophical tradition that begins on the Iranian plateau more than two millennia earlier.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+// ── TERESA OF ÁVILA · INTERIOR CASTLE (1577) ─────────────────────────────────
+SCRIPTURE_TEXTS['teresa-interior-castle-1'] = {
+  id:         'teresa-interior-castle-1',
+  title:      'Teresa of Ávila · The Interior Castle (Las Moradas, 1577)',
+  shortTitle: 'Teresa · Interior Castle',
+  corpus:     'Spanish mystical canon (Teresa · John of the Cross)',
+  tradId:     'tradition-early-christianity',
+  date:       '1577 CE (composed by Teresa in roughly six months between June and November 1577 at the Toledo Carmelite convent during the period of intense Inquisitorial scrutiny that followed her reform of the Carmelite order)',
+  docNode:    'phase-6-038-teresa-interior-castle',
+  language:   'Sixteenth-century Castilian Spanish (original) · Kieran Kavanaugh & Otilio Rodriguez 1979 English (canonical ICS Publications edition)',
+  translations: [
+    { id: 'kavanaugh', label: 'Kavanaugh & Rodriguez 1979 (ICS Publications, "The Collected Works of St. Teresa of Avila II")', note: 'The current Anglophone scholarly standard, prepared by the Discalced Carmelite International Commission. Includes the full text plus the Inquisitorial-context introduction.' },
+    { id: 'peers',     label: 'E. Allison Peers 1944 (Sheed & Ward)', note: 'The classical mid-20th-century English translation; methodologically dated but still widely cited in the older mystical-theology scholarship.' },
+    { id: 'spanish',   label: 'Castilian Spanish (Tomás Álvarez critical edition 1986)' },
+  ],
+  intro: 'Teresa of Ávila\'s Interior Castle (Las Moradas del Castillo Interior, "The Mansions of the Interior Castle") is the culminating systematic-mystical work of the 16th-century Spanish mystical canon — composed by Teresa in roughly six months between June and November 1577 at the Toledo Carmelite convent at the order of her Dominican confessor, during the period of intense Inquisitorial scrutiny that followed her reform of the Carmelite order. The book\'s structuring metaphor is one of the most enduring images in Christian mystical literature: the soul as a many-roomed castle made of pure diamond or clear crystal, with seven concentric mansions (Las Moradas), at the center of which the King — Christ — resides. The mystical journey is presented as a movement of consciousness from the outermost mansion (sense-bound prayer and outward religious practice) progressively inward through five further mansions of increasing union and stillness until the seventh mansion, the spiritual marriage, where the soul is permanently united with the divine without losing its created identity. Teresa\'s articulation crystallises the Catholic mystical-theological tradition\'s answer to the central question of mystical anthropology — does mystical union dissolve the soul into the divine or preserve its created identity in the union? — by affirming the second position against the more dissolution-leaning formulations of the Rhenish Dominican tradition (Eckhart, Tauler) and certain readings of the Greek patristic tradition (Pseudo-Dionysius, Maximus the Confessor). The work occupies a central place in modern Catholic mystical theology (Teresa was declared the first female Doctor of the Church in 1970), in the broader history of Christian mystical literature, and (through Edith Stein\'s 20th-century engagement) in modern Catholic-philosophical theology. Modern scholarship: Kavanaugh-Rodriguez 1979, Howells 2002, Williams 1991.',
+  crossTradition: [
+    { label: 'John of the Cross · Dark Night of the Soul — the canonical mystical pair', textId: 'john-of-the-cross-dark-night',
+      note: 'Teresa of Ávila and John of the Cross are the canonical pair of the 16th-century Spanish mystical canon — collaborators in the Carmelite reform, theological correspondents, and the two writers whose mystical-theological corpus together constitutes the high articulation of Catholic mystical literature. The Interior Castle\'s seven-mansion structure and John\'s Dark Night via-negativa articulation are complementary mystical-theological perspectives: Teresa emphasising the progressive interiorisation of consciousness, John emphasising the apophatic stripping-away that accompanies it.' },
+    { label: 'Cloud of Unknowing — the English-medieval apophatic precursor', textId: 'cloud-of-unknowing',
+      note: 'The 14th-century English Cloud of Unknowing is the most influential single English-language mystical work and a direct apophatic-tradition precursor to the Spanish mystical canon. Reading the Cloud and the Interior Castle together documents the broader medieval-to-early-modern Christian apophatic-mystical tradition that runs from Pseudo-Dionysius through Eckhart and the Rhineland mystics through the English-mystical school through the Spanish Discalced Carmelite reform.' },
+    { label: 'Eckhart · the Godhead — the Rhenish Dominican apophatic articulation', textId: 'meister-eckhart-godhead',
+      note: 'Meister Eckhart\'s 14th-century Rhineland-Dominican mystical theology is the broader medieval-Western mystical-theological tradition from which the Spanish 16th-century articulation emerges. Teresa\'s preserve-the-created-identity formulation of mystical union is in part a deliberate articulation against the more dissolution-leaning formulations of the Eckhartian tradition — making the Interior Castle\'s position one important pole in the long-running Western Christian mystical-theological debate about the structure of mystical union.' },
+  ],
+  sections: [
+    {
+      heading: 'I. The Castle of the Soul',
+      verses: [
+        {
+          ref: 'Interior Castle I.1.1 (Kavanaugh-Rodriguez trans.)',
+          text: 'Today, while beseeching our Lord to speak for me, since I couldn\'t think of anything to say nor did I know how to begin to carry out this obedience, a thought occurred to me which I shall now explain in order to begin with some basis. It is that we consider our soul to be like a castle made entirely out of a diamond or of very clear crystal, in which there are many rooms, just as in heaven there are many dwelling places. For in reflecting upon it carefully, sisters, we realize that the soul of the just person is nothing else but a paradise where the Lord says He finds His delight.',
+          textVersions: {
+            kavanaugh: 'Today, while beseeching our Lord to speak for me, since I couldn\'t think of anything to say nor did I know how to begin to carry out this obedience, a thought occurred to me which I shall now explain in order to begin with some basis. It is that we consider our soul to be like a castle made entirely out of a diamond or of very clear crystal, in which there are many rooms, just as in heaven there are many dwelling places.',
+            spanish:   'Estando yo hoy suplicando a nuestro Señor hablase por mí, porque yo no atinaba a cosa que decir ni cómo comenzar a cumplir esta obediencia, se me ofreció lo que ahora diré, para comenzar con algún fundamento; que es considerar nuestra alma como un castillo todo de un diamante o muy claro cristal, adonde hay muchos aposentos, así como en el cielo hay muchas moradas.',
+          },
+          entities: [
+            { word: 'a castle made entirely out of a diamond or of very clear crystal', node: 'teresa-of-avila', type: 'image',
+              note: 'The structuring image of Teresa\'s mystical theology — the soul as a transparent diamond-castle with seven concentric mansions, at whose center the divine resides — is one of the most enduring single images in Christian mystical literature. The image draws on the Johannine "in my Father\'s house are many dwelling places" (John 14:2) but transforms the spatial-eschatological image of heaven into a psychological-interior image of the soul itself. The seven-mansion structure parallels (though without direct textual influence) the sevenfold structure of medieval Jewish-Hekhalot ascent literature, the seven-stage Sufi mystical journey, and the seven-chakra structure of certain Indian tantric traditions — suggesting that the seven-stage structuring of the mystical journey is a cross-tradition near-universal of religious-psychological self-understanding rather than a specifically Christian innovation.',
+              parallels: [
+                { label: 'John 14:2 — "in my Father\'s house are many dwelling places"', textId: 'john-17',
+                  note: 'Teresa\'s "in heaven there are many dwelling places" explicitly cites the Johannine moradas-vocabulary (the Spanish moradas translates the Latin Vulgate\'s mansiones in John 14:2). The choice of moradas as the structuring vocabulary of her treatise is a deliberate scriptural-rhetorical move: the mystical-interior journey is the interiorisation of the eschatological-heavenly promise.' },
+                { label: 'John of the Cross — the apophatic-stripping companion', textId: 'john-of-the-cross-dark-night',
+                  note: 'Teresa\'s positive-imaginative seven-mansion progression and John of the Cross\'s apophatic-stripping dark-night-of-the-soul are complementary mystical-theological articulations: Teresa\'s interiorisation operates on the cataphatic-imaginative side, John\'s on the apophatic-stripping side. Both Carmelite reformers, both writing in 16th-century Spain, both Doctors of the Church, both treating the same mystical journey from different methodological-theological angles.' },
+                { label: 'Cloud of Unknowing — the parallel English-medieval apophatic articulation', textId: 'cloud-of-unknowing',
+                  note: 'The Cloud of Unknowing\'s 14th-century English-mystical articulation of apophatic-contemplative practice anticipates the Spanish mystical canon\'s 16th-century systematic articulation. Reading the Cloud and Teresa together documents the medieval-to-early-modern Western Christian mystical-theological continuity.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+// ── IQBAL · RECONSTRUCTION OF RELIGIOUS THOUGHT IN ISLAM (1930) ──────────────
+SCRIPTURE_TEXTS['iqbal-reconstruction-1'] = {
+  id:         'iqbal-reconstruction-1',
+  title:      'Muhammad Iqbal · The Reconstruction of Religious Thought in Islam (1930)',
+  shortTitle: 'Iqbal · Reconstruction',
+  corpus:     'South Asian religious modernity — Ambedkar + Iqbal (1930–1956)',
+  tradId:     'tradition-islamic-modernism',
+  date:       '1930 CE (Iqbal delivered the six lectures that compose the book at Madras, Hyderabad, and Aligarh in 1928–29; published as a unified volume by Oxford University Press in 1930, with a seventh lecture added in 1934)',
+  docNode:    'phase-7-046-iqbal-reconstruction-religious-thought',
+  language:   'English (Iqbal composed the Reconstruction directly in English for a cosmopolitan modern South Asian audience) · Iqbal\'s own text + extensive Urdu-language commentary tradition since',
+  translations: [
+    { id: 'iqbal-original', label: 'Muhammad Iqbal 1930 / 1934 (Oxford University Press)', note: 'Iqbal\'s own English text — the canonical edition. M. Saeed Sheikh\'s 1986 edition with extensive scholarly apparatus (Iqbal Academy Pakistan) is the modern reference.' },
+    { id: 'urdu',           label: 'Urdu translation (Nazir Niazi, with introduction by Sayyid Naẓir Niyāzī) — the canonical South Asian translation', note: 'Iqbal\'s own Urdu translation of his work circulated in scholarly form and remains widely consulted in subcontinent religious-philosophical study.' },
+  ],
+  intro: 'Muhammad Iqbal\'s The Reconstruction of Religious Thought in Islam (1930) is the single most important 20th-century work of Muslim philosophical theology — a sustained effort to articulate the foundations of Islamic religious thought in dialogue with modern philosophy (Bergson, Whitehead, McTaggart, Husserl), with modern science (relativity theory, evolution, contemporary cosmology), and with the long traditions of Islamic mystical-philosophical thought (Ibn ʿArabi, al-Ghazali, Rumi, the Persian Sufi tradition). The seven lectures that compose the book — "Knowledge and Religious Experience," "The Philosophical Test of the Revelations of Religious Experience," "The Conception of God and the Meaning of Prayer," "The Human Ego — His Freedom and Immortality," "The Spirit of Muslim Culture," "The Principle of Movement in the Structure of Islam," and "Is Religion Possible?" — provide the most influential single articulation of Islamic philosophical-religious modernity in the 20th century, the operative theological-philosophical foundation of the Pakistan movement that Iqbal himself was central to (his 1930 Allahabad Address proposed the partition of British India into a separate Muslim-majority state, which became Pakistan in 1947), and the major continuing reference text for Muslim engagement with modern Western philosophy. Iqbal\'s technical vocabulary — the khudi (self) doctrine, the ijtihad-as-creative-reinterpretation principle, the "principle of movement" that he treats as the structural feature distinguishing Islam from other religious traditions — remains operative in subsequent South Asian and global Muslim philosophical-religious thought. Modern scholarship: Schimmel 1963, Vahid 1959, Sheikh 1986 critical edition, Majeed 2009.',
+  crossTradition: [
+    { label: 'Ambedkar · The Buddha and His Dhamma — the parallel South Asian religious-modernist project', textId: 'ambedkar-buddha-dhamma',
+      note: 'Iqbal\'s Reconstruction (1930) and Ambedkar\'s The Buddha and His Dhamma (1956) are the two major South Asian religious-modernist works of the mid-20th century — both projects of religious-traditional reconstruction in dialogue with modern thought, both authored by figures with significant political-historical roles in the partition and post-partition South Asia (Iqbal as the philosophical father of the Pakistan idea, Ambedkar as the architect of the Indian Constitution and the leader of the modern Buddhist movement in India). Reading them together is the standard scholarly entry-point to mid-20th-century South Asian religious modernity.' },
+    { label: 'Rumi · Masnavi — the Persian mystical-philosophical tradition Iqbal draws on', textId: 'rumi-masnavi',
+      note: 'Rumi\'s Masnavi is the single most-cited classical text in Iqbal\'s Reconstruction. Iqbal himself wrote major Urdu and Persian poetic works in dialogue with Rumi (the Asrar-e-Khudi and the Javid Nama), and his prose Reconstruction repeatedly returns to Rumi as the canonical philosophical-mystical source from which Iqbal\'s khudi doctrine is developed. The Rumi → Iqbal philosophical-mystical lineage is one of the major textual threads in 20th-century Muslim philosophical thought.' },
+    { label: 'Bahá\'í Kitáb-i-Íqán — the parallel progressive-revelation modernity claim', textId: 'bahai-kitab-i-iqan',
+      note: 'The Bahá\'í Íqán and Iqbal\'s Reconstruction are not in direct historical-textual relation but occupy the same broader genre-space of "modern systematic-religious articulation against the literalist-traditionalist reading of the home tradition." Both texts argue (in different idioms and with different relations to their respective traditions) for an interpretive-rather-than-literalist reading of scripture; both engage modern philosophical thought; both occupy a contested place within their respective traditions.' },
+  ],
+  sections: [
+    {
+      heading: 'I. The Principle of Movement — Ijtihad as Continuous Reconstruction',
+      verses: [
+        {
+          ref: 'Reconstruction Lecture VI ("The Principle of Movement in the Structure of Islam," opening passage)',
+          text: 'As a cultural movement Islam rejects the old static view of the universe, and reaches a dynamic view. As an emotional system of unification it recognizes the worth of the individual as such, and rejects blood-relationship as a basis of human unity. The Search for a purely psychological foundation of human unity becomes possible only with the perception that all human life is spiritual in its origin. Such a perception is creative of fresh loyalties without any ceremonial to keep them alive, and makes it possible for man to emancipate himself from the earth.',
+          textVersions: {
+            'iqbal-original': 'As a cultural movement Islam rejects the old static view of the universe, and reaches a dynamic view. As an emotional system of unification it recognizes the worth of the individual as such, and rejects blood-relationship as a basis of human unity. The Search for a purely psychological foundation of human unity becomes possible only with the perception that all human life is spiritual in its origin. Such a perception is creative of fresh loyalties without any ceremonial to keep them alive, and makes it possible for man to emancipate himself from the earth.',
+          },
+          entities: [
+            { word: 'rejects the old static view of the universe, and reaches a dynamic view', node: 'muhammad-iqbal', type: 'philosophical-thesis',
+              note: 'The "principle of movement" (ḥarakat / ḥarakah) is the central philosophical thesis of Iqbal\'s Reconstruction: Islamic religious thought is essentially dynamic rather than static, oriented to becoming rather than being, and the institutional-juristic vehicle of this dynamism is ijtihad (independent juristic reasoning). Iqbal\'s argument is at once philosophical (drawing on Bergson\'s élan vital and Whitehead\'s process metaphysics) and theological (drawing on the Qurʾanic vocabulary of God as al-Khallāq, the perpetual creator) and political (an explicit call for the modern Muslim community to reopen the gate of ijtihad that conservative Sunni jurisprudence had treated as closed since the 10th century). The thesis became one of the most-influential single articulations of Islamic philosophical modernism in the 20th century.',
+              parallels: [
+                { label: 'Rumi · Masnavi — the Persian mystical-philosophical foundation', textId: 'rumi-masnavi',
+                  note: 'Iqbal\'s khudi doctrine and "principle of movement" are explicit philosophical developments of Rumi\'s mystical-philosophical articulation of the soul as continuous becoming. Iqbal\'s own Persian poetic corpus (Asrar-e-Khudi 1915, Rumuz-e-Bekhudi 1917, Payam-e-Mashriq 1923, Zabur-e-Ajam 1927, Javid Nama 1932) repeatedly invokes Rumi as the master-figure; the Reconstruction is the prose-philosophical articulation of the same philosophical-mystical lineage.' },
+                { label: 'Bahá\'í Kitáb-i-Íqán — the parallel modern reformulation', textId: 'bahai-kitab-i-iqan',
+                  note: 'Both Iqbal\'s Reconstruction and the Bahá\'í Íqán argue for an interpretive-progressive reading of religious tradition against literalist-static readings. The two works occupy the same broader genre-space of "modern systematic articulation of the home tradition against the literalist reading" — though Iqbal works within the Islamic tradition and the Íqán explicitly steps outside it.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+// ── CODEX BORGIA — PRE-COLUMBIAN MIXTEC-AZTEC DIVINATORY ALMANAC (~1450 CE) ──
+SCRIPTURE_TEXTS['codex-borgia-1'] = {
+  id:         'codex-borgia-1',
+  title:      'Codex Borgia — Pre-Columbian Mixtec-Aztec Divinatory Almanac (~1450 CE)',
+  shortTitle: 'Codex Borgia',
+  corpus:     'Mesoamerican sacred corpus (Popol Vuh · Codex Borgia · Dresden Codex)',
+  tradId:     'tradition-mesoamerican',
+  date:       '~1400–1500 CE (the pre-Columbian Mixtec-Puebla tradition; the manuscript was probably composed in the Cholula or Tlaxcala region of the Mexican highlands shortly before the Spanish conquest of 1519–1521)',
+  docNode:    'phase-8-002-codex-borgia',
+  language:   'Pictographic Mixtec-Puebla style — non-alphabetic; "read" by glyph-and-image rather than by phonetic transcription · Eduard Seler 1904–1909 German + Karl Anton Nowotny 1961 + Elizabeth Hill Boone 2007 English scholarly tradition',
+  translations: [
+    { id: 'boone',     label: 'Elizabeth Hill Boone 2007 (Cycles of Time and Meaning in the Mexican Books of Fate)', note: 'The current Anglophone scholarly reference for reading the Codex Borgia within its broader pre-Columbian Mixtec-Puebla manuscript tradition.' },
+    { id: 'seler',     label: 'Eduard Seler 1904–1909 (Berlin / FAMSI English translation 1963)', note: 'The foundational 19th–20th century scholarly commentary; methodologically dated but historically essential as the first complete decoding effort.' },
+    { id: 'pictograph', label: 'Pre-Columbian pictographic original (held at the Vatican Apostolic Library)' },
+  ],
+  intro: 'The Codex Borgia is the most important surviving pre-Columbian Mesoamerican ritual-divinatory manuscript and one of only a handful of fully-preserved pre-conquest Mexican codices (the survivors include the Borgia Group manuscripts — Borgia, Vaticanus B, Cospi, Laud, Fejérváry-Mayer — together with the Maya Dresden, Madrid, and Paris codices, and a small group of Mixtec genealogical-historical manuscripts). The Codex Borgia was composed in the Mixtec-Puebla style in the late pre-Columbian period (probably 1400–1500 CE, in the region around Cholula or Tlaxcala) on a single long deer-hide screenfold roughly 11 metres in length, painted in vivid mineral and organic pigments, and was transported to Europe at some point in the 16th century — eventually finding its way into the collection of Cardinal Stefano Borgia in 18th-century Rome, after which it is named, and where it remains in the Vatican Apostolic Library. The codex contains 39 sections of ritual-divinatory material — almanacs governing the 260-day sacred-divinatory calendar (the tonalpohualli in Aztec terms, tzolkin in Maya, the universal Mesoamerican religious-divinatory time-cycle), invocations to the named deity-powers of the Mexican pantheon (Quetzalcoatl, Tezcatlipoca, Tlaloc, Mictlantecuhtli, Tonatiuh, and dozens of more-specific divinatory-deity-aspects), and the famous central section (pages 29–46) traditionally read as a comprehensive ritual cosmology of the cosmic-creative powers in their interactions. The codex is the single most-studied surviving non-textual record of pre-Columbian Mesoamerican religion, and one of the primary documentary sources for reconstructing the religious-cosmological worldview of the late post-Classic Mexican highland cultures that the Spanish conquest of 1519–1521 destroyed. Modern scholarship: Boone 2007, Anders-Jansen-Reyes-García 1993, Byland-Pohl 1994.',
+  crossTradition: [
+    { label: 'Popol Vuh — the K\'iche\' Maya post-conquest preservation of the same religious-cosmological tradition', textId: 'popol-vuh',
+      note: 'The Popol Vuh (composed c. 1554–1558 in K\'iche\' Maya, by post-conquest K\'iche\' nobles using the Spanish alphabet to preserve the pre-conquest oral-mythological tradition) is the most important post-conquest narrative-textual preservation of pre-Columbian Mesoamerican religious cosmology — the textual counterpart to the Codex Borgia\'s pre-conquest pictorial preservation. Reading the two together documents the full surviving picture of late pre-conquest Mesoamerican religious thought: the Borgia preserves the ritual-divinatory operational vocabulary; the Popol Vuh preserves the cosmogonic-narrative-mythological framework.' },
+    { label: 'Dresden Codex — the parallel Maya divinatory-astronomical manuscript', textId: 'dresden-codex-maya-1',
+      note: 'The Dresden Codex (Maya, c. 11th–13th century CE) and the Codex Borgia (Mixtec-Puebla, c. 15th century CE) are the two surviving pre-Columbian Mesoamerican ritual-divinatory manuscripts of their respective major cultural traditions. Reading them together documents the shared but culturally-distinct pre-Columbian Mesoamerican religious-divinatory-astronomical knowledge tradition: shared 260-day sacred-cycle, shared deity-equivalences (Kukulkan ↔ Quetzalcoatl, Chaac ↔ Tlaloc), distinct iconographic styles, and distinct ritual-procedural emphases.' },
+    { label: 'Book of the Dead 125 — the cross-cultural divinatory-ritual-manuscript parallel', textId: 'book-of-dead-125',
+      note: 'The Egyptian Book of the Dead and the Codex Borgia occupy structurally similar positions in their respective religious traditions — large-format pictorial-textual ritual manuscripts that served as operational guides for navigating religious-cosmological reality. The two manuscripts are not in direct historical relation but document the cross-cultural recurrence of the "illustrated ritual-divinatory manuscript" as a major religious-textual form.' },
+  ],
+  sections: [
+    {
+      heading: 'I. The Five World-Ages and the Cosmogonic Powers',
+      verses: [
+        {
+          ref: 'Codex Borgia p. 32–33 (Boone 2007 interpretive translation of the cosmogonic central section)',
+          text: 'In the heart of the codex, the great cosmogonic-temporal scene: the four directional deities preside over the four world-ages; Quetzalcoatl as Ehecatl the wind-god stands at the eastern direction, governing the era of breath and life; Tezcatlipoca the smoking-mirror lord stands at the northern direction, governing the era of darkness and obsidian; Tlaloc the rain-bringer at the west, governing the era of water; the sun-deity at the south, governing the era of light. At the centre, the Fifth Sun — the present era — is born from the self-sacrifice of the divine assembly at Teotihuacan.',
+          textVersions: {
+            boone: 'In the cosmogonic central section of the codex (pp. 29–46), the four directional deities preside over the four prior world-ages, and the present Fifth Sun is established at the centre through the self-sacrifice of the divine assembly. Each prior era is associated with a specific deity-power, a specific element, and a specific destruction-event. The composition is read both spatially (the four directions plus the centre) and temporally (the sequence of four destroyed world-ages plus the present).',
+          },
+          entities: [
+            { word: 'Quetzalcoatl', node: 'quetzalcoatl', type: 'deity',
+              note: 'Quetzalcoatl ("Feathered Serpent") is the great cross-cultural deity of pre-Columbian Mesoamerica, attested under cognate names across most of the major cultural traditions (Quetzalcoatl in Nahuatl-Aztec, Kukulkan in Yucatec Maya, Q\'uq\'umatz in K\'iche\' Maya, the Feathered Serpent at Teotihuacan in earlier Classic-period cult). In the Codex Borgia\'s cosmogonic central section, Quetzalcoatl appears in his Ehecatl (wind-god) aspect, presiding over the eastern direction and the era of breath and life. The deity\'s mythological-narrative profile (creator, civilising hero, twin of Tezcatlipoca, eventual exile to the east, prophesied return) is one of the most extensively-documented pre-Columbian deity-profiles; the post-conquest period\'s mistaken Spanish-historical identification of Cortés with the returning Quetzalcoatl (the Tezcatlipoca-Ehécatl prophecy) is one of the most-studied moments of pre/post-conquest religious-historical interpretation.',
+              parallels: [
+                { label: 'Popol Vuh — Q\'uq\'umatz the Feathered Serpent creator', textId: 'popol-vuh',
+                  note: 'Q\'uq\'umatz, the Feathered Serpent of the K\'iche\' Maya Popol Vuh, is the linguistic-mythological cognate of the Nahuatl-Aztec Quetzalcoatl: same compound name structure ("quetzal" or equivalent precious-feather word + "serpent"), same creator-and-wind-god functional profile. The cross-cultural recurrence of the Feathered Serpent deity across Maya, Toltec, Teotihuacano, and Aztec religious traditions is one of the most-studied single examples of pre-Columbian Mesoamerican religious-cultural unity.' },
+                { label: 'Dresden Codex — Kukulkan in the Maya divinatory-astronomical tradition', textId: 'dresden-codex-maya-1',
+                  note: 'Kukulkan, the Yucatec Maya form of the Feathered Serpent, appears in the Dresden Codex\'s astronomical tables (particularly the Venus-cycle tables, where Kukulkan-Venus governs particular phases of the Venus apparition-cycle as morning-star and evening-star). The deity\'s Maya astronomical identification and the Mexican Codex Borgia\'s Quetzalcoatl directional-cosmological identification document the shared pre-Columbian Mesoamerican religious-cosmological framework.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+// ── DRESDEN CODEX — MAYA ASTRONOMICAL-DIVINATORY MANUSCRIPT (~11th–13th c.) ──
+SCRIPTURE_TEXTS['dresden-codex-maya-1'] = {
+  id:         'dresden-codex-maya-1',
+  title:      'Dresden Codex — The Maya Astronomical-Divinatory Manuscript (~11th–13th c. CE)',
+  shortTitle: 'Dresden Codex',
+  corpus:     'Mesoamerican sacred corpus (Popol Vuh · Codex Borgia · Dresden Codex)',
+  tradId:     'tradition-maya-religion',
+  date:       '~1050–1300 CE (the surviving manuscript is a Post-Classic Maya copy, probably from the Chichén Itzá region, of older Classic-period astronomical tables — the underlying Venus-cycle and eclipse-prediction tables go back at least to the 8th century CE and possibly earlier)',
+  docNode:    'phase-8-003-dresden-codex-maya',
+  language:   'Classic Maya logosyllabic script + numerical tables (long-count and 260-day sacred-cycle dating) · Eric Thompson 1972 + Vail-Aveni 2004 English scholarly tradition',
+  translations: [
+    { id: 'vail',     label: 'Gabrielle Vail & Anthony Aveni 2004 (The Madrid Codex: New Approaches to Understanding an Ancient Maya Manuscript) + Vail 2006 Dresden study', note: 'The current Anglophone scholarly reference for the Dresden Codex within the broader corpus of Maya codices. Vail\'s subsequent work treats the divinatory almanac sections specifically.' },
+    { id: 'thompson', label: 'J. Eric S. Thompson 1972 (A Commentary on the Dresden Codex)', note: 'Thompson\'s foundational mid-20th-century scholarly commentary; methodologically dated in places but still important as the standard scholarly reference for the manuscript\'s astronomical sections.' },
+    { id: 'maya',     label: 'Classic Maya logosyllabic script (Förstemann 1880 + modern Mayan-decipherment scholarship)' },
+  ],
+  intro: 'The Dresden Codex is the most important surviving pre-Columbian Maya manuscript and (alongside the Codex Borgia) one of the two most important surviving pre-Columbian Mesoamerican manuscripts of any tradition. The codex was composed in Post-Classic Yucatán probably in the 11th–13th centuries CE as a copy of older Classic-period astronomical tables and divinatory almanacs, on long folded bark-paper screenfold pages painted in mineral pigments; it survived the conquest-era burning of Maya manuscripts (the 1562 burning at Maní by Bishop Diego de Landa is the most-cited single event of Maya manuscript destruction) by being already in Europe before the conquest — exact transmission history unknown, but by 1739 the manuscript was in the Royal Library of Saxony in Dresden, after which it is named, where it remains. The codex contains 74 pages of mixed astronomical-divinatory material: the famous Venus tables (pp. 24, 46–50; tracking the synodic period of Venus across 65 Venus-cycles or 104 solar years), the eclipse tables (pp. 51–58; with predicted-eclipse warnings tied to specific tzolkin dates), the multiplication tables governing the 260-day tzolkin sacred cycle, and divinatory almanacs governing agricultural, ritual, and social activities. The Maya astronomical sophistication preserved in the codex is extraordinary: the Venus-cycle calculation uses correction-mechanisms that achieve accuracy to within roughly an hour over the 104-year supercycle, and the eclipse-prediction tables represent some of the most accurate pre-modern eclipse predictions in any culture. The manuscript is therefore at once a religious-divinatory document and one of the major surviving records of pre-Columbian scientific knowledge. Modern scholarship: Vail-Aveni 2004, Aveni 2001 (Skywatchers), Bricker-Bricker 2011, Förstemann 1880 (the foundational decipherment).',
+  crossTradition: [
+    { label: 'Codex Borgia — the parallel Mixtec-Aztec divinatory-cosmological manuscript', textId: 'codex-borgia-1',
+      note: 'The Dresden Codex (Maya, c. 11th–13th c.) and the Codex Borgia (Mixtec-Puebla, c. 15th c.) are the two surviving pre-Columbian Mesoamerican ritual-divinatory manuscripts of their respective major cultural traditions. The two manuscripts share the 260-day sacred cycle (tzolkin / tonalpohualli), the four-directional cosmological-deity framework, and the integration of astronomical-temporal observation with religious-divinatory practice — while differing in their distinctive iconographic styles and in the emphasis on different aspects of the shared pre-Columbian Mesoamerican religious-knowledge complex.' },
+    { label: 'Popol Vuh — the K\'iche\' Maya cosmogonic narrative companion', textId: 'popol-vuh',
+      note: 'The Popol Vuh (post-conquest K\'iche\' Maya text, c. 1554–1558) and the Dresden Codex (pre-conquest Yucatec Maya manuscript) are the two most important surviving documents of pre-Columbian Maya religious thought. The Popol Vuh preserves the cosmogonic-narrative-mythological framework; the Dresden Codex preserves the operational-ritual-astronomical knowledge. Reading them together documents the full preservable picture of pre-Columbian Maya religious-cosmological knowledge.' },
+    { label: 'Manetho · Aegyptiaca — the cross-cultural sacred-astronomical preservation parallel', textId: 'manetho-aegyptiaca-1',
+      note: 'The Dresden Codex and Manetho\'s Aegyptiaca occupy structurally similar positions in their respective traditions — preservation of the priestly-astronomical knowledge tradition in a moment of cultural-political transition. The two documents are not in direct historical relation but document the cross-cultural pattern of "priestly-astronomical knowledge crystallised into authoritative textual-manuscript form at moments of cultural-political transition."' },
+  ],
+  sections: [
+    {
+      heading: 'I. The Venus Tables — Astronomical Precision in Religious Service',
+      verses: [
+        {
+          ref: 'Dresden Codex pp. 46–50 (Vail-Aveni interpretive treatment)',
+          text: 'The Venus tables track the 584-day synodic period of Venus across 65 Venus-cycles (= 104 solar years = 146 tzolkin sacred-cycles of 260 days). Each Venus-cycle is divided into four phases: 236 days as morning star, 90 days of superior conjunction (invisible), 250 days as evening star, 8 days of inferior conjunction (invisible). The codex assigns specific deity-powers to each phase, tracks the heliacal-rising dates (when Venus first appears as the morning star after inferior conjunction) as moments of religious-divinatory importance, and includes correction-mechanisms that maintain accuracy across the full 104-year supercycle to within roughly an hour.',
+          textVersions: {
+            vail:     'The Venus tables of the Dresden Codex (pp. 24, 46–50) constitute one of the most extensively-studied pre-Columbian astronomical instruments. The tables track Venus\'s 584-day synodic period across 65 cycles, integrating the astronomical precision with religious-divinatory deity-assignments at each phase. The Maya astronomical sophistication preserved in this section achieves accuracy within roughly an hour over the 104-year supercycle — a level of precision not matched by Old World astronomical-tabular traditions until the late medieval period.',
+          },
+          entities: [
+            { word: 'Venus tables', node: 'kukulkan', type: 'astronomical-religious',
+              note: 'The Venus tables of the Dresden Codex are simultaneously astronomical (tracking the synodic period of Venus to roughly hour-accuracy across a 104-year supercycle) and religious-divinatory (each phase of the Venus cycle is assigned a specific deity-power; heliacal-rising dates are treated as moments of religious significance, often associated with warfare and ritual). In the Maya religious-cosmological framework, Kukulkan — the Feathered Serpent — is closely associated with Venus, particularly in its morning-star phase; the conflation of astronomical observation, calendrical timekeeping, and religious-mythological narrative in the codex documents the integrated character of pre-Columbian Maya religious-scientific thought. Modern scholarship (Aveni, Bricker-Bricker, Vail) has decoded the tables in detail and confirmed their astronomical accuracy, but the religious-mythological dimensions of the tables remain partially open to interpretation.',
+              parallels: [
+                { label: 'Codex Borgia — Quetzalcoatl-Venus in the Mixtec-Aztec parallel', textId: 'codex-borgia-1',
+                  note: 'The Mexican-Aztec association of Quetzalcoatl with Venus (particularly in his Tlahuizcalpantecuhtli "Lord of the Dawn" aspect) is the structural counterpart to the Maya Kukulkan-Venus association in the Dresden Codex. The two manuscripts document the shared pre-Columbian Mesoamerican religious-astronomical framework in which the Feathered Serpent deity is intimately bound up with the Venus-cycle observational tradition.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
 
 
 
