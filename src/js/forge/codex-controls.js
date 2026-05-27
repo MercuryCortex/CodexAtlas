@@ -28,7 +28,59 @@
 (function () {
   'use strict';
 
-  const LS_KEY = 'atlas.codex.v1';
+  // 2026-05-27 — workflow restructure (per John): the Codex pill is now
+  // a 5-step cascade  Religion → Codex → Books → Lens → ✠ Read  (was
+  // 4-step Family → Books → Lens → Read where "Family" actually meant
+  // "Codex/corpus"). LS bumped to v2; v1 keys are auto-migrated below.
+  const LS_KEY    = 'atlas.codex.v2';
+  const LS_KEY_V1 = 'atlas.codex.v1';
+
+  // RELIGION → CORPORA grouping. Each religion bundles the canonical
+  // scripture-collections the tradition recognises (or that scholarship
+  // groups under it). Some assignments are deliberate scholarly calls
+  // — e.g. nag-hammadi placed under Christianity (Christian-Gnostic),
+  // mandaean-manichaean under Gnostic/Dualist (distinct family-tree),
+  // samaritan-corpus under Judaism (Samaritan-Pentateuch is a Hebrew
+  // Bible variant), bon-corpus under Buddhism (Tibetan religious
+  // landscape). Single-canon religions still get a row each.
+  const SCRIPTURE_RELIGIONS = {
+    'christianity':     { label: 'Christianity',          corpora: ['bible', 'ethiopic-tewahedo-canon', 'kebra-nagast', 'reformation', 'spanish-mystical', 'cathar-bogomil', 'nag-hammadi'] },
+    'judaism':          { label: 'Judaism',               corpora: ['tanakh', 'rabbinic-corpus', 'kabbalistic-corpus', 'samaritan-corpus'] },
+    'islam':            { label: 'Islam',                 corpora: ['quran', 'quran-manzil', 'hadith-corpus', 'islamic-theological', 'sufi-persian', 'shia-corpus', 'alevi-corpus'] },
+    'hinduism':         { label: 'Hinduism',              corpora: ['vedas'] },
+    'buddhism':         { label: 'Buddhism',              corpora: ['tipitaka', 'bon-corpus'] },
+    'zoroastrianism':   { label: 'Zoroastrianism',        corpora: ['avesta'] },
+    'jainism':          { label: 'Jainism',               corpora: ['jain-agamas'] },
+    'sikhism':          { label: 'Sikhism',               corpora: ['guru-granth'] },
+    'bahai':            { label: 'Bahá\'í',               corpora: ['bahai-corpus'] },
+    'mormon':           { label: 'Mormon (LDS)',          corpora: ['mormon'] },
+    'egyptian':         { label: 'Egyptian (ancient)',    corpora: ['egyptian-scripture'] },
+    'greek':            { label: 'Greek (ancient)',       corpora: ['greek-scripture'] },
+    'mesopotamian':     { label: 'Mesopotamian (ancient)',corpora: ['mesopotamian'] },
+    'norse':            { label: 'Norse / Finno-Ugric',   corpora: ['norse-eddic'] },
+    'mesoamerican':     { label: 'Mesoamerican',          corpora: ['mesoamerican-sacred'] },
+    'shinto':           { label: 'Shintō',                corpora: ['kojiki-nihongi'] },
+    'chinese':          { label: 'Chinese',               corpora: ['confucian-classics', 'tao-corpus'] },
+    'gnostic-dualist':  { label: 'Gnostic / Dualist',     corpora: ['mandaean-manichaean'] },
+    'hermetic':         { label: 'Hermetic',              corpora: ['hermetica'] },
+    'druze':            { label: 'Druze',                 corpora: ['druze-corpus'] },
+    'yazidi':           { label: 'Yazidi',                corpora: ['yazidi-corpus'] },
+    'modern-syncretic': { label: 'Modern syncretic',      corpora: ['cheondogyo-corpus', 'tenrikyo-corpus', 'cao-dai-corpus', 'south-asian-modernism'] },
+  };
+
+  // Reverse lookup: corpus-id → religion-id. Computed once on first call.
+  let _corpusToReligion = null;
+  function corpusToReligion(corpusId) {
+    if (!_corpusToReligion) {
+      _corpusToReligion = Object.create(null);
+      Object.keys(SCRIPTURE_RELIGIONS).forEach(rId => {
+        SCRIPTURE_RELIGIONS[rId].corpora.forEach(cId => {
+          if (!_corpusToReligion[cId]) _corpusToReligion[cId] = rId;
+        });
+      });
+    }
+    return _corpusToReligion[corpusId] || null;
+  }
 
   function esc(s) {
     return String(s == null ? '' : s)
@@ -163,21 +215,41 @@
     // before building a fresh one.
     const stalePill = document.getElementById('app-pill-codex');
     if (stalePill && stalePill.parentNode) stalePill.parentNode.removeChild(stalePill);
-    const staleFamilyMenu = document.getElementById('app-pill-codex-family-menu');
-    if (staleFamilyMenu && staleFamilyMenu.parentNode) staleFamilyMenu.parentNode.removeChild(staleFamilyMenu);
-    const staleLensMenu = document.getElementById('app-pill-codex-lens-menu');
-    if (staleLensMenu && staleLensMenu.parentNode) staleLensMenu.parentNode.removeChild(staleLensMenu);
+    // 2026-05-27 — the religion menu is the NEW outer step; family-
+    // menu remains (now semantically the "Codex" picker — the corpus
+    // canon within the picked religion).
+    ['app-pill-codex-religion-menu', 'app-pill-codex-family-menu', 'app-pill-codex-books-menu', 'app-pill-codex-lens-menu'].forEach(id => {
+      const stale = document.getElementById(id);
+      if (stale && stale.parentNode) stale.parentNode.removeChild(stale);
+    });
 
-    // ── Hydrate state from LS ────────────────────────────────
-    let state = { familyId: null, bookTextKey: null, lensId: null };
+    // ── Hydrate state from LS (v2 with v1 migration) ─────────
+    // v2 state shape: { religionId, corpusId, bookTextKey, lensId }
+    // v1 was         : { familyId,  bookTextKey, lensId }       — familyId == corpusId.
+    let state = { religionId: null, corpusId: null, bookTextKey: null, lensId: null };
     try {
       const raw = localStorage.getItem(LS_KEY);
       if (raw) {
         const parsed = JSON.parse(raw);
         if (parsed && typeof parsed === 'object') {
-          if (parsed.familyId === null || typeof parsed.familyId === 'string') state.familyId = parsed.familyId;
+          if (parsed.religionId === null || typeof parsed.religionId === 'string') state.religionId = parsed.religionId;
+          if (parsed.corpusId   === null || typeof parsed.corpusId   === 'string') state.corpusId   = parsed.corpusId;
           if (typeof parsed.bookTextKey === 'string') state.bookTextKey = parsed.bookTextKey;
           if (typeof parsed.lensId === 'string' && ['personae','authors','deities'].indexOf(parsed.lensId) !== -1) state.lensId = parsed.lensId;
+        }
+      } else {
+        // Try v1 migration
+        const v1raw = localStorage.getItem(LS_KEY_V1);
+        if (v1raw) {
+          const v1 = JSON.parse(v1raw);
+          if (v1 && typeof v1 === 'object') {
+            if (typeof v1.familyId === 'string') {
+              state.corpusId = v1.familyId;
+              state.religionId = corpusToReligion(v1.familyId);
+            }
+            if (typeof v1.bookTextKey === 'string') state.bookTextKey = v1.bookTextKey;
+            if (typeof v1.lensId === 'string' && ['personae','authors','deities'].indexOf(v1.lensId) !== -1) state.lensId = v1.lensId;
+          }
         }
       }
     } catch (_) { /* fall back to defaults */ }
@@ -187,7 +259,12 @@
 
     // Mirror onto local so the engine-side filter (in forge.js
     // rebuildForMode) reads it without going through the module.
-    local.codexFamily   = state.familyId;
+    // codexFamily is kept as an alias for codexCorpus so existing
+    // rebuildForMode logic (which reads local.codexFamily) keeps
+    // working without any forge.js-side change.
+    local.codexReligion = state.religionId;
+    local.codexCorpus   = state.corpusId;
+    local.codexFamily   = state.corpusId;   // legacy alias
     local.codexBookKey  = state.bookTextKey;
     local.codexLens     = state.lensId;
 
@@ -201,23 +278,37 @@
     pill.className = 'app-pill app-pill--codex';
     pill.setAttribute('role', 'group');
     pill.id = 'app-pill-codex';
-    // Progressive disclosure workflow (2026-05-28 restructure):
-    //   1. Family ▾  — always enabled when codex is the active class
-    //   2. Books ▾   — locked until a family is picked. Lists the
-    //                  canon's books grouped by canonical section.
-    //                  Picking a book = the INPUT for steps 3 + 4.
-    //   3. Lens ▾    — locked until a book is picked. Filters the
-    //                  wheel to entities NAMED IN that one book
-    //                  (Personae / Authors / Deities).
-    //   4. ✠ Read    — locked until a book is picked. Single button
-    //                  (no dropdown) — click opens the reader for
-    //                  the currently-picked book.
+    // Progressive disclosure workflow (2026-05-27 restructure to 5 steps
+    // per John: "FAMILIES (RELIGIONS NOT BOOKS DROP DOWN), then CODEX,
+    // then BOOKS, then PERSONAE etc..., then ✠ READ"):
+    //   1. Family ▾  — RELIGION picker (Christianity / Islam / Judaism /
+    //                  Hinduism / Buddhism / Egyptian / etc.). Always
+    //                  enabled. "All families" = no religion filter.
+    //   2. Codex ▾   — the specific canon WITHIN that religion (Bible /
+    //                  Tewahedo / Reformation / etc. when religion is
+    //                  Christianity). Always enabled — when religion is
+    //                  "All families" shows the full codex list grouped
+    //                  by religion.
+    //   3. Books ▾   — locked until a codex is picked. Lists the codex's
+    //                  books grouped by canonical section.
+    //   4. Lens ▾    — locked until a book is picked. Filters the wheel
+    //                  to entities NAMED IN that one book (Personae /
+    //                  Authors / Deities).
+    //   5. ✠ Read    — locked until a book is picked. Opens the reader.
     pill.innerHTML = [
+      '<button class="app-pill-side app-pill-codex-religion" id="app-pill-codex-religion"',
+      '        type="button" aria-haspopup="menu" aria-expanded="false"',
+      '        aria-controls="app-pill-codex-religion-menu"',
+      '        title="Religion / family — Christianity / Islam / Hinduism / etc.">',
+      '  <span class="app-pill-label" id="app-pill-codex-religion-label">All families</span>',
+      '  <span class="app-pill-caret" aria-hidden="true">▾</span>',
+      '</button>',
+      '<span class="app-pill-divider" aria-hidden="true"></span>',
       '<button class="app-pill-side app-pill-codex-family" id="app-pill-codex-family"',
       '        type="button" aria-haspopup="menu" aria-expanded="false"',
       '        aria-controls="app-pill-codex-family-menu"',
-      '        title="Codex family — Bible / Egyptian / Vedas / etc.">',
-      '  <span class="app-pill-label" id="app-pill-codex-family-label">All families</span>',
+      '        title="Codex — Bible / Tewahedo / Qurʾān / Vedas / etc.">',
+      '  <span class="app-pill-label" id="app-pill-codex-family-label">Codex</span>',
       '  <span class="app-pill-caret" aria-hidden="true">▾</span>',
       '</button>',
       '<span class="app-pill-divider" aria-hidden="true"></span>',
@@ -257,6 +348,15 @@
     // Menus — canonical .app-pill-menu primitive (z-index:246,
     // position:fixed, JS-positioned on open). Live as siblings
     // alongside the existing master + class menus.
+    // 2026-05-27 — religionMenu is the new outer menu added for the
+    // 5-step workflow. familyMenu is the Codex (corpus) picker.
+    const religionMenu = document.createElement('div');
+    religionMenu.className = 'app-pill-menu app-pill-menu--codex-religion';
+    religionMenu.id        = 'app-pill-codex-religion-menu';
+    religionMenu.setAttribute('role', 'menu');
+    religionMenu.setAttribute('aria-hidden', 'true');
+    wrap.appendChild(religionMenu);
+
     const familyMenu = document.createElement('div');
     familyMenu.className = 'app-pill-menu app-pill-menu--codex-family';
     familyMenu.id        = 'app-pill-codex-family-menu';
@@ -284,31 +384,91 @@
     wrap.appendChild(lensMenu);
 
     // ── Build menu contents ──────────────────────────────────
+
+    // Religion menu — the new outer step. Lists each religion in the
+    // SCRIPTURE_RELIGIONS map plus an "All families" sentinel meaning
+    // "no religion filter — show all codices in the next step."
+    function buildReligionMenu() {
+      const rows = [];
+      rows.push(
+        '<button class="app-pill-menu-item' + (state.religionId === null ? ' is-active' : '') + '"' +
+        ' role="menuitem" data-religion="" type="button">' +
+        '<span class="app-pill-menu-label">All families</span>' +
+        '<span class="app-pill-menu-hint">no religion filter</span>' +
+        (state.religionId === null ? '<span class="app-pill-menu-check">●</span>' : '') +
+        '</button>'
+      );
+      Object.keys(SCRIPTURE_RELIGIONS).forEach(rId => {
+        const R = SCRIPTURE_RELIGIONS[rId];
+        const nCorpora = (R.corpora || []).length;
+        rows.push(
+          '<button class="app-pill-menu-item' + (state.religionId === rId ? ' is-active' : '') + '"' +
+          ' role="menuitem" data-religion="' + esc(rId) + '" type="button">' +
+          '<span class="app-pill-menu-label">' + esc(R.label) + '</span>' +
+          '<span class="app-pill-menu-hint">' + nCorpora + ' code' + (nCorpora === 1 ? 'x' : 'xes') + '</span>' +
+          (state.religionId === rId ? '<span class="app-pill-menu-check">●</span>' : '') +
+          '</button>'
+        );
+      });
+      religionMenu.innerHTML = rows.join('');
+    }
+
+    // Codex menu (internal id #app-pill-codex-family preserved from
+    // the 4-step era). Lists the corpora available — filtered to the
+    // picked religion, or grouped-by-religion if "All families".
     function buildFamilyMenu() {
       const corpora = window.SCRIPTURE_CORPORA || {};
       const rows = [];
-      // "All families" sentinel — clears the family filter and
-      // returns to the default 109-node SCRIPTURE_IDS view.
-      rows.push(
-        '<button class="app-pill-menu-item' + (state.familyId === null ? ' is-active' : '') + '"' +
-        ' role="menuitem" data-family="" type="button">' +
-        '<span class="app-pill-menu-label">All families</span>' +
-        '<span class="app-pill-menu-hint">109 sacred texts</span>' +
-        (state.familyId === null ? '<span class="app-pill-menu-check">●</span>' : '') +
-        '</button>'
-      );
-      const keys = Object.keys(corpora);
-      keys.forEach(k => {
+
+      if (!state.religionId) {
+        // "All families" mode: show all corpora, grouped by religion.
+        // Each religion is a section header; its corpora listed under.
+        Object.keys(SCRIPTURE_RELIGIONS).forEach(rId => {
+          const R = SCRIPTURE_RELIGIONS[rId];
+          const items = (R.corpora || [])
+            .filter(cId => corpora[cId] && corpora[cId].available !== false);
+          if (!items.length) return;
+          rows.push('<div class="app-pill-menu-section-label">' + esc(R.label) + '</div>');
+          items.forEach(k => {
+            const c = corpora[k];
+            const nBooks = (c.sections || []).reduce((sum, sec) => sum + ((sec.books || []).length), 0);
+            const shortLabel = shortLabelFor(k, c);
+            rows.push(
+              '<button class="app-pill-menu-item' + (state.corpusId === k ? ' is-active' : '') + '"' +
+              ' role="menuitem" data-family="' + esc(k) + '" type="button">' +
+              '<span class="app-pill-menu-label">' + esc(shortLabel) + '</span>' +
+              '<span class="app-pill-menu-hint">' + nBooks + ' book' + (nBooks === 1 ? '' : 's') + '</span>' +
+              (state.corpusId === k ? '<span class="app-pill-menu-check">●</span>' : '') +
+              '</button>'
+            );
+          });
+        });
+        familyMenu.innerHTML = rows.join('') || '<div class="app-pill-menu-section-label">No codices available</div>';
+        return;
+      }
+
+      // Religion picked: show only that religion's corpora (flat — no
+      // section header needed since there's only one religion shown).
+      const R = SCRIPTURE_RELIGIONS[state.religionId];
+      if (!R) {
+        familyMenu.innerHTML = '<div class="app-pill-menu-section-label">Religion not recognised</div>';
+        return;
+      }
+      const items = (R.corpora || []).filter(cId => corpora[cId] && corpora[cId].available !== false);
+      if (!items.length) {
+        familyMenu.innerHTML = '<div class="app-pill-menu-section-label">No codices yet for ' + esc(R.label) + '</div>';
+        return;
+      }
+      items.forEach(k => {
         const c = corpora[k];
-        if (!c || c.available === false) return;
         const nBooks = (c.sections || []).reduce((sum, sec) => sum + ((sec.books || []).length), 0);
         const shortLabel = shortLabelFor(k, c);
         rows.push(
-          '<button class="app-pill-menu-item' + (state.familyId === k ? ' is-active' : '') + '"' +
+          '<button class="app-pill-menu-item' + (state.corpusId === k ? ' is-active' : '') + '"' +
           ' role="menuitem" data-family="' + esc(k) + '" type="button">' +
           '<span class="app-pill-menu-label">' + esc(shortLabel) + '</span>' +
           '<span class="app-pill-menu-hint">' + nBooks + ' book' + (nBooks === 1 ? '' : 's') + '</span>' +
-          (state.familyId === k ? '<span class="app-pill-menu-check">●</span>' : '') +
+          (state.corpusId === k ? '<span class="app-pill-menu-check">●</span>' : '') +
           '</button>'
         );
       });
@@ -365,65 +525,23 @@
       const dn2tk = getDocnodeToTextKey();
       const rows = [];
 
-      // 2026-05-27 fix — "All families" path was iterating every
-      // SCRIPTURE_TEXTS key flat-alphabetically (~190 entries),
-      // which surfaced chapter-level entries (john-1, john-3,
-      // 1-corinthians-13, etc.) as if they were separate books.
-      // John feedback: "TOO MANY books — JOHN 4 is a BOOK inside the
-      // BIBLE — list is scattered." Fix: walk SCRIPTURE_CORPORA's
-      // canonical book-list, group by corpus/family, use dn2tk to
-      // dedupe to ONE entry per docNode (per canonical book).
-      if (!state.familyId) {
-        rows.push(
-          '<div class="app-pill-menu-section-label">Pick a family first for the focused list — or pick any reader-ready book below</div>'
-        );
-        // Walk every corpus's section.books[], collecting one entry
-        // per canonical book (deduped by docNode).
-        const seenBooks = Object.create(null);
-        Object.keys(corpora).forEach(corpusKey => {
-          const co = corpora[corpusKey];
-          if (!co || !co.sections) return;
-          const corpusBooks = [];
-          co.sections.forEach(sec => {
-            (sec.books || []).forEach(book => {
-              if (!book || !book.id) return;
-              if (seenBooks[book.id]) return;            // already collected from another corpus
-              seenBooks[book.id] = true;
-              const tk = dn2tk[book.id];
-              if (!tk) return;                           // skip books with no reader entry
-              corpusBooks.push({
-                textKey: tk,
-                label:   book.label || book.id,
-                docNode: book.id,
-              });
-            });
-          });
-          if (!corpusBooks.length) return;
-          // Group header is the corpus's short label.
-          const corpusLabel = shortLabelFor(corpusKey, co);
-          rows.push('<div class="app-pill-menu-section-label">' + esc(corpusLabel) + '</div>');
-          corpusBooks.forEach(it => {
-            const isActive = state.bookTextKey === it.textKey;
-            rows.push(
-              '<button class="app-pill-menu-item' + (isActive ? ' is-active' : '') + '" role="menuitem" data-textkey="' + esc(it.textKey) + '" type="button">' +
-              '<span class="app-pill-menu-label">' + esc(it.label) + '</span>' +
-              '<span class="app-pill-menu-hint">pick</span>' +
-              (isActive ? '<span class="app-pill-menu-check">●</span>' : '') +
-              '</button>'
-            );
-          });
-        });
-        booksMenu.innerHTML = rows.join('') || '<div class="app-pill-menu-section-label">No reader-ready texts yet</div>';
+      // 2026-05-27 — Books pill is now locked until a codex (corpus) is
+      // picked (per the 5-step workflow). If somehow opened without a
+      // corpus pick, show a prompt to pick a codex first. The flat-
+      // grouped fallback that used to appear when "no family picked"
+      // is no longer reachable since the lock cascade blocks it.
+      if (!state.corpusId) {
+        booksMenu.innerHTML = '<div class="app-pill-menu-section-label">Pick a codex first</div>';
         return;
       }
 
-      // Family-focused path: walk corpus.sections, group books by
-      // canonical section, show only the family's books. Books with
+      // Codex-focused path: walk corpus.sections, group books by
+      // canonical section, show only the codex's books. Books with
       // a SCRIPTURE_TEXTS entry are clickable; books without are
       // shown disabled with a "no reader text yet" hint.
-      const corpus = corpora[state.familyId];
+      const corpus = corpora[state.corpusId];
       if (!corpus) {
-        booksMenu.innerHTML = '<div class="app-pill-menu-section-label">Pick a family first</div>';
+        booksMenu.innerHTML = '<div class="app-pill-menu-section-label">Codex not found</div>';
         return;
       }
       const sections = corpus.sections || [];
@@ -456,14 +574,22 @@
 
     // ── Sync trigger labels + lock states ────────────────────
     function syncLabels() {
-      const familyLabel = document.getElementById('app-pill-codex-family-label');
-      const booksLabel  = document.getElementById('app-pill-codex-books-label');
-      const lensLabel   = document.getElementById('app-pill-codex-lens-label');
-      if (familyLabel) {
-        if (state.familyId && window.SCRIPTURE_CORPORA && window.SCRIPTURE_CORPORA[state.familyId]) {
-          familyLabel.textContent = shortLabelFor(state.familyId, window.SCRIPTURE_CORPORA[state.familyId]);
+      const religionLabel = document.getElementById('app-pill-codex-religion-label');
+      const familyLabel   = document.getElementById('app-pill-codex-family-label');
+      const booksLabel    = document.getElementById('app-pill-codex-books-label');
+      const lensLabel     = document.getElementById('app-pill-codex-lens-label');
+      if (religionLabel) {
+        if (state.religionId && SCRIPTURE_RELIGIONS[state.religionId]) {
+          religionLabel.textContent = SCRIPTURE_RELIGIONS[state.religionId].label;
         } else {
-          familyLabel.textContent = 'All families';
+          religionLabel.textContent = 'All families';
+        }
+      }
+      if (familyLabel) {
+        if (state.corpusId && window.SCRIPTURE_CORPORA && window.SCRIPTURE_CORPORA[state.corpusId]) {
+          familyLabel.textContent = shortLabelFor(state.corpusId, window.SCRIPTURE_CORPORA[state.corpusId]);
+        } else {
+          familyLabel.textContent = 'Codex';
         }
       }
       if (booksLabel) {
@@ -480,24 +606,28 @@
       }
     }
 
-    // Progressive-disclosure lock states (2026-05-28).
-    // - Books pill: locked until family picked (unless "All families")
-    // - Lens pill: locked until book picked
-    // - Read button: locked until book picked
+    // Progressive-disclosure lock cascade (2026-05-27, 5-step):
+    //   Religion → always enabled (it's the outer step)
+    //   Codex   → always enabled (with religion=null it shows all)
+    //   Books   → locked until a codex (corpus) is picked
+    //   Lens    → locked until a book is picked
+    //   Read    → locked until a book is picked
     function syncLocks() {
-      const booksBtn = document.getElementById('app-pill-codex-books');
-      const lensBtn2 = document.getElementById('app-pill-codex-lens');
-      const readBtn2 = document.getElementById('app-pill-codex-read');
-      // Books is enabled when family is picked OR when "all families"
-      // (state.familyId === null) — user can always pick a book from
-      // the global list. So Books is essentially always enabled.
-      if (booksBtn) booksBtn.classList.remove('is-locked');
+      const familyBtn2 = document.getElementById('app-pill-codex-family');
+      const booksBtn   = document.getElementById('app-pill-codex-books');
+      const lensBtn2   = document.getElementById('app-pill-codex-lens');
+      const readBtn2   = document.getElementById('app-pill-codex-read');
+      // Codex (family) pill: always enabled. The picker shows either
+      // the full grouped list (religion=null) or the picked religion's
+      // corpora.
+      if (familyBtn2) { familyBtn2.classList.remove('is-locked'); familyBtn2.disabled = false; }
+      // Books pill: locked until a codex is picked.
+      const corpusPicked = !!state.corpusId;
+      if (booksBtn) { booksBtn.classList.toggle('is-locked', !corpusPicked); booksBtn.disabled = !corpusPicked; }
       // Lens + Read unlock together based on bookTextKey.
       const bookPicked = !!state.bookTextKey;
-      if (lensBtn2) lensBtn2.classList.toggle('is-locked', !bookPicked);
-      if (readBtn2) readBtn2.classList.toggle('is-locked', !bookPicked);
-      if (lensBtn2) lensBtn2.disabled = !bookPicked;
-      if (readBtn2) readBtn2.disabled = !bookPicked;
+      if (lensBtn2) { lensBtn2.classList.toggle('is-locked', !bookPicked); lensBtn2.disabled = !bookPicked; }
+      if (readBtn2) { readBtn2.classList.toggle('is-locked', !bookPicked); readBtn2.disabled = !bookPicked; }
     }
 
     // ── Menu positioning (same pattern as app-pill.js) ───────
@@ -507,18 +637,22 @@
       menu.style.top  = (rect.bottom + 6) + 'px';
     }
 
-    const familyBtn = document.getElementById('app-pill-codex-family');
-    const booksBtn  = document.getElementById('app-pill-codex-books');
-    const lensBtn   = document.getElementById('app-pill-codex-lens');
-    const readBtn   = document.getElementById('app-pill-codex-read');
+    const religionBtn = document.getElementById('app-pill-codex-religion');
+    const familyBtn   = document.getElementById('app-pill-codex-family');
+    const booksBtn    = document.getElementById('app-pill-codex-books');
+    const lensBtn     = document.getElementById('app-pill-codex-lens');
+    const readBtn     = document.getElementById('app-pill-codex-read');
 
     function closeAllMenus() {
+      religionMenu.classList.remove('is-open');
       familyMenu.classList.remove('is-open');
       booksMenu.classList.remove('is-open');
       lensMenu.classList.remove('is-open');
+      religionMenu.setAttribute('aria-hidden', 'true');
       familyMenu.setAttribute('aria-hidden', 'true');
       booksMenu.setAttribute('aria-hidden', 'true');
       lensMenu.setAttribute('aria-hidden', 'true');
+      religionBtn.setAttribute('aria-expanded', 'false');
       familyBtn.setAttribute('aria-expanded', 'false');
       booksBtn.setAttribute('aria-expanded', 'false');
       lensBtn.setAttribute('aria-expanded', 'false');
@@ -532,13 +666,21 @@
       btn.setAttribute('aria-expanded', 'true');
     }
 
+    religionBtn.addEventListener('click', function (ev) {
+      ev.stopPropagation();
+      const isOpen = religionMenu.classList.contains('is-open');
+      closeAllMenus();
+      if (!isOpen) openMenu(religionMenu, religionBtn, buildReligionMenu);
+    });
     familyBtn.addEventListener('click', function (ev) {
+      if (familyBtn.disabled) return;
       ev.stopPropagation();
       const isOpen = familyMenu.classList.contains('is-open');
       closeAllMenus();
       if (!isOpen) openMenu(familyMenu, familyBtn, buildFamilyMenu);
     });
     booksBtn.addEventListener('click', function (ev) {
+      if (booksBtn.disabled) return;
       ev.stopPropagation();
       const isOpen = booksMenu.classList.contains('is-open');
       closeAllMenus();
@@ -563,18 +705,73 @@
     });
 
     // ── Menu pick handlers (event delegation) ────────────────
+
+    // RELIGION menu — outer step. Picking a religion clears the
+    // downstream corpus + book + lens (full workflow reset). Picking
+    // "All families" clears religion but keeps any picked corpus
+    // (the user may have picked a corpus in all-religions mode and
+    // doesn't want it cleared just by re-confirming "All").
+    religionMenu.addEventListener('click', function (ev) {
+      const btn = ev.target.closest('.app-pill-menu-item');
+      if (!btn) return;
+      ev.stopPropagation();
+      const newReligion = btn.dataset.religion || null;
+      closeAllMenus();
+      if (newReligion === state.religionId) return;
+      state.religionId = newReligion;
+      // If the currently-picked corpus doesn't belong to the new
+      // religion, clear it (and downstream book + lens). When picking
+      // "All families" (newReligion === null) the corpus is preserved.
+      if (newReligion) {
+        const R = SCRIPTURE_RELIGIONS[newReligion];
+        const corpusInReligion = R && state.corpusId && R.corpora.indexOf(state.corpusId) !== -1;
+        if (!corpusInReligion) {
+          state.corpusId    = null;
+          state.bookTextKey = null;
+          state.lensId      = null;
+        }
+      }
+      local.codexReligion = state.religionId;
+      local.codexCorpus   = state.corpusId;
+      local.codexFamily   = state.corpusId;   // legacy alias
+      local.codexBookKey  = state.bookTextKey;
+      local.codexLens     = state.lensId;
+      local._codexFilterAppliedFor = null;
+      saveState();
+      syncLabels();
+      syncLocks();
+      if (typeof rebuildForMode === 'function' && local.mode && local.mode.id) {
+        try { rebuildForMode(local.mode.id, { preserveLocks: true, preserveZoom: false }); }
+        catch (e) { console.warn('[codex-controls] religion rebuild failed', e); }
+      }
+    });
+
+    // CODEX (family) menu — picks a specific corpus. Resets the picked
+    // book + lens (downstream workflow reset).
     familyMenu.addEventListener('click', function (ev) {
       const btn = ev.target.closest('.app-pill-menu-item');
       if (!btn) return;
       ev.stopPropagation();
-      const newFamily = btn.dataset.family || null;
+      const newCorpus = btn.dataset.family || null;
       closeAllMenus();
-      if (newFamily === state.familyId) return;
-      state.familyId = newFamily;
-      // Family change clears the picked book + lens (workflow reset)
+      if (newCorpus === state.corpusId) return;
+      state.corpusId = newCorpus;
+      // Corpus change clears the picked book + lens (workflow reset)
       state.bookTextKey = null;
       state.lensId = null;
-      local.codexFamily  = newFamily;
+      // If religionId is null but the picked corpus belongs to one
+      // specific religion, auto-set religionId to match (so the
+      // Religion pill label reflects the implied context). User can
+      // explicitly re-pick "All families" if they want to clear it.
+      if (newCorpus && !state.religionId) {
+        const implied = corpusToReligion(newCorpus);
+        if (implied) {
+          state.religionId = implied;
+          local.codexReligion = implied;
+        }
+      }
+      local.codexCorpus  = newCorpus;
+      local.codexFamily  = newCorpus;   // legacy alias
       local.codexBookKey = null;
       local.codexLens    = null;
       local._codexFilterAppliedFor = null;
@@ -583,7 +780,7 @@
       syncLocks();
       if (typeof rebuildForMode === 'function' && local.mode && local.mode.id) {
         try { rebuildForMode(local.mode.id, { preserveLocks: true, preserveZoom: false }); }
-        catch (e) { console.warn('[codex-controls] rebuildForMode failed', e); }
+        catch (e) { console.warn('[codex-controls] codex rebuild failed', e); }
       }
     });
 
@@ -672,9 +869,9 @@
     // prevents repeat-firing on every observer tick.
     local._codexFilterAppliedFor = local._codexFilterAppliedFor || null;
     function tryApplyFilter() {
-      if (!state.familyId) return;
+      if (!state.corpusId) return;
       if (!local.mode || local.mode.id !== 'scriptures') return;
-      const key = state.familyId + '|' + (local.mode.id || '');
+      const key = state.corpusId + '|' + (local.mode.id || '');
       if (local._codexFilterAppliedFor === key) return;
       local._codexFilterAppliedFor = key;
       if (typeof rebuildForMode === 'function') {
@@ -712,26 +909,92 @@
     // higher up — the existing one already triggers a rebuild.)
 
     local.codexControls = {
-      getState: function () { return { familyId: state.familyId, bookTextKey: state.bookTextKey, lensId: state.lensId }; },
+      getState: function () { return { religionId: state.religionId, corpusId: state.corpusId, bookTextKey: state.bookTextKey, lensId: state.lensId, familyId: state.corpusId /* legacy alias */ }; },
       setFamily: function (id) {
+        // Legacy alias for setCorpus — older external callers may still
+        // use setFamily expecting the 4-step semantics.
+        return this.setCorpus(id);
+      },
+      setCorpus: function (id) {
         if (id !== null && (!window.SCRIPTURE_CORPORA || !window.SCRIPTURE_CORPORA[id])) return false;
-        state.familyId = id;
-        local.codexFamily = id;
+        state.corpusId = id;
+        if (id) {
+          const implied = corpusToReligion(id);
+          if (implied && !state.religionId) {
+            state.religionId = implied;
+            local.codexReligion = implied;
+          }
+        }
+        local.codexCorpus = id;
+        local.codexFamily = id;   // legacy alias
         saveState();
         syncLabels();
+        if (typeof syncLocks === 'function') syncLocks();
         if (typeof rebuildForMode === 'function' && local.mode && local.mode.id === 'scriptures') {
           try { rebuildForMode('scriptures', { preserveLocks: true, preserveZoom: false }); } catch (_) {}
         }
         return true;
       },
+      setReligion: function (id) {
+        if (id !== null && !SCRIPTURE_RELIGIONS[id]) return false;
+        state.religionId = id;
+        local.codexReligion = id;
+        // If the picked religion no longer contains the current corpus,
+        // clear the downstream cascade.
+        if (id) {
+          const R = SCRIPTURE_RELIGIONS[id];
+          if (state.corpusId && R.corpora.indexOf(state.corpusId) === -1) {
+            state.corpusId = null;
+            state.bookTextKey = null;
+            state.lensId = null;
+            local.codexCorpus  = null;
+            local.codexFamily  = null;
+            local.codexBookKey = null;
+            local.codexLens    = null;
+          }
+        }
+        saveState();
+        syncLabels();
+        if (typeof syncLocks === 'function') syncLocks();
+        return true;
+      },
       // 2026-05-27 — programmatic book-pick. Called by forge.js when
       // the user clicks a scripture-book dot on the wheel, so the
-      // Codex pill state stays in sync with the reader.
+      // Codex pill state stays in sync with the reader. Also infers
+      // religion + corpus from the picked book when the user clicks
+      // directly without using the full pill workflow.
       setBook: function (textKey) {
         if (textKey != null && (!window.SCRIPTURE_TEXTS || !window.SCRIPTURE_TEXTS[textKey])) return false;
         if (state.bookTextKey === textKey) return true;
         state.bookTextKey = textKey;
         state.lensId = null;
+        // Infer corpus + religion from the picked book's docNode if not
+        // already aligned with the user's current cascade.
+        if (textKey) {
+          const t = window.SCRIPTURE_TEXTS[textKey];
+          const docNode = t && t.docNode;
+          if (docNode) {
+            // Find any corpus that lists this docNode.
+            const corpora = window.SCRIPTURE_CORPORA || {};
+            for (const cId in corpora) {
+              const c = corpora[cId];
+              if (!c || !c.sections) continue;
+              const found = c.sections.some(sec => (sec.books || []).some(b => b.id === docNode));
+              if (found) {
+                if (state.corpusId !== cId) {
+                  state.corpusId = cId;
+                  local.codexCorpus = cId;
+                  local.codexFamily = cId;
+                }
+                if (!state.religionId) {
+                  const r = corpusToReligion(cId);
+                  if (r) { state.religionId = r; local.codexReligion = r; }
+                }
+                break;
+              }
+            }
+          }
+        }
         local.codexBookKey = textKey;
         local.codexLens   = null;
         saveState();
