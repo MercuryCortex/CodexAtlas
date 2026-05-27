@@ -416,9 +416,27 @@
     // Codex menu (internal id #app-pill-codex-family preserved from
     // the 4-step era). Lists the corpora available — filtered to the
     // picked religion, or grouped-by-religion if "All families".
+    //
+    // 2026-05-27 — added "All scriptures" sentinel at the top of both
+    // paths (symmetric with "All families" in the Religion menu).
+    // Picking it clears state.corpusId + downstream book + lens.
     function buildFamilyMenu() {
       const corpora = window.SCRIPTURE_CORPORA || {};
       const rows = [];
+
+      // "All scriptures" sentinel — always present at the top of the
+      // codex menu (whether religion is picked or not).
+      const allScripturesHint = state.religionId
+        ? ('all ' + (SCRIPTURE_RELIGIONS[state.religionId]?.label || '') + ' scriptures').toLowerCase()
+        : 'no codex filter';
+      rows.push(
+        '<button class="app-pill-menu-item' + (state.corpusId === null ? ' is-active' : '') + '"' +
+        ' role="menuitem" data-family="" type="button">' +
+        '<span class="app-pill-menu-label">All scriptures</span>' +
+        '<span class="app-pill-menu-hint">' + esc(allScripturesHint) + '</span>' +
+        (state.corpusId === null ? '<span class="app-pill-menu-check">●</span>' : '') +
+        '</button>'
+      );
 
       if (!state.religionId) {
         // "All families" mode: show all corpora, grouped by religion.
@@ -589,7 +607,10 @@
         if (state.corpusId && window.SCRIPTURE_CORPORA && window.SCRIPTURE_CORPORA[state.corpusId]) {
           familyLabel.textContent = shortLabelFor(state.corpusId, window.SCRIPTURE_CORPORA[state.corpusId]);
         } else {
-          familyLabel.textContent = 'Codex';
+          // 2026-05-27 — was "Codex"; now "All scriptures" so the
+          // sentinel state is symmetric with the Religion pill's
+          // "All families" default.
+          familyLabel.textContent = 'All scriptures';
         }
       }
       if (booksLabel) {
@@ -706,11 +727,13 @@
 
     // ── Menu pick handlers (event delegation) ────────────────
 
-    // RELIGION menu — outer step. Picking a religion clears the
-    // downstream corpus + book + lens (full workflow reset). Picking
-    // "All families" clears religion but keeps any picked corpus
-    // (the user may have picked a corpus in all-religions mode and
-    // doesn't want it cleared just by re-confirming "All").
+    // RELIGION menu — outer step. Any pick (including "All families")
+    // cascade-resets the downstream corpus + book + lens. 2026-05-27
+    // John feedback: "when we click all families needs to rest to All
+    // scriptures on the next box by default ... now is just left
+    // hanging." Previous behaviour preserved corpus on "All families"
+    // pick — now we always reset the downstream cascade so the user
+    // gets a clean starting point after every religion change.
     religionMenu.addEventListener('click', function (ev) {
       const btn = ev.target.closest('.app-pill-menu-item');
       if (!btn) return;
@@ -719,10 +742,11 @@
       closeAllMenus();
       if (newReligion === state.religionId) return;
       state.religionId = newReligion;
-      // If the currently-picked corpus doesn't belong to the new
-      // religion, clear it (and downstream book + lens). When picking
-      // "All families" (newReligion === null) the corpus is preserved.
+      // Always clear the downstream cascade. The Codex pill resets to
+      // its "All scriptures" sentinel state; Books/Lens/Read re-lock.
       if (newReligion) {
+        // For a specific religion pick: preserve the corpus only if
+        // it actually belongs to the new religion.
         const R = SCRIPTURE_RELIGIONS[newReligion];
         const corpusInReligion = R && state.corpusId && R.corpora.indexOf(state.corpusId) !== -1;
         if (!corpusInReligion) {
@@ -730,6 +754,11 @@
           state.bookTextKey = null;
           state.lensId      = null;
         }
+      } else {
+        // "All families" picked → cascade-reset everything downstream.
+        state.corpusId    = null;
+        state.bookTextKey = null;
+        state.lensId      = null;
       }
       local.codexReligion = state.religionId;
       local.codexCorpus   = state.corpusId;
@@ -746,8 +775,9 @@
       }
     });
 
-    // CODEX (family) menu — picks a specific corpus. Resets the picked
-    // book + lens (downstream workflow reset).
+    // CODEX (family) menu — picks a specific corpus, or the
+    // "All scriptures" sentinel (empty data-family) to clear corpus.
+    // Resets the picked book + lens (downstream workflow reset).
     familyMenu.addEventListener('click', function (ev) {
       const btn = ev.target.closest('.app-pill-menu-item');
       if (!btn) return;
@@ -763,6 +793,7 @@
       // specific religion, auto-set religionId to match (so the
       // Religion pill label reflects the implied context). User can
       // explicitly re-pick "All families" if they want to clear it.
+      // Skip inference for the "All scriptures" pick (newCorpus null).
       if (newCorpus && !state.religionId) {
         const implied = corpusToReligion(newCorpus);
         if (implied) {
