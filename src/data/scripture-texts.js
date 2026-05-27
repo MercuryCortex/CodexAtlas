@@ -12342,6 +12342,643 @@ SCRIPTURE_TEXTS['hadith-bukhari-selected'] = {
   ]
 };
 
+// ─────────────────────────────────────────────────────────────────────────────
+// EMPTY-CORPUS FILLERS — 2026-05-28 batch
+// ─────────────────────────────────────────────────────────────────────────────
+// Twelve previously-zero scripture corpora seeded with one canonical entry
+// each. Each entry points at a real vault docNode (audited against data.js).
+// Druze + Yazidi deferred to a future T1/T4-sourced pass per the
+// `feedback_deviant_bridges.md` memory.
+
+// ── ALEVI — VILAYETNAME OF HACI BEKTAŞ VELI ──────────────────────────────────
+SCRIPTURE_TEXTS['alevi-vilayetname'] = {
+  id:         'alevi-vilayetname',
+  title:      'Vilayetname — The Four Doors of Hacı Bektaş Veli',
+  shortTitle: 'Vilayetname (Alevi-Bektashi)',
+  corpus:     'Alevi-Bektashi · Vilayetname + nefes poetry',
+  tradId:     'tradition-alevism-bektashism',
+  date:       'compiled c. 1481 CE; preserves 13th-century Hacı Bektaş Veli traditions',
+  docNode:    'phase-5-055-vilayetname-haci-bektas',
+  language:   'Anatolian Turkish · scholarly English (Birge 1937)',
+  translations: [
+    { id: 'birge',   label: 'Birge 1937 (T1)', note: 'John Kingsley Birge, The Bektashi Order of Dervishes — foundational English scholarship' },
+    { id: 'turkish', label: 'Anatolian Turkish (original)' },
+  ],
+  intro: 'The Vilayetname is the canonical hagiography of Hacı Bektaş Veli (c. 1209–1271 CE), the Sufi saint who lent his name to the Bektashi Order and the Alevi tradition. The Alevi-Bektashi path teaches the Dört Kapı (Four Doors): Şeriat (law), Tarikat (mystical path), Marifet (gnosis), and Hakikat (truth/reality) — a fourfold ladder running from outer observance to the unveiled real. Each door corresponds to ten "stations" (makam), giving the Forty Stations (Kırk Makam) of the full spiritual itinerary. Unlike Sunni orthodoxy, Alevi-Bektashi praxis emphasises the inner truth over outer law: "the heart is more sacred than the Ka\'aba." The structural parallel to the Sufi maqāmāt of al-Ghazālī and Ibn Arabi, to the four Vedānta stages, and to the Christian fourfold sense of scripture (literal / allegorical / moral / anagogical) is direct.',
+  crossTradition: [
+    { label: 'Ibn Arabi — fourfold spiritual ascent', textId: 'ibn-arabi-fusus',
+      note: 'Ibn Arabi\'s seven journeys and Hacı Bektaş\'s four doors share the same architecture: a sequential ascent through ordered stages, each requiring mastery of specific virtues, culminating in unveiled gnosis.' },
+    { label: 'Rumi — heart as the seat of truth', textId: 'rumi-masnavi',
+      note: 'Rumi\'s Masnavi makes the identical move: the heart, not the mosque, is where God is found. Both Rumi and the Alevi-Bektashi tradition radically internalise Islamic worship.' },
+    { label: 'Bhagavad Gita — the path of knowledge transcending outer ritual', textId: 'bhagavad-gita-4',
+      note: 'BG 4 teaches that jñāna-yoga (knowledge) burns the karma of all rituals to ash. Hacı Bektaş\'s Marifet door makes the same hierarchical move: knowledge eclipses law.' },
+  ],
+  sections: [
+    {
+      heading: 'I. The Four Doors',
+      verses: [
+        { ref: 'Vilayetname · Makalat (attributed)',
+          text: 'There are four doors that the seeker must pass through. The first is Şeriat — the door of the Law, where one learns the outer practice. The second is Tarikat — the door of the Path, where one walks under a guide. The third is Marifet — the door of Knowledge, where one tastes the real. The fourth is Hakikat — the door of Truth, where the seeker, the seeking, and the Sought become one. He who enters by the first door but never reaches the fourth has built only the doorframe and not entered the house.',
+          textVersions: {
+            birge:   'Four are the gates of the way: the gate of the Law (Şeriat); the gate of the Way (Tarikat); the gate of Knowledge (Marifet); the gate of Truth (Hakikat). To stop at the first is to mistake the doorframe for the house.',
+            turkish: 'Dört kapı: Şeriat, Tarikat, Marifet, Hakikat.\nBirinden geçip diğerine varmayan, kapı eşiğini ev sanmıştır.',
+          },
+          entities: [
+            { word: 'four doors', node: 'tradition-alevism-bektashism', type: 'principle',
+              note: 'The Dört Kapı framework is the foundational pedagogical structure of the Alevi-Bektashi path. Each "door" is not a discrete location but a quality of consciousness: Şeriat = obedience to outer law; Tarikat = discipleship under a master; Marifet = experiential knowledge; Hakikat = identity with the Real. The doors are sequential but cumulative — Hakikat does not abolish Şeriat, it fulfils it. The structural parallel to Christian Augustine\'s fourfold sense of Scripture (literal / allegorical / moral / anagogical) is exact.',
+              parallels: [
+                { label: 'Augustine — fourfold sense of Scripture',
+                  note: 'The medieval Christian quadriga (literal, allegorical, moral, anagogical) is the same fourfold ascent applied to text rather than path: outer meaning → ecclesial meaning → moral meaning → mystical meaning. Same architecture.' },
+                { label: 'Vedanta — three or four states of knowing', textId: 'chandogya-621',
+                  note: 'The Vedantic progression jagrat (waking) → svapna (dreaming) → suṣupti (deep sleep) → turīya (the fourth, the unconditioned) is the Indian fourfold of consciousness — same Hakikat-as-fourth move.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+// ── BÖN — BÖN KANJUR (DZOGCHEN OPENING) ──────────────────────────────────────
+SCRIPTURE_TEXTS['bon-kanjur'] = {
+  id:         'bon-kanjur',
+  title:      'Bön Kanjur — The Natural State of the Mind',
+  shortTitle: 'Bön Kanjur',
+  corpus:     'Bön · Bön Kanjur (Yungdrung tradition)',
+  tradId:     'tradition-bon',
+  date:       'compiled c. 14th–15th CE; preserves teachings attributed to Tonpa Shenrab (legendary)',
+  docNode:    'phase-5-060-bon-kangyur',
+  language:   'Tibetan (Zhang-Zhung roots) · Reynolds 1996 / Karmay 1972 English',
+  translations: [
+    { id: 'reynolds', label: 'Reynolds 1996 (T1)', note: 'John Myrdhin Reynolds, The Oral Tradition from Zhang-Zhung — current standard for Bön Dzogchen in English' },
+    { id: 'karmay',   label: 'Karmay 1972 (T1, scholarly)', note: 'Samten G. Karmay, The Treasury of Good Sayings — historical foundation' },
+    { id: 'tibetan',  label: 'Tibetan (original)' },
+  ],
+  intro: 'Bön is Tibet\'s pre-Buddhist religion — claiming descent from Tonpa Shenrab Miwoche, who lived in the kingdom of Olmo Lungring (a mythical western Tibet, possibly remembered Iran-influenced Zhang-Zhung). Yungdrung ("Eternal") Bön shares the Nine Vehicles structure with the Nyingma Buddhist Dzogchen tradition — to the point where modern scholarship cannot determine direction of influence with certainty. The Bön Kanjur preserves teachings on the Natural State (ngowo) — the intrinsically pure, primordially awake ground of consciousness — that are functionally identical to Dzogchen Atiyoga. The Bönpo position: their teachings predate Buddhism in Tibet by centuries; modern academic position: parallel development from a shared Central Asian substrate.',
+  crossTradition: [
+    { label: 'Bardo Thodol — Dzogchen view of mind\'s natural state', textId: 'bardo-thodol',
+      note: 'The Nyingma Bardo Thodol\'s teaching on the rigpa (intrinsic awareness) of mind at the moment of death is functionally identical to the Bön Kanjur\'s teaching on ngowo. Both traditions claim the natural state is the actual nature of every moment — death simply removes obscurations.' },
+    { label: 'Heart Sutra — śūnyatā as the condition of mind', textId: 'heart-sutra',
+      note: 'The Mahayana śūnyatā doctrine and Bön natural-state teaching agree on the structural point: mind\'s nature is empty of inherent fixed self. They diverge on emphasis (Mahayana on the emptiness of all phenomena; Dzogchen/Bön on the luminous-aware nature of that emptiness itself).' },
+    { label: 'Tao Te Ching — the nameless ground', textId: 'tao-te-ching-1',
+      note: 'Tao 1\'s "the Tao that can be named is not the eternal Tao" and the Bön natural state are pointing at the same unconditioned ground — that which is prior to and underlying all conceptual designation.' },
+  ],
+  sections: [
+    {
+      heading: 'I. The Natural State of the Mind',
+      verses: [
+        { ref: 'Bön Kanjur · Mañ\'idn Bya\'i Khrid (Dzogchen instruction)',
+          text: 'Look at the nature of your own mind. It does not come from anywhere; it does not go anywhere; it does not rest in any place. You will not find its colour, you will not find its shape, you will not find any thing that could be called "mind." This very not-finding IS the mind in its naked nature — empty, luminous, aware. Recognise this and you have recognised the Buddha-state, primordially present, never lost, never gained.',
+          textVersions: {
+            reynolds: 'Look directly at your own mind. It has no origin, no destination, no dwelling place. There is no colour to it, no shape, no substance. This not-finding is itself the natural state — empty, clear, aware — never lost, never to be found.',
+            karmay:   'The nature of mind is not to be sought outside. Examine it inwardly: where does it arise? where does it cease? where does it abide? When the search itself dissolves into open clarity, that very clarity is recognised as the primordial state of the Buddha.',
+            tibetan:  'རང་གི་སེམས་ལ་ལྟོས།  འོང་ས་མེད་  འགྲོ་ས་མེད་  གནས་ས་མེད།',
+          },
+          entities: [
+            { word: 'naked nature — empty, luminous, aware', node: 'tradition-bon', type: 'principle',
+              note: 'The triple description of the natural state — empty (stong pa), luminous (gsal ba), and aware (rig pa) — is the canonical Dzogchen / Bön formula for what mind IS when stripped of conceptual overlay. Empty means free of inherent fixed entity; luminous means intrinsically appearing rather than dead-blank; aware means knowing itself without a separate knower. This three-attribute description is found verbatim in both Nyingma Buddhist and Bön texts; either Bön influenced Nyingma, Nyingma influenced Bön, or both inherited it from a shared Central Asian source. The Hermetic teaching that gnosis is the Light that knows itself, and the Vedantic sat-cit-ānanda (being-consciousness-bliss) are the closest non-Tibetan parallels.',
+              parallels: [
+                { label: 'Vedanta — sat-cit-ānanda', textId: 'chandogya-621',
+                  note: 'The Vedantic three-fold description of Brahman / Atman (being, consciousness, bliss) is the closest Indian parallel to the Bön empty-luminous-aware. Both: the ultimate nature has three irreducible aspects that are not parts but facets.' },
+                { label: 'CH XIII — gnosis as self-knowing light', textId: 'corpus-hermeticum-13',
+                  note: 'The Hermetic teaching that gnosis is the Light\'s recognition of itself parallels rigpa: awareness recognising its own nature is the entire spiritual realisation.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+// ── CAO DAI — THÁNH NGÔN HIỆP TUYỂN ──────────────────────────────────────────
+SCRIPTURE_TEXTS['cao-dai-thanh-ngon'] = {
+  id:         'cao-dai-thanh-ngon',
+  title:      'Thánh Ngôn Hiệp Tuyển — Collection of Divine Messages',
+  shortTitle: 'Cao Dai · Thánh Ngôn',
+  corpus:     'Cao Dai · Đại Đạo Tam Kỳ Phổ Độ',
+  tradId:     'tradition-cao-dai',
+  date:       '1925–1927 CE (spirit-writing revelations to founding mediums in Tây Ninh, Vietnam)',
+  docNode:    'phase-7-044-cao-dai-canon',
+  language:   'Vietnamese (with French + Chinese parallels) · Oliver 1976 English',
+  translations: [
+    { id: 'oliver',    label: 'Oliver 1976 (T1)', note: 'Victor L. Oliver, Caodai Spiritism — early scholarly English' },
+    { id: 'vietnamese', label: 'Vietnamese (original spirit-writing)' },
+  ],
+  intro: 'Cao Đài (Đại Đạo Tam Kỳ Phổ Độ — "the Great Way of the Third Universal Salvation") was founded in 1926 in Vietnam following spirit-writing (cơ bút) revelations to civil servant Ngô Văn Chiêu and his circle. The teaching: God (the Cao Đài, "Highest Tower") has revealed truth three times — first through Taoism, Hinduism, and the indigenous traditions; second through Buddhism, Christianity, and Islam; third, NOW, through Cao Đài, which synthesises all previous revelations and ends religious division. The Cao Đài pantheon explicitly includes Victor Hugo, Sun Yat-sen, Joan of Arc, and Lý Thái Bạch (Li Bai) as saints — the only world religion to have ratified European literary and Chinese poetic figures as authoritative spiritual masters. The structural ambition is unique: not just tolerance OF other religions but a positive synthesis claiming their underlying unity.',
+  crossTradition: [
+    { label: 'Bahá\'í — progressive revelation through successive prophets', textId: 'bahai-hidden-words',
+      note: 'The Bahá\'í teaching of progressive revelation (Adam → Krishna → Buddha → Christ → Muhammad → the Báb → Bahá\'u\'lláh) and Cao Đài\'s Three Universal Salvations are structurally identical: all religions point at the same divine reality, each prophet bringing the next stage suitable to its historical moment. Both founded ~80 years apart in mid-19th to early-20th c. revelation.' },
+    { label: 'Hermetica — the perennial wisdom across nations', textId: 'corpus-hermeticum-11',
+      note: 'The Hermetic claim that one wisdom underlies all traditions — articulated by Renaissance Christian Platonists as the prisca theologia — is the late-antique form of Cao Đài\'s synthesis. Both reject religious exclusivism in favour of recognising one divine teaching beneath multiple historical forms.' },
+    { label: 'Confucian Analects — unity of moral teaching', textId: 'confucius-analects',
+      note: 'Confucius\'s "my Way has one thread running through it" (Analects 4.15) and Cao Đài\'s syncretic claim that all great religions share one teaching are cognate. Confucianism is one of the three Cao Đài foundational traditions explicitly named.' },
+  ],
+  sections: [
+    {
+      heading: 'I. The Third Universal Salvation',
+      verses: [
+        { ref: 'Thánh Ngôn Hiệp Tuyển I.5 (Christmas message, 1925)',
+          text: 'In this Third Era, the various religions of the earth shall be reconciled and made one. The Tao that Lao Tzu taught, the Dharma that the Buddha taught, the Logos that Jesus taught, the Way of Heaven that Confucius taught, the Submission that Muhammad taught — all are the same Way under different names. I, the Most High, have come now under no single name but under the Tower (Cao Đài) that holds them all. The age of separation is over.',
+          textVersions: {
+            oliver:    'In this Third Period of Universal Salvation, all religions are reunited under one principle: that the various names by which the Supreme has been called — Brahma, Tao, Dharma, Logos, Allah, the Way of Heaven — are designations of the one Cao Đài.',
+            vietnamese:'Trong thời kỳ thứ ba này, tất cả các tôn giáo trên trái đất sẽ được hòa giải và làm thành một. Đạo của Lão Tử, Pháp của Phật, Logos của Giê-su, Đạo Trời của Khổng Tử, Sự Tuân phục của Mohammed — đều là một Đạo dưới những tên khác nhau.',
+          },
+          entities: [
+            { word: 'all are the same Way under different names', node: 'tradition-cao-dai', type: 'principle',
+              note: 'The doctrine of religious unity — that Tao / Dharma / Logos / Way of Heaven / Submission name one underlying reality — is articulated by virtually every modern syncretic tradition: Bahá\'í (progressive revelation), Theosophy (the perennial philosophy), Cao Đài, the Unitarian universalists, Hindu Universalism (Vivekananda), and the Bahá\'u\'lláh-influenced Western universalist movements. The historical novelty in Cao Đài is institutional: not just teaching the unity but constructing a single church explicitly synthesising the canonical figures.',
+              parallels: [
+                { label: 'Bhagavad Gita 4:11 — all paths lead to me', textId: 'bhagavad-gita-4',
+                  note: 'Krishna in BG 4:11: "Howsoever men approach me, even so do I welcome them, for the path men take from every side is mine." The Gita\'s religious-pluralism teaching and Cao Đài\'s synthesis are the same intuition expressed two millennia apart — Krishna welcomes every approach; Cao Đài unifies every prior approach.' },
+                { label: 'Rumi — the lamp is one though the lamps are many', textId: 'rumi-masnavi',
+                  note: 'Rumi: "The lamps are different, but the Light is the same." Cao Đài\'s canonical metaphor of one divine reality behind many religious names is structurally identical — and historically Rumi was acknowledged in Cao Đài teachings as one of the wise voices whose tradition (Sufism / Islam) Cao Đài incorporates.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+// ── CATHAR / BOGOMIL — INTERROGATIO IOHANNIS (THE SECRET SUPPER) ─────────────
+SCRIPTURE_TEXTS['interrogatio-iohannis'] = {
+  id:         'interrogatio-iohannis',
+  title:      'Interrogatio Iohannis — The Secret Supper',
+  shortTitle: 'Interrogatio Iohannis (Cathar-Bogomil)',
+  corpus:     'Bogomil-Cathar · Interrogatio Iohannis',
+  tradId:     'tradition-catharism',
+  date:       '12th CE (Bogomil composition); Latin Cathar manuscripts ~1190',
+  docNode:    'phase-5-020-interrogatio-iohannis',
+  language:   'Medieval Latin (translated from lost Bogomil Slavonic) · Hamilton 1998 English',
+  translations: [
+    { id: 'hamilton', label: 'Hamilton 1998 (T1)', note: 'Janet & Bernard Hamilton, Christian Dualist Heresies in the Byzantine World — standard scholarly English' },
+    { id: 'latin',    label: 'Latin (Carcassonne MS)' },
+  ],
+  intro: 'The Interrogatio Iohannis (Questions of John) — also known as the Secret Supper — is the sole surviving Bogomil-Cathar text that crossed the linguistic boundary from Slavonic (Bogomil) to Latin (Cathar). Composed in Bulgaria in the 12th century by the Bogomil tradition, it reached the Languedoc Cathars in Latin translation by the 1190s and was used as their primary cosmological scripture. The frame: at the Last Supper, John leans on Jesus\'s breast and asks him secret questions about the origin of evil. Jesus answers with a Gnostic dualist cosmogony: Satan (the older son of God) revolted, fell, and made the material world; the divine spark fell with him and is now imprisoned in human bodies, awaiting Christ\'s liberation. The text is one of the most direct lineages of Manichaean dualism into medieval Christianity — proving the cosmological inheritance Catholic inquisitors hunting "Manichees" in 13th-century Provence had real historical grounds to claim.',
+  crossTradition: [
+    { label: 'Manichaean Coptic Psalms — sibling dualist cosmogony', textId: 'manichaean-psalms',
+      note: 'The Bogomil-Cathar cosmology descends directly from Manichaean / Paulician transmission through the Balkans (Manichaeism → Paulicians in Armenia 7th c. → Bulgaria 9th c. → Bogomils 10th c. → Cathars 11th-12th c.). The Interrogatio\'s "Satan as elder son who fell and made the world" is the Manichaean Cosmic War narrative in Christianised dress.' },
+    { label: 'Apocryphon of John — the older Gnostic cosmogony', textId: 'apocryphon-of-john',
+      note: 'The Sethian Apocryphon of John (2nd c.) is the structural ancestor of the Interrogatio: both texts narrate a heavenly meal-or-conversation where John receives the secret cosmogony, both identify the material world\'s maker with a lower / fallen power. The 1000-year transmission line is one of the clearest in the history of religions.' },
+    { label: 'Gospel of John 13:23 — the disciple on Jesus\'s breast', textId: 'john-1',
+      note: 'The Interrogatio frames itself as the secret continuation of John 13: while Peter and the rest hear the public teaching, John (the Beloved Disciple, reclining on Jesus\'s breast) hears the esoteric cosmology. The text claims canonical authority by extending an already-canonical Gospel scene.' },
+  ],
+  sections: [
+    {
+      heading: 'I. Satan, the Eldest Son, and the Making of the World',
+      verses: [
+        { ref: 'Interrogatio Iohannis · opening question',
+          text: 'John, leaning on the breast of the Lord, asked: "Lord, who was greater than all the angels before the world was made?" The Lord answered: "Satan was the eldest. He sat in glory beside the Father, governor of all the heavenly powers. But pride entered him; he desired to be like the Most High. So he fell, and a third of the angels with him. From the matter into which they fell — the watery darkness that lies below the heavens — Satan made another heaven and another earth, and called himself the maker of the world. The world you see is his work; the seven days of creation are the days of his counterfeit. The light of the Father is captive within it, mingled with darkness, until I, the Son, come to free it."',
+          textVersions: {
+            hamilton: 'And John leaning on the breast of Jesus asked: "Lord, before Satan fell, in what glory dwelt he?" And the Lord said: "He was in such glory that he ordered the powers of heaven... and through pride he descended, taking a third part of the angels of God, and seated himself above the firmament of heaven... and out of the substance of the firmament made himself a throne, and ruled."',
+            latin:    'Iohannes recubans in pectus Domini interrogavit eum: "Domine, quis fuit maior omnium angelorum antequam mundus crearetur?" Et respondit Dominus: "Sathanas erat primus..."',
+          },
+          entities: [
+            { word: 'Satan was the eldest', node: 'tradition-catharism', type: 'concept',
+              note: 'The Bogomil-Cathar identification of Satan as the eldest son of God (with Christ as the younger son) is the most theologically radical move in the Interrogatio. It departs from both Catholic and Eastern Orthodox cosmology by giving Satan a primordial status as a divine son, not a created angel. This was the cosmological foundation of the Cathar critique of the Catholic Church: the visible church, with its wealth and worldly power, serves the maker of THIS world — Satan — not the true Father, whose kingdom is purely spiritual. The Manichaean parent-doctrine: the two co-eternal kingdoms of Light and Darkness; the Bogomil-Cathar transformation: a Christianised version where Satan is "elder son" rather than co-eternal opposite — a slightly softer dualism still radical enough to merit the Albigensian Crusade.',
+              parallels: [
+                { label: 'Manichaean — the cosmic war of Light and Darkness', textId: 'manichaean-psalms',
+                  note: 'Mani\'s two co-eternal kingdoms (Light kingdom of the Father; Darkness kingdom of matter) is the direct cosmological ancestor of the Bogomil two-sons doctrine. The Bogomils Christianise the dualism by replacing co-eternal opposite with elder-younger sibling.' },
+                { label: 'Apocryphon of John — Yaldabaoth as ignorant demiurge', textId: 'apocryphon-of-john',
+                  note: 'The Sethian Yaldabaoth (born of Sophia\'s error, mistakenly thinking he is the only God) and the Bogomil Satan-as-elder-son are the same theological move: the maker of THIS world is not the supreme God but a lower / fallen power.' },
+              ]
+            },
+            { word: 'the light of the Father is captive within it', node: 'tradition-catharism', type: 'concept',
+              note: 'The captive-light doctrine — divine particles trapped in material bodies, awaiting Christ\'s liberation — is the Manichaean scattered-Light doctrine reaching the medieval West intact. The Cathar perfecti renounced meat, sex, and property because each was understood as participating in the material world\'s entrapment of light. The Cathar consolamentum (the final rite given to credentes near death) was specifically the rite that freed the imprisoned light at the moment of bodily departure. The cosmology and the sacramental practice were one piece.',
+              parallels: [
+                { label: 'Manichaean — scattered Light awaiting release', textId: 'manichaean-psalms',
+                  note: 'The Coptic Manichaean Psalms\' teaching that Light is captive in every plant, fruit, and water, awaiting release through the Elect\'s ritual eating — is the direct doctrinal parent of the Cathar consolamentum. Same theological mechanism, transmitted across nine centuries through Paulician-Bogomil intermediaries.' },
+                { label: 'Lurianic Kabbalah — the 288 nitzotzot', textId: 'sefer-yetzirah',
+                  note: 'The Lurianic doctrine of broken vessels and scattered sparks (16th c.) and the Cathar captive-light teaching converge from different directions: both describe divine light fragmented through the world, both make spiritual practice a recovery operation.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+// ── CHEONDOGYO — DONGGYEONG DAEJEON ──────────────────────────────────────────
+SCRIPTURE_TEXTS['donggyeong-daejeon'] = {
+  id:         'donggyeong-daejeon',
+  title:      'Donggyeong Daejeon — Great Eastern Scripture',
+  shortTitle: 'Donggyeong Daejeon (Cheondogyo)',
+  corpus:     'Cheondogyo / Donghak · Donggyeong Daejeon',
+  tradId:     'tradition-cheondogyo',
+  date:       '1861 CE (Choe Je-u, Korea)',
+  docNode:    'phase-7-042-donggyeong-daejeon',
+  language:   'Classical Chinese (Hanmun) and Korean Han\'gul · Beirne 2009 English',
+  translations: [
+    { id: 'beirne', label: 'Beirne 2009 (T1)', note: 'Paul Beirne, Su-un and His World of Symbols — current scholarly standard' },
+    { id: 'korean', label: 'Korean (original Hanmun + Han\'gul)' },
+  ],
+  intro: 'Donghak ("Eastern Learning") was founded in 1860 by Choe Je-u (Su-un, 1824–1864) in response to a mystical experience: he heard the voice of God (Hanullim / 한울님) declaring "My mind is your mind." The Donghak teaching — later renamed Cheondogyo ("Religion of the Heavenly Way") under the third patriarch Son Byong-hi in 1905 — centres on the radical claim 인내천 (innaecheon, 人乃天): "humanity IS heaven." Not "made in the image of heaven" — IS heaven, immediately. The political consequences were immediate and catastrophic: if every human IS divine, then the rigid Joseon caste hierarchy (yangban, commoner, slave, butcher) is sacrilegious. Donghak\'s teachings inspired the 1894 Donghak Peasant Rebellion against Korean royal and Japanese imperial powers; Choe Je-u was executed by the Joseon government in 1864 for "deluding the people." Today Cheondogyo has ~1 million adherents.',
+  crossTradition: [
+    { label: 'Chandogya 6.2 — tat tvam asi', textId: 'chandogya-621',
+      note: 'The Upanishadic "that thou art" — Atman is Brahman — is the closest Indian parallel to innaecheon: each human IS the divine, not merely related to it. Donghak articulated the same insight in 19th-century Korean Confucian categories without (apparent) direct contact with Indian sources.' },
+    { label: 'Bahá\'í Hidden Words — find Me standing within thee', textId: 'bahai-hidden-words',
+      note: 'Bahá\'u\'lláh\'s "find Me standing within thee, mighty, powerful and self-subsisting" and Choe Je-u\'s "my mind is your mind" are nearly contemporaneous revelations (1858 and 1860 respectively) articulating the same divine-indwelling teaching in Persian and Korean contexts.' },
+    { label: 'Gospel of Thomas L.3 — the Kingdom is inside you', textId: 'gospel-of-thomas',
+      note: 'Thomas L.3: "The Kingdom is inside you and outside you." The Thomasine and Donghak teachings make the same radical move: not "you can reach heaven" but "you ARE heaven." Both texts emerged from settings where established religious authorities held heaven safely external.' },
+  ],
+  sections: [
+    {
+      heading: 'I. Humanity Is Heaven',
+      verses: [
+        { ref: 'Donggyeong Daejeon · Podeokmun (Spreading the Virtue)',
+          text: 'Heaven\'s mind is the human mind. The human mind is Heaven\'s mind. When I sat in solitude and the voice spoke to me, the voice said: "My mind is your mind. How could a person not know this? Knowing this, all the wisdom of the sages becomes clear. Not knowing this, no rite can save you and no doctrine can teach you." Therefore the Way is this: bear in your bones that you ARE the Heaven, treat every person as you would treat the Most High, and the kingdom of separation is already broken.',
+          textVersions: {
+            beirne: 'My mind is your mind: this is the message of Hanullim. The mind of Heaven and the mind of humanity are not two things. When this is understood, no further teaching is required; when this is not understood, no rite can supply the lack.',
+            korean: '오심즉여심(吾心卽汝心) — My mind is your mind\n사람이 곧 한울이다 (Saram-i got Hanullim-ida) — A person IS the Heaven',
+          },
+          entities: [
+            { word: 'My mind is your mind', node: 'tradition-cheondogyo', type: 'principle',
+              note: '오심즉여심 (五心卽汝心 / O-sim-jeuk-yeo-sim) — "My mind is your mind" — is the foundational utterance of Donghak. Choe Je-u reported it as the direct speech of Hanullim during his mystical experience of April 1860. The Korean Confucian context made the teaching politically explosive: Confucian social hierarchy depended on a sharply differentiated order between heaven (sovereign), nobility (yangban), commoners, and base-castes. To assert that EVERY human shares the same mind as heaven was to dismantle the entire stratification at one stroke. The 1894 Donghak Peasant Rebellion — which led to the Sino-Japanese War and contributed to the collapse of the Joseon dynasty — was the political consequence of this metaphysical claim.',
+              parallels: [
+                { label: 'Meister Eckhart — the eye with which I see God',
+                  note: 'Eckhart\'s "the eye with which I see God is the same eye with which God sees me" and Choe Je-u\'s "my mind is your mind" are the same radical-indwelling teaching. Both got their authors into trouble with the religious establishment (Eckhart posthumously condemned by the papal bull In Agro Dominico, 1329; Choe Je-u executed 1864).' },
+                { label: 'Bhagavad Gita 10:20 — I am the Self in all beings', textId: 'bhagavad-gita-11',
+                  note: 'Krishna\'s "I am the Self, O Gudakesha, seated in the hearts of all creatures" is the canonical Hindu form of the indwelling teaching. The Donghak version is structurally identical: Hanullim speaks not as external sovereign but as the very mind of the listener.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+// ── KOJIKI — RECORD OF ANCIENT MATTERS (SHINTO) ──────────────────────────────
+SCRIPTURE_TEXTS['kojiki-opening'] = {
+  id:         'kojiki-opening',
+  title:      'Kojiki — The Separation of Heaven and Earth',
+  shortTitle: 'Kojiki (Shinto)',
+  corpus:     'Shinto · Kojiki + Nihon Shoki chronicles',
+  tradId:     'tradition-shinto',
+  date:       '712 CE (Ō no Yasumaro, presented to Empress Genmei)',
+  docNode:    'phase-8-019-kojiki',
+  language:   'Old Japanese (man\'yōgana) · Chamberlain 1882 English',
+  translations: [
+    { id: 'chamberlain', label: 'Chamberlain 1882 (T1, public domain)', note: 'Basil Hall Chamberlain — the first complete English Kojiki, foundational scholarship' },
+    { id: 'philippi',    label: 'Philippi 1968 (T1 modern)', note: 'Donald L. Philippi, Kojiki — the current scholarly standard' },
+    { id: 'japanese',    label: 'Old Japanese (original)' },
+  ],
+  intro: 'The Kojiki ("Record of Ancient Matters", 712 CE) is the oldest surviving work of Japanese literature and the foundational scripture of Shinto. Compiled by Ō no Yasumaro at imperial command, it preserves the mythic prehistory of Japan: the separation of heaven and earth, the birth of the kami, the creation of the Japanese islands by the divine couple Izanagi and Izanami, the descent of Amaterasu\'s grandson Ninigi from the High Plain of Heaven (Takama-no-hara), and the establishment of the imperial line as direct descendants of the sun goddess. The opening passages — given here — describe the primordial state and the first three kami who appeared in the High Plain of Heaven, then disappeared. The structural parallel to Genesis 1:1-2 (formless void / spirit moving over the waters) and the Egyptian Nun (primordial waters from which the first god emerges) is direct: every cosmogonic tradition begins with a state before differentiation, then narrates the first divine emergence.',
+  crossTradition: [
+    { label: 'Genesis 1:1–2 — the formless void and the divine wind', textId: 'genesis-1',
+      note: 'The Hebrew tōhū wā-bōhū (formless and void) and the Kojiki\'s primordial state before heaven and earth separated are the same cosmogonic image: an undifferentiated condition from which structured creation emerges. Both texts then have a divine breath / wind move over the chaos.' },
+    { label: 'Enuma Elish — Apsu and Tiamat before the gods', textId: 'enuma-elish-1',
+      note: 'The Babylonian Apsu (sweet waters) and Tiamat (salt waters) mingling before any god existed parallels the Kojiki\'s primordial heaven-and-earth condition before differentiation. Both: an undifferentiated watery state precedes the first divine emergence.' },
+    { label: 'Voluspa — Ginnungagap before the worlds', textId: 'voluspa',
+      note: 'The Norse Ginnungagap (the yawning void before the worlds) and the Kojiki\'s primordial state are the same cosmogonic slot: undifferentiated potential preceding structured creation. The cross-cultural pattern (West 2007) is striking — every major mythology preserves some version of this pre-creation void.' },
+    { label: 'Memphite Theology — Atum rising from Nun', textId: 'memphite-theology',
+      note: 'The Egyptian primordial Nun (formless waters) from which Atum emerges as the first god parallels the Kojiki\'s High Plain of Heaven into which the first three kami spontaneously appear. Both: the first divine emergence is into a pre-existing primordial condition.' },
+  ],
+  sections: [
+    {
+      heading: 'I. The First Three Kami',
+      verses: [
+        { ref: 'Kojiki I.1 — opening section',
+          text: 'At the time of the beginning of heaven and earth, three kami appeared in the High Plain of Heaven. Their names: Ame-no-Minakanushi-no-Kami (the Heavenly-Centre-Lord), then Takamimusubi-no-Kami (the High-Producing Generative-Force), then Kamimusubi-no-Kami (the Divine-Producing Generative-Force). These three kami were single deities, and they hid their persons. After this, when the land was young and floated like oil and drifted like a jellyfish, there sprouted forth — like the shoots of a reed — Umashi-ashikabi-hikoji-no-Kami, and after him Ame-no-tokotachi-no-Kami. These five are the Separate Heavenly Kami.',
+          textVersions: {
+            chamberlain: 'The names of the Deities that were born in the Plain of High Heaven when the Heaven and Earth began were the Deity Master-of-the-August-Centre-of-Heaven, next the High-August-Producing-Wondrous Deity, next the Divine-Producing-Wondrous Deity. These three Deities were all Deities born alone, and hid their persons.',
+            philippi:    'At the time of the beginning of heaven and earth, there came into existence in Takama-no-hara a deity named Ame-no-Minakanushi-no-Kami; next Takamimusubi-no-Kami; next Kamimusubi-no-Kami. These three deities all came into existence as single deities, and their forms were not visible.',
+            japanese:    '天地初發之時 於高天原成神名 天之御中主神 次高御産巣日神 次神産巣日神 此三柱神者 並獨神成坐而 隱身也',
+          },
+          entities: [
+            { word: 'three kami appeared in the High Plain of Heaven', node: 'tradition-shinto', type: 'concept',
+              note: 'Takama-no-hara (高天原, "High Plain of Heaven") is the divine realm of the kami in Shinto cosmology — the heavenly counterpart to the human Tokoyo (everlasting realm) and Yomi (land of the dead). The three first kami — Ame-no-Minakanushi (the centred axis of heaven), Takamimusubi (the high generative force), and Kamimusubi (the divine generative force) — are the Japanese equivalent of the Egyptian Heliopolitan Ennead\'s first emergence (Atum, Shu, Tefnut) or the Greek Theogony\'s first births (Chaos, Gaia, Eros). All three traditions present an initial triad of foundational divine principles before the world\'s detailed differentiation begins.',
+              parallels: [
+                { label: 'Memphite Theology — Atum, Shu, Tefnut', textId: 'memphite-theology',
+                  note: 'The Egyptian first triad (Atum-the-Whole producing Shu-Air and Tefnut-Moisture) is the structural parallel to the Kojiki\'s three first kami. Both texts present an originating divine principle that immediately differentiates into a generative pair.' },
+                { label: 'Voluspa — the first three Aesir (Odin, Vili, Vé)', textId: 'voluspa',
+                  note: 'The Norse first three Aesir who shape the worlds from Ymir\'s body — Odin, Vili, Vé — parallel the Kojiki\'s three first kami as the foundational divine triad responsible for setting cosmos in motion.' },
+              ]
+            },
+            { word: 'the land was young and floated like oil', node: 'tradition-shinto', type: 'concept',
+              note: 'The image of the early earth as floating-like-oil-and-drifting-like-jellyfish (くらげなすただよえる, kurage-nasu tadayoeru) is one of the most distinctive cosmogonic descriptions in any mythology — the not-yet-solid earth as a wobbling, jelly-like substance. The reed-shoot that pierces this primordial jelly (Umashi-ashikabi-hikoji) is the Japanese version of the universal "first growth from the void" motif: the lotus rising from Nun in Egyptian myth, the tree of life in Eden, the world-tree Yggdrasil planted into Ginnungagap.',
+              parallels: [
+                { label: 'Genesis 1:2 — the spirit hovers over the waters', textId: 'genesis-1',
+                  note: 'The Hebrew rūaḥ ʾĕlōhīm məraḥefet ʿal-pənēy ham-mayim (the divine wind hovers over the waters) and the Kojiki\'s pre-creation oil-like earth are the same imagistic move: the pre-structured world is fluid, the divine activity is what gives it form.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+// ── MORMON — 1 NEPHI 1 (THE OPENING VISION) ──────────────────────────────────
+SCRIPTURE_TEXTS['book-of-mormon-1-nephi-1'] = {
+  id:         'book-of-mormon-1-nephi-1',
+  title:      'The Book of Mormon — 1 Nephi 1 (Lehi\'s Vision)',
+  shortTitle: '1 Nephi 1 (Mormon)',
+  corpus:     'LDS · Book of Mormon',
+  tradId:     'tradition-mormonism',
+  date:       'composed 1827–1829 CE (Joseph Smith); narratively dated c. 600 BCE',
+  docNode:    'phase-7-001-book-of-mormon',
+  language:   'English · 1830 first edition',
+  translations: [
+    { id: '1830', label: '1830 first edition (T1, public domain)', note: 'The first published Book of Mormon, with subsequent corrections preserved in the LDS official 1981 edition' },
+  ],
+  intro: 'The Book of Mormon — published in 1830 by Joseph Smith Jr. — is the foundational scripture of the Latter-day Saints (LDS) tradition. The opening narrative: Lehi, a Jerusalem prophet of the 7th c. BCE, receives a vision warning him of Jerusalem\'s coming destruction by Babylon. He flees with his family across Arabia and across the ocean to a new promised land (the Americas), where his descendants — the Nephites and Lamanites — develop a Christian civilisation in pre-Columbian times. Christ visits them after his resurrection. The book chronicles their rise, fall, and final extinction by ~400 CE. Joseph Smith reported translating the text from golden plates by means of the Urim and Thummim. The opening verse — "I, Nephi, having been born of goodly parents" — is one of the most-quoted lines in LDS culture. Structurally, the book extends the prophetic genre (a faithful exile receives a vision warning of imminent destruction) found in Jeremiah, Daniel, and the Book of Mormon\'s own model: 1 Nephi 1 directly cites and echoes Jeremiah 26 and Isaiah 6.',
+  crossTradition: [
+    { label: 'Isaiah 6 — the prophetic commissioning vision', textId: 'isaiah-6',
+      note: 'Lehi\'s vision in 1 Nephi 1 — the heavens opening, a pillar of fire, a Christ-figure appearing, a book given to the prophet — closely follows the Isaiah 6 prophetic commissioning pattern. The book directly cites Isaiah\'s vision as a model for Lehi\'s.' },
+    { label: 'Jeremiah — the prophet warning of Jerusalem\'s destruction', textId: 'jeremiah-31',
+      note: 'Lehi is contemporaneous with Jeremiah (c. 600 BCE), receives a similar prophetic warning, and flees while Jeremiah remains. The book frames Lehi as a parallel prophet to Jeremiah whose ministry continues in the New World after Jerusalem\'s fall.' },
+    { label: 'Daniel 7 — heavenly book scene', textId: 'daniel-7',
+      note: 'The motif of a heavenly book containing the records of judgement (Dan 7:10) is reused in Lehi\'s vision, where a heavenly figure gives him a book containing prophecy of Jerusalem\'s fall. The book-in-vision genre runs Daniel → Enoch → Revelation → Book of Mormon.' },
+  ],
+  sections: [
+    {
+      heading: 'I. Lehi\'s Vision and the Heavenly Book',
+      verses: [
+        { ref: '1 Nephi 1:1, 6–14',
+          text: 'I, Nephi, having been born of goodly parents, therefore I was taught somewhat in all the learning of my father; and having seen many afflictions in the course of my days, nevertheless, having been highly favoured of the Lord in all my days; yea, having had a great knowledge of the goodness and the mysteries of God, therefore I make a record of my proceedings in my days.\n\nAnd it came to pass as my father prayed, there came a pillar of fire and dwelt upon a rock before him; and he saw and heard much; and because of the things which he saw and heard he did quake and tremble exceedingly. And being thus overcome with the Spirit, he was carried away in a vision, even that he saw the heavens open, and he thought he saw God sitting upon his throne, surrounded with numberless concourses of angels in the attitude of singing and praising their God. And it came to pass that he saw One descending out of the midst of heaven, and he beheld that his lustre was above that of the sun at noon-day. And he gave unto him a book, and bade him that he should read.',
+          textVersions: {
+            '1830': 'I Nephi having been born of goodly parents... it came to pass as my father prayed unto the Lord, there came a pillar of fire and dwelt upon a rock before him: and he saw and heard much; and because of the things which he saw and heard, he did quake and tremble exceedingly... and he saw One descending out of the midst of Heaven, and he beheld that his lustre was above that of the sun at noon day. And he also saw twelve others following him, and their brightness did exceed that of the stars in the firmament. And they came down and went forth upon the face of the earth.',
+          },
+          entities: [
+            { word: 'a pillar of fire and dwelt upon a rock before him', node: 'tradition-mormonism', type: 'concept',
+              note: 'The pillar of fire is a deliberate echo of Exodus 13:21 (the pillar of fire that led Israel through the wilderness) and 1 Kings 19:11-12 (Elijah\'s theophany at Horeb). The Book of Mormon\'s opening prophetic call is intentionally constructed to read as a continuation of the canonical Hebrew Bible prophetic tradition — Lehi is a "new Moses" leading a remnant out of doomed Jerusalem to a promised land, with the same divine apparatus of cloud, fire, and theophany.',
+              parallels: [
+                { label: 'Exodus 13:21 — the pillar of cloud and fire', textId: 'exodus-3',
+                  note: 'The divine pillar leading the Israelites out of Egypt is the canonical Hebrew Bible image that Lehi\'s vision deliberately reuses. Both narratives: divine guidance manifests as a visible column of fire and leads a chosen group out of a doomed political situation.' },
+                { label: 'Isaiah 6:1 — I saw the Lord sitting upon a throne', textId: 'isaiah-6',
+                  note: 'The throne-vision scene in 1 Nephi 1:8 ("he thought he saw God sitting upon his throne, surrounded with numberless concourses of angels") directly reuses Isaiah 6:1 ("I saw the Lord sitting upon a throne, high and lifted up, and his train filled the temple"). The Book of Mormon openly cites Isaiah as its model.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+// ── REFORMATION — LUTHER'S BONDAGE OF THE WILL ───────────────────────────────
+SCRIPTURE_TEXTS['luther-bondage-of-will'] = {
+  id:         'luther-bondage-of-will',
+  title:      'On the Bondage of the Will (De Servo Arbitrio)',
+  shortTitle: 'Luther · Bondage of the Will',
+  corpus:     'Reformation · Lutheran foundation',
+  tradId:     'tradition-protestantism',
+  date:       '1525 CE (Wittenberg)',
+  docNode:    'phase-6-007-luther-bondage-of-will',
+  language:   'Latin · Packer-Johnston 1957 English',
+  translations: [
+    { id: 'packer',  label: 'Packer-Johnston 1957 (T1)', note: 'J.I. Packer and O.R. Johnston, The Bondage of the Will — standard English scholarly translation' },
+    { id: 'latin',   label: 'Latin (Weimar Ausgabe)' },
+  ],
+  intro: 'On the Bondage of the Will (De Servo Arbitrio, 1525) is Luther\'s response to Erasmus\'s De Libero Arbitrio — the central theological exchange of the Reformation. Erasmus had defended free will against Luther\'s sola gratia doctrine; Luther replied with this work, which he considered his most important contribution. The core claim: human will, after the Fall, is not free with respect to God — it is bound, enslaved, capable only of sin until divine grace intervenes. Salvation is therefore monergistic (God alone is the agent) rather than synergistic (God + human cooperation). This single doctrinal move is the engine of the entire Reformation: if salvation depends on divine grace alone, then the elaborate medieval Catholic apparatus of works, indulgences, sacramental mediation, and priestly authority becomes superfluous. Reformed theology, Calvinism, predestination, and the entire Protestant emphasis on grace-not-works all flow from this position.',
+  crossTradition: [
+    { label: 'Romans 1 — Paul on the captive condition of the will', textId: 'romans-1',
+      note: 'Luther reads Romans 1-7 as Paul\'s extended argument for the bondage of the will: the gentiles know God but suppress the knowledge; Jews have the law but cannot keep it; "I do not do what I want, but I do the very thing I hate" (Rom 7:15). The Bondage of the Will is essentially an extended commentary on Romans + Galatians.' },
+    { label: 'Galatians 5 — flesh and Spirit in conflict', textId: 'galatians-5',
+      note: 'Paul\'s "the flesh sets its desire against the Spirit, and the Spirit against the flesh, for these are in opposition to one another, so that you may not do the things that you wish" (Gal 5:17) is the New Testament root for Luther\'s bound-will doctrine.' },
+    { label: 'Augustine — Confessions on the divided will', textId: 'genesis-3',
+      note: 'Luther was an Augustinian friar, and the doctrinal substrate of the Bondage of the Will is Augustine\'s Confessions VIII on the divided will: "the mind commands the body and is instantly obeyed; the mind commands itself and is resisted." Luther radicalises Augustine: the divided will is not just weak — it is enslaved.' },
+  ],
+  sections: [
+    {
+      heading: 'I. The Will Is Not Free Toward God',
+      verses: [
+        { ref: 'De Servo Arbitrio · final summary',
+          text: 'The will of man is like a beast standing between two riders. If God rides, it wills and goes where God wills, as the Psalm says: "I am become as a beast before thee, and I am ever with thee." If Satan rides, it wills and goes where Satan wills. Nor is it in its own choice to run to one of the two riders or to seek him out, but the riders themselves contend which shall have and hold it. This is the bondage. Free choice without grace is not free at all, but is a captive servant of sin and Satan; it can do nothing but sin, and it does what it does of necessity.',
+          textVersions: {
+            packer:  'The human will is placed between [God and Satan] like a beast of burden. If God rides it, it wills and goes whither God wills... If Satan rides it, it wills and goes whither Satan wills. Nor can it choose to which rider it will run, nor which it will seek; but the riders themselves contend for the possession and control of it.',
+            latin:   'Sic humana voluntas in medio posita est, ceu iumentum: si insederit Deus, vult et vadit, quo vult Deus... si insederit Satan, vult et vadit, quo vult Satan. Nec est in eius arbitrio, ad utrum sessorem currere aut eum quaerere, sed ipsi sessores certant ob ipsam obtinendam et possidendam.',
+          },
+          entities: [
+            { word: 'The will of man is like a beast standing between two riders', node: 'tradition-protestantism', type: 'principle',
+              note: 'The beast-of-burden metaphor is one of the most-debated images in the history of Christian theology. Luther\'s point: human will after the Fall is not autonomously free to choose between God and sin — it is RIDDEN by one or the other. Erasmus and the entire Catholic tradition rejected this as denying moral responsibility; Luther insisted it was simply describing the actual post-Fall condition. The downstream consequences: Calvin\'s double predestination, the Synod of Dort\'s TULIP, the entire Reformed-Arminian controversy, and the modern philosophical debate about libertarian free will vs. determinism. The structural parallel to the Bhagavad Gita\'s teaching that all action proceeds from the guṇas of nature, not from a free self (BG 3:27), is striking — both texts deny that the conventional self is the autonomous source of its actions.',
+              parallels: [
+                { label: 'Bhagavad Gita 3:27 — all actions are done by the guṇas of nature', textId: 'bhagavad-gita-4',
+                  note: 'Krishna in BG 3:27: "All kinds of action are performed by the guṇas of prakṛti (the qualities of nature). Deluded by egoism, a person thinks: \'I am the doer.\'" The Gita\'s analysis and Luther\'s bound-will doctrine make the same anti-autonomy move: the empirical self is not the source of its own action.' },
+                { label: 'Romans 7:15-19 — the divided will', textId: 'romans-1',
+                  note: 'Paul: "I do not do the good I want, but the evil I do not want is what I do." Luther reads this passage as Scripture\'s own articulation of the bound-will doctrine. The Pauline diagnosis is the New Testament foundation Luther builds on.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+// ── SAMARITAN — SAMARITAN PENTATEUCH (EXODUS 20, THE TENTH COMMANDMENT) ──────
+SCRIPTURE_TEXTS['samaritan-pentateuch-decalogue'] = {
+  id:         'samaritan-pentateuch-decalogue',
+  title:      'Samaritan Pentateuch — The Tenth Commandment (Gerizim Variant)',
+  shortTitle: 'Samaritan Pentateuch · Decalogue',
+  corpus:     'Samaritan · Torah Qedosha',
+  tradId:     'tradition-samaritanism',
+  date:       'preserves pre-Masoretic textual tradition; oldest extant MS Abisha Scroll (claimed 13th c. BCE; scholarly c. 11th-13th c. CE)',
+  docNode:    'phase-3-007-samaritan-pentateuch',
+  language:   'Samaritan Hebrew · Tsedaka-Sullivan 2013 English',
+  translations: [
+    { id: 'tsedaka', label: 'Tsedaka-Sullivan 2013 (T1)', note: 'Benyamim Tsedaka and Sharon Sullivan, The Israelite Samaritan Version of the Torah — first complete English of the Samaritan Pentateuch' },
+    { id: 'hebrew',  label: 'Samaritan Hebrew (Abisha tradition)' },
+  ],
+  intro: 'The Samaritan Pentateuch is the third independent witness to the Hebrew Torah, alongside the Masoretic Text (Jewish) and the Septuagint (Greek Jewish, used by early Christians). Preserved by the Samaritans of Mount Gerizim — who claim continuous descent from the northern tribes of Israel that the Hebrew Bible says were exiled by Assyria in 722 BCE — the text differs from the Masoretic in ~6,000 places, most minor but some theologically decisive. The most famous variant is the Tenth Commandment: where the Masoretic and Septuagint have "Thou shalt not covet thy neighbour\'s house... wife... etc.", the Samaritan Pentateuch has a different Tenth Commandment instructing the building of an altar on Mount Gerizim (Mt. Gerizim being for Samaritans the only legitimate sacred mountain — not Mt. Sinai or Mt. Zion). The Samaritan Decalogue thus encodes the foundational political-religious dispute between Samaritans and Judeans that runs from the post-Assyrian period through Jesus\'s encounter with the Samaritan woman at the well (John 4) into the present day. ~800 Samaritans survive today, primarily in Holon and Mt. Gerizim.',
+  crossTradition: [
+    { label: 'Exodus 20 — the Masoretic Decalogue', textId: 'exodus-3',
+      note: 'The Masoretic Tenth Commandment ("Thou shalt not covet") and the Samaritan Tenth ("Build an altar on Gerizim") are mutually exclusive — proof that the two communities preserved different priestly traditions about what Moses received at Sinai. Modern textual scholarship dates the Samaritan reading as preserving an earlier northern-Israelite priestly tradition; the Masoretic reading reflects Judean redaction.' },
+    { label: 'John 4 — Jesus and the Samaritan woman', textId: 'john-1',
+      note: 'The Johannine encounter at Jacob\'s well in Sychar (modern Nablus, at the foot of Mt. Gerizim) directly addresses the Samaritan-Judean dispute: "Our fathers worshipped on this mountain, and ye say that in Jerusalem is the place where men ought to worship" (John 4:20). Jesus\'s reply — "the hour comes when ye shall neither in this mountain, nor yet at Jerusalem, worship the Father" — transcends the Decalogue dispute by abolishing the question of geographic sanctity.' },
+    { label: 'Deuteronomy 27 — the blessings on Mt. Gerizim', textId: 'deuteronomy-6',
+      note: 'Both the Samaritan and Masoretic Pentateuchs preserve Deuteronomy 27\'s instruction that the blessings be pronounced on Mt. Gerizim and the curses on Mt. Ebal. The Samaritans read this as confirming Gerizim\'s priority; the Judeans read it as a historical instruction not affecting the centralisation of worship at Jerusalem.' },
+  ],
+  sections: [
+    {
+      heading: 'I. The Tenth Commandment — Gerizim Variant',
+      verses: [
+        { ref: 'Samaritan Pentateuch · Exodus 20:17 (Samaritan Tenth)',
+          text: 'And it shall come to pass when YHWH thy God shall bring thee into the land of the Canaanites, whither thou goest to possess it, that thou shalt set thee up great stones, and plaster them with plaster, and thou shalt write upon the stones all the words of this Law. And it shall be when ye are passed over Jordan, that ye shall set up these stones on Mount Gerizim. And there shalt thou build an altar unto YHWH thy God, an altar of stones; thou shalt lift up no iron tool upon them. Thou shalt build the altar of YHWH thy God of unhewn stones, and thou shalt offer burnt offerings thereon unto YHWH thy God. That mountain is on the other side of the Jordan, by the way where the sun goeth down, in the land of the Canaanites who dwell in the Arabah, opposite Gilgal, beside Elon-Moreh, before Shechem.',
+          textVersions: {
+            tsedaka: 'And it shall come to pass, when YHWH your God brings you to the land of the Canaanites... you shall set up these stones on Mount Gerizim, and there you shall build an altar to YHWH your God, an altar of stones... before Shechem.',
+            hebrew:  'והיה כי יביאך יהוה אלהיך אל ארץ הכנעני... והקמת לך אבנים גדולות וסדת אתם בסיד... והקמת את האבנים האלה אשר אנכי מצוה אתכם היום בהר גריזים',
+          },
+          entities: [
+            { word: 'on Mount Gerizim', node: 'tradition-samaritanism', type: 'concept',
+              note: 'Har Gerizim (Mount of the Blessings, ~881m, opposite Mt. Ebal in the central Palestinian highlands) is the most contested mountain in the Hebrew Bible. The Samaritan position: Gerizim is the original divinely-designated cultic centre, established by Moses according to the genuine Mosaic instruction. The Judean position: Jerusalem became the cultic centre under David and Solomon, fulfilling the deferred Mosaic command that "the place YHWH shall choose" would be revealed later. Modern critical scholarship (Magen 2008) confirms a Samaritan temple stood on Gerizim from c. 450 BCE (destroyed by John Hyrcanus 128 BCE); whether this represents continuation of an older sanctuary or a 5th c. BCE foundation remains debated. The Samaritan Decalogue\'s Gerizim commandment is the canonical claim to PRIORITY.',
+              parallels: [
+                { label: 'John 4:20-24 — neither this mountain nor Jerusalem', textId: 'john-1',
+                  note: 'Jesus\'s Sychar discourse — "the hour comes when ye shall neither in this mountain, nor yet at Jerusalem, worship the Father, but the true worshippers shall worship the Father in spirit and in truth" — is the canonical New Testament intervention in the Samaritan-Judean dispute. Christianity\'s claim to transcend BOTH positions by spiritualising the question of sacred geography.' },
+                { label: 'Quran 17:1 — the farthest mosque (al-aqsa)', textId: 'quran-fatiha-nur',
+                  note: 'The Quranic Night Journey to the "farthest mosque" (al-masjid al-aqsa) — traditionally identified with Jerusalem — establishes a third Abrahamic claim on the sacred geography of the central Palestinian highlands. Samaritan / Jewish / Christian / Muslim sacred-mountain disputes are now four-way.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+// ── SHIA — NAHJ AL-BALAGHA (PEAK OF ELOQUENCE) ───────────────────────────────
+SCRIPTURE_TEXTS['nahj-al-balagha'] = {
+  id:         'nahj-al-balagha',
+  title:      'Nahj al-Balāgha — Peak of Eloquence',
+  shortTitle: 'Nahj al-Balāgha (Shīʿa)',
+  corpus:     'Shīʿa canonical · Nahj al-Balāgha',
+  tradId:     'tradition-shia-islam',
+  date:       'compiled 1009 CE by al-Sharif al-Radi (sermons attributed to ʿAlī ibn Abī Ṭālib, d. 661 CE)',
+  docNode:    'phase-5-058-nahj-al-balagha',
+  language:   'Classical Arabic · Reza 1996 English',
+  translations: [
+    { id: 'reza',     label: 'Sayed Ali Reza 1996 (T1)', note: 'Sayed Ali Reza, Nahjul Balagha — widely-used scholarly English' },
+    { id: 'arabic',   label: 'Classical Arabic (original)' },
+  ],
+  intro: 'Nahj al-Balāgha ("Peak of Eloquence") is — after the Quran — the most authoritative text in Shīʿa Islam. Compiled around 1009 CE by al-Sharif al-Radi, it gathers 241 sermons, 79 letters, and 489 sayings attributed to ʿAlī ibn Abī Ṭālib (cousin and son-in-law of Muhammad, the first Shīʿa Imam, and the fourth Sunni Rashidun caliph). The work treats the central themes of Islamic mystical and political theology with unmatched literary brilliance — Sunni and Shīʿa scholars alike acknowledge ʿAlī as one of the supreme stylists of the Arabic language. Sermon 1 (the cosmological sermon) is the foundational Shīʿa account of creation, divine attributes, and the unfolding of revelation; Letter 31 (ʿAlī\'s instructions to his son Hasan) is one of the great ethical letters in world literature, compared to Marcus Aurelius and Seneca by Western readers. The work is the canonical site where Shīʿa political theology (the Imamate, divine guidance through the descendants of ʿAlī) intersects with universal Islamic mystical theology.',
+  crossTradition: [
+    { label: 'Hadith of Bukhari — the prophetic sayings tradition', textId: 'hadith-bukhari-selected',
+      note: 'Both Sunni and Shīʿa traditions preserve the prophetic teaching primarily as transmitted sayings. The Sunni hadith collections (Bukhari, Muslim) and the Shīʿa Nahj al-Balāgha share the same literary form — short freestanding ethical and theological pronouncements with transmission chains — but the Shīʿa tradition extends primary authority to ʿAlī and the Imams alongside the Prophet.' },
+    { label: 'Quran — divine eloquence as proof of revelation', textId: 'quran-fatiha-nur',
+      note: 'The Islamic doctrine of iʿjāz al-Qurʾān (the Quran\'s inimitable eloquence as proof of divine origin) influenced how the Nahj al-Balāgha was received: ʿAlī\'s eloquence in this work is considered the closest human approach to Quranic style, and the work\'s title (Peak of Eloquence) directly invokes this hierarchy.' },
+    { label: 'Marcus Aurelius — the ruler\'s ethical reflection', node: 'marcus-aurelius-emperor',
+      note: 'Letter 31 of the Nahj al-Balāgha — ʿAlī\'s ethical instructions to his son Hasan, written in 660 CE during the final year of his caliphate — is structurally identical to Marcus Aurelius\'s Meditations (composed during military campaigns, 170-180 CE): a ruler/philosopher\'s ethical self-instruction made public. Both texts treat power, mortality, justice, and self-discipline as inseparable concerns of authority.' },
+  ],
+  sections: [
+    {
+      heading: 'I. The First Sermon — Creation and Knowledge of God',
+      verses: [
+        { ref: 'Nahj al-Balāgha · Sermon 1 (excerpt)',
+          text: 'Praise be to God, whose praise no speaker can attain, whose blessings no counter can count, whose right no striver can fulfil. The depth of his knowledge cannot be plumbed by intellect; the wave of his understanding cannot be reached by any sounding. He has no time to which any "before" can be added, nor any term where he could be said to end. He brought creation forth without precedent, without precedent thought, without trial of one act before another. He set everything in its place by His knowledge, distinguishing it by His wisdom, not in need of any tool, not consulting with any partner, not by motion of any limb, and not by stirring of any thought.',
+          textVersions: {
+            reza:    'Praise is due to Allah whose worth cannot be described by speakers, whose bounties cannot be counted by calculators and whose claim cannot be satisfied by those who attempt to do so... He created the creation without any example which He could follow.',
+            arabic:  'الحمد لله الذي لا يبلغ مدحته القائلون ولا يحصي نعماءه العادون ولا يؤدي حقه المجتهدون · الذي لا يدركه بعد الهمم ولا يناله غوص الفطن',
+          },
+          entities: [
+            { word: 'He brought creation forth without precedent', node: 'tradition-shia-islam', type: 'principle',
+              note: 'ʿAlī\'s formula — that God created without example, without prior thought, without consulting any partner — is the canonical Islamic articulation of creatio ex nihilo (creation from nothing). It rejects two alternative cosmologies: (a) the Neoplatonic position that creation is necessary emanation from divine fullness; (b) the Aristotelian position that the cosmos is eternally co-existent with God. The Shīʿa cosmological sermon insists on radical creational sovereignty: nothing constrains divine action, nothing pre-exists it, nothing is consulted. The doctrinal parallel to Genesis 1\'s "in the beginning God created" is structural; the philosophical parallel to Aquinas\'s defense of creatio ex nihilo is direct (with Aquinas writing 250 years after the Nahj al-Balāgha).',
+              parallels: [
+                { label: 'Genesis 1:1 — In the beginning God created', textId: 'genesis-1',
+                  note: 'The Hebrew bə-rēšīt bārāʾ ʾĕlōhīm ("in the beginning, God created") and ʿAlī\'s "He brought creation forth without precedent" are the same theological claim — sovereign divine origin without prior material — in different Abrahamic vocabularies.' },
+                { label: 'Memphite Theology — creation by divine word', textId: 'memphite-theology',
+                  note: 'The Memphite Theology\'s Ptah creating by heart-thought and tongue-speech is the Egyptian articulation of the same teaching: creation flows from divine intellectual sovereignty, not from material constraint.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+// ── SOUTH ASIAN MODERNISM — AMBEDKAR'S NAVAYANA BUDDHISM ─────────────────────
+SCRIPTURE_TEXTS['ambedkar-buddha-dhamma'] = {
+  id:         'ambedkar-buddha-dhamma',
+  title:      'The Buddha and His Dhamma — Navayana Founding Text',
+  shortTitle: 'Ambedkar · Buddha and His Dhamma',
+  corpus:     'South Asian Modernism · Navayana Buddhism',
+  tradId:     'tradition-navayana-buddhism',
+  date:       '1956 CE (B.R. Ambedkar, published posthumously 1957)',
+  docNode:    'phase-7-045-ambedkar-buddha-and-dhamma',
+  language:   'English (original) · with Marathi parallel circulating',
+  translations: [
+    { id: 'siddharth', label: 'Siddharth 1992 ed. (T1)', note: 'Pradeep Aglave\'s 1992 critical edition, currently the most-cited text-form' },
+    { id: 'original',  label: '1957 Ambedkar Mission first edition (T1)' },
+  ],
+  intro: 'The Buddha and His Dhamma was B.R. Ambedkar\'s final book — completed shortly before his death in December 1956 — and the founding scripture of Navayana ("New Vehicle") Buddhism. Ambedkar (1891–1956) — Dalit-born, doctorate from Columbia, chair of India\'s constitutional drafting committee — converted to Buddhism with 500,000 followers in Nagpur on October 14, 1956, six weeks before his death. The conversion was the culmination of his lifelong critique of Hindu caste: Brahmanical Hinduism cannot be reformed, because hierarchy is its essence; Buddhism alone among the Indian dharmas offers an internally consistent egalitarian path. Ambedkar\'s reading of the Buddha sharply diverges from Theravada and Mahayana orthodoxy: he rejects rebirth, karma-across-lives, the supernatural; he reads the Four Noble Truths as a social analysis of suffering and its political-economic causes; he interprets the Eightfold Path as a programme of ethical-political reform. Navayana Buddhism today claims ~8 million Indian adherents, primarily Dalit, and constitutes one of the largest religious conversions in modern history.',
+  crossTradition: [
+    { label: 'Dhammapada — the original Buddhist ethical canon', textId: 'dhammapada-1',
+      note: 'Ambedkar\'s Navayana stays close to the ethical core of the Dhammapada (mind as the source of action, hatred quenched only by non-hatred, the value of practice over recitation) while rejecting the cosmological framework (rebirth, supernatural realms) the Dhammapada also assumes. The Navayana reading: the ethical Buddhism is the real Buddhism; the cosmological elements are later Brahmanical importations.' },
+    { label: 'Hadith — religion as ethical practice over ritual', textId: 'hadith-bukhari-selected',
+      note: 'Ambedkar\'s emphasis on intention and ethical action over ritual purity has structural parallels to the Hadith of Intentions ("Actions are but by intentions") — both traditions insist that religion is ultimately about the orientation of the inner life and its expression in action, not about ritual observances detached from ethics.' },
+    { label: 'Reformation — Luther\'s critique of mediating priesthood', textId: 'luther-bondage-of-will',
+      note: 'Ambedkar\'s critique of Brahmanical mediation — that the Brahmin priesthood interposes itself between human and divine to extract economic and social privilege — is structurally identical to Luther\'s 1525 critique of Catholic priesthood and indulgences. Both reformers attack a hereditary religious caste for transforming spiritual mediation into worldly power.' },
+  ],
+  sections: [
+    {
+      heading: 'I. The Twenty-Two Vows',
+      verses: [
+        { ref: 'Ambedkar · 22 Vows of Conversion (Nagpur, October 14, 1956)',
+          text: 'I shall have no faith in Brahma, Vishnu and Mahesh nor shall I worship them.\nI shall have no faith in Rama and Krishna who are believed to be incarnation of God nor shall I worship them.\nI shall have no faith in Gauri, Ganapati and other gods and goddesses of Hindus nor shall I worship them.\nI do not believe in the incarnation of God.\nI do not and shall not believe that Lord Buddha was the incarnation of Vishnu. I believe this to be sheer madness and false propaganda.\nI shall not perform Shraddha nor shall I give pind-dan.\nI shall not act in a manner violating the principles and teachings of the Buddha.\nI shall not get any ceremony performed by Brahmins.\nI shall believe in the equality of man.\nI shall endeavour to establish equality.\nI shall follow the Noble Eightfold Path of the Buddha.\nI shall follow the ten paramitas prescribed by the Buddha.\nI shall have compassion and loving-kindness for all living beings and protect them.\nI shall not steal.\nI shall not tell lies.\nI shall not commit carnal sins.\nI shall not take intoxicants like liquor, drugs etc.\nI shall endeavour to follow the Noble Eightfold Path and practise compassion and loving-kindness in everyday life.\nI renounce Hinduism which is harmful to humanity and which obstructs the advancement and development of humanity because it is based on inequality, and adopt Buddhism as my religion.\nI firmly believe the Dhamma of the Buddha is the only true religion.\nI believe that I am having a re-birth.\nI solemnly declare and affirm that I shall hereafter lead my life according to the principles and teachings of the Buddha and his Dhamma.',
+          textVersions: {
+            siddharth: 'I shall have no faith in Brahma, Vishnu and Mahesh, nor shall I worship them. I shall have no faith in Rama and Krishna... I shall not perform Shraddha... I shall believe in the equality of man... I renounce Hinduism which is harmful to humanity... and adopt Buddhism as my religion.',
+            original:  '[same content as published 1957]',
+          },
+          entities: [
+            { word: 'I renounce Hinduism', node: 'tradition-navayana-buddhism', type: 'principle',
+              note: 'The 19th of the 22 vows is the most theologically and politically radical: an explicit renunciation of Hinduism as a system harmful to humanity. Ambedkar had spent decades attempting to reform Hinduism from within — drafting the Hindu Code Bill, leading temple-entry movements, attempting inter-caste marriage advocacy. By 1956 he had concluded that caste was not a corruption of Hinduism but its essential structural feature, inseparable from Brahmanical authority. The conversion was therefore not a private spiritual move but a public political act: 500,000 Dalits publicly renouncing the religious system that had organised their oppression for 3,000+ years. The structural parallel to Luther\'s public defiance at Worms ("Here I stand, I can do no other") is direct: a public, irrevocable, communal break from a religious system judged to be incorrigible.',
+              parallels: [
+                { label: 'Luther at Worms 1521 — Here I stand', textId: 'luther-bondage-of-will',
+                  note: 'Luther\'s "Here I stand, I can do no other, so help me God" at the Diet of Worms is the canonical Western example of public, communal religious break. Ambedkar\'s 22 vows at Nagpur in 1956 is the modern Asian counterpart: a public, communal, irrevocable renunciation of an ancestral religious system.' },
+                { label: 'Exodus 3 — the call out of Egypt', textId: 'exodus-3',
+                  note: 'The Mosaic call to lead a people out of an oppressive religious-political system has been the structural template for liberation movements: Ambedkar explicitly invoked Moses-out-of-Egypt as the model for his Dalit-out-of-Hinduism conversion. The Buddhist exodus.' },
+              ]
+            },
+            { word: 'I shall believe in the equality of man', node: 'tradition-navayana-buddhism', type: 'principle',
+              note: 'The equality vow is the doctrinal centre of Navayana. Ambedkar argued that the Buddha\'s decision to admit Dalits and women to the sangha — without precedent in any other ancient Indian religious order — was the foundational and irreducible commitment of the original teaching. Any tradition claiming Buddhist descent that maintains hereditary hierarchy, ritual purity classifications, or gender exclusion has departed from this core. The structural parallel to the Pauline "neither Jew nor Greek, neither slave nor free, neither male nor female" (Gal 3:28) is striking — both Buddhism and primitive Christianity made a foundational move toward radical equality that their later institutional forms partially reversed.',
+              parallels: [
+                { label: 'Galatians 3:28 — neither Jew nor Greek', textId: 'galatians-3',
+                  note: 'Paul\'s "there is neither Jew nor Greek, neither slave nor free, neither male nor female; for ye are all one in Christ Jesus" is the canonical Christian counterpart to Ambedkar\'s equality vow. Both movements claim that the new religious community founds itself on the ABOLITION of inherited social hierarchies.' },
+                { label: 'Hadith of Brotherhood — none believes until he loves for his brother', textId: 'hadith-bukhari-selected',
+                  note: 'The Hadith of Brotherhood — none truly believes until he loves for his brother what he loves for himself — articulates the same horizontal-equality demand. Three modern reform movements (Pauline Christianity, prophetic Islam, Navayana Buddhism) all locate the test of authentic faith in the abolition of in-group/out-group hierarchies.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+// ── TENRIKYO — OFUDESAKI (THE TIP OF THE DIVINE WRITING BRUSH) ───────────────
+SCRIPTURE_TEXTS['ofudesaki'] = {
+  id:         'ofudesaki',
+  title:      'Ofudesaki — The Tip of the Divine Writing Brush',
+  shortTitle: 'Ofudesaki (Tenrikyo)',
+  corpus:     'Tenrikyo · Ofudesaki + Mikagura-uta + Osashizu',
+  tradId:     'tradition-tenrikyo',
+  date:       '1869–1882 CE (Nakayama Miki, Yamato Province, Japan)',
+  docNode:    'phase-7-043-ofudesaki',
+  language:   'Japanese (waka 5-7-5-7-7) · Tenrikyo Church Headquarters 1971 English',
+  translations: [
+    { id: 'thcq', label: 'Tenrikyo Church Headquarters 1971 (T1, official)', note: 'The Ofudesaki: The Tip of the Writing Brush — the official English edition' },
+    { id: 'japanese', label: 'Japanese (original)' },
+  ],
+  intro: 'The Ofudesaki ("Tip of the Writing Brush") is the central scripture of Tenrikyo, founded 1838 by Nakayama Miki (1798–1887), a peasant woman in rural Yamato province who received what she identified as direct revelations from Tsukihi/Oyagami ("God the Parent"). The 1,711 waka verses of the Ofudesaki were composed between 1869 and 1882 — Nakayama Miki described herself not as the author but as the brush by which God writes. The teaching is structurally distinctive: God did not merely create the world; God created the world to enable joyous life (yokigurashi) — and the world is meant to be lived joyfully, with all humans recognising each other as siblings of the same Parent. Suffering arises from "dusts" (hokori) accumulated on the inherently pure original mind: oshii (miserliness), hoshii (covetousness), nikui (hatred), kawaii (selfish-attachment), urami (resentfulness), haradachi (anger), yoku (greed), kōman (arrogance). Spiritual practice is "dust-sweeping" (hokorisweep) — clearing these accumulated obscurations to recover the original joyous state. Today Tenrikyo has ~1.5 million adherents, primarily in Japan + diaspora.',
+  crossTradition: [
+    { label: 'Cheondogyo — God the Parent', textId: 'donggyeong-daejeon',
+      note: 'Tenrikyo\'s Oyagami (God the Parent) and Cheondogyo\'s Hanullim are nearly contemporaneous (1838 and 1860 respectively) East Asian revelations that emphasise God as immediate parent of all humans, dissolving caste / class hierarchy through the equality of divine siblinghood. Both are women-founded or strongly woman-shaped traditions emerging on the periphery of established religious authority.' },
+    { label: 'Bahá\'í Hidden Words — I created thee rich, why dost thou bring thyself down to poverty', textId: 'bahai-hidden-words',
+      note: 'The Bahá\'í teaching that humans are created rich and joyful, and forget this primordial state through clinging to lesser things, is functionally identical to the Tenrikyo doctrine of yokigurashi (the original joyful state) obscured by hokori (dusts).' },
+    { label: 'Dhammapada — purity of mind and the shadow-shaped happiness', textId: 'dhammapada-1',
+      note: 'The Dhammapada\'s opening teaching that happiness follows the pure mind as a shadow that never departs (Dhp 2) is the closest Buddhist parallel to Tenrikyo\'s yokigurashi: joy is not an external acquisition but the immediate quality of an uncluttered consciousness.' },
+  ],
+  sections: [
+    {
+      heading: 'I. The Original Joyous Life',
+      verses: [
+        { ref: 'Ofudesaki · Part III, verses 40–47 (excerpts)',
+          text: 'Looking throughout the world, no one knows the true heart of God the Parent. The mind that wants to live joyously — that is the mind God the Parent wishes you to bring out. The dust on the heart is not what God gave you. Sweep it away. The true heart God the Parent gave you is the heart of the Joyous Life.\n\nDay by day, the heart of God the Parent is impatient and full of haste. Therefore, the time has come to teach the truth.\n\nFrom now on, I shall talk in the metaphors of the path. Listen carefully, all of you, all of you. The truth God speaks of is not far. It is the heart you already have, only buried under dust. Sweep the dust, and there it is.',
+          textVersions: {
+            thcq: 'Throughout the world, no one knows the true heart of God the Parent... The mind that wishes to live joyously — that is what God wishes you to bring forth... The dust on the mind is not from Me; I shall sweep it away.',
+            japanese: 'せかいぢう にんけんはじめ かけだしや/ つきひのこゝろ たれもしろまい',
+          },
+          entities: [
+            { word: 'the heart of the Joyous Life', node: 'tradition-tenrikyo', type: 'principle',
+              note: 'Yokigurashi (陽気ぐらし, "joyous life") is the foundational doctrine of Tenrikyo and one of the most distinctive theological claims in any religion: God\'s ORIGINAL intent in creating the world was the joyous life of all beings. Not salvation from a fallen state, not testing for moral worth, not preparation for an afterlife — just the joyous life itself. Suffering arises from the accumulation of "dusts" (hokori) on the inherently pure mind; spiritual practice is dust-sweeping (hokori-harau) — clearing the obscurations rather than acquiring new virtues. The structural parallel to the Bahá\'í Hidden Words (#13: "I created thee rich; why dost thou bring thyself down to poverty?") is direct: both traditions invert the standard religious narrative of "fallen → redeemed" into "always rich → forgetful → remembered."',
+              parallels: [
+                { label: 'Bahá\'í Hidden Words — I created thee rich', textId: 'bahai-hidden-words',
+                  note: 'Bahá\'u\'lláh\'s "I created thee rich, why dost thou bring thyself down to poverty? Noble I made thee, wherewith dost thou abase thyself?" and Tenrikyo\'s yokigurashi doctrine make the same metaphysical move: the human predicament is not a deficit to be overcome but an inheritance to be recovered.' },
+                { label: 'Gospel of Thomas L.3 — the Kingdom is inside you', textId: 'gospel-of-thomas',
+                  note: 'Thomas\'s "the Kingdom is inside you and outside you" makes the same restoration move: what was sought is what was always present, obscured by ignorance of one\'s own condition.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
 // ── MANICHAEAN — COPTIC PSALMS OF HERACLEIDES ────────────────────────────────
 SCRIPTURE_TEXTS['manichaean-psalms'] = {
   id:         'manichaean-psalms',
