@@ -9336,23 +9336,3 @@ body.view-forge.fx-belowfifteen .forge-labels-overlay { display: none !important
   overflow: hidden;
 }
 
-/* ============================================================
- * BOARDS V2 — hide every leftover legacy chrome on this view
- * Filed 2026-05-28 per AUDIT/2026-05-28-legacy-isolation-locked.md
- *
- * The shared `.view-header` (title + subtitle + view-controls),
- * `aside.detail` (right-rail inspector), and `#codex-dev-tab`
- * (Forge dev panel) live in the V2 shell because Forge + Reader
- * use them. On Boards V2 they're dead weight — the contextual
- * pill is the only chrome the view should show. Hide them so
- * John doesn't see "BOAR..." text behind the master pill or
- * ghost tabs on the right edge.
- * ============================================================ */
-body.view-boards .view-header,
-body.view-boards aside.detail,
-body.view-boards #codex-dev-tab,
-body.view-boards #zoom-meter,
-body.view-boards .legend,
-body.view-boards .tier-legend,
-body.view-boards .map-thumb { display: none !important; }
-

@@ -124,15 +124,11 @@ function computeHubSet(nodes, percentile = 0.15) {
   return new Set(sorted.slice(0, cutoff).map(n => n.id));
 }
 
-// stats — 2026-05-28 legacy-isolation: these spans lived inside <nav class="side"> .stats
-// which is DELETED from V2 (still in _legacy/). Guard each setter so V2 boot doesn't throw.
-(function setStats() {
-  const setEl = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
-  setEl('s-docs',    DATA.counts.document || 0);
-  setEl('s-deities', DATA.counts.deity    || 0);
-  setEl('s-themes',  DATA.counts.theme    || 0);
-  setEl('s-edges',   EDGES.length);
-})();
+// stats
+document.getElementById('s-docs').textContent    = DATA.counts.document || 0;
+document.getElementById('s-deities').textContent = DATA.counts.deity || 0;
+document.getElementById('s-themes').textContent  = DATA.counts.theme || 0;
+document.getElementById('s-edges').textContent   = EDGES.length;
 
 // 2026-05-27 — legacy family-filter `<select>` populator removed along
 // with the hardcoded <footer>. The element was already a hidden <input>
@@ -532,9 +528,6 @@ function setView(name) {
   } catch (_) { /* CustomEvent unavailable in very old browsers */ }
   // Body class for view-specific styling hooks (e.g., timeline gets uniform bg, no radial gradient).
   document.body.className = document.body.className.replace(/\bview-\S+\b/g, '').trim() + ' view-' + name;
-  // 2026-05-28 legacy-isolation: `nav.side` is DELETED from the V2 shell (now lives only
-  // in _legacy/index.html). querySelectorAll returns empty NodeList, so this forEach is
-  // a no-op in V2. Kept for code shape; the legacy snapshot still uses it.
   document.querySelectorAll('nav.side .item').forEach(el => el.classList.toggle('active', el.dataset.view === name));
   svg.selectAll('*').remove();
   // clear any view-specific event bindings on the svg root so they don't leak between views
@@ -7601,13 +7594,15 @@ function _atlasBuildStyle() {
     // Regular range 0-255 covers digits + Latin (76 KB, fetched once via curl).
     // MapLibre URL-encodes spaces in {fontstack} → '%20' so the path resolves to the
     // real on-disk file. Add more ranges later if non-Latin labels are needed.
-    glyphs: '_assets/vendor/glyphs/{fontstack}/{range}.pbf',
+    // LEGACY SNAPSHOT path-prefix: relative to _legacy/index.html
+    glyphs: '../_assets/vendor/glyphs/{fontstack}/{range}.pbf',
     sources: {
       protomaps: {
         type: 'vector',
         // Use tiles array directly — avoids a TileJSON metadata fetch through the pmtiles://
         // protocol handler, which hangs in MapLibre v5 when the source URL form is used.
-        tiles: ['pmtiles://_assets/basemap/world-z7.pmtiles/{z}/{x}/{y}'],
+        // LEGACY SNAPSHOT path-prefix: relative to _legacy/index.html
+        tiles: ['pmtiles://../_assets/basemap/world-z7.pmtiles/{z}/{x}/{y}'],
         minzoom: 0,
         maxzoom: 7,
         bounds: [-180, -85.05, 180, 85.05],
@@ -10392,7 +10387,6 @@ function buildThemesDropdown() {
   };
 
   const grid = document.getElementById('themes-grid');
-  if (!grid) return;  // 2026-05-28 legacy-isolation: themes-grid is in _legacy/ only
   grid.innerHTML = '';
   orderedCats.forEach(cat => {
     const head = document.createElement('div');
@@ -10424,9 +10418,6 @@ function buildThemesDropdown() {
 function renderActiveTheme() {
   const wrap = document.getElementById('active-theme-wrap');
   const clearBtn = document.getElementById('themes-clear');
-  // 2026-05-28 legacy-isolation: active-theme-wrap was inside the now-deleted footer
-  // chip strip; the function is still called from elsewhere so we guard the null.
-  if (!wrap) { if (clearBtn) clearBtn.style.display = 'none'; return; }
   if (!STATE.filter.theme) {
     wrap.style.display = 'none'; wrap.innerHTML = '';
     if (clearBtn) clearBtn.style.display = 'none';
@@ -10455,27 +10446,20 @@ document.addEventListener('click', (ev) => {
   }
 });
 
-// 2026-05-28 legacy-isolation: #themes-menu + #themes-button are DELETED from V2 shell
-// (still present in _legacy/index.html). Wrap every direct getElementById in a guard so
-// the V2 boot path doesn't throw on the null .addEventListener.
 function openThemesMenu() {
-  const m = document.getElementById('themes-menu'); if (m) m.classList.add('open');
-  const b = document.getElementById('themes-button'); if (b) b.classList.add('open');
+  document.getElementById('themes-menu').classList.add('open');
+  document.getElementById('themes-button').classList.add('open');
 }
 function closeThemesMenu() {
-  const m = document.getElementById('themes-menu'); if (m) m.classList.remove('open');
-  const b = document.getElementById('themes-button'); if (b) b.classList.remove('open');
+  document.getElementById('themes-menu').classList.remove('open');
+  document.getElementById('themes-button').classList.remove('open');
 }
 
-(function () {
-  const btn = document.getElementById('themes-button');
-  if (btn) btn.addEventListener('click', () => {
-    const menu = document.getElementById('themes-menu');
-    if (menu && menu.classList.contains('open')) closeThemesMenu(); else openThemesMenu();
-  });
-  const closeBtn = document.getElementById('themes-close');
-  if (closeBtn) closeBtn.addEventListener('click', closeThemesMenu);
-})();
+document.getElementById('themes-button').addEventListener('click', () => {
+  const menu = document.getElementById('themes-menu');
+  if (menu.classList.contains('open')) closeThemesMenu(); else openThemesMenu();
+});
+document.getElementById('themes-close').addEventListener('click', closeThemesMenu);
 document.addEventListener('keydown', (ev) => {
   if (ev.key === 'Escape') closeThemesMenu();
 });
@@ -10571,18 +10555,14 @@ document.querySelectorAll('nav.side .item').forEach(el => {
   }
 });
 
-// 2026-05-28 legacy-isolation: #filter-family + #filter-type were inside the
-// deleted prototype <footer>. Calling getElementById on them returns null →
-// .addEventListener throws TypeError → silent halt of the entire script
-// (no more setView, no router IIFE, page stuck on STATE.view='pantheon'
-// default). Guard each element existence before wiring.
-// COST: ~30 min of "boards URL doesn't auto-route" debugging this commit.
+// 2026-05-28 legacy-isolation patch (same fix applied to live src/js/app.js):
+// #filter-family + #filter-type were inside the deleted prototype footer.
+// Without this guard the addEventListener throws and stops boot.
 ['family', 'type'].forEach(k => {
   const el = document.getElementById('filter-' + k);
   if (!el) return;
   el.addEventListener('change', e => {
     STATE.filter[k] = e.target.value;
-    // Pantheon's family filter is visual — apply without a destructive re-render
     if (STATE.view === 'pantheon' && k === 'family' && typeof window._pantheonApplyFamilyFilter === 'function') {
       window._pantheonApplyFamilyFilter();
     } else {
@@ -10665,9 +10645,8 @@ document.getElementById('svg').addEventListener('click', (ev) => {
 
 document.addEventListener('keydown', (ev) => {
   if (ev.target.tagName === 'INPUT') return;
-  // 2026-05-28 legacy-isolation: `[` toggled the now-deleted side-tab; key is dead in V2.
   if (ev.key === '[' && _sideTabEl) _sideTabEl.click();
-  if (ev.key === ']') { const dt = document.getElementById('detail-toggle'); if (dt) dt.click(); }
+  if (ev.key === ']') document.getElementById('detail-toggle').click();
 });
 
 let resizeTimer;
@@ -10724,17 +10703,15 @@ document.querySelectorAll('.style-option').forEach(el => {
 });
 
 // Dropdown open/close
-// 2026-05-28 legacy-isolation: #style-button + #style-menu are DELETED from V2 shell
-// (still present in _legacy/index.html). Functions now no-op when targets are null.
 const styleButton = document.getElementById('style-button');
 const styleMenu = document.getElementById('style-menu');
-function openStyleMenu()  { if (styleButton) styleButton.classList.add('open');    if (styleMenu) styleMenu.classList.add('open'); }
-function closeStyleMenu() { if (styleButton) styleButton.classList.remove('open'); if (styleMenu) styleMenu.classList.remove('open'); }
-function toggleStyleMenu() { if (!styleMenu) return; styleMenu.classList.contains('open') ? closeStyleMenu() : openStyleMenu(); }
+function openStyleMenu()  { styleButton.classList.add('open');    styleMenu.classList.add('open'); }
+function closeStyleMenu() { styleButton.classList.remove('open'); styleMenu.classList.remove('open'); }
+function toggleStyleMenu() { styleMenu.classList.contains('open') ? closeStyleMenu() : openStyleMenu(); }
 if (styleButton) styleButton.addEventListener('click', (e) => { e.stopPropagation(); toggleStyleMenu(); });
 if (styleMenu)   styleMenu.addEventListener('click', (e) => e.stopPropagation());
 document.addEventListener('click', () => { if (styleMenu && styleMenu.classList.contains('open')) closeStyleMenu(); });
-document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && styleMenu) closeStyleMenu(); });
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeStyleMenu(); });
 
 // Initial: load saved style, with one-shot migration from the old two-key system.
 const savedStyle = (() => {

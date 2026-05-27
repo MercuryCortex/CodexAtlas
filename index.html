@@ -8,26 +8,23 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=EB+Garamond:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&family=Noto+Serif+Hebrew:wght@400;700&family=Noto+Sans+Egyptian+Hieroglyphs&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="_assets/vendor/maplibre/maplibre-gl.css?v=5.24.0" />
-<link rel="stylesheet" href="src/styles/app.css?v=20260527-rip-legacy-footer" />
+<link rel="stylesheet" href="src/styles/app.css?v=20260528-legacy-isolated-boards-hide" />
 </head>
-<body class="nav-hidden detail-collapsed footer-collapsed">
-<!-- Perf HUD removed from inline script 2026-05-28 — moved into
-     src/js/forge/debug-stats.js (popover content + pin-to-top
-     toggle). The floating top-center bar is now opt-in via the
-     # button → "pin perf bar" toggle (state persists in LS at
-     atlas.debug.pinned). -->
-
-<!-- Phase 21A (2026-05-21) — the persistent sidebar is gone.
-     The brand glyph at top-left is now a floating button that
-     toggles a dropdown menu of views. Nothing reserves any
-     layout width any more (--eff-nav-w: 0 globally), so the
-     canvas + Forge BG image extend to the viewport edges. -->
-<button class="nav-hub-trigger" id="nav-hub-trigger" type="button"
-  title="Open menu" aria-label="Open menu" aria-expanded="false"
-  aria-controls="nav-hub-menu">
-  <span class="nav-hub-glyph">✦</span>
-</button>
-<div class="nav-hub-menu" id="nav-hub-menu" role="menu" aria-hidden="true"></div>
+<body class="nav-hidden detail-collapsed">
+<!-- ════════════════════════════════════════════════════════════════
+     LEGACY ISOLATION 2026-05-28 — V2 shell, NO legacy V01 chrome.
+     ════════════════════════════════════════════════════════════════
+     The V01 prototype lives at `_legacy/index.html` (frozen reference)
+     reached via the master-pill "Old prototypes" entry. This shell is
+     V2-only: app-pill (master/class), canvas/main (panes), aside.detail
+     (shared with Forge inspector + Reader). Legacy chrome that used to
+     contaminate every view (#nav-hub-menu with 32 legacy items, <nav
+     class="side"> duplicate, #style-menu, #themes-menu, hardcoded
+     <footer>) is DELETED from the live tree. Body classes pared to
+     `nav-hidden detail-collapsed` — `footer-collapsed` is vestigial
+     (footer ripped out 2026-05-27 commit a06fef9). See AUDIT/2026-05-28-
+     legacy-isolation-locked.md for the full architectural rationale.
+     ════════════════════════════════════════════════════════════════ -->
 
 <!-- ════════════════════════════════════════════════════════════════
      Phase 22-A (2026-05-23) — app-shell top-bar pill SCAFFOLD
@@ -74,118 +71,22 @@
        role="menu" aria-hidden="true"></div>
 </div>
 
-<!-- Legacy sidebar — kept in the DOM so existing JS handlers
-     (setView, style picker, themes button, tier toggle, stats)
-     keep finding their targets. CSS hides it. The nav-hub
-     dropdown above mirrors its item list. -->
-<button class="side-tab" id="side-tab" title="Toggle sidebar (· press [ )">›</button>
-
-<nav class="side">
-  <div class="brand-section">
-    <span class="glyph">✦</span>
-    <div class="brand-text">
-      <h1>Codex Atlas</h1>
-    </div>
-  </div>
-
-  <div class="nav-inner">
-    <!-- Phase 5B M-F6 (2026-05-20) — Forge promoted to primary
-         entry. Other views collapsed behind a "More views"
-         disclosure so they stay reachable (every Lane B view-
-         migration still needs them) but the visual hierarchy
-         signals Forge as the active focus. -->
-    <div class="item forge-nav active" data-view="forge" title="Atlas — primary view"><span class="sym">⚒</span><span class="lbl">Atlas</span></div>
-
-    <details class="nav-more">
-      <summary><span class="sym">⋯</span><span class="lbl">More views</span></summary>
-      <div class="nav-more-body">
-        <div class="section-label"><span class="lbl">Maps</span></div>
-        <div class="item" data-view="pantheon"><span class="sym">◯</span><span class="lbl">Pantheon</span></div>
-        <div class="item" data-view="timeline"><span class="sym">⎯</span><span class="lbl">Timeline</span></div>
-        <div class="item" data-view="documents"><span class="sym">❡</span><span class="lbl">Documents</span></div>
-        <div class="item" data-view="scripture"><span class="sym">✠</span><span class="lbl">Scripture</span></div>
-        <div class="item" data-view="transmission"><span class="sym">⇌</span><span class="lbl">Transmission</span></div>
-        <div class="item" data-view="atlas"><span class="sym">⌖</span><span class="lbl">Atlas</span></div>
-        <div class="item" data-view="alchemy"><span class="sym">☿</span><span class="lbl">Alchemy</span></div>
-        <div class="item" data-view="transmutation"><span class="sym">⚗</span><span class="lbl">Transmutation</span></div>
-        <div class="item" data-view="morals"><span class="sym">⚖</span><span class="lbl">Morals</span></div>
-        <div class="item" data-view="rituals"><span class="sym">☽</span><span class="lbl">Rituals</span></div>
-        <div class="item" data-view="philosophy"><span class="sym">∞</span><span class="lbl">Philosophy</span></div>
-        <div class="item" data-view="mathematics"><span class="sym">∑</span><span class="lbl">Mathematics</span></div>
-        <div class="item" data-view="astrology"><span class="sym">♄</span><span class="lbl">Astrology</span></div>
-        <div class="item" data-view="medicine"><span class="sym">⚕</span><span class="lbl">Medicine</span></div>
-        <div class="item" data-view="alphabets"><span class="sym">𓀀</span><span class="lbl">Alphabets</span></div>
-        <div class="item" data-view="music"><span class="sym">♫</span><span class="lbl">Music</span></div>
-
-        <div class="section-label"><span class="lbl">Indexes</span></div>
-        <div class="item" data-view="authors"><span class="sym">✎</span><span class="lbl">Authors</span></div>
-        <div class="item" data-view="themes"><span class="sym">◇</span><span class="lbl">Themes list</span></div>
-        <div class="item" data-view="edges"><span class="sym">→</span><span class="lbl">Connections</span></div>
-        <div class="item" data-view="traditions"><span class="sym">∴</span><span class="lbl">Traditions</span></div>
-        <div class="item" data-view="patterns"><span class="sym">✦</span><span class="lbl">Patterns</span></div>
-        <div class="item" data-view="observations"><span class="sym">◉</span><span class="lbl">Observations</span></div>
-        <div class="item" data-view="all"><span class="sym">≡</span><span class="lbl">All nodes</span></div>
-
-        <div class="section-label"><span class="lbl">Project</span></div>
-        <div class="item" data-view="legacy"><span class="sym">🗄</span><span class="lbl">Legacy</span></div>
-        <div class="item" data-view="about"><span class="sym">ⓘ</span><span class="lbl">About</span></div>
-      </div>
-    </details>
-  </div>
-
-  <div class="utility-section">
-    <button class="style-button" id="style-button" title="Visual style preset (palette + typography)">
-      <span class="swatch-dot" id="style-button-dot"></span>
-      <span id="style-button-label" class="util-lbl">Codex</span>
-      <span class="caret">▾</span>
-    </button>
-    <button class="themes-button" id="themes-button">
-      <span class="util-sym">◇</span><span class="util-lbl">Themes</span><span class="caret">▾</span>
-    </button>
-    <button class="tier-button" id="tier-button" title="Toggle source-integrity tier coloring on every node">
-      <span class="tier-swatches" aria-hidden="true">
-        <span class="ts-dot" data-t="1"></span><span class="ts-dot" data-t="2"></span><span class="ts-dot" data-t="3"></span><span class="ts-dot" data-t="4"></span>
-      </span>
-      <span class="util-lbl">Source tiers</span>
-    </button>
-    <div class="stats" id="stats">
-      <span class="stat"><strong id="s-docs">0</strong>docs</span>
-      <span class="stat"><strong id="s-deities">0</strong>deities</span>
-      <span class="stat"><strong id="s-themes">0</strong>themes</span>
-      <span class="stat"><strong id="s-edges">0</strong>edges</span>
-    </div>
-  </div>
-</nav>
-
-<div class="style-menu" id="style-menu" role="listbox" aria-label="Visual style presets">
-  <div class="style-option" data-style="codex"       role="option"><span class="so-swatch"></span><span class="so-name">Codex</span><span class="so-tag">house</span></div>
-  <div class="style-option" data-style="crypt"       role="option"><span class="so-swatch"></span><span class="so-name">Crypt</span><span class="so-tag">occult</span></div>
-  <div class="style-option" data-style="mystic"      role="option"><span class="so-swatch"></span><span class="so-name">Mystic</span><span class="so-tag">esoteric</span></div>
-  <div class="style-option" data-style="twilight"    role="option"><span class="so-swatch"></span><span class="so-name">Twilight</span><span class="so-tag">modern</span></div>
-  <div class="style-option" data-style="technical"   role="option"><span class="so-swatch"></span><span class="so-name">Technical</span><span class="so-tag">plex</span></div>
-  <div class="style-option" data-style="parchment"   role="option"><span class="so-swatch"></span><span class="so-name">Parchment</span><span class="so-tag">light</span></div>
-  <div class="style-option" data-style="vatican"     role="option"><span class="so-swatch"></span><span class="so-name">Vatican</span><span class="so-tag">light</span></div>
-  <div class="style-option" data-style="nag-hammadi" role="option"><span class="so-swatch"></span><span class="so-name">Nag Hammadi</span><span class="so-tag">papyrus</span></div>
-  <div class="style-option" data-style="passion"     role="option"><span class="so-swatch"></span><span class="so-name">Passion</span><span class="so-tag">christ</span></div>
-  <div class="style-option" data-style="orthodox"    role="option"><span class="so-swatch"></span><span class="so-name">Orthodox</span><span class="so-tag">byzantine</span></div>
-  <div class="style-option" data-style="atlantis"    role="option"><span class="so-swatch"></span><span class="so-name">Atlantis</span><span class="so-tag">submerged</span></div>
-  <div class="style-option" data-style="eye"         role="option"><span class="so-swatch"></span><span class="so-name">All-Seeing Eye</span><span class="so-tag">masonic</span></div>
-  <div class="style-option" data-style="hermes"      role="option"><span class="so-swatch"></span><span class="so-name">Hermes</span><span class="so-tag">alchemy</span></div>
-</div>
-
-<div class="themes-menu" id="themes-menu">
-  <div class="tm-header">
-    <div>
-      <h3>Themes</h3>
-      <div class="tm-sub">the recurring motifs across every tradition — click one to filter all views</div>
-    </div>
-    <div class="tm-actions">
-      <button class="tm-clear" id="themes-clear" style="display:none">↺ clear theme</button>
-      <button class="tm-close" id="themes-close">close · esc</button>
-    </div>
-  </div>
-  <div class="themes-grid" id="themes-grid"></div>
-</div>
+<!-- ════════════════════════════════════════════════════════════════
+     LEGACY V01 CHROME REMOVED 2026-05-28 — see AUDIT/2026-05-28-
+     legacy-isolation-locked.md. The following elements lived here
+     and are now DELETED from the V2 shell (still reachable via
+     `_legacy/index.html`):
+       · #side-tab + <nav class="side"> (legacy left sidebar w/ 30
+          view links to pantheon/timeline/documents/scripture/.../about
+          + style-button + themes-button + tier-button + stats)
+       · #style-menu (13 visual-style presets dropdown)
+       · #themes-menu (themes overlay grid)
+       · #nav-hub-trigger + #nav-hub-menu (✦ hamburger dropdown that
+          mirrored the side-nav with 32 legacy view links)
+     The V2 navigation surface is the app-pill above. The "Old
+     prototypes" entry in the master-pill dropdown launches the
+     legacy snapshot in a new tab.
+     ════════════════════════════════════════════════════════════════ -->
 
 <main class="canvas" id="canvas">
   <div class="view-header">
@@ -316,11 +217,11 @@
 <script src="src/data/patterns.js?v=20260516-patterns-tab"></script>
 <script src="src/data/observations.js?v=20260516-observations-tab"></script>
 <script src="src/data/chains.js?v=20260516-chains-2"></script>
-<script src="src/js/app.js?v=20260527-rip-legacy-footer-consumers"></script>
+<script src="src/js/app.js?v=20260528-legacy-isolated-v5"></script>
 <!-- Phase 22-B (2026-05-23) — app-shell top-bar pill wiring.
      Loads AFTER app.js so window.STATE + window.setView are defined.
      Self-installing IIFE; exposes window._appPill for debug. -->
-<script src="src/js/app-pill.js?v=20260527-boards-v2-master-route"></script>
+<script src="src/js/app-pill.js?v=20260528-legacy-isolated"></script>
 <script src="src/js/alchemy/board.js?v=20260517-handoff"></script>
 <script src="src/js/astrology/spine.js?v=20260517-handoff"></script>
 <script src="src/js/astrology/decanic.js?v=20260515-decanic-clarity"></script>

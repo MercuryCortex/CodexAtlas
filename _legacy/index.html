@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Codex Atlas — V01 LEGACY REFERENCE (frozen 2026-05-28)</title>
+<!-- ════════════════════════════════════════════════════════════════
+     LEGACY V01 REFERENCE SNAPSHOT — frozen 2026-05-28
+     ════════════════════════════════════════════════════════════════
+     This file lives at `_legacy/index.html` and exists ONLY so John
+     can check prior V01 implementations against the V2 build. It is
+     NOT linked from the V2 shell's nav and is not maintained — every
+     path here is relative to `_legacy/` (parent paths prefixed `../`)
+     except `app.css` + `app.js`, which are FROZEN COPIES local to
+     this directory.
+
+     Per the legacy-isolation lock (AUDIT/2026-05-28-legacy-isolation-
+     locked.md), this snapshot must NOT share state, CSS, or JS files
+     with the live V2 shell. The live `index.html` no longer loads
+     the legacy chrome (nav-hub, side nav, style menu, themes menu)
+     and `src/js/app.js` + `src/styles/app.css` are being pared of
+     legacy code over time. This frozen copy keeps the prototype
+     fully functional for reference.
+
+     To open: `<host>/_legacy/index.html`. Returns to V2 shell via
+     the link inside this page's nav-hub menu (Project → ↩ V2 shell).
+     ════════════════════════════════════════════════════════════════ -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=EB+Garamond:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&family=Noto+Serif+Hebrew:wght@400;700&family=Noto+Sans+Egyptian+Hieroglyphs&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../_assets/vendor/maplibre/maplibre-gl.css?v=5.24.0" />
+<link rel="stylesheet" href="app.css?v=20260528-legacy-snapshot" />
+</head>
+<body class="nav-hidden detail-collapsed footer-collapsed legacy-snapshot">
+<!-- LEGACY snapshot return-to-V2 link. Always-on-top, top-right.
+     Click → back to live V2 shell at root. Inline style on purpose:
+     this element must work even if the local frozen app.css drifts
+     from current vocabulary. -->
+<a href="../index.html"
+   style="position:fixed;top:10px;right:10px;z-index:99999;
+          padding:6px 14px;border:1px solid rgba(212,165,90,0.55);
+          background:rgba(13,17,25,0.85);color:#d4a55a;
+          font:500 11px/1 Inter,system-ui,sans-serif;
+          text-decoration:none;letter-spacing:0.08em;
+          border-radius:14px;backdrop-filter:blur(8px);"
+   title="Return to V2 shell">↩ V2 SHELL · LEGACY VIEW</a>
+<!-- Perf HUD removed from inline script 2026-05-28 — moved into
+     src/js/forge/debug-stats.js (popover content + pin-to-top
+     toggle). The floating top-center bar is now opt-in via the
+     # button → "pin perf bar" toggle (state persists in LS at
+     atlas.debug.pinned). -->
+
+<!-- Phase 21A (2026-05-21) — the persistent sidebar is gone.
+     The brand glyph at top-left is now a floating button that
+     toggles a dropdown menu of views. Nothing reserves any
+     layout width any more (--eff-nav-w: 0 globally), so the
+     canvas + Forge BG image extend to the viewport edges. -->
+<button class="nav-hub-trigger" id="nav-hub-trigger" type="button"
+  title="Open menu" aria-label="Open menu" aria-expanded="false"
+  aria-controls="nav-hub-menu">
+  <span class="nav-hub-glyph">✦</span>
+</button>
+<div class="nav-hub-menu" id="nav-hub-menu" role="menu" aria-hidden="true"></div>
+
+<!-- ════════════════════════════════════════════════════════════════
+     Phase 22-A (2026-05-23) — app-shell top-bar pill SCAFFOLD
+     ════════════════════════════════════════════════════════════════
+     The elegant dual-pill that will eventually replace the in-Forge
+     bottom-bar "FORGE | Deities" pill. This Phase ships pure HTML+CSS
+     scaffold — the dropdowns exist but DO NOTHING YET (no click
+     handlers wired). Master-view selector + class selector behavior
+     comes in Phase 22-B + 22-C respectively. Old Forge pill remains
+     fully functional during the transition. Per AUDIT/topbar-pill-
+     refactor-design-2026-05-23.md §2 visual spec.
+
+     Construction: ONE pill-shaped <div> containing TWO independent
+     click targets (.app-pill-master + .app-pill-class) fused by a
+     vertical `|` divider. Two dropdown panels (one per side) anchor
+     to the pill's bottom-left + bottom-right edges. The pill is
+     always-on (every view shows it); class side will hide for views
+     that don't support class-filtering (Phase 22-C).
+     ════════════════════════════════════════════════════════════════ -->
+<div class="app-pill-wrap" id="app-pill-wrap" aria-label="Master view and class">
+  <div class="app-pill" role="group">
+    <button class="app-pill-side app-pill-master" id="app-pill-master" type="button"
+            aria-haspopup="menu" aria-expanded="false" aria-controls="app-pill-master-menu"
+            title="Master view — Atlas / Timeline / Map / Star Map">
+      <span class="app-pill-icon" aria-hidden="true">⚒</span>
+      <span class="app-pill-label" id="app-pill-master-label">ATLAS</span>
+      <span class="app-pill-caret" aria-hidden="true">▾</span>
+    </button>
+    <span class="app-pill-divider" aria-hidden="true"></span>
+    <button class="app-pill-side app-pill-class" id="app-pill-class" type="button"
+            aria-haspopup="menu" aria-expanded="false" aria-controls="app-pill-class-menu"
+            title="Class filter — Deities / Persons / Themes / etc.">
+      <span class="app-pill-label" id="app-pill-class-label">Deities</span>
+      <span class="app-pill-caret" aria-hidden="true">▾</span>
+    </button>
+  </div>
+  <!-- Master-view dropdown (anchored to .app-pill-master bottom-left).
+       Items populated in Phase 22-B; scaffold for now. -->
+  <div class="app-pill-menu app-pill-menu--master" id="app-pill-master-menu"
+       role="menu" aria-hidden="true"></div>
+  <!-- Class dropdown (anchored to .app-pill-class bottom-right).
+       Items populated in Phase 22-C; scaffold for now. -->
+  <div class="app-pill-menu app-pill-menu--class" id="app-pill-class-menu"
+       role="menu" aria-hidden="true"></div>
+</div>
+
+<!-- Legacy sidebar — kept in the DOM so existing JS handlers
+     (setView, style picker, themes button, tier toggle, stats)
+     keep finding their targets. CSS hides it. The nav-hub
+     dropdown above mirrors its item list. -->
+<button class="side-tab" id="side-tab" title="Toggle sidebar (· press [ )">›</button>
+
+<nav class="side">
+  <div class="brand-section">
+    <span class="glyph">✦</span>
+    <div class="brand-text">
+      <h1>Codex Atlas</h1>
+    </div>
+  </div>
+
+  <div class="nav-inner">
+    <!-- Phase 5B M-F6 (2026-05-20) — Forge promoted to primary
+         entry. Other views collapsed behind a "More views"
+         disclosure so they stay reachable (every Lane B view-
+         migration still needs them) but the visual hierarchy
+         signals Forge as the active focus. -->
+    <div class="item forge-nav active" data-view="forge" title="Atlas — primary view"><span class="sym">⚒</span><span class="lbl">Atlas</span></div>
+
+    <details class="nav-more">
+      <summary><span class="sym">⋯</span><span class="lbl">More views</span></summary>
+      <div class="nav-more-body">
+        <div class="section-label"><span class="lbl">Maps</span></div>
+        <div class="item" data-view="pantheon"><span class="sym">◯</span><span class="lbl">Pantheon</span></div>
+        <div class="item" data-view="timeline"><span class="sym">⎯</span><span class="lbl">Timeline</span></div>
+        <div class="item" data-view="documents"><span class="sym">❡</span><span class="lbl">Documents</span></div>
+        <div class="item" data-view="scripture"><span class="sym">✠</span><span class="lbl">Scripture</span></div>
+        <div class="item" data-view="transmission"><span class="sym">⇌</span><span class="lbl">Transmission</span></div>
+        <div class="item" data-view="atlas"><span class="sym">⌖</span><span class="lbl">Atlas</span></div>
+        <div class="item" data-view="alchemy"><span class="sym">☿</span><span class="lbl">Alchemy</span></div>
+        <div class="item" data-view="transmutation"><span class="sym">⚗</span><span class="lbl">Transmutation</span></div>
+        <div class="item" data-view="morals"><span class="sym">⚖</span><span class="lbl">Morals</span></div>
+        <div class="item" data-view="rituals"><span class="sym">☽</span><span class="lbl">Rituals</span></div>
+        <div class="item" data-view="philosophy"><span class="sym">∞</span><span class="lbl">Philosophy</span></div>
+        <div class="item" data-view="mathematics"><span class="sym">∑</span><span class="lbl">Mathematics</span></div>
+        <div class="item" data-view="astrology"><span class="sym">♄</span><span class="lbl">Astrology</span></div>
+        <div class="item" data-view="medicine"><span class="sym">⚕</span><span class="lbl">Medicine</span></div>
+        <div class="item" data-view="alphabets"><span class="sym">𓀀</span><span class="lbl">Alphabets</span></div>
+        <div class="item" data-view="music"><span class="sym">♫</span><span class="lbl">Music</span></div>
+
+        <div class="section-label"><span class="lbl">Indexes</span></div>
+        <div class="item" data-view="authors"><span class="sym">✎</span><span class="lbl">Authors</span></div>
+        <div class="item" data-view="themes"><span class="sym">◇</span><span class="lbl">Themes list</span></div>
+        <div class="item" data-view="edges"><span class="sym">→</span><span class="lbl">Connections</span></div>
+        <div class="item" data-view="traditions"><span class="sym">∴</span><span class="lbl">Traditions</span></div>
+        <div class="item" data-view="patterns"><span class="sym">✦</span><span class="lbl">Patterns</span></div>
+        <div class="item" data-view="observations"><span class="sym">◉</span><span class="lbl">Observations</span></div>
+        <div class="item" data-view="all"><span class="sym">≡</span><span class="lbl">All nodes</span></div>
+
+        <div class="section-label"><span class="lbl">Project</span></div>
+        <div class="item" data-view="legacy"><span class="sym">🗄</span><span class="lbl">Legacy</span></div>
+        <div class="item" data-view="about"><span class="sym">ⓘ</span><span class="lbl">About</span></div>
+      </div>
+    </details>
+  </div>
+
+  <div class="utility-section">
+    <button class="style-button" id="style-button" title="Visual style preset (palette + typography)">
+      <span class="swatch-dot" id="style-button-dot"></span>
+      <span id="style-button-label" class="util-lbl">Codex</span>
+      <span class="caret">▾</span>
+    </button>
+    <button class="themes-button" id="themes-button">
+      <span class="util-sym">◇</span><span class="util-lbl">Themes</span><span class="caret">▾</span>
+    </button>
+    <button class="tier-button" id="tier-button" title="Toggle source-integrity tier coloring on every node">
+      <span class="tier-swatches" aria-hidden="true">
+        <span class="ts-dot" data-t="1"></span><span class="ts-dot" data-t="2"></span><span class="ts-dot" data-t="3"></span><span class="ts-dot" data-t="4"></span>
+      </span>
+      <span class="util-lbl">Source tiers</span>
+    </button>
+    <div class="stats" id="stats">
+      <span class="stat"><strong id="s-docs">0</strong>docs</span>
+      <span class="stat"><strong id="s-deities">0</strong>deities</span>
+      <span class="stat"><strong id="s-themes">0</strong>themes</span>
+      <span class="stat"><strong id="s-edges">0</strong>edges</span>
+    </div>
+  </div>
+</nav>
+
+<div class="style-menu" id="style-menu" role="listbox" aria-label="Visual style presets">
+  <div class="style-option" data-style="codex"       role="option"><span class="so-swatch"></span><span class="so-name">Codex</span><span class="so-tag">house</span></div>
+  <div class="style-option" data-style="crypt"       role="option"><span class="so-swatch"></span><span class="so-name">Crypt</span><span class="so-tag">occult</span></div>
+  <div class="style-option" data-style="mystic"      role="option"><span class="so-swatch"></span><span class="so-name">Mystic</span><span class="so-tag">esoteric</span></div>
+  <div class="style-option" data-style="twilight"    role="option"><span class="so-swatch"></span><span class="so-name">Twilight</span><span class="so-tag">modern</span></div>
+  <div class="style-option" data-style="technical"   role="option"><span class="so-swatch"></span><span class="so-name">Technical</span><span class="so-tag">plex</span></div>
+  <div class="style-option" data-style="parchment"   role="option"><span class="so-swatch"></span><span class="so-name">Parchment</span><span class="so-tag">light</span></div>
+  <div class="style-option" data-style="vatican"     role="option"><span class="so-swatch"></span><span class="so-name">Vatican</span><span class="so-tag">light</span></div>
+  <div class="style-option" data-style="nag-hammadi" role="option"><span class="so-swatch"></span><span class="so-name">Nag Hammadi</span><span class="so-tag">papyrus</span></div>
+  <div class="style-option" data-style="passion"     role="option"><span class="so-swatch"></span><span class="so-name">Passion</span><span class="so-tag">christ</span></div>
+  <div class="style-option" data-style="orthodox"    role="option"><span class="so-swatch"></span><span class="so-name">Orthodox</span><span class="so-tag">byzantine</span></div>
+  <div class="style-option" data-style="atlantis"    role="option"><span class="so-swatch"></span><span class="so-name">Atlantis</span><span class="so-tag">submerged</span></div>
+  <div class="style-option" data-style="eye"         role="option"><span class="so-swatch"></span><span class="so-name">All-Seeing Eye</span><span class="so-tag">masonic</span></div>
+  <div class="style-option" data-style="hermes"      role="option"><span class="so-swatch"></span><span class="so-name">Hermes</span><span class="so-tag">alchemy</span></div>
+</div>
+
+<div class="themes-menu" id="themes-menu">
+  <div class="tm-header">
+    <div>
+      <h3>Themes</h3>
+      <div class="tm-sub">the recurring motifs across every tradition — click one to filter all views</div>
+    </div>
+    <div class="tm-actions">
+      <button class="tm-clear" id="themes-clear" style="display:none">↺ clear theme</button>
+      <button class="tm-close" id="themes-close">close · esc</button>
+    </div>
+  </div>
+  <div class="themes-grid" id="themes-grid"></div>
+</div>
+
+<main class="canvas" id="canvas">
+  <div class="view-header">
+    <div>
+      <h2 id="view-title">Pantheon</h2>
+      <span class="subtitle" id="view-subtitle">every named deity · radial family wedges · hover to focus</span>
+    </div>
+    <div class="view-controls" id="view-controls"></div>
+  </div>
+  <div id="svg-wrap"><svg id="svg"></svg></div>
+  <!-- Shared WebGL graph canvas (sigma.js) — outer pane owns positioning so sigma's
+       internal canvas can resize freely. Hidden except on graph views (pantheon for
+       Phase 1; documents/scripture/alchemy added in later phases). -->
+  <div class="codex-graph-pane" id="codex-graph-pane" style="display:none"></div>
+  <!-- Atlas Map (MapLibre GL) — outer pane owns positioning; inner div is the MapLibre target.
+       Nesting is required because MapLibre sets `position: relative` inline on its container,
+       which would otherwise defeat our `position: absolute; inset: 0` fill rule. -->
+  <div class="atlas-pane" id="atlas-pane" style="display:none">
+    <div class="atlas-map" id="atlas-map"></div>
+  </div>
+  <!-- Scripture Reader — shown when STATE.scriptureReaderMode is set.
+       Rendered by src/js/views/scripture-reader.js into this pane.
+       Hidden by setView() on every view transition. -->
+  <div id="scripture-reader-pane" style="display:none"></div>
+  <div class="legend" id="legend" style="display:none"></div>
+  <!-- Tier-overlay distribution legend — shown only when body.tier-overlay-on. Populated by JS on toggle. -->
+  <div class="tier-legend" id="tier-legend" aria-live="polite"></div>
+  <div class="map-thumb" id="map-thumb" style="display:none">
+    <svg viewBox="0 0 360 180" preserveAspectRatio="xMidYMid meet" id="map-thumb-svg">
+      <!-- Equirectangular world: lon ∈ [-180,180] maps x ∈ [0,360]; lat ∈ [-90,90] maps y ∈ [180,0] -->
+      <rect x="0" y="0" width="360" height="180" fill="rgba(13,17,25,0.55)"/>
+      <g id="map-thumb-paths" stroke="rgba(212,165,90,0.30)" stroke-width="0.5" fill="rgba(212,165,90,0.06)"></g>
+      <g id="map-thumb-marker"></g>
+    </svg>
+    <div class="map-thumb-label" id="map-thumb-label"></div>
+  </div>
+  <div class="tooltip" id="tooltip"></div>
+  <div class="zoom-meter" id="zoom-meter" style="display:none" title="Current zoom · click 1× to recenter">
+    <button class="zm-step" id="zm-out" aria-label="zoom out">−</button>
+    <button class="zm-baseline" id="zm-reset" title="recenter / reset to 100%">100%</button>
+    <button class="zm-step" id="zm-in" aria-label="zoom in">+</button>
+    <span class="zm-readout" id="zm-readout">1.00×</span>
+  </div>
+</main>
+
+<aside class="detail" id="detail">
+  <button class="detail-toggle" id="detail-toggle" title="Collapse detail">›</button>
+  <div class="detail-inner" id="detail-inner">
+    <div class="empty">Select a node to inspect.</div>
+  </div>
+</aside>
+
+<!-- 2026-05-27 — legacy <footer> + #footer-toggle deleted.
+     Was prototype V01 chrome: global "title / id / theme..." search
+     input + ↺ reset + hidden filter-family/filter-type stubs +
+     "gen YYYY-MM-DD · build_data.py to refresh" status. The Atlas-era
+     app uses per-view search (Forge bottom-search, Codex Books picker,
+     Boards [Add node ▾]) — the global filter bar is replaced by view-
+     local controls. JS consumers stripped from app.js in the same commit. -->
+
+
+<div id="missing-data">
+  <h2>No data loaded</h2>
+  <p>Run the build script first:</p>
+  <code>cd "~/Desktop/Codex Atlas" && python3 build_data.py</code>
+  <p>Then refresh this page.</p>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════════
+     LEGACY V01 — All paths prefixed `../` (relative to _legacy/)
+     except `app.js`, which is a FROZEN copy local to this directory.
+     The shared engine + view modules (forge, boards, scripture-reader,
+     etc.) are loaded from their live paths because they are inert
+     until the user navigates to them — they cannot be invoked while
+     the user is browsing the legacy views, so they don't contaminate.
+     ════════════════════════════════════════════════════════════════ -->
+<script src="../data.js?v=20260526-225230" onerror="document.getElementById('missing-data').style.display='flex'"></script>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="../_assets/vendor/maplibre/maplibre-gl.js"></script>
+<script src="../_assets/vendor/pmtiles/pmtiles.js"></script>
+<script src="../_assets/vendor/astronomy/astronomy.browser.min.js"></script>
+<script src="../_assets/vendor/sigma/graphology.umd.min.js"></script>
+<script src="../_assets/vendor/sigma/sigma.min.js"></script>
+<script src="../_assets/vendor/elk/elk.bundled.js"></script>
+<script src="../src/js/layout/elk-layout.js?v=20260517-handoff"></script>
+<script src="../src/js/edge-buckets.js?v=20260517-edge-buckets-universal"></script>
+<script src="../src/js/views/pantheon-v2.js?v=20260517-edge-buckets-universal"></script>
+
+<!-- Forge: proprietary WebGPU engine (Phase 5 — dev panel). -->
+<script src="../src/js/engine/contract.js?v=20260525-phase24-v1"></script>
+<script src="../src/js/engine/types.js?v=20260525-phase24-v1"></script>
+<script src="../src/js/engine/math.js?v=20260525-phase24-v1"></script>
+<script src="../src/js/engine/camera.js?v=20260525-phase24-v1"></script>
+<script src="../src/js/engine/layout/radial.js?v=20260525-phase24-v1"></script>
+<script src="../src/js/engine/layout/timeline.js?v=20260525-phase24-v1"></script>
+<script src="../src/js/engine/graph/node.js?v=20260525-phase24-v1"></script>
+<script src="../src/js/engine/graph/edge.js?v=20260525-phase24-v1"></script>
+<script src="../src/js/engine/graph/adjacency.js?v=20260525-phase24-v1"></script>
+<script src="../src/js/engine/graph/label.js?v=20260527T0625-reverted-blinking"></script>
+<script src="../src/js/engine/graph/hull.js?v=20260525-phase24-v1"></script>
+<script src="../src/js/engine/graph/mode.js?v=20260528-codex-position-2"></script>
+<script src="../src/js/engine/graph/glyph.js?v=20260525-phase24-v1"></script>
+<script src="../src/js/engine/renderer/webgpu.js?v=20260525-phase24-v1"></script>
+<script src="../src/js/views/timeline-chrome.js?v=20260527T0625-reverted-blinking"></script>
+<script src="../src/js/engine/graph/viewport-filter.js?v=20260527T0625-reverted-blinking"></script>
+<script src="../src/js/forge/_bundle.js?v=20260527-john-reload-religion-latch"></script>
+<script src="../src/js/views/forge.js?v=20260527-religion-level-filter"></script>
+<script src="../src/js/views/boards.js?v=20260527-boards-v2-skeleton-clean"></script>
+
+<script src="../src/js/graph/theme.js?v=20260517-handoff"></script>
+<script src="../src/js/graph/layout.js?v=20260517-handoff"></script>
+<script src="../src/js/graph/renderer.js?v=20260517-handoff"></script>
+
+<script src="../src/data/scripture-texts.js?v=20260527-john-showcase-12-chapters"></script>
+<script src="../src/data/patterns.js?v=20260516-patterns-tab"></script>
+<script src="../src/data/observations.js?v=20260516-observations-tab"></script>
+<script src="../src/data/chains.js?v=20260516-chains-2"></script>
+<!-- FROZEN local copy — the legacy snapshot's own app.js so the live
+     `src/js/app.js` can be pared of legacy VIEWS without breaking the
+     reference. Do not edit this file. -->
+<script src="app.js?v=20260528-legacy-snapshot-v2"></script>
+<script src="../src/js/app-pill.js?v=20260527-boards-v2-master-route"></script>
+<script src="../src/js/alchemy/board.js?v=20260517-handoff"></script>
+<script src="../src/js/astrology/spine.js?v=20260517-handoff"></script>
+<script src="../src/js/astrology/decanic.js?v=20260515-decanic-clarity"></script>
+<script src="../src/js/astrology/wheel.js?v=20260517-handoff"></script>
+<script src="../src/js/astrology/now.js?v=20260515-now-events"></script>
+<script src="../src/js/astrology/astro-pantheon.js?v=20260517-handoff"></script>
+<script src="../src/js/alphabets/glyph-data.js?v=20260526-225230"></script>
+<script src="../src/js/alphabets/glyph-viewer.js?v=20260517-svg-glyphs-1"></script>
+<script src="../src/js/alphabets/origin-chain.js?v=20260516-alpha-1"></script>
+<script src="../src/js/alphabets/mysticism.js?v=20260516-alpha-1"></script>
+<script src="../src/js/alphabets/cuneiform-viewer.js?v=20260517-cuneiform-1"></script>
+<script src="../src/js/dev-panel.js?v=20260517-nolabeltwitch"></script>
+<script src="../src/js/views/scripture-reader.js?v=20260517-reader-nav-19"></script>
+<script src="../src/js/views/legacy.js?v=20260525-phase24-v1a"></script>
+</body>
+</html>

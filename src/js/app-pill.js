@@ -160,10 +160,11 @@
     )).join('')
       + '<div class="app-pill-menu-divider"></div>'
       + '<button class="app-pill-menu-item app-pill-menu-item--meta" role="menuitem"'
-      +   ' id="app-pill-old-prototypes" type="button">'
-      +   '<span class="app-pill-menu-icon">⋯</span>'
-      +   '<span class="app-pill-menu-label">Old prototypes</span>'
-      +   '<span class="app-pill-menu-hint">(reference)</span>'
+      +   ' id="app-pill-old-prototypes" type="button"'
+      +   ' title="Open the frozen V01 prototype snapshot in a new tab (reference only)">'
+      +   '<span class="app-pill-menu-icon">🗄</span>'
+      +   '<span class="app-pill-menu-label">V01 prototype</span>'
+      +   '<span class="app-pill-menu-hint">(reference · new tab)</span>'
       + '</button>';
     masterMenu.innerHTML = html;
   }
@@ -263,13 +264,15 @@
     if (!btn) return;
     ev.stopPropagation();
     if (btn.id === 'app-pill-old-prototypes') {
-      // Phase 22-D will open the Preferences drawer here. For now,
-      // fall back to the existing nav-hub menu which already lists
-      // every legacy view.
-      const navTrigger = document.getElementById('nav-hub-trigger');
-      const navMenu    = document.getElementById('nav-hub-menu');
-      if (navMenu && navTrigger) {
-        if (!navMenu.classList.contains('is-open')) navTrigger.click();
+      // 2026-05-28 legacy-isolation: nav-hub-menu is DELETED from V2 shell.
+      // "Old prototypes" now opens the frozen V01 snapshot at
+      // _legacy/index.html in a new tab — keeps legacy reachable for
+      // reference checking without contaminating the V2 foundation.
+      // See AUDIT/2026-05-28-legacy-isolation-locked.md.
+      try {
+        window.open('_legacy/index.html', '_blank', 'noopener,noreferrer');
+      } catch (e) {
+        console.warn('app-pill old-prototypes window.open failed', e);
       }
       closeMaster();
       return;
