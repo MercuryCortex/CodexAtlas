@@ -6126,6 +6126,23 @@
           const withinWindow = local._lastClickT && (now - local._lastClickT) < DBL_WINDOW_MS;
           // ALWAYS toggle first — selection feedback is instant.
           toggleLock(hit);
+          // 2026-05-27 — In Codex (scriptures) mode, a click on a
+          // reader-ready scripture-book dot ALSO opens the reader
+          // for that book + syncs the Codex pill state. John feedback:
+          // "i still click on the books and it just shows always the
+          // families" — fix is to hook openReader on the click, not
+          // just toggleLock.
+          if (local.mode && local.mode.id === 'scriptures' && local.codexControls && typeof local.codexControls.docNodeToTextKey === 'function') {
+            try {
+              const tk = local.codexControls.docNodeToTextKey(hit);
+              if (tk) {
+                local.codexControls.setBook(tk);
+                if (local.scriptureReader && typeof local.scriptureReader.open === 'function') {
+                  local.scriptureReader.open(tk);
+                }
+              }
+            } catch (_) { /* swallow — click-feedback already fired */ }
+          }
           if (sameAsLast && withinWindow) {
             // DOUBLE detected post-hoc. The toggle just fired may
             // have removed the lock (if click #1 added it and

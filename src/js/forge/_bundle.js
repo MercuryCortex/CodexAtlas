@@ -3748,34 +3748,53 @@
       const dn2tk = getDocnodeToTextKey();
       const rows = [];
 
-      // "All families" path: list every reader-ready scripture
-      // (every SCRIPTURE_TEXTS entry whose docNode points at a real
-      // vault node), grouped by tradition. ~130 entries total.
+      // 2026-05-27 fix — "All families" path was iterating every
+      // SCRIPTURE_TEXTS key flat-alphabetically (~190 entries),
+      // which surfaced chapter-level entries (john-1, john-3,
+      // 1-corinthians-13, etc.) as if they were separate books.
+      // John feedback: "TOO MANY books — JOHN 4 is a BOOK inside the
+      // BIBLE — list is scattered." Fix: walk SCRIPTURE_CORPORA's
+      // canonical book-list, group by corpus/family, use dn2tk to
+      // dedupe to ONE entry per docNode (per canonical book).
       if (!state.familyId) {
         rows.push(
           '<div class="app-pill-menu-section-label">Pick a family first for the focused list — or pick any reader-ready book below</div>'
         );
-        // Flat alphabetical of every text entry that has a docNode.
-        const items = [];
-        for (const k in (window.SCRIPTURE_TEXTS || {})) {
-          const t = window.SCRIPTURE_TEXTS[k];
-          if (!t) continue;
-          items.push({
-            textKey: k,
-            label: t.shortTitle || t.title || k,
-            corpus: t.corpus || '',
+        // Walk every corpus's section.books[], collecting one entry
+        // per canonical book (deduped by docNode).
+        const seenBooks = Object.create(null);
+        Object.keys(corpora).forEach(corpusKey => {
+          const co = corpora[corpusKey];
+          if (!co || !co.sections) return;
+          const corpusBooks = [];
+          co.sections.forEach(sec => {
+            (sec.books || []).forEach(book => {
+              if (!book || !book.id) return;
+              if (seenBooks[book.id]) return;            // already collected from another corpus
+              seenBooks[book.id] = true;
+              const tk = dn2tk[book.id];
+              if (!tk) return;                           // skip books with no reader entry
+              corpusBooks.push({
+                textKey: tk,
+                label:   book.label || book.id,
+                docNode: book.id,
+              });
+            });
           });
-        }
-        items.sort((a, b) => a.label.localeCompare(b.label));
-        items.forEach(it => {
-          const isActive = state.bookTextKey === it.textKey;
-          rows.push(
-            '<button class="app-pill-menu-item' + (isActive ? ' is-active' : '') + '" role="menuitem" data-textkey="' + esc(it.textKey) + '" type="button">' +
-            '<span class="app-pill-menu-label">' + esc(it.label) + '</span>' +
-            (it.corpus ? '<span class="app-pill-menu-hint">' + esc(it.corpus.split('·')[0].trim()) + '</span>' : '') +
-            (isActive ? '<span class="app-pill-menu-check">●</span>' : '') +
-            '</button>'
-          );
+          if (!corpusBooks.length) return;
+          // Group header is the corpus's short label.
+          const corpusLabel = shortLabelFor(corpusKey, co);
+          rows.push('<div class="app-pill-menu-section-label">' + esc(corpusLabel) + '</div>');
+          corpusBooks.forEach(it => {
+            const isActive = state.bookTextKey === it.textKey;
+            rows.push(
+              '<button class="app-pill-menu-item' + (isActive ? ' is-active' : '') + '" role="menuitem" data-textkey="' + esc(it.textKey) + '" type="button">' +
+              '<span class="app-pill-menu-label">' + esc(it.label) + '</span>' +
+              '<span class="app-pill-menu-hint">pick</span>' +
+              (isActive ? '<span class="app-pill-menu-check">●</span>' : '') +
+              '</button>'
+            );
+          });
         });
         booksMenu.innerHTML = rows.join('') || '<div class="app-pill-menu-section-label">No reader-ready texts yet</div>';
         return;
@@ -4076,7 +4095,7 @@
     // higher up — the existing one already triggers a rebuild.)
 
     local.codexControls = {
-      getState: function () { return { familyId: state.familyId, lensId: state.lensId }; },
+      getState: function () { return { familyId: state.familyId, bookTextKey: state.bookTextKey, lensId: state.lensId }; },
       setFamily: function (id) {
         if (id !== null && (!window.SCRIPTURE_CORPORA || !window.SCRIPTURE_CORPORA[id])) return false;
         state.familyId = id;
@@ -4087,6 +4106,27 @@
           try { rebuildForMode('scriptures', { preserveLocks: true, preserveZoom: false }); } catch (_) {}
         }
         return true;
+      },
+      // 2026-05-27 — programmatic book-pick. Called by forge.js when
+      // the user clicks a scripture-book dot on the wheel, so the
+      // Codex pill state stays in sync with the reader.
+      setBook: function (textKey) {
+        if (textKey != null && (!window.SCRIPTURE_TEXTS || !window.SCRIPTURE_TEXTS[textKey])) return false;
+        if (state.bookTextKey === textKey) return true;
+        state.bookTextKey = textKey;
+        state.lensId = null;
+        local.codexBookKey = textKey;
+        local.codexLens   = null;
+        saveState();
+        syncLabels();
+        if (typeof syncLocks === 'function') syncLocks();
+        return true;
+      },
+      // 2026-05-27 — docNode → textKey resolver, exposed so forge.js
+      // can check whether a clicked wheel-node is a reader-ready book.
+      docNodeToTextKey: function (docNodeId) {
+        const dn2tk = getDocnodeToTextKey();
+        return dn2tk[docNodeId] || null;
       },
       _installed: true,
     };
