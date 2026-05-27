@@ -293,7 +293,7 @@ These are the kind of multi-text spines the Atlas Codex was built to surface.
 ## Session-end state
 
 - **Branch:** `main`
-- **HEAD:** `40f1d38` (this commit will move HEAD forward with the wrap-up commit including this HANDOFF + new memory + MEMORY.md index update)
+- **HEAD:** `3a2d1a8` (`66c1db0` was the wrap-up commit; `3a2d1a8` is the post-wrap hotfix for two click-handler bugs John caught after the wrap-up — see the latest STATUS.md entry `watcher-claude-codex-click-fixes-2026-05-27`)
 - **Working tree:** clean except for the pre-existing dirty files listed above
 - **App live at:** http://localhost:8742/?view=forge
 - **Vault:** 4746 files / 21757 edges
