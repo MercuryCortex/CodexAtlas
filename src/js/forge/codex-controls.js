@@ -173,8 +173,16 @@
       '<button class="app-pill-side app-pill-codex-lens" id="app-pill-codex-lens"',
       '        type="button" aria-haspopup="menu" aria-expanded="false"',
       '        aria-controls="app-pill-codex-lens-menu"',
-      '        title="Codex lens — Books / Characters / Authors / Deities">',
+      '        title="Codex lens — Books / Personae / Authors / Deities">',
       '  <span class="app-pill-label" id="app-pill-codex-lens-label">Books</span>',
+      '  <span class="app-pill-caret" aria-hidden="true">▾</span>',
+      '</button>',
+      '<span class="app-pill-divider" aria-hidden="true"></span>',
+      '<button class="app-pill-side app-pill-codex-read" id="app-pill-codex-read"',
+      '        type="button" aria-haspopup="menu" aria-expanded="false"',
+      '        aria-controls="app-pill-codex-read-menu"',
+      '        title="Open a book in the reader">',
+      '  <span class="app-pill-label" id="app-pill-codex-read-label">✠ Read</span>',
       '  <span class="app-pill-caret" aria-hidden="true">▾</span>',
       '</button>',
     ].join('\n');
@@ -205,6 +213,13 @@
     lensMenu.setAttribute('role', 'menu');
     lensMenu.setAttribute('aria-hidden', 'true');
     wrap.appendChild(lensMenu);
+
+    const readMenu = document.createElement('div');
+    readMenu.className = 'app-pill-menu app-pill-menu--codex-read';
+    readMenu.id        = 'app-pill-codex-read-menu';
+    readMenu.setAttribute('role', 'menu');
+    readMenu.setAttribute('aria-hidden', 'true');
+    wrap.appendChild(readMenu);
 
     // ── Build menu contents ──────────────────────────────────
     function buildFamilyMenu() {
@@ -255,6 +270,93 @@
       lensMenu.innerHTML = rows.join('');
     }
 
+    // Build the docNode → textKey reverse index from SCRIPTURE_TEXTS
+    // (cached on local; same primitive the side-panel uses).
+    function getDocnodeToTextKey() {
+      if (local._docnodeToTextKey) return local._docnodeToTextKey;
+      const map = Object.create(null);
+      const T = window.SCRIPTURE_TEXTS || {};
+      for (const k in T) {
+        const t = T[k];
+        if (t && t.docNode && typeof t.docNode === 'string') {
+          if (!map[t.docNode]) map[t.docNode] = k;
+        }
+      }
+      local._docnodeToTextKey = map;
+      return map;
+    }
+
+    function buildReadMenu() {
+      const corpora = window.SCRIPTURE_CORPORA || {};
+      const dn2tk = getDocnodeToTextKey();
+      const rows = [];
+
+      // "All families" path: list every reader-ready scripture
+      // (every SCRIPTURE_TEXTS entry whose docNode points at a real
+      // vault node), grouped by tradition. ~130 entries total.
+      if (!state.familyId) {
+        rows.push(
+          '<div class="app-pill-menu-section-label">All reader-ready scriptures · pick a family above for a focused list</div>'
+        );
+        // Flat alphabetical of every text entry that has a docNode.
+        const items = [];
+        for (const k in (window.SCRIPTURE_TEXTS || {})) {
+          const t = window.SCRIPTURE_TEXTS[k];
+          if (!t) continue;
+          items.push({
+            textKey: k,
+            label: t.shortTitle || t.title || k,
+            corpus: t.corpus || '',
+          });
+        }
+        items.sort((a, b) => a.label.localeCompare(b.label));
+        items.forEach(it => {
+          rows.push(
+            '<button class="app-pill-menu-item" role="menuitem" data-textkey="' + esc(it.textKey) + '" type="button">' +
+            '<span class="app-pill-menu-label">' + esc(it.label) + '</span>' +
+            (it.corpus ? '<span class="app-pill-menu-hint">' + esc(it.corpus.split('·')[0].trim()) + '</span>' : '') +
+            '</button>'
+          );
+        });
+        readMenu.innerHTML = rows.join('') || '<div class="app-pill-menu-section-label">No reader-ready texts yet</div>';
+        return;
+      }
+
+      // Family-focused path: walk corpus.sections, group books by
+      // canonical section, show only the family's books. Books with
+      // a SCRIPTURE_TEXTS entry are clickable; books without are
+      // shown disabled with a "no reader text yet" hint.
+      const corpus = corpora[state.familyId];
+      if (!corpus) {
+        readMenu.innerHTML = '<div class="app-pill-menu-section-label">Pick a family first</div>';
+        return;
+      }
+      const sections = corpus.sections || [];
+      if (!sections.length) {
+        readMenu.innerHTML = '<div class="app-pill-menu-section-label">No sections defined for this canon</div>';
+        return;
+      }
+      sections.forEach(sec => {
+        const books = sec.books || [];
+        if (!books.length) return;
+        rows.push('<div class="app-pill-menu-section-label">' + esc(sec.label || '') + '</div>');
+        books.forEach(book => {
+          const tk = dn2tk[book.id];
+          const ready = !!tk;
+          rows.push(
+            '<button class="app-pill-menu-item' + (ready ? '' : ' is-stub') + '"' +
+            ' role="menuitem"' +
+            (ready ? ' data-textkey="' + esc(tk) + '"' : ' disabled') +
+            ' type="button">' +
+            '<span class="app-pill-menu-label">' + esc(book.label || book.id) + '</span>' +
+            '<span class="app-pill-menu-hint">' + (ready ? 'open in reader →' : 'reader text not yet written') + '</span>' +
+            '</button>'
+          );
+        });
+      });
+      readMenu.innerHTML = rows.join('');
+    }
+
     // ── Sync trigger labels ──────────────────────────────────
     function syncLabels() {
       const familyLabel = document.getElementById('app-pill-codex-family-label');
@@ -281,14 +383,18 @@
 
     const familyBtn = document.getElementById('app-pill-codex-family');
     const lensBtn   = document.getElementById('app-pill-codex-lens');
+    const readBtn   = document.getElementById('app-pill-codex-read');
 
     function closeAllMenus() {
       familyMenu.classList.remove('is-open');
       lensMenu.classList.remove('is-open');
+      readMenu.classList.remove('is-open');
       familyMenu.setAttribute('aria-hidden', 'true');
       lensMenu.setAttribute('aria-hidden', 'true');
+      readMenu.setAttribute('aria-hidden', 'true');
       familyBtn.setAttribute('aria-expanded', 'false');
       lensBtn.setAttribute('aria-expanded', 'false');
+      readBtn.setAttribute('aria-expanded', 'false');
     }
 
     function openMenu(menu, btn, build) {
@@ -310,6 +416,12 @@
       const isOpen = lensMenu.classList.contains('is-open');
       closeAllMenus();
       if (!isOpen) openMenu(lensMenu, lensBtn, buildLensMenu);
+    });
+    readBtn.addEventListener('click', function (ev) {
+      ev.stopPropagation();
+      const isOpen = readMenu.classList.contains('is-open');
+      closeAllMenus();
+      if (!isOpen) openMenu(readMenu, readBtn, buildReadMenu);
     });
 
     // ── Menu pick handlers (event delegation) ────────────────
@@ -341,7 +453,17 @@
       saveState();
       syncLabels();
       // V1 — Books-only is active; switching lens is a no-op for
-      // filter purposes until Characters/Authors/Deities ship.
+      // filter purposes until Personae/Authors/Deities ship.
+    });
+    readMenu.addEventListener('click', function (ev) {
+      const btn = ev.target.closest('.app-pill-menu-item');
+      if (!btn || btn.disabled) return;
+      ev.stopPropagation();
+      const tk = btn.dataset.textkey;
+      closeAllMenus();
+      if (tk && window._forge && typeof window._forge.openReader === 'function') {
+        window._forge.openReader(tk);
+      }
     });
 
     // Outside-click + ESC close

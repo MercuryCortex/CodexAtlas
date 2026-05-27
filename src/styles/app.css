@@ -1111,6 +1111,29 @@ body.app-pill-codex-visible .app-pill--codex { display: inline-flex; }
      not as a primary master view. */
   color: var(--text-2, #9099a8);
 }
+/* Codex Read-menu section header — canonical-section divider inside
+   the book-picker dropdown (PENTATEUCH / GOSPELS / FORMER PROPHETS
+   etc.). 2026-05-28 — added with the Read button. */
+.app-pill-menu-section-label {
+  padding: 8px 14px 4px;
+  font-family: var(--mono, "JetBrains Mono", Menlo, monospace);
+  font-size: 9px;
+  letter-spacing: 0.10em;
+  color: var(--gold, #d4a55a);
+  text-transform: uppercase;
+  border-top: 1px solid rgba(212,165,90,0.10);
+}
+.app-pill-menu-section-label:first-child {
+  border-top: 0;
+  padding-top: 4px;
+}
+.app-pill-menu-item.is-stub {
+  color: var(--text-3, #5a626d);
+  opacity: 0.55;
+}
+.app-pill-menu-item.is-stub .app-pill-menu-hint {
+  font-style: italic;
+}
 .app-pill-menu-divider {
   height: 1px;
   margin: 4px 12px;
