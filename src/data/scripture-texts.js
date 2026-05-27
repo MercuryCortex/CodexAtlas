@@ -13191,7 +13191,7 @@ SCRIPTURE_TEXTS['bahai-hidden-words'] = {
   corpus:     'Bahá\'í · Kalimat-i-Maknunih',
   tradId:     'tradition-bahai',
   date:       '1858 CE (Baghdad)',
-  docNode:    'phase-7-003-kitab-i-aqdas', // docNode: no dedicated Hidden-Words vault node yet — closest existing scripture-document node; flagged for Lane A.
+  docNode:    'phase-7-048-bahai-hidden-words', // 2026-05-28: dedicated Hidden-Words vault node created (Lane A agent-bahai-100pct-2026-05-28); repointed from prior fallback phase-7-003-kitab-i-aqdas so Aqdas SCRIPTURE_TEXTS entry can claim its proper docNode.
   language:   'Arabic + Persian (parallel collections) · Shoghi Effendi 1929 English translation',
   translations: [
     { id: 'shoghi',  label: 'Shoghi Effendi 1929 (T1, canonical)', note: 'The definitive English rendering — by Bahá\'u\'lláh\'s great-grandson and Guardian of the Bahá\'í Faith' },
@@ -13277,6 +13277,250 @@ SCRIPTURE_TEXTS['bahai-hidden-words'] = {
                   note: 'Krishna\'s "I am the Self, O Gudakesha, seated in the hearts of all creatures" is the Hindu form of the same indwelling claim.' },
                 { label: 'Gospel of Thomas L.3 — the Kingdom is inside you', textId: 'gospel-of-thomas',
                   note: 'Thomas: "The Kingdom is inside you and outside you" — same restoration: what was sought outside was always within.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+// ── BAHÁ'Í — KITÁB-I-AQDAS (THE MOST HOLY BOOK) ──────────────────────────────
+SCRIPTURE_TEXTS['bahai-kitab-i-aqdas'] = {
+  id:         'bahai-kitab-i-aqdas',
+  title:      'The Kitáb-i-Aqdas — The Most Holy Book',
+  shortTitle: 'Aqdas (Bahá\'í)',
+  corpus:     'Bahá\'í · al-Kitāb al-Aqdas',
+  tradId:     'tradition-baha-i',
+  date:       '1873 CE (Akka / Acre, Ottoman Palestine — composed in confinement)',
+  docNode:    'phase-7-003-kitab-i-aqdas',
+  language:   'Arabic (original) · Bahá\'í World Centre 1992 English (authorized translation, Haifa)',
+  translations: [
+    { id: 'bwc1992', label: 'Bahá\'í World Centre 1992 (T1, authorized)', note: 'The official English rendering issued by the Universal House of Justice in Haifa after a century of preparatory translation and exegetical work by `Abdu\'l-Bahá and Shoghi Effendi — the binding English text for Bahá\'ís worldwide.' },
+    { id: 'arabic', label: 'Arabic (original)' },
+  ],
+  intro: 'The Kitáb-i-Aqdas ("Most Holy Book") is Bahá\'u\'lláh\'s principal legal-doctrinal work, composed in Arabic around 1873 while under Ottoman house arrest in the penal colony of Akka (Acre, in present-day northern Israel). The Aqdas establishes the Bahá\'í dispensation as a comprehensive new revelation: it legislates daily obligatory prayer, an annual fast in the Bahá\'í month of `Alá\', laws of marriage and inheritance, the prohibition of slavery (1873 — among the earliest religious-scriptural abolitionist statements anywhere), the prohibition of holy war, the abolition of clergy and of religious mendicancy, the requirement of universal education for boys and girls equally, and the institution of the Houses of Justice (local, secondary, and Universal). Crucially, the Aqdas explicitly abrogates Islamic sharia and the Báb\'s Bayán for the new dispensation, while preserving both the Qur\'an and the Bayán as prior revelations of the same continuous divine pedagogy. The book also addresses by name the great rulers of Bahá\'u\'lláh\'s age (Queen Victoria, Napoleon III, Tsar Nicholas, Pope Pius IX, Wilhelm I, Násir al-Dín Sháh, and the leaders of the American republics) summoning them to recognise the Manifestation and to establish global peace. The English translation was deliberately withheld for 119 years and not issued until 1992; `Abdu\'l-Bahá and Shoghi Effendi judged the community first needed to absorb the Hidden Words, the Íqán, and the Gleanings before turning to the law-text.',
+  crossTradition: [
+    { label: 'Qur\'an — revelation as both creed and legal code', textId: 'quran-fatiha-nur',
+      note: 'The Aqdas adopts the Islamic genre-expectation that scripture itself contains the law (not just creed) — the same form-relationship the Qur\'an established for sharia. Bahá\'u\'lláh\'s legal-revelation form is direct continuation of the Qur\'anic precedent: revealed law abrogates and supersedes prior revealed law in a single continuous lineage (Torah → Gospel → Qur\'an → Bayán → Aqdas in the Bahá\'í reading). The Aqdas explicitly abrogates the Qur\'anic sharia for the new dispensation while affirming the Qur\'an\'s status as prior revelation — the same move the Qur\'an itself makes vis-à-vis the Torah.' },
+    { label: 'Leviticus / Deuteronomy — Pentateuchal legal scripture as the model', textId: 'deuteronomy-6',
+      note: 'The Aqdas inherits the broader Abrahamic form of "revelation as legal book" first crystallised in the Hebrew Bible\'s Pentateuchal codes (Covenant Code Exod 21–23, Holiness Code Lev 17–26, Deuteronomic Code Deut 12–26). All four texts (Pentateuch, Qur\'an, Bayán, Aqdas) share the structural claim that the divine voice gives law directly rather than through later juristic derivation. The Aqdas\' opening on recognition followed by obedience structurally mirrors the Shema\'s "Hear, O Israel" + "you shall love" sequence — recognition precedes and grounds the legal demand.' },
+    { label: 'The Hidden Words — the contemplative-mystical counterpart by the same author', textId: 'bahai-hidden-words',
+      note: 'The Hidden Words (1858) and the Aqdas (1873) form the inner-outer dyad of Bahá\'u\'lláh\'s writing: the Hidden Words is the soul\'s intimate address from God, the Aqdas is the community\'s legal-institutional structure. Shoghi Effendi taught that the Bahá\'í practitioner should be steeped in the Hidden Words before turning to the Aqdas — the contemplative practice grounds the legal observance. Same author, same Manifestation, fifteen years apart, addressing the two complementary registers of religious life.' },
+  ],
+  sections: [
+    {
+      heading: 'I. The Twin Opening Verses — Recognition and Obedience',
+      verses: [
+        {
+          ref: 'Kitáb-i-Aqdas §1 (opening verse)',
+          text: 'The first duty prescribed by God for His servants is the recognition of Him Who is the Dayspring of His Revelation and the Fountain of His laws, Who representeth the Godhead in both the Kingdom of His Cause and the world of creation. Whoso achieveth this duty hath attained unto all good; and whoso is deprived thereof, hath gone astray, though he be the author of every righteous deed.',
+          textVersions: {
+            bwc1992: 'The first duty prescribed by God for His servants is the recognition of Him Who is the Dayspring of His Revelation and the Fountain of His laws, Who representeth the Godhead in both the Kingdom of His Cause and the world of creation. Whoso achieveth this duty hath attained unto all good; and whoso is deprived thereof, hath gone astray, though he be the author of every righteous deed.',
+            arabic:  'إنَّ أوّلَ ما كَتَبَ اللهُ على العِبادِ عِرفانُ مَشرِقِ وَحيِهِ ومَطلَعِ أمرِهِ الّذي كانَ مَقامَ نَفسِهِ في عالَمِ الأَمرِ والخَلقِ، مَن فازَ بِهِ قَد فازَ بِكُلِّ خَيرٍ، والّذي مُنِعَ عَنهُ إنَّهُ مِن أهلِ الضَّلالِ وَلَو يَأتي بِكُلِّ الأَعمالِ.',
+          },
+          entities: [
+            { word: 'recognition of Him Who is the Dayspring of His Revelation', node: 'tradition-baha-i', type: 'doctrine',
+              note: '`Irfān-i mashriq-i waḥyihi — "recognition of the Dayspring of His Revelation." This is the doctrine of the Manifestation of God (maẓhar-i ilāhī) presented as the foundational duty of the religious life: recognition of the Manifestation precedes and conditions every other obligation, including the very legal duties this same book is about to lay out. The structure mirrors the Shahada\'s precedence within Islam ("there is no god but God, and Muhammad is the Messenger of God" — the recognition comes before the law) but radicalises it: without recognition of the present Manifestation, even perfectly performed righteous deeds remain spiritually inert. The doctrine is the operational core of progressive revelation: each age, God renews humanity through a new Manifestation, and recognition of that Manifestation is the gateway to that age\'s spiritual life.',
+              parallels: [
+                { label: 'Shema — "Hear, O Israel" — recognition precedes law', textId: 'deuteronomy-6',
+                  note: 'The Shema\'s "Hear, O Israel, the LORD our God, the LORD is one" + "and you shall love the LORD your God" structure inaugurates the Pentateuchal pattern that recognition / acknowledgment of God precedes and grounds obedience. The Aqdas opens in the same structural pattern: recognition first, then law. Both texts treat law without prior recognition as a husk without a kernel.' },
+                { label: 'Qur\'an Shahada — confession precedes practice', textId: 'quran-fatiha-nur',
+                  note: 'The Islamic Shahada (Lā ilāha illā\'llāh, Muḥammadun rasūl Allāh) is the precondition of every other religious duty in Islam — only after the confession of divine unity and prophetic recognition does the believer enter into the obligations of prayer, fast, alms, and pilgrimage. The Aqdas adopts and re-applies this structural logic: recognition of the present Manifestation comes first; the legal observances that the Aqdas itself will prescribe rest on that prior recognition.' },
+                { label: 'John 14:6 — "no one comes to the Father but through me"', textId: 'john-1',
+                  note: 'The Johannine claim that recognition of Christ is the unique gateway to the Father is the structural ancestor of every Abrahamic "recognition first" theology — in the Bahá\'í reading the same claim is re-applied to each Manifestation in turn (Moses for his age, Jesus for his, Muhammad for his, Bahá\'u\'lláh for the present), not as competing absolutes but as the same divine self-disclosure rotating through history.' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: 'Kitáb-i-Aqdas §1 (continuation — the second of the twin duties)',
+          text: 'It behoveth every one who reacheth this most sublime station, this summit of transcendent glory, to observe every ordinance of Him Who is the Desire of the world. These twin duties are inseparable. Neither is acceptable without the other.',
+          textVersions: {
+            bwc1992: 'It behoveth every one who reacheth this most sublime station, this summit of transcendent glory, to observe every ordinance of Him Who is the Desire of the world. These twin duties are inseparable. Neither is acceptable without the other.',
+            arabic:  'يَنبَغي لِكُلِّ مَن فازَ بِالمَقامِ الأَعلى وذِروَةِ المَجدِ أن يَعمَلَ بِكُلِّ ما حُكِمَ بِهِ مِن لَدى المَقصودِ، وَكِلتاهُما لا تَنفَكّانِ، وَلا يُقبَلُ إحداهُما دونَ الأُخرى.',
+          },
+          entities: [
+            { word: 'These twin duties are inseparable', node: 'tradition-baha-i', type: 'doctrine',
+              note: 'The Aqdas\' "twin duties" formula — recognition AND obedience, each useless without the other — is the structural foundation of Bahá\'í religious life. Recognition without obedience reduces to private mysticism (which Bahá\'u\'lláh resists in favour of a community-of-practice); obedience without recognition reduces to legalism (which he resists in favour of a heart-grounded practice). The dialectic is the same one the Letter of James presses on Pauline Christianity ("faith without works is dead, works without faith are equally so") and the Yoga Sūtra presses on Sāṃkhya (vairāgya without abhyāsa fails; abhyāsa without vairāgya fails). The Aqdas\' innovation is to make the dialectic itself constitutive of revelation — not a later theological refinement but the very first thing the book says.',
+              parallels: [
+                { label: 'Letter of James — faith without works is dead',
+                  note: 'James 2:17 ("faith by itself, if it has no works, is dead") and the Aqdas\' twin-duties formula make the same point in different idioms: inner recognition and outer obedience are not optional alternatives but two faces of one reality. Either alone is incomplete.' },
+                { label: 'Bhagavad Gita — jñāna and karma yoga as inseparable', textId: 'bhagavad-gita-4',
+                  note: 'Krishna\'s teaching that jñāna-yoga (the way of knowledge/recognition) and karma-yoga (the way of action) are not competitors but complementary aspects of one liberation directly parallels the Aqdas\' twin-duties formula. Both traditions insist that contemplation and action, when properly understood, are inseparable.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'II. The Abolition of Slavery — Among the Earliest Religious-Scriptural Statements',
+      verses: [
+        {
+          ref: 'Kitáb-i-Aqdas §72',
+          text: 'It is forbidden you to trade in slaves, be they men or women. It is not for him who is himself a servant to buy another of God\'s servants, and this hath been prohibited in His Holy Tablet. Thus, by His mercy, hath the commandment been recorded by the Pen of justice. Let no man exalt himself above another; all are but bondslaves before the Lord, and all exemplify the truth that there is none other God but Him. He, verily, is the All-Wise, Whose wisdom encompasseth all things.',
+          textVersions: {
+            bwc1992: 'It is forbidden you to trade in slaves, be they men or women. It is not for him who is himself a servant to buy another of God\'s servants, and this hath been prohibited in His Holy Tablet. Thus, by His mercy, hath the commandment been recorded by the Pen of justice. Let no man exalt himself above another; all are but bondslaves before the Lord, and all exemplify the truth that there is none other God but Him. He, verily, is the All-Wise, Whose wisdom encompasseth all things.',
+            arabic:  'قَد حُرِّمَ عَلَيكُم بَيعُ الإِماءِ والغِلمانِ، لَيسَ لِعَبدٍ أن يَشتَرِيَ عَبداً، وَكَذلِكَ نُهِيتُم في لَوحِهِ المَقدَّسِ. كَذلِكَ مِن لَدُن الفَضلِ حُكِمَ بِالعَدلِ، فَلا يَفتَخِرَنَّ أَحَدٌ على أَحَدٍ، كُلٌّ عِبادُ اللهِ والكُلُّ يَدُلّونَ على أَنَّهُ لا إلهَ إلّا هُوَ، إنَّهُ هُوَ الحَكيمُ الّذي أحاطَ عِلمُهُ كُلَّ شَيءٍ.',
+          },
+          entities: [
+            { word: 'It is forbidden you to trade in slaves', node: 'tradition-baha-i', type: 'commandment',
+              note: 'Composed in 1873 in Ottoman territory — where the slave trade was still legal and active and would not be fully outlawed for several more decades — the Aqdas\' §72 is among the earliest unconditional abolitionist statements in any religious scripture. The prohibition is grounded not in economic argument but in theological anthropology: the equality of all human beings before God ("all are but bondslaves before the Lord") makes one human being\'s ownership of another a violation of divine sovereignty. Contemporary scriptural-legal codes in the surrounding Abrahamic traditions (Qur\'anic regulation of slavery rather than prohibition; the Pentateuch\'s Hebrew-slave provisions; the Pauline household codes\' admonitions to Christian slave-owners and slaves) had all *regulated* slavery rather than forbidden it outright. The Aqdas in 1873 is roughly contemporaneous with the abolition of slavery in Brazil (1888) and the United States (1865) and predates the international convention against the slave trade (1926). The statement is one of the clearest examples of a religious scripture moving in genuine moral synchronisation with — and slightly ahead of — the most progressive secular legislation of its age.',
+              parallels: [
+                { label: 'Galatians 3:28 — neither slave nor free in Christ', textId: 'galatians-3',
+                  note: 'Paul\'s "there is neither Jew nor Greek, slave nor free, male nor female; for you are all one in Christ Jesus" (Gal 3:28) is the structural precursor of the Aqdas\' anthropological claim. Both texts ground the leveling of social hierarchies in a theological claim about the equal standing of all human beings before God. The historical difference: Paul\'s formula remained interior / sacramental within the church and coexisted with the household codes\' regulation of actual slavery (Eph 6, Col 3); the Aqdas turns the same theological claim into an unconditional outer legal prohibition. The 1,800-year gap between the inner claim and the outer prohibition is one of the great running themes of religious-ethical history.' },
+                { label: 'Exodus 21 — the Pentateuch\'s regulation of slavery', textId: 'exodus-3',
+                  note: 'The Pentateuchal codes regulate slavery (six-year terms for Hebrew slaves, Sabbatical-year manumission, prohibition of permanent injury to slaves) but do not abolish it. The Aqdas\' move from regulation to abolition is the structural fulfillment that the Pentateuch\'s justice-trajectory implied without yet enacting — the prophetic-eschatological hope that "no one will exalt himself above another" finally given operational legal form in scripture.' },
+                { label: 'Qur\'an — manumission as a meritorious act', textId: 'quran-fatiha-nur',
+                  note: 'Qur\'anic ethics treats manumission of slaves as one of the highest acts of piety (90:13: "What will explain to you the steep path? It is the freeing of a slave") and prescribes manumission as expiation for several specific sins. The Aqdas extends this trajectory: where the Qur\'an makes freeing slaves meritorious, the Aqdas makes owning them forbidden — the next step on the same moral arc, taken in 1873 in the same Islamic world.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'III. Pilgrimage and the Greatest Name',
+      verses: [
+        {
+          ref: 'Kitáb-i-Aqdas §32',
+          text: 'The Lord hath ordained that those of you who are able shall make pilgrimage to the sacred House, and from this He hath exempted women as a mercy on His part. He, of a truth, is the All-Bountiful, the Most Generous.',
+          textVersions: {
+            bwc1992: 'The Lord hath ordained that those of you who are able shall make pilgrimage to the sacred House, and from this He hath exempted women as a mercy on His part. He, of a truth, is the All-Bountiful, the Most Generous.',
+            arabic:  'كُتِبَ عَلى مَن استَطاعَ مِنكُمُ الحَجُّ إلى البَيتِ، وَوَضَعَ عَنِ النِّساءِ رَحمَةً مِن عِندِهِ، إنَّهُ هُوَ المُعطي الكَريمُ.',
+          },
+          entities: [
+            { word: 'pilgrimage to the sacred House', node: 'ritual-pilgrimage', type: 'practice',
+              note: 'Bahá\'í pilgrimage in the Aqdas refers specifically to the Houses of Bahá\'u\'lláh in Baghdad and of the Báb in Shiraz — the two sites where the foundational revelations were given. (In present practice the Baghdad House is inaccessible and Shiraz periodically restricted by Iranian state policy; Bahá\'ís make a substitute pilgrimage to the Bahá\'í World Centre in Haifa, including the Shrine of the Báb on Mount Carmel and the Shrine of Bahá\'u\'lláh at Bahjí near Akka.) The pilgrimage structure intentionally parallels the Islamic hajj — directional turning toward the Manifestation\'s historical site, ritual remembrance, communal gathering — while replacing the Meccan focus with sites associated with the new Manifestation. The form (pilgrimage to a sacred House associated with prophetic presence) connects in the Abrahamic lineage all the way back to the Jerusalem Temple pilgrimage festivals (Pesach, Shavuot, Sukkot) of the Pentateuchal calendar.',
+              parallels: [
+                { label: 'Islamic hajj — pilgrimage to the Ka`ba', textId: 'quran-fatiha-nur',
+                  note: 'The Qur\'anic hajj (Q 2:196–203, Q 3:97) — pilgrimage to the Sacred House at Mecca as one of the Five Pillars — is the direct generic ancestor of the Bahá\'í pilgrimage. Bahá\'u\'lláh reuses the Arabic vocabulary (al-bayt — the House, ḥajj — pilgrimage) and the form (pilgrimage as an obligation upon those who are able) while relocating the destination to the sites of the present revelation. The structural continuity is explicit: the Aqdas adopts and re-applies the Islamic pilgrimage form to the new dispensation, exactly as it does with prayer (ṣalāt) and the annual fast (ṣawm).' },
+                { label: 'Jerusalem Temple pilgrimage festivals',
+                  note: 'The Pentateuchal pilgrimage festivals (Pesach, Shavuot, Sukkot — Deut 16:16, "three times in the year shall all your males appear before the LORD") are the deep Abrahamic ancestor of all subsequent monotheistic pilgrimage practices. The Aqdas\' pilgrimage to the sacred House inherits this lineage through the Islamic hajj, which itself inherits it through the broader Near-Eastern pilgrimage culture the Pentateuch crystallised.' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: 'Kitáb-i-Aqdas (introductory invocation; "Bahá" as the Greatest Name)',
+          text: 'In the Name of Him Who is the Supreme Ruler over all that hath been and all that is to be.',
+          textVersions: {
+            bwc1992: 'In the Name of Him Who is the Supreme Ruler over all that hath been and all that is to be.',
+            arabic:  'بِاسمِهِ المُهَيمِنِ على ما كانَ وَما يَكونُ.',
+          },
+          entities: [
+            { word: 'In the Name of Him Who is the Supreme Ruler', node: 'tradition-baha-i', type: 'invocation',
+              note: 'The Aqdas opens not with the Qur\'anic basmala ("In the Name of God, the Compassionate, the Merciful") but with a distinctively Bahá\'í invocation centred on divine sovereignty over time itself. The associated devotional name throughout the Bahá\'í corpus is "Bahá\'" (glory / splendour) — the Ism-i-A`ẓam, the "Greatest Name," from which Bahá\'u\'lláh\'s own title (Bahá\'u\'lláh = "Glory of God") is derived. The Greatest Name doctrine inherits the Jewish Kabbalistic teaching of the seventy or one hundred secret names of God (and the centrality of YHWH / the Tetragrammaton as the unutterable name), and the Islamic doctrine of the ninety-nine Beautiful Names plus a hidden hundredth name (the Greatest Name, ism Allāh al-a`ẓam, identified in various Sufi schools with different formulae). In Bahá\'í practice the form "Yá Bahá\'u\'l-Abhá" ("O Glory of the All-Glorious") is the Greatest Name invocation, repeated 95 times daily as one of the obligatory devotions.',
+              parallels: [
+                { label: 'Tetragrammaton — the unutterable Name of God', textId: 'exodus-3',
+                  note: 'The Hebrew Bible\'s YHWH (Exod 3:14 — "I AM THAT I AM") is the originary Abrahamic divine-Name doctrine: a name that names God\'s very being, traditionally unutterable in Jewish practice (replaced in reading by Adonai or HaShem). The Bahá\'í Greatest Name doctrine inherits this lineage through Islamic and Kabbalistic intermediaries — the idea that one Name above all others encodes the divine reality and that vocal invocation of that Name is itself a spiritual practice.' },
+                { label: 'Islamic ism Allāh al-a`ẓam — the Greatest Name', textId: 'quran-fatiha-nur',
+                  note: 'Sufi traditions develop the doctrine that among the ninety-nine Beautiful Names of God lies one Greatest Name (ism Allāh al-a`ẓam) whose invocation is uniquely powerful — variously identified with Allāh itself, with Hū ("He"), with al-Ḥayy al-Qayyūm ("the Living, the Self-Subsisting"), or with hidden formulae known only to initiates. The Bahá\'í "Bahá\'" as the Greatest Name continues this Islamic-Sufi doctrine in a new revelatory key — explicitly naming the Greatest Name that earlier traditions had only pointed toward.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+// ── BAHÁ'Í — KITÁB-I-ÍQÁN (THE BOOK OF CERTITUDE) ────────────────────────────
+SCRIPTURE_TEXTS['bahai-kitab-i-iqan'] = {
+  id:         'bahai-kitab-i-iqan',
+  title:      'The Kitáb-i-Íqán — The Book of Certitude',
+  shortTitle: 'Íqán (Bahá\'í)',
+  corpus:     'Bahá\'í · Kitāb-i-Īqān',
+  tradId:     'tradition-baha-i',
+  date:       '1861 CE (Baghdad — composed in two days and nights, January 1861)',
+  docNode:    'phase-7-002-kitab-i-iqan',
+  language:   'Persian (with substantial Arabic passages, especially Qur\'anic citation) · Shoghi Effendi 1931 English (authorized translation)',
+  translations: [
+    { id: 'shoghi', label: 'Shoghi Effendi 1931 (T1, canonical)', note: 'Shoghi Effendi (Guardian of the Bahá\'í Faith 1921–57) produced the binding English translation in 1931 — the text used universally by English-speaking Bahá\'ís and the standard scholarly reference text.' },
+    { id: 'persian', label: 'Persian / Arabic (original)' },
+  ],
+  intro: 'The Kitáb-i-Íqán ("Book of Certitude") is Bahá\'u\'lláh\'s principal doctrinal-theological work, composed in two days and two nights in January 1861 in Baghdad in response to a series of questions from Hájí Mírzá Siyyid Muḥammad, a maternal uncle of the Báb who was investigating whether the Bábí movement\'s claims could be reconciled with traditional Twelver Shi\'a Islamic eschatology. The Íqán lays out the doctrine that has become the most distinctive Bahá\'í theological contribution: progressive revelation. All the great Manifestations of God — Adam, Noah, Abraham, Moses, Zoroaster, Krishna, Buddha, Christ, Muhammad, the Báb, and (after the 1863 Ridván declaration) Bahá\'u\'lláh himself — form one continuous teaching, each adapted to the age in which it was given. Scriptural language about "the Day of Resurrection," "the coming of the Lord on clouds," "the seal of the prophets," and "the sun being darkened" must be read symbolically (the central exegetical move of the book) as referring to the appearance and re-appearance of these Manifestations through history. Composed BEFORE Bahá\'u\'lláh\'s own public declaration as the Promised One, the Íqán performs the theological groundwork that the 1863 declaration will then claim to fulfill — without yet identifying its author as that fulfillment.',
+  crossTradition: [
+    { label: 'Cao Đài Thánh Ngôn — the Three Universal Salvations doctrine', textId: 'cao-dai-thanh-ngon',
+      note: 'The Bahá\'í teaching of progressive revelation and Cao Đài\'s Three Universal Salvations are structurally identical claims about religious history: all the great teachers (Adam, Krishna, Buddha, Christ, Muhammad in Bahá\'í; Lao Tzu, Buddha, Christ, Muhammad, Confucius in Cao Đài) point at one divine reality, each bringing the stage of teaching suitable to its historical moment. Both traditions arose ~80 years apart in mid-19th to early-20th c. waves of new revelation — the Íqán in 1861 Baghdad, the Cao Đài revelations in 1925–26 Tây Ninh — and both make explicit the same modern theological move: religious history is not a competition among rival absolutes but a single continuous education from a single transcendent source.' },
+    { label: 'The Hidden Words — the devotional-mystical counterpart', textId: 'bahai-hidden-words',
+      note: 'The Hidden Words (1858) and the Íqán (1861) are companion works by the same author from the same Baghdad period: the Hidden Words gives the contemplative-mystical address of God to the soul, the Íqán gives the doctrinal-exegetical argument for progressive revelation. Together they form the inner-and-outer foundation of Bahá\'í theology prior to the 1873 Aqdas\' legal articulation. Where the Hidden Words says "find Me standing within thee," the Íqán explains the historical mechanism by which God\'s repeated standing-within-history-through-Manifestations operates.' },
+    { label: 'John 14:6 — "I am the way, the truth, and the life"', textId: 'john-1',
+      note: 'Polemic-with-completion (CODEX edge-type): the Íqán explicitly reframes the Johannine "no one comes to the Father but through me" claim, which Christian orthodoxy reads as uniquely Christological, as a structural truth about EVERY Manifestation in its own age. Christ\'s claim was true of his Manifestation; the same claim is true of Moses for his age, of Muhammad for his, of Bahá\'u\'lláh for the present. The Íqán does not deny the Johannine exclusivity; it temporalises it. Each Manifestation IS the unique way to the Father FOR THAT AGE, until the next Manifestation appears with the same status for the new age. This is the central interpretive move that defines Bahá\'í relationship with Christianity.' },
+    { label: 'Qur\'an 33:40 — Muhammad as the "Seal of the Prophets"', textId: 'quran-fatiha-nur',
+      note: 'Polemic-against (CODEX edge-type): Qur\'an 33:40 ("Muhammad is not the father of any man among you, but the Messenger of God and the Seal [khātam] of the Prophets") is the verse Islamic orthodoxy reads as closing the cycle of prophecy permanently. The Íqán\'s central counter-reading: "seal" (khātam) does not mean "final terminus" but "the one who confirms and authenticates" (its semantic range in classical Arabic includes "stamp," "ratification," "completion") — Muhammad seals / ratifies the cycle of *prophets in the proper sense* (anbiyā\'), but Manifestations (maẓāhir) continue in a higher mode. The Bábí and Bahá\'í movements stand or fall on this re-reading, which is the explicit legal basis on which the Islamic Republic of Iran has continued to persecute Bahá\'ís: Shi\'a authorities maintain that 33:40 closes prophecy absolutely and Bahá\'u\'lláh\'s claim is therefore unbelief.' },
+  ],
+  sections: [
+    {
+      heading: 'I. The Doctrine of Progressive Revelation — One Continuous Teaching',
+      verses: [
+        {
+          ref: 'Kitáb-i-Íqán, Part Two (Shoghi Effendi 1931 §99)',
+          text: 'These Sanctified Mirrors, these Daysprings of ancient glory, are, one and all, the Exponents on earth of Him Who is the central Orb of the universe, its Essence and ultimate Purpose. From Him proceed their knowledge and power; from Him is derived their sovereignty. The beauty of their countenance is but a reflection of His image, and their revelation a sign of His deathless glory. They are the Treasuries of divine knowledge, and the Repositories of celestial wisdom. Through them is transmitted a grace that is infinite, and by them is revealed the Light that can never fade.',
+          textVersions: {
+            shoghi: 'These Sanctified Mirrors, these Daysprings of ancient glory, are, one and all, the Exponents on earth of Him Who is the central Orb of the universe, its Essence and ultimate Purpose. From Him proceed their knowledge and power; from Him is derived their sovereignty. The beauty of their countenance is but a reflection of His image, and their revelation a sign of His deathless glory. They are the Treasuries of divine knowledge, and the Repositories of celestial wisdom. Through them is transmitted a grace that is infinite, and by them is revealed the Light that can never fade.',
+            persian: 'این مرایای مقدّسه و مطالع جلال قدیمه کلّاً مظاهر آن نَیّر اعظمِ حقیقت‌اند که اساس وجود و غایتِ مقصودِ کلّ ممکنات است. از آن نقطه است که علم و قدرتشان فائض شده و از آن مَلِک حقیقی است که سلطنتشان جاری گشته است. جمالِ طلعتشان جلوهٔ آن جمالِ ازلی است و ظهورشان آیتی از مجد لا یزال او.',
+          },
+          entities: [
+            { word: 'These Sanctified Mirrors, these Daysprings of ancient glory', node: 'progressive-revelation', type: 'doctrine',
+              note: 'mirʾāt-i muqaddasa — "sanctified mirrors." The Íqán\'s central image: the Manifestations of God (Adam, Noah, Abraham, Moses, Zoroaster, Krishna, Buddha, Christ, Muhammad, the Báb, Bahá\'u\'lláh) are not separate sources of separate revelations but mirrors of one divine reality, each polished to reflect the same sun into the historical moment that needs that particular reflection. The "Ancient Beauty" (jamāl-i qidam) is the technical Bahá\'í term for this single divine reality reflected through the succession of mirrors. The doctrine\'s most distinctive feature is its anti-supersessionism: no later Manifestation supersedes or invalidates an earlier one; each is the same divine Light in a new mirror, suited to a new age. This directly inverts the Christian replacement-of-Israel reading, the Islamic supersession-of-Christianity reading, and the standard religious-exclusivism move. The Manifestations are functionally interchangeable in essence and necessarily diverse in historical address.',
+              parallels: [
+                { label: 'Cao Đài Thánh Ngôn — one Way under different names', textId: 'cao-dai-thanh-ngon',
+                  note: 'Cao Đài\'s "the Tao that Lao Tzu taught, the Dharma that the Buddha taught, the Logos that Jesus taught, the Way of Heaven that Confucius taught, the Submission that Muhammad taught — all are the same Way under different names" (Thánh Ngôn Hiệp Tuyển I.5, 1925) is the closest modern parallel to the Íqán\'s mirror-of-the-Ancient-Beauty doctrine. The two traditions, sixty years apart, articulate the same intuition in radically different cultural idioms: religious history is one continuous teaching adapted to multiple ages and cultures.' },
+                { label: 'Bhagavad Gita 4:7–8 — Krishna\'s incarnation in every age', textId: 'bhagavad-gita-4',
+                  note: 'Krishna in BG 4:7–8 ("Whenever there is a decline in dharma and a rise in adharma, then do I send forth Myself. For the protection of the good, for the destruction of evildoers, for the establishment of righteousness, I come into being from age to age") articulates the Hindu form of the same doctrine: divine self-revelation is repeated, age by age, according to need. The Íqán\'s Manifestation doctrine and the Bhagavad Gītā\'s avatāra doctrine are structurally identical claims about how the divine relates to history — recurring rather than singular, adapted rather than absolute.' },
+                { label: 'Hebrews 1:1 — God spoke in many and various ways', textId: 'hebrews-11',
+                  note: 'Hebrews 1:1 ("Long ago God spoke to our ancestors in many and various ways by the prophets") opens the Christian scripture\'s acknowledgment that revelation has been plural and progressive — though the epistle goes on to make the supersessionist claim that Christ is the final word. The Íqán inherits the "many and various ways" half and rejects the "final" half — divine revelation continues progressively beyond Christ, beyond Muhammad, beyond every previous Manifestation, because humanity\'s capacity to receive it continues to mature.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'II. The Re-Reading of Resurrection and the Day of Judgment',
+      verses: [
+        {
+          ref: 'Kitáb-i-Íqán, Part One (Shoghi Effendi 1931 §16)',
+          text: 'By the terms "life" and "death," spoken of in the Scriptures, is intended the life of faith and the death of unbelief. The generality of the people, owing to their failure to grasp the meaning of these words, rejected and despised the person of the Manifestation, deprived themselves of the light of His divine guidance, and refused to follow the example of that immortal Beauty.',
+          textVersions: {
+            shoghi: 'By the terms "life" and "death," spoken of in the Scriptures, is intended the life of faith and the death of unbelief. The generality of the people, owing to their failure to grasp the meaning of these words, rejected and despised the person of the Manifestation, deprived themselves of the light of His divine guidance, and refused to follow the example of that immortal Beauty.',
+            persian: 'مقصود از حیات و موت که در کتب مقدّسه ذکر شده، حیاتِ ایمان و موتِ کفر است. عوامُ النّاس به سبب عدم فهم این کلمات، طلعت ظهور را انکار و ردّ نمودند و خود را از انوار هدایت محروم ساختند.',
+          },
+          entities: [
+            { word: 'life of faith and the death of unbelief', node: 'progressive-revelation', type: 'doctrine',
+              note: 'The Íqán\'s central exegetical move: the apocalyptic vocabulary of Scripture — "resurrection," "the day of judgment," "the sun shall be darkened," "the heavens shall be cloven asunder," "the trumpet shall sound," "the coming of the Lord on clouds" — is to be read symbolically, not literally. "Life" = recognition of the Manifestation; "death" = failure to recognise. "Resurrection" = the rising of a new Manifestation (qiyāmat — literally "uprising/standing-up," recoded from the Shi\'a apocalyptic vocabulary of the Twelfth Imam\'s return). "Day of Judgment" = the historical moment in which humanity is tested by its response to the new revelation. This symbolic-exegetical move is the engine on which the entire Bahá\'í argument depends: if Qur\'anic eschatology is read literally, then 33:40 forecloses post-Muhammadan revelation and the Báb / Bahá\'u\'lláh are unbelievers; if it is read symbolically (as the Íqán argues at extensive length, working through Christ\'s second-coming prophecies in Matthew 24 in parallel), then each Manifestation IS the fulfillment of the prior eschatological promise and the cycle continues. The Bahá\'í position stands or falls on this exegetical move.',
+              parallels: [
+                { label: 'Christian symbolic readings of apocalyptic — Origen, Augustine', textId: 'revelation-12',
+                  note: 'The Bahá\'í symbolic-exegetical move on apocalyptic language has Christian precedent: Origen\'s allegorical reading of Revelation, Augustine\'s amillennialist re-reading of the thousand years in City of God, the broader patristic tradition of treating apocalyptic vocabulary as referring to spiritual rather than chronological events. The Íqán adopts the same hermeneutical strategy (the eschatological vocabulary is symbolic) but reaches a different conclusion (it refers not to the inner spiritual life alone but to recurring Manifestations through history).' },
+                { label: 'Gospel of Thomas — "the kingdom is spread out upon the earth"', textId: 'gospel-of-thomas',
+                  note: 'Thomas L.113 ("The kingdom of the Father is spread out upon the earth, and people do not see it") performs the same de-literalising move on Kingdom-of-God language that the Íqán performs on resurrection-and-judgment language: the apocalyptic is not in the future as event but in the present as perception, requiring only the recognition that opens the eyes. The Íqán and the Gospel of Thomas, separated by 1,800 years, agree that the apocalyptic is a hermeneutical reality requiring symbolic reading, not a chronological one waiting to happen.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'III. The "Seal of the Prophets" Re-Read',
+      verses: [
+        {
+          ref: 'Kitáb-i-Íqán, Part Two (Shoghi Effendi 1931 §181)',
+          text: 'It is unmistakably clear, therefore, that should any soul interpret these verses literally and conclude that the revelation of God, which is sanctified from every limitation, hath ever been or can ever be brought to a standstill, he hath shown himself to be utterly bereft of all understanding, and to have strayed far from the recognised path of equity and justice.',
+          textVersions: {
+            shoghi: 'It is unmistakably clear, therefore, that should any soul interpret these verses literally and conclude that the revelation of God, which is sanctified from every limitation, hath ever been or can ever be brought to a standstill, he hath shown himself to be utterly bereft of all understanding, and to have strayed far from the recognised path of equity and justice.',
+            persian: 'پس بر اَلباب روشن و واضح است که اگر نفسی این آیات را به ظاهر اخذ نموده و گمان کند که وحی الهی که از کلّ قیودِ امکانیّه مقدّس است را پایانی است، در طریقِ هدایت ضالّ و در سبیلِ عدل از مَنهَجِ حق دور افتاده است.',
+          },
+          entities: [
+            { word: 'revelation of God... hath ever been or can ever be brought to a standstill', node: 'progressive-revelation', type: 'doctrine',
+              note: 'The Íqán\'s central polemical conclusion against the literalist reading of Qur\'an 33:40 ("Seal of the Prophets"): no human formula and no historical text can foreclose the divine self-revelation, which by its nature exceeds every limit. "Sanctified from every limitation" (muqaddas az kullī quyūd) is the technical Bahá\'í formula for the divine reality\'s transcendence of any human attempt to bound it. The argument is doubly framed: (a) linguistic — khātam in classical Arabic means "stamp / seal / ratification," and a ratifying seal confirms what came before, it does not prohibit what comes after; (b) theological — to claim that God will not or cannot reveal further would itself be a limitation imposed on the Limitless, hence a kind of unbelief. The Íqán is here at its most polemical: the position it argues against is the explicit majority Twelver Shi\'a position of its own time and place, and the position whose enforcement has killed Bahá\'ís in Iran continuously from 1850 to the present.',
+              parallels: [
+                { label: 'John 16:12–13 — "I have yet many things to say unto you"', textId: 'john-1',
+                  note: 'Jesus in John 16:12–13: "I still have many things to say to you, but you cannot bear them now. When the Spirit of truth comes, he will guide you into all the truth." The Íqán reads this Johannine passage (it cites the Gospel material extensively) as a Christian parallel to its own argument that revelation is necessarily progressive: the disciples cannot bear ALL the truth at once; what is given now is partial; further teaching is promised; the future Manifestation will complete what the present Manifestation has begun. The structural compatibility of the two passages is one of the Íqán\'s most-cited internal-Christian arguments for the continuity of divine self-revelation.' },
+                { label: 'Qur\'an 33:40 — Muhammad as Seal of the Prophets', textId: 'quran-fatiha-nur',
+                  note: 'The verse the Íqán is in explicit dispute with. Bahá\'u\'lláh\'s argument: khātam ("seal") names ratification, not termination; Muhammad seals / ratifies the prophetic cycle in the strict sense (nubuwwa), but the higher category of Manifestation (maẓhar) continues. The argument is linguistic, theological, and exegetical at once. Islamic orthodoxy rejects the re-reading; Bahá\'í theology stands on it. The two positions are structurally irreconcilable and constitute the operative legal-religious basis on which Iran has continued to persecute Bahá\'ís under both Pahlavi and Islamic-Republic governments.' },
               ]
             },
           ]
