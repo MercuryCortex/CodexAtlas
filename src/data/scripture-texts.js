@@ -14355,4 +14355,329 @@ SCRIPTURE_TEXTS['sibylline-oracles-3'] = {
   ]
 };
 
+// ── Q SOURCE — RECONSTRUCTED BEATITUDES (Q 6:20–23 per Kloppenborg) ──────────
+SCRIPTURE_TEXTS['q-beatitudes'] = {
+  id:         'q-beatitudes',
+  title:      'Q 6:20–23 — The Beatitudes in the Reconstructed Sayings Gospel',
+  shortTitle: 'Q Beatitudes',
+  corpus:     'Q (reconstructed sayings-source behind Matthew + Luke) · International Q Project (IQP) edition',
+  tradId:     'tradition-early-christianity',
+  date:       '~50–60 CE (the IQP reconstructed compositional layers Q1, Q2, Q3 cluster in the two decades before the destruction of Jerusalem in 70 CE; the Beatitudes are placed in Q1, the earliest layer)',
+  docNode:    'phase-3-014-q-source',
+  language:   'Koine Greek (reconstructed) · English translation per the IQP Critical Edition of Q (Robinson, Hoffmann, Kloppenborg 2000)',
+  translations: [
+    { id: 'iqp',         label: 'Robinson / Hoffmann / Kloppenborg 2000 (IQP Critical Edition of Q)', note: 'The canonical critical reconstruction of Q. The IQP edition prints Greek text reconstructed from the Matthean and Lukan parallels with a sophisticated text-critical apparatus that registers which evangelist\'s wording is judged closer to the original Q.' },
+    { id: 'kloppenborg', label: 'John S. Kloppenborg 2000 (Excavating Q)', note: 'Kloppenborg\'s monograph treatment of Q\'s compositional history is the modern scholarly entry-point to the source.' },
+    { id: 'luke-form',   label: 'Luke 6:20–23 NRSV — the gospel-tradition closest to Q', note: 'Most Q scholars judge the Lukan version of the Beatitudes closer to the Q original than the Matthean version (which has been theologically expanded; "blessed are the poor in spirit" rather than Luke\'s simpler "blessed are you who are poor").' },
+  ],
+  intro: 'Q (from the German Quelle, "source") is the reconstructed sayings-gospel that the two-source hypothesis of Synoptic-gospel composition (the dominant model since the 19th century, refined by H. J. Holtzmann 1863, B. H. Streeter 1924, and re-articulated in 20th-century work by John S. Kloppenborg, James M. Robinson, and the International Q Project) treats as the second source — alongside Mark — used independently by Matthew and Luke. The proposal: where Matthew and Luke share material that is not in Mark, they are drawing on a common written sayings-source, now lost, that scholarship calls Q. No Q manuscript exists; the document is reconstructed by extracting the Matthew-Luke double-tradition material and analysing its compositional layers (the influential three-layer hypothesis: Q1 = wisdom-sayings, Q2 = prophetic-apocalyptic sayings, Q3 = final temptation-narrative redaction). The Q-hypothesis is not uncontested — the Farrer-Goulder-Goodacre alternative (Luke directly used Matthew, eliminating the need for Q) remains a serious minority position — but the majority of New Testament scholarship continues to operate within the two-source framework with Q as a real, recoverable text. The Beatitudes (Matt 5:3–12 ∥ Luke 6:20–23) are the most famous Q passage and one of the most-studied in the corpus, opening the Q1 wisdom-sayings layer. The Q-reconstructed Beatitudes are simpler than the Matthean version, addressed in the second person directly to the hearers ("blessed are YOU"), and lack the spiritualising modifications ("poor in spirit," "hunger and thirst for righteousness") that Matthew adds. The reconstruction-claim is therefore consequential: the earliest recoverable form of one of the most famous passages in Christian scripture turns out to be sharper, more direct, and more economic than the canonical Matthean form most readers know.',
+  crossTradition: [
+    { label: 'Matthew 5 (Sermon on the Mount) — the redacted-and-expanded canonical form', textId: 'matthew-sermon-mount',
+      note: 'The Matthean Beatitudes (Matt 5:3–12) preserve Q\'s opening sayings in a redacted-and-theologically-expanded form. Reading the Matthean form alongside the Q reconstruction reveals Matthew\'s editorial procedure: spiritualising additions ("in spirit," "for righteousness sake"), expansion of the original four Beatitudes (poor, hungry, weeping, persecuted) to nine, third-person reformulation of what Q had in the second person. The two versions side-by-side document the redactional process by which the earliest sayings tradition was transformed into the canonical Christian text.' },
+    { label: 'Luke 6:20–23 — the canonical form closest to Q', textId: 'luke-15-prodigal',
+      note: 'The Lukan Beatitudes (Luke 6:20–23) preserve the Q form more conservatively than the Matthean version — second person address, four sharp Beatitudes (poor / hungry / weeping / persecuted) without the Matthean spiritualisations, paired with the corresponding four woes (rich / well-fed / laughing / praised) that Matthew omits entirely. The Lukan form is the standard scholarly access-point to the Q layer, and its theological emphasis on material-economic reversal is one of the major themes of the Lukan Gospel as a whole.' },
+    { label: 'Gospel of Thomas — the contemporary sayings-gospel parallel', textId: 'gospel-of-thomas',
+      note: 'The Gospel of Thomas (114 sayings preserved in the Coptic Nag Hammadi corpus, with Greek fragments at Oxyrhynchus) is the closest extant comparand to Q — a sayings-gospel that, like Q, consists primarily of Jesus-logia organised around wisdom themes without an enveloping narrative. Several Q-sayings have direct Thomas parallels (Q 6:20 "blessed are the poor" ∥ Thom 54; Q 12:33 "where your treasure is" ∥ Thom 76; Q 17:33 "whoever seeks to gain his life" ∥ Thom 1). The two texts together suggest a vigorous early-Christian sayings-gospel tradition that the canonical narrative-gospels eventually displaced.' },
+    { label: 'Dhammapada — the cross-tradition wisdom-saying form parallel', textId: 'dhammapada-1',
+      note: 'The Buddhist Dhammapada (3rd c. BCE compilation of the Buddha\'s sayings in Pali verse-form) is the closest cross-tradition genre-parallel to Q — a compact collection of wisdom-sayings of a teacher, arranged thematically, addressed to disciples, without narrative envelope. The two texts share the form-critical category "sayings of a wisdom-teacher" and offer one of the clearest cross-tradition comparisons of how religious-wisdom-traditions crystallise around the recorded utterances of a founder.' },
+  ],
+  sections: [
+    {
+      heading: 'I. The Reconstructed Sayings — Four Beatitudes',
+      verses: [
+        {
+          ref: 'Q 6:20–21 (IQP reconstruction; Luke 6:20–21 ∥ Matt 5:3–6)',
+          text: 'Blessed are you who are poor, for yours is the kingdom of God. Blessed are you who hunger now, for you will be filled. Blessed are you who weep now, for you will laugh.',
+          textVersions: {
+            iqp:       'Blessed are the poor, for theirs is the kingdom of God. Blessed are those who hunger, for they shall be fed. Blessed are those who mourn, for they shall be comforted.',
+            'luke-form': 'Blessed are you who are poor, for yours is the kingdom of God. Blessed are you who are hungry now, for you will be filled. Blessed are you who weep now, for you will laugh.',
+            greek:     'μακάριοι οἱ πτωχοί, ὅτι ὑμετέρα ἐστὶν ἡ βασιλεία τοῦ θεοῦ. μακάριοι οἱ πεινῶντες νῦν, ὅτι χορτασθήσεσθε. μακάριοι οἱ κλαίοντες νῦν, ὅτι γελάσετε.',
+          },
+          entities: [
+            { word: 'Blessed are you who are poor', node: 'tradition-early-christianity', type: 'wisdom-saying',
+              note: 'μακάριοι οἱ πτωχοί — "blessed (are) the poor." The Q form of the first Beatitude is direct and material: blessing is pronounced on the actually-economically-poor, not (as in Matthew\'s redaction) on "the poor in spirit." The Lukan form preserves this directness; the Matthean form spiritualises. Q-scholarship (Kloppenborg, Crossan, Robinson) reads the difference as theologically significant: the earliest recoverable sayings-tradition pronounces blessing on the materially-marginalised in concrete socio-economic terms, while Matthew\'s later redactional layer reframes the blessing into an interior-spiritual category. The implications for understanding the historical-Jesus tradition are debated (was Jesus an apocalyptic-economic-reversal preacher, a spiritual-interior wisdom-teacher, or both?), but the textual evidence is clear: the Q form is sharper.',
+              parallels: [
+                { label: 'James 2:5 — "Has not God chosen the poor in the world to be rich in faith"', textId: 'hebrews-11',
+                  note: 'The Letter of James preserves an early-Christian theological-economic vocabulary that resembles the Q-form Beatitudes more closely than the Matthean redaction does. James\'s "God chose the poor" works in the same direct-materialist register as Q\'s "blessed are the poor." Reading the two together reveals an early-Christian theological strand that emphasises material-economic reversal as central to the Jesus-tradition, which the Matthean (and Pauline) trajectory partially de-emphasises.' },
+                { label: 'Isaiah 61 — the prophetic background of the poor-and-blessed pairing', textId: 'isaiah-40',
+                  note: 'Isaiah 61:1 ("the spirit of the LORD God is upon me, because the LORD has anointed me; he has sent me to bring good news to the poor") is the Hebrew-Bible prophetic background that the Q Beatitudes presuppose. The Lukan Jesus reads Isaiah 61 in the Nazareth synagogue scene (Luke 4:16–21) and identifies himself with the prophetic-economic mission; the Q Beatitudes operate in the same Isaianic-prophetic frame.' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: 'Q 6:22–23 (IQP reconstruction; Luke 6:22–23 ∥ Matt 5:11–12)',
+          text: 'Blessed are you when people hate you, exclude you, revile you, and defame you on account of the Son of Man. Rejoice in that day and leap for joy, for surely your reward is great in heaven; for that is what their ancestors did to the prophets.',
+          textVersions: {
+            iqp:       'Blessed are you when they revile you and persecute you and say all kinds of evil against you on account of the Son of Man. Rejoice and be glad, for great is your reward in heaven; for so they persecuted the prophets who were before you.',
+            'luke-form': 'Blessed are you when people hate you, and when they exclude you, revile you, and defame you on account of the Son of Man. Rejoice in that day and leap for joy, for surely your reward is great in heaven; for that is what their ancestors did to the prophets.',
+            greek:     'μακάριοί ἐστε ὅταν μισήσωσιν ὑμᾶς οἱ ἄνθρωποι, καὶ ὅταν ἀφορίσωσιν ὑμᾶς καὶ ὀνειδίσωσιν, καὶ ἐκβάλωσιν τὸ ὄνομα ὑμῶν ὡς πονηρὸν ἕνεκα τοῦ υἱοῦ τοῦ ἀνθρώπου.',
+          },
+          entities: [
+            { word: 'on account of the Son of Man', node: 'tradition-early-christianity', type: 'title',
+              note: 'υἱὸς τοῦ ἀνθρώπου — "Son of Man." The Q Beatitudes\' closing Beatitude introduces what is, in much Q-scholarship, the most theologically charged title in the entire Q corpus: ho huios tou anthrōpou, "the Son of Man" (a translation of the Aramaic bar-enasha, with deep Hebrew Bible background in Daniel 7:13–14, Ezekiel\'s human-figure visions, and Psalm 8:4). In Q, "Son of Man" functions both as Jesus\' self-reference and as the title of the eschatological-judging figure (Q 12:8–9, 17:24, 17:26–27, 17:30). The Beatitude\'s pairing of present-suffering with eschatological-Son-of-Man-vindication is the Q-corpus\'s core theological move: persecution now is the mark of those who will be vindicated when the Son of Man comes.',
+              parallels: [
+                { label: 'Daniel 7 — the Son-of-Man figure receiving the kingdom', textId: 'daniel-7',
+                  note: 'Daniel 7:13–14 ("I saw one like a human being [bar-enash] coming with the clouds of heaven... to him was given dominion and glory and kingship") is the Hebrew-Bible source for the Son-of-Man title that Q deploys throughout. The eschatological vindication-vocabulary that Daniel 7 inaugurates is the operative apocalyptic frame for Q\'s Son-of-Man sayings.' },
+                { label: '1 Enoch Parables — the Son-of-Man figure in Jewish apocalyptic', textId: 'book-of-enoch',
+                  note: 'The Book of the Parables of Enoch (1 Enoch 37–71, late 1st c. BCE to early 1st c. CE) develops the Son-of-Man figure in the apocalyptic-judgment role with theological vocabulary that closely matches Q\'s Son-of-Man sayings. The two texts (1 Enoch Parables and Q) operate in the same Jewish-apocalyptic-Son-of-Man matrix; Q\'s use of the title is best read against the broader Enochic-apocalyptic background.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'II. The Q-Hypothesis — Why the Reconstruction Matters',
+      verses: [
+        {
+          ref: 'Q-source-critical claim (IQP critical-edition preface, Robinson et al. 2000)',
+          text: 'The reconstruction proposes that approximately 230 verses of double-tradition material in Matthew and Luke (where Mark provides no parallel) preserves a written Greek sayings-gospel, composed in the 50s and 60s CE, that both Matthew and Luke independently used as a source alongside the Gospel of Mark.',
+          textVersions: {
+            kloppenborg: 'The Sayings Gospel Q can be reconstructed with reasonable confidence from the Matthew-Luke double-tradition material by applying the criterion of literary primitivity — which evangelist\'s wording is more likely to reflect the source — together with the convergent evidence of theological tendency, literary structure, and compositional layers. The resulting reconstructed text represents the earliest recoverable layer of the Jesus-sayings tradition, predating the canonical narrative-gospels and roughly contemporary with the earliest Pauline letters.',
+          },
+          entities: [
+            { word: 'the earliest recoverable layer of the Jesus-sayings tradition', node: 'tradition-early-christianity', type: 'source-critical-claim',
+              note: 'The Q-hypothesis\'s significance is that it provides scholarly access to a pre-canonical-gospel layer of the Christian textual tradition, recovered text-critically from the canonical gospels themselves. If the reconstruction is correct (and most New Testament scholars judge that it is, though with varying degrees of confidence in the detailed reconstruction), then Q represents what the Jesus-sayings tradition looked like a generation before Mark, Matthew, Luke, and John gave it their distinctive theological-narrative shapes. The implications for understanding the historical-Jesus tradition are significant: a sayings-gospel without passion-narrative, without resurrection-narrative, without explicit Christology-of-divine-status, but with sharp wisdom-sayings, apocalyptic-Son-of-Man material, and ethical reversal-of-fortune teaching. The dominant alternative — the Farrer-Goulder-Goodacre hypothesis that Luke directly used Matthew, eliminating the need for Q — remains a serious minority position with its own scholarly defenders (Mark Goodacre 2002), and the field of Synoptic-source-criticism remains an active research area.',
+              parallels: [
+                { label: 'Gospel of Thomas — the other recoverable sayings-gospel', textId: 'gospel-of-thomas',
+                  note: 'The Gospel of Thomas is the only fully-recovered sayings-gospel from the early-Christian period — its 114 sayings preserved in the 4th-century Coptic Nag Hammadi codex (with Greek fragments at Oxyrhynchus). Thomas confirms that the sayings-gospel as a literary form was alive and well in early Christianity, supporting the plausibility of the Q reconstruction. Several Q-Thomas parallels (sayings that appear in both texts with similar wording) are taken by some Q-scholars as additional evidence for the form-critical and reconstructive claims.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+// ── GARIMA GOSPELS — GEʿEZ MARK 1 (THE OLDEST ILLUMINATED CHRISTIAN MSS) ─────
+SCRIPTURE_TEXTS['garima-gospels-mark-1'] = {
+  id:         'garima-gospels-mark-1',
+  title:      'Garima Gospels Mark 1 — The Oldest Surviving Illuminated Christian Manuscripts in Geʿez',
+  shortTitle: 'Garima Gospels · Mark 1',
+  corpus:     'Garima Gospels (Abba Garima Monastery, Tigray, Ethiopia) · the three Garima codices (Garima I, II, III) preserved in the monastery treasury',
+  tradId:     'tradition-ethiopian-tewahedo',
+  date:       'Garima 2 carbon-dated 390–570 CE (the earlier of the two textually-distinct codices); Garima 1 carbon-dated 530–660 CE; preserved continuously at the Abba Garima Monastery in Tigray since composition',
+  docNode:    'phase-4-080-garima-gospels',
+  language:   'Classical Geʿez (Ethiopic) · NRSV 1989 English (for comparison with the Greek Vorlage)',
+  translations: [
+    { id: 'mckenzie', label: 'Judith S. McKenzie & Francis Watson 2016 (The Garima Gospels: Early Illuminated Gospel Books from Ethiopia)', note: 'The standard modern art-historical and codicological treatment of the three Garima codices, including detailed analysis of the illumination program and full carbon-dating methodology.' },
+    { id: 'lepage',   label: 'Claude Lepage 1987 / 2008 (the foundational French scholarly studies)', note: 'Lepage\'s sustained Garima research from the 1970s onward established the case for the codices\' late-antique date that the McKenzie–Watson carbon-dating later confirmed.' },
+    { id: 'geez',     label: 'Classical Geʿez (the Garima manuscripts themselves)' },
+  ],
+  intro: 'The Garima Gospels are three Geʿez (Classical Ethiopic) illuminated gospel codices preserved continuously at the Abba Garima Monastery in Tigray, northern Ethiopia, from their late-antique composition to the present. Carbon-dating performed in 2010 by Oxford\'s Radiocarbon Accelerator Unit and published in Judith McKenzie and Francis Watson\'s landmark 2016 monograph established the older codex (Garima 2) at 390–570 CE and the younger codex (Garima 1) at 530–660 CE — making them the oldest surviving illuminated Christian manuscripts of any tradition, predating the Lindisfarne Gospels (~700 CE) by roughly 200–300 years and the Book of Kells (~800 CE) by roughly 300–400 years. The codices contain the Four Gospels in Geʿez translation, framed by Eusebian canon-tables (the early-Christian cross-reference apparatus identifying parallel passages across the four gospels), with full-page illuminated portraits of the four evangelists in the Ethiopian-Byzantine style. Their existence at the Abba Garima Monastery is bound up with the foundational narrative of Ethiopian Christianity: the Nine Saints (Tsadkan, of whom Abba Garima was one) were 6th-century monks who, according to Ethiopic tradition, came from the Roman Mediterranean (Syria, the Aegean, or Egypt — the specific origin varies in the tradition) to establish monasticism and translate scripture into Geʿez. The Garima codices are physical witnesses to that foundational moment: late-antique Mediterranean Christian visual culture and Greek-Christian gospel-textual tradition crystallised in Geʿez form at an Ethiopian highland monastery, then preserved unbroken for fifteen hundred years. The codices were nearly destroyed in a fire in the 1930s; their continued existence today is itself a near-miracle of textual-religious transmission. Modern Western scholarship on the Garima codices begins with Donald Davies\' 1987 photographic survey and is fully established by McKenzie–Watson 2016.',
+  crossTradition: [
+    { label: 'Peshitta John 1 — the Syriac sister-translation tradition', textId: 'peshitta-john-1',
+      note: 'The Garima Gospels (Geʿez) and the Peshitta (Syriac) are the two major surviving Near-Eastern Christian gospel-translation traditions of late antiquity, each preserving the four gospels in their own Semitic-Christian-language framework with their own translational-theological choices. The two traditions emerged in the same broad late-antique window (4th–6th c. CE) in connected ecclesial networks (the Nine Saints tradition explicitly links Ethiopic Christianity to Syrian-monastic origins), and the two text-traditions are best studied as twin late-antique Eastern-Christian witnesses to the gospel-text.' },
+    { label: 'Diatessaron — the harmonised gospel-form that preceded both', textId: 'diatessaron-prologue',
+      note: 'The Diatessaron (Tatian, ~170 CE) was the operative Eastern-Christian gospel-form for two and a half centuries before the four-separate-gospels Peshitta and (in Ethiopia) the Garima codices established the canonical four-gospel format. The Garima Gospels with their Eusebian canon-tables represent the resolution of the harmonised-vs-separated question in favour of separation-with-cross-reference: each gospel preserved in its own integrity, but with a cross-reference apparatus that lets the reader see the parallels.' },
+    { label: 'Ethiopic Biblical Canon — the broader scriptural context', textId: 'ethiopic-canon-note',
+      note: 'The Garima Gospels are the New Testament fourfold-gospel core of the broader Ethiopic biblical canon — the same Ethiopian Christian textual tradition that preserves Jubilees, 1 Enoch, and the Sinodos as fully scriptural. The same Aksumite-Coptic late-antique cultural transmission that brought the broader Septuagintal-and-pseudepigraphal canon to Ethiopia also brought the four-gospel codex-tradition that the Garima manuscripts crystallise.' },
+    { label: 'Kebra Nagast — the national-theological narrative within which the Garima codices are read', textId: 'kebra-nagast',
+      note: 'The 14th-century Kebra Nagast provides the national-theological frame within which the Garima Gospels function as canonical-scriptural witness: the Ethiopic claim to be the new Israel, with Aksum as the new Jerusalem and the Ark of the Covenant preserved at the Church of Our Lady Mary of Zion. The Garima codices, as the oldest material Christian scriptural artifacts of the tradition, anchor this theological-historical claim in physically-preserved late-antique manuscript culture.' },
+  ],
+  sections: [
+    {
+      heading: 'I. The Opening of Mark — Geʿez Rendering of the Greek',
+      verses: [
+        {
+          ref: 'Garima Gospels, Mark 1:1–3 (Geʿez)',
+          text: 'The beginning of the Gospel of Jesus Christ, the Son of God. As it is written in the prophet Isaiah, "See, I am sending my messenger ahead of you, who will prepare your way; the voice of one crying out in the wilderness: \'Prepare the way of the Lord, make his paths straight.\'"',
+          textVersions: {
+            mckenzie: 'The beginning of the Gospel of Jesus Christ, the Son of God. As it is written in the prophet Isaiah, "Behold, I send my messenger before your face, who will prepare your way; the voice of one calling in the desert: \'Make ready the way of the Lord, straighten his paths.\'"',
+            geez:     'መጀመርያ ወንጌል ዘኢየሱስ ክርስቶስ ወልደ እግዚአብሔር። ከመ ይብል በሥርዐተ ኢሳይያስ ነቢይ ናሁ ይከውን አንተ ፊትከ ዘይዜንወ ብእሲየ መርዓዊከ። ቃል ዘመጽአ ላዕለ በምድረ ዐውድ ሰምዐነ ሥርዐተ እግዚአብሔር ሠራዕ ጎዳናተ ምድሩ።',
+            greek:    'Ἀρχὴ τοῦ εὐαγγελίου Ἰησοῦ Χριστοῦ υἱοῦ θεοῦ. Καθὼς γέγραπται ἐν τῷ Ἠσαΐᾳ τῷ προφήτῃ· ἰδοὺ ἀποστέλλω τὸν ἄγγελόν μου πρὸ προσώπου σου, ὃς κατασκευάσει τὴν ὁδόν σου. φωνὴ βοῶντος ἐν τῇ ἐρήμῳ· ἑτοιμάσατε τὴν ὁδὸν κυρίου, εὐθείας ποιεῖτε τὰς τρίβους αὐτοῦ.',
+          },
+          entities: [
+            { word: 'the Gospel of Jesus Christ', node: 'tradition-ethiopian-tewahedo', type: 'gospel-form',
+              note: 'ወንጌል — wängel, the Geʿez transliteration of Greek euangelion ("gospel / good news"). The Geʿez gospel-translation tradition preserves the Greek vocabulary terms in transliterated form throughout, marking the late-antique Mediterranean-to-Highland-Ethiopia transmission. The Garima codices document the operative form of this transliteration-and-translation process at the moment when Geʿez was crystallising as a Christian liturgical-scriptural language. Marilyn Heldman 1993 and Judith McKenzie 2016 treat the codices\' liturgical-textual function as the entry-point to understanding Aksumite-Christian visual-textual culture.',
+              parallels: [
+                { label: 'Peshitta John 1 — the parallel late-antique Semitic-Christian gospel translation', textId: 'peshitta-john-1',
+                  note: 'The Peshitta\'s Syriac and the Garima Gospels\' Geʿez are the two major surviving late-antique Eastern-Christian gospel-translation traditions, each crystallising at roughly the same window (4th–6th c. CE) in adjacent ecclesial networks. Reading the two together is the standard scholarly entry-point to the broader Eastern-Christian textual culture of late antiquity.' },
+                { label: 'Diatessaron — the harmonised form that preceded both translation traditions', textId: 'diatessaron-prologue',
+                  note: 'The Diatessaron\'s harmonised four-into-one form was the operative Eastern-Christian gospel-text until the 5th-century shift to separated four-gospel codices (Peshitta in Syriac, Garima in Geʿez). The Garima Gospels\' four-separate-gospels-with-Eusebian-canon-tables form represents the resolution of the harmony question in favour of separation-with-cross-reference.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'II. The Material Witness — Carbon-Dated 390–570 CE',
+      verses: [
+        {
+          ref: 'McKenzie & Watson 2016, summary of the Oxford Radiocarbon Accelerator Unit dating',
+          text: 'Garima 2 has been carbon-dated to 390–570 CE (at 95% confidence) with three independent parchment samples converging on the 5th-century mid-range. Garima 1 has been carbon-dated to 530–660 CE. The dating makes the Garima codices the oldest surviving illuminated Christian manuscripts of any tradition by a margin of 130–300 years over the next-oldest western competitors (the Lindisfarne Gospels, ~700 CE) and 200–400 years over the Book of Kells (~800 CE).',
+          textVersions: {
+            mckenzie: 'The Garima Gospels are the oldest surviving illuminated Christian Gospel books by a significant margin. The carbon-dating, performed with full methodological rigor on three independent samples, places Garima 2 firmly in the late-antique period (390–570 CE at 95% confidence) and Garima 1 just after (530–660 CE). The illumination program — full-page evangelist portraits, decorated Eusebian canon-tables, ornamented initials — is therefore not a derivative of the better-known western illumination traditions (Lindisfarne, Kells) but their early-antecedent in an unbroken Ethiopian-Christian tradition.',
+          },
+          entities: [
+            { word: 'the oldest surviving illuminated Christian manuscripts', node: 'abba-garima', type: 'material-witness',
+              note: 'The carbon-dating result reframes the global history of Christian book-art: the assumption (held by virtually all Western art-history textbooks before 2010) that Christian illumination begins with the Insular tradition (Lindisfarne Gospels c. 700, Book of Kells c. 800) is wrong by 200–400 years. The Garima codices document a continuous Ethiopian-Christian illumination tradition that predates the Insular and Carolingian programs and that operated in an unbroken line at the Abba Garima Monastery from late antiquity to the present. The implication for Codex Atlas is significant: the Ethiopic-Christian tradition, often peripheral in Western Christian-history textbooks, is in fact a primary preserver of the late-antique Mediterranean Christian visual-textual heritage in a form continuous with its 4th–6th c. origins.',
+              parallels: [
+                { label: 'Ethiopic Biblical Canon — the broader textual tradition the Garima codices anchor', textId: 'ethiopic-canon-note',
+                  note: 'The Garima Gospels are the New Testament fourfold-gospel-core of the broader Ethiopic biblical canon, which preserves Jubilees, 1 Enoch, the Sinodos, and other late-antique Jewish-Christian textual traditions that other Christian traditions later dropped. The Garima codices anchor that broader textual preservation in materially-dated manuscript culture.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+// ── MAṢḤAFA HENOK — THE GEʿEZ 1 ENOCH (THE ONLY COMPLETE EXTANT) ─────────────
+SCRIPTURE_TEXTS['mashafa-henok-1'] = {
+  id:         'mashafa-henok-1',
+  title:      'Maṣḥafa Henok 1 — The Geʿez 1 Enoch, Watchers Narrative and Jude\'s Cited Verse',
+  shortTitle: 'Maṣḥafa Henok (1 Enoch)',
+  corpus:     'Maṣḥafa Henok · መጽሐፈ ሄኖክ ("The Book of Enoch") · the Ethiopic 1 Enoch (108 chapters, five sub-books)',
+  tradId:     'tradition-ethiopian-tewahedo',
+  date:       '~3rd c. BCE – 1st c. BCE (composition of the Aramaic original layers, attested at Qumran); ~4th–6th c. CE (translation into Geʿez at Aksumite Christianisation); preserved continuously in Ethiopian liturgical use to the present',
+  docNode:    'phase-4-081-mashafa-henok-geez-1-enoch',
+  language:   'Classical Geʿez (the only complete extant version) · Aramaic (Qumran fragments only) · Greek (partial fragments) · NRSV 1989 OT Pseudepigrapha translation (Charlesworth ed.)',
+  translations: [
+    { id: 'knibb',     label: 'Michael A. Knibb 1978 (The Ethiopic Book of Enoch)', note: 'Knibb\'s critical-edition translation from the Geʿez (with Aramaic Qumran fragments collated where extant) is the modern Anglophone scholarly standard for 1 Enoch as preserved in Ethiopian tradition.' },
+    { id: 'nickelsburg', label: 'George W. E. Nickelsburg & James VanderKam 2012 (Hermeneia)', note: 'Nickelsburg-VanderKam\'s two-volume Hermeneia commentary is the modern critical-edition reference for the full 1 Enoch corpus, with detailed analysis of the five sub-books\' compositional layers and the Aramaic / Greek / Geʿez transmission history.' },
+    { id: 'geez',      label: 'Classical Geʿez (the Ethiopic manuscripts, the only complete witness)' },
+  ],
+  intro: 'Maṣḥafa Henok ("The Book of Enoch") is the Ethiopic-Geʿez recension of the apocalyptic-cosmological compendium that scholarship calls 1 Enoch — a 108-chapter work composed of five distinct sub-books (the Book of the Watchers, chs. 1–36; the Book of the Parables, chs. 37–71; the Astronomical Book, chs. 72–82; the Book of Dream Visions, chs. 83–90; the Epistle of Enoch, chs. 91–108) representing roughly four centuries of compositional history from the 3rd century BCE to the 1st century CE. The book is the most important Second Temple Jewish pseudepigraphal text alongside Jubilees, and the only complete extant version is in Geʿez — the Aramaic Qumran fragments (11 manuscripts at Cave 4, with smaller witnesses at Caves 1 and 4) preserve substantial parts of four of the five sub-books (notably absent: the Parables) but are far from complete; the Greek fragments (Codex Panopolitanus, Chester Beatty papyrus, citations preserved in Syncellus and a few patristic writers) preserve perhaps a third of the whole; only the Ethiopic Geʿez preserves the complete continuous text. The book was canonically read in Ethiopia continuously from Aksumite times to the present; Greek and Latin Christianities lost the text after the 5th century, and it was rediscovered by James Bruce in 1773 and reintroduced to Western scholarship through Richard Laurence\'s 1821 publication and August Dillmann\'s 1851 critical edition. The book\'s influence on first-century Christianity is significant: the New Testament Letter of Jude (vv. 14–15) directly cites 1 Enoch 1:9 as authoritative scripture, attributing the cited words to "Enoch, the seventh from Adam." The Enochic apocalyptic-cosmological vocabulary — the Watchers, the Nephilim, the Son of Man, the eschatological judgment — is the immediate substrate of New Testament apocalyptic literature.',
+  crossTradition: [
+    { label: 'Jude 14–15 — the New Testament citation of 1 Enoch as authoritative scripture', textId: 'hebrews-11',
+      note: 'Jude 14–15 directly quotes 1 Enoch 1:9 ("Behold, the Lord came with his holy myriads to execute judgment on all") and attributes it to "Enoch, the seventh from Adam." The citation is significant for canonical history: an Enochic text that the later Christian canon excluded was, at the moment of Jude\'s composition (probably late 1st c. CE), treated as authoritative scripture by at least one New Testament author. The canonical-history implications are debated — Jude\'s citation is one of the factors that kept 1 Enoch in the Ethiopic canon, and the only reason the New Testament Letter of Jude itself was contested by some early-Christian writers (e.g., Eusebius) was Jude\'s use of "apocryphal" sources including 1 Enoch.' },
+    { label: 'Watchers and Fallen Angels — the Ethiopic-preserved narrative that shapes Western religious imagination', textId: 'genesis-1',
+      note: 'The Watchers narrative of 1 Enoch 6–11 (200 angels descend at Mount Hermon, take human women as wives, beget the Nephilim giants, and teach humanity forbidden arts) is the expansion of the cryptic Genesis 6:1–4 passage about the "sons of God" and the "daughters of men." Through 1 Enoch (preserved continuously only in Ethiopic) the Watchers narrative becomes the operative form of the Western religious imagination of fallen-angel mythology — a textual lineage that runs from 1 Enoch through Christian apocalyptic literature, medieval demonology, and ultimately into Milton\'s Paradise Lost and the modern religious-cultural imagination of fallen angels and divine-judgment-of-creation.' },
+    { label: 'Jubilees — the canonical-twin in the Ethiopic broader canon', textId: 'book-of-jubilees',
+      note: 'Jubilees and 1 Enoch are the two great Second Temple Jewish pseudepigraphal works that the Ethiopic canon preserves as fully scriptural where every other Christian tradition relegated them to non-canonical status. The two texts share a calendar-system (the 364-day solar calendar), an angelology (the named angels Michael, Gabriel, Phanuel, Saraqael), and a chronological-cosmological frame. They are reciprocally canonical in Ethiopia in a way they are in no other Christian tradition.' },
+    { label: 'Daniel 7 — the parallel Son-of-Man apocalyptic vocabulary', textId: 'daniel-7',
+      note: 'The Book of the Parables (1 Enoch 37–71) develops the Son-of-Man figure as an eschatological-judging hypostatised mediator in close parallel to Daniel 7\'s Son-of-Man vision. The two texts together form the immediate Jewish-apocalyptic Son-of-Man matrix from which the New Testament Son-of-Man Christology emerges. Reading the Parables and Daniel 7 together is the standard scholarly entry-point to first-century Jewish apocalyptic eschatology.' },
+  ],
+  sections: [
+    {
+      heading: 'I. The Verse Jude Cites — 1 Enoch 1:9',
+      verses: [
+        {
+          ref: '1 Enoch 1:9 (the Jude-cited verse)',
+          text: 'Behold, the Lord came with his holy myriads, to execute judgment on all, and to convict all the ungodly of all the ungodly deeds that they have done in an ungodly way, and of all the harsh words that ungodly sinners have spoken against him.',
+          textVersions: {
+            knibb:        'And behold, he comes with myriads of his holy ones, to execute judgment on all, and to destroy all the wicked, and to convict all flesh of all the works of their ungodliness which they have wickedly committed, and of all the harsh things that ungodly sinners have spoken against him.',
+            nickelsburg:  'Behold, the Lord comes with the ten thousands of his holy ones, to execute judgment on them, and to destroy the wicked, and to contend with all flesh concerning everything that the sinners and the wicked have done and wrought against him.',
+            geez:         'ናሁ መጽአ እግዚእ ምስለ አእላፊሁ ቅዱሳነ ይገብር ኩነኔ ላዕለ ኩሉ ወያጥፍዕ ኩሎሙ ረሲዓነ ወይዘልፍ ኩሎ ዘሥጋ በእንተ ኩሉ ምግባራቶሙ እኩያን ዘገብሩ ረሲዓናት።',
+          },
+          entities: [
+            { word: 'Behold, the Lord came with his holy myriads', node: 'enoch', type: 'eschatological-vocabulary',
+              note: 'The verse Jude 14–15 cites as authoritative scripture is the opening apocalyptic-judgment proclamation of 1 Enoch — the eschatological theophany that frames the entire book\'s claim to authority. The "myriads of holy ones" (the angelic host) is standard Jewish-apocalyptic vocabulary that recurs throughout 1 Enoch (1:9, 14:22, 60:1, 71:8) and through 1 Enoch enters the New Testament: Matthew 16:27, 25:31, 2 Thessalonians 1:7, Jude 14, and Revelation\'s opening theophany all deploy the same myriads-of-holy-ones vocabulary. The textual lineage runs Aramaic 1 Enoch → Greek 1 Enoch → New Testament authors → Christian apocalyptic tradition. The Ethiopic preservation of the complete 1 Enoch is what allowed this textual genealogy to be reconstructed in modern scholarship after the Aramaic and Greek versions were lost.',
+              parallels: [
+                { label: 'Jude 14–15 — the direct New Testament citation', textId: 'hebrews-11',
+                  note: 'Jude 14–15: "It was also about these that Enoch, in the seventh generation from Adam, prophesied, saying, \'See, the Lord is coming with ten thousands of his holy ones, to execute judgment on all, and to convict everyone of all the deeds of ungodliness that they have committed in such an ungodly way, and of all the harsh things that ungodly sinners have spoken against him.\'" The citation is one of the clearest cases in the New Testament of a non-canonical (in the later Western reckoning) Jewish text being cited as authoritative scripture. The canonical-history irony is that Jude\'s citation became one of the reasons Jude itself was contested in some early-Christian canonical lists.' },
+                { label: 'Matthew 25 — the Son-of-Man judgment scene drawing on the Enochic vocabulary', textId: 'matthew-25',
+                  note: 'Matthew 25:31\'s "when the Son of Man comes in his glory, and all the angels with him, then he will sit on the throne of his glory" deploys the same myriads-of-holy-ones-with-the-Son-of-Man eschatological-judgment scene that 1 Enoch articulates throughout the Parables. The vocabulary lineage is direct: 1 Enoch (in its Aramaic / Greek original layers) → New Testament Synoptic apocalyptic-judgment scenes.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'II. The Watchers Narrative — 1 Enoch 6:1–8 (the descent at Mount Hermon)',
+      verses: [
+        {
+          ref: '1 Enoch 6:1–6 (the opening of the Book of the Watchers)',
+          text: 'And it came to pass, when the sons of men had multiplied, that in those days there were born to them beautiful and comely daughters. And the angels, the sons of heaven, saw and lusted after them, and said to one another, "Come, let us choose for ourselves wives from the children of men, and let us beget for ourselves children." And Semyaza, who was their leader, said to them, "I fear that perhaps you will not consent to do this deed, and I alone shall pay the penalty of a great sin." And they all answered him and said, "Let us all swear an oath, and bind ourselves all by mutual curses, not to abandon this plan but to do this deed." Then they all swore together and bound one another by curses; and they were two hundred, and they came down on Mount Hermon, in the days of Jared.',
+          textVersions: {
+            knibb: 'And it came to pass, when the children of men had multiplied, in those days there were born to them beautiful and comely daughters. And the watchers, the sons of heaven, saw them and desired them; and they said one to another: "Come, let us choose for ourselves wives from among the daughters of men, and let us beget us children." But Semyaza, who was their chief, said to them: "I fear that perhaps you will not consent to do this deed, and I alone shall have to pay the penalty of a great sin." And they all answered him and said: "Let us all swear an oath, and let us all bind one another by curses, not to abandon this plan." And they all swore together and bound one another by curses; and they were in all two hundred, and they descended in the days of Jared on the summit of Mount Hermon.',
+          },
+          entities: [
+            { word: 'two hundred, and they came down on Mount Hermon', node: 'watchers-and-fallen-angels', type: 'mythic-narrative',
+              note: 'The Watchers narrative of 1 Enoch 6–11 is the expansion of the cryptic three-verse Genesis 6:1–4 passage about the "sons of God" coming to the "daughters of men." The Enochic expansion names 200 angelic figures (Semyaza, Azazel, Armaros, Baraqel, and the rest, with twenty named in the Aramaic Qumran fragments), localises the descent at Mount Hermon (the same site that Caesarea Philippi is built at, where Peter\'s confession of Jesus as the Christ later takes place in Matthew 16), and assigns each Watcher a specific forbidden art he teaches humanity (metallurgy, astrology, divination, cosmetic adornment, war-craft). The resulting Nephilim giants are the proximate cause of the Genesis flood narrative in the Enochic reading. The narrative\'s influence on Western religious imagination of fallen-angel mythology runs unbroken from 1 Enoch through Christian apocalyptic literature, medieval demonology, Milton\'s Paradise Lost, and the modern cultural imagination. The Ethiopic preservation of the complete 1 Enoch is what kept the full Watchers narrative continuously available in the Eastern Christian tradition while the Latin and Greek Christianities largely lost it after the 5th century.',
+              parallels: [
+                { label: 'Genesis 6:1–4 — the cryptic Hebrew Bible kernel that 1 Enoch expands', textId: 'genesis-1',
+                  note: 'Genesis 6:1–4 ("When people began to multiply on the face of the ground, and daughters were born to them, the sons of God saw that they were fair; and they took wives for themselves of all that they chose... The Nephilim were on the earth in those days") is the three-verse Hebrew Bible kernel that 1 Enoch 6–11 expands into a full mythological narrative. The relationship between the kernel and the expansion is one of the central topics of Second Temple-period intertextual study.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+// ── 1QS — THE QUMRAN COMMUNITY RULE (DEAD SEA SCROLLS) ───────────────────────
+SCRIPTURE_TEXTS['1qs-community-rule'] = {
+  id:         '1qs-community-rule',
+  title:      '1QS — The Community Rule and the Two-Spirits Doctrine',
+  shortTitle: '1QS Community Rule',
+  corpus:     'Dead Sea Scrolls · Serekh ha-Yaḥad (סרך היחד) — the constitution of the Qumran community',
+  tradId:     'tradition-essenes',
+  date:       '~150–100 BCE (compositional layers) · 1QS scroll itself copied ~100–75 BCE (the manuscript from Cave 1 of Qumran)',
+  docNode:    'phase-3-011-dead-sea-scrolls',
+  language:   'Late Biblical / Qumran Hebrew (original) · García Martínez & Tigchelaar 1997 English (DSS Study Edition)',
+  translations: [
+    { id: 'gm-tig',     label: 'Florentino García Martínez & Eibert Tigchelaar 1997 (The Dead Sea Scrolls Study Edition)', note: 'The two-volume DSS Study Edition is the canonical Anglophone scholarly text — Hebrew/Aramaic with facing English translation for the complete non-biblical DSS corpus. The 1QS edition includes the full text plus the parallel 4Q255–264 fragments.' },
+    { id: 'wise',       label: 'Michael Wise / Martin Abegg / Edward Cook 1996 (The Dead Sea Scrolls: A New Translation)', note: 'The accessible Anglophone English-only translation, useful as a complement to the García Martínez–Tigchelaar critical edition.' },
+    { id: 'hebrew',     label: 'Qumran Hebrew (1QS, Cave 1 manuscript)' },
+  ],
+  intro: '1QS, the Serekh ha-Yaḥad or "Rule of the Community," is the constitutional-foundational document of the Qumran community — the Jewish sectarian-monastic group that withdrew from the Jerusalem temple-establishment in the mid-2nd century BCE and lived in the desert settlement at Khirbet Qumran on the northwest shore of the Dead Sea until the Roman destruction of the settlement during the First Jewish Revolt in 68 CE. 1QS is the longest non-biblical Qumran text and the single most important document for understanding the community\'s self-conception: its admission procedure, its hierarchical structure, its property-sharing economy, its annual covenant-renewal ceremony, and — most theologically consequential — its dualistic Two Spirits doctrine (1QS III:13–IV:26), which divides all humanity into two cosmic camps led respectively by the Prince of Light and the Angel of Darkness. The Two Spirits passage is one of the most-cited Qumran texts in the broader history of religious thought: it provides the most explicit articulation of cosmological dualism in any Jewish text of the Second Temple period, and it has been a major focal point in scholarship\'s investigation of the relationship between Jewish apocalyptic dualism, Iranian-Zoroastrian dualistic theology (the Gathic two-spirits doctrine of Yasna 30), and the dualistic vocabulary that emerges in early Christianity (the Pauline flesh/spirit dichotomy, the Johannine light/darkness imagery, the Synoptic kingdom-of-God / kingdom-of-Satan opposition). The community\'s identity has been debated (Essenes per the majority view going back to Eleazar Sukenik and Solomon Schechter; Sadducean dissidents per a smaller minority position) but the community\'s textual production remains the single greatest archaeological-textual discovery in 20th-century biblical studies. Geza Vermes, Lawrence Schiffman, Eyal Regev, John Collins, and Florentino García Martínez are the modern standard authorities.',
+  crossTradition: [
+    { label: 'Yasna 30 — the Zoroastrian Gathic Two-Spirits doctrine (the proposed substrate)', textId: 'yasna-30',
+      note: 'Yasna 30 of the Gathas (composed in Old Avestan, attributed to Zarathustra himself, with a contested dating in the range of ~1500–1000 BCE) is the foundational Zoroastrian articulation of cosmological dualism — two primordial spirits (Spenta Mainyu and Angra Mainyu), one choosing truth and life, the other choosing the lie and death. The structural similarity to 1QS\'s Two Spirits doctrine is striking: both passages present a cosmological-ethical dualism in which the two spirits coexist from the beginning and humanity must choose between them. Scholars (Mary Boyce 1975, John Collins 1995, James VanderKam 1994) debate whether the Qumran Two-Spirits doctrine is directly influenced by Iranian-Zoroastrian theology via Persian-period Jewish intermediaries, parallel-but-independent, or some combination — but the structural-theological resemblance is real and well-attested.' },
+    { label: '1 Enoch — the broader Second Temple apocalyptic-dualistic background', textId: 'book-of-enoch',
+      note: 'The Qumran community preserved 1 Enoch (Aramaic fragments at Cave 4) as authoritative scripture, and the broader Enochic apocalyptic-dualistic vocabulary (the Watchers narrative, the Son of Man, the eschatological judgment) is the immediate Jewish textual background for 1QS\'s dualistic Two-Spirits doctrine. The two texts together (1 Enoch and 1QS) document the most explicit articulation of dualistic-apocalyptic theology in Second Temple Judaism.' },
+    { label: 'Romans 8 — Paul\'s flesh/spirit dichotomy in the same dualistic matrix', textId: 'romans-8',
+      note: 'Paul\'s flesh-versus-spirit (sarx / pneuma) dichotomy in Romans 8 operates in the same cosmological-ethical dualistic vocabulary that 1QS\'s Two-Spirits doctrine articulates. The parallel was first noted in the 1950s by Karl Kuhn and Krister Stendahl and has been a major focal point of Paul-and-Qumran scholarship ever since. The textual relationship is unlikely to be direct (Paul probably did not read 1QS) but is best understood as drawing on a shared Second Temple Jewish theological vocabulary that 1QS articulates in its purest form.' },
+    { label: 'Gospel of John — the Johannine light/darkness vocabulary in the same matrix', textId: 'john-1',
+      note: 'The Johannine prologue\'s "the light shines in the darkness, and the darkness has not overcome it" (John 1:5) and the broader Johannine light-versus-darkness vocabulary operate in the same dualistic-theological matrix as 1QS\'s Prince-of-Light / Angel-of-Darkness opposition. The structural parallel led James H. Charlesworth in the 1970s to propose that the Johannine community drew directly on Qumran-style dualistic vocabulary; the proposal remains debated but the parallels are sufficiently strong that John-and-Qumran studies remain a permanent feature of Johannine scholarship.' },
+  ],
+  sections: [
+    {
+      heading: 'I. The Two Spirits — Cosmological Dualism',
+      verses: [
+        {
+          ref: '1QS III:13–18',
+          text: 'For the Maskil, to instruct and teach all the sons of light about the history of all the sons of man, concerning all the kinds of their spirits with their distinctive characteristics for their works in their generations, and concerning the visitation of their punishments together with the times of their reward. From the God of knowledge stems all there is and all there shall be. Before they existed he established their entire design. And when they have come into being, at their appointed time, they will execute all their works according to his glorious design, without altering anything. In his hand are the laws of all things, and he supports them in all their needs. He created the human to rule the world and placed within him two spirits so that he would walk with them until the moment of his visitation: they are the spirits of truth and of deceit.',
+          textVersions: {
+            'gm-tig':  'For the Maskil, to instruct and teach all the sons of light about the history of all the sons of man, concerning all the kinds of their spirits with their distinctive characteristics, concerning their works in their generations, and concerning the visitation of their punishments together with the times of their reward. From the God of knowledge stems all there is and all there shall be. Before they existed he established their entire design. And when they have come into being, at their appointed time, they will execute all their works according to his glorious design, without altering anything. In his hand are the laws of all things, and he supports them in all their needs. He created man to rule the world and placed within him two spirits, so that he would walk with them until the moment of his visitation: they are the spirits of truth and of deceit.',
+            hebrew:   'למשכיל להבין וללמד את כל בני אור בתולדות כל בני איש לכל מיני רוחותם באותותם למעשיהם בדורותם ולפקדת נגיעיהם עם קצי שלומם מאל הדעות כל הויה ונהיה ולפני היותם הכין כל מחשבתם ובהיותם לתעודתם כמחשבת כבודו ימלאו פעולתם ואין להשנות בידו משפטי כל והוא יכלכלם בכל חפציהם.',
+          },
+          entities: [
+            { word: 'two spirits so that he would walk with them', node: 'two-spirits-doctrine', type: 'doctrine',
+              note: 'שתי רוחות — shtē rûḥôt, "two spirits." The Two-Spirits passage of 1QS III:13–IV:26 is one of the most carefully-articulated cosmological-ethical dualisms in any Jewish text of the Second Temple period. The two spirits are presented as created by God at the beginning of creation, established to compete for influence over every human person, and destined for a final cosmic judgment in which the Spirit of Truth will prevail and the Spirit of Deceit will be eliminated. The structural elements — primordial creation, ethical dualism, cosmic eschatology, individual psychological-moral application — appear together in this passage in a way they do not appear together in any other Second Temple Jewish text. The structural-theological resemblance to Zarathustra\'s Two-Spirits doctrine in Yasna 30 (Spenta Mainyu and Angra Mainyu choosing between truth and the lie) is striking enough that virtually all 1QS scholarship engages the question of possible Iranian-Zoroastrian influence on Qumran dualistic theology.',
+              parallels: [
+                { label: 'Yasna 30 — the Zoroastrian Gathic Two-Spirits articulation', textId: 'yasna-30',
+                  note: 'Yasna 30:3–5 of the Gathas ("Yes, there are two fundamental spirits, twins which are renowned to be in conflict. In thought and in word, in action, they are two: the good and the bad") is the structural-theological parallel for 1QS\'s Two-Spirits doctrine. The relationship — direct influence, parallel development, or shared Iranian-period substrate — is one of the central questions of Qumran-Iranian comparative religion. Mary Boyce 1982 and John Collins 1995 argue for substantial Iranian influence; David Winston and James VanderKam are more cautious. The structural similarity is undeniable.' },
+                { label: 'Romans 8 — Paul\'s flesh/spirit dichotomy in the same matrix', textId: 'romans-8',
+                  note: 'Paul\'s flesh-versus-spirit dichotomy in Romans 8 (and Galatians 5\'s "the desires of the flesh are against the spirit, and the desires of the spirit are against the flesh") operates in the same dualistic-ethical vocabulary that 1QS articulates. The Pauline reuse of the Qumran-style dualism is one of the clearest cases of Second Temple Jewish theological vocabulary being absorbed and re-deployed in early Christian theology.' },
+                { label: 'Gospel of John — the light-versus-darkness vocabulary', textId: 'john-1',
+                  note: 'The Johannine prologue\'s "the light shines in the darkness" and the broader Johannine dualistic vocabulary draw directly on the same Qumran-style Two-Spirits theological matrix. Charlesworth\'s John and Qumran (1972) is the classic treatment of the parallel; the proposal of direct Qumran-influence on the Johannine community remains debated but the textual-theological resonance is strong.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'II. The Eschatological Resolution',
+      verses: [
+        {
+          ref: '1QS IV:18–23',
+          text: 'But God, in his mysteries of understanding and in his glorious wisdom, has appointed an end to the existence of injustice and on the moment of visitation he will obliterate it for ever. Then truth shall arise in the world for ever, for it has been defiled in paths of wickedness during the empire of injustice until the moment of the appointed judgment. Then God will refine, with his truth, all the deeds of a person, and will purify for himself the human design, ripping out all the spirit of injustice from the innermost part of his flesh, and cleansing him with the spirit of holiness from every irreverent deed.',
+          textVersions: {
+            'gm-tig': 'But God, in his mysteries of understanding and in his glorious wisdom, has appointed an end to the existence of injustice, and at the appointed time of visitation he will obliterate it for ever. Then truth shall arise in the world for ever, for it has been defiled in paths of wickedness during the empire of injustice until the moment of the appointed judgment. Then God will refine, with his truth, all the deeds of a person, and purify for himself the human design, ripping out all spirit of injustice from the innermost part of his flesh, and cleansing him with the spirit of holiness from every wicked deed.',
+          },
+          entities: [
+            { word: 'God will refine, with his truth, all the deeds of a person', node: 'tradition-essenes', type: 'eschatology',
+              note: 'The eschatological resolution of the Two-Spirits dualism — God\'s final purification of human nature by the Spirit of Truth — is one of the most theologically-consequential moves in the Qumran corpus. The passage envisions a final-judgment moment in which the dualistic structure of created human nature is itself resolved: the Spirit of Injustice is removed from the innermost being of those who will be saved, and the Spirit of Holiness fills the cleansed person entirely. The vocabulary is significant: this is not just an ethical-moral cleansing but an ontological transformation of human nature itself. The structural-theological resemblance to early-Christian articulations of the eschatological transformation of human nature (Paul\'s "we shall all be changed" in 1 Cor 15, the Petrine "partakers of the divine nature" in 2 Pet 1:4) is the basis for the broader scholarly engagement with Paul-and-Qumran and John-and-Qumran questions.',
+              parallels: [
+                { label: '1 Corinthians 15 — Paul\'s eschatological transformation vocabulary', textId: '1-corinthians-15',
+                  note: 'Paul\'s 1 Corinthians 15 articulation of eschatological transformation ("we shall all be changed... this perishable body must put on imperishability") operates in the same vocabulary of final ontological-human transformation that 1QS IV:20–22 articulates. The two texts together provide some of the clearest evidence for a shared Second Temple Jewish theological vocabulary of eschatological-human-nature-transformation that early Christianity inherits and adapts.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
 
