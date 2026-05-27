@@ -22,8 +22,11 @@
   //   nodeType — `n.type` value(s) this mode renders; null for
   //              non-type predicates (handled in filterNodesByMode)
   const MODES = Object.freeze([
-    // Original 16-lens modes (pre-2026-05-18).
+    // Original 16-lens modes (pre-2026-05-18). 2026-05-28: Codex
+    // promoted to position 2 (right after Deities) per John —
+    // it's the second-most-used class now.
     { value: 'deities',     label: 'Deities',     glyph: '◉',  nodeType: 'deity' },
+    { value: 'scriptures',  label: 'Codex',       glyph: '✶',  nodeType: 'document' },
     { value: 'authors',     label: 'Authors',     glyph: '✎',  nodeType: 'person' },
     { value: 'documents',   label: 'Documents',   glyph: '❡',  nodeType: 'document' },
     { value: 'symbols',     label: 'Symbols',     glyph: '✦',  nodeType: 'symbol' },
@@ -57,12 +60,10 @@
     { value: 'attire',              label: 'Attire',              glyph: '⌘', nodeType: 'attire' },
     { value: 'exchange-networks',   label: 'Exchange networks',   glyph: '⇄', nodeType: 'exchange-network' },
     { value: 'technology',          label: 'Technology',          glyph: '⚙', nodeType: 'technology' },
-    // Scriptures lens added 2026-05-28 (scripture-mode carve, step 1).
-    // Sub-filter of the documents lens: 109 hand-curated sacred-text
-    // nodes (see AUDIT/2026-05-28-scripture-ids-enumeration.md). Uses
-    // its own predicate via SCRIPTURE_IDS below — does NOT match a
-    // unique `node.type` (every scripture is `type: "document"`).
-    { value: 'scriptures',          label: 'Codex',               glyph: '✶', nodeType: 'document' },
+    // Scriptures (labeled "Codex") was MOVED to position 2 (right
+    // after Deities) on 2026-05-28. See entry above. Its enumeration
+    // audit is at AUDIT/2026-05-28-scripture-ids-enumeration.md and
+    // its SCRIPTURE_IDS set is defined below.
     // Figures lens added 2026-05-28 — historical religious / political
     // leaders (popes, pharaohs, prophets, founders, caliphs, kings,
     // rabbis, gurus, imams, etc.). Sub-filter of the persons lens:
