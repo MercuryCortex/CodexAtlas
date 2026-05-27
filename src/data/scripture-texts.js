@@ -14680,4 +14680,360 @@ SCRIPTURE_TEXTS['1qs-community-rule'] = {
   ]
 };
 
+// ── AMARNA LETTERS — DIPLOMATIC ARCHIVE FROM AKHENATEN'S COURT ───────────────
+SCRIPTURE_TEXTS['amarna-letters-EA35'] = {
+  id:         'amarna-letters-EA35',
+  title:      'The Amarna Letters — Royal Diplomatic Archive (Akhetaten, ~1360–1330 BCE)',
+  shortTitle: 'Amarna Letters',
+  corpus:     'Egyptian sacred-textual tradition · royal-diplomatic archive in Akkadian cuneiform',
+  tradId:     'tradition-egyptian-religion',
+  date:       '~1360–1330 BCE (the reigns of Amenhotep III, Akhenaten / Amenhotep IV, and the immediate post-Amarna succession)',
+  docNode:    'phase-1-012-amarna-letters',
+  language:   'Akkadian (peripheral / mid-second-millennium scribal dialect — the international diplomatic lingua franca of the Late Bronze Age) · William L. Moran 1992 English (the canonical scholarly edition)',
+  translations: [
+    { id: 'moran',    label: 'William L. Moran 1992 (Johns Hopkins · The Amarna Letters)', note: 'Moran\'s critical-edition translation is the standard Anglophone scholarly text. Every Amarna citation in subsequent scholarship uses Moran\'s numbering and translation as reference.' },
+    { id: 'akkadian', label: 'Akkadian (Knudtzon 1915 + the Rainey 2015 critical-edition cuneiform text)' },
+  ],
+  intro: 'The Amarna Letters are the surviving royal-diplomatic correspondence archive of the Egyptian court at Akhetaten — the new capital city Akhenaten founded at modern Tell el-Amarna around 1346 BCE — discovered by an Egyptian peasant in 1887 and now distributed across the British Museum, the Vorderasiatisches Museum Berlin, the Cairo Egyptian Museum, and a handful of smaller collections. The 382 surviving tablets, written in Akkadian cuneiform (the international diplomatic lingua franca of the Late Bronze Age, used between courts that did not share a native language), document roughly thirty years of Egyptian diplomatic correspondence with the other Great Powers of the period — Babylonia, Assyria, Mittani, Hatti, Arzawa, Alashiya (Cyprus) — and with the Egyptian-vassal city-states of Canaan and the Levant (Jerusalem, Megiddo, Shechem, Byblos, Tyre, Sidon, Damascus, Ugarit, Qadesh). The archive is one of the most important single discoveries in the history of ancient Near Eastern studies, because it documents the first known sustained international diplomatic system — a "club of Great Powers" exchanging gifts, brides, military aid, and formal recognition through a shared protocol of brotherhood (aḫḫūtu in Akkadian). The letters also provide the documentary background for the Egyptian-Canaanite political situation in the generation immediately before the period in which the biblical Exodus narrative is traditionally set, and they preserve the earliest known reference to the ʿApiru — a sociologically-marginal population of displaced peoples whose name many scholars (with varying degrees of confidence) link to the eventual Hebrew ethnonym. Norman Yoffee, Marc Van De Mieroop, Mario Liverani, and Nadav Naʾaman have all done significant subsequent work on the Amarna system; Moran 1992 remains the foundational reference.',
+  crossTradition: [
+    { label: 'Great Hymn to Aten — the contemporary theological-cosmological document of the Amarna court', textId: 'hymn-to-aten',
+      note: 'The Great Hymn to Aten (composed at Akhetaten ~1350 BCE, the same generation as the bulk of the Amarna correspondence) is the theological-cosmological text of the Amarna court; the Amarna Letters are the political-diplomatic archive of the same court. The two corpora are direct contemporaries, produced by the same court, in the same city, under the same king. Reading them together gives the fullest available picture of the short-lived Amarna religious-political experiment.' },
+      { label: 'Exodus 3 — the Egyptian-Canaanite political background of the biblical Exodus tradition', textId: 'exodus-3',
+        note: 'The Amarna Letters document the Egyptian-Canaanite vassal-state system that is the political background against which the biblical Exodus tradition is traditionally set. The letters\' references to the ʿApiru — displaced peoples carrying out raids in the Canaanite countryside — are read by many scholars (with appropriate scholarly caution) as preserving the sociological context from which the eventual Hebrew ethnonym derives. The historical relationship between the ʿApiru of the Amarna correspondence and the biblical Hebrews is one of the most debated questions in ancient Near Eastern history.' },
+      { label: 'Memphite Theology — the Egyptian theological tradition the Amarna court briefly displaced', textId: 'memphite-theology',
+        note: 'The Memphite Theology (the Shabaka Stone, preserving a much-older theological-cosmological tradition centered on Ptah of Memphis) represents the priestly-theological mainstream that the Amarna religious experiment under Akhenaten temporarily set aside in favor of the Aten cult. After Akhenaten\'s death and the abandonment of Akhetaten under Tutankhamun, the Memphite and Theban priestly traditions reasserted themselves and explicitly damned the Amarna period as heretical.' },
+  ],
+  sections: [
+    {
+      heading: 'I. The Letter from the King of Alashiya (Cyprus) — EA 35',
+      verses: [
+        {
+          ref: 'EA 35 ll. 1–9 (Moran trans.)',
+          text: 'Say to the king of Egypt, my brother: Thus the king of Alashiya, your brother. For me all goes well. For my houses, my wife, my sons, my magnates, my horses, my chariots, and in my land, all goes very well. For my brother may all go well. For your houses, your wives, your sons, your magnates, your horses, your chariots, and in your land, may all go very well.',
+          textVersions: {
+            moran:    'Say to the king of Egypt, my brother: Thus the king of Alashiya, your brother. For me all goes well. For my houses, my wife, my sons, my magnates, my horses, my chariots, and in my land, all goes very well. For my brother may all go well. For your houses, your wives, your sons, your magnates, your horses, your chariots, and in your land, may all go very well.',
+            akkadian: 'a-na LUGAL KUR Mi-iṣ-ri ŠEŠ-ya qí-bí-ma um-ma LUGAL KUR A-la-ši-ya ŠEŠ-ka-ma a-na ya-a-ši šul-mu a-na É-ya DAM-ya DUMU.MEŠ-ya LÚ.MEŠ GAL-ya ANŠE.KUR.RA.MEŠ-ya GIŠ.GIGIR.MEŠ-ya ù i-na ŠÀ KUR-ya dan-niš lu-ú šul-mu.',
+          },
+          entities: [
+            { word: 'my brother', node: 'tradition-egyptian-religion', type: 'diplomatic-protocol',
+              note: 'aḫūya ("my brother," Akkadian) is the central formal title of the Amarna diplomatic system — the term of address that established formal-equality between Great Kings (the kings of Egypt, Babylonia, Hatti, Mittani, and Alashiya / Cyprus). The "brotherhood" (aḫḫūtu) protocol structured every aspect of inter-court correspondence: gift-exchange, dynastic marriages, military assistance, formal recognition of legitimacy. Mario Liverani 1990 (Prestige and Interest) treats the brotherhood-protocol as the central organising fiction of the Late Bronze Age international system — a deliberate diplomatic-rhetorical construction that permitted otherwise-incompatible kings to negotiate as formal equals.',
+              parallels: [
+                { label: 'Hymn to Aten — the cosmopolitan-religious vocabulary of Akhenaten\'s court', textId: 'hymn-to-aten',
+                  note: 'The cosmopolitan-religious vocabulary of the Hymn to Aten ("you set every man in his place / you supply their daily needs / every one has his food / and the duration of his life is counted") parallels the cosmopolitan-diplomatic vocabulary of the Amarna Letters: both texts inhabit the same Akhenaten-court cosmopolitan worldview, with one in theological register and the other in political register.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'II. The ʿApiru in the Canaanite Countryside — EA 286',
+      verses: [
+        {
+          ref: 'EA 286 ll. 1–22 (Abdi-Heba of Jerusalem to Pharaoh; Moran trans.)',
+          text: 'Say to the king, my lord: Message of Abdi-Heba, your servant. I fall at the feet of my lord, the king, seven times and seven times. What have I done to the king, my lord? They denounce me before the king, my lord, saying, "Abdi-Heba has rebelled against the king, his lord." Seeing that, as far as I am concerned, neither my father nor my mother put me in this place, but the strong arm of the king brought me into my father\'s house, why should I, of all people, commit a crime against the king, my lord? As long as the king, my lord, lives, I will say to the commissioner of the king, my lord, "Why do you favor the ʿApiru and oppose the mayors?" And thus they slander me in the presence of the king, my lord. Because I say, "Lost are the lands of the king, my lord," thus they slander me in the presence of the king, my lord. May the king, my lord, know that, though the king, my lord, stationed a garrison here, Enḫamu has taken it all away.',
+          textVersions: {
+            moran: 'Say to the king, my lord: Message of Abdi-Heba, your servant. I fall at the feet of my lord, the king, seven times and seven times. What have I done to the king, my lord? They denounce me before the king, my lord, saying, "Abdi-Heba has rebelled against the king, his lord." Seeing that, as far as I am concerned, neither my father nor my mother put me in this place, but the strong arm of the king brought me into my father\'s house, why should I, of all people, commit a crime against the king, my lord? As long as the king, my lord, lives, I will say to the commissioner of the king, my lord, "Why do you favor the ʿApiru and oppose the mayors?" And thus they slander me in the presence of the king, my lord. Because I say, "Lost are the lands of the king, my lord," thus they slander me in the presence of the king, my lord. May the king, my lord, know that, though the king, my lord, stationed a garrison here, Enḫamu has taken it all away.',
+          },
+          entities: [
+            { word: 'the ʿApiru', node: 'tradition-egyptian-religion', type: 'sociological-category',
+              note: 'ʿApiru / Ḫabiru (sometimes ʿpr.w in Egyptian sources) is the term used across mid-second-millennium Near Eastern documentation (Akkadian, Egyptian, Ugaritic, Hittite) for a sociologically-marginal population — displaced peasants, refugees, fugitives, mercenary bands — who operated outside the regular city-state political structure of Late Bronze Age Canaan. The Amarna Letters\' references to the ʿApiru, particularly in the Jerusalem correspondence of Abdi-Heba (EA 286–290), document one of the major political-security problems of the late 14th-century BCE Canaanite vassal system. The relationship between the ʿApiru of the Amarna correspondence and the biblical Hebrews / ʿIvrim is a major debated question in ancient Near Eastern history: phonetic-etymological compatibility is reasonable, sociological-functional overlap is real, but no scholar argues for direct equation. Niels Peter Lemche 1985, Anson Rainey 1980, and Mario Liverani 2014 have all done substantial work on the ʿApiru-Hebrew question.',
+              parallels: [
+                { label: 'Exodus 3 — the political-historical background for the biblical Exodus tradition', textId: 'exodus-3',
+                  note: 'The Amarna-period Canaanite political-historical environment — Egyptian-vassal city-states, marauding ʿApiru in the countryside, declining Egyptian imperial control — is the documentary background against which the biblical Exodus and Conquest narratives are traditionally set. The relationship between this documentary background and the biblical narrative is one of the most-studied questions in modern biblical-archaeological scholarship.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+// ── MANETHO AEGYPTIACA — THE EGYPTIAN HISTORY THAT GAVE US THE DYNASTY LIST ──
+SCRIPTURE_TEXTS['manetho-aegyptiaca-1'] = {
+  id:         'manetho-aegyptiaca-1',
+  title:      'Manetho · Aegyptiaca — The Native-Egyptian History in Greek',
+  shortTitle: 'Manetho · Aegyptiaca',
+  corpus:     'Egyptian sacred-textual tradition · Greek-language native-Egyptian historiography',
+  tradId:     'tradition-egyptian-religion',
+  date:       '~280–250 BCE (Ptolemaic Egypt — Manetho composed the Aegyptiaca under Ptolemy II Philadelphus, the same court that commissioned the Septuagint a generation earlier)',
+  docNode:    'phase-3-025-manetho-aegyptiaca',
+  language:   'Hellenistic Koine Greek (original; no Egyptian-language Vorlage preserved) · W. G. Waddell 1940 English (Loeb Classical Library standard)',
+  translations: [
+    { id: 'waddell', label: 'W. G. Waddell 1940 (Loeb Classical Library 350)', note: 'The canonical English translation, with the complete surviving Manetho fragments collected from Josephus, Africanus, Eusebius, Syncellus, and other later citing sources. Manetho\'s text itself does not survive in continuous form — only in citations.' },
+    { id: 'greek',   label: 'Greek (Waddell\'s Loeb facing-page edition; Jacoby FGrH 609)' },
+  ],
+  intro: 'Manetho of Sebennytos was an Egyptian priest who, around 280–250 BCE under Ptolemy II Philadelphus, composed a comprehensive history of Egypt in Greek — the Aegyptiaca, "Egyptian matters." The work\'s significance is double: it is one of the foundational documents of native-cultural ethnography (a member of the conquered tradition writing his own people\'s history in the conquerors\' language for a multicultural Hellenistic readership), and it gave the entire subsequent tradition of Egyptology its operative chronological framework — the division of pharaonic history into thirty-one dynasties (Manetho\'s Dynasty 1 through 31) plus the Macedonian and Ptolemaic dynasties. Every modern reference to "the Eighteenth Dynasty" or "the Twelfth Dynasty" is using Manetho\'s 3rd-century-BCE numbering scheme. The Aegyptiaca itself does not survive as a continuous text; it is reconstructed by collating fragments preserved in three later citing chains: (1) Flavius Josephus, who quotes Manetho in Against Apion in the late 1st century CE to establish Jewish chronology; (2) the 3rd-century Christian chronographer Julius Africanus, preserved by Syncellus in the 9th century; (3) Eusebius of Caesarea, whose Chronicle (early 4th century) preserves a partial king-list. The three citation traditions occasionally disagree on numerical details, and modern reconstruction (Waddell 1940, Felix Jacoby FGrH 609, John Dillery 1999) involves careful collation. Manetho is also one of the major sources for the Hellenistic-Egyptian theological vocabulary that the Hermetic corpus and the syncretic Isis-Sarapis cult later develop; he is sometimes credited (with debated historicity) with the founding role in the Sarapis cult that Ptolemy I and II promoted as the unifying religion of the Greek-Egyptian Ptolemaic state.',
+  crossTradition: [
+    { label: 'Herodotus · Histories Book 2 — the earlier Greek ethnography of Egypt', textId: 'herodotus-bk2-1',
+      note: 'Herodotus\' Book 2 (composed ~440 BCE) is the prior Greek-language ethnography of Egypt that Manetho\'s Aegyptiaca (composed ~270 BCE) implicitly corrects from the native-priestly side. Herodotus describes Egyptian religion and history from the outside as a Greek visitor reporting what priestly informants told him; Manetho writes from the inside as an Egyptian priest writing for Greek readers. The two texts together constitute the foundational Greek-language treatment of Egyptian history and religion.' },
+    { label: 'Diodorus · Bibliotheca Book 1 — the Hellenistic synthesis that drew on Manetho', textId: 'diodorus-bk1-1',
+      note: 'Diodorus Siculus\' Library of History Book 1 (composed ~30 BCE) is the comprehensive Hellenistic-Egyptian ethnography that draws on Manetho and earlier sources, producing the most complete surviving Greek-language treatment of Egyptian religion, history, and cosmology. Diodorus\' use of Manetho is one of the major channels through which Manetho\'s native-Egyptian perspective entered the broader Greek-Roman intellectual tradition.' },
+    { label: 'Septuagint — the parallel Ptolemy II Philadelphus translation project', textId: 'septuagint-isaiah-7-14',
+      note: 'The Septuagint translation project (Ptolemy II Philadelphus, ~280–250 BCE) and Manetho\'s Aegyptiaca (the same court, the same decade) are two parallel projects of native-cultural-into-Greek translation under the same royal patronage: the Septuagint renders the Hebrew Bible into Greek for the Alexandrian Jewish diaspora; the Aegyptiaca renders Egyptian history and religion into Greek for the Ptolemaic court. Reading them together is the standard scholarly entry-point to early-Ptolemaic Alexandria as a multicultural translation-and-knowledge-production center.' },
+  ],
+  sections: [
+    {
+      heading: 'I. The Dynastic Framework',
+      verses: [
+        {
+          ref: 'Manetho frag. 1 (Africanus, via Syncellus)',
+          text: 'After the gods, the demigods reigned for 1,255 years; and after them again another line of kings reigned 1,817 years; then thirty Memphite kings, 1,790 years; then again ten Thinite kings, 350 years; then followed the rule of the Manes and the demigods, 5,813 years.',
+          textVersions: {
+            waddell: 'After the gods, the demigods reigned for 1,255 years; and after them again another line of kings reigned 1,817 years; then thirty Memphite kings, 1,790 years; then again ten Thinite kings, 350 years; then followed the rule of the Manes and the demigods, 5,813 years.',
+          },
+          entities: [
+            { word: 'thirty Memphite kings', node: 'manetho', type: 'historiographical-framework',
+              note: 'Manetho\'s grouping of Egyptian rulers into a sequence of numbered "dynasties" — Dynasty 1 through 31, with the Macedonian and Ptolemaic dynasties added in the closing books — is the structural innovation that has organized every subsequent treatment of Egyptian chronology, from Julius Africanus and Eusebius in late antiquity through Champollion\'s 19th-century decipherment of hieroglyphs and into contemporary Egyptology. The dynasty-numbering system is not native-Egyptian; the pharaohs themselves did not use it. It is Manetho\'s 3rd-century-BCE editorial framework, devised in Greek for Greek readers, that has organized the historical study of pharaonic Egypt for the past 2,300 years.',
+              parallels: [
+                { label: 'Diodorus · Bibliotheca Book 1 — the later Hellenistic synthesis', textId: 'diodorus-bk1-1',
+                  note: 'Diodorus\' Book 1 draws on Manetho\'s framework (though Diodorus does not name him explicitly) and extends it into the broader Greek-language ethnography of Egypt. The dynasty-numbering and king-list framework that Manetho established becomes the operative chronological organisation in all subsequent Hellenistic-Roman treatments of Egypt.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'II. Native-Priestly Authority',
+      verses: [
+        {
+          ref: 'Manetho frag. 1 (Josephus, Against Apion 1.73)',
+          text: 'Manetho, who composed in the Greek tongue the native history of Egypt, drawing his information from the priestly traditions, says that all the records of antiquity were preserved with the priests, who were the sole guardians of the ancient inscriptions in the temples.',
+          textVersions: {
+            waddell: 'Manetho, who composed in the Greek tongue the native history of Egypt, drawing his information from the priestly traditions, says that all the records of antiquity were preserved with the priests, who were the sole guardians of the ancient inscriptions in the temples.',
+          },
+          entities: [
+            { word: 'drawing his information from the priestly traditions', node: 'manetho', type: 'source-claim',
+              note: 'The priestly-archive claim is Manetho\'s authority-establishing move: against the foreign-visitor mode of Herodotus (whose information came from interpreters and from what priests chose to share with an outsider), Manetho presents himself as a member of the native priestly establishment with direct access to the hieroglyphic-temple archives. The claim is largely accepted by modern scholars: Manetho\'s king-list framework correlates well with the surviving native-Egyptian king-lists (the Turin Royal Canon, the Saqqara Tablet, the Abydos King List, the Karnak King List), suggesting genuine archive access. The Aegyptiaca is therefore a rare and important case of a native-cultural-priestly perspective entering Greek-language historiography from within the conquered tradition.',
+              parallels: [
+                { label: 'Plutarch · De Iside et Osiride — the Greek philosophical use of Egyptian priestly tradition', textId: 'plutarch-de-iside-1',
+                  note: 'Plutarch\'s De Iside et Osiride, composed in the early 2nd century CE, treats Egyptian religion through Greek philosophical (Middle Platonic) interpretive categories, drawing on a continuous chain of Greek-language sources stretching back through Diodorus to Manetho to Herodotus. The Greek-philosophical reading of Egyptian religion that Plutarch crystallises depends on the prior Manetho-and-Diodorus framework of organising Egyptian religion as a coherent doctrinal system.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+// ── DIODORUS BIBLIOTHECA BOOK 1 — HELLENISTIC ETHNOGRAPHY OF EGYPT ───────────
+SCRIPTURE_TEXTS['diodorus-bk1-1'] = {
+  id:         'diodorus-bk1-1',
+  title:      'Diodorus Siculus · Library of History Book 1 — The Hellenistic Synthesis of Egyptian Religion',
+  shortTitle: 'Diodorus · Bibliotheca 1',
+  corpus:     'Egyptian sacred-textual tradition · Greek-Hellenistic ethnography',
+  tradId:     'tradition-egyptian-religion',
+  date:       '~30 BCE (Diodorus Siculus composed the Bibliotheca Historica over roughly the third quarter of the 1st century BCE; Book 1 specifically draws on Hecataeus of Abdera and other earlier Hellenistic sources, with Diodorus reporting that he visited Egypt during the 180th Olympiad, c. 60–56 BCE)',
+  docNode:    'phase-3-026-diodorus-bibliotheca-book-1',
+  language:   'Hellenistic Koine Greek (original) · Charles Henry Oldfather 1933 English (Loeb Classical Library 279, the canonical Anglophone scholarly edition)',
+  translations: [
+    { id: 'oldfather', label: 'Charles Henry Oldfather 1933 (Loeb Classical Library 279)', note: 'The standard English scholarly translation of Diodorus, with the Greek text on facing pages. Cited by every subsequent scholar working on Diodorus and on Hellenistic-Egyptian ethnography.' },
+    { id: 'greek',     label: 'Greek (Vogel–Fischer Teubner edition, the modern critical text)' },
+  ],
+  intro: 'Diodorus Siculus\' Bibliotheca Historica ("Library of History") is the 40-book universal history of the Mediterranean world composed in Greek by a Sicilian-Greek historian during the third quarter of the 1st century BCE, in the generation of Caesar and Augustus. Book 1 is the longest and most-cited section of the surviving text, treating Egypt — its history, its religion, its laws, its kings, its strange customs — as the first and most important of the "barbarian" (non-Greek) cultures that Diodorus systematically surveys before turning to Greek history proper. Diodorus visited Egypt during the 180th Olympiad (c. 60–56 BCE) and reports having drawn on both his own observations and on a continuous earlier tradition of Greek ethnography of Egypt running back through Hecataeus of Abdera (early 3rd c. BCE, the Hellenistic-philosophical interpreter of Egyptian religion who provided much of Diodorus\' interpretive framework), Manetho (Egyptian priestly historiography), and ultimately Herodotus (the foundational Greek visitor-account). Book 1 is consequential to Codex Atlas in two distinct ways: first, it is the single most comprehensive surviving Greek-language treatment of Egyptian religious-cosmological-historical material, preserving traditions that no Egyptian-language source preserves; second, it is the operative entry-point through which Hermetic, Gnostic, and broader Greco-Roman religious thought received the Egyptian religious-theological vocabulary that subsequent western religious history has inherited via that channel. The Hermetic corpus, Plutarch\'s De Iside, and the syncretic Isis-Sarapis cult all operate downstream of Diodorus\' Book 1 framework. Modern scholarship: Burton 1972, Sacks 1990, Muntz 2017.',
+  crossTradition: [
+    { label: 'Herodotus · Histories Book 2 — the foundational Greek ethnography of Egypt', textId: 'herodotus-bk2-1',
+      note: 'Diodorus Book 1 (c. 30 BCE) is the conscious continuation and synthesis of the Greek ethnographic tradition Herodotus founded in Book 2 (c. 440 BCE). Diodorus is more systematic, more philosophically-interpretive (drawing on Hecataeus of Abdera\'s Hellenistic Middle Platonic reading), and more sympathetic to native-Egyptian priestly perspectives (drawing on Manetho); but the basic structural categories are still recognisably Herodotean — Egyptian-customs-vs-Greek-customs comparative organisation, ethnographic-historical interweaving, and the cultural-temporal-priority claim that gives Egypt its founding position in the Greek imagination.' },
+    { label: 'Manetho · Aegyptiaca — the native-priestly source for Diodorus\' historical framework', textId: 'manetho-aegyptiaca-1',
+      note: 'Diodorus draws on Manetho (without explicitly naming him) for his Egyptian dynastic-historical framework. The Manetho-Diodorus relationship is one of the major topics of Hellenistic-Egyptian historiography: Manetho gives Diodorus the king-list and dynasty-numbering structure; Diodorus gives Manetho his most influential Greek-language afterlife.' },
+    { label: 'Plutarch · De Iside et Osiride — the Middle Platonic-philosophical continuation', textId: 'plutarch-de-iside-1',
+      note: 'Plutarch\'s De Iside et Osiride (early 2nd c. CE) is the Middle Platonic-philosophical continuation of the Diodorus tradition. Where Diodorus presents Egyptian religion as comprehensive ethnographic-historical material, Plutarch interprets it allegorically — the Osiris-Isis-Horus-Set myth as the philosophical-cosmological dynamics of the soul-cosmos relationship. The Diodorus → Plutarch lineage is the textual chain through which Egyptian religious material entered the broader Greco-Roman philosophical tradition.' },
+    { label: 'Corpus Hermeticum 11 — the Greek-Egyptian Hermetic continuation', textId: 'corpus-hermeticum-11',
+      note: 'The Hermetic corpus (1st–3rd c. CE) operates downstream of the Diodorus-and-Plutarch Greek-Egyptian theological synthesis, presenting Egyptian theological vocabulary (Thoth-Hermes as the revealer of divine wisdom, the cosmic-Logos-Nous structure) within a Middle Platonic philosophical frame. The Diodorus-Plutarch-Hermetica lineage is the major channel through which Egyptian religious vocabulary entered Western religious thought.' },
+  ],
+  sections: [
+    {
+      heading: 'I. The Antiquity of Egyptian Religion',
+      verses: [
+        {
+          ref: 'Diodorus 1.10.1–2 (Oldfather)',
+          text: 'Now the Egyptians have an account like this: When in the beginning the universe came into being, men first came into existence in Egypt, both because of the favorable climate of the land and because of the nature of the Nile. For this stream, since it produces much life and provides a spontaneous supply of food, easily nourishes whatever living things have once been engendered; for both the root of the reed and the lotus, as well as the Egyptian bean, and what is called the corsaeon, and many other similar plants, supply the race of men with a nourishment that is ready at hand and is unprepared.',
+          textVersions: {
+            oldfather: 'Now the Egyptians have an account like this: When in the beginning the universe came into being, men first came into existence in Egypt, both because of the favorable climate of the land and because of the nature of the Nile. For this stream, since it produces much life and provides a spontaneous supply of food, easily nourishes whatever living things have once been engendered; for both the root of the reed and the lotus, as well as the Egyptian bean, and what is called the corsaeon, and many other similar plants, supply the race of men with a nourishment that is ready at hand and is unprepared.',
+          },
+          entities: [
+            { word: 'men first came into existence in Egypt', node: 'diodorus-siculus', type: 'ethnographic-claim',
+              note: 'The cultural-temporal-priority claim — that Egypt is the originary site of human civilization, religion, and culture — is one of the foundational moves of the Greek ethnographic-philosophical tradition of Egypt. Herodotus had already articulated a version of it ("the Greeks learned their religion from the Egyptians," Hist. 2.50); Diodorus systematises it, with Egypt as the founding civilisation from which Greek religion, philosophy, law, and even alphabetic writing derive. The claim is consequential to Codex Atlas: virtually every Hellenistic-Roman Greco-Egyptian syncretism (Isis-Sarapis cult, Hermetic corpus, Greco-Egyptian alchemy, the Alexandrian theological-philosophical traditions) operates within this Diodoran-priority frame. The modern scholarly assessment is that Egyptian priority is partially true (Mesopotamia would now be added or substituted, and the Greek-Egyptian relationship is more bidirectional than the Diodoran framing allows) but that the Greek perception of Egyptian priority is itself a major historical force that shaped subsequent Western religious self-understanding.',
+              parallels: [
+                { label: 'Herodotus Book 2 — the earlier Greek articulation of Egyptian cultural-priority', textId: 'herodotus-bk2-1',
+                  note: 'Herodotus 2.49–50 already articulates the claim that Greek religious vocabulary (the names of the gods, the mystery initiations, particular ritual practices) derives from Egyptian originals. Diodorus systematises and extends the claim. The Herodotus → Diodorus → Plutarch → Hermetica lineage is the major channel through which the "Egypt-as-origin" framing entered Western religious thought.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'II. Osiris and Isis as Civilising Powers',
+      verses: [
+        {
+          ref: 'Diodorus 1.13.5–6 (Oldfather; the Osiris-Isis civilising-mission narrative)',
+          text: 'They say that Osiris, having received the kingdom, immediately put a stop to the cannibalistic and savage life of mankind by introducing the cultivation of grain and giving them laws. He also founded many cities in Egypt, and visited every inhabited country of the world, conferring benefits upon the human race. Most peoples received his gifts gladly, and yielded him obedience without resort to arms; but a few, who held him in scorn and contempt, he subdued by force.',
+          textVersions: {
+            oldfather: 'They say that Osiris, having received the kingdom, immediately put a stop to the cannibalistic and savage life of mankind by introducing the cultivation of grain and giving them laws. He also founded many cities in Egypt, and visited every inhabited country of the world, conferring benefits upon the human race. Most peoples received his gifts gladly, and yielded him obedience without resort to arms; but a few, who held him in scorn and contempt, he subdued by force.',
+          },
+          entities: [
+            { word: 'Osiris', node: 'osiris', type: 'deity',
+              note: 'Diodorus presents Osiris in a euhemerising-civilising-king mode that draws on Hecataeus of Abdera\'s Hellenistic philosophical reading of the Osiris-Isis myth-cycle: Osiris is treated as a historical first king of Egypt who introduced agriculture, law, and civilisation, then was apotheosised as a god after his death. This euhemerising-historical mode is characteristically Hellenistic — it allows Greek philosophical readers to engage with foreign religious traditions by translating their gods into cultural-historical founder-figures. The same euhemerising move underlies the Hermetic and Greco-Egyptian alchemical traditions, where Thoth-Hermes is similarly treated as a historical sage who became divine.',
+              parallels: [
+                { label: 'Plutarch · De Iside et Osiride — the Middle Platonic-philosophical refinement', textId: 'plutarch-de-iside-1',
+                  note: 'Plutarch\'s De Iside (early 2nd c. CE) refines Diodorus\' euhemerising mode into a Middle Platonic philosophical-allegorical reading: Osiris becomes the cosmic-rational principle, Isis the receptive-cosmological principle, Horus the manifest-world that issues from their union. The Diodorus euhemerism and the Plutarch allegoresis are two successive Hellenistic philosophical strategies for engaging Egyptian myth in Greek philosophical categories.' },
+                { label: 'Memphite Theology — the native-Egyptian theological substrate', textId: 'memphite-theology',
+                  note: 'The Memphite Theology (preserved on the Shabaka Stone, though composed much earlier) is the native-Egyptian theological tradition that Diodorus\' Hellenistic synthesis interprets from outside. Reading the two together reveals the gap between native-Egyptian and Greek-ethnographic readings of Egyptian theology — the native tradition treats Ptah and Osiris as cosmological-theological powers, the Greek tradition treats them as euhemerised founder-kings.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+// ── PLUTARCH DE ISIDE ET OSIRIDE — MIDDLE PLATONIC READING OF EGYPTIAN MYTH ──
+SCRIPTURE_TEXTS['plutarch-de-iside-1'] = {
+  id:         'plutarch-de-iside-1',
+  title:      'Plutarch · De Iside et Osiride — The Middle Platonic Reading of the Osiris-Isis Myth',
+  shortTitle: 'Plutarch · De Iside',
+  corpus:     'Egyptian sacred-textual tradition · Greco-Roman philosophical-allegorical interpretation',
+  tradId:     'tradition-egyptian-religion',
+  date:       '~early 2nd c. CE (Plutarch composed De Iside et Osiride toward the end of his life, probably in his role as a priest of Apollo at Delphi; the work is dedicated to Clea, a priestess at Delphi)',
+  docNode:    'phase-4-072-plutarch-de-iside-et-osiride',
+  language:   'Hellenistic Koine Greek (original) · J. Gwyn Griffiths 1970 English (the canonical scholarly translation and commentary)',
+  translations: [
+    { id: 'griffiths', label: 'J. Gwyn Griffiths 1970 (University of Wales Press)', note: 'Griffiths\' translation and full-scale commentary is the canonical modern critical edition — the single most-cited scholarly treatment of De Iside, with extensive notes on every Egyptian-religious reference Plutarch makes.' },
+    { id: 'babbitt',   label: 'Frank Cole Babbitt 1936 (Loeb Classical Library 306)', note: 'The standard Loeb edition (Plutarch Moralia volume V), with the Greek text on facing pages — useful as a complement to the Griffiths critical apparatus.' },
+    { id: 'greek',     label: 'Greek (Plutarch Moralia, Sieveking Teubner edition)' },
+  ],
+  intro: 'Plutarch\'s De Iside et Osiride ("On Isis and Osiris," Moralia 351c–384c) is the single most influential ancient Greco-Roman treatment of Egyptian religion — a Middle Platonic philosophical-allegorical reading of the Osiris-Isis-Horus-Seth myth-cycle, composed in the early 2nd century CE by the Greek philosopher and priest of Apollo at Delphi. The treatise is dedicated to Clea, a priestess at Delphi who was also an initiate of the Isis-mysteries, and it reflects the late-antique convergence between Greek philosophical theology (Middle Platonism), Egyptian religion (the Osiris mysteries in their Hellenised Sarapis form), and the broader cosmopolitan-religious culture of the high Roman empire. Plutarch\'s major moves: (1) systematic euhemerising-AND-allegorising reading in which the Osiris-myth is simultaneously a historical kingship-tradition AND a philosophical cosmology — Osiris as the rational-formative principle, Isis as the receptive-material principle, Horus as the manifest cosmos that issues from their union, Seth-Typhon as the disruptive-dualistic principle; (2) explicit identification of Osiris with the Platonic Good and Isis with the Platonic World-Soul; (3) careful reporting of Egyptian priestly testimony, drawing on a continuous earlier tradition (Manetho, Hecataeus of Abdera, Diodorus); (4) sustained philosophical argument that the Egyptian mysteries and the Greek mysteries are saying the same thing in different idioms — the major foundation-text of subsequent Hellenistic-Roman religious cosmopolitanism. De Iside is the immediate philosophical-religious matrix of the Corpus Hermeticum, the Greco-Egyptian alchemical tradition, the Isis-Sarapis cult\'s westward spread through the Roman empire, and (eventually) the major Renaissance and Enlightenment fascinations with Egypt as the originary site of philosophical wisdom. Griffiths 1970 remains the standard treatment.',
+  crossTradition: [
+    { label: 'Diodorus · Bibliotheca Book 1 — the Hellenistic source-tradition Plutarch refines', textId: 'diodorus-bk1-1',
+      note: 'Plutarch\'s De Iside is the Middle Platonic philosophical-allegorical refinement of the earlier Hellenistic euhemerising treatment of Egyptian religion that Diodorus Book 1 systematises. Where Diodorus treats Osiris and Isis as euhemerised civilising-king figures, Plutarch reads them as cosmic-philosophical principles. The Diodorus → Plutarch transformation is one of the key moves in the Hellenistic-philosophical reception of Egyptian religion.' },
+    { label: 'Corpus Hermeticum 11 — the Greco-Egyptian Hermetic continuation', textId: 'corpus-hermeticum-11',
+      note: 'The Corpus Hermeticum (1st–3rd c. CE) is contemporary with Plutarch and operates in the same Middle Platonic-philosophical-Egyptian-religious synthesis. The two corpora — Plutarch\'s philosophical-allegorical treatment of Egyptian religion from outside, the Hermetica\'s philosophical-religious texts produced as a Greek-Egyptian theological tradition — are the two major textual artifacts of the late-antique Greco-Egyptian religious-philosophical synthesis. Reading them together is the standard entry-point to Hellenistic-Egyptian philosophical theology.' },
+    { label: 'Memphite Theology — the native-Egyptian theological tradition Plutarch interprets', textId: 'memphite-theology',
+      note: 'The Memphite Theology (Shabaka Stone) preserves the native-Egyptian theological tradition that Plutarch interprets from outside through Middle Platonic philosophical categories. The native tradition presents Ptah as the cosmic-cosmological creator who establishes the divine order through speech (a Logos-cosmology in Egyptian form); Plutarch\'s reading translates this native theological vocabulary into Greek philosophical categories. The two texts together document the major Hellenistic-Egyptian theological translation-encounter.' },
+    { label: 'Apuleius Metamorphoses Book 11 — the contemporary Isis-cult initiatory text', textId: 'corpus-hermeticum-13',
+      note: 'Apuleius\' Metamorphoses Book 11 (composed in the mid 2nd century CE, the same generation as Plutarch\'s De Iside) is the most extended surviving Latin literary treatment of the Isis-mysteries, narrated from the perspective of a fictional initiate. The two texts — Plutarch\'s philosophical-allegorical reading and Apuleius\' narrative-initiatory reading — together document the high-Roman-empire Isis-cult\'s self-understanding as both philosophical mystery and devotional practice. The Hermetic Corpus Hermeticum 13 (the rebirth-discourse) is the closest direct textual cognate in the philosophical-mystical Greek-Egyptian tradition.' },
+  ],
+  sections: [
+    {
+      heading: 'I. The Allegorical Reading of Osiris and Isis',
+      verses: [
+        {
+          ref: 'De Iside 53 (Moralia 372e–373a; Griffiths trans.)',
+          text: 'Therefore, by what I have said, we have established that Osiris and Isis were changed from good demons into gods. And as for those, what they signify is not far to seek, if their nature is examined philosophically. For Osiris is the principle of moisture, in the sense of the principle of generation; Isis is the receptive principle of generation, the part of nature which is feminine and receives in itself the powers of all things, whom Plato calls the "nurse" and "all-receiving."',
+          textVersions: {
+            griffiths: 'Therefore, by what I have said, we have established that Osiris and Isis were changed from good demons into gods. And as for those, what they signify is not far to seek, if their nature is examined philosophically. For Osiris is the principle of moisture, in the sense of the principle of generation; Isis is the receptive principle of generation, the part of nature which is feminine and receives in itself the powers of all things, whom Plato calls the "nurse" and "all-receiving."',
+          },
+          entities: [
+            { word: 'Plato calls the "nurse" and "all-receiving"', node: 'isis-egyptian', type: 'philosophical-allegoresis',
+              note: 'Plutarch\'s identification of Isis with the Platonic chōra (the "receptacle / nurse / all-receiving" of Timaeus 49a–52d) is one of the most consequential philosophical-religious moves in late antiquity. The Timaeus chōra is the receptive substrate that receives the Forms and produces the manifest cosmos; identifying Isis with the chōra makes the Osiris-Isis-Horus generative triad into a Middle Platonic cosmological structure (the rational Form / the receptive substrate / the manifest cosmos). This philosophical-allegorical move provides the Hellenistic-Egyptian religious tradition with its operative philosophical-theological vocabulary for the next several centuries — the Hermetic corpus, the Greco-Egyptian alchemical tradition, and (eventually) the Renaissance reception of Egyptian wisdom all operate within Plutarch\'s identification framework.',
+              parallels: [
+                { label: 'Plato Timaeus — the chōra-receptacle Plutarch identifies with Isis', textId: 'plato-timaeus',
+                  note: 'Plato Timaeus 49a–52d develops the doctrine of the chōra — the receptive substrate that receives the Forms and produces the manifest cosmos. Plutarch\'s identification of this chōra with the Egyptian Isis is the major Middle Platonic synthesis-move that allows Egyptian religion to be read as philosophical cosmology and Greek philosophy to be read as preserving the same wisdom the Egyptians had preserved in mythic form. The two texts together — Timaeus and De Iside — establish the philosophical-allegorical reading of Egyptian religion that subsequent western religious thought has largely inherited.' },
+                { label: 'Memphite Theology — the native-Egyptian creative-cosmology', textId: 'memphite-theology',
+                  note: 'The Memphite Theology\'s native-Egyptian creative cosmology (Ptah brings the world into being through heart and tongue — concept and speech) is the indigenous theological tradition that Plutarch interprets through the Middle Platonic chōra-and-Forms vocabulary. Reading the two together documents the philosophical-translation gap between native-Egyptian and Greek philosophical readings of Egyptian theology.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'II. The Universal-Religion Argument',
+      verses: [
+        {
+          ref: 'De Iside 67 (Moralia 377f–378a; Griffiths trans.)',
+          text: 'Nor do we conceive the gods to be different gods among different peoples, nor barbarian gods and Greek gods, nor southern and northern; but as the sun and the moon and the heavens and the earth and the sea are common to all, though called by different names among different peoples, so for the one reason that orders all these things, and the one providence that administers them, and the powers that assist in this — among different peoples, by virtue of different customs, different honors and titles have been assigned.',
+          textVersions: {
+            griffiths: 'Nor do we conceive the gods to be different gods among different peoples, nor barbarian gods and Greek gods, nor southern and northern; but as the sun and the moon and the heavens and the earth and the sea are common to all, though called by different names among different peoples, so for the one reason that orders all these things, and the one providence that administers them, and the powers that assist in this — among different peoples, by virtue of different customs, different honors and titles have been assigned.',
+          },
+          entities: [
+            { word: 'the one reason that orders all these things', node: 'plutarch', type: 'philosophical-thesis',
+              note: 'Plutarch\'s articulation of religious cosmopolitanism — that all peoples worship the same divine reality under different names and customs — is the most influential late-antique formulation of what later traditions will call the perennialist or universalist religious thesis. The position has Stoic and Middle Platonic roots; Plutarch crystallises it in De Iside as the philosophical premise that makes serious engagement between Greek philosophy and Egyptian religion possible. The same philosophical-cosmopolitan thesis is recognisable in the Hermetic corpus, in the late-antique Sarapis cult\'s self-presentation as universal-deity, in the syncretic religious traditions of the Roman empire generally, and (in modified forms) in the much-later Renaissance prisca theologia tradition, the Enlightenment "natural religion" thesis, and contemporary religious-pluralist theology.',
+              parallels: [
+                { label: 'Bahá\'í Kitáb-i-Íqán — the modern progressive-revelation parallel', textId: 'bahai-kitab-i-iqan',
+                  note: 'The Bahá\'í teaching of progressive revelation — that all the great Manifestations of God form one continuous teaching adapted to different ages and peoples — is a modern articulation of the same religious-cosmopolitan thesis that Plutarch crystallises in De Iside. The two texts are separated by 1,800 years and by radically different traditions, but the underlying philosophical-religious claim is recognisably the same: divine reality is one, religious vocabularies are many, and the multiplicity of religious traditions is a pedagogical-adaptive feature rather than a competing-claims problem.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+// ── HERODOTUS HISTORIES BOOK 2 — THE FOUNDING GREEK ETHNOGRAPHY OF EGYPT ─────
+SCRIPTURE_TEXTS['herodotus-bk2-1'] = {
+  id:         'herodotus-bk2-1',
+  title:      'Herodotus · Histories Book 2 — The Founding Greek Ethnography of Egypt',
+  shortTitle: 'Herodotus · Histories 2',
+  corpus:     'Egyptian sacred-textual tradition · Greek ethnographic historiography',
+  tradId:     'tradition-egyptian-religion',
+  date:       '~440–425 BCE (Herodotus composed the Histories over roughly the third quarter of the 5th century BCE; Book 2 — the "Egyptian logos" — reflects Herodotus\' visit to Egypt around 450 BCE)',
+  docNode:    'phase-2-028-herodotus-histories-book-2',
+  language:   'Classical Ionic Greek (original) · Robin Waterfield 1998 English (Oxford World\'s Classics, the modern Anglophone scholarly standard)',
+  translations: [
+    { id: 'waterfield', label: 'Robin Waterfield 1998 (Oxford World\'s Classics)', note: 'The current scholarly Anglophone reference translation, with Carolyn Dewald\'s comprehensive introduction and notes. The standard Oxford-edition reference text.' },
+    { id: 'godley',     label: 'A. D. Godley 1920 (Loeb Classical Library 117)', note: 'The classical Loeb edition; Greek text on facing pages. Methodologically dated in spots but still widely cited for textual reference.' },
+    { id: 'greek',      label: 'Greek (Hude OCT — Oxford Classical Texts edition)' },
+  ],
+  intro: 'Herodotus\' Histories Book 2 — the "Egyptian logos" — is the foundational Greek-language ethnography of Egypt, composed by the Greek historian from Halicarnassus around 440 BCE on the basis of his own visit to Egypt about a decade earlier (during the period of Persian rule under Artaxerxes I, roughly 454–450 BCE). Book 2 is one of two Histories books devoted entirely to a single non-Greek culture (the other is Book 4, the Scythian logos), and it is by some measures the most studied single ancient Greek text on Egypt. Herodotus\' major themes: the antiquity of Egypt and the priority of Egyptian religion ("the Greeks learned the names of the gods from the Egyptians," 2.50); the strange-reversed quality of Egyptian customs relative to Greek (women trade and men weave; sons inherit nothing from mothers but daughters do; men carry burdens on the head, women on the shoulder); the importance of the Nile in shaping Egyptian civilisation; detailed descriptions of mummification, animal cults, oracles, festivals, the pyramids, the Labyrinth. Modern scholarly assessment of Book 2 has shifted significantly over the past century: 19th-century critics dismissed much of it as Herodotean invention, but 20th-century work (Alan Lloyd\'s three-volume 1976–1988 commentary, Stephanie West, Carolyn Dewald) has substantially rehabilitated Herodotus\' reliability by cross-checking his reports against Egyptian primary sources and confirming many previously-doubted details. The book is the textual foundation of the entire subsequent Western tradition of treating Egypt as the originary site of religious-philosophical wisdom — the seed from which the Diodoran, Plutarchan, Hermetic, Renaissance-prisca-theologia, and Enlightenment-Egyptomania traditions all grow.',
+  crossTradition: [
+    { label: 'Manetho · Aegyptiaca — the native-Egyptian response to the Greek ethnographic tradition', textId: 'manetho-aegyptiaca-1',
+      note: 'Manetho\'s Aegyptiaca (~270 BCE) is the native-priestly Egyptian response to the Greek ethnographic tradition Herodotus founded — Manetho writing as an Egyptian priest in Greek for Greek readers, implicitly correcting and supplementing the outside-visitor account that Herodotus had provided. The Herodotus → Manetho relationship documents one of the major intercultural-translation moments in ancient Mediterranean intellectual history: a conquered tradition responding to the dominant culture\'s account of it, in the dominant culture\'s language, on the dominant culture\'s terms.' },
+    { label: 'Diodorus · Bibliotheca Book 1 — the Hellenistic synthesis that builds on Herodotus and Manetho', textId: 'diodorus-bk1-1',
+      note: 'Diodorus Book 1 (c. 30 BCE) is the comprehensive Hellenistic synthesis that combines and extends Herodotus, Manetho, Hecataeus of Abdera, and the broader Greek-Egyptian ethnographic tradition. The Herodotus → Manetho → Diodorus → Plutarch lineage is the major textual channel through which Egyptian religious-cosmological-historical material entered Greek philosophical thought and (through Greek philosophical thought) the broader Western religious tradition.' },
+    { label: 'Plutarch · De Iside et Osiride — the Middle Platonic-philosophical refinement', textId: 'plutarch-de-iside-1',
+      note: 'Plutarch\'s De Iside (early 2nd c. CE) is the Middle Platonic-philosophical refinement of the ethnographic-historical tradition Herodotus founded. Where Herodotus reports what Egyptian priests told him about religious practices and beliefs, Plutarch interprets those practices and beliefs through Greek philosophical categories. The Herodotus-Plutarch span (roughly 600 years) documents the long-arc Greek philosophical engagement with Egyptian religion.' },
+  ],
+  sections: [
+    {
+      heading: 'I. The Egyptian Cultural-Religious Priority Claim',
+      verses: [
+        {
+          ref: 'Herodotus 2.50.1–2 (Waterfield)',
+          text: 'Apart from the names of Poseidon and the Dioscuri, as I have already remarked, and Hera, Hestia, Themis, the Graces and the Nereids, the names of all the other gods have always existed in Egypt. What I am saying here is what the Egyptians themselves say. As for the gods whose names they say they do not know, the Pelasgians, in my opinion, invented these names — apart from Poseidon, whose name they learned from the Libyans, since no people apart from the Libyans has ever had the name Poseidon, and the Libyans pay respect to this god from very ancient times.',
+          textVersions: {
+            waterfield: 'Apart from the names of Poseidon and the Dioscuri, as I have already remarked, and Hera, Hestia, Themis, the Graces and the Nereids, the names of all the other gods have always existed in Egypt. What I am saying here is what the Egyptians themselves say. As for the gods whose names they say they do not know, the Pelasgians, in my opinion, invented these names — apart from Poseidon, whose name they learned from the Libyans, since no people apart from the Libyans has ever had the name Poseidon, and the Libyans pay respect to this god from very ancient times.',
+          },
+          entities: [
+            { word: 'the names of all the other gods have always existed in Egypt', node: 'herodotus', type: 'comparative-religion-thesis',
+              note: 'Herodotus 2.50 is the foundational text of the Greek cultural-priority claim — the thesis that Greek religion derives from Egyptian originals. The claim is enormously consequential for subsequent Western religious thought: it establishes Egypt as the originary site of religious wisdom, makes Greek religion derivative rather than originary, and provides the operative philosophical-historical frame within which subsequent Hellenistic philosophical engagement with Egyptian religion (Hecataeus of Abdera, Manetho, Diodorus, Plutarch, the Hermetica, the Renaissance prisca theologia tradition, the Enlightenment Egyptomania) all takes place. Modern scholarly assessment treats the claim as partially-true (specific religious vocabulary, cult practices, and theological motifs do trace to Egyptian originals) but more importantly as historically generative — whether or not "right," it shaped subsequent Western religious self-understanding for the next 2,000 years.',
+              parallels: [
+                { label: 'Diodorus Book 1 — the systematic extension of the priority claim', textId: 'diodorus-bk1-1',
+                  note: 'Diodorus Book 1 systematises and extends Herodotus\' priority claim into a comprehensive Hellenistic framework treating Egypt as the founding site of civilisation, religion, law, philosophy, and writing. The Herodotus → Diodorus transition documents the 400-year crystallisation of the "Egypt-as-origin" framework in Greek ethnographic-philosophical thought.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'II. Detail and Observation — Mummification',
+      verses: [
+        {
+          ref: 'Herodotus 2.86.1–6 (Waterfield, abbreviated)',
+          text: 'There are people whose sole profession is preparing the dead, and they have acquired great expertise in their work. When a corpse is brought to them, they show the relatives wooden models of dead bodies, painted with great realism, and tell them that the most carefully made one resembles a man whose name I do not propose to mention in connection with such things. Then they show them a second body, which is inferior and cheaper, and a third, which is the cheapest. After explaining these matters, they ask the relatives to choose which one of these three procedures they want carried out on their corpse. The relatives agree on the price and depart.',
+          textVersions: {
+            waterfield: 'There are people whose sole profession is preparing the dead, and they have acquired great expertise in their work. When a corpse is brought to them, they show the relatives wooden models of dead bodies, painted with great realism, and tell them that the most carefully made one resembles a man whose name I do not propose to mention in connection with such things. Then they show them a second body, which is inferior and cheaper, and a third, which is the cheapest. After explaining these matters, they ask the relatives to choose which one of these three procedures they want carried out on their corpse. The relatives agree on the price and depart.',
+          },
+          entities: [
+            { word: 'preparing the dead', node: 'herodotus', type: 'ethnographic-observation',
+              note: 'Herodotus\' description of Egyptian mummification practice (2.86–88) is one of the most-cited ethnographic passages of the entire Histories — and one of the cases where modern Egyptological-archaeological investigation has substantially confirmed Herodotus\' accuracy. Modern mummy-studies (Bob Brier, Salima Ikram) have demonstrated that Herodotus\' three-tier description of mummification techniques (the most expensive with full evisceration and natron-treatment, the middle-tier with cedar-oil injection, the cheapest with simple cleansing) corresponds well to the range of techniques attested in the archaeological record. The "name I do not propose to mention" (2.86) is generally understood by modern commentators to be Osiris, in keeping with Herodotus\' habit of religious-secret reticence elsewhere in Book 2 (e.g., 2.171 on the Sais mysteries). The passage is a good example of the rehabilitation of Herodotus\' reliability that has characterised 20th-century scholarship.',
+              parallels: [
+                { label: 'Book of the Dead 125 — the native-Egyptian mortuary-ritual framework', textId: 'book-of-dead-125',
+                  note: 'The Book of the Dead (the Egyptian funerary collection most associated with the New Kingdom and Late Period) provides the native-Egyptian ritual-theological context within which the mummification practice Herodotus describes operates. The negative confession of Book of the Dead 125 (the soul\'s declaration before the 42 judges) is the theological-ritual counterpart of the physical-preservation procedures Herodotus reports. Reading the two together documents both the practical and the theological dimensions of Egyptian mortuary religion.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
 

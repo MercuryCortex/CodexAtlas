@@ -118,16 +118,37 @@
        ported from the legacy scripture-reader.js .sr-* CSS, renamed
        to .forge-reader-* so the two readers can coexist during any
        overlap. */
+    /* 2026-05-27 polish — intro moved to a collapsed <details> at the
+       BOTTOM of the body (was a big italic-Georgia block at the top —
+       cluttered the verses with a 300-600 word disclaimer-style block).
+       Now matches the .forge-reader-xtrad summary-driven pattern. */
     '.forge-reader-intro {',
     '  max-width: 640px;',
-    '  margin: 0 auto 24px;',
-    '  padding: 14px 18px;',
-    '  border: 1px solid rgba(212,165,90,0.20);',
-    '  border-radius: 6px;',
+    '  margin: 24px auto 0;',
+    '  padding: 0 18px 24px;',
+    '}',
+    '.forge-reader-intro > summary {',
+    '  cursor: pointer;',
+    '  font-family: "JetBrains Mono", "SF Mono", Menlo, monospace;',
+    '  font-size: 10.5px;',
+    '  letter-spacing: 0.12em;',
+    '  text-transform: uppercase;',
+    '  color: var(--gold, #d4a55a);',
+    '  padding: 8px 0;',
+    '  border-top: 1px solid rgba(212,165,90,0.20);',
+    '  margin-bottom: 8px;',
+    '  list-style: none;',
+    '}',
+    '.forge-reader-intro > summary::-webkit-details-marker { display: none; }',
+    '.forge-reader-intro > summary::before { content: "▸  "; color: var(--gold, #d4a55a); display: inline-block; transition: transform 120ms ease; }',
+    '.forge-reader-intro[open] > summary::before { content: "▾  "; }',
+    '.forge-reader-intro-body {',
+    '  padding: 10px 12px;',
     '  background: rgba(20,23,26,0.55);',
-    '  color: #b0b8c4;',
-    '  font: 13px/1.6 -apple-system, BlinkMacSystemFont, "SF Pro Text", Georgia, serif;',
-    '  font-style: italic;',
+    '  border: 1px solid rgba(212,165,90,0.10);',
+    '  border-radius: 4px;',
+    '  color: #a0a8b4;',
+    '  font: 12px/1.55 -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif;',
     '}',
     '.forge-reader-section {',
     '  max-width: 640px;',
@@ -353,8 +374,13 @@
       // Active translation — use first by default. (Translation switcher
       // is a V2 feature — for now show the canonical English.)
       const activeTrId = trList[0] && trList[0].id;
+      // 2026-05-27 — intro is now a collapsed <details> at the BOTTOM
+      // (was a big italic block at the top — cluttered the verses).
+      // Order: sections → cross-tradition → about-this-text.
       const introHtml = t.intro
-        ? '<div class="forge-reader-intro">' + _esc(t.intro).replace(/\n/g, '<br>') + '</div>'
+        ? '<details class="forge-reader-intro"><summary>About this text</summary>' +
+          '<div class="forge-reader-intro-body">' + _esc(t.intro).replace(/\n/g, '<br>') + '</div>' +
+          '</details>'
         : '';
       const xtradHtml = (t.crossTradition && t.crossTradition.length)
         ? '<details class="forge-reader-xtrad"><summary>Cross-tradition parallels (' + t.crossTradition.length + ')</summary>' +
@@ -368,7 +394,7 @@
           }).join('') + '</div></details>'
         : '';
       const sectionsHtml = _buildSections(t, activeTrId);
-      bodyEl.innerHTML = introHtml + sectionsHtml + xtradHtml;
+      bodyEl.innerHTML = sectionsHtml + xtradHtml + introHtml;
     }
 
     function open(textKey) {
