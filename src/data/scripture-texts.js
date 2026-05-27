@@ -15036,4 +15036,318 @@ SCRIPTURE_TEXTS['herodotus-bk2-1'] = {
   ]
 };
 
+// ── NIHON SHOKI — JAPAN'S SECOND-OLDEST OFFICIAL HISTORY (720 CE) ────────────
+SCRIPTURE_TEXTS['nihon-shoki-1'] = {
+  id:         'nihon-shoki-1',
+  title:      'Nihon Shoki — The Imperial Chronicle of Japan (720 CE)',
+  shortTitle: 'Nihon Shoki',
+  corpus:     'Shintō sacred chronicles · 日本書紀 (Chronicles of Japan)',
+  tradId:     'tradition-shinto',
+  date:       '720 CE (compiled by Prince Toneri under Empress Genshō; the second of the two foundational Japanese chronicles, with the Kojiki of 712 CE as its eight-year predecessor)',
+  docNode:    'phase-8-020-nihon-shoki',
+  language:   'Classical Chinese (kanbun) · W. G. Aston 1896 English (the canonical scholarly translation)',
+  translations: [
+    { id: 'aston',   label: 'W. G. Aston 1896 (Tuttle reprint 1972, "Nihongi")', note: 'Aston\'s complete English translation of the 30-book Nihon Shoki is still the standard Anglophone scholarly reference. Two volumes covering creation through 697 CE.' },
+    { id: 'kanbun',  label: 'Classical Chinese (kanbun) — the official literary register of the Yamato court' },
+  ],
+  intro: 'The Nihon Shoki ("Chronicles of Japan") is the second of the two foundational chronicles of the ancient Japanese state, compiled in 720 CE under Empress Genshō by Prince Toneri and a team of scribes. Where its predecessor the Kojiki (712 CE) is written in a Japanese-inflected reading of Chinese characters and presents the founding myths in a more native register, the Nihon Shoki is written in formal Classical Chinese (kanbun) — the international literary register of the East Asian world — and presents the same founding narrative in a more outward-facing diplomatic-historiographical mode aimed at signalling the Yamato court\'s parity with the Tang Chinese imperial court. The two chronicles together established the canonical narrative of Japanese national-religious origins: the descent of the Yamato imperial line from Amaterasu Ōmikami (the sun goddess), the cosmogonic kuniumi ("birth of the country") of Izanagi and Izanami, and the eventual establishment of the imperial line through Jimmu the first emperor. The Nihon Shoki is particularly important to comparative-religion scholarship because it preserves multiple variant traditions of the same mythic events (often introducing "another version says..." passages), giving access to the textual-traditional plurality that the more streamlined Kojiki suppresses. Modern reference work: Aston 1896, Philippi 1968 (for the parallel Kojiki), Brownlee 1991, Bentley 2002.',
+  crossTradition: [
+    { label: 'Kojiki — the parallel Japanese foundation-chronicle of 712 CE', textId: 'kojiki-opening',
+      note: 'The Kojiki and Nihon Shoki form the foundational chronicle-pair of the Yamato state. The two texts narrate substantially the same mythic-historical sequence (creation, the Age of the Gods, the establishment of the imperial line) but differ in register, audience, and editorial method: Kojiki in Japanese-inflected reading aimed at an internal court audience, Nihon Shoki in formal Chinese aimed at parity with Tang China. Reading them together is the standard scholarly entry-point to early Japanese historical-religious literature.' },
+    { label: 'Cao Đài Thánh Ngôn — modern East Asian syncretic-revelatory tradition', textId: 'cao-dai-thanh-ngon',
+      note: 'The Cao Đài tradition (1925–26 Vietnam) is the closest modern East Asian parallel for syncretic religious-state founding narrative — both traditions explicitly link a national-political founding to a revealed-divine origin. The Nihon Shoki\'s 720 CE state-founding narrative and the Cao Đài revelations\' 1920s national-religious founding occupy the same genre-space across very different cultural moments.' },
+    { label: 'Donggyeong Daejeon — Korean Cheondogyo state-religious foundation', textId: 'donggyeong-daejeon',
+      note: 'The Donggyeong Daejeon (Eastern Learning Great Compendium) and the Nihon Shoki both function as state-religious foundational texts of their respective East Asian traditions. Reading the two together documents the East Asian pattern of binding national-political identity to a textually-preserved religious-historical narrative.' },
+  ],
+  sections: [
+    {
+      heading: 'I. The Cosmogony — Izanagi and Izanami',
+      verses: [
+        {
+          ref: 'Nihon Shoki I.4 (Aston)',
+          text: 'Then Izanagi no Mikoto and Izanami no Mikoto stood on the floating bridge of Heaven, and held counsel together, saying: "Is there not a country beneath?" Thereupon they thrust down the jewel-spear of Heaven, and groping about therewith found the ocean. The brine which dripped from the point of the spear coagulated and became an island which received the name of Onogoro-jima.',
+          textVersions: {
+            aston:  'Then Izanagi no Mikoto and Izanami no Mikoto stood on the floating bridge of Heaven, and held counsel together, saying: "Is there not a country beneath?" Thereupon they thrust down the jewel-spear of Heaven, and groping about therewith found the ocean. The brine which dripped from the point of the spear coagulated and became an island which received the name of Onogoro-jima.',
+            kanbun: '於是、伊弉諾尊・伊弉冉尊、立於天浮橋之上、共計曰、底下豈無國歟。廼以天之瓊矛、指下而探之、是獲滄溟。其矛鋒滴瀝之潮、凝成一嶋、名曰磤馭慮嶋。',
+          },
+          entities: [
+            { word: 'Izanagi no Mikoto and Izanami no Mikoto', node: 'izanagi', type: 'deity-pair',
+              note: 'Izanagi-no-Mikoto and Izanami-no-Mikoto are the primordial divine couple of Japanese cosmogony — the "male-who-invites" and "female-who-invites" who descend from the High Plain of Heaven, churn the ocean with the heavenly jewelled spear, and produce the islands of Japan as well as the kami (divine powers) that populate the cosmos. The kuniumi ("country-birth") and kamiumi ("kami-birth") narratives form the foundational cosmogonic sequence of both the Kojiki and the Nihon Shoki, with the Nihon Shoki preserving multiple variant tellings of the same events that allow modern scholarship to reconstruct the pre-redaction textual-traditional plurality.',
+              parallels: [
+                { label: 'Kojiki opening — the parallel cosmogonic narrative', textId: 'kojiki-opening',
+                  note: 'The Kojiki\'s opening narrative of the heavenly bridge, the jewelled spear, and the formation of Onogoro-jima parallels the Nihon Shoki I.4 passage almost beat-for-beat — the two texts are working from the same underlying mythic-cosmogonic tradition with slightly different editorial emphases.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+// ── SAHIH MUSLIM — THE SECOND OF THE SAHIHAYN HADITH COLLECTIONS ─────────────
+SCRIPTURE_TEXTS['sahih-muslim-1'] = {
+  id:         'sahih-muslim-1',
+  title:      'Sahih Muslim — The Authentic Collection of Muslim ibn al-Hajjaj (~875 CE)',
+  shortTitle: 'Sahih Muslim',
+  corpus:     'Hadith corpus · Sahīḥayn (al-Bukhārī + Muslim)',
+  tradId:     'tradition-sunni-islam',
+  date:       '~875 CE (composed by Abū al-Ḥusayn Muslim ibn al-Ḥajjāj al-Nīsābūrī, d. 875; the second of the two universally-accepted "authentic" hadith collections of Sunni Islam, completed in the generation after al-Bukhārī\'s Ṣaḥīḥ of c. 870)',
+  docNode:    'phase-5-042-sahih-muslim',
+  language:   'Classical Arabic (original) · Abdul Hamid Siddiqui 1976 English (canonical Anglophone scholarly translation) · Nawawi commentary basis',
+  translations: [
+    { id: 'siddiqui',   label: 'Abdul Hamid Siddiqui 1976 (Sh. Muhammad Ashraf, Lahore — 4 volumes)', note: 'The canonical English translation of Sahih Muslim. Standard reference for the entire English-language hadith-studies tradition.' },
+    { id: 'arabic',     label: 'Classical Arabic (Nawawi recension via Muhammad Fuad Abd al-Baqi 1955 critical edition)' },
+  ],
+  intro: 'Sahih Muslim is the second of the two universally-accepted ṣaḥīḥ ("authentic") hadith collections of Sunni Islam, compiled around 875 CE by Abū al-Ḥusayn Muslim ibn al-Ḥajjāj al-Nīsābūrī (d. 875) in the generation immediately following his contemporary and teacher al-Bukhārī (whose own Ṣaḥīḥ was completed about five years earlier). The two collections together — universally known in Sunni scholarship as the Ṣaḥīḥayn ("the two authentic ones") — constitute the highest authority of hadith literature in Sunni Islam, ranked above all other hadith collections including the remaining four of the Six Books (Sunan Abi Dawud, Jami al-Tirmidhi, Sunan al-Nasai, Sunan Ibn Majah). Muslim\'s methodology differs from al-Bukhari\'s in significant ways: Muslim organises hadith by topic with full chains of transmission grouped together; al-Bukhari arranges hadith under legal-juristic chapter-headings that often impose his own interpretive frame. Muslim\'s introduction also includes one of the earliest systematic theoretical treatments of hadith authentication methodology in Islamic scholarship, articulating the conditions for ṣaḥīḥ status that subsequent ʿulūm al-ḥadīth scholars (Ibn al-Salah, al-Nawawi, Ibn Hajar) refined into the discipline of Islamic source-criticism. Modern Western scholarship: Brown 1996, Juynboll 1983, Motzki 2002.',
+  crossTradition: [
+    { label: 'Sahih al-Bukhari — the paired first Sahih', textId: 'hadith-bukhari-selected',
+      note: 'Sahih al-Bukhari and Sahih Muslim form the Sahihayn — the two ṣaḥīḥ hadith collections that constitute the highest tier of Sunni Islamic textual authority after the Qurʾān itself. The two collections were composed in the same generation, share substantial material, and supplement each other in scholarly practice. Reading them together is the standard scholarly entry-point to authentic-tradition Sunni hadith literature.' },
+    { label: 'Qurʾān — the scriptural source the hadith literature interprets', textId: 'quran-fatiha-nur',
+      note: 'The hadith corpus and the Qurʾān stand in a complementary scriptural relationship in Sunni Islam: the Qurʾān is the verbatim revealed word of God; the hadith preserve the practical teaching, example, and authoritative interpretation of the Prophet Muhammad. The two together constitute the textual basis of Sunni Islamic law (sharīʿah) and Sunni religious practice generally.' },
+    { label: 'Nahj al-Balagha — the Shīʿī tradition\'s parallel non-Qurʾanic textual authority', textId: 'nahj-al-balagha',
+      note: 'The Sahihayn function in Sunni Islam structurally similarly to the way Nahj al-Balagha (the sermons and letters of ʿAli, compiled by al-Sharif al-Radi c. 1009) functions in Shīʿī Islam — as the most authoritative non-Qurʾanic textual tradition. The two traditions diverge on which post-Qurʾanic textual authority is canonical, but both share the structure of recognising a secondary textual authority beyond the Qurʾān.' },
+  ],
+  sections: [
+    {
+      heading: 'I. The Hadith of Gabriel — Faith, Islam, and Iḥsān',
+      verses: [
+        {
+          ref: 'Sahih Muslim 8 (Book of Faith; Siddiqui trans.)',
+          text: 'It is narrated on the authority of Umar ibn al-Khattab: One day we were sitting in the company of God\'s Messenger when there appeared before us a man dressed in pure white clothes, his hair black, no traces of travel visible on him, and none of us knew him. He sat down opposite the Prophet, his knees touching his knees, his palms upon his thighs, and said: "Muhammad, inform me about iḥsān." The Prophet replied: "Iḥsān is that you should serve God as if you were seeing Him, for though you do not see Him, He sees you." Then the man departed, and after a while the Prophet asked, "Umar, do you know who that questioner was?" I replied, "God and His Messenger know best." He said: "It was Gabriel; he came to teach you your religion."',
+          textVersions: {
+            siddiqui: 'It is narrated on the authority of Umar ibn al-Khattab: One day we were sitting in the company of God\'s Messenger when there appeared before us a man dressed in pure white clothes, his hair black, no traces of travel visible on him, and none of us knew him. He sat down opposite the Prophet, his knees touching his knees, his palms upon his thighs, and said: "Muhammad, inform me about iḥsān." The Prophet replied: "Iḥsān is that you should serve God as if you were seeing Him, for though you do not see Him, He sees you." Then the man departed, and after a while the Prophet asked, "Umar, do you know who that questioner was?" I replied, "God and His Messenger know best." He said: "It was Gabriel; he came to teach you your religion."',
+            arabic:   'عن عمر بن الخطاب قال: بينما نحن جلوس عند رسول الله ﷺ ذات يوم إذ طلع علينا رجل شديد بياض الثياب شديد سواد الشعر، لا يُرى عليه أثر السفر، ولا يعرفه منا أحد، حتى جلس إلى النبي ﷺ فأسند ركبتيه إلى ركبتيه، ووضع كفيه على فخذيه، وقال: يا محمد أخبرني عن الإحسان. قال: أن تعبد الله كأنك تراه، فإن لم تكن تراه فإنه يراك.',
+          },
+          entities: [
+            { word: 'iḥsān', node: 'tradition-sunni-islam', type: 'doctrine',
+              note: 'إحسان — iḥsān, "excellence / making-beautiful." The third of the three classical Islamic categories alongside īmān (faith) and islām (submission). The Hadith of Gabriel\'s definition of iḥsān as "serving God as if you were seeing Him" is the foundational text for the broader Islamic mystical-contemplative tradition (taṣawwuf / Sufism) and the operative scriptural justification for the muraqaba (contemplative awareness) practice of every Sufi order. Reading this hadith alongside al-Ghazali\'s Iḥyāʾ ʿUlūm al-Dīn or Ibn ʿArabi\'s Futūḥāt makes clear that Sufism is not extraneous-foreign to Islam but a natural development of categories already present in the canonical hadith literature.',
+              parallels: [
+                { label: 'Rumi · Masnavi — the mystical-contemplative tradition that builds on iḥsān', textId: 'rumi-masnavi',
+                  note: 'Rumi\'s Masnavi (13th c.) is the most influential single literary articulation of the Sufi-contemplative tradition that traces its scriptural foundation to the iḥsān-hadith. The "as if you were seeing Him" framing of the hadith becomes the philosophical-theological foundation for the Sufi pursuit of direct experiential awareness of God that the Masnavi articulates in poetic form.' },
+                { label: 'Ibn ʿArabi · Fuṣūṣ al-Ḥikam — the systematic Sufi metaphysics', textId: 'ibn-arabi-fusus',
+                  note: 'Ibn ʿArabi\'s Fuṣūṣ al-Ḥikam (c. 1229) develops the most systematic metaphysical articulation of the Sufi tradition that begins from the iḥsān-hadith. The "as if you were seeing Him" formula becomes the scriptural anchor for Ibn ʿArabi\'s entire epistemological-theological program of waḥdat al-wujūd (oneness of being).' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+// ── SEFER HA-BAHIR — THE FIRST KABBALISTIC TEXT (PROVENCE, ~1180) ────────────
+SCRIPTURE_TEXTS['sefer-ha-bahir-1'] = {
+  id:         'sefer-ha-bahir-1',
+  title:      'Sefer ha-Bahir — The Book of Brightness (Provence, ~1180 CE)',
+  shortTitle: 'Sefer ha-Bahir',
+  corpus:     'Kabbalistic corpus (Sefer Yetzirah · Bahir · Zohar)',
+  tradId:     'tradition-kabbalah',
+  date:       '~1180 CE (Provence — the inaugural text of the medieval Kabbalistic tradition; redacted from earlier oral materials by the circle around Isaac the Blind and his Provençal predecessors)',
+  docNode:    'phase-5-026-sefer-ha-bahir',
+  language:   'Mishnaic-medieval Hebrew with Aramaic elements · Aryeh Kaplan 1979 English (canonical Anglophone scholarly translation)',
+  translations: [
+    { id: 'kaplan',  label: 'Aryeh Kaplan 1979 (Samuel Weiser, "The Bahir")', note: 'Kaplan\'s English translation with extensive commentary is the standard Anglophone reference; pairs the medieval text with detailed cross-references to subsequent Kabbalistic and rabbinic literature.' },
+    { id: 'scholem', label: 'Gershom Scholem 1923 / 1962 German + Hebrew critical edition', note: 'Scholem\'s German translation (Das Buch Bahir 1923) and later Hebrew critical edition established the modern scholarly text of the Bahir.' },
+    { id: 'hebrew',  label: 'Hebrew (Scholem critical text + Daniel Abrams 1994 synoptic edition)' },
+  ],
+  intro: 'Sefer ha-Bahir ("The Book of Brightness") is the inaugural text of the medieval Kabbalistic tradition, redacted in Provence around 1180 CE from earlier oral and possibly written materials by the circle of Jewish mystical scholars centered on Isaac the Blind and his predecessors. The text is short (roughly 200 sections in standard editions), formally an exegetical-midrashic compilation in the style of earlier rabbinic literature, but it introduces the theological-cosmological vocabulary — the ten sefirot as divine emanative powers, the divine feminine (later named Shekhinah), the symbolic letter-cosmology — that the subsequent Kabbalistic tradition (the Geronese school, Moses de Leon\'s Zohar of c. 1280, the Lurianic Safed Kabbalah of the 16th century, Hasidism, modern Jewish-mystical and broader esoteric traditions) will spend the next eight centuries elaborating. The Bahir occupies a structurally similar position in Kabbalistic history to the Gnostic Apocryphon of John in Christian Gnostic history: the first systematic textual articulation of a tradition that had previously circulated orally. Gershom Scholem\'s 1923 German translation and his subsequent works (Major Trends in Jewish Mysticism 1941, Origins of the Kabbalah 1962) established the modern scholarly framework for treating the Bahir as the foundational text of Kabbalistic textual history. Modern scholarship: Scholem 1962, Daniel Abrams 1994 synoptic critical edition, Moshe Idel 1988.',
+  crossTradition: [
+    { label: 'Sefer Yetzirah — the older "Book of Creation" the Bahir presupposes', textId: 'sefer-yetzirah',
+      note: 'Sefer Yetzirah (composed somewhere between the 2nd and 9th centuries CE; the dating is debated) is the older Jewish-mystical text the Bahir presupposes and builds on. Yetzirah introduces the doctrine of the ten sefirot belimah ("ten ineffable enumerations") that the Bahir elaborates into the operative emanationist-theological vocabulary of medieval Kabbalah. Reading the two together is the standard scholarly entry-point to the textual prehistory of Kabbalah.' },
+    { label: 'Zohar — the great later Kabbalistic synthesis the Bahir prepares for', textId: 'zohar-ein-sof',
+      note: 'The Zohar (c. 1280, composed by Moses de Leon and his circle in Castile) is the great later Kabbalistic synthesis that builds on the Bahir\'s foundational vocabulary. The Bahir → Zohar transition is the central textual-historical move in medieval Kabbalistic literature: the Bahir inaugurates the tradition; the Zohar develops it into a comprehensive theological-cosmological-anthropological system that subsequent Kabbalistic literature (Cordovero, Luria, Hasidic teaching) continues to draw on.' },
+    { label: '3 Enoch (Sefer Hekhalot) — the older Hekhalot-mysticism background', textId: '3-enoch-metatron',
+      note: '3 Enoch (Sefer Hekhalot, c. 5th–6th c. CE) and the broader Hekhalot-Merkabah mystical literature provide the older Jewish-mystical substrate from which the Bahir draws — celestial-throne mysticism, angelology, ascent-vision traditions. The Bahir\'s innovation is to combine this older Hekhalot-mystical vocabulary with the new sefirotic-emanationist framework, producing the medieval Kabbalistic synthesis.' },
+  ],
+  sections: [
+    {
+      heading: 'I. The Tree of the Sefirot — Divine Emanation',
+      verses: [
+        {
+          ref: 'Sefer ha-Bahir §103 (Kaplan numbering; Scholem §82)',
+          text: 'What is the tree that you have mentioned? He said to him: All the powers of God are like a tree. Just as the tree, through the water, brings forth its fruit, so does God, through the water, increase the powers of the tree. And what is the water of God? It is wisdom (Ḥokhmah). And the souls of the righteous are the fruits, which fly through the air and come into the world from the tree.',
+          textVersions: {
+            kaplan: 'What is the tree that you have mentioned? He said to him: All the powers of God are like a tree. Just as the tree, through the water, brings forth its fruit, so does God, through the water, increase the powers of the tree. And what is the water of God? It is wisdom. And the souls of the righteous are the fruits, which fly through the air and come into the world from the tree.',
+            hebrew: 'מאי האילן שאמרת. אמר לו, כל חיילותיו של הקב"ה כאילן הם. מה האילן הזה על ידי המים מוציא פירות, אף הקב"ה על ידי המים מרבה חיילותיו של אילן. ומאי מימיו של הקב"ה. היא חכמה. והן נשמותיהן של צדיקים הפורחות מאויר ובאות לאילן.',
+          },
+          entities: [
+            { word: 'the tree', node: 'tradition-kabbalah', type: 'cosmological-image',
+              note: 'The "tree" image of Bahir §103 inaugurates one of the most enduring symbols in subsequent Kabbalistic and broader esoteric literature: the divine sefirotic structure as a cosmic tree whose roots are in the divine source and whose branches manifest the operations of the divine in creation. The image becomes systematised in subsequent Kabbalistic literature as the ʿEts Ḥayyim ("Tree of Life") — the canonical diagram of the ten sefirot in their three-pillar arrangement that organises all subsequent Kabbalistic theology. Reading Bahir §103 makes clear that the Tree-of-Life diagram has scriptural rather than late-mystical origins; it is the Bahir\'s own image, picked up and developed by every subsequent Kabbalistic generation.',
+              parallels: [
+                { label: 'Zohar — the systematic articulation of the sefirotic tree', textId: 'zohar-ein-sof',
+                  note: 'The Zohar develops the Bahir\'s tree-image into the full theological-cosmological articulation of the ten sefirot as the divine emanative structure mediating between Ein Sof (the unknowable infinite) and the manifest world. The Bahir → Zohar transmission of this image is one of the clearest examples of how medieval Kabbalistic theology built on the Bahir\'s foundational vocabulary.' },
+                { label: 'Sefer Yetzirah — the older ten-sefirot doctrine', textId: 'sefer-yetzirah',
+                  note: 'Sefer Yetzirah\'s "ten sefirot belimah" (ten ineffable enumerations) provides the technical-numerical vocabulary the Bahir extends with the tree-imagery and the emanative-theological elaboration. The Yetzirah-numbers and the Bahir-imagery together constitute the foundational Kabbalistic vocabulary that subsequent literature systematises.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+// ── PROSE EDDA — SNORRI'S GYLFAGINNING (~1220 CE ICELAND) ────────────────────
+SCRIPTURE_TEXTS['prose-edda-gylfaginning-1'] = {
+  id:         'prose-edda-gylfaginning-1',
+  title:      'The Prose Edda — Snorri Sturluson\'s Gylfaginning (~1220 CE)',
+  shortTitle: 'Prose Edda (Snorri)',
+  corpus:     'Norse Eddic corpus (Poetic Edda · Prose Edda)',
+  tradId:     'tradition-norse-germanic',
+  date:       '~1220 CE (composed by Snorri Sturluson, the Icelandic chieftain-historian-poet, in the early decades of post-Christianisation Iceland as a deliberate effort to preserve the pagan-mythological-poetic tradition for the use of skaldic poets who could no longer assume the old mythology as common cultural knowledge)',
+  docNode:    'phase-8-015-prose-edda-snorri',
+  language:   'Old Norse / Old Icelandic (original) · Anthony Faulkes 1987 English (the canonical scholarly translation)',
+  translations: [
+    { id: 'faulkes',  label: 'Anthony Faulkes 1987 (Everyman, "Edda")', note: 'Faulkes\' complete translation of the Prose Edda (Gylfaginning + Skáldskaparmál + Háttatal) is the standard Anglophone scholarly reference. Faulkes also produced the modern critical Old Norse edition.' },
+    { id: 'byock',    label: 'Jesse Byock 2005 (Penguin)', note: 'Byock\'s more recent accessible English translation of the Gylfaginning portion; useful complement to Faulkes for non-specialist readers.' },
+    { id: 'oldnorse', label: 'Old Norse (Faulkes critical edition, Vikings Society 1982–98)' },
+  ],
+  intro: 'The Prose Edda is the comprehensive prose handbook of pre-Christian Norse mythology and skaldic poetic tradition, composed in early-13th-century Iceland by Snorri Sturluson (1179–1241) — the Icelandic chieftain, lawspeaker, historian, and poet who is also the author of the great prose historical works Heimskringla and Egils saga. Snorri composed the Prose Edda around 1220, roughly two centuries after Iceland\'s Christianisation in 1000 CE, as a deliberate effort to preserve the pagan-mythological-poetic tradition for the use of skaldic poets in his own and subsequent generations who could no longer assume the old mythology as living cultural knowledge. The work has three major parts: Gylfaginning ("the deluding of Gylfi"), a framed dialogue in which a Swedish king receives a comprehensive overview of Norse cosmology and mythology from three disguised gods; Skáldskaparmál ("the language of poetry"), a treatise on skaldic poetic technique illustrated with extensive mythological narrative; and Háttatal ("the enumeration of meters"), a technical metrical demonstration. Together with the older Poetic Edda (a separate manuscript collection of mythological and heroic poems compiled c. 1270, including Vǫluspá and other texts that Snorri himself drew on), the Prose Edda is the foundation of all subsequent knowledge of Norse mythology. Without these two Eddic collections, the pre-Christian Germanic religious tradition would survive only in archaeological fragments. Modern scholarship: Faulkes 1987 critical edition + commentary, Heinrichs 1986, Lindow 2001, Clunies Ross 1994.',
+  crossTradition: [
+    { label: 'Vǫluspá — the Poetic Edda counterpart Snorri drew on', textId: 'voluspa',
+      note: 'Vǫluspá ("The Seeress\'s Prophecy"), the opening poem of the Poetic Edda, is the most important single Norse-mythological text that Snorri\'s Gylfaginning explicitly draws on and quotes throughout. Reading the two texts in parallel — the older poetic prophetic-eschatological narrative of Vǫluspá and Snorri\'s prose systematisation in Gylfaginning — is the standard scholarly entry-point to the two-text Eddic corpus.' },
+    { label: 'Hesiod\'s Theogony — the structural parallel cosmogonic-mythographic prose tradition', textId: 'hymn-to-aten',
+      note: 'Snorri\'s Gylfaginning occupies in Norse mythography a structurally similar position to Hesiod\'s Theogony in Greek mythography — a comprehensive systematic prose (or prose-and-verse) account of the divine genealogies and cosmogonic narratives of a religious tradition. The two texts are separated by 1,800 years and by radically different cultural moments, but they share the genre-position of "the canonical systematic mythography that subsequent learned culture used as its reference."' },
+    { label: 'Kojiki opening — the parallel post-conversion native-tradition preservation', textId: 'kojiki-opening',
+      note: 'The Prose Edda and the Kojiki share an important historical-cultural parallel: both texts are deliberate post-conversion (or pre-systematic-conversion) preservation efforts in which a literate culture systematises and writes down a previously-oral native religious-mythological tradition that would otherwise be lost. The Kojiki preserves Shintō; the Prose Edda preserves Norse mythology. Both texts owe their existence to the same impulse — preservation of native-religious tradition through literate-systematic mythography.' },
+  ],
+  sections: [
+    {
+      heading: 'I. The Beginning — Ginnungagap and the Cosmogony',
+      verses: [
+        {
+          ref: 'Gylfaginning 4–5 (Faulkes trans.)',
+          text: 'Then said Gangleri: "How were things wrought, before the races were and mankind multiplied?" Then said High: "The rivers that are called Élivágar came so far from their source that the venomous yeast that flowed with them hardened, as does dross when it runs out of the fire, and then it became ice; and when this ice stopped and flowed no more, then the venom that was in it gathered on top and froze into rime, and this rime grew layer upon layer through Ginnungagap." Then said Gangleri: "What was there before the races came into being, and ere mankind multiplied?" Then said Just-as-High: "These rivers, which are called the Élivágar, when they had flowed so far from their source that the venomous yeast hardened as the dross runs out of the fire, became ice."',
+          textVersions: {
+            faulkes:  'Then said Gangleri: "How were things wrought, before the races were and mankind multiplied?" High replied: "The rivers that are called Élivágar came so far from their source that the venomous yeast that flowed with them hardened, as does dross when it runs out of the fire, and then it became ice; and when this ice stopped and flowed no more, then the venom that was in it gathered on top and froze into rime, and this rime grew layer upon layer through Ginnungagap."',
+            oldnorse: 'Þá mælti Gangleri: "Hvat var upphaf? eða hversu hófsk? eða hvat var áðr?" Hárr svarar: "Svá sem segir í Vǫluspá: \'Ár var alda þar er ekki var, vara sandr né sær, né svalar unnir; jǫrð fannsk eigi né upphiminn, gap var ginnunga, en gras hvergi.\'"',
+          },
+          entities: [
+            { word: 'Ginnungagap', node: 'tradition-norse-germanic', type: 'cosmogonic-vocabulary',
+              note: 'Ginnungagap — "the yawning void," the primordial empty space of Norse cosmogony, into which the cosmogonic process of ice (from Niflheim) meeting fire (from Muspell) produces the first being Ymir. Ginnungagap is the Norse parallel to the tohu wa-vohu (formless void) of Genesis 1:2, the Babylonian Apsu-Tiamat primordial waters of Enuma Elish, and the Vedic Nāsadīya Sūkta\'s "neither being nor non-being" — the cross-tradition cosmogonic image of the formless space prior to creation. Snorri\'s prose treatment is the canonical articulation of the Norse version of this universal image.',
+              parallels: [
+                { label: 'Genesis 1 — the parallel primordial-formless-void cosmogony', textId: 'genesis-1',
+                  note: 'Genesis 1:2 ("the earth was tohu wa-vohu, and darkness covered the face of the deep") presents the primordial-formless cosmogonic image in its Hebrew Bible form. The structural parallel with Norse Ginnungagap is striking, though the religious-traditional contexts diverge sharply: Genesis presents an active divine creator separating elements out of the formless void; Snorri\'s Gylfaginning presents a more cosmological process in which fire and ice meet to produce being without an obvious creator-deity.' },
+                { label: 'Nāsadīya Sūkta — the Vedic parallel "neither being nor non-being"', textId: 'nasadiya-sukta',
+                  note: 'The Vedic Nāsadīya Sūkta\'s opening "Then was neither non-being nor being" articulates the same cross-tradition cosmogonic image of the formless pre-creation void that Ginnungagap names in Norse and tohu wa-vohu names in Hebrew Bible. The three texts together document the recurrence of the formless-void cosmogony across radically different religious traditions.' },
+                { label: 'Enuma Elish — the Babylonian primordial-waters parallel', textId: 'enuma-elish-1',
+                  note: 'The Babylonian Enuma Elish\'s opening primordial Apsu (fresh water) and Tiamat (salt water) waters present the same formless-pre-creation cosmogonic image in its Mesopotamian form. The deep textual-cosmological structure of "formless pre-creation void from which the differentiated cosmos emerges" recurs across Norse, Hebrew, Babylonian, and Vedic religious traditions.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+// ── CALVIN INSTITUTES — THE SECOND GREAT REFORMATION SYSTEMATIC (1559) ───────
+SCRIPTURE_TEXTS['calvin-institutes-1'] = {
+  id:         'calvin-institutes-1',
+  title:      'Calvin · Institutes of the Christian Religion (1559 final edition)',
+  shortTitle: 'Calvin · Institutes',
+  corpus:     'Protestant Reformation canon (Luther · Calvin)',
+  tradId:     'tradition-early-christianity',
+  date:       '1559 CE final edition (Geneva — Calvin first published the Institutes in 1536 as a six-chapter introduction and revised it progressively over the next 23 years; the 1559 fifth-edition four-book / 80-chapter structure is the canonical Reformation reference text)',
+  docNode:    'phase-6-010-calvin-institutes',
+  language:   'Latin (1559 Institutio Christianae Religionis) + French (Calvin\'s own 1560 translation) · Ford Lewis Battles 1960 English (canonical scholarly translation, McNeill ed.)',
+  translations: [
+    { id: 'battles', label: 'Ford Lewis Battles 1960, ed. John T. McNeill (Library of Christian Classics 20–21)', note: 'The canonical English-language scholarly edition of the 1559 Institutes. Two-volume Westminster Press edition with full critical apparatus.' },
+    { id: 'beveridge', label: 'Henry Beveridge 1845 (older Edinburgh translation, still widely available)', note: 'The earlier 19th-century English translation; methodologically dated but historically important as the standard English text for several generations.' },
+    { id: 'latin',   label: 'Latin (1559 Institutio Christianae Religionis, Strasbourg 1859 Calvini Opera critical edition)' },
+  ],
+  intro: 'Calvin\'s Institutes of the Christian Religion is the second great systematic theological-doctrinal work of the Protestant Reformation alongside Luther\'s body of writing — the comprehensive theological statement of the Reformed (as distinct from Lutheran or Anabaptist) Protestant tradition. Calvin first published the Institutes in 1536 as a six-chapter introduction to evangelical doctrine while in his mid-twenties, and revised it progressively over the next 23 years through five major editions (1536, 1539, 1543, 1550, 1559), each substantially expanding the previous version. The final 1559 edition is organised into four books — (I) the knowledge of God the Creator; (II) the knowledge of God the Redeemer in Christ; (III) the way to receive the grace of Christ (including the famous chapter 21 articulation of double predestination); (IV) the external means by which God invites us into the society of Christ (treating church, sacraments, and civil government) — totalling 80 chapters across roughly 1,500 pages. The work is significant in Codex Atlas terms as the second-major-vertex of the Protestant Reformation textual tradition (alongside Luther\'s Bondage of the Will and the broader Lutheran corpus), as the foundational text of the Reformed-Calvinist branch of Protestant Christianity (which includes Reformed, Presbyterian, Congregationalist, and many Baptist and Evangelical traditions), and as one of the most-cited theological works of the second-millennium Christian textual tradition. Modern scholarship: Bouwsma 1988, McGrath 1990, Muller 2000, Helm 2004.',
+  crossTradition: [
+    { label: 'Luther · Bondage of the Will — the parallel Reformation systematic text', textId: 'luther-bondage-of-will',
+      note: 'Luther\'s Bondage of the Will (1525) and Calvin\'s Institutes (1559) are the two great Reformation systematic-theological texts. Luther provides the polemical-doctrinal foundation against Erasmian free-will theology; Calvin provides the comprehensive systematic-theological articulation of the broader Reformed position. Reading the two together is the standard scholarly entry-point to Reformation theology, with Luther establishing the polemical-grace doctrine and Calvin extending it into a comprehensive theological-ecclesiological-political system.' },
+    { label: 'Romans 8 — the Pauline scriptural foundation Calvin draws on', textId: 'romans-8',
+      note: 'Romans 8 (and Romans 9 specifically for the election-and-predestination passages) is the Pauline scriptural foundation on which Calvin builds the doctrine of double predestination in Institutes III.21–24. Calvin\'s reading of Romans 8–9 is one of the most-debated single hermeneutical moves in subsequent Christian-theological history: Reformed and Lutheran traditions read the passage as Calvin does; Catholic, Eastern Orthodox, Arminian, and Wesleyan traditions read it more conditionally; the entire history of Calvinist-vs-Arminian theological controversy in subsequent Protestantism orbits this single exegetical question.' },
+    { label: 'Ephesians 1 — the parallel Pauline election-vocabulary text', textId: 'ephesians-1',
+      note: 'Ephesians 1:4–5 ("he chose us in Christ before the foundation of the world... having predestined us") provides the second Pauline scriptural foundation for Calvin\'s predestination doctrine alongside Romans 8–9. The Romans-and-Ephesians textual cluster is the operative Pauline base Calvin works from in the Institutes III.21 articulation of the doctrine.' },
+  ],
+  sections: [
+    {
+      heading: 'I. The Twin Knowledge — Of God and of Ourselves',
+      verses: [
+        {
+          ref: 'Institutes I.1.1 (Battles trans.)',
+          text: 'Nearly all the wisdom we possess, that is to say, true and sound wisdom, consists of two parts: the knowledge of God and of ourselves. But, while joined by many bonds, which one precedes and brings forth the other is not easy to discern. In the first place, no one can look upon himself without immediately turning his thoughts to the contemplation of God, in whom he "lives and moves." For, quite clearly, the mighty gifts with which we are endowed are hardly from ourselves; indeed, our very being is nothing but subsistence in the one God.',
+          textVersions: {
+            battles: 'Nearly all the wisdom we possess, that is to say, true and sound wisdom, consists of two parts: the knowledge of God and of ourselves. But, while joined by many bonds, which one precedes and brings forth the other is not easy to discern.',
+            latin:   'Tota fere sapientiae nostrae summa, quae vera demum ac solida sapientia censeri debeat, duabus partibus constat, Dei cognitione et nostri. Caeterum quum multis inter se vinculis connexae sint, utra tamen alteram praecedat et ex se pariat, non facile est discernere.',
+          },
+          entities: [
+            { word: 'the knowledge of God and of ourselves', node: 'john-calvin', type: 'theological-thesis',
+              note: 'The famous opening sentence of the Institutes — "Nearly all the wisdom we possess... consists of two parts: the knowledge of God and of ourselves" — establishes the structural-theological thesis on which the entire four-book work is built. Self-knowledge and God-knowledge are presented not as competing categories but as mutually-constituting: knowing ourselves drives us toward knowledge of God; knowing God reveals us to ourselves. The thesis has long pre-Reformation roots (Augustine\'s noverim me, noverim Te ["may I know myself, may I know You"] in Soliloquies 2.1; the medieval mystical tradition\'s self-knowledge-as-knowledge-of-God formulations) but Calvin\'s articulation became the operative Reformed-Protestant theological-anthropological frame for subsequent centuries.',
+              parallels: [
+                { label: 'Augustine — the patristic source of the self-knowledge / God-knowledge dyad', textId: 'meister-eckhart-godhead',
+                  note: 'Augustine\'s Soliloquies 2.1 ("may I know myself, may I know You") and the broader Augustinian articulation of self-knowledge and God-knowledge as mutually-constituting is the patristic source on which Calvin\'s opening Institutes thesis builds. The Augustinian-Calvinian self-knowledge / God-knowledge dyad has parallels in the broader Christian mystical tradition (Eckhart\'s Godhead theology), in Jewish mystical literature (the Kabbalistic emphasis on simultaneous self-knowledge and divine-knowledge), and in the Sufi tradition (the saying "whoever knows himself knows his Lord" attributed in various forms to multiple Sufi masters).' },
+                { label: 'Luther · Bondage of the Will — the parallel Reformation systematic opening', textId: 'luther-bondage-of-will',
+                  note: 'Luther\'s Bondage of the Will and Calvin\'s Institutes open from related-but-distinct theological starting points. Luther begins from the polemical contrast between divine omnipotence and human bondage; Calvin begins from the constitutive correlation between self-knowledge and God-knowledge. Reading the two openings together documents the two major systematic-theological strategies of the Reformation: Luther\'s polemical-doctrinal foundation, Calvin\'s constitutive-anthropological foundation.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+// ── KALEVALA — THE FINNISH NATIONAL EPIC (LÖNNROT 1849) ──────────────────────
+SCRIPTURE_TEXTS['kalevala-1'] = {
+  id:         'kalevala-1',
+  title:      'The Kalevala — Lönnrot\'s Compilation of Finnish Oral Tradition (1849)',
+  shortTitle: 'Kalevala',
+  corpus:     'Norse Eddic corpus (Poetic Edda · Prose Edda · Kalevala) · Finnish national epic',
+  tradId:     'tradition-norse-germanic',
+  date:       '1835 first edition (Old Kalevala) · 1849 expanded edition (New Kalevala, the canonical text) · the underlying oral-folkloric runo-song tradition extends back centuries before the compilation',
+  docNode:    'phase-8-018-kalevala',
+  language:   'Finnish (original — Karelian and Savonian-dialect oral runos compiled into a unified literary Finnish) · Keith Bosley 1989 English (Oxford World\'s Classics, the canonical Anglophone scholarly verse translation)',
+  translations: [
+    { id: 'bosley',  label: 'Keith Bosley 1989 (Oxford World\'s Classics)', note: 'Bosley\'s verse translation in trochaic tetrameter (preserving the metrical character of the original Finnish runo-meter) is the modern Anglophone scholarly standard.' },
+    { id: 'magoun',  label: 'Francis Peabody Magoun 1963 (Harvard)', note: 'The earlier scholarly prose-translation; useful for academic reference, methodologically valuable for its faithful textual rendering.' },
+    { id: 'finnish', label: 'Finnish (Lönnrot 1849 New Kalevala critical edition)' },
+  ],
+  intro: 'The Kalevala is the Finnish national epic, compiled by the physician-folklorist Elias Lönnrot (1802–1884) from oral runo-song traditions he collected during eleven field-trips into the Karelian countryside between 1828 and 1845. The first edition (the "Old Kalevala") was published in 1835; the expanded canonical second edition (the "New Kalevala," 50 cantos / 22,795 lines) appeared in 1849. The work occupies a particular place in 19th-century European religious-literary history: it is the most successful single attempt to reconstruct, from oral fragments, a coherent national-mythological epic of a pre-Christian European tradition. Lönnrot\'s editorial method (gathering distinct runo-songs from different singers, harmonising variant versions, and assembling them into a unified narrative arc) was deeply influenced by Macpherson\'s Ossian (1761–63) and was contemporaneous with the Brothers Grimm\'s collection of German folktales (1812+) and Snorri\'s 13th-century Prose Edda effort to preserve Norse mythology. The Kalevala\'s preserved mythological material is genuinely pre-Christian Finno-Ugric — the central figures (Väinämöinen the primordial singer-shaman, Ilmarinen the smith of heaven, Lemminkäinen the hero, Louhi the witch-queen of the North) belong to a Finno-Ugric religious-mythological tradition distinct from both Indo-European Norse and from the Christian-medieval tradition that absorbed it. The Kalevala became the literary-cultural foundation of Finnish national identity in the 19th-century National Romantic movement, directly inspired Sibelius\'s great symphonic-tone-poem cycles, and (through Lönnrot\'s prosody) shaped Longfellow\'s Hiawatha. Modern scholarship: Bosley 1989 introduction, DuBois 1995, Honko 2002.',
+  crossTradition: [
+    { label: 'Prose Edda Gylfaginning — the contemporary North-European preservation effort', textId: 'prose-edda-gylfaginning-1',
+      note: 'Snorri\'s Prose Edda (1220) and Lönnrot\'s Kalevala (1849) are the two great North-European efforts to preserve pre-Christian mythological-religious tradition through literate-systematic compilation: Snorri preserving the Norse-Germanic tradition two centuries after Iceland\'s Christianisation, Lönnrot preserving the Finno-Ugric tradition six centuries after Finland\'s Christianisation. Both works occupy the genre-position of "the canonical mythography that subsequent learned culture used as its reference."' },
+    { label: 'Vǫluspá — the pre-Christian Northern eschatological-cosmogonic poem', textId: 'voluspa',
+      note: 'Vǫluspá ("The Seeress\'s Prophecy") and the Kalevala\'s opening cosmogonic runos share the formal-genre position of "the seer\'s utterance of the world\'s beginning and end" in their respective Nordic religious-poetic traditions. Both texts open with a primordial pre-creation scene and proceed through cosmogony to the founding-acts of the major divine figures.' },
+    { label: 'Kojiki opening — the parallel post-conversion native-mythography preservation', textId: 'kojiki-opening',
+      note: 'The Kalevala, the Prose Edda, and the Kojiki together document the recurring pattern of literate-systematic preservation of a native religious-mythological tradition after the culture has already transitioned to a successor-religion (Christianity in the European cases, Buddhism + Confucianism in the Japanese case). All three texts occupy the genre-position of "preservation-mythography composed by a literate insider who can no longer assume the old religion as living cultural knowledge."' },
+  ],
+  sections: [
+    {
+      heading: 'I. The Cosmogony — Väinämöinen and the World-Egg',
+      verses: [
+        {
+          ref: 'Kalevala Canto 1, lines 105–112 (Bosley trans.)',
+          text: 'On the knee a bird is nesting, / on her lap she lays the duck-egg; / now the duck makes haste to hatch it, / warming it upon her bosom. / But the maiden feels the burning — / shifts her knee and shakes the duck-egg / down it tumbles to the waters, / shatters on the shore in fragments. / From those fragments rose the heavens, / and the earth from those same pieces.',
+          textVersions: {
+            bosley:  'On the knee a bird is nesting, / on her lap she lays the duck-egg; / now the duck makes haste to hatch it, / warming it upon her bosom. / But the maiden feels the burning — / shifts her knee and shakes the duck-egg / down it tumbles to the waters, / shatters on the shore in fragments. / From those fragments rose the heavens, / and the earth from those same pieces.',
+            finnish: 'Polvella on lintu pesää, / sylillänsä saalostavi, / sotka kiirehtii hauduttaa, / lämmittävi povellansa. / Tunsi neito polttavansa — / liikahutti polvellansa, / vierähti munat veteen, / särkyivät säpäleiksi rannoille. / Niistä syntyi taivahaiset, / niistä maat ja manteret myös.',
+          },
+          entities: [
+            { word: 'duck-egg', node: 'vainamoinen', type: 'cosmogonic-image',
+              note: 'The world-egg cosmogony of Kalevala Canto 1 (a sea-bird lays an egg on the knee of the Air-Maiden Ilmatar; the egg falls and breaks; the heavens, earth, sun, moon, and stars form from the fragments) is one of the most striking single examples of the cross-tradition world-egg cosmogonic motif — recurring in Vedic literature (the Hiraṇyagarbha "golden womb"), Orphic Greek cosmogony (the Orphic egg of Aristophanes\' Birds), Egyptian Heliopolitan tradition (the cosmic-egg variant of the Atum cosmogony), and Chinese Daoist literature (the Pangu cosmogony). The Finnish-Karelian version preserved in Kalevala Canto 1 is one of the most fully-developed surviving forms.',
+              parallels: [
+                { label: 'Nāsadīya Sūkta — the parallel Vedic primordial-cosmogonic vocabulary', textId: 'nasadiya-sukta',
+                  note: 'The Nāsadīya Sūkta\'s articulation of primordial-cosmogonic emergence ("Then there was neither non-being nor being... darkness was hidden by darkness... that One...") is the closest Vedic parallel to the Kalevala\'s primordial-Ilmatar opening. Both texts present the cosmos as emerging from a primordial-female-receptive state.' },
+                { label: 'Vǫluspá — the parallel Northern cosmogonic-eschatological poem', textId: 'voluspa',
+                  note: 'Vǫluspá\'s opening cosmogonic vision (the primordial Ginnungagap, the formation of Ymir, the establishment of the world) is the closest Northern-European structural parallel to the Kalevala\'s opening cosmogony. Reading the two together documents the Northern-European poetic-mythological convention of beginning the national epic with the world\'s formation.' },
+                { label: 'Prose Edda — the systematic North-Germanic cosmogonic articulation', textId: 'prose-edda-gylfaginning-1',
+                  note: 'Snorri\'s Gylfaginning provides the systematic prose articulation of the Norse-Germanic cosmogony that the Kalevala\'s Canto 1 articulates for the Finno-Ugric tradition. The two texts together document the comparative-religious-mythological richness of pre-Christian Northern Europe.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+
+
 
