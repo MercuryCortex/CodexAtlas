@@ -51,13 +51,17 @@
     { id: 'forge',    target: 'forge',          layout: 'wheel',    icon: '⚒', label: 'ATLAS'    },
     { id: 'timeline', target: 'forge',          layout: 'timeline', icon: '⎯', label: 'TIMELINE' },
     // 2026-05-27 — BOARD now routes to the V2 boards view per
-    // AUDIT/2026-05-28-boards-v2-new-ux-spec.md (LOCKED). The legacy
-    // VIEWS.transmutation is still reachable via deep-link but no
-    // longer wired to the master pill. Step 10 of the carve plan
-    // will redirect VIEWS.transmutation → VIEWS.boards entirely.
+    // AUDIT/2026-05-28-boards-v2-new-ux-spec.md (LOCKED).
+    // 2026-05-28 — MAP + STAR MAP repointed to V2 skeletons per
+    // AUDIT/2026-05-28-legacy-isolation-locked.md (Option A hard
+    // partition). Was routing to legacy VIEWS.atlas (MapLibre map
+    // dragged in the V01 chrome) and VIEWS.astrology (4-mode astro
+    // tab also V01 chrome). Now points at empty V2 skeleton stages.
+    // The legacy implementations remain reachable via the V01
+    // snapshot at _legacy/index.html.
     { id: 'board',    target: 'boards',                              icon: '⚗', label: 'BOARD'    },
-    { id: 'map',      target: 'atlas',                               icon: '⌖', label: 'MAP'      },
-    { id: 'starmap',  target: 'astrology',                           icon: '♄', label: 'STAR MAP' },
+    { id: 'map',      target: 'maps',                                icon: '⌖', label: 'MAP'      },
+    { id: 'starmap',  target: 'starmap',                             icon: '♄', label: 'STAR MAP' },
   ];
 
   // Reverse lookup: (STATE.view, _forge.getLayout()) → master view entry.
@@ -72,10 +76,14 @@
       if (mv.target === 'forge' && mv.layout === 'wheel') m[mv.target] = mv;
       else if (mv.target !== 'forge') m[mv.target] = mv;
     }
-    // legacy view aliases:
+    // legacy view aliases — when a deep-link drops the user on a legacy
+    // STATE.view name, the master pill still resolves to the right V2
+    // label so the chrome stays coherent.
     m['pantheon']     = MASTER_VIEWS[0];   // pantheon → FORGE
     m['transmission'] = MASTER_VIEWS[2];   // transmission → BOARD
-    m['transmutation'] = MASTER_VIEWS[2];  // 2026-05-27: transmutation → BOARD (V2 cutover)
+    m['transmutation'] = MASTER_VIEWS[2];  // 2026-05-27: transmutation → BOARD
+    m['atlas']        = MASTER_VIEWS[3];   // 2026-05-28: legacy MapLibre → MAP
+    m['astrology']    = MASTER_VIEWS[4];   // 2026-05-28: legacy astro → STAR MAP
     return m;
   })();
 

@@ -1212,6 +1212,43 @@ VIEWS.boards = {
   },
 };
 
+// VIEWS.maps + VIEWS.starmap — V2 skeletons filed 2026-05-28 alongside the
+// legacy-isolation lock (AUDIT/2026-05-28-legacy-isolation-locked.md). The
+// master-pill MAP and STAR MAP entries used to route to the legacy
+// VIEWS.atlas (MapLibre) and VIEWS.astrology, which dragged in V01 chrome.
+// Now they land on empty V2 skeleton stages ready to be built into. The
+// legacy implementations stay reachable via the V01 snapshot.
+VIEWS.maps = {
+  title: 'Map',
+  subtitle: 'world atlas — cross-tradition geography (V2 skeleton)',
+  render() {
+    document.getElementById('view-controls').innerHTML = '';
+    if (typeof legend !== 'undefined' && legend) legend.style('display', 'none').html('');
+    const canvasEl = document.getElementById('canvas');
+    const pane = document.createElement('div');
+    pane.className = 'maps-pane';
+    canvasEl.appendChild(pane);
+    const svgEl = document.getElementById('svg');
+    if (svgEl) svgEl.style.display = 'none';
+    if (window._mapsView) window._mapsView.render(pane);
+  },
+};
+VIEWS.starmap = {
+  title: 'Star Map',
+  subtitle: 'celestial sphere — constellations, decans, planetary spine (V2 skeleton)',
+  render() {
+    document.getElementById('view-controls').innerHTML = '';
+    if (typeof legend !== 'undefined' && legend) legend.style('display', 'none').html('');
+    const canvasEl = document.getElementById('canvas');
+    const pane = document.createElement('div');
+    pane.className = 'starmap-pane';
+    canvasEl.appendChild(pane);
+    const svgEl = document.getElementById('svg');
+    if (svgEl) svgEl.style.display = 'none';
+    if (window._starmapView) window._starmapView.render(pane);
+  },
+};
+
 // Legacy D3-SVG Pantheon — retained for rollback only. Reachable manually
 // via console (`STATE.view='_legacyPantheon'; setView('_legacyPantheon');`).
 VIEWS._legacyPantheon = {

@@ -9475,16 +9475,54 @@ body.view-forge.fx-belowfifteen .forge-labels-overlay { display: none !important
 }
 
 /* ============================================================
- * BOARDS V2 — hide every leftover legacy chrome on this view
+ * MAP V2 + STAR MAP V2 — skeletons mirroring .boards-pane
+ * Filed 2026-05-28 per AUDIT/2026-05-28-legacy-isolation-locked.md
+ *
+ * Empty V2 stages that replaced the legacy VIEWS.atlas + VIEWS.
+ * astrology routes in the master pill. Same app-shell contract
+ * as the boards pane (respect both rails, fill the rest); same
+ * subtle radial-gradient background. Ready to build into.
+ * ============================================================ */
+.maps-pane,
+.starmap-pane {
+  position: absolute;
+  top: 0; bottom: 0;
+  left:  var(--eff-nav-w);
+  right: var(--eff-detail-w);
+  background:
+    radial-gradient(ellipse at center, rgba(212,165,90,0.04) 0%, transparent 60%),
+    var(--bg-0);
+  overflow: hidden;
+  transition: left var(--t-layout) var(--ease), right var(--t-layout) var(--ease);
+  user-select: none;
+  -webkit-user-select: none;
+  color: var(--text-1, #e6e6e6);
+  font: 14px/1.55 -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif;
+}
+.maps-shell,
+.starmap-shell {
+  position: relative;
+  width: 100%; height: 100%;
+}
+.maps-stage,
+.starmap-stage {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+/* ============================================================
+ * Legacy-chrome hide scope — V2 skeleton views
  * Filed 2026-05-28 per AUDIT/2026-05-28-legacy-isolation-locked.md
  *
  * The shared `.view-header` (title + subtitle + view-controls),
- * `aside.detail` (right-rail inspector), and `#codex-dev-tab`
- * (Forge dev panel) live in the V2 shell because Forge + Reader
- * use them. On Boards V2 they're dead weight — the contextual
- * pill is the only chrome the view should show. Hide them so
- * John doesn't see "BOAR..." text behind the master pill or
- * ghost tabs on the right edge.
+ * `aside.detail` (right-rail inspector), `#codex-dev-tab` (Forge
+ * dev panel), and the various floating legends + meters live in
+ * the V2 shell because Forge + Reader use them. On the new
+ * skeleton views (Boards / Map / Star Map) they're dead weight —
+ * the contextual app-pill is the only chrome each view should
+ * show. Hidden via per-view body-class scope so the slots stay
+ * available for any future view that wants them.
  * ============================================================ */
 body.view-boards .view-header,
 body.view-boards aside.detail,
@@ -9492,5 +9530,19 @@ body.view-boards #codex-dev-tab,
 body.view-boards #zoom-meter,
 body.view-boards .legend,
 body.view-boards .tier-legend,
-body.view-boards .map-thumb { display: none !important; }
+body.view-boards .map-thumb,
+body.view-maps .view-header,
+body.view-maps aside.detail,
+body.view-maps #codex-dev-tab,
+body.view-maps #zoom-meter,
+body.view-maps .legend,
+body.view-maps .tier-legend,
+body.view-maps .map-thumb,
+body.view-starmap .view-header,
+body.view-starmap aside.detail,
+body.view-starmap #codex-dev-tab,
+body.view-starmap #zoom-meter,
+body.view-starmap .legend,
+body.view-starmap .tier-legend,
+body.view-starmap .map-thumb { display: none !important; }
 
