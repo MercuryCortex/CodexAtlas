@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=EB+Garamond:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&family=Noto+Serif+Hebrew:wght@400;700&family=Noto+Sans+Egyptian+Hieroglyphs&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="_assets/vendor/maplibre/maplibre-gl.css?v=5.24.0" />
-<link rel="stylesheet" href="src/styles/app.css?v=20260528-legacy-isolated-boards-hide" />
+<link rel="stylesheet" href="src/styles/app.css?v=20260528-user-menu-v1" />
 </head>
 <body class="nav-hidden detail-collapsed">
 <!-- ════════════════════════════════════════════════════════════════
@@ -81,12 +81,23 @@
           + style-button + themes-button + tier-button + stats)
        · #style-menu (13 visual-style presets dropdown)
        · #themes-menu (themes overlay grid)
-       · #nav-hub-trigger + #nav-hub-menu (✦ hamburger dropdown that
-          mirrored the side-nav with 32 legacy view links)
-     The V2 navigation surface is the app-pill above. The "Old
-     prototypes" entry in the master-pill dropdown launches the
-     legacy snapshot in a new tab.
+     The V2 navigation surface is the app-pill above. The "V01
+     prototype" entry in the master-pill dropdown launches the
+     legacy snapshot in a new tab. The ✦ user-menu is rebuilt
+     below as V2-native (account drawer, NOT a view switcher).
      ════════════════════════════════════════════════════════════════ -->
+
+<!-- ✦ User menu — Codex Atlas account drawer (rebuilt V2-native 2026-05-28).
+     The legacy nav-hub-trigger was deleted along with the rest of the V01
+     chrome; this is the clean replacement. Holds account, atlas-meta, and
+     project-meta items. View switching is the master-pill's job. JS lives
+     in src/js/user-menu.js (loads after app.js so STATE + setView exist). -->
+<button class="user-menu-trigger" id="user-menu-trigger" type="button"
+  title="Codex Atlas menu" aria-label="Codex Atlas menu"
+  aria-expanded="false" aria-controls="user-menu">
+  <span class="user-menu-glyph">✦</span>
+</button>
+<div class="user-menu" id="user-menu" role="menu" aria-hidden="true"></div>
 
 <main class="canvas" id="canvas">
   <div class="view-header">
@@ -222,6 +233,8 @@
      Loads AFTER app.js so window.STATE + window.setView are defined.
      Self-installing IIFE; exposes window._appPill for debug. -->
 <script src="src/js/app-pill.js?v=20260528-legacy-isolated"></script>
+<!-- ✦ User menu (account drawer) — rebuilt V2-native 2026-05-28. -->
+<script src="src/js/user-menu.js?v=20260528-user-menu-v1"></script>
 <script src="src/js/alchemy/board.js?v=20260517-handoff"></script>
 <script src="src/js/astrology/spine.js?v=20260517-handoff"></script>
 <script src="src/js/astrology/decanic.js?v=20260515-decanic-clarity"></script>

@@ -828,6 +828,144 @@ body.nav-hidden .side-tab { display: none !important; }
   z-index: 245;
   pointer-events: none;
 }
+
+/* ============================================================
+ * ✦ USER MENU (account drawer) — V2-native rebuild 2026-05-28
+ * Trigger sits at top:14, left:14 (the 36px slot the app-pill-
+ * wrap leaves at left:62). Same visual primitive as the
+ * app-pill: dark blur background, gold accent border, JetBrains
+ * Mono labels. Menu drops below the trigger via JS position-
+ * fixed math (positionMenu in src/js/user-menu.js).
+ * ============================================================ */
+.user-menu-trigger {
+  position: fixed;
+  top: 14px;
+  left: 14px;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  border: 1px solid rgba(212,165,90,0.22);
+  background: rgba(13,17,25,0.78);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.28);
+  color: var(--gold, #d4a55a);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 246;
+  transition: color 100ms ease, border-color 100ms ease, background 100ms ease;
+}
+.user-menu-trigger:hover {
+  color: var(--gold-1, #e8c889);
+  border-color: rgba(212,165,90,0.45);
+}
+.user-menu-trigger[aria-expanded="true"] {
+  color: var(--gold-1, #e8c889);
+  border-color: rgba(212,165,90,0.55);
+  background: rgba(13,17,25,0.92);
+}
+.user-menu-glyph {
+  font-size: 16px;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.user-menu {
+  position: fixed;
+  min-width: 240px;
+  max-width: 320px;
+  padding: 10px 0 8px 0;
+  border-radius: 12px;
+  border: 1px solid rgba(212,165,90,0.22);
+  background: rgba(13,17,25,0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 10px 32px rgba(0,0,0,0.42);
+  z-index: 244;     /* below the trigger so the trigger's border outlines it */
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-4px);
+  transition: opacity 120ms ease, transform 120ms ease;
+}
+.user-menu.is-open {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+.user-menu-header {
+  display: flex; align-items: center; gap: 8px;
+  padding: 4px 14px 10px 14px;
+}
+.user-menu-brand-glyph {
+  color: var(--gold, #d4a55a);
+  font-size: 14px;
+  line-height: 1;
+}
+.user-menu-brand-text {
+  font-family: var(--serif, "Cormorant Garamond", Georgia, serif);
+  font-size: 14px;
+  color: var(--text-0, #e6e6e6);
+  letter-spacing: 0.04em;
+}
+.user-menu-divider {
+  height: 1px;
+  background: rgba(212,165,90,0.12);
+  margin: 6px 10px;
+}
+.user-menu-section {
+  display: flex; flex-direction: column;
+  padding: 4px 0;
+}
+.user-menu-section-label {
+  font-family: var(--mono, "JetBrains Mono", Menlo, monospace);
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(212,165,90,0.55);
+  padding: 4px 14px 6px 14px;
+}
+.user-menu-item {
+  display: flex; align-items: center; gap: 10px;
+  padding: 7px 14px;
+  background: transparent;
+  border: 0;
+  text-align: left;
+  color: var(--text-0, #e6e6e6);
+  font-family: var(--mono, "JetBrains Mono", Menlo, monospace);
+  font-size: 11px;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: background 80ms ease, color 80ms ease;
+}
+.user-menu-item:hover:not(.is-disabled) {
+  background: rgba(212,165,90,0.08);
+  color: var(--gold-1, #e8c889);
+}
+.user-menu-item.is-disabled {
+  color: rgba(230,230,230,0.35);
+  cursor: not-allowed;
+}
+.user-menu-item-glyph {
+  width: 14px;
+  flex-shrink: 0;
+  text-align: center;
+  color: var(--gold, #d4a55a);
+  opacity: 0.85;
+}
+.user-menu-item.is-disabled .user-menu-item-glyph {
+  opacity: 0.35;
+}
+.user-menu-item-label {
+  flex: 1 1 auto;
+}
+.user-menu-item-hint {
+  color: rgba(230,230,230,0.40);
+  font-size: 9.5px;
+  letter-spacing: 0.05em;
+}
+
 .app-pill {
   display: inline-flex;
   align-items: stretch;
