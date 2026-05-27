@@ -3465,6 +3465,11 @@
     return _corpusToReligion[corpusId] || null;
   }
 
+  // Expose the religion map to window so the forge.js engine-side
+  // filter (rebuildForMode) can resolve a religion → its corpora →
+  // their docNodes when filtering the wheel.
+  window.SCRIPTURE_RELIGIONS = SCRIPTURE_RELIGIONS;
+
   function esc(s) {
     return String(s == null ? '' : s)
       .replace(/&/g, '&amp;').replace(/</g, '&lt;')

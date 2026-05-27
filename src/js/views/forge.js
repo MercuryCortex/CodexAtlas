@@ -2584,12 +2584,14 @@
       let modeNodes = modemod.filterNodesByMode(modeId, allNodes, allEdges);
       _tick('filterNodesByMode');
 
-      // Atlas Codex contextual filter (2026-05-28). When class === scriptures
-      // AND a family is selected (via Family ▾ in the Codex top-bar pill),
-      // narrow to that corpus's book IDs. When no family is selected,
-      // fall through to the curated 109-node SCRIPTURE_IDS set (the default
-      // "All families" view). Family pick BYPASSES SCRIPTURE_IDS — the
-      // corpus is the truth for "what books are in this canon."
+      // Atlas Codex contextual filter (2026-05-28; extended 2026-05-27
+      // for religion-level filtering — John feedback "this is FILTERING
+      // STAGES !!! pick a family then the BOOKS on the right need to
+      // be BOOKS from that family"). Cascade:
+      //   - codexFamily (corpus) set → filter to that corpus's books
+      //   - else codexReligion set   → filter to all books across all
+      //                                corpora in that religion
+      //   - else                     → default SCRIPTURE_IDS set
       if (modeId === 'scriptures' && local.codexFamily && window.SCRIPTURE_CORPORA) {
         const corpus = window.SCRIPTURE_CORPORA[local.codexFamily];
         if (corpus && corpus.sections) {
@@ -2605,6 +2607,27 @@
           // heuristic when explicit.
           modeNodes = allNodes.filter(n => n && allowed.has(n.id));
           _tick('codexFamilyFilter');
+        }
+      } else if (modeId === 'scriptures' && local.codexReligion && window.SCRIPTURE_RELIGIONS && window.SCRIPTURE_CORPORA) {
+        // 2026-05-27 — religion-level filter. Picking just a religion
+        // (no codex) should narrow the wheel to ALL books across ALL
+        // corpora in that religion. So picking "Christianity" with no
+        // codex shows the union of Bible + Tewahedo + Kebra Nagast +
+        // Reformation + Spanish Mystics + Cathar + Nag Hammadi books.
+        const R = window.SCRIPTURE_RELIGIONS[local.codexReligion];
+        if (R && Array.isArray(R.corpora)) {
+          const allowed = new Set();
+          for (const corpusId of R.corpora) {
+            const corpus = window.SCRIPTURE_CORPORA[corpusId];
+            if (!corpus || !corpus.sections) continue;
+            for (const sec of corpus.sections) {
+              for (const book of (sec.books || [])) {
+                if (book && book.id) allowed.add(book.id);
+              }
+            }
+          }
+          modeNodes = allNodes.filter(n => n && allowed.has(n.id));
+          _tick('codexReligionFilter');
         }
       }
 
