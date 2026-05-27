@@ -3156,7 +3156,7 @@ const SCRIPTURE_CORPORA = {
         { id: 'phase-3-002-plato-dialogues',                label: 'Plato · Dialogues' },
         { id: 'phase-3-022-plato-timaeus-critias-atlantis', label: 'Plato · Timaeus + Critias' },
         { id: 'phase-3-003-aristotle-metaphysics',          label: 'Aristotle · Metaphysics' },
-        { id: 'P4-022-chaldean-oracles',                    label: 'Chaldean Oracles (~2nd c. CE) · Neoplatonist scripture' },
+        { id: 'phase-4-022-chaldean-oracles',                    label: 'Chaldean Oracles (~2nd c. CE) · Neoplatonist scripture' },
       ]},
       { id: 'greek-ethnographic-theological', label: 'Ethnographic-theological (Greek-Egyptian)', color: '#4f6d80', books: [
         { id: 'phase-2-028-herodotus-histories-book-2', label: 'Herodotus · Histories Bk 2 (Egypt)' },
@@ -3312,7 +3312,7 @@ const SCRIPTURE_CORPORA = {
         { id: 'phase-3-024-natyashastra',             label: 'Nāṭyaśāstra (Bharata)' },
       ]},
       { id: 'vedic-purana', label: 'Purāṇa · devotional theology', color: '#b8845a', books: [
-        { id: 'P5-050-bhagavata-purana',       label: 'Bhāgavata Purāṇa' },
+        { id: 'phase-5-050-bhagavata-purana',       label: 'Bhāgavata Purāṇa' },
         { id: 'phase-5-001-devi-mahatmya',     label: 'Devī Māhātmya (Durgā Saptaśatī)' },
       ]},
       { id: 'vedic-vedanta-exegesis', label: 'Medieval Vedānta exegesis', color: '#a07050', books: [
@@ -3348,7 +3348,7 @@ const SCRIPTURE_CORPORA = {
       ]},
       { id: 'buddhist-indo-greek', label: 'Indo-Greek frontier dialogue (~-150 to +100)', color: '#a07050', books: [
         { id: 'phase-3-029-milindapanha',          label: 'Milindapañha · Questions of King Milinda' },
-        { id: 'P3-030-asokan-edicts',              label: 'Aśokan Edicts (~-250 BCE) · Greco-Buddhist contact zone' },
+        { id: 'phase-3-030-asokan-edicts',              label: 'Aśokan Edicts (~-250 BCE) · Greco-Buddhist contact zone' },
       ]},
       { id: 'buddhist-prajnaparamita', label: 'Prajñāpāramitā corpus (~-100 to +700)', color: '#b06850', books: [
         { id: 'phase-3-031-asthasahasrika-prajnaparamita', label: 'Aṣṭasāhasrikā · earliest Mahāyāna sūtra' },
@@ -3412,10 +3412,10 @@ const SCRIPTURE_CORPORA = {
     available: true,
     sections: [
       { id: 'shinto-oldest-chronicle', label: 'Kojiki · Record of Ancient Matters (712 CE)', color: '#c88a3a', books: [
-        { id: 'P8-019-kojiki', label: 'Kojiki (712 CE)' },
+        { id: 'phase-8-019-kojiki', label: 'Kojiki (712 CE)' },
       ]},
       { id: 'shinto-official-chronicle', label: 'Nihon Shoki · Chronicles of Japan (720 CE)', color: '#a87030', books: [
-        { id: 'P8-020-nihon-shoki', label: 'Nihon Shoki (720 CE)' },
+        { id: 'phase-8-020-nihon-shoki', label: 'Nihon Shoki (720 CE)' },
       ]},
     ],
   },
@@ -3432,14 +3432,14 @@ const SCRIPTURE_CORPORA = {
     available: true,
     sections: [
       { id: 'sufi-persian-rumi', label: 'Rumi · Masnavī-ye Maʿnavī (~1258–1273)', color: '#5a7a8f', books: [
-        { id: 'P5-054-rumi-masnavi', label: 'Rumi · Masnavī (Spiritual Verses)' },
+        { id: 'phase-5-054-rumi-masnavi', label: 'Rumi · Masnavī (Spiritual Verses)' },
       ]},
       { id: 'sufi-persian-attar', label: 'Attar · Conference of the Birds (~1177)', color: '#4a6a7a', books: [
-        { id: 'P5-051-attar-conference-of-birds', label: 'Attar · Manṭiq al-Ṭayr' },
+        { id: 'phase-5-051-attar-conference-of-birds', label: 'Attar · Manṭiq al-Ṭayr' },
       ]},
       { id: 'sufi-persian-hafez-sadi', label: 'Hafez · Divan + Saʿdi · Gulistan (14th–13th c.)', color: '#3a5a6a', books: [
-        { id: 'P5-053-hafez-divan', label: 'Hafez · Dīvān-e Ḥāfeẓ' },
-        { id: 'P5-052-sadi-gulistan', label: 'Saʿdi · Gulistān (The Rose Garden)' },
+        { id: 'phase-5-053-hafez-divan', label: 'Hafez · Dīvān-e Ḥāfeẓ' },
+        { id: 'phase-5-052-sadi-gulistan', label: 'Saʿdi · Gulistān (The Rose Garden)' },
       ]},
     ],
   },
@@ -3456,13 +3456,13 @@ const SCRIPTURE_CORPORA = {
     available: true,
     sections: [
       { id: 'norse-poetic', label: 'Poetic Edda · Völuspá / Hávamál / heroic lays (~13th c. MS)', color: '#6a7a9a', books: [
-        { id: 'P8-014-poetic-edda', label: 'Poetic Edda' },
+        { id: 'phase-8-014-poetic-edda', label: 'Poetic Edda' },
       ]},
       { id: 'norse-prose', label: 'Prose Edda · Snorri Sturluson (~1220 CE)', color: '#5a6a8a', books: [
-        { id: 'P8-015-prose-edda-snorri', label: 'Prose Edda (Snorra Edda)' },
+        { id: 'phase-8-015-prose-edda-snorri', label: 'Prose Edda (Snorra Edda)' },
       ]},
       { id: 'nordic-finnish', label: 'Finnish national epic', color: '#7a8a9a', books: [
-        { id: 'P8-018-kalevala', label: 'Kalevala (1835/1849) · Finnish national epic' },
+        { id: 'phase-8-018-kalevala', label: 'Kalevala (1835/1849) · Finnish national epic' },
       ]},
     ],
   },
@@ -3479,13 +3479,13 @@ const SCRIPTURE_CORPORA = {
     available: true,
     sections: [
       { id: 'kabbalah-sefer-yetzirah', label: 'Sefer Yetzirah · Book of Formation (3rd–6th c.)', color: '#6a5a9a', books: [
-        { id: 'P5-012-sefer-yetzirah', label: 'Sefer Yetzirah (Book of Formation)' },
+        { id: 'phase-5-012-sefer-yetzirah', label: 'Sefer Yetzirah (Book of Formation)' },
       ]},
       { id: 'kabbalah-bahir', label: 'Sefer ha-Bahir · Book of Brightness (~12th c.)', color: '#7a6aaa', books: [
-        { id: 'P5-026-sefer-ha-bahir', label: 'Sefer ha-Bahir' },
+        { id: 'phase-5-026-sefer-ha-bahir', label: 'Sefer ha-Bahir' },
       ]},
       { id: 'kabbalah-zohar', label: 'Sefer ha-Zohar · Book of Splendor (Moses de León, ~1280)', color: '#8a7aba', books: [
-        { id: 'P5-027-sefer-ha-zohar', label: 'Sefer ha-Zohar (Zohar)' },
+        { id: 'phase-5-027-sefer-ha-zohar', label: 'Sefer ha-Zohar (Zohar)' },
       ]},
     ],
   },
@@ -3503,11 +3503,11 @@ const SCRIPTURE_CORPORA = {
     available: true,
     sections: [
       { id: 'mesoamerican-popol-vuh', label: 'Popol Vuh · K\'iche\' Maya creation epic (~1550 written)', color: '#7a8a5a', books: [
-        { id: 'P8-001-popol-vuh', label: 'Popol Vuh' },
+        { id: 'phase-8-001-popol-vuh', label: 'Popol Vuh' },
       ]},
       { id: 'mesoamerican-codices', label: 'Pre-Columbian divinatory codices', color: '#6a7a4a', books: [
-        { id: 'P8-002-codex-borgia', label: 'Codex Borgia (~1400 CE)' },
-        { id: 'P8-003-dresden-codex-maya', label: 'Dresden Codex (~11th–12th c.)' },
+        { id: 'phase-8-002-codex-borgia', label: 'Codex Borgia (~1400 CE)' },
+        { id: 'phase-8-003-dresden-codex-maya', label: 'Dresden Codex (~11th–12th c.)' },
       ]},
     ],
   },
@@ -3525,11 +3525,11 @@ const SCRIPTURE_CORPORA = {
     available: true,
     sections: [
       { id: 'ibn-arabi-corpus', label: 'Ibn ʿArabī · Unity of Being (~1165–1240)', color: '#5a7a5a', books: [
-        { id: 'P5-021-ibn-arabi-fusus-al-hikam', label: 'Ibn ʿArabī · Fuṣūṣ al-Ḥikam' },
+        { id: 'phase-5-021-ibn-arabi-fusus-al-hikam', label: 'Ibn ʿArabī · Fuṣūṣ al-Ḥikam' },
       ]},
       { id: 'ghazali-corpus', label: 'Al-Ghazālī · Integration of reason + mysticism (~1058–1111)', color: '#4a6a4a', books: [
-        { id: 'P5-015-al-ghazali-ihya',               label: 'Al-Ghazālī · Iḥyāʾ ʿUlūm al-Dīn' },
-        { id: 'P5-045-al-ghazali-tahafut-al-falasifa', label: 'Al-Ghazālī · Tahāfut al-Falāsifa' },
+        { id: 'phase-5-015-al-ghazali-ihya',               label: 'Al-Ghazālī · Iḥyāʾ ʿUlūm al-Dīn' },
+        { id: 'phase-5-045-al-ghazali-tahafut-al-falasifa', label: 'Al-Ghazālī · Tahāfut al-Falāsifa' },
       ]},
       { id: 'islamic-falsafa', label: 'Islamic Falsafa · Aristotle into Scholasticism (~980–1198)', color: '#3a5a7a', books: [
         { id: 'phase-5-044-ibn-sina-kitab-al-shifa',          label: 'Avicenna · Kitāb al-Shifāʾ (Book of Healing)' },
@@ -3537,7 +3537,7 @@ const SCRIPTURE_CORPORA = {
         { id: 'phase-5-057-ibn-rushd-aristotle-commentaries', label: 'Averroes · Aristotle Commentaries' },
       ]},
       { id: 'islamic-sira-biography', label: 'Sīra literature · prophetic biography (~768 CE)', color: '#3a5a3a', books: [
-        { id: 'P5-043-ibn-ishaq-sirat-rasul-allah', label: 'Ibn Isḥāq · Sīrat Rasūl Allāh (~768 CE) · first Muhammad biography' },
+        { id: 'phase-5-043-ibn-ishaq-sirat-rasul-allah', label: 'Ibn Isḥāq · Sīrat Rasūl Allāh (~768 CE) · first Muhammad biography' },
       ]},
     ],
   },
@@ -3554,8 +3554,8 @@ const SCRIPTURE_CORPORA = {
     available: true,
     sections: [
       { id: 'hadith-sahihayn', label: 'The Two Sahīḥs · Sunni canonical hadith (~846–875 CE)', color: '#5a7a6a', books: [
-        { id: 'P5-007-sahih-al-bukhari', label: 'Ṣaḥīḥ al-Bukhārī (~846 CE)' },
-        { id: 'P5-042-sahih-muslim', label: 'Ṣaḥīḥ Muslim (~875 CE)' },
+        { id: 'phase-5-007-sahih-al-bukhari', label: 'Ṣaḥīḥ al-Bukhārī (~846 CE)' },
+        { id: 'phase-5-042-sahih-muslim', label: 'Ṣaḥīḥ Muslim (~875 CE)' },
       ]},
     ],
   },
@@ -3573,13 +3573,13 @@ const SCRIPTURE_CORPORA = {
     available: true,
     sections: [
       { id: 'mandaean-texts', label: 'Mandaean canon · Ginza Rba + Book of John', color: '#6a7a8a', books: [
-        { id: 'P4-017-ginza-rba', label: 'Ginza Rba (Great Treasure)' },
-        { id: 'P4-018-mandaean-book-of-john', label: 'Mandaean Book of John' },
+        { id: 'phase-4-017-ginza-rba', label: 'Ginza Rba (Great Treasure)' },
+        { id: 'phase-4-018-mandaean-book-of-john', label: 'Mandaean Book of John' },
       ]},
       { id: 'manichaean-texts', label: 'Manichaean corpus · Cologne Codex + Kephalaia + Shabuhragan', color: '#5a6a7a', books: [
-        { id: 'P4-014-cologne-mani-codex',        label: 'Cologne Mani Codex (~5th c. Greek)' },
-        { id: 'P4-015-kephalaia-of-the-teacher',  label: 'Kephalaia of the Teacher (Coptic)' },
-        { id: 'P4-016-shabuhragan',               label: 'Shabuhragan (Mani for Shapur I, ~240 CE)' },
+        { id: 'phase-4-014-cologne-mani-codex',        label: 'Cologne Mani Codex (~5th c. Greek)' },
+        { id: 'phase-4-015-kephalaia-of-the-teacher',  label: 'Kephalaia of the Teacher (Coptic)' },
+        { id: 'phase-4-016-shabuhragan',               label: 'Shabuhragan (Mani for Shapur I, ~240 CE)' },
       ]},
     ],
   },
@@ -3682,7 +3682,7 @@ const SCRIPTURE_CORPORA = {
       ]},
       { id: 'ethiopic-church-order', label: 'Ethiopian church-order texts (late antique)', color: '#7a6080', books: [
         { id: 'phase-4-083-mashafa-kidan-testament-of-our-lord', label: 'Mashafa Kidān · Testament of Our Lord (Ethiopian church order)' },
-        { id: 'P4-084-ethiopian-sinodos', label: 'Ethiopian Sinodos · apostolic canon collection' },
+        { id: 'phase-4-084-ethiopian-sinodos', label: 'Ethiopian Sinodos · apostolic canon collection' },
       ]},
     ],
   },
@@ -3703,15 +3703,15 @@ const SCRIPTURE_CORPORA = {
         { id: 'phase-2-022-zhuangzi', label: 'Zhuāngzǐ' },
       ]},
       { id: 'dao-classical', label: 'Classical synthesis · Liezi + Huainanzi', color: '#3d7060', books: [
-        { id: 'P4-098-liezi', label: 'Liezi' },
-        { id: 'P3-034-huainanzi', label: 'Huainanzi' },
+        { id: 'phase-4-098-liezi', label: 'Liezi' },
+        { id: 'phase-3-034-huainanzi', label: 'Huainanzi' },
       ]},
       { id: 'dao-alchemy', label: 'Daoist alchemy · Cantong Qi + Baopuzi', color: '#2d5a4a', books: [
-        { id: 'P4-096-cantong-qi', label: 'Cantong Qi (Wei Boyang)' },
-        { id: 'P4-097-baopuzi-ge-hong', label: 'Baopuzi (Ge Hong)' },
+        { id: 'phase-4-096-cantong-qi', label: 'Cantong Qi (Wei Boyang)' },
+        { id: 'phase-4-097-baopuzi-ge-hong', label: 'Baopuzi (Ge Hong)' },
       ]},
       { id: 'dao-revelation', label: 'Revelation corpus · Shangqing (Supreme Clarity)', color: '#1e4436', books: [
-        { id: 'P4-099-shangqing-corpus', label: 'Shangqing Corpus (Yang Xi)' },
+        { id: 'phase-4-099-shangqing-corpus', label: 'Shangqing Corpus (Yang Xi)' },
       ]},
     ],
   },
@@ -3759,7 +3759,7 @@ const SCRIPTURE_CORPORA = {
         { id: 'phase-4-005-gospel-of-mary',                    label: 'BG 8502,1 · Gospel of Mary' },
       ]},
       { id: 'nhc-related-codices', label: 'Related codices (Bruce + Askew)', color: '#907880', books: [
-        { id: 'P4-009-pistis-sophia',                          label: 'Pistis Sophia (Askew Codex) · longest Gnostic text' },
+        { id: 'phase-4-009-pistis-sophia',                          label: 'Pistis Sophia (Askew Codex) · longest Gnostic text' },
       ]},
     ],
   },
@@ -3808,17 +3808,17 @@ const SCRIPTURE_CORPORA = {
     available: true,
     sections: [
       { id: 'sumerian-earliest', label: 'Sumerian earliest stratum (~-2600 to -2000 BCE)', color: '#9a8050', books: [
-        { id: 'P1-001-kesh-temple-hymn',         label: 'Kesh Temple Hymn (~-2600 BCE) · oldest literary text' },
-        { id: 'P1-003-enheduanna-hymns',         label: 'Enheduanna Hymns (~-2285 BCE) · first named author' },
-        { id: 'P1-016-eridu-genesis-flood',      label: 'Eridu Genesis / Sumerian Flood account (~-1600 BCE)' },
+        { id: 'phase-1-001-kesh-temple-hymn',         label: 'Kesh Temple Hymn (~-2600 BCE) · oldest literary text' },
+        { id: 'phase-1-003-enheduanna-hymns',         label: 'Enheduanna Hymns (~-2285 BCE) · first named author' },
+        { id: 'phase-1-016-eridu-genesis-flood',      label: 'Eridu Genesis / Sumerian Flood account (~-1600 BCE)' },
       ]},
       { id: 'akkadian-epic', label: 'Akkadian epic tradition (~-1800 to -700 BCE)', color: '#b07040', books: [
-        { id: 'P1-004-gilgamesh-old-babylonian', label: 'Epic of Gilgamesh' },
-        { id: 'P1-008-enuma-elish',              label: 'Enuma Elish · Babylonian creation epic' },
-        { id: 'P1-017-descent-of-inanna',        label: 'Descent of Inanna / Ishtar to the Underworld' },
+        { id: 'phase-1-004-gilgamesh-old-babylonian', label: 'Epic of Gilgamesh' },
+        { id: 'phase-1-008-enuma-elish',              label: 'Enuma Elish · Babylonian creation epic' },
+        { id: 'phase-1-017-descent-of-inanna',        label: 'Descent of Inanna / Ishtar to the Underworld' },
       ]},
       { id: 'canaanite-ugaritic', label: 'Canaanite-Ugaritic (~-1400 to -1200 BCE)', color: '#a06050', books: [
-        { id: 'P1-013-baal-cycle',               label: 'Baal Cycle (Ugarit) · Baal vs. Mot dying-rising' },
+        { id: 'phase-1-013-baal-cycle',               label: 'Baal Cycle (Ugarit) · Baal vs. Mot dying-rising' },
       ]},
     ],
   },
@@ -3829,14 +3829,14 @@ const SCRIPTURE_CORPORA = {
     available: true,
     sections: [
       { id: 'rabbinic-tannaitic', label: 'Tannaitic stratum · Mishnah (~200 CE)', color: '#9aa05a', books: [
-        { id: 'P4-031-mishnah',              label: 'Mishnah (~200 CE) · codified oral Torah' },
+        { id: 'phase-4-031-mishnah',              label: 'Mishnah (~200 CE) · codified oral Torah' },
       ]},
       { id: 'rabbinic-gemara', label: 'Amoraic Gemara · Talmud (~400–500 CE)', color: '#8a9070', books: [
-        { id: 'P4-032-jerusalem-talmud',     label: 'Jerusalem Talmud (~400 CE)' },
-        { id: 'P4-033-babylonian-talmud',    label: 'Babylonian Talmud (~500 CE) · primary rabbinic authority' },
+        { id: 'phase-4-032-jerusalem-talmud',     label: 'Jerusalem Talmud (~400 CE)' },
+        { id: 'phase-4-033-babylonian-talmud',    label: 'Babylonian Talmud (~500 CE) · primary rabbinic authority' },
       ]},
       { id: 'rabbinic-hekhalot', label: 'Hekhalot · Merkavah mysticism (~200–700 CE)', color: '#a09870', books: [
-        { id: 'P5-013-hekhalot-literature',  label: 'Hekhalot literature · throne-chariot ascent' },
+        { id: 'phase-5-013-hekhalot-literature',  label: 'Hekhalot literature · throne-chariot ascent' },
       ]},
     ],
   },
@@ -3864,8 +3864,8 @@ const SCRIPTURE_CORPORA = {
     available: true,
     sections: [
       { id: 'bogomil-cathar-texts', label: 'Bogomil–Cathar canonical texts (~10th–13th c.)', color: '#7a5a8a', books: [
-        { id: 'P5-020-interrogatio-iohannis',      label: 'Interrogatio Iohannis · sole surviving Bogomil–Cathar shared text' },
-        { id: 'P5-023-liber-de-duobus-principiis', label: 'Liber de Duobus Principiis · Cathar theological treatise' },
+        { id: 'phase-5-020-interrogatio-iohannis',      label: 'Interrogatio Iohannis · sole surviving Bogomil–Cathar shared text' },
+        { id: 'phase-5-023-liber-de-duobus-principiis', label: 'Liber de Duobus Principiis · Cathar theological treatise' },
       ]},
     ],
   },
@@ -3882,8 +3882,8 @@ const SCRIPTURE_CORPORA = {
     available: true,
     sections: [
       { id: 'bahai-canonical', label: "Canonical writings of Baháʼu'lláh (~1853–1892)", color: '#6a9a8a', books: [
-        { id: 'P7-003-kitab-i-aqdas', label: 'Kitāb-i-Aqdas · Most Holy Book (1873)' },
-        { id: 'P7-002-kitab-i-iqan',  label: 'Kitāb-i-Īqān · Book of Certitude (1861)' },
+        { id: 'phase-7-003-kitab-i-aqdas', label: 'Kitāb-i-Aqdas · Most Holy Book (1873)' },
+        { id: 'phase-7-002-kitab-i-iqan',  label: 'Kitāb-i-Īqān · Book of Certitude (1861)' },
       ]},
     ],
   },
@@ -6041,7 +6041,7 @@ const INVESTIGATIONS = [
       { label: 'World Tree (Yggdrasil) ↔ axis mundi cluster', note: 'Yggdrasil: the cosmic ash tree connecting nine worlds (Asgard above, Midgard middle, Hel/Niflheim below), with an eagle at the crown and Níðhöggr serpent at the roots. Structurally identical to the axis mundi in every tradition that produces one: Egyptian djed pillar (Osiris backbone = world-spine), Hindu Mount Meru, Mesopotamian sacred mountain, Indian cosmic tree (Aśvattha). The Norse version is the most elaborated world-tree in any tradition — Odin discovers the runes by hanging from it, making it simultaneously cosmic axis and initiatory instrument.', tier: 1 },
     ],
     seeds: [
-      'P8-014-poetic-edda', 'P8-015-prose-edda-snorri',
+      'phase-8-014-poetic-edda', 'phase-8-015-prose-edda-snorri',
       'odin', 'baldr', 'tradition-norse', 'norse-cosmogony', 'ragnarok-apocalyptic',
       'frashokereti-cosmic-renovation', 'world-axis', 'tree-of-life',
       'osiris', 'dionysus', 'latin-cross',
@@ -6062,7 +6062,7 @@ const INVESTIGATIONS = [
       { label: 'Temple pyramid as axis mundi ↔ Egyptian pyramid', note: 'The Temple of Inscriptions at Palenque (Pakal\'s pyramid, 683 CE): 9-level pyramid = 9 Xibalba levels; descending staircase leads to the sarcophagus; the sarcophagus lid is a descent-and-resurrection cosmogram; a psychoduct connected the tomb to the outside for spirit communication. The Great Pyramid at Giza: shafts pointing to Orion/circumpolar stars; the King\'s Chamber coffer identical cosmological function. Two pyramid civilizations, zero contact, identical spatial theology: the monument as axis mundi connecting underworld → living world → sky.', tier: 1 },
     ],
     seeds: [
-      'P8-001-popol-vuh', 'P8-003-dresden-codex-maya', 'P8-002-codex-borgia',
+      'phase-8-001-popol-vuh', 'phase-8-003-dresden-codex-maya', 'phase-8-002-codex-borgia',
       'quetzalcoatl', 'phase-1-002-pyramid-texts', 'ra', 'osiris',
       'katabasis-and-anabasis', 'theme-pyramid-as-resurrection-machine',
       'temple-of-inscriptions-palenque', 'great-pyramid-of-khufu',
@@ -6086,9 +6086,9 @@ const INVESTIGATIONS = [
       { label: 'Ame-no-Uzume ↔ Baubo — erotic divine laughter', note: 'Ame-no-Uzume\'s ecstatic, sexually provocative dance causes the assembled kami to laugh uproariously — divine laughter as the mechanism of solar restoration. In the Greek Homeric Hymn to Demeter: Baubo (or Iambe) makes Demeter laugh through obscene gesture, breaking the goddess\'s grief. Two independent traditions use the identical mechanism: divine erotic humor breaks cosmic darkness. No possible contact.', tier: 'parallel' },
     ],
     seeds: [
-      'P8-019-kojiki', 'amaterasu', 'izanagi',
+      'phase-8-019-kojiki', 'amaterasu', 'izanagi',
       'ra', 'osiris', 'phase-1-002-pyramid-texts',
-      'baldr', 'P8-014-poetic-edda',
+      'baldr', 'phase-8-014-poetic-edda',
       'dionysus', 'sun-disk',
       'theme-pyramid-as-resurrection-machine',
       'world-axis',

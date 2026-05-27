@@ -12244,7 +12244,7 @@ SCRIPTURE_TEXTS['hadith-bukhari-selected'] = {
   corpus:     'Hadith · Sahih al-Bukhari (compiled 846 CE)',
   tradId:     'tradition-islam',
   date:       'c. 632 CE (Muhammad\'s lifetime); compiled in Bukhari 846 CE',
-  docNode:    'phase-4-033-babylonian-talmud', // docNode: no dedicated Bukhari vault node yet — flagged for Lane A.
+  docNode:    'phase-5-007-sahih-al-bukhari',
   language:   'Classical Arabic · multiple English translations',
   translations: [
     { id: 'khan',     label: 'Muhsin Khan (1971, T1)', note: 'The most-cited English Bukhari edition' },
@@ -12350,7 +12350,7 @@ SCRIPTURE_TEXTS['manichaean-psalms'] = {
   corpus:     'Manichaean · Coptic Psalm-Book (Medinet Madi)',
   tradId:     'tradition-manichaeism',
   date:       'c. 3rd–4th CE (Mani d. 274 CE); Coptic MS recovered 1929 at Medinet Madi, Egypt',
-  docNode:    'phase-3-033-book-of-giants-qumran-manichaean', // docNode: closest existing Manichaean scripture-document; flagged for Lane A — no dedicated Coptic-psalmbook node yet.
+  docNode:    'phase-4-015-kephalaia-of-the-teacher',
   language:   'Coptic (translation from Syriac original) · Allberry 1938 English',
   translations: [
     { id: 'allberry', label: 'Allberry 1938 (T1, foundational scholarly edition)',
@@ -12456,7 +12456,7 @@ SCRIPTURE_TEXTS['ginza-rabba'] = {
   corpus:     'Mandaean · Right Ginza',
   tradId:     'tradition-mandaeism',
   date:       'compiled c. 7th–8th CE; preserves traditions from 1st–3rd CE',
-  docNode:    'phase-4-018-mandaean-book-of-john', // docNode: closest existing Mandaean scripture-document; flagged for Lane A — no dedicated Ginza node yet.
+  docNode:    'phase-4-017-ginza-rba',
   language:   'Eastern Aramaic (Mandaic) · Buckley 2010 / Lidzbarski 1925 English',
   translations: [
     { id: 'buckley',   label: 'Buckley 2010 (T1)', note: 'Jorunn Jacobsen Buckley — the current scholarly standard for Mandaean studies in English' },
