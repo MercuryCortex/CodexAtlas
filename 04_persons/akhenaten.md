@@ -18,6 +18,32 @@ events-participated: ["[[event-amarna-period-1353-1336]]", "the founding of Akhe
 mentioned-in: ["[[phase-1-011-great-hymn-to-aten]]", "[[phase-1-012-amarna-letters]]"]
 influences: ["[[jan-assmann]] (Mosaic Distinction thesis)", "[[moses]] (disputed — cultural memory, not genealogy per Assmann)", "[[tradition-judaism]] (Assmann's cultural-memory thesis)", "[[executed-divine-claimant]] (damnatio memoriae pattern)"]
 influenced-by: ["[[ra]]", "[[amun-ra]]", "[[aten]]"]
+syncretic-edges:
+  - target: "[[moses]]"
+    type: "substrate-influence"
+    source: "Assmann 1997 *Moses the Egyptian* (Harvard UP); Assmann 2009 *Price of Monotheism* (Stanford)"
+    source-tier: "T2"
+    notes: "Mosaic-Distinction cultural-memory thesis — NOT historical-genealogical descent. Assmann argues exclusive-monotheism cultural form was invented at Amarna and transmitted via cultural memory; Redford 1984 (Princeton) is the standard Egyptological counter-argument denying any direct chain. Freud 1939 (Tier 4) is the popular psychoanalytic predecessor. Wire both layers — the Assmann thesis AND Redford rebuttal."
+  - target: "[[tradition-judaism]]"
+    type: "substrate-influence"
+    source: "Assmann 1997, 2009, 2014; Hornung 1999"
+    source-tier: "T2"
+    notes: "Mosaic-Distinction cultural-memory thesis (per above). Hornung 1999 treats Atenism as henotheism rather than strict monotheism, weakening the Assmann claim. Mainstream biblical scholarship (Redford 1984; Smith 2001) rejects direct transmission."
+  - target: "[[yahweh]]"
+    type: "parallel-motif"
+    source: "Assmann 1997; Smith 2001 *Origins of Biblical Monotheism* (Oxford)"
+    source-tier: "T2"
+    notes: "Exclusive-monotheism as a structural pattern — parallel between Atenist counter-religion and developed Yahwist monolatry-then-monotheism. Smith 2001 dates Israelite exclusive monotheism to the Exilic/post-Exilic period (centuries after Amarna), undercutting any direct transmission."
+  - target: "[[aten]]"
+    type: "continuous-development"
+    source: "Hornung 1999 *Akhenaten and the Religion of Light* (Cornell); Assmann 2009"
+    source-tier: "T1"
+    notes: "Within-tradition Egyptian theology — Aten as the radicalisation of the solar theology already present in [[ra]] and Amun-Ra cults. This is Smith's vertical/continuous-development variant."
+  - target: "[[executed-divine-claimant]]"
+    type: "parallel-motif"
+    source: "Assmann 2014 *From Akhenaten to Moses* (AUC Press)"
+    source-tier: "T1"
+    notes: "Akhenaten as the type-case of the damnatio memoriae of a religious-political innovator whose successors comprehensively erase him from official record. Pattern recurs across the vault (Hatshepsut; later cases)."
 status: "full"
 refs:
   - title: "Moses the Egyptian: The Memory of Egypt in Western Monotheism"
