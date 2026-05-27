@@ -50,7 +50,12 @@
   const MASTER_VIEWS = [
     { id: 'forge',    target: 'forge',          layout: 'wheel',    icon: '⚒', label: 'ATLAS'    },
     { id: 'timeline', target: 'forge',          layout: 'timeline', icon: '⎯', label: 'TIMELINE' },
-    { id: 'board',    target: 'transmutation',                       icon: '⚗', label: 'BOARD'    },
+    // 2026-05-27 — BOARD now routes to the V2 boards view per
+    // AUDIT/2026-05-28-boards-v2-new-ux-spec.md (LOCKED). The legacy
+    // VIEWS.transmutation is still reachable via deep-link but no
+    // longer wired to the master pill. Step 10 of the carve plan
+    // will redirect VIEWS.transmutation → VIEWS.boards entirely.
+    { id: 'board',    target: 'boards',                              icon: '⚗', label: 'BOARD'    },
     { id: 'map',      target: 'atlas',                               icon: '⌖', label: 'MAP'      },
     { id: 'starmap',  target: 'astrology',                           icon: '♄', label: 'STAR MAP' },
   ];
@@ -70,6 +75,7 @@
     // legacy view aliases:
     m['pantheon']     = MASTER_VIEWS[0];   // pantheon → FORGE
     m['transmission'] = MASTER_VIEWS[2];   // transmission → BOARD
+    m['transmutation'] = MASTER_VIEWS[2];  // 2026-05-27: transmutation → BOARD (V2 cutover)
     return m;
   })();
 

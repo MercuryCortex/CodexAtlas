@@ -9363,3 +9363,112 @@ body.view-forge.fx-belowfifteen .forge-labels-overlay { display: none !important
 .forge-hull-guide-ring[data-ring="inner"] { stroke: var(--style-ring-inner-color, var(--style-ring-color, #6f8aaf)); }
 .forge-hull-guide-ring[data-ring="mid"]   { stroke: var(--style-ring-mid-color,   var(--style-ring-color, #6f8aaf)); }
 .forge-hull-guide-ring[data-ring="outer"] { stroke: var(--style-ring-outer-color, var(--style-ring-color, #6f8aaf)); }
+
+/* ============================================================
+ * BOARDS V2 — skeleton step 2 of 10
+ * Filed 2026-05-27 per AUDIT/2026-05-28-boards-v2-new-ux-spec.md
+ *
+ * Mirrors the .forge-pane app-shell contract (respect both rails,
+ * fill the rest). The stage will host pan/zoom + cards in step 3;
+ * the bottombar mirrors the forge bottombar for visual continuity.
+ * ============================================================ */
+.boards-pane {
+  position: absolute;
+  top: 0; bottom: 0;
+  left:  var(--eff-nav-w);
+  right: var(--eff-detail-w);
+  background:
+    radial-gradient(ellipse at center, rgba(212,165,90,0.04) 0%, transparent 60%),
+    var(--bg-0);
+  overflow: hidden;
+  transition: left var(--t-layout) var(--ease), right var(--t-layout) var(--ease);
+  user-select: none;
+  -webkit-user-select: none;
+  color: var(--text-1, #e6e6e6);
+  font: 14px/1.55 -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif;
+}
+.boards-pane input { user-select: text; -webkit-user-select: text; }
+.boards-shell {
+  position: relative;
+  width: 100%; height: 100%;
+  display: flex; flex-direction: column;
+}
+.boards-stage {
+  flex: 1 1 auto;
+  position: relative;
+  overflow: hidden;
+}
+.boards-empty {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #6b7280;
+  letter-spacing: 0.02em;
+}
+.boards-empty-glyph {
+  font-size: 80px;
+  color: rgba(212,165,90,0.30);
+  margin-bottom: 18px;
+  line-height: 1;
+}
+.boards-empty-title {
+  font-size: 22px;
+  color: #b0b8c4;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.boards-empty-sub {
+  font-size: 13px;
+  color: #6b7280;
+  margin-bottom: 26px;
+}
+.boards-empty-hint {
+  font-family: "JetBrains Mono", "SF Mono", Menlo, monospace;
+  font-size: 10.5px;
+  letter-spacing: 0.06em;
+  color: #4a5263;
+  max-width: 460px;
+}
+.boards-bottombar {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 16px;
+  border-top: 1px solid #2a2e34;
+  background: rgba(20,23,26,0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+.boards-btn {
+  appearance: none;
+  background: transparent;
+  border: 1px solid #3a3f47;
+  color: #e6e6e6;
+  font: inherit;
+  font-family: "JetBrains Mono", "SF Mono", Menlo, monospace;
+  font-size: 10.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 120ms ease, border-color 120ms ease;
+}
+.boards-btn:hover { background: #242830; border-color: #5a626d; }
+.boards-search {
+  flex: 0 0 auto;
+  background: transparent;
+  border: 1px solid #3a3f47;
+  color: #e6e6e6;
+  font: inherit;
+  font-size: 12px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  min-width: 200px;
+}
+.boards-search:focus { outline: none; border-color: var(--gold, #d4a55a); }
+.boards-spacer { flex: 1 1 auto; }
+

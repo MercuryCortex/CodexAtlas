@@ -1185,6 +1185,27 @@ VIEWS.forge = {
   },
 };
 
+// VIEWS.boards — Boards V2 (free-form investigation surface). Skeleton
+// landed 2026-05-27 per AUDIT/2026-05-28-boards-v2-new-ux-spec.md.
+// Step 10 of the carve plan will redirect VIEWS.transmutation here +
+// move legacy src/js/alchemy/board.js to _legacy_alchemy_board.js.
+// Until then the legacy board remains reachable at VIEWS.transmutation.
+VIEWS.boards = {
+  title: 'Boards',
+  subtitle: 'free-form investigation surface — cards, edges, lineages',
+  render() {
+    document.getElementById('view-controls').innerHTML = '';
+    if (typeof legend !== 'undefined' && legend) legend.style('display', 'none').html('');
+    const canvasEl = document.getElementById('canvas');
+    const pane = document.createElement('div');
+    pane.className = 'boards-pane';
+    canvasEl.appendChild(pane);
+    const svgEl = document.getElementById('svg');
+    if (svgEl) svgEl.style.display = 'none';
+    if (window._boardsView) window._boardsView.render(pane);
+  },
+};
+
 // Legacy D3-SVG Pantheon — retained for rollback only. Reachable manually
 // via console (`STATE.view='_legacyPantheon'; setView('_legacyPantheon');`).
 VIEWS._legacyPantheon = {
