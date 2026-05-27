@@ -12167,3 +12167,212 @@ SCRIPTURE_TEXTS['hebrews-11'] = {
     },
   ]
 };
+
+// ── HADITH — SELECTED FROM SAHIH AL-BUKHARI ──────────────────────────────────
+SCRIPTURE_TEXTS['hadith-bukhari-selected'] = {
+  id:         'hadith-bukhari-selected',
+  title:      'Hadith — Selected Foundational Sayings (Sahih al-Bukhari)',
+  shortTitle: 'Hadith — Bukhari (selected)',
+  corpus:     'Hadith · Sahih al-Bukhari (compiled 846 CE)',
+  tradId:     'tradition-islam',
+  date:       'c. 632 CE (Muhammad\'s lifetime); compiled in Bukhari 846 CE',
+  docNode:    'phase-4-033-babylonian-talmud', // docNode: no dedicated Bukhari vault node yet — flagged for Lane A.
+  language:   'Classical Arabic · multiple English translations',
+  translations: [
+    { id: 'khan',     label: 'Muhsin Khan (1971, T1)', note: 'The most-cited English Bukhari edition' },
+    { id: 'nawawi',   label: 'Forty Hadith of an-Nawawi (T1 selection)', note: 'Imam al-Nawawi\'s 13th-century classical selection — these hadiths overlap with that canon' },
+    { id: 'arabic',   label: 'Arabic (original)' },
+  ],
+  intro: 'Sahih al-Bukhari is the most authoritative hadith collection in Sunni Islam — a 9th-century work in which Muhammad al-Bukhari (810–870 CE) sifted ~600,000 reported sayings of the Prophet down to ~7,000 he judged authentic (ṣaḥīḥ). Together with Sahih Muslim it forms the core of Sunni hadith literature, second only to the Quran in religious authority. The three hadiths below — on intention, brotherhood, and mercy — are among the most cited in Islamic ethical literature. Each compresses a major ethical principle into a brief saying; the structural parallel to the Buddhist Dhammapada (short ethical aphorisms attributed to the founder) and the Confucian Analects (logia of master Confucius) is direct.',
+  crossTradition: [
+    { label: 'Dhammapada — short ethical aphorisms attributed to the founder', textId: 'dhammapada-1',
+      note: 'Both the Hadith collections and the Dhammapada preserve the founder\'s teaching as condensed sayings: short, freestanding, ethically focused. The genre-parallel is structural — both communities preserved their teacher\'s wisdom by isnad/transmission-chain rather than by single canonical narrative.' },
+    { label: 'Confucian Analects — logia preserved by disciples', textId: 'confucius-analects',
+      note: 'The Analects begin "The Master said..." — structurally identical to the hadith form ("The Messenger of God said..."). All three traditions trust short transmitted sayings as the primary deposit of founder\'s authority.' },
+    { label: 'Gospel of Thomas — secret sayings of the living Jesus', textId: 'gospel-of-thomas',
+      note: 'The Thomasine "These are the secret sayings that the living Jesus spoke" is the Christian-gnostic counterpart. Both forms preserve sayings as the primary mode of teaching transmission.' },
+  ],
+  sections: [
+    {
+      heading: 'I. The Hadith of Intentions (Bukhari 1:1)',
+      verses: [
+        {
+          ref: 'Bukhari 1:1 · Nawawi 1',
+          text: 'Umar ibn al-Khattab reported: I heard the Messenger of God, peace and blessings be upon him, say: "Actions are but by intentions, and every man shall have only that which he intended. So whoever\'s emigration was for God and His Messenger, his emigration is for God and His Messenger. And whoever\'s emigration was for the world to be gained or a woman to marry, his emigration is for that for which he emigrated."',
+          textVersions: {
+            khan:    'Narrated Umar bin Al-Khattab: I heard Allah\'s Messenger saying, "The reward of deeds depends upon the intentions and every person will get the reward according to what he has intended. So whoever emigrated for worldly benefits or for a woman to marry, his emigration was for what he emigrated for."',
+            nawawi:  'On the authority of the Commander of the Faithful Umar ibn al-Khattab: I heard the Messenger of Allah say: "Actions are but by intention and every man shall have but that which he intended. Thus he whose migration was for Allah and His Messenger, his migration was for Allah and His Messenger; and he whose migration was to achieve some worldly benefit or to take some woman in marriage, his migration was for that for which he migrated."',
+            arabic:  'إنَّمَا الأَعْمَالُ بِالنِّيَّاتِ، وَإنَّمَا لِكُلِّ امْرِئٍ مَا نَوَى\n\ninnamā l-aʿmālu bi-n-niyyāti, wa innamā li-kulli mri\'in mā nawā\n[Verily / actions / by-intentions, and verily / for each / person / what / he-intended]',
+          },
+          entities: [
+            { word: 'Actions are but by intentions', node: 'tradition-islam', type: 'principle',
+              note: 'innamā l-aʿmālu bi-n-niyyāt — the most cited single sentence in Sunni jurisprudence. Bukhari placed it as the opening hadith (1:1) of his entire collection because, as Imam al-Shafi\'i remarked, it "is one third of all knowledge" — every action\'s religious / moral / legal status depends on the niyyah (intention) behind it. The same physical act (praying, giving, fighting) can be meritorious or empty depending on the inward orientation. This is the Islamic articulation of the same insight underlying the Dhammapada\'s opening ("mind is the forerunner of all actions"), the Bhagavad Gita\'s nishkama karma (action without attachment-to-fruit), and Matthew 6\'s "do not let your left hand know what your right hand is doing." The niyyah doctrine is the philosophical foundation for Islamic ethics, ritual, and law.',
+              parallels: [
+                { label: 'Dhammapada — Mind is the forerunner of all actions', textId: 'dhammapada-1',
+                  note: 'The Dhammapada\'s opening "mano-pubbaṅgamā dhammā" and the hadith\'s "innamā l-aʿmālu bi-n-niyyāt" are nearly verbatim translations of each other into Pali and Arabic respectively. Both: the inner state precedes and determines the moral quality of the outer act.' },
+                { label: 'Bhagavad Gita — nishkama karma', textId: 'bhagavad-gita-4',
+                  note: 'The Gita\'s teaching that action without attachment to fruit (nishkama karma) is the path of liberation is the Hindu form of the niyyah doctrine: the orientation of consciousness AT the moment of action is what determines its spiritual quality.' },
+                { label: 'Matthew 6:1-6 — secret giving and prayer', textId: 'matthew-sermon-mount',
+                  note: 'Jesus\'s teaching that public almsgiving and prayer "have their reward" already (the social recognition) while secret giving and prayer alone reach the Father — the Christian formulation of the same principle: intention determines the spiritual fruit of the act, not the act itself.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'II. The Hadith of Brotherhood (Bukhari 1:13)',
+      verses: [
+        {
+          ref: 'Bukhari 1:13 · Nawawi 13',
+          text: 'Anas reported: The Prophet, peace and blessings be upon him, said: "None of you truly believes until he loves for his brother what he loves for himself."',
+          textVersions: {
+            khan:    'Narrated Anas: The Prophet said, "None of you will have faith till he wishes for his (Muslim) brother what he likes for himself."',
+            nawawi:  'On the authority of Abu Hamzah Anas ibn Malik, the servant of the Messenger of Allah, that the Prophet said: "None of you [truly] believes until he loves for his brother that which he loves for himself."',
+            arabic:  'لاَ يُؤْمِنُ أَحَدُكُمْ حَتَّى يُحِبَّ لأَخِيهِ مَا يُحِبُّ لِنَفْسِهِ\n\nlā yu\'minu aḥadukum ḥattā yuḥibba li-akhīhi mā yuḥibbu li-nafsihi',
+          },
+          entities: [
+            { word: 'loves for his brother what he loves for himself', node: 'tradition-islam', type: 'principle',
+              note: 'The Islamic form of the Golden Rule. The structural innovation over the Christian / Jewish / Hindu / Buddhist parallels: it ties the Golden Rule to īmān (faith) itself. "None of you TRULY BELIEVES until..." — making other-love the threshold of real belief, not an optional good. The same move appears in 1 John 4:20 ("whoever does not love their brother whom they have seen cannot love God whom they have not seen"). Both Abrahamic traditions converge on identifying horizontal love (between humans) as the test of vertical love (toward God).',
+              parallels: [
+                { label: 'Matthew 7:12 — do to others what you want done to you', textId: 'matthew-sermon-mount',
+                  note: 'The Christian Golden Rule and the hadith\'s love-for-brother formulation are the same ethic in different grammatical moods: imperative (do unto others) vs. predicate (until you love). The hadith makes love-of-other a condition of faith, not just a positive duty.' },
+                { label: 'Hillel\'s Golden Rule (Talmud, Shabbat 31a)',
+                  note: 'Hillel\'s "What is hateful to you, do not do to your fellow — this is the whole Torah; the rest is commentary" is the Jewish negative-form Golden Rule. The hadith is the positive-form equivalent.' },
+                { label: 'Dhammapada 130 — comparing self to others', textId: 'dhammapada-1',
+                  note: 'Dhammapada 130: "All tremble at violence; life is dear to all. Putting oneself in the place of another, one should neither kill nor cause another to kill." Same Golden-Rule mechanism, with the Buddhist emphasis on the universalization step.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'III. The Hadith of Mercy',
+      verses: [
+        {
+          ref: 'Bukhari · Adab al-Mufrad 380',
+          text: 'Abu Hurayra reported: The Messenger of God, peace and blessings be upon him, said: "Those who are merciful will be shown mercy by the Most Merciful. Be merciful to those on the earth, and the One above the heavens will be merciful to you."',
+          textVersions: {
+            khan:    'Narrated Abu Hurayra: Allah\'s Messenger said: "The merciful will be shown mercy by the Most Merciful. Be merciful to those on the earth, the One above the heavens will be merciful to you."',
+            arabic:  'الرَّاحِمُونَ يَرْحَمُهُمُ الرَّحْمَنُ، ارْحَمُوا مَنْ فِي الأَرْضِ يَرْحَمْكُمْ مَنْ فِي السَّمَاءِ\n\nar-rāḥimūna yarḥamuhumu r-raḥmān, irḥamū man fī l-arḍi yarḥamkum man fī s-samā\'',
+          },
+          entities: [
+            { word: 'Those who are merciful will be shown mercy', node: 'tradition-islam', type: 'principle',
+              note: 'The reciprocity principle: mercy received tracks mercy given. The Arabic plays on the shared root r-ḥ-m (compassion, also womb) — ar-Rāhimūn (the merciful ones) will be shown mercy by ar-Raḥmān (the All-Merciful). Same root produces both. The structural parallel to the Beatitude "Blessed are the merciful, for they shall obtain mercy" (Matt 5:7) is verbally exact in the reciprocity logic.',
+              parallels: [
+                { label: 'Matthew 5:7 — Blessed are the merciful', textId: 'matthew-sermon-mount',
+                  note: 'The Beatitude "blessed are the merciful, for they shall obtain mercy" and the hadith of mercy are the same reciprocity teaching. Both: the divine response mirrors the human stance. Mercy received is conditioned on mercy given — not as a transactional exchange but as a recognition of the same quality of consciousness.' },
+                { label: 'Karma — like begets like', textId: 'bhagavad-gita-4',
+                  note: 'The karma principle (action and its fruit share quality) is the Indic articulation of the same mechanism: the quality of what you give IS the quality of what returns to you. Mercy given is mercy in your own being; mercy received is the cosmic confirmation of what you already became.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+// ── BAHÁ'Í — THE HIDDEN WORDS OF BAHÁ'U'LLÁH ─────────────────────────────────
+SCRIPTURE_TEXTS['bahai-hidden-words'] = {
+  id:         'bahai-hidden-words',
+  title:      'The Hidden Words of Bahá\'u\'lláh',
+  shortTitle: 'Hidden Words (Bahá\'í)',
+  corpus:     'Bahá\'í · Kalimat-i-Maknunih',
+  tradId:     'tradition-bahai',
+  date:       '1858 CE (Baghdad)',
+  docNode:    'phase-7-003-kitab-i-aqdas', // docNode: no dedicated Hidden-Words vault node yet — closest existing scripture-document node; flagged for Lane A.
+  language:   'Arabic + Persian (parallel collections) · Shoghi Effendi 1929 English translation',
+  translations: [
+    { id: 'shoghi',  label: 'Shoghi Effendi 1929 (T1, canonical)', note: 'The definitive English rendering — by Bahá\'u\'lláh\'s great-grandson and Guardian of the Bahá\'í Faith' },
+    { id: 'arabic',  label: 'Arabic (original)' },
+  ],
+  intro: 'The Hidden Words (Kalimat-i-Maknunih) is Bahá\'u\'lláh\'s most-quoted and most-accessible work — a series of brief mystical aphorisms in Arabic (71 verses) and Persian (82 verses), composed during his Baghdad period (1853–63) after his banishment from Persia. Bahá\'u\'lláh describes the book as "essence" rather than "form": it distills the inner teaching of all the prophets and previous revelations into short addresses from God to the human soul. Each verse begins "O Son of Spirit!" "O Son of Man!" "O Son of Being!" etc. — the Beloved addressing the lover. The genre-parallels to Sufi mystical poetry (Rumi\'s Masnavi, Ibn Arabi\'s odes), to the Sayings of the Desert Fathers, to Hasidic short teachings, and to the Buddhist Udāna are all structural: short divine address-units, dense with mystical psychology.',
+  crossTradition: [
+    { label: 'Rumi\'s Masnavi — divine address to the lover-soul', textId: 'rumi-masnavi',
+      note: 'Rumi\'s Masnavi addresses the soul as "O lover of God" and renders the divine voice in lyric short forms. The Hidden Words inherit this Persian-Sufi tradition directly — Bahá\'u\'lláh was steeped in Sufi literature and the Hidden Words reads as the next iteration of that line.' },
+    { label: 'Gospel of Thomas — secret sayings of the living Jesus', textId: 'gospel-of-thomas',
+      note: 'Thomas\'s "These are the secret sayings that the living Jesus spoke" and the Hidden Words\' "Hidden Treasure" framing share the genre: brief, gnostically dense, addressed to the inner seeker. Both texts assume that the surface teaching is not where the heart lives.' },
+    { label: 'Ibn Arabi — God as the Treasure that desires to be known', textId: 'ibn-arabi-fusus',
+      note: 'Ibn Arabi cites the famous (non-canonical) hadith qudsi: "I was a Hidden Treasure, and I loved to be known; therefore I created the creation in order to be known." The Hidden Words\' very title and "Hidden Treasure" theology is built on this Sufi cosmology.' },
+  ],
+  sections: [
+    {
+      heading: 'I. The First Counsel — The Pure Heart',
+      verses: [
+        {
+          ref: 'Arabic Hidden Words §1',
+          text: 'O Son of Spirit! My first counsel is this: Possess a pure, kindly, and radiant heart, that thine may be a sovereignty ancient, imperishable and everlasting.',
+          textVersions: {
+            shoghi: 'O SON OF SPIRIT! My first counsel is this: Possess a pure, kindly and radiant heart, that thine may be a sovereignty ancient, imperishable and everlasting.',
+            arabic: 'يَا ابْنَ الرُّوحِ\nفِي أَوَّلِ القَوْلِ امْلِكْ قَلْباً جَيِّداً حَسَناً مُنِيراً لِتَمْلِكَ مُلْكاً دائِماً باقِياً أَزَلِيّاً قَدِيماً',
+          },
+          entities: [
+            { word: 'pure, kindly, and radiant heart', node: 'tradition-bahai', type: 'concept',
+              note: 'The opening counsel of the Hidden Words places HEART-purity as the foundational discipline of the Bahá\'í spiritual life — before action, before doctrine, before community. The triplet "pure" (jayyid, clean), "kindly" (ḥasan, beautiful / morally good), and "radiant" (munīr, luminous) traces a developmental sequence: cleanness → goodness → luminosity. The heart that has become radiant IS the sovereignty — not because it controls others but because it is no longer subject to the inner tyranny of competing desires. The Sufi tradition behind this verse (qalb shafāf — the transparent heart) and the Beatitude "blessed are the pure in heart, for they shall see God" (Matt 5:8) make the same claim: the purified heart IS the organ of divine perception.',
+              parallels: [
+                { label: 'Matthew 5:8 — Blessed are the pure in heart', textId: 'matthew-sermon-mount',
+                  note: 'The Beatitude "blessed are the pure in heart, for they shall see God" is the closest Gospel parallel. Both: the heart is the seat of perception; its purity / radiance is the condition of divine seeing. The Hidden Words goes further by tying the pure heart to "sovereignty" — not just seeing God but inheriting an everlasting kingship.' },
+                { label: 'Dhammapada — purity of mind as the source of happiness', textId: 'dhammapada-1',
+                  note: 'The Dhammapada\'s opening teaching on the pure mind and the happiness-shadow makes the same psychological claim as the Hidden Words\' radiant heart: cleanness of the inner state IS the spiritual fruit, not a separate condition for some external reward.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'II. The Lamp Within',
+      verses: [
+        {
+          ref: 'Arabic Hidden Words §11',
+          text: 'O Son of Being! Thou art My lamp, and My light is in thee. Get thou from it thy radiance and seek none other than Me. For I have created thee rich, and have bountifully shed My favour upon thee.',
+          textVersions: {
+            shoghi: 'O SON OF BEING! Thou art My lamp, and My light is in thee. Get thou from it thy radiance and seek none other than Me. For I have created thee rich, and have bountifully shed My favour upon thee.',
+            arabic: 'يَا ابْنَ الوُجُودِ\nأَنْتَ سِراجِي وَنُورِي فِيكَ فَاسْتَنِرْ بِهِ وَلا تَطْلُبْ سِواي لأَنِّي خَلَقْتُكَ غَنِيّاً وَأَجْرَيْتُ عَلَيْكَ نِعْمَتِي',
+          },
+          entities: [
+            { word: 'Thou art My lamp, and My light is in thee', node: 'logos-johannine', type: 'concept',
+              note: 'The lamp-and-light metaphor is one of the most resonant in world mysticism. Bahá\'u\'lláh\'s verse is in direct conversation with the Quranic Light Verse (24:35), where God is the Light and the human soul is the lamp / niche / glass / olive-oil through which the Light shines. Here Bahá\'u\'lláh reverses or radicalizes the formula: "thou art My lamp" — the human BEING (not just the soul) is the lamp; the divine light is already in you; the spiritual task is not to acquire light but to recognize the light you already are. The Johannine "true light that gives light to everyone" (John 1:9) and the Gospel of Thomas L.24 ("there is light within a person of light") make the same move.',
+              parallels: [
+                { label: 'Quran 24:35 — Light Verse', textId: 'quran-fatiha-nur',
+                  note: 'The Quranic Light Verse — "God is the Light of the heavens and earth... a niche wherein is a lamp" — is the direct Islamic source-text for the Hidden Words\' lamp imagery. Bahá\'u\'lláh\'s innovation is to identify the human being directly as the lamp ("thou art My lamp"), making the inner light an intrinsic reality rather than a borrowed reflection.' },
+                { label: 'Gospel of Thomas L.24 — light within a person of light', textId: 'gospel-of-thomas',
+                  note: 'Thomas L.24: "There is light within a person of light, and it shines on the whole world." The Thomasine and Hidden-Words formulations are nearly verbatim translations of each other: the light is INSIDE; spiritual practice is to let what is already there illuminate.' },
+                { label: 'John 1:9 — the true light that enlightens everyone', textId: 'john-1',
+                  note: 'The Johannine Logos as "the true light that gives light to everyone coming into the world" makes the universal claim — every person receives this light at birth. The Hidden Words turns the universal into the address: God speaks to the individual soul to remind it of what it already carries.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'III. The Friend Within',
+      verses: [
+        {
+          ref: 'Arabic Hidden Words §13',
+          text: 'O Son of Spirit! I created thee rich, why dost thou bring thyself down to poverty? Noble I made thee, wherewith dost thou abase thyself? Out of the essence of knowledge I gave thee being, why seekest thou enlightenment from anyone beside Me? Out of the clay of love I molded thee, how dost thou busy thyself with another? Turn thy sight unto thyself, that thou mayest find Me standing within thee, mighty, powerful and self-subsisting.',
+          textVersions: {
+            shoghi: 'O SON OF SPIRIT! I created thee rich, why dost thou bring thyself down to poverty? Noble I made thee, wherewith dost thou abase thyself? Out of the essence of knowledge I gave thee being, why seekest thou enlightenment from anyone beside Me? Out of the clay of love I molded thee, how dost thou busy thyself with another? Turn thy sight unto thyself, that thou mayest find Me standing within thee, mighty, powerful and self-subsisting.',
+            arabic: 'يَا ابْنَ الرُّوحِ\nخَلَقْتُكَ غَنِيّاً كَيْفَ تَفْتَقِرُ وَصَنَعْتُكَ عَزِيزاً بِمَ تَسْتَذِلُّ وَمِنْ جَوْهَرِ العِلْمِ أَظْهَرْتُكَ لِمَ تَسْتَكْشِفُ عَنْ سِوَايْ وَمِنْ طِينَةِ الحُبِّ عَجَنْتُكَ كَيْفَ تَشْتَغِلُ بِغَيْرِي',
+          },
+          entities: [
+            { word: 'find Me standing within thee', node: 'apophatic-mysticism', type: 'principle',
+              note: 'tajidnī qā\'iman fīka — "find Me standing within thee." The verb qā\'im (standing, established, present) is the technical term for the divine indwelling in Persian Sufi mysticism — qiyām means upright presence. The verse rejects the externalising tendency in religion: do not look outside, look within and you will find ME there, not just "a sign of me." The radical claim: the seeker IS the divine self-disclosure, when properly turned around. Same architecture as Eckhart\'s "the eye with which I see God is the same eye with which God sees me," the Bhagavad Gita\'s "I am the Self seated in the heart of all beings" (10:20), and the Gospel of Thomas\' "the Kingdom is inside you."',
+              parallels: [
+                { label: 'Meister Eckhart — the eye with which I see God',
+                  note: 'Eckhart\'s "the eye with which I see God is the same eye with which God sees me; my eye and God\'s eye are one eye" is the closest Christian-mystical parallel. Both reject the subject-object structure of religious seeking in favour of a discovery of identity.' },
+                { label: 'Bhagavad Gita — I am the Self in the heart of all beings', textId: 'bhagavad-gita-11',
+                  note: 'Krishna\'s "I am the Self, O Gudakesha, seated in the hearts of all creatures" is the Hindu form of the same indwelling claim.' },
+                { label: 'Gospel of Thomas L.3 — the Kingdom is inside you', textId: 'gospel-of-thomas',
+                  note: 'Thomas: "The Kingdom is inside you and outside you" — same restoration: what was sought outside was always within.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
