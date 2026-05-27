@@ -1,9 +1,6 @@
 # Session HANDOFF — 2026-05-27 (Codex Corpora Blitz)
 
 > **⚠️ READ THIS BLOCK FIRST.** Long session that took the Atlas Codex from **1 fully reader-ready religion (Bahá'í 2/2)** to **31/42 SCRIPTURE_CORPORA rows fully reader-ready** in 7 commits. Reader UX also got a v2 polish pass per John's feedback: the big italic intro disclaimer is now a collapsed `<details>` at the bottom; verse body is sans-serif matching the rest of the forge chrome; topbar is line-clamped so long titles + corpus labels don't balloon. **All gates green throughout — `linkcheck` baseline 489/621 held across every commit, 0 lint errors, build_data 4746/21757.**
->
-> **The dated archive copy of this handoff lives at `HANDOFF-2026-05-27-codex-corpora-blitz.md`.**
-> **The prior Safari-perf handoff (also dated 2026-05-27) is archived at `HANDOFF-2026-05-28-codex-flow.md` and the earlier Forge-perf one — see status-archive.**
 
 ---
 
@@ -140,7 +137,7 @@ SCRIPTURE_TEXTS['<short-key>'] = {
     { id: 'short-key', label: 'Translator YEAR (T1, authorized)', note: 'Why canonical' },
     { id: 'original', label: 'Original-language (Hebrew/Greek/Aramaic/Syriac/Geʿez/...)' },
   ],
-  intro: 'Long italic-prose intro (300-600 words for Bahá\'í density, 150-300 for lighter density). Composition context, historical setting, significance, T1 source citation.',
+  intro: 'Long italic-prose intro (300-600 words for Bahá'í density, 150-300 for lighter density). Composition context, historical setting, significance, T1 source citation.',
   crossTradition: [
     { label: 'Other-tradition text — relationship', textId: '<existing-key>',
       note: 'Paragraph explaining structural relationship.' },
@@ -189,19 +186,15 @@ node --check src/data/scripture-texts.js           # syntax
 python3 linkcheck.py 2>&1 | tail -3                # baseline 489 / 621 (must hold)
 python3 lint_yaml.py --strict 2>&1 | tail -3       # 0 errors
 python3 build_data.py 2>&1 | tail -3               # 4746 / 21757 (or current)
-```
-
-For textId + entity-node resolution, the resolver pattern is:
-
-```python
+# Custom textId + entity-node resolver (see any session commit message for the script):
+python3 -c "
 import re, os
 with open('src/data/scripture-texts.js') as f: src = f.read()
-all_keys = set(re.findall(r"SCRIPTURE_TEXTS\['([^']+)'\]", src))
-# Extract textId: refs in your NEW entries (use a `// ── ` header split), diff against all_keys
-# Extract node: refs, diff against vault file basenames in 03_/04_/06_/07_/etc.
+all_keys = set(re.findall(r\"SCRIPTURE_TEXTS\\['([^']+)'\\]\", src))
+# extract textId: refs in your new entries, diff against all_keys
+# extract node: refs, diff against vault file basenames in 03_/04_/06_/07_/etc.
+"
 ```
-
-(See any commit message in this session for the full python script — e.g. `40f1d38`.)
 
 ---
 
@@ -293,7 +286,7 @@ These are the kind of multi-text spines the Atlas Codex was built to surface.
 ## Session-end state
 
 - **Branch:** `main`
-- **HEAD:** `40f1d38` (this commit will move HEAD forward with the wrap-up commit including this HANDOFF + new memory + MEMORY.md index update)
+- **HEAD:** `40f1d38`
 - **Working tree:** clean except for the pre-existing dirty files listed above
 - **App live at:** http://localhost:8742/?view=forge
 - **Vault:** 4746 files / 21757 edges
