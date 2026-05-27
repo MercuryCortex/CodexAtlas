@@ -1011,6 +1011,16 @@ body.app-pill-codex-visible .app-pill--codex { display: inline-flex; }
    view's local-state observer which can fall behind cross-view
    navigation. */
 body:not(.view-forge):not(.view-timeline) .app-pill--codex { display: none !important; }
+/* Progressive-disclosure lock state on Codex pill buttons.
+   Books → Lens → Read sequence: each step locked until the
+   prerequisite is picked. Locked buttons stay visible (so the
+   workflow is discoverable) but are dimmed + not clickable. */
+.app-pill-side.is-locked {
+  opacity: 0.32;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+.app-pill-side.is-locked .app-pill-caret { opacity: 0.4; }
 /* Dropdown panels — anchored under their trigger button via JS
    (app-pill.js positionMenu() reads getBoundingClientRect on open
    and sets top/left inline). The pill itself lives at top:14

@@ -41,73 +41,48 @@
   // user sees the roadmap; activation comes in a later batch
   // (needs Lane A edge backfill from each scripture → its
   // personae/authors/deities).
-  // 2026-05-28 — Personae / Authors / Deities lenses now wired via
-  // the rebuildForMode filter in forge.js. Each lens dynamically
-  // computes its row count for the current family + enables only
-  // rows with > 0 matches. `hint` is overridden per render with the
-  // computed count.
+  // The 3 wheel-filter lenses available AFTER a book is picked.
+  // (Books itself isn't a lens any more — picking a book IS the
+  // input, the Lens dropdown filters the wheel to entities of
+  // that book.) 2026-05-28 restructured per John's workflow brief.
   const LENSES = [
-    { id: 'books',    label: 'Books',    defaultHint: 'Sacred texts of this canon' },
-    { id: 'personae', label: 'Personae', defaultHint: 'Named figures in this canon' },
-    { id: 'authors',  label: 'Authors',  defaultHint: 'Sources / scribes of this canon' },
+    { id: 'personae', label: 'Personae', defaultHint: 'Named figures in this book' },
+    { id: 'authors',  label: 'Authors',  defaultHint: 'Source / scribes of this book' },
     { id: 'deities',  label: 'Deities',  defaultHint: 'Divine figures invoked' },
   ];
 
-  // Compute, per family, how many entries each Lens would surface.
-  // Used to enable/disable lens rows + label them with live counts.
-  function computeLensCounts(familyId) {
-    const empty = { books: 0, personae: 0, authors: 0, deities: 0 };
-    const corpora = window.SCRIPTURE_CORPORA || {};
-    const vault   = window.VAULT_DATA;
-    if (!vault) return empty;
-
-    // In-scope doc IDs
-    const docIds = new Set();
-    if (familyId && corpora[familyId]) {
-      for (const sec of (corpora[familyId].sections || [])) {
-        for (const b of (sec.books || [])) if (b && b.id) docIds.add(b.id);
-      }
-    } else {
-      // No family — use the curated SCRIPTURE_IDS (the 109-node "All families" set)
-      const allModes = window.AtlasEngineMode && window.AtlasEngineMode.MODES;
-      if (allModes) {
-        const scripts = window.AtlasEngineMode.filterNodesByMode('scriptures', vault.nodes, vault.edges);
-        for (const n of (scripts || [])) docIds.add(n.id);
-      }
-    }
-    empty.books = docIds.size;
-
-    // docNode → SCRIPTURE_TEXTS entry
+  // Compute lens-entity counts for ONE picked book (not whole
+  // family). Used to enable/disable Lens rows + show live counts.
+  function computeLensCountsForBook(bookTextKey) {
+    const empty = { personae: 0, authors: 0, deities: 0 };
     const T = window.SCRIPTURE_TEXTS || {};
-    const dn2t = Object.create(null);
-    for (const k in T) { const t = T[k]; if (t && t.docNode && !dn2t[t.docNode]) dn2t[t.docNode] = t; }
+    const vault = window.VAULT_DATA;
+    if (!bookTextKey || !vault) return empty;
+    const t = T[bookTextKey];
+    if (!t) return empty;
 
     const personae = new Set();
     const deities  = new Set();
-    docIds.forEach(d => {
-      const t = dn2t[d];
-      if (!t || !t.sections) return;
-      for (const sec of t.sections) {
-        for (const v of (sec.verses || [])) {
-          for (const e of (v.entities || [])) {
-            if (!e || !e.node || !e.type) continue;
-            if (e.type === 'person' || e.type === 'character' || e.type === 'figure') personae.add(e.node);
-            else if (e.type === 'deity') deities.add(e.node);
-          }
+    for (const sec of (t.sections || [])) {
+      for (const v of (sec.verses || [])) {
+        for (const e of (v.entities || [])) {
+          if (!e || !e.node || !e.type) continue;
+          if (e.type === 'person' || e.type === 'character' || e.type === 'figure') personae.add(e.node);
+          else if (e.type === 'deity') deities.add(e.node);
         }
       }
-    });
+    }
     empty.personae = personae.size;
     empty.deities  = deities.size;
 
-    // Authors via vault edges
-    const authors = new Set();
-    for (const e of (vault.edges || [])) {
-      if (!e) continue;
-      if (e.type !== 'authored' && e.type !== 'attributed-author') continue;
-      if (docIds.has(e.target)) authors.add(e.source);
+    // Authors: vault edges → this book's docNode
+    if (t.docNode) {
+      for (const e of (vault.edges || [])) {
+        if (!e) continue;
+        if (e.type !== 'authored' && e.type !== 'attributed-author') continue;
+        if (e.target === t.docNode) empty.authors++;
+      }
     }
-    empty.authors = authors.size;
     return empty;
   }
 
@@ -194,14 +169,15 @@
     if (staleLensMenu && staleLensMenu.parentNode) staleLensMenu.parentNode.removeChild(staleLensMenu);
 
     // ── Hydrate state from LS ────────────────────────────────
-    let state = { familyId: null, lensId: 'books' };
+    let state = { familyId: null, bookTextKey: null, lensId: null };
     try {
       const raw = localStorage.getItem(LS_KEY);
       if (raw) {
         const parsed = JSON.parse(raw);
         if (parsed && typeof parsed === 'object') {
           if (parsed.familyId === null || typeof parsed.familyId === 'string') state.familyId = parsed.familyId;
-          if (typeof parsed.lensId === 'string') state.lensId = parsed.lensId;
+          if (typeof parsed.bookTextKey === 'string') state.bookTextKey = parsed.bookTextKey;
+          if (typeof parsed.lensId === 'string' && ['personae','authors','deities'].indexOf(parsed.lensId) !== -1) state.lensId = parsed.lensId;
         }
       }
     } catch (_) { /* fall back to defaults */ }
@@ -211,8 +187,9 @@
 
     // Mirror onto local so the engine-side filter (in forge.js
     // rebuildForMode) reads it without going through the module.
-    local.codexFamily = state.familyId;
-    local.codexLens   = state.lensId;
+    local.codexFamily   = state.familyId;
+    local.codexBookKey  = state.bookTextKey;
+    local.codexLens     = state.lensId;
 
     // ── Build DOM (canonical .app-pill primitives) ───────────
     // Second .app-pill group inside the existing .app-pill-wrap.
@@ -224,6 +201,17 @@
     pill.className = 'app-pill app-pill--codex';
     pill.setAttribute('role', 'group');
     pill.id = 'app-pill-codex';
+    // Progressive disclosure workflow (2026-05-28 restructure):
+    //   1. Family ▾  — always enabled when codex is the active class
+    //   2. Books ▾   — locked until a family is picked. Lists the
+    //                  canon's books grouped by canonical section.
+    //                  Picking a book = the INPUT for steps 3 + 4.
+    //   3. Lens ▾    — locked until a book is picked. Filters the
+    //                  wheel to entities NAMED IN that one book
+    //                  (Personae / Authors / Deities).
+    //   4. ✠ Read    — locked until a book is picked. Single button
+    //                  (no dropdown) — click opens the reader for
+    //                  the currently-picked book.
     pill.innerHTML = [
       '<button class="app-pill-side app-pill-codex-family" id="app-pill-codex-family"',
       '        type="button" aria-haspopup="menu" aria-expanded="false"',
@@ -233,20 +221,26 @@
       '  <span class="app-pill-caret" aria-hidden="true">▾</span>',
       '</button>',
       '<span class="app-pill-divider" aria-hidden="true"></span>',
+      '<button class="app-pill-side app-pill-codex-books" id="app-pill-codex-books"',
+      '        type="button" aria-haspopup="menu" aria-expanded="false"',
+      '        aria-controls="app-pill-codex-books-menu"',
+      '        title="Pick a book to read or analyse">',
+      '  <span class="app-pill-label" id="app-pill-codex-books-label">Books</span>',
+      '  <span class="app-pill-caret" aria-hidden="true">▾</span>',
+      '</button>',
+      '<span class="app-pill-divider" aria-hidden="true"></span>',
       '<button class="app-pill-side app-pill-codex-lens" id="app-pill-codex-lens"',
       '        type="button" aria-haspopup="menu" aria-expanded="false"',
       '        aria-controls="app-pill-codex-lens-menu"',
-      '        title="Codex lens — Books / Personae / Authors / Deities">',
-      '  <span class="app-pill-label" id="app-pill-codex-lens-label">Books</span>',
+      '        title="Filter the wheel to entities of the picked book">',
+      '  <span class="app-pill-label" id="app-pill-codex-lens-label">Lens</span>',
       '  <span class="app-pill-caret" aria-hidden="true">▾</span>',
       '</button>',
       '<span class="app-pill-divider" aria-hidden="true"></span>',
       '<button class="app-pill-side app-pill-codex-read" id="app-pill-codex-read"',
-      '        type="button" aria-haspopup="menu" aria-expanded="false"',
-      '        aria-controls="app-pill-codex-read-menu"',
-      '        title="Open a book in the reader">',
+      '        type="button"',
+      '        title="Open the picked book in the reader">',
       '  <span class="app-pill-label" id="app-pill-codex-read-label">✠ Read</span>',
-      '  <span class="app-pill-caret" aria-hidden="true">▾</span>',
       '</button>',
     ].join('\n');
     // Insert right after the existing .app-pill group (the
@@ -270,19 +264,24 @@
     familyMenu.setAttribute('aria-hidden', 'true');
     wrap.appendChild(familyMenu);
 
+    // Books menu (was "Read" picker): canonical-section-grouped
+    // list of every book in the picked family. Clicking a row
+    // sets state.bookTextKey + unlocks Lens + Read.
+    const booksMenu = document.createElement('div');
+    booksMenu.className = 'app-pill-menu app-pill-menu--codex-books';
+    booksMenu.id        = 'app-pill-codex-books-menu';
+    booksMenu.setAttribute('role', 'menu');
+    booksMenu.setAttribute('aria-hidden', 'true');
+    wrap.appendChild(booksMenu);
+
+    // Lens menu: Personae / Authors / Deities — scoped to the
+    // currently-picked book (state.bookTextKey).
     const lensMenu = document.createElement('div');
     lensMenu.className = 'app-pill-menu app-pill-menu--codex-lens';
     lensMenu.id        = 'app-pill-codex-lens-menu';
     lensMenu.setAttribute('role', 'menu');
     lensMenu.setAttribute('aria-hidden', 'true');
     wrap.appendChild(lensMenu);
-
-    const readMenu = document.createElement('div');
-    readMenu.className = 'app-pill-menu app-pill-menu--codex-read';
-    readMenu.id        = 'app-pill-codex-read-menu';
-    readMenu.setAttribute('role', 'menu');
-    readMenu.setAttribute('aria-hidden', 'true');
-    wrap.appendChild(readMenu);
 
     // ── Build menu contents ──────────────────────────────────
     function buildFamilyMenu() {
@@ -317,13 +316,21 @@
     }
 
     function buildLensMenu() {
-      const counts = computeLensCounts(state.familyId);
-      const rows = LENSES.map(L => {
+      const counts = computeLensCountsForBook(state.bookTextKey);
+      const T = window.SCRIPTURE_TEXTS || {};
+      const bookTitle = (state.bookTextKey && T[state.bookTextKey])
+        ? (T[state.bookTextKey].shortTitle || T[state.bookTextKey].title || state.bookTextKey)
+        : null;
+      const rows = [];
+      if (bookTitle) {
+        rows.push('<div class="app-pill-menu-section-label">filtering ' + esc(bookTitle) + '</div>');
+      }
+      LENSES.forEach(L => {
         const isActive = state.lensId === L.id;
         const n = counts[L.id] || 0;
         const enabled = n > 0;
-        const hint = enabled ? (n + ' ' + L.id) : 'no entries in this canon yet';
-        return (
+        const hint = enabled ? (n + ' ' + L.id) : 'no entries in this book';
+        rows.push(
           '<button class="app-pill-menu-item' + (isActive && enabled ? ' is-active' : '') + (enabled ? '' : ' is-stub') + '"' +
           ' role="menuitem" data-lens="' + esc(L.id) + '"' +
           (enabled ? '' : ' disabled') +
@@ -353,7 +360,7 @@
       return map;
     }
 
-    function buildReadMenu() {
+    function buildBooksMenu() {
       const corpora = window.SCRIPTURE_CORPORA || {};
       const dn2tk = getDocnodeToTextKey();
       const rows = [];
@@ -363,7 +370,7 @@
       // vault node), grouped by tradition. ~130 entries total.
       if (!state.familyId) {
         rows.push(
-          '<div class="app-pill-menu-section-label">All reader-ready scriptures · pick a family above for a focused list</div>'
+          '<div class="app-pill-menu-section-label">Pick a family first for the focused list — or pick any reader-ready book below</div>'
         );
         // Flat alphabetical of every text entry that has a docNode.
         const items = [];
@@ -378,14 +385,16 @@
         }
         items.sort((a, b) => a.label.localeCompare(b.label));
         items.forEach(it => {
+          const isActive = state.bookTextKey === it.textKey;
           rows.push(
-            '<button class="app-pill-menu-item" role="menuitem" data-textkey="' + esc(it.textKey) + '" type="button">' +
+            '<button class="app-pill-menu-item' + (isActive ? ' is-active' : '') + '" role="menuitem" data-textkey="' + esc(it.textKey) + '" type="button">' +
             '<span class="app-pill-menu-label">' + esc(it.label) + '</span>' +
             (it.corpus ? '<span class="app-pill-menu-hint">' + esc(it.corpus.split('·')[0].trim()) + '</span>' : '') +
+            (isActive ? '<span class="app-pill-menu-check">●</span>' : '') +
             '</button>'
           );
         });
-        readMenu.innerHTML = rows.join('') || '<div class="app-pill-menu-section-label">No reader-ready texts yet</div>';
+        booksMenu.innerHTML = rows.join('') || '<div class="app-pill-menu-section-label">No reader-ready texts yet</div>';
         return;
       }
 
@@ -395,12 +404,12 @@
       // shown disabled with a "no reader text yet" hint.
       const corpus = corpora[state.familyId];
       if (!corpus) {
-        readMenu.innerHTML = '<div class="app-pill-menu-section-label">Pick a family first</div>';
+        booksMenu.innerHTML = '<div class="app-pill-menu-section-label">Pick a family first</div>';
         return;
       }
       const sections = corpus.sections || [];
       if (!sections.length) {
-        readMenu.innerHTML = '<div class="app-pill-menu-section-label">No sections defined for this canon</div>';
+        booksMenu.innerHTML = '<div class="app-pill-menu-section-label">No sections defined for this canon</div>';
         return;
       }
       sections.forEach(sec => {
@@ -410,23 +419,26 @@
         books.forEach(book => {
           const tk = dn2tk[book.id];
           const ready = !!tk;
+          const isActive = ready && state.bookTextKey === tk;
           rows.push(
-            '<button class="app-pill-menu-item' + (ready ? '' : ' is-stub') + '"' +
+            '<button class="app-pill-menu-item' + (ready ? '' : ' is-stub') + (isActive ? ' is-active' : '') + '"' +
             ' role="menuitem"' +
             (ready ? ' data-textkey="' + esc(tk) + '"' : ' disabled') +
             ' type="button">' +
             '<span class="app-pill-menu-label">' + esc(book.label || book.id) + '</span>' +
-            '<span class="app-pill-menu-hint">' + (ready ? 'open in reader →' : 'reader text not yet written') + '</span>' +
+            '<span class="app-pill-menu-hint">' + (ready ? 'pick' : 'reader text not yet written') + '</span>' +
+            (isActive ? '<span class="app-pill-menu-check">●</span>' : '') +
             '</button>'
           );
         });
       });
-      readMenu.innerHTML = rows.join('');
+      booksMenu.innerHTML = rows.join('');
     }
 
-    // ── Sync trigger labels ──────────────────────────────────
+    // ── Sync trigger labels + lock states ────────────────────
     function syncLabels() {
       const familyLabel = document.getElementById('app-pill-codex-family-label');
+      const booksLabel  = document.getElementById('app-pill-codex-books-label');
       const lensLabel   = document.getElementById('app-pill-codex-lens-label');
       if (familyLabel) {
         if (state.familyId && window.SCRIPTURE_CORPORA && window.SCRIPTURE_CORPORA[state.familyId]) {
@@ -435,10 +447,38 @@
           familyLabel.textContent = 'All families';
         }
       }
+      if (booksLabel) {
+        if (state.bookTextKey && window.SCRIPTURE_TEXTS && window.SCRIPTURE_TEXTS[state.bookTextKey]) {
+          const t = window.SCRIPTURE_TEXTS[state.bookTextKey];
+          booksLabel.textContent = t.shortTitle || t.title || state.bookTextKey;
+        } else {
+          booksLabel.textContent = 'Books';
+        }
+      }
       if (lensLabel) {
         const L = LENSES.find(x => x.id === state.lensId);
-        lensLabel.textContent = L ? L.label : 'Books';
+        lensLabel.textContent = L ? L.label : 'Lens';
       }
+    }
+
+    // Progressive-disclosure lock states (2026-05-28).
+    // - Books pill: locked until family picked (unless "All families")
+    // - Lens pill: locked until book picked
+    // - Read button: locked until book picked
+    function syncLocks() {
+      const booksBtn = document.getElementById('app-pill-codex-books');
+      const lensBtn2 = document.getElementById('app-pill-codex-lens');
+      const readBtn2 = document.getElementById('app-pill-codex-read');
+      // Books is enabled when family is picked OR when "all families"
+      // (state.familyId === null) — user can always pick a book from
+      // the global list. So Books is essentially always enabled.
+      if (booksBtn) booksBtn.classList.remove('is-locked');
+      // Lens + Read unlock together based on bookTextKey.
+      const bookPicked = !!state.bookTextKey;
+      if (lensBtn2) lensBtn2.classList.toggle('is-locked', !bookPicked);
+      if (readBtn2) readBtn2.classList.toggle('is-locked', !bookPicked);
+      if (lensBtn2) lensBtn2.disabled = !bookPicked;
+      if (readBtn2) readBtn2.disabled = !bookPicked;
     }
 
     // ── Menu positioning (same pattern as app-pill.js) ───────
@@ -449,19 +489,20 @@
     }
 
     const familyBtn = document.getElementById('app-pill-codex-family');
+    const booksBtn  = document.getElementById('app-pill-codex-books');
     const lensBtn   = document.getElementById('app-pill-codex-lens');
     const readBtn   = document.getElementById('app-pill-codex-read');
 
     function closeAllMenus() {
       familyMenu.classList.remove('is-open');
+      booksMenu.classList.remove('is-open');
       lensMenu.classList.remove('is-open');
-      readMenu.classList.remove('is-open');
       familyMenu.setAttribute('aria-hidden', 'true');
+      booksMenu.setAttribute('aria-hidden', 'true');
       lensMenu.setAttribute('aria-hidden', 'true');
-      readMenu.setAttribute('aria-hidden', 'true');
       familyBtn.setAttribute('aria-expanded', 'false');
+      booksBtn.setAttribute('aria-expanded', 'false');
       lensBtn.setAttribute('aria-expanded', 'false');
-      readBtn.setAttribute('aria-expanded', 'false');
     }
 
     function openMenu(menu, btn, build) {
@@ -478,17 +519,28 @@
       closeAllMenus();
       if (!isOpen) openMenu(familyMenu, familyBtn, buildFamilyMenu);
     });
+    booksBtn.addEventListener('click', function (ev) {
+      ev.stopPropagation();
+      const isOpen = booksMenu.classList.contains('is-open');
+      closeAllMenus();
+      if (!isOpen) openMenu(booksMenu, booksBtn, buildBooksMenu);
+    });
     lensBtn.addEventListener('click', function (ev) {
+      if (lensBtn.disabled) return;
       ev.stopPropagation();
       const isOpen = lensMenu.classList.contains('is-open');
       closeAllMenus();
       if (!isOpen) openMenu(lensMenu, lensBtn, buildLensMenu);
     });
+    // Read button is now a SINGLE-ACTION click (no dropdown) —
+    // opens the reader for the currently-picked book.
     readBtn.addEventListener('click', function (ev) {
+      if (readBtn.disabled) return;
       ev.stopPropagation();
-      const isOpen = readMenu.classList.contains('is-open');
       closeAllMenus();
-      if (!isOpen) openMenu(readMenu, readBtn, buildReadMenu);
+      if (state.bookTextKey && window._forge && typeof window._forge.openReader === 'function') {
+        window._forge.openReader(state.bookTextKey);
+      }
     });
 
     // ── Menu pick handlers (event delegation) ────────────────
@@ -500,49 +552,67 @@
       closeAllMenus();
       if (newFamily === state.familyId) return;
       state.familyId = newFamily;
-      local.codexFamily = newFamily;
-      // Reset the remount-filter latch so the new family triggers
-      // a fresh rebuild via the same code path on next view-swap.
+      // Family change clears the picked book + lens (workflow reset)
+      state.bookTextKey = null;
+      state.lensId = null;
+      local.codexFamily  = newFamily;
+      local.codexBookKey = null;
+      local.codexLens    = null;
       local._codexFilterAppliedFor = null;
       saveState();
       syncLabels();
+      syncLocks();
       if (typeof rebuildForMode === 'function' && local.mode && local.mode.id) {
         try { rebuildForMode(local.mode.id, { preserveLocks: true, preserveZoom: false }); }
         catch (e) { console.warn('[codex-controls] rebuildForMode failed', e); }
+      }
+    });
+
+    // BOOKS menu picks a specific book — sets state.bookTextKey,
+    // unlocks Lens + Read. Picking a book does NOT auto-open the
+    // reader (that's what the Read button is for); it just selects
+    // the book as the active INPUT for downstream filters.
+    booksMenu.addEventListener('click', function (ev) {
+      const btn = ev.target.closest('.app-pill-menu-item');
+      if (!btn || btn.disabled) return;
+      ev.stopPropagation();
+      const tk = btn.dataset.textkey;
+      closeAllMenus();
+      if (!tk) return;
+      if (tk === state.bookTextKey) return;
+      state.bookTextKey = tk;
+      // Picking a new book resets the previously-active Lens since
+      // the entity counts will be different per-book.
+      state.lensId = null;
+      local.codexBookKey = tk;
+      local.codexLens    = null;
+      local._codexFilterAppliedFor = null;
+      saveState();
+      syncLabels();
+      syncLocks();
+      if (typeof rebuildForMode === 'function' && local.mode && local.mode.id) {
+        try { rebuildForMode(local.mode.id, { preserveLocks: true, preserveZoom: false }); }
+        catch (e) { console.warn('[codex-controls] book rebuild failed', e); }
       }
     });
     lensMenu.addEventListener('click', function (ev) {
       const btn = ev.target.closest('.app-pill-menu-item');
       if (!btn || btn.disabled) return;
       ev.stopPropagation();
-      const newLens = btn.dataset.lens || 'books';
+      const newLens = btn.dataset.lens;
       closeAllMenus();
-      if (newLens === state.lensId) return;
-      state.lensId = newLens;
-      local.codexLens = newLens;
-      // Reset the family-filter latch so the new lens triggers a
-      // re-filter via the same code path. Otherwise the latched key
-      // for (family + scriptures) would block the rebuild.
+      if (!newLens) return;
+      // Toggle off if same lens re-picked
+      const finalLens = (newLens === state.lensId) ? null : newLens;
+      state.lensId = finalLens;
+      local.codexLens = finalLens;
       local._codexFilterAppliedFor = null;
       saveState();
       syncLabels();
-      // Lens-pick now triggers a rebuild — forge.js rebuildForMode
-      // reads local.codexLens and applies the Personae/Authors/
-      // Deities filter (Books == default, no extra filter beyond
-      // codexFamily).
+      syncLocks();
       if (typeof rebuildForMode === 'function' && local.mode && local.mode.id) {
         try { rebuildForMode(local.mode.id, { preserveLocks: true, preserveZoom: false }); }
         catch (e) { console.warn('[codex-controls] lens rebuild failed', e); }
-      }
-    });
-    readMenu.addEventListener('click', function (ev) {
-      const btn = ev.target.closest('.app-pill-menu-item');
-      if (!btn || btn.disabled) return;
-      ev.stopPropagation();
-      const tk = btn.dataset.textkey;
-      closeAllMenus();
-      if (tk && window._forge && typeof window._forge.openReader === 'function') {
-        window._forge.openReader(tk);
       }
     });
 
@@ -565,6 +635,7 @@
 
     syncVisibility();
     syncLabels();
+    syncLocks();
 
     // REMOUNT FILTER FIX (2026-05-28 v2) — fires the family filter
     // exactly once after the engine settles into scriptures mode.

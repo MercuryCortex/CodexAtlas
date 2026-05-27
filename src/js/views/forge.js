@@ -2608,55 +2608,37 @@
         }
       }
 
-      // Atlas Codex Lens filter (2026-05-28). When a non-default Lens
-      // is picked (Personae / Authors / Deities), pivot the wheel to
-      // show ENTITIES mentioned in / authored by the scriptures of
-      // the current family (or all scriptures if no family is set).
+      // Atlas Codex Lens filter (2026-05-28 v2). Scoped to the ONE
+      // picked book (local.codexBookKey), not the whole family.
+      // Progressive disclosure: Lens is only meaningful after the
+      // user has selected a specific book as the INPUT.
       //
-      //   Books     — the doc-type books themselves (default, no pivot)
-      //   Personae  — entities of type 'person' / 'character' / 'figure'
-      //               named in any verse of the in-scope books
-      //   Authors   — persons with 'authored' / 'attributed-author'
-      //               edges pointing AT the in-scope books
-      //   Deities   — entities of type 'deity' named in any verse
-      if (modeId === 'scriptures' && local.codexLens && local.codexLens !== 'books') {
-        // Build the set of in-scope doc node IDs (current family's
-        // books — or all SCRIPTURE_IDS members if no family is set).
-        const docIds = new Set();
-        if (local.codexFamily && window.SCRIPTURE_CORPORA && window.SCRIPTURE_CORPORA[local.codexFamily]) {
-          const cps = window.SCRIPTURE_CORPORA[local.codexFamily].sections || [];
-          for (const sec of cps) for (const b of (sec.books || [])) if (b && b.id) docIds.add(b.id);
-        } else {
-          // Fall back to nodes already in modeNodes (which is the
-          // 109 SCRIPTURE_IDS set when no family is picked).
-          for (const n of modeNodes) if (n && n.id) docIds.add(n.id);
-        }
-
-        // Build docNode → textKey reverse index from SCRIPTURE_TEXTS
-        const dn2tk = Object.create(null);
+      //   Personae — entities of type 'person'/'character'/'figure'
+      //              named in any verse of the picked book
+      //   Authors  — persons with 'authored'/'attributed-author'
+      //              edges pointing AT the picked book's docNode
+      //   Deities  — entities of type 'deity' named in any verse
+      //              of the picked book
+      if (modeId === 'scriptures' && local.codexLens && local.codexBookKey) {
         const T = window.SCRIPTURE_TEXTS || {};
-        for (const k in T) {
-          const t = T[k];
-          if (t && t.docNode && !dn2tk[t.docNode]) dn2tk[t.docNode] = t;
-        }
-
-        const allowed = new Set();
-        if (local.codexLens === 'authors') {
-          // Author edges in the vault — type === 'authored' or 'attributed-author'
-          for (const e of (allEdges || [])) {
-            if (!e) continue;
-            if (e.type !== 'authored' && e.type !== 'attributed-author') continue;
-            if (docIds.has(e.target)) allowed.add(e.source);
-          }
-        } else {
-          // Walk verse-level entities. Match by type.
-          const typeMatch = (local.codexLens === 'personae')
-            ? new Set(['person', 'character', 'figure'])
-            : new Set(['deity']); // 'deities'
-          docIds.forEach(docId => {
-            const t = dn2tk[docId];
-            if (!t || !t.sections) return;
-            for (const sec of t.sections) {
+        const t = T[local.codexBookKey];
+        if (t) {
+          const allowed = new Set();
+          if (local.codexLens === 'authors') {
+            // Author edges in the vault → the picked book's docNode
+            if (t.docNode) {
+              for (const e of (allEdges || [])) {
+                if (!e) continue;
+                if (e.type !== 'authored' && e.type !== 'attributed-author') continue;
+                if (e.target === t.docNode) allowed.add(e.source);
+              }
+            }
+          } else {
+            // Walk verse-level entities of THIS book only
+            const typeMatch = (local.codexLens === 'personae')
+              ? new Set(['person', 'character', 'figure'])
+              : new Set(['deity']); // 'deities'
+            for (const sec of (t.sections || [])) {
               for (const v of (sec.verses || [])) {
                 for (const e of (v.entities || [])) {
                   if (!e || !e.node || !e.type) continue;
@@ -2664,16 +2646,13 @@
                 }
               }
             }
-          });
-        }
-
-        // Intersect with vault — only show nodes that actually exist.
-        if (allowed.size > 0) {
-          modeNodes = allNodes.filter(n => n && allowed.has(n.id));
-        } else {
-          // No entries for this lens in scope — keep modeNodes as-is
-          // (the books themselves) so the user still sees something
-          // instead of an empty wheel.
+          }
+          // Intersect with vault. Always include the picked book
+          // itself so the user has spatial anchor.
+          if (t.docNode) allowed.add(t.docNode);
+          if (allowed.size > 0) {
+            modeNodes = allNodes.filter(n => n && allowed.has(n.id));
+          }
         }
         _tick('codexLensFilter');
       }
