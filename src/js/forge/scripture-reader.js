@@ -33,17 +33,30 @@
   // are `.forge-reader-*` to coexist with the legacy `.sr-*` classes
   // until VIEWS.scripture cuts over in step 7.
   const READER_CSS = [
+    /* 2026-05-28 — right-side panel, NOT full-pane overlay.
+       Lives in the right half of .forge-pane so the wheel stays
+       visible + interactive on the left. Slide-in animation from
+       the right edge. ESC / ← Wheel still close it. */
     '.forge-reader-pane {',
     '  position: absolute;',
-    '  inset: 0;',
+    '  top: 0;',
+    '  bottom: 0;',
+    '  right: 0;',
+    '  width: min(560px, 48vw);',
     '  z-index: 40;',
-    '  background: #14171a;',
+    '  background: rgba(20, 23, 26, 0.97);',
     '  color: #e6e6e6;',
     '  display: none;',
     '  flex-direction: column;',
     '  font: 14px/1.55 -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif;',
+    '  border-left: 1px solid rgba(212,165,90,0.22);',
+    '  box-shadow: -12px 0 32px rgba(0,0,0,0.4);',
+    '  backdrop-filter: blur(12px);',
+    '  -webkit-backdrop-filter: blur(12px);',
+    '  transform: translateX(100%);',
+    '  transition: transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1);',
     '}',
-    '.forge-reader-pane.is-open { display: flex; }',
+    '.forge-reader-pane.is-open { display: flex; transform: translateX(0); }',
     '.forge-reader-topbar {',
     '  flex: 0 0 auto;',
     '  display: flex;',
@@ -100,6 +113,114 @@
     '  padding: 2px 6px;',
     '  border-radius: 3px;',
     '  color: #d4d8de;',
+    '}',
+    /* 2026-05-28 — verse / section / intro / cross-tradition styles
+       ported from the legacy scripture-reader.js .sr-* CSS, renamed
+       to .forge-reader-* so the two readers can coexist during any
+       overlap. */
+    '.forge-reader-intro {',
+    '  max-width: 640px;',
+    '  margin: 0 auto 24px;',
+    '  padding: 14px 18px;',
+    '  border: 1px solid rgba(212,165,90,0.20);',
+    '  border-radius: 6px;',
+    '  background: rgba(20,23,26,0.55);',
+    '  color: #b0b8c4;',
+    '  font: 13px/1.6 -apple-system, BlinkMacSystemFont, "SF Pro Text", Georgia, serif;',
+    '  font-style: italic;',
+    '}',
+    '.forge-reader-section {',
+    '  max-width: 640px;',
+    '  margin: 0 auto 28px;',
+    '}',
+    '.forge-reader-section-heading {',
+    '  font-family: "JetBrains Mono", "SF Mono", Menlo, monospace;',
+    '  font-size: 10.5px;',
+    '  letter-spacing: 0.14em;',
+    '  text-transform: uppercase;',
+    '  color: var(--gold, #d4a55a);',
+    '  margin: 18px 0 10px;',
+    '  padding-bottom: 6px;',
+    '  border-bottom: 1px solid rgba(212,165,90,0.20);',
+    '}',
+    '.forge-reader-verse {',
+    '  display: grid;',
+    '  grid-template-columns: 56px 1fr;',
+    '  gap: 10px;',
+    '  margin-bottom: 14px;',
+    '  align-items: baseline;',
+    '}',
+    '.forge-reader-ref {',
+    '  font-family: "JetBrains Mono", "SF Mono", Menlo, monospace;',
+    '  font-size: 10px;',
+    '  letter-spacing: 0.06em;',
+    '  color: var(--text-3, #6b7280);',
+    '  text-align: right;',
+    '  padding-top: 2px;',
+    '}',
+    '.forge-reader-vtext {',
+    '  color: #e2e6ec;',
+    '  font: 15px/1.65 "EB Garamond", Georgia, serif;',
+    '}',
+    '.forge-reader-vtext-original {',
+    '  color: #b8c0cc;',
+    '  font-style: italic;',
+    '  font-family: "JetBrains Mono", "SF Mono", Menlo, monospace;',
+    '  font-size: 12px;',
+    '  white-space: pre-wrap;',
+    '}',
+    '.forge-reader-ent {',
+    '  background: rgba(212,165,90,0.08);',
+    '  border-bottom: 1px dotted rgba(212,165,90,0.50);',
+    '  color: var(--gold-1, #e8c889);',
+    '  padding: 0 1px;',
+    '  cursor: pointer;',
+    '  transition: background 120ms ease;',
+    '}',
+    '.forge-reader-ent:hover {',
+    '  background: rgba(212,165,90,0.20);',
+    '}',
+    '.forge-reader-xtrad {',
+    '  max-width: 640px;',
+    '  margin: 24px auto 0;',
+    '  padding: 0 18px 24px;',
+    '}',
+    '.forge-reader-xtrad > summary {',
+    '  cursor: pointer;',
+    '  font-family: "JetBrains Mono", "SF Mono", Menlo, monospace;',
+    '  font-size: 10.5px;',
+    '  letter-spacing: 0.12em;',
+    '  text-transform: uppercase;',
+    '  color: var(--gold, #d4a55a);',
+    '  padding: 8px 0;',
+    '  border-top: 1px solid rgba(212,165,90,0.20);',
+    '  margin-bottom: 8px;',
+    '}',
+    '.forge-reader-xtrad-item {',
+    '  margin: 10px 0;',
+    '  padding: 10px 12px;',
+    '  background: rgba(20,23,26,0.55);',
+    '  border: 1px solid rgba(212,165,90,0.10);',
+    '  border-radius: 4px;',
+    '}',
+    '.forge-reader-xtrad-item.is-linked { cursor: pointer; border-color: rgba(212,165,90,0.30); }',
+    '.forge-reader-xtrad-item.is-linked:hover { background: rgba(212,165,90,0.06); }',
+    '.forge-reader-xtrad-label {',
+    '  color: var(--gold-1, #e8c889);',
+    '  font-size: 12px;',
+    '  font-weight: 600;',
+    '  letter-spacing: 0.02em;',
+    '  margin-bottom: 4px;',
+    '}',
+    '.forge-reader-xtrad-note {',
+    '  font: 12px/1.5 -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif;',
+    '  color: #a0a8b4;',
+    '}',
+    '.forge-reader-empty {',
+    '  text-align: center;',
+    '  color: #6b7280;',
+    '  margin-top: 40px;',
+    '  font-style: italic;',
     '}',
   ].join('\n');
 
@@ -173,6 +294,83 @@
       return (window.SCRIPTURE_TEXTS && window.SCRIPTURE_TEXTS[textKey]) || null;
     }
 
+    // Verse-rendering helpers — ported from legacy
+    // src/js/views/scripture-reader.js, 2026-05-28.
+    function _esc(s) {
+      return String(s == null ? '' : s)
+        .replace(/&/g, '&amp;').replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+    function _escRe(s) {
+      return String(s).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    }
+    function _verseText(v, trId) {
+      return (v.textVersions && v.textVersions[trId]) ? v.textVersions[trId] : (v.text || '');
+    }
+    function _annotate(text, entities) {
+      if (!entities || !entities.length) return _esc(text).replace(/\n/g, '<br>');
+      let out = _esc(text);
+      [...entities].sort((a, b) => b.word.length - a.word.length).forEach(en => {
+        if (!en || !en.word) return;
+        const re = new RegExp('\\b(' + _escRe(en.word) + ')\\b', 'g');
+        out = out.replace(re, function (m) {
+          return '<mark class="forge-reader-ent"' +
+                 ' data-node="' + _esc(en.node || '') + '"' +
+                 ' data-type="' + _esc(en.type || '') + '"' +
+                 ' data-word="' + _esc(en.word) + '">' + m + '</mark>';
+        });
+      });
+      return out.replace(/\n/g, '<br>');
+    }
+    function _buildSections(t, activeTrId) {
+      const sections = t.sections || [];
+      if (!sections.length) return '';
+      const trList = t.translations || [{ id: 'default', label: 'Translation' }];
+      const isAlt = !!(activeTrId && trList[0] && activeTrId !== trList[0].id);
+      return sections.map(function (sec) {
+        const verses = (sec.verses || []).map(function (v) {
+          const vtext = _verseText(v, activeTrId);
+          const showOriginal = isAlt && !!(v.textVersions && v.textVersions[activeTrId]);
+          return '<div class="forge-reader-verse" data-ref="' + _esc(v.ref || '') + '">' +
+                 '<span class="forge-reader-ref">' + _esc(v.ref || '') + '</span>' +
+                 '<span class="forge-reader-vtext' + (showOriginal ? ' forge-reader-vtext-original' : '') + '" dir="auto">' +
+                 _annotate(vtext, showOriginal ? [] : v.entities || []) +
+                 '</span></div>';
+        }).join('');
+        return '<div class="forge-reader-section">' +
+               (sec.heading ? '<div class="forge-reader-section-heading">' + _esc(sec.heading) + '</div>' : '') +
+               verses + '</div>';
+      }).join('');
+    }
+    function _renderBody(t) {
+      const bodyEl = document.getElementById('forge-reader-body');
+      if (!bodyEl) return;
+      if (!t) {
+        bodyEl.innerHTML = '<div class="forge-reader-empty">Text not found in SCRIPTURE_TEXTS.</div>';
+        return;
+      }
+      const trList = t.translations || [{ id: 'default', label: 'Translation' }];
+      // Active translation — use first by default. (Translation switcher
+      // is a V2 feature — for now show the canonical English.)
+      const activeTrId = trList[0] && trList[0].id;
+      const introHtml = t.intro
+        ? '<div class="forge-reader-intro">' + _esc(t.intro).replace(/\n/g, '<br>') + '</div>'
+        : '';
+      const xtradHtml = (t.crossTradition && t.crossTradition.length)
+        ? '<details class="forge-reader-xtrad"><summary>Cross-tradition parallels (' + t.crossTradition.length + ')</summary>' +
+          '<div class="forge-reader-xtrad-list">' +
+          t.crossTradition.map(function (x) {
+            return '<div class="forge-reader-xtrad-item' + (x.textId ? ' is-linked' : '') + '"' +
+                   (x.textId ? ' data-textid="' + _esc(x.textId) + '"' : '') + '>' +
+                   '<div class="forge-reader-xtrad-label">' + _esc(x.label || '') + '</div>' +
+                   (x.note ? '<div class="forge-reader-xtrad-note">' + _esc(x.note) + '</div>' : '') +
+                   '</div>';
+          }).join('') + '</div></details>'
+        : '';
+      const sectionsHtml = _buildSections(t, activeTrId);
+      bodyEl.innerHTML = introHtml + sectionsHtml + xtradHtml;
+    }
+
     function open(textKey) {
       if (!textKey) {
         if (console && console.warn) console.warn('[forge-reader] open() requires a textKey');
@@ -192,13 +390,11 @@
         if (titleEl) titleEl.textContent = textKey + ' (not in SCRIPTURE_TEXTS)';
         if (canonEl) canonEl.style.display = 'none';
       }
+      // Render the actual verses + intro + cross-tradition (2026-05-28).
+      _renderBody(t);
       overlay.classList.add('is-open');
       _open = true;
       _textKey = textKey;
-      // Tell forge.js to skip canvas hit-testing while the reader is up.
-      // Tagged on local so other modules (frame loop, hover-card) can
-      // gate on it in Step 4+. Set even though gating isn't wired yet —
-      // it's a no-cost hint that won't break anything.
       local.readerOpen = true;
       return true;
     }
@@ -216,6 +412,16 @@
     // ── Wire UI ────────────────────────────────────────────
     const backBtn = document.getElementById('forge-reader-back');
     if (backBtn) backBtn.addEventListener('click', close);
+
+    // Cross-tradition link clicks → swap to the referenced text.
+    overlay.addEventListener('click', function (ev) {
+      const linked = ev.target.closest('.forge-reader-xtrad-item.is-linked');
+      if (linked) {
+        ev.stopPropagation();
+        const tid = linked.getAttribute('data-textid');
+        if (tid) open(tid);
+      }
+    });
 
     // ESC closes. Listener stays mounted for the lifetime of the
     // forge view — cheap, only fires on actual keypress.

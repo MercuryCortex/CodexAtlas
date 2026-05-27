@@ -1003,6 +1003,14 @@ body.app-pill-no-class .app-pill-divider { display: none; }
    .app-pill-no-class above. */
 .app-pill--codex { margin-left: 8px; display: none; }
 body.app-pill-codex-visible .app-pill--codex { display: inline-flex; }
+/* Hard guard: codex pill is meaningful ONLY when the forge engine
+   is the active master view (Atlas wheel OR Timeline layout). When
+   the user navigates to Map / Star Map / legacy SVG views, the
+   codex pill must vanish even if the body class app-pill-codex-
+   visible is stale. Codex's body classes are toggled by the forge
+   view's local-state observer which can fall behind cross-view
+   navigation. */
+body:not(.view-forge):not(.view-timeline) .app-pill--codex { display: none !important; }
 /* Dropdown panels — anchored under their trigger button via JS
    (app-pill.js positionMenu() reads getBoundingClientRect on open
    and sets top/left inline). The pill itself lives at top:14

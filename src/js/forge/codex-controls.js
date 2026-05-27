@@ -434,6 +434,9 @@
       if (newFamily === state.familyId) return;
       state.familyId = newFamily;
       local.codexFamily = newFamily;
+      // Reset the remount-filter latch so the new family triggers
+      // a fresh rebuild via the same code path on next view-swap.
+      local._codexFilterAppliedFor = null;
       saveState();
       syncLabels();
       if (typeof rebuildForMode === 'function' && local.mode && local.mode.id) {
@@ -486,14 +489,60 @@
     syncVisibility();
     syncLabels();
 
+    // REMOUNT FILTER FIX (2026-05-28 v2) — fires the family filter
+    // exactly once after the engine settles into scriptures mode.
+    // Why this is needed: on view-swap (Map → Forge), the initial
+    // rebuildForMode fires BEFORE codex-controls.attach() runs, so
+    // local.codexFamily is undefined at filter time → all 109
+    // scriptures render unfiltered, even though the LS-hydrated
+    // family-pill label shows the persisted family.
+    //
+    // Hook strategy: combine syncVisibility with a one-shot rebuild
+    // gate. Every time the class-label mutates, syncVisibility re-
+    // runs; if we now see (mode === scriptures) AND (state.familyId
+    // is set) AND (we haven't already applied this combination),
+    // fire a rebuild. The latched _codexFilterAppliedFor key
+    // prevents repeat-firing on every observer tick.
+    local._codexFilterAppliedFor = local._codexFilterAppliedFor || null;
+    function tryApplyFilter() {
+      if (!state.familyId) return;
+      if (!local.mode || local.mode.id !== 'scriptures') return;
+      const key = state.familyId + '|' + (local.mode.id || '');
+      if (local._codexFilterAppliedFor === key) return;
+      local._codexFilterAppliedFor = key;
+      if (typeof rebuildForMode === 'function') {
+        try {
+          rebuildForMode('scriptures', { preserveLocks: true, preserveZoom: true });
+        } catch (_) { /* best-effort */ }
+      }
+    }
+    // Run NOW (in case mode is already scriptures at attach time),
+    // and on every classLabel mutation (when user picks Codex).
+    tryApplyFilter();
+    // Also retry after a short delay — the initial rebuild may set
+    // local.mode.id asynchronously.
+    setTimeout(tryApplyFilter, 100);
+    setTimeout(tryApplyFilter, 400);
+
+    function syncAndMaybeFilter() {
+      syncVisibility();
+      tryApplyFilter();
+    }
+
     // Re-check on class-pill label change (proxy for class swap).
     const classLabel = document.getElementById('app-pill-class-label');
     if (classLabel) {
-      const mo = new MutationObserver(syncVisibility);
+      const mo = new MutationObserver(syncAndMaybeFilter);
       mo.observe(classLabel, { childList: true, characterData: true, subtree: true });
     }
     // Also on layout swaps (FORGE wheel ↔ TIMELINE).
-    document.addEventListener('codex:layout-changed', syncVisibility);
+    document.addEventListener('codex:layout-changed', syncAndMaybeFilter);
+
+    // Reset the latch whenever user explicitly changes family — the
+    // family-click handler already calls rebuildForMode directly, so
+    // this just ensures a subsequent view-swap re-runs the filter.
+    // (We hook this by adding a second listener on familyMenu clicks
+    // higher up — the existing one already triggers a rebuild.)
 
     local.codexControls = {
       getState: function () { return { familyId: state.familyId, lensId: state.lensId }; },
