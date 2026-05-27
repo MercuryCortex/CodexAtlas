@@ -21,6 +21,27 @@ syncretic-edges:
     type: "scholarly-parallel"
     source: "Some functional overlap as great-goddess but the two are distinct figures; closer Canaanite parallel to Ishtar is Astarte/Ashtart"
     source-tier: T1
+  - target: "[[hokmah-hebrew]]"
+    type: "continuous-development"
+    source: "Dever 2005 *Did God Have a Wife?*; Smith 2002 *The Early History of God*; Schäfer 2002 *Mirror of His Beauty* — Asherah's suppression by Deuteronomic reform (Josiah, ~622 BCE) is followed by the post-exilic appearance of personified Hokmah in Proverbs 8, Sirach 24, Wisdom of Solomon 7. The scholarly hypothesis: the divine-feminine theological position previously held by Asherah is *displaced* into permitted vocabulary as feminine-grammatical-gender Hokmah / Wisdom"
+    source-tier: T1
+    notes: "MASSIVE-WIN: Chain B of the Queen-of-Heaven spine — Asherah → Hokmah → Shekhinah inside one tradition's *suppression-displacement-return* trajectory"
+  - target: "[[shekhinah]]"
+    type: "continuous-development"
+    source: "Scholem 1941 *Major Trends in Jewish Mysticism*; Schäfer 2002 — the Kabbalistic Shekhinah is the theological inheritor of the suppressed Asherah. The Bahir (12th c.) and Zohar (13th c.) restore the Asherah-position as the feminine tenth sefirah (Malkhut), with explicit sacred-marriage theology between Tiferet (the masculine sixth sefirah) and Shekhinah. The same Asherah-Yahweh consort theology, formally suppressed by the prophets, returns 1,800 years later as the inner-divine sacred marriage at the heart of Lurianic Kabbalah"
+    source-tier: T1
+  - target: "[[sophia-gnostic]]"
+    type: "scholarly-parallel"
+    source: "Pearson 1990; MacRae 1970 — Gnostic Sophia is the *Christian-period* parallel articulation of the suppressed Asherah-position via the Hokmah-Sophia path. The Gnostic-Sethian cosmogony reinstates a feminine divine principle as cosmologically central, recovering theologically what the Deuteronomic reform suppressed historically"
+    source-tier: T1
+  - target: "[[mary-theotokos]]"
+    type: "structural-parallel"
+    source: "Dever 2005 — Mariology supplies the divine-feminine consort role that pre-exilic Israelite religion had assigned to Asherah and that the Deuteronomic reform systematically suppressed. Within Christianity, Mary fulfills the Asherah-position; within Judaism, Shekhinah does"
+    source-tier: T1
+  - target: "[[queen-of-heaven-spine]]"
+    type: "Israelite-folk-tier-instance"
+    source: "Station 3 in the 11-station spine — Asherah is the Iron-Age Canaanite-Israelite articulation of the divine-feminine consort position, attested at Kuntillet ʿAjrud (~800 BCE) as 'Yahweh and his Asherah.' The Josianic suppression (~622 BCE) is the most thoroughly documented case of official elimination of a Queen-of-Heaven cult in the spine"
+    source-tier: T1
 status: "full"
 cross-tradition-edges:
   - type: "parallel-form"

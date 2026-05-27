@@ -1,8 +1,10 @@
 # Top 10 Most Striking MASSIVE-WIN Findings
 
-Curated 2026-05-28 from the 42-entry MASSIVE-WINS-INDEX + 6 long-form essays in `00_meta/MASSIVE-WIN-essays/`. Weighted toward: (1) shock-value of the claim, (2) quality of documentation (T1), (3) the "Christianity ← older traditions" framing per `memory/feedback_massive_wins.md`.
+Curated 2026-05-28 from the 43-entry MASSIVE-WINS-INDEX + 7 long-form essays in `00_meta/MASSIVE-WIN-essays/`. Weighted toward: (1) shock-value of the claim, (2) quality of documentation (T1), (3) the "Christianity ← older traditions" framing per `memory/feedback_massive_wins.md`.
 
 Each entry: the finding + the chain + the canonical vault nodes for the full analysis.
+
+*Re-curated 2026-05-28 PM after the Queen-of-Heaven 5,500-year spine landed (now #2). Updated ordering reflects shock-value + documentation-quality + Christianity-as-convergence framing.*
 
 ---
 
@@ -18,7 +20,24 @@ Nodes: full essay at `00_meta/MASSIVE-WIN-essays/christianity-five-inheritances.
 
 ---
 
-## #2 — The Eucharist has a 3,500-year Indo-Iranian substrate
+## #2 — The Queen of Heaven Transmission Spine — 5,500-Year Divine-Feminine Chain (Inanna → Mary)
+
+**Meta-finding (`feminine-divine-transmission.md` essay).** The single longest documented divine-title transmission in religious history. Eleven canonical stations from Sumerian **Inanna** (*Nin-an-na*, Queen of Heaven at Uruk, -3500) through Akkadian **Ishtar** → Canaanite/Israelite **Asherah** → Phoenician **Astarte** → Greek **Aphrodite** → Roman **Venus** → Hebrew personified **Hokmah** → Hellenistic **Isis** → Gnostic **Sophia** → Kabbalistic **Shekhinah** → Christian **Mary Theotokos** (*Regina Caeli*, 431 CE). The same epithet — *nin-an-na* / *Šarrat šamê* / *meleket ha-shamayim* / *Regina Caeli* — runs continuously across ~5,500 years.
+
+**Four documented sub-chains** within the spine converge at Late-Antique Mariology:
+
+- **Chain A** (Mediterranean love-goddess): Inanna → Ishtar → Astarte → Aphrodite → Venus, documented by Burkert 1992 (*The Orientalizing Revolution*), West 1997 (*The East Face of Helicon*), Penglase 1994. The Phoenician colony at Paphos on Cyprus is the principal Astarte → Aphrodite transmission node; Venus Erycina (-217 BCE) is the Roman re-import of the Astarte cult.
+- **Chain B** (Israelite consort suppression-displacement-return): Asherah → Hokmah → Shekhinah, documented by Dever 2005 (*Did God Have a Wife?*), Smith 2002, Scholem 1941, Schäfer 2002. The single cleanest *suppression-displacement-return* trajectory in religious history — Asherah suppressed by Josianic reform (-622), the theological position migrates through permitted vocabulary (Wisdom personification) to mystical full-recovery (Kabbalistic tenth sefirah).
+- **Chain C** (Isis → Mary workshop transmission): Frankfurter 1998 (*Religion in Roman Egypt*, Princeton UP) documents that *the same Coptic workshops* in Egypt produced both *Isis Lactans* (Isis nursing Horus) and *Maria Lactans* (Mary nursing Christ) icons in identical composition as Egypt Christianized between the 3rd and 5th centuries CE. Same artisan hands, same compositional template, change of subject's name. **The archaeologically tightest single transmission point in the entire spine.**
+- **Chain D** (Sophia-Christology + Sophia-Mariology): The cosmic attributes Hebrew-Hellenistic theology assigned to feminine Sophia (pre-existence before creation, agent in creation, divine emanation) are re-gendered masculine in John 1's Logos hymn; the suppressed feminine character is preserved in Gnostic Sophia and channeled into Mariology. Council of Ephesus 431 was held in the city of Artemis's great temple, where the *Theotokos* definition built directly on centuries of local goddess-cult devotion (Pelikan 1996).
+
+**The load-bearing finding is the suppression-displacement-return pattern itself**: across every tradition that moves toward male-supremacist monotheism, the feminine divine undergoes a four-stage trajectory (established Queen → official suppression → displacement into permitted vocabulary → mystical return). The pattern recurs because the theological-psychological demand is robust enough to survive official suppression — and the suppression itself catalyzes the mystical recovery.
+
+Nodes: full essay at `00_meta/MASSIVE-WIN-essays/feminine-divine-transmission.md`. Hub: `queen-of-heaven-spine`. Sub-pattern: `black-madonna` (universal dark mother-with-child, 450+ sites; T1-T3 audit). Eleven deity-spine nodes plus `mary-magdalene` (human-tier counterpart) plus `divine-feminine` (broader analytic category).
+
+---
+
+## #3 — The Eucharist has a 3,500-year Indo-Iranian substrate
 
 Proto-Indo-Iranian `*sauma-` (~-2000 BCE) → Vedic **Soma** + Avestan **Haoma** → Dionysian wine + Eleusinian *kykeon* + Mithraic ritual-meal → Jewish Passover *kos ha-berakha* → Christian Eucharist.
 
@@ -28,7 +47,7 @@ Nodes: `00_meta/MASSIVE-WIN-essays/soma-haoma-eucharist.md`, `soma`, `haoma-zoro
 
 ---
 
-## #3 — The Executed Divine Claimant pattern — 7 figures across 2,500 years
+## #4 — The Executed Divine Claimant pattern — 7 figures across 2,500 years
 
 | Figure | Date | Charge | Execution |
 |---|---|---|---|
@@ -46,7 +65,7 @@ Nodes: full essay at `00_meta/MASSIVE-WIN-essays/executed-divine-claimant.md`. H
 
 ---
 
-## #4 — Isaiah 45:5 weaponized as Yaldabaoth\'s boast (the sharpest single inversion in extant texts)
+## #5 — Isaiah 45:5 weaponized as Yaldabaoth\'s boast (the sharpest single inversion in extant texts)
 
 Israel\'s greatest monotheistic declaration —
 
@@ -62,7 +81,7 @@ Nodes: `yaldabaoth`, `tradition-gnosticism`, `apocryphon-of-john`, `isaiah-45`.
 
 ---
 
-## #5 — The Didache\'s Eucharist has no "this is my body" — original Christian meal was Jewish thanksgiving
+## #6 — The Didache\'s Eucharist has no "this is my body" — original Christian meal was Jewish thanksgiving
 
 The Didache\'s eucharistic prayers (chapters 9–10) are OLDER than the Synoptic accounts. They have:
 - **No words of institution** ("this is my body" / "this is my blood")
@@ -77,7 +96,7 @@ Nodes: `phase-4-061-didache`.
 
 ---
 
-## #6 — Testimonium Flavianum: Christianity\'s only contemporary non-Christian attestation of Jesus is partially forged
+## #7 — Testimonium Flavianum: Christianity\'s only contemporary non-Christian attestation of Jesus is partially forged
 
 Josephus, *Antiquities* 18.3.3 — the standard text is demonstrably Christianized ("He was the Christ," "he appeared to them alive again"). The Arabic (Agapius) and Syriac (Michael the Syrian) versions preserve a less Christianized form that is likely closer to the original.
 
@@ -89,7 +108,7 @@ Nodes: `phase-4-070-josephus-antiquities-of-the-jews`.
 
 ---
 
-## #7 — The Two Ways: a binary moral cosmos predates Christianity by centuries
+## #8 — The Two Ways: a binary moral cosmos predates Christianity by centuries
 
 Zoroastrian **asha / druj** (cosmic truth/lie pair) → Qumran **Two Spirits** doctrine (Community Rule 1QS 3:13–4:26) → **Epistle of Barnabas** two-angels → **Didache** Two Ways (Way of Life / Way of Death) → **Hermas** Mandate 6 (two angels within every individual soul) → **Manichaean** Light/Darkness.
 
@@ -99,7 +118,7 @@ Nodes: `phase-4-061-didache`, `phase-4-065-shepherd-of-hermas`, `tradition-zoroa
 
 ---
 
-## #8 — Greek myth is Hurrian — Kumarbi → Hesiod, with a 900-year transmission chain
+## #9 — Greek myth is Hurrian — Kumarbi → Hesiod, with a 900-year transmission chain
 
 The Mediterranean succession myth is **NOT Greek**:
 
@@ -115,7 +134,7 @@ Nodes: `kumarbi`, `teshub`, `phase-1-028-kumarbi-cycle`, `phase-2-009-hesiod-the
 
 ---
 
-## #9 — Five-Tradition Apophatic Summit: the Absolute is unnameable across cultures that never met
+## #10 — Five-Tradition Apophatic Summit: the Absolute is unnameable across cultures that never met
 
 | Tradition | Name | Key formulation |
 |---|---|---|
@@ -133,7 +152,9 @@ Nodes: `tradition-daoism`, `ein-sof`, `theme-apophatic-theology`, `meister-eckha
 
 ---
 
-## #10 — Shinran ↔ Luther: identical sola gratia, Japan vs Germany, zero contact
+## (Dropped from top 10 with the 2026-05-28-PM update) — Shinran ↔ Luther: identical sola gratia, Japan vs Germany, zero contact
+
+*Demoted to "close but not in top 10" with the Queen-of-Heaven spine landing at #2. The Shinran-Luther convergence remains one of the most precisely parallel doctrinal convergences in the vault — but it is a 2-instance independent convergence, while the new #2 is an 11-station documented transmission spine spanning 5,500 years.*
 
 | **Shinran** (Japan, 1173–1263) | **Luther** (Germany, 1483–1546) |
 |---|---|
@@ -156,6 +177,7 @@ Nodes: `phase-4-104-sukhavativyuha-larger`, `tradition-pure-land-buddhism`, `tra
 
 ## What didn\'t make the top 10 but is close
 
+- **Shinran ↔ Luther identical sola gratia** (Japan vs Germany, ~250-year gap, zero contact) — held the #10 slot before the 2026-05-28-PM Queen-of-Heaven landing
 - **The Mindfulness industry\'s erased Buddhist origins** ($1B+/yr secular industry with the source obscured)
 - **Bhagavad Gita → Oppenheimer at Trinity** ("Now I am become Death, destroyer of worlds" — Gita 11:32 quoted in Sanskrit at the first atomic test)
 - **Confucianism → Jesuits → Enlightenment → Modern Meritocracy** (Confucius shaped global bureaucratic architecture)
@@ -164,15 +186,17 @@ Nodes: `phase-4-104-sukhavativyuha-larger`, `tradition-pure-land-buddhism`, `tra
 - **Solar theology five-tradition convergence** (Aten / Plotinus / Sol Invictus / Vairocana / Amaterasu independently)
 - **Papal supremacy chain from 1 Clement to Vatican I** (1,800 years from a single pastoral letter)
 - **Guanyin gender transformation** (same figure reverses gender across 500 years of transmission)
+- **Black Madonna phenomenon** (~450 sites of dark-skinned Marian devotion; T1-vs-T3 audit at `06_themes/black-madonna.md`) — sub-pattern of the #2 spine
 
 ---
 
 ## Where to dig next
 
-The full 42-finding index lives at `00_meta/MASSIVE-WINS-INDEX.md`. The six long-form essays in `00_meta/MASSIVE-WIN-essays/` each take one pattern and walk it through ~200 lines of scholarship:
-- `executed-divine-claimant.md` — the seven-lens panorama of #3
+The full 43-finding index lives at `00_meta/MASSIVE-WINS-INDEX.md`. The seven long-form essays in `00_meta/MASSIVE-WIN-essays/` each take one pattern and walk it through ~200-250 lines of scholarship:
+- `feminine-divine-transmission.md` — the 5,500-year 11-station Queen-of-Heaven spine of #2 (added 2026-05-28-PM)
+- `executed-divine-claimant.md` — the seven-lens panorama of #4
 - `christianity-five-inheritances.md` — the capstone synthesis of #1
-- `soma-haoma-eucharist.md` — the 3,500-year ritual chain of #2
+- `soma-haoma-eucharist.md` — the 3,500-year ritual chain of #3
 - `hermetic-transmission-chain.md` — 2,300-year philosophical lineage
 - `soul-exile-longing.md` — universal-phenomenological structure with one principled outlier
 - `connector-nodes.md` — the structural-bridge nodes anchoring it all
@@ -181,4 +205,4 @@ Each is a hub for ~50-150 vault edges that wire the cross-tradition spine.
 
 ---
 
-_Curated 2026-05-28 from 42-finding MASSIVE-WINS-INDEX + 6 essay capstones._
+_Curated 2026-05-28 from 43-finding MASSIVE-WINS-INDEX + 7 essay capstones. Re-curated 2026-05-28-PM after the Queen-of-Heaven 5,500-year transmission spine landed (now #2)._

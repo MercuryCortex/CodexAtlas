@@ -25,6 +25,23 @@ syncretic-edges:
     type: "ancient-identification"
     source: "Cult of Venus Erycina (from Eryx in Sicily) imports a Phoenician Astarte cult under Venus's name (~-217)"
     source-tier: T1
+  - target: "[[inanna-sumerian]]"
+    type: "substrate-influence"
+    source: "Via the Aphrodite-Astarte-Ishtar chain — the Mesopotamian Inanna→Ishtar→Astarte→Aphrodite→Venus lineage transitively transmits Inanna's iconographic and functional profile to Venus through ~3,000 years of documented Mediterranean syncretism. West 1997; Burkert 1992; Schilling 1954"
+    source-tier: T1
+  - target: "[[ishtar-akkadian]]"
+    type: "substrate-influence"
+    source: "Via Astarte-Aphrodite — Venus Erycina's Phoenician-Astarte cult is functionally Ishtar-cult under Latin name; Venus's Venus-planet patronage and her love-and-war oscillation (Venus Genetrix vs Venus Victrix) preserve Ishtar's structural duality"
+    source-tier: T1
+  - target: "[[mary-theotokos]]"
+    type: "structural-parallel"
+    source: "Pelikan 1996 *Mary Through the Centuries* — the Marian *Stella Maris* (Star of the Sea) epithet directly inherits Venus's morning-star patronage; the Marian Regina-of-Heaven function reflects Venus Genetrix's role as divine mother of the Julian-Augustan dynastic-theological imagery"
+    source-tier: T1
+    notes: "MASSIVE-WIN — the Stella Maris Marian hymn (composer disputed; attested from 9th c., possibly older) is the most explicit Venus-planet-inheritance in canonical Christian liturgy"
+  - target: "[[queen-of-heaven-spine]]"
+    type: "primary-instance-of-spine"
+    source: "Station 6 in the 11-station Queen-of-Heaven transmission spine"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Religions of Rome"

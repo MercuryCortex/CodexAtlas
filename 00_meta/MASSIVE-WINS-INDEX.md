@@ -294,6 +294,33 @@ Nodes: [[tradition-zen]], [[tradition-theravada-buddhism]], [[d-t-suzuki]]
 Richard Wilhelm's translation (1924/1950) + Carl Jung's preface (developing Synchronicity theory) → Herman Hesse, Philip K. Dick, John Cage (*Music of Changes*, 1951), the 1960s counterculture. The I Ching became a touchstone for: Jungian depth psychology; aleatoric music; countercultural decision-making. A Zhou dynasty divination text resurfacing in mid-20th century America as a tool for randomness-based artistic composition.
 Nodes: [[phase-2-042-yi-jing-i-ching]]
 
+### 43. The Queen of Heaven Transmission Spine — 5,500-Year Divine-Feminine Chain (Inanna → Mary)
+**The longest documented divine-title transmission in religious history. Eleven stations across ~5,500 years.**
+
+| # | Figure | Tradition | Period | Defining feature |
+|---|---|---|---|---|
+| 1 | Inanna | Sumerian | -3500 to -1700 | *Nin-an-na* — Queen of Heaven; eight-pointed star; descent-and-return |
+| 2 | Ishtar | Akkadian / Assyrian | -2400 to -100 | *Šarrat šamê*; Venus-planet; royal patron |
+| 3 | Asherah | Canaanite / pre-exilic Israelite | -2500 to -600 | "Yahweh and his Asherah" at Kuntillet ʿAjrud |
+| 4 | Astarte | Phoenician | -1800 to +200 | The Phoenician-Cypriot Aphrodite substrate |
+| 5 | Aphrodite | Greek | -1200 to +400 | Cypriot Paphos cult; sea-foam birth |
+| 6 | Venus | Roman | -500 to +400 | Venus Genetrix; Venus Erycina's Phoenician import (-217) |
+| 7 | Hokmah | Hebrew | -300 to +200 | Proverbs 8; *Sedes Sapientiae* prototype |
+| 8 | Isis (Hellenistic) | Greco-Roman mystery | -300 to +600 | *Myrionymos*; the *Isis Lactans* workshop transmission to *Maria Lactans* |
+| 9 | Sophia (Gnostic) | Gnostic Christian | +100 to +400 | Fallen aeon; the chain-convergence node |
+| 10 | Shekhinah | Rabbinic + Kabbalistic Judaism | +200 onwards | Divine indwelling; tenth sefirah; bride-in-exile |
+| 11 | Mary (Theotokos) | Christianity | +30 onwards | *Theotokos* (431); *Regina Caeli*; *Stella Maris*; *Sedes Sapientiae* |
+
+The same title (*nin-an-na* / *Šarrat šamê* / *meleket ha-shamayim* / *Regina Caeli*) runs continuously from Inanna at Uruk to the Marian *Regina Caeli* Easter hymn. **Four documented sub-chains** within the spine — (A) Inanna → Venus Mediterranean love-goddess; (B) Asherah → Hokmah → Shekhinah Israelite consort; (C) Isis → Sophia → Mary Hellenistic universal mother; (D) Sophia → Logos / Mariology Christological appropriation — converge at Christian Mariology because Late-Antique Christianity sits geographically and historically at the convergence point of all four.
+
+**Tightest single transmission point:** Frankfurter 1998 (*Religion in Roman Egypt*, Princeton UP) documents workshop-level continuity — the *same* Coptic workshops that produced *Isis Lactans* (Isis-nursing-Horus) images began producing *Maria Lactans* (Virgin-nursing-Christ) images in identical composition as Egypt Christianized through the 3rd-5th c. Same artisan hands, same compositional template, change of subject's name.
+
+**Suppression-displacement-return pattern:** Across every tradition that moves toward male-supremacist monotheism, the feminine divine undergoes a four-stage trajectory — established Queen → official suppression → displacement into permitted vocabulary (Wisdom, Shekhinah, Marian *Sedes Sapientiae*) → mystical return (Sophia, Kabbalistic Shekhinah, Black Madonna). The pattern is the load-bearing finding.
+
+Tier-1 anchors: Burkert 1992 *The Orientalizing Revolution* (Harvard UP); West 1997 *The East Face of Helicon* (Oxford UP); Smith 2002 *The Early History of God* (Eerdmans); Dever 2005 *Did God Have a Wife?* (Eerdmans); Scholem 1941 *Major Trends in Jewish Mysticism* (Schocken); Schäfer 2002 *Mirror of His Beauty* (Princeton UP); Witt 1971 *Isis in the Graeco-Roman World* (Cornell UP); Frankfurter 1998 *Religion in Roman Egypt* (Princeton UP); Pelikan 1996 *Mary Through the Centuries* (Yale UP); Warner 1976 *Alone of All Her Sex* (Knopf); Pagels 1979 *The Gnostic Gospels* (Random House).
+
+Nodes: [[queen-of-heaven-spine]] (hub theme), [[black-madonna]] (post-Marian articulation), [[inanna-sumerian]], [[ishtar-akkadian]], [[asherah]], [[astarte-canaanite]], [[aphrodite-greek]], [[venus-roman]], [[hokmah-hebrew]], [[isis-hellenistic]], [[sophia-gnostic]], [[shekhinah]], [[mary-theotokos]], [[mary-magdalene]], [[divine-feminine]], [[wisdom-personified]]. Full essay: `00_meta/MASSIVE-WIN-essays/feminine-divine-transmission.md`.
+
 ---
 
 ## PRIORITY INVESTIGATION TARGETS

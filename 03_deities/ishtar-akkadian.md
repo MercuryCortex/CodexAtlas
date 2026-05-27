@@ -42,6 +42,15 @@ syncretic-edges:
     source: "Smith 2002; partial overlap in West Semitic mother-goddess complex (limited; Ashtart/Astarte is the closer Canaanite parallel)"
     source-tier: T1
     notes: "Asherah is the Canaanite consort-of-El, a more matriarchal-fertility figure distinct from Astarte's warrior + Venus-planet profile; the overlap is real but partial"
+  - target: "[[mary-theotokos]]"
+    type: "structural-parallel"
+    source: "Jeremiah 7:18, 44:17-25 explicitly describes a Judahite-women's cult of *meleket ha-shamayim* (the Queen of Heaven), identified by mainstream scholarship (Day 2000; Smith 2002) as Ishtar/Astarte. The prophet condemns the cult; the Marian *Regina Caeli* / Queen-of-Heaven articulation in Christian theology is the canonical-Christian reabsorption of the same divine-feminine theological position the prophet condemned. The cult that Jeremiah could not eliminate from popular religion ultimately found canonical Christian articulation as Mariology"
+    source-tier: T1
+    notes: "MASSIVE-WIN: Jeremiah-condemned *meleket ha-shamayim* (Queen of Heaven) cult is the Iron-Age Mediterranean articulation of the same divine-feminine position that re-emerges in canonical form as Mariology a millennium later"
+  - target: "[[queen-of-heaven-spine]]"
+    type: "primary-instance-of-spine"
+    source: "Station 2 in the 11-station Queen-of-Heaven spine — Ishtar's *Šarrat šamê* (Queen of Heaven) title is the Akkadian-tradition articulation of Inanna's *nin-an-na*; the Akkadian language-tradition is the principal vector for the spine's westward diffusion into West-Semitic (Astarte) and Iron-Age Levantine (the Jeremiah-cult) territory"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Ishtar"

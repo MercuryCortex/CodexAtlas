@@ -28,6 +28,9 @@ Essays are self-contained; you can read any one without reading the others. The 
 4. **[[soul-exile-longing|Soul-Exile Longing — A Seven-Lens Panorama, and the Buddhist Outlier]]** (230 lines)
    The strongest universal-phenomenological-structure candidate. Five-tradition convergence (Neoplatonism + Gnosticism + Sufism + Advaita Vedānta + Ishrāqī) + one principled outlier (Buddhism). Key finding: the Buddhist outlier is methodologically precious — it's the falsification-criterion analog within the cluster; Shanon 2002's neurobiological-substrate hypothesis (5-HT2A pharmacology) suggests a non-cultural basis for the phenomenology.
 
+5. **[[feminine-divine-transmission|The Feminine Divine Transmission — A 5,500-Year Cross-Tradition Spine]]** (245 lines, added 2026-05-28-PM)
+   The longest documented divine-title transmission in religious history. Eleven canonical stations from Sumerian Inanna (-3500) → Akkadian Ishtar → Israelite Asherah → Phoenician Astarte → Greek Aphrodite → Roman Venus → Hebrew Hokmah → Hellenistic Isis → Gnostic Sophia → Kabbalistic Shekhinah → Christian Mary Theotokos. Four documented sub-chains (Mediterranean love-goddess + Israelite consort + Isis-workshop + Sophia-Christology) converge at Late-Antique Mariology. Tightest single transmission point: Frankfurter 1998 *Religion in Roman Egypt* (Princeton UP) — workshop-level continuity of *Isis Lactans* → *Maria Lactans* iconography (same Coptic artisans, same composition, change of subject's name). The load-bearing finding is the **four-stage suppression-displacement-return pattern** recurring across every tradition in the spine. Hub: [[queen-of-heaven-spine]]. Sub-pattern: [[black-madonna]] (T1-vs-T3 audit on 450+ dark-Madonna sites).
+
 ### Capstone synthesis essay
 
 5. **[[christianity-five-inheritances|Christianity's Five Documented Inheritances — A Synthesis]]** (177 lines)

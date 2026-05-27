@@ -73,6 +73,19 @@ syncretic-edges:
     source: "Jonas 1963, *The Gnostic Religion* ch. 'Gnosticism, Existentialism, and Nihilism'; King 2006; *Apocryphon of John* + *Gospel of Truth* + *Letter to Flora* — Sophia is one of three named deity-instances in the soul-exile-longing hub. Her fall from the Pleroma and her *pneuma* trapped in matter (after Yaldabaoth steals it from her and breathes it into Adam) is the *Gnostic* version of the cross-tradition exile-longing pattern that also appears in Plotinian Neoplatonism, Sufi *ghurba*, Vedāntic *avidyā*, Buddhist *dukkha*, and Rumi's *Nay-nāmeh*. See [[soul-exile-longing]]"
     source-tier: T1
     notes: "Cross-lens: 03_deities → 06_themes. The hub also lists key-figures across 04_persons (rumi, plotinus, suhrawardi, shankara, siddhartha-gautama-buddha, ibn-arabi) and traditions across 07_traditions (sufism, neoplatonism, gnosticism, advaita-vedanta, buddhism) — those lens-back-edges still pending. MASSIVE-WIN: Sophia is the figure whose *trapped pneuma* gives the exile-longing cluster its sharpest cosmic-drama formulation"
+  - target: "[[mary-theotokos]]"
+    type: "polemic-against"
+    source: "Pagels 1979 *The Gnostic Gospels*; King 2003; Pelikan 1996 — proto-orthodox Christianity (Irenaeus *AH* I.1-8, Tertullian *Adv. Val.*) systematically rejected the Sophia-as-fallen-aeon Gnostic articulation. Marian theology preserved the divine-feminine *function* (intercessor, mother of the divine Son, Wisdom-typology, Queen of Heaven) while rejecting the Sophia-cosmogonic-fall narrative. The orthodox Mariology is the *Sophia-without-the-fall* — the Gnostic Sophia's theological role retained, her tragic-cosmogonic narrative rejected"
+    source-tier: T1
+    notes: "MASSIVE-WIN — Mariology is the polemic-substitution of Gnostic Sophia inside orthodox Christianity. Sophia's function inherited; Sophia's narrative excluded. Cleanest single example of orthodox theology absorbing a heretical theological need while rejecting the heretical theological story"
+  - target: "[[mary-magdalene]]"
+    type: "interpretatio-cultic"
+    source: "Pagels 1979; King 2003 *The Gospel of Mary of Magdala* — in the Gospel of Mary, Pistis Sophia, and Gospel of Philip, Mary Magdalene is the disciple to whom Christ communicates the higher Sophia-revelation. She functions as the *human earthly counterpart* of the cosmic Sophia: the disciple who understands because she structurally mirrors the Sophia-position"
+    source-tier: T1
+  - target: "[[queen-of-heaven-spine]]"
+    type: "primary-instance-of-spine"
+    source: "Station 9 in the 11-station Queen-of-Heaven spine — Sophia is the convergence point of Chain B (Asherah → Hokmah → Sophia), Chain C (Isis → Sophia via Alexandria), and Chain D (Sophia → orthodox Christology / Sophia → Mariology). The single most-load-bearing convergence-node in the entire spine"
+    source-tier: T1
 status: "full"
 refs:
   - title: "The Secret Revelation of John"

@@ -5,9 +5,35 @@ name: "Divine feminine"
 aka: ["goddess traditions", "feminine divine principle"]
 category: "theological"
 appearances: ["[[phase-1-003-enheduanna-hymns]]", "[[phase-1-013-baal-cycle]]", "[[phase-3-012-wisdom-of-solomon]]", "[[phase-3-007-sirach]]", "[[phase-4-002-apocryphon-of-john]]", "[[phase-4-005-gospel-of-mary]]", "[[phase-4-008-trimorphic-protennoia]]"]
-deity-instances: ["[[inanna-sumerian]]", "[[ishtar-akkadian]]", "[[isis-egyptian]]", "[[asherah]]", "[[sophia-gnostic]]", "[[barbelo]]", "[[anat]]", "[[cybele]]"]
+deity-instances: ["[[inanna-sumerian]]", "[[ishtar-akkadian]]", "[[astarte-canaanite]]", "[[aphrodite-greek]]", "[[venus-roman]]", "[[isis-egyptian]]", "[[isis-hellenistic]]", "[[asherah]]", "[[hokmah-hebrew]]", "[[sophia-gnostic]]", "[[shekhinah]]", "[[mary-theotokos]]", "[[barbelo]]", "[[anat]]", "[[cybele]]", "[[anahita-zoroastrian]]"]
 status: "full"
+syncretic-edges:
+  - target: "[[queen-of-heaven-spine]]"
+    type: "primary-spine-articulation"
+    source: "See [[queen-of-heaven-spine]] for the 11-station, 4-sub-chain transmission spine from Inanna (-3500) to Mary (1950 Assumption). This *divine-feminine* category is the broader analytic category; *queen-of-heaven-spine* is the specific Mediterranean-West-Asian transmission articulation"
+    source-tier: T1
+  - target: "[[wisdom-personified]]"
+    type: "feminine-divine-as-permitted-vocabulary"
+    source: "Schroer 2000 *Sophia: The Wisdom of God*; Pelikan 1996 — Wisdom-personification is the structural device by which the divine-feminine survives inside monotheistic theologies that have officially denied it. *Hokmah*/*Sophia* is grammatically feminine and is theologically a near-hypostasis; both features make her the permitted vehicle for the suppressed feminine"
+    source-tier: T1
+  - target: "[[theme-holy-spirit-sophia]]"
+    type: "cross-tradition-feminine-third"
+    source: "Quispel 1974 *Eranos-Jahrbuch* 39; Engelsman 1979 *The Feminine Dimension of the Divine*; Scholem 1941 — Sophia (Gnostic) + Shekhinah (Kabbalistic) + Spirit-as-Mother (Syriac Christianity and the lost Gospel of the Hebrews) are three cross-tradition articulations of the *suppressed feminine third* in monotheistic / Trinitarian theology"
+    source-tier: T1
+    notes: "MASSIVE-WIN: the same structural-theological position emerging in three independent traditions"
+  - target: "[[black-madonna]]"
+    type: "iconographic-popular-articulation"
+    source: "Forsyth 1972 *The Throne of Wisdom*; Begg 1985 (T3) catalogue of 450+ sites — the Black Madonna is the popular-Catholic articulation of the divine-feminine inside otherwise male-supremacist Latin Christology. Per [[black-madonna]], the transmission-mechanism is contested (T1 Forsyth: chemical-and-devotional; T3 Begg: pre-Christian-goddess-substrate); the phenomenology is uncontested (universal dark mother-with-child, Queen-of-Heaven cult-pattern)"
+    source-tier: T1
+  - target: "[[mary-magdalene]]"
+    type: "human-tier-instance"
+    source: "Pagels 1979 *The Gnostic Gospels*; Schaberg 2002 *The Resurrection of Mary Magdalene* — Magdalene is the load-bearing case of *human-tier* divine-feminine elevation in Christian scripture: the resurrection witness, the apostle-to-the-apostles, the wisdom-disciple counterpart in Gnostic-Christian preservation. The Gregorian conflation (591 CE) of Magdalene with the sinful woman of Luke 7 is one of the clearest formal suppressions of the feminine in canonical Western Christianity"
+    source-tier: T1
 related-themes:
+  - "[[queen-of-heaven-spine]]"
+  - "[[black-madonna]]"
+  - "[[theme-holy-spirit-sophia]]"
+  - "[[wisdom-personified]]"
   - "[[theme-axial-age]]"
   - "[[logos-cosmic-reason]]"
   - "[[tzimtzum]]"

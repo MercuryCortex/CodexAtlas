@@ -30,6 +30,24 @@ syncretic-edges:
     type: "ancestor-of"
     source: "Witherington 1994; Dunn 1980 — John 1:1–14 Logos hymn structurally parallels Proverbs 8:22–31 and Sirach 24; Wisdom-Christology is the probable matrix"
     source-tier: T1
+  - target: "[[mary-theotokos]]"
+    type: "structural-parallel"
+    source: "Pelikan 1996 *Mary Through the Centuries*; Warner 1976 *Alone of All Her Sex*; Forsyth 1972 — patristic and medieval allegorical exegesis read the Wisdom-passages (Prov 8, Sirach 24, Wisdom 7) AS Marian. *Sedes Sapientiae* (Seat of Wisdom) is the formal Romanesque iconographic type; Mary holds Christ-as-incarnate-Wisdom, becoming the throne of Wisdom"
+    source-tier: T1
+    notes: "MASSIVE-WIN: the Wisdom-Christology that John 1 applied to Christ was re-applied to Mary in medieval allegorical exegesis. Sophia → Christ → Mary is a triple-transfer of the same cosmic-feminine-Wisdom vocabulary"
+  - target: "[[asherah]]"
+    type: "continuous-development"
+    source: "Dever 2005 *Did God Have a Wife?*; Smith 2002 *The Early History of God*; Schäfer 2002 *Mirror of His Beauty* — the suppression of Asherah cult (Josianic reform c. 622 BCE) is followed by the post-exilic appearance of personified Hokmah in Proverbs 8, Sirach 24, Wisdom of Solomon 7. Scholarly hypothesis: the divine-feminine theological position previously held by Asherah is *displaced* into permitted vocabulary as Hokmah. The same theological need, the same divine-feminine function, the linguistically-feminine *ḥokhmah* serving as the vessel"
+    source-tier: T1
+    notes: "MASSIVE-WIN: Chain B of the Queen-of-Heaven spine — Asherah → Hokmah → Shekhinah, the *suppression-displacement-return* trajectory inside one tradition"
+  - target: "[[shekhinah]]"
+    type: "continuous-development"
+    source: "Schäfer 2002 — rabbinic and Kabbalistic Shekhinah inherits the Hokmah-position theologically: feminine divine indwelling, divine partner in inner-divine sacred marriage, the immanent face of the supreme. The Bahir and Zohar combine Hokmah and Binah (the second and third sefirot) with Shekhinah/Malkhut (the tenth) to form the full Kabbalistic divine-feminine structure"
+    source-tier: T1
+  - target: "[[queen-of-heaven-spine]]"
+    type: "Israelite-tier-instance"
+    source: "Station 7 in the 11-station Queen-of-Heaven spine — Hokmah is the Israelite-tradition articulation of the divine-feminine pattern, serving as the suppressed-Asherah's permitted-vocabulary form within Second-Temple Judaism"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Wisdom and the Hebrew Epic: Ben Sira's Hymn in Praise of the Fathers"

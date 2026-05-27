@@ -43,7 +43,15 @@ syncretic-edges:
     type: "documented-substrate"
     source: "Hellenistic Isis is the load-bearing Egyptian-end deity for Chain 3 (Isis ↔ Sophia divine-feminine continuity through Alexandria)"
     source-tier: T1
-status: "full"
+  - target: "[[mary-theotokos]]"
+    type: "iconographic-borrowing"
+    source: "Witt 1971 *Isis in the Graeco-Roman World* (Cornell UP); Frankfurter 1998 *Religion in Roman Egypt* (Princeton UP) — the *Isis Lactans* (Isis nursing Horus) iconographic type is the documented direct ancestor of the *Maria Lactans* (Mary nursing the Christ-child) icons. Frankfurter documents that the *same Coptic workshops* in Egypt produced both — same artisan hands, same compositional template, gradual change of subject's name as Egypt Christianized through the 3rd-5th c. This is the archaeologically tightest single transmission point in the Queen-of-Heaven spine. The *Theotokos* title (defined 431 CE at Ephesus, the Artemis-cult city) extends the borrowing into formal Marian dogma. The *Myrionymos* aretalogy of Apuleius *Metamorphoses* 11 (Isis as the universal goddess of ten thousand names — Cybele, Demeter, Aphrodite, Hera, Athena) is the structural prototype for the medieval Litany of Loreto"
+    source-tier: T1
+    notes: "MASSIVE-WIN — workshop-level direct iconographic transmission. The single most archaeologically-concrete edge in the divine-feminine spine"
+  - target: "[[queen-of-heaven-spine]]"
+    type: "primary-instance-of-spine"
+    source: "Station 8 in the 11-station spine — Hellenistic Isis is the *Myrionymos* (ten-thousand-named) absorptive Mediterranean goddess that aggregates the Aphrodite-Demeter-Cybele-Hera profiles. The Isis cult is the principal direct ancestor of Mariology via Coptic-workshop iconographic transmission (Frankfurter 1998)"
+    source-tier: T1
 refs:
   - title: "Apuleius: Metamorphoses (The Golden Ass), Book 11"
     author: "Apuleius; Hanson, J.A. (trans.)"

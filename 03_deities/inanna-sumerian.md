@@ -46,6 +46,15 @@ syncretic-edges:
     type: "structural-substrate"
     source: "Inanna's-descent → Sophia's-fall typological mapping is Chain 4 of the documented Mesopotamian → Gnostic transmission"
     source-tier: T1
+  - target: "[[mary-theotokos]]"
+    type: "iconographic-borrowing"
+    source: "Warner 1976 *Alone of All Her Sex*; Pelikan 1996 *Mary Through the Centuries* — Mary inherits Inanna's exact title *nin-an-na* (Queen of Heaven), her Venus-planet patronage (*Stella Maris*), and her dove iconography via the Astarte-Aphrodite-Venus-Isis Mediterranean chain. The Marian *Regina Caeli* Easter hymn (attested from at least the 12th c., with earlier patristic roots) is the Christian-Latin recapitulation of Inanna's *nin-an-na* / Ishtar's *Šarrat šamê* / Astarte's *meleket ha-shamayim* title-formula"
+    source-tier: T1
+    notes: "MASSIVE-WIN — the Queen-of-Heaven title spans ~5,000 years from Inanna at Uruk (-3500) to the Marian *Regina Caeli* in canonical Catholic liturgy. The single longest divine-feminine title-transmission in religious history"
+  - target: "[[queen-of-heaven-spine]]"
+    type: "primary-anchor-of-spine"
+    source: "Station 1 (the earliest documented station) in the 11-station Queen-of-Heaven transmission spine. Inanna's *nin-an-na* title, eight-pointed star, Venus-planet patronage, sacred-marriage cycle, descent-and-return narrative, and dove iconography are the load-bearing features that propagate through the entire 5,500-year spine"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Inanna, Queen of Heaven and Earth: Her Stories and Hymns from Sumer"

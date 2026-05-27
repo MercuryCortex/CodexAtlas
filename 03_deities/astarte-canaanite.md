@@ -29,6 +29,18 @@ syncretic-edges:
     type: "folk-syncretism"
     source: "In some Egyptian New Kingdom syncretic forms, Anat and Astarte are conflated (compound goddess 'Antit-Anat'); in distinct cultic contexts at Ugarit they are separate goddesses with overlapping war-aspect."
     source-tier: T1
+  - target: "[[venus-roman]]"
+    type: "direct-borrowing"
+    source: "Beard/North/Price 1998 *Religions of Rome*; Schilling 1954 — the *Venus Erycina* cult, imported to Rome from Eryx (Sicily) in -217 during the Second Punic War, is a direct adoption of a Phoenician-Punic Astarte cult under the Latin Venus name. The Erycine cult preserved Punic-Astarte temple practices through the Roman Republic and early Empire. This is the *direct* path from Astarte to Venus that runs parallel to the indirect Astarte → Aphrodite → Venus route"
+    source-tier: T1
+  - target: "[[mary-theotokos]]"
+    type: "structural-parallel"
+    source: "Pelikan 1996; Warner 1976 — the *meleket ha-shamayim* (Queen of Heaven) cult condemned by Jeremiah 7:18 and 44:17-25 is the Iron-Age West-Semitic articulation of the same divine-feminine theological position that re-emerges in canonical Christian theology as Marian Queen-of-Heaven liturgy. Astarte's Stella Maris / Venus-planet patronage transmits via Aphrodite-Venus into the Marian Stella Maris epithet"
+    source-tier: T1
+  - target: "[[queen-of-heaven-spine]]"
+    type: "primary-instance-of-spine"
+    source: "Station 4 in the 11-station spine — Astarte is the West-Semitic articulation of the Inanna-Ishtar profile; her Phoenician cult at Paphos is the principal transmission vector to Greek Aphrodite, and her Erycine cult is the direct vector to Roman Venus"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Origin of Aphrodite"

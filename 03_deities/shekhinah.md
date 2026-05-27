@@ -22,6 +22,24 @@ syncretic-edges:
     source: "Quispel 1974 *Eranos-Jahrbuch*; Engelsman 1979 *The Feminine Dimension of the Divine*; Scholem 1941 + 1962 — the rabbinic-and-Kabbalistic Shekhinah is the Jewish-mystical articulation of the *suppressed feminine third* pattern: the divine Presence as feminine (*shekhinah* is grammatically feminine), the lowest sefirah in Kabbalah, the feminine partner in the inner-divine sacred marriage with Tiferet/the masculine. Together with the Gnostic Sophia and the Syriac Christian Spirit-as-Mother, Shekhinah is the third member of the cross-tradition feminine-third constellation that monotheistic theology consistently produces and consistently subordinates. See [[theme-holy-spirit-sophia]]"
     source-tier: T1
     notes: "MASSIVE-WIN: Shekhinah-as-Sophia-as-Holy-Spirit is a three-tradition convergence on the same theological structural problem (feminine indwelling-divinity within a masculinized supreme); the hub documents this as the *suppressed* feminine third — pushed to the margins in each tradition's official theology but persistently re-emerging. Cross-lens: 03_deities → 06_themes"
+  - target: "[[asherah]]"
+    type: "continuous-development"
+    source: "Dever 2005 *Did God Have a Wife?*; Smith 2002 *The Early History of God*; Schäfer 2002 *Mirror of His Beauty* — the trajectory: Asherah as Yahweh's consort in pre-exilic Israelite folk religion (attested at Kuntillet ʿAjrud and Khirbet el-Qom, c. 800 BCE) → suppressed by Deuteronomic reform (~622 BCE) → personified Hokmah in late post-exilic Wisdom literature (Prov 8, Sir 24, Wis 7) → Shekhinah as God's indwelling Presence in rabbinic Judaism → hypostatized as the feminine tenth sefirah in the Bahir / Zohar / Lurianic Kabbalah. The same divine-feminine theological position survives the suppression by migrating through permitted vocabulary. Schäfer 2002 makes the Asherah-Shekhinah continuity the load-bearing argument of his book"
+    source-tier: T1
+    notes: "MASSIVE-WIN — Chain B of the Queen-of-Heaven spine: the suppressed Israelite consort persists across 2,500 years through three successive permitted-vocabulary articulations (Hokmah → Shekhinah-as-Presence → Shekhinah-as-sefirah)"
+  - target: "[[hokmah-hebrew]]"
+    type: "continuous-development"
+    source: "Schäfer 2002 — rabbinic Shekhinah inherits the Wisdom-Hokmah feminine-personification, then Kabbalistic Shekhinah refines the inheritance into the formal Tiferet-Shekhinah sacred-marriage theology of the Zohar"
+    source-tier: T1
+  - target: "[[mary-theotokos]]"
+    type: "scholarly-parallel"
+    source: "Schäfer 2002 *Mirror of His Beauty* explicitly argues that 12th-13th c. Kabbalistic Shekhinah theology developed in cultural dialogue (whether convergent independent development or mutual influence) with contemporaneous Provençal-Catalan Marian theology. Bernard of Clairvaux's Marian devotion, the Cistercian *Bride of Christ* / Song-of-Songs allegorization, and the Bahir's Shekhinah-as-bride-of-Tiferet theology all peak in the same 12th-13th c. Mediterranean window — Schäfer makes this the structural argument of his book"
+    source-tier: T1
+    notes: "MASSIVE-WIN: simultaneous emergence of Marian-divine-bride theology in Latin Christianity and Shekhinah-divine-bride theology in Kabbalah in the 12th-13th c. Provençal-Catalan-Italian cultural zone"
+  - target: "[[queen-of-heaven-spine]]"
+    type: "Jewish-tier-instance"
+    source: "Station 10 in the 11-station Queen-of-Heaven spine — the Kabbalistic Shekhinah is the Jewish-mystical full-recovery of the suppressed Asherah-Hokmah-divine-feminine, with explicit sacred-marriage theology and feminine-divine-status restored"
+    source-tier: T1
 status: "full"
 related-themes:
   - "[[wisdom-personified]]"

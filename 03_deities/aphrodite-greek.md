@@ -35,6 +35,19 @@ syncretic-edges:
     type: "ancient-identification"
     source: "Berossus via Clement of Alexandria — Achaemenid period Anāhitā ≡ Aphrodite/Artemis."
     source-tier: T1
+  - target: "[[inanna-sumerian]]"
+    type: "substrate-influence"
+    source: "West 1997 *The East Face of Helicon*; Burkert 1992 *The Orientalizing Revolution*; Penglase 1994 *Greek Myths and Mesopotamia* — the Inanna → Ishtar → Astarte → Aphrodite chain runs continuously across ~3,000 years. Specific iconographic carryovers documented by West/Burkert: the eight-pointed star (Inanna/Ishtar's emblem; Aphrodite's chariot in Sappho), the dove, the lion-throne, the love-and-war dyadic role, the Venus-planet patronage, the descent-to-the-underworld motif (Inanna's Descent → Aphrodite's grief for Adonis)"
+    source-tier: T1
+    notes: "MASSIVE-WIN — the deepest single transmission line in the Mediterranean love-goddess complex; the Aphrodite-Adonis cult preserves the Inanna-Dumuzi sacred-marriage and dying-rising-consort pattern"
+  - target: "[[queen-of-heaven-spine]]"
+    type: "primary-instance-of-spine"
+    source: "See [[queen-of-heaven-spine]] — Aphrodite is Station 5 in the 11-station spine (Sumerian Inanna → Akkadian Ishtar → Canaanite/Phoenician Astarte → Greek Aphrodite → Roman Venus → Hellenistic Isis → Christian Mary)"
+    source-tier: T1
+  - target: "[[mary-theotokos]]"
+    type: "structural-parallel"
+    source: "Pelikan 1996 *Mary Through the Centuries*; Warner 1976 *Alone of All Her Sex* — Marian *Stella Maris* epithet directly inherits the Venus-planet patronage (Aphrodite's morning-star); the Marian Queen-of-Heaven and Marian-as-intercessor functions are downstream of the Aphrodite-Venus articulation via the Greek-Roman-Late-Antique chain. Council of Ephesus (431 CE) site was the major Artemis-cult city; the Aphrodite-Demeter-Artemis triad in Asia Minor was the cultic substrate that the Marian *Theotokos* definition reabsorbed"
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "Greek Religion"
