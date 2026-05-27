@@ -35,24 +35,17 @@
     if (!pane) return;
     _pane = pane;
     pane.classList.add('boards-pane');
+    // 2026-05-27 — clean skeleton, NO legacy aesthetic. Just an empty
+    // stage. The previous skeleton had a centered alchemy glyph + BOARDS
+    // title + legacy-style bottombar with zoom%/LEGEND/search — that was
+    // copying the prototype V01 visual language, which is precisely
+    // what V2 exists to replace. The actual chrome the user will use
+    // is the contextual app-pill (step 4) at the top of the screen,
+    // matching the Codex pill pattern. The stage is just the surface
+    // cards will live on — empty when no board is loaded.
     pane.innerHTML = [
       '<div class="boards-shell" id="boards-shell">',
-      '  <div class="boards-stage" id="boards-stage">',
-      // Step 2 placeholder copy — gone by step 5 (Investigation Library).
-      '    <div class="boards-empty">',
-      '      <div class="boards-empty-glyph">⚗</div>',
-      '      <div class="boards-empty-title">Boards</div>',
-      '      <div class="boards-empty-sub">your free-form investigation surface</div>',
-      '      <div class="boards-empty-hint">Step 2 skeleton — Investigation Library &amp; drag-cards land in the next commits.</div>',
-      '    </div>',
-      '  </div>',
-      '  <div class="boards-bottombar" id="boards-bottombar">',
-      '    <button class="boards-btn" id="boards-btn-zoom" type="button" title="Reset zoom to fit-to-cards">100%</button>',
-      '    <button class="boards-btn" id="boards-btn-legend" type="button">LEGEND</button>',
-      '    <input class="boards-search" id="boards-search" type="text" placeholder="search vault…" autocomplete="off" spellcheck="false" />',
-      '    <span class="boards-spacer"></span>',
-      '    <button class="boards-btn" id="boards-btn-debug" type="button" title="Debug stats">#</button>',
-      '  </div>',
+      '  <div class="boards-stage" id="boards-stage"></div>',
       '</div>',
     ].join('\n');
   }
