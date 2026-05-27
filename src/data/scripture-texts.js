@@ -13950,4 +13950,409 @@ SCRIPTURE_TEXTS['ethiopic-canon-note'] = {
   ]
 };
 
+// ── HEBREW BIBLE — 1 KINGS 18 (ELIJAH ON MOUNT CARMEL) ───────────────────────
+SCRIPTURE_TEXTS['1-kings-18-elijah'] = {
+  id:         '1-kings-18-elijah',
+  title:      '1 Kings 18 — Elijah on Mount Carmel',
+  shortTitle: '1 Kings 18 (Elijah)',
+  corpus:     'Hebrew Bible · Sefer Melakhim (Books of Kings) within the Deuteronomistic History',
+  tradId:     'tradition-second-temple-judaism',
+  date:       '~9th c. BCE narrative setting · ~7th–6th c. BCE Deuteronomistic-Historical composition (Noth 1943 → Cross 1973 → contemporary refinements)',
+  docNode:    'phase-2-034-books-of-kings',
+  language:   'Biblical Hebrew (original) · NRSV 1989 English (canonical scholarly translation)',
+  translations: [
+    { id: 'nrsv',   label: 'New Revised Standard Version 1989 (T1, ecumenical)', note: 'Default scholarly Anglophone reference text.' },
+    { id: 'cogan',  label: 'Mordechai Cogan 2000 (Anchor Bible 10)', note: 'Cogan\'s 1 Kings commentary is the modern textually-rigorous reference for the Books of Kings; pairs detailed translation notes with Assyriological-historical context.' },
+    { id: 'hebrew', label: 'Masoretic Hebrew (Biblia Hebraica Stuttgartensia)' },
+  ],
+  intro: 'First Kings 18 records the central narrative of the prophet Elijah\'s confrontation with the prophets of Baal on Mount Carmel, set during the reign of Ahab and Jezebel of the northern kingdom of Israel in the ninth century BCE. The chapter is the dramatic high-point of the Elijah cycle (1 Kings 17–19, 21; 2 Kings 1–2) and a key Deuteronomistic Historical (DtrH) demonstration text: the cycle of obedience-and-disobedience-to-the-covenant that organises Joshua through 2 Kings here takes its sharpest form, with Elijah staging a deliberately public test of which deity sends fire from heaven. The chapter\'s theological move is significant in the larger history of Israelite religion: it represents the operative shift from the henotheistic divine-council theology of the older monarchic period (where YHWH was acknowledged alongside Baal, Asherah, and other West Semitic deities) toward the prophetic-Deuteronomic claim that YHWH alone is to be worshipped in Israel. The chapter is composed by the DtrH school (Noth\'s original 1943 hypothesis, refined by Frank Moore Cross 1973 into the "double redaction" hypothesis, and by later scholars like Richard Nelson and Marvin Sweeney) which presents Israel\'s entire monarchic history as the cyclical working-out of covenant-keeping vs covenant-breaking, with Elijah\'s confrontation as one of the great vindication moments. The literary-rhetorical brilliance of the scene — Elijah\'s mocking address to the prophets of Baal, the drenching of the altar with water before the fire-test, the climactic descent of divine fire — has made it one of the most-cited DtrH passages in subsequent Jewish and Christian religious imagination, from the Sirach 48 portrait of Elijah forward to Mendelssohn\'s 1846 oratorio.',
+  crossTradition: [
+    { label: 'Deuteronomy 6 — the Shema as the DtrH theological centre', textId: 'deuteronomy-6',
+      note: 'The Shema ("Hear, O Israel, the LORD our God, the LORD is one") of Deuteronomy 6 is the credal centre that the Deuteronomistic History dramatises through narrative. Elijah\'s "How long will you go limping with two different opinions?" (1 Kgs 18:21) is the prophetic-narrative form of the same theological demand — exclusive devotion to YHWH. Reading 1 Kgs 18 and Deut 6 together is the standard scholarly entry-point to DtrH theology (Moshe Weinfeld 1972, Patrick Miller 1990, S. Dean McBride 1969).' },
+    { label: 'Psalm 82 — the divine-council judgment scene', textId: 'psalm-82',
+      note: 'Psalm 82\'s vision of YHWH judging the lesser gods of the divine council ("I say, \'You are gods, children of the Most High, all of you; nevertheless, you shall die like mortals\'") is the theological counterpart to Elijah\'s public unmasking of Baal as ineffective. Both passages stage the transition from earlier Israelite henotheism (YHWH among other gods) to the prophetic-Deuteronomic monolatry (YHWH alone is to be worshipped) and ultimately to Second Isaiah\'s ontological monotheism (the other gods do not exist).' },
+    { label: 'Isaiah 45 — the explicit monotheism that 1 Kings 18 narratively prepares', textId: 'isaiah-45',
+      note: 'Second Isaiah\'s ontological monotheism ("I am the LORD, and there is no other; besides me there is no god") is the doctrinal destination of the trajectory that 1 Kings 18 dramatises. The DtrH stages the conflict; Second Isaiah resolves it by claiming that there are no other gods to compete with in the first place. The two texts together form the canonical Hebrew-Bible monotheism-narrative.' },
+    { label: 'Hebrews 11 — Elijah in the early-Christian faith pantheon', textId: 'hebrews-11',
+      note: 'Hebrews 11:32–38 invokes "the prophets, who through faith conquered kingdoms, administered justice... quenched raging fire" — the "quenched raging fire" most likely referring to either the Carmel fire-from-heaven of 1 Kings 18 or the post-confrontation events of the larger Elijah cycle. The chapter\'s incorporation of the Elijah cycle into the early-Christian faith-pantheon shows how the DtrH narrative remained operative for first-century Christian theology.' },
+  ],
+  sections: [
+    {
+      heading: 'I. The Challenge — Elijah Calls Israel to Choose',
+      verses: [
+        {
+          ref: '1 Kings 18:21',
+          text: 'Elijah then came near to all the people, and said, "How long will you go limping with two different opinions? If the LORD is God, follow him; but if Baal, then follow him." The people did not answer him a word.',
+          textVersions: {
+            nrsv:   'Elijah then came near to all the people, and said, "How long will you go limping with two different opinions? If the LORD is God, follow him; but if Baal, then follow him." The people did not answer him a word.',
+            cogan:  'Elijah approached all the people and said: "How long will you keep hopping between two opinions? If YHWH is God, follow him; but if Baal, follow him." The people did not respond to him with a word.',
+            hebrew: 'וַיִּגַּ֨שׁ אֵלִיָּ֜הוּ אֶל־כָּל־הָעָ֗ם וַיֹּ֙אמֶר֙ עַד־מָתַ֞י אַתֶּ֣ם פֹּסְחִים֮ עַל־שְׁתֵּ֣י הַסְּעִפִּים֒ אִם־יְהוָ֤ה הָֽאֱלֹהִים֙ לְכ֣וּ אַחֲרָ֔יו וְאִם־הַבַּ֖עַל לְכ֣וּ אַחֲרָ֑יו וְלֹֽא־עָנ֥וּ הָעָ֛ם אֹת֖וֹ דָּבָֽר׃',
+          },
+          entities: [
+            { word: 'limping with two different opinions', node: 'tradition-second-temple-judaism', type: 'theological-vocabulary',
+              note: 'פֹּסְחִים עַל־שְׁתֵּי הַסְּעִפִּים — pōseḥîm ʿal shtē hassʿippîm, "limping/skipping between the two forks." The verb pasaḥ (the same root as pesaḥ, "Passover") here describes wavering, indecisive movement between two paths. The image presupposes the religious-anthropological reality of 9th-century Israel: most worshippers were not exclusively-YHWHistic or exclusively-Baalist but moved fluidly between cult-sites and divine names depending on agricultural cycle, family tradition, and political-marriage alliance. Elijah\'s demand is for a categorical choice — exactly the move that the Deuteronomistic theologians of the 7th–6th centuries BCE would later codify as the structural demand of the covenant. Mark S. Smith 2002 (The Early History of God) treats this verse as the textual moment when the religious anthropology of pre-exilic Israel begins to be re-narrated as a story of covenantal exclusivity vs apostasy.',
+              parallels: [
+                { label: 'Joshua 24 — "choose this day whom you will serve"', textId: 'joshua-24-covenant',
+                  note: 'Joshua 24:15 ("choose this day whom you will serve, whether the gods your ancestors served in the region beyond the River or the gods of the Amorites in whose land you are living; but as for me and my household, we will serve the LORD") is the structural prototype of Elijah\'s demand. The two passages form the DtrH\'s two great choice-moments — at the founding of the covenant in the land (Joshua) and at its mid-history crisis (Elijah).' },
+                { label: 'Deuteronomy 6 — the Shema\'s exclusive demand', textId: 'deuteronomy-6',
+                  note: 'The Shema\'s "the LORD is one" provides the credal formulation that the narrative-moment of 1 Kings 18:21 dramatises. Deuteronomic monotheism in the credal form; Elijah in the narrative-prophetic form. The two texts are mutually constitutive of the DtrH theology.' },
+              ]
+            },
+            { word: 'Baal', node: 'baal', type: 'deity',
+              note: 'Baal (בַּעַל, "Lord") is the West Semitic storm-god and chief deity of much of the Levantine pantheon — known from Ugaritic mythological texts (the Baal Cycle, ~14th c. BCE) as the son of El and the slayer of Yam (Sea) and Mot (Death). In the historical religious-anthropology of 9th-century Israel, Baal-worship was not foreign-invasive but indigenous-Canaanite, continuing alongside YHWH-worship in the religious-polytheistic environment of the West Semitic culture-area. The DtrH narrative\'s framing of Baal as an alien rival who must be driven out is a 7th–6th-century theological re-narration of an earlier religious reality in which YHWH and Baal coexisted at many cult-sites. Modern Israelite-religion scholarship (Mark S. Smith, Othmar Keel, Christoph Uehlinger, Susan Ackerman) has used inscriptional and iconographic evidence to demonstrate the historical co-presence that the DtrH narrative theologically overwrites.',
+              parallels: [
+                { label: 'Ugaritic Baal Cycle — the West Semitic mythological background', textId: 'enuma-elish-1',
+                  note: 'The Ugaritic Baal Cycle (KTU 1.1–1.6, c. 14th c. BCE) preserves the West Semitic mythological narrative against which the biblical Baal-references must be read. The cycle\'s pattern (storm-god vs sea-monster vs death-deity, with kingship-establishment as the resolution) is structurally cognate with the Babylonian Enuma Elish (Marduk vs Tiamat) and the Israelite chaoskampf vocabulary (YHWH vs Leviathan-Rahab-Yam in Pss 74, 89, Isa 27, Job 26, 41). Reading 1 Kings 18 in the context of the Baal Cycle reveals the religious-historical depth of the conflict the chapter narrates.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'II. The Vindication — Fire from Heaven',
+      verses: [
+        {
+          ref: '1 Kings 18:38–39',
+          text: 'Then the fire of the LORD fell and consumed the burnt-offering, the wood, the stones, and the dust, and even licked up the water that was in the trench. When all the people saw it, they fell on their faces and said, "The LORD indeed is God; the LORD indeed is God."',
+          textVersions: {
+            nrsv:   'Then the fire of the LORD fell and consumed the burnt-offering, the wood, the stones, and the dust, and even licked up the water that was in the trench. When all the people saw it, they fell on their faces and said, "The LORD indeed is God; the LORD indeed is God."',
+            hebrew: 'וַתִּפֹּ֣ל אֵשׁ־יְהוָ֗ה וַתֹּ֤אכַל אֶת־הָֽעֹלָה֙ וְאֶת־הָ֣עֵצִ֔ים וְאֶת־הָאֲבָנִ֖ים וְאֶת־הֶעָפָ֑ר וְאֶת־הַמַּ֥יִם אֲשֶׁר־בַּתְּעָלָ֖ה לִחֵֽכָה׃ וַיַּרְא֙ כָּל־הָעָ֔ם וַֽיִּפְּל֖וּ עַל־פְּנֵיהֶ֑ם וַיֹּ֣אמְר֔וּ יְהוָה֙ ה֣וּא הָאֱלֹהִ֔ים יְהוָ֖ה ה֥וּא הָאֱלֹהִֽים׃',
+          },
+          entities: [
+            { word: 'The LORD indeed is God', node: 'elijah-prophet', type: 'confession',
+              note: 'YHWH hû\' hā-ʾĕlōhîm — "YHWH, he is the God." The doubled confession (the verse repeats the formula twice) is the climactic credal moment of the Elijah cycle and of 1 Kings as a literary unit: the people, who had not answered Elijah\'s opening challenge "with a word" (v. 21), now respond with the doubled acclamation. The formula re-enters Jewish liturgy as the closing line of the Ne\'ilah service on Yom Kippur, where the congregation declares the same words seven times — the textual descent runs unbroken from the 9th-century narrative through DtrH redaction through Second Temple Judaism into contemporary Jewish ritual.',
+              parallels: [
+                { label: 'Yom Kippur Ne\'ilah liturgy — the seven-fold confession', textId: 'deuteronomy-6',
+                  note: 'The Yom Kippur Ne\'ilah service\'s seven-fold "YHWH hû\' hā-ʾĕlōhîm" climactic confession before the closing-gates blast of the shofar derives directly from 1 Kings 18:39. The liturgical move recapitulates the Carmel-confession as the closing acclamation of the Day of Atonement, structurally pairing the DtrH\'s vindication moment with the Jewish ritual year\'s most solemn moment of repentance and renewal.' },
+                { label: 'Isaiah 45 — "I am the LORD, and there is no other"', textId: 'isaiah-45',
+                  note: 'Second Isaiah\'s ontological-monotheism formula ("I am the LORD, and there is no other; besides me there is no god, I gird you, though you do not know me") is the doctrinal-credal completion of the narrative confession of 1 Kings 18:39. The two passages together form the canonical Hebrew-Bible monotheism-vocabulary: the people confess on Carmel that YHWH is God; Second Isaiah extends that confession to the ontological claim that there are no other gods at all.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+// ── HEBREW BIBLE — GENESIS 22 IN THE E SOURCE (THE AQEDAH) ───────────────────
+SCRIPTURE_TEXTS['e-source-aqedah'] = {
+  id:         'e-source-aqedah',
+  title:      'Genesis 22 — The Binding of Isaac as the Locus Classicus of the E Source',
+  shortTitle: 'E source · Aqedah',
+  corpus:     'Hebrew Bible · Sefer Bereshit (Genesis), Elohist source',
+  tradId:     'tradition-second-temple-judaism',
+  date:       '~9th–8th c. BCE Northern Kingdom composition of the E source (per the Documentary Hypothesis as refined by Friedman 1987 / Baden 2012) · final canonical redaction ~5th c. BCE',
+  docNode:    'phase-2-007-hebrew-bible-e-source',
+  language:   'Biblical Hebrew (original) · NRSV 1989 English (canonical scholarly translation)',
+  translations: [
+    { id: 'nrsv',     label: 'New Revised Standard Version 1989 (T1, ecumenical)', note: 'Default scholarly Anglophone reference text.' },
+    { id: 'friedman', label: 'Richard E. Friedman 1987 / 2003 (The Bible with Sources Revealed)', note: 'Friedman\'s Documentary Hypothesis presentation includes a colour-coded English text that separates the J, E, P, and D strata; the most accessible English source-critical edition.' },
+    { id: 'speiser',  label: 'E. A. Speiser 1964 (Anchor Bible 1)', note: 'The classical Anglophone Genesis commentary; still widely cited for source-critical analysis even where superseded by later work.' },
+    { id: 'hebrew',   label: 'Masoretic Hebrew (Biblia Hebraica Stuttgartensia)' },
+  ],
+  intro: 'Genesis 22 — the binding of Isaac, in Jewish tradition the Aqedah ("binding") — is the locus classicus of the E (Elohist) source in the Documentary Hypothesis of Pentateuchal composition. The chapter\'s consistent use of the divine name Elohim (not the J source\'s YHWH), its angelic-intermediary theophany ("the angel of God called to him from heaven"), and its theological emphasis on radical obedience under test mark it as a paradigmatic E composition in the source-critical analysis first systematised by Julius Wellhausen 1878 and developed through Martin Noth, Gerhard von Rad, Richard Friedman 1987, and Joel Baden 2012. The Documentary Hypothesis itself remains the dominant (though increasingly contested by Konrad Schmid, Thomas Römer, Jan Christian Gertz and the broader European "Neo-Documentary" reframing) framework for reading the Pentateuch; E is the source most disputed among the four (J, E, D, P), with some contemporary scholars treating it as a small group of texts within a broader pre-Priestly composition rather than as an independent source. What is uncontested is that Gen 22 has been one of the most consequential chapters in the history of religious literature: it is the founding-narrative of Jewish theological reflection on faith-and-test (the Aqedah is read in synagogue on Rosh Hashanah morning), the typological background for the Christian understanding of God\'s sacrifice of his only-begotten son (Heb 11:17–19, Rom 8:32), and the Islamic precedent for the ʿEid al-Adha pilgrimage festival (Sūrat al-Ṣāffāt 37:99–113, where the son is Ishmael in Islamic tradition). Søren Kierkegaard\'s Fear and Trembling (1843) made the chapter the central case in modern philosophical theology\'s wrestling with the "teleological suspension of the ethical."',
+  crossTradition: [
+    { label: 'Genesis 1 — the P source\'s counterpart cosmological-theological vocabulary', textId: 'genesis-1',
+      note: 'Genesis 1 is the locus classicus of the P (Priestly) source in the Documentary Hypothesis, as Genesis 22 is the locus classicus of E. Reading the two together is the standard entry-point to source-critical Pentateuchal analysis: P\'s majestic cosmological-liturgical Elohim contrasts with E\'s narrative-test-encountering Elohim. Both use the divine name Elohim consistently, but their theological vocabularies and literary registers are distinct, which is part of what supports the source-critical separation.' },
+    { label: 'Exodus 3 — the E source\'s burning-bush theophany', textId: 'exodus-3',
+      note: 'Exodus 3 (the burning bush and the revelation of the divine name) is the other classical E pillar alongside Gen 22 — sharing E\'s angelic-intermediary theology ("the angel of the LORD appeared to him in a flame of fire out of a bush") and E\'s emphasis on prophetic-vocational call-and-test. Reading Gen 22 and Exod 3 together is the standard scholarly demonstration of the E source\'s theological consistency.' },
+    { label: 'Hebrews 11 — the Christian typological reception of the Aqedah', textId: 'hebrews-11',
+      note: 'Hebrews 11:17–19 ("By faith Abraham, when put to the test, offered up Isaac... He considered the fact that God is able even to raise someone from the dead") inaugurates the major Christian-theological reception of Gen 22 as the prefiguration of Christ\'s death and resurrection. The typological pattern (father\'s sacrifice of the only-beloved son, three-day journey, substitutionary ram, mountain identified as Moriah / Calvary in patristic tradition) becomes one of the most-elaborated Old-Testament-as-Christian-foreshadowing readings in the patristic literature.' },
+    { label: 'Kitáb-i-Íqán — the Bahá\'í reading of sacrifice-as-recognition-test', textId: 'bahai-kitab-i-iqan',
+      note: 'The Íqán\'s broader theological argument that each Manifestation tests his contemporaries with a demand for recognition that exceeds prior religious-rational expectations finds the Aqedah as a paradigmatic Hebrew Bible precedent: Abraham\'s test is the prototype of the recognition-demand that the Manifestation places on the believer in every age. Bahá\'u\'lláh references the Aqedah in his correspondence (Tablets of Bahá\'u\'lláh) as the structural ancestor of the Manifestation-recognition theology developed in the Íqán.' },
+  ],
+  sections: [
+    {
+      heading: 'I. The Test — Elohim Calls Abraham',
+      verses: [
+        {
+          ref: 'Genesis 22:1–2',
+          text: 'After these things God tested Abraham. He said to him, "Abraham!" And he said, "Here I am." He said, "Take your son, your only son Isaac, whom you love, and go to the land of Moriah, and offer him there as a burnt-offering on one of the mountains that I shall show you."',
+          textVersions: {
+            nrsv:     'After these things God tested Abraham. He said to him, "Abraham!" And he said, "Here I am." He said, "Take your son, your only son Isaac, whom you love, and go to the land of Moriah, and offer him there as a burnt-offering on one of the mountains that I shall show you."',
+            friedman: 'And after these things God tested Abraham. And he said to him, "Abraham." And he said, "Here I am." And he said, "Take your son, your only one, whom you love, Isaac, and go to the land of Moriah and offer him up there as a burnt-offering on one of the mountains that I shall say to you."',
+            hebrew:   'וַיְהִ֗י אַחַר֙ הַדְּבָרִ֣ים הָאֵ֔לֶּה וְהָ֣אֱלֹהִ֔ים נִסָּ֖ה אֶת־אַבְרָהָ֑ם וַיֹּ֣אמֶר אֵלָ֔יו אַבְרָהָ֖ם וַיֹּ֥אמֶר הִנֵּֽנִי׃ וַיֹּ֡אמֶר קַח־נָ֠א אֶת־בִּנְךָ֨ אֶת־יְחִֽידְךָ֤ אֲשֶׁר־אָהַ֙בְתָּ֙ אֶת־יִצְחָ֔ק וְלֶךְ־לְךָ֔ אֶל־אֶ֖רֶץ הַמֹּרִיָּ֑ה וְהַעֲלֵ֤הוּ שָׁם֙ לְעֹלָ֔ה עַ֚ל אַחַ֣ד הֶֽהָרִ֔ים אֲשֶׁ֖ר אֹמַ֥ר אֵלֶֽיךָ׃',
+          },
+          entities: [
+            { word: 'God tested Abraham', node: 'wellhausen-hypothesis', type: 'source-critical-marker',
+              note: 'הָאֱלֹהִים נִסָּה — "the Elohim tested." The verse\'s use of Elohim (rather than YHWH) as the divine name is the primary source-critical marker that has assigned Genesis 22 to the E (Elohist) source since Wellhausen\'s 1878 Prolegomena. The Documentary Hypothesis identifies four distinct sources in the Pentateuch — J (Yahwist, ~10th c. BCE, uses YHWH), E (Elohist, ~9th c. BCE, uses Elohim), D (Deuteronomist, ~7th c. BCE), P (Priestly, ~6th–5th c. BCE) — combined into the final canonical form by a post-exilic redactor (R) around the 5th century BCE. Gen 22\'s consistent Elohim-language (with the exception of vv. 11, 14–18, which most source critics assign to a J redactor or to a post-redactional theological harmonisation) makes the chapter one of the cleanest E source-critical demonstrations. Richard Friedman 1987 colour-codes this as classical E throughout the test-and-test-completion narrative, with the angel-of-YHWH passages set off as later J insertions.',
+              parallels: [
+                { label: 'Genesis 1 — the P source\'s consistent Elohim-language', textId: 'genesis-1',
+                  note: 'Genesis 1 is also consistently Elohim (not YHWH) but is assigned to P, not E, on the basis of its distinct cosmological-liturgical theological register, its formulaic seven-day structure, its priestly vocabulary, and its theological emphasis on order-and-blessing rather than narrative-test. The shared use of Elohim across P and E demonstrates that the source-critical separation cannot rest on divine-name alone but requires the convergent analysis of vocabulary, theology, and literary form.' },
+              ]
+            },
+            { word: 'your only son Isaac', node: 'isaac-patriarch', type: 'person',
+              note: 'בִּנְךָ אֶת־יְחִידְךָ אֲשֶׁר־אָהַבְתָּ אֶת־יִצְחָק — "your son, your only one, whom you love, Isaac." The four-word climactic naming (son / only one / whom you love / Isaac) is one of the most rhetorically deliberate sentences in the Hebrew Bible: each successive epithet tightens the claim on Abraham\'s ability to comply. Rashi\'s 11th-century Genesis commentary reads the sequence as a dialogue in which Abraham at each stage tries to deflect — "I have two sons (Ishmael and Isaac)" — until the named Isaac forecloses every alternative. The rhetoric establishes the test as maximally costly: the chapter\'s theological gravity depends on the fact that no greater attachment could be demanded. The Christian-typological reading from Hebrews 11:17 onward picks up exactly this "your only son" vocabulary to characterise the Father\'s relation to Christ (John 3:16, Rom 8:32: "He who did not withhold his own Son, but gave him up for all of us").',
+              parallels: [
+                { label: 'Hebrews 11:17 — "By faith Abraham, when put to the test, offered up Isaac"', textId: 'hebrews-11',
+                  note: 'Hebrews 11\'s catalogue of faithful Israelite figures places Abraham\'s Aqedah-test at the centre, framing it both as the supreme test of Abrahamic faith and as the typological prefiguration of God\'s offering of "his own Son." The exegetical move (Abraham\'s near-sacrifice of Isaac as type, God\'s actual surrender of Christ as anti-type) becomes the most-elaborated single typological pattern in the patristic and medieval Christian reading of the Old Testament.' },
+                { label: 'Romans 8:32 — "did not withhold his own Son"', textId: 'romans-8',
+                  note: 'Romans 8:32\'s "He who did not withhold his own Son but gave him up for all of us" deliberately echoes Genesis 22:12 ("you have not withheld your son, your only son, from me"). The lexical echo (LXX Gen 22:12 ouk epheisō / Rom 8:32 ouk epheisato) is one of the clearest cases of Pauline citation of LXX Gen 22 to ground his Christological-typological argument.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'II. The Substitution — The Ram in the Thicket',
+      verses: [
+        {
+          ref: 'Genesis 22:11–13',
+          text: 'But the angel of the LORD called to him from heaven, and said, "Abraham, Abraham!" And he said, "Here I am." He said, "Do not lay your hand on the boy or do anything to him; for now I know that you fear God, since you have not withheld your son, your only son, from me." And Abraham looked up and saw a ram, caught in a thicket by its horns. Abraham went and took the ram and offered it up as a burnt-offering instead of his son.',
+          textVersions: {
+            nrsv:     'But the angel of the LORD called to him from heaven, and said, "Abraham, Abraham!" And he said, "Here I am." He said, "Do not lay your hand on the boy or do anything to him; for now I know that you fear God, since you have not withheld your son, your only son, from me." And Abraham looked up and saw a ram, caught in a thicket by its horns. Abraham went and took the ram and offered it up as a burnt-offering instead of his son.',
+            hebrew:   'וַיִּקְרָ֨א אֵלָ֜יו מַלְאַ֤ךְ יְהוָה֙ מִן־הַשָּׁמַ֔יִם וַיֹּ֖אמֶר אַבְרָהָ֣ם אַבְרָהָ֑ם וַיֹּ֖אמֶר הִנֵּֽנִי׃ וַיֹּ֗אמֶר אַל־תִּשְׁלַ֤ח יָֽדְךָ֙ אֶל־הַנַּ֔עַר וְאַל־תַּ֥עַשׂ ל֖וֹ מְא֑וּמָה כִּ֣י ׀ עַתָּ֣ה יָדַ֗עְתִּי כִּֽי־יְרֵ֤א אֱלֹהִים֙ אַ֔תָּה וְלֹ֥א חָשַׂ֛כְתָּ אֶת־בִּנְךָ֥ אֶת־יְחִידְךָ֖ מִמֶּֽנִּי׃ וַיִּשָּׂ֨א אַבְרָהָ֜ם אֶת־עֵינָ֗יו וַיַּרְא֙ וְהִנֵּה־אַ֔יִל אַחַ֕ר נֶאֱחַ֥ז בַּסְּבַ֖ךְ בְּקַרְנָ֑יו וַיֵּ֤לֶךְ אַבְרָהָם֙ וַיִּקַּ֣ח אֶת־הָאַ֔יִל וַיַּעֲלֵ֥הוּ לְעֹלָ֖ה תַּ֥חַת בְּנֽוֹ׃',
+          },
+          entities: [
+            { word: 'a ram, caught in a thicket', node: 'abraham-patriarch', type: 'substitution-narrative',
+              note: 'The ram-in-the-thicket substitution is the theological resolution of the test: Abraham\'s obedience is complete enough that the actual sacrifice need not be performed; a substitute is provided. The substitution-pattern (a designated victim is replaced by a substitute at the last moment) becomes one of the most-deployed templates in subsequent Jewish, Christian, and Islamic theology. The ram\'s horn — the shofar — is read in synagogue tradition as foundational for the Rosh Hashanah liturgy: the chapter is read on Rosh Hashanah morning, and the shofar that calls Israel to repentance is identified midrashically with the Aqedah-ram\'s horn (Pirkei de-Rabbi Eliezer 31). The Christian-typological reading routes the substitution-pattern through Christ-as-the-substitute-who-was-NOT-spared (Romans 8:32, Hebrews 9). The Islamic reading in Sūrat al-Ṣāffāt commemorates the substitution annually in the ʿEid al-Adha festival.',
+              parallels: [
+                { label: 'Exodus 12 — the Passover lamb as substitution', textId: 'exodus-3',
+                  note: 'The Passover lamb whose blood diverts the destroying-angel at the Egyptian first-born plague (Exod 12) is structurally cognate with the Aqedah-ram: a substitute whose death stands in for the lives of those who would otherwise die. The Hebrew Bible weaves the two substitution-patterns into one continuous theological vocabulary, which Christian Eucharistic theology (Christ-as-Paschal-lamb, 1 Cor 5:7; Christ-as-the-binding-of-Isaac-fulfilled, Heb 11) then reads as a single typological lineage.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+// ── DEUTERONOMISTIC HISTORY — JOSHUA 24 AT SHECHEM ───────────────────────────
+SCRIPTURE_TEXTS['joshua-24-covenant'] = {
+  id:         'joshua-24-covenant',
+  title:      'Joshua 24 — The Covenant at Shechem and the Deuteronomistic History\'s Opening Charter',
+  shortTitle: 'Joshua 24 (DtrH covenant)',
+  corpus:     'Hebrew Bible · Deuteronomistic History (Joshua → 2 Kings as a single 7th–6th c. BCE composition per Noth 1943 and the subsequent tradition)',
+  tradId:     'tradition-second-temple-judaism',
+  date:       '~7th–6th c. BCE Deuteronomistic Historical composition (Noth 1943; refined Cross 1973 → Römer 2005 → contemporary)',
+  docNode:    'phase-2-019-deuteronomistic-history',
+  language:   'Biblical Hebrew (original) · NRSV 1989 English',
+  translations: [
+    { id: 'nrsv',   label: 'New Revised Standard Version 1989 (T1, ecumenical)', note: 'Default scholarly Anglophone reference text.' },
+    { id: 'nelson', label: 'Richard D. Nelson 1997 (Joshua, Old Testament Library)', note: 'Nelson\'s commentary is the modern standard for Joshua as a Deuteronomistic composition; he treats ch. 24 as the rhetorical climax of the entire DtrH opening narrative.' },
+    { id: 'hebrew', label: 'Masoretic Hebrew (Biblia Hebraica Stuttgartensia)' },
+  ],
+  intro: 'Joshua 24 records the renewal of the covenant between YHWH and Israel at Shechem, framed as the formal close of the Joshua-conquest narrative and (in Martin Noth\'s 1943 Deuteronomistic-History hypothesis) the rhetorical inauguration of the larger historiographical project that runs from Joshua through 2 Kings. Noth\'s original proposal was that Deuteronomy + Joshua + Judges + Samuel + Kings form a single continuous composition, written probably during the Babylonian exile (~6th c. BCE), structured around the theological thesis that Israel\'s historical fortunes — possession of the land, success in war, dynastic continuity — depend directly on covenant-fidelity to YHWH, and that the destruction of 587 BCE is the consequence of cumulative covenant-failure. Frank Moore Cross 1973 refined this with the "double-redaction" hypothesis (a first edition in Josiah\'s time, ~620 BCE; a second post-exilic edition that updates the narrative through the 586 catastrophe); Thomas Römer 2005 has further refined the redactional layers; Marvin Sweeney, Mark Brettler, and others continue the work. Joshua 24 is consequential because it stages the covenant-relationship as Israel\'s deliberate choice — "Choose this day whom you will serve" — establishing the theological premise on which the entire subsequent DtrH narrative rests: that Israel\'s catastrophes are not arbitrary divine acts but the working-out of a covenant that Israel freely entered and freely violated. The chapter\'s historical-religious anthropology (the named gods Israel\'s ancestors served "beyond the River" — i.e., across the Euphrates in the Mesopotamian-religious matrix from which Abraham migrated) is a remarkably honest acknowledgment that Israelite monotheism is the historical end-point of a longer polytheistic-Semitic religious genealogy, not a primordial state.',
+  crossTradition: [
+    { label: 'Deuteronomy 6 — the Shema as the DtrH credal foundation', textId: 'deuteronomy-6',
+      note: 'Deuteronomy 6 (the Shema and the "love YHWH with all your heart, with all your soul, with all your might" command) is the credal foundation on which the DtrH narrative is built. Joshua 24\'s "choose this day whom you will serve" is the narrative-dramatic counterpart of Deut 6\'s "the LORD is one." Reading the two passages together is the standard entry-point to DtrH theology: Deut 6 in the credal form, Joshua 24 in the founding-narrative form.' },
+    { label: 'Exodus 3 — the founding theophany on which the covenant-history is built', textId: 'exodus-3',
+      note: 'The DtrH presupposes the Exodus-tradition as the founding-event behind the covenant-history; Joshua 24:5–7 explicitly recapitulates the Exodus narrative as the opening of the covenant-renewal speech. The relationship between the Exodus-tradition (which the DtrH inherits) and the DtrH-composition (which re-narrates it in its own historiographical key) is one of the central questions of contemporary Pentateuchal-DtrH scholarship.' },
+    { label: '1 Kings 18 — the DtrH narrative climax of the choice-of-deity theme', textId: '1-kings-18-elijah',
+      note: 'Joshua 24\'s "choose this day" and 1 Kings 18\'s "how long will you go limping between two opinions" are the two great choice-moments of the DtrH: one at the founding-in-the-land moment (Joshua), one at the mid-history apostasy crisis (Elijah). Reading them together reveals the DtrH\'s deliberate rhetorical structuring — the narrative returns to the same choice-of-deity scene at every turning point of Israel\'s history.' },
+    { label: 'Lamentations 3 — the DtrH catastrophe whose meaning the covenant explains', textId: 'lamentations-3',
+      note: 'Lamentations 3, composed in the aftermath of the 587 BCE destruction that the DtrH\'s second redaction (per Cross\'s hypothesis) was completed to interpret, is the inner-DtrH lament that the catastrophe has done what the covenant warned: the covenant-curses of Deut 28 are realised in the destruction of Jerusalem. The DtrH and Lamentations together form the canonical theodicy-pair of the exilic period.' },
+  ],
+  sections: [
+    {
+      heading: 'I. The Choice — "Choose this day whom you will serve"',
+      verses: [
+        {
+          ref: 'Joshua 24:14–15',
+          text: '"Now therefore revere the LORD, and serve him in sincerity and in faithfulness; put away the gods that your ancestors served beyond the River and in Egypt, and serve the LORD. Now if you are unwilling to serve the LORD, choose this day whom you will serve, whether the gods your ancestors served in the region beyond the River or the gods of the Amorites in whose land you are living; but as for me and my household, we will serve the LORD."',
+          textVersions: {
+            nrsv:   '"Now therefore revere the LORD, and serve him in sincerity and in faithfulness; put away the gods that your ancestors served beyond the River and in Egypt, and serve the LORD. Now if you are unwilling to serve the LORD, choose this day whom you will serve, whether the gods your ancestors served in the region beyond the River or the gods of the Amorites in whose land you are living; but as for me and my household, we will serve the LORD."',
+            hebrew: 'וְעַתָּ֞ה יְר֧אוּ אֶת־יְהוָ֛ה וְעִבְד֥וּ אֹת֖וֹ בְּתָמִ֣ים וּבֶאֱמֶ֑ת וְהָסִ֣ירוּ אֶת־אֱלֹהִ֗ים אֲשֶׁר֩ עָבְד֨וּ אֲבוֹתֵיכֶ֜ם בְּעֵ֤בֶר הַנָּהָר֙ וּבְמִצְרַ֔יִם וְעִבְד֖וּ אֶת־יְהוָֽה׃ וְאִם֩ רַ֨ע בְּעֵינֵיכֶ֜ם לַעֲבֹ֣ד אֶת־יְהוָ֗ה בַּחֲר֨וּ לָכֶ֤ם הַיּוֹם֙ אֶת־מִ֣י תַעֲבֹד֔וּן אִ֣ם אֶת־אֱלֹהִ֗ים אֲשֶׁר־עָבְד֤וּ אֲבֽוֹתֵיכֶם֙ אֲשֶׁ֣ר בְּעֵ֣בֶר הַנָּהָ֔ר וְאִם֙ אֶת־אֱלֹהֵ֣י הָאֱמֹרִ֔י אֲשֶׁ֥ר אַתֶּ֖ם יֹשְׁבִ֣ים בְּאַרְצָ֑ם וְאָנֹכִ֣י וּבֵיתִ֔י נַעֲבֹ֖ד אֶת־יְהוָֽה׃',
+          },
+          entities: [
+            { word: 'choose this day whom you will serve', node: 'tradition-second-temple-judaism', type: 'covenant-formula',
+              note: 'בַּחֲרוּ לָכֶם הַיּוֹם אֶת־מִי תַעֲבֹדוּן — "choose for yourselves today whom you will serve." The formula stages the covenant as a free choice rather than as an imposition: Israel is given the option of returning to the ancestral Mesopotamian deities ("beyond the River") or adopting the local Canaanite deities ("the gods of the Amorites in whose land you are living"). The theological move is significant in the broader Hebrew-Bible religious anthropology: the writer acknowledges that the surrounding polytheistic-religious environment IS a real option for Israel (the chapter does not deny that the other gods exist as religious-cultural forces; it argues that Israel must choose YHWH alongside the historical alternatives). Mark Smith 2001 (The Origins of Biblical Monotheism) treats Josh 24:14–15 as a paradigmatic monolatry-text — exclusive worship of YHWH while not yet denying the existence of other gods. The full Second-Isaianic ontological monotheism comes only in the exilic period; Joshua 24 represents the earlier monolatrous stage.',
+              parallels: [
+                { label: '1 Kings 18:21 — Elijah\'s "how long will you go limping"', textId: '1-kings-18-elijah',
+                  note: 'Elijah on Carmel restages Joshua 24\'s "choose this day" demand in the prophetic-confrontational mode. The two passages form the DtrH\'s two great choice-of-deity scenes — one at the founding-in-the-land moment, one at the mid-history apostasy crisis. Joel Baden\'s Composition of the Pentateuch (2012) and Thomas Römer\'s So-Called Deuteronomistic History (2005) both treat the structural pairing as a deliberate DtrH rhetorical strategy.' },
+                { label: 'Deuteronomy 6 — the Shema\'s credal exclusive demand', textId: 'deuteronomy-6',
+                  note: 'The Shema\'s "love YHWH with all your heart" is the credal-doctrinal counterpart of Joshua 24\'s narrative-dramatic "choose this day whom you will serve." The two passages together form the credal-narrative pair on which the DtrH theological project rests.' },
+              ]
+            },
+            { word: 'the gods that your ancestors served beyond the River', node: 'abraham-patriarch', type: 'religious-history',
+              note: 'בְּעֵבֶר הַנָּהָר — "beyond the River" (the Euphrates). The reference is to the Mesopotamian-Aramean religious environment from which Abraham migrated according to Genesis 11–12 (Ur of the Chaldeans → Haran → the land of Canaan). The Joshua-redactor\'s honest acknowledgment that Israel\'s patriarchs themselves served other deities — Joshua 24:2 explicitly says "Long ago your ancestors — Terah and his sons Abraham and Nahor — lived beyond the Euphrates and served other gods" — is one of the most striking moments in the Hebrew Bible\'s presentation of its own religious-historical genealogy. The DtrH does not present Israelite monotheism as a primordial state but as the end-point of a long historical-theological development that begins in Mesopotamian polytheism.',
+              parallels: [
+                { label: 'Abraham\'s Mesopotamian origins (Gen 11–12)', textId: 'enuma-elish-1',
+                  note: 'The Mesopotamian religious environment from which Abraham migrated — the world of Enuma Elish, the Atrahasis Epic, the cult of Enki / Marduk / Ishtar at Ur — is the historical-religious substrate from which Israelite Yahwism emerged through a long process of selective re-narration and theological transformation. Joshua 24\'s acknowledgment of "beyond the River" gods names this substrate explicitly.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'II. The Covenant Established — Witnesses, Stone, and Tree',
+      verses: [
+        {
+          ref: 'Joshua 24:25–27',
+          text: 'So Joshua made a covenant with the people that day, and made statutes and ordinances for them at Shechem. Joshua wrote these words in the book of the law of God; and he took a large stone, and set it up there under the oak in the sanctuary of the LORD. Joshua said to all the people, "See, this stone shall be a witness against us; for it has heard all the words of the LORD that he spoke to us; therefore it shall be a witness against you, if you deal falsely with your God."',
+          textVersions: {
+            nrsv:   'So Joshua made a covenant with the people that day, and made statutes and ordinances for them at Shechem. Joshua wrote these words in the book of the law of God; and he took a large stone, and set it up there under the oak in the sanctuary of the LORD. Joshua said to all the people, "See, this stone shall be a witness against us; for it has heard all the words of the LORD that he spoke to us; therefore it shall be a witness against you, if you deal falsely with your God."',
+            hebrew: 'וַיִּכְרֹ֨ת יְהוֹשֻׁ֧עַ בְּרִ֛ית לָעָ֖ם בַּיּ֣וֹם הַה֑וּא וַיָּ֥שֶׂם ל֛וֹ חֹ֥ק וּמִשְׁפָּ֖ט בִּשְׁכֶֽם׃ וַיִּכְתֹּ֤ב יְהוֹשֻׁ֙עַ֙ אֶת־הַדְּבָרִ֣ים הָאֵ֔לֶּה בְּסֵ֖פֶר תּוֹרַ֣ת אֱלֹהִ֑ים וַיִּקַּח֙ אֶ֣בֶן גְּדוֹלָ֔ה וַיְקִימֶ֣הָ שָּׁ֔ם תַּ֚חַת הָֽאַלָּ֔ה אֲשֶׁ֖ר בְּמִקְדַּ֥שׁ יְהוָֽה׃',
+          },
+          entities: [
+            { word: 'set it up there under the oak in the sanctuary of the LORD', node: 'tradition-second-temple-judaism', type: 'cult-site',
+              note: 'תַּחַת הָאַלָּה אֲשֶׁר בְּמִקְדַּשׁ יְהוָה — "under the oak in the sanctuary of YHWH." Shechem (modern Tell Balatah, near Nablus) was one of the oldest Israelite cult-sites, and the chapter\'s setting of the covenant-renewal there is theologically loaded: Shechem appears in the patriarchal narratives as the first place where Abraham builds an altar in the land (Gen 12:6–7, "Abram passed through the land to the place at Shechem, to the oak of Moreh... So he built there an altar to the LORD"), in the Jacob narrative as the place where Jacob purges his household of foreign gods (Gen 35:2–4), and here in Joshua as the place of the covenant-renewal. The "oak" (ʾallâ) is a sacred-tree cult-site characteristic of West Semitic religion, here re-narrated as a YHWHistic sanctuary. The same site, by the time of the 7th–6th c. DtrH composition, was associated with the Samaritan religious community at nearby Mount Gerizim — and the chapter\'s emphasis on Shechem may carry an implicit polemical claim for the orthodox-Judahite-Jerusalemite reading against the Samaritan alternative.',
+              parallels: [
+                { label: 'Samaritan Pentateuch — the alternative Shechem-centred canonical tradition', textId: 'samaritan-pentateuch-decalogue',
+                  note: 'The Samaritan religious community at Mount Gerizim, with its alternative Pentateuch (the Samaritan Pentateuch) and alternative cult-site, preserves a different reading of the Shechem-tradition. Joshua 24\'s emphasis on Shechem as the Joshua-era covenant-renewal site sits at the historical-theological hinge between later Samaritan and Judahite claims to the Pentateuchal inheritance. The chapter\'s placement of the covenant-renewal at Shechem is acceptable to both Samaritan and Judahite readings; what differs is the canonical-theological frame each tradition draws around the event.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+// ── 4 MACCABEES 6 — STOIC-JEWISH MARTYR-PHILOSOPHY ───────────────────────────
+SCRIPTURE_TEXTS['4-maccabees-6'] = {
+  id:         '4-maccabees-6',
+  title:      '4 Maccabees 6 — Eleazar and the Reason-Over-Passion Argument',
+  shortTitle: '4 Maccabees 6',
+  corpus:     'Greek Bible · 4 Maccabees (deuterocanonical / pseudepigraphal · Hellenistic-Jewish philosophical-rhetorical treatise)',
+  tradId:     'tradition-second-temple-judaism',
+  date:       '~63 BCE – 70 CE (Hellenistic-Jewish diaspora, probably Antioch or Alexandria — composed in Greek by an author trained in Stoic philosophical-rhetorical culture)',
+  docNode:    'phase-3-019-4-maccabees',
+  language:   'Koine Greek (original — the book has no Hebrew or Aramaic Vorlage) · NRSV 1989 English',
+  translations: [
+    { id: 'nrsv',     label: 'New Revised Standard Version 1989 (T1, ecumenical)', note: 'Default English text for the deuterocanonical / apocryphal books.' },
+    { id: 'desilva',  label: 'David A. deSilva 2006 (Septuagint Commentary Series)', note: 'The standard modern English commentary on 4 Maccabees; treats the book as the major surviving artifact of Hellenistic-Jewish Stoic-philosophical synthesis.' },
+    { id: 'greek',    label: 'Rahlfs–Hanhart Greek (LXX Stuttgart edition)' },
+  ],
+  intro: '4 Maccabees is the Hellenistic-Jewish philosophical-rhetorical treatise composed in Greek between roughly 63 BCE and 70 CE that takes the martyr-narratives of 2 Maccabees 6–7 (the deaths of Eleazar and the seven brothers under Antiochus IV Epiphanes during the Maccabean crisis of ~167 BCE) and reframes them as a sustained philosophical demonstration of the proposition that "devout reason is sovereign over the passions" (4 Macc 1:1). The book is one of the most thoroughgoing surviving witnesses to the Stoic-Jewish philosophical synthesis of the Second Temple diaspora: its vocabulary (autokratōr "self-master," logismos "reasoning," pathē "passions," eusebeia "piety") is straightforwardly Stoic, while its content is straightforwardly Jewish (Torah-fidelity, kosher dietary laws, circumcision, the martyrological tradition). The book\'s historical significance is double: it is one of the major textual artifacts of Hellenistic-Jewish philosophical literature, and it has had a disproportionate influence on subsequent Christian martyrological literature — the Christian theological vocabulary of martyrdom (martyrium as witness, the perfecting effect of suffering, the cosmic-cosmic significance of the martyr\'s death) draws directly on 4 Maccabees through the second- and third-century Christian apologetic tradition (Origen, Eusebius). The book is canonical scripture in the Georgian Orthodox Church, in the broader Ethiopic biblical canon, and is included as an appendix in the Greek Orthodox tradition\'s authorised Bible; the Catholic and Protestant traditions exclude it. David deSilva 2006 and Robert Doran 2012 are the modern standard treatments.',
+  crossTradition: [
+    { label: 'Wisdom of Solomon — the parallel Hellenistic-Jewish philosophical text', textId: 'wisdom-of-solomon',
+      note: 'Wisdom of Solomon and 4 Maccabees are the two major Hellenistic-Jewish philosophical-rhetorical works that crystallise the Second Temple diaspora\'s synthesis of Greek philosophical vocabulary with Torah-fidelity. Wisdom of Solomon takes Platonising vocabulary (the immortal soul, the cosmic Wisdom-figure) and applies it to Jewish theology; 4 Maccabees takes Stoic vocabulary (logismos, pathē, autokrateia) and applies it to the Jewish martyrological-Torah-fidelity tradition. The two books together document one of the most important inter-cultural philosophical-religious syntheses in late antiquity.' },
+    { label: 'Hebrews 11 — the Christian faith-pantheon\'s inclusion of the Maccabean martyrs', textId: 'hebrews-11',
+      note: 'Hebrews 11:35–38 ("Women received their dead by resurrection. Others were tortured, refusing to accept release, in order to obtain a better resurrection. Others suffered mocking and flogging, and even chains and imprisonment. They were stoned to death, they were sawn in two, they were killed by the sword") is widely read by scholars (David deSilva, Pamela Eisenbaum 1997) as a direct reference to the Maccabean martyr-tradition that 2 Maccabees and 4 Maccabees preserve. The early-Christian incorporation of the Maccabean martyrs into the Christian faith-pantheon is one of the clearest examples of how Hellenistic-Jewish literature shaped the New Testament theological vocabulary.' },
+    { label: '1 Corinthians 15 — Paul\'s resurrection-theology in the same Greek-Jewish matrix', textId: '1-corinthians-15',
+      note: 'Paul\'s resurrection-vocabulary in 1 Cor 15 — phthora / aphtharsia (corruption / incorruption), psychikon / pneumatikon (psychic / spiritual body) — operates in the same Hellenistic-Jewish philosophical vocabulary as 4 Maccabees\' martyrological-resurrection passages. Reading the two together reveals the shared philosophical-religious matrix from which both Pauline and 4-Maccabees theology emerge.' },
+    { label: 'Bahá\'í Kitáb-i-Aqdas — the parallel reason-over-passion legal-doctrinal tradition', textId: 'bahai-kitab-i-aqdas',
+      note: 'The Aqdas\' programme of legislating a religious life that combines inner recognition with outer-legal obedience runs in parallel territory to 4 Maccabees\' Stoic-Jewish argument that "devout reason is sovereign over the passions" — both texts treat the religious life as a sustained discipline of reason and devotion together, mutually constitutive. The texts are separated by nearly two millennia and by radically different traditions, but the philosophical-religious structure is recognisably similar.' },
+  ],
+  sections: [
+    {
+      heading: 'I. The Premise — Reason Rules the Passions',
+      verses: [
+        {
+          ref: '4 Maccabees 1:1',
+          text: 'The subject that I am about to discuss is most philosophical, that is, whether devout reason is sovereign over the passions. So it is right for me to advise you to pay earnest attention to philosophy.',
+          textVersions: {
+            nrsv:  'The subject that I am about to discuss is most philosophical, that is, whether devout reason is sovereign over the passions. So it is right for me to advise you to pay earnest attention to philosophy.',
+            greek: 'φιλοσοφώτατον λόγον ἐπιδείκνυσθαι μέλλων, εἰ αὐτοδέσποτός ἐστιν τῶν παθῶν ὁ εὐσεβὴς λογισμός, συμβουλεύσαιμ\' ἂν ὑμῖν ὀρθῶς, ὅπως προσέχητε προθύμως τῇ φιλοσοφίᾳ.',
+          },
+          entities: [
+            { word: 'devout reason is sovereign over the passions', node: 'tradition-second-temple-judaism', type: 'philosophical-thesis',
+              note: 'εὐσεβὴς λογισμός — eusebēs logismos, "pious / devout reasoning." The opening thesis of 4 Maccabees is straightforwardly Stoic in vocabulary — the Stoic-philosophical claim that the wise person\'s ruling principle (hēgemonikon) achieves autokrateia (self-mastery) over the passions (pathē). What the author does is to substitute eusebēs (devout, here meaning Torah-faithful) for the generic Stoic sophos (wise). The substitution is the book\'s entire philosophical-theological strategy: Stoic philosophical claims are not rejected but absorbed and re-grounded in Torah-fidelity. The author argues, in effect, that the Stoic philosophical ideal of the sage who is master of the passions is most fully realised in the Torah-keeping Jew who refuses to violate the dietary laws or to bow to the imperial cult even under threat of death. The argument inaugurates one of the major recurring patterns of late-antique philosophical-religious synthesis: the major surviving Hellenistic-Jewish philosophical works (Philo of Alexandria, the Wisdom of Solomon, 4 Maccabees) all run this absorb-and-re-ground move on Stoic and Platonic philosophical vocabulary.',
+              parallels: [
+                { label: 'Wisdom of Solomon — the parallel Platonising-Jewish absorb-and-re-ground move', textId: 'wisdom-of-solomon',
+                  note: 'Wisdom of Solomon performs the same absorb-and-re-ground operation on Platonic philosophical vocabulary that 4 Maccabees performs on Stoic vocabulary. Both books take the cosmopolitan Hellenistic philosophical language of their day and re-ground it in Torah-fidelity, producing a hybrid Jewish-philosophical text that is unmistakably both Jewish and philosophical at once.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'II. The Demonstration — Eleazar Under Test',
+      verses: [
+        {
+          ref: '4 Maccabees 6:30–31',
+          text: 'When he was about to die from the blows, he raised his eyes to God and said, "You know, O God, that though I might have saved myself, I am dying in burning torments for the sake of the law. Be merciful to your people, and let our punishment suffice for them. Make my blood their purification, and take my life in exchange for theirs." Thus did this man die nobly for the sake of the law; and so devout reason proved its sovereignty over the passions.',
+          textVersions: {
+            nrsv:  'When he was about to die from the blows, he raised his eyes to God and said, "You know, O God, that though I might have saved myself, I am dying in burning torments for the sake of the law. Be merciful to your people, and let our punishment suffice for them. Make my blood their purification, and take my life in exchange for theirs." Thus did this man die nobly for the sake of the law; and so devout reason proved its sovereignty over the passions.',
+            greek: 'μέλλων δὲ τελευτᾶν ἀπὸ τῶν πληγῶν ἀναβλέψας εἰς τὸν θεὸν εἶπεν "σὺ οἶδας, θεέ, ὅτι ἐξὸν σώζεσθαι βασάνοις ἀποθνῄσκω καιομέναις διὰ τὸν νόμον· ἵλεως γενοῦ τῷ ἔθνει σου, ἀρκεσθεὶς τῇ ἡμετέρᾳ ὑπὲρ αὐτῶν δίκῃ· καθάρσιον αὐτῶν ποίησον τὸ ἐμὸν αἷμα καὶ ἀντίψυχον αὐτῶν λαβὲ τὴν ἐμὴν ψυχήν." καὶ ταῦτα εἰπὼν ὁ ἱερὸς ἀνὴρ εὐγενῶς ταῖς βασάνοις ἐναπέθανεν.',
+          },
+          entities: [
+            { word: 'Make my blood their purification, and take my life in exchange for theirs', node: 'antiochus-iv-epiphanes', type: 'substitutionary-vocabulary',
+              note: 'καθάρσιον αὐτῶν ποίησον τὸ ἐμὸν αἷμα καὶ ἀντίψυχον αὐτῶν λαβὲ τὴν ἐμὴν ψυχήν — "make my blood their purification (katharsion) and take my life as a substitute (antipsychon) for theirs." This passage is one of the most theologically consequential in all of Hellenistic-Jewish literature: the explicit articulation of a substitutionary-purificatory understanding of righteous suffering, prior to and structurally adjacent to the New Testament\'s subsequent articulation of Christ\'s death as substitutionary-purificatory atonement. The vocabulary (katharsion, antipsychon, dia ton nomon "for the sake of the law") is recognised by virtually all New Testament scholars (Sam Williams, Adela Yarbro Collins, Christian Gnilka, David deSilva) as the immediate philosophical-religious background against which the Pauline and Hebrews articulations of Christ-as-atoning-sacrifice must be read. 4 Maccabees\' Eleazar offers his death as substitutionary for the people of Israel under the persecution of Antiochus IV; the New Testament re-deploys the same theological vocabulary for Christ under Roman occupation. The textual lineage is direct.',
+              parallels: [
+                { label: 'Romans 8:32 — "did not withhold his own Son"', textId: 'romans-8',
+                  note: 'Paul\'s atonement-theology in Romans 8:32 deploys the same substitutionary vocabulary (handing-over, suffering-for-others) that 4 Maccabees 6:29 articulates a generation or two earlier. The Pauline articulation is impossible to fully understand without the Hellenistic-Jewish martyrological-substitutionary tradition that 4 Maccabees crystallises.' },
+                { label: 'Hebrews 11 — the Maccabean martyrs in the early-Christian faith-pantheon', textId: 'hebrews-11',
+                  note: 'Hebrews 11\'s reference to martyrs who "were tortured, refusing to accept release, in order to obtain a better resurrection" is read by most modern New Testament scholars as a direct allusion to the Maccabean martyr-tradition that 2 and 4 Maccabees preserve. The early Christian writers incorporated the Maccabean martyrs as the immediate precursors of the Christian martyr-tradition, and the theological vocabulary of martyrdom that emerges in 1st–3rd c. Christianity is built on the Hellenistic-Jewish substrate that 4 Maccabees represents.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+// ── SIBYLLINE ORACLES 3 — JEWISH-HELLENISTIC APOCALYPTIC ETHNOGRAPHY ─────────
+SCRIPTURE_TEXTS['sibylline-oracles-3'] = {
+  id:         'sibylline-oracles-3',
+  title:      'Sibylline Oracles, Book 3 — Jewish-Hellenistic Apocalyptic in the Sibylline Voice',
+  shortTitle: 'Sibylline Oracles 3',
+  corpus:     'Greek Sibylline corpus · Jewish (book 3) and later Christian (books 1–2, 6–8) recensions',
+  tradId:     'tradition-second-temple-judaism',
+  date:       '~150 BCE (oldest layers, Egyptian Jewish diaspora) – 1st c. BCE (latest additions to Book 3 specifically), within the broader 8-book corpus that continues to receive Christian additions through the 2nd–4th c. CE',
+  docNode:    'phase-3-010-sibylline-oracles',
+  language:   'Koine Greek (original) in epic hexameter · NRSV 2013 OT Pseudepigrapha translation (Charlesworth ed.)',
+  translations: [
+    { id: 'collins',  label: 'John J. Collins 1983 (OT Pseudepigrapha vol. 1, ed. Charlesworth)', note: 'Collins\' Sibylline Oracles translation and introduction in Charlesworth\'s Old Testament Pseudepigrapha (Doubleday 1983) is the canonical Anglophone scholarly text and remains the modern standard.' },
+    { id: 'lightfoot', label: 'J. L. Lightfoot 2007 (Oxford)', note: 'The most recent critical-edition treatment of Books 1–2 specifically.' },
+    { id: 'greek',    label: 'Geffcken Greek (Die Oracula Sibyllina, Berlin 1902)' },
+  ],
+  intro: 'The Sibylline Oracles are a corpus of Greek hexameter-verse oracles, framed in the voice of the legendary Sibyl (a pagan oracular figure from Greek and Roman religious tradition), that Hellenistic-Jewish writers in Alexandria and Egypt deployed in the 2nd–1st centuries BCE as a vehicle for spreading Jewish theological and eschatological claims to a Greek-reading non-Jewish audience. The strategy was to put Jewish content into the most authoritative-sounding pagan-prophetic voice the Greco-Roman world recognised — the Sibyl, whose oracles were preserved in the Capitoline temple at Rome and consulted by the state at moments of crisis. Book 3, the oldest layer of the corpus (~150 BCE), is the canonical Jewish-Sibylline composition: it surveys world history from creation through the Tower of Babel, the Trojan War, the empires of Persia and Macedon, to a prediction of the eschatological turning-point that will follow upon repentance and Torah-keeping. The book\'s rhetorical strategy is one of the most ingenious surviving artifacts of Hellenistic-Jewish missionary literature: it positions Judaism not as a foreign sect but as the prophetic-religious fulfilment of the same divine plan that the Greek and Roman religious traditions also (partially, imperfectly) saw. The later books of the corpus (Books 1–2, 6–8) are Christian recensions of the same Sibylline form, applied to Christian eschatology; the Christian Sibylline tradition was so influential that Michelangelo painted five Sibyls on the Sistine Chapel ceiling alongside the Hebrew prophets, treating them as parallel pre-Christian witnesses to the coming of Christ. John J. Collins 1983, J. L. Lightfoot 2007, and Erich Gruen 1998 are the modern standard treatments.',
+  crossTradition: [
+    { label: '4 Ezra — the post-70 CE Jewish apocalyptic continuation', textId: '4-ezra',
+      note: '4 Ezra (c. 90 CE) is the continuation of the Jewish apocalyptic-eschatological tradition that Sibylline Oracles 3 inaugurates in the 2nd c. BCE. Both texts work with the same vocabulary (world-empires succession, eschatological turning-point, divine judgment, restoration of Israel) and operate in the same Hellenistic-Jewish theological matrix. Reading them together reveals the continuity of the Jewish apocalyptic tradition across the great-watershed of 70 CE.' },
+    { label: '1 Enoch — the older Jewish apocalyptic substrate', textId: 'book-of-enoch',
+      note: '1 Enoch (3rd c. BCE through 1st c. BCE for various sub-books) is the older Jewish apocalyptic-cosmological substrate from which the Sibylline tradition draws much of its content. The Sibylline-Sibyl voice is the rhetorical innovation; the apocalyptic content (world-empires, divine judgment, the eschatological turning-point) is inherited from the broader Enochic-apocalyptic tradition. Both texts ultimately enter the Christian tradition together — both are read as authoritative prophetic literature by the Church Fathers.' },
+    { label: 'Revelation 12 — the Christian apocalyptic-Sibylline reception', textId: 'revelation-12',
+      note: 'The Christian apocalyptic-Sibylline tradition that produces Books 1–2, 6–8 of the Sibylline corpus is contemporaneous with and adjacent to the Christian apocalyptic literature that produces the Book of Revelation. The two traditions share vocabulary, eschatological structure, and the basic claim that the present-age is moving toward a divine-judgment turning-point. Reading Sibylline 3 (Jewish) → Sibylline 1–2 (Christian recension) → Revelation 12 (Johannine Christian apocalyptic) is a clean three-step demonstration of how Christian apocalyptic literature emerges from and continues the Hellenistic-Jewish apocalyptic substrate.' },
+    { label: 'Daniel 7 — the world-empires vocabulary', textId: 'daniel-7',
+      note: 'Daniel 7\'s four-empires-then-the-everlasting-kingdom schema (Babylon → Persia → Greece → Rome — the standard apocalyptic reading developed by John Collins, Lawrence Wills, and others) is the immediate apocalyptic-historiographical background for Sibylline 3\'s world-history-and-eschatological-turning-point structure. The two books work in the same apocalyptic-historiographical vocabulary.' },
+  ],
+  sections: [
+    {
+      heading: 'I. The Sibyl\'s Voice — Jewish Content in Pagan-Prophetic Form',
+      verses: [
+        {
+          ref: 'Sibylline Oracles 3.1–7 (proem; Collins translation)',
+          text: 'Heavenly One, Self-begotten, invisible, who alone see all things and are seen by none — give my voice to give the truth in measured speech. Stop me when I have spoken correctly. For my mind in my breast is anxious, and bitter-flowing rage from above harrows my heart, that I, prophesying like the Sibyl of Babylon, may give measure-spoken oracles to all mortals.',
+          textVersions: {
+            collins: 'Heavenly One, Self-Begotten, invisible, who alone see all things and are seen by none, give measured speech that I may speak the truth. Stop me when I have spoken correctly. For my mind in my breast is anxious, and bitter-flowing rage from above harrows my heart, that I, prophesying like the Sibyl of Babylon, may give measure-spoken oracles to all mortals.',
+            greek:   'Οὐράνιε, αὐτογενές, ἀόρατε, ὃς μόνος ὁρᾷς πάντα ὁρώμενος ὑπ\' οὐδενός, μέτρῳ φωνῆς δός μοι λέγειν ἀληθῆ. ἐλέγξον ὅταν λέξω ὀρθῶς. τέταρξε γάρ μου ὁ νοῦς ἐν στήθεσι, καὶ θυμὸς ὑψόθεν πικραίνων αὐτὴν τὴν καρδίαν τμήγει.',
+          },
+          entities: [
+            { word: 'Heavenly One, Self-begotten, invisible', node: 'tradition-second-temple-judaism', type: 'theological-vocabulary',
+              note: 'οὐράνιε αὐτογενές ἀόρατε — "heavenly, self-begotten, invisible." The Sibyl\'s opening address to God uses three terms that are recognisably Greek-philosophical (with parallels in Middle Platonic and Stoic theology) AND recognisably Jewish-monotheistic. Self-begotten (autogenes) is a Greek philosophical theogonic-vocabulary word; invisible (aoratos) reflects the Jewish theological commitment to a non-visible deity (parallel to Deut 4:15: "you saw no form"); heavenly (ouranios) is the standard Greek-Jewish theological vocabulary for the transcendent God of Hellenistic-Jewish literature. The opening line\'s deliberate triple-resonance is the Sibylline-author\'s entire rhetorical strategy: every theological vocabulary item operates simultaneously in Greek-philosophical and Jewish-religious registers, allowing the Greek-reading non-Jewish audience to receive the Sibyl\'s message as continuous with their own religious-philosophical vocabulary.',
+              parallels: [
+                { label: 'Corpus Hermeticum 4 — the contemporary Greek-Egyptian "self-begotten" theology', textId: 'corpus-hermeticum-4',
+                  note: 'The Greek-Egyptian Hermetic tradition (1st–3rd c. CE) develops its own self-begotten / invisible / heavenly divine-vocabulary in continuous dialogue with the same Hellenistic-Jewish, Middle Platonic, and Stoic philosophical-religious matrix. Reading the Sibylline 3 proem alongside Corpus Hermeticum 4 reveals the shared late-antique Mediterranean theological vocabulary that connects Jewish-diaspora, Greek-Egyptian, and proto-Gnostic religious literature.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'II. The Eschatological Turning-Point',
+      verses: [
+        {
+          ref: 'Sibylline Oracles 3.767–774 (Collins translation)',
+          text: 'And then indeed will God raise up a kingdom for ever over all mortals, who once gave the holy law to the pious, to whom he promised to open all the earth, and the world, and the gates of the blessed, and all joys, and eternal mind, and everlasting cheer. From every land they will bring incense and gifts to the house of the great God; and there shall be no other house among mortals, even for future generations to know of, except the one which God gave to faithful men to honour.',
+          textVersions: {
+            collins: 'And then indeed will God raise up a kingdom for ever over all mortals, who once gave the holy law to the pious, to whom he promised to open all the earth, and the world, and the gates of the blessed, and all joys, and eternal mind, and everlasting cheer. From every land they will bring incense and gifts to the house of the great God; and there shall be no other house among mortals, even for future generations to know of, except the one which God gave to faithful men to honour.',
+          },
+          entities: [
+            { word: 'God raise up a kingdom for ever over all mortals', node: 'tradition-second-temple-judaism', type: 'eschatology',
+              note: 'The eschatological climax of Book 3 — God\'s establishment of an everlasting kingdom — is the Hellenistic-Jewish parallel to the apocalyptic eschatology of Daniel 7 and the broader Enochic tradition. The Sibyl\'s formulation is structurally identical to Daniel 7\'s "the kingdom and the dominion and the greatness of the kingdoms under the whole heaven shall be given to the people of the holy ones of the Most High" — the same eschatological turning-point in the same world-empires-succession framework. What distinguishes the Sibylline version is the cosmopolitan address: "from every land they will bring incense and gifts." The Sibyl envisions the eschatological kingdom not as Israel\'s narrow restoration but as the universal recognition of the one God by all peoples — a vision that prefigures the universal-mission theology of early Christianity and continues to shape Jewish messianic expectation into the rabbinic period.',
+              parallels: [
+                { label: 'Daniel 7 — "the kingdom and the dominion... shall be given to the holy ones"', textId: 'daniel-7',
+                  note: 'Daniel 7\'s vision of the four-empires-then-the-everlasting-kingdom is the immediate apocalyptic-historiographical background for Sibylline 3\'s eschatological climax. The two books share vocabulary (basileia "kingdom," aiōnios "everlasting," ouranos "heaven"), structure (world-empires-succession-then-divine-kingdom), and the basic apocalyptic claim that history is moving toward a divine-judgment turning-point. Reading them together is the standard scholarly entry-point to Hellenistic-Jewish apocalyptic eschatology.' },
+                { label: 'Revelation 21 — "I saw a new heaven and a new earth"', textId: 'revelation-21',
+                  note: 'The Christian eschatological-kingdom vocabulary of Revelation 21 ("a new heaven and a new earth... the home of God is among mortals") is the continuation of the same apocalyptic tradition that Sibylline 3 inaugurates and Daniel 7 templates. The three texts together — Daniel 7 (Jewish-apocalyptic), Sibylline 3 (Hellenistic-Jewish missionary-apocalyptic), Revelation 21 (Christian-apocalyptic) — form a continuous tradition spanning roughly five centuries and constituting the deep textual background of the Western religious imagination of "the kingdom to come."' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
 
