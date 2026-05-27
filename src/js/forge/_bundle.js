@@ -3164,10 +3164,10 @@
   // (needs Lane A edge backfill from each scripture → its
   // characters/authors/deities).
   const LENSES = [
-    { id: 'books',   label: 'Books',   enabled: true,  hint: 'Sacred texts of this canon' },
-    { id: 'people',  label: 'People',  enabled: false, hint: 'People named in this canon — coming soon' },
-    { id: 'authors', label: 'Authors', enabled: false, hint: 'Sources / scribes — coming soon' },
-    { id: 'deities', label: 'Deities', enabled: false, hint: 'Divine figures invoked — coming soon' },
+    { id: 'books',    label: 'Books',    enabled: true,  hint: 'Sacred texts of this canon' },
+    { id: 'personae', label: 'Personae', enabled: false, hint: 'Named figures in this canon — historical, allegorical, angelic — coming soon' },
+    { id: 'authors',  label: 'Authors',  enabled: false, hint: 'Sources / scribes — coming soon' },
+    { id: 'deities',  label: 'Deities',  enabled: false, hint: 'Divine figures invoked — coming soon' },
   ];
 
   function attach(deps) {

@@ -2564,6 +2564,74 @@ SCRIPTURE_TEXTS['hymn-to-aten'] = {
         },
       ]
     },
+    {
+      heading: 'III. The Sustainer of All Living Things',
+      verses: [
+        {
+          ref: 'Lines 92–107 (the unborn child + the chick in the egg)',
+          text: 'You create the seed in women, you make sperm in men. You give life to the son in his mother\'s belly, you soothe him so that he does not cry — a nurse already in the womb! You give breath to all you have made; when the chick is still in the egg you give it air to live. When you have brought it forth from the egg to cheep with all its might, it walks about on its legs to the day of its hatching.',
+          textVersions: {
+            lichtheim: 'You create the seed in women, you make sperm in men. You give life to the son in his mother\'s body, soothing him to still his tears. Nurse in the womb, giver of breath, to nourish all that he made. When he comes from the womb to breathe on the day of his birth, you open wide his mouth, you supply his needs. When the chick in the egg speaks in the shell, you give him breath within it to sustain him.',
+            allen:     'You make the embryo grow in women, who creates seed in mankind. You sustain the son in the womb of his mother and soothe him so that he does not weep — a nurse in the womb! You give the breath to make all that you have made live. When he comes forth from the womb to breathe on the day he is born, you open his mouth completely and supply his needs. The chick which speaks already in the shell — you give it breath within to keep it alive.',
+            egyptian:  'iry.k mw m ḥmt· iry.k mtwt m s· s˓nḫ.k sȝ m ẖt mwt.f sgrḥ.k sw r tm.f rmı́· mn˓t m ẖt rdı́ ṯ3w sʿnḫ ı́ry.f nb',
+          },
+          entities: [
+            { word: 'a nurse already in the womb', node: 'aten', type: 'concept',
+              note: 'mn˓t m ẖt — "the nurse in the womb." One of the most intimate divine images in ancient religious literature. The Aten is not merely the cosmic creator but the immediate sustainer of the fetus, even quieting it when it cries before birth. This level of intimate-care theology is uncommon in ANY ancient near-eastern text before this point. The conceptual move it makes: divine providence is not only macro (governing nations, dispensing weather) but micro — every embryonic moment in every womb. The Psalmist will make the same move 600+ years later: Psalm 139:13 "for you created my inmost being; you knit me together in my mother\'s womb."',
+              parallels: [
+                { label: 'Psalm 139:13 — you knit me together in my mother\'s womb', textId: 'psalm-139',
+                  note: 'The verbal and thematic parallel is striking: both texts make the divine creator the intimate fashioner of the fetus inside the womb. Aten as "the nurse in the womb" and YHWH as the one who "knits together" the developing child are the same intimate-care theology in two languages, with the Hebrew Psalm postdating the Egyptian by 6+ centuries.' },
+                { label: 'Quran 22:5 — the developmental stages of the fetus', textId: 'quran-fatiha-nur',
+                  note: 'Quran 22:5 describes the embryonic development as a series of divine acts: "Then We made the sperm-drop into a clinging clot, then We made the clot into a lump, then We made from the lump bones, then We covered the bones with flesh..." Same divine-attention-to-embryology genre, with Islamic theological elaboration.' },
+              ]
+            },
+            { word: 'the chick is still in the egg you give it air', node: 'aten', type: 'concept',
+              note: 'The chick-in-the-egg image (ı́ry m swḥt) extends the embryology beyond humans: the divine attention sustains every developing creature. This is the world\'s earliest explicit statement of universal life-providence — the divine cares for every speck of life equally. The Buddhist Mettā Sutta\'s "may all beings be happy" (sabbe sattā bhavantu sukhitattā) makes the same universal claim 800 years later in a different theological key: not that one God sustains all life but that the moral attitude should extend to all.',
+              parallels: [
+                { label: 'Matthew 6:26 — look at the birds of the air', textId: 'matthew-sermon-mount',
+                  note: 'Jesus\'s "look at the birds of the air: they neither sow nor reap nor gather into barns, and yet your heavenly Father feeds them" makes the same theological move as the Aten Hymn\'s chick-in-the-egg: divine providence extends to every creature, not just to humans.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'IV. The Aten and Akhenaten',
+      verses: [
+        {
+          ref: 'Lines 119–136 (the personal cult ending)',
+          text: 'You are in my heart, but there is no other who knows you except your son Neferkheperure-waenre Akhenaten. You have caused him to understand your plans and your strength. The earth came into being by your hand, as you made them. When you rise they live; when you set they die. You are lifetime in your very self — one lives by you.',
+          textVersions: {
+            lichtheim: 'You are in my heart, there is no other who knows you, only your son, Neferkheperure, sole-one-of-Re, whom you have taught your ways and your might. Those on earth come from your hand as you made them. When you have dawned they live, when you set they die. You yourself are lifetime, one lives by you.',
+            allen:     'You are in my heart, and there is none other who knows you, except your son, Neferkheperure, sole-one-of-Re, whom you have caused to know your plans and your power. The earth came into being by your hand, just as you made them. When you have risen, they live; when you set, they die. You yourself are lifespan; one lives by you.',
+            egyptian:  'wnn.k m ı́b.ı́ nn ky rḫ.f sw wpw-ḥr sȝ.k Nfr-ḫprw-r˓ wʿ-n-r˓· sbȝy.k sw n sḫrw.k pḥty.k',
+          },
+          entities: [
+            { word: 'no other who knows you except your son Akhenaten', node: 'akhenaten', type: 'principle',
+              note: 'The closing claim is theologically radical and politically deliberate: Akhenaten alone has access to the Aten\'s inner nature. Where the older Egyptian religion had ~2000 priests across hundreds of temples mediating divine access, Akhenaten\'s Aten cult collapses that entire infrastructure into a single mediator: himself. Every other Egyptian relates to Aten ONLY through Akhenaten. This is the world\'s first attested example of the "exclusive prophet" theological structure — the structure that will reappear in Moses (only Moses spoke to YHWH face to face, Deut 34:10), Muhammad (the seal of the prophets), and Joseph Smith (the angel Moroni speaks only to him). The Aten Hymn is the founding document of this structure.',
+              parallels: [
+                { label: 'Deuteronomy 34:10 — Moses as unique prophet', node: 'moses',
+                  note: '"Since then, no prophet has risen in Israel like Moses, whom the LORD knew face to face." The Mosaic exclusive-mediator claim is structurally identical to the Akhenaten-Aten exclusive-mediator claim, with the same political effect: collapsing diffused priestly authority into a single transmission channel.' },
+                { label: 'Quran 33:40 — Muhammad as the seal of the prophets', textId: 'quran-fatiha-nur',
+                  note: 'The "khātam an-nabiyyīn" (seal of the prophets) doctrine — Muhammad as the final and culminating prophetic transmission — extends the same exclusive-mediator architecture across the entire prophetic lineage, terminating in one definitive figure.' },
+                { label: 'John 14:6 — no one comes to the Father except through me', textId: 'john-15-vine',
+                  note: 'The Johannine "I am the way, the truth, and the life; no one comes to the Father except through me" applies the exclusive-mediator structure to Christ. Same logical architecture as the Aten Hymn\'s "no other who knows you except your son."' },
+              ]
+            },
+            { word: 'You are lifetime in your very self — one lives by you', node: 'aten', type: 'concept',
+              note: 'mn.k m ʿnḫ — "you are lifetime / life-itself." The Aten is not merely the giver of life but life ITSELF. This is the same ontological move that John 14:6 makes for Christ ("I am the life") and the Bhagavad Gita makes for Krishna ("I am the life in all living beings," BG 7:9). All three identify the divine not as a source of life external to the cosmos but as the very life-quality that animates each creature.',
+              parallels: [
+                { label: 'John 14:6 — I am the way, the truth, and the life', textId: 'john-15-vine',
+                  note: 'The Johannine "I am the life" (egō eimi hē zōē) makes the same ontological identity-claim: the divine IS the life-quality of every living being, not merely its source.' },
+                { label: 'Bhagavad Gita 7:9 — I am the life in all beings', textId: 'bhagavad-gita-4',
+                  note: 'Krishna\'s "I am the life in all living beings" parallels the Aten Hymn\'s claim that the divine IS life itself. Three independent traditions — Egyptian (Aten), Indian (Krishna), Christian (Christ-Logos) — converge on identifying the divine as the immanent life-principle, not as a transcendent source outside life.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
   ]
 };
 
@@ -12265,6 +12333,104 @@ SCRIPTURE_TEXTS['hadith-bukhari-selected'] = {
                   note: 'The Beatitude "blessed are the merciful, for they shall obtain mercy" and the hadith of mercy are the same reciprocity teaching. Both: the divine response mirrors the human stance. Mercy received is conditioned on mercy given — not as a transactional exchange but as a recognition of the same quality of consciousness.' },
                 { label: 'Karma — like begets like', textId: 'bhagavad-gita-4',
                   note: 'The karma principle (action and its fruit share quality) is the Indic articulation of the same mechanism: the quality of what you give IS the quality of what returns to you. Mercy given is mercy in your own being; mercy received is the cosmic confirmation of what you already became.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+// ── MANDAEAN — GINZA RABBA (THE GREAT TREASURE) ──────────────────────────────
+SCRIPTURE_TEXTS['ginza-rabba'] = {
+  id:         'ginza-rabba',
+  title:      'Ginza Rabba — The Great Treasure',
+  shortTitle: 'Ginza Rabba (Mandaean)',
+  corpus:     'Mandaean · Right Ginza',
+  tradId:     'tradition-mandaeism',
+  date:       'compiled c. 7th–8th CE; preserves traditions from 1st–3rd CE',
+  docNode:    'phase-4-018-mandaean-book-of-john', // docNode: closest existing Mandaean scripture-document; flagged for Lane A — no dedicated Ginza node yet.
+  language:   'Eastern Aramaic (Mandaic) · Buckley 2010 / Lidzbarski 1925 English',
+  translations: [
+    { id: 'buckley',   label: 'Buckley 2010 (T1)', note: 'Jorunn Jacobsen Buckley — the current scholarly standard for Mandaean studies in English' },
+    { id: 'lidzbarski', label: 'Lidzbarski 1925 (T1, classic German→English)', note: 'Mark Lidzbarski\'s Ginza: Der Schatz oder Das Große Buch der Mandäer — the foundational scholarly edition' },
+    { id: 'mandaic',   label: 'Mandaic (original)' },
+  ],
+  intro: 'The Ginza Rabba (lit. "Great Treasure") is the principal scripture of the Mandaeans — the world\'s last living Gnostic religion. Originating in the Jordan Valley in the 1st-3rd centuries CE among Judean baptismal sectarians and later migrating to southern Mesopotamia, the Mandaeans claim John the Baptist as their last great prophet and reject Jesus as a false messiah. Their cosmology is sharply dualist: the World of Light (Mshunia Kushta — "Worlds of Truth") is the divine homeland; the World of Darkness is the realm of Ruha and her demonic children, including Yahweh (whom the Mandaeans identify with the dark archon, NOT with the supreme God of Light). Salvation comes through gnosis, baptism (masbutta), and ritual return to the World of Light at death. The Ginza Rabba\'s parallels to other Gnostic scripture (Apocryphon of John, Pistis Sophia, Manichaean Psalms) are direct — but the Mandaeans are unique in being the only Gnostic community to survive continuously from antiquity to today (now ~70,000 worldwide, primarily Iraq/Iran/diaspora).',
+  crossTradition: [
+    { label: 'Apocryphon of John — the false god of the lower world', textId: 'apocryphon-of-john',
+      note: 'The Sethian Apocryphon of John identifies the Hebrew Yahweh with Yaldabaoth, the ignorant demiurge born from Sophia\'s fall — a false god mistaking himself for the true God. The Ginza Rabba makes the identical move with the Mandaean Ruha and her son Adunay (Adonai/Yahweh). Both Gnostic systems reject biblical theism as the worship of a deceptive lower power.' },
+    { label: 'Manichaean — the cosmic war of Light and Darkness', textId: 'thunder-perfect-mind',
+      note: 'Mani (216–274 CE) almost certainly grew up in a Mandaean or proto-Mandaean community in southern Mesopotamia; his radical Light/Darkness dualism is the closest religious-historical sibling to the Mandaean Ginza\'s cosmology. Both systems trace salvation as the gathering of scattered light-particles back into the world of Light.' },
+    { label: 'Gospel of Thomas — gnosis through inner knowing', textId: 'gospel-of-thomas',
+      note: 'The Thomasine "the kingdom is inside you" and the Mandaean teaching that the soul (nishimta) is a captive spark of the Light World whose liberation is achieved by gnosis — both reject the externalising structure of mainstream Judaism / Christianity in favor of an inner-recognition soteriology.' },
+    { label: 'Zoroastrian Yasna — cosmic dualism of Ohrmazd and Ahriman', textId: 'yasna-30',
+      note: 'The Zoroastrian Light/Darkness dualism is the philosophical predecessor of all later Gnostic dualism in the Iranian-Mesopotamian corridor. The Mandaean Ginza Rabba\'s cosmology shows direct Zoroastrian structural influence — though the Mandaeans deny the Zoroastrian connection and trace themselves to John the Baptist alone.' },
+  ],
+  sections: [
+    {
+      heading: 'I. The Praise of the King of Light',
+      verses: [
+        {
+          ref: 'Right Ginza Book I, opening',
+          text: 'In the name of the Great Life. Praised be You, Lord of Greatness, Lord of all the worlds, Light beyond all light, Light in which is no darkness, Voice in which is no harshness, Word in which is no falsehood — King of Light, who has no second, whose throne abides forever and ever.',
+          textVersions: {
+            buckley:   'In the name of the Great Life (Hayyi Rabbi). Praised be you, Lord of Greatness, Light from Light, Word from Word — King of the worlds of Light, your throne endures forever.',
+            lidzbarski:'Im Namen des Großen Lebens. Gepriesen seist du, Herr der Größe, Licht über jedem Lichte, Licht ohne Finsternis — König des Lichtes, der keinen Zweiten hat.',
+            mandaic:   'ᶜb-šum d-Hayyi Rabbi · mšubha at, Mara d-Rabuta, Nhura d-laitlh hšuka beh',
+          },
+          entities: [
+            { word: 'Lord of Greatness', node: 'tradition-mandaeism', type: 'deity',
+              note: 'Mara d-Rabuta — "Lord of Greatness." The Mandaean supreme God is unnamed in the strict sense (Gnostic theology forbids naming the truly ultimate); titles are used instead: Hayyi Rabbi (Great Life), Mana Rabba (Great Mind/Light), Mara d-Rabuta. The structural parallel to the Kabbalistic Ein Sof (the Infinite, deliberately unnamed) and the Zoroastrian Ahura Mazda (whose name means "Wise Lord," a quality rather than a personal name) is the same apophatic move: the supreme is too vast to be pinned to a single proper noun.',
+              parallels: [
+                { label: 'Apocryphon of John — the Monad, who is alone', textId: 'apocryphon-of-john',
+                  note: 'The Sethian Monad is "alone, with nothing above him" — described entirely by negations (not corporeal, not commensurable, not in time). The Mandaean Mara d-Rabuta is the same apophatic supreme, addressed by quality-titles rather than personal name.' },
+                { label: 'Ein Sof (Kabbalistic)', textId: 'sefer-yetzirah',
+                  note: 'The Kabbalistic Ein Sof (lit. "no end / no boundary") is the supreme described by what it is NOT. Same theological architecture as the Mandaean Mara d-Rabuta — the ultimate is approached through titles of quality rather than proper names.' },
+              ]
+            },
+            { word: 'Light beyond all light, Light in which is no darkness', node: 'primordial-darkness', type: 'concept',
+              note: 'The Mandaean light-language is more extreme than any other Gnostic system: nhura d-laitlh hšuka — "light in which there is no darkness." The contrast is with the mixed world we experience (where light always borders darkness). The pure Light-World (alma d-nhura) is the unmixed source. The parallel to 1 John 1:5 ("God is light, and in him is no darkness at all") is verbally exact — both are formulating the same theological intuition in different sectarian vocabularies of the 1st-3rd century CE Judeo-Mesopotamian milieu.',
+              parallels: [
+                { label: '1 John 1:5 — God is light and in him is no darkness at all', textId: '1-john-4',
+                  note: 'The Johannine "ho theos phōs estin, kai skotia en autō ouk estin oudemia" and the Mandaean "Nhura d-laitlh hšuka beh" are the same formula in Greek and Mandaic. Either direct influence (both communities emerged in the same Levantine matrix) or convergent expressions of a shared Hellenistic-Jewish mystical idiom.' },
+                { label: 'Quran 24:35 — God is the Light of the heavens and earth', textId: 'quran-fatiha-nur',
+                  note: 'The Quranic Nūr Verse continues the same Light-theology tradition that runs through Mandaean, Manichaean, and Johannine literature. The Islamic version is the latest in a 1500-year line of "God IS light" statements in the Middle Eastern religious matrix.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'II. The Soul as Stranger in the World',
+      verses: [
+        {
+          ref: 'Right Ginza Book V, on the soul\'s exile',
+          text: 'A vine am I, a single vine, set among trees of darkness. The trees of darkness say to me: "We are vines, and you are like us." I say to them: "Vines of darkness are you, and your fruit is bitter. I am the vine planted by the Lord of Greatness — my roots are in the world of Light, my fruit is gathered in the world of Light. I came from the place of Light; I shall return to the place of Light."',
+          textVersions: {
+            buckley:   'A vine am I, the chosen vine, set among trees of darkness. The dark trees say "You are like us." I answer: "You are vines of darkness; your fruit is bitter. I was planted by the Lord of Light; my roots are in the world of Light. I came from there and I shall return there."',
+            lidzbarski:'Ein Weinstock bin ich, ein einzelner Weinstock, gepflanzt zwischen den Bäumen der Finsternis. Sie sagen: "Wir sind Weinstöcke." Ich antworte: "Eure Frucht ist bitter. Ich bin der Weinstock des Herrn der Größe."',
+            mandaic:   'gupna ena, gupna iḥida, mšta b-iliani d-hšuka',
+          },
+          entities: [
+            { word: 'vine planted by the Lord of Greatness', node: 'tradition-mandaeism', type: 'concept',
+              note: 'The gupna (vine) symbol in Mandaean theology represents the Mandaean believer — and the entire Mandaean community — as a transplanted divine cutting in a foreign soil (the material world of darkness). The vine-image runs through the Ginza, the Book of John, and the prayer-book (Qulasta). The parallel to John 15 ("I am the vine, you are the branches") is structural — both texts use the vine to describe the relationship between the divine source and the community of the faithful, with the world outside the vine\'s connection being barren / dead. Either direct contact between the Mandaean and Johannine communities (both 1st-century Levantine baptismal groups) or independent use of a shared Near-Eastern vine-as-divine-people image (cf. Isaiah 5:1-7, "the vineyard of the LORD").',
+              parallels: [
+                { label: 'John 15:1-5 — I am the true vine', textId: 'john-15-vine',
+                  note: 'The Johannine "I am the true vine, and my Father is the vinedresser... I am the vine, you are the branches" is the closest Christian parallel to the Mandaean vine-as-divine-cutting imagery. Both communities emerged from the same Judean baptismal milieu in the 1st century CE — the parallels in vine, water, and light-language are not accidental.' },
+                { label: 'Isaiah 5:1-7 — the vineyard of the LORD', textId: 'isaiah-6',
+                  note: 'Isaiah\'s "the vineyard of the LORD Almighty is the nation of Israel" provides the Hebrew Bible substrate for both the Johannine and Mandaean vine-uses. All three traditions are working a common Near-Eastern image: the divine-planted people surrounded by a hostile, barren world.' },
+              ]
+            },
+            { word: 'I came from the place of Light; I shall return to the place of Light', node: 'apophatic-mysticism', type: 'concept',
+              note: 'The Mandaean soul-narrative: every soul (nishimta) is a captive spark of the Light World, exiled into the material body, and called to return at death to its home in the worlds of Light. The structural parallels are: (1) the Apocryphon of John\'s "you are from the divine, and you fell into matter"; (2) the Hermetic CH I, where Hermes ascends through the planetary spheres back to the source; (3) the Sethian Gnostic three-stages cosmology (origin → fall → return); (4) the Bhagavad Gita\'s "as a man casts off worn-out garments and puts on new ones, so the embodied soul casts off worn-out bodies and enters into others." All are forms of the "soul as exile and return" mythologem.',
+              parallels: [
+                { label: 'Apocryphon of John — the soul\'s descent and return', textId: 'apocryphon-of-john',
+                  note: 'The Sethian Apocryphon of John\'s cosmic narrative — the soul falls from the Light-World into matter through Sophia\'s error, and is called to return — is structurally identical to the Mandaean soul-narrative. Both texts likely share substrate in the early-Christian-era Mesopotamian Gnostic matrix.' },
+                { label: 'Gospel of Thomas L.50 — say "we came from the light"', textId: 'gospel-of-thomas',
+                  note: 'Thomas L.50: "If they ask you \'Where did you come from?\' say to them, \'We came from the light, the place where the light came into being on its own accord.\'" The Thomasine and Mandaean responses are nearly identical: the soul knows its origin in light and confesses that origin as its identity.' },
               ]
             },
           ]
