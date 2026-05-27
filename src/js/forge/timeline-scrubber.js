@@ -62,7 +62,15 @@
     // data.js. Read the normalized form first, fall back to raw
     // for safety.
     function deriveBounds() {
-      const nodes = local.mode && local.mode.nodes;
+      // 2026-05-28 — bounds are now VAULT-WIDE, not mode-specific.
+      // Reading local.mode.nodes meant the scrubber endpoints jumped
+      // whenever the user switched class (Codex's -3500..1900 became
+      // Deities' -3500..today became Authors' different range etc.).
+      // Stable endpoints reading window.VAULT_DATA.nodes give a
+      // consistent timeline across all class switches; the user's
+      // selected range stays valid across the swap.
+      const nodes = (window.VAULT_DATA && window.VAULT_DATA.nodes) ||
+                    (local.mode && local.mode.nodes);
       if (!nodes || !nodes.length) return null;
       let lo = Infinity, hi = -Infinity;
       for (const n of nodes) {

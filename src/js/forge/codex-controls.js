@@ -41,12 +41,75 @@
   // user sees the roadmap; activation comes in a later batch
   // (needs Lane A edge backfill from each scripture → its
   // personae/authors/deities).
+  // 2026-05-28 — Personae / Authors / Deities lenses now wired via
+  // the rebuildForMode filter in forge.js. Each lens dynamically
+  // computes its row count for the current family + enables only
+  // rows with > 0 matches. `hint` is overridden per render with the
+  // computed count.
   const LENSES = [
-    { id: 'books',    label: 'Books',    enabled: true,  hint: 'Sacred texts of this canon' },
-    { id: 'personae', label: 'Personae', enabled: false, hint: 'Named figures in this canon — historical, allegorical, angelic — coming soon' },
-    { id: 'authors',  label: 'Authors',  enabled: false, hint: 'Sources / scribes — coming soon' },
-    { id: 'deities',  label: 'Deities',  enabled: false, hint: 'Divine figures invoked — coming soon' },
+    { id: 'books',    label: 'Books',    defaultHint: 'Sacred texts of this canon' },
+    { id: 'personae', label: 'Personae', defaultHint: 'Named figures in this canon' },
+    { id: 'authors',  label: 'Authors',  defaultHint: 'Sources / scribes of this canon' },
+    { id: 'deities',  label: 'Deities',  defaultHint: 'Divine figures invoked' },
   ];
+
+  // Compute, per family, how many entries each Lens would surface.
+  // Used to enable/disable lens rows + label them with live counts.
+  function computeLensCounts(familyId) {
+    const empty = { books: 0, personae: 0, authors: 0, deities: 0 };
+    const corpora = window.SCRIPTURE_CORPORA || {};
+    const vault   = window.VAULT_DATA;
+    if (!vault) return empty;
+
+    // In-scope doc IDs
+    const docIds = new Set();
+    if (familyId && corpora[familyId]) {
+      for (const sec of (corpora[familyId].sections || [])) {
+        for (const b of (sec.books || [])) if (b && b.id) docIds.add(b.id);
+      }
+    } else {
+      // No family — use the curated SCRIPTURE_IDS (the 109-node "All families" set)
+      const allModes = window.AtlasEngineMode && window.AtlasEngineMode.MODES;
+      if (allModes) {
+        const scripts = window.AtlasEngineMode.filterNodesByMode('scriptures', vault.nodes, vault.edges);
+        for (const n of (scripts || [])) docIds.add(n.id);
+      }
+    }
+    empty.books = docIds.size;
+
+    // docNode → SCRIPTURE_TEXTS entry
+    const T = window.SCRIPTURE_TEXTS || {};
+    const dn2t = Object.create(null);
+    for (const k in T) { const t = T[k]; if (t && t.docNode && !dn2t[t.docNode]) dn2t[t.docNode] = t; }
+
+    const personae = new Set();
+    const deities  = new Set();
+    docIds.forEach(d => {
+      const t = dn2t[d];
+      if (!t || !t.sections) return;
+      for (const sec of t.sections) {
+        for (const v of (sec.verses || [])) {
+          for (const e of (v.entities || [])) {
+            if (!e || !e.node || !e.type) continue;
+            if (e.type === 'person' || e.type === 'character' || e.type === 'figure') personae.add(e.node);
+            else if (e.type === 'deity') deities.add(e.node);
+          }
+        }
+      }
+    });
+    empty.personae = personae.size;
+    empty.deities  = deities.size;
+
+    // Authors via vault edges
+    const authors = new Set();
+    for (const e of (vault.edges || [])) {
+      if (!e) continue;
+      if (e.type !== 'authored' && e.type !== 'attributed-author') continue;
+      if (docIds.has(e.target)) authors.add(e.source);
+    }
+    empty.authors = authors.size;
+    return empty;
+  }
 
   // Short-label map for the Family dropdown. Replaces the broken
   // `label.split('·')[0]` truncation which mid-cut multi-text
@@ -254,16 +317,20 @@
     }
 
     function buildLensMenu() {
+      const counts = computeLensCounts(state.familyId);
       const rows = LENSES.map(L => {
         const isActive = state.lensId === L.id;
+        const n = counts[L.id] || 0;
+        const enabled = n > 0;
+        const hint = enabled ? (n + ' ' + L.id) : 'no entries in this canon yet';
         return (
-          '<button class="app-pill-menu-item' + (isActive ? ' is-active' : '') + '"' +
+          '<button class="app-pill-menu-item' + (isActive && enabled ? ' is-active' : '') + (enabled ? '' : ' is-stub') + '"' +
           ' role="menuitem" data-lens="' + esc(L.id) + '"' +
-          (L.enabled ? '' : ' disabled') +
+          (enabled ? '' : ' disabled') +
           ' type="button">' +
           '<span class="app-pill-menu-label">' + esc(L.label) + '</span>' +
-          '<span class="app-pill-menu-hint">' + esc(L.hint) + '</span>' +
-          (isActive ? '<span class="app-pill-menu-check">●</span>' : '') +
+          '<span class="app-pill-menu-hint">' + esc(hint) + '</span>' +
+          (isActive && enabled ? '<span class="app-pill-menu-check">●</span>' : '') +
           '</button>'
         );
       });
@@ -453,10 +520,20 @@
       if (newLens === state.lensId) return;
       state.lensId = newLens;
       local.codexLens = newLens;
+      // Reset the family-filter latch so the new lens triggers a
+      // re-filter via the same code path. Otherwise the latched key
+      // for (family + scriptures) would block the rebuild.
+      local._codexFilterAppliedFor = null;
       saveState();
       syncLabels();
-      // V1 — Books-only is active; switching lens is a no-op for
-      // filter purposes until Personae/Authors/Deities ship.
+      // Lens-pick now triggers a rebuild — forge.js rebuildForMode
+      // reads local.codexLens and applies the Personae/Authors/
+      // Deities filter (Books == default, no extra filter beyond
+      // codexFamily).
+      if (typeof rebuildForMode === 'function' && local.mode && local.mode.id) {
+        try { rebuildForMode(local.mode.id, { preserveLocks: true, preserveZoom: false }); }
+        catch (e) { console.warn('[codex-controls] lens rebuild failed', e); }
+      }
     });
     readMenu.addEventListener('click', function (ev) {
       const btn = ev.target.closest('.app-pill-menu-item');
