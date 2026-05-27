@@ -36,17 +36,75 @@
       .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
   }
 
-  // Lens definitions. Books is the V1-enabled lens. Characters /
+  // Lens definitions. Books is the V1-enabled lens. Personae /
   // Authors / Deities ship as visible-but-disabled rows so the
   // user sees the roadmap; activation comes in a later batch
   // (needs Lane A edge backfill from each scripture → its
-  // characters/authors/deities).
+  // personae/authors/deities).
   const LENSES = [
     { id: 'books',    label: 'Books',    enabled: true,  hint: 'Sacred texts of this canon' },
     { id: 'personae', label: 'Personae', enabled: false, hint: 'Named figures in this canon — historical, allegorical, angelic — coming soon' },
     { id: 'authors',  label: 'Authors',  enabled: false, hint: 'Sources / scribes — coming soon' },
     { id: 'deities',  label: 'Deities',  enabled: false, hint: 'Divine figures invoked — coming soon' },
   ];
+
+  // Short-label map for the Family dropdown. Replaces the broken
+  // `label.split('·')[0]` truncation which mid-cut multi-text
+  // corpora ("Persian Sufi corpus (Rumi" instead of "Persian Sufi")
+  // and collapsed the two Qurʾān corpora to identical labels
+  // (now differentiated as Nöldeke vs Manzil). Mirrors the legacy
+  // SCRIPTURE_CORPUS_SHORT object that lived inside VIEWS.scripture.
+  const SHORT_LABELS = {
+    'bible':                   'Bible',
+    'egyptian-scripture':      'Egyptian',
+    'greek-scripture':         'Greek',
+    'tanakh':                  'Tanakh',
+    'quran':                   'Qurʾān (Nöldeke)',
+    'quran-manzil':            'Qurʾān (Manzil)',
+    'vedas':                   'Vedas',
+    'tipitaka':                'Buddhist',
+    'avesta':                  'Avesta',
+    'kojiki-nihongi':          'Kojiki / Nihon Shoki',
+    'guru-granth':             'Gurū Granth',
+    'mormon':                  'Mormon',
+    'kebra-nagast':            'Kebra Nagast',
+    'ethiopic-tewahedo-canon': 'Tewahedo',
+    'tao-corpus':              'Dao',
+    'confucian-classics':      'Confucian',
+    'nag-hammadi':             'Nag Hammadi',
+    'hermetica':               'Hermetica',
+    'mesopotamian':            'Mesopotamian',
+    'rabbinic-corpus':         'Rabbinic',
+    'jain-agamas':             'Jain',
+    'norse-eddic':             'Norse Edda',
+    'cathar-bogomil':          'Cathar / Bogomil',
+    'bahai-corpus':            'Baháʼí',
+    'spanish-mystical':        'Spanish Mystics',
+    'shia-corpus':             'Shīʿa',
+    'druze-corpus':            'Druze',
+    'bon-corpus':              'Bön',
+    'yazidi-corpus':           'Yazidi',
+    'reformation':             'Reformation',
+    'samaritan-corpus':        'Samaritan',
+    'alevi-corpus':            'Alevi',
+    'cheondogyo-corpus':       'Cheondogyo',
+    'tenrikyo-corpus':         'Tenrikyo',
+    'cao-dai-corpus':          'Cao Dai',
+    'south-asian-modernism':   'S. Asia Modern',
+    'hadith-corpus':           'Hadith',
+    'mandaean-manichaean':     'Mandaean / Manichaean',
+    'islamic-theological':     'Islamic Mystic',
+    'sufi-persian':            'Persian Sufi',
+    'mesoamerican-sacred':     'Mesoamerican',
+  };
+  function shortLabelFor(key, corpus) {
+    if (SHORT_LABELS[key]) return SHORT_LABELS[key];
+    // Fallback for any future corpus key without a hand-curated short
+    // label: take the first segment before either '·' or '(' so we
+    // never cut mid-list like the old logic did.
+    const full = (corpus && corpus.label) || key;
+    return full.split(/[·(]/)[0].trim();
+  }
 
   function attach(deps) {
     const local           = deps.local;
@@ -60,6 +118,17 @@
       if (console && console.warn) console.warn('[codex-controls] #app-pill-wrap not found; codex inert');
       return;
     }
+
+    // DOM-side idempotency: if the view-mount cycle re-ran attach()
+    // (local resets between mounts), make sure we don't leave a
+    // stale codex pill in the DOM. Remove any existing instance
+    // before building a fresh one.
+    const stalePill = document.getElementById('app-pill-codex');
+    if (stalePill && stalePill.parentNode) stalePill.parentNode.removeChild(stalePill);
+    const staleFamilyMenu = document.getElementById('app-pill-codex-family-menu');
+    if (staleFamilyMenu && staleFamilyMenu.parentNode) staleFamilyMenu.parentNode.removeChild(staleFamilyMenu);
+    const staleLensMenu = document.getElementById('app-pill-codex-lens-menu');
+    if (staleLensMenu && staleLensMenu.parentNode) staleLensMenu.parentNode.removeChild(staleLensMenu);
 
     // ── Hydrate state from LS ────────────────────────────────
     let state = { familyId: null, lensId: 'books' };
@@ -155,9 +224,8 @@
       keys.forEach(k => {
         const c = corpora[k];
         if (!c || c.available === false) return;
-        const label = c.label || k;
         const nBooks = (c.sections || []).reduce((sum, sec) => sum + ((sec.books || []).length), 0);
-        const shortLabel = label.split('·')[0].trim();
+        const shortLabel = shortLabelFor(k, c);
         rows.push(
           '<button class="app-pill-menu-item' + (state.familyId === k ? ' is-active' : '') + '"' +
           ' role="menuitem" data-family="' + esc(k) + '" type="button">' +
@@ -193,8 +261,7 @@
       const lensLabel   = document.getElementById('app-pill-codex-lens-label');
       if (familyLabel) {
         if (state.familyId && window.SCRIPTURE_CORPORA && window.SCRIPTURE_CORPORA[state.familyId]) {
-          const lbl = window.SCRIPTURE_CORPORA[state.familyId].label || state.familyId;
-          familyLabel.textContent = lbl.split('·')[0].trim();
+          familyLabel.textContent = shortLabelFor(state.familyId, window.SCRIPTURE_CORPORA[state.familyId]);
         } else {
           familyLabel.textContent = 'All families';
         }
