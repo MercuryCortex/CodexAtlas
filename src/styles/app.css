@@ -9530,6 +9530,117 @@ body.view-forge.fx-belowfifteen .forge-labels-overlay { display: none !important
 }
 
 /* ============================================================
+ * BOARDS V2 — contextual pill (step 4 of 10)
+ * Filed 2026-05-28 per AUDIT/2026-05-28-boards-v2-new-ux-spec.md
+ *
+ * Sibling .app-pill group to .app-pill--codex, lives inside the
+ * same .app-pill-wrap, same visual primitive. body-class toggle
+ * mirrors the codex pattern: visible only on view-boards.
+ * ============================================================ */
+.app-pill--boards { margin-left: 8px; display: none; }
+body.app-pill-boards-visible .app-pill--boards { display: inline-flex; }
+body:not(.view-boards) .app-pill--boards { display: none !important; }
+
+/* Search-picker (Add node ▾) menu — wider than the codex menus,
+   custom layout (input + hint + scrolling result list). */
+.app-pill-menu--boards-addnode {
+  min-width: 340px;
+  max-width: 440px;
+  padding: 0;
+}
+.app-pill-menu--boards-investigation {
+  min-width: 280px;
+  max-width: 360px;
+}
+.boards-pill-search {
+  padding: 10px 12px 6px 12px;
+  border-bottom: 1px solid rgba(212,165,90,0.12);
+}
+.boards-pill-search-input {
+  width: 100%;
+  padding: 6px 10px;
+  background: rgba(0,0,0,0.35);
+  border: 1px solid rgba(212,165,90,0.22);
+  border-radius: 6px;
+  color: var(--text-0, #e6e6e6);
+  font-family: var(--mono, "JetBrains Mono", Menlo, monospace);
+  font-size: 11px;
+  letter-spacing: 0.02em;
+  outline: none;
+  transition: border-color 100ms ease;
+}
+.boards-pill-search-input:focus {
+  border-color: rgba(212,165,90,0.55);
+}
+.boards-pill-search-hint {
+  margin-top: 6px;
+  font-family: var(--mono, "JetBrains Mono", Menlo, monospace);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(212,165,90,0.55);
+}
+.boards-pill-results {
+  max-height: 320px;
+  overflow-y: auto;
+  padding: 4px 0 6px 0;
+}
+.boards-pill-result {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 12px;
+  background: transparent;
+  border: 0;
+  text-align: left;
+  color: var(--text-0, #e6e6e6);
+  font-family: var(--mono, "JetBrains Mono", Menlo, monospace);
+  font-size: 11px;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: background 80ms ease, color 80ms ease;
+}
+.boards-pill-result:hover {
+  background: rgba(212,165,90,0.08);
+  color: var(--gold-1, #e8c889);
+}
+.boards-pill-result-title {
+  flex: 1 1 auto;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.boards-pill-result-type {
+  flex-shrink: 0;
+  color: rgba(212,165,90,0.55);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* Investigation library placeholder (step 5 wires the real content). */
+.boards-pill-placeholder {
+  padding: 12px 14px;
+}
+.boards-pill-placeholder-title {
+  font-family: var(--mono, "JetBrains Mono", Menlo, monospace);
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(212,165,90,0.65);
+  margin-bottom: 8px;
+}
+.boards-pill-placeholder-body {
+  font-family: var(--sans, "Inter", system-ui, sans-serif);
+  font-size: 12px;
+  line-height: 1.55;
+  color: rgba(230,230,230,0.75);
+}
+.boards-pill-placeholder-body em { color: var(--gold, #d4a55a); font-style: normal; }
+.boards-pill-placeholder-body strong { color: var(--text-0, #e6e6e6); }
+
+/* ============================================================
  * MAP V2 + STAR MAP V2 — skeletons mirroring .boards-pane
  * Filed 2026-05-28 per AUDIT/2026-05-28-legacy-isolation-locked.md
  *
