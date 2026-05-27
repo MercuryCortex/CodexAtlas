@@ -422,10 +422,12 @@ body {
   position: relative;
   height: 100vh;
   width: 100vw;
-  --footer-h: 44px;
+  /* 2026-05-27 — legacy footer ripped out; --footer-h is permanently 0.
+     Variable retained because some other rules still reference it; the
+     body.footer-collapsed class no longer exists / is toggled. */
+  --footer-h: 0px;
   overflow: hidden;
 }
-body.footer-collapsed  { --footer-h: 0px; }
 body.nav-collapsed     { --eff-nav-w:    var(--nav-w-collapsed); }
 /* Phase 21A (2026-05-21) — sidebar fully hidden across the
    whole site. Replaces nav-collapsed as the default. Setting
@@ -2203,78 +2205,14 @@ aside.detail .link-edge .etype {
 aside.detail .link-edge:hover .etarget { color: var(--gold); }
 .etarget { color: var(--text-1); }
 
-/* FOOTER */
-footer {
-  position: fixed;
-  bottom: 0; left: var(--nav-w); right: var(--detail-w);
-  height: 44px; z-index: 50;
-  background: var(--bg-1);
-  border-top: 1px solid var(--border);
-  display: flex; align-items: center; padding: 0 24px 0 14px;
-  gap: 18px; overflow-x: auto; overflow-y: hidden;
-  font-family: var(--mono); font-size: 11px; color: var(--text-2);
-  transition: left 240ms cubic-bezier(0.2, 0.8, 0.2, 1),
-              right 240ms cubic-bezier(0.2, 0.8, 0.2, 1),
-              transform 200ms ease;
-}
-body.nav-collapsed footer    { left: var(--nav-w-collapsed); }
-body.detail-collapsed footer { right: var(--detail-w-collapsed); }
-body.footer-collapsed footer { transform: translateY(100%); }
-/* Footer + its toggle hidden entirely on views with their own toolbars (the search
-   bar adds nothing on these views and was reported as "very annoying"). The user
-   can still reach filters by switching to a list view. */
-body.view-alchemy footer,
-body.view-alchemy .footer-toggle,
-body.view-atlas footer,
-body.view-atlas .footer-toggle,
-body.view-astrology footer,
-body.view-astrology .footer-toggle,
-body.view-transmission footer,
-body.view-transmission .footer-toggle,
-body.view-about footer,
-body.view-about .footer-toggle { display: none !important; }
-/* Footer toggle is a body-level fixed element (sibling of <footer>) so it stays
-   clickable when the footer collapses. Previously the toggle lived INSIDE <footer>;
-   body.footer-collapsed applies `transform: translateY(100%)` to the footer, and
-   `transform` on an ancestor establishes a new containing block for fixed-position
-   descendants — trapping the toggle inside the translated footer regardless of its
-   own position:fixed. Sibling placement avoids the trap entirely. */
-.footer-toggle {
-  /* When the footer is OPEN, the toggle floats just above the bar so it
-     never overlaps the "family" / "type" labels at the bar's left edge.
-     When the footer is COLLAPSED, the toggle drops to the bottom so the
-     user has somewhere to click to re-open. */
-  position: fixed; bottom: 54px; left: calc(var(--nav-w) + 10px); z-index: 51;
-  background: rgba(13, 17, 25, 0.86); backdrop-filter: blur(6px);
-  border: 1px solid var(--border);
-  color: var(--text-2); width: 26px; height: 22px;
-  border-radius: 3px; cursor: pointer;
-  font-size: 11px; line-height: 1;
-  display: flex; align-items: center; justify-content: center;
-  transition: color 140ms, border-color 140ms,
-              transform 240ms cubic-bezier(0.2, 0.8, 0.2, 1),
-              bottom 240ms cubic-bezier(0.2, 0.8, 0.2, 1),
-              left 240ms cubic-bezier(0.2, 0.8, 0.2, 1);
-}
-.footer-toggle:hover { color: var(--gold); border-color: var(--gold-soft); }
-body.nav-collapsed .footer-toggle { left: calc(var(--nav-w-collapsed) + 10px); }
-body.footer-collapsed .footer-toggle { transform: rotate(180deg); bottom: 10px; }
-footer .filter-group { display: flex; gap: 6px; align-items: center; }
-footer label {
-  letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-3); font-size: 10px;
-}
-footer select, footer input[type=text] {
-  background: var(--bg-2); border: 1px solid var(--border); color: var(--text-1);
-  padding: 4px 8px; border-radius: 3px; font: inherit; font-size: 11px; outline: none;
-}
-footer select:focus, footer input:focus { border-color: var(--gold-soft); }
-.active-filter {
-  padding: 3px 8px; border-radius: 999px; font-size: 10px;
-  background: var(--bg-2); border: 1px solid var(--gold-soft); color: var(--gold);
-  display: inline-flex; align-items: center; gap: 6px; letter-spacing: 0.06em;
-}
-.active-filter .x { cursor: pointer; color: var(--text-3); font-family: var(--mono); }
-.active-filter .x:hover { color: var(--gold); }
+/* FOOTER — 2026-05-27 — DELETED. The legacy <footer> + #footer-toggle were
+   prototype V01 chrome hardcoded into index.html. Rip-out commit dropped
+   both the HTML elements and every JS consumer (filter-search input
+   listener, btn-reset-filters click handler, footer-toggle click handler,
+   footer-status text setter). All associated CSS rules (footer { ... },
+   .footer-toggle, footer .filter-group, footer label, footer select,
+   .active-filter, body.footer-collapsed adjustments) deleted with them.
+   Per-view search/filter lives in each view's contextual pill or panel. */
 
 /* GRAPH STYLES */
 .sector-hull {
@@ -3794,7 +3732,7 @@ body.view-pantheon-v2 .zoom-meter { display: none !important; }
 .ph2-wire-legend-toggle:hover { color: var(--gold); border-color: var(--gold-soft); }
 .ph2-wire-legend-toggle.ph2-btn-on { color: var(--gold); border-color: var(--gold-soft); background: rgba(212,165,90,0.16); }
 body.nav-collapsed    .ph2-wire-legend-toggle { left: calc(var(--nav-w-collapsed) + 10px); }
-body.footer-collapsed .ph2-wire-legend-toggle { bottom: 42px; }
+/* body.footer-collapsed adjustment removed 2026-05-27 — footer gone. */
 
 .ph2-wire-legend-panel {
   position: fixed;
@@ -3814,7 +3752,7 @@ body.footer-collapsed .ph2-wire-legend-toggle { bottom: 42px; }
 }
 .ph2-wire-legend-panel.open { display: block; }
 body.nav-collapsed    .ph2-wire-legend-panel { left: calc(var(--nav-w-collapsed) + 10px); }
-body.footer-collapsed .ph2-wire-legend-panel { bottom: 72px; }
+/* body.footer-collapsed adjustment removed 2026-05-27 — footer gone. */
 .ph2-wl-head {
   font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase;
   color: var(--gold); margin-bottom: 8px;

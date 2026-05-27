@@ -130,13 +130,12 @@ document.getElementById('s-deities').textContent = DATA.counts.deity || 0;
 document.getElementById('s-themes').textContent  = DATA.counts.theme || 0;
 document.getElementById('s-edges').textContent   = EDGES.length;
 
-// family filter populator
-const famSel = document.getElementById('filter-family');
-FAMILIES.forEach(f => {
-  const o = document.createElement('option');
-  o.value = f.name; o.textContent = `${f.name} (${f.count})`;
-  famSel.appendChild(o);
-});
+// 2026-05-27 — legacy family-filter `<select>` populator removed along
+// with the hardcoded <footer>. The element was already a hidden <input>
+// (the dropdown UI was deleted 2026-05-17 per the index.html comment),
+// so the appendChild calls below were silently a no-op. Per-view family
+// filters live in the per-view UI (Forge Families ▾ checkbox menu,
+// Codex Religion + Codex pills, etc.).
 
 // state
 const STATE = {
@@ -1511,7 +1510,8 @@ VIEWS._legacyPantheon = {
     legend.selectAll('.lrow').on('click', function (ev) {
       const name = this.dataset.family;
       STATE.filter.family = (STATE.filter.family === name) ? '' : name;
-      document.getElementById('filter-family').value = STATE.filter.family;
+      // 2026-05-27 — legacy #filter-family hidden-input mirror removed
+      // with the footer rip-out. STATE.filter.family is the truth now.
       applyVisualFamilyFilter();
       if (typeof updateResetButton === 'function') updateResetButton();
     });
@@ -2408,7 +2408,7 @@ VIEWS.timeline = {
     `;
     document.getElementById('tl-family-filter').onchange = (ev) => {
       STATE.filter.family = ev.target.value;
-      document.getElementById('filter-family').value = STATE.filter.family;
+      // 2026-05-27 — legacy #filter-family mirror removed with footer.
       if (typeof updateResetButton === 'function') updateResetButton();
       setView('timeline');   // full re-render so datable + axis recompute against the new filter
     };
@@ -8701,7 +8701,7 @@ VIEWS.traditions = {
       const r = ev.target.closest('.row');
       if (r && r.dataset.family) {
         STATE.filter.family = r.dataset.family;
-        document.getElementById('filter-family').value = STATE.filter.family;
+        // 2026-05-27 — legacy #filter-family mirror removed with footer.
         setView('pantheon');
       }
     });
@@ -10564,50 +10564,28 @@ document.querySelectorAll('nav.side .item').forEach(el => {
     }
   });
 });
-let searchTimer;
-document.getElementById('filter-search').addEventListener('input', e => {
-  clearTimeout(searchTimer);
-  searchTimer = setTimeout(() => {
-    STATE.filter.search = e.target.value;
-    // V2 Pantheon: search hits a live hook instead of re-running setView
-    // (which would rebuild the entire sigma graph for every keystroke).
-    // Other views still use the legacy setView re-render path.
-    if (STATE.view === 'pantheon' && window._pantheonV2 && typeof window._pantheonV2._searchAndFocus === 'function') {
-      window._pantheonV2._searchAndFocus(e.target.value);
-    } else {
-      setView(STATE.view);
-    }
-    updateResetButton();
-  }, 220);
-});
-
-// Reset-all-filters button — clears family/type/search/theme in one click.
+// 2026-05-27 — legacy global #filter-search input + #btn-reset-filters
+// listeners removed along with the hardcoded <footer>. Per-view search
+// lives in each view now (Forge bottom-search, Codex Books picker,
+// Boards [Add node ▾]). STATE.filter.search is no longer driven from a
+// UI element; it remains as state in case a future per-view search wants
+// to mirror to it. updateResetButton() stays as a stub so any legacy
+// callers don't crash.
 function updateResetButton() {
-  const btn = document.getElementById('btn-reset-filters');
-  if (!btn) return;
-  const f = STATE.filter;
-  const active = !!(f.family || f.type || f.search || f.theme);
-  btn.classList.toggle('active', active);
+  // No-op stub — the global reset button (#btn-reset-filters) was deleted
+  // with the legacy footer. Any legacy code calling this is fine; it just
+  // does nothing now. Slot retained until the legacy view paths that call
+  // it (pantheon, documents, alchemy) are sunset or rewritten.
+  const f = (typeof STATE !== 'undefined' && STATE.filter) || null;
+  return f ? !!(f.family || f.type || f.search || f.theme) : false;
 }
-document.getElementById('btn-reset-filters').addEventListener('click', () => {
-  STATE.filter = { family: '', type: '', theme: '', search: '' };
-  document.getElementById('filter-family').value = '';
-  document.getElementById('filter-type').value = '';
-  document.getElementById('filter-search').value = '';
-  renderActiveTheme();
-  updateResetButton();
-  setView(STATE.view);
-});
-// Also re-wire the existing family/type dropdown handlers so they call updateResetButton
-['family', 'type'].forEach(k => {
-  document.getElementById('filter-' + k).addEventListener('change', updateResetButton);
-});
-
-// Footer collapse toggle — pops the filter bar down, restores it via the floating ▾ chip.
-const _footerToggleEl = document.getElementById('footer-toggle');
-if (_footerToggleEl) _footerToggleEl.addEventListener('click', () => {
-  document.body.classList.toggle('footer-collapsed');
-});
+// 2026-05-27 — the legacy event-listener wiring below has been deleted:
+//   - #btn-reset-filters click handler (cleared global filter state +
+//     called setView(STATE.view) for a full re-render)
+//   - filter-family / filter-type change handlers
+//   - #footer-toggle click handler (toggled body.footer-collapsed)
+// All three were tied to DOM IDs that no longer exist (footer ripped
+// out). The per-view search/filter controls are the replacement.
 
 // Panel toggles: keep the view state intact (no setView re-render). The sidebar is now
 // a FIXED overlay — toggling it neither resizes nor re-layouts the canvas. The detail
@@ -10813,5 +10791,8 @@ window.addEventListener('popstate', function () {
     }
   } catch (e) {}
 });
-document.getElementById('footer-status').textContent =
-  `gen ${(DATA.generated_at_utc || '').slice(0, 10)} · build_data.py to refresh`;
+// 2026-05-27 — #footer-status was a legacy DOM element inside the
+// hardcoded <footer> showing `gen YYYY-MM-DD · build_data.py to refresh`.
+// Footer removed; status text dropped. If a future dev-only readout of
+// the data generation timestamp is needed it lives in the Dev Panel.
+

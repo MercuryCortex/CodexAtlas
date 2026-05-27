@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=EB+Garamond:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&family=Noto+Serif+Hebrew:wght@400;700&family=Noto+Sans+Egyptian+Hieroglyphs&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="_assets/vendor/maplibre/maplibre-gl.css?v=5.24.0" />
-<link rel="stylesheet" href="src/styles/app.css?v=20260527-boards-v2-skeleton-clean" />
+<link rel="stylesheet" href="src/styles/app.css?v=20260527-rip-legacy-footer" />
 </head>
 <body class="nav-hidden detail-collapsed footer-collapsed">
 <!-- Perf HUD removed from inline script 2026-05-28 — moved into
@@ -238,27 +238,14 @@
   </div>
 </aside>
 
-<button class="footer-toggle" id="footer-toggle" title="Collapse / expand the filter bar" aria-label="Toggle filter bar">▾</button>
+<!-- 2026-05-27 — legacy <footer> + #footer-toggle deleted.
+     Was prototype V01 chrome: global "title / id / theme..." search
+     input + ↺ reset + hidden filter-family/filter-type stubs +
+     "gen YYYY-MM-DD · build_data.py to refresh" status. The Atlas-era
+     app uses per-view search (Forge bottom-search, Codex Books picker,
+     Boards [Add node ▾]) — the global filter bar is replaced by view-
+     local controls. JS consumers stripped from app.js in the same commit. -->
 
-<footer>
-  <!-- Family + Type dropdowns removed 2026-05-17 — the V2 toolbar carries
-       both (mode dropdown = type, Families ▾ checkbox menu = family).
-       Hidden inputs retained so legacy JS that reads filter-family /
-       filter-type doesn't error out. -->
-  <input type="hidden" id="filter-family" value="" />
-  <input type="hidden" id="filter-type"   value="" />
-  <div class="filter-group">
-    <label>search</label>
-    <input type="text" id="filter-search" placeholder="title / id / theme..." style="width: 280px" />
-  </div>
-  <div class="filter-group" id="active-theme-wrap" style="display:none"></div>
-  <div class="filter-group">
-    <button id="btn-reset-filters" class="btn-reset" title="Clear search">↺ reset</button>
-  </div>
-  <div class="filter-group" style="margin-left:auto; color: var(--text-3)">
-    <span id="footer-status"></span>
-  </div>
-</footer>
 
 <div id="missing-data">
   <h2>No data loaded</h2>
@@ -329,7 +316,7 @@
 <script src="src/data/patterns.js?v=20260516-patterns-tab"></script>
 <script src="src/data/observations.js?v=20260516-observations-tab"></script>
 <script src="src/data/chains.js?v=20260516-chains-2"></script>
-<script src="src/js/app.js?v=20260527-boards-v2-views-boards"></script>
+<script src="src/js/app.js?v=20260527-rip-legacy-footer-consumers"></script>
 <!-- Phase 22-B (2026-05-23) — app-shell top-bar pill wiring.
      Loads AFTER app.js so window.STATE + window.setView are defined.
      Self-installing IIFE; exposes window._appPill for debug. -->
