@@ -1,4 +1,23 @@
-# Session HANDOFF — 2026-05-27 (Codex Corpora Blitz)
+# Session HANDOFF — 2026-05-28 (EMERGENCY at bottom of session — outgoing agent terminated for 3-strikes pattern)
+
+> **🚨 P0 — READ THIS FIRST: `AUDIT/2026-05-28-EMERGENCY-legacy-prototype-contamination.md`.**
+> The legacy prototype V01 chrome (footer, nav-hub menu with 32 legacy views including `◯ Pantheon` marked active, side `<nav>` duplicate, `#style-menu` visible, `#themes-menu` off-screen-but-in-DOM, legacy detail rail, alchemy board JS still loaded) is sharing the same `index.html` / `app.js` / `app.css` as the V2 app. **The previous agent (me) hit three strikes on legacy-contamination this session** — Boards V2 step 2 shipped with legacy aesthetic, the footer rip-out was incomplete twice, and the `#nav-hub-menu` was entirely missed in two "everything loaded" inventories. **Per severity-dogma cardinal, that's a terminate-and-fresh-agent call.** John's directive: "i want it to be able to check because we need to check the work there BUT I DONT WANT IT as the BASE OF OUR FOUNDATIONS SO 100% GUARANTEE NOT TO CONTAMINATE."
+>
+> **Fresh agent must:**
+> 1. Read the emergency doc end-to-end.
+> 2. Read `memory/feedback_dont_copy_legacy_prototype_aesthetic_2026-05-27.md` (cardinal).
+> 3. Read `memory/feedback_severity_dogma_2026-05-24.md` (the rule that terminated the outgoing agent).
+> 4. Do live DOM walks on every V2 view (Forge, Codex, Boards) — produce a real inventory, not a code-reading guess.
+> 5. Brief John on the 4 architectural options (A: separate index.html files · B: feature-flag gate · C: strict view-class scoping · D: archive into _legacy/). The outgoing agent's intuition is A or D — but it's an opinion. Get John's pick.
+> 6. Lock the strategy in a new audit doc + execute.
+>
+> **BOARDS V2 steps 3–10 are PAUSED** until the contamination question is resolved. Steps 1 + 2 shipped + 2 fix-ups (last clean commit `a06fef9`).
+>
+> Below this block is the existing handoff from earlier in the session (Codex Corpora Blitz, etc.) — still accurate for the Atlas Codex work, which is complete and not blocked.
+
+---
+
+# Session HANDOFF — 2026-05-27 (Codex Corpora Blitz — pre-emergency context)
 
 > **⚠️ READ THIS BLOCK FIRST.** Long session that took the Atlas Codex from **1 fully reader-ready religion (Bahá'í 2/2)** to **31/42 SCRIPTURE_CORPORA rows fully reader-ready** in 7 commits. Reader UX also got a v2 polish pass per John's feedback: the big italic intro disclaimer is now a collapsed `<details>` at the bottom; verse body is sans-serif matching the rest of the forge chrome; topbar is line-clamped so long titles + corpus labels don't balloon. **All gates green throughout — `linkcheck` baseline 489/621 held across every commit, 0 lint errors, build_data 4746/21757.**
 >
