@@ -12342,6 +12342,112 @@ SCRIPTURE_TEXTS['hadith-bukhari-selected'] = {
   ]
 };
 
+// ── MANICHAEAN — COPTIC PSALMS OF HERACLEIDES ────────────────────────────────
+SCRIPTURE_TEXTS['manichaean-psalms'] = {
+  id:         'manichaean-psalms',
+  title:      'Manichaean Coptic Psalm-Book — Psalms of Heracleides',
+  shortTitle: 'Manichaean Psalms',
+  corpus:     'Manichaean · Coptic Psalm-Book (Medinet Madi)',
+  tradId:     'tradition-manichaeism',
+  date:       'c. 3rd–4th CE (Mani d. 274 CE); Coptic MS recovered 1929 at Medinet Madi, Egypt',
+  docNode:    'phase-3-033-book-of-giants-qumran-manichaean', // docNode: closest existing Manichaean scripture-document; flagged for Lane A — no dedicated Coptic-psalmbook node yet.
+  language:   'Coptic (translation from Syriac original) · Allberry 1938 English',
+  translations: [
+    { id: 'allberry', label: 'Allberry 1938 (T1, foundational scholarly edition)',
+      note: 'Charles R. C. Allberry, A Manichaean Psalm-Book Part II (1938) — the standard English edition of the Coptic psalms, prepared from the Chester Beatty / Berlin papyri' },
+    { id: 'gardner',  label: 'Gardner 2004 (T1 updated)',
+      note: 'Iain Gardner, The Kephalaia of the Teacher — updated readings of the Coptic Manichaean corpus' },
+    { id: 'coptic',   label: 'Coptic (original)' },
+  ],
+  intro: 'The Manichaean Coptic Psalm-Book — discovered 1929 at Medinet Madi in Egypt and published by Allberry in 1938 — is one of only two substantial original Manichaean texts to survive (the other being the Kephalaia). The Psalms of Heracleides preserved here were composed in Syriac by Mani (216-274 CE) or his earliest disciples, translated into Coptic for the Egyptian Manichaean community, and buried for ~1500 years until their accidental recovery. Mani founded the most missionary religion of late antiquity — Manichaeism spread from Persia to Egypt, North Africa, Rome, Central Asia, and as far as Tang China by the 8th century. Augustine was a Manichaean for nine years before converting to Christianity. The Manichaean cosmology is the most radically dualist of any major religion: two co-eternal kingdoms (Light and Darkness) became mingled through a primordial catastrophe; salvation is the gradual liberation of the trapped Light-particles from matter. Every aspect of Mani\'s teaching — the cosmic war, the eating of Light through vegetarian food, the divisive sexual ethic — derives from this metaphysical dualism. The psalms below show the personal-devotional face of the system: cries of the trapped soul, longing for return, gratitude for the Father of Light\'s rescue mission.',
+  crossTradition: [
+    { label: 'Mandaean Ginza Rabba — sibling Gnostic dualism', textId: 'ginza-rabba',
+      note: 'Mani grew up in a Mesopotamian Jewish-Christian baptismal community (the Elchasaites) closely related to or identical with the proto-Mandaeans. His Light/Darkness dualism is the closest religious-historical sibling to Mandaean cosmology. The Coptic Psalms and the Ginza Rabba share specific images (the soul as captive Light, the call from the Father of Light, the return journey through the spheres) that point to direct contact, not just typological parallel.' },
+    { label: 'Apocryphon of John — Sethian Gnostic cosmogony', textId: 'apocryphon-of-john',
+      note: 'The Sethian Apocryphon and the Manichaean Psalms share the same architectural plot: divine fullness → a primordial wrong (Sophia\'s error / mingling of Light and Dark) → captive divine sparks → savior mission → eventual restoration. Mani knew Sethian and Valentinian Gnostic literature directly.' },
+    { label: 'Zoroastrian Yasna — cosmic Light/Dark dualism', textId: 'yasna-30',
+      note: 'The Iranian dualism of Ohrmazd (Light) and Ahriman (Darkness) is the religious-cultural matrix in which Mani\'s cosmology was formed. Manichaeism is sometimes described as Christianity translated into Iranian dualist categories — though Mani himself claimed to fulfill BOTH Christianity and Zoroastrianism (and Buddhism, and the religion of "the ancients").' },
+    { label: 'Pistis Sophia — the captive soul calling on its source', textId: 'apocryphon-of-john',
+      note: 'The Pistis Sophia\'s lengthy "13 repentances" of Sophia — captive in the lower aeons, crying out to the Light — provides the closest Christian-Gnostic literary parallel to the Manichaean psalms\' soul-laments. Both texts dramatize the same theological situation: the divine self trapped, calling, awaiting rescue.' },
+    { label: 'Cathar / Albigensian dualism', node: 'tradition-catharism',
+      note: 'The Cathars (12th-14th c. Languedoc) were the medieval European continuation of Manichaean cosmology, transmitted via Bulgarian Bogomils via Paulicians via Manichaean missionaries. Catholic inquisitors hunting "Manichees" in 1200s Provence were not entirely wrong — the cosmological inheritance is genuine.' },
+  ],
+  sections: [
+    {
+      heading: 'I. The Cry of the Soul in Exile',
+      verses: [
+        {
+          ref: 'Psalms of Heracleides 187:6–28',
+          text: 'I have wept and wandered. I went out from my Father\'s house and lost myself in the world. I sat among the strangers, I ate their bread, and they did not know me. My garment of Light I gave for a garment of darkness. My crown of joy I exchanged for the body of corruption. But I remembered, I remembered the Father of Light, the place where I came from. I sent up my voice — a single cry across the worlds — and the Father heard me. The Beloved came to meet me, called me by my true name. He gave me back the garment, the crown, the kiss of the kingdom. I am no longer a stranger; I am the son of the Father of Light.',
+          textVersions: {
+            allberry: 'I have wept much, I have wandered. I went out from the house of my Father; I sat down in a strange land. The garment of Light I gave for a garment of darkness. I sent up my cry to the Father of Light, and the Father sent his Beloved to meet me, and he gave me back my crown.',
+            gardner:  'I wept and I wandered far. From my Father\'s house I went forth and dwelt among strangers; the bread I ate was theirs, the clothing I wore was theirs. The radiant garment of my own I exchanged for one of darkness. But the memory of the Father of Light came to me. I cried out, and he sent the Beloved-One to me, who clothed me again in the robe of Light.',
+            coptic:   'ⲁⲓⲣⲓⲙⲉ ⲁⲓⲡⲗⲁⲛⲁ· ⲁⲓⲉⲓ ⲉⲃⲟⲗ ϩⲙ ⲡⲏⲓ ⲙⲡⲁⲓⲱⲧ· ⲁⲓⲥⲱⲣⲙ ϩⲙ ⲡⲕⲟⲥⲙⲟⲥ',
+          },
+          entities: [
+            { word: 'I went out from my Father\'s house and lost myself in the world', node: 'tradition-manichaeism', type: 'concept',
+              note: 'The Manichaean psalm reuses the structural plot of the Hymn of the Pearl (Acts of Thomas) — the king\'s son sent to Egypt to retrieve the pearl, who forgets his identity, eats Egyptian food, falls into oblivion, and is awakened by a letter from his father. The Hymn of the Pearl is itself a 2nd-3rd CE Syriac Gnostic poem, almost certainly known to Mani directly. The mythologem is older still: in the Vedic tradition, the Atman is described as having "entered into" the body and forgetting itself; in Plato\'s Phaedrus, the soul falls from the heavenly chariot procession and grows wings only with memory. Across Indian, Greek, and Levantine sources of c. 500 BCE-300 CE, the "soul as exile + forgetting + recall + return" structure recurs as a near-universal religious narrative.',
+              parallels: [
+                { label: 'Hymn of the Pearl (Acts of Thomas 108-113)', node: 'tradition-catharism',
+                  note: 'The Acts of Thomas\'s Hymn of the Pearl — composed in Syriac, c. 2nd-3rd CE — is the direct literary parent of the Manichaean exile-psalm. The young prince forgets his royal origin in Egypt, eats Egyptian food, sleeps, and is awakened by a letter from his father reminding him: "Remember that you are a son of kings."' },
+                { label: 'Luke 15:11-32 — the Prodigal Son', textId: 'luke-15-prodigal',
+                  note: 'The Lukan Prodigal Son parable — younger son leaves the father\'s house, falls into degradation, comes to himself, returns, is welcomed — is the canonical Gospel form of the same exile-and-return narrative. The structural identity with the Manichaean psalm (and the Hymn of the Pearl) is striking; either common Levantine narrative roots or Luke was working a then-current religious idiom.' },
+                { label: 'Plotinus Enneads V.1.1 — the soul\'s forgetting of its source', textId: 'plotinus-enneads',
+                  note: 'Plotinus describes the soul as fallen from the One into matter through forgetting, and called back by a memory of its source. Same architectural plot as the Manichaean psalm and the Prodigal Son — the Greco-Roman philosophical version of the exile-and-return mythologem.' },
+                { label: 'Chandogya 6.2 — tat tvam asi (forgotten identity recalled)', textId: 'chandogya-621',
+                  note: 'The Upanishadic recovery — "that thou art" as the recognition of an identity that was always the case but was forgotten — is the Indian form of the same recall-and-return structure: the soul does not become divine; it remembers that it always was.' },
+              ]
+            },
+            { word: 'the Beloved came to meet me, called me by my true name', node: 'tradition-manichaeism', type: 'concept',
+              note: 'The "Beloved" (Coptic: Pmerit) is the Manichaean designation for the savior — sometimes identified as Jesus the Splendor, sometimes as the Twin / Syzygos who appeared to Mani himself. The motif of being "called by your true name" is technical in Gnostic literature: it means recognized as belonging to the divine fullness, identified by your eternal pre-incarnation identity. The parallel to Revelation 2:17 ("I will give him a white stone, with a new name written on it which no one knows except the one who receives it") is structural — both texts assume that each soul has a true name in the divine register that is only made known at the moment of recognition.',
+              parallels: [
+                { label: 'Revelation 2:17 — the new name on the white stone', textId: 'revelation-12',
+                  note: 'The Johannine apocalyptic image of the secret name given to the overcomer parallels the Manichaean true-name motif: each soul has a divine identity that is restored to it at the moment of recognition. Both texts emerged from the same Hellenistic-Jewish mystical matrix.' },
+                { label: 'John 10:3-4 — the sheep know his voice; he calls them by name', textId: 'john-15-vine',
+                  note: 'The Good Shepherd discourse — "he calls his own sheep by name and leads them out... and his sheep follow him because they know his voice" — is the Gospel\'s lyric form of the same Gnostic recognition-by-name structure.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'II. The Light Particles in All Things',
+      verses: [
+        {
+          ref: 'Psalms of Heracleides 191:1–10 (the Light in matter)',
+          text: 'There is a light hidden in every thing. In the bread that I eat, in the fruit of the tree, in the cup of water — Light is captive there, waiting for me. When I eat with purified intention, I free the Light. When I bless the food before I eat, the Light remembers itself in me. The whole world is full of trapped Light, and the meal of the Elect is one of the means of its release.',
+          textVersions: {
+            allberry: 'Light is in every thing. The cucumber has Light, the grain of wheat has Light, the cup of clear water has Light. When the Elect eats with sanctification, the Light is released from its prison and returns to its source.',
+            gardner:  'In every plant, in every fruit, in every grain, there is captive Light. The Elect, by eating with right contemplation, become the channels through which this scattered Light is gathered back to the Father.',
+            coptic:   'ⲟⲩⲟⲉⲓⲛ ⲡⲉⲧϣⲟⲟⲡ ϩⲛ ϩⲱⲃ ⲛⲓⲙ',
+          },
+          entities: [
+            { word: 'There is a light hidden in every thing', node: 'tradition-manichaeism', type: 'principle',
+              note: 'The "scattered Light" doctrine is Manichaeism\'s most distinctive theological move. The cosmos as we experience it is a battlefield where particles of divine Light became mingled with darkness during the primordial catastrophe. Plants, fruits, vegetables — especially "luminous" ones like cucumbers and melons — contain higher concentrations of trapped Light. The Manichaean Elect (the strict-discipline inner caste) liberated this Light through ritual eating: the Light was released through their digestion, returned upward to the moon and sun (which acted as collection points for Light returning to its source). Meat, alcohol, and wine were forbidden — meat because killing animals scattered Light further; alcohol because it deepened the soul\'s sleep. The whole Manichaean dietary system is a soteriological technology for cosmic light-recovery. The parallel to the Kabbalistic doctrine of nitzotzot (the 288 sparks of holy light scattered through the broken vessels) is structural — both systems read everyday life as an exercise in releasing trapped divine particles.',
+              parallels: [
+                { label: 'Lurianic Kabbalah — nitzotzot (the scattered sparks)', textId: 'zohar-ein-sof',
+                  note: 'Isaac Luria\'s 16th-century doctrine of shevirat ha-kelim (the breaking of the vessels) and the 288 nitzotzot (sparks) scattered through creation that the righteous must gather (tikkun) is structurally identical to the Manichaean scattered-Light doctrine. The historical line of influence may run Manichaean → Cathar / Bogomil → medieval Jewish mystical → Lurianic, or both traditions independently developed the same image from shared Near-Eastern substrate.' },
+                { label: 'Gospel of Thomas L.77 — split the wood, I am there; lift the stone, I am there', textId: 'gospel-of-thomas',
+                  note: 'Thomas L.77: "I am the light that is above them all. I am the all. The all came forth from me, and the all attained to me. Split a piece of wood, and I am there. Lift up the stone, and you will find me there." The Thomasine "light in all things" is the Coptic-Christian sibling to the Manichaean scattered-Light doctrine; both texts emerged from the same Egyptian Gnostic milieu in the early centuries CE.' },
+              ]
+            },
+            { word: 'the meal of the Elect is one of the means of its release', node: 'tradition-manichaeism', type: 'principle',
+              note: 'Manichaean society was strictly two-tiered: the Elect (the inner caste, called perfecti by later Latin sources, also Cathars used the same term for their inner order) lived under full dietary discipline and ritual purity, releasing Light through their meals; the Hearers (the lay tier) supported the Elect by farming, harvesting, and bringing the "luminous" foods to them — accumulating merit by association even though Hearers themselves could eat meat, marry, drink wine. This caste structure migrated wholesale into the Cathar church 900 years later (perfecti / credentes) and survived into Bogomil Bulgaria as well. Few religious-economic structures have proven more durable than the Manichaean Elect/Hearer division — its echoes reach down into modern monastic Christianity and the laity/clergy distinction.',
+              parallels: [
+                { label: 'Cathar perfecti / credentes — the medieval continuation', node: 'tradition-catharism',
+                  note: 'The Cathar division between perfecti (the consoled, vegetarian, celibate inner order) and credentes (lay believers who took the consolamentum only at death) is the Manichaean Elect/Hearer structure transmitted across 900 years through the Bogomil-Paulician line.' },
+                { label: 'Buddhist sangha / lay community', textId: 'dhammapada-1',
+                  note: 'The Buddhist bhikkhu/upāsaka (monk/lay) distinction has the same two-tier soteriological structure as Manichaean Elect/Hearer: a renounced inner order practicing the discipline fully, supported materially by a lay community that accumulates merit by support. Mani knew Buddhist religious organization directly from Sasanian-era Central Asian contact and modeled his community on it.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
 // ── MANDAEAN — GINZA RABBA (THE GREAT TREASURE) ──────────────────────────────
 SCRIPTURE_TEXTS['ginza-rabba'] = {
   id:         'ginza-rabba',
