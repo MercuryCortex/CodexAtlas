@@ -3238,17 +3238,42 @@
       return (v.textVersions && v.textVersions[trId]) ? v.textVersions[trId] : (v.text || '');
     }
     function _annotate(text, entities) {
+      // 2026-05-27 — architectural fix for overlapping-entity HTML
+      // breakage. Previous implementation applied each entity's regex
+      // to the running `out` string, which (because the inserted
+      // `<mark>` HTML carries the matched word twice — once in the
+      // visible text and once in data-word="...") allowed a later
+      // shorter entity to match INSIDE an earlier longer entity's
+      // mark tag, breaking the HTML. Symptom: john-8 rendered
+      // `data-word="before <mark>Abraham</mark> was, I AM"` with a
+      // stray `">` leaking into the visible text.
+      //
+      // Fix: split the running string into ALREADY-MARKED segments
+      // (which we leave alone) and PLAIN segments (which we annotate),
+      // re-joining after each entity. Apply entities in length-
+      // descending order so the longest match wins at any position.
       if (!entities || !entities.length) return _esc(text).replace(/\n/g, '<br>');
       let out = _esc(text);
       [...entities].sort((a, b) => b.word.length - a.word.length).forEach(en => {
         if (!en || !en.word) return;
         const re = new RegExp('\\b(' + _escRe(en.word) + ')\\b', 'g');
-        out = out.replace(re, function (m) {
+        const wrap = function (m) {
           return '<mark class="forge-reader-ent"' +
                  ' data-node="' + _esc(en.node || '') + '"' +
                  ' data-type="' + _esc(en.type || '') + '"' +
                  ' data-word="' + _esc(en.word) + '">' + m + '</mark>';
-        });
+        };
+        // Split `out` into alternating plain + mark segments. The
+        // capture group keeps the mark tags as separators.
+        const parts = out.split(/(<mark class="forge-reader-ent"[^>]*>[^<]*<\/mark>)/g);
+        for (let i = 0; i < parts.length; i++) {
+          // Even indices = plain text BETWEEN marks; odd indices =
+          // existing mark tags (leave them alone).
+          if (i % 2 === 0) {
+            parts[i] = parts[i].replace(re, wrap);
+          }
+        }
+        out = parts.join('');
       });
       return out.replace(/\n/g, '<br>');
     }
@@ -4288,9 +4313,14 @@
     // prevents repeat-firing on every observer tick.
     local._codexFilterAppliedFor = local._codexFilterAppliedFor || null;
     function tryApplyFilter() {
-      if (!state.corpusId) return;
+      // 2026-05-27 — fire on either religion-only OR corpus-picked
+      // state. Previously this latch only ran when corpusId was set,
+      // which left a page-reload-with-religion-only state showing
+      // the unfiltered SCRIPTURE_IDS view (e.g. Heart Sutra still
+      // visible when religion=Christianity post-reload).
+      if (!state.religionId && !state.corpusId) return;
       if (!local.mode || local.mode.id !== 'scriptures') return;
-      const key = state.corpusId + '|' + (local.mode.id || '');
+      const key = (state.corpusId || ('religion:' + state.religionId)) + '|' + (local.mode.id || '');
       if (local._codexFilterAppliedFor === key) return;
       local._codexFilterAppliedFor = key;
       if (typeof rebuildForMode === 'function') {

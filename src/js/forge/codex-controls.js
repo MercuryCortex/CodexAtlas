@@ -905,9 +905,14 @@
     // prevents repeat-firing on every observer tick.
     local._codexFilterAppliedFor = local._codexFilterAppliedFor || null;
     function tryApplyFilter() {
-      if (!state.corpusId) return;
+      // 2026-05-27 — fire on either religion-only OR corpus-picked
+      // state. Previously this latch only ran when corpusId was set,
+      // which left a page-reload-with-religion-only state showing
+      // the unfiltered SCRIPTURE_IDS view (e.g. Heart Sutra still
+      // visible when religion=Christianity post-reload).
+      if (!state.religionId && !state.corpusId) return;
       if (!local.mode || local.mode.id !== 'scriptures') return;
-      const key = state.corpusId + '|' + (local.mode.id || '');
+      const key = (state.corpusId || ('religion:' + state.religionId)) + '|' + (local.mode.id || '');
       if (local._codexFilterAppliedFor === key) return;
       local._codexFilterAppliedFor = key;
       if (typeof rebuildForMode === 'function') {

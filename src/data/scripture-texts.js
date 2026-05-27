@@ -16533,6 +16533,358 @@ SCRIPTURE_TEXTS['baal-cycle-1'] = {
   ]
 };
 
+// ── JOHN 2 — THE FIRST SIGN AT CANA (WATER INTO WINE) ────────────────────────
+SCRIPTURE_TEXTS['john-2'] = {
+  id:         'john-2',
+  title:      'John 2 — The First Sign at Cana, and the Cleansing of the Temple',
+  shortTitle: 'John 2 (Cana)',
+  corpus:     'New Testament · Gospel of John',
+  tradId:     'tradition-early-christianity',
+  date:       '~90–110 CE (the Fourth Gospel\'s composition window, Ephesus or another Asia-Minor centre per the dominant scholarly consensus; the underlying Johannine-community traditions are older)',
+  docNode:    'phase-3-020-gospel-of-john',
+  language:   'Koine Greek (original; Nestle-Aland NA28) · NRSV 1989 English',
+  translations: [
+    { id: 'nrsv',  label: 'New Revised Standard Version 1989 (T1, ecumenical)', note: 'Default scholarly Anglophone reference.' },
+    { id: 'brown', label: 'Raymond E. Brown 1966 (Anchor Bible 29, John I-XII)', note: 'Brown\'s two-volume John commentary is the canonical English-language scholarly reference for the Fourth Gospel.' },
+    { id: 'greek', label: 'Koine Greek (Nestle-Aland NA28)' },
+  ],
+  intro: 'John 2 narrates the Fourth Gospel\'s first of seven "signs" (sēmeia) — the inaugural miracle at the wedding at Cana of Galilee — followed by the Temple-cleansing scene that John places at the beginning of Jesus\' ministry (where the Synoptics place it at the end). The Cana wedding (vv. 1–11) is theologically dense beyond its narrative simplicity: the abundance of wine (six stone water-jars, each 20–30 gallons) signals the eschatological-messianic banquet of Isaiah 25:6 and Amos 9:13; the choice of water-jars for Jewish ritual purification signals the displacement of one purification system by another; the mother of Jesus opens and frames the scene without ever being named in the Fourth Gospel (she is always "the mother of Jesus" or "woman"). Raymond Brown\'s Anchor Bible 1966 commentary, the canonical scholarly reference, treats the Cana scene as a deliberate "sign" in the Johannine technical sense — a physical event that reveals the deeper theological reality of Jesus\' identity. The hour-vocabulary that runs through the entire gospel ("my hour has not yet come") is inaugurated here in v. 4, framing the subsequent passion narrative. The Temple cleansing in vv. 13–22 is repositioned theologically: where Mark/Matthew/Luke place it as the trigger for the Sanhedrin\'s arrest of Jesus during Passion Week, John places it programmatically at the start, signalling that Jesus\' entire ministry is a confrontation with the Temple cultus.',
+  crossTradition: [
+    { label: 'John 1 — the Logos prologue this chapter opens out of', textId: 'john-1',
+      note: 'John 1\'s Logos-prologue + the calling of the first disciples flows directly into John 2\'s Cana wedding — "on the third day" (v. 1) counted from the calling of Philip and Nathanael. Reading the two chapters together is the standard scholarly entry-point to Johannine narrative structure: the Logos-prologue establishes the cosmological frame; Cana is the first concrete manifestation of the Logos-made-flesh.' },
+    { label: 'Peshitta John 1 — the Syriac reception of the same Logos prologue', textId: 'peshitta-john-1',
+      note: 'The Syriac Peshitta\'s rendering of the Johannine Logos prologue and Cana narrative routes the Greek-Christian theological vocabulary through Aramaic-Christian Meltā / aggen terminology. Reading the Syriac and Greek of John 2 together documents the same translation-as-theology dynamic that the Peshitta entry analyses for John 1.' },
+    { label: 'Isaiah 25 — the messianic-banquet prophecy John alludes to', textId: 'isaiah-45',
+      note: 'Isaiah 25:6 ("On this mountain the LORD of hosts will make for all peoples a feast of rich food, a feast of well-aged wines") and Amos 9:13 ("the mountains shall drip sweet wine") establish the messianic-eschatological-banquet vocabulary that John\'s Cana sign deliberately invokes. The abundance of wine at the wedding is not narrative colour but theological argument: the messianic age has begun.' },
+  ],
+  sections: [
+    {
+      heading: 'I. The First Sign — Water into Wine',
+      verses: [
+        {
+          ref: 'John 2:7–11 (NRSV)',
+          text: 'Jesus said to the servants, "Fill the jars with water." And they filled them up to the brim. He said to them, "Now draw some out, and take it to the chief steward." So they took it. When the steward tasted the water that had become wine, and did not know where it came from (though the servants who had drawn the water knew), the steward called the bridegroom and said to him, "Everyone serves the good wine first, and then the inferior wine after the guests have become drunk. But you have kept the good wine until now." Jesus did this, the first of his signs, in Cana of Galilee, and revealed his glory; and his disciples believed in him.',
+          textVersions: {
+            nrsv:  'Jesus said to the servants, "Fill the jars with water." And they filled them up to the brim. He said to them, "Now draw some out, and take it to the chief steward." So they took it. When the steward tasted the water that had become wine, the steward called the bridegroom and said to him, "Everyone serves the good wine first, and then the inferior wine after the guests have become drunk. But you have kept the good wine until now." Jesus did this, the first of his signs, in Cana of Galilee, and revealed his glory; and his disciples believed in him.',
+            greek: 'λέγει αὐτοῖς ὁ Ἰησοῦς· γεμίσατε τὰς ὑδρίας ὕδατος. καὶ ἐγέμισαν αὐτὰς ἕως ἄνω. καὶ λέγει αὐτοῖς· ἀντλήσατε νῦν καὶ φέρετε τῷ ἀρχιτρικλίνῳ. οἱ δὲ ἤνεγκαν. ταύτην ἐποίησεν ἀρχὴν τῶν σημείων ὁ Ἰησοῦς ἐν Κανὰ τῆς Γαλιλαίας καὶ ἐφανέρωσεν τὴν δόξαν αὐτοῦ, καὶ ἐπίστευσαν εἰς αὐτὸν οἱ μαθηταὶ αὐτοῦ.',
+          },
+          entities: [
+            { word: 'the first of his signs', node: 'jesus-of-nazareth', type: 'sign-vocabulary',
+              note: 'σημεῖον (sēmeion) — "sign" — is the Fourth Gospel\'s technical vocabulary for the seven miracles it narrates (Cana water-into-wine 2; royal official\'s son 4:46; Bethesda 5; feeding 5,000 6:1; walking on water 6:16; man born blind 9; raising of Lazarus 11). The Synoptic Gospels use dynameis ("acts of power"); John\'s sēmeia framework treats each miracle as a theological pointer to Jesus\' identity rather than as raw display of power. Raymond Brown 1966 organises the entire first half of his John commentary (the "Book of Signs") around these seven episodes.',
+              parallels: [
+                { label: 'John 11 — the seventh and climactic sign (raising of Lazarus)', textId: 'john-11',
+                  note: 'The Lazarus narrative is the seventh and climactic sign in the Johannine sequence — Jesus\' raising of a dead man as the immediate trigger for the Sanhedrin\'s decision to kill him (John 11:53). Reading Cana (first sign) and Lazarus (seventh sign) as bookends of the Book of Signs reveals the structural logic of the Fourth Gospel.' },
+                { label: 'Isaiah 25 — the messianic banquet the Cana sign invokes', textId: 'isaiah-45',
+                  note: 'The messianic-banquet vocabulary of Isaiah 25:6 + Amos 9:13 is the Hebrew Bible substrate Cana invokes: the abundance of wine signals that the eschatological banquet has begun.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+// ── JOHN 4 — THE SAMARITAN WOMAN AT THE WELL ─────────────────────────────────
+SCRIPTURE_TEXTS['john-4'] = {
+  id:         'john-4',
+  title:      'John 4 — The Samaritan Woman at the Well',
+  shortTitle: 'John 4 (Samaritan Woman)',
+  corpus:     'New Testament · Gospel of John',
+  tradId:     'tradition-early-christianity',
+  date:       '~90–110 CE (the Fourth Gospel\'s composition window)',
+  docNode:    'phase-3-020-gospel-of-john',
+  language:   'Koine Greek (original; Nestle-Aland NA28) · NRSV 1989 English',
+  translations: [
+    { id: 'nrsv',  label: 'New Revised Standard Version 1989 (T1, ecumenical)', note: 'Default scholarly Anglophone reference.' },
+    { id: 'brown', label: 'Raymond E. Brown 1966 (Anchor Bible 29, John I-XII)', note: 'Brown\'s John I-XII volume treats the Samaritan-woman scene as one of the most-densely-symbolic encounters in the Fourth Gospel.' },
+    { id: 'greek', label: 'Koine Greek (Nestle-Aland NA28)' },
+  ],
+  intro: 'John 4 narrates Jesus\' encounter with a Samaritan woman at Jacob\'s well in Sychar — one of the most theologically and sociologically transgressive scenes in the New Testament. Three social boundaries are crossed in a single conversation: Jew/Samaritan (the two communities had not been on speaking terms for centuries — "Jews do not share things in common with Samaritans" v. 9); male/female (a rabbi did not publicly converse with a woman, much less a woman of suspect marital history); ritual purity (the woman is at the well at noon, the unusual hour for someone marginal). The chapter\'s theological argument runs across three movements: the "living water" exchange that re-frames the Samaritan well-tradition into a Christological metaphor (vv. 7–15); the "true worship" passage in which Jesus declares that "the hour is coming when neither on this mountain [Gerizim] nor in Jerusalem will you worship the Father... God is spirit, and those who worship him must worship in spirit and truth" (vv. 19–24) — perhaps the most theologically radical sentence in the Fourth Gospel about the displacement of place-specific cultic worship by a universal spiritual worship; and the woman\'s missionary movement, becoming the first explicit evangelist in John (vv. 28–30, 39–42). Modern feminist-and-postcolonial Johannine scholarship (Sandra Schneiders, Teresa Okure) treats the Samaritan-woman encounter as one of the most consequential passages in the New Testament for the early-Christian community\'s self-understanding as crossing established religious-social boundaries.',
+  crossTradition: [
+    { label: 'Samaritan Pentateuch — the alternative-canonical context the woman inhabits', textId: 'samaritan-pentateuch-decalogue',
+      note: 'The Samaritan religious community holds the Pentateuch alone (not the Prophets + Writings) and worships at Mount Gerizim rather than Jerusalem — exactly the dispute the woman raises with Jesus in v. 20 ("Our ancestors worshipped on this mountain, but you say that the place where people must worship is in Jerusalem"). Reading John 4 alongside the Samaritan Pentateuch tradition reveals the depth of the religious-cultural divide Jesus is bridging in the conversation.' },
+    { label: 'John 7 — the parallel "living water" Tabernacles discourse', textId: 'john-6-bread-of-life',
+      note: 'The "living water" vocabulary of John 4 returns in John 7:37–39 ("On the last day of the festival... Jesus stood and cried out, \'Let anyone who is thirsty come to me, and let the one who believes in me drink. As the scripture has said, Out of the believer\'s heart shall flow rivers of living water\'") — where the evangelist explicitly identifies the living water with the Spirit. The Samaritan-woman scene\'s metaphor is theologically completed in the Tabernacles discourse.' },
+    { label: 'Genesis (Jacob\'s well) — the patriarchal site where John 4 happens', textId: 'genesis-3',
+      note: 'Jacob\'s well (Gen 33:18–20) is the geographical anchor of the scene — the well the patriarch dug at Shechem-Sychar, still in use a millennium later. The Johannine framing places Jesus in conversation with a Samaritan at the exact site where Israelite-Samaritan religious history began to diverge, with the patriarchal well as the literal common ground.' },
+  ],
+  sections: [
+    {
+      heading: 'I. The Living Water Conversation',
+      verses: [
+        {
+          ref: 'John 4:13–14 (NRSV)',
+          text: 'Jesus said to her, "Everyone who drinks of this water will be thirsty again, but those who drink of the water that I will give them will never be thirsty. The water that I will give will become in them a spring of water gushing up to eternal life."',
+          textVersions: {
+            nrsv:  'Jesus said to her, "Everyone who drinks of this water will be thirsty again, but those who drink of the water that I will give them will never be thirsty. The water that I will give will become in them a spring of water gushing up to eternal life."',
+            greek: 'ἀπεκρίθη Ἰησοῦς καὶ εἶπεν αὐτῇ· πᾶς ὁ πίνων ἐκ τοῦ ὕδατος τούτου διψήσει πάλιν· ὃς δ\' ἂν πίῃ ἐκ τοῦ ὕδατος οὗ ἐγὼ δώσω αὐτῷ, οὐ μὴ διψήσει εἰς τὸν αἰῶνα, ἀλλὰ τὸ ὕδωρ ὃ δώσω αὐτῷ γενήσεται ἐν αὐτῷ πηγὴ ὕδατος ἁλλομένου εἰς ζωὴν αἰώνιον.',
+          },
+          entities: [
+            { word: 'a spring of water gushing up to eternal life', node: 'jesus-of-nazareth', type: 'metaphor',
+              note: 'ζωὴ αἰώνιος — zōē aiōnios, "eternal life" — is one of the Fourth Gospel\'s central theological-vocabulary terms (it occurs 17 times in John, the highest concentration in any New Testament book). The phrase does not primarily mean unending duration; it means "life of the coming age" (the Greek aiōnios renders Hebrew olam, "the age"), the eschatological life of the messianic kingdom understood as PRESENT — accessible now through the gift of the Spirit. The "spring of water gushing up to eternal life" image inaugurates the chapter\'s broader theological argument that the Spirit-given inner reality is the true successor to all place-specific cultic religion.',
+              parallels: [
+                { label: 'John 7:37-39 — "rivers of living water" identified with the Spirit', textId: 'john-6-bread-of-life',
+                  note: 'The Tabernacles discourse explicitly completes the living-water metaphor of John 4: the water Jesus gives IS the Spirit. The two passages together constitute the Fourth Gospel\'s Spirit-as-living-water theological vocabulary.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'II. Worship in Spirit and Truth',
+      verses: [
+        {
+          ref: 'John 4:23–24 (NRSV)',
+          text: 'The hour is coming, and is now here, when the true worshipers will worship the Father in spirit and truth, for the Father seeks such as these to worship him. God is spirit, and those who worship him must worship in spirit and truth.',
+          textVersions: {
+            nrsv:  'The hour is coming, and is now here, when the true worshipers will worship the Father in spirit and truth, for the Father seeks such as these to worship him. God is spirit, and those who worship him must worship in spirit and truth.',
+            greek: 'ἀλλὰ ἔρχεται ὥρα καὶ νῦν ἐστιν, ὅτε οἱ ἀληθινοὶ προσκυνηταὶ προσκυνήσουσιν τῷ πατρὶ ἐν πνεύματι καὶ ἀληθείᾳ· καὶ γὰρ ὁ πατὴρ τοιούτους ζητεῖ τοὺς προσκυνοῦντας αὐτόν. πνεῦμα ὁ θεός, καὶ τοὺς προσκυνοῦντας αὐτὸν ἐν πνεύματι καὶ ἀληθείᾳ δεῖ προσκυνεῖν.',
+          },
+          entities: [
+            { word: 'God is spirit', node: 'tradition-early-christianity', type: 'doctrine',
+              note: 'πνεῦμα ὁ θεός — pneuma ho theos, "God is spirit" — is one of three "God is X" Johannine statements (the others: "God is light" 1 John 1:5; "God is love" 1 John 4:8). The declaration is theologically and politically radical: by saying that God is spirit and that worship henceforth must be "in spirit and truth," Jesus is articulating the displacement of all place-specific cultic religion. Both the Samaritan Mount Gerizim worship AND the Jerusalem Temple worship are relativised — not as wrong but as superseded by a universal-spiritual mode that requires neither sacred mountain. This is the theological argument that makes early Christianity portable across the Roman empire without place-anchoring; the Samaritan-woman scene is one of the foundational texts for the broader Christian-spiritual-religion-vs-territorial-cult vocabulary.',
+              parallels: [
+                { label: 'Bahá\'í Kitáb-i-Íqán — the parallel "religion exceeds geography" thesis', textId: 'bahai-kitab-i-iqan',
+                  note: 'Bahá\'í progressive-revelation theology argues that divine revelation is not bound to one geographical-cultural setting — a structurally similar move to the "worship in spirit and truth" passage that relocates religion from place-specific cult to universal-spiritual-relation. The two articulations are separated by 1,800 years but converge on the same theological displacement of place from religion.' },
+                { label: 'Acts 17 — Paul at the Areopagus, "the God who made the world... does not live in shrines made by human hands"', textId: 'acts-17-areopagus',
+                  note: 'Paul\'s Areopagus speech ("The God who made the world and everything in it, he who is Lord of heaven and earth, does not live in shrines made by human hands, nor is he served by human hands") makes the same theological argument as John 4:24 in a different setting: God\'s reality is not place-confined. The two passages together articulate the early-Christian universalist theological foundation.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+// ── JOHN 8 — "BEFORE ABRAHAM WAS, I AM" ──────────────────────────────────────
+SCRIPTURE_TEXTS['john-8'] = {
+  id:         'john-8',
+  title:      'John 8 — "Before Abraham Was, I AM"',
+  shortTitle: 'John 8 (I AM)',
+  corpus:     'New Testament · Gospel of John',
+  tradId:     'tradition-early-christianity',
+  date:       '~90–110 CE',
+  docNode:    'phase-3-020-gospel-of-john',
+  language:   'Koine Greek (original; Nestle-Aland NA28) · NRSV 1989 English',
+  translations: [
+    { id: 'nrsv',  label: 'New Revised Standard Version 1989 (T1, ecumenical)', note: 'Default scholarly Anglophone reference.' },
+    { id: 'brown', label: 'Raymond E. Brown 1966 (Anchor Bible 29)', note: 'Brown treats the I-AM sayings as the central Christological hinge of the Fourth Gospel.' },
+    { id: 'greek', label: 'Koine Greek (Nestle-Aland NA28)' },
+  ],
+  intro: 'John 8 contains the most direct and most-debated Christological self-claim in the Fourth Gospel: the unqualified "I AM" (egō eimi) of v. 58. The conversation begins as a dispute with "the Jews who had believed in him" (v. 31) over the meaning of Abrahamic descent and culminates in the absolute self-identification that triggers an attempted stoning (v. 59). The Greek egō eimi without predicate is the LXX rendering of YHWH\'s self-identification at the burning bush — Exodus 3:14 ("I AM WHO I AM" / "I AM has sent me to you") and the Deutero-Isaianic "I am he" passages (Isaiah 41:4, 43:10, 43:13, 43:25, 48:12). The Johannine deployment of the same absolute egō eimi against the Hebrew-Bible-allusion background is the most direct articulation in any New Testament text of Jesus\' identification with the Israelite divine name. Raymond Brown 1966, Rudolf Bultmann 1971, and the broader Johannine-Christology scholarship (Anthony Harvey, James D. G. Dunn) treat John 8:58 as the central textual hinge of New Testament high Christology. The chapter is also one of the more polemically-edged in the New Testament — Jesus\' interlocutors are progressively reframed from "the Jews who had believed" (v. 31) to people who would kill him (v. 59), a textual progression that has generated extensive subsequent ethical-reception scholarship (Lawrence Schiffman, Adele Reinhartz) about how the Johannine polemic was used in later Christian anti-Jewish rhetoric.',
+  crossTradition: [
+    { label: 'Exodus 3 — the burning bush "I AM WHO I AM" passage', textId: 'exodus-3',
+      note: 'The Hebrew Bible substrate for Jesus\' "I AM" claim. Exodus 3:14 ("I AM WHO I AM... I AM has sent me to you") in the Hebrew (אֶהְיֶה אֲשֶׁר אֶהְיֶה / אֶהְיֶה) is rendered in the LXX as egō eimi ho ōn — the same absolute egō eimi vocabulary that John 8:58 then deploys for Jesus. The textual identification is unmistakable: Jesus is being made to speak the words of YHWH at the burning bush.' },
+    { label: 'Isaiah 45 — the Deutero-Isaianic "I am he" monotheism', textId: 'isaiah-45',
+      note: 'Second Isaiah\'s "I am he" passages (Isa 41:4, 43:10–13, 43:25, 48:12) develop the Hebrew Bible\'s absolute-monotheistic vocabulary using the same divine self-identification formula. The Johannine attribution of these formulas to Jesus is the central textual move that the Fourth Gospel\'s "high Christology" rests on.' },
+    { label: 'Bahá\'í Kitáb-i-Íqán — the parallel "Manifestation as divine speaker" doctrine', textId: 'bahai-kitab-i-iqan',
+      note: 'The Bahá\'í teaching that each Manifestation speaks with divine voice ("the Manifestation IS the voice of God for his age") is the structural parallel to the Johannine claim that Jesus speaks the YHWH "I AM" — though Bahá\'í distributes the claim across multiple Manifestations rather than localising it uniquely to Christ. The Íqán explicitly engages this Johannine vocabulary at multiple points.' },
+  ],
+  sections: [
+    {
+      heading: 'I. The Absolute I AM',
+      verses: [
+        {
+          ref: 'John 8:56–58 (NRSV)',
+          text: 'Jesus said, "Your ancestor Abraham rejoiced that he would see my day; he saw it and was glad." Then the Jews said to him, "You are not yet fifty years old, and have you seen Abraham?" Jesus said to them, "Very truly, I tell you, before Abraham was, I AM."',
+          textVersions: {
+            nrsv:  'Jesus said, "Your ancestor Abraham rejoiced that he would see my day; he saw it and was glad." Then the Jews said to him, "You are not yet fifty years old, and have you seen Abraham?" Jesus said to them, "Very truly, I tell you, before Abraham was, I AM."',
+            greek: 'Ἀβραὰμ ὁ πατὴρ ὑμῶν ἠγαλλιάσατο ἵνα ἴδῃ τὴν ἡμέραν τὴν ἐμήν, καὶ εἶδεν καὶ ἐχάρη. εἶπον οὖν οἱ Ἰουδαῖοι πρὸς αὐτόν· πεντήκοντα ἔτη οὔπω ἔχεις καὶ Ἀβραὰμ ἑώρακας; εἶπεν αὐτοῖς Ἰησοῦς· ἀμὴν ἀμὴν λέγω ὑμῖν, πρὶν Ἀβραὰμ γενέσθαι ἐγὼ εἰμί.',
+          },
+          entities: [
+            { word: 'before Abraham was, I AM', node: 'doctrine-incarnation', type: 'doctrine',
+              note: 'ἐγὼ εἰμί (egō eimi) — "I AM," absolute and unpredicated — is the Johannine Greek equivalent of the Hebrew Tetragrammaton YHWH\'s self-identification at the burning bush (Exod 3:14). The grammatical impossibility of the sentence ("before Abraham was, I AM" — using a present-tense egō eimi against a past event) is the theological point: Jesus places himself outside the temporal frame in which Abraham existed, claiming the divine timelessness that the Hebrew Bible reserves for YHWH alone. This is the most direct textual identification of Jesus with the Israelite divine name in any New Testament book, and one of the principal foundations of subsequent patristic Christology (Nicene, Chalcedonian) and of the entire Christian theological tradition of identifying Jesus as the Logos who shares the divine identity.',
+              parallels: [
+                { label: 'Exodus 3 — the burning bush I AM', textId: 'exodus-3',
+                  note: 'The Hebrew Bible source: YHWH\'s self-identification at Sinai. The Johannine egō eimi puts the exact same words in Jesus\' mouth.' },
+                { label: 'Isaiah 45 — the Deutero-Isaianic monotheistic I AM', textId: 'isaiah-45',
+                  note: 'Second Isaiah\'s use of the "I am he" formula as the canonical articulation of YHWH\'s unique-divine identity. John 8:58 directly extends this Hebrew Bible vocabulary to Jesus.' },
+              ]
+            },
+            { word: 'Your ancestor Abraham', node: 'abraham-patriarch', type: 'person',
+              note: 'The chapter\'s deeper argument: Jesus\' interlocutors claim Abrahamic descent as religious legitimation ("Abraham is our father" v. 39); Jesus relativises that claim by placing himself temporally PRIOR to Abraham. The polemic is not against Abrahamic descent as such but against using it as a substitute for direct recognition. The structural argument resembles Paul\'s in Romans 4 and Galatians 3 (where Abraham\'s faith, not his genealogy, is the operative inheritance) but takes the further step of identifying Jesus himself with the divine reality Abraham trusted in.' },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+// ── JOHN 11 — THE RAISING OF LAZARUS, "I AM THE RESURRECTION" ────────────────
+SCRIPTURE_TEXTS['john-11'] = {
+  id:         'john-11',
+  title:      'John 11 — The Raising of Lazarus, and "I Am the Resurrection and the Life"',
+  shortTitle: 'John 11 (Lazarus)',
+  corpus:     'New Testament · Gospel of John',
+  tradId:     'tradition-early-christianity',
+  date:       '~90–110 CE',
+  docNode:    'phase-3-020-gospel-of-john',
+  language:   'Koine Greek (original; Nestle-Aland NA28) · NRSV 1989 English',
+  translations: [
+    { id: 'nrsv',  label: 'New Revised Standard Version 1989 (T1, ecumenical)', note: 'Default scholarly Anglophone reference.' },
+    { id: 'brown', label: 'Raymond E. Brown 1966 (Anchor Bible 29)', note: 'Brown treats the Lazarus narrative as the climactic seventh sign of the Book of Signs.' },
+    { id: 'greek', label: 'Koine Greek (Nestle-Aland NA28)' },
+  ],
+  intro: 'John 11 is the climactic seventh sign of the Fourth Gospel\'s "Book of Signs" — the raising of Lazarus of Bethany from the dead — and the immediate narrative trigger for the Sanhedrin\'s decision to kill Jesus (vv. 47–53). The chapter functions structurally as the hinge of the Gospel: it closes the Book of Signs (chapters 1–11) and opens the Passion Narrative (chapters 12–20). Theologically the chapter is built around Jesus\' fifth "I AM" predicate-saying — "I am the resurrection and the life" (v. 25) — which collapses the eschatological future ("on the last day," v. 24, Martha\'s Pharisaic-resurrection expectation) into a present-Christological reality ("the one who believes in me, even though they die, will live"). The two-verse exchange with Martha is one of the most theologically dense passages in the New Testament for the question of how Christian eschatology relates futural-bodily resurrection to present-Christological participation. The shortest verse in the New Testament — "Jesus wept" (Greek edakrysen ho Iēsous, v. 35) — punctuates the narrative with the affective-incarnational reality that Christian theology has subsequently developed: the same Jesus who raises the dead is the Jesus who grieves with Mary and Martha. Raymond Brown 1966, Rudolf Bultmann 1971, and contemporary Johannine scholarship (Sandra Schneiders 2003, Marianne Meye Thompson 2015) all treat John 11 as the structural and theological hinge of the Fourth Gospel.',
+  crossTradition: [
+    { label: 'John 2 — the first sign that bookends John 11', textId: 'john-2',
+      note: 'John 2\'s Cana water-into-wine (the first sign) and John 11\'s Lazarus raising (the seventh and climactic sign) bookend the Fourth Gospel\'s Book of Signs. Reading them together reveals the structural progression: the inaugural sign (water → wine) signals the messianic-banquet age has begun; the climactic sign (death → life) signals the eschatological resurrection-age has begun in Jesus himself.' },
+    { label: 'Ezekiel 37 — the prophetic resurrection vision Lazarus inherits', textId: 'ezekiel-37-dry-bones',
+      note: 'Ezekiel\'s valley-of-dry-bones vision is the Hebrew Bible substrate for the resurrection-from-death theology John 11 inherits. The Ezekiel vision is corporate (Israel raised as a nation); the John 11 raising is individual (Lazarus raised as a person). The relation between corporate-eschatological and individual-Christological resurrection is one of the major themes of New Testament theology, and John 11 stages the transition.' },
+    { label: '1 Corinthians 15 — Paul\'s parallel resurrection theology', textId: '1-corinthians-15',
+      note: 'Paul\'s 1 Cor 15 ("if there is no resurrection of the dead, then Christ has not been raised... but in fact Christ has been raised from the dead, the first fruits of those who have died") articulates the same theological move John 11 narrates: Christ\'s resurrection inaugurates the eschatological-resurrection age as present-reality. The two passages together constitute the New Testament\'s foundational resurrection-theology vocabulary.' },
+  ],
+  sections: [
+    {
+      heading: 'I. "I Am the Resurrection and the Life"',
+      verses: [
+        {
+          ref: 'John 11:25–27 (NRSV)',
+          text: 'Jesus said to her, "I am the resurrection and the life. Those who believe in me, even though they die, will live, and everyone who lives and believes in me will never die. Do you believe this?" She said to him, "Yes, Lord, I believe that you are the Messiah, the Son of God, the one coming into the world."',
+          textVersions: {
+            nrsv:  'Jesus said to her, "I am the resurrection and the life. Those who believe in me, even though they die, will live, and everyone who lives and believes in me will never die. Do you believe this?" She said to him, "Yes, Lord, I believe that you are the Messiah, the Son of God, the one coming into the world."',
+            greek: 'εἶπεν αὐτῇ ὁ Ἰησοῦς· ἐγώ εἰμι ἡ ἀνάστασις καὶ ἡ ζωή· ὁ πιστεύων εἰς ἐμὲ κἂν ἀποθάνῃ ζήσεται, καὶ πᾶς ὁ ζῶν καὶ πιστεύων εἰς ἐμὲ οὐ μὴ ἀποθάνῃ εἰς τὸν αἰῶνα. πιστεύεις τοῦτο; λέγει αὐτῷ· ναὶ κύριε, ἐγὼ πεπίστευκα ὅτι σὺ εἶ ὁ Χριστὸς ὁ υἱὸς τοῦ θεοῦ ὁ εἰς τὸν κόσμον ἐρχόμενος.',
+          },
+          entities: [
+            { word: 'I am the resurrection and the life', node: 'jesus-of-nazareth', type: 'i-am-saying',
+              note: 'The fifth of the Fourth Gospel\'s seven predicate "I AM" sayings (the others: I am the bread of life 6:35; the light of the world 8:12; the door 10:7; the good shepherd 10:11; the way and the truth and the life 14:6; the true vine 15:1). Each predicate I-AM saying takes a Hebrew Bible image (bread, light, shepherd, vine, way) and re-applies it to Christ — collapsing into Jesus the diverse soteriological imagery that the Israelite tradition had distributed across different cultic and prophetic vocabularies. The "I am the resurrection and the life" saying is theologically the most consequential because it makes Jesus himself the present-reality of the eschatological future the Pharisaic tradition (Martha\'s expectation in v. 24) had located at the last day.',
+              parallels: [
+                { label: 'John 14 — "I am the way, the truth, and the life"', textId: 'john-14',
+                  note: 'The sixth predicate I-AM saying. John 11:25 and John 14:6 together articulate the Johannine Christological compression: every category of soteriological reality — resurrection, life, way, truth — collapses into the person of Jesus.' },
+                { label: '1 Corinthians 15 — Paul\'s parallel resurrection-now theology', textId: '1-corinthians-15',
+                  note: 'Paul\'s resurrection theology and Johannine resurrection theology converge on the same claim that Christ\'s resurrection inaugurates the eschatological-resurrection reality NOW, not just at the last day.' },
+              ]
+            },
+            { word: 'Messiah, the Son of God, the one coming into the world', node: 'lazarus-of-bethany', type: 'confession',
+              note: 'Martha\'s confession in v. 27 is one of the high Christological confessions of the Fourth Gospel — comparable to Peter\'s confession in the Synoptics (Matt 16:16) but here placed on the lips of a woman, in the context of a domestic-grief scene rather than a wilderness teaching. Sandra Schneiders 2003 argues that Martha\'s confession functions in the Fourth Gospel as the theological-anthropological climax of women\'s testimony, paired with Mary Magdalene\'s "I have seen the Lord" in John 20:18. The pairing makes the two Bethany sisters + Mary Magdalene a kind of female-apostolic triad within the Johannine community.' },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+// ── JOHN 14 — "I AM THE WAY, THE TRUTH, AND THE LIFE" ────────────────────────
+SCRIPTURE_TEXTS['john-14'] = {
+  id:         'john-14',
+  title:      'John 14 — "I Am the Way, the Truth, and the Life"',
+  shortTitle: 'John 14 (the Way)',
+  corpus:     'New Testament · Gospel of John',
+  tradId:     'tradition-early-christianity',
+  date:       '~90–110 CE',
+  docNode:    'phase-3-020-gospel-of-john',
+  language:   'Koine Greek (original; Nestle-Aland NA28) · NRSV 1989 English',
+  translations: [
+    { id: 'nrsv',  label: 'New Revised Standard Version 1989 (T1, ecumenical)', note: 'Default scholarly Anglophone reference.' },
+    { id: 'brown', label: 'Raymond E. Brown 1970 (Anchor Bible 29A, John XIII-XXI)', note: 'Brown\'s second John volume treats the Farewell Discourse (chs. 13-17) as a unified theological-pastoral composition.' },
+    { id: 'greek', label: 'Koine Greek (Nestle-Aland NA28)' },
+  ],
+  intro: 'John 14 opens the Farewell Discourse (chapters 13–17), the long Last-Supper teaching that occupies more than a quarter of the Fourth Gospel and contains some of its most-cited theological vocabulary: "I am the way, the truth, and the life" (v. 6); "in my Father\'s house are many dwelling places" (v. 2); the promise of "another Advocate" / Paraclete (v. 16); "peace I leave with you" (v. 27). The exclusivist-sounding v. 6 ("no one comes to the Father except through me") has been one of the most-debated single sentences in the New Testament in subsequent comparative-religion theology — the locus classicus of Christian-exclusivist soteriological claims. Modern Christian interfaith theology (Karl Rahner\'s anonymous-Christian framework, the Vatican II Nostra Aetate position, John Hick\'s pluralist hypothesis, the Bahá\'í Íqán\'s explicit re-reading of the verse as temporally-relativised) has spent extensive scholarly attention on how to read v. 6 in dialogue with other traditions\' soteriological claims. The chapter also articulates the Johannine Paraclete-pneumatology that the rest of the Farewell Discourse (chs. 15–16) develops — the promise of the Spirit as continuing teacher and advocate after Jesus\' physical departure. The Last-Supper setting (carried over from John 13\'s foot-washing) frames the entire discourse as a pastoral preparation of the disciples for the impending separation.',
+  crossTradition: [
+    { label: 'Bahá\'í Kitáb-i-Íqán — the explicit re-reading of John 14:6', textId: 'bahai-kitab-i-iqan',
+      note: 'The Íqán explicitly engages John 14:6 ("no one comes to the Father but through me") as the locus classicus of Christian-exclusivist soteriology, and re-reads it as TEMPORALLY-relativised: Christ IS the unique way to the Father FOR HIS AGE, until the next Manifestation appears with the same status for the new age. The Bahá\'í reading does not deny the Johannine exclusivity; it temporalises it. This is the central interpretive move that defines the Bahá\'í tradition\'s relationship with Christianity, and the John 14:6 passage is the textual hinge.' },
+    { label: 'John 11 — the parallel "I am the resurrection" predicate', textId: 'john-11',
+      note: 'John 14:6 and John 11:25 together articulate the Johannine compression of soteriological vocabulary onto the person of Jesus. The two passages are the central scriptural anchors for the Fourth Gospel\'s "high Christology."' },
+    { label: 'Acts 17 — Paul\'s parallel "in him we live and move and have our being"', textId: 'acts-17-areopagus',
+      note: 'Paul\'s Areopagus speech ("In him we live and move and have our being... we too are his offspring") articulates a more inclusively-framed but structurally-related claim about the universal accessibility of divine reality through Christ. Reading Acts 17 and John 14:6 together reveals the New Testament\'s two main rhetorical strategies for Christian-universalist claims: the Pauline incorporation-into-the-divine (more inclusive) and the Johannine through-me-alone (more exclusive).' },
+  ],
+  sections: [
+    {
+      heading: 'I. The Way, the Truth, and the Life',
+      verses: [
+        {
+          ref: 'John 14:6 (NRSV)',
+          text: 'Jesus said to him, "I am the way, and the truth, and the life. No one comes to the Father except through me."',
+          textVersions: {
+            nrsv:  'Jesus said to him, "I am the way, and the truth, and the life. No one comes to the Father except through me."',
+            greek: 'λέγει αὐτῷ ὁ Ἰησοῦς· ἐγώ εἰμι ἡ ὁδὸς καὶ ἡ ἀλήθεια καὶ ἡ ζωή· οὐδεὶς ἔρχεται πρὸς τὸν πατέρα εἰ μὴ δι\' ἐμοῦ.',
+          },
+          entities: [
+            { word: 'the way, and the truth, and the life', node: 'jesus-of-nazareth', type: 'i-am-saying',
+              note: 'The sixth predicate I-AM saying — the triple-predicate compression of three soteriological-philosophical categories (hodos / alētheia / zōē) into a single Christological self-identification. Each term has independent Hebrew Bible and Hellenistic-philosophical resonances: way (hodos) recalls Israelite Torah-as-path vocabulary (Ps 1:6, the "two ways" tradition) and Stoic philosophical "way of life" vocabulary; truth (alētheia) carries both Hebrew emet (faithfulness) and Greek philosophical correspondence-to-reality senses; life (zōē) is the Johannine technical term for eschatological-life-in-the-coming-age (the 17 occurrences in the Fourth Gospel). The triple compression is the Johannine claim that Christ is the operational center of every soteriological category at once.',
+              parallels: [
+                { label: 'Psalm 23 — "the LORD is my shepherd... he leads me in right paths"', textId: 'psalm-23',
+                  note: 'Psalm 23\'s shepherd-leading-on-right-paths vocabulary is the Hebrew Bible substrate for the Johannine "way" imagery. The Fourth Gospel\'s good-shepherd discourse in John 10 + the "I am the way" of John 14:6 together inherit and recompose the Psalm-23 imagery.' },
+              ]
+            },
+            { word: 'No one comes to the Father except through me', node: 'doctrine-incarnation', type: 'doctrine',
+              note: 'The most-debated single sentence in the New Testament for Christian-comparative-religion theology. Read strictly, the sentence asserts an absolute Christological-exclusivist soteriology — no salvation outside Christ. Subsequent Christian theology has spent two millennia developing readings that range from strict exclusivism (the "extra ecclesiam nulla salus" tradition that runs from Cyprian through Trent) to inclusivism (Rahner\'s anonymous-Christian framework, Vatican II Nostra Aetate, broad evangelical "all who come to the Father do so through Christ even when they don\'t name him") to pluralism (Hick\'s 1973 God and the Universe of Faiths). The Bahá\'í Íqán\'s temporally-relativised reading (Christ IS the unique way FOR HIS AGE, succeeded by subsequent Manifestations) is one of the major non-Christian engagements with the verse and the central interpretive move by which Bahá\'í tradition negotiates its relationship with Christianity.',
+              parallels: [
+                { label: 'Kitáb-i-Íqán — the Bahá\'í temporally-relativised reading', textId: 'bahai-kitab-i-iqan',
+                  note: 'The Íqán\'s reading is the most-developed non-Christian engagement with John 14:6 in any modern religious-textual tradition: the Johannine exclusivity is preserved but temporally bounded, with each Manifestation occupying the same unique-way role for his own age.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+// ── JOHN 19 — THE CRUCIFIXION, "IT IS FINISHED" ──────────────────────────────
+SCRIPTURE_TEXTS['john-19'] = {
+  id:         'john-19',
+  title:      'John 19 — The Crucifixion and "It Is Finished"',
+  shortTitle: 'John 19 (Tetelestai)',
+  corpus:     'New Testament · Gospel of John',
+  tradId:     'tradition-early-christianity',
+  date:       '~90–110 CE',
+  docNode:    'phase-3-020-gospel-of-john',
+  language:   'Koine Greek (original; Nestle-Aland NA28) · NRSV 1989 English',
+  translations: [
+    { id: 'nrsv',  label: 'New Revised Standard Version 1989 (T1, ecumenical)', note: 'Default scholarly Anglophone reference.' },
+    { id: 'brown', label: 'Raymond E. Brown 1994 (The Death of the Messiah, 2 vols)', note: 'Brown\'s two-volume Death of the Messiah is the canonical English-language scholarly treatment of the passion narratives across all four Gospels.' },
+    { id: 'greek', label: 'Koine Greek (Nestle-Aland NA28)' },
+  ],
+  intro: 'John 19 narrates the Fourth Gospel\'s crucifixion scene — the death of Jesus on the cross, framed by John\'s distinctive theological-narrative choices: the Pilate-Jesus dialogue ("what is truth?" 18:38), the trilingual inscription on the cross (vv. 19–22), the disposition of Jesus\' garments (vv. 23–24, fulfilling Ps 22:18), the entrusting of the mother of Jesus to the Beloved Disciple (vv. 25–27), and the climactic seventh "word from the cross" — "It is finished" (tetelestai, v. 30) — the Johannine signal that the saving work of Christ is completed at the moment of death rather than at the moment of resurrection (the Synoptic emphasis). The Greek tetelestai is theologically dense: it carries both the perfective-aspect sense of "completed / accomplished" (a transactional metaphor that subsequent atonement-theology Western Catholic + Reformed traditions have heavily exploited) and the teleological-aspect sense of "brought to its appointed goal" (the more Greek-philosophical reading that Eastern Orthodox theology emphasises). The chapter also contains the bizarre water-and-blood detail of vv. 34–35 (a soldier pierces Jesus\' side with a spear; blood and water flow out; the eyewitness testifies) — one of the most-studied single details of the Fourth Gospel in subsequent Catholic eucharistic-theology and modern medical-historical analysis. Raymond Brown\'s 1994 Death of the Messiah is the canonical modern scholarly treatment.',
+  crossTradition: [
+    { label: 'Psalm 22 — the passion-psalm John 19 quotes', textId: 'psalm-22',
+      note: 'John 19:24 quotes Psalm 22:18 ("they divided my clothes among themselves, and for my clothing they cast lots") as the scriptural fulfilment of the soldiers\' disposition of Jesus\' garments. The entire passion narrative across all four Gospels is shaped by Psalm 22, which functions as the operative scriptural template for the crucifixion-as-fulfilment frame.' },
+    { label: 'Isaiah 53 — the suffering servant John inherits', textId: 'isaiah-53',
+      note: 'The Deutero-Isaianic Suffering Servant of Isaiah 52:13–53:12 is the second great Hebrew Bible substrate of the New Testament passion narratives. John 19\'s framing of the crucifixion as theologically-purposive death rather than tragic miscarriage of justice draws on the Servant\'s "by his bruises we are healed" vocabulary.' },
+    { label: '4 Maccabees — the parallel substitutionary-martyrdom vocabulary', textId: '4-maccabees-6',
+      note: '4 Maccabees 6:29\'s "make my blood their purification, and take my life as a substitute (antipsychon) for theirs" is the Hellenistic-Jewish substitutionary-atonement vocabulary that the New Testament inherits and applies to Christ\'s death. The Johannine passion narrative draws on this vocabulary alongside the Servant-and-Psalm-22 sources.' },
+  ],
+  sections: [
+    {
+      heading: 'I. "It Is Finished"',
+      verses: [
+        {
+          ref: 'John 19:28–30 (NRSV)',
+          text: 'After this, when Jesus knew that all was now finished, he said (in order to fulfill the scripture), "I am thirsty." A jar full of sour wine was standing there. So they put a sponge full of the wine on a branch of hyssop and held it to his mouth. When Jesus had received the wine, he said, "It is finished." Then he bowed his head and gave up his spirit.',
+          textVersions: {
+            nrsv:  'After this, when Jesus knew that all was now finished, he said (in order to fulfill the scripture), "I am thirsty." A jar full of sour wine was standing there. So they put a sponge full of the wine on a branch of hyssop and held it to his mouth. When Jesus had received the wine, he said, "It is finished." Then he bowed his head and gave up his spirit.',
+            greek: 'μετὰ τοῦτο εἰδὼς ὁ Ἰησοῦς ὅτι ἤδη πάντα τετέλεσται, ἵνα τελειωθῇ ἡ γραφή, λέγει· διψῶ. σκεῦος ἔκειτο ὄξους μεστόν· σπόγγον οὖν μεστὸν τοῦ ὄξους ὑσσώπῳ περιθέντες προσήνεγκαν αὐτοῦ τῷ στόματι. ὅτε οὖν ἔλαβεν τὸ ὄξος ὁ Ἰησοῦς εἶπεν· τετέλεσται, καὶ κλίνας τὴν κεφαλὴν παρέδωκεν τὸ πνεῦμα.',
+          },
+          entities: [
+            { word: 'It is finished', node: 'jesus-of-nazareth', type: 'word-from-cross',
+              note: 'τετέλεσται — tetelestai, the perfect passive of teleō (to bring to its goal / complete / accomplish). The single word carries theological weight that two millennia of Christian commentary have unpacked: the saving work of Christ is COMPLETED at the moment of death, not delayed until the resurrection. The Johannine framing inverts the Synoptic emphasis (Mark 15:34: "My God, why have you forsaken me?" — the agonised cry; John 19:30: "It is finished" — the accomplished completion). Subsequent Western atonement theology (Anselm Cur Deus Homo 1098, Reformation forensic-substitution, Karl Barth\'s objective-reconciliation) has built heavily on the tetelestai vocabulary. Eastern Orthodox theology reads the same word more teleologically: the cosmic reconciliation is brought to its appointed goal, the saving purpose accomplished as part of the broader divine economy (oikonomia) rather than as a transactional payment.',
+              parallels: [
+                { label: '1 Corinthians 15 — the Pauline parallel "first fruits" + completed work', textId: '1-corinthians-15',
+                  note: 'Paul\'s parallel articulation: the resurrection of Christ inaugurates the eschatological-resurrection age (1 Cor 15:20). The Johannine tetelestai locates the completion at the crucifixion; the Pauline first-fruits locates it at the resurrection. Both articulations contribute to the broader New Testament theology that Christ\'s death+resurrection together accomplish the saving work.' },
+                { label: 'Isaiah 53 — the suffering servant whose work is accomplished', textId: 'isaiah-53',
+                  note: 'Isaiah 53:10–12\'s servant who "shall see his offspring... shall make many righteous, and he shall bear their iniquities" provides the Hebrew Bible substrate for the tetelestai claim: the servant\'s suffering accomplishes a purpose, is brought to its appointed goal. The Johannine tetelestai is the Christological application of the same theological-vocabulary structure.' },
+              ]
+            },
+            { word: 'a branch of hyssop', node: 'jesus-of-nazareth', type: 'symbolic-detail',
+              note: 'The hyssop branch (Greek hyssōpos) is theologically loaded: hyssop is the plant Israelite worshippers used to apply the blood of the Passover lamb to the doorposts (Exod 12:22). John\'s placement of the hyssop at the death of Jesus is one of the Fourth Gospel\'s many subtle Passover-typological signals: Jesus dies at the hour the Passover lambs are being slaughtered (John 19:14, "it was the day of Preparation for the Passover; and it was about noon"), making him the antitype of the Passover lamb whose blood saves. The synoptic Gospels frame the Last Supper as the Passover meal; the Fourth Gospel frames the death itself as the Passover sacrifice — a different theological-narrative choice with significant subsequent theological consequence for the development of Christian eucharistic theology.',
+              parallels: [
+                { label: 'Exodus 12 — the Passover lamb and the hyssop', textId: 'exodus-3',
+                  note: 'The Israelite Passover ritual (Exod 12) is the Hebrew Bible substrate for John 19\'s hyssop-and-Passover-lamb typology. The Johannine framing of Jesus as the antitype of the Passover lamb runs through several details: the hyssop, the timing at noon on the day of Preparation, the unbroken bones (John 19:36, citing Exod 12:46 / Num 9:12).' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+
+
 
 
 
