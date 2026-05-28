@@ -1135,8 +1135,14 @@
       return fmt(lo != null ? lo : hi);
     })();
 
-    // ── Wires pill row — bucket-grouped neighbor counts, mirroring
-    // the Forge side-panel's `.forge-side-panel-wires` summary row.
+    // ── Wires section — pill row + per-bucket expandable neighbor lists.
+    // Mirrors the Forge deity panel's wire-bucket tabs: click a bucket
+    // pill → toggle the matching <details> open → see every neighbor in
+    // that bucket → click title to swap inspector to that node, click
+    // "+ Add" to drop the neighbor as a card on the board.
+    const nodeIndex = new Map();
+    vault.nodes.forEach(n => { if (n && n.id) nodeIndex.set(n.id, n); });
+
     const wiresHtml = (() => {
       const edges = (vault.edges || []).filter(e => e.source === nodeId || e.target === nodeId);
       if (!edges.length) return '';
@@ -1144,18 +1150,61 @@
       const buckets = {};
       edges.forEach(e => {
         const b = EB[e.type] || e.type || 'association';
-        buckets[b] = (buckets[b] || 0) + 1;
+        if (!buckets[b]) buckets[b] = [];
+        const otherId = (e.source === nodeId) ? e.target : e.source;
+        const otherNode = nodeIndex.get(otherId);
+        if (!otherNode) return;
+        buckets[b].push({
+          id: otherId,
+          title: otherNode.title || otherNode.id,
+          type: otherNode.type || '',
+          color: otherNode.family_color || otherNode.tradition_color || '#888',
+          dir: (e.source === nodeId) ? 'out' : 'in',
+          edgeType: e.type,
+        });
       });
-      const pills = Object.entries(buckets)
-        .sort((a, b) => b[1] - a[1])
-        .slice(0, 8)
-        .map(([b, count]) => (
-          '<span class="forge-side-panel-wire">'
-          +   '<span class="forge-side-panel-wire-dot" style="background:' + escapeHtml(familyCol) + '"></span>'
-          +   count + ' <em>' + escapeHtml(b) + '</em>'
-          + '</span>'
-        )).join('');
-      return '<div class="forge-side-panel-wires">' + pills + '</div>';
+      const entries = Object.entries(buckets).sort((a, b) => b[1].length - a[1].length).slice(0, 10);
+      const pills = entries.map(([b, neighbors]) => (
+        '<button class="forge-side-panel-wire boards-wire-pill" type="button" data-bucket="' + escapeHtml(b) + '"'
+        + ' aria-expanded="false" title="Click to expand neighbors in this bucket">'
+        +   '<span class="forge-side-panel-wire-dot" style="background:' + escapeHtml(familyCol) + '"></span>'
+        +   neighbors.length + ' <em>' + escapeHtml(b) + '</em>'
+        + '</button>'
+      )).join('');
+      // Per-bucket neighbor lists rendered below the pill row. Hidden by
+      // default; toggled on pill click. dedupe-by-id since the same
+      // neighbor can appear via multiple edge kinds in the same bucket.
+      const lists = entries.map(([b, neighbors]) => {
+        const seen = new Set();
+        const uniq = neighbors.filter(n => { if (seen.has(n.id)) return false; seen.add(n.id); return true; });
+        const items = uniq.map(n => {
+          const alreadyOnBoard = _cards.has(n.id);
+          return (
+            '<div class="boards-wire-neighbor" data-neighbor-id="' + escapeHtml(n.id) + '"'
+            +   (alreadyOnBoard ? ' data-on-board="1"' : '') + '>'
+            +   '<span class="boards-wire-neighbor-dir">' + (n.dir === 'out' ? '→' : '←') + '</span>'
+            +   '<span class="boards-wire-neighbor-dot" style="background:' + escapeHtml(n.color) + '"></span>'
+            +   '<button class="boards-wire-neighbor-title" type="button" data-action="open-neighbor" data-id="' + escapeHtml(n.id) + '">'
+            +     escapeHtml(n.title)
+            +   '</button>'
+            +   (n.type ? '<span class="boards-wire-neighbor-type">' + escapeHtml(n.type) + '</span>' : '')
+            +   '<button class="boards-wire-neighbor-add" type="button" data-action="add-neighbor" data-id="' + escapeHtml(n.id) + '"'
+            +     (alreadyOnBoard ? ' disabled title="Already on board"' : ' title="Drop this node as a card on the board"') + '>'
+            +     (alreadyOnBoard ? '✓' : '+')
+            +   '</button>'
+            + '</div>'
+          );
+        }).join('');
+        return (
+          '<div class="boards-wire-list" data-bucket="' + escapeHtml(b) + '" hidden>'
+          +   '<div class="boards-wire-list-header">'
+          +     uniq.length + ' ' + escapeHtml(b) + ' neighbor' + (uniq.length === 1 ? '' : 's')
+          +   '</div>'
+          +   items
+          + '</div>'
+        );
+      }).join('');
+      return '<div class="forge-side-panel-wires">' + pills + '</div>' + lists;
     })();
 
     // ── Meta dl/dt/dd grid (Date / Place / Domains).
@@ -1260,6 +1309,59 @@
         if (typeof window.setView === 'function') window.setView('scripture');
       });
     }
+
+    // Wire-bucket pill toggle + neighbor click handlers (event-delegated
+    // on innerBody so the handler survives re-renders cleanly).
+    innerBody.addEventListener('click', (ev) => {
+      // 1. Pill click → toggle the matching .boards-wire-list visibility.
+      const pill = ev.target.closest('.boards-wire-pill');
+      if (pill) {
+        ev.stopPropagation();
+        const bucket = pill.getAttribute('data-bucket');
+        const list = innerBody.querySelector('.boards-wire-list[data-bucket="' + CSS.escape(bucket) + '"]');
+        if (!list) return;
+        const isOpen = !list.hidden;
+        // Close all other lists (single-open accordion).
+        innerBody.querySelectorAll('.boards-wire-list').forEach(l => l.hidden = true);
+        innerBody.querySelectorAll('.boards-wire-pill').forEach(p => p.setAttribute('aria-expanded', 'false'));
+        if (!isOpen) {
+          list.hidden = false;
+          pill.setAttribute('aria-expanded', 'true');
+        }
+        return;
+      }
+      // 2. Neighbor title click → swap inspector to that node.
+      const openBtn = ev.target.closest('[data-action="open-neighbor"]');
+      if (openBtn) {
+        ev.stopPropagation();
+        const nid = openBtn.getAttribute('data-id');
+        if (nid) openInspector(nid);
+        return;
+      }
+      // 3. "+ Add" → drop the neighbor as a card on the board.
+      const addBtn = ev.target.closest('[data-action="add-neighbor"]');
+      if (addBtn && !addBtn.disabled) {
+        ev.stopPropagation();
+        const nid = addBtn.getAttribute('data-id');
+        if (!nid) return;
+        const sourceCard = _cards.get(_inspectorNodeId);
+        if (sourceCard) {
+          addNodesAround(sourceCard, [nid]);
+        } else {
+          // Source isn't on the board (shouldn't happen since inspector
+          // opens from a card dblclick, but be defensive).
+          const n = nodeIndex.get(nid);
+          if (n) addCard({ id: nid, label: n.title || nid, x: 200, y: 200 });
+        }
+        // Mark this neighbor row as "on board" without re-rendering.
+        addBtn.disabled = true;
+        addBtn.textContent = '✓';
+        addBtn.title = 'Already on board';
+        const row = addBtn.closest('.boards-wire-neighbor');
+        if (row) row.setAttribute('data-on-board', '1');
+        return;
+      }
+    });
   }
 
   function closeInspector() {

@@ -10005,6 +10005,130 @@ body.boards-inspector-open .boards-inspector[aria-hidden="true"] {
 }
 
 /* ============================================================
+ * Wire-bucket TABS in the boards inspector
+ * Filed 2026-05-28 — clickable pills toggle their neighbor list
+ * (single-open accordion). Mirrors the forge deity panel's
+ * `_renderTabs` interaction surface without the wheel-engine
+ * dependency (couldn't reuse Forge's tab system; rebuilt as
+ * V2-native data-driven HTML).
+ * ============================================================ */
+.boards-wire-pill {
+  /* Override the static <span>.forge-side-panel-wire styles for a
+     clickable affordance. */
+  background: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+  padding: 2px 8px;
+  border-radius: 12px;
+  transition: background 100ms ease, border-color 100ms ease;
+  /* inherit forge-side-panel-wire font/size — those rules already apply */
+  font-family: inherit;
+  color: inherit;
+}
+.boards-wire-pill:hover {
+  background: rgba(212,165,90,0.08);
+  border-color: rgba(212,165,90,0.32);
+}
+.boards-wire-pill[aria-expanded="true"] {
+  background: rgba(212,165,90,0.14);
+  border-color: rgba(212,165,90,0.55);
+  color: var(--gold-1, #e8c889);
+}
+.boards-wire-list {
+  margin: 6px 0 12px 0;
+  padding: 6px 0;
+  border-top: 1px solid rgba(212,165,90,0.18);
+  border-bottom: 1px solid rgba(212,165,90,0.10);
+}
+.boards-wire-list-header {
+  font-family: var(--mono, "JetBrains Mono", Menlo, monospace);
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(212,165,90,0.55);
+  padding: 4px 0 8px 0;
+}
+.boards-wire-neighbor {
+  display: flex; align-items: center;
+  gap: 8px;
+  padding: 4px 0;
+  transition: background 80ms ease;
+}
+.boards-wire-neighbor:hover {
+  background: rgba(212,165,90,0.04);
+}
+.boards-wire-neighbor-dir {
+  flex: 0 0 auto;
+  width: 12px;
+  text-align: center;
+  color: rgba(212,165,90,0.55);
+  font-family: var(--mono, "JetBrains Mono", Menlo, monospace);
+  font-size: 11px;
+}
+.boards-wire-neighbor-dot {
+  flex: 0 0 auto;
+  width: 7px; height: 7px;
+  border-radius: 50%;
+}
+.boards-wire-neighbor-title {
+  flex: 1 1 auto;
+  background: transparent;
+  border: 0;
+  text-align: left;
+  color: var(--text-0, #e6e6e6);
+  font: inherit;
+  font-size: 11px;
+  cursor: pointer;
+  padding: 0;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color 80ms ease;
+}
+.boards-wire-neighbor-title:hover {
+  color: var(--gold-1, #e8c889);
+  text-decoration: underline;
+  text-decoration-color: rgba(212,165,90,0.45);
+}
+.boards-wire-neighbor-type {
+  flex: 0 0 auto;
+  font-family: var(--mono, "JetBrains Mono", Menlo, monospace);
+  font-size: 9px;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: rgba(212,165,90,0.45);
+}
+.boards-wire-neighbor-add {
+  flex: 0 0 auto;
+  width: 20px; height: 20px;
+  background: transparent;
+  border: 1px solid rgba(212,165,90,0.32);
+  border-radius: 4px;
+  color: var(--gold, #d4a55a);
+  font: inherit;
+  font-size: 13px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+  transition: background 80ms ease, border-color 80ms ease, color 80ms ease;
+}
+.boards-wire-neighbor-add:hover:not(:disabled) {
+  background: rgba(212,165,90,0.16);
+  border-color: var(--gold, #d4a55a);
+  color: var(--gold-1, #e8c889);
+}
+.boards-wire-neighbor-add:disabled {
+  border-color: rgba(212,165,90,0.18);
+  color: rgba(212,165,90,0.45);
+  cursor: not-allowed;
+}
+.boards-wire-neighbor[data-on-board="1"] .boards-wire-neighbor-title {
+  color: rgba(230,230,230,0.55);
+  font-style: italic;
+}
+
+/* ============================================================
  * BOARDS V2 — marquee + multi-card toolbar (step 9 internal /
  * spec step 8: marquee select + multi-card ops)
  * Filed 2026-05-28 per AUDIT/2026-05-28-boards-v2-new-ux-spec.md
