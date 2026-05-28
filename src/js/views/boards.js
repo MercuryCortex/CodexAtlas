@@ -148,6 +148,14 @@
     // Block native text-selection on shift-click (placeholder for marquee in step 8).
     el.addEventListener('mousedown', (ev) => { if (ev.shiftKey) ev.preventDefault(); });
 
+    // Step 7 — right-click → contextual menu (connections / transmissions /
+    // shortest-path / remove). Handler lives below in showCardMenu().
+    el.addEventListener('contextmenu', (ev) => {
+      ev.preventDefault();
+      ev.stopPropagation();
+      showCardMenu(card, ev.clientX, ev.clientY);
+    });
+
     el.addEventListener('pointerdown', (ev) => {
       if (ev.button === 2) return;  // right-click handled in step 6
       ev.stopPropagation();          // don't trigger pan
@@ -340,6 +348,249 @@
     rebuildEdges();   // step 6 — clear any rendered edges
   }
 
+  // Step 7 — remove a single card by id.
+  function removeCard(cardId) {
+    const card = _cards.get(cardId);
+    if (!card) return false;
+    if (card.el && card.el.parentNode) card.el.parentNode.removeChild(card.el);
+    _cards.delete(cardId);
+    rebuildEdges();
+    return true;
+  }
+
+  // ── STEP 7 — RIGHT-CLICK EXPANSION MENU ─────────────────────
+  // Right-click on a card opens a small menu at cursor with:
+  //   · Expand connections     — add ALL 1-hop vault neighbors
+  //   · Expand transmissions   — add only history-charged neighbors
+  //                              (influences / influenced-by / syncretic-*)
+  //   · Path to ▸              — submenu of other cards; shortest path
+  //                              between this card and the target (BFS,
+  //                              cap 6 hops); intermediate nodes added
+  //                              as cards
+  //   · Remove from board
+  //
+  // Lays new cards in a radial fan around the source card, picking
+  // empty world-space slots in a spiral so they don't overlap.
+
+  // Edge-type subsets for the menu.
+  const TRANSMISSION_KINDS = new Set([
+    'influences', 'influenced-by',
+    'syncretic-transmission', 'syncretic-foundational',
+  ]);
+
+  function vaultNeighbors(cardId, kindFilter) {
+    const vault = window.VAULT_DATA || window.DATA || null;
+    if (!vault || !Array.isArray(vault.edges)) return [];
+    const out = new Set();
+    for (let i = 0; i < vault.edges.length; i++) {
+      const e = vault.edges[i];
+      if (!e) continue;
+      if (kindFilter && !kindFilter.has(e.type)) continue;
+      if (e.source === cardId) out.add(e.target);
+      else if (e.target === cardId) out.add(e.source);
+    }
+    out.delete(cardId);
+    return Array.from(out);
+  }
+
+  // Place new cards in a hex-ring around (cx, cy), skipping slots that
+  // would overlap an existing card. Returns [{x, y}, ...] sized to needN.
+  function radialLayout(cx, cy, needN) {
+    const out = [];
+    const occupied = Array.from(_cards.values()).map(c => ({
+      x: c.x + 90, y: c.y + 18,
+    }));
+    const R = 200;       // ring radius
+    const minDist = 160; // min distance between cards
+    let ring = 1;
+    let placed = 0;
+    while (placed < needN && ring < 6) {
+      const slots = 6 * ring;
+      for (let i = 0; i < slots && placed < needN; i++) {
+        const angle = (Math.PI * 2 / slots) * i + ring * 0.18;
+        const x = Math.round(cx + R * ring * Math.cos(angle) - 90);
+        const y = Math.round(cy + R * ring * Math.sin(angle) - 18);
+        const cxi = x + 90, cyi = y + 18;
+        const tooClose = occupied.some(o => {
+          const dx = o.x - cxi, dy = o.y - cyi;
+          return dx*dx + dy*dy < minDist*minDist;
+        });
+        if (tooClose) continue;
+        out.push({ x, y });
+        occupied.push({ x: cxi, y: cyi });
+        placed++;
+      }
+      ring++;
+    }
+    return out;
+  }
+
+  // Add a list of node IDs around a source card. Skips IDs already on
+  // the board. Returns the count actually added.
+  function addNodesAround(sourceCard, nodeIds) {
+    const vault = window.VAULT_DATA || window.DATA || null;
+    if (!vault || !Array.isArray(vault.nodes)) return 0;
+    const lookup = new Map();
+    vault.nodes.forEach(n => { if (n && n.id) lookup.set(n.id, n); });
+
+    const fresh = nodeIds.filter(id => !_cards.has(id) && lookup.has(id));
+    if (!fresh.length) return 0;
+
+    const cx = sourceCard.x + 90;
+    const cy = sourceCard.y + 18;
+    const slots = radialLayout(cx, cy, fresh.length);
+
+    let added = 0;
+    fresh.forEach((id, i) => {
+      const slot = slots[i] || { x: cx + 200 * (i % 4), y: cy + 80 * Math.floor(i / 4) };
+      const node = lookup.get(id);
+      addCard({ id, label: node.title || id, x: slot.x, y: slot.y });
+      added++;
+    });
+    return added;
+  }
+
+  // Undirected BFS over vault.edges, returns the shortest path as an
+  // array of node IDs (including start + end) or null if no path.
+  function shortestPath(startId, endId, maxHops) {
+    maxHops = maxHops || 6;
+    const vault = window.VAULT_DATA || window.DATA || null;
+    if (!vault || !Array.isArray(vault.edges)) return null;
+    if (startId === endId) return [startId];
+    // Build adjacency once (cached on first call could be added later).
+    const adj = new Map();
+    for (let i = 0; i < vault.edges.length; i++) {
+      const e = vault.edges[i];
+      if (!e) continue;
+      if (!adj.has(e.source)) adj.set(e.source, []);
+      if (!adj.has(e.target)) adj.set(e.target, []);
+      adj.get(e.source).push(e.target);
+      adj.get(e.target).push(e.source);
+    }
+    const queue = [[startId]];
+    const seen = new Set([startId]);
+    while (queue.length) {
+      const path = queue.shift();
+      if (path.length > maxHops + 1) continue;
+      const head = path[path.length - 1];
+      const nbrs = adj.get(head) || [];
+      for (let i = 0; i < nbrs.length; i++) {
+        const nb = nbrs[i];
+        if (seen.has(nb)) continue;
+        if (nb === endId) return path.concat([nb]);
+        seen.add(nb);
+        queue.push(path.concat([nb]));
+      }
+    }
+    return null;
+  }
+
+  let _cardMenuEl = null;
+  function dismissCardMenu() {
+    if (_cardMenuEl && _cardMenuEl.parentNode) _cardMenuEl.parentNode.removeChild(_cardMenuEl);
+    _cardMenuEl = null;
+  }
+  function showCardMenu(card, screenX, screenY) {
+    dismissCardMenu();
+    const menu = document.createElement('div');
+    menu.className = 'boards-card-menu';
+    menu.style.left = screenX + 'px';
+    menu.style.top  = screenY + 'px';
+
+    const allNbr = vaultNeighbors(card.id, null);
+    const txNbr  = vaultNeighbors(card.id, TRANSMISSION_KINDS);
+    const newAll = allNbr.filter(id => !_cards.has(id)).length;
+    const newTx  = txNbr.filter(id => !_cards.has(id)).length;
+
+    // Path targets = other cards on board.
+    const otherCards = Array.from(_cards.values()).filter(c => c.id !== card.id);
+
+    menu.innerHTML = [
+      '<div class="boards-card-menu-header">',
+      '  <span class="boards-card-menu-title">' + escapeHtml(card.label) + '</span>',
+      '  <span class="boards-card-menu-id">' + escapeHtml(card.id) + '</span>',
+      '</div>',
+      '<button class="boards-card-menu-item" data-action="expand-all"' + (newAll === 0 ? ' disabled' : '') + '>',
+      '  <span class="bcm-item-label">Expand all connections</span>',
+      '  <span class="bcm-item-meta">' + newAll + ' new · ' + allNbr.length + ' total</span>',
+      '</button>',
+      '<button class="boards-card-menu-item" data-action="expand-tx"' + (newTx === 0 ? ' disabled' : '') + '>',
+      '  <span class="bcm-item-label">Expand transmissions</span>',
+      '  <span class="bcm-item-meta">' + newTx + ' new · ' + txNbr.length + ' total</span>',
+      '</button>',
+      (otherCards.length > 0
+        ? '<div class="boards-card-menu-section">Shortest path to…</div>'
+          + otherCards.map(c => (
+              '<button class="boards-card-menu-item boards-card-menu-item--path"'
+              + ' data-action="path" data-target="' + encodeURIComponent(c.id) + '">'
+              + '<span class="bcm-item-label">' + escapeHtml(c.label) + '</span>'
+              + '</button>'
+            )).join('')
+        : ''),
+      '<div class="boards-card-menu-divider"></div>',
+      '<button class="boards-card-menu-item boards-card-menu-item--danger" data-action="remove">',
+      '  <span class="bcm-item-label">Remove from board</span>',
+      '</button>',
+    ].join('');
+
+    document.body.appendChild(menu);
+    _cardMenuEl = menu;
+
+    // Position adjust if menu would overflow viewport.
+    requestAnimationFrame(() => {
+      const r = menu.getBoundingClientRect();
+      if (r.right > window.innerWidth - 8) {
+        menu.style.left = Math.max(8, window.innerWidth - r.width - 8) + 'px';
+      }
+      if (r.bottom > window.innerHeight - 8) {
+        menu.style.top = Math.max(8, window.innerHeight - r.height - 8) + 'px';
+      }
+    });
+
+    menu.addEventListener('click', (ev) => {
+      const btn = ev.target.closest('button[data-action]');
+      if (!btn || btn.disabled) return;
+      ev.stopPropagation();
+      const action = btn.getAttribute('data-action');
+      if (action === 'expand-all') {
+        addNodesAround(card, allNbr);
+      } else if (action === 'expand-tx') {
+        addNodesAround(card, txNbr);
+      } else if (action === 'path') {
+        const targetId = decodeURIComponent(btn.getAttribute('data-target') || '');
+        const path = shortestPath(card.id, targetId, 6);
+        if (!path) {
+          alert('No path found within 6 hops between\n' + card.label + '\n  and\n' + targetId);
+        } else {
+          // Skip endpoints (already on board); add intermediates.
+          const intermediates = path.slice(1, -1);
+          addNodesAround(card, intermediates);
+        }
+      } else if (action === 'remove') {
+        removeCard(card.id);
+      }
+      dismissCardMenu();
+    });
+
+    // Dismiss on next outside click / Escape (registered once).
+    setTimeout(() => {
+      const off = (e) => {
+        if (menu.contains(e.target)) return;
+        dismissCardMenu();
+        document.removeEventListener('mousedown', off, true);
+        document.removeEventListener('keydown', kd, true);
+      };
+      const kd = (e) => {
+        if (e.key !== 'Escape') return;
+        dismissCardMenu();
+        document.removeEventListener('mousedown', off, true);
+        document.removeEventListener('keydown', kd, true);
+      };
+      document.addEventListener('mousedown', off, true);
+      document.addEventListener('keydown', kd, true);
+    }, 0);
+  }
+
   // Step 5 — load a preset (named pick list) onto the board.
   //   spec: { name?, picks: string[] (vault node ids), replace?: bool=true }
   // Looks each pick up in window.VAULT_DATA.nodes by id; missing nodes
@@ -412,12 +663,13 @@
     render:           render,
     unmount:          unmount,
     addCard:          addCard,
+    removeCard:       removeCard,
     clearBoard:       clearBoard,
     loadPreset:       loadPreset,
     getState:         getState,
     setEdgesVisible:  setEdgesVisible,
     isEdgesVisible:   isEdgesVisible,
-    rebuildEdges:     rebuildEdges,  // exposed for step 7 right-click expansion
+    rebuildEdges:     rebuildEdges,
     seedTest:         seedTest,
   };
 })();
