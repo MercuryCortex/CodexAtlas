@@ -92,17 +92,19 @@
   // recomputed on every card add / remove / drag-move and on board
   // clear/load. Visibility is gated by a body class; the toggle in
   // the pill flips it.
+  // V2 card design (2026-05-28): 200px wide × 112px tall collapsed,
+  // ~210px tall expanded. cardCenter reads live offset dimensions so
+  // expand-toggles re-route lines correctly.
+  const CARD_W = 200;
+  const CARD_H_COLLAPSED = 112;
   function cardCenter(card) {
-    // Approximate center: a card is ~180px wide × 36-60px tall in world
-    // coords (varies with label length). Use the live element measurements
-    // so the line connects to the visual midpoint even on long labels.
     if (card.el) {
       return {
-        x: card.x + (card.el.offsetWidth  || 180) / 2,
-        y: card.y + (card.el.offsetHeight || 36)  / 2,
+        x: card.x + (card.el.offsetWidth  || CARD_W) / 2,
+        y: card.y + (card.el.offsetHeight || CARD_H_COLLAPSED) / 2,
       };
     }
-    return { x: card.x + 90, y: card.y + 18 };
+    return { x: card.x + CARD_W / 2, y: card.y + CARD_H_COLLAPSED / 2 };
   }
   function rebuildEdges() {
     if (!_edgesSvg) return;
@@ -134,14 +136,142 @@
     _edgesSvg.innerHTML = lines.join('');
   }
 
-  // ── CARD BUILDER ─────────────────────────────────────────────
+  // ── CARD BUILDER (V2 design: uniform compact, thumbnail + chevron expand) ────
+  // Per John 2026-05-28: "the cards have all the same thumbnail size compact
+  // with image and the light information of classes, with a drop to expand
+  // to more — naturally the side panel is where all info then comes."
+  //
+  // Card shape (collapsed, ~200×112):
+  //   ┌──────────────────┐
+  //   │  [thumbnail]     │  fixed 200×60 cover; type-glyph fallback
+  //   ├──────────────────┤
+  //   │ Title  …      ⌄  │  1-line ellipsis title + expand chevron
+  //   │ PERSON · 1370BCE │  light meta (type · era)
+  //   └──────────────────┘
+  // When expanded (~200×210): adds tradition line + 2-line body excerpt +
+  // "Open inspector →" link.
+
+  // Type → glyph fallback (when node has no thumbnail). Matches the
+  // sidebar/wheel iconography John already lives with.
+  const TYPE_GLYPH = {
+    person:       '✎',
+    deity:        '☉',
+    document:     '❡',
+    theme:        '◇',
+    event:        '⎯',
+    symbol:       '✦',
+    place:        '⌖',
+    'sacred-site': '☽',
+    tradition:    '∴',
+    ritual:       '⚖',
+    music:        '♫',
+    pattern:      '∞',
+    observation:  '◉',
+  };
+  function typeGlyph(t) { return TYPE_GLYPH[t] || '○'; }
+
+  // Fast vault lookup — only needed at card-build time so card.label can
+  // be enriched with type/era/body for the expanded panel. Read each time
+  // (cheap; nodes already in memory). Returns null if not in vault.
+  function lookupVaultNode(id) {
+    const v = window.VAULT_DATA || window.DATA;
+    if (!v || !Array.isArray(v.nodes)) return null;
+    return v.nodes.find(n => n && n.id === id) || null;
+  }
+  function formatEra(node) {
+    if (!node) return '';
+    const lo = node.date_earliest, hi = node.date_latest;
+    if (lo == null && hi == null) return '';
+    const fmt = y => (y < 0 ? Math.abs(y) + ' BCE' : y + ' CE');
+    if (lo != null && hi != null && lo !== hi) return fmt(lo) + ' – ' + fmt(hi);
+    return fmt(lo != null ? lo : hi);
+  }
+  function bodyExcerpt(node, lines) {
+    if (!node || !node.body) return '';
+    // Strip markdown headings + wikilinks, take first paragraph(s).
+    const raw = node.body
+      .replace(/\[\[([^\]|]+)(\|[^\]]+)?\]\]/g, '$1')   // [[link|alias]] → link
+      .replace(/^#+\s.*$/gm, '')                         // drop ## headings
+      .replace(/\*\*([^*]+)\*\*/g, '$1')                 // drop bold
+      .replace(/\*([^*]+)\*/g, '$1')                     // drop italic
+      .trim();
+    return raw.slice(0, lines * 90);
+  }
+
   function buildCardEl(card) {
+    const node = lookupVaultNode(card.id);
     const el = document.createElement('div');
     el.className = 'boards-card';
     el.dataset.cardId = card.id;
     el.style.left = card.x + 'px';
     el.style.top  = card.y + 'px';
-    el.innerHTML = '<span class="boards-card-label">' + escapeHtml(card.label) + '</span>';
+
+    const type = (node && node.type) || '';
+    const tradition = (node && node.tradition) || '';
+    const era = formatEra(node);
+    const thumbUrl = node && node.thumbnail;
+    const excerpt = bodyExcerpt(node, 2);
+
+    // Thumbnail OR fallback glyph stripe (always present at fixed height
+    // so card sizes stay uniform regardless of image availability).
+    const thumbHtml = thumbUrl
+      ? '<div class="boards-card-thumb"><img loading="lazy" decoding="async" src="' + escapeHtml(thumbUrl) + '" alt=""/></div>'
+      : '<div class="boards-card-thumb boards-card-thumb--fallback" data-type="' + escapeHtml(type) + '">'
+        + '<span class="boards-card-glyph">' + typeGlyph(type) + '</span>'
+        + '</div>';
+
+    // Meta line — TYPE · ERA (or just one if the other is missing).
+    const metaBits = [];
+    if (type) metaBits.push(escapeHtml(type));
+    if (era)  metaBits.push(escapeHtml(era));
+    const metaHtml = metaBits.length
+      ? '<div class="boards-card-meta">' + metaBits.join(' · ') + '</div>'
+      : '';
+
+    // Expanded-only content (lives in the DOM but hidden via CSS until
+    // the user toggles the chevron; rendering it always keeps the chevron
+    // animation snappy and lets the inspector handoff stay 1 click away).
+    const expandedHtml = [
+      '<div class="boards-card-expanded">',
+        (tradition ? '<div class="boards-card-tradition">' + escapeHtml(tradition) + '</div>' : ''),
+        (excerpt   ? '<div class="boards-card-excerpt">' + escapeHtml(excerpt) + '…</div>' : '<div class="boards-card-excerpt boards-card-excerpt--empty">No body text recorded.</div>'),
+        '<button class="boards-card-open-inspector" type="button" data-action="open-inspector">Open inspector →</button>',
+      '</div>',
+    ].join('');
+
+    el.innerHTML = [
+      thumbHtml,
+      '<div class="boards-card-body">',
+        '<div class="boards-card-title-row">',
+          '<span class="boards-card-label">' + escapeHtml(card.label) + '</span>',
+          '<button class="boards-card-expand" type="button" title="Expand / collapse" aria-label="Expand">⌄</button>',
+        '</div>',
+        metaHtml,
+      '</div>',
+      expandedHtml,
+    ].join('');
+
+    // Wire the chevron — toggles .is-expanded on the card. Stop the click
+    // from bubbling into the drag/select path.
+    const expandBtn = el.querySelector('.boards-card-expand');
+    if (expandBtn) {
+      expandBtn.addEventListener('click', (ev) => {
+        ev.stopPropagation();
+        el.classList.toggle('is-expanded');
+        expandBtn.textContent = el.classList.contains('is-expanded') ? '⌃' : '⌄';
+        // Edges re-route on size change.
+        requestAnimationFrame(rebuildEdges);
+      });
+    }
+    // Wire the inspector handoff button.
+    const inspBtn = el.querySelector('.boards-card-open-inspector');
+    if (inspBtn) {
+      inspBtn.addEventListener('click', (ev) => {
+        ev.stopPropagation();
+        openInspector(card.id);
+      });
+    }
+
     attachCardDrag(card, el);
     return el;
   }
@@ -334,8 +464,8 @@
     const cx = sel.reduce((s, c) => s + c.x, 0) / sel.length;
     const cy = sel.reduce((s, c) => s + c.y, 0) / sel.length;
     const cols = 2;
-    const COL_W = 220;
-    const ROW_H = 70;
+    const COL_W = 230;
+    const ROW_H = 130;
     const rows = Math.ceil(sel.length / cols);
     const startX = cx - ((cols - 1) * COL_W) / 2;
     const startY = cy - ((rows - 1) * ROW_H) / 2;
@@ -683,19 +813,19 @@
   function radialLayout(cx, cy, needN) {
     const out = [];
     const occupied = Array.from(_cards.values()).map(c => ({
-      x: c.x + 90, y: c.y + 18,
+      x: c.x + CARD_W / 2, y: c.y + CARD_H_COLLAPSED / 2,
     }));
-    const R = 200;       // ring radius
-    const minDist = 160; // min distance between cards
+    const R = 250;       // ring radius (bigger to fit 200×112 cards)
+    const minDist = 230; // min distance between card centers
     let ring = 1;
     let placed = 0;
     while (placed < needN && ring < 6) {
       const slots = 6 * ring;
       for (let i = 0; i < slots && placed < needN; i++) {
         const angle = (Math.PI * 2 / slots) * i + ring * 0.18;
-        const x = Math.round(cx + R * ring * Math.cos(angle) - 90);
-        const y = Math.round(cy + R * ring * Math.sin(angle) - 18);
-        const cxi = x + 90, cyi = y + 18;
+        const x = Math.round(cx + R * ring * Math.cos(angle) - CARD_W / 2);
+        const y = Math.round(cy + R * ring * Math.sin(angle) - CARD_H_COLLAPSED / 2);
+        const cxi = x + CARD_W / 2, cyi = y + CARD_H_COLLAPSED / 2;
         const tooClose = occupied.some(o => {
           const dx = o.x - cxi, dy = o.y - cyi;
           return dx*dx + dy*dy < minDist*minDist;
@@ -721,13 +851,13 @@
     const fresh = nodeIds.filter(id => !_cards.has(id) && lookup.has(id));
     if (!fresh.length) return 0;
 
-    const cx = sourceCard.x + 90;
-    const cy = sourceCard.y + 18;
+    const cx = sourceCard.x + CARD_W / 2;
+    const cy = sourceCard.y + CARD_H_COLLAPSED / 2;
     const slots = radialLayout(cx, cy, fresh.length);
 
     let added = 0;
     fresh.forEach((id, i) => {
-      const slot = slots[i] || { x: cx + 200 * (i % 4), y: cy + 80 * Math.floor(i / 4) };
+      const slot = slots[i] || { x: cx + 220 * (i % 4) - CARD_W / 2, y: cy + 130 * Math.floor(i / 4) - CARD_H_COLLAPSED / 2 };
       const node = lookup.get(id);
       addCard({ id, label: node.title || id, x: slot.x, y: slot.y });
       added++;
@@ -902,13 +1032,14 @@
     }
 
     // Grid layout. 3 cols × ceil(n/3) rows centered on (cx, cy).
+    // Spacing is tuned for the V2 card size (200×112 collapsed).
     const COLS    = 3;
-    const COL_W   = 220;
-    const ROW_H   = 80;
+    const COL_W   = 230;
+    const ROW_H   = 140;
     const n       = spec.picks.length;
     const rows    = Math.max(1, Math.ceil(n / COLS));
-    const startX  = cx - ((COLS - 1) * COL_W) / 2 - 100;
-    const startY  = cy - ((rows - 1) * ROW_H) / 2 - 20;
+    const startX  = cx - ((COLS - 1) * COL_W) / 2 - CARD_W / 2;
+    const startY  = cy - ((rows - 1) * ROW_H) / 2 - CARD_H_COLLAPSED / 2;
 
     let added = 0;
     spec.picks.forEach((nodeId, i) => {
