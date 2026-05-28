@@ -6563,11 +6563,33 @@ function alchemyLoadPresetToCards(presetId) {
   }));
 }
 
-// VIEWS.transmutation — free-form card pinboard via src/js/alchemy/board.js.
-// The investigation modes (nodes + findings) live in VIEWS.alchemy below.
-// ============================================================
+// VIEWS.transmutation — 2026-05-28 LEGACY CUTOVER per
+// AUDIT/2026-05-28-boards-v2-new-ux-spec.md §6 step 10.
+// All routes that used to land on the legacy alchemy board now
+// redirect to VIEWS.boards (the V2 surface). The legacy implementation
+// still lives at src/js/alchemy/board.js but is unreachable from any
+// V2 entry point — only via the _legacy/ snapshot for reference.
+//
+// We keep a thin redirect rather than `VIEWS.transmutation = VIEWS.boards`
+// so deep-links to `?view=transmutation` still resolve, and the
+// master pill's TARGET_TO_MASTER alias (`m['transmutation'] = BOARD`)
+// stays valid.
 VIEWS.transmutation = {
-  title: 'Transmutation',
+  title: 'Boards',
+  subtitle: '',
+  render() {
+    // Hand the user off to the V2 boards view. setView updates STATE
+    // + body class + dispatches codex:view-changed; that fires the
+    // app-pill's syncPillLabel which flips the master label to BOARD.
+    if (typeof setView === 'function') setView('boards');
+  },
+};
+
+// VIEWS._legacyTransmutation — preserved one release for emergency
+// rollback. To re-enable: assign VIEWS.transmutation = VIEWS._legacyTransmutation
+// in the console. The legacy alchemy board reaches src/js/alchemy/board.js.
+VIEWS._legacyTransmutation = {
+  title: 'Transmutation (legacy)',
   subtitle: 'free-form alchemy board — load presets · pin cards · trace paths',
   render() {
     document.getElementById('view-controls').innerHTML = '';

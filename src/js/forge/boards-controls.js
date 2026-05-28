@@ -226,16 +226,15 @@
     try { if (typeof ALCHEMY_PRESETS !== 'undefined' && Array.isArray(ALCHEMY_PRESETS)) presets = ALCHEMY_PRESETS; } catch (_) {}
     try { if (typeof PRESET_CATEGORY_ORDER !== 'undefined' && Array.isArray(PRESET_CATEGORY_ORDER)) presetCats = PRESET_CATEGORY_ORDER; } catch (_) {}
 
-    // Load saved boards from LS (step 9 will own this; until then we read
-    // the same key so the API contract is stable when step 9 lands).
-    let myBoards = [];
-    try {
-      const raw = localStorage.getItem('atlas.boards.v1');
-      if (raw) {
-        const parsed = JSON.parse(raw);
-        if (parsed && Array.isArray(parsed.boards)) myBoards = parsed.boards;
-      }
-    } catch (_) {}
+    // Load saved boards. Step 9 — the data is now live; saving a tree
+    // populates this list, loading replaces the current board, delete
+    // removes from LS. listBoards() is the canonical source.
+    const myBoards = (window._boardsView && window._boardsView.listBoards)
+      ? window._boardsView.listBoards()
+      : [];
+    const curId = (window._boardsView && window._boardsView.currentBoardId)
+      ? window._boardsView.currentBoardId()
+      : null;
 
     function sectionRow(label, count) {
       return (
@@ -265,12 +264,37 @@
     // ── MY BOARDS ─────────────────────────────────────────────
     html.push(sectionRow('★ My boards', myBoards.length));
     if (myBoards.length) {
-      myBoards.forEach(b => html.push(entryRow(b, 'mine')));
+      myBoards.forEach(b => {
+        const isCurrent = b.id === curId;
+        const dateStr = (() => {
+          try { return new Date(b.updatedAt || b.createdAt).toISOString().slice(0, 10); }
+          catch (_) { return ''; }
+        })();
+        html.push(
+          '<div class="boards-lib-entry-row' + (isCurrent ? ' is-current' : '') + '">'
+          +   '<button class="boards-lib-entry boards-lib-entry--mine"'
+          +     ' role="menuitem" type="button"'
+          +     ' data-kind="mine" data-id="' + encodeURIComponent(b.id) + '">'
+          +     '<div class="boards-lib-entry-title">'
+          +       (isCurrent ? '<span class="boards-lib-current-marker">●</span> ' : '')
+          +       escapeHtml(b.name || b.id)
+          +     '</div>'
+          +     '<div class="boards-lib-entry-meta">'
+          +       (b.cards ? b.cards.length : 0) + ' cards'
+          +       (dateStr ? ' · ' + dateStr : '')
+          +     '</div>'
+          +   '</button>'
+          +   '<button class="boards-lib-entry-delete" type="button"'
+          +     ' data-delete="' + encodeURIComponent(b.id) + '"'
+          +     ' title="Delete this saved board" aria-label="Delete board">×</button>'
+          + '</div>'
+        );
+      });
     } else {
       html.push(
         '<div class="boards-lib-empty">'
-        + 'Save the current board with <strong>Save tree</strong> '
-        + '(ships step 9). Your saved investigations appear here.'
+        + 'Add nodes, arrange them, then <strong>Save tree</strong>. '
+        + 'Saved investigations appear here.'
         + '</div>'
       );
     }
@@ -299,18 +323,43 @@
     html.push('</div>');
     menuEl.innerHTML = html.join('');
 
-    // Click wiring — dispatch to loadPreset on _boardsView.
+    // Click wiring — dispatch by kind. MY BOARDS uses loadBoardById
+    // (restores exact pan/zoom/cards). Other kinds use loadPreset
+    // (grid layout from a list of vault IDs).
     menuEl.addEventListener('click', (ev) => {
+      // Delete button on a My-boards row.
+      const delBtn = ev.target.closest('button[data-delete]');
+      if (delBtn) {
+        ev.stopPropagation();
+        const id = decodeURIComponent(delBtn.getAttribute('data-delete'));
+        const target = myBoards.find(b => b.id === id);
+        const ok = confirm('Delete saved board “' + (target && target.name || id) + '”?');
+        if (ok && window._boardsView && window._boardsView.deleteBoardById) {
+          window._boardsView.deleteBoardById(id);
+          // Re-render menu in place so the row vanishes without re-opening.
+          buildInvestigationMenu(menuEl);
+        }
+        return;
+      }
       const btn = ev.target.closest('button[data-kind][data-id]');
       if (!btn) return;
       ev.stopPropagation();
       const kind = btn.getAttribute('data-kind');
       const id   = decodeURIComponent(btn.getAttribute('data-id'));
+
+      if (kind === 'mine') {
+        // Load saved board verbatim (pan/zoom/cards restored).
+        if (window._boardsView && window._boardsView.loadBoardById) {
+          window._boardsView.loadBoardById(id);
+        }
+        closeAll();
+        return;
+      }
+
       let entry = null;
-      if (kind === 'massive-win')  entry = lib.massiveWins.find(b => b.id === id);
+      if (kind === 'massive-win')      entry = lib.massiveWins.find(b => b.id === id);
       else if (kind === 'transmission') entry = lib.transmissions.find(b => b.id === id);
-      else if (kind === 'ai-preset') entry = presets.find(p => p.id === id);
-      else if (kind === 'mine')      entry = myBoards.find(b => b.id === id);
+      else if (kind === 'ai-preset')    entry = presets.find(p => p.id === id);
       if (!entry) return;
       if (window._boardsView && window._boardsView.loadPreset) {
         const n = window._boardsView.loadPreset({
@@ -318,12 +367,10 @@
           picks: entry.picks,
           replace: true,
         });
-        // Tiny confirmation in the search-input area would be nice
-        // (step 5+ polish). For now silent — the board updates visibly.
         if (console && console.info) console.info('[boards] loaded preset:', entry.name, '→', n, 'cards');
       }
       closeAll();
-    }, { once: true });   // re-attach on each open via buildInvestigationMenu
+    });
   }
 
   // ── OPEN / CLOSE LOGIC ──────────────────────────────────────
@@ -406,7 +453,39 @@
 
     document.getElementById('app-pill-boards-save').addEventListener('click', (ev) => {
       ev.stopPropagation();
-      alert('Save tree — LS persistence ships in step 9 of the carve plan.');
+      if (!window._boardsView) return;
+      const state = window._boardsView.getState();
+      if (!state.cards.length) {
+        alert('Add nodes to the board first, then Save tree.');
+        return;
+      }
+      // If we have a currentBoardId (loaded earlier), offer to UPDATE.
+      const curId = window._boardsView.currentBoardId && window._boardsView.currentBoardId();
+      const existing = curId
+        ? window._boardsView.listBoards().find(b => b.id === curId)
+        : null;
+      const defaultName = existing
+        ? existing.name
+        : ('Board · ' + new Date().toISOString().slice(0, 10));
+      const name = prompt(
+        existing
+          ? 'Update “' + existing.name + '” — change the name or keep it?'
+          : 'Name this board (' + state.cards.length + ' cards):',
+        defaultName
+      );
+      if (name == null) return;   // cancelled
+      const trimmed = (name || '').trim();
+      if (!trimmed) return;
+      if (existing) {
+        const ok = confirm(
+          'Update existing “' + existing.name + '” (cards + pan + zoom replaced)?\n\n'
+          + 'Cancel = save as a NEW board instead.'
+        );
+        if (ok) window._boardsView.updateBoard(curId, trimmed);
+        else window._boardsView.saveCurrentBoard(trimmed);
+      } else {
+        window._boardsView.saveCurrentBoard(trimmed);
+      }
     });
 
     // Click outside → close.

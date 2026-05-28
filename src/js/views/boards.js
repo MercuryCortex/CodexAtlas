@@ -523,6 +523,126 @@
     return true;
   }
 
+  // ── STEP 9 — LS PERSISTENCE at atlas.boards.v1 ──────────────
+  // Shape:
+  //   {
+  //     boards: [
+  //       { id, name, cards: [{id,label,x,y}], pan: {x,y}, zoom, createdAt, updatedAt }
+  //     ],
+  //     currentBoardId: <id|null>,
+  //   }
+  //
+  // Save is explicit (Save tree button → name prompt). The current-board
+  // pointer is updated on every save/load so a page reload can restore
+  // the last loaded board (handled by syncFromLS() in render()).
+
+  const LS_KEY = 'atlas.boards.v1';
+
+  function loadLS() {
+    try {
+      const raw = localStorage.getItem(LS_KEY);
+      if (!raw) return { boards: [], currentBoardId: null };
+      const parsed = JSON.parse(raw);
+      if (!parsed || !Array.isArray(parsed.boards)) return { boards: [], currentBoardId: null };
+      return parsed;
+    } catch (_) { return { boards: [], currentBoardId: null }; }
+  }
+  function saveLS(state) {
+    try { localStorage.setItem(LS_KEY, JSON.stringify(state)); }
+    catch (e) { console.warn('[boards] saveLS failed', e); }
+  }
+  function currentSnapshot() {
+    return {
+      cards: Array.from(_cards.values()).map(c => ({
+        id: c.id, label: c.label, x: c.x, y: c.y,
+      })),
+      pan:  { x: _pan.x, y: _pan.y },
+      zoom: _zoom,
+    };
+  }
+  function genBoardId() {
+    return 'b-' + Date.now().toString(36) + '-' + Math.random().toString(36).slice(2, 6);
+  }
+
+  // Save the current state as a NEW board with the given name. Returns
+  // the saved board entry (with id/createdAt/updatedAt).
+  function saveCurrentBoard(name) {
+    const state = loadLS();
+    const snap = currentSnapshot();
+    const now = Date.now();
+    const board = {
+      id:        genBoardId(),
+      name:      String(name || 'Untitled board').slice(0, 80),
+      cards:     snap.cards,
+      pan:       snap.pan,
+      zoom:      snap.zoom,
+      createdAt: now,
+      updatedAt: now,
+    };
+    state.boards.unshift(board);     // newest first
+    state.currentBoardId = board.id;
+    // Cap at 100 boards to avoid LS bloat — drop the oldest.
+    if (state.boards.length > 100) state.boards.length = 100;
+    saveLS(state);
+    document.dispatchEvent(new CustomEvent('boards:library-changed', { detail: { kind: 'save', id: board.id } }));
+    return board;
+  }
+
+  // Update an existing saved board with the current state.
+  function updateBoard(id, name) {
+    const state = loadLS();
+    const idx = state.boards.findIndex(b => b.id === id);
+    if (idx < 0) return null;
+    const snap = currentSnapshot();
+    const next = Object.assign({}, state.boards[idx], {
+      cards:     snap.cards,
+      pan:       snap.pan,
+      zoom:      snap.zoom,
+      updatedAt: Date.now(),
+    });
+    if (typeof name === 'string') next.name = name.slice(0, 80);
+    state.boards[idx] = next;
+    state.currentBoardId = id;
+    saveLS(state);
+    document.dispatchEvent(new CustomEvent('boards:library-changed', { detail: { kind: 'update', id: id } }));
+    return next;
+  }
+
+  function loadBoardById(id) {
+    const state = loadLS();
+    const board = state.boards.find(b => b.id === id);
+    if (!board) return null;
+    // Replace current cards + pan + zoom.
+    clearBoard();
+    _pan.x = (board.pan && board.pan.x) || 0;
+    _pan.y = (board.pan && board.pan.y) || 0;
+    _zoom  = board.zoom || 1;
+    applyTransform();
+    (board.cards || []).forEach(c => addCard(c));
+    state.currentBoardId = id;
+    saveLS(state);
+    document.dispatchEvent(new CustomEvent('boards:library-changed', { detail: { kind: 'load', id: id } }));
+    return board;
+  }
+
+  function deleteBoardById(id) {
+    const state = loadLS();
+    const before = state.boards.length;
+    state.boards = state.boards.filter(b => b.id !== id);
+    if (state.currentBoardId === id) state.currentBoardId = null;
+    saveLS(state);
+    const changed = state.boards.length !== before;
+    if (changed) document.dispatchEvent(new CustomEvent('boards:library-changed', { detail: { kind: 'delete', id: id } }));
+    return changed;
+  }
+
+  function listBoards() {
+    return loadLS().boards;
+  }
+  function currentBoardId() {
+    return loadLS().currentBoardId;
+  }
+
   // ── STEP 7 — RIGHT-CLICK EXPANSION MENU ─────────────────────
   // Right-click on a card opens a small menu at cursor with:
   //   · Expand connections     — add ALL 1-hop vault neighbors
@@ -971,6 +1091,13 @@
     rebuildEdges:     rebuildEdges,
     openInspector:    openInspector,
     closeInspector:   closeInspector,
+    // Step 9 — LS persistence
+    saveCurrentBoard: saveCurrentBoard,
+    updateBoard:      updateBoard,
+    loadBoardById:    loadBoardById,
+    deleteBoardById:  deleteBoardById,
+    listBoards:       listBoards,
+    currentBoardId:   currentBoardId,
     seedTest:         seedTest,
   };
 })();

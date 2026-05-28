@@ -10165,6 +10165,48 @@ body:not(.view-boards) .app-pill--boards { display: none !important; }
   font-style: normal;
 }
 
+/* MY BOARDS rows — main entry + ✕ delete button on hover. The row
+   is a flex container so the title takes available width and the
+   delete sits flush-right. */
+.boards-lib-entry-row {
+  display: flex;
+  align-items: stretch;
+  gap: 2px;
+  width: calc(100% - 16px);
+  margin: 2px 8px;
+}
+.boards-lib-entry-row.is-current .boards-lib-entry-title {
+  color: var(--gold-1, #e8c889);
+}
+.boards-lib-entry-row .boards-lib-entry--mine {
+  flex: 1 1 auto;
+  margin: 0;
+}
+.boards-lib-current-marker {
+  color: var(--gold, #d4a55a);
+  margin-right: 4px;
+}
+.boards-lib-entry-delete {
+  flex: 0 0 auto;
+  width: 28px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  color: rgba(230,230,230,0.32);
+  font-size: 14px;
+  line-height: 1;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 100ms ease, color 100ms ease, background 100ms ease;
+}
+.boards-lib-entry-row:hover .boards-lib-entry-delete {
+  opacity: 1;
+}
+.boards-lib-entry-delete:hover {
+  color: rgba(231, 138, 138, 0.95);
+  background: rgba(196, 74, 90, 0.10);
+}
+
 /* ============================================================
  * MAP V2 + STAR MAP V2 — skeletons mirroring .boards-pane
  * Filed 2026-05-28 per AUDIT/2026-05-28-legacy-isolation-locked.md
