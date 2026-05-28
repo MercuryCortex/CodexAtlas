@@ -1,13 +1,16 @@
-# Session HANDOFF — 2026-05-28 (Legacy isolation locked + master pill 100% V2-canonical)
+# Session HANDOFF — 2026-05-28 (BOARDS V2 carve plan complete + legacy isolation locked + master pill 100% V2-canonical)
 
-> **✅ EMERGENCY RESOLVED + MASTER PILL 100% V2-CANONICAL.** Three commits past the emergency:
-> · `b73c9bb` Option A hard partition shipped + verified (full report at `AUDIT/2026-05-28-legacy-isolation-locked.md`)
-> · `4c84602` ✦ user-menu rebuilt V2-native (account drawer at `src/js/user-menu.js`, no legacy `.nh-*` CSS reused)
+> **🎉 BOARDS V2 IS DONE.** All 10 carve-plan steps shipped this session (`b139f53`, `3f2c6c1`, `ba81c95`, `89ee9e9`, `8b3e603`, `ba87d66`, `e4d3786`, `fdf872c`). The user has a complete investigation-construction tool: add vault nodes via [Add node ▾] search; drag/zoom/pan; right-click → expand connections / transmissions / shortest-path / remove; dbl-click → V2 inspector with markdown body + sources; shift+drag → marquee select → group/delete; save the board to LS under any name → reload it from MY BOARDS next session. 4 categories of pre-built boards in Investigation: 32 MASSIVE WINS, 71 AI PRESETS, 11 TRANSMISSIONS, plus the user's MY BOARDS. The legacy alchemy board (`VIEWS.transmutation`) now redirects to V2 (preserved at `VIEWS._legacyTransmutation` for emergency rollback). 0 LOC of legacy chrome reused.
+>
+> **Earlier in this session — chrome consolidation:**
+> · `b73c9bb` Option A hard partition (legacy V01 isolated to `_legacy/`)
+> · `4c84602` ✦ user-menu rebuilt V2-native (account drawer at `src/js/user-menu.js`)
 > · `8fa0bb1` MAP + STAR MAP V2 skeletons — master pill no longer routes to legacy chrome on ANY of its 5 destinations
+> · `05c3406` log catch-up
 >
 > Master pill view inventory now reads:
->   ATLAS (Forge wheel) · TIMELINE (Forge timeline) · BOARD (Boards V2 skel) · MAP (Maps V2 skel) · STAR MAP (Star Map V2 skel)
-> All 5 verified contamination-free via live screenshot. Legacy `VIEWS.atlas` (MapLibre) + `VIEWS.astrology` (4-mode astro) still load on disk but are unreachable from the V2 master pill — only via the V01 reference snapshot at `_legacy/index.html`.
+>   ATLAS (Forge wheel) · TIMELINE (Forge timeline) · BOARD (Boards V2 functional) · MAP (V2 skel) · STAR MAP (V2 skel)
+> All 5 contamination-free. Legacy MapLibre + 4-mode astro still load on disk but are unreachable from V2 chrome — only via the V01 reference snapshot at `_legacy/index.html`.
 >
 > **What's done:**
 > 1. Frozen snapshot at `_legacy/` — self-contained `index.html` + `app.js` + `app.css`. Reachable at `/_legacy/index.html` with a fixed-position `↩ V2 SHELL` return link.
