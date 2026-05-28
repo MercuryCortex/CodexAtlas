@@ -107,6 +107,24 @@
     }
     return { x: card.x + CARD_W / 2, y: card.y + CARD_H_COLLAPSED / 2 };
   }
+  // Edge-routing — find where the line from this card's center toward
+  // another point exits the card's rectangle. So the wire doesn't
+  // disappear behind the card body; it touches the card RIM and runs
+  // entirely in the empty space between cards. Returns the rim point.
+  function cardEdgePoint(card, towardX, towardY) {
+    const w = ((card.el && card.el.offsetWidth)  || CARD_W) / 2;
+    const h = ((card.el && card.el.offsetHeight) || CARD_H_COLLAPSED) / 2;
+    const cx = card.x + w;
+    const cy = card.y + h;
+    const dx = towardX - cx;
+    const dy = towardY - cy;
+    if (dx === 0 && dy === 0) return { x: cx, y: cy };
+    // Scale factor that lands on the closest rectangle edge.
+    const tx = (dx === 0) ? Infinity : w / Math.abs(dx);
+    const ty = (dy === 0) ? Infinity : h / Math.abs(dy);
+    const t = Math.min(tx, ty);
+    return { x: cx + t * dx, y: cy + t * dy };
+  }
   function rebuildEdges() {
     if (!_edgesSvg) return;
     const vault = window.VAULT_DATA || window.DATA || null;
@@ -118,7 +136,9 @@
     const EB = window.EDGE_BUCKET || {};
     // Walk vault.edges once; emit a <line> for each whose endpoints are
     // both on the board. 21k+ edges so this loop matters — keep it tight.
-    // Each line carries data-bucket so the per-bucket color rules paint it.
+    // Lines run card-RIM to card-RIM (not center-to-center) so they don't
+    // disappear behind the card bodies — every wire is fully visible in
+    // the empty space between cards. data-bucket drives per-bucket color.
     const lines = [];
     for (let i = 0; i < vault.edges.length; i++) {
       const e = vault.edges[i];
@@ -128,10 +148,13 @@
       if (!a || !b) continue;
       const ca = cardCenter(a);
       const cb = cardCenter(b);
+      // Route line from each card's rim toward the other card's center.
+      const pa = cardEdgePoint(a, cb.x, cb.y);
+      const pb = cardEdgePoint(b, ca.x, ca.y);
       const bucket = EB[e.type] || 'association';
       lines.push(
-        '<line x1="' + ca.x + '" y1="' + ca.y + '"'
-        +    ' x2="' + cb.x + '" y2="' + cb.y + '"'
+        '<line x1="' + pa.x + '" y1="' + pa.y + '"'
+        +    ' x2="' + pb.x + '" y2="' + pb.y + '"'
         +    ' class="boards-edge-line"'
         +    ' data-bucket="' + bucket + '"'
         +    (e.type ? ' data-kind="' + escapeHtml(e.type) + '"' : '')
