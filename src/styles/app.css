@@ -9472,10 +9472,14 @@ body.view-forge.fx-belowfifteen .forge-labels-overlay { display: none !important
   position: absolute;
   inset: 0;
   overflow: hidden;
-  cursor: grab;
+  /* Default cursor = crosshair → left-drag draws a marquee. The
+     Figma/Miro convention. Pan mode is opt-in (space-held or
+     middle-click drag). */
+  cursor: crosshair;
   touch-action: none;        /* let pointermove drive pan instead of browser scroll */
 }
-.boards-stage.is-panning { cursor: grabbing; }
+.boards-stage.is-pan-mode  { cursor: grab; }
+.boards-stage.is-panning   { cursor: grabbing; }
 
 /* Inner div the pan/zoom transform applies to. transform-origin is the
    top-left so coordinates stay simple — card.x/card.y are world-space
@@ -9675,31 +9679,22 @@ body.view-forge.fx-belowfifteen .forge-labels-overlay { display: none !important
   overflow: visible;
   z-index: 0;
 }
+/* Per-bucket wire colors — matches the 7 EDGE_BUCKET classes John lives
+   with on the Forge wheel. Stroke alpha pushed to ~0.85 so the lines
+   actually read on a dark board at any zoom level. */
 .boards-edge-line {
-  stroke: rgba(212,165,90,0.32);
-  stroke-width: 1.2;
+  stroke: rgba(156, 163, 175, 0.75);          /* fallback / association — gray */
+  stroke-width: 1.5;
   fill: none;
-  vector-effect: non-scaling-stroke;   /* keep stroke 1.2px even at deep zoom */
+  vector-effect: non-scaling-stroke;
 }
-.boards-edge-line[data-kind="influenced-by"],
-.boards-edge-line[data-kind="influences"] {
-  stroke: rgba(212,165,90,0.55);
-  stroke-width: 1.4;
-}
-.boards-edge-line[data-kind="syncretic-transmission"],
-.boards-edge-line[data-kind="syncretic-foundational"] {
-  stroke: rgba(212,165,90,0.65);
-  stroke-width: 1.6;
-}
-.boards-edge-line[data-kind="parallel-motif"],
-.boards-edge-line[data-kind="syncretic-parallel"] {
-  stroke: rgba(212,165,90,0.30);
-  stroke-dasharray: 4 3;
-}
-.boards-edge-line[data-kind="has-theme"],
-.boards-edge-line[data-kind="mentioned-in"] {
-  stroke: rgba(212,165,90,0.16);
-}
+.boards-edge-line[data-bucket="transmission"] { stroke: rgba(212, 165,  90, 0.95); stroke-width: 2.0; }   /* gold — the headline */
+.boards-edge-line[data-bucket="parallel"]     { stroke: rgba(167, 139, 250, 0.85); stroke-dasharray: 6 4; } /* purple, dashed — convergent */
+.boards-edge-line[data-bucket="fusion"]       { stroke: rgba(251, 146,  60, 0.90); stroke-width: 1.8; }   /* orange — syncretism */
+.boards-edge-line[data-bucket="attestation"]  { stroke: rgba(134, 239, 172, 0.85); }                       /* green — evidence */
+.boards-edge-line[data-bucket="kinship"]      { stroke: rgba(125, 211, 252, 0.85); }                       /* blue — genealogy */
+.boards-edge-line[data-bucket="polemic"]      { stroke: rgba(248, 113, 113, 0.90); stroke-width: 1.8; }   /* red — conflict */
+.boards-edge-line[data-bucket="association"]  { stroke: rgba(156, 163, 175, 0.55); }                       /* gray — generic */
 /* Hide-all toggle from the contextual pill — body class flipped by
    _boardsView.setEdgesVisible(false). */
 body.boards-edges-hidden .boards-edges { display: none; }

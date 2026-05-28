@@ -59,8 +59,9 @@
   // Live drag/pan state. null when no drag in flight.
   let _panState  = null;   // { startX, startY, origX, origY }
   let _dragState = null;   // { card, startX, startY, origX, origY, moved }
-  let _marqueeState = null; // step 8: { startScreenX, startScreenY, el }
+  let _marqueeState = null; // { startScreenX, startScreenY, el }
   const _selected = new Set();   // card IDs currently selected
+  let _spaceHeld = false;        // space-key state for pan-mode override
 
   // Edge visibility — step 6. Default ON; toggleable via the pill.
   // Persists to LS so John's preference survives reloads even before
@@ -114,8 +115,10 @@
       return;
     }
     const cardSet = _cards;
+    const EB = window.EDGE_BUCKET || {};
     // Walk vault.edges once; emit a <line> for each whose endpoints are
     // both on the board. 21k+ edges so this loop matters — keep it tight.
+    // Each line carries data-bucket so the per-bucket color rules paint it.
     const lines = [];
     for (let i = 0; i < vault.edges.length; i++) {
       const e = vault.edges[i];
@@ -125,10 +128,12 @@
       if (!a || !b) continue;
       const ca = cardCenter(a);
       const cb = cardCenter(b);
+      const bucket = EB[e.type] || 'association';
       lines.push(
         '<line x1="' + ca.x + '" y1="' + ca.y + '"'
         +    ' x2="' + cb.x + '" y2="' + cb.y + '"'
         +    ' class="boards-edge-line"'
+        +    ' data-bucket="' + bucket + '"'
         +    (e.type ? ' data-kind="' + escapeHtml(e.type) + '"' : '')
         + ' />'
       );
@@ -484,37 +489,38 @@
   function attachPanZoom() {
     if (!_stage) return;
 
-    // Pan / marquee: pointerdown on empty stage (not on a card).
-    //   shift held → MARQUEE (additive selection)
-    //   plain      → PAN (and deselect all)
+    // Pan / marquee on empty stage. Figma/Miro-style interaction:
+    //   · plain LEFT-drag          → MARQUEE (default)
+    //   · MIDDLE-click drag        → PAN
+    //   · SPACE held + left-drag   → PAN
+    //   · SHIFT held + left-drag   → MARQUEE additive (V1 = fresh select)
     _stage.addEventListener('pointerdown', (ev) => {
       if (ev.target.closest('.boards-card')) return;
-      if (ev.target.closest('.boards-multi-bar')) return;   // step 8 toolbar lives in-stage
-      if (ev.button !== 0) return;
+      if (ev.target.closest('.boards-multi-bar')) return;
+      const isPanIntent = (ev.button === 1) || (ev.button === 0 && _spaceHeld);
+      if (ev.button !== 0 && ev.button !== 1) return;
       try { _stage.setPointerCapture(ev.pointerId); } catch (_) {}
 
-      if (ev.shiftKey) {
-        // Start a marquee — clear current selection unless ctrl/meta held
-        // (additive in a future polish; V1 marquee = fresh selection).
-        clearSelection();
-        const m = document.createElement('div');
-        m.className = 'boards-marquee';
-        _stage.appendChild(m);
-        _marqueeState = {
-          startScreenX: ev.clientX,
-          startScreenY: ev.clientY,
-          el: m,
+      if (isPanIntent) {
+        _panState = {
+          startX: ev.clientX, startY: ev.clientY,
+          origX:  _pan.x,     origY:  _pan.y,
         };
+        _stage.classList.add('is-panning');
+        ev.preventDefault();   // suppress middle-click autoscroll
         return;
       }
 
-      // Plain drag → pan + deselect.
-      _panState = {
-        startX: ev.clientX, startY: ev.clientY,
-        origX:  _pan.x,     origY:  _pan.y,
-      };
-      _stage.classList.add('is-panning');
+      // Left-drag on empty → marquee (default).
       clearSelection();
+      const m = document.createElement('div');
+      m.className = 'boards-marquee';
+      _stage.appendChild(m);
+      _marqueeState = {
+        startScreenX: ev.clientX,
+        startScreenY: ev.clientY,
+        el: m,
+      };
     });
     _stage.addEventListener('pointermove', (ev) => {
       if (_marqueeState) {
@@ -604,6 +610,32 @@
     if (ev.key === 'Escape' && document.body.classList.contains('boards-inspector-open')) {
       closeInspector();
     }
+  });
+
+  // Space-held pan mode — Figma/Miro convention. When the user holds
+  // space on the Boards view, the stage cursor changes to "grab" and
+  // a left-drag will pan instead of marqueeing. Released → back to
+  // marquee mode. Guarded against firing when typing in an input.
+  document.addEventListener('keydown', (ev) => {
+    if (ev.code !== 'Space') return;
+    if (ev.target && /^(INPUT|TEXTAREA)$/.test(ev.target.tagName)) return;
+    if (!document.body.classList.contains('view-boards')) return;
+    if (_spaceHeld) return;
+    _spaceHeld = true;
+    if (_stage) _stage.classList.add('is-pan-mode');
+    ev.preventDefault();
+  });
+  document.addEventListener('keyup', (ev) => {
+    if (ev.code !== 'Space') return;
+    _spaceHeld = false;
+    if (_stage) _stage.classList.remove('is-pan-mode');
+  });
+  // Lose-focus safety: drop the space-held flag when window blurs so a
+  // user who alt-tabs while holding space doesn't return to a stuck
+  // pan-mode cursor.
+  window.addEventListener('blur', () => {
+    _spaceHeld = false;
+    if (_stage) _stage.classList.remove('is-pan-mode');
   });
 
   function addCard(spec) {
@@ -1163,14 +1195,24 @@
           edgeType: e.type,
         });
       });
+      // Per-bucket dot color — matches the boards-edge-line colors below
+      // so the pill's dot reads as the same wire on the board.
+      const BUCKET_COLOR = {
+        transmission: '#d4a55a', parallel: '#a78bfa', fusion: '#fb923c',
+        attestation:  '#86efac', kinship:  '#7dd3fc', polemic: '#f87171',
+        association:  '#9ca3af',
+      };
       const entries = Object.entries(buckets).sort((a, b) => b[1].length - a[1].length).slice(0, 10);
-      const pills = entries.map(([b, neighbors]) => (
-        '<button class="forge-side-panel-wire boards-wire-pill" type="button" data-bucket="' + escapeHtml(b) + '"'
-        + ' aria-expanded="false" title="Click to expand neighbors in this bucket">'
-        +   '<span class="forge-side-panel-wire-dot" style="background:' + escapeHtml(familyCol) + '"></span>'
-        +   neighbors.length + ' <em>' + escapeHtml(b) + '</em>'
-        + '</button>'
-      )).join('');
+      const pills = entries.map(([b, neighbors]) => {
+        const color = BUCKET_COLOR[b] || '#9ca3af';
+        return (
+          '<button class="forge-side-panel-wire boards-wire-pill" type="button" data-bucket="' + escapeHtml(b) + '"'
+          + ' aria-expanded="false" title="Click to expand neighbors in this bucket">'
+          +   '<span class="forge-side-panel-wire-dot" style="background:' + color + '"></span>'
+          +   neighbors.length + ' <em>' + escapeHtml(b) + '</em>'
+          + '</button>'
+        );
+      }).join('');
       // Per-bucket neighbor lists rendered below the pill row. Hidden by
       // default; toggled on pill click. dedupe-by-id since the same
       // neighbor can appear via multiple edge kinds in the same bucket.
