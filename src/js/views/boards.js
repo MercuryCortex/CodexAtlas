@@ -59,6 +59,8 @@
   // Live drag/pan state. null when no drag in flight.
   let _panState  = null;   // { startX, startY, origX, origY }
   let _dragState = null;   // { card, startX, startY, origX, origY, moved }
+  let _marqueeState = null; // step 8: { startScreenX, startScreenY, el }
+  const _selected = new Set();   // card IDs currently selected
 
   // Edge visibility — step 6. Default ON; toggleable via the pill.
   // Persists to LS so John's preference survives reloads even before
@@ -211,41 +213,190 @@
     });
   }
 
-  // ── CARD CLICK (placeholder; step 7 wires the side-panel/reader) ────
-  function handleCardClick(card, _ev) {
-    // For now just log + toggle a `.is-selected` ring so the click is visible.
-    document.querySelectorAll('.boards-card.is-selected').forEach(e => {
-      if (e.dataset.cardId !== card.id) e.classList.remove('is-selected');
+  // ── CARD CLICK / SELECTION ────────────────────────────────────
+  // Single-click: toggle just that card. Shift+click (handled by the
+  // pointerdown's shift-marquee path) is the multi-select path.
+  function handleCardClick(card, ev) {
+    if (ev && ev.shiftKey) {
+      // Shift-click adds (or removes) the card from the existing selection
+      // without resetting other selected cards.
+      if (_selected.has(card.id)) deselectCard(card.id);
+      else selectCard(card.id);
+      return;
+    }
+    // Plain click — single-select replace.
+    clearSelection();
+    selectCard(card.id);
+  }
+
+  function selectCard(cardId) {
+    _selected.add(cardId);
+    const c = _cards.get(cardId);
+    if (c && c.el) c.el.classList.add('is-selected');
+    syncMultiBar();
+  }
+  function deselectCard(cardId) {
+    _selected.delete(cardId);
+    const c = _cards.get(cardId);
+    if (c && c.el) c.el.classList.remove('is-selected');
+    syncMultiBar();
+  }
+  function clearSelection() {
+    _selected.forEach(id => {
+      const c = _cards.get(id);
+      if (c && c.el) c.el.classList.remove('is-selected');
     });
-    const el = _cards.get(card.id) && _cards.get(card.id).el;
-    if (el) el.classList.toggle('is-selected');
-    console.info('[boards] card click', card.id);
+    _selected.clear();
+    syncMultiBar();
+  }
+
+  // ── MARQUEE (step 8) ─────────────────────────────────────────
+  // Shift+drag on the stage draws a marquee in SCREEN-SPACE. On
+  // pointerup, every card whose screen-space bounding box intersects
+  // the marquee gets `.is-selected`.
+  function updateMarquee(curX, curY) {
+    if (!_marqueeState) return;
+    const x = Math.min(_marqueeState.startScreenX, curX);
+    const y = Math.min(_marqueeState.startScreenY, curY);
+    const w = Math.abs(curX - _marqueeState.startScreenX);
+    const h = Math.abs(curY - _marqueeState.startScreenY);
+    // Marquee element is fixed-positioned via CSS; assign top/left/width/height.
+    const stageRect = _stage.getBoundingClientRect();
+    _marqueeState.el.style.left   = (x - stageRect.left) + 'px';
+    _marqueeState.el.style.top    = (y - stageRect.top)  + 'px';
+    _marqueeState.el.style.width  = w + 'px';
+    _marqueeState.el.style.height = h + 'px';
+  }
+  function finishMarquee() {
+    if (!_marqueeState) return;
+    const r = _marqueeState.el.getBoundingClientRect();
+    if (r.width > 4 && r.height > 4) {
+      _cards.forEach(card => {
+        if (!card.el) return;
+        const cr = card.el.getBoundingClientRect();
+        const intersects = !(cr.right < r.left || cr.left > r.right || cr.bottom < r.top || cr.top > r.bottom);
+        if (intersects) selectCard(card.id);
+      });
+    }
+    if (_marqueeState.el.parentNode) _marqueeState.el.parentNode.removeChild(_marqueeState.el);
+    _marqueeState = null;
+  }
+
+  // ── MULTI-CARD TOOLBAR (step 8) ─────────────────────────────
+  // Floats above the bottom-center of the stage when selection > 1.
+  // Shows: "N selected · [Delete] [Group] [Clear]".
+  let _multiBarEl = null;
+  function ensureMultiBar() {
+    if (_multiBarEl && _multiBarEl.parentNode) return _multiBarEl;
+    const bar = document.createElement('div');
+    bar.className = 'boards-multi-bar';
+    bar.id = 'boards-multi-bar';
+    bar.innerHTML = [
+      '<span class="boards-multi-bar-count" id="boards-multi-bar-count">0 selected</span>',
+      '<button class="boards-multi-bar-btn" data-action="group" type="button" title="Pull selected cards into a tight cluster around their centroid">Group</button>',
+      '<button class="boards-multi-bar-btn boards-multi-bar-btn--danger" data-action="delete" type="button" title="Remove selected cards from the board">Delete</button>',
+      '<button class="boards-multi-bar-btn boards-multi-bar-btn--ghost" data-action="clear" type="button" title="Deselect everything">Clear</button>',
+    ].join('');
+    bar.addEventListener('click', (ev) => {
+      const btn = ev.target.closest('button[data-action]');
+      if (!btn) return;
+      ev.stopPropagation();
+      const action = btn.getAttribute('data-action');
+      if (action === 'delete') deleteSelected();
+      else if (action === 'group') groupSelected();
+      else if (action === 'clear') clearSelection();
+    });
+    if (_stage) _stage.appendChild(bar);
+    _multiBarEl = bar;
+    return bar;
+  }
+  function syncMultiBar() {
+    if (_selected.size === 0) {
+      if (_multiBarEl && _multiBarEl.parentNode) _multiBarEl.parentNode.removeChild(_multiBarEl);
+      _multiBarEl = null;
+      return;
+    }
+    const bar = ensureMultiBar();
+    const count = bar.querySelector('.boards-multi-bar-count');
+    if (count) count.textContent = _selected.size + ' selected';
+  }
+  function deleteSelected() {
+    const ids = Array.from(_selected);
+    ids.forEach(id => removeCard(id));
+    clearSelection();
+  }
+  function groupSelected() {
+    if (_selected.size < 2) return;
+    // Compute centroid, then place selected cards in a tight 2-col grid
+    // around it.
+    const ids = Array.from(_selected);
+    const sel = ids.map(id => _cards.get(id)).filter(Boolean);
+    const cx = sel.reduce((s, c) => s + c.x, 0) / sel.length;
+    const cy = sel.reduce((s, c) => s + c.y, 0) / sel.length;
+    const cols = 2;
+    const COL_W = 220;
+    const ROW_H = 70;
+    const rows = Math.ceil(sel.length / cols);
+    const startX = cx - ((cols - 1) * COL_W) / 2;
+    const startY = cy - ((rows - 1) * ROW_H) / 2;
+    sel.forEach((c, i) => {
+      const col = i % cols;
+      const row = Math.floor(i / cols);
+      c.x = Math.round(startX + col * COL_W);
+      c.y = Math.round(startY + row * ROW_H);
+      if (c.el) { c.el.style.left = c.x + 'px'; c.el.style.top = c.y + 'px'; }
+    });
+    rebuildEdges();
   }
 
   // ── PAN / ZOOM ATTACH ────────────────────────────────────────
   function attachPanZoom() {
     if (!_stage) return;
 
-    // Pan: pointerdown on empty stage (not on a card).
+    // Pan / marquee: pointerdown on empty stage (not on a card).
+    //   shift held → MARQUEE (additive selection)
+    //   plain      → PAN (and deselect all)
     _stage.addEventListener('pointerdown', (ev) => {
       if (ev.target.closest('.boards-card')) return;
+      if (ev.target.closest('.boards-multi-bar')) return;   // step 8 toolbar lives in-stage
       if (ev.button !== 0) return;
       try { _stage.setPointerCapture(ev.pointerId); } catch (_) {}
+
+      if (ev.shiftKey) {
+        // Start a marquee — clear current selection unless ctrl/meta held
+        // (additive in a future polish; V1 marquee = fresh selection).
+        clearSelection();
+        const m = document.createElement('div');
+        m.className = 'boards-marquee';
+        _stage.appendChild(m);
+        _marqueeState = {
+          startScreenX: ev.clientX,
+          startScreenY: ev.clientY,
+          el: m,
+        };
+        return;
+      }
+
+      // Plain drag → pan + deselect.
       _panState = {
         startX: ev.clientX, startY: ev.clientY,
         origX:  _pan.x,     origY:  _pan.y,
       };
       _stage.classList.add('is-panning');
-      // Click-empty deselects cards (step 8 will extend with marquee on shift).
-      document.querySelectorAll('.boards-card.is-selected').forEach(e => e.classList.remove('is-selected'));
+      clearSelection();
     });
     _stage.addEventListener('pointermove', (ev) => {
+      if (_marqueeState) {
+        updateMarquee(ev.clientX, ev.clientY);
+        return;
+      }
       if (!_panState) return;
       _pan.x = _panState.origX + (ev.clientX - _panState.startX);
       _pan.y = _panState.origY + (ev.clientY - _panState.startY);
       applyTransform();
     });
     const endPan = () => {
+      if (_marqueeState) { finishMarquee(); return; }
       if (!_panState) return;
       _panState = null;
       _stage.classList.remove('is-panning');

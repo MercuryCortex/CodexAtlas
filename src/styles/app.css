@@ -9880,6 +9880,75 @@ body.boards-inspector-open .boards-inspector[aria-hidden="true"] {
 }
 
 /* ============================================================
+ * BOARDS V2 — marquee + multi-card toolbar (step 9 internal /
+ * spec step 8: marquee select + multi-card ops)
+ * Filed 2026-05-28 per AUDIT/2026-05-28-boards-v2-new-ux-spec.md
+ * ============================================================ */
+.boards-marquee {
+  position: absolute;
+  border: 1px solid var(--gold, #d4a55a);
+  background: rgba(212,165,90,0.10);
+  pointer-events: none;
+  z-index: 50;
+  border-radius: 2px;
+}
+.boards-multi-bar {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  background: rgba(13,17,25,0.94);
+  border: 1px solid rgba(212,165,90,0.45);
+  border-radius: 10px;
+  box-shadow: 0 6px 22px rgba(0,0,0,0.45);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 100;
+  font-family: var(--mono, "JetBrains Mono", Menlo, monospace);
+  font-size: 11px;
+}
+.boards-multi-bar-count {
+  color: var(--gold-1, #e8c889);
+  padding-right: 6px;
+  border-right: 1px solid rgba(212,165,90,0.22);
+  letter-spacing: 0.08em;
+}
+.boards-multi-bar-btn {
+  background: transparent;
+  border: 1px solid rgba(212,165,90,0.22);
+  border-radius: 6px;
+  padding: 4px 12px;
+  color: var(--text-0, #e6e6e6);
+  font: inherit;
+  cursor: pointer;
+  letter-spacing: 0.04em;
+  transition: background 100ms ease, color 100ms ease, border-color 100ms ease;
+}
+.boards-multi-bar-btn:hover {
+  background: rgba(212,165,90,0.10);
+  color: var(--gold-1, #e8c889);
+  border-color: rgba(212,165,90,0.55);
+}
+.boards-multi-bar-btn--danger { color: rgba(231, 138, 138, 0.85); }
+.boards-multi-bar-btn--danger:hover {
+  background: rgba(196, 74, 90, 0.14);
+  color: rgba(255, 168, 168, 0.95);
+  border-color: rgba(231, 138, 138, 0.55);
+}
+.boards-multi-bar-btn--ghost {
+  border-color: rgba(212,165,90,0.10);
+  color: rgba(230,230,230,0.55);
+}
+.boards-multi-bar-btn--ghost:hover {
+  color: var(--gold-1, #e8c889);
+  border-color: rgba(212,165,90,0.32);
+}
+
+/* ============================================================
  * BOARDS V2 — contextual pill (step 4 of 10)
  * Filed 2026-05-28 per AUDIT/2026-05-28-boards-v2-new-ux-spec.md
  *
