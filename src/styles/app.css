@@ -9530,6 +9530,65 @@ body.view-forge.fx-belowfifteen .forge-labels-overlay { display: none !important
 }
 
 /* ============================================================
+ * BOARDS V2 — auto-drawn vault edges (step 6)
+ * Filed 2026-05-28 per AUDIT/2026-05-28-boards-v2-new-ux-spec.md
+ *
+ * SVG layer inside .boards-world, same coordinate space as the
+ * cards. The transform-origin: 0 0 on .boards-world makes the SVG
+ * pan/zoom for free. SVG sits behind the cards in stacking order
+ * (cards have z-index 0+; the SVG is below by document order).
+ * ============================================================ */
+.boards-edges {
+  position: absolute;
+  top: 0; left: 0;
+  /* Huge viewport so edges can be drawn at any world coordinate
+     without overflow clipping. transform-origin: 0 0 lines up the
+     SVG (0,0) with the world (0,0). */
+  width:  20000px;
+  height: 20000px;
+  pointer-events: none;
+  overflow: visible;
+  z-index: 0;
+}
+.boards-edge-line {
+  stroke: rgba(212,165,90,0.32);
+  stroke-width: 1.2;
+  fill: none;
+  vector-effect: non-scaling-stroke;   /* keep stroke 1.2px even at deep zoom */
+}
+.boards-edge-line[data-kind="influenced-by"],
+.boards-edge-line[data-kind="influences"] {
+  stroke: rgba(212,165,90,0.55);
+  stroke-width: 1.4;
+}
+.boards-edge-line[data-kind="syncretic-transmission"],
+.boards-edge-line[data-kind="syncretic-foundational"] {
+  stroke: rgba(212,165,90,0.65);
+  stroke-width: 1.6;
+}
+.boards-edge-line[data-kind="parallel-motif"],
+.boards-edge-line[data-kind="syncretic-parallel"] {
+  stroke: rgba(212,165,90,0.30);
+  stroke-dasharray: 4 3;
+}
+.boards-edge-line[data-kind="has-theme"],
+.boards-edge-line[data-kind="mentioned-in"] {
+  stroke: rgba(212,165,90,0.16);
+}
+/* Hide-all toggle from the contextual pill — body class flipped by
+   _boardsView.setEdgesVisible(false). */
+body.boards-edges-hidden .boards-edges { display: none; }
+
+/* Edges toggle button — pressed = on (default), unpressed = off.
+   Matches the codex pill's button-pressed visual conventions. */
+.app-pill-boards-edges[aria-pressed="false"] {
+  opacity: 0.55;
+  text-decoration: line-through;
+  text-decoration-color: rgba(212,165,90,0.55);
+  text-decoration-thickness: 1px;
+}
+
+/* ============================================================
  * BOARDS V2 — contextual pill (step 4 of 10)
  * Filed 2026-05-28 per AUDIT/2026-05-28-boards-v2-new-ux-spec.md
  *

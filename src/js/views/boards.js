@@ -48,6 +48,7 @@
   let _pane  = null;
   let _stage = null;
   let _world = null;
+  let _edgesSvg = null;   // step 6: SVG element holding the edge lines
 
   let _pan  = { x: 0, y: 0 };
   let _zoom = 1;
@@ -58,6 +59,14 @@
   // Live drag/pan state. null when no drag in flight.
   let _panState  = null;   // { startX, startY, origX, origY }
   let _dragState = null;   // { card, startX, startY, origX, origY, moved }
+
+  // Edge visibility — step 6. Default ON; toggleable via the pill.
+  // Persists to LS so John's preference survives reloads even before
+  // the full board persistence ships in step 9.
+  let _edgesVisible = (function () {
+    try { return localStorage.getItem('atlas.boards.edges-visible') !== '0'; }
+    catch (_) { return true; }
+  })();
 
   // ── HELPERS ──────────────────────────────────────────────────
   function applyTransform() {
@@ -72,6 +81,55 @@
   }
   function clampZoom(z) {
     return Math.max(0.25, Math.min(2.5, z));
+  }
+
+  // ── EDGE LAYER (step 6) ──────────────────────────────────────
+  // SVG sibling of the card layer inside .boards-world. Lives in the
+  // same coordinate space as the cards (transform-origin 0 0), so it
+  // pans + zooms automatically with the world transform. Edges are
+  // recomputed on every card add / remove / drag-move and on board
+  // clear/load. Visibility is gated by a body class; the toggle in
+  // the pill flips it.
+  function cardCenter(card) {
+    // Approximate center: a card is ~180px wide × 36-60px tall in world
+    // coords (varies with label length). Use the live element measurements
+    // so the line connects to the visual midpoint even on long labels.
+    if (card.el) {
+      return {
+        x: card.x + (card.el.offsetWidth  || 180) / 2,
+        y: card.y + (card.el.offsetHeight || 36)  / 2,
+      };
+    }
+    return { x: card.x + 90, y: card.y + 18 };
+  }
+  function rebuildEdges() {
+    if (!_edgesSvg) return;
+    const vault = window.VAULT_DATA || window.DATA || null;
+    if (!vault || !Array.isArray(vault.edges) || _cards.size < 2) {
+      _edgesSvg.innerHTML = '';
+      return;
+    }
+    const cardSet = _cards;
+    // Walk vault.edges once; emit a <line> for each whose endpoints are
+    // both on the board. 21k+ edges so this loop matters — keep it tight.
+    const lines = [];
+    for (let i = 0; i < vault.edges.length; i++) {
+      const e = vault.edges[i];
+      if (!e) continue;
+      const a = cardSet.get(e.source);
+      const b = cardSet.get(e.target);
+      if (!a || !b) continue;
+      const ca = cardCenter(a);
+      const cb = cardCenter(b);
+      lines.push(
+        '<line x1="' + ca.x + '" y1="' + ca.y + '"'
+        +    ' x2="' + cb.x + '" y2="' + cb.y + '"'
+        +    ' class="boards-edge-line"'
+        +    (e.type ? ' data-kind="' + escapeHtml(e.type) + '"' : '')
+        + ' />'
+      );
+    }
+    _edgesSvg.innerHTML = lines.join('');
   }
 
   // ── CARD BUILDER ─────────────────────────────────────────────
@@ -121,6 +179,11 @@
         card.y = _dragState.origY + dy;
         el.style.left = card.x + 'px';
         el.style.top  = card.y + 'px';
+        // Step 6 — re-route any edges touching this card. Cheap because
+        // rebuildEdges is a single linear pass over vault.edges with
+        // tight inner loop; on a board with 10-20 cards it's well under
+        // 1ms per frame.
+        rebuildEdges();
       }
     });
     const finishDrag = (ev) => {
@@ -201,12 +264,18 @@
     pane.innerHTML = [
       '<div class="boards-shell" id="boards-shell">',
       '  <div class="boards-stage" id="boards-stage">',
-      '    <div class="boards-world" id="boards-world"></div>',
+      '    <div class="boards-world" id="boards-world">',
+      // Edge layer: SVG sibling of card elements, behind them in stacking
+      // order. width/height come from the world layer (CSS); we use a very
+      // wide viewBox so coordinates can be anywhere.
+      '      <svg class="boards-edges" id="boards-edges" xmlns="http://www.w3.org/2000/svg"></svg>',
+      '    </div>',
       '  </div>',
       '</div>',
     ].join('\n');
     _stage = pane.querySelector('.boards-stage');
     _world = pane.querySelector('.boards-world');
+    _edgesSvg = pane.querySelector('.boards-edges');
 
     // Re-mount any cards that survived a re-render (none yet — step 9
     // ships LS rehydration). The loop is here so the contract holds
@@ -216,9 +285,13 @@
       card.el = el;
       _world.appendChild(el);
     });
+    // Apply persisted edge-visibility on (re)mount.
+    document.body.classList.toggle('boards-edges-hidden', !_edgesVisible);
 
     applyTransform();
     attachPanZoom();
+    // Initial edge pass — defer one tick so card .offsetWidth is measurable.
+    requestAnimationFrame(rebuildEdges);
   }
 
   function unmount() {
@@ -242,6 +315,9 @@
       const el = buildCardEl(card);
       card.el = el;
       _world.appendChild(el);
+      // Step 6 — recompute edges on every add. Defer one tick so the new
+      // el's offsetWidth/Height are measurable (needed by cardCenter).
+      requestAnimationFrame(rebuildEdges);
     }
     return card;
   }
@@ -261,6 +337,7 @@
   function clearBoard() {
     _cards.forEach(c => { if (c.el && c.el.parentNode) c.el.parentNode.removeChild(c.el); });
     _cards.clear();
+    rebuildEdges();   // step 6 — clear any rendered edges
   }
 
   // Step 5 — load a preset (named pick list) onto the board.
@@ -322,13 +399,25 @@
     addCard({ id: 'demo-3', label: 'Psalm 104',         x:  120, y:  340 });
   }
 
+  // Step 6 — edge visibility toggle. Body class drives the CSS hide.
+  // LS-persists the preference so it survives reloads.
+  function setEdgesVisible(on) {
+    _edgesVisible = !!on;
+    document.body.classList.toggle('boards-edges-hidden', !_edgesVisible);
+    try { localStorage.setItem('atlas.boards.edges-visible', _edgesVisible ? '1' : '0'); } catch (_) {}
+  }
+  function isEdgesVisible() { return _edgesVisible; }
+
   window._boardsView = {
-    render:     render,
-    unmount:    unmount,
-    addCard:    addCard,
-    clearBoard: clearBoard,
-    loadPreset: loadPreset,
-    getState:   getState,
-    seedTest:   seedTest,
+    render:           render,
+    unmount:          unmount,
+    addCard:          addCard,
+    clearBoard:       clearBoard,
+    loadPreset:       loadPreset,
+    getState:         getState,
+    setEdgesVisible:  setEdgesVisible,
+    isEdgesVisible:   isEdgesVisible,
+    rebuildEdges:     rebuildEdges,  // exposed for step 7 right-click expansion
+    seedTest:         seedTest,
   };
 })();

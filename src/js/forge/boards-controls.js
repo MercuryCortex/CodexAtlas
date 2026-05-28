@@ -63,6 +63,12 @@
       '  <span class="app-pill-caret" aria-hidden="true">▾</span>',
       '</button>',
       '<span class="app-pill-divider" aria-hidden="true"></span>',
+      '<button class="app-pill-side app-pill-boards-edges" id="app-pill-boards-edges"',
+      '        type="button" aria-pressed="true"',
+      '        title="Show / hide auto-drawn edges between cards that are connected in the vault graph">',
+      '  <span class="app-pill-label" id="app-pill-boards-edges-label">Edges</span>',
+      '</button>',
+      '<span class="app-pill-divider" aria-hidden="true"></span>',
       '<button class="app-pill-side app-pill-boards-save" id="app-pill-boards-save"',
       '        type="button"',
       '        title="Save the current board (LS persistence lands in step 9)">',
@@ -379,6 +385,25 @@
       ev.stopPropagation();
       if (_openMenu === 'addnode') closeAll(); else openAddNode();
     });
+    // Step 6 — Edges toggle. Pressed state mirrors window._boardsView's
+    // current visibility (the view is the source of truth; LS-persists).
+    const edgesBtn = document.getElementById('app-pill-boards-edges');
+    function syncEdgesBtn() {
+      const on = window._boardsView && window._boardsView.isEdgesVisible
+        ? window._boardsView.isEdgesVisible() : true;
+      edgesBtn.setAttribute('aria-pressed', on ? 'true' : 'false');
+      const label = document.getElementById('app-pill-boards-edges-label');
+      if (label) label.textContent = 'Edges';   // label stays static; aria-pressed drives styling
+    }
+    syncEdgesBtn();
+    edgesBtn.addEventListener('click', (ev) => {
+      ev.stopPropagation();
+      if (!window._boardsView || !window._boardsView.setEdgesVisible) return;
+      const cur = window._boardsView.isEdgesVisible();
+      window._boardsView.setEdgesVisible(!cur);
+      syncEdgesBtn();
+    });
+
     document.getElementById('app-pill-boards-save').addEventListener('click', (ev) => {
       ev.stopPropagation();
       alert('Save tree — LS persistence ships in step 9 of the carve plan.');
