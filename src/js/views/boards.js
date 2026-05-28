@@ -203,6 +203,12 @@
     };
     el.addEventListener('pointerup',     finishDrag);
     el.addEventListener('pointercancel', finishDrag);
+
+    // Step 8 — double-click → open the Boards inspector for this card.
+    el.addEventListener('dblclick', (ev) => {
+      ev.stopPropagation();
+      openInspector(card.id);
+    });
   }
 
   // ── CARD CLICK (placeholder; step 7 wires the side-panel/reader) ────
@@ -305,8 +311,16 @@
   function unmount() {
     _pane = _stage = _world = null;
     _panState = _dragState = null;
+    closeInspector();   // step 8 — don't leave the panel hanging on view-swap
     // _cards intentionally preserved so the next render() rehydrates.
   }
+
+  // Step 8 — global Escape closes the inspector when open.
+  document.addEventListener('keydown', (ev) => {
+    if (ev.key === 'Escape' && document.body.classList.contains('boards-inspector-open')) {
+      closeInspector();
+    }
+  });
 
   function addCard(spec) {
     if (!spec || !spec.id) return null;
@@ -650,6 +664,140 @@
     addCard({ id: 'demo-3', label: 'Psalm 104',         x:  120, y:  340 });
   }
 
+  // ── STEP 8 — BOARDS INSPECTOR (right-side slide-in) ──────────
+  // Dbl-clicking a card opens this panel showing the node's full
+  // detail — title, type/tradition/era badges, markdown body via
+  // window.marked, refs list, theme list, and if the node has a
+  // SCRIPTURE_TEXTS entry, an "Open scripture reader" button that
+  // hands off to the legacy reader.
+  //
+  // Why not reuse the Forge side-panel: it's tightly coupled to the
+  // Forge engine internals (local state, computeFaceObjectPosition,
+  // toggleLock, triggerClickPulse) and doesn't expose a clean
+  // show(nodeId) public API. A standalone V2-native panel is
+  // simpler, safer, and matches the legacy-isolation cardinal.
+  //
+  // The panel is appended to <body> once on first open, then re-
+  // populated on each subsequent open. CSS slide-in animation;
+  // body class .boards-inspector-open drives the open/closed.
+
+  let _inspectorEl   = null;
+  let _inspectorNodeId = null;
+
+  function ensureInspector() {
+    if (_inspectorEl) return _inspectorEl;
+    const el = document.createElement('aside');
+    el.className = 'boards-inspector';
+    el.id = 'boards-inspector';
+    el.setAttribute('aria-hidden', 'true');
+    el.innerHTML = '<button class="boards-inspector-close" type="button" aria-label="Close inspector">×</button><div class="boards-inspector-body" id="boards-inspector-body"></div>';
+    document.body.appendChild(el);
+    el.querySelector('.boards-inspector-close').addEventListener('click', closeInspector);
+    _inspectorEl = el;
+    return el;
+  }
+
+  function openInspector(nodeId) {
+    const vault = window.VAULT_DATA || window.DATA || null;
+    if (!vault || !Array.isArray(vault.nodes)) return;
+    const node = vault.nodes.find(n => n && n.id === nodeId);
+    if (!node) return;
+
+    const el = ensureInspector();
+    _inspectorNodeId = nodeId;
+    el.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('boards-inspector-open');
+
+    // Build body content. Refs split by tier (T1/T2/T3) when known.
+    const refsHtml = (() => {
+      if (!Array.isArray(node.refs) || !node.refs.length) return '';
+      const items = node.refs.slice(0, 12).map(r => {
+        if (typeof r === 'string') return '<li>' + escapeHtml(r) + '</li>';
+        const cite = (r.author ? escapeHtml(r.author) : '') + (r.title ? (r.author ? ' · ' : '') + '<em>' + escapeHtml(r.title) + '</em>' : '') + (r.year ? ' (' + escapeHtml(String(r.year)) + ')' : '');
+        const tier = r.tier ? ' <span class="boards-inspector-ref-tier">' + escapeHtml(r.tier) + '</span>' : '';
+        return '<li>' + cite + tier + '</li>';
+      });
+      return '<div class="boards-inspector-section"><div class="boards-inspector-section-label">Sources</div><ul class="boards-inspector-refs">' + items.join('') + '</ul></div>';
+    })();
+
+    const themesHtml = (() => {
+      if (!Array.isArray(node.themes) || !node.themes.length) return '';
+      return '<div class="boards-inspector-section"><div class="boards-inspector-section-label">Themes</div><div class="boards-inspector-pills">'
+        + node.themes.slice(0, 12).map(t => '<span class="boards-inspector-pill">' + escapeHtml(t) + '</span>').join('')
+        + '</div></div>';
+    })();
+
+    const bodyMd = node.body || '';
+    const bodyHtml = (() => {
+      if (!bodyMd) return '<p class="boards-inspector-empty">No body text recorded.</p>';
+      if (window.marked && typeof window.marked.parse === 'function') {
+        try { return window.marked.parse(bodyMd); } catch (_) {}
+      }
+      // Fallback: render as preformatted text.
+      return '<pre class="boards-inspector-pre">' + escapeHtml(bodyMd) + '</pre>';
+    })();
+
+    const dateRange = (() => {
+      const lo = node.date_earliest, hi = node.date_latest;
+      if (lo == null && hi == null) return '';
+      const fmt = y => (y < 0 ? Math.abs(y) + ' BCE' : y + ' CE');
+      if (lo != null && hi != null && lo !== hi) return fmt(lo) + ' – ' + fmt(hi);
+      return fmt(lo != null ? lo : hi);
+    })();
+
+    // Scripture handoff — if this node has a SCRIPTURE_TEXTS entry,
+    // surface a button that opens it in the legacy reader.
+    const hasScripture = (() => {
+      const st = window.SCRIPTURE_TEXTS || {};
+      // Try direct id match, then doc-node match.
+      if (st[nodeId]) return nodeId;
+      for (const k in st) {
+        if (st[k] && st[k].docNode === nodeId) return k;
+      }
+      return null;
+    })();
+    const scriptureBtn = hasScripture
+      ? '<button class="boards-inspector-read-btn" type="button" data-textkey="' + escapeHtml(hasScripture) + '">✠ Open in Scripture Reader</button>'
+      : '';
+
+    const innerBody = el.querySelector('.boards-inspector-body');
+    innerBody.innerHTML = [
+      '<div class="boards-inspector-header">',
+      '  <div class="boards-inspector-title">' + escapeHtml(node.title || node.id) + '</div>',
+      '  <div class="boards-inspector-badges">',
+      (node.type ? '<span class="boards-inspector-badge boards-inspector-badge--type">' + escapeHtml(node.type) + '</span>' : ''),
+      (node.tradition ? '<span class="boards-inspector-badge">' + escapeHtml(node.tradition) + '</span>' : ''),
+      (dateRange ? '<span class="boards-inspector-badge boards-inspector-badge--era">' + escapeHtml(dateRange) + '</span>' : ''),
+      '  </div>',
+      '</div>',
+      scriptureBtn,
+      '<div class="boards-inspector-section boards-inspector-section--body">',
+      bodyHtml,
+      '</div>',
+      themesHtml,
+      refsHtml,
+    ].join('');
+
+    // Scripture-handoff button wiring. Uses STATE.scriptureReaderMode +
+    // setView('scripture') to engage the legacy reader. Boards stays
+    // unmounted until user navigates back via master-pill.
+    const readBtn = innerBody.querySelector('.boards-inspector-read-btn');
+    if (readBtn) {
+      readBtn.addEventListener('click', () => {
+        const tk = readBtn.getAttribute('data-textkey');
+        if (window.STATE) window.STATE.scriptureReaderMode = tk;
+        if (typeof window.setView === 'function') window.setView('scripture');
+      });
+    }
+  }
+
+  function closeInspector() {
+    if (!_inspectorEl) return;
+    _inspectorEl.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('boards-inspector-open');
+    _inspectorNodeId = null;
+  }
+
   // Step 6 — edge visibility toggle. Body class drives the CSS hide.
   // LS-persists the preference so it survives reloads.
   function setEdgesVisible(on) {
@@ -670,6 +818,8 @@
     setEdgesVisible:  setEdgesVisible,
     isEdgesVisible:   isEdgesVisible,
     rebuildEdges:     rebuildEdges,
+    openInspector:    openInspector,
+    closeInspector:   closeInspector,
     seedTest:         seedTest,
   };
 })();

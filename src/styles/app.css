@@ -9686,6 +9686,200 @@ body.boards-edges-hidden .boards-edges { display: none; }
 }
 
 /* ============================================================
+ * BOARDS V2 — Inspector panel (step 8)
+ * Filed 2026-05-28 per AUDIT/2026-05-28-boards-v2-new-ux-spec.md
+ *
+ * Right-side slide-in panel that shows a full node detail when
+ * the user double-clicks a card. V2-native; does NOT reuse the
+ * Forge side-panel (too coupled to engine internals).
+ * ============================================================ */
+.boards-inspector {
+  position: fixed;
+  top: 0; right: 0;
+  width: min(420px, 38vw);
+  height: 100vh;
+  background: rgba(13,17,25,0.96);
+  border-left: 1px solid rgba(212,165,90,0.22);
+  box-shadow: -10px 0 32px rgba(0,0,0,0.5);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  z-index: 10000;
+  transform: translateX(100%);
+  transition: transform 220ms cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+}
+body.boards-inspector-open .boards-inspector {
+  transform: translateX(0);
+}
+.boards-inspector[aria-hidden="true"] {
+  pointer-events: none;
+}
+body.boards-inspector-open .boards-inspector[aria-hidden="true"] {
+  /* aria-hidden false is set in JS during open; until then,
+     pointer-events guard while transform animates in. */
+}
+.boards-inspector-close {
+  position: absolute;
+  top: 12px; right: 12px;
+  width: 28px; height: 28px;
+  background: transparent;
+  border: 1px solid rgba(212,165,90,0.22);
+  border-radius: 6px;
+  color: rgba(212,165,90,0.65);
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 1;
+  z-index: 2;
+  transition: color 100ms ease, border-color 100ms ease;
+}
+.boards-inspector-close:hover {
+  color: var(--gold-1, #e8c889);
+  border-color: rgba(212,165,90,0.55);
+}
+.boards-inspector-body {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  padding: 22px 24px 40px 24px;
+  scrollbar-width: thin;
+}
+.boards-inspector-header {
+  margin-bottom: 16px;
+  padding-right: 36px;
+}
+.boards-inspector-title {
+  font-family: var(--serif, "Cormorant Garamond", Georgia, serif);
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--gold-1, #e8c889);
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+  word-break: break-word;
+}
+.boards-inspector-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+.boards-inspector-badge {
+  font-family: var(--mono, "JetBrains Mono", Menlo, monospace);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(212,165,90,0.65);
+  padding: 3px 8px;
+  border: 1px solid rgba(212,165,90,0.22);
+  border-radius: 10px;
+}
+.boards-inspector-badge--type   { color: var(--gold, #d4a55a); border-color: rgba(212,165,90,0.45); }
+.boards-inspector-badge--era    { color: rgba(230,230,230,0.65); }
+.boards-inspector-read-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 16px;
+  padding: 8px 14px;
+  background: rgba(212,165,90,0.10);
+  border: 1px solid rgba(212,165,90,0.45);
+  border-radius: 6px;
+  color: var(--gold-1, #e8c889);
+  font-family: var(--mono, "JetBrains Mono", Menlo, monospace);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  transition: background 100ms ease, color 100ms ease;
+}
+.boards-inspector-read-btn:hover {
+  background: rgba(212,165,90,0.18);
+  color: var(--text-0, #e6e6e6);
+}
+.boards-inspector-section {
+  margin-top: 18px;
+  font-family: var(--sans, "Inter", system-ui, sans-serif);
+}
+.boards-inspector-section-label {
+  font-family: var(--mono, "JetBrains Mono", Menlo, monospace);
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold, #d4a55a);
+  margin-bottom: 8px;
+}
+.boards-inspector-section--body {
+  font-size: 13px;
+  line-height: 1.65;
+  color: rgba(230,230,230,0.88);
+}
+.boards-inspector-section--body p { margin: 0 0 12px 0; }
+.boards-inspector-section--body h2,
+.boards-inspector-section--body h3 {
+  font-family: var(--serif, "Cormorant Garamond", Georgia, serif);
+  font-weight: 500;
+  color: var(--text-0, #e6e6e6);
+  margin: 18px 0 8px 0;
+}
+.boards-inspector-section--body h2 { font-size: 16px; }
+.boards-inspector-section--body h3 { font-size: 14px; }
+.boards-inspector-section--body em { color: var(--gold, #d4a55a); font-style: italic; }
+.boards-inspector-section--body strong { color: var(--text-0, #e6e6e6); }
+.boards-inspector-section--body a {
+  color: var(--gold-1, #e8c889);
+  text-decoration: none;
+  border-bottom: 1px dotted rgba(212,165,90,0.45);
+}
+.boards-inspector-pre {
+  white-space: pre-wrap;
+  font-family: var(--mono, "JetBrains Mono", Menlo, monospace);
+  font-size: 11px;
+  color: rgba(230,230,230,0.75);
+}
+.boards-inspector-empty {
+  font-style: italic;
+  color: rgba(230,230,230,0.45);
+  margin: 0;
+}
+.boards-inspector-refs {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 11px;
+  line-height: 1.5;
+  color: rgba(230,230,230,0.78);
+}
+.boards-inspector-refs li {
+  padding: 4px 0;
+  border-bottom: 1px solid rgba(212,165,90,0.10);
+}
+.boards-inspector-refs em { color: var(--text-0, #e6e6e6); font-style: italic; }
+.boards-inspector-ref-tier {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 1px 6px;
+  font-family: var(--mono, "JetBrains Mono", Menlo, monospace);
+  font-size: 8.5px;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: var(--gold, #d4a55a);
+  border: 1px solid rgba(212,165,90,0.32);
+  border-radius: 8px;
+}
+.boards-inspector-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.boards-inspector-pill {
+  font-family: var(--mono, "JetBrains Mono", Menlo, monospace);
+  font-size: 10px;
+  color: rgba(230,230,230,0.75);
+  padding: 3px 9px;
+  background: rgba(212,165,90,0.06);
+  border: 1px solid rgba(212,165,90,0.18);
+  border-radius: 12px;
+}
+
+/* ============================================================
  * BOARDS V2 — contextual pill (step 4 of 10)
  * Filed 2026-05-28 per AUDIT/2026-05-28-boards-v2-new-ux-spec.md
  *
