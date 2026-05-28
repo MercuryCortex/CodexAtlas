@@ -259,8 +259,9 @@
         ev.stopPropagation();
         el.classList.toggle('is-expanded');
         expandBtn.textContent = el.classList.contains('is-expanded') ? '⌃' : '⌄';
-        // Edges re-route on size change.
-        requestAnimationFrame(rebuildEdges);
+        // Edges re-route on size change. setTimeout(0) instead of rAF
+        // for reliability in backgrounded tabs / headless.
+        setTimeout(rebuildEdges, 0);
       });
     }
     // Wire the inspector handoff button.
@@ -586,7 +587,9 @@
     applyTransform();
     attachPanZoom();
     // Initial edge pass — defer one tick so card .offsetWidth is measurable.
-    requestAnimationFrame(rebuildEdges);
+    // setTimeout(0) instead of rAF (rAF doesn't fire in backgrounded tabs
+    // or headless browsers; we just need to wait one tick for layout).
+    setTimeout(rebuildEdges, 0);
   }
 
   function unmount() {
@@ -618,9 +621,10 @@
       const el = buildCardEl(card);
       card.el = el;
       _world.appendChild(el);
-      // Step 6 — recompute edges on every add. Defer one tick so the new
-      // el's offsetWidth/Height are measurable (needed by cardCenter).
-      requestAnimationFrame(rebuildEdges);
+      // setTimeout(0) instead of requestAnimationFrame because rAF is
+      // unreliable in backgrounded tabs and in headless browsers used
+      // for testing — same "defer one tick" semantics, runs regardless.
+      setTimeout(rebuildEdges, 0);
     }
     return card;
   }
@@ -1110,36 +1114,20 @@
     el.setAttribute('aria-hidden', 'false');
     document.body.classList.add('boards-inspector-open');
 
-    // Build body content. Refs split by tier (T1/T2/T3) when known.
-    const refsHtml = (() => {
-      if (!Array.isArray(node.refs) || !node.refs.length) return '';
-      const items = node.refs.slice(0, 12).map(r => {
-        if (typeof r === 'string') return '<li>' + escapeHtml(r) + '</li>';
-        const cite = (r.author ? escapeHtml(r.author) : '') + (r.title ? (r.author ? ' · ' : '') + '<em>' + escapeHtml(r.title) + '</em>' : '') + (r.year ? ' (' + escapeHtml(String(r.year)) + ')' : '');
-        const tier = r.tier ? ' <span class="boards-inspector-ref-tier">' + escapeHtml(r.tier) + '</span>' : '';
-        return '<li>' + cite + tier + '</li>';
-      });
-      return '<div class="boards-inspector-section"><div class="boards-inspector-section-label">Sources</div><ul class="boards-inspector-refs">' + items.join('') + '</ul></div>';
-    })();
+    // ── Match the Forge side-panel's structure exactly. Same class
+    // vocabulary so it inherits the existing .forge-side-panel-* CSS
+    // (the canonical V2 inspector look — used for deities, persons,
+    // documents, etc., on the Forge wheel). Re-using V2 class names
+    // across V2 surfaces is correct (single source of truth); the
+    // legacy-isolation cardinal only forbids reusing legacy .alch-*
+    // / .nh-* names from the V01 prototype.
 
-    const themesHtml = (() => {
-      if (!Array.isArray(node.themes) || !node.themes.length) return '';
-      return '<div class="boards-inspector-section"><div class="boards-inspector-section-label">Themes</div><div class="boards-inspector-pills">'
-        + node.themes.slice(0, 12).map(t => '<span class="boards-inspector-pill">' + escapeHtml(t) + '</span>').join('')
-        + '</div></div>';
-    })();
+    const tradition = node.tradition || '';
+    const familyCol = node.family_color || node.tradition_color || '#888';
+    const desc = node.label || '';   // short subtitle ("the Egyptian sun god of...")
+    const bodyText = node.body || '';
 
-    const bodyMd = node.body || '';
-    const bodyHtml = (() => {
-      if (!bodyMd) return '<p class="boards-inspector-empty">No body text recorded.</p>';
-      if (window.marked && typeof window.marked.parse === 'function') {
-        try { return window.marked.parse(bodyMd); } catch (_) {}
-      }
-      // Fallback: render as preformatted text.
-      return '<pre class="boards-inspector-pre">' + escapeHtml(bodyMd) + '</pre>';
-    })();
-
-    const dateRange = (() => {
+    const dateStr = (() => {
       const lo = node.date_earliest, hi = node.date_latest;
       if (lo == null && hi == null) return '';
       const fmt = y => (y < 0 ? Math.abs(y) + ' BCE' : y + ' CE');
@@ -1147,43 +1135,124 @@
       return fmt(lo != null ? lo : hi);
     })();
 
-    // Scripture handoff — if this node has a SCRIPTURE_TEXTS entry,
-    // surface a button that opens it in the legacy reader.
-    const hasScripture = (() => {
-      const st = window.SCRIPTURE_TEXTS || {};
-      // Try direct id match, then doc-node match.
-      if (st[nodeId]) return nodeId;
-      for (const k in st) {
-        if (st[k] && st[k].docNode === nodeId) return k;
+    // ── Wires pill row — bucket-grouped neighbor counts, mirroring
+    // the Forge side-panel's `.forge-side-panel-wires` summary row.
+    const wiresHtml = (() => {
+      const edges = (vault.edges || []).filter(e => e.source === nodeId || e.target === nodeId);
+      if (!edges.length) return '';
+      const EB = window.EDGE_BUCKET || {};
+      const buckets = {};
+      edges.forEach(e => {
+        const b = EB[e.type] || e.type || 'association';
+        buckets[b] = (buckets[b] || 0) + 1;
+      });
+      const pills = Object.entries(buckets)
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 8)
+        .map(([b, count]) => (
+          '<span class="forge-side-panel-wire">'
+          +   '<span class="forge-side-panel-wire-dot" style="background:' + escapeHtml(familyCol) + '"></span>'
+          +   count + ' <em>' + escapeHtml(b) + '</em>'
+          + '</span>'
+        )).join('');
+      return '<div class="forge-side-panel-wires">' + pills + '</div>';
+    })();
+
+    // ── Meta dl/dt/dd grid (Date / Place / Domains).
+    const metaRows = [];
+    if (dateStr) metaRows.push('<dt>Date</dt><dd>' + escapeHtml(dateStr) + '</dd>');
+    if (node.region || node.geo) {
+      const place = node.region || (node.geo && node.geo.name) || '';
+      if (place) metaRows.push('<dt>Place</dt><dd>' + escapeHtml(place) + '</dd>');
+    }
+    if (Array.isArray(node.domains) && node.domains.length) {
+      metaRows.push('<dt>Domains</dt><dd>' + escapeHtml(node.domains.join(', ')) + '</dd>');
+    }
+    if (Array.isArray(node.themes) && node.themes.length) {
+      metaRows.push('<dt>Themes</dt><dd>' + node.themes.slice(0, 8).map(escapeHtml).join(', ') + '</dd>');
+    }
+    if (node.language) metaRows.push('<dt>Lang</dt><dd>' + escapeHtml(node.language) + '</dd>');
+    if (node.dating_basis) {
+      const dbasis = node.dating_basis || 'b3';
+      metaRows.push(
+        '<dt>Basis</dt><dd class="forge-side-panel-dating-basis forge-side-panel-dating-basis--'
+        + escapeHtml(String(dbasis).toLowerCase()) + '">'
+        + escapeHtml(node.dating_basis_source || dbasis) + '</dd>'
+      );
+    }
+    const metaHtml = metaRows.length
+      ? '<dl class="forge-side-panel-meta">' + metaRows.join('') + '</dl>'
+      : '';
+
+    // ── Body extract — render markdown if available.
+    const extractHtml = (() => {
+      if (node.thumb_extract) {
+        return '<div class="forge-side-panel-extract">' + escapeHtml(node.thumb_extract) + '</div>';
       }
+      if (!bodyText) return '';
+      let rendered = '';
+      if (window.marked && typeof window.marked.parse === 'function') {
+        try { rendered = window.marked.parse(bodyText); } catch (_) {}
+      }
+      if (!rendered) rendered = '<pre>' + escapeHtml(bodyText) + '</pre>';
+      return '<div class="forge-side-panel-extract">' + rendered + '</div>';
+    })();
+
+    // ── Refs list (Tier-grouped).
+    const refsHtml = (() => {
+      if (!Array.isArray(node.refs) || !node.refs.length) return '';
+      const items = node.refs.slice(0, 12).map(r => {
+        if (typeof r === 'string') return '<li>' + escapeHtml(r) + '</li>';
+        const cite = (r.author ? escapeHtml(r.author) : '')
+          + (r.title ? (r.author ? ' · ' : '') + '<em>' + escapeHtml(r.title) + '</em>' : '')
+          + (r.year ? ' (' + escapeHtml(String(r.year)) + ')' : '');
+        const tier = r.tier ? ' <span class="boards-inspector-ref-tier">' + escapeHtml(r.tier) + '</span>' : '';
+        return '<li>' + cite + tier + '</li>';
+      });
+      return '<dl class="forge-side-panel-meta" style="margin-top:14px;"><dt>Sources</dt><dd><ul class="boards-inspector-refs">' + items.join('') + '</ul></dd></dl>';
+    })();
+
+    // ── Wikipedia link.
+    const wikiHtml = node.thumb_page
+      ? '<a class="forge-side-panel-wikilink" href="' + escapeHtml(node.thumb_page) + '" target="_blank" rel="noopener noreferrer">Open Wikipedia ↗</a>'
+      : '';
+
+    // ── Scripture handoff button.
+    const scriptureKey = (() => {
+      const st = window.SCRIPTURE_TEXTS || {};
+      if (st[nodeId]) return nodeId;
+      for (const k in st) { if (st[k] && st[k].docNode === nodeId) return k; }
       return null;
     })();
-    const scriptureBtn = hasScripture
-      ? '<button class="boards-inspector-read-btn" type="button" data-textkey="' + escapeHtml(hasScripture) + '">✠ Open in Scripture Reader</button>'
+    const readBtnHtml = scriptureKey
+      ? '<button class="forge-side-panel-read-btn" type="button" data-textkey="' + escapeHtml(scriptureKey) + '">✠ Open in reader</button>'
+      : '';
+
+    // ── Thumbnail.
+    const thumbHtml = node.thumbnail
+      ? '<div class="forge-side-panel-thumb"><img src="' + escapeHtml(node.thumbnail) + '" loading="lazy" decoding="async" alt=""/></div>'
       : '';
 
     const innerBody = el.querySelector('.boards-inspector-body');
-    innerBody.innerHTML = [
-      '<div class="boards-inspector-header">',
-      '  <div class="boards-inspector-title">' + escapeHtml(node.title || node.id) + '</div>',
-      '  <div class="boards-inspector-badges">',
-      (node.type ? '<span class="boards-inspector-badge boards-inspector-badge--type">' + escapeHtml(node.type) + '</span>' : ''),
-      (node.tradition ? '<span class="boards-inspector-badge">' + escapeHtml(node.tradition) + '</span>' : ''),
-      (dateRange ? '<span class="boards-inspector-badge boards-inspector-badge--era">' + escapeHtml(dateRange) + '</span>' : ''),
-      '  </div>',
-      '</div>',
-      scriptureBtn,
-      '<div class="boards-inspector-section boards-inspector-section--body">',
-      bodyHtml,
-      '</div>',
-      themesHtml,
-      refsHtml,
-    ].join('');
+    innerBody.innerHTML = (
+      '<div class="forge-side-panel-content" style="--family-color:' + escapeHtml(familyCol) + ';">'
+      +   thumbHtml
+      +   '<div class="forge-side-panel-header">'
+      +     '<div class="forge-side-panel-name">' + escapeHtml(node.title || node.id) + '</div>'
+      +     (tradition ? '<div class="forge-side-panel-tradition">' + escapeHtml(tradition) + '</div>' : '')
+      +   '</div>'
+      +   (desc ? '<div class="forge-side-panel-desc">' + escapeHtml(desc) + '</div>' : '')
+      +   wiresHtml
+      +   metaHtml
+      +   extractHtml
+      +   wikiHtml
+      +   readBtnHtml
+      +   refsHtml
+      + '</div>'
+    );
 
-    // Scripture-handoff button wiring. Uses STATE.scriptureReaderMode +
-    // setView('scripture') to engage the legacy reader. Boards stays
-    // unmounted until user navigates back via master-pill.
-    const readBtn = innerBody.querySelector('.boards-inspector-read-btn');
+    // Scripture-handoff button wiring.
+    const readBtn = innerBody.querySelector('.forge-side-panel-read-btn');
     if (readBtn) {
       readBtn.addEventListener('click', () => {
         const tk = readBtn.getAttribute('data-textkey');

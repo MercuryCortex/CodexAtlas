@@ -50,8 +50,8 @@
       '<button class="app-pill-side app-pill-boards-investigation" id="app-pill-boards-investigation"',
       '        type="button" aria-haspopup="menu" aria-expanded="false"',
       '        aria-controls="app-pill-boards-investigation-menu"',
-      '        title="Open the Investigation Library — MY BOARDS / MASSIVE WINS / AI PRESETS / TRANSMISSIONS">',
-      '  <span class="app-pill-label" id="app-pill-boards-investigation-label">Investigation</span>',
+      '        title="Open the Transmission Library — MY BOARDS / MASSIVE WINS / AI PRESETS / DOCUMENTED">',
+      '  <span class="app-pill-label" id="app-pill-boards-investigation-label">Transmission</span>',
       '  <span class="app-pill-caret" aria-hidden="true">▾</span>',
       '</button>',
       '<span class="app-pill-divider" aria-hidden="true"></span>',
@@ -316,8 +316,11 @@
       items.forEach(p => html.push(entryRow(p, 'ai-preset')));
     });
 
-    // ── TRANSMISSIONS ─────────────────────────────────────────
-    html.push(sectionRow('→ Transmissions', lib.transmissions.length));
+    // ── DOCUMENTED ────────────────────────────────────────────
+    // Section I of MASSIVE-WINS-INDEX.md = documented transmission chains.
+    // Renamed from "Transmissions" 2026-05-28 to avoid collision with the
+    // top-level pill button label which is now "Transmission".
+    html.push(sectionRow('→ Documented', lib.transmissions.length));
     lib.transmissions.forEach(b => html.push(entryRow(b, 'transmission')));
 
     html.push('</div>');
