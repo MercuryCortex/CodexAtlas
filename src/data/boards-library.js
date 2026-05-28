@@ -1,0 +1,287 @@
+// ============================================================
+// CODEX ATLAS — BOARDS V2 Investigation Library (step 5)
+// ============================================================
+//
+// Generated 2026-05-28 from 00_meta/MASSIVE-WINS-INDEX.md
+// (43 entries total). Re-generate via scripts/build-boards-library.py
+// when the index file changes; this is hand-tracked content data.
+//
+// MASSIVE_WINS_BOARDS — structural parallels, inversions, themes
+// TRANSMISSIONS_BOARDS — Section I: documented transmission chains
+//
+// Each entry: { id, name, headline, picks[] }. picks are vault node
+// IDs that get dropped onto the board as cards when the entry is
+// loaded from the Investigation menu.
+// ============================================================
+(function () {
+  'use strict';
+
+  const MASSIVE_WINS_BOARDS = [
+    {
+      id: 'mw-012',
+      name: '12. Nāgārjuna ↔ Wittgenstein — Philosophy Dissolving Itself',
+      headline: 'The vault\'s sharpest East–West philosophical-method parallel. 1,700 years apart.',
+      picks: ['nagarjuna', 'wittgenstein'],
+    },
+    {
+      id: 'mw-013',
+      name: '13. Nāgārjuna ↔ Derrida — Śūnyatā :: Différance',
+      headline: 'Anti-foundationalism discovered twice, 1,700 years apart. Documented by a T1 scholar.',
+      picks: ['nagarjuna', 'derrida'],
+    },
+    {
+      id: 'mw-014',
+      name: '14. Zhuangzi ↔ Nāgārjuna — Perspectivism Without Nihilism',
+      headline: 'Two of the ancient world\'s most sophisticated anti-absolutists. ~500 years apart, independent.',
+      picks: ['phase-2-022-zhuangzi', 'nagarjuna', 'zhuangzi-person'],
+    },
+    {
+      id: 'mw-015',
+      name: '15. Jain Anekāntavāda ↔ Zhuangzi ↔ Nāgārjuna — Anti-Absolutist Cluster',
+      headline: 'Three traditions, three methods, same conclusion: no single view captures the whole.',
+      picks: ['tradition-jainism', 'zhuangzi-person', 'nagarjuna'],
+    },
+    {
+      id: 'mw-016',
+      name: '16. Confucius ↔ Socrates — Axial Age Mirror',
+      headline: 'Near-exact contemporaries in unconnected civilizations. The Axial Age in its sharpest form.',
+      picks: ['confucius', 'socrates', 'theme-axial-age'],
+    },
+    {
+      id: 'mw-017',
+      name: '17. Cook Ding (Zhuangzi) — World\'s Oldest Philosophical Treatment of Tacit Knowledge',
+      headline: '2,200 years before Bourdieu\'s *habitus* and Polanyi\'s tacit knowledge.',
+      picks: ['phase-2-022-zhuangzi'],
+    },
+    {
+      id: 'mw-018',
+      name: '18. Five-Tradition Apophatic Summit',
+      headline: 'Five traditions independently describe an Absolute that cannot be named.',
+      picks: ['tradition-daoism', 'ein-sof', 'theme-apophatic-theology', 'meister-eckhart'],
+    },
+    {
+      id: 'mw-019',
+      name: '19. Indra\'s Net ↔ Leibniz Monadology ↔ Bohm Implicate Order',
+      headline: 'Mutual interdependence: each part reflecting the whole.',
+      picks: ['phase-4-102-avatamsaka-sutra', 'leibniz'],
+    },
+    {
+      id: 'mw-020',
+      name: '20. Five-Tradition Shattered-Cosmos Theodicy',
+      headline: 'Five traditions independently posit inadvertent cosmic rupture scattering divine light into matter.',
+      picks: ['shevirat-hakelim', 'sophia-gnostic', 'tradition-gnosticism', 'tradition-manichaeism'],
+    },
+    {
+      id: 'mw-021',
+      name: '21. Tathāgatagarbha ↔ Eckhart\'s Fünklein ↔ Plotinus\'s Undescended Soul ↔ Sufi Sirr',
+      headline: 'Four traditions posit a universal divine nature in beings: obscured but never destroyed.',
+      picks: ['phase-4-103-lankavatara-sutra', 'meister-eckhart', 'ein-sof'],
+    },
+    {
+      id: 'mw-022',
+      name: '22. Solar Theology — Five-Tradition Convergence',
+      headline: 'Five independent traditions locate ultimate divinity in the sun.',
+      picks: ['tradition-shinto', 'phase-4-102-avatamsaka-sutra', 'tradition-egyptian-religion'],
+    },
+    {
+      id: 'mw-023',
+      name: '23. Ālayavijñāna ↔ Freud\'s Unconscious ↔ Jung\'s Collective Unconscious',
+      headline: 'A Buddhist depth-psychology 1,500 years before Freud. Jung provided the bridge.',
+      picks: ['phase-4-103-lankavatara-sutra', 'sigmund-freud'],
+    },
+    {
+      id: 'mw-024',
+      name: '24. Shinran Tariki/Shinjin ↔ Luther Sola Fide/Sola Gratia',
+      headline: 'The vault\'s most precisely parallel doctrinal convergence. Japan vs. Germany. Zero historical connection.',
+      picks: ['phase-4-104-sukhavativyuha-larger', 'tradition-protestantism'],
+    },
+    {
+      id: 'mw-025',
+      name: '25. Sudden Awakening — Four-Tradition Cluster',
+      headline: 'Prior effort reframed as beside the point; grace/Buddha-nature always-already-present.',
+      picks: ['huineng', 'tradition-zen'],
+    },
+    {
+      id: 'mw-026',
+      name: '26. Transmission Epistemology — Three Lineage Traditions',
+      headline: 'Highest spiritual realities require a living, lineaged teacher. No text substitutes.',
+      picks: ['bodhidharma', 'tradition-sufism', 'tradition-eastern-orthodoxy'],
+    },
+    {
+      id: 'mw-027',
+      name: '27. Ekayāna Supersessionism ↔ Christian Fulfillment Theology ↔ Islamic Naskh',
+      headline: 'Three traditions independently claim: our new revelation reframes all prior teaching as preparatory.',
+      picks: ['phase-4-101-lotus-sutra'],
+    },
+    {
+      id: 'mw-028',
+      name: '28. Single-Formula Practice — Three Traditions',
+      headline: 'Three traditions independently discover the highest practice can be compressed to one formula.',
+      picks: ['phase-4-101-lotus-sutra', 'phase-4-104-sukhavativyuha-larger', 'tradition-islam'],
+    },
+    {
+      id: 'mw-029',
+      name: '29. Democratization of the Highest — Four-Tradition Cluster',
+      headline: 'Innate capacity universally distributed; elite gatekeeping rejected.',
+      picks: ['huineng', 'wang-yangming', 'mengzi-person'],
+    },
+    {
+      id: 'mw-030',
+      name: '30. Vinaya ↔ Benedict\'s Rule — Independent Monastic Regulation',
+      headline: 'Two of the world\'s most durable institutional documents. Zero historical contact.',
+      picks: ['tradition-theravada-buddhism', 'tradition-medieval-christianity'],
+    },
+    {
+      id: 'mw-031',
+      name: '31. Shinto ↔ Roman Religion — State Weaponization Arc',
+      headline: 'Two ritual-piety traditions with identical political arcs.',
+      picks: ['tradition-shinto', 'tradition-roman-religion'],
+    },
+    {
+      id: 'mw-032',
+      name: '32. Zhu Xi ↔ Thomas Aquinas — Synthesis Parallel',
+      headline: 'Both absorb rival-tradition metaphysics while claiming purification. Both become state orthodoxy.',
+      picks: ['zhu-xi', 'thomas-aquinas', 'tradition-neo-confucianism'],
+    },
+    {
+      id: 'mw-033',
+      name: '33. Warrior-Monk Ideal — Four-Tradition Cluster',
+      headline: 'Combining contemplative devotion with organized military action.',
+      picks: ['tradition-sikhism', 'tradition-knights-templar', 'tradition-hospitallers'],
+    },
+    {
+      id: 'mw-034',
+      name: '34. Scripture as Living Person — Four-Tradition Cluster',
+      headline: 'Scripture treated with the physical protocols given to a living person.',
+      picks: ['tradition-sikhism', 'tradition-judaism', 'tradition-islam'],
+    },
+    {
+      id: 'mw-035',
+      name: '35. Isaiah 45:5 — The Sharpest Edge in the Vault',
+      headline: 'Israel\'s greatest monotheistic declaration read by Gnostics as proof of the creator\'s ignorance.',
+      picks: ['yaldabaoth', 'tradition-gnosticism'],
+    },
+    {
+      id: 'mw-036',
+      name: '36. Testimonium Flavianum — Most Debated Single Paragraph in Ancient History',
+      headline: 'The only near-contemporary non-Christian mention of Jesus, partially interpolated by Christian scribes.',
+      picks: ['phase-4-070-josephus-antiquities-of-the-jews'],
+    },
+    {
+      id: 'mw-037',
+      name: '37. Guanyin Gender Transformation — Most Documented Case of Cross-Cultural Divine Gender Inversion',
+      headline: 'The same figure reverses gender over 500 years of transmission.',
+      picks: ['avalokitesvara', 'tradition-mahayana-buddhism'],
+    },
+    {
+      id: 'mw-038',
+      name: '38. Mengzi/Xunzi ↔ Augustine/Pelagius — Same Anthropological Debate, Independent Traditions',
+      headline: 'Is human nature good or bad? Two traditions split on the same question, independently.',
+      picks: ['mengzi-person', 'xunzi-person'],
+    },
+    {
+      id: 'mw-039',
+      name: '39. Ignatian Martyrdom Theology ↔ Sufi Fanāʾ ↔ Hindu Bhakti Self-Surrender',
+      headline: 'Three traditions independently discover self-annihilation in the divine as the highest attainment.',
+      picks: ['phase-4-063-ignatius-letters', 'tradition-sufism'],
+    },
+    {
+      id: 'mw-040',
+      name: '40. Didache Eucharist — Before the Words of Institution',
+      headline: 'The oldest Christian eucharistic text has no "this is my body." It\'s a Jewish thanksgiving meal.',
+      picks: ['phase-4-061-didache'],
+    },
+    {
+      id: 'mw-041',
+      name: '41. The Mindfulness Industry\'s Erased Origins',
+      headline: 'Zen + Theravāda together supply the entire secular mindfulness market. The Buddhist source is rarely credited.',
+      picks: ['tradition-zen', 'tradition-theravada-buddhism', 'd-t-suzuki'],
+    },
+    {
+      id: 'mw-042',
+      name: '42. Yi Jing → Jung\'s Synchronicity → Western Counterculture',
+      headline: 'A 3,000-year-old divination manual shaped 20th-century psychology and art.',
+      picks: ['phase-2-042-yi-jing-i-ching'],
+    },
+    {
+      id: 'mw-043',
+      name: '43. The Queen of Heaven Transmission Spine — 5,500-Year Divine-Feminine Chain (Inanna → Mary)',
+      headline: 'The longest documented divine-title transmission in religious history. Eleven stations across ~5,500 years.',
+      picks: ['queen-of-heaven-spine', 'black-madonna', 'inanna-sumerian', 'ishtar-akkadian', 'asherah', 'astarte-canaanite', 'aphrodite-greek', 'venus-roman', 'hokmah-hebrew', 'isis-hellenistic', 'sophia-gnostic', 'shekhinah', 'mary-theotokos', 'mary-magdalene', 'divine-feminine', 'wisdom-personified'],
+    },
+  ];
+
+  const TRANSMISSIONS_BOARDS = [
+    {
+      id: 'mw-001',
+      name: '1. Kumarbi Cycle → Hesiod\'s Theogony',
+      headline: 'The Mediterranean succession myth is Hurrian, not Greek.',
+      picks: ['kumarbi', 'teshub', 'phase-1-028-kumarbi-cycle', 'phase-2-009-hesiod-theogony-works-and-days'],
+    },
+    {
+      id: 'mw-002',
+      name: '2. Kumarbi → Kronos → Saturn → Neoplatonist Nous → Gnostic Demiurge',
+      headline: 'A Hurrian grain god is the traceable ancestor of late antique cosmic intellect theology.',
+      picks: ['kumarbi', 'yaldabaoth', 'demiurge-platonic'],
+    },
+    {
+      id: 'mw-003',
+      name: '3. Confucianism → Jesuits → Enlightenment Europe → Modern Meritocracy',
+      headline: 'Confucianism shaped global bureaucratic architecture.',
+      picks: ['tradition-confucianism', 'tradition-neo-confucianism', 'leibniz', 'voltaire'],
+    },
+    {
+      id: 'mw-004',
+      name: '4. Leibniz Binary Arithmetic ↔ Yi Jing Hexagrams',
+      headline: 'The oldest independently discovered binary system, confirmed in contemporary correspondence.',
+      picks: ['phase-2-042-yi-jing-i-ching', 'leibniz'],
+    },
+    {
+      id: 'mw-005',
+      name: '5. D.T. Suzuki → Beat Generation → John Cage → Kabat-Zinn MBSR',
+      headline: 'Zen became a secular $1B/year industry. The Buddhist source is systematically obscured.',
+      picks: ['d-t-suzuki', 'tradition-zen'],
+    },
+    {
+      id: 'mw-006',
+      name: '6. Theravāda Vipassanā → IMS → Global Mindfulness (parallel tributary)',
+      headline: 'Two Buddhist schools feed the same secular river.',
+      picks: ['tradition-theravada-buddhism', 'tradition-zen'],
+    },
+    {
+      id: 'mw-007',
+      name: '7. Jain Ahimsa → Gandhi → MLK → Global Non-Violent Resistance',
+      headline: 'The doctrine that reshaped 20th-century political history came from Gujarati Jain merchant culture.',
+      picks: ['tradition-jainism'],
+    },
+    {
+      id: 'mw-008',
+      name: '8. Bhagavad Gita: Global Transmission Chain',
+      headline: 'The most-translated Hindu text reached nuclear physics, American literature, and mass political resistance.',
+      picks: ['phase-2-027-bhagavad-gita'],
+    },
+    {
+      id: 'mw-009',
+      name: '9. Avataṃsaka → Fazang Huayan → Zhu Xi Neo-Confucian *Li*',
+      headline: 'One of Chinese intellectual history\'s most important transmission chains.',
+      picks: ['phase-4-102-avatamsaka-sutra', 'zhu-xi', 'tradition-neo-confucianism'],
+    },
+    {
+      id: 'mw-010',
+      name: '10. Binary Moral Cosmos: Zoroastrian → Qumran → Christian → Manichaean',
+      headline: 'The Two Ways framework predates Christianity by centuries.',
+      picks: ['phase-4-061-didache', 'phase-4-065-shepherd-of-hermas'],
+    },
+    {
+      id: 'mw-011',
+      name: '11. Papal Supremacy Chain: First Assertion → Vatican I',
+      headline: '1 Clement is the earliest step in a 1,800-year institutional development.',
+      picks: ['phase-4-062-1-clement', 'phase-4-063-ignatius-letters'],
+    },
+  ];
+
+  window.BOARDS_LIBRARY = {
+    massiveWins:   MASSIVE_WINS_BOARDS,
+    transmissions: TRANSMISSIONS_BOARDS,
+  };
+})();

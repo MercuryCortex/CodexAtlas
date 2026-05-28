@@ -197,18 +197,127 @@
     setTimeout(() => inputEl.focus(), 0);
   }
 
-  // ── INVESTIGATION MENU: step-5 placeholder ──────────────────
+  // ── INVESTIGATION MENU: step 5 — 4-category library ─────────
+  // Categories:
+  //   MY BOARDS    — user's saved boards (step 9 LS-rehydrates this list;
+  //                  stub for now)
+  //   MASSIVE WINS — 32 boards generated from MASSIVE-WINS-INDEX.md
+  //                  (sections II-IV: structural parallels, inversions,
+  //                  shared substrates)
+  //   AI PRESETS   — 71 curated investigation chains from the legacy
+  //                  ALCHEMY_PRESETS list, grouped by PRESET_CATEGORY_ORDER
+  //   TRANSMISSIONS — 11 documented transmission chains from section I
+  //                   of MASSIVE-WINS-INDEX.md
+  //
+  // Each entry click → window._boardsView.loadPreset({name, picks, replace:true}).
   function buildInvestigationMenu(menuEl) {
-    menuEl.innerHTML = [
-      '<div class="boards-pill-placeholder">',
-      '  <div class="boards-pill-placeholder-title">Investigation Library</div>',
-      '  <div class="boards-pill-placeholder-body">',
-      '    The 4-category library — <em>MY BOARDS · MASSIVE WINS · AI PRESETS · TRANSMISSIONS</em>',
-      '    — ships in step 5 of the carve plan. For now, use <strong>Add node ▾</strong> to drop',
-      '    vault nodes onto the board manually.',
-      '  </div>',
-      '</div>',
-    ].join('');
+    const lib   = window.BOARDS_LIBRARY || { massiveWins: [], transmissions: [] };
+    // ALCHEMY_PRESETS + PRESET_CATEGORY_ORDER are top-level const in app.js —
+    // accessible by bare name from any script loaded after app.js (in the
+    // global lexical scope), but NOT on window. Wrap in try/catch in case
+    // of future refactors that move them.
+    let presets = [], presetCats = [];
+    try { if (typeof ALCHEMY_PRESETS !== 'undefined' && Array.isArray(ALCHEMY_PRESETS)) presets = ALCHEMY_PRESETS; } catch (_) {}
+    try { if (typeof PRESET_CATEGORY_ORDER !== 'undefined' && Array.isArray(PRESET_CATEGORY_ORDER)) presetCats = PRESET_CATEGORY_ORDER; } catch (_) {}
+
+    // Load saved boards from LS (step 9 will own this; until then we read
+    // the same key so the API contract is stable when step 9 lands).
+    let myBoards = [];
+    try {
+      const raw = localStorage.getItem('atlas.boards.v1');
+      if (raw) {
+        const parsed = JSON.parse(raw);
+        if (parsed && Array.isArray(parsed.boards)) myBoards = parsed.boards;
+      }
+    } catch (_) {}
+
+    function sectionRow(label, count) {
+      return (
+        '<div class="boards-lib-section-label">'
+        +   '<span class="boards-lib-section-name">' + escapeHtml(label) + '</span>'
+        +   '<span class="boards-lib-section-count">' + count + '</span>'
+        + '</div>'
+      );
+    }
+    function entryRow(entry, kind) {
+      const name = entry.name || entry.id;
+      const headline = entry.headline || '';
+      const picksCount = Array.isArray(entry.picks) ? entry.picks.length : 0;
+      return (
+        '<button class="boards-lib-entry" role="menuitem" type="button"'
+        +   ' data-kind="' + kind + '" data-id="' + encodeURIComponent(entry.id) + '">'
+        +   '<div class="boards-lib-entry-title">' + escapeHtml(name) + '</div>'
+        +   (headline ? '<div class="boards-lib-entry-headline">' + escapeHtml(headline) + '</div>' : '')
+        +   '<div class="boards-lib-entry-meta">' + picksCount + ' nodes</div>'
+        + '</button>'
+      );
+    }
+
+    const html = [];
+    html.push('<div class="boards-lib-scroll">');
+
+    // ── MY BOARDS ─────────────────────────────────────────────
+    html.push(sectionRow('★ My boards', myBoards.length));
+    if (myBoards.length) {
+      myBoards.forEach(b => html.push(entryRow(b, 'mine')));
+    } else {
+      html.push(
+        '<div class="boards-lib-empty">'
+        + 'Save the current board with <strong>Save tree</strong> '
+        + '(ships step 9). Your saved investigations appear here.'
+        + '</div>'
+      );
+    }
+
+    // ── MASSIVE WINS ──────────────────────────────────────────
+    html.push(sectionRow('◇ Massive wins', lib.massiveWins.length));
+    lib.massiveWins.forEach(b => html.push(entryRow(b, 'massive-win')));
+
+    // ── AI PRESETS — sub-grouped by PRESET_CATEGORY_ORDER ────
+    html.push(sectionRow('☿ AI presets', presets.length));
+    presetCats.forEach(cat => {
+      const items = presets.filter(p => p.category === cat.key);
+      if (!items.length) return;
+      html.push(
+        '<div class="boards-lib-subsection-label">'
+        +   escapeHtml(cat.label) + ' <span class="boards-lib-subsection-count">' + items.length + '</span>'
+        + '</div>'
+      );
+      items.forEach(p => html.push(entryRow(p, 'ai-preset')));
+    });
+
+    // ── TRANSMISSIONS ─────────────────────────────────────────
+    html.push(sectionRow('→ Transmissions', lib.transmissions.length));
+    lib.transmissions.forEach(b => html.push(entryRow(b, 'transmission')));
+
+    html.push('</div>');
+    menuEl.innerHTML = html.join('');
+
+    // Click wiring — dispatch to loadPreset on _boardsView.
+    menuEl.addEventListener('click', (ev) => {
+      const btn = ev.target.closest('button[data-kind][data-id]');
+      if (!btn) return;
+      ev.stopPropagation();
+      const kind = btn.getAttribute('data-kind');
+      const id   = decodeURIComponent(btn.getAttribute('data-id'));
+      let entry = null;
+      if (kind === 'massive-win')  entry = lib.massiveWins.find(b => b.id === id);
+      else if (kind === 'transmission') entry = lib.transmissions.find(b => b.id === id);
+      else if (kind === 'ai-preset') entry = presets.find(p => p.id === id);
+      else if (kind === 'mine')      entry = myBoards.find(b => b.id === id);
+      if (!entry) return;
+      if (window._boardsView && window._boardsView.loadPreset) {
+        const n = window._boardsView.loadPreset({
+          name: entry.name,
+          picks: entry.picks,
+          replace: true,
+        });
+        // Tiny confirmation in the search-input area would be nice
+        // (step 5+ polish). For now silent — the board updates visibly.
+        if (console && console.info) console.info('[boards] loaded preset:', entry.name, '→', n, 'cards');
+      }
+      closeAll();
+    }, { once: true });   // re-attach on each open via buildInvestigationMenu
   }
 
   // ── OPEN / CLOSE LOGIC ──────────────────────────────────────

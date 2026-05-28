@@ -256,6 +256,64 @@
     };
   }
 
+  // Step 5 — clear all cards from the board (used by loadPreset's
+  // replace mode; future Save/Load board switches will reuse this).
+  function clearBoard() {
+    _cards.forEach(c => { if (c.el && c.el.parentNode) c.el.parentNode.removeChild(c.el); });
+    _cards.clear();
+  }
+
+  // Step 5 — load a preset (named pick list) onto the board.
+  //   spec: { name?, picks: string[] (vault node ids), replace?: bool=true }
+  // Looks each pick up in window.VAULT_DATA.nodes by id; missing nodes
+  // are dropped silently (legacy preset entries may reference renamed
+  // / removed vault nodes). Cards land in a centered grid: 3 columns,
+  // CARD_W=180 / CARD_H=60 spacing, starting from the current viewport
+  // center in world coords. Returns the count of cards actually added.
+  function loadPreset(spec) {
+    if (!spec || !Array.isArray(spec.picks)) return 0;
+    const replace = (spec.replace !== false);   // default true
+    if (replace) clearBoard();
+
+    const vault = window.VAULT_DATA || window.DATA || null;
+    const allNodes = (vault && Array.isArray(vault.nodes)) ? vault.nodes : [];
+    const nodeIndex = new Map();
+    allNodes.forEach(n => { if (n && n.id) nodeIndex.set(n.id, n); });
+
+    // Center of the boards-stage in WORLD coords.
+    let cx = 400, cy = 300;
+    if (_stage) {
+      const r = _stage.getBoundingClientRect();
+      cx = (r.width  / 2 - _pan.x) / _zoom;
+      cy = (r.height / 2 - _pan.y) / _zoom;
+    }
+
+    // Grid layout. 3 cols × ceil(n/3) rows centered on (cx, cy).
+    const COLS    = 3;
+    const COL_W   = 220;
+    const ROW_H   = 80;
+    const n       = spec.picks.length;
+    const rows    = Math.max(1, Math.ceil(n / COLS));
+    const startX  = cx - ((COLS - 1) * COL_W) / 2 - 100;
+    const startY  = cy - ((rows - 1) * ROW_H) / 2 - 20;
+
+    let added = 0;
+    spec.picks.forEach((nodeId, i) => {
+      const node = nodeIndex.get(nodeId);
+      if (!node) return;   // silently drop missing nodes
+      const col = i % COLS;
+      const row = Math.floor(i / COLS);
+      addCard({
+        id:    node.id,
+        label: node.title || node.id,
+        x:     Math.round(startX + col * COL_W),
+        y:     Math.round(startY + row * ROW_H),
+      });
+      added++;
+    });
+    return added;
+  }
+
   // Dev seeder — drops 3 demo cards to verify pan/zoom/drag without
   // needing the contextual pill (step 4) to be wired yet.
   function seedTest() {
@@ -265,10 +323,12 @@
   }
 
   window._boardsView = {
-    render:    render,
-    unmount:   unmount,
-    addCard:   addCard,
-    getState:  getState,
-    seedTest:  seedTest,
+    render:     render,
+    unmount:    unmount,
+    addCard:    addCard,
+    clearBoard: clearBoard,
+    loadPreset: loadPreset,
+    getState:   getState,
+    seedTest:   seedTest,
   };
 })();
