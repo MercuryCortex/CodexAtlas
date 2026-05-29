@@ -17126,6 +17126,144 @@ SCRIPTURE_TEXTS['shangqing-corpus'] = {
   ]
 };
 
+// ── BATCH 9 — CONFUCIAN CORPUS COMPLETION pt 1 (2026-05-28) ──────
+// Adds 3 of the 6 missing Confucian docNodes (Shijing, Mengzi, Xunzi);
+// part 2 closes Shujing, Mozi, Han Feizi.
+
+SCRIPTURE_TEXTS['shijing'] = {
+  title: 'Shijing — Classic of Poetry',
+  docNode: 'phase-1-024-shijing',
+  shortTitle: 'Shijing',
+  tradition: 'Pre-Confucian / classical Chinese',
+  date: '11th-7th c. BCE (compiled c. 6th c. BCE, traditionally by Confucius)',
+  intro: 'The Shijing (詩經) or "Classic of Poetry" is the oldest anthology of Chinese verse and one of the Five Classics of the Confucian canon. It comprises 305 poems gathered from roughly the 11th to the 7th centuries BCE — folk songs (Guofeng "Airs of the States"), court ceremonial pieces (Xiaoya / Daya "Lesser and Greater Odes"), and dynastic-religious hymns (Song "Hymns"). Confucian tradition holds that Confucius himself selected the final 305 from a much larger original collection. The text became one of the foundational training documents of literate Chinese culture: every educated person was expected to know its poems by heart and to deploy them in diplomatic exchange and personal correspondence. The hymns of the Zhou ancestors preserve the earliest accessible layer of Chinese religious thought — the cult of the Mandate of Heaven (tianming) that grounded Zhou political theology. Karlgren\'s 1950 translation remains the standard scholarly English version. Modern philology (Owen 1996; Saussy 1993) treats the Shijing as the foundational text of the entire East Asian poetic tradition.',
+  crossTradition: [
+    { label: 'Analects of Confucius — the Shijing as moral training', textId: 'confucius-analects', note: 'Confucius repeatedly cites the Shijing in the Analects as the foundational training text for moral cultivation. In Analects 2.2 he summarises its purpose: "the three hundred poems can be summed up in one phrase: think no evil." The Shijing is the Confucian raw material from which moral sensibility is shaped.' },
+    { label: 'Psalms — the ancient liturgical poem-collection', textId: 'genesis-1', note: 'The Shijing and the Hebrew Psalter are the two great ancient anthologies of liturgical poetry: both preserve a mixture of folk material, court ceremonial pieces, and explicitly religious hymns; both became foundational training documents of their respective literate traditions; both functioned as the principal vehicle for ethical-religious self-formation through memorisation and re-citation across two millennia.' },
+    { label: 'Vedic Rigveda — court poetry as religious foundation', textId: 'nasadiya-sukta', note: 'The Shijing\'s ceremonial-court pieces (Daya) and the Vedic Rigvedic hymns share a structural homology: both are ancient (early-1st-millennium BCE) court-ceremonial poetic corpora that establish the religious cosmology of their civilizations. The Rigveda articulates the early Vedic ritual cosmos; the Shijing\'s Daya articulates the early Zhou Mandate-of-Heaven theology.' },
+  ],
+  translations: [
+    { id: 'karlgren', label: 'Bernhard Karlgren, The Book of Odes (1950, Museum of Far Eastern Antiquities) (T1)' },
+    { id: 'waley', label: 'Arthur Waley, The Book of Songs (1937) (T1)' },
+    { id: 'chinese', label: 'Classical Chinese (Mao recension, Han)' },
+  ],
+  sections: [
+    {
+      heading: 'Daya · The Mandate of Heaven (Wen Wang)',
+      verses: [
+        {
+          ref: 'Ode 235 (Wen Wang)',
+          text: 'King Wen is on high, oh he shines in heaven. Zhou is an old people but its charge is new. The leaders of Zhou became illustrious; was not God\'s charge timely given? King Wen ascends and descends on God\'s left and right hand. Diligent was King Wen, his good fame is without end. The gifts to Zhou — King Wen\'s descendants, his eldest sons and his junior branches, for a hundred generations.',
+          textVersions: {
+            karlgren: 'King Wen is on high, oh he shines in heaven. Zhou is an old people but its charge is new.',
+            chinese: '文王在上，於昭于天。周雖舊邦，其命維新。',
+          },
+          entities: [
+            { word: 'Zhou is an old people but its charge is new', node: 'mandate-of-heaven', type: 'concept',
+              note: 'The classic Shijing formulation of the Zhou political-theological doctrine of tianming (天命), the "Mandate of Heaven." The Shang dynasty\'s mandate has been transferred to the Zhou not by hereditary claim but by Heaven\'s recognition of King Wen\'s virtue. This doctrine became the foundational political-theological vocabulary of Chinese political thought for the next 3,000 years — every dynastic transition was theorised through it.',
+              parallels: [
+                { label: 'Analects 2.4 — at fifty I knew the decrees of Heaven', textId: 'confucius-analects', note: 'Confucius\'s biographical claim to know "the decrees of Heaven" (tian ming) at age fifty is his appropriation of the Shijing\'s political-theological vocabulary into the discourse of personal moral cultivation. The same heavenly mandate that authorises a dynasty also authorises the individual sage.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+SCRIPTURE_TEXTS['mengzi-2a6'] = {
+  title: 'Mengzi 2A.6 — The Four Sprouts of Human Nature',
+  docNode: 'phase-2-023-mengzi',
+  shortTitle: 'Mengzi 2A.6',
+  tradition: 'Confucian',
+  date: 'c. 4th century BCE (Mencius, 372-289 BCE)',
+  intro: 'The Mengzi (孟子) is the second of the Confucian Four Books and the principal literary witness for Mencian — the systematized form of Confucian thought that became orthodox in imperial China from the Song dynasty onward. Mencius (Mengzi, 372-289 BCE) was a Confucian philosopher of the fourth generation after Confucius who developed the master\'s ethical teaching into a systematic theory of human nature. The pivotal text is 2A.6 — the "four sprouts" (siduan 四端) passage — which argues that every human being is innately equipped with four "sprouts" of moral feeling: ren (the heart of commiseration), yi (the heart of shame and disdain), li (the heart of deference and compliance), and zhi (the heart of right and wrong). These are not learned but inborn; cultivation is the process of nourishing the sprouts into mature virtues. The Mencian thesis that human nature is innately good (xing shan 性善) became the orthodox Confucian position through Zhu Xi\'s Song-dynasty endorsement and remained dominant in East Asia until the modern period. Lau\'s 1970 translation is the standard English version; Van Norden 2008 provides the most rigorous modern philological-philosophical edition.',
+  crossTradition: [
+    { label: 'Analects — Confucius on ren without yet a theory of innate moral capacity', textId: 'confucius-analects', note: 'The Analects discusses ren (humaneness) extensively but does not provide a theory of where ren comes from or how it is generated in the individual. Mencius supplies the missing theoretical infrastructure: ren is innately present as a sprout in every human heart, and cultivation is the nourishing of this innate capacity. Mencius makes Confucian ethics into a developmental theory.' },
+    { label: 'Xunzi — human nature is bad, ritual constructs the good', textId: 'xunzi-23', note: 'Xunzi (4th-3rd c. BCE) is Mencius\'s great rival within the Confucian tradition. Where Mencius says human nature is innately good and cultivation is the nourishing of natural capacities, Xunzi says human nature is innately disordered and ritual (li) is the constructive technology that produces the good. The Mencius-Xunzi debate over human nature became the central question of Confucian philosophy for the next two millennia.' },
+    { label: 'Bhagavad Gita 2 — the inborn dispositional self', textId: 'bhagavad-gita-4', note: 'The Bhagavad Gita\'s doctrine of svadharma (one\'s own innate dispositional duty) and Mencius\'s doctrine of the four sprouts share the structural conviction that the moral life is grounded in something already given in the human constitution, not constructed from outside. Both texts ground ethics in a metaphysics of the human nature; both make cultivation the development of innate capacities rather than the imposition of external rules.' },
+  ],
+  translations: [
+    { id: 'lau', label: 'D.C. Lau, Mencius (1970, Penguin Classics) (T1)' },
+    { id: 'vannorden', label: 'Bryan Van Norden, Mengzi: With Selections from Traditional Commentaries (2008, Hackett) (T1)' },
+    { id: 'chinese', label: 'Classical Chinese (Han recension)' },
+  ],
+  sections: [
+    {
+      heading: 'The Four Sprouts (Book 2A, Chapter 6)',
+      verses: [
+        {
+          ref: '2A.6',
+          text: 'All people have a heart that cannot bear to see the sufferings of others. Suppose someone now suddenly saw a child about to fall into a well: they would immediately have a heart of alarm and compassion — not because they wished to gain credit with the child\'s parents, nor because they sought the praise of their neighbours and friends, nor because they would dislike the sound of the child\'s cries. From this we see that without a heart of compassion one is not human; without a heart of shame one is not human; without a heart of deference one is not human; without a heart of right and wrong one is not human. The heart of compassion is the sprout of humaneness; the heart of shame is the sprout of righteousness; the heart of deference is the sprout of ritual; the heart of right and wrong is the sprout of wisdom. People have these four sprouts just as they have four limbs.',
+          textVersions: {
+            lau: 'All people have a heart that cannot bear to see the sufferings of others. From this we see that without a heart of compassion one is not human; without a heart of shame one is not human; without a heart of deference one is not human; without a heart of right and wrong one is not human.',
+            chinese: '所以謂人皆有不忍人之心者：今人乍見孺子將入於井，皆有怵惕惻隱之心。非所以內交於孺子之父母也，非所以要譽於鄉黨朋友也，非惡其聲而然也。',
+          },
+          entities: [
+            { word: 'sprout of humaneness', node: 'moral-confucian-ren', type: 'concept',
+              note: 'Mencius\'s coinage of duan ("sprout") is the technical term that makes Confucian ethics into a developmental theory. The sprouts (siduan 四端) are not the mature virtues themselves; they are the inborn capacities that, with cultivation, develop into the mature virtues. The horticultural metaphor is precise: sprouts can be nourished into strong plants or neglected into withered ones — moral failure is failure of cultivation, not absence of innate capacity.',
+              parallels: [
+                { label: 'Analects 4.15 — the one-thread doctrine', textId: 'confucius-analects', note: 'The Analects\'s "my Way is threaded by a single thread" (4.15) names the unity of Confucian virtue without theorising it. Mencius supplies the theoretical infrastructure: the single thread is the development from the four sprouts to the fully cultivated person. Mencius makes the Analects\'s aphorism into a developmental system.' },
+              ]
+            },
+            { word: 'sprout of right and wrong', node: 'moral-confucian-ren', type: 'concept',
+              note: 'The fourth sprout, zhi (wisdom/moral discernment), is the innate capacity to distinguish right from wrong. Mencius treats this as a perceptual capacity homologous to vision or hearing: just as we are born with the perceptual capacity to distinguish colours but must cultivate it to become a skilled artist, we are born with the perceptual capacity to distinguish right from wrong but must cultivate it to become a moral sage.',
+              parallels: [
+                { label: 'Bhagavad Gita 2 — the inborn capacity for sva-dharma', textId: 'bhagavad-gita-4', note: 'The Bhagavad Gita\'s doctrine that each person is born with svadharma — an innate dispositional duty inherent in their nature — runs parallel to Mencius\'s sprouts. Both texts ground the moral life in the development of natural capacities rather than the acquisition of external rules.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+SCRIPTURE_TEXTS['xunzi-23'] = {
+  title: 'Xunzi 23 — Human Nature is Bad',
+  docNode: 'phase-2-024-xunzi',
+  shortTitle: 'Xunzi 23',
+  tradition: 'Confucian (Hundred-Schools rival)',
+  date: 'c. 3rd century BCE (Xun Kuang, c. 310-c. 235 BCE)',
+  intro: 'The Xunzi (荀子) is the work of Xun Kuang, the third great Confucian after Confucius and Mencius, and the most rigorous philosophical mind in the early Confucian tradition. Where Mencius argues human nature is innately good and ethical cultivation nourishes innate sprouts, Xunzi argues the opposite: human nature is innately badly-arranged ("e" 惡, "bad/disorderly"), and ethical cultivation is the imposition of ritual (li 禮) and education (xue 學) onto a recalcitrant natural substrate. Chapter 23 ("Xing E" — "Human Nature is Bad") is the principal statement of this position. Xunzi argues that humans, left to their innate inclinations, will pursue selfish desires and create chaos; the sage-kings of antiquity invented ritual precisely as the constructive technology that produces the good. The good is not natural but artificial in the technical sense — produced by deliberate human craft. This position lost out in the Song-orthodox Mencian synthesis but remained important in Han Confucianism and in modern Chinese intellectual history (Xunzi was the teacher of both Han Feizi and Li Si, the two principal Legalist theorists). Knoblock\'s 3-volume 1988-94 translation is the standard scholarly English Xunzi. Hutton\'s 2014 single-volume translation (Princeton) is the most accessible modern version.',
+  crossTradition: [
+    { label: 'Mengzi 2A.6 — human nature is good', textId: 'mengzi-2a6', note: 'The Mencius-Xunzi debate over human nature became the central question of Confucian philosophy for two millennia. Mencius (xing shan, "human nature is good") locates moral capacity in innate sprouts requiring cultivation; Xunzi (xing e, "human nature is bad") locates moral capacity in deliberate ritual construction onto a disordered natural substrate. The Song-orthodox Confucian tradition adopted Mencius; the Han Confucian tradition and early Confucian-Legalist syntheses leaned toward Xunzi.' },
+    { label: 'Analects — ritual as moral training without yet a theory of human nature', textId: 'confucius-analects', note: 'Confucius emphasizes ritual (li) throughout the Analects but does not theorize whether ritual works with or against human nature. Mencius and Xunzi supply opposing theoretical infrastructures. Xunzi\'s position — ritual constructs the good against natural inclination — preserves more of Confucius\'s own emphasis on the difficulty of moral cultivation than Mencius\'s position does.' },
+    { label: 'Augustine, On Original Sin — human nature post-Fall', textId: 'genesis-1', note: 'Xunzi\'s xing e thesis (human nature is innately badly-arranged) and Augustine\'s doctrine of original sin (human nature post-Fall is innately disordered toward sin) reach structurally analogous conclusions through entirely independent philosophical routes. Both make moral cultivation dependent on a constructive intervention (ritual / divine grace) onto a recalcitrant natural substrate. The Mencian-Pelagian "human nature is sufficient" position is the opposing pole in both traditions.' },
+  ],
+  translations: [
+    { id: 'knoblock', label: 'John Knoblock, Xunzi: A Translation and Study of the Complete Works, 3 vols (1988-94, Stanford UP) (T1)' },
+    { id: 'hutton', label: 'Eric Hutton, Xunzi: The Complete Text (2014, Princeton UP) (T1)' },
+    { id: 'chinese', label: 'Classical Chinese (Han recension)' },
+  ],
+  sections: [
+    {
+      heading: 'Chapter 23 · Human Nature is Bad',
+      verses: [
+        {
+          ref: '23.1',
+          text: 'Human nature is bad; what is good in humans is acquired by deliberate effort. The nature of humans is such that at birth they have desires for gain — if they follow this nature, contention and robbery follow and the principle of yielding is lost. At birth they have feelings of jealousy and hatred — if they follow this nature, violence and crime follow and the principles of loyalty and fidelity are lost. At birth they have the desires of the ears and eyes for sound and beauty — if they follow this nature, licence and disorder follow and the principle of ritual is lost. Thus following human nature and yielding to its inclinations will inevitably produce contention, transgression, and confusion. It is therefore necessary that the transforming influence of teachers and ritual be applied to human nature, and that the guidance of the Way of right principles be given to it. Only then will yielding be produced, conformity with patterns of order observed, and good government result.',
+          textVersions: {
+            knoblock: 'Human nature is bad; what is good in humans is acquired by deliberate effort.',
+            hutton: 'People\'s nature is bad. Their goodness is a matter of deliberate effort.',
+            chinese: '人之性惡，其善者偽也。',
+          },
+          entities: [
+            { word: 'good in humans is acquired by deliberate effort', node: 'tradition-confucianism', type: 'concept',
+              note: 'The Xunzian doctrine: morality is wei (偽 — "deliberate effort" or "artifice" in the etymological-technical sense, not the modern pejorative). The character wei is composed of "human" (人) plus "do/act" (為) — that which humans deliberately make. Xunzi\'s critical insight: the good is constructed, not given; the moral life is the product of skilled human craft, not the unfolding of nature. The sage-kings invented ritual the way artisans invent technology.',
+              parallels: [
+                { label: 'Mengzi 2A.6 — the four sprouts as natural foundation', textId: 'mengzi-2a6', note: 'Mencius locates moral capacity in innate sprouts that cultivation nourishes. Xunzi denies the existence of such sprouts and locates moral capacity entirely in deliberate ritual construction. The two positions exhaust the theoretical possibilities; subsequent Confucian thought is largely an attempt to mediate between them.' },
+                { label: 'Plato Republic — the city as constructed substitute for unreliable nature', textId: 'plato-cave', note: 'Xunzi\'s ritual (li) is a constructive technology that produces the good against the disorderly inclinations of natural human beings. Plato\'s ideal city in the Republic is similarly a constructive technology — political and educational — that produces the just life against the disorderly inclinations of natural human beings. Both texts ground political-ethical theory in the diagnosis that nature is insufficient.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
 
 
 
