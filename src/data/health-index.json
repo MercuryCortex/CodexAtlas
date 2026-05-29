@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-05-29T07:07:54Z",
+  "generatedAt": "2026-05-29T12:55:23Z",
   "vault": {
-    "totalNodes": 4770,
+    "totalNodes": 4797,
     "lensCount": 30,
     "familyCount": 14,
     "unmatchedTradNodes": 0,
@@ -39,15 +39,15 @@
     {
       "folder": "03_deities",
       "label": "Deities",
-      "count": 699,
+      "count": 708,
       "baseline": 900,
-      "ratio": 0.777,
+      "ratio": 0.787,
       "band": "rich",
       "baselineNote": "EoR deity/numina entries + Leeming Oxford Companion to World Mythology (~3,000 entries)",
       "statuses": {
-        "metadata": 589,
-        "stub": 29,
-        "(no status)": 47,
+        "metadata": 593,
+        "stub": 31,
+        "(no status)": 50,
         "full": 27,
         "partial": 7
       }
@@ -102,14 +102,14 @@
     {
       "folder": "07_traditions",
       "label": "Traditions",
-      "count": 323,
+      "count": 327,
       "baseline": 280,
-      "ratio": 1.154,
+      "ratio": 1.168,
       "band": "rich",
       "baselineNote": "EoR + Bowker — named living + extinct religious traditions and schools",
       "statuses": {
-        "stub": 165,
-        "metadata": 137,
+        "stub": 168,
+        "metadata": 138,
         "full": 13,
         "(no status)": 7,
         "partial": 1
@@ -198,14 +198,14 @@
     {
       "folder": "14_rituals",
       "label": "Rituals",
-      "count": 107,
+      "count": 108,
       "baseline": 260,
-      "ratio": 0.412,
+      "ratio": 0.415,
       "band": "developing",
       "baselineNote": "EoR ritual + Smith Imagining Religion + Bell Ritual: Perspectives",
       "statuses": {
         "full": 105,
-        "stub": 2
+        "stub": 3
       }
     },
     {
@@ -292,41 +292,41 @@
     {
       "folder": "21_theology",
       "label": "Theology / doctrine",
-      "count": 30,
+      "count": 34,
       "baseline": 240,
-      "ratio": 0.125,
+      "ratio": 0.142,
       "band": "anemic",
       "baselineNote": "EoR doctrine/dogma entries across all traditions",
       "statuses": {
         "stub": 14,
-        "(no status)": 15,
+        "(no status)": 19,
         "metadata": 1
       }
     },
     {
       "folder": "22_practices",
       "label": "Practices",
-      "count": 22,
+      "count": 24,
       "baseline": 220,
-      "ratio": 0.1,
+      "ratio": 0.109,
       "band": "anemic",
       "baselineNote": "EoR practice entries + Csordas Embodiment & Experience",
       "statuses": {
         "metadata": 21,
-        "(no status)": 1
+        "(no status)": 3
       }
     },
     {
       "folder": "23_material_culture",
       "label": "Material culture",
-      "count": 15,
+      "count": 22,
       "baseline": 180,
-      "ratio": 0.083,
+      "ratio": 0.122,
       "band": "anemic",
       "baselineNote": "Morgan Religion & Material Culture + relic / instrument / regalia entries",
       "statuses": {
-        "stub": 11,
-        "full": 4
+        "stub": 14,
+        "full": 8
       }
     },
     {
@@ -468,9 +468,9 @@
     {
       "key": "abrahamic",
       "label": "Abrahamic",
-      "count": 862,
+      "count": 866,
       "baseline": 700,
-      "ratio": 1.231,
+      "ratio": 1.237,
       "band": "rich",
       "perLens": {
         "02_documents": 198,
@@ -487,9 +487,9 @@
         "16_mathematics": 3,
         "17_medicine": 4,
         "20_sacred_architecture": 16,
-        "21_theology": 7,
+        "21_theology": 8,
         "22_practices": 6,
-        "23_material_culture": 3,
+        "23_material_culture": 6,
         "26_calendars": 8,
         "27_attire": 6
       }
@@ -540,9 +540,9 @@
     {
       "key": "indic",
       "label": "Indic (Hindu / Jain / Sikh)",
-      "count": 206,
+      "count": 207,
       "baseline": 520,
-      "ratio": 0.396,
+      "ratio": 0.398,
       "band": "developing",
       "perLens": {
         "02_documents": 36,
@@ -557,7 +557,7 @@
         "16_mathematics": 4,
         "17_medicine": 2,
         "20_sacred_architecture": 6,
-        "21_theology": 3,
+        "21_theology": 4,
         "22_practices": 4,
         "26_calendars": 3,
         "27_attire": 2
@@ -566,23 +566,24 @@
     {
       "key": "buddhist",
       "label": "Buddhist",
-      "count": 124,
+      "count": 135,
       "baseline": 380,
-      "ratio": 0.326,
+      "ratio": 0.355,
       "band": "developing",
       "perLens": {
         "02_documents": 19,
-        "03_deities": 35,
+        "03_deities": 37,
         "04_persons": 36,
         "10_music": 4,
         "11_alphabets": 1,
         "13_morals": 2,
-        "14_rituals": 5,
+        "14_rituals": 6,
         "15_philosophy": 2,
         "17_medicine": 2,
         "20_sacred_architecture": 10,
-        "22_practices": 4,
-        "23_material_culture": 1,
+        "21_theology": 2,
+        "22_practices": 6,
+        "23_material_culture": 5,
         "26_calendars": 2,
         "27_attire": 1
       }
@@ -631,13 +632,13 @@
     {
       "key": "african",
       "label": "African (Yoruba / Bantu / Akan / Nilotic etc.)",
-      "count": 44,
+      "count": 51,
       "baseline": 260,
-      "ratio": 0.169,
+      "ratio": 0.196,
       "band": "anemic",
       "perLens": {
         "02_documents": 2,
-        "03_deities": 24,
+        "03_deities": 31,
         "04_persons": 1,
         "10_music": 8,
         "14_rituals": 6,
