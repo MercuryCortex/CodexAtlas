@@ -17264,6 +17264,135 @@ SCRIPTURE_TEXTS['xunzi-23'] = {
   ]
 };
 
+// ── BATCH 9 (cont.) — CONFUCIAN pt 2 (2026-05-28) — CORPUS CLOSED ──
+
+SCRIPTURE_TEXTS['shujing'] = {
+  title: 'Shujing — Classic of Documents',
+  docNode: 'phase-1-025-shujing',
+  shortTitle: 'Shujing',
+  tradition: 'Pre-Confucian / classical Chinese',
+  date: 'compiled c. 6th-5th c. BCE from earlier material; some chapters claim 11th-c. BCE Western Zhou date',
+  intro: 'The Shujing (書經) or "Classic of Documents" is the oldest collection of Chinese political-historical prose and one of the Five Classics. It contains royal speeches, declarations, and ministerial advice attributed to figures from the legendary sage-emperors Yao and Shun through the founding kings of the Zhou dynasty. The text is the principal documentary witness for the political doctrine of the Mandate of Heaven (tianming) — the theological claim that Heaven confers and withdraws the right to rule based on the moral conduct of the ruler. The "Announcement to Kang" (Kang Gao) and the "Numerous Officers" (Duo Shi) chapters articulate the doctrine in classical form: Heaven transferred its mandate from the Shang to the Zhou not because the Zhou were strong but because the Shang last king became corrupt. The Shujing\'s political theology became the foundational vocabulary for legitimating dynastic change in Chinese political thought for the next 3,000 years. Modern philology (Karlgren 1950; Nylan 2001) distinguishes earlier (mostly authentic Western Zhou) layers from later forged "Old Text" chapters, but the doctrinal content was operative as a single canon throughout the imperial period.',
+  crossTradition: [
+    { label: 'Shijing — the poetic register of the same Zhou political theology', textId: 'shijing', note: 'The Shujing and Shijing are the two great Western Zhou sources for the Mandate-of-Heaven doctrine: the Shujing in prose declarations and speeches, the Shijing in court ceremonial poetry. They register the same theological-political position in different literary modes.' },
+    { label: 'Analects 8.20 — the great gift of King Wen', textId: 'confucius-analects', note: 'Confucius repeatedly cites the early Zhou kings — Wen, Wu, Cheng, the Duke of Zhou — whose speeches and advice are preserved in the Shujing as the moral exemplars of his political-ethical vision. The Shujing is the Confucian raw material from which the moral exemplars are drawn.' },
+    { label: 'Hebrew Deuteronomistic History — the dynastic-judgment historiography', textId: 'genesis-1', note: 'The Shujing\'s framing of dynastic transitions as the result of divine judgment on royal conduct runs parallel to the Hebrew Deuteronomistic History\'s framing of the Israelite monarchic period: each dynasty falls because its kings fail Heaven/YHWH\'s moral standard. Two ancient civilizations independently developing the genre of judgment-historiography as the principal vehicle for political-theological reflection.' },
+  ],
+  translations: [
+    { id: 'karlgren', label: 'Bernhard Karlgren, The Book of Documents (1950, Museum of Far Eastern Antiquities) (T1)' },
+    { id: 'legge', label: 'James Legge, The Chinese Classics III: The Shoo King (1865) (T2)' },
+    { id: 'chinese', label: 'Classical Chinese (Han recension)' },
+  ],
+  sections: [
+    {
+      heading: 'Kang Gao · Announcement to Kang',
+      verses: [
+        {
+          ref: 'Kang Gao excerpt',
+          text: 'Heaven, having determined to bring about the end of the great Yin (Shang), accomplished it; thereafter the great Mandate has been settled upon our Zhou. Now I, the king, address you, my brother, the marquis of Kang, with my announcement. You must illustriously discern the conduct of the former wise kings, and so guide your management of the people of Yin. Heaven enlightens the wise; Heaven punishes the cruel. Heaven is not partial; Heaven follows only virtue.',
+          textVersions: {
+            karlgren: 'Heaven, having determined to bring about the end of the great Yin, accomplished it; thereafter the great Mandate has been settled upon our Zhou.',
+            chinese: '惟乃丕顯考文王，克明德慎罰。',
+          },
+          entities: [
+            { word: 'Heaven follows only virtue', node: 'mandate-of-heaven', type: 'concept',
+              note: 'The Shujing\'s clearest single articulation of the Mandate-of-Heaven doctrine. Heaven (tian) is not a partial deity bound by tribal loyalty but a moral-cosmic principle that transfers its mandate based exclusively on virtue. The doctrine simultaneously legitimates the new Zhou dynasty (whose virtue brought them the mandate) and warns future Zhou kings (whose vice could cost them the mandate). This dual function — legitimation and warning — became the structural backbone of all subsequent Chinese political theology.',
+              parallels: [
+                { label: 'Mengzi 1B.8 — the ruler who loses the mandate is a tyrant', textId: 'mengzi-2a6', note: 'Mencius extends the Shujing\'s political theology into a radical doctrine of justified deposition: a ruler who has lost the Mandate of Heaven is no longer truly a ruler but a tyrant, and his deposition is morally permissible. This Mencian extension of the Shujing\'s doctrine has been continuously cited in Chinese political thought from the Han to the modern period.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+SCRIPTURE_TEXTS['mozi'] = {
+  title: 'Mozi — Impartial Care',
+  docNode: 'phase-2-025-mozi',
+  shortTitle: 'Mozi',
+  tradition: 'Mohist (Hundred-Schools rival to Confucianism)',
+  date: 'c. 5th-3rd c. BCE (Mozi 470-391 BCE; school texts compiled by followers)',
+  intro: 'The Mozi (墨子) is the foundational text of the Mohist school, the principal philosophical rival to Confucianism during the Hundred Schools period. Mozi (Mo Di, 470-391 BCE) developed an austere ethical-political program organized around two central doctrines: "impartial care" (jian\'ai 兼愛, often translated "universal love") and "Heaven\'s will" (tianzhi 天志). Against the Confucian privileging of family and ritual-graded affection, Mozi argued that one should care equally for everyone, treating the parents of others as one\'s own — anything less, he argued, is the source of disorder. Against the Confucian view of Heaven as an impersonal moral order, Mozi argued that Heaven (tian) is a personal agent with explicit will and intentions, the source of moral norms and the active enforcer of them. The Mozi also pioneered the first systematic study of formal logic in Chinese philosophy (the "Mohist Canon" chapters). The school was politically and intellectually powerful during the Warring States period but lost decisively to the Han-imperial Confucianism after the 2nd century BCE; it has only been recovered as a major philosophical position by 20th-century scholarship. Johnston 2010 (Columbia UP) provides the standard scholarly English version of the complete Mozi.',
+  crossTradition: [
+    { label: 'Mengzi 3B.9 — the rebuttal of Mohist impartial care', textId: 'mengzi-2a6', note: 'Mencius rejects Mohist impartial care as "denying one\'s father": treating all parents as equal denies the special relation to one\'s own parents that grounds moral cultivation. The Mencian rebuttal became the standard Confucian response and shaped subsequent Chinese ethical theory: the moral life is grounded in graded affection radiating from family outward, not in impartial universal regard.' },
+    { label: 'Confucius Analects 12.22 — the Confucian theory of love', textId: 'confucius-analects', note: 'The Analects defines ren (humaneness) as "loving people" (12.22) but never argues that this love should be impartial. Confucian ren is graded and contextual — different in kind toward parents, rulers, friends, strangers. The Mozi\'s impartialism is the philosophical challenge that forced subsequent Confucianism to articulate the theory of graded affection more explicitly.' },
+    { label: 'Bhagavad Gita 12 — the equal regard of the devotee', textId: 'bhagavad-gita-4', note: 'The Bhagavad Gita 12.13-14 describes the ideal devotee as "without enmity toward any being, friendly and compassionate to all, free from possessiveness and the sense of ego." This is a doctrine of structural impartial regard that runs parallel to the Mohist jian\'ai. Both reach the conclusion that the moral agent should not discriminate between persons.' },
+  ],
+  translations: [
+    { id: 'johnston', label: 'Ian Johnston, The Mozi: A Complete Translation (2010, Columbia UP) (T1)' },
+    { id: 'mei', label: 'Y.P. Mei, The Ethical and Political Works of Motse (1929) (T2)' },
+    { id: 'chinese', label: 'Classical Chinese (Han recension)' },
+  ],
+  sections: [
+    {
+      heading: 'Impartial Care · Jian\'ai',
+      verses: [
+        {
+          ref: 'Jian\'ai I',
+          text: 'When the sage who has charge of governing the empire wishes to investigate the source of disorder, where must he begin? He must begin with the lack of impartial care. What is meant by partiality? When the rulers of states regard their own states but not the states of others; when the heads of houses regard their own houses but not the houses of others; when individuals regard their own persons but not the persons of others — this is partiality, and it is the source of disorder. What is the remedy? Impartial care must take the place of partiality. Treat the states of others as your own; treat the houses of others as your own; treat the persons of others as your own. When this is done, calamities and rebellions will cease.',
+          textVersions: {
+            johnston: 'When the sage who has charge of governing the empire wishes to investigate the source of disorder, where must he begin? He must begin with the lack of impartial care.',
+            chinese: '聖人以治天下為事者也，不可不察亂之所自起。',
+          },
+          entities: [
+            { word: 'impartial care', node: 'tradition-confucianism', type: 'concept',
+              note: 'Mohist jian\'ai (often translated "universal love" but more accurately "impartial care") is the technical principle that one should care equally for all people regardless of relation. The doctrine is consequentialist: Mozi argues for it on the grounds that it would, if universally practiced, produce a stable peaceful society. The Confucian counter-argument is naturalistic: humans cannot in fact care impartially because affection is graded by relation, so the Mohist program is psychologically impossible and ultimately destructive of the very moral capacities it claims to cultivate.',
+              parallels: [
+                { label: 'Mengzi 3B.9 — graded affection as natural ground of morality', textId: 'mengzi-2a6', note: 'The Mencian rejection of Mohist impartialism is one of the foundational debates in early Chinese ethical theory. Mencius argues that the four sprouts are graded by relation: the compassion for one\'s own child is the natural ground from which all subsequent moral capacity grows. Impartial regard, on the Mencian view, is not the highest moral achievement but the destruction of the moral foundations.' },
+                { label: 'Bhagavad Gita 12.13 — without enmity toward any being', textId: 'bhagavad-gita-4', note: 'The Bhakti tradition\'s ideal of structural impartial regard via devotion to Krishna runs parallel to Mohist jian\'ai. Both doctrines posit impartial regard as the highest moral achievement; both ground it in something other than natural affection.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+SCRIPTURE_TEXTS['han-feizi'] = {
+  title: 'Han Feizi — The Two Handles',
+  docNode: 'phase-2-026-han-feizi',
+  shortTitle: 'Han Feizi',
+  tradition: 'Legalist (Hundred-Schools rival to Confucianism)',
+  date: 'c. 3rd c. BCE (Han Fei, c. 280-233 BCE)',
+  intro: 'The Han Feizi (韓非子) is the principal text of the Legalist school (fajia 法家), the philosophical-political program that briefly unified imperial China under the Qin dynasty (221-206 BCE). Han Fei (c. 280-233 BCE) was a student of the Confucian philosopher Xunzi who took the Xunzian thesis (human nature is innately disordered) in a radical political direction: rather than ritual (li), Han Fei argued, the technology of governance must be law (fa), administrative method (shu), and the ruler\'s strategic position (shi). The famous "Two Handles" chapter develops the doctrine that political control rests on the systematic distribution of reward and punishment ("the two handles"). Han Fei argued explicitly against Confucian moralizing: a ruler who relies on the personal virtue of his ministers will be exploited, but a ruler who uses impersonal law and surveillance can govern effectively even with average ministers. Han Fei was the principal theoretical influence on the Qin unification and was executed at the Qin court in 233 BCE through court intrigue. Watson 1964 and Liao 1939 are the standard English translations. The Han Feizi has been continuously read in East Asia as the foundational manual of imperial statecraft, often in parallel with the Confucian classics: officially Confucian, operationally Legalist.',
+  crossTradition: [
+    { label: 'Xunzi — Han Fei\'s teacher and the source of his pessimism about human nature', textId: 'xunzi-23', note: 'Han Fei was Xunzi\'s student and inherited his pessimism about human nature. Where Xunzi proposed ritual as the constructive technology that produces the good, Han Fei substituted law and administrative method — explicitly removing the moralizing element. Han Fei is what Xunzi looks like when one no longer believes in ritual.' },
+    { label: 'Mengzi 1B.8 — the Confucian doctrine of justified deposition', textId: 'mengzi-2a6', note: 'Han Fei explicitly attacks the Mencian doctrine of justified deposition: from the ruler\'s perspective, this Confucian doctrine is a blueprint for assassination. Han Fei argues the ruler must structure his administrative system to make the Mencian scenario impossible — surveillance, impersonal law, and the systematic withholding of personal access to power are the Legalist alternative to relying on virtuous ministers who might decide their virtue requires regicide.' },
+    { label: 'Machiavelli Il Principe — the early-modern parallel manual of statecraft', textId: 'plato-cave', note: 'The Han Feizi and Machiavelli\'s Prince (1513) are the two great pre-modern manuals of unsentimental statecraft. Both argue that the realistic ruler must distinguish what is politically effective from what is morally idealized; both treat the management of human nature as a technical problem rather than a moral one; both have been read in their respective traditions as the cynical-realist alternative to the official ethical-political philosophy. The parallels are independent — Han Fei was unknown to early-modern Europe — but the structural homology is striking.' },
+  ],
+  translations: [
+    { id: 'watson', label: 'Burton Watson, Han Feizi: Basic Writings (1964, Columbia UP) (T1)' },
+    { id: 'liao', label: 'W.K. Liao, The Complete Works of Han Fei Tzu, 2 vols (1939-59) (T1)' },
+    { id: 'chinese', label: 'Classical Chinese (Han recension)' },
+  ],
+  sections: [
+    {
+      heading: 'The Two Handles',
+      verses: [
+        {
+          ref: '7.1',
+          text: 'The enlightened ruler controls his ministers by means of two handles alone. The two handles are punishment and reward. What do I mean by punishment and reward? To inflict death or suffering on the criminal is called punishment; to bestow honor or wealth on the meritorious is called reward. Ministers fear punishment and seek reward; therefore if the ruler manages the two handles personally, the ministers will fear his sternness and submit themselves to his bounty. But if the ruler allows the ministers to manage the punishments and rewards, the situation reverses: the ministers control the people, the people fear the ministers and slight the ruler, and the ruler is left isolated. This is the road to losing the state.',
+          textVersions: {
+            watson: 'The enlightened ruler controls his ministers by means of two handles alone. The two handles are punishment and reward.',
+            chinese: '明主之所導制其臣者，二柄而已矣。二柄者，刑德也。',
+          },
+          entities: [
+            { word: 'two handles', node: 'tradition-confucianism', type: 'concept',
+              note: 'Han Fei\'s "Two Handles" doctrine: political control rests entirely on the systematic distribution of punishment and reward. The Confucian alternative — that political control should rest on the personal virtue of the ruler radiating through ritual and example — Han Fei treats as politically naive. The ruler\'s personal virtue cannot be reliably maintained across many generations and many ministers; impersonal law-plus-reward-plus-punishment can. Han Fei is the systematic theoretical replacement of moral virtue with technical statecraft.',
+              parallels: [
+                { label: 'Mengzi 1A.7 — the king must care for the people\'s livelihood', textId: 'mengzi-2a6', note: 'The Mencian alternative: rulers govern legitimately when they care for the people\'s livelihood; this care is the personal moral virtue that legitimates and stabilizes the political order. Han Fei rejects this entirely as politically unworkable. The Mencius-Han Fei opposition is the foundational debate in early Chinese political theory about whether politics is fundamentally moral (Confucian-Mencian) or fundamentally technical (Legalist).' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
 
 
 
