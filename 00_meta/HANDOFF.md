@@ -1,3 +1,15 @@
+# Session HANDOFF — 2026-05-29 evening (SHELL FOUNDATION IS V1 — needs rebuild)
+
+> **🔴 START HERE: see `HANDOFF-2026-05-29-shell-foundation-wrong.md`**
+> for the live red-flag context. The session ended mid-issue with John
+> correctly furious that the V2 site is still sitting on the V1
+> prototype shell. Cosmetic per-view fixes were shipped all session;
+> the foundational architecture is what needs the next pass. The
+> dated handoff is the authoritative state — this older block below
+> is preserved for the goblin-fleet content context only.
+
+---
+
 # Session HANDOFF — 2026-05-28 (CONTENT BIG PUSH in flight — 9 goblin agents working in background, Lane A remaining 7 corpora deferred to fresh agent)
 
 > **🚀 BIG PUSH STATE.** Per AUDIT/2026-05-28-content-big-push-plan.md, 4 lanes opened. Status at handoff:
