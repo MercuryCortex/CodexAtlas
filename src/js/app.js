@@ -1222,11 +1222,12 @@ VIEWS.boards = {
     if (svgEl) svgEl.style.display = 'none';
     if (window._boardsView) window._boardsView.render(pane);
 
-    // 2026-05-29 — Canonical bottom toolbar (matches the Atlas chart
-    // bottom view-options strip). Holds the toggles that USED to live
-    // in the top app-pill: Edges (wire visibility) + Legend (future).
-    // The top pill keeps only the creative actions: Transmission library,
-    // Add node, Save tree. Pure CSS chrome — no inline styles.
+    // 2026-05-29 v2 — Canonical bottom view-options strip per the
+    // Atlas / Forge .forge-bottombar pattern. Bottom-LEFT anchored so
+    // the centre-bottom slot stays clear for the existing
+    // .boards-multi-bar contextual selection toolbar. Wires + Legend
+    // are pure VIEW toggles (no content mutation). Save tree stayed
+    // in the top pill because it's a save action.
     const bar = document.createElement('div');
     bar.className = 'boards-bottombar';
     bar.setAttribute('role', 'toolbar');
@@ -1236,22 +1237,46 @@ VIEWS.boards = {
       + '<div class="boards-bottombar-group">'
       +   '<button class="boards-bottombar-btn" type="button"'
       +     ' data-action="toggle-edges" aria-pressed="' + (edgesOn ? 'true' : 'false') + '"'
-      +     ' title="Show / hide auto-drawn edges between cards">'
+      +     ' title="Show / hide the auto-drawn edges between cards">'
       +     '<span class="boards-bottombar-glyph" aria-hidden="true">⟶</span>'
       +     '<span class="boards-bottombar-label">Wires</span>'
       +   '</button>'
       +   '<button class="boards-bottombar-btn" type="button"'
       +     ' data-action="toggle-legend" aria-pressed="false"'
-      +     ' title="Show / hide edge-type colour legend (soon)" disabled>'
+      +     ' title="Show / hide the wire-bucket colour legend">'
       +     '<span class="boards-bottombar-glyph" aria-hidden="true">▤</span>'
       +     '<span class="boards-bottombar-label">Legend</span>'
       +   '</button>'
-      + '</div>'
-      + '<div class="boards-bottombar-spacer"></div>'
-      + '<div class="boards-bottombar-group">'
-      +   '<span class="boards-bottombar-hint">canonical: actions top · view-options bottom</span>'
       + '</div>';
     canvasEl.appendChild(bar);
+
+    // Legend popover — opens above the Legend button, mirrors the 7
+    // wire-bucket vocabulary (transmission / parallel / association /
+    // kinship / attestation / polemic / fusion) so the user sees the
+    // same colour key here that they see in the Forge legend module.
+    // NOTE: variable name is `legendPop` (not `legend`) because `legend`
+    // is the global d3 selection used earlier in setView().
+    const legendPop = document.createElement('div');
+    legendPop.className = 'boards-legend-popover';
+    legendPop.setAttribute('role', 'dialog');
+    legendPop.setAttribute('aria-label', 'Wire-bucket legend');
+    const BUCKETS = [
+      { key: 'transmission', color: '#d4a55a', desc: 'Historical causality, documented chain' },
+      { key: 'parallel',     color: '#7fb0e8', desc: 'Structural resemblance, no proven contact' },
+      { key: 'association',  color: '#9d8cb8', desc: 'Ambient context (themes, traditions)' },
+      { key: 'kinship',      color: '#e88a8a', desc: 'Divine genealogy (parent/child/consort/sibling)' },
+      { key: 'attestation',  color: '#7fc28b', desc: 'Documentary evidence (attests / attested-in)' },
+      { key: 'polemic',      color: '#d97a70', desc: 'One tradition reframes another as hostile' },
+      { key: 'fusion',       color: '#c8a4e0', desc: 'Two entities collapse / are identified as one' },
+    ];
+    legendPop.innerHTML = '<h4>Wire buckets</h4>'
+      + BUCKETS.map(b =>
+        '<div class="boards-legend-row">'
+        + '<span class="boards-legend-swatch" style="background:' + b.color + '"></span>'
+        + '<span class="boards-legend-name">' + b.key + '</span>'
+        + '<span class="boards-legend-desc">' + b.desc + '</span>'
+        + '</div>').join('');
+    canvasEl.appendChild(legendPop);
 
     bar.addEventListener('click', (ev) => {
       const btn = ev.target.closest('button[data-action]');
@@ -1261,8 +1286,85 @@ VIEWS.boards = {
         const cur = window._boardsView.isEdgesVisible();
         window._boardsView.setEdgesVisible(!cur);
         btn.setAttribute('aria-pressed', (!cur) ? 'true' : 'false');
+      } else if (a === 'toggle-legend') {
+        const open = legendPop.classList.toggle('is-open');
+        btn.setAttribute('aria-pressed', open ? 'true' : 'false');
       }
     });
+    // Click-outside / Escape closes the legend popover.
+    document.addEventListener('click', (ev) => {
+      if (!legendPop.classList.contains('is-open')) return;
+      if (legendPop.contains(ev.target)) return;
+      if (bar.contains(ev.target)) return;
+      legendPop.classList.remove('is-open');
+      const lb = bar.querySelector('[data-action="toggle-legend"]');
+      if (lb) lb.setAttribute('aria-pressed', 'false');
+    });
+
+    // Right-click on the empty board surface → context menu with
+    // "Add node…" entry. Hijacks the stage's existing contextmenu
+    // handler ONLY when the right-click target is the empty stage
+    // (boards-stage / boards-world) — card-level right-clicks still
+    // route to the per-card expand/transmissions/shortest-path menu
+    // that boards.js owns (step 7 of the carve).
+    let _emptyMenuEl = null;
+    function closeEmptyMenu() {
+      if (_emptyMenuEl && _emptyMenuEl.parentNode) _emptyMenuEl.parentNode.removeChild(_emptyMenuEl);
+      _emptyMenuEl = null;
+    }
+    pane.addEventListener('contextmenu', (ev) => {
+      // Only intercept if the target is the stage / world surface,
+      // not a card. Cards have their own contextmenu handler.
+      const t = ev.target;
+      const isCard = t.closest && t.closest('.boards-card');
+      if (isCard) return;        // let card menu fire
+      ev.preventDefault();
+      closeEmptyMenu();
+      const menu = document.createElement('div');
+      menu.className = 'boards-empty-context-menu';
+      menu.style.left = ev.clientX + 'px';
+      menu.style.top  = ev.clientY + 'px';
+      menu.innerHTML = ''
+        + '<button class="boards-empty-context-item" type="button" data-action="add-node">'
+        +   '<span class="boards-empty-context-glyph">＋</span>'
+        +   '<span>Add node…</span>'
+        + '</button>';
+      menu.addEventListener('click', (e2) => {
+        const it = e2.target.closest('[data-action]');
+        if (!it) return;
+        if (it.getAttribute('data-action') === 'add-node') {
+          // Open the existing top-pill Add-node menu by clicking it.
+          const trigger = document.getElementById('app-pill-boards-addnode');
+          if (trigger && typeof trigger.click === 'function') trigger.click();
+        }
+        closeEmptyMenu();
+      });
+      document.body.appendChild(menu);
+      _emptyMenuEl = menu;
+      // Close on outside click / Escape.
+      const onAway = (e3) => { if (!menu.contains(e3.target)) closeEmptyMenu(); };
+      setTimeout(() => document.addEventListener('click', onAway, { once: true }), 0);
+    });
+
+    // Backspace / Delete → deleteSelected (when not in an input).
+    // Only active while the boards view is mounted; the listener is
+    // cleaned up when setView removes .boards-pane.
+    const onKey = (ev) => {
+      if (!document.body.classList.contains('view-boards')) return;
+      if (ev.target && (ev.target.tagName === 'INPUT' || ev.target.tagName === 'TEXTAREA' || ev.target.isContentEditable)) return;
+      if (ev.key !== 'Delete' && ev.key !== 'Backspace') return;
+      if (window._boardsView && window._boardsView.getState) {
+        const st = window._boardsView.getState();
+        const selectedSize = (st && st.selected && st.selected.size) || 0;
+        if (!selectedSize) return;
+        ev.preventDefault();
+        if (typeof window._boardsView.deleteSelected === 'function') {
+          window._boardsView.deleteSelected();
+        }
+      }
+    };
+    document.addEventListener('keydown', onKey);
+    bar._removeKey = () => document.removeEventListener('keydown', onKey);
   },
 };
 

@@ -691,6 +691,10 @@
       cards: Array.from(_cards.values()).map(c => ({
         id: c.id, label: c.label, x: c.x, y: c.y,
       })),
+      // 2026-05-29 — expose selection size so the global Delete/Backspace
+      // handler in VIEWS.boards.render can no-op on empty selection.
+      selected: _selected,
+      selectionCount: _selected.size,
     };
   }
 
@@ -1450,6 +1454,7 @@
     unmount:          unmount,
     addCard:          addCard,
     removeCard:       removeCard,
+    deleteSelected:   deleteSelected,   // 2026-05-29 — keyboard Delete/Backspace
     clearBoard:       clearBoard,
     loadPreset:       loadPreset,
     getState:         getState,
