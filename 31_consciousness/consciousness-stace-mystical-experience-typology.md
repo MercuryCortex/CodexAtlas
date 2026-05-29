@@ -8,23 +8,23 @@ region: "United States (Princeton) → international"
 period-active-earliest: 1952
 period-active-latest: 1967
 school: "analytic philosophy of mysticism · perennialist comparative"
-founders: ["[[walter-terence-stace]]"]
+founders: ["[walter-terence-stace]"]
 domains: ["extrovertive mystical experience (unity-of-all-things in nature)", "introvertive mystical experience (pure-consciousness inward)", "seven core characteristics", "the common-core thesis", "language and ineffability"]
 source-tier: "T1"
 political-risk-flag: false
-attested-in: ["[[walter-terence-stace]]"]
+attested-in: ["[walter-terence-stace]"]
 syncretic-edges:
   - target: "[[consciousness-james-varieties-religious-experience]]"
     type: "influenced-by"
     source: "Stace, W.T. (1960) *Mysticism and Philosophy*. Macmillan — ch. 2 §1 explicitly extends James"
     source-tier: "T1"
     notes: "Stace cites James's four marks as his starting point + critiques them for conflating phenomenology and interpretation. His own seven core characteristics include James's ineffability + noetic quality + passivity but separate the *phenomenological* features from the *theological interpretations* the experiencer attaches afterward."
-  - target: "[[walter-terence-stace]]"
+  - target: "[walter-terence-stace]"
     type: "constituent-of"
     source: "trivial — authored work"
     source-tier: "T1"
     notes: "Stace (1886-1967) was a British-American analytic philosopher at Princeton; THIS node = the 1960 corpus + reception, the biographical entry covers his earlier work in empiricism (*Theory of Knowledge and Existence* 1932) and his Hegel scholarship."
-  - target: "[[mysticism]]"
+  - target: "[mysticism]"
     type: "constituent-of"
     source: "Stace, W.T. (1960) *Mysticism and Philosophy* — establishes the discipline's vocabulary"
     source-tier: "T1"
