@@ -751,7 +751,72 @@ def collect_node_edges(nodes_by_id):
                     if notes_text:
                         edge_obj["edge_notes"] = str(notes_text)
                     edges.append(edge_obj)
+
+        # === 2026-05-29 — Body-table edges =============================
+        # Many MASSIVE-WIN essay nodes (and a lot of person/theme nodes)
+        # encode their cross-tradition wirings as markdown TABLE rows in
+        # the body, not as a `syncretic-edges:` YAML block. Example from
+        # `04_persons/nagarjuna.md`:
+        #
+        #   | [[wittgenstein]]  | structural-parallel | Philosophy's self-dissolution... |
+        #   | [[derrida]]       | structural-parallel | Différance :: śūnyatā... |
+        #   | [[candrakirti]]   | chief-commentator   | Prāsaṅgika...           |
+        #
+        # Until now these never made it into vault.edges, so any board
+        # preset (or Forge wire pass) that referenced two such nodes
+        # had nothing to draw between them. The Nāgārjuna ↔ Wittgenstein
+        # MASSIVE-WIN preset MW-012 was the user-flagged case.
+        #
+        # We extract rows that look like exactly THREE pipe-separated
+        # cells where cell-1 is `[[slug]]` (target) and cell-2 is a
+        # kebab-case edge-type identifier. The third cell is preserved
+        # as `edge_notes`. We skip header separators (cell-2 starts
+        # with `-` or `:`).
+        body_text = node.get("body") or ""
+        if body_text and "|" in body_text:
+            for m in BODY_TABLE_ROW_RX.finditer(body_text):
+                target_slug = m.group(1).strip()
+                # Allow `[[slug|display]]` form — keep slug only.
+                if "|" in target_slug:
+                    target_slug = target_slug.split("|", 1)[0].strip()
+                target_slug = target_slug.lower()
+                # Reject prose / wikilinks that don't look like slugs
+                # (the structured-edge field uses the same guard).
+                if not SLUG_RE.match(target_slug):
+                    continue
+                if target_slug == node_id:
+                    continue
+                etype = m.group(2).strip().lower()
+                notes = m.group(3).strip()
+                # Skip separator rows: `|---|---|---|` and aliases.
+                if not etype or etype.startswith(("-", ":")) or set(etype) <= {"-", ":"}:
+                    continue
+                # Source-tier defaults to T1 (mainstream) for body-table
+                # edges since they predate the tier system on most nodes.
+                edge_obj = {
+                    "source":      node_id,
+                    "target":      target_slug,
+                    "type":        etype,
+                    "field":       "body-table",
+                    "source_tier": "T1",
+                }
+                if notes:
+                    edge_obj["edge_notes"] = notes
+                edges.append(edge_obj)
     return edges
+
+
+# Body-table row matcher. Three cells. Cell-1 = `[[slug]]` (with optional
+# `|display` text after the slug). Cell-2 = kebab-case edge-type identifier.
+# Cell-3 = free-form notes (HTML / Unicode allowed). The leading pipe and
+# trailing pipe are required; we anchor each line so we don't accidentally
+# match inline `|` characters elsewhere.
+BODY_TABLE_ROW_RX = re.compile(
+    r"^\s*\|\s*\[\[([^\[\]|]+?)(?:\|[^\]]*)?\]\]\s*"   # cell-1 = [[slug]] or [[slug|display]]
+    r"\|\s*([a-z][a-z0-9-]*)\s*"                       # cell-2 = kebab-case edge-type
+    r"\|(.*)\|\s*$",                                   # cell-3 = notes (any content)
+    re.MULTILINE,
+)
 
 
 def load_thumbnail_cache():
