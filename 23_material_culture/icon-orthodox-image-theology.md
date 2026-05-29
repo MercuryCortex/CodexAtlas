@@ -71,11 +71,11 @@ syncretic-edges:
     source: "Ouspensky 1992; John of Damascus *On the Divine Images* I"
     source-tier: T1
     notes: "John of Damascus argues that the Exodus prohibition of images (Exod 20:4) is **conditional** — it forbids images of the invisible God. After the Incarnation, God has assumed visible form (the Burning Bush as proto-Incarnation type); the prohibition is therefore lifted. The Burning Bush icon-type (Theotokos as the Bush, Christ as the fire) is the canonical Marian iconographic argument."
-  - target: "[crucifix-catholic]"
+  - target: "[[crucifix-catholic]]"
     type: "polemic-divergence"
     source: "Ouspensky 1992; Belting 1994"
     source-tier: T1
-    notes: "Orthodox icon theology develops in **conscious tension** with the Western Latin tradition. The Eastern icon is theologically constrained — Christ depicted in glory or Pantokrator-mode, not naturalistically suffering; flat reverse-perspective; gold-leaf indicating divine light, not naturalistic atmosphere. The Western post-Carolingian image-tradition — naturalistic, often emotionally-intense suffering Christ ([crucifix-catholic]) — develops in a different theological direction. Belting 1994 traces the divergence after 1054 and especially after the 13th-c. Italian shift."
+    notes: "Orthodox icon theology develops in **conscious tension** with the Western Latin tradition. The Eastern icon is theologically constrained — Christ depicted in glory or Pantokrator-mode, not naturalistically suffering; flat reverse-perspective; gold-leaf indicating divine light, not naturalistic atmosphere. The Western post-Carolingian image-tradition — naturalistic, often emotionally-intense suffering Christ ([[crucifix-catholic]]) — develops in a different theological direction. Belting 1994 traces the divergence after 1054 and especially after the 13th-c. Italian shift."
   - target: "[theme-aniconism-iconoclasm-comparative]"
     type: "comparative-frame"
     source: "Pelikan 1990; Schick 1995 *The Christian Communities of Palestine from Byzantine to Islamic Rule*"
@@ -119,7 +119,7 @@ The Orthodox iconographic canon imposes **reverse perspective** (the icon expand
 The Orthodox icon tradition develops in **conscious tension** with three other major image-theology positions in Eurasia:
 
 - **Islamic aniconism** — the broader image-prohibition of Sunni + Shi'a Islam (especially of God and the Prophets) is the direct contemporary context of the Iconoclastic controversy. Pelikan 1990 documents Islamic influence as a real factor in the Iconoclast emperors' position
-- **Western Catholic image-tradition** — develops naturalistically after the Carolingian period (Charlemagne's *Libri Carolini* takes a Western-iconodule but Greek-suspicious position); diverges sharply after 1054 East-West schism + 13th-c. Italian-Gothic shift toward emotionally-naturalistic depiction (Belting 1994). The Western [crucifix-catholic] tradition is the iconographic divergence
+- **Western Catholic image-tradition** — develops naturalistically after the Carolingian period (Charlemagne's *Libri Carolini* takes a Western-iconodule but Greek-suspicious position); diverges sharply after 1054 East-West schism + 13th-c. Italian-Gothic shift toward emotionally-naturalistic depiction (Belting 1994). The Western [[crucifix-catholic]] tradition is the iconographic divergence
 - **Reformation iconoclasm** — 16th-c. Calvinist + Zwinglian + Anabaptist destruction of sacred images repeats the Byzantine Iconoclast position with patristic-citation continuity; the Reformed traditions retain Iconoclast image-theology to the present
 - **Hindu mūrti / Buddhist iconographic traditions** — pace Islamic + Reformed aniconism, both East Asian + South Asian religious traditions develop elaborate sacred-image programs; the cross-cultural comparison is the [theme-aniconism-iconoclasm-comparative] field
 
@@ -127,7 +127,7 @@ The icon is one of the principal sites where Orthodox + Catholic + Protestant + 
 
 ## Cross-references
 
-- **Wikilinks**: [[john-of-damascus]], [theodore-the-studite], [empress-irene], [[empress-theodora]], [andrei-rublev], [[tradition-eastern-orthodoxy]], [[tradition-byzantine-christianity]], [[event-council-of-nicaea-787]], [event-iconoclastic-controversy], [[burning-bush]], [crucifix-catholic], [theme-aniconism-iconoclasm-comparative], [ritual-orthodox-veneration-proskynesis].
+- **Wikilinks**: [[john-of-damascus]], [theodore-the-studite], [empress-irene], [[empress-theodora]], [andrei-rublev], [[tradition-eastern-orthodoxy]], [[tradition-byzantine-christianity]], [[event-council-of-nicaea-787]], [event-iconoclastic-controversy], [[burning-bush]], [[crucifix-catholic]], [theme-aniconism-iconoclasm-comparative], [ritual-orthodox-veneration-proskynesis].
 
 ## Sources
 
