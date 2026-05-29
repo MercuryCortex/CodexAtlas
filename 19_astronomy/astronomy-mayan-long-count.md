@@ -27,7 +27,7 @@ syncretic-edges:
     source: "Aveni 2001; Justeson 1989 'Ancient Maya Ethnoastronomy' in *World Archaeoastronomy*"
     source-tier: "T1"
     notes: "The Long Count is part of a broader Mesoamerican calendrical-astronomical complex shared with Olmec, Isthmian (Epi-Olmec), Mixe-Zoquean, and later Aztec systems — the 260-day tzolkin sacred count + 365-day haab civil count + 52-year Calendar Round are pan-Mesoamerican; the Long Count is the specifically Maya / Isthmian elaboration."
-  - target: "[astronomy-cahokia-woodhenge]"
+  - target: "[[astronomy-cahokia-woodhenge]]"
     type: "parallel-form"
     source: "Aveni 2001; Pauketat 2009 *Cahokia: Ancient America's Great City on the Mississippi* Viking"
     source-tier: "T2"
@@ -104,7 +104,7 @@ This is the **largest-scale predictive astronomical-calendrical system developed
 - [[astronomy-venus-tables-dresden]] — the codex astronomical work that operates in Long Count chronology
 - [[tradition-maya-religion]] — religious-cosmological context
 - [[tradition-mesoamerican]] — broader cultural setting
-- [astronomy-cahokia-woodhenge] — independent New World parallel
+- [[astronomy-cahokia-woodhenge]] — independent New World parallel
 
 ## Refs
 
