@@ -1,4 +1,23 @@
-# Session HANDOFF — 2026-05-28 (BOARDS V2 carve plan complete + legacy isolation locked + master pill 100% V2-canonical)
+# Session HANDOFF — 2026-05-28 (CONTENT BIG PUSH in flight — 9 goblin agents working in background, Lane A remaining 7 corpora deferred to fresh agent)
+
+> **🚀 BIG PUSH STATE.** Per AUDIT/2026-05-28-content-big-push-plan.md, 4 lanes opened. Status at handoff:
+>
+> · **Lane A — Scripture corpora** — main-thread shipped **DAO closed (5/5)** + **CONFUCIAN closed (6/6)** = 11 entries, 4 commits (`1395b827`, `4f9d5a66`, `c7c627d3`, `d89a4510`). Delegated agent (`ab97a47aea4aa3c94`) was blocked by content-filter on first batch — main-thread fallback per cardinal `feedback_delegated_agent_content_filter_2026-05-27.md` worked cleanly. **Remaining 7 corpora awaiting fresh-agent pickup**: Greek-scripture (6), Islamic-theological (6), Tewahedo broader (8), Hermetica (10), Nag Hammadi (11), Tipitaka (12), Vedas (15) ≈ 62 entries.
+>
+> · **Lane B — Thin lens expansion** — initial agent shipped 24_pharmacology +11, 16_mathematics +8, 19_astronomy +1 (commits `7ec645f7`, `6bca6b51`, `d4fadc22`, `7f176fec`) before being killed. **9 goblin agents now in flight**, one per remaining starved lens: `22_practices`, `23_material_culture`, `25_divination`, `26_calendars`, `13_morals`, `18_languages`, `15_philosophy`, `17_medicine`, `21_theology`. Each targets +8 to +12 nodes with Tier-1 academic refs. Each owns its own folder = zero contention. Each appends a STATUS line on completion.
+>
+> · **Lane C — MASSIVE-WIN essays** — ✅ COMPLETE. Agent shipped 12 new T1-sourced transmission essays (#44-#55): Zoroaster→aletheia→Plato · Mul.Apin→Ptolemy→Ficino · Mithras→Sol Invictus→Christmas · Tang Chan→MBSR · Bön↔Tantric · Ibn ʿArabi→Bhakti · Ma'at→Iustitia · Hesiod→Sefirot · Manichaean→Cathar · Pyrrho↔upekkhā · Apokatastasis triangle · Asuras↔Ahuras. Boards Library regenerated (`8cd4dffa`): 35 MASSIVE_WINS + 20 TRANSMISSIONS. Commits `84bd5f25`, `8cd4dffa`, `9bc8a5ee`.
+>
+> · **Lane D — Thumbnail audit** — ✅ COMPLETE. 511 nodes flagged across 2 categories (1 confirmed tech-mismatch = Amduat-AMD; 511 extract-mismatch = mostly transliteration false positives). Report at `AUDIT/2026-05-28-thumbnail-audit.md`. Commit `8f5e115a`. **Fixes deferred** to follow-up commit after John's review.
+>
+> **Fresh agent: when goblins finish (you'll see notifications + new commits prefixed `goblin-NN-`), do the following:**
+> 1. `git log --oneline 84bd5f25..HEAD` to see all post-push commits.
+> 2. Check `00_meta/STATUS.md` top — each goblin appends one line. Goblins that crashed or hit content-filter will have a "DEFERRED" line; pick those up.
+> 3. **Lane A pickup**: open the same main-thread pattern that closed Dao + Confucian. Pattern: read existing entry shape (zhuangzi at line 4728 is a good template), grep docNodes to confirm vault has them, write 3-entry batches with `node --check` + commit between, ensure all cross-tradition wikilinks resolve to existing SCRIPTURE_TEXTS keys. Smallest-first triage = Greek-scripture (6) → Islamic-theological (6) → Tewahedo (8) → Hermetica (10) → Nag Hammadi (11) → Tipitaka (12) → Vedas (15).
+> 4. **Thumbnail fixes (Lane D follow-up)**: read `AUDIT/2026-05-28-thumbnail-audit.md`, sample-spot 10 flagged from each category, decide on null-out vs replace-via-Wikipedia-search, write `scripts/fix_thumbnails_2026_05_28.py`, run it, commit data.js + thumbnail-fix script.
+> 5. The Boards V2 app surface is locked — don't touch it. The content push is content-only; all UX is done.
+>
+> **Earlier in this session** (BOARDS V2 carve + chrome consolidation): the full app shell is V2-canonical with zero V01 contamination. See body of this file for the Boards V2 details.
 
 > **🎉 BOARDS V2 IS DONE.** All 10 carve-plan steps shipped this session (`b139f53`, `3f2c6c1`, `ba81c95`, `89ee9e9`, `8b3e603`, `ba87d66`, `e4d3786`, `fdf872c`). The user has a complete investigation-construction tool: add vault nodes via [Add node ▾] search; drag/zoom/pan; right-click → expand connections / transmissions / shortest-path / remove; dbl-click → V2 inspector with markdown body + sources; shift+drag → marquee select → group/delete; save the board to LS under any name → reload it from MY BOARDS next session. 4 categories of pre-built boards in Investigation: 32 MASSIVE WINS, 71 AI PRESETS, 11 TRANSMISSIONS, plus the user's MY BOARDS. The legacy alchemy board (`VIEWS.transmutation`) now redirects to V2 (preserved at `VIEWS._legacyTransmutation` for emergency rollback). 0 LOC of legacy chrome reused.
 >
