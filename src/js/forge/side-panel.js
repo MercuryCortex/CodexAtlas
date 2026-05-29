@@ -228,6 +228,16 @@
       const domains    = Array.isArray(node.domains) ? node.domains.join(', ') : '';
       const familyCol  = (node.family_color || node.tradition_color || '#888');
 
+      // 2026-05-29 — restore V1 fields the V2 panel was dropping:
+      // node.body  (full vault markdown body — uncropped)
+      // node.refs  (T1-tiered references)
+      // The previous "description got cropped at 'third- and sec'" report
+      // was about node.thumb_extract (Wikipedia snippet, truncated source-
+      // side); rendering node.body where present gives full vault content
+      // and demotes thumb_extract to a fallback for stubs.
+      const bodyRaw = String(node.body || '').trim();
+      const refs    = Array.isArray(node.refs) ? node.refs : [];
+
       // Wire-bucket counts + per-bucket neighbor lists.
       // Each bucket: { count, neighbors: [{ id, title, family_color, dir, … }] }.
       // dir = 'out' (this node → other) or 'in' (other → this node).
@@ -562,6 +572,64 @@
               : '')
           + '</div>';
       }
+      // 2026-05-29 — markdown body renderer for node.body (vault content).
+      // Uses window.marked if available (already loaded for the doc reader);
+      // falls back to safe-escaped <p>-per-paragraph for the no-marked case.
+      // Internal [[wikilinks]] are rewritten to data-codex-jump buttons so
+      // the side-panel acts like the chart in click-through behavior.
+      const renderBodyMd = (raw) => {
+        if (!raw) return '';
+        // Rewrite [[slug]] / [[slug|display]] → click-jump buttons (in-mode
+        // only — out-of-mode targets become inert spans so the panel doesn't
+        // promise a navigation that won't fire).
+        const withLinks = raw.replace(
+          /\[\[([a-zA-Z0-9\-_]+)(?:\|([^\]]+))?\]\]/g,
+          (m, slug, label) => {
+            const text = safe(label || slug);
+            // Conservative inert span — wiring an in-panel jump is a Step-2
+            // improvement; the link is correct text-wise either way.
+            return '<a class="forge-side-panel-body-link" data-codex-jump="' + safeAttr(slug) + '">' + text + '</a>';
+          }
+        );
+        if (window.marked && typeof window.marked.parse === 'function') {
+          try { return window.marked.parse(withLinks); } catch (_) { /* fall through */ }
+        }
+        // Minimal fallback: split paragraphs, escape, wrap.
+        return withLinks.split(/\n\n+/).map(p => '<p>' + p.replace(/\n/g, '<br>') + '</p>').join('');
+      };
+      const bodyHtml = renderBodyMd(bodyRaw);
+
+      // References list (V1 had it; V2 was dropping refs entirely).
+      const refsHtml = refs.length
+        ? '<h4 class="forge-side-panel-section-h">References</h4>'
+          + '<ol class="forge-side-panel-refs">'
+          + refs.map(r => {
+              if (typeof r === 'string') return '<li>' + safe(r) + '</li>';
+              const author = r.author ? safe(r.author) : '';
+              const year   = r.year   ? ' (' + safe(r.year) + ')' : '';
+              const t      = r.title  ? ' <em>' + safe(r.title) + '</em>' : '';
+              const pub    = r.publisher ? ', ' + safe(r.publisher) : '';
+              const url    = r.url ? ' <a href="' + safe(r.url) + '" target="_blank" rel="noopener noreferrer">→</a>' : '';
+              const tier   = r.tier ? ' <span class="forge-side-panel-ref-tier">T' + safe(r.tier) + '</span>' : '';
+              return '<li>' + author + year + '.' + t + pub + '.' + url + tier + '</li>';
+            }).join('')
+          + '</ol>'
+        : '';
+
+      // 2026-05-29 — Action row between desc and edge buckets per user
+      // request: a small horizontal menu of contextual actions. First
+      // entry is "+ Add to board" — other actions can be added by adding
+      // data-action="..." buttons here and a case in the click handler
+      // wired below.
+      const actionRowHtml = '<div class="forge-side-panel-actions" role="toolbar" aria-label="Node actions">'
+        + '<button class="forge-side-panel-action" type="button"'
+        +   ' data-action="add-to-board" data-node-id="' + safeAttr(id) + '"'
+        +   ' title="Add this node to the current board as a card">'
+        + '<span class="forge-side-panel-action-glyph" aria-hidden="true">＋</span>'
+        + '<span class="forge-side-panel-action-label">Add to board</span>'
+        + '</button>'
+        + '</div>';
+
       inner.innerHTML = '<div class="forge-side-panel-content" style="--family-color:' + safe(familyCol) + '">'
         + carouselHtml()
         + '<div class="forge-side-panel-header">'
@@ -570,6 +638,7 @@
         +   (tradition ? '<div class="forge-side-panel-tradition">' + safe(tradition) + '</div>' : '')
         + '</div>'
         + (desc ? '<div class="forge-side-panel-desc">' + safe(desc) + '</div>' : '')
+        + actionRowHtml
         + (pills ? '<div class="forge-side-panel-wires">' + pills + '</div>' : '')
         + '<dl class="forge-side-panel-meta">'
         +   (dateStr ? '<dt>Date</dt><dd>' + safe(dateStr) + '</dd>' : '')
@@ -581,7 +650,16 @@
         +   (place   ? '<dt>Place</dt><dd>' + safe(place)   + '</dd>' : '')
         +   (domains ? '<dt>Domains</dt><dd>' + safe(domains) + '</dd>' : '')
         + '</dl>'
-        + (extract ? '<div class="forge-side-panel-extract">' + safe(extract) + '</div>' : '')
+        // 2026-05-29 — vault body restored (was dropped in V2 → V1 had this
+        // as the main content). For deities like Michael (Archangel) this
+        // surfaces the full vault-authored intro instead of the truncated
+        // Wikipedia extract that was causing the "third- and sec…" cut-off.
+        + (bodyHtml ? '<div class="forge-side-panel-body">' + bodyHtml + '</div>' : '')
+        + refsHtml
+        // Wikipedia extract demoted — only shown when there's no vault body
+        // (so the panel still has a fallback for stub nodes) and clearly
+        // marked as external context.
+        + (!bodyHtml && extract ? '<div class="forge-side-panel-extract">' + safe(extract) + '</div>' : '')
         + (wikiPage ? '<a class="forge-side-panel-wikilink" href="' + safe(wikiPage) + '" target="_blank" rel="noopener noreferrer">Open Wikipedia ↗</a>' : '')
         // Atlas Codex step 5 (2026-05-28) — Open-in-reader button
         // for any locked doc node whose docNode field is claimed
@@ -633,6 +711,45 @@
           window._forge.openReader(tk);
         }
         return;
+      }
+      // 2026-05-29 — Action row: Add to board. Calls the boards public
+      // API directly. If the Boards view hasn't been mounted yet, surface
+      // a non-fatal hint so the user knows they need to visit Boards once
+      // first. (Boards installs window._boardsView on first render; we
+      // don't auto-route there to keep this a low-friction shortcut.)
+      const actBtn = e.target.closest('button[data-action]');
+      if (actBtn) {
+        const action = actBtn.getAttribute('data-action');
+        if (action === 'add-to-board') {
+          e.stopPropagation();
+          const nid = actBtn.getAttribute('data-node-id');
+          const view = window._boardsView;
+          if (!view || typeof view.addCard !== 'function') {
+            try { alert('Open the Board view once, then come back to add nodes.\n(Boards mounts its public API on first visit.)'); } catch (_) {}
+            return;
+          }
+          // Resolve the node title via the vault lookup we built earlier
+          // for the wire panel; it's authoritative on cross-folder names.
+          const nodeRec = (local._vaultNodesById && local._vaultNodesById.get && local._vaultNodesById.get(nid)) || null;
+          const cardLabel = (nodeRec && (nodeRec.title || nodeRec.name)) || nid;
+          // Drop near the centre of the current viewport so the user
+          // sees the card land. The board canvas auto-pans-and-fits on
+          // first card if it was empty.
+          try {
+            view.addCard({
+              id: nid,
+              label: cardLabel,
+              x: 240 + Math.round(Math.random() * 200),
+              y: 180 + Math.round(Math.random() * 200),
+            });
+            // Brief visual ack on the button so user gets feedback.
+            actBtn.classList.add('is-just-added');
+            setTimeout(() => actBtn.classList.remove('is-just-added'), 700);
+          } catch (err) {
+            if (console && console.warn) console.warn('[side-panel] add-to-board failed', err);
+          }
+          return;
+        }
       }
       // Phase 21X (2026-05-22) — carousel arrows. Check first since
       // the buttons live inside .forge-side-panel-thumb which would

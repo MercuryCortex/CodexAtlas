@@ -582,6 +582,18 @@ function setView(name) {
     }
     el.remove();
   });
+  // 2026-05-29 — Boards pane teardown. Previously `.boards-pane` was
+  // omitted from this cleanup pass, so navigating away from BOARDS left
+  // every card hanging in the DOM (just `display:none` via the parent
+  // canvas). Going BACK to Boards then appended a fresh pane next to
+  // the stale one, doubling the DOM and (worse) leaking card-element
+  // listeners. Now: call the view's own unmount() so its module state
+  // is symmetric, then remove all `.boards-pane` and `.boards-bottombar`
+  // elements from the DOM. The next render() creates a fresh pane.
+  if (window._boardsView && typeof window._boardsView.unmount === 'function') {
+    try { window._boardsView.unmount(); } catch (e) { /* ignore */ }
+  }
+  document.querySelectorAll('.boards-pane, .boards-bottombar').forEach(el => el.remove());
   // ── HASH ROUTER (push view change) ────────────────────────────────
   // On a true view change, pushState so the back button moves between
   // views. Re-renders of the same view use replaceState (or nothing) so
@@ -1209,6 +1221,48 @@ VIEWS.boards = {
     const svgEl = document.getElementById('svg');
     if (svgEl) svgEl.style.display = 'none';
     if (window._boardsView) window._boardsView.render(pane);
+
+    // 2026-05-29 — Canonical bottom toolbar (matches the Atlas chart
+    // bottom view-options strip). Holds the toggles that USED to live
+    // in the top app-pill: Edges (wire visibility) + Legend (future).
+    // The top pill keeps only the creative actions: Transmission library,
+    // Add node, Save tree. Pure CSS chrome — no inline styles.
+    const bar = document.createElement('div');
+    bar.className = 'boards-bottombar';
+    bar.setAttribute('role', 'toolbar');
+    bar.setAttribute('aria-label', 'Board view options');
+    const edgesOn = !!(window._boardsView && window._boardsView.isEdgesVisible && window._boardsView.isEdgesVisible());
+    bar.innerHTML = ''
+      + '<div class="boards-bottombar-group">'
+      +   '<button class="boards-bottombar-btn" type="button"'
+      +     ' data-action="toggle-edges" aria-pressed="' + (edgesOn ? 'true' : 'false') + '"'
+      +     ' title="Show / hide auto-drawn edges between cards">'
+      +     '<span class="boards-bottombar-glyph" aria-hidden="true">⟶</span>'
+      +     '<span class="boards-bottombar-label">Wires</span>'
+      +   '</button>'
+      +   '<button class="boards-bottombar-btn" type="button"'
+      +     ' data-action="toggle-legend" aria-pressed="false"'
+      +     ' title="Show / hide edge-type colour legend (soon)" disabled>'
+      +     '<span class="boards-bottombar-glyph" aria-hidden="true">▤</span>'
+      +     '<span class="boards-bottombar-label">Legend</span>'
+      +   '</button>'
+      + '</div>'
+      + '<div class="boards-bottombar-spacer"></div>'
+      + '<div class="boards-bottombar-group">'
+      +   '<span class="boards-bottombar-hint">canonical: actions top · view-options bottom</span>'
+      + '</div>';
+    canvasEl.appendChild(bar);
+
+    bar.addEventListener('click', (ev) => {
+      const btn = ev.target.closest('button[data-action]');
+      if (!btn || btn.disabled) return;
+      const a = btn.getAttribute('data-action');
+      if (a === 'toggle-edges' && window._boardsView && window._boardsView.setEdgesVisible) {
+        const cur = window._boardsView.isEdgesVisible();
+        window._boardsView.setEdgesVisible(!cur);
+        btn.setAttribute('aria-pressed', (!cur) ? 'true' : 'false');
+      }
+    });
   },
 };
 

@@ -10524,6 +10524,222 @@ body.view-starmap .tier-legend,
 body.view-starmap .map-thumb { display: none !important; }
 
 /* ════════════════════════════════════════════════════════════════
+   FORGE SIDE-PANEL — 2026-05-29 additions
+   Action row (between desc and edge buckets), full body markdown
+   render (restores V1 content the V2 panel was dropping), refs
+   section (V1 had it, V2 was dropping it), body-internal link
+   spans.
+   ════════════════════════════════════════════════════════════════ */
+.forge-side-panel-actions {
+  display: flex; gap: 6px; flex-wrap: wrap;
+  margin: 0 0 14px;
+}
+.forge-side-panel-action {
+  appearance: none;
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 5px 10px;
+  background: rgba(212,165,90,0.06);
+  border: 1px solid rgba(212,165,90,0.30);
+  border-radius: 4px;
+  color: var(--gold, #d4a55a);
+  font-family: var(--mono, "JetBrains Mono", Menlo, monospace);
+  font-size: 10.5px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 120ms ease, border-color 120ms ease, color 120ms ease;
+}
+.forge-side-panel-action:hover {
+  background: rgba(212,165,90,0.14);
+  border-color: rgba(212,165,90,0.55);
+  color: #f0c879;
+}
+.forge-side-panel-action:active { transform: translateY(1px); }
+.forge-side-panel-action.is-just-added {
+  background: rgba(127,194,139,0.18);
+  border-color: rgba(127,194,139,0.55);
+  color: #9fd9a8;
+}
+.forge-side-panel-action-glyph {
+  font-size: 13px;
+  line-height: 1;
+}
+.forge-side-panel-action-label {
+  letter-spacing: 0.06em;
+}
+
+/* Vault body (markdown-rendered). Earlier V2 was dropping this entirely
+   and showing only the Wikipedia extract (which was source-truncated,
+   producing the "third- and sec…" cut-off John flagged). Restoring
+   n.body fixes the cropping at the source. */
+.forge-side-panel-body {
+  margin: 14px 0 10px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(212,165,90,0.10);
+  color: var(--text-1, #d6d2c4);
+  font-size: 12px;
+  line-height: 1.55;
+}
+.forge-side-panel-body h1,
+.forge-side-panel-body h2,
+.forge-side-panel-body h3,
+.forge-side-panel-body h4 {
+  color: var(--gold, #d4a55a);
+  font-family: var(--mono, "JetBrains Mono", Menlo, monospace);
+  font-size: 10.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin: 14px 0 6px;
+}
+.forge-side-panel-body h1 { font-size: 12px; }
+.forge-side-panel-body h2 { font-size: 11px; }
+.forge-side-panel-body p {
+  margin: 0 0 10px;
+}
+.forge-side-panel-body ul,
+.forge-side-panel-body ol {
+  margin: 0 0 10px;
+  padding-left: 22px;
+}
+.forge-side-panel-body li { margin-bottom: 3px; }
+.forge-side-panel-body strong { color: var(--text-0, #f0eee8); }
+.forge-side-panel-body em { color: var(--text-1, #d6d2c4); }
+.forge-side-panel-body code {
+  font-family: var(--mono, "JetBrains Mono", Menlo, monospace);
+  font-size: 11px;
+  color: var(--text-0, #f0eee8);
+  background: rgba(255,255,255,0.04);
+  padding: 0 4px;
+  border-radius: 3px;
+}
+.forge-side-panel-body blockquote {
+  border-left: 2px solid rgba(212,165,90,0.30);
+  padding: 0 0 0 12px;
+  margin: 0 0 10px;
+  color: var(--text-2, #b0aa9c);
+}
+.forge-side-panel-body-link {
+  color: var(--gold, #d4a55a);
+  cursor: pointer;
+  text-decoration: none;
+  border-bottom: 1px dashed rgba(212,165,90,0.30);
+}
+.forge-side-panel-body-link:hover {
+  color: #f0c879;
+  border-bottom-color: rgba(212,165,90,0.60);
+}
+
+.forge-side-panel-section-h {
+  margin: 18px 0 8px;
+  color: var(--gold, #d4a55a);
+  font-family: var(--mono, "JetBrains Mono", Menlo, monospace);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.forge-side-panel-refs {
+  margin: 0 0 10px;
+  padding-left: 22px;
+  font-size: 11px;
+  color: var(--text-2, #b0aa9c);
+  line-height: 1.5;
+}
+.forge-side-panel-refs li { margin-bottom: 4px; }
+.forge-side-panel-refs em { color: var(--text-1, #d6d2c4); }
+.forge-side-panel-refs a {
+  color: var(--gold, #d4a55a);
+  text-decoration: none;
+}
+.forge-side-panel-refs a:hover { color: #f0c879; }
+.forge-side-panel-ref-tier {
+  display: inline-block;
+  padding: 0 4px;
+  font-family: var(--mono, "JetBrains Mono", Menlo, monospace);
+  font-size: 9px;
+  color: var(--text-3, #5a5e6a);
+  border: 1px solid rgba(212,165,90,0.20);
+  border-radius: 3px;
+  margin-left: 4px;
+  letter-spacing: 0.06em;
+}
+
+/* ════════════════════════════════════════════════════════════════
+   BOARDS — bottom toolbar (canonical view-options strip)
+   ════════════════════════════════════════════════════════════════
+   Replaces the top-pill "Edges" button that was placed wrong — view
+   options follow the Atlas chart's bottom-bar convention. Top pill
+   keeps creative actions only (Transmission library / Add node /
+   Save tree). Bottom bar holds wire/legend/etc toggles. */
+.boards-bottombar {
+  position: fixed;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 320;
+  display: flex; align-items: stretch;
+  gap: 0;
+  padding: 4px 10px;
+  background: rgba(13,17,25,0.88);
+  border: 1px solid rgba(212,165,90,0.22);
+  border-radius: 999px;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.34);
+  pointer-events: auto;
+  display: none;       /* hidden by default; only shown on Boards */
+}
+body.view-boards .boards-bottombar { display: flex; }
+.boards-bottombar-group {
+  display: flex; gap: 4px; align-items: center;
+}
+.boards-bottombar-spacer {
+  flex: 1 1 auto;
+  min-width: 12px;
+}
+.boards-bottombar-btn {
+  appearance: none;
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 6px 12px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  color: var(--text-2, #b0aa9c);
+  font-family: var(--mono, "JetBrains Mono", Menlo, monospace);
+  font-size: 10.5px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color 100ms ease, background 100ms ease, border-color 100ms ease;
+}
+.boards-bottombar-btn:hover:not(:disabled) {
+  color: var(--gold, #d4a55a);
+  background: rgba(212,165,90,0.06);
+}
+.boards-bottombar-btn[aria-pressed="true"] {
+  color: var(--gold, #d4a55a);
+  background: rgba(212,165,90,0.10);
+  border-color: rgba(212,165,90,0.30);
+}
+.boards-bottombar-btn:disabled {
+  opacity: 0.40;
+  cursor: not-allowed;
+}
+.boards-bottombar-glyph {
+  font-size: 12px;
+  line-height: 1;
+}
+.boards-bottombar-hint {
+  padding: 0 12px;
+  color: var(--text-3, #5a5e6a);
+  font-family: var(--mono, "JetBrains Mono", Menlo, monospace);
+  font-size: 9.5px;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+}
+
+/* ════════════════════════════════════════════════════════════════
    DEV OVERVIEW PANEL — 2026-05-29
    Operator-facing macro view of vault coverage (per-lens + per-family
    counts vs scholarly ballpark baseline). Launched from ✦ user-menu →
