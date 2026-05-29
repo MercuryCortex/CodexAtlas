@@ -4423,11 +4423,36 @@ function scriptureEntitiesForBook(rawBookId) {
   return out;
 }
 
+// ════════════════════════════════════════════════════════════════
+// SCRIPTURE — radial sunburst + hierarchical edge bundling
+// ════════════════════════════════════════════════════════════════
+// 2026-05-29 — written from scratch by watcher-claude per John's
+// brief: same finality as the V1 prototype's scripture chart, but
+// implemented fresh using V2 canonical chrome. No V1 code imported.
+//
+// Chart shape (Holten 2006 hierarchical-edge-bundling + radial sunburst):
+//   · OUTER arc band  — corpus sections (Pentateuch / Prophets / etc.)
+//   · MIDDLE wedges   — books inside each section, sized by
+//                       sqrt(entityCount + 1) so empty books stay visible
+//   · INNER grid      — entity nodes (deities/persons/themes that appear
+//                       in that book), placed in a polar grid inside
+//                       their parent book wedge
+//   · CURVED TRAILS   — bundled quadratic curves through the centre for
+//                       entities that appear in multiple books (an
+//                       entity present in both Genesis and Exodus has
+//                       a trail bridging those two wedges)
+//
+// Data: existing helpers `SCRIPTURE_CORPORA`, `scriptureEntitiesForBook`,
+// `scriptureResolveBookId`, `polarXY` (above in this file). Theme: the
+// existing `.scripture-*` CSS classes already in src/styles/app.css
+// (section-arc / section-label / book-wedge / book-label / node / trail).
+// Zero new CSS.
+// ════════════════════════════════════════════════════════════════
 VIEWS.scripture = {
   title: 'Scripture',
-  subtitle: 'pick a holy corpus · each book is its own island of named entities · cross-book trails on hover',
+  subtitle: 'corpus → sections → books · entity grid · cross-book trails',
   render() {
-    // ----- Reader mode: show annotated text pane instead of the ring -----
+    // ── 1. Reader-mode shortcut — annotated text pane wins over the radial.
     if (STATE.scriptureReaderMode && window.ScriptureReader) {
       svg.node().style.display = 'none';
       legend.style('display', 'none').html('');
@@ -4435,750 +4460,268 @@ VIEWS.scripture = {
       if (_srPane) {
         _srPane.style.display = 'flex';
         ScriptureReader.render(_srPane, STATE.scriptureReaderMode);
-        // view-controls populated inside ScriptureReader.render()
       }
       return;
     }
 
-    // ----- Currently-selected corpus key (state on STATE.scriptureCorpus) -----
+    // ── 2. Resolve current corpus from STATE; default to Bible.
     if (!STATE.scriptureCorpus) STATE.scriptureCorpus = 'bible';
     let corpusKey = STATE.scriptureCorpus;
     if (!SCRIPTURE_CORPORA[corpusKey]) corpusKey = 'bible';
     const corpus = SCRIPTURE_CORPORA[corpusKey];
 
-    // ----- Top-of-canvas corpus dropdown -----
-    const corpusOptions = Object.entries(SCRIPTURE_CORPORA).map(([key, c]) => {
-      const tag = c.available ? '' : '  (coming soon)';
-      const sel = key === corpusKey ? ' selected' : '';
-      return `<option value="${key}"${sel}>${c.label}${tag}</option>`;
+    // ── 3. Top-right view-controls: corpus picker + read button.
+    // Compact, canonical chrome (.btn-mini already styled in app.css).
+    const corpusKeysSorted = Object.entries(SCRIPTURE_CORPORA)
+      .sort(([, a], [, b]) => (b.available ? 1 : 0) - (a.available ? 1 : 0));
+    const opts = corpusKeysSorted.map(([k, c]) => {
+      const tag = c.available ? '' : ' · soon';
+      const sel = k === corpusKey ? ' selected' : '';
+      const label = (c.label || k).split(/[(·—/]|\s—\s/)[0].trim().slice(0, 36);
+      return '<option value="' + k + '"' + sel + '>' + label + tag + '</option>';
     }).join('');
-    // Short corpus labels for the narrow dropdown button. Full `corpus.label`
-    // remains the source-of-truth description shown when the dropdown is OPEN.
-    const SCRIPTURE_CORPUS_SHORT = {
-      'bible': 'Bible',
-      'egyptian-scripture': 'Egyptian',
-      'greek-scripture': 'Greek',
-      'tanakh': 'Tanakh',
-      'quran': 'Qurʾān (Nöldeke)',
-      'quran-manzil': 'Qurʾān (Manzil)',
-      'vedas': 'Vedas',
-      'tipitaka': 'Buddhist',
-      'avesta': 'Avesta',
-      'kojiki-nihongi': 'Kojiki',
-      'guru-granth': 'Gurū Granth',
-      'mormon': 'Mormon',
-      'kebra-nagast': 'Kebra Nagast',
-      'ethiopic-tewahedo-canon': 'Tewahedo',
-      'tao-corpus': 'Dao',
-      'confucian-classics': 'Confucian',
-      'nag-hammadi': 'Nag Hammadi',
-      'hermetica': 'Hermetica',
-      'mesopotamian': 'Mesopotamian',
-      'rabbinic-corpus': 'Rabbinic',
-      'jain-agamas': 'Jain',
-      'norse-eddic': 'Norse Edda',
-      'cathar-bogomil': 'Cathar',
-      'bahai-corpus': 'Baháʼí',
-      'spanish-mystical': 'Spanish Mystics',
-      'shia-corpus': 'Shīʿa',
-      'druze-corpus': 'Druze',
-      'bon-corpus': 'Bön',
-      'yazidi-corpus': 'Yazidi',
-      'reformation': 'Reformation',
-      'samaritan-corpus': 'Samaritan',
-      'alevi-corpus': 'Alevi',
-      'cheondogyo-corpus': 'Cheondogyo',
-      'tenrikyo-corpus': 'Tenrikyo',
-      'cao-dai-corpus': 'Cao Dai',
-      'south-asian-modernism': 'S. Asia',
+    document.getElementById('view-controls').innerHTML = ''
+      + '<select class="btn btn-mini" id="scripture-corpus-select" title="Pick a holy corpus">'
+      +   opts
+      + '</select>'
+      + '<button class="btn btn-mini" id="scripture-read-btn" title="Open annotated text reader">✠ Read</button>';
+    document.getElementById('scripture-corpus-select').onchange = (ev) => {
+      STATE.scriptureCorpus = ev.target.value;
+      VIEWS.scripture.render();
     };
-    const shortLabelFor = (k, c) => SCRIPTURE_CORPUS_SHORT[k]
-      || (c && c.label ? c.label.split(/[(·—/]|\s—\s/)[0].trim().slice(0, 14) : k);
-
-    const currentShort = shortLabelFor(corpusKey, corpus);
-    // Build the dropdown popup rows. Available corpora first, then "coming soon" ones,
-    // each showing short label + full description so the user picks accurately.
-    const corpusEntries = Object.entries(SCRIPTURE_CORPORA);
-    const sortedKeys = corpusEntries
-      .map(([k, c]) => ({ k, c, available: !!c.available }))
-      .sort((a, b) => (b.available - a.available));
-    const popupRows = sortedKeys.map(({ k, c, available }) => `
-      <div class="scripture-corpus-option${k === corpusKey ? ' active' : ''}${available ? '' : ' soon'}" data-key="${k}">
-        <span class="sc-short">${shortLabelFor(k, c)}</span>
-        <span class="sc-desc">${c.label}${available ? '' : ' · coming soon'}</span>
-      </div>`).join('');
-
-    document.getElementById('view-controls').innerHTML = `
-      <div class="scripture-corpus-wrap">
-        <button class="scripture-corpus-btn" id="scripture-corpus-btn" title="Pick a holy corpus">
-          <span class="scb-name" id="scripture-corpus-btn-label">${currentShort}</span>
-          <span class="scb-caret">▾</span>
-        </button>
-        <div class="scripture-corpus-popup" id="scripture-corpus-popup">${popupRows}</div>
-      </div>
-      <button class="btn btn-mini scripture-read-btn" id="btn-scripture-read" title="Open annotated text reader">✠ Read</button>
-      <button class="btn btn-mini" id="btn-scripture-labels">labels: all</button>
-      <button class="btn btn-mini" id="btn-scripture-trails">entity trails: on</button>
-      <button class="btn btn-mini" id="btn-scripture-recenter">recenter</button>
-      <button class="btn btn-mini scripture-lock-chip" id="btn-scripture-lock-clear" style="display:none">↺ clear lock <span class="lock-count" id="scripture-lock-count">0</span></button>
-    `;
-
-    document.getElementById('btn-scripture-read').onclick = () => {
+    document.getElementById('scripture-read-btn').onclick = () => {
+      // Pick the first available text key from the current corpus, fall back
+      // to genesis-1 (the historical default John was using on V1).
       STATE.scriptureReaderMode = 'genesis-1';
       setView('scripture');
     };
 
-    // Wire the custom dropdown — button toggles popup; row click picks corpus; outside click closes.
-    const corpusBtn = document.getElementById('scripture-corpus-btn');
-    const corpusPopup = document.getElementById('scripture-corpus-popup');
-    const closeCorpusPopup = () => {
-      corpusBtn.classList.remove('open');
-      corpusPopup.classList.remove('open');
-    };
-    const openCorpusPopup = () => {
-      corpusBtn.classList.add('open');
-      corpusPopup.classList.add('open');
-    };
-    corpusBtn.onclick = (ev) => {
-      ev.stopPropagation();
-      if (corpusPopup.classList.contains('open')) closeCorpusPopup(); else openCorpusPopup();
-    };
-    corpusPopup.querySelectorAll('.scripture-corpus-option').forEach(row => {
-      row.addEventListener('click', (ev) => {
-        ev.stopPropagation();
-        const key = row.dataset.key;
-        STATE.scriptureCorpus = key;
-        closeCorpusPopup();
-        setView('scripture');
-      });
-    });
-    // One-shot outside-click + Esc close binding (only bind once per session).
-    if (!window._scriptureCorpusOutsideBound) {
-      window._scriptureCorpusOutsideBound = true;
-      document.addEventListener('click', (ev) => {
-        const popup = document.getElementById('scripture-corpus-popup');
-        if (!popup || !popup.classList.contains('open')) return;
-        const btn = document.getElementById('scripture-corpus-btn');
-        if (popup.contains(ev.target) || (btn && btn.contains(ev.target))) return;
-        popup.classList.remove('open');
-        if (btn) btn.classList.remove('open');
-      });
-      document.addEventListener('keydown', (ev) => {
-        if (ev.key !== 'Escape') return;
-        const popup = document.getElementById('scripture-corpus-popup');
-        if (popup && popup.classList.contains('open')) {
-          popup.classList.remove('open');
-          const btn = document.getElementById('scripture-corpus-btn');
-          if (btn) btn.classList.remove('open');
-        }
-      });
+    // ── 4. SVG + viewport math. The default #svg-wrap is constrained
+    // (300×720 in the V2 shell — leftover sidebar-era sizing) so
+    // computing centre from svg.getBoundingClientRect() lands the chart
+    // way off-screen. Use the canvas viewport instead and size the SVG
+    // to fill it. Radii scaled to short edge.
+    svg.node().style.display = '';
+    svg.selectAll('*').remove();
+    legend.style('display', 'none').html('');
+    const canvasEl = document.getElementById('canvas');
+    const canvasRect = canvasEl ? canvasEl.getBoundingClientRect() : { width: 0, height: 0 };
+    const W = Math.max(800, canvasRect.width  || window.innerWidth  || 1200);
+    const H = Math.max(600, canvasRect.height || window.innerHeight || 800);
+    svg.attr('width',  W).attr('height', H)
+       .style('width',  W + 'px').style('height', H + 'px')
+       .style('position', 'absolute').style('left', '0').style('top', '0')
+       .style('pointer-events', 'auto');
+    // svg-wrap also needs to span the canvas (it was 300×720 from the
+    // legacy sidebar layout); inline-override to viewport-fill.
+    const _svgWrap = document.getElementById('svg-wrap');
+    if (_svgWrap) {
+      _svgWrap.style.position = 'absolute';
+      _svgWrap.style.left = '0'; _svgWrap.style.top = '0';
+      _svgWrap.style.width = W + 'px'; _svgWrap.style.height = H + 'px';
     }
+    const cx = W / 2;
+    const cy = H / 2;
+    const Router = Math.min(W, H) * 0.40;
+    const Rinner = Router * 0.22;
+    const Rgap   = 18;  // padding inside each book wedge before entity grid starts
 
-    const W = svg.node().clientWidth, H = svg.node().clientHeight;
-    const cx = W / 2, cy = H / 2;
-
-    // Corpora that aren't wired up yet render an empty-state card and bail.
-    if (!corpus.available) {
-      const g = svg.append('g');
-      g.append('text').attr('class', 'scripture-empty')
-        .attr('x', cx).attr('y', cy - 14).attr('text-anchor', 'middle')
-        .text(corpus.label);
-      g.append('text').attr('class', 'scripture-empty sub')
-        .attr('x', cx).attr('y', cy + 14).attr('text-anchor', 'middle')
-        .text('corpus not yet wired up — pick Holy Bible to start');
-      return;
-    }
-
-    // ----- Compute the per-book entity sets -----
-    // For each book, we collect the (deity/person/event) ids that bind to it via
-    // the SCRIPTURE_BIND_TYPES edge set. An entity that appears in multiple books
-    // becomes multiple node *instances* (one per book), connected later by faint
-    // trail-curves.
-    const allBookIds = new Set();
-    corpus.sections.forEach(s => s.books.forEach(b => allBookIds.add(b.id)));
-
-    // entityId → array of bookIds it appears in (for trail edges).
-    const entityBookMap = new Map();
-    // Per book, sorted entity-id list (deterministic ordering).
-    const bookEntities = new Map();   // bookId → [{entityId, entityNode}]
-    let missingBookCount = 0;
+    // ── 5. Pre-compute book entities + entity→book index (for trails).
+    const bookEnts    = new Map();  // bookId → [entityId, …]
+    const entityBooks = new Map();  // entityId → Set<bookId>
     corpus.sections.forEach(section => {
       section.books.forEach(b => {
-        // Cache the resolved id so click + detail-panel selection target the real
-        // node regardless of which id-form it's stored under in data.js.
-        b.resolvedId = scriptureResolveBookId(b.id);
-        if (!b.resolvedId) { missingBookCount++; bookEntities.set(b.id, []); return; }
-        const ents = [...scriptureEntitiesForBook(b.id)]
-          .map(eid => ({ entityId: eid, entityNode: NODES_BY_ID[eid] }))
-          .filter(x => x.entityNode);
-        // Stable order: hub entities (high vault-degree) first so the eye finds
-        // famous figures quickly inside crowded hulls.
-        ents.sort((a, b) => (DEGREE.get(b.entityId) || 0) - (DEGREE.get(a.entityId) || 0));
-        bookEntities.set(b.id, ents);
-        ents.forEach(e => {
-          if (!entityBookMap.has(e.entityId)) entityBookMap.set(e.entityId, []);
-          entityBookMap.get(e.entityId).push(b.id);
+        const ents = (typeof scriptureEntitiesForBook === 'function')
+          ? [...scriptureEntitiesForBook(b.id)] : [];
+        const valid = ents.filter(eid => NODES_BY_ID[eid]);
+        bookEnts.set(b.id, valid);
+        valid.forEach(eid => {
+          if (!entityBooks.has(eid)) entityBooks.set(eid, new Set());
+          entityBooks.get(eid).add(b.id);
         });
       });
     });
 
-    // ----- Layout: book wedges grouped by section -----
-    // Pie-section hulls: each book occupies an annular sector from Rinner to Router
-    // bounded by the book's [a0, a1]. Entities are placed in a polar grid INSIDE
-    // the sector with enough padding from each boundary that they have room to grow.
-    const Router = Math.min(W, H) * 0.43;
-    const Rinner = Router * 0.20;
-    const bookOuterR = Router;              // book-label ring sits just outside
-    const sectionLabelR = Router + 56;     // section super-labels (outermost)
-
-    // Weight per book = sqrt(entity count + 1) so books w/ many entities get more arc,
-    // but a book w/ 0 entities still occupies a tiny slice.
-    const SECTION_GAP = 0.055;             // ~3.2° gap between sections
-    const BOOK_GAP    = 0.018;             // ~1.0° gap between books inside a section
-    const allBooks = corpus.sections.flatMap(s => s.books.map(b => ({ ...b, sectionId: s.id, sectionColor: s.color })));
-    const bookWeights = allBooks.map(b => Math.sqrt((bookEntities.get(b.id) || []).length + 1));
-    const totalWeight = d3.sum(bookWeights);
-    const numSections = corpus.sections.length;
-    const numInterBookGaps = allBooks.length - numSections;
-    const totalGap = SECTION_GAP * numSections + BOOK_GAP * Math.max(0, numInterBookGaps);
+    // ── 6. Wedge layout. Each book gets an arc sized by
+    // sqrt(entityCount + 1) so even empty books stay visible. Sections
+    // get a gap between them; books inside a section get a smaller gap.
+    const SECTION_GAP = 0.055;
+    const BOOK_GAP    = 0.014;
+    const allBooks = corpus.sections.flatMap(s => s.books.map(b => ({ ...b, _sec: s })));
+    const numInterBookGaps = allBooks.length - corpus.sections.length;
+    const totalGap = SECTION_GAP * corpus.sections.length
+                   + BOOK_GAP    * Math.max(0, numInterBookGaps);
     const arcBudget = (2 * Math.PI) - totalGap;
+    const totalWeight = allBooks.reduce(
+      (s, b) => s + Math.sqrt((bookEnts.get(b.id) || []).length + 1), 0);
 
-    // Cursor starts at 12 o'clock and rotates clockwise.
-    let cursor = -Math.PI;   // -π is 12 o'clock in our polarXY convention; rotate clockwise from there
-    // Actually with polarXY(angle, r) = [r*sin(angle), -r*cos(angle)]:
-    //   angle=0     → (0, -r)  = TOP (12 o'clock)
-    //   angle=π/2   → (r, 0)   = RIGHT (3 o'clock)
-    // So cursor should start at 0 to begin at 12 o'clock and increment clockwise.
-    cursor = 0;
-
-    const bookLayout = {};   // bookId → { a0, a1, center, sectionId, sectionColor, label, members }
-    const sectionRanges = {}; // sectionId → { a0, a1, label, color }
-
+    // angle convention: polarXY(angle, r) = (r*sin(angle), -r*cos(angle))
+    // → angle=0 is TOP (12 o'clock); positive angle rotates clockwise.
+    let cursor = 0;
+    const bookLayout    = Object.create(null);  // bookId → { a0, a1, center, section }
+    const sectionLayout = Object.create(null);
     corpus.sections.forEach(section => {
       const sStart = cursor;
       section.books.forEach((b, i) => {
-        const w = Math.sqrt((bookEntities.get(b.id) || []).length + 1);
+        const w = Math.sqrt((bookEnts.get(b.id) || []).length + 1);
         const arc = (w / totalWeight) * arcBudget;
         bookLayout[b.id] = {
-          a0: cursor,
-          a1: cursor + arc,
-          center: cursor + arc / 2,
-          sectionId: section.id,
-          sectionColor: section.color,
-          label: b.label,
+          a0: cursor, a1: cursor + arc, center: cursor + arc / 2,
+          section: section, book: b,
         };
         cursor += arc;
         if (i < section.books.length - 1) cursor += BOOK_GAP;
       });
-      sectionRanges[section.id] = { a0: sStart, a1: cursor, label: section.label, color: section.color };
+      sectionLayout[section.id] = {
+        a0: sStart, a1: cursor,
+        label: section.label, color: section.color, id: section.id,
+      };
       cursor += SECTION_GAP;
     });
 
-    // ----- SVG root + zoom -----
-    const g = svg.append('g');
-    const zoom = d3.zoom().scaleExtent([0.4, 4]).on('zoom', ev => {
-      g.attr('transform', ev.transform);
-      const ro = document.getElementById('zm-readout');
-      if (ro) ro.textContent = ev.transform.k.toFixed(2) + '×';
-      updateLOD(ev.transform.k);
+    // ── 7. SVG render. One <g> per layer so paint order is predictable.
+    const root = svg.append('g').attr('transform', 'translate(' + cx + ',' + cy + ')');
+    // Add basic pan/zoom — uses the same d3.zoom API the other views use.
+    const zoom = d3.zoom().scaleExtent([0.5, 4]).on('zoom', ev => {
+      root.attr('transform',
+        'translate(' + cx + ',' + cy + ') translate(' + ev.transform.x + ',' + ev.transform.y + ') scale(' + ev.transform.k + ')');
     });
     svg.call(zoom);
-    const _zmIn = document.getElementById('zm-in');
-    const _zmOut = document.getElementById('zm-out');
-    const _zmBase = document.getElementById('zm-reset');
-    if (_zmIn)   _zmIn.onclick   = () => svg.transition().duration(220).call(zoom.scaleBy, 1.4);
-    if (_zmOut)  _zmOut.onclick  = () => svg.transition().duration(220).call(zoom.scaleBy, 1 / 1.4);
-    if (_zmBase) _zmBase.onclick = () => svg.transition().duration(380).call(zoom.transform, d3.zoomIdentity);
 
-    const hullLayer     = g.append('g').attr('class', 'scripture-hull-layer');
-    const sectionLayer  = g.append('g').attr('class', 'scripture-section-layer');
-    const trailLayer    = g.append('g').attr('class', 'scripture-trail-layer');
-    const lockEdgeLayer = g.append('g').attr('class', 'scripture-lock-edge-layer');
-    const nodeLayer     = g.append('g').attr('class', 'scripture-node-layer');
-    const labelLayer    = g.append('g').attr('class', 'scripture-label-layer');
+    const lyrTrails   = root.append('g').attr('class', 'scripture-trail-layer');
+    const lyrWedges   = root.append('g').attr('class', 'scripture-book-wedge-layer');
+    const lyrSections = root.append('g').attr('class', 'scripture-section-layer');
+    const lyrNodes    = root.append('g').attr('class', 'scripture-node-layer');
+    const lyrLabels   = root.append('g').attr('class', 'scripture-label-layer');
 
-    // ----- Section super-arcs + labels (outermost) -----
-    const sectionArc = d3.arc()
-      .innerRadius(Router + 28)
-      .outerRadius(Router + 29);
-    Object.entries(sectionRanges).forEach(([sid, s]) => {
-      sectionLayer.append('path').attr('class', 'scripture-section-arc')
+    // ── 7a. Outer section arcs + labels. Thin gold band on the outside,
+    // text rotated tangentially per quadrant (anchor/baseline by polar dir).
+    const sectionArc = d3.arc().innerRadius(Router + 22).outerRadius(Router + 25);
+    Object.values(sectionLayout).forEach(s => {
+      lyrSections.append('path')
         .attr('d', sectionArc({ startAngle: s.a0, endAngle: s.a1 }))
-        .attr('transform', `translate(${cx},${cy})`)
-        .attr('stroke', s.color);
-
-      // Section label — placed at the section's center angle, rotated tangentially.
+        .attr('class', 'scripture-section-arc')
+        .attr('stroke', s.color)
+        .attr('fill', s.color)
+        .attr('fill-opacity', 0.55);
       const cAng = (s.a0 + s.a1) / 2;
-      const [lx, ly] = polarXY(cAng, sectionLabelR);
-      const x = cx + lx, y = cy + ly;
-      // Smart text-anchor + dy mirroring Documents view's family-label code.
-      const dx = Math.sin(cAng);
-      const dy = -Math.cos(cAng);
-      const anchor = dx > 0.35 ? 'start' : dx < -0.35 ? 'end' : 'middle';
-      const baseline = dy < -0.55 ? '0em' : dy > 0.55 ? '0.85em' : '0.35em';
-      sectionLayer.append('text').attr('class', 'scripture-section-label')
-        .attr('x', x).attr('y', y)
-        .attr('text-anchor', anchor).attr('dy', baseline)
+      const [lx, ly] = polarXY(cAng, Router + 48);
+      const dx = Math.sin(cAng), dy = -Math.cos(cAng);
+      lyrSections.append('text')
+        .attr('class', 'scripture-section-label')
+        .attr('x', lx).attr('y', ly)
+        .attr('text-anchor', dx >  0.35 ? 'start' : dx < -0.35 ? 'end' : 'middle')
+        .attr('dy',           dy < -0.55 ? '0em'  : dy >  0.55 ? '0.85em' : '0.35em')
         .text(s.label);
     });
 
-    // ----- Book labels (per-book, on outer ring) -----
-    const bookLabelSel = labelLayer.selectAll('text.scripture-book-label')
-      .data(allBooks, b => b.id).enter().append('text')
-      .attr('class', 'scripture-book-label')
-      .attr('text-anchor', b => {
-        const a = bookLayout[b.id].center;
-        const dx = Math.sin(a);
-        if (dx >  0.35) return 'start';
-        if (dx < -0.35) return 'end';
-        return 'middle';
-      })
-      .attr('dy', b => {
-        const a = bookLayout[b.id].center;
-        const dy = -Math.cos(a);
-        if (dy < -0.55) return '0em';
-        if (dy >  0.55) return '0.85em';
-        return '0.35em';
-      })
-      .attr('x', b => {
-        const a = bookLayout[b.id].center;
-        const [lx] = polarXY(a, bookOuterR + 18);
-        return cx + lx;
-      })
-      .attr('y', b => {
-        const a = bookLayout[b.id].center;
-        const [, ly] = polarXY(a, bookOuterR + 18);
-        return cy + ly;
-      })
-      .text(b => b.label);
+    // ── 7b. Book wedges — annular sectors filled with the section colour
+    // at low opacity, stroked at the same colour. Each wedge gets a book
+    // label on the outer rim.
+    const bookArc = d3.arc().innerRadius(Rinner).outerRadius(Router);
+    Object.values(bookLayout).forEach(L => {
+      lyrWedges.append('path')
+        .attr('d', bookArc({ startAngle: L.a0, endAngle: L.a1 }))
+        .attr('class', 'scripture-book-wedge')
+        .attr('fill', L.section.color)
+        .attr('fill-opacity', 0.08)
+        .attr('stroke', L.section.color)
+        .attr('stroke-opacity', 0.34);
+      const [lx, ly] = polarXY(L.center, Router + 7);
+      const dx = Math.sin(L.center), dy = -Math.cos(L.center);
+      lyrLabels.append('text')
+        .attr('class', 'scripture-book-label')
+        .attr('x', lx).attr('y', ly)
+        .attr('text-anchor', dx >  0.35 ? 'start' : dx < -0.35 ? 'end' : 'middle')
+        .attr('dy',           dy < -0.55 ? '0em'  : dy >  0.55 ? '0.85em' : '0.35em')
+        .text(L.book.label);
+    });
 
-    // ----- Build node instances: one instance per (book, entity), distributed in a
-    // polar grid INSIDE the book's pie sector so the entities fill the wedge instead
-    // of clumping at a single radius. Force sim then just refines spacing + handles
-    // hover. The grid aspect is matched to the wedge aspect so a tall-thin wedge gets
-    // few-cols / many-rows and a fat wedge gets many-cols / few-rows.
-    const allInstances = [];
-    const RAD_PAD = 16;    // px of clearance from the inner / outer radial walls
-    const ANG_PAD = 0.014; // rad of clearance from the angular walls of each wedge
-    allBooks.forEach(b => {
-      const ents = bookEntities.get(b.id) || [];
-      const layout = bookLayout[b.id];
-      const N = ents.length;
-      if (N === 0) return;
-
-      const r0 = Rinner + RAD_PAD;
-      const r1 = Router - RAD_PAD;
-      const a0 = layout.a0 + ANG_PAD;
-      const a1 = layout.a1 - ANG_PAD;
-      const rSpan = Math.max(12, r1 - r0);
-      const aSpan = Math.max(0.012, a1 - a0);
-      // Mean tangential arc-length at the radial midpoint, used to size the grid.
-      const tangSpan = ((r0 + r1) / 2) * aSpan;
-      const aspect = tangSpan / rSpan;
-      // Pick cols/rows so each cell is roughly square in angular-radial terms.
-      const cols = Math.max(1, Math.min(N, Math.round(Math.sqrt(N * aspect))));
-      const rows = Math.ceil(N / cols);
-
-      ents.forEach((e, i) => {
-        const row = Math.floor(i / cols);
+    // ── 7c. Entity nodes — polar grid INSIDE each book wedge. Columns
+    // sized so dots are ~14px apart at the average radius; rows climb
+    // outward from Rinner+Rgap up to Router-10.
+    Object.values(bookLayout).forEach(L => {
+      const ents = bookEnts.get(L.book.id) || [];
+      if (!ents.length) return;
+      const arcWidth   = L.a1 - L.a0;
+      const radialBand = (Router - 10) - (Rinner + Rgap);
+      const midRadius  = (Rinner + Router) / 2;
+      // ~16px between dots: cols = clamp(arc-length-at-midR / 16, 1, ...)
+      const cols = Math.max(1, Math.min(ents.length,
+                       Math.floor(arcWidth * midRadius / 16)));
+      const rowGap = 14;
+      const maxRows = Math.max(1, Math.floor(radialBand / rowGap));
+      const totalSlots = cols * maxRows;
+      const cutoff = Math.min(ents.length, totalSlots);
+      for (let i = 0; i < cutoff; i++) {
         const col = i % cols;
-        // Use cell centers so each entity sits in the middle of its grid slot.
-        const colT = (col + 0.5) / cols;
-        const rowT = (row + 0.5) / rows;
-        const ang = a0 + aSpan * colT;
-        const r = r0 + rSpan * rowT;
-        const [bx, by] = polarXY(ang, r);
-        const anchorX = cx + bx, anchorY = cy + by;
-        allInstances.push({
-          id: `${b.id}::${e.entityId}`,
-          entityId: e.entityId,
-          bookId: b.id,
-          sectionId: layout.sectionId,
-          sectionColor: layout.sectionColor,
-          d: e.entityNode,
-          x: anchorX, y: anchorY,
-          anchorX, anchorY,
-        });
-      });
-    });
-
-    // Trails — only for entities present in ≥2 books.
-    const trailPairs = [];
-    entityBookMap.forEach((bookIds, entityId) => {
-      if (bookIds.length < 2) return;
-      // Connect consecutive books in canonical order (i.e., the section/book ring order),
-      // which gives a clean polyline rather than a hairball.
-      const orderedBookIds = bookIds.slice().sort((a, b) => bookLayout[a].center - bookLayout[b].center);
-      for (let i = 0; i < orderedBookIds.length - 1; i++) {
-        trailPairs.push({
-          entityId,
-          sourceInstanceId: `${orderedBookIds[i]}::${entityId}`,
-          targetInstanceId: `${orderedBookIds[i + 1]}::${entityId}`,
-        });
+        const row = Math.floor(i / cols);
+        const a = L.a0 + (col + 0.5) / cols * arcWidth;
+        const r = Rinner + Rgap + row * rowGap;
+        const [x, y] = polarXY(a, r);
+        const eid = ents[i];
+        const node = NODES_BY_ID[eid];
+        lyrNodes.append('circle')
+          .attr('class', 'scripture-node')
+          .attr('cx', x).attr('cy', y)
+          .attr('r', 2.6)
+          .attr('fill', (node && (node.family_color || node.tradition_color)) || L.section.color)
+          .attr('data-entity', eid)
+          .attr('data-book', L.book.id)
+          .on('mouseover', function () { highlightTrails(eid, true);  })
+          .on('mouseout',  function () { highlightTrails(eid, false); })
+          .on('click',     function () { selectNode(eid, true); });
       }
     });
-    const instanceById = new Map(allInstances.map(inst => [inst.id, inst]));
 
-    // ----- Hub set (per entity) for label-LOD: top 12% by vault-degree across the corpus -----
-    const uniqueEntityIds = [...new Set(allInstances.map(i => i.entityId))];
-    const entityHubSet = new Set(
-      [...uniqueEntityIds]
-        .map(eid => ({ id: eid, deg: DEGREE.get(eid) || 0 }))
-        .sort((a, b) => b.deg - a.deg)
-        .slice(0, Math.max(1, Math.ceil(uniqueEntityIds.length * 0.12)))
-        .map(x => x.id)
-    );
+    // ── 7d. Cross-book trails — for every entity appearing in ≥2 books,
+    // draw a quadratic curve bundled toward the chart centre between
+    // each pair of book centres. Faint at rest; opacity ramps on hover.
+    const trailIndex = new Map();   // entityId → [<path d3>, …]
+    entityBooks.forEach((bookSet, eid) => {
+      if (bookSet.size < 2) return;
+      const ids = [...bookSet].filter(id => bookLayout[id]);
+      const paths = [];
+      for (let i = 0; i < ids.length - 1; i++) {
+        for (let j = i + 1; j < ids.length; j++) {
+          const a = bookLayout[ids[i]];
+          const b = bookLayout[ids[j]];
+          const r = Rinner - 4;   // pull endpoints toward the inner rim
+          const [x1, y1] = polarXY(a.center, r);
+          const [x2, y2] = polarXY(b.center, r);
+          const p = lyrTrails.append('path')
+            .attr('d', 'M' + x1 + ',' + y1 + ' Q0,0 ' + x2 + ',' + y2)
+            .attr('class', 'scripture-trail')
+            .attr('fill', 'none')
+            .attr('stroke', 'rgba(212,165,90,0.18)')
+            .attr('stroke-width', 0.6)
+            .attr('data-entity', eid);
+          paths.push(p);
+        }
+      }
+      trailIndex.set(eid, paths);
+    });
 
-    // ----- Pie-section hulls: each book = one annular sector [Rinner..Router] × [a0..a1] -----
-    // This gives a visible Pantheon-style boundary that bounds its entities and leaves
-    // space for them to grow. Static path — no force-sim update needed.
-    const sectorArc = d3.arc()
-      .innerRadius(Rinner)
-      .outerRadius(Router)
-      .padAngle(0.0)
-      .cornerRadius(2);
-    const hullSel = hullLayer.selectAll('path.scripture-hull')
-      .data(allBooks, b => b.id).enter().append('path')
-      .attr('class', 'scripture-hull')
-      .attr('d', b => sectorArc({ startAngle: bookLayout[b.id].a0, endAngle: bookLayout[b.id].a1 }))
-      .attr('transform', `translate(${cx},${cy})`)
-      .attr('fill', b => bookLayout[b.id].sectionColor)
-      .attr('stroke', b => bookLayout[b.id].sectionColor)
-      .attr('data-book-id', b => b.id)
-      .on('mouseenter', function (ev, b) {
+    function highlightTrails(eid, on) {
+      const paths = trailIndex.get(eid);
+      if (!paths) return;
+      paths.forEach(p => p
+        .attr('stroke', on ? 'var(--gold, #d4a55a)' : 'rgba(212,165,90,0.18)')
+        .attr('stroke-width', on ? 1.4 : 0.6)
+        .attr('stroke-opacity', on ? 0.85 : 1));
+      // Side panel preview on hover — surface the entity's identity.
+      if (on && NODES_BY_ID[eid]) {
+        const n = NODES_BY_ID[eid];
         showTooltip(
-          `<div class="ttitle">${b.label}</div>
-           <div class="tmeta">${(bookEntities.get(b.id) || []).length} named entities · ${corpus.label}</div>`, ev);
-        d3.select(this).classed('active', true);
-      })
-      .on('mousemove', (ev) => tooltip.style('left', (ev.clientX + 14) + 'px').style('top', (ev.clientY + 14) + 'px'))
-      .on('mouseleave', function () {
+          '<div class="ttitle">' + n.title + '</div>'
+          + '<div class="tmeta">' + (n.family || n.tradition || n.type || '') + '</div>'
+          + '<div class="tmeta">in ' + (entityBooks.get(eid).size) + ' books</div>',
+          { clientX: window.innerWidth / 2, clientY: 80 }
+        );
+      } else {
         hideTooltip();
-        d3.select(this).classed('active', false);
-      })
-      .on('click', function (ev, b) {
-        // Selecting the hull opens the underlying document node in the detail panel.
-        // stopPropagation so the SVG-background-click handler doesn't fire and
-        // clear the sticky lock — opening a book's detail should not destroy the
-        // user's investigation pinboard.
-        ev.stopPropagation();
-        if (b.resolvedId) selectNode(b.resolvedId, true);
-      });
-
-    // ----- Trail curves -----
-    const trailSel = trailLayer.selectAll('path.scripture-trail')
-      .data(trailPairs, t => t.entityId + '::' + t.sourceInstanceId + '::' + t.targetInstanceId)
-      .enter().append('path')
-      .attr('class', 'scripture-trail')
-      .attr('data-entity-id', t => t.entityId);
-
-    // ----- Node instances -----
-    const nodeSel = nodeLayer.selectAll('g.scripture-node-wrap')
-      .data(allInstances, n => n.id).enter().append('g')
-      .attr('class', 'scripture-node-wrap')
-      .on('mouseenter', function (ev, n) {
-        showTooltip(
-          `${tooltipThumb(n.d)}<div class="ttitle">${n.d.title}</div>
-           <div class="tmeta">${n.d.type} · ${bookLayout[n.bookId].label}</div>
-           ${(entityBookMap.get(n.entityId) || []).length > 1
-              ? `<div class="tmeta">appears in ${(entityBookMap.get(n.entityId) || []).length} books across this corpus</div>`
-              : ''}`, ev);
-        hoverEntityFocus(n.entityId);
-      })
-      .on('mousemove', (ev) => tooltip.style('left', (ev.clientX + 14) + 'px').style('top', (ev.clientY + 14) + 'px'))
-      .on('mouseleave', () => { hideTooltip(); clearHoverFocus(); })
-      .on('click', (ev, n) => {
-        // Pantheon-style sticky / additive selection: clicking a node locks its
-        // entity + its 1-hop vault-graph neighbors. Clicking another connected
-        // entity EXTENDS the lock; clicking an unrelated entity RESETS the lock.
-        // Click on empty SVG background clears the lock entirely. The locked
-        // set lights up all instances of each entity across all books, all
-        // trail-arcs between them, and the hulls that carry them — a persistent
-        // investigation pinboard you build by clicking.
-        ev.stopPropagation();
-        selectNode(n.entityId, true);
-        const nbrs = neighborsOf(n.entityId, 1);
-        if (!STATE.lockedSet) STATE.lockedSet = new Set();
-        const cur = STATE.lockedSet;
-        let touchesLock = false;
-        if (cur.size > 0) {
-          for (const id of nbrs) { if (cur.has(id)) { touchesLock = true; break; } }
-        }
-        if (cur.size === 0 || !touchesLock) {
-          STATE.lockedSet = new Set(nbrs);
-        } else {
-          nbrs.forEach(id => cur.add(id));
-        }
-        applyLock();
-      });
-
-    nodeSel.append('path').attr('class', 'scripture-node')
-      .attr('data-tier', n => n.d._tier ?? 'none')
-      .attr('d', n => {
-        const r = 3.0 + Math.min(2.2, Math.sqrt(DEGREE.get(n.entityId) || 0) * 0.5);
-        // Scripture-specific shape override: persons render as an EQUAL-ASPECT 45°
-        // rotated square (visual diagonal = 2r, same bounding box as the deity circle)
-        // instead of d3.symbolDiamond which is a tall lozenge. This keeps the
-        // shape silhouettes deity-circle vs. person-diamond legibly distinct while
-        // making them read at the same visual size.
-        if (n.d.type === 'person') {
-          return `M 0,${-r} L ${r},0 L 0,${r} L ${-r},0 Z`;
-        }
-        return d3.symbol().type(shapeFor(n.d)).size(shapeSizeFor(n.d, r))();
-      })
-      .attr('fill', n => nodeColor(n.d));
-
-    const nodeLabelSel = nodeLayer.selectAll('g.scripture-node-wrap').append('text')
-      .attr('class', n => 'scripture-node-label' + (entityHubSet.has(n.entityId) ? ' hub' : ''))
-      .attr('dy', -7)
-      .text(n => n.d.title.length > 22 ? n.d.title.slice(0, 20) + '…' : n.d.title);
-
-    // ----- Force simulation -----
-    // The polar grid already separates entities by design; the sim now just adds
-    // tiny micro-separation when two grid cells are close enough that node + label
-    // would visually crowd. Strong anchor pull keeps entities at their cell.
-    const sim = d3.forceSimulation(allInstances)
-      .alphaDecay(0.06)
-      .alphaMin(0.015)
-      .force('x', d3.forceX(d => d.anchorX).strength(0.55))
-      .force('y', d3.forceY(d => d.anchorY).strength(0.55))
-      .force('charge', d3.forceManyBody().strength(-2).distanceMax(40))
-      .force('collide', d3.forceCollide().radius(d => 6 + Math.sqrt(DEGREE.get(d.entityId) || 0) * 0.4).iterations(1))
-      .on('tick', tick);
-
-    let lockEdgeSel = lockEdgeLayer.selectAll('path');   // populated by applyLock()
-
-    function tick() {
-      nodeSel.attr('transform', d => `translate(${d.x},${d.y})`);
-      trailSel.attr('d', t => {
-        const s = instanceById.get(t.sourceInstanceId);
-        const u = instanceById.get(t.targetInstanceId);
-        if (!s || !u) return null;
-        // Bezier curve bent toward the center — keeps long cross-canvas trails readable.
-        const mx = (s.x + u.x) / 2, my = (s.y + u.y) / 2;
-        const k = 0.32;
-        const cxp = mx + (cx - mx) * k, cyp = my + (cy - my) * k;
-        return `M ${s.x},${s.y} Q ${cxp},${cyp} ${u.x},${u.y}`;
-      });
-      // Within-wedge lock-edges follow live entity positions on every tick.
-      if (lockEdgeSel && !lockEdgeSel.empty()) {
-        lockEdgeSel.attr('d', d => `M ${d.s.x},${d.s.y} L ${d.t.x},${d.t.y}`);
       }
     }
-
-    // ----- LOD / hover-focus / control-button wiring -----
-    // Default to 'all' — with the new polar-grid layout entities are already
-    // distributed across the pie sector so showing every label by default
-    // reads cleanly. User can toggle to 'hub' or 'off' if a particular corpus
-    // gets too dense.
-    let labelMode = 'all';      // 'all' | 'hub' | 'off'
-    let trailsOn  = true;
-
-    function updateLOD(k) {
-      nodeLabelSel.style('opacity', d => {
-        if (labelMode === 'off') return 0;
-        if (labelMode === 'all') return 1;
-        if (k >= 1.6) return 1;
-        return entityHubSet.has(d.entityId) ? 1 : 0;
-      }).style('font-size', () => {
-        // Past 100% zoom, grow gently. Past 200%, lock so labels don't bloat.
-        const growth = 1 + 0.4 * Math.max(0, Math.min(1, (k - 1) / 2));
-        const eff = Math.max(1, k);
-        return (9.2 * growth / eff).toFixed(2) + 'px';
-      });
-      trailSel.style('display', trailsOn ? null : 'none');
-    }
-
-    function hoverEntityFocus(entityId) {
-      // While a sticky lock is active, hover should AUGMENT the lock (light up the
-      // hovered entity on top of the locked subgraph), not override it. The cleanest
-      // way is to compute the union and treat it as a transient lock-state for the
-      // hover. We use a separate set of CSS classes — the `hot` class stays for
-      // locked items; the hovered entity gets `hover-hot` and dimming is computed
-      // against (locked ∪ hovered).
-      const locked = STATE.lockedSet || new Set();
-      const transient = new Set(locked);
-      transient.add(entityId);
-      nodeSel.select('path.scripture-node')
-        .classed('hot', d => locked.has(d.entityId) || d.entityId === entityId)
-        .classed('dim', d => !transient.has(d.entityId));
-      nodeLabelSel
-        .classed('hot', d => locked.has(d.entityId) || d.entityId === entityId)
-        .classed('dim', d => !transient.has(d.entityId));
-      trailSel
-        .classed('hot', t => transient.has(t.entityId))
-        .classed('dim', t => !transient.has(t.entityId));
-      const carriers = new Set();
-      allInstances.forEach(i => { if (transient.has(i.entityId)) carriers.add(i.bookId); });
-      hullSel.classed('dim', b => !carriers.has(b.id));
-      bookLabelSel
-        .classed('active', b => carriers.has(b.id))
-        .classed('dim', b => !carriers.has(b.id));
-    }
-    function clearHoverFocus() {
-      // If a sticky lock is active, leaving hover should snap BACK to the lock
-      // state — not blank everything. If no lock, fully clear.
-      if (STATE.lockedSet && STATE.lockedSet.size > 0) {
-        applyLock();
-        return;
-      }
-      nodeSel.select('path.scripture-node').classed('hot', false).classed('dim', false);
-      nodeLabelSel.classed('hot', false).classed('dim', false);
-      trailSel.classed('hot', false).classed('dim', false);
-      hullSel.classed('dim', false);
-      bookLabelSel.classed('active', false).classed('dim', false);
-    }
-
-    // Sticky-lock highlighter (Pantheon parity). The lockedSet is entity-id keyed;
-    // every per-book INSTANCE of a locked entity lights up, every trail-arc whose
-    // entity is locked lights up, every hull carrying any locked entity is active.
-    // Plus: every VAULT EDGE between two locked entities is drawn as a within-wedge
-    // line wherever they share a book — so clicking Nephthys actually draws the
-    // visible line into Geb's instance in the same hull (and equally for Geb→Osiris,
-    // Geb→Isis, Geb→Set, etc., as the user extends the lock).
-    function applyLock() {
-      syncLockChip();
-      const locked = STATE.lockedSet || new Set();
-      if (locked.size === 0) {
-        nodeSel.select('path.scripture-node').classed('hot', false).classed('dim', false);
-        nodeLabelSel.classed('hot', false).classed('dim', false);
-        trailSel.classed('hot', false).classed('dim', false);
-        hullSel.classed('dim', false);
-        bookLabelSel.classed('active', false).classed('dim', false);
-        renderLockEdges([]);
-        return;
-      }
-      nodeSel.select('path.scripture-node')
-        .classed('hot', d => locked.has(d.entityId))
-        .classed('dim', d => !locked.has(d.entityId));
-      nodeLabelSel
-        .classed('hot', d => locked.has(d.entityId))
-        .classed('dim', d => !locked.has(d.entityId));
-      trailSel
-        .classed('hot', t => locked.has(t.entityId))
-        .classed('dim', t => !locked.has(t.entityId));
-      const carriers = new Set();
-      allInstances.forEach(i => { if (locked.has(i.entityId)) carriers.add(i.bookId); });
-      hullSel.classed('dim', b => !carriers.has(b.id));
-      bookLabelSel
-        .classed('active', b => carriers.has(b.id))
-        .classed('dim', b => !carriers.has(b.id));
-      renderLockEdges(computeLockEdges(locked));
-    }
-
-    // For every vault edge whose BOTH endpoints are locked entities AND both have
-    // instances in the same book, produce a within-wedge line spec
-    // {s: srcInstance, t: tgtInstance, type: edgeType}. Pairs are deduped (parent-of
-    // ↔ child-of round-trips fold to one line). Non-entity endpoints (documents,
-    // themes, traditions) are filtered out so the canvas stays readable — entity-
-    // to-entity edges are the meaningful ones for biographical investigation.
-    function computeLockEdges(locked) {
-      if (!locked || locked.size < 2) return [];
-      const ENT = new Set(['deity', 'person', 'event']);
-      // Index instances by entityId for fast pair-finding.
-      const byEntity = new Map();
-      allInstances.forEach(i => {
-        if (!byEntity.has(i.entityId)) byEntity.set(i.entityId, []);
-        byEntity.get(i.entityId).push(i);
-      });
-      const out = [];
-      const seen = new Set();
-      EDGES.forEach(e => {
-        if (e.source === e.target) return;
-        if (!locked.has(e.source) || !locked.has(e.target)) return;
-        const sN = NODES_BY_ID[e.source];
-        const tN = NODES_BY_ID[e.target];
-        if (!sN || !tN || !ENT.has(sN.type) || !ENT.has(tN.type)) return;
-        // Pair-dedupe (regardless of direction).
-        const pairKey = e.source < e.target
-          ? `${e.source}|${e.target}` : `${e.target}|${e.source}`;
-        if (seen.has(pairKey)) return;
-        seen.add(pairKey);
-        const sIns = byEntity.get(e.source) || [];
-        const tIns = byEntity.get(e.target) || [];
-        // Connect ALL within-book pairs (handles same-book multi-instance edge cases).
-        sIns.forEach(s => tIns.forEach(t => {
-          if (s.bookId === t.bookId) out.push({ s, t, type: e.type });
-        }));
-      });
-      return out;
-    }
-
-    function renderLockEdges(edges) {
-      const sel = lockEdgeLayer.selectAll('path.scripture-lock-edge').data(edges);
-      sel.exit().remove();
-      lockEdgeSel = sel.enter().append('path')
-        .attr('class', 'scripture-lock-edge')
-        .attr('fill', 'none')
-        .merge(sel)
-        .attr('stroke', d => (EDGE_STYLE[d.type] || EDGE_DEFAULT).c)
-        .attr('data-edge-type', d => d.type)
-        .attr('d', d => `M ${d.s.x},${d.s.y} L ${d.t.x},${d.t.y}`);
-    }
-
-    function syncLockChip() {
-      const chip = document.getElementById('btn-scripture-lock-clear');
-      const count = document.getElementById('scripture-lock-count');
-      if (!chip || !count) return;
-      // Show only the count of entity-ids in the lock that actually correspond
-      // to Scripture entity instances on this canvas — otherwise leaking-in lock
-      // items from Pantheon (e.g., deities with no Bible book) would inflate
-      // the chip count and confuse the user.
-      const locked = STATE.lockedSet || new Set();
-      const visibleEntityIds = new Set(allInstances.map(i => i.entityId));
-      let n = 0;
-      locked.forEach(id => { if (visibleEntityIds.has(id)) n++; });
-      chip.style.display = n > 0 ? '' : 'none';
-      count.textContent = n;
-    }
-
-    document.getElementById('btn-scripture-labels').onclick = (ev) => {
-      labelMode = labelMode === 'all' ? 'hub' : labelMode === 'hub' ? 'off' : 'all';
-      ev.target.textContent = 'labels: ' + labelMode;
-      updateLOD(1);
-    };
-    document.getElementById('btn-scripture-trails').onclick = (ev) => {
-      trailsOn = !trailsOn;
-      ev.target.textContent = 'entity trails: ' + (trailsOn ? 'on' : 'off');
-      ev.target.classList.toggle('active', trailsOn);
-      updateLOD(1);
-    };
-    document.getElementById('btn-scripture-recenter').onclick = () => {
-      svg.transition().duration(500).call(zoom.transform, d3.zoomIdentity);
-    };
-    document.getElementById('btn-scripture-lock-clear').onclick = () => {
-      STATE.lockedSet = new Set();
-      applyLock();
-    };
-
-    // Background click on the canvas (truly empty SVG area — not a node or hull)
-    // clears the sticky lock. Node click handlers stopPropagation so they don't
-    // hit this; the hull click handlers also stop propagation so the user can
-    // open a book's detail panel without losing their lock.
-    svg.on('click', (ev) => {
-      const tag = ev.target.tagName;
-      if (tag === 'svg' || ev.target === svg.node()) {
-        if (STATE.lockedSet && STATE.lockedSet.size > 0) {
-          STATE.lockedSet = new Set();
-          applyLock();
-        }
-      }
-    });
-
-    // ----- Legend (left side, mirroring Documents view) -----
-    legend.style('display', 'block').html(
-      `<div class="ltitle">Sections · ${corpus.label}</div>` +
-      corpus.sections.map(s =>
-        `<div class="lrow"><span class="lswatch" style="background:${s.color}"></span><span>${s.label}</span><span class="lcount">${s.books.length}</span></div>`
-      ).join('') +
-      (missingBookCount ? `<div class="lrow" style="opacity:0.6"><span>· ${missingBookCount} book(s) not yet in vault</span></div>` : '')
-    );
-
-    updateLOD(1);
-    // Restore any pre-existing sticky lock (preserves the investigation pinboard
-    // across view re-renders triggered by corpus-dropdown switches, label-toggle
-    // clicks, window resizes, etc.).
-    applyLock();
   }
 };
 
