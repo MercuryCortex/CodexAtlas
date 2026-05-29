@@ -15,9 +15,9 @@ child-of: []
 consort: []
 attributes: ["water-pots", "kaolin clay (mpemba — the color of the dead)", "blue", "stones from river-beds", "the spring or pool itself"]
 attested-in: []
-equivalents: ["[lasiren-vodou] (Haitian Vodou Petwo water-lwa with Simbi-roots)"]
+equivalents: ["[[lasiren-vodou]] (Haitian Vodou Petwo water-lwa with Simbi-roots)"]
 syncretic-edges:
-  - target: "[lasiren-vodou]"
+  - target: "[[lasiren-vodou]]"
     type: "direct-borrowing"
     source: "Thompson 1981 *Four Moments of the Sun* + Thompson 1983 *Flash of the Spirit*"
     source-tier: T1
