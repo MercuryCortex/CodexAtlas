@@ -5,7 +5,7 @@ type: moral
 moral-type: virtue
 status: full
 tier: 1
-tradition: tradition-ancient-greek-philosophy
+tradition: tradition-hellenistic-philosophy
 date_earliest: -300
 date_latest: 200
 tags:

@@ -5,7 +5,7 @@ type: moral
 moral-type: cross-tradition
 status: full
 tier: 1
-tradition: tradition-ancient-greek-philosophy
+tradition: tradition-hellenistic-philosophy
 date_earliest: -399
 date_latest: 1100
 tags:
