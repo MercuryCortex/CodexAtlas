@@ -10666,140 +10666,29 @@ body.view-starmap .map-thumb { display: none !important; }
 }
 
 /* ════════════════════════════════════════════════════════════════
-   BOARDS — bottom view-options strip (canonical Atlas pattern)
+   BOARDS — bottom view-options strip
    ════════════════════════════════════════════════════════════════
-   Matches `.forge-bottombar` family: thin row anchored bottom-LEFT
-   of the stage (not centered — the centered slot is reserved for
-   the `.boards-multi-bar` contextual selection toolbar; both fit
-   without overlap). Holds VIEW toggles (Wires / Legend) that
-   reshape what's drawn rather than mutate content. Save tree
-   stays in the top pill because it's a save action.
-
-   Three rules per the canonical pattern:
-   (1) bottom-left anchor (mirror of .forge-bottombar's `left:14`)
-   (2) thin gold-bordered cells, mono uppercase labels
-   (3) pressed-state = gold-fill + gold-border (same as Forge legend
-       button states), so the toggle stays self-evident at a glance.
+   v3: pure container — every interactive cell reuses canonical
+   .forge-viewset-* (VIEW button + drop-up panel) and
+   .forge-legend-* (wire-bucket rows). Zero forked chrome — Boards
+   speaks the exact same vocabulary the Atlas/Forge chart already
+   ships. The bottombar itself is just the positioning anchor.
    ════════════════════════════════════════════════════════════════ */
 .boards-bottombar {
   position: fixed;
   left: 14px;
   bottom: 14px;
-  z-index: 200;       /* below the .boards-multi-bar (z:100) PHYSICALLY
-                         doesn't matter because the multi-bar is center
-                         and we are left — separate horizontal lanes */
-  display: none;      /* shown only on Boards */
+  z-index: 200;
+  display: none;
   align-items: stretch;
-  gap: 4px;
-  padding: 4px;
-  background: rgba(13,17,25,0.88);
-  border: 1px solid rgba(212,165,90,0.22);
-  border-radius: 8px;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.34);
+  gap: 6px;
   pointer-events: auto;
 }
 body.view-boards .boards-bottombar { display: inline-flex; }
-
-/* Lift the multi-bar above the bottombar so they don't collide
-   when both are visible (bottombar always present on boards;
-   multi-bar appears when ≥1 cards are selected). Multi-bar
-   centred so it stays where the user expects it — just nudged
-   up so the bottombar's left-anchored strip doesn't get covered
-   when a wide selection toolbar grows. */
+/* Lift the multi-card-selection bar so it doesn't collide with
+   the bottombar (bottombar permanent on boards; multi-bar
+   appears when ≥1 cards are selected). */
 body.view-boards .boards-multi-bar { bottom: 64px; }
-
-.boards-bottombar-group {
-  display: inline-flex; gap: 2px; align-items: center;
-}
-.boards-bottombar-spacer { display: none; }   /* legacy — no centred hint anymore */
-
-.boards-bottombar-btn {
-  appearance: none;
-  display: inline-flex; align-items: center; gap: 6px;
-  padding: 5px 10px;
-  background: transparent;
-  border: 1px solid var(--border, rgba(212,165,90,0.10));
-  border-radius: 5px;
-  color: var(--text-2, #b0aa9c);
-  font-family: var(--mono, "JetBrains Mono", Menlo, monospace);
-  font-size: 10.5px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: color 100ms ease, background 100ms ease, border-color 100ms ease;
-}
-.boards-bottombar-btn:hover:not(:disabled) {
-  color: var(--gold, #d4a55a);
-  background: rgba(212,165,90,0.06);
-  border-color: rgba(212,165,90,0.30);
-}
-.boards-bottombar-btn[aria-pressed="true"] {
-  color: var(--gold, #d4a55a);
-  background: rgba(212,165,90,0.12);
-  border-color: rgba(212,165,90,0.45);
-}
-.boards-bottombar-btn:disabled { opacity: 0.40; cursor: not-allowed; }
-.boards-bottombar-glyph { font-size: 12px; line-height: 1; }
-.boards-bottombar-hint  { display: none; }   /* legacy — hint text removed */
-
-/* Legend popover — opens above the Legend button when toggled.
-   Lists the 7 wire-bucket colors + one-line descriptions, mirrors
-   the Forge legend's vocabulary so the user sees the same colour
-   key in both contexts. */
-.boards-legend-popover {
-  position: fixed;
-  bottom: 60px;
-  left: 14px;
-  z-index: 210;
-  width: 280px;
-  padding: 12px 14px;
-  background: rgba(13,17,25,0.94);
-  border: 1px solid rgba(212,165,90,0.28);
-  border-radius: 8px;
-  box-shadow: 0 10px 28px rgba(0,0,0,0.42);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  color: var(--text-1, #d6d2c4);
-  font-family: var(--mono, "JetBrains Mono", Menlo, monospace);
-  font-size: 11px;
-  line-height: 1.45;
-  display: none;
-}
-.boards-legend-popover.is-open { display: block; }
-.boards-legend-popover h4 {
-  margin: 0 0 8px;
-  color: var(--gold, #d4a55a);
-  font-size: 10px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  font-weight: 500;
-}
-.boards-legend-row {
-  display: flex; align-items: baseline; gap: 8px;
-  padding: 3px 0;
-  border-bottom: 1px dotted rgba(212,165,90,0.08);
-}
-.boards-legend-row:last-child { border-bottom: 0; }
-.boards-legend-swatch {
-  width: 12px; height: 4px; flex-shrink: 0;
-  border-radius: 2px;
-  align-self: center;
-}
-.boards-legend-name {
-  color: var(--text-0, #f0eee8);
-  font-size: 10.5px;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  flex-shrink: 0;
-  width: 84px;
-}
-.boards-legend-desc {
-  color: var(--text-2, #b0aa9c);
-  font-size: 10px;
-  flex: 1 1 auto;
-}
 
 /* Right-click context menu on an empty board area. Sits next to
    the cursor; closes on outside-click or Escape. First (and right

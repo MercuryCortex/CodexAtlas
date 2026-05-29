@@ -1222,102 +1222,135 @@ VIEWS.boards = {
     if (svgEl) svgEl.style.display = 'none';
     if (window._boardsView) window._boardsView.render(pane);
 
-    // 2026-05-29 v2 — Canonical bottom view-options strip per the
-    // Atlas / Forge .forge-bottombar pattern. Bottom-LEFT anchored so
-    // the centre-bottom slot stays clear for the existing
-    // .boards-multi-bar contextual selection toolbar. Wires + Legend
-    // are pure VIEW toggles (no content mutation). Save tree stayed
-    // in the top pill because it's a save action.
+    // 2026-05-29 v3 — Canonical bottombar reusing the Forge VIEW
+    // (.forge-viewset-*) + LEGEND (.forge-legend-*) vocabulary the
+    // chart already speaks. ONE BUTTON PER PANEL like Atlas:
+    //   VIEW    — drops up a panel with view-mode toggles inside
+    //             (Wires is one row in this panel, not a top-level
+    //             button — per "the wires should be in a VIEW where
+    //             WIRE is one of them")
+    //   LEGEND  — drops up the wire-bucket colour legend, same
+    //             visual classes the Forge legend module uses
+    // Pure reuse: zero new CSS — every class below already exists
+    // in app.css and is shipped on the Forge chart.
     const bar = document.createElement('div');
     bar.className = 'boards-bottombar';
     bar.setAttribute('role', 'toolbar');
     bar.setAttribute('aria-label', 'Board view options');
+
+    // VIEW button + drop-up panel (Wires toggle lives inside)
+    const viewWrap = document.createElement('div');
+    viewWrap.className = 'forge-viewset-wrap';
     const edgesOn = !!(window._boardsView && window._boardsView.isEdgesVisible && window._boardsView.isEdgesVisible());
-    bar.innerHTML = ''
-      + '<div class="boards-bottombar-group">'
-      +   '<button class="boards-bottombar-btn" type="button"'
-      +     ' data-action="toggle-edges" aria-pressed="' + (edgesOn ? 'true' : 'false') + '"'
-      +     ' title="Show / hide the auto-drawn edges between cards">'
-      +     '<span class="boards-bottombar-glyph" aria-hidden="true">⟶</span>'
-      +     '<span class="boards-bottombar-label">Wires</span>'
-      +   '</button>'
-      +   '<button class="boards-bottombar-btn" type="button"'
-      +     ' data-action="toggle-legend" aria-pressed="false"'
-      +     ' title="Show / hide the wire-bucket colour legend">'
-      +     '<span class="boards-bottombar-glyph" aria-hidden="true">▤</span>'
-      +     '<span class="boards-bottombar-label">Legend</span>'
+    viewWrap.innerHTML = ''
+      + '<button class="forge-viewset-btn" type="button"'
+      +   ' aria-haspopup="menu" aria-expanded="false"'
+      +   ' aria-controls="boards-viewset-panel"'
+      +   ' title="View options">VIEW</button>'
+      + '<div class="forge-viewset-panel" id="boards-viewset-panel" role="menu" aria-hidden="true">'
+      +   '<div class="forge-viewset-section">Wires &amp; edges</div>'
+      +   '<button class="forge-viewset-row' + (edgesOn ? ' is-on' : '') + '"'
+      +     ' type="button" role="menuitemcheckbox"'
+      +     ' aria-checked="' + (edgesOn ? 'true' : 'false') + '"'
+      +     ' data-action="toggle-edges">'
+      +     '<span class="vs-check"></span>'
+      +     '<span>Wires</span><em>auto-drawn edges between cards</em>'
       +   '</button>'
       + '</div>';
+
+    // LEGEND button + drop-up panel (wire-bucket colour key)
+    const legWrap = document.createElement('div');
+    legWrap.className = 'forge-viewset-wrap';   // same wrap chrome as VIEW
+    legWrap.innerHTML = ''
+      + '<button class="forge-viewset-btn" type="button"'
+      +   ' aria-haspopup="menu" aria-expanded="false"'
+      +   ' aria-controls="boards-legend-panel"'
+      +   ' title="Wire-bucket colour legend">LEGEND</button>'
+      + '<div class="forge-viewset-panel" id="boards-legend-panel" role="menu" aria-hidden="true">'
+      +   '<div class="forge-viewset-section">Wire color · type of connection</div>'
+      + (() => {
+          const BUCKETS = [
+            { key: 'transmission', color: '#d4a55a', name: 'Transmission' },
+            { key: 'parallel',     color: '#7fb0e8', name: 'Parallel'     },
+            { key: 'association',  color: '#9d8cb8', name: 'Association'  },
+            { key: 'kinship',      color: '#e88a8a', name: 'Kinship'      },
+            { key: 'attestation',  color: '#7fc28b', name: 'Attestation'  },
+            { key: 'polemic',      color: '#d97a70', name: 'Polemic'      },
+            { key: 'fusion',       color: '#c8a4e0', name: 'Fusion'       },
+          ];
+          return BUCKETS.map(b =>
+            '<div class="forge-legend-row" data-bucket="' + b.key + '">'
+            + '<span class="forge-legend-swatch" style="background:' + b.color + '"></span>'
+            + '<span class="forge-legend-name">' + b.name + '</span>'
+            + '</div>').join('');
+        })()
+      + '</div>';
+
+    bar.appendChild(viewWrap);
+    bar.appendChild(legWrap);
     canvasEl.appendChild(bar);
 
-    // Legend popover — opens above the Legend button, mirrors the 7
-    // wire-bucket vocabulary (transmission / parallel / association /
-    // kinship / attestation / polemic / fusion) so the user sees the
-    // same colour key here that they see in the Forge legend module.
-    // NOTE: variable name is `legendPop` (not `legend`) because `legend`
-    // is the global d3 selection used earlier in setView().
-    const legendPop = document.createElement('div');
-    legendPop.className = 'boards-legend-popover';
-    legendPop.setAttribute('role', 'dialog');
-    legendPop.setAttribute('aria-label', 'Wire-bucket legend');
-    const BUCKETS = [
-      { key: 'transmission', color: '#d4a55a', desc: 'Historical causality, documented chain' },
-      { key: 'parallel',     color: '#7fb0e8', desc: 'Structural resemblance, no proven contact' },
-      { key: 'association',  color: '#9d8cb8', desc: 'Ambient context (themes, traditions)' },
-      { key: 'kinship',      color: '#e88a8a', desc: 'Divine genealogy (parent/child/consort/sibling)' },
-      { key: 'attestation',  color: '#7fc28b', desc: 'Documentary evidence (attests / attested-in)' },
-      { key: 'polemic',      color: '#d97a70', desc: 'One tradition reframes another as hostile' },
-      { key: 'fusion',       color: '#c8a4e0', desc: 'Two entities collapse / are identified as one' },
-    ];
-    legendPop.innerHTML = '<h4>Wire buckets</h4>'
-      + BUCKETS.map(b =>
-        '<div class="boards-legend-row">'
-        + '<span class="boards-legend-swatch" style="background:' + b.color + '"></span>'
-        + '<span class="boards-legend-name">' + b.key + '</span>'
-        + '<span class="boards-legend-desc">' + b.desc + '</span>'
-        + '</div>').join('');
-    canvasEl.appendChild(legendPop);
-
-    bar.addEventListener('click', (ev) => {
-      const btn = ev.target.closest('button[data-action]');
-      if (!btn || btn.disabled) return;
-      const a = btn.getAttribute('data-action');
-      if (a === 'toggle-edges' && window._boardsView && window._boardsView.setEdgesVisible) {
+    // Wire the two drop-up panels — open/close + outside-click +
+    // Escape. Identical pattern to the Forge VIEW button on the
+    // chart's bottom bar.
+    const viewBtn   = viewWrap.querySelector('.forge-viewset-btn');
+    const viewPanel = viewWrap.querySelector('.forge-viewset-panel');
+    const legBtn    = legWrap.querySelector('.forge-viewset-btn');
+    const legPanel  = legWrap.querySelector('.forge-viewset-panel');
+    function closeView()  { viewPanel.classList.remove('is-open');
+                            viewBtn.setAttribute('aria-expanded','false'); }
+    function closeLeg()   { legPanel.classList.remove('is-open');
+                            legBtn.setAttribute('aria-expanded','false'); }
+    viewBtn.addEventListener('click', (ev) => {
+      ev.stopPropagation();
+      closeLeg();
+      const open = viewPanel.classList.toggle('is-open');
+      viewBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    legBtn.addEventListener('click', (ev) => {
+      ev.stopPropagation();
+      closeView();
+      const open = legPanel.classList.toggle('is-open');
+      legBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    viewPanel.addEventListener('click', (ev) => {
+      const row = ev.target.closest('[data-action]');
+      if (!row) return;
+      ev.stopPropagation();
+      if (row.getAttribute('data-action') === 'toggle-edges'
+          && window._boardsView && window._boardsView.setEdgesVisible) {
         const cur = window._boardsView.isEdgesVisible();
         window._boardsView.setEdgesVisible(!cur);
-        btn.setAttribute('aria-pressed', (!cur) ? 'true' : 'false');
-      } else if (a === 'toggle-legend') {
-        const open = legendPop.classList.toggle('is-open');
-        btn.setAttribute('aria-pressed', open ? 'true' : 'false');
+        const nowOn = !cur;
+        row.classList.toggle('is-on', nowOn);
+        row.setAttribute('aria-checked', nowOn ? 'true' : 'false');
       }
     });
-    // Click-outside / Escape closes the legend popover.
     document.addEventListener('click', (ev) => {
-      if (!legendPop.classList.contains('is-open')) return;
-      if (legendPop.contains(ev.target)) return;
-      if (bar.contains(ev.target)) return;
-      legendPop.classList.remove('is-open');
-      const lb = bar.querySelector('[data-action="toggle-legend"]');
-      if (lb) lb.setAttribute('aria-pressed', 'false');
+      if (viewPanel.classList.contains('is-open')
+          && !viewWrap.contains(ev.target)) closeView();
+      if (legPanel.classList.contains('is-open')
+          && !legWrap.contains(ev.target)) closeLeg();
+    });
+    document.addEventListener('keydown', (ev) => {
+      if (ev.key !== 'Escape') return;
+      closeView(); closeLeg();
     });
 
-    // Right-click on the empty board surface → context menu with
-    // "Add node…" entry. Hijacks the stage's existing contextmenu
-    // handler ONLY when the right-click target is the empty stage
-    // (boards-stage / boards-world) — card-level right-clicks still
-    // route to the per-card expand/transmissions/shortest-path menu
-    // that boards.js owns (step 7 of the carve).
+    // Right-click on empty board surface → context menu with
+    // "Add node…". Calls window._boardsControls.openAddNode() directly
+    // (the previous indirect trigger.click() raced with the document-
+    // click outside-handler, closing the dropdown the moment it opened).
+    // After openAddNode runs, focus the search input so the user can
+    // start typing immediately.
     let _emptyMenuEl = null;
     function closeEmptyMenu() {
       if (_emptyMenuEl && _emptyMenuEl.parentNode) _emptyMenuEl.parentNode.removeChild(_emptyMenuEl);
       _emptyMenuEl = null;
     }
     pane.addEventListener('contextmenu', (ev) => {
-      // Only intercept if the target is the stage / world surface,
-      // not a card. Cards have their own contextmenu handler.
       const t = ev.target;
-      const isCard = t.closest && t.closest('.boards-card');
-      if (isCard) return;        // let card menu fire
+      if (t.closest && t.closest('.boards-card')) return;   // card menu wins
       ev.preventDefault();
       closeEmptyMenu();
       const menu = document.createElement('div');
@@ -1332,39 +1365,50 @@ VIEWS.boards = {
       menu.addEventListener('click', (e2) => {
         const it = e2.target.closest('[data-action]');
         if (!it) return;
+        e2.stopPropagation();
         if (it.getAttribute('data-action') === 'add-node') {
-          // Open the existing top-pill Add-node menu by clicking it.
-          const trigger = document.getElementById('app-pill-boards-addnode');
-          if (trigger && typeof trigger.click === 'function') trigger.click();
+          closeEmptyMenu();
+          if (window._boardsControls && typeof window._boardsControls.openAddNode === 'function') {
+            window._boardsControls.openAddNode();
+            // Focus the search input so the user can type immediately —
+            // the dropdown's input is the primary affordance.
+            setTimeout(() => {
+              const inp = document.getElementById('boards-pill-search-input');
+              if (inp && typeof inp.focus === 'function') inp.focus();
+            }, 30);
+          }
+          return;
         }
         closeEmptyMenu();
       });
       document.body.appendChild(menu);
       _emptyMenuEl = menu;
-      // Close on outside click / Escape.
-      const onAway = (e3) => { if (!menu.contains(e3.target)) closeEmptyMenu(); };
-      setTimeout(() => document.addEventListener('click', onAway, { once: true }), 0);
+      const onAway = (e3) => {
+        if (_emptyMenuEl && !_emptyMenuEl.contains(e3.target)) closeEmptyMenu();
+      };
+      setTimeout(() => document.addEventListener('mousedown', onAway, { once: true }), 0);
     });
 
-    // Backspace / Delete → deleteSelected (when not in an input).
-    // Only active while the boards view is mounted; the listener is
-    // cleaned up when setView removes .boards-pane.
+    // Backspace / Delete → deleteSelected. Robust: just check the
+    // selection count from the public-API getState() — the only gate
+    // is "are we on Boards AND is anything selected AND not inside
+    // an input". The previous version checked `st.selected.size`;
+    // exposing `selectionCount` as a primitive avoids any Set-vs-
+    // weird-shape edge case where iframes / multiple realms confuse
+    // instanceof checks on Set.
     const onKey = (ev) => {
       if (!document.body.classList.contains('view-boards')) return;
-      if (ev.target && (ev.target.tagName === 'INPUT' || ev.target.tagName === 'TEXTAREA' || ev.target.isContentEditable)) return;
       if (ev.key !== 'Delete' && ev.key !== 'Backspace') return;
-      if (window._boardsView && window._boardsView.getState) {
-        const st = window._boardsView.getState();
-        const selectedSize = (st && st.selected && st.selected.size) || 0;
-        if (!selectedSize) return;
-        ev.preventDefault();
-        if (typeof window._boardsView.deleteSelected === 'function') {
-          window._boardsView.deleteSelected();
-        }
-      }
+      const t = ev.target;
+      if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable)) return;
+      const view = window._boardsView;
+      if (!view || typeof view.getState !== 'function') return;
+      const st = view.getState();
+      if (!st || !st.selectionCount) return;
+      ev.preventDefault();
+      if (typeof view.deleteSelected === 'function') view.deleteSelected();
     };
     document.addEventListener('keydown', onKey);
-    bar._removeKey = () => document.removeEventListener('keydown', onKey);
   },
 };
 

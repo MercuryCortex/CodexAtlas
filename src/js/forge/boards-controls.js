@@ -413,6 +413,17 @@
     _openMenu = 'addnode';
   }
 
+  // 2026-05-29 — public API for cross-module use (specifically the
+  // right-click context menu on the empty boards-stage in
+  // VIEWS.boards.render → needs to invoke openAddNode() without
+  // going through the trigger.click() indirection that races with
+  // the document-click outside-handler).
+  window._boardsControls = {
+    openAddNode:       openAddNode,
+    openInvestigation: openInvestigation,
+    closeAll:          closeAll,
+  };
+
   // ── HELPERS ─────────────────────────────────────────────────
   function escapeHtml(s) {
     return String(s).replace(/[&<>"']/g, c => ({
