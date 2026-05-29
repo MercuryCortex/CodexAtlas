@@ -2763,6 +2763,21 @@
       // string for each input. familyOrder + colorOverride may be
       // arrays/objects; JSON.stringify is fast enough at the sizes
       // involved (~20 families × short strings).
+      //
+      // 2026-05-30 — added codex-state segments + modeNodes length to
+      // the cache key. The Codex breadcrumb (religion / corpus / book /
+      // lens) NARROWS modeNodes via the cascade at lines 2587-2632
+      // WITHOUT touching any of the original key fields. Pre-fix, the
+      // first rebuild (which fires BEFORE codex-controls.attach()
+      // hydrates local.codex*) cached a stale layout against the
+      // default SCRIPTURE_IDS set; the second rebuild (which now
+      // had the correct expanded modeNodes) hit that stale cache and
+      // re-painted the small subset. Result: Christianity/Bible
+      // showed 8 of 33 books, Egyptian/All showed 2 of 10, etc. The
+      // |cf|cr|ck|cl segments below + |n= modeNodes length tail
+      // guarantee the key changes whenever any codex pick changes
+      // OR the resulting node set size changes. See workflow audit
+      // wf_93b13f27-020 for the full diagnosis.
       const _layoutKey = modeId
         + '|' + _layoutId
         + '|' + JSON.stringify(_familyOrder)
@@ -2770,7 +2785,12 @@
         + '|' + JSON.stringify(_distribution)
         + '|' + (_reverseAge ? '1' : '0')
         + '|bs=' + _bandScale.toFixed(3)
-        + '|sp=' + _scalePreset;
+        + '|sp=' + _scalePreset
+        + '|cf=' + (local.codexFamily   || '')
+        + '|cr=' + (local.codexReligion || '')
+        + '|ck=' + (local.codexBookKey  || '')
+        + '|cl=' + (local.codexLens     || '')
+        + '|n='  + (modeNodes ? modeNodes.length : 0);
       if (!local._layoutCache) local._layoutCache = new Map();
       let lay = local._layoutCache.get(_layoutKey);
       const _layoutCacheHit = !!lay;

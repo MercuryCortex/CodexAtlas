@@ -272,6 +272,14 @@
     local.codexFamily   = state.corpusId;   // legacy alias
     local.codexBookKey  = state.bookTextKey;
     local.codexLens     = state.lensId;
+    // 2026-05-30 — belt-and-braces: invalidate the wheel layout cache
+    // whenever local.codex* state changes. The forge.js layout cache
+    // key now includes codex segments (workflow audit wf_93b13f27-020),
+    // but clearing here also covers any future filter that mutates
+    // modeNodes without touching the cache-key inputs.
+    if (local._layoutCache && typeof local._layoutCache.clear === 'function') {
+      local._layoutCache.clear();
+    }
 
     // ── Build DOM (canonical .app-pill primitives) ───────────
     // Second .app-pill group inside the existing .app-pill-wrap.
@@ -771,6 +779,8 @@
       local.codexBookKey  = state.bookTextKey;
       local.codexLens     = state.lensId;
       local._codexFilterAppliedFor = null;
+      // 2026-05-30 — invalidate stale layout cache on codex state change.
+      if (local._layoutCache && typeof local._layoutCache.clear === 'function') local._layoutCache.clear();
       saveState();
       syncLabels();
       syncLocks();
@@ -811,6 +821,8 @@
       local.codexBookKey = null;
       local.codexLens    = null;
       local._codexFilterAppliedFor = null;
+      // 2026-05-30 — invalidate stale layout cache on codex state change.
+      if (local._layoutCache && typeof local._layoutCache.clear === 'function') local._layoutCache.clear();
       saveState();
       syncLabels();
       syncLocks();
@@ -853,6 +865,8 @@
       local.codexBookKey = tk;
       local.codexLens    = null;
       local._codexFilterAppliedFor = null;
+      // 2026-05-30 — invalidate stale layout cache on codex state change.
+      if (local._layoutCache && typeof local._layoutCache.clear === 'function') local._layoutCache.clear();
       saveState();
       syncLabels();
       syncLocks();
@@ -873,6 +887,8 @@
       state.lensId = finalLens;
       local.codexLens = finalLens;
       local._codexFilterAppliedFor = null;
+      // 2026-05-30 — invalidate stale layout cache on codex state change.
+      if (local._layoutCache && typeof local._layoutCache.clear === 'function') local._layoutCache.clear();
       saveState();
       syncLabels();
       syncLocks();
