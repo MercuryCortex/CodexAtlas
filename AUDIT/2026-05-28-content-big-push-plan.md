@@ -56,7 +56,7 @@ Target additions — documented cross-tradition transmission chains we haven't w
 - Sufi → Ibn ʿArabi → Wahdat al-wujūd → Indian Bhakti convergence
 - More if time permits
 
-Each entry follows the existing INDEX format: section heading, **bolded thesis**, paragraph evidence, source citations, `Nodes: [[node-1]], [[node-2]]` line. Then re-run `scripts/build-boards-library.py` so Boards V2 Investigation Library auto-picks them up.
+Each entry follows the existing INDEX format: section heading, **bolded thesis**, paragraph evidence, source citations, `Nodes: <node-A>, <node-B>` line (placeholders shown as `<node-A>`/`<node-B>` — replace with real slugs when filling). Then re-run `scripts/build-boards-library.py` so Boards V2 Investigation Library auto-picks them up.
 
 ### Lane D — Vault data integrity (thumbnail audit)
 
