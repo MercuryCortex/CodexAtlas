@@ -217,7 +217,9 @@ FAMILIES = [
                      "sikh", "sant", "kabir", "south-asian", "south asian",
                      "indian-modern", "indian modern", "indian classical",
                      "indo-aryan", "indus", "harappan",
-                     "tradition-tantra", "tantra"],                               # +RIGOR3 Tantra wikilink form
+                     "tradition-tantra", "tantra",                                # +RIGOR3 Tantra wikilink form
+                     "kashmir-shaivism", "tradition-kashmir-shaivism",            # +RIGOR6 Kashmir Śaiva (Pratyabhijñā)
+                     "shramana", "tradition-shramana"],                           # +RIGOR6 śramaṇa movement (Indic ascetic-renouncer)
     },
     {
         "key": "buddhist", "label": "Buddhist", "baseline": 380,
@@ -343,6 +345,10 @@ FAMILIES = [
                      "priory of sion",                                            # +RIGOR2 Plantard/Dan Brown territory
                      "conspiratorial-literary",                                   # +RIGOR2 20th-c. French esoteric milieu
                      "american populist", "popular esoteric",                     # +RIGOR2 Donnelly Atlantis-Antediluvian era
+                     "religious existentialism", "tradition-religious-existentialism",  # +RIGOR6 Kierkegaard-Buber-Tillich
+                     "american philosophy", "tradition-american-philosophy",      # +RIGOR6 James-Dewey-pragmatism
+                     "religious studies", "tradition-religious-studies",          # +RIGOR6 academic religious-studies
+                     "monasticism-cross-tradition", "tradition-monasticism",      # +RIGOR6 cross-tradition monasticism
                      "tradition-western-esotericism", "western esotericism",      # +RIGOR3 Faivre/Hanegraaff scholarly term
                      "tradition-mystery-cults", "mystery cults",                  # +RIGOR3 cross-Hellenistic mystery cults
                      "tradition-modern-recovery", "modern recovery",              # +RIGOR3 12-step movement

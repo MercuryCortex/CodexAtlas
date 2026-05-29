@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-05-29T13:53:12Z",
+  "generatedAt": "2026-05-29T15:14:20Z",
   "vault": {
-    "totalNodes": 4863,
+    "totalNodes": 4936,
     "lensCount": 30,
     "familyCount": 14,
     "unmatchedTradNodes": 0,
-    "intentionallyCrossTradition": 15
+    "intentionallyCrossTradition": 30
   },
   "lenses": [
     {
@@ -55,14 +55,14 @@
     {
       "folder": "04_persons",
       "label": "Persons",
-      "count": 1216,
+      "count": 1217,
       "baseline": 750,
-      "ratio": 1.621,
+      "ratio": 1.623,
       "band": "over-baseline",
       "baselineNote": "EoR religious figures + Bowker Oxford Dict. World Religions biographical entries",
       "statuses": {
         "metadata": 474,
-        "stub": 689,
+        "stub": 690,
         "(no status)": 16,
         "full": 37
       }
@@ -186,13 +186,13 @@
     {
       "folder": "13_morals",
       "label": "Morals / ethics",
-      "count": 21,
+      "count": 36,
       "baseline": 180,
-      "ratio": 0.117,
+      "ratio": 0.2,
       "band": "anemic",
       "baselineNote": "Singer Companion to Ethics + EoR ethical-systems entries",
       "statuses": {
-        "full": 21
+        "full": 36
       }
     },
     {
@@ -211,14 +211,14 @@
     {
       "folder": "15_philosophy",
       "label": "Philosophy",
-      "count": 20,
+      "count": 35,
       "baseline": 300,
-      "ratio": 0.067,
+      "ratio": 0.117,
       "band": "anemic",
       "baselineNote": "Religious-philosophy slice of Stanford Encyc. Philosophy + Routledge Encyc. Philosophy",
       "statuses": {
         "full": 9,
-        "(no status)": 11
+        "(no status)": 26
       }
     },
     {
@@ -346,40 +346,40 @@
     {
       "folder": "25_divination",
       "label": "Divination",
-      "count": 22,
+      "count": 27,
       "baseline": 110,
-      "ratio": 0.2,
+      "ratio": 0.245,
       "band": "anemic",
       "baselineNote": "Greer 2003 + Loewe-Blacker Oracles & Divination cross-cultural entries",
       "statuses": {
-        "metadata": 20,
+        "metadata": 25,
         "(no status)": 2
       }
     },
     {
       "folder": "26_calendars",
       "label": "Calendars",
-      "count": 18,
+      "count": 22,
       "baseline": 70,
-      "ratio": 0.257,
+      "ratio": 0.314,
       "band": "developing",
       "baselineNote": "Richards Mapping Time + Steel Marking Time religious-calendar entries",
       "statuses": {
-        "(no status)": 5,
-        "metadata": 12,
+        "(no status)": 4,
+        "metadata": 17,
         "\"metada": 1
       }
     },
     {
       "folder": "27_attire",
       "label": "Attire",
-      "count": 10,
+      "count": 19,
       "baseline": 90,
-      "ratio": 0.111,
+      "ratio": 0.211,
       "band": "anemic",
       "baselineNote": "Welters-Lillethun Fashion Studies religious-vestment / regalia entries",
       "statuses": {
-        "(no status)": 10
+        "(no status)": 19
       }
     },
     {
@@ -411,13 +411,13 @@
     {
       "folder": "31_consciousness",
       "label": "Consciousness",
-      "count": 1,
+      "count": 25,
       "baseline": 90,
-      "ratio": 0.011,
-      "band": "anemic",
+      "ratio": 0.278,
+      "band": "developing",
       "baselineNote": "James Varieties + Forman Innate Capacity + contemplative-studies entries",
       "statuses": {
-        "(no status)": 1
+        "(no status)": 25
       }
     }
   ],
@@ -445,9 +445,9 @@
     {
       "key": "egyptian",
       "label": "Egyptian",
-      "count": 111,
+      "count": 112,
       "baseline": 240,
-      "ratio": 0.463,
+      "ratio": 0.467,
       "band": "developing",
       "perLens": {
         "02_documents": 14,
@@ -457,6 +457,7 @@
         "09_symbols": 2,
         "10_music": 2,
         "11_alphabets": 1,
+        "13_morals": 1,
         "14_rituals": 7,
         "16_mathematics": 1,
         "17_medicine": 1,
@@ -468,9 +469,9 @@
     {
       "key": "abrahamic",
       "label": "Abrahamic",
-      "count": 893,
+      "count": 907,
       "baseline": 700,
-      "ratio": 1.276,
+      "ratio": 1.296,
       "band": "rich",
       "perLens": {
         "02_documents": 198,
@@ -481,9 +482,9 @@
         "10_music": 21,
         "11_alphabets": 12,
         "12_alchemy": 3,
-        "13_morals": 5,
+        "13_morals": 10,
         "14_rituals": 31,
-        "15_philosophy": 7,
+        "15_philosophy": 9,
         "16_mathematics": 3,
         "17_medicine": 4,
         "20_sacred_architecture": 16,
@@ -491,15 +492,16 @@
         "22_practices": 14,
         "23_material_culture": 13,
         "26_calendars": 8,
-        "27_attire": 6
+        "27_attire": 11,
+        "31_consciousness": 2
       }
     },
     {
       "key": "greco-roman",
       "label": "Greco-Roman",
-      "count": 314,
+      "count": 318,
       "baseline": 380,
-      "ratio": 0.826,
+      "ratio": 0.837,
       "band": "rich",
       "perLens": {
         "02_documents": 41,
@@ -509,20 +511,21 @@
         "10_music": 23,
         "11_alphabets": 3,
         "12_alchemy": 25,
-        "13_morals": 4,
+        "13_morals": 6,
         "14_rituals": 6,
-        "15_philosophy": 5,
+        "15_philosophy": 6,
         "16_mathematics": 7,
         "17_medicine": 3,
-        "20_sacred_architecture": 10
+        "20_sacred_architecture": 10,
+        "25_divination": 1
       }
     },
     {
       "key": "iranian",
       "label": "Iranian / Zoroastrian",
-      "count": 53,
+      "count": 56,
       "baseline": 180,
-      "ratio": 0.294,
+      "ratio": 0.311,
       "band": "developing",
       "perLens": {
         "02_documents": 7,
@@ -531,18 +534,20 @@
         "09_symbols": 1,
         "10_music": 1,
         "11_alphabets": 1,
-        "13_morals": 1,
+        "13_morals": 2,
         "14_rituals": 3,
         "21_theology": 7,
-        "22_practices": 2
+        "22_practices": 2,
+        "26_calendars": 1,
+        "27_attire": 1
       }
     },
     {
       "key": "indic",
       "label": "Indic (Hindu / Jain / Sikh)",
-      "count": 218,
+      "count": 229,
       "baseline": 520,
-      "ratio": 0.419,
+      "ratio": 0.44,
       "band": "developing",
       "perLens": {
         "02_documents": 36,
@@ -551,25 +556,27 @@
         "10_music": 14,
         "11_alphabets": 2,
         "12_alchemy": 1,
-        "13_morals": 4,
+        "13_morals": 6,
         "14_rituals": 14,
-        "15_philosophy": 2,
+        "15_philosophy": 8,
         "16_mathematics": 4,
         "17_medicine": 2,
         "20_sacred_architecture": 6,
         "21_theology": 7,
         "22_practices": 8,
         "23_material_culture": 4,
-        "26_calendars": 3,
-        "27_attire": 2
+        "25_divination": 1,
+        "26_calendars": 2,
+        "27_attire": 3,
+        "31_consciousness": 2
       }
     },
     {
       "key": "buddhist",
       "label": "Buddhist",
-      "count": 140,
+      "count": 146,
       "baseline": 380,
-      "ratio": 0.368,
+      "ratio": 0.384,
       "band": "developing",
       "perLens": {
         "02_documents": 19,
@@ -577,7 +584,7 @@
         "04_persons": 36,
         "10_music": 4,
         "11_alphabets": 1,
-        "13_morals": 2,
+        "13_morals": 3,
         "14_rituals": 6,
         "15_philosophy": 2,
         "17_medicine": 2,
@@ -586,15 +593,16 @@
         "22_practices": 6,
         "23_material_culture": 7,
         "26_calendars": 2,
-        "27_attire": 1
+        "27_attire": 1,
+        "31_consciousness": 5
       }
     },
     {
       "key": "east-asian",
       "label": "East Asian (Daoist / Confucian / folk)",
-      "count": 122,
+      "count": 130,
       "baseline": 320,
-      "ratio": 0.381,
+      "ratio": 0.406,
       "band": "developing",
       "perLens": {
         "02_documents": 27,
@@ -603,23 +611,24 @@
         "10_music": 8,
         "11_alphabets": 1,
         "12_alchemy": 1,
-        "13_morals": 4,
+        "13_morals": 6,
         "14_rituals": 5,
-        "15_philosophy": 4,
+        "15_philosophy": 6,
         "16_mathematics": 2,
         "17_medicine": 2,
         "20_sacred_architecture": 5,
         "22_practices": 2,
-        "25_divination": 1,
-        "26_calendars": 1
+        "25_divination": 3,
+        "26_calendars": 2,
+        "27_attire": 1
       }
     },
     {
       "key": "north-european",
       "label": "Norse / Celtic / Slavic / Baltic",
-      "count": 87,
+      "count": 88,
       "baseline": 220,
-      "ratio": 0.395,
+      "ratio": 0.4,
       "band": "developing",
       "perLens": {
         "02_documents": 3,
@@ -627,33 +636,35 @@
         "04_persons": 2,
         "10_music": 5,
         "11_alphabets": 2,
-        "14_rituals": 8
+        "14_rituals": 8,
+        "26_calendars": 1
       }
     },
     {
       "key": "african",
       "label": "African (Yoruba / Bantu / Akan / Nilotic etc.)",
-      "count": 63,
+      "count": 65,
       "baseline": 260,
-      "ratio": 0.242,
-      "band": "anemic",
+      "ratio": 0.25,
+      "band": "developing",
       "perLens": {
         "02_documents": 2,
         "03_deities": 41,
         "04_persons": 1,
         "10_music": 8,
+        "13_morals": 1,
         "14_rituals": 6,
         "17_medicine": 2,
         "21_theology": 2,
-        "25_divination": 1
+        "25_divination": 2
       }
     },
     {
       "key": "mesoamerican",
       "label": "Mesoamerican",
-      "count": 52,
+      "count": 54,
       "baseline": 180,
-      "ratio": 0.289,
+      "ratio": 0.3,
       "band": "developing",
       "perLens": {
         "02_documents": 5,
@@ -666,7 +677,8 @@
         "17_medicine": 1,
         "19_astronomy": 1,
         "20_sacred_architecture": 5,
-        "26_calendars": 2
+        "25_divination": 1,
+        "26_calendars": 3
       }
     },
     {
@@ -706,19 +718,22 @@
     {
       "key": "modern-syncretic",
       "label": "Modern / syncretic / esoteric",
-      "count": 118,
+      "count": 125,
       "baseline": 240,
-      "ratio": 0.492,
+      "ratio": 0.521,
       "band": "developing",
       "perLens": {
         "02_documents": 35,
         "03_deities": 3,
-        "04_persons": 63,
+        "04_persons": 64,
         "10_music": 6,
         "12_alchemy": 1,
         "13_morals": 1,
         "14_rituals": 7,
+        "15_philosophy": 4,
         "17_medicine": 1,
+        "26_calendars": 1,
+        "27_attire": 1,
         "31_consciousness": 1
       }
     }
