@@ -3,7 +3,7 @@ type: deity
 id: "kaang-san"
 name: "Kaang"
 aka: ["/Kaang", "Kaggen", "ǂGãoǃna", "Cagn (older spelling)", "the Mantis"]
-tradition: "[tradition-khoisan-san]"
+tradition: "[[tradition-khoisan-san]]"
 region: "Southern Africa — San (Bushman) territories: Kalahari, southern Namibia, northern South Africa, Botswana"
 period-active-earliest: -2000
 period-active-latest:

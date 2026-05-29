@@ -3,7 +3,7 @@ type: deity
 id: "ala-igbo"
 name: "Ala"
 aka: ["Ani", "Ana", "Ale", "Ala the Earth", "Ala-Eke"]
-tradition: "[tradition-igbo-religion]"
+tradition: "[[tradition-igbo-religion]]"
 region: "Southeastern Nigeria (Igboland)"
 period-active-earliest: -500
 period-active-latest:

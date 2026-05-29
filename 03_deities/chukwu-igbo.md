@@ -3,7 +3,7 @@ type: deity
 id: "chukwu-igbo"
 name: "Chukwu"
 aka: ["Chineke", "Chukwu Okike", "Chi-na-Eke", "Olisaebuluwa", "the Great Chi"]
-tradition: "[tradition-igbo-religion]"
+tradition: "[[tradition-igbo-religion]]"
 region: "Southeastern Nigeria (Igboland); Igbo diaspora"
 period-active-earliest: -500
 period-active-latest:
@@ -31,7 +31,7 @@ syncretic-edges:
     source: "Achebe 1958 *Things Fall Apart* (literary); Isichei 1973 *The Ibo People and the Europeans*"
     source-tier: T1
     notes: "Chukwu / Chineke was used to translate the Christian God in 19th-c Igbo missionary work; the dual identification persists in contemporary Igbo Christianity."
-  - target: "[tradition-igbo-religion]"
+  - target: "[[tradition-igbo-religion]]"
     type: "instantiation"
     source: "Metuh 1981 *God and Man in African Religion*"
     source-tier: T1
