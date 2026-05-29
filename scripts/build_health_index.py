@@ -178,7 +178,8 @@ FAMILIES = [
                      "jehovah", "watch tower", "bible student",                   # +RIGOR3 JW movement
                      "herodian", "roman-judean",                                  # +RIGOR3 Herodian Judea
                      "tradition-baha",                                            # +RIGOR3 Bahá'í wikilink variant
-                     "septuagint", "lxx", "bible", "biblical"],                   # +RIGOR4 LXX / Bible alone
+                     "septuagint", "lxx", "bible", "biblical",                   # +RIGOR4 LXX / Bible alone
+                     "mevlevi", "tradition-mevlevi"],                             # +RIGOR5 Mevlevi Sufi order (Rumi)
     },
     {
         "key": "greco-roman", "label": "Greco-Roman", "baseline": 380,
