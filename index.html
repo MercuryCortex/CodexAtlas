@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=EB+Garamond:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&family=Noto+Serif+Hebrew:wght@400;700&family=Noto+Sans+Egyptian+Hieroglyphs&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="_assets/vendor/maplibre/maplibre-gl.css?v=5.24.0" />
-<link rel="stylesheet" href="src/styles/app.css?v=20260529-scripture-v2-canonical-purge-rainbow" />
+<link rel="stylesheet" href="src/styles/app.css?v=20260529-legacy-killswitch-purge-mapthumb-zoommeter" />
 </head>
 <body class="nav-hidden detail-collapsed">
 <!-- ════════════════════════════════════════════════════════════════
@@ -122,25 +122,37 @@
        Rendered by src/js/views/scripture-reader.js into this pane.
        Hidden by setView() on every view transition. -->
   <div id="scripture-reader-pane" style="display:none"></div>
+  <!-- 2026-05-29 — V01 legacy chrome NEUTRALIZED per user protocol
+       "old shit should be GONE ERASED, not hidden via per-view CSS".
+       .map-thumb (world map mini bottom-right) and #zoom-meter
+       (top-right zoom +/-/% buttons) were V1 prototype shell elements.
+       V2 views built their own zoom + map primitives in canonical
+       chrome (.forge-bottombar zoom-gizmo, .scripture-bottombar 100%
+       button, etc). The legacy elements are FORCED-HIDDEN at the CSS
+       layer here with no per-view escape hatch (display:none from
+       `legacy-killswitch` ruleset, !important). Their EMPTY <div>
+       stubs survive ONLY to anchor 35 legacy JS getElementById calls
+       in src/js/app.js that would otherwise silent-throw on null per
+       `feedback_dom_addEventListener_null_throws_silently_2026-05-28`.
+       Those 35 JS callsites are queued for deletion in a follow-up
+       refactor; until then this is the safest scrub. -->
+  <div id="map-thumb" class="legacy-killswitch"></div>
+  <div id="map-thumb-svg" class="legacy-killswitch"></div>
+  <div id="map-thumb-paths" class="legacy-killswitch"></div>
+  <div id="map-thumb-marker" class="legacy-killswitch"></div>
+  <div id="map-thumb-label" class="legacy-killswitch"></div>
+  <div id="zoom-meter" class="legacy-killswitch">
+    <div id="zm-out"></div>
+    <div id="zm-reset"></div>
+    <div id="zm-in"></div>
+    <div id="zm-readout"></div>
+  </div>
+  <!-- Kept (still V2-used): aside.detail (Forge side-panel),
+       .view-header (Forge subtitle), .legend (D3 pantheon),
+       .tier-legend (Forge tier overlay), #tooltip (shared). -->
   <div class="legend" id="legend" style="display:none"></div>
-  <!-- Tier-overlay distribution legend — shown only when body.tier-overlay-on. Populated by JS on toggle. -->
   <div class="tier-legend" id="tier-legend" aria-live="polite"></div>
-  <div class="map-thumb" id="map-thumb" style="display:none">
-    <svg viewBox="0 0 360 180" preserveAspectRatio="xMidYMid meet" id="map-thumb-svg">
-      <!-- Equirectangular world: lon ∈ [-180,180] maps x ∈ [0,360]; lat ∈ [-90,90] maps y ∈ [180,0] -->
-      <rect x="0" y="0" width="360" height="180" fill="rgba(13,17,25,0.55)"/>
-      <g id="map-thumb-paths" stroke="rgba(212,165,90,0.30)" stroke-width="0.5" fill="rgba(212,165,90,0.06)"></g>
-      <g id="map-thumb-marker"></g>
-    </svg>
-    <div class="map-thumb-label" id="map-thumb-label"></div>
-  </div>
   <div class="tooltip" id="tooltip"></div>
-  <div class="zoom-meter" id="zoom-meter" style="display:none" title="Current zoom · click 1× to recenter">
-    <button class="zm-step" id="zm-out" aria-label="zoom out">−</button>
-    <button class="zm-baseline" id="zm-reset" title="recenter / reset to 100%">100%</button>
-    <button class="zm-step" id="zm-in" aria-label="zoom in">+</button>
-    <span class="zm-readout" id="zm-readout">1.00×</span>
-  </div>
 </main>
 
 <aside class="detail" id="detail">

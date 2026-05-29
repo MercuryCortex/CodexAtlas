@@ -10524,6 +10524,30 @@ body.view-starmap .tier-legend,
 body.view-starmap .map-thumb { display: none !important; }
 
 /* ════════════════════════════════════════════════════════════════
+   LEGACY KILLSWITCH — 2026-05-29
+   ════════════════════════════════════════════════════════════════
+   .legacy-killswitch DOM stubs in index.html (id="map-thumb" / id=
+   "zoom-meter" / their inner getElementById anchors) are permanent-
+   invisible. No JS, no view, no body-class can re-show them. They
+   exist ONLY so the 35 legacy JS callsites that reach for these IDs
+   don't silent-throw on null per the documented
+   feedback_dom_addEventListener_null_throws_silently_2026-05-28 trap.
+   The 35 callsites are queued for surgical deletion in a follow-up
+   refactor.
+   ════════════════════════════════════════════════════════════════ */
+.legacy-killswitch,
+.legacy-killswitch * {
+  display: none !important;
+  visibility: hidden !important;
+  width: 0 !important;
+  height: 0 !important;
+  pointer-events: none !important;
+  position: absolute !important;
+  left: -99999px !important;
+  top: -99999px !important;
+}
+
+/* ════════════════════════════════════════════════════════════════
    SCRIPTURE RADIAL — V2 CANONICAL OVERRIDES (2026-05-29)
    ════════════════════════════════════════════════════════════════
    The legacy .scripture-* rules above (~lines 5601-5680) inherit V1
