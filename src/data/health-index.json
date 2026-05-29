@@ -1,0 +1,825 @@
+{
+  "generatedAt": "2026-05-29T05:45:21Z",
+  "vault": {
+    "totalNodes": 4676,
+    "lensCount": 30,
+    "familyCount": 14,
+    "unmatchedTradNodes": 196
+  },
+  "lenses": [
+    {
+      "folder": "01_timeline",
+      "label": "Timeline (index)",
+      "count": 1,
+      "baseline": 0,
+      "ratio": null,
+      "band": "index",
+      "baselineNote": "Master index, not counted",
+      "statuses": {
+        "(no status)": 1
+      }
+    },
+    {
+      "folder": "02_documents",
+      "label": "Documents",
+      "count": 520,
+      "baseline": 550,
+      "ratio": 0.945,
+      "band": "rich",
+      "baselineNote": "EoR — scripture + commentary entries across 15 vols (~16% of corpus)",
+      "statuses": {
+        "stub": 100,
+        "full": 99,
+        "metadata": 294,
+        "(no status)": 23,
+        "partial": 4
+      }
+    },
+    {
+      "folder": "03_deities",
+      "label": "Deities",
+      "count": 684,
+      "baseline": 900,
+      "ratio": 0.76,
+      "band": "rich",
+      "baselineNote": "EoR deity/numina entries + Leeming Oxford Companion to World Mythology (~3,000 entries)",
+      "statuses": {
+        "metadata": 584,
+        "stub": 24,
+        "(no status)": 42,
+        "full": 27,
+        "partial": 7
+      }
+    },
+    {
+      "folder": "04_persons",
+      "label": "Persons",
+      "count": 1207,
+      "baseline": 750,
+      "ratio": 1.609,
+      "band": "over-baseline",
+      "baselineNote": "EoR religious figures + Bowker Oxford Dict. World Religions biographical entries",
+      "statuses": {
+        "metadata": 473,
+        "stub": 681,
+        "(no status)": 16,
+        "full": 37
+      }
+    },
+    {
+      "folder": "05_events",
+      "label": "Events",
+      "count": 324,
+      "baseline": 300,
+      "ratio": 1.08,
+      "band": "rich",
+      "baselineNote": "EoR + Oxford Dict. of the Christian Church + Encyc. Iranica historical-event entries",
+      "statuses": {
+        "stub": 149,
+        "metadata": 172,
+        "full": 2,
+        "(no status)": 1
+      }
+    },
+    {
+      "folder": "06_themes",
+      "label": "Themes / motifs",
+      "count": 501,
+      "baseline": 350,
+      "ratio": 1.431,
+      "band": "rich",
+      "baselineNote": "EoR concept/topic entries (Bynum 2011 + Eliade themes vocabulary)",
+      "statuses": {
+        "stub": 313,
+        "metadata": 155,
+        "full": 27,
+        "(no status)": 3,
+        "partial": 2,
+        "redirect": 1
+      }
+    },
+    {
+      "folder": "07_traditions",
+      "label": "Traditions",
+      "count": 316,
+      "baseline": 280,
+      "ratio": 1.129,
+      "band": "rich",
+      "baselineNote": "EoR + Bowker — named living + extinct religious traditions and schools",
+      "statuses": {
+        "stub": 160,
+        "metadata": 137,
+        "full": 13,
+        "(no status)": 5,
+        "partial": 1
+      }
+    },
+    {
+      "folder": "08_places",
+      "label": "Places",
+      "count": 111,
+      "baseline": 220,
+      "ratio": 0.505,
+      "band": "developing",
+      "baselineNote": "EoR sacred-geography entries + Stewart Holy Places of the World",
+      "statuses": {
+        "stub": 110,
+        "metadata": 1
+      }
+    },
+    {
+      "folder": "09_symbols",
+      "label": "Symbols",
+      "count": 280,
+      "baseline": 200,
+      "ratio": 1.4,
+      "band": "rich",
+      "baselineNote": "Cooper Encyclopedia of Symbols + Chevalier-Gheerbrant Dict. of Symbols",
+      "statuses": {
+        "metadata": 86,
+        "(no status)": 179,
+        "full": 13,
+        "stub": 2
+      }
+    },
+    {
+      "folder": "10_music",
+      "label": "Music",
+      "count": 108,
+      "baseline": 120,
+      "ratio": 0.9,
+      "band": "rich",
+      "baselineNote": "Grove Dict. of Music — religious-music entries + Nettl Excursions",
+      "statuses": {
+        "full": 107,
+        "partial": 1
+      }
+    },
+    {
+      "folder": "11_alphabets",
+      "label": "Alphabets",
+      "count": 41,
+      "baseline": 80,
+      "ratio": 0.512,
+      "band": "developing",
+      "baselineNote": "Daniels-Bright World's Writing Systems + sacred-script entries",
+      "statuses": {
+        "full": 40,
+        "stub": 1
+      }
+    },
+    {
+      "folder": "12_alchemy",
+      "label": "Alchemy",
+      "count": 35,
+      "baseline": 140,
+      "ratio": 0.25,
+      "band": "developing",
+      "baselineNote": "Greer 2003 Encyc. of Hermetic & Occult Traditions — alchemy section",
+      "statuses": {
+        "full": 31,
+        "stub": 4
+      }
+    },
+    {
+      "folder": "13_morals",
+      "label": "Morals / ethics",
+      "count": 21,
+      "baseline": 180,
+      "ratio": 0.117,
+      "band": "anemic",
+      "baselineNote": "Singer Companion to Ethics + EoR ethical-systems entries",
+      "statuses": {
+        "full": 21
+      }
+    },
+    {
+      "folder": "14_rituals",
+      "label": "Rituals",
+      "count": 106,
+      "baseline": 260,
+      "ratio": 0.408,
+      "band": "developing",
+      "baselineNote": "EoR ritual + Smith Imagining Religion + Bell Ritual: Perspectives",
+      "statuses": {
+        "full": 105,
+        "stub": 1
+      }
+    },
+    {
+      "folder": "15_philosophy",
+      "label": "Philosophy",
+      "count": 20,
+      "baseline": 300,
+      "ratio": 0.067,
+      "band": "anemic",
+      "baselineNote": "Religious-philosophy slice of Stanford Encyc. Philosophy + Routledge Encyc. Philosophy",
+      "statuses": {
+        "full": 9,
+        "(no status)": 11
+      }
+    },
+    {
+      "folder": "16_mathematics",
+      "label": "Mathematics",
+      "count": 20,
+      "baseline": 60,
+      "ratio": 0.333,
+      "band": "developing",
+      "baselineNote": "Sacred-mathematics niche — Schimmel Mystery of Numbers + Lawlor Sacred Geometry",
+      "statuses": {
+        "(no status)": 12,
+        "full": 8
+      }
+    },
+    {
+      "folder": "17_medicine",
+      "label": "Medicine",
+      "count": 20,
+      "baseline": 90,
+      "ratio": 0.222,
+      "band": "anemic",
+      "baselineNote": "Porter Cambridge Illustrated Hist. of Medicine — religious/traditional-medicine slice",
+      "statuses": {
+        "full": 8,
+        "(no status)": 12
+      }
+    },
+    {
+      "folder": "18_languages",
+      "label": "Languages",
+      "count": 18,
+      "baseline": 120,
+      "ratio": 0.15,
+      "band": "anemic",
+      "baselineNote": "Brown Encyc. of Lang. & Linguistics — sacred / liturgical language entries",
+      "statuses": {
+        "(no status)": 8,
+        "metadata": 10
+      }
+    },
+    {
+      "folder": "19_astronomy",
+      "label": "Astronomy",
+      "count": 11,
+      "baseline": 80,
+      "ratio": 0.138,
+      "band": "anemic",
+      "baselineNote": "Walker Astronomy Before the Telescope + cultural-astronomy entries",
+      "statuses": {
+        "metadata": 10,
+        "(no status)": 1
+      }
+    },
+    {
+      "folder": "20_sacred_architecture",
+      "label": "Sacred architecture",
+      "count": 125,
+      "baseline": 220,
+      "ratio": 0.568,
+      "band": "developing",
+      "baselineNote": "Davies Penguin Dict. Religious Architecture + Kostof History of Architecture sacred slice",
+      "statuses": {
+        "(no status)": 45,
+        "metadata": 25,
+        "stub": 54,
+        "m": 1
+      }
+    },
+    {
+      "folder": "21_theology",
+      "label": "Theology / doctrine",
+      "count": 23,
+      "baseline": 240,
+      "ratio": 0.096,
+      "band": "anemic",
+      "baselineNote": "EoR doctrine/dogma entries across all traditions",
+      "statuses": {
+        "stub": 14,
+        "(no status)": 8,
+        "metadata": 1
+      }
+    },
+    {
+      "folder": "22_practices",
+      "label": "Practices",
+      "count": 20,
+      "baseline": 220,
+      "ratio": 0.091,
+      "band": "anemic",
+      "baselineNote": "EoR practice entries + Csordas Embodiment & Experience",
+      "statuses": {
+        "metadata": 20
+      }
+    },
+    {
+      "folder": "23_material_culture",
+      "label": "Material culture",
+      "count": 15,
+      "baseline": 180,
+      "ratio": 0.083,
+      "band": "anemic",
+      "baselineNote": "Morgan Religion & Material Culture + relic / instrument / regalia entries",
+      "statuses": {
+        "stub": 11,
+        "full": 4
+      }
+    },
+    {
+      "folder": "24_pharmacology",
+      "label": "Pharmacology",
+      "count": 16,
+      "baseline": 70,
+      "ratio": 0.229,
+      "band": "anemic",
+      "baselineNote": "Schultes-Hofmann Plants of the Gods + sacred-entheogen / pharmacy entries",
+      "statuses": {
+        "(no status)": 12,
+        "metadata": 1,
+        "stub": 3
+      }
+    },
+    {
+      "folder": "25_divination",
+      "label": "Divination",
+      "count": 22,
+      "baseline": 110,
+      "ratio": 0.2,
+      "band": "anemic",
+      "baselineNote": "Greer 2003 + Loewe-Blacker Oracles & Divination cross-cultural entries",
+      "statuses": {
+        "metadata": 20,
+        "(no status)": 2
+      }
+    },
+    {
+      "folder": "26_calendars",
+      "label": "Calendars",
+      "count": 18,
+      "baseline": 70,
+      "ratio": 0.257,
+      "band": "developing",
+      "baselineNote": "Richards Mapping Time + Steel Marking Time religious-calendar entries",
+      "statuses": {
+        "(no status)": 5,
+        "metadata": 12,
+        "metada": 1
+      }
+    },
+    {
+      "folder": "27_attire",
+      "label": "Attire",
+      "count": 10,
+      "baseline": 90,
+      "ratio": 0.111,
+      "band": "anemic",
+      "baselineNote": "Welters-Lillethun Fashion Studies religious-vestment / regalia entries",
+      "statuses": {
+        "(no status)": 10
+      }
+    },
+    {
+      "folder": "28_exchange_networks",
+      "label": "Exchange networks",
+      "count": 57,
+      "baseline": 80,
+      "ratio": 0.713,
+      "band": "rich",
+      "baselineNote": "Bentley Old World Encounters + Beckwith Empires of the Silk Road — religious-transmission routes",
+      "statuses": {
+        "metadata": 10,
+        "stub": 47
+      }
+    },
+    {
+      "folder": "29_technology",
+      "label": "Technology",
+      "count": 25,
+      "baseline": 70,
+      "ratio": 0.357,
+      "band": "developing",
+      "baselineNote": "Pacey Technology in World Civilization — religious-tech / sacred-craft entries",
+      "statuses": {
+        "stub": 15,
+        "(no status)": 10
+      }
+    },
+    {
+      "folder": "31_consciousness",
+      "label": "Consciousness",
+      "count": 1,
+      "baseline": 90,
+      "ratio": 0.011,
+      "band": "anemic",
+      "baselineNote": "James Varieties + Forman Innate Capacity + contemplative-studies entries",
+      "statuses": {
+        "(no status)": 1
+      }
+    }
+  ],
+  "families": [
+    {
+      "key": "mesopotamian",
+      "label": "Mesopotamian",
+      "count": 132,
+      "baseline": 280,
+      "ratio": 0.471,
+      "band": "developing",
+      "perLens": {
+        "02_documents": 23,
+        "03_deities": 68,
+        "04_persons": 21,
+        "05_events": 1,
+        "10_music": 3,
+        "11_alphabets": 3,
+        "14_rituals": 3,
+        "16_mathematics": 2,
+        "17_medicine": 1,
+        "20_sacred_architecture": 7
+      }
+    },
+    {
+      "key": "egyptian",
+      "label": "Egyptian",
+      "count": 98,
+      "baseline": 240,
+      "ratio": 0.408,
+      "band": "developing",
+      "perLens": {
+        "02_documents": 14,
+        "03_deities": 42,
+        "04_persons": 23,
+        "06_themes": 2,
+        "10_music": 2,
+        "11_alphabets": 1,
+        "14_rituals": 6,
+        "16_mathematics": 1,
+        "17_medicine": 1,
+        "20_sacred_architecture": 3,
+        "26_calendars": 2,
+        "27_attire": 1
+      }
+    },
+    {
+      "key": "greco-roman",
+      "label": "Greco-Roman",
+      "count": 333,
+      "baseline": 380,
+      "ratio": 0.876,
+      "band": "rich",
+      "perLens": {
+        "02_documents": 67,
+        "03_deities": 94,
+        "04_persons": 95,
+        "09_symbols": 1,
+        "10_music": 23,
+        "11_alphabets": 2,
+        "12_alchemy": 25,
+        "13_morals": 4,
+        "14_rituals": 3,
+        "15_philosophy": 5,
+        "16_mathematics": 7,
+        "17_medicine": 3,
+        "20_sacred_architecture": 4
+      }
+    },
+    {
+      "key": "abrahamic",
+      "label": "Abrahamic",
+      "count": 763,
+      "baseline": 700,
+      "ratio": 1.09,
+      "band": "rich",
+      "perLens": {
+        "02_documents": 163,
+        "03_deities": 112,
+        "04_persons": 355,
+        "05_events": 2,
+        "09_symbols": 2,
+        "10_music": 21,
+        "11_alphabets": 12,
+        "12_alchemy": 3,
+        "13_morals": 5,
+        "14_rituals": 31,
+        "15_philosophy": 7,
+        "16_mathematics": 3,
+        "17_medicine": 4,
+        "20_sacred_architecture": 14,
+        "21_theology": 7,
+        "22_practices": 6,
+        "23_material_culture": 3,
+        "26_calendars": 7,
+        "27_attire": 6
+      }
+    },
+    {
+      "key": "iranian",
+      "label": "Iranian / Zoroastrian",
+      "count": 35,
+      "baseline": 180,
+      "ratio": 0.194,
+      "band": "anemic",
+      "perLens": {
+        "02_documents": 7,
+        "03_deities": 18,
+        "04_persons": 4,
+        "10_music": 1,
+        "11_alphabets": 1,
+        "13_morals": 1,
+        "14_rituals": 3
+      }
+    },
+    {
+      "key": "indic",
+      "label": "Indic (Hindu / Jain / Sikh)",
+      "count": 204,
+      "baseline": 520,
+      "ratio": 0.392,
+      "band": "developing",
+      "perLens": {
+        "02_documents": 36,
+        "03_deities": 59,
+        "04_persons": 49,
+        "10_music": 14,
+        "11_alphabets": 2,
+        "12_alchemy": 1,
+        "13_morals": 4,
+        "14_rituals": 13,
+        "15_philosophy": 2,
+        "16_mathematics": 4,
+        "17_medicine": 2,
+        "20_sacred_architecture": 6,
+        "21_theology": 3,
+        "22_practices": 4,
+        "26_calendars": 3,
+        "27_attire": 2
+      }
+    },
+    {
+      "key": "buddhist",
+      "label": "Buddhist",
+      "count": 127,
+      "baseline": 380,
+      "ratio": 0.334,
+      "band": "developing",
+      "perLens": {
+        "02_documents": 18,
+        "03_deities": 35,
+        "04_persons": 40,
+        "10_music": 4,
+        "11_alphabets": 1,
+        "13_morals": 2,
+        "14_rituals": 5,
+        "15_philosophy": 2,
+        "17_medicine": 2,
+        "20_sacred_architecture": 10,
+        "22_practices": 4,
+        "23_material_culture": 1,
+        "26_calendars": 2,
+        "27_attire": 1
+      }
+    },
+    {
+      "key": "east-asian",
+      "label": "East Asian (Daoist / Confucian / folk)",
+      "count": 97,
+      "baseline": 320,
+      "ratio": 0.303,
+      "band": "developing",
+      "perLens": {
+        "02_documents": 17,
+        "03_deities": 33,
+        "04_persons": 15,
+        "10_music": 8,
+        "11_alphabets": 1,
+        "12_alchemy": 1,
+        "13_morals": 3,
+        "14_rituals": 5,
+        "15_philosophy": 4,
+        "16_mathematics": 2,
+        "17_medicine": 1,
+        "20_sacred_architecture": 5,
+        "22_practices": 2
+      }
+    },
+    {
+      "key": "north-european",
+      "label": "Norse / Celtic / Slavic / Baltic",
+      "count": 81,
+      "baseline": 220,
+      "ratio": 0.368,
+      "band": "developing",
+      "perLens": {
+        "02_documents": 3,
+        "03_deities": 65,
+        "04_persons": 1,
+        "10_music": 2,
+        "11_alphabets": 2,
+        "14_rituals": 8
+      }
+    },
+    {
+      "key": "african",
+      "label": "African (Yoruba / Bantu / Akan / Nilotic etc.)",
+      "count": 38,
+      "baseline": 260,
+      "ratio": 0.146,
+      "band": "anemic",
+      "perLens": {
+        "02_documents": 2,
+        "03_deities": 23,
+        "04_persons": 2,
+        "10_music": 4,
+        "14_rituals": 6,
+        "25_divination": 1
+      }
+    },
+    {
+      "key": "mesoamerican",
+      "label": "Mesoamerican",
+      "count": 49,
+      "baseline": 180,
+      "ratio": 0.272,
+      "band": "developing",
+      "perLens": {
+        "02_documents": 4,
+        "03_deities": 30,
+        "04_persons": 1,
+        "10_music": 3,
+        "11_alphabets": 1,
+        "14_rituals": 1,
+        "16_mathematics": 1,
+        "17_medicine": 1,
+        "19_astronomy": 1,
+        "20_sacred_architecture": 4,
+        "26_calendars": 2
+      }
+    },
+    {
+      "key": "andean-amazonian",
+      "label": "Andean / Amazonian",
+      "count": 23,
+      "baseline": 120,
+      "ratio": 0.192,
+      "band": "anemic",
+      "perLens": {
+        "02_documents": 1,
+        "03_deities": 15,
+        "10_music": 2,
+        "14_rituals": 1,
+        "20_sacred_architecture": 4
+      }
+    },
+    {
+      "key": "indigenous-other",
+      "label": "Indigenous (N.American / Oceanic / Australian / Arctic)",
+      "count": 70,
+      "baseline": 200,
+      "ratio": 0.35,
+      "band": "developing",
+      "perLens": {
+        "02_documents": 7,
+        "03_deities": 42,
+        "04_persons": 2,
+        "05_events": 1,
+        "10_music": 8,
+        "14_rituals": 8,
+        "20_sacred_architecture": 1,
+        "22_practices": 1
+      }
+    },
+    {
+      "key": "modern-syncretic",
+      "label": "Modern / syncretic / esoteric",
+      "count": 69,
+      "baseline": 240,
+      "ratio": 0.287,
+      "band": "developing",
+      "perLens": {
+        "02_documents": 22,
+        "04_persons": 35,
+        "10_music": 5,
+        "12_alchemy": 1,
+        "14_rituals": 6
+      }
+    }
+  ],
+  "methodology": {
+    "baselineSource": "Encyclopedia of Religion (Lindsay Jones, ed.; Macmillan, 2nd ed. 2005; 15 vols, ~3,300 articles) — the standard modern tertiary reference for cross-tradition religious studies. Per-lens supplements named in baselineNote where EoR under-covers (esoteric / divination / pharmacology / material-culture / etc.). Round-number ballpark — encodes the SHAPE a mature cross-tradition vault should have, not a hard target. Precision past ~25 entries is meaningless at this estimation tier.",
+    "bands": {
+      "anemic": "ratio < 25% — lens is starved; ingest needed",
+      "developing": "ratio 25% - 60% — coverage forming, gaps remain",
+      "rich": "ratio 60% - 150% — within scholarly-reference range",
+      "over-baseline": "ratio > 150% — beyond EoR coverage (Atlas-original territory)"
+    },
+    "familyClassification": "Nodes are rolled up to families by substring-matching their `tradition:` YAML field against ordered family matchers. The vault's `tradition:` field has free-form naming drift (1,123 distinct values observed); a curated matcher list is more honest than pretending the field is clean. Nodes whose tradition doesn't match any family are counted in `vault.unmatchedTradNodes`.",
+    "caveats": [
+      "Family baselines are pooled across lenses (sum of relevant deity + person + tradition + theme + ritual + practice entries an EoR-class reference would have for that family).",
+      "A single lens contributes to MANY families (e.g. 03_deities rolls up to 9+ family rows). `perLens` in each family row shows the lens-folder breakdown.",
+      "The Timeline lens (01_timeline) is excluded — it's an index, not a content folder.",
+      "Stub-status nodes count toward the total. The `statuses` block per lens shows the stub/metadata/full breakdown."
+    ]
+  },
+  "unmatchedTraditionsTop": [
+    {
+      "tradition": "chinese",
+      "count": 7
+    },
+    {
+      "tradition": "cross-tradition",
+      "count": 7
+    },
+    {
+      "tradition": "[[tradition-roman-religion]]",
+      "count": 6
+    },
+    {
+      "tradition": "hittite (with hattic substrate)",
+      "count": 5
+    },
+    {
+      "tradition": "roman state religion (pagan)",
+      "count": 5
+    },
+    {
+      "tradition": "tradition-african-traditional",
+      "count": 5
+    },
+    {
+      "tradition": "bahá",
+      "count": 4
+    },
+    {
+      "tradition": "jungian depth psychology",
+      "count": 4
+    },
+    {
+      "tradition": "roman aristocratic literary (pagan)",
+      "count": 4
+    },
+    {
+      "tradition": "chinese / zhou-classical",
+      "count": 4
+    },
+    {
+      "tradition": "hurrian–hittite",
+      "count": 4
+    },
+    {
+      "tradition": "tradition-roman-religion",
+      "count": 4
+    },
+    {
+      "tradition": "[[tradition-donghak]]",
+      "count": 3
+    },
+    {
+      "tradition": "k",
+      "count": 3
+    },
+    {
+      "tradition": "blakean mythology",
+      "count": 3
+    },
+    {
+      "tradition": "lusitanian religion (pre-roman iberian)",
+      "count": 3
+    },
+    {
+      "tradition": "judahite",
+      "count": 3
+    },
+    {
+      "tradition": "roman imperial",
+      "count": 2
+    },
+    {
+      "tradition": "american esoteric / trance prophecy",
+      "count": 2
+    },
+    {
+      "tradition": "late-20th / early-21st-century popular pseudoarchaeology",
+      "count": 2
+    },
+    {
+      "tradition": "american pragmatism / psychology of religion",
+      "count": 2
+    },
+    {
+      "tradition": "anglo-american alchemy / paracelsian-sendivogian",
+      "count": 2
+    },
+    {
+      "tradition": "[[tradition-sebastianism]]",
+      "count": 2
+    },
+    {
+      "tradition": "english medieval-renaissance alchemy",
+      "count": 2
+    },
+    {
+      "tradition": "french enlightenment",
+      "count": 2
+    }
+  ]
+}

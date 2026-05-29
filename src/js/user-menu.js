@@ -49,6 +49,14 @@
         { id: 'legacy',   glyph: '🗄', label: 'V01 prototype',        hint: '(reference · new tab)', action: 'legacy' },
       ],
     },
+    {
+      // Operator-facing tools — visible pre-SaaS per existing
+      // dev-panel.js precedent. Will gate behind auth at SaaS launch.
+      label: 'Dev',
+      items: [
+        { id: 'overview', glyph: '⚙',  label: 'Overview',  hint: '(vault coverage)', action: 'overview' },
+      ],
+    },
   ];
 
   // ── BUILD ────────────────────────────────────────────────────
@@ -145,6 +153,14 @@
         break;
       case 'about':
         alert('Codex Atlas — cross-tradition investigation vault.\n\n4746 nodes · 21,757 edges across every religious tradition that has left a documentary trace. Built ground-up as an investigation tool for spotting the connections between traditions.');
+        break;
+      case 'overview':
+        if (window._devOverview && typeof window._devOverview.open === 'function') {
+          window._devOverview.open();
+        } else {
+          console.warn('user-menu: _devOverview not loaded');
+          alert('Dev Overview module not available — check that src/js/views/dev-overview.js loaded.');
+        }
         break;
       default:
         console.warn('user-menu unknown action', action);
