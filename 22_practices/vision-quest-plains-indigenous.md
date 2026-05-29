@@ -41,7 +41,7 @@ syncretic-edges:
     source: "Bell 1985 *Holy Anorexia*; Bynum 1987 — the vision-quest fast is structurally cognate with the broader cross-tradition fasting cluster (Christian eremitic desert fasts, Muslim Ramadan, Jewish Yom Kippur, Hindu tapas, Jain Paryushan). The Plains form is distinctive in (a) waterless abstention + (b) explicit vision-seeking purpose + (c) initiatory rather than expiatory frame"
     source-tier: T1
     notes: "Cross-tradition parallel-form within the global fasting-cluster; the initiatory-vision frame is comparatively rare"
-  - target: "[peyote-ceremony-native-american-church]"
+  - target: "[[peyote-ceremony-native-american-church]]"
     type: "scholarly-parallel"
     source: "Stewart 1987 *Peyote Religion*; LaBarre 1938 *The Peyote Cult* — both Plains-Indigenous practices aimed at transformative visionary contact + spiritual guidance; vision-quest uses fasting + solitude + endurance as the threshold mechanism, peyote ceremony uses the plant alkaloid + group ritual. The Peyote Road of the Native American Church partially absorbed + reframed the older vision-quest framework after the late-19th c. Peyote Religion's spread northward"
     source-tier: T1
