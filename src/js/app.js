@@ -503,7 +503,7 @@ function setView(name) {
     svg.node().style.display = '';
     if (_atlasPaneEl) _atlasPaneEl.style.display = 'none';
   }
-  document.getElementById('view-controls').innerHTML = '';
+  {const _vc = document.getElementById('view-controls'); if (_vc) _vc.innerHTML = ''; }
   legend.style('display', 'none').html('');
   // Cleanup pass — kill any view-specific panes from the previous view. The pantheon-v2
   // pane needs its sigma instance killed BEFORE the DOM node is removed (otherwise sigma
@@ -586,8 +586,14 @@ function setView(name) {
     if (dt) dt.textContent = '‹';
   }
   const v = VIEWS[name];
-  document.getElementById('view-title').textContent = v.title;
-  document.getElementById('view-subtitle').textContent = v.subtitle;
+  // 2026-05-30 — view-header <h2 id="view-title"> + .subtitle DELETED
+  // from index.html (V01 chrome John never authored in V02 per the
+  // cardinal "nuke at source" rule). Null-guard so V2 setView doesn't
+  // null-deref on the absent elements.
+  const _vt = document.getElementById('view-title');
+  if (_vt) _vt.textContent = v.title;
+  const _vs = document.getElementById('view-subtitle');
+  if (_vs) _vs.textContent = v.subtitle;
   v.render();
 }
 function selectNode(id, opensDetail) {
@@ -1059,7 +1065,7 @@ function renderDetail() {
 function _renderPantheonWebGL() {
   document.getElementById('view-title').textContent = 'Pantheon';
   document.getElementById('view-subtitle').textContent = 'every named deity · radial family wedges · WebGL';
-  document.getElementById('view-controls').innerHTML = '';
+  {const _vc = document.getElementById('view-controls'); if (_vc) _vc.innerHTML = ''; }
   legend.style('display', 'none').html('');
 
   const deities = DATA.nodes.filter(n => n.type === 'deity' && matchesFilter(n));
@@ -1158,7 +1164,7 @@ VIEWS.boards = {
   title: 'Boards',
   subtitle: 'free-form investigation surface — cards, edges, lineages',
   render() {
-    document.getElementById('view-controls').innerHTML = '';
+    {const _vc = document.getElementById('view-controls'); if (_vc) _vc.innerHTML = ''; }
     if (typeof legend !== 'undefined' && legend) legend.style('display', 'none').html('');
     const canvasEl = document.getElementById('canvas');
     const pane = document.createElement('div');
@@ -1368,7 +1374,7 @@ VIEWS.maps = {
   title: 'Map',
   subtitle: 'world atlas — cross-tradition geography (V2 skeleton)',
   render() {
-    document.getElementById('view-controls').innerHTML = '';
+    {const _vc = document.getElementById('view-controls'); if (_vc) _vc.innerHTML = ''; }
     if (typeof legend !== 'undefined' && legend) legend.style('display', 'none').html('');
     const canvasEl = document.getElementById('canvas');
     const pane = document.createElement('div');
@@ -1383,7 +1389,7 @@ VIEWS.starmap = {
   title: 'Star Map',
   subtitle: 'celestial sphere — constellations, decans, planetary spine (V2 skeleton)',
   render() {
-    document.getElementById('view-controls').innerHTML = '';
+    {const _vc = document.getElementById('view-controls'); if (_vc) _vc.innerHTML = ''; }
     if (typeof legend !== 'undefined' && legend) legend.style('display', 'none').html('');
     const canvasEl = document.getElementById('canvas');
     const pane = document.createElement('div');
@@ -4395,17 +4401,27 @@ function scriptureEntitiesForBook(rawBookId) {
 // Zero new CSS.
 // ════════════════════════════════════════════════════════════════
 VIEWS.scripture = {
-  title: 'Scripture',
-  subtitle: 'corpus → sections → books · entity grid · cross-book trails',
+  // ════════════════════════════════════════════════════════════════
+  // 2026-05-30 — V01 scripture-radial chart DELETED in full.
+  // ════════════════════════════════════════════════════════════════
+  // The sunburst-with-rings-and-trails radial (sections + book-wedges
+  // + entity-grid + cross-book curves + .scripture-bottombar + the
+  // Holy-Bible <select> + ✠ Read button injection) was a V01 chart
+  // idiom — incompatible with the cardinal "ONE CHART ONLY = the
+  // canonical Atlas/Forge wheel" rule (2026-05-30 directive).
+  //
+  // Click Bible from Codex now routes here, this view mounts the
+  // SAME wheel as VIEWS.forge. The breadcrumb chrome above declares
+  // the scope (CODEX › CHRISTIANITY › BIBLE › ALL BOOKS › LENS:
+  // AUTHORS › READ) — wired in src/js/app-pill.js + a STATE.codexScope
+  // filter consumed by src/js/views/forge.js. Reader-mode (annotated
+  // text pane) still wins when set explicitly.
+  // ════════════════════════════════════════════════════════════════
+  title: 'Codex',
+  subtitle: '',
   render() {
-    // 2026-05-30 — Scripture (both radial + reader modes) owns no
-    // node-inspector chrome, so hide the global `aside.detail` here.
-    // setView() resets it to CSS default before calling render(), so
-    // Forge / Pantheon-v2 / any inspector-using view still gets it
-    // back automatically on next view change. Per cardinal rule #8.
     const _aside = document.getElementById('detail');
     if (_aside) _aside.style.display = 'none';
-    // ── 1. Reader-mode shortcut — annotated text pane wins over the radial.
     if (STATE.scriptureReaderMode && window.ScriptureReader) {
       svg.node().style.display = 'none';
       legend.style('display', 'none').html('');
@@ -4416,393 +4432,18 @@ VIEWS.scripture = {
       }
       return;
     }
-
-    // ── 2. Resolve current corpus from STATE; default to Bible.
-    if (!STATE.scriptureCorpus) STATE.scriptureCorpus = 'bible';
-    let corpusKey = STATE.scriptureCorpus;
-    if (!SCRIPTURE_CORPORA[corpusKey]) corpusKey = 'bible';
-    const corpus = SCRIPTURE_CORPORA[corpusKey];
-
-    // ── 3. Top-right view-controls: corpus picker + read button.
-    // Compact, canonical chrome (.btn-mini already styled in app.css).
-    const corpusKeysSorted = Object.entries(SCRIPTURE_CORPORA)
-      .sort(([, a], [, b]) => (b.available ? 1 : 0) - (a.available ? 1 : 0));
-    const opts = corpusKeysSorted.map(([k, c]) => {
-      const tag = c.available ? '' : ' · soon';
-      const sel = k === corpusKey ? ' selected' : '';
-      const label = (c.label || k).split(/[(·—/]|\s—\s/)[0].trim().slice(0, 36);
-      return '<option value="' + k + '"' + sel + '>' + label + tag + '</option>';
-    }).join('');
-    document.getElementById('view-controls').innerHTML = ''
-      + '<select class="btn btn-mini" id="scripture-corpus-select" title="Pick a holy corpus">'
-      +   opts
-      + '</select>'
-      + '<button class="btn btn-mini" id="scripture-read-btn" title="Open annotated text reader">✠ Read</button>';
-    document.getElementById('scripture-corpus-select').onchange = (ev) => {
-      STATE.scriptureCorpus = ev.target.value;
-      VIEWS.scripture.render();
-    };
-    document.getElementById('scripture-read-btn').onclick = () => {
-      // Pick the first available text key from the current corpus, fall back
-      // to genesis-1 (the historical default John was using on V1).
-      STATE.scriptureReaderMode = 'genesis-1';
-      setView('scripture');
-    };
-
-    // ── 4. SVG + viewport math. The default #svg-wrap is constrained
-    // (300×720 in the V2 shell — leftover sidebar-era sizing) so
-    // computing centre from svg.getBoundingClientRect() lands the chart
-    // way off-screen. Use the canvas viewport instead and size the SVG
-    // to fill it. Radii scaled to short edge.
-    svg.node().style.display = '';
-    svg.selectAll('*').remove();
+    // Mount the canonical Atlas/Forge wheel. body.view-scripture stays
+    // (codex breadcrumb reads it as the routing signal — Codex →
+    // Christianity → Bible), but the visualization beneath is the wheel.
+    svg.node().style.display = 'none';
     legend.style('display', 'none').html('');
     const canvasEl = document.getElementById('canvas');
-    const canvasRect = canvasEl ? canvasEl.getBoundingClientRect() : { width: 0, height: 0 };
-    const W = Math.max(800, canvasRect.width  || window.innerWidth  || 1200);
-    const H = Math.max(600, canvasRect.height || window.innerHeight || 800);
-    svg.attr('width',  W).attr('height', H)
-       .style('width',  W + 'px').style('height', H + 'px')
-       .style('position', 'absolute').style('left', '0').style('top', '0')
-       .style('pointer-events', 'auto');
-    // svg-wrap also needs to span the canvas (it was 300×720 from the
-    // legacy sidebar layout); inline-override to viewport-fill.
-    const _svgWrap = document.getElementById('svg-wrap');
-    if (_svgWrap) {
-      _svgWrap.style.position = 'absolute';
-      _svgWrap.style.left = '0'; _svgWrap.style.top = '0';
-      _svgWrap.style.width = W + 'px'; _svgWrap.style.height = H + 'px';
-    }
-    const cx = W / 2;
-    const cy = H / 2;
-    const Router = Math.min(W, H) * 0.40;
-    const Rinner = Router * 0.22;
-    const Rgap   = 18;  // padding inside each book wedge before entity grid starts
-
-    // ── 5. Pre-compute book entities + entity→book index (for trails).
-    const bookEnts    = new Map();  // bookId → [entityId, …]
-    const entityBooks = new Map();  // entityId → Set<bookId>
-    corpus.sections.forEach(section => {
-      section.books.forEach(b => {
-        const ents = (typeof scriptureEntitiesForBook === 'function')
-          ? [...scriptureEntitiesForBook(b.id)] : [];
-        const valid = ents.filter(eid => NODES_BY_ID[eid]);
-        bookEnts.set(b.id, valid);
-        valid.forEach(eid => {
-          if (!entityBooks.has(eid)) entityBooks.set(eid, new Set());
-          entityBooks.get(eid).add(b.id);
-        });
-      });
-    });
-
-    // ── 6. Wedge layout. Each book gets an arc sized by
-    // sqrt(entityCount + 1) so even empty books stay visible. Sections
-    // get a gap between them; books inside a section get a smaller gap.
-    const SECTION_GAP = 0.055;
-    const BOOK_GAP    = 0.014;
-    const allBooks = corpus.sections.flatMap(s => s.books.map(b => ({ ...b, _sec: s })));
-    const numInterBookGaps = allBooks.length - corpus.sections.length;
-    const totalGap = SECTION_GAP * corpus.sections.length
-                   + BOOK_GAP    * Math.max(0, numInterBookGaps);
-    const arcBudget = (2 * Math.PI) - totalGap;
-    const totalWeight = allBooks.reduce(
-      (s, b) => s + Math.sqrt((bookEnts.get(b.id) || []).length + 1), 0);
-
-    // angle convention: polarXY(angle, r) = (r*sin(angle), -r*cos(angle))
-    // → angle=0 is TOP (12 o'clock); positive angle rotates clockwise.
-    let cursor = 0;
-    const bookLayout    = Object.create(null);  // bookId → { a0, a1, center, section }
-    const sectionLayout = Object.create(null);
-    corpus.sections.forEach(section => {
-      const sStart = cursor;
-      section.books.forEach((b, i) => {
-        const w = Math.sqrt((bookEnts.get(b.id) || []).length + 1);
-        const arc = (w / totalWeight) * arcBudget;
-        bookLayout[b.id] = {
-          a0: cursor, a1: cursor + arc, center: cursor + arc / 2,
-          section: section, book: b,
-        };
-        cursor += arc;
-        if (i < section.books.length - 1) cursor += BOOK_GAP;
-      });
-      sectionLayout[section.id] = {
-        a0: sStart, a1: cursor,
-        label: section.label, color: section.color, id: section.id,
-      };
-      cursor += SECTION_GAP;
-    });
-
-    // ── 7. SVG render. One <g> per layer so paint order is predictable.
-    const root = svg.append('g').attr('transform', 'translate(' + cx + ',' + cy + ')');
-    // Add basic pan/zoom — uses the same d3.zoom API the other views use.
-    const zoom = d3.zoom().scaleExtent([0.5, 4]).on('zoom', ev => {
-      root.attr('transform',
-        'translate(' + cx + ',' + cy + ') translate(' + ev.transform.x + ',' + ev.transform.y + ') scale(' + ev.transform.k + ')');
-    });
-    svg.call(zoom);
-
-    const lyrTrails   = root.append('g').attr('class', 'scripture-trail-layer');
-    const lyrWedges   = root.append('g').attr('class', 'scripture-book-wedge-layer');
-    const lyrSections = root.append('g').attr('class', 'scripture-section-layer');
-    const lyrNodes    = root.append('g').attr('class', 'scripture-node-layer');
-    const lyrLabels   = root.append('g').attr('class', 'scripture-label-layer');
-
-    // ── 7a. Outer section arcs + labels. NO per-section colour — V2
-    // canonical is black + gold + mono. Section CSS handles fill/stroke.
-    const sectionArc = d3.arc().innerRadius(Router + 22).outerRadius(Router + 23);
-    Object.values(sectionLayout).forEach(s => {
-      lyrSections.append('path')
-        .attr('d', sectionArc({ startAngle: s.a0, endAngle: s.a1 }))
-        .attr('class', 'scripture-section-arc');
-      const cAng = (s.a0 + s.a1) / 2;
-      const [lx, ly] = polarXY(cAng, Router + 48);
-      const dx = Math.sin(cAng), dy = -Math.cos(cAng);
-      lyrSections.append('text')
-        .attr('class', 'scripture-section-label')
-        .attr('x', lx).attr('y', ly)
-        .attr('text-anchor', dx >  0.35 ? 'start' : dx < -0.35 ? 'end' : 'middle')
-        .attr('dy',           dy < -0.55 ? '0em'  : dy >  0.55 ? '0.85em' : '0.35em')
-        .text(s.label);
-    });
-
-    // ── 7b. Book wedges — annular sectors. NO per-section rainbow.
-    // Almost-invisible gold fill + gold-soft stroke (V2 canonical).
-    // Section grouping is read via the SECTION_GAP between wedges + the
-    // outer section labels — no fill-colour distinction needed.
-    const bookArc = d3.arc().innerRadius(Rinner).outerRadius(Router);
-    Object.values(bookLayout).forEach(L => {
-      lyrWedges.append('path')
-        .attr('d', bookArc({ startAngle: L.a0, endAngle: L.a1 }))
-        .attr('class', 'scripture-book-wedge');
-      const [lx, ly] = polarXY(L.center, Router + 7);
-      const dx = Math.sin(L.center), dy = -Math.cos(L.center);
-      lyrLabels.append('text')
-        .attr('class', 'scripture-book-label')
-        .attr('x', lx).attr('y', ly)
-        .attr('text-anchor', dx >  0.35 ? 'start' : dx < -0.35 ? 'end' : 'middle')
-        .attr('dy',           dy < -0.55 ? '0em'  : dy >  0.55 ? '0.85em' : '0.35em')
-        .text(L.book.label);
-    });
-
-    // ── 7c. Entity nodes — polar grid INSIDE each book wedge. Columns
-    // sized so dots are ~14px apart at the average radius; rows climb
-    // outward from Rinner+Rgap up to Router-10.
-    Object.values(bookLayout).forEach(L => {
-      const ents = bookEnts.get(L.book.id) || [];
-      if (!ents.length) return;
-      const arcWidth   = L.a1 - L.a0;
-      const radialBand = (Router - 10) - (Rinner + Rgap);
-      const midRadius  = (Rinner + Router) / 2;
-      // ~16px between dots: cols = clamp(arc-length-at-midR / 16, 1, ...)
-      const cols = Math.max(1, Math.min(ents.length,
-                       Math.floor(arcWidth * midRadius / 16)));
-      const rowGap = 14;
-      const maxRows = Math.max(1, Math.floor(radialBand / rowGap));
-      const totalSlots = cols * maxRows;
-      const cutoff = Math.min(ents.length, totalSlots);
-      for (let i = 0; i < cutoff; i++) {
-        const col = i % cols;
-        const row = Math.floor(i / cols);
-        const a = L.a0 + (col + 0.5) / cols * arcWidth;
-        const r = Rinner + Rgap + row * rowGap;
-        const [x, y] = polarXY(a, r);
-        const eid = ents[i];
-        const node = NODES_BY_ID[eid];
-        // No inline fill — let CSS apply the canonical gold-soft.
-        lyrNodes.append('circle')
-          .attr('class', 'scripture-node')
-          .attr('cx', x).attr('cy', y)
-          .attr('r', 2.4)
-          .attr('data-entity', eid)
-          .attr('data-book', L.book.id)
-          .on('mouseover', function () { highlightTrails(eid, true);  })
-          .on('mouseout',  function () { highlightTrails(eid, false); })
-          .on('click',     function () { selectNode(eid, true); });
-      }
-    });
-
-    // ── 7d. Cross-book trails — for every entity appearing in ≥2 books,
-    // draw a quadratic curve bundled toward the chart centre between
-    // each pair of book centres. Faint at rest; opacity ramps on hover.
-    const trailIndex = new Map();   // entityId → [<path d3>, …]
-    entityBooks.forEach((bookSet, eid) => {
-      if (bookSet.size < 2) return;
-      const ids = [...bookSet].filter(id => bookLayout[id]);
-      const paths = [];
-      for (let i = 0; i < ids.length - 1; i++) {
-        for (let j = i + 1; j < ids.length; j++) {
-          const a = bookLayout[ids[i]];
-          const b = bookLayout[ids[j]];
-          const r = Rinner - 4;   // pull endpoints toward the inner rim
-          const [x1, y1] = polarXY(a.center, r);
-          const [x2, y2] = polarXY(b.center, r);
-          // No inline stroke — CSS controls colour + opacity.
-          const p = lyrTrails.append('path')
-            .attr('d', 'M' + x1 + ',' + y1 + ' Q0,0 ' + x2 + ',' + y2)
-            .attr('class', 'scripture-trail')
-            .attr('data-entity', eid);
-          paths.push(p);
-        }
-      }
-      trailIndex.set(eid, paths);
-    });
-
-    function highlightTrails(eid, on) {
-      const paths = trailIndex.get(eid);
-      if (!paths) return;
-      // Toggle the .hot class — CSS handles colour transitions per the
-      // canonical .scripture-trail / .scripture-trail.hot pair.
-      paths.forEach(p => p.classed('hot', on));
-      // Side panel preview on hover — surface the entity's identity.
-      if (on && NODES_BY_ID[eid]) {
-        const n = NODES_BY_ID[eid];
-        showTooltip(
-          '<div class="ttitle">' + n.title + '</div>'
-          + '<div class="tmeta">' + (n.family || n.tradition || n.type || '') + '</div>'
-          + '<div class="tmeta">in ' + (entityBooks.get(eid).size) + ' books</div>',
-          { clientX: window.innerWidth / 2, clientY: 80 }
-        );
-      } else {
-        hideTooltip();
-      }
-    }
-
-    // ── 8. Canonical bottombar — same Atlas / Forge pattern: bottom-left
-    // floating row with VIEW + LEGEND drop-up panels + search input. Pure
-    // reuse of the .forge-viewset-* and .forge-legend-* classes already
-    // in app.css (zero new CSS). Positioning via inline style mirrors
-    // the .boards-bottombar geometry. State per-view: a labels toggle,
-    // a trails toggle, and a search-and-recenter affordance.
-    document.querySelectorAll('.scripture-bottombar').forEach(el => el.remove());
-    const bar = document.createElement('div');
-    bar.className = 'scripture-bottombar';
-    bar.setAttribute('role', 'toolbar');
-    bar.setAttribute('aria-label', 'Scripture view options');
-    bar.style.cssText = 'position:fixed;left:14px;bottom:14px;z-index:200;display:inline-flex;gap:6px;align-items:stretch;pointer-events:auto;';
-
-    // Zoom % indicator — updated by d3.zoom on every scale change.
-    const zoomBtn = document.createElement('button');
-    zoomBtn.className = 'forge-viewset-btn';
-    zoomBtn.type = 'button';
-    zoomBtn.title = 'Click to reset zoom';
-    zoomBtn.textContent = '100%';
-    zoomBtn.onclick = () => svg.transition().duration(280).call(zoom.transform, d3.zoomIdentity);
-
-    // VIEW button + drop-up panel: labels toggle + trails toggle.
-    const viewWrap = document.createElement('div');
-    viewWrap.className = 'forge-viewset-wrap';
-    viewWrap.innerHTML = ''
-      + '<button class="forge-viewset-btn" type="button"'
-      +   ' aria-haspopup="menu" aria-expanded="false" title="View options">VIEW</button>'
-      + '<div class="forge-viewset-panel" role="menu" aria-hidden="true">'
-      +   '<div class="forge-viewset-section">Display</div>'
-      +   '<button class="forge-viewset-row is-on" type="button" role="menuitemcheckbox"'
-      +     ' aria-checked="true" data-action="toggle-labels">'
-      +     '<span class="vs-check"></span><span>Labels</span><em>section + book titles</em>'
-      +   '</button>'
-      +   '<button class="forge-viewset-row is-on" type="button" role="menuitemcheckbox"'
-      +     ' aria-checked="true" data-action="toggle-trails">'
-      +     '<span class="vs-check"></span><span>Trails</span><em>cross-book entity curves</em>'
-      +   '</button>'
-      + '</div>';
-
-    // LEGEND button + drop-up panel: section colour key + node-radius hint.
-    const legWrap = document.createElement('div');
-    legWrap.className = 'forge-viewset-wrap';
-    legWrap.innerHTML = ''
-      + '<button class="forge-viewset-btn" type="button"'
-      +   ' aria-haspopup="menu" aria-expanded="false" title="Colour legend">LEGEND</button>'
-      + '<div class="forge-viewset-panel" role="menu" aria-hidden="true">'
-      +   '<div class="forge-viewset-section">Sections · ' + (corpus.label || corpusKey) + '</div>'
-      +   corpus.sections.map(s =>
-          '<div class="forge-legend-row">'
-          + '<span class="forge-legend-swatch" style="background:' + s.color + '"></span>'
-          + '<span class="forge-legend-name">' + s.label + '</span>'
-          + '</div>').join('')
-      + '</div>';
-
-    // Search input — finds a book by label substring + centres the view
-    // there. Same compact chrome the Forge bottombar's search uses.
-    const search = document.createElement('input');
-    search.className = 'forge-bottom-search';
-    search.type = 'text';
-    search.placeholder = 'search book…';
-    search.setAttribute('aria-label', 'Search books');
-    search.onkeydown = (ev) => {
-      if (ev.key !== 'Enter') return;
-      const q = (search.value || '').toLowerCase().trim();
-      if (!q) return;
-      // Match first book whose label contains the query.
-      const hit = Object.values(bookLayout).find(L =>
-        (L.book.label || '').toLowerCase().includes(q));
-      if (!hit) { search.style.borderColor = '#c8554a'; setTimeout(() => search.style.borderColor = '', 600); return; }
-      // Pan the chart so the matched wedge sits centred at 12 o'clock.
-      const wedgeAngle = hit.center;
-      const targetX = -Math.sin(wedgeAngle) * Router * 0.7;
-      const targetY =  Math.cos(wedgeAngle) * Router * 0.7;
-      svg.transition().duration(420).call(
-        zoom.transform,
-        d3.zoomIdentity.translate(targetX, targetY).scale(1.4)
-      );
-    };
-
-    bar.appendChild(zoomBtn);
-    bar.appendChild(viewWrap);
-    bar.appendChild(legWrap);
-    bar.appendChild(search);
-    const canvasParent = document.getElementById('canvas');
-    if (canvasParent) canvasParent.appendChild(bar);
-
-    // Wire the two drop-up panels — open / close / outside-click /
-    // Escape. Pattern lifted verbatim from the Boards canonical
-    // bottombar so the affordances feel identical across views.
-    const viewBtn = viewWrap.querySelector('.forge-viewset-btn');
-    const viewPanel = viewWrap.querySelector('.forge-viewset-panel');
-    const legBtn = legWrap.querySelector('.forge-viewset-btn');
-    const legPanel = legWrap.querySelector('.forge-viewset-panel');
-    const closeView = () => { viewPanel.classList.remove('is-open'); viewBtn.setAttribute('aria-expanded', 'false'); };
-    const closeLeg  = () => { legPanel.classList.remove('is-open');  legBtn.setAttribute('aria-expanded', 'false'); };
-    viewBtn.onclick = (ev) => {
-      ev.stopPropagation(); closeLeg();
-      const open = viewPanel.classList.toggle('is-open');
-      viewBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
-    };
-    legBtn.onclick = (ev) => {
-      ev.stopPropagation(); closeView();
-      const open = legPanel.classList.toggle('is-open');
-      legBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
-    };
-    viewPanel.addEventListener('click', (ev) => {
-      const row = ev.target.closest('[data-action]');
-      if (!row) return;
-      ev.stopPropagation();
-      const a = row.getAttribute('data-action');
-      const nowOn = !row.classList.contains('is-on');
-      row.classList.toggle('is-on', nowOn);
-      row.setAttribute('aria-checked', nowOn ? 'true' : 'false');
-      if (a === 'toggle-labels') {
-        svg.selectAll('.scripture-section-label, .scripture-book-label')
-           .style('display', nowOn ? null : 'none');
-      } else if (a === 'toggle-trails') {
-        svg.selectAll('.scripture-trail').style('display', nowOn ? null : 'none');
-      }
-    });
-    document.addEventListener('click', (ev) => {
-      if (viewPanel.classList.contains('is-open') && !viewWrap.contains(ev.target)) closeView();
-      if (legPanel.classList.contains('is-open')  && !legWrap.contains(ev.target))  closeLeg();
-    });
-    document.addEventListener('keydown', (ev) => {
-      if (ev.key === 'Escape') { closeView(); closeLeg(); }
-    });
-
-    // Keep the zoom % button display in sync with d3.zoom. We intercept
-    // the existing zoom handler from earlier in render() by re-attaching
-    // a wrapping handler that updates the indicator + delegates to the
-    // original transform application.
-    svg.call(zoom.on('zoom.bb', ev => {
-      zoomBtn.textContent = Math.round(ev.transform.k * 100) + '%';
-    }));
-  }
+    document.querySelectorAll('.forge-pane').forEach(el => el.remove());
+    const pane = document.createElement('div');
+    pane.className = 'forge-pane';
+    canvasEl.appendChild(pane);
+    if (window._forge) window._forge.render(pane);
+  },
 };
 
 // ============================================================
@@ -6415,7 +6056,7 @@ VIEWS._legacyTransmutation = {
   title: 'Transmutation (legacy)',
   subtitle: 'free-form alchemy board — load presets · pin cards · trace paths',
   render() {
-    document.getElementById('view-controls').innerHTML = '';
+    {const _vc = document.getElementById('view-controls'); if (_vc) _vc.innerHTML = ''; }
     legend.style('display', 'none').html('');
     document.querySelectorAll('.alch-presets-dropdown').forEach(el => el.remove());
     // Tear down any previous mount + create a fresh host div appended to #canvas

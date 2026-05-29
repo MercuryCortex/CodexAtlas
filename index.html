@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=EB+Garamond:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&family=Noto+Serif+Hebrew:wght@400;700&family=Noto+Sans+Egyptian+Hieroglyphs&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="_assets/vendor/maplibre/maplibre-gl.css?v=5.24.0" />
-<link rel="stylesheet" href="src/styles/app.css?v=20260530-devpanel-regated" />
+<link rel="stylesheet" href="src/styles/app.css?v=20260530-scripture-radial-nuked" />
 </head>
 <body class="nav-hidden detail-collapsed">
 <!-- ════════════════════════════════════════════════════════════════
@@ -100,13 +100,19 @@
 <div class="user-menu" id="user-menu" role="menu" aria-hidden="true"></div>
 
 <main class="canvas" id="canvas">
-  <div class="view-header">
-    <div>
-      <h2 id="view-title">Pantheon</h2>
-      <span class="subtitle" id="view-subtitle">every named deity · radial family wedges · hover to focus</span>
-    </div>
-    <div class="view-controls" id="view-controls"></div>
-  </div>
+  <!-- 2026-05-30 — V01 .view-header (<h2 id="view-title">Pantheon</h2> +
+       .subtitle + #view-controls) DELETED. John flagged it as "the
+       TITLE ON THE BACK OF ATLAS PILL" — V01 prototype chrome that
+       never existed in V02. Per cardinal rule #8: nuke at source, not
+       per-view CSS hide. Reachable JS callers in setView() are null-
+       guarded. The remaining ~23 callsites in app.js are in V1 view-
+       render functions (Pantheon-V1 / Documents / Timeline-V1 /
+       Transmutation / Alchemy / Transmission / VIEWS.atlas geography /
+       VIEWS.authors / VIEWS.themes / VIEWS.edges / VIEWS.traditions) —
+       all unreachable from the V2 master-pill router (Atlas / Timeline /
+       Board / Map / Star Map all route to VIEWS.forge or V2 skeletons).
+       Those V1 view-render functions are queued for deletion in a
+       separate commit. -->
   <div id="svg-wrap"><svg id="svg"></svg></div>
   <!-- Shared WebGL graph canvas (sigma.js) — outer pane owns positioning so sigma's
        internal canvas can resize freely. Hidden except on graph views (pantheon for
@@ -237,7 +243,7 @@
 <script src="src/data/patterns.js?v=20260516-patterns-tab"></script>
 <script src="src/data/observations.js?v=20260516-observations-tab"></script>
 <script src="src/data/chains.js?v=20260516-chains-2"></script>
-<script src="src/js/app.js?v=20260530-aside-detail-view-owned"></script>
+<script src="src/js/app.js?v=20260530-scripture-radial-nuked"></script>
 <!-- Phase 22-B (2026-05-23) — app-shell top-bar pill wiring.
      Loads AFTER app.js so window.STATE + window.setView are defined.
      Self-installing IIFE; exposes window._appPill for debug. -->
