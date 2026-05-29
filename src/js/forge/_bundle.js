@@ -4496,6 +4496,23 @@
         saveState();
         syncLabels();
         if (typeof syncLocks === 'function') syncLocks();
+        // 2026-05-29 — When a corpus is picked but no specific book yet
+        // (the natural "show me all books in this corpus" state), route
+        // to the canonical scripture-radial sunburst view instead of the
+        // Forge wheel. The wheel under-populates with only ~33 books
+        // because its family-clustering layout was built for 700 deities;
+        // the radial sunburst always paints all books and their cross-
+        // book trails. Picking a SPECIFIC book later (setBook) re-routes
+        // back to the Forge wheel for the entity-grid drill-in.
+        if (id && !state.bookTextKey) {
+          try {
+            if (typeof window.STATE === 'object') window.STATE.scriptureCorpus = id;
+            if (typeof window.setView === 'function') {
+              window.setView('scripture');
+              return true;
+            }
+          } catch (_) { /* fall through to the wheel rebuild */ }
+        }
         if (typeof rebuildForMode === 'function' && local.mode && local.mode.id === 'scriptures') {
           try { rebuildForMode('scriptures', { preserveLocks: true, preserveZoom: false }); } catch (_) {}
         }
@@ -4566,6 +4583,24 @@
         saveState();
         syncLabels();
         if (typeof syncLocks === 'function') syncLocks();
+        // 2026-05-29 — paired with the corpus-pick → scripture-radial
+        // routing above: when a specific book IS picked, route BACK to
+        // the Forge wheel so the entity-grid + drill-in pipeline kicks
+        // in. Without this the user would stay on the radial sunburst
+        // even after picking a single book.
+        if (textKey) {
+          try {
+            if (typeof window.setView === 'function'
+                && typeof window.STATE === 'object'
+                && window.STATE.view !== 'forge') {
+              window.setView('forge');
+            }
+            if (typeof rebuildForMode === 'function'
+                && local.mode && local.mode.id === 'scriptures') {
+              rebuildForMode('scriptures', { preserveLocks: true, preserveZoom: false });
+            }
+          } catch (_) { /* non-fatal */ }
+        }
         return true;
       },
       // 2026-05-27 — docNode → textKey resolver, exposed so forge.js
