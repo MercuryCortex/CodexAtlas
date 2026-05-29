@@ -515,10 +515,35 @@
     togglePanel();
   });
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', buildPanel);
-  } else {
-    buildPanel();
+  // 2026-05-30 — RE-GATED on `?dev=1` URL flag OR
+  // localStorage['codex-atlas/dev-enabled'] === '1'. Default OFF.
+  //
+  // Why: the panel + tab were auto-mounting on every view, leaking the
+  // ⚙ DEV right-edge button into Scripture / Codex / etc. — surfaces
+  // John reported as "the fucking right bar with tdev." Per cardinal
+  // rule #8 in HOW-WE-WORK.md §5 (per-view CSS hide-list FORBIDDEN),
+  // the correct fix is to constrain at the source, not paint over with
+  // body.view-X #codex-dev-tab hide-rules.
+  //
+  // applyCssVars() above this gate still runs unconditionally — Forge
+  // + pantheon-v2 read the saved S{} via window.CODEX_DEV.settings and
+  // via the :root CSS variables, neither of which depend on the panel
+  // being mounted. The tuning surface only disappears; the tunings
+  // themselves persist.
+  //
+  // To re-enable the panel: append `?dev=1` to the URL once, or run
+  //   localStorage.setItem('codex-atlas/dev-enabled', '1')
+  // in DevTools. The D-key toggle keeps working when enabled; when
+  // disabled, setOpen() null-guards both #codex-dev-tab and
+  // #codex-dev-panel so it's a safe no-op (D-key does nothing).
+  const _devEnabled = new URLSearchParams(location.search).has('dev')
+                   || localStorage.getItem('codex-atlas/dev-enabled') === '1';
+  if (_devEnabled) {
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', buildPanel);
+    } else {
+      buildPanel();
+    }
   }
 
 }());

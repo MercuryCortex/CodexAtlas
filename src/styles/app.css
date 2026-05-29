@@ -8505,12 +8505,12 @@ body.view-forge #detail-inner {
    views already do (lines 2894 + 4258). */
 body.view-forge .view-header { display: none; }
 
-body.view-forge #codex-dev-panel,
-body.view-forge #codex-dev-tab,
-body.view-forge > footer,
-body.view-forge #footer-toggle {
-  display: none !important;
-}
+/* 2026-05-30 — body.view-forge #codex-dev-panel / #codex-dev-tab
+   hide-rules deleted. The panel no longer auto-mounts unless
+   ?dev=1 or localStorage['codex-atlas/dev-enabled']==='1' (gated
+   in src/js/dev-panel.js per cardinal rule #8). When mounted via
+   opt-in, the operator wants it visible on Forge too. Footer +
+   #footer-toggle were already deleted from index.html on 2026-05-27. */
 
 
 
@@ -10420,17 +10420,14 @@ body:not(.view-boards) .app-pill--boards { display: none !important; }
  * ============================================================ */
 body.view-boards .view-header,
 body.view-boards aside.detail,
-body.view-boards #codex-dev-tab,
 body.view-boards .legend,
 body.view-boards .tier-legend,
 body.view-maps .view-header,
 body.view-maps aside.detail,
-body.view-maps #codex-dev-tab,
 body.view-maps .legend,
 body.view-maps .tier-legend,
 body.view-starmap .view-header,
 body.view-starmap aside.detail,
-body.view-starmap #codex-dev-tab,
 body.view-starmap .legend,
 body.view-starmap .tier-legend { display: none !important; }
 

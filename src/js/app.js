@@ -556,6 +556,15 @@ function setView(name) {
   }
   document.querySelectorAll('.list-pane,.about-pane,.legacy-pane,.alch-toolbox,.alch-palette,.tl-zoom-presets,.alch-board-root,.alch-menu,.astrology-pane,.alpha-pane').forEach(el => el.remove());
   hideTooltip();
+  // 2026-05-30 — reset aside.detail to its CSS default at the start of
+  // every view change. Per cardinal rule #8 (HOW-WE-WORK.md §5), each
+  // view's render() owns its chrome lifecycle: if a view doesn't use
+  // the global inspector (e.g. scripture-radial, codex), its render
+  // sets `aside.detail.style.display = 'none'`. The reset below ensures
+  // the next view starts from a clean slate so views like Forge that
+  // DO use the inspector don't inherit a stale `display: none`.
+  const _aside = document.getElementById('detail');
+  if (_aside) _aside.style.display = '';
   // 2026-05-29 — legacy #map-thumb / #zoom-meter toggle block REMOVED.
   // Those elements were deleted from index.html (V01 chrome scorched-earth
   // pass per feedback_per_view_hide_list_forbidden_2026-05-29). V2 views
@@ -4389,6 +4398,13 @@ VIEWS.scripture = {
   title: 'Scripture',
   subtitle: 'corpus → sections → books · entity grid · cross-book trails',
   render() {
+    // 2026-05-30 — Scripture (both radial + reader modes) owns no
+    // node-inspector chrome, so hide the global `aside.detail` here.
+    // setView() resets it to CSS default before calling render(), so
+    // Forge / Pantheon-v2 / any inspector-using view still gets it
+    // back automatically on next view change. Per cardinal rule #8.
+    const _aside = document.getElementById('detail');
+    if (_aside) _aside.style.display = 'none';
     // ── 1. Reader-mode shortcut — annotated text pane wins over the radial.
     if (STATE.scriptureReaderMode && window.ScriptureReader) {
       svg.node().style.display = 'none';
