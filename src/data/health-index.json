@@ -1,10 +1,11 @@
 {
-  "generatedAt": "2026-05-29T06:44:28Z",
+  "generatedAt": "2026-05-29T07:07:54Z",
   "vault": {
     "totalNodes": 4770,
     "lensCount": 30,
     "familyCount": 14,
-    "unmatchedTradNodes": 196
+    "unmatchedTradNodes": 0,
+    "intentionallyCrossTradition": 14
   },
   "lenses": [
     {
@@ -285,7 +286,7 @@
         "(no status)": 47,
         "metadata": 25,
         "stub": 55,
-        "m": 1
+        "\"m": 1
       }
     },
     {
@@ -366,7 +367,7 @@
       "statuses": {
         "(no status)": 5,
         "metadata": 12,
-        "metada": 1
+        "\"metada": 1
       }
     },
     {
@@ -424,13 +425,13 @@
     {
       "key": "mesopotamian",
       "label": "Mesopotamian",
-      "count": 132,
+      "count": 143,
       "baseline": 280,
-      "ratio": 0.471,
+      "ratio": 0.511,
       "band": "developing",
       "perLens": {
-        "02_documents": 23,
-        "03_deities": 68,
+        "02_documents": 26,
+        "03_deities": 76,
         "04_persons": 21,
         "05_events": 1,
         "10_music": 3,
@@ -465,39 +466,16 @@
       }
     },
     {
-      "key": "greco-roman",
-      "label": "Greco-Roman",
-      "count": 335,
-      "baseline": 380,
-      "ratio": 0.882,
-      "band": "rich",
-      "perLens": {
-        "02_documents": 67,
-        "03_deities": 96,
-        "04_persons": 95,
-        "09_symbols": 1,
-        "10_music": 23,
-        "11_alphabets": 2,
-        "12_alchemy": 25,
-        "13_morals": 4,
-        "14_rituals": 3,
-        "15_philosophy": 5,
-        "16_mathematics": 7,
-        "17_medicine": 3,
-        "20_sacred_architecture": 4
-      }
-    },
-    {
       "key": "abrahamic",
       "label": "Abrahamic",
-      "count": 763,
+      "count": 862,
       "baseline": 700,
-      "ratio": 1.09,
+      "ratio": 1.231,
       "band": "rich",
       "perLens": {
-        "02_documents": 163,
-        "03_deities": 112,
-        "04_persons": 355,
+        "02_documents": 198,
+        "03_deities": 117,
+        "04_persons": 411,
         "05_events": 2,
         "09_symbols": 2,
         "10_music": 21,
@@ -508,25 +486,48 @@
         "15_philosophy": 7,
         "16_mathematics": 3,
         "17_medicine": 4,
-        "20_sacred_architecture": 14,
+        "20_sacred_architecture": 16,
         "21_theology": 7,
         "22_practices": 6,
         "23_material_culture": 3,
-        "26_calendars": 7,
+        "26_calendars": 8,
         "27_attire": 6
+      }
+    },
+    {
+      "key": "greco-roman",
+      "label": "Greco-Roman",
+      "count": 314,
+      "baseline": 380,
+      "ratio": 0.826,
+      "band": "rich",
+      "perLens": {
+        "02_documents": 41,
+        "03_deities": 100,
+        "04_persons": 86,
+        "09_symbols": 1,
+        "10_music": 23,
+        "11_alphabets": 3,
+        "12_alchemy": 25,
+        "13_morals": 4,
+        "14_rituals": 6,
+        "15_philosophy": 5,
+        "16_mathematics": 7,
+        "17_medicine": 3,
+        "20_sacred_architecture": 10
       }
     },
     {
       "key": "iranian",
       "label": "Iranian / Zoroastrian",
-      "count": 54,
+      "count": 53,
       "baseline": 180,
-      "ratio": 0.3,
+      "ratio": 0.294,
       "band": "developing",
       "perLens": {
         "02_documents": 7,
         "03_deities": 26,
-        "04_persons": 5,
+        "04_persons": 4,
         "09_symbols": 1,
         "10_music": 1,
         "11_alphabets": 1,
@@ -539,9 +540,9 @@
     {
       "key": "indic",
       "label": "Indic (Hindu / Jain / Sikh)",
-      "count": 205,
+      "count": 206,
       "baseline": 520,
-      "ratio": 0.394,
+      "ratio": 0.396,
       "band": "developing",
       "perLens": {
         "02_documents": 36,
@@ -551,7 +552,7 @@
         "11_alphabets": 2,
         "12_alchemy": 1,
         "13_morals": 4,
-        "14_rituals": 13,
+        "14_rituals": 14,
         "15_philosophy": 2,
         "16_mathematics": 4,
         "17_medicine": 2,
@@ -565,14 +566,14 @@
     {
       "key": "buddhist",
       "label": "Buddhist",
-      "count": 127,
+      "count": 124,
       "baseline": 380,
-      "ratio": 0.334,
+      "ratio": 0.326,
       "band": "developing",
       "perLens": {
-        "02_documents": 18,
+        "02_documents": 19,
         "03_deities": 35,
-        "04_persons": 40,
+        "04_persons": 36,
         "10_music": 4,
         "11_alphabets": 1,
         "13_morals": 2,
@@ -589,38 +590,40 @@
     {
       "key": "east-asian",
       "label": "East Asian (Daoist / Confucian / folk)",
-      "count": 97,
+      "count": 122,
       "baseline": 320,
-      "ratio": 0.303,
+      "ratio": 0.381,
       "band": "developing",
       "perLens": {
-        "02_documents": 17,
-        "03_deities": 33,
-        "04_persons": 15,
+        "02_documents": 27,
+        "03_deities": 40,
+        "04_persons": 19,
         "10_music": 8,
         "11_alphabets": 1,
         "12_alchemy": 1,
-        "13_morals": 3,
+        "13_morals": 4,
         "14_rituals": 5,
         "15_philosophy": 4,
         "16_mathematics": 2,
-        "17_medicine": 1,
+        "17_medicine": 2,
         "20_sacred_architecture": 5,
-        "22_practices": 2
+        "22_practices": 2,
+        "25_divination": 1,
+        "26_calendars": 1
       }
     },
     {
       "key": "north-european",
       "label": "Norse / Celtic / Slavic / Baltic",
-      "count": 81,
+      "count": 87,
       "baseline": 220,
-      "ratio": 0.368,
+      "ratio": 0.395,
       "band": "developing",
       "perLens": {
         "02_documents": 3,
-        "03_deities": 65,
-        "04_persons": 1,
-        "10_music": 2,
+        "03_deities": 67,
+        "04_persons": 2,
+        "10_music": 5,
         "11_alphabets": 2,
         "14_rituals": 8
       }
@@ -628,29 +631,30 @@
     {
       "key": "african",
       "label": "African (Yoruba / Bantu / Akan / Nilotic etc.)",
-      "count": 38,
+      "count": 44,
       "baseline": 260,
-      "ratio": 0.146,
+      "ratio": 0.169,
       "band": "anemic",
       "perLens": {
         "02_documents": 2,
-        "03_deities": 23,
-        "04_persons": 2,
-        "10_music": 4,
+        "03_deities": 24,
+        "04_persons": 1,
+        "10_music": 8,
         "14_rituals": 6,
+        "17_medicine": 2,
         "25_divination": 1
       }
     },
     {
       "key": "mesoamerican",
       "label": "Mesoamerican",
-      "count": 49,
+      "count": 52,
       "baseline": 180,
-      "ratio": 0.272,
+      "ratio": 0.289,
       "band": "developing",
       "perLens": {
-        "02_documents": 4,
-        "03_deities": 30,
+        "02_documents": 5,
+        "03_deities": 31,
         "04_persons": 1,
         "10_music": 3,
         "11_alphabets": 1,
@@ -658,7 +662,7 @@
         "16_mathematics": 1,
         "17_medicine": 1,
         "19_astronomy": 1,
-        "20_sacred_architecture": 4,
+        "20_sacred_architecture": 5,
         "26_calendars": 2
       }
     },
@@ -680,34 +684,39 @@
     {
       "key": "indigenous-other",
       "label": "Indigenous (N.American / Oceanic / Australian / Arctic)",
-      "count": 70,
+      "count": 77,
       "baseline": 200,
-      "ratio": 0.35,
+      "ratio": 0.385,
       "band": "developing",
       "perLens": {
-        "02_documents": 7,
-        "03_deities": 42,
-        "04_persons": 2,
+        "02_documents": 8,
+        "03_deities": 43,
+        "04_persons": 3,
         "05_events": 1,
         "10_music": 8,
-        "14_rituals": 8,
-        "20_sacred_architecture": 1,
+        "14_rituals": 9,
+        "17_medicine": 1,
+        "20_sacred_architecture": 3,
         "22_practices": 1
       }
     },
     {
       "key": "modern-syncretic",
       "label": "Modern / syncretic / esoteric",
-      "count": 69,
+      "count": 118,
       "baseline": 240,
-      "ratio": 0.287,
+      "ratio": 0.492,
       "band": "developing",
       "perLens": {
-        "02_documents": 22,
-        "04_persons": 35,
-        "10_music": 5,
+        "02_documents": 35,
+        "03_deities": 3,
+        "04_persons": 63,
+        "10_music": 6,
         "12_alchemy": 1,
-        "14_rituals": 6
+        "13_morals": 1,
+        "14_rituals": 7,
+        "17_medicine": 1,
+        "31_consciousness": 1
       }
     }
   ],
@@ -719,7 +728,7 @@
       "rich": "ratio 60% - 150% — within scholarly-reference range",
       "over-baseline": "ratio > 150% — beyond EoR coverage (Atlas-original territory)"
     },
-    "familyClassification": "Nodes are rolled up to families by substring-matching their `tradition:` YAML field against ordered family matchers. The vault's `tradition:` field has free-form naming drift (1,123 distinct values observed); a curated matcher list is more honest than pretending the field is clean. Nodes whose tradition doesn't match any family are counted in `vault.unmatchedTradNodes`.",
+    "familyClassification": "Nodes are rolled up to families by substring-matching their `tradition:` YAML field against ordered family matchers. The vault's `tradition:` field has free-form naming drift (1,123 distinct values observed); a curated matcher list is more honest than pretending the field is clean. Nodes are split into two unclassified buckets: `vault.intentionallyCrossTradition` (genuinely cross-tradition, comparative, or pre-tradition entries — explicitly allow-listed in INTENTIONAL_CROSS_TRADITION) vs `vault.unmatchedTradNodes` (classifier-gap accidents, should be zero in a healthy build). The 2026-05-29 rigor pass drove accidentals from 196 → 0 across 4 sweeps (+RIGOR / +RIGOR2 / +RIGOR3 / +RIGOR4 family-order swap to route Greek Orthodox correctly). Sanity-case panel in `scripts/build_health_index.py` aborts the build on any future regression.",
     "caveats": [
       "Family baselines are pooled across lenses (sum of relevant deity + person + tradition + theme + ritual + practice entries an EoR-class reference would have for that family).",
       "A single lens contributes to MANY families (e.g. 03_deities rolls up to 9+ family rows). `perLens` in each family row shows the lens-folder breakdown.",
@@ -727,106 +736,5 @@
       "Stub-status nodes count toward the total. The `statuses` block per lens shows the stub/metadata/full breakdown."
     ]
   },
-  "unmatchedTraditionsTop": [
-    {
-      "tradition": "chinese",
-      "count": 7
-    },
-    {
-      "tradition": "cross-tradition",
-      "count": 7
-    },
-    {
-      "tradition": "[[tradition-roman-religion]]",
-      "count": 6
-    },
-    {
-      "tradition": "hittite (with hattic substrate)",
-      "count": 5
-    },
-    {
-      "tradition": "roman state religion (pagan)",
-      "count": 5
-    },
-    {
-      "tradition": "tradition-african-traditional",
-      "count": 5
-    },
-    {
-      "tradition": "bahá",
-      "count": 4
-    },
-    {
-      "tradition": "jungian depth psychology",
-      "count": 4
-    },
-    {
-      "tradition": "roman aristocratic literary (pagan)",
-      "count": 4
-    },
-    {
-      "tradition": "chinese / zhou-classical",
-      "count": 4
-    },
-    {
-      "tradition": "hurrian–hittite",
-      "count": 4
-    },
-    {
-      "tradition": "tradition-roman-religion",
-      "count": 4
-    },
-    {
-      "tradition": "[[tradition-donghak]]",
-      "count": 3
-    },
-    {
-      "tradition": "k",
-      "count": 3
-    },
-    {
-      "tradition": "blakean mythology",
-      "count": 3
-    },
-    {
-      "tradition": "lusitanian religion (pre-roman iberian)",
-      "count": 3
-    },
-    {
-      "tradition": "judahite",
-      "count": 3
-    },
-    {
-      "tradition": "roman imperial",
-      "count": 2
-    },
-    {
-      "tradition": "american esoteric / trance prophecy",
-      "count": 2
-    },
-    {
-      "tradition": "late-20th / early-21st-century popular pseudoarchaeology",
-      "count": 2
-    },
-    {
-      "tradition": "american pragmatism / psychology of religion",
-      "count": 2
-    },
-    {
-      "tradition": "anglo-american alchemy / paracelsian-sendivogian",
-      "count": 2
-    },
-    {
-      "tradition": "[[tradition-sebastianism]]",
-      "count": 2
-    },
-    {
-      "tradition": "english medieval-renaissance alchemy",
-      "count": 2
-    },
-    {
-      "tradition": "french enlightenment",
-      "count": 2
-    }
-  ]
+  "unmatchedTraditionsTop": []
 }

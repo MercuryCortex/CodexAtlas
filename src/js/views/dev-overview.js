@@ -120,6 +120,13 @@
   }
 
   function renderSummary(d, pct, totalBase, lensBands) {
+    // The two unclassified buckets are different in kind:
+    // `unmatchedTradNodes` = classifier-gap accidents → must be zero.
+    // `intentionallyCrossTradition` = explicitly allow-listed cross-
+    // tradition / comparative / pre-tradition entries → expected.
+    // Showing both keeps the integrity signal visible.
+    const acc = d.vault.unmatchedTradNodes || 0;
+    const intent = d.vault.intentionallyCrossTradition || 0;
     return ''
       + '<section class="dev-overview-section dev-overview-summary">'
       +   '<h2 class="dev-overview-section-h">Vault summary</h2>'
@@ -128,7 +135,8 @@
       +     stat(d.vault.lensCount,        'Lenses')
       +     stat(d.vault.familyCount,      'Families')
       +     stat(pct + '<span class="dev-overview-stat-unit">%</span>', 'Overall vs baseline (' + num(totalBase) + ')')
-      +     stat(num(d.vault.unmatchedTradNodes), 'Tradition not classified')
+      +     stat(num(acc),    'Classifier gaps · should be 0')
+      +     stat(num(intent), 'Intentional cross-tradition')
       +   '</div>'
       +   '<div class="dev-overview-band-strip">'
       +     bandPip('anemic',        lensBands.anemic,        'anemic')
