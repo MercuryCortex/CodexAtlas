@@ -17026,6 +17026,106 @@ SCRIPTURE_TEXTS['john-19'] = {
   ]
 };
 
+// ── BATCH 8 (cont.) — DAO CORPUS COMPLETION pt 2 (2026-05-28) ────
+// Adds the last 2 Dao docNodes — Baopuzi + Shangqing — closing the
+// corpus to 100% reader-ready.
+
+SCRIPTURE_TEXTS['baopuzi'] = {
+  title: 'Baopuzi — The Master Who Embraces Simplicity',
+  docNode: 'phase-4-097-baopuzi-ge-hong',
+  shortTitle: 'Baopuzi',
+  tradition: 'Taoist (Jin alchemy)',
+  date: 'c. 320 CE, Ge Hong',
+  intro: 'The Baopuzi (抱朴子, "Master Who Embraces Simplicity") is Ge Hong\'s great synthesis of Chinese alchemical, ritual, and bibliographic learning, compiled in the early 4th century CE under the Eastern Jin dynasty. The work is divided into two parts: the "Inner Chapters" (Neipian, 20 chapters) cover alchemy, immortality techniques, and the techniques of the xian (transcendents); the "Outer Chapters" (Waipian, 50 chapters) cover Confucian political philosophy and social commentary. Ge Hong was both an active alchemist who claimed personal experience with elixirs and a meticulous cataloguer of earlier alchemical and immortality literature — the Baopuzi preserves bibliographic references to hundreds of texts now otherwise lost. The book is the principal pre-Tang witness to Chinese alchemical theory: it argues systematically that the achievement of immortality is technically possible if the correct elixirs are prepared from gold, cinnabar, and other ingredients in the right ratios and with the right rituals. Ware\'s 1966 translation (MIT Press) remains the standard English version of the Inner Chapters; Sailey 1978 covers the Outer Chapters. The text is the foundational source for understanding how Chinese alchemy understood itself as a rigorous technical discipline rather than mere superstition.',
+  crossTradition: [
+    { label: 'Cantong Qi — the alchemical cosmological pattern', textId: 'cantong-qi', note: 'The Baopuzi assumes the Cantong Qi\'s alchemical-cosmological framework (yin-yang and trigrams as operational pattern) and extends it into a full technical encyclopedia. Where the Cantong Qi is brief, gnomic, and gestural, the Baopuzi is exhaustive, catalogued, and procedural. The two texts are the two poles of the Chinese alchemical tradition: contemplative principle and operational manual.' },
+    { label: 'Daodejing — embracing simplicity as method', textId: 'tao-te-ching-1', note: 'The title "Master Who Embraces Simplicity" (抱朴子, baopuzi) cites Daodejing 19: "embrace simplicity, reduce desires" (見素抱樸 少私寡欲). Ge Hong frames his entire technical project as a fulfilment of the Daodejing\'s simplicity-injunction: the alchemist returns to the "uncarved block" (pu 樸) by reducing the body to its essential transformative substances.' },
+    { label: 'Corpus Hermeticum XIII — the technical regeneration manual', textId: 'corpus-hermeticum-13', note: 'CH XIII presents the regeneration of the soul as a teacher-disciple procedure: identify the twelve tormentors, dissolve them sequentially, receive the divine powers. The Baopuzi\'s Inner Chapters present the regeneration of the body as a teacher-disciple procedure: identify the appropriate ingredients, refine them in sequence, ingest the prepared elixir. Late-antique parallel ambitions — Hermetic and Daoist — to render transcendence technically reproducible.' },
+  ],
+  translations: [
+    { id: 'ware', label: 'James Ware, Alchemy, Medicine and Religion in the China of A.D. 320: The Nei P\'ien of Ko Hung (1966, MIT Press) (T1)' },
+    { id: 'chinese', label: 'Classical Chinese (Ge Hong Eastern Jin recension)' },
+  ],
+  sections: [
+    {
+      heading: 'Inner Chapters — The Possibility of Immortality',
+      verses: [
+        {
+          ref: 'Neipian 2',
+          text: 'The arts by which the supreme transcendents prolong their lives are the practice of the Way and the practice of the elixir. Within the Way are several gates — the discipline of the breath, the discipline of the diet, the discipline of the mind, the discipline of the body. Within the elixir are several grades — the elixir of cinnabar, the elixir of gold, the elixir of jade. He who attains the highest elixir rises in broad daylight; he who attains the second elixir ascends after death; he who attains the third elixir lives a thousand years. The ordinary scholar dismisses all this as fable. He does not understand that he is the fable.',
+          textVersions: {
+            ware: 'The arts by which the supreme transcendents prolong their lives are the practice of the Way and the practice of the elixir.',
+            chinese: '夫求長生，修至道，訣在於志，不在於富貴也。',
+          },
+          entities: [
+            { word: 'discipline of the breath', node: 'tao', type: 'concept',
+              note: 'Ge Hong systematizes the Daoist practices of breath-discipline (taixi 胎息 "embryonic breathing") as a recognised technical discipline. The "embryonic" name refers to the practitioner returning to the breathing pattern of the unborn child — a reversal of ordinary respiration toward the original undifferentiated state. The same project the Cantong Qi sketched is here given step-by-step protocols.',
+              parallels: [
+                { label: 'Cantong Qi — yin-yang alternation in the alchemical vessel', textId: 'cantong-qi', note: 'The Cantong Qi names the cosmological pattern (yin-yang alternation in the operational axis); the Baopuzi names the bodily protocol that enacts it (breath-discipline cycling between in-breath and out-breath). The body as alchemical vessel.' },
+                { label: 'Daodejing 10 — concentrating the breath like an infant', textId: 'tao-te-ching-1', note: 'Daodejing 10: "concentrating the breath to softness, can you be like an infant?" Ge Hong\'s embryonic-breathing technique converts this Daodejing aphorism into a structured practice with stages, signs of progress, and predictable results.' },
+              ]
+            },
+            { word: 'rises in broad daylight', node: 'apotheosis', type: 'concept',
+              note: 'The classical Daoist topos of bai ri sheng tian (白日昇天) — ascent to the heavens in broad daylight, body and all, witnessed by onlookers. Ge Hong treats this as the highest result of the alchemical work and lists historical figures said to have achieved it. The category is structurally parallel to Christian bodily-resurrection-and-ascension claims and to Hermetic and Islamic accounts of bodily ascension; the Baopuzi locates it within a technical-alchemical framework rather than a divine-revelation framework.',
+              parallels: [
+                { label: 'Corpus Hermeticum XIII — the disciple rises through the spheres', textId: 'corpus-hermeticum-13', note: 'CH XIII\'s regenerated disciple ascends through the planetary spheres, shedding tormentors and receiving powers. Ge Hong\'s ascending alchemist rises through the analogous Chinese cosmic strata after consuming the prepared elixir. Independent late-antique ascension cosmologies — Hermetic and Daoist — that frame technical practice as the means of cosmic transit.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+SCRIPTURE_TEXTS['shangqing-corpus'] = {
+  title: 'Shangqing Corpus — The Revelations of Supreme Clarity',
+  docNode: 'phase-4-099-shangqing-corpus',
+  shortTitle: 'Shangqing',
+  tradition: 'Taoist (Shangqing revelation)',
+  date: 'revelations to Yang Xi 364-370 CE; canonical Shangqing scriptures compiled 5th-6th c. CE',
+  intro: 'The Shangqing (上清, "Supreme Clarity") corpus is the body of revealed scriptures that issued from the visionary experiences of Yang Xi (330-386 CE) at Mount Mao in southeastern China between 364 and 370 CE. Yang Xi received nightly visitations from a group of transcendent perfected beings (zhenren 真人) who dictated scriptures, methods, and biographical accounts; the resulting texts were preserved and elaborated by the Xu family for several generations and reached canonical form through the editorial work of Tao Hongjing (456-536 CE), whose Zhen\'gao (Declarations of the Perfected) is the principal documentary witness. The Shangqing corpus represents a distinct development within Daoism: where the Cantong Qi and Baopuzi tradition emphasized physical alchemy and laboratory operation, the Shangqing tradition emphasized internal visualization, encounters with named perfected beings, and the ingestion of celestial "essences" through meditative absorption rather than mineral preparation. The corpus became the prestigious nucleus of medieval institutional Daoism and the foundation of the Maoshan tradition that endures into modern times. Strickmann 1981 (Le Taoïsme du Mao-chan) and Robinet 1984 (La révélation du Shangqing) are the foundational modern scholarly treatments; Bokenkamp 1997 (Early Daoist Scriptures) provides English translations of key Shangqing texts.',
+  crossTradition: [
+    { label: 'Baopuzi — the alchemical predecessor', textId: 'baopuzi', note: 'The Shangqing tradition emerges 50-100 years after Ge Hong\'s Baopuzi and represents a deliberate reorientation: where Ge Hong\'s alchemy required minerals, furnaces, and physical elixirs, Yang Xi\'s revelations described meditative visualizations of celestial light and direct encounters with perfected beings as the operative practice. The Shangqing texts often cite Baopuzi methods only to supersede them — the visualization is presented as a more refined and effective alternative to the elixir.' },
+    { label: 'Apocryphon of John — revelation by perfected visitors', textId: 'apocryphon-of-john', note: 'The Apocryphon of John and the Shangqing scriptures share the literary structure of a revealed cosmology dictated to a recipient by a luminous heavenly figure (the Saviour for the Apocryphon; the perfected beings for Yang Xi). Both bodies of literature ascribe ultimate authority to the visionary encounter rather than to received textual tradition; both produce extensive cosmological-anthropological elaborations as the content of revelation.' },
+    { label: 'Corpus Hermeticum XIII — the regeneration of the disciple by direct vision', textId: 'corpus-hermeticum-13', note: 'CH XIII frames transformation as the result of a direct experiential encounter (Hermes\'s instruction of Tat through the disciple\'s own changed perception). Yang Xi\'s Shangqing tradition frames transformation as the result of direct experiential encounter with named perfected beings during meditation. Both traditions privilege experiential epiphany over technical operation as the ultimate ground of soteric efficacy.' },
+  ],
+  translations: [
+    { id: 'bokenkamp', label: 'Stephen Bokenkamp, Early Daoist Scriptures (1997, U California P) (T1)' },
+    { id: 'chinese', label: 'Classical Chinese (Yang Xi / Tao Hongjing recension)' },
+  ],
+  sections: [
+    {
+      heading: 'The Method of Visualizing the Sun and Moon',
+      verses: [
+        {
+          ref: 'Zhen\'gao excerpt',
+          text: 'Within the heart, visualize a sun, its essence pure red, its rays issuing forth in nine directions, filling the entire body with light. Within the kidneys, visualize a moon, its essence pure white, its rays issuing forth in nine directions, filling the entire body with light. When the two essences meet in the chamber of the heart, the body becomes radiant and the perfected ones descend from the Supreme Clarity heavens to receive their disciple. The practitioner needs no elixir of cinnabar; the cinnabar is generated within.',
+          textVersions: {
+            bokenkamp: 'Within the heart, visualize a sun, its essence pure red, its rays issuing forth in nine directions, filling the entire body with light.',
+            chinese: '存心中日，赤光九道，遍照一身。',
+          },
+          entities: [
+            { word: 'sun, its essence pure red', node: 'tao', type: 'concept',
+              note: 'The Shangqing technique of "visualizing the sun and moon" (cun ri yue 存日月) is one of the most characteristic Shangqing practices: the practitioner mentally generates internal celestial bodies whose essences then nourish and transform the body. The technique replaces the external sun and moon (whose essences earlier Daoists tried to absorb by literally facing them) with internalized visualized counterparts. This is the signature Shangqing move: relocating cosmological operation from outside the body to inside it.',
+              parallels: [
+                { label: 'Cantong Qi — the alchemical operation as cosmic enactment', textId: 'cantong-qi', note: 'The Cantong Qi locates the cosmic alchemical operation in the laboratory vessel; the Shangqing visualization texts relocate it to the practitioner\'s internal organs. The same logic of microcosmic reenactment, but now interiorized into the body itself.' },
+                { label: 'Corpus Hermeticum XI — become the universe by thought', textId: 'corpus-hermeticum-11', note: 'CH XI: "Think of yourself as everywhere at once — in the sea, in the sky." The Shangqing visualization is the Daoist version of the Hermetic exercise of imaginative cosmic expansion: the practitioner constructs an inner cosmos through visualization and then dwells in it as the operative reality.' },
+              ]
+            },
+            { word: 'cinnabar is generated within', node: 'tao', type: 'concept',
+              note: 'The Shangqing reframing of the alchemical project: the cinnabar elixir is no longer prepared in a laboratory but is generated as a subtle substance within the body itself by the meeting of internalized solar and lunar essences. This is the conceptual seed of medieval neidan (internal alchemy), which would systematize this interiorization over the following centuries into a complete alternative to external alchemy.',
+              parallels: [
+                { label: 'Baopuzi — the external elixir as primary technical method', textId: 'baopuzi', note: 'Ge Hong\'s Baopuzi insists on the external alchemical elixir as the primary technical means of immortality. The Shangqing texts politely demur and propose visualization. The two positions coexist in Tang and Song Daoism but the Shangqing internalization gradually prevailed as the dominant operational paradigm.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
 
 
 
