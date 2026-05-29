@@ -39,12 +39,12 @@
     if (!STATE.host) buildHost();
     STATE.host.classList.add('is-open');
     document.body.style.overflow = 'hidden';
-    if (STATE.cache) {
-      render(STATE.cache);
-    } else {
-      renderLoading();
-      fetchData().then(render).catch(renderError);
-    }
+    // Always re-fetch on open. The vault is mutated by background goblin
+    // fleets between opens; in-memory caching would surface stale numbers.
+    // If we already have a cache, render it immediately as a placeholder
+    // so the panel isn't blank during the re-fetch round-trip.
+    if (STATE.cache) render(STATE.cache); else renderLoading();
+    fetchData().then(render).catch(err => { if (!STATE.cache) renderError(err); });
   }
   function closePanel() {
     if (!STATE.isOpen) return;
