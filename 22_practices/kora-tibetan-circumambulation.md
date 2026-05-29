@@ -30,12 +30,12 @@ key-documents:
   - "Tibetan pilgrimage-guides (*gnas-yig*) literature — the genre that systematizes kora circuits at each major site"
   - "Stein 1972 *Tibetan Civilization* + Snellgrove 1987 *Indo-Tibetan Buddhism* (modern academic codification)"
 syncretic-edges:
-  - target: "[circumambulation-pradakshina-hindu]"
+  - target: "[[circumambulation-pradakshina-hindu]]"
     type: "direct-borrowing"
     source: "Snellgrove 1987 *Indo-Tibetan Buddhism*; Bernbaum 1980 *The Way to Shambhala*; Beer 1999 *The Encyclopedia of Tibetan Symbols and Motifs* — Tibetan Buddhist kora is the direct inheritance of Hindu pradakṣiṇā via the transmission of Vajrayāna Buddhism from India to Tibet starting in the 7th c. The clockwise direction, the prescribed-count system (1/3/7/21/108), the multi-radius scaling (image → temple → mountain → region), and the somatic-meditative function are preserved across the religious-frame change"
     source-tier: T1
     notes: "MASSIVE-WIN direct historical transmission. Hindu pradakṣiṇā → Buddhist pradakṣiṇa → Tibetan kora is one of the cleanest cross-tradition direct-borrowing chains in the comparative-religion record. The Bonpos (pre-Buddhist Tibet) reverse the direction as deliberate-distinction (anti-clockwise kora) — the inversion documents the practice's centrality"
-  - target: "[tawaf-kaaba-circumambulation]"
+  - target: "[[tawaf-kaaba-circumambulation]]"
     type: "scholarly-parallel"
     source: "Bernbaum 1980; Peters 1994 *The Hajj* — kora + ṭawāf are the two principal living-religion circumambulation-pilgrimage practices at the world-scale. No proven historical transmission; structural parallel-form. Both feature clockwise-from-the-sacred direction + specific-count circuits + bodily-meditative function"
     source-tier: T1
@@ -127,9 +127,9 @@ The daily local-kora practice for Tibetan laity is a contemplative discipline �
 
 Kora anchors the Buddhist pole of one of the cleanest cross-tradition **structural-pattern convergences** in comparative religion. The cluster:
 
-- **Hindu [circumambulation-pradakshina-hindu|pradakṣiṇā]** — Vedic origin, the millennia-older parent tradition
+- **Hindu [[circumambulation-pradakshina-hindu|pradakṣiṇā]]** — Vedic origin, the millennia-older parent tradition
 - **Buddhist kora** — direct Hindu inheritance via Indian Buddhist transmission
-- **Islamic [tawaf-kaaba-circumambulation|ṭawāf]** — clockwise-from-sacred-frame Hajj rite (no proven historical transmission from Hindu/Buddhist — structural parallel)
+- **Islamic [[tawaf-kaaba-circumambulation|ṭawāf]]** — clockwise-from-sacred-frame Hajj rite (no proven historical transmission from Hindu/Buddhist — structural parallel)
 - **Jewish hakafot** — 7-circumambulations of Torah on Simchat Torah
 - **Christian Easter-Vigil altar-circling**
 - **Bon counter-clockwise kora** — the deliberate inversion documenting the centrality of the practice
