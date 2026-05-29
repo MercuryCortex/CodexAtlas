@@ -4442,7 +4442,34 @@ VIEWS.scripture = {
     const pane = document.createElement('div');
     pane.className = 'forge-pane';
     canvasEl.appendChild(pane);
-    if (window._forge) window._forge.render(pane);
+    if (window._forge) {
+      window._forge.render(pane);
+      // 2026-05-30 (Commit B) — flip Forge class to 'scriptures' so the
+      // existing Codex breadcrumb pill (built by src/js/forge/codex-
+      // controls.js — Religion / Codex / Books / Lens / ✠ Read 5-segment
+      // chain) auto-shows. Without this, the wheel mounts with the last-
+      // used class (Deities by default) and the codex pill stays hidden.
+      //
+      // Timing: _forge.render() builds the WebGPU pipeline async; codex-
+      // controls.attach() wires into it AFTER. A bare setTimeout(0) fires
+      // BEFORE attach completes — setClassFilter changes mode but the
+      // body.app-pill-codex-visible toggle doesn't fire because the
+      // MutationObserver wiring hasn't installed yet. Poll instead:
+      // every 50ms, try setClassFilter('scriptures'); stop when the body
+      // class actually flips (or 2s timeout). Cheap, robust, no
+      // arbitrary "300ms should be enough" guesses.
+      let _tries = 0;
+      const _id = setInterval(() => {
+        _tries++;
+        if (document.body.classList.contains('app-pill-codex-visible') || _tries > 40) {
+          clearInterval(_id);
+          return;
+        }
+        if (window._forge && typeof window._forge.setClassFilter === 'function') {
+          try { window._forge.setClassFilter('scriptures'); } catch (_) {}
+        }
+      }, 50);
+    }
   },
 };
 
