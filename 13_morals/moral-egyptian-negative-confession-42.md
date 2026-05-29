@@ -5,7 +5,7 @@ type: moral
 moral-type: ritual-ethical-checklist
 status: full
 tier: 1
-tradition: "[[tradition-ancient-egyptian]]"
+tradition: "[[tradition-egyptian]]"
 date_earliest: -1550
 date_latest: -50
 tags:
@@ -37,8 +37,8 @@ cross-moral-edges:
     source-tier: T1
 
 moral-tradition-context:
-  - "[[tradition-ancient-egyptian]]"
-  - "[[doctrine-ma-at]]"
+  - "[[tradition-egyptian]]"
+  - "[[ma-at]]"
 
 refs:
   - "Allen, T. G. *The Book of the Dead, or Going Forth by Day.* SAOC 37. University of Chicago, 1974 — (Tier-1)"
@@ -63,19 +63,19 @@ The forty-two number is not arbitrary — Egyptologists since Sethe have identif
 
 The declarations span (a) violent offenses (no killing, no causing tears, no causing pain, no inflicting trembling), (b) property offenses (no robbing, no stealing from the temple offerings, no diminishing the bushel-measure, no land-encroachment, no diverting flood-water), (c) sexual offenses (no fornication, no homosexual acts in some recensions, no adultery), (d) speech offenses (no lying, no slander, no false witness, no eavesdropping, no quarreling, no acting in haste, no blasphemy), (e) ritual offenses (no defiling the gods' offerings, no stealing the cattle of the gods, no driving cattle from their pastures, no quenching a fire when it should burn), and (f) inner-disposition offenses (no anger without cause, no being aggressive, no hot temper, no deafness to truth, no haughtiness). The list closes with the affirmation: *"I am pure, I am pure, I am pure, I am pure."*
 
-The crucial theological context is the principle of *ma'at* ([[doctrine-ma-at]]) — cosmic order, truth, justice, and right relationship — embodied as both an abstract principle and the goddess Maat (depicted with an ostrich feather on her head). The deceased's heart is weighed against Maat's feather on the scales held by Anubis, recorded by Thoth, before Osiris seated in judgment with the forty-two assessors. If the heart balances the feather (i.e., is not heavy with unconfessed transgression), the deceased is declared *maa-kheru* ("true of voice") and admitted to the Field of Reeds. If it fails, the heart is devoured by Ammut ("Devourer of the Dead") and the deceased suffers the second death.
+The crucial theological context is the principle of *ma'at* ([[ma-at]]) — cosmic order, truth, justice, and right relationship — embodied as both an abstract principle and the goddess Maat (depicted with an ostrich feather on her head). The deceased's heart is weighed against Maat's feather on the scales held by Anubis, recorded by Thoth, before Osiris seated in judgment with the forty-two assessors. If the heart balances the feather (i.e., is not heavy with unconfessed transgression), the deceased is declared *maa-kheru* ("true of voice") and admitted to the Field of Reeds. If it fails, the heart is devoured by Ammut ("Devourer of the Dead") and the deceased suffers the second death.
 
 ### The MASSIVE WIN: The Decalogue's Antecedent
 
 Comparative analysis of the Negative Confession against the second table of the Mosaic Decalogue ([[moral-ten-commandments]]) yields a striking convergence. Both contain prohibitions on murder, theft, adultery, false witness, and covetousness/inner-disposition violations — but the Egyptian version predates Sinai by at least 350 years (using the late dating of Exodus c. 1200 BCE) and arguably by a full millennium if Coffin Text antecedents are counted. The Coffin Texts spell 1130 (c. 2000 BCE) already contains the prototype: *"I have given bread to the hungry, water to the thirsty, clothes to the naked, a boat to the boatless. I have made divine offerings to the gods, invocation-offerings to the spirits. Save me, protect me, do not accuse me before the great god."*
 
-Jan Assmann (1990, *Ma'at*) has argued that this is not direct genealogical transmission but rather **structural convergence** — both traditions arrive at a moral-checklist genre because both face the same theological problem of postmortem accountability before a divine judge. Where Israelite religion eventually consolidated this checklist into a pre-mortem covenant law (the Sinai Decalogue), Egyptian religion preserved the postmortem-confession format for two millennia. The shared categories (life, property, sexuality, honesty, inner state) reflect the cross-cultural minimum vocabulary of human moral consensus that also appears in [[moral-buddhist-five-precepts]] and the [[moral-confucian-five-relationships-wulun]] derivative codes.
+Jan Assmann (1990, *Ma'at*) has argued that this is not direct genealogical transmission but rather **structural convergence** — both traditions arrive at a moral-checklist genre because both face the same theological problem of postmortem accountability before a divine judge. Where Israelite religion eventually consolidated this checklist into a pre-mortem covenant law (the Sinai Decalogue), Egyptian religion preserved the postmortem-confession format for two millennia. The shared categories (life, property, sexuality, honesty, inner state) reflect the cross-cultural minimum vocabulary of human moral consensus that also appears in [[moral-buddhist-five-precepts]] and the Confucian Five Relationships `moral-confucian-five-relationships-wulun` derivative codes.
 
-Henri Frankfort (1948) and Eric Hornung (1992) have both stressed that the Egyptian formulation is in one respect ethically *deeper* than the Decalogue: it includes inner-disposition offenses ("no being deaf to truth," "no haughtiness," "no causing trembling") that the Mosaic text consigns to the tenth commandment alone ("no coveting"). The Negative Confession integrates motivational ethics directly into the ritual-confession format, anticipating the Beatitudes' interiorization-of-law move ([[moral-beatitudes-sermon-on-mount]]) by 1500 years.
+Henri Frankfort (1948) and Eric Hornung (1992) have both stressed that the Egyptian formulation is in one respect ethically *deeper* than the Decalogue: it includes inner-disposition offenses ("no being deaf to truth," "no haughtiness," "no causing trembling") that the Mosaic text consigns to the tenth commandment alone ("no coveting"). The Negative Confession integrates motivational ethics directly into the ritual-confession format, anticipating the Beatitudes' interiorization-of-law move (`moral-beatitudes-sermon-on-mount`) by 1500 years.
 
 ### Cross-Tradition Comparison: The Postmortem-Checklist Genre
 
-The forty-two-declaration form has structural cognates across Mediterranean and Near Eastern antiquity: the Orphic gold tablets (c. 400 BCE) carry a parallel "I claim to be of your blessed race" confession-declaration before underworld judges; the Zoroastrian Chinvat Bridge judgment ([[doctrine-chinvat-bridge]]) similarly weighs the soul's deeds, though without the structured-checklist form; and the Islamic *mizan* / scales-of-judgment tradition ([[moral-sharia-five-objectives-maqasid]]) preserves the iconography of weighing across a 4500-year transmission spine documented by Hornung and Asín Palacios.
+The forty-two-declaration form has structural cognates across Mediterranean and Near Eastern antiquity: the Orphic gold tablets (c. 400 BCE) carry a parallel "I claim to be of your blessed race" confession-declaration before underworld judges; the Zoroastrian Chinvat Bridge judgment ([[doctrine-chinvat-bridge]]) similarly weighs the soul's deeds, though without the structured-checklist form; and the Islamic *mizan* / scales-of-judgment tradition (`moral-sharia-five-objectives-maqasid`) preserves the iconography of weighing across a 4500-year transmission spine documented by Hornung and Asín Palacios.
 
 The deepest non-Egyptian parallel may be the Buddhist [[moral-buddhist-five-precepts]] — both traditions formulate a fixed-item ethical declaration whose violation has soteriological (not merely civic) consequence. The Negative Confession's distinctive innovation, preserved into Christian and Islamic eschatology, is the **fusion of judicial process with moral biography**: the soul does not merely confess sin in general but declares itself negatively against a specific structured list, in a forensic procedure attended by named divine judges. This is the structural ancestor of every Last Judgment scene in the Abrahamic tradition.
 
@@ -85,16 +85,16 @@ The deepest non-Egyptian parallel may be the Buddhist [[moral-buddhist-five-prec
   type: parallel-form
   note: "Nine of the ten Mosaic commandments have direct content parallels in the 42 Declarations, with the Egyptian version preceding by 350-1000 years; structural convergence per Assmann 1990 not direct transmission."
   source-tier: T1
-- target: doctrine-ma-at
-  type: ancestor-of
-  note: "The Negative Confession is the operational liturgy through which a deceased Egyptian declares themselves *maa-kheru* ('aligned with Maat') — the doctrine of cosmic moral order embodied in ritual practice."
+- target: ma-at
+  type: parallel-form
+  note: "The Negative Confession is the operational liturgy through which a deceased Egyptian declares themselves *maa-kheru* ('aligned with Maat') — the goddess Maat embodies the cosmic moral order the confession ritually instantiates."
   source-tier: T1
 - target: doctrine-chinvat-bridge
   type: parallel-form
   note: "Zoroastrian postmortem judgment at the Chinvat Bridge weighs the soul's deeds in a structurally analogous tribunal; both traditions independently formulate forensic-soteriological eschatology."
   source: "Hultgård, Anders. 'Bahman Yasht: A Persian Apocalypse.' In *Mysteries and Revelations.* 1995."
   source-tier: T1
-- target: moral-beatitudes-sermon-on-mount
+- target: moral-buddhist-five-precepts
   type: parallel-form
-  note: "Both texts interiorize moral demand beyond external act — the Egyptian 'no being deaf to truth' / 'no haughtiness' anticipates the Sermon on the Mount's heart-disposition ethics by 1500 years."
+  note: "Independent fixed-item moral checklists where violation generates soteriological (not merely civic) consequence; convergence on moral-checklist genre per Assmann's typology."
   source-tier: T1
