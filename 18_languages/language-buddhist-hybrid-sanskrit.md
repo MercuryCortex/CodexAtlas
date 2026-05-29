@@ -37,12 +37,12 @@ syncretic-edges:
     source: "Edgerton 1953 §1; Pollock, S. 2006 *The Language of the Gods in the World of Men* California"
     source-tier: "T1"
     notes: "Classical Sanskrit (Pāṇinian) became the prestige literary language of the Indian world c. -200 onward. The progressive retro-Sanskritization of Buddhist Middle-Indo-Aryan canonical material — which produces Buddhist Hybrid Sanskrit — is a load-bearing instance of Pollock's 'Sanskrit Cosmopolis' dynamic: a vernacular religious-canonical tradition reshapes itself toward the prestige literary register without fully assimilating, leaving the hybrid traces that Edgerton catalogued."
-  - target: "[language-classical-chinese]"
+  - target: "[[language-classical-chinese]]"
     type: "transmission"
     source: "Nattier, J. 2008 *A Guide to the Earliest Chinese Buddhist Translations* Soka; Boucher, D. 1998 'Gāndhārī and the Early Chinese Buddhist Translations Reconsidered' JAOS 118"
     source-tier: "T1"
     notes: "The vast Chinese Buddhist canon (Taishō Tripiṭaka; thousands of texts) is primarily translated from BHS / Sanskrit sources — Kumārajīva (4th-5th c.), Paramārtha (6th c.), Xuanzang (7th c.) translate from BHS originals. This is the load-bearing transmission event by which Mahāyāna Buddhism reaches East Asia. Edgerton's BHS Grammar is in significant part reverse-engineered from the surviving Sanskrit fragments + the Chinese translations' implied source-readings."
-  - target: "[language-classical-tibetan]"
+  - target: "[[language-classical-tibetan]]"
     type: "transmission"
     source: "Beyer, S. 1992 *The Classical Tibetan Language* SUNY; Hahn, M. 1996 *Lehrbuch der klassischen tibetischen Schriftsprache* IndIca"
     source-tier: "T1"
@@ -120,8 +120,8 @@ The BHS corpus reaches East Asia through a translation-history of remarkable sca
 - [[language-pali]] — parallel Theravāda canonical language
 - [[sanskrit-vedic]] — Old Indo-Aryan ancestor / Sanskritization model
 - [[language-sanskrit-classical]] — the prestige register toward which BHS retro-Sanskritizes
-- [language-classical-chinese] — downstream via Chinese translation
-- [language-classical-tibetan] — downstream via Tibetan translation
+- [[language-classical-chinese]] — downstream via Chinese translation
+- [[language-classical-tibetan]] — downstream via Tibetan translation
 - [[tradition-mahayana-buddhism]] — religious-cultural context
 - [[phase-4-101-lotus-sutra]] — the principal Lotus Sutra reference
 - [[siddhartha-gautama-buddha]] — founder

@@ -34,12 +34,12 @@ syncretic-edges:
     source: "Pérez Fernández 1997 ch. 2; Schniedewind, W. M. 2013 *A Social History of Hebrew* Yale"
     source-tier: "T1"
     notes: "Tannaitic-period Palestine was deeply diglossic: Hebrew as the religious-scholarly register, Aramaic as the everyday vernacular for much of the population, Greek as the administrative + commercial register. Mishnaic Hebrew shows heavy Aramaic substratum influence (vocabulary loans, syntactic calques) while remaining a distinct language. The Mishnah itself is in Mishnaic Hebrew, but the slightly later [[phase-4-032-jerusalem-talmud|Jerusalem Talmud]] and [[phase-4-033-babylonian-talmud|Babylonian Talmud]] are in their respective Aramaic dialects discussing the Hebrew Mishnah."
-  - target: "[language-galilean-aramaic]"
+  - target: "[[language-galilean-aramaic]]"
     type: "parallel-motif"
     source: "Sokoloff, M. 1990 *A Dictionary of Jewish Palestinian Aramaic*; Pérez Fernández 1997"
     source-tier: "T1"
     notes: "Mishnaic Hebrew (the Tannaitic register) and Galilean (Jewish Palestinian) Aramaic (the Amoraic register of the Jerusalem Talmud) share the same 1st-3rd-c. CE Roman-Palestinian linguistic-geographic context. The Mishnah's Hebrew shows Galilean-Aramaic substrate features; the Jerusalem Talmud's Galilean Aramaic shows Mishnaic-Hebrew superstrate features. The two registers coexist in the same priestly-rabbinic communities."
-  - target: "[language-babylonian-aramaic]"
+  - target: "[[language-babylonian-aramaic]]"
     type: "parallel-motif"
     source: "Sokoloff, M. 2002 *A Dictionary of Jewish Babylonian Aramaic of the Talmudic and Geonic Periods*; Morgenstern, M. 2011 *Studies in Jewish Babylonian Aramaic*"
     source-tier: "T1"
@@ -104,7 +104,7 @@ Mishnaic Hebrew is the language of the Tannaitic-period rabbinic literature:
 
 Tannaitic-period Palestine was a deeply multilingual society. Mishnaic Hebrew operated alongside:
 
-- **Aramaic** — the everyday vernacular for much of the Jewish population (especially in the Galilee); the language of the Targums (Aramaic translations of the Hebrew Bible used in synagogue worship for laity who didn't follow Hebrew). The two later Talmuds (Jerusalem + Babylonian) are in [language-galilean-aramaic|Galilean Aramaic] + [language-babylonian-aramaic|Babylonian Aramaic] respectively, discussing the Hebrew Mishnah.
+- **Aramaic** — the everyday vernacular for much of the Jewish population (especially in the Galilee); the language of the Targums (Aramaic translations of the Hebrew Bible used in synagogue worship for laity who didn't follow Hebrew). The two later Talmuds (Jerusalem + Babylonian) are in [[language-galilean-aramaic|Galilean Aramaic]] + [[language-babylonian-aramaic|Babylonian Aramaic]] respectively, discussing the Hebrew Mishnah.
 - **Greek** — the administrative + commercial register under Roman rule; widely-spoken in the cities of Hellenistic-Roman Palestine. Many Greek loanwords + Greek-language Jewish writing (Philo, Josephus).
 - **Latin** — the Roman administrative language; restricted use but visible in technical-legal Mishnaic-Hebrew vocabulary.
 
@@ -118,8 +118,8 @@ Mishnaic Hebrew, after the 3rd century CE, persists primarily as a scholarly + l
 
 - [[hebrew-biblical]] — immediate predecessor register
 - [[language-aramaic-imperial]] — substrate + downstream-Talmud language
-- [language-galilean-aramaic] — Jerusalem-Talmud language; same geographic context
-- [language-babylonian-aramaic] — Babylonian-Talmud language; commentary on the Mishnah
+- [[language-galilean-aramaic]] — Jerusalem-Talmud language; same geographic context
+- [[language-babylonian-aramaic]] — Babylonian-Talmud language; commentary on the Mishnah
 - [[koine-greek]] — co-language under Roman rule
 - [[alphabet-hebrew-aleph-bet]] — the script
 - [[tradition-judaism]] — religious-cultural context

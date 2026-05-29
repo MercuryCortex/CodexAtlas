@@ -35,7 +35,7 @@ syncretic-edges:
     source: "Edgerton, F. 1953 *Buddhist Hybrid Sanskrit Grammar and Dictionary* Yale; Bechert, H. 1980 *Die Sprache der ältesten buddhistischen Überlieferung* Vandenhoeck"
     source-tier: "T1"
     notes: "The Mahāyāna sutra corpus (Lotus, Heart, Diamond, Avataṃsaka, Vimalakīrti, Sukhāvatī-vyūha) is composed in Buddhist Hybrid Sanskrit — a register that retro-Sanskritizes Middle Indo-Aryan (Pali-like) vocabulary into a Sanskrit-leaning literary register. The relationship is asymmetric: Pali preserves the older Theravāda canonical tradition; Buddhist Hybrid Sanskrit preserves the Mahāyāna sutra tradition; the two traditions branch from a common Middle-Indo-Aryan substrate."
-  - target: "[language-classical-tibetan]"
+  - target: "[[language-classical-tibetan]]"
     type: "transmission"
     source: "Wedemeyer, C. K. 2013 *Making Sense of Tantric Buddhism* Columbia"
     source-tier: "T1"
@@ -83,7 +83,7 @@ The canonical language of [[tradition-theravada-buddhism|Theravāda Buddhism]] �
 
 ## Pali, Sanskrit, and the Middle-Indo-Aryan layer
 
-Pali is *not* a direct descendant of Classical (Panini-codified) Sanskrit. It is a Middle Indo-Aryan vernacular — the same linguistic stage as the Aśokan-edict dialects, the Jain canonical languages ([language-ardhamagadhi-prakrit|Ardha-Māgadhī] and others), and the various regional Prakrits. Compared to Vedic Sanskrit, Middle Indo-Aryan shows:
+Pali is *not* a direct descendant of Classical (Panini-codified) Sanskrit. It is a Middle Indo-Aryan vernacular — the same linguistic stage as the Aśokan-edict dialects, the Jain canonical languages ([[language-ardhamagadhi-prakrit|Ardha-Māgadhī]] and others), and the various regional Prakrits. Compared to Vedic Sanskrit, Middle Indo-Aryan shows:
 
 - Simplification of consonant clusters (Skt. *dharma* → Pali *dhamma*; Skt. *karma* → Pali *kamma*; Skt. *prajñā* → Pali *paññā*)
 - Loss of the dual number (Skt. has singular/dual/plural; Pali has only singular/plural)
@@ -114,8 +114,8 @@ The Mahāyāna sutra corpus (Lotus Sutra, Heart Sutra, Diamond Sutra, etc.) is c
 
 - [[sanskrit-vedic]] — Old Indo-Aryan ancestor
 - [[language-buddhist-hybrid-sanskrit]] — parallel Mahāyāna canonical language
-- [language-classical-tibetan] — downstream Buddhist canonical language
-- [language-classical-chinese] — downstream Buddhist canonical language (via translation)
+- [[language-classical-tibetan]] — downstream Buddhist canonical language
+- [[language-classical-chinese]] — downstream Buddhist canonical language (via translation)
 - [[tradition-theravada-buddhism]] — religious-cultural context
 - [[phase-2-016-early-buddhist-suttas]] — the Sutta Piṭaka
 - [[phase-2-029-dhammapada]] — most-translated Buddhist text
