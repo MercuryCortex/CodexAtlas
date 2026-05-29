@@ -4339,6 +4339,20 @@
       saveState();
       syncLabels();
       syncLocks();
+      // 2026-05-29 — When user picks a specific corpus (Bible, Vedas,
+      // etc.) and there's no specific book yet, route to the scripture-
+      // radial sunburst view instead of the Forge wheel. The wheel
+      // under-populates with ~5 dots because its layout was built for
+      // 700 deities; the radial paints all books always. Mirrors the
+      // routing already in setCorpus() (the inline pill-click handler
+      // here bypasses setCorpus, so it needs its own copy).
+      if (newCorpus && typeof window.setView === 'function') {
+        try {
+          if (typeof window.STATE === 'object') window.STATE.scriptureCorpus = newCorpus;
+          window.setView('scripture');
+          return;   // skip the wheel rebuild below — the radial owns this state now
+        } catch (_) { /* fall through to wheel rebuild on error */ }
+      }
       if (typeof rebuildForMode === 'function' && local.mode && local.mode.id) {
         try { rebuildForMode(local.mode.id, { preserveLocks: true, preserveZoom: false }); }
         catch (e) { console.warn('[codex-controls] codex rebuild failed', e); }
