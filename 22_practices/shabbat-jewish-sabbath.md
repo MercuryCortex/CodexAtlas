@@ -37,7 +37,7 @@ syncretic-edges:
     source: "Heschel 1951 *The Sabbath*; Sarna 1986 *Exploring Exodus* — the theological frame of Shabbat is the Genesis 1 creation-cosmogony: God created the world in six days + rested on the seventh, sanctifying it. The weekly Shabbat is the temporal re-enactment of the cosmogonic seventh-day rest. The frame is uniquely Jewish (no other ancient Near Eastern tradition has a 7-day cosmogony + a sanctified seventh day; the parallel Mesopotamian *shabattu* refers to a monthly full-moon ill-omen day, not a weekly rest)"
     source-tier: T1
     notes: "The Genesis 1 cosmogony + Shabbat are theologically interdependent"
-  - target: "[lent-christian-fast]"
+  - target: "[[lent-christian-fast]]"
     type: "scholarly-parallel"
     source: "Bradshaw 2002 *The Search for the Origins of Christian Worship*; Heschel 1951 — Christian Sunday observance is the historical inheritance of Jewish Shabbat (transposed from 7th-day to 1st-day to mark the resurrection); the broader Christian temporal-disciplines (Lent, Holy Week, Easter Triduum) extend the principle of sanctified time. Heschel framed Shabbat as the Jewish 'palace in time'; the Christian liturgical calendar is the post-Jewish elaboration of this temporal-sanctification principle"
     source-tier: T1

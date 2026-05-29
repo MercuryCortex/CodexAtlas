@@ -44,7 +44,7 @@ syncretic-edges:
     source: "Bell 1985 *Holy Anorexia*; Bynum 1987 *Holy Feast and Holy Fast* — Yom Kippur is the most-severe Jewish fast (25 hours complete abstention from food + water + 4 other afflictions) and one of the most-strictly-observed fasts across all major religious traditions; even minimally-observant Jews commonly fast on Yom Kippur. Structural cluster: Christian Lent + Holy Week, Muslim Ramadan, Hindu Ekadashi/Mahashivaratri, Jain Paryushan, Baha'i Fast"
     source-tier: T1
     notes: "Cross-tradition parallel-form within the global fasting cluster; the atonement-specific framing is comparatively rare"
-  - target: "[lent-christian-fast]"
+  - target: "[[lent-christian-fast]]"
     type: "scholarly-parallel"
     source: "Bradshaw 2002 *The Search for the Origins of Christian Worship*; Talley 1986 *The Origins of the Liturgical Year* — Christian Lent + Holy Week are the closest cross-tradition parallel: an annual fasting-period framed around atonement + sacrifice. Both culminate in a death-and-renewal climax (Yom Kippur: closing Neilah + tekiah-gedolah → return to ordinary life; Lent: Good Friday → Easter Vigil → resurrection). Different theological framings (Jewish covenantal atonement vs Christian Christological atonement) — same temporal-discipline + atonement framework"
     source-tier: T1
