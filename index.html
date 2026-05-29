@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=EB+Garamond:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&family=Noto+Serif+Hebrew:wght@400;700&family=Noto+Sans+Egyptian+Hieroglyphs&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="_assets/vendor/maplibre/maplibre-gl.css?v=5.24.0" />
-<link rel="stylesheet" href="src/styles/app.css?v=20260529-legacy-killswitch-purge-mapthumb-zoommeter" />
+<link rel="stylesheet" href="src/styles/app.css?v=20260529-legacy-purge-final" />
 </head>
 <body class="nav-hidden detail-collapsed">
 <!-- ════════════════════════════════════════════════════════════════
@@ -122,31 +122,15 @@
        Rendered by src/js/views/scripture-reader.js into this pane.
        Hidden by setView() on every view transition. -->
   <div id="scripture-reader-pane" style="display:none"></div>
-  <!-- 2026-05-29 — V01 legacy chrome NEUTRALIZED per user protocol
-       "old shit should be GONE ERASED, not hidden via per-view CSS".
-       .map-thumb (world map mini bottom-right) and #zoom-meter
-       (top-right zoom +/-/% buttons) were V1 prototype shell elements.
-       V2 views built their own zoom + map primitives in canonical
-       chrome (.forge-bottombar zoom-gizmo, .scripture-bottombar 100%
-       button, etc). The legacy elements are FORCED-HIDDEN at the CSS
-       layer here with no per-view escape hatch (display:none from
-       `legacy-killswitch` ruleset, !important). Their EMPTY <div>
-       stubs survive ONLY to anchor 35 legacy JS getElementById calls
-       in src/js/app.js that would otherwise silent-throw on null per
-       `feedback_dom_addEventListener_null_throws_silently_2026-05-28`.
-       Those 35 JS callsites are queued for deletion in a follow-up
-       refactor; until then this is the safest scrub. -->
-  <div id="map-thumb" class="legacy-killswitch"></div>
-  <div id="map-thumb-svg" class="legacy-killswitch"></div>
-  <div id="map-thumb-paths" class="legacy-killswitch"></div>
-  <div id="map-thumb-marker" class="legacy-killswitch"></div>
-  <div id="map-thumb-label" class="legacy-killswitch"></div>
-  <div id="zoom-meter" class="legacy-killswitch">
-    <div id="zm-out"></div>
-    <div id="zm-reset"></div>
-    <div id="zm-in"></div>
-    <div id="zm-readout"></div>
-  </div>
+  <!-- 2026-05-29 — V01 #map-thumb + #zoom-meter and all their inner
+       anchors DELETED outright (markup + CSS + JS callers in
+       src/js/app.js in the same atomic commit). The earlier
+       2026-05-29 morning attempt shipped `.legacy-killswitch` empty-
+       div stubs which violated the cardinal "scorched-earth, not
+       stub-and-CSS-hide" protocol — see HOW-WE-WORK.md §5 rule #8
+       and feedback_per_view_hide_list_forbidden_2026-05-29. The V2
+       views own their own zoom + map primitives now (.forge-bottombar
+       zoom-readout, Atlas pane via MapLibre). -->
   <!-- Kept (still V2-used): aside.detail (Forge side-panel),
        .view-header (Forge subtitle), .legend (D3 pantheon),
        .tier-legend (Forge tier overlay), #tooltip (shared). -->
@@ -178,7 +162,7 @@
   <p>Then refresh this page.</p>
 </div>
 
-<script src="data.js?v=20260529-220414" onerror="document.getElementById('missing-data').style.display='flex'"></script>
+<script src="data.js?v=20260529-234641" onerror="document.getElementById('missing-data').style.display='flex'"></script>
 <script src="https://d3js.org/d3.v7.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <script src="_assets/vendor/maplibre/maplibre-gl.js"></script>
@@ -253,7 +237,7 @@
 <script src="src/data/patterns.js?v=20260516-patterns-tab"></script>
 <script src="src/data/observations.js?v=20260516-observations-tab"></script>
 <script src="src/data/chains.js?v=20260516-chains-2"></script>
-<script src="src/js/app.js?v=20260529-scripture-strip-v1-rainbow"></script>
+<script src="src/js/app.js?v=20260530-legacy-purge-final"></script>
 <!-- Phase 22-B (2026-05-23) — app-shell top-bar pill wiring.
      Loads AFTER app.js so window.STATE + window.setView are defined.
      Self-installing IIFE; exposes window._appPill for debug. -->
@@ -270,7 +254,7 @@
 <script src="src/js/astrology/wheel.js?v=20260517-handoff"></script>
 <script src="src/js/astrology/now.js?v=20260515-now-events"></script>
 <script src="src/js/astrology/astro-pantheon.js?v=20260517-handoff"></script>
-<script src="src/js/alphabets/glyph-data.js?v=20260529-220414"></script>
+<script src="src/js/alphabets/glyph-data.js?v=20260529-234641"></script>
 <script src="src/js/alphabets/glyph-viewer.js?v=20260517-svg-glyphs-1"></script>
 <script src="src/js/alphabets/origin-chain.js?v=20260516-alpha-1"></script>
 <script src="src/js/alphabets/mysticism.js?v=20260516-alpha-1"></script>

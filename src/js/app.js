@@ -408,86 +408,28 @@ function neighborsOf(id, hops = 1) {
 }
 
 // ============================================================
-// MAP THUMBNAIL — small world map bottom-right, highlights the deity/doc/event's region.
-// Uses inline minimal continent outlines (equirectangular projection so the math is trivial).
-// On hover or sticky-lock, .setMapTarget(node) shows the geo dot.
+// MAP THUMBNAIL — DELETED 2026-05-30
 // ============================================================
-const MAP_W = 360, MAP_H = 180;
-// equirectangular projection: lon ∈ [-180,180] → x ∈ [0,360]; lat ∈ [-90,90] → y ∈ [180,0]
-function geoToMap(lat, lon) {
-  return [
-    (lon + 180) * (MAP_W / 360),
-    (90 - lat) * (MAP_H / 180),
-  ];
-}
-// Minimal continent outlines (very simplified — enough to recognize continents at thumbnail size).
-// Each path is an array of [lat, lon] pairs traced clockwise.
-const CONTINENT_OUTLINES = [
-  // Europe (very rough)
-  [[58,-9],[68,5],[71,25],[60,40],[45,40],[38,28],[36,15],[43,-4],[50,-9],[58,-9]],
-  // Africa (rough)
-  [[36,-7],[34,11],[31,33],[12,42],[-12,40],[-34,18],[-35,20],[-22,14],[-7,9],[6,3],[14,-17],[22,-17],[34,-9],[36,-7]],
-  // Asia (rough)
-  [[71,30],[78,60],[78,100],[72,140],[55,135],[40,140],[25,122],[12,108],[8,80],[20,68],[26,60],[36,46],[43,40],[60,40],[71,25],[71,30]],
-  // North America (rough)
-  [[70,-160],[72,-90],[70,-60],[50,-55],[30,-78],[18,-95],[20,-105],[35,-120],[55,-135],[70,-160]],
-  // South America (rough)
-  [[12,-72],[8,-50],[-10,-35],[-30,-50],[-55,-70],[-40,-75],[-15,-78],[-2,-80],[12,-72]],
-  // Australia (rough)
-  [[-12,130],[-12,144],[-30,153],[-38,146],[-35,120],[-25,113],[-15,123],[-12,130]],
-  // Greenland (rough)
-  [[83,-30],[78,-20],[70,-22],[60,-44],[78,-58],[83,-30]],
-  // British Isles (very rough)
-  [[59,-7],[58,-2],[50,-5],[52,-10],[59,-7]],
-  // Indonesia / Philippines / SE Asia archipelago (rough sweep)
-  [[6,95],[2,110],[-7,108],[-9,118],[-2,128],[8,124],[18,121],[6,95]],
-  // Japan (rough)
-  [[44,141],[36,141],[33,131],[35,130],[40,140],[44,141]],
-  // Madagascar (rough)
-  [[-12,49],[-15,50],[-25,47],[-25,44],[-15,46],[-12,49]],
-  // New Zealand (rough)
-  [[-35,173],[-41,176],[-47,168],[-41,170],[-35,173]],
-];
-function projectOutlines() {
-  const pathsEl = document.getElementById('map-thumb-paths');
-  if (!pathsEl) return;
-  pathsEl.innerHTML = CONTINENT_OUTLINES.map(poly => {
-    const pts = poly.map(([lat, lon]) => geoToMap(lat, lon).map(v => v.toFixed(1)).join(',')).join(' ');
-    return `<polygon points="${pts}" />`;
-  }).join('');
-}
-projectOutlines();
-
-let mapThumbVisible = false;
-function setMapTarget(node) {
-  const thumb = document.getElementById('map-thumb');
-  const marker = document.getElementById('map-thumb-marker');
-  const label = document.getElementById('map-thumb-label');
-  if (!node || !node.geo) {
-    if (mapThumbVisible) {
-      thumb.style.opacity = '0.45';
-      label.textContent = '— ' + (node ? '(no region)' : 'hover a node');
-      marker.innerHTML = '';
-    } else {
-      thumb.style.display = 'none';
-    }
-    return;
-  }
-  thumb.style.display = 'block';
-  thumb.style.opacity = '1';
-  const [x, y] = geoToMap(node.geo.lat, node.geo.lon);
-  marker.innerHTML = `
-    <circle cx="${x}" cy="${y}" r="6" fill="none" stroke="var(--gold)" stroke-width="0.8" stroke-opacity="0.5"/>
-    <circle class="pulse" cx="${x}" cy="${y}" r="2.6"/>
-  `;
-  label.textContent = node.geo.label || node.region || '';
-  mapThumbVisible = true;
-}
-function clearMapTarget() {
-  const thumb = document.getElementById('map-thumb');
-  thumb.style.display = 'none';
-  mapThumbVisible = false;
-}
+// The V01 world-map thumbnail (small SVG world bottom-right, geo-dot
+// on hover) was removed when its DOM anchors (#map-thumb, #zoom-meter,
+// #map-thumb-paths/marker/label, #zm-*) were scorched-earth deleted
+// from index.html and app.css per the cardinal hide-list-forbidden
+// protocol (feedback_per_view_hide_list_forbidden_2026-05-29 +
+// HOW-WE-WORK.md §5 rule #8). The old equirectangular continent-
+// outline drawer + setMapTarget/clearMapTarget go with it.
+//
+// Why the symbols are KEPT as no-op stubs (instead of full deletion):
+// pantheon-v2.js hover handlers call `window.setMapTarget(node)` (with
+// a null-check on the function) and two legacy V1 view-render paths
+// (around lines below at the old 1934/2904) call bare `setMapTarget(d)`.
+// Leaving harmless no-ops is cheaper than null-guarding both V2
+// callsites + verifying the V1 paths are unreachable. The functions
+// genuinely DO NOTHING — no DOM access, no side effects, no error.
+// Future cleanup: when the V1 view code paths are removed (separate
+// commit), delete `window.setMapTarget` / `window.clearMapTarget` and
+// remove the pantheon-v2.js calls. Until then this is the safe scrub.
+function setMapTarget() { /* no-op — V01 map-thumb deleted */ }
+function clearMapTarget() { /* no-op — V01 map-thumb deleted */ }
 window.setMapTarget = setMapTarget;
 window.clearMapTarget = clearMapTarget;
 
@@ -614,31 +556,26 @@ function setView(name) {
   }
   document.querySelectorAll('.list-pane,.about-pane,.legacy-pane,.alch-toolbox,.alch-palette,.tl-zoom-presets,.alch-board-root,.alch-menu,.astrology-pane,.alpha-pane').forEach(el => el.remove());
   hideTooltip();
-  // Map thumbnail only on geo-relevant views; hide elsewhere.
-  // Atlas view uses MapLibre (no SVG map-thumb); zoom meter shown separately.
-  const showMapThumb = (name === 'pantheon' || name === 'documents' || name === 'timeline' || name === 'transmission' || name === 'scripture');
-  const showZoomMeter = showMapThumb || name === 'atlas';
-  // Default-collapse the detail panel ONLY on a view CHANGE (e.g., Pantheon → Timeline),
-  // not on a re-render of the same view. Re-renders are triggered by ResizeObserver and
-  // window-resize listeners — if we collapsed on those, clicking a Timeline event would
-  // open the panel briefly and then snap shut ~220ms later when the ResizeObserver fires
-  // (because opening the panel changes the SVG width, which trips the observer).
-  if (showMapThumb && _isViewChange) {
+  // 2026-05-29 — legacy #map-thumb / #zoom-meter toggle block REMOVED.
+  // Those elements were deleted from index.html (V01 chrome scorched-earth
+  // pass per feedback_per_view_hide_list_forbidden_2026-05-29). V2 views
+  // own their own zoom + map primitives now (.forge-bottombar zoom-readout,
+  // Atlas pane via MapLibre).
+  //
+  // Preserved behavior: default-collapse the detail panel ONLY on a view
+  // CHANGE (e.g., Pantheon → Timeline), not on a re-render of the same view.
+  // Re-renders are triggered by ResizeObserver and window-resize listeners —
+  // if we collapsed on those, clicking a Timeline event would open the panel
+  // briefly and then snap shut ~220ms later when the observer fires (because
+  // opening the panel changes the SVG width, which trips the observer).
+  // The gate was previously the showMapThumb flag; it now lists the views
+  // explicitly so it stays accurate after the legacy purge.
+  const _collapseOnViewChange = (name === 'pantheon' || name === 'documents' || name === 'timeline' || name === 'transmission' || name === 'scripture');
+  if (_collapseOnViewChange && _isViewChange) {
     document.body.classList.add('detail-collapsed');
     const dt = document.getElementById('detail-toggle');
     if (dt) dt.textContent = '‹';
   }
-  document.getElementById('map-thumb').style.display = showMapThumb ? 'block' : 'none';
-  if (showMapThumb) {
-    document.getElementById('map-thumb').style.opacity = '0.45';
-    document.getElementById('map-thumb-label').textContent = '— hover a node';
-    document.getElementById('map-thumb-marker').innerHTML = '';
-    mapThumbVisible = true;
-  }
-  // Zoom meter — visible on zoomable views (including atlas); its handlers are rewired per-view by the renderer.
-  document.getElementById('zoom-meter').style.display = showZoomMeter ? 'inline-flex' : 'none';
-  // Body flag so the view-header can reserve top-right space for the meter.
-  document.body.classList.toggle('zoom-visible', showZoomMeter);
   const v = VIEWS[name];
   document.getElementById('view-title').textContent = v.title;
   document.getElementById('view-subtitle').textContent = v.subtitle;

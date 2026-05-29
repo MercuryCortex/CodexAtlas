@@ -1891,8 +1891,6 @@ body.tier-overlay-on [data-tier="none"] { stroke: var(--tier-none); stroke-dasha
   color: var(--text-1);
 }
 body.tier-overlay-on .tier-legend { opacity: 1; transform: translateY(0); pointer-events: auto; }
-/* If zoom-meter is also visible, push the tier-legend below it. */
-body.zoom-visible .tier-legend { top: 56px; right: 24px; }
 .tier-legend .tl-header {
   display: flex; align-items: baseline; justify-content: space-between;
   padding-bottom: 8px; margin-bottom: 10px;
@@ -2185,7 +2183,6 @@ main.canvas > div#svg-wrap > svg#svg {
   overflow: visible;
 }
 /* Map-thumb SVG keeps its own 100% rule */
-.map-thumb svg { display: block; width: 100%; height: 100%; }
 .view-header {
   position: absolute; top: 14px;
   left: calc(var(--nav-w) + 24px);
@@ -2198,9 +2195,6 @@ main.canvas > div#svg-wrap > svg#svg {
 }
 body.nav-collapsed    .view-header { left:  calc(var(--nav-w-collapsed) + 24px); }
 body.detail-collapsed .view-header { right: calc(var(--detail-w-collapsed) + 24px); }
-/* When the zoom-meter is visible, reserve the right side so view-controls + title can't drift under the meter. */
-body.zoom-visible .view-header { right: calc(var(--detail-w) + 230px); }
-body.zoom-visible.detail-collapsed .view-header { right: calc(var(--detail-w-collapsed) + 230px); }
 .view-header > div:first-child { min-width: 0; flex: 1 1 auto; }   /* title block can shrink */
 .view-controls { pointer-events: auto; display: flex; gap: 8px; align-items: center; flex-shrink: 0; }
 .view-header h2 { margin: 0; font-family: var(--serif); font-size: var(--h2-size); color: var(--text-0); font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap; }
@@ -3835,12 +3829,6 @@ select.ph2-btn:hover {
 .ph2-toolbar-zoom .ph2-btn:last-child  { border-radius: 0 3px 3px 0; border-right-width: 1px; }
 .ph2-tz-btn { min-width: 26px; padding: 5px 8px; justify-content: center; }
 .ph2-tz-pct { min-width: 52px; justify-content: center; font-weight: 600; color: var(--text-0); }
-/* Hide the legacy P1 zoom-meter on the promoted V2 Pantheon — it was a
-   D3-zoom indicator that doesn't apply to sigma. */
-body.view-pantheon .zoom-meter,
-body.view-pantheon-v2 .zoom-meter { display: none !important; }
-/* Map-thumb stays visible on V2 — it picks up V2 hover via window.selectNode
-   which already calls setMapTarget in the production code path. */
 /* old .ph2-zoom-widget rules retired — see .ph2-toolbar-zoom above */
 
 /* ── WIRE-LEGEND TOGGLE + PANEL (bottom-left) ───────────────────────── */
@@ -4230,8 +4218,6 @@ body.nav-collapsed    .ph2-wire-legend-panel { left: calc(var(--nav-w-collapsed)
    title doesn't compete with the search/preset row. The board toolbar IS
    the title bar. Alchemy (investigation) keeps its header. */
 body.view-transmutation .view-header { display: none; }
-body.view-transmutation .map-thumb { display: none !important; }
-body.view-transmutation .zoom-meter { display: none !important; }
 
 /* ASTROLOGY pane — stub state. Same layout idiom as .atlas-pane: full canvas
    minus sidebar/detail widths via --eff-nav-w / --eff-detail-w. The mode-switch
@@ -5359,79 +5345,11 @@ body.view-transmutation .zoom-meter { display: none !important; }
 .btn-reset:hover { color: var(--gold); border-color: var(--gold-soft); background: rgba(212,165,90,0.06); }
 .btn-reset.active { color: var(--gold); border-color: var(--gold); }
 
-/* Map thumbnail — bottom-right, sits clear of any dashboard panels by avoiding the detail-pane width */
-/* ZOOM METER — top-right of canvas, anchored to viewport clearing the detail panel. */
-.zoom-meter {
-  position: absolute; top: 14px;
-  right: calc(var(--detail-w) + 24px);
-  z-index: 35;
-  display: inline-flex; align-items: center; gap: 0;
-  background: var(--panel-bg);
-  backdrop-filter: var(--panel-blur);
-  -webkit-backdrop-filter: var(--panel-blur);
-  border: var(--panel-edge); border-radius: 4px;
-  padding: 2px;
-  font-family: var(--mono);
-  box-shadow: var(--panel-shadow);
-  transition: right var(--t-layout) var(--ease);
-}
-body.detail-collapsed .zoom-meter { right: calc(var(--detail-w-collapsed) + 24px); }
-.zoom-meter button {
-  background: transparent; border: 0; padding: 0;
-  color: var(--text-2); cursor: pointer;
-  transition: color 120ms ease, background 120ms ease;
-  font-family: inherit; line-height: 1;
-  height: 24px;
-}
-.zm-step {
-  width: 26px;
-  font-size: 14px; font-weight: 400;
-  border-radius: 3px;
-}
-.zm-step:hover { color: var(--gold); background: rgba(212,165,90,0.08); }
-.zm-baseline {
-  padding: 0 10px;
-  font-size: 10px; letter-spacing: 0.08em; font-weight: 500;
-  color: var(--gold-soft);
-  border-radius: 3px;
-  margin: 0 2px;
-}
-.zm-baseline:hover { color: var(--gold); background: rgba(212,165,90,0.08); }
-.zm-readout {
-  font-size: 9.5px; color: var(--text-3); letter-spacing: 0.04em;
-  padding: 0 10px 0 8px; min-width: 42px; text-align: right;
-  border-left: 1px solid var(--border);
-  margin-left: 2px;
-  height: 24px; line-height: 24px;
-  display: inline-block;
-}
-
-.map-thumb {
-  position: absolute; bottom: calc(var(--footer-h) + 12px);
-  right: calc(var(--detail-w) + 14px);
-  width: 200px; height: 110px;
-  background: var(--panel-bg);
-  backdrop-filter: var(--panel-blur);
-  -webkit-backdrop-filter: var(--panel-blur);
-  border: var(--panel-edge); border-radius: 4px;
-  overflow: hidden; pointer-events: none;
-  transition: opacity 200ms ease, right var(--t-layout) var(--ease);
-}
-body.detail-collapsed .map-thumb { right: calc(var(--detail-w-collapsed) + 14px); }
-.map-thumb-label {
-  position: absolute; bottom: 4px; left: 6px;
-  font-family: var(--mono); font-size: 9.5px; color: var(--gold);
-  letter-spacing: 0.06em; text-shadow: 0 1px 4px rgba(0,0,0,0.85);
-}
-#map-thumb-marker circle.pulse {
-  fill: var(--gold); opacity: 0.85;
-  filter: drop-shadow(0 0 4px var(--gold));
-  animation: mapPulse 1.6s ease-in-out infinite;
-}
-@keyframes mapPulse {
-  0%, 100% { r: 2.2; opacity: 0.95; }
-  50%      { r: 3.6; opacity: 0.6; }
-}
+/* 2026-05-29 — V01 .zoom-meter and .map-thumb style blocks deleted.
+   Both elements were removed from index.html (V01 chrome scorched-earth
+   pass per feedback_per_view_hide_list_forbidden_2026-05-29). The V2
+   views own their own zoom + map primitives (Forge bottombar zoom-readout,
+   Atlas pane via MapLibre, etc). */
 
 /* PANTHEON FAMILY LEGEND — sticky-head pattern. The burger toggle stays in .legend-head
    (non-scrolling) so it never moves and never gets scrolled out of view. Rows scroll
@@ -5736,7 +5654,6 @@ body.nav-collapsed .legend { left: calc(var(--nav-w-collapsed) + 24px); }
 
 /* Hide global view-header while reader is active */
 body.view-scripture-reader .view-header { display: none; }
-body.view-scripture-reader .zoom-meter  { display: none; }
 
 #scripture-reader-pane {
   position: absolute;
@@ -10504,48 +10421,18 @@ body:not(.view-boards) .app-pill--boards { display: none !important; }
 body.view-boards .view-header,
 body.view-boards aside.detail,
 body.view-boards #codex-dev-tab,
-body.view-boards #zoom-meter,
 body.view-boards .legend,
 body.view-boards .tier-legend,
-body.view-boards .map-thumb,
 body.view-maps .view-header,
 body.view-maps aside.detail,
 body.view-maps #codex-dev-tab,
-body.view-maps #zoom-meter,
 body.view-maps .legend,
 body.view-maps .tier-legend,
-body.view-maps .map-thumb,
 body.view-starmap .view-header,
 body.view-starmap aside.detail,
 body.view-starmap #codex-dev-tab,
-body.view-starmap #zoom-meter,
 body.view-starmap .legend,
-body.view-starmap .tier-legend,
-body.view-starmap .map-thumb { display: none !important; }
-
-/* ════════════════════════════════════════════════════════════════
-   LEGACY KILLSWITCH — 2026-05-29
-   ════════════════════════════════════════════════════════════════
-   .legacy-killswitch DOM stubs in index.html (id="map-thumb" / id=
-   "zoom-meter" / their inner getElementById anchors) are permanent-
-   invisible. No JS, no view, no body-class can re-show them. They
-   exist ONLY so the 35 legacy JS callsites that reach for these IDs
-   don't silent-throw on null per the documented
-   feedback_dom_addEventListener_null_throws_silently_2026-05-28 trap.
-   The 35 callsites are queued for surgical deletion in a follow-up
-   refactor.
-   ════════════════════════════════════════════════════════════════ */
-.legacy-killswitch,
-.legacy-killswitch * {
-  display: none !important;
-  visibility: hidden !important;
-  width: 0 !important;
-  height: 0 !important;
-  pointer-events: none !important;
-  position: absolute !important;
-  left: -99999px !important;
-  top: -99999px !important;
-}
+body.view-starmap .tier-legend { display: none !important; }
 
 /* ════════════════════════════════════════════════════════════════
    SCRIPTURE RADIAL — V2 CANONICAL OVERRIDES (2026-05-29)
