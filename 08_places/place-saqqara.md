@@ -8,7 +8,7 @@ lat: 29.8714
 lon: 31.2167
 tradition-context:
   - "[[tradition-egyptian-religion]]"
-  - "[tradition-old-kingdom-egypt] (placeholder; sub-tradition node not yet wired)"
+  - "[[tradition-old-kingdom-egypt]]"
 period-earliest: -3100
 period-latest: 400
 hub-edges:

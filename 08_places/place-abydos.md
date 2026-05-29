@@ -8,7 +8,7 @@ lat: 26.1844
 lon: 31.9197
 tradition-context:
   - "[[tradition-egyptian-religion]]"
-  - "[tradition-osirian-mysteries] (placeholder; sub-tradition node not yet wired)"
+  - "[[tradition-osirian-mysteries]]"
 period-earliest: -3300
 period-latest: 400
 hub-edges:
@@ -114,8 +114,8 @@ Abydos is occupied continuously from the predynastic period (~ -3300) through th
 ## See also
 
 - [[osiris]] · the deity whose principal cult centre this is
-- [seti-i-temple-abydos] · the principal extant monument — placeholder
-- [ritual-osirian-mysteries] · the passion-play festival — placeholder
-- [umm-el-qaab] · the 1st-Dynasty royal cemetery subsite — placeholder
+- [[seti-i-temple-abydos]] · the principal extant monument
+- [[ritual-osirian-mysteries]] · the passion-play festival
+- [[umm-el-qaab]] · the 1st-Dynasty royal cemetery subsite
 - [[narmer]] + [[djoser]] · two of the predynastic-to-Old-Kingdom rulers connected with Abydos
 - [mojsov] · key modern interpreter of the Osiris-Abydos complex — scholar node not yet wired
