@@ -10524,6 +10524,86 @@ body.view-starmap .tier-legend,
 body.view-starmap .map-thumb { display: none !important; }
 
 /* ════════════════════════════════════════════════════════════════
+   SCRIPTURE RADIAL — V2 CANONICAL OVERRIDES (2026-05-29)
+   ════════════════════════════════════════════════════════════════
+   The legacy .scripture-* rules above (~lines 5601-5680) inherit V1
+   prototype styling — italic serif section labels, V1 rainbow palette
+   stored in SCRIPTURE_CORPORA section.color, etc. User flagged the
+   chart as "using old shit from proto". Overriding to V2-canonical
+   mono + gold vocabulary that matches the Forge / Boards chrome:
+
+     · section arcs   → gold-soft thin stroke, no fill
+     · section labels → mono uppercase, --text-3, letter-spacing 0.18em
+     · book wedges    → no fill, gold-soft thin stroke
+     · book labels    → mono normal-case, --text-2, no italics
+     · entity nodes   → gold-soft circles, gold stroke on hover
+     · cross-book trails → gold-soft very faint, gold on hover
+
+   Per-section colour is intentionally NOT applied here — sections
+   are distinguished visually by the SECTION_GAP between them and
+   their outer labels. Black + gold = canonical V2.
+   ════════════════════════════════════════════════════════════════ */
+body.view-scripture .scripture-section-label {
+  font-family: var(--mono, "JetBrains Mono", Menlo, monospace) !important;
+  font-style: normal !important;
+  font-size: 10px !important;
+  letter-spacing: 0.18em !important;
+  text-transform: uppercase !important;
+  fill: var(--text-3, #5a5e6a) !important;
+  opacity: 0.85 !important;
+}
+body.view-scripture .scripture-book-label {
+  font-family: var(--mono, "JetBrains Mono", Menlo, monospace) !important;
+  font-style: normal !important;
+  font-size: 10px !important;
+  letter-spacing: 0.04em !important;
+  text-transform: none !important;
+  fill: var(--text-2, #8b8e98) !important;
+  opacity: 0.9 !important;
+}
+body.view-scripture .scripture-book-label.active {
+  fill: var(--gold, #d4a55a) !important;
+  opacity: 1 !important;
+}
+body.view-scripture .scripture-section-arc {
+  fill: none !important;
+  stroke: var(--gold-soft, #a87f3e) !important;
+  stroke-opacity: 0.40 !important;
+  stroke-width: 1 !important;
+}
+body.view-scripture .scripture-book-wedge {
+  fill: rgba(212,165,90,0.02) !important;     /* almost-invisible gold */
+  stroke: var(--gold-soft, #a87f3e) !important;
+  stroke-opacity: 0.22 !important;
+  stroke-width: 0.6 !important;
+}
+body.view-scripture .scripture-book-wedge:hover {
+  fill: rgba(212,165,90,0.08) !important;
+  stroke-opacity: 0.55 !important;
+}
+body.view-scripture .scripture-node {
+  fill: var(--gold-soft, #a87f3e) !important;
+  stroke: rgba(13,17,25,0.6) !important;
+  stroke-width: 0.5 !important;
+}
+body.view-scripture .scripture-node.hot {
+  fill: var(--gold, #d4a55a) !important;
+  stroke: var(--gold, #d4a55a) !important;
+  stroke-width: 1.4 !important;
+}
+body.view-scripture .scripture-trail {
+  fill: none !important;
+  stroke: var(--gold-soft, #a87f3e) !important;
+  stroke-opacity: 0.06 !important;
+  stroke-width: 0.5 !important;
+}
+body.view-scripture .scripture-trail.hot {
+  stroke: var(--gold, #d4a55a) !important;
+  stroke-opacity: 0.85 !important;
+  stroke-width: 1 !important;
+}
+
+/* ════════════════════════════════════════════════════════════════
    FORGE SIDE-PANEL — 2026-05-29 additions
    Action row (between desc and edge buckets), full body markdown
    render (restores V1 content the V2 panel was dropping), refs

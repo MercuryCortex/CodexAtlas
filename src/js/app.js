@@ -4594,16 +4594,13 @@ VIEWS.scripture = {
     const lyrNodes    = root.append('g').attr('class', 'scripture-node-layer');
     const lyrLabels   = root.append('g').attr('class', 'scripture-label-layer');
 
-    // ── 7a. Outer section arcs + labels. Thin gold band on the outside,
-    // text rotated tangentially per quadrant (anchor/baseline by polar dir).
-    const sectionArc = d3.arc().innerRadius(Router + 22).outerRadius(Router + 25);
+    // ── 7a. Outer section arcs + labels. NO per-section colour — V2
+    // canonical is black + gold + mono. Section CSS handles fill/stroke.
+    const sectionArc = d3.arc().innerRadius(Router + 22).outerRadius(Router + 23);
     Object.values(sectionLayout).forEach(s => {
       lyrSections.append('path')
         .attr('d', sectionArc({ startAngle: s.a0, endAngle: s.a1 }))
-        .attr('class', 'scripture-section-arc')
-        .attr('stroke', s.color)
-        .attr('fill', s.color)
-        .attr('fill-opacity', 0.55);
+        .attr('class', 'scripture-section-arc');
       const cAng = (s.a0 + s.a1) / 2;
       const [lx, ly] = polarXY(cAng, Router + 48);
       const dx = Math.sin(cAng), dy = -Math.cos(cAng);
@@ -4615,18 +4612,15 @@ VIEWS.scripture = {
         .text(s.label);
     });
 
-    // ── 7b. Book wedges — annular sectors filled with the section colour
-    // at low opacity, stroked at the same colour. Each wedge gets a book
-    // label on the outer rim.
+    // ── 7b. Book wedges — annular sectors. NO per-section rainbow.
+    // Almost-invisible gold fill + gold-soft stroke (V2 canonical).
+    // Section grouping is read via the SECTION_GAP between wedges + the
+    // outer section labels — no fill-colour distinction needed.
     const bookArc = d3.arc().innerRadius(Rinner).outerRadius(Router);
     Object.values(bookLayout).forEach(L => {
       lyrWedges.append('path')
         .attr('d', bookArc({ startAngle: L.a0, endAngle: L.a1 }))
-        .attr('class', 'scripture-book-wedge')
-        .attr('fill', L.section.color)
-        .attr('fill-opacity', 0.08)
-        .attr('stroke', L.section.color)
-        .attr('stroke-opacity', 0.34);
+        .attr('class', 'scripture-book-wedge');
       const [lx, ly] = polarXY(L.center, Router + 7);
       const dx = Math.sin(L.center), dy = -Math.cos(L.center);
       lyrLabels.append('text')
@@ -4661,11 +4655,11 @@ VIEWS.scripture = {
         const [x, y] = polarXY(a, r);
         const eid = ents[i];
         const node = NODES_BY_ID[eid];
+        // No inline fill — let CSS apply the canonical gold-soft.
         lyrNodes.append('circle')
           .attr('class', 'scripture-node')
           .attr('cx', x).attr('cy', y)
-          .attr('r', 2.6)
-          .attr('fill', (node && (node.family_color || node.tradition_color)) || L.section.color)
+          .attr('r', 2.4)
           .attr('data-entity', eid)
           .attr('data-book', L.book.id)
           .on('mouseover', function () { highlightTrails(eid, true);  })
@@ -4689,12 +4683,10 @@ VIEWS.scripture = {
           const r = Rinner - 4;   // pull endpoints toward the inner rim
           const [x1, y1] = polarXY(a.center, r);
           const [x2, y2] = polarXY(b.center, r);
+          // No inline stroke — CSS controls colour + opacity.
           const p = lyrTrails.append('path')
             .attr('d', 'M' + x1 + ',' + y1 + ' Q0,0 ' + x2 + ',' + y2)
             .attr('class', 'scripture-trail')
-            .attr('fill', 'none')
-            .attr('stroke', 'rgba(212,165,90,0.18)')
-            .attr('stroke-width', 0.6)
             .attr('data-entity', eid);
           paths.push(p);
         }
@@ -4705,10 +4697,9 @@ VIEWS.scripture = {
     function highlightTrails(eid, on) {
       const paths = trailIndex.get(eid);
       if (!paths) return;
-      paths.forEach(p => p
-        .attr('stroke', on ? 'var(--gold, #d4a55a)' : 'rgba(212,165,90,0.18)')
-        .attr('stroke-width', on ? 1.4 : 0.6)
-        .attr('stroke-opacity', on ? 0.85 : 1));
+      // Toggle the .hot class — CSS handles colour transitions per the
+      // canonical .scripture-trail / .scripture-trail.hot pair.
+      paths.forEach(p => p.classed('hot', on));
       // Side panel preview on hover — surface the entity's identity.
       if (on && NODES_BY_ID[eid]) {
         const n = NODES_BY_ID[eid];
