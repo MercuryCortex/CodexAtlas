@@ -4722,6 +4722,142 @@ VIEWS.scripture = {
         hideTooltip();
       }
     }
+
+    // ── 8. Canonical bottombar — same Atlas / Forge pattern: bottom-left
+    // floating row with VIEW + LEGEND drop-up panels + search input. Pure
+    // reuse of the .forge-viewset-* and .forge-legend-* classes already
+    // in app.css (zero new CSS). Positioning via inline style mirrors
+    // the .boards-bottombar geometry. State per-view: a labels toggle,
+    // a trails toggle, and a search-and-recenter affordance.
+    document.querySelectorAll('.scripture-bottombar').forEach(el => el.remove());
+    const bar = document.createElement('div');
+    bar.className = 'scripture-bottombar';
+    bar.setAttribute('role', 'toolbar');
+    bar.setAttribute('aria-label', 'Scripture view options');
+    bar.style.cssText = 'position:fixed;left:14px;bottom:14px;z-index:200;display:inline-flex;gap:6px;align-items:stretch;pointer-events:auto;';
+
+    // Zoom % indicator — updated by d3.zoom on every scale change.
+    const zoomBtn = document.createElement('button');
+    zoomBtn.className = 'forge-viewset-btn';
+    zoomBtn.type = 'button';
+    zoomBtn.title = 'Click to reset zoom';
+    zoomBtn.textContent = '100%';
+    zoomBtn.onclick = () => svg.transition().duration(280).call(zoom.transform, d3.zoomIdentity);
+
+    // VIEW button + drop-up panel: labels toggle + trails toggle.
+    const viewWrap = document.createElement('div');
+    viewWrap.className = 'forge-viewset-wrap';
+    viewWrap.innerHTML = ''
+      + '<button class="forge-viewset-btn" type="button"'
+      +   ' aria-haspopup="menu" aria-expanded="false" title="View options">VIEW</button>'
+      + '<div class="forge-viewset-panel" role="menu" aria-hidden="true">'
+      +   '<div class="forge-viewset-section">Display</div>'
+      +   '<button class="forge-viewset-row is-on" type="button" role="menuitemcheckbox"'
+      +     ' aria-checked="true" data-action="toggle-labels">'
+      +     '<span class="vs-check"></span><span>Labels</span><em>section + book titles</em>'
+      +   '</button>'
+      +   '<button class="forge-viewset-row is-on" type="button" role="menuitemcheckbox"'
+      +     ' aria-checked="true" data-action="toggle-trails">'
+      +     '<span class="vs-check"></span><span>Trails</span><em>cross-book entity curves</em>'
+      +   '</button>'
+      + '</div>';
+
+    // LEGEND button + drop-up panel: section colour key + node-radius hint.
+    const legWrap = document.createElement('div');
+    legWrap.className = 'forge-viewset-wrap';
+    legWrap.innerHTML = ''
+      + '<button class="forge-viewset-btn" type="button"'
+      +   ' aria-haspopup="menu" aria-expanded="false" title="Colour legend">LEGEND</button>'
+      + '<div class="forge-viewset-panel" role="menu" aria-hidden="true">'
+      +   '<div class="forge-viewset-section">Sections · ' + (corpus.label || corpusKey) + '</div>'
+      +   corpus.sections.map(s =>
+          '<div class="forge-legend-row">'
+          + '<span class="forge-legend-swatch" style="background:' + s.color + '"></span>'
+          + '<span class="forge-legend-name">' + s.label + '</span>'
+          + '</div>').join('')
+      + '</div>';
+
+    // Search input — finds a book by label substring + centres the view
+    // there. Same compact chrome the Forge bottombar's search uses.
+    const search = document.createElement('input');
+    search.className = 'forge-bottom-search';
+    search.type = 'text';
+    search.placeholder = 'search book…';
+    search.setAttribute('aria-label', 'Search books');
+    search.onkeydown = (ev) => {
+      if (ev.key !== 'Enter') return;
+      const q = (search.value || '').toLowerCase().trim();
+      if (!q) return;
+      // Match first book whose label contains the query.
+      const hit = Object.values(bookLayout).find(L =>
+        (L.book.label || '').toLowerCase().includes(q));
+      if (!hit) { search.style.borderColor = '#c8554a'; setTimeout(() => search.style.borderColor = '', 600); return; }
+      // Pan the chart so the matched wedge sits centred at 12 o'clock.
+      const wedgeAngle = hit.center;
+      const targetX = -Math.sin(wedgeAngle) * Router * 0.7;
+      const targetY =  Math.cos(wedgeAngle) * Router * 0.7;
+      svg.transition().duration(420).call(
+        zoom.transform,
+        d3.zoomIdentity.translate(targetX, targetY).scale(1.4)
+      );
+    };
+
+    bar.appendChild(zoomBtn);
+    bar.appendChild(viewWrap);
+    bar.appendChild(legWrap);
+    bar.appendChild(search);
+    const canvasParent = document.getElementById('canvas');
+    if (canvasParent) canvasParent.appendChild(bar);
+
+    // Wire the two drop-up panels — open / close / outside-click /
+    // Escape. Pattern lifted verbatim from the Boards canonical
+    // bottombar so the affordances feel identical across views.
+    const viewBtn = viewWrap.querySelector('.forge-viewset-btn');
+    const viewPanel = viewWrap.querySelector('.forge-viewset-panel');
+    const legBtn = legWrap.querySelector('.forge-viewset-btn');
+    const legPanel = legWrap.querySelector('.forge-viewset-panel');
+    const closeView = () => { viewPanel.classList.remove('is-open'); viewBtn.setAttribute('aria-expanded', 'false'); };
+    const closeLeg  = () => { legPanel.classList.remove('is-open');  legBtn.setAttribute('aria-expanded', 'false'); };
+    viewBtn.onclick = (ev) => {
+      ev.stopPropagation(); closeLeg();
+      const open = viewPanel.classList.toggle('is-open');
+      viewBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    };
+    legBtn.onclick = (ev) => {
+      ev.stopPropagation(); closeView();
+      const open = legPanel.classList.toggle('is-open');
+      legBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    };
+    viewPanel.addEventListener('click', (ev) => {
+      const row = ev.target.closest('[data-action]');
+      if (!row) return;
+      ev.stopPropagation();
+      const a = row.getAttribute('data-action');
+      const nowOn = !row.classList.contains('is-on');
+      row.classList.toggle('is-on', nowOn);
+      row.setAttribute('aria-checked', nowOn ? 'true' : 'false');
+      if (a === 'toggle-labels') {
+        svg.selectAll('.scripture-section-label, .scripture-book-label')
+           .style('display', nowOn ? null : 'none');
+      } else if (a === 'toggle-trails') {
+        svg.selectAll('.scripture-trail').style('display', nowOn ? null : 'none');
+      }
+    });
+    document.addEventListener('click', (ev) => {
+      if (viewPanel.classList.contains('is-open') && !viewWrap.contains(ev.target)) closeView();
+      if (legPanel.classList.contains('is-open')  && !legWrap.contains(ev.target))  closeLeg();
+    });
+    document.addEventListener('keydown', (ev) => {
+      if (ev.key === 'Escape') { closeView(); closeLeg(); }
+    });
+
+    // Keep the zoom % button display in sync with d3.zoom. We intercept
+    // the existing zoom handler from earlier in render() by re-attaching
+    // a wrapping handler that updates the indicator + delegates to the
+    // original transform application.
+    svg.call(zoom.on('zoom.bb', ev => {
+      zoomBtn.textContent = Math.round(ev.transform.k * 100) + '%';
+    }));
   }
 };
 
