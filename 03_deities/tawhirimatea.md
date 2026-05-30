@@ -6,7 +6,7 @@ aka: ["Tawhirimatea", "Tāwhiri-mātea", "Tawhiri"]
 tradition: "Māori"
 region: "Aotearoa New Zealand / Polynesia"
 period-active-earliest: 800
-period-active-latest:
+period-active-latest: 2026
 domains: ["winds", "storms", "weather", "weather magic", "hurricane", "wrath"]
 gender: "masculine"
 role: "storm-deity / weather-god"

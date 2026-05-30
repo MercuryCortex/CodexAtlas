@@ -6,7 +6,7 @@ aka: ["Tāne-mahuta", "Tāne-nui-a-Rangi"]
 tradition: "Māori"
 region: "Aotearoa / New Zealand"
 period-active-earliest: 1280
-period-active-latest:
+period-active-latest: 2026
 domains: ["forests", "trees", "birds", "humans (creator of)", "knowledge (acquirer of)"]
 gender: "masculine"
 role: "forest-god / creator of humans / sky-earth-separator"

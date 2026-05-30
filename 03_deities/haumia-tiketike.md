@@ -6,7 +6,7 @@ aka: ["Haumia", "Haumia-tiketike", "Haumia-tikitiki"]
 tradition: "Māori"
 region: "Aotearoa New Zealand / Polynesia"
 period-active-earliest: 800
-period-active-latest:
+period-active-latest: 2026
 domains: ["wild food", "uncultivated plants", "fernroot", "forest foraging", "fern"]
 gender: "masculine"
 role: "nature-deity / domain-lord"

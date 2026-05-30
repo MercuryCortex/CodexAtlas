@@ -6,7 +6,7 @@ aka: ["Orunla", "Ifá (in metonymic usage)", "Eleri-Ipin ('Witness of Destiny')"
 tradition: "Yoruba traditional religion (Ifá) → Santería (Lucumí), Candomblé"
 region: "West Africa — Yorubaland (Nigeria, Benin, Togo) → Cuba, Brazil"
 period-active-earliest: -500
-period-active-latest:
+period-active-latest: 2026
 domains: ["wisdom", "divination (Ifá)", "destiny / *ori*", "the 256 *odu* of Ifá"]
 gender: "masculine"
 role: "orisha of wisdom and divination"

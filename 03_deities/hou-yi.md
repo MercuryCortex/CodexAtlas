@@ -6,7 +6,7 @@ aka: ["后羿", "Yi the Archer", "Divine Archer Yi", "Lord Yi"]
 tradition: "Chinese mythology / Daoism (Huainanzi, c. 139 BCE; Shanhaijing)"
 region: "China"
 period-active-earliest: -139
-period-active-latest:
+period-active-latest: 2026
 domains: ["archery", "solar heroism", "monster-slaying", "tragedy", "the divine exile"]
 gender: "masculine"
 role: "cultural hero / divine archer"

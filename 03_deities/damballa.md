@@ -6,7 +6,7 @@ aka: ["Damballah", "Danbala", "Danbala Wèdo"]
 tradition: "Haitian Vodou"
 region: "Haiti; Dahomean / Fon origin (West Africa Dan-Aida-Wedo / Aido-Hwedo)"
 period-active-earliest: 1700
-period-active-latest:
+period-active-latest: 2026
 domains: ["primordial creation", "wisdom", "sky", "snake / cosmic serpent", "fertility", "ancestors"]
 gender: "masculine (paired with Aida-Wedo as feminine counterpart)"
 role: "creator / primordial sky-serpent lwa"

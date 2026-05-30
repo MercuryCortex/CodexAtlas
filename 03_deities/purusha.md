@@ -6,7 +6,7 @@ aka: ["Puruṣa", "the Primordial Man"]
 tradition: "Vedic / Sāṃkhya / classical Hindu"
 region: "India"
 period-active-earliest: -1200
-period-active-latest: ""
+period-active-latest: 2026
 domains: ["primordial-cosmic-person", "the sacrificed-and-distributed cosmic body", "consciousness-principle (in Sāṃkhya)"]
 gender: "masculine"
 role: "primordial-cosmic-figure"

@@ -6,7 +6,7 @@ aka: ["Hahgwehdiyu (Onondaga)", "Tharonhiawakon (Mohawk — 'He Who Holds Up the
 tradition: "Haudenosaunee (Iroquois)"
 region: "Northeast Woodlands, North America"
 period-active-earliest: -3000
-period-active-latest:
+period-active-latest: 2026
 domains: ["life-sustaining creation", "animals", "plants", "rivers", "sunlight", "abundance", "the Good Mind"]
 gender: "masculine"
 role: "creator / embodied-good-mind"

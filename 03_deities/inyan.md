@@ -6,7 +6,7 @@ aka: ["Inyan", "the Stone", "the Primordial"]
 tradition: "Lakota"
 region: "Northern Great Plains, North America"
 period-active-earliest: 1500
-period-active-latest:
+period-active-latest: 2026
 domains: ["primordial substance", "the first of all beings", "the foundation of existence"]
 gender: "masculine"
 role: "primordial-creator / first-being"

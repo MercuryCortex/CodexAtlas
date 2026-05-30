@@ -6,7 +6,7 @@ aka: ["Wi", "the Sun", "Chief of the Superior Wakan Beings (in some Oglala accou
 tradition: "Lakota"
 region: "Northern Great Plains, North America"
 period-active-earliest: 1500
-period-active-latest:
+period-active-latest: 2026
 domains: ["the sun", "order", "time", "male power", "virtues: bravery, fortitude, generosity, fidelity"]
 gender: "masculine"
 role: "solar-deity / chief among superior-wakan"

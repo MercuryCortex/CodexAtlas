@@ -6,7 +6,7 @@ aka: ["Mariam Tsion", "Maryam Ṣeyon", "Our Lady Mary of Zion", "Saint Mary of 
 tradition: "[[tradition-ethiopian-orthodox-tewahedo]] (the cult-specific Aksumite Marian figure)"
 region: "Aksum (the principal cult-center); diffused across Ethiopian highlands"
 period-active-earliest: 330
-period-active-latest:
+period-active-latest: 2026
 domains: ["Marian devotion (Aksumite-specific instantiation)", "the Ark-of-the-Covenant guardianship", "national-religious-ecclesial protection of Ethiopia", "imperial-religious sanction"]
 gender: "feminine"
 role: "cult-specific Aksumite Marian figure | tabot-bearer | Theotokos in distinctive Ethiopian instantiation"

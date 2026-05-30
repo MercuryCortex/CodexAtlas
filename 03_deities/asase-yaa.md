@@ -6,7 +6,7 @@ aka: ["Asaase Yaa", "Asase Efua", "Mother Earth (Akan epithet)", "Thursday's Ear
 tradition: "Akan (Asante, Fante, and related Akan peoples)"
 region: "West Africa — modern Ghana and Côte d'Ivoire"
 period-active-earliest: -500
-period-active-latest:
+period-active-latest: 2026
 domains: ["earth", "agriculture", "death", "ancestral reception", "fertility", "truth"]
 gender: "feminine"
 role: "earth goddess / divine feminine / mother of the dead"

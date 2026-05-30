@@ -6,7 +6,7 @@ aka: ["Yingarna", "Almudj", "Borlung (Kunwinjku)", "Wagyl (Noongar)", "Ngalyod",
 tradition: "Australian Aboriginal — widely attested across northern, central, and parts of southeastern Aboriginal Australia"
 region: "Northern Australia (Arnhem Land, Kimberley), with variants across the continent"
 period-active-earliest: -8000
-period-active-latest:
+period-active-latest: 2026
 domains: ["water sources (rivers, billabongs, springs)", "fertility", "rainbow", "rain", "creator-ancestor"]
 gender: "varies by tradition — masculine, feminine, both, neither"
 role: "ancestral creator-being"

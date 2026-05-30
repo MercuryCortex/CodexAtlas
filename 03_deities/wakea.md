@@ -6,7 +6,7 @@ aka: ["Wakea", "Sky Father", "Wākea-nui-a-Kāne"]
 tradition: "Hawaiian / Polynesian religion (Kumulipo — Hawaiian creation chant)"
 region: "Hawaii"
 period-active-earliest: 1000
-period-active-latest:
+period-active-latest: 2026
 domains: ["sky", "creation", "the Hawaiian Islands", "taro/kalo as sacred plant", "primordial fatherhood", "kapu"]
 gender: "masculine"
 role: "sky father / primordial creator"

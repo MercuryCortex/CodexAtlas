@@ -6,7 +6,7 @@ aka: ["P'an-ku", "盘古"]
 tradition: "Chinese mythology (Daoist-folk synthesis)"
 region: "China — first attested in southern China (3rd c. CE)"
 period-active-earliest: 200
-period-active-latest:
+period-active-latest: 2026
 domains: ["primordial creation", "cosmic anthropogony"]
 gender: "masculine"
 role: "primordial cosmic giant"

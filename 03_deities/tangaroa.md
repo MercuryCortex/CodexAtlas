@@ -6,7 +6,7 @@ aka: ["Tangaroa (Māori)", "Ta'aroa (Tahitian)", "Tagaloa (Samoan)", "Kanaloa (H
 tradition: "Pan-Polynesian — Māori, Tahitian, Samoan; Hawaiian Kanaloa is the cognate"
 region: "Polynesia"
 period-active-earliest: 500
-period-active-latest:
+period-active-latest: 2026
 domains: ["sea", "ocean creatures", "creation (in some traditions — Tahitian Ta'aroa as supreme creator)"]
 gender: "masculine"
 role: "sea-god / in some traditions, supreme creator"

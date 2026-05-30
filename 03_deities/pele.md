@@ -6,7 +6,7 @@ aka: ["Pelehonuamea", "She-Who-Shapes-the-Sacred-Land", "Madame Pele"]
 tradition: "Hawaiian"
 region: "Hawaiian Islands — especially Kīlauea volcano, Hawai'i Island"
 period-active-earliest: 1100
-period-active-latest:
+period-active-latest: 2026
 domains: ["volcano", "fire", "lightning", "wind", "dance (hula)", "transformation"]
 gender: "feminine"
 role: "volcano goddess"

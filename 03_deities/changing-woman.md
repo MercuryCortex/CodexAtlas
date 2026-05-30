@@ -6,7 +6,7 @@ aka: ["Asdzą́ą́ Nádleehé", "Changing Woman", "Turquoise Woman", "White She
 tradition: "Diné (Navajo)"
 region: "Diné Bikéyah / Southwest North America"
 period-active-earliest: 1200
-period-active-latest:
+period-active-latest: 2026
 domains: ["the seasons and their cycles", "Blessingway ceremony", "creation of human clans", "life / renewal / the ideal of hózhó embodied", "puberty / womanhood"]
 gender: "feminine"
 role: "highest-divine-feminine / creator / embodied-hozho"

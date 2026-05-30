@@ -6,7 +6,7 @@ aka: ["Xiwangmu", "Hsi Wang Mu", "西王母", "the Royal Mother of the West"]
 tradition: "Chinese folk religion / Daoism"
 region: "China — Kunlun Mountains (mythological), Han-dynasty Sichuan + Shandong (cult evidence)"
 period-active-earliest: -1000
-period-active-latest:
+period-active-latest: 2026
 domains: ["immortality", "peaches of longevity", "feminine sovereignty", "western paradise"]
 gender: "feminine"
 role: "supreme goddess / immortal-conferring sovereign"

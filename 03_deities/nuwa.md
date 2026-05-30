@@ -6,7 +6,7 @@ aka: ["Nügua", "Nu Kua", "女媧"]
 tradition: "Chinese mythology"
 region: "China"
 period-active-earliest: -1000
-period-active-latest:
+period-active-latest: 2026
 domains: ["creation of humanity", "repair of the cosmos", "marriage institution"]
 gender: "feminine"
 role: "creator-goddess / cosmic repairer"

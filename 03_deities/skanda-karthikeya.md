@@ -6,7 +6,7 @@ aka: ["Skanda", "Kārttikeya", "Murugan (Tamil)", "Subrahmaṇya", "Kumāra", "G
 tradition: "Hindu — pan-Indian; especially Tamil Murugan-cult of South India and Sri Lanka"
 region: "Pan-Indian; especially Tamil Nadu, Karnataka, Andhra, Sri Lanka, Mauritius, Malaysia, Singapore"
 period-active-earliest: -300
-period-active-latest:
+period-active-latest: 2026
 domains: ["war", "youthful warrior", "victory over demons", "lord of *gaṇas* (divine armies)", "object of intense Tamil devotional cult"]
 gender: "masculine"
 role: "warrior-god / second son of Shiva and Pārvatī / commander of the divine armies / Tamil supreme cultic god"

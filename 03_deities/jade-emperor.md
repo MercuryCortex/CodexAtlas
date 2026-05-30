@@ -6,7 +6,7 @@ aka: ["Yuhuang", "Yu Huang Shangdi", "玉皇上帝", "Yuhuang Dadi"]
 tradition: "Daoism / Chinese folk religion"
 region: "China — codified in Song-dynasty Daoist canon (10th–13th c.)"
 period-active-earliest: 600
-period-active-latest:
+period-active-latest: 2026
 domains: ["heavenly sovereignty", "celestial bureaucracy", "moral judgment", "fate-allotment"]
 gender: "masculine"
 role: "supreme ruler of the celestial bureaucracy"

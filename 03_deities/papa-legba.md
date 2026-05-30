@@ -6,7 +6,7 @@ aka: ["Atibon-Legba", "Legba", "Legba Atibon"]
 tradition: "Haitian Vodou"
 region: "Haiti; Haitian diaspora; West-African origin (Fon-Yoruba Èṣù-Legba)"
 period-active-earliest: 1700
-period-active-latest:
+period-active-latest: 2026
 domains: ["crossroads", "communication between humans and the *lwa*", "opening of ceremonies", "language"]
 gender: "masculine"
 role: "trickster-messenger lwa / opener-of-the-way"

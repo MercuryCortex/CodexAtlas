@@ -6,7 +6,7 @@ aka: ["Mañjughoṣa", "Wenshu (Chinese)", "Monju (Japanese)", "Jampelyang (Tibe
 tradition: "Mahayana / Vajrayana Buddhism"
 region: "India → Tibet, China, Japan, Mongolia"
 period-active-earliest: 100
-period-active-latest: ""
+period-active-latest: 2026
 domains: ["transcendent wisdom (prajñā)", "discriminative knowledge", "the bodhisattva of insight"]
 gender: "masculine"
 role: "bodhisattva"

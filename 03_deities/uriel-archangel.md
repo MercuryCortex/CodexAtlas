@@ -6,7 +6,7 @@ aka: ["Uri'el", "the Light of God", "Phanuel (sometimes)"]
 tradition: "Christianity / Judaism"
 region: "Pan-Abrahamic (less central in Islam)"
 period-active-earliest: -300
-period-active-latest:
+period-active-latest: 2026
 domains: ["light", "interpretation of vision", "punishment of fallen-angels"]
 gender: "masculine (traditionally)"
 role: "archangel of light and apocalyptic interpretation"

@@ -6,7 +6,7 @@ aka: ["Kyria", "the Lady", "Ecclesia", "the Personified Church", "the Old Woman 
 tradition: "Early Roman Christianity / canonical in [[tradition-ethiopian-orthodox-tewahedo]]"
 region: "Rome (narrative setting)"
 period-active-earliest: 110
-period-active-latest:
+period-active-latest: 2026
 domains: ["the Church personified", "ecclesial pre-existence (the Lady is older than creation)", "revelation"]
 gender: "feminine"
 role: "personified Church | pre-existent feminine cosmic-ecclesial figure | revelator"

@@ -6,7 +6,7 @@ aka: ["Tsukiyomi", "月読命 (Moon-Reading Lord)"]
 tradition: "Shinto"
 region: "Japan"
 period-active-earliest: -300
-period-active-latest:
+period-active-latest: 2026
 domains: ["moon", "night", "time-reckoning"]
 gender: "varies (predominantly masculine; some recensions feminine)"
 role: "moon deity"

@@ -6,7 +6,7 @@ aka: ["Harihara", "Hari-Hara", "Śaṅkara-Nārāyaṇa", "Hari-Śaṅkara"]
 tradition: "Hindu — syncretic Vaishnava-Shaiva composite"
 region: "Pan-Indian; especially Karnataka (Harihar temple), Tamil Nadu, Andhra, Khmer empire (Cambodia)"
 period-active-earliest: 400
-period-active-latest:
+period-active-latest: 2026
 domains: ["syncretic supreme deity combining Vishnu's preservative and Shiva's transformative aspects", "embodiment of Vaiṣṇava-Śaiva theological harmony"]
 gender: "masculine"
 role: "syncretic composite deity"

@@ -6,7 +6,7 @@ aka: ["Enma-Ō (閻魔王 'King Yama')", "Enma-Daiō", "Yánluó-wáng (Chinese 
 tradition: "Japanese Buddhism / Chinese Buddhism (Yánluó)"
 region: "East Asia — Chinese → Japanese transmission of the Buddhist Ten Kings of Hell pantheon"
 period-active-earliest: 600
-period-active-latest:
+period-active-latest: 2026
 domains: ["king-of-hell", "judge-of-the-dead", "underworld-sovereign", "moral-retribution"]
 gender: "masculine"
 role: "king of hell + chief judge of the dead in East Asian Buddhism; one of the Ten Kings of Hell (Jūō / Shíwáng)"

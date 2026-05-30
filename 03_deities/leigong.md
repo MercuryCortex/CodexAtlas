@@ -6,7 +6,7 @@ aka: ["Léi Gōng (雷公, Duke of Thunder)", "Léizǔ (雷祖, Ancestor of Thun
 tradition: "Chinese folk religion / Daoism"
 region: "China — widespread in Daoist temple networks across East Asia"
 period-active-earliest: -600
-period-active-latest:
+period-active-latest: 2026
 domains: ["thunder", "lightning", "punishment of evildoers", "celestial justice", "storms", "moral retribution"]
 gender: "masculine"
 role: "thunder deity and divine punisher within the celestial bureaucracy"

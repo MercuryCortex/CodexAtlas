@@ -6,7 +6,7 @@ aka: ["Jibril (Arabic)", "Gavri'el (Hebrew)", "the Annunciator"]
 tradition: "Christianity / Judaism / Islam"
 region: "Pan-Abrahamic"
 period-active-earliest: -165
-period-active-latest:
+period-active-latest: 2026
 domains: ["revelation", "annunciation", "messenger"]
 gender: "masculine (traditionally; doctrinally angelic and beyond gender)"
 role: "chief messenger archangel; deliverer of divine announcements"

@@ -6,7 +6,7 @@ aka: ["Ashmedai (Hebrew)", "Aēšma daēva (Avestan, 'Demon of Wrath')", "Ashmod
 tradition: "Second Temple Judaism (via Tobit) → Christianity → Kabbalah → modern Solomonic demonology"
 region: "Persian-influenced Second Temple Judaism → Mediterranean Christian-Jewish"
 period-active-earliest: -300
-period-active-latest:
+period-active-latest: 2026
 domains: ["lust (esp. demonic destruction of marriages)", "wrath (etymological)", "kingship-of-demons", "the corruption of Solomon (in Talmudic legend)"]
 gender: "masculine"
 role: "demon-king of lust / Persian-derived wrath-demon"

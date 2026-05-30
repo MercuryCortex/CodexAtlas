@@ -6,7 +6,7 @@ aka: ["Vishnu-Nārāyaṇa"]
 tradition: "Vedic / Vaishnava Hinduism"
 region: "India"
 period-active-earliest: -1000
-period-active-latest: ""
+period-active-latest: 2026
 domains: ["primordial-cosmic-creator", "the resting supreme being on the cosmic waters", "Vishnu in his transcendent aspect"]
 gender: "masculine"
 role: "supreme-deity (in Vaishnavism)"

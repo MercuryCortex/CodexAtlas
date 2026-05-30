@@ -6,7 +6,7 @@ aka: ["Uma", "Gauri", "Annapurna", "Lalita", "Bhavani", "Sati (her previous inca
 tradition: "Puranic Hinduism (Shaiva + Shakta)"
 region: "India — Kailash, Kashi/Varanasi, Madurai (as Meenakshi)"
 period-active-earliest: -200
-period-active-latest:
+period-active-latest: 2026
 domains: ["consort of Shiva", "household-and-marriage protection", "the great-goddess (Mahādevī) of Shakta theology", "underlying-feminine of all Hindu goddess-forms"]
 gender: "feminine"
 role: "Shiva's consort / supreme goddess of Shakta theology"

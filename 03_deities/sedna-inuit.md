@@ -6,7 +6,7 @@ aka: ["Arnakuagsak (Greenlandic)", "Nerrivik (\"food dish\" — eastern Arctic)"
 tradition: "Inuit (pan-Arctic — Nunavut, Alaska, Greenland)"
 region: "Arctic — from Alaska to Greenland; pan-Inuit tradition with regional variants"
 period-active-earliest: -3000
-period-active-latest:
+period-active-latest: 2026
 domains: ["sea", "marine animals", "shamanic descent", "taboo-enforcement", "creation-by-dismemberment", "weather control", "the deep ocean floor"]
 gender: "feminine"
 role: "sea mother and mistress of marine animals"

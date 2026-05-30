@@ -6,7 +6,7 @@ aka: ["Bhairava", "Kāla-Bhairava", "Mahābhairava", "Vaṭuka-Bhairava", "Svacc
 tradition: "Hindu — Shaivism (Tantric, especially Kashmir Trika and Kāpālika streams)"
 region: "Pan-Indian (especially Kashmir, Nepal — where Bhairava worship is intense; Banaras — Kāla-Bhairava as the city's protector deity; pan-Tantric)"
 period-active-earliest: 400
-period-active-latest:
+period-active-latest: 2026
 domains: ["terrifying / wrathful aspect of Shiva", "cremation grounds and death", "Tantric supreme consciousness in fierce form", "city-protector / *kṣetra-pāla*", "guardian deity"]
 gender: "masculine"
 role: "wrathful form of Shiva / Tantric supreme deity / cremation-ground deity / guardian"

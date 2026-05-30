@@ -6,7 +6,7 @@ aka: ["Sanqing", "三清", "Three Sovereigns of the Three Heavens"]
 tradition: "Daoism"
 region: "China — Daoist canon (Lingbao, Shangqing schools)"
 period-active-earliest: 400
-period-active-latest:
+period-active-latest: 2026
 domains: ["primordial cosmogony", "revelation of scripture", "supreme metaphysical principles"]
 gender: "masculine (traditionally)"
 role: "supreme Daoist triadic divinities — hypostases of the Dao"

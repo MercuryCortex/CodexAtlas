@@ -6,7 +6,7 @@ aka: ["*malʾak panim*", "Angel of the Face", "Angel of His Face", "the chief An
 tradition: "Second-Temple Jewish apocalyptic (Jubilees-specific) / canonical in [[tradition-ethiopian-orthodox-tewahedo]] (where Jubilees is full scripture)"
 region: "Sinai (dictation-of-Jubilees-to-Moses narrative setting); heavenly courts (cosmic)"
 period-active-earliest: -200
-period-active-latest:
+period-active-latest: 2026
 domains: ["dictating Torah and Jubilees to Moses on Sinai", "chief of the holy angels", "intercession before the divine presence", "guardianship of Israel"]
 gender: "masculine"
 role: "archangel | revelator | chief of the holy angels | Moses's angelic interlocutor"

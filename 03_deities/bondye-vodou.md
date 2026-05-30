@@ -6,7 +6,7 @@ aka: ["Bon Dieu", "Bondieu", "the Good God (Vodou)", "Gran Met (the Great Master
 tradition: "Haitian Vodou"
 region: "Haiti and Haitian diaspora (New York, Miami, Montreal, etc.)"
 period-active-earliest: 1700
-period-active-latest:
+period-active-latest: 2026
 domains: ["supreme being", "ultimate creator", "cosmic ground", "fate"]
 gender: "non-gendered (sometimes grammatically referenced as masculine in Creole context)"
 role: "high-god / deus otiosus / supreme being"

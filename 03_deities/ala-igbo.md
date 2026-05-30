@@ -6,7 +6,7 @@ aka: ["Ani", "Ana", "Ale", "Ala the Earth", "Ala-Eke"]
 tradition: "[[tradition-igbo-religion]]"
 region: "Southeastern Nigeria (Igboland)"
 period-active-earliest: -500
-period-active-latest:
+period-active-latest: 2026
 domains: ["earth", "fertility", "morality", "the dead (who return to the earth)", "law", "agriculture"]
 gender: "feminine"
 role: "earth goddess / law-and-morality deity / mother of all (alongside Chukwu)"

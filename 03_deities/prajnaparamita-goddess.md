@@ -6,7 +6,7 @@ aka: ["Perfection of Wisdom personified", "Mother of all Buddhas (sarva-buddha-m
 tradition: "Mahayana Buddhism"
 region: "Pan-Buddhist (India, Tibet, East Asia, SE Asia)"
 period-active-earliest: 100
-period-active-latest:
+period-active-latest: 2026
 domains: ["wisdom (prajñā)", "emptiness", "transcendent insight"]
 gender: "feminine"
 role: "personified Perfection of Wisdom; 'Mother of all Buddhas' — the prajna that gives birth to enlightenment"

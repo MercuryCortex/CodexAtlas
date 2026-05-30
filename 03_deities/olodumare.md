@@ -6,7 +6,7 @@ aka: ["Olorun", "Olófin Òrun", "Eledumare"]
 tradition: "Yoruba"
 region: "West Africa (Yorùbáland — modern Nigeria, Benin, Togo); diaspora"
 period-active-earliest: -500
-period-active-latest:
+period-active-latest: 2026
 domains: ["supreme being", "creator", "fate", "destiny"]
 gender: "non-gendered (sometimes referenced masculine in liturgical context)"
 role: "high-god / deus otiosus"

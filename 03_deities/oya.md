@@ -6,7 +6,7 @@ aka: ["Oyá (Cuban)", "Iansã (Brazilian)", "Ọya-Iyansan"]
 tradition: "Yoruba"
 region: "West Africa (Niger River); diaspora"
 period-active-earliest: -200
-period-active-latest:
+period-active-latest: 2026
 domains: ["winds", "storms", "lightning (with Ṣàngó)", "rivers (Niger)", "the marketplace", "the cemetery / death-transition", "transformation"]
 gender: "feminine"
 role: "wind-and-storm orisha / death-transition orisha"

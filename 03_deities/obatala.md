@@ -6,7 +6,7 @@ aka: ["Òrìṣàńlá", "Orixalá (Brazilian)", "Obatalá (Cuban Lucumí)"]
 tradition: "Yoruba"
 region: "West Africa (Yorùbáland); diaspora"
 period-active-earliest: -500
-period-active-latest:
+period-active-latest: 2026
 domains: ["creation of human bodies", "purity", "wisdom", "elder authority", "the cool/calm"]
 gender: "masculine (with strong androgynous and feminine *caminos* in diaspora)"
 role: "creator-orisha (sub-creator under Olódùmarè) / sky-orisha"

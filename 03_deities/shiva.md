@@ -6,7 +6,7 @@ aka: ["Śiva", "Mahādeva", "Maheśvara", "Bhava", "Śaṅkara", "Hara", "Naṭa
 tradition: "Hindu — Shaivism (the broader cultic-theological tradition; the Tamil Shaiva Siddhānta, the Kashmir Trika non-dualist Shaivism, the Lingāyat/Vīraśaiva, the Nāth, and the Smārta integrations are all distinct sub-traditions)"
 region: "Pan-Indian; especially temple-Shaivism in Tamil Nadu, Karnataka, Kashmir, Nepal, Banaras, Cambodia (Khmer empire), Indonesia (Bali)"
 period-active-earliest: -1500
-period-active-latest: 
+period-active-latest: 2026
 domains: ["destroyer-recreator of the universe", "ascetic / yogi", "lord of yoga and meditation", "dancer (Naṭarāja)", "the cosmic linga", "Tantric supreme consciousness", "lord of cremation grounds and of death"]
 gender: "masculine (with strongly androgynous Ardhanārīśvara form — half-male, half-female)"
 role: "supreme deity (in Śaiva traditions); destroyer-recreator (in classical Trimūrti scheme alongside Brahmā and Viṣṇu); transcendent supreme consciousness (in Kashmir Shaivism); cosmic dancer-yogi"

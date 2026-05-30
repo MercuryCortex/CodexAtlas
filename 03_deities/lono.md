@@ -6,7 +6,7 @@ aka: ["Lono-i-ka-makahiki", "Lono-makua"]
 tradition: "Hawaiian"
 region: "Hawaiian Islands"
 period-active-earliest: 1100
-period-active-latest:
+period-active-latest: 2026
 domains: ["agriculture", "rain", "peace", "the *Makahiki* festival (Hawaiian new year)", "fertility"]
 gender: "masculine"
 role: "agriculture-and-peace god"

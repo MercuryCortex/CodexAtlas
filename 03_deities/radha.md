@@ -6,7 +6,7 @@ aka: ["Rādhā", "Rādhārāṇī", "Sri Radhika", "Hrishikesha-ramani", "Vrisha
 tradition: "Gaudiya Vaishnavism (with antecedents in Bengali, Braj, and earlier bhakti)"
 region: "North India — Vrindavan/Braj region; Bengal (Gaudiya); global diaspora"
 period-active-earliest: 800
-period-active-latest:
+period-active-latest: 2026
 domains: ["divine love (madhurya bhakti)", "yearning in separation (viraha)", "ecstatic union", "the soul's longing for God"]
 gender: "feminine"
 role: "supreme consort and śakti of Krishna; paradigm of the highest devotion; in Gaudiya theology, the personification of the hlādinī-śakti (pleasure potency of God)"

@@ -6,7 +6,7 @@ aka: ["Dan Aida-Hwedo", "Dã Ayida Wèdo", "the Rainbow Serpent", "Dan (Fon)", "
 tradition: "Fon-Ewe vodun (Dahomey / Kingdom of Whydah); preserved in Haitian Vodou as [[damballa]] + Aida-Wedo"
 region: "West Africa: modern Benin (former Kingdom of Dahomey), Togo, southeastern Ghana, southwestern Nigeria; preserved in Haitian Vodou"
 period-active-earliest: -500
-period-active-latest:
+period-active-latest: 2026
 domains: ["cosmic-serpent", "rainbow", "continuity of life and motion", "world-encircling serpent", "fresh water and ocean", "cosmic axis"]
 gender: "twin masculine-feminine pair (Dan masculine; Aida-Hwedo feminine)"
 role: "world-encircling cosmic serpent / sustainer of cosmic motion / rainbow"

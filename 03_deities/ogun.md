@@ -6,7 +6,7 @@ aka: ["Ogún (Cuban)", "Ogum (Brazilian)", "Ogou (Haitian Vodou; also Ogou Feray
 tradition: "Yoruba (and Vodou via Dahomean-Yoruba transmission)"
 region: "West Africa (Yoruba, Edo, Fon spheres); diaspora"
 period-active-earliest: -500
-period-active-latest:
+period-active-latest: 2026
 domains: ["iron", "metalwork", "war", "hunting", "roads", "labor", "technology"]
 gender: "masculine"
 role: "metalsmith-orisha / warrior-orisha"

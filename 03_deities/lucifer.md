@@ -6,7 +6,7 @@ aka: ["Heylel ben-Shahar ('Day-Star, son of Dawn', Isaiah 14:12)", "Phosphoros (
 tradition: "Christianity (post-Jerome Vulgate) → Romantic reception → Modern Satanism"
 region: "Latin West"
 period-active-earliest: 380
-period-active-latest:
+period-active-latest: 2026
 domains: ["the Morning Star (Venus)", "pride leading to fall", "light-bringing", "Romantic-era heroic-rebel reception"]
 gender: "masculine"
 role: "the fallen Day-Star / Romantic light-bringer / Satanic appellation in modern Satanism"

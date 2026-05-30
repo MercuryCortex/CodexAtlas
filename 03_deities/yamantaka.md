@@ -6,7 +6,7 @@ aka: ["Vajrabhairava", "Yama-rāja conqueror", "གཤིན་རྗེ་ག�
 tradition: "Vajrayana Buddhism (Geluk, Sakya, Nyingma)"
 region: "Tibet — root tantra translated from Sanskrit c. 8th–11th c."
 period-active-earliest: 700
-period-active-latest:
+period-active-latest: 2026
 domains: ["death-of-death", "wrathful wisdom", "Yidam meditation deity"]
 gender: "masculine (in union with consort Vajravetali)"
 role: "wrathful wisdom-deity / *yidam* / conqueror of death"

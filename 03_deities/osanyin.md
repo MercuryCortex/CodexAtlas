@@ -6,7 +6,7 @@ aka: ["Osanyin", "Osain (Cuban Lucumí)", "Ossaim / Ossanha (Brazilian Candombl�
 tradition: "[[tradition-yoruba]]"
 region: "West Africa (Yorùbáland — modern Nigeria, Benin); diaspora (Cuba, Brazil)"
 period-active-earliest: -300
-period-active-latest:
+period-active-latest: 2026
 domains: ["herbal medicine", "ewe (leaves)", "the forest", "healing", "magical preparations", "all green-growing plants"]
 gender: "masculine"
 role: "herbal-medicine orisha / lord of leaves / patron of babaláwo + olóòsanyìn"

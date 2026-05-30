@@ -6,7 +6,7 @@ aka: ["Mîkhāʾēl (Hebrew, 'Who is like God?')", "Mikha'il (Arabic)", "Micha�
 tradition: "Christianity / Judaism / Islam / Mandaeism"
 region: "Pan-Abrahamic"
 period-active-earliest: -200
-period-active-latest:
+period-active-latest: 2026
 domains: ["divine warfare", "protection of Israel", "psychopomp", "weighing of souls"]
 gender: "masculine (traditionally)"
 role: "chief archangel / warrior archangel"

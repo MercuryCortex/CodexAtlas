@@ -6,7 +6,7 @@ aka: ["Sariel (in some recensions)", "Saraqa'el", "Sarakiel", "Suri'el"]
 tradition: "Second-Temple Jewish apocalyptic (Enochic) / canonical in [[tradition-ethiopian-orthodox-tewahedo]] / liturgically retained in [[tradition-coptic-orthodox]]"
 region: "heavenly courts"
 period-active-earliest: -300
-period-active-latest:
+period-active-latest: 2026
 domains: ["the spirits of those who sin in spirit", "guardianship of human souls in their inner moral life"]
 gender: "masculine"
 role: "archangel | one of the seven"

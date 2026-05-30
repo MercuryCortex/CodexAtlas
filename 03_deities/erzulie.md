@@ -6,7 +6,7 @@ aka: ["Èzili", "Erzulie Freda Dahomey (Rada)", "Erzulie Dantor (Petwo)", "Èzil
 tradition: "Haitian Vodou"
 region: "Haiti; Haitian diaspora"
 period-active-earliest: 1700
-period-active-latest:
+period-active-latest: 2026
 domains: ["love", "beauty", "wealth (Freda); revolutionary motherhood, fierce protection (Dantor)"]
 gender: "feminine"
 role: "love/beauty lwa (Freda) / fierce protective-mother lwa (Dantor)"

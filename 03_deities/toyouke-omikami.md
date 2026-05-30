@@ -6,7 +6,7 @@ aka: ["Toyouke-Omikami", "豊受大御神 (Abundant Food Great Deity)", "Toyouke
 tradition: "Shinto"
 region: "Japan — Ise Grand Shrine Outer Shrine (Gekū, Mie Prefecture); formerly Tanba Province (Kyoto area)"
 period-active-earliest: -300
-period-active-latest:
+period-active-latest: 2026
 domains: ["food", "grain", "harvest", "silkworms", "agriculture", "sacred feeding", "earthly abundance"]
 gender: "feminine"
 role: "harvest goddess / sacred food provider / grain deity"

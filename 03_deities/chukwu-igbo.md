@@ -6,7 +6,7 @@ aka: ["Chineke", "Chukwu Okike", "Chi-na-Eke", "Olisaebuluwa", "the Great Chi"]
 tradition: "[[tradition-igbo-religion]]"
 region: "Southeastern Nigeria (Igboland); Igbo diaspora"
 period-active-earliest: -500
-period-active-latest:
+period-active-latest: 2026
 domains: ["supreme being", "creator", "the Great Chi (personal-spirit)", "destiny", "life-source"]
 gender: "ambiguous; can be invoked male or female"
 role: "high god / creator / origin of all chi (personal-spirits)"

@@ -6,7 +6,7 @@ aka: ["Christ", "the Son", "Christos", "Logos incarnate", "Christ Pantokrator", 
 tradition: "Christianity"
 region: "Pan-Christian"
 period-active-earliest: 30
-period-active-latest:
+period-active-latest: 2026
 domains: ["incarnation", "logos", "redeemer", "judge"]
 gender: "masculine (incarnate as male; in Logos-theology pre-incarnate; the Trinity itself is doctrinally beyond gender)"
 role: "second person of the Trinity; eternal Son and Word made flesh"

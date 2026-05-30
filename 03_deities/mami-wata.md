@@ -6,7 +6,7 @@ aka: ["Mama Water", "La Sirène (Haitian Vodou)", "Watermama (Suriname/Guyana)",
 tradition: "Pan-African folk religion (West/Central Africa and diaspora; 15th c. onwards — possibly older water-deity substratum)"
 region: "West Africa (Nigeria, Ghana, Cameroon, Benin), Central Africa (Congo, DRC), African diaspora (Haiti, Brazil, Caribbean)"
 period-active-earliest: 1400
-period-active-latest:
+period-active-latest: 2026
 domains: ["water", "wealth", "beauty", "healing", "fertility", "urban modernity", "the sea"]
 gender: "feminine"
 role: "water spirit / mother deity"

@@ -6,7 +6,7 @@ aka: ["Nandī", "Nandīśvara", "Nandikeshvara", "the bull of Shiva", "Vrishabha
 tradition: "Hindu (Shaiva)"
 region: "Pan-Indian — every Shaiva temple features Nandi facing the *garbhagṛha* (sanctum); principal early development in South Indian Shaiva temple architecture (Pallava, Chola, Vijayanagara periods) and parallel Northern development"
 period-active-earliest: -200
-period-active-latest:
+period-active-latest: 2026
 domains: ["bull-mount (*vāhana*) of Shiva", "guardian and gatekeeper", "primary Shaiva devotee", "leader of the *gaṇas* (Shiva's attendants)"]
 gender: "masculine"
 role: "mount and chief devotee of Shiva; gatekeeper of Kailasa; in Nandīśvara theology, an aspect of Shiva himself"

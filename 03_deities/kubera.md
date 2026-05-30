@@ -6,7 +6,7 @@ aka: ["Kuvera", "Vaiśravaṇa (Buddhist)", "Bishamonten (毘沙門天, Japanese
 tradition: "Hindu / Buddhist / Jain"
 region: "South Asia → East Asia (as Vaiśravaṇa / Bishamonten)"
 period-active-earliest: -500
-period-active-latest:
+period-active-latest: 2026
 domains: ["wealth", "the North direction (Lokapāla)", "the Yakṣas (his retinue)", "Alaka (his city on Mount Kailash)"]
 gender: "masculine"
 role: "lord of wealth / guardian of the North"

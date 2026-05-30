@@ -6,7 +6,7 @@ aka: ["Jóhonaa'éí", "The One Who Carries the Sun", "Sun Bearer", "The Sun"]
 tradition: "Diné (Navajo)"
 region: "Diné Bikéyah / Southwest North America"
 period-active-earliest: 1200
-period-active-latest:
+period-active-latest: 2026
 domains: ["the sun", "light", "journey", "fatherhood", "male creative power", "the daily circuit across the sky"]
 gender: "masculine"
 role: "solar-deity / father-of-hero-twins"

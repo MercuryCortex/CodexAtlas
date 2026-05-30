@@ -6,7 +6,7 @@ aka: ["/Kaang", "Kaggen", "ǂGãoǃna", "Cagn (older spelling)", "the Mantis"]
 tradition: "[[tradition-khoisan-san]]"
 region: "Southern Africa — San (Bushman) territories: Kalahari, southern Namibia, northern South Africa, Botswana"
 period-active-earliest: -2000
-period-active-latest:
+period-active-latest: 2026
 domains: ["creator", "trickster", "the mantis (Kaang's animal-form)", "origin of the cosmos and animals", "the moon (he gave the moon its place)"]
 gender: "masculine (with masculine and feminine cosmic-pair structure in some San traditions)"
 role: "creator-trickster / mantis-god / cosmic-originator"

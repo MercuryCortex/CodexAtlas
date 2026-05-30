@@ -6,7 +6,7 @@ aka: ["Poimen", "Angelos tēs Metanoias", "the Angel of Repentance", "the Shephe
 tradition: "Early Roman Christianity / canonical in [[tradition-ethiopian-orthodox-tewahedo]] (where the Shepherd of Hermas remains scripture)"
 region: "Rome (narrative setting); pre-Nicene Christian textual transmission"
 period-active-earliest: 110
-period-active-latest:
+period-active-latest: 2026
 domains: ["repentance", "post-baptismal forgiveness", "angelic teaching of moral commandments"]
 gender: "masculine"
 role: "personified angel | celestial teacher | embodiment of Repentance"

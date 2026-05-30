@@ -6,7 +6,7 @@ aka: ["Mi 'khrugs pa (Tibetan)", "Ashuku Nyorai (Japanese)"]
 tradition: "Mahāyāna Buddhism (esp. Vajrayana)"
 region: "India → Tibet → East Asia"
 period-active-earliest: 100
-period-active-latest:
+period-active-latest: 2026
 domains: ["the Eastern Buddha-field of Abhirati", "the Mirror-like Wisdom", "imperturbability", "purification of anger"]
 gender: "masculine"
 role: "Eastern Dhyani Buddha"

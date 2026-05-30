@@ -6,7 +6,7 @@ aka: ["Ryujin", "龍神 (Dragon God)", "Watatsumi", "Watatsumi-no-Kami", "Wata-t
 tradition: "Shinto"
 region: "Japan — underwater realm (Ryūgū-jō); Watatsumi Shrine (Tsushima Island); coastal and fishing communities"
 period-active-earliest: -300
-period-active-latest:
+period-active-latest: 2026
 domains: ["sea", "ocean", "tides", "dragons", "underwater palace", "marine life", "imperial ancestry"]
 gender: "masculine"
 role: "sea king / dragon ruler / tide controller"

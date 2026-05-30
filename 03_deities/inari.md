@@ -6,7 +6,7 @@ aka: ["Inari", "稲荷大神", "Ōinari-san"]
 tradition: "Shinto (with Buddhist syncretic layer as Dakiniten)"
 region: "Japan — Fushimi Inari Taisha (Kyoto), founded 711 CE"
 period-active-earliest: 700
-period-active-latest:
+period-active-latest: 2026
 domains: ["rice", "agriculture", "fertility", "commerce", "fox-spirits (kitsune)", "swordsmiths"]
 gender: "varies (masculine, feminine, or androgynous depending on tradition)"
 role: "agricultural deity / commercial patron / shape-shifting kami"

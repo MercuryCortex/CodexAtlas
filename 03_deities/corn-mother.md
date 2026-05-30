@@ -6,7 +6,7 @@ aka: ["Selu (Cherokee)", "Iyatiku (Keresan Pueblo)", "Yellow Woman (various Pueb
 tradition: "Eastern Woodlands / Pueblo (pan-North American agricultural traditions)"
 region: "Widespread — Cherokee (Appalachians), Keresan Pueblo (New Mexico), Zuni, Iroquois, and dozens of related traditions across North America"
 period-active-earliest: -3000
-period-active-latest:
+period-active-latest: 2026
 domains: ["corn/maize", "agriculture", "sacrifice-for-life", "women's ritual", "fertility", "death-and-renewal", "food sovereignty"]
 gender: "feminine"
 role: "grain goddess and sacred sacrificial mother"

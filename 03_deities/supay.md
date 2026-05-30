@@ -6,7 +6,7 @@ aka: ["Supay", "Çupay (colonial spelling)", "El Diablo (conflated colonial usag
 tradition: "Inca / Andean"
 region: "Andes (pan-Andean)"
 period-active-earliest: 1200
-period-active-latest:
+period-active-latest: 2026
 domains: ["death", "underworld", "Ukhu Pacha (inner world)", "the dead", "disease"]
 gender: "masculine"
 role: "underworld-deity / death-god"

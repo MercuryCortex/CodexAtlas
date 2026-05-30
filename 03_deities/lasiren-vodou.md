@@ -6,7 +6,7 @@ aka: ["La Sirène", "Lasiren", "La Baleine (paired-aspect)", "Maman Lasirèn"]
 tradition: "[[tradition-vodou-haitian]]"
 region: "Haiti; Haitian diaspora; Kongo and Yoruba/Fon antecedents in West and West-Central Africa"
 period-active-earliest: 1700
-period-active-latest:
+period-active-latest: 2026
 domains: ["the ocean", "mermaid form", "sirens", "music (Lasirèn sings under the water)", "wealth from the sea", "dreams of the drowned", "Atlantic Middle-Passage memory"]
 gender: "feminine"
 role: "sea-mermaid lwa / Petwo water-spirit / Atlantic-ocean memory-figure"

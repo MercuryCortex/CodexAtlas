@@ -6,7 +6,7 @@ aka: ["Raijin", "雷神 (Thunder God / Thunder Spirit)", "Raiden", "Kaminari-sam
 tradition: "Shinto"
 region: "Japan — Shinto shrines and Buddhist temple gate pairs; Kanda Myōjin association"
 period-active-earliest: -300
-period-active-latest:
+period-active-latest: 2026
 domains: ["thunder", "lightning", "storms", "rain", "fertility", "drums"]
 gender: "masculine"
 role: "thunder deity / storm god / agricultural fertility"

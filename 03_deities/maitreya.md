@@ -6,7 +6,7 @@ aka: ["Metteyya (Pāli)", "Mile Fo / Mile Pusa (Chinese 弥勒佛)", "Budai / Ho
 tradition: "Buddhism — Theravāda, Mahāyāna, Vajrayana (universal)"
 region: "Pan-Buddhist"
 period-active-earliest: -100
-period-active-latest:
+period-active-latest: 2026
 domains: ["future Buddhahood", "Tuṣita heaven (current residence)", "loving-kindness (maitrī)", "messianic eschatology"]
 gender: "masculine"
 role: "future Buddha / messianic bodhisattva"

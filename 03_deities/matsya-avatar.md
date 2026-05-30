@@ -6,7 +6,7 @@ aka: ["Matsya", "मत्स्य", "Saphari (in some recensions)", "the Fish-
 tradition: "[[tradition-vedic-hinduism]] / [[tradition-bhakti-vaishnavism]]"
 region: "narrative setting: northern India / Vedic Saptasindhu (Indus / Saraswati region)"
 period-active-earliest: -700
-period-active-latest:
+period-active-latest: 2026
 domains: ["the first avatar of Vishnu (dashavatara)", "rescuer of Manu in the flood", "preserver of the Vedas during the flood-cataclysm (later Puranic addition)"]
 gender: "masculine"
 role: "avatar | savior of humanity | first of the ten avatars of Vishnu"

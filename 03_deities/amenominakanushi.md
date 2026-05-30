@@ -6,7 +6,7 @@ aka: ["Amenominakanushi", "天之御中主神 (Lord of the August Center of Heav
 tradition: "Shinto"
 region: "Japan — Takamagahara (the Plain of High Heaven); no terrestrial shrine in early tradition"
 period-active-earliest: -300
-period-active-latest:
+period-active-latest: 2026
 domains: ["cosmic center", "primordial creation", "divine sovereignty", "the unmanifest", "celestial axis"]
 gender: "non-gendered"
 role: "first principle / supreme abstract deity / cosmic center"

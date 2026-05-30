@@ -6,7 +6,7 @@ aka: ["Takamimusubi", "Takami-musubi", "Takamimusubi no Mikoto", "High Creator",
 tradition: "Shinto (Kojiki / Nihon Shoki — Japanese)"
 region: "Japan — attested primarily in the Yamato court tradition"
 period-active-earliest: -700
-period-active-latest:
+period-active-latest: 2026
 domains: ["creation", "generative force", "the high heavens", "divine authority", "cosmic will", "sovereign command"]
 gender: "masculine"
 role: "primal creator deity — second of the three Zōka-Sanshin (separate heavenly creators)"

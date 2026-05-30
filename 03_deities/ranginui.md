@@ -6,7 +6,7 @@ aka: ["Rangi", "Sky Father"]
 tradition: "Māori"
 region: "Aotearoa / New Zealand"
 period-active-earliest: 1280
-period-active-latest:
+period-active-latest: 2026
 domains: ["sky", "primal masculine generative principle"]
 gender: "masculine"
 role: "primordial sky-father"

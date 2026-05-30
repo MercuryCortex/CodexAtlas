@@ -6,7 +6,7 @@ aka: ["Engai", "Enkai", "Eng-Ai", "Ngai Narok (Black Ngai)", "Ngai Nanyokie (Red
 tradition: "Maasai traditional religion"
 region: "East Africa — Kenya, Tanzania (Maasai pastoralist territories)"
 period-active-earliest: -500
-period-active-latest:
+period-active-latest: 2026
 domains: ["supreme being", "rain", "cattle (the divine gift)", "the sky", "Mount Kilimanjaro / Mount Kenya"]
 gender: "encompasses both — though often invoked as masculine"
 role: "high god / source of cattle / rain-giver"

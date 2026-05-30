@@ -6,7 +6,7 @@ aka: ["Marasa", "Marassa Jumeaux", "Marassa Dosou-Dosa", "the Holy Twins"]
 tradition: "Haitian Vodou"
 region: "Haiti; Haitian diaspora; ultimate origin in Fon-Yoruba twin-cult and Kongo nkita-twin tradition"
 period-active-earliest: 1700
-period-active-latest:
+period-active-latest: 2026
 domains: ["twinship", "child mortality and infant souls", "the third (a non-twin child born after twins, Dosou/Dosa, joins them)", "the doubling and tripling of power", "balance of opposites"]
 gender: "twins (male + female or twin-pair varying by lineage); the third child added is opposite-sex to the twin set"
 role: "sacred-twin loa / patrons of children + family / mediators of cosmic doubling"

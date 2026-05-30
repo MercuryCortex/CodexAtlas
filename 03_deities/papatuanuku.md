@@ -6,7 +6,7 @@ aka: ["Papa", "Earth Mother"]
 tradition: "Māori"
 region: "Aotearoa / New Zealand"
 period-active-earliest: 1280
-period-active-latest:
+period-active-latest: 2026
 domains: ["earth", "land", "primal feminine generative principle"]
 gender: "feminine"
 role: "primordial earth-mother"

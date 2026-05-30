@@ -6,7 +6,7 @@ aka: ["Yama-rāja", "Dharmarāja", "Yamarāja", "Mṛtyu (Death)"]
 tradition: "Vedic Hinduism (continued in Puranic Hinduism, Buddhism, Jainism)"
 region: "South Asia"
 period-active-earliest: -1500
-period-active-latest:
+period-active-latest: 2026
 domains: ["death", "underworld", "moral judgment", "first mortal"]
 gender: "masculine"
 role: "first mortal / god of death / judge of the dead"

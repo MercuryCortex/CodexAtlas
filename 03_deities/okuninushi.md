@@ -6,7 +6,7 @@ aka: ["Okuninushi", "大国主命 (Master of the Great Land)", "Ōmononushi", "D
 tradition: "Shinto"
 region: "Japan — Izumo Grand Shrine (Shimane Prefecture)"
 period-active-earliest: -300
-period-active-latest:
+period-active-latest: 2026
 domains: ["land-building", "earth", "agriculture", "medicine", "nation-founding", "marriage", "hidden world (kakuriyo)"]
 gender: "masculine"
 role: "earthly creator / nation-builder / sovereign who yields"

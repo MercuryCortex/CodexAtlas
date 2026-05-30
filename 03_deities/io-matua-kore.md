@@ -6,7 +6,7 @@ aka: ["Io", "Io-the-parentless", "Io-mata-ngaro (Io-the-hidden-face)"]
 tradition: "Māori (specific iwi — Tūhoe, Ngāti Kahungunu, others; contested pre-contact authenticity)"
 region: "Aotearoa / New Zealand"
 period-active-earliest: 1280
-period-active-latest:
+period-active-latest: 2026
 domains: ["supreme being", "absolute origin", "ineffable"]
 gender: "non-gendered (sometimes referenced masculine)"
 role: "supreme being (in those traditions that include him)"

@@ -6,7 +6,7 @@ aka: ["Nanabozho", "Wenabozho", "Manibozho", "Winabojo", "the Great Hare", "Mich
 tradition: "Anishinaabe (Ojibwe / Chippewa / Algonquian tradition)"
 region: "Great Lakes region — Michigan, Wisconsin, Minnesota, Ontario, Manitoba"
 period-active-earliest: -2000
-period-active-latest:
+period-active-latest: 2026
 domains: ["trickery", "fire-theft", "flood-reshaping", "healing", "mediation between spirit and human worlds", "shapeshifting", "creation"]
 gender: "masculine (shapeshifts)"
 role: "trickster-creator and culture hero"

@@ -6,7 +6,7 @@ aka: ["Maui", "Māui-tikitiki-a-Taranga (Māori)", "Māui (Hawaiian)", "Māui (T
 tradition: "Pan-Polynesian — Māori, Hawaiian (Māui), Tahitian, Samoan"
 region: "Polynesia"
 period-active-earliest: 800
-period-active-latest:
+period-active-latest: 2026
 domains: ["trickster", "fishing up land", "slowing the sun", "fire-theft", "demigod heroism", "mortality"]
 gender: "masculine"
 role: "trickster / culture-hero / demigod"

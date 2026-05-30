@@ -6,7 +6,7 @@ aka: ["Yemayá (Cuban)", "Iemanjá (Brazilian)", "Yemoja", "Yemonja", "Ymọja"]
 tradition: "Yoruba"
 region: "West Africa (Ogun River origin); coastal diaspora (Cuba, Brazil)"
 period-active-earliest: -200
-period-active-latest:
+period-active-latest: 2026
 domains: ["motherhood", "rivers (in Africa)", "sea (in diaspora)", "fertility", "protection of children"]
 gender: "feminine"
 role: "mother-orisha / water-orisha"

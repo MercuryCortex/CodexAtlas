@@ -6,7 +6,7 @@ aka: ["Vlasiy (Russian: Влас, Власий)", "Vlasiu (Ukrainian: Власі
 tradition: "Christianity (Eastern Orthodox + Catholic); Roman / Byzantine martyrology"
 region: "Armenian-Anatolian source (Sebaste); Eastern Slavic + Balkan + Italian folk veneration"
 period-active-earliest: 316
-period-active-latest:
+period-active-latest: 2026
 domains: ["throat-healing (martyrology)", "patron of cattle + livestock (Eastern Slavic + Balkan)", "patron of wool-workers"]
 gender: "masculine"
 role: "Armenian bishop martyred ~316 CE under Licinius; Christian saint who in Eastern Slavic folk-Christianity inherits Veles's cattle-patron + livestock-protection domain"

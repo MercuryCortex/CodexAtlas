@@ -6,7 +6,7 @@ aka: ["Oshun", "Ochún (Cuban)", "Oxum (Brazilian)"]
 tradition: "Yoruba"
 region: "West Africa (Yorùbáland, especially Oshogbo); diaspora"
 period-active-earliest: -500
-period-active-latest:
+period-active-latest: 2026
 domains: ["fresh water", "rivers", "love", "fertility", "wealth", "beauty", "sweetness"]
 gender: "feminine"
 role: "river-orisha / love-and-fertility orisha"

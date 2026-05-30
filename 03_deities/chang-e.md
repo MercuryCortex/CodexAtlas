@@ -6,7 +6,7 @@ aka: ["嫦娥", "Chang'o", "Heng'e", "Lady of the Moon"]
 tradition: "Chinese folk religion / Daoism (Huainanzi, c. 139 BCE; Mid-Autumn Festival living tradition)"
 region: "China"
 period-active-earliest: -139
-period-active-latest:
+period-active-latest: 2026
 domains: ["moon", "immortality", "solitude", "beauty", "the Mid-Autumn festival", "the Jade Rabbit"]
 gender: "feminine"
 role: "moon goddess"

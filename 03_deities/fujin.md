@@ -6,7 +6,7 @@ aka: ["Fujin", "風神 (Wind God)", "Shina-Tsu-Hiko", "Shina-To-Be (female varia
 tradition: "Shinto"
 region: "Japan — shrines at Nishina Shinmei Shrine (Nagano); guardian role at major Buddhist-Shinto shrine-temple complexes"
 period-active-earliest: -300
-period-active-latest:
+period-active-latest: 2026
 domains: ["wind", "storms", "weather", "atmosphere", "the breath of the world"]
 gender: "masculine"
 role: "wind deity / storm guardian"

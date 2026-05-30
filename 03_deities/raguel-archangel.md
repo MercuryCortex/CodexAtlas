@@ -6,7 +6,7 @@ aka: ["Ragu'el", "Raguil", "Raguhel", "Ra'su'el"]
 tradition: "Second-Temple Jewish apocalyptic (Enochic) / canonical in [[tradition-ethiopian-orthodox-tewahedo]] / liturgically retained in [[tradition-coptic-orthodox]]"
 region: "heavenly courts"
 period-active-earliest: -300
-period-active-latest:
+period-active-latest: 2026
 domains: ["the punishment of the cosmic-luminary world", "divine vengeance on disordered luminaries"]
 gender: "masculine"
 role: "archangel | one of the seven"

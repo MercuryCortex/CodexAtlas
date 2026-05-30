@@ -6,7 +6,7 @@ aka: ["Biame", "Baayama"]
 tradition: "Specific southeastern Australian Aboriginal nations — Wiradjuri, Kamilaroi, Wonnarua, Eora; contested as pan-Aboriginal"
 region: "Southeastern Australia (New South Wales)"
 period-active-earliest: -1000
-period-active-latest:
+period-active-latest: 2026
 domains: ["sky", "law-giving", "initiation", "creator-ancestor"]
 gender: "masculine"
 role: "sky-father / law-giver (in those nations that have him)"

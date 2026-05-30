@@ -6,7 +6,7 @@ aka: ["Izanami", "伊邪那美命 (She-Who-Invites)"]
 tradition: "Shinto"
 region: "Japan"
 period-active-earliest: -300
-period-active-latest:
+period-active-latest: 2026
 domains: ["creation", "death (post-mortem)", "Yomi (underworld)"]
 gender: "feminine"
 role: "primordial creator / underworld goddess (after death)"

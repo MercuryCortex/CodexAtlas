@@ -6,7 +6,7 @@ aka: ["Kalfou", "Carrefour", "Mèt Kafou", "Kalfu Petwo"]
 tradition: "Haitian Vodou (Petwo rite)"
 region: "Haiti; Haitian diaspora"
 period-active-earliest: 1700
-period-active-latest:
+period-active-latest: 2026
 domains: ["the dangerous crossroads", "evil spirits and black magic", "the moon (Kalfu is the dark counterpart of [[papa-legba]]'s sun)", "boundary-violation", "the night"]
 gender: "masculine"
 role: "Petwo-rite gatekeeper of the dangerous crossroads / dark complement to Papa Legba"

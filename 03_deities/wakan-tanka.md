@@ -6,7 +6,7 @@ aka: ["Wakȟáŋ Tȟáŋka", "the Great Spirit", "the Great Mystery", "Tȟuŋká
 tradition: "Lakota (and broader Sioux — Dakota, Nakota)"
 region: "Northern Plains, North America"
 period-active-earliest: 1500
-period-active-latest:
+period-active-latest: 2026
 domains: ["the totality of the sacred", "the source", "the ungraspable"]
 gender: "non-gendered (sometimes referenced as Tȟuŋkášila / Grandfather)"
 role: "totalizing-sacred concept rather than personalized deity"

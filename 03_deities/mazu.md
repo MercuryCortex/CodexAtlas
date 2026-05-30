@@ -6,7 +6,7 @@ aka: ["Lin Moniang (historical)", "Tianhou (Empress of Heaven)", "媽祖", "天�
 tradition: "Chinese folk religion (Daoist + Buddhist syncretic layers)"
 region: "China — Meizhou Island (Fujian), Taiwan, all overseas Chinese diaspora"
 period-active-earliest: 960
-period-active-latest:
+period-active-latest: 2026
 domains: ["sea", "sailors' protection", "diaspora-tutelary"]
 gender: "feminine"
 role: "deified mortal → maritime patron goddess"

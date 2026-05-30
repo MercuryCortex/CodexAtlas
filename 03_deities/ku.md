@@ -6,7 +6,7 @@ aka: ["Kūkā'ilimoku", "Kū-the-snatcher-of-islands", "Kū-of-the-bloody-mouth"
 tradition: "Hawaiian"
 region: "Hawaiian Islands"
 period-active-earliest: 1100
-period-active-latest:
+period-active-latest: 2026
 domains: ["war", "kingship", "sorcery", "the forest", "fishing (in some aspects)"]
 gender: "masculine"
 role: "war-god / kingship-patron"

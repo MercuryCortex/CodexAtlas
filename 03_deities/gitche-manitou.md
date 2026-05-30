@@ -6,7 +6,7 @@ aka: ["Gichi-manidoo (Ojibwe)", "Kitchi-manitou", "Kije-manidoo", "the Great Spi
 tradition: "Algonquian — especially Anishinaabe (Ojibwe, Odawa, Potawatomi); related concepts among Cree, other Algonquian peoples"
 region: "Great Lakes / northeastern North America"
 period-active-earliest: 1400
-period-active-latest:
+period-active-latest: 2026
 domains: ["totalizing-sacred power", "source"]
 gender: "non-gendered"
 role: "totalizing-sacred concept"

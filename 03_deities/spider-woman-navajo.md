@@ -6,7 +6,7 @@ aka: ["Na'ashjé'ii Asdzáá", "Spider Woman", "Spider Grandmother"]
 tradition: "Diné (Navajo)"
 region: "Diné Bikéyah / Southwest North America"
 period-active-earliest: 1200
-period-active-latest:
+period-active-latest: 2026
 domains: ["weaving", "protection", "wisdom", "guidance of the Hero Twins", "creative arts"]
 gender: "feminine"
 role: "wise-advisor / protector / patron-of-weaving"

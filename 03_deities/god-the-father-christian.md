@@ -14,7 +14,7 @@ region: "Pan-Christian"
 # Marcion's mid-2nd-c. attempt to separate the OT God from the Father was
 # condemned as heresy precisely because the Church insisted on this identity.
 period-active-earliest: -1300
-period-active-latest:
+period-active-latest: 2026
 domains: ["creator", "sovereign", "judge", "father of Christ"]
 gender: "masculine (traditionally; doctrinally beyond gender)"
 role: "first person of the Trinity; creator of heaven and earth; Father of Jesus Christ"

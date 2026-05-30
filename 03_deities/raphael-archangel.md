@@ -6,7 +6,7 @@ aka: ["Rafa'el", "the Healer", "the Travelers' Angel"]
 tradition: "Christianity / Judaism / Islam"
 region: "Pan-Abrahamic"
 period-active-earliest: -200
-period-active-latest:
+period-active-latest: 2026
 domains: ["healing", "guidance", "protection of travelers"]
 gender: "masculine (traditionally)"
 role: "healer archangel"

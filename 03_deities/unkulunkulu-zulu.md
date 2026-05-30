@@ -6,7 +6,7 @@ aka: ["Unkulunkulu", "uMvelinqangi (Xhosa cognate)", "the Great-Great-One"]
 tradition: "Zulu traditional religion"
 region: "Southern Africa — Zulu, related Nguni-Bantu groups"
 period-active-earliest: 800
-period-active-latest:
+period-active-latest: 2026
 domains: ["supreme being", "creator", "first ancestor", "the sky"]
 gender: "ambiguous (masculine in some accounts; ancestral category in others)"
 role: "high god / first-ancestor / creator"

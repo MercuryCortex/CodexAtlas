@@ -6,7 +6,7 @@ aka: ["Gou", "Gu of Dahomey", "Vodun Gu"]
 tradition: "Fon-Ewe vodun (Dahomey); preserved in Haitian Vodou + Brazilian Candomblé Jeje"
 region: "West Africa: modern Benin, Togo; preserved in Haiti + Bahia"
 period-active-earliest: -500
-period-active-latest:
+period-active-latest: 2026
 domains: ["iron", "war", "blacksmithing", "tools and weapons", "roads", "patron of soldiers and smiths"]
 gender: "masculine"
 role: "iron-vodun / patron of blacksmiths / warrior-deity"

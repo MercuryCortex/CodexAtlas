@@ -6,7 +6,7 @@ aka: ["Don yod grub pa (Tibetan)", "Fukūjōju Nyorai (Japanese)"]
 tradition: "Mahāyāna Buddhism (Vajrayana)"
 region: "India → Tibet → East Asia"
 period-active-earliest: 200
-period-active-latest:
+period-active-latest: 2026
 domains: ["the Northern Buddha-field of Karmaprasiddhi", "All-Accomplishing Wisdom", "purification of envy", "fearlessness"]
 gender: "masculine"
 role: "Northern Dhyani Buddha"

@@ -6,7 +6,7 @@ aka: ["Trinitas", "Triune God", "Three-in-One", "Holy Trinity"]
 tradition: "Christianity"
 region: "Pan-Christian"
 period-active-earliest: 100
-period-active-latest:
+period-active-latest: 2026
 domains: ["divine unity-in-diversity", "Godhead as such"]
 gender: "doctrinally beyond gender"
 role: "the one God in three persons; the structure of Christian monotheism"

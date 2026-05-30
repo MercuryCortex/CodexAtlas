@@ -6,7 +6,7 @@ aka: ["Suparṇa ('Beautiful-Winged')", "Khageśvara ('King of Birds')", "Krut (
 tradition: "Vedic / Puranic Hinduism + Buddhism + Jainism"
 region: "South Asia → Southeast Asia (national symbol of Thailand and Indonesia)"
 period-active-earliest: -1000
-period-active-latest:
+period-active-latest: 2026
 domains: ["Vishnu's vehicle (vāhana)", "enemy of serpents (nāgas)", "speed", "the soma"]
 gender: "masculine"
 role: "Vishnu's eagle mount / king of birds"

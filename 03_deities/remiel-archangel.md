@@ -6,7 +6,7 @@ aka: ["Ramiel", "Remi'el", "Rumael", "Jeremiel (Latin 4 Ezra 4:36)", "Yeramyəʾ
 tradition: "Second-Temple Jewish apocalyptic (Enochic + Ezran) / canonical in [[tradition-ethiopian-orthodox-tewahedo]]"
 region: "heavenly courts"
 period-active-earliest: -300
-period-active-latest:
+period-active-latest: 2026
 domains: ["the resurrection of the dead", "those who rise"]
 gender: "masculine"
 role: "archangel | one of the seven | psychopomp of resurrection"

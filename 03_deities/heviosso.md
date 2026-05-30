@@ -6,7 +6,7 @@ aka: ["Xevioso", "Hèvioso", "So", "Sogbo", "Hevioso of Dahomey"]
 tradition: "Fon-Ewe vodun (Dahomey); preserved in Haitian Vodou via Sogbo / Bade"
 region: "West Africa: modern Benin, Togo; preserved in Haiti + parts of Brazilian Candomblé Jeje nation"
 period-active-earliest: -500
-period-active-latest:
+period-active-latest: 2026
 domains: ["thunder", "lightning", "rain", "justice (storm as punishment of liars and thieves)", "sky-violence"]
 gender: "masculine"
 role: "thunder-justice vodun / sky-violence enforcer"

@@ -6,7 +6,7 @@ aka: ["Isrāfīl (إسرافيل)", "Raphael (identified in some Jewish and Chri
 tradition: "Sunni and Shia Islamic theology (hadith tradition)"
 region: "Islamic world — pan-traditional; Near East origin"
 period-active-earliest: 600
-period-active-latest:
+period-active-latest: 2026
 domains: ["trumpet of the Last Day", "resurrection", "music and inspiration", "divine command", "cosmic pause / suspended time", "eschatology"]
 gender: "masculine"
 role: "angel of the trumpet — the herald of the Last Day and resurrection"

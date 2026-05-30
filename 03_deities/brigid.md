@@ -6,7 +6,7 @@ aka: ["Brigit", "Brighid", "Bride (Scottish)", "Ffraid (Welsh)", "Saint Brigid o
 tradition: "Celtic paganism (Gaelic) → Irish Christianity"
 region: "Ireland — Kildare (chief cult center), Britain"
 period-active-earliest: -500
-period-active-latest:
+period-active-latest: 2026
 domains: ["fire (hearth, smithcraft, poetic-inspiration fire)", "healing", "poetry", "smithcraft", "fertility", "domesticated animals"]
 gender: "feminine"
 role: "triple-goddess (poetry / smithcraft / healing) → Christian saint"

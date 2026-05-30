@@ -6,7 +6,7 @@ aka: ["Amaterasu-Ōmikami", "Ōhirume-no-muchi", "天照大神 (Heaven-Shining G
 tradition: "Shinto"
 region: "Japan — Ise Grand Shrine (Mie Prefecture)"
 period-active-earliest: -300
-period-active-latest:
+period-active-latest: 2026
 domains: ["sun", "sovereignty", "imperial ancestry", "rice cultivation"]
 gender: "feminine"
 role: "high goddess / divine ancestor of the imperial line"

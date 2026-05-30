@@ -6,7 +6,7 @@ aka: ["Yashoda", "the foster-mother of Krishna"]
 tradition: "Vaishnavism / Bhakti"
 region: "India (Mathura-Vraja region)"
 period-active-earliest: -100
-period-active-latest: ""
+period-active-latest: 2026
 domains: ["foster-motherhood of Krishna", "cowherd-village life", "maternal-bhakti"]
 gender: "feminine"
 role: "consort | foster-mother | bhakti-relational-figure"

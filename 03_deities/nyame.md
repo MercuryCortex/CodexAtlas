@@ -6,7 +6,7 @@ aka: ["Onyame", "Onyankopon", "Tweduampon", "Nyame Nhyehyee", "Bore-Bore"]
 tradition: "Akan (Asante, Fante, Twi, and related Akan peoples)"
 region: "West Africa — modern Ghana and Côte d'Ivoire"
 period-active-earliest: -500
-period-active-latest:
+period-active-latest: 2026
 domains: ["supreme being", "creator", "sky", "destiny", "cosmic order"]
 gender: "non-gendered (sky is grammatically gendered in some Akan dialects; Nyame transcends categories)"
 role: "high-god / supreme being"

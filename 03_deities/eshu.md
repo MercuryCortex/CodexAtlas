@@ -6,7 +6,7 @@ aka: ["Eshu", "Elegguá / Elegua (Cuban)", "Exú (Brazilian)", "Papa Legba (Hait
 tradition: "Yoruba"
 region: "West Africa; diaspora"
 period-active-earliest: -500
-period-active-latest:
+period-active-latest: 2026
 domains: ["crossroads", "communication between orishas and humans", "messages", "trickery", "transformation", "language"]
 gender: "masculine (with strong gender-fluid aspects)"
 role: "trickster-messenger orisha / opener-of-the-way"

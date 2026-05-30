@@ -6,7 +6,7 @@ aka: ["Nzambi a Mpungu", "Nzambi", "Zambi", "Zamba", "Nzambi Kalunga"]
 tradition: "BaKongo (Kongo Kingdom and related Central African peoples)"
 region: "Central Africa — modern DRC, Republic of Congo, Angola, Gabon"
 period-active-earliest: -500
-period-active-latest:
+period-active-latest: 2026
 domains: ["supreme being", "creator", "cosmic order", "life-force", "death and life cycle"]
 gender: "non-gendered (sometimes invoked as masculine; transcends gendered categories)"
 role: "high-god / supreme being / deus otiosus"

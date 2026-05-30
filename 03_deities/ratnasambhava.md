@@ -6,7 +6,7 @@ aka: ["Rin chen 'byung gnas (Tibetan)", "Hōshō Nyorai (Japanese)"]
 tradition: "Mahāyāna Buddhism (Vajrayana)"
 region: "India → Tibet → East Asia"
 period-active-earliest: 200
-period-active-latest:
+period-active-latest: 2026
 domains: ["the Southern Buddha-field of Śrīmat", "the Wisdom of Equality", "generosity", "purification of pride"]
 gender: "masculine"
 role: "Southern Dhyani Buddha"

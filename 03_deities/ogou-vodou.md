@@ -11,7 +11,7 @@ date-attested-earliest: 1700
 date-attested-latest: 2026
 region: "Haiti; Haitian diaspora (Dominican Republic, USA, Canada, France)"
 period-active-earliest: 1700
-period-active-latest:
+period-active-latest: 2026
 domains: ["iron", "war", "blacksmithing", "the warrior", "fire and the forge", "patron of soldiers", "the machete and the gun"]
 gender: "masculine (the Ogou family is a clan of related male figures)"
 role: "warrior-iron loa-family / patron of Haitian revolutionary military spirit"

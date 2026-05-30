@@ -6,7 +6,7 @@ aka: ["Ptesáŋwiŋ", "Ptesan-Wi", "Wóhpé — the Falling Star (identified wit
 tradition: "Lakota"
 region: "Northern Great Plains, North America"
 period-active-earliest: 1500
-period-active-latest:
+period-active-latest: 2026
 domains: ["sacred pipe", "the Seven Sacred Rites", "covenant", "sacred law", "mediation between humans and Wakan Tanka"]
 gender: "feminine"
 role: "sacred-lawgiver / covenant-bringer / mediating sacred figure"

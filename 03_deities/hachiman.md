@@ -6,7 +6,7 @@ aka: ["Yahata-no-kami", "八幡神", "Hachiman Daibosatsu"]
 tradition: "Shinto / Buddhist syncretism"
 region: "Japan — Usa Hachimangū (Ōita), Iwashimizu Hachimangū (Kyoto), Tsurugaoka Hachimangū (Kamakura)"
 period-active-earliest: 500
-period-active-latest:
+period-active-latest: 2026
 domains: ["warfare", "archery", "protection of warriors", "imperial dynasty"]
 gender: "masculine (deified emperor Ōjin) + feminine (mother Jingū) + child"
 role: "war-god / deified ancestor-emperor / Buddhist bodhisattva"

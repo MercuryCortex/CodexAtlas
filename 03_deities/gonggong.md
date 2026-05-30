@@ -6,7 +6,7 @@ aka: ["共工", "Gōnggōng", "Kung Kung (Wade-Giles)", "Gong-Gong the water-god
 tradition: "Chinese (pre-Qin mythology; classical-philosophical reception)"
 region: "Chinese mythological cosmos (Mount Buzhou region — the northwestern cosmic pillar)"
 period-active-earliest: -1000
-period-active-latest:
+period-active-latest: 2026
 domains: ["water", "the flood (as cause, not survivor)", "cosmic-pillar destruction (Mount Buzhou)", "rebellion against heavenly order"]
 gender: "masculine"
 role: "water-deity | flood-causer | cosmic rebel | the destroyer of the heavenly axis"

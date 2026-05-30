@@ -6,7 +6,7 @@ aka: ["Pacha Mama", "Earth Mother", "Mama Pacha"]
 tradition: "Quechua / Aymara / pan-Andean"
 region: "Andes"
 period-active-earliest: 500
-period-active-latest:
+period-active-latest: 2026
 domains: ["earth", "agricultural fertility", "the soil", "mountain-pasture protection"]
 gender: "feminine"
 role: "earth-mother goddess"

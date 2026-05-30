@@ -6,7 +6,7 @@ aka: ["Takemikazuchi", "建御雷之男神 (Brave-Swift-Thunderous-Male)", "Futs
 tradition: "Shinto"
 region: "Japan — Kashima Grand Shrine (Ibaraki Prefecture); Kasuga Grand Shrine (Nara)"
 period-active-earliest: -300
-period-active-latest:
+period-active-latest: 2026
 domains: ["thunder", "swords", "martial arts", "lightning", "military victory", "pacification", "sacred deer"]
 gender: "masculine"
 role: "thunder-sword deity / martial patron / divine emissary"

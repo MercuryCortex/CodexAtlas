@@ -6,7 +6,7 @@ aka: ["Susanowo", "Take-haya-Susanoo", "建速須佐之男命"]
 tradition: "Shinto"
 region: "Japan — Izumo (origin of the Izumo mythological cycle)"
 period-active-earliest: -300
-period-active-latest:
+period-active-latest: 2026
 domains: ["storms", "sea", "underworld (Ne-no-kuni)", "Izumo lineage"]
 gender: "masculine"
 role: "storm god / culture-hero / chaos-tamer"

@@ -6,7 +6,7 @@ aka: ["Dattātreya", "Datta", "Avadhūta", "Tridev-svarūpa"]
 tradition: "Hindu — pan-Indian syncretic; especially central in Maharashtra (Nāth-sampradāya), Karnataka, Gujarat"
 region: "Pan-Indian; especially Maharashtra (Audumbar, Narsobawadi, Ganagapur), Karnataka, Gujarat"
 period-active-earliest: -200
-period-active-latest:
+period-active-latest: 2026
 domains: ["combined Trimūrti (Brahmā, Viṣṇu, Śiva) in one body", "avadhūta (renouncer-beyond-castes-and-stages) supreme yogi", "patron of the Nāth and Daśanāmī ascetic traditions", "Tantric guru"]
 gender: "masculine"
 role: "syncretic Trimūrti-incarnation / avadhūta supreme yogi / guru of gurus"

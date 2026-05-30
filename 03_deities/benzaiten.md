@@ -6,7 +6,7 @@ aka: ["Benten", "Bentensama (弁天様)", "Daibenzaiten", "Biancaitian (Chinese 
 tradition: "Japanese Buddhism (Shichifukujin) / Shinto-Buddhist syncretic"
 region: "Japan; Buddhist transmission through China"
 period-active-earliest: 750
-period-active-latest:
+period-active-latest: 2026
 domains: ["music", "eloquence", "wisdom", "water", "knowledge", "feminine-arts", "wealth (later development)"]
 gender: "feminine"
 role: "Buddhist tantric goddess of music, eloquence and water; one of the Seven Lucky Gods (Shichifukujin) of Japan"

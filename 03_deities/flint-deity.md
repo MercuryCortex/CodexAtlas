@@ -6,7 +6,7 @@ aka: ["Hahgwehdiyu (Onondaga — Right-handed Twin; note: attribution varies by 
 tradition: "Haudenosaunee (Iroquois)"
 region: "Northeast Woodlands, North America"
 period-active-earliest: -3000
-period-active-latest:
+period-active-latest: 2026
 domains: ["destructive forces", "rocks", "thorns", "monsters", "winter", "disharmony"]
 gender: "masculine"
 role: "creator-destroyer / dualistic adversary"

@@ -6,7 +6,7 @@ aka: ["Izanaki", "伊邪那岐命 (He-Who-Invites)"]
 tradition: "Shinto"
 region: "Japan — Awaji and Onogoro islands"
 period-active-earliest: -300
-period-active-latest:
+period-active-latest: 2026
 domains: ["creation", "land-formation", "purification (misogi)"]
 gender: "masculine"
 role: "primordial creator / father-god"

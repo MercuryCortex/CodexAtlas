@@ -6,7 +6,7 @@ aka: ["Gede", "Ghede", "Guédé", "Guede", "the Ghedeh family"]
 tradition: "Haitian Vodou"
 region: "Haiti; Haitian diaspora; ultimate origin in Fon Vodun (the Bè cult) + Yoruba Egungun ancestor-cult"
 period-active-earliest: 1700
-period-active-latest:
+period-active-latest: 2026
 domains: ["death", "the cemetery", "sexuality", "regeneration of life from death", "humor and obscenity", "the protection of children", "the spirits of the unjustly-dead"]
 gender: "primarily masculine (some Gede are female: Gede Brigitte / Manman Brijit)"
 role: "death-and-sexuality loa-family / boundary between living and dead / clowns of the cemetery"

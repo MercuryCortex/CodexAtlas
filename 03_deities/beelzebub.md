@@ -6,7 +6,7 @@ aka: ["Ba'al Zebub ('Lord of Flies', 2 Kings 1)", "Ba'al Zebul ('Lord of the Lof
 tradition: "Hebrew Bible polemical → New Testament demonology → medieval Christian"
 region: "Originally Ekron (Philistine) → Israelite/Jewish polemic → Christian"
 period-active-earliest: -800
-period-active-latest:
+period-active-latest: 2026
 domains: ["originally: a Philistine Ba'al cult-form", "in Hebrew/Christian polemic: 'prince of demons'"]
 gender: "masculine"
 role: "polemicized Philistine deity → Christian demon-prince"

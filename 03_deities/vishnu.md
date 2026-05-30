@@ -6,7 +6,7 @@ aka: ["Viṣṇu", "Vishnu", "Hari", "Nārāyaṇa", "Nārāyaṇa (as aspect)",
 tradition: "Vedic / Vaishnava Hinduism"
 region: "India"
 period-active-earliest: -1200
-period-active-latest: ""
+period-active-latest: 2026
 domains: ["preservation", "the supreme deity (in Vaishnavism)", "avataric descent"]
 gender: "masculine"
 role: "supreme-deity (Vaishnavism) | preserver (in Trimūrti)"

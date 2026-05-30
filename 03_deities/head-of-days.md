@@ -6,7 +6,7 @@ aka: ["Lord of Spirits", "*Re'esa Mawa'el* (Ge'ez 'Head of Days')", "the Ancient
 tradition: "Second-Temple Jewish apocalyptic (Enochic, Book of Parables) / canonical in [[tradition-ethiopian-orthodox-tewahedo]]"
 region: "heavenly courts"
 period-active-earliest: -300
-period-active-latest:
+period-active-latest: 2026
 domains: ["supreme cosmic-eschatological judgeship", "throne of glory", "ultimate divine sovereignty"]
 gender: "masculine (in textual presentation)"
 role: "high-god | divine judge | enthroned father-figure"

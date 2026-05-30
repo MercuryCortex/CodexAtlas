@@ -6,7 +6,7 @@ aka: ["Mahāvairocana", "Dainichi Nyorai (大日如来, Japanese)", "Pilushena (
 tradition: "Mahāyāna Buddhism (esp. Huayan, Shingon, Tiantai, Tibetan)"
 region: "India → China (8th c.) → Japan (Shingon, 9th c.) → Tibet"
 period-active-earliest: 100
-period-active-latest:
+period-active-latest: 2026
 domains: ["cosmic Buddha", "dharmakāya (truth-body)", "central position of the Five Buddha mandala"]
 gender: "non-gendered / masculine (iconographic default)"
 role: "cosmic Buddha / dharmakāya"

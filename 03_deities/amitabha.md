@@ -6,7 +6,7 @@ aka: ["Amitābha", "Amida (Japanese)", "Amituofo (阿弥陀佛, Chinese)", "Opam
 tradition: "Mahayana Buddhism — Pure Land schools"
 region: "Origin: northwest India / Gandhara; cult center: East Asia (China, Japan, Korea, Vietnam) and Tibet"
 period-active-earliest: 100
-period-active-latest:
+period-active-latest: 2026
 domains: ["infinite light", "Pure Land of Sukhavati", "salvation by faith / nembutsu"]
 gender: "masculine"
 role: "celestial Buddha of the Western Pure Land; one of the Five Dhyani Buddhas in Vajrayana"

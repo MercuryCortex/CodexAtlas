@@ -6,7 +6,7 @@ aka: ["Bawon Samdi", "Baron Saturday", "Bawon Lakwa", "Bawon Simityè"]
 tradition: "Haitian Vodou"
 region: "Haiti; Haitian diaspora"
 period-active-earliest: 1700
-period-active-latest:
+period-active-latest: 2026
 domains: ["death", "the cemetery", "the dead", "transition", "humor (often obscene)", "healing (especially terminal)"]
 gender: "masculine"
 role: "lwa of the dead — head of the Gede nasyon"

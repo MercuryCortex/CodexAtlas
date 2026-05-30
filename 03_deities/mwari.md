@@ -6,7 +6,7 @@ aka: ["Musikavanhu", "Nyadenga", "Dzivaguru", "Murenga"]
 tradition: "Shona traditional religion"
 region: "Zimbabwe, parts of Mozambique and South Africa"
 period-active-earliest: 800
-period-active-latest:
+period-active-latest: 2026
 domains: ["supreme being", "creator", "rain", "fertility", "land", "the Matopos hills cult-center"]
 gender: "encompasses masculine and feminine aspects"
 role: "high god (deus revelatus, not deus otiosus)"

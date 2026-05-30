@@ -6,7 +6,7 @@ aka: ["Ebisu", "戎 / 恵比須", "Yebisu", "Hiruko (Leech-Child — original id
 tradition: "Shinto"
 region: "Japan — Nishinomiya Shrine (Hyogo Prefecture); Minatogawa Shrine; coastal fishing communities nationwide"
 period-active-earliest: -300
-period-active-latest:
+period-active-latest: 2026
 domains: ["fishing", "luck", "prosperity", "merchants", "sea harvest", "commerce"]
 gender: "masculine"
 role: "luck god / fishing patron / merchant deity"

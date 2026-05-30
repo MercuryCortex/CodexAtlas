@@ -6,7 +6,7 @@ aka: ["Fu Hsi", "Paoxi", "伏羲", "Baoxi"]
 tradition: "Chinese mythology (Confucian + Daoist appropriation)"
 region: "China"
 period-active-earliest: -2800
-period-active-latest:
+period-active-latest: 2026
 domains: ["culture-hero — divination", "writing", "music", "marriage institution", "hunting/fishing techniques"]
 gender: "masculine"
 role: "primordial culture-hero / first of the Three Sovereigns"

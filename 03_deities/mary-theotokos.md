@@ -6,7 +6,7 @@ aka: ["Theotokos", "Mother of God", "Virgin Mary", "Madonna", "Panagia", "Our La
 tradition: "Christianity"
 region: "Pan-Christian (especially Eastern Orthodox, Roman Catholic, Oriental Orthodox)"
 period-active-earliest: 30
-period-active-latest:
+period-active-latest: 2026
 domains: ["motherhood", "intercession", "mercy", "purity"]
 gender: "feminine"
 role: "Mother of God; intercessor; type of the Church; in Eastern theology, the Theotokos par excellence"

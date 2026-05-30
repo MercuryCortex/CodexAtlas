@@ -6,7 +6,7 @@ aka: ["Kane", "Kāne-i-ka-pualena", "Kāne in many compound forms"]
 tradition: "Hawaiian (Kanaka Maoli)"
 region: "Hawaiian Islands"
 period-active-earliest: 1000
-period-active-latest:
+period-active-latest: 2026
 domains: ["creation", "fresh water", "life", "sunlight", "procreation", "ancestry"]
 gender: "masculine"
 role: "creator-god / one of the four principal akua"

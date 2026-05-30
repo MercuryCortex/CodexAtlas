@@ -6,7 +6,7 @@ aka: ["Pantokrator", "Christ Almighty", "Christos Pantokrator", "Spas Vsederzhit
 tradition: "Christianity (Byzantine and Eastern Orthodox iconographic tradition)"
 region: "Byzantine, Eastern Orthodox, Eastern Catholic"
 period-active-earliest: 300
-period-active-latest:
+period-active-latest: 2026
 domains: ["cosmic sovereignty", "judgment", "imperial-divine kingship"]
 gender: "masculine"
 role: "iconographic form of Christ as cosmic ruler and judge"

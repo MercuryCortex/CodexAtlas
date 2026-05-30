@@ -6,7 +6,7 @@ aka: ["Kishimojin (鬼子母神, Japanese)", "Guizimu (鬼子母, Chinese)", "th
 tradition: "Buddhism — early Indian, Gandhāran, Chinese, Japanese (esp. Nichiren)"
 region: "Gandhāra (origin of major iconography) → China → Japan"
 period-active-earliest: 100
-period-active-latest:
+period-active-latest: 2026
 domains: ["child-protection", "fertility", "smallpox-warding", "the mother of demons converted to Buddhism"]
 gender: "feminine"
 role: "child-protector / converted demoness"

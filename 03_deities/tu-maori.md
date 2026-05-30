@@ -6,7 +6,7 @@ aka: ["Tū", "Tūkāriri", "Tū-of-the-angry-face"]
 tradition: "Māori"
 region: "Aotearoa / New Zealand"
 period-active-earliest: 1280
-period-active-latest:
+period-active-latest: 2026
 domains: ["war", "humanity", "the fierce-and-active aspect"]
 gender: "masculine"
 role: "war-god / patron of humans"

@@ -6,7 +6,7 @@ aka: ["Rongo-mā-Tāne", "Ro'o (Tahitian)", "Lono (Hawaiian — functional cogna
 tradition: "Māori (and wider Polynesia)"
 region: "Aotearoa New Zealand / Polynesia"
 period-active-earliest: 800
-period-active-latest:
+period-active-latest: 2026
 domains: ["cultivated plants", "kūmara (sweet potato)", "agriculture", "peace", "fertility"]
 gender: "masculine"
 role: "nature-deity / peace-deity / fertility-deity"

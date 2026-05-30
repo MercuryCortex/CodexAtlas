@@ -6,7 +6,7 @@ aka: ["Nāsatya and Dasra", "the Divine Twins", "Aśvinau"]
 tradition: "Vedic Hinduism"
 region: "South Asia"
 period-active-earliest: -1500
-period-active-latest:
+period-active-latest: 2026
 domains: ["dawn", "healing", "horses", "rescue at sea / from death", "the divine twins"]
 gender: "masculine (twin pair)"
 role: "twin gods of dawn / healers / rescuers"

@@ -6,7 +6,7 @@ aka: ["Yéil (Tlingit)", "Gugwis (Haida)", "Txamsem (Tsimshian)", "Raven the Tra
 tradition: "Pacific Northwest Coast (Haida, Tlingit, Tsimshian, and related nations)"
 region: "Pacific Northwest Coast of North America — from Alaska through British Columbia"
 period-active-earliest: -3000
-period-active-latest:
+period-active-latest: 2026
 domains: ["trickery", "creation", "light", "transformation", "theft-of-light", "shapeshifting", "curiosity", "appetite"]
 gender: "masculine (shapeshifts)"
 role: "trickster-creator"

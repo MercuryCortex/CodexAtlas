@@ -6,7 +6,7 @@ aka: ["Sakka (Pali)", "Devānām Indra (Sanskrit: 'lord of the devas')", "Tianzh
 tradition: "Buddhism (Theravāda, Mahāyāna, Esoteric)"
 region: "Pan-Buddhist — India → Central Asia → China → Korea → Japan; Tibet via separate channel"
 period-active-earliest: -400
-period-active-latest:
+period-active-latest: 2026
 domains: ["king-of-devas-in-Trāyastriṃśa-heaven", "protector-of-the-Dharma", "yakṣa-tamer", "vajra-bearer (in Buddhist iconography)"]
 gender: "masculine"
 role: "Buddhist king of the gods in the second-of-six-Kāmadhātu heavens; guardian deity who protects the Dharma; subordinate to the Buddha (the demotion is doctrinally central)"

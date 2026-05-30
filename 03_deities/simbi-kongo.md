@@ -6,7 +6,7 @@ aka: ["Bisimbi (plural)", "Simbi spirits", "Simbi water-spirits", "Simbi-d'l'eau
 tradition: "[[tradition-bantu-kongo]]"
 region: "Kongo Basin (Angola, DRC, Republic of Congo); diaspora (Haiti, Cuba, lowcountry US Gullah)"
 period-active-earliest: -500
-period-active-latest:
+period-active-latest: 2026
 domains: ["fresh-water springs", "wells", "river-pools", "rain", "mediator-spirits between humans and the dead", "secret knowledge"]
 gender: "various (often unmarked / collective)"
 role: "water-mediator spirit class / category of nkisi"

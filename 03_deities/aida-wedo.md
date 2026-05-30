@@ -6,7 +6,7 @@ aka: ["Ayida-Wedo", "Aida-Wèdo", "Aido-Hwedo (Fon antecedent)"]
 tradition: "[[tradition-vodou-haitian]]"
 region: "Haiti; Haitian diaspora; Fon-Dahomey antecedent in West Africa"
 period-active-earliest: 1700
-period-active-latest:
+period-active-latest: 2026
 domains: ["rainbow", "fresh water", "fertility", "wind", "feminine cosmic-serpent paired with Damballa"]
 gender: "feminine"
 role: "rainbow-serpent lwa / consort of Damballa / cosmic-feminine sky-and-water"

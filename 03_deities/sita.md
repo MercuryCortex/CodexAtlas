@@ -6,7 +6,7 @@ aka: ["Janaki ('daughter of Janaka')", "Maithili ('of Mithila')", "Vaidehi", "Bh
 tradition: "Bhakti Vaishnavism (Ramayana cycle)"
 region: "Mithila (modern Bihar/Nepal) → Ayodhya → Lanka → returned to the Earth"
 period-active-earliest: -300
-period-active-latest:
+period-active-latest: 2026
 domains: ["wifely devotion", "the avatar-consort of Vishnu-as-Rama", "earth-born sovereignty", "trial-by-fire (agnipariksha)"]
 gender: "feminine"
 role: "consort of [[rama]] / avatar of [[lakshmi]]"

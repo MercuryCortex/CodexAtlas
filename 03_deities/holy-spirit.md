@@ -15,7 +15,7 @@ region: "Pan-Christian"
 # christian.md). The earliest attestation of the Spirit-figure in
 # scripture is the ruach Elohim of Genesis 1:2.
 period-active-earliest: -1300
-period-active-latest:
+period-active-latest: 2026
 domains: ["inspiration", "sanctification", "divine indwelling", "guidance into truth", "spiritual gifts", "Pentecost-event", "third person of the Trinity"]
 gender: "non-gendered in mainstream theology — but the underlying *ruach* is feminine, the Greek *pneuma* is neuter, the Latin *spiritus* is masculine; this grammatical drift across the transmission chain is theologically significant (see [[theme-holy-spirit-sophia]])"
 role: "third person of the Christian Trinity; homoousios with the Father and the Son per Nicene Creed (381 CE Constantinople expansion against the Pneumatomachi)"

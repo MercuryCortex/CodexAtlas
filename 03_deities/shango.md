@@ -6,7 +6,7 @@ aka: ["Shango", "Changó (Cuban)", "Xangô (Brazilian)", "Jakuta"]
 tradition: "Yoruba"
 region: "West Africa (Oyo origins); diaspora"
 period-active-earliest: -100
-period-active-latest:
+period-active-latest: 2026
 domains: ["thunder", "lightning", "drumming", "dance", "kingship", "fire", "war", "justice"]
 gender: "masculine"
 role: "storm/thunder orisha / royal-ancestor orisha"
