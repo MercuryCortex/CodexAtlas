@@ -3075,10 +3075,21 @@
         // style epoch hulls with PER-BOOK sub-wedges INSIDE each
         // section (cardinal rule #9 Layer 1 + Layer 2 — the section
         // ⊃ book ⊃ entities triple John specced).
+        //
+        // 2026-05-30 — Per workflow whcprrhsd Fix 1: the user-picked
+        // orderMode (the 4 Family-Order radios) is now respected in
+        // Scriptures mode too. resolveCodexOrder() looks up the right
+        // religion array from RELIGION_ORDER_THEMES (opposites / roots /
+        // chronological / geography) and falls back to declaration
+        // order if no theme matches. Cardinal rule #9 compliant —
+        // grouping order is data, not code.
         const _useCodexGrouping = !!_codexGroupBy;
+        const _resolvedOrder = _useCodexGrouping
+          ? resolveCodexOrder(_codexGroupOrder, (local.uxMode && local.uxMode.orderMode) || 'opposites')
+          : _familyOrder;
         lay = layout.radialWedgeLayout(
           modeNodes,
-          _useCodexGrouping ? _codexGroupOrder : _familyOrder,
+          _resolvedOrder,
           {
             degree,
             colorOverride: _colorOverride,
@@ -6656,6 +6667,121 @@
     function currentFamilyOrder() {
       const m = (local.uxMode && local.uxMode.orderMode) || 'opposites';
       return ORDER_THEMES[m] || FAMILY_ORDER;
+    }
+
+    // 2026-05-30 — Scriptures-mode religion-ordering (workflow whcprrhsd
+    // Fix 1). Same 4 ids as ORDER_THEMES so the existing 4 Family-Order
+    // radios drive religion order too when grouping by corpus-religion.
+    // Per cardinal rule #9 — grouping order is data, not code; the
+    // single render callsite resolves via this registry.
+    //
+    // Religion labels match window.SCRIPTURE_RELIGIONS[id].label
+    // exactly (codex-controls.js:46-69). Missing labels are appended
+    // by resolveCodexOrder() in declaration order — safe default.
+    const RELIGION_ORDER_THEMES = {
+      // Paired theistic-vs-non-theistic + Abrahamic-vs-Dharmic axes,
+      // ancient pairs and modern pairs, so wedges contrast diametrically
+      // around the wheel.
+      opposites: [
+        'Christianity', 'Hinduism',
+        'Islam', 'Buddhism',
+        'Judaism', 'Jainism',
+        'Mormon (LDS)', 'Sikhism',
+        'Egyptian (ancient)', 'Chinese',
+        'Greek (ancient)', 'Shintō',
+        'Mesopotamian (ancient)', 'Norse / Finno-Ugric',
+        'Mesoamerican', 'Zoroastrianism',
+        'Hermetic', 'Modern syncretic',
+        'Gnostic / Dualist', 'Bahá\'í',
+        'Druze', 'Yazidi'
+      ],
+      // Civilizational root clusters: Near East spine → Indic → Iranian
+      // → Mediterranean → East Asia → Northern / Other → New World →
+      // Modern.
+      roots: [
+        // Near East
+        'Egyptian (ancient)', 'Mesopotamian (ancient)',
+        'Judaism', 'Christianity', 'Mormon (LDS)', 'Islam', 'Druze', 'Bahá\'í',
+        // Indic
+        'Hinduism', 'Buddhism', 'Jainism', 'Sikhism',
+        // Iranian
+        'Zoroastrianism', 'Yazidi',
+        // Mediterranean
+        'Greek (ancient)', 'Hermetic', 'Gnostic / Dualist',
+        // East Asia
+        'Chinese', 'Shintō',
+        // Northern / Other
+        'Norse / Finno-Ugric',
+        // New World
+        'Mesoamerican',
+        // Modern
+        'Modern syncretic'
+      ],
+      // Chronological by founding / earliest-attested date.
+      chronological: [
+        'Mesopotamian (ancient)',
+        'Egyptian (ancient)',
+        'Hinduism',
+        'Judaism',
+        'Zoroastrianism',
+        'Greek (ancient)',
+        'Jainism',
+        'Buddhism',
+        'Chinese',
+        'Shintō',
+        'Mesoamerican',
+        'Christianity',
+        'Hermetic',
+        'Gnostic / Dualist',
+        'Norse / Finno-Ugric',
+        'Islam',
+        'Druze',
+        'Yazidi',
+        'Sikhism',
+        'Mormon (LDS)',
+        'Bahá\'í',
+        'Modern syncretic'
+      ],
+      // Geographic sweep — west to east (Americas → Atlantic → Med
+      // → Near East → Iran/India → East Asia → Pacific) + Modern.
+      geography: [
+        'Mesoamerican',
+        'Norse / Finno-Ugric',
+        'Greek (ancient)',
+        'Hermetic',
+        'Gnostic / Dualist',
+        'Egyptian (ancient)',
+        'Judaism',
+        'Christianity',
+        'Mormon (LDS)',
+        'Mesopotamian (ancient)',
+        'Islam',
+        'Druze',
+        'Yazidi',
+        'Bahá\'í',
+        'Zoroastrianism',
+        'Hinduism',
+        'Buddhism',
+        'Jainism',
+        'Sikhism',
+        'Chinese',
+        'Shintō',
+        'Modern syncretic'
+      ]
+    };
+
+    function resolveCodexOrder(declOrder, orderModeId) {
+      const arr = RELIGION_ORDER_THEMES[orderModeId];
+      if (!Array.isArray(arr) || !arr.length) return declOrder;
+      // Keep only labels that actually exist in declOrder (so
+      // future religions added to SCRIPTURE_RELIGIONS without a
+      // theme entry don't disappear); append any declOrder
+      // labels missing from the theme at the tail.
+      const presentSet = new Set(declOrder);
+      const ordered = arr.filter(r => presentSet.has(r));
+      const orderedSet = new Set(ordered);
+      declOrder.forEach(r => { if (!orderedSet.has(r)) ordered.push(r); });
+      return ordered;
     }
     function currentDistribution() {
       const m = (local.uxMode && local.uxMode.distributionMode) || 'organic';
