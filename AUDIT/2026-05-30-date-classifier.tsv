@@ -1,0 +1,210 @@
+file	current_state	tradition	bucket	proposed_latest	notes
+adad.md	MISSING_BOTH		NEEDS_BOTH		both fields absent
+ah-puch.md	EMPTY_LATEST	Maya paganism (Popol Vuh; Dresden Codex; Diego de Landa's Relación de las cosas de Yucatán)	NEEDS_SCHOLARSHIP	1697	Maya — fall of Itza per Restall 1998
+aida-wedo.md	EMPTY_LATEST	[[tradition-vodou-haitian]]	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bVodou
+akshobhya.md	EMPTY_LATEST	Mahāyāna Buddhism (esp. Vajrayana)	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bBuddhi
+ala-igbo.md	EMPTY_LATEST	[[tradition-igbo-religion]]	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bIgbo
+amaterasu.md	EMPTY_LATEST	Shinto	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bShinto
+amenominakanushi.md	EMPTY_LATEST	Shinto	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bShinto
+amitabha.md	EMPTY_LATEST	Mahayana Buddhism — Pure Land schools	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bBuddhi
+ammit-devourer.md	MISSING_BOTH		NEEDS_BOTH		both fields absent
+amoghasiddhi.md	EMPTY_LATEST	Mahāyāna Buddhism (Vajrayana)	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bBuddhi
+anahita-zoroastrian.md	MISSING_BOTH		NEEDS_BOTH		both fields absent
+anansi.md	MISSING_BOTH	Akan (Ashanti) / African	NEEDS_BOTH		both fields absent
+angel-of-the-presence.md	EMPTY_LATEST	Second-Temple Jewish apocalyptic (Jubilees-specific) / canonical in [[tradition-ethiopian-orthodox-tewahedo]] (where Jubilees is full scripture)	DETERMINISTIC_2026	2026	Ethiopian Orthodox canon (Jubilees)
+apam-napat-vedic.md	MISSING_BOTH	tradition-vedic	NEEDS_BOTH		both fields absent
+asase-yaa.md	EMPTY_LATEST	Akan (Asante, Fante, and related Akan peoples)	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bAkan
+asmodeus.md	EMPTY_LATEST	Second Temple Judaism (via Tobit) → Christianity → Kabbalah → modern Solomonic demonology	DETERMINISTIC_2026	2026	Second Temple → Christian/Kabbalah/Solomonic demonology, ongoing
+atlas-titan.md	EMPTY_LATEST	Greek religion	NEEDS_SCHOLARSHIP	400	Greek religion — match Zeus/Apollo Theodosian closures
+baal.md	MISSING_BOTH	Canaanite / Ugaritic	NEEDS_BOTH		both fields absent
+baiame.md	EMPTY_LATEST	Specific southeastern Australian Aboriginal nations — Wiradjuri, Kamilaroi, Wonnarua, Eora; contested as pan-Aboriginal	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bAboriginal
+baron-samedi.md	EMPTY_LATEST	Haitian Vodou	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bVodou
+beelzebub.md	EMPTY_LATEST	Hebrew Bible polemical → New Testament demonology → medieval Christian	DETERMINISTIC_2026	2026	Hebrew Bible → NT demonology → ongoing Christian imagination
+benzaiten.md	EMPTY_LATEST	Japanese Buddhism (Shichifukujin) / Shinto-Buddhist syncretic	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bBuddhi
+bergelmir.md	EMPTY_LATEST	[[tradition-norse]]	NEEDS_SCHOLARSHIP	1100	Norse pre-revival — match Odin/Thor/Freyja/Loki
+bhairava.md	EMPTY_LATEST	Hindu — Shaivism (Tantric, especially Kashmir Trika and Kāpālika streams)	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bHindu
+bondye-vodou.md	EMPTY_LATEST	Haitian Vodou	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bVodou
+brigid.md	EMPTY_LATEST	Celtic paganism (Gaelic) → Irish Christianity	DETERMINISTIC_2026	2026	Celtic pagan → St. Brigid Christian-syncretic continuation
+cao-dai-god.md	MISSING_BOTH	[[tradition-cao-dai]]	NEEDS_BOTH		both fields absent
+cernunnos.md	EMPTY_LATEST	Celtic paganism (Gallo-Roman + Insular substrate)	NEEDS_SCHOLARSHIP	600	Gallo-Roman + Insular substrate; Christianization endpoint
+chaac.md	MISSING_BOTH	tradition-maya-religion	NEEDS_BOTH		both fields absent
+chang-e.md	EMPTY_LATEST	Chinese folk religion / Daoism (Huainanzi, c. 139 BCE; Mid-Autumn Festival living tradition)	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bDaoism
+changing-woman.md	EMPTY_LATEST	Diné (Navajo)	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bDiné
+christ-pantokrator.md	EMPTY_LATEST	Christianity (Byzantine and Eastern Orthodox iconographic tradition)	DETERMINISTIC_2026	2026	Christianity, active
+chukwu-igbo.md	EMPTY_LATEST	[[tradition-igbo-religion]]	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bIgbo
+coniraya.md	EMPTY_LATEST	Andean / Inca (Huarochirí Manuscript, c. 1608 CE — Francisco de Avila's collection)	NEEDS_SCHOLARSHIP	1608	Andean — Huarochirí Manuscript closing date
+corn-mother.md	EMPTY_LATEST	Eastern Woodlands / Pueblo (pan-North American agricultural traditions)	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bPueblo
+coyote-navajo.md	MISSING_BOTH	Diné (Navajo)	NEEDS_BOTH		both fields absent
+dagda.md	EMPTY_LATEST	Celtic paganism (Gaelic)	NEEDS_SCHOLARSHIP	600	Gaelic — Christianization of Ireland
+damballa.md	EMPTY_LATEST	Haitian Vodou	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bVodou
+dan-aida-hwedo.md	EMPTY_LATEST	Fon-Ewe vodun (Dahomey / Kingdom of Whydah); preserved in Haitian Vodou as [[damballa]] + Aida-Wedo	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bVodou
+dattatreya.md	EMPTY_LATEST	Hindu — pan-Indian syncretic; especially central in Maharashtra (Nāth-sampradāya), Karnataka, Gujarat	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bHindu
+ebisu.md	EMPTY_LATEST	Shinto	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bShinto
+eileithyia-greek.md	MISSING_BOTH	tradition-greek-religion	NEEDS_BOTH		both fields absent
+enma-japanese.md	EMPTY_LATEST	Japanese Buddhism / Chinese Buddhism (Yánluó)	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bBuddhi
+erzulie.md	EMPTY_LATEST	Haitian Vodou	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bVodou
+eshu.md	EMPTY_LATEST	Yoruba	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bYoruba
+flint-deity.md	EMPTY_LATEST	Haudenosaunee (Iroquois)	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bHaudenosaunee
+fortuna.md	EMPTY_LATEST	Roman religion (with Hellenistic Tyche substrate)	NEEDS_SCHOLARSHIP	400	Roman religion — Theodosian closures
+fujin.md	EMPTY_LATEST	Shinto	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bShinto
+fuxi.md	EMPTY_LATEST	Chinese mythology (Confucian + Daoist appropriation)	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bChinese mythology
+gabriel-archangel.md	EMPTY_LATEST	Christianity / Judaism / Islam	DETERMINISTIC_2026	2026	Christianity/Judaism/Islam, active
+garuda.md	EMPTY_LATEST	Vedic / Puranic Hinduism + Buddhism + Jainism	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bHindu
+gede-loa.md	EMPTY_LATEST	Haitian Vodou	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bVodou
+gitche-manitou.md	EMPTY_LATEST	Algonquian — especially Anishinaabe (Ojibwe, Odawa, Potawatomi); related concepts among Cree, other Algonquian peoples	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bAnishinaabe
+god-the-father-christian.md	EMPTY_LATEST	Christianity	DETERMINISTIC_2026	2026	Christianity, active
+gonggong.md	EMPTY_LATEST	Chinese (pre-Qin mythology; classical-philosophical reception)	DETERMINISTIC_2026	2026	Chinese pre-Qin mythology → Daoist-folk continuation
+gu-vodun.md	EMPTY_LATEST	Fon-Ewe vodun (Dahomey); preserved in Haitian Vodou + Brazilian Candomblé Jeje	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bVodou
+hachiman.md	EMPTY_LATEST	Shinto / Buddhist syncretism	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bBuddhi
+hanullim.md	MISSING_BOTH	[[tradition-donghak]]	NEEDS_BOTH		both fields absent
+harihara.md	EMPTY_LATEST	Hindu — syncretic Vaishnava-Shaiva composite	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bHindu
+hariti.md	EMPTY_LATEST	Buddhism — early Indian, Gandhāran, Chinese, Japanese (esp. Nichiren)	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bBuddhi
+haumia-tiketike.md	EMPTY_LATEST	Māori	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bM[aā]ori
+head-of-days.md	EMPTY_LATEST	Second-Temple Jewish apocalyptic (Enochic, Book of Parables) / canonical in [[tradition-ethiopian-orthodox-tewahedo]]	DETERMINISTIC_2026	2026	Ethiopian Orthodox canon (Book of Parables)
+hermes-greek.md	MISSING_BOTH	Greek	NEEDS_BOTH		both fields absent
+heviosso.md	EMPTY_LATEST	Fon-Ewe vodun (Dahomey); preserved in Haitian Vodou via Sogbo / Bade	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bVodou
+holy-spirit.md	EMPTY_LATEST	Christianity (Trinitarian)	DETERMINISTIC_2026	2026	Christianity, active
+hou-yi.md	EMPTY_LATEST	Chinese mythology / Daoism (Huainanzi, c. 139 BCE; Shanhaijing)	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bDaoism
+iapetus.md	EMPTY_LATEST	Greek religion	NEEDS_SCHOLARSHIP	400	Greek religion — match Zeus/Apollo
+iblis-shaytan.md	MISSING_BOTH	Islam	NEEDS_BOTH		both fields absent
+ichikishima-hime.md	MISSING_BOTH		NEEDS_BOTH		both fields absent
+ihy.md	MISSING_BOTH	tradition-egyptian-religion	NEEDS_BOTH		both fields absent
+inari.md	EMPTY_LATEST	Shinto (with Buddhist syncretic layer as Dakiniten)	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bBuddhi
+inyan.md	EMPTY_LATEST	Lakota	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bLakota
+io-matua-kore.md	EMPTY_LATEST	Māori (specific iwi — Tūhoe, Ngāti Kahungunu, others; contested pre-contact authenticity)	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bM[aā]ori
+israfil.md	EMPTY_LATEST	Sunni and Shia Islamic theology (hadith tradition)	DETERMINISTIC_2026	2026	Sunni/Shia hadith tradition, active
+ixbalanque.md	EMPTY_LATEST	Maya paganism (Popol Vuh — K'iche' Maya)	NEEDS_SCHOLARSHIP	1697	Maya — Popol Vuh K'iche'; Itza endpoint
+izanagi.md	EMPTY_LATEST	Shinto	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bShinto
+izanami.md	EMPTY_LATEST	Shinto	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bShinto
+jade-emperor.md	EMPTY_LATEST	Daoism / Chinese folk religion	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bDaoism
+jarilo.md	EMPTY_LATEST	Pre-Christian Slavic	NEEDS_SCHOLARSHIP	988	Pre-Christian Slavic — Christianization of Kievan Rus'
+jesus-christ-deity.md	EMPTY_LATEST	Christianity	DETERMINISTIC_2026	2026	Christianity, active
+kaang-san.md	EMPTY_LATEST	[[tradition-khoisan-san]]	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bKhoisan
+kalfu-vodou.md	EMPTY_LATEST	Haitian Vodou (Petwo rite)	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bVodou
+kane-hawaiian.md	EMPTY_LATEST	Hawaiian (Kanaka Maoli)	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bHawaiian
+kotoshironushi.md	MISSING_BOTH		NEEDS_BOTH		both fields absent
+ku.md	EMPTY_LATEST	Hawaiian	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bHawaiian
+kubera.md	EMPTY_LATEST	Hindu / Buddhist / Jain	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bHindu
+lasiren-vodou.md	EMPTY_LATEST	[[tradition-vodou-haitian]]	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bVodou
+leigong.md	EMPTY_LATEST	Chinese folk religion / Daoism	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bDaoism
+lono.md	EMPTY_LATEST	Hawaiian	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bHawaiian
+lucifer.md	EMPTY_LATEST	Christianity (post-Jerome Vulgate) → Romantic reception → Modern Satanism	DETERMINISTIC_2026	2026	Christianity → Romantic → Modern Satanism (LaVey 1969, continuing)
+lugh.md	EMPTY_LATEST	Celtic paganism (Gaelic + Welsh + Continental)	NEEDS_SCHOLARSHIP	600	Gaelic + Welsh + Continental — Christianization
+ma-at.md	MISSING_BOTH	Egyptian	NEEDS_BOTH		both fields absent
+maitreya.md	EMPTY_LATEST	Buddhism — Theravāda, Mahāyāna, Vajrayana (universal)	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bBuddhi
+mami-wata.md	EMPTY_LATEST	Pan-African folk religion (West/Central Africa and diaspora; 15th c. onwards — possibly older water-deity substratum)	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bPan-African
+manabozho.md	EMPTY_LATEST	Anishinaabe (Ojibwe / Chippewa / Algonquian tradition)	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bAnishinaabe
+manannan-mac-lir.md	EMPTY_LATEST	Celtic paganism (Gaelic + Welsh)	NEEDS_SCHOLARSHIP	600	Gaelic + Welsh — Christianization
+manjushri.md	EMPTY_LATEST	Mahayana / Vajrayana Buddhism	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bBuddhi
+marassa-twins.md	EMPTY_LATEST	Haitian Vodou	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bVodou
+mary-of-zion.md	EMPTY_LATEST	[[tradition-ethiopian-orthodox-tewahedo]] (the cult-specific Aksumite Marian figure)	DETERMINISTIC_2026	2026	Ethiopian Orthodox, active
+mary-theotokos.md	EMPTY_LATEST	Christianity	DETERMINISTIC_2026	2026	Christianity, active
+matsya-avatar.md	EMPTY_LATEST	[[tradition-vedic-hinduism]] / [[tradition-bhakti-vaishnavism]]	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bHindu
+maui-polynesian.md	EMPTY_LATEST	Pan-Polynesian — Māori, Hawaiian (Māui), Tahitian, Samoan	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bM[aā]ori
+mazu.md	EMPTY_LATEST	Chinese folk religion (Daoist + Buddhist syncretic layers)	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bBuddhi
+meenakshi.md	MISSING_BOTH		NEEDS_BOTH		both fields absent
+melek-taus.md	MISSING_BOTH	[[tradition-yazidi]]	NEEDS_BOTH		both fields absent
+michael-archangel.md	EMPTY_LATEST	Christianity / Judaism / Islam / Mandaeism	DETERMINISTIC_2026	2026	Christianity/Judaism/Islam/Mandaeism, active
+mithra.md	MISSING_BOTH	Zoroastrian; pre-Zoroastrian Indo-Iranian	NEEDS_BOTH		both fields absent
+mnemosyne.md	EMPTY_LATEST	Greek religion (esp. Orphic + Pythagorean)	NEEDS_SCHOLARSHIP	400	Greek religion (Orphic + Pythagorean)
+mwari.md	EMPTY_LATEST	Shona traditional religion	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bShona
+nandi.md	EMPTY_LATEST	Hindu (Shaiva)	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bHindu
+narada.md	MISSING_BOTH	tradition-vedic-hinduism	NEEDS_BOTH		both fields absent
+narayana.md	EMPTY_LATEST	Vedic / Vaishnava Hinduism	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bHindu
+ngai-maasai.md	EMPTY_LATEST	Maasai traditional religion	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bMaasai
+nuada.md	EMPTY_LATEST	Celtic paganism (Gaelic + Welsh + Romano-British)	NEEDS_SCHOLARSHIP	600	Gaelic + Welsh + Romano-British — Christianization
+nuwa.md	EMPTY_LATEST	Chinese mythology	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bChinese mythology
+nyame.md	EMPTY_LATEST	Akan (Asante, Fante, Twi, and related Akan peoples)	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bAkan
+nzambi.md	EMPTY_LATEST	BaKongo (Kongo Kingdom and related Central African peoples)	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bBaKongo
+obatala.md	EMPTY_LATEST	Yoruba	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bYoruba
+ogou-vodou.md	EMPTY_LATEST	[[tradition-vodou-haitian]]	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bVodou
+ogun.md	EMPTY_LATEST	Yoruba (and Vodou via Dahomean-Yoruba transmission)	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bYoruba
+okuninushi.md	EMPTY_LATEST	Shinto	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bShinto
+olodumare.md	EMPTY_LATEST	Yoruba	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bYoruba
+orunmila.md	EMPTY_LATEST	Yoruba traditional religion (Ifá) → Santería (Lucumí), Candomblé	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bYoruba
+osanyin.md	EMPTY_LATEST	[[tradition-yoruba]]	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bYoruba
+oshun.md	EMPTY_LATEST	Yoruba	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bYoruba
+oya.md	EMPTY_LATEST	Yoruba	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bYoruba
+oyagami.md	MISSING_BOTH	[[tradition-tenrikyo]]	NEEDS_BOTH		both fields absent
+pachamama.md	EMPTY_LATEST	Quechua / Aymara / pan-Andean	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bQuechua
+pangu.md	EMPTY_LATEST	Chinese mythology (Daoist-folk synthesis)	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bChinese mythology
+papa-legba.md	EMPTY_LATEST	Haitian Vodou	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bVodou
+papatuanuku.md	EMPTY_LATEST	Māori	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bM[aā]ori
+pariacaca.md	EMPTY_LATEST	Andean / Inca (Huarochirí Manuscript, c. 1608 CE)	NEEDS_SCHOLARSHIP	1608	Andean — Huarochirí Manuscript
+parvati.md	EMPTY_LATEST	Puranic Hinduism (Shaiva + Shakta)	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bHindu
+pele.md	EMPTY_LATEST	Hawaiian	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bHawaiian
+prajnaparamita-goddess.md	EMPTY_LATEST	Mahayana Buddhism	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bBuddhi
+priapus-greek-roman.md	MISSING_BOTH	tradition-greek-religion	NEEDS_BOTH		both fields absent
+prometheus.md	EMPTY_LATEST	Greek religion + Greek philosophy (Romantic and modern reception)	NEEDS_SCHOLARSHIP	400	Greek religion (cult); literary reception NOT counted under rule A
+purusha.md	EMPTY_LATEST	Vedic / Sāṃkhya / classical Hindu	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bHindu
+radha.md	EMPTY_LATEST	Gaudiya Vaishnavism (with antecedents in Bengali, Braj, and earlier bhakti)	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bVaishnav
+raguel-archangel.md	EMPTY_LATEST	Second-Temple Jewish apocalyptic (Enochic) / canonical in [[tradition-ethiopian-orthodox-tewahedo]] / liturgically retained in [[tradition-coptic-orthodox]]	DETERMINISTIC_2026	2026	Second Temple Enochic → Ethiopian Orthodox canon
+raijin.md	EMPTY_LATEST	Shinto	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bShinto
+rainbow-serpent.md	EMPTY_LATEST	Australian Aboriginal — widely attested across northern, central, and parts of southeastern Aboriginal Australia	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bAboriginal
+ranginui.md	EMPTY_LATEST	Māori	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bM[aā]ori
+raphael-archangel.md	EMPTY_LATEST	Christianity / Judaism / Islam	DETERMINISTIC_2026	2026	Christianity/Judaism/Islam, active
+ratnasambhava.md	EMPTY_LATEST	Mahāyāna Buddhism (Vajrayana)	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bBuddhi
+raven-trickster.md	EMPTY_LATEST	Pacific Northwest Coast (Haida, Tlingit, Tsimshian, and related nations)	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bPacific Northwest
+remiel-archangel.md	EMPTY_LATEST	Second-Temple Jewish apocalyptic (Enochic + Ezran) / canonical in [[tradition-ethiopian-orthodox-tewahedo]]	DETERMINISTIC_2026	2026	Ethiopian Orthodox canon, active
+rhea.md	EMPTY_LATEST	Greek religion	NEEDS_SCHOLARSHIP	400	Greek religion
+rongo-maori.md	EMPTY_LATEST	Māori (and wider Polynesia)	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bM[aā]ori
+ryujin.md	EMPTY_LATEST	Shinto	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bShinto
+saint-blaise.md	EMPTY_LATEST	Christianity (Eastern Orthodox + Catholic); Roman / Byzantine martyrology	DETERMINISTIC_2026	2026	Christian saint — Eastern Orthodox + Catholic
+sakra-buddhist.md	EMPTY_LATEST	Buddhism (Theravāda, Mahāyāna, Esoteric)	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bBuddhi
+sapling-deity.md	EMPTY_LATEST	Haudenosaunee (Iroquois)	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bHaudenosaunee
+saraqael-archangel.md	EMPTY_LATEST	Second-Temple Jewish apocalyptic (Enochic) / canonical in [[tradition-ethiopian-orthodox-tewahedo]] / liturgically retained in [[tradition-coptic-orthodox]]	DETERMINISTIC_2026	2026	Ethiopian Orthodox canon, active
+sedna-inuit.md	EMPTY_LATEST	Inuit (pan-Arctic — Nunavut, Alaska, Greenland)	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bInuit
+shakti.md	MISSING_BOTH		NEEDS_BOTH		both fields absent
+shango.md	EMPTY_LATEST	Yoruba	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bYoruba
+shiva.md	EMPTY_LATEST	Hindu — Shaivism (the broader cultic-theological tradition; the Tamil Shaiva Siddhānta, the Kashmir Trika non-dualist Shaivism, the Lingāyat/Vīraśaiva, the Nāth, and the Smārta integrations are all distinct sub-traditions)	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bHindu
+simbi-kongo.md	EMPTY_LATEST	[[tradition-bantu-kongo]]	DETERMINISTIC_2026	2026	matched ACTIVE pattern: tradition-bantu-kongo
+sita.md	EMPTY_LATEST	Bhakti Vaishnavism (Ramayana cycle)	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bVaishnav
+skanda-karthikeya.md	EMPTY_LATEST	Hindu — pan-Indian; especially Tamil Murugan-cult of South India and Sri Lanka	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bHindu
+spider-woman-navajo.md	EMPTY_LATEST	Diné (Navajo)	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bDiné
+sun-bearer.md	EMPTY_LATEST	Diné (Navajo)	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bDiné
+sundareswarar.md	MISSING_BOTH		NEEDS_BOTH		both fields absent
+supay.md	EMPTY_LATEST	Inca / Andean	DETERMINISTIC_2026	2026	Inca/Andean → El Tío syncretic continuation in Andean folk Catholicism
+susanoo.md	EMPTY_LATEST	Shinto	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bShinto
+tagitsu-hime.md	MISSING_BOTH		NEEDS_BOTH		both fields absent
+tagori-hime.md	MISSING_BOTH		NEEDS_BOTH		both fields absent
+takamimusubi.md	EMPTY_LATEST	Shinto (Kojiki / Nihon Shoki — Japanese)	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bShinto
+takemikazuchi.md	EMPTY_LATEST	Shinto	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bShinto
+takeminakata.md	MISSING_BOTH		NEEDS_BOTH		both fields absent
+tane.md	EMPTY_LATEST	Māori	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bM[aā]ori
+tangaroa.md	EMPTY_LATEST	Pan-Polynesian — Māori, Tahitian, Samoan; Hawaiian Kanaloa is the cognate	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bM[aā]ori
+tathagata.md	MISSING_BOTH	[[tradition-buddhism]]	NEEDS_BOTH		both fields absent
+tawhirimatea.md	EMPTY_LATEST	Māori	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bM[aā]ori
+the-ashvins.md	EMPTY_LATEST	Vedic Hinduism	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bHindu
+the-erinyes.md	EMPTY_LATEST	Greek religion	NEEDS_SCHOLARSHIP	400	Greek religion
+the-lady-ecclesia-hermas.md	EMPTY_LATEST	Early Roman Christianity / canonical in [[tradition-ethiopian-orthodox-tewahedo]]	DETERMINISTIC_2026	2026	Ethiopian Orthodox canon (Shepherd of Hermas)
+the-moirai.md	EMPTY_LATEST	Greek religion	NEEDS_SCHOLARSHIP	400	Greek religion
+the-morrigan.md	EMPTY_LATEST	Celtic paganism (Gaelic)	NEEDS_SCHOLARSHIP	600	Gaelic — Christianization
+the-shepherd-angel-of-repentance.md	EMPTY_LATEST	Early Roman Christianity / canonical in [[tradition-ethiopian-orthodox-tewahedo]] (where the Shepherd of Hermas remains scripture)	DETERMINISTIC_2026	2026	Ethiopian Orthodox canon
+the-trinity.md	EMPTY_LATEST	Christianity	DETERMINISTIC_2026	2026	Christianity, active
+themis.md	EMPTY_LATEST	Greek religion	NEEDS_SCHOLARSHIP	400	Greek religion
+three-pure-ones.md	EMPTY_LATEST	Daoism	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bDaoism
+toyouke-omikami.md	EMPTY_LATEST	Shinto	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bShinto
+toyouke.md	MISSING_BOTH		NEEDS_BOTH		both fields absent
+tsukuyomi.md	EMPTY_LATEST	Shinto	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bShinto
+tu-maori.md	EMPTY_LATEST	Māori	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bM[aā]ori
+ukko.md	EMPTY_LATEST	Finno-Karelian (pre-Christian)	NEEDS_SCHOLARSHIP	1900	Finno-Karelian — runic singing through 19th c.; Kalevala 1849
+unkulunkulu-zulu.md	EMPTY_LATEST	Zulu traditional religion	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bZulu
+uriel-archangel.md	EMPTY_LATEST	Christianity / Judaism	DETERMINISTIC_2026	2026	Christianity/Judaism, active
+vac-goddess.md	MISSING_BOTH	tradition-vedic-hinduism	NEEDS_BOTH		both fields absent
+vainamoinen.md	EMPTY_LATEST	Finno-Karelian — Kalevala / runo-poetry tradition	NEEDS_SCHOLARSHIP	1900	Finno-Karelian — runic singing through 19th c.
+vairocana.md	EMPTY_LATEST	Mahāyāna Buddhism (esp. Huayan, Shingon, Tiantai, Tibetan)	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bBuddhi
+vajrakilaya-yidam.md	MISSING_BOTH	[[tradition-vajrayana-buddhism]]	NEEDS_BOTH		both fields absent
+vishnu.md	EMPTY_LATEST	Vedic / Vaishnava Hinduism	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bHindu
+wakan-tanka.md	EMPTY_LATEST	Lakota (and broader Sioux — Dakota, Nakota)	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bLakota
+wakea.md	EMPTY_LATEST	Hawaiian / Polynesian religion (Kumulipo — Hawaiian creation chant)	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bPolynesian
+white-buffalo-calf-woman.md	EMPTY_LATEST	Lakota	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bLakota
+wi-sun-lakota.md	EMPTY_LATEST	Lakota	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bLakota
+wiraqocha.md	MISSING_BOTH		NEEDS_BOTH		both fields absent
+xi-wangmu.md	EMPTY_LATEST	Chinese folk religion / Daoism	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bDaoism
+xuanwu.md	MISSING_BOTH		NEEDS_BOTH		both fields absent
+yama-vedic.md	EMPTY_LATEST	Vedic Hinduism (continued in Puranic Hinduism, Buddhism, Jainism)	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bHindu
+yamantaka.md	EMPTY_LATEST	Vajrayana Buddhism (Geluk, Sakya, Nyingma)	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bBuddhi
+yashoda.md	EMPTY_LATEST	Vaishnavism / Bhakti	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bVaishnav
+yemoja.md	EMPTY_LATEST	Yoruba	DETERMINISTIC_2026	2026	matched ACTIVE pattern: \bYoruba
+zao-jun.md	MISSING_BOTH	Chinese	NEEDS_BOTH		both fields absent
+zhenwu.md	MISSING_BOTH		NEEDS_BOTH		both fields absent
