@@ -2831,6 +2831,40 @@
       if (modeId === 'scriptures' && !_codexGroupBy
           && window.SCRIPTURE_RELIGIONS && window.SCRIPTURE_CORPORA) {
         if (!local._bookReligionIndex) {
+          // 2026-05-30 — religion-wedge colors match the CANONICAL family
+          // palette baked into build_data.py (lines 305-343). Same colors
+          // user sees on Deities / Persons class filters, so toggling
+          // between class filters doesn't repaint the wheel under them.
+          // For religions whose name maps cleanly to a family (egyptian
+          // → Egyptian color, christianity → Christian color), use that
+          // family's canonical color. For religions the vault has no
+          // family value for (jainism, sikhism, druze, yazidi, bahai),
+          // pick distinct hand-tuned colors that don't collide with the
+          // existing palette.
+          const RELIGION_COLOR = {
+            'christianity':     '#c44a5a',   // Christian family color
+            'judaism':          '#9aa55a',   // Israelite
+            'islam':            '#3a8a6a',   // Islamic
+            'hinduism':         '#e08a3a',   // Vedic
+            'buddhism':         '#c4a05a',   // Buddhist
+            'zoroastrianism':   '#5a6cc4',   // Zoroastrian
+            'jainism':          '#d99a3a',   // saffron (Jain robe color)
+            'sikhism':          '#3a6cc4',   // Khalsa blue
+            'egyptian':         '#d4a55a',   // Egyptian
+            'greek':            '#8a5ac4',   // Greek
+            'mesopotamian':     '#c25450',   // Mesopotamian
+            'norse':            '#5a7aa4',   // Norse
+            'mesoamerican':     '#9a4a3a',   // Mesoamerican
+            'shinto':           '#c85050',   // Shinto
+            'chinese':          '#5a9a8f',   // Chinese
+            'hermetic':         '#a8a3b8',   // Hermetic
+            'gnostic-dualist':  '#6b3a8a',   // Gnostic
+            'mormon':           '#c44a5a',   // Christian (LDS is Christian denom)
+            'druze':            '#7a6a8a',   // muted plum — unique to vocab
+            'yazidi':           '#3a6a8a',   // peacock blue (Tawûsê Melek)
+            'bahai':            '#7a9a5a',   // olive-green (Báb era)
+            'modern-syncretic': '#9a7ac4',   // Modern-Esoteric
+          };
           const idx = new Map();
           const colorByReligion = Object.create(null);
           const orderedReligionLabels = [];
@@ -2843,14 +2877,23 @@
             if (!rel || !Array.isArray(rel.corpora)) continue;
             const label = rel.label || religionId;
             if (orderedReligionLabels.indexOf(label) === -1) orderedReligionLabels.push(label);
+            // Use canonical family palette where possible; fall back to
+            // first-section corpus color (proto's scripture-radial palette);
+            // last-resort fall back to soft grey.
+            if (!colorByReligion[label]) {
+              const canonical = RELIGION_COLOR[religionId.toLowerCase()];
+              if (canonical) {
+                colorByReligion[label] = canonical;
+              } else {
+                const firstCorpus = corpora[rel.corpora[0]];
+                const firstSecColor = firstCorpus && firstCorpus.sections
+                  && firstCorpus.sections[0] && firstCorpus.sections[0].color;
+                if (firstSecColor) colorByReligion[label] = firstSecColor;
+              }
+            }
             for (const corpusId of rel.corpora) {
               const corpus = corpora[corpusId];
               if (!corpus || !corpus.sections) continue;
-              // First-section color seeds the religion-wedge accent.
-              if (!colorByReligion[label]) {
-                const firstColor = (corpus.sections[0] && corpus.sections[0].color) || null;
-                if (firstColor) colorByReligion[label] = firstColor;
-              }
               for (const sec of corpus.sections) {
                 for (const book of (sec.books || [])) {
                   // First-write-wins for cross-listed books (Herodotus
