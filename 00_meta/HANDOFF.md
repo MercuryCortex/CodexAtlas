@@ -1,12 +1,34 @@
-# Session HANDOFF — 2026-05-29 evening (SHELL FOUNDATION IS V1 — needs rebuild)
+# Session HANDOFF — 2026-05-30 (Codex flow live + Timeline rigor + DATE AUDIT queued)
 
-> **🔴 START HERE: see `HANDOFF-2026-05-29-shell-foundation-wrong.md`**
-> for the live red-flag context. The session ended mid-issue with John
-> correctly furious that the V2 site is still sitting on the V1
-> prototype shell. Cosmetic per-view fixes were shipped all session;
-> the foundational architecture is what needs the next pass. The
-> dated handoff is the authoritative state — this older block below
-> is preserved for the goblin-fleet content context only.
+> **🟢 START HERE: `HANDOFF-2026-05-30-codex-flow-and-timeline-rigor.md`**
+> for the live state. Codex → Egyptian → 5 epoch hulls + book wedges +
+> entity grid + READ → annotated cross-tradition reader all work
+> end-to-end on `http://localhost:8742/?view=scripture`. Timeline LIN
+> mode now places nodes at exact `date_earliest` (no more 30-year
+> compression bug). Session ended with John explicitly queueing the
+> NEXT step:
+>
+> > *"this timeline needs an audit on dates for deities and the
+> > scripture next step before working on ingesting scripture etc..."*
+>
+> Multi-agent date-audit workflow over `03_deities/` + `02_documents/`
+> is the immediate next task. Do NOT ingest new scripture content
+> before that audit lands — wrong single-year facts will pile up
+> the timeline regardless of how good the engine math is. The dated
+> handoff doc has the cardinal-rule list, DO-NOT list, and the
+> 10+ commit chain context.
+
+---
+
+# Session HANDOFF — 2026-05-29 evening (SHELL FOUNDATION — RESOLVED)
+
+> **✓ Resolved 2026-05-30** — the V1-shell concern from 2026-05-29 was
+> the surface symptom of cardinal rules #8 (per-view hide-list
+> forbidden) and #9 (chart hull-grouping is a swappable primitive).
+> Both rules are now locked into HOW-WE-WORK.md and implemented in
+> the engine. See `HANDOFF-2026-05-29-shell-foundation-wrong.md` for
+> the original framing and `HANDOFF-2026-05-30-codex-flow-and-timeline-rigor.md`
+> for the resolution.
 
 ---
 
