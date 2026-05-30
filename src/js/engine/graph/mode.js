@@ -324,11 +324,41 @@
       return nodes.filter(n => n && n.type === 'person' && authorSet.has(n.id));
     }
 
-    // Scriptures mode (2026-05-28): documents lens, intersected with
-    // the curated SCRIPTURE_IDS set above. See enumeration audit doc
-    // for inclusion rationale.
+    // Scriptures mode (2026-05-28; extended 2026-05-30):
+    //   – Curated SCRIPTURE_IDS set above (the original 108-id whitelist,
+    //     hand-picked when SCRIPTURE_CORPORA was thinner), UNION
+    //   – Every book.id declared in window.SCRIPTURE_CORPORA[*].sections[*].books[*]
+    //     (auto-derived once, cached on first call — kills the
+    //     8-of-10-Egyptian-books-hidden bug John screenshot-flagged
+    //     2026-05-30: Pyramid Texts / Coffin Texts / Book of the Dead /
+    //     Amarna Letters / Manetho / Diodorus / Plutarch / Herodotus
+    //     were declared in egyptian-scripture corpus but NOT in the
+    //     hand-curated whitelist, so the All-families wheel only
+    //     showed Great Hymn to Aten + Memphite Theology).
+    //
+    //   Lane A follow-up still applies — when each node gets a
+    //   `canonical-corpus:` YAML field, both halves dissolve. Until
+    //   then this auto-derive keeps the wheel in sync with the
+    //   corpus declarations.
     if (mode === 'scriptures') {
-      return nodes.filter(n => n && n.type === 'document' && SCRIPTURE_IDS.has(n.id));
+      if (!filterNodesByMode._scriptureSet) {
+        const s = new Set(SCRIPTURE_IDS);
+        const C = (typeof window !== 'undefined') ? window.SCRIPTURE_CORPORA : null;
+        if (C && typeof C === 'object') {
+          for (const corpusKey in C) {
+            const corpus = C[corpusKey];
+            if (!corpus || !corpus.sections) continue;
+            for (const sec of corpus.sections) {
+              for (const book of (sec.books || [])) {
+                if (book && book.id) s.add(book.id);
+              }
+            }
+          }
+        }
+        filterNodesByMode._scriptureSet = s;
+      }
+      const SET = filterNodesByMode._scriptureSet;
+      return nodes.filter(n => n && n.type === 'document' && SET.has(n.id));
     }
 
     // Figures mode (2026-05-28): persons lens, intersected with the
