@@ -2948,11 +2948,19 @@
           }
           if (color) colorByReligion[label] = color;
         }
+        // 2026-05-30 — books not in any SCRIPTURE_CORPORA fall back to
+        // 'Other', NOT n.family. The n.family fallback was creating
+        // duplicate wedges next to the religion-wedge — e.g. a Christian-
+        // family doc not registered in the Bible corpus produced a CHRISTIAN
+        // wedge alongside the CHRISTIANITY corpus-religion wedge; same
+        // for MESOPOTAMIAN + MESOPOTAMIAN (ANCIENT) and the VEDIC orphan.
+        // Per the prior handoff's queued 5-line fix + cardinal rule #9:
+        // grouping is ONE primitive, no per-religion fork-by-author-family.
         _codexGroupBy = (n => {
           if (!n) return 'Other';
           const r = BRI.idx.get(n.id);
           if (r) return r;
-          return n.family || 'Other';
+          return 'Other';
         });
         _codexGroupOrder = BRI.orderedReligionLabels.slice();
         _codexGroupColor = colorByReligion;
@@ -6509,11 +6517,24 @@
           // "i still click on the books and it just shows always the
           // families" — fix is to hook openReader on the click, not
           // just toggleLock.
+          //
+          // 2026-05-30 — All-Families / All-Scriptures view gate.
+          // John: "when i click a NODE in the all families all scripture -
+          // IT JUMPS to that family. IT SHOULD NOT — A FUCKING REPLICA
+          // LIKE ATLAS — BOOKS OF THE FAMILIES OF THE FUCKING RELIGIONS
+          // FULL STOPO." When BOTH religion and corpus are unset
+          // (= the All-Families/All-Scriptures view), do NOT call
+          // setBook() — that mutates state.corpusId + state.religionId
+          // and re-routes the wheel into a single-corpus drill, the
+          // visible "jump". Reader still opens; wheel stays put.
           if (local.mode && local.mode.id === 'scriptures' && local.codexControls && typeof local.codexControls.docNodeToTextKey === 'function') {
             try {
               const tk = local.codexControls.docNodeToTextKey(hit);
               if (tk) {
-                local.codexControls.setBook(tk);
+                const onAllFamiliesView = (local.codexReligion == null && local.codexCorpus == null);
+                if (!onAllFamiliesView) {
+                  local.codexControls.setBook(tk);
+                }
                 if (local.scriptureReader && typeof local.scriptureReader.open === 'function') {
                   local.scriptureReader.open(tk);
                 }
