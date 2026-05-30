@@ -547,16 +547,22 @@
       const bandMidY = (band.y0 + band.y1) / 2;
       const bandInnerHalf = Math.max(1, band.height / 2 - ROW_PAD);
 
-      // (a) base X per member. Two hashes per node: one for SORT
-      // ORDER inside the cluster (deterministic), a DIFFERENT one
-      // for X-jiggle (so X and Y don't correlate — Phase B-DATING-3
-      // fix for the monotonic-diagonal drift bug).
+      // (a) base X per member + the world-X of date_latest if the node
+      // has a dating range. Range used by the slide-right pass below
+      // (Phase B-DATING-5 2026-05-30 — John's "some dates have a range
+      // so to avoid cluttering could move within those ranges" rule).
       const items = byFamily[fam].map(function (m) {
+        const baseX = preset.yearToWorldX(effectiveDate(m), ctx);
+        const dLatest = (typeof m.date_latest === 'number') ? m.date_latest : null;
+        const latestX = (dLatest != null && dLatest > effectiveDate(m))
+          ? preset.yearToWorldX(dLatest, ctx)
+          : baseX;
         return {
-          id:    m.id,
-          baseX: preset.yearToWorldX(effectiveDate(m), ctx),
-          hash:  _idHash01(m.id),         // for sort order
-          jhash: _idJiggleHash01(m.id),   // for X jiggle (decorrelated)
+          id:      m.id,
+          baseX:   baseX,
+          latestX: Math.max(baseX, latestX),
+          hash:    _idHash01(m.id),         // for sort order
+          jhash:   _idJiggleHash01(m.id),   // (legacy; unused after B-DATING-4)
         };
       });
       // Sort by X ascending; id tiebreak for stability.
@@ -579,20 +585,28 @@
 
       // (c) place each cluster.
       //
-      // Phase B-DATING-4 (2026-05-30) — RIGOROUS-X / Y-STACK rewrite per
-      // John's directive: "could we simple keep not cluttered and move
-      // on the Y? upwards or downwards? that way never stomps over each
-      // other maintaining rigor?" The previous algorithm (small-cluster
-      // ±7-year X jiggle + large-cluster sunflower with 0.4× X-dampening)
-      // compressed dense epochs by up to 30 years — Gospel of John was
-      // rendering at ~62 CE despite date_earliest=90, even when the node
-      // was visually ISOLATED at the user's zoom. Per cardinal
-      // investigation rigor: math is the math. X stays at the node's
-      // exact baseX (= year * X_SCALE from the active preset). Visual
-      // de-overlap happens on Y only. Worst case (huge cluster like
-      // axial age) → Y spacing compresses but every node's screen X
-      // still reflects its real date. Trade-off accepted: vertical
-      // pile-up beats wrong dates.
+      // Phase B-DATING-4/5 (2026-05-30) — RIGOROUS-X with DATE-RANGE
+      // SLIDE + Y-STACK fallback. Per John's directive: "keep X rigorous,
+      // move on Y when overlap, and use date_range to avoid clutter."
+      //
+      // Algorithm per cluster:
+      //   1. Sort chronologically by baseX
+      //   2. Walk left-to-right. For each member:
+      //      a. If baseX >= prev_placed_x + MIN_X_GAP → place at baseX
+      //         (no slide needed)
+      //      b. Else try slide-right to (prev_placed_x + MIN_X_GAP).
+      //         Slide allowed only within [baseX, latestX]. If fits → place there
+      //      c. Else (range exhausted) → Y-stack at baseX
+      //   3. Y-stacked members get alternating ±Y offsets within bandInnerHalf
+      //
+      // For nodes with no date range (date_latest === date_earliest),
+      // latestX === baseX so step (b) always fails — they go straight to
+      // Y stack. For nodes with a wide range (Gospel of John 90-110), the
+      // 20-year window provides ample slide room.
+      //
+      // MIN_X_GAP = MIN_X_SPACING (14 wu = 28 years). At 1x zoom that's
+      // the minimum gap for non-overlapping node circles.
+      const MIN_X_GAP = MIN_X_SPACING;
       for (const c of clusters) {
         const n = c.members.length;
         if (n === 1) {
@@ -600,22 +614,50 @@
           positions.set(m.id, { x: m.baseX, y: bandMidY });
           continue;
         }
-        // Stable hash sort so Y slot doesn't shuffle across reloads.
-        const sorted = c.members.slice().sort(function (a, b) {
+        // Sort chronologically. Tie-break by hash for determinism.
+        const chronSorted = c.members.slice().sort(function (a, b) {
+          if (a.baseX !== b.baseX) return a.baseX - b.baseX;
           if (a.hash !== b.hash) return a.hash - b.hash;
           return (a.id < b.id) ? -1 : 1;
         });
-        // Even vertical spread, symmetric around bandMidY. Spacing
-        // chosen so the OUTERMOST node sits at 90% of band-inner-half
-        // (10% headroom inside ROW_PAD). For n > what fits at
-        // MIN_Y_SPACING, spacing compresses — but X stays accurate.
-        const outerExtent = bandInnerHalf * 0.90;
-        const spacing = (2 * outerExtent) / Math.max(1, n - 1);
-        for (let i = 0; i < n; i++) {
-          const m = sorted[i];
-          const k = i - (n - 1) / 2;            // -(n-1)/2 .. +(n-1)/2
-          const y = bandMidY + k * spacing;
-          positions.set(m.id, { x: m.baseX, y: y });
+        const yStack = [];
+        let lastX = -Infinity;
+        for (let i = 0; i < chronSorted.length; i++) {
+          const m = chronSorted[i];
+          const next = (i + 1 < chronSorted.length) ? chronSorted[i + 1] : null;
+          // Cap slide at the next node's baseX so we never push past it
+          // (preserves chronological order on the spine row).
+          const maxSlideX = next ? Math.min(m.latestX, next.baseX) : m.latestX;
+          if (m.baseX >= lastX + MIN_X_GAP) {
+            positions.set(m.id, { x: m.baseX, y: bandMidY });
+            lastX = m.baseX;
+          } else {
+            const desiredX = lastX + MIN_X_GAP;
+            if (desiredX <= maxSlideX) {
+              positions.set(m.id, { x: desiredX, y: bandMidY });
+              lastX = desiredX;
+            } else {
+              // No room in date range → Y stack at baseX
+              yStack.push(m);
+            }
+          }
+        }
+        // Y-stack overflow above/below bandMidY, alternating +/-.
+        if (yStack.length > 0) {
+          const ySorted = yStack.slice().sort(function (a, b) {
+            if (a.hash !== b.hash) return a.hash - b.hash;
+            return (a.id < b.id) ? -1 : 1;
+          });
+          const outerExtent = bandInnerHalf * 0.90;
+          const slots = ySorted.length;
+          const ySpacing = (2 * outerExtent) / Math.max(2, slots + 1);
+          for (let i = 0; i < slots; i++) {
+            const m = ySorted[i];
+            const dir = (i % 2 === 0) ? 1 : -1;
+            const slotIdx = Math.floor(i / 2) + 1;
+            const y = bandMidY + dir * slotIdx * ySpacing;
+            positions.set(m.id, { x: m.baseX, y: y });
+          }
         }
       }
     }
