@@ -578,6 +578,21 @@
       }
 
       // (c) place each cluster.
+      //
+      // Phase B-DATING-4 (2026-05-30) — RIGOROUS-X / Y-STACK rewrite per
+      // John's directive: "could we simple keep not cluttered and move
+      // on the Y? upwards or downwards? that way never stomps over each
+      // other maintaining rigor?" The previous algorithm (small-cluster
+      // ±7-year X jiggle + large-cluster sunflower with 0.4× X-dampening)
+      // compressed dense epochs by up to 30 years — Gospel of John was
+      // rendering at ~62 CE despite date_earliest=90, even when the node
+      // was visually ISOLATED at the user's zoom. Per cardinal
+      // investigation rigor: math is the math. X stays at the node's
+      // exact baseX (= year * X_SCALE from the active preset). Visual
+      // de-overlap happens on Y only. Worst case (huge cluster like
+      // axial age) → Y spacing compresses but every node's screen X
+      // still reflects its real date. Trade-off accepted: vertical
+      // pile-up beats wrong dates.
       for (const c of clusters) {
         const n = c.members.length;
         if (n === 1) {
@@ -585,52 +600,22 @@
           positions.set(m.id, { x: m.baseX, y: bandMidY });
           continue;
         }
-
-        // Stable hash sort so anchor/spiral index doesn't shuffle
-        // across reloads (otherwise locks would drift).
+        // Stable hash sort so Y slot doesn't shuffle across reloads.
         const sorted = c.members.slice().sort(function (a, b) {
           if (a.hash !== b.hash) return a.hash - b.hash;
           return (a.id < b.id) ? -1 : 1;
         });
-
-        if (n <= SMALL_CLUSTER_MAX) {
-          // Even vertical spread, symmetric around bandMidY.
-          // n=2 → -spacing/2, +spacing/2 (or equivalently k=±0.5)
-          // n=3 → -spacing, 0, +spacing
-          // n=4 → -1.5sp, -0.5sp, +0.5sp, +1.5sp
-          // ...
-          // Spacing chosen so the OUTERMOST node sits at 90% of
-          // band-inner-half (10% headroom inside ROW_PAD).
-          const outerExtent = bandInnerHalf * 0.90;
-          const spacing = (n === 1) ? 0 : (2 * outerExtent) / (n - 1);
-          for (let i = 0; i < n; i++) {
-            const m = sorted[i];
-            const k = i - (n - 1) / 2;          // -(n-1)/2 .. +(n-1)/2
-            const y = bandMidY + k * spacing;
-            // Phase B-DATING-3 (2026-05-24) — use the DECORRELATED
-            // jiggle-hash (not m.hash, which is the sort-order hash).
-            // m.hash sorted ascending → using it for X jiggle made the
-            // cluster slant diagonal (lowest hash at top + smallest
-            // X offset, highest at bottom + largest X offset).
-            const xOff = (m.jhash - 0.5) * 2 * SMALL_X_JIGGLE_WU;
-            positions.set(m.id, { x: m.baseX + xOff, y: y });
-          }
-        } else {
-          // Phyllotaxis sunflower around band center. Y-dominant,
-          // X dampened (0.4 ratio) so the cluster mostly grows
-          // vertically and stays close to its chronological X.
-          // Radius scaled so the LAST node (i=n-1) fits inside the
-          // band-inner-half on Y.
-          const yRadiusCap = bandInnerHalf * 0.95;
-          const radiusBase = yRadiusCap / Math.sqrt(n - 1);
-          for (let i = 0; i < n; i++) {
-            const m = sorted[i];
-            const r = radiusBase * Math.sqrt(i);
-            const a = i * GOLDEN_ANGLE;
-            const xOff = r * Math.cos(a) * 0.4;
-            const yOff = r * Math.sin(a);
-            positions.set(m.id, { x: m.baseX + xOff, y: bandMidY + yOff });
-          }
+        // Even vertical spread, symmetric around bandMidY. Spacing
+        // chosen so the OUTERMOST node sits at 90% of band-inner-half
+        // (10% headroom inside ROW_PAD). For n > what fits at
+        // MIN_Y_SPACING, spacing compresses — but X stays accurate.
+        const outerExtent = bandInnerHalf * 0.90;
+        const spacing = (2 * outerExtent) / Math.max(1, n - 1);
+        for (let i = 0; i < n; i++) {
+          const m = sorted[i];
+          const k = i - (n - 1) / 2;            // -(n-1)/2 .. +(n-1)/2
+          const y = bandMidY + k * spacing;
+          positions.set(m.id, { x: m.baseX, y: y });
         }
       }
     }
