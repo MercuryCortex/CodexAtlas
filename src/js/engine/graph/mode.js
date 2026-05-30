@@ -324,28 +324,25 @@
       return nodes.filter(n => n && n.type === 'person' && authorSet.has(n.id));
     }
 
-    // Scriptures mode (2026-05-30 CANON-ONLY pass):
-    //   John 2026-05-30: "the chart that SHOWS the HOLY scripture that
-    //   constitutes the official canon of THAT religion. SHOULD BE THE
-    //   CORE AND THE MOST SIMPLE ANSWER. FULL STOP."
-    //
-    //   The set of visible books = EXACTLY the union of every section's
-    //   books across every corpus in window.SCRIPTURE_CORPORA. The
-    //   SCRIPTURE_IDS curated allowlist above is left DORMANT as audit
-    //   trail (pre-canon-audit whitelist, 2026-05-28); the corpus
-    //   declarations in src/js/app.js are now the single source of
-    //   truth for what's a scripture. After the Phase A canon audit
-    //   (commit 08a6563a, 42 → 32 corpora, 49 non-canon book entries
-    //   removed) the corpus union is the canon. Anything not in the
-    //   corpus union (Discourse on the Mountain, Book of Giants, etc.)
-    //   is NOT canon and must NOT appear on the wheel.
+    // Scriptures mode (2026-05-28; extended 2026-05-30):
+    //   – Curated SCRIPTURE_IDS set above (the original 108-id whitelist,
+    //     hand-picked when SCRIPTURE_CORPORA was thinner), UNION
+    //   – Every book.id declared in window.SCRIPTURE_CORPORA[*].sections[*].books[*]
+    //     (auto-derived once, cached on first call — kills the
+    //     8-of-10-Egyptian-books-hidden bug John screenshot-flagged
+    //     2026-05-30: Pyramid Texts / Coffin Texts / Book of the Dead /
+    //     Amarna Letters / Manetho / Diodorus / Plutarch / Herodotus
+    //     were declared in egyptian-scripture corpus but NOT in the
+    //     hand-curated whitelist, so the All-families wheel only
+    //     showed Great Hymn to Aten + Memphite Theology).
     //
     //   Lane A follow-up still applies — when each node gets a
-    //   `canonical-corpus:` YAML field, the runtime corpus-walk
-    //   becomes a build-time derivation.
+    //   `canonical-corpus:` YAML field, both halves dissolve. Until
+    //   then this auto-derive keeps the wheel in sync with the
+    //   corpus declarations.
     if (mode === 'scriptures') {
       if (!filterNodesByMode._scriptureSet) {
-        const s = new Set();
+        const s = new Set(SCRIPTURE_IDS);
         const C = (typeof window !== 'undefined') ? window.SCRIPTURE_CORPORA : null;
         if (C && typeof C === 'object') {
           for (const corpusKey in C) {
