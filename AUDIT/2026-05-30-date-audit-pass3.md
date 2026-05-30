@@ -184,11 +184,60 @@ After all three are applied, re-run `scripts/audit_dates_2026-05-30.py` (should 
 
 ---
 
-## POST-EXECUTION — TBD (apply as ratified)
+## POST-EXECUTION RESULT
 
-| Commit | Tier | Description |
-|---|---|---|
-| TBD | T1 | 44 files 2025 → 2026 |
-| TBD | T2 | 28 files Egyptian 400 → 500 |
-| TBD | T3 | 17 files Vedic/Zoroastrian/yahweh/satan to ratified-Rule-A |
-| TBD | T4 | Null-backlog tradition-clean-cases |
+John ratified the full proposal with a single **`agree`**. T1+T2 had already shipped pre-ratification (mechanical extensions of Pass-1/Pass-2 ratified rules); T3 + edges + T4 followed immediately under explicit ratification.
+
+| Commit | Lane | Tier | Description |
+|---|---|---|---|
+| `e6f54b46` | B | infra | Pass-3 audit infrastructure — report + pilot sample + apply script |
+| `2441e4d8` | A | T1 | 44 active-tradition deities `2025 → 2026` |
+| `745e0200` | A | T2 | 28 Egyptian deities `400 → 500` (Pass-2 standardization completion) |
+| `(this batch)` | B | infra | T3+T4 apply script + this POST-EXECUTION update |
+| `(this batch)` | A | T3+T4 | 49 deity files — see breakdown below |
+
+### Tier 3 confident (17 files) — direct Rule-A application
+
+- **Vedic** (7): agni, indra, soma, varuna, mitra-vedic, prajapati, rudra-shiva-early → all `2026`
+- **Zoroastrian** (8): ahura-mazda, mithra-zoroastrian, anahita, tishtrya, spenta-mainyu, angra-mainyu-ahriman, apam-napat-zoroastrian, the-amesha-spentas → all `2026`
+- **Abrahamic** (2): yahweh `0 → 2026`, satan-christian `null → 2026`
+
+### Tier 3 edges resolved (6 patches across 5 files)
+
+Applied per ratification:
+- `azazel: 200 → 2026` (Yom Kippur scapegoat liturgy)
+- `kama-vedic: 1700 → 2026` (Holi/Vasanta active)
+- `dhanvantari: 1900 → 2026` (Ayurveda active)
+- `mahavira-jain: -527 → 2026` (field is period-active; Jain veneration continuous; earliest `-599` stays as start-of-lineage)
+- `rishabha-jain: -999999999/-999999000 → -1500/2026` (placeholder replaced with proto-Vedic Ṛṣabha references + active Jain cult)
+
+Kept as schema-tension (no change):
+- `dyaus-pita` (archaic Vedic, rarely ritual-present)
+- `vritra` (Vedic anti-god / slain-by-Indra demonological)
+- `ushas` (Vedic dawn goddess, marginal modern presence)
+- `aditi` (Vedic mother goddess, marginal modern presence)
+- `hokmah-hebrew` (Hebrew/2T figure — continuations live in `sophia-gnostic` and `shekhinah` separate nodes)
+- `nanghaithya-daeva` (Zoroastrian daēva-class demon; analog to vritra)
+- `kalki` (Vaishnava eschatological avatar — hasn't yet manifested; schema-tension genuine)
+
+### Tier 4 null-backlog (27 files cleared)
+
+**Active-tradition → 2026** (18): babalu-aye, olokun, aganju, oduduwa (Yoruba); ame-no-uzume, kagutsuchi, sarutahiko, ame-no-hohi (Shinto); bhaisajyaguru (Mahayana); tangun, hwanin, hwanung (Korean Muism); yan-wang, shennong (Chinese folk); verethraghna-zoroastrian; chitragupta (Hindu); muhammad-al-mahdi (Twelver); baphomet (Western occult).
+
+**Extinct-tradition** (9): laima, velinas, meness `→ 1525` (Latvian inclusive); zemyna `→ 1387` (Lithuanian); boann, ogma, aengus-og, macha `→ 600` (Irish Christianization); adamastor `→ 1572` (literary single-year, Camões *Os Lusíadas*).
+
+### Final verification
+
+Re-ran `scripts/audit_dates_2026-05-30.py` post-T3+T4. **`Total flagged: 0`** preserved (no gap regressions). Manual sentinel checks confirm: `yahweh = -1300/2026`, `agni = -1500/2026`, `indra = -1500/2026`, `soma = -1500/2026`, `ahura-mazda = -1200/2026`, `satan-christian = -300/2026`, `mahavira-jain = -599/2026`, `rishabha-jain = -1500/2026`, `boann = -700/600`, `adamastor = 1572/1572`.
+
+### Final Pass-3 totals
+
+- 122 deity files patched across T1+T2+T3+T4
+- 0 documents required value corrections (the doc corpus is calibrated against mainstream critical-edition consensus — Witzel/Olivelle/West/Copenhaver/Brown/Nickelsburg tier brackets — across all 4 pilot clusters)
+- Vault-wide ratified-Rule-A consistency: established. The `yama-vedic=2026 / indra=500` and `vishnu=2026 / agni=0` self-inconsistencies that triggered this audit are closed.
+
+### Carry-over for future audit (NOT this session's work)
+
+- 7 deities left at finite extinct-period dates per schema-tension calls (`dyaus-pita / vritra / ushas / aditi / hokmah-hebrew / nanghaithya-daeva / kalki`). May revisit if Timeline B-DATING-5 surfaces visible pile-up at those exact dates.
+- The 7 stray `02_documents/document-*.md` files use a non-canonical schema (lack `date-composed-*` fields entirely) — separate Lane-A schema migration, not Pass-3 scope.
+- 44 stale `2025 → 2026` rollover ritual: consider `scripts/annual_rollover.py` to automate per-year.
