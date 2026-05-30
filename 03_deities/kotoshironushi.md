@@ -2,6 +2,8 @@
 type: deity
 id: "kotoshironushi"
 name: "Kotoshironushi"
+period-active-earliest: 712
+period-active-latest: 2026
 status: "metadata"
 date-earliest: 712
 dating-basis: B4

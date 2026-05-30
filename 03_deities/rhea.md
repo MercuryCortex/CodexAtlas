@@ -6,7 +6,7 @@ aka: ["Ῥέα", "Rheia", "Magna Mater (Roman absorption with [[cybele]])"]
 tradition: "Greek religion"
 region: "Greece — birthplaces of Zeus on Mount Ida (Crete) and Mount Ida (Phrygia)"
 period-active-earliest: -800
-period-active-latest:
+period-active-latest: 400
 domains: ["motherhood", "generation of the Olympian gods", "the rescue of Zeus from Kronos"]
 gender: "feminine"
 role: "Titan mother-goddess; mother of the principal Olympians"

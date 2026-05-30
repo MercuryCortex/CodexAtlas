@@ -4,6 +4,8 @@ id: "ihy"
 name: "Ihy"
 aka: ["Ihy", "Ihi", "Ahy"]
 tradition: "tradition-egyptian-religion"
+period-active-earliest: -2400
+period-active-latest: 500
 domains: ["the divine child of Hathor", "music (sistrum)", "youthful rebirth"]
 status: "stub"
 refs:

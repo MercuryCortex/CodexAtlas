@@ -6,7 +6,7 @@ aka: ["Vanha Väinämöinen (Old Väinämöinen)", "Suvantolainen"]
 tradition: "Finno-Karelian — Kalevala / runo-poetry tradition"
 region: "Finland, Karelia"
 period-active-earliest: -500
-period-active-latest:
+period-active-latest: 1900
 domains: ["song", "shamanic power (*tietäjä*)", "wisdom", "cosmogony"]
 gender: "masculine"
 role: "primordial shaman-singer / cosmogonic figure (in Kalevala) — also a mythologized cultural hero (a separate person-node may be seeded in 04_persons/ later)"

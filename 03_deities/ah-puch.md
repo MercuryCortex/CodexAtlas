@@ -6,7 +6,7 @@ aka: ["Kisin", "Yum Cimil", "Hun Came", "One Death", "God A (Dresden Codex)", "H
 tradition: "Maya paganism (Popol Vuh; Dresden Codex; Diego de Landa's Relación de las cosas de Yucatán)"
 region: "Mesoamerica — Maya lowlands (Yucatán, Guatemala highlands)"
 period-active-earliest: -300
-period-active-latest:
+period-active-latest: 1697
 domains: ["death", "the underworld", "decomposition", "disease", "owls", "Xibalba"]
 gender: "masculine"
 role: "underworld lord"

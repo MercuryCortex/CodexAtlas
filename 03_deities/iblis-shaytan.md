@@ -6,6 +6,8 @@ aka: ["Iblīs", "Shayṭān", "the Accursed One", "the Adversary", "al-Rajīm"]
 role: "adversarial figure | fallen angel / jinn | tempter"
 tradition: "Islam"
 region: "cosmic / trans-traditional"
+period-active-earliest: 610
+period-active-latest: 2026
 date-born: ""
 date-died: ""
 historicity: "theological construct"

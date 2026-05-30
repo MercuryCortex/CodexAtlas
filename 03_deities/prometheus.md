@@ -6,7 +6,7 @@ aka: ["Προμηθεύς ('Forethought')"]
 tradition: "Greek religion + Greek philosophy (Romantic and modern reception)"
 region: "Greece — punishment site at the Caucasus"
 period-active-earliest: -800
-period-active-latest:
+period-active-latest: 400
 domains: ["fire-as-civilizational-gift", "anthropogony (clay-shaping of humans)", "rebellion against the high god", "human-elevating cunning"]
 gender: "masculine"
 role: "Titan culture-hero / divine rebel / pre-Olympian anthropogonist"

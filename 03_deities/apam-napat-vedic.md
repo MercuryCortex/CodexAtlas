@@ -4,6 +4,8 @@ id: "apam-napat-vedic"
 name: "Apām Napāt (Vedic / Indo-Iranian)"
 aka: ["Apām Napāt ('Grandson/Child of the Waters')", "Avestan Apąm Napāt"]
 tradition: "tradition-vedic"
+period-active-earliest: -1500
+period-active-latest: 2026
 domains: ["the waters", "the hidden fire in the waters", "Indo-Iranian celestial-water deity"]
 status: "stub"
 refs:

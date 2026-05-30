@@ -6,7 +6,7 @@ aka: ["An Dagda ('the Good God')", "Eochaid Ollathair ('Father of All')", "Ruad 
 tradition: "Celtic paganism (Gaelic)"
 region: "Ireland — Brú na Bóinne (Newgrange) cult center"
 period-active-earliest: -500
-period-active-latest:
+period-active-latest: 600
 domains: ["abundance / providential power", "magic", "knowledge", "weather", "harvest", "the otherworld"]
 gender: "masculine"
 role: "father-god / Tuatha Dé Danann chief"

@@ -6,7 +6,7 @@ aka: ["Ἐρινύες", "Eumenides ('the Kindly Ones', euphemism)", "Semnai The
 tradition: "Greek religion"
 region: "Greece — Athens (Areopagus cult), Sicyon, Megalopolis"
 period-active-earliest: -800
-period-active-latest:
+period-active-latest: 400
 domains: ["vengeance — especially against blood-kin murderers and oath-breakers", "the wrath of the chthonic", "transformation into civic protectors"]
 gender: "feminine (triad)"
 role: "chthonic avenging goddesses"

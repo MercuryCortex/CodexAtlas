@@ -6,7 +6,7 @@ aka: ["Xbalanque", "Xbalanqué", "Little Jaguar Sun", "Jaguar Sun", "Hun Ahaw (a
 tradition: "Maya paganism (Popol Vuh — K'iche' Maya)"
 region: "Mesoamerica — K'iche' Maya highlands (Guatemala)"
 period-active-earliest: -300
-period-active-latest:
+period-active-latest: 1697
 domains: ["the moon", "Venus", "the underworld", "heroic trickery", "resurrection", "the jaguar sun"]
 gender: "masculine"
 role: "hero / celestial deity"

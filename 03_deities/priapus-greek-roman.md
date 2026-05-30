@@ -4,6 +4,8 @@ id: "priapus-greek-roman"
 name: "Priapus"
 aka: ["Priapos", "Πρίαπος"]
 tradition: "tradition-greek-religion"
+period-active-earliest: -400
+period-active-latest: 400
 domains: ["fertility", "gardens", "male generative power", "apotropaic protection (the ithyphallic guardian of orchards)"]
 status: "stub"
 refs:

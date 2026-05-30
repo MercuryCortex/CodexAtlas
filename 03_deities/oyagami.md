@@ -4,6 +4,8 @@ id: "oyagami"
 name: "Oyagami — God the Parent"
 aka: ["Oyagami", "親神", "God the Parent", "Tenri-O-no-Mikoto", "Lord of Divine Wisdom"]
 tradition: "[[tradition-tenrikyo]]"
+period-active-earliest: 1838
+period-active-latest: 2026
 domain: "supreme deity, creator, parent of humanity, source of joyous life"
 attested-in: ["[[phase-7-043-ofudesaki]]"]
 status: "stub"

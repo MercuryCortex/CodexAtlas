@@ -9,6 +9,8 @@ traditions-related: ["[[tradition-tibetan-buddhism]]", "[[tradition-nyingma]]"]
 date-attested-earliest: 700
 date-attested-latest: 2026
 region: "Indian-Tibetan tantric Buddhism (origin in Vajrakīla-tantra); Nyingma centrality + Sakya transmission"
+period-active-earliest: 700
+period-active-latest: 2026
 status: "stub"
 refs:
   - title: "A Bolt of Lightning From the Blue: The Vast Commentary on Vajrakīla That Clearly Defines the Essential Points"

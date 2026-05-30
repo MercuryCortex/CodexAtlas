@@ -4,6 +4,8 @@ id: "hanullim"
 name: "Hanullim — Lord of Heaven"
 aka: ["Hanullim", "하느님", "Haneullim", "Cheonju (天主, Lord of Heaven)", "Sangje (上帝, Supreme Ruler)"]
 tradition: "[[tradition-donghak]]"
+period-active-earliest: 1860
+period-active-latest: 2026
 domain: "supreme deity, creator, immanent divine presence"
 attested-in: ["[[phase-7-042-donggyeong-daejeon]]"]
 status: "stub"

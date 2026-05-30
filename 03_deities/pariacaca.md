@@ -6,7 +6,7 @@ aka: ["Paria Caca", "Paryaqaqa", "the Five Eagles"]
 tradition: "Andean / Inca (Huarochirí Manuscript, c. 1608 CE)"
 region: "Andes (Huarochirí region, central Peru — Pariacaca mountain)"
 period-active-earliest: 1000
-period-active-latest:
+period-active-latest: 1608
 domains: ["mountain", "storm", "flood", "rain", "irrigation", "regional sovereignty", "the apu tradition"]
 gender: "masculine"
 role: "mountain deity / storm god / flood-sender"

@@ -2,6 +2,8 @@
 type: deity
 id: "meenakshi"
 name: "Meenakshi"
+period-active-earliest: 600
+period-active-latest: 2026
 status: "stub"
 date-earliest: 600
 dating-basis: B4

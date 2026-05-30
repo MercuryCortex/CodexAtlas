@@ -2,6 +2,8 @@
 type: deity
 id: "anahita-zoroastrian"
 name: "Anahita (Zoroastrian)"
+period-active-earliest: -1000
+period-active-latest: 2026
 status: "stub"
 date-earliest: -500
 dating-basis: B1

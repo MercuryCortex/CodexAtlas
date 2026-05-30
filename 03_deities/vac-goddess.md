@@ -12,6 +12,8 @@ family: vedic-cosmological
 period-earliest: -1500
 period-latest: 500
 region: "Indian subcontinent"
+period-active-earliest: -1500
+period-active-latest: 2026
 tags:
   - deity
   - vedic

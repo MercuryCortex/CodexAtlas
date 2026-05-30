@@ -6,7 +6,7 @@ aka: ["Ἰαπετός"]
 tradition: "Greek religion"
 region: "Greece — by tradition imprisoned in Tartarus"
 period-active-earliest: -800
-period-active-latest:
+period-active-latest: 400
 domains: ["mortal lifespan (his name etymologized as 'piercing')", "founding ancestor of the human race (via his sons)"]
 gender: "masculine"
 role: "Titan / father of the human-affecting Titans"

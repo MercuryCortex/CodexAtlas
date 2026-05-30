@@ -6,7 +6,7 @@ aka: ["Nuada Airgetlám ('Silver-Arm')", "Nodens (Romano-British)", "Nudd (Welsh
 tradition: "Celtic paganism (Gaelic + Welsh + Romano-British)"
 region: "Ireland, Britain (Lydney Park temple to Nodens, ~370 CE)"
 period-active-earliest: -300
-period-active-latest:
+period-active-latest: 600
 domains: ["kingship", "healing (Nodens-at-Lydney)", "sovereignty", "the silver arm (sovereignty-token)"]
 gender: "masculine"
 role: "first king of the Tuatha Dé Danann"

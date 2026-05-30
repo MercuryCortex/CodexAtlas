@@ -6,6 +6,8 @@ aka: ["Melek Taus", "Tawûsê Melek", "Peacock Angel", "Melek Ta'us"]
 role: "chief angel; divine viceroy; contested figure"
 tradition: "[[tradition-yazidi]]"
 region: "Kurdistan (Iraq, Syria, Turkey)"
+period-active-earliest: 1162
+period-active-latest: 2026
 geo-lat: 36.82
 geo-lon: 43.07
 historicity: "mythological"

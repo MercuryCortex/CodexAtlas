@@ -11,6 +11,8 @@ domain: ["truth", "justice", "cosmic order", "balance", "right conduct", "divine
 period-earliest: -2686
 period-latest: -30
 region: "Egypt"
+period-active-earliest: -2400
+period-active-latest: 500
 parents: ["[[ra]]"]
 consort: ["[[thoth]]"]
 epithets: ["Daughter of Ra", "Eye of Ra", "Lady of the Hall of Two Truths", "She who feeds the gods"]

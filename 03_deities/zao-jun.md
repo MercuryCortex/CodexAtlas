@@ -8,6 +8,8 @@ sub-tradition: "Chinese folk religion / Daoist domestic cult / Chinese popular r
 gender: "male"
 domain: ["hearth", "household", "family morality", "annual divine census", "domestic life", "food", "fire"]
 region: "China; Taiwan; diaspora Chinese communities globally"
+period-active-earliest: -300
+period-active-latest: 2026
 date-earliest: -300
 status: "metadata"
 key-texts:

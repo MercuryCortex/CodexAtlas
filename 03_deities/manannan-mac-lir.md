@@ -6,7 +6,7 @@ aka: ["Manannán", "Manawydan fab Llŷr (Welsh)", "Manawyddan"]
 tradition: "Celtic paganism (Gaelic + Welsh)"
 region: "Ireland, Isle of Man (toponym source), Wales"
 period-active-earliest: -300
-period-active-latest:
+period-active-latest: 600
 domains: ["sea", "the otherworld", "weather", "psychopomp / ferrier of souls", "magic and sovereignty"]
 gender: "masculine"
 role: "sea-god / lord of the otherworld islands; gatekeeper of Tír na nÓg; gives heroes magical equipment and otherworld access; king of the Isle of Man"

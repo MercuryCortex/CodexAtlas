@@ -2,6 +2,8 @@
 type: deity
 id: "wiraqocha"
 name: "Wiraqocha"
+period-active-earliest: -500
+period-active-latest: 1608
 status: "stub"
 depictions:
   - src: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/2Wiener-Tintin-Dieu_Soleil.jpg/330px-2Wiener-Tintin-Dieu_Soleil.jpg"

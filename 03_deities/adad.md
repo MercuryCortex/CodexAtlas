@@ -2,6 +2,8 @@
 type: deity
 id: "adad"
 name: "Adad"
+period-active-earliest: -2500
+period-active-latest: -100
 status: "stub"
 date-earliest: -2500
 dating-basis: B1

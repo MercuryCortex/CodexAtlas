@@ -2,6 +2,8 @@
 type: deity
 id: "shakti"
 name: "Shakti"
+period-active-earliest: -1000
+period-active-latest: 2026
 status: "stub"
 date-earliest: -700
 dating-basis: B4

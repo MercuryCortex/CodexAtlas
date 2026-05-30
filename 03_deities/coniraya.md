@@ -6,7 +6,7 @@ aka: ["Cuniraya", "Cuniraya Viracocha", "Coniraya Viracocha"]
 tradition: "Andean / Inca (Huarochirí Manuscript, c. 1608 CE — Francisco de Avila's collection)"
 region: "Andes (Huarochirí region, central Peru)"
 period-active-earliest: 1000
-period-active-latest:
+period-active-latest: 1608
 domains: ["trickery", "creation by deception", "disguise", "unrequited love", "the condor and puma"]
 gender: "masculine"
 role: "trickster / creator"

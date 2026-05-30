@@ -6,7 +6,7 @@ aka: ["Θέμις ('Custom, Divine Law')"]
 tradition: "Greek religion"
 region: "Greece — Delphi (her oracle preceded Apollo's)"
 period-active-earliest: -800
-period-active-latest:
+period-active-latest: 400
 domains: ["divine law / custom (themis)", "natural order", "prophecy (Delphi)", "the Moirai's mother in some recensions"]
 gender: "feminine"
 role: "Titan goddess of divine order and prophecy"

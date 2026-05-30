@@ -9,6 +9,8 @@ traditions-related: ["[[tradition-buddhism-mahayana]]", "[[tradition-buddhism-th
 date-attested-earliest: -500
 date-attested-latest: 2026
 region: "All Buddhist traditions"
+period-active-earliest: -500
+period-active-latest: 2026
 status: "stub"
 refs:
   - title: "Buddhist Hybrid Sanskrit Grammar and Dictionary"

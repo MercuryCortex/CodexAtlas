@@ -6,7 +6,7 @@ aka: ["Bergelmir grandson of Ymir", "the Norse flood-survivor"]
 tradition: "[[tradition-norse]]"
 region: "Norse mythological cosmos (Jötunheimr — land of the giants)"
 period-active-earliest: 800
-period-active-latest:
+period-active-latest: 1100
 domains: ["flood-survival", "giant-progenitor (ancestor of all subsequent jötnar / giants after the Ymir-blood-flood)"]
 gender: "masculine"
 role: "giant | flood-survivor | progenitor"

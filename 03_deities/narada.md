@@ -5,6 +5,8 @@ type: deity
 status: "metadata"
 tier: 1
 tradition: tradition-vedic-hinduism
+period-active-earliest: -1500
+period-active-latest: 2026
 date_earliest: -1000
 date_latest: 1700
 tags:

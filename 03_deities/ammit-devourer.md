@@ -6,6 +6,8 @@ aka: ["Ammut", "Ahemait", "Ammenet", "Devourer of the Dead", "Eater of Hearts"]
 period-earliest: -2400
 period-latest: 30
 region: "Egypt"
+period-active-earliest: -2400
+period-active-latest: 500
 tradition-context:
   - "[[tradition-egyptian]]"
   - "[[tradition-egyptian-religion]]"

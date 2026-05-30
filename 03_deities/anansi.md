@@ -8,6 +8,8 @@ sub-tradition: "Akan (Ashanti) religion / West African oral tradition / African 
 gender: "male (usually; shapeshifts)"
 domain: ["stories", "wisdom", "cunning", "spiders", "weaving", "knowledge", "trickery", "communication between heaven and earth"]
 region: "Ghana (Ashanti homeland) → Caribbean (Jamaica, Trinidad, Barbados) → American South"
+period-active-earliest: -200
+period-active-latest: 2026
 date-earliest: 1000
 status: "metadata"
 key-texts:

@@ -2,6 +2,8 @@
 type: deity
 id: "takeminakata"
 name: "Takeminakata"
+period-active-earliest: 712
+period-active-latest: 2026
 status: "stub"
 date-earliest: 712
 dating-basis: B4

@@ -4,6 +4,8 @@ id: "eileithyia-greek"
 name: "Eileithyia"
 aka: ["Eileíthyia", "Εἰλείθυια", "Ilithyia"]
 tradition: "tradition-greek-religion"
+period-active-earliest: -1400
+period-active-latest: 400
 domains: ["childbirth", "midwifery"]
 status: "stub"
 refs:

@@ -6,7 +6,7 @@ aka: ["Lug Lámfada ('Long-Arm')", "Samildánach ('Skilled in All Arts')", "Lleu
 tradition: "Celtic paganism (Gaelic + Welsh + Continental)"
 region: "Ireland, Wales, Gaul"
 period-active-earliest: -500
-period-active-latest:
+period-active-latest: 600
 domains: ["all skills (samildánach)", "kingship", "harvest (Lughnasadh, August 1)", "the spear (Gáe Assail)", "warrior-arts"]
 gender: "masculine"
 role: "high-king of the Tuatha Dé Danann / multi-skilled culture-hero"

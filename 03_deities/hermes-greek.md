@@ -8,6 +8,8 @@ sub-tradition: "Olympian religion; mystery cults (as psychopomp); Hermetism (as 
 gender: "male"
 domain: ["messenger", "travel", "commerce", "theft", "boundaries", "souls of the dead", "interpretation", "luck", "crossroads", "language", "cunning"]
 region: "Greece → Rome → Hellenistic world → Hermetism"
+period-active-earliest: -1400
+period-active-latest: 400
 date-earliest: -1400
 status: "metadata"
 key-texts:

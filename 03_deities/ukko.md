@@ -6,7 +6,7 @@ aka: ["Äijä (the Old Man)", "Pitkänen (the Tall One)", "Vanha-Väinö (Old V�
 tradition: "Finno-Karelian (pre-Christian)"
 region: "Finland, Karelia"
 period-active-earliest: -1000
-period-active-latest:
+period-active-latest: 1900
 domains: ["sky", "thunder", "rain", "weather", "agricultural fertility"]
 gender: "masculine"
 role: "sky-god / supreme deity of pre-Christian Finno-Karelian religion"

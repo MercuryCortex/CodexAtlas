@@ -4,6 +4,8 @@ id: "mithra"
 name: "Mithra (Avestan/Zoroastrian)"
 aka: ["Miθra (Avestan)", "Mihr (Pahlavi/Modern Persian)", "Mitra (Vedic cognate)"]
 tradition: "Zoroastrian; pre-Zoroastrian Indo-Iranian"
+period-active-earliest: -1500
+period-active-latest: 2026
 domains: ["covenant", "contract", "the sworn oath", "sunlight as judge of perjury", "warrior"]
 status: "stub"
 refs:

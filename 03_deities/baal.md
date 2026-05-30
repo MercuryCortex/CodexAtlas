@@ -4,6 +4,8 @@ id: "baal"
 name: "Baal"
 aka: ["Ba'al", "Baal", "lord", "Baal Hadad"]
 tradition: "Canaanite / Ugaritic"
+period-active-earliest: -2500
+period-active-latest: -100
 equivalents: ["[[baal-hadad]]"]
 status: "metadata"
 refs:

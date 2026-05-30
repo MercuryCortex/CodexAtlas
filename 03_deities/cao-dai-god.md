@@ -4,6 +4,8 @@ id: "cao-dai-god"
 name: "Cao Đài — the Supreme Being"
 aka: ["Cao Đài", "高臺", "Đức Cao Đài", "the Supreme Being", "Jade Emperor (Cao Dai usage)", "the Celestial Eye"]
 tradition: "[[tradition-cao-dai]]"
+period-active-earliest: 1926
+period-active-latest: 2026
 domain: "supreme monotheistic deity, creator of all traditions, eye symbol"
 attested-in: ["[[phase-7-044-cao-dai-canon]]"]
 status: "stub"

@@ -6,7 +6,7 @@ aka: ["Ἄτλας ('Endurer')"]
 tradition: "Greek religion"
 region: "Greece — by tradition the Atlas Mountains (NW Africa)"
 period-active-earliest: -800
-period-active-latest:
+period-active-latest: 400
 domains: ["sky-bearing", "the western edge of the world", "celestial-astronomy patron"]
 gender: "masculine"
 role: "Titan condemned to bear the heavens on his shoulders"

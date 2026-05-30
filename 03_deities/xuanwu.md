@@ -2,6 +2,8 @@
 type: deity
 id: "xuanwu"
 name: "Xuanwu"
+period-active-earliest: -200
+period-active-latest: 2026
 status: "stub"
 date-earliest: 200
 dating-basis: B2

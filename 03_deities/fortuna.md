@@ -6,7 +6,7 @@ aka: ["Tyche (Greek)", "Fors Fortuna", "Fortuna Primigenia (Praeneste)", "Fortun
 tradition: "Roman religion (with Hellenistic Tyche substrate)"
 region: "Rome — major cult-center at Praeneste (Palestrina, Lazio)"
 period-active-earliest: -500
-period-active-latest:
+period-active-latest: 400
 domains: ["fate", "chance", "fortune", "civic luck", "personal destiny"]
 gender: "feminine"
 role: "goddess of fate / fortune / chance"

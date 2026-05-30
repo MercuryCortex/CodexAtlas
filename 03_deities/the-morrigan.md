@@ -6,7 +6,7 @@ aka: ["Morrígan ('Phantom Queen' or 'Great Queen')", "Macha", "Badb", "Nemain",
 tradition: "Celtic paganism (Gaelic)"
 region: "Ireland"
 period-active-earliest: -300
-period-active-latest:
+period-active-latest: 600
 domains: ["war", "battle-prophecy", "sovereignty (the king's marriage to the land)", "fate of warriors", "shapeshifting (crow, wolf, eel, heifer)"]
 gender: "feminine"
 role: "war-goddess / sovereignty-goddess / triple-goddess of battle"

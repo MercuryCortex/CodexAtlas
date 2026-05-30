@@ -6,7 +6,7 @@ aka: ["Yarilo (Russian)", "Ярило (Cyrillic)", "Jarila", "Jarilo / Jarila (d
 tradition: "Pre-Christian Slavic"
 region: "Eastern and Central Europe — Russia, Ukraine, Belarus, Poland, Balkans"
 period-active-earliest: -500
-period-active-latest:
+period-active-latest: 988
 domains: ["spring", "grain", "fertility", "sexuality", "vegetation cycle", "death-and-renewal", "the green world"]
 gender: "masculine (sometimes androgynous in folk performance)"
 role: "dying-and-rising god of spring and grain / vegetation deity / seasonal-cycle embodiment"

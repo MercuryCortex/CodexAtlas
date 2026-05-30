@@ -8,6 +8,8 @@ tradition: tradition-maya-religion
 date_earliest: -300
 date_latest: 900
 region: "Classic Maya civilization (Yucatan Peninsula, Guatemala, Belize, Chiapas)"
+period-active-earliest: -300
+period-active-latest: 1697
 family: Maya
 gender: male
 domain: ["rain", "lightning", "water", "agriculture", "fertility"]

@@ -6,7 +6,7 @@ aka: ["Μνημοσύνη ('Memory')"]
 tradition: "Greek religion (esp. Orphic + Pythagorean)"
 region: "Greece"
 period-active-earliest: -800
-period-active-latest:
+period-active-latest: 400
 domains: ["memory", "the Muses (her nine daughters)", "the spring of memory at Lethe's edge (Orphic afterlife)"]
 gender: "feminine"
 role: "Titan goddess of memory and mother of the Muses"

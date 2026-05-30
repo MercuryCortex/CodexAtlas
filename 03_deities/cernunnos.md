@@ -6,7 +6,7 @@ aka: ["the Horned One", "the Gundestrup-cauldron figure"]
 tradition: "Celtic paganism (Gallo-Roman + Insular substrate)"
 region: "Gaul (chief evidence), Britain, the Gundestrup cauldron (found Denmark, Celtic-Thracian workmanship c. -150 to -50)"
 period-active-earliest: -400
-period-active-latest:
+period-active-latest: 400
 domains: ["antlered nature", "wild animals", "abundance", "the otherworld passage", "the chthonic underworld"]
 gender: "masculine"
 role: "antlered nature-god / lord-of-the-animals (potnios theron)"

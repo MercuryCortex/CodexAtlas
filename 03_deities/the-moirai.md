@@ -6,7 +6,7 @@ aka: ["Μοῖραι", "the Fates", "Klotho / Lachesis / Atropos", "Parcae (Roma
 tradition: "Greek religion"
 region: "Greece — pan-Hellenic"
 period-active-earliest: -800
-period-active-latest:
+period-active-latest: 400
 domains: ["allotment of destiny", "lifespan", "the cosmic thread"]
 gender: "feminine (triad)"
 role: "Fate-allotting goddesses"
