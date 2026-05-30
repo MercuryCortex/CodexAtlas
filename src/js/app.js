@@ -4626,7 +4626,6 @@ const SCRIPTURE_CORPORA = {
         { id: 'phase-7-005-isis-unveiled', label: 'Isis Unveiled' },
         { id: 'phase-7-006-secret-doctrine', label: 'The Secret Doctrine' },
         { id: 'phase-7-034-blavatsky-atlantis-root-race', label: 'The Atlantean (Fourth) Root-Race Doctrine in The Secret Doctrine, Vol. II' },
-        { id: 'phase-7-009-outline-of-esoteric-science', label: 'An Outline of Esoteric Science' },
       ]},
     ],
   },
@@ -4747,6 +4746,193 @@ const SCRIPTURE_CORPORA = {
     sections: [
       { id: 'theravada-jataka-corpus-main', label: "Theravada Buddhism", color: '#7a4a9a', books: [
         { id: 'jataka-tales', label: 'Jataka Tales' },
+      ]},
+    ],
+  },
+  'hindu-modernism-corpus': {
+    label: "Hindu Modernism \u2014 Aurobindo / Yogananda / Hindutva (1920-1956)",
+    available: true,
+    sections: [
+      { id: 'hindu-modernism-corpus-main', label: "Hindu Modernism \u2014 Aurobindo / Yogananda / Hindutva (1920-1956)", color: '#bb6655', books: [
+        { id: 'phase-7-026-autobiography-of-a-yogi', label: 'Autobiography of a Yogi' },
+        { id: 'phase-7-027-life-divine', label: 'The Life Divine' },
+        { id: 'phase-7-029-hindutva', label: 'Hindutva: Who Is a Hindu?' },
+      ]},
+    ],
+  },
+  'rastafari-corpus': {
+    label: "Rastafari (Jamaica, 1930)",
+    available: true,
+    sections: [
+      { id: 'rastafari-corpus-main', label: "Rastafari (Jamaica, 1930)", color: '#5a8a3a', books: [
+        { id: 'phase-8-008-kebra-nagast', label: 'Kebra Nagast' },
+        { id: 'tradition-rastafari', label: 'tradition-rastafari' },
+        { id: 'wolega-tafari-makonnen-haile-selassie', label: 'wolega-tafari-makonnen-haile-selassie' },
+      ]},
+    ],
+  },
+  'tibetan-vajrayana-corpus': {
+    label: "Tibetan Vajrayana Buddhism (Nyingma / Kagyu / Sakya / Gelug)",
+    available: true,
+    sections: [
+      { id: 'tibetan-vajrayana-corpus-main', label: "Tibetan Vajrayana Buddhism (Nyingma / Kagyu / Sakya / Gelug)", color: '#cc9966', books: [
+        { id: 'phase-5-029-bardo-thodol', label: 'Bardo Thödöl (Tibetan Book of the Dead)' },
+      ]},
+    ],
+  },
+  'pure-land-buddhist-corpus': {
+    label: "Pure Land Buddhism (Jodo / Jodo-Shinshu / Chinese Jingtu)",
+    available: true,
+    sections: [
+      { id: 'pure-land-buddhist-corpus-main', label: "Pure Land Buddhism (Jodo / Jodo-Shinshu / Chinese Jingtu)", color: '#8866aa', books: [
+        { id: 'phase-4-104-sukhavativyuha-larger', label: 'Larger Sukhāvatīvyūha Sūtra (Larger Pure Land Sūtra)' },
+      ]},
+    ],
+  },
+  'madhyamaka-prajnaparamita-corpus': {
+    label: "Madhyamaka school + Praj\u00f1\u0101p\u0101ramit\u0101 literature",
+    available: true,
+    sections: [
+      { id: 'madhyamaka-prajnaparamita-corpus-main', label: "Madhyamaka school + Praj\u00f1\u0101p\u0101ramit\u0101 literature", color: '#3a8a8a', books: [
+        { id: 'phase-4-075-mulamadhyamakakarika', label: 'Mūlamadhyamakakārikā (Root Verses on the Middle Way)' },
+        { id: 'phase-3-031-asthasahasrika-prajnaparamita', label: 'Aṣṭasāhasrikā Prajñāpāramitā' },
+        { id: 'phase-5-002-heart-sutra', label: 'Heart Sutra' },
+        { id: 'phase-5-002b-diamond-sutra', label: 'Diamond Sutra (Vajracchedikā Prajñāpāramitā)' },
+        { id: 'diamond-sutra-868', label: 'Diamond Sutra 868' },
+      ]},
+    ],
+  },
+  'yogacara-corpus': {
+    label: "Yogacara / Vij\u00f1\u0101nav\u0101da school",
+    available: true,
+    sections: [
+      { id: 'yogacara-corpus-main', label: "Yogacara / Vij\u00f1\u0101nav\u0101da school", color: '#aa3a5a', books: [
+        { id: 'phase-4-103-lankavatara-sutra', label: 'Laṅkāvatāra Sūtra' },
+        { id: 'phase-4-077-abhidharmakosa', label: 'Abhidharmakośa (Treasury of Abhidharma)' },
+      ]},
+    ],
+  },
+  'chinese-mahayana-chan-huayan-tiantai': {
+    label: "Chinese Buddhism (Chan / Huayan / Tiantai)",
+    available: true,
+    sections: [
+      { id: 'chinese-mahayana-chan-huayan-tiantai-main', label: "Chinese Buddhism (Chan / Huayan / Tiantai)", color: '#5a9a8f', books: [
+        { id: 'phase-5-004-platform-sutra-huineng', label: 'Platform Sutra of the Sixth Patriarch' },
+        { id: 'phase-5-002b-diamond-sutra', label: 'Diamond Sutra (Vajracchedikā Prajñāpāramitā)' },
+        { id: 'diamond-sutra-868', label: 'Diamond Sutra 868' },
+        { id: 'avatamsaka-sutra', label: 'Avatamsaka Sutra' },
+      ]},
+    ],
+  },
+  'twelver-shia-hadith-corpus': {
+    label: "Twelver Shia hadith & imami doctrine (Kutub al-Arba'a)",
+    available: true,
+    sections: [
+      { id: 'twelver-shia-hadith-corpus-main', label: "Twelver Shia hadith & imami doctrine (Kutub al-Arba'a)", color: '#cc8855', books: [
+        { id: 'phase-5-058-nahj-al-balagha', label: 'Nahj al-Balāgha' },
+      ]},
+    ],
+  },
+  'swedenborgian-new-church': {
+    label: "Swedenborgian / New Church (Church of the New Jerusalem)",
+    available: true,
+    sections: [
+      { id: 'swedenborgian-new-church-main', label: "Swedenborgian / New Church (Church of the New Jerusalem)", color: '#aaaa3a', books: [
+        { id: 'phase-6-027-swedenborg-arcana-heaven-and-hell', label: 'Arcana Coelestia + Heaven and Hell' },
+      ]},
+    ],
+  },
+  'hesychast-philokalia-corpus': {
+    label: "Hesychast / Athonite mystical tradition (Philokalia)",
+    available: true,
+    sections: [
+      { id: 'hesychast-philokalia-corpus-main', label: "Hesychast / Athonite mystical tradition (Philokalia)", color: '#6a3a8a', books: [
+        { id: 'phase-5-030-palamas-triads', label: 'The Triads' },
+        { id: 'phase-5-003-maximus-confessor-ambigua', label: 'Ambigua and Mystagogia (Maximus the Confessor)' },
+      ]},
+    ],
+  },
+  'rosicrucian-corpus': {
+    label: "Rosicrucianism",
+    available: true,
+    sections: [
+      { id: 'rosicrucian-corpus-main', label: "Rosicrucianism", color: '#3aaa6a', books: [
+        { id: 'phase-6-018-rosicrucian-manifestos', label: 'Fama Fraternitatis + Confessio Fraternitatis' },
+        { id: 'phase-6-021-andreae-chymical-wedding', label: 'Chymical Wedding of Christian Rosenkreutz' },
+      ]},
+    ],
+  },
+  'freemasonry-corpus': {
+    label: "Freemasonry",
+    available: true,
+    sections: [
+      { id: 'freemasonry-corpus-main', label: "Freemasonry", color: '#8a3aaa', books: [
+        { id: 'phase-6-026-anderson-constitutions-free-masons', label: 'The Constitutions of the Free-Masons' },
+      ]},
+    ],
+  },
+  'anthroposophy-corpus': {
+    label: "Anthroposophy (Steiner 1912 split)",
+    available: true,
+    sections: [
+      { id: 'anthroposophy-corpus-main', label: "Anthroposophy (Steiner 1912 split)", color: '#aa5a3a', books: [
+        { id: 'phase-7-009-outline-of-esoteric-science', label: 'An Outline of Esoteric Science' },
+      ]},
+    ],
+  },
+  'renaissance-magic-corpus': {
+    label: "Renaissance Christian-Hermetic-Kabbalistic Magic",
+    available: true,
+    sections: [
+      { id: 'renaissance-magic-corpus-main', label: "Renaissance Christian-Hermetic-Kabbalistic Magic", color: '#6655aa', books: [
+        { id: 'phase-6-009-agrippa-de-occulta-philosophia', label: 'De Occulta Philosophia Libri Tres' },
+        { id: 'phase-6-012-dee-monas-hieroglyphica', label: 'Monas Hieroglyphica' },
+        { id: 'phase-6-043-dee-libri-mysteriorum-enochian', label: 'Libri Mysteriorum — Dee\'s Angelic Conversations and the Enochian System' },
+        { id: 'phase-6-003-pico-oration-900-conclusions', label: 'Oration on the Dignity of Man + 900 Conclusions' },
+        { id: 'phase-6-004-pico-heptaplus-conclusiones-cabalisticae', label: 'Heptaplus + Conclusiones Cabalisticae' },
+        { id: 'phase-6-006-reuchlin-de-arte-cabalistica', label: 'De Arte Cabalistica' },
+        { id: 'phase-6-022-fludd-utriusque-cosmi-historia', label: 'Utriusque Cosmi Historia' },
+        { id: 'phase-6-024-kircher-oedipus-aegyptiacus', label: 'Oedipus Aegyptiacus' },
+        { id: 'phase-6-034-khunrath-amphitheatrum-sapientiae', label: 'Amphitheatrum Sapientiae Aeternae' },
+        { id: 'phase-6-052-kircher-ars-magna-lucis', label: 'Ars Magna Lucis et Umbrae' },
+      ]},
+    ],
+  },
+  'western-alchemy-corpus': {
+    label: "Western Alchemical Tradition",
+    available: true,
+    sections: [
+      { id: 'western-alchemy-corpus-main', label: "Western Alchemical Tradition", color: '#aa9a3a', books: [
+        { id: 'phase-6-032-rosarium-philosophorum', label: 'Rosarium Philosophorum (Rosary of the Philosophers)' },
+        { id: 'phase-6-033-splendor-solis', label: 'Splendor Solis' },
+        { id: 'phase-6-035-maier-atalanta-fugiens', label: 'Atalanta Fugiens (Fleeing Atalanta)' },
+        { id: 'phase-6-036-mutus-liber', label: 'Mutus Liber (The Mute Book)' },
+        { id: 'phase-6-045-sendivogius-novum-lumen-chymicum', label: 'Novum Lumen Chymicum (New Light of Alchemy)' },
+        { id: 'phase-6-046-ripley-compound-of-alchemy', label: 'The Compound of Alchemy / The Ripley Scroll' },
+        { id: 'phase-6-047-ashmole-theatrum-chemicum-britannicum', label: 'Theatrum Chemicum Britannicum' },
+        { id: 'phase-6-048-basil-valentine-twelve-keys', label: 'Zwölf Schlüssel / Les Douze Clefs de Philosophie (Twelve Keys)' },
+        { id: 'phase-6-049-starkey-secrets-revealed', label: 'Secrets Reveal\'d / Introitus Apertus ad Occlusum Regis Palatium' },
+        { id: 'phase-6-051-mylius-philosophia-reformata', label: 'Philosophia Reformata' },
+        { id: 'phase-6-008-paracelsus-corpus', label: 'Paracelsus\' Theological-Medical-Alchemical Corpus' },
+      ]},
+    ],
+  },
+  'polish-frankism-sabbatean-corpus': {
+    label: "Sabbatean-Frankist movement",
+    available: true,
+    sections: [
+      { id: 'polish-frankism-sabbatean-corpus-main', label: "Sabbatean-Frankist movement", color: '#5a8aaa', books: [
+        { id: 'phase-6-025-nathan-of-gaza-treatise-on-dragons', label: 'Drush ha-Tanninim (Treatise on the Dragons) + Sabbatean writings' },
+        { id: 'phase-6-026-jacob-frank-words-of-the-lord', label: 'The Words of the Lord (Jacob Frank)' },
+      ]},
+    ],
+  },
+  'finno-karelian-corpus': {
+    label: "Pre-Christian Finnish / Karelian (Finno-Ugric)",
+    available: true,
+    sections: [
+      { id: 'finno-karelian-corpus-main', label: "Pre-Christian Finnish / Karelian (Finno-Ugric)", color: '#aa6a5a', books: [
+        { id: 'phase-8-018-kalevala', label: 'Kalevala' },
       ]},
     ],
   },

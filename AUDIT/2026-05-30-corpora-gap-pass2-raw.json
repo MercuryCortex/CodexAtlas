@@ -1,0 +1,356 @@
+{
+  "summary": "Second-pass gap audit — find ANY remaining missing corpora across NRMs / sub-traditions / ancient-extinct / esoteric / Latin-American / pre-Christian European",
+  "agentCount": 7,
+  "logs": [
+    "Pass-2 goblins complete: 6/6"
+  ],
+  "result": {
+    "summary": "Pass-2 surfaced 53 candidate gaps across 6 regions (NRMs, sub-traditions of covered religions, ancient extinct, esoteric/occult, Latin American syncretic, pre-Christian European/Caucasian/Central Asian). After deduplication and merging the two Swedenborgian proposals, 22 are HIGH priority with vault docs ready to assign (the strongest cluster is Buddhist sub-traditions: Tibetan Vajrayana, Pure Land, Madhyamaka, Yogacara, Chinese Mahayana — all have multiple unrouted docs already in vault, plus Akbari/Hasidic gaps and the Rosicrucian/Freemasonry/Renaissance-Magic/Western-Alchemy esoteric block where ~25 vault docs sit unrouted). MEDIUM priority adds (Lane A queue) cluster around Latin American syncretism (Candomblé, Umbanda, Santa Muerte, Espiritismo, Guadalupan, Palo Mayombe, 21 Divisiones, María Lionza) and pre-Christian European substrate (Baltic, Slavic, Armenian, Nart sagas, Tocharian Buddhism, Sogdian, Anglo-Saxon heathenry, Coptic, Armenian Apostolic). LOW/SKIP includes UFO religions, apocalyptic cult canon, Nabataean/Palmyrene epigraphic-only corpora, Curanderismo (medical/sacred border), Abakuá, Quimbanda, Sámi (oral-substrate), Georgian Kartvelian, Rajneesh sermon-canon, and OTO/Fortune which overlap with thelema-corpus. Two genuine overlaps flagged: the two Swedenborgian proposals are duplicates of each other, and Hindu-modernism partially overlaps with the existing south-asian-modernism corpus (needs Lane A judgement on whether to split).",
+    "high_priority_adds": [
+      {
+        "corpus_id": "hindu-modernism-corpus",
+        "religion_label": "Hindu Modernism — Aurobindo / Yogananda / Hindutva (1920-1956)",
+        "rationale": "Three vault docs unrouted with strong Tier-1 scholarship (De Michelis, Foxen, Jaffrelot). Distinct from south-asian-modernism (Ambedkar/Iqbal) — this is Hindu-modernist canon proper. NOTE Lane A: verify no overlap collision with south-asian-modernism scope.",
+        "docs_to_assign": [
+          "phase-7-026-autobiography-of-a-yogi",
+          "phase-7-027-life-divine",
+          "phase-7-029-hindutva"
+        ]
+      },
+      {
+        "corpus_id": "rastafari-corpus",
+        "religion_label": "Rastafari (Jamaica, 1930)",
+        "rationale": "Substantial textual canon with vault docs ready (Kebra Nagast, tradition node, Haile Selassie). Lane A would add Promised Key + Holy Piby. Tier-1 sources (Chevannes, Edmonds, Bedasse) all university-press.",
+        "docs_to_assign": [
+          "phase-8-008-kebra-nagast",
+          "tradition-rastafari",
+          "wolega-tafari-makonnen-haile-selassie"
+        ]
+      },
+      {
+        "corpus_id": "tibetan-vajrayana-corpus",
+        "religion_label": "Tibetan Vajrayana Buddhism (Nyingma / Kagyu / Sakya / Gelug)",
+        "rationale": "Single largest unrepresented Buddhist family. Separate canon (Kangyur 108 vols + Tengyur 224 vols + terma). Bardo Thodol already in vault. zen-japanese-canon covers Zen only.",
+        "docs_to_assign": [
+          "phase-5-029-bardo-thodol"
+        ]
+      },
+      {
+        "corpus_id": "pure-land-buddhist-corpus",
+        "religion_label": "Pure Land Buddhism (Jodo / Jodo-Shinshu / Chinese Jingtu)",
+        "rationale": "Numerically largest East Asian Buddhist tradition. Three-sutra canon + Shinran's Kyogyoshinsho + Honen + Tannisho. Vault has Larger Sukhavativyuha ready.",
+        "docs_to_assign": [
+          "phase-4-104-sukhavativyuha-larger"
+        ]
+      },
+      {
+        "corpus_id": "madhyamaka-prajnaparamita-corpus",
+        "religion_label": "Madhyamaka school + Prajñāpāramitā literature",
+        "rationale": "Foundational Mahayana philosophical school cutting across Indian/Chinese/Tibetan Buddhism. 5 vault docs unrouted (MMK, Ashtasahasrika, Heart, Diamond, Diamond-868).",
+        "docs_to_assign": [
+          "phase-4-075-mulamadhyamakakarika",
+          "phase-3-031-asthasahasrika-prajnaparamita",
+          "phase-5-002-heart-sutra",
+          "phase-5-002b-diamond-sutra",
+          "diamond-sutra-868"
+        ]
+      },
+      {
+        "corpus_id": "yogacara-corpus",
+        "religion_label": "Yogacara / Vijñānavāda school",
+        "rationale": "Second great Mahayana philosophical school (Asanga, Vasubandhu, Dignaga, Dharmakirti). Foundational for East Asian Buddhism. 2 vault docs ready.",
+        "docs_to_assign": [
+          "phase-4-103-lankavatara-sutra",
+          "phase-4-077-abhidharmakosa"
+        ]
+      },
+      {
+        "corpus_id": "chinese-mahayana-chan-huayan-tiantai",
+        "religion_label": "Chinese Buddhism (Chan / Huayan / Tiantai)",
+        "rationale": "Three indigenous Chinese Mahayana schools with own canonical texts before Japanese transmission. 4 vault docs ready (Platform Sutra, Diamond, Diamond-868, Avatamsaka). Note Diamond Sutra docs co-occur with Madhyamaka — Lane A should pick primary corpus.",
+        "docs_to_assign": [
+          "phase-5-004-platform-sutra-huineng",
+          "phase-5-002b-diamond-sutra",
+          "diamond-sutra-868",
+          "avatamsaka-sutra"
+        ]
+      },
+      {
+        "corpus_id": "twelver-shia-hadith-corpus",
+        "religion_label": "Twelver Shia hadith & imami doctrine (Kutub al-Arba'a)",
+        "rationale": "Distinct hadith canon (Kafi, Faqih, Tahdhib, Istibsar = Four Books) + Nahj al-Balagha + Sahifa. Current shia-corpus too broad — Twelver imami textual tradition needs own canon (Ismaili already has own corpus).",
+        "docs_to_assign": [
+          "phase-5-058-nahj-al-balagha"
+        ]
+      },
+      {
+        "corpus_id": "swedenborgian-new-church",
+        "religion_label": "Swedenborgian / New Church (Church of the New Jerusalem)",
+        "rationale": "30-volume Latin theological corpus founded distinct denomination still active. Influence on Blake, James, Borges. Currently mis-filed under christian-theosophy alongside Boehme (different lineage). NOTE: pass-2 produced two duplicate proposals (esoteric region + sub-tradition region) for the same corpus — same vault doc, same canon. Treat as one corpus.",
+        "docs_to_assign": [
+          "phase-6-027-swedenborg-arcana-heaven-and-hell"
+        ]
+      },
+      {
+        "corpus_id": "hesychast-philokalia-corpus",
+        "religion_label": "Hesychast / Athonite mystical tradition (Philokalia)",
+        "rationale": "Distinct Eastern Orthodox mystical sub-canon (Evagrius, Macarian Homilies, Symeon, Palamas, Philokalia 1782). byzantine-orthodox covers liturgical/conciliar only. 2 vault docs ready.",
+        "docs_to_assign": [
+          "phase-5-030-palamas-triads",
+          "phase-5-003-maximus-confessor-ambigua"
+        ]
+      },
+      {
+        "corpus_id": "rosicrucian-corpus",
+        "religion_label": "Rosicrucianism",
+        "rationale": "Defined manifesto canon (Fama 1614, Confessio 1615, Chymische Hochzeit 1616). Currently in SCRIPTURE_IDS list but unrouted to any of 83 corpora. Yates-canonized as discrete textual tradition.",
+        "docs_to_assign": [
+          "phase-6-018-rosicrucian-manifestos",
+          "phase-6-021-andreae-chymical-wedding"
+        ]
+      },
+      {
+        "corpus_id": "freemasonry-corpus",
+        "religion_label": "Freemasonry",
+        "rationale": "Recognized textual canon (Old Charges, Anderson Constitutions 1723, published ritual exposures, Pike's Morals and Dogma). Anderson doc in vault but unrouted. Brill Handbook of Freemasonry validates as scholarly object.",
+        "docs_to_assign": [
+          "phase-6-026-anderson-constitutions-free-masons"
+        ]
+      },
+      {
+        "corpus_id": "anthroposophy-corpus",
+        "religion_label": "Anthroposophy (Steiner 1912 split)",
+        "rationale": "Distinct tradition with own Christology + threefold-human + biodynamic + Waldorf canon. Steiner's Outline of Esoteric Science MIS-FILED under theosophy-corpus despite explicit 1912 break from Adyar. Critical re-classification.",
+        "docs_to_assign": [
+          "phase-7-009-outline-of-esoteric-science"
+        ]
+      },
+      {
+        "corpus_id": "renaissance-magic-corpus",
+        "religion_label": "Renaissance Christian-Hermetic-Kabbalistic Magic",
+        "rationale": "Yates' 'Hermetic Tradition' thesis canonizes this as recognized textual lineage distinct from late-antique Hermetica. 10 vault docs unrouted or awkwardly sitting under hermetica's 'Renaissance recovery' section — largest single block of unrouted esoteric docs.",
+        "docs_to_assign": [
+          "phase-6-009-agrippa-de-occulta-philosophia",
+          "phase-6-012-dee-monas-hieroglyphica",
+          "phase-6-043-dee-libri-mysteriorum-enochian",
+          "phase-6-003-pico-oration-900-conclusions",
+          "phase-6-004-pico-heptaplus-conclusiones-cabalisticae",
+          "phase-6-006-reuchlin-de-arte-cabalistica",
+          "phase-6-022-fludd-utriusque-cosmi-historia",
+          "phase-6-024-kircher-oedipus-aegyptiacus",
+          "phase-6-034-khunrath-amphitheatrum-sapientiae",
+          "phase-6-052-kircher-ars-magna-lucis"
+        ]
+      },
+      {
+        "corpus_id": "western-alchemy-corpus",
+        "religion_label": "Western Alchemical Tradition",
+        "rationale": "Latin/vernacular alchemical canon (13th-18th c.) — Rosarium, Splendor Solis, Mutus Liber, Atalanta Fugiens, Twelve Keys, etc. hermetica-alchemical only has late-antique (Tabula Smaragdina + Zosimos). 11 vault docs unrouted.",
+        "docs_to_assign": [
+          "phase-6-032-rosarium-philosophorum",
+          "phase-6-033-splendor-solis",
+          "phase-6-035-maier-atalanta-fugiens",
+          "phase-6-036-mutus-liber",
+          "phase-6-045-sendivogius-novum-lumen-chymicum",
+          "phase-6-046-ripley-compound-of-alchemy",
+          "phase-6-047-ashmole-theatrum-chemicum-britannicum",
+          "phase-6-048-basil-valentine-twelve-keys",
+          "phase-6-049-starkey-secrets-revealed",
+          "phase-6-051-mylius-philosophia-reformata",
+          "phase-6-008-paracelsus-corpus"
+        ]
+      },
+      {
+        "corpus_id": "polish-frankism-sabbatean-corpus",
+        "religion_label": "Sabbatean-Frankist movement",
+        "rationale": "Heretical-Kabbalistic stream that Scholem canonizes as distinct. Vault has Nathan of Gaza + Jacob Frank docs sitting between rabbinic-corpus and kabbalistic-corpus belonging to neither. Maciejko (Penn UP) + Goldish (Harvard) = Tier-1.",
+        "docs_to_assign": [
+          "phase-6-025-nathan-of-gaza-treatise-on-dragons",
+          "phase-6-026-jacob-frank-words-of-the-lord"
+        ]
+      },
+      {
+        "corpus_id": "finno-karelian-corpus",
+        "religion_label": "Pre-Christian Finnish / Karelian (Finno-Ugric)",
+        "rationale": "Kalevala (Lönnrot 1849) + SKVR 34-vol runo-archive = real textual corpus, not undocumented oral. Vault has phase-8-018-kalevala with Bosley/Pentikäinen Tier-1 refs already wired.",
+        "docs_to_assign": [
+          "phase-8-018-kalevala"
+        ]
+      }
+    ],
+    "medium_priority_adds": [
+      {
+        "corpus_id": "unification-church-corpus",
+        "religion_label": "Unification Church / Family Federation (Sun Myung Moon, 1954)",
+        "rationale": "Divine Principle is fully developed Korean-Christian-syncretic scripture. Sun Myung Moon person node already in vault. Lane A would add Divine Principle as document node."
+      },
+      {
+        "corpus_id": "iskcon-gaudiya-corpus",
+        "religion_label": "ISKCON / Hare Krishna (Bhaktivedanta Swami, 1966)",
+        "rationale": "Massive Prabhupada canon (Gita As It Is, 18-vol Bhagavatam purports, Caitanya-caritamrta translation, Nectar of Devotion). Vault has medieval Gaudiya lineage but no Prabhupada modern-revival docs yet."
+      },
+      {
+        "corpus_id": "soka-gakkai-corpus",
+        "religion_label": "Soka Gakkai / Nichiren Buddhism modern (Japan, 1930 / global SGI)",
+        "rationale": "Gosho (Writings of Nichiren Daishonin canonical form) + Makiguchi Soka kyoikugaku + Ikeda Human Revolution. Distinct from medieval Nichiren by founder-charisma + lay-organization model. ~12M SGI members."
+      },
+      {
+        "corpus_id": "falun-gong-corpus",
+        "religion_label": "Falun Gong / Falun Dafa (Li Hongzhi, China 1992)",
+        "rationale": "Zhuan Falun (1995) foundational nine-lecture canon + Falun Gong (1993) + Essentials. Tens of millions of pre-1999 adherents. Distinct qigong-Buddhist-Daoist syncretic textual tradition. Ownby/Penny/Palmer = Tier-1."
+      },
+      {
+        "corpus_id": "sant-mat-radhasoami-corpus",
+        "religion_label": "Sant Mat / Radhasoami (Shiv Dayal Singh, Agra 1861)",
+        "rationale": "19th-century revivalist neo-Sant lineage distinct from medieval sant-nirguna-corpus. Own initiation chain + canon (Sar Bachan, Mat Prakash). Spawned Eckankar + Divine Light Mission. Juergensmeyer (Princeton UP) Tier-1."
+      },
+      {
+        "corpus_id": "brahma-kumaris-corpus",
+        "religion_label": "Brahma Kumaris (Lekhraj Kripalani, 1936)",
+        "rationale": "Murli daily-channeled discourses since 1936 (Sakar + Avyakt). Distinct cyclical-cosmology theology + female-led raja yoga. ~1M global members. Babb (UC Press) Tier-1."
+      },
+      {
+        "corpus_id": "coptic-orthodox-corpus",
+        "religion_label": "Coptic Orthodox Church (Egyptian non-Chalcedonian)",
+        "rationale": "Distinct textual tradition: Shenoute homilies, Cyril of Alexandria anti-Nestorian, Pachomian rules, Apophthegmata, Synaxarium. patristic-corpus catches some Alexandrians but Coptic-as-tradition has no home. Athanasius vault docs would fit."
+      },
+      {
+        "corpus_id": "armenian-apostolic-corpus",
+        "religion_label": "Armenian Apostolic Church (non-Chalcedonian)",
+        "rationale": "Own scriptural recension (Mesrop Mashtots c.405), Sharakan hymnody, Gregory of Narek (Vatican Doctor of Church 2015), Khorenatsi, Koryun, Elishe. Earliest state Christianity (301 CE). No vault docs yet — Lane A queue."
+      },
+      {
+        "corpus_id": "hasidic-corpus",
+        "religion_label": "Hasidic Judaism (Tanya / Likutey Moharan / Noam Elimelech)",
+        "rationale": "Distinct teaching corpus separate from rabbinic and kabbalistic: Besht traditions, Schneur Zalman's Tanya (Chabad), Nachman of Breslov, Elimelech of Lizhensk, Kotzker. Millions of adherents. Idel/Etkes/Loewenthal = Tier-1."
+      },
+      {
+        "corpus_id": "akbari-school-corpus",
+        "religion_label": "Akbarī school (Ibn Arabi commentarial tradition)",
+        "rationale": "~7-century commentarial tradition propagating wahdat al-wujud across Ottoman/Persian/Mughal worlds (Qunawi, Jandi, Qaysari, Jami, Nabulusi). Most influential Sufi metaphysical lineage. Ibn Arabi Fusus vault doc would seed."
+      },
+      {
+        "corpus_id": "etruscan-disciplina",
+        "religion_label": "Etruscan religion (Etrusca Disciplina)",
+        "rationale": "Etrusca Disciplina (Libri Haruspicini/Fulgurales/Rituales) via Cicero + Pliny; Brontoscopic Calendar via John Lydus; Liber Linteus (longest extant Etruscan ritual text); Piacenza Liver. Turfa (Cambridge UP) Tier-1."
+      },
+      {
+        "corpus_id": "phoenician-punic-corpus",
+        "religion_label": "Phoenician / Punic religion",
+        "rationale": "Sanchuniathon via Philo of Byblos (Eusebius PE I.9-10); Marseille + Carthage Tariffs (KAI 69, 74-76); Pyrgi Tablets bilingual; KAI inscriptions. Iron Age West-Semitic distinct from Bronze Age Ugaritic already covered."
+      },
+      {
+        "corpus_id": "golden-dawn-corpus",
+        "religion_label": "Hermetic Order of the Golden Dawn",
+        "rationale": "Cipher Manuscripts + Mathers/Westcott rituals (Regardie 1937-40 4 vols) + Liber 777 + Concourse of the Forces. Owen (Chicago) Tier-1. No vault docs yet but bounded canon. Distinct from Thelema."
+      },
+      {
+        "corpus_id": "gurdjieff-fourth-way-corpus",
+        "religion_label": "Gurdjieff / Fourth Way",
+        "rationale": "Beelzebub's Tales + Meetings with Remarkable Men + Ouspensky's In Search of the Miraculous. Distinct from Theosophy/Anthroposophy/Sufism. Webb (Putnam) definitive. No vault docs yet."
+      },
+      {
+        "corpus_id": "espiritismo-kardecista-corpus",
+        "religion_label": "Espiritismo Kardecista",
+        "rationale": "Kardec pentalogy (Le Livre des Esprits 1857 etc.) codified textual canon underpinning Brazilian FEB + Caribbean Mesa Blanca. Hess (Penn State) Tier-1."
+      },
+      {
+        "corpus_id": "umbanda-corpus",
+        "religion_label": "Umbanda (Brazilian Afro-Catholic-Spiritist syncretism)",
+        "rationale": "Zélio de Moraes 1908 founding + Matta e Silva Umbanda de Todos Nós (1956) + Sete Linhas + orixá-saint syncretism manuals. MASSIVE-WINS node bridging Yoruba/Bantu/Kardec/Catholic/Indigenous. Brown (Columbia) Tier-1."
+      },
+      {
+        "corpus_id": "candomble-corpus",
+        "religion_label": "Candomblé (Ketu / Jeje / Angola nações)",
+        "rationale": "Largest Afro-Brazilian initiatic tradition currently INVISIBLE despite Ifá/Vodou/Santería being wired. Carneiro 1948 + Verger 1957 + Bastide 1958-60 = Tier-1 codification. Saint-orixá syncretism table is canonical textual artifact."
+      },
+      {
+        "corpus_id": "santa-muerte-corpus",
+        "religion_label": "Santa Muerte cult (Mexican folk-Catholic, 1965+)",
+        "rationale": "Codified prayer books since 1960s (Romo's Ritual 1998 + Rezos chapbook tradition + seven-color veladora doctrine). ~10-12M adherents per Chesnut (Oxford UP) Tier-1."
+      },
+      {
+        "corpus_id": "guadalupan-corpus",
+        "religion_label": "Mexican Folk Catholicism · Guadalupan-Nahua syncretism",
+        "rationale": "Nican Mopohua (1649) canonical Nahuatl Marian narrative fusing Catholic Mariology + Tonantzin/Coatlicue. Major MASSIVE-WINS node. Brading (Cambridge) + Lafaye (Chicago) Tier-1."
+      },
+      {
+        "corpus_id": "palo-mayombe-corpus",
+        "religion_label": "Palo Mayombe / Palo Monte (Cuban Bantu-Kongo)",
+        "rationale": "Distinct from Yoruba-Santería: BaKongo dikenga firma cosmograms + patipemba + prenda/nganga consecration + Nzambi/Sarabanda/Kobayende pantheon. Cabrera El Monte (1954) + Ochoa (California 2010) Tier-1."
+      },
+      {
+        "corpus_id": "21-divisions-corpus",
+        "religion_label": "Las 21 Divisiones (Dominican Vudú / Sanse)",
+        "rationale": "Structurally distinct from Haitian Vodou: 21 metresas/misterios in Rada/Petró/India/Negra/Blanca divisions; Belie Belcán/Anaísa Pyé/Candelo Sedifé pantheon. Sanse PR branch wedded to Mesa Blanca. Davis + Deive Tier-1."
+      },
+      {
+        "corpus_id": "maria-lionza-corpus",
+        "religion_label": "Culto a María Lionza (Venezuelan tri-ethnic)",
+        "rationale": "Tres Potencias (María Lionza + Negro Felipe + Cacique Guaicaipuro) fusing Catholic Marian + Afro-Venezuelan + Indigenous Caquetío. Pollak-Eltz (UCAB) + Ferrándiz (Deusto) Tier-1. Distinct from any other LatAm syncretism."
+      },
+      {
+        "corpus_id": "anglo-american-spiritualism-corpus",
+        "religion_label": "Anglo-American Spiritualism (Fox sisters → NSAC)",
+        "rationale": "Adjacent but not identical to Kardec: Hydesville 1848 + Andrew Jackson Davis Principles of Nature 1847 + NSAC Nine Principles 1899 + Conan Doyle History 1926. Parent-tradition of Theosophy + New Thought + channeling. Braude (Indiana) Tier-1."
+      },
+      {
+        "corpus_id": "tocharian-buddhist-corpus",
+        "religion_label": "Tocharian Buddhism (Kucha-Agni, 5th-10th c.)",
+        "rationale": "Tocharian A + B Buddhist corpus from Turfan/Kucha — Maitreyasamiti-Nāṭaka, Udānavarga, Karmavibhaṅga, jātakas. Thousands of manuscript fragments. Extinct Indo-European Buddhist sub-tradition. Sieg/Siegling + Pinault + Peyrot Tier-1."
+      },
+      {
+        "corpus_id": "sogdian-religious-corpus",
+        "religion_label": "Sogdian religion (Silk Road crossroads)",
+        "rationale": "Sogdian-language Zoroastrian + Manichaean + Christian + Buddhist texts from Turfan/Dunhuang. Unique Iranian crossroads tradition. Sims-Williams + Sundermann + Yoshida Tier-1."
+      },
+      {
+        "corpus_id": "anglo-saxon-pre-christian-corpus",
+        "religion_label": "Pre-Christian Anglo-Saxon / Old English heathenry",
+        "rationale": "Beowulf + Nine Herbs Charm + Lacnunga metrical charms + Maxims + Solomon and Saturn + Æcerbot + Bede HE ii.13. Recognized scholarly canon of survivals distinct from Norse-Eddic. North (Cambridge) Tier-1."
+      },
+      {
+        "corpus_id": "baltic-pre-christian-corpus",
+        "religion_label": "Pre-Christian Baltic + Romuva revival",
+        "rationale": "Latvju Dainas (Barons 1894-1915, ~218K quatrains — densest folk-religious archive in Europe) + Lithuanian dainos + Sudovian Book + Grunau Prussian Chronicle + Constitutiones Synodales Samogitiae. Romuva canonizes. Vėlius 4-vol Sources Tier-1."
+      },
+      {
+        "corpus_id": "slavic-pre-christian-corpus",
+        "religion_label": "Pre-Christian Slavic + Rodnovery revival",
+        "rationale": "Primary Chronicle (Vladimir's pantheon) + Igor Tale + Helmold Chronica Slavorum + Saxo Bk XIV + Zbruch idol. Must tag Book of Veles as 1950s fabrication per deviant-bridge tiering memory. Gieysztor + Aitamurto (Routledge) Tier-1."
+      },
+      {
+        "corpus_id": "armenian-pre-christian-corpus",
+        "religion_label": "Pre-Christian Armenian (Aramazd / Anahit / Vahagn)",
+        "rationale": "Khorenatsi preserves Vahagn birth-hymn + Agathangelos catalogues destroyed temples + Eznik of Kolb refutation + Tiridates/Anahit material. Heavily Iranicized but distinct. Russell (Harvard Iranian Series) + Petrosyan Tier-1."
+      },
+      {
+        "corpus_id": "ossetian-nart-corpus",
+        "religion_label": "Caucasian Nart sagas (Scytho-Sarmatian-Alanic survival)",
+        "rationale": "Documented heroic-religious corpus across Ossetian/Circassian/Abkhaz recensions. Dumézilian scholarship treats as closest witness to Scytho-Sarmatian-Alanic Iranian mythology (Wærzæron cup as Grail antecedent). Colarusso (Princeton) Tier-1."
+      }
+    ],
+    "low_or_skip": [
+      "rajneesh-osho-corpus — 650+ recorded discourse transcripts, no foundational scripture, doctrinally amorphous. Goblin's own LOW flag confirmed.",
+      "ufo-religions-corpus — Raelism/Aetherius/Heaven's Gate/Unarius. Canonical texts exist but contested/marginal scholarship; bundling four movements signals corpus is too thin to stand alone. Goblin flagged LOW.",
+      "apocalyptic-cult-canon-corpus — Branch Davidians/Peoples Temple/Family International. Historically important but doctrinally peripheral; canon preserved mainly in scholarly archives. Goblin self-flagged as possibly belonging in broader 'cult-canon' bucket. SKIP standalone status.",
+      "nabataean-corpus — Primarily epigraphic (no narrative sacred book survives). Marginal under John's criterion. Goblin flagged LOW pending Lane A decision on epigraphic-only corpora.",
+      "palmyrene-corpus — Same epigraphic-only constraint as Nabataean. Tariff Inscription + temple dedications but no narrative scripture. LOW pending Lane A judgement.",
+      "ordo-templi-orientis-corpus — Goblin explicitly notes overlap with existing thelema-corpus; arguably OTO is sub-tradition not standalone. Flag for Lane A: merge into thelema-corpus rather than spawn new.",
+      "fortune-inner-light-corpus — Dion Fortune Society of the Inner Light. Niche British esoteric order, clearly bounded canon but no vault docs and audience overlaps with golden-dawn-corpus. LOW.",
+      "martinism-corpus — Pasqually + Saint-Martin + Papus. Clear canon and Tier-1 scholarship (Faivre) but no vault docs and small footprint. LOW pending Lane A demand.",
+      "curanderismo-corpus — Border-zone: contested whether 'sacred-textual' or 'medical' per goblin. Códice Badianus is herbal pharmacopeia. SKIP unless Lane A explicitly wants medical-religious bridges.",
+      "abakua-corpus — Niche Cross River secret society, anaforuana script is recognized but small footprint vs. larger Cuban traditions (Santería + Palo). LOW.",
+      "quimbanda-corpus — Goblin notes border-zone status; sociologists treat as religion but contested by Umbandists. Risk of overlap with umbanda-corpus. LOW.",
+      "sami-religious-corpus — Goblin's own caveat: original tradition oral-shamanic; written corpus overwhelmingly missionary-second-hand. Borderline per criteria. LOW.",
+      "georgian-pre-christian-corpus — Smaller documented corpus, niche. LOW per goblin's own flag."
+    ],
+    "overlaps_with_existing": [
+      "swedenborgian-corpus / swedenborgian-new-church — DUPLICATE: pass-2 produced two separate proposals for the same Swedenborg corpus (one in sub-tradition region, one in esoteric region). Merge to single corpus. Both reference the same vault doc (phase-6-027-swedenborg-arcana-heaven-and-hell).",
+      "hindu-modernism-corpus vs existing south-asian-modernism — Partial overlap; goblin claims distinct (Aurobindo/Yogananda/Hindutva = Hindu-modernist proper vs Ambedkar/Iqbal in south-asian-modernism). Lane A must verify scope boundary before adding to avoid double-routing.",
+      "chinese-mahayana + madhyamaka — Diamond Sutra docs (phase-5-002b + diamond-sutra-868) appear in BOTH proposed corpora's docs_to_assign lists. Lane A must designate primary corpus; secondary corpus can cite-reference but should not own.",
+      "ordo-templi-orientis-corpus vs existing thelema-corpus — Goblin self-flags possible sub-tradition relationship. Liber AL + Magick in Theory and Practice already in thelema-corpus. SKIP as standalone; consider expanding thelema-corpus scope instead.",
+      "akbari-school-corpus vs existing sufi-persian + ibn-arabi-Fusus routing — Verify Akbari school distinct from broader sufi-persian umbrella before adding to prevent routing collision on Fusus al-Hikam doc."
+    ]
+  }
+}
