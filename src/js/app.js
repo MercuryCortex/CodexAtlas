@@ -3271,17 +3271,10 @@ const SCRIPTURE_CORPORA = {
     available: true,
     sections: [
       { id: 'pentateuch-sources', label: 'Pentateuch · source-critical strata', color: '#9aa55a', books: [
-        { id: 'phase-2-005-hebrew-bible-j-source',    label: 'J · Yahwist source' },
-        { id: 'phase-2-007-hebrew-bible-e-source',    label: 'E · Elohist source' },
-        { id: 'phase-2-011-hebrew-bible-d-source',    label: 'D · Deuteronomist' },
-        { id: 'phase-2-018-hebrew-bible-p-source',    label: 'P · Priestly source' },
       ]},
       { id: 'former-prophets', label: 'Former Prophets · Deuteronomistic History', color: '#8aa07a', books: [
-        { id: 'phase-2-010-hebrew-bible-early-prophets', label: 'Former Prophets' },
-        { id: 'phase-2-019-deuteronomistic-history',     label: 'Deuteronomistic History' },
       ]},
       { id: 'latter-prophets', label: 'Latter Prophets · Exilic poetry', color: '#7a9580', books: [
-        { id: 'phase-3-001-second-third-isaiah', label: 'Second & Third Isaiah' },
         { id: 'phase-2-020-lamentations',        label: 'Lamentations' },
       ]},
       { id: 'wisdom-writings', label: 'Wisdom & later writings', color: '#c4a05a', books: [
@@ -3298,25 +3291,17 @@ const SCRIPTURE_CORPORA = {
       { id: 'apocrypha-pseudepigrapha', label: 'Apocrypha & pseudepigrapha', color: '#a08850', books: [
         { id: 'phase-3-004-1-enoch',           label: '1 Enoch' },
         { id: 'phase-3-009-jubilees',          label: 'Jubilees' },
-        { id: 'phase-3-010-sibylline-oracles', label: 'Sibylline Oracles' },
-        { id: 'phase-3-011-dead-sea-scrolls',  label: 'Dead Sea Scrolls' },
       ]},
       { id: 'canonical-translations', label: 'Canonical translations & recensions', color: '#a8a3b8', books: [
-        { id: 'phase-3-006-septuagint',                 label: 'Septuagint (LXX) · Greek OT' },
-        { id: 'phase-4-108-peshitta',                   label: 'Peshitta · Syriac Bible (oldest continuous Bible translation)' },
-        { id: 'phase-4-080-garima-gospels',             label: 'Garima Gospels (Geʿez)' },
         { id: 'phase-4-081-mashafa-henok-geez-1-enoch', label: 'Mashafa Henok (Geʿez 1 Enoch)' },
-        { id: 'phase-4-082-ethiopic-biblical-canon',    label: 'Ethiopic 81-book canon' },
       ]},
       { id: 'pre-gospel', label: 'Pre-Gospel sources', color: '#d06868', books: [
-        { id: 'phase-3-014-q-source', label: 'Q source' },
       ]},
       { id: 'gospels', label: 'Gospels & harmony', color: '#c44a5a', books: [
         { id: 'phase-3-016-gospel-of-mark',    label: 'Mark' },
         { id: 'phase-3-017-gospel-of-matthew', label: 'Matthew' },
         { id: 'phase-3-018-luke-acts',         label: 'Luke–Acts' },
         { id: 'phase-3-020-gospel-of-john',    label: 'John' },
-        { id: 'phase-4-037-diatessaron',       label: 'Diatessaron (harmony)' },
       ]},
       { id: 'pauline', label: 'Pauline corpus', color: '#a83e4a', books: [
         { id: 'phase-3-015-pauline-epistles', label: 'Undisputed Paulines' },
@@ -3343,16 +3328,11 @@ const SCRIPTURE_CORPORA = {
       { id: 'egyptian-new-kingdom', label: 'New Kingdom · Book of the Dead + Amarna', color: '#6e8a5a', books: [
         { id: 'phase-1-010-book-of-the-dead',     label: 'Book of the Dead' },
         { id: 'phase-1-011-great-hymn-to-aten',   label: 'Great Hymn to Aten' },
-        { id: 'phase-1-012-amarna-letters',       label: 'Amarna Letters' },
       ]},
       { id: 'egyptian-theological-cosmological', label: 'Theological-cosmological inscriptions', color: '#4a6a7a', books: [
         { id: 'phase-1-027-memphite-theology-shabaka-stone', label: 'Memphite Theology (Shabaka Stone)' },
       ]},
       { id: 'egyptian-greek-transmission', label: 'Greek-Egyptian transmission (Ptolemaic-Roman)', color: '#80604a', books: [
-        { id: 'phase-3-025-manetho-aegyptiaca',           label: 'Manetho · Aegyptiaca' },
-        { id: 'phase-3-026-diodorus-bibliotheca-book-1',  label: 'Diodorus · Bibliotheca Bk 1' },
-        { id: 'phase-4-072-plutarch-de-iside-et-osiride', label: 'Plutarch · De Iside et Osiride' },
-        { id: 'phase-2-028-herodotus-histories-book-2',   label: 'Herodotus · Histories Bk 2' },
       ]},
     ],
   },
@@ -3370,13 +3350,8 @@ const SCRIPTURE_CORPORA = {
         { id: 'phase-2-040-orphic-gold-tablets',   label: 'Orphic Gold Tablets (~-400 to -200)' },
       ]},
       { id: 'greek-philosophical-theology', label: 'Philosophical theology (Plato-Aristotle-Neoplatonist)', color: '#5a7a8c', books: [
-        { id: 'phase-3-002-plato-dialogues',                label: 'Plato · Dialogues' },
-        { id: 'phase-3-022-plato-timaeus-critias-atlantis', label: 'Plato · Timaeus + Critias' },
-        { id: 'phase-3-003-aristotle-metaphysics',          label: 'Aristotle · Metaphysics' },
-        { id: 'phase-4-022-chaldean-oracles',                    label: 'Chaldean Oracles (~2nd c. CE) · Neoplatonist scripture' },
       ]},
       { id: 'greek-ethnographic-theological', label: 'Ethnographic-theological (Greek-Egyptian)', color: '#4f6d80', books: [
-        { id: 'phase-2-028-herodotus-histories-book-2', label: 'Herodotus · Histories Bk 2 (Egypt)' },
       ]},
     ],
   },
@@ -3390,17 +3365,10 @@ const SCRIPTURE_CORPORA = {
     available: true,
     sections: [
       { id: 'tanakh-torah', label: 'Torah · source-critical strata', color: '#9aa55a', books: [
-        { id: 'phase-2-005-hebrew-bible-j-source', label: 'J · Yahwist source' },
-        { id: 'phase-2-007-hebrew-bible-e-source', label: 'E · Elohist source' },
-        { id: 'phase-2-011-hebrew-bible-d-source', label: 'D · Deuteronomist' },
-        { id: 'phase-2-018-hebrew-bible-p-source', label: 'P · Priestly source' },
       ]},
       { id: 'tanakh-nevi-im-rishonim', label: 'Neviʼim Rishonim · Former Prophets', color: '#8aa07a', books: [
-        { id: 'phase-2-010-hebrew-bible-early-prophets', label: 'Former Prophets' },
-        { id: 'phase-2-019-deuteronomistic-history',     label: 'Deuteronomistic History' },
       ]},
       { id: 'tanakh-nevi-im-aharonim', label: 'Neviʼim Aharonim · Latter Prophets', color: '#7a9580', books: [
-        { id: 'phase-3-001-second-third-isaiah', label: 'Second & Third Isaiah' },
       ]},
       { id: 'tanakh-ketuvim', label: 'Ketuvim · Writings', color: '#a09a78', books: [
         { id: 'phase-2-034-books-of-kings',  label: 'Books of Kings' },
@@ -3412,7 +3380,6 @@ const SCRIPTURE_CORPORA = {
         { id: 'phase-2-020-lamentations',    label: 'Lamentations' },
       ]},
       { id: 'tanakh-qumran-matrix', label: 'Qumran textual matrix', color: '#a8a3b8', books: [
-        { id: 'phase-3-011-dead-sea-scrolls', label: 'Dead Sea Scrolls' },
       ]},
     ],
   },
@@ -3433,39 +3400,6 @@ const SCRIPTURE_CORPORA = {
   // Cross-corpus MASSIVE WIN: Moses/Mūsā hovers light up both Bible canvas (J+E+D+P
   // source-critical strata) and Quran canvas (Late-Meccan + Medinan surahs). Mary/Maryam
   // → Luke+Matthew+John (Bible) + Sūrat Maryam 19 + Āl ʿImrān 3 (Quran). -----
-  'quran': {
-    label: 'Qurʾān · Meccan–Medinan chronological order (Nöldeke)',
-    available: true,
-    sections: [
-      // Early Meccan: eschatological proclamation, Day of Judgment, spiritual
-      // awakening. The shortest, most rhythmically intense surahs (mostly short
-      // rhymed proclamations). Muhammad's earliest revelations.
-      { id: 'quran-early-meccan', label: 'Early Meccan (~610–617 CE) · eschatological proclamation', color: '#7a5a3a', books: [
-        { id: 'phase-4-034-quran', label: 'Early Meccan surahs (96, 74, 73, 111, 81, 87, 92, 89, 93, 94, 103, 100, 108, 102, 107, 109, 105, 113, 114, 112, 53, 80, 97, 91, 85, 95, 106, 101, 75, 104, 77)' },
-      ]},
-      // Middle Meccan: Biblical narrative integration. The great prophetic
-      // punishment-stories (ʿĀd, Thamūd, Madyan) + Hebrew Bible figures (Moses,
-      // Abraham, Noah, Lot, Joseph) appear here. The Quran claims the Abrahamic
-      // prophetic heritage for the Arabian milieu.
-      { id: 'quran-middle-meccan', label: 'Middle Meccan (~617–619 CE) · Biblical narrative integration', color: '#6a7a4a', books: [
-        { id: 'phase-4-034-quran', label: 'Middle Meccan surahs (54, 37, 71, 76, 44, 50, 20, 26, 15, 19, 38, 36, 43, 72, 67, 23, 21, 25, 17, 27, 18)' },
-      ]},
-      // Late Meccan: extended prophetic narratives (Surah 11 — Hūd; Surah 12 —
-      // Yūsuf; Surah 10 — Yūnus). More elaborated theology. Transition from oral
-      // proclamation to sustained narrative discourse.
-      { id: 'quran-late-meccan', label: 'Late Meccan (~619–622 CE) · extended narrative + theology', color: '#5a6a3a', books: [
-        { id: 'phase-4-034-quran', label: 'Late Meccan surahs (32, 41, 45, 16, 30, 11, 14, 12, 40, 28, 39, 29, 31, 42, 10, 34, 35, 7, 46, 6, 13)' },
-      ]},
-      // Medinan: community law and polemic. Longer, more legalistic surahs
-      // (Surah 2 — al-Baqara — the longest surah). The Quran engages directly
-      // with the Medinan Jewish and Christian communities. Christological polemic
-      // (Quran 4:171 vs. Trinity; Quran 5:75 vs. divine sonship of ʿĪsā).
-      // Mary (Maryam) appears in Surah 3 (Āl ʿImrān — "The Family of Imran").
-      { id: 'quran-medinan', label: 'Medinan (~622–632 CE) · community law · Christological polemic', color: '#4a5a6a', books: [
-        { id: 'phase-4-034-quran', label: 'Medinan surahs (2, 98, 64, 62, 8, 47, 3, 61, 57, 4, 65, 59, 33, 63, 24, 58, 22, 48, 66, 60, 110, 49, 9, 5)' },
-      ]},
-    ],
-  },
   // ----- Qurʾān corpus — 7 Manzil traditional liturgical division.
   // The 7-Manzil system divides the Quran into roughly equal portions for recitation
   // over a week. It is the traditional reader's structure (used in Ramadan khatm
@@ -3644,22 +3578,6 @@ const SCRIPTURE_CORPORA = {
   // inscription). Cross-tradition MASSIVE WINs: soul-in-exile (Nay-nāmeh ↔
   // Plotinus epistrophē ↔ Gnostic pneuma longing ↔ Vedantic jīva in māyā);
   // Simorgh = soul; wine = soma/Eucharist/Dionysian wine universal cluster. -----
-  'sufi-persian': {
-    label: 'Persian Sufi literary corpus (Rumi · Attar · Hafez · Saʿdi)',
-    available: true,
-    sections: [
-      { id: 'sufi-persian-rumi', label: 'Rumi · Masnavī-ye Maʿnavī (~1258–1273)', color: '#5a7a8f', books: [
-        { id: 'phase-5-054-rumi-masnavi', label: 'Rumi · Masnavī (Spiritual Verses)' },
-      ]},
-      { id: 'sufi-persian-attar', label: 'Attar · Conference of the Birds (~1177)', color: '#4a6a7a', books: [
-        { id: 'phase-5-051-attar-conference-of-birds', label: 'Attar · Manṭiq al-Ṭayr' },
-      ]},
-      { id: 'sufi-persian-hafez-sadi', label: 'Hafez · Divan + Saʿdi · Gulistan (14th–13th c.)', color: '#3a5a6a', books: [
-        { id: 'phase-5-053-hafez-divan', label: 'Hafez · Dīvān-e Ḥāfeẓ' },
-        { id: 'phase-5-052-sadi-gulistan', label: 'Saʿdi · Gulistān (The Rose Garden)' },
-      ]},
-    ],
-  },
   // ----- Norse Eddic corpus — the two medieval Icelandic sources for Norse
   // mythology. Poetic Edda (~13th c. manuscript of older material): Völuspá
   // (creation-to-Ragnarök prophesy), Hávamál (Odin's wisdom + self-sacrifice
@@ -3679,7 +3597,6 @@ const SCRIPTURE_CORPORA = {
         { id: 'phase-8-015-prose-edda-snorri', label: 'Prose Edda (Snorra Edda)' },
       ]},
       { id: 'nordic-finnish', label: 'Finnish national epic', color: '#7a8a9a', books: [
-        { id: 'phase-8-018-kalevala', label: 'Kalevala (1835/1849) · Finnish national epic' },
       ]},
     ],
   },
@@ -3737,27 +3654,6 @@ const SCRIPTURE_CORPORA = {
   // relationship to Greek rationalism. MASSIVE WINs: waḥdat al-wujūd ↔ Advaita
   // Vedanta / Plotinus' The One; Ghazali occasionalism ↔ Descartes/Malebranche;
   // Ihyaʾ integration of law+mysticism ↔ Maimonides' Mishneh Torah. -----
-  'islamic-theological': {
-    label: 'Islamic mystical-theological corpus (Ibn ʿArabī · al-Ghazālī)',
-    available: true,
-    sections: [
-      { id: 'ibn-arabi-corpus', label: 'Ibn ʿArabī · Unity of Being (~1165–1240)', color: '#5a7a5a', books: [
-        { id: 'phase-5-021-ibn-arabi-fusus-al-hikam', label: 'Ibn ʿArabī · Fuṣūṣ al-Ḥikam' },
-      ]},
-      { id: 'ghazali-corpus', label: 'Al-Ghazālī · Integration of reason + mysticism (~1058–1111)', color: '#4a6a4a', books: [
-        { id: 'phase-5-015-al-ghazali-ihya',               label: 'Al-Ghazālī · Iḥyāʾ ʿUlūm al-Dīn' },
-        { id: 'phase-5-045-al-ghazali-tahafut-al-falasifa', label: 'Al-Ghazālī · Tahāfut al-Falāsifa' },
-      ]},
-      { id: 'islamic-falsafa', label: 'Islamic Falsafa · Aristotle into Scholasticism (~980–1198)', color: '#3a5a7a', books: [
-        { id: 'phase-5-044-ibn-sina-kitab-al-shifa',          label: 'Avicenna · Kitāb al-Shifāʾ (Book of Healing)' },
-        { id: 'phase-5-046-ibn-rushd-tahafut-al-tahafut',     label: 'Averroes · Tahāfut al-Tahāfut' },
-        { id: 'phase-5-057-ibn-rushd-aristotle-commentaries', label: 'Averroes · Aristotle Commentaries' },
-      ]},
-      { id: 'islamic-sira-biography', label: 'Sīra literature · prophetic biography (~768 CE)', color: '#3a5a3a', books: [
-        { id: 'phase-5-043-ibn-ishaq-sirat-rasul-allah', label: 'Ibn Isḥāq · Sīrat Rasūl Allāh (~768 CE) · first Muhammad biography' },
-      ]},
-    ],
-  },
   // ----- Hadith corpus — the two most authoritative Sunni hadith collections.
   // Sahih al-Bukhari (~846 CE): 7,275 hadiths selected from 600,000; the most
   // trusted single source for the Prophet's words and practices after the Quran.
@@ -3785,8 +3681,8 @@ const SCRIPTURE_CORPORA = {
   // continuity; Mani synthesized Zoroastrianism + Buddhism + Christianity —
   // the most deliberate syncretist in world history; Manichaeism reached from
   // Spain to China; Augustine was a Manichaean for 9 years. -----
-  'mandaean-manichaean': {
-    label: 'Mandaean + Manichaean sacred corpus',
+  'mandaean-corpus': {
+    label: 'Mandaean canonical scripture',
     available: true,
     sections: [
       { id: 'mandaean-texts', label: 'Mandaean canon · Ginza Rba + Book of John', color: '#6a7a8a', books: [
@@ -3794,9 +3690,6 @@ const SCRIPTURE_CORPORA = {
         { id: 'phase-4-018-mandaean-book-of-john', label: 'Mandaean Book of John' },
       ]},
       { id: 'manichaean-texts', label: 'Manichaean corpus · Cologne Codex + Kephalaia + Shabuhragan', color: '#5a6a7a', books: [
-        { id: 'phase-4-014-cologne-mani-codex',        label: 'Cologne Mani Codex (~5th c. Greek)' },
-        { id: 'phase-4-015-kephalaia-of-the-teacher',  label: 'Kephalaia of the Teacher (Coptic)' },
-        { id: 'phase-4-016-shabuhragan',               label: 'Shabuhragan (Mani for Shapur I, ~240 CE)' },
       ]},
     ],
   },
@@ -3846,24 +3739,12 @@ const SCRIPTURE_CORPORA = {
       { id: 'confucian-foundational', label: 'Foundational Confucian · Analects → Mengzi → Xunzi', color: '#8a6c5a', books: [
         { id: 'phase-2-015-analects-of-confucius', label: 'Analects of Confucius' },
         { id: 'phase-2-023-mengzi',                label: 'Mengzi' },
-        { id: 'phase-2-024-xunzi',                 label: 'Xunzi' },
       ]},
       { id: 'rival-schools', label: 'Rival schools · Mohist + Legalist', color: '#6a5a4a', books: [
-        { id: 'phase-2-025-mozi',     label: 'Mozi (Mohist)' },
-        { id: 'phase-2-026-han-feizi', label: 'Han Feizi (Legalist)' },
       ]},
     ],
   },
 
-  'kebra-nagast': {
-    label: 'Kebra Nagast (Glory of the Kings — Ethiopian / Rastafari foundational)',
-    available: true,
-    sections: [
-      { id: 'kebra-nagast-core', label: 'Kebra Nagast · Solomonic-genealogical national epic (Geʼez redaction 1314–1322)', color: '#b89255', books: [
-        { id: 'phase-8-008-kebra-nagast', label: 'Kebra Nagast' },
-      ]},
-    ],
-  },
   // Ethiopic Tewahedo broader canon — the full distinctively-Ethiopian scriptural-and-canonical world.
   // Documents arranged in roughly compositional / canonical-reception sequence: Aksumite foundational →
   // Second-Temple Jewish material canonical only in Ethiopia → Solomonic medieval theological →
@@ -3875,7 +3756,6 @@ const SCRIPTURE_CORPORA = {
     available: true,
     sections: [
       { id: 'ethiopic-aksumite-foundational', label: 'Aksumite foundational (4th–7th c.)', color: '#a08850', books: [
-        { id: 'phase-4-080-garima-gospels',             label: 'Garima Gospels (Geʼez illuminated, RC 330–660 CE)' },
         { id: 'phase-4-082-ethiopic-biblical-canon',    label: 'Ethiopic 81-book canon (overview)' },
       ]},
       { id: 'ethiopic-second-temple-canonical', label: 'Second-Temple Jewish material canonical only in Ethiopia', color: '#9a6f3a', books: [
@@ -3884,18 +3764,12 @@ const SCRIPTURE_CORPORA = {
         { id: 'phase-5-040-meqabyan-ethiopian-maccabees', label: 'Meqabyan I–III (uniquely Ethiopian)' },
       ]},
       { id: 'ethiopic-solomonic-medieval-theology', label: 'Solomonic-era theological systematization (14th–15th c.)', color: '#7a8590', books: [
-        { id: 'phase-5-036-mashafa-mistir-giyorgis',     label: 'Mashafa Mistir (Giyorgis of Sagla)' },
-        { id: 'phase-5-038-mashafa-berhan',              label: 'Mashafa Berhan (Zarʼa Yaʼqob)' },
-        { id: 'phase-5-037-fetha-nagast',                label: 'Fetha Nagast (Law of the Kings)' },
       ]},
       { id: 'ethiopic-hagiographic-liturgical', label: 'Hagiographic-liturgical', color: '#8a7a90', books: [
-        { id: 'phase-5-039-sinkessar-synaxarium',        label: 'Sinkessar (Ethiopian Synaxarium)' },
       ]},
       { id: 'ethiopic-national-religious', label: 'National-religious-foundational', color: '#b89255', books: [
-        { id: 'phase-8-008-kebra-nagast',                label: 'Kebra Nagast (Glory of the Kings)' },
       ]},
       { id: 'ethiopic-jesuit-period', label: 'Post-Jesuit hagiography (17th c.)', color: '#8a5a4a', books: [
-        { id: 'phase-7-040-walatta-petros-hagiography',  label: 'Gadla Walatta Petros (Galawdewos, 1672)' },
       ]},
       { id: 'ethiopic-church-order', label: 'Ethiopian church-order texts (late antique)', color: '#7a6080', books: [
         { id: 'phase-4-083-mashafa-kidan-testament-of-our-lord', label: 'Mashafa Kidān · Testament of Our Lord (Ethiopian church order)' },
@@ -3939,84 +3813,12 @@ const SCRIPTURE_CORPORA = {
   // the physical bound order of the manuscript. Hermetic and Sethian and Thomasine and
   // Valentinian texts share the same physical codices — the cross-codex trails of
   // Sophia / Yaldabaoth / Norea / Mary Magdalene make this visible at a glance.
-  'nag-hammadi': {
-    label: 'Nag Hammadi codices (Coptic · 4th c.)',
-    available: true,
-    sections: [
-      { id: 'nhc-i-jung', label: 'Codex I · Jung Codex', color: '#a87a4a', books: [
-        { id: 'phase-4-003-gospel-of-truth',                   label: 'I,3 · Gospel of Truth' },
-        { id: 'phase-4-059-tripartite-tractate',               label: 'I,5 · Tripartite Tractate' },
-      ]},
-      { id: 'nhc-ii', label: 'Codex II', color: '#b87850', books: [
-        { id: 'phase-4-002-apocryphon-of-john',                label: 'II,1 · Apocryphon of John' },
-        { id: 'phase-4-001-gospel-of-thomas',                  label: 'II,2 · Gospel of Thomas' },
-        { id: 'phase-4-004-gospel-of-philip',                  label: 'II,3 · Gospel of Philip' },
-        { id: 'phase-4-006-hypostasis-of-the-archons',         label: 'II,4 · Hypostasis of the Archons' },
-        { id: 'phase-4-007-on-the-origin-of-the-world',        label: 'II,5 · Origin of the World' },
-      ]},
-      { id: 'nhc-iii', label: 'Codex III', color: '#a86a48', books: [
-        { id: 'phase-4-010-sophia-of-jesus-christ',            label: 'III,4 · Sophia of Jesus Christ' },
-      ]},
-      { id: 'nhc-vi', label: 'Codex VI · Hermetic + Thunder cluster', color: '#9a8550', books: [
-        { id: 'phase-4-058-thunder-perfect-mind',              label: 'VI,2 · Thunder, Perfect Mind' },
-        { id: 'phase-4-013-discourse-on-the-eighth-and-ninth', label: 'VI,6 · Eighth & Ninth' },
-        { id: 'phase-4-078-prayer-of-thanksgiving-nhc-vi-7',   label: 'VI,7 · Prayer of Thanksgiving' },
-        { id: 'phase-4-079-coptic-asclepius-nhc-vi-8',         label: 'VI,8 · Coptic Asclepius' },
-      ]},
-      { id: 'nhc-viii', label: 'Codex VIII · Sethian Platonist', color: '#7a8a8a', books: [
-        { id: 'phase-4-056-zostrianos',                        label: 'VIII,1 · Zostrianos' },
-      ]},
-      { id: 'nhc-xi', label: 'Codex XI · Sethian Platonist', color: '#6a8a90', books: [
-        { id: 'phase-4-057-allogenes',                         label: 'XI,3 · Allogenes' },
-      ]},
-      { id: 'nhc-xiii', label: 'Codex XIII', color: '#7a7a90', books: [
-        { id: 'phase-4-008-trimorphic-protennoia',             label: 'XIII,1 · Trimorphic Protennoia' },
-      ]},
-      { id: 'bg-8502', label: 'BG 8502 · Berlin Codex (related)', color: '#a87aa0', books: [
-        { id: 'phase-4-005-gospel-of-mary',                    label: 'BG 8502,1 · Gospel of Mary' },
-      ]},
-      { id: 'nhc-related-codices', label: 'Related codices (Bruce + Askew)', color: '#907880', books: [
-        { id: 'phase-4-009-pistis-sophia',                          label: 'Pistis Sophia (Askew Codex) · longest Gnostic text' },
-      ]},
-    ],
-  },
   // ----- Hermetica corpus (wired by opus-scripture-2 after opus-hermetic-1) -----
   // Sections trace the Hermetic transmission spine clockwise: Greek Corpus (1st-3rd c.)
   // → Coptic NHC VI cluster → Latin + Stobaean Greek + Armenian late-antique transmission
   // → Alchemical Hermetica → Renaissance Latin (Ficino) → Modern Hermetic. Reading the
   // ring clockwise reads the Hermetic literary history. Hermes Trismegistus, Tat,
   // Asclepius, Poimandres make cross-book trail-arcs across the entire corpus on hover.
-  'hermetica': {
-    label: 'Corpus Hermeticum (philosophical + technical Hermetica)',
-    available: true,
-    sections: [
-      { id: 'hermetica-greek-corpus', label: 'Greek Corpus Hermeticum', color: '#b08a3a', books: [
-        { id: 'phase-3-021-hermetic-corpus-earliest',          label: 'Hermetica · earliest stratum (overview)' },
-        { id: 'phase-4-011-corpus-hermeticum-i',               label: 'CH I · Poimandres' },
-        { id: 'phase-4-075-corpus-hermeticum-xiii-rebirth',    label: 'CH XIII · Rebirth dialogue' },
-      ]},
-      { id: 'hermetica-coptic-nhc-vi', label: 'Coptic Hermetica · NHC VI cluster', color: '#a89060', books: [
-        { id: 'phase-4-013-discourse-on-the-eighth-and-ninth', label: 'NHC VI,6 · Eighth & Ninth' },
-        { id: 'phase-4-078-prayer-of-thanksgiving-nhc-vi-7',   label: 'NHC VI,7 · Prayer of Thanksgiving' },
-        { id: 'phase-4-079-coptic-asclepius-nhc-vi-8',         label: 'NHC VI,8 · Coptic Asclepius' },
-      ]},
-      { id: 'hermetica-late-antique-transmission', label: 'Latin · Stobaean Greek · Armenian', color: '#9a7a4a', books: [
-        { id: 'phase-4-012-asclepius',                            label: 'Latin Asclepius (Logos Teleios)' },
-        { id: 'phase-4-076-stobaean-hermetica-kore-kosmou',       label: 'Stobaean Hermetica (Kore Kosmou)' },
-        { id: 'phase-4-077-definitions-hermes-asclepius-armenian', label: 'Armenian Definitions (DH)' },
-      ]},
-      { id: 'hermetica-alchemical', label: 'Alchemical Hermetica', color: '#8c6a44', books: [
-        { id: 'phase-4-073-tabula-smaragdina',                 label: 'Tabula Smaragdina (Emerald Tablet)' },
-        { id: 'phase-4-074-zosimos-of-panopolis-corpus',       label: 'Zosimos of Panopolis corpus' },
-      ]},
-      { id: 'hermetica-renaissance-latin', label: 'Renaissance Latin recovery', color: '#c4a05a', books: [
-        { id: 'phase-6-001-ficino-pimander',                   label: 'Ficino · Pimander 1471' },
-      ]},
-      { id: 'hermetica-modern', label: 'Modern Hermetic reception', color: '#a89880', books: [
-        { id: 'phase-7-032-kybalion',                          label: 'The Kybalion (1908)' },
-      ]},
-    ],
-  },
   // ----- Mesopotamian sacred corpus — oldest continuous literary tradition
   // in the vault. Cross-tradition: Gilgamesh flood ↔ Genesis; Inanna descent
   // ↔ Osiris/Persephone/Christ; Enuma Elish Chaoskampf ↔ Baal Cycle ↔ Genesis 1.
@@ -4053,7 +3855,6 @@ const SCRIPTURE_CORPORA = {
         { id: 'phase-4-033-babylonian-talmud',    label: 'Babylonian Talmud (~500 CE) · primary rabbinic authority' },
       ]},
       { id: 'rabbinic-hekhalot', label: 'Hekhalot · Merkavah mysticism (~200–700 CE)', color: '#a09870', books: [
-        { id: 'phase-5-013-hekhalot-literature',  label: 'Hekhalot literature · throne-chariot ascent' },
       ]},
     ],
   },
@@ -4076,16 +3877,6 @@ const SCRIPTURE_CORPORA = {
   // MASSIVE WINs: both texts carry a direct Gnostic cosmology (evil Demiurge /
   // good transcendent God) structurally identical to Sethian Gnostic texts —
   // a 1000-year thread from Nag Hammadi to medieval Languedoc.
-  'cathar-bogomil': {
-    label: 'Cathar + Bogomil sacred corpus',
-    available: true,
-    sections: [
-      { id: 'bogomil-cathar-texts', label: 'Bogomil–Cathar canonical texts (~10th–13th c.)', color: '#7a5a8a', books: [
-        { id: 'phase-5-020-interrogatio-iohannis',      label: 'Interrogatio Iohannis · sole surviving Bogomil–Cathar shared text' },
-        { id: 'phase-5-023-liber-de-duobus-principiis', label: 'Liber de Duobus Principiis · Cathar theological treatise' },
-      ]},
-    ],
-  },
   // ----- Baháʼí sacred writings — the canonical writings of Baháʼu'lláh
   // (1817–1892), the founder of the Baháʼí Faith. Kitāb-i-Aqdas (1873): the
   // Most Holy Book, the central charter of Baháʼí law + ethics.
@@ -4112,16 +3903,6 @@ const SCRIPTURE_CORPORA = {
   // (Plotinus, Proclus); Dark Night ↔ Pseudo-Dionysius apophatic theology;
   // both texts canonized within Catholic mystical tradition yet structurally
   // parallel to Sufi fana / Buddhist śūnyatā / Kabbalistic ayin.
-  'spanish-mystical': {
-    label: 'Spanish mystical canon (Teresa · John of the Cross)',
-    available: true,
-    sections: [
-      { id: 'carmelite-mystical', label: 'Carmelite mystical tradition (16th c.)', color: '#9a6a7a', books: [
-        { id: 'phase-6-038-teresa-interior-castle',  label: 'Teresa of Ávila · Interior Castle (1577)' },
-        { id: 'phase-6-039-dark-night-of-the-soul',  label: 'John of the Cross · Dark Night of the Soul (~1578–1585)' },
-      ]},
-    ],
-  },
   // ----- Shīʿa canonical corpus. Nahj al-Balāgha compiled ~1009 CE is the canonical
   // second text of Twelver Shīʿa Islam after the Quran. The Four Books of Shīʿa ḥadīth
   // (al-Kāfī, ~941; al-Tahdhīb; al-Istibṣār; Man lā yaḥḍuruhu al-faqīh) parallel
@@ -4186,18 +3967,6 @@ const SCRIPTURE_CORPORA = {
   // texts of the Reformation. Cross-tradition edge: Augustinian predestination → Reformation
   // grace-theology → Calvinist Federal theology → modern secular political philosophy
   // (sovereignty, covenant, constitutionalism). -----
-  'reformation': {
-    label: 'Protestant Reformation canon (Luther · Calvin)',
-    available: true,
-    sections: [
-      { id: 'reformation-lutheran', label: 'Lutheran foundation (1517–1525)', color: '#8a7040', books: [
-        { id: 'phase-6-007-luther-bondage-of-will', label: 'Luther · De Servo Arbitrio (Bondage of the Will, 1525)' },
-      ]},
-      { id: 'reformation-calvinist', label: 'Reformed tradition (1536–1559)', color: '#6a6050', books: [
-        { id: 'phase-6-010-calvin-institutes',  label: 'Calvin · Institutio Christianae Religionis (1536/1559)' },
-      ]},
-    ],
-  },
   // ----- Samaritan canon — the oldest continuously-practiced Israelite religion
   // alongside Rabbinic Judaism, diverging ~4th c. BCE. The Samaritan Pentateuch
   // (Torah Qedosha) is an independent pre-Masoretic Hebrew textual tradition,
@@ -4284,18 +4053,6 @@ const SCRIPTURE_CORPORA = {
   // a casteist ideology (The Buddha and His Dhamma, 1956; largest single-day mass
   // conversion in history). Both: colonized peoples using religion as anti-colonial tool.
   // Iqbal → Pakistan; Ambedkar → Indian Constitution + Navayana Buddhism. -----
-  'south-asian-modernism': {
-    label: 'South Asian religious modernity — Ambedkar + Iqbal (1930–1956)',
-    available: true,
-    sections: [
-      { id: 'navayana-scripture', label: 'Ambedkar · The Buddha and His Dhamma (1956) — Navayana founding text', color: '#5a3a7a', books: [
-        { id: 'phase-7-045-ambedkar-buddha-and-dhamma', label: 'The Buddha and His Dhamma · B.R. Ambedkar · Navayana Buddhism' },
-      ]},
-      { id: 'islamic-modernism-scripture', label: 'Iqbal · The Reconstruction of Religious Thought in Islam (1930)', color: '#3a5a8a', books: [
-        { id: 'phase-7-046-iqbal-reconstruction-religious-thought', label: 'The Reconstruction of Religious Thought in Islam · Muhammad Iqbal' },
-      ]},
-    ],
-  },
 };
 // Atlas Codex contextual filter reads this — same object, exposed on window.
 // (2026-05-28: corpora data is the truth for "what books are in the Bible /

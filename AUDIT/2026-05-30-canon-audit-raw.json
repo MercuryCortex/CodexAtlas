@@ -1,0 +1,441 @@
+{
+  "summary": "Audit each religion canon in SCRIPTURE_CORPORA against scholarship; flag non-canon entries + missing canon books",
+  "agentCount": 7,
+  "logs": [
+    "Collected verdicts from 6/6 goblins"
+  ],
+  "result": {
+    "summary": "Audited 42 corpora across 6 region partitions. Verdict distribution: 11 remove-entirely (Nag Hammadi, Hermetica, Cathar/Bogomil, Sufi-Persian, Spanish-mystical, Reformation, Islamic-theological, Kebra-Nagast, South-Asian-modernism, Quran (Noldeke), and the Manichaean half of Mandaean-Manichaean), 24 modify (substantial book-level cleanup — most need to remove source-critical reconstructions/commentaries/hagiographies and add missing canonical books), 3 split (Vedas → śruti/smṛti/tantra; Tipiṭaka → Pāli/Mahayana/Vajrayana; Mandaean-Manichaean → Mandaean kept + Manichaean removed), and 4 keep-as-is (Quran-Manzil, Samaritan, Tao-corpus, Bön-corpus, Druze, Yazidi, Kabbalistic — that's 7 actually). The dominant pattern is the same category-error repeated across every region: the vault has been treating influential commentary, mystical literature, philosophical treatises, hagiography, source-critical reconstructions, and national epics as \"scripture corpora\" — exactly what John's 2026-05-30 mandate forbids. The biggest single change is the Bible/Tanakh rebuild (gut J/E/D/P/Deuteronomistic-History/Q/Septuagint/Peshitta/Diatessaron/Garima — replace with the actual 66/24 named canonical books, most of which need NEW_NODE_NEEDED creation by Lane A). Cross-partition concerns are significant: ~6 books are double-wired across corpora (especially nag-hammadi ↔ hermetica overlap on phase-4-013/078/079, and the Quran being in both quran and quran-manzil), and many \"remove from Codex\" books should remain in the vault as Personae/Themes/Events nodes — the corpus-deletion is a Codex-canon-layer change, not a vault-purge.",
+    "remove_corpora_entirely": [
+      {
+        "corpus_id": "quran",
+        "reason": "Nöldeke chronological reconstruction is a scholarly Orientalist framework, not canonical Quranic ordering. Duplicates the single Quran document already in quran-manzil. Move Nöldeke chronology to a LENS toggle on quran-manzil; delete this corpus key."
+      },
+      {
+        "corpus_id": "islamic-theological",
+        "reason": "Entire corpus is kalam/falsafa/tasawwuf (Ibn Arabi Fusus, Ghazali Ihya + Tahafut, Avicenna Shifa, Averroes Tahafut al-Tahafut + Aristotle Commentaries, Ibn Ishaq Sira) — explicitly mystical, philosophical, or biographical commentary, never Islamic canon. The Quran + Hadith already cover the actual Islamic canon. Book nodes survive as Personae/Themes."
+      },
+      {
+        "corpus_id": "kebra-nagast",
+        "reason": "National-foundational epic of the Solomonic dynasty, NOT in the Tewahedo 81-book canon per Cowley 1974. Functions like the Aeneid for Rome — constitutional myth, not scripture. Node stays as a Document/Event/Theme."
+      },
+      {
+        "corpus_id": "south-asian-modernism",
+        "reason": "Ambedkar's Buddha and His Dhamma (1956) is a constructive Navayana manifesto by a single 20th-c. author; Iqbal's Reconstruction (1930) is a series of philosophy lectures. Neither is canonical scripture for any institutional Buddhist or Islamic tradition. Modernist religious thought, not canon."
+      },
+      {
+        "corpus_id": "nag-hammadi",
+        "reason": "4th-century Coptic library of Gnostic/Sethian/Valentinian/Hermetic/Thomasine tractates buried because Athanasian orthodoxy was suppressing them. No continuing religion treats this as canonical scripture. 17 book nodes remain in the vault for Pantheon/Personae/Timeline cross-tradition lenses."
+      },
+      {
+        "corpus_id": "hermetica",
+        "reason": "Heterogeneous philosophical-magical-alchemical literary tradition with no organized religious community treating it as canon. Includes Renaissance Latin Pimander and 1908 Kybalion (modern occult). Book nodes survive for Hermes Trismegistus cross-tradition wiring."
+      },
+      {
+        "corpus_id": "cathar-bogomil",
+        "reason": "Both texts (Interrogatio Iohannis, Liber de Duobus Principiis) are fragments of two extinguished medieval dualist heresies. No continuing religion holds them as canonical. Nodes remain for the Gnostic-cosmology-1000-year-thread lens."
+      },
+      {
+        "corpus_id": "sufi-persian",
+        "reason": "Rumi Masnavi, Attar Conference of the Birds, Hafez Divan, Sa'di Gulistan are towering Persian Sufi poetry — Schimmel explicitly clarifies the 'Persian Quran' moniker for the Masnavi is metaphorical, not canonical. Islamic canon is Quran + Hadith. Nodes survive for Personae."
+      },
+      {
+        "corpus_id": "spanish-mystical",
+        "reason": "Teresa of Avila's Interior Castle and John of the Cross's Dark Night are spiritual classics by canonized Catholic Doctors of the Church — but Catholic canon is the 73-book Bible per Trent 1546 and Catechism §120. Mystical commentary, not scripture."
+      },
+      {
+        "corpus_id": "reformation",
+        "reason": "Luther's Bondage of the Will and Calvin's Institutes are foundational Reformation theological treatises — but sola scriptura (the Reformation's defining principle) makes the 66-book Protestant Bible the SOLE canon. The Reformers themselves would have rejected canonical status for their own treatises."
+      }
+    ],
+    "modify_corpora": [
+      {
+        "corpus_id": "bible",
+        "remove_books": [
+          "phase-2-005-hebrew-bible-j-source",
+          "phase-2-007-hebrew-bible-e-source",
+          "phase-2-011-hebrew-bible-d-source",
+          "phase-2-018-hebrew-bible-p-source",
+          "phase-2-010-hebrew-bible-early-prophets",
+          "phase-2-019-deuteronomistic-history",
+          "phase-3-001-second-third-isaiah",
+          "phase-3-014-q-source",
+          "phase-3-010-sibylline-oracles",
+          "phase-3-011-dead-sea-scrolls",
+          "phase-3-006-septuagint",
+          "phase-4-108-peshitta",
+          "phase-4-080-garima-gospels",
+          "phase-4-082-ethiopic-biblical-canon",
+          "phase-4-037-diatessaron"
+        ],
+        "add_books": [
+          "NEW_NODE_NEEDED:genesis",
+          "NEW_NODE_NEEDED:exodus",
+          "NEW_NODE_NEEDED:leviticus",
+          "NEW_NODE_NEEDED:numbers",
+          "NEW_NODE_NEEDED:deuteronomy",
+          "NEW_NODE_NEEDED:joshua",
+          "NEW_NODE_NEEDED:judges",
+          "NEW_NODE_NEEDED:ruth",
+          "NEW_NODE_NEEDED:1-samuel",
+          "NEW_NODE_NEEDED:2-samuel",
+          "NEW_NODE_NEEDED:1-chronicles",
+          "NEW_NODE_NEEDED:2-chronicles",
+          "NEW_NODE_NEEDED:ezra",
+          "NEW_NODE_NEEDED:nehemiah",
+          "NEW_NODE_NEEDED:esther",
+          "phase-2-005-davidic-psalms",
+          "NEW_NODE_NEEDED:isaiah-book-of",
+          "NEW_NODE_NEEDED:jeremiah",
+          "NEW_NODE_NEEDED:ezekiel",
+          "NEW_NODE_NEEDED:twelve-minor-prophets",
+          "NEW_NODE_NEEDED:tobit",
+          "NEW_NODE_NEEDED:judith",
+          "NEW_NODE_NEEDED:1-maccabees",
+          "NEW_NODE_NEEDED:2-maccabees",
+          "phase-3-096-baruch",
+          "NEW_NODE_NEEDED:acts-of-the-apostles",
+          "NEW_NODE_NEEDED:romans",
+          "NEW_NODE_NEEDED:1-corinthians",
+          "NEW_NODE_NEEDED:2-corinthians",
+          "NEW_NODE_NEEDED:galatians",
+          "NEW_NODE_NEEDED:ephesians",
+          "NEW_NODE_NEEDED:philippians",
+          "NEW_NODE_NEEDED:colossians",
+          "NEW_NODE_NEEDED:1-thessalonians",
+          "NEW_NODE_NEEDED:2-thessalonians",
+          "NEW_NODE_NEEDED:1-timothy",
+          "NEW_NODE_NEEDED:2-timothy",
+          "NEW_NODE_NEEDED:titus",
+          "NEW_NODE_NEEDED:philemon",
+          "NEW_NODE_NEEDED:hebrews",
+          "NEW_NODE_NEEDED:james",
+          "NEW_NODE_NEEDED:1-peter",
+          "NEW_NODE_NEEDED:2-peter",
+          "NEW_NODE_NEEDED:1-john",
+          "NEW_NODE_NEEDED:2-john",
+          "NEW_NODE_NEEDED:3-john",
+          "NEW_NODE_NEEDED:jude",
+          "NEW_NODE_NEEDED:revelation-of-john"
+        ],
+        "rationale": "Rebuild around the 66 Protestant + Catholic deuterocanon + Tewahedo-additions named books. Strip source-critical reconstructions (J/E/D/P/DH/Q/2-3-Isaiah are scholarly hypotheses, not canon), pseudepigrapha not in any canon (Sibylline Oracles), textual witnesses (Septuagint, Peshitta, Dead Sea Scrolls, Garima Gospels), and the Diatessaron harmony. Note: phase-2-job, phase-2-ecclesiastes, phase-2-song-of-songs IDs in the corpus are dead — actual files are phase-2-035/036/037, fix when modifying."
+      },
+      {
+        "corpus_id": "tanakh",
+        "remove_books": [
+          "phase-2-005-hebrew-bible-j-source",
+          "phase-2-007-hebrew-bible-e-source",
+          "phase-2-011-hebrew-bible-d-source",
+          "phase-2-018-hebrew-bible-p-source",
+          "phase-2-010-hebrew-bible-early-prophets",
+          "phase-2-019-deuteronomistic-history",
+          "phase-3-001-second-third-isaiah",
+          "phase-3-011-dead-sea-scrolls"
+        ],
+        "add_books": [
+          "NEW_NODE_NEEDED:genesis-bereshit",
+          "NEW_NODE_NEEDED:exodus-shemot",
+          "NEW_NODE_NEEDED:leviticus-vayikra",
+          "NEW_NODE_NEEDED:numbers-bamidbar",
+          "NEW_NODE_NEEDED:deuteronomy-devarim",
+          "NEW_NODE_NEEDED:joshua-yehoshua",
+          "NEW_NODE_NEEDED:judges-shoftim",
+          "NEW_NODE_NEEDED:samuel-1-2",
+          "NEW_NODE_NEEDED:isaiah-yeshayahu",
+          "NEW_NODE_NEEDED:jeremiah-yirmiyahu",
+          "NEW_NODE_NEEDED:ezekiel-yechezkel",
+          "NEW_NODE_NEEDED:twelve-prophets-trei-asar",
+          "phase-2-005-davidic-psalms",
+          "NEW_NODE_NEEDED:ruth",
+          "NEW_NODE_NEEDED:esther-megillah",
+          "NEW_NODE_NEEDED:ezra-nehemiah",
+          "NEW_NODE_NEEDED:chronicles-divrei-hayamim"
+        ],
+        "rationale": "Mirror the 24-book Bava Batra 14b enumeration. Source-critical strata + Dead Sea Scrolls are not Tanakh canon. Note the Kings/Daniel placement question — Kings = Nevi'im Rishonim, Daniel = Ketuvim per Jewish ordering."
+      },
+      {
+        "corpus_id": "rabbinic-corpus",
+        "remove_books": [
+          "phase-5-013-hekhalot-literature"
+        ],
+        "add_books": [
+          "NEW_NODE_NEEDED:tosefta"
+        ],
+        "rationale": "Mishnah/Bavli/Yerushalmi are correct Oral Torah core. Add Tosefta (parallel Tannaitic compilation). Hekhalot is mystical-visionary, not Oral Torah — reclassify to kabbalistic-corpus as the pre-Bahir mystical precursor."
+      },
+      {
+        "corpus_id": "hadith-corpus",
+        "remove_books": [],
+        "add_books": [
+          "NEW_NODE_NEEDED:sunan-al-tirmidhi",
+          "NEW_NODE_NEEDED:sunan-abi-dawud",
+          "NEW_NODE_NEEDED:sunan-al-nasai",
+          "NEW_NODE_NEEDED:sunan-ibn-majah"
+        ],
+        "rationale": "Expand Sahihayn → Kutub al-Sittah (Six Canonical Books). Sunni hadith canon by 10th-11th c. consensus is the Six Books, not just Bukhari + Muslim. Relabel corpus to 'Kutub al-Sittah · Six Canonical Books'."
+      },
+      {
+        "corpus_id": "shia-corpus",
+        "remove_books": [],
+        "add_books": [
+          "NEW_NODE_NEEDED:al-kafi-al-kulayni",
+          "NEW_NODE_NEEDED:man-la-yahduruhu-al-faqih-al-saduq",
+          "NEW_NODE_NEEDED:tahdhib-al-ahkam-al-tusi",
+          "NEW_NODE_NEEDED:al-istibsar-al-tusi"
+        ],
+        "rationale": "Twelver Shia canon requires the Kutub al-Arba'ah (Four Books of Shia hadith — al-Kafi, Man la yahduruhu al-Faqih, Tahdhib al-Ahkam, al-Istibsar) — the Shia parallel to Sunni Sahih Sittah. Nahj al-Balagha alone is structurally incomplete."
+      },
+      {
+        "corpus_id": "ethiopic-tewahedo-canon",
+        "remove_books": [
+          "phase-4-080-garima-gospels",
+          "phase-5-036-mashafa-mistir-giyorgis",
+          "phase-5-038-mashafa-berhan",
+          "phase-5-037-fetha-nagast",
+          "phase-5-039-sinkessar-synaxarium",
+          "phase-8-008-kebra-nagast",
+          "phase-7-040-walatta-petros-hagiography"
+        ],
+        "add_books": [
+          "phase-3-032-4-ezra-ethiopic-recension",
+          "NEW_NODE_NEEDED:pseudo-josephus-yosef-ben-gurion",
+          "NEW_NODE_NEEDED:te-ezaza-sanbat-book-of-the-sabbath",
+          "NEW_NODE_NEEDED:didascalia-ethiopian"
+        ],
+        "rationale": "Per Cowley 1974: KEEP 1 Enoch, Jubilees, Meqabyan, Mashafa Kidan, Ethiopian Sinodos (all in 81-canon). REMOVE manuscript witnesses (Garima), theological commentary (Mashafa Mistir, Mashafa Berhan), law codes (Fetha Nagast), synaxaria (Sinkessar), national epics (Kebra Nagast), hagiographies (Walatta Petros). ADD 4 Ezra Ethiopic, Pseudo-Josephus, Te'ezaza Sanbat, Didascalia."
+      },
+      {
+        "corpus_id": "jain-agamas",
+        "remove_books": [],
+        "add_books": [
+          "NEW_NODE_NEEDED:sthananga-sutra",
+          "NEW_NODE_NEEDED:samavayanga-sutra",
+          "NEW_NODE_NEEDED:bhagavati-sutra-vyakhyaprajnapti",
+          "NEW_NODE_NEEDED:jnatadharmakathanga-sutra",
+          "NEW_NODE_NEEDED:upasakadasanga-sutra",
+          "NEW_NODE_NEEDED:uttaradhyayana-sutra",
+          "NEW_NODE_NEEDED:dasavaikalika-sutra",
+          "NEW_NODE_NEEDED:kalpa-sutra-bhadrabahu",
+          "NEW_NODE_NEEDED:tattvartha-sutra-umasvati"
+        ],
+        "rationale": "Svetambara Agama canon = 45 texts (11 Angas + 12 Upangas + 4 Mulasutras + 6 Chedasutras + 2 Culikasutras + 10 Prakirnakas). Only 2 of 11 Angas present. Add the 5 missing major Angas (Sthana, Samavaya, Bhagavati, Jnatadharmakatha, Upasakadasanga), 2 Mulasutras (Uttaradhyayana, Dasavaikalika), Kalpa Sutra, and Tattvartha (the one universally-recognized text accepted by both Svetambara and Digambara)."
+      },
+      {
+        "corpus_id": "guru-granth",
+        "remove_books": [],
+        "add_books": [
+          "NEW_NODE_NEEDED:dasam-granth-guru-gobind-singh"
+        ],
+        "rationale": "Add Dasam Granth — canonically recognized by SGPC + Akal Takht, used in Amrit ceremony (Jap, Tav-Prasad Savaiyye, Benti Chaupai). Bhai Gurdas's Vars + Janamsakhis are paratextual, do NOT add."
+      },
+      {
+        "corpus_id": "kojiki-nihongi",
+        "remove_books": [],
+        "add_books": [
+          "NEW_NODE_NEEDED:engishiki-norito-shinto-ritual-canon"
+        ],
+        "rationale": "Add Engishiki (927 CE, Books 1-10 contain the Norito ritual prayers) — the primary liturgical scripture of state Shinto. Optionally relabel corpus from 'Kojiki/Nihon Shoki' to 'Shinto scriptural canon'."
+      },
+      {
+        "corpus_id": "confucian-classics",
+        "remove_books": [
+          "phase-2-025-mozi",
+          "phase-2-026-han-feizi",
+          "phase-2-024-xunzi"
+        ],
+        "add_books": [
+          "NEW_NODE_NEEDED:liji-classic-of-rites",
+          "NEW_NODE_NEEDED:chunqiu-spring-and-autumn-annals",
+          "NEW_NODE_NEEDED:daxue-great-learning",
+          "NEW_NODE_NEEDED:zhongyong-doctrine-of-the-mean"
+        ],
+        "rationale": "Strip Hundred-Schools rivals (Mozi/Mohism, Han Feizi/Legalism — rival schools, never Confucian canon; Xunzi excluded by Zhu Xi's 12th-c. canonization). Add the 4 missing canonical texts to complete Wujing + Sishu = Five Classics + Four Books. Relabel to 'Confucian canon · Five Classics + Four Books'."
+      },
+      {
+        "corpus_id": "cheondogyo-corpus",
+        "remove_books": [],
+        "add_books": [
+          "NEW_NODE_NEEDED:yongdam-yusa-cheondogyo-vernacular-hymns"
+        ],
+        "rationale": "Add Yongdam Yusa — the Korean-vernacular hangul scripture paired with the Literary-Sinitic Donggyeong Daejeon. Together they constitute the two-text canonical Cheondogyo scripture per Beirne 2009 and Kallander 2013."
+      },
+      {
+        "corpus_id": "tenrikyo-corpus",
+        "remove_books": [],
+        "add_books": [
+          "NEW_NODE_NEEDED:mikagura-uta-tenrikyo-service-songs",
+          "NEW_NODE_NEEDED:osashizu-tenrikyo-divine-directions"
+        ],
+        "rationale": "Add Mikagura-uta (Songs for the Service, 1866-1875, liturgical) + Osashizu (Divine Directions, 1887-1907, oral revelations via Iburi Izo). Together with Ofudesaki these are the three canonical Sangenten of Tenrikyo per Tenrikyo Church Headquarters."
+      },
+      {
+        "corpus_id": "cao-dai-corpus",
+        "remove_books": [],
+        "add_books": [
+          "NEW_NODE_NEEDED:phap-chanh-truyen-cao-dai-religious-constitution",
+          "NEW_NODE_NEEDED:tan-luat-cao-dai-new-canonical-codes"
+        ],
+        "rationale": "Add Phap Chanh Truyen (Religious Constitution, 1926, dictated via co but) + Tan Luat (New Code/canonical conduct codes, 1927). Together with Thanh Ngon Hiep Tuyen these are the three foundational canonical Cao Dai scriptures per Hoskins/Blagov/Jammes."
+      },
+      {
+        "corpus_id": "egyptian-scripture",
+        "remove_books": [
+          "phase-1-012-amarna-letters",
+          "phase-3-025-manetho-aegyptiaca",
+          "phase-3-026-diodorus-bibliotheca-book-1",
+          "phase-4-072-plutarch-de-iside-et-osiride",
+          "phase-2-028-herodotus-histories-book-2"
+        ],
+        "add_books": [
+          "phase-1-036-amduat",
+          "NEW_NODE_NEEDED:book-of-gates",
+          "NEW_NODE_NEEDED:book-of-caverns",
+          "NEW_NODE_NEEDED:litany-of-re",
+          "NEW_NODE_NEEDED:book-of-the-heavenly-cow"
+        ],
+        "rationale": "Per Hornung the Egyptian funerary-cosmographic canon = Pyramid Texts, Coffin Texts, Book of the Dead, Amduat, Book of Gates, Book of Caverns, Litany of Re, Book of the Heavenly Cow. Amarna Letters are diplomatic correspondence (not scripture). Manetho/Diodorus/Plutarch/Herodotus Bk 2 are Greek outside-observer ethnography about Egypt, not Egyptian canon."
+      },
+      {
+        "corpus_id": "greek-scripture",
+        "remove_books": [
+          "phase-3-002-plato-dialogues",
+          "phase-3-022-plato-timaeus-critias-atlantis",
+          "phase-3-003-aristotle-metaphysics",
+          "phase-4-022-chaldean-oracles",
+          "phase-2-028-herodotus-histories-book-2"
+        ],
+        "add_books": [
+          "phase-3-035-homeric-hymns"
+        ],
+        "rationale": "Per Burkert/West: defensible Greek 'scripture' core = Homer + Hesiod + Homeric Hymns + Orphic Hymns + Orphic Gold Tablets + Derveni Papyrus. Plato/Aristotle are philosophy. Chaldean Oracles are 2nd-c-CE Neoplatonist theurgic revelation (separate corpus). Herodotus Bk 2 is ethnography about Egypt."
+      },
+      {
+        "corpus_id": "mesopotamian",
+        "remove_books": [],
+        "add_books": [
+          "phase-1-006-atrahasis",
+          "phase-1-032-babylonian-theodicy"
+        ],
+        "rationale": "Atrahasis (primary Old Babylonian flood + creation-of-mankind) and Babylonian Theodicy (canonical Akkadian theodicy dialogue, closest analog to Job) both exist in the vault but aren't wired. Clean adds."
+      },
+      {
+        "corpus_id": "mesoamerican-sacred",
+        "remove_books": [],
+        "add_books": [
+          "phase-8-005-chilam-balam",
+          "NEW_NODE_NEEDED:madrid-codex-tro-cortesianus",
+          "NEW_NODE_NEEDED:paris-codex-maya"
+        ],
+        "rationale": "Chilam Balam exists in vault as phase-8-005 — clean add. Madrid + Paris Codices are the other 2 of the 4 surviving pre-Columbian Maya hieroglyphic books. Florentine Codex intentionally NOT added — 16th-c. colonial ethnography by Sahagun, not pre-Columbian sacred text."
+      },
+      {
+        "corpus_id": "norse-eddic",
+        "remove_books": [
+          "phase-8-018-kalevala"
+        ],
+        "add_books": [
+          "NEW_NODE_NEEDED:skaldic-verse-corpus"
+        ],
+        "rationale": "Kalevala is 19th-c. Lonnrot compilation of Finno-Ugric (Karelian + Ingrian) shamanic oral poetry — not Norse/Germanic. Reclassify to a NEW finno-ugric-corpus (corpus doesn't exist yet). Skaldic verse is a separate canonical Old Norse primary-source category warranting its own node."
+      },
+      {
+        "corpus_id": "avesta",
+        "remove_books": [],
+        "add_books": [
+          "NEW_NODE_NEEDED:visperad",
+          "NEW_NODE_NEEDED:vendidad-videvdat",
+          "NEW_NODE_NEEDED:yashts",
+          "NEW_NODE_NEEDED:khordeh-avesta"
+        ],
+        "rationale": "Avesta proper = 5 divisions. Currently only Yasna/Gathas present. Add Visperad (liturgical gahanbar extensions), Vendidad (22-fargard purity-law, only complete Avestan book), Yashts (21 hymns to Yazatas — most important Yazata source), Khordeh Avesta (daily-prayer breviary). Currently 60% incomplete."
+      },
+      {
+        "corpus_id": "mormon",
+        "remove_books": [],
+        "add_books": [
+          "NEW_NODE_NEEDED:doctrine-and-covenants",
+          "NEW_NODE_NEEDED:pearl-of-great-price"
+        ],
+        "rationale": "LDS 'standard works' = Bible + Book of Mormon + Doctrine and Covenants + Pearl of Great Price. Bible covered in bible corpus; add D&C + PoGP to complete the three uniquely-LDS standard works. Section structure: 'lds-keystone' / 'lds-revelations' / 'lds-pearl'."
+      },
+      {
+        "corpus_id": "bahai-corpus",
+        "remove_books": [],
+        "add_books": [
+          "NEW_NODE_NEEDED:hidden-words-bahaullah",
+          "NEW_NODE_NEEDED:seven-valleys-bahaullah",
+          "NEW_NODE_NEEDED:tablets-of-bahaullah-revealed-after-aqdas",
+          "NEW_NODE_NEEDED:some-answered-questions-abdul-baha",
+          "NEW_NODE_NEEDED:bayan-of-the-bab"
+        ],
+        "rationale": "Baha'i canon = Bab's Bayan + Baha'u'llah's Aqdas/Iqan/Hidden Words/Seven Valleys/Tablets + Abdu'l-Baha's Some Answered Questions. Current 2-text representation is incomplete. Corpus label says '(Bab + Baha'u'llah)' but no Bab work — add the Bayan."
+      },
+      {
+        "corpus_id": "alevi-corpus",
+        "remove_books": [],
+        "add_books": [
+          "NEW_NODE_NEEDED:buyruk-alevi-doctrinal-compendium",
+          "NEW_NODE_NEEDED:makalat-haci-bektas-veli"
+        ],
+        "rationale": "Add the Buyruk (Imam Cafer-i Sadık Buyrugu, 16th-c. catechetical compendium — the closest thing Alevism has to a doctrinal canon) + Hacı Bektaş Veli's Makalat (13th-c. authentic doctrinal treatise). Vilayetname is hagiography, correct to keep but needs doctrinal flanks. Nefes poetry is liturgical, not canonical — do NOT add."
+      },
+      {
+        "corpus_id": "mandaean-manichaean",
+        "remove_books": [
+          "phase-4-014-cologne-mani-codex",
+          "phase-4-015-kephalaia-of-the-teacher",
+          "phase-4-016-shabuhragan"
+        ],
+        "add_books": [
+          "NEW_NODE_NEEDED:qulasta-mandaean-canonical-prayerbook",
+          "NEW_NODE_NEEDED:diwan-abatur-mandaean-eschatological-scroll"
+        ],
+        "rationale": "Rename to 'mandaean-corpus'. Mandaeism is the only continuously-active pre-Islamic Gnostic religion (~60-100k adherents) — Ginza Rabba + Book of John are living canon. Add Qulasta + Diwan Abatur. Remove the 3 Manichaean books (Manichaeism comprehensively extinct ~17th c., no living canon-holder). See split_corpora for the technical split."
+      }
+    ],
+    "split_corpora": [
+      {
+        "corpus_id": "vedas",
+        "split_into": [
+          "vedas-shruti (Rg/Sama/Yajur/Atharva Samhitas + Brahmanas + Aranyakas + 10-13 Mukhya Upanishads — the only authoritative revelation per Mimamsa/Vedanta)",
+          "hindu-smriti-itihasa (Mahabharata, Ramayana, Bhagavad Gita, Puranas, Devi Mahatmya — derivative authority, canonical for Vaishnava/Shakta devotional Hinduism)",
+          "hindu-tantra (Vijnana-Bhairava, Tantraloka, Shiva-Sutras, Hatha Yoga Pradipika — Kashmir Shaiva agamic literature standing outside the Vedic stream)"
+        ]
+      },
+      {
+        "corpus_id": "tipitaka",
+        "split_into": [
+          "tipitaka-pali (Vinaya + Sutta-pitaka [5 Nikayas: Digha/Majjhima/Samyutta/Anguttara/Khuddaka — Dhammapada is in Khuddaka] + Abhidhamma — Theravada canon closed at 4th Council ~29 BCE)",
+          "mahayana-sutras (Lotus, Heart, Diamond, Avatamsaka, Sukhavativyuha, Lankavatara, Astasahasrika-Prajnaparamita, Platform Sutra of Huineng — canonical for Mahayana/East Asian, separate Taisho Chinese Tripitaka)",
+          "vajrayana-tantras (Bardo Thodol/Liberation Through Hearing — tantra sections of Tibetan Kangyur + terma cycles)"
+        ]
+      },
+      {
+        "corpus_id": "mandaean-manichaean",
+        "split_into": [
+          "mandaean-corpus (KEEP: Ginza Rabba + Book of John + add Qulasta + Diwan Abatur — living religion)",
+          "(DELETE the Manichaean side — Cologne Mani Codex, Kephalaia, Shabuhragan stay in vault as Personae/Timeline nodes; no canon corpus since the religion is extinct)"
+        ]
+      }
+    ],
+    "keep_as_is": [
+      "quran-manzil (correctly one Quran document organized by canonical 7-Manzil liturgical division; recommended to relabel to 'Qur'an' and absorb the Noldeke schema as an alternate lens-toggle)",
+      "samaritan-corpus (Samaritan Pentateuch alone — exactly the Samaritan canon; Memar Marqah and other liturgical works are post-canonical)",
+      "tao-corpus (all 7 texts — Daodejing, Zhuangzi, Liezi, Huainanzi, Cantong Qi, Baopuzi, Shangqing — are formally in the Daozang, the Ming Daoist canon; 'mystical' label doesn't disqualify since they ARE the official canon)",
+      "bon-corpus (Bon Kanjur is the recognized scriptural canon parallel to the Buddhist Kangyur; Bon Tengyur is commentary, correctly excluded)",
+      "druze-corpus (Rasa'il al-Hikma = 111 epistles is the complete and only canonical Druze scripture; closed-tradition by design)",
+      "yazidi-corpus (Kiteba Cilwe + Mishefa Resh — paired in scholarship, conventionally one node; qewls are oral, belong at tradition level)",
+      "kabbalistic-corpus (BORDERLINE — Sefer Yetzirah + Bahir + Zohar are not mainstream halakhic Judaism canon, but ARE the canonical scripture-triad of the kabbalistic sub-tradition. KEEP with corpus label clarified to 'Jewish mystical canon (Kabbalistic sub-tradition)'. Flag for John's final call — if 'canon of the religion as a whole' is the rule, REMOVE; if 'canon of a recognizable continuous sub-tradition,' KEEP.)"
+    ],
+    "cross_partition_concerns": [
+      "DUPLICATE CORPUS: quran and quran-manzil both point to the single phase-4-034-quran document. Recommendation: delete 'quran' corpus, absorb Noldeke chronology as a lens-toggle on quran-manzil.",
+      "DUPLICATE BOOKS across corpora: phase-4-013-discourse-on-the-eighth-and-ninth, phase-4-078-prayer-of-thanksgiving-nhc-vi-7, phase-4-079-coptic-asclepius-nhc-vi-8 are wired into BOTH nag-hammadi AND hermetica. Both corpora are being removed entirely, so this self-resolves at the corpus layer — but flag for the vault-node layer when the books re-surface in Personae/Themes.",
+      "ETHIOPIC OVERLAP: phase-4-080-garima-gospels, phase-4-082-ethiopic-biblical-canon, phase-4-081-mashafa-henok-geez-1-enoch, phase-3-009-jubilees appear in BOTH bible and ethiopic-tewahedo-canon. The Tewahedo broader-canon (81 books) is a SUPERSET of the Protestant/Catholic Bible, so books like 1 Enoch and Jubilees legitimately appear in both — but the Bible corpus should drop Garima (manuscript witness, not canon) and ethiopic-biblical-canon (overview document, not a book of the canon).",
+      "DEAD BOOK IDs: phase-2-job, phase-2-ecclesiastes, phase-2-song-of-songs are referenced in bible and tanakh corpora but the actual vault files are phase-2-035-job, phase-2-036-ecclesiastes, phase-2-037-song-of-songs. These are silent dead links — fix when modifying.",
+      "RELIGION-NAME AMBIGUITY: 'kabbalistic-corpus' raises the canon-of-religion-vs-canon-of-sub-tradition question. Same applies to vedas-shruti vs hindu-smriti-itihasa (smriti is canonical for Vaishnava/Shakta devotional Hinduism but not strict-sense Vedic), and to dasam-granth (Akal Takht recognized but Nirankari contested). John needs to rule: does Codex show 'canon of the religion-as-a-whole-per-mainstream-orthodoxy' (stricter) or 'canon of a recognizable continuous tradition or major sub-tradition' (broader)?",
+      "RECLASSIFY-TO-NONEXISTENT-CORPUS: The Vedas split proposes hindu-smriti-itihasa and hindu-tantra; the Tipitaka split proposes mahayana-sutras and vajrayana-tantras; the Norse split needs a finno-ugric-corpus for Kalevala. None of these target corpora exist yet — Lane A needs to create them.",
+      "BOOK NODES SURVIVE CORPUS DELETION: The 11 'remove-entire-corpus' verdicts (Nag Hammadi, Hermetica, Cathar/Bogomil, Sufi-Persian, Spanish-mystical, Reformation, Islamic-theological, Kebra-Nagast, South-Asian-modernism, Quran-Noldeke, Manichaean half) explicitly preserve the individual book nodes in the vault — this is a Codex-canon-layer purge, NOT a vault purge. The nodes are still needed for Personae/Themes/Events/Timeline lenses. Whoever implements must edit SCRIPTURE_CORPORA only, not delete vault .md files.",
+      "DUPLICATE BOOKS within rabbinic shift: phase-5-013-hekhalot-literature is reclassified from rabbinic-corpus to kabbalistic-corpus. Verify kabbalistic-corpus is willing to receive it (the keep-as-is verdict on kabbalistic-corpus didn't anticipate this addition)."
+    ]
+  }
+}
