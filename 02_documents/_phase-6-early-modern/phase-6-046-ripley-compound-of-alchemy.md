@@ -7,7 +7,7 @@ tradition: "English medieval-Renaissance alchemy"
 sub-tradition: "Canon English alchemical poetry / George Ripley school"
 label: "alchemical poem and emblem scroll"
 date-composed-earliest: 1471
-date-composed-latest: 1471
+date-composed-latest: 1570
 language: ["English (poem)", "Latin (glosses)"]
 script: "Secretary hand (manuscripts); Roman type (Ashmole 1652 print)"
 region: "England (Yorkshire — Bridlington Priory)"

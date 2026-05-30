@@ -6,7 +6,7 @@ aka: ["Heptaplus de septiformi sex dierum Geneseos enarratione", "Cabalistic Con
 tradition: "Christian Kabbalah"
 sub-tradition: "Florentine Renaissance"
 label: "kabbalistic"
-date-composed-earliest: 1489
+date-composed-earliest: 1486
 date-composed-latest: 1489
 date-redacted: 1489
 date-physical-mss-earliest: 1489

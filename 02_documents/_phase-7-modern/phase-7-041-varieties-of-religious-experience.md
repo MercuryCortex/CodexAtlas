@@ -3,7 +3,7 @@ type: document
 id: "phase-7-041-varieties-of-religious-experience"
 name: "The Varieties of Religious Experience"
 date: 1902
-date-composed-earliest: 1902
+date-composed-earliest: 1901
 date-composed-latest: 1902
 language: "English"
 region: "United States / United Kingdom"

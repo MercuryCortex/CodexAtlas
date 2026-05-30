@@ -7,7 +7,7 @@ tradition: "Latin Christianity (Lutheran) / Renaissance Hermetic-alchemical / Ro
 sub-tradition: "integrated emblem-music-alchemy"
 label: "illustrated alchemical-musical-emblematic treatise"
 date-composed-earliest: 1617
-date-composed-latest: 1617
+date-composed-latest: 1618
 date-redacted: 1617
 date-physical-mss-earliest: 1617
 language: ["Latin (with German vernacular versions in some editions)"]

@@ -6,7 +6,7 @@ aka: ["Tahāfut al-Tahāfut", "The Incoherence of the Incoherence", "*Destructio
 tradition: "Islam (Sunnī Mālikī; Falsafa — Andalusi peripatetic tradition)"
 sub-tradition: "Andalusi peripatetic / Averroist"
 label: "philosophical-polemical-treatise"
-date-composed-earliest: 1180
+date-composed-earliest: 1179
 date-composed-latest: 1180
 date-redacted: 1180
 date-physical-mss-earliest: 1300
