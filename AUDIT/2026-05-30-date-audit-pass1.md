@@ -162,3 +162,67 @@ After steps 2–4, the Timeline B-DATING-5 slide should fire correctly for every
 - Touching the 22 extinct-cult dates (those need scholarship I can produce in Pass 2, not guess inline)
 
 Ready to execute steps 2 and 3 the moment you ratify rule (A) or hand me a counter-rule.
+
+---
+
+## POST-EXECUTION RESULT (2026-05-30 same session)
+
+**Rule (A) ratified by John ("go, be scientific and rigor"). All steps executed.**
+
+### Commits landed
+
+| Commit | Lane | Description |
+|---|---|---|
+| `cd977080` | B | classifier + applier + findings doc + TSV |
+| `7c34c99b` | A | 150 currently-active deities → `period-active-latest: 2026` |
+| `2b7e28e7` | A | 5 single-year docs → honest composition ranges |
+| `d7e5980c` | A | 59 Tier-1-sourced patches (23 extinct + 36 missing-both) |
+
+### Pass-2 workflow
+
+Dispatched `wf_e4b5f19b-bb1` — 7 regional goblins (Mediterranean / Mesopotamian-Levant-Iranian / Northern-European / Mesoamerican-Andean / Indic-East-Asian / Japanese-Shinto / Chinese-Indigenous-African) + 1 synthesizer. 8 agents, 293K tokens, 67 tool uses, 4m 28s.
+
+Result: 59 proposals, 54 high-confidence, 5 medium-confidence, 0 low. 8 flagged-for-review items resolved manually before applying.
+
+| Cluster | End-date | Rationale |
+|---|---|---|
+| Greek / Roman extinct | 400 | Theodosian closures 391-393 CE — matches existing Zeus/Apollo/Athena/Jupiter/Mars=400 |
+| Egyptian extinct (Ihy, Ma-at, Ammit) | 500 | Philae closure 535 CE bookend — matches Ra=500 |
+| Celtic Gaelic | 600 | Christianization of Ireland / Wales 432-600 |
+| Cernunnos (Gallo-Roman) | 400 | Roman-provincial shrines end with Theodosian closures (NOT 600 — goblin override of my default) |
+| Norse pre-revival | 1100 | Christianization of Scandinavia, matches Odin/Thor/Freyja/Loki |
+| Slavic | 988 | Christianization of Kievan Rus' |
+| Finno-Karelian | 1900 | Runic singing through 19th c., Kalevala 1849 |
+| Maya | 1697 | Fall of Itza (Nojpetén) per Restall 1998 |
+| Andean | 1608 | Huarochirí Manuscript closing date |
+| Mesopotamian / Canaanite (Adad, Baal) | -100 | Hellenistic absorption |
+| Active world religions / archangels / Hindu / Buddhist / Shinto / Yoruba / Vodou / Chinese folk / Daoist / Cao Dai / Donghak / Tenrikyo | 2026 | Continuous to present |
+| Anahita, Melek Taus, Mithra (Iranian active) | 2026 | Zoroastrian Parsi + Yazidi continuity |
+
+### Notable flag resolutions
+
+- **baal.md** — aliased canonical baal-hadad's -2500/-100 (file's own `equivalents:` field confirms alias relationship)
+- **xuanwu.md** — confirmed CE/BCE sign error in legacy `date-earliest: 200`. Canonical `period-active-earliest: -200` set (mid-Western-Han directional astralism). Legacy field NOT mutated — kept as audit-of-prior-error.
+- **zhenwu.md** — accepted as Song-Ming overlay (1000/2026) treated separately from xuanwu (-200/2026); vault data model already distinguishes the two stub nodes
+- **cernunnos.md** — accepted goblin's 400 CE (Gallo-Roman) over my 600 CE Celtic-Christianization default; Cernunnos's main shrines (Pillar of the Boatmen, Reims) are Roman-provincial
+- **wiraqocha.md / anansi.md / coyote-navajo.md / jarilo.md** — accepted medium-confidence pre-literate-substrate / contested-end-date calls
+
+### Verification
+
+Re-ran `scripts/audit_dates_2026-05-30.py` post-patch. Pre-audit `Total flagged: 209`. Post-audit: **`Total flagged: 0`**. Every deity in the vault now has populated `period-active-earliest` + `period-active-latest`. B-DATING-5 timeline slide-right can declutter every dense epoch.
+
+### Coverage
+
+- 719 deity files total
+- Pre-audit: 49 with `period-active-latest: 2026` (currently-active subset already filled)
+- Post-audit: 256 with `period-active-latest: 2026` (+207); the rest (~463) have historical end-dates per scholarship
+- All 209 files that had dating gaps (173 empty-latest + 36 missing-both) are now closed
+
+### What this doesn't cover (Pass-3, optional)
+
+- 402 documents with full schema (`date-composed-earliest` + `date-composed-latest`) — never sample-audited; ranges may still be wrong, but no missing-field gaps
+- 509 deities with full schema (pre-audit non-gaps) — never sample-audited
+- 25 documents undated entirely + 88 stub-schema docs (`date-earliest` only) — these are Lane-A content build-out, not audit work
+- 44 stale `2025` deity values relative to today's 2026 — cosmetic; consider an annual rollover script
+
+Recommend running Pass 3 only if Timeline still shows pile-up after the rebuild that consumes the patched data. Likely unnecessary given the gap closure.

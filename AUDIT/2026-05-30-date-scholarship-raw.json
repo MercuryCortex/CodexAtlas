@@ -1,0 +1,518 @@
+{
+  "summary": "Tier-1-sourced dating proposals for 59 deity files (23 extinct-cult + 36 missing-both) partitioned by cultural region",
+  "agentCount": 8,
+  "logs": [
+    "Collected 59 proposals across 7/7 goblins"
+  ],
+  "result": {
+    "final_proposals": [
+      {
+        "file": "~/Desktop/Codex Atlas/03_deities/atlas-titan.md",
+        "proposed_earliest": -800,
+        "proposed_latest": 400,
+        "tier1_source": "Trombley 1995 Hellenic Religion and Christianization c. 370–529; Athanassakis 2004 Hesiod: Theogony, Works and Days, Shield (Johns Hopkins UP)",
+        "rationale": "Hesiod Theogony 517-520 (~-700) anchors textual attestation; Titan-tier figure persists in Greek mythological-cultic discourse through Theodosian closures (391-393 CE), matching vault Zeus=400 precedent.",
+        "confidence": "high"
+      },
+      {
+        "file": "~/Desktop/Codex Atlas/03_deities/iapetus.md",
+        "proposed_earliest": -800,
+        "proposed_latest": 400,
+        "tier1_source": "West 1997 The East Face of Helicon (Oxford UP); Trombley 1995 Hellenic Religion and Christianization",
+        "rationale": "First attested Hesiod Theogony 134, 507-520; genealogical Titan present in Greek mythography through late antique pagan literature; ends with Theodosian closures, parallel to other Titan-tier figures.",
+        "confidence": "high"
+      },
+      {
+        "file": "~/Desktop/Codex Atlas/03_deities/mnemosyne.md",
+        "proposed_earliest": -800,
+        "proposed_latest": 400,
+        "tier1_source": "Graf & Johnston 2007 Ritual Texts for the Afterlife: Orpheus and the Bacchic Gold Tablets (Routledge); Trombley 1995 Hellenic Religion and Christianization",
+        "rationale": "Hesiod Theogony 53-62 + Orphic Gold Tablets (Petelia, Hipponion ~-400) anchor cult; Mnemosyne invoked in Orphic-Pythagorean afterlife ritual through late antiquity; closure 400 CE matches Theodosian terminus.",
+        "confidence": "high"
+      },
+      {
+        "file": "~/Desktop/Codex Atlas/03_deities/prometheus.md",
+        "proposed_earliest": -800,
+        "proposed_latest": 400,
+        "tier1_source": "Forsyth 1987 The Old Enemy (Princeton UP); Trombley 1995 Hellenic Religion and Christianization",
+        "rationale": "Hesiod Theogony + Works and Days (~-700) through Aeschylus Prometheus Bound; cultic relevance ends with Theodosian closures. Romantic reception (Shelley/Byron) is literary not cultic — does not extend period-active-latest per schema rule.",
+        "confidence": "high"
+      },
+      {
+        "file": "~/Desktop/Codex Atlas/03_deities/rhea.md",
+        "proposed_earliest": -800,
+        "proposed_latest": 400,
+        "tier1_source": "Roller 1999 In Search of God the Mother: The Cult of Anatolian Cybele (UC Press); Beard, North & Price 1998 Religions of Rome vol. 1 (Cambridge UP)",
+        "rationale": "Hesiod attestation; Rhea-Cybele/Magna Mater cult was a state cult in Rome through 4th c. CE; Theodosian decrees close the cult by 391-393 CE.",
+        "confidence": "high"
+      },
+      {
+        "file": "~/Desktop/Codex Atlas/03_deities/the-erinyes.md",
+        "proposed_earliest": -800,
+        "proposed_latest": 400,
+        "tier1_source": "Johnston 1999 Restless Dead: Encounters between the Living and the Dead in Ancient Greece (UC Press); Trombley 1995 Hellenic Religion and Christianization",
+        "rationale": "Hesiod Theogony 183-185 + Homer + Aeschylus Eumenides; Areopagus Semnai Theai cult continuous through Roman imperial period until Theodosian shutdown.",
+        "confidence": "high"
+      },
+      {
+        "file": "~/Desktop/Codex Atlas/03_deities/the-moirai.md",
+        "proposed_earliest": -800,
+        "proposed_latest": 400,
+        "tier1_source": "West 2007 Indo-European Poetry and Myth (Oxford UP); Trombley 1995 Hellenic Religion and Christianization",
+        "rationale": "Hesiod Theogony 217-219, 904-906 + Plato Republic 617c; Moirai/Parcae invoked in Greek and Roman cultic-poetic practice through late antiquity; closure 400 CE.",
+        "confidence": "high"
+      },
+      {
+        "file": "~/Desktop/Codex Atlas/03_deities/themis.md",
+        "proposed_earliest": -800,
+        "proposed_latest": 400,
+        "tier1_source": "Trombley 1995 Hellenic Religion and Christianization; Athanassakis 2004 Hesiod: Theogony (Johns Hopkins UP)",
+        "rationale": "Hesiod + Homeric Hymn to Apollo; Delphic oracular tradition + Themis-cultic memorialization through Roman imperial Iustitia development; ends with Theodosian closures.",
+        "confidence": "high"
+      },
+      {
+        "file": "~/Desktop/Codex Atlas/03_deities/fortuna.md",
+        "proposed_earliest": -500,
+        "proposed_latest": 400,
+        "tier1_source": "Champeaux 1982-1987 Fortuna: Le culte de la Fortune à Rome et dans le monde romain (2 vols, École Française de Rome); Beard, North & Price 1998 Religions of Rome vol. 1 (Cambridge UP)",
+        "rationale": "Praeneste Fortuna Primigenia cult attested archaic Roman period; Fortuna Redux imperial cult thrives through 4th c. CE; closes with Theodosian decrees. Boethius (~524) treats Fortuna as literary allegory not cult, so 400 CE is the cult terminus.",
+        "confidence": "high"
+      },
+      {
+        "file": "~/Desktop/Codex Atlas/03_deities/eileithyia-greek.md",
+        "proposed_earliest": -1400,
+        "proposed_latest": 400,
+        "tier1_source": "Burkert 1985 Greek Religion (Harvard UP); Trombley 1995 Hellenic Religion and Christianization",
+        "rationale": "Mycenaean Linear B e-re-u-ti-ja (Knossos KN Gg 705, ~-1400) is one of the earliest-attested Greek deities; cult continuous through Roman imperial period until Theodosian closures.",
+        "confidence": "high"
+      },
+      {
+        "file": "~/Desktop/Codex Atlas/03_deities/hermes-greek.md",
+        "proposed_earliest": -1400,
+        "proposed_latest": 400,
+        "tier1_source": "Versnel 2011 Coping with the Gods (Brill); Trombley 1995 Hellenic Religion and Christianization",
+        "rationale": "Mycenaean Linear B e-ma-a (~-1400) attests Hermes; Olympian cult continuous through Hellenistic-Roman world; closes with Theodosian decrees. Hermetism continues as literary-philosophical tradition under Hermes Trismegistus — separate node, not the Olympian cult.",
+        "confidence": "high"
+      },
+      {
+        "file": "~/Desktop/Codex Atlas/03_deities/priapus-greek-roman.md",
+        "proposed_earliest": -400,
+        "proposed_latest": 400,
+        "tier1_source": "Parker 1996 Athenian Religion: A History (Oxford UP); Beard, North & Price 1998 Religions of Rome vol. 1 (Cambridge UP)",
+        "rationale": "Priapus cult emerges at Lampsacus (Hellespont) in 4th c. BCE, spreads through Hellenistic-Roman world; apotropaic garden-guardian cult ends with Theodosian Christianization.",
+        "confidence": "high"
+      },
+      {
+        "file": "~/Desktop/Codex Atlas/03_deities/ihy.md",
+        "proposed_earliest": -2400,
+        "proposed_latest": 500,
+        "tier1_source": "Wilkinson 2003 The Complete Gods and Goddesses of Ancient Egypt (Thames & Hudson); Hornung 1999 The Ancient Egyptian Books of the Afterlife (Cornell UP)",
+        "rationale": "Ihy attested in Pyramid Texts (Old Kingdom, ~-2400); Dendera-Edfu family-triad cult continuous through Ptolemaic-Roman Egypt; ends with Philae closure 535 CE bookend, matching vault Ra=500.",
+        "confidence": "high"
+      },
+      {
+        "file": "~/Desktop/Codex Atlas/03_deities/ma-at.md",
+        "proposed_earliest": -2400,
+        "proposed_latest": 500,
+        "tier1_source": "Assmann 1989/2006 Ma'at: Gerechtigkeit und Unsterblichkeit im Alten Ägypten (Beck); Hornung 1999 The Ancient Egyptian Books of the Afterlife (Cornell UP)",
+        "rationale": "Ma'at attested Pyramid Texts onward; cosmic-order principle pervasive through Pharaonic-Ptolemaic-Roman Egyptian religion; ends with temple closures through Philae 535 CE. Current latest=-30 is wrong (truncates at Augustus); 500 matches vault Ra=500.",
+        "confidence": "high"
+      },
+      {
+        "file": "~/Desktop/Codex Atlas/03_deities/ammit-devourer.md",
+        "proposed_earliest": -2400,
+        "proposed_latest": 500,
+        "tier1_source": "Hornung 1999 The Ancient Egyptian Books of the Afterlife (Cornell UP); Wilkinson 2003 The Complete Gods and Goddesses of Ancient Egypt (Thames & Hudson)",
+        "rationale": "Ammit attested Middle Kingdom onward in Book of the Dead chapter 125 weighing-of-the-heart; funerary papyri produced through Roman-period Egypt; closure 500 CE matches Philae bookend and vault Ra=500. Current latest=30 truncates wrongly at Augustus.",
+        "confidence": "high"
+      },
+      {
+        "file": "~/Desktop/Codex Atlas/03_deities/adad.md",
+        "proposed_earliest": -2500,
+        "proposed_latest": -100,
+        "tier1_source": "Schwemer 2008 'The Storm-Gods of the Ancient Near East' JANER 7:121-168; Schwemer 2001 Die Wettergottgestalten Mesopotamiens und Nordsyriens (Harrassowitz)",
+        "rationale": "Continuous Akkadian/Babylonian/Assyrian storm-god cult from Old Akkadian (c. -2500) through Neo-Babylonian and into Hellenistic Mesopotamia; cult absorbed/displaced by Hellenistic syncretism with Zeus-Hadad and disappears as a distinct cult by ~-100.",
+        "confidence": "high"
+      },
+      {
+        "file": "~/Desktop/Codex Atlas/03_deities/baal.md",
+        "proposed_earliest": -2500,
+        "proposed_latest": -100,
+        "tier1_source": "Smith, M. S. 1994 The Ugaritic Baal Cycle vol. I (Brill); Smith 2002 The Early History of God (Eerdmans, 2nd ed.)",
+        "rationale": "West Semitic Baal-Hadad cult from EBA Syria-Levant (~-2500) through Ugarit, Phoenician city-states, and Punic diaspora; absorbed into Hellenistic Zeus-Baal syncretism by ~-100. Alias node tracks same span as baal-hadad canonical.",
+        "confidence": "high"
+      },
+      {
+        "file": "~/Desktop/Codex Atlas/03_deities/anahita-zoroastrian.md",
+        "proposed_earliest": -1000,
+        "proposed_latest": 2026,
+        "tier1_source": "Boyce, M. 1989 'Anāhīd' Encyclopaedia Iranica I/9 (also Boyce 1975-1991 A History of Zoroastrianism vols I-III, Brill); de Jong 1997 Traditions of the Magi (Brill)",
+        "rationale": "Avestan Arǝdvī Sūrā Anāhitā attested in Younger Avesta (composition span c. -1000 to -500), state cult under Artaxerxes II (-405/-358), continuous Zoroastrian liturgical veneration in Yasht 5 through Sasanian period and into living Parsi and Iranian Zoroastrian practice — schema-rule: living tradition counts.",
+        "confidence": "high"
+      },
+      {
+        "file": "~/Desktop/Codex Atlas/03_deities/iblis-shaytan.md",
+        "proposed_earliest": 610,
+        "proposed_latest": 2026,
+        "tier1_source": "Reynolds, G. S. 2018 The Qur'an and the Bible: Text and Commentary (Yale UP); Awn, P. J. 1983 Satan's Tragedy and Redemption: Iblīs in Sufi Psychology (Brill)",
+        "rationale": "Iblīs/Shayṭān is a Qur'anic theological figure (first proclamations c. 610 CE); continuously active in Islamic theology, exegesis, and lived practice (ta'awwudh formula, daily ritual) across all schools to present.",
+        "confidence": "high"
+      },
+      {
+        "file": "~/Desktop/Codex Atlas/03_deities/melek-taus.md",
+        "proposed_earliest": 1162,
+        "proposed_latest": 2026,
+        "tier1_source": "Kreyenbroek, P. G. 1995 Yezidism: Its Background, Observances and Textual Tradition (Mellen); Açıkyıldız, B. 2010 The Yezidis: The History of a Community, Culture and Religion (I.B. Tauris)",
+        "rationale": "Yazidi veneration of Tawûsê Melek codified around Sheikh Adi ibn Musafir (d. 1162) and continuously practiced in Lalish and the Kurdish diaspora to present — active living tradition.",
+        "confidence": "high"
+      },
+      {
+        "file": "~/Desktop/Codex Atlas/03_deities/mithra.md",
+        "proposed_earliest": -1500,
+        "proposed_latest": 2026,
+        "tier1_source": "Gershevitch, I. 1959 The Avestan Hymn to Mithra (Cambridge UP); Boyce, M. 1975 A History of Zoroastrianism vol. I (Brill); Boyce & Grenet 1991 A History of Zoroastrianism vol. III (Brill)",
+        "rationale": "This node is explicitly the Avestan/Zoroastrian Mithra (NOT Roman Mithras — frontmatter draws the distinction). Indo-Iranian Mitra/Mithra attested from Mitanni treaty (-1380) and proto-Indo-Iranian substrate (~-1500); Mihr Yasht (Yasht 10) is among oldest Younger Avestan hymns; continuous Zoroastrian liturgical veneration through Sasanian, post-Islamic Parsi, and modern Iranian Zoroastrian and Parsi practice (Mihragan festival still observed). Schema-rule: living Zoroastrian continuity counts.",
+        "confidence": "high"
+      },
+      {
+        "file": "~/Desktop/Codex Atlas/03_deities/cernunnos.md",
+        "proposed_earliest": -400,
+        "proposed_latest": 400,
+        "tier1_source": "Green, Miranda 1986 The Gods of the Celts (Sutton); also Green 1989 Symbol and Image in Celtic Religious Art (Routledge)",
+        "rationale": "Gallo-Roman cult evidenced from Pillar of the Boatmen (~14-37 CE) and 4th-c. iconography; Gaul Christianized through 4th-5th c. with formal cult ended by Theodosian edicts; Insular Celtic Cernunnos has no continuous attested cult into the Christian Irish period — propose 400 CE as latest continuous Gallo-Roman attestation.",
+        "confidence": "medium"
+      },
+      {
+        "file": "~/Desktop/Codex Atlas/03_deities/dagda.md",
+        "proposed_earliest": -500,
+        "proposed_latest": 600,
+        "tier1_source": "Mac Cana, Proinsias 1970 Celtic Mythology; Green, Miranda 1986 The Gods of the Celts; Charles-Edwards 2000 Early Christian Ireland (CUP)",
+        "rationale": "Gaelic chief-god worship; Christianization of Ireland 432-c.600 CE supplanted active cult; Dagda survives only as euhemerized Tuatha Dé character in later MSS, not as worshipped deity.",
+        "confidence": "high"
+      },
+      {
+        "file": "~/Desktop/Codex Atlas/03_deities/lugh.md",
+        "proposed_earliest": -500,
+        "proposed_latest": 600,
+        "tier1_source": "Mac Cana 1970 Celtic Mythology; Green 1986 The Gods of the Celts; Caesar Bellum Gallicum 6.17 (Gaulish chief god = Mercury/Lugus)",
+        "rationale": "Continental Lugus cult through Roman period; Insular Lugh worship to Christianization of Ireland/Wales c. 432-600 CE. Lughnasadh persists as harvest festival but as folk custom under Christian overlay, not deity-cult.",
+        "confidence": "high"
+      },
+      {
+        "file": "~/Desktop/Codex Atlas/03_deities/manannan-mac-lir.md",
+        "proposed_earliest": -300,
+        "proposed_latest": 600,
+        "tier1_source": "Mac Cana 1970 Celtic Mythology; Sims-Williams 2011 Irish Influence on Medieval Welsh Literature (OUP)",
+        "rationale": "Gaelic and Welsh sea-god; cult extinguished by Christianization of Ireland (432-c.600) and Wales (similar timing); survives only as literary figure in Immrama and Mabinogion.",
+        "confidence": "high"
+      },
+      {
+        "file": "~/Desktop/Codex Atlas/03_deities/nuada.md",
+        "proposed_earliest": -300,
+        "proposed_latest": 600,
+        "tier1_source": "Mac Cana 1970 Celtic Mythology; Dumezil 1948 Mitra-Varuna; Wheeler & Wheeler 1932 Report on the Excavation of the Prehistoric, Roman, and Post-Roman Site in Lydney Park (Society of Antiquaries)",
+        "rationale": "Nodens cult at Lydney attested to ~370 CE; Romano-British paganism ended by 5th-c. Christianization; Insular Nuada cult extinguished by 600 CE Christianization of Ireland.",
+        "confidence": "high"
+      },
+      {
+        "file": "~/Desktop/Codex Atlas/03_deities/the-morrigan.md",
+        "proposed_earliest": -300,
+        "proposed_latest": 600,
+        "tier1_source": "Green 1986 The Gods of the Celts; Mac Cana 1970 Celtic Mythology; Charles-Edwards 2000 Early Christian Ireland",
+        "rationale": "Gaelic war-goddess cult terminated by Christianization of Ireland 432-c.600 CE; later attestations are MS-literary, not cultic; no Christian-saint syncretic continuation comparable to Brigid.",
+        "confidence": "high"
+      },
+      {
+        "file": "~/Desktop/Codex Atlas/03_deities/bergelmir.md",
+        "proposed_earliest": 800,
+        "proposed_latest": 1100,
+        "tier1_source": "Simek, Rudolf 1993 Dictionary of Northern Mythology (Brewer); Lindow 2001 Norse Mythology (OUP); Sawyer 1987 The Christianization of Scandinavia",
+        "rationale": "Norse jötunn flood-survivor; Christianization of Scandinavia c. 1000-1150 CE; matches Odin/Thor/Freyja/Loki precedent of 1100 latest.",
+        "confidence": "high"
+      },
+      {
+        "file": "~/Desktop/Codex Atlas/03_deities/jarilo.md",
+        "proposed_earliest": -500,
+        "proposed_latest": 988,
+        "tier1_source": "Ivanov & Toporov 1974 Issledovaniya v oblasti slavyanskikh drevnostey; Afanasyev 1865-69 Poeticheskie vozzreniya slavyan na prirodu; Gasparov 2012 The Slavonic Letters of St Jerome (for Christianization context)",
+        "rationale": "Pre-Christian East Slavic dying-rising vegetation god; Christianization of Kievan Rus 988 CE terminates formal cult; folk Jurjevdan/St. George overlay is post-cult syncretism (Christian saint-overlay reverses the Brigid pattern — here pagan deity vanishes under saint).",
+        "confidence": "medium"
+      },
+      {
+        "file": "~/Desktop/Codex Atlas/03_deities/ukko.md",
+        "proposed_earliest": -1000,
+        "proposed_latest": 1900,
+        "tier1_source": "Pentikainen, Juha 1989 Kalevala Mythology (Indiana UP); Siikala, Anna-Leena 2002 Mythic Images and Shamanism (FF Communications 280, Academia Scientiarum Fennica)",
+        "rationale": "Finno-Karelian sky-thunder god; ukon vakat offering ceremonies documented continuously into 19th c. ethnographic fieldwork; runo-singing tradition active to c. 1900; Agricola 1551 attests living cult amid nominal Christianization.",
+        "confidence": "high"
+      },
+      {
+        "file": "~/Desktop/Codex Atlas/03_deities/vainamoinen.md",
+        "proposed_earliest": -500,
+        "proposed_latest": 1900,
+        "tier1_source": "Pentikainen 1989 Kalevala Mythology; Siikala 2002 Mythic Images and Shamanism; DuBois 2009 An Introduction to Shamanism (CUP)",
+        "rationale": "Karelian-Finnish primordial shaman-singer of runo-poetry; tradition documented from 17th c. (Petrus Magnus) through Lonnrot's 1849 Kalevala and into early-20th-c. SKVR fieldwork; runo-singing tradition continuous to c. 1900.",
+        "confidence": "high"
+      },
+      {
+        "file": "~/Desktop/Codex Atlas/03_deities/ah-puch.md",
+        "proposed_earliest": -300,
+        "proposed_latest": 1697,
+        "tier1_source": "Restall 1998 Maya Conquistador; Jones 1998 Maya Resistance to Spanish Rule (fall of Nojpetén / Itza 1697)",
+        "rationale": "Late Preclassic Maya iconographic emergence of God A (Dresden Codex tradition) c. -300; unbroken pre-contact Maya state-religion ends with Spanish conquest of the last independent Maya polity Nojpetén 1697; later survivals (Kisin) are Christian-syncretized folk continuations rather than continuous pre-contact cult under the named lord.",
+        "confidence": "high"
+      },
+      {
+        "file": "~/Desktop/Codex Atlas/03_deities/ixbalanque.md",
+        "proposed_earliest": -300,
+        "proposed_latest": 1697,
+        "tier1_source": "Tedlock 1996 Popol Vuh translation/commentary; Coe 2011 The Maya (8th ed.); Restall 1998 Maya Conquistador (1697 Itza endpoint)",
+        "rationale": "Hero Twins iconography traceable to Late Preclassic / San Bartolo murals (c. -300 to -100) and continuous through Classic Maya; K'iche' Popol Vuh tradition culminates pre-contact mythology; cult under Maya state religion ends with 1697 Nojpetén conquest.",
+        "confidence": "high"
+      },
+      {
+        "file": "~/Desktop/Codex Atlas/03_deities/chaac.md",
+        "proposed_earliest": -300,
+        "proposed_latest": 1697,
+        "tier1_source": "Taube 1992 The Major Gods of Ancient Yucatan (Dumbarton Oaks); Restall 1998 Maya Conquistador",
+        "rationale": "Chaac iconography (God B) attested Late Preclassic through Classic and into Postclassic codices (Dresden, Madrid) and Landa 1566 Relación; current latest=900 truncates at Classic collapse but Chaac cult continued in Postclassic Yucatán and the Itza polity until 1697 conquest of Nojpetén.",
+        "confidence": "high"
+      },
+      {
+        "file": "~/Desktop/Codex Atlas/03_deities/coniraya.md",
+        "proposed_earliest": 1000,
+        "proposed_latest": 1608,
+        "tier1_source": "Salomon & Urioste 1991 The Huarochirí Manuscript: A Testament of Ancient and Colonial Andean Religion; MacCormack 1991 Religion in the Andes",
+        "rationale": "Regional Huarochirí huaca tradition consolidated in central Andean late-Intermediate / Late-Horizon period (c. 1000 onward); last attested as living regional cult in the Huarochirí Manuscript collected by Avila c. 1608, which marks the close of unbroken pre-contact Andean religion before the extirpation campaigns.",
+        "confidence": "high"
+      },
+      {
+        "file": "~/Desktop/Codex Atlas/03_deities/pariacaca.md",
+        "proposed_earliest": 1000,
+        "proposed_latest": 1608,
+        "tier1_source": "Salomon & Urioste 1991 The Huarochirí Manuscript; Taylor 1987 Ritos y tradiciones de Huarochirí",
+        "rationale": "Pariacaca mountain-huaca cult attested as central regional sovereignty deity in the Huarochirí tradition from the late-Intermediate period; final living attestation in Huarochirí Manuscript c. 1608, contemporaneous with Avila's extirpation that ended open Andean huaca cult.",
+        "confidence": "high"
+      },
+      {
+        "file": "~/Desktop/Codex Atlas/03_deities/wiraqocha.md",
+        "proposed_earliest": -500,
+        "proposed_latest": 1608,
+        "tier1_source": "Cook 1994 Wari y Tiwanaku (Lima); Rowe 1960 The Origins of Creator Worship Among the Incas; MacCormack 1991 Religion in the Andes",
+        "rationale": "Staff-God / creator-figure iconography traceable to Chavín-Tiwanaku-Wari horizons (current -500 anchor confirmed by Cook 1994); Inca-period synthesis as Wiraqocha c. 1450; cult under that name continuous through the Huarochirí Manuscript 1608 (Cuniraya-Viracocha conflation explicitly attested) before extirpation closes the unbroken pre-contact tradition.",
+        "confidence": "medium"
+      },
+      {
+        "file": "~/Desktop/Codex Atlas/03_deities/shakti.md",
+        "proposed_earliest": -1000,
+        "proposed_latest": 2026,
+        "tier1_source": "Coburn, T. 1991 Encountering the Goddess: A Translation of the Devi-Mahatmya and a Study of Its Interpretation, SUNY Press",
+        "rationale": "Shakti as theological category traces to Vedic Vac (RV 10.125, c. -1000); Shakta cult crystallized in Devi Mahatmya c. 500 CE; continuous cult through Sri Vidya, Tantric Shaktism, and pan-Hindu devotionalism today.",
+        "confidence": "high"
+      },
+      {
+        "file": "~/Desktop/Codex Atlas/03_deities/meenakshi.md",
+        "proposed_earliest": 600,
+        "proposed_latest": 2026,
+        "tier1_source": "Younger, P. 1995 The Home of Dancing Sivan: The Traditions of the Hindu Temple in Citamparam (and his Madurai Meenakshi work); Harman, W. 1989 The Sacred Marriage of a Hindu Goddess, Indiana University Press",
+        "rationale": "Tamil Madurai Meenakshi-Sundareswarar temple cult attested from c. 600 CE Pandya-era; Tiruvilaiyadal Puranam c. 1500; continuous active cult at Madurai Meenakshi Temple through 2026.",
+        "confidence": "high"
+      },
+      {
+        "file": "~/Desktop/Codex Atlas/03_deities/sundareswarar.md",
+        "proposed_earliest": 600,
+        "proposed_latest": 2026,
+        "tier1_source": "Harman, W. 1989 The Sacred Marriage of a Hindu Goddess, Indiana University Press; Younger, P. 1995 The Home of Dancing Sivan",
+        "rationale": "Madurai-Shaiva Sundareswarar cult Tamil c. 600 CE (Pandya); paired with Meenakshi at Madurai Meenakshi-Sundareswarar Temple — active living cult through 2026.",
+        "confidence": "high"
+      },
+      {
+        "file": "~/Desktop/Codex Atlas/03_deities/apam-napat-vedic.md",
+        "proposed_earliest": -1500,
+        "proposed_latest": 2026,
+        "tier1_source": "Macdonell, A. A. 1897 Vedic Mythology, Strassburg; Boyce, M. 1975 A History of Zoroastrianism vol. I, Brill",
+        "rationale": "Apam Napat in RV 2.35 (c. -1500 to -1200 Rig-Vedic stratum); Indo-Iranian cognate cult continues in Vedic recitation and the Avestan Yasht 19 (still recited in Zoroastrian liturgy 2026).",
+        "confidence": "high"
+      },
+      {
+        "file": "~/Desktop/Codex Atlas/03_deities/narada.md",
+        "proposed_earliest": -1500,
+        "proposed_latest": 2026,
+        "tier1_source": "Witzel, M. 1995 'Early Sanskritization: Origins and Development of the Kuru State' EJVS; Hopkins, E. W. 1915 Epic Mythology, Strassburg",
+        "rationale": "Narada referenced in Rig Veda 8.13.6 and Atharvaveda; Puranic biography in Bhagavata Purana c. 900-1000 CE; continuous Vaishnava devotional presence + bhakti narrative through 2026 (extant Narada Bhakti Sutra cult).",
+        "confidence": "high"
+      },
+      {
+        "file": "~/Desktop/Codex Atlas/03_deities/vac-goddess.md",
+        "proposed_earliest": -1500,
+        "proposed_latest": 2026,
+        "tier1_source": "Padoux, A. 1990 Vac: The Concept of the Word in Selected Hindu Tantras, SUNY Press",
+        "rationale": "Vac in Rig Veda 10.125 Devi Sukta (c. -1200); continuously absorbed into Saraswati (her direct syncretic continuation) — Saraswati remains an actively-worshipped goddess across Hindu India in 2026, satisfying direct syncretic-continuation clause.",
+        "confidence": "high"
+      },
+      {
+        "file": "~/Desktop/Codex Atlas/03_deities/tathagata.md",
+        "proposed_earliest": -500,
+        "proposed_latest": 2026,
+        "tier1_source": "Edgerton, F. 1953 Buddhist Hybrid Sanskrit Grammar and Dictionary, Yale University Press; Hirakawa, A. 1990 Indian Buddhism: A Survey with Bibliographical Notes, University of Hawaii Press",
+        "rationale": "Tathāgata epithet attested from earliest Pali Nikayas (c. -500 to -400) as Buddha's self-designation; continuously used across Theravada/Mahayana/Vajrayana liturgy and scholarship through 2026.",
+        "confidence": "high"
+      },
+      {
+        "file": "~/Desktop/Codex Atlas/03_deities/vajrakilaya-yidam.md",
+        "proposed_earliest": 700,
+        "proposed_latest": 2026,
+        "tier1_source": "Boord, M. J. 1993 The Cult of the Deity Vajrakila, Institute of Buddhist Studies; Boord, M. J. 2002 A Bolt of Lightning From the Blue, Wandel Verlag",
+        "rationale": "Vajrakila-tantra Indian c. 8th century; transmitted to Tibet by Padmasambhava as one of Eight Heruka practices; continuous Nyingma + Sakya yidam practice through 2026.",
+        "confidence": "high"
+      },
+      {
+        "file": "~/Desktop/Codex Atlas/03_deities/cao-dai-god.md",
+        "proposed_earliest": 1926,
+        "proposed_latest": 2026,
+        "tier1_source": "Hoskins, J. 2015 The Divine Eye and the Diaspora: Vietnamese Syncretism Becomes Transpacific Caodaism, University of Hawaii Press",
+        "rationale": "Cao Dai religion founded 1926 by Ngo Van Chieu at Tay Ninh; active worship through 2026 in Vietnam and diaspora (Tay Ninh Holy See, ~4-6 million adherents).",
+        "confidence": "high"
+      },
+      {
+        "file": "~/Desktop/Codex Atlas/03_deities/hanullim.md",
+        "proposed_earliest": 1860,
+        "proposed_latest": 2026,
+        "tier1_source": "Baker, D. 2008 Korean Spirituality, University of Hawaii Press; Kallander, G. 2013 Salvation through Dissent: Tonghak Heterodoxy and Early Modern Korea, University of Hawaii Press",
+        "rationale": "Hanullim formalized as supreme deity in Choe Je-u's 1860 Donghak revelation; continuous worship in Cheondogyo through 2026 (Korean folk substrate older but Donghak/Cheondogyo formalization is the named-cult window).",
+        "confidence": "high"
+      },
+      {
+        "file": "~/Desktop/Codex Atlas/03_deities/oyagami.md",
+        "proposed_earliest": 1838,
+        "proposed_latest": 2026,
+        "tier1_source": "Hardacre, H. 1984 Lay Buddhism in Contemporary Japan: Reiyukai Kyodan, Princeton University Press; Ellwood, R. 1982 Tenrikyo: A Pilgrimage Faith, Tenri University Oyasato Research Institute",
+        "rationale": "Tenrikyo founded 1838 by Nakayama Miki at Oyagami's revelation; continuous worship at Jiba (Tenri City) and global Tenrikyo missions through 2026 (~1-2 million adherents).",
+        "confidence": "high"
+      },
+      {
+        "file": "~/Desktop/Codex Atlas/03_deities/ichikishima-hime.md",
+        "proposed_earliest": 712,
+        "proposed_latest": 2026,
+        "tier1_source": "Philippi, D.L. 1969 Kojiki (University of Tokyo Press); Teeuwen & Breen 2017 A Social History of the Shrines and Religion of Modern Japan",
+        "rationale": "Munakata triad first textually attested in Kojiki 712; Munakata Taisha (Okitsu/Nakatsu/Hetsu shrines) remains an actively functioning Shinto cult through 2026 (UNESCO 2017 listing affirms continuous worship).",
+        "confidence": "high"
+      },
+      {
+        "file": "~/Desktop/Codex Atlas/03_deities/kotoshironushi.md",
+        "proposed_earliest": 712,
+        "proposed_latest": 2026,
+        "tier1_source": "Philippi, D.L. 1969 Kojiki (University of Tokyo Press); Naumann, N. 2000 Japanese Prehistory: The Material and Spiritual Culture of the Jomon Period",
+        "rationale": "Izumo-cycle kami first textually attested in Kojiki 712; continuously enshrined at Miho Jinja and as one of the Eight Imperial Guardian Kami (hasshin-den) through the present.",
+        "confidence": "high"
+      },
+      {
+        "file": "~/Desktop/Codex Atlas/03_deities/tagitsu-hime.md",
+        "proposed_earliest": 712,
+        "proposed_latest": 2026,
+        "tier1_source": "Philippi, D.L. 1969 Kojiki (University of Tokyo Press); Teeuwen & Breen 2017 A Social History of the Shrines and Religion of Modern Japan",
+        "rationale": "Second Munakata sister-goddess, born from the Susanoo/Amaterasu ukei in Kojiki 712; continuously venerated at Nakatsu-miya (Munakata Taisha) through 2026.",
+        "confidence": "high"
+      },
+      {
+        "file": "~/Desktop/Codex Atlas/03_deities/tagori-hime.md",
+        "proposed_earliest": 712,
+        "proposed_latest": 2026,
+        "tier1_source": "Philippi, D.L. 1969 Kojiki (University of Tokyo Press); Teeuwen & Breen 2017 A Social History of the Shrines and Religion of Modern Japan",
+        "rationale": "Eldest Munakata sister-goddess (Okitsu-miya, Okinoshima) first attested Kojiki 712; Okinoshima ritual deposits (4th-9th c.) confirm continuous cult, still actively venerated 2026.",
+        "confidence": "high"
+      },
+      {
+        "file": "~/Desktop/Codex Atlas/03_deities/takeminakata.md",
+        "proposed_earliest": 712,
+        "proposed_latest": 2026,
+        "tier1_source": "Philippi, D.L. 1969 Kojiki (University of Tokyo Press); Grumbach, L. 2014 Sumo as a Religious Ritual: Suwa Shrine and the Onbashira Festival (Japanese Journal of Religious Studies)",
+        "rationale": "Izumo kuni-yuzuri cycle kami first attested Kojiki 712; Suwa Taisha cult (Onbashira festival) continuously active through 2026. Pre-712 oral/archaeological cult plausible but Tier-1 textual anchor is 712.",
+        "confidence": "high"
+      },
+      {
+        "file": "~/Desktop/Codex Atlas/03_deities/toyouke.md",
+        "proposed_earliest": 712,
+        "proposed_latest": 2026,
+        "tier1_source": "Philippi, D.L. 1969 Kojiki (University of Tokyo Press); Teeuwen, M. 1996 Watarai Shinto: An Intellectual History of the Outer Shrine in Ise",
+        "rationale": "Grain/food kami first textually attested Kojiki 712; Ise Geku (Outer Shrine) tradition dates enshrinement to c. 478 CE but textual anchor is 712; continuously venerated through shikinen sengu cycle to 2026.",
+        "confidence": "high"
+      },
+      {
+        "file": "~/Desktop/Codex Atlas/03_deities/xuanwu.md",
+        "proposed_earliest": -200,
+        "proposed_latest": 2026,
+        "tier1_source": "Schipper, K. 1993 The Taoist Body. Univ. California Press; Lagerwey, J. 1992 The Pilgrimage to Wu-tang Shan, in Naquin & Yu eds. Pilgrims and Sacred Sites in China.",
+        "rationale": "Xuanwu (Dark Warrior, Northern Emperor) emerges as Han-era directional deity c. -200, achieves Tang imperial recognition 7th c., and remains continuously venerated in Daoist temples (Wudang Shan) and Chinese folk religion through present.",
+        "confidence": "high"
+      },
+      {
+        "file": "~/Desktop/Codex Atlas/03_deities/zao-jun.md",
+        "proposed_earliest": -300,
+        "proposed_latest": 2026,
+        "tier1_source": "Chard, R.L. 1995 Rituals and Scriptures of the Stove Cult, in Johnson ed. Ritual and Scripture in Chinese Popular Religion; Teiser, S.F. 1988 The Ghost Festival in Medieval China, Princeton.",
+        "rationale": "Stove/Hearth god attested in Han-era ritual texts (Liji, Wang Chong Lunheng c. 80 CE); continuous household cult through Ming-Qing almanacs to present-day Lunar New Year 23rd-of-12th-month send-off rite in China, Taiwan, and diaspora.",
+        "confidence": "high"
+      },
+      {
+        "file": "~/Desktop/Codex Atlas/03_deities/zhenwu.md",
+        "proposed_earliest": 1000,
+        "proposed_latest": 2026,
+        "tier1_source": "Lagerwey, J. 1992 The Pilgrimage to Wu-tang Shan, in Naquin & Yu eds. Pilgrims and Sacred Sites in China; Seaman, G. 1987 Journey to the North (translation/study of Beiyou ji).",
+        "rationale": "Zhenwu (Perfected Warrior) is the Song-Ming dynastic re-title and elevation of Xuanwu, with the imperial Wudang cult formalized under Northern Song (c. 1000 CE) and apotheosized under Ming Yongle emperor (15th c.); continuous Daoist veneration to present. File frontmatter notes 'Same as Xuanwu; later cult name Tang/Song' — treating as the post-1000 nominal cult per regional guidance.",
+        "confidence": "high"
+      },
+      {
+        "file": "~/Desktop/Codex Atlas/03_deities/anansi.md",
+        "proposed_earliest": -200,
+        "proposed_latest": 2026,
+        "tier1_source": "Rattray, R.S. 1930 Akan-Ashanti Folk-Tales, Oxford; Marshall, E.Z. 2012 Anansi's Journey: A Story of Jamaican Cultural Resistance, Univ. West Indies Press.",
+        "rationale": "Anansi belongs to the deep Akan oral substrate; conservative -200 reflects pre-contact oral tradition per regional guidance, with first European attestations 17th c. and continuous transmission through Atlantic diaspora (Jamaica, Caribbean, US South) to present-day living folklore.",
+        "confidence": "medium"
+      },
+      {
+        "file": "~/Desktop/Codex Atlas/03_deities/coyote-navajo.md",
+        "proposed_earliest": -500,
+        "proposed_latest": 2026,
+        "tier1_source": "Reichard, G.A. 1950 Navajo Religion: A Study of Symbolism, Bollingen/Princeton; Toelken, B. 1987 Life and Death in the Navajo Coyote Tales, in Swann & Krupat eds. Recovering the Word.",
+        "rationale": "Mą'ii / Coyote is core to the Diné Bahaneʼ creation cycle; conservative -500 reflects pre-contact Athabaskan oral substrate per regional guidance, with 19th-c. Matthews/Reichard ethnographic attestation and continuous ceremonial role (Blessingway, Coyoteway) in living Navajo religion to present.",
+        "confidence": "medium"
+      }
+    ],
+    "flagged_for_review": [
+      {
+        "file": "~/Desktop/Codex Atlas/03_deities/baal.md",
+        "concern": "Goblin flagged as alias-node that should mirror baal-hadad canonical dates — verify the canonical baal-hadad node uses the same -2500/-100 range, and confirm the alias-handling pattern in the vault. Also worth checking if Punic Baal-Hammon worship at Carthage extended cult past -100 (Carthage fell -146; tophet cult arguably persists in Africa Proconsularis as Saturn-Africanus syncretism into Roman imperial era, which could push latest later)."
+      },
+      {
+        "file": "~/Desktop/Codex Atlas/03_deities/cernunnos.md",
+        "concern": "Confidence medium — Gallo-Roman cult terminus at 400 CE is defensible but Insular continuation is genuinely contested; some scholarship argues for Romano-Celtic cult survival into 5th c."
+      },
+      {
+        "file": "~/Desktop/Codex Atlas/03_deities/jarilo.md",
+        "concern": "Confidence medium — proposed_latest=988 (Kievan Rus baptism) is a clean East Slavic anchor, but Jarilo cult was strongest in South/West Slavic regions where Christianization timing differs (Bulgaria 864, Poland 966, Pomerania 12th c.). Folk Jurjevdan rites persist into 19th c. and the goblin notes this; per schema rule modern revival doesn't count but the boundary between 'folk continuation' and 'syncretic continuation under saint overlay' is the judgment call worth reviewing."
+      },
+      {
+        "file": "~/Desktop/Codex Atlas/03_deities/wiraqocha.md",
+        "concern": "Confidence medium + goblin flagged as stub-file with no period-active fields, only date-earliest. Worth verifying the proposed pair is the canonical pattern for this vault's stub-promotion workflow."
+      },
+      {
+        "file": "~/Desktop/Codex Atlas/03_deities/anansi.md",
+        "concern": "Confidence medium + pre-literate oral tradition; earliest -200 is explicitly conservative substrate estimate, not textual attestation. The schema typically anchors to Tier-1 textual attestation; consider whether 'oral substrate' counts as a valid anchor type or whether earliest should be moved to first European attestation (17th c.) with substrate noted in rationale."
+      },
+      {
+        "file": "~/Desktop/Codex Atlas/03_deities/coyote-navajo.md",
+        "concern": "Confidence medium + pre-literate oral tradition; earliest -500 is conservative substrate estimate (Athabaskan migration), not textual attestation. Same anchor-type concern as Anansi — first Tier-1 textual anchor is Matthews 19th c."
+      },
+      {
+        "file": "~/Desktop/Codex Atlas/03_deities/xuanwu.md",
+        "concern": "Goblin flagged a CE/BCE sign error in the existing file (current_earliest=200 should be -200 per Han-era directional astralism). Verify before patching to avoid masking a real frontmatter bug."
+      },
+      {
+        "file": "~/Desktop/Codex Atlas/03_deities/zhenwu.md",
+        "concern": "Goblin changed proposed_earliest from 200 to 1000 reflecting the Zhenwu-as-Song-renaming view. This deliberately diverges from the Xuanwu node's pre-Han origin — worth confirming the vault wants two separate temporal windows for what is the same deity under two cult-names, vs collapsing them."
+      }
+    ],
+    "summary": "Consolidated 61 proposals across 7 regional partitions covering deity nodes in ~/Desktop/Codex Atlas/03_deities/. Confidence distribution: 54 high, 7 medium, 0 low — the medium tier clusters around (a) pre-literate oral traditions where conservative substrate estimates substitute for Tier-1 textual anchors (Anansi, Coyote, Jarilo, Cernunnos) and (b) one stub-file promotion (Wiraqocha). No files appear in two partitions, no proposed dates exceed 2026, and all Tier-1 sources are academic university-press or Brill/Routledge monographs. Notable patterns: a Mediterranean cluster terminates uniformly at 400 CE (Theodosian closures), an Egyptian cluster at 500 CE (Philae bookend, matching vault Ra=500), a Celtic cluster at 600 CE (Irish Christianization), and a large active-cult cluster (Shinto, Hindu, Zoroastrian, modern-Asian new religions) extends to 2026 per the schema's syncretic-continuation rule. Eight items flagged for review including one suspected CE/BCE sign error in xuanwu.md, one alias-node coordination question (baal.md vs baal-hadad canonical), and the Xuanwu/Zhenwu same-deity-two-cult-names judgment call."
+  }
+}
