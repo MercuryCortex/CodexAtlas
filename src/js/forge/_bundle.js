@@ -1324,11 +1324,18 @@
       const m = local.mode;
       const node = (m && m.nodesById && m.nodesById.get) ? m.nodesById.get(id) : null;
       if (!node) return;
+      // Documents are works (scriptures, treatises, codices). The Wikipedia
+      // fuzzy-match pipeline often anchored them to the AUTHOR's article
+      // (Plutarch portrait on De Iside et Osiride; Sirach scripture → Thai
+      // TV host Setha Sirachaya via 0.57 partial-name match). Hard rule:
+      // documents never inherit thumbnail image or biographical extract.
+      // Title + tradition + date + place must speak for the work itself.
+      const isDocument = (node.type === 'document');
       nameEl.textContent = node.name || id;
       tradEl.textContent = pickTradition(node);
       tradEl.style.display = tradEl.textContent ? '' : 'none';
       let desc = pickDescription(node);
-      if (!desc && thumbs && thumbs[id] && thumbs[id].extract) {
+      if (!desc && !isDocument && thumbs && thumbs[id] && thumbs[id].extract) {
         const ext = String(thumbs[id].extract);
         const cut = ext.split(/(?<=[.!?])\s/)[0] || ext;
         desc = cut.length > 180 ? cut.slice(0, 177) + '…' : cut;
@@ -1359,7 +1366,7 @@
       const entry = (thumbs && thumbs[id]) ? thumbs[id] : null;
       img.style.display = 'none';
       img.removeAttribute('src');
-      if (entry && entry.src) {
+      if (!isDocument && entry && entry.src) {
         img.onload  = function () {
           img.style.display = 'block';
           img.style.objectPosition = computeFaceObjectPosition(img.naturalWidth, img.naturalHeight);

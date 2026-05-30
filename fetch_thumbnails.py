@@ -3139,6 +3139,122 @@ OVERRIDES = {
 }
 
 
+# ---- Audit-Pass-1a (2026-05-30): document fuzzy-match BLOCKLIST ----
+# These document IDs had Wikipedia fuzzy-match similarity < 0.40 per
+# 00_meta/SUSPECTS.md and were pulling unrelated person-portraits + bios
+# onto the hover card. Cache entries were hard-stripped; this set keeps
+# subsequent --refetch / --force runs from re-introducing the bad matches.
+# To unblock a specific ID: remove from this set AND add a correct
+# OVERRIDES entry (or simply leave it absent if no clean Wikipedia
+# article exists — missing image >> wrong image).
+# Audit trail: AUDIT/2026-05-30-stripped-doc-thumbnails.tsv
+BLOCKLIST_2026_05_30 = {
+    'phase-1-004-gilgamesh-old-babylonian',
+    'phase-1-017-descent-of-inanna',
+    'phase-1-024-shijing',
+    'phase-1-025-shujing',
+    'phase-2-006-brahmanas-aranyakas',
+    'phase-2-008-homeric-epics',
+    'phase-2-009-hesiod-theogony-works-and-days',
+    'phase-2-016-early-buddhist-suttas',
+    'phase-2-017-mahabharata-ramayana-oral-layers',
+    'phase-2-033-shujing',
+    'phase-2-040-orphic-gold-tablets',
+    'phase-3-002-plato-dialogues',
+    'phase-3-012-wisdom-of-solomon',
+    'phase-3-013-philo-of-alexandria',
+    'phase-4-008-trimorphic-protennoia',
+    'phase-4-009-pistis-sophia',
+    'phase-4-010-sophia-of-jesus-christ',
+    'phase-4-024-tertullian-apology',
+    'phase-4-024b-tertullian-against-valentinians',
+    'phase-4-026-origen-on-first-principles',
+    'phase-4-040-pliny-trajan-correspondence',
+    'phase-4-043-apophthegmata-patrum',
+    'phase-4-044-basil-on-the-holy-spirit',
+    'phase-4-046-john-of-damascus-exposition-orthodox-faith',
+    'phase-4-050-leo-tome-to-flavian',
+    'phase-4-052-gregory-dialogues',
+    'phase-4-055-ephrem-hymns-on-paradise',
+    'phase-4-057-allogenes',
+    'phase-4-066-polycarp-philippians',
+    'phase-4-072-plutarch-de-iside-et-osiride',
+    'phase-4-073-tabula-smaragdina',
+    'phase-4-075-mulamadhyamakakarika',
+    'phase-4-077-abhidharmakosa',
+    'phase-4-078-prayer-of-thanksgiving-nhc-vi-7',
+    'phase-4-079-coptic-asclepius-nhc-vi-8',
+    'phase-4-081-mashafa-henok-geez-1-enoch',
+    'phase-4-082-ethiopic-biblical-canon',
+    'phase-4-104-sukhavativyuha-larger',
+    'phase-5-003-maximus-confessor-ambigua',
+    'phase-5-005-shankara-brahma-sutra-bhasya',
+    'phase-5-010-saadia-emunot-ve-deot',
+    'phase-5-011-rasail-ikhwan-al-safa',
+    'phase-5-014-abhinavagupta-tantraloka',
+    'phase-5-018-suhrawardi-hikmat-al-ishraq',
+    'phase-5-021-ibn-arabi-fusus-al-hikam',
+    'phase-5-022-madhva-brahma-sutra-bhasya',
+    'phase-5-028-meister-eckhart-sermons',
+    'phase-5-034-vivekachudamani',
+    'phase-5-036-mashafa-mistir-giyorgis',
+    'phase-5-037-bernard-de-laude-novae-militiae',
+    'phase-5-038-mashafa-berhan',
+    'phase-5-039-jabir-corpus-arabic-alchemy',
+    'phase-5-040-meqabyan-ethiopian-maccabees',
+    'phase-5-043-ibn-ishaq-sirat-rasul-allah',
+    'phase-5-044-ibn-sina-kitab-al-shifa',
+    'phase-5-046-ibn-rushd-tahafut-al-tahafut',
+    'phase-5-047-ibn-tufayl-hayy-ibn-yaqdhan',
+    'phase-5-049-bodhicaryavatara',
+    'phase-5-049-yosippon-ethiopian-recension',
+    'phase-5-051-attar-conference-of-birds',
+    'phase-5-057-ibn-rushd-aristotle-commentaries',
+    'phase-5-059-rasail-al-hikma',
+    'phase-5-060-bon-kangyur',
+    'phase-5-061-kiteba-cilwe',
+    'phase-6-002-ficino-theologia-platonica',
+    'phase-6-003-pico-oration-900-conclusions',
+    'phase-6-004-pico-heptaplus-conclusiones-cabalisticae',
+    'phase-6-006-reuchlin-de-arte-cabalistica',
+    'phase-6-007-luther-bondage-of-will',
+    'phase-6-008-paracelsus-corpus',
+    'phase-6-009-agrippa-de-occulta-philosophia',
+    'phase-6-015-luria-vital-etz-chayyim',
+    'phase-6-017-boehme-aurora-mysterium-magnum',
+    'phase-6-018-rosicrucian-manifestos',
+    'phase-6-022-fludd-utriusque-cosmi-historia',
+    'phase-6-025-nathan-of-gaza-treatise-on-dragons',
+    'phase-6-027-swedenborg-arcana-heaven-and-hell',
+    'phase-6-034-khunrath-amphitheatrum-sapientiae',
+    'phase-6-038-teresa-interior-castle',
+    'phase-6-040-bandarra-trovas',
+    'phase-6-043-dee-libri-mysteriorum-enochian',
+    'phase-6-045-sendivogius-novum-lumen-chymicum',
+    'phase-6-046-ripley-compound-of-alchemy',
+    'phase-6-048-basil-valentine-twelve-keys',
+    'phase-7-008-book-of-the-law',
+    'phase-7-009-outline-of-esoteric-science',
+    'phase-7-012-major-trends-jewish-mysticism',
+    'phase-7-013-gnostic-religion',
+    'phase-7-014-gnostic-gospels',
+    'phase-7-016-magick-in-theory-and-practice',
+    'phase-7-017-psychology-and-alchemy',
+    'phase-7-018-aion',
+    'phase-7-021-patterns-comparative-religion',
+    'phase-7-022-sacred-and-profane',
+    'phase-7-027-life-divine',
+    'phase-7-038-guenon-symbols-sacred-science',
+    'phase-7-039-gandra-da-face-oculta-2009',
+    'phase-7-042-donggyeong-daejeon',
+    'phase-7-044-cao-dai-canon',
+    'phase-8-009-dreaming-narratives',
+    'phase-8-017-santeria-lucumi',
+    'phase-8-022-the-sacred-pipe',
+    'phase-8-023-gayanashagowa',
+}
+
+
 import difflib
 import unicodedata
 
@@ -3391,6 +3507,15 @@ def _summary_to_thumb(data, matched, node=None):
 
 
 def find_thumbnail(node):
+    # Audit-Pass-1a (2026-05-30): documents whose fuzzy-match similarity
+    # was below 0.40 in 00_meta/SUSPECTS.md were pulling Wikipedia thumbnails
+    # of unrelated people or topics (Sirach → Thai TV host Setha Sirachaya,
+    # Plutarch's De Iside et Osiride → Plutarch portrait, etc.). The cache
+    # was hard-stripped of these IDs; this gate keeps subsequent --refetch /
+    # --force runs from re-introducing the bad matches. Override by removing
+    # the ID from BLOCKLIST_2026_05_30 AND adding a correct OVERRIDES entry.
+    if node.get("id") in BLOCKLIST_2026_05_30:
+        return None
     cands = candidate_titles(node)
     # Pass 1 — direct summary (all types)
     for cand in cands:
