@@ -4374,6 +4374,9 @@ function scriptureEntitiesForBook(rawBookId) {
   });
   return out;
 }
+// 2026-05-30 — expose for forge.js Codex inner-entity-grid layer (Layer
+// 3 of cardinal rule #9 — see 99_ingest/EXAAMPLES/ for the proto shape).
+window.scriptureEntitiesForBook = scriptureEntitiesForBook;
 
 // ════════════════════════════════════════════════════════════════
 // SCRIPTURE — radial sunburst + hierarchical edge bundling

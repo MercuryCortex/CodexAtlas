@@ -2592,8 +2592,24 @@
       //   - else codexReligion set   → filter to all books across all
       //                                corpora in that religion
       //   - else                     → default SCRIPTURE_IDS set
-      if (modeId === 'scriptures' && local.codexFamily && window.SCRIPTURE_CORPORA) {
-        const corpus = window.SCRIPTURE_CORPORA[local.codexFamily];
+      //
+      // 2026-05-30 — AUTO-DRILL single-corpus religions. When a religion
+      // has exactly ONE corpus (Egyptian → egyptian-scripture; Hinduism
+      // → vedas; Zoroastrianism → avesta; Sikhism → guru-granth; etc.),
+      // pretend the user picked that corpus directly. Otherwise the
+      // wheel renders ONE corpus-hull (because n.codexFamily isn't set
+      // and the religion-branch groups by corpus-label) which collapses
+      // the proto's epoch-section hulls John screenshot-flagged.
+      let _effectiveCorpus = local.codexFamily;
+      if (!_effectiveCorpus && local.codexReligion
+          && window.SCRIPTURE_RELIGIONS && window.SCRIPTURE_CORPORA) {
+        const _R = window.SCRIPTURE_RELIGIONS[local.codexReligion];
+        if (_R && Array.isArray(_R.corpora) && _R.corpora.length === 1) {
+          _effectiveCorpus = _R.corpora[0];
+        }
+      }
+      if (modeId === 'scriptures' && _effectiveCorpus && window.SCRIPTURE_CORPORA) {
+        const corpus = window.SCRIPTURE_CORPORA[_effectiveCorpus];
         if (corpus && corpus.sections) {
           const allowed = new Set();
           for (const sec of corpus.sections) {
@@ -2606,7 +2622,35 @@
           // corpus list is hand-curated and overrides the SCRIPTURE_IDS
           // heuristic when explicit.
           modeNodes = allNodes.filter(n => n && allowed.has(n.id));
-          _tick('codexFamilyFilter');
+          // 2026-05-30 — LAYER 3: inflate modeNodes with each book's
+          // entities (deities/persons/events the book references) so the
+          // wheel renders the proto's dense inner grid, not just the 10
+          // book-nodes. Source: window.scriptureEntitiesForBook(bookId)
+          // exposed by app.js. Each entity inherits its containing
+          // book's section for the codex-groupBy map below.
+          if (typeof window.scriptureEntitiesForBook === 'function') {
+            const _seenEntity = new Set(allowed);
+            const _extras = [];
+            for (const sec of corpus.sections) {
+              for (const book of (sec.books || [])) {
+                if (!book || !book.id) continue;
+                let ents;
+                try { ents = window.scriptureEntitiesForBook(book.id); } catch (_) { continue; }
+                if (!ents) continue;
+                ents.forEach(eid => {
+                  if (_seenEntity.has(eid)) return;
+                  const en = window.NODES_BY_ID ? window.NODES_BY_ID[eid] : null;
+                  if (!en) return;
+                  _seenEntity.add(eid);
+                  _extras.push(en);
+                });
+              }
+            }
+            if (_extras.length) {
+              modeNodes = modeNodes.concat(_extras);
+            }
+          }
+          _tick('codexFamilyFilter+entities');
         }
       } else if (modeId === 'scriptures' && local.codexReligion && window.SCRIPTURE_RELIGIONS && window.SCRIPTURE_CORPORA) {
         // 2026-05-27 — religion-level filter. Picking just a religion
@@ -2763,25 +2807,60 @@
       let _codexGroupBy = null;
       let _codexGroupOrder = null;
       let _codexGroupColor = null;
-      if (modeId === 'scriptures' && local.codexFamily && window.SCRIPTURE_CORPORA) {
-        const _corpus = window.SCRIPTURE_CORPORA[local.codexFamily];
+      // 2026-05-30 — same effectiveCorpus auto-drill as above so the
+      // groupBy mirror agrees with the modeNodes filter when religion
+      // has only 1 corpus (Egyptian / Vedic / Avestan / etc.).
+      let _effectiveCorpusForGroup = local.codexFamily;
+      if (!_effectiveCorpusForGroup && local.codexReligion
+          && window.SCRIPTURE_RELIGIONS && window.SCRIPTURE_CORPORA) {
+        const _RG = window.SCRIPTURE_RELIGIONS[local.codexReligion];
+        if (_RG && Array.isArray(_RG.corpora) && _RG.corpora.length === 1) {
+          _effectiveCorpusForGroup = _RG.corpora[0];
+        }
+      }
+      if (modeId === 'scriptures' && _effectiveCorpusForGroup && window.SCRIPTURE_CORPORA) {
+        const _corpus = window.SCRIPTURE_CORPORA[_effectiveCorpusForGroup];
         if (_corpus && _corpus.sections) {
           // Use the section LABEL as the visible group name so wheel
           // labels read "Old Kingdom · royal funerary corpus" not the
           // raw id "egyptian-old-kingdom". Fall back to id if missing.
           const _bookToSection = Object.create(null);
+          // 2026-05-30 LAYER 3: also map every ENTITY referenced by each
+          // book to that book's section, so the inflated modeNodes
+          // (book-nodes + their referenced deity/person/event nodes)
+          // all fall into the right epoch-hull.
+          const _entityToSection = Object.create(null);
           _codexGroupOrder = [];
           _codexGroupColor = Object.create(null);
+          const _hasEntFn = (typeof window.scriptureEntitiesForBook === 'function');
           for (const sec of _corpus.sections) {
             const _name = sec.label || sec.id;
             if (!_name) continue;
             _codexGroupOrder.push(_name);
             if (sec.color) _codexGroupColor[_name] = sec.color;
             for (const book of (sec.books || [])) {
-              if (book && book.id) _bookToSection[book.id] = _name;
+              if (!book || !book.id) continue;
+              _bookToSection[book.id] = _name;
+              if (_hasEntFn) {
+                let ents;
+                try { ents = window.scriptureEntitiesForBook(book.id); } catch (_) { continue; }
+                if (!ents) continue;
+                ents.forEach(eid => {
+                  // first-write-wins: if an entity is referenced by
+                  // multiple books across different sections, the first
+                  // section's wedge claims it (deterministic per
+                  // SCRIPTURE_CORPORA declaration order).
+                  if (!_entityToSection[eid]) _entityToSection[eid] = _name;
+                });
+              }
             }
           }
-          _codexGroupBy = (n => (n && _bookToSection[n.id]) || 'Other');
+          _codexGroupBy = (n => {
+            if (!n) return 'Other';
+            return _bookToSection[n.id]
+                || _entityToSection[n.id]
+                || 'Other';
+          });
         }
       } else if (modeId === 'scriptures' && local.codexReligion
                  && window.SCRIPTURE_RELIGIONS && window.SCRIPTURE_CORPORA) {
