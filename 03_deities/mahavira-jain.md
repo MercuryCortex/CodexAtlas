@@ -6,7 +6,7 @@ aka: ["Mahavira (Sanskrit: Great Hero)", "Vardhamana (birth name)", "Jina (Conqu
 tradition: "Jain (Agamas — Jain canonical scripture; 6th-5th c. BCE)"
 region: "Bihar, northeastern India — active in the Ganges valley"
 period-active-earliest: -599
-period-active-latest: -527
+period-active-latest: 2026
 domains: ["non-violence", "asceticism", "liberation", "omniscience", "dharma", "ahimsa", "the 24th Tirthankara"]
 gender: "masculine (transcended gender in final liberation; but embodied as masculine)"
 role: "24th Tirthankara; historical founder of Jainism as presently constituted; omniscient teacher; Jina (spiritual conqueror)"

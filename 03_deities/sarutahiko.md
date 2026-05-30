@@ -6,7 +6,7 @@ aka: ["Sarutahiko", "Saruta-hiko", "猿田彦大神", "Sarutabiko", "the Road-Cr
 tradition: "Shinto (Japanese)"
 region: "Japan — Tsubaki Grand Shrine (Mie Prefecture) as principal cult center; Ise tradition"
 period-active-earliest: -300
-period-active-latest: null
+period-active-latest: 2026
 domains: ["crossroads", "guidance and protection of travelers", "earthly sovereignty (kunitsukami)", "physical strength", "the bridge between heavenly and earthly kami"]
 gender: "masculine"
 role: "earthly kami (*kunitsukami*) who meets the descending heavenly grandson Ninigi-no-Mikoto at the Heavenly Crossroads; guides the heavenly host down to earth; lord of road-crossings and travelers"

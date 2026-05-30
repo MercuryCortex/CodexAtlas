@@ -6,7 +6,7 @@ aka: ["Rudra", "Śiva (later)", "Paśupati (Lord of Beasts)"]
 tradition: "Vedic / proto-Hindu"
 region: "South Asia"
 period-active-earliest: -1500
-period-active-latest: 500
+period-active-latest: 2026
 domains: ["storm", "wilderness", "disease and healing", "the marginal and the dangerous"]
 gender: "masculine"
 role: "outsider storm-god; later supreme god in Śaivism"

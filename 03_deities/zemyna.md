@@ -6,7 +6,7 @@ aka: ["Žemyna", "Žemelė", "Žemynėlė", "Earth Mother", "the Earth Licker"]
 tradition: "Baltic (Lithuanian)"
 region: "Lithuania"
 period-active-earliest: -1000
-period-active-latest: null
+period-active-latest: 1387
 domains: ["the earth", "agriculture", "the dead (the earth receives them)", "household protection", "birth and fertility", "sustenance"]
 gender: "female"
 role: "Lithuanian goddess of the earth; the most intimate of the Baltic deities — addressed in every meal, birth, and death; the earth itself personified"

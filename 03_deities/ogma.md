@@ -6,7 +6,7 @@ aka: ["Ogmios (Gaulish)", "Ogma Sun-Face", "Ogma Grianainech", "the Honey-Mouthe
 tradition: "Irish Celtic (and Gaulish)"
 region: "Ireland; Gaul (Gaulish cognate Ogmios)"
 period-active-earliest: -500
-period-active-latest: null
+period-active-latest: 600
 domains: ["eloquence and oratory", "the invention of ogham script", "strength", "the chain of eloquence (men follow Ogmios by choice, led by thin golden chains from his tongue)", "learning"]
 gender: "male"
 role: "deity of eloquence, writing, and intellectual power; credited with the invention of the Ogham alphabet; champion of the Tuatha Dé Danann; his Gaulish form Ogmios is depicted as an old man leading men by golden chains from his tongue"

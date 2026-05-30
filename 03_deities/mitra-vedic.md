@@ -6,7 +6,7 @@ aka: ["Mitra"]
 tradition: "Vedic / Hindu"
 region: "South Asia"
 period-active-earliest: -1500
-period-active-latest: 500
+period-active-latest: 2026
 domains: ["covenant", "oath", "friendship", "daylight", "cosmic order with Varuṇa"]
 gender: "masculine"
 role: "co-sovereign of cosmic order; god of contracts and alliance"

@@ -6,7 +6,7 @@ aka: ["Hwan-ung", "Hwanung Cheonwang (Heavenly King Hwanung)", "the Son of Heave
 tradition: "Korean shamanism (Muism) / Korean mythology"
 region: "Korean peninsula; Mount Paektu / Taebaeksan"
 period-active-earliest: -2300
-period-active-latest: null
+period-active-latest: 2026
 domains: ["civilization", "cultural order", "wind", "clouds", "rain", "agriculture", "law", "medicine", "ethics — the 360 matters of human affairs"]
 gender: "male"
 role: "son of [[hwanin]] who descends to earth to civilize humanity; father of [[tangun]] the founder of Korea; the deity who governs human civilization directly"

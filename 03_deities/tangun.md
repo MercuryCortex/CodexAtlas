@@ -6,7 +6,7 @@ aka: ["Dan-gun", "Dangun Wanggeom", "왕검 (Wanggeom)", "the Founder of Korea",
 tradition: "Korean shamanism (Muism) / Korean founding mythology / modern Korean national religion"
 region: "Korean peninsula; Gojoseon (first Korean kingdom, traditional date 2333 BCE)"
 period-active-earliest: -2333
-period-active-latest: null
+period-active-latest: 2026
 domains: ["founding of the Korean nation", "kingship", "shamanistic authority (combined king and shaman)", "mountain spirits (becomes mountain deity at death)", "the sacred sandalwood tree"]
 gender: "male"
 role: "semi-divine founder of Gojoseon (first Korean kingdom); son of [[hwanung]] and a bear-woman; becomes a mountain deity (*sanshin*) at death; ancestor of all Korean people"

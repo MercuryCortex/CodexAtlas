@@ -6,7 +6,7 @@ aka: ["the Templar idol (historical accusation)", "Baphometh", "the Goat of Mend
 tradition: "Accusation: [[tradition-knights-templar]] (alleged); Occult reception: [[tradition-hermeticism]] / [[tradition-rosicrucianism]] / Modern Satanism"
 region: "France (accusation, 1307); France (Lévi's occult reconstruction, 1854); United States (Church of Satan / The Satanic Temple, 20th–21st c.)"
 period-active-earliest: 1307
-period-active-latest: null
+period-active-latest: 2026
 domains: ["accused Templar idolatry", "occult wisdom (Lévi's reading)", "androgyny as divine wholeness", "the reconciliation of opposites", "esoteric initiation (in occult reception)", "symbolic provocation (modern Satanist context)"]
 gender: "androgynous (in Lévi's design)"
 role: "a name alleged by Templar inquisitors (1307–1314) to be the idol the Templars secretly worshipped; the historical accusation has no credible documentary basis; subsequently adopted by Éliphas Lévi (1854) as an occult symbol of the Hermetic reconciliation of opposites; his goat-headed androgynous figure became the defining image of Western occultism"

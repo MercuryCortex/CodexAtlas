@@ -6,7 +6,7 @@ aka: ["Ame-no-Uzume-no-Mikoto", "Uzume", "the Great Persuader", "the Heavenly Al
 tradition: "Shinto (Japanese)"
 region: "Japan"
 period-active-earliest: -700
-period-active-latest: null
+period-active-latest: 2026
 domains: ["dawn", "festivity", "comedy and ecstatic performance", "persuasion", "shamanic dance", "guardian of the road", "marriage"]
 gender: "female"
 role: "the goddess whose ecstatic dance lured [[amaterasu]] out of the cave, ending the primordial eclipse; patron of performance, shamanistic trance, and the arts"

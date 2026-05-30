@@ -6,7 +6,7 @@ aka: ["Indu", "Pavamāna"]
 tradition: "Vedic / Hindu"
 region: "South Asia"
 period-active-earliest: -1500
-period-active-latest: 0
+period-active-latest: 2026
 domains: ["sacred drink (the plant pressed)", "moon (later)", "inspiration", "immortality"]
 gender: "masculine"
 role: "deified ritual substance; later moon-god"

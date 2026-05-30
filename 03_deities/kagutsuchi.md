@@ -6,7 +6,7 @@ aka: ["Kagu-tsuchi-no-Kami", "Hi-no-Kagutsuchi", "Homusubi", "the Fire Child"]
 tradition: "Shinto (Japanese)"
 region: "Japan"
 period-active-earliest: -700
-period-active-latest: null
+period-active-latest: 2026
 domains: ["fire", "volcanic destruction", "metalworking (clay/fire)", "the cost of creation"]
 gender: "male"
 role: "the god of fire who burns his mother [[izanami]] to death at his birth; killed by his father [[izanagi]] in grief; from his corpse emerge the major deities of creation"

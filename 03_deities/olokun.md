@@ -6,7 +6,7 @@ aka: ["Olókun", "Owner of the Sea", "Owner of the Ocean Floor"]
 tradition: "Yoruba religion (Nigeria / Diaspora)"
 region: "Yoruba lands (Benin City especially; Ile-Ife); Diaspora: Cuba (Lucumí/Santería), Brazil (Candomblé)"
 period-active-earliest: -500
-period-active-latest: null
+period-active-latest: 2026
 domains: ["the deep ocean", "the sea floor", "wealth and prosperity (the unfathomable deep)", "mystery", "the unconscious", "the dead (those who drowned)", "Benin kingdom royal legitimacy"]
 gender: "ambiguous — male in Benin traditions; female or androgynous in some Yoruba and Diaspora traditions"
 role: "orisha of the deep sea and the ocean floor; the unfathomable aspect of Olodumare; associated with immense wealth and the mystery of what lies at the bottom"

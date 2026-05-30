@@ -6,7 +6,7 @@ aka: ["Tishtrya", "Tishtya", "Tishtar", "Tir (in some later Persian traditions)"
 tradition: "Zoroastrian (Avestan) — Yasht cycle"
 region: "Iran / Central Asia (Avestan cultural zone)"
 period-active-earliest: -1500
-period-active-latest: 700
+period-active-latest: 2026
 domains: ["Sirius (the star)", "rain", "cosmic battle against drought", "stars", "horses", "fertility", "seasonal waters"]
 gender: "masculine"
 role: "stellar yazata of Sirius; divine archer and horseman; combatant of Apaosha (demon of drought); bringer of cosmic rains"

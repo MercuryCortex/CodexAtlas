@@ -6,7 +6,7 @@ aka: ["Dhanvantarī", "धन्वन्तरि", "Divodāsa Dhanvantari (roy
 tradition: "Hindu"
 region: "India — Varanasi (Divodasa tradition); pan-Indic veneration"
 period-active-earliest: -1500
-period-active-latest: 1900
+period-active-latest: 2026
 domains: ["medicine", "healing", "Ayurveda", "longevity", "amrita (nectar of immortality)", "surgery"]
 gender: "masculine"
 role: "divine physician of the gods; avatar of Vishnu; divine patron of Ayurveda; emerged carrying the pot of amrita from the churning of the cosmic ocean"

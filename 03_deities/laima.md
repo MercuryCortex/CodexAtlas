@@ -6,7 +6,7 @@ aka: ["Laima", "Laimė", "Laime", "Fate/Luck", "the Cuckoo (her bird form)"]
 tradition: "Baltic (Lithuanian and Latvian)"
 region: "Lithuania; Latvia"
 period-active-earliest: -800
-period-active-latest: null
+period-active-latest: 1525
 domains: ["fate", "luck", "birth destiny", "marriage", "death", "the cuckoo as prophetic bird"]
 gender: "female"
 role: "Baltic goddess of fate; she determines the life-destiny of each person at birth and at death; her cuckoo calls prophesy the length of a person's remaining life"

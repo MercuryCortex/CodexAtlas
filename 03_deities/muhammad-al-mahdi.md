@@ -6,7 +6,7 @@ aka: ["the Mahdi", "al-Mahdī al-Muntaẓar (the Awaited Mahdi)", "Imam Mahdi", 
 tradition: "Islam (primarily Twelver Shīʿism; also Sunnī eschatology)"
 region: "pan-Islamic; Shīʿī heartland (Iran, Iraq, Lebanon)"
 period-active-earliest: 874
-period-active-latest: null
+period-active-latest: 2026
 domains: ["eschatology", "justice", "occultation", "messianism", "Shīʿī imamate", "end times"]
 gender: "male"
 role: "the eschatological figure who will return at the end of times to restore justice; identified in Twelver Shīʿism with the hidden Twelfth Imam"

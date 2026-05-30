@@ -6,7 +6,7 @@ aka: ["Apąm Napāt (Avestan: 'Grandson / Offspring of the Waters')", "Apam Napa
 tradition: "Zoroastrian (Avestan); a Proto-Indo-Iranian-inherited yazata"
 region: "Eastern Iran (Avestan) → all Iranian-zone Zoroastrianism"
 period-active-earliest: -1500
-period-active-latest: 700
+period-active-latest: 2026
 domains: ["the divine fire that resides within the waters", "the cosmic-life-principle that emerges from the waters", "rivers + cosmic-waters", "khvarenah (royal-divine-glory) bestowal", "guarantor of the cosmic order"]
 gender: "masculine"
 role: "ancient Indo-Iranian yazata of the divine-fire-within-the-waters; one of the cleanest PII inheritances in the Zoroastrian pantheon; guarantor of the khvarenah (royal glory) of righteous kings"

@@ -6,7 +6,7 @@ aka: ["Odùduwà", "Odua", "Oduwa", "the Ancestor of the Yoruba", "Owner of the 
 tradition: "Yoruba religion (Nigeria / Diaspora)"
 region: "Yoruba lands (southwestern Nigeria, Benin); Diaspora: Cuba (Lucumí/Santería), Brazil (Candomblé)"
 period-active-earliest: -500
-period-active-latest: null
+period-active-latest: 2026
 domains: ["creation", "the earth", "kingship", "Yoruba ancestor-founding", "Ile-Ife (the sacred city of origin)", "wealth", "death (some traditions)"]
 gender: "male (most traditions) or female (some traditions — contested)"
 role: "creator deity; first ancestor and progenitor of the Yoruba people; king of Ile-Ife; divine founder of Yoruba royal lineages"

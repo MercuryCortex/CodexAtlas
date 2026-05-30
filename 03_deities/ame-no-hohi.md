@@ -6,7 +6,7 @@ aka: ["Ame-no-Hohi-no-Mikoto", "天穂日命", "Ame No Hohi"]
 tradition: "Shinto (Japanese)"
 region: "Japan — Izumo Grand Shrine lineage; secondary cults across western Honshū"
 period-active-earliest: -300
-period-active-latest: null
+period-active-latest: 2026
 domains: ["the second of Amaterasu's five sons", "ancestor of the Izumo priestly line (Izumo no kuni no miyatsuko)", "earthly diplomacy (failed)", "ritual sovereignty over Izumo"]
 gender: "masculine"
 role: "second son born from Amaterasu's beads during the *ukehi* contest with Susanoo; sent down to negotiate the surrender of the earthly realm from [[okuninushi]] but defected to the earthly side and never returned; ancestor of the Izumo Kokusō priestly clan"

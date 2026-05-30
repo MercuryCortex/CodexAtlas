@@ -6,7 +6,7 @@ aka: ["Macha of the Red Hair", "Macha daughter of Sainrith mac Imbaith", "Macha 
 tradition: "Irish Celtic"
 region: "Ireland; Ulster especially; Emain Macha (Navan Fort, Co. Armagh)"
 period-active-earliest: -700
-period-active-latest: null
+period-active-latest: 600
 domains: ["war", "sovereignty", "horses", "the land", "fertility of the earth", "death in battle", "Ulster's sacred center"]
 gender: "female"
 role: "Irish war-sovereignty goddess; one of the three aspects of the Morrígan; her curse on the men of Ulster (they suffer birth-pangs in their hour of need) drives the entire Ulster Cycle; her name means 'plain/field' — she *is* the land"

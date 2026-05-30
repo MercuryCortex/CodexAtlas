@@ -6,7 +6,7 @@ aka: ["Śakra", "Vajrin", "Maghavan", "Vṛtrahan"]
 tradition: "Vedic / Hindu"
 region: "Northwest South Asia / pan-Indian"
 period-active-earliest: -1500
-period-active-latest: 500
+period-active-latest: 2026
 domains: ["storm", "war", "kingship", "thunder", "rain"]
 gender: "masculine"
 role: "king of the devas; warrior storm-god"

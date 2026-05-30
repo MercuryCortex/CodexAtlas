@@ -6,7 +6,7 @@ aka: ["神農", "Shén Nóng", "Divine Farmer", "Divine Husbandman", "Yan Empero
 tradition: "Chinese"
 region: "China — pan-Chinese; principal cult at Qi (Shandong); later temples of the King of Medicine at Yaowang Miao"
 period-active-earliest: -2700
-period-active-latest: null
+period-active-latest: 2026
 domains: ["agriculture", "herbal medicine", "pharmacopeia", "fire", "trade and markets", "divination by plants"]
 gender: "masculine"
 role: "divine culture-hero who taught humanity agriculture and herbal medicine; mythological founder of the Chinese pharmacopeia; tasted hundreds of plants to classify their medicinal properties"

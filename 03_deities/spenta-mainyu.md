@@ -6,7 +6,7 @@ aka: ["Spənta Mainiiu (Avestan)", "the Bounteous Spirit", "the Holy Spirit"]
 tradition: "Zoroastrian"
 region: "Iran / Central Asia"
 period-active-earliest: -1200
-period-active-latest: 700
+period-active-latest: 2026
 domains: ["holiness", "creative goodness", "twin of Ahura Mazda / aspect of Ahura Mazda"]
 gender: "masculine"
 role: "the bounteous twin spirit; principle of creative good"

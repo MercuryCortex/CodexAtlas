@@ -6,7 +6,7 @@ aka: ["the Spirit of the Cape", "the Cape of Storms", "the Giant of the Cape of 
 tradition: "Portuguese Renaissance literature (literary mythology)"
 region: "Cape of Good Hope; Southern Atlantic Ocean"
 period-active-earliest: 1572
-period-active-latest: null
+period-active-latest: 1572
 domains: ["the terror of the unknown ocean", "the Cape of Good Hope as divine body", "unrequited love and its transformation into landscape", "the hubris of exploration", "prophecy of disaster for navigators"]
 gender: "male"
 role: "the Titan created by Luís de Camões in *Os Lusíadas* (1572) who appears to Vasco da Gama's fleet as the Spirit of the Cape of Good Hope — a monstrous giant whose own body IS the Cape; he embodies the terror of the uncharted southern ocean, prophesies disaster for the Portuguese, and reveals the tragedy of his unrequited love for the Nereid Thetis that transformed him into stone"

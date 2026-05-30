@@ -6,7 +6,7 @@ aka: ["Aṇra Mainiiu (Avestan)", "Ahriman (Pahlavi)", "the Hostile Spirit", "th
 tradition: "Zoroastrian"
 region: "Iran / Central Asia"
 period-active-earliest: -1200
-period-active-latest: 700
+period-active-latest: 2026
 domains: ["the Lie (druj)", "evil", "cosmic adversary", "death", "non-being"]
 gender: "masculine"
 role: "cosmic adversary of Ahura Mazda; principle of evil"

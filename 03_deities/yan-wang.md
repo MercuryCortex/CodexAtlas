@@ -6,7 +6,7 @@ aka: ["Yánwáng (閻王)", "Yanluo Wang (閻羅王)", "King Yama of Hell", "Yem
 tradition: "Chinese religion / Chinese Buddhism (Daoist-Buddhist syncretic)"
 region: "China; Japan; Korea; Vietnam; pan-East Asian Buddhism"
 period-active-earliest: 400
-period-active-latest: null
+period-active-latest: 2026
 domains: ["judgment of the dead", "the administration of hell", "karma and punishment", "the Ten Courts of Hell", "reincarnation"]
 gender: "male"
 role: "the Chinese Buddhist-Daoist judge of the dead; ruler of the underworld and administrator of karmic justice; the East Asian form of the Vedic Yama and his direct descendant via Buddhist transmission"

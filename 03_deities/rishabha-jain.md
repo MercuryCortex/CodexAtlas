@@ -5,8 +5,8 @@ name: "Ṛṣabha"
 aka: ["Rishabha (Sanskrit: Bull)", "Adinatha (First Lord)", "Vrishabhanatha", "Ādīśvara (First God)", "1st Tirthankara"]
 tradition: "Jain (Jain Agamas; Kalpa Sutra — earliest listing of Tirthankaras)"
 region: "India — cosmic-mythological; associated with the city of Ayodhya in Jain accounts"
-period-active-earliest: -999999999
-period-active-latest: -999999000
+period-active-earliest: -1500
+period-active-latest: 2026
 domains: ["civilization-founding", "culture", "agriculture", "writing", "social order", "liberation", "the first teacher"]
 gender: "masculine"
 role: "1st Tirthankara; mythological founder of human civilization; culture-hero; liberator; Adinatha (First Lord)"

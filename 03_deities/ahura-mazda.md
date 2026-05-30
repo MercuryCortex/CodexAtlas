@@ -6,7 +6,7 @@ aka: ["Ohrmazd (Middle Persian / Pahlavi)", "Hormazd", "Auramazdā (Old Persian)
 tradition: "Zoroastrian"
 region: "Iran / Central Asia"
 period-active-earliest: -1200
-period-active-latest: 700
+period-active-latest: 2026
 domains: ["wisdom", "truth (aša)", "creation", "supreme deity"]
 gender: "masculine (transcendent / non-anthropomorphic in Gathic theology)"
 role: "supreme god; uncreated creator; principle of truth and good"

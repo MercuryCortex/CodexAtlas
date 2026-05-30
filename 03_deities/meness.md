@@ -6,7 +6,7 @@ aka: ["Meness", "Mēnuo (Lithuanian)", "the Moon", "the Night Sun"]
 tradition: "Baltic (Latvian primarily; Lithuanian form Mēnuo)"
 region: "Latvia; Lithuania"
 period-active-earliest: -1000
-period-active-latest: null
+period-active-latest: 1525
 domains: ["the moon", "the night sky", "time measurement", "soldiers and warriors", "the dead (the moon as the afterlife destination for some)"]
 gender: "male"
 role: "Baltic god of the moon; husband or partner of [[saule]] (the sun) in Baltic cosmic mythology; their marital discord explains celestial phenomena"

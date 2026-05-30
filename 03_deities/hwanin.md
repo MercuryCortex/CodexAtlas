@@ -6,7 +6,7 @@ aka: ["Hwan-in", "Hwanin Sangje", "Lord of Heaven", "Indra (Buddhist identificat
 tradition: "Korean shamanism (Muism) / Korean mythology; Buddhist interpretation"
 region: "Korean peninsula"
 period-active-earliest: -2300
-period-active-latest: null
+period-active-latest: 2026
 domains: ["heaven", "sovereignty", "the heavenly realm", "father of the divine lineage that creates Korea"]
 gender: "male"
 role: "the supreme heavenly ruler in Korean founding mythology; father of [[hwanung]] who descends to earth; grandfather of [[tangun]] who founds the Korean nation"

@@ -6,7 +6,7 @@ aka: ["Lord of Creatures", "Hiraṇyagarbha (Golden Embryo)"]
 tradition: "Vedic / Hindu"
 region: "South Asia"
 period-active-earliest: -1000
-period-active-latest: 200
+period-active-latest: 2026
 domains: ["creation", "primordial creator", "ritual mastery"]
 gender: "masculine"
 role: "creator god of the Brāhmaṇa period"

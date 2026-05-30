@@ -6,7 +6,7 @@ aka: ["Vərəθraγna", "Vahram", "Bahram", "Warahrān", "the Smasher of Resista
 tradition: "Zoroastrian"
 region: "Iranian plateau"
 period-active-earliest: -1200
-period-active-latest: null
+period-active-latest: 2026
 domains: ["victory", "warrior-virtue", "smashing-of-resistance", "yazata of triumph"]
 gender: "masculine"
 role: "yazata of victory; one of the most popular Zoroastrian divinities through Sasanian period"

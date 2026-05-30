@@ -6,7 +6,7 @@ aka: ["Chitraguptaya", "the Secret Picture", "the Accountant of Karma", "Scribe 
 tradition: "Hinduism (Puranic, pan-Hindu)"
 region: "Indian subcontinent"
 period-active-earliest: 300
-period-active-latest: null
+period-active-latest: 2026
 domains: ["karma accounting", "the written record of all deeds", "judgment of the dead", "justice", "writing and literacy", "the Kayastha caste (his descendants)"]
 gender: "male"
 role: "the divine scribe in Yama's court who maintains the account of every deed of every soul; presents each soul's complete record at judgment; patron of writing and the Kayastha scribal caste"

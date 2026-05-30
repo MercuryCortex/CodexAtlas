@@ -6,7 +6,7 @@ aka: ["Velnias (Lithuanian)", "Velns (Latvian)", "god of the underworld", "lord 
 tradition: "Baltic (Lithuanian and Latvian)"
 region: "Lithuania; Latvia"
 period-active-earliest: -1000
-period-active-latest: null
+period-active-latest: 1525
 domains: ["the underworld", "the dead and ancestors", "cattle and wealth", "magic and sorcery", "music", "serpents", "the chthonic world"]
 gender: "male"
 role: "Baltic chthonic deity; god of the underworld, cattle, and the dead; the chthonic opponent of [[perkunas]] in the reconstructed Baltic thunderer-vs-serpent myth"

@@ -6,7 +6,7 @@ aka: ["Varuna"]
 tradition: "Vedic / Hindu"
 region: "South Asia"
 period-active-earliest: -1500
-period-active-latest: 500
+period-active-latest: 2026
 domains: ["cosmic order (ṛta)", "sky", "waters (later)", "oaths and sovereignty", "moral judgment"]
 gender: "masculine"
 role: "sovereign upholder of cosmic and moral order"

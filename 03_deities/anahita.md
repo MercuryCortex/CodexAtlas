@@ -6,7 +6,7 @@ aka: ["Arədvī Sūrā Anāhitā", "Anahid", "Nahid"]
 tradition: "Zoroastrian"
 region: "Iran / Central Asia"
 period-active-earliest: -1000
-period-active-latest: 700
+period-active-latest: 2026
 domains: ["waters", "fertility", "purity", "war", "wisdom"]
 gender: "feminine"
 role: "great yazata of waters and fertility"

@@ -6,7 +6,7 @@ aka: ["Miθra (Avestan)", "Mihr (Middle Persian)"]
 tradition: "Zoroastrian"
 region: "Iran / Central Asia"
 period-active-earliest: -1500
-period-active-latest: 700
+period-active-latest: 2026
 domains: ["covenant", "oath", "sunlight", "cosmic order", "protector of warriors", "judge of the dead"]
 gender: "masculine"
 role: "great yazata of covenant and light; one of the three Chinvat judges"

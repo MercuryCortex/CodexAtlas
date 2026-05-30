@@ -6,7 +6,7 @@ aka: ["Bhaiṣajyaguru Vaiḍūryaprabharāja", "the Medicine Buddha", "Sangye M
 tradition: "Mahayana Buddhism (pan-Mahayana)"
 region: "East Asia (China, Japan, Korea, Tibet, Vietnam)"
 period-active-earliest: 100
-period-active-latest: null
+period-active-latest: 2026
 domains: ["healing", "medicine", "liberation from suffering", "the Eastern Pure Land (Vaiḍūryanirbhāsa)", "lapis lazuli light", "elimination of illness, poverty, and karmic obstructions"]
 gender: "male"
 role: "the Medicine Buddha; the Tathāgata of the Eastern Pure Land whose vows specifically address physical suffering, illness, and material deprivation — the only Mahayana cosmic Buddha whose salvific vows explicitly include healing the body"

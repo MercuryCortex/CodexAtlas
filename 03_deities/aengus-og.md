@@ -6,7 +6,7 @@ aka: ["Óengus", "Aonghus", "Mac Óc ('Young Son')", "Angus of the Brugh", "Aeng
 tradition: "Irish Celtic"
 region: "Ireland; Brú na Bóinne (Newgrange) as cult center"
 period-active-earliest: -700
-period-active-latest: null
+period-active-latest: 600
 domains: ["love", "youth", "poetry", "dreams", "birds", "the Otherworld", "Brú na Bóinne (Newgrange)"]
 gender: "male"
 role: "Irish god of love, youth, and poetic inspiration; son of the [[dagda]] and [[boann]]; associated with Brú na Bóinne (Newgrange); his four birds are his kisses made visible"

@@ -6,7 +6,7 @@ aka: ["יהוה", "the Tetragrammaton", "Adonai (substitute reading)", "ha-Shem 
 tradition: "Israelite / Jewish"
 region: "Levant"
 period-active-earliest: -1300
-period-active-latest: 0
+period-active-latest: 2026
 domains: ["storm", "war", "covenant", "exclusive sovereignty over Israel", "later: universal creator and only god"]
 gender: "masculine (in biblical depiction; mainstream Jewish theology after exile abstracts beyond gender)"
 role: "national god of Israel → universal sole God"

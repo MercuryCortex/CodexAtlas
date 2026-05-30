@@ -6,7 +6,7 @@ aka: ["Babalú-Ayé", "Ṣọpọna", "Obaluaye", "Omolu (Brazil)", "San Lázaro
 tradition: "Yoruba religion (Nigeria / Diaspora)"
 region: "Yoruba lands; Diaspora: Cuba (Lucumí/Santería as Babalú-Ayé), Brazil (Candomblé as Omolu/Obaluaiyê)"
 period-active-earliest: -500
-period-active-latest: null
+period-active-latest: 2026
 domains: ["smallpox", "infectious disease", "healing", "earth", "the poor and marginalized", "the divine punishment and mercy of sickness"]
 gender: "male"
 role: "orisha of infectious disease (especially smallpox and skin diseases) and their healing; the deity who sends and withdraws illness; protector of the poor and outcast"

@@ -6,7 +6,7 @@ aka: ["Hutāśa", "Pāvaka", "Vahni", "Jātavedas"]
 tradition: "Vedic / Hindu"
 region: "South Asia"
 period-active-earliest: -1500
-period-active-latest: 0
+period-active-latest: 2026
 domains: ["fire", "sacrifice", "mediation between humans and gods", "domestic hearth"]
 gender: "masculine"
 role: "messenger / mediator god; ritual fire personified"

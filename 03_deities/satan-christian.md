@@ -6,7 +6,7 @@ aka: ["the Devil", "Lucifer (post-Jerome)", "the Adversary", "the Tempter", "Dia
 tradition: "Christianity (from Second Temple Jewish substrate)"
 region: "Pan-Christian; roots in Second Temple Judaism and Persian-period contact"
 period-active-earliest: -300
-period-active-latest: null
+period-active-latest: 2026
 domains: ["evil", "temptation", "accusation", "fallen-angelic-rebellion", "cosmic-adversary", "the present age"]
 gender: "masculine"
 role: "chief fallen angel; tempter, accuser, and cosmic opponent of God in mainstream Christianity; being of finite power who will be ultimately defeated"

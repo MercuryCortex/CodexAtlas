@@ -6,7 +6,7 @@ aka: ["Aməša Spəṇta", "the Bounteous Immortals", "Amshaspand (Pahlavi)"]
 tradition: "Zoroastrian"
 region: "Iran / Central Asia"
 period-active-earliest: -1200
-period-active-latest: 700
+period-active-latest: 2026
 domains: ["the six (or seven) divine aspects / hypostases of Ahura Mazda's creation"]
 gender: "varies (three masculine, three feminine; Ahura Mazda / Spenta Mainyu as seventh)"
 role: "the cosmic-ethical aspects through which Ahura Mazda creates and rules"

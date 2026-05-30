@@ -6,7 +6,7 @@ aka: ["Kamadeva", "Manmatha", "Madana", "Smara", "Kandarpa", "Ananga (the Bodile
 tradition: "Vedic religion / Hinduism"
 region: "Indian subcontinent"
 period-active-earliest: -1500
-period-active-latest: 1700
+period-active-latest: 2026
 domains: ["erotic love", "desire", "attraction", "procreation", "cosmic creative force", "kama as one of the four purusharthas (goals of life)"]
 gender: "masculine"
 role: "god of erotic desire and love; primordial creative force; son of Brahma or Vishnu (variant); burned to ash by Shiva; reborn as Ananga (the Bodiless)"

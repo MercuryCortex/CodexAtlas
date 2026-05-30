@@ -6,7 +6,7 @@ aka: ["Bóinn", "Bóand", "White Cow", "the River Boyne (she is the river)", "B�
 tradition: "Irish Celtic"
 region: "Ireland; River Boyne valley (Co. Meath); Brú na Bóinne (Newgrange)"
 period-active-earliest: -700
-period-active-latest: null
+period-active-latest: 600
 domains: ["the River Boyne", "sacred water", "inspiration (the river of poetry)", "fertility", "cattle", "Brú na Bóinne (Newgrange)"]
 gender: "female"
 role: "divine source of the River Boyne; mother of [[aengus-og]] by the [[dagda]]; the river itself is her body and her story; goddess of poetic and divine inspiration"

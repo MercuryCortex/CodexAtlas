@@ -6,7 +6,7 @@ aka: ["Azaz'el", "the scapegoat-receiving demon"]
 tradition: "Israelite religion / Second Temple apocalyptic / Jewish demonology"
 region: "Levant / wilderness"
 period-active-earliest: -700
-period-active-latest: 200
+period-active-latest: 2026
 domains: ["wilderness", "fallen-angelic leader", "scapegoat recipient"]
 gender: "masculine"
 role: "fallen-angel | demon"

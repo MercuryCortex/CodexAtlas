@@ -6,7 +6,7 @@ aka: ["Aganjú", "Aganyu", "the Desert/Wilderness", "Owner of the Volcano"]
 tradition: "Yoruba religion (Nigeria / Diaspora)"
 region: "Yoruba lands; Diaspora: Cuba (Lucumí/Santería), Brazil (Candomblé)"
 period-active-earliest: -500
-period-active-latest: null
+period-active-latest: 2026
 domains: ["volcanoes", "the wilderness/desert", "the vast unpopulated land between cities", "crossings and transitions", "rivers (in some traditions)", "strength and fire"]
 gender: "male"
 role: "orisha of the volcano, the wilderness, and vast terrestrial expanses; the deity of the untamed land between human settlements"
