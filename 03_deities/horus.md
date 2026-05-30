@@ -6,7 +6,7 @@ aka: ["Hor", "Heru", "Hr.w", "Harpocrates ('Hor-pa-khered', Horus the Child)", "
 tradition: "Egyptian"
 region: "Egypt (cult centers Edfu — the great Ptolemaic temple; Behdet; Hierakonpolis; Letopolis)"
 period-active-earliest: -3100
-period-active-latest: 400
+period-active-latest: 500
 domains: ["kingship", "sky", "victory", "the living pharaoh"]
 gender: "masculine"
 role: "falcon sky-god; the living king as god; victor over Set; son and avenger of Osiris"

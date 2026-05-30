@@ -6,7 +6,7 @@ aka: ["Agathos Daimon", "Good Daemon", "Agathodaemon", "Agathodaimon", "the Good
 tradition: "Greco-Egyptian Hermetic tradition / popular Hellenistic religion"
 region: "Egypt (especially Alexandria) and the broader Hellenistic Mediterranean"
 period-active-earliest: -400
-period-active-latest: 400
+period-active-latest: 500
 domains: ["divine guidance", "good fortune", "cosmic revelation", "serpent symbolism", "household protection", "personal guardian spirit", "intermediary between divine and human"]
 gender: "masculine (or non-gendered divine principle)"
 role: "benevolent divine intermediary, revealer, and guardian spirit"

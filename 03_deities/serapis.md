@@ -6,7 +6,7 @@ aka: ["Sarapis", "Osor-Hapi (Egyptian Osiris-Apis)", "Σάραπις"]
 tradition: "Greco-Egyptian (Ptolemaic syncretic state cult)"
 region: "Egypt (Alexandria); spread across Mediterranean (Rome, Asia Minor, Pontus, Britain)"
 period-active-earliest: -305
-period-active-latest: 400
+period-active-latest: 500
 domains: ["fertility", "afterlife", "healing", "sun", "kingship", "underworld"]
 gender: "masculine"
 role: "high-god of Ptolemaic Egypt; syncretic cosmic creator-savior; consort of Isis"

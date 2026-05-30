@@ -6,7 +6,7 @@ aka: ["Ḥwt-Ḥr ('House of Horus')", "Athyr (Greek)", "Mehit-Weret ('Great Flo
 tradition: "Egyptian"
 region: "Egypt (major cult centers at Dendera, Memphis, and Byblos); diffused to the eastern Mediterranean by trade contacts"
 period-active-earliest: -3000
-period-active-latest: 400
+period-active-latest: 500
 domains: ["sky", "love", "music", "dance", "fertility", "motherhood", "mining", "the dead (welcomer in the west)", "drunkenness/ecstatic-rite"]
 gender: "feminine"
 role: "great mother-goddess; sky-cow; consort and/or mother of Horus; mistress of music and joy; psychopomp for the deceased"

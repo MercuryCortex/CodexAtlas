@@ -6,7 +6,7 @@ aka: ["Tefenet"]
 tradition: "Egyptian"
 region: "Egypt (especially Heliopolis)"
 period-active-earliest: -2700
-period-active-latest: 400
+period-active-latest: 500
 domains: ["moisture", "dew", "rain", "atmosphere", "the principle of fluidity"]
 gender: "feminine"
 role: "goddess of moisture; member of the Heliopolitan Ennead"

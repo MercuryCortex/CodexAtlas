@@ -6,7 +6,7 @@ aka: ["Khnum", "Chnoubis (Greek magical papyri form)", "Ḫnmw"]
 tradition: "Egyptian (Old Kingdom onward; cult center Elephantine and Esna)"
 region: "Egypt — Elephantine (Aswan), Esna, Antinoë"
 period-active-earliest: -2700
-period-active-latest: 400
+period-active-latest: 500
 domains: ["creator-god", "potter", "Nile inundation", "fertility", "shaping of bodies"]
 gender: "masculine"
 role: "ram-headed creator god who forms human bodies on the potter's wheel; guardian of the Nile source"

@@ -6,7 +6,7 @@ aka: ["Šw"]
 tradition: "Egyptian"
 region: "Egypt (especially Heliopolis)"
 period-active-earliest: -2700
-period-active-latest: 400
+period-active-latest: 500
 domains: ["air", "atmosphere", "void between sky and earth", "sunlight"]
 gender: "masculine"
 role: "god of air; member of the Heliopolitan Ennead; separator of Nut from Geb"

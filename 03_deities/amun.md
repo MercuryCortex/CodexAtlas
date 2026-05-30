@@ -6,7 +6,7 @@ aka: ["Amun", "Amen", "Amon", "Ammon (Greek)", "Yamānu", "Jmn ('the hidden one'
 tradition: "Egyptian (Theban, then state-religious)"
 region: "Egypt — cult center Karnak (Thebes); satellite cults at Siwa Oasis (Libya), Napata (Nubia), Memphis"
 period-active-earliest: -2100
-period-active-latest: 400
+period-active-latest: 500
 domains: ["hiddenness", "creator-god", "kingship", "air / breath", "fertility", "oracular speech"]
 gender: "masculine"
 role: "hidden creator-god; king of the gods; oracular voice; patron of Pharaonic kingship from the Middle Kingdom onward"

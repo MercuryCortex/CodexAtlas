@@ -6,7 +6,7 @@ aka: ["Nu", "Nwn", "the Primordial Waters"]
 tradition: "Egyptian"
 region: "Egypt (no cult center — Nun is a cosmological principle more than an object of cult)"
 period-active-earliest: -2600
-period-active-latest: 400
+period-active-latest: 500
 domains: ["primordial waters", "pre-cosmic chaos / undifferentiated potency", "subterranean and pre-creation ocean"]
 gender: "masculine (paired with feminine Naunet in the Hermopolitan Ogdoad)"
 role: "personified primordial waters from which the cosmos emerges"

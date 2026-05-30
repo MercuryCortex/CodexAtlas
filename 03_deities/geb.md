@@ -6,7 +6,7 @@ aka: ["Gēbeb", "Keb", "Seb"]
 tradition: "Egyptian"
 region: "Egypt (especially Heliopolis)"
 period-active-earliest: -2700
-period-active-latest: 400
+period-active-latest: 500
 domains: ["earth", "vegetation", "kingship (the earthly throne)"]
 gender: "masculine"
 role: "earth god; member of the Heliopolitan Ennead"

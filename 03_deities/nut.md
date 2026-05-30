@@ -6,7 +6,7 @@ aka: ["Nuit", "Newet"]
 tradition: "Egyptian"
 region: "Egypt (especially Heliopolis)"
 period-active-earliest: -2700
-period-active-latest: 400
+period-active-latest: 500
 domains: ["sky", "stars", "celestial cosmos", "rebirth/regeneration of the sun"]
 gender: "feminine"
 role: "sky goddess; mother of Osiris, Isis, Set, Nephthys; member of the Heliopolitan Ennead"

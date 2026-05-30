@@ -6,7 +6,7 @@ aka: ["Khepera", "Khepra", "Chepri", "the Becoming One", "the Self-Created"]
 tradition: "Egyptian"
 region: "Egypt (cosmological figure across all major cult centers; particularly linked to Heliopolis)"
 period-active-earliest: -2400
-period-active-latest: 400
+period-active-latest: 500
 domains: ["rising sun", "self-creation", "transformation and becoming", "regeneration", "dawn"]
 gender: "masculine"
 role: "solar deity; god of the dawn aspect of Ra; divine embodiment of self-creation (kheper = 'to come into being / to transform')"

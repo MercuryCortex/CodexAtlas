@@ -6,7 +6,7 @@ aka: ["Amun-Re", "Amen-Ra", "Imn-Rꜥ", "King of the Gods (nsw n nṯrw)"]
 tradition: "Egyptian (New Kingdom state theology)"
 region: "Egypt (cult centers Karnak Thebes; Heliopolis; Memphis; Nubian extension to Napata)"
 period-active-earliest: -1550
-period-active-latest: 400
+period-active-latest: 500
 domains: ["creator-god", "sun", "hidden being", "kingship", "cosmic order"]
 gender: "masculine"
 role: "composite high-god of the New Kingdom and later Egyptian state religion; the hidden creator manifesting as the visible sun"

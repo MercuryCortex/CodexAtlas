@@ -6,7 +6,7 @@ aka: ["Ptaḥ", "Ptah-Sokar-Osiris (funerary syncretic form)", "Ptah-Tatenen (ea
 tradition: "Egyptian"
 region: "Egypt (cult center Memphis — the *Ḥwt-kꜢ-Ptḥ* 'House of Ptah's Ka', from which 'Egypt' as a Greek word derives)"
 period-active-earliest: -2700
-period-active-latest: 400
+period-active-latest: 500
 domains: ["creator-by-thought-and-word", "craft", "artisans", "patron of metalwork and sculpture", "architecture", "funerary restoration"]
 gender: "masculine"
 role: "creator god of the Memphite Theology; patron of craftsmen; divine model for the Platonic Demiurge and Logos doctrines"

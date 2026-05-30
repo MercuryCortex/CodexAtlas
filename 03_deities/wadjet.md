@@ -6,7 +6,7 @@ aka: ["Wadjet", "Wedjat", "Uadjet", "Edjo", "Buto (Greek)", "Lady of the Cobra",
 tradition: "Ancient Egyptian religion"
 region: "Lower Egypt (cult centre Per-Wadjet / Buto in the Nile Delta)"
 period-active-earliest: -3000
-period-active-latest: 400
+period-active-latest: 500
 domains: ["protection of the pharaoh", "Lower Egypt (the Red Crown / Deshret)", "the cobra-form solar uraeus", "childbirth", "the green papyrus marsh"]
 gender: "feminine"
 role: "tutelary goddess of Lower Egypt; the cobra on the pharaoh's brow (the uraeus); one of the *Two Ladies* (Nebty) of pharaonic titulary, paired with Nekhbet (Upper Egyptian vulture-goddess; no node yet) of Upper Egypt"

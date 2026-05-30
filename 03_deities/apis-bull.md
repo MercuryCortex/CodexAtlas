@@ -6,7 +6,7 @@ aka: ["Ḥꜥpı͗ (Egyptian)", "Apis Bull", "Hapi-ankh ('Living Apis')", "Osor-
 tradition: "Egyptian (Memphite cult)"
 region: "Memphis (chief cult); later Greco-Egyptian diaspora as Serapis"
 period-active-earliest: -3000
-period-active-latest: 400
+period-active-latest: 500
 domains: ["sacred bull", "kingship", "fertility", "oracular speech", "incarnation of deity"]
 gender: "masculine"
 role: "living-bull cultic incarnation of Ptah (and at death of Osiris); oracular intermediary; royal-cultic herald"

@@ -6,7 +6,7 @@ aka: ["Djehuty", "Tehuti", "Hermes Trismegistus (Hellenistic syncretic form)"]
 tradition: "Egyptian"
 region: "Egypt (cult center Hermopolis Magna — Khmun)"
 period-active-earliest: -2600
-period-active-latest: 400
+period-active-latest: 500
 domains: ["writing", "knowledge", "scribes", "magic", "lunar calendar", "judgment (he records the verdict)"]
 gender: "masculine"
 role: "scribe of the gods; lord of divine knowledge; recorder of the weighing of the heart"

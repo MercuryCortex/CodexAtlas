@@ -6,7 +6,7 @@ aka: ["Kek", "Keku", "Keku-darkness", "Kauket (female form)"]
 tradition: "Egyptian (Hermopolitan theology — the Ogdoad)"
 region: "Egypt (Hermopolis Magna / Khmun — cult center of the Ogdoad)"
 period-active-earliest: -2400
-period-active-latest: 400
+period-active-latest: 500
 domains: ["primordial darkness", "the formless void before creation", "chaos before light", "the darkness between stars"]
 gender: "masculine (Kek) / feminine (Kauket) — paired androgynous force"
 role: "primordial deity; personification of the darkness that precedes creation; one of the eight forces of the Ogdoad"

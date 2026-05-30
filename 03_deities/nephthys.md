@@ -6,7 +6,7 @@ aka: ["Nebet-het", "Nebthet (Egyptian Nbt-ḥwt, 'Lady of the House/Mansion')"]
 tradition: "Egyptian"
 region: "Egypt (Heliopolitan-ennead cult; later Hellenized cult of Isis)"
 period-active-earliest: -2400
-period-active-latest: 400
+period-active-latest: 500
 domains: ["mourning", "funerary protection", "the dead", "night", "rivers"]
 gender: "feminine"
 role: "funerary goddess; sister and mourner of Osiris; consort of Set; psychopomp companion of Isis"

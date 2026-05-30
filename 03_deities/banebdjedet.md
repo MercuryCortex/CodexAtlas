@@ -6,7 +6,7 @@ aka: ["Banebdjed", "Ba-neb-djed", "the Ram of Mendes", "Mendes-ram"]
 tradition: "Egyptian"
 region: "Nile Delta — Mendes (modern Tell el-Rub'a)"
 period-active-earliest: -2500
-period-active-latest: 400
+period-active-latest: 500
 domains: ["fertility", "ram-of-Mendes", "ba-soul-of-Osiris"]
 gender: "masculine"
 role: "ram-god of Mendes; one of the four ba-souls of the great gods"

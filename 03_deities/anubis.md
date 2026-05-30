@@ -6,7 +6,7 @@ aka: ["Anpu", "Inpu", "Yinepu", "Hermanubis (Hellenistic syncretic with Hermes)"
 tradition: "Egyptian"
 region: "Egypt (cult centers Cynopolis — modern el-Qeis; also Asyut)"
 period-active-earliest: -2900
-period-active-latest: 400
+period-active-latest: 500
 domains: ["embalming", "mummification", "guardian of the dead", "psychopomp", "cosmic justice at the weighing of the heart"]
 gender: "masculine"
 role: "embalmer-god and guardian of the necropolis; divine overseer of the weighing of the heart; psychopomp who guides the dead through the underworld"

@@ -6,7 +6,7 @@ aka: ["Nit", "Net", "Neit", "Nrt", "Nt"]
 tradition: "Egyptian (Predynastic / Old Kingdom; Saite-period revival)"
 region: "Egypt — principal cult at Saïs (Sa el-Hagar) in the western Delta"
 period-active-earliest: -3200
-period-active-latest: 400
+period-active-latest: 500
 domains: ["primordial creator-goddess", "war", "weaving", "hunting", "wisdom"]
 gender: "feminine"
 role: "Predynastic creator-goddess; Saite high-goddess; mother of Ra in some theological traditions"

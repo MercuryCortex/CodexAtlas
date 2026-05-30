@@ -6,7 +6,7 @@ aka: ["Sakhmet (Sḫmt, 'The Powerful One')", "Lady of Plague", "Lady of Slaught
 tradition: "Egyptian"
 region: "Egypt; chief Memphite cult; later widely venerated"
 period-active-earliest: -2500
-period-active-latest: 400
+period-active-latest: 500
 domains: ["war", "plague", "destruction", "healing (by reversal)", "solar wrath"]
 gender: "feminine"
 role: "lion-headed war-and-plague goddess; destructive face of the Eye-of-Ra; consort of Ptah and mother of Nefertem in the Memphite triad"

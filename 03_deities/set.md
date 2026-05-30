@@ -6,7 +6,7 @@ aka: ["Seth", "Sutekh", "Setesh", "Sutech (Hittite-period)", "Set-Typhon (Greco-
 tradition: "Egyptian"
 region: "Egypt (cult centers Ombos / Nubt; Avaris in the Delta during the Hyksos period; the western oases)"
 period-active-earliest: -3100
-period-active-latest: 400
+period-active-latest: 500
 domains: ["desert", "storms", "chaos / disorder", "foreign lands", "protection of Ra against Apophis", "(in earlier periods) royal power"]
 gender: "masculine"
 role: "complex deity of disorder, foreign lands, and Ra's cosmic protection; brother and murderer of Osiris; rival of Horus; defender of the solar barque"

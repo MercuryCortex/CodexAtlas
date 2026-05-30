@@ -6,7 +6,7 @@ aka: ["Bast", "Bastet", "Boubastis (Greek)", "Bsṯt"]
 tradition: "Egyptian (Old Kingdom onward; major cult Bubastis)"
 region: "Egypt — principal cult at Bubastis (Tell Basta) in the eastern Delta"
 period-active-earliest: -2700
-period-active-latest: 400
+period-active-latest: 500
 domains: ["domesticated cat", "household protection", "fertility", "music and dance", "joy"]
 gender: "feminine"
 role: "feline protective goddess; tamed (cat-form) counterpart to the wrathful lioness Sekhmet"

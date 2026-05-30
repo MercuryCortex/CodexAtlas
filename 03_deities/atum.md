@@ -6,7 +6,7 @@ aka: ["Tem", "Itm", "Atum-Ra (composite with Ra)", "Neb-er-djer ('Lord of the Li
 tradition: "Egyptian"
 region: "Egypt (cult center Heliopolis — Iunu; also Abydos)"
 period-active-earliest: -2700
-period-active-latest: 400
+period-active-latest: 500
 domains: ["primordial creator", "completion / totality (the name means 'the complete one')", "evening sun", "kingship", "the Ennead", "cosmic dissolution"]
 gender: "masculine (with androgynous creative aspects in some texts — he is the first being and contains all potentiality)"
 role: "self-emergent primordial creator god of the Heliopolitan cosmogony; first divine king; evening form of Ra; father of the Ennead"

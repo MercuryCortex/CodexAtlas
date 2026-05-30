@@ -6,7 +6,7 @@ aka: ["Anupet", "Input"]
 tradition: "Egyptian"
 region: "Egypt (associated with Cynopolis and the funerary tradition of Middle Egypt)"
 period-active-earliest: -2500
-period-active-latest: 400
+period-active-latest: 500
 domains: ["embalming", "funerary rites", "female counterpart of Anubis"]
 gender: "feminine"
 role: "female counterpart and consort of Anubis; goddess of the seventeenth nome (province) of Upper Egypt; shares Anubis's funerary and embalming functions"

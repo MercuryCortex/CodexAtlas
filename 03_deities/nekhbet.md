@@ -6,7 +6,7 @@ aka: ["Nḫbt (Egyptian hieroglyphic)", "Nekhebet", "Eileithyia (Greek interpret
 tradition: "Egyptian"
 region: "Egypt — principal cult centre at Nekheb (modern El-Kab, the original royal city of Upper Egypt, opposite Hierakonpolis/Nekhen on the Nile); patroness of Upper Egypt; the **Two Ladies** pairing with Wadjet (Lower Egypt) is the pan-Egyptian articulation of unified-Egypt sovereignty"
 period-active-earliest: -3200
-period-active-latest: 400
+period-active-latest: 500
 domains: ["sovereignty of Upper Egypt", "the **Two Ladies** unification with Wadjet", "the White Crown (*hedjet*)", "protection of the king (especially in nursing and crowning iconography)", "the vulture-mother archetype"]
 gender: "feminine"
 role: "vulture-goddess; tutelary deity of Upper Egypt; one half of the **Two Ladies** (*Nebti* — the royal title 'He of the Two Ladies' is one of the five names of the pharaoh, attested from the 1st Dynasty onward)"
