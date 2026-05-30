@@ -1,0 +1,499 @@
+{
+  "summary": "Family→corpus coverage audit — flag missing religions/corpora + propose adds from existing vault docs",
+  "agentCount": 7,
+  "logs": [
+    "Collected gap reports from 6/6 goblins"
+  ],
+  "result": {
+    "summary": "Six regional goblins surfaced 47 distinct corpus gaps spanning Israelite/Canaanite/Hurro-Hittite ancient Near Eastern strata, the entire Christian post-NT spine (Patristic, Byzantine, Latin Catholic, Syriac, Apostolic Fathers, Apocrypha, Theosophy, Marcionite), six major Islamic sub-traditions (Ismaili, Ishraqi, School of Isfahan, Tafsir, Arabic Neoplatonism, South Asian Sufi reform, Islamism), eight Indic/East-Asian splits (Vaishnava/Shaiva/Shakta/Advaita/Sant/Zen-Soto/Engishiki/Jataka), nine Indigenous/oral traditions (Yoruba-Ifa, Vodou-Lucumi, Andean, Aztec/Maya split, Polynesian, Indigenous N.A., Dreaming), and nine modern/heterodox (Neoplatonist, Theosophy, Thelema, Wicca, Scientology, LaVeyan Satanism, Mystery Cults, New Thought). The biggest miss is the Christian post-NT canon: Patristic, Byzantine, and Latin Catholic medieval together orphan ~33 vault docs of arguably the most civilizationally weighty tradition in the West — a glaring structural hole. The Israelite-pre-exilic + Canaanite-Ugaritic + Hurro-Hittite ancient-NE trio directly serves John's MASSIVE-WINS criterion and includes one real reclassification (Baal Cycle is currently mis-filed under mesopotamian). Nearly all the proposed adds have ready vault docs (only Marcionite canon needs net-new content). Recommendation: ship as Lane B canon-audit Phase B with ~42 corpora additions and 8 reclassifications; defer only the Marcionite gap to Lane A.",
+    "high_priority_adds": [
+      {
+        "corpus_id": "israelite-religion",
+        "religion_label": "Israelite religion (pre-exilic)",
+        "rationale": "John's flagged seed example. Pre-exilic Israelite religion (J/E/D/P, Deuteronomistic History, Kuntillet Ajrud) is documentarily distinct from post-exilic Tanakh/Bible. 8 vault docs ready. MASSIVE-WIN tier — opens YHWH-Asherah, divine council, source-critical strata as a religion of origin.",
+        "docs_to_assign": [
+          "document-kuntillet-ajrud-inscriptions",
+          "phase-2-005-hebrew-bible-j-source",
+          "phase-2-007-hebrew-bible-e-source",
+          "phase-2-011-hebrew-bible-d-source",
+          "phase-2-018-hebrew-bible-p-source",
+          "phase-2-019-deuteronomistic-history",
+          "phase-2-010-hebrew-bible-early-prophets",
+          "phase-2-020-lamentations"
+        ]
+      },
+      {
+        "corpus_id": "canaanite-ugaritic",
+        "religion_label": "Canaanite religion (Ugaritic West Semitic)",
+        "rationale": "Baal Cycle is currently mis-classified under mesopotamian — Canaanite is West Semitic, not Mesopotamian. Reclassification + corpus creation in one move. Largest cross-tradition bridge (El/Baal/Asherah/Anat/Mot/Yam → YHWH absorption).",
+        "docs_to_assign": [
+          "phase-1-013-baal-cycle",
+          "phase-1-014-ugaritic-ritual-texts"
+        ]
+      },
+      {
+        "corpus_id": "hurro-hittite",
+        "religion_label": "Hurrian-Hittite religion (Bronze Age Anatolian)",
+        "rationale": "Kumarbi succession-myth is the structural ancestor of Hesiod's Theogony. Illuyanka is the chaoskampf prototype. 3 vault docs ready, all currently orphaned.",
+        "docs_to_assign": [
+          "phase-1-028-kumarbi-cycle",
+          "phase-1-029-telipinu-myth",
+          "phase-1-030-illuyanka-myth"
+        ]
+      },
+      {
+        "corpus_id": "patristic-corpus",
+        "religion_label": "Patristic Christianity",
+        "rationale": "Largest orphan cluster in the vault — 16 docs (Irenaeus through Leo's Tome) defining Trinitarian + Christological orthodoxy, currently homeless. Migne PG/PL is the canonical corpus. This is the single biggest content win.",
+        "docs_to_assign": [
+          "phase-4-023-irenaeus-against-heresies",
+          "phase-4-024-tertullian-apology",
+          "phase-4-024b-tertullian-against-valentinians",
+          "phase-4-025-clement-stromata",
+          "phase-4-026-origen-on-first-principles",
+          "phase-4-027-eusebius-ecclesiastical-history",
+          "phase-4-038-hippolytus-refutation",
+          "phase-4-041-athanasius-life-of-antony",
+          "phase-4-042-athanasius-on-the-incarnation",
+          "phase-4-043-apophthegmata-patrum",
+          "phase-4-044-basil-on-the-holy-spirit",
+          "phase-4-045-gregory-of-nyssa-life-of-moses",
+          "phase-4-028-augustine-confessions",
+          "phase-4-029-augustine-city-of-god",
+          "phase-4-047-cassian-conferences",
+          "phase-4-050-leo-tome-to-flavian"
+        ]
+      },
+      {
+        "corpus_id": "byzantine-orthodox",
+        "religion_label": "Eastern Orthodox Christianity",
+        "rationale": "Post-patristic Byzantine spine (Dionysius → Maximus → John of Damascus → Palamas + Cloud of Unknowing + Eriugena). 7 orphan docs. The Orthodox systematic canon parallel to Catholic Scholasticism.",
+        "docs_to_assign": [
+          "phase-4-030-pseudo-dionysius",
+          "phase-4-celestial-hierarchy",
+          "phase-4-046-john-of-damascus-exposition-orthodox-faith",
+          "phase-5-003-maximus-confessor-ambigua",
+          "phase-5-030-palamas-triads",
+          "phase-5-031-cloud-of-unknowing",
+          "phase-5-008-eriugena-periphyseon"
+        ]
+      },
+      {
+        "corpus_id": "latin-catholic-medieval",
+        "religion_label": "Latin Catholic Christianity",
+        "rationale": "Benedict's Rule through Aquinas's Summa through Dante's Comedy — the Latin Catholic spine has NO corpus home. 10 orphan docs. Civilizational weight demands its own wedge.",
+        "docs_to_assign": [
+          "phase-4-048-benedict-rule",
+          "phase-4-049-boethius-consolation-of-philosophy",
+          "phase-4-051-gregory-pastoral-rule",
+          "phase-4-052-gregory-dialogues",
+          "phase-4-053-isidore-etymologiae",
+          "phase-4-054-bede-ecclesiastical-history",
+          "phase-5-024-aquinas-summa-theologiae",
+          "phase-5-028-meister-eckhart-sermons",
+          "phase-5-041-revelations-of-divine-love",
+          "phase-5-056-divine-comedy"
+        ]
+      },
+      {
+        "corpus_id": "apostolic-fathers",
+        "religion_label": "Sub-apostolic Christianity",
+        "rationale": "Recognized sub-canon since Cotelier 1672 (Lightfoot, Ehrman Loeb). Shepherd of Hermas + Barnabas in Codex Sinaiticus, 1 Clement in Alexandrinus — near-canonical. 9 orphan docs ready.",
+        "docs_to_assign": [
+          "phase-4-061-didache",
+          "phase-4-062-1-clement",
+          "phase-4-063-ignatius-letters",
+          "phase-4-064-epistle-of-barnabas",
+          "phase-4-065-shepherd-of-hermas",
+          "phase-4-066-polycarp-philippians",
+          "phase-4-067-martyrdom-of-polycarp",
+          "phase-4-068-2-clement",
+          "phase-4-095-new-testament-canon"
+        ]
+      },
+      {
+        "corpus_id": "syriac-christianity",
+        "religion_label": "Syriac Christianity",
+        "rationale": "Distinct Aramaic-script Eastern Christianity. Diatessaron + Ephrem + Peshitta currently scattered across bible/canonical-translations and ethiopic-tewahedo. Live tradition (Syriac Orthodox, Maronite, Assyrian Church of the East).",
+        "docs_to_assign": [
+          "phase-4-037-diatessaron",
+          "phase-4-055-ephrem-hymns-on-paradise",
+          "phase-4-108-peshitta"
+        ]
+      },
+      {
+        "corpus_id": "neoplatonist-corpus",
+        "religion_label": "Neoplatonism",
+        "rationale": "Plotinus + Iamblichus + Proclus + Chaldean Oracles are completely unassigned. Dominant philosophical theology of late antiquity, scaffolding for Pseudo-Dionysius / Eckhart / Ficino / Blavatsky. Chaldean Oracles currently mis-classified under greek-scripture philosophical theology.",
+        "docs_to_assign": [
+          "phase-4-019-plotinus-enneads",
+          "phase-4-020-iamblichus-on-the-mysteries",
+          "phase-4-021-proclus-elements-of-theology",
+          "phase-4-022-chaldean-oracles"
+        ]
+      },
+      {
+        "corpus_id": "vaishnava-canon",
+        "religion_label": "Vaishnava Hinduism",
+        "rationale": "Largest Hindu denomination (~640M). 9 vault docs (Bhagavata Purana, Ramanuja, Madhva, Tulsidas, Mirabai, Chaitanya Charitamrita) currently scattered into generic vedas corpus. Bhakti spine collapse is hiding the avatar doctrine.",
+        "docs_to_assign": [
+          "phase-5-050-bhagavata-purana",
+          "phase-4-109-vishnu-purana",
+          "phase-4-050-vishnu-sahasranama",
+          "phase-5-016-ramanuja-sribhasya",
+          "phase-5-022-madhva-brahma-sutra-bhasya",
+          "phase-6-019-tulsidas-ramcharitmanas",
+          "phase-6-030-vinaya-patrika",
+          "phase-6-013-mirabai-bhajans",
+          "phase-6-020-chaitanya-charitamrita"
+        ]
+      },
+      {
+        "corpus_id": "shaiva-tantric-canon",
+        "religion_label": "Shaiva Hinduism",
+        "rationale": "Kashmir Shaivism Trika/Krama/Kaula is a distinct revealed canon (28 Agamas) — Sanderson 1988 treats as separate from Vedanta. 4 vault docs ready.",
+        "docs_to_assign": [
+          "phase-5-006-vijnana-bhairava-tantra",
+          "phase-5-014-abhinavagupta-tantraloka",
+          "phase-5-033-shiva-sutras",
+          "phase-5-035-hatha-yoga-pradipika"
+        ]
+      },
+      {
+        "corpus_id": "advaita-vedanta-corpus",
+        "religion_label": "Advaita / Smarta Hinduism",
+        "rationale": "Shankara's strict non-dual canon (Smarta mainstream Hinduism via dasanami sannyasin order). Currently scattered across vedas/vedanta-exegesis. Distinct from Ramanuja (qualified-nondual) and Madhva (dualism).",
+        "docs_to_assign": [
+          "phase-5-005-shankara-brahma-sutra-bhasya",
+          "phase-5-034-vivekachudamani",
+          "phase-5-032-yogavasishtha"
+        ]
+      },
+      {
+        "corpus_id": "zen-japanese-canon",
+        "religion_label": "Zen Buddhism",
+        "rationale": "Dogen's Shobogenzo is foundational Soto Zen scripture, currently orphaned. Largest Zen denomination (~7,000 Japanese temples) and most influential Buddhist tradition in modern West.",
+        "docs_to_assign": [
+          "phase-5-029-dogen-shobogenzo"
+        ]
+      },
+      {
+        "corpus_id": "ismaili-corpus",
+        "religion_label": "Ismaili Shi'ism",
+        "rationale": "Current 'shia-corpus' is Twelver-only. Rasail Ikhwan al-Safa (52 Fatimid-era epistles) and Jabirian corpus carry explicit Ismaili YAML and are unassigned. Distinct Shia branch with esoteric canon.",
+        "docs_to_assign": [
+          "phase-5-011-rasail-ikhwan-al-safa",
+          "phase-5-039-jabir-corpus-arabic-alchemy"
+        ]
+      },
+      {
+        "corpus_id": "ishraqi-corpus",
+        "religion_label": "Islamic philosophy — Illuminationism",
+        "rationale": "Suhrawardi's Hikmat al-Ishraq founded a distinct Islamic philosophical school still taught at Iranian Shia seminaries. Explicit Ishraqi YAML, unassigned.",
+        "docs_to_assign": [
+          "phase-5-018-suhrawardi-hikmat-al-ishraq"
+        ]
+      },
+      {
+        "corpus_id": "school-of-isfahan",
+        "religion_label": "Twelver Shia philosophical mysticism",
+        "rationale": "Mulla Sadra's Asfar — arguably the most influential post-classical Islamic philosophical work, defines Iranian seminary Islam. Currently in NO corpus.",
+        "docs_to_assign": [
+          "phase-6-023-mulla-sadra-asfar"
+        ]
+      },
+      {
+        "corpus_id": "tafsir-corpus",
+        "religion_label": "Sunni Islam (Tafsir genre)",
+        "rationale": "Tafsir is a distinct canonical genre alongside Qur'an and Hadith. Al-Tabari's Jami al-Bayan is the mother-of-all-tafsir. Unassigned.",
+        "docs_to_assign": [
+          "phase-5-009-tabari-tafsir"
+        ]
+      },
+      {
+        "corpus_id": "arabic-neoplatonism",
+        "religion_label": "Islam (Falsafa — Arabic Neoplatonism)",
+        "rationale": "Theology of Aristotle is the foundational Plotinian substrate of all Islamic philosophy (Avicenna read it 40 times). Ibn Tufayl's Hayy ibn Yaqdhan influenced Spinoza/Locke/Defoe. Both unassigned.",
+        "docs_to_assign": [
+          "phase-5-048-theology-of-aristotle-arabic",
+          "phase-5-047-ibn-tufayl-hayy-ibn-yaqdhan"
+        ]
+      },
+      {
+        "corpus_id": "south-asian-sufi-reform",
+        "religion_label": "Indian Naqshbandi Sufism / Deobandi origins",
+        "rationale": "Shah Wali Allah's Hujjat Allah al-Baligha founds Deobandi reform (~150M adherents). Unassigned.",
+        "docs_to_assign": [
+          "phase-6-028-shah-wali-allah-hujjat-allah"
+        ]
+      },
+      {
+        "corpus_id": "islamism-corpus",
+        "religion_label": "Islamism / Political Islam",
+        "rationale": "Qutb's Milestones is THE foundational text of revolutionary Islamism. Explicit YAML, unassigned. Distinct 20th-c. sacred-textual tradition.",
+        "docs_to_assign": [
+          "phase-7-028-milestones"
+        ]
+      },
+      {
+        "corpus_id": "yoruba-ifa-corpus",
+        "religion_label": "Yoruba Religion (Ifa / Orisha)",
+        "rationale": "Odu Ifa is UNESCO-declared Masterpiece of Oral Heritage 2005, anchor scripture of Yoruba + diasporic offshoots. Unassigned.",
+        "docs_to_assign": [
+          "phase-8-007-ifa-divination-corpus"
+        ]
+      },
+      {
+        "corpus_id": "afro-diasporic-liturgical",
+        "religion_label": "Afro-Diasporic Religions (Vodou · Santeria/Lucumi)",
+        "rationale": "Caribbean syncretic sacred-textual tradition with Yoruba + Fon-Ewe + Kongo + Catholic strata. 2 orphan docs. Distinct from Yoruba (creole canon).",
+        "docs_to_assign": [
+          "phase-8-016-haitian-vodou-liturgical-tradition",
+          "phase-8-017-santeria-lucumi"
+        ]
+      },
+      {
+        "corpus_id": "andean-quechua-corpus",
+        "religion_label": "Andean Religion (Inca / Quechua substrate)",
+        "rationale": "Huarochiri Manuscript is the 'Popol Vuh of the Andes' — most important surviving indigenous-language record of pre-Columbian Andean religion. Orphan. Structurally distinct from Mesoamerican.",
+        "docs_to_assign": [
+          "phase-8-006-huarochiri-manuscript"
+        ]
+      },
+      {
+        "corpus_id": "maya-corpus",
+        "religion_label": "Maya Religion",
+        "rationale": "Split from mesoamerican-sacred. Popol Vuh + Chilam Balam + Dresden Codex are distinct from Aztec — different language, religion, polity. Chilam Balam currently orphan.",
+        "docs_to_assign": [
+          "phase-8-001-popol-vuh",
+          "phase-8-005-chilam-balam",
+          "phase-8-003-dresden-codex-maya"
+        ]
+      },
+      {
+        "corpus_id": "aztec-mexica-corpus",
+        "religion_label": "Aztec / Mexica Religion",
+        "rationale": "Split from mesoamerican-sacred. Florentine Codex + Historia de los Mexicanos + Codex Borgia. Different religion from Maya.",
+        "docs_to_assign": [
+          "phase-8-004-florentine-codex-sahagun",
+          "phase-8-002-historia-de-los-mexicanos-por-sus-pinturas",
+          "phase-8-002-codex-borgia"
+        ]
+      },
+      {
+        "corpus_id": "polynesian-corpus",
+        "religion_label": "Polynesian Religion (Hawaiian · Maori)",
+        "rationale": "Kumulipo + Maori cosmogonic chants share whakapapa genealogical-recitation form. MASSIVE-WIN: Te Kore (void) ↔ Ginnungagap ↔ Nun ↔ tad ekam.",
+        "docs_to_assign": [
+          "phase-8-010-kumulipo",
+          "phase-8-011-maori-cosmogonic-chants"
+        ]
+      },
+      {
+        "corpus_id": "indigenous-north-american-corpus",
+        "religion_label": "Indigenous North American Religions",
+        "rationale": "5 orphan docs (Navajo Blessingway, Black Elk Speaks, Sacred Pipe, Gayanashagowa, Walam Olum). Walam Olum included with documented-fabrication framing per deviant-bridge tiering.",
+        "docs_to_assign": [
+          "phase-8-013-navajo-blessingway",
+          "phase-8-021-black-elk-speaks",
+          "phase-8-022-the-sacred-pipe",
+          "phase-8-023-gayanashagowa",
+          "phase-8-012-walam-olum"
+        ]
+      },
+      {
+        "corpus_id": "aboriginal-dreaming-corpus",
+        "religion_label": "Australian Aboriginal Religion (the Dreaming)",
+        "rationale": "Arguably oldest continuous sacred-textual tradition on Earth (60,000+ years). Tjukurpa/Altyerre. Orphan. Song-line + ritual-performance + iconography integrated.",
+        "docs_to_assign": [
+          "phase-8-009-dreaming-narratives"
+        ]
+      },
+      {
+        "corpus_id": "theosophy-corpus",
+        "religion_label": "Theosophy",
+        "rationale": "Blavatsky Isis Unveiled + Secret Doctrine + Atlantis Root Race + Outline of Esoteric Science all unassigned. Seed of Anthroposophy, Arcane School, I AM, New Age.",
+        "docs_to_assign": [
+          "phase-7-005-isis-unveiled",
+          "phase-7-006-secret-doctrine",
+          "phase-7-034-blavatsky-atlantis-root-race",
+          "phase-7-009-outline-of-esoteric-science"
+        ]
+      },
+      {
+        "corpus_id": "thelema-corpus",
+        "religion_label": "Thelema",
+        "rationale": "Liber AL vel Legis is founding revealed scripture of Thelema/OTO/A∴A∴. Both Liber AL and Magick in Theory and Practice unassigned despite explicit Thelema YAML.",
+        "docs_to_assign": [
+          "phase-7-008-book-of-the-law",
+          "phase-7-016-magick-in-theory-and-practice"
+        ]
+      },
+      {
+        "corpus_id": "wicca-corpus",
+        "religion_label": "Wicca",
+        "rationale": "Gardner's Witchcraft Today is founding public scripture of modern Pagan revival (largest in tradition, ~75 yrs). Unassigned.",
+        "docs_to_assign": [
+          "phase-7-024-witchcraft-today"
+        ]
+      },
+      {
+        "corpus_id": "scientology-corpus",
+        "religion_label": "Scientology",
+        "rationale": "Hubbard's Dianetics is founding scripture of federally-recognized religion. Explicit Scientology YAML, unassigned.",
+        "docs_to_assign": [
+          "phase-7-025-dianetics"
+        ]
+      },
+      {
+        "corpus_id": "laveyan-satanism-corpus",
+        "religion_label": "LaVeyan Satanism",
+        "rationale": "LaVey's Satanic Bible founds Church of Satan canon. Explicit YAML, unassigned.",
+        "docs_to_assign": [
+          "phase-7-030-satanic-bible"
+        ]
+      },
+      {
+        "corpus_id": "mystery-cults-corpus",
+        "religion_label": "Greco-Roman Mystery Cults",
+        "rationale": "Apuleius Bk 11 + PGM unassigned. Bacchae + Oresteia + Orphica currently mixed into greek-scripture's Homer-Hesiod civic-poetry wedge. Burkert canonical distinction between mystery and civic.",
+        "docs_to_assign": [
+          "phase-4-105-apuleius-metamorphoses-book-11",
+          "phase-4-106-greek-magical-papyri",
+          "phase-2-030-euripides-bacchae",
+          "phase-2-040-orphic-gold-tablets",
+          "phase-3-027-derveni-papyrus",
+          "phase-3-028-orphic-hymns"
+        ]
+      },
+      {
+        "corpus_id": "new-thought-corpus",
+        "religion_label": "Christian Science / New Thought",
+        "rationale": "Eddy's Science and Health + Kybalion + Course in Miracles form American metaphysical-religion strand. Kybalion currently mis-filed in hermetica — it's New Thought claiming Hermetic vocabulary, not Hermetic transmission.",
+        "docs_to_assign": [
+          "phase-7-004-science-and-health",
+          "phase-7-032-kybalion",
+          "phase-7-031-course-in-miracles"
+        ]
+      },
+      {
+        "corpus_id": "christian-theosophy",
+        "religion_label": "Christian Theosophy",
+        "rationale": "Boehme + Vaughan + Swedenborg — distinct esoteric-Christian tradition seeded Anthroposophy + Blake + Romantic theology. 3-4 orphan docs.",
+        "docs_to_assign": [
+          "phase-6-029-boehme-aurora",
+          "phase-6-050-thomas-vaughan-anthroposophia",
+          "phase-6-027-swedenborg-arcana-heaven-and-hell"
+        ]
+      },
+      {
+        "corpus_id": "christian-apocrypha",
+        "religion_label": "Apocryphal Christianity",
+        "rationale": "Apocryphal Acts + martyr-acts + Letter to Flora (Schneemelcher canon) — neither NT-canonical nor Nag Hammadi-Gnostic. 3 orphan docs.",
+        "docs_to_assign": [
+          "phase-4-035-acts-of-paul-and-thecla",
+          "phase-4-036-passio-perpetuae",
+          "phase-4-060-letter-to-flora"
+        ]
+      },
+      {
+        "corpus_id": "shakta-canon",
+        "religion_label": "Shakta Hinduism",
+        "rationale": "Devi Mahatmya is the 'Gita of the Goddess' — foundational Shakta text (~30M adherents). Currently in vedas/purana but Shakta theology (Goddess as Brahman) is irreducible.",
+        "docs_to_assign": [
+          "phase-5-001-devi-mahatmya"
+        ]
+      },
+      {
+        "corpus_id": "sant-nirguna-corpus",
+        "religion_label": "Sant Tradition (Nirguna Bhakti)",
+        "rationale": "Kabir Panth Bijak — sociologically + theologically distinct from saguna Vaishnava bhakti. Critically: Adi Granth incorporates ~270 Kabir hymns, making Sant corpus the seed of Sikhism. Orphan.",
+        "docs_to_assign": [
+          "phase-6-031-bijak-kabir"
+        ]
+      },
+      {
+        "corpus_id": "shinto-engishiki",
+        "religion_label": "Shinto",
+        "rationale": "Engishiki (927 CE) is the third pillar of Shinto canonical lit alongside Kojiki/Nihongi — 27 norito are actual liturgical scripture recited at shrines today. Orphan stub.",
+        "docs_to_assign": [
+          "engishiki"
+        ]
+      },
+      {
+        "corpus_id": "theravada-jataka-corpus",
+        "religion_label": "Theravada Buddhism",
+        "rationale": "547 birth-stories — largest source of Buddhist art motifs across SE Asia. Currently orphan stub.",
+        "docs_to_assign": [
+          "jataka-tales"
+        ]
+      }
+    ],
+    "medium_priority_adds": [
+      {
+        "corpus_id": "marcionite-canon",
+        "religion_label": "Marcionite Christianity",
+        "rationale": "Marcion's Evangelion + Apostolikon is the FIRST Christian closed canon (~140 CE) — provoked proto-orthodox canon-formation. Reconstructible from Tertullian Adv. Marc. + Epiphanius Pan. 42 (Harnack 1924, BeDuhn 2013, Roth 2015). NO vault doc represents it directly. John's criterion that suppressed canons qualify means this is a real corpus gap awaiting Lane A content."
+      }
+    ],
+    "reclassifications": [
+      {
+        "doc_id": "phase-1-013-baal-cycle",
+        "current_corpus": "mesopotamian (canaanite-ugaritic section)",
+        "target_corpus": "canaanite-ugaritic",
+        "reason": "Canaanite religion is West Semitic, NOT Mesopotamian. Mis-classification under mesopotamian conflates the Akkadian-Babylonian East with the Ugaritic-Levantine West. Smith's Ugaritic Baal Cycle treats this as a distinct corpus."
+      },
+      {
+        "doc_id": "phase-1-014-ugaritic-ritual-texts",
+        "current_corpus": "mesopotamian (canaanite-ugaritic section)",
+        "target_corpus": "canaanite-ugaritic",
+        "reason": "Same West-Semitic vs. Mesopotamian misclassification as Baal Cycle. KTU 1.40-1.176 ritual tablets are the priestly counterpart of the Baal Cycle."
+      },
+      {
+        "doc_id": "phase-4-022-chaldean-oracles",
+        "current_corpus": "greek-scripture (philosophical theology)",
+        "target_corpus": "neoplatonist-corpus",
+        "reason": "Chaldean Oracles are Neoplatonist revealed theurgic scripture (Lewy, Majercik), not Plato-Aristotle philosophical theology. Mis-classification flattens a distinct mystical-revealed canon into civic philosophy."
+      },
+      {
+        "doc_id": "phase-7-032-kybalion",
+        "current_corpus": "hermetica (modern reception)",
+        "target_corpus": "new-thought-corpus",
+        "reason": "Kybalion is New Thought metaphysical idealism using Hermetic vocabulary as window-dressing — NOT actual Hermetic transmission. Per Albanese's Republic of Mind and Spirit, this is American metaphysical religion, not Hermetic lineage."
+      },
+      {
+        "doc_id": "phase-2-030-euripides-bacchae",
+        "current_corpus": "greek-scripture (Homer-Hesiod pan-Hellenic)",
+        "target_corpus": "mystery-cults-corpus",
+        "reason": "Bacchae is Dionysian-mystery theology in dramatic form — Burkert distinguishes mystery cults from Olympian civic religion. Currently mixed with Homer/Hesiod public civic poetry."
+      },
+      {
+        "doc_id": "phase-2-040-orphic-gold-tablets",
+        "current_corpus": "greek-scripture (Orphic-mystery wedge)",
+        "target_corpus": "mystery-cults-corpus",
+        "reason": "Orphica should anchor a dedicated mystery-cult corpus alongside Eleusinian/Isis/Mithraic material rather than sitting as a sub-wedge under greek-scripture."
+      },
+      {
+        "doc_id": "phase-3-027-derveni-papyrus",
+        "current_corpus": "greek-scripture (Orphic-mystery wedge)",
+        "target_corpus": "mystery-cults-corpus",
+        "reason": "Same as Orphic tablets — Derveni papyrus is Orphic-mystery exegesis."
+      },
+      {
+        "doc_id": "phase-3-028-orphic-hymns",
+        "current_corpus": "greek-scripture (Orphic-mystery wedge)",
+        "target_corpus": "mystery-cults-corpus",
+        "reason": "Same Orphic-mystery consolidation."
+      }
+    ],
+    "duplicates_or_already_covered": [
+      "Apostolic Fathers includes phase-4-095-new-testament-canon — verify this isn't already in bible/canonical-formation corpus before adding (likely needs to stay in bible corpus, NOT moved to apostolic-fathers).",
+      "Christian Theosophy doc phase-7-004-science-and-health appears in BOTH christian-theosophy goblin proposal AND new-thought-corpus goblin proposal. Decision needed: New Thought is the better home (Eddy is the canonical Christian Science / New Thought founder; Swedenborg-Boehme line is upstream influence but not Christian Science proper). Recommend Science and Health -> new-thought-corpus only; christian-theosophy gets Boehme + Vaughan + Swedenborg.",
+      "Mashafa Kidan and Ethiopian Sinodos (proposed under syriac-christianity) are already in ethiopic-tewahedo-canon — keep them there; don't move to Syriac. Goblin overreached by claiming these as Syriac.",
+      "Pseudo-Dionysius (phase-4-030) and Celestial Hierarchy + Eriugena + Theology of Aristotle-Arabic appear in BOTH neoplatonist-corpus AND byzantine-orthodox / arabic-neoplatonism goblin proposals. Decision: Pseudo-Dionysius and Eriugena are downstream Christian Neoplatonism — primary home is byzantine-orthodox / latin-catholic; can also tag-link to neoplatonist-corpus as bridge but don't double-assign as primary. Theology of Aristotle-Arabic stays in arabic-neoplatonism.",
+      "Codex Borgia listed under aztec-mexica-corpus by Indigenous goblin — already partially in mesoamerican-sacred; verify split is clean.",
+      "Hatha Yoga Pradipika (phase-5-035) listed under shaiva-tantric-canon — actually a Natha-yogic text that some scholars place in its own Hatha lineage; acceptable as Shaiva-adjacent but flag for review.",
+      "Phase-5-008-eriugena-periphyseon appears under BOTH byzantine-orthodox AND neoplatonist-corpus goblin proposals — Eriugena is Latin Catholic-trained translating Greek Dionysian material, so latin-catholic-medieval may be the better primary home with byzantine-orthodox + neoplatonist-corpus as secondary cross-links."
+    ]
+  }
+}

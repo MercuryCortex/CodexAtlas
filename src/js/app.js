@@ -3365,15 +3365,11 @@ const SCRIPTURE_CORPORA = {
         { id: 'phase-2-009-hesiod-theogony-works-and-days', label: 'Hesiod · Theogony + Works' },
       ]},
       { id: 'greek-orphic-mystery', label: 'Orphic-mystery revealed corpus', color: '#6a8a9c', books: [
-        { id: 'phase-3-027-derveni-papyrus',      label: 'Derveni Papyrus' },
-        { id: 'phase-3-028-orphic-hymns',          label: 'Orphic Hymns' },
-        { id: 'phase-2-040-orphic-gold-tablets',   label: 'Orphic Gold Tablets (~-400 to -200)' },
       ]},
       { id: 'greek-philosophical-theology', label: 'Philosophical theology (Plato-Aristotle-Neoplatonist)', color: '#5a7a8c', books: [
         { id: 'phase-3-002-plato-dialogues',                label: 'Plato · Dialogues' },
         { id: 'phase-3-022-plato-timaeus-critias-atlantis', label: 'Plato · Timaeus + Critias' },
         { id: 'phase-3-003-aristotle-metaphysics',          label: 'Aristotle · Metaphysics' },
-        { id: 'phase-4-022-chaldean-oracles',                    label: 'Chaldean Oracles (~2nd c. CE) · Neoplatonist scripture' },
       ]},
       { id: 'greek-ethnographic-theological', label: 'Ethnographic-theological (Greek-Egyptian)', color: '#4f6d80', books: [
         { id: 'phase-2-028-herodotus-histories-book-2', label: 'Herodotus · Histories Bk 2 (Egypt)' },
@@ -4013,7 +4009,6 @@ const SCRIPTURE_CORPORA = {
         { id: 'phase-6-001-ficino-pimander',                   label: 'Ficino · Pimander 1471' },
       ]},
       { id: 'hermetica-modern', label: 'Modern Hermetic reception', color: '#a89880', books: [
-        { id: 'phase-7-032-kybalion',                          label: 'The Kybalion (1908)' },
       ]},
     ],
   },
@@ -4035,7 +4030,6 @@ const SCRIPTURE_CORPORA = {
         { id: 'phase-1-017-descent-of-inanna',        label: 'Descent of Inanna / Ishtar to the Underworld' },
       ]},
       { id: 'canaanite-ugaritic', label: 'Canaanite-Ugaritic (~-1400 to -1200 BCE)', color: '#a06050', books: [
-        { id: 'phase-1-013-baal-cycle',               label: 'Baal Cycle (Ugarit) · Baal vs. Mot dying-rising' },
       ]},
     ],
   },
@@ -4293,6 +4287,466 @@ const SCRIPTURE_CORPORA = {
       ]},
       { id: 'islamic-modernism-scripture', label: 'Iqbal · The Reconstruction of Religious Thought in Islam (1930)', color: '#3a5a8a', books: [
         { id: 'phase-7-046-iqbal-reconstruction-religious-thought', label: 'The Reconstruction of Religious Thought in Islam · Muhammad Iqbal' },
+      ]},
+    ],
+  },
+  'israelite-religion': {
+    label: "Israelite religion (pre-exilic)",
+    available: true,
+    sections: [
+      { id: 'israelite-religion-main', label: "Israelite religion (pre-exilic)", color: '#9aa55a', books: [
+        { id: 'document-kuntillet-ajrud-inscriptions', label: 'Kuntillet Ajrud Inscriptions' },
+        { id: 'phase-2-005-hebrew-bible-j-source', label: 'Hebrew Bible — J (Yahwist) Source' },
+        { id: 'phase-2-007-hebrew-bible-e-source', label: 'Hebrew Bible — E (Elohist) Source' },
+        { id: 'phase-2-011-hebrew-bible-d-source', label: 'Hebrew Bible — D (Deuteronomic Core) Source' },
+        { id: 'phase-2-018-hebrew-bible-p-source', label: 'Hebrew Bible — P (Priestly) Source' },
+        { id: 'phase-2-019-deuteronomistic-history', label: 'The Deuteronomistic History (Joshua–Judges–Samuel–Kings)' },
+        { id: 'phase-2-010-hebrew-bible-early-prophets', label: 'Hebrew Bible — Early Prophets' },
+        { id: 'phase-2-020-lamentations', label: 'Lamentations' },
+      ]},
+    ],
+  },
+  'canaanite-ugaritic': {
+    label: "Canaanite religion (Ugaritic West Semitic)",
+    available: true,
+    sections: [
+      { id: 'canaanite-ugaritic-main', label: "Canaanite religion (Ugaritic West Semitic)", color: '#5a7aa4', books: [
+        { id: 'phase-1-013-baal-cycle', label: 'Baal Cycle' },
+        { id: 'phase-1-014-ugaritic-ritual-texts', label: 'Ugaritic Ritual Texts' },
+      ]},
+    ],
+  },
+  'hurro-hittite': {
+    label: "Hurrian-Hittite religion (Bronze Age Anatolian)",
+    available: true,
+    sections: [
+      { id: 'hurro-hittite-main', label: "Hurrian-Hittite religion (Bronze Age Anatolian)", color: '#c44a5a', books: [
+        { id: 'phase-1-028-kumarbi-cycle', label: 'The Kumarbi Cycle' },
+        { id: 'phase-1-029-telipinu-myth', label: 'The Telipinu Myth' },
+        { id: 'phase-1-030-illuyanka-myth', label: 'The Illuyanka Myth (Old and Late Versions)' },
+      ]},
+    ],
+  },
+  'patristic-corpus': {
+    label: "Patristic Christianity",
+    available: true,
+    sections: [
+      { id: 'patristic-corpus-main', label: "Patristic Christianity", color: '#6e8a5a', books: [
+        { id: 'phase-4-023-irenaeus-against-heresies', label: 'Against Heresies' },
+        { id: 'phase-4-024-tertullian-apology', label: 'Apology' },
+        { id: 'phase-4-024b-tertullian-against-valentinians', label: 'Against the Valentinians' },
+        { id: 'phase-4-025-clement-stromata', label: 'Stromata' },
+        { id: 'phase-4-026-origen-on-first-principles', label: 'On First Principles' },
+        { id: 'phase-4-027-eusebius-ecclesiastical-history', label: 'Ecclesiastical History' },
+        { id: 'phase-4-038-hippolytus-refutation', label: 'Refutation of All Heresies' },
+        { id: 'phase-4-041-athanasius-life-of-antony', label: 'Life of Antony' },
+        { id: 'phase-4-042-athanasius-on-the-incarnation', label: 'On the Incarnation' },
+        { id: 'phase-4-043-apophthegmata-patrum', label: 'Apophthegmata Patrum (Sayings of the Desert Fathers)' },
+        { id: 'phase-4-044-basil-on-the-holy-spirit', label: 'On the Holy Spirit' },
+        { id: 'phase-4-045-gregory-of-nyssa-life-of-moses', label: 'Life of Moses' },
+        { id: 'phase-4-028-augustine-confessions', label: 'Confessions' },
+        { id: 'phase-4-029-augustine-city-of-god', label: 'City of God' },
+        { id: 'phase-4-047-cassian-conferences', label: 'Conferences' },
+        { id: 'phase-4-050-leo-tome-to-flavian', label: 'Tome of Leo' },
+      ]},
+    ],
+  },
+  'byzantine-orthodox': {
+    label: "Eastern Orthodox Christianity",
+    available: true,
+    sections: [
+      { id: 'byzantine-orthodox-main', label: "Eastern Orthodox Christianity", color: '#a08850', books: [
+        { id: 'phase-4-030-pseudo-dionysius', label: 'Corpus Areopagiticum' },
+        { id: 'phase-4-100-celestial-hierarchy', label: 'Celestial Hierarchy' },
+        { id: 'phase-4-046-john-of-damascus-exposition-orthodox-faith', label: 'Exposition of the Orthodox Faith' },
+        { id: 'phase-5-003-maximus-confessor-ambigua', label: 'Ambigua and Mystagogia (Maximus the Confessor)' },
+        { id: 'phase-5-030-palamas-triads', label: 'The Triads' },
+        { id: 'phase-5-031-cloud-of-unknowing', label: 'The Cloud of Unknowing' },
+      ]},
+    ],
+  },
+  'latin-catholic-medieval': {
+    label: "Latin Catholic Christianity",
+    available: true,
+    sections: [
+      { id: 'latin-catholic-medieval-main', label: "Latin Catholic Christianity", color: '#7a6a8a', books: [
+        { id: 'phase-4-048-benedict-rule', label: 'Rule of St Benedict' },
+        { id: 'phase-4-049-boethius-consolation-of-philosophy', label: 'Consolation of Philosophy' },
+        { id: 'phase-4-051-gregory-pastoral-rule', label: 'Pastoral Rule (Liber Regulae Pastoralis)' },
+        { id: 'phase-4-052-gregory-dialogues', label: 'Dialogues on the Miracles of the Italian Fathers' },
+        { id: 'phase-4-053-isidore-etymologiae', label: 'Etymologiae (Etymologies / Origines)' },
+        { id: 'phase-4-054-bede-ecclesiastical-history', label: 'Ecclesiastical History of the English People' },
+        { id: 'phase-5-024-aquinas-summa-theologiae', label: 'Summa Theologiae' },
+        { id: 'phase-5-028-meister-eckhart-sermons', label: 'German Sermons (Meister Eckhart)' },
+        { id: 'phase-5-041-revelations-of-divine-love', label: 'A Revelation of Love (Revelations of Divine Love)' },
+        { id: 'phase-5-056-divine-comedy', label: 'Divina Commedia (Divine Comedy)' },
+      ]},
+    ],
+  },
+  'apostolic-fathers': {
+    label: "Sub-apostolic Christianity",
+    available: true,
+    sections: [
+      { id: 'apostolic-fathers-main', label: "Sub-apostolic Christianity", color: '#c89a3a', books: [
+        { id: 'phase-4-061-didache', label: 'Didache' },
+        { id: 'phase-4-062-1-clement', label: '1 Clement' },
+        { id: 'phase-4-063-ignatius-letters', label: 'Ignatius of Antioch — The Seven Authentic Letters' },
+        { id: 'phase-4-064-epistle-of-barnabas', label: 'Epistle of Barnabas' },
+        { id: 'phase-4-065-shepherd-of-hermas', label: 'The Shepherd of Hermas' },
+        { id: 'phase-4-066-polycarp-philippians', label: 'Polycarp\'s Letter to the Philippians' },
+        { id: 'phase-4-067-martyrdom-of-polycarp', label: 'Martyrdom of Polycarp' },
+        { id: 'phase-4-068-2-clement', label: '2 Clement' },
+      ]},
+    ],
+  },
+  'syriac-christianity': {
+    label: "Syriac Christianity",
+    available: true,
+    sections: [
+      { id: 'syriac-christianity-main', label: "Syriac Christianity", color: '#9a4a3a', books: [
+        { id: 'phase-4-037-diatessaron', label: 'Diatessaron' },
+        { id: 'phase-4-055-ephrem-hymns-on-paradise', label: 'Hymns on Paradise (Madrāšē dᵉ-Pardayšā)' },
+        { id: 'phase-4-108-peshitta', label: 'Peshitta' },
+      ]},
+    ],
+  },
+  'neoplatonist-corpus': {
+    label: "Neoplatonism",
+    available: true,
+    sections: [
+      { id: 'neoplatonist-corpus-main', label: "Neoplatonism", color: '#3a8a6a', books: [
+        { id: 'phase-4-019-plotinus-enneads', label: 'Enneads' },
+        { id: 'phase-4-020-iamblichus-on-the-mysteries', label: 'On the Mysteries' },
+        { id: 'phase-4-021-proclus-elements-of-theology', label: 'Elements of Theology' },
+        { id: 'phase-4-022-chaldean-oracles', label: 'Chaldean Oracles' },
+      ]},
+    ],
+  },
+  'vaishnava-canon': {
+    label: "Vaishnava Hinduism",
+    available: true,
+    sections: [
+      { id: 'vaishnava-canon-main', label: "Vaishnava Hinduism", color: '#c4a05a', books: [
+        { id: 'phase-5-050-bhagavata-purana', label: 'Bhāgavata Purāṇa' },
+        { id: 'phase-4-109-vishnu-purana', label: 'Vishnu Purāṇa' },
+        { id: 'phase-4-050-vishnu-sahasranama', label: 'Viṣṇu Sahasranāma (The Thousand Names of Viṣṇu)' },
+        { id: 'phase-5-016-ramanuja-sribhasya', label: 'Śrībhāṣya' },
+        { id: 'phase-5-022-madhva-brahma-sutra-bhasya', label: 'Brahma-Sūtra-Bhāṣya (Madhva)' },
+        { id: 'phase-6-019-tulsidas-ramcharitmanas', label: 'Ramcharitmanas' },
+        { id: 'phase-6-030-vinaya-patrika', label: 'Vinaya Patrikā (The Petition of Humility)' },
+        { id: 'phase-6-013-mirabai-bhajans', label: 'Mirabai\'s Bhajans (devotional songs to Krishna)' },
+        { id: 'phase-6-020-chaitanya-charitamrita', label: 'Chaitanya Charitamrita + Shikshashtakam' },
+      ]},
+    ],
+  },
+  'shaiva-tantric-canon': {
+    label: "Shaiva Hinduism",
+    available: true,
+    sections: [
+      { id: 'shaiva-tantric-canon-main', label: "Shaiva Hinduism", color: '#5a9a8f', books: [
+        { id: 'phase-5-006-vijnana-bhairava-tantra', label: 'Vijnana Bhairava Tantra' },
+        { id: 'phase-5-014-abhinavagupta-tantraloka', label: 'Tantrāloka (Light on the Tantras)' },
+        { id: 'phase-5-033-shiva-sutras', label: 'Śiva Sūtras' },
+        { id: 'phase-5-035-hatha-yoga-pradipika', label: 'Haṭhayoga-Pradīpikā (Light on Hatha Yoga)' },
+      ]},
+    ],
+  },
+  'advaita-vedanta-corpus': {
+    label: "Advaita / Smarta Hinduism",
+    available: true,
+    sections: [
+      { id: 'advaita-vedanta-corpus-main', label: "Advaita / Smarta Hinduism", color: '#8a5ac4', books: [
+        { id: 'phase-5-005-shankara-brahma-sutra-bhasya', label: 'Brahma-Sutra-Bhasya (Śaṅkara)' },
+        { id: 'phase-5-034-vivekachudamani', label: 'Vivekacūḍāmaṇi (Crest-Jewel of Discrimination)' },
+        { id: 'phase-5-032-yogavasishtha', label: 'Yoga-Vāsiṣṭha (Yoga Vasistha)' },
+      ]},
+    ],
+  },
+  'zen-japanese-canon': {
+    label: "Zen Buddhism",
+    available: true,
+    sections: [
+      { id: 'zen-japanese-canon-main', label: "Zen Buddhism", color: '#d99a3a', books: [
+        { id: 'phase-5-029-dogen-shobogenzo', label: 'Shōbōgenzō (Dōgen)' },
+      ]},
+    ],
+  },
+  'ismaili-corpus': {
+    label: "Ismaili Shi'ism",
+    available: true,
+    sections: [
+      { id: 'ismaili-corpus-main', label: "Ismaili Shi'ism", color: '#3a6cc4', books: [
+        { id: 'phase-5-011-rasail-ikhwan-al-safa', label: 'Rasāʾil Ikhwān al-Ṣafāʾ' },
+        { id: 'phase-5-039-jabir-corpus-arabic-alchemy', label: 'Jabirian Corpus — Arabic Alchemical Literature' },
+      ]},
+    ],
+  },
+  'ishraqi-corpus': {
+    label: "Islamic philosophy \u2014 Illuminationism",
+    available: true,
+    sections: [
+      { id: 'ishraqi-corpus-main', label: "Islamic philosophy \u2014 Illuminationism", color: '#d4a55a', books: [
+        { id: 'phase-5-018-suhrawardi-hikmat-al-ishraq', label: 'Ḥikmat al-Ishrāq' },
+      ]},
+    ],
+  },
+  'school-of-isfahan': {
+    label: "Twelver Shia philosophical mysticism",
+    available: true,
+    sections: [
+      { id: 'school-of-isfahan-main', label: "Twelver Shia philosophical mysticism", color: '#a89880', books: [
+        { id: 'phase-6-023-mulla-sadra-asfar', label: 'Al-Asfar al-Arba\'a (The Four Journeys)' },
+      ]},
+    ],
+  },
+  'tafsir-corpus': {
+    label: "Sunni Islam (Tafsir genre)",
+    available: true,
+    sections: [
+      { id: 'tafsir-corpus-main', label: "Sunni Islam (Tafsir genre)", color: '#c25450', books: [
+        { id: 'phase-5-009-tabari-tafsir', label: 'Jāmiʿ al-Bayān (al-Ṭabarī\'s Tafsīr)' },
+      ]},
+    ],
+  },
+  'arabic-neoplatonism': {
+    label: "Islam (Falsafa \u2014 Arabic Neoplatonism)",
+    available: true,
+    sections: [
+      { id: 'arabic-neoplatonism-main', label: "Islam (Falsafa \u2014 Arabic Neoplatonism)", color: '#8a7a5a', books: [
+        { id: 'phase-5-048-theology-of-aristotle-arabic', label: 'The Theology of Aristotle' },
+        { id: 'phase-5-047-ibn-tufayl-hayy-ibn-yaqdhan', label: 'Risālat Ḥayy ibn Yaqẓān' },
+      ]},
+    ],
+  },
+  'south-asian-sufi-reform': {
+    label: "Indian Naqshbandi Sufism / Deobandi origins",
+    available: true,
+    sections: [
+      { id: 'south-asian-sufi-reform-main', label: "Indian Naqshbandi Sufism / Deobandi origins", color: '#5a8a6a', books: [
+        { id: 'phase-6-028-shah-wali-allah-hujjat-allah', label: 'Hujjat Allah al-Baligha' },
+      ]},
+    ],
+  },
+  'islamism-corpus': {
+    label: "Islamism / Political Islam",
+    available: true,
+    sections: [
+      { id: 'islamism-corpus-main', label: "Islamism / Political Islam", color: '#7a9a5a', books: [
+        { id: 'phase-7-028-milestones', label: 'Milestones' },
+      ]},
+    ],
+  },
+  'yoruba-ifa-corpus': {
+    label: "Yoruba Religion (Ifa / Orisha)",
+    available: true,
+    sections: [
+      { id: 'yoruba-ifa-corpus-main', label: "Yoruba Religion (Ifa / Orisha)", color: '#aa7a55', books: [
+        { id: 'phase-8-007-ifa-divination-corpus', label: 'Ifá Divination Corpus (Odu Ifá)' },
+      ]},
+    ],
+  },
+  'afro-diasporic-liturgical': {
+    label: "Afro-Diasporic Religions (Vodou \u00b7 Santeria/Lucumi)",
+    available: true,
+    sections: [
+      { id: 'afro-diasporic-liturgical-main', label: "Afro-Diasporic Religions (Vodou \u00b7 Santeria/Lucumi)", color: '#5a6cc4', books: [
+        { id: 'phase-8-016-haitian-vodou-liturgical-tradition', label: 'Haitian Vodou Liturgical Tradition' },
+        { id: 'phase-8-017-santeria-lucumi', label: 'Santería / Lucumí Liturgical Tradition' },
+      ]},
+    ],
+  },
+  'andean-quechua-corpus': {
+    label: "Andean Religion (Inca / Quechua substrate)",
+    available: true,
+    sections: [
+      { id: 'andean-quechua-corpus-main', label: "Andean Religion (Inca / Quechua substrate)", color: '#955aa5', books: [
+        { id: 'phase-8-006-huarochiri-manuscript', label: 'Huarochirí Manuscript' },
+      ]},
+    ],
+  },
+  'maya-corpus': {
+    label: "Maya Religion",
+    available: true,
+    sections: [
+      { id: 'maya-corpus-main', label: "Maya Religion", color: '#bb6655', books: [
+        { id: 'phase-8-001-popol-vuh', label: 'Popol Vuh' },
+        { id: 'phase-8-005-chilam-balam', label: 'Books of Chilam Balam' },
+        { id: 'phase-8-003-dresden-codex-maya', label: 'Dresden Codex' },
+      ]},
+    ],
+  },
+  'aztec-mexica-corpus': {
+    label: "Aztec / Mexica Religion",
+    available: true,
+    sections: [
+      { id: 'aztec-mexica-corpus-main', label: "Aztec / Mexica Religion", color: '#669966', books: [
+        { id: 'phase-8-004-florentine-codex-sahagun', label: 'Florentine Codex' },
+        { id: 'phase-8-002-historia-de-los-mexicanos-por-sus-pinturas', label: 'Phase 8 002 Historia De Los Mexicanos Por Sus Pinturas' },
+        { id: 'phase-8-002-codex-borgia', label: 'Codex Borgia' },
+      ]},
+    ],
+  },
+  'polynesian-corpus': {
+    label: "Polynesian Religion (Hawaiian \u00b7 Maori)",
+    available: true,
+    sections: [
+      { id: 'polynesian-corpus-main', label: "Polynesian Religion (Hawaiian \u00b7 Maori)", color: '#8a3a3a', books: [
+        { id: 'phase-8-010-kumulipo', label: 'Kumulipo' },
+        { id: 'phase-8-011-maori-cosmogonic-chants', label: 'Maori Cosmogonic Chants (Te Kore / Te Pō / Te Ao)' },
+      ]},
+    ],
+  },
+  'indigenous-north-american-corpus': {
+    label: "Indigenous North American Religions",
+    available: true,
+    sections: [
+      { id: 'indigenous-north-american-corpus-main', label: "Indigenous North American Religions", color: '#3a8a3a', books: [
+        { id: 'phase-8-013-navajo-blessingway', label: 'Navajo Blessingway (Hózhǫǫjí)' },
+        { id: 'phase-8-021-black-elk-speaks', label: 'Black Elk Speaks' },
+        { id: 'phase-8-022-the-sacred-pipe', label: 'The Sacred Pipe: Black Elk\'s Account of the Seven Rites of the Oglala Sioux' },
+        { id: 'phase-8-023-gayanashagowa', label: 'Gayanashagowa (The Great Law of Peace)' },
+        { id: 'phase-8-012-walam-olum', label: 'Walam Olum' },
+      ]},
+    ],
+  },
+  'aboriginal-dreaming-corpus': {
+    label: "Australian Aboriginal Religion (the Dreaming)",
+    available: true,
+    sections: [
+      { id: 'aboriginal-dreaming-corpus-main', label: "Australian Aboriginal Religion (the Dreaming)", color: '#6a5a8a', books: [
+        { id: 'phase-8-009-dreaming-narratives', label: 'Australian Aboriginal Dreaming Narratives' },
+      ]},
+    ],
+  },
+  'theosophy-corpus': {
+    label: "Theosophy",
+    available: true,
+    sections: [
+      { id: 'theosophy-corpus-main', label: "Theosophy", color: '#a55a55', books: [
+        { id: 'phase-7-005-isis-unveiled', label: 'Isis Unveiled' },
+        { id: 'phase-7-006-secret-doctrine', label: 'The Secret Doctrine' },
+        { id: 'phase-7-034-blavatsky-atlantis-root-race', label: 'The Atlantean (Fourth) Root-Race Doctrine in The Secret Doctrine, Vol. II' },
+        { id: 'phase-7-009-outline-of-esoteric-science', label: 'An Outline of Esoteric Science' },
+      ]},
+    ],
+  },
+  'thelema-corpus': {
+    label: "Thelema",
+    available: true,
+    sections: [
+      { id: 'thelema-corpus-main', label: "Thelema", color: '#5a9a5a', books: [
+        { id: 'phase-7-008-book-of-the-law', label: 'Liber AL vel Legis (The Book of the Law)' },
+        { id: 'phase-7-016-magick-in-theory-and-practice', label: 'Magick in Theory and Practice' },
+      ]},
+    ],
+  },
+  'wicca-corpus': {
+    label: "Wicca",
+    available: true,
+    sections: [
+      { id: 'wicca-corpus-main', label: "Wicca", color: '#a55a3a', books: [
+        { id: 'phase-7-024-witchcraft-today', label: 'Witchcraft Today' },
+      ]},
+    ],
+  },
+  'scientology-corpus': {
+    label: "Scientology",
+    available: true,
+    sections: [
+      { id: 'scientology-corpus-main', label: "Scientology", color: '#3a5a8a', books: [
+        { id: 'phase-7-025-dianetics', label: 'Dianetics: The Modern Science of Mental Health' },
+      ]},
+    ],
+  },
+  'laveyan-satanism-corpus': {
+    label: "LaVeyan Satanism",
+    available: true,
+    sections: [
+      { id: 'laveyan-satanism-corpus-main', label: "LaVeyan Satanism", color: '#9a6a3a', books: [
+        { id: 'phase-7-030-satanic-bible', label: 'The Satanic Bible' },
+      ]},
+    ],
+  },
+  'mystery-cults-corpus': {
+    label: "Greco-Roman Mystery Cults",
+    available: true,
+    sections: [
+      { id: 'mystery-cults-corpus-main', label: "Greco-Roman Mystery Cults", color: '#5a5a8a', books: [
+        { id: 'phase-4-105-apuleius-metamorphoses-book-11', label: 'Apuleius — Metamorphoses Book 11 (The Isis Book)' },
+        { id: 'phase-4-106-greek-magical-papyri', label: 'Greek Magical Papyri (Papyri Graecae Magicae / PGM)' },
+        { id: 'phase-2-030-euripides-bacchae', label: 'Bacchae' },
+        { id: 'phase-2-040-orphic-gold-tablets', label: 'Orphic Gold Tablets (Lamellae Orphicae)' },
+        { id: 'phase-3-027-derveni-papyrus', label: 'Derveni Papyrus' },
+        { id: 'phase-3-028-orphic-hymns', label: 'Orphic Hymns' },
+      ]},
+    ],
+  },
+  'new-thought-corpus': {
+    label: "Christian Science / New Thought",
+    available: true,
+    sections: [
+      { id: 'new-thought-corpus-main', label: "Christian Science / New Thought", color: '#6a8a5a', books: [
+        { id: 'phase-7-004-science-and-health', label: 'Science and Health with Key to the Scriptures' },
+        { id: 'phase-7-032-kybalion', label: 'The Kybalion' },
+        { id: 'phase-7-031-course-in-miracles', label: 'A Course in Miracles' },
+      ]},
+    ],
+  },
+  'christian-theosophy': {
+    label: "Christian Theosophy",
+    available: true,
+    sections: [
+      { id: 'christian-theosophy-main', label: "Christian Theosophy", color: '#8a6a3a', books: [
+        { id: 'phase-6-029-boehme-aurora', label: 'Aurora (Morgen-Röte im Auffgang)' },
+        { id: 'phase-6-050-thomas-vaughan-anthroposophia', label: 'Anthroposophia Theomagica / Lumen de Lumine / Aula Lucis' },
+        { id: 'phase-6-027-swedenborg-arcana-heaven-and-hell', label: 'Arcana Coelestia + Heaven and Hell' },
+      ]},
+    ],
+  },
+  'christian-apocrypha': {
+    label: "Apocryphal Christianity",
+    available: true,
+    sections: [
+      { id: 'christian-apocrypha-main', label: "Apocryphal Christianity", color: '#a05a3a', books: [
+        { id: 'phase-4-035-acts-of-paul-and-thecla', label: 'Acts of Paul and Thecla' },
+        { id: 'phase-4-036-passio-perpetuae', label: 'Passio Perpetuae et Felicitatis' },
+        { id: 'phase-4-060-letter-to-flora', label: 'Letter to Flora (Ptolemy\'s Letter to Flora)' },
+      ]},
+    ],
+  },
+  'shakta-canon': {
+    label: "Shakta Hinduism",
+    available: true,
+    sections: [
+      { id: 'shakta-canon-main', label: "Shakta Hinduism", color: '#5a3a8a', books: [
+        { id: 'phase-5-001-devi-mahatmya', label: 'Devi Mahatmya' },
+      ]},
+    ],
+  },
+  'sant-nirguna-corpus': {
+    label: "Sant Tradition (Nirguna Bhakti)",
+    available: true,
+    sections: [
+      { id: 'sant-nirguna-corpus-main', label: "Sant Tradition (Nirguna Bhakti)", color: '#3a8a8a', books: [
+        { id: 'phase-6-031-bijak-kabir', label: 'Bījak (Kabir\'s Bijak)' },
+      ]},
+    ],
+  },
+  'shinto-engishiki': {
+    label: "Shinto",
+    available: true,
+    sections: [
+      { id: 'shinto-engishiki-main', label: "Shinto", color: '#8a3a6a', books: [
+        { id: 'engishiki', label: 'Engishiki' },
+      ]},
+    ],
+  },
+  'theravada-jataka-corpus': {
+    label: "Theravada Buddhism",
+    available: true,
+    sections: [
+      { id: 'theravada-jataka-corpus-main', label: "Theravada Buddhism", color: '#7a4a9a', books: [
+        { id: 'jataka-tales', label: 'Jataka Tales' },
       ]},
     ],
   },
