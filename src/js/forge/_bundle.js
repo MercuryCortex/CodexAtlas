@@ -3577,7 +3577,7 @@
   // landscape). Single-canon religions still get a row each.
   const SCRIPTURE_RELIGIONS = {
     'christianity'          : { label: 'Christianity', corpora: ['bible', 'ethiopic-tewahedo-canon', 'kebra-nagast', 'reformation', 'spanish-mystical', 'patristic-corpus', 'byzantine-orthodox', 'latin-catholic-medieval', 'apostolic-fathers', 'syriac-christianity', 'hesychast-philokalia-corpus'] },
-    'christian-gnosticism'  : { label: 'Christian Gnosticism', corpora: ['nag-hammadi', 'cathar-bogomil', 'christian-apocrypha'] },
+    'christian-gnosticism'  : { label: 'Christian Gnosticism', corpora: ['nag-hammadi', 'christian-apocrypha'] },
     'esoteric-christianity' : { label: 'Esoteric Christianity', corpora: ['christian-theosophy', 'swedenborgian-new-church', 'new-thought-corpus'] },
     'judaism'               : { label: 'Judaism', corpora: ['tanakh', 'rabbinic-corpus', 'kabbalistic-corpus'] },
     'samaritanism'          : { label: 'Samaritanism', corpora: ['samaritan-corpus'] },
@@ -3607,16 +3607,17 @@
     'confucianism'          : { label: 'Confucianism', corpora: ['confucian-classics'] },
     'daoism'                : { label: 'Daoism / 道教', corpora: ['tao-corpus'] },
     'mandaeism'             : { label: 'Mandaeism', corpora: ['mandaean-manichaean'] },
-    'manichaeism'           : { label: 'Manichaeism', corpora: [] },
+    'manichaeism'           : { label: 'Manichaeism', corpora: ['cathar-bogomil'] },
     'yoruba'                : { label: 'Yoruba (Ifá)', corpora: ['yoruba-ifa-corpus'] },
     'haitian-vodou'         : { label: 'Haitian Vodou', corpora: ['afro-diasporic-liturgical'] },
     'lucumi-santeria'       : { label: 'Lucumí / Santería', corpora: [] },
     'andean'                : { label: 'Andean (Quechua)', corpora: ['andean-quechua-corpus'] },
     'polynesian'            : { label: 'Polynesian', corpora: ['polynesian-corpus'] },
-    'dine-navajo'           : { label: 'Diné / Navajo', corpora: [] },
-    'lakota-oglala'         : { label: 'Lakota / Oglala', corpora: [] },
-    'haudenosaunee'         : { label: 'Haudenosaunee', corpora: [] },
-    'lenape-walam-olum'     : { label: 'Lenape (Walam Olum)', corpora: ['indigenous-north-american-corpus'] },
+    // Lenape Walam Olum corpus moved into indigenous-na bucket per
+    // Oestreicher 1996 + Goddard 2007 (confirmed Rafinesque 1820s forgery).
+    // Wedge retired; doc routed alongside other Indigenous-NA traditions
+    // pending Lane A corpus-level split (Diné / Lakota / Haudenosaunee).
+    'indigenous-na'         : { label: 'Indigenous N. American', corpora: ['indigenous-north-american-corpus'] },
     'aboriginal'            : { label: 'Aboriginal Australian', corpora: ['aboriginal-dreaming-corpus'] },
     'rastafari'             : { label: 'Rastafari', corpora: ['rastafari-corpus'] },
     'druze'                 : { label: 'Druze', corpora: ['druze-corpus'] },
