@@ -88,15 +88,44 @@
       if (typeof colorOverride.get === 'function') return colorOverride.get(familyName) || null;
       return colorOverride[familyName] || null;
     };
+    // 2026-05-30 — cardinal rule #9 (chart hull-grouping is a swappable
+    // primitive). The caller declares HOW nodes are grouped into hulls
+    // via `opts.groupBy`. Default preserves the historical n.family
+    // behaviour so every Atlas-root view keeps working unchanged. Codex
+    // views pass `groupBy = n => corpusSectionForBookId(n.id, corpus)`
+    // so the 5-epoch Egyptian / 9-section Bible hull shapes render
+    // through the canonical engine (see proto's scripture-radial in
+    // _legacy/app.js:4536+ and the screenshots at 99_ingest/EXAAMPLES/).
+    //
+    // Optional `opts.groupColor` lets the caller declare per-group color
+    // when groupBy isn't `n.family` (since `n.family_color` no longer
+    // applies — a J/E/D/P source's family is "Israelite" but its group
+    // is "Pentateuch source-critical strata"). Falls back to a baked
+    // node color if absent.
+    const groupBy = (typeof o.groupBy === 'function')
+      ? o.groupBy
+      : (n => (n && n.family) ? n.family : 'Other');
+    const groupColor = o.groupColor || null;
+    const groupColorFor = (groupName, baked) => {
+      if (groupColor) {
+        if (typeof groupColor.get === 'function') {
+          const c = groupColor.get(groupName);
+          if (c) return c;
+        } else if (groupColor[groupName]) {
+          return groupColor[groupName];
+        }
+      }
+      return overrideFor(groupName) || baked;
+    };
     const famByName = Object.create(null);
     nodes.forEach(n => {
-      const fam = n.family || 'Other';
+      const fam = groupBy(n) || 'Other';
       if (!famByName[fam]) {
         const baked = n.family_color || n.tradition_color || '#7a8090';
         famByName[fam] = {
           name:    fam,
           members: [],
-          color:   overrideFor(fam) || baked,
+          color:   groupColorFor(fam, baked),
         };
       }
       famByName[fam].members.push(n);
@@ -527,7 +556,11 @@
       for (const n of nodes) {
         const p = positions.get(n.id);
         if (!p) continue;
-        const famName = (n.family && String(n.family).trim()) || 'Other';
+        // 2026-05-30 — consume the same groupBy primitive as the
+        // grouping pass above, so deconflict uses the SAME wedge a
+        // node was placed in (Codex-section, not n.family).
+        const _g = groupBy(n);
+        const famName = (_g && String(_g).trim()) || 'Other';
         const w = wedges[famName];
         all.push({
           id:    n.id,

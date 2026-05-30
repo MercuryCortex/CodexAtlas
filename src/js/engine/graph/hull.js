@@ -130,6 +130,14 @@
     let wedgeData = null;
     let canonRInner = null;
     let canonROuter = null;
+    // 2026-05-30 — accept a groupBy function in wedgeOpts so the hulls
+    // group nodes by the SAME primitive the layout used (cardinal rule
+    // #9). When Codex drives the layout, nodes are placed by corpus
+    // section (Old Kingdom / Pentateuch / etc.), not by n.family — and
+    // the hulls must match or the rendered pie slices won't align with
+    // the deity cluster they're supposed to enclose. Default preserves
+    // legacy n.family behavior.
+    let groupBy = (node => (node && node.family && String(node.family).trim()) || 'Other');
     if (wedgeOpts && typeof wedgeOpts === 'object') {
       if (wedgeOpts.wedges && typeof wedgeOpts.wedges === 'object') {
         wedgeData   = wedgeOpts.wedges;
@@ -138,6 +146,9 @@
       } else {
         wedgeData = wedgeOpts;
       }
+      if (typeof wedgeOpts.groupBy === 'function') {
+        groupBy = wedgeOpts.groupBy;
+      }
     }
     const NF = 8;
     const families = new Map();
@@ -145,12 +156,19 @@
       const id = nodePacked.idIndex[i];
       const node = nodesById && nodesById.get ? nodesById.get(id) : null;
       if (!node) continue;
-      const family = (node.family && String(node.family).trim()) || 'Other';
+      const family = groupBy(node) || 'Other';
       const x = nodePacked.data[i * NF + 0];
       const y = nodePacked.data[i * NF + 1];
       if (!families.has(family)) {
+        // For Codex hulls, the section color from the layout's wedgeData
+        // is canonical — pick it up from the wedge entry if present.
+        const _wedgeEntry = wedgeData && wedgeData[family];
+        const _color = (_wedgeEntry && _wedgeEntry.color)
+          || node.family_color
+          || node.tradition_color
+          || '#888888';
         families.set(family, {
-          color: node.family_color || node.tradition_color || '#888888',
+          color: _color,
           points: [],
         });
       }

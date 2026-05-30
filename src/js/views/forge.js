@@ -2745,6 +2745,71 @@
       const _colorOverride = currentColorOverride();
       const _distribution = currentDistribution();
       const _reverseAge = !!document.body.classList.contains('fv-reverse-age');
+
+      // 2026-05-30 — Codex hull/wedge grouping (cardinal rule #9). Per
+      // the EXAMPLES screenshots at 99_ingest/EXAAMPLES/ and the proto
+      // scripture-radial at _legacy/app.js:4544+, the Codex chart's
+      // outer hulls are corpus SECTIONS (Pentateuch / Pauline / Old
+      // Kingdom / Middle Kingdom / etc.), NOT n.family. Build a
+      // bookId → sectionId map for the picked corpus, then pass
+      // groupBy + groupColor + a section-order override to the
+      // radial layout so the canonical engine renders the proto's
+      // section hulls without any per-view fork.
+      //
+      // Two scopes:
+      //   (1) local.codexFamily (specific corpus) → hulls = corpus.sections
+      //   (2) local.codexReligion only            → hulls = corpora-of-religion
+      //   (3) neither (Atlas default)              → hulls = n.family (engine default)
+      let _codexGroupBy = null;
+      let _codexGroupOrder = null;
+      let _codexGroupColor = null;
+      if (modeId === 'scriptures' && local.codexFamily && window.SCRIPTURE_CORPORA) {
+        const _corpus = window.SCRIPTURE_CORPORA[local.codexFamily];
+        if (_corpus && _corpus.sections) {
+          // Use the section LABEL as the visible group name so wheel
+          // labels read "Old Kingdom · royal funerary corpus" not the
+          // raw id "egyptian-old-kingdom". Fall back to id if missing.
+          const _bookToSection = Object.create(null);
+          _codexGroupOrder = [];
+          _codexGroupColor = Object.create(null);
+          for (const sec of _corpus.sections) {
+            const _name = sec.label || sec.id;
+            if (!_name) continue;
+            _codexGroupOrder.push(_name);
+            if (sec.color) _codexGroupColor[_name] = sec.color;
+            for (const book of (sec.books || [])) {
+              if (book && book.id) _bookToSection[book.id] = _name;
+            }
+          }
+          _codexGroupBy = (n => (n && _bookToSection[n.id]) || 'Other');
+        }
+      } else if (modeId === 'scriptures' && local.codexReligion
+                 && window.SCRIPTURE_RELIGIONS && window.SCRIPTURE_CORPORA) {
+        const _R = window.SCRIPTURE_RELIGIONS[local.codexReligion];
+        if (_R && Array.isArray(_R.corpora)) {
+          const _bookToCorpus = Object.create(null);
+          _codexGroupOrder = [];
+          _codexGroupColor = Object.create(null);
+          for (const corpusId of _R.corpora) {
+            const _c = window.SCRIPTURE_CORPORA[corpusId];
+            if (!_c || !_c.sections) continue;
+            // Use corpus label as the hull name; fall back to corpusId.
+            const _hull = _c.label || corpusId;
+            _codexGroupOrder.push(_hull);
+            // Pick the first section's color as the corpus accent; this
+            // is just an aesthetic default. Section-level granularity
+            // happens when the user drills into a specific corpus.
+            const _accent = (_c.sections[0] && _c.sections[0].color) || null;
+            if (_accent) _codexGroupColor[_hull] = _accent;
+            for (const sec of _c.sections) {
+              for (const book of (sec.books || [])) {
+                if (book && book.id) _bookToCorpus[book.id] = _hull;
+              }
+            }
+          }
+          _codexGroupBy = (n => (n && _bookToCorpus[n.id]) || 'Other');
+        }
+      }
       // 2026-05-27 — DENSITY-SLIDER FIX. Timeline layout reads
       // _bandHeightScale at compute time; if we omit it from the
       // cache key the slider becomes a no-op (relayout fires, cache
@@ -2803,12 +2868,23 @@
         });
         local._layoutCache.set(_layoutKey, lay);
       } else {
-        lay = layout.radialWedgeLayout(modeNodes, _familyOrder, {
-          degree,
-          colorOverride: _colorOverride,
-          distribution:  _distribution,
-          reverseAge:    _reverseAge,
-        });
+        // 2026-05-30 — if Codex is driving (codexFamily or codexReligion
+        // set), pass the section-based groupBy + section-order + section
+        // colors so the engine renders proto-style epoch/source hulls
+        // instead of n.family hulls (cardinal rule #9).
+        const _useCodexGrouping = !!_codexGroupBy;
+        lay = layout.radialWedgeLayout(
+          modeNodes,
+          _useCodexGrouping ? _codexGroupOrder : _familyOrder,
+          {
+            degree,
+            colorOverride: _colorOverride,
+            distribution:  _distribution,
+            reverseAge:    _reverseAge,
+            groupBy:       _useCodexGrouping ? _codexGroupBy : undefined,
+            groupColor:    _useCodexGrouping ? _codexGroupColor : undefined,
+          }
+        );
         local._layoutCache.set(_layoutKey, lay);
       }
       _tick(_layoutCacheHit ? 'layout (CACHED)' : 'layout');
@@ -3202,11 +3278,17 @@
       // Step 3 swaps in proper band-aware hull data. For now the
       // hulls render as an empty/degenerate set which is fine for
       // Step 1's "verify engine boots in timeline mode" goal.
+      // 2026-05-30 — pass the SAME groupBy primitive to the hull builder
+      // that the layout used. When Codex drives the layout (codexFamily
+      // or codexReligion set), nodes are grouped by corpus-section, not
+      // n.family — and the hulls must match or pie slices won't enclose
+      // their wedges (cardinal rule #9 + 99_ingest/EXAAMPLES proto shape).
       local.mode.hullData = (graph.buildFamilyHulls)
         ? graph.buildFamilyHulls(nodePack, modeNodeById, {
             wedges: lay.wedges || {},
             rInner: lay.rInner || 0,
             rOuter: lay.rOuter || 1,
+            groupBy: _codexGroupBy || undefined,
           })
         : { hulls: [], center: { x: 0, y: 0 }, innerRadius: 0, outerRadius: 0, dividers: [] };
       _tick('hull-data');
