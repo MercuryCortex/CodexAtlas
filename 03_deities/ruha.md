@@ -6,7 +6,7 @@ aka: ["Ruha d-Qudsha (literally 'Holy Spirit' — but inverted in valuation)", "
 tradition: "Mandaean"
 region: "Southern Mesopotamia"
 period-active-earliest: 200
-period-active-latest: 2025
+period-active-latest: 2026
 domains: ["seduction", "error", "the lower spirit"]
 gender: "feminine"
 role: "ambivalent feminine spirit — often the spirit of error / seduction; sometimes more positive"

@@ -6,7 +6,7 @@ aka: ["Rāma", "Ramachandra", "Maryādā Puruṣottama", "Rāghava", "Raghupati"
 tradition: "Vaishnavism — Ramaite devotionalism"
 region: "North India (Ayodhya cult center); pan-Indian and Southeast Asian"
 period-active-earliest: -400
-period-active-latest: 2025
+period-active-latest: 2026
 domains: ["dharma", "ideal kingship", "heroism", "martial virtue", "dharmic restraint", "ideal husband", "righteous warrior"]
 gender: "masculine"
 role: "Seventh avatāra of Viṣṇu (in the classical 10-avatāra scheme, *saptama avatāra*); ideal man of perfect virtue (*maryādā puruṣottama*); in Ramaite bhakti devotionalism, the supreme personal deity"

@@ -6,7 +6,7 @@ aka: ["Dìzàng Púsà (地藏菩薩, Chinese)", "Jizō Bosatsu (地蔵菩薩, J
 tradition: "Mahāyāna Buddhism (Chinese, Japanese, Korean — pan-East Asian)"
 region: "East Asia — China, Japan, Korea, Vietnam; origin in India"
 period-active-earliest: 400
-period-active-latest: 2025
+period-active-latest: 2026
 domains: ["hell realms", "compassion", "children", "travellers", "the vow of radical presence", "the dead", "sentient beings in all realms", "the bardo"]
 gender: "masculine (but sometimes depicted with feminine features in East Asian art)"
 role: "bodhisattva of the hells; guardian of children, travellers, and the dying; the vow-keeper who refuses Buddhahood until all hells are empty"

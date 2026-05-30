@@ -6,7 +6,7 @@ aka: ["Durgā", "Mahishasuramardini (Slayer of Mahisha)", "Kātyāyanī", "Ambā
 tradition: "Hindu — Shakta / Shaivite / Pan-Hindu"
 region: "Indian subcontinent; global Hindu diaspora"
 period-active-earliest: -300
-period-active-latest: 2025
+period-active-latest: 2026
 domains: ["warrior goddess", "protection", "destruction of demons", "cosmic mother"]
 gender: "feminine"
 role: "Great Goddess in martial form; the central deity of the Devi Mahatmya"

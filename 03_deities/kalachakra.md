@@ -6,7 +6,7 @@ aka: ["Kālacakra", "Dus kyi 'khor lo (Tibetan)"]
 tradition: "Vajrayāna Buddhism — late Indian / Tibetan"
 region: "India (Bengal, Kashmir); Tibet, Mongolia"
 period-active-earliest: 1000
-period-active-latest: 2025
+period-active-latest: 2026
 domains: ["non-dual time", "the cosmic wheel", "the highest yoga-tantra system"]
 gender: "masculine (in yab-yum union with consort Viśvamātā)"
 role: "the central deity of the Kālacakra-tantra system; embodiment of non-dual time-and-emptiness"

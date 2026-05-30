@@ -6,7 +6,7 @@ aka: ["Guan Di (關帝)", "Guan Gong (關公)", "Sangharama Bodhisattva (Buddhis
 tradition: "Chinese folk religion / Confucian / Daoist / Buddhist"
 region: "China"
 period-active-earliest: 220
-period-active-latest: 2025
+period-active-latest: 2026
 domains: ["war", "commerce", "loyalty", "brotherhood", "protection", "righteous violence"]
 gender: "masculine"
 role: "deified Han dynasty general; deity of war, commerce, and loyalty; exemplar of Confucian virtues; Buddhist Dharma guardian"

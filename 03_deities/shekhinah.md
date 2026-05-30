@@ -6,7 +6,7 @@ aka: ["שכינה", "Shechinah", "the divine indwelling"]
 tradition: "Rabbinic Judaism (early); Kabbalistic Judaism (mature)"
 region: "Roman Palestine and Babylonia (early); Provence, Spain, Mediterranean (Kabbalistic)"
 period-active-earliest: 200
-period-active-latest: 2025
+period-active-latest: 2026
 domains: ["divine presence", "indwelling", "the feminine aspect of the Godhead"]
 gender: "feminine"
 role: "the indwelling Presence of God; in Kabbalah, the lowest sefirah and the feminine divine partner in inner-divine sacred marriage"

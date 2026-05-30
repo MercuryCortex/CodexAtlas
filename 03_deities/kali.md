@@ -6,7 +6,7 @@ aka: ["Kālī", "Mahākālī", "Kālikā"]
 tradition: "Hindu — Shakta / Tantric"
 region: "Indian subcontinent (esp. Bengal, Assam); global Hindu and modern Tantric reception"
 period-active-earliest: 400
-period-active-latest: 2025
+period-active-latest: 2026
 domains: ["fierce goddess", "destruction and dissolution", "time / death", "Tantric transformation"]
 gender: "feminine"
 role: "fierce / black / temporal manifestation of the Goddess; principal Tantric goddess; in Shakta theology often the ultimate Goddess"

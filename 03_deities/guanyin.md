@@ -6,7 +6,7 @@ aka: ["Kuan-yin", "Kannon (Japanese)", "Quan Âm (Vietnamese)", "Kwan-um (Korean
 tradition: "Chinese Mahāyāna Buddhism (and East Asian Buddhism more broadly); Chinese popular religion"
 region: "China, Taiwan, Korea, Japan, Vietnam, and East Asian diaspora"
 period-active-earliest: 200
-period-active-latest: 2025
+period-active-latest: 2026
 domains: ["compassion", "mercy", "rescue of suffering beings", "fertility / motherhood (in popular religion)", "salvation by name-invocation"]
 gender: "feminine (from ~10th–14th c. CE; in earlier Chinese texts and iconography masculine, following Indic Avalokiteśvara)"
 role: "the female-form (East Asian) Bodhisattva of compassion; the most widely worshipped deity in Chinese popular religion alongside Mazu"

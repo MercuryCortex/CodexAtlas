@@ -6,7 +6,7 @@ aka: ["Skanda", "Karthikeya", "Subramanya", "Subrahmanya", "Muruga", "Kumara", "
 tradition: "Tamil Shaiva / South Indian Hinduism"
 region: "Tamil Nadu, Sri Lanka, Kerala, and the global Tamil diaspora"
 period-active-earliest: -500
-period-active-latest: 2025
+period-active-latest: 2026
 domains: ["war and victory", "youth and beauty", "divine wisdom", "Tamil language and literature", "the vel (divine lance) as piercing truth", "love and grace"]
 gender: "masculine"
 role: "war god; supreme deity of Tamil Shaivism; god of Tamil language and eloquence; son of Shiva; divine youth"

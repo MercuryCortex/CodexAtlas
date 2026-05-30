@@ -6,7 +6,7 @@ aka: ["Kuntu Zangpo (Tibetan)", "Samantabhadra Buddha (to distinguish from the M
 tradition: "Vajrayāna Buddhism — Nyingma school"
 region: "Tibet, Bhutan, Nepal"
 period-active-earliest: 800
-period-active-latest: 2025
+period-active-latest: 2026
 domains: ["primordial Buddha", "the ground of being", "dzogchen ultimate"]
 gender: "masculine (in non-dual union with consort Samantabhadrī)"
 role: "the primordial Buddha (Ādibuddha) of the Nyingma school; the ground of being from which all phenomena arise as luminous self-display"

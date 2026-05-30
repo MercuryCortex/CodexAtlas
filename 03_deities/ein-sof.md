@@ -6,7 +6,7 @@ aka: ["Eyn-Sof", "אין סוף", "the Limitless", "the Infinite One", "the Endl
 tradition: "Kabbalistic Judaism"
 region: "Provence and Spain (formative); pan-Jewish (mature)"
 period-active-earliest: 1200
-period-active-latest: 2025
+period-active-latest: 2026
 domains: ["absolute transcendence", "the unmanifest Godhead", "the source prior to all sefirot", "apophatic unknowing"]
 gender: "non-gendered (beyond all predication)"
 role: "the Infinite, beyond and prior to the ten sefirot — the apophatic Godhead from which all emanation proceeds but which itself cannot be named, predicated, or known"

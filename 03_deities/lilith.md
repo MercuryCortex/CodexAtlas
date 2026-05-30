@@ -6,7 +6,7 @@ aka: ["לילית", "Lilitu (Akkadian)", "Lilīt"]
 tradition: "Jewish folkloric / Kabbalistic (with Mesopotamian roots)"
 region: "Mesopotamia (ancient origins); medieval and modern Jewish world"
 period-active-earliest: -2000
-period-active-latest: 2025
+period-active-latest: 2026
 domains: ["night demon", "child-killer", "seductress", "Adam's first wife (medieval legend)"]
 gender: "feminine"
 role: "demoness; in medieval Jewish legend, Adam's first wife who refused submission and fled Eden; in Kabbalah, the dark feminine counterpart of Shekhinah"

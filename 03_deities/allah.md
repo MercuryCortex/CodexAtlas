@@ -6,7 +6,7 @@ aka: ["al-Ilāh (the God)", "ar-Rahmān (the Merciful)", "the 99 Beautiful Names
 tradition: "Islam (and pre-Islamic Arabian high-god, with continuity disputed in degree)"
 region: "Arabia (origin); now worldwide"
 period-active-earliest: -500
-period-active-latest: 2025
+period-active-latest: 2026
 domains: ["absolute monotheism", "creator", "lord of the Last Day"]
 gender: "non-gendered (described apophatically; 'There is no thing like Him', Quran 42:11)"
 role: "the one God; supreme and exclusive divinity in Islamic theology"

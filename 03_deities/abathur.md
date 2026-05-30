@@ -6,7 +6,7 @@ aka: ["Abathur Muzania (Abathur of the Scales)"]
 tradition: "Mandaean"
 region: "Southern Mesopotamia"
 period-active-earliest: 200
-period-active-latest: 2025
+period-active-latest: 2026
 domains: ["weighing of souls", "judgment", "borderland between Light and lower worlds"]
 gender: "masculine"
 role: "judge of souls; weigher; in some cosmologies the father of Ptahil"

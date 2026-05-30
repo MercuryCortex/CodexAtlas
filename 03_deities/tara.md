@@ -6,7 +6,7 @@ aka: ["Tārā", "Drolma (Tibetan)", "Green Tārā", "White Tārā", "21 Tārās"
 tradition: "Vajrayāna Buddhism — Tibetan, Mongolian, Himalayan; older Mahāyāna roots"
 region: "Tibet, Mongolia, Nepal, Bhutan, Indian subcontinent; modern global Buddhist reception"
 period-active-earliest: 500
-period-active-latest: 2025
+period-active-latest: 2026
 domains: ["compassion", "liberation", "swift protection", "the mother of all Buddhas"]
 gender: "feminine"
 role: "principal feminine Buddha / bodhisattva of Tibetan Buddhism; the swift-acting liberator"

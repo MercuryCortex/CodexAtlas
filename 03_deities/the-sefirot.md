@@ -6,7 +6,7 @@ aka: ["Sefirot", "ספירות", "the ten emanations", "the divine attributes"]
 tradition: "Kabbalistic Judaism"
 region: "Provence and Spain (formative); pan-Jewish (mature)"
 period-active-earliest: 200
-period-active-latest: 2025
+period-active-latest: 2026
 domains: ["divine emanations", "cosmic structure", "inner-divine relations"]
 gender: "varies — three columns gendered (right masculine of mercy; left feminine of severity; middle synthesis); Malkhut/Shekhinah feminine"
 role: "the structured self-manifestation of the *Ein Sof* through ten emanations / hypostases"

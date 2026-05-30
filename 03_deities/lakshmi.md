@@ -6,7 +6,7 @@ aka: ["Lakṣmī", "Śrī", "Mahālakṣmī"]
 tradition: "Hindu — Vaiṣṇava"
 region: "Indian subcontinent; global Hindu"
 period-active-earliest: -300
-period-active-latest: 2025
+period-active-latest: 2026
 domains: ["wealth", "fortune", "auspiciousness", "consort of Viṣṇu"]
 gender: "feminine"
 role: "consort of Viṣṇu; goddess of wealth and good fortune; intercessor in Śrī Vaiṣṇava theology"

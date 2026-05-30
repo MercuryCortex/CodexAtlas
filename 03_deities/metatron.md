@@ -6,7 +6,7 @@ aka: ["מטטרון", "the Lesser YHWH", "the Prince of the Presence (Sar ha-Pan
 tradition: "Jewish mystical / Hekhalot / Kabbalistic"
 region: "Roman Palestine, Babylonia, medieval Mediterranean"
 period-active-earliest: 300
-period-active-latest: 2025
+period-active-latest: 2026
 domains: ["heavenly chief angel", "scribe of God", "transformed Enoch", "the Prince of the Face"]
 gender: "masculine"
 role: "the chief angel of the heavenly court; the transformed patriarch Enoch (Gen 5:24); the 'Lesser YHWH' — a near-divine intermediate figure causing extensive rabbinic anxiety"

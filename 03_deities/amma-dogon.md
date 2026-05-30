@@ -6,7 +6,7 @@ aka: ["Amma", "Amma the Creator"]
 tradition: "Dogon religion (West African — Mali/Burkina Faso)"
 region: "Mali, Burkina Faso — Bandiagara Escarpment, West Africa"
 period-active-earliest: -1000
-period-active-latest: 2025
+period-active-latest: 2026
 domains: ["creation", "cosmic egg", "primordial word (Kize Uzi)", "sky", "supreme being", "rain"]
 gender: "masculine (in most accounts; Amma transcends gender as the absolute)"
 role: "supreme creator god; the uncaused first principle who generates all things by word and impeded act"

@@ -6,7 +6,7 @@ aka: ["Monkey King", "孫悟空", "Great Sage Equal to Heaven (齊天大聖)", "
 tradition: "Chinese folk religion / Daoism / Buddhism (syncretic)"
 region: "China — origin in oral tradition; textual home the novel Xiyouji (西遊記)"
 period-active-earliest: 600
-period-active-latest: 2025
+period-active-latest: 2026
 domains: ["trickster", "martial power", "freedom", "enlightenment through ordeal", "shapeshifting", "heaven-defiance", "protection of the pilgrim"]
 gender: "masculine"
 role: "trickster | warrior | disciple-hero | cosmic rebel who achieves Buddhahood"

@@ -6,7 +6,7 @@ aka: ["Hanumān", "Bajrang Bali", "Anjaneya", "Māruti"]
 tradition: "Hindu — Vaiṣṇava (Rāma-bhakti); pan-Hindu"
 region: "Indian subcontinent; Hindu diaspora"
 period-active-earliest: -400
-period-active-latest: 2025
+period-active-latest: 2026
 domains: ["devotion (bhakti)", "strength", "celibate ascetic power", "the perfect servant"]
 gender: "masculine"
 role: "monkey-god and supreme devotee of Rāma; son of Vāyu; model of bhakti and brahmacarya"

@@ -6,7 +6,7 @@ aka: ["Kṛṣṇa", "Govinda", "Gopāla", "Vāsudeva", "Hari", "Giridhar", "Mā
 tradition: "Hindu — Vaiṣṇava"
 region: "Indian subcontinent (Mathura / Vrindavan / Braj cult centers); Hindu diaspora worldwide"
 period-active-earliest: -400
-period-active-latest: 2025
+period-active-latest: 2026
 domains: ["love (mādhurya)", "playfulness (līlā)", "supreme personal deity", "dharma", "cosmic instructor", "cowherd / pastoral", "erotic-mystical bhakti", "warrior-counsel"]
 gender: "masculine"
 role: "Eighth avatāra of Viṣṇu (in classical scheme); or the *svayaṃ bhagavān* (supreme Lord himself, of whom Viṣṇu is an expansion, per Gauḍīya theology); cosmic instructor of the *Bhagavad Gītā*; cowherd-lover of the *gopīs*"

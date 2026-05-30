@@ -6,7 +6,7 @@ aka: ["Vajradhāra", "Dorje Chang (Tibetan)", "the Diamond-Holder"]
 tradition: "Vajrayāna Buddhism — Sarma (New Translation) schools"
 region: "Tibet, Bhutan, Mongolia, Himalayan regions"
 period-active-earliest: 700
-period-active-latest: 2025
+period-active-latest: 2026
 domains: ["primordial Buddha", "dharmakāya", "source of all tantric teaching"]
 gender: "masculine (often in non-dual union with consort Prajñāpāramitā / Vajrayoginī)"
 role: "primordial Buddha and source of all Tantric Vajrayāna teaching in the Sarma schools (Sakya, Kagyu, Gelug)"

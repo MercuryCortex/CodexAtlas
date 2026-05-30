@@ -6,7 +6,7 @@ aka: ["Sarasvatī", "Vāgdevī (Goddess of Speech)", "Bhāratī"]
 tradition: "Hindu — Pan-Hindu (Vedic origin)"
 region: "Indian subcontinent; Buddhist East Asia (as Benzaiten in Japan)"
 period-active-earliest: -1500
-period-active-latest: 2025
+period-active-latest: 2026
 domains: ["speech / Vāc", "learning", "music", "poetry", "the Sarasvatī river"]
 gender: "feminine"
 role: "goddess of speech, learning, and the arts; consort of Brahmā"

@@ -6,7 +6,7 @@ aka: ["Nūr Muḥammadī", "النور المحمدي", "the Muhammadan Light", 
 tradition: "Sufi Islam — Akbarī school"
 region: "Islamic world (Sufi)"
 period-active-earliest: 800
-period-active-latest: 2025
+period-active-latest: 2026
 domains: ["primordial light", "Logos-equivalent", "the first creation", "the principle through which the cosmos was made"]
 gender: "masculine (associated with the Prophet)"
 role: "the primordial-light / Logos-like principle of creation; identified with the inner reality of the Prophet Muhammad as the first emanation through which all else was made"

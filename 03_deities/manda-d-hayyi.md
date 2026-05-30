@@ -6,7 +6,7 @@ aka: ["Knowledge of Life", "the Gnosis of Life", "Hibil-Ziwa (in some texts iden
 tradition: "Mandaean"
 region: "Southern Mesopotamia"
 period-active-earliest: 200
-period-active-latest: 2025
+period-active-latest: 2026
 domains: ["revelation", "salvific knowledge", "psychopomp"]
 gender: "masculine"
 role: "the revealer / redeemer; the gnosis-bearer who descends and ascends"

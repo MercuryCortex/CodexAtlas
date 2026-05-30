@@ -6,7 +6,7 @@ aka: ["Cagn", "Kaggen", "the Praying Mantis", "Kaang", "Kho"]
 tradition: "ǀXam San (Khoisan / Bushmen) — Southern Africa"
 region: "Kalahari Desert and Cape region — Southern Africa (primarily South Africa and Botswana)"
 period-active-earliest: -30000
-period-active-latest: 2025
+period-active-latest: 2026
 domains: ["creation", "trickery", "shapeshifting", "the eland", "praying mantis", "moon", "dreams", "rain"]
 gender: "masculine (but shapeshifts freely)"
 role: "supreme creator and trickster; shapeshifter; dreamer of the world"

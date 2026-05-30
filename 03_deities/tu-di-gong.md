@@ -6,7 +6,7 @@ aka: ["Tǔdì Gōng", "Earth God", "Earth Lord", "Fu De Zheng Shen (福德正神
 tradition: "Chinese folk religion"
 region: "China / Sinosphere"
 period-active-earliest: -500
-period-active-latest: 2025
+period-active-latest: 2026
 domains: ["protection of local territory", "agriculture", "prosperity", "mediation between community and heaven"]
 gender: "masculine (usually depicted as an elderly, white-bearded official)"
 role: "hyper-local bureaucratic deity; lowest rung of the divine hierarchy; annual report-sender to the Jade Emperor; every neighborhood, village, and plot has one"

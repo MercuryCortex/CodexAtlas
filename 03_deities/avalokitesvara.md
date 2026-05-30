@@ -6,7 +6,7 @@ aka: ["Avalokita", "Lokeśvara", "Padmapāṇi", "Chenrezig (Tibetan)", "Guanyin
 tradition: "Mahāyāna and Vajrayāna Buddhism"
 region: "India, Tibet, China, Japan, Korea, Vietnam, Mongolia"
 period-active-earliest: -100
-period-active-latest: 2025
+period-active-latest: 2026
 domains: ["compassion (karuṇā)", "salvation of all suffering beings", "cosmic bodhisattva power"]
 gender: "originally masculine in Indic context; feminized in Chinese / East Asian context as Guanyin from ~10th c. CE; presently understood as transcending or encompassing gender"
 role: "the great Bodhisattva of compassion, who hears the cries of suffering beings throughout the cosmos and intervenes to save them; in Mahāyāna devotion the most universally invoked bodhisattva alongside Maitreya"

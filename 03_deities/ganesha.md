@@ -6,7 +6,7 @@ aka: ["Gaṇeśa", "Gaṇapati", "Vighneśvara (Lord of Obstacles)", "Vināyaka"
 tradition: "Hindu — Pan-Hindu (Śaiva origin)"
 region: "Indian subcontinent; pan-Asian Buddhist transmission"
 period-active-earliest: 100
-period-active-latest: 2025
+period-active-latest: 2026
 domains: ["remover of obstacles", "patron of new beginnings", "scribe", "first-invoked deity"]
 gender: "masculine"
 role: "first-invoked deity in Hindu ritual; remover and placer of obstacles; son of Śiva and Pārvatī"

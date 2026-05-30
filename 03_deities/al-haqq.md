@@ -6,7 +6,7 @@ aka: ["al-Ḥaqq", "الحق", "The Real", "The True", "The Reality"]
 tradition: "Sufi Islam — Akbarī school"
 region: "Islamic world, esp. Persianate, Andalusian-Damascene"
 period-active-earliest: 600
-period-active-latest: 2025
+period-active-latest: 2026
 domains: ["divine reality", "the Real beneath all appearances", "absolute Being"]
 gender: "non-gendered (Arabic grammatically masculine)"
 role: "the Sufi metaphysical name for God-as-Real / absolute Being — the central name in Ibn ʿArabī's *waḥdat al-wujūd* (oneness of being)"

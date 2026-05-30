@@ -6,7 +6,7 @@ aka: ["Manasa", "Mansa Devi", "Vishahara ('she who removes poison')", "Nityā", 
 tradition: "Hindu (Bengali folk tradition / Shakta)"
 region: "Bengal, Northeast India, Bihar, Jharkhand, Assam, and the broader Hindu cultural zone of eastern South Asia"
 period-active-earliest: -200
-period-active-latest: 2025
+period-active-latest: 2026
 domains: ["snakes and serpents", "protection from snakebite", "fertility and childbirth", "poison and its antidote", "the nagas (divine serpent beings)", "folk medicine"]
 gender: "feminine"
 role: "folk goddess; protector from snakebite; patron of nagas; goddess of fertility and the earth's serpentine powers; the deity who demands and achieves recognition"

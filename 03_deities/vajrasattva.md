@@ -6,7 +6,7 @@ aka: ["Vajrasattva", "Dorje Sempa (Tibetan)", "the Diamond-Being"]
 tradition: "Vajrayāna Buddhism"
 region: "Tibet, East Asian esoteric Buddhism"
 period-active-earliest: 700
-period-active-latest: 2025
+period-active-latest: 2026
 domains: ["purification", "primordial buddha-nature", "the hundred-syllable mantra"]
 gender: "masculine (sometimes in yab-yum with consort)"
 role: "Buddha of purification; the 'Sixth Buddha' beyond the Five Dhyāni Buddhas, or the unifying principle of all Buddha-families"

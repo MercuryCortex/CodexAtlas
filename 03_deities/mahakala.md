@@ -6,7 +6,7 @@ aka: ["Mahākāla", "Gönpo (Tibetan)"]
 tradition: "Hindu (Śaiva) and Vajrayāna Buddhism (both lineages)"
 region: "Indian subcontinent (Hindu); Tibet, Mongolia, East Asia (Buddhist)"
 period-active-earliest: 200
-period-active-latest: 2025
+period-active-latest: 2026
 domains: ["protective deity / dharmapāla", "fierce manifestation of compassionate awareness", "time / death"]
 gender: "masculine"
 role: "in Buddhism, the principal *dharmapāla* (dharma-protector) of many Tibetan schools; in Hinduism, a fierce form of Śiva"

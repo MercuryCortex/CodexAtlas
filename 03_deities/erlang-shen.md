@@ -6,7 +6,7 @@ aka: ["二郎神", "Erlang Deity", "Yang Jian (most common identity)", "True Lor
 tradition: "Chinese folk religion / Daoism"
 region: "China — cult centers at Dujiangyan (Sichuan) and Guankou"
 period-active-earliest: 200
-period-active-latest: 2025
+period-active-latest: 2026
 domains: ["engineering", "flood control", "truth-seeing (third eye)", "demon suppression", "water management", "martial power"]
 gender: "masculine"
 role: "warrior | demon-suppressor | divine engineer | truth-seeing celestial general"

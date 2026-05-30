@@ -6,7 +6,7 @@ aka: ["Nommo Anagonno", "Nommo Tituye", "the eight Nommos", "Nommo Sigu Tolo"]
 tradition: "Dogon religion (West African — Mali/Burkina Faso)"
 region: "Mali, Burkina Faso — Bandiagara Escarpment, West Africa"
 period-active-earliest: -1000
-period-active-latest: 2025
+period-active-latest: 2026
 domains: ["water", "speech", "weaving", "cosmic order", "ancestral spirits", "fish", "primordial creation", "the sky"]
 gender: "androgynous — each Nommo is a male-female pair"
 role: "eight paired primordial ancestors; cosmic weavers of order; fish-beings of the primordial waters; speech-givers"

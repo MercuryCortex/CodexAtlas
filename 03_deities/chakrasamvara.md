@@ -6,7 +6,7 @@ aka: ["Heruka", "Saṃvara", "Demchok (Tibetan: bDe mchog)", "Śrī Heruka", "He
 tradition: "Vajrayāna Buddhism (Tibetan — Kagyu, Gelug, Sakya schools)"
 region: "Tibet, Nepal, India (tantric Buddhist traditions)"
 period-active-earliest: 800
-period-active-latest: 2025
+period-active-latest: 2026
 domains: ["bliss-emptiness union", "tantric union", "wrathful compassion", "mandala of 62 deities", "transformation of attachment into wisdom"]
 gender: "masculine"
 role: "principal male Anuttarayoga yidam; wrathful buddha of the Cakrasaṃvara cycle; embodiment of compassion (upāya) in bliss-union with wisdom"

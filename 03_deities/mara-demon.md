@@ -6,7 +6,7 @@ aka: ["Māra", "Namuci (pre-Buddhist Vedic antecedent)", "Pāpīyas (the Evil On
 tradition: "Theravāda / Mahāyāna Buddhism (pan-Buddhist)"
 region: "India — all Buddhist traditions globally"
 period-active-earliest: -500
-period-active-latest: 2025
+period-active-latest: 2026
 domains: ["temptation", "illusion", "death", "desire", "Samsara", "the realm of Kāmadhātu (desire-world)", "obstacle to liberation"]
 gender: "masculine"
 role: "cosmic opponent | tempter | lord of the desire-realm | personification of the forces that bind beings to Samsara"

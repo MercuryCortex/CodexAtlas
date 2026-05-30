@@ -6,7 +6,7 @@ aka: ["Ptah-il"]
 tradition: "Mandaean"
 region: "Southern Mesopotamia"
 period-active-earliest: 200
-period-active-latest: 2025
+period-active-latest: 2026
 domains: ["demiurgic creation of the material world"]
 gender: "masculine"
 role: "Mandaean demiurge; problematic creator-figure"

@@ -6,7 +6,7 @@ aka: ["Padmasambhava", "Guru Rinpoche", "Lopön Rinpoche", "Lotus-Born"]
 tradition: "Vajrayāna Buddhism — Nyingma school"
 region: "Tibet, Bhutan, Nepal, Himalayan regions"
 period-active-earliest: 700
-period-active-latest: 2025
+period-active-latest: 2026
 domains: ["founder of Tibetan Buddhism (Nyingma tradition)", "second Buddha (Tibetan honorific)", "concealer of terma"]
 gender: "masculine"
 role: "deified-historical-person; revered as the founder of Tibetan Buddhism and as the principal source of the Nyingma school's revelation-tradition (terma)"

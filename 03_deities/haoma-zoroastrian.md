@@ -6,7 +6,7 @@ aka: ["Haoma", "Hōm (Middle Persian / Pahlavi)", "Haomahe (Avestan genitive)", 
 tradition: "Zoroastrian (Avestan) — Yasna ritual tradition"
 region: "Iran / Central Asia (Avestan cultural zone)"
 period-active-earliest: -1500
-period-active-latest: 2025
+period-active-latest: 2026
 domains: ["sacred drink", "healing", "ritual", "rejuvenation", "priestly sacrifice", "strength", "righteous offspring"]
 gender: "masculine"
 role: "personified sacred plant-deity; ritual drink-offering; grantor of health and progeny"

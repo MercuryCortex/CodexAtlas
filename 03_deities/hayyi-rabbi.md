@@ -6,7 +6,7 @@ aka: ["Hayyi (Life)", "the Great Life", "Mara d-Rabuta (Lord of Greatness)"]
 tradition: "Mandaean"
 region: "Southern Mesopotamia (Iraqi/Khuzestani marshlands)"
 period-active-earliest: 200
-period-active-latest: 2025
+period-active-latest: 2026
 domains: ["primal Life", "supreme divinity", "source of the World of Light"]
 gender: "non-gendered (grammatically masculine but often described in plural and gender-spanning terms)"
 role: "the supreme Mandaean divinity; the Life from which all derives"

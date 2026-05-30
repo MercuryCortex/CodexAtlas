@@ -6,7 +6,7 @@ aka: ["Vajravārāhī", "Diamond Yogini", "Dorje Phagmo (Tibetan)", "Naro Khach�
 tradition: "Vajrayāna Buddhism (Tibetan — Kagyu, Gelug, Sakya schools)"
 region: "Tibet, Nepal, India (tantric Buddhist traditions)"
 period-active-earliest: 800
-period-active-latest: 2025
+period-active-latest: 2026
 domains: ["bliss-emptiness union (mahāmudrā)", "tantric transformation", "dakini wisdom", "wisdom-fire", "liberation from delusion"]
 gender: "feminine"
 role: "primary female yidam (meditational deity); chief dakini; tantric transformation deity; embodiment of wisdom (prajñā)"
