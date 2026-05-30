@@ -1091,9 +1091,9 @@
           // apply in both layouts so stay unhided.
           // Phase 22-K (2026-05-24) — hulls toggle available in
           // BOTH layouts now. John: "the hulls here are useful".
-          '<button class="forge-viewset-row" data-toggle="hulls"><span class="vs-check"></span>Show family hulls</button>' +
-          '<button class="forge-viewset-row fv-wheel-only" data-toggle="familyTitles"><span class="vs-check"></span>Show family titles</button>' +
-          '<button class="forge-viewset-row fv-wheel-only" data-toggle="dividers"><span class="vs-check"></span>Show family separators</button>' +
+          '<button class="forge-viewset-row" data-toggle="hulls"><span class="vs-check"></span>Show wedge hulls</button>' +
+          '<button class="forge-viewset-row fv-wheel-only" data-toggle="familyTitles"><span class="vs-check"></span>Show wedge titles</button>' +
+          '<button class="forge-viewset-row fv-wheel-only" data-toggle="dividers"><span class="vs-check"></span>Show wedge separators</button>' +
           '<button class="forge-viewset-row fv-wheel-only" data-toggle="dividersConverging"><span class="vs-check"></span>Show converging separators <em>(solid → fade)</em></button>' +
           '<button class="forge-viewset-row fv-wheel-only" data-toggle="guideRings"><span class="vs-check"></span>Show guide rings <em>(inner / mid / outer)</em></button>' +
           // Phase 22-AH (2026-05-25) — renamed per audit B: this
@@ -2830,84 +2830,124 @@
       // scripture-tagged docs that pass the SCRIPTURE_IDS gate).
       if (modeId === 'scriptures' && !_codexGroupBy
           && window.SCRIPTURE_RELIGIONS && window.SCRIPTURE_CORPORA) {
+        // 2026-05-30 — religion-wedge colors match the CANONICAL family
+        // palette baked into build_data.py (lines 305-343). Same colors
+        // user sees on Deities / Persons class filters, so toggling
+        // between class filters doesn't repaint the wheel under them.
+        // For religions whose name maps cleanly to a family (egyptian
+        // → Egyptian color, christianity → Christian color), use that
+        // family's canonical color. For religions the vault has no
+        // family value for (jainism, sikhism, druze, yazidi, bahai),
+        // pick distinct hand-tuned colors that don't collide with the
+        // existing palette.
+        const RELIGION_COLOR = {
+          'christianity':     '#c44a5a',
+          'judaism':          '#9aa55a',
+          'islam':            '#3a8a6a',
+          'hinduism':         '#e08a3a',
+          'buddhism':         '#c4a05a',
+          'zoroastrianism':   '#5a6cc4',
+          'jainism':          '#d99a3a',
+          'sikhism':          '#3a6cc4',
+          'egyptian':         '#d4a55a',
+          'greek':            '#8a5ac4',
+          'mesopotamian':     '#c25450',
+          'norse':            '#5a7aa4',
+          'mesoamerican':     '#9a4a3a',
+          'shinto':           '#c85050',
+          'chinese':          '#5a9a8f',
+          'hermetic':         '#a8a3b8',
+          'gnostic-dualist':  '#6b3a8a',
+          'mormon':           '#c44a5a',
+          'druze':            '#7a6a8a',
+          'yazidi':           '#3a6a8a',
+          'bahai':            '#7a9a5a',
+          'modern-syncretic': '#9a7ac4',
+        };
+        // 2026-05-30 — Religion → natural-family mapping. Used to look
+        // up the user-picked COLOR_THEME's color for each religion's
+        // family equivalent (workflow w1vggjpfl Fix 2). When user picks
+        // "Geography" theme, each religion wedge gets COLOR_THEMES.
+        // geography[family_of_religion]. When user picks "Atlas curated"
+        // (default), falls back to RELIGION_COLOR above.
+        const RELIGION_TO_FAMILY = {
+          'christianity':     'Christian',
+          'judaism':          'Israelite',
+          'islam':            'Islamic',
+          'hinduism':         'Vedic',
+          'buddhism':         'Buddhist',
+          'zoroastrianism':   'Zoroastrian',
+          'jainism':          'Vedic',          // no Jain family in vocab
+          'sikhism':          'Vedic',          // no Sikh family in vocab
+          'egyptian':         'Egyptian',
+          'greek':            'Greek',
+          'mesopotamian':     'Mesopotamian',
+          'norse':            'Norse',
+          'mesoamerican':     'Mesoamerican',
+          'shinto':           'Shinto',
+          'chinese':          'Chinese',
+          'hermetic':         'Hermetic',
+          'gnostic-dualist':  'Gnostic',
+          'mormon':           'Christian',
+          'druze':            'Islamic',        // Druze is Islamic-adjacent
+          'yazidi':           'Islamic',        // Yazidi is Iranic-Islamic-adjacent
+          'bahai':            'Islamic',        // Bahá'í origin in Iran
+          'modern-syncretic': 'Modern-Esoteric',
+        };
+        // CACHE THE IDX ONLY (not colors). Colors must be recomputed
+        // per rebuild because the user's Color Theme may have changed.
         if (!local._bookReligionIndex) {
-          // 2026-05-30 — religion-wedge colors match the CANONICAL family
-          // palette baked into build_data.py (lines 305-343). Same colors
-          // user sees on Deities / Persons class filters, so toggling
-          // between class filters doesn't repaint the wheel under them.
-          // For religions whose name maps cleanly to a family (egyptian
-          // → Egyptian color, christianity → Christian color), use that
-          // family's canonical color. For religions the vault has no
-          // family value for (jainism, sikhism, druze, yazidi, bahai),
-          // pick distinct hand-tuned colors that don't collide with the
-          // existing palette.
-          const RELIGION_COLOR = {
-            'christianity':     '#c44a5a',   // Christian family color
-            'judaism':          '#9aa55a',   // Israelite
-            'islam':            '#3a8a6a',   // Islamic
-            'hinduism':         '#e08a3a',   // Vedic
-            'buddhism':         '#c4a05a',   // Buddhist
-            'zoroastrianism':   '#5a6cc4',   // Zoroastrian
-            'jainism':          '#d99a3a',   // saffron (Jain robe color)
-            'sikhism':          '#3a6cc4',   // Khalsa blue
-            'egyptian':         '#d4a55a',   // Egyptian
-            'greek':            '#8a5ac4',   // Greek
-            'mesopotamian':     '#c25450',   // Mesopotamian
-            'norse':            '#5a7aa4',   // Norse
-            'mesoamerican':     '#9a4a3a',   // Mesoamerican
-            'shinto':           '#c85050',   // Shinto
-            'chinese':          '#5a9a8f',   // Chinese
-            'hermetic':         '#a8a3b8',   // Hermetic
-            'gnostic-dualist':  '#6b3a8a',   // Gnostic
-            'mormon':           '#c44a5a',   // Christian (LDS is Christian denom)
-            'druze':            '#7a6a8a',   // muted plum — unique to vocab
-            'yazidi':           '#3a6a8a',   // peacock blue (Tawûsê Melek)
-            'bahai':            '#7a9a5a',   // olive-green (Báb era)
-            'modern-syncretic': '#9a7ac4',   // Modern-Esoteric
-          };
           const idx = new Map();
-          const colorByReligion = Object.create(null);
           const orderedReligionLabels = [];
           const rels = window.SCRIPTURE_RELIGIONS;
           const corpora = window.SCRIPTURE_CORPORA;
-          // SCRIPTURE_RELIGIONS may be a Map, Array, or plain object —
-          // codex-controls.js declares it as a plain {religionId: {label, corpora: []}} map.
           for (const religionId in rels) {
             const rel = rels[religionId];
             if (!rel || !Array.isArray(rel.corpora)) continue;
             const label = rel.label || religionId;
             if (orderedReligionLabels.indexOf(label) === -1) orderedReligionLabels.push(label);
-            // Use canonical family palette where possible; fall back to
-            // first-section corpus color (proto's scripture-radial palette);
-            // last-resort fall back to soft grey.
-            if (!colorByReligion[label]) {
-              const canonical = RELIGION_COLOR[religionId.toLowerCase()];
-              if (canonical) {
-                colorByReligion[label] = canonical;
-              } else {
-                const firstCorpus = corpora[rel.corpora[0]];
-                const firstSecColor = firstCorpus && firstCorpus.sections
-                  && firstCorpus.sections[0] && firstCorpus.sections[0].color;
-                if (firstSecColor) colorByReligion[label] = firstSecColor;
-              }
-            }
             for (const corpusId of rel.corpora) {
               const corpus = corpora[corpusId];
               if (!corpus || !corpus.sections) continue;
               for (const sec of corpus.sections) {
                 for (const book of (sec.books || [])) {
-                  // First-write-wins for cross-listed books (Herodotus
-                  // appears in both egyptian-scripture and greek-scripture
-                  // corpora — first religion in SCRIPTURE_RELIGIONS
-                  // iteration order claims it).
                   if (book && book.id && !idx.has(book.id)) idx.set(book.id, label);
                 }
               }
             }
           }
-          local._bookReligionIndex = { idx, colorByReligion, orderedReligionLabels };
+          local._bookReligionIndex = { idx, orderedReligionLabels };
         }
         const BRI = local._bookReligionIndex;
+        // Build religion-wedge colors FRESH per rebuild — respect the
+        // user's currentColorOverride() pick.
+        const _userColorMode = (local.uxMode && local.uxMode.colorMode) || 'default';
+        const _userThemeMap = (_userColorMode !== 'default' && COLOR_THEMES[_userColorMode])
+          ? COLOR_THEMES[_userColorMode]
+          : null;
+        const colorByReligion = Object.create(null);
+        const rels = window.SCRIPTURE_RELIGIONS;
+        for (const religionId in rels) {
+          const rel = rels[religionId];
+          if (!rel) continue;
+          const label = rel.label || religionId;
+          let color = null;
+          if (_userThemeMap) {
+            const familyKey = RELIGION_TO_FAMILY[religionId.toLowerCase()];
+            if (familyKey && _userThemeMap[familyKey]) {
+              color = _userThemeMap[familyKey];
+            }
+          }
+          if (!color) color = RELIGION_COLOR[religionId.toLowerCase()];
+          if (!color) {
+            const corpora = window.SCRIPTURE_CORPORA;
+            const firstCorpus = corpora[rel.corpora[0]];
+            const firstSecColor = firstCorpus && firstCorpus.sections
+              && firstCorpus.sections[0] && firstCorpus.sections[0].color;
+            if (firstSecColor) color = firstSecColor;
+          }
+          if (color) colorByReligion[label] = color;
+        }
         _codexGroupBy = (n => {
           if (!n) return 'Other';
           const r = BRI.idx.get(n.id);
@@ -2915,10 +2955,7 @@
           return n.family || 'Other';
         });
         _codexGroupOrder = BRI.orderedReligionLabels.slice();
-        _codexGroupColor = BRI.colorByReligion;
-        // No wedgeBy for the All-families/All-scriptures view — keep
-        // the existing organic packing at the religion level. Book sub-
-        // wedges only fire when a specific corpus is drilled into.
+        _codexGroupColor = colorByReligion;
       }
       // 2026-05-30 — same effectiveCorpus auto-drill as above so the
       // groupBy mirror agrees with the modeNodes filter when religion
