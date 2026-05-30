@@ -169,6 +169,85 @@
       cursor += arcSize + gap;
     });
 
+    // 2026-05-30 — Cardinal rule #9 LAYER 2: book sub-wedges.
+    //
+    // When the caller provides `opts.wedgeBy` (a function n → bookKey),
+    // each section's arc is sub-divided into BOOK sub-arcs (proto's
+    // scripture-radial:_legacy/app.js:4544-4584 pattern). Books are
+    // sized proportionally to their member count (sqrt-clamped so
+    // sparse books stay visible). Member placement (the Vogel pass
+    // below) then uses the book's a0/a1 instead of the section's
+    // a0/a1 — so entities cluster INSIDE the book they belong to,
+    // not spread across the whole section.
+    //
+    // John's directive: "I JUST WANT THE FUCKING CHART TO BE THE SAME
+    // INFORMATION AND LOGIC" — proto groups entities BY BOOK inside
+    // each section; V2 was dumping them all into one section blob,
+    // losing the book→entity affiliation. This adds the missing
+    // sub-wedge level so the chart conveys: section ⊃ book ⊃ entities.
+    //
+    // Default (wedgeBy not provided): no sub-wedging; each section is
+    // a single placement wedge (existing behaviour preserved for the
+    // Atlas-root view).
+    const wedgeBy = (typeof o.wedgeBy === 'function') ? o.wedgeBy : null;
+    const SUB_GAP = Math.max(0.002, gap * 0.25);
+    // Flat list of "placement wedges" — either each section directly,
+    // or its book sub-wedges. Used by the inner placement loop below.
+    const placementWedges = [];
+    order.forEach(name => {
+      const sectionWedge = wedges[name];
+      if (!wedgeBy || !sectionWedge.members.length) {
+        placementWedges.push(sectionWedge);
+        return;
+      }
+      // Group section members by bookKey, preserving first-encounter
+      // order (deterministic given input order).
+      const byBook = new Map();   // bookKey → members[]
+      const bookOrder = [];
+      for (const m of sectionWedge.members) {
+        const k = wedgeBy(m);
+        if (!k) {
+          // Members without a book key go to a fallback bucket so
+          // they still appear inside the section.
+          const fallback = '__noBook__';
+          if (!byBook.has(fallback)) { byBook.set(fallback, []); bookOrder.push(fallback); }
+          byBook.get(fallback).push(m);
+          continue;
+        }
+        if (!byBook.has(k)) { byBook.set(k, []); bookOrder.push(k); }
+        byBook.get(k).push(m);
+      }
+      // Allocate sub-arcs inside the section's [a0,a1] proportionally
+      // to sqrt(member-count) so sparse books stay visible.
+      const subWeights = bookOrder.map(k => Math.max(1.05, Math.sqrt(byBook.get(k).length)));
+      const subTotalW  = subWeights.reduce((s, w) => s + w, 0);
+      const sectionArc = sectionWedge.a1 - sectionWedge.a0;
+      const totalSubGap = SUB_GAP * Math.max(0, bookOrder.length - 1);
+      const subArcBudget = Math.max(0, sectionArc - totalSubGap);
+      let subCursor = sectionWedge.a0;
+      const bookWedges = [];
+      bookOrder.forEach((k, j) => {
+        const subSize = subArcBudget * (subWeights[j] / subTotalW);
+        const bw = {
+          name:    k,
+          a0:      subCursor,
+          a1:      subCursor + subSize,
+          center:  subCursor + subSize / 2,
+          members: byBook.get(k),
+          color:   sectionWedge.color,
+          // Back-reference so deconflict can find the parent section.
+          parentSection: name,
+        };
+        bookWedges.push(bw);
+        placementWedges.push(bw);
+        subCursor += subSize;
+        if (j < bookOrder.length - 1) subCursor += SUB_GAP;
+      });
+      // Expose the sub-wedges on the section wedge so downstream
+      // consumers (book-label renderer, hull builder) can use them.
+      sectionWedge.bookWedges = bookWedges;
+    });
+
     // ── 3. Place nodes inside each wedge ──────────────────
     // AGE-RADIAL ORGANIC FAN PACKING (Phase 20D-2, 2026-05-21).
     //
@@ -208,8 +287,12 @@
     // age radially and importance centrally.
     const positions = new Map();
 
-    Object.keys(wedges).forEach(famName => {
-      const w = wedges[famName];
+    // 2026-05-30 — iterate the placement-wedges list (sections by
+    // default, OR book sub-wedges when wedgeBy is provided). Each
+    // wedge below has the same shape {a0,a1,members,...} so the
+    // existing Vogel/age-radial placement code works unchanged.
+    placementWedges.forEach(w => {
+      const famName = w.name;
       const N = w.members.length;
       if (!N) return;
 

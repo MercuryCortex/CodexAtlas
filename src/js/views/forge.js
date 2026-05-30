@@ -2807,6 +2807,7 @@
       let _codexGroupBy = null;
       let _codexGroupOrder = null;
       let _codexGroupColor = null;
+      let _codexWedgeBy = null;   // 2026-05-30 Layer 2 — entity → bookId
       // 2026-05-30 — same effectiveCorpus auto-drill as above so the
       // groupBy mirror agrees with the modeNodes filter when religion
       // has only 1 corpus (Egyptian / Vedic / Avestan / etc.).
@@ -2830,6 +2831,12 @@
           // (book-nodes + their referenced deity/person/event nodes)
           // all fall into the right epoch-hull.
           const _entityToSection = Object.create(null);
+          // 2026-05-30 LAYER 2: also map every entity AND book to its
+          // containing book.id, so the radial layout's wedgeBy can
+          // sub-divide each section's arc into per-book sub-wedges
+          // (proto pattern at _legacy/app.js:4544-4584). A book is
+          // its own bookKey; entities inherit their containing book.
+          const _idToBook = Object.create(null);
           _codexGroupOrder = [];
           _codexGroupColor = Object.create(null);
           const _hasEntFn = (typeof window.scriptureEntitiesForBook === 'function');
@@ -2841,6 +2848,7 @@
             for (const book of (sec.books || [])) {
               if (!book || !book.id) continue;
               _bookToSection[book.id] = _name;
+              _idToBook[book.id] = book.id;   // book IS its own bookKey
               if (_hasEntFn) {
                 let ents;
                 try { ents = window.scriptureEntitiesForBook(book.id); } catch (_) { continue; }
@@ -2851,6 +2859,7 @@
                   // section's wedge claims it (deterministic per
                   // SCRIPTURE_CORPORA declaration order).
                   if (!_entityToSection[eid]) _entityToSection[eid] = _name;
+                  if (!_idToBook[eid])        _idToBook[eid]        = book.id;
                 });
               }
             }
@@ -2861,6 +2870,7 @@
                 || _entityToSection[n.id]
                 || 'Other';
           });
+          _codexWedgeBy = (n => (n && _idToBook[n.id]) || null);
         }
       } else if (modeId === 'scriptures' && local.codexReligion
                  && window.SCRIPTURE_RELIGIONS && window.SCRIPTURE_CORPORA) {
@@ -2948,9 +2958,11 @@
         local._layoutCache.set(_layoutKey, lay);
       } else {
         // 2026-05-30 — if Codex is driving (codexFamily or codexReligion
-        // set), pass the section-based groupBy + section-order + section
-        // colors so the engine renders proto-style epoch/source hulls
-        // instead of n.family hulls (cardinal rule #9).
+        // set), pass the section-based groupBy + book-based wedgeBy +
+        // section-order + section colors so the engine renders proto-
+        // style epoch hulls with PER-BOOK sub-wedges INSIDE each
+        // section (cardinal rule #9 Layer 1 + Layer 2 — the section
+        // ⊃ book ⊃ entities triple John specced).
         const _useCodexGrouping = !!_codexGroupBy;
         lay = layout.radialWedgeLayout(
           modeNodes,
@@ -2962,6 +2974,7 @@
             reverseAge:    _reverseAge,
             groupBy:       _useCodexGrouping ? _codexGroupBy : undefined,
             groupColor:    _useCodexGrouping ? _codexGroupColor : undefined,
+            wedgeBy:       _useCodexGrouping ? _codexWedgeBy : undefined,
           }
         );
         local._layoutCache.set(_layoutKey, lay);
