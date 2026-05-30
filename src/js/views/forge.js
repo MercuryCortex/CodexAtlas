@@ -2808,6 +2808,75 @@
       let _codexGroupOrder = null;
       let _codexGroupColor = null;
       let _codexWedgeBy = null;   // 2026-05-30 Layer 2 — entity → bookId
+
+      // 2026-05-30 — RELIGION-AWARE DEFAULT for scriptures mode (workflow
+      // wf_c86c6d91-8c0 audit). When the user is on the All-families /
+      // All-scriptures wheel (no codex corpus or religion picked), group
+      // books by their CORPUS-RELIGION instead of their author n.family.
+      // Why: 39 of 218 books across 22 religions land in the "wrong"
+      // family wedge under n.family grouping — Greek authors writing
+      // about Egypt (Herodotus II, Diodorus, Plutarch De Iside) route
+      // to the Greek wedge; Nag Hammadi tagged family=Gnostic instead
+      // of Christian; Jain Āṅgas + Guru Granth Sahib + Druze Rasāʾil
+      // + Yazidi Kitêba tagged family=Vedic/Islamic (vault vocab has
+      // NO Jain/Sikh/Druze/Yazidi family value at all). These tags
+      // are right for AUTHOR-ORIGIN (Atlas view), wrong for SCRIPTURE-
+      // CONTEXT (Codex view). Per cardinal rule #9: same engine,
+      // swapped spread.
+      //
+      // Build a bookId → religion-label index once per page boot from
+      // SCRIPTURE_RELIGIONS + SCRIPTURE_CORPORA. Books not in any
+      // corpus fall back to n.family (graceful degradation for non-
+      // scripture-tagged docs that pass the SCRIPTURE_IDS gate).
+      if (modeId === 'scriptures' && !_codexGroupBy
+          && window.SCRIPTURE_RELIGIONS && window.SCRIPTURE_CORPORA) {
+        if (!local._bookReligionIndex) {
+          const idx = new Map();
+          const colorByReligion = Object.create(null);
+          const orderedReligionLabels = [];
+          const rels = window.SCRIPTURE_RELIGIONS;
+          const corpora = window.SCRIPTURE_CORPORA;
+          // SCRIPTURE_RELIGIONS may be a Map, Array, or plain object —
+          // codex-controls.js declares it as a plain {religionId: {label, corpora: []}} map.
+          for (const religionId in rels) {
+            const rel = rels[religionId];
+            if (!rel || !Array.isArray(rel.corpora)) continue;
+            const label = rel.label || religionId;
+            if (orderedReligionLabels.indexOf(label) === -1) orderedReligionLabels.push(label);
+            for (const corpusId of rel.corpora) {
+              const corpus = corpora[corpusId];
+              if (!corpus || !corpus.sections) continue;
+              // First-section color seeds the religion-wedge accent.
+              if (!colorByReligion[label]) {
+                const firstColor = (corpus.sections[0] && corpus.sections[0].color) || null;
+                if (firstColor) colorByReligion[label] = firstColor;
+              }
+              for (const sec of corpus.sections) {
+                for (const book of (sec.books || [])) {
+                  // First-write-wins for cross-listed books (Herodotus
+                  // appears in both egyptian-scripture and greek-scripture
+                  // corpora — first religion in SCRIPTURE_RELIGIONS
+                  // iteration order claims it).
+                  if (book && book.id && !idx.has(book.id)) idx.set(book.id, label);
+                }
+              }
+            }
+          }
+          local._bookReligionIndex = { idx, colorByReligion, orderedReligionLabels };
+        }
+        const BRI = local._bookReligionIndex;
+        _codexGroupBy = (n => {
+          if (!n) return 'Other';
+          const r = BRI.idx.get(n.id);
+          if (r) return r;
+          return n.family || 'Other';
+        });
+        _codexGroupOrder = BRI.orderedReligionLabels.slice();
+        _codexGroupColor = BRI.colorByReligion;
+        // No wedgeBy for the All-families/All-scriptures view — keep
+        // the existing organic packing at the religion level. Book sub-
+        // wedges only fire when a specific corpus is drilled into.
+      }
       // 2026-05-30 — same effectiveCorpus auto-drill as above so the
       // groupBy mirror agrees with the modeNodes filter when religion
       // has only 1 corpus (Egyptian / Vedic / Avestan / etc.).
