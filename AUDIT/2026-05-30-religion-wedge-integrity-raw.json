@@ -1,0 +1,756 @@
+{
+  "summary": "Audit each of the 36 religion-wedge assignments in SCRIPTURE_RELIGIONS — flag conflations, propose splits/moves/merges so each wedge is a distinct tradition with academic integrity",
+  "agentCount": 6,
+  "logs": [],
+  "result": {
+    "summary": "Synthesized 5 goblin audits into a new SCRIPTURE_RELIGIONS taxonomy growing from 36 to 56 wedges. The major restructures: Christianity splits into proto-orthodox/Christian-Gnosticism/Esoteric-Christianity (Brakke + Hanegraaff); Judaism splits off Samaritanism + Sabbatean-Frankist (Scholem + Maciejko); the bundled gnostic-dualist wedge becomes two distinct religions Mandaeism + Manichaeism (Buckley + BeDuhn); Chinese splits into Confucianism + Daoism (Kohn + Lagerwey); Buddhism sheds Bön (Kvaerne); esoteric-occult splits into 4 historically-distinct waves (Western Alchemy, Renaissance Esotericism, Rosicrucian/Masonic, Modern Occult Revival per Hanegraaff/Yates/Stevenson); modern-syncretic + modern-religions explode into individual NRMs (Cheondogyo, Tenrikyō, Cao Đài, Scientology, LaVeyan Satanism) with Ambedkar → Buddhism and Iqbal → Islam; afro-diasporic splits into Haitian Vodou + Lucumí-Santería; mesoamerican splits into Maya + Aztec-Mexica with the duplicate umbrella retired; indigenous-na splits into Diné/Lakota/Haudenosaunee/Lenape. All seven goblin \"keep-as-is\" verdicts honored (Islam, Hermetic, Mystery Cults, Neoplatonism, Israelite, Canaanite, Hurro-Hittite, Egyptian, Zoroastrianism, Hinduism, Jainism, Sikhism, Shintō, Yoruba, Andean, Polynesian, Aboriginal, Bahá'í, Mormon, Druze, Yazidi). This unlocks the MASSIVE-WIN cross-wedge wires John needs: proto-orthodox ↔ Christian-Gnosticism polemics, Bön ↔ Vajrayāna mutual influence, Theosophy ↔ Anthroposophy 1912 schism, Vodou orisha ↔ Yoruba òrìṣà transmission.",
+    "final_taxonomy": [
+      {
+        "religion_id": "christianity",
+        "label": "Christianity",
+        "corpora": [
+          "bible",
+          "ethiopic-tewahedo-canon",
+          "kebra-nagast",
+          "reformation",
+          "spanish-mystical",
+          "patristic-corpus",
+          "byzantine-orthodox",
+          "latin-catholic-medieval",
+          "apostolic-fathers",
+          "syriac-christianity",
+          "hesychast-philokalia-corpus"
+        ],
+        "rationale": "Proto-orthodox / Catholic / Orthodox / Protestant trunk only. Heterodox Gnostic-Christian and esoteric-Christian streams lifted out so the cosmological war (creator-God vs demiurge, Nicene Trinity vs Boehmian theosophy) becomes visible as cross-wedge wires rather than buried inside one wedge."
+      },
+      {
+        "religion_id": "christian-gnosticism",
+        "label": "Christian Gnosticism",
+        "corpora": [
+          "nag-hammadi",
+          "cathar-bogomil",
+          "christian-apocrypha"
+        ],
+        "rationale": "Suppressed Gnostic-Christian stream that proto-orthodoxy declared heresy: Sethian/Valentinian (Nag Hammadi), medieval radical-dualist successors (Cathar/Bogomil), and the heterodox apocryphal cluster (Letter to Flora is itself Valentinian per Ehrman 2003). Brakke 2010 + King 2003 + Lambert 1998 + Stoyanov 2000."
+      },
+      {
+        "religion_id": "esoteric-christianity",
+        "label": "Esoteric Christianity",
+        "corpora": [
+          "christian-theosophy",
+          "swedenborgian-new-church",
+          "new-thought-corpus"
+        ],
+        "rationale": "Post-Reformation visionary/esoteric-Christian transmission Boehme → Vaughan → Swedenborg → Eddy → Kybalion → ACIM that Hanegraaff 2012 treats as a coherent Western-esoteric-Christianity lineage distinct from mainline trunk."
+      },
+      {
+        "religion_id": "judaism",
+        "label": "Judaism",
+        "corpora": [
+          "tanakh",
+          "rabbinic-corpus",
+          "kabbalistic-corpus"
+        ],
+        "rationale": "Normative rabbinic Judaism + Kabbalah trunk (Scholem 1941 places Kabbalah firmly inside Judaism). Samaritan and Sabbatean-Frankist lifted out as separate wedges since both involve definitional ruptures the parent rejected."
+      },
+      {
+        "religion_id": "samaritanism",
+        "label": "Samaritanism",
+        "corpora": [
+          "samaritan-corpus"
+        ],
+        "rationale": "Distinct Israelite-derived community: own Pentateuch recension, Mt. Gerizim cult, rejects Prophets/Writings/Jerusalem Temple. Pummer 2016 treats Samaritans as a religion that diverged from Second Temple Judaism, not a Jewish sect."
+      },
+      {
+        "religion_id": "sabbatean-frankist",
+        "label": "Sabbatean-Frankist messianism",
+        "corpora": [
+          "polish-frankism-sabbatean-corpus"
+        ],
+        "rationale": "Antinomian post-Jewish messianic movement: Sabbatai Zevi excommunicated by every major rabbinic court, Jacob Frank converted to Catholicism in 1759 and claimed personal divinity. Scholem 1973 + Maciejko 2011 frame this as a definitive break from normative Judaism."
+      },
+      {
+        "religion_id": "islam",
+        "label": "Islam",
+        "corpora": [
+          "quran",
+          "quran-manzil",
+          "hadith-corpus",
+          "islamic-theological",
+          "sufi-persian",
+          "shia-corpus",
+          "alevi-corpus",
+          "ismaili-corpus",
+          "ishraqi-corpus",
+          "school-of-isfahan",
+          "tafsir-corpus",
+          "arabic-neoplatonism",
+          "south-asian-sufi-reform",
+          "islamism-corpus",
+          "twelver-shia-hadith-corpus",
+          "iqbal-corpus"
+        ],
+        "rationale": "All corpora share Quranic foundation, hadith framework, prophetic chain culminating in Muhammad — Sunni / Shia / Sufi / Ishraqi / Isfahan / Alevi all self-identify as Islamic. Iqbal added (was misfiled under modern-syncretic). Druze + Yazidi correctly already split out. Hodgson + Daftary + Corbin."
+      },
+      {
+        "religion_id": "hinduism",
+        "label": "Hinduism",
+        "corpora": [
+          "vedas",
+          "vaishnava-canon",
+          "shaiva-tantric-canon",
+          "advaita-vedanta-corpus",
+          "shakta-canon",
+          "sant-nirguna-corpus",
+          "hindu-modernism-corpus"
+        ],
+        "rationale": "All seven sampradāyas share Vedic śruti substrate, Brahminical lineage, overlapping pantheon. Flood 1996 + Lipner 2010 treat Vaiṣṇava / Śaiva / Advaita / Śākta as textbook sub-traditions within Hinduism."
+      },
+      {
+        "religion_id": "buddhism",
+        "label": "Buddhism",
+        "corpora": [
+          "tipitaka",
+          "tibetan-vajrayana-corpus",
+          "pure-land-buddhist-corpus",
+          "madhyamaka-prajnaparamita-corpus",
+          "yogacara-corpus",
+          "chinese-mahayana-chan-huayan-tiantai",
+          "zen-japanese-canon",
+          "theravada-jataka-corpus",
+          "navayana-ambedkar-corpus"
+        ],
+        "rationale": "Theravāda / Mahāyāna / Vajrayāna vehicles share historical Buddha, Triple Jewel, Four Noble Truths. Ambedkar's Navayana added (he self-identified as Buddhist). Bön split off — Kvaerne 1995 + Karmay 1972 treat Yungdrung Bön as a sister tradition with its own founder Tönpa Shenrab."
+      },
+      {
+        "religion_id": "bon",
+        "label": "Yungdrung Bön",
+        "corpora": [
+          "bon-corpus"
+        ],
+        "rationale": "Independent founder (Tönpa Shenrab Miwoche, not Śākyamuni), distinct origin culture (Zhang-Zhung), own scriptural canon (Bön Kanjur), parallel cosmology that absorbed and was absorbed-by Vajrayāna 11th c. Splitting makes the Bön ↔ Nyingma Dzogchen priority dispute visible as a cross-wedge wire."
+      },
+      {
+        "religion_id": "zoroastrianism",
+        "label": "Zoroastrianism",
+        "corpora": [
+          "avesta"
+        ],
+        "rationale": "Single-canon religion: Old Avestan Gāthās → Younger Avesta → Pahlavi visionary corpus → Dēnkard already encodes the diachronic layers per Boyce/Skjærvø."
+      },
+      {
+        "religion_id": "jainism",
+        "label": "Jainism",
+        "corpora": [
+          "jain-agamas"
+        ],
+        "rationale": "Distinct founder (Mahāvīra / 24 Tīrthaṅkaras), distinct ontology (jīva/ajīva, anekāntavāda), distinct soteriology. Dundas 2002."
+      },
+      {
+        "religion_id": "sikhism",
+        "label": "Sikhism",
+        "corpora": [
+          "guru-granth"
+        ],
+        "rationale": "Distinct founder (Gurū Nānak), distinct theology (Ik Onkar, miri-piri), distinct community (Khalsa, 1699), eternal Gurū installed 1708. Cross-wedge wires to sant-nirguna + sufi-persian remain critical."
+      },
+      {
+        "religion_id": "bahai",
+        "label": "Bahá'í",
+        "corpora": [
+          "bahai-corpus"
+        ],
+        "rationale": "Doctrinally distinct post-Islamic new revelation (1844 Báb, 1863 Baháʼu'lláh), own scripture (Kitāb-i-Aqdas), progressive-revelation cosmology. Smith 2008 + MacEoin 2009."
+      },
+      {
+        "religion_id": "mormon",
+        "label": "Mormon (LDS)",
+        "corpora": [
+          "mormon"
+        ],
+        "rationale": "19th c. American restorationist new revelation: own scripture (Book of Mormon, D&C, PoGP), distinct cosmology (premortal existence, eternal progression, embodied Heavenly Father) that Nicene Christianity rejects. Bushman 2005."
+      },
+      {
+        "religion_id": "israelite-religion",
+        "label": "Israelite (pre-exilic)",
+        "corpora": [
+          "israelite-religion"
+        ],
+        "rationale": "Pre-exilic Israelite Yahwism distinct from post-exilic Judaism. Splitting enables the MASSIVE-WIN wire to Canaanite El/Asherah substrate. Smith 2002 + Dever 2005."
+      },
+      {
+        "religion_id": "canaanite",
+        "label": "Canaanite / Ugaritic",
+        "corpora": [
+          "canaanite-ugaritic"
+        ],
+        "rationale": "West Semitic Ugaritic religion (Baal Cycle, ritual texts) — the parent-substrate Israelite Yahwism partially absorbed. Essential for cross-wires (YHWH inherits El's epithets; Leviathan ← Lōtan). Smith 2001 + Pardee 2002."
+      },
+      {
+        "religion_id": "hurro-hittite",
+        "label": "Hurro-Hittite",
+        "corpora": [
+          "hurro-hittite"
+        ],
+        "rationale": "Anatolian Bronze Age religion with own pantheon (Tarhunna, Telipinu, Kumarbi). Kumarbi Cycle is the documented Indo-European succession-myth bridge to Hesiod's Theogony per M.L. West 1997 — only visible if Hurro-Hittite stays separate."
+      },
+      {
+        "religion_id": "egyptian",
+        "label": "Egyptian (ancient)",
+        "corpora": [
+          "egyptian-scripture"
+        ],
+        "rationale": "Continuous ~2400 BCE → 400 CE tradition; broadly stable theological substrate (Ra/Osiris/Isis/Horus/Ma'at) across Old/Middle/New Kingdom sections. Atmana interlude correctly internal section per scholarly consensus. Assmann 2001 + Hornung 1982."
+      },
+      {
+        "religion_id": "greek",
+        "label": "Greek (ancient)",
+        "corpora": [
+          "greek-scripture"
+        ],
+        "rationale": "Greek pantheon canonical corpus (Hesiod, Homeric Hymns, Orphic-adjacent). Mystery cults + Neoplatonism + Hermetic correctly held as separate adjacent wedges to surface the inheritance relationships as cross-wires."
+      },
+      {
+        "religion_id": "mesopotamian",
+        "label": "Mesopotamian (Sumerian + Akkadian + Babylonian + Assyrian)",
+        "corpora": [
+          "mesopotamian"
+        ],
+        "rationale": "Sumerian + Akkadian + Babylonian + Assyrian form continuous textual canon (Enūma Eliš, Atrahasis, Gilgamesh) with successive linguistic recensions per Black & Green, Foster. Label cleaned of stale 'Canaanite' double-claim; empty canaanite-ugaritic section in SCRIPTURE_CORPORA must be removed (Lane A)."
+      },
+      {
+        "religion_id": "mystery-cults",
+        "label": "Mystery Cults",
+        "corpora": [
+          "mystery-cults-corpus"
+        ],
+        "rationale": "Eleusinian / Orphic / Dionysian / Isiac / Greco-Egyptian magical bundled per Burkert 1987 + Bowden 2010 unified-category treatment. At current 6-text depth split would create single-text wedges that obscure cross-cult resonances; defer split until Lane A backfills 3+ texts per cult."
+      },
+      {
+        "religion_id": "neoplatonism",
+        "label": "Neoplatonism",
+        "corpora": [
+          "neoplatonist-corpus"
+        ],
+        "rationale": "Coherent late-antique school (Ammonius → Plotinus → Porphyry → Iamblichus → Proclus → Damascius) with distinct cosmology (One → Nous → Soul) and canon (Enneads + Elements of Theology). Surfaces the Plotinus → Pseudo-Dionysius → Arabic-Neoplatonism → Ficino transmission spine. Shaw 1995 + Wallis 1972."
+      },
+      {
+        "religion_id": "hermetic",
+        "label": "Hermetic",
+        "corpora": [
+          "hermetica"
+        ],
+        "rationale": "Distinct Greco-Egyptian revelatory tradition with own prophet-chain (Hermes Trismegistus → Tat → Asclepius), own cosmogony (Poimandres anthropos-descent), continuous reception (Greek → Coptic NHC VI → Latin Asclepius → Renaissance Pimander). Fowden 1986 + Copenhaver 1992."
+      },
+      {
+        "religion_id": "norse",
+        "label": "Norse / Finno-Ugric",
+        "corpora": [
+          "norse-eddic",
+          "finno-karelian-corpus"
+        ],
+        "rationale": "Norse Eddic (Poetic + Prose Edda) plus Finno-Karelian (Kalevala) North-European mythological corpus. Kept together as the cross-cultural Northern European mythopoetic family — splitting at current corpus depth would obscure shared substrate."
+      },
+      {
+        "religion_id": "maya-religion",
+        "label": "Maya",
+        "corpora": [
+          "maya-corpus"
+        ],
+        "rationale": "Distinct pantheon (Itzamná / Kʼinich Ajaw), distinct calendar (Long Count), distinct script (logosyllabic), distinct languages. Popol Vuh + Chilam Balam + Dresden Codex. Madrid + Paris codices flagged for Lane A backfill. Tedlock 1996."
+      },
+      {
+        "religion_id": "aztec-mexica",
+        "label": "Aztec / Mexica",
+        "corpora": [
+          "aztec-mexica-corpus"
+        ],
+        "rationale": "Distinct pantheon (Huitzilopochtli / Tezcatlipoca / Quetzalcóatl-Ehécatl), distinct calendar (xiuhpōhualli), pictographic script, Nahuatl language. Florentine Codex + Codex Borgia + Historia. Cantares Mexicanos + Codex Boturini flagged for Lane A. Carrasco 2014."
+      },
+      {
+        "religion_id": "shinto",
+        "label": "Shintō",
+        "corpora": [
+          "kojiki-nihongi",
+          "shinto-engishiki"
+        ],
+        "rationale": "Both corpora share kami substrate, imperial-genealogical theology, 8th–10th c. court codification. Kojiki/Nihon Shoki = mythistorical chronicles, Engishiki = liturgical continuation. Buddhist syncretism (honji suijaku) correctly kept out — pure-land/zen housed under buddhism per Kuroda 1981."
+      },
+      {
+        "religion_id": "confucianism",
+        "label": "Confucianism",
+        "corpora": [
+          "confucian-classics"
+        ],
+        "rationale": "Distinct social-ritual humanism centered on lǐ / rén / xiào with Five Classics as state-orthodox canon (Han through Qing examinations). Treated as separate tradition since the Sima Tan Six Schools essay (~110 BCE). Taylor 1990 + Lagerwey & Kalinowski 2009."
+      },
+      {
+        "religion_id": "daoism",
+        "label": "Daoism / 道教",
+        "corpora": [
+          "tao-corpus"
+        ],
+        "rationale": "Distinct cosmological naturalism centered on Dào / wú-wéi / zìrán with own institutional religion (Tianshi / Shangqing / Lingbao / Quanzhen) and own canon (Daozang 1445 CE, 1476 texts). Splitting from Confucianism makes Daoism ↔ Chan/Zen and Daoism ↔ Chinese alchemy wires explicit. Kohn 2000."
+      },
+      {
+        "religion_id": "mandaeism",
+        "label": "Mandaeism",
+        "corpora": [
+          "mandaean-corpus"
+        ],
+        "rationale": "Distinct Aramaic-speaking Iraqi/Iranian gnostic-baptist community (~60,000 today) with John the Baptist as central prophet, Ginza Rba as scripture, continuous since 2nd c. CE. Buckley 2002 + BeDuhn 2000 treat as completely separate from Manichaeism despite shared 'gnostic-dualist' family resemblance. (Lane A first: split existing mandaean-manichaean corpus into mandaean-corpus + manichaean-corpus.)"
+      },
+      {
+        "religion_id": "manichaeism",
+        "label": "Manichaeism",
+        "corpora": [
+          "manichaean-corpus"
+        ],
+        "rationale": "Religion founded by Mani (216–274 CE) under Sasanian patronage, propagated North Africa → Tang China, extinct by 14th c. Own canon (Cologne Mani Codex + Kephalaia + Shabuhragan). Bundling with Mandaeism was the same category-error as bundling Christianity with Islam. Lieu 1992 + BeDuhn 2000."
+      },
+      {
+        "religion_id": "yoruba",
+        "label": "Yoruba (Ifá)",
+        "corpora": [
+          "yoruba-ifa-corpus"
+        ],
+        "rationale": "African-continental Tier-1 substrate: 256 Odù Ifá canon, babaláwo priesthood, Olódùmarè + Òrìṣà pantheon, pre-colonial continuity. Stays separate from Afro-diasporic to make transmission wires (Lucumí Eleguá ↔ Yoruba Èṣù) visible. Bascom 1969 + Peel 2000."
+      },
+      {
+        "religion_id": "haitian-vodou",
+        "label": "Haitian Vodou",
+        "corpora": [
+          "haitian-vodou-corpus"
+        ],
+        "rationale": "Distinct Fon/Ewe/Dahomean + Kongo African substrate, French Catholic overlay, Kreyòl liturgy, own priesthood (houngan/manbo). Splitting from afro-diasporic surfaces cross-Atlantic divergence from Lucumí. McCarthy Brown 2001."
+      },
+      {
+        "religion_id": "lucumi-santeria",
+        "label": "Lucumí / Santería",
+        "corpora": [
+          "lucumi-santeria-corpus"
+        ],
+        "rationale": "Distinct Yoruba African substrate, Spanish Catholic overlay, Lucumí ritual language, own priesthood (santero/santera). Adjacent placement to Yoruba makes orisha ↔ òrìṣà cognate-wires explicit. Palmié 2002 + Matory 2005."
+      },
+      {
+        "religion_id": "andean",
+        "label": "Andean (Quechua)",
+        "corpora": [
+          "andean-quechua-corpus"
+        ],
+        "rationale": "Distinct civilizational tradition (Inti, Viracocha, Pachamama, huaca cult). Huarochirí Manuscript (~1608 Quechua) is the single most important indigenous-language Andean text. Backfill flagged: Guamán Poma, Pachakuti Yamqui. Salomon & Urioste 1991."
+      },
+      {
+        "religion_id": "polynesian",
+        "label": "Polynesian",
+        "corpora": [
+          "polynesian-corpus"
+        ],
+        "rationale": "Hawaiian Kumulipo + Māori cosmogonic chants share single Austronesian/Proto-Polynesian substrate (Tāne/Kāne, Tangaroa/Kanaloa, Rongo/Lono cognate pantheon). Intra-Polynesian divergence handled at corpus-section level. Valeri 1985 + Kirch 2010."
+      },
+      {
+        "religion_id": "dine-navajo",
+        "label": "Diné / Navajo",
+        "corpora": [
+          "navajo-blessingway-corpus"
+        ],
+        "rationale": "Athabaskan language family, Blessingway/Hózhǫǫjí ceremonial system, distinct from Plains or Eastern Woodland traditions. Sturtevant Handbook vol. 10 Southwest."
+      },
+      {
+        "religion_id": "lakota-oglala",
+        "label": "Lakota / Oglala",
+        "corpora": [
+          "lakota-sacred-corpus"
+        ],
+        "rationale": "Siouan language family, Sacred Pipe + Seven Rites (Black Elk transmission), distinct Plains cosmology. Holds Black Elk Speaks + The Sacred Pipe. Sturtevant Handbook vol. 13 Plains."
+      },
+      {
+        "religion_id": "haudenosaunee",
+        "label": "Haudenosaunee",
+        "corpora": [
+          "haudenosaunee-corpus"
+        ],
+        "rationale": "Iroquoian language family, Gayanashagowa (Great Law of Peace) as political-religious constitution, distinct Northeast Woodland tradition. Sturtevant Handbook vol. 15 Northeast."
+      },
+      {
+        "religion_id": "lenape-walam-olum",
+        "label": "Lenape (Walam Olum)",
+        "corpora": [
+          "lenape-walam-olum-corpus"
+        ],
+        "rationale": "Eastern Algonquian, Walam Olum — must be Tier-1-flagged as widely-held 19th c. Rafinesque forgery (Oestreicher 1996, Goddard 2007) while preserving the document as a node in its own right. Reserved as standalone wedge pending a broader eastern-Algonquian backfill."
+      },
+      {
+        "religion_id": "aboriginal",
+        "label": "Aboriginal Australian",
+        "corpora": [
+          "aboriginal-dreaming-corpus"
+        ],
+        "rationale": "Recognized single religious-cultural complex spanning 250+ language groups via shared ontology (Ancestral Beings, Songlines, country-law) per Stanner / Berndt / Morphy. Lane A backfill flagged: Wawilak Sisters, Djang'kawu, Rainbow Serpent."
+      },
+      {
+        "religion_id": "rastafari",
+        "label": "Rastafari",
+        "corpora": [
+          "rastafari-corpus"
+        ],
+        "rationale": "Distinct Jamaica-1930s religion: Jah Rastafari = Haile Selassie I, Kebra Nagast read against KJV + Holy Piby + Garvey, own community (nyabinghi, ital, ganja sacrament). Lane A flagged: replace stub entries with Holy Piby (Rogers 1924), Promised Key (Howell 1935), Garvey Philosophy & Opinions. Chevannes 1994."
+      },
+      {
+        "religion_id": "druze",
+        "label": "Druze",
+        "corpora": [
+          "druze-corpus"
+        ],
+        "rationale": "Distinct esoteric tradition emerged Fatimid Egypt 1017–1043 CE, closed initiation 1043 CE: transmigration replaces resurrection, al-Ḥākim as seventh theophany, Neoplatonic-Pythagorean cosmic hierarchy. Decisively crossed out of Islam per Firro 1992 + Halm 2014."
+      },
+      {
+        "religion_id": "yazidi",
+        "label": "Yazidi",
+        "corpora": [
+          "yazidi-corpus"
+        ],
+        "rationale": "Distinct West-Iranian/syncretic tradition with Melek Taus / Peacock Angel cosmology that explicitly inverts both the Iblīs and Lucifer-fall narratives. Own sacred texts (Kitêba Cilwe + Mishefa Reş + qewls). Kreyenbroek 1995 + Açıkyıldız 2010."
+      },
+      {
+        "religion_id": "cheondogyo",
+        "label": "Cheondogyo (Donghak)",
+        "corpora": [
+          "cheondogyo-corpus"
+        ],
+        "rationale": "Tier-1 distinct Korean religion (1860): founder Choe Je-u, scripture Donggyeong Daejeon, Hanullim monotheist innovation, revolutionary lineage (Donghak Peasant Revolution 1894). Baker 2008."
+      },
+      {
+        "religion_id": "tenrikyo",
+        "label": "Tenrikyō",
+        "corpora": [
+          "tenrikyo-corpus"
+        ],
+        "rationale": "Founding Japanese shin-shūkyō (1838): founder Nakayama Miki, scripture Ofudesaki, Oyagami / joyous-life theology. Hardacre 1986. Future grouping under a 'japanese-shin-shukyo' family band possible once Ōmoto / Sōka Gakkai corpora wire up."
+      },
+      {
+        "religion_id": "cao-dai",
+        "label": "Cao Đài",
+        "corpora": [
+          "cao-dai-corpus"
+        ],
+        "rationale": "Deliberately syncretic Vietnamese Third-Alliance religion (1926) with French Spiritist roots. Distinct founder claims, own canon, own ecclesial structure. Blagov 2001."
+      },
+      {
+        "religion_id": "western-alchemy",
+        "label": "Western Alchemy",
+        "corpora": [
+          "western-alchemy-corpus"
+        ],
+        "rationale": "13th–18th c. operative/spiritual alchemy: Rosarium Philosophorum, Splendor Solis, Paracelsus, Sendivogius, Starkey, Ripley, Ashmole. Operates within Christian-natural-philosophy frame. Principe 2013."
+      },
+      {
+        "religion_id": "renaissance-esotericism",
+        "label": "Renaissance Esotericism",
+        "corpora": [
+          "renaissance-magic-corpus"
+        ],
+        "rationale": "15th–17th c. Christian-Hermetic-Kabbalistic magic: Ficino, Pico, Reuchlin, Agrippa, Dee, Fludd, Kircher, Khunrath. Hanegraaff 2012 treats this as the foundational 'rejected knowledge' stratum distinct from both medieval alchemy and 19th c. occult revival."
+      },
+      {
+        "religion_id": "rosicrucian-masonic",
+        "label": "Rosicrucian / Masonic",
+        "corpora": [
+          "rosicrucian-corpus",
+          "freemasonry-corpus"
+        ],
+        "rationale": "Fraternal-initiatic literary tradition: Fama 1614, Confessio 1615, Chymical Wedding 1616, Anderson Constitutions 1723. Yates 1972 + Stevenson 1988 group as a single fraternal-utopian cluster distinct from operative alchemy and 19th c. occult orders."
+      },
+      {
+        "religion_id": "modern-occult-revival",
+        "label": "Modern Occult Revival",
+        "corpora": [
+          "theosophy-corpus",
+          "anthroposophy-corpus",
+          "wicca-corpus"
+        ],
+        "rationale": "19th–20th c. 'occulture' break with churchly religion (Hanegraaff 1996, 2012; Owen 2004). Theosophy 1875, Anthroposophy 1912 (Christology split from Theosophy per Zander 2007), Wicca 1954 (Hutton 1999 independent witchcraft-revival lineage). Thelema lifted into its own wedge as a new-revelation claim."
+      },
+      {
+        "religion_id": "thelema",
+        "label": "Thelema",
+        "corpora": [
+          "thelema-corpus"
+        ],
+        "rationale": "Liber AL vel Legis (1904) is received scripture per Crowley — a new-revelation claim analogous to Bahá'í Kitāb-i-Aqdas or Mormon's Book of Mormon. Explicit break with Golden Dawn / Mathers per Pasi 2014. Splitting from modern-occult-revival surfaces the Crowley-vs-Golden-Dawn-vs-Theosophy polemics as cross-wires."
+      },
+      {
+        "religion_id": "scientology",
+        "label": "Scientology",
+        "corpora": [
+          "scientology-corpus"
+        ],
+        "rationale": "20th c. American NRM: Hubbard auditing / thetan soteriology, corporate-church structure. Urban 2011."
+      },
+      {
+        "religion_id": "laveyan-satanism",
+        "label": "LaVeyan Satanism",
+        "corpora": [
+          "laveyan-satanism-corpus"
+        ],
+        "rationale": "20th c. American NRM: Anton LaVey atheistic carnal-self-deification + ritual theatre (Church of Satan 1966, Satanic Bible 1969). Dyrendal/Lewis/Petersen 2015."
+      }
+    ],
+    "corpus_moves": [
+      {
+        "corpus_id": "nag-hammadi",
+        "from_religion": "christianity",
+        "to_religion": "christian-gnosticism",
+        "reason": "Sethian/Valentinian Gnostic — preaches malevolent demiurge, cosmological mirror-opposite of Nicene creator-God. Brakke 2010."
+      },
+      {
+        "corpus_id": "cathar-bogomil",
+        "from_religion": "christianity",
+        "to_religion": "christian-gnosticism",
+        "reason": "Medieval radical-dualist two-principles theology, declared heresy + exterminated by Albigensian Crusade (1209–1229). Bogomil dualism traced through Paulician → Manichaean transmission per Stoyanov 2000."
+      },
+      {
+        "corpus_id": "christian-apocrypha",
+        "from_religion": "christianity",
+        "to_religion": "christian-gnosticism",
+        "reason": "Bucket contains Letter to Flora (Valentinian), Acts of Paul and Thecla (encratite-heterodox), Passio Perpetuae (Montanist-prophetic) — all three are non-canonical heterodox-Christian texts per Ehrman 2003."
+      },
+      {
+        "corpus_id": "christian-theosophy",
+        "from_religion": "christianity",
+        "to_religion": "esoteric-christianity",
+        "reason": "Boehme + Vaughan + Swedenborg's Arcana belong to the post-Reformation visionary-esoteric Christian stream per Hanegraaff 2012."
+      },
+      {
+        "corpus_id": "swedenborgian-new-church",
+        "from_religion": "christianity",
+        "to_religion": "esoteric-christianity",
+        "reason": "Denominational break: Church of the New Jerusalem founded 1787, distinct from any mainline Christian body."
+      },
+      {
+        "corpus_id": "new-thought-corpus",
+        "from_religion": "christianity",
+        "to_religion": "esoteric-christianity",
+        "reason": "Christian Science + Kybalion + ACIM. Hanegraaff 2012 treats Boehme → Swedenborg → Eddy → ACIM as single Western-esoteric-Christianity transmission line."
+      },
+      {
+        "corpus_id": "samaritan-corpus",
+        "from_religion": "judaism",
+        "to_religion": "samaritanism",
+        "reason": "Distinct Israelite-derived community with own Pentateuch recension and Mt. Gerizim cult — diverged from Second Temple Judaism per Pummer 2016."
+      },
+      {
+        "corpus_id": "polish-frankism-sabbatean-corpus",
+        "from_religion": "judaism",
+        "to_religion": "sabbatean-frankist",
+        "reason": "Antinomian post-Jewish messianic movement; Sabbatai excommunicated, Frank converted to Catholicism 1759. Scholem 1973 + Maciejko 2011 frame as definitive break."
+      },
+      {
+        "corpus_id": "mandaean-manichaean",
+        "from_religion": "gnostic-dualist",
+        "to_religion": "(SPLIT)",
+        "reason": "Lane A: split into mandaean-corpus (Ginza Rba + Mandaean Book of John) → mandaeism wedge AND manichaean-corpus (Cologne Mani Codex + Kephalaia + Shabuhragan) → manichaeism wedge. Buckley 2002 + BeDuhn 2000."
+      },
+      {
+        "corpus_id": "bon-corpus",
+        "from_religion": "buddhism",
+        "to_religion": "bon",
+        "reason": "Yungdrung Bön has independent founder (Tönpa Shenrab), origin culture (Zhang-Zhung), and own scriptural canon (Bön Kanjur) — sister tradition not Buddhist sub-school per Kvaerne 1995 + Karmay 1972."
+      },
+      {
+        "corpus_id": "confucian-classics",
+        "from_religion": "chinese",
+        "to_religion": "confucianism",
+        "reason": "Distinct social-ritual humanism (lǐ/rén/xiào) with Five Classics as state-orthodox canon — treated as separate tradition since Sima Tan ~110 BCE."
+      },
+      {
+        "corpus_id": "tao-corpus",
+        "from_religion": "chinese",
+        "to_religion": "daoism",
+        "reason": "Distinct cosmological naturalism with own institutional religion (Tianshi/Shangqing/Lingbao/Quanzhen) and own canon (Daozang). Kohn 2000."
+      },
+      {
+        "corpus_id": "afro-diasporic-liturgical",
+        "from_religion": "afro-diasporic",
+        "to_religion": "(SPLIT)",
+        "reason": "Lane A: split into haitian-vodou-corpus → haitian-vodou wedge AND lucumi-santeria-corpus → lucumi-santeria wedge. Distinct African substrates (Fon/Ewe/Kongo vs Yoruba), distinct colonial overlays (French vs Spanish). McCarthy Brown 2001 + Palmié 2002."
+      },
+      {
+        "corpus_id": "mesoamerican-sacred",
+        "from_religion": "mesoamerican",
+        "to_religion": "(RETIRE)",
+        "reason": "Duplicates Popol Vuh + Dresden Codex (already in maya-corpus) and Codex Borgia (already in aztec-mexica-corpus). Umbrella corpus retired; books canonically live in child corpora."
+      },
+      {
+        "corpus_id": "maya-corpus",
+        "from_religion": "mesoamerican",
+        "to_religion": "maya-religion",
+        "reason": "Distinct civilization: Itzamná pantheon, Long Count calendar, logosyllabic script. Tedlock 1996."
+      },
+      {
+        "corpus_id": "aztec-mexica-corpus",
+        "from_religion": "mesoamerican",
+        "to_religion": "aztec-mexica",
+        "reason": "Distinct civilization: Huitzilopochtli/Tezcatlipoca/Quetzalcóatl pantheon, xiuhpōhualli calendar, pictographic script, Nahuatl. Carrasco 2014."
+      },
+      {
+        "corpus_id": "indigenous-north-american-corpus",
+        "from_religion": "indigenous-na",
+        "to_religion": "(SPLIT)",
+        "reason": "Lane A: split into navajo-blessingway-corpus (→ dine-navajo), lakota-sacred-corpus (Black Elk Speaks + Sacred Pipe → lakota-oglala), haudenosaunee-corpus (Great Law of Peace → haudenosaunee), lenape-walam-olum-corpus (forgery-flagged → lenape-walam-olum). Sturtevant Handbook vols 10/13/15."
+      },
+      {
+        "corpus_id": "cheondogyo-corpus",
+        "from_religion": "modern-syncretic",
+        "to_religion": "cheondogyo",
+        "reason": "Tier-1 distinct Korean religion (1860): founder Choe Je-u, Donggyeong Daejeon scripture, Hanullim theology. Baker 2008."
+      },
+      {
+        "corpus_id": "tenrikyo-corpus",
+        "from_religion": "modern-syncretic",
+        "to_religion": "tenrikyo",
+        "reason": "Founding shin-shūkyō (1838): Nakayama Miki, Ofudesaki, Oyagami theology. Hardacre 1986."
+      },
+      {
+        "corpus_id": "cao-dai-corpus",
+        "from_religion": "modern-syncretic",
+        "to_religion": "cao-dai",
+        "reason": "Distinct Vietnamese syncretic Third-Alliance religion (1926). Blagov 2001."
+      },
+      {
+        "corpus_id": "south-asian-modernism",
+        "from_religion": "modern-syncretic",
+        "to_religion": "(SPLIT)",
+        "reason": "Lane A: split bundle. Ambedkar's Buddha and Dhamma (phase-7-045) → buddhism as new navayana-ambedkar-corpus (he self-identified as Buddhist). Iqbal's Reconstruction (phase-7-046) → islam as new iqbal-corpus (Islamic-modernist philosopher)."
+      },
+      {
+        "corpus_id": "scientology-corpus",
+        "from_religion": "modern-religions",
+        "to_religion": "scientology",
+        "reason": "Distinct NRM with own founder + auditing soteriology. Urban 2011. modern-religions umbrella retired."
+      },
+      {
+        "corpus_id": "laveyan-satanism-corpus",
+        "from_religion": "modern-religions",
+        "to_religion": "laveyan-satanism",
+        "reason": "Distinct NRM with own founder + ritual theatre. Dyrendal/Lewis/Petersen 2015. modern-religions umbrella retired."
+      },
+      {
+        "corpus_id": "theosophy-corpus",
+        "from_religion": "esoteric-occult",
+        "to_religion": "modern-occult-revival",
+        "reason": "19th c. 'occulture' break (Blavatsky 1875). Hanegraaff 1996 + 2012."
+      },
+      {
+        "corpus_id": "thelema-corpus",
+        "from_religion": "esoteric-occult",
+        "to_religion": "thelema",
+        "reason": "Liber AL vel Legis (1904) is received scripture — new-revelation claim analogous to Bahá'í/Mormon. Explicit break with Golden Dawn per Pasi 2014."
+      },
+      {
+        "corpus_id": "wicca-corpus",
+        "from_religion": "esoteric-occult",
+        "to_religion": "modern-occult-revival",
+        "reason": "Independent witchcraft-revival lineage 1954 per Hutton 1999."
+      },
+      {
+        "corpus_id": "anthroposophy-corpus",
+        "from_religion": "esoteric-occult",
+        "to_religion": "modern-occult-revival",
+        "reason": "Split from Theosophy 1912 over Christology — part of 19th–20th c. occulture wave per Zander 2007."
+      },
+      {
+        "corpus_id": "rosicrucian-corpus",
+        "from_religion": "esoteric-occult",
+        "to_religion": "rosicrucian-masonic",
+        "reason": "17th c. fraternal-initiatic literary tradition (Fama/Confessio/Chymical Wedding). Yates 1972."
+      },
+      {
+        "corpus_id": "freemasonry-corpus",
+        "from_religion": "esoteric-occult",
+        "to_religion": "rosicrucian-masonic",
+        "reason": "Fraternal-initiatic tradition continuous with Rosicrucian (Anderson Constitutions 1723). Stevenson 1988."
+      },
+      {
+        "corpus_id": "renaissance-magic-corpus",
+        "from_religion": "esoteric-occult",
+        "to_religion": "renaissance-esotericism",
+        "reason": "15th–17th c. Christian-Hermetic-Kabbalistic magic (Ficino/Pico/Agrippa/Dee/Fludd/Kircher) — foundational 'rejected knowledge' stratum per Hanegraaff 2012."
+      },
+      {
+        "corpus_id": "western-alchemy-corpus",
+        "from_religion": "esoteric-occult",
+        "to_religion": "western-alchemy",
+        "reason": "13th–18th c. operative/spiritual alchemy — predates occult-revival wave by 300+ years; operates within Christian-natural-philosophy frame. Principe 2013."
+      }
+    ],
+    "naming_changes": [
+      {
+        "old_id": "gnostic-dualist",
+        "new_id": "(RETIRED)",
+        "new_label": "(deleted)",
+        "reason": "Replaced by two distinct religion-wedges mandaeism + manichaeism after splitting the bundled mandaean-manichaean corpus. The family-level grouping is captured by these two wedges + christian-gnosticism sitting adjacent on the wheel."
+      },
+      {
+        "old_id": "chinese",
+        "new_id": "(RETIRED)",
+        "new_label": "(deleted)",
+        "reason": "Replaced by confucianism + daoism. Do NOT keep as a third bundle for folk religion — that should be a future 'chinese-folk-religion' wedge once corpora are wired (Baojuan / temple-ritual, not catch-all)."
+      },
+      {
+        "old_id": "afro-diasporic",
+        "new_id": "(RETIRED)",
+        "new_label": "(deleted)",
+        "reason": "Replaced by haitian-vodou + lucumi-santeria. Reserve 'afro-brazilian' (Candomblé Ketu/Jeje/Angola + Umbanda) — currently absent, flagged for Lane A backfill."
+      },
+      {
+        "old_id": "mesoamerican",
+        "new_id": "(RETIRED)",
+        "new_label": "(deleted)",
+        "reason": "Replaced by maya-religion + aztec-mexica. Reserved 'mixtec-zapotec' wedge for future Olmec/Zapotec/Mixtec/Teotihuacano corpora."
+      },
+      {
+        "old_id": "indigenous-na",
+        "new_id": "(RETIRED)",
+        "new_label": "(deleted)",
+        "reason": "Replaced by dine-navajo + lakota-oglala + haudenosaunee + lenape-walam-olum. These have no shared cosmology, language family, ritual system, or political community."
+      },
+      {
+        "old_id": "modern-syncretic",
+        "new_id": "(RETIRED)",
+        "new_label": "(deleted)",
+        "reason": "Replaced by cheondogyo + tenrikyo + cao-dai as separate NRMs; Ambedkar moved to buddhism, Iqbal to islam."
+      },
+      {
+        "old_id": "modern-religions",
+        "new_id": "(RETIRED)",
+        "new_label": "(deleted)",
+        "reason": "Replaced by scientology + laveyan-satanism as separate NRMs. Future option: parent family band '20th-century NRMs' holding Scientology + LaVeyan + Cheondogyo + Tenrikyō + Cao Đài + Rastafari + modern-occult-revival + thelema."
+      },
+      {
+        "old_id": "esoteric-occult",
+        "new_id": "modern-occult-revival",
+        "new_label": "Modern Occult Revival",
+        "reason": "Wedge narrowed to 19th–20th c. occulture wave (Theosophy + Anthroposophy + Wicca). Thelema lifted into own wedge. Western Alchemy + Renaissance Esotericism + Rosicrucian/Masonic split into 3 new historically-distinct wedges per Hanegraaff 2012 + Yates 1972 + Stevenson 1988."
+      },
+      {
+        "old_id": "mesopotamian",
+        "new_id": "mesopotamian",
+        "new_label": "Mesopotamian (Sumerian + Akkadian + Babylonian + Assyrian)",
+        "reason": "Label cleaned of stale Phase A 'Canaanite' double-claim now that canaanite-ugaritic is its own religion-wedge. Lane A also needs to delete empty canaanite-ugaritic SECTION in SCRIPTURE_CORPORA['mesopotamian'] at src/js/app.js ~line 4040."
+      }
+    ],
+    "controversial_calls": [
+      "Christian Gnosticism split: pulls Nag Hammadi + Cathar/Bogomil + christian-apocrypha out of Christianity. Strong scholarly basis (Brakke, King, Lambert, Stoyanov, Ehrman) but reasonable people argue these were INTRA-Christian heresies, not separate religions. The investigative payoff is that proto-orthodox patristic-corpus is literally the anti-Gnostic polemical canon (Irenaeus, Tertullian, Hippolytus) — bundling attacker and target erases the cosmological war. Sign-off needed: is the Codex investigation served better by surfacing that war as a cross-wedge wire (split) or as an internal-Christianity tension (keep)?",
+      "Esoteric Christianity split: pulls Boehme + Swedenborg + New Thought (Eddy + Kybalion + ACIM) out of Christianity. Hanegraaff treats this as a coherent Western-esoteric-Christianity transmission line, but Boehme + Vaughan are Lutheran/Anglican mystics who never left mainline churches — splitting them is more aggressive than the Gnostic split. ACIM is genuinely heterodox. Possible middle path: keep Boehme/Vaughan under Christianity (mystical-Christian sub-section) and only split Swedenborgian-New-Church + new-thought-corpus.",
+      "Cathar/Bogomil placement: I assigned to christian-gnosticism, but the transmission chain Paulician → Bogomil → Cathar runs through Manichaean dualism per Stoyanov. Could instead live as its own wedge ('medieval-dualist') OR adjacent to Manichaeism. Christian-Gnosticism placement preserves the Christian-internal framing; Manichaean-adjacent placement preserves the dualist-transmission framing. Pick one investigative axis.",
+      "Mandaeism + Manichaeism split: requires Lane A to first split the bundled 'mandaean-manichaean' corpus in SCRIPTURE_CORPORA into mandaean-corpus + manichaean-corpus. Both are textually documented enough to do this cleanly. Goblin verdict was unanimous on the split — flagging only because it's a Lane A blocker on the religion-wedge change, not a judgment call.",
+      "Thelema as its own wedge vs holding inside modern-occult-revival: Thelema is a new-revelation claim (Liber AL vel Legis as received scripture from Aiwass 1904), structurally identical to how Bahá'í + Mormon are treated. But it shares 19th c. occult-revival genealogy with Theosophy. I split it out to match the new-revelation pattern; defensible to fold back into modern-occult-revival as a sub-section.",
+      "Lenape Walam Olum as standalone wedge: it's widely held to be a 19th c. Rafinesque forgery (Oestreicher 1996, Goddard 2007). Standalone-wedge treatment preserves it as a node but might give too much prominence to a likely fabrication. Alternative: hold under a future broader 'eastern-algonquian' wedge that includes attested Algonquian traditions, with Walam Olum flagged as Tier-1-disputed inside the corpus.",
+      "Ambedkar → Buddhism move: Ambedkar self-identified as Buddhist and Navayana is treated as a Buddhist reform movement by Engaged Buddhism scholars (Queen & King 1996). But some scholars treat Navayana as distinct enough from Theravāda / Mahāyāna / Vajrayāna to warrant a separate wedge. Holding under Buddhism as 'modern-navayana' corpus is the scholarly mainstream call but flag for John.",
+      "Iqbal → Islam move: Iqbal's Reconstruction of Religious Thought in Islam is an Islamic-modernist philosophy text. Clearly belongs under Islam. Only flag is whether to introduce a dedicated 'islamic-modernism' corpus alongside the existing islamism-corpus (they are NOT the same — modernism = Iqbal/Abduh/Rahman intellectual project; islamism = Maududi/Qutb political-Islam project).",
+      "Mystery Cults bundling kept: at current 6-text depth a Eleusinian / Dionysian / Isiac / Greco-Egyptian-magical split would create single-text wedges. Defer split until Lane A backfills 3+ texts per cult. Goblin recommendation; flagging because John may want the split anyway to make Eleusinian → Hellenistic mysteries → Christian-Eucharist wires explicit.",
+      "Mesopotamian SCRIPTURE_CORPORA cleanup: not a religion-wedge change but a Lane A blocker. The empty 'canaanite-ugaritic' SECTION at app.js line 4056 and the misleading label 'Sumerian + Akkadian + Canaanite' at line 4040 are stale Phase A artifacts since canaanite-ugaritic became its own corpus + religion-wedge. Should be cleaned up in the same PR as the religion-wedge restructure or split as a separate small commit."
+    ]
+  }
+}
