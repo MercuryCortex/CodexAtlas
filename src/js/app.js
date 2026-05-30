@@ -3798,15 +3798,28 @@ const SCRIPTURE_CORPORA = {
   // continuity; Mani synthesized Zoroastrianism + Buddhism + Christianity —
   // the most deliberate syncretist in world history; Manichaeism reached from
   // Spain to China; Augustine was a Manichaean for 9 years. -----
-  'mandaean-manichaean': {
-    label: 'Mandaean + Manichaean sacred corpus',
+  // 2026-05-30 — corpus split per final-gap-audit (wf_fa6907d7-eff)
+  // + BeDuhn 2000 + Lieu 1992 + Gardner & Lieu 2004 + Buckley 2002:
+  // Mandaeism (living) and Manichaeism (extinct) are doctrinally
+  // distinct dualist religions. Books of Giants stays with Mandaean
+  // section here because its Qumran-Aramaic substrate predates
+  // Mani's recension; sub-tradition wires can bridge to Manichaean
+  // corpus.
+  'mandaean-corpus': {
+    label: 'Mandaean canonical scripture',
     available: true,
     sections: [
       { id: 'mandaean-texts', label: 'Mandaean canon · Ginza Rba + Book of John', color: '#6a7a8a', books: [
         { id: 'phase-4-017-ginza-rba', label: 'Ginza Rba (Great Treasure)' },
         { id: 'phase-4-018-mandaean-book-of-john', label: 'Mandaean Book of John' },
-              { id: 'phase-3-033-book-of-giants-qumran-manichaean', label: 'The Book of Giants' },
+        { id: 'phase-3-033-book-of-giants-qumran-manichaean', label: 'The Book of Giants' },
       ]},
+    ],
+  },
+  'manichaean-corpus': {
+    label: 'Manichaean canonical scripture',
+    available: true,
+    sections: [
       { id: 'manichaean-texts', label: 'Manichaean corpus · Cologne Codex + Kephalaia + Shabuhragan', color: '#5a6a7a', books: [
         { id: 'phase-4-014-cologne-mani-codex',        label: 'Cologne Mani Codex (~5th c. Greek)' },
         { id: 'phase-4-015-kephalaia-of-the-teacher',  label: 'Kephalaia of the Teacher (Coptic)' },
@@ -4573,12 +4586,24 @@ const SCRIPTURE_CORPORA = {
       ]},
     ],
   },
-  'afro-diasporic-liturgical': {
-    label: "Afro-Diasporic Religions (Vodou \u00b7 Santeria/Lucumi)",
+  // 2026-05-30 — corpus split per final-gap-audit (wf_fa6907d7-eff)
+  // + Brandon 1993 + Murphy 1988 + Brown 2003: Lucumí/Santería is
+  // Yoruba-derived (Cuban Catholic syncretism); Haitian Vodou is
+  // Fon/Ewe-derived (French/Spanish Catholic syncretism).
+  'haitian-vodou-corpus': {
+    label: 'Haitian Vodou liturgical canon',
     available: true,
     sections: [
-      { id: 'afro-diasporic-liturgical-main', label: "Afro-Diasporic Religions (Vodou \u00b7 Santeria/Lucumi)", color: '#5a6cc4', books: [
+      { id: 'haitian-vodou-main', label: 'Haitian Vodou', color: '#5a6cc4', books: [
         { id: 'phase-8-016-haitian-vodou-liturgical-tradition', label: 'Haitian Vodou Liturgical Tradition' },
+      ]},
+    ],
+  },
+  'lucumi-santeria-corpus': {
+    label: 'Lucumí / Santería canonical liturgy',
+    available: true,
+    sections: [
+      { id: 'lucumi-santeria-main', label: 'Lucumí / Santería', color: '#7a5cc4', books: [
         { id: 'phase-8-017-santeria-lucumi', label: 'Santería / Lucumí Liturgical Tradition' },
       ]},
     ],

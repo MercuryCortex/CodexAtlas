@@ -1,0 +1,187 @@
+{
+  "summary": "Final sweep for ANY remaining missing religion-wedges or corpora — reference-driven, exhaustive",
+  "agentCount": 8,
+  "logs": [],
+  "result": {
+    "summary": "Seven regional goblins surfaced ~40 candidate gaps; after Tier-1-source filtering and vault-doc cross-check, three categories emerge. HIGH PRIORITY (ship now): three structural fixes where vault docs already exist but are mis-routed — Manichaeism wedge wrongly points to cathar-bogomil corpus, Cathar/Bogomil needs its own wedge (4 vault docs orphaned), and Lucumí/Santería corpus needs to split off from afro-diasporic-liturgical bundle. MEDIUM PRIORITY (Lane A queue): 12 Tier-1-backed gaps that need new docs — Latin American syncretic traditions (Candomblé, Umbanda, Guadalupan/Nican Mopohua, Santa Muerte, Palo Mayombe, Kardecist Spiritism), three Hindu sub-canon splits (Gaudiya, Madhva, Ram-bhakti, SRF/Yogananda), two NRMs (Falun Gong, Sōka Gakkai), three African Initiated Church canons (Shembe, Kimbangu, Akan/Christaller), three ancient extinct (Etruscan, Phoenician/Punic, Mithraism corpus-split), and two Western esoteric (Golden Dawn, Gurdjieff/Fourth Way). LOW/SKIP: 15 items including thin single-doc sub-traditions (Mirabai-only Rajasthani Krishna-bhakti), oral-substrate ethnographies without indigenous scripture (BaKongo, Igbo), and small esoteric branches with thin vault relevance (Society of Inner Light, Martinism, OTO-as-split). After applying high-priority fixes the 55-wedge / 100-corpus taxonomy is structurally sound but Latin American syncretism and African Initiated Churches remain the two largest unfilled gaps requiring Lane A content batches.",
+    "high_priority_adds": [
+      {
+        "proposed_id": "manichaeism-wedge-rewire",
+        "label": "FIX: re-route manichaeism wedge from cathar-bogomil to mandaean-manichaean corpus",
+        "kind": "structural-fix-existing-wedge",
+        "parent_or_standalone": "manichaeism",
+        "docs_to_assign": [
+          "phase-4-014-cologne-mani-codex",
+          "phase-4-015-kephalaia-of-the-teacher",
+          "phase-4-016-shabuhragan",
+          "phase-3-033-book-of-giants-qumran-manichaean"
+        ],
+        "tier1_source": "BeDuhn 2000 The Manichaean Body (Johns Hopkins UP); Lieu 1992 Manichaeism in the Later Roman Empire and Medieval China (Mohr Siebeck); Gardner & Lieu 2004 Manichaean Texts from the Roman Empire (Cambridge UP)"
+      },
+      {
+        "proposed_id": "cathar-bogomil-wedge",
+        "label": "Cathar / Bogomil dualist Christianity (new standalone wedge)",
+        "kind": "religion-wedge",
+        "parent_or_standalone": "standalone",
+        "docs_to_assign": [
+          "phase-5-020-interrogatio-iohannis",
+          "phase-5-023-liber-de-duobus-principiis"
+        ],
+        "tier1_source": "Hamilton 1998 Christian Dualist Heresies in the Byzantine World c.650-c.1450 (Manchester UP, Manchester Medieval Sources Series); Lambert 2002 Medieval Heresy: Popular Movements from the Gregorian Reform to the Reformation (Blackwell)"
+      },
+      {
+        "proposed_id": "lucumi-santeria-corpus-split",
+        "label": "Split Lucumí/Santería out of afro-diasporic-liturgical into own corpus under lucumi-santeria wedge",
+        "kind": "corpus-split-vault-doc-ready",
+        "parent_or_standalone": "lucumi-santeria",
+        "docs_to_assign": [
+          "phase-8-017-santeria-lucumi"
+        ],
+        "tier1_source": "Brandon 1993 Santeria from Africa to the New World (Indiana UP); Brown 2003 Santería Enthroned (Chicago UP); Murphy 1988 Santería: African Spirits in America (Beacon); Cabrera 1954 El Monte (Ediciones C.R., Havana)"
+      }
+    ],
+    "medium_priority_adds": [
+      {
+        "proposed_id": "gaudiya-vaishnava-corpus",
+        "label": "Gaudiya Vaishnava canon (Chaitanya/Six Goswamis)",
+        "kind": "corpus-within-hinduism",
+        "reason": "Vault has phase-6-020-chaitanya-charitamrita with explicit Gaudiya sub-tradition tag; Bryant & Ekstrand 2004 + Flood 1996 treat as distinct sampradaya. Split into own corpus row within Hinduism wedge."
+      },
+      {
+        "proposed_id": "madhva-dvaita-corpus",
+        "label": "Madhva / Dvaita Vedanta canon",
+        "kind": "corpus-within-hinduism",
+        "reason": "Vault has phase-5-022-madhva-brahma-sutra-bhasya with explicit Dvaita tag; Sharma 1962 Motilal Banarsidass treats as distinct theistic-dualist sampradaya. Split into own corpus row."
+      },
+      {
+        "proposed_id": "ram-bhakti-hindi-corpus",
+        "label": "Hindi Ram-bhakti canon (Tulsidas/Ramanand)",
+        "kind": "corpus-within-hinduism",
+        "reason": "Vault has phase-6-019-tulsidas-ramcharitmanas + phase-6-030-vinaya-patrika both tagged Ram-bhakti Hindi; Lutgendorf 1991 UC Press treats as distinct from Sanskritic Vedanta. Two-doc corpus ready."
+      },
+      {
+        "proposed_id": "self-realization-fellowship-corpus",
+        "label": "SRF / Kriya Yoga (Yogananda lineage)",
+        "kind": "corpus-within-hinduism",
+        "reason": "Vault has phase-7-026-autobiography-of-a-yogi; Melton Encyclopedia of American Religions + Urban 2015 UC Press treat SRF as distinct NRM lineage. Currently mis-bundled with Aurobindo + Hindutva in hindu-modernism-corpus."
+      },
+      {
+        "proposed_id": "candomble-corpus",
+        "label": "Candomblé (Ketu/Jeje/Angola)",
+        "kind": "religion-wedge",
+        "reason": "tradition-candomble.md already exists with Tier-1 refs (Harding 2000 Indiana UP, Verger 1957, Bastide 1958); Lane A content batch needed for canonical doc nodes (Verger orixá-saint syncretism, Carneiro corpus)."
+      },
+      {
+        "proposed_id": "umbanda-corpus",
+        "label": "Umbanda (Brazilian Afro-Catholic-Spiritist)",
+        "kind": "religion-wedge",
+        "reason": "Brown 1986 Columbia UP + Ortiz 1978 + Matta e Silva 1956 primary; pontos-riscados symbol node already exists. Distinct from Candomblé per Brown 1986 (post-1908 Zélio de Moraes synthesis). Lane A batch required."
+      },
+      {
+        "proposed_id": "guadalupan-corpus",
+        "label": "Mexican Folk Catholicism / Guadalupan-Nahua syncretism",
+        "kind": "religion-wedge",
+        "reason": "Brading 2001 Cambridge UP + Lafaye 1976 Chicago; Nican Mopohua (1649) is canonical textual artifact. MASSIVE-WINS node (Tonantzin → Guadalupe) currently invisible. Lane A batch required."
+      },
+      {
+        "proposed_id": "santa-muerte-corpus",
+        "label": "Santa Muerte cult (Mexican folk-Catholic 1965+)",
+        "kind": "religion-wedge",
+        "reason": "Chesnut 2012 Oxford UP + Lomnitz 2005 Zone; Romo's Ritual Libro Santo (1998) + seven-color veladora doctrine codified. ~10-12M adherents. Lane A batch required."
+      },
+      {
+        "proposed_id": "palo-mayombe-corpus",
+        "label": "Palo Mayombe / Palo Monte (Cuban Bantu-Kongo)",
+        "kind": "religion-wedge",
+        "reason": "Cabrera 1954 + Ochoa 2010 California + Palmié 2002 Duke; structurally distinct from Yoruba-Santería (BaKongo not Yoruba). Lane A batch required."
+      },
+      {
+        "proposed_id": "kardecist-spiritism-corpus",
+        "label": "Kardecist Spiritism (Allan Kardec pentateuch)",
+        "kind": "religion-wedge",
+        "reason": "Hess 1991 Penn State + Sharp 2006 Lexington; the 'Spiritist Pentateuch' (1857-1868) is codified canonical corpus. Brazil has largest global Spiritist population. tradition-spiritualism.md mentions Kardec but no doc nodes. Lane A batch required."
+      },
+      {
+        "proposed_id": "etruscan-corpus",
+        "label": "Etruscan religion (Etrusca Disciplina)",
+        "kind": "religion-wedge",
+        "reason": "De Grummond 2006 UPenn + De Grummond & Simon 2006 UTexas + Turfa 2012 Cambridge UP; Liber Linteus Zagrabiensis + Pyrgi Tablets + Piacenza Liver are canonical primary sources. Zero vault coverage today. Lane A batch required."
+      },
+      {
+        "proposed_id": "phoenician-punic-corpus",
+        "label": "Phoenician / Punic religion",
+        "kind": "religion-wedge",
+        "reason": "Lipinski 1995 Peeters Studia Phoenicia XIV + Quinn 2018 Princeton UP; Sanchuniathon fragments + Marseille Tariff + Eshmunazar inscription. Lipinski explicitly distinguishes from Canaanite-Ugaritic (already covered). Lane A batch required."
+      },
+      {
+        "proposed_id": "roman-mithraism-corpus",
+        "label": "Roman Mithraism (corpus split from mystery-cults)",
+        "kind": "corpus-split-blocked-by-Lane-A",
+        "reason": "Beck 2006 Oxford UP + Clauss 2000 Edinburgh + Vermaseren CIMRM 1956-60; partial vault coverage via PGM IV Mithras Liturgy embed. Beck argues distinct cult with own initiation grades + tauroctony canon. Lane A batch for dedicated nodes."
+      },
+      {
+        "proposed_id": "falun-gong-corpus",
+        "label": "Falun Gong / Falun Dafa",
+        "kind": "religion-wedge",
+        "reason": "Ownby 2008 Oxford UP + Penny 2012 Chicago UP; Zhuan Falun (1995) treated as canonical scripture. Lane A batch required."
+      },
+      {
+        "proposed_id": "soka-gakkai-corpus",
+        "label": "Sōka Gakkai / Nichiren Shōshū (Ikeda + Gosho)",
+        "kind": "religion-wedge",
+        "reason": "Métraux 1994 UP of America + Stone 1999 Hawaii UP + McLaughlin 2019 Hawaii UP; Nichiren Gosho + Ikeda Human Revolution. Lane A batch required (could nest under Buddhism as corpus-split alternatively)."
+      },
+      {
+        "proposed_id": "hermetic-golden-dawn-corpus",
+        "label": "Hermetic Order of the Golden Dawn",
+        "kind": "religion-wedge",
+        "reason": "Regardie 1937-40 (Llewellyn 1989) + Howe 1972 Routledge; Cipher Manuscripts + Regardie compendium are canonical. Vault has Regardie person node but no document node. Lane A batch required."
+      },
+      {
+        "proposed_id": "gurdjieff-fourth-way-corpus",
+        "label": "Gurdjieff / Fourth Way",
+        "kind": "religion-wedge",
+        "reason": "Webb 1980 Thames & Hudson + Moore 1991 Element + Hanegraaff 2006 Brill Dictionary; Beelzebub's Tales (1950) + Ouspensky In Search of the Miraculous (1949). Vault has Gurdjieff + Ouspensky person nodes but no document nodes. Lane A batch required."
+      },
+      {
+        "proposed_id": "african-initiated-churches-wedge",
+        "label": "African Initiated Churches (parent wedge)",
+        "kind": "religion-wedge",
+        "reason": "Sundkler 1948/1961 Oxford UP foundational; covers Shembe Izihlabelelo (Gunner 2004 Brill), Kimbangu revelations (MacGaffey 1983 Indiana UP + Martin 1975 Blackwell). EJCSK has ~10M adherents. Lane A batch required for 3 sub-corpus docs."
+      },
+      {
+        "proposed_id": "akan-religion-corpus",
+        "label": "Akan (Asante) Religion",
+        "kind": "religion-wedge",
+        "reason": "Christaller 1879 proverb collection + Danquah 1944 Akan Doctrine of God + Gyekye 1987 Cambridge UP; tradition-akan.md + nyame.md exist but no 02_documents nodes. Lane A batch required."
+      }
+    ],
+    "low_priority_or_skip": [
+      "krishna-bhakti-rajasthani-corpus — only one doc (Mirabai bhajans); leave bundled in vaishnava-canon, not worth splitting",
+      "hasidic-dynasties-corpus — vault has zero Hasidic primary-text docs; defer until Lane A ships Tanya + Likutei Moharan",
+      "tibetan-school-specific-corpora — vault has only Bardo Thodol (Nyingma terma); no Lamrim/Mahamudra/Lamdre to split against",
+      "japanese-school-specific-corpora — vault has only Shobogenzo (Soto); no Tendai/Shingon/Nichiren/Rinzai docs to split against",
+      "jesuit-spirituality-corpus — vault has no Ignatius Spiritual Exercises / Constitutiones / Ratio Studiorum docs; Loyola is person-only",
+      "franciscan-spirituality-corpus — vault has no Bonaventure Itinerarium / Fioretti / Regula Bullata docs; Bonaventure is person-only",
+      "russian-old-believer-corpus — Avvakum Life + Pomorskie Otvety canonical but no vault docs; defer to Lane A pickup",
+      "shugendo-corpus — En no Gyōja attributed texts have shaky attribution; thin doctrinal canon vs ritual praxis; defer",
+      "thai-forest-paritta-corpus — Catubhanavarapali + Lokaniti are ritual not doctrinal; bundle under buddhism if added later",
+      "filipino-folk-catholic-corpus — Pasyon Pilapil is vernacular Passion narrative not a separable canon; could fold into Catholicism corpus",
+      "iskcon-bhaktivedanta-corpus — Prabhupada purports could nest inside gaudiya-vaishnava-corpus once that exists; not standalone-worthy",
+      "brahma-kumaris-murli-corpus — ongoing-revelation Murli is praxis-bound not text-bound; thin canon; defer",
+      "unification-divine-principle — Divine Principle is canonical but vault has zero adjacent docs; very-low connectivity to atlas spine",
+      "kimbanguism-corpus — REDIRECT: rolled into african-initiated-churches medium-priority wedge above instead of standalone",
+      "jehovahs-witnesses-corpus — NWT + Watchtower function more as interpretive lens on Bible than separable canon; defer",
+      "seventh-day-adventist-corpus — Ellen White writings are 'lesser light' alongside Bible; thin standalone canon; defer",
+      "society-inner-light — Dion Fortune adjacent to Golden Dawn; bundle into Western esoteric current rather than separate wedge",
+      "martinism — Pasqually/Saint-Martin canon real but very thin atlas connectivity; defer",
+      "ordo-templi-orientis — could split thelema-corpus later if Liber XV Gnostic Mass node ships; defer",
+      "bantu-kongo-religion — MacGaffey is ethnography not native canon; oral-substrate, lower confidence; tradition node exists",
+      "igbo-religion — Onunwa + Metuh + Achebe are ethnography not indigenous scripture; oral-substrate; tradition node exists",
+      "anglo-american-spiritualism-corpus — Davis Principles of Nature 1847 + Conan Doyle History 1926 thin canonical weight; could fold into kardecist-spiritism-corpus or skip",
+      "21-divisiones-corpus — Dominican Vudú liturgical corpus exists but ethnographic-only sources; defer",
+      "maria-lionza-corpus — Pollak-Eltz canonical monograph but praxis-only canon; defer"
+    ],
+    "coverage_assessment": "After applying the three HIGH-PRIORITY structural fixes (Manichaeism rewire, Cathar/Bogomil wedge split, Lucumí/Santería corpus split) the 55-wedge / 100-corpus taxonomy becomes structurally sound — every existing vault doc routes to a canonically-correct corpus and wedge. Two major content gaps remain blocked on Lane A batches: Latin American syncretic traditions (Candomblé, Umbanda, Guadalupan/Nican Mopohua, Santa Muerte, Palo Mayombe, Kardecist Spiritism — 6 wedges, all Tier-1-sourced) and African Initiated Churches (Shembe, Kimbangu, Akan — 1 parent wedge + 3 corpora). After those land, the only remaining categories below scholarship-attention threshold are oral-substrate African religions (BaKongo, Igbo — ethnography-only, no indigenous scripture), school-specific sub-canons inside Tibetan/Japanese Buddhism + Jesuit/Franciscan Catholicism (blocked by zero vault docs in each), and thin Western esoteric branches (Martinism, Society of Inner Light) — all of which are correctly deferred until Lane A produces foundational documents to anchor them."
+  }
+}
