@@ -3275,6 +3275,14 @@ const SCRIPTURE_CORPORA = {
         { id: 'phase-2-007-hebrew-bible-e-source',    label: 'E · Elohist source' },
         { id: 'phase-2-011-hebrew-bible-d-source',    label: 'D · Deuteronomist' },
         { id: 'phase-2-018-hebrew-bible-p-source',    label: 'P · Priestly source' },
+              { id: 'codex-sinaiticus', label: 'Codex Sinaiticus' },
+              { id: 'codex-vaticanus', label: 'Codex Vaticanus' },
+              { id: 'document-exodus', label: 'Document Exodus' },
+              { id: 'document-ezekiel', label: 'Document Ezekiel' },
+              { id: 'document-leviticus', label: 'Document Leviticus' },
+              { id: 'document-matthew', label: 'Document Matthew' },
+              { id: 'document-numbers', label: 'Document Numbers' },
+              { id: 'phase-2-005-davidic-psalms', label: 'Davidic Psalms' },
       ]},
       { id: 'former-prophets', label: 'Former Prophets · Deuteronomistic History', color: '#8aa07a', books: [
         { id: 'phase-2-010-hebrew-bible-early-prophets', label: 'Former Prophets' },
@@ -3507,6 +3515,7 @@ const SCRIPTURE_CORPORA = {
       { id: 'vedic-samhitas', label: 'Saṃhitās · Vedic hymns (1500–900 BCE)', color: '#e08a3a', books: [
         { id: 'phase-2-001-rig-veda-family-books', label: 'Ṛg-Veda · family books' },
         { id: 'phase-2-003-atharva-veda',          label: 'Atharva-Veda' },
+              { id: 'phase-1-031-rigveda', label: 'Rigveda' },
       ]},
       { id: 'vedic-brahmanas-aranyakas', label: 'Brāhmaṇas / Āraṇyakas · ritual + forest texts', color: '#c47453', books: [
         { id: 'phase-2-006-brahmanas-aranyakas', label: 'Brāhmaṇas / Āraṇyakas (overview)' },
@@ -3558,6 +3567,8 @@ const SCRIPTURE_CORPORA = {
       { id: 'buddhist-pali-earliest', label: 'Pāli earliest stratum (~-450 to -250)', color: '#c89a3a', books: [
         { id: 'phase-2-016-early-buddhist-suttas', label: 'Sutta Nipāta · Aṭṭhakavagga + Pārāyanavagga' },
         { id: 'phase-2-029-dhammapada',            label: 'Dhammapada' },
+              { id: 'mahaparinibbana-sutta', label: 'Mahāparinibbāna Sutta' },
+              { id: 'tipitaka', label: 'Tipitaka' },
       ]},
       { id: 'buddhist-indo-greek', label: 'Indo-Greek frontier dialogue (~-150 to +100)', color: '#a07050', books: [
         { id: 'phase-3-029-milindapanha',          label: 'Milindapañha · Questions of King Milinda' },
@@ -3601,6 +3612,7 @@ const SCRIPTURE_CORPORA = {
     sections: [
       { id: 'avesta-old-gathic', label: 'Old Avestan · Gāthās of Zarathustra', color: '#5a6cc4', books: [
         { id: 'phase-2-002-gathas-of-zarathustra', label: 'Gāthās of Zarathustra' },
+              { id: 'avesta', label: 'The Avesta — Zoroastrian Sacred Scriptures' },
       ]},
       { id: 'avesta-younger', label: 'Younger Avesta · Yasna corpus', color: '#4a5aa0', books: [
         { id: 'phase-2-004-yasna-younger-avesta', label: 'Yasna · Younger Avesta' },
@@ -3626,6 +3638,9 @@ const SCRIPTURE_CORPORA = {
     sections: [
       { id: 'shinto-oldest-chronicle', label: 'Kojiki · Record of Ancient Matters (712 CE)', color: '#c88a3a', books: [
         { id: 'phase-8-019-kojiki', label: 'Kojiki (712 CE)' },
+              { id: 'kojiki', label: 'Kojiki' },
+              { id: 'nihon-shoki', label: 'Nihon Shoki' },
+              { id: 'shoku-nihongi', label: 'Shoku Nihongi' },
       ]},
       { id: 'shinto-official-chronicle', label: 'Nihon Shoki · Chronicles of Japan (720 CE)', color: '#a87030', books: [
         { id: 'phase-8-020-nihon-shoki', label: 'Nihon Shoki (720 CE)' },
@@ -3646,6 +3661,7 @@ const SCRIPTURE_CORPORA = {
     sections: [
       { id: 'sufi-persian-rumi', label: 'Rumi · Masnavī-ye Maʿnavī (~1258–1273)', color: '#5a7a8f', books: [
         { id: 'phase-5-054-rumi-masnavi', label: 'Rumi · Masnavī (Spiritual Verses)' },
+              { id: 'phase-5-025-rumi-masnavi', label: 'Masnavi-i Maʿnavi (The Spiritual Couplets)' },
       ]},
       { id: 'sufi-persian-attar', label: 'Attar · Conference of the Birds (~1177)', color: '#4a6a7a', books: [
         { id: 'phase-5-051-attar-conference-of-birds', label: 'Attar · Manṭiq al-Ṭayr' },
@@ -3693,6 +3709,7 @@ const SCRIPTURE_CORPORA = {
     sections: [
       { id: 'kabbalah-sefer-yetzirah', label: 'Sefer Yetzirah · Book of Formation (3rd–6th c.)', color: '#6a5a9a', books: [
         { id: 'phase-5-012-sefer-yetzirah', label: 'Sefer Yetzirah (Book of Formation)' },
+              { id: 'phase-5-064-zohar', label: 'Zohar (Sefer ha-Zohar)' },
       ]},
       { id: 'kabbalah-bahir', label: 'Sefer ha-Bahir · Book of Brightness (~12th c.)', color: '#7a6aaa', books: [
         { id: 'phase-5-026-sefer-ha-bahir', label: 'Sefer ha-Bahir' },
@@ -3788,6 +3805,7 @@ const SCRIPTURE_CORPORA = {
       { id: 'mandaean-texts', label: 'Mandaean canon · Ginza Rba + Book of John', color: '#6a7a8a', books: [
         { id: 'phase-4-017-ginza-rba', label: 'Ginza Rba (Great Treasure)' },
         { id: 'phase-4-018-mandaean-book-of-john', label: 'Mandaean Book of John' },
+              { id: 'phase-3-033-book-of-giants-qumran-manichaean', label: 'The Book of Giants' },
       ]},
       { id: 'manichaean-texts', label: 'Manichaean corpus · Cologne Codex + Kephalaia + Shabuhragan', color: '#5a6a7a', books: [
         { id: 'phase-4-014-cologne-mani-codex',        label: 'Cologne Mani Codex (~5th c. Greek)' },
@@ -3838,6 +3856,7 @@ const SCRIPTURE_CORPORA = {
         { id: 'phase-1-024-shijing', label: 'Shijing · Classic of Poetry' },
         { id: 'phase-1-025-shujing', label: 'Shujing · Classic of Documents' },
         { id: 'phase-1-026-yijing',  label: 'Yijing (I Ching) · Classic of Changes' },
+              { id: 'phase-2-042-yi-jing-i-ching', label: 'Yi Jing (易經) / I Ching' },
       ]},
       { id: 'confucian-foundational', label: 'Foundational Confucian · Analects → Mengzi → Xunzi', color: '#8a6c5a', books: [
         { id: 'phase-2-015-analects-of-confucius', label: 'Analects of Confucius' },
@@ -3911,6 +3930,7 @@ const SCRIPTURE_CORPORA = {
     sections: [
       { id: 'dao-foundational', label: 'Foundational · Daodejing (Lǎozǐ)', color: '#5a9a8f', books: [
         { id: 'phase-2-014-daodejing', label: 'Daodejing (Lǎozǐ)' },
+              { id: 'tao-te-ching', label: 'Tao Te Ching' },
       ]},
       { id: 'dao-inner-chapters', label: 'Inner Chapters · Zhuāngzǐ', color: '#4a857a', books: [
         { id: 'phase-2-022-zhuangzi', label: 'Zhuāngzǐ' },
@@ -3942,6 +3962,7 @@ const SCRIPTURE_CORPORA = {
       { id: 'nhc-i-jung', label: 'Codex I · Jung Codex', color: '#a87a4a', books: [
         { id: 'phase-4-003-gospel-of-truth',                   label: 'I,3 · Gospel of Truth' },
         { id: 'phase-4-059-tripartite-tractate',               label: 'I,5 · Tripartite Tractate' },
+              { id: 'gospel-of-judas-sethian', label: 'Gospel of Judas' },
       ]},
       { id: 'nhc-ii', label: 'Codex II', color: '#b87850', books: [
         { id: 'phase-4-002-apocryphon-of-john',                label: 'II,1 · Apocryphon of John' },
@@ -3990,6 +4011,7 @@ const SCRIPTURE_CORPORA = {
         { id: 'phase-3-021-hermetic-corpus-earliest',          label: 'Hermetica · earliest stratum (overview)' },
         { id: 'phase-4-011-corpus-hermeticum-i',               label: 'CH I · Poimandres' },
         { id: 'phase-4-075-corpus-hermeticum-xiii-rebirth',    label: 'CH XIII · Rebirth dialogue' },
+              { id: 'corpus-hermeticum', label: 'Corpus Hermeticum' },
       ]},
       { id: 'hermetica-coptic-nhc-vi', label: 'Coptic Hermetica · NHC VI cluster', color: '#a89060', books: [
         { id: 'phase-4-013-discourse-on-the-eighth-and-ninth', label: 'NHC VI,6 · Eighth & Ninth' },
@@ -4023,6 +4045,8 @@ const SCRIPTURE_CORPORA = {
         { id: 'phase-1-001-kesh-temple-hymn',         label: 'Kesh Temple Hymn (~-2600 BCE) · oldest literary text' },
         { id: 'phase-1-003-enheduanna-hymns',         label: 'Enheduanna Hymns (~-2285 BCE) · first named author' },
         { id: 'phase-1-016-eridu-genesis-flood',      label: 'Eridu Genesis / Sumerian Flood account (~-1600 BCE)' },
+              { id: 'phase-1-006-atrahasis', label: 'Atrahasis' },
+              { id: 'phase-1-019-enuma-anu-enlil', label: 'Enūma Anu Enlil' },
       ]},
       { id: 'akkadian-epic', label: 'Akkadian epic tradition (~-1800 to -700 BCE)', color: '#b07040', books: [
         { id: 'phase-1-004-gilgamesh-old-babylonian', label: 'Epic of Gilgamesh' },
@@ -4436,6 +4460,10 @@ const SCRIPTURE_CORPORA = {
         { id: 'phase-6-030-vinaya-patrika', label: 'Vinaya Patrikā (The Petition of Humility)' },
         { id: 'phase-6-013-mirabai-bhajans', label: 'Mirabai\'s Bhajans (devotional songs to Krishna)' },
         { id: 'phase-6-020-chaitanya-charitamrita', label: 'Chaitanya Charitamrita + Shikshashtakam' },
+              { id: 'bhagavata-purana', label: 'Bhagavata Purana' },
+              { id: 'mahabharata', label: 'Mahabharata' },
+              { id: 'phase-3-095-mahabharata', label: 'Mahabharata' },
+              { id: 'ramayana', label: 'Ramayana' },
       ]},
     ],
   },
@@ -4746,6 +4774,7 @@ const SCRIPTURE_CORPORA = {
     sections: [
       { id: 'theravada-jataka-corpus-main', label: "Theravada Buddhism", color: '#7a4a9a', books: [
         { id: 'jataka-tales', label: 'Jataka Tales' },
+              { id: 'divyavadana', label: 'Divyāvadāna' },
       ]},
     ],
   },
@@ -4821,6 +4850,9 @@ const SCRIPTURE_CORPORA = {
         { id: 'phase-5-002b-diamond-sutra', label: 'Diamond Sutra (Vajracchedikā Prajñāpāramitā)' },
         { id: 'diamond-sutra-868', label: 'Diamond Sutra 868' },
         { id: 'avatamsaka-sutra', label: 'Avatamsaka Sutra' },
+              { id: 'gandavyuha-sutra', label: 'Gandavyuha Sutra' },
+              { id: 'lotus-sutra', label: 'Lotus Sutra' },
+              { id: 'vimalakirti-sutra', label: 'Vimalakirti Sutra' },
       ]},
     ],
   },
