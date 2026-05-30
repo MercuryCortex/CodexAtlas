@@ -6511,35 +6511,29 @@
           const withinWindow = local._lastClickT && (now - local._lastClickT) < DBL_WINDOW_MS;
           // ALWAYS toggle first — selection feedback is instant.
           toggleLock(hit);
-          // 2026-05-27 — In Codex (scriptures) mode, a click on a
-          // reader-ready scripture-book dot ALSO opens the reader
-          // for that book + syncs the Codex pill state. John feedback:
-          // "i still click on the books and it just shows always the
-          // families" — fix is to hook openReader on the click, not
-          // just toggleLock.
+          // 2026-05-30 — Scriptures mode: book-click behaves EXACTLY
+          // like Atlas deity-click. John: "clicking on these nodes
+          // should add the TAB like deities. NOT SCRPTURE, SAME
+          // FUNCIONLITY WORKFLOW". No reader overlay, no corpus
+          // drill — just the canonical Atlas tab-open quartet
+          // (openTabId / _setPanelOpen / _renderTabs / _renderSidePanel).
+          // toggleLock(hit) already fired above; lockedSet feeds
+          // local.deityTabs, so the tab will render on the right
+          // edge automatically. The four mutations below are the
+          // missing piece that mirrors Atlas single-click behavior.
           //
-          // 2026-05-30 — All-Families / All-Scriptures view gate.
-          // John: "when i click a NODE in the all families all scripture -
-          // IT JUMPS to that family. IT SHOULD NOT — A FUCKING REPLICA
-          // LIKE ATLAS — BOOKS OF THE FAMILIES OF THE FUCKING RELIGIONS
-          // FULL STOPO." When BOTH religion and corpus are unset
-          // (= the All-Families/All-Scriptures view), do NOT call
-          // setBook() — that mutates state.corpusId + state.religionId
-          // and re-routes the wheel into a single-corpus drill, the
-          // visible "jump". Reader still opens; wheel stays put.
-          if (local.mode && local.mode.id === 'scriptures' && local.codexControls && typeof local.codexControls.docNodeToTextKey === 'function') {
-            try {
-              const tk = local.codexControls.docNodeToTextKey(hit);
-              if (tk) {
-                const onAllFamiliesView = (local.codexReligion == null && local.codexCorpus == null);
-                if (!onAllFamiliesView) {
-                  local.codexControls.setBook(tk);
-                }
-                if (local.scriptureReader && typeof local.scriptureReader.open === 'function') {
-                  local.scriptureReader.open(tk);
-                }
-              }
-            } catch (_) { /* swallow — click-feedback already fired */ }
+          // Supersedes the 2026-05-27 reader-open + 2026-05-30
+          // All-Families gate: both reader.open() and setBook() are
+          // removed from the click pipeline. Reader-open is now a
+          // separate affordance (tab content), not a wheel-click
+          // side-effect. setBook() drill on corpus/Books mode is
+          // dropped here too — drilling is a navigation gesture,
+          // not a node-click gesture.
+          if (local.mode && local.mode.id === 'scriptures') {
+            local.openTabId = hit;
+            if (typeof local._setPanelOpen   === 'function') local._setPanelOpen(true);
+            if (typeof local._renderTabs     === 'function') local._renderTabs();
+            if (typeof local._renderSidePanel=== 'function') local._renderSidePanel();
           }
           if (sameAsLast && withinWindow) {
             // DOUBLE detected post-hoc. The toggle just fired may
