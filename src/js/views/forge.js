@@ -2948,77 +2948,18 @@
           }
           if (color) colorByReligion[label] = color;
         }
-        // 2026-05-30 LENS-OPEN — Codex is now a lens on the FULL
-        // documents corpus (515 docs, not the prior 208-doc subset).
-        // Non-corpus docs route via family→religion-label inverse so
-        // they land in the right religion wedge instead of dumping ~300
-        // into OTHER. Examples: Philo (family=Israelite, not in any
-        // SCRIPTURE_CORPORA section) lands in JUDAISM; Plutarch's
-        // ethical works (family=Greek) land in GREEK (ANCIENT);
-        // Mandaean/Manichaean works (family=Mandaean/Manichaean) land
-        // in GNOSTIC / DUALIST. Families without a religion mapping
-        // (Academic, Mystery, Native-American, etc.) fall to OTHER —
-        // a real "no-religion" bucket, not the prior catch-all.
-        //
-        // Built once per page boot off RELIGION_TO_FAMILY (the
-        // religion → family map above). Some families map to multiple
-        // religions (Vedic → Hinduism + Jainism + Sikhism); the
-        // dominant religion wins per the explicit override table.
-        // Why: rule #9 still holds — the engine grouping is ONE
-        // primitive, no per-religion fork. The family-to-religion
-        // mapping is just a fallback projection for docs the corpus
-        // taxonomy doesn't cover.
-        if (!local._familyToReligionLabel) {
-          const f2r = new Map();
-          const rels = window.SCRIPTURE_RELIGIONS;
-          // First pass: invert RELIGION_TO_FAMILY (last write wins, but
-          // explicit DOMINANT_RELIGION overrides next loop nail it down)
-          for (const religionId in RELIGION_TO_FAMILY) {
-            const familyKey = RELIGION_TO_FAMILY[religionId];
-            const rel = rels[religionId];
-            if (!rel) continue;
-            const label = rel.label || religionId;
-            if (!f2r.has(familyKey)) f2r.set(familyKey, label);
-          }
-          // Explicit dominant mapping for ambiguous families so the
-          // first-write-wins above doesn't depend on object-key order.
-          const DOMINANT_RELIGION_LABEL = {
-            'Christian':     'Christianity',
-            'Israelite':     'Judaism',
-            'Islamic':       'Islam',
-            'Vedic':         'Hinduism',
-            'Buddhist':      'Buddhism',
-            'Zoroastrian':   'Zoroastrianism',
-            'Egyptian':      (rels['egyptian'] && rels['egyptian'].label) || 'Egyptian (Ancient)',
-            'Greek':         (rels['greek'] && rels['greek'].label)       || 'Greek (Ancient)',
-            'Mesopotamian':  (rels['mesopotamian'] && rels['mesopotamian'].label) || 'Mesopotamian (Ancient)',
-            'Norse':         (rels['norse'] && rels['norse'].label)       || 'Norse / Finno-Ugric',
-            'Mesoamerican':  (rels['mesoamerican'] && rels['mesoamerican'].label) || 'Mesoamerican',
-            'Shinto':        (rels['shinto'] && rels['shinto'].label)     || 'Shintō',
-            'Chinese':       (rels['chinese'] && rels['chinese'].label)   || 'Chinese',
-            'Hermetic':      (rels['hermetic'] && rels['hermetic'].label) || 'Hermetic',
-            'Gnostic':       (rels['gnostic-dualist'] && rels['gnostic-dualist'].label) || 'Gnostic / Dualist',
-            'Mandaean':      (rels['gnostic-dualist'] && rels['gnostic-dualist'].label) || 'Gnostic / Dualist',
-            'Manichaean':    (rels['gnostic-dualist'] && rels['gnostic-dualist'].label) || 'Gnostic / Dualist',
-            'Modern-Esoteric': (rels['modern-syncretic'] && rels['modern-syncretic'].label) || 'Modern Syncretic',
-            'Neoplatonist':  (rels['hermetic'] && rels['hermetic'].label) || 'Hermetic',
-            'Slavic-Finnic': (rels['norse'] && rels['norse'].label)       || 'Norse / Finno-Ugric',
-          };
-          for (const fam in DOMINANT_RELIGION_LABEL) {
-            f2r.set(fam, DOMINANT_RELIGION_LABEL[fam]);
-          }
-          local._familyToReligionLabel = f2r;
-        }
-        const F2R = local._familyToReligionLabel;
+        // 2026-05-30 — books not in any SCRIPTURE_CORPORA fall back to
+        // 'Other', NOT n.family. The n.family fallback was creating
+        // duplicate wedges next to the religion-wedge — e.g. a Christian-
+        // family doc not registered in the Bible corpus produced a CHRISTIAN
+        // wedge alongside the CHRISTIANITY corpus-religion wedge; same
+        // for MESOPOTAMIAN + MESOPOTAMIAN (ANCIENT) and the VEDIC orphan.
+        // Per the prior handoff's queued 5-line fix + cardinal rule #9:
+        // grouping is ONE primitive, no per-religion fork-by-author-family.
         _codexGroupBy = (n => {
           if (!n) return 'Other';
           const r = BRI.idx.get(n.id);
           if (r) return r;
-          const fam = n.family;
-          if (fam) {
-            const mapped = F2R.get(fam);
-            if (mapped) return mapped;
-          }
           return 'Other';
         });
         _codexGroupOrder = BRI.orderedReligionLabels.slice();

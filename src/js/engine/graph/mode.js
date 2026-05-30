@@ -324,31 +324,41 @@
       return nodes.filter(n => n && n.type === 'person' && authorSet.has(n.id));
     }
 
-    // Scriptures mode (2026-05-28; extended 2026-05-30; OPENED 2026-05-30):
+    // Scriptures mode (2026-05-28; extended 2026-05-30):
+    //   – Curated SCRIPTURE_IDS set above (the original 108-id whitelist,
+    //     hand-picked when SCRIPTURE_CORPORA was thinner), UNION
+    //   – Every book.id declared in window.SCRIPTURE_CORPORA[*].sections[*].books[*]
+    //     (auto-derived once, cached on first call — kills the
+    //     8-of-10-Egyptian-books-hidden bug John screenshot-flagged
+    //     2026-05-30: Pyramid Texts / Coffin Texts / Book of the Dead /
+    //     Amarna Letters / Manetho / Diodorus / Plutarch / Herodotus
+    //     were declared in egyptian-scripture corpus but NOT in the
+    //     hand-curated whitelist, so the All-families wheel only
+    //     showed Great Hymn to Aten + Memphite Theology).
     //
-    //   Per John 2026-05-30: the Codex view is a LENS on the documents
-    //   corpus, not a subset filter. "the idea was always to be THE SAME
-    //   STUFF as the rest — THE ONLY DIFRENCE is that on the SCRIPTURE
-    //   SECTION - it unlocks FURTHER buttons to filter until we get to
-    //   the scripture". The prior SCRIPTURE_IDS allowlist + SCRIPTURE_
-    //   CORPORA registration excluded 307 of 515 documents from the
-    //   Codex view (only 208 docs survived), forking the chart from
-    //   Atlas/Documents. Atlas and Codex were supposed to be the SAME
-    //   chart with different drill controls — not different node sets.
-    //
-    //   New semantics: scriptures mode = ALL documents. SCRIPTURE_CORPORA
-    //   is used only as a GROUPING primitive (by _codexGroupBy in
-    //   forge.js), not as a node-set gate. Drill controls (Religion →
-    //   Corpus → Book → Lens → Read) become FILTERS layered on top of
-    //   this full node set — implemented progressively in follow-up
-    //   commits (b) + (c).
-    //
-    //   The old SCRIPTURE_IDS constant + the auto-derive code above are
-    //   preserved for now in case Lane A wants to migrate it to a
-    //   per-node `canonical-corpus:` YAML field. Until that lands the
-    //   set is just dormant data.
+    //   Lane A follow-up still applies — when each node gets a
+    //   `canonical-corpus:` YAML field, both halves dissolve. Until
+    //   then this auto-derive keeps the wheel in sync with the
+    //   corpus declarations.
     if (mode === 'scriptures') {
-      return nodes.filter(n => n && n.type === 'document');
+      if (!filterNodesByMode._scriptureSet) {
+        const s = new Set(SCRIPTURE_IDS);
+        const C = (typeof window !== 'undefined') ? window.SCRIPTURE_CORPORA : null;
+        if (C && typeof C === 'object') {
+          for (const corpusKey in C) {
+            const corpus = C[corpusKey];
+            if (!corpus || !corpus.sections) continue;
+            for (const sec of corpus.sections) {
+              for (const book of (sec.books || [])) {
+                if (book && book.id) s.add(book.id);
+              }
+            }
+          }
+        }
+        filterNodesByMode._scriptureSet = s;
+      }
+      const SET = filterNodesByMode._scriptureSet;
+      return nodes.filter(n => n && n.type === 'document' && SET.has(n.id));
     }
 
     // Figures mode (2026-05-28): persons lens, intersected with the
