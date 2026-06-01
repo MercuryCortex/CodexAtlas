@@ -4,6 +4,7 @@ id: "phase-5-037-fetha-nagast"
 title: "Fetha Nagast (Law of the Kings)"
 aka: ["Fəth Nägäśt", "Law of the Kings", "ፍትሐ ነገሥት"]
 tradition: "[[tradition-ethiopian-orthodox-tewahedo]]"
+canonical-corpus: ["ethiopic-tewahedo-canon"]
 sub-tradition: "Ethiopian Christian-canonical legal code"
 label: "conciliar"
 date-composed-earliest: 1230

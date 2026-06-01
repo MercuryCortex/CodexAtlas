@@ -4,6 +4,7 @@ id: "phase-6-015-luria-vital-etz-chayyim"
 title: "Etz Chayyim (Tree of Life) — Lurianic Kabbalah transmitted via Chaim Vital"
 aka: ["Eitz Chaim", "Sefer Etz Chayyim", "the Lurianic corpus"]
 tradition: "Jewish Kabbalah"
+canonical-corpus: ["kabbalah"]
 sub-tradition: "Lurianic (Safed school)"
 label: "kabbalistic"
 date-composed-earliest: 1570

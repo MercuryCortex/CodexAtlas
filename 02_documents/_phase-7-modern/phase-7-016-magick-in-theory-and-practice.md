@@ -4,6 +4,7 @@ id: "phase-7-016-magick-in-theory-and-practice"
 title: "Magick in Theory and Practice"
 aka: ["Book 4 Part III", "Liber ABA Part III"]
 tradition: "Thelema"
+canonical-corpus: ["thelema-corpus"]
 sub-tradition: "Crowleyan ceremonial magick"
 label: "new-religious-movement"
 date-composed-earliest: 1929

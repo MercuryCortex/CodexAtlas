@@ -8,6 +8,7 @@ date-composed: 1017
 date-range: "1017–1043 CE"
 language: "Arabic"
 tradition: "[[tradition-druze]]"
+canonical-corpus: ["druze-corpus"]
 genre: "epistolary-theology / esoteric-canon"
 phase: 5
 region: "Fatimid Cairo, then Levant"

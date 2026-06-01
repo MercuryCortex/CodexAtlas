@@ -4,6 +4,7 @@ id: "phase-3-010-sibylline-oracles"
 title: "Sibylline Oracles (Jewish strata, books 3, 4, 5)"
 aka: ["Oracula Sibyllina", "Jewish Sibyllines"]
 tradition: "Hellenistic Judaism (with later Christian editing)"
+canonical-corpus: ["bible"]
 sub-tradition: "Egyptian / Diaspora Jewish apocalyptic propaganda"
 label: "pseudepigraphal-jewish"
 date-composed-earliest: -160

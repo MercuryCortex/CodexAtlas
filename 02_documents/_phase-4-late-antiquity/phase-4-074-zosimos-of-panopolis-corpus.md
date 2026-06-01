@@ -4,6 +4,7 @@ id: "phase-4-074-zosimos-of-panopolis-corpus"
 title: "Zosimos of Panopolis — Alchemical Corpus (including the Visions)"
 aka: ["*Cheirokmeta*", "*Things Done by Hand*", "*The Visions of Zosimos*", "*Authentic Memoirs*", "Letters to Theosebeia"]
 tradition: "Greco-Egyptian Hermetic-alchemical"
+canonical-corpus: ["hermetica"]
 sub-tradition: "spiritual-visionary alchemy"
 label: "technical-philosophical corpus + visionary literature"
 date-composed-earliest: 290

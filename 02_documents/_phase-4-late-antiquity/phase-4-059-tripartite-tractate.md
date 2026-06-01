@@ -4,6 +4,7 @@ id: "phase-4-059-tripartite-tractate"
 title: "The Tripartite Tractate"
 aka: ["Tractatus Tripartitus", "NHC I,5"]
 tradition: "Gnostic Christian (Valentinian)"
+canonical-corpus: ["nag-hammadi"]
 sub-tradition: "Valentinian theological treatise (Eastern / *via media* school)"
 label: "gnostic-valentinian"
 date-composed-earliest: 200

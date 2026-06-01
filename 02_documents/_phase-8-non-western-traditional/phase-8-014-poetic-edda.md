@@ -4,6 +4,7 @@ id: "phase-8-014-poetic-edda"
 title: "Poetic Edda"
 aka: ["Elder Edda", "Sæmundar Edda", "Eddukvæði"]
 tradition: "Norse / Old Icelandic"
+canonical-corpus: ["norse-eddic"]
 sub-tradition: "pre-Christian Germanic religious poetry preserved in Christian-era Iceland"
 label: "mythological-narrative"
 date-composed-earliest: 800

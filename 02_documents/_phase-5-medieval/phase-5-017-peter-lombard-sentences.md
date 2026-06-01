@@ -4,6 +4,7 @@ id: "phase-5-017-peter-lombard-sentences"
 title: "Sententiae (The Four Books of Sentences)"
 aka: ["Libri Quattuor Sententiarum", "Sentences", "Liber Sententiarum"]
 tradition: "Latin Christian — Scholastic"
+canonical-corpus: ["scholastic-corpus"]
 sub-tradition: "Early Scholasticism (proto-scholastic synthesis)"
 label: "patristic"
 date-composed-earliest: 1148

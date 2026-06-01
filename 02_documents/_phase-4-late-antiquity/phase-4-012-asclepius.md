@@ -4,6 +4,7 @@ id: "phase-4-012-asclepius"
 title: "Asclepius"
 aka: ["Logos Teleios", "Perfect Discourse"]
 tradition: "Hermetic"
+canonical-corpus: ["hermetica"]
 sub-tradition: "Philosophical Hermetism"
 label: "hermetic"
 date-composed-earliest: 200

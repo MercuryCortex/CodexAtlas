@@ -4,6 +4,7 @@ id: "phase-2-029-dhammapada"
 title: "Dhammapada"
 aka: ["Dhammapada (Pali)", "Dharmapada (Sanskrit)", "Pātavagga (Gandhari recension)", "Udānavarga (Sarvāstivāda Sanskrit / Tibetan recension)", "*The Path of Dhamma* / *Verses on Truth*"]
 tradition: "Buddhist"
+canonical-corpus: ["tipitaka"]
 sub-tradition: "Pre-sectarian / Theravāda anthology; with parallel Gandhāran, Sanskrit, and Chinese recensions"
 label: "pali-canon-khuddaka"
 date-composed-earliest: -400

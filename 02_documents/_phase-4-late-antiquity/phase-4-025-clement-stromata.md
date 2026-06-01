@@ -4,6 +4,7 @@ id: "phase-4-025-clement-stromata"
 title: "Stromata"
 aka: ["Stromateis", "Miscellanies", "Carpets"]
 tradition: "Christian (Alexandrian)"
+canonical-corpus: ["patristic-corpus"]
 sub-tradition: "Patristic (Alexandrian school)"
 label: "patristic"
 date-composed-earliest: 198

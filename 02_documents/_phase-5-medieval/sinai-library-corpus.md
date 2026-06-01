@@ -1,5 +1,6 @@
 ---
 type: document
+canonical-corpus: ["syriac-christian-corpus"]
 id: "sinai-library-corpus"
 name: "Sinai Library Corpus"
 status: "stub"

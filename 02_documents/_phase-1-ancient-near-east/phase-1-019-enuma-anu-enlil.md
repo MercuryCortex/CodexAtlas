@@ -4,6 +4,7 @@ id: "phase-1-019-enuma-anu-enlil"
 title: "Enūma Anu Enlil"
 aka: ["Enuma Anu Enlil", "EAE", "When (the gods) Anu (and) Enlil...", "the canonical astrological omen series"]
 tradition: "Akkadian / Mesopotamian"
+canonical-corpus: ["mesopotamian"]
 sub-tradition: "Babylonian and Neo-Assyrian celestial-omen scholarship"
 label: "divinatory-compendium"
 date-composed-earliest: -1700

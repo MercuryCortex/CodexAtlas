@@ -4,6 +4,7 @@ id: "phase-8-022-the-sacred-pipe"
 title: "The Sacred Pipe: Black Elk's Account of the Seven Rites of the Oglala Sioux"
 aka: ["The Sacred Pipe", "Black Elk's Seven Rites"]
 tradition: "Lakota"
+canonical-corpus: ["indigenous-north-american-corpus"]
 sub-tradition: "Oglala Lakota oral tradition"
 label: "ceremonial-ethnography"
 date-composed-earliest: 1947

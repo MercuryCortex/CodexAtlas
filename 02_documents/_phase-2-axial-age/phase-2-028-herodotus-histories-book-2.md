@@ -4,6 +4,7 @@ id: "phase-2-028-herodotus-histories-book-2"
 title: "Histories, Book 2 (Egypt)"
 aka: ["Ἱστορίαι Β", "Euterpe", "Herodotus on Egypt"]
 tradition: "Greek (Ionian prose historiography)"
+canonical-corpus: ["egyptian-scripture", "greek-scripture"]
 sub-tradition: "Greco-Egyptian ethnography"
 label: "history-ethnography"
 date-composed-earliest: -445

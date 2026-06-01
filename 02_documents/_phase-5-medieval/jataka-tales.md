@@ -1,5 +1,6 @@
 ---
 type: document
+canonical-corpus: ["theravada-jataka-corpus"]
 id: "jataka-tales"
 name: "Jataka Tales"
 status: "stub"

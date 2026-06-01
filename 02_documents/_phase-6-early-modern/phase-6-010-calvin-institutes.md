@@ -4,6 +4,7 @@ id: "phase-6-010-calvin-institutes"
 title: "Institutes of the Christian Religion"
 aka: ["Institutio Christianae Religionis", "Institution de la religion chrétienne"]
 tradition: "Reformed Protestant Christianity"
+canonical-corpus: ["reformation"]
 sub-tradition: "Calvinist"
 label: "patristic"
 date-composed-earliest: 1535

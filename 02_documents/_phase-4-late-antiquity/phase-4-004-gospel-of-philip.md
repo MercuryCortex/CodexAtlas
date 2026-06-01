@@ -4,6 +4,7 @@ id: "phase-4-004-gospel-of-philip"
 title: "Gospel of Philip"
 aka: ["NHC II,3"]
 tradition: "Gnostic Christian"
+canonical-corpus: ["nag-hammadi"]
 sub-tradition: "Valentinian"
 label: "gnostic-valentinian"
 date-composed-earliest: 200

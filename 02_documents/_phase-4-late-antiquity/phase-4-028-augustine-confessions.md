@@ -4,6 +4,7 @@ id: "phase-4-028-augustine-confessions"
 title: "Confessions"
 aka: ["Confessiones"]
 tradition: "Christian (Latin)"
+canonical-corpus: ["patristic-corpus"]
 sub-tradition: "Patristic (Latin / Augustinian)"
 label: "patristic"
 date-composed-earliest: 397

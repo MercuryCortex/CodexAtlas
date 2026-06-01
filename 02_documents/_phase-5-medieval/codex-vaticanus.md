@@ -1,5 +1,6 @@
 ---
 type: document
+canonical-corpus: ["bible"]
 id: "codex-vaticanus"
 name: "Codex Vaticanus"
 status: "stub"

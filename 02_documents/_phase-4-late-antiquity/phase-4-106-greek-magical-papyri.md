@@ -12,6 +12,7 @@ region: "Egypt (Greek-speaking / bilingual)"
 city-of-origin: "Egypt (various — Alexandria, Oxyrhynchus, and unnamed provenance)"
 authorship: "anonymous"
 tradition: "syncretic (Egyptian + Greek + Jewish + Gnostic + early Christian)"
+canonical-corpus: ["mystery-cults-corpus"]
 status: "full"
 refs:
   - title: "The Greek Magical Papyri in Translation, Including the Demotic Spells"

@@ -4,6 +4,7 @@ id: "phase-6-021-andreae-chymical-wedding"
 title: "Chymical Wedding of Christian Rosenkreutz"
 aka: ["Chymische Hochzeit: Christiani Rosencreutz Anno 1459", "The Chemical Wedding"]
 tradition: "Rosicrucianism / Lutheran esoteric"
+canonical-corpus: ["rosicrucian-corpus"]
 sub-tradition: "Tübingen Rosicrucian"
 label: "alchemical"
 date-composed-earliest: 1605

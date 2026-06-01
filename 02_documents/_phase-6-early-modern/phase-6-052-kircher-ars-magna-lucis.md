@@ -4,6 +4,7 @@ id: "phase-6-052-kircher-ars-magna-lucis"
 title: "Ars Magna Lucis et Umbrae (The Great Art of Light and Shadow)"
 aka: ["Ars Magna Lucis et Umbrae", "The Great Art of Light and Shadow", "Ars Magna (Kircher)"]
 tradition: "Jesuit Hermetic-natural philosophy"
+canonical-corpus: ["renaissance-magic-corpus"]
 sub-tradition: "Kircherian universal science / light mysticism"
 label: "natural-philosophical treatise on light, optics, and light theology"
 date-composed-earliest: 1646

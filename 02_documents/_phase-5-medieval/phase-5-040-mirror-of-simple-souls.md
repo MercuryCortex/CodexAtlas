@@ -4,6 +4,7 @@ id: "phase-5-040-mirror-of-simple-souls"
 title: "The Mirror of Simple Souls (Le Mirouer des simples ames)"
 aka: ["Le Mirouer des simples ames anéanties et qui seulement demeurent en vouloir et désir d'Amour", "Mirror of Simple Annihilated Souls"]
 tradition: "Latin Christianity (vernacular Beguine mysticism)"
+canonical-corpus: ["christian-mystical"]
 sub-tradition: "apophatic-mystical / Free-Spirit-adjacent"
 label: "vernacular mystical treatise (condemned + burned)"
 date-composed-earliest: 1290

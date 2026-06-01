@@ -4,6 +4,7 @@ id: "phase-4-097-baopuzi-ge-hong"
 title: "Baopuzi (The Master Who Embraces Simplicity)"
 aka: ["抱朴子", "Bào Pǔ Zǐ", "Pao-p'u-tzu", "Nei Pian (Inner Chapters)", "Wai Pian (Outer Chapters)"]
 tradition: "Chinese / Daoist"
+canonical-corpus: ["tao-corpus"]
 sub-tradition: "Religious Daoism — early Daoist alchemy (waidan) and self-cultivation"
 language: ["Classical Chinese (Eastern Jin dynasty)"]
 composed: 320

@@ -4,6 +4,7 @@ id: "phase-5-037-bernard-de-laude-novae-militiae"
 title: "De Laude Novae Militiae (In Praise of the New Knighthood)"
 aka: ["Liber ad milites Templi de laude novae militiae", "Liber ad Hugonem militem"]
 tradition: "Latin Christianity (Cistercian)"
+canonical-corpus: ["templar-corpus"]
 sub-tradition: "[[tradition-knights-templar|Knights Templar]] apologetic"
 label: "monastic-theological apologetic / sermon-treatise"
 date-composed-earliest: 1129

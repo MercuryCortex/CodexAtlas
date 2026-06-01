@@ -4,6 +4,7 @@ id: "phase-4-084-ethiopian-sinodos"
 title: "Ethiopian Sinodos (the Ethiopian Synodicon)"
 aka: ["Sinodos", "Sənodos", "Ethiopian Apostolic Constitutions", "Mäṣḥafa Sinodos", "መጽሐፈ ሲኖዶስ"]
 tradition: "[[tradition-ethiopian-orthodox-tewahedo]] (canonical-NT-adjacent scripture)"
+canonical-corpus: ["ethiopic-tewahedo-canon"]
 sub-tradition: "Ethiopian apostolic-pseudonymous church-order corpus"
 label: "apocryphal-christian"
 date-composed-earliest: 380

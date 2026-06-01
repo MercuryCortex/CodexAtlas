@@ -15,6 +15,7 @@ language: Biblical Hebrew (late form, with Persian loanword)
 script: Square Hebrew script
 region: ancient-israel
 tradition: ancient-israel
+canonical-corpus: ["bible", "tanakh"]
 sub-tradition: Hebrew Bible / Wisdom Literature / Love Poetry
 authorship: anonymous (Solomonic attribution conventional; scholarly consensus rejects it; the text is an anthology of love poems probably assembled in the Persian or early Hellenistic period)
 label: love-poetry

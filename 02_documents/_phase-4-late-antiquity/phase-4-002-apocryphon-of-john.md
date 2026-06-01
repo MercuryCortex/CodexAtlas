@@ -4,6 +4,7 @@ id: "phase-4-002-apocryphon-of-john"
 title: "Apocryphon of John"
 aka: ["Secret Book of John", "Secret Revelation of John", "Apocryphon Iohannis", "NHC II,1 / III,1 / IV,1 / BG 8502,2"]
 tradition: "Gnostic Christian"
+canonical-corpus: ["nag-hammadi"]
 sub-tradition: "Sethian Gnostic"
 label: "gnostic-sethian"
 date-composed-earliest: 150

@@ -1,5 +1,6 @@
 ---
 type: document
+canonical-corpus: ["japanese-historical-corpus"]
 id: "heike-monogatari"
 name: "Heike Monogatari"
 status: "stub"

@@ -4,6 +4,7 @@ id: "phase-5-012-sefer-yetzirah"
 title: "Sefer Yetzirah (Book of Formation)"
 aka: ["Book of Creation", "Sefer Yeẓirah", "סֵפֶר יְצִירָה"]
 tradition: "Rabbinic Judaism — proto-Kabbalistic"
+canonical-corpus: ["kabbalistic-corpus"]
 sub-tradition: "Early Jewish cosmological mysticism"
 label: "kabbalistic"
 date-composed-earliest: 200

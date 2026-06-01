@@ -4,6 +4,7 @@ id: "phase-7-030-satanic-bible"
 title: "The Satanic Bible"
 aka: []
 tradition: "LaVeyan Satanism / Modern Pagan"
+canonical-corpus: ["laveyan-satanism-corpus"]
 sub-tradition: "Church of Satan founding text"
 label: "new-religious-movement"
 date-composed-earliest: 1969

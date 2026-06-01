@@ -1,5 +1,6 @@
 ---
 type: document
+canonical-corpus: ["hindu-stotra-corpus"]
 id: "surya-shataka"
 name: "Surya Shataka"
 status: "stub"

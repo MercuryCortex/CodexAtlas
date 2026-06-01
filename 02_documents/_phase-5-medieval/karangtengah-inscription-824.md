@@ -1,5 +1,6 @@
 ---
 type: document
+canonical-corpus: ["buddhist-pilgrimage-chronicles"]
 id: "karangtengah-inscription-824"
 name: "Karangtengah Inscription (824 CE)"
 status: "stub"

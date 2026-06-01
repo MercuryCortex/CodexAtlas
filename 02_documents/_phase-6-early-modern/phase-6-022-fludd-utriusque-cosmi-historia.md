@@ -4,6 +4,7 @@ id: "phase-6-022-fludd-utriusque-cosmi-historia"
 title: "Utriusque Cosmi Historia"
 aka: ["History of the Two Worlds (Macrocosm and Microcosm)"]
 tradition: "Renaissance Hermetic-Kabbalist / Christian Paracelsian"
+canonical-corpus: ["renaissance-magic-corpus"]
 sub-tradition: "English Rosicrucian-Paracelsian"
 label: "alchemical"
 date-composed-earliest: 1617

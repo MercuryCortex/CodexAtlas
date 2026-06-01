@@ -4,6 +4,7 @@ id: "phase-4-104-sukhavativyuha-larger"
 title: "Larger Sukhāvatīvyūha Sūtra (Larger Pure Land Sūtra)"
 aka: ["Sukhāvatīvyūha-sūtra (longer)", "無量壽經 (Wúliángshòu Jīng)", "Larger Sutra on Amitāyus", "Sutra of Infinite Life", "Daimuryōju-kyō"]
 tradition: "Mahāyāna Buddhism"
+canonical-corpus: ["tipitaka", "pure-land-buddhist-corpus"]
 sub-tradition: "Pure Land textual family (the 'Three Pure Land Sutras')"
 label: "mahayana-sutra"
 date-composed-earliest: 100

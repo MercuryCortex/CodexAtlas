@@ -1,5 +1,6 @@
 ---
 type: document
+canonical-corpus: ["kojiki-nihongi"]
 id: "nihon-shoki"
 name: "Nihon Shoki"
 status: "stub"

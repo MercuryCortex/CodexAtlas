@@ -4,6 +4,7 @@ id: "phase-6-050-thomas-vaughan-anthroposophia"
 title: "Anthroposophia Theomagica / Lumen de Lumine / Aula Lucis"
 aka: ["Anthroposophia Theomagica (1650)", "Lumen de Lumine (1651)", "Aula Lucis (1652)", "works of Eugenius Philalethes"]
 tradition: "English Hermetic / Rosicrucian-Paracelsian"
+canonical-corpus: ["christian-theosophy"]
 sub-tradition: "Cambridge-adjacent Neoplatonist alchemy / Rosicrucian English transmission"
 label: "Hermetic-alchemical philosophical works"
 date-composed-earliest: 1650

@@ -4,6 +4,7 @@ id: "phase-1-029-telipinu-myth"
 title: "The Telipinu Myth"
 aka: ["Disappearance of Telipinu", "Vanishing-God Myth (Hittite)", "CTH 324"]
 tradition: "Hittite (with Hattic substrate)"
+canonical-corpus: ["hurro-hittite"]
 sub-tradition: "Anatolian disappearing-god myth-cycle"
 label: "mythological-narrative"
 date-composed-earliest: -1600

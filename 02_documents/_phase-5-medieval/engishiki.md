@@ -1,5 +1,6 @@
 ---
 type: document
+canonical-corpus: ["shinto-engishiki"]
 id: "engishiki"
 name: "Engishiki"
 status: "stub"

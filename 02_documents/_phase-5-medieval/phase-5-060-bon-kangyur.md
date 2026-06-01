@@ -8,6 +8,7 @@ date-composed: 1300
 date-range: "canonical compilation ~13th–15th c.; terma revelations ongoing"
 language: "Tibetan (Classical)"
 tradition: "[[tradition-bon]]"
+canonical-corpus: ["bon-corpus"]
 genre: "canonical-scripture / ritual-manual / contemplative"
 phase: 5
 region: "Tibet (Zhang-Zhung, central Tibet)"

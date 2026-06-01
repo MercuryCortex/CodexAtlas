@@ -4,6 +4,7 @@ id: "phase-5-040-meqabyan-ethiopian-maccabees"
 title: "Meqabyan I–III (Ethiopian Maccabees)"
 aka: ["Mäqabəyan", "Ethiopic Maccabees", "Pseudo-Maccabees", "መቃብያን"]
 tradition: "[[tradition-ethiopian-orthodox-tewahedo]]"
+canonical-corpus: ["ethiopic-tewahedo-canon"]
 sub-tradition: "uniquely-Ethiopian-canonical Old Testament narrative"
 label: "pseudepigraphal-jewish"
 date-composed-earliest: 800

@@ -4,6 +4,7 @@ id: "phase-5-001-devi-mahatmya"
 title: "Devi Mahatmya"
 aka: ["Durgā Saptaśatī", "Caṇḍī", "Caṇḍī Pāṭha", "Saptaśatī", "Glory of the Goddess"]
 tradition: "Hindu — Shakta"
+canonical-corpus: ["vedas", "shakta-canon"]
 sub-tradition: "Shakta — emergent Goddess theology"
 label: "smṛti-puranic"
 date-composed-earliest: 400

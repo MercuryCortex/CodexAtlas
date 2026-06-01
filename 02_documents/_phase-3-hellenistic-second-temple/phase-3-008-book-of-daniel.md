@@ -4,6 +4,7 @@ id: "phase-3-008-book-of-daniel"
 title: "Book of Daniel (apocalyptic chapters 7–12, with court-tale chapters 1–6)"
 aka: ["Sefer Daniyyel"]
 tradition: "Second Temple Judaism"
+canonical-corpus: ["bible", "tanakh"]
 sub-tradition: "Maccabean-era apocalyptic"
 label: "tanakh-ketuvim"
 date-composed-earliest: -605

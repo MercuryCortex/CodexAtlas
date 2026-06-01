@@ -4,6 +4,7 @@ id: "phase-8-001-popol-vuh"
 title: "Popol Vuh"
 aka: ["Popol Wuj", "Pop Wuj", "Book of Council", "Book of the Community", "Book of the People"]
 tradition: "K'iche' Maya"
+canonical-corpus: ["mesoamerican-sacred", "maya-corpus"]
 sub-tradition: "Highland Maya — post-conquest reduction of pre-Columbian oral tradition"
 label: "mythological-narrative"
 date-composed-earliest: -200

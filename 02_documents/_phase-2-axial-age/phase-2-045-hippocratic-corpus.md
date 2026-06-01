@@ -4,6 +4,7 @@ id: "phase-2-045-hippocratic-corpus"
 title: "Hippocratic Corpus"
 aka: ["Corpus Hippocraticum", "Opera Omnia Hippocratis"]
 tradition: "Greek (Koan school)"
+canonical-corpus: ["greek-medical-corpus"]
 region: "Kos, Greece; Alexandria"
 date_earliest: -420
 date_latest: -50

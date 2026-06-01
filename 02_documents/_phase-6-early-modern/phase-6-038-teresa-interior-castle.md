@@ -4,6 +4,7 @@ id: "phase-6-038-teresa-interior-castle"
 title: "Interior Castle (Castillo Interior / Las Moradas)"
 aka: ["*Las Moradas*", "*The Mansions*", "*Castillo Interior*"]
 tradition: "Latin Christianity (Catholic Counter-Reformation; Discalced Carmelite mysticism)"
+canonical-corpus: ["spanish-mystical"]
 sub-tradition: "Spanish vernacular mystical theology"
 label: "vernacular mystical-theological treatise"
 date-composed-earliest: 1577

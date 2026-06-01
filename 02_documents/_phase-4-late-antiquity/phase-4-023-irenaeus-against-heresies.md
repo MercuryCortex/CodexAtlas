@@ -4,6 +4,7 @@ id: "phase-4-023-irenaeus-against-heresies"
 title: "Against Heresies"
 aka: ["Adversus Haereses", "Refutation and Overthrow of Falsely So-Called Gnosis", "Elenchos kai Anatropē tēs Pseudōnymou Gnōseōs"]
 tradition: "Christian (proto-orthodox)"
+canonical-corpus: ["patristic-corpus"]
 sub-tradition: "Patristic (heresiology)"
 label: "heresiological"
 date-composed-earliest: 180

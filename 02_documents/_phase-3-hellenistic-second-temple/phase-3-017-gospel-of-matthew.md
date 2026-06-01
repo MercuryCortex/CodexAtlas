@@ -4,6 +4,7 @@ id: "phase-3-017-gospel-of-matthew"
 title: "Gospel of Matthew"
 aka: ["Euangelion kata Matthaion", "Secundum Matthaeum"]
 tradition: "Earliest Christianity (Jewish-Christian)"
+canonical-corpus: ["bible"]
 sub-tradition: "Synoptic Gospels — Jewish-Christian"
 label: "canonical-nt"
 date-composed-earliest: 80

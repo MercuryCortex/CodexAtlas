@@ -4,6 +4,7 @@ id: "phase-2-017-mahabharata-ramayana-oral-layers"
 title: "Mahābhārata and Rāmāyaṇa — Earliest Oral Layers"
 aka: ["Mahābhārata", "Rāmāyaṇa", "the Indian epics", "Itihāsa"]
 tradition: "Vedic / Hindu"
+canonical-corpus: ["vedas"]
 sub-tradition: "smṛti-epic"
 label: "smṛti-epic"
 date-composed-earliest: -400

@@ -1,5 +1,6 @@
 ---
 type: document
+canonical-corpus: ["roman-scripture"]
 id: "phase-3-024-suetonius-twelve-caesars"
 name: "The Twelve Caesars (Suetonius)"
 status: "stub"

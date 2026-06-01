@@ -4,6 +4,7 @@ id: "phase-5-015-al-ghazali-ihya"
 title: "Iḥyāʾ ʿUlūm al-Dīn (The Revival of the Religious Sciences)"
 aka: ["The Revival of the Religious Sciences", "Iḥyāʾ", "Ihya Ulum al-Din"]
 tradition: "Sunni Islam — Sufi-Ash'arite synthesis"
+canonical-corpus: ["islamic-theological"]
 sub-tradition: "Shāfiʿī jurisprudence + Ash'arite theology + Sufi spirituality"
 label: "sufi"
 date-composed-earliest: 1095

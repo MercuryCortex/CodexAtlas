@@ -4,6 +4,7 @@ id: "phase-3-012-wisdom-of-solomon"
 title: "Wisdom of Solomon"
 aka: ["Sophia Salomonos", "Sapientia Salomonis", "Liber Sapientiae"]
 tradition: "Hellenistic Judaism"
+canonical-corpus: ["bible"]
 sub-tradition: "Alexandrian Hellenistic Judaism — Greek wisdom literature"
 label: "apocryphal-jewish"
 date-composed-earliest: -50

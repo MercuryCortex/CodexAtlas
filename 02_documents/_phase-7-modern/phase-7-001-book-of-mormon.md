@@ -4,6 +4,7 @@ id: "phase-7-001-book-of-mormon"
 title: "The Book of Mormon"
 aka: ["Book of Mormon: Another Testament of Jesus Christ"]
 tradition: "Mormonism / Latter-day Saint"
+canonical-corpus: ["mormon"]
 sub-tradition: "Restorationist Christianity (LDS)"
 label: "new-religious-movement"
 date-composed-earliest: 1827

@@ -4,6 +4,7 @@ id: "phase-4-064-epistle-of-barnabas"
 title: "Epistle of Barnabas"
 aka: ["Barnabae Epistula", "Epistolē Barnaba"]
 tradition: "Patristic Christian (proto-orthodox)"
+canonical-corpus: ["apostolic-fathers"]
 sub-tradition: "Alexandrian Christianity (allegorical-supersessionist)"
 label: "patristic"
 date-composed-earliest: 120

@@ -4,6 +4,7 @@ id: "phase-7-038-guenon-symbols-sacred-science"
 title: "Symbols of Sacred Science (Symboles fondamentaux de la Science sacrée)"
 aka: ["Symboles fondamentaux de la Science sacrée (original French title)", "Fundamental Symbols of Sacred Science"]
 tradition: "[[tradition-traditionalism-perennialist]]"
+canonical-corpus: ["traditionalist-school"]
 sub-tradition: "Guénonian Traditionalism"
 label: "esoteric"
 date-composed-earliest: 1929

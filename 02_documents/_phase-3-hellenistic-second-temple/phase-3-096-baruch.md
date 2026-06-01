@@ -1,5 +1,6 @@
 ---
 type: document
+canonical-corpus: ["bible", "tewahedo"]
 id: "phase-3-096-baruch"
 name: "Book of Baruch"
 status: "stub"

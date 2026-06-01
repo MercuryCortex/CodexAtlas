@@ -4,6 +4,7 @@ id: "phase-4-085-ovid-metamorphoses-book-1"
 title: "Ovid, Metamorphoses Book 1 (the Deucalion-Pyrrha flood)"
 aka: ["Metamorphoses Liber I", "Ovid Met. 1", "Metamorphōseōn libri (Latin)"]
 tradition: "Roman / Augustan-Latin literary; principal Latin reception-channel of Greek mythology for medieval-and-Renaissance Europe"
+canonical-corpus: ["roman-scripture"]
 sub-tradition: "Latin epic / mythological compendium"
 label: "epic-greek"
 date-composed-earliest: 2

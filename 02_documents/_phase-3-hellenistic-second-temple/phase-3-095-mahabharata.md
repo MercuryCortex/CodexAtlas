@@ -1,5 +1,6 @@
 ---
 type: document
+canonical-corpus: ["vaishnava-canon"]
 id: "phase-3-095-mahabharata"
 name: "Mahabharata"
 status: "stub"

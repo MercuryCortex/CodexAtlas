@@ -4,6 +4,7 @@ id: "phase-4-020-iamblichus-on-the-mysteries"
 title: "On the Mysteries"
 aka: ["De Mysteriis", "Reply of the Master Abammon to Porphyry's Letter to Anebo", "Peri tōn Aigyptiōn mystēriōn"]
 tradition: "Neoplatonism"
+canonical-corpus: ["neoplatonist-corpus"]
 sub-tradition: "Theurgic Neoplatonism (Iamblichean)"
 label: "neoplatonist"
 date-composed-earliest: 280

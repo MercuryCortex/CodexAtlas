@@ -4,6 +4,7 @@ id: "phase-3-006-septuagint"
 title: "Septuagint (LXX)"
 aka: ["Old Greek (OG)", "Translation of the Seventy", "LXX"]
 tradition: "Hellenistic Judaism → early Christianity"
+canonical-corpus: ["bible"]
 sub-tradition: "Alexandrian Judaism"
 label: "tanakh-torah"
 date-composed-earliest: -280

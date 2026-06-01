@@ -4,6 +4,7 @@ id: "phase-4-022-chaldean-oracles"
 title: "Chaldean Oracles"
 aka: ["Logia Chaldaika"]
 tradition: "Late-antique theurgy / philosophical revelation"
+canonical-corpus: ["neoplatonist-corpus"]
 sub-tradition: "Theurgic"
 label: "chaldean-oracles"
 date-composed-earliest: 150

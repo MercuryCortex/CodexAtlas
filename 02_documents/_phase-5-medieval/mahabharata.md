@@ -1,5 +1,6 @@
 ---
 type: document
+canonical-corpus: ["vaishnava-canon"]
 id: "mahabharata"
 name: "Mahabharata"
 status: "stub"

@@ -4,6 +4,7 @@ id: "phase-7-009-outline-of-esoteric-science"
 title: "An Outline of Esoteric Science"
 aka: ["Die Geheimwissenschaft im Umriss", "An Outline of Occult Science"]
 tradition: "Anthroposophy"
+canonical-corpus: ["anthroposophy-corpus"]
 sub-tradition: "Anthroposophy founding text"
 label: "theosophical"
 date-composed-earliest: 1909

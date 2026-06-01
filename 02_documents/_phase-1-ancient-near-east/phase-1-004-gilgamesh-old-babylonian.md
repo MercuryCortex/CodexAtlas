@@ -4,6 +4,7 @@ id: "phase-1-004-gilgamesh-old-babylonian"
 title: "Gilgamesh — Old Babylonian Version"
 aka: ["Surpassing All Other Kings", "Šūtur eli šarrī", "Pennsylvania Tablet", "Yale Tablet", "Old Babylonian Gilgamesh"]
 tradition: "Akkadian / Mesopotamian"
+canonical-corpus: ["mesopotamian"]
 sub-tradition: "Old Babylonian literary tradition"
 label: "epic"
 date-composed-earliest: -2100

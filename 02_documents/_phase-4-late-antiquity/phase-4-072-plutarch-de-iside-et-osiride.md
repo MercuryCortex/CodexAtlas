@@ -4,6 +4,7 @@ id: "phase-4-072-plutarch-de-iside-et-osiride"
 title: "De Iside et Osiride (On Isis and Osiris)"
 aka: ["On Isis and Osiris", "Περὶ Ἴσιδος καὶ Ὀσίριδος", "Moralia 351C–384C"]
 tradition: "Greco-Roman / Middle Platonist"
+canonical-corpus: ["egyptian-scripture"]
 sub-tradition: "Greco-Egyptian syncretism (Hellenistic-Roman reading of Egyptian religion)"
 label: "philosophical-treatise"
 date-composed-earliest: 100

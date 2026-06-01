@@ -4,6 +4,7 @@ id: "phase-6-040-bandarra-trovas"
 title: "Trovas do Bandarra"
 aka: ["Trovas de Bandarra", "Paráfrase e Concordância de algumas Profecias de Bandarra (1603 João de Castro edition title)"]
 tradition: "[[tradition-sebastianism]]"
+canonical-corpus: ["portuguese-hermetic"]
 sub-tradition: "Portuguese vernacular prophetic-messianic"
 label: "prophetic"
 date-composed-earliest: 1530

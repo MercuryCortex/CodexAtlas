@@ -4,6 +4,7 @@ id: "phase-6-025-nathan-of-gaza-treatise-on-dragons"
 title: "Drush ha-Tanninim (Treatise on the Dragons) + Sabbatean writings"
 aka: ["Treatise on the Tannin (Cosmic Sea-Beast)", "Drush ha-Menorah", "Iggeret Magen Avraham"]
 tradition: "Jewish messianism — Sabbatean"
+canonical-corpus: ["polish-frankism-sabbatean-corpus"]
 sub-tradition: "Sabbatean Kabbalah"
 label: "kabbalistic"
 date-composed-earliest: 1665

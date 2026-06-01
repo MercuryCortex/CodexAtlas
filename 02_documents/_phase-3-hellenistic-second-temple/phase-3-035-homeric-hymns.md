@@ -8,6 +8,7 @@ date-composed: -650
 date-range: "7th–5th century BCE (major hymns); some as late as 3rd c. BCE"
 language: "Ancient Greek (hexameter)"
 tradition: "[[tradition-greek-religion]]"
+canonical-corpus: ["greek-scripture"]
 genre: "hymn / mythological-narrative / ritual-invocation"
 phase: 3
 region: "Greek world (Ionian coast, mainland Greece)"

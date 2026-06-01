@@ -4,6 +4,7 @@ id: "phase-1-014-ugaritic-ritual-texts"
 title: "Ugaritic Ritual Texts"
 aka: ["Ugaritic Cultic Texts", "Ras Shamra Ritual Tablets", "KTU 1.40–1.176 (selected)"]
 tradition: "Ugaritic / Canaanite"
+canonical-corpus: ["canaanite-ugaritic"]
 sub-tradition: "Late Bronze Age Canaanite temple ritual"
 label: "archaeological-cultic"
 date-composed-earliest: -1400

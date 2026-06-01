@@ -4,6 +4,7 @@ id: "phase-3-003-aristotle-metaphysics"
 title: "Aristotle — Metaphysics and De Anima"
 aka: ["Tà metà tà physiká", "Perí psychēs"]
 tradition: "Greek philosophy"
+canonical-corpus: ["greek-scripture"]
 sub-tradition: "Peripatetic / Lyceum"
 label: "philosophical"
 date-composed-earliest: -347

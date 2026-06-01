@@ -4,6 +4,7 @@ id: "phase-4-030-pseudo-dionysius"
 title: "Corpus Areopagiticum"
 aka: ["Dionysian Corpus", "Pseudo-Dionysius the Areopagite", "Corpus Dionysiacum"]
 tradition: "Christian (Eastern)"
+canonical-corpus: ["byzantine-orthodox"]
 sub-tradition: "Christian Neoplatonism / mystical theology"
 label: "patristic"
 date-composed-earliest: 480

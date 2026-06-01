@@ -4,6 +4,7 @@ id: "phase-2-019-deuteronomistic-history"
 title: "The Deuteronomistic History (Joshua–Judges–Samuel–Kings)"
 aka: ["DtrH", "Deuteronomistic History", "Noth's *Deuteronomistisches Geschichtswerk*", "the Former Prophets (Hebrew canon)", "Joshua–2 Kings"]
 tradition: "Israelite / Judahite"
+canonical-corpus: ["bible", "tanakh", "israelite-religion"]
 sub-tradition: "Deuteronomistic scribal tradition (the historiographic redaction descended from the Josianic Deuteronomic school)"
 label: "tanakh-prophets"
 date-composed-earliest: -625

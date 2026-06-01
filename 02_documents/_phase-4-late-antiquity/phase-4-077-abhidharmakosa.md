@@ -4,6 +4,7 @@ id: "phase-4-077-abhidharmakosa"
 title: "Abhidharmakośa (Treasury of Abhidharma)"
 aka: ["Abhidharmakośa-bhāṣya (verse-text + auto-commentary)", "*Apidamo jushe lun* 阿毘達磨倶舎論 (Chinese, Xuanzang 651-654 translation)", "*chos mngon pa'i mdzod* (Tibetan)", "Treasury of Higher Doctrine"]
 tradition: "Buddhist"
+canonical-corpus: ["tipitaka", "yogacara-corpus"]
 sub-tradition: "Sarvāstivāda + Sautrāntika Abhidharma synthesis (with Yogācāra-leaning critique)"
 label: "buddhist-treatise"
 date-composed-earliest: 350

@@ -4,6 +4,7 @@ id: "phase-6-006-reuchlin-de-arte-cabalistica"
 title: "De Arte Cabalistica"
 aka: ["On the Art of Kabbalah"]
 tradition: "Christian Kabbalah"
+canonical-corpus: ["renaissance-magic-corpus"]
 sub-tradition: "German Hebraist Renaissance"
 label: "kabbalistic"
 date-composed-earliest: 1517

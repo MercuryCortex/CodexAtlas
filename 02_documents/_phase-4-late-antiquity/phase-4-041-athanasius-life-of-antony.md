@@ -4,6 +4,7 @@ id: "phase-4-041-athanasius-life-of-antony"
 title: "Life of Antony"
 aka: ["Vita Antonii", "Vita Antoni", "Bios Antoniou"]
 tradition: "Patristic Christian (Alexandrian / monastic)"
+canonical-corpus: ["patristic-corpus"]
 sub-tradition: "Egyptian monastic hagiography"
 label: "patristic"
 date-composed-earliest: 356

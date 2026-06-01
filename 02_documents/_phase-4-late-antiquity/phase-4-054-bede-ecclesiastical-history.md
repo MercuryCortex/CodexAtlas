@@ -4,6 +4,7 @@ id: "phase-4-054-bede-ecclesiastical-history"
 title: "Ecclesiastical History of the English People"
 aka: ["Historia ecclesiastica gentis Anglorum", "HE"]
 tradition: "Anglo-Latin Christianity (Northumbrian)"
+canonical-corpus: ["latin-catholic-medieval"]
 sub-tradition: "Early medieval Latin historiography"
 label: "patristic / historiographic"
 date-composed-earliest: 725

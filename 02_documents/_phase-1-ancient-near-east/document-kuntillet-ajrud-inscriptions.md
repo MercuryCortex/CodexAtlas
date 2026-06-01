@@ -7,6 +7,7 @@ aka:
   - "Ḥorvat Teman Inscriptions"
   - "Ḥaseva Road-Station Inscriptions"
 tradition: "Israelite (pre-exilic popular religion)"
+canonical-corpus: ["israelite-religion"]
 sub-tradition: "Northern Kingdom folk cult (Samarian Yahwism)"
 label: "archaeological-primary"
 date-composed-earliest: -810

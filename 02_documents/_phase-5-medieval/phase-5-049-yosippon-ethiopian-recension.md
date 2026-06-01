@@ -4,6 +4,7 @@ id: "phase-5-049-yosippon-ethiopian-recension"
 title: "Yosippon / Joseph ben Gurion (Ethiopian recension — Zena Ayhud)"
 aka: ["Yosippon", "Sefer Yosippon", "Pseudo-Josephus", "Joseph ben Gurion", "Zena Ayhud (Geʼez: 'History of the Jews')", "ዜና አይሁድ"]
 tradition: "[[tradition-judaism]] (10th-c. Hebrew chronicle composition) / [[tradition-ethiopian-orthodox-tewahedo]] (Geʼez recension is canonical scripture)"
+canonical-corpus: ["tewahedo"]
 sub-tradition: "Medieval Hebrew chronicle of Second-Temple-period history → Ethiopian-canonical historical scripture"
 label: "pseudepigraphal-jewish"
 date-composed-earliest: 950

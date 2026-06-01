@@ -1,5 +1,6 @@
 ---
 type: document
+canonical-corpus: ["patristic-corpus", "christian-bestiary"]
 id: "phase-5-035-physiologus"
 name: "Physiologus"
 status: "stub"

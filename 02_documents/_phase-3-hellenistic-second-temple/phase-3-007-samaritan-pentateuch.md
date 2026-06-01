@@ -8,6 +8,7 @@ date-composed: -400
 date-range: "textual tradition diverging from proto-Masoretic ~4th c. BCE; continuous living scripture to present"
 language: "Samaritan Hebrew (archaic Hebrew script, not square Aramaic script)"
 tradition: "[[tradition-samaritanism]]"
+canonical-corpus: ["samaritan-corpus"]
 genre: "canonical-scripture / Torah"
 phase: 3
 region: "Samaria (Shechem → Nablus / Gerizim)"

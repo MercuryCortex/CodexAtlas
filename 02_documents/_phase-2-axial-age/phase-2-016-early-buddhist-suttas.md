@@ -4,6 +4,7 @@ id: "phase-2-016-early-buddhist-suttas"
 title: "Early Buddhist Suttas — Sutta Nipāta (Aṭṭhakavagga, Pārāyanavagga)"
 aka: ["Sutta-Nipāta", "Aṭṭhaka-vagga", "Pārāyana-vagga", "the earliest Pali poetry"]
 tradition: "Buddhist"
+canonical-corpus: ["tipitaka"]
 sub-tradition: "Pre-sectarian / earliest Buddhism (proto-Theravāda)"
 label: "pali-canon-sutta"
 date-composed-earliest: -500

@@ -4,6 +4,7 @@ id: "phase-6-009-agrippa-de-occulta-philosophia"
 title: "De Occulta Philosophia Libri Tres"
 aka: ["Three Books of Occult Philosophy", "De Occulta Philosophia"]
 tradition: "Renaissance magic / Hermetic-Kabbalist syncretism"
+canonical-corpus: ["renaissance-magic-corpus"]
 sub-tradition: "Northern Renaissance magic"
 label: "alchemical"
 date-composed-earliest: 1510

@@ -1,5 +1,6 @@
 ---
 type: document
+canonical-corpus: ["bible"]
 id: "document-matthew"
 name: "Document Matthew"
 status: "stub"

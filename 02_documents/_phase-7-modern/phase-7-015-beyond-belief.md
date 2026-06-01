@@ -4,6 +4,7 @@ id: "phase-7-015-beyond-belief"
 title: "Beyond Belief: The Secret Gospel of Thomas"
 aka: []
 tradition: "Comparative religion (academic) / history of religions"
+canonical-corpus: ["comparative-religion-academic"]
 sub-tradition: "Popular-scholarly reception of the Gospel of Thomas"
 label: "comparative-religion-academic"
 date-composed-earliest: 2001

@@ -1,5 +1,6 @@
 ---
 type: document
+canonical-corpus: ["andean-chronicles-corpus"]
 id: "garcilaso-de-la-vega-comentarios-reales-de-los-incas"
 name: "Garcilaso De La Vega Comentarios Reales De Los Incas"
 status: "stub"

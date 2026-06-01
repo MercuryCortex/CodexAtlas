@@ -4,6 +4,7 @@ id: "phase-4-053-isidore-etymologiae"
 title: "Etymologiae (Etymologies / Origines)"
 aka: ["Etymologiarum sive originum libri XX", "Origines", "Isidori Etymologiae"]
 tradition: "Western (Latin) Patristic Christianity / Visigothic"
+canonical-corpus: ["latin-catholic-medieval"]
 sub-tradition: "Latin Christian encyclopedism"
 label: "patristic / encyclopedic"
 date-composed-earliest: 615

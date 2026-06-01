@@ -4,6 +4,7 @@ id: "phase-5-023-liber-de-duobus-principiis"
 title: "Liber de Duobus Principiis (The Book of the Two Principles)"
 aka: ["Book of the Two Principles", "Liber"]
 tradition: "Catharism — absolute dualism"
+canonical-corpus: ["cathar-bogomil"]
 sub-tradition: "Albanense / absolute-dualist Cathar theology"
 label: "gnostic-christian"
 date-composed-earliest: 1230

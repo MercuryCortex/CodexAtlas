@@ -4,6 +4,7 @@ id: "phase-7-023-bruno-and-hermetic-tradition"
 title: "Giordano Bruno and the Hermetic Tradition"
 aka: []
 tradition: "Comparative religion (academic) / history of ideas"
+canonical-corpus: ["comparative-religion-academic", "renaissance-esotericism"]
 sub-tradition: "Warburg Institute history of esotericism"
 label: "comparative-religion-academic"
 date-composed-earliest: 1958

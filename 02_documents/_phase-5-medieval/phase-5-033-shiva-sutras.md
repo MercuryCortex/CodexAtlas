@@ -4,6 +4,7 @@ id: "phase-5-033-shiva-sutras"
 title: "Śiva Sūtras"
 aka: ["Shiva Sutras of Vasugupta", "Śivasūtra"]
 tradition: "Hindu — Kashmir Shaivism"
+canonical-corpus: ["vedas", "shaiva-tantric-canon"]
 sub-tradition: "Non-dualist Tantric Shaivism — Pratyabhijñā / Trika root text"
 label: "tantric"
 date-composed-earliest: 800

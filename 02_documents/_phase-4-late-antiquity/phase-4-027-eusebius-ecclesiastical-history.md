@@ -4,6 +4,7 @@ id: "phase-4-027-eusebius-ecclesiastical-history"
 title: "Ecclesiastical History"
 aka: ["Historia Ecclesiastica", "Ekklēsiastikē Historia"]
 tradition: "Christian (proto-orthodox / Constantinian)"
+canonical-corpus: ["patristic-corpus"]
 sub-tradition: "Patristic Greek historiography"
 label: "patristic"
 date-composed-earliest: 300

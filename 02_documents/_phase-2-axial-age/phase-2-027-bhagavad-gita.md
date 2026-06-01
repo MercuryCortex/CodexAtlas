@@ -4,6 +4,7 @@ id: "phase-2-027-bhagavad-gita"
 title: "Bhagavad Gītā"
 aka: ["Bhagavadgītā", "श्रीमद्भगवद्गीता", "Śrīmad Bhagavadgītā", "Song of the Lord", "the Gītā"]
 tradition: "Vedic / Hindu"
+canonical-corpus: ["vedas"]
 sub-tradition: "Bhakti / smṛti / Vaiṣṇava devotional canon"
 label: "smṛti-philosophical-poem"
 date-composed-earliest: -200

@@ -4,6 +4,7 @@ id: "phase-6-046-ripley-compound-of-alchemy"
 title: "The Compound of Alchemy / The Ripley Scroll"
 aka: ["The Compound of Alchymy", "Ripley's Compound", "Liber Duodecim Portarum", "The Twelve Gates", "Ripley Scroll (illuminated roll, c.1490–1570)"]
 tradition: "English medieval-Renaissance alchemy"
+canonical-corpus: ["western-alchemy-corpus"]
 sub-tradition: "Canon English alchemical poetry / George Ripley school"
 label: "alchemical poem and emblem scroll"
 date-composed-earliest: 1471

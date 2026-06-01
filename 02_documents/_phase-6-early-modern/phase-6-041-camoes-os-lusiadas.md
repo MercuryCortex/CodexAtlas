@@ -4,6 +4,7 @@ id: "phase-6-041-camoes-os-lusiadas"
 title: "Os Lusíadas"
 aka: ["The Lusiads (English)", "Les Lusiades (French)", "Die Lusiaden (German)", "The Lusiad (Mickle translation, 1776)", "Camões's epic"]
 tradition: "[[tradition-portuguese-hermeticism]] / Renaissance humanism / Portuguese imperial mythology"
+canonical-corpus: ["roman-scripture", "portuguese-hermetic"]
 sub-tradition: "Portuguese Renaissance epic; classical synthesis with Christian-providential teleology"
 label: "literary"
 date-composed-earliest: 1556

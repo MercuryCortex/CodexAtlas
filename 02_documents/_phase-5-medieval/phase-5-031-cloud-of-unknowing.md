@@ -4,6 +4,7 @@ id: "phase-5-031-cloud-of-unknowing"
 title: "The Cloud of Unknowing"
 aka: ["A Boke of Contemplation The Whiche is Clepid The Clowde of Unknowyng"]
 tradition: "Latin Christian — English mysticism"
+canonical-corpus: ["byzantine-orthodox"]
 sub-tradition: "Apophatic Christian mysticism (Dionysian English-vernacular)"
 label: "patristic"
 date-composed-earliest: 1370

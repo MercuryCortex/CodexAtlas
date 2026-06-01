@@ -4,6 +4,7 @@ id: "phase-4-045-gregory-of-nyssa-life-of-moses"
 title: "Life of Moses"
 aka: ["De Vita Moysis", "Peri tou Biou Mōuseōs"]
 tradition: "Patristic Christian (Cappadocian)"
+canonical-corpus: ["patristic-corpus"]
 sub-tradition: "Christian Platonist mysticism / allegorical exegesis"
 label: "patristic"
 date-composed-earliest: 390

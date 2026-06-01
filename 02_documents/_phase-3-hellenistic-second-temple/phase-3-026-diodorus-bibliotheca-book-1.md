@@ -4,6 +4,7 @@ id: "phase-3-026-diodorus-bibliotheca-book-1"
 title: "Bibliotheca Historica, Book 1 (Egypt)"
 aka: ["Βιβλιοθήκη Ἱστορική Α", "Library of History, Book 1", "Diodorus on Egypt"]
 tradition: "Greek (late Hellenistic universal history)"
+canonical-corpus: ["egyptian-scripture"]
 sub-tradition: "Greco-Egyptian ethnography (Augustan-era synthesis)"
 label: "history-ethnography"
 date-composed-earliest: -60

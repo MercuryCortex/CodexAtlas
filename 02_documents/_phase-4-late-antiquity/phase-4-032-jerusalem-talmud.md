@@ -4,6 +4,7 @@ id: "phase-4-032-jerusalem-talmud"
 title: "Jerusalem Talmud"
 aka: ["Yerushalmi", "Talmud Yerushalmi", "Palestinian Talmud"]
 tradition: "Rabbinic Judaism"
+canonical-corpus: ["rabbinic-corpus"]
 sub-tradition: "Palestinian Amoraic"
 label: "rabbinic-talmud"
 date-composed-earliest: 220

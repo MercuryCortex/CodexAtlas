@@ -4,6 +4,7 @@ id: "phase-6-031-bijak-kabir"
 title: "Bījak (Kabir's Bijak)"
 aka: ["Bijak", "Kabir Bijak", "Kabir-Panth Bijak recension"]
 tradition: "Hindu Bhakti (Sant tradition) / Kabir Panth"
+canonical-corpus: ["sant-nirguna-corpus"]
 sub-tradition: "Nirguṇa Sant tradition / North Indian vernacular religious poetry"
 label: "smṛti-puranic"
 date-composed-earliest: 1450

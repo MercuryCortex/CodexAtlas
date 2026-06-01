@@ -4,6 +4,7 @@ id: "phase-1-038-edwin-smith-papyrus"
 title: "Edwin Smith Papyrus"
 aka: ["Edwin Smith Surgical Papyrus"]
 tradition: "Egyptian"
+canonical-corpus: ["egyptian-scripture"]
 region: "Egypt — found at Luxor; probably composed at Memphis (Old Kingdom original c. 2600 BCE; surviving copy c. 1600 BCE)"
 date_earliest: -1600
 date_latest: -1550

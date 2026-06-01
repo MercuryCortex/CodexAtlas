@@ -4,6 +4,7 @@ id: "phase-4-018-mandaean-book-of-john"
 title: "Mandaean Book of John"
 aka: ["Drasha d-Yahya", "Sidra d-Yahya", "Book of John the Baptizer"]
 tradition: "Mandaean"
+canonical-corpus: ["mandaean-corpus"]
 sub-tradition: "Mandaean"
 label: "mandaean"
 date-composed-earliest: 600

@@ -1,5 +1,6 @@
 ---
 type: document
+canonical-corpus: ["jagannath-corpus"]
 id: "madala-panji"
 name: "Madala Panji"
 status: "stub"

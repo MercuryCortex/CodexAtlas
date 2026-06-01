@@ -4,6 +4,7 @@ id: "phase-1-005-instructions-of-shuruppak"
 title: "Instructions of Shuruppak"
 aka: ["Instructions of Šuruppak", "Counsels of Shuruppak", "The Father's Instructions to His Son"]
 tradition: "Sumerian"
+canonical-corpus: ["mesopotamian-canonical"]
 sub-tradition: "Mesopotamian wisdom literature"
 label: "wisdom-literature"
 date-composed-earliest: -2600

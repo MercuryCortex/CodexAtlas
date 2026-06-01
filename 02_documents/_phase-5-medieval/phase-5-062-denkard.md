@@ -8,6 +8,7 @@ date-composed: 850
 date-range: "compiled 9th c. CE (material drawn from Sasanian archives, 3rd–7th c.)"
 language: "Middle Persian (Pahlavi)"
 tradition: "[[tradition-zoroastrianism]]"
+canonical-corpus: ["avesta"]
 genre: "theological-encyclopedia / doxography / apologetics"
 phase: 5
 region: "Iran (post-Sasanian; compiled under early Abbasid caliphate)"

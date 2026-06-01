@@ -1,5 +1,6 @@
 ---
 type: document
+canonical-corpus: ["comparative-religion-academic"]
 id: "phase-7-022-hick-interpretation-of-religion"
 name: "An Interpretation of Religion (Hick)"
 status: "stub"

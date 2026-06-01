@@ -4,6 +4,7 @@ id: "phase-3-025-manetho-aegyptiaca"
 title: "Aegyptiaca (fragments)"
 aka: ["Αἰγυπτιακά", "Aigyptiaka", "Manetho's History of Egypt"]
 tradition: "Egyptian (Sebennytos priesthood) → Ptolemaic Hellenistic letters"
+canonical-corpus: ["egyptian-scripture"]
 sub-tradition: "Greco-Egyptian priestly historiography"
 label: "fragmentary-history"
 date-composed-earliest: -290

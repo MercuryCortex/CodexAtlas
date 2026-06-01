@@ -4,6 +4,7 @@ id: "phase-8-017-santeria-lucumi"
 title: "Santería / Lucumí Liturgical Tradition"
 aka: ["Santería", "Lucumí", "Regla de Ocha", "Regla de Ifá (associated Ifá-practice)", "La Regla Lucumí"]
 tradition: "Cuban Lucumí / Santería"
+canonical-corpus: ["lucumi-santeria-corpus"]
 sub-tradition: "Caribbean African-diasporic syncretic religion (Yoruba + Spanish Catholic)"
 label: "mythological-liturgical"
 date-composed-earliest: 1800

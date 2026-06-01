@@ -1,5 +1,6 @@
 ---
 type: document
+canonical-corpus: ["tamil-shaiva-corpus"]
 id: "tiruvilaiyadal-puranam"
 name: "Tiruvilaiyadal Puranam"
 status: "stub"

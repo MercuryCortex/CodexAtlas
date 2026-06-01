@@ -4,6 +4,7 @@ id: "phase-4-056-zostrianos"
 title: "Zostrianos"
 aka: ["Zostrianus", "NHC VIII,1", "*Zōstrianos: oracles of truth of Zostrianos, god of truth*"]
 tradition: "Gnostic Christian (Sethian)"
+canonical-corpus: ["nag-hammadi"]
 sub-tradition: "Sethian Platonizing Gnostic apocalypse"
 label: "gnostic-sethian"
 date-composed-earliest: 200

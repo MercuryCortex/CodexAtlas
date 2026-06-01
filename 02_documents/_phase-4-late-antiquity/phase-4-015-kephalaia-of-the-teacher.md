@@ -4,6 +4,7 @@ id: "phase-4-015-kephalaia-of-the-teacher"
 title: "Kephalaia of the Teacher"
 aka: ["Kephalaia tou Sophou (Greek title)", "Chapters of the Teacher (Coptic)"]
 tradition: "Manichaean"
+canonical-corpus: ["manichaean-corpus"]
 sub-tradition: "Manichaean catechetical / systematic"
 label: "manichaean"
 date-composed-earliest: 300

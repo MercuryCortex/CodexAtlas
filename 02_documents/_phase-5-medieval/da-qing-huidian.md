@@ -1,5 +1,6 @@
 ---
 type: document
+canonical-corpus: ["confucian-classics"]
 id: "da-qing-huidian"
 name: "Da Qing Huidian"
 status: "stub"

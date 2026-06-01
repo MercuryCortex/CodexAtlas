@@ -4,6 +4,7 @@ id: "phase-2-008-homeric-epics"
 title: "Iliad and Odyssey (Homeric Epics)"
 aka: ["Ἰλιάς", "Ὀδύσσεια", "the Homeric poems"]
 tradition: "Greek"
+canonical-corpus: ["greek-scripture"]
 sub-tradition: "Archaic Greek epic / oral-formulaic tradition"
 label: "epic-greek"
 date-composed-earliest: -800

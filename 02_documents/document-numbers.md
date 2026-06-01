@@ -1,5 +1,6 @@
 ---
 type: document
+canonical-corpus: ["bible"]
 id: "document-numbers"
 name: "Document Numbers"
 status: "stub"

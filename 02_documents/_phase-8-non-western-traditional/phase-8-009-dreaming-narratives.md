@@ -4,6 +4,7 @@ id: "phase-8-009-dreaming-narratives"
 title: "Australian Aboriginal Dreaming Narratives (the Dreaming / Tjukurpa / Altyerre)"
 aka: ["the Dreaming", "the Dreamtime (older translation, now critically deprecated)", "Tjukurpa (Pitjantjatjara / Yankunytjatjara)", "Altyerre (Arrernte)", "Jukurrpa (Warlpiri)", "Wongar (Yolŋu)"]
 tradition: "Australian Aboriginal — multiple distinct language-nation traditions (200+ pre-contact languages)"
+canonical-corpus: ["aboriginal-dreaming-corpus"]
 sub-tradition: "Pan-Aboriginal cosmological category; specifics highly local"
 label: "mythological-narrative"
 date-composed-earliest: -65000

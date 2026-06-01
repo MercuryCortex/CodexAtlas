@@ -4,6 +4,7 @@ id: "phase-4-079-coptic-asclepius-nhc-vi-8"
 title: "Coptic Asclepius (NHC VI,8) — including the Hermetic 'Egyptian Apocalypse'"
 aka: ["NHC VI,8", "Coptic Asclepius excerpt", "Asclepius §§21–29 (Coptic)", "Hermetic Apocalypse"]
 tradition: "Hermetic"
+canonical-corpus: ["nag-hammadi", "hermetica"]
 sub-tradition: "Philosophical Hermetism — apocalyptic / lament-for-Egypt"
 label: "hermetic"
 date-composed-earliest: 200

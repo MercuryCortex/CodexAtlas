@@ -1,5 +1,6 @@
 ---
 type: document
+canonical-corpus: ["chinese-mahayana-chan-huayan-tiantai"]
 id: "vimalakirti-sutra"
 name: "Vimalakirti Sutra"
 status: "stub"

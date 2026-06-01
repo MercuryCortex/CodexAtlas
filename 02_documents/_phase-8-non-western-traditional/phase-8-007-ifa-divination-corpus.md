@@ -4,6 +4,7 @@ id: "phase-8-007-ifa-divination-corpus"
 title: "Ifá Divination Corpus (Odu Ifá)"
 aka: ["Odu Ifá", "Ifa literary corpus", "the 256 odu"]
 tradition: "Yoruba"
+canonical-corpus: ["yoruba-ifa-corpus"]
 sub-tradition: "Ifá divination — Yoruba sacred-textual orature"
 label: "divinatory"
 date-composed-earliest: -500

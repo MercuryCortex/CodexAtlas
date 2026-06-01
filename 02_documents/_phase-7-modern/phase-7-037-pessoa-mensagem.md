@@ -4,6 +4,7 @@ id: "phase-7-037-pessoa-mensagem"
 title: "Mensagem"
 aka: ["Message (English translation title)", "Portugal (working title in early drafts, mid-1910s–early 1930s)"]
 tradition: "[[tradition-portuguese-hermeticism]]"
+canonical-corpus: ["portuguese-hermetic"]
 sub-tradition: "Sebastianist-Hermetic-Rosicrucian Portuguese modernism"
 label: "literary"
 date-composed-earliest: 1913

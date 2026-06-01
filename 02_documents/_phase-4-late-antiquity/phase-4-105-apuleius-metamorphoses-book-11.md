@@ -4,6 +4,7 @@ id: "phase-4-105-apuleius-metamorphoses-book-11"
 title: "Apuleius — Metamorphoses Book 11 (The Isis Book)"
 aka: ["The Isis Book", "Metamorphoses Bk 11", "*The Golden Ass* Bk 11", "*Asinus Aureus* Bk 11"]
 tradition: "Latin literary / [[tradition-isis-mysteries]] first-person witness"
+canonical-corpus: ["mystery-cults-corpus"]
 sub-tradition: "Latin novel + Isis-mystery"
 label: "literary-cultic first-person initiation narrative"
 date-composed-earliest: 160

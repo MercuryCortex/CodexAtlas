@@ -4,6 +4,7 @@ id: "phase-6-036-mutus-liber"
 title: "Mutus Liber (The Mute Book)"
 aka: ["*Mutus Liber, in quo tamen tota philosophia hermetica figuris hieroglyphicis depingitur*", "*The Silent Book of Hermetic Alchemy*"]
 tradition: "Latin Christianity / Hermetic-alchemical"
+canonical-corpus: ["western-alchemy-corpus"]
 sub-tradition: "wordless emblem-alchemy"
 label: "wordless illustrated alchemical treatise"
 date-composed-earliest: 1677

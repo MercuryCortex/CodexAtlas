@@ -4,6 +4,7 @@ id: "phase-4-061-didache"
 title: "Didache"
 aka: ["The Teaching of the Twelve Apostles", "Didachē tōn Dōdeka Apostolōn", "Doctrina Apostolorum (in part)"]
 tradition: "Patristic Christian (proto-orthodox)"
+canonical-corpus: ["apostolic-fathers"]
 sub-tradition: "Syrian / Antiochene Jewish-Christian church order"
 label: "church-order"
 date-composed-earliest: 50

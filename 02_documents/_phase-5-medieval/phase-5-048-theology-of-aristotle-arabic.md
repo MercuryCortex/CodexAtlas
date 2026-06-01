@@ -4,6 +4,7 @@ id: "phase-5-048-theology-of-aristotle-arabic"
 title: "The Theology of Aristotle (Uthūlūjiyā Arisṭū — Arabic paraphrase of Plotinus *Enneads* IV-VI, misattributed to Aristotle)"
 aka: ["Uthūlūjiyā Arisṭū", "*Theologia Aristotelis*", "Pseudo-Aristotelian Theology", "Arabic Plotinus", "أثولوجيا أرسطو"]
 tradition: "Islam (Falsafa — Arabic Neoplatonism, foundational substrate; misattributed pseudonym)"
+canonical-corpus: ["arabic-neoplatonism"]
 sub-tradition: "Arabic Neoplatonism"
 label: "pseudepigraphic-philosophical-paraphrase"
 date-composed-earliest: 840

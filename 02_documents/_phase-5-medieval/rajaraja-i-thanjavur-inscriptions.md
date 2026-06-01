@@ -1,5 +1,6 @@
 ---
 type: document
+canonical-corpus: ["tamil-shaiva-corpus"]
 id: "rajaraja-i-thanjavur-inscriptions"
 name: "Rajaraja I Thanjavur Inscriptions"
 status: "stub"

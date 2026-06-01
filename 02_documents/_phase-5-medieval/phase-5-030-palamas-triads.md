@@ -4,6 +4,7 @@ id: "phase-5-030-palamas-triads"
 title: "The Triads (In Defense of the Holy Hesychasts)"
 aka: ["Triads in Defense of the Holy Hesychasts", "Hyper tōn hiērōs hēsychazontōn"]
 tradition: "Eastern Orthodox Christianity"
+canonical-corpus: ["byzantine-orthodox", "hesychast-philokalia-corpus"]
 sub-tradition: "Hesychast / Palamite theology"
 label: "patristic"
 date-composed-earliest: 1338

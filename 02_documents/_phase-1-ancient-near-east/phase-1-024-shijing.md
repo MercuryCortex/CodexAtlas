@@ -4,6 +4,7 @@ id: "phase-1-024-shijing"
 title: "Shijing (Book of Songs / Classic of Poetry)"
 aka: ["Shī Jīng", "詩經", "Book of Odes", "Book of Songs", "Mao Shi", "the 305 Poems"]
 tradition: "Chinese / Zhou-classical"
+canonical-corpus: ["confucian-classics"]
 sub-tradition: "Zhou court and folk poetic anthology"
 label: "chinese-classic"
 date-composed-earliest: -1000

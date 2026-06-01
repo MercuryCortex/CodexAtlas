@@ -4,6 +4,7 @@ id: "phase-2-034-books-of-kings"
 title: "Books of Kings (1 Kings & 2 Kings)"
 aka: ["1 Kings", "2 Kings", "Books of Kingdoms (LXX)", "Sefer Melakhim", "Third and Fourth Kingdoms (LXX numbering)"]
 tradition: "Hebrew Bible / Old Testament"
+canonical-corpus: ["bible", "tanakh"]
 sub-tradition: "Deuteronomistic History"
 label: "historical-narrative"
 date-composed-earliest: -640

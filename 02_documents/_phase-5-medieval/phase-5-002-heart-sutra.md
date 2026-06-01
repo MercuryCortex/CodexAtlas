@@ -4,6 +4,7 @@ id: "phase-5-002-heart-sutra"
 title: "Heart Sutra"
 aka: ["Prajñāpāramitā-hṛdaya-sūtra", "Bore Boluomiduo Xinjing 般若波羅蜜多心經", "The Heart of Perfect Wisdom"]
 tradition: "Mahāyāna Buddhism"
+canonical-corpus: ["tipitaka", "madhyamaka-prajnaparamita-corpus"]
 sub-tradition: "Prajñāpāramitā"
 label: "mahayana-sutra"
 date-composed-earliest: 400

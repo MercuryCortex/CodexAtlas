@@ -4,6 +4,7 @@ id: "phase-4-075-mulamadhyamakakarika"
 title: "Mūlamadhyamakakārikā (Root Verses on the Middle Way)"
 aka: ["MMK", "Madhyamaka-kārikā", "Root Verses on the Middle Way", "*Zhonglun* 中論 (Chinese, via Kumārajīva)", "*dBu ma rtsa ba shes rab* (Tibetan)"]
 tradition: "Mahāyāna Buddhist"
+canonical-corpus: ["tipitaka", "madhyamaka-prajnaparamita-corpus"]
 sub-tradition: "Madhyamaka (the Middle Way school)"
 label: "mahayana-treatise"
 date-composed-earliest: 150

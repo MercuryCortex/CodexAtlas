@@ -4,6 +4,7 @@ id: "phase-4-033-babylonian-talmud"
 title: "Babylonian Talmud"
 aka: ["Bavli", "Talmud Bavli"]
 tradition: "Rabbinic Judaism"
+canonical-corpus: ["rabbinic-corpus"]
 sub-tradition: "Babylonian Amoraic / Stammaitic"
 label: "rabbinic-talmud"
 date-composed-earliest: 220

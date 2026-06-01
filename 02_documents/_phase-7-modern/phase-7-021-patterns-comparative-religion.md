@@ -4,6 +4,7 @@ id: "phase-7-021-patterns-comparative-religion"
 title: "Patterns in Comparative Religion"
 aka: ["Traité d'histoire des religions"]
 tradition: "Comparative religion (academic) / history of religions"
+canonical-corpus: ["comparative-religion-academic"]
 sub-tradition: "Eliadean phenomenology of religion"
 label: "comparative-religion-academic"
 date-composed-earliest: 1948

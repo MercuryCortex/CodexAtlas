@@ -4,6 +4,7 @@ id: "phase-6-029-boehme-aurora"
 title: "Aurora (Morgen-Röte im Auffgang)"
 aka: ["Aurora", "Morgenröte im Aufgang", "Morning Redness in the Ascent", "The Aurora", "Boehme's first book"]
 tradition: "Christian theosophy / Lutheran esoteric mysticism"
+canonical-corpus: ["christian-theosophy"]
 sub-tradition: "Boehmian theosophy (the founding text of Western theosophical mysticism)"
 label: "alchemical"
 date-composed-earliest: 1612

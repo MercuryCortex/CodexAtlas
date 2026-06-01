@@ -4,6 +4,7 @@ id: "phase-5-025-rumi-masnavi"
 title: "Masnavi-i Maʿnavi (The Spiritual Couplets)"
 aka: ["Mathnawi", "Masnavi", "The Masnavi of Rumi"]
 tradition: "Sufi Islam — Mevlevi (Mawlawiyya) tradition"
+canonical-corpus: ["sufi-persian"]
 sub-tradition: "Persian Sufi poetry — didactic mystical epic"
 label: "sufi"
 date-composed-earliest: 1258

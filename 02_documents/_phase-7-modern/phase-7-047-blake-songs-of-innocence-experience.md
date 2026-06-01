@@ -1,5 +1,6 @@
 ---
 type: document
+canonical-corpus: ["western-occult-modern", "english-mystical-poetry"]
 id: "phase-7-047-blake-songs-of-innocence-experience"
 name: "Songs of Innocence and of Experience (Blake)"
 status: "stub"

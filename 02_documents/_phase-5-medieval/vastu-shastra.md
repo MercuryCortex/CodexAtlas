@@ -1,5 +1,6 @@
 ---
 type: document
+canonical-corpus: ["hindu-architectural-corpus"]
 id: "vastu-shastra"
 name: "Vastu Shastra"
 status: "stub"

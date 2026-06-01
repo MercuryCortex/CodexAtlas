@@ -1,5 +1,6 @@
 ---
 type: document
+canonical-corpus: ["bible"]
 id: "document-ezekiel"
 name: "Document Ezekiel"
 status: "stub"

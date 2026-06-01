@@ -4,6 +4,7 @@ id: "phase-5-035-hatha-yoga-pradipika"
 title: "Haṭhayoga-Pradīpikā (Light on Hatha Yoga)"
 aka: ["Hathayoga Pradipika", "HYP"]
 tradition: "Hindu — Hatha Yoga / Nath sampradaya tradition"
+canonical-corpus: ["vedas", "shaiva-tantric-canon"]
 sub-tradition: "Medieval Hatha Yoga textual canon"
 label: "tantric"
 date-composed-earliest: 1400

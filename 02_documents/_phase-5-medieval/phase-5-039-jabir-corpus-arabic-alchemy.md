@@ -4,6 +4,7 @@ id: "phase-5-039-jabir-corpus-arabic-alchemy"
 title: "Jabirian Corpus — Arabic Alchemical Literature"
 aka: ["*Kitāb al-Mīzān*", "*Kitāb al-Sabʿīn*", "*Kitāb al-Aḥjār*", "*Kitāb al-Khawāṣṣ al-Kabīr*", "the Geberian corpus (Latin)"]
 tradition: "Islamic / Arabic Hermetic-alchemy"
+canonical-corpus: ["ismaili-corpus"]
 sub-tradition: "Ismaili-adjacent natural philosophy"
 label: "philosophical-technical alchemical-natural-philosophy corpus"
 date-composed-earliest: 780

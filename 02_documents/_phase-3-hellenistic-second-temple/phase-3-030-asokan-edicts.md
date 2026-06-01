@@ -4,6 +4,7 @@ id: "phase-3-030-asokan-edicts"
 title: "Aśokan Edicts (Rock + Pillar + Cave inscriptions)"
 aka: ["Edicts of Aśoka", "Inscriptions of Devānāṃpriya Priyadarśin", "Major Rock Edicts I-XIV", "Major Pillar Edicts I-VII", "Minor Rock Edicts I-II", "Kandahar Bilingual Greek-Aramaic Edict", "Lumbinī Pillar inscription"]
 tradition: "Buddhist (Aśokan state-patronage); cross-tradition dhamma-edicts"
+canonical-corpus: ["tipitaka"]
 sub-tradition: "Mauryan state-religion of dhamma"
 label: "epigraphic-primary-source"
 date-composed-earliest: -260

@@ -4,6 +4,7 @@ id: "phase-1-020-shumma-alu"
 title: "Šumma Ālu (If a City is Set on a Height)"
 aka: ["Šumma ālu ina mēlê šakin", "Shumma Alu", "the terrestrial-omen series", "if-a-city-omens"]
 tradition: "Akkadian / Mesopotamian"
+canonical-corpus: ["mesopotamian-canonical"]
 sub-tradition: "Babylonian and Neo-Assyrian scholarly omen literature"
 label: "divinatory-compendium"
 date-composed-earliest: -1700

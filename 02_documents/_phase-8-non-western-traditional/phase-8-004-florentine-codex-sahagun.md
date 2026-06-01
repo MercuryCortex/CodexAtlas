@@ -4,6 +4,7 @@ id: "phase-8-004-florentine-codex-sahagun"
 title: "Florentine Codex (Historia general de las cosas de Nueva España)"
 aka: ["Códice Florentino", "Historia General", "General History of the Things of New Spain"]
 tradition: "Nahua / Aztec (Mexica) — recorded by Spanish Franciscan ethnography"
+canonical-corpus: ["aztec-mexica-corpus"]
 sub-tradition: "Colonial ethnographic compilation; primary witness for pre-conquest Mexica religion"
 label: "mythological-narrative"
 date-composed-earliest: 1545

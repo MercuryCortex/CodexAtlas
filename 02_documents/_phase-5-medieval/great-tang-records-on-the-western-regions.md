@@ -1,5 +1,6 @@
 ---
 type: document
+canonical-corpus: ["buddhist-pilgrimage-chronicles"]
 id: "great-tang-records-on-the-western-regions"
 name: "Great Tang Records On The Western Regions"
 status: "stub"

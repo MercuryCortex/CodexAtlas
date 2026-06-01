@@ -4,6 +4,7 @@ id: "phase-3-018-luke-acts"
 title: "Luke–Acts (Gospel of Luke and Acts of the Apostles)"
 aka: ["Two-volume Lukan work", "Euangelion kata Loukan + Praxeis ton Apostolon"]
 tradition: "Earliest Christianity (Pauline-aligned, Gentile-friendly)"
+canonical-corpus: ["bible"]
 sub-tradition: "Synoptic Gospels + earliest church-history"
 label: "canonical-nt"
 date-composed-earliest: 80

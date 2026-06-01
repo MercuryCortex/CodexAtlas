@@ -1,5 +1,6 @@
 ---
 type: document
+canonical-corpus: ["bible", "tanakh"]
 id: "document-2-chronicles"
 name: "Document 2 Chronicles"
 status: "stub"

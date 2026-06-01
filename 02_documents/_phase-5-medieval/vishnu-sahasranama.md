@@ -1,5 +1,6 @@
 ---
 type: document
+canonical-corpus: ["hindu-stotra-corpus"]
 id: "vishnu-sahasranama"
 name: "Vishnu Sahasranama"
 status: "stub"

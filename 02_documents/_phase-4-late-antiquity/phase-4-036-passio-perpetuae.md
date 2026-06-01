@@ -4,6 +4,7 @@ id: "phase-4-036-passio-perpetuae"
 title: "Passio Perpetuae et Felicitatis"
 aka: ["The Passion of Perpetua and Felicity", "Passio Sanctarum Perpetuae et Felicitatis"]
 tradition: "early Christian; North African; possibly Montanist-leaning"
+canonical-corpus: ["christian-apocrypha"]
 sub-tradition: "Latin/Greek martyrology"
 label: "martyrology"
 date-composed-earliest: 203

@@ -11,6 +11,7 @@ script: "Arabic (Nasta'liq)"
 region: "Anatolia (Hacıbektaş dergah milieu)"
 authorship: "anonymous — attributed to a disciple-generation author at the Hacıbektaş lodge"
 tradition: "[[tradition-alevi-bektashi]]"
+canonical-corpus: ["alevi-corpus"]
 key-persons: ["[[haci-bektas-veli]] (subject)", "Kadıncık Ana (female companion saint, appears throughout)", "Sarı İsmail (antagonist figure in several episodes)"]
 themes: ["hagiography", "Sufi miracle-narrative", "syncretism", "pre-Islamic animal symbolism", "transmission of authority", "female sanctity in Islam"]
 status: "metadata"

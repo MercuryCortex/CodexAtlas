@@ -4,6 +4,7 @@ id: "phase-6-049-starkey-secrets-revealed"
 title: "Secrets Reveal'd / Introitus Apertus ad Occlusum Regis Palatium"
 aka: ["Secrets Reveal'd (1669)", "Introitus Apertus ad Occlusum Regis Palatium", "An Open Entrance to the Shut Palace of the King", "Eirenaeus Philalethes corpus", "Ripley Reviv'd (1677–78 commentary)"]
 tradition: "Anglo-American alchemy / Paracelsian-Sendivogian"
+canonical-corpus: ["western-alchemy-corpus"]
 sub-tradition: "Operational alchemy bridging Hermeticism and early chemistry"
 label: "alchemical treatise"
 date-composed-earliest: 1645

@@ -1,5 +1,6 @@
 ---
 type: document
+canonical-corpus: ["korean-historical-corpus"]
 id: "samguk-sagi"
 name: "Samguk Sagi"
 status: "stub"

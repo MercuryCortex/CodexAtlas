@@ -4,6 +4,7 @@ id: "phase-7-033-donnelly-atlantis-antediluvian-world"
 title: "Atlantis: The Antediluvian World"
 aka: ["Donnelly's Atlantis"]
 tradition: "19th-century American popular pseudoarchaeology"
+canonical-corpus: ["lost-civilization-corpus"]
 sub-tradition: "Hyperdiffusionism"
 label: "controversial"
 date-composed-earliest: 1881

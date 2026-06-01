@@ -1,5 +1,6 @@
 ---
 type: document
+canonical-corpus: ["buddhist-pilgrimage-chronicles"]
 id: "ajanta-inscriptions"
 name: "Ajanta Inscriptions"
 status: "stub"

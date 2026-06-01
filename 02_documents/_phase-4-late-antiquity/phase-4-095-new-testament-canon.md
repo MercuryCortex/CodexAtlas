@@ -4,6 +4,7 @@ id: "phase-4-095-new-testament-canon"
 title: "New Testament Canon — Formation"
 aka: ["NT Canon", "Canon of the New Testament", "27-book canon", "Athanasius list"]
 tradition: "Christianity"
+canonical-corpus: ["bible", "patristic-corpus"]
 sub-tradition: "Early Church canon formation"
 label: "canon-formation-process"
 date-composed-earliest: 170

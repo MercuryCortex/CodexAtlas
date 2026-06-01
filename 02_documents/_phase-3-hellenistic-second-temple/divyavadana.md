@@ -1,5 +1,6 @@
 ---
 type: document
+canonical-corpus: ["theravada-jataka-corpus"]
 id: "divyavadana"
 name: "Divyāvadāna"
 status: "stub"

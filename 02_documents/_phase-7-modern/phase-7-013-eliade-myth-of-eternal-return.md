@@ -1,5 +1,6 @@
 ---
 type: document
+canonical-corpus: ["comparative-religion-academic"]
 id: "phase-7-013-eliade-myth-of-eternal-return"
 name: "The Myth of the Eternal Return (Eliade)"
 status: "stub"

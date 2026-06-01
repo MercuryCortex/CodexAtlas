@@ -4,6 +4,7 @@ id: "phase-7-031-course-in-miracles"
 title: "A Course in Miracles"
 aka: ["ACIM"]
 tradition: "New Age / Christian-vocabulary metaphysical idealism"
+canonical-corpus: ["new-thought-corpus"]
 sub-tradition: "Channeled scripture"
 label: "new-religious-movement"
 date-composed-earliest: 1965

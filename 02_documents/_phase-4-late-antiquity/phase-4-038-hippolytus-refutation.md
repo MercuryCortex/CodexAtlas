@@ -4,6 +4,7 @@ id: "phase-4-038-hippolytus-refutation"
 title: "Refutation of All Heresies"
 aka: ["Philosophoumena", "Kata pasōn haireseōn elenchos", "Elenchos"]
 tradition: "Patristic Christian (proto-orthodox)"
+canonical-corpus: ["patristic-corpus"]
 sub-tradition: "Heresiology"
 label: "heresiological"
 date-composed-earliest: 215

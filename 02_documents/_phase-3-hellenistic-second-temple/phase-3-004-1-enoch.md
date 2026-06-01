@@ -4,6 +4,7 @@ id: "phase-3-004-1-enoch"
 title: "1 Enoch (Ethiopic Enoch)"
 aka: ["First Enoch", "Mashafa Henok", "Book of Enoch"]
 tradition: "Second Temple Judaism (apocalyptic)"
+canonical-corpus: ["bible"]
 sub-tradition: "Enochic Judaism — Watchers tradition"
 label: "pseudepigraphal-jewish"
 date-composed-earliest: -300

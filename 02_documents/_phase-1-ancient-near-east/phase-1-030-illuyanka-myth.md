@@ -4,6 +4,7 @@ id: "phase-1-030-illuyanka-myth"
 title: "The Illuyanka Myth (Old and Late Versions)"
 aka: ["The Slaying of Illuyanka", "CTH 321", "Hittite Chaoskampf Text"]
 tradition: "Hittite (with Hattic substrate)"
+canonical-corpus: ["hurro-hittite"]
 sub-tradition: "Anatolian chaoskampf"
 label: "mythological-narrative"
 date-composed-earliest: -1600

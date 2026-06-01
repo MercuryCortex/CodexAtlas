@@ -4,6 +4,7 @@ id: "phase-7-027-life-divine"
 title: "The Life Divine"
 aka: []
 tradition: "Hindu modernism / Integral Yoga"
+canonical-corpus: ["hindu-modernism-corpus"]
 sub-tradition: "Aurobindo's Integral philosophy"
 label: "darśana"
 date-composed-earliest: 1914

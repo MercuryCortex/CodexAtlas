@@ -1,5 +1,6 @@
 ---
 type: document
+canonical-corpus: ["chinese-mahayana-chan-huayan-tiantai"]
 id: "avatamsaka-sutra"
 name: "Avatamsaka Sutra"
 status: "stub"

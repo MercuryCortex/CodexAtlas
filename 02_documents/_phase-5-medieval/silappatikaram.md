@@ -1,5 +1,6 @@
 ---
 type: document
+canonical-corpus: ["tamil-shaiva-corpus"]
 id: "silappatikaram"
 name: "Silappatikaram"
 status: "stub"

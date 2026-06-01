@@ -4,6 +4,7 @@ id: "phase-5-054-rumi-masnavi"
 title: "Masnavī-ye Maʿnavī (Spiritual Verses / The Masnavi)"
 aka: ["Masnavi", "Mathnawi", "Mesnevi", "The Masnavi of Rumi", "مثنوی معنوی", "Masnavī-ye Maʿnavī"]
 tradition: "Islam (Sufism — Persian Sufi theological poetry)"
+canonical-corpus: ["sufi-persian"]
 sub-tradition: "Persian Sufi mathnawi — theological-narrative verse"
 label: "theological-poem-narrative"
 date-composed-earliest: 1258

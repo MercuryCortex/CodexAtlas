@@ -4,6 +4,7 @@ id: "phase-6-023-mulla-sadra-asfar"
 title: "Al-Asfar al-Arba'a (The Four Journeys)"
 aka: ["al-Hikma al-muta'aliya fi al-asfar al-aqliyya al-arba'a", "The Transcendent Philosophy of the Four Intellectual Journeys"]
 tradition: "Islamic philosophy / Sufi mysticism"
+canonical-corpus: ["school-of-isfahan"]
 sub-tradition: "Hikmat al-Muta'aliya (Transcendent Philosophy); School of Isfahan"
 label: "sufi"
 date-composed-earliest: 1605

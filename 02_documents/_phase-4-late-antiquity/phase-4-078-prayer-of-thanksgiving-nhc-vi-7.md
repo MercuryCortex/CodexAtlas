@@ -4,6 +4,7 @@ id: "phase-4-078-prayer-of-thanksgiving-nhc-vi-7"
 title: "Hermetic Prayer of Thanksgiving (NHC VI,7)"
 aka: ["NHC VI,7", "Prayer of Thanksgiving", "Hermetic Eucharistic Prayer", "Asclepius §41 Prayer"]
 tradition: "Hermetic"
+canonical-corpus: ["nag-hammadi", "hermetica"]
 sub-tradition: "Philosophical Hermetism — liturgical / devotional"
 label: "hermetic"
 date-composed-earliest: 100

@@ -4,6 +4,7 @@ id: "phase-4-043-apophthegmata-patrum"
 title: "Apophthegmata Patrum (Sayings of the Desert Fathers)"
 aka: ["Sayings of the Desert Fathers", "Verba Seniorum", "Gerontikon"]
 tradition: "Patristic Christian (Egyptian monastic)"
+canonical-corpus: ["patristic-corpus"]
 sub-tradition: "Desert monasticism"
 label: "monastic-collection"
 date-composed-earliest: 350

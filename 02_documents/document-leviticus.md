@@ -1,5 +1,6 @@
 ---
 type: document
+canonical-corpus: ["bible"]
 id: "document-leviticus"
 name: "Document Leviticus"
 status: "stub"

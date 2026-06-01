@@ -8,6 +8,7 @@ date-composed: 1926
 date-range: "primary revelations 1925–1927; ongoing spirit-writing sessions"
 language: "Vietnamese (with Classical Chinese elements)"
 tradition: "[[tradition-cao-dai]]"
+canonical-corpus: ["cao-dai-corpus"]
 genre: "canonical-scripture / spirit-writing / syncretic-revelation"
 phase: 7
 region: "Cochinchina (southern Vietnam)"

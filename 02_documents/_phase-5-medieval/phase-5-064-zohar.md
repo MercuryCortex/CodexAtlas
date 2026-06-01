@@ -1,5 +1,6 @@
 ---
 type: document
+canonical-corpus: ["kabbalistic-corpus"]
 id: "phase-5-064-zohar"
 name: "Zohar (Sefer ha-Zohar)"
 status: "stub"

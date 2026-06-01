@@ -4,6 +4,7 @@ id: "phase-1-010-book-of-the-dead"
 title: "Book of the Dead"
 aka: ["Book of Going Forth by Day", "Pert em Hru", "Reu nu Pert em Hru", "BD"]
 tradition: "Egyptian"
+canonical-corpus: ["egyptian-scripture"]
 sub-tradition: "New Kingdom mortuary religion"
 label: "funerary"
 date-composed-earliest: -1550

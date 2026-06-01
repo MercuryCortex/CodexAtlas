@@ -4,6 +4,7 @@ id: "phase-2-038-acharanga-sutra"
 title: "Ācārāṅga Sūtra (First Āṅga of the Jain Canon)"
 aka: ["Ayaranga Sutta", "Acaranga Sutra", "First Limb"]
 tradition: "Jainism"
+canonical-corpus: ["jain-agamas"]
 sub-tradition: "Śvetāmbara Jainism (the Digambara branch rejects the Āgamic canon as corrupted)"
 label: "jain-agama-primary"
 date-composed-earliest: -500

@@ -4,6 +4,7 @@ id: "tummal-chronicle"
 title: "Tummal Chronicle"
 aka: ["The Tummal Inscription", "Tummal Text", "STVC (Sumerian Temple-Building and VotiveChronology)"]
 tradition: "Sumerian"
+canonical-corpus: ["mesopotamian-canonical"]
 sub-tradition: "Royal chronicle / temple chronicle"
 language: ["Sumerian (literary dialect)"]
 date-composed: -1740

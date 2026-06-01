@@ -1,5 +1,6 @@
 ---
 type: document
+canonical-corpus: ["andean-chronicles-corpus"]
 id: "cobo-historia-del-nuevo-mundo"
 name: "Cobo Historia Del Nuevo Mundo"
 status: "stub"

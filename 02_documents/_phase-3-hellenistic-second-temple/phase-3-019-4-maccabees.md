@@ -4,6 +4,7 @@ id: "phase-3-019-4-maccabees"
 title: "4 Maccabees"
 aka: ["Fourth Maccabees", "On the Sovereignty of Reason", "Peri Autokratoros Logismou"]
 tradition: "Hellenistic Judaism"
+canonical-corpus: ["bible"]
 sub-tradition: "Stoic-Platonist Hellenistic Jewish moral philosophy"
 label: "apocryphal-jewish"
 date-composed-earliest: 20

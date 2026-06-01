@@ -4,6 +4,7 @@ id: "phase-8-018-kalevala"
 title: "Kalevala"
 aka: ["Kalevala", "Karelian-Finnish national epic"]
 tradition: "Finnish / Karelian"
+canonical-corpus: ["norse-eddic", "finno-karelian-corpus"]
 sub-tradition: "Compiled Karelian-Finnish runo-epic; preserves pre-Christian Finno-Karelian religious material"
 label: "mythological-narrative"
 date-composed-earliest: 500

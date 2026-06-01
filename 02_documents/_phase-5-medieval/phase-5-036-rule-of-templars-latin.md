@@ -4,6 +4,7 @@ id: "phase-5-036-rule-of-templars-latin"
 title: "Latin Rule of the Templars"
 aka: ["Regula pauperum commilitonum Christi Templique Salomonici", "Primitive Rule", "Rule of 1129"]
 tradition: "Latin Christianity (military-religious)"
+canonical-corpus: ["templar-corpus"]
 sub-tradition: "[[tradition-knights-templar|Knights Templar]]"
 label: "rule / monastic-military constitution"
 date-composed-earliest: 1129

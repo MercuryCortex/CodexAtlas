@@ -1,5 +1,6 @@
 ---
 type: document
+canonical-corpus: ["tewahedo"]
 id: "gadla-lalibela"
 name: "Gadla Lalibela (Acts of Lalibela)"
 status: "stub"

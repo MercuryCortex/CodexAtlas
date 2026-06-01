@@ -1,5 +1,6 @@
 ---
 type: document
+canonical-corpus: ["maya-corpus"]
 id: "landa-relacion-de-las-cosas-de-yucatan"
 name: "Landa Relacion De Las Cosas De Yucatan"
 status: "stub"

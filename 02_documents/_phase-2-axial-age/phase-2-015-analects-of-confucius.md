@@ -4,6 +4,7 @@ id: "phase-2-015-analects-of-confucius"
 title: "Analects of Confucius"
 aka: ["Lúnyǔ", "論語", "Lunyu", "Sayings of Confucius"]
 tradition: "Chinese / Confucian"
+canonical-corpus: ["confucian-classics"]
 sub-tradition: "Classical Confucianism"
 label: "confucian-classical"
 date-composed-earliest: -500

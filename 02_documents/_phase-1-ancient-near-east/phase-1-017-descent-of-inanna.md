@@ -4,6 +4,7 @@ id: "phase-1-017-descent-of-inanna"
 title: "Inanna's Descent to the Netherworld"
 aka: ["Inana's Descent to the Nether World", "Inanna's Descent", "Inanna-Dumuzi cycle (closing composition)", "ETCSL 1.4.1"]
 tradition: "Sumerian / Mesopotamian"
+canonical-corpus: ["mesopotamian"]
 sub-tradition: "Sumerian mythological narrative; Inanna-Dumuzi cult-literary cycle"
 label: "mythological-narrative"
 date-composed-earliest: -1900

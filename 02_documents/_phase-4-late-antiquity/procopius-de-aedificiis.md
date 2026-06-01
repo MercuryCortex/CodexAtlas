@@ -1,5 +1,6 @@
 ---
 type: document
+canonical-corpus: ["byzantine-corpus"]
 id: "procopius-de-aedificiis"
 name: "Procopius, De Aedificiis (On the Buildings)"
 status: "stub"

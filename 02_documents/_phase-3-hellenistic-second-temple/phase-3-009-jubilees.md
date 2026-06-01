@@ -4,6 +4,7 @@ id: "phase-3-009-jubilees"
 title: "Book of Jubilees"
 aka: ["Sefer ha-Yovelot", "Little Genesis", "Leptogenesis", "Ge'ez Kufale"]
 tradition: "Second Temple Judaism (sectarian, proto-Qumran)"
+canonical-corpus: ["bible", "ethiopic-tewahedo-canon"]
 sub-tradition: "364-day solar-calendar Judaism"
 label: "pseudepigraphal-jewish"
 date-composed-earliest: -160

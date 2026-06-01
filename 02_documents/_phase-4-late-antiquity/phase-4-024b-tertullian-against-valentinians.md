@@ -4,6 +4,7 @@ id: "phase-4-024b-tertullian-against-valentinians"
 title: "Against the Valentinians"
 aka: ["Adversus Valentinianos", "Adv. Val."]
 tradition: "Christian (proto-orthodox / pre-Montanist transition)"
+canonical-corpus: ["patristic-corpus"]
 sub-tradition: "Patristic Latin (North African) — heresiology"
 label: "heresiological"
 date-composed-earliest: 206

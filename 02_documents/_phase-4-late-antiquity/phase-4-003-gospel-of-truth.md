@@ -4,6 +4,7 @@ id: "phase-4-003-gospel-of-truth"
 title: "Gospel of Truth"
 aka: ["Evangelium Veritatis", "NHC I,3 / XII,2"]
 tradition: "Gnostic Christian"
+canonical-corpus: ["nag-hammadi"]
 sub-tradition: "Valentinian"
 label: "gnostic-valentinian"
 date-composed-earliest: 140

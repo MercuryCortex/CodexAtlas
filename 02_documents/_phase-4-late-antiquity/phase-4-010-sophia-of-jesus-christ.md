@@ -4,6 +4,7 @@ id: "phase-4-010-sophia-of-jesus-christ"
 title: "Sophia of Jesus Christ"
 aka: ["NHC III,4 / BG 8502,3"]
 tradition: "Gnostic Christian"
+canonical-corpus: ["nag-hammadi"]
 sub-tradition: "Sethian-Christian"
 label: "gnostic-christian"
 date-composed-earliest: 150

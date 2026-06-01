@@ -4,6 +4,7 @@ id: "phase-2-041-book-of-proverbs"
 title: "Book of Proverbs"
 slug: "phase-2-041-book-of-proverbs"
 tradition: "Hebrew / Israelite"
+canonical-corpus: ["bible", "tanakh"]
 language: "Biblical Hebrew"
 script: "Hebrew square script (later manuscripts)"
 region: "Judah / post-exilic Jerusalem"

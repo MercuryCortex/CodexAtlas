@@ -1,5 +1,6 @@
 ---
 type: document
+canonical-corpus: ["confucian-classics"]
 id: "zhou-li"
 name: "Zhou Li"
 status: "stub"

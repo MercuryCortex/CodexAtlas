@@ -4,6 +4,7 @@ id: "phase-2-005-hebrew-bible-j-source"
 title: "Hebrew Bible — J (Yahwist) Source"
 aka: ["Yahwist", "J-source", "the J document"]
 tradition: "Israelite / pre-exilic Hebrew"
+canonical-corpus: ["bible", "tanakh", "israelite-religion"]
 sub-tradition: "Judahite court / Jerusalem"
 label: "tanakh-torah"
 date-composed-earliest: -950

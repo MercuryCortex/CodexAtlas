@@ -4,6 +4,7 @@ id: "phase-6-004-pico-heptaplus-conclusiones-cabalisticae"
 title: "Heptaplus + Conclusiones Cabalisticae"
 aka: ["Heptaplus de septiformi sex dierum Geneseos enarratione", "Cabalistic Conclusions (subset of the 900)"]
 tradition: "Christian Kabbalah"
+canonical-corpus: ["renaissance-magic-corpus"]
 sub-tradition: "Florentine Renaissance"
 label: "kabbalistic"
 date-composed-earliest: 1486

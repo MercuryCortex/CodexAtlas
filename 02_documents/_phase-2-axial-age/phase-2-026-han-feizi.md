@@ -4,6 +4,7 @@ id: "phase-2-026-han-feizi"
 title: "Han Feizi"
 aka: ["Hán Fēizǐ", "韓非子", "Han Fei Tzu", "Master Han Fei"]
 tradition: "Chinese / Legalist"
+canonical-corpus: ["confucian-classics"]
 sub-tradition: "Legalism (synthesizing earlier Shang Yang and Shen Buhai traditions)"
 label: "chinese-classical"
 date-composed-earliest: -250

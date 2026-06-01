@@ -7,6 +7,7 @@ date-composed-end: 1321
 date-composed-earliest: 1308
 date-composed-latest: 1321
 tradition: medieval-christianity
+canonical-corpus: ["latin-catholic-medieval"]
 region: italy
 language: Italian (Tuscan vernacular)
 authorship: attributed (Dante Alighieri)

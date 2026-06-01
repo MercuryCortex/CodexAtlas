@@ -4,6 +4,7 @@ id: "phase-3-007-sirach"
 title: "Sirach (Ecclesiasticus)"
 aka: ["Ben Sira", "Wisdom of Ben Sira", "Ecclesiasticus", "Σοφία Σιράχ"]
 tradition: "Second Temple Judaism (Hellenistic, pre-sectarian)"
+canonical-corpus: ["bible"]
 sub-tradition: "Jerusalemite wisdom literature"
 label: "apocryphal-jewish"
 date-composed-earliest: -190

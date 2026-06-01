@@ -4,6 +4,7 @@ id: "phase-3-011-dead-sea-scrolls"
 title: "Dead Sea Scrolls — Sectarian Core (Community Rule 1QS, War Scroll 1QM, Hodayot 1QHᵃ)"
 aka: ["Qumran sectarian writings", "Yahad documents"]
 tradition: "Second Temple Judaism (sectarian)"
+canonical-corpus: ["bible", "tanakh"]
 sub-tradition: "Yahad / Essene / Qumran community"
 label: "sectarian-qumran"
 date-composed-earliest: -150

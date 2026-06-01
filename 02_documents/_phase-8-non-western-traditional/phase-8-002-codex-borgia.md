@@ -4,6 +4,7 @@ id: "phase-8-002-codex-borgia"
 title: "Codex Borgia"
 aka: ["Códice Borgia", "Codex Borgianus Messicanus 1"]
 tradition: "Central Mexican (Nahua / Mixtec-Puebla stylistic sphere)"
+canonical-corpus: ["mesoamerican-sacred", "aztec-mexica-corpus"]
 sub-tradition: "Pre-Columbian Mesoamerican ritual-divinatory manuscript"
 label: "divinatory"
 date-composed-earliest: 1400

@@ -10,6 +10,7 @@ aka:
   - "Greater Bundahishn"
   - "Indian Bundahishn"
 tradition: "Zoroastrian (Pahlavi literature)"
+canonical-corpus: ["avesta"]
 sub-tradition: "Mazdean cosmogony / Pahlavi theological literature"
 label: "sacred text"
 date-composed-earliest: 300

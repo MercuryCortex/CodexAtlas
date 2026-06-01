@@ -4,6 +4,7 @@ id: "phase-4-008-trimorphic-protennoia"
 title: "Trimorphic Protennoia"
 aka: ["NHC XIII,1", "Three Forms of First Thought"]
 tradition: "Gnostic Christian"
+canonical-corpus: ["nag-hammadi"]
 sub-tradition: "Sethian Gnostic (late, with Christianizing overlay)"
 label: "gnostic-sethian"
 date-composed-earliest: 200

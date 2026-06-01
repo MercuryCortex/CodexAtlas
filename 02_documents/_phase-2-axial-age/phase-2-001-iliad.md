@@ -1,5 +1,6 @@
 ---
 type: document
+canonical-corpus: ["greek-scripture"]
 id: "phase-2-001-iliad"
 name: "The Iliad"
 status: "stub"

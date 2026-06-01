@@ -4,6 +4,7 @@ id: "phase-4-047-cassian-conferences"
 title: "Conferences"
 aka: ["Conlationes", "Collationes", "Conferences of the Egyptian Fathers"]
 tradition: "Latin Christian (monastic; with Egyptian-monastic substrate)"
+canonical-corpus: ["patristic-corpus"]
 sub-tradition: "Western monastic literature"
 label: "patristic"
 date-composed-earliest: 420

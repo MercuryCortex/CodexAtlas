@@ -1,5 +1,6 @@
 ---
 type: document
+canonical-corpus: ["egyptian-scripture"]
 id: "phase-1-035-wadi-el-jarf-papyri"
 name: "Wadi el-Jarf Papyri"
 aka: ["Merer's Journal", "Papyri of Wadi el-Jarf", "the oldest papyri in the world"]

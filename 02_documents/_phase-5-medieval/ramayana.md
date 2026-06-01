@@ -1,5 +1,6 @@
 ---
 type: document
+canonical-corpus: ["vaishnava-canon"]
 id: "ramayana"
 name: "Ramayana"
 status: "stub"

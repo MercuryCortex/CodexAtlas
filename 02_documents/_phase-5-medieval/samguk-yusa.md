@@ -1,5 +1,6 @@
 ---
 type: document
+canonical-corpus: ["korean-historical-corpus"]
 id: "samguk-yusa"
 name: "Samguk Yusa"
 status: "stub"

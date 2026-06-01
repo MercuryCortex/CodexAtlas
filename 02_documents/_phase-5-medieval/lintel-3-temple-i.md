@@ -1,5 +1,6 @@
 ---
 type: document
+canonical-corpus: ["maya-corpus"]
 id: "lintel-3-temple-i"
 name: "Lintel 3 Temple I"
 status: "stub"

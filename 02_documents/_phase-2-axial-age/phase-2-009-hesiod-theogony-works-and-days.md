@@ -4,6 +4,7 @@ id: "phase-2-009-hesiod-theogony-works-and-days"
 title: "Hesiod — Theogony and Works and Days"
 aka: ["Θεογονία", "Ἔργα καὶ Ἡμέραι"]
 tradition: "Greek"
+canonical-corpus: ["greek-scripture"]
 sub-tradition: "Archaic Greek didactic / theogonic epic"
 label: "theogonic"
 date-composed-earliest: -730

@@ -8,6 +8,7 @@ date-composed: 100
 date-range: "OT portions ~1st–2nd c. CE; NT portions ~2nd–5th c. CE; Peshitta NT canonical form fixed by Rabbula of Edessa (~411–435 CE)"
 language: "Syriac (Eastern Aramaic)"
 tradition: "[[tradition-syriac-orthodox]]"
+canonical-corpus: ["bible", "syriac-christianity"]
 genre: "canonical-scripture / translation"
 phase: 4
 region: "Edessa (Urfa/Şanlıurfa, southeastern Turkey) → Persian Empire → India → China"

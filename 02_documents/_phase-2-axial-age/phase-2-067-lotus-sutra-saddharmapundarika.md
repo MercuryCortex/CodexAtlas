@@ -1,5 +1,6 @@
 ---
 type: document
+canonical-corpus: ["mahayana-corpus"]
 id: "phase-2-067-lotus-sutra-saddharmapundarika"
 name: "Lotus Sutra (Saddharma Puṇḍarīka Sūtra)"
 aka: ["Saddharmapuṇḍarīka", "Lotus of the Wonderful Law", "Hokekyō (Japanese)", "Miàofǎ Liánhuá Jīng (Chinese)"]

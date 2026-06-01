@@ -1,5 +1,6 @@
 ---
 type: document
+canonical-corpus: ["buddhist-pilgrimage-chronicles"]
 id: "longmen-inscriptions"
 name: "Longmen Inscriptions"
 status: "stub"

@@ -1,5 +1,6 @@
 ---
 type: document
+canonical-corpus: ["maya-corpus"]
 id: "palenque-tablet-of-the-cross"
 name: "Palenque Tablet Of The Cross"
 status: "stub"

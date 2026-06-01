@@ -4,6 +4,7 @@ id: "phase-3-029-milindapanha"
 title: "Milindapañha (Questions of King Milinda)"
 aka: ["Milindapañha (Pali)", "Milinda-pañha", "*The Questions of King Milinda*", "Chinese parallel: *Nāgasena-bhikṣu-sūtra* (那先比丘經, T 1670 A and B)"]
 tradition: "Buddhist"
+canonical-corpus: ["tipitaka"]
 sub-tradition: "Pre-sectarian core (Sarvāstivāda or related northern school) + Theravāda Pali extended recension"
 label: "buddhist-dialogue-text"
 date-composed-earliest: -100

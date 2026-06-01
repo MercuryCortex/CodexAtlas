@@ -1,5 +1,6 @@
 ---
 type: document
+canonical-corpus: ["aztec-corpus"]
 id: "florentine-codex"
 name: "Florentine Codex"
 status: "stub"

@@ -4,6 +4,7 @@ id: "phase-1-023-shulgi-hymns"
 title: "The Shulgi Royal Hymns"
 aka: ["Shulgi Hymns", "Šulgi A–X", "Šulgi royal hymns", "the Ur III royal hymn cycle"]
 tradition: "Sumerian"
+canonical-corpus: ["mesopotamian-canonical"]
 sub-tradition: "Ur III royal hymnography (Third Dynasty of Ur, ~-2094 to -2047)"
 label: "royal-hymn"
 date-composed-earliest: -2094

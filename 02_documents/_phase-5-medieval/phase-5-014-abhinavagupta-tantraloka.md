@@ -4,6 +4,7 @@ id: "phase-5-014-abhinavagupta-tantraloka"
 title: "Tantrāloka (Light on the Tantras)"
 aka: ["Tantrāloka", "TĀ"]
 tradition: "Hindu — Kashmir Shaivism (Trika)"
+canonical-corpus: ["vedas", "shaiva-tantric-canon"]
 sub-tradition: "Non-dualist Tantric Shaivism — Kaula synthesis"
 label: "tantric"
 date-composed-earliest: 990

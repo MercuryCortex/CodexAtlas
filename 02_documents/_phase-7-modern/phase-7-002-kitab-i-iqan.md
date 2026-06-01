@@ -4,6 +4,7 @@ id: "phase-7-002-kitab-i-iqan"
 title: "Kitáb-i-Íqán"
 aka: ["The Book of Certitude"]
 tradition: "Bahá'í Faith"
+canonical-corpus: ["bahai-corpus"]
 sub-tradition: "Bahá'í foundational scripture (pre-declaration period)"
 label: "bahai"
 date-composed-earliest: 1861

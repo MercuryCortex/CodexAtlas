@@ -4,6 +4,7 @@ id: "phase-3-024-natyashastra"
 title: "Nāṭyaśāstra"
 aka: ["Natya Shastra", "Treatise on Drama"]
 tradition: "Hindu — classical Sanskrit aesthetics; closely tied to Brahmanical-Śaiva ritual context"
+canonical-corpus: ["vedas"]
 sub-tradition: "Sanskrit aesthetic-dramatic śāstra"
 label: "śāstra-classical"
 date-composed-earliest: -200

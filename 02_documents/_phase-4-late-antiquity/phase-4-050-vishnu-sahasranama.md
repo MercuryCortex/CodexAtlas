@@ -4,6 +4,7 @@ id: "phase-4-050-vishnu-sahasranama"
 title: "Viṣṇu Sahasranāma (The Thousand Names of Viṣṇu)"
 aka: ["Vishnu Sahasranama", "VS"]
 tradition: "Hindu — Vaishnavism"
+canonical-corpus: ["vaishnava-canon"]
 sub-tradition: "Mahābhārata epic-Vaishnava theological corpus"
 label: "smṛti-puranic"
 date-composed-earliest: -100

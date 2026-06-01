@@ -4,6 +4,7 @@ id: "phase-2-023-mengzi"
 title: "Mengzi (Mencius)"
 aka: ["Mèngzǐ", "孟子", "Mencius", "Master Meng"]
 tradition: "Chinese / Confucian"
+canonical-corpus: ["confucian-classics"]
 sub-tradition: "Classical Confucianism"
 label: "confucian-classical"
 date-composed-earliest: -320

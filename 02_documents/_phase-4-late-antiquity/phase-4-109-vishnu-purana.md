@@ -8,6 +8,7 @@ date-composed: 400
 date-range: "core text c. 400–500 CE; some material older"
 language: "Sanskrit"
 tradition: "[[tradition-bhakti-vaishnavism]]"
+canonical-corpus: ["vaishnava-canon"]
 genre: "purana / cosmological-narrative / avatara-theology"
 phase: 4
 region: "Northern India"

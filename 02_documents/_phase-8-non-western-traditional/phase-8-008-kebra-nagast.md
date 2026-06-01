@@ -4,6 +4,7 @@ id: "phase-8-008-kebra-nagast"
 title: "Kebra Nagast"
 aka: ["The Glory of the Kings", "Kebra Negast", "ክብረ ነገሥት"]
 tradition: "Ethiopian Orthodox Christianity / Ethiopian national-religious tradition"
+canonical-corpus: ["kebra-nagast", "ethiopic-tewahedo-canon", "rastafari-corpus"]
 sub-tradition: "Ethiopian Solomonic-dynasty legitimating epic"
 label: "mythological-narrative"
 date-composed-earliest: 600

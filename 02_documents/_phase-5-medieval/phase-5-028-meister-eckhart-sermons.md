@@ -4,6 +4,7 @@ id: "phase-5-028-meister-eckhart-sermons"
 title: "German Sermons (Meister Eckhart)"
 aka: ["Deutsche Predigten", "Eckhart's Vernacular Sermons"]
 tradition: "Latin Christian — Rhineland mysticism"
+canonical-corpus: ["latin-catholic-medieval"]
 sub-tradition: "Dominican Neoplatonic Christian mysticism"
 label: "patristic"
 date-composed-earliest: 1294

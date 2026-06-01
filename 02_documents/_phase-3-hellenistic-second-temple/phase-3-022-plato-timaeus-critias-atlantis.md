@@ -4,6 +4,7 @@ id: "phase-3-022-plato-timaeus-critias-atlantis"
 title: "Plato's Atlantis Narrative (Timaeus 17a–27b, 24a–25d; Critias)"
 aka: ["The Atlantis Story", "Atlantikos logos", "Solon's Egyptian Tale"]
 tradition: "Greek philosophy"
+canonical-corpus: ["greek-scripture"]
 sub-tradition: "Academic / classical Platonism"
 label: "philosophical"
 date-composed-earliest: -360

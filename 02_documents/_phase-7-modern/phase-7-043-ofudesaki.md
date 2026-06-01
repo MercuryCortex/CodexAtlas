@@ -8,6 +8,7 @@ date-composed: 1869
 date-range: "1869–1882 (written over 14 years in 17 volumes)"
 language: "Japanese (poetic 5-7-5-7-7 waka form)"
 tradition: "[[tradition-tenrikyo]]"
+canonical-corpus: ["tenrikyo-corpus"]
 genre: "canonical-scripture / divine-revelation / poetry"
 phase: 7
 region: "Yamato Province, Japan (Tenri city)"

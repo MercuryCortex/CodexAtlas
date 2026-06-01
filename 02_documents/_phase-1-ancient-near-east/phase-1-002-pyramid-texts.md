@@ -4,6 +4,7 @@ id: "phase-1-002-pyramid-texts"
 title: "Pyramid Texts"
 aka: ["PT", "Utterances of the Pyramid Texts", "Spells of Going Forth"]
 tradition: "Egyptian"
+canonical-corpus: ["egyptian-scripture"]
 sub-tradition: "Old Kingdom royal funerary religion"
 label: "funerary"
 date-composed-earliest: -2400

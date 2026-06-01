@@ -4,6 +4,7 @@ id: "phase-4-031-mishnah"
 title: "Mishnah"
 aka: ["Mishna", "Mishnah of Rabbi Judah ha-Nasi"]
 tradition: "Rabbinic Judaism"
+canonical-corpus: ["rabbinic-corpus"]
 sub-tradition: "Tannaitic"
 label: "rabbinic-mishnah"
 date-composed-earliest: 50

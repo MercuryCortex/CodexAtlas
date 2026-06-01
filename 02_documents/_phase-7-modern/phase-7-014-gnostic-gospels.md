@@ -4,6 +4,7 @@ id: "phase-7-014-gnostic-gospels"
 title: "The Gnostic Gospels"
 aka: []
 tradition: "Comparative religion (academic) / history of religions"
+canonical-corpus: ["comparative-religion-academic", "gnostic-scripture"]
 sub-tradition: "Popular-scholarly Nag Hammadi reception"
 label: "comparative-religion-academic"
 date-composed-earliest: 1976

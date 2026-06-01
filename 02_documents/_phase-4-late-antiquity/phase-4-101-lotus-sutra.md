@@ -4,6 +4,7 @@ id: "phase-4-101-lotus-sutra"
 title: "Lotus Sūtra"
 aka: ["Saddharma Puṇḍarīka Sūtra", "妙法蓮華經 (Miàofǎ Liánhuá Jīng)", "Sutra of the Lotus of the Wonderful Law", "Hokekyō"]
 tradition: "Mahāyāna Buddhism"
+canonical-corpus: ["tipitaka"]
 sub-tradition: "Lotus / Tiantai / Nichiren textual family"
 label: "mahayana-sutra"
 date-composed-earliest: -100

@@ -4,6 +4,7 @@ id: "phase-3-027-derveni-papyrus"
 title: "Derveni Papyrus"
 aka: ["P.Derveni", "Derveni Theogony Commentary"]
 tradition: "Greek (Orphic-philosophical commentary)"
+canonical-corpus: ["mystery-cults-corpus"]
 sub-tradition: "Orphic / pre-Socratic allegorical commentary"
 label: "philosophical-commentary"
 date-composed-earliest: -420

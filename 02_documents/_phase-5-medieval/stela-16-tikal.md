@@ -1,5 +1,6 @@
 ---
 type: document
+canonical-corpus: ["maya-corpus"]
 id: "stela-16-tikal"
 name: "Stela 16 Tikal"
 status: "stub"

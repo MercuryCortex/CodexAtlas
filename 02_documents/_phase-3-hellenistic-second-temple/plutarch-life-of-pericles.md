@@ -1,5 +1,6 @@
 ---
 type: document
+canonical-corpus: ["greek-scripture", "roman-scripture"]
 id: "plutarch-life-of-pericles"
 name: "Plutarch, Life of Pericles"
 status: "stub"

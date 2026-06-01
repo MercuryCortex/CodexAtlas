@@ -4,6 +4,7 @@ id: "phase-6-032-rosarium-philosophorum"
 title: "Rosarium Philosophorum (Rosary of the Philosophers)"
 aka: ["*Rosarium Philosophorum sive Pretiosissimum Donum Dei*", "*Rosary of the Philosophers, that is, the Most Precious Gift of God*"]
 tradition: "Latin Christianity (Renaissance) / Hermetic-alchemical"
+canonical-corpus: ["western-alchemy-corpus"]
 sub-tradition: "illustrated emblem-alchemy"
 label: "illustrated alchemical-mystical compendium"
 date-composed-earliest: 1550

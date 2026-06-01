@@ -4,6 +4,7 @@ id: "phase-6-047-ashmole-theatrum-chemicum-britannicum"
 title: "Theatrum Chemicum Britannicum"
 aka: ["Theatrum Chemicum Britannicum", "The British Chemical Theatre", "Ashmole's Alchemical Anthology"]
 tradition: "English Hermetic / Rosicrucian-Masonic"
+canonical-corpus: ["western-alchemy-corpus"]
 sub-tradition: "English alchemical canon and transmission"
 label: "alchemical anthology and canon-forming collection"
 date-composed-earliest: 1652

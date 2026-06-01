@@ -1,5 +1,6 @@
 ---
 type: document
+canonical-corpus: ["nag-hammadi"]
 id: "gospel-of-judas-sethian"
 name: "Gospel of Judas (Sethian Gnostic, Codex Tchacos)"
 aka: ["Codex Tchacos Gospel of Judas", "Sethian Gospel of Judas"]

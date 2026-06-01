@@ -4,6 +4,7 @@ id: "phase-3-037-shennong-bencao-jing"
 name: "Shennong Bencao Jing"
 aka: ["Divine Farmer's Materia Medica", "神農本草經", "Shén Nóng Běncǎo Jīng", "Shennong's Classic of Herbal Medicine", "Classic of Herbal Medicine"]
 tradition: "Chinese"
+canonical-corpus: ["daoist-medical-corpus"]
 region: "China — Eastern Han dynasty"
 date-composed-earliest: 100
 date-composed-latest: 200

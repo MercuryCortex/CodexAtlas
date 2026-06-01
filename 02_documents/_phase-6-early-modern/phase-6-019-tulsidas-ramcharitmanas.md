@@ -4,6 +4,7 @@ id: "phase-6-019-tulsidas-ramcharitmanas"
 title: "Ramcharitmanas"
 aka: ["Ram Charit Manas", "Tulsi-Ramayana", "Manas"]
 tradition: "Hindu Bhakti (Vaishnava)"
+canonical-corpus: ["vaishnava-canon"]
 sub-tradition: "Ram-bhakti (Hindi)"
 label: "smṛti-epic"
 date-composed-earliest: 1574

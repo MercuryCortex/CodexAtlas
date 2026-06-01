@@ -4,6 +4,7 @@ id: "phase-4-016-shabuhragan"
 title: "Šābuhragān"
 aka: ["Šāhbuhragān", "Šāpurakān", "Book of Shapur"]
 tradition: "Manichaean"
+canonical-corpus: ["manichaean-corpus"]
 sub-tradition: "Manichaean (Iranian / Pahlavi register)"
 label: "manichaean"
 date-composed-earliest: 240

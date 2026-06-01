@@ -4,6 +4,7 @@ id: "phase-3-020-gospel-of-john"
 title: "Gospel of John"
 aka: ["Euangelion kata Iōannēn", "Fourth Gospel", "Secundum Iohannem"]
 tradition: "Early Christianity (Johannine community)"
+canonical-corpus: ["bible"]
 sub-tradition: "Johannine Christianity — high Christology, Logos theology"
 label: "canonical-nt"
 date-composed-earliest: 90

@@ -4,6 +4,7 @@ id: "phase-7-024-witchcraft-today"
 title: "Witchcraft Today"
 aka: []
 tradition: "Modern Paganism / Wicca"
+canonical-corpus: ["wicca-corpus"]
 sub-tradition: "Gardnerian Wicca founding text"
 label: "new-religious-movement"
 date-composed-earliest: 1953

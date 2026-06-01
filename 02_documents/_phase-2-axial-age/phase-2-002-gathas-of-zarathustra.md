@@ -4,6 +4,7 @@ id: "phase-2-002-gathas-of-zarathustra"
 title: "Gathas of Zarathustra"
 aka: ["Gāθās", "Gathas", "the Old Avestan hymns"]
 tradition: "Zoroastrian"
+canonical-corpus: ["avesta"]
 sub-tradition: "Old Avestan / Gathic"
 label: "revealed-gathic"
 date-composed-earliest: -1200

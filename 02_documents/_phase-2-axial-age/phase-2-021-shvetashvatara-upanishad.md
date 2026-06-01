@@ -4,6 +4,7 @@ id: "phase-2-021-shvetashvatara-upanishad"
 title: "Śvetāśvatara Upaniṣad"
 aka: ["Shvetashvatara Upanishad", "ŚU"]
 tradition: "Vedic Hindu"
+canonical-corpus: ["vedas"]
 sub-tradition: "Late Vedic / proto-theistic Upaniṣad"
 label: "śruti-vedic"
 date-composed-earliest: -500

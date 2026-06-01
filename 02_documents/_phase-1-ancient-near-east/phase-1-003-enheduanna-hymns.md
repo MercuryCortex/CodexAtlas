@@ -4,6 +4,7 @@ id: "phase-1-003-enheduanna-hymns"
 title: "Hymns of Enheduanna"
 aka: ["Temple Hymns", "Nin-me-šara", "Exaltation of Inanna", "In-nin ša-gur-ra", "In-nin me-huš-a"]
 tradition: "Sumerian / Akkadian"
+canonical-corpus: ["mesopotamian"]
 sub-tradition: "Sargonic-era temple religion; Inanna cult"
 label: "mythological-liturgical"
 date-composed-earliest: -2300

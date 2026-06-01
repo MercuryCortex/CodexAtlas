@@ -1,5 +1,6 @@
 ---
 type: document
+canonical-corpus: ["tipitaka"]
 id: "tipitaka"
 name: "Tipitaka"
 status: "stub"

@@ -1,5 +1,6 @@
 ---
 type: document
+canonical-corpus: ["confucian-classics"]
 id: "ying-zao-fa-shi"
 name: "Ying Zao Fa Shi"
 status: "stub"

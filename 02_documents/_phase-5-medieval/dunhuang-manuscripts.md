@@ -1,5 +1,6 @@
 ---
 type: document
+canonical-corpus: ["buddhist-pilgrimage-chronicles"]
 id: "dunhuang-manuscripts"
 name: "Dunhuang Manuscripts"
 status: "stub"

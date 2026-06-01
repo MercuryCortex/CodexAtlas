@@ -4,6 +4,7 @@ id: "phase-4-067-martyrdom-of-polycarp"
 title: "Martyrdom of Polycarp"
 aka: ["Martyrium Polycarpi", "Martyrion tou Hagiou Polykarpou", "Mart. Pol."]
 tradition: "Patristic Christian (proto-orthodox)"
+canonical-corpus: ["apostolic-fathers"]
 sub-tradition: "Asian Christianity (Smyrnaean martyrology)"
 label: "martyrology"
 date-composed-earliest: 155

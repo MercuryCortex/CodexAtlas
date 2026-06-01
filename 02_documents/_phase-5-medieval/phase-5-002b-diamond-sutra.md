@@ -4,6 +4,7 @@ id: "phase-5-002b-diamond-sutra"
 title: "Diamond Sutra (Vajracchedikā Prajñāpāramitā)"
 aka: ["Vajracchedikā Prajñāpāramitā", "*Jingang jing* 金剛經 (Chinese)", "*Kongō kyō* 金剛經 (Japanese)", "*The Diamond Cutter Sutra*", "*Perfection of Wisdom that Cuts Like a Diamond*"]
 tradition: "Mahāyāna Buddhist"
+canonical-corpus: ["tipitaka", "madhyamaka-prajnaparamita-corpus", "chinese-mahayana-chan-huayan-tiantai"]
 sub-tradition: "Prajñāpāramitā"
 label: "mahayana-sutra"
 date-composed-earliest: 300

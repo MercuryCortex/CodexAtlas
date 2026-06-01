@@ -4,6 +4,7 @@ id: "phase-5-026-sefer-ha-bahir"
 title: "Sefer ha-Bahir (The Book of Brightness)"
 aka: ["Bahir", "Midrash Rabbi Nehunya ben Hakanah"]
 tradition: "Rabbinic Judaism — early Kabbalah"
+canonical-corpus: ["kabbalistic-corpus"]
 sub-tradition: "Provençal proto-Kabbalah"
 label: "kabbalistic"
 date-composed-earliest: 1150

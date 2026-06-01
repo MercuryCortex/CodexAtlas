@@ -4,6 +4,7 @@ id: "phase-6-035-maier-atalanta-fugiens"
 title: "Atalanta Fugiens (Fleeing Atalanta)"
 aka: ["*Atalanta Fugiens, hoc est, Emblemata Nova de Secretis Naturae Chymica*"]
 tradition: "Latin Christianity (Lutheran) / Renaissance Hermetic-alchemical / Rosicrucian"
+canonical-corpus: ["western-alchemy-corpus"]
 sub-tradition: "integrated emblem-music-alchemy"
 label: "illustrated alchemical-musical-emblematic treatise"
 date-composed-earliest: 1617

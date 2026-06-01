@@ -4,6 +4,7 @@ id: "phase-4-057-allogenes"
 title: "Allogenes the Stranger"
 aka: ["Allogenes", "*The Foreigner*", "NHC XI,3"]
 tradition: "Gnostic Christian (Sethian)"
+canonical-corpus: ["nag-hammadi"]
 sub-tradition: "Sethian Platonizing Gnostic apocalypse"
 label: "gnostic-sethian"
 date-composed-earliest: 200

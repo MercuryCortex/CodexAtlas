@@ -1,5 +1,6 @@
 ---
 type: document
+canonical-corpus: ["vaishnava-canon"]
 id: "bhagavata-purana"
 name: "Bhagavata Purana"
 status: "stub"

@@ -4,6 +4,7 @@ id: "phase-7-019-mysterium-coniunctionis"
 title: "Mysterium Coniunctionis"
 aka: ["Mysterium Coniunctionis: An Inquiry into the Separation and Synthesis of Psychic Opposites in Alchemy", "CW vol. 14"]
 tradition: "Jungian depth psychology"
+canonical-corpus: ["comparative-religion-academic", "western-occult-modern"]
 sub-tradition: "Jung's final magnum opus"
 label: "comparative-religion-academic"
 date-composed-earliest: 1941

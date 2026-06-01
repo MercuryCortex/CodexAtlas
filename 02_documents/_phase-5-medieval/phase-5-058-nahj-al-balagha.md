@@ -8,6 +8,7 @@ date-composed: 1009
 date-range: "compiled ~1009 CE (sayings attributed to Ali ibn Abī Ṭālib, d. 661 CE)"
 language: "Arabic"
 tradition: "[[tradition-shia-islam]]"
+canonical-corpus: ["shia-corpus", "twelver-shia-hadith-corpus"]
 genre: "sermon-anthology / letter-collection / aphorisms"
 phase: 5
 region: "Iraq (Baghdad, site of compilation)"

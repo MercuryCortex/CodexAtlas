@@ -4,6 +4,7 @@ id: "phase-2-011-hebrew-bible-d-source"
 title: "Hebrew Bible — D (Deuteronomic Core) Source"
 aka: ["D-source", "Ur-Deuteronomium", "Deuteronomy 12–26 core", "the Josianic law-book"]
 tradition: "Israelite / Judahite"
+canonical-corpus: ["bible", "tanakh", "israelite-religion"]
 sub-tradition: "Deuteronomic / Deuteronomistic"
 label: "tanakh-torah"
 date-composed-earliest: -700

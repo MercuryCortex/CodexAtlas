@@ -4,6 +4,7 @@ id: "phase-8-013-navajo-blessingway"
 title: "Navajo Blessingway (Hózhǫǫjí)"
 aka: ["Hózhǫǫjí", "Blessingway", "the Diné central ceremony"]
 tradition: "Diné (Navajo)"
+canonical-corpus: ["indigenous-north-american-corpus"]
 sub-tradition: "Navajo ceremonial complex — Blessingway pathway"
 label: "mythological-liturgical"
 date-composed-earliest: 1400

@@ -4,6 +4,7 @@ id: "phase-4-019-plotinus-enneads"
 title: "Enneads"
 aka: ["Plotinus' Enneads (six sets of nine treatises)"]
 tradition: "Neoplatonism"
+canonical-corpus: ["neoplatonist-corpus"]
 sub-tradition: "Plotinian Neoplatonism"
 label: "neoplatonist"
 date-composed-earliest: 253

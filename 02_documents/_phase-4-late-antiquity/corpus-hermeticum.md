@@ -1,5 +1,6 @@
 ---
 type: document
+canonical-corpus: ["hermetica"]
 id: "corpus-hermeticum"
 name: "Corpus Hermeticum"
 status: "stub"

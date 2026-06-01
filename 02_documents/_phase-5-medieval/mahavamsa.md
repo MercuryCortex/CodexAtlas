@@ -1,5 +1,6 @@
 ---
 type: document
+canonical-corpus: ["tipitaka", "buddhist-pilgrimage-chronicles"]
 id: "mahavamsa"
 name: "Mahavamsa"
 status: "stub"

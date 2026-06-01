@@ -4,6 +4,7 @@ id: "phase-5-039-sinkessar-synaxarium"
 title: "Sinkessar (Ethiopian Synaxarium)"
 aka: ["Sänkəsar", "Senkessar", "Ethiopian Synaxarium", "ስንክሳር"]
 tradition: "[[tradition-ethiopian-orthodox-tewahedo]]"
+canonical-corpus: ["ethiopic-tewahedo-canon"]
 sub-tradition: "Ethiopian hagiographic-liturgical calendar"
 label: "liturgical-christian"
 date-composed-earliest: 1400

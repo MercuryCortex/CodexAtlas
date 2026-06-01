@@ -4,6 +4,7 @@ id: "phase-4-013-discourse-on-the-eighth-and-ninth"
 title: "Discourse on the Eighth and Ninth"
 aka: ["NHC VI,6"]
 tradition: "Hermetic"
+canonical-corpus: ["nag-hammadi", "hermetica"]
 sub-tradition: "Philosophical Hermetism — initiatory subset"
 label: "hermetic"
 date-composed-earliest: 100

@@ -4,6 +4,7 @@ id: "phase-4-076-visuddhimagga"
 title: "Visuddhimagga (Path of Purification)"
 aka: ["Visuddhimagga", "*The Path of Purification*", "the great Theravāda manual"]
 tradition: "Theravāda Buddhist"
+canonical-corpus: ["tipitaka"]
 sub-tradition: "Mahāvihāra orthodoxy of Anurādhapura, Sri Lanka"
 label: "theravada-treatise"
 date-composed-earliest: 410

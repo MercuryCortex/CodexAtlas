@@ -4,6 +4,7 @@ id: "phase-4-063-ignatius-letters"
 title: "Ignatius of Antioch — The Seven Authentic Letters"
 aka: ["Epistulae Ignatii (middle recension)", "The Ignatian Corpus (middle recension)", "Letters to the Ephesians / Magnesians / Trallians / Romans / Philadelphians / Smyrnaeans / Polycarp"]
 tradition: "Patristic Christian (proto-orthodox)"
+canonical-corpus: ["apostolic-fathers"]
 sub-tradition: "Antiochene Christianity"
 label: "patristic"
 date-composed-earliest: 107

@@ -4,6 +4,7 @@ id: "phase-4-080-garima-gospels"
 title: "Garima Gospels (Abba Garima Gospels)"
 aka: ["Garima 1, Garima 2, Garima 3", "Gospels of Abba Garima", "ወንጌላት ዘአባ ጋሪማ"]
 tradition: "[[tradition-ethiopian-orthodox-tewahedo]] / [[tradition-oriental-orthodox]]"
+canonical-corpus: ["bible", "ethiopic-tewahedo-canon"]
 sub-tradition: "early Aksumite Ethiopian-Miaphysite illuminated-gospel codices"
 label: "canonical-nt"
 date-composed-earliest: 330

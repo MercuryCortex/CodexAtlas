@@ -4,6 +4,7 @@ id: "phase-4-040-pliny-trajan-correspondence"
 title: "Pliny–Trajan Correspondence on Christians (Epistulae 10.96–97)"
 aka: ["Pliny's Letter on the Christians", "Epistula ad Traianum de Christianis"]
 tradition: "Roman aristocratic literary (pagan)"
+canonical-corpus: ["roman-scripture"]
 sub-tradition: "administrative-imperial correspondence"
 label: "imperial-rescript"
 date-composed-earliest: 111

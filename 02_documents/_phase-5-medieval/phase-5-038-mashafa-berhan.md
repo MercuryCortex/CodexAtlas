@@ -4,6 +4,7 @@ id: "phase-5-038-mashafa-berhan"
 title: "Mashafa Berhan (Book of Light) — Zar'a Ya'qob"
 aka: ["Maṣḥafa Bǝrhan", "Book of Light", "መጽሐፈ ብርሃን"]
 tradition: "[[tradition-ethiopian-orthodox-tewahedo]]"
+canonical-corpus: ["ethiopic-tewahedo-canon"]
 sub-tradition: "imperial-systematic-theological-pastoral treatise"
 label: "patristic"
 date-composed-earliest: 1450

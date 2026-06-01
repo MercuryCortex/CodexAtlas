@@ -1,5 +1,6 @@
 ---
 type: document
+canonical-corpus: ["aztec-corpus"]
 id: "duran-historia-de-las-indias-de-nueva-espana"
 name: "Duran Historia De Las Indias De Nueva Espana"
 status: "stub"

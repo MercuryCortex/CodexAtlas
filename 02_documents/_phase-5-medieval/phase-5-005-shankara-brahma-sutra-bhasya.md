@@ -4,6 +4,7 @@ id: "phase-5-005-shankara-brahma-sutra-bhasya"
 title: "Brahma-Sutra-Bhasya (Śaṅkara)"
 aka: ["Brahmasūtrabhāṣya", "Śārīrakabhāṣya", "Commentary on the Vedānta Sūtras"]
 tradition: "Hindu — Advaita Vedānta"
+canonical-corpus: ["advaita-vedanta-corpus"]
 sub-tradition: "Advaita (non-dualism)"
 label: "darśana"
 date-composed-earliest: 780

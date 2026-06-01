@@ -4,6 +4,7 @@ id: "phase-4-046-john-of-damascus-exposition-orthodox-faith"
 title: "Exposition of the Orthodox Faith"
 aka: ["Ekdosis akribes tes orthodoxou pisteos", "De Fide Orthodoxa", "Book III of the Fount of Knowledge"]
 tradition: "Eastern Christian (Chalcedonian)"
+canonical-corpus: ["byzantine-orthodox"]
 sub-tradition: "Byzantine systematic theology"
 label: "patristic"
 date-composed-earliest: 730

@@ -4,6 +4,7 @@ id: "phase-5-042-sahih-muslim"
 title: "Ṣaḥīḥ Muslim (al-Musnad al-Ṣaḥīḥ)"
 aka: ["Sahih Muslim", "*al-Musnad al-Ṣaḥīḥ al-Mukhtaṣar bi-Naql al-ʿAdl ʿan al-ʿAdl ilā Rasūl Allāh*", "Muslim's Authentic Collection", "صحيح مسلم"]
 tradition: "Islam — Sunnī"
+canonical-corpus: ["hadith-corpus"]
 sub-tradition: "Sunnī ṣaḥīḥ-hadith collection (one of the *Kutub al-Sitta* 'Six Books')"
 label: "hadith-collection-canonical-sunni"
 date-composed-earliest: 850

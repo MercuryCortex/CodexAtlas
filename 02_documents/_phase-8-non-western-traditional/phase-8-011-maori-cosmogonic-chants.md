@@ -4,6 +4,7 @@ id: "phase-8-011-maori-cosmogonic-chants"
 title: "Maori Cosmogonic Chants (Te Kore / Te Pō / Te Ao)"
 aka: ["Whakapapa pūrākau", "Te Wānanga creation narratives"]
 tradition: "Māori (Aotearoa / New Zealand)"
+canonical-corpus: ["polynesian-corpus"]
 sub-tradition: "Māori cosmogonic-genealogical chant tradition"
 label: "mythological-liturgical"
 date-composed-earliest: 1280

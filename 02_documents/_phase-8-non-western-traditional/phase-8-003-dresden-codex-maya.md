@@ -4,6 +4,7 @@ id: "phase-8-003-dresden-codex-maya"
 title: "Dresden Codex"
 aka: ["Codex Dresdensis", "Códice de Dresde"]
 tradition: "Yucatec Maya / Postclassic lowland Maya"
+canonical-corpus: ["mesoamerican-sacred", "maya-corpus"]
 sub-tradition: "Postclassic Maya ritual-astronomical"
 label: "divinatory"
 date-composed-earliest: 1200

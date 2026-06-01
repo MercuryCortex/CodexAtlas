@@ -4,6 +4,7 @@ id: "phase-6-011-cordovero-pardes-rimmonim"
 title: "Pardes Rimmonim (Orchard of Pomegranates)"
 aka: ["Pardes Rimonim"]
 tradition: "Jewish Kabbalah"
+canonical-corpus: ["kabbalah"]
 sub-tradition: "Safed-school (Cordoveran)"
 label: "kabbalistic"
 date-composed-earliest: 1548

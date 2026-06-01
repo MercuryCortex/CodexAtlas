@@ -4,6 +4,7 @@ id: "phase-4-058-thunder-perfect-mind"
 title: "The Thunder, Perfect Mind"
 aka: ["Thunder", "Bronte: Teleios Nous", "NHC VI,2"]
 tradition: "Gnostic (uncertain school)"
+canonical-corpus: ["nag-hammadi"]
 sub-tradition: "Paradoxical self-revelation discourse"
 label: "gnostic"
 date-composed-earliest: 100

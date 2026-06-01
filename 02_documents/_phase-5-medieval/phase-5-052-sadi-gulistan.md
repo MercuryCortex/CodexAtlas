@@ -4,6 +4,7 @@ id: "phase-5-052-sadi-gulistan"
 title: "Gulistān (The Rose Garden)"
 aka: ["Gulistan", "Golestan", "The Rose Garden", "گلستان"]
 tradition: "Islam (Sufism — Persian ethical-literary tradition)"
+canonical-corpus: ["sufi-persian"]
 sub-tradition: "Persian prose-poetry compendium / wisdom literature"
 label: "prose-poetry-compendium"
 date-composed-earliest: 1258

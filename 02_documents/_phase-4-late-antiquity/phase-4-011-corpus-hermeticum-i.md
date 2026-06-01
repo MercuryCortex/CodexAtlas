@@ -4,6 +4,7 @@ id: "phase-4-011-corpus-hermeticum-i"
 title: "Corpus Hermeticum I (Poimandres)"
 aka: ["Poimandres", "Pœmander", "CH I"]
 tradition: "Hermetic"
+canonical-corpus: ["hermetica"]
 sub-tradition: "Philosophical Hermetism"
 label: "hermetic"
 date-composed-earliest: 100

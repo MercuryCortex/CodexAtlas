@@ -4,6 +4,7 @@ id: "phase-2-018-hebrew-bible-p-source"
 title: "Hebrew Bible — P (Priestly) Source"
 aka: ["P", "Priestly Source", "Priestencodex", "PG (Priesterliche Grundschrift)", "the Priestly material"]
 tradition: "Israelite / Judahite"
+canonical-corpus: ["bible", "tanakh", "israelite-religion"]
 sub-tradition: "Second-Temple priestly scribal tradition (Jerusalem priestly establishment, exilic / post-exilic)"
 label: "tanakh-torah"
 date-composed-earliest: -550

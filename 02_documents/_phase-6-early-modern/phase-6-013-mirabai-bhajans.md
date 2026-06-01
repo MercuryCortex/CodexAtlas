@@ -4,6 +4,7 @@ id: "phase-6-013-mirabai-bhajans"
 title: "Mirabai's Bhajans (devotional songs to Krishna)"
 aka: ["Mira Bai padas", "Mirabai bhajans"]
 tradition: "Hindu Bhakti (Vaishnava)"
+canonical-corpus: ["vaishnava-canon"]
 sub-tradition: "Krishna-bhakti (Rajasthani)"
 label: "smṛti-puranic"
 date-composed-earliest: 1530

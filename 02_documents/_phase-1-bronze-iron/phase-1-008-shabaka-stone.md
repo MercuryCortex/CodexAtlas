@@ -1,5 +1,6 @@
 ---
 type: document
+canonical-corpus: ["egyptian-scripture"]
 id: "phase-1-008-shabaka-stone"
 name: "Shabaka Stone (Memphite Theology)"
 aka: ["Shabaka Stone", "the Memphite Theology"]

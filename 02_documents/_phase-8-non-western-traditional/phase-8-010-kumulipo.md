@@ -4,6 +4,7 @@ id: "phase-8-010-kumulipo"
 title: "Kumulipo"
 aka: ["The Kumulipo", "He Kumulipo", "Hawaiian creation chant"]
 tradition: "Hawaiian (Native Hawaiian / Kanaka Maoli)"
+canonical-corpus: ["polynesian-corpus"]
 sub-tradition: "Hawaiian royal cosmogonic-genealogical chant"
 label: "mythological-liturgical"
 date-composed-earliest: 1500

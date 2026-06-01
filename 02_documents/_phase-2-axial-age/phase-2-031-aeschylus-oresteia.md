@@ -4,6 +4,7 @@ id: "phase-2-031-aeschylus-oresteia"
 title: "Oresteia (trilogy: Agamemnon, Libation Bearers, Eumenides)"
 aka: ["Ὀρέστεια", "the only surviving complete Greek tragic trilogy"]
 tradition: "Greek (Athenian tragic drama); Eleusinian-religious in sensibility"
+canonical-corpus: ["greek-scripture"]
 sub-tradition: "Athenian dramatic-religious ritual (performed at the City Dionysia of -458)"
 label: "ritual-drama"
 date-composed-earliest: -460

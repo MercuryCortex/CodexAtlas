@@ -1,5 +1,6 @@
 ---
 type: document
+canonical-corpus: ["comparative-religion-academic"]
 id: "phase-7-014-bellah-civil-religion-essay"
 name: "Civil Religion in America (Bellah)"
 status: "stub"

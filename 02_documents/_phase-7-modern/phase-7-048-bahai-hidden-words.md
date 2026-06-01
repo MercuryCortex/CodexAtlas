@@ -4,6 +4,7 @@ id: "phase-7-048-bahai-hidden-words"
 title: "The Hidden Words"
 aka: ["Kalimát-i-Maknúnih", "كلمات مكنونة", "The Book of Fáṭimih (early Bábí circulation title)"]
 tradition: "Bahá'í Faith"
+canonical-corpus: ["bahai-scripture"]
 sub-tradition: "Bahá'í foundational scripture (Baghdad mystical period, pre-declaration)"
 label: "bahai"
 date-composed-earliest: 1857

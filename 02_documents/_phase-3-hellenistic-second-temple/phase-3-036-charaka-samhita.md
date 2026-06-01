@@ -4,6 +4,7 @@ id: "phase-3-036-charaka-samhita"
 title: "Charaka Samhita"
 aka: ["Carakasaṃhitā", "Compendium of Charaka", "Treatise of Charaka"]
 tradition: "Vedic/Hindu (Ayurveda)"
+canonical-corpus: ["ayurveda-corpus"]
 region: "Indian subcontinent — Kashmir / Taxila region (original); compiled and redacted across India"
 date_earliest: -100
 date_latest: 200

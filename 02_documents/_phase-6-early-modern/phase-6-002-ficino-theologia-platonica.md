@@ -4,6 +4,7 @@ id: "phase-6-002-ficino-theologia-platonica"
 title: "Theologia Platonica de immortalitate animorum"
 aka: ["Platonic Theology", "Theologia Platonica"]
 tradition: "Renaissance Platonism / Hermeticism"
+canonical-corpus: ["greek-philosophical-scripture", "neoplatonic", "renaissance-esotericism"]
 sub-tradition: "Florentine Platonic Academy"
 label: "neoplatonist"
 date-composed-earliest: 1469

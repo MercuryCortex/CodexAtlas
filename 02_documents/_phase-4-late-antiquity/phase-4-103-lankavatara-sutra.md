@@ -4,6 +4,7 @@ id: "phase-4-103-lankavatara-sutra"
 title: "Laṅkāvatāra Sūtra"
 aka: ["Laṅkāvatāra", "楞伽經 (Léngqié Jīng)", "Ryōga-kyō", "Sutra of the Descent into Laṅkā"]
 tradition: "Mahāyāna Buddhism"
+canonical-corpus: ["tipitaka", "yogacara-corpus"]
 sub-tradition: "Yogācāra and Tathāgatagarbha textual family; foundational for Chan/Zen lineage"
 label: "mahayana-sutra"
 date-composed-earliest: 300

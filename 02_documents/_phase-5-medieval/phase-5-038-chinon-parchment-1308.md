@@ -4,6 +4,7 @@ id: "phase-5-038-chinon-parchment-1308"
 title: "Chinon Parchment"
 aka: ["Chinon Chart", "Pergamena de Chinon", "Avignon Reg. 308"]
 tradition: "Latin Christianity"
+canonical-corpus: ["templar-corpus"]
 sub-tradition: "papal-juridical / [[tradition-knights-templar]] trial"
 label: "papal-cardinal notarial document"
 date-composed-earliest: 1308

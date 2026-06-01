@@ -4,6 +4,7 @@ id: "phase-7-013-gnostic-religion"
 title: "The Gnostic Religion"
 aka: ["The Gnostic Religion: The Message of the Alien God and the Beginnings of Christianity"]
 tradition: "Comparative religion (academic) / history of religions"
+canonical-corpus: ["comparative-religion-academic", "gnostic-scripture"]
 sub-tradition: "Existentialist phenomenology of Gnosticism"
 label: "comparative-religion-academic"
 date-composed-earliest: 1954

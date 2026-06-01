@@ -4,6 +4,7 @@ id: "phase-6-024-kircher-oedipus-aegyptiacus"
 title: "Oedipus Aegyptiacus"
 aka: ["The Egyptian Oedipus"]
 tradition: "Jesuit Hermetic-Kabbalist universal-history scholarship"
+canonical-corpus: ["renaissance-magic-corpus"]
 sub-tradition: "Roman Counter-Reformation universalism"
 label: "hermetic"
 date-composed-earliest: 1640

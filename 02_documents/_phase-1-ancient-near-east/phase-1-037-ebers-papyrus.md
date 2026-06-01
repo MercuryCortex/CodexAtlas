@@ -4,6 +4,7 @@ id: "phase-1-037-ebers-papyrus"
 title: "Ebers Papyrus"
 aka: ["Papyrus Ebers", "Georg Ebers Papyrus"]
 tradition: "Egyptian"
+canonical-corpus: ["egyptian-scripture"]
 region: "Egypt — found at Luxor (ancient Thebes); probably composed at Memphis"
 date_earliest: -1550
 date_latest: -1500

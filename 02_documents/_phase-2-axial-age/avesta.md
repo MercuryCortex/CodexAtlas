@@ -5,6 +5,7 @@ type: document
 status: metadata
 tier: 1
 tradition: tradition-zoroastrianism
+canonical-corpus: ["avesta"]
 language: "Old Avestan (Gathic), Young Avestan"
 script: "Avestan script (written form); oral transmission predates script by ~1,500 years"
 region: "Iran, Central Asia"

@@ -4,6 +4,7 @@ id: "phase-6-030-vinaya-patrika"
 title: "Vinaya Patrikā (The Petition of Humility)"
 aka: ["Vinaya-Patrika", "Tulsidas's Vinaya Patrika"]
 tradition: "Hindu Bhakti (Vaishnava — Rama-bhakti)"
+canonical-corpus: ["vaishnava-canon"]
 sub-tradition: "Awadhi / Hindi-Vaishnava devotional poetry"
 label: "smṛti-puranic"
 date-composed-earliest: 1583

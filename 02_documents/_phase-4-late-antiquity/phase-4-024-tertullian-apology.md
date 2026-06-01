@@ -4,6 +4,7 @@ id: "phase-4-024-tertullian-apology"
 title: "Apology"
 aka: ["Apologeticus", "Apologeticum", "Apologeticus pro Christianis"]
 tradition: "Christian (proto-orthodox)"
+canonical-corpus: ["patristic-corpus"]
 sub-tradition: "Patristic Latin (North African) — apologetics"
 label: "patristic"
 date-composed-earliest: 197

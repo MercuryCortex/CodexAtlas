@@ -4,6 +4,7 @@ id: "phase-4-034-quran"
 title: "Quran"
 aka: ["al-Qur'ān", "the Recitation", "al-Furqān (the Criterion)", "al-Kitāb (the Book)"]
 tradition: "Islam"
+canonical-corpus: ["quran", "quran-manzil"]
 sub-tradition: "Foundational Islamic scripture (revealed)"
 label: "revealed-quran"
 date-composed-earliest: 610

@@ -1,5 +1,6 @@
 ---
 type: document
+canonical-corpus: ["patristic-corpus"]
 id: "liber-pontificalis"
 name: "Liber Pontificalis"
 status: "stub"

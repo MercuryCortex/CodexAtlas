@@ -4,6 +4,7 @@ id: "phase-7-025-dianetics"
 title: "Dianetics: The Modern Science of Mental Health"
 aka: ["Dianetics"]
 tradition: "Scientology"
+canonical-corpus: ["scientology-corpus"]
 sub-tradition: "Pre-religious-incorporation Dianetics; foundational text"
 label: "new-religious-movement"
 date-composed-earliest: 1949

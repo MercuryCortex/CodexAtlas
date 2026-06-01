@@ -4,6 +4,7 @@ id: "phase-5-051-attar-conference-of-birds"
 title: "Manṭiq al-Ṭayr (The Conference of the Birds / The Speech of Birds)"
 aka: ["Manteq ol-Teyr", "The Conference of the Birds", "The Speech of Birds", "منطق الطير"]
 tradition: "Islam (Sufism — Persian Sufi poetic tradition)"
+canonical-corpus: ["sufi-persian"]
 sub-tradition: "Persian Sufi mathnawi poetry"
 label: "narrative-poem-allegory"
 date-composed-earliest: 1175

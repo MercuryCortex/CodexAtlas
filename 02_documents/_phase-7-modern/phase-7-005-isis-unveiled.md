@@ -4,6 +4,7 @@ id: "phase-7-005-isis-unveiled"
 title: "Isis Unveiled"
 aka: ["Isis Unveiled: A Master-Key to the Mysteries of Ancient and Modern Science and Theology"]
 tradition: "Theosophy"
+canonical-corpus: ["theosophy-corpus"]
 sub-tradition: "Founding-period Theosophy"
 label: "theosophical"
 date-composed-earliest: 1875

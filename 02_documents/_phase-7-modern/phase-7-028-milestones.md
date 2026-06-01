@@ -4,6 +4,7 @@ id: "phase-7-028-milestones"
 title: "Milestones"
 aka: ["Ma'alim fi'l-Tariq", "Signposts on the Road"]
 tradition: "Islamism / Political Islam"
+canonical-corpus: ["islamism-corpus"]
 sub-tradition: "Qutbist political theology"
 label: "new-religious-movement"
 date-composed-earliest: 1959

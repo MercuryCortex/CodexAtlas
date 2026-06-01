@@ -4,6 +4,7 @@ id: "phase-3-014-q-source"
 title: "Q Source (hypothetical Synoptic Sayings Source)"
 aka: ["Q (Quelle)", "Sayings Gospel Q", "the Double Tradition source"]
 tradition: "Earliest Christianity (Galilean Jesus-movement)"
+canonical-corpus: ["bible"]
 sub-tradition: "Pre-Synoptic Jewish-Christian sayings collection"
 label: "canonical-nt"
 date-composed-earliest: 40

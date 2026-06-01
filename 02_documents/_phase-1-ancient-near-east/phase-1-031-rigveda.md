@@ -4,6 +4,7 @@ id: "phase-1-031-rigveda"
 title: "Rigveda"
 aka: ["Ṛgveda", "Ṛgveda Saṃhitā", "Rig-Veda", "the Ten Books", "the Oldest Veda"]
 tradition: "Vedic / Indo-Iranian"
+canonical-corpus: ["vedas"]
 sub-tradition: "Śrauta / earliest Brahmanical"
 label: "śruti-vedic"
 date-composed-earliest: -1500

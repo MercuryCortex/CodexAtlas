@@ -4,6 +4,7 @@ id: "phase-7-029-hindutva"
 title: "Hindutva: Who Is a Hindu?"
 aka: ["Essentials of Hindutva"]
 tradition: "Hindutva / Hindu nationalism"
+canonical-corpus: ["hindu-modernism-corpus"]
 sub-tradition: "Savarkar's foundational text of Hindu nationalist ideology"
 label: "new-religious-movement"
 date-composed-earliest: 1922

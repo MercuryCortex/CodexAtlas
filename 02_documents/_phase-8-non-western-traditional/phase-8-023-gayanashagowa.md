@@ -4,6 +4,7 @@ id: "phase-8-023-gayanashagowa"
 title: "Gayanashagowa (The Great Law of Peace)"
 aka: ["Great Law of Peace", "Gayanashagowa", "Constitution of the Haudenosaunee", "The Great Binding Law", "Iroquois Constitution"]
 tradition: "Haudenosaunee (Iroquois Confederacy)"
+canonical-corpus: ["indigenous-north-american-corpus"]
 sub-tradition: "Haudenosaunee political-religious law"
 label: "constitutional-law / oral-covenant"
 date-composed-earliest: 1450

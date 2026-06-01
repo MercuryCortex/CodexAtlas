@@ -4,6 +4,7 @@ id: "phase-5-034-vivekachudamani"
 title: "Vivekacūḍāmaṇi (Crest-Jewel of Discrimination)"
 aka: ["Vivekachudamani", "Crest-Jewel of Discrimination"]
 tradition: "Hindu — Advaita Vedanta"
+canonical-corpus: ["vedas", "advaita-vedanta-corpus"]
 sub-tradition: "Classical Advaita pedagogical-introductory genre"
 label: "śāstra-classical"
 date-composed-earliest: 800

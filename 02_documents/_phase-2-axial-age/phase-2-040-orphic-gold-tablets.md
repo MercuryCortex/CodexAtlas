@@ -4,6 +4,7 @@ id: "phase-2-040-orphic-gold-tablets"
 title: "Orphic Gold Tablets (Lamellae Orphicae)"
 aka: ["Bacchic gold tablets", "Orphic lamellae", "gold leaves of the dead", "lamellae aurae"]
 tradition: "orphic"
+canonical-corpus: ["mystery-cults-corpus"]
 sub-tradition: "Orphic-Bacchic funerary mystery tradition"
 label: "mystery-funerary"
 date-composed-earliest: -400

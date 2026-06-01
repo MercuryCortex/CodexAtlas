@@ -4,6 +4,7 @@ id: "phase-5-027-sefer-ha-zohar"
 title: "Sefer ha-Zohar (The Book of Splendor)"
 aka: ["Zohar", "Midrash de-Rabbi Shimon ben Yochai"]
 tradition: "Rabbinic Judaism — classical Kabbalah"
+canonical-corpus: ["kabbalistic-corpus"]
 sub-tradition: "Castilian Kabbalah"
 label: "kabbalistic"
 date-composed-earliest: 1280

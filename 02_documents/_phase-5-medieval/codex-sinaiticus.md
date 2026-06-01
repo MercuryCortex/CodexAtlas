@@ -1,5 +1,6 @@
 ---
 type: document
+canonical-corpus: ["bible"]
 id: "codex-sinaiticus"
 name: "Codex Sinaiticus"
 status: "stub"

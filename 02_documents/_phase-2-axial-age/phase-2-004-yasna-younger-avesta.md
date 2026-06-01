@@ -4,6 +4,7 @@ id: "phase-2-004-yasna-younger-avesta"
 title: "Yasna and Younger Avesta"
 aka: ["Younger Avesta", "Yasna liturgy", "Yashts", "Visperad", "Vendidad / Videvdat"]
 tradition: "Zoroastrian"
+canonical-corpus: ["avesta"]
 sub-tradition: "Younger Avestan / pre-Sasanian liturgical"
 label: "liturgical-yasna"
 date-composed-earliest: -1000

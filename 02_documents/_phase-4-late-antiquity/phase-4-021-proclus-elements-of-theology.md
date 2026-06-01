@@ -4,6 +4,7 @@ id: "phase-4-021-proclus-elements-of-theology"
 title: "Elements of Theology"
 aka: ["Stoicheiōsis Theologikē", "Institutio Theologica"]
 tradition: "Neoplatonism"
+canonical-corpus: ["neoplatonist-corpus"]
 sub-tradition: "Athenian Neoplatonism (Proclean)"
 label: "neoplatonist"
 date-composed-earliest: 437

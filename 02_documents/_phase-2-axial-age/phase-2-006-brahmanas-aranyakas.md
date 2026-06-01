@@ -4,6 +4,7 @@ id: "phase-2-006-brahmanas-aranyakas"
 title: "Brāhmaṇas and Āraṇyakas"
 aka: ["the Brāhmaṇa literature", "the forest books"]
 tradition: "Vedic / early Brahmanical"
+canonical-corpus: ["vedas"]
 sub-tradition: "ritual-exegetical"
 label: "śruti-vedic"
 date-composed-earliest: -900

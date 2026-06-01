@@ -1,5 +1,6 @@
 ---
 type: document
+canonical-corpus: ["bible"]
 id: "phase-2-005-davidic-psalms"
 name: "Davidic Psalms"
 status: "stub"

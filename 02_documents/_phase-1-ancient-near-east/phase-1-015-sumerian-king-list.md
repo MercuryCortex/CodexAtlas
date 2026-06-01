@@ -4,6 +4,7 @@ id: "phase-1-015-sumerian-king-list"
 title: "The Sumerian King List"
 aka: ["SKL", "Sumerian Kinglist", "Weld-Blundell Prism Text (principal manuscript)", "WB 444"]
 tradition: "Sumerian / Mesopotamian"
+canonical-corpus: ["mesopotamian-canonical"]
 sub-tradition: "Sumerian historical-chronographic tradition (Nippur scribal milieu)"
 label: "chronographic-list"
 date-composed-earliest: -2100

@@ -4,6 +4,7 @@ id: "phase-5-016-ramanuja-sribhasya"
 title: "Śrībhāṣya (Ramanuja's Brahma-Sūtra Commentary)"
 aka: ["Sri Bhashya", "Śrī Bhāṣya"]
 tradition: "Hindu — Viśiṣṭādvaita Vedānta (Śrī Vaiṣṇavism)"
+canonical-corpus: ["vedas", "vaishnava-canon"]
 sub-tradition: "Qualified non-dualism — theistic Vedanta"
 label: "darśana"
 date-composed-earliest: 1100

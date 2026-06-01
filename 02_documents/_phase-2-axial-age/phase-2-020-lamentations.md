@@ -4,6 +4,7 @@ id: "phase-2-020-lamentations"
 title: "Lamentations"
 aka: ["Eikhah", "אֵיכָה", "Threni", "Book of Lamentations", "Megillat Eikhah"]
 tradition: "Israelite / Judahite"
+canonical-corpus: ["bible", "tanakh", "israelite-religion"]
 sub-tradition: "post-exilic Hebrew lament poetry (the *qinah*-meter lament tradition)"
 label: "tanakh-writings"
 date-composed-earliest: -586

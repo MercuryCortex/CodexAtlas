@@ -4,6 +4,7 @@ id: "phase-8-016-haitian-vodou-liturgical-tradition"
 title: "Haitian Vodou Liturgical Tradition"
 aka: ["Vodou", "Vodun", "Voodoo (anglophone, often pejorative)", "Sèvis Lwa"]
 tradition: "Haitian Vodou"
+canonical-corpus: ["haitian-vodou-corpus"]
 sub-tradition: "Caribbean African-diasporic syncretic religion (Dahomean / Yoruba / Kongo + Catholic)"
 label: "mythological-liturgical"
 date-composed-earliest: 1700

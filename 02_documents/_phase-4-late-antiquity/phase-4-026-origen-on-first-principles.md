@@ -4,6 +4,7 @@ id: "phase-4-026-origen-on-first-principles"
 title: "On First Principles"
 aka: ["De Principiis", "Peri Archōn"]
 tradition: "Christian (Alexandrian)"
+canonical-corpus: ["patristic-corpus"]
 sub-tradition: "Patristic (Alexandrian school)"
 label: "patristic"
 date-composed-earliest: 220

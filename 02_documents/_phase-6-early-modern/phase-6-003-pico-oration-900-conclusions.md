@@ -4,6 +4,7 @@ id: "phase-6-003-pico-oration-900-conclusions"
 title: "Oration on the Dignity of Man + 900 Conclusions"
 aka: ["Oratio de hominis dignitate", "Conclusiones nongentae", "900 Theses"]
 tradition: "Renaissance Hermetic-Kabbalist Platonism"
+canonical-corpus: ["renaissance-magic-corpus"]
 sub-tradition: "Christian Kabbalah (founding)"
 label: "neoplatonist"
 date-composed-earliest: 1486

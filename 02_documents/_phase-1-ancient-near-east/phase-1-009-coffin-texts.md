@@ -4,6 +4,7 @@ id: "phase-1-009-coffin-texts"
 title: "Coffin Texts"
 aka: ["CT", "Spells of the Coffin Texts", "Middle Kingdom Egyptian Funerary Texts"]
 tradition: "Egyptian"
+canonical-corpus: ["egyptian-scripture"]
 sub-tradition: "Middle Kingdom mortuary religion"
 label: "funerary"
 date-composed-earliest: -2100

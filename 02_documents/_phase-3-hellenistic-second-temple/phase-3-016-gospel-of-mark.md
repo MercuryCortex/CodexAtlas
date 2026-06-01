@@ -4,6 +4,7 @@ id: "phase-3-016-gospel-of-mark"
 title: "Gospel of Mark"
 aka: ["Euangelion kata Markon", "Secundum Marcum"]
 tradition: "Earliest Christianity"
+canonical-corpus: ["bible"]
 sub-tradition: "Synoptic Gospels — earliest extant Gospel"
 label: "canonical-nt"
 date-composed-earliest: 65

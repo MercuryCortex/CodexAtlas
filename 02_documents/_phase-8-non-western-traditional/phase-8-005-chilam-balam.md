@@ -4,6 +4,7 @@ id: "phase-8-005-chilam-balam"
 title: "Books of Chilam Balam"
 aka: ["Libros de Chilam Balam", "Books of the Jaguar Priest"]
 tradition: "Yucatec Maya"
+canonical-corpus: ["maya-corpus"]
 sub-tradition: "Post-conquest Yucatec religious-prophetic compilation"
 label: "mythological-narrative"
 date-composed-earliest: 1500

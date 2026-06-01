@@ -4,6 +4,7 @@ id: "phase-1-001-kesh-temple-hymn"
 title: "Kesh Temple Hymn"
 aka: ["Liturgy to Nintud", "Hymn to the Keš Temple", "Keš Temple Hymn"]
 tradition: "Sumerian / Mesopotamian"
+canonical-corpus: ["mesopotamian"]
 sub-tradition: "Sumerian temple-hymn tradition"
 label: "mythological-liturgical"
 date-composed-earliest: -2600

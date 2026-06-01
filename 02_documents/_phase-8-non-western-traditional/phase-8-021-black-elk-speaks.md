@@ -4,6 +4,7 @@ id: "phase-8-021-black-elk-speaks"
 title: "Black Elk Speaks"
 aka: ["Black Elk Speaks: Being the Life Story of a Holy Man of the Oglala Sioux"]
 tradition: "Lakota"
+canonical-corpus: ["indigenous-north-american-corpus"]
 sub-tradition: "Oglala Lakota oral tradition / literary collaboration"
 label: "spiritual-autobiography"
 date-composed-earliest: 1930

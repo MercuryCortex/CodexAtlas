@@ -8,6 +8,7 @@ aka:
   - "The Iranian Book of the Righteous Viraf"
   - "The Iranian Divina Commedia"
 tradition: "Zoroastrian"
+canonical-corpus: ["avesta"]
 language: "Middle Persian (Pahlavi)"
 date-composed-earliest: 400
 date-composed-latest: 900

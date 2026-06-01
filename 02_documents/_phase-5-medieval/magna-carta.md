@@ -1,5 +1,6 @@
 ---
 type: document
+canonical-corpus: ["medieval-legal-corpus"]
 id: "magna-carta"
 name: "Magna Carta (1215)"
 status: "stub"

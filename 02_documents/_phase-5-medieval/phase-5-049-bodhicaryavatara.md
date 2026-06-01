@@ -4,6 +4,7 @@ id: "phase-5-049-bodhicaryavatara"
 title: "Bodhicaryāvatāra (Way of the Bodhisattva)"
 aka: ["Bodhicaryāvatāra", "*Way of the Bodhisattva*", "*Guide to the Bodhisattva's Way of Life*", "*Entering the Conduct of the Bodhisattva*", "Tibetan: spyod 'jug"]
 tradition: "Mahāyāna Buddhist"
+canonical-corpus: ["tipitaka"]
 sub-tradition: "Madhyamaka-Prāsaṅgika (Nālandā school)"
 label: "mahayana-treatise"
 date-composed-earliest: 700

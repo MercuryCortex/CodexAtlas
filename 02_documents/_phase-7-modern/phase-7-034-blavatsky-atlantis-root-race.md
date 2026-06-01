@@ -4,6 +4,7 @@ id: "phase-7-034-blavatsky-atlantis-root-race"
 title: "The Atlantean (Fourth) Root-Race Doctrine in The Secret Doctrine, Vol. II"
 aka: ["Secret Doctrine, Anthropogenesis, Fourth Root-Race", "Atlantean Round"]
 tradition: "Theosophy"
+canonical-corpus: ["theosophy-corpus"]
 sub-tradition: "Mature Theosophy"
 label: "theosophical"
 date-composed-earliest: 1886

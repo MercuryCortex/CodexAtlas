@@ -4,6 +4,7 @@ id: "phase-2-003-atharva-veda"
 title: "Atharva Veda"
 aka: ["Atharvaveda Saṃhitā", "Atharvāṅgirasaḥ", "AV"]
 tradition: "Vedic"
+canonical-corpus: ["vedas"]
 sub-tradition: "Atharvanic (separate priestly lineage)"
 label: "śruti-vedic"
 date-composed-earliest: -1200

@@ -4,6 +4,7 @@ id: "phase-7-040-walatta-petros-hagiography"
 title: "Gadla Walatta Petros (Life of Walatta Petros)"
 aka: ["Gädlä Wälättä Peṭros", "Acts of Walatta Petros", "ገድለ ወለተ ጴጥሮስ"]
 tradition: "[[tradition-ethiopian-orthodox-tewahedo]]"
+canonical-corpus: ["ethiopic-tewahedo-canon"]
 sub-tradition: "Ethiopian female-saint hagiography (gadl)"
 label: "patristic"
 date-composed-earliest: 1672

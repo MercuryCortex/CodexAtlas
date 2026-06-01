@@ -11,6 +11,7 @@ city-of-origin: "Edinburgh (Gifford Lectures); Boston (publication)"
 authorship: "known"
 author: "William James"
 tradition: "American pragmatism / psychology of religion"
+canonical-corpus: ["comparative-religion-academic"]
 themes:
   - "[[comparative-religion-method]]"
   - "[[religious-pluralism]]"

@@ -4,6 +4,7 @@ id: "phase-8-006-huarochiri-manuscript"
 title: "Huarochirí Manuscript"
 aka: ["Manuscrito de Huarochirí", "Tratado y relación de los errores, falsos dioses, y otras supersticiones..."]
 tradition: "Quechua / Andean (pre-Inca and Inca-period Yauyo)"
+canonical-corpus: ["andean-quechua-corpus"]
 sub-tradition: "Early-colonial Quechua-language religious narrative; Andean equivalent of the Popol Vuh"
 label: "mythological-narrative"
 date-composed-earliest: 1598

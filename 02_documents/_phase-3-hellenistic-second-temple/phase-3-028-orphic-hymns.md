@@ -4,6 +4,7 @@ id: "phase-3-028-orphic-hymns"
 title: "Orphic Hymns"
 aka: ["Ὀρφέως Ὕμνοι", "Hymns of Orpheus", "Rhapsodic Hymns"]
 tradition: "Greek Orphic mystery-cult; later transmitted through Byzantine and Renaissance Hermetic-Platonist circles"
+canonical-corpus: ["mystery-cults-corpus"]
 sub-tradition: "Orphic-Bacchic ritual hymnody"
 label: "ritual-hymnal"
 date-composed-earliest: -200

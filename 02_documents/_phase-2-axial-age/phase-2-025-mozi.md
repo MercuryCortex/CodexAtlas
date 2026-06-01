@@ -4,6 +4,7 @@ id: "phase-2-025-mozi"
 title: "Mozi"
 aka: ["Mòzǐ", "墨子", "Mo Tzu", "Mo Di 墨翟", "Master Mo"]
 tradition: "Chinese / Mohist"
+canonical-corpus: ["confucian-classics"]
 sub-tradition: "Mohism (classical period)"
 label: "chinese-classical"
 date-composed-earliest: -440

@@ -4,6 +4,7 @@ id: "phase-4-005-gospel-of-mary"
 title: "Gospel of Mary"
 aka: ["Gospel of Mary Magdalene", "BG 8502,1"]
 tradition: "Early Christian"
+canonical-corpus: ["nag-hammadi"]
 sub-tradition: "Gnostic-adjacent / proto-feminist Christian"
 label: "gnostic-christian"
 date-composed-earliest: 120

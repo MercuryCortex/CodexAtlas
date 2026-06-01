@@ -4,6 +4,7 @@ id: "phase-4-035-acts-of-paul-and-thecla"
 title: "Acts of Paul and Thecla"
 aka: ["Acta Pauli et Theclae", "Praxeis Paulou kai Theklas"]
 tradition: "early Christian (apocryphal Acts; encratite)"
+canonical-corpus: ["christian-apocrypha"]
 sub-tradition: "Apocryphal Acts genre; Pauline-pseudepigraphal"
 label: "apocryphal-narrative"
 date-composed-earliest: 160

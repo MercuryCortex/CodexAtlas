@@ -4,6 +4,7 @@ id: "phase-7-010-elementary-forms-religious-life"
 title: "The Elementary Forms of Religious Life"
 aka: ["Les formes élémentaires de la vie religieuse"]
 tradition: "Comparative religion (academic) / sociology of religion"
+canonical-corpus: ["comparative-religion-academic"]
 sub-tradition: "Durkheimian sociology of religion"
 label: "comparative-religion-academic"
 date-composed-earliest: 1910

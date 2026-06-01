@@ -1,5 +1,6 @@
 ---
 type: document
+canonical-corpus: ["chinese-mahayana-chan-huayan-tiantai"]
 id: "gandavyuha-sutra"
 name: "Gandavyuha Sutra"
 status: "stub"

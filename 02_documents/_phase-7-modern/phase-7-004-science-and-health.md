@@ -4,6 +4,7 @@ id: "phase-7-004-science-and-health"
 title: "Science and Health with Key to the Scriptures"
 aka: ["Science and Health"]
 tradition: "Christian Science"
+canonical-corpus: ["new-thought-corpus"]
 sub-tradition: "New Thought adjacent / metaphysical Christianity"
 label: "new-religious-movement"
 date-composed-earliest: 1872

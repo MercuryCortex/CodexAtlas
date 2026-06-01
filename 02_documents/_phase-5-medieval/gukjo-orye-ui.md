@@ -1,5 +1,6 @@
 ---
 type: document
+canonical-corpus: ["korean-ritual-corpus"]
 id: "gukjo-orye-ui"
 name: "Gukjo Orye Ui"
 status: "stub"

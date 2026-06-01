@@ -4,6 +4,7 @@ id: "phase-4-050-leo-tome-to-flavian"
 title: "Tome of Leo (Letter 28 to Flavian of Constantinople)"
 aka: ["Tomus Leonis", "Tome", "Epistula 28 ad Flavianum", "Tome to Flavian"]
 tradition: "Western (Latin) Patristic Christianity"
+canonical-corpus: ["patristic-corpus"]
 sub-tradition: "Roman papal Christology"
 label: "patristic / conciliar"
 date-composed-earliest: 449

@@ -4,6 +4,7 @@ id: "phase-6-001-ficino-pimander"
 title: "Pimander (Ficino's Latin translation of the Corpus Hermeticum)"
 aka: ["Mercurii Trismegisti Pimander", "Pimander seu De potestate et sapientia Dei"]
 tradition: "Renaissance Hermeticism"
+canonical-corpus: ["hermetica"]
 sub-tradition: "Florentine Platonic Academy"
 label: "hermetic"
 date-composed-earliest: 1463

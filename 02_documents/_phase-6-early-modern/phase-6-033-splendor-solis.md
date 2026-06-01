@@ -4,6 +4,7 @@ id: "phase-6-033-splendor-solis"
 title: "Splendor Solis"
 aka: ["*Splendour of the Sun*", "*Sonnenglanz*"]
 tradition: "Latin Christianity (Renaissance) / Hermetic-alchemical"
+canonical-corpus: ["western-alchemy-corpus"]
 sub-tradition: "illuminated alchemical-emblem manuscript"
 label: "illuminated manuscript / alchemical-emblem treatise"
 date-composed-earliest: 1530

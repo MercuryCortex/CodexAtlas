@@ -4,6 +4,7 @@ id: "phase-6-039-dark-night-of-the-soul"
 title: "Dark Night of the Soul (Noche Oscura del Alma)"
 aka: ["*Noche Oscura*", "*The Dark Night*", "(paired with *Subida del Monte Carmelo* / *Ascent of Mount Carmel*)"]
 tradition: "Latin Christianity (Catholic Counter-Reformation; Discalced Carmelite mysticism)"
+canonical-corpus: ["spanish-mystical"]
 sub-tradition: "apophatic-mystical theology + Spanish vernacular poetry"
 label: "vernacular mystical-theological prose commentary + companion poem"
 date-composed-earliest: 1578

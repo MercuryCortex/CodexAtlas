@@ -1,5 +1,6 @@
 ---
 type: document
+canonical-corpus: ["greek-philosophical-scripture", "neoplatonic"]
 id: "phase-3-014-enneads-plotinus"
 name: "Enneads (Plotinus)"
 status: "stub"

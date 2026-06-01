@@ -4,6 +4,7 @@ id: "phase-4-068-2-clement"
 title: "2 Clement"
 aka: ["Second Letter of Clement", "Second Clement (so-called)", "Anonymous Christian Homily (genre)", "Deutera Klēmentos"]
 tradition: "Patristic Christian (proto-orthodox)"
+canonical-corpus: ["apostolic-fathers"]
 sub-tradition: "Christian homiletic"
 label: "homily"
 date-composed-earliest: 130

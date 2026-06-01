@@ -4,6 +4,7 @@ id: "phase-1-027-memphite-theology-shabaka-stone"
 title: "The Memphite Theology (Shabaka Stone)"
 aka: ["Shabaka Stone", "Shabako Stone", "Denkmal memphitischer Theologie", "British Museum EA 498"]
 tradition: "Egyptian"
+canonical-corpus: ["egyptian-scripture"]
 sub-tradition: "Memphite (Ptah-centric) theology"
 label: "cosmogonic-theological-treatise"
 date-composed-earliest: -2400

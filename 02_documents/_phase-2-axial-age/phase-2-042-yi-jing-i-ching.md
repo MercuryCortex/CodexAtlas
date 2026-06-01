@@ -4,6 +4,7 @@ id: "phase-2-042-yi-jing-i-ching"
 title: "Yi Jing (易經) / I Ching"
 aka: ["Book of Changes", "I Ching", "Yìjīng", "Zhou Yi (周易)", "Zhouyi"]
 tradition: "Chinese — Confucianism / Daoism / Chinese folk religion"
+canonical-corpus: ["confucian-classics"]
 sub-tradition: "Five Classics (Confucian canon); also foundational to Daoist metaphysics and Chinese cosmology"
 label: "divination-cosmological-treatise"
 date-composed-earliest: -1050

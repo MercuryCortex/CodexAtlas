@@ -4,6 +4,7 @@ id: "phase-7-020-answer-to-job"
 title: "Answer to Job"
 aka: ["Antwort auf Hiob", "CW vol. 11 selection"]
 tradition: "Jungian depth psychology"
+canonical-corpus: ["comparative-religion-academic", "western-occult-modern"]
 sub-tradition: "Jung's confessional-theological writing"
 label: "comparative-religion-academic"
 date-composed-earliest: 1951

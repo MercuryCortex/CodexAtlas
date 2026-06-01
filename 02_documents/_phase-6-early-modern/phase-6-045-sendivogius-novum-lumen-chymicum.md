@@ -4,6 +4,7 @@ id: "phase-6-045-sendivogius-novum-lumen-chymicum"
 title: "Novum Lumen Chymicum (New Light of Alchemy)"
 aka: ["Novum Lumen Chymicum", "New Light of Chymistry", "The New Chemical Light", "Tractatus de Sulphure (companion treatise)"]
 tradition: "Latin Christian alchemy / Paracelsian-Rosicrucian"
+canonical-corpus: ["western-alchemy-corpus"]
 sub-tradition: "Rudolfine court alchemy / Polish Hermetic-alchemical"
 label: "operational-philosophical alchemical treatise"
 date-composed-earliest: 1604

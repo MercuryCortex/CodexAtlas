@@ -1,5 +1,6 @@
 ---
 type: document
+canonical-corpus: ["tao-corpus"]
 id: "tao-te-ching"
 name: "Tao Te Ching"
 status: "stub"

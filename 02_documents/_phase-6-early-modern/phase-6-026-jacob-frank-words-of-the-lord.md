@@ -1,5 +1,6 @@
 ---
 type: document
+canonical-corpus: ["polish-frankism-sabbatean-corpus"]
 id: "phase-6-026-jacob-frank-words-of-the-lord"
 name: "The Words of the Lord (Jacob Frank)"
 status: "stub"

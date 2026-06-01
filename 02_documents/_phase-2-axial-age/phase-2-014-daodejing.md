@@ -4,6 +4,7 @@ id: "phase-2-014-daodejing"
 title: "Daodejing (Tao Te Ching)"
 aka: ["Dào Dé Jīng", "道德經", "Laozi (老子)"]
 tradition: "Chinese / Daoist"
+canonical-corpus: ["tao-corpus"]
 sub-tradition: "Classical Daoism"
 label: "daoist-classical"
 date-composed-earliest: -500

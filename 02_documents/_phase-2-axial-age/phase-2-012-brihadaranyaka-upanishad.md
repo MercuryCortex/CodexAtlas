@@ -4,6 +4,7 @@ id: "phase-2-012-brihadaranyaka-upanishad"
 title: "Bṛhadāraṇyaka Upaniṣad"
 aka: ["Brihadaranyaka", "BṛhUp", "Great Forest Upanishad"]
 tradition: "Vedic / Brahmanical"
+canonical-corpus: ["vedas"]
 sub-tradition: "Vedānta — earliest principal Upaniṣad"
 label: "śruti-upanishadic"
 date-composed-earliest: -800

@@ -1,5 +1,6 @@
 ---
 type: document
+canonical-corpus: ["confucian-classics"]
 id: "da-ming-huidian"
 name: "Da Ming Huidian"
 status: "stub"

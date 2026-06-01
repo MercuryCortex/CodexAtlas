@@ -1,5 +1,6 @@
 ---
 type: document
+canonical-corpus: ["tipitaka"]
 id: "mahaparinibbana-sutta"
 name: "Mahāparinibbāna Sutta"
 status: "stub"

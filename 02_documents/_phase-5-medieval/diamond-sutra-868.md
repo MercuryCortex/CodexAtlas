@@ -1,5 +1,6 @@
 ---
 type: document
+canonical-corpus: ["madhyamaka-prajnaparamita-corpus", "chinese-mahayana-chan-huayan-tiantai"]
 id: "diamond-sutra-868"
 name: "Diamond Sutra 868"
 status: "stub"

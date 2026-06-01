@@ -4,6 +4,7 @@ id: "phase-7-026-autobiography-of-a-yogi"
 title: "Autobiography of a Yogi"
 aka: []
 tradition: "Hindu modernism / Kriya Yoga"
+canonical-corpus: ["hindu-modernism-corpus"]
 sub-tradition: "Yogananda's Self-Realization Fellowship lineage"
 label: "new-religious-movement"
 date-composed-earliest: 1945

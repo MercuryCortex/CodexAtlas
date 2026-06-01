@@ -3,6 +3,7 @@ type: document
 id: "phase-8-020-nihon-shoki"
 title: "Nihon Shoki (Chronicles of Japan)"
 tradition: "Shinto"
+canonical-corpus: ["kojiki-nihongi"]
 family: "Japanese"
 language: "Classical Chinese (kanbun)"
 composed: 720

@@ -4,6 +4,7 @@ id: "phase-4-073-tabula-smaragdina"
 title: "Tabula Smaragdina (Emerald Tablet)"
 aka: ["Emerald Tablet of Hermes", "Tabula Smaragdina Hermetis", "Lawh al-Zumurrud", "Sirr al-Khaliqa (within the Pseudo-Apollonian transmission)"]
 tradition: "Hermeticism (pseudonymous-Hermetic)"
+canonical-corpus: ["hermetica"]
 sub-tradition: "alchemical / Hermetic-philosophical"
 label: "pseudepigraphic / revealed-knowledge mystical aphorism"
 date-composed-earliest: 500

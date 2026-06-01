@@ -4,6 +4,7 @@ id: "phase-4-044-basil-on-the-holy-spirit"
 title: "On the Holy Spirit"
 aka: ["De Spiritu Sancto", "Peri tou Hagiou Pneumatos"]
 tradition: "Patristic Christian (Cappadocian)"
+canonical-corpus: ["patristic-corpus"]
 sub-tradition: "Nicene Trinitarian theology"
 label: "patristic"
 date-composed-earliest: 374

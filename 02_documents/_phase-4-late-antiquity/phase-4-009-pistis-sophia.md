@@ -4,6 +4,7 @@ id: "phase-4-009-pistis-sophia"
 title: "Pistis Sophia"
 aka: ["Askew Codex"]
 tradition: "Gnostic Christian"
+canonical-corpus: ["nag-hammadi"]
 sub-tradition: "late Gnostic (post-Sethian/Valentinian synthesis)"
 label: "gnostic-christian"
 date-composed-earliest: 250

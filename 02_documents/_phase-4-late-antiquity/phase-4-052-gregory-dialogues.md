@@ -4,6 +4,7 @@ id: "phase-4-052-gregory-dialogues"
 title: "Dialogues on the Miracles of the Italian Fathers"
 aka: ["Dialogi", "Dialogues", "Dialogi de Vita et Miraculis Patrum Italicorum"]
 tradition: "Western (Latin) Patristic Christianity"
+canonical-corpus: ["latin-catholic-medieval"]
 sub-tradition: "Early medieval Latin hagiography"
 label: "patristic / hagiographic"
 date-composed-earliest: 593

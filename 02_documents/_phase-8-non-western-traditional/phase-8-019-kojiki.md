@@ -3,6 +3,7 @@ type: document
 id: "phase-8-019-kojiki"
 title: "Kojiki (Record of Ancient Matters)"
 tradition: "Shinto"
+canonical-corpus: ["kojiki-nihongi"]
 family: "Japanese"
 language: "Classical Japanese (Man'yōgana syllabic script)"
 composed: 712

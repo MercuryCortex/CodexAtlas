@@ -4,6 +4,7 @@ id: "phase-5-003-maximus-confessor-ambigua"
 title: "Ambigua and Mystagogia (Maximus the Confessor)"
 aka: ["Ambigua ad Iohannem", "Ambigua ad Thomam", "Mystagogia"]
 tradition: "Eastern Christian (Byzantine)"
+canonical-corpus: ["byzantine-orthodox", "hesychast-philokalia-corpus"]
 sub-tradition: "Chalcedonian Christian Neoplatonism"
 label: "patristic"
 date-composed-earliest: 620

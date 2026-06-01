@@ -4,6 +4,7 @@ id: "phase-2-043-great-learning-daxue"
 title: "Great Learning (大學) / Daxue"
 aka: ["Daxue", "Ta Hsüeh", "大學", "Great Learning", "University Learning"]
 tradition: "Chinese / Confucian"
+canonical-corpus: ["confucian-classics"]
 sub-tradition: "Classical Confucianism → Neo-Confucian Four Books (Zhu Xi's 1190 compilation)"
 label: "confucian-classical"
 date-composed-earliest: -400

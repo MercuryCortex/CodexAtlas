@@ -4,6 +4,7 @@ id: "phase-6-018-rosicrucian-manifestos"
 title: "Fama Fraternitatis + Confessio Fraternitatis"
 aka: ["Rosicrucian Manifestos", "Fama Fraternitatis Rosae Crucis", "Confessio Fraternitatis Rosae Crucis"]
 tradition: "Rosicrucianism"
+canonical-corpus: ["rosicrucian-corpus"]
 sub-tradition: "Tübingen circle (Andreae, Hess, Besold)"
 label: "alchemical"
 date-composed-earliest: 1610

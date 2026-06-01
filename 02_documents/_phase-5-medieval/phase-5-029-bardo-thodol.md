@@ -4,6 +4,7 @@ id: "phase-5-029-bardo-thodol"
 title: "Bardo Thödöl (Tibetan Book of the Dead)"
 aka: ["Bar do thos grol", "Liberation Through Hearing in the Intermediate State", "Tibetan Book of the Dead"]
 tradition: "Vajrayāna Buddhism — Nyingma school"
+canonical-corpus: ["tipitaka", "tibetan-vajrayana-corpus"]
 sub-tradition: "Terma (revealed treasure) — Padmasambhava-attributed cycle"
 label: "vajrayana-tantra"
 date-composed-earliest: 750

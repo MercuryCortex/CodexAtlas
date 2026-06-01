@@ -1,5 +1,6 @@
 ---
 type: document
+canonical-corpus: ["buddhist-pilgrimage-chronicles"]
 id: "ellora-inscriptions"
 name: "Ellora Inscriptions"
 status: "stub"

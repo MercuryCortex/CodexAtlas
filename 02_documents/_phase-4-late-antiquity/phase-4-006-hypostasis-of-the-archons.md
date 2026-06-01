@@ -4,6 +4,7 @@ id: "phase-4-006-hypostasis-of-the-archons"
 title: "Hypostasis of the Archons"
 aka: ["Reality of the Rulers", "NHC II,4"]
 tradition: "Gnostic Christian"
+canonical-corpus: ["nag-hammadi"]
 sub-tradition: "Sethian Gnostic"
 label: "gnostic-sethian"
 date-composed-earliest: 150

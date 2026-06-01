@@ -4,6 +4,7 @@ id: "phase-4-083-mashafa-kidan-testament-of-our-lord"
 title: "Mashafa Kidan (Testament of Our Lord)"
 aka: ["*Testamentum Domini Nostri Iesu Christi*", "Mashafa Kidan", "Testament of Our Lord and Saviour Jesus Christ", "መጽሐፈ ኪዳን"]
 tradition: "[[tradition-ethiopian-orthodox-tewahedo]] (canonical NT-adjacent scripture) / [[tradition-syriac-orthodox]] (canonical-liturgical)"
+canonical-corpus: ["ethiopic-tewahedo-canon"]
 sub-tradition: "early-Christian apocalyptic-liturgical pseudepigraphon — Ethiopic-preserved"
 label: "apocryphal-christian"
 date-composed-earliest: 350

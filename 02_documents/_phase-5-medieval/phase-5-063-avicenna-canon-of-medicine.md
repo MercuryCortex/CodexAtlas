@@ -4,6 +4,7 @@ id: "phase-5-063-avicenna-canon-of-medicine"
 title: "Canon of Medicine (Al-Qanun fi al-Tibb)"
 aka: ["Al-Qanun fi al-Tibb", "القانون في الطب", "Canon Medicinae", "The Canon"]
 tradition: "Islamic (Sunni)"
+canonical-corpus: ["islamic-philosophical", "islamic-medical-corpus"]
 region: "Persia (composed at Hamadan and Isfahan)"
 date_earliest: 1012
 date_latest: 1025

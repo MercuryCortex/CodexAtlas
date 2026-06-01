@@ -4,6 +4,7 @@ id: "phase-5-007-sahih-al-bukhari"
 title: "Sahih al-Bukhari"
 aka: ["al-Jāmiʿ al-Ṣaḥīḥ", "Sahih Bukhari"]
 tradition: "Sunni Islam"
+canonical-corpus: ["hadith-corpus"]
 sub-tradition: "Hadith canon (Kutub al-Sittah)"
 label: "hadith"
 date-composed-earliest: 830

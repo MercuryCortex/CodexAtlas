@@ -4,6 +4,7 @@ id: "phase-2-044-doctrine-of-the-mean-zhongyong"
 title: "Doctrine of the Mean (中庸) / Zhongyong"
 aka: ["Zhongyong", "Chung Yung", "中庸", "Doctrine of the Mean", "The Mean", "Maintaining Perfect Balance"]
 tradition: "Chinese / Confucian"
+canonical-corpus: ["confucian-classics"]
 sub-tradition: "Classical Confucianism → Neo-Confucian Four Books (Zhu Xi's 1190 compilation)"
 label: "confucian-classical"
 date-composed-earliest: -350

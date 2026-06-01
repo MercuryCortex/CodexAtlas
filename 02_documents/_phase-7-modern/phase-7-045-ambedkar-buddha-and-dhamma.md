@@ -8,6 +8,7 @@ date-composed: 1956
 date-range: "written 1950–1956; published posthumously 1957"
 language: "English"
 tradition: "[[tradition-navayana-buddhism]]"
+canonical-corpus: ["south-asian-modernism"]
 genre: "canonical-scripture / theological-reconstruction / liberation-theology"
 phase: 7
 region: "India (Maharashtra, Nagpur)"

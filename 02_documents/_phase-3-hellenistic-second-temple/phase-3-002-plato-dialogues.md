@@ -4,6 +4,7 @@ id: "phase-3-002-plato-dialogues"
 title: "Plato's Theological and Cosmological Dialogues (Timaeus, Republic Book X, Phaedrus, Symposium, Phaedo)"
 aka: ["Platonic corpus — theological core"]
 tradition: "Greek philosophy"
+canonical-corpus: ["greek-scripture"]
 sub-tradition: "Academic / classical Platonism"
 label: "philosophical"
 date-composed-earliest: -385

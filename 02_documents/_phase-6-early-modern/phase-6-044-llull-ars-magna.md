@@ -4,6 +4,7 @@ id: "phase-6-044-llull-ars-magna"
 title: "Ars Magna / Ars Generalis Ultima / Ars Brevis"
 aka: ["Ars Magna (1274)", "Ars Compendiosa Inveniendi Veritatem", "Ars Generalis Ultima (1308)", "Ars Brevis (1308)", "the Lullian Art", "Ars Combinatoria (Leibniz's term)"]
 tradition: "Latin Christianity (Franciscan) / Catalan Hermetic-combinatorial mystical theology"
+canonical-corpus: ["christian-mystical", "renaissance-esotericism"]
 sub-tradition: "Lullism — the combinatorial divine-names tradition"
 label: "combinatorial mystical-logical system"
 date-composed-earliest: 1274

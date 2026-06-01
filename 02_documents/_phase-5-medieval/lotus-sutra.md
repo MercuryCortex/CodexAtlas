@@ -1,5 +1,6 @@
 ---
 type: document
+canonical-corpus: ["chinese-mahayana-chan-huayan-tiantai"]
 id: "lotus-sutra"
 name: "Lotus Sutra"
 status: "stub"

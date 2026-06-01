@@ -4,6 +4,7 @@ id: "phase-5-004-platform-sutra-huineng"
 title: "Platform Sutra of the Sixth Patriarch"
 aka: ["Liuzu Tan Jing 六祖壇經", "Platform Sutra"]
 tradition: "Chan / Zen Buddhism"
+canonical-corpus: ["tipitaka", "chinese-mahayana-chan-huayan-tiantai"]
 sub-tradition: "Southern School Chan"
 label: "mahayana-sutra"
 date-composed-earliest: 780

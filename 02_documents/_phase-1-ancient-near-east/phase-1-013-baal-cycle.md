@@ -4,6 +4,7 @@ id: "phase-1-013-baal-cycle"
 title: "Baal Cycle"
 aka: ["Ba'lu Cycle", "Baal Myth", "KTU 1.1–1.6", "CTA 1–6"]
 tradition: "Ugaritic / Canaanite"
+canonical-corpus: ["canaanite-ugaritic"]
 sub-tradition: "Late Bronze Age Canaanite mythology"
 label: "mythological-narrative"
 date-composed-earliest: -1400

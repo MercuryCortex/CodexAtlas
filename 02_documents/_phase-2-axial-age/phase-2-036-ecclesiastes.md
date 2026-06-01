@@ -15,6 +15,7 @@ language: Biblical Hebrew (with Aramaic loanwords and possible Greek influence)
 script: Square Hebrew script
 region: ancient-israel
 tradition: ancient-israel
+canonical-corpus: ["bible", "tanakh"]
 sub-tradition: Hebrew Bible / Wisdom Literature
 authorship: attributed (Solomonic pseudepigraph — "Qoheleth son of David, king in Jerusalem," 1:1; scholarly consensus rejects Solomonic authorship and dates the text to the Hellenistic period)
 label: wisdom-monologue

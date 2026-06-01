@@ -4,6 +4,7 @@ id: "phase-5-021-ibn-arabi-fusus-al-hikam"
 title: "Fuṣūṣ al-Ḥikam (The Bezels of Wisdom)"
 aka: ["Fusus al-Hikam", "The Bezels of Wisdom", "Fusus"]
 tradition: "Sufi Islam — Akbarī school"
+canonical-corpus: ["islamic-theological"]
 sub-tradition: "Wahdat al-Wujud / Akbarī Sufi metaphysics"
 label: "sufi"
 date-composed-earliest: 1229

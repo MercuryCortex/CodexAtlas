@@ -4,6 +4,7 @@ id: "phase-6-034-khunrath-amphitheatrum-sapientiae"
 title: "Amphitheatrum Sapientiae Aeternae (Amphitheatre of Eternal Wisdom)"
 aka: ["*Amphitheatrum Sapientiae Aeternae, Solius Verae, Christiano-Kabalisticum, Divino-Magicum, nec non Physico-Chymicum, Tertriunum, Catholicon*"]
 tradition: "Latin Christianity (Lutheran) / Renaissance Hermetic-Kabbalistic-alchemical-Christian synthesis"
+canonical-corpus: ["renaissance-magic-corpus"]
 sub-tradition: "integrated Hermetic-Kabbalistic emblem-book"
 label: "illustrated theological-Hermetic-alchemical treatise"
 date-composed-earliest: 1595

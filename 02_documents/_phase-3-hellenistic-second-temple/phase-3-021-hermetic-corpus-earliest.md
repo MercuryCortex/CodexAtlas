@@ -4,6 +4,7 @@ id: "phase-3-021-hermetic-corpus-earliest"
 title: "Hermetic Corpus — Earliest Stratum (Poimandres and earliest treatises)"
 aka: ["Corpus Hermeticum (earliest layer)", "Hermetica I"]
 tradition: "Greco-Egyptian syncretism"
+canonical-corpus: ["hermetica"]
 sub-tradition: "Hermeticism — Egyptian-Hellenistic religious philosophy"
 label: "hermetic"
 date-composed-earliest: 100

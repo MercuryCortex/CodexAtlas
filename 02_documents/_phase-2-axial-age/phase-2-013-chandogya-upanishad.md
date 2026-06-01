@@ -4,6 +4,7 @@ id: "phase-2-013-chandogya-upanishad"
 title: "Chāndogya Upaniṣad"
 aka: ["Chandogya", "ChU"]
 tradition: "Vedic / Brahmanical"
+canonical-corpus: ["vedas"]
 sub-tradition: "Sāmavedic Upaniṣad / early Vedānta"
 label: "śruti-upanishadic"
 date-composed-earliest: -750

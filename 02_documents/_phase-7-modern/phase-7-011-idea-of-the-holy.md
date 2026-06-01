@@ -4,6 +4,7 @@ id: "phase-7-011-idea-of-the-holy"
 title: "The Idea of the Holy"
 aka: ["Das Heilige"]
 tradition: "Comparative religion (academic) / phenomenology of religion"
+canonical-corpus: ["comparative-religion-academic"]
 sub-tradition: "Phenomenology of religion"
 label: "comparative-religion-academic"
 date-composed-earliest: 1917

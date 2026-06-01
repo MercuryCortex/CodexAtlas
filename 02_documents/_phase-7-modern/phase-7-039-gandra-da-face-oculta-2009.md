@@ -4,6 +4,7 @@ id: "phase-7-039-gandra-da-face-oculta-2009"
 title: "Da Face Oculta do Rosto da Europa: Prolegómenos a uma História Mítica de Portugal"
 aka: ["Da Face Oculta (short title)", "The Hidden Face of the Face of Europe (literal English translation, unofficial)"]
 tradition: "[[tradition-portuguese-hermeticism]]"
+canonical-corpus: ["portuguese-hermetic"]
 sub-tradition: "21st-c. Portuguese hermetic-symbology scholarship"
 label: "esoteric"
 date-composed-earliest: 1990

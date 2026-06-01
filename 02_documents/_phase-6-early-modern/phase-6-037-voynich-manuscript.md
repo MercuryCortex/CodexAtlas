@@ -4,6 +4,7 @@ id: "phase-6-037-voynich-manuscript"
 title: "Voynich Manuscript"
 aka: ["Beinecke MS 408", "the Voynich Codex", "the 'Most Mysterious Manuscript in the World'"]
 tradition: "unknown / undeciphered"
+canonical-corpus: ["western-occult-modern"]
 sub-tradition: "unknown"
 label: "undeciphered illustrated manuscript (status: mystery)"
 date-composed-earliest: 1404

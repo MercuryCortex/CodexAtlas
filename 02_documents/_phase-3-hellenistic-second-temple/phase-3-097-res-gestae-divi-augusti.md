@@ -8,6 +8,7 @@ date-latest: 14
 language: "Latin (with parallel Greek translation in the eastern copies)"
 phase: "phase-3-hellenistic-second-temple"
 tradition: "Roman imperial"
+canonical-corpus: ["roman-scripture"]
 attributed-author: "[[caesar-augustus|Augustus (Octavian)]]"
 status: "stub"
 refs:

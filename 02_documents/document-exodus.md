@@ -1,5 +1,6 @@
 ---
 type: document
+canonical-corpus: ["bible"]
 id: "document-exodus"
 name: "Document Exodus"
 status: "stub"

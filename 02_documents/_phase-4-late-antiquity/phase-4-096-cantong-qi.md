@@ -4,6 +4,7 @@ id: "phase-4-096-cantong-qi"
 title: "Cantong Qi (The Kinship of the Three)"
 aka: ["参同契", "Cān Tóng Qì", "The Token for the Agreement of the Three", "Zhouyi cantong qi", "周易参同契", "The Seal of the Unity of the Three"]
 tradition: "Chinese / Daoist"
+canonical-corpus: ["tao-corpus"]
 sub-tradition: "Daoist alchemy (waidan / outer alchemy; foundational neidan / inner alchemy text)"
 language: ["Classical Chinese (Han/Wei period)"]
 composed: 142

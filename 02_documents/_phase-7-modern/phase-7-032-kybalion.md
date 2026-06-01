@@ -4,6 +4,7 @@ id: "phase-7-032-kybalion"
 title: "The Kybalion"
 aka: ["The Kybalion: A Study of the Hermetic Philosophy of Ancient Egypt and Greece"]
 tradition: "New Thought / pseudo-Hermetic"
+canonical-corpus: ["new-thought-corpus"]
 sub-tradition: "Pseudo-Hermetic New Thought synthesis"
 label: "theosophical"
 date-composed-earliest: 1908

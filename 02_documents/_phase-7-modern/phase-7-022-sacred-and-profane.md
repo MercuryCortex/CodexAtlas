@@ -4,6 +4,7 @@ id: "phase-7-022-sacred-and-profane"
 title: "The Sacred and the Profane"
 aka: ["Das Heilige und das Profane", "Le sacré et le profane"]
 tradition: "Comparative religion (academic) / history of religions"
+canonical-corpus: ["comparative-religion-academic"]
 sub-tradition: "Eliadean phenomenology of religion (popular)"
 label: "comparative-religion-academic"
 date-composed-earliest: 1956

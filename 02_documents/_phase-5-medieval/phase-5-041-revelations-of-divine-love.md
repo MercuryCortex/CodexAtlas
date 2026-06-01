@@ -4,6 +4,7 @@ id: "phase-5-041-revelations-of-divine-love"
 title: "A Revelation of Love (Revelations of Divine Love)"
 aka: ["*A Book of Showings*", "*The Long Text*", "Sloane-tradition title: *Revelations of Divine Love*"]
 tradition: "Latin Christianity (English vernacular mysticism)"
+canonical-corpus: ["latin-catholic-medieval"]
 sub-tradition: "anchoritic / visionary-theological"
 label: "vernacular mystical-theological treatise"
 date-composed-earliest: 1373

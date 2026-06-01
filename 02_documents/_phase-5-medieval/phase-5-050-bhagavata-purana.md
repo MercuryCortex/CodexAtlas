@@ -4,6 +4,7 @@ id: "phase-5-050-bhagavata-purana"
 title: "Bhāgavata Purāṇa"
 aka: ["Śrīmad Bhāgavatam", "Śrīmad Bhāgavata", "Bhagavata", "The Beautiful Story of God", "श्रीमद्भागवतम्"]
 tradition: "Hindu — Vaishnava / Bhakti"
+canonical-corpus: ["vedas", "vaishnava-canon"]
 sub-tradition: "Krishna-devotional Vaishnavism (Gauḍīya, Puṣṭimārga, Nimbārka, Mādhva sampradāyas)"
 label: "purana"
 date-composed-earliest: 800

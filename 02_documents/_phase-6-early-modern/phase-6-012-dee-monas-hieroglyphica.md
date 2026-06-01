@@ -4,6 +4,7 @@ id: "phase-6-012-dee-monas-hieroglyphica"
 title: "Monas Hieroglyphica"
 aka: ["The Hieroglyphic Monad"]
 tradition: "Renaissance esoteric mathematics / Hermetic-Kabbalist magic"
+canonical-corpus: ["renaissance-magic-corpus"]
 sub-tradition: "Elizabethan magical-scientific"
 label: "alchemical"
 date-composed-earliest: 1564

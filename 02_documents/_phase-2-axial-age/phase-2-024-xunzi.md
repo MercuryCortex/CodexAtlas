@@ -4,6 +4,7 @@ id: "phase-2-024-xunzi"
 title: "Xunzi"
 aka: ["Xúnzǐ", "荀子", "Hsün-tzu", "Master Xun", "Xun Kuang 荀況"]
 tradition: "Chinese / Confucian"
+canonical-corpus: ["confucian-classics"]
 sub-tradition: "Classical Confucianism (Xunzian branch)"
 label: "confucian-classical"
 date-composed-earliest: -280

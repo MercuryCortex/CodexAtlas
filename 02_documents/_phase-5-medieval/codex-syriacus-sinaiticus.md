@@ -1,5 +1,6 @@
 ---
 type: document
+canonical-corpus: ["syriac-christian-corpus"]
 id: "codex-syriacus-sinaiticus"
 name: "Codex Syriacus Sinaiticus"
 status: "stub"

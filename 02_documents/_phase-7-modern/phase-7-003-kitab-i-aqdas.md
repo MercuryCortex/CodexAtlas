@@ -4,6 +4,7 @@ id: "phase-7-003-kitab-i-aqdas"
 title: "Kitáb-i-Aqdas"
 aka: ["The Most Holy Book", "al-Kitāb al-Aqdas"]
 tradition: "Bahá'í Faith"
+canonical-corpus: ["bahai-corpus"]
 sub-tradition: "Bahá'í foundational scripture (declaration period)"
 label: "bahai"
 date-composed-earliest: 1873

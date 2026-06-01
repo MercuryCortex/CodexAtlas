@@ -4,6 +4,7 @@ id: "phase-5-013-hekhalot-literature"
 title: "Hekhalot Literature"
 aka: ["Heikhalot Rabbati", "Heikhalot Zutarti", "3 Enoch / Sefer Hekhalot", "Maaseh Merkavah", "Shi'ur Qomah"]
 tradition: "Rabbinic Judaism — early mysticism"
+canonical-corpus: ["rabbinic-corpus"]
 sub-tradition: "Merkavah / Hekhalot mysticism"
 label: "merkavah-hekhalot"
 date-composed-earliest: 200

@@ -1,5 +1,6 @@
 ---
 type: document
+canonical-corpus: ["tipitaka"]
 id: "phase-2-005-dhammapada"
 name: "Dhammapada"
 aka: ["Dharmapada", "Dhp"]

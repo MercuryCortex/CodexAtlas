@@ -4,6 +4,7 @@ id: "phase-2-007-hebrew-bible-e-source"
 title: "Hebrew Bible — E (Elohist) Source"
 aka: ["Elohist", "E-source", "the E document"]
 tradition: "Israelite / pre-exilic Hebrew"
+canonical-corpus: ["bible", "tanakh", "israelite-religion"]
 sub-tradition: "Northern Kingdom / Israelite"
 label: "tanakh-torah"
 date-composed-earliest: -900

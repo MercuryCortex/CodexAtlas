@@ -12,6 +12,7 @@ city-of-origin: "Córdoba"
 authorship: known
 author: "[[ibn-rushd]]"
 tradition: "arabic-falsafa; latin-christendom"
+canonical-corpus: ["islamic-theological"]
 status: metadata
 themes: ["aristotle-transmission", "arabic-aristotle", "scholasticism", "intellect-theory", "unicity-of-intellect", "latin-averroism", "medieval-philosophy"]
 parallels: ["[[phase-5-044-ibn-sina-kitab-al-shifa]]", "[[phase-5-048-theology-of-aristotle-arabic]]", "[[phase-5-046-ibn-rushd-tahafut-al-tahafut]]"]

@@ -4,6 +4,7 @@ id: "phase-4-102-avatamsaka-sutra"
 title: "Avataṃsaka Sūtra (Flower Ornament Sūtra)"
 aka: ["Buddhāvataṃsaka Sūtra", "華嚴經 (Huāyán Jīng)", "Kegon-kyō", "Flower Garland Sūtra", "Flower Ornament Scripture"]
 tradition: "Mahāyāna Buddhism"
+canonical-corpus: ["tipitaka"]
 sub-tradition: "Huayan / Kegon textual family"
 label: "mahayana-sutra"
 date-composed-earliest: 100

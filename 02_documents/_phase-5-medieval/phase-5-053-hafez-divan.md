@@ -4,6 +4,7 @@ id: "phase-5-053-hafez-divan"
 title: "Dīvān-e Ḥāfeẓ (The Collected Poems of Hafez)"
 aka: ["Divan-e Hafez", "Divān-e Khwāja", "The Collected Poems of Hafez", "ديوان حافظ"]
 tradition: "Islam (Sufism — Persian lyric poetry)"
+canonical-corpus: ["sufi-persian"]
 sub-tradition: "Persian ghazal tradition / Sufi mystical lyric"
 label: "lyric-poetry-collection"
 date-composed-earliest: 1350

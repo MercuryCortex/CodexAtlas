@@ -4,6 +4,7 @@ id: "phase-4-065-shepherd-of-hermas"
 title: "The Shepherd of Hermas"
 aka: ["Pastor Hermae", "Poimēn (tou) Herma", "The Shepherd"]
 tradition: "Patristic Christian (proto-orthodox)"
+canonical-corpus: ["apostolic-fathers"]
 sub-tradition: "Roman Christianity (charismatic-apocalyptic strand)"
 label: "apocalyptic"
 date-composed-earliest: 95

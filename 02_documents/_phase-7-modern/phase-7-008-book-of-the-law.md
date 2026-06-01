@@ -4,6 +4,7 @@ id: "phase-7-008-book-of-the-law"
 title: "Liber AL vel Legis (The Book of the Law)"
 aka: ["Liber AL", "Liber Legis", "The Book of the Law", "CCXX"]
 tradition: "Thelema"
+canonical-corpus: ["thelema-corpus"]
 sub-tradition: "Thelema founding scripture"
 label: "new-religious-movement"
 date-composed-earliest: 1904

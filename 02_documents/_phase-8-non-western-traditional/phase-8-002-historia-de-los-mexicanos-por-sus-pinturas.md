@@ -1,5 +1,6 @@
 ---
 type: document
+canonical-corpus: ["aztec-mexica-corpus"]
 id: "phase-8-002-historia-de-los-mexicanos-por-sus-pinturas"
 name: "Phase 8 002 Historia De Los Mexicanos Por Sus Pinturas"
 status: "stub"

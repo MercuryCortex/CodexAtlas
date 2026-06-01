@@ -4,6 +4,7 @@ id: "phase-6-020-chaitanya-charitamrita"
 title: "Chaitanya Charitamrita + Shikshashtakam"
 aka: ["Caitanya Caritāmṛta", "Shri Caitanya Caritāmrta", "Eight Verses of Instruction"]
 tradition: "Hindu Bhakti (Gaudiya Vaishnava)"
+canonical-corpus: ["vaishnava-canon"]
 sub-tradition: "Gaudiya Vaishnavism"
 label: "smṛti-puranic"
 date-composed-earliest: 1486

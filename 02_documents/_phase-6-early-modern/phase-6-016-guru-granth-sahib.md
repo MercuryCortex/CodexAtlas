@@ -4,6 +4,7 @@ id: "phase-6-016-guru-granth-sahib"
 title: "Guru Granth Sahib (Adi Granth)"
 aka: ["Sri Guru Granth Sahib Ji", "Adi Granth", "Adi Bir (1604 compilation)"]
 tradition: "Sikhism"
+canonical-corpus: ["guru-granth"]
 sub-tradition: "Sikh Panth"
 label: "sikh-gurbani"
 date-composed-earliest: 1499

@@ -1,5 +1,6 @@
 ---
 type: document
+canonical-corpus: ["roman-scripture"]
 id: "cassius-dio-roman-history-69"
 name: "Cassius Dio, Roman History Book 69 (Hadrian)"
 status: "stub"

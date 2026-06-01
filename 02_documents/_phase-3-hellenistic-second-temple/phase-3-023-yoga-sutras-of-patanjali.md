@@ -4,6 +4,7 @@ id: "phase-3-023-yoga-sutras-of-patanjali"
 title: "Yoga-Sūtra of Patañjali"
 aka: ["Yogasūtra", "Pātañjala Yoga Sūtra", "Yogasūtras", "Pātañjala-Yoga-Śāstra (per Maas 2013 — Sūtra + Vyāsa-Bhāṣya as a composite work)"]
 tradition: "Hindu — classical Yoga darśana"
+canonical-corpus: ["vedas"]
 sub-tradition: "Sāṃkhya-Yoga"
 label: "śāstra-classical"
 date-composed-earliest: -200

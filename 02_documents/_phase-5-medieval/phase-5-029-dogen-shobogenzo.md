@@ -1,5 +1,6 @@
 ---
 type: document
+canonical-corpus: ["zen-japanese-canon"]
 id: "phase-5-029-dogen-shobogenzo"
 name: "Shōbōgenzō (Dōgen)"
 status: "stub"

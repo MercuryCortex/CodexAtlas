@@ -4,6 +4,7 @@ id: "phase-6-043-dee-libri-mysteriorum-enochian"
 title: "Libri Mysteriorum — Dee's Angelic Conversations and the Enochian System"
 aka: ["Liber Mysteriorum Primus–Sextus", "Heptarchia Mystica", "A True and Faithful Relation of What Passed for Many Years Between Dr. John Dee and Some Spirits", "Enochian records", "De Heptarchia Mystica"]
 tradition: "Renaissance Hermetic-Kabbalist magical theurgy"
+canonical-corpus: ["renaissance-magic-corpus"]
 sub-tradition: "Elizabethan practical magic / angelic-language transmission"
 label: "theurgical angelic-communication record"
 date-composed-earliest: 1581

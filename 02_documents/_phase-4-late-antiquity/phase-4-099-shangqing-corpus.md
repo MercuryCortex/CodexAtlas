@@ -4,6 +4,7 @@ id: "phase-4-099-shangqing-corpus"
 title: "Shangqing Corpus (Supreme Clarity Revelations)"
 aka: ["上清", "Shàng Qīng", "Maoshan Daoism", "Supreme Clarity scriptures", "Highest Clarity texts"]
 tradition: "Chinese / Daoist"
+canonical-corpus: ["tao-corpus"]
 sub-tradition: "Religious Daoism — Shangqing school"
 language: ["Classical Chinese (Eastern Jin period)"]
 composed: 370

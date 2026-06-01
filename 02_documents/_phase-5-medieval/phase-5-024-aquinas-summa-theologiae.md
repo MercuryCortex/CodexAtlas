@@ -4,6 +4,7 @@ id: "phase-5-024-aquinas-summa-theologiae"
 title: "Summa Theologiae"
 aka: ["Summa Theologica", "ST"]
 tradition: "Latin Christian — Scholastic"
+canonical-corpus: ["latin-catholic-medieval"]
 sub-tradition: "Dominican Thomism — Aristotelian Christian theology"
 label: "patristic"
 date-composed-earliest: 1265

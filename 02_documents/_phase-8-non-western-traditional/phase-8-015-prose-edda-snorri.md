@@ -4,6 +4,7 @@ id: "phase-8-015-prose-edda-snorri"
 title: "Prose Edda (Snorra Edda)"
 aka: ["Snorri's Edda", "Younger Edda", "Snorra Edda", "Edda Snorra Sturlusonar"]
 tradition: "Norse / Old Icelandic"
+canonical-corpus: ["norse-eddic"]
 sub-tradition: "Medieval Icelandic mythological-poetic handbook by Christian author"
 label: "mythological-narrative"
 date-composed-earliest: 1220

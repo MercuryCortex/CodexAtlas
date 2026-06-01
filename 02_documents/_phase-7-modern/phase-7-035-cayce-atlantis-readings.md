@@ -4,6 +4,7 @@ id: "phase-7-035-cayce-atlantis-readings"
 title: "The Edgar Cayce Atlantis Readings"
 aka: ["A.R.E. Atlantis Readings", "Cayce Atlantis Material"]
 tradition: "American esoteric / trance prophecy"
+canonical-corpus: ["lost-civilization-corpus"]
 sub-tradition: "Cayce's Association for Research and Enlightenment"
 label: "channeled"
 date-composed-earliest: 1923

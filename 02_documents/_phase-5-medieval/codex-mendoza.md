@@ -1,5 +1,6 @@
 ---
 type: document
+canonical-corpus: ["aztec-corpus"]
 id: "codex-mendoza"
 name: "Codex Mendoza"
 status: "stub"

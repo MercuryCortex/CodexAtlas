@@ -9,6 +9,7 @@ aka:
   - "The Book of What Is in the Underworld"
   - "The Book of the Hidden Chamber"
 tradition: "Egyptian New Kingdom funerary literature"
+canonical-corpus: ["egyptian-scripture"]
 sub-tradition: "Royal solar theology / Duat geography"
 label: "sacred text"
 date-composed-earliest: -1550

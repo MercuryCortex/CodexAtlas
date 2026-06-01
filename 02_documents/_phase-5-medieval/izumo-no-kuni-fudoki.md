@@ -1,5 +1,6 @@
 ---
 type: document
+canonical-corpus: ["kojiki-nihongi"]
 id: "izumo-no-kuni-fudoki"
 name: "Izumo No Kuni Fudoki"
 status: "stub"

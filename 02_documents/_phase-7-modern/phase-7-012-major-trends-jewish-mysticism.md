@@ -4,6 +4,7 @@ id: "phase-7-012-major-trends-jewish-mysticism"
 title: "Major Trends in Jewish Mysticism"
 aka: []
 tradition: "Comparative religion (academic) / Judaic studies"
+canonical-corpus: ["comparative-religion-academic", "kabbalah"]
 sub-tradition: "Foundational text of academic Kabbalah studies"
 label: "comparative-religion-academic"
 date-composed-earliest: 1938

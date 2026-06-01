@@ -4,6 +4,7 @@ id: "phase-7-007-golden-bough"
 title: "The Golden Bough"
 aka: ["The Golden Bough: A Study in Magic and Religion"]
 tradition: "Comparative religion (academic) / Victorian anthropology"
+canonical-corpus: ["comparative-religion-academic"]
 sub-tradition: "Evolutionist-ritualist comparative religion (the 'Cambridge Ritualists' adjacent)"
 label: "comparative-religion-academic"
 date-composed-earliest: 1885

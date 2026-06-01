@@ -5,6 +5,7 @@ title: "Paradise Lost"
 date-composed: 1658
 date-composed-end: 1667
 tradition: "protestantism"
+canonical-corpus: ["protestant-foundational"]
 status: "metadata"
 refs:
   - title: "Paradise Lost"

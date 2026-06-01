@@ -4,6 +4,7 @@ id: "phase-8-012-walam-olum"
 title: "Walam Olum"
 aka: ["Red Score", "Wallam Olum", "the Lenape historical chronicle"]
 tradition: "claimed: Lenape (Delaware) — Eastern Algonquian; almost certainly: Constantine Samuel Rafinesque fabrication"
+canonical-corpus: ["indigenous-north-american-corpus"]
 sub-tradition: "disputed / contested document — Phase-8 case study in source criticism"
 label: "mythological-narrative"
 date-composed-earliest: -1500

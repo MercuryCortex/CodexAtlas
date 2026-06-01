@@ -8,6 +8,7 @@ date-composed: 1861
 date-range: "composed 1861; printed posthumously 1880"
 language: "Classical Chinese (with some Korean vernacular hyangga)"
 tradition: "[[tradition-donghak]]"
+canonical-corpus: ["cheondogyo-corpus"]
 genre: "canonical-scripture / doctrinal-text"
 phase: 7
 region: "Joseon Korea"

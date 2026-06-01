@@ -8,6 +8,7 @@ date-composed: 1930
 date-range: "lectures delivered 1928–1929; published 1930; expanded 1934"
 language: "English"
 tradition: "[[tradition-islamic-modernism]]"
+canonical-corpus: ["south-asian-modernism"]
 genre: "theological-philosophy / Islamic-modernism / Bergsonist-Islamic synthesis"
 phase: 7
 region: "Punjab, British India (Lahore)"

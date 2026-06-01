@@ -4,6 +4,7 @@ id: "phase-6-007-luther-bondage-of-will"
 title: "De Servo Arbitrio (On the Bondage of the Will)"
 aka: ["On the Enslaved Will", "Reply to Erasmus' Diatribe"]
 tradition: "Protestant Christianity"
+canonical-corpus: ["reformation"]
 sub-tradition: "Lutheran"
 label: "patristic"
 date-composed-earliest: 1525

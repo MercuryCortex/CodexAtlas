@@ -4,6 +4,7 @@ id: "phase-5-036-mashafa-mistir-giyorgis"
 title: "Mashafa Mistir (Book of the Mystery) — Giyorgis of Sagla"
 aka: ["Maṣḥafa Mesṭir", "Book of the Mystery", "መጽሐፈ ምሥጢር"]
 tradition: "[[tradition-ethiopian-orthodox-tewahedo]]"
+canonical-corpus: ["ethiopic-tewahedo-canon"]
 sub-tradition: "medieval Ethiopian systematic theology / anti-heretical polemic"
 label: "patristic"
 date-composed-earliest: 1390

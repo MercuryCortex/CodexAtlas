@@ -4,6 +4,7 @@ id: "phase-5-006-vijnana-bhairava-tantra"
 title: "Vijnana Bhairava Tantra"
 aka: ["Vijñāna Bhairava", "VBT"]
 tradition: "Hindu — Kashmir Shaivism / Trika"
+canonical-corpus: ["vedas", "shaiva-tantric-canon"]
 sub-tradition: "Kaula / non-dualist Tantra"
 label: "tantric"
 date-composed-earliest: 700

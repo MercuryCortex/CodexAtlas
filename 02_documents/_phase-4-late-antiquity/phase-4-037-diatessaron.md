@@ -4,6 +4,7 @@ id: "phase-4-037-diatessaron"
 title: "Diatessaron"
 aka: ["Diatessarōn ('through four [Gospels]')", "Evangelion da-Mehallete (Syriac: 'Gospel of the Mixed')", "Tatian's Gospel Harmony"]
 tradition: "Syriac Christianity; early Christian"
+canonical-corpus: ["bible", "syriac-christianity"]
 sub-tradition: "Gospel-harmony genre"
 label: "harmony"
 date-composed-earliest: 165

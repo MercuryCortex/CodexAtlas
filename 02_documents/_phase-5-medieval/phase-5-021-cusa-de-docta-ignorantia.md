@@ -1,5 +1,6 @@
 ---
 type: document
+canonical-corpus: ["christian-mystical", "renaissance-esotericism"]
 id: "phase-5-021-cusa-de-docta-ignorantia"
 name: "De Docta Ignorantia (Nicholas of Cusa)"
 status: "stub"

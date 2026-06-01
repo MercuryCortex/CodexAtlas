@@ -4,6 +4,7 @@ id: "phase-7-018-aion"
 title: "Aion: Researches into the Phenomenology of the Self"
 aka: ["Aion: Untersuchungen zur Symbolgeschichte", "CW vol. 9 part 2"]
 tradition: "Jungian depth psychology"
+canonical-corpus: ["comparative-religion-academic", "western-occult-modern"]
 sub-tradition: "Jung's late period"
 label: "comparative-religion-academic"
 date-composed-earliest: 1949

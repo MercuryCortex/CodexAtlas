@@ -4,6 +4,7 @@ id: "phase-5-046-ibn-rushd-tahafut-al-tahafut"
 title: "Tahāfut al-Tahāfut (The Incoherence of the Incoherence)"
 aka: ["Tahāfut al-Tahāfut", "The Incoherence of the Incoherence", "*Destructio Destructionis* (Latin medieval — Calo Calonymos's 1527 Latin translation paired with Ghazālī's *Destructio*)", "تهافت التهافت"]
 tradition: "Islam (Sunnī Mālikī; Falsafa — Andalusi peripatetic tradition)"
+canonical-corpus: ["islamic-theological"]
 sub-tradition: "Andalusi peripatetic / Averroist"
 label: "philosophical-polemical-treatise"
 date-composed-earliest: 1179

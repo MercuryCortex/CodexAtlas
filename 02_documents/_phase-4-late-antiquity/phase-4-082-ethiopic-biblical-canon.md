@@ -4,6 +4,7 @@ id: "phase-4-082-ethiopic-biblical-canon"
 title: "Ethiopic Biblical Canon (the 81-book Ge'ez Bible)"
 aka: ["Mashafa Qiddus (Holy Books)", "the Ethiopian Broader Canon", "the 81-book canon"]
 tradition: "[[tradition-ethiopian-orthodox-tewahedo]] (sole continuous tradition retaining the broader canon as scripture)"
+canonical-corpus: ["bible", "ethiopic-tewahedo-canon"]
 sub-tradition: "Ge'ez biblical corpus"
 label: "canonical-nt"
 date-composed-earliest: -1000

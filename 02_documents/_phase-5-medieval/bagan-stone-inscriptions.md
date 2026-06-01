@@ -1,5 +1,6 @@
 ---
 type: document
+canonical-corpus: ["buddhist-pilgrimage-chronicles"]
 id: "bagan-stone-inscriptions"
 name: "Bagan Stone Inscriptions"
 status: "stub"

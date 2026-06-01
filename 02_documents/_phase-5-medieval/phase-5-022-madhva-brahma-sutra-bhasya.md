@@ -4,6 +4,7 @@ id: "phase-5-022-madhva-brahma-sutra-bhasya"
 title: "Brahma-Sūtra-Bhāṣya (Madhva)"
 aka: ["Sūtra Bhāṣya", "Madhvabhāṣya"]
 tradition: "Hindu — Dvaita Vedānta"
+canonical-corpus: ["vaishnava-canon"]
 sub-tradition: "Strict theistic dualism — Madhva Vaiṣṇavism"
 label: "darśana"
 date-composed-earliest: 1230

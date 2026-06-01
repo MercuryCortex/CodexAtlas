@@ -4,6 +4,7 @@ id: "phase-3-001-second-third-isaiah"
 title: "Second Isaiah and Third Isaiah (Isaiah 40–66)"
 aka: ["Deutero-Isaiah (chs. 40–55)", "Trito-Isaiah (chs. 56–66)", "Exilic and Post-exilic Isaiah"]
 tradition: "Judaism (Second Temple proto-stratum)"
+canonical-corpus: ["bible", "tanakh"]
 sub-tradition: "Exilic / Post-exilic Yahwistic prophecy"
 label: "tanakh-nevi'im"
 date-composed-earliest: -545

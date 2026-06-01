@@ -4,6 +4,7 @@ id: "phase-2-001-rig-veda-family-books"
 title: "Rig Veda — Family Books (Mandalas 2–7)"
 aka: ["Ṛgveda", "Rigveda Saṃhitā", "the family maṇḍalas"]
 tradition: "Vedic"
+canonical-corpus: ["vedas"]
 sub-tradition: "Śrauta / early Brahmanical"
 label: "śruti-vedic"
 date-composed-earliest: -1500

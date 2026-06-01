@@ -4,6 +4,7 @@ id: "phase-6-027-swedenborg-arcana-heaven-and-hell"
 title: "Arcana Coelestia + Heaven and Hell"
 aka: ["Heavenly Secrets (Arcana Caelestia)", "De Coelo et Eius Mirabilibus et de Inferno (Heaven and Hell)"]
 tradition: "Christian esoteric / Lutheran spiritualist"
+canonical-corpus: ["christian-theosophy", "swedenborgian-new-church"]
 sub-tradition: "Swedenborgian (Church of the New Jerusalem)"
 label: "alchemical"
 date-composed-earliest: 1749

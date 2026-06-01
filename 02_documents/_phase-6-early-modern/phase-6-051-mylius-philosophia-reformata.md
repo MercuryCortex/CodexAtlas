@@ -4,6 +4,7 @@ id: "phase-6-051-mylius-philosophia-reformata"
 title: "Philosophia Reformata"
 aka: ["Philosophia Reformata (1622)", "Reformed Philosophy"]
 tradition: "German Renaissance alchemy / Rosicrucian-Paracelsian"
+canonical-corpus: ["western-alchemy-corpus"]
 sub-tradition: "Rudolfine-Rosicrucian emblematic alchemy"
 label: "alchemical emblem book"
 date-composed-earliest: 1622

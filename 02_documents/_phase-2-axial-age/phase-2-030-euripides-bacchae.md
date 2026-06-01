@@ -4,6 +4,7 @@ id: "phase-2-030-euripides-bacchae"
 title: "Bacchae"
 aka: ["Βάκχαι", "The Bacchants", "The Bacchae"]
 tradition: "Greek (Athenian tragic drama); Dionysian mystery-cult theology in dramatic form"
+canonical-corpus: ["mystery-cults-corpus"]
 sub-tradition: "Athenian dramatic-religious ritual (performed at the City Dionysia festival of Athens)"
 label: "ritual-drama"
 date-composed-earliest: -407

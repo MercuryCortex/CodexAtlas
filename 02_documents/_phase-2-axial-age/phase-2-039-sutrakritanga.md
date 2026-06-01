@@ -4,6 +4,7 @@ id: "phase-2-039-sutrakritanga"
 title: "Sūtrakṛtāṅga (Second Āṅga of the Jain Canon)"
 aka: ["Suyagadanga", "Sūyagaḍaṃga", "Second Limb"]
 tradition: "Jainism"
+canonical-corpus: ["jain-agamas"]
 sub-tradition: "Śvetāmbara Jainism"
 label: "jain-agama-primary"
 date-composed-earliest: -450

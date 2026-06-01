@@ -4,6 +4,7 @@ id: "phase-1-032-babylonian-theodicy"
 title: "Babylonian Theodicy"
 aka: ["Acrostic Theodicy", "The Babylonian Theodicy", "Ludlul bel nemeqi (companion piece)"]
 tradition: "Babylonian / Akkadian"
+canonical-corpus: ["mesopotamian-canonical"]
 sub-tradition: "Babylonian wisdom literature"
 label: "wisdom-dialogue"
 date-composed-earliest: -1100

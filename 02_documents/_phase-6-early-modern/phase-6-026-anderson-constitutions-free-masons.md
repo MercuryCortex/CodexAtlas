@@ -4,6 +4,7 @@ id: "phase-6-026-anderson-constitutions-free-masons"
 title: "The Constitutions of the Free-Masons"
 aka: ["Anderson's Constitutions", "Constitutions of 1723"]
 tradition: "Freemasonry"
+canonical-corpus: ["freemasonry-corpus"]
 sub-tradition: "Premier Grand Lodge of England (speculative Masonic)"
 label: "alchemical"
 date-composed-earliest: 1721

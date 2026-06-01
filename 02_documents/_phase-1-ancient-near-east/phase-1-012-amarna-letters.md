@@ -4,6 +4,7 @@ id: "phase-1-012-amarna-letters"
 title: "Amarna Letters"
 aka: ["EA letters", "Tell el-Amarna tablets", "Amarna correspondence"]
 tradition: "Egyptian / Akkadian (international diplomatic)"
+canonical-corpus: ["egyptian-scripture"]
 sub-tradition: "Late Bronze Age Near Eastern diplomatic correspondence"
 label: "archaeological-cultic"
 date-composed-earliest: -1360

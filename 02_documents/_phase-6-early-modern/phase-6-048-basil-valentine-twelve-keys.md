@@ -4,6 +4,7 @@ id: "phase-6-048-basil-valentine-twelve-keys"
 title: "Zwölf Schlüssel / Les Douze Clefs de Philosophie (Twelve Keys)"
 aka: ["Zwölf Schlüssel", "Les Douze Clefs de Philosophie", "Twelve Keys of Philosophy", "Triumphant Chariot of Antimony (related work)", "Last Will and Testament (related work)"]
 tradition: "German Renaissance alchemy / Paracelsian"
+canonical-corpus: ["western-alchemy-corpus"]
 sub-tradition: "Operational alchemy / antimony chemistry"
 label: "alchemical emblem sequence"
 date-composed-earliest: 1599

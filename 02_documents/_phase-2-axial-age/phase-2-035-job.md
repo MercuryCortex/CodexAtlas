@@ -10,6 +10,7 @@ language: Biblical Hebrew
 script: Square Hebrew script
 region: ancient-israel
 tradition: ancient-israel
+canonical-corpus: ["bible", "tanakh"]
 sub-tradition: Hebrew Bible / Wisdom Literature
 authorship: anonymous
 label: wisdom-dialogue

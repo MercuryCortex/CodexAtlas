@@ -4,6 +4,7 @@ id: "phase-3-034-huainanzi"
 title: "Huainanzi (Masters of Huainan)"
 aka: ["淮南子", "Huái Nán Zǐ", "Huai Nan Tzu", "The Book of the Masters of Huainan"]
 tradition: "Chinese / Daoist"
+canonical-corpus: ["tao-corpus"]
 sub-tradition: "Han Daoist synthesis"
 language: ["Classical Chinese (early Han)"]
 composed: -139

@@ -4,6 +4,7 @@ id: "phase-1-011-great-hymn-to-aten"
 title: "Great Hymn to the Aten"
 aka: ["Great Hymn to Aten", "Hymn of Akhenaten", "Aten Hymn"]
 tradition: "Egyptian"
+canonical-corpus: ["egyptian-scripture"]
 sub-tradition: "Amarna religion / Atenism"
 label: "mythological-liturgical"
 date-composed-earliest: -1353

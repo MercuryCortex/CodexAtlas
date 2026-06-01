@@ -4,6 +4,7 @@ id: "phase-1-008-enuma-elish"
 title: "Enuma Elish"
 aka: ["Enūma Eliš", "Epic of Creation", "The Seven Tablets of Creation"]
 tradition: "Babylonian"
+canonical-corpus: ["mesopotamian"]
 sub-tradition: "Babylonian state theology — Marduk cult"
 label: "mythological-narrative"
 date-composed-earliest: -1700

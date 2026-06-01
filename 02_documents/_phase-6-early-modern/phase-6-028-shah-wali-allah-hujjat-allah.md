@@ -4,6 +4,7 @@ id: "phase-6-028-shah-wali-allah-hujjat-allah"
 title: "Hujjat Allah al-Baligha"
 aka: ["The Conclusive Argument from God", "Hujjatullah al-Balighah"]
 tradition: "Islamic theology / Sufi-philosophical / Hadith reform"
+canonical-corpus: ["south-asian-sufi-reform"]
 sub-tradition: "Indian Naqshbandi Sufism"
 label: "sufi"
 date-composed-earliest: 1735

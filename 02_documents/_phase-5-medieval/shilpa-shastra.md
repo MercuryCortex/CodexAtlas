@@ -1,5 +1,6 @@
 ---
 type: document
+canonical-corpus: ["hindu-architectural-corpus"]
 id: "shilpa-shastra"
 name: "Shilpa Shastra"
 status: "stub"

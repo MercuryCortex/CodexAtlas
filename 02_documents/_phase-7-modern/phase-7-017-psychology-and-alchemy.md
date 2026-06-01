@@ -4,6 +4,7 @@ id: "phase-7-017-psychology-and-alchemy"
 title: "Psychology and Alchemy"
 aka: ["Psychologie und Alchemie", "CW vol. 12"]
 tradition: "Jungian depth psychology"
+canonical-corpus: ["comparative-religion-academic", "western-occult-modern"]
 sub-tradition: "Jung's alchemical period"
 label: "comparative-religion-academic"
 date-composed-earliest: 1935

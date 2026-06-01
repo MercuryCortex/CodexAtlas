@@ -4,6 +4,7 @@ id: "phase-1-016-eridu-genesis-flood"
 title: "The Eridu Genesis (Sumerian Flood Story)"
 aka: ["The Eridu Genesis", "Sumerian Flood Story", "The Ziusudra Story", "Flood Tablet from Nippur (CBS 10673)"]
 tradition: "Sumerian / Mesopotamian"
+canonical-corpus: ["mesopotamian"]
 sub-tradition: "Sumerian mythological narrative (Nippur scribal-school tradition)"
 label: "mythological-narrative"
 date-composed-earliest: -2000

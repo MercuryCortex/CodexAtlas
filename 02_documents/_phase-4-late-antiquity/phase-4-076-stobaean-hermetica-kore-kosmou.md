@@ -4,6 +4,7 @@ id: "phase-4-076-stobaean-hermetica-kore-kosmou"
 title: "Stobaean Hermetica (including Kore Kosmou — 'Daughter of the Cosmos')"
 aka: ["Stobaean Excerpts", "Hermetic Fragments", "Excerpta Stobaei", "Kore Kosmou", "The Virgin of the World"]
 tradition: "Hermetic"
+canonical-corpus: ["hermetica"]
 sub-tradition: "Philosophical Hermetism — Egyptian-revelatory cosmogony"
 label: "hermetic"
 date-composed-earliest: 100

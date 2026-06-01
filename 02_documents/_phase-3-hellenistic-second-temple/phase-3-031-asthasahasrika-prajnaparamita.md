@@ -4,6 +4,7 @@ id: "phase-3-031-asthasahasrika-prajnaparamita"
 title: "Aṣṭasāhasrikā Prajñāpāramitā (Perfection of Wisdom in 8,000 Lines)"
 aka: ["Aṣṭasāhasrikā", "Perfection of Wisdom in 8,000 Lines", "*Bajie boluomi jing* 八千頌般若經 (Chinese)", "the seed-text of the Prajñāpāramitā corpus"]
 tradition: "Mahāyāna Buddhist"
+canonical-corpus: ["tipitaka", "madhyamaka-prajnaparamita-corpus"]
 sub-tradition: "Prajñāpāramitā (foundational sūtra-cluster)"
 label: "mahayana-sutra"
 date-composed-earliest: -100

@@ -4,6 +4,7 @@ id: "phase-4-049-boethius-consolation-of-philosophy"
 title: "Consolation of Philosophy"
 aka: ["De consolatione philosophiae", "Consolatio Philosophiae"]
 tradition: "Latin Christian / Late-Antique Neoplatonism"
+canonical-corpus: ["latin-catholic-medieval"]
 sub-tradition: "Christian Platonism (in Roman-philosophical register)"
 label: "patristic / philosophical"
 date-composed-earliest: 523
