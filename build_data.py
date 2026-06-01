@@ -1182,6 +1182,18 @@ def main():
                     "tags": fm.get("tags", []),
                     "status": fm.get("status", "stub"),
                     "refs": fm.get("refs", []),
+                    # 2026-05-31 — canonical-corpus YAML migration. Each
+                    # document declares its canonical corpus membership(s)
+                    # in YAML (`canonical-corpus: ["bible", "tanakh"]`).
+                    # mode.js filterNodesByMode('scriptures') reads this
+                    # field as the AUTHORITATIVE source of "which docs
+                    # are in the Codex view" — dissolves the SCRIPTURE_
+                    # CORPORA-vs-vault drift that was creating endless
+                    # catch-up passes. See AUDIT/2026-05-31-codex-wires-
+                    # gap.md for the motivating wire-coverage problem
+                    # (88.8% under the static set, 77.4% under the
+                    # auto-derived union, → ≥95% under the YAML field).
+                    "canonical_corpus": fm.get("canonical-corpus", []) or [],
                     "path": str(md.relative_to(VAULT)),
                     "body": body,
                     "frontmatter": fm,

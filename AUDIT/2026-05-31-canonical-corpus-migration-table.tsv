@@ -1,0 +1,516 @@
+path	doc_id	corpus_keys	source	confidence	sub_tradition
+02_documents/_phase-1-ancient-near-east/document-kuntillet-ajrud-inscriptions.md	document-kuntillet-ajrud-inscriptions	israelite-religion	scripture-corpora	high	Northern Kingdom folk cult (Samarian Yahwism)
+02_documents/_phase-1-ancient-near-east/phase-1-001-kesh-temple-hymn.md	phase-1-001-kesh-temple-hymn	mesopotamian	scripture-corpora	high	Sumerian temple-hymn tradition
+02_documents/_phase-1-ancient-near-east/phase-1-002-pyramid-texts.md	phase-1-002-pyramid-texts	egyptian-scripture	scripture-corpora	high	Old Kingdom royal funerary religion
+02_documents/_phase-1-ancient-near-east/phase-1-003-enheduanna-hymns.md	phase-1-003-enheduanna-hymns	mesopotamian	scripture-corpora	high	Sargonic-era temple religion; Inanna cult
+02_documents/_phase-1-ancient-near-east/phase-1-004-gilgamesh-old-babylonian.md	phase-1-004-gilgamesh-old-babylonian	mesopotamian	scripture-corpora	high	Old Babylonian literary tradition
+02_documents/_phase-1-ancient-near-east/phase-1-005-instructions-of-shuruppak.md	phase-1-005-instructions-of-shuruppak	mesopotamian-canonical	inferred:Mesopotamian	medium	Mesopotamian wisdom literature
+02_documents/_phase-1-ancient-near-east/phase-1-006-atrahasis.md	phase-1-006-atrahasis	mesopotamian	scripture-corpora	high	Old Babylonian narrative literature
+02_documents/_phase-1-ancient-near-east/phase-1-007-code-of-hammurabi.md	phase-1-007-code-of-hammurabi	mesopotamian-canonical	inferred:Mesopotamian	medium	Old Babylonian royal law / Marduk-mediated kingship theology
+02_documents/_phase-1-ancient-near-east/phase-1-008-enuma-elish.md	phase-1-008-enuma-elish	mesopotamian	scripture-corpora	high	Babylonian state theology — Marduk cult
+02_documents/_phase-1-ancient-near-east/phase-1-009-coffin-texts.md	phase-1-009-coffin-texts	egyptian-scripture	scripture-corpora	high	Middle Kingdom mortuary religion
+02_documents/_phase-1-ancient-near-east/phase-1-010-book-of-the-dead.md	phase-1-010-book-of-the-dead	egyptian-scripture	scripture-corpora	high	New Kingdom mortuary religion
+02_documents/_phase-1-ancient-near-east/phase-1-011-great-hymn-to-aten.md	phase-1-011-great-hymn-to-aten	egyptian-scripture	scripture-corpora	high	Amarna religion / Atenism
+02_documents/_phase-1-ancient-near-east/phase-1-012-amarna-letters.md	phase-1-012-amarna-letters	egyptian-scripture	scripture-corpora	high	Late Bronze Age Near Eastern diplomatic correspondence
+02_documents/_phase-1-ancient-near-east/phase-1-013-baal-cycle.md	phase-1-013-baal-cycle	canaanite-ugaritic	scripture-corpora	high	Late Bronze Age Canaanite mythology
+02_documents/_phase-1-ancient-near-east/phase-1-014-ugaritic-ritual-texts.md	phase-1-014-ugaritic-ritual-texts	canaanite-ugaritic	scripture-corpora	high	Late Bronze Age Canaanite temple ritual
+02_documents/_phase-1-ancient-near-east/phase-1-015-sumerian-king-list.md	phase-1-015-sumerian-king-list	mesopotamian-canonical	inferred:Mesopotamian	medium	Sumerian historical-chronographic tradition (Nippur scribal milieu)
+02_documents/_phase-1-ancient-near-east/phase-1-016-eridu-genesis-flood.md	phase-1-016-eridu-genesis-flood	mesopotamian	scripture-corpora	high	Sumerian mythological narrative (Nippur scribal-school tradition)
+02_documents/_phase-1-ancient-near-east/phase-1-017-descent-of-inanna.md	phase-1-017-descent-of-inanna	mesopotamian	scripture-corpora	high	Sumerian mythological narrative; Inanna-Dumuzi cult-literary cycle
+02_documents/_phase-1-ancient-near-east/phase-1-018-gudea-cylinders.md	phase-1-018-gudea-cylinders	mesopotamian-canonical	inferred:Mesopotamian	medium	Sumerian royal-cultic literature (Second Dynasty of Lagash, late Gutian period)
+02_documents/_phase-1-ancient-near-east/phase-1-019-enuma-anu-enlil.md	phase-1-019-enuma-anu-enlil	mesopotamian	scripture-corpora	high	Babylonian and Neo-Assyrian celestial-omen scholarship
+02_documents/_phase-1-ancient-near-east/phase-1-020-shumma-alu.md	phase-1-020-shumma-alu	mesopotamian-canonical	inferred:Mesopotamian	medium	Babylonian and Neo-Assyrian scholarly omen literature
+02_documents/_phase-1-ancient-near-east/phase-1-021-shumma-izbu.md	phase-1-021-shumma-izbu	mesopotamian-canonical	inferred:Mesopotamian	medium	Babylonian and Neo-Assyrian scholarly omen literature
+02_documents/_phase-1-ancient-near-east/phase-1-022-lament-for-ur.md	phase-1-022-lament-for-ur	mesopotamian-canonical	inferred:Mesopotamian	medium	Sumerian city-lament genre (one of the five canonical city-laments)
+02_documents/_phase-1-ancient-near-east/phase-1-023-shulgi-hymns.md	phase-1-023-shulgi-hymns	mesopotamian-canonical	inferred:Mesopotamian	medium	Ur III royal hymnography (Third Dynasty of Ur, ~-2094 to -2047)
+02_documents/_phase-1-ancient-near-east/phase-1-024-shijing.md	phase-1-024-shijing	confucian-classics	scripture-corpora	high	Zhou court and folk poetic anthology
+02_documents/_phase-1-ancient-near-east/phase-1-025-shujing.md	phase-1-025-shujing	confucian-classics	scripture-corpora	high	Zhou court documentary corpus
+02_documents/_phase-1-ancient-near-east/phase-1-026-yijing.md	phase-1-026-yijing	confucian-classics	scripture-corpora	high	divinatory-cosmological canon
+02_documents/_phase-1-ancient-near-east/phase-1-027-memphite-theology-shabaka-stone.md	phase-1-027-memphite-theology-shabaka-stone	egyptian-scripture	scripture-corpora	high	Memphite (Ptah-centric) theology
+02_documents/_phase-1-ancient-near-east/phase-1-028-kumarbi-cycle.md	phase-1-028-kumarbi-cycle	hurro-hittite	scripture-corpora	high	Hurrian theology preserved in Hittite imperial archives
+02_documents/_phase-1-ancient-near-east/phase-1-029-telipinu-myth.md	phase-1-029-telipinu-myth	hurro-hittite	scripture-corpora	high	Anatolian disappearing-god myth-cycle
+02_documents/_phase-1-ancient-near-east/phase-1-030-illuyanka-myth.md	phase-1-030-illuyanka-myth	hurro-hittite	scripture-corpora	high	Anatolian chaoskampf
+02_documents/_phase-1-ancient-near-east/phase-1-031-rigveda.md	phase-1-031-rigveda	vedas	scripture-corpora	high	Śrauta / earliest Brahmanical
+02_documents/_phase-1-ancient-near-east/phase-1-032-babylonian-theodicy.md	phase-1-032-babylonian-theodicy	mesopotamian-canonical	inferred:Mesopotamian	medium	Babylonian wisdom literature
+02_documents/_phase-1-ancient-near-east/phase-1-033-anzu-myth.md	phase-1-033-anzu-myth	mesopotamian-canonical	inferred:Mesopotamian	medium	Sumero-Akkadian mythology — Ninurta and Enlil cults
+02_documents/_phase-1-ancient-near-east/phase-1-034-adapa-myth.md	phase-1-034-adapa-myth	mesopotamian-canonical	inferred:Mesopotamian	medium	Babylonian wisdom literature — Ea cult at Eridu
+02_documents/_phase-1-ancient-near-east/phase-1-035-wadi-el-jarf-papyri.md	phase-1-035-wadi-el-jarf-papyri	egyptian-scripture	slug-override	high	
+02_documents/_phase-1-ancient-near-east/phase-1-036-amduat.md	phase-1-036-amduat	egyptian-scripture	inferred:Egyptian	medium	Royal solar theology / Duat geography
+02_documents/_phase-1-ancient-near-east/phase-1-037-ebers-papyrus.md	phase-1-037-ebers-papyrus	egyptian-scripture	inferred:Egyptian	medium	Egyptian
+02_documents/_phase-1-ancient-near-east/phase-1-038-edwin-smith-papyrus.md	phase-1-038-edwin-smith-papyrus	egyptian-scripture	inferred:Egyptian	medium	Egyptian
+02_documents/_phase-1-ancient-near-east/tummal-chronicle.md	tummal-chronicle	mesopotamian-canonical	inferred:Mesopotamian	medium	Royal chronicle / temple chronicle
+02_documents/_phase-1-bronze-iron/phase-1-008-shabaka-stone.md	phase-1-008-shabaka-stone	egyptian-scripture	slug-override	high	
+02_documents/_phase-2-axial-age/avesta.md	avesta	avesta	scripture-corpora	high	tradition-zoroastrianism
+02_documents/_phase-2-axial-age/phase-2-001-iliad.md	phase-2-001-iliad	greek-scripture	slug-override	high	
+02_documents/_phase-2-axial-age/phase-2-001-rig-veda-family-books.md	phase-2-001-rig-veda-family-books	vedas	scripture-corpora	high	Śrauta / early Brahmanical
+02_documents/_phase-2-axial-age/phase-2-002-gathas-of-zarathustra.md	phase-2-002-gathas-of-zarathustra	avesta	scripture-corpora	high	Old Avestan / Gathic
+02_documents/_phase-2-axial-age/phase-2-003-atharva-veda.md	phase-2-003-atharva-veda	vedas	scripture-corpora	high	Atharvanic (separate priestly lineage)
+02_documents/_phase-2-axial-age/phase-2-004-yasna-younger-avesta.md	phase-2-004-yasna-younger-avesta	avesta	scripture-corpora	high	Younger Avestan / pre-Sasanian liturgical
+02_documents/_phase-2-axial-age/phase-2-005-davidic-psalms.md	phase-2-005-davidic-psalms	bible	scripture-corpora	high	
+02_documents/_phase-2-axial-age/phase-2-005-dhammapada.md	phase-2-005-dhammapada	tipitaka	slug-override	high	
+02_documents/_phase-2-axial-age/phase-2-005-hebrew-bible-j-source.md	phase-2-005-hebrew-bible-j-source	bible,tanakh,israelite-religion	scripture-corpora	high	Judahite court / Jerusalem
+02_documents/_phase-2-axial-age/phase-2-006-brahmanas-aranyakas.md	phase-2-006-brahmanas-aranyakas	vedas	scripture-corpora	high	ritual-exegetical
+02_documents/_phase-2-axial-age/phase-2-007-hebrew-bible-e-source.md	phase-2-007-hebrew-bible-e-source	bible,tanakh,israelite-religion	scripture-corpora	high	Northern Kingdom / Israelite
+02_documents/_phase-2-axial-age/phase-2-008-homeric-epics.md	phase-2-008-homeric-epics	greek-scripture	scripture-corpora	high	Archaic Greek epic / oral-formulaic tradition
+02_documents/_phase-2-axial-age/phase-2-009-hesiod-theogony-works-and-days.md	phase-2-009-hesiod-theogony-works-and-days	greek-scripture	scripture-corpora	high	Archaic Greek didactic / theogonic epic
+02_documents/_phase-2-axial-age/phase-2-010-hebrew-bible-early-prophets.md	phase-2-010-hebrew-bible-early-prophets	bible,tanakh,israelite-religion	scripture-corpora	high	classical Israelite prophecy
+02_documents/_phase-2-axial-age/phase-2-011-hebrew-bible-d-source.md	phase-2-011-hebrew-bible-d-source	bible,tanakh,israelite-religion	scripture-corpora	high	Deuteronomic / Deuteronomistic
+02_documents/_phase-2-axial-age/phase-2-012-brihadaranyaka-upanishad.md	phase-2-012-brihadaranyaka-upanishad	vedas	scripture-corpora	high	Vedānta — earliest principal Upaniṣad
+02_documents/_phase-2-axial-age/phase-2-013-chandogya-upanishad.md	phase-2-013-chandogya-upanishad	vedas	scripture-corpora	high	Sāmavedic Upaniṣad / early Vedānta
+02_documents/_phase-2-axial-age/phase-2-014-daodejing.md	phase-2-014-daodejing	tao-corpus	scripture-corpora	high	Classical Daoism
+02_documents/_phase-2-axial-age/phase-2-015-analects-of-confucius.md	phase-2-015-analects-of-confucius	confucian-classics	scripture-corpora	high	Classical Confucianism
+02_documents/_phase-2-axial-age/phase-2-016-early-buddhist-suttas.md	phase-2-016-early-buddhist-suttas	tipitaka	scripture-corpora	high	Pre-sectarian / earliest Buddhism (proto-Theravāda)
+02_documents/_phase-2-axial-age/phase-2-017-mahabharata-ramayana-oral-layers.md	phase-2-017-mahabharata-ramayana-oral-layers	vedas	scripture-corpora	high	smṛti-epic
+02_documents/_phase-2-axial-age/phase-2-018-hebrew-bible-p-source.md	phase-2-018-hebrew-bible-p-source	bible,tanakh,israelite-religion	scripture-corpora	high	Second-Temple priestly scribal tradition (Jerusalem priestly establishment, exilic / post-exilic)
+02_documents/_phase-2-axial-age/phase-2-019-deuteronomistic-history.md	phase-2-019-deuteronomistic-history	bible,tanakh,israelite-religion	scripture-corpora	high	Deuteronomistic scribal tradition (the historiographic redaction descended from the Josianic Deuteronomic school)
+02_documents/_phase-2-axial-age/phase-2-020-lamentations.md	phase-2-020-lamentations	bible,tanakh,israelite-religion	scripture-corpora	high	post-exilic Hebrew lament poetry (the *qinah*-meter lament tradition)
+02_documents/_phase-2-axial-age/phase-2-021-shvetashvatara-upanishad.md	phase-2-021-shvetashvatara-upanishad	vedas	scripture-corpora	high	Late Vedic / proto-theistic Upaniṣad
+02_documents/_phase-2-axial-age/phase-2-022-zhuangzi.md	phase-2-022-zhuangzi	tao-corpus	scripture-corpora	high	Classical Daoism
+02_documents/_phase-2-axial-age/phase-2-023-mengzi.md	phase-2-023-mengzi	confucian-classics	scripture-corpora	high	Classical Confucianism
+02_documents/_phase-2-axial-age/phase-2-024-xunzi.md	phase-2-024-xunzi	confucian-classics	scripture-corpora	high	Classical Confucianism (Xunzian branch)
+02_documents/_phase-2-axial-age/phase-2-025-mozi.md	phase-2-025-mozi	confucian-classics	scripture-corpora	high	Mohism (classical period)
+02_documents/_phase-2-axial-age/phase-2-026-han-feizi.md	phase-2-026-han-feizi	confucian-classics	scripture-corpora	high	Legalism (synthesizing earlier Shang Yang and Shen Buhai traditions)
+02_documents/_phase-2-axial-age/phase-2-027-bhagavad-gita.md	phase-2-027-bhagavad-gita	vedas	scripture-corpora	high	Bhakti / smṛti / Vaiṣṇava devotional canon
+02_documents/_phase-2-axial-age/phase-2-028-herodotus-histories-book-2.md	phase-2-028-herodotus-histories-book-2	egyptian-scripture,greek-scripture	scripture-corpora	high	Greco-Egyptian ethnography
+02_documents/_phase-2-axial-age/phase-2-029-dhammapada.md	phase-2-029-dhammapada	tipitaka	scripture-corpora	high	Pre-sectarian / Theravāda anthology; with parallel Gandhāran, Sanskrit, and Chinese recensions
+02_documents/_phase-2-axial-age/phase-2-030-euripides-bacchae.md	phase-2-030-euripides-bacchae	mystery-cults-corpus	scripture-corpora	high	Athenian dramatic-religious ritual (performed at the City Dionysia festival of Athens)
+02_documents/_phase-2-axial-age/phase-2-031-aeschylus-oresteia.md	phase-2-031-aeschylus-oresteia	greek-scripture	inferred:Greek tragedy	medium	Athenian dramatic-religious ritual (performed at the City Dionysia of -458)
+02_documents/_phase-2-axial-age/phase-2-032-shijing-book-of-songs.md	phase-2-032-shijing	confucian-classics	inferred:Confucian	medium	Confucian canonical corpus
+02_documents/_phase-2-axial-age/phase-2-033-shujing-book-of-documents.md	phase-2-033-shujing	confucian-classics	inferred:Confucian	medium	Confucian canonical corpus
+02_documents/_phase-2-axial-age/phase-2-034-books-of-kings.md	phase-2-034-books-of-kings	bible,tanakh	scripture-corpora	high	Deuteronomistic History
+02_documents/_phase-2-axial-age/phase-2-035-job.md	phase-2-job	bible,tanakh	scripture-corpora	high	Hebrew Bible / Wisdom Literature
+02_documents/_phase-2-axial-age/phase-2-036-ecclesiastes.md	phase-2-ecclesiastes	bible,tanakh	scripture-corpora	high	Hebrew Bible / Wisdom Literature
+02_documents/_phase-2-axial-age/phase-2-037-song-of-songs.md	phase-2-song-of-songs	bible,tanakh	scripture-corpora	high	Hebrew Bible / Wisdom Literature / Love Poetry
+02_documents/_phase-2-axial-age/phase-2-038-acharanga-sutra.md	phase-2-038-acharanga-sutra	jain-agamas	scripture-corpora	high	Śvetāmbara Jainism (the Digambara branch rejects the Āgamic canon as corrupted)
+02_documents/_phase-2-axial-age/phase-2-039-sutrakritanga.md	phase-2-039-sutrakritanga	jain-agamas	scripture-corpora	high	Śvetāmbara Jainism
+02_documents/_phase-2-axial-age/phase-2-040-orphic-gold-tablets.md	phase-2-040-orphic-gold-tablets	mystery-cults-corpus	scripture-corpora	high	Orphic-Bacchic funerary mystery tradition
+02_documents/_phase-2-axial-age/phase-2-041-book-of-proverbs.md	phase-2-041-book-of-proverbs	bible,tanakh	scripture-corpora	high	Hebrew / Israelite
+02_documents/_phase-2-axial-age/phase-2-042-yi-jing-i-ching.md	phase-2-042-yi-jing-i-ching	confucian-classics	scripture-corpora	high	Five Classics (Confucian canon); also foundational to Daoist metaphysics and Chinese cosmology
+02_documents/_phase-2-axial-age/phase-2-043-great-learning-daxue.md	phase-2-043-great-learning-daxue	confucian-classics	inferred:Confucian	medium	Classical Confucianism → Neo-Confucian Four Books (Zhu Xi's 1190 compilation)
+02_documents/_phase-2-axial-age/phase-2-044-doctrine-of-the-mean-zhongyong.md	phase-2-044-doctrine-of-the-mean-zhongyong	confucian-classics	inferred:Confucian	medium	Classical Confucianism → Neo-Confucian Four Books (Zhu Xi's 1190 compilation)
+02_documents/_phase-2-axial-age/phase-2-045-hippocratic-corpus.md	phase-2-045-hippocratic-corpus	greek-medical-corpus	slug-override	high	Greek (Koan school)
+02_documents/_phase-2-axial-age/phase-2-046-huangdi-neijing.md	phase-2-046-huangdi-neijing	daoist-medical-corpus	slug-override	high	Chinese
+02_documents/_phase-2-axial-age/phase-2-067-lotus-sutra-saddharmapundarika.md	phase-2-067-lotus-sutra-saddharmapundarika	mahayana-corpus	slug-override	high	
+02_documents/_phase-3-hellenistic-second-temple/divyavadana.md	divyavadana	theravada-jataka-corpus	scripture-corpora	high	
+02_documents/_phase-3-hellenistic-second-temple/gandavyuha-sutra.md	gandavyuha-sutra	chinese-mahayana-chan-huayan-tiantai	scripture-corpora	high	
+02_documents/_phase-3-hellenistic-second-temple/mahaparinibbana-sutta.md	mahaparinibbana-sutta	tipitaka	scripture-corpora	high	
+02_documents/_phase-3-hellenistic-second-temple/phase-3-001-second-third-isaiah.md	phase-3-001-second-third-isaiah	bible,tanakh	scripture-corpora	high	Exilic / Post-exilic Yahwistic prophecy
+02_documents/_phase-3-hellenistic-second-temple/phase-3-002-plato-dialogues.md	phase-3-002-plato-dialogues	greek-scripture	scripture-corpora	high	Academic / classical Platonism
+02_documents/_phase-3-hellenistic-second-temple/phase-3-003-aristotle-metaphysics.md	phase-3-003-aristotle-metaphysics	greek-scripture	scripture-corpora	high	Peripatetic / Lyceum
+02_documents/_phase-3-hellenistic-second-temple/phase-3-004-1-enoch.md	phase-3-004-1-enoch	bible	scripture-corpora	high	Enochic Judaism — Watchers tradition
+02_documents/_phase-3-hellenistic-second-temple/phase-3-005-stoic-foundational-texts.md	phase-3-005-stoic-foundational-texts	greek-philosophical-scripture,hellenistic-jewish	inferred:Stoic + Hellenistic-Jewish	medium	Stoicism — Old, Middle, and Roman Stoa
+02_documents/_phase-3-hellenistic-second-temple/phase-3-006-septuagint.md	phase-3-006-septuagint	bible	scripture-corpora	high	Alexandrian Judaism
+02_documents/_phase-3-hellenistic-second-temple/phase-3-007-samaritan-pentateuch.md	phase-3-007-samaritan-pentateuch	samaritan-corpus	scripture-corpora	high	[[tradition-samaritanism]]
+02_documents/_phase-3-hellenistic-second-temple/phase-3-007-sirach.md	phase-3-007-sirach	bible	scripture-corpora	high	Jerusalemite wisdom literature
+02_documents/_phase-3-hellenistic-second-temple/phase-3-008-book-of-daniel.md	phase-3-008-book-of-daniel	bible,tanakh	scripture-corpora	high	Maccabean-era apocalyptic
+02_documents/_phase-3-hellenistic-second-temple/phase-3-009-jubilees.md	phase-3-009-jubilees	bible,ethiopic-tewahedo-canon	scripture-corpora	high	364-day solar-calendar Judaism
+02_documents/_phase-3-hellenistic-second-temple/phase-3-010-sibylline-oracles.md	phase-3-010-sibylline-oracles	bible	scripture-corpora	high	Egyptian / Diaspora Jewish apocalyptic propaganda
+02_documents/_phase-3-hellenistic-second-temple/phase-3-011-dead-sea-scrolls.md	phase-3-011-dead-sea-scrolls	bible,tanakh	scripture-corpora	high	Yahad / Essene / Qumran community
+02_documents/_phase-3-hellenistic-second-temple/phase-3-012-wisdom-of-solomon.md	phase-3-012-wisdom-of-solomon	bible	scripture-corpora	high	Alexandrian Hellenistic Judaism — Greek wisdom literature
+02_documents/_phase-3-hellenistic-second-temple/phase-3-013-philo-of-alexandria.md	phase-3-013-philo-of-alexandria	egyptian-scripture,greek-philosophical-scripture,hellenistic-jewish	inferred:Egyptian + Hellenistic-Jewish	medium	Middle Platonist Hellenistic Judaism — Alexandrian allegorical exegesis
+02_documents/_phase-3-hellenistic-second-temple/phase-3-014-enneads-plotinus.md	phase-3-014-enneads-plotinus	greek-philosophical-scripture,neoplatonic	slug-override	high	
+02_documents/_phase-3-hellenistic-second-temple/phase-3-014-q-source.md	phase-3-014-q-source	bible	scripture-corpora	high	Pre-Synoptic Jewish-Christian sayings collection
+02_documents/_phase-3-hellenistic-second-temple/phase-3-015-pauline-epistles.md	phase-3-015-pauline-epistles	bible	scripture-corpora	high	Pauline Gentile-mission Christianity
+02_documents/_phase-3-hellenistic-second-temple/phase-3-016-gospel-of-mark.md	phase-3-016-gospel-of-mark	bible	scripture-corpora	high	Synoptic Gospels — earliest extant Gospel
+02_documents/_phase-3-hellenistic-second-temple/phase-3-017-gospel-of-matthew.md	phase-3-017-gospel-of-matthew	bible	scripture-corpora	high	Synoptic Gospels — Jewish-Christian
+02_documents/_phase-3-hellenistic-second-temple/phase-3-018-luke-acts.md	phase-3-018-luke-acts	bible	scripture-corpora	high	Synoptic Gospels + earliest church-history
+02_documents/_phase-3-hellenistic-second-temple/phase-3-019-4-maccabees.md	phase-3-019-4-maccabees	bible	scripture-corpora	high	Stoic-Platonist Hellenistic Jewish moral philosophy
+02_documents/_phase-3-hellenistic-second-temple/phase-3-020-gospel-of-john.md	phase-3-020-gospel-of-john	bible	scripture-corpora	high	Johannine Christianity — high Christology, Logos theology
+02_documents/_phase-3-hellenistic-second-temple/phase-3-021-hermetic-corpus-earliest.md	phase-3-021-hermetic-corpus-earliest	hermetica	scripture-corpora	high	Hermeticism — Egyptian-Hellenistic religious philosophy
+02_documents/_phase-3-hellenistic-second-temple/phase-3-022-plato-timaeus-critias-atlantis.md	phase-3-022-plato-timaeus-critias-atlantis	greek-scripture	scripture-corpora	high	Academic / classical Platonism
+02_documents/_phase-3-hellenistic-second-temple/phase-3-023-yoga-sutras-of-patanjali.md	phase-3-023-yoga-sutras-of-patanjali	vedas	scripture-corpora	high	Sāṃkhya-Yoga
+02_documents/_phase-3-hellenistic-second-temple/phase-3-024-natyashastra.md	phase-3-024-natyashastra	vedas	scripture-corpora	high	Sanskrit aesthetic-dramatic śāstra
+02_documents/_phase-3-hellenistic-second-temple/phase-3-024-suetonius-twelve-caesars.md	phase-3-024-suetonius-twelve-caesars	roman-scripture	slug-override	high	
+02_documents/_phase-3-hellenistic-second-temple/phase-3-025-manetho-aegyptiaca.md	phase-3-025-manetho-aegyptiaca	egyptian-scripture	scripture-corpora	high	Greco-Egyptian priestly historiography
+02_documents/_phase-3-hellenistic-second-temple/phase-3-026-diodorus-bibliotheca-book-1.md	phase-3-026-diodorus-bibliotheca-book-1	egyptian-scripture	scripture-corpora	high	Greco-Egyptian ethnography (Augustan-era synthesis)
+02_documents/_phase-3-hellenistic-second-temple/phase-3-027-derveni-papyrus.md	phase-3-027-derveni-papyrus	mystery-cults-corpus	scripture-corpora	high	Orphic / pre-Socratic allegorical commentary
+02_documents/_phase-3-hellenistic-second-temple/phase-3-028-orphic-hymns.md	phase-3-028-orphic-hymns	mystery-cults-corpus	scripture-corpora	high	Orphic-Bacchic ritual hymnody
+02_documents/_phase-3-hellenistic-second-temple/phase-3-029-milindapanha.md	phase-3-029-milindapanha	tipitaka	scripture-corpora	high	Pre-sectarian core (Sarvāstivāda or related northern school) + Theravāda Pali extended recension
+02_documents/_phase-3-hellenistic-second-temple/phase-3-030-asokan-edicts.md	phase-3-030-asokan-edicts	tipitaka	scripture-corpora	high	Mauryan state-religion of dhamma
+02_documents/_phase-3-hellenistic-second-temple/phase-3-031-asthasahasrika-prajnaparamita.md	phase-3-031-asthasahasrika-prajnaparamita	tipitaka,madhyamaka-prajnaparamita-corpus	scripture-corpora	high	Prajñāpāramitā (foundational sūtra-cluster)
+02_documents/_phase-3-hellenistic-second-temple/phase-3-032-4-ezra-ethiopic-recension.md	phase-3-032-4-ezra-ethiopic-recension	hellenistic-jewish,tewahedo	inferred:Jewish apocalyptic	medium	Post-Temple-destruction Jewish apocalyptic
+02_documents/_phase-3-hellenistic-second-temple/phase-3-033-book-of-giants-qumran-manichaean.md	phase-3-033-book-of-giants-qumran-manichaean	mandaean-corpus	scripture-corpora	high	Aramaic Watchers / Nephilim-tradition expansion
+02_documents/_phase-3-hellenistic-second-temple/phase-3-034-huainanzi.md	phase-3-034-huainanzi	tao-corpus	scripture-corpora	high	Han Daoist synthesis
+02_documents/_phase-3-hellenistic-second-temple/phase-3-035-homeric-hymns.md	phase-3-035-homeric-hymns	greek-scripture	slug-override	high	[[tradition-greek-religion]]
+02_documents/_phase-3-hellenistic-second-temple/phase-3-036-charaka-samhita.md	phase-3-036-charaka-samhita	ayurveda-corpus	slug-override	high	Vedic/Hindu (Ayurveda)
+02_documents/_phase-3-hellenistic-second-temple/phase-3-037-shennong-bencao-jing.md	phase-3-037-shennong-bencao-jing	daoist-medical-corpus	slug-override	high	Chinese
+02_documents/_phase-3-hellenistic-second-temple/phase-3-095-mahabharata.md	phase-3-095-mahabharata	vaishnava-canon	scripture-corpora	high	
+02_documents/_phase-3-hellenistic-second-temple/phase-3-096-baruch.md	phase-3-096-baruch	bible,tewahedo	slug-override	high	
+02_documents/_phase-3-hellenistic-second-temple/phase-3-097-res-gestae-divi-augusti.md	phase-3-097-res-gestae-divi-augusti	roman-scripture	slug-override	high	Roman imperial
+02_documents/_phase-3-hellenistic-second-temple/plutarch-life-of-pericles.md	plutarch-life-of-pericles	greek-scripture,roman-scripture	slug-override	high	
+02_documents/_phase-4-late-antiquity/cassius-dio-roman-history-69.md	cassius-dio-roman-history-69	roman-scripture	slug-override	high	
+02_documents/_phase-4-late-antiquity/corpus-hermeticum.md	corpus-hermeticum	hermetica	scripture-corpora	high	
+02_documents/_phase-4-late-antiquity/gospel-of-judas-sethian.md	gospel-of-judas-sethian	nag-hammadi	scripture-corpora	high	
+02_documents/_phase-4-late-antiquity/phase-4-001-gospel-of-thomas.md	phase-4-001-gospel-of-thomas	nag-hammadi	scripture-corpora	high	Thomasine / proto-Gnostic sayings tradition
+02_documents/_phase-4-late-antiquity/phase-4-002-apocryphon-of-john.md	phase-4-002-apocryphon-of-john	nag-hammadi	scripture-corpora	high	Sethian Gnostic
+02_documents/_phase-4-late-antiquity/phase-4-003-gospel-of-truth.md	phase-4-003-gospel-of-truth	nag-hammadi	scripture-corpora	high	Valentinian
+02_documents/_phase-4-late-antiquity/phase-4-004-gospel-of-philip.md	phase-4-004-gospel-of-philip	nag-hammadi	scripture-corpora	high	Valentinian
+02_documents/_phase-4-late-antiquity/phase-4-005-gospel-of-mary.md	phase-4-005-gospel-of-mary	nag-hammadi	scripture-corpora	high	Gnostic-adjacent / proto-feminist Christian
+02_documents/_phase-4-late-antiquity/phase-4-006-hypostasis-of-the-archons.md	phase-4-006-hypostasis-of-the-archons	nag-hammadi	scripture-corpora	high	Sethian Gnostic
+02_documents/_phase-4-late-antiquity/phase-4-007-on-the-origin-of-the-world.md	phase-4-007-on-the-origin-of-the-world	nag-hammadi	scripture-corpora	high	Sethian Gnostic (syncretic — also draws Valentinian and Hermetic material)
+02_documents/_phase-4-late-antiquity/phase-4-008-trimorphic-protennoia.md	phase-4-008-trimorphic-protennoia	nag-hammadi	scripture-corpora	high	Sethian Gnostic (late, with Christianizing overlay)
+02_documents/_phase-4-late-antiquity/phase-4-009-pistis-sophia.md	phase-4-009-pistis-sophia	nag-hammadi	scripture-corpora	high	late Gnostic (post-Sethian/Valentinian synthesis)
+02_documents/_phase-4-late-antiquity/phase-4-010-sophia-of-jesus-christ.md	phase-4-010-sophia-of-jesus-christ	nag-hammadi	scripture-corpora	high	Sethian-Christian
+02_documents/_phase-4-late-antiquity/phase-4-011-corpus-hermeticum-i.md	phase-4-011-corpus-hermeticum-i	hermetica	scripture-corpora	high	Philosophical Hermetism
+02_documents/_phase-4-late-antiquity/phase-4-012-asclepius.md	phase-4-012-asclepius	hermetica	scripture-corpora	high	Philosophical Hermetism
+02_documents/_phase-4-late-antiquity/phase-4-013-discourse-on-the-eighth-and-ninth.md	phase-4-013-discourse-on-the-eighth-and-ninth	nag-hammadi,hermetica	scripture-corpora	high	Philosophical Hermetism — initiatory subset
+02_documents/_phase-4-late-antiquity/phase-4-014-cologne-mani-codex.md	phase-4-014-cologne-mani-codex	manichaean-corpus	scripture-corpora	high	Manichaean (early autobiographical)
+02_documents/_phase-4-late-antiquity/phase-4-015-kephalaia-of-the-teacher.md	phase-4-015-kephalaia-of-the-teacher	manichaean-corpus	scripture-corpora	high	Manichaean catechetical / systematic
+02_documents/_phase-4-late-antiquity/phase-4-016-shabuhragan.md	phase-4-016-shabuhragan	manichaean-corpus	scripture-corpora	high	Manichaean (Iranian / Pahlavi register)
+02_documents/_phase-4-late-antiquity/phase-4-017-ginza-rba.md	phase-4-017-ginza-rba	mandaean-corpus	scripture-corpora	high	Mandaean (the canonical great corpus)
+02_documents/_phase-4-late-antiquity/phase-4-018-mandaean-book-of-john.md	phase-4-018-mandaean-book-of-john	mandaean-corpus	scripture-corpora	high	Mandaean
+02_documents/_phase-4-late-antiquity/phase-4-019-plotinus-enneads.md	phase-4-019-plotinus-enneads	neoplatonist-corpus	scripture-corpora	high	Plotinian Neoplatonism
+02_documents/_phase-4-late-antiquity/phase-4-020-iamblichus-on-the-mysteries.md	phase-4-020-iamblichus-on-the-mysteries	neoplatonist-corpus	scripture-corpora	high	Theurgic Neoplatonism (Iamblichean)
+02_documents/_phase-4-late-antiquity/phase-4-021-proclus-elements-of-theology.md	phase-4-021-proclus-elements-of-theology	neoplatonist-corpus	scripture-corpora	high	Athenian Neoplatonism (Proclean)
+02_documents/_phase-4-late-antiquity/phase-4-022-chaldean-oracles.md	phase-4-022-chaldean-oracles	neoplatonist-corpus	scripture-corpora	high	Theurgic
+02_documents/_phase-4-late-antiquity/phase-4-023-irenaeus-against-heresies.md	phase-4-023-irenaeus-against-heresies	patristic-corpus	scripture-corpora	high	Patristic (heresiology)
+02_documents/_phase-4-late-antiquity/phase-4-024-tertullian-apology.md	phase-4-024-tertullian-apology	patristic-corpus	scripture-corpora	high	Patristic Latin (North African) — apologetics
+02_documents/_phase-4-late-antiquity/phase-4-024b-tertullian-against-valentinians.md	phase-4-024b-tertullian-against-valentinians	patristic-corpus	scripture-corpora	high	Patristic Latin (North African) — heresiology
+02_documents/_phase-4-late-antiquity/phase-4-025-clement-stromata.md	phase-4-025-clement-stromata	patristic-corpus	scripture-corpora	high	Patristic (Alexandrian school)
+02_documents/_phase-4-late-antiquity/phase-4-026-origen-on-first-principles.md	phase-4-026-origen-on-first-principles	patristic-corpus	scripture-corpora	high	Patristic (Alexandrian school)
+02_documents/_phase-4-late-antiquity/phase-4-027-eusebius-ecclesiastical-history.md	phase-4-027-eusebius-ecclesiastical-history	patristic-corpus	scripture-corpora	high	Patristic Greek historiography
+02_documents/_phase-4-late-antiquity/phase-4-028-augustine-confessions.md	phase-4-028-augustine-confessions	patristic-corpus	scripture-corpora	high	Patristic (Latin / Augustinian)
+02_documents/_phase-4-late-antiquity/phase-4-029-augustine-city-of-god.md	phase-4-029-augustine-city-of-god	patristic-corpus	scripture-corpora	high	Patristic (Augustinian)
+02_documents/_phase-4-late-antiquity/phase-4-030-pseudo-dionysius.md	phase-4-030-pseudo-dionysius	byzantine-orthodox	scripture-corpora	high	Christian Neoplatonism / mystical theology
+02_documents/_phase-4-late-antiquity/phase-4-031-mishnah.md	phase-4-031-mishnah	rabbinic-corpus	scripture-corpora	high	Tannaitic
+02_documents/_phase-4-late-antiquity/phase-4-032-jerusalem-talmud.md	phase-4-032-jerusalem-talmud	rabbinic-corpus	scripture-corpora	high	Palestinian Amoraic
+02_documents/_phase-4-late-antiquity/phase-4-033-babylonian-talmud.md	phase-4-033-babylonian-talmud	rabbinic-corpus	scripture-corpora	high	Babylonian Amoraic / Stammaitic
+02_documents/_phase-4-late-antiquity/phase-4-034-quran.md	phase-4-034-quran	quran,quran-manzil	scripture-corpora	high	Foundational Islamic scripture (revealed)
+02_documents/_phase-4-late-antiquity/phase-4-035-acts-of-paul-and-thecla.md	phase-4-035-acts-of-paul-and-thecla	christian-apocrypha	scripture-corpora	high	Apocryphal Acts genre; Pauline-pseudepigraphal
+02_documents/_phase-4-late-antiquity/phase-4-036-passio-perpetuae.md	phase-4-036-passio-perpetuae	christian-apocrypha	scripture-corpora	high	Latin/Greek martyrology
+02_documents/_phase-4-late-antiquity/phase-4-037-diatessaron.md	phase-4-037-diatessaron	bible,syriac-christianity	scripture-corpora	high	Gospel-harmony genre
+02_documents/_phase-4-late-antiquity/phase-4-038-hippolytus-refutation.md	phase-4-038-hippolytus-refutation	patristic-corpus	scripture-corpora	high	Heresiology
+02_documents/_phase-4-late-antiquity/phase-4-039-celsus-true-word.md	phase-4-039-celsus-true-word	greek-philosophical-scripture	slug-override	high	Hellenistic anti-Christian apologetic
+02_documents/_phase-4-late-antiquity/phase-4-040-pliny-trajan-correspondence.md	phase-4-040-pliny-trajan-correspondence	roman-scripture	slug-override	high	administrative-imperial correspondence
+02_documents/_phase-4-late-antiquity/phase-4-041-athanasius-life-of-antony.md	phase-4-041-athanasius-life-of-antony	patristic-corpus	scripture-corpora	high	Egyptian monastic hagiography
+02_documents/_phase-4-late-antiquity/phase-4-042-athanasius-on-the-incarnation.md	phase-4-042-athanasius-on-the-incarnation	patristic-corpus	scripture-corpora	high	Nicene Christology
+02_documents/_phase-4-late-antiquity/phase-4-043-apophthegmata-patrum.md	phase-4-043-apophthegmata-patrum	patristic-corpus	scripture-corpora	high	Desert monasticism
+02_documents/_phase-4-late-antiquity/phase-4-044-basil-on-the-holy-spirit.md	phase-4-044-basil-on-the-holy-spirit	patristic-corpus	scripture-corpora	high	Nicene Trinitarian theology
+02_documents/_phase-4-late-antiquity/phase-4-045-gregory-of-nyssa-life-of-moses.md	phase-4-045-gregory-of-nyssa-life-of-moses	patristic-corpus	scripture-corpora	high	Christian Platonist mysticism / allegorical exegesis
+02_documents/_phase-4-late-antiquity/phase-4-046-john-of-damascus-exposition-orthodox-faith.md	phase-4-046-john-of-damascus-exposition-orthodox-faith	byzantine-orthodox	scripture-corpora	high	Byzantine systematic theology
+02_documents/_phase-4-late-antiquity/phase-4-047-cassian-conferences.md	phase-4-047-cassian-conferences	patristic-corpus	scripture-corpora	high	Western monastic literature
+02_documents/_phase-4-late-antiquity/phase-4-048-benedict-rule.md	phase-4-048-benedict-rule	latin-catholic-medieval	scripture-corpora	high	Western Benedictine monasticism
+02_documents/_phase-4-late-antiquity/phase-4-049-boethius-consolation-of-philosophy.md	phase-4-049-boethius-consolation-of-philosophy	latin-catholic-medieval	scripture-corpora	high	Christian Platonism (in Roman-philosophical register)
+02_documents/_phase-4-late-antiquity/phase-4-050-leo-tome-to-flavian.md	phase-4-050-leo-tome-to-flavian	patristic-corpus	scripture-corpora	high	Roman papal Christology
+02_documents/_phase-4-late-antiquity/phase-4-050-vishnu-sahasranama.md	phase-4-050-vishnu-sahasranama	vaishnava-canon	scripture-corpora	high	Mahābhārata epic-Vaishnava theological corpus
+02_documents/_phase-4-late-antiquity/phase-4-051-gregory-pastoral-rule.md	phase-4-051-gregory-pastoral-rule	latin-catholic-medieval	scripture-corpora	high	Early medieval Latin episcopal theology
+02_documents/_phase-4-late-antiquity/phase-4-052-gregory-dialogues.md	phase-4-052-gregory-dialogues	latin-catholic-medieval	scripture-corpora	high	Early medieval Latin hagiography
+02_documents/_phase-4-late-antiquity/phase-4-053-isidore-etymologiae.md	phase-4-053-isidore-etymologiae	latin-catholic-medieval	scripture-corpora	high	Latin Christian encyclopedism
+02_documents/_phase-4-late-antiquity/phase-4-054-bede-ecclesiastical-history.md	phase-4-054-bede-ecclesiastical-history	latin-catholic-medieval	scripture-corpora	high	Early medieval Latin historiography
+02_documents/_phase-4-late-antiquity/phase-4-055-ephrem-hymns-on-paradise.md	phase-4-055-ephrem-hymns-on-paradise	syriac-christianity	scripture-corpora	high	Syriac patristic poetry / Nisibene-Edessene
+02_documents/_phase-4-late-antiquity/phase-4-056-zostrianos.md	phase-4-056-zostrianos	nag-hammadi	scripture-corpora	high	Sethian Platonizing Gnostic apocalypse
+02_documents/_phase-4-late-antiquity/phase-4-057-allogenes.md	phase-4-057-allogenes	nag-hammadi	scripture-corpora	high	Sethian Platonizing Gnostic apocalypse
+02_documents/_phase-4-late-antiquity/phase-4-058-thunder-perfect-mind.md	phase-4-058-thunder-perfect-mind	nag-hammadi	scripture-corpora	high	Paradoxical self-revelation discourse
+02_documents/_phase-4-late-antiquity/phase-4-059-tripartite-tractate.md	phase-4-059-tripartite-tractate	nag-hammadi	scripture-corpora	high	Valentinian theological treatise (Eastern / *via media* school)
+02_documents/_phase-4-late-antiquity/phase-4-060-letter-to-flora.md	phase-4-060-letter-to-flora	christian-apocrypha	scripture-corpora	high	Valentinian theological correspondence (Italian school)
+02_documents/_phase-4-late-antiquity/phase-4-061-didache.md	phase-4-061-didache	apostolic-fathers	scripture-corpora	high	Syrian / Antiochene Jewish-Christian church order
+02_documents/_phase-4-late-antiquity/phase-4-062-1-clement.md	phase-4-062-1-clement	apostolic-fathers	scripture-corpora	high	Roman Christianity
+02_documents/_phase-4-late-antiquity/phase-4-063-ignatius-letters.md	phase-4-063-ignatius-letters	apostolic-fathers	scripture-corpora	high	Antiochene Christianity
+02_documents/_phase-4-late-antiquity/phase-4-064-epistle-of-barnabas.md	phase-4-064-epistle-of-barnabas	apostolic-fathers	scripture-corpora	high	Alexandrian Christianity (allegorical-supersessionist)
+02_documents/_phase-4-late-antiquity/phase-4-065-shepherd-of-hermas.md	phase-4-065-shepherd-of-hermas	apostolic-fathers	scripture-corpora	high	Roman Christianity (charismatic-apocalyptic strand)
+02_documents/_phase-4-late-antiquity/phase-4-066-polycarp-philippians.md	phase-4-066-polycarp-philippians	apostolic-fathers	scripture-corpora	high	Asian Christianity (Smyrnaean)
+02_documents/_phase-4-late-antiquity/phase-4-067-martyrdom-of-polycarp.md	phase-4-067-martyrdom-of-polycarp	apostolic-fathers	scripture-corpora	high	Asian Christianity (Smyrnaean martyrology)
+02_documents/_phase-4-late-antiquity/phase-4-068-2-clement.md	phase-4-068-2-clement	apostolic-fathers	scripture-corpora	high	Christian homiletic
+02_documents/_phase-4-late-antiquity/phase-4-069-josephus-jewish-war.md	phase-4-069-josephus-jewish-war	greek-philosophical-scripture,hellenistic-jewish	inferred:Hellenistic-Jewish + Josephus	medium	Greco-Roman historiography by a Jewish participant
+02_documents/_phase-4-late-antiquity/phase-4-070-josephus-antiquities-of-the-jews.md	phase-4-070-josephus-antiquities-of-the-jews	mesopotamian-canonical,greek-philosophical-scripture,hellenistic-jewish	inferred:Mesopotamian + Hellenistic-Jewish	medium	Greco-Roman antiquarian historiography of a non-Greek nation
+02_documents/_phase-4-late-antiquity/phase-4-071-josephus-against-apion.md	phase-4-071-josephus-against-apion	egyptian-scripture,greek-philosophical-scripture,hellenistic-jewish	inferred:Egyptian + Hellenistic-Jewish + Josephus	medium	Hellenistic-Jewish apologetic
+02_documents/_phase-4-late-antiquity/phase-4-072-plutarch-de-iside-et-osiride.md	phase-4-072-plutarch-de-iside-et-osiride	egyptian-scripture	scripture-corpora	high	Greco-Egyptian syncretism (Hellenistic-Roman reading of Egyptian religion)
+02_documents/_phase-4-late-antiquity/phase-4-073-tabula-smaragdina.md	phase-4-073-tabula-smaragdina	hermetica	scripture-corpora	high	alchemical / Hermetic-philosophical
+02_documents/_phase-4-late-antiquity/phase-4-074-zosimos-of-panopolis-corpus.md	phase-4-074-zosimos-of-panopolis-corpus	hermetica	scripture-corpora	high	spiritual-visionary alchemy
+02_documents/_phase-4-late-antiquity/phase-4-075-corpus-hermeticum-xiii-rebirth.md	phase-4-075-corpus-hermeticum-xiii-rebirth	hermetica	scripture-corpora	high	Philosophical Hermetism — initiatory subset
+02_documents/_phase-4-late-antiquity/phase-4-075-mulamadhyamakakarika.md	phase-4-075-mulamadhyamakakarika	tipitaka,madhyamaka-prajnaparamita-corpus	scripture-corpora	high	Madhyamaka (the Middle Way school)
+02_documents/_phase-4-late-antiquity/phase-4-076-stobaean-hermetica-kore-kosmou.md	phase-4-076-stobaean-hermetica-kore-kosmou	hermetica	scripture-corpora	high	Philosophical Hermetism — Egyptian-revelatory cosmogony
+02_documents/_phase-4-late-antiquity/phase-4-076-visuddhimagga.md	phase-4-076-visuddhimagga	tipitaka	scripture-corpora	high	Mahāvihāra orthodoxy of Anurādhapura, Sri Lanka
+02_documents/_phase-4-late-antiquity/phase-4-077-abhidharmakosa.md	phase-4-077-abhidharmakosa	tipitaka,yogacara-corpus	scripture-corpora	high	Sarvāstivāda + Sautrāntika Abhidharma synthesis (with Yogācāra-leaning critique)
+02_documents/_phase-4-late-antiquity/phase-4-077-definitions-hermes-asclepius-armenian.md	phase-4-077-definitions-hermes-asclepius-armenian	hermetica	scripture-corpora	high	Philosophical Hermetism — gnomic / catechetical
+02_documents/_phase-4-late-antiquity/phase-4-078-prayer-of-thanksgiving-nhc-vi-7.md	phase-4-078-prayer-of-thanksgiving-nhc-vi-7	nag-hammadi,hermetica	scripture-corpora	high	Philosophical Hermetism — liturgical / devotional
+02_documents/_phase-4-late-antiquity/phase-4-079-coptic-asclepius-nhc-vi-8.md	phase-4-079-coptic-asclepius-nhc-vi-8	nag-hammadi,hermetica	scripture-corpora	high	Philosophical Hermetism — apocalyptic / lament-for-Egypt
+02_documents/_phase-4-late-antiquity/phase-4-080-garima-gospels.md	phase-4-080-garima-gospels	bible,ethiopic-tewahedo-canon	scripture-corpora	high	early Aksumite Ethiopian-Miaphysite illuminated-gospel codices
+02_documents/_phase-4-late-antiquity/phase-4-081-mashafa-henok-geez-1-enoch.md	phase-4-081-mashafa-henok-geez-1-enoch	bible,ethiopic-tewahedo-canon	scripture-corpora	high	Ge'ez biblical Old Testament — uniquely-Ethiopian canonical scripture
+02_documents/_phase-4-late-antiquity/phase-4-082-ethiopic-biblical-canon.md	phase-4-082-ethiopic-biblical-canon	bible,ethiopic-tewahedo-canon	scripture-corpora	high	Ge'ez biblical corpus
+02_documents/_phase-4-late-antiquity/phase-4-083-mashafa-kidan-testament-of-our-lord.md	phase-4-083-mashafa-kidan-testament-of-our-lord	ethiopic-tewahedo-canon	scripture-corpora	high	early-Christian apocalyptic-liturgical pseudepigraphon — Ethiopic-preserved
+02_documents/_phase-4-late-antiquity/phase-4-084-ethiopian-sinodos.md	phase-4-084-ethiopian-sinodos	ethiopic-tewahedo-canon	scripture-corpora	high	Ethiopian apostolic-pseudonymous church-order corpus
+02_documents/_phase-4-late-antiquity/phase-4-085-ovid-metamorphoses-book-1.md	phase-4-085-ovid-metamorphoses-book-1	roman-scripture	inferred:Latin/Roman	medium	Latin epic / mythological compendium
+02_documents/_phase-4-late-antiquity/phase-4-086-arda-viraf-namag.md	phase-4-086-arda-viraf-namag	avesta	scripture-corpora	high	Zoroastrian
+02_documents/_phase-4-late-antiquity/phase-4-095-new-testament-canon.md	phase-4-095-new-testament-canon	bible,patristic-corpus	inferred:Patristic	medium	Early Church canon formation
+02_documents/_phase-4-late-antiquity/phase-4-096-cantong-qi.md	phase-4-096-cantong-qi	tao-corpus	scripture-corpora	high	Daoist alchemy (waidan / outer alchemy; foundational neidan / inner alchemy text)
+02_documents/_phase-4-late-antiquity/phase-4-097-baopuzi-ge-hong.md	phase-4-097-baopuzi-ge-hong	tao-corpus	scripture-corpora	high	Religious Daoism — early Daoist alchemy (waidan) and self-cultivation
+02_documents/_phase-4-late-antiquity/phase-4-098-liezi.md	phase-4-098-liezi	tao-corpus	scripture-corpora	high	Classical Daoism (later synthesis)
+02_documents/_phase-4-late-antiquity/phase-4-099-shangqing-corpus.md	phase-4-099-shangqing-corpus	tao-corpus	scripture-corpora	high	Religious Daoism — Shangqing school
+02_documents/_phase-4-late-antiquity/phase-4-100-celestial-hierarchy.md	phase-4-celestial-hierarchy	greek-philosophical-scripture,neoplatonic,patristic-corpus,christian-mystical	inferred:Neoplatonic + Pseudo-Dionysian	medium	Pseudo-Dionysian mystical theology
+02_documents/_phase-4-late-antiquity/phase-4-101-lotus-sutra.md	phase-4-101-lotus-sutra	tipitaka	scripture-corpora	high	Lotus / Tiantai / Nichiren textual family
+02_documents/_phase-4-late-antiquity/phase-4-102-avatamsaka-sutra.md	phase-4-102-avatamsaka-sutra	tipitaka	scripture-corpora	high	Huayan / Kegon textual family
+02_documents/_phase-4-late-antiquity/phase-4-103-lankavatara-sutra.md	phase-4-103-lankavatara-sutra	tipitaka,yogacara-corpus	scripture-corpora	high	Yogācāra and Tathāgatagarbha textual family; foundational for Chan/Zen lineage
+02_documents/_phase-4-late-antiquity/phase-4-104-sukhavativyuha-larger.md	phase-4-104-sukhavativyuha-larger	tipitaka,pure-land-buddhist-corpus	scripture-corpora	high	Pure Land textual family (the 'Three Pure Land Sutras')
+02_documents/_phase-4-late-antiquity/phase-4-105-apuleius-metamorphoses-book-11.md	phase-4-105-apuleius-metamorphoses-book-11	mystery-cults-corpus	scripture-corpora	high	Latin novel + Isis-mystery
+02_documents/_phase-4-late-antiquity/phase-4-106-greek-magical-papyri.md	phase-4-106-greek-magical-papyri	mystery-cults-corpus	scripture-corpora	high	syncretic (Egyptian + Greek + Jewish + Gnostic + early Christian)
+02_documents/_phase-4-late-antiquity/phase-4-107-bundahishn.md	phase-4-107-bundahishn	avesta	scripture-corpora	high	Mazdean cosmogony / Pahlavi theological literature
+02_documents/_phase-4-late-antiquity/phase-4-108-peshitta.md	phase-4-108-peshitta	bible,syriac-christianity	scripture-corpora	high	[[tradition-syriac-orthodox]]
+02_documents/_phase-4-late-antiquity/phase-4-109-vishnu-purana.md	phase-4-109-vishnu-purana	vaishnava-canon	scripture-corpora	high	[[tradition-bhakti-vaishnavism]]
+02_documents/_phase-4-late-antiquity/procopius-de-aedificiis.md	procopius-de-aedificiis	byzantine-corpus	slug-override	high	
+02_documents/_phase-5-medieval/ajanta-inscriptions.md	ajanta-inscriptions	buddhist-pilgrimage-chronicles	slug-override	high	
+02_documents/_phase-5-medieval/avatamsaka-sutra.md	avatamsaka-sutra	chinese-mahayana-chan-huayan-tiantai	scripture-corpora	high	
+02_documents/_phase-5-medieval/bagan-stone-inscriptions.md	bagan-stone-inscriptions	buddhist-pilgrimage-chronicles	slug-override	high	
+02_documents/_phase-5-medieval/bhagavata-purana.md	bhagavata-purana	vaishnava-canon	scripture-corpora	high	
+02_documents/_phase-5-medieval/cobo-historia-del-nuevo-mundo.md	cobo-historia-del-nuevo-mundo	andean-chronicles-corpus	slug-override	high	
+02_documents/_phase-5-medieval/codex-mendoza.md	codex-mendoza	aztec-corpus	slug-override	high	
+02_documents/_phase-5-medieval/codex-sinaiticus.md	codex-sinaiticus	bible	scripture-corpora	high	
+02_documents/_phase-5-medieval/codex-syriacus-sinaiticus.md	codex-syriacus-sinaiticus	syriac-christian-corpus	slug-override	high	
+02_documents/_phase-5-medieval/codex-vaticanus.md	codex-vaticanus	bible	scripture-corpora	high	
+02_documents/_phase-5-medieval/da-ming-huidian.md	da-ming-huidian	confucian-classics	slug-override	high	
+02_documents/_phase-5-medieval/da-qing-huidian.md	da-qing-huidian	confucian-classics	slug-override	high	
+02_documents/_phase-5-medieval/diamond-sutra-868.md	diamond-sutra-868	madhyamaka-prajnaparamita-corpus,chinese-mahayana-chan-huayan-tiantai	scripture-corpora	high	
+02_documents/_phase-5-medieval/dunhuang-manuscripts.md	dunhuang-manuscripts	buddhist-pilgrimage-chronicles	slug-override	high	
+02_documents/_phase-5-medieval/duran-historia-de-las-indias-de-nueva-espana.md	duran-historia-de-las-indias-de-nueva-espana	aztec-corpus	slug-override	high	
+02_documents/_phase-5-medieval/ellora-inscriptions.md	ellora-inscriptions	buddhist-pilgrimage-chronicles	slug-override	high	
+02_documents/_phase-5-medieval/engishiki.md	engishiki	shinto-engishiki	scripture-corpora	high	
+02_documents/_phase-5-medieval/florentine-codex.md	florentine-codex	aztec-corpus	slug-override	high	
+02_documents/_phase-5-medieval/gadla-lalibela.md	gadla-lalibela	tewahedo	slug-override	high	
+02_documents/_phase-5-medieval/garcilaso-de-la-vega-comentarios-reales-de-los-incas.md	garcilaso-de-la-vega-comentarios-reales-de-los-incas	andean-chronicles-corpus	slug-override	high	
+02_documents/_phase-5-medieval/great-tang-records-on-the-western-regions.md	great-tang-records-on-the-western-regions	buddhist-pilgrimage-chronicles	slug-override	high	
+02_documents/_phase-5-medieval/gukjo-orye-ui.md	gukjo-orye-ui	korean-ritual-corpus	slug-override	high	
+02_documents/_phase-5-medieval/heike-monogatari.md	heike-monogatari	japanese-historical-corpus	slug-override	high	
+02_documents/_phase-5-medieval/izumo-no-kuni-fudoki.md	izumo-no-kuni-fudoki	kojiki-nihongi	slug-override	high	
+02_documents/_phase-5-medieval/jataka-tales.md	jataka-tales	theravada-jataka-corpus	scripture-corpora	high	
+02_documents/_phase-5-medieval/karangtengah-inscription-824.md	karangtengah-inscription-824	buddhist-pilgrimage-chronicles	slug-override	high	
+02_documents/_phase-5-medieval/kojiki.md	kojiki	kojiki-nihongi	scripture-corpora	high	
+02_documents/_phase-5-medieval/landa-relacion-de-las-cosas-de-yucatan.md	landa-relacion-de-las-cosas-de-yucatan	maya-corpus	slug-override	high	
+02_documents/_phase-5-medieval/liber-pontificalis.md	liber-pontificalis	patristic-corpus	slug-override	high	
+02_documents/_phase-5-medieval/lintel-3-temple-i.md	lintel-3-temple-i	maya-corpus	slug-override	high	
+02_documents/_phase-5-medieval/longmen-inscriptions.md	longmen-inscriptions	buddhist-pilgrimage-chronicles	slug-override	high	
+02_documents/_phase-5-medieval/lotus-sutra.md	lotus-sutra	chinese-mahayana-chan-huayan-tiantai	scripture-corpora	high	
+02_documents/_phase-5-medieval/madala-panji.md	madala-panji	jagannath-corpus	slug-override	high	
+02_documents/_phase-5-medieval/magna-carta.md	magna-carta	medieval-legal-corpus	slug-override	high	
+02_documents/_phase-5-medieval/mahabharata.md	mahabharata	vaishnava-canon	scripture-corpora	high	
+02_documents/_phase-5-medieval/mahavamsa.md	mahavamsa	tipitaka,buddhist-pilgrimage-chronicles	slug-override	high	
+02_documents/_phase-5-medieval/nihon-shoki.md	nihon-shoki	kojiki-nihongi	scripture-corpora	high	
+02_documents/_phase-5-medieval/palenque-tablet-of-the-cross.md	palenque-tablet-of-the-cross	maya-corpus	slug-override	high	
+02_documents/_phase-5-medieval/palenque-tablet-of-the-foliated-cross.md	palenque-tablet-of-the-foliated-cross	maya-corpus	slug-override	high	
+02_documents/_phase-5-medieval/palenque-tablet-of-the-sun.md	palenque-tablet-of-the-sun	maya-corpus	slug-override	high	
+02_documents/_phase-5-medieval/phase-5-001-devi-mahatmya.md	phase-5-001-devi-mahatmya	vedas,shakta-canon	scripture-corpora	high	Shakta — emergent Goddess theology
+02_documents/_phase-5-medieval/phase-5-002-heart-sutra.md	phase-5-002-heart-sutra	tipitaka,madhyamaka-prajnaparamita-corpus	scripture-corpora	high	Prajñāpāramitā
+02_documents/_phase-5-medieval/phase-5-002b-diamond-sutra.md	phase-5-002b-diamond-sutra	tipitaka,madhyamaka-prajnaparamita-corpus,chinese-mahayana-chan-huayan-tiantai	scripture-corpora	high	Prajñāpāramitā
+02_documents/_phase-5-medieval/phase-5-003-maximus-confessor-ambigua.md	phase-5-003-maximus-confessor-ambigua	byzantine-orthodox,hesychast-philokalia-corpus	scripture-corpora	high	Chalcedonian Christian Neoplatonism
+02_documents/_phase-5-medieval/phase-5-004-platform-sutra-huineng.md	phase-5-004-platform-sutra-huineng	tipitaka,chinese-mahayana-chan-huayan-tiantai	scripture-corpora	high	Southern School Chan
+02_documents/_phase-5-medieval/phase-5-005-shankara-brahma-sutra-bhasya.md	phase-5-005-shankara-brahma-sutra-bhasya	advaita-vedanta-corpus	scripture-corpora	high	Advaita (non-dualism)
+02_documents/_phase-5-medieval/phase-5-006-vijnana-bhairava-tantra.md	phase-5-006-vijnana-bhairava-tantra	vedas,shaiva-tantric-canon	scripture-corpora	high	Kaula / non-dualist Tantra
+02_documents/_phase-5-medieval/phase-5-007-sahih-al-bukhari.md	phase-5-007-sahih-al-bukhari	hadith-corpus	scripture-corpora	high	Hadith canon (Kutub al-Sittah)
+02_documents/_phase-5-medieval/phase-5-008-eriugena-periphyseon.md	phase-5-008-eriugena-periphyseon	greek-philosophical-scripture,neoplatonic,patristic-corpus,christian-mystical	inferred:Neoplatonic + Eriugena	medium	Carolingian / Christian Platonist
+02_documents/_phase-5-medieval/phase-5-009-tabari-tafsir.md	phase-5-009-tabari-tafsir	tafsir-corpus	scripture-corpora	high	Tafsīr — Qur'anic exegesis
+02_documents/_phase-5-medieval/phase-5-010-saadia-emunot-ve-deot.md	phase-5-010-saadia-emunot-ve-deot	greek-philosophical-scripture,hellenistic-jewish,jewish-medieval-thought	inferred:Hellenistic-Jewish + Saadia	medium	Geonic / Kalām-influenced rationalist Judaism
+02_documents/_phase-5-medieval/phase-5-011-rasail-ikhwan-al-safa.md	phase-5-011-rasail-ikhwan-al-safa	ismaili-corpus	scripture-corpora	high	Esoteric encyclopedist tradition
+02_documents/_phase-5-medieval/phase-5-012-sefer-yetzirah.md	phase-5-012-sefer-yetzirah	kabbalistic-corpus	scripture-corpora	high	Early Jewish cosmological mysticism
+02_documents/_phase-5-medieval/phase-5-013-hekhalot-literature.md	phase-5-013-hekhalot-literature	rabbinic-corpus	scripture-corpora	high	Merkavah / Hekhalot mysticism
+02_documents/_phase-5-medieval/phase-5-014-abhinavagupta-tantraloka.md	phase-5-014-abhinavagupta-tantraloka	vedas,shaiva-tantric-canon	scripture-corpora	high	Non-dualist Tantric Shaivism — Kaula synthesis
+02_documents/_phase-5-medieval/phase-5-015-al-ghazali-ihya.md	phase-5-015-al-ghazali-ihya	islamic-theological	scripture-corpora	high	Shāfiʿī jurisprudence + Ash'arite theology + Sufi spirituality
+02_documents/_phase-5-medieval/phase-5-016-ramanuja-sribhasya.md	phase-5-016-ramanuja-sribhasya	vedas,vaishnava-canon	scripture-corpora	high	Qualified non-dualism — theistic Vedanta
+02_documents/_phase-5-medieval/phase-5-017-peter-lombard-sentences.md	phase-5-017-peter-lombard-sentences	scholastic-corpus	slug-override	high	Early Scholasticism (proto-scholastic synthesis)
+02_documents/_phase-5-medieval/phase-5-018-suhrawardi-hikmat-al-ishraq.md	phase-5-018-suhrawardi-hikmat-al-ishraq	ishraqi-corpus	scripture-corpora	high	Persianate philosophical mysticism — Suhrawardian Ishrāq
+02_documents/_phase-5-medieval/phase-5-019-maimonides-guide-for-the-perplexed.md	phase-5-019-maimonides-guide-for-the-perplexed	greek-philosophical-scripture,hellenistic-jewish,jewish-medieval-thought	inferred:Hellenistic-Jewish + Maimonides	medium	Jewish Aristotelianism
+02_documents/_phase-5-medieval/phase-5-020-interrogatio-iohannis.md	phase-5-020-interrogatio-iohannis	cathar-bogomil	scripture-corpora	high	Bogomil-Cathar shared scripture
+02_documents/_phase-5-medieval/phase-5-021-cusa-de-docta-ignorantia.md	phase-5-021-cusa-de-docta-ignorantia	christian-mystical,renaissance-esotericism	slug-override	high	
+02_documents/_phase-5-medieval/phase-5-021-ibn-arabi-fusus-al-hikam.md	phase-5-021-ibn-arabi-fusus-al-hikam	islamic-theological	scripture-corpora	high	Wahdat al-Wujud / Akbarī Sufi metaphysics
+02_documents/_phase-5-medieval/phase-5-022-madhva-brahma-sutra-bhasya.md	phase-5-022-madhva-brahma-sutra-bhasya	vaishnava-canon	scripture-corpora	high	Strict theistic dualism — Madhva Vaiṣṇavism
+02_documents/_phase-5-medieval/phase-5-023-liber-de-duobus-principiis.md	phase-5-023-liber-de-duobus-principiis	cathar-bogomil	scripture-corpora	high	Albanense / absolute-dualist Cathar theology
+02_documents/_phase-5-medieval/phase-5-024-aquinas-summa-theologiae.md	phase-5-024-aquinas-summa-theologiae	latin-catholic-medieval	scripture-corpora	high	Dominican Thomism — Aristotelian Christian theology
+02_documents/_phase-5-medieval/phase-5-025-rumi-masnavi.md	phase-5-025-rumi-masnavi	sufi-persian	scripture-corpora	high	Persian Sufi poetry — didactic mystical epic
+02_documents/_phase-5-medieval/phase-5-026-sefer-ha-bahir.md	phase-5-026-sefer-ha-bahir	kabbalistic-corpus	scripture-corpora	high	Provençal proto-Kabbalah
+02_documents/_phase-5-medieval/phase-5-027-sefer-ha-zohar.md	phase-5-027-sefer-ha-zohar	kabbalistic-corpus	scripture-corpora	high	Castilian Kabbalah
+02_documents/_phase-5-medieval/phase-5-028-meister-eckhart-sermons.md	phase-5-028-meister-eckhart-sermons	latin-catholic-medieval	scripture-corpora	high	Dominican Neoplatonic Christian mysticism
+02_documents/_phase-5-medieval/phase-5-029-bardo-thodol.md	phase-5-029-bardo-thodol	tipitaka,tibetan-vajrayana-corpus	scripture-corpora	high	Terma (revealed treasure) — Padmasambhava-attributed cycle
+02_documents/_phase-5-medieval/phase-5-029-dogen-shobogenzo.md	phase-5-029-dogen-shobogenzo	zen-japanese-canon	scripture-corpora	high	
+02_documents/_phase-5-medieval/phase-5-030-palamas-triads.md	phase-5-030-palamas-triads	byzantine-orthodox,hesychast-philokalia-corpus	scripture-corpora	high	Hesychast / Palamite theology
+02_documents/_phase-5-medieval/phase-5-031-cloud-of-unknowing.md	phase-5-031-cloud-of-unknowing	byzantine-orthodox	scripture-corpora	high	Apophatic Christian mysticism (Dionysian English-vernacular)
+02_documents/_phase-5-medieval/phase-5-032-yogavasishtha.md	phase-5-032-yogavasishtha	vedas,advaita-vedanta-corpus	scripture-corpora	high	Kashmir Advaita narrative tradition; non-sectarian late-Sanskrit Vedanta
+02_documents/_phase-5-medieval/phase-5-033-shiva-sutras.md	phase-5-033-shiva-sutras	vedas,shaiva-tantric-canon	scripture-corpora	high	Non-dualist Tantric Shaivism — Pratyabhijñā / Trika root text
+02_documents/_phase-5-medieval/phase-5-034-vivekachudamani.md	phase-5-034-vivekachudamani	vedas,advaita-vedanta-corpus	scripture-corpora	high	Classical Advaita pedagogical-introductory genre
+02_documents/_phase-5-medieval/phase-5-035-hatha-yoga-pradipika.md	phase-5-035-hatha-yoga-pradipika	vedas,shaiva-tantric-canon	scripture-corpora	high	Medieval Hatha Yoga textual canon
+02_documents/_phase-5-medieval/phase-5-035-physiologus.md	phase-5-035-physiologus	patristic-corpus,christian-bestiary	slug-override	high	
+02_documents/_phase-5-medieval/phase-5-036-mashafa-mistir-giyorgis.md	phase-5-036-mashafa-mistir-giyorgis	ethiopic-tewahedo-canon	scripture-corpora	high	medieval Ethiopian systematic theology / anti-heretical polemic
+02_documents/_phase-5-medieval/phase-5-036-rule-of-templars-latin.md	phase-5-036-rule-of-templars-latin	templar-corpus	slug-override	high	[[tradition-knights-templar|Knights Templar]]
+02_documents/_phase-5-medieval/phase-5-037-bernard-de-laude-novae-militiae.md	phase-5-037-bernard-de-laude-novae-militiae	templar-corpus	slug-override	high	[[tradition-knights-templar|Knights Templar]] apologetic
+02_documents/_phase-5-medieval/phase-5-037-fetha-nagast.md	phase-5-037-fetha-nagast	ethiopic-tewahedo-canon	scripture-corpora	high	Ethiopian Christian-canonical legal code
+02_documents/_phase-5-medieval/phase-5-038-chinon-parchment-1308.md	phase-5-038-chinon-parchment-1308	templar-corpus	slug-override	high	papal-juridical / [[tradition-knights-templar]] trial
+02_documents/_phase-5-medieval/phase-5-038-mashafa-berhan.md	phase-5-038-mashafa-berhan	ethiopic-tewahedo-canon	scripture-corpora	high	imperial-systematic-theological-pastoral treatise
+02_documents/_phase-5-medieval/phase-5-039-jabir-corpus-arabic-alchemy.md	phase-5-039-jabir-corpus-arabic-alchemy	ismaili-corpus	scripture-corpora	high	Ismaili-adjacent natural philosophy
+02_documents/_phase-5-medieval/phase-5-039-sinkessar-synaxarium.md	phase-5-039-sinkessar-synaxarium	ethiopic-tewahedo-canon	scripture-corpora	high	Ethiopian hagiographic-liturgical calendar
+02_documents/_phase-5-medieval/phase-5-040-meqabyan-ethiopian-maccabees.md	phase-5-040-meqabyan-ethiopian-maccabees	ethiopic-tewahedo-canon	scripture-corpora	high	uniquely-Ethiopian-canonical Old Testament narrative
+02_documents/_phase-5-medieval/phase-5-040-mirror-of-simple-souls.md	phase-5-040-mirror-of-simple-souls	christian-mystical	inferred:Free-Spirit mystics	medium	apophatic-mystical / Free-Spirit-adjacent
+02_documents/_phase-5-medieval/phase-5-041-revelations-of-divine-love.md	phase-5-041-revelations-of-divine-love	latin-catholic-medieval	scripture-corpora	high	anchoritic / visionary-theological
+02_documents/_phase-5-medieval/phase-5-042-sahih-muslim.md	phase-5-042-sahih-muslim	hadith-corpus	scripture-corpora	high	Sunnī ṣaḥīḥ-hadith collection (one of the *Kutub al-Sitta* 'Six Books')
+02_documents/_phase-5-medieval/phase-5-043-ibn-ishaq-sirat-rasul-allah.md	phase-5-043-ibn-ishaq-sirat-rasul-allah	islamic-theological	scripture-corpora	high	Foundational Islamic biography (sīra-genre)
+02_documents/_phase-5-medieval/phase-5-044-ibn-sina-kitab-al-shifa.md	phase-5-044-ibn-sina-kitab-al-shifa	islamic-theological	scripture-corpora	high	Avicennian falsafa
+02_documents/_phase-5-medieval/phase-5-045-al-ghazali-tahafut-al-falasifa.md	phase-5-045-al-ghazali-tahafut-al-falasifa	islamic-theological	scripture-corpora	high	Ashʿarī anti-falsafa polemic
+02_documents/_phase-5-medieval/phase-5-046-ibn-rushd-tahafut-al-tahafut.md	phase-5-046-ibn-rushd-tahafut-al-tahafut	islamic-theological	scripture-corpora	high	Andalusi peripatetic / Averroist
+02_documents/_phase-5-medieval/phase-5-047-ibn-tufayl-hayy-ibn-yaqdhan.md	phase-5-047-ibn-tufayl-hayy-ibn-yaqdhan	arabic-neoplatonism	scripture-corpora	high	Andalusi peripatetic philosophical novel
+02_documents/_phase-5-medieval/phase-5-048-theology-of-aristotle-arabic.md	phase-5-048-theology-of-aristotle-arabic	arabic-neoplatonism	scripture-corpora	high	Arabic Neoplatonism
+02_documents/_phase-5-medieval/phase-5-049-bodhicaryavatara.md	phase-5-049-bodhicaryavatara	tipitaka	scripture-corpora	high	Madhyamaka-Prāsaṅgika (Nālandā school)
+02_documents/_phase-5-medieval/phase-5-049-yosippon-ethiopian-recension.md	phase-5-049-yosippon-ethiopian-recension	tewahedo	inferred:Yosippon	medium	Medieval Hebrew chronicle of Second-Temple-period history → Ethiopian-canonical historical scripture
+02_documents/_phase-5-medieval/phase-5-050-bhagavata-purana.md	phase-5-050-bhagavata-purana	vedas,vaishnava-canon	scripture-corpora	high	Krishna-devotional Vaishnavism (Gauḍīya, Puṣṭimārga, Nimbārka, Mādhva sampradāyas)
+02_documents/_phase-5-medieval/phase-5-051-attar-conference-of-birds.md	phase-5-051-attar-conference-of-birds	sufi-persian	scripture-corpora	high	Persian Sufi mathnawi poetry
+02_documents/_phase-5-medieval/phase-5-052-sadi-gulistan.md	phase-5-052-sadi-gulistan	sufi-persian	scripture-corpora	high	Persian prose-poetry compendium / wisdom literature
+02_documents/_phase-5-medieval/phase-5-053-hafez-divan.md	phase-5-053-hafez-divan	sufi-persian	scripture-corpora	high	Persian ghazal tradition / Sufi mystical lyric
+02_documents/_phase-5-medieval/phase-5-054-rumi-masnavi.md	phase-5-054-rumi-masnavi	sufi-persian	scripture-corpora	high	Persian Sufi mathnawi — theological-narrative verse
+02_documents/_phase-5-medieval/phase-5-055-vilayetname-haci-bektas.md	phase-5-055-vilayetname-haci-bektas	alevi-corpus	scripture-corpora	high	[[tradition-alevi-bektashi]]
+02_documents/_phase-5-medieval/phase-5-056-divine-comedy.md	phase-5-056-divine-comedy	latin-catholic-medieval	scripture-corpora	high	medieval-christianity
+02_documents/_phase-5-medieval/phase-5-057-ibn-rushd-aristotle-commentaries.md	phase-5-057-ibn-rushd-aristotle-commentaries	islamic-theological	scripture-corpora	high	arabic-falsafa; latin-christendom
+02_documents/_phase-5-medieval/phase-5-058-nahj-al-balagha.md	phase-5-058-nahj-al-balagha	shia-corpus,twelver-shia-hadith-corpus	scripture-corpora	high	[[tradition-shia-islam]]
+02_documents/_phase-5-medieval/phase-5-059-rasail-al-hikma.md	phase-5-059-rasail-al-hikma	druze-corpus	scripture-corpora	high	[[tradition-druze]]
+02_documents/_phase-5-medieval/phase-5-060-bon-kangyur.md	phase-5-060-bon-kangyur	bon-corpus	scripture-corpora	high	[[tradition-bon]]
+02_documents/_phase-5-medieval/phase-5-061-kiteba-cilwe.md	phase-5-061-kiteba-cilwe	yazidi-corpus	scripture-corpora	high	[[tradition-yazidi]]
+02_documents/_phase-5-medieval/phase-5-062-denkard.md	phase-5-062-denkard	avesta	scripture-corpora	high	[[tradition-zoroastrianism]]
+02_documents/_phase-5-medieval/phase-5-063-avicenna-canon-of-medicine.md	phase-5-063-avicenna-canon-of-medicine	islamic-philosophical,islamic-medical-corpus	slug-override	high	Islamic (Sunni)
+02_documents/_phase-5-medieval/phase-5-064-zohar.md	phase-5-064-zohar	kabbalistic-corpus	scripture-corpora	high	
+02_documents/_phase-5-medieval/rajaraja-i-thanjavur-inscriptions.md	rajaraja-i-thanjavur-inscriptions	tamil-shaiva-corpus	slug-override	high	
+02_documents/_phase-5-medieval/ramayana.md	ramayana	vaishnava-canon	scripture-corpora	high	
+02_documents/_phase-5-medieval/samguk-sagi.md	samguk-sagi	korean-historical-corpus	slug-override	high	
+02_documents/_phase-5-medieval/samguk-yusa.md	samguk-yusa	korean-historical-corpus	slug-override	high	
+02_documents/_phase-5-medieval/shilpa-shastra.md	shilpa-shastra	hindu-architectural-corpus	slug-override	high	
+02_documents/_phase-5-medieval/shoku-nihongi.md	shoku-nihongi	kojiki-nihongi	scripture-corpora	high	
+02_documents/_phase-5-medieval/silappatikaram.md	silappatikaram	tamil-shaiva-corpus	slug-override	high	
+02_documents/_phase-5-medieval/sinai-library-corpus.md	sinai-library-corpus	syriac-christian-corpus	slug-override	high	
+02_documents/_phase-5-medieval/stela-16-tikal.md	stela-16-tikal	maya-corpus	slug-override	high	
+02_documents/_phase-5-medieval/surya-shataka.md	surya-shataka	hindu-stotra-corpus	slug-override	high	
+02_documents/_phase-5-medieval/tao-te-ching.md	tao-te-ching	tao-corpus	scripture-corpora	high	
+02_documents/_phase-5-medieval/tipitaka.md	tipitaka	tipitaka	scripture-corpora	high	
+02_documents/_phase-5-medieval/tiruvilaiyadal-puranam.md	tiruvilaiyadal-puranam	tamil-shaiva-corpus	slug-override	high	
+02_documents/_phase-5-medieval/vastu-shastra.md	vastu-shastra	hindu-architectural-corpus	slug-override	high	
+02_documents/_phase-5-medieval/vimalakirti-sutra.md	vimalakirti-sutra	chinese-mahayana-chan-huayan-tiantai	scripture-corpora	high	
+02_documents/_phase-5-medieval/vishnu-sahasranama.md	vishnu-sahasranama	hindu-stotra-corpus	slug-override	high	
+02_documents/_phase-5-medieval/ying-zao-fa-shi.md	ying-zao-fa-shi	confucian-classics	slug-override	high	
+02_documents/_phase-5-medieval/zhou-li.md	zhou-li	confucian-classics	slug-override	high	
+02_documents/_phase-6-early-modern/phase-6-001-ficino-pimander.md	phase-6-001-ficino-pimander	hermetica	scripture-corpora	high	Florentine Platonic Academy
+02_documents/_phase-6-early-modern/phase-6-002-ficino-theologia-platonica.md	phase-6-002-ficino-theologia-platonica	greek-philosophical-scripture,neoplatonic,renaissance-esotericism	inferred:Neoplatonic + Ficino	medium	Florentine Platonic Academy
+02_documents/_phase-6-early-modern/phase-6-003-pico-oration-900-conclusions.md	phase-6-003-pico-oration-900-conclusions	renaissance-magic-corpus	scripture-corpora	high	Christian Kabbalah (founding)
+02_documents/_phase-6-early-modern/phase-6-004-pico-heptaplus-conclusiones-cabalisticae.md	phase-6-004-pico-heptaplus-conclusiones-cabalisticae	renaissance-magic-corpus	scripture-corpora	high	Florentine Renaissance
+02_documents/_phase-6-early-modern/phase-6-005-luther-95-theses.md	phase-6-005-luther-95-theses	protestant-foundational	inferred:Luther	medium	Lutheran
+02_documents/_phase-6-early-modern/phase-6-006-reuchlin-de-arte-cabalistica.md	phase-6-006-reuchlin-de-arte-cabalistica	renaissance-magic-corpus	scripture-corpora	high	German Hebraist Renaissance
+02_documents/_phase-6-early-modern/phase-6-007-luther-bondage-of-will.md	phase-6-007-luther-bondage-of-will	reformation	scripture-corpora	high	Lutheran
+02_documents/_phase-6-early-modern/phase-6-008-paracelsus-corpus.md	phase-6-008-paracelsus-corpus	western-alchemy-corpus	scripture-corpora	high	Paracelsian
+02_documents/_phase-6-early-modern/phase-6-009-agrippa-de-occulta-philosophia.md	phase-6-009-agrippa-de-occulta-philosophia	renaissance-magic-corpus	scripture-corpora	high	Northern Renaissance magic
+02_documents/_phase-6-early-modern/phase-6-010-calvin-institutes.md	phase-6-010-calvin-institutes	reformation	scripture-corpora	high	Calvinist
+02_documents/_phase-6-early-modern/phase-6-011-cordovero-pardes-rimmonim.md	phase-6-011-cordovero-pardes-rimmonim	kabbalah	inferred:Cordovero	medium	Safed-school (Cordoveran)
+02_documents/_phase-6-early-modern/phase-6-012-dee-monas-hieroglyphica.md	phase-6-012-dee-monas-hieroglyphica	renaissance-magic-corpus	scripture-corpora	high	Elizabethan magical-scientific
+02_documents/_phase-6-early-modern/phase-6-013-mirabai-bhajans.md	phase-6-013-mirabai-bhajans	vaishnava-canon	scripture-corpora	high	Krishna-bhakti (Rajasthani)
+02_documents/_phase-6-early-modern/phase-6-014-bruno-de-la-causa-eroici-furori.md	phase-6-014-bruno-de-la-causa-eroici-furori	greek-philosophical-scripture,hellenistic-jewish,renaissance-esotericism	inferred:Hellenistic-Jewish + Bruno	medium	Brunian
+02_documents/_phase-6-early-modern/phase-6-015-luria-vital-etz-chayyim.md	phase-6-015-luria-vital-etz-chayyim	kabbalah	inferred:Lurianic	medium	Lurianic (Safed school)
+02_documents/_phase-6-early-modern/phase-6-016-guru-granth-sahib.md	phase-6-016-guru-granth-sahib	guru-granth	scripture-corpora	high	Sikh Panth
+02_documents/_phase-6-early-modern/phase-6-017-boehme-aurora-mysterium-magnum.md	phase-6-017-boehme-aurora-mysterium-magnum	protestant-foundational,renaissance-esotericism,western-occult-modern	inferred:Luther + Boehme	medium	Boehmian theosophy
+02_documents/_phase-6-early-modern/phase-6-018-rosicrucian-manifestos.md	phase-6-018-rosicrucian-manifestos	rosicrucian-corpus	scripture-corpora	high	Tübingen circle (Andreae, Hess, Besold)
+02_documents/_phase-6-early-modern/phase-6-019-tulsidas-ramcharitmanas.md	phase-6-019-tulsidas-ramcharitmanas	vaishnava-canon	scripture-corpora	high	Ram-bhakti (Hindi)
+02_documents/_phase-6-early-modern/phase-6-020-chaitanya-charitamrita.md	phase-6-020-chaitanya-charitamrita	vaishnava-canon	scripture-corpora	high	Gaudiya Vaishnavism
+02_documents/_phase-6-early-modern/phase-6-021-andreae-chymical-wedding.md	phase-6-021-andreae-chymical-wedding	rosicrucian-corpus	scripture-corpora	high	Tübingen Rosicrucian
+02_documents/_phase-6-early-modern/phase-6-022-fludd-utriusque-cosmi-historia.md	phase-6-022-fludd-utriusque-cosmi-historia	renaissance-magic-corpus	scripture-corpora	high	English Rosicrucian-Paracelsian
+02_documents/_phase-6-early-modern/phase-6-023-mulla-sadra-asfar.md	phase-6-023-mulla-sadra-asfar	school-of-isfahan	scripture-corpora	high	Hikmat al-Muta'aliya (Transcendent Philosophy); School of Isfahan
+02_documents/_phase-6-early-modern/phase-6-024-kircher-oedipus-aegyptiacus.md	phase-6-024-kircher-oedipus-aegyptiacus	renaissance-magic-corpus	scripture-corpora	high	Roman Counter-Reformation universalism
+02_documents/_phase-6-early-modern/phase-6-025-nathan-of-gaza-treatise-on-dragons.md	phase-6-025-nathan-of-gaza-treatise-on-dragons	polish-frankism-sabbatean-corpus	scripture-corpora	high	Sabbatean Kabbalah
+02_documents/_phase-6-early-modern/phase-6-026-anderson-constitutions-free-masons.md	phase-6-026-anderson-constitutions-free-masons	freemasonry-corpus	scripture-corpora	high	Premier Grand Lodge of England (speculative Masonic)
+02_documents/_phase-6-early-modern/phase-6-026-jacob-frank-words-of-the-lord.md	phase-6-026-jacob-frank-words-of-the-lord	polish-frankism-sabbatean-corpus	scripture-corpora	high	
+02_documents/_phase-6-early-modern/phase-6-027-swedenborg-arcana-heaven-and-hell.md	phase-6-027-swedenborg-arcana-heaven-and-hell	christian-theosophy,swedenborgian-new-church	scripture-corpora	high	Swedenborgian (Church of the New Jerusalem)
+02_documents/_phase-6-early-modern/phase-6-028-shah-wali-allah-hujjat-allah.md	phase-6-028-shah-wali-allah-hujjat-allah	south-asian-sufi-reform	scripture-corpora	high	Indian Naqshbandi Sufism
+02_documents/_phase-6-early-modern/phase-6-029-boehme-aurora.md	phase-6-029-boehme-aurora	christian-theosophy	scripture-corpora	high	Boehmian theosophy (the founding text of Western theosophical mysticism)
+02_documents/_phase-6-early-modern/phase-6-030-vinaya-patrika.md	phase-6-030-vinaya-patrika	vaishnava-canon	scripture-corpora	high	Awadhi / Hindi-Vaishnava devotional poetry
+02_documents/_phase-6-early-modern/phase-6-031-bijak-kabir.md	phase-6-031-bijak-kabir	sant-nirguna-corpus	scripture-corpora	high	Nirguṇa Sant tradition / North Indian vernacular religious poetry
+02_documents/_phase-6-early-modern/phase-6-032-rosarium-philosophorum.md	phase-6-032-rosarium-philosophorum	western-alchemy-corpus	scripture-corpora	high	illustrated emblem-alchemy
+02_documents/_phase-6-early-modern/phase-6-033-splendor-solis.md	phase-6-033-splendor-solis	western-alchemy-corpus	scripture-corpora	high	illuminated alchemical-emblem manuscript
+02_documents/_phase-6-early-modern/phase-6-034-khunrath-amphitheatrum-sapientiae.md	phase-6-034-khunrath-amphitheatrum-sapientiae	renaissance-magic-corpus	scripture-corpora	high	integrated Hermetic-Kabbalistic emblem-book
+02_documents/_phase-6-early-modern/phase-6-035-maier-atalanta-fugiens.md	phase-6-035-maier-atalanta-fugiens	western-alchemy-corpus	scripture-corpora	high	integrated emblem-music-alchemy
+02_documents/_phase-6-early-modern/phase-6-036-mutus-liber.md	phase-6-036-mutus-liber	western-alchemy-corpus	scripture-corpora	high	wordless emblem-alchemy
+02_documents/_phase-6-early-modern/phase-6-037-voynich-manuscript.md	phase-6-037-voynich-manuscript	western-occult-modern	slug-override	high	unknown
+02_documents/_phase-6-early-modern/phase-6-038-teresa-interior-castle.md	phase-6-038-teresa-interior-castle	spanish-mystical	scripture-corpora	high	Spanish vernacular mystical theology
+02_documents/_phase-6-early-modern/phase-6-039-dark-night-of-the-soul.md	phase-6-039-dark-night-of-the-soul	spanish-mystical	scripture-corpora	high	apophatic-mystical theology + Spanish vernacular poetry
+02_documents/_phase-6-early-modern/phase-6-040-bandarra-trovas.md	phase-6-040-bandarra-trovas	portuguese-hermetic	inferred:Bandarra	medium	Portuguese vernacular prophetic-messianic
+02_documents/_phase-6-early-modern/phase-6-041-camoes-os-lusiadas.md	phase-6-041-camoes-os-lusiadas	roman-scripture,portuguese-hermetic	inferred:Latin/Roman + Camões	medium	Portuguese Renaissance epic; classical synthesis with Christian-providential teleology
+02_documents/_phase-6-early-modern/phase-6-042-paradise-lost.md	phase-6-042-paradise-lost	protestant-foundational	inferred:Milton	medium	protestantism
+02_documents/_phase-6-early-modern/phase-6-043-dee-libri-mysteriorum-enochian.md	phase-6-043-dee-libri-mysteriorum-enochian	renaissance-magic-corpus	scripture-corpora	high	Elizabethan practical magic / angelic-language transmission
+02_documents/_phase-6-early-modern/phase-6-044-llull-ars-magna.md	phase-6-044-llull-ars-magna	christian-mystical,renaissance-esotericism	inferred:Lullism	medium	Lullism — the combinatorial divine-names tradition
+02_documents/_phase-6-early-modern/phase-6-045-sendivogius-novum-lumen-chymicum.md	phase-6-045-sendivogius-novum-lumen-chymicum	western-alchemy-corpus	scripture-corpora	high	Rudolfine court alchemy / Polish Hermetic-alchemical
+02_documents/_phase-6-early-modern/phase-6-046-ripley-compound-of-alchemy.md	phase-6-046-ripley-compound-of-alchemy	western-alchemy-corpus	scripture-corpora	high	Canon English alchemical poetry / George Ripley school
+02_documents/_phase-6-early-modern/phase-6-047-ashmole-theatrum-chemicum-britannicum.md	phase-6-047-ashmole-theatrum-chemicum-britannicum	western-alchemy-corpus	scripture-corpora	high	English alchemical canon and transmission
+02_documents/_phase-6-early-modern/phase-6-048-basil-valentine-twelve-keys.md	phase-6-048-basil-valentine-twelve-keys	western-alchemy-corpus	scripture-corpora	high	Operational alchemy / antimony chemistry
+02_documents/_phase-6-early-modern/phase-6-049-starkey-secrets-revealed.md	phase-6-049-starkey-secrets-revealed	western-alchemy-corpus	scripture-corpora	high	Operational alchemy bridging Hermeticism and early chemistry
+02_documents/_phase-6-early-modern/phase-6-050-thomas-vaughan-anthroposophia.md	phase-6-050-thomas-vaughan-anthroposophia	christian-theosophy	scripture-corpora	high	Cambridge-adjacent Neoplatonist alchemy / Rosicrucian English transmission
+02_documents/_phase-6-early-modern/phase-6-051-mylius-philosophia-reformata.md	phase-6-051-mylius-philosophia-reformata	western-alchemy-corpus	scripture-corpora	high	Rudolfine-Rosicrucian emblematic alchemy
+02_documents/_phase-6-early-modern/phase-6-052-kircher-ars-magna-lucis.md	phase-6-052-kircher-ars-magna-lucis	renaissance-magic-corpus	scripture-corpora	high	Kircherian universal science / light mysticism
+02_documents/_phase-7-modern/phase-7-001-book-of-mormon.md	phase-7-001-book-of-mormon	mormon	scripture-corpora	high	Restorationist Christianity (LDS)
+02_documents/_phase-7-modern/phase-7-002-kitab-i-iqan.md	phase-7-002-kitab-i-iqan	bahai-corpus	scripture-corpora	high	Bahá'í foundational scripture (pre-declaration period)
+02_documents/_phase-7-modern/phase-7-003-kitab-i-aqdas.md	phase-7-003-kitab-i-aqdas	bahai-corpus	scripture-corpora	high	Bahá'í foundational scripture (declaration period)
+02_documents/_phase-7-modern/phase-7-004-science-and-health.md	phase-7-004-science-and-health	new-thought-corpus	scripture-corpora	high	New Thought adjacent / metaphysical Christianity
+02_documents/_phase-7-modern/phase-7-005-isis-unveiled.md	phase-7-005-isis-unveiled	theosophy-corpus	scripture-corpora	high	Founding-period Theosophy
+02_documents/_phase-7-modern/phase-7-006-secret-doctrine.md	phase-7-006-secret-doctrine	theosophy-corpus	scripture-corpora	high	Mature Theosophy
+02_documents/_phase-7-modern/phase-7-007-golden-bough.md	phase-7-007-golden-bough	comparative-religion-academic	inferred:Frazer	medium	Evolutionist-ritualist comparative religion (the 'Cambridge Ritualists' adjacent)
+02_documents/_phase-7-modern/phase-7-008-book-of-the-law.md	phase-7-008-book-of-the-law	thelema-corpus	scripture-corpora	high	Thelema founding scripture
+02_documents/_phase-7-modern/phase-7-009-outline-of-esoteric-science.md	phase-7-009-outline-of-esoteric-science	anthroposophy-corpus	scripture-corpora	high	Anthroposophy founding text
+02_documents/_phase-7-modern/phase-7-010-elementary-forms-religious-life.md	phase-7-010-elementary-forms-religious-life	comparative-religion-academic	inferred:Durkheim	medium	Durkheimian sociology of religion
+02_documents/_phase-7-modern/phase-7-011-idea-of-the-holy.md	phase-7-011-idea-of-the-holy	comparative-religion-academic	inferred:Otto	medium	Phenomenology of religion
+02_documents/_phase-7-modern/phase-7-012-major-trends-jewish-mysticism.md	phase-7-012-major-trends-jewish-mysticism	comparative-religion-academic,kabbalah	inferred:Scholem	medium	Foundational text of academic Kabbalah studies
+02_documents/_phase-7-modern/phase-7-013-eliade-myth-of-eternal-return.md	phase-7-013-eliade-myth-of-eternal-return	comparative-religion-academic	slug-override	high	
+02_documents/_phase-7-modern/phase-7-013-gnostic-religion.md	phase-7-013-gnostic-religion	comparative-religion-academic,gnostic-scripture	inferred:Jonas	medium	Existentialist phenomenology of Gnosticism
+02_documents/_phase-7-modern/phase-7-014-bellah-civil-religion-essay.md	phase-7-014-bellah-civil-religion-essay	comparative-religion-academic	slug-override	high	
+02_documents/_phase-7-modern/phase-7-014-gnostic-gospels.md	phase-7-014-gnostic-gospels	comparative-religion-academic,gnostic-scripture	inferred:Pagels	medium	Popular-scholarly Nag Hammadi reception
+02_documents/_phase-7-modern/phase-7-015-beyond-belief.md	phase-7-015-beyond-belief	comparative-religion-academic	slug-override	high	Popular-scholarly reception of the Gospel of Thomas
+02_documents/_phase-7-modern/phase-7-016-magick-in-theory-and-practice.md	phase-7-016-magick-in-theory-and-practice	thelema-corpus	scripture-corpora	high	Crowleyan ceremonial magick
+02_documents/_phase-7-modern/phase-7-017-psychology-and-alchemy.md	phase-7-017-psychology-and-alchemy	comparative-religion-academic,western-occult-modern	inferred:Jung	medium	Jung's alchemical period
+02_documents/_phase-7-modern/phase-7-018-aion.md	phase-7-018-aion	comparative-religion-academic,western-occult-modern	inferred:Jung	medium	Jung's late period
+02_documents/_phase-7-modern/phase-7-019-mysterium-coniunctionis.md	phase-7-019-mysterium-coniunctionis	comparative-religion-academic,western-occult-modern	inferred:Jung	medium	Jung's final magnum opus
+02_documents/_phase-7-modern/phase-7-020-answer-to-job.md	phase-7-020-answer-to-job	comparative-religion-academic,western-occult-modern	inferred:Jung	medium	Jung's confessional-theological writing
+02_documents/_phase-7-modern/phase-7-021-patterns-comparative-religion.md	phase-7-021-patterns-comparative-religion	comparative-religion-academic	inferred:Otto + Eliade	medium	Eliadean phenomenology of religion
+02_documents/_phase-7-modern/phase-7-022-hick-interpretation-of-religion.md	phase-7-022-hick-interpretation-of-religion	comparative-religion-academic	slug-override	high	
+02_documents/_phase-7-modern/phase-7-022-sacred-and-profane.md	phase-7-022-sacred-and-profane	comparative-religion-academic	inferred:Otto + Eliade	medium	Eliadean phenomenology of religion (popular)
+02_documents/_phase-7-modern/phase-7-023-bruno-and-hermetic-tradition.md	phase-7-023-bruno-and-hermetic-tradition	comparative-religion-academic,renaissance-esotericism	inferred:Yates	medium	Warburg Institute history of esotericism
+02_documents/_phase-7-modern/phase-7-024-witchcraft-today.md	phase-7-024-witchcraft-today	wicca-corpus	scripture-corpora	high	Gardnerian Wicca founding text
+02_documents/_phase-7-modern/phase-7-025-dianetics.md	phase-7-025-dianetics	scientology-corpus	scripture-corpora	high	Pre-religious-incorporation Dianetics; foundational text
+02_documents/_phase-7-modern/phase-7-026-autobiography-of-a-yogi.md	phase-7-026-autobiography-of-a-yogi	hindu-modernism-corpus	scripture-corpora	high	Yogananda's Self-Realization Fellowship lineage
+02_documents/_phase-7-modern/phase-7-027-life-divine.md	phase-7-027-life-divine	hindu-modernism-corpus	scripture-corpora	high	Aurobindo's Integral philosophy
+02_documents/_phase-7-modern/phase-7-028-milestones.md	phase-7-028-milestones	islamism-corpus	scripture-corpora	high	Qutbist political theology
+02_documents/_phase-7-modern/phase-7-029-hindutva.md	phase-7-029-hindutva	hindu-modernism-corpus	scripture-corpora	high	Savarkar's foundational text of Hindu nationalist ideology
+02_documents/_phase-7-modern/phase-7-030-satanic-bible.md	phase-7-030-satanic-bible	laveyan-satanism-corpus	scripture-corpora	high	Church of Satan founding text
+02_documents/_phase-7-modern/phase-7-031-course-in-miracles.md	phase-7-031-course-in-miracles	new-thought-corpus	scripture-corpora	high	Channeled scripture
+02_documents/_phase-7-modern/phase-7-032-kybalion.md	phase-7-032-kybalion	new-thought-corpus	scripture-corpora	high	Pseudo-Hermetic New Thought synthesis
+02_documents/_phase-7-modern/phase-7-033-donnelly-atlantis-antediluvian-world.md	phase-7-033-donnelly-atlantis-antediluvian-world	lost-civilization-corpus	inferred:Lost-civilization	medium	Hyperdiffusionism
+02_documents/_phase-7-modern/phase-7-034-blavatsky-atlantis-root-race.md	phase-7-034-blavatsky-atlantis-root-race	theosophy-corpus	scripture-corpora	high	Mature Theosophy
+02_documents/_phase-7-modern/phase-7-035-cayce-atlantis-readings.md	phase-7-035-cayce-atlantis-readings	lost-civilization-corpus	inferred:Lost-civilization	medium	Cayce's Association for Research and Enlightenment
+02_documents/_phase-7-modern/phase-7-036-hancock-fingerprints-of-the-gods.md	phase-7-036-hancock-fingerprints-of-the-gods	lost-civilization-corpus	inferred:Lost-civilization	medium	Lost-civilization genre / cataclysmic precession-mythology
+02_documents/_phase-7-modern/phase-7-037-pessoa-mensagem.md	phase-7-037-pessoa-mensagem	portuguese-hermetic	inferred:Bandarra + Pessoa	medium	Sebastianist-Hermetic-Rosicrucian Portuguese modernism
+02_documents/_phase-7-modern/phase-7-038-guenon-symbols-sacred-science.md	phase-7-038-guenon-symbols-sacred-science	traditionalist-school	inferred:Guénon	medium	Guénonian Traditionalism
+02_documents/_phase-7-modern/phase-7-039-gandra-da-face-oculta-2009.md	phase-7-039-gandra-da-face-oculta-2009	portuguese-hermetic	inferred:Gandra	medium	21st-c. Portuguese hermetic-symbology scholarship
+02_documents/_phase-7-modern/phase-7-040-walatta-petros-hagiography.md	phase-7-040-walatta-petros-hagiography	ethiopic-tewahedo-canon	scripture-corpora	high	Ethiopian female-saint hagiography (gadl)
+02_documents/_phase-7-modern/phase-7-041-varieties-of-religious-experience.md	phase-7-041-varieties-of-religious-experience	comparative-religion-academic	inferred:James	medium	American pragmatism / psychology of religion
+02_documents/_phase-7-modern/phase-7-042-donggyeong-daejeon.md	phase-7-042-donggyeong-daejeon	cheondogyo-corpus	scripture-corpora	high	[[tradition-donghak]]
+02_documents/_phase-7-modern/phase-7-043-ofudesaki.md	phase-7-043-ofudesaki	tenrikyo-corpus	scripture-corpora	high	[[tradition-tenrikyo]]
+02_documents/_phase-7-modern/phase-7-044-cao-dai-canon.md	phase-7-044-cao-dai-canon	cao-dai-corpus	scripture-corpora	high	[[tradition-cao-dai]]
+02_documents/_phase-7-modern/phase-7-045-ambedkar-buddha-and-dhamma.md	phase-7-045-ambedkar-buddha-and-dhamma	south-asian-modernism	scripture-corpora	high	[[tradition-navayana-buddhism]]
+02_documents/_phase-7-modern/phase-7-046-iqbal-reconstruction-religious-thought.md	phase-7-046-iqbal-reconstruction-religious-thought	south-asian-modernism	scripture-corpora	high	[[tradition-islamic-modernism]]
+02_documents/_phase-7-modern/phase-7-047-blake-songs-of-innocence-experience.md	phase-7-047-blake-songs-of-innocence-experience	western-occult-modern,english-mystical-poetry	slug-override	high	
+02_documents/_phase-7-modern/phase-7-048-bahai-hidden-words.md	phase-7-048-bahai-hidden-words	bahai-scripture	inferred:Bahá'í Hidden Words	medium	Bahá'í foundational scripture (Baghdad mystical period, pre-declaration)
+02_documents/_phase-8-non-western-traditional/phase-8-001-popol-vuh.md	phase-8-001-popol-vuh	mesoamerican-sacred,maya-corpus	scripture-corpora	high	Highland Maya — post-conquest reduction of pre-Columbian oral tradition
+02_documents/_phase-8-non-western-traditional/phase-8-002-codex-borgia.md	phase-8-002-codex-borgia	mesoamerican-sacred,aztec-mexica-corpus	scripture-corpora	high	Pre-Columbian Mesoamerican ritual-divinatory manuscript
+02_documents/_phase-8-non-western-traditional/phase-8-002-historia-de-los-mexicanos-por-sus-pinturas.md	phase-8-002-historia-de-los-mexicanos-por-sus-pinturas	aztec-mexica-corpus	scripture-corpora	high	
+02_documents/_phase-8-non-western-traditional/phase-8-003-dresden-codex-maya.md	phase-8-003-dresden-codex-maya	mesoamerican-sacred,maya-corpus	scripture-corpora	high	Postclassic Maya ritual-astronomical
+02_documents/_phase-8-non-western-traditional/phase-8-004-florentine-codex-sahagun.md	phase-8-004-florentine-codex-sahagun	aztec-mexica-corpus	scripture-corpora	high	Colonial ethnographic compilation; primary witness for pre-conquest Mexica religion
+02_documents/_phase-8-non-western-traditional/phase-8-005-chilam-balam.md	phase-8-005-chilam-balam	maya-corpus	scripture-corpora	high	Post-conquest Yucatec religious-prophetic compilation
+02_documents/_phase-8-non-western-traditional/phase-8-006-huarochiri-manuscript.md	phase-8-006-huarochiri-manuscript	andean-quechua-corpus	scripture-corpora	high	Early-colonial Quechua-language religious narrative; Andean equivalent of the Popol Vuh
+02_documents/_phase-8-non-western-traditional/phase-8-007-ifa-divination-corpus.md	phase-8-007-ifa-divination-corpus	yoruba-ifa-corpus	scripture-corpora	high	Ifá divination — Yoruba sacred-textual orature
+02_documents/_phase-8-non-western-traditional/phase-8-008-kebra-nagast.md	phase-8-008-kebra-nagast	kebra-nagast,ethiopic-tewahedo-canon,rastafari-corpus	scripture-corpora	high	Ethiopian Solomonic-dynasty legitimating epic
+02_documents/_phase-8-non-western-traditional/phase-8-009-dreaming-narratives.md	phase-8-009-dreaming-narratives	aboriginal-dreaming-corpus	scripture-corpora	high	Pan-Aboriginal cosmological category; specifics highly local
+02_documents/_phase-8-non-western-traditional/phase-8-010-kumulipo.md	phase-8-010-kumulipo	polynesian-corpus	scripture-corpora	high	Hawaiian royal cosmogonic-genealogical chant
+02_documents/_phase-8-non-western-traditional/phase-8-011-maori-cosmogonic-chants.md	phase-8-011-maori-cosmogonic-chants	polynesian-corpus	scripture-corpora	high	Māori cosmogonic-genealogical chant tradition
+02_documents/_phase-8-non-western-traditional/phase-8-012-walam-olum.md	phase-8-012-walam-olum	indigenous-north-american-corpus	scripture-corpora	high	disputed / contested document — Phase-8 case study in source criticism
+02_documents/_phase-8-non-western-traditional/phase-8-013-navajo-blessingway.md	phase-8-013-navajo-blessingway	indigenous-north-american-corpus	scripture-corpora	high	Navajo ceremonial complex — Blessingway pathway
+02_documents/_phase-8-non-western-traditional/phase-8-014-poetic-edda.md	phase-8-014-poetic-edda	norse-eddic	scripture-corpora	high	pre-Christian Germanic religious poetry preserved in Christian-era Iceland
+02_documents/_phase-8-non-western-traditional/phase-8-015-prose-edda-snorri.md	phase-8-015-prose-edda-snorri	norse-eddic	scripture-corpora	high	Medieval Icelandic mythological-poetic handbook by Christian author
+02_documents/_phase-8-non-western-traditional/phase-8-016-haitian-vodou-liturgical-tradition.md	phase-8-016-haitian-vodou-liturgical-tradition	haitian-vodou-corpus	scripture-corpora	high	Caribbean African-diasporic syncretic religion (Dahomean / Yoruba / Kongo + Catholic)
+02_documents/_phase-8-non-western-traditional/phase-8-017-santeria-lucumi.md	phase-8-017-santeria-lucumi	lucumi-santeria-corpus	scripture-corpora	high	Caribbean African-diasporic syncretic religion (Yoruba + Spanish Catholic)
+02_documents/_phase-8-non-western-traditional/phase-8-018-kalevala.md	phase-8-018-kalevala	norse-eddic,finno-karelian-corpus	scripture-corpora	high	Compiled Karelian-Finnish runo-epic; preserves pre-Christian Finno-Karelian religious material
+02_documents/_phase-8-non-western-traditional/phase-8-019-kojiki.md	phase-8-019-kojiki	kojiki-nihongi	scripture-corpora	high	Shinto
+02_documents/_phase-8-non-western-traditional/phase-8-020-nihon-shoki.md	phase-8-020-nihon-shoki	kojiki-nihongi	scripture-corpora	high	Shinto
+02_documents/_phase-8-non-western-traditional/phase-8-021-black-elk-speaks.md	phase-8-021-black-elk-speaks	indigenous-north-american-corpus	scripture-corpora	high	Oglala Lakota oral tradition / literary collaboration
+02_documents/_phase-8-non-western-traditional/phase-8-022-the-sacred-pipe.md	phase-8-022-the-sacred-pipe	indigenous-north-american-corpus	scripture-corpora	high	Oglala Lakota oral tradition
+02_documents/_phase-8-non-western-traditional/phase-8-023-gayanashagowa.md	phase-8-023-gayanashagowa	indigenous-north-american-corpus	scripture-corpora	high	Haudenosaunee political-religious law
+02_documents/document-1-kings.md	document-1-kings	bible,tanakh	slug-override	high	
+02_documents/document-2-chronicles.md	document-2-chronicles	bible,tanakh	slug-override	high	
+02_documents/document-exodus.md	document-exodus	bible	scripture-corpora	high	
+02_documents/document-ezekiel.md	document-ezekiel	bible	scripture-corpora	high	
+02_documents/document-leviticus.md	document-leviticus	bible	scripture-corpora	high	
+02_documents/document-matthew.md	document-matthew	bible	scripture-corpora	high	
+02_documents/document-numbers.md	document-numbers	bible	scripture-corpora	high	

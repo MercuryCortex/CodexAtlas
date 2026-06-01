@@ -341,6 +341,19 @@
     //   then this auto-derive keeps the wheel in sync with the
     //   corpus declarations.
     if (mode === 'scriptures') {
+      // ── canonical-corpus YAML migration (2026-05-31) ────────────────
+      // AUTHORITATIVE source: per-doc YAML `canonical-corpus: [...]`
+      // surfaced by build_data.py as `n.canonical_corpus`. Any document
+      // with a non-empty array IS in the Codex view. This dissolves the
+      // SCRIPTURE_CORPORA-vs-vault drift that was causing endless catch-
+      // up passes (audit at AUDIT/2026-05-31-codex-wires-gap.md).
+      //
+      // DEFENSIVE BACKSTOP (during transition): the legacy SCRIPTURE_
+      // CORPORA-derived set still unions in, so a doc that somehow
+      // lacks canonical_corpus but IS in SCRIPTURE_CORPORA still
+      // surfaces. Once every doc is verified to carry canonical_corpus,
+      // the static SCRIPTURE_IDS + SCRIPTURE_CORPORA-union backstop
+      // can be deleted.
       if (!filterNodesByMode._scriptureSet) {
         const s = new Set(SCRIPTURE_IDS);
         const C = (typeof window !== 'undefined') ? window.SCRIPTURE_CORPORA : null;
@@ -358,7 +371,14 @@
         filterNodesByMode._scriptureSet = s;
       }
       const SET = filterNodesByMode._scriptureSet;
-      return nodes.filter(n => n && n.type === 'document' && SET.has(n.id));
+      return nodes.filter(n => {
+        if (!n || n.type !== 'document') return false;
+        // PRIMARY: canonical-corpus YAML field (authoritative).
+        const cc = n.canonical_corpus;
+        if (Array.isArray(cc) && cc.length > 0) return true;
+        // BACKSTOP: legacy SCRIPTURE_CORPORA-derived set.
+        return SET.has(n.id);
+      });
     }
 
     // Figures mode (2026-05-28): persons lens, intersected with the
