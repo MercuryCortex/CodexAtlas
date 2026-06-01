@@ -1,3 +1,9 @@
+# FIGURES MIGRATION — PLAN v1 (2026-05-31) [SUPERSEDED]
+
+> ⚠️ **SUPERSEDED BY v2** at `AUDIT/2026-05-31-figures-migration-plan-v2.md`. This v1 was written under a relaxed standard. John ratification on the bar correction: *"same standards ofc whatever as most integrity"*. v1 preserved for diff visibility.
+
+---
+
 # FIGURES MIGRATION — PLAN (2026-05-31)
 
 **Trigger:** rule #10 prospective scan found `FIGURES_IDS` is the same structural-drift loop as `SCRIPTURE_IDS` before the canonical-corpus migration — 319 hand-typed entries parallel to 1,217 vault persons, with the comment in `mode.js` literally acknowledging the planned fix (*"Lane A follow-up: backfill role metadata so coverage grows organically — no need to maintain this list by hand once that lands"*).
