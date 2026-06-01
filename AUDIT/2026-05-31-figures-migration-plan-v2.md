@@ -1,3 +1,9 @@
+# FIGURES MIGRATION — PLAN v2 (2026-05-31) [SUPERSEDED]
+
+> ⚠️ **SUPERSEDED BY v3** at `AUDIT/2026-05-31-figures-migration-plan-v3.md`. Trio of independent auditors (academic religious-studies / insider-tradition / engineering-loop-prevention) returned FAIL on v2. v3 absorbs all three audits' Tier-A corrections. v2 preserved for diff visibility.
+
+---
+
 # FIGURES MIGRATION — PLAN v2 (2026-05-31, PROTOCOL-COMPLIANT)
 
 **Supersedes:** `AUDIT/2026-05-31-figures-migration-plan.md` (v1). John's correction on standards: *"same standards ofc whatever as most integrity ! im always repeating this"*. v1 fell short of the project's standing protocol; this v2 applies it consistently.
