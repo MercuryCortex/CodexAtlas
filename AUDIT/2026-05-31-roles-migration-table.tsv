@@ -1,0 +1,1218 @@
+path	doc_id	role_tokens	source	confidence	tradition	rationale
+04_persons/aaron.md	aaron		needs-manual-review	low	Israelite / pre-monarchic	
+04_persons/abba-garima.md	abba-garima	founder	alias-match:alias-split	high	[[tradition-ethiopian-orthodox-tewahedo]	
+04_persons/abba-libanos.md	abba-libanos		needs-manual-review	low		
+04_persons/abbot-suger-of-saint-denis.md	abbot-suger-of-saint-denis		needs-manual-review	low		
+04_persons/abd-al-malik.md	abd-al-malik		needs-manual-review	low		
+04_persons/abd-al-qadir-al-jilani.md	abd-al-qadir-al-jilani		needs-manual-review	low		
+04_persons/abdullah-ibn-zubayr.md	abdullah-ibn-zubayr		needs-manual-review	low		
+04_persons/abhinavagupta.md	abhinavagupta	tantric-acharya,acharya-hindu,philosopher-religious	contested-ratified (T1)	high	Hindu — Kashmir Shaivism (Trika); also c	Trika Shaiva master + acharya in Kashmiri Shaiva sense + philosopher of aesthetics (rasa theory).
+04_persons/abraham-abulafia.md	abraham-abulafia	mystic,kabbalist	alias-match:alias-split	high	Kabbalistic Judaism — Prophetic Kabbalah	
+04_persons/abraham-patriarch.md	abraham-patriarch		needs-manual-review	low	Israelite religion (founder-figure)	
+04_persons/abreha-of-himyar.md	abreha-of-himyar		needs-manual-review	low		
+04_persons/abu-bakr.md	abu-bakr		needs-manual-review	low	Islam	
+04_persons/abu-said-abi-l-khayr.md	abu-said-abi-l-khayr		needs-manual-review	low		
+04_persons/abya-meqabyan.md	abya-meqabyan		needs-manual-review	low	[[tradition-ethiopian-orthodox-tewahedo]	
+04_persons/achaemenid-persia.md	achaemenid-persia		needs-manual-review	low		
+04_persons/achilles.md	achilles		needs-manual-review	low	Hellenic (Iliad)	
+04_persons/actun-tunichil-muknal.md	actun-tunichil-muknal		needs-manual-review	low		
+04_persons/adam-hardy.md	adam-hardy		needs-manual-review	low		
+04_persons/adam.md	adam		needs-manual-review	low	Hebrew Bible; Christian Bible; Quran; Se	
+04_persons/adi-shankara.md	adi-shankara		needs-manual-review	low		
+04_persons/adolf-katzenellenbogen.md	adolf-katzenellenbogen		needs-manual-review	low		
+04_persons/adrian-snodgrass.md	adrian-snodgrass		needs-manual-review	low		
+04_persons/aeschylus.md	aeschylus	author-secular	heuristic:author-secular	medium	Greek (Athenian dramatic tradition); dee	
+04_persons/afonso-i-of-portugal.md	afonso-i-of-portugal		needs-manual-review	low		
+04_persons/agustin-lizarraga.md	agustin-lizarraga		needs-manual-review	low		
+04_persons/ahmose-i.md	ahmose-i	king,founder	alias-match:alias-split	high	Ancient Egyptian (18th Dynasty founder)	
+04_persons/aisha-bint-abi-bakr.md	aisha-bint-abi-bakr		needs-manual-review	low	Islam — Sunnī (venerated; foundational h	
+04_persons/akbar-mughal.md	akbar-mughal	emperor,religious-reformer	contested-ratified (T1)	high		Din-i-Ilahi was internal doctrinal innovation.
+04_persons/akhenaten.md	akhenaten	pharaoh,religious-reformer,founder	contested-ratified (T1)	high	Egyptian (Amarna religion)	Per Auditor A 2026-05-31 — Atenism IS a new tradition (failed/suppressed but founded). Assmann 1997/
+04_persons/akiva-ben-yosef.md	akiva-ben-yosef	rabbi-tannaitic	heuristic:rabbi-tannaitic	medium	Tannaitic Judaism	
+04_persons/akkad.md	akkad		needs-manual-review	low		
+04_persons/al-andalus.md	al-andalus		needs-manual-review	low		
+04_persons/al-biruni.md	al-biruni		needs-manual-review	low	Islamic scholarship (Khwarazmian / Ghazn	
+04_persons/al-bukhari.md	al-bukhari		needs-manual-review	low		
+04_persons/al-farabi.md	al-farabi		needs-manual-review	low	Islam (loose Ismāʿīlī / Shīʿī sympathies	
+04_persons/al-ghazali.md	al-ghazali	theologian	alias-match:alias-split	high	Sunni Islam — Shāfiʿī jurisprudence / As	
+04_persons/al-hajjaj-ibn-yusuf.md	al-hajjaj-ibn-yusuf		needs-manual-review	low		
+04_persons/al-hakim-bi-amr-allah.md	al-hakim-bi-amr-allah		needs-manual-review	low	[[tradition-ismailism]]	
+04_persons/al-hallaj.md	al-hallaj		needs-manual-review	low	Sufi Islam — early ecstatic Sufism	
+04_persons/al-junayd.md	al-junayd		needs-manual-review	low		
+04_persons/al-khidr.md	al-khidr		needs-manual-review	low	Islam (Quranic and Sufi mystical traditi	
+04_persons/al-khwarizmi.md	al-khwarizmi		needs-manual-review	low	Islamic Golden Age (Abbasid Caliphate, B	
+04_persons/al-kindi.md	al-kindi		needs-manual-review	low	Islam (Muʿtazilī theological alignment);	
+04_persons/al-kirmani.md	al-kirmani		needs-manual-review	low		
+04_persons/al-muizz-fatimid.md	al-muizz-fatimid		needs-manual-review	low		
+04_persons/al-razi.md	al-razi		needs-manual-review	low		
+04_persons/al-shafii.md	al-shafii		needs-manual-review	low	Sunni Islam — Shāfiʿī school of jurispru	
+04_persons/al-sharif-al-radi.md	al-sharif-al-radi		needs-manual-review	low		
+04_persons/al-tabari.md	al-tabari		needs-manual-review	low	Sunni Islam	
+04_persons/albert-einstein.md	albert-einstein		needs-manual-review	low	Modern physics / secular Jewish cultural	
+04_persons/alberto-ruz-lhuillier.md	alberto-ruz-lhuillier		needs-manual-review	low		
+04_persons/albertus-magnus.md	albertus-magnus	monastic-christian-western	heuristic:monastic-western	medium	Latin Christianity (Dominican; scholasti	
+04_persons/alcuin-of-york.md	alcuin-of-york		needs-manual-review	low	Latin Christian (Anglo-Saxon → Frankish)	
+04_persons/aldous-huxley.md	aldous-huxley	author-secular	heuristic:author-secular	medium	English literature / Vedanta / perennial	
+04_persons/aleister-crowley.md	aleister-crowley	founder,prophet-non-abrahamic,magus,mystic-syncretic	contested-ratified (T1)	high	Thelema	Per Auditor A's 2026-05-31 NRM-studies framing (Bogdan & Starr 2012). Crowley's self-claim as 'Proph
+04_persons/alexander-cunningham.md	alexander-cunningham		needs-manual-review	low		
+04_persons/alexander-the-great.md	alexander-the-great	king,emperor	alias-match:alias-split	high	Hellenic / Argead Macedonian (with cult-	
+04_persons/alexios-iv.md	alexios-iv		needs-manual-review	low		
+04_persons/alfred-maudslay.md	alfred-maudslay		needs-manual-review	low		
+04_persons/ali-al-hadi.md	ali-al-hadi		needs-manual-review	low	Islam (Twelver Shi'a Tenth Imam)	
+04_persons/ali-al-rida.md	ali-al-rida		needs-manual-review	low	Islam (Twelver Shi'a Eighth Imam)	
+04_persons/ali-ibn-abi-talib.md	ali-ibn-abi-talib		needs-manual-review	low	Islam (universally venerated companion; 	
+04_persons/ali-zayn-al-abidin.md	ali-zayn-al-abidin		needs-manual-review	low	Islam (Shi'a Fourth Imam)	
+04_persons/allan-temko.md	allan-temko		needs-manual-review	low		
+04_persons/amaterasu-cave-myth.md	amaterasu-cave-myth		needs-manual-review	low		
+04_persons/ambedkar.md	ambedkar		needs-manual-review	low		
+04_persons/ambrose-of-milan.md	ambrose-of-milan	bishop-christian,theologian	alias-match:alias-split	high	Patristic Christian (Latin)	
+04_persons/amelius.md	amelius		needs-manual-review	low		
+04_persons/amenhotep-iii.md	amenhotep-iii		needs-manual-review	low		
+04_persons/ammi.md	ammi		needs-manual-review	low		
+04_persons/ammonas-letters.md	ammonas-letters		needs-manual-review	low		
+04_persons/ammonius-saccas.md	ammonius-saccas		needs-manual-review	low	Neoplatonic / Alexandrian synthesis	
+04_persons/amos-prophet.md	amos-prophet	prophet-abrahamic	alias-match:alias-exact	high	Israelite (pre-exilic)	
+04_persons/an-lushan.md	an-lushan		needs-manual-review	low		
+04_persons/ananda-disciple.md	ananda-disciple	disciple-christian	alias-match:alias-split	high	Buddhism (pre-sectarian; foundational to	
+04_persons/anaxagoras.md	anaxagoras		needs-manual-review	low		
+04_persons/anaximander.md	anaximander	presocratic-philosopher	heuristic:presocratic-philosopher	medium	Pre-Socratic Greek (Milesian school)	
+04_persons/anaximenes.md	anaximenes	presocratic-philosopher	heuristic:presocratic-philosopher	medium	Pre-Socratic Greek (Milesian school)	
+04_persons/andal.md	andal	author-secular	heuristic:author-secular	medium	Hindu Bhakti (Tamil Vaishnava — Alvar tr	
+04_persons/andre-jean-festugiere.md	andre-jean-festugiere	monastic-christian-western	heuristic:monastic-western	medium	Comparative-religion academic / Dominica	
+04_persons/andrew-apostle.md	andrew-apostle	apostle-christian	alias-match:alias-exact	high	earliest Christianity	
+04_persons/angkor-thom-bayon.md	angkor-thom-bayon		needs-manual-review	low		
+04_persons/anna-sofaer.md	anna-sofaer		needs-manual-review	low		
+04_persons/annie-besant.md	annie-besant	religious-reformer	alias-match:alias-split	high	Theosophy	
+04_persons/anselm-of-canterbury.md	anselm-of-canterbury	archbishop-christian,theologian	alias-match:alias-split	high	Latin Christian — early scholastic	
+04_persons/anthemius-of-tralles.md	anthemius-of-tralles		needs-manual-review	low		
+04_persons/anthony-aveni.md	anthony-aveni		needs-manual-review	low		
+04_persons/antiochus-iv-epiphanes.md	antiochus-iv-epiphanes	king	alias-match:alias-split	high	Seleucid Empire	
+04_persons/anton-lavey.md	anton-lavey	founder	contested-ratified (T1)	high	LaVeyan Satanism	Founded Church of Satan 1966; NRM-studies recognizes (Lewis 2001).
+04_persons/antoni-gaudi.md	antoni-gaudi		needs-manual-review	low		
+04_persons/antonio-augusto-carvalho-monteiro.md	antonio-augusto-carvalho-monteiro		needs-manual-review	low		
+04_persons/antonio-carvalho-monteiro.md	antonio-carvalho-monteiro		needs-manual-review	low	[[tradition-portuguese-hermeticism]]	
+04_persons/antonio-da-sangallo-the-younger.md	antonio-da-sangallo-the-younger		needs-manual-review	low		
+04_persons/antonio-vieira.md	antonio-vieira	monastic-christian-western	heuristic:monastic-western	medium	[[tradition-portuguese-hermeticism]] / [	
+04_persons/antony-the-great.md	antony-the-great		needs-manual-review	low	Patristic Christian (Egyptian Coptic)	
+04_persons/apelles.md	apelles		needs-manual-review	low	Marcionite → Apellean	
+04_persons/aphrahat.md	aphrahat		needs-manual-review	low	Syriac Christian (Persian Sassanid terri	
+04_persons/apollinaris-of-laodicea.md	apollinaris-of-laodicea	bishop-christian	alias-match:alias-split	high	Patristic Christian (anti-Arian, condemn	
+04_persons/apollodorus-of-damascus.md	apollodorus-of-damascus		needs-manual-review	low		
+04_persons/apollonius-of-tyana.md	apollonius-of-tyana	mystic	alias-match:alias-split	high	Neo-Pythagorean Greek philosophy with th	
+04_persons/apollos.md	apollos		needs-manual-review	low	earliest Christianity	
+04_persons/april-deconick.md	april-deconick		needs-manual-review	low	Comparative religion (academic) / Gnosti	
+04_persons/apu-salkantay.md	apu-salkantay		needs-manual-review	low		
+04_persons/apu-veronica.md	apu-veronica		needs-manual-review	low		
+04_persons/apuleius-of-madaura.md	apuleius-of-madaura	author-secular	heuristic:author-secular	medium	Middle Platonist philosophy / Latin lite	
+04_persons/apuleius.md	apuleius	author-secular	heuristic:author-secular	medium	Middle Platonism; Latin literary culture	
+04_persons/aquila.md	aquila		needs-manual-review	low	earliest Christianity	
+04_persons/archbishop-damianos-of-sinai.md	archbishop-damianos-of-sinai		needs-manual-review	low		
+04_persons/archbishop-konrad-von-hochstaden.md	archbishop-konrad-von-hochstaden		needs-manual-review	low		
+04_persons/archbishop-makarios-iii-of-sinai.md	archbishop-makarios-iii-of-sinai		needs-manual-review	low		
+04_persons/archytas.md	archytas		needs-manual-review	low	Pythagoreanism	
+04_persons/arganthonius.md	arganthonius	king	heuristic:king	medium	Tartessian Civilization	
+04_persons/aristides-of-athens.md	aristides-of-athens		needs-manual-review	low	Patristic Christian (proto-orthodox)	
+04_persons/aristotle.md	aristotle		needs-manual-review	low	Greek philosophy — Peripatetic / Lyceum	
+04_persons/arius.md	arius		needs-manual-review	low	Christian (Alexandrian; condemned)	
+04_persons/arnold-of-zwolle.md	arnold-of-zwolle		needs-manual-review	low		
+04_persons/arnold-wolff.md	arnold-wolff		needs-manual-review	low		
+04_persons/arthur-darby-nock.md	arthur-darby-nock		needs-manual-review	low	Comparative-religion academic / classica	
+04_persons/asanga.md	asanga		needs-manual-review	low	Mahayana Buddhism (Yogācāra/Cittamātra s	
+04_persons/ashoka.md	ashoka	emperor	heuristic:emperor	medium	tradition-buddhism	
+04_persons/ashurbanipal.md	ashurbanipal	king	alias-match:alias-split	high	Neo-Assyrian	
+04_persons/asoka-maurya.md	asoka-maurya	king	alias-match:alias-split	high	Buddhism (Mauryan state-patronage; non-s	
+04_persons/astronomical-alignment-calendar-architecture.md	astronomical-alignment-calendar-architecture		needs-manual-review	low		
+04_persons/athanasius-kircher.md	athanasius-kircher	monastic-christian-western	heuristic:monastic-western	medium	Jesuit universal-history scholarship / C	
+04_persons/athanasius.md	athanasius	bishop-christian	alias-match:alias-split	high	Patristic Christian (Alexandrian)	
+04_persons/athenagoras-of-athens.md	athenagoras-of-athens		needs-manual-review	low	Patristic Christian (proto-orthodox)	
+04_persons/atisa.md	atisa	religious-reformer	alias-match:alias-split	high	Indian Mahāyāna-Vajrayāna; Tibetan Buddh	
+04_persons/atrahasis-flood-hero.md	atrahasis-flood-hero	king	alias-match:alias-split	high	Akkadian / Mesopotamian	
+04_persons/augustine-of-hippo.md	augustine-of-hippo	bishop-christian,theologian	alias-match:alias-split	high	Patristic Christian (Latin)	
+04_persons/augustus-roman-emperor.md	augustus-roman-emperor		needs-manual-review	low		
+04_persons/aurangzeb-emperor.md	aurangzeb-emperor	guru-sikh,emperor	heuristic:guru-sikh+emperor	medium		
+04_persons/aurel-stein.md	aurel-stein		needs-manual-review	low		
+04_persons/avars.md	avars		needs-manual-review	low		
+04_persons/avenue-of-the-dead.md	avenue-of-the-dead		needs-manual-review	low		
+04_persons/averroes.md	averroes		needs-manual-review	low	Islamic Andalusia (Maliki jurist, Aristo	
+04_persons/avicenna.md	avicenna		needs-manual-review	low	Islamic (Sunni Hanafi)	
+04_persons/baal-shem-tov.md	baal-shem-tov	kabbalist	alias-match:alias-split	high	Jewish Kabbalah → Hasidism	
+04_persons/bahaullah.md	bahaullah	founder,manifestation-bahai	contested-ratified (T1)	high	Bahá'í Faith	Per Auditor A + B 2026-05-31 — REPLACES v2's ['founder', 'prophet-abrahamic']. The Bahá'í 'Manifesta
+04_persons/bahya-ibn-paquda.md	bahya-ibn-paquda		needs-manual-review	low	Rabbinic Judaism — medieval Jewish pieti	
+04_persons/bamiyan-buddhas.md	bamiyan-buddhas		needs-manual-review	low		
+04_persons/bamiyan-buddhist-sutra-fragments.md	bamiyan-buddhist-sutra-fragments		needs-manual-review	low		
+04_persons/bandarra.md	bandarra		needs-manual-review	low		
+04_persons/bantu-expansion.md	bantu-expansion		needs-manual-review	low		
+04_persons/barbara-schock-werner.md	barbara-schock-werner		needs-manual-review	low		
+04_persons/bardaisan-of-edessa.md	bardaisan-of-edessa	theologian	alias-match:alias-split	high	Syriac Christianity (heterodox Edessan)	
+04_persons/barlaam-and-josaphat.md	barlaam-and-josaphat		needs-manual-review	low	Originally Buddhist (jātaka of Siddhārth	
+04_persons/barnabas.md	barnabas		needs-manual-review	low	earliest Christianity	
+04_persons/bart-ehrman.md	bart-ehrman		needs-manual-review	low	Comparative religion (academic) / New Te	
+04_persons/bartholomew-apostle.md	bartholomew-apostle	apostle-christian	alias-match:alias-exact	high	earliest Christianity	
+04_persons/baruch-spinoza.md	baruch-spinoza		needs-manual-review	low	Early modern rationalism / Sephardic Jew	
+04_persons/basava.md	basava	author-secular	heuristic:author-secular	medium	Hindu — Lingayat / Vīraśaiva tradition	
+04_persons/basavanna.md	basavanna	author-secular	heuristic:author-secular	medium	Hindu — Vīraśaiva / Lingāyat (founded by	
+04_persons/basil-of-caesarea.md	basil-of-caesarea	bishop-christian	alias-match:alias-split	high	Patristic Christian (Cappadocian)	
+04_persons/basilides.md	basilides		needs-manual-review	low	Basilidean Gnostic Christianity	
+04_persons/battle-of-talas.md	battle-of-talas		needs-manual-review	low		
+04_persons/bear-butte-south-dakota.md	bear-butte-south-dakota		needs-manual-review	low		
+04_persons/beatrice-portinari.md	beatrice-portinari		needs-manual-review	low	medieval-christianity	
+04_persons/bede-the-venerable.md	bede-the-venerable		needs-manual-review	low		
+04_persons/bede.md	bede		needs-manual-review	low	Latin Christian (Anglo-Saxon)	
+04_persons/ben-sira.md	ben-sira		needs-manual-review	low	Hellenistic Judaism	
+04_persons/benedict-of-nursia.md	benedict-of-nursia		needs-manual-review	low	Latin Christian (monastic)	
+04_persons/bernard-of-clairvaux.md	bernard-of-clairvaux	theologian	alias-match:alias-split	high	Latin Christianity (Cistercian)	
+04_persons/bernard-raymond-fabre-palaprat.md	bernard-raymond-fabre-palaprat		needs-manual-review	low	Latin Christianity (Catholic background)	
+04_persons/bernardino-de-sahagun.md	bernardino-de-sahagun	monastic-christian-western	heuristic:monastic-western	medium	Roman Catholicism / Mexica ethnography	
+04_persons/bernini.md	bernini		needs-manual-review	low		
+04_persons/berossus.md	berossus		needs-manual-review	low	Babylonian-Hellenistic (priest of Bel-Ma	
+04_persons/bharatamuni.md	bharatamuni		needs-manual-review	low	Hindu — classical Sanskrit aesthetics an	
+04_persons/birdman-burial-cahokia.md	birdman-burial-cahokia		needs-manual-review	low		
+04_persons/birger-pearson.md	birger-pearson		needs-manual-review	low	Comparative religion (academic) / Gnosti	
+04_persons/bishop-fulbert-of-chartres.md	bishop-fulbert-of-chartres		needs-manual-review	low		
+04_persons/bishop-maurice-de-sully.md	bishop-maurice-de-sully		needs-manual-review	low		
+04_persons/bishop-renaud-de-mouçon.md	bishop-renaud-de-mouçon		needs-manual-review	low		
+04_persons/bisu-maharana.md	bisu-maharana		needs-manual-review	low		
+04_persons/black-elk.md	black-elk	wichasha-wakan,mystic-syncretic,evangelist-revivalist	contested-ratified (T1)	high	Oglala Lakota / Roman Catholicism (later	Lakota holy man AND later Catholic catechist. Powers 1977 *Oglala Religion*. Multi-role respects the
+04_persons/blandina.md	blandina		needs-manual-review	low	earliest Christianity	
+04_persons/bodhidharma.md	bodhidharma		needs-manual-review	low	Chan / Zen Buddhism	
+04_persons/boethius.md	boethius	theologian	alias-match:alias-split	high	Latin Christian / Roman Neoplatonist	
+04_persons/bogomil-priest.md	bogomil-priest		needs-manual-review	low	Bogomilism — medieval Christian dualism	
+04_persons/bonaventure.md	bonaventure	theologian	alias-match:alias-split	high	Latin Christian — Franciscan scholastic	
+04_persons/brahmagupta.md	brahmagupta		needs-manual-review	low	Vedic / Gupta-period Indian mathematics	
+04_persons/brian-bauer.md	brian-bauer		needs-manual-review	low		
+04_persons/brian-copenhaver.md	brian-copenhaver		needs-manual-review	low	Comparative-religion academic / Renaissa	
+04_persons/brigham-young.md	brigham-young	founder,prophet-abrahamic	alias-match:alias-split	high	Mormonism (LDS / Utah branch)	
+04_persons/buddha-shakyamuni.md	buddha-shakyamuni		needs-manual-review	low		
+04_persons/buddhaghosa.md	buddhaghosa		needs-manual-review	low	Theravāda Buddhism (Mahāvihāra orthodoxy	
+04_persons/byzantine-alchemy.md	byzantine-alchemy		needs-manual-review	low		
+04_persons/byzantine-purple-silks.md	byzantine-purple-silks		needs-manual-review	low		
+04_persons/c-s-lewis.md	c-s-lewis	author-secular	alias-match:alias-split	high	Christian (Anglican)	
+04_persons/cachicata-quarry.md	cachicata-quarry		needs-manual-review	low		
+04_persons/caesar-augustus.md	caesar-augustus	emperor	alias-match:alias-split	high	Roman (imperial cult; later named in the	
+04_persons/cahokia-woodhenge.md	cahokia-woodhenge		needs-manual-review	low		
+04_persons/caiaphas.md	caiaphas		needs-manual-review	low	Second-Temple Jewish / Sadducean	
+04_persons/cainan-son-of-arpachshad.md	cainan-son-of-arpachshad		needs-manual-review	low	[[tradition-ethiopian-orthodox-tewahedo]	
+04_persons/camões.md	camões		needs-manual-review	low		
+04_persons/candrakirti.md	candrakirti		needs-manual-review	low	Madhyamaka Buddhism (Prāsaṅgika)	
+04_persons/caracol-chichen-itza.md	caracol-chichen-itza		needs-manual-review	low		
+04_persons/carl-gustav-jung.md	carl-gustav-jung	psychologist-of-religion	contested-ratified (T1)	high	Jungian depth psychology (his school)	Per Auditor A 2026-05-31 — split scholarship (Shamdasani 2003 + Bishop 2014 academic-only vs Noll 19
+04_persons/carlo-maderno.md	carlo-maderno		needs-manual-review	low		
+04_persons/carpocrates.md	carpocrates		needs-manual-review	low	Carpocratian Gnostic	
+04_persons/casa-rinconada-chaco-canyon.md	casa-rinconada-chaco-canyon		needs-manual-review	low		
+04_persons/cassiodorus.md	cassiodorus		needs-manual-review	low	Latin Christian	
+04_persons/celsus.md	celsus		needs-manual-review	low	Middle Platonism (pagan)	
+04_persons/cenote-sagrado-chichen-itza.md	cenote-sagrado-chichen-itza		needs-manual-review	low		
+04_persons/ceque-system-cusco.md	ceque-system-cusco		needs-manual-review	low		
+04_persons/cerdo.md	cerdo		needs-manual-review	low	Syrian-Roman proto-Gnostic; reported tea	
+04_persons/cerinthus.md	cerinthus		needs-manual-review	low	early Jewish-Christian / proto-Gnostic	
+04_persons/chaco-canyon.md	chaco-canyon		needs-manual-review	low		
+04_persons/chaim-vital.md	chaim-vital	kabbalist	alias-match:alias-split	high	Jewish Kabbalah (Lurianic)	
+04_persons/chaitanya-mahaprabhu.md	chaitanya-mahaprabhu	acharya-hindu,bhakti-saint	contested-ratified (T1)	high	Hindu Bhakti (Gaudiya Vaishnava)	Gaudiya Vaishnavism founder; bhakti-saint capture covers the devotional dimension.
+04_persons/chaitanya.md	chaitanya		needs-manual-review	low		
+04_persons/chang-shuhong.md	chang-shuhong		needs-manual-review	low		
+04_persons/char-dham.md	char-dham		needs-manual-review	low		
+04_persons/charlemagne.md	charlemagne	emperor,religious-patron,religious-reformer	contested-ratified (T1)	high	Latin Christian (Carolingian)	Patronized AND restructured liturgy (Carolingian renovatio). Multi-role.
+04_persons/charles-hapgood.md	charles-hapgood		needs-manual-review	low	20th-century academic history (Keene Sta	
+04_persons/charles-parham.md	charles-parham		needs-manual-review	low		
+04_persons/charles-taze-russell.md	charles-taze-russell	founder	alias-match:alias-split	high	Jehovah's Witnesses (via the Bible Stude	
+04_persons/charles-the-bald.md	charles-the-bald		needs-manual-review	low		
+04_persons/chartres-school-texts.md	chartres-school-texts		needs-manual-review	low		
+04_persons/chasuble.md	chasuble		needs-manual-review	low		
+04_persons/cheng-hao.md	cheng-hao		needs-manual-review	low	Neo-Confucianism (Song period)	
+04_persons/cheng-yi.md	cheng-yi		needs-manual-review	low	Neo-Confucianism (Song period)	
+04_persons/chetro-ketl.md	chetro-ketl		needs-manual-review	low		
+04_persons/chevalier-ramsay.md	chevalier-ramsay		needs-manual-review	low	Scottish Jacobitism / early French Freem	
+04_persons/chichen-itza.md	chichen-itza		needs-manual-review	low		
+04_persons/choe-je-u.md	choe-je-u		needs-manual-review	low	[[tradition-donghak]]	
+04_persons/chogyam-trungpa.md	chogyam-trungpa	lama	alias-match:alias-split	high	Vajrayana Buddhism / Shambhala Buddhism	
+04_persons/christian-rosenkreutz.md	christian-rosenkreutz		needs-manual-review	low	Rosicrucianism (legendary)	
+04_persons/chrysippus.md	chrysippus		needs-manual-review	low	Stoicism	
+04_persons/cistercian-order.md	cistercian-order		needs-manual-review	low		
+04_persons/ciudadela-teotihuacan.md	ciudadela-teotihuacan		needs-manual-review	low		
+04_persons/claude-jacques.md	claude-jacques		needs-manual-review	low		
+04_persons/clement-of-alexandria.md	clement-of-alexandria	theologian	alias-match:alias-split	high	Patristic Christian (Alexandrian school)	
+04_persons/clement-of-rome.md	clement-of-rome	bishop-christian	alias-match:alias-split	high	Patristic Christian (proto-orthodox)	
+04_persons/cleopatra-vii.md	cleopatra-vii	queen,pharaoh	alias-match:alias-split	high	Hellenistic Greek (Macedonian) ruling Eg	
+04_persons/codex-purpureus-rossanensis.md	codex-purpureus-rossanensis		needs-manual-review	low		
+04_persons/colosseum-rome.md	colosseum-rome		needs-manual-review	low		
+04_persons/confucius.md	confucius		needs-manual-review	low	Confucianism	
+04_persons/constantine-i.md	constantine-i	emperor	alias-match:alias-exact	high	Roman (converted to Christianity)	
+04_persons/constantine-the-great.md	constantine-the-great	emperor,religious-patron	contested-ratified (T1)	high		Patron of Christianization; did not internally reform doctrine. Multi-role with religious-reformer o
+04_persons/constantine-von-tischendorf.md	constantine-von-tischendorf		needs-manual-review	low		
+04_persons/constantine-xi-palaiologos.md	constantine-xi-palaiologos	emperor	alias-match:alias-split	high	Eastern Orthodox Christianity (with cond	
+04_persons/cope.md	cope		needs-manual-review	low		
+04_persons/copernicus.md	copernicus		needs-manual-review	low	Renaissance Catholic / Platonic-Pythagor	
+04_persons/coricancha-cusco.md	coricancha-cusco		needs-manual-review	low		
+04_persons/cornelius-agrippa.md	cornelius-agrippa	magus	alias-match:alias-split	high	Renaissance magic / Hermetic-Kabbalist s	
+04_persons/cornelius-centurion.md	cornelius-centurion	disciple-christian	alias-match:alias-split	high	earliest Christianity	
+04_persons/cosimo-de-medici.md	cosimo-de-medici		needs-manual-review	low	Florentine Renaissance	
+04_persons/crispin-branfoot.md	crispin-branfoot		needs-manual-review	low		
+04_persons/critias-younger.md	critias-younger		needs-manual-review	low	Greek (Athenian)	
+04_persons/crusader-mediterranean.md	crusader-mediterranean		needs-manual-review	low		
+04_persons/cyprian-of-carthage.md	cyprian-of-carthage	bishop-christian,theologian	alias-match:alias-split	high	Patristic Christian (proto-orthodox); No	
+04_persons/cyril-of-alexandria.md	cyril-of-alexandria	bishop-christian	alias-match:alias-split	high	Patristic Christian (Alexandrian)	
+04_persons/cyrus-the-great.md	cyrus-the-great	king,emperor	alias-match:alias-split	high	Achaemenid Persian	
+04_persons/d-t-suzuki.md	d-t-suzuki		needs-manual-review	low	Buddhist modernism / Zen	
+04_persons/dalai-lama-14.md	dalai-lama-14	lama	alias-match:alias-split	high	Vajrayana Buddhism / Gelug school	
+04_persons/dalmatic.md	dalmatic		needs-manual-review	low		
+04_persons/daniel-prophet.md	daniel-prophet	prophet-abrahamic	alias-match:alias-exact	high	Second-Temple Jewish (literary frame: 6t	
+04_persons/dante-alighieri.md	dante-alighieri		needs-manual-review	low	medieval-christianity	
+04_persons/darius-i-the-great.md	darius-i-the-great	king	alias-match:alias-split	high	Zoroastrian (Achaemenid imperial-religio	
+04_persons/david-bentley-hart.md	david-bentley-hart	theologian	alias-match:alias-split	high	Eastern Orthodox theology / classical th	
+04_persons/david-brakke.md	david-brakke		needs-manual-review	low	Comparative religion (academic) / early 	
+04_persons/david-king.md	david-king	king	alias-match:alias-exact	high	Israelite / pre-exilic Judah	
+04_persons/dayananda-saraswati.md	dayananda-saraswati	religious-reformer	alias-match:alias-split	high	Hindu modernism — Arya Samaj	
+04_persons/debala-mitra.md	debala-mitra		needs-manual-review	low		
+04_persons/deborah-klimburg-salter.md	deborah-klimburg-salter		needs-manual-review	low		
+04_persons/decius-emperor.md	decius-emperor	emperor	alias-match:alias-split	high	Roman state religion (pagan)	
+04_persons/deganawidah-peacemaker.md	deganawidah-peacemaker	prophet-abrahamic	alias-match:alias-split	high	Haudenosaunee (Iroquois Confederacy)	
+04_persons/derrida.md	derrida		needs-manual-review	low	Continental Philosophy (Deconstruction)	
+04_persons/descartes.md	descartes		needs-manual-review	low	Early modern rationalism / French Cathol	
+04_persons/deucalion.md	deucalion		needs-manual-review	low	Greek / Hellenistic	
+04_persons/devangana-desai.md	devangana-desai		needs-manual-review	low		
+04_persons/dhu-al-qarnayn.md	dhu-al-qarnayn	king	heuristic:king	medium	Islam (Quranic legendary figure)	
+04_persons/diego-duran.md	diego-duran		needs-manual-review	low		
+04_persons/dietrich-bonhoeffer.md	dietrich-bonhoeffer	theologian,pastor-protestant,martyr-christian,religious-reformer	contested-ratified (T1)	high	Christian (Lutheran) / Confessing Church	Per Auditor A 2026-05-31 — adds pastor + reformer (Confessing Church reform-leader) roles missing in
+04_persons/dinis-i-of-portugal.md	dinis-i-of-portugal		needs-manual-review	low		
+04_persons/dinis-i-portugal.md	dinis-i-portugal	king,author-secular	heuristic:king+author-secular	medium	[[tradition-order-of-christ]] / [[tradit	
+04_persons/diocletian-emperor.md	diocletian-emperor	emperor	alias-match:alias-split	high	Roman state religion (pagan; Jovian self	
+04_persons/diodore-of-tarsus.md	diodore-of-tarsus	bishop-christian	alias-match:alias-split	high	Antiochene Christian	
+04_persons/diodorus-siculus.md	diodorus-siculus		needs-manual-review	low	Greek (late Hellenistic / early Augustan	
+04_persons/diogo-de-arruda.md	diogo-de-arruda		needs-manual-review	low		
+04_persons/diogo-de-torralva.md	diogo-de-torralva		needs-manual-review	low		
+04_persons/dioscorus-of-alexandria.md	dioscorus-of-alexandria	theologian	alias-match:alias-split	high	Pre-Chalcedonian Alexandrian Christianit	
+04_persons/divakara-pandita.md	divakara-pandita		needs-manual-review	low		
+04_persons/djoser.md	djoser		needs-manual-review	low		
+04_persons/dogen.md	dogen		needs-manual-review	low	Zen Buddhism — Sōtō school	
+04_persons/domitian-emperor.md	domitian-emperor	emperor	alias-match:alias-exact	high	Roman state religion (pagan)	
+04_persons/donato-bramante.md	donato-bramante		needs-manual-review	low		
+04_persons/donnelly-ignatius.md	donnelly-ignatius		needs-manual-review	low	American populist / 19th-century popular	
+04_persons/doreen-valiente.md	doreen-valiente	priestess-wiccan	contested-ratified (T1)	high	Wicca / Modern Pagan	'Mother of modern Wicca'; co-author of *Book of Shadows* liturgy with Gardner.
+04_persons/dunhuang-gansu.md	dunhuang-gansu		needs-manual-review	low		
+04_persons/dutty-boukman.md	dutty-boukman		needs-manual-review	low	Haitian Vodou / Haitian Revolution	
+04_persons/e-dunhuang.md	e-dunhuang		needs-manual-review	low		
+04_persons/edgar-cayce.md	edgar-cayce	founder,scholar-alternative	contested-ratified (T4)	high	American esoteric / trance prophecy	Per deviant-bridges memory: A.R.E. is a continuing tradition (founder applies); his methodology + cl
+04_persons/eduardo-matos-moctezuma.md	eduardo-matos-moctezuma		needs-manual-review	low		
+04_persons/edward-banning.md	edward-banning		needs-manual-review	low		
+04_persons/edward-herbert-thompson.md	edward-herbert-thompson		needs-manual-review	low		
+04_persons/edward-kelley.md	edward-kelley		needs-manual-review	low	Renaissance esoteric / angelic magic	
+04_persons/edwin-shook.md	edwin-shook		needs-manual-review	low		
+04_persons/elaine-pagels.md	elaine-pagels	scholar-academic-religion	alias-match:alias-split	high	Comparative religion (academic) / early 	
+04_persons/eleanor-mannikka.md	eleanor-mannikka		needs-manual-review	low		
+04_persons/elias-ashmole.md	elias-ashmole		needs-manual-review	low	English Hermetic / Rosicrucian-Masonic	
+04_persons/elias-lonnrot.md	elias-lonnrot		needs-manual-review	low	Finnish Lutheran / national-romantic fol	
+04_persons/eliezer-ben-hyrcanus.md	eliezer-ben-hyrcanus	rabbi-tannaitic	heuristic:rabbi-tannaitic	medium	early Rabbinic Judaism (Tannaitic; Shamm	
+04_persons/elijah-prophet.md	elijah-prophet	prophet-abrahamic	alias-match:alias-exact	high	Israelite / Northern Kingdom	
+04_persons/eliphas-levi.md	eliphas-levi		needs-manual-review	low	Latin Christianity (Catholic background)	
+04_persons/elisha-prophet.md	elisha-prophet	prophet-abrahamic	alias-match:alias-exact	high	Israelite / Northern Kingdom	
+04_persons/emanuel-swedenborg.md	emanuel-swedenborg		needs-manual-review	low	Christian esoteric / Swedenborgian (New 	
+04_persons/emile-durkheim.md	emile-durkheim	scholar-academic-religion	heuristic:scholar-academic	medium	Comparative religion (academic) / Sociol	
+04_persons/empedocles.md	empedocles	author-secular	alias-match:alias-split	high	Pre-Socratic Greek (Pythagorean and Elea	
+04_persons/emperor-shomu.md	emperor-shomu		needs-manual-review	low		
+04_persons/emperor-xiaowen-of-northern-wei.md	emperor-xiaowen-of-northern-wei		needs-manual-review	low		
+04_persons/emperor-yomei.md	emperor-yomei		needs-manual-review	low		
+04_persons/empress-komyo.md	empress-komyo		needs-manual-review	low		
+04_persons/empress-suiko.md	empress-suiko		needs-manual-review	low		
+04_persons/empress-theodora.md	empress-theodora		needs-manual-review	low		
+04_persons/empress-wu-zetian.md	empress-wu-zetian		needs-manual-review	low		
+04_persons/enheduanna.md	enheduanna	author-secular	alias-match:alias-split	high	Sumerian / Akkadian (Sargonic period)	
+04_persons/enmebaragesi.md	enmebaragesi	king	alias-match:alias-exact	high	Sumerian	
+04_persons/enoch.md	enoch		needs-manual-review	low	Israelite religion / Second Temple apoca	
+04_persons/ephrem-the-syrian.md	ephrem-the-syrian	theologian	alias-match:alias-split	high	Syriac Christian	
+04_persons/epictetus.md	epictetus		needs-manual-review	low	Stoicism (Roman)	
+04_persons/epicurus.md	epicurus		needs-manual-review	low	Greek philosophy — Epicureanism	
+04_persons/erich-von-daniken.md	erich-von-daniken		needs-manual-review	low	alternative-history / popular pseudoarch	
+04_persons/ernst-friedrich-zwirner.md	ernst-friedrich-zwirner		needs-manual-review	low		
+04_persons/esau.md	esau		needs-manual-review	low	Israelite / pre-monarchic	
+04_persons/euclid.md	euclid		needs-manual-review	low	Hellenistic Greek mathematics (Platonic 	
+04_persons/eugene-emmanuel-viollet-le-duc.md	eugene-emmanuel-viollet-le-duc		needs-manual-review	low		
+04_persons/euripides.md	euripides	author-secular	heuristic:author-secular	medium	Greek (Athenian dramatic tradition); str	
+04_persons/europe-early-modern.md	europe-early-modern		needs-manual-review	low		
+04_persons/europe-late-medieval.md	europe-late-medieval		needs-manual-review	low		
+04_persons/europe-medieval.md	europe-medieval		needs-manual-review	low		
+04_persons/europe-renaissance.md	europe-renaissance		needs-manual-review	low		
+04_persons/eusebius-of-caesarea.md	eusebius-of-caesarea	bishop-christian	alias-match:alias-split	high	Patristic Christian	
+04_persons/eutyches.md	eutyches		needs-manual-review	low	Christian (Constantinopolitan monastic; 	
+04_persons/evagrius-ponticus.md	evagrius-ponticus		needs-manual-review	low	Patristic Christian (Egyptian Coptic / C	
+04_persons/eve.md	eve		needs-manual-review	low	Israelite religion (founder-figure)	
+04_persons/ewostatewos.md	ewostatewos	founder,religious-reformer	alias-match:alias-split	high	[[tradition-ethiopian-orthodox-tewahedo]	
+04_persons/ezana-of-aksum.md	ezana-of-aksum	king,religious-reformer	alias-match:alias-split	high	[[tradition-ethiopian-orthodox-tewahedo]	
+04_persons/ezekiel.md	ezekiel	prophet-abrahamic	alias-match:alias-split	high	Judahite (exilic)	
+04_persons/ezra.md	ezra		needs-manual-review	low		
+04_persons/fajada-butte-sun-dagger.md	fajada-butte-sun-dagger		needs-manual-review	low		
+04_persons/fajada-butte.md	fajada-butte		needs-manual-review	low		
+04_persons/fan-jinshi.md	fan-jinshi		needs-manual-review	low		
+04_persons/farid-ud-din-attar.md	farid-ud-din-attar	mystic	alias-match:alias-exact	high	Islam (Sufism — Khorasani school)	
+04_persons/fatima-bint-muhammad.md	fatima-bint-muhammad		needs-manual-review	low		
+04_persons/fazang.md	fazang		needs-manual-review	low	Buddhism	
+04_persons/fazlur-rahman.md	fazlur-rahman		needs-manual-review	low	Islamic modernism	
+04_persons/feng-shui.md	feng-shui		needs-manual-review	low		
+04_persons/fentos-meqabyan.md	fentos-meqabyan		needs-manual-review	low	[[tradition-ethiopian-orthodox-tewahedo]	
+04_persons/fernando-pessoa.md	fernando-pessoa	author-secular	alias-match:alias-split	high	[[tradition-portuguese-hermeticism]]	
+04_persons/fibonacci.md	fibonacci		needs-manual-review	low	Medieval European mathematics	
+04_persons/firmicus-maternus.md	firmicus-maternus		needs-manual-review	low	Latin Christianity (4th-c. Constantinian	
+04_persons/flinders-petrie.md	flinders-petrie		needs-manual-review	low		
+04_persons/four-causeways-of-tenochtitlan.md	four-causeways-of-tenochtitlan		needs-manual-review	low		
+04_persons/frances-yates.md	frances-yates		needs-manual-review	low	Comparative religion (academic) / histor	
+04_persons/francis-xavier.md	francis-xavier		needs-manual-review	low		
+04_persons/francisco-alvares.md	francisco-alvares		needs-manual-review	low		
+04_persons/francisco-clavigero.md	francisco-clavigero	monastic-christian-western	heuristic:monastic-western	medium	Roman Catholicism / Mexican Jesuit	
+04_persons/francisco-de-paula-del-villar.md	francisco-de-paula-del-villar		needs-manual-review	low		
+04_persons/fray-bernardino-de-sahagun.md	fray-bernardino-de-sahagun		needs-manual-review	low		
+04_persons/frumentius.md	frumentius	bishop-christian,founder	alias-match:alias-split	high	[[tradition-ethiopian-orthodox-tewahedo]	
+04_persons/fulcanelli.md	fulcanelli		needs-manual-review	low	[[tradition-hermeticism]]	
+04_persons/g-i-gurdjieff.md	g-i-gurdjieff	founder,mystic-syncretic	contested-ratified (T1)	high	The Fourth Way	Founder of the Fourth Way; NRM-studies + Western-esotericism scholarship.
+04_persons/gabriel-archangel-person.md	gabriel-archangel-person		needs-manual-review	low	Judaism / Christianity / Islam	
+04_persons/galawdewos-emperor.md	galawdewos-emperor	king,theologian	alias-match:alias-split	high	[[tradition-ethiopian-orthodox-tewahedo]	
+04_persons/galen-of-pergamon.md	galen-of-pergamon		needs-manual-review	low	Greek medical and Platonist-Aristotelian	
+04_persons/galileo-galilei.md	galileo-galilei		needs-manual-review	low	Early modern science / Catholic (heterod	
+04_persons/gallery-of-the-labyrinths.md	gallery-of-the-labyrinths		needs-manual-review	low		
+04_persons/gallery-of-the-lanzon.md	gallery-of-the-lanzon		needs-manual-review	low		
+04_persons/gamaliel-ii.md	gamaliel-ii	rabbi-tannaitic	heuristic:rabbi-tannaitic	medium	early Rabbinic Judaism (Tannaitic)	
+04_persons/gamaliel-the-elder.md	gamaliel-the-elder	rabbi-tannaitic	heuristic:rabbi-tannaitic	medium	Pharisaic Judaism (early Tannaitic)	
+04_persons/gaozong-emperor-tang.md	gaozong-emperor-tang		needs-manual-review	low		
+04_persons/garcilaso-de-la-vega.md	garcilaso-de-la-vega		needs-manual-review	low		
+04_persons/garth-fowden.md	garth-fowden		needs-manual-review	low	Comparative-religion academic / classica	
+04_persons/gate-of-the-sun-tiwanaku.md	gate-of-the-sun-tiwanaku		needs-manual-review	low		
+04_persons/gaudi-design-models-and-drawings.md	gaudi-design-models-and-drawings		needs-manual-review	low		
+04_persons/gaudi-letters-and-interviews.md	gaudi-letters-and-interviews		needs-manual-review	low		
+04_persons/gemistos-plethon.md	gemistos-plethon		needs-manual-review	low	Byzantine Neoplatonism / Pagan Platonist	
+04_persons/gennadius-scholarios.md	gennadius-scholarios		needs-manual-review	low	Eastern Orthodox Christianity	
+04_persons/george-coedes.md	george-coedes		needs-manual-review	low		
+04_persons/george-grinnell.md	george-grinnell		needs-manual-review	low		
+04_persons/george-h-forsyth.md	george-h-forsyth		needs-manual-review	low		
+04_persons/george-michell.md	george-michell		needs-manual-review	low		
+04_persons/george-pepper.md	george-pepper		needs-manual-review	low		
+04_persons/george-r-collins.md	george-r-collins		needs-manual-review	low		
+04_persons/george-ripley.md	george-ripley		needs-manual-review	low	English medieval-Renaissance alchemy	
+04_persons/george-smith-cuneiformist.md	george-smith-cuneiformist		needs-manual-review	low	Victorian British Museum Assyriology / [	
+04_persons/george-starkey.md	george-starkey		needs-manual-review	low	Anglo-American alchemy / Paracelsian-Sen	
+04_persons/gerald-gardner.md	gerald-gardner	founder,priest-wiccan	contested-ratified (T1)	high	Wicca / Modern Pagan	Per Auditor B 2026-05-31 — was missing from v2 contested-cases entirely. Founder of Wicca, 1954. Hut
+04_persons/gershom-scholem.md	gershom-scholem	scholar-academic-religion	contested-ratified (T1)	high	Comparative religion (academic) / Judaic	Per Auditor A 2026-05-31 — DEMOTED from v2's scholar+philosopher-religious double role. Principle: '
+04_persons/geza-vermes.md	geza-vermes		needs-manual-review	low	Comparative religion (academic) / Dead S	
+04_persons/giacomo-della-porta.md	giacomo-della-porta		needs-manual-review	low		
+04_persons/gian-lorenzo-bernini.md	gian-lorenzo-bernini		needs-manual-review	low		
+04_persons/gilgamesh-king.md	gilgamesh-king	king	alias-match:alias-exact	high	Sumerian / Mesopotamian	
+04_persons/giordano-bruno.md	giordano-bruno		needs-manual-review	low	Renaissance Hermeticism / philosophical 	
+04_persons/giovanni-giustiniani.md	giovanni-giustiniani		needs-manual-review	low	Latin (Genoese Catholic)	
+04_persons/giovanni-pico-della-mirandola.md	giovanni-pico-della-mirandola		needs-manual-review	low	Renaissance Hermetic-Kabbalist Platonism	
+04_persons/giyorgis-of-sagla.md	giyorgis-of-sagla	theologian	alias-match:alias-split	high	[[tradition-ethiopian-orthodox-tewahedo]	
+04_persons/goan-inquisition.md	goan-inquisition		needs-manual-review	low		
+04_persons/goncalo-annes-bandarra.md	goncalo-annes-bandarra	prophet-abrahamic	alias-match:alias-exact	high	[[tradition-sebastianism]]	
+04_persons/gorakhnath.md	gorakhnath		needs-manual-review	low	Hindu — Nath Yoga / Hatha Yoga	
+04_persons/gordon-luce.md	gordon-luce		needs-manual-review	low		
+04_persons/goryeo-korea.md	goryeo-korea		needs-manual-review	low		
+04_persons/graham-hancock.md	graham-hancock	scholar-alternative	contested-ratified (T4)	high	Late-20th / early-21st-century popular p	Per deviant-bridges memory: documented AS alternative-scholarship (T4), not as scholar-academic-reli
+04_persons/great-ball-court-chichen-itza.md	great-ball-court-chichen-itza		needs-manual-review	low		
+04_persons/gregory-of-nazianzus.md	gregory-of-nazianzus	bishop-christian	alias-match:alias-split	high	Patristic Christian (Cappadocian)	
+04_persons/gregory-of-nyssa.md	gregory-of-nyssa	bishop-christian	alias-match:alias-split	high	Patristic Christian (Cappadocian)	
+04_persons/gregory-palamas.md	gregory-palamas	archbishop-christian,theologian	alias-match:alias-split	high	Eastern Orthodox Christianity — Hesychas	
+04_persons/gregory-the-great.md	gregory-the-great	pope-roman-catholic,theologian	alias-match:alias-split	high	Latin Christian (Catholic)	
+04_persons/gualdim-pais.md	gualdim-pais		needs-manual-review	low		
+04_persons/guangxu-emperor.md	guangxu-emperor		needs-manual-review	low		
+04_persons/gudea-of-lagash.md	gudea-of-lagash		needs-manual-review	low	Sumerian (Second Dynasty of Lagash, post	
+04_persons/gunadharma.md	gunadharma		needs-manual-review	low		
+04_persons/guru-arjan.md	guru-arjan		needs-manual-review	low	Sikhism	
+04_persons/guru-gobind-singh-ji.md	guru-gobind-singh-ji		needs-manual-review	low		
+04_persons/guru-gobind-singh.md	guru-gobind-singh		needs-manual-review	low	Sikhism	
+04_persons/guru-nanak.md	guru-nanak	founder,guru-sikh	contested-ratified (T1)	high	Sikhism	Founder of Sikhism + first of the Ten Gurus.
+04_persons/guru-tegh-bahadur-ji.md	guru-tegh-bahadur-ji		needs-manual-review	low	Sikhism	
+04_persons/guze-kannon.md	guze-kannon		needs-manual-review	low		
+04_persons/gyeongju-gyeongsangbuk-do.md	gyeongju-gyeongsangbuk-do		needs-manual-review	low		
+04_persons/haci-bektas-veli.md	haci-bektas-veli		needs-manual-review	low	[[tradition-alevi-bektashi]]	
+04_persons/hadewijch-of-antwerp.md	hadewijch-of-antwerp	author-secular	heuristic:author-secular	medium	Latin Christianity (Beguine, Brabantine)	
+04_persons/hadrian-emperor.md	hadrian-emperor	emperor	alias-match:alias-exact	high	Roman state religion (pagan); Hellenophi	
+04_persons/hafez.md	hafez	mystic	alias-match:alias-exact	high	Islam (Sufism — Persian lyric poetry)	
+04_persons/hagar-matriarch.md	hagar-matriarch		needs-manual-review	low	Egyptian-born / Abrahamic-Israelite	
+04_persons/hakuin.md	hakuin	zen-master,religious-reformer	alias-match:alias-split	high	Rinzai Zen Buddhism	
+04_persons/hammurabi.md	hammurabi	king	alias-match:alias-split	high	Babylonian (Old Babylonian)	
+04_persons/hamza-ibn-ali.md	hamza-ibn-ali	theologian	alias-match:alias-split	high	[[tradition-druze]]	
+04_persons/han-feizi-person.md	han-feizi-person		needs-manual-review	low	Legalism	
+04_persons/hans-jantzen.md	hans-jantzen		needs-manual-review	low		
+04_persons/hans-jonas.md	hans-jonas	scholar-academic-religion	alias-match:alias-split	high	Comparative religion (academic) / philos	
+04_persons/hans-urs-von-balthasar.md	hans-urs-von-balthasar	theologian	alias-match:alias-split	high	Roman Catholicism / Society of Jesus (br	
+04_persons/harisena-vakataka.md	harisena-vakataka		needs-manual-review	low		
+04_persons/harold-bloom.md	harold-bloom	author-secular	heuristic:author-secular	medium	Comparative religion (popular-academic) 	
+04_persons/harun-al-rashid.md	harun-al-rashid		needs-manual-review	low		
+04_persons/hasan-al-askari.md	hasan-al-askari		needs-manual-review	low	Islam (Twelver Shi'a Eleventh Imam)	
+04_persons/hasan-al-basri.md	hasan-al-basri		needs-manual-review	low		
+04_persons/hasan-ibn-ali.md	hasan-ibn-ali		needs-manual-review	low	Islam (universally venerated grandson of	
+04_persons/hatshepsut.md	hatshepsut	pharaoh	heuristic:pharaoh	medium	egyptian-religion	
+04_persons/hecataeus-of-abdera.md	hecataeus-of-abdera		needs-manual-review	low		
+04_persons/heinrich-khunrath.md	heinrich-khunrath		needs-manual-review	low	Latin Christianity (Lutheran) / Renaissa	
+04_persons/helen-schucman.md	helen-schucman		needs-manual-review	low	A Course in Miracles / New Age	
+04_persons/helena-blavatsky.md	helena-blavatsky	founder,mystic-syncretic	contested-ratified (T1)	high	Theosophy	Theosophy founder; Hammer 2001.
+04_persons/helena-empress.md	helena-empress		needs-manual-review	low		
+04_persons/hellenistic-egypt.md	hellenistic-egypt		needs-manual-review	low		
+04_persons/hemiunu.md	hemiunu		needs-manual-review	low		
+04_persons/henri-de-lubac.md	henri-de-lubac	monastic-christian-western	heuristic:monastic-western	medium	Roman Catholicism / Society of Jesus / r	
+04_persons/henri-mouhot.md	henri-mouhot		needs-manual-review	low		
+04_persons/henry-marie-brackenridge.md	henry-marie-brackenridge		needs-manual-review	low		
+04_persons/henry-steel-olcott.md	henry-steel-olcott	founder	alias-match:alias-split	high	Theosophy / Buddhist modernism	
+04_persons/henry-suso.md	henry-suso	mystic,theologian	alias-match:alias-split	high	Latin Christianity (Dominican; Rhineland	
+04_persons/henry-the-navigator.md	henry-the-navigator	king	heuristic:king	medium	[[tradition-order-of-christ]] / [[tradit	
+04_persons/heracleon-valentinian.md	heracleon-valentinian		needs-manual-review	low	Valentinian Gnostic Christianity (Italia	
+04_persons/heraclitus.md	heraclitus	presocratic-philosopher	heuristic:presocratic-philosopher	medium	Greek philosophy (Presocratic)	
+04_persons/heraclius-byzantine-emperor.md	heraclius-byzantine-emperor	emperor	alias-match:alias-split	high	Eastern (Chalcedonian) Christianity; Rom	
+04_persons/heraclius-of-jerusalem.md	heraclius-of-jerusalem		needs-manual-review	low		
+04_persons/hermas-of-rome.md	hermas-of-rome	prophet-abrahamic	alias-match:alias-split	high	Early Roman Christianity / canonical in 	
+04_persons/hermas.md	hermas	prophet-abrahamic	alias-match:alias-split	high	Patristic Christian (proto-orthodox)	
+04_persons/hermes-trismegistus-pseudepigraphic-author.md	hermes-trismegistus-pseudepigraphic-author		needs-manual-review	low	Greco-Egyptian Hermeticism / pseudepigra	
+04_persons/hermogenes-the-painter.md	hermogenes-the-painter	theologian	alias-match:alias-split	high	Christian (eclectic, Platonist-Stoic-lea	
+04_persons/hernan-cortes.md	hernan-cortes		needs-manual-review	low		
+04_persons/hernando-pizarro.md	hernando-pizarro		needs-manual-review	low		
+04_persons/herod-antipas.md	herod-antipas	king	alias-match:alias-exact	high	Herodian / Roman-Judean	
+04_persons/herod-the-great.md	herod-the-great	king	alias-match:alias-exact	high	Hasmonean-aligned Judaism (with Idumean 	
+04_persons/herodotus.md	herodotus		needs-manual-review	low	Greek (Ionian prose ethnography)	
+04_persons/hesiod.md	hesiod	author-secular	alias-match:alias-exact	high	Greek	
+04_persons/hiawatha-haudenosaunee.md	hiawatha-haudenosaunee		needs-manual-review	low	Haudenosaunee (Onondaga or Mohawk — trad	
+04_persons/hierocles.md	hierocles		needs-manual-review	low		
+04_persons/hildegard-of-bingen.md	hildegard-of-bingen	doctor-of-the-church,monastic-christian-western,mystic-christian,theologian	contested-ratified (T1)	high	Latin Christian — Benedictine visionary 	Benedictine abbess + mystic + composer + polymath; declared Doctor of the Church 2012.
+04_persons/hillel-the-elder.md	hillel-the-elder		needs-manual-review	low	Pharisaic / proto-rabbinic Judaism	
+04_persons/hippocrates.md	hippocrates		needs-manual-review	low	Greek (Koan school)	
+04_persons/hippolytus-of-rome.md	hippolytus-of-rome	theologian	alias-match:alias-split	high	Patristic Christian (proto-orthodox; sch	
+04_persons/hiram-abi.md	hiram-abi		needs-manual-review	low		
+04_persons/hiram-bingham.md	hiram-bingham		needs-manual-review	low		
+04_persons/hiram-of-tyre-king.md	hiram-of-tyre-king		needs-manual-review	low		
+04_persons/homer.md	homer	author-secular	alias-match:alias-exact	high	Greek	
+04_persons/honen.md	honen		needs-manual-review	low	Buddhism	
+04_persons/hongren.md	hongren		needs-manual-review	low	Chan Buddhism	
+04_persons/hongwu-emperor.md	hongwu-emperor		needs-manual-review	low		
+04_persons/hopi-kiva.md	hopi-kiva		needs-manual-review	low		
+04_persons/horyuji-tokaiji-engi.md	horyuji-tokaiji-engi		needs-manual-review	low		
+04_persons/hosea-prophet.md	hosea-prophet	prophet-abrahamic	alias-match:alias-exact	high	Israelite (Northern Kingdom)	
+04_persons/howard-vyse.md	howard-vyse		needs-manual-review	low		
+04_persons/hua-tuo.md	hua-tuo		needs-manual-review	low	Chinese	
+04_persons/huayna-capac.md	huayna-capac		needs-manual-review	low		
+04_persons/huayna-picchu.md	huayna-picchu		needs-manual-review	low		
+04_persons/hud-prophet.md	hud-prophet	prophet-abrahamic	alias-match:alias-exact	high	Islam (Quranic prophet tradition)	
+04_persons/hugues-de-payens.md	hugues-de-payens	founder	alias-match:alias-split	high	Latin Christianity (military-religious, 	
+04_persons/huike.md	huike		needs-manual-review	low	Buddhism	
+04_persons/huineng.md	huineng		needs-manual-review	low	Chan / Zen Buddhism — Southern School (s	
+04_persons/huldrych-zwingli.md	huldrych-zwingli	religious-reformer,theologian	alias-match:alias-split	high	Reformed Protestant Christianity (Zwingl	
+04_persons/human-sacrifice-as-state-cult.md	human-sacrifice-as-state-cult		needs-manual-review	low		
+04_persons/huns.md	huns		needs-manual-review	low		
+04_persons/husayn-ibn-ali.md	husayn-ibn-ali		needs-manual-review	low	Islam (universally venerated grandson of	
+04_persons/hyksos.md	hyksos		needs-manual-review	low		
+04_persons/hypatia.md	hypatia		needs-manual-review	low	Alexandrian Neoplatonism	
+04_persons/iain-mcgilchrist.md	iain-mcgilchrist		needs-manual-review	low	Cognitive neuroscience / philosophy of m	
+04_persons/iamblichus.md	iamblichus		needs-manual-review	low	Neoplatonism (theurgic)	
+04_persons/ian-hodder.md	ian-hodder		needs-manual-review	low		
+04_persons/ibn-al-haytham.md	ibn-al-haytham		needs-manual-review	low	Islamic Golden Age (Fatimid Cairo)	
+04_persons/ibn-arabi.md	ibn-arabi	sufi-shaykh,author-secular	alias-match:alias-split	high	Sufi Islam — Akbarī school	
+04_persons/ibn-battuta.md	ibn-battuta		needs-manual-review	low		
+04_persons/ibn-ishaq.md	ibn-ishaq		needs-manual-review	low	Islam — Sunnī (Medinan Mawlā background;	
+04_persons/ibn-rushd.md	ibn-rushd		needs-manual-review	low	Islam (Mālikī Sunnī, with falsafa philos	
+04_persons/ibn-sina.md	ibn-sina	author-secular	alias-match:alias-split	high	Islam (loose Shīʿī / Twelver background;	
+04_persons/ibn-taymiyya.md	ibn-taymiyya	theologian	alias-match:alias-split	high	Islam — Sunnī Ḥanbalī (with substantial 	
+04_persons/ibn-tufayl.md	ibn-tufayl		needs-manual-review	low	Islam (Mālikī Sunnī, Almohad-era court);	
+04_persons/ibrahim-prophet.md	ibrahim-prophet		needs-manual-review	low		
+04_persons/ignatius-of-antioch.md	ignatius-of-antioch	bishop-christian	alias-match:alias-split	high	Patristic Christian (proto-orthodox)	
+04_persons/ikaruga-nara.md	ikaruga-nara		needs-manual-review	low		
+04_persons/iktinos.md	iktinos		needs-manual-review	low		
+04_persons/imhotep.md	imhotep	high-priest-israelite	alias-match:alias-split	high	Egyptian (3rd Dynasty Old Kingdom); deif	
+04_persons/ines-de-castro.md	ines-de-castro	king	heuristic:king	medium	Portuguese medieval history / Portuguese	
+04_persons/intihuatana-machu-picchu.md	intihuatana-machu-picchu		needs-manual-review	low		
+04_persons/irenaeus-of-lyon.md	irenaeus-of-lyon	bishop-christian	alias-match:alias-split	high	Patristic Christian	
+04_persons/isaac-casaubon.md	isaac-casaubon		needs-manual-review	low	Calvinist Protestant humanism / classica	
+04_persons/isaac-luria.md	isaac-luria	kabbalist	alias-match:alias-split	high	Jewish Kabbalah (Lurianic)	
+04_persons/isaac-newton.md	isaac-newton	theologian	alias-match:alias-split	high	Early modern science / Arianism (heterod	
+04_persons/isaac-patriarch.md	isaac-patriarch		needs-manual-review	low	Israelite / pre-monarchic	
+04_persons/isaac-the-blind.md	isaac-the-blind	kabbalist,mystic	alias-match:alias-split	high	Early Kabbalah (Provençal school)	
+04_persons/isaiah-first.md	isaiah-first	prophet-abrahamic	alias-match:alias-exact	high	Judahite	
+04_persons/ise-mie.md	ise-mie		needs-manual-review	low		
+04_persons/ishmael-ben-elisha.md	ishmael-ben-elisha	mystic	alias-match:alias-split	high	early Rabbinic Judaism (Tannaitic); ascr	
+04_persons/ishmael-son-of-abraham.md	ishmael-son-of-abraham		needs-manual-review	low	Abrahamic / Arab eponymous ancestor	
+04_persons/isidore-of-miletus.md	isidore-of-miletus		needs-manual-review	low		
+04_persons/isidore-of-seville.md	isidore-of-seville	bishop-christian	alias-match:alias-split	high	Latin Christian (Visigothic Spain)	
+04_persons/ismail-prophet.md	ismail-prophet		needs-manual-review	low		
+04_persons/israel-regardie.md	israel-regardie		needs-manual-review	low	Hermetic Order of the Golden Dawn / Thel	
+04_persons/itsukushima-miyajima-hiroshima.md	itsukushima-miyajima-hiroshima		needs-manual-review	low		
+04_persons/itzam-yeh.md	itzam-yeh		needs-manual-review	low		
+04_persons/izumo-shimane.md	izumo-shimane		needs-manual-review	low		
+04_persons/jabir-ibn-hayyan.md	jabir-ibn-hayyan		needs-manual-review	low	Islamic (Shia-Ismaili-adjacent) / Arabic	
+04_persons/jacob-baradaeus.md	jacob-baradaeus	bishop-christian	alias-match:alias-split	high	Miaphysite / Syriac Orthodox	
+04_persons/jacob-frank.md	jacob-frank		needs-manual-review	low	Frankism (Sabbatean offshoot — heterodox	
+04_persons/jacob-israel.md	jacob-israel		needs-manual-review	low	Israelite / pre-monarchic	
+04_persons/jacques-de-molay.md	jacques-de-molay		needs-manual-review	low	Latin Christianity (military-religious, 	
+04_persons/jafar-al-sadiq.md	jafar-al-sadiq		needs-manual-review	low	Islam (Shi'a Sixth Imam; also bridge-fig	
+04_persons/jakob-boehme.md	jakob-boehme		needs-manual-review	low	Christian theosophy (Lutheran spirituali	
+04_persons/james-brother-of-jesus.md	james-brother-of-jesus	founder,religious-reformer	alias-match:alias-split	high	earliest Christianity (Jerusalem Jewish-	
+04_persons/james-bruce-of-kinnaird.md	james-bruce-of-kinnaird		needs-manual-review	low	Scottish-Anglican / [[tradition-comparat	
+04_persons/james-burgess.md	james-burgess		needs-manual-review	low		
+04_persons/james-fergusson.md	james-fergusson		needs-manual-review	low		
+04_persons/james-frazer.md	james-frazer	scholar-academic-religion	heuristic:scholar-academic	medium	Comparative religion (academic) / Victor	
+04_persons/james-hillman.md	james-hillman		needs-manual-review	low	Jungian / post-Jungian / archetypal psyc	
+04_persons/james-hollis.md	james-hollis	author-secular	heuristic:author-secular	medium	Jungian / post-Jungian depth psychology	
+04_persons/james-mellaart.md	james-mellaart		needs-manual-review	low		
+04_persons/james-son-of-alphaeus.md	james-son-of-alphaeus	apostle-christian	alias-match:alias-exact	high	earliest Christianity	
+04_persons/james-son-of-zebedee.md	james-son-of-zebedee	apostle-christian	alias-match:alias-split	high	earliest Christianity	
+04_persons/jan-assmann.md	jan-assmann	scholar-academic-religion	alias-match:alias-split	high	comparative-religion-academic; egyptolog	
+04_persons/jan-hus.md	jan-hus		needs-manual-review	low	Medieval Christianity / Hussitism	
+04_persons/jan-van-ruusbroec.md	jan-van-ruusbroec	mystic,theologian	alias-match:alias-split	high	Latin Christianity (Augustinian canon; F	
+04_persons/jasaw-chan-kawiil-i.md	jasaw-chan-kawiil-i		needs-manual-review	low		
+04_persons/jayavarman-vii.md	jayavarman-vii		needs-manual-review	low		
+04_persons/jean-bony.md	jean-bony		needs-manual-review	low		
+04_persons/jean-de-chelles.md	jean-de-chelles		needs-manual-review	low		
+04_persons/jean-francois-champollion.md	jean-francois-champollion		needs-manual-review	low	comparative-religion-academic	
+04_persons/jean-jacques-rousseau.md	jean-jacques-rousseau	author-secular	heuristic:author-secular	medium	French Enlightenment	
+04_persons/jean-philippe-lauer.md	jean-philippe-lauer		needs-manual-review	low		
+04_persons/jean-pierre-mahe.md	jean-pierre-mahe		needs-manual-review	low	Comparative-religion academic / Coptolog	
+04_persons/jean-pierre-protzen.md	jean-pierre-protzen		needs-manual-review	low		
+04_persons/jeong-do-jeon.md	jeong-do-jeon		needs-manual-review	low		
+04_persons/jeremiah.md	jeremiah	prophet-abrahamic	alias-match:alias-exact	high	Judahite	
+04_persons/jerome.md	jerome		needs-manual-review	low	Patristic Christian (Latin)	
+04_persons/jesus-of-nazareth.md	jesus-of-nazareth	founder,prophet-abrahamic	contested-ratified (T1)	high	Second Temple Judaism → origin of Christ	Academic-neutral framing. Tradition-internal claims (Son of God, Messiah, second person of Trinity) 
+04_persons/jiajing-emperor.md	jiajing-emperor		needs-manual-review	low		
+04_persons/jill-neitzel.md	jill-neitzel		needs-manual-review	low		
+04_persons/joao-de-castilho.md	joao-de-castilho		needs-manual-review	low		
+04_persons/johann-valentin-andreae.md	johann-valentin-andreae	pastor-protestant	alias-match:alias-split	high	Lutheran / Rosicrucian / esoteric Protes	
+04_persons/johannes-reuchlin.md	johannes-reuchlin		needs-manual-review	low	Christian Kabbalah / German Hebraism	
+04_persons/johannes-tauler.md	johannes-tauler	mystic	alias-match:alias-split	high	Latin Christianity (Dominican; Rhineland	
+04_persons/john-brumley.md	john-brumley		needs-manual-review	low		
+04_persons/john-calvin.md	john-calvin	religious-reformer,theologian	alias-match:alias-split	high	Reformed Protestant Christianity (Calvin	
+04_persons/john-cassian.md	john-cassian		needs-manual-review	low	Latin Christian (with Egyptian-monastic 	
+04_persons/john-chrysostom.md	john-chrysostom	bishop-christian	alias-match:alias-split	high	Patristic Christian (Antiochene)	
+04_persons/john-d-turner.md	john-d-turner		needs-manual-review	low	Comparative religion (academic) / Gnosti	
+04_persons/john-dee.md	john-dee	magus	alias-match:alias-split	high	Renaissance esoteric / Hermetic-Kabbalis	
+04_persons/john-eddy.md	john-eddy		needs-manual-review	low		
+04_persons/john-evangelist.md	john-evangelist	mystic	alias-match:alias-split	high	early Christianity (Johannine community)	
+04_persons/john-griffiths.md	john-griffiths		needs-manual-review	low		
+04_persons/john-locke.md	john-locke		needs-manual-review	low	British Empiricism / Whig political thou	
+04_persons/john-mark.md	john-mark	disciple-christian	alias-match:alias-split	high	earliest Christianity	
+04_persons/john-marshall.md	john-marshall		needs-manual-review	low		
+04_persons/john-milton.md	john-milton		needs-manual-review	low	protestantism	
+04_persons/john-of-damascus.md	john-of-damascus	theologian	alias-match:alias-split	high	Eastern Christian (Chalcedonian)	
+04_persons/john-of-patmos.md	john-of-patmos	prophet-abrahamic,author-secular	alias-match:alias-split	high	Late-first-century Christianity (Asia Mi	
+04_persons/john-of-the-cross.md	john-of-the-cross	author-secular	alias-match:alias-split	high	Latin Christianity (Catholic Counter-Ref	
+04_persons/john-rick.md	john-rick		needs-manual-review	low		
+04_persons/john-rowe.md	john-rowe		needs-manual-review	low		
+04_persons/john-scotus-eriugena.md	john-scotus-eriugena	theologian	alias-match:alias-split	high	Latin Christian — Carolingian Neoplatoni	
+04_persons/john-son-of-zebedee.md	john-son-of-zebedee	apostle-christian	alias-match:alias-exact	high	earliest Christianity	
+04_persons/john-the-baptist.md	john-the-baptist	prophet-abrahamic	alias-match:alias-exact	high	Second Temple Judaism (sectarian, apocal	
+04_persons/jongmyo-jerye.md	jongmyo-jerye		needs-manual-review	low		
+04_persons/jongmyo-jeryeak.md	jongmyo-jeryeak		needs-manual-review	low		
+04_persons/jordan-peterson.md	jordan-peterson		needs-manual-review	low	Clinical psychology + Jungian / mytholog	
+04_persons/jordi-bonet-i-armengol.md	jordi-bonet-i-armengol		needs-manual-review	low		
+04_persons/jordi-fauli.md	jordi-fauli		needs-manual-review	low		
+04_persons/jorge-afonso.md	jorge-afonso		needs-manual-review	low		
+04_persons/jose-diaz-bolio.md	jose-diaz-bolio		needs-manual-review	low		
+04_persons/joseon-korea.md	joseon-korea		needs-manual-review	low		
+04_persons/joseon-wangjo-sillok.md	joseon-wangjo-sillok		needs-manual-review	low		
+04_persons/josep-maria-bocabella.md	josep-maria-bocabella		needs-manual-review	low		
+04_persons/josep-maria-jujol.md	josep-maria-jujol		needs-manual-review	low		
+04_persons/joseph-campbell.md	joseph-campbell		needs-manual-review	low	Comparative religion (academic, populari	
+04_persons/joseph-father-of-jesus.md	joseph-father-of-jesus		needs-manual-review	low	earliest Christianity	
+04_persons/joseph-of-arimathea.md	joseph-of-arimathea		needs-manual-review	low	earliest Christianity	
+04_persons/joseph-patriarch.md	joseph-patriarch		needs-manual-review	low	Israelite / pre-monarchic	
+04_persons/joseph-ratzinger-benedict-xvi.md	joseph-ratzinger-benedict-xvi	theologian,pope-roman-catholic	alias-match:alias-split	high	Roman Catholicism / ressourcement / Augu	
+04_persons/joseph-smith.md	joseph-smith	founder	contested-ratified (T1)	high	Mormonism / Latter-day Saint	Per Auditor A 2026-05-31 — DEMOTED from v2's ['founder', 'prophet-abrahamic']. The Abrahamic-prophet
+04_persons/joseph-von-hammer-purgstall.md	joseph-von-hammer-purgstall		needs-manual-review	low	Habsburg Austrian academic Orientalism /	
+04_persons/josephus.md	josephus		needs-manual-review	low	Hellenistic Judaism (Pharisaic education	
+04_persons/joshua-ben-hananiah.md	joshua-ben-hananiah	rabbi-tannaitic	heuristic:rabbi-tannaitic	medium	early Rabbinic Judaism (Tannaitic; Hille	
+04_persons/joshua-bin-nun.md	joshua-bin-nun		needs-manual-review	low	Israelite / pre-monarchic	
+04_persons/joshua-the-high-priest.md	joshua-the-high-priest		needs-manual-review	low		
+04_persons/josiah-king.md	josiah-king	king,religious-reformer	alias-match:alias-split	high	Judahite	
+04_persons/juan-bassegoda-nonell.md	juan-bassegoda-nonell		needs-manual-review	low		
+04_persons/juan-pizarro.md	juan-pizarro		needs-manual-review	low		
+04_persons/judah-ha-nasi.md	judah-ha-nasi	rabbi-tannaitic	heuristic:rabbi-tannaitic	medium	Rabbinic Judaism (Tannaitic)	
+04_persons/judas-iscariot.md	judas-iscariot	apostle-christian	alias-match:alias-split	high	earliest Christianity; Sethian/Cainite G	
+04_persons/julian-of-norwich.md	julian-of-norwich	mystic	alias-match:alias-split	high	Latin Christianity (anchoritic, English 	
+04_persons/julian-the-apostate.md	julian-the-apostate	emperor	alias-match:alias-split	high	Roman (pagan restorationist; Iamblichean	
+04_persons/julio-c-tello.md	julio-c-tello		needs-manual-review	low		
+04_persons/justin-martyr.md	justin-martyr		needs-manual-review	low	Patristic Christian	
+04_persons/justinian-i.md	justinian-i	emperor	alias-match:alias-exact	high	Eastern Christian (Chalcedonian)	
+04_persons/kabir.md	kabir	author-secular,mystic,religious-reformer	alias-match:alias-split	high	Sant tradition (North Indian bhakti); al	
+04_persons/kaleb-of-aksum.md	kaleb-of-aksum	king	alias-match:alias-split	high	[[tradition-ethiopian-orthodox-tewahedo]	
+04_persons/kallikrates.md	kallikrates		needs-manual-review	low		
+04_persons/kangxi-emperor.md	kangxi-emperor		needs-manual-review	low		
+04_persons/kanishka-i.md	kanishka-i		needs-manual-review	low		
+04_persons/kanishka.md	kanishka	king	alias-match:alias-split	high	Kushan state-religion (Zoroastrian-Bactr	
+04_persons/karen-armstrong.md	karen-armstrong		needs-manual-review	low	Comparative religion (popular)	
+04_persons/karen-king.md	karen-king	scholar-academic-religion	alias-match:alias-split	high	Comparative religion (academic) / early 	
+04_persons/karl-gotthelf-von-hund.md	karl-gotthelf-von-hund		needs-manual-review	low	Latin Christianity (Lutheran) / [[tradit	
+04_persons/karma-lingpa.md	karma-lingpa		needs-manual-review	low	Tibetan Vajrayāna Buddhism (Nyingma scho	
+04_persons/karuvur-thevar.md	karuvur-thevar		needs-manual-review	low		
+04_persons/kepler.md	kepler		needs-manual-review	low	Early modern science / Lutheran Christia	
+04_persons/kesa.md	kesa		needs-manual-review	low		
+04_persons/keshub-chandra-sen.md	keshub-chandra-sen	religious-reformer	alias-match:alias-split	high	Hindu modernism — Brahmo Samaj / Naba-Bi	
+04_persons/kevin-van-bladel.md	kevin-van-bladel		needs-manual-review	low	Comparative-religion academic / Arabist 	
+04_persons/khadija-bint-khuwaylid.md	khadija-bint-khuwaylid		needs-manual-review	low	Islam (pre-Islamic / early Islamic Mecca	
+04_persons/khafre.md	khafre	pharaoh	heuristic:pharaoh	medium		
+04_persons/khanda-sikh.md	khanda-sikh		needs-manual-review	low		
+04_persons/khufu.md	khufu	pharaoh	heuristic:pharaoh	medium		
+04_persons/kim-daeseong.md	kim-daeseong		needs-manual-review	low		
+04_persons/king-dinis-of-portugal.md	king-dinis-of-portugal		needs-manual-review	low		
+04_persons/king-gyeongdeok.md	king-gyeongdeok		needs-manual-review	low		
+04_persons/king-henry-ii-of-england.md	king-henry-ii-of-england		needs-manual-review	low		
+04_persons/king-henry-iii-of-england.md	king-henry-iii-of-england		needs-manual-review	low		
+04_persons/king-hyegong.md	king-hyegong		needs-manual-review	low		
+04_persons/king-john-of-england.md	king-john-of-england		needs-manual-review	low		
+04_persons/king-lalibela.md	king-lalibela		needs-manual-review	low		
+04_persons/king-louis-vii-of-france.md	king-louis-vii-of-france		needs-manual-review	low		
+04_persons/king-manuel-i-of-portugal.md	king-manuel-i-of-portugal		needs-manual-review	low		
+04_persons/king-sebastian-i-of-portugal.md	king-sebastian-i-of-portugal		needs-manual-review	low		
+04_persons/king-sejo-of-joseon.md	king-sejo-of-joseon		needs-manual-review	low		
+04_persons/king-sejong-of-joseon.md	king-sejong-of-joseon		needs-manual-review	low		
+04_persons/king-seonjo-of-joseon.md	king-seonjo-of-joseon		needs-manual-review	low		
+04_persons/king-taejo-of-joseon.md	king-taejo-of-joseon		needs-manual-review	low		
+04_persons/kinich-janaab-pakal-i.md	kinich-janaab-pakal-i		needs-manual-review	low		
+04_persons/kinich-kan-balam-ii.md	kinich-kan-balam-ii		needs-manual-review	low		
+04_persons/klaus-schmidt.md	klaus-schmidt		needs-manual-review	low		
+04_persons/knorr-von-rosenroth.md	knorr-von-rosenroth		needs-manual-review	low	Christian Kabbalah	
+04_persons/kobben-koyo-shogun.md	kobben-koyo-shogun		needs-manual-review	low		
+04_persons/krishna-i-rashtrakuta.md	krishna-i-rashtrakuta		needs-manual-review	low		
+04_persons/krishnadasa-kaviraja.md	krishnadasa-kaviraja		needs-manual-review	low	Hindu Bhakti (Gaudiya Vaishnava)	
+04_persons/kuai-xiang.md	kuai-xiang		needs-manual-review	low		
+04_persons/kulasekhara-pandya.md	kulasekhara-pandya		needs-manual-review	low		
+04_persons/kumarajiva-person.md	kumarajiva-person		needs-manual-review	low	Mahāyāna Buddhism	
+04_persons/kumarajiva.md	kumarajiva		needs-manual-review	low		
+04_persons/kuni-yuzuri.md	kuni-yuzuri		needs-manual-review	low		
+04_persons/kunjara-mallan-rajaraja-perunthachan.md	kunjara-mallan-rajaraja-perunthachan		needs-manual-review	low		
+04_persons/kuratsukuri-no-tori.md	kuratsukuri-no-tori		needs-manual-review	low		
+04_persons/kurt-behrendt.md	kurt-behrendt		needs-manual-review	low		
+04_persons/kurt-weitzmann.md	kurt-weitzmann		needs-manual-review	low		
+04_persons/l-ron-hubbard.md	l-ron-hubbard	founder	alias-match:alias-split	high	Scientology	
+04_persons/la-tene-celtic.md	la-tene-celtic		needs-manual-review	low		
+04_persons/lactantius.md	lactantius		needs-manual-review	low	Christianity (Constantinian Latin)	
+04_persons/lal-ded.md	lal-ded	author-secular	heuristic:author-secular	medium	Hindu — Kashmir Shaivism (Trika); bridge	
+04_persons/lalibela-king.md	lalibela-king	king	alias-match:alias-split	high	[[tradition-ethiopian-orthodox-tewahedo]	
+04_persons/lanz-von-liebenfels.md	lanz-von-liebenfels	monastic-christian-western	heuristic:monastic-western	medium	[[tradition-ordo-novi-templi]] (founder)	
+04_persons/lanzon-monolith.md	lanzon-monolith		needs-manual-review	low		
+04_persons/laozi.md	laozi	founder	alias-match:alias-split	high	Daoism	
+04_persons/laurette-sejourne.md	laurette-sejourne		needs-manual-review	low		
+04_persons/lazarus-of-bethany.md	lazarus-of-bethany	disciple-christian	alias-match:alias-exact	high	earliest Christianity	
+04_persons/le-zun.md	le-zun		needs-manual-review	low		
+04_persons/lee-clare.md	lee-clare		needs-manual-review	low		
+04_persons/leibniz.md	leibniz		needs-manual-review	low	German rationalism / Lutheran Christiani	
+04_persons/leo-the-great.md	leo-the-great	pope-roman-catholic,theologian	alias-match:alias-split	high	Latin Christian (Catholic)	
+04_persons/leonard-woolley.md	leonard-woolley		needs-manual-review	low		
+04_persons/leopoldo-batres.md	leopoldo-batres		needs-manual-review	low		
+04_persons/lidai-fabao-ji.md	lidai-fabao-ji		needs-manual-review	low		
+04_persons/linda-manzanilla.md	linda-manzanilla		needs-manual-review	low		
+04_persons/linda-schele.md	linda-schele		needs-manual-review	low		
+04_persons/lipit-ishtar.md	lipit-ishtar	king	alias-match:alias-split	high	Sumerian / Akkadian (First Dynasty of Is	
+04_persons/lisa-owen.md	lisa-owen		needs-manual-review	low		
+04_persons/lord-elgin.md	lord-elgin		needs-manual-review	low		
+04_persons/louis-komjathy.md	louis-komjathy		needs-manual-review	low	Comparative religion (academic) / Daoism	
+04_persons/lucian-of-antioch.md	lucian-of-antioch		needs-manual-review	low	Patristic Christian (Antiochene scribal 	
+04_persons/lucian-of-samosata.md	lucian-of-samosata		needs-manual-review	low	Greek Second Sophistic (pagan)	
+04_persons/luigi-manini.md	luigi-manini		needs-manual-review	low		
+04_persons/luis-de-camoes.md	luis-de-camoes	author-secular	heuristic:author-secular	medium	[[tradition-portuguese-hermeticism]] / R	
+04_persons/luis-eduardo-arochi.md	luis-eduardo-arochi		needs-manual-review	low		
+04_persons/luis-lumbreras.md	luis-lumbreras		needs-manual-review	low		
+04_persons/luke-evangelist.md	luke-evangelist		needs-manual-review	low	earliest Christianity (Pauline circle)	
+04_persons/luoyang-henan.md	luoyang-henan		needs-manual-review	low		
+04_persons/luqman-sage.md	luqman-sage		needs-manual-review	low	Islam (Quranic wisdom figure)	
+04_persons/lut.md	lut	prophet-abrahamic	alias-match:alias-split	high	Islam (Quranic prophet); Israelite / Heb	
+04_persons/lydia-of-thyatira.md	lydia-of-thyatira		needs-manual-review	low	earliest Christianity	
+04_persons/lynn-meskell.md	lynn-meskell		needs-manual-review	low		
+04_persons/macarius-of-jerusalem.md	macarius-of-jerusalem		needs-manual-review	low		
+04_persons/macrina-the-younger.md	macrina-the-younger		needs-manual-review	low	Patristic Christian (Cappadocian)	
+04_persons/madhva.md	madhva	acharya-hindu,philosopher-religious	contested-ratified (T1)	high	Hindu — Dvaita Vedanta	Same pattern.
+04_persons/mahakashyapa.md	mahakashyapa		needs-manual-review	low		
+04_persons/mahakasyapa.md	mahakasyapa	disciple-christian	alias-match:alias-split	high	Buddhism (pre-sectarian; first patriarch	
+04_persons/mahamoggallana.md	mahamoggallana		needs-manual-review	low		
+04_persons/mahatma-gandhi.md	mahatma-gandhi	philosopher-religious	alias-match:alias-split	high		
+04_persons/mahavira.md	mahavira	tirthankara-jain,founder	contested-ratified (T1)	high	Jainism	24th and final Tīrthaṅkara of this cosmic cycle; founder of historical Jainism.
+04_persons/mahayana-sutras.md	mahayana-sutras		needs-manual-review	low		
+04_persons/mahmud-of-ghazni.md	mahmud-of-ghazni		needs-manual-review	low		
+04_persons/maimonides.md	maimonides		needs-manual-review	low	Rabbinic Judaism — medieval Aristotelian	
+04_persons/majorville-cairn-alberta.md	majorville-cairn-alberta		needs-manual-review	low		
+04_persons/makeda-queen-of-sheba.md	makeda-queen-of-sheba	queen	alias-match:alias-split	high	[[tradition-ethiopian-orthodox-tewahedo]	
+04_persons/malcolm-miller.md	malcolm-miller		needs-manual-review	low		
+04_persons/manchu-qing.md	manchu-qing		needs-manual-review	low		
+04_persons/manco-inca-yupanqui.md	manco-inca-yupanqui		needs-manual-review	low		
+04_persons/mandate-of-heaven.md	mandate-of-heaven		needs-manual-review	low		
+04_persons/manetho.md	manetho		needs-manual-review	low	Egyptian (Sebennytos priesthood) → early	
+04_persons/mani.md	mani	prophet-abrahamic	alias-match:alias-split	high	Manichaeism	
+04_persons/manikkavacakar.md	manikkavacakar	author-secular	heuristic:author-secular	medium	Hindu Bhakti (Tamil Shaivism — Saiva Sid	
+04_persons/mansa-musa.md	mansa-musa		needs-manual-review	low		
+04_persons/manu.md	manu		needs-manual-review	low	Vedic / Hindu	
+04_persons/manuel-i-portugal.md	manuel-i-portugal		needs-manual-review	low		
+04_persons/manuel-j-gandra.md	manuel-j-gandra		needs-manual-review	low	[[tradition-portuguese-hermeticism]]	
+04_persons/marcion-of-sinope.md	marcion-of-sinope		needs-manual-review	low	Marcionite Christianity	
+04_persons/marcus-aurelius-emperor.md	marcus-aurelius-emperor	emperor	alias-match:alias-split	high	Stoicism (Roman state religion as practi	
+04_persons/marcus-the-magician.md	marcus-the-magician		needs-manual-review	low	Valentinian Gnostic Christianity (Marcos	
+04_persons/marcus-vipsanius-agrippa.md	marcus-vipsanius-agrippa		needs-manual-review	low		
+04_persons/marguerite-porete.md	marguerite-porete	mystic,theologian	alias-match:alias-split	high	Latin Christianity (Beguine; vernacular 	
+04_persons/maria-hebraica.md	maria-hebraica		needs-manual-review	low		
+04_persons/maria-the-jewess.md	maria-the-jewess		needs-manual-review	low	Greco-Egyptian alchemy (Jewish-Hellenist	
+04_persons/marie-laveau.md	marie-laveau	queen	heuristic:queen	medium	New Orleans Voodoo (Louisiana, descended	
+04_persons/marija-gimbutas.md	marija-gimbutas		needs-manual-review	low		
+04_persons/mark-evangelist.md	mark-evangelist		needs-manual-review	low	earliest Christianity	
+04_persons/mark-lehner.md	mark-lehner		needs-manual-review	low		
+04_persons/mark-singleton.md	mark-singleton		needs-manual-review	low	Comparative religion (academic) / South 	
+04_persons/marshall-vian-summers.md	marshall-vian-summers	founder	alias-match:alias-split	high	New Message from God / New Age channeled	
+04_persons/marsilio-ficino.md	marsilio-ficino		needs-manual-review	low	Renaissance Platonism / Hermeticism	
+04_persons/martha-of-bethany.md	martha-of-bethany	disciple-christian	alias-match:alias-exact	high	earliest Christianity	
+04_persons/martin-buber.md	martin-buber	theologian	alias-match:alias-split	high	German-Jewish philosophy / dialogical ph	
+04_persons/martin-luther.md	martin-luther	religious-reformer,theologian	alias-match:alias-split	high	Protestant Christianity (Lutheran)	
+04_persons/mary-baker-eddy.md	mary-baker-eddy	founder	alias-match:alias-split	high	Christian Science	
+04_persons/mary-magdalene.md	mary-magdalene	apostle-christian,saint-roman-catholic,saint-eastern-orthodox	contested-ratified (T1)	high	earliest Christianity; Gnostic tradition	Per v3 §4 — apostle-christian per Brock 2003 *Mary Magdalene, the First Apostle* (Eastern Orthodox '
+04_persons/mary-mother-of-jesus.md	mary-mother-of-jesus	founder	alias-match:alias-exact	high	Earliest Christianity	
+04_persons/mary-of-bethany.md	mary-of-bethany	disciple-christian	alias-match:alias-exact	high	earliest Christianity	
+04_persons/master-gerhard.md	master-gerhard		needs-manual-review	low		
+04_persons/matsyendranath.md	matsyendranath	mahasiddha	heuristic:mahasiddha	medium	Hindu — Nath sampradaya / Kaula Tantra; 	
+04_persons/matteo-ricci.md	matteo-ricci	monastic-christian-western	heuristic:monastic-western	medium	Jesuit (Society of Jesus)	
+04_persons/matthew-apostle.md	matthew-apostle	apostle-christian	alias-match:alias-exact	high	earliest Christianity	
+04_persons/matthew-evangelist.md	matthew-evangelist		needs-manual-review	low	earliest Christianity (Jewish-Christian)	
+04_persons/max-muller.md	max-muller		needs-manual-review	low	Comparative religion (academic)	
+04_persons/maximus-the-confessor.md	maximus-the-confessor	theologian	alias-match:alias-split	high	Eastern Christian — Chalcedonian	
+04_persons/mazdak.md	mazdak		needs-manual-review	low	Sasanian-era Zoroastrian heretical refor	
+04_persons/mechthild-of-magdeburg.md	mechthild-of-magdeburg	monastic-christian-western	heuristic:monastic-western	medium	Latin Christianity (Beguine, then Cister	
+04_persons/mehmed-ii.md	mehmed-ii	emperor	alias-match:alias-split	high	Islam — Sunni (Ottoman; Hanafi)	
+04_persons/meister-eckhart.md	meister-eckhart	theologian	alias-match:alias-split	high	Latin Christian — Dominican Rhineland my	
+04_persons/melchizedek.md	melchizedek	king	heuristic:king	medium	Hebrew Bible / Second-Temple Judaism / C	
+04_persons/melchor-arteaga.md	melchor-arteaga		needs-manual-review	low		
+04_persons/melito-of-sardis.md	melito-of-sardis	bishop-christian	alias-match:alias-split	high	Patristic Christian (Quartodeciman Asian	
+04_persons/melvin-fowler.md	melvin-fowler		needs-manual-review	low		
+04_persons/menander-i-soter.md	menander-i-soter	king	alias-match:alias-split	high	Indo-Greek (Hellenistic); Buddhist conve	
+04_persons/menander-of-samaria.md	menander-of-samaria		needs-manual-review	low	Samaritan religious milieu; Simonian / p	
+04_persons/menelik-i-legendary.md	menelik-i-legendary	king	alias-match:alias-split	high	[[tradition-ethiopian-orthodox-tewahedo]	
+04_persons/mengzi-person.md	mengzi-person		needs-manual-review	low	Confucianism	
+04_persons/merle-greene-robertson.md	merle-greene-robertson		needs-manual-review	low		
+04_persons/mes-anepada.md	mes-anepada	king	alias-match:alias-exact	high	Sumerian	
+04_persons/mesa-verde.md	mesa-verde		needs-manual-review	low		
+04_persons/michael-archangel-person.md	michael-archangel-person		needs-manual-review	low	Second Temple Judaism → Christianity → I	
+04_persons/michael-i-cerularius.md	michael-i-cerularius		needs-manual-review	low		
+04_persons/michael-maier.md	michael-maier		needs-manual-review	low	Latin Christianity (Lutheran) / Renaissa	
+04_persons/michael-sendivogius.md	michael-sendivogius		needs-manual-review	low	Polish-Bohemian Latin alchemy	
+04_persons/michelangelo-buonarroti.md	michelangelo-buonarroti		needs-manual-review	low		
+04_persons/milarepa.md	milarepa	author-secular	alias-match:alias-split	high	Vajrayāna Buddhism — Kagyu school	
+04_persons/mimar-sinan.md	mimar-sinan		needs-manual-review	low		
+04_persons/mirabai.md	mirabai	author-secular	heuristic:author-secular	medium	Hindu Bhakti (Vaishnava — Krishna-bhakti	
+04_persons/mircea-eliade.md	mircea-eliade	scholar-academic-religion	contested-ratified (T1)	high	Comparative religion (academic) / histor	Historian of religion; Wasserstrom 1999 documents Eliade's religious-Orthodox-nationalist commitment
+04_persons/miriam-prophetess.md	miriam-prophetess	prophet-abrahamic	alias-match:alias-exact	high	Israelite / pre-monarchic	
+04_persons/mnesicles.md	mnesicles		needs-manual-review	low		
+04_persons/moctezuma-i.md	moctezuma-i		needs-manual-review	low		
+04_persons/moctezuma-ii.md	moctezuma-ii		needs-manual-review	low		
+04_persons/modestus-of-jerusalem.md	modestus-of-jerusalem		needs-manual-review	low		
+04_persons/mongols.md	mongols		needs-manual-review	low		
+04_persons/montanus.md	montanus	prophet-abrahamic	alias-match:alias-split	high	Montanism (the *New Prophecy*)	
+04_persons/moses-cordovero.md	moses-cordovero	kabbalist	alias-match:alias-split	high	Jewish Kabbalah	
+04_persons/moses-de-leon.md	moses-de-leon	kabbalist	alias-match:alias-split	high	Kabbalistic Judaism	
+04_persons/moses.md	moses	prophet-abrahamic	alias-match:alias-split	high	Israelite religion (founder-figure)	
+04_persons/motoori-norinaga.md	motoori-norinaga		needs-manual-review	low	Shintō / Kokugaku (National Learning)	
+04_persons/mozi-person.md	mozi-person	founder	alias-match:alias-split	high	Mohism	
+04_persons/mt-misen-itsukushima.md	mt-misen-itsukushima		needs-manual-review	low		
+04_persons/muawiya-ibn-abi-sufyan.md	muawiya-ibn-abi-sufyan	sahabi	heuristic:sahabi	medium	Islam — Sunnī (controversial in Sunni tr	
+04_persons/muhammad-abduh.md	muhammad-abduh	religious-reformer	alias-match:alias-split	high	Islamic modernism	
+04_persons/muhammad-al-baqir.md	muhammad-al-baqir		needs-manual-review	low	Islam (Shi'a Fifth Imam)	
+04_persons/muhammad-al-jawad.md	muhammad-al-jawad		needs-manual-review	low	Islam (Twelver Shi'a Ninth Imam)	
+04_persons/muhammad-al-mahdi-person.md	muhammad-al-mahdi-person		needs-manual-review	low	Islam (Twelver Shi'a Twelfth Imam; the a	
+04_persons/muhammad-ibn-abdullah.md	muhammad-ibn-abdullah	prophet-abrahamic	alias-match:alias-split	high	Islam	
+04_persons/muhammad-iqbal.md	muhammad-iqbal	author-secular	alias-match:alias-split	high		
+04_persons/muhammad-prophet.md	muhammad-prophet		needs-manual-review	low		
+04_persons/mulla-omar.md	mulla-omar		needs-manual-review	low		
+04_persons/mulla-sadra.md	mulla-sadra		needs-manual-review	low	Islamic philosophy / Sufism — Transcende	
+04_persons/murad-iv.md	murad-iv		needs-manual-review	low		
+04_persons/musa-al-kazim.md	musa-al-kazim		needs-manual-review	low	Islam (Twelver Shi'a Seventh Imam)	
+04_persons/mustafa-kemal-ataturk.md	mustafa-kemal-ataturk		needs-manual-review	low		
+04_persons/muyuq-marka.md	muyuq-marka		needs-manual-review	low		
+04_persons/myrrh-as-trade-commodity.md	myrrh-as-trade-commodity		needs-manual-review	low		
+04_persons/n-t-wright.md	n-t-wright	theologian	alias-match:alias-split	high	Anglican (Church of England) / historica	
+04_persons/nabonidus.md	nabonidus		needs-manual-review	low		
+04_persons/nachmanides.md	nachmanides	kabbalist	alias-match:alias-split	high	Jewish — Talmudic Judaism and Kabbalah (	
+04_persons/nagarjuna.md	nagarjuna		needs-manual-review	low	Mahayana Buddhism (Madhyamaka school)	
+04_persons/nagasena.md	nagasena		needs-manual-review	low	Buddhism (Sarvāstivāda or early-school m	
+04_persons/nakayama-miki.md	nakayama-miki		needs-manual-review	low		
+04_persons/nammalvar.md	nammalvar	author-secular	heuristic:author-secular	medium	Hindu Bhakti (Tamil Vaishnava — Alvar tr	
+04_persons/naram-sin.md	naram-sin	king	alias-match:alias-split	high	Akkadian	
+04_persons/narasimhadeva-i.md	narasimhadeva-i		needs-manual-review	low		
+04_persons/narmer.md	narmer		needs-manual-review	low		
+04_persons/naropa-tilopa.md	naropa-tilopa		needs-manual-review	low	Vajrayāna Buddhism — Kagyu (Indian origi	
+04_persons/nathan-of-gaza.md	nathan-of-gaza	kabbalist	alias-match:alias-split	high	Jewish messianism (Sabbatean)	
+04_persons/nebuchadnezzar-ii.md	nebuchadnezzar-ii	king	alias-match:alias-exact	high	Neo-Babylonian	
+04_persons/nectanebo-i.md	nectanebo-i		needs-manual-review	low		
+04_persons/nefertiti.md	nefertiti	pharaoh,queen	heuristic:pharaoh+queen	medium	egyptian-religion	
+04_persons/nehemiah.md	nehemiah		needs-manual-review	low		
+04_persons/neil-judd.md	neil-judd		needs-manual-review	low		
+04_persons/nero-emperor.md	nero-emperor	emperor	alias-match:alias-split	high	Roman state religion (pagan)	
+04_persons/nestorius.md	nestorius	archbishop-christian	alias-match:alias-split	high	Antiochene Christian	
+04_persons/ngo-van-chieu.md	ngo-van-chieu		needs-manual-review	low		
+04_persons/nichiren.md	nichiren		needs-manual-review	low	Buddhism	
+04_persons/nicodemus.md	nicodemus		needs-manual-review	low	earliest Christianity; Johannine	
+04_persons/nicomachus.md	nicomachus		needs-manual-review	low	Neo-Pythagoreanism	
+04_persons/nimbarka.md	nimbarka	acharya-hindu	heuristic:acharya-hindu	medium	Hindu — Dvaitādvaita Vedanta / Nimbarka 	
+04_persons/nisargadatta-maharaj.md	nisargadatta-maharaj		needs-manual-review	low	Hindu modernism / Advaita Vedanta	
+04_persons/noah.md	noah		needs-manual-review	low	Israelite-Jewish (founder-figure)	
+04_persons/noetus-of-smyrna.md	noetus-of-smyrna		needs-manual-review	low	Modalist Monarchianism (early form)	
+04_persons/north-acropolis-tikal.md	north-acropolis-tikal		needs-manual-review	low		
+04_persons/north-africa.md	north-africa		needs-manual-review	low		
+04_persons/numenius-of-apamea.md	numenius-of-apamea		needs-manual-review	low	Middle Platonism with strong Neo-Pythago	
+04_persons/nund-rishi.md	nund-rishi		needs-manual-review	low	Sufi Islam — Rishi Order (Kashmir); stro	
+04_persons/omar-khayyam.md	omar-khayyam	author-secular	alias-match:alias-split	high	Islamic Golden Age (Seljuk Persia)	
+04_persons/onesimus.md	onesimus		needs-manual-review	low	earliest Christianity	
+04_persons/onias-iii.md	onias-iii	high-priest-israelite	alias-match:alias-exact	high	Second Temple Judaism	
+04_persons/onias-iv.md	onias-iv		needs-manual-review	low	Second Temple Judaism / Egyptian Diaspor	
+04_persons/oracle-divination.md	oracle-divination		needs-manual-review	low		
+04_persons/oracle-of-delphi.md	oracle-of-delphi		needs-manual-review	low		
+04_persons/origen.md	origen	theologian	alias-match:alias-split	high	Patristic Christian (Alexandrian school)	
+04_persons/orpheus.md	orpheus	author-secular	heuristic:author-secular	medium	Greek mystery religion (Orphism); influe	
+04_persons/p-d-ouspensky.md	p-d-ouspensky		needs-manual-review	low	The Fourth Way	
+04_persons/pachacuti-inca-yupanqui.md	pachacuti-inca-yupanqui		needs-manual-review	low		
+04_persons/pachomius.md	pachomius		needs-manual-review	low	Patristic Christian (Egyptian Coptic)	
+04_persons/padmasambhava-person.md	padmasambhava-person		needs-manual-review	low	Vajrayāna Buddhism — Nyingma	
+04_persons/palenque-triad.md	palenque-triad		needs-manual-review	low		
+04_persons/panini-grammarian.md	panini-grammarian		needs-manual-review	low	Vedic / Brahmanical learned tradition; p	
+04_persons/panj-pyare.md	panj-pyare		needs-manual-review	low		
+04_persons/papias-of-hierapolis.md	papias-of-hierapolis	bishop-christian	alias-match:alias-split	high	Patristic Christian (proto-orthodox)	
+04_persons/paracelsus.md	paracelsus	mystic	alias-match:alias-split	high	Christian alchemy / Renaissance magic	
+04_persons/paramahansa-yogananda.md	paramahansa-yogananda	founder	alias-match:alias-split	high	Hindu modernism / Kriya Yoga	
+04_persons/parmenides.md	parmenides	presocratic-philosopher	heuristic:presocratic-philosopher	medium	Greek philosophy (Presocratic, Eleatic)	
+04_persons/patanjali-yoga-sutras-author.md	patanjali-yoga-sutras-author		needs-manual-review	low	Hindu — Yoga / Sāṃkhya-Yoga	
+04_persons/paukar-marka.md	paukar-marka		needs-manual-review	low		
+04_persons/paul-frankl.md	paul-frankl		needs-manual-review	low		
+04_persons/paul-of-samosata.md	paul-of-samosata	bishop-christian	alias-match:alias-split	high	Christian (Adoptionist / dynamic-monarch	
+04_persons/paul-of-tarsus.md	paul-of-tarsus	founder,mystic	alias-match:alias-split	high	Pharisaic Judaism → earliest Christianit	
+04_persons/paul-pelliot.md	paul-pelliot		needs-manual-review	low		
+04_persons/paul-strachan.md	paul-strachan		needs-manual-review	low		
+04_persons/paul-tillich.md	paul-tillich	theologian	alias-match:alias-split	high	Christian (Lutheran) / existential theol	
+04_persons/pericles.md	pericles		needs-manual-review	low		
+04_persons/perpetua-and-felicity.md	perpetua-and-felicity		needs-manual-review	low	Patristic Christian; possibly Montanist-	
+04_persons/person-aldus-manutius.md	person-aldus-manutius		needs-manual-review	low		
+04_persons/person-apollodorus-of-damascus.md	person-apollodorus-of-damascus		needs-manual-review	low		
+04_persons/person-berthold-schwarz.md	person-berthold-schwarz		needs-manual-review	low		
+04_persons/person-bi-sheng.md	person-bi-sheng		needs-manual-review	low		
+04_persons/person-cai-lun.md	person-cai-lun		needs-manual-review	low		
+04_persons/person-choe-yun-ui.md	person-choe-yun-ui		needs-manual-review	low		
+04_persons/person-johannes-gutenberg.md	person-johannes-gutenberg		needs-manual-review	low		
+04_persons/person-orban.md	person-orban		needs-manual-review	low		
+04_persons/person-roger-bacon.md	person-roger-bacon		needs-manual-review	low		
+04_persons/person-shen-kuo.md	person-shen-kuo		needs-manual-review	low		
+04_persons/person-vitruvius.md	person-vitruvius		needs-manual-review	low		
+04_persons/person-zheng-he.md	person-zheng-he		needs-manual-review	low		
+04_persons/peter-apostle.md	peter-apostle	founder,apostle-christian	alias-match:alias-split	high	earliest Christianity	
+04_persons/peter-j-carroll.md	peter-j-carroll	founder	alias-match:alias-split	high	Chaos magick / late-20th-century esoteri	
+04_persons/pham-cong-tac.md	pham-cong-tac		needs-manual-review	low		
+04_persons/pharaoh-exodus.md	pharaoh-exodus		needs-manual-review	low	Islam (Quranic figure); Israelite / Hebr	
+04_persons/pherecydes-of-syros.md	pherecydes-of-syros	theologian	alias-match:alias-split	high	Pre-Socratic / proto-philosophical Greek	
+04_persons/phidias.md	phidias		needs-manual-review	low	[[tradition-greek-religion]] (religious 	
+04_persons/philip-apostle.md	philip-apostle	apostle-christian	alias-match:alias-exact	high	earliest Christianity	
+04_persons/philip-ii-of-macedon.md	philip-ii-of-macedon	king	alias-match:alias-exact	high	Hellenic / Argead Macedonian	
+04_persons/philip-iv-of-france.md	philip-iv-of-france	king	heuristic:king	medium	Latin Christianity (lay royal)	
+04_persons/philip-the-evangelist.md	philip-the-evangelist		needs-manual-review	low	earliest Christianity	
+04_persons/philippe-villeneuve.md	philippe-villeneuve		needs-manual-review	low		
+04_persons/philo-of-alexandria.md	philo-of-alexandria		needs-manual-review	low	Hellenistic Judaism (Middle Platonist)	
+04_persons/philolaus.md	philolaus		needs-manual-review	low	Pythagoreanism	
+04_persons/phoebe.md	phoebe		needs-manual-review	low	earliest Christianity	
+04_persons/pierre-de-montreuil.md	pierre-de-montreuil		needs-manual-review	low		
+04_persons/pierre-pichard.md	pierre-pichard		needs-manual-review	low		
+04_persons/pierre-plantard.md	pierre-plantard		needs-manual-review	low	20th-c. French esoteric / conspiratorial	
+04_persons/plains-medicine-wheels.md	plains-medicine-wheels		needs-manual-review	low		
+04_persons/plato.md	plato		needs-manual-review	low	Greek philosophy	
+04_persons/pliny-the-younger.md	pliny-the-younger	author-secular	heuristic:author-secular	medium	Roman aristocratic literary (pagan)	
+04_persons/plotinus.md	plotinus		needs-manual-review	low	Neoplatonism	
+04_persons/plutarch.md	plutarch		needs-manual-review	low	Middle Platonism; Delphic priesthood; Gr	
+04_persons/polycarp-of-smyrna.md	polycarp-of-smyrna	bishop-christian	alias-match:alias-split	high	Patristic Christian (proto-orthodox)	
+04_persons/pont-du-gard.md	pont-du-gard		needs-manual-review	low		
+04_persons/pontius-pilate.md	pontius-pilate		needs-manual-review	low	Roman imperial administration (under Tib	
+04_persons/pope-alexander-iii.md	pope-alexander-iii		needs-manual-review	low		
+04_persons/pope-benedict-xvi.md	pope-benedict-xvi		needs-manual-review	low		
+04_persons/pope-boniface-iv.md	pope-boniface-iv		needs-manual-review	low		
+04_persons/pope-boniface-viii.md	pope-boniface-viii		needs-manual-review	low		
+04_persons/pope-clement-v.md	pope-clement-v		needs-manual-review	low	Latin Christianity	
+04_persons/pope-francis.md	pope-francis	pope-roman-catholic,theologian	alias-match:alias-split	high	Roman Catholicism / Society of Jesus (Je	
+04_persons/pope-innocent-iii.md	pope-innocent-iii	pope-roman-catholic	alias-match:alias-split	high	Latin Christianity	
+04_persons/pope-julius-ii.md	pope-julius-ii		needs-manual-review	low		
+04_persons/pope-leo-i.md	pope-leo-i		needs-manual-review	low		
+04_persons/pope-leo-x.md	pope-leo-x		needs-manual-review	low		
+04_persons/pope-paul-vi.md	pope-paul-vi		needs-manual-review	low		
+04_persons/pope-pius-ix.md	pope-pius-ix		needs-manual-review	low		
+04_persons/pope-urban-ii.md	pope-urban-ii	pope-roman-catholic	alias-match:alias-split	high	Latin Christianity	
+04_persons/porphyry.md	porphyry		needs-manual-review	low	Neoplatonism	
+04_persons/pothinus-of-lyon.md	pothinus-of-lyon	bishop-christian	alias-match:alias-split	high	Patristic Christian (proto-orthodox)	
+04_persons/poverty-point.md	poverty-point		needs-manual-review	low		
+04_persons/praxeas.md	praxeas		needs-manual-review	low	Modalist Monarchianism	
+04_persons/prester-john.md	prester-john	king	heuristic:king	medium	Medieval European / Crusade mythology (l	
+04_persons/prince-shotoku.md	prince-shotoku		needs-manual-review	low		
+04_persons/priscilla-and-maximilla.md	priscilla-and-maximilla		needs-manual-review	low	Montanism (the *New Prophecy*)	
+04_persons/priscilla.md	priscilla		needs-manual-review	low	earliest Christianity	
+04_persons/priscillian.md	priscillian	bishop-christian	alias-match:alias-split	high	Christian (Hispano-Galician; ascetic / e	
+04_persons/proclus.md	proclus		needs-manual-review	low	Neoplatonism (Athenian)	
+04_persons/procopius-of-caesarea.md	procopius-of-caesarea		needs-manual-review	low		
+04_persons/pseudo-dionysius-the-areopagite.md	pseudo-dionysius-the-areopagite	theologian	alias-match:alias-split	high	Christian Neoplatonism / mystical theolo	
+04_persons/pseudo-dionysius.md	pseudo-dionysius		needs-manual-review	low	Christian	
+04_persons/ptolemaeus-valentinian.md	ptolemaeus-valentinian		needs-manual-review	low	Valentinian Gnostic Christianity (Italia	
+04_persons/ptolemaeus.md	ptolemaeus		needs-manual-review	low	Valentinian Gnosticism (Italian school)	
+04_persons/ptolemy-i-soter.md	ptolemy-i-soter	king	alias-match:alias-split	high	Hellenistic Greek (Macedonian) ruling Eg	
+04_persons/ptolemy-ii-philadelphus.md	ptolemy-ii-philadelphus	king,pharaoh	alias-match:alias-split	high	Hellenistic Greek (Macedonian) ruling Eg	
+04_persons/ptolemy-iii-euergetes.md	ptolemy-iii-euergetes		needs-manual-review	low		
+04_persons/ptolemy-xii-auletes.md	ptolemy-xii-auletes		needs-manual-review	low		
+04_persons/pueblo-alto.md	pueblo-alto		needs-manual-review	low		
+04_persons/pueblo-del-arroyo.md	pueblo-del-arroyo		needs-manual-review	low		
+04_persons/pyrrha.md	pyrrha		needs-manual-review	low	Greek / Hellenistic	
+04_persons/pyrrho-of-elis.md	pyrrho-of-elis		needs-manual-review	low	Greek philosophy (Pyrrhonism / Greek ske	
+04_persons/pythagoras.md	pythagoras	mystic	alias-match:alias-split	high	Pythagoreanism (and via influence: Plato	
+04_persons/pytheas.md	pytheas		needs-manual-review	low	Greek — Massaliote (colonial Greek, sout	
+04_persons/qianlong-emperor.md	qianlong-emperor		needs-manual-review	low		
+04_persons/quadratus-the-apologist.md	quadratus-the-apologist		needs-manual-review	low	Patristic Christian (proto-orthodox)	
+04_persons/quetzalcoatl-historical.md	quetzalcoatl-historical	king	heuristic:king	medium	Toltec (Nahua)	
+04_persons/rabbi-akiva.md	rabbi-akiva	rabbi-tannaitic	heuristic:rabbi-tannaitic	medium	Tannaitic Judaism	
+04_persons/rabbi-judah-loew.md	rabbi-judah-loew	kabbalist	alias-match:alias-split	high	Ashkenazi Judaism / Kabbalah	
+04_persons/rabbi-shimon-bar-yochai.md	rabbi-shimon-bar-yochai	rabbi-tannaitic	heuristic:rabbi-tannaitic	medium	Tannaitic Judaism / Kabbalistic traditio	
+04_persons/rabia-of-basra.md	rabia-of-basra	author-secular	alias-match:alias-split	high	Sufi Islam — early Basran ascetic / love	
+04_persons/rajaraja-i-chola.md	rajaraja-i-chola		needs-manual-review	low		
+04_persons/ram-mohan-roy.md	ram-mohan-roy	religious-reformer	alias-match:alias-split	high	Hindu modernism — Brahmo Samaj	
+04_persons/ramakrishna.md	ramakrishna	mystic	alias-match:alias-split	high	Hindu modernism / Ramakrishna Mission	
+04_persons/ramana-maharshi.md	ramana-maharshi	guru-hindu,mystic-syncretic	contested-ratified (T1)	high	Hindu modernism / Advaita Vedanta	Modern Hindu sage of Arunachala; self-inquiry teaching.
+04_persons/ramanuja.md	ramanuja	acharya-hindu,philosopher-religious	contested-ratified (T1)	high	Hindu — Vishishtadvaita (Sri Vaishnavism	Same as Sankara — acharya-hindu primary.
+04_persons/ramesses-ii.md	ramesses-ii		needs-manual-review	low		
+04_persons/ramon-llull.md	ramon-llull	mystic	alias-match:alias-split	high	Catalan Christianity (Franciscan)	
+04_persons/ramprasad-sen.md	ramprasad-sen	author-secular	heuristic:author-secular	medium	Hindu Bhakti (Shakta)	
+04_persons/ramses-ii.md	ramses-ii		needs-manual-review	low		
+04_persons/raphael-sanzio.md	raphael-sanzio		needs-manual-review	low		
+04_persons/rashid-rida.md	rashid-rida	religious-reformer	alias-match:alias-split	high	Islamic modernism / proto-Salafism	
+04_persons/recep-tayyip-erdogan.md	recep-tayyip-erdogan		needs-manual-review	low		
+04_persons/rene-girard.md	rene-girard	scholar-academic-religion	heuristic:scholar-academic	medium	Modern religious studies / comparative a	
+04_persons/rene-guenon.md	rene-guenon	philosopher-religious,sufi-shaykh	contested-ratified (T1)	high	[[tradition-traditionalism-perennialist]	Traditionalism primary; later Sufi-Islam-conversion + shaykh-rank secondary.
+04_persons/rene-millon.md	rene-millon		needs-manual-review	low		
+04_persons/reza-aslan.md	reza-aslan	author-secular	heuristic:author-secular	medium	Comparative religion (popular) / Islam (	
+04_persons/richard-davis.md	richard-davis		needs-manual-review	low		
+04_persons/richard-l-burger.md	richard-l-burger		needs-manual-review	low		
+04_persons/richard-voigtel.md	richard-voigtel		needs-manual-review	low		
+04_persons/richard-wetherill.md	richard-wetherill		needs-manual-review	low		
+04_persons/rinchen-zangpo.md	rinchen-zangpo		needs-manual-review	low	Tibetan Buddhism (early Western Tibetan 	
+04_persons/rishabha.md	rishabha	tirthankara-jain	heuristic:tirthankara	medium	Jainism	
+04_persons/robert-bauval.md	robert-bauval		needs-manual-review	low		
+04_persons/robert-de-boron.md	robert-de-boron	author-secular	heuristic:author-secular	medium	Latin Christianity (French medieval lite	
+04_persons/robert-fludd.md	robert-fludd		needs-manual-review	low	English Hermetic-Paracelsian-Rosicrucian	
+04_persons/robert-schoch.md	robert-schoch		needs-manual-review	low		
+04_persons/rowan-williams.md	rowan-williams	theologian	alias-match:alias-split	high	Anglican (Church in Wales / Church of En	
+04_persons/rudolf-ii-habsburg.md	rudolf-ii-habsburg		needs-manual-review	low	Habsburg imperial / Renaissance occultis	
+04_persons/rudolf-otto.md	rudolf-otto	scholar-academic-religion,theologian	contested-ratified (T1)	high	Comparative religion (academic) / Phenom	Per Auditor A 2026-05-31 — Otto was ordained Lutheran AND academic phenomenologist of religion. Doub
+04_persons/rudolf-steiner.md	rudolf-steiner	founder,philosopher-religious	contested-ratified (T1)	high	Anthroposophy	Founder of Anthroposophy; Hammer 2001.
+04_persons/rumi.md	rumi	sufi-shaykh,author-secular,theologian	alias-match:alias-split	high	Sufi Islam — Mevlevi (Mawlawiyya)	
+04_persons/saadia-gaon.md	saadia-gaon	rabbi-medieval	heuristic:rabbi-medieval	medium	Rabbinic Judaism — Geonic	
+04_persons/sabellius.md	sabellius		needs-manual-review	low	Sabellianism / Modalist Monarchianism	
+04_persons/saburo-sugiyama.md	saburo-sugiyama		needs-manual-review	low		
+04_persons/sadi-of-shiraz.md	sadi-of-shiraz	mystic	alias-match:alias-exact	high	Islam (Sufism — Persian ethical-literary	
+04_persons/saeki-no-kuramoto.md	saeki-no-kuramoto		needs-manual-review	low		
+04_persons/saint-catherine-of-alexandria.md	saint-catherine-of-alexandria		needs-manual-review	low		
+04_persons/saint-peter.md	saint-peter		needs-manual-review	low		
+04_persons/saladin.md	saladin		needs-manual-review	low	Sunni Islam (Shafi'i school)	
+04_persons/salih-prophet.md	salih-prophet	prophet-abrahamic	alias-match:alias-exact	high	Islam (Quranic prophet tradition)	
+04_persons/sallaq-marka.md	sallaq-marka		needs-manual-review	low		
+04_persons/samaratungga.md	samaratungga		needs-manual-review	low		
+04_persons/samuel-ajayi-crowther.md	samuel-ajayi-crowther		needs-manual-review	low	Anglican Christianity (Church Mission So	
+04_persons/samuel-prophet.md	samuel-prophet	prophet-abrahamic	alias-match:alias-exact	high	Israelite / pre-monarchic	
+04_persons/san-pedro-cactus.md	san-pedro-cactus		needs-manual-review	low		
+04_persons/sangyo-gisho.md	sangyo-gisho		needs-manual-review	low		
+04_persons/santideva.md	santideva	author-secular	alias-match:alias-split	high	Mahāyāna Buddhism (Madhyamaka-Prāsaṅgika	
+04_persons/sarada-devi.md	sarada-devi	mystic	alias-match:alias-split	high	Hindu modernism / Ramakrishna Mission	
+04_persons/sarah-matriarch.md	sarah-matriarch		needs-manual-review	low	Israelite / pre-monarchic	
+04_persons/sargon-of-akkad.md	sargon-of-akkad	king	alias-match:alias-split	high	Akkadian (Sumerian / Mesopotamian)	
+04_persons/sariputta.md	sariputta		needs-manual-review	low		
+04_persons/saturninus.md	saturninus		needs-manual-review	low	Antiochene proto-Gnostic / Encratite-Gno	
+04_persons/sayyid-qutb.md	sayyid-qutb		needs-manual-review	low	Islamism / Muslim Brotherhood radical wi	
+04_persons/scythians.md	scythians		needs-manual-review	low		
+04_persons/sebastian-i-portugal.md	sebastian-i-portugal	king	alias-match:alias-exact	high	[[tradition-christianity-canonical]]	
+04_persons/seela-meqabyan.md	seela-meqabyan		needs-manual-review	low	[[tradition-ethiopian-orthodox-tewahedo]	
+04_persons/seneca.md	seneca		needs-manual-review	low	Stoicism (Roman)	
+04_persons/senge-takatoshi.md	senge-takatoshi		needs-manual-review	low		
+04_persons/senusret-i.md	senusret-i		needs-manual-review	low		
+04_persons/septimius-severus.md	septimius-severus	emperor	alias-match:alias-exact	high	Roman state religion (pagan; Punic-Afric	
+04_persons/serapeum-of-alexandria.md	serapeum-of-alexandria		needs-manual-review	low		
+04_persons/serapeum-of-saqqara.md	serapeum-of-saqqara		needs-manual-review	low		
+04_persons/seth.md	seth		needs-manual-review	low	Hebrew Bible; Sethian Gnostic Christiani	
+04_persons/seti-i.md	seti-i		needs-manual-review	low		
+04_persons/severus-of-antioch.md	severus-of-antioch		needs-manual-review	low	Pre-Chalcedonian Antiochene Christianity	
+04_persons/shabaka.md	shabaka		needs-manual-review	low		
+04_persons/shabbatai-tzvi.md	shabbatai-tzvi		needs-manual-review	low	Jewish messianism (Sabbatean — heterodox	
+04_persons/shah-wali-allah.md	shah-wali-allah		needs-manual-review	low	Sunni Islam / Naqshbandi Sufism / Indian	
+04_persons/shaiva-agamas.md	shaiva-agamas		needs-manual-review	low		
+04_persons/shaka-triad-horyuji.md	shaka-triad-horyuji		needs-manual-review	low		
+04_persons/shamanism-altered-states.md	shamanism-altered-states		needs-manual-review	low		
+04_persons/shammai.md	shammai		needs-manual-review	low	Pharisaic / proto-rabbinic Judaism	
+04_persons/shankara.md	shankara		needs-manual-review	low	Hindu — Advaita Vedanta	
+04_persons/shariputra.md	shariputra	disciple-christian	alias-match:alias-split	high	Buddhism (pre-sectarian; foundational ac	
+04_persons/sheikh-farid.md	sheikh-farid		needs-manual-review	low		
+04_persons/shenhui.md	shenhui		needs-manual-review	low		
+04_persons/shenoute.md	shenoute		needs-manual-review	low	Pre-Chalcedonian Egyptian (Coptic) Chris	
+04_persons/shenxiu.md	shenxiu		needs-manual-review	low	Chan Buddhism — Northern School (gradual	
+04_persons/shin-arahan.md	shin-arahan		needs-manual-review	low		
+04_persons/shinran.md	shinran		needs-manual-review	low	Buddhism	
+04_persons/shiyan-hubei.md	shiyan-hubei		needs-manual-review	low		
+04_persons/shosoin-treasury.md	shosoin-treasury		needs-manual-review	low		
+04_persons/shuayb-prophet.md	shuayb-prophet	prophet-abrahamic	alias-match:alias-exact	high	Islam (Quranic prophet tradition)	
+04_persons/shulgi.md	shulgi	king,religious-reformer	alias-match:alias-split	high	Sumerian (Third Dynasty of Ur)	
+04_persons/siddhartha-gautama-buddha.md	siddhartha-gautama-buddha	founder	alias-match:alias-exact	high	Buddhism	
+04_persons/sigmund-freud.md	sigmund-freud		needs-manual-review	low	Western psychology / psychoanalysis	
+04_persons/sihyaj-kahk.md	sihyaj-kahk		needs-manual-review	low		
+04_persons/silas-silvanus.md	silas-silvanus	disciple-christian	alias-match:alias-split	high	earliest Christianity	
+04_persons/silk-road-as-religious-transmission-corridor.md	silk-road-as-religious-transmission-corridor		needs-manual-review	low		
+04_persons/simeon-the-stylite.md	simeon-the-stylite		needs-manual-review	low	Patristic Christian (Syrian)	
+04_persons/simon-magus.md	simon-magus	legendary-disputed	contested-ratified (T1)	high	Samaritan religious milieu; proto-Gnosti	Per v3 §4 — known almost entirely through Christian polemic (Acts of the Apostles, Hippolytus, Irena
+04_persons/simon-the-zealot.md	simon-the-zealot	apostle-christian	alias-match:alias-exact	high	earliest Christianity	
+04_persons/sir-thomas-stamford-raffles.md	sir-thomas-stamford-raffles		needs-manual-review	low		
+04_persons/slaves-atlantic.md	slaves-atlantic		needs-manual-review	low		
+04_persons/slaves-trans-saharan.md	slaves-trans-saharan		needs-manual-review	low		
+04_persons/sneferu.md	sneferu		needs-manual-review	low		
+04_persons/snorri-sturluson.md	snorri-sturluson	author-secular	alias-match:alias-split	high	Medieval Icelandic Christianity / Norse 	
+04_persons/socrates.md	socrates		needs-manual-review	low	Classical Greek philosophy	
+04_persons/soga-no-umako.md	soga-no-umako		needs-manual-review	low		
+04_persons/solomon-king.md	solomon-king	king	alias-match:alias-exact	high	Israelite / pre-exilic Judah	
+04_persons/solon.md	solon	author-secular	alias-match:alias-split	high	Greek (Athenian)	
+04_persons/sotaesan.md	sotaesan		needs-manual-review	low	[[tradition-won-buddhism]]	
+04_persons/spyridon-marinatos.md	spyridon-marinatos		needs-manual-review	low	[[tradition-comparative-religion-academi	
+04_persons/sri-aurobindo.md	sri-aurobindo		needs-manual-review	low	Hindu modernism / Integral Yoga	
+04_persons/sri-yukteswar.md	sri-yukteswar		needs-manual-review	low	Hindu modernism / Kriya Yoga	
+04_persons/st-peters-basilica.md	st-peters-basilica		needs-manual-review	low		
+04_persons/stella-kramrisch.md	stella-kramrisch		needs-manual-review	low		
+04_persons/stephanie-meece.md	stephanie-meece		needs-manual-review	low		
+04_persons/stephen-h-lekson.md	stephen-h-lekson		needs-manual-review	low		
+04_persons/stephen-mcnallen.md	stephen-mcnallen	founder	alias-match:alias-split	high	Asatru / Heathenry	
+04_persons/stephen-protomartyr.md	stephen-protomartyr		needs-manual-review	low	earliest Christianity	
+04_persons/stewart-koyiyumptewa.md	stewart-koyiyumptewa		needs-manual-review	low		
+04_persons/stole.md	stole		needs-manual-review	low		
+04_persons/strabo.md	strabo		needs-manual-review	low	Greek — Roman-period geographer and hist	
+04_persons/suetonius.md	suetonius		needs-manual-review	low	Roman aristocratic literary (pagan)	
+04_persons/suhrawardi.md	suhrawardi	mystic	alias-match:alias-split	high	Islamic philosophy — Illuminationism (Is	
+04_persons/suinin-tenno.md	suinin-tenno		needs-manual-review	low		
+04_persons/sumer.md	sumer		needs-manual-review	low		
+04_persons/sun-myung-moon.md	sun-myung-moon	founder	alias-match:alias-split	high	Unification Church / Family Federation f	
+04_persons/sun-simiao.md	sun-simiao	king	heuristic:king	medium	Chinese	
+04_persons/surdas.md	surdas	author-secular	heuristic:author-secular	medium	Hindu Bhakti (Vaishnava — Krishna-bhakti	
+04_persons/suryavarman-ii.md	suryavarman-ii		needs-manual-review	low		
+04_persons/susan-niles.md	susan-niles		needs-manual-review	low		
+04_persons/swami-vivekananda.md	swami-vivekananda	founder	alias-match:alias-split	high	Hindu modernism / Advaita Vedanta	
+04_persons/sylvanus-morley.md	sylvanus-morley		needs-manual-review	low		
+04_persons/symeon-the-new-theologian.md	symeon-the-new-theologian		needs-manual-review	low	Eastern Orthodox Christianity — Byzantin	
+04_persons/t-g-h-strehlow.md	t-g-h-strehlow		needs-manual-review	low	academic anthropology / Lutheran Christi	
+04_persons/ta-prohm-inscription.md	ta-prohm-inscription		needs-manual-review	low		
+04_persons/tacitus.md	tacitus		needs-manual-review	low	Roman aristocratic literary (pagan)	
+04_persons/taira-no-kiyomori.md	taira-no-kiyomori		needs-manual-review	low		
+04_persons/takla-haymanot.md	takla-haymanot	founder,religious-reformer	alias-match:alias-split	high	[[tradition-ethiopian-orthodox-tewahedo]	
+04_persons/tamil-three-nayanars.md	tamil-three-nayanars	author-secular	heuristic:author-secular	medium	Hindu Bhakti (Tamil Shaivism — Nayanar t	
+04_persons/tat-hermetic-disciple.md	tat-hermetic-disciple		needs-manual-review	low	Hermetic	
+04_persons/tatian-the-syrian.md	tatian-the-syrian		needs-manual-review	low	Patristic Christian → Encratite	
+04_persons/temmu-tenno.md	temmu-tenno		needs-manual-review	low		
+04_persons/tenoned-heads-chavin.md	tenoned-heads-chavin		needs-manual-review	low		
+04_persons/teresa-of-avila.md	teresa-of-avila	mystic,theologian	alias-match:alias-split	high	Latin Christianity (Catholic Counter-Ref	
+04_persons/tertullian.md	tertullian	theologian	alias-match:alias-split	high	Patristic Christian (Latin) — later Mont	
+04_persons/thaddaeus-jude-apostle.md	thaddaeus-jude-apostle	apostle-christian	alias-match:alias-exact	high	earliest Christianity; Armenian Apostoli	
+04_persons/thales.md	thales	presocratic-philosopher	heuristic:presocratic-philosopher	medium	Pre-Socratic Greek (the Milesian school 	
+04_persons/the-bab.md	the-bab	founder,manifestation-bahai,martyr-bahai	contested-ratified (T1)	high	Bábí / Bahá'í Faith (precursor manifesta	Báb is both founder of Bábism and Manifestation in Bahá'í classification + martyred 1850.
+04_persons/the-magi.md	the-magi		needs-manual-review	low	Zoroastrian (Median + Achaemenid + Sasan	
+04_persons/the-nine-saints.md	the-nine-saints		needs-manual-review	low	[[tradition-ethiopian-orthodox-tewahedo]	
+04_persons/thecla.md	thecla		needs-manual-review	low	earliest Christianity; encratite/proto-G	
+04_persons/theodoor-van-erp.md	theodoor-van-erp		needs-manual-review	low		
+04_persons/theodore-of-mopsuestia.md	theodore-of-mopsuestia	bishop-christian	alias-match:alias-split	high	Antiochene Christian	
+04_persons/theodore-strehlow.md	theodore-strehlow		needs-manual-review	low	Lutheran Christianity / German missionar	
+04_persons/theodosius-i.md	theodosius-i	emperor	alias-match:alias-exact	high	Nicene Christian (Roman imperial)	
+04_persons/theodotus-valentinian.md	theodotus-valentinian		needs-manual-review	low	Valentinian Gnostic Christianity (Easter	
+04_persons/theophilus-of-antioch.md	theophilus-of-antioch	bishop-christian	alias-match:alias-split	high	Patristic Christian (proto-orthodox)	
+04_persons/thich-nhat-hanh.md	thich-nhat-hanh		needs-manual-review	low	Buddhist modernism / Engaged Buddhism / 	
+04_persons/thomas-apostle.md	thomas-apostle	apostle-christian	alias-match:alias-exact	high	earliest Christianity; Syriac Christiani	
+04_persons/thomas-aquinas.md	thomas-aquinas	doctor-of-the-church,theologian,philosopher-religious,monastic-christian-western	contested-ratified (T1)	high	Latin Christian — Dominican scholastic	Order honors insider weighting — Catholic 'Doctor of the Church' is the higher-respect framing (per 
+04_persons/thomas-emerson.md	thomas-emerson		needs-manual-review	low		
+04_persons/thomas-taylor-neoplatonist.md	thomas-taylor-neoplatonist		needs-manual-review	low	Neoplatonism / Pagan philosophy	
+04_persons/thomas-vaughan.md	thomas-vaughan		needs-manual-review	low	English Hermetic / Rosicrucian-Paracelsi	
+04_persons/thutmose-iii.md	thutmose-iii		needs-manual-review	low		
+04_persons/thutmose-iv.md	thutmose-iv	pharaoh	heuristic:pharaoh	medium		
+04_persons/tiberius-emperor.md	tiberius-emperor	emperor	alias-match:alias-exact	high	Roman imperial	
+04_persons/timothy-pauketat.md	timothy-pauketat		needs-manual-review	low		
+04_persons/timothy.md	timothy	disciple-christian	alias-match:alias-split	high	earliest Christianity	
+04_persons/tirumalai-nayaka.md	tirumalai-nayaka		needs-manual-review	low		
+04_persons/titus.md	titus	disciple-christian	alias-match:alias-split	high	earliest Christianity	
+04_persons/tlatelolco-templo-mayor.md	tlatelolco-templo-mayor		needs-manual-review	low		
+04_persons/todaiji-yoroku.md	todaiji-yoroku		needs-manual-review	low		
+04_persons/tomas-de-torquemada.md	tomas-de-torquemada	monastic-christian-western,queen	heuristic:monastic-western+queen	medium	Medieval Christianity / Roman Catholicis	
+04_persons/topa-inca-yupanqui.md	topa-inca-yupanqui		needs-manual-review	low		
+04_persons/torreon-machu-picchu.md	torreon-machu-picchu		needs-manual-review	low		
+04_persons/trajan-emperor.md	trajan-emperor	emperor	alias-match:alias-exact	high	Roman state religion (pagan)	
+04_persons/trajan-roman-emperor.md	trajan-roman-emperor		needs-manual-review	low		
+04_persons/triptolemus-legendary.md	triptolemus-legendary		needs-manual-review	low	Greek (Eleusinian mystery cult and Athen	
+04_persons/tsongkhapa.md	tsongkhapa	religious-reformer	alias-match:alias-split	high	Vajrayāna Buddhism — Gelug (Yellow Hat)	
+04_persons/tulsidas.md	tulsidas	author-secular	heuristic:author-secular	medium	Hindu Bhakti (Vaishnava — Ram-bhakti)	
+04_persons/turks.md	turks		needs-manual-review	low		
+04_persons/tutankhamun.md	tutankhamun	king	alias-match:alias-exact	high	Egyptian (18th Dynasty, end of the Amarn	
+04_persons/twin-tollans-volume.md	twin-tollans-volume		needs-manual-review	low		
+04_persons/tycho-brahe.md	tycho-brahe		needs-manual-review	low	Early modern astronomy / Renaissance nat	
+04_persons/umar-ibn-al-khattab.md	umar-ibn-al-khattab		needs-manual-review	low	Islam — Sunnī (one of the four Rashidun 	
+04_persons/una-vida.md	una-vida		needs-manual-review	low		
+04_persons/unas.md	unas	pharaoh,king	heuristic:pharaoh+king	medium	Egyptian (Old Kingdom)	
+04_persons/ur-bau.md	ur-bau		needs-manual-review	low	Sumerian (Second Dynasty of Lagash, late	
+04_persons/ur-nammu.md	ur-nammu	king	alias-match:alias-split	high	Sumerian (Third Dynasty of Ur)	
+04_persons/urartu.md	urartu		needs-manual-review	low		
+04_persons/uthman.md	uthman		needs-manual-review	low	Islam	
+04_persons/utnapishtim.md	utnapishtim	king	alias-match:alias-split	high	Standard Babylonian / Mesopotamian (Gilg	
+04_persons/utpaladeva.md	utpaladeva		needs-manual-review	low	Hindu — Kashmir Shaivism (Pratyabhijñā /	
+04_persons/uzayr.md	uzayr		needs-manual-review	low	Islam (Quranic reference)	
+04_persons/v-d-savarkar.md	v-d-savarkar		needs-manual-review	low	Hindutva / Hindu nationalism	
+04_persons/valentinus.md	valentinus		needs-manual-review	low	Valentinian Gnostic Christianity	
+04_persons/valerian-emperor.md	valerian-emperor	emperor	alias-match:alias-split	high	Roman state religion (pagan)	
+04_persons/vallabhacharya.md	vallabhacharya		needs-manual-review	low	Hindu — Shuddhadvaita Vedanta / Pushtima	
+04_persons/vasco-da-gama.md	vasco-da-gama		needs-manual-review	low	[[tradition-order-of-christ]] / [[tradit	
+04_persons/vasubandhu.md	vasubandhu		needs-manual-review	low	Buddhism (Sarvāstivāda → Yogācāra)	
+04_persons/vasugupta.md	vasugupta		needs-manual-review	low	Hindu — Kashmir Shaivism (Trika / Spanda	
+04_persons/victor-hugo.md	victor-hugo	author-secular	alias-match:alias-split	high		
+04_persons/vidyadhara-chandela.md	vidyadhara-chandela		needs-manual-review	low		
+04_persons/vidyaranya.md	vidyaranya		needs-manual-review	low	Hindu — Advaita Vedanta; Vijayanagara st	
+04_persons/vilca-anadenanthera-colubrina.md	vilca-anadenanthera-colubrina		needs-manual-review	low		
+04_persons/viriato.md	viriato		needs-manual-review	low	Lusitanian (pre-Roman Iberian)	
+04_persons/vision-quest.md	vision-quest		needs-manual-review	low		
+04_persons/viswanatha-nayaka.md	viswanatha-nayaka		needs-manual-review	low		
+04_persons/vivekananda.md	vivekananda	guru-hindu,religious-reformer	contested-ratified (T1)	high		Ramakrishna Mission founder; modern Vedānta articulator; 1893 Chicago Parliament of World's Religion
+04_persons/voltaire.md	voltaire		needs-manual-review	low	French Enlightenment	
+04_persons/walter-burkert.md	walter-burkert		needs-manual-review	low		
+04_persons/walter-spink.md	walter-spink		needs-manual-review	low		
+04_persons/walter-terence-stace.md	walter-terence-stace		needs-manual-review	low	`tradition-perennial-philosophy`	
+04_persons/wang-xuanfu.md	wang-xuanfu		needs-manual-review	low		
+04_persons/wang-yangming.md	wang-yangming		needs-manual-review	low	Neo-Confucianism (Xin Xue / School of Mi	
+04_persons/wang-yuanlu.md	wang-yuanlu		needs-manual-review	low		
+04_persons/wei-jing.md	wei-jing		needs-manual-review	low		
+04_persons/wendy-doniger.md	wendy-doniger		needs-manual-review	low	Comparative religion (academic) / Indolo	
+04_persons/william-blake.md	william-blake	author-secular	alias-match:alias-split	high	English Romanticism / Christian mysticis	
+04_persons/william-coe.md	william-coe		needs-manual-review	low		
+04_persons/william-iseminger.md	william-iseminger		needs-manual-review	low		
+04_persons/william-james.md	william-james	psychologist-of-religion	contested-ratified (T1)	high	American pragmatism / psychology of reli	Pragmatist philosopher; *Varieties of Religious Experience* is academic phenomenology. Hanegraaff 19
+04_persons/william-marshal.md	william-marshal		needs-manual-review	low		
+04_persons/william-of-saint-mary-the-virgin.md	william-of-saint-mary-the-virgin		needs-manual-review	low		
+04_persons/william-robertson-smith.md	william-robertson-smith		needs-manual-review	low	Comparative religion (academic) / Old Te	
+04_persons/william-seymour.md	william-seymour		needs-manual-review	low		
+04_persons/william-sinclair-rosslyn.md	william-sinclair-rosslyn		needs-manual-review	low	Scottish nobility / Templar-influenced a	
+04_persons/wittgenstein.md	wittgenstein		needs-manual-review	low	Analytic Philosophy	
+04_persons/wolega-tafari-makonnen-haile-selassie.md	wolega-tafari-makonnen-haile-selassie	emperor	heuristic:emperor	medium	Ethiopian Orthodox Christianity (officia	
+04_persons/wolfram-von-eschenbach.md	wolfram-von-eschenbach	author-secular	heuristic:author-secular	medium	Latin Christianity (German medieval lite	
+04_persons/woodhenge-wiltshire.md	woodhenge-wiltshire		needs-manual-review	low		
+04_persons/wovoka.md	wovoka	prophet-indigenous,founder	contested-ratified (T1)	high	Northern Paiute / pan-tribal Ghost Dance	Per Auditor B 2026-05-31 CARDINAL — NOT prophet-abrahamic. Ghost Dance is not Abrahamic. Calling Wov
+04_persons/wudang-shan-zhi.md	wudang-shan-zhi		needs-manual-review	low		
+04_persons/xenophanes.md	xenophanes	presocratic-philosopher,author-secular	heuristic:presocratic-philosopher+author-secular	medium	Greek philosophy (Presocratic)	
+04_persons/xenophon.md	xenophon		needs-manual-review	low		
+04_persons/xinjiang.md	xinjiang		needs-manual-review	low		
+04_persons/xiongnu.md	xiongnu		needs-manual-review	low		
+04_persons/xu-benshan.md	xu-benshan		needs-manual-review	low		
+04_persons/xuantian-shangdi-zhuanlu.md	xuantian-shangdi-zhuanlu		needs-manual-review	low		
+04_persons/xuanzang.md	xuanzang		needs-manual-review	low	Chinese Mahāyāna Buddhism (Faxiang 法相 / 	
+04_persons/xunzi-person.md	xunzi-person		needs-manual-review	low	Confucianism	
+04_persons/yajnavalkya.md	yajnavalkya		needs-manual-review	low	Vedic / Upaniṣadic Hindu	
+04_persons/yamato-hime-no-mikoto-seiki.md	yamato-hime-no-mikoto-seiki		needs-manual-review	low		
+04_persons/yamato-hime-no-mikoto.md	yamato-hime-no-mikoto		needs-manual-review	low		
+04_persons/yared-the-deacon.md	yared-the-deacon		needs-manual-review	low	[[tradition-ethiopian-orthodox-tewahedo]	
+04_persons/yi-songgye.md	yi-songgye		needs-manual-review	low		
+04_persons/yikin-chan-kawiil.md	yikin-chan-kawiil		needs-manual-review	low		
+04_persons/yohanan-ben-zakkai.md	yohanan-ben-zakkai	rabbi-tannaitic	heuristic:rabbi-tannaitic	medium	early Rabbinic Judaism (Tannaitic; Phari	
+04_persons/yongle-emperor.md	yongle-emperor		needs-manual-review	low		
+04_persons/yongming-yanshou.md	yongming-yanshou	zen-master	heuristic:zen-master	medium	Chan Buddhism / Pure Land Buddhism	
+04_persons/yu-the-great.md	yu-the-great	king	alias-match:alias-split	high	Chinese (Xia dynasty traditional founder	
+04_persons/zacchaeus.md	zacchaeus	disciple-christian	alias-match:alias-exact	high	earliest Christianity	
+04_persons/zadok-priest.md	zadok-priest	high-priest-israelite	alias-match:alias-exact	high	Israelite / United Monarchy	
+04_persons/zara-yaqob-emperor.md	zara-yaqob-emperor	king,theologian,religious-reformer	alias-match:alias-split	high	[[tradition-ethiopian-orthodox-tewahedo]	
+04_persons/zarathustra.md	zarathustra	prophet-abrahamic	alias-match:alias-exact	high	Zoroastrian	
+04_persons/zecharia-sitchin.md	zecharia-sitchin		needs-manual-review	low	alternative-history / popular pseudoarch	
+04_persons/zechariah-priest.md	zechariah-priest		needs-manual-review	low	Islam (Quranic figure); Second Temple Ju	
+04_persons/zemaryalai-tarzi.md	zemaryalai-tarzi		needs-manual-review	low		
+04_persons/zeno-of-citium.md	zeno-of-citium		needs-manual-review	low	Greek philosophy — Stoicism (founder)	
+04_persons/zerubbabel.md	zerubbabel		needs-manual-review	low	post-exilic Judah / Persian period	
+04_persons/zhang-sanfeng.md	zhang-sanfeng		needs-manual-review	low		
+04_persons/zhang-zai.md	zhang-zai		needs-manual-review	low	Neo-Confucianism (Song period)	
+04_persons/zheng-he.md	zheng-he		needs-manual-review	low		
+04_persons/zhou-dunyi.md	zhou-dunyi		needs-manual-review	low	Neo-Confucianism (Song period)	
+04_persons/zhu-xi.md	zhu-xi		needs-manual-review	low	Neo-Confucianism / Song Confucianism	
+04_persons/zhuangzi-person.md	zhuangzi-person		needs-manual-review	low	Daoism	
+04_persons/zhuangzi.md	zhuangzi		needs-manual-review	low		
+04_persons/ziusudra.md	ziusudra	king	alias-match:alias-split	high	Sumerian / Mesopotamian	
+04_persons/zoroaster-prophet.md	zoroaster-prophet		needs-manual-review	low		
+04_persons/zosimos-of-panopolis.md	zosimos-of-panopolis		needs-manual-review	low	Greco-Egyptian Hermetic-alchemical	

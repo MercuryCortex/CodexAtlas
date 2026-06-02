@@ -381,12 +381,101 @@
       });
     }
 
-    // Figures mode (2026-05-28): persons lens, intersected with the
-    // curated FIGURES_IDS set above. Historical religious/political
-    // leaders — distinct from authors (writers) and the broader
-    // persons set.
+    // ── Figures mode — role-tokens YAML migration (2026-05-31) ────────
+    // AUTHORITATIVE source: per-person YAML `role-tokens: [...]` surfaced
+    // by build_data.py as `n.role_tokens`. Any person with at least one
+    // figure-qualifying role-token IS in the Figures lens.
+    //
+    // DEFENSIVE BACKSTOP (during transition): legacy FIGURES_IDS set
+    // still unions in, so a person who somehow lacks role-tokens but IS
+    // in FIGURES_IDS still surfaces. Once every person is verified to
+    // carry role-tokens, FIGURES_IDS can be deleted (separate session-
+    // cycle commit per the canonical-corpus pattern).
+    //
+    // Per AUDIT/2026-05-31-figures-migration-plan-v3.md + 00_meta/
+    // role-vocabulary.yaml (the controlled-vocab spine).
     if (mode === 'figures') {
-      return nodes.filter(n => n && n.type === 'person' && FIGURES_IDS.has(n.id));
+      if (!filterNodesByMode._figureQualifyingRoles) {
+        // Build the qualifying-set from the role-vocabulary structure
+        // shipped on window.ROLE_VOCABULARY. If absent (not yet wired),
+        // fall back to known-qualifying tokens from the vocab anchor.
+        // The set is also discoverable per-node via vocab.entries.figure_qualifying.
+        const FIGURE_QUALIFYING = new Set([
+          // Tier 1 founders + revelation-bearers
+          'founder', 'prophet-abrahamic', 'prophet-indigenous',
+          'prophet-non-abrahamic', 'messenger-islamic', 'manifestation-bahai',
+          'avatar-hindu', 'tirthankara-jain', 'mahasiddha',
+          'acharya-hindu', 'acharya-jain', 'acharya-buddhist',
+          'bodhisattva-mahayana', 'tertön-tibetan', 'lineage-master-tibetan',
+          'guru-sikh', 'guru-hindu', 'rishi-vedic', 'oracle', 'diviner',
+          // Tier 2 — Christian authority
+          'pope-roman-catholic', 'pope-coptic', 'patriarch-hebrew',
+          'patriarch-jewish-late-antique', 'patriarch-christian-orthodox',
+          'patriarch-oriental-orthodox', 'catholicos', 'bishop-christian',
+          'archbishop-christian', 'archbishop-anglican', 'pastor-protestant',
+          'evangelist-gospel-attributed', 'evangelist-revivalist',
+          'doctor-of-the-church',
+          // Tier 2 — Islamic
+          'caliph-sunni', 'imam-twelver', 'imam-ismaili-nizari',
+          'imam-ismaili-mustali', 'imam-zaydi', 'ayatollah-twelver',
+          'mujtahid', 'sufi-shaykh', 'sufi-pir', 'jurist-islamic',
+          'mufti', 'qadi', 'uqqal-druze', 'dede-alevi',
+          // Tier 2 — Jewish
+          'rabbi-tannaitic', 'rabbi-amoraic', 'rabbi-medieval',
+          'rabbi-modern', 'zaddik-hasidic', 'rebbe-hasidic',
+          'high-priest-israelite', 'gaon', 'kabbalist',
+          // Tier 2 — Buddhist
+          'dalai-lama', 'panchen-lama', 'karmapa', 'sakya-trizin',
+          'nyingma-head', 'rinpoche', 'tulku', 'lama', 'je-khenpo',
+          'roshi', 'zen-master', 'chan-patriarch', 'sangharaja',
+          'mahanayaka', 'bhikkhu-theravada', 'bhikshu-mahayana',
+          'bhikkhuni-theravada', 'bhikshuni-mahayana', 'arhat-buddhist',
+          // Tier 2 — Hindu modern
+          'alvar', 'nayanar', 'bhakti-saint', 'sant', 'swami',
+          'paramahamsa', 'tantric-acharya', 'siddha-hindu', 'mahatma',
+          // Tier 2 — other traditions
+          'magus-zoroastrian', 'mobed', 'dastur',
+          'daoshi', 'zhenren', 'tianshi', 'ru-scholar', 'junzi-classical',
+          'kannushi', 'miko',
+          'babalawo', 'iyalawo', 'oluwo', 'oba-yoruba',
+          'houngan', 'mambo', 'bokor',
+          'babalorixa', 'iyalorixa', 'santero', 'nganga',
+          'bobo-ashanti-priest', 'nyahbinghi-elder',
+          'wichasha-wakan', 'medicine-person', 'tohunga', 'kahuna',
+          'angakkuq', 'noaidi', 'songline-keeper',
+          'clan-mother-haudenosaunee', 'faithkeeper-haudenosaunee',
+          'mudang', 'shaman-siberian', 'shaman-mongolian',
+          'priest-wiccan', 'priestess-wiccan', 'druid-modern',
+          'gothi', 'priest-thelema',
+          // Tier 2b
+          'theologian', 'philosopher-religious', 'jurist-jewish',
+          'sage-chinese-ru', 'presocratic-philosopher',
+          'mystic', 'mystic-christian', 'mystic-syncretic', 'magus',
+          // Tier 3 — Exemplars
+          'apostle-christian', 'disciple-christian',
+          'monastic-christian-western', 'monastic-christian-eastern',
+          'nun-christian', 'saint-roman-catholic', 'saint-eastern-orthodox',
+          'saint-oriental-orthodox', 'saint-anglican', 'wali-sufi',
+          'sant-bhakti', 'kevali',
+          'martyr-christian', 'martyr-shia', 'martyr-sunni',
+          'martyr-sikh-shahid', 'martyr-bahai', 'sahabi', 'tabiun',
+          // Tier 4 — political-religious
+          'emperor', 'king', 'queen', 'pharaoh',
+          'religious-reformer', 'religious-patron',
+          'state-founder-religious',
+        ]);
+        filterNodesByMode._figureQualifyingRoles = FIGURE_QUALIFYING;
+      }
+      const QUAL = filterNodesByMode._figureQualifyingRoles;
+      return nodes.filter(n => {
+        if (!n || n.type !== 'person') return false;
+        // PRIMARY: role-tokens YAML field (authoritative).
+        const tokens = n.role_tokens;
+        if (Array.isArray(tokens) && tokens.some(t => QUAL.has(t))) return true;
+        // BACKSTOP: legacy FIGURES_IDS set (DEPRECATED — delete after one
+        // session-cycle of soak per AUDIT/2026-05-31-figures-migration-plan-v3.md Stage 10).
+        return FIGURES_IDS.has(n.id);
+      });
     }
 
     // Default: simple type match.

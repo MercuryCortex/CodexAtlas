@@ -1194,6 +1194,15 @@ def main():
                     # (88.8% under the static set, 77.4% under the
                     # auto-derived union, → ≥95% under the YAML field).
                     "canonical_corpus": fm.get("canonical-corpus", []) or [],
+                    # 2026-05-31 — Figures migration (v3 plan + John "go").
+                    # Controlled-vocabulary primitive #1 (role-tokens) drives
+                    # the Figures lens via mode.js filterNodesByMode('figures').
+                    # Future controlled-vocab fields inherit this pass-through
+                    # pattern via 00_meta/controlled-vocab-registry.yaml.
+                    "role_tokens": fm.get("role-tokens", []) or [],
+                    "role_description": fm.get("role-description", "") or fm.get("role", ""),
+                    "polemical_framing": fm.get("polemical-framing", []) or [],
+                    "reclaimed_self_naming": fm.get("reclaimed-self-naming", []) or [],
                     "path": str(md.relative_to(VAULT)),
                     "body": body,
                     "frontmatter": fm,
