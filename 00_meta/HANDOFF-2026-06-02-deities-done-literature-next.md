@@ -33,7 +33,7 @@ This is the method that filled 71 moderate deities at **0 MAJOR across every bat
 2. **Write in the MAIN THREAD, batch by batch** (~8–16 nodes per batch, grouped by tradition/corpus). **Never** dispatch parallel agents to *write* files — the 2026-05-29 contamination incident (concurrent agents wipe untracked new files) is why. Agents are READ-ONLY here.
 3. **Per batch, in order:**
    a. Dupe-guard: confirm no slug already exists.
-   b. Verify every `[[wikilink]]` wire-target EXISTS before writing (a target that's bare prose or a non-existent slug → either a dead link or a graph-orphan). Bare-prose targets like `"Chloris (Greek)"` do NOT count as edges — if a node's *only* wire is bare prose, it becomes a graph-orphan.
+   b. Verify every wiki-link wire-target EXISTS before writing (a target that's bare prose or a non-existent slug → either a dead link or a graph-orphan). Bare-prose targets like `"Chloris (Greek)"` do NOT count as edges — if a node's *only* wire is bare prose, it becomes a graph-orphan. (Never put a literal double-bracket example in prose — linkcheck parses it as a real link; use backticks for slug names.)
    c. `python3 build_data.py` — watch for KeyError (a new family/wedge needs `FAMILY_COLORS` + `TRADITION_FAMILY_ORDER` entries).
    d. `python3 linkcheck.py --baseline` — must hold (exit 0).
    e. `python3 lint_yaml.py` — 0 errors.
