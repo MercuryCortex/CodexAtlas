@@ -2,6 +2,7 @@
 type: deity
 id: "ichikishima-hime"
 name: "Ichikishima Hime"
+tradition: "Shinto"   # assigned (membership-vs-wire 2026-06-02)
 period-active-earliest: 712
 period-active-latest: 2026
 status: "stub"

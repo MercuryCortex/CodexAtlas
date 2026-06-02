@@ -2,6 +2,7 @@
 type: deity
 id: "takeminakata"
 name: "Takeminakata"
+tradition: "Shinto"   # assigned (membership-vs-wire 2026-06-02)
 period-active-earliest: 712
 period-active-latest: 2026
 status: "stub"

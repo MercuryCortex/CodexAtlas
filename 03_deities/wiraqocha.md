@@ -2,6 +2,7 @@
 type: deity
 id: "wiraqocha"
 name: "Wiraqocha"
+tradition: "Inca / Andean"   # assigned (membership-vs-wire 2026-06-02)
 period-active-earliest: -500
 period-active-latest: 1608
 status: "stub"

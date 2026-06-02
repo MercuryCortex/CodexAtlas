@@ -2,6 +2,7 @@
 type: deity
 id: "adad"
 name: "Adad"
+tradition: "Akkadian / Babylonian"   # assigned (membership-vs-wire 2026-06-02)
 period-active-earliest: -2500
 period-active-latest: -100
 status: "stub"

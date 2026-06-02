@@ -3,7 +3,9 @@ type: deity
 id: "dionysus-mystery"
 name: "Dionysus (Mystery-Cult / Bacchic)"
 aka: ["Dionysos", "Bacchus", "Iacchos", "Zagreus (Orphic-Dionysus)", "Liber Pater (Roman)"]
-tradition: "Greek and Roman mystery-cult layers (distinguished from civic Olympian Dionysus)"
+tradition: "Greco-Roman mystery-cult (Bacchic / Dionysiac)"
+tradition-raw: "Greek and Roman mystery-cult layers (distinguished from civic Olympian Dionysus)"   # pre-migration (membership-vs-wire 2026-06-02)
+tradition-appearances: ['civic Olympian Dionysus (see [[dionysus]])']   # STEP-B worklist
 region: "Greek mainland, Magna Graecia, Italy, Asia Minor"
 period-active-earliest: -700
 period-active-latest: 400

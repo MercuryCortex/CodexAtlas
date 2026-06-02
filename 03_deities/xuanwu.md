@@ -2,6 +2,7 @@
 type: deity
 id: "xuanwu"
 name: "Xuanwu"
+tradition: "Chinese (Daoist)"   # assigned (membership-vs-wire 2026-06-02)
 period-active-earliest: -200
 period-active-latest: 2026
 status: "stub"

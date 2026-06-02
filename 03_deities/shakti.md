@@ -2,6 +2,7 @@
 type: deity
 id: "shakti"
 name: "Shakti"
+tradition: "Hindu (Shakta)"   # assigned (membership-vs-wire 2026-06-02)
 period-active-earliest: -1000
 period-active-latest: 2026
 status: "stub"

@@ -2,6 +2,7 @@
 type: deity
 id: "ammit-devourer"
 name: "Ammit (the Devourer of the Dead, ʿAmmit)"
+tradition: "Egyptian"   # assigned (membership-vs-wire 2026-06-02)
 aka: ["Ammut", "Ahemait", "Ammenet", "Devourer of the Dead", "Eater of Hearts"]
 period-earliest: -2400
 period-latest: 30

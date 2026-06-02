@@ -3,7 +3,9 @@ type: deity
 id: "baphomet"
 name: "Baphomet"
 aka: ["the Templar idol (historical accusation)", "Baphometh", "the Goat of Mendes (18th–19th c. identification)", "Sabbatic Goat", "the Goat of the Witches' Sabbath", "the Androgynous Goat (Lévi's interpretation)"]
-tradition: "Accusation: [[tradition-knights-templar]] (alleged); Occult reception: [[tradition-hermeticism]] / [[tradition-rosicrucianism]] / Modern Satanism"
+tradition: "Modern occultism (Lévi 1856 Sabbatic Goat)"
+tradition-raw: "Accusation: [[tradition-knights-templar]] (alleged); Occult reception: [[tradition-hermeticism]] / [[tradition-rosicrucianism]] / Modern Satanism"   # pre-migration (membership-vs-wire 2026-06-02)
+tradition-appearances: ['Knights-Templar trial accusation 1307 (coerced — never a real cult)', 'Hermeticism', 'Rosicrucianism', 'Modern Satanism']   # STEP-B worklist
 region: "France (accusation, 1307); France (Lévi's occult reconstruction, 1854); United States (Church of Satan / The Satanic Temple, 20th–21st c.)"
 period-active-earliest: 1307
 period-active-latest: 2026

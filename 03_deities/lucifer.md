@@ -3,7 +3,9 @@ type: deity
 id: "lucifer"
 name: "Lucifer"
 aka: ["Heylel ben-Shahar ('Day-Star, son of Dawn', Isaiah 14:12)", "Phosphoros (Greek 'Light-Bringer')", "Eosphoros (Greek 'Dawn-Bringer')", "the Morning Star (Venus)"]
-tradition: "Christianity (post-Jerome Vulgate) → Romantic reception → Modern Satanism"
+tradition: "Christianity (post-Jerome Vulgate, Isa 14:12 Helel)"
+tradition-raw: "Christianity (post-Jerome Vulgate) → Romantic reception → Modern Satanism"   # pre-migration (membership-vs-wire 2026-06-02)
+tradition-appearances: ['Romantic reception', 'Modern Satanism', 'Hebrew Helel ben Shahar substrate']   # STEP-B worklist
 region: "Latin West"
 period-active-earliest: 380
 period-active-latest: 2026

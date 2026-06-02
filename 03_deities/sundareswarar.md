@@ -2,6 +2,7 @@
 type: deity
 id: "sundareswarar"
 name: "Sundareswarar"
+tradition: "Hindu (Tamil Shaiva)"   # assigned (membership-vs-wire 2026-06-02)
 period-active-earliest: 600
 period-active-latest: 2026
 status: "stub"
