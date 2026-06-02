@@ -8,7 +8,9 @@ origin tradition; cross-tradition reach is wired, not membership.
 
 **Status key:** ✅ filled · ⬜ pending
 
-> **✅ ALL CRITICAL COMPLETE (2026-06-02).** All ~52 critical gaps below filled across 5 batches (Canaanite, Greek, ANE-remainder, Asian, Euro/Afr/Amer). Deities 711→771. Remaining work = the MODERATE tier (~80, listed at the bottom) — the next pass.
+> **✅ ALL CRITICAL COMPLETE (2026-06-02).** All ~52 critical gaps below filled across 5 batches (Canaanite, Greek, ANE-remainder, Asian, Euro/Afr/Amer). Deities 711→771.
+>
+> **✅✅ ALL MODERATE COMPLETE (2026-06-02).** Every moderate-tier deity in the list below is now filled — 71 nodes across 17 traditions (Roman, Hittite, Arabian, Hindu, Buddhist, Jain, Chinese, Shinto, Korean, Celtic, Slavic, Baltic, Finnic, African, Polynesian, Zoroastrian + Four Sons of Horus). Each is singular-home + T1-sourced + cross-tradition-wired, and **every batch was graded by a read-only fact-check agent (0 MAJOR across all 71)**. Deities **889**, edges **23,463**. **This worklist is the single source of truth for deity coverage; it is now CLOSED.** The deity-product-grade benchmark reads **9/9 = PRODUCT-GRADE**. NEXT phase per John's sweep order: **LITERATURE** (`02_documents/`), then persons.
 
 ---
 
