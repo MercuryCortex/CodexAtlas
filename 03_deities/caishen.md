@@ -2,7 +2,7 @@
 type: deity
 id: "caishen"
 name: "Caishen"
-aka: ["Cáishén (財神)", "Ts'ai Shen", "the God of Wealth", "Zhao Gongming (martial form)", "Bi Gan (civil form)"]
+aka: ["Cáishén (財神)", "Ts'ai Shen", "the God of Wealth"]
 tradition: "Daoism / Chinese folk religion"
 region: "China and the Chinese diaspora — household and shop shrines; welcomed at Lunar New Year"
 period-active-earliest: 900
