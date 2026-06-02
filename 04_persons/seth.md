@@ -4,7 +4,7 @@ id: "seth"
 name: "Seth"
 aka: ["Shēt (Hebrew)", "Sēth (Greek)", "Allogenes / Allogeneus (Sethian)"]
 tradition: "Hebrew Bible; Sethian Gnostic Christianity; Mandaeism (as Šitil); Islam"
-role-tokens: ["legendary-disputed", "gnostic-redeemer-figure", "prophet-abrahamic"]
+role-tokens: ["patriarch-antediluvian", "gnostic-redeemer-figure", "prophet-abrahamic"]
 role-description: "Seth (Hebrew Šēt, 'appointed' / 'granted') — biblical patriarch (third son of Adam per Gen 4:25-26; 5:3-8). In the Hebrew Bible a minor genealogical figure; theological importance was constructed retroactively. In Sethian Gnostic Christianity (~2nd-4th c. CE) Seth becomes a cosmic-redemptive figure of enormous importance — the 'third begetting' and the heavenly Seth (Allogenes / 'the Stranger') is the cosmic-mythic origin of the saved-spiritual race ('the seed of Seth'). The Mandaean tradition makes Seth (as Šītil / Shīth) one of the great Light-prophets. Islamic tradition recognizes him as a prophet (Shīth) in post-Quranic prophet-lists."
 region: "Mesopotamian-Levantine biblical tradition; Egyptian-Syrian Gnostic milieu"
 date-born: -3700
