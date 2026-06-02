@@ -11,8 +11,9 @@ region: "Classic Maya civilization (Yucatan Peninsula, Guatemala, Belize, Chiapa
 period-active-earliest: -300
 period-active-latest: 1697
 family: Maya
-gender: male
-domain: ["rain", "lightning", "water", "agriculture", "fertility"]
+gender: "masculine"
+role: "Maya god of rain, lightning, and storms"
+domains: ["rain", "lightning", "water", "agriculture", "fertility"]
 tags:
   - maya-deity
   - rain-deity
@@ -47,8 +48,18 @@ syncretic-edges:
     source-tier: T1
     notes: "MASSIVE WIN: 6-tradition storm-deity-with-thunder-axe/thunderbolt convergence (Maya Chaac, Aztec Tlaloc, Vedic Indra, Canaanite Baal, Greek Zeus, Norse Thor, Slavic Perun) — the storm-axe-as-rain-bringer is one of the most-universally-attested mythological constellations"
 refs:
-  - "Simon Martin and Nikolai Grube, Chronicle of the Maya Kings and Queens, Thames and Hudson, 2000 [T1/T2]"
-  - "David Freidel, Linda Schele, Joy Parker, Maya Cosmos: Three Thousand Years on the Shaman's Path, Morrow, 1993 [T2]"
+  - title: "Chronicle of the Maya Kings and Queens"
+    author: "Martin, Simon, and Grube, Nikolai"
+    year: 2000
+    publisher: "Thames & Hudson"
+    type: "monograph"
+    tier: 1
+  - title: "Maya Cosmos: Three Thousand Years on the Shaman's Path"
+    author: "Freidel, D., Schele, L., and Parker, J."
+    year: 1993
+    publisher: "William Morrow"
+    type: "monograph"
+    tier: 2
 dating-basis: B3
 dating-basis-source: "\"Coe, M. 2011 *The Maya*\""
 dating-basis-notes: "Chaac Maya rain-deity Preclassic to Postclassic; iconographically attested c. -200 (long-nosed god)."
