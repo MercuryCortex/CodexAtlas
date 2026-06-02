@@ -85,7 +85,7 @@ Frankincense's value runs on its **combustion behaviour**: ignited on charcoal, 
 
 **Hebrew Bible**: *Levonah* (לְבוֹנָה, frankincense) is one of the four ingredients of the holy temple incense ([[document-exodus]] 30:34-38), specified for the showbread ([[document-leviticus]] 24:7), the meal offering ([[document-leviticus]] 2:1-2), and explicitly forbidden from the sin offering ([[document-leviticus]] 5:11). The Queen of Sheba brings "spices in great abundance, and gold, and precious stones" to Solomon ([[document-1-kings]] 10:1-13) — a Sabaean-Hebrew commercial-religious encounter that is fundamentally a frankincense story. The Tyre oracle in [[document-ezekiel]] 27:22-23 explicitly names "Sheba and Raamah" as the suppliers of "the chief of all spices" to Tyrian merchants.
 
-**New Testament Magi**: [[document-matthew]] 2:11 — "they opened their treasures and presented unto him gifts: gold, and frankincense, and myrrh." These three commodities are a **précis of the South Arabian incense-trade cargo**. The Magi (Greek *magoi*, Median/Persian priest-class) arriving from "the east" with this specific cargo are, on a flatly economic reading, a literary signature of the [[incense-trade-route-south-arabian]] crossing the Levant. The narrative encodes the trade-network in a single Gospel scene.
+**New Testament Magi**: [[phase-3-017-gospel-of-matthew|Matthew]] 2:11 — "they opened their treasures and presented unto him gifts: gold, and frankincense, and myrrh." These three commodities are a **précis of the South Arabian incense-trade cargo**. The Magi (Greek *magoi*, Median/Persian priest-class) arriving from "the east" with this specific cargo are, on a flatly economic reading, a literary signature of the [[incense-trade-route-south-arabian]] crossing the Levant. The narrative encodes the trade-network in a single Gospel scene.
 
 **Greco-Roman religion**: Frankincense is the default obligatory offering across temple cults. The act of casting *thus* (frankincense) on a brazier becomes the **legal-political loyalty test** to the imperial cult that early Christians refuse, producing the martyrologies.
 
@@ -101,7 +101,7 @@ Frankincense is the **prime exhibit** for **cluster 1** (Incense Trade Route as 
 
 It is the substrate of **cluster 7** (commodity monopoly and sacrality): no other commodity in human history has so completely combined narrow geographic exclusivity with universal sacral indispensability. Tyrian purple ([[tyrian-purple-dye]]) is the structural analogue but more politically narrow (imperial-priestly elite only); frankincense was sacralised across the entire participating population of every consuming culture.
 
-The Magi narrative ([[document-matthew]] 2:11) is the **literary smoking gun**: a Gospel author writing in Greek for a Levantine-Mediterranean audience encodes the entire South Arabian incense-trade corpus in a three-word cargo manifest ("gold, frankincense, myrrh") and assigns it to Persian priest-merchants. The transmission corridor is in the canonical text.
+The Magi narrative ([[phase-3-017-gospel-of-matthew|Matthew]] 2:11) is the **literary smoking gun**: a Gospel author writing in Greek for a Levantine-Mediterranean audience encodes the entire South Arabian incense-trade corpus in a three-word cargo manifest ("gold, frankincense, myrrh") and assigns it to Persian priest-merchants. The transmission corridor is in the canonical text.
 
 ## Sources
 
@@ -118,6 +118,6 @@ The Magi narrative ([[document-matthew]] 2:11) is the **literary smoking gun**: 
 - [[frankincense]] — substance qua substance (24_pharmacology)
 - [[incense-trade-route-south-arabian]] — the route that carried it
 - [[myrrh-as-trade-commodity]] — paired commodity
-- [[document-matthew]] §2 — the Magi-gifts canonical attestation
+- [[phase-3-017-gospel-of-matthew|Matthew]] §2 — the Magi-gifts canonical attestation
 - [[document-exodus]] 30:34-38 — the Tabernacle incense specification
 - [[tyrian-purple-dye]] — structural commodity-monopoly analogue
