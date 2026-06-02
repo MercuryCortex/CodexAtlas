@@ -2,7 +2,7 @@
 type: deity
 id: "tuoni"
 name: "Tuoni"
-aka: ["Tuoni", "Tuonetar (his wife/daughter)", "Mana / Manala (the realm)", "the lord of Tuonela"]
+aka: ["Tuoni", "Tuonetar (his wife)", "Mana / Manala (the realm)", "the lord of Tuonela"]
 tradition: "Finno-Karelian — Kalevala / runo-poetry tradition"
 region: "Karelia and Finland — Tuonela / Manala, the land of the dead"
 period-active-earliest: -500
