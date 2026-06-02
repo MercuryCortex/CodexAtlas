@@ -134,7 +134,7 @@ below_metadata = status_ct.get("stub", 0) + status_ct.get("partial", 0) + status
 incomplete_fields = len(set(no_domains) | set(no_gender) | set(no_role))
 
 # Tracked constants (judgment-based, updated as work proceeds):
-KNOWN_DUPLICATES = 2       # ninhursag, velinas — pending content-merge
+KNOWN_DUPLICATES = 0       # ninhursag→ninhursag-nintud→ninhursag, velinas-lithuanian→velinas, +mithra/zagreus/verethraghna/xuanwu all merged 2026-06-02
 MODERATE_OPEN    = 75      # coverage gaps remaining in the worklist
 
 def row(key, label, target, current, ok, detail=""):

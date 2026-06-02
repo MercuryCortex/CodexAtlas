@@ -1,8 +1,8 @@
 {
  "generatedAt": "2026-06-02",
- "totalDeities": 782,
+ "totalDeities": 780,
  "productGrade": false,
- "passCount": 6,
+ "passCount": 8,
  "rowCount": 9,
  "baseline": {
   "connected": 19,
@@ -26,7 +26,7 @@
    "key": "tradition",
    "label": "Has home tradition",
    "target": "100%",
-   "current": "782/782",
+   "current": "780/780",
    "ok": true,
    "detail": ""
   },
@@ -34,7 +34,7 @@
    "key": "dates",
    "label": "Has dates",
    "target": "100%",
-   "current": "782/782",
+   "current": "780/780",
    "ok": true,
    "detail": ""
   },
@@ -50,8 +50,8 @@
    "key": "depth",
    "label": "At least metadata depth",
    "target": "0 stubs/partials",
-   "current": "6",
-   "ok": false,
+   "current": "0",
+   "ok": true,
    "detail": "stub + partial + untyped"
   },
   {
@@ -74,8 +74,8 @@
    "key": "dupes",
    "label": "No duplicates",
    "target": "0",
-   "current": "2",
-   "ok": false,
+   "current": "0",
+   "ok": true,
    "detail": "ninhursag, velinas \u2014 pending content-merge"
   },
   {
