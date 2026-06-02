@@ -1050,6 +1050,145 @@ def write_high_alert_index(nodes, edges):
     out_path.write_text("\n".join(lines), encoding="utf-8")
 
 
+def _attach_classification_provenance(nodes):
+    """Attach source-citation provenance to each node's classification_provenance
+    field, generic over any controlled-vocab field listed in the registry.
+
+    For each controlled-vocab field a node uses, emit:
+      node.classification_provenance[field] = [
+        {token, display, source-tier, source, contested_rationale (if any)},
+        ...
+      ]
+
+    Side-panel renderer reads this and surfaces "Categorized as X per Y"
+    chips per the John 2026-06-02 directive.
+    """
+    import yaml as _yaml
+    META = VAULT / "00_meta"
+
+    # Load registry
+    reg_path = META / "controlled-vocab-registry.yaml"
+    if not reg_path.exists():
+        return
+    with reg_path.open() as f:
+        registry = _yaml.safe_load(f) or {}
+    active = (registry or {}).get("active_fields", {}) or {}
+
+    # Load each vocab file's entries into a (field → id → entry) map
+    vocab_index = {}
+    for field_name, meta in active.items():
+        vocab_file = meta.get("vocab_file", "")
+        if not vocab_file:
+            continue
+        vp = VAULT / vocab_file
+        if not vp.exists():
+            continue
+        try:
+            with vp.open() as f:
+                vd = _yaml.safe_load(f) or {}
+            entries = vd.get("entries", []) or []
+            idx = {}
+            for e in entries:
+                key = e.get("id") or e.get("label")
+                if key:
+                    idx[key] = e
+            vocab_index[field_name] = idx
+        except Exception:
+            continue
+
+    # Load contested-cases ratifications (single source of truth for per-node
+    # overrides)
+    contested = {}
+    cc_path = META / "role-contested-cases-ratified-2026-05-31.yaml"
+    if cc_path.exists():
+        try:
+            with cc_path.open() as f:
+                ccd = _yaml.safe_load(f) or {}
+            contested = ccd.get("contested_cases", {}) or {}
+        except Exception:
+            pass
+
+    # Walk nodes, build provenance per controlled-vocab field
+    JSON_FIELD_NAMES = {
+        # YAML field name → JSON field name in node payload
+        "role-tokens": "role_tokens",
+        "tradition": "tradition",
+        "polemical-framing": "polemical_framing",
+        "reclaimed-self-naming": "reclaimed_self_naming",
+    }
+
+    for node in nodes:
+        prov = node.get("classification_provenance") or {}
+        node_id = node.get("id")
+        node_contested = contested.get(node_id, {}) or {}
+
+        for field_yaml_name, vocab_idx in vocab_index.items():
+            json_field_name = JSON_FIELD_NAMES.get(field_yaml_name, field_yaml_name.replace("-", "_"))
+            value = node.get(json_field_name)
+            if not value:
+                continue
+
+            # Build per-value provenance entries
+            entries_out = []
+            if isinstance(value, list):
+                # Array field — typical case (role_tokens)
+                for v in value:
+                    if isinstance(v, dict):
+                        # Already a structured field (polemical-framing, reclaimed-self-naming)
+                        # Source is already in the value — pass through as-is
+                        entries_out.append({
+                            "value": v.get("label") or v.get("by") or "",
+                            "source-tier": v.get("source-tier", ""),
+                            "source": v.get("source", ""),
+                            "context": v.get("by") or v.get("direction") or v.get("tradition") or "",
+                        })
+                    else:
+                        # Scalar in array — look up in vocab
+                        vocab_entry = vocab_idx.get(v)
+                        if vocab_entry:
+                            entries_out.append({
+                                "value": v,
+                                "display": vocab_entry.get("display", v),
+                                "source-tier": vocab_entry.get("source-tier", ""),
+                                "source": vocab_entry.get("source", ""),
+                                "secondary": vocab_entry.get("secondary", []),
+                                "tier": vocab_entry.get("tier", ""),
+                                "notes": vocab_entry.get("notes", ""),
+                            })
+                        else:
+                            entries_out.append({
+                                "value": v,
+                                "display": v,
+                                "source-tier": "",
+                                "source": "(no vocab entry — needs registration)",
+                            })
+            elif isinstance(value, str):
+                # Scalar field — typical for tradition
+                vocab_entry = vocab_idx.get(value)
+                if vocab_entry:
+                    entries_out.append({
+                        "value": value,
+                        "display": vocab_entry.get("display", value),
+                        "source-tier": vocab_entry.get("source-tier", ""),
+                        "source": vocab_entry.get("source", ""),
+                    })
+
+            # If this node is in contested-cases for role-tokens, attach the rationale
+            if field_yaml_name == "role-tokens" and node_contested:
+                contested_rationale = node_contested.get("rationale", "")
+                contested_source = node_contested.get("source-tier", "")
+                if contested_rationale:
+                    for e in entries_out:
+                        e["contested_rationale"] = contested_rationale
+                        e["contested_source_tier"] = contested_source
+
+            if entries_out:
+                prov[field_yaml_name] = entries_out
+
+        if prov:
+            node["classification_provenance"] = prov
+
+
 def main():
     print(f"Scanning vault at {VAULT} ...")
     THUMBS = load_thumbnail_cache()
@@ -1203,6 +1342,15 @@ def main():
                     "role_description": fm.get("role-description", "") or fm.get("role", ""),
                     "polemical_framing": fm.get("polemical-framing", []) or [],
                     "reclaimed_self_naming": fm.get("reclaimed-self-naming", []) or [],
+                    # 2026-06-02 — Provenance surfacing (John's "explicit-why-we-
+                    # categorize" directive). Per-node provenance is computed
+                    # post-construction by attach_classification_provenance()
+                    # which reads the controlled-vocab registry + vocab files +
+                    # contested-cases YAML and emits source citations per
+                    # classification chip. Side-panel renderer surfaces these
+                    # via renderProvenance(node, field_name) — generic over
+                    # any controlled-vocab field, future-extensible.
+                    "classification_provenance": {},
                     "path": str(md.relative_to(VAULT)),
                     "body": body,
                     "frontmatter": fm,
@@ -1374,6 +1522,17 @@ def main():
         {"name": f, "color": FAMILY_COLORS[f], "count": len(fam_members.get(f, []))}
         for f in TRADITION_FAMILY_ORDER if fam_members.get(f)
     ]
+
+    # ── 2026-06-02 Provenance surfacing (John's "explicit-why-we-categorize"
+    # directive). Generic over controlled-vocab fields per the §9.5
+    # architectural-primitive directive. For each node with a controlled-vocab
+    # field populated, attach per-token source citations + (if contested) the
+    # ratification rationale. Side-panel renderer reads node.classification_
+    # provenance[field_name] and surfaces source chips with tooltips.
+    try:
+        _attach_classification_provenance(nodes)
+    except Exception as _e:
+        print(f"WARN: classification provenance attachment failed: {_e}")
 
     out = {
         "generated_at_utc": __import__("datetime").datetime.utcnow().isoformat() + "Z",

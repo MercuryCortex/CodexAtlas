@@ -302,6 +302,28 @@ entries:
 
 **No new validator / build / filter code.** The substrate is built once.
 
+**Provenance surfacing in the side panel (2026-06-02, John directive):**
+
+> *"is it explicit why we categorize it like that? (this will go to all classification or box we place stuff?)"*
+
+**YES, universally.** Every controlled-vocab field surfaces its Tier-1 source + (where applicable) contested-case rationale in the side panel. The "why" must be visible to the user, not buried in YAML. This is the academic-transparency layer of the controlled-vocab primitive.
+
+Mechanism:
+1. `build_data.py _attach_classification_provenance(nodes)` walks every node, reads the registry, and for each controlled-vocab field with values, attaches `node.classification_provenance[field] = [{value, source-tier, source, contested_rationale, ...}, ...]`.
+2. `src/js/forge/side-panel.js renderProvenance()` renders each field as: a label, chips (with tier-color badges + hover tooltips), visible source citation lines, and `⚖ rationale` for contested cases.
+3. Generic over every controlled-vocab field — adding a new field = adding it to the registry + writing the vocab YAML. Provenance surfaces automatically.
+
+CSS classes (re-usable for any node-type side panel):
+- `.forge-side-panel-provenance` — outer block per field
+- `.forge-side-panel-provenance-label` — field label
+- `.forge-side-panel-provenance-chips` — chip row
+- `.forge-side-panel-provenance-chip` — individual chip with `data-tier` attribute
+- `.forge-side-panel-provenance-chip-tier` — T1/T2/T3/T4 badge with tier-specific color
+- `.forge-side-panel-provenance-source` — visible source citation
+- `.forge-side-panel-provenance-rationale` — italic-styled contested-case rationale
+
+**Future controlled-vocab fields inherit the entire pattern.** Adding `sub-tradition` canonization, themes vocabulary, era vocabulary, etc. requires only the vocab YAML + the registry entry. The side-panel provenance display works without any new JS or CSS.
+
 **Currently active controlled-vocab fields (2026-05-31):**
 
 | Field | Vocab file | Node types | Drives lens |
