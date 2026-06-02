@@ -17,7 +17,7 @@ attributes: ["arched body across sky", "star-spangled body", "sun-disc in mouth 
 attested-in: ["[[phase-1-002-pyramid-texts]]", "[[phase-1-009-coffin-texts]]", "[[phase-1-010-book-of-the-dead]]"]
 equivalents: []
 syncretic-edges: []
-status: "partial"
+status: "metadata"
 refs:
   - title: "The Routledge Dictionary of Egyptian Gods and Goddesses"
     author: "Wilkinson, Richard H."

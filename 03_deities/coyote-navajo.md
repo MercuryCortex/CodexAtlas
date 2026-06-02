@@ -8,6 +8,8 @@ sub-tradition: "Diné (Navajo) / Athabaskan; also widespread across Ute, Shoshon
 gender: "male (fluid — shapeshifts)"
 domain: ["trickery", "necessary disorder", "death (origin of)", "sexuality", "fire (in some traditions)", "the unexpected", "chaos as creativity"]
 region: "Diné Bikéyah (Navajo homeland) / Southwest and Great Basin North America"
+domains: ["trickery and disorder", "the introduction of death into creation", "appetite and transgression"]
+role: "trickster figure of Diné (Navajo) mythology"
 period-active-earliest: -500
 period-active-latest: 2026
 date-earliest: 1000

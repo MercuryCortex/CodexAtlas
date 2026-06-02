@@ -25,7 +25,7 @@ syncretic-edges:
     type: "folk-syncretism"
     source: "Late Period and Ptolemaic Hathor-Isis assimilation; many of Hathor's attributes (sun-disk-and-horns crown, mother-of-Horus role) are transferred to Isis"
     source-tier: T1
-status: "partial"
+status: "metadata"
 refs:
   - title: "The Complete Gods and Goddesses of Ancient Egypt"
     author: "Wilkinson, Richard H."

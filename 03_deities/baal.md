@@ -4,6 +4,9 @@ id: "baal"
 name: "Baal"
 aka: ["Ba'al", "Baal", "lord", "Baal Hadad"]
 tradition: "Canaanite / Ugaritic"
+domains: ["storm and rain", "fertility", "kingship", "war (the chaoskampf against Yam and Mot)"]
+gender: "masculine"
+role: "Canaanite storm-god and king of the gods"
 period-active-earliest: -2500
 period-active-latest: -100
 equivalents: ["[[baal-hadad]]"]

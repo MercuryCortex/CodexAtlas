@@ -10,6 +10,7 @@ period-active-latest: 600
 domains: ["motherhood", "mystery initiation", "magic", "sea", "salvation", "universal goddess"]
 gender: "feminine"
 role: "universal mother-goddess and savior; mystery-cult initiator"
+status: "full"
 parent-of: ["Harpocrates (Greco-Egyptian child-Horus form; no node yet)", "[[horus]]"]
 # INTENTIONAL SPLIT (resolved 2026-05-21): the Egyptian dynastic-funerary Isis is at [[isis-egyptian]]. This file (`isis-hellenistic`) covers the Ptolemaic / Greco-Roman mystery-cult Isis that absorbs Hera/Demeter/Aphrodite/Athena/Cybele — theologically distinct per schema's tradition-transformation splitting rule (same pattern as inanna-sumerian ↔ ishtar-akkadian ↔ aphrodite-greek).
 child-of: []

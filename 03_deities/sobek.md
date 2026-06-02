@@ -25,7 +25,7 @@ syncretic-edges:
     type: "ancient-identification"
     source: "At Kom Ombo, Sobek and Horus the Elder share temple dedication; theological identification of Sobek with Horus's regal aspect"
     source-tier: T1
-status: "partial"
+status: "metadata"
 refs:
   - title: "Le crocodile et son culte dans l'Égypte ancienne"
     author: "Brovarski, Edward; el-Sayed, Ramadan"

@@ -41,7 +41,7 @@ tags:
   - healing-deity
   - destroyer-healer
   - plague
-status: "partial"
+status: "metadata"
 refs:
   - title: "The Complete Gods and Goddesses of Ancient Egypt"
     author: "Wilkinson, Richard H."

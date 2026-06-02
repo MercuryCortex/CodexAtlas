@@ -8,6 +8,7 @@ sub-tradition: "Greco-Phoenician mystery religion; dying-and-rising deity cluste
 gender: "male"
 domains: ["beauty", "vegetation", "death and rebirth", "hunting", "desire"]
 region: "Phoenicia (Byblos) → Greece → Rome"
+role: "dying-and-rising vegetation god; the beautiful youth beloved of Aphrodite and Persephone"
 period-active-earliest: -1400
 period-active-latest: 400
 attested-in: ["[[phase-3-035-homeric-hymns]]", "[[document-ezekiel]]"]

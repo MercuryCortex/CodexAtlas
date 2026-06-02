@@ -17,7 +17,7 @@ attributes: ["green-skinned (vegetation)", "goose hieroglyph (his name's logogra
 attested-in: ["[[phase-1-002-pyramid-texts]]", "[[phase-1-009-coffin-texts]]", "[[phase-1-010-book-of-the-dead]]"]
 equivalents: []
 syncretic-edges: []
-status: "partial"
+status: "metadata"
 refs:
   - title: "Conceptions of God in Ancient Egypt"
     author: "Hornung, Erik"

@@ -8,6 +8,8 @@ sub-tradition: "Olympian religion; mystery cults (as psychopomp); Hermetism (as 
 gender: "male"
 domain: ["messenger", "travel", "commerce", "theft", "boundaries", "souls of the dead", "interpretation", "luck", "crossroads", "language", "cunning"]
 region: "Greece → Rome → Hellenistic world → Hermetism"
+domains: ["boundaries and transitions", "travel and roads", "commerce and exchange", "heralds and messages", "thieves and trickery", "guide of souls (psychopomp)"]
+role: "messenger of the gods; psychopomp; god of boundaries, trade, and cunning"
 period-active-earliest: -1400
 period-active-latest: 400
 date-earliest: -1400

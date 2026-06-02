@@ -25,7 +25,7 @@ syncretic-edges:
     type: "ancient-identification"
     source: "Bastet (gentle cat) and Sekhmet (wrathful lioness) are theologically twin manifestations of feline divine power; their iconography is interchangeable in earlier periods"
     source-tier: T1
-status: "partial"
+status: "metadata"
 refs:
   - title: "Tell Basta: Preliminary Report"
     author: "Bakr, Mohamed I."

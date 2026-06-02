@@ -11,6 +11,8 @@ domain: ["truth", "justice", "cosmic order", "balance", "right conduct", "divine
 period-earliest: -2686
 period-latest: -30
 region: "Egypt"
+domains: ["truth", "cosmic order and balance (maʿat)", "justice", "the ordering principle of the universe"]
+role: "personification of truth, cosmic order, and justice"
 period-active-earliest: -2400
 period-active-latest: 500
 parents: ["[[ra]]"]

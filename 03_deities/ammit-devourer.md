@@ -7,6 +7,9 @@ aka: ["Ammut", "Ahemait", "Ammenet", "Devourer of the Dead", "Eater of Hearts"]
 period-earliest: -2400
 period-latest: 30
 region: "Egypt"
+domains: ["devouring the unworthy dead (the second death)", "the consequence of moral failure at judgment"]
+gender: "feminine"
+role: "devourer of the dead at the weighing-of-the-heart"
 period-active-earliest: -2400
 period-active-latest: 500
 tradition-context:

@@ -8,6 +8,8 @@ sub-tradition: "Chinese folk religion / Daoist domestic cult / Chinese popular r
 gender: "male"
 domain: ["hearth", "household", "family morality", "annual divine census", "domestic life", "food", "fire"]
 region: "China; Taiwan; diaspora Chinese communities globally"
+domains: ["the hearth and kitchen", "the household's moral surveillance", "the annual report to Heaven"]
+role: "the Kitchen God; household deity who reports each family's conduct to the Jade Emperor"
 period-active-earliest: -300
 period-active-latest: 2026
 date-earliest: -300

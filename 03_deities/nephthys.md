@@ -21,7 +21,7 @@ syncretic-edges:
     type: "scholarly-parallel"
     source: "Nephthys is Isis's structural twin and inseparable cultic companion; in Plutarch's *De Iside et Osiride* (~+100) she is the feminine principle of the lower/marginal realms paired with Isis as upper/central"
     source-tier: T1
-status: "partial"
+status: "metadata"
 refs:
   - title: "The Complete Gods and Goddesses of Ancient Egypt"
     author: "Wilkinson, Richard H."
