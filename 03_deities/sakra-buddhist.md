@@ -22,7 +22,7 @@ syncretic-edges:
     source: "Sumi, Toshihiko (2014). *Indra in Buddhist Texts*; DeCaroli, R. (2004). *Haunting the Buddha: Indian Popular Religions and the Formation of Buddhism*. Oxford UP; Boucher, D. (2008). *Bodhisattvas of the Forest and the Formation of the Mahāyāna*"
     source-tier: T1
     notes: "MASSIVE-WIN: Vedic Indra is preserved by name in the Buddhist canonical retention of his honorific *Devānām Indra* ('king of the gods'), which becomes the Buddhist proper name 'Śakra Devānām Indra'. The Pāli form *Sakka* and the Sanskrit *Śakra* both descend from Indra's Vedic epithet. The doctrinal move is striking: rather than demonize Indra (as Zoroastrianism did, demoting him to a daēva — see [[asura-deva-inversion]]), Buddhism subordinates him — Śakra is still king of his heaven (Trāyastriṃśa on Mount Sumeru), but is doctrinally below the Buddha and below the bodhisattvas. The Indra-Buddha encounter narratives (esp. Sakka-pañha Sutta DN 21) dramatize this demotion: Śakra approaches the Buddha as a disciple"
-  - target: "[[verethraghna-zoroastrian]]"
+  - target: "[[verethragna]]"
     type: "parallel-divergence"
     source: "Boyce 1975 — divergent fates of Indra-derived figures across Indo-Iranian sister-traditions"
     source-tier: T1
@@ -57,7 +57,7 @@ Buddhist king of the gods, ruler of the Trāyastriṃśa ("Heaven of the Thirty-
 
 ## The doctrinal demotion
 
-Buddhism's handling of Indra is the cleanest comparative-religion case study in how an absorbing tradition can subordinate rather than reject a source-tradition's chief god. Where Zoroastrianism demonized Indra as a daēva (see [[asura-deva-inversion]] and [[verethraghna-zoroastrian]]), Buddhism kept him — but moved him below the Buddha and the bodhisattvas in the cosmic hierarchy. The *Sakka-pañha Sutta* (Dīgha Nikāya 21) narrates Śakra approaching the Buddha as a disciple to ask questions about Dharma. The image is doctrinally load-bearing: the king of the Vedic gods becomes a student of the Awakened One.
+Buddhism's handling of Indra is the cleanest comparative-religion case study in how an absorbing tradition can subordinate rather than reject a source-tradition's chief god. Where Zoroastrianism demonized Indra as a daēva (see [[asura-deva-inversion]] and [[verethragna]]), Buddhism kept him — but moved him below the Buddha and the bodhisattvas in the cosmic hierarchy. The *Sakka-pañha Sutta* (Dīgha Nikāya 21) narrates Śakra approaching the Buddha as a disciple to ask questions about Dharma. The image is doctrinally load-bearing: the king of the Vedic gods becomes a student of the Awakened One.
 
 ## The transmission chain across East Asia
 

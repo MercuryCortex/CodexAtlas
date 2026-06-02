@@ -15,7 +15,7 @@ child-of: ["[[zeus]]", "Semele"]
 consort: ["Ariadne"]
 attributes: ["thyrsus (fennel staff)", "ivy crown", "leopards / panthers", "grapevine", "drinking cup"]
 attested-in: ["[[phase-2-008-homeric-epics]]", "[[phase-2-009-hesiod-theogony-works-and-days]]", "Homeric Hymn to Dionysus", "Linear B (di-wo-nu-so, Pylos and Khania — 13th c. BCE!)"]
-equivalents: ["[[bacchus]]", "[[osiris]]", "[[shiva]]", "[[zagreus-orphic]]"]
+equivalents: ["[[bacchus]]", "[[osiris]]", "[[shiva]]", "[[zagreus]]"]
 syncretic-edges:
   - target: "[[osiris]]"
     type: "ancient-identification"
@@ -27,7 +27,7 @@ syncretic-edges:
     source: "Daniélou, Alain (1979). *Shiva and Dionysus: The Religion of Nature and Eros*. Inner Traditions; Detienne 1989 *Dionysos at Large*"
     source-tier: T1
     notes: "Daniélou's full-book argument: Shiva and Dionysus are two articulations of the same archaic Eurasian wild-vegetation-god, both descended from a pre-Aryan / pre-Hellenic substrate. Convergence on ascetic-erotic paradox, wild-ecstatic ritual, bull/horn iconography, cosmic-dance/sparagmos, and outsider divine origin myth. Mainstream scholarship reads it as structural rather than historical, but the parallel is the canonical Indo-European comparative pairing"
-  - target: "[[zagreus-orphic]]"
+  - target: "[[zagreus]]"
     type: "ancient-identification"
     source: "Orphic theogonies; Dionysus-Zagreus is dismembered by Titans and reborn — the central Orphic mystery"
     source-tier: T1

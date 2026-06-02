@@ -87,7 +87,7 @@ The corpus is enormous compared to Old Avestan: where Old Avestan is essentially
 ## The four principal corpora
 
 1. **The Yasna** — the daily liturgical text; Old Avestan Gathic material is embedded inside a Younger Avestan frame.
-2. **The Yashts** — 22 hymns to individual *yazata*-divinities. The Yashts to [[mithra|Mithra]], [[anahita-zoroastrian|Anāhitā]], Tishtrya (Sirius), Verethraghna (Bahrām), and Vāyu are the longest and most mythologically substantive. The Yashts preserve pre-Zoroastrian Iranian theology that Zarathustra's reform did not eliminate; the Mithra Yasht in particular is one of the principal documents of Indo-Iranian religious-comparative method.
+2. **The Yashts** — 22 hymns to individual *yazata*-divinities. The Yashts to [[mithra-zoroastrian|Mithra]], [[anahita-zoroastrian|Anāhitā]], Tishtrya (Sirius), Verethraghna (Bahrām), and Vāyu are the longest and most mythologically substantive. The Yashts preserve pre-Zoroastrian Iranian theology that Zarathustra's reform did not eliminate; the Mithra Yasht in particular is one of the principal documents of Indo-Iranian religious-comparative method.
 3. **The Vendidad** — *Vīdēvdāt*, "Law against the demons." 22 chapters of anti-demonic ritual + purity code. Vendidad 2 contains the cosmogonic Yima narrative; Vendidad 19 contains the Chinvat-bridge eschatological journey. This is the bulk of the Zoroastrian ritual-legal tradition's first-millennium-BCE attestation.
 4. **The Visperad** + the **Khorde Avesta** — additional liturgical material.
 
@@ -110,7 +110,7 @@ The Younger Avestan corpus was transmitted orally in priestly memorization for ~
 - [[alphabet-avestan]] — the Sasanian-era purpose-built script
 - [[tradition-persian-zoroastrian]] — the religious tradition
 - [[phase-2-004-yasna-younger-avesta]] — the Yasna corpus
-- [[mithra]] / [[anahita-zoroastrian]] — major Younger-Avestan yazatas
+- [[mithra-zoroastrian]] / [[anahita-zoroastrian]] — major Younger-Avestan yazatas
 - [[zoroaster-prophet]] — founder of the tradition
 
 ## Refs
