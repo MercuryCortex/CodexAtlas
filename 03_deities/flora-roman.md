@@ -17,6 +17,10 @@ attributes: ["garlands and blossoms", "the flowering branch", "springtime colour
 attested-in: []
 equivalents: []
 syncretic-edges:
+  - target: "[[ceres-roman]]"
+    type: "scholarly-parallel"
+    source: "Flora (blossoming) and Ceres (grain) are paired Roman agrarian goddesses, each served by one of the minor flamines and each concerned with the growth-cycle from flower to harvest; Ovid treats them in adjacent Fasti books. Beard/North/Price 1998"
+    source-tier: T2
   - target: "Chloris (Greek)"
     type: "scholarly-parallel"
     source: "Ovid (Fasti 5.195ff.) himself identifies Flora with the Greek nymph Chloris, carried off by Zephyrus and made mistress of flowers — a literary Hellenizing equation rather than a cult identity. (Chloris not yet a vault node.)"
