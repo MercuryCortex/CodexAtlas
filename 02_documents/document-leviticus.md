@@ -15,7 +15,7 @@ language: ["Biblical Hebrew"]
 script: "Hebrew (Aramaic square script)"
 region: "Kingdom of Judah / Babylonian exile / Persian-period Yehud"
 city-of-origin: "Jerusalem (priestly circles)"
-authorship: "anonymous; the work of the Priestly school (P), incorporating the distinct Holiness Code (H, chs. 17–26); traditionally ascribed to Moses"
+authorship: "anonymous; the work of the Priestly tradition — a P core with the distinct Holiness Code (H, chs. 17–26), which Milgrom and Knohl argue is the LATER redactional layer that frames and supplements P; traditionally ascribed to Moses"
 key-figures: ["[[moses]]"]
 themes: []
 parallels: ["[[phase-2-005-hebrew-bible-j-source]]", "[[phase-3-007-samaritan-pentateuch]]"]
@@ -56,7 +56,7 @@ tags: [document, scripture, torah, pentateuch, leviticus, priestly-source, holin
 
 ## Composition
 
-Leviticus is the core work of the **Priestly (P)** school, into which the distinct **Holiness Code (H)** has been incorporated — H is marked by its direct exhortation, its blend of ethical and cultic command (including "love your neighbour as yourself," 19:18), and its sustained holiness-theology. The book reflects the priestly reimagining of Israel's relationship to God around **holiness, purity, and atonement**, crystallized in the exilic and post-exilic period.
+Leviticus is the core work of the **Priestly (P)** tradition, framed by the distinct **Holiness Code (H)** — which Milgrom and Knohl argue is not an older block enclosed by P but the **later redactional layer** that supplements and frames it. H is marked by its direct exhortation, its blend of ethical and cultic command (including "love your neighbour as yourself," 19:18), and its sustained holiness-theology. The book reflects the priestly reimagining of Israel's relationship to God around **holiness, purity, and atonement**, crystallized in the exilic and post-exilic period.
 
 ## The cross-tradition wire
 
