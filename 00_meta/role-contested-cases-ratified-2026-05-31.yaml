@@ -1,0 +1,447 @@
+# Role Contested Cases — Ratified Assignments
+#
+# Per AUDIT/2026-05-31-figures-migration-plan-v3.md §4 + John's ratification
+# (2026-05-31): "go your recco" + standing instruction NEVER-let-me-pick-if-
+# overlooking + framework ratification (T1-default + T3/T4-for-alternative
+# + cross-tradition-coverage-non-negotiable).
+#
+# This file is the SINGLE SOURCE OF TRUTH for ratified per-person role
+# assignments where the call was contested (not silently inferrable).
+# Per Auditor C 2026-05-31: the contested-cases ratification flows from
+# THIS file into scripts/migrate_roles.py, not from hardcoded values.
+#
+# Each entry: doc_id → ratified role-tokens array + rationale + source-tier
+#                       + (optional) polemical-framing + reclaimed-self-naming
+#                       + role-description (preserves prose).
+#
+# When the migration script encounters a doc_id listed here, it uses these
+# values verbatim (overrides alias-matching + body-inference). No silent
+# guessing for contested cases.
+
+# Modern religious-studies academics — Tier 5 NON-qualifying by default
+contested_cases:
+
+  carl-gustav-jung:
+    role-tokens: ["psychologist-of-religion"]
+    rationale: "Per Auditor A 2026-05-31 — split scholarship (Shamdasani 2003 + Bishop 2014 academic-only vs Noll 1994 + 1997 cult-founder critique vs Hanegraaff 1996 esotericism reading). Academic-consensus-aligned call: psychologist-of-religion as primary. Contestation captured in polemical-framing."
+    source-tier: T1
+    polemical-framing:
+      - by: "Noll 1994 *The Jung Cult* + 1997 *The Aryan Christ*"
+        label: "cult-founder"
+        source-tier: T2
+        direction: outsider
+    role-description: "Carl Gustav Jung — Swiss psychoanalyst; founder of analytical psychology; contested-status figure in NRM-studies (Hanegraaff 1996; Noll 1994/1997)."
+
+  mircea-eliade:
+    role-tokens: ["scholar-academic-religion"]
+    rationale: "Historian of religion; Wasserstrom 1999 documents Eliade's religious-Orthodox-nationalist commitments alongside the academic work but stops short of figure-qualifying."
+    source-tier: T1
+    polemical-framing:
+      - by: "Wasserstrom 1999 *Religion after Religion*; Ricketts 1988 *Mircea Eliade: The Romanian Roots*"
+        label: "religious-advocate-Romanian-Orthodox"
+        source-tier: T1
+        direction: outsider
+    role-description: "Mircea Eliade — historian of religion; held University of Chicago Sewell Avery chair. Iron-Guard / nationalist-Romanian-Orthodox involvement documented by Wasserstrom 1999 + Ricketts 1988."
+
+  gershom-scholem:
+    role-tokens: ["scholar-academic-religion"]
+    rationale: "Per Auditor A 2026-05-31 — DEMOTED from v2's scholar+philosopher-religious double role. Principle: 'engaged-Jewish-thinker' criterion would also promote Pagels (Quaker), Jonas (Jew), Bellah (Episcopalian) if applied consistently. Choose Tier-5-only here."
+    source-tier: T1
+    role-description: "Gershom Scholem — founder of academic Kabbalah studies; Hebrew University chair. Religiously-engaged Jewish thinker but professionally a historian."
+
+  william-james:
+    role-tokens: ["psychologist-of-religion"]
+    rationale: "Pragmatist philosopher; *Varieties of Religious Experience* is academic phenomenology. Hanegraaff 1996 acknowledges Jamesian-influence on Western esotericism but James himself is not figure."
+    source-tier: T1
+    role-description: "William James — Harvard philosopher and psychologist; author of *The Varieties of Religious Experience* (1902 Gifford Lectures)."
+
+  rudolf-otto:
+    role-tokens: ["scholar-academic-religion", "theologian"]
+    rationale: "Per Auditor A 2026-05-31 — Otto was ordained Lutheran AND academic phenomenologist of religion. Double role qualifying via theologian."
+    source-tier: T1
+    role-description: "Rudolf Otto — Lutheran theologian + comparative-religion phenomenologist; author of *Das Heilige* (1917)."
+
+  john-hick:
+    role-tokens: ["scholar-academic-religion", "theologian"]
+    rationale: "Ordained Presbyterian + philosophical theologian. Double role qualifying."
+    source-tier: T1
+    role-description: "John Hick — Presbyterian minister + philosopher of religion; advocate of religious pluralism (Hick 1989 *An Interpretation of Religion*)."
+
+# Esoteric founders — NRM-studies T1 recognition
+  aleister-crowley:
+    role-tokens: ["founder", "prophet-non-abrahamic", "magus", "mystic-syncretic"]
+    rationale: "Per Auditor A's 2026-05-31 NRM-studies framing (Bogdan & Starr 2012). Crowley's self-claim as 'Prophet of the Lords of the Aeons' per Liber AL is captured via prophet-non-abrahamic (not prophet-abrahamic — Thelema is not Abrahamic). magus is the Western-esoteric magical-order role."
+    source-tier: T1
+    polemical-framing:
+      - by: "mainline-Christianity + older academy"
+        label: "occultist"
+        source-tier: T2
+        direction: outsider
+    role-description: "Aleister Crowley — founder of Thelema; self-styled 'Prophet of the Aeon of Horus'; Liber AL vel Legis 1904."
+
+  anton-lavey:
+    role-tokens: ["founder"]
+    rationale: "Founded Church of Satan 1966; NRM-studies recognizes (Lewis 2001)."
+    source-tier: T1
+    role-description: "Anton Szandor LaVey — founder of the Church of Satan (San Francisco, 1966)."
+
+  helena-blavatsky:
+    role-tokens: ["founder", "mystic-syncretic"]
+    rationale: "Theosophy founder; Hammer 2001."
+    source-tier: T1
+    role-description: "Helena Petrovna Blavatsky — co-founder of the Theosophical Society (1875); author of *The Secret Doctrine* (1888)."
+
+  g-i-gurdjieff:
+    role-tokens: ["founder", "mystic-syncretic"]
+    rationale: "Founder of the Fourth Way; NRM-studies + Western-esotericism scholarship."
+    source-tier: T1
+    role-description: "George Ivanovich Gurdjieff — founder of the Fourth Way; teacher of esoteric synthesis (1866-1949)."
+
+  rudolf-steiner:
+    role-tokens: ["founder", "philosopher-religious"]
+    rationale: "Founder of Anthroposophy; Hammer 2001."
+    source-tier: T1
+    role-description: "Rudolf Steiner — founder of Anthroposophy (1912); developer of Waldorf education, biodynamic agriculture, and Anthroposophical medicine."
+
+  frithjof-schuon:
+    role-tokens: ["philosopher-religious", "sufi-shaykh"]
+    rationale: "Per Auditor A 2026-05-31 — PRIMARY flipped from v2's sufi-shaykh-first. Sedgwick 2004 *Against the Modern World* is skeptical of Maryamiyya silsila legitimacy; Traditionalist-philosophy is primary, Sufi-shaykh secondary (Schuon's Maryamiyya order existed but is contested-legitimacy)."
+    source-tier: T1
+    polemical-framing:
+      - by: "mainstream Sunni-Sufi authorities"
+        label: "Sufi-of-contested-legitimacy"
+        source-tier: T2
+        direction: outsider
+        note: "Per Sedgwick 2004 skepticism re: Schuon's silsila + Native-American syncretism + 'primordial gatherings.'"
+    role-description: "Frithjof Schuon — Swiss-German Traditionalist philosopher; founder of the Maryamiyya Sufi order (legitimacy contested per Sedgwick 2004)."
+
+  rene-guenon:
+    role-tokens: ["philosopher-religious", "sufi-shaykh"]
+    rationale: "Traditionalism primary; later Sufi-Islam-conversion + shaykh-rank secondary."
+    source-tier: T1
+    role-description: "René Guénon (Shaykh ʿAbd al-Wāḥid Yaḥyā) — founder of Traditionalism / Perennial Philosophy; converted to Sufi Islam, lived in Cairo, took shaykh-rank."
+
+  edgar-cayce:
+    role-tokens: ["founder", "scholar-alternative"]
+    rationale: "Per deviant-bridges memory: A.R.E. is a continuing tradition (founder applies); his methodology + claims belong in T4-tier alternative-scholarship category. Node-level source-tier: T4 marks the figure explicitly."
+    source-tier: T4
+    role-description: "Edgar Cayce — American psychic / 'sleeping prophet'; founder of the Association for Research and Enlightenment (1931, Virginia Beach). Atlantis readings + holistic-health predictions. Per academic-religious-studies frame: T4 alternative."
+
+  graham-hancock:
+    role-tokens: ["scholar-alternative"]
+    rationale: "Per deviant-bridges memory: documented AS alternative-scholarship (T4), not as scholar-academic-religion."
+    source-tier: T4
+    role-description: "Graham Hancock — popular author of hyperdiffusionist + lost-civilization works (*Fingerprints of the Gods* 1995, *Magicians of the Gods* 2015). Academic-consensus is pseudoscholarship."
+
+  gerald-gardner:
+    role-tokens: ["founder", "priest-wiccan"]
+    rationale: "Per Auditor B 2026-05-31 — was missing from v2 contested-cases entirely. Founder of Wicca, 1954. Hutton 1999."
+    source-tier: T1
+    role-description: "Gerald Brosseau Gardner — founder of modern Wicca (Bricket Wood coven, 1954); author of *Witchcraft Today* (1954). Per Hutton 1999."
+
+  doreen-valiente:
+    role-tokens: ["priestess-wiccan"]
+    rationale: "'Mother of modern Wicca'; co-author of *Book of Shadows* liturgy with Gardner."
+    source-tier: T1
+    role-description: "Doreen Valiente — 'Mother of modern Wicca'; revised Gardner's *Book of Shadows*; author of multiple foundational Wiccan liturgies."
+
+# Political-religious dual — multi-role assignments
+
+  akhenaten:
+    role-tokens: ["pharaoh", "religious-reformer", "founder"]
+    rationale: "Per Auditor A 2026-05-31 — Atenism IS a new tradition (failed/suppressed but founded). Assmann 1997/2014. Per v3 §4 corrected from v2's omission of founder."
+    source-tier: T1
+    role-description: "Akhenaten (Amenhotep IV) — 18th-Dynasty pharaoh; abolished traditional Egyptian polytheism in favor of Aten-only worship (the first attested monotheism per Assmann 1997)."
+
+  asoka:
+    role-tokens: ["emperor", "religious-patron"]
+    rationale: "Per Auditor A 2026-05-31 — DEMOTED from v2's religious-reformer to religious-patron. Thapar 1997: he patronized Buddhism, did NOT change Buddhist doctrine."
+    source-tier: T1
+    role-description: "Aśoka Maurya — Mauryan emperor (-268 to -232); patron of Buddhism; sent dhamma-missions across Asia; erected Aśokan edicts. Per Thapar 1997: patron not reformer."
+
+  constantine-the-great:
+    role-tokens: ["emperor", "religious-patron"]
+    rationale: "Patron of Christianization; did not internally reform doctrine. Multi-role with religious-reformer only if specific liturgical-reform documented; default to patron per Thapar-analog framing."
+    source-tier: T1
+    role-description: "Constantine I — Roman emperor (306-337); Edict of Milan 313; convened First Council of Nicaea 325; founded Constantinople."
+
+  charlemagne:
+    role-tokens: ["emperor", "religious-patron", "religious-reformer"]
+    rationale: "Patronized AND restructured liturgy (Carolingian renovatio). Multi-role."
+    source-tier: T1
+    role-description: "Charlemagne (Charles the Great) — King of the Franks 768-814, Holy Roman Emperor 800-814; Carolingian renaissance; liturgical reform via Alcuin."
+
+  akbar-mughal:
+    role-tokens: ["emperor", "religious-reformer"]
+    rationale: "Din-i-Ilahi was internal doctrinal innovation."
+    source-tier: T1
+    role-description: "Akbar — Mughal emperor 1556-1605; founder of Din-i-Ilahi syncretic religion; convened Ibādat-Khānā religious-debates."
+
+  henry-viii:
+    role-tokens: ["king", "religious-reformer"]
+    rationale: "English Reformation — Act of Supremacy 1534."
+    source-tier: T1
+    role-description: "Henry VIII — King of England 1509-1547; Act of Supremacy 1534 established Church of England independence from Rome."
+
+  elizabeth-i:
+    role-tokens: ["queen", "religious-reformer"]
+    rationale: "Elizabethan Religious Settlement."
+    source-tier: T1
+    role-description: "Elizabeth I — Queen of England 1558-1603; Elizabethan Settlement consolidated Church of England via Act of Uniformity 1559."
+
+  ayatollah-khomeini:
+    role-tokens: ["ayatollah-twelver", "state-founder-religious"]
+    rationale: "Islamic Republic of Iran founding 1979."
+    source-tier: T1
+    role-description: "Ruhollah Khomeini — Grand Ayatollah; founder of the Islamic Republic of Iran 1979; doctrine of velāyat-e faqīh."
+
+# Abrahamic-claim demotions (v3's most important correction)
+
+  joseph-smith:
+    role-tokens: ["founder"]
+    rationale: "Per Auditor A 2026-05-31 — DEMOTED from v2's ['founder', 'prophet-abrahamic']. The Abrahamic-prophet category is LDS doctrinal claim; mainstream non-LDS academic religious-studies (Bushman 2005, Brodie 1945, Shipps 1985) treats him as founder of new religious tradition, NOT as prophet in the Abrahamic-line sense. LDS internal framing preserved in role-description prose."
+    source-tier: T1
+    role-description: "Joseph Smith Jr. — founder of the Church of Jesus Christ of Latter-day Saints (1830). LDS doctrine frames him as 'the Prophet' restoring Abrahamic prophetic line; mainstream academic religious-studies treats him as NRM founder (Bushman 2005, Brodie 1945, Shipps 1985)."
+
+  bahaullah:
+    role-tokens: ["founder", "manifestation-bahai"]
+    rationale: "Per Auditor A + B 2026-05-31 — REPLACES v2's ['founder', 'prophet-abrahamic']. The Bahá'í 'Manifestation of God' (mazhar-i ilāhī) is theologically distinct from prophet — progressive-revelation category that INCLUDES but EXCEEDS Abrahamic prophets. Smith 2008 + Cole 1998."
+    source-tier: T1
+    role-description: "Mírzá Husayn-`Alí Núrí (Bahá'u'lláh) — Persian religious leader; founder of the Bahá'í Faith. Bahá'í doctrine frames him as the most recent Manifestation of God (mazhar-i ilāhī) — a category that includes Krishna, Buddha, Zoroaster, Moses, Jesus, Muhammad, the Báb."
+
+  the-bab:
+    role-tokens: ["founder", "manifestation-bahai", "martyr-bahai"]
+    rationale: "Báb is both founder of Bábism and Manifestation in Bahá'í classification + martyred 1850."
+    source-tier: T1
+    role-description: "Siyyid `Alí-Muhammad Shírází (the Báb) — founder of Bábism (1844); recognized in Bahá'í faith as the Manifestation immediately preceding Bahá'u'lláh; executed by firing squad in Tabriz 1850 (martyrdom of central paradigmatic importance in Bábí-Bahá'í tradition)."
+
+# Indigenous corrections (Auditor B's hard cardinal)
+
+  wovoka:
+    role-tokens: ["prophet-indigenous", "founder"]
+    rationale: "Per Auditor B 2026-05-31 CARDINAL — NOT prophet-abrahamic. Ghost Dance is not Abrahamic. Calling Wovoka 'Abrahamic prophet' is colonial framing. Hittman 1990 *Wovoka*."
+    source-tier: T1
+    role-description: "Wovoka (Jack Wilson) — Northern Paiute religious leader; founder of the second Ghost Dance (1889) following his vision during the solar eclipse of January 1889. Per Hittman 1990: revelation-bearer in Paiute prophetic tradition, NOT Abrahamic-derivative."
+
+  black-elk:
+    role-tokens: ["wichasha-wakan", "mystic-syncretic", "evangelist-revivalist"]
+    rationale: "Lakota holy man AND later Catholic catechist. Powers 1977 *Oglala Religion*. Multi-role respects the complexity per Auditor B 2026-05-31."
+    source-tier: T1
+    role-description: "Black Elk (Heȟáka Sápa) — Oglala Lakota wičháša wakȟáŋ (holy man); Ghost Dancer 1890; Catholic catechist (St. Joseph the Worker mission, Manderson SD) from 1904. Multiple roles per Powers 1977 + DeMallie 1984 *The Sixth Grandfather*."
+
+  smohalla:
+    role-tokens: ["prophet-indigenous", "founder"]
+    rationale: "Wanapum prophet; founder of Washani / Dreamer religion."
+    source-tier: T1
+    role-description: "Smohalla — Wanapum prophet; founder of the Washani / Dreamer religion (mid-19th c.). Influenced Wovoka's later Ghost Dance prophecy."
+
+  handsome-lake:
+    role-tokens: ["prophet-indigenous", "founder"]
+    rationale: "Seneca prophet; founder of the Longhouse Religion (Code of Handsome Lake)."
+    source-tier: T1
+    role-description: "Handsome Lake (Sganyodaiyo) — Seneca religious leader; founder of the Longhouse Religion (Gai'wiio, the Good Message); his Code (Code of Handsome Lake) is still followed by Iroquois Longhouse communities."
+
+# Hindu (Auditor B's hard-FAIL coverage extension)
+
+  adi-sankara:
+    role-tokens: ["acharya-hindu", "philosopher-religious"]
+    rationale: "Per Auditor B 2026-05-31 — acharya-hindu PRIMARY (Hindu insider category), philosopher-religious secondary. NOT 'theologian' (which would be Asad-1993 Christian-categorial imposition)."
+    source-tier: T1
+    role-description: "Adi Śaṅkara (Śaṅkarācārya) — 8th-c. acharya of Advaita Vedānta; founder of the Daśanāmī Sampradāya monastic order; established the four cardinal maṭhas. Per Lipner 2010."
+
+  ramanuja:
+    role-tokens: ["acharya-hindu", "philosopher-religious"]
+    rationale: "Same as Sankara — acharya-hindu primary."
+    source-tier: T1
+    role-description: "Rāmānuja (Rāmānujācārya) — 11th-12th c. acharya of Viśiṣṭādvaita Vedānta; foremost theologian of Śrī Vaiṣṇavism; commentaries on Brahma-Sūtras, Bhagavad-Gītā, Upaniṣads."
+
+  madhva:
+    role-tokens: ["acharya-hindu", "philosopher-religious"]
+    rationale: "Same pattern."
+    source-tier: T1
+    role-description: "Madhvācārya — 13th c. acharya of Dvaita Vedānta; founder of the Tattva-vāda dualist school; lineage continues at Udupi Krishna Matha."
+
+  chaitanya-mahaprabhu:
+    role-tokens: ["acharya-hindu", "bhakti-saint"]
+    rationale: "Gaudiya Vaishnavism founder; bhakti-saint capture covers the devotional dimension."
+    source-tier: T1
+    role-description: "Chaitanya Mahāprabhu — 15th-16th c. Gauḍīya Vaiṣṇava saint and ācārya; revered as combined incarnation of Radha and Krishna by Gauḍīya Vaiṣṇavas; founder of the Saṅkīrtana tradition."
+
+  ramakrishna-paramahamsa:
+    role-tokens: ["guru-hindu", "mystic-syncretic", "paramahamsa"]
+    rationale: "Modern Hindu guru lineage origin; cross-tradition syncretism (Hindu, Sufi, Christian experiments)."
+    source-tier: T1
+    role-description: "Ramakrishna Paramahamsa (Gadadhar Chattopadhyay) — 19th-c. Bengali mystic; teacher of Vivekananda; experimented with multiple religious paths claiming convergent realization."
+
+  vivekananda:
+    role-tokens: ["guru-hindu", "religious-reformer"]
+    rationale: "Ramakrishna Mission founder; modern Vedānta articulator; 1893 Chicago Parliament of World's Religions."
+    source-tier: T1
+    role-description: "Swami Vivekananda (Narendranath Datta) — disciple of Ramakrishna; founder of the Ramakrishna Mission (1897); presented Vedanta at the 1893 World's Parliament of Religions; modern Hinduism reformer."
+
+  ramana-maharshi:
+    role-tokens: ["guru-hindu", "mystic-syncretic"]
+    rationale: "Modern Hindu sage of Arunachala; self-inquiry teaching."
+    source-tier: T1
+    role-description: "Ramana Maharshi (Venkataraman Iyer) — 20th-c. Hindu sage; lived at Arunachala (Tiruvannamalai) from 1896; teacher of self-inquiry (vichara)."
+
+  yogananda:
+    role-tokens: ["guru-hindu", "paramahamsa"]
+    rationale: "Self-Realization Fellowship founder; brought Kriya Yoga to the West."
+    source-tier: T1
+    role-description: "Paramahansa Yogananda (Mukunda Lal Ghosh) — founder of Self-Realization Fellowship (1920); author of *Autobiography of a Yogi* (1946); introduced Kriya Yoga to the Western world."
+
+  sai-baba-shirdi:
+    role-tokens: ["guru-hindu", "mystic-syncretic"]
+    rationale: "Hindu-Muslim syncretic figure; insider claim from both traditions."
+    source-tier: T1
+    role-description: "Sai Baba of Shirdi (d. 1918) — Indian spiritual teacher; revered by both Hindu and Muslim devotees; cross-tradition syncretic figure."
+
+  abhinavagupta:
+    role-tokens: ["tantric-acharya", "acharya-hindu", "philosopher-religious"]
+    rationale: "Trika Shaiva master + acharya in Kashmiri Shaiva sense + philosopher of aesthetics (rasa theory)."
+    source-tier: T1
+    role-description: "Abhinavagupta — 10th-11th c. Kashmiri Trika Shaiva master; composed *Tantrāloka* + *Abhinavabhāratī*; foundational theorist of rasa (aesthetic emotion)."
+
+# Multi-role classical religious figures
+
+  jesus-of-nazareth:
+    role-tokens: ["founder", "prophet-abrahamic"]
+    rationale: "Academic-neutral framing. Tradition-internal claims (Son of God, Messiah, second person of Trinity) preserved in role-description; Quranic/Islamic ʿĪsā recognition also tradition-internal."
+    source-tier: T1
+    role-description: "Jesus of Nazareth — founder of Christianity; Hebrew Bible prophet category extended by Christian tradition to Messiah / Son of God / Second Person of the Trinity; Islamic tradition recognizes him as ʿĪsā ibn Maryam (Jesus son of Mary), the next-to-last prophet before Muhammad."
+
+  muhammad:
+    role-tokens: ["founder", "prophet-abrahamic", "messenger-islamic"]
+    rationale: "Triple-role per Islamic theological distinction: prophet (nabī) + messenger-with-scripture (rasūl) + tradition-founder."
+    source-tier: T1
+    role-description: "Muhammad ibn Abdullah — founder of Islam; Islamic tradition frames him as the Seal of the Prophets (khātam al-nabiyyīn) and the rasūl-messenger of God."
+
+  buddha:
+    role-tokens: ["founder", "acharya-buddhist"]
+    rationale: "Founder of Buddhism + later doctrinal-tradition recognition."
+    source-tier: T1
+    role-description: "Siddhārtha Gautama (the Buddha) — founder of Buddhism; awakening at Bodh Gayā; first sermon at Sarnath."
+
+  mahavira:
+    role-tokens: ["tirthankara-jain", "founder"]
+    rationale: "24th and final Tīrthaṅkara of this cosmic cycle; founder of historical Jainism."
+    source-tier: T1
+    role-description: "Mahāvīra (Vardhamāna) — 24th Tīrthaṅkara of the Jain tradition; (-599 to -527, per Dundas 2002); founder of historically-attested Jainism."
+
+  guru-nanak:
+    role-tokens: ["founder", "guru-sikh"]
+    rationale: "Founder of Sikhism + first of the Ten Gurus."
+    source-tier: T1
+    role-description: "Guru Nanak — founder of Sikhism (1469-1539); first of the Ten Sikh Gurus."
+
+  zoroaster:
+    role-tokens: ["founder", "prophet-abrahamic", "manifestation-bahai"]
+    rationale: "Per v3 §4 boundary case + framework ratification — Bahá'í classes Zoroaster as Manifestation; Western-academic classes as prophet-abrahamic-analog. Triple-role preserves both academic-conventional reduction (prophet-abrahamic — Boyce 1979) AND Bahá'í insider recognition (manifestation-bahai — Smith 2008). Cross-tradition recognition explicit."
+    source-tier: T1
+    role-description: "Zarathustra / Zoroaster — founder of Zoroastrianism (Boyce 1979). Bahá'í tradition recognizes him as one of the Manifestations of God (Smith 2008 *An Introduction to the Baha'i Faith*)."
+
+# Modern Christian boundary cases per v3 §4
+
+  dietrich-bonhoeffer:
+    role-tokens: ["theologian", "pastor-protestant", "martyr-christian", "religious-reformer"]
+    rationale: "Per Auditor A 2026-05-31 — adds pastor + reformer (Confessing Church reform-leader) roles missing in v2."
+    source-tier: T1
+    role-description: "Dietrich Bonhoeffer — Lutheran pastor + theologian + Confessing Church reform-leader; executed Flossenbürg April 9, 1945."
+
+  cs-lewis:
+    role-tokens: ["theologian", "author-secular"]
+    rationale: "Per v3 §4 — figure-qualifying via theologian (his Christian apologetic writing is doctrinal-systematic per McGrath 2013 *C.S. Lewis: A Life*)."
+    source-tier: T1
+    role-description: "C.S. Lewis — Oxford literary scholar + Anglican lay theologian / Christian apologist; author of *Mere Christianity* + *The Chronicles of Narnia*."
+
+  thomas-merton:
+    role-tokens: ["monastic-christian-western", "mystic-christian", "theologian"]
+    rationale: "Trappist monk + interfaith-mysticism theologian."
+    source-tier: T1
+    role-description: "Thomas Merton (Father Louis) — Trappist monk of Gethsemani Abbey; author of *The Seven Storey Mountain* (1948) + *The Seeds of Contemplation*; engaged interfaith dialogue with Zen + Hindu traditions."
+
+  dorothy-day:
+    role-tokens: ["religious-reformer", "saint-roman-catholic"]
+    rationale: "Catholic Worker movement founder; cause for canonization is open; saint prospectively per Bowker 1997 contemporary-usage allowance."
+    source-tier: T1
+    role-description: "Dorothy Day — co-founder of the Catholic Worker Movement (1933); cause for canonization opened 2000 (current status: Servant of God)."
+
+  martin-luther-king-jr:
+    role-tokens: ["religious-reformer", "martyr-christian", "pastor-protestant"]
+    rationale: "Baptist minister + civil rights leader + martyred 1968."
+    source-tier: T1
+    role-description: "Martin Luther King Jr. — Baptist minister + civil rights leader; assassinated Memphis April 4, 1968."
+
+  mother-teresa:
+    role-tokens: ["saint-roman-catholic", "religious-reformer", "monastic-christian-western"]
+    rationale: "Founded Missionaries of Charity 1950; canonized 2016."
+    source-tier: T1
+    role-description: "Mother Teresa (St. Teresa of Calcutta, born Anjezë Gonxhe Bojaxhiu) — Albanian-Indian Catholic nun; founder of the Missionaries of Charity (1950); canonized September 4, 2016."
+
+  padre-pio:
+    role-tokens: ["saint-roman-catholic", "mystic-christian"]
+    rationale: "Capuchin friar; bore stigmata; canonized 2002."
+    source-tier: T1
+    role-description: "St. Pio of Pietrelcina (Francesco Forgione) — Italian Capuchin friar; bore the stigmata for 50 years; canonized June 16, 2002."
+
+  thomas-aquinas:
+    role-tokens: ["doctor-of-the-church", "theologian", "philosopher-religious", "monastic-christian-western"]
+    rationale: "Order honors insider weighting — Catholic 'Doctor of the Church' is the higher-respect framing (per Auditor B 2026-05-31 array-order rule)."
+    source-tier: T1
+    role-description: "Thomas Aquinas (Tommaso d'Aquino) — Italian Dominican friar; author of *Summa Theologiae* + *Summa Contra Gentiles*; canonized 1323; declared Doctor of the Church 1567 (the *Doctor Angelicus*)."
+
+  hildegard-of-bingen:
+    role-tokens: ["doctor-of-the-church", "monastic-christian-western", "mystic-christian", "theologian"]
+    rationale: "Benedictine abbess + mystic + composer + polymath; declared Doctor of the Church 2012."
+    source-tier: T1
+    role-description: "Hildegard of Bingen — Benedictine abbess; visionary mystic; composer; polymath. Canonized 2012; declared Doctor of the Church October 7, 2012 (4th woman to receive this title)."
+
+# Boundary cases requiring explicit ratification per v3 §4 (John's calls)
+
+  mary-magdalene:
+    role-tokens: ["apostle-christian", "saint-roman-catholic", "saint-eastern-orthodox"]
+    rationale: "Per v3 §4 — apostle-christian per Brock 2003 *Mary Magdalene, the First Apostle* (Eastern Orthodox 'apostle-to-the-apostles' tradition is older). Capture the contestation in polemical-framing."
+    source-tier: T1
+    polemical-framing:
+      - by: "Western Christian medieval-tradition (conflation with Mary of Bethany + unnamed sinful woman of Luke 7)"
+        label: "penitent-prostitute"
+        source-tier: T1
+        direction: outsider
+        note: "Per Schaberg 2002 — the prostitute identification was a 6th-c. Gregory-the-Great conflation, retracted by Vatican II."
+    role-description: "Mary Magdalene (Maria of Magdala) — disciple of Jesus; first to witness the empty tomb (per all four canonical Gospels); 'apostle to the apostles' in Eastern Orthodox tradition (Brock 2003); contested in Western tradition (Schaberg 2002)."
+
+  simon-magus:
+    role-tokens: ["legendary-disputed"]
+    rationale: "Per v3 §4 — known almost entirely through Christian polemic (Acts of the Apostles, Hippolytus, Irenaeus). Scholarly-neutral classification impossible. polemical-framing captures the orthodox-Christian framing."
+    source-tier: T1
+    polemical-framing:
+      - by: "Christian-orthodox (Hippolytus, Irenaeus)"
+        label: "heresiarch"
+        source-tier: T1
+        direction: outsider
+    role-description: "Simon Magus — 1st-c. figure known almost entirely through Christian polemical sources (Acts 8:9-24; Hippolytus *Refutatio* VI.7-20; Irenaeus *Adversus Haereses* I.23). Treated as founder of heretical 'Simonian' tradition by Christian-orthodox heresiologists; modern scholarship contests both the unity of any 'Simonian' tradition and Simon's historical existence as the heresiologists describe him."
+
+  lao-tzu:
+    role-tokens: ["founder", "legendary-disputed"]
+    rationale: "Per v3 §4 boundary case — founder of Daoism (tradition-recognized) + historicity-contested (academic-consensus unsettled per Graham 1989 *Disputers of the Tao*; Csikszentmihalyi 2004 sees as composite figure)."
+    source-tier: T1
+    role-description: "Laozi (老子, 'the Old Master') — traditional founder of Daoism; attributed authorship of the *Daodejing*. Historicity contested in modern Sinology — academic consensus treats Laozi as composite-or-legendary figure rather than single historical author (Graham 1989; Csikszentmihalyi 2004)."
+
+  sai-baba-sathya:
+    role-tokens: ["guru-hindu"]
+    rationale: "Per v3 §4 boundary case — guru-hindu per Hindu-insider-recognition (~30M devotees globally as Sathya Sai Organization). Captures contestation in polemical-framing."
+    source-tier: T1
+    polemical-framing:
+      - by: "mainstream-Hindu-orthodoxy + investigative-journalism critique"
+        label: "false-guru"
+        source-tier: T2
+        direction: outsider
+        note: "Skydsgaard, Klemens et al. 2010s. Investigations by *The Telegraph* (UK), BBC, *India Today*. Mainstream-Hindu Vaishnava critics reject his claimed avatar status."
+    role-description: "Sathya Sai Baba (Sathyanarayana Raju) — Indian spiritual teacher; claimed to be re-incarnation of Shirdi Sai Baba; founder of the Sathya Sai Organization with ~30M global devotees. Avatar claims contested by mainstream Hindu orthodoxy."
+
+  ramses-the-great:
+    role-tokens: ["pharaoh", "religious-patron"]
+    rationale: "Patron of Egyptian temple-construction; not a doctrinal reformer."
+    source-tier: T1
+    role-description: "Ramses II (the Great) — 19th-Dynasty pharaoh; patron of major temple construction (Abu Simbel, Ramesseum); did not change Egyptian doctrine."
