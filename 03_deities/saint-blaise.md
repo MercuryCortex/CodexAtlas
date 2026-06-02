@@ -3,7 +3,9 @@ type: deity
 id: "saint-blaise"
 name: "Saint Blaise (Vlasiy / Vlasiu)"
 aka: ["Vlasiy (Russian: Влас, Власий)", "Vlasiu (Ukrainian: Власій)", "Sveti Vlaho (Croatian)", "San Biagio (Italian)", "Saint Blaise of Sebaste"]
-tradition: "Christianity (Eastern Orthodox + Catholic); Roman / Byzantine martyrology"
+tradition: "Christianity (Eastern Orthodox + Catholic)"
+tradition-raw: "Christianity (Eastern Orthodox + Catholic); Roman / Byzantine martyrology"   # pre-migration; full original (membership-vs-wire 2026-06-02)
+tradition-appearances: ['Roman / Byzantine martyrology']   # STEP-B worklist: build appearance wires for these
 region: "Armenian-Anatolian source (Sebaste); Eastern Slavic + Balkan + Italian folk veneration"
 period-active-earliest: 316
 period-active-latest: 2026

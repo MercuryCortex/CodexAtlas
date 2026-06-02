@@ -3,7 +3,9 @@ type: deity
 id: "cybele"
 name: "Cybele"
 aka: ["Kybele", "Magna Mater (Great Mother)", "Mater Deum", "Kubaba (Hittite-Phrygian root)"]
-tradition: "Phrygian → Greek → Roman mystery cult"
+tradition: "Phrygian"
+tradition-raw: "Phrygian → Greek → Roman mystery cult"   # pre-migration; full original (membership-vs-wire 2026-06-02)
+tradition-appearances: ['Greek', 'Roman mystery cult']   # STEP-B worklist: build appearance wires for these
 region: "Phrygia (Anatolia) → Greek mainland → Italian peninsula and the Roman Empire"
 period-active-earliest: -1000
 period-active-latest: 400

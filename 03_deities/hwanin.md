@@ -3,7 +3,9 @@ type: deity
 id: "hwanin"
 name: "Hwanin"
 aka: ["Hwan-in", "Hwanin Sangje", "Lord of Heaven", "Indra (Buddhist identification)", "Sakra (Sanskrit equivalent)", "the Heavenly Ruler"]
-tradition: "Korean shamanism (Muism) / Korean mythology; Buddhist interpretation"
+tradition: "Korean shamanism (Muism) / Korean mythology"
+tradition-raw: "Korean shamanism (Muism) / Korean mythology; Buddhist interpretation"   # pre-migration; full original (membership-vs-wire 2026-06-02)
+tradition-appearances: ['Buddhist interpretation']   # STEP-B worklist: build appearance wires for these
 region: "Korean peninsula"
 period-active-earliest: -2300
 period-active-latest: 2026

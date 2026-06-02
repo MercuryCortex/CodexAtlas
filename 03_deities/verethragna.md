@@ -3,7 +3,9 @@ type: deity
 id: "verethragna"
 name: "Verethragna"
 aka: ["Verethraghna", "Vərəθraγna", "Bahram (Pahlavi-Persian)", "Vahram", "Varhran"]
-tradition: "Zoroastrian (Avestan and Pahlavi); cognate with Vedic Indra-Vrtrahan"
+tradition: "Zoroastrian (Avestan and Pahlavi)"
+tradition-raw: "Zoroastrian (Avestan and Pahlavi); cognate with Vedic Indra-Vrtrahan"   # pre-migration; full original (membership-vs-wire 2026-06-02)
+tradition-appearances: ['cognate with Vedic Indra-Vrtrahan']   # STEP-B worklist: build appearance wires for these
 region: "Eastern Iran (Avestan) → Achaemenid + Sasanian Persia → Parsi diaspora"
 period-active-earliest: -1500
 period-active-latest: 2026

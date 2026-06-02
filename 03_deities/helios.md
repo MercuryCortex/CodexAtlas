@@ -3,7 +3,9 @@ type: deity
 id: "helios"
 name: "Helios"
 aka: ["Ἥλιος", "Sol (Roman)", "Hyperion (epithet)", "Helios Pantokrator (late-antique syncretic title)"]
-tradition: "Greek; later Greco-Roman with substantial late-antique syncretic elaboration"
+tradition: "Greek"
+tradition-raw: "Greek; later Greco-Roman with substantial late-antique syncretic elaboration"   # pre-migration; full original (membership-vs-wire 2026-06-02)
+tradition-appearances: ['later Greco-Roman with substantial late-antique syncretic elaboration']   # STEP-B worklist: build appearance wires for these
 region: "Greece, Rhodes (chief cult), Roman Empire-wide; spreading Mithraic and solar-monotheist contexts"
 period-active-earliest: -1200
 period-active-latest: 400

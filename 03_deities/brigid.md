@@ -3,7 +3,9 @@ type: deity
 id: "brigid"
 name: "Brigid"
 aka: ["Brigit", "Brighid", "Bride (Scottish)", "Ffraid (Welsh)", "Saint Brigid of Kildare (Christianized)"]
-tradition: "Celtic paganism (Gaelic) → Irish Christianity"
+tradition: "Celtic paganism (Gaelic)"
+tradition-raw: "Celtic paganism (Gaelic) → Irish Christianity"   # pre-migration; full original (membership-vs-wire 2026-06-02)
+tradition-appearances: ['Irish Christianity']   # STEP-B worklist: build appearance wires for these
 region: "Ireland — Kildare (chief cult center), Britain"
 period-active-earliest: -500
 period-active-latest: 2026

@@ -3,7 +3,9 @@ type: deity
 id: "yima-jamshid"
 name: "Yima"
 aka: ["Yima Xšaēta ('Yima the Radiant')", "Jamshid (Persian)", "Jam (Pahlavi)", "Yima Khshaēta"]
-tradition: "Zoroastrian (Avestan and Pahlavi); cognate with Vedic Yama"
+tradition: "Zoroastrian (Avestan and Pahlavi)"
+tradition-raw: "Zoroastrian (Avestan and Pahlavi); cognate with Vedic Yama"   # pre-migration; full original (membership-vs-wire 2026-06-02)
+tradition-appearances: ['cognate with Vedic Yama']   # STEP-B worklist: build appearance wires for these
 region: "Eastern Iran (Avestan) → Sasanian Persia → Persianate world (the Jamshid-legend persists in Persian literature through Ferdowsi's *Shahnameh*)"
 period-active-earliest: -1500
 period-active-latest: 2026

@@ -3,7 +3,9 @@ type: deity
 id: "asclepius-greek"
 name: "Asclepius"
 aka: ["Ἀσκληπιός", "Asklepios", "Aesculapius (Roman)", "Asclépios"]
-tradition: "Greek (Thessalian / Epidaurian origin); pan-Hellenic and Greco-Roman healing cult"
+tradition: "Greek (Thessalian / Epidaurian origin)"
+tradition-raw: "Greek (Thessalian / Epidaurian origin); pan-Hellenic and Greco-Roman healing cult"   # pre-migration; full original (membership-vs-wire 2026-06-02)
+tradition-appearances: ['pan-Hellenic and Greco-Roman healing cult']   # STEP-B worklist: build appearance wires for these
 region: "Greece — principal sanctuaries at Epidaurus, Trikka (Thessaly), Kos, Pergamon; spread to Rome (Tiber Island, -293) and across the Roman Empire; cult-equivalent in Egypt as Imhotep-Asklepios"
 period-active-earliest: -700
 period-active-latest: 400

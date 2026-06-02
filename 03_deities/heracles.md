@@ -3,7 +3,9 @@ type: deity
 id: "heracles"
 name: "Heracles"
 aka: ["Ἡρακλῆς", "Hercules (Roman)", "Alcides (patronymic)", "Heracles Melkart (Phoenician syncretic)"]
-tradition: "Greek (pan-Hellenic hero-god); Phoenician syncretism with Melkart; Roman Hercules cult"
+tradition: "Greek (pan-Hellenic hero-god)"
+tradition-raw: "Greek (pan-Hellenic hero-god); Phoenician syncretism with Melkart; Roman Hercules cult"   # pre-migration; full original (membership-vs-wire 2026-06-02)
+tradition-appearances: ['Phoenician syncretism with Melkart', 'Roman Hercules cult']   # STEP-B worklist: build appearance wires for these
 region: "Greek world (cult-centers Thebes, Argos, Olympia); pan-Mediterranean via Phoenician trade and Roman religion"
 period-active-earliest: -1200
 period-active-latest: 400

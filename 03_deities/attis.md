@@ -3,7 +3,9 @@ type: deity
 id: "attis"
 name: "Attis"
 aka: ["Ἄττις", "Atys"]
-tradition: "Phrygian → Greek → Roman mystery cult"
+tradition: "Phrygian"
+tradition-raw: "Phrygian → Greek → Roman mystery cult"   # pre-migration; full original (membership-vs-wire 2026-06-02)
+tradition-appearances: ['Greek', 'Roman mystery cult']   # STEP-B worklist: build appearance wires for these
 region: "Phrygia (Anatolia) → Greek and Roman worlds"
 period-active-earliest: -700
 period-active-latest: 400

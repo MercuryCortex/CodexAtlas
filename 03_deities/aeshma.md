@@ -3,7 +3,9 @@ type: deity
 id: "aeshma"
 name: "Aeshma"
 aka: ["Aēšma daēva", "Aeshma-daeva", "Khashm (Pahlavi)", "Asmodeus / Ashmedai (Hebrew Apocrypha + rabbinic Aramaic)", "the demon of wrath"]
-tradition: "Zoroastrian (daevic / demonic register) → Hebrew Apocrypha → rabbinic Judaism → Christian demonology"
+tradition: "Zoroastrian (daevic / demonic register)"
+tradition-raw: "Zoroastrian (daevic / demonic register) → Hebrew Apocrypha → rabbinic Judaism → Christian demonology"   # pre-migration; full original (membership-vs-wire 2026-06-02)
+tradition-appearances: ['Hebrew Apocrypha', 'rabbinic Judaism', 'Christian demonology']   # STEP-B worklist: build appearance wires for these
 region: "Eastern Iran (Avestan) → Achaemenid-Parthian-Sasanian Persia → Hellenistic-Roman Mediterranean Jewish-Christian world"
 period-active-earliest: -1200
 period-active-latest: 2026
