@@ -2,7 +2,7 @@
 type: deity
 id: "vishvakarma"
 name: "Vishvakarma"
-aka: ["Viśvakarman", "Vishwakarma", "the 'All-Maker'", "Tvaṣṭṛ (closely associated)"]
+aka: ["Viśvakarman", "Vishwakarma", "the 'All-Maker'"]
 tradition: "Hindu"
 period-active-earliest: -1200
 period-active-latest: 2026
