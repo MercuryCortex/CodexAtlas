@@ -2,7 +2,7 @@
  "generatedAt": "2026-06-02",
  "totalDeities": 782,
  "productGrade": false,
- "passCount": 4,
+ "passCount": 6,
  "rowCount": 9,
  "baseline": {
   "connected": 19,
@@ -42,15 +42,15 @@
    "key": "sourced",
    "label": "Sourced (T1 refs)",
    "target": "0 unsourced",
-   "current": "7",
-   "ok": false,
+   "current": "0",
+   "ok": true,
    "detail": ""
   },
   {
    "key": "depth",
    "label": "At least metadata depth",
    "target": "0 stubs/partials",
-   "current": "11",
+   "current": "6",
    "ok": false,
    "detail": "stub + partial + untyped"
   },
@@ -58,8 +58,8 @@
    "key": "fields",
    "label": "Complete schema (domains/gender/role)",
    "target": "0 missing",
-   "current": "7",
-   "ok": false,
+   "current": "0",
+   "ok": true,
    "detail": ""
   },
   {
