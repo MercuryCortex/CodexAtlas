@@ -440,6 +440,12 @@ contested_cases:
         note: "Skydsgaard, Klemens et al. 2010s. Investigations by *The Telegraph* (UK), BBC, *India Today*. Mainstream-Hindu Vaishnava critics reject his claimed avatar status."
     role-description: "Sathya Sai Baba (Sathyanarayana Raju) — Indian spiritual teacher; claimed to be re-incarnation of Shirdi Sai Baba; founder of the Sathya Sai Organization with ~30M global devotees. Avatar claims contested by mainstream Hindu orthodoxy."
 
+  seth:
+    role-tokens: ["legendary-disputed", "prophet-abrahamic"]
+    rationale: "Hebrew Bible: minor genealogical figure (Gen 4:25-26; 5:3-8) — third son of Adam. Sethian Gnosticism (~2nd-4th c. CE): retroactively constructed as cosmic redeemer-figure (Williams 1996, Brakke 2010, Turner 2001) — the Sethian-cosmic-Seth is an etic theological construction, not a primary role for the patriarch-figure himself. Mandaean Šītil: divine emanation (deity-tier; tracked separately). Islamic Shīth: recognized prophet in extra-Quranic prophet-lists (al-Tabari, Ibn Kathir; not named in Quran by name but included in prophet-traditions per Wensinck 1934). Classification: legendary-disputed (biblical historicity contested, c.f. Hendel 1995) + prophet-abrahamic (Islamic prophet-list inclusion). Sethian-Gnostic cosmic-redeemer role applies to the constructed Seth-figure of Gnostic theology, not to the person."
+    source-tier: T1
+    role-description: "Seth (Hebrew Šēt, 'appointed' / 'granted') — biblical patriarch (third son of Adam per Gen 4:25-26; 5:3-8). In the Hebrew Bible a minor genealogical figure; theological importance was constructed retroactively. In Sethian Gnostic Christianity (~2nd-4th c. CE) Seth becomes a cosmic-redemptive figure of enormous importance — the 'third begetting' and the heavenly Seth (Allogenes / 'the Stranger') is the cosmic-mythic origin of the saved-spiritual race ('the seed of Seth'). The Mandaean tradition makes Seth (as Šītil / Shīth) one of the great Light-prophets. Islamic tradition recognizes him as a prophet (Shīth) in post-Quranic prophet-lists."
+
   ramses-the-great:
     role-tokens: ["pharaoh", "religious-patron"]
     rationale: "Patron of Egyptian temple-construction; not a doctrinal reformer."

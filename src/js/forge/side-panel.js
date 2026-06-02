@@ -709,9 +709,12 @@
         +   (tradition ? '<div class="forge-side-panel-tradition">' + safe(tradition) + '</div>' : '')
         + '</div>'
         + (desc ? '<div class="forge-side-panel-desc">' + safe(desc) + '</div>' : '')
+        // ── Provenance block (moved here 2026-06-02 per John: "i should be
+        // able to see immediately here" — academic-backing is the FIRST
+        // block under the description, not buried below bucket-pills).
+        + provenanceHtml
         + actionRowHtml
         + (pills ? '<div class="forge-side-panel-wires">' + pills + '</div>' : '')
-        + provenanceHtml
         + '<dl class="forge-side-panel-meta">'
         +   (dateStr ? '<dt>Date</dt><dd>' + safe(dateStr) + '</dd>' : '')
         // Phase B-DATING-2 (2026-05-24) — dating-basis rows.

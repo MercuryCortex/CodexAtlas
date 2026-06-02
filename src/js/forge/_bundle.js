@@ -2040,6 +2040,77 @@
         + '</button>'
         + '</div>';
 
+      // ── Classification provenance (2026-06-02) ────────────────────────
+      // Per John's "explicit-why-we-categorize" directive: every controlled-
+      // vocab field exposes its Tier-1 source + (where applicable) the
+      // contested-case rationale. Generic over any field listed in
+      // 00_meta/controlled-vocab-registry.yaml; surfaced by build_data.py's
+      // _attach_classification_provenance().
+      const renderProvenance = () => {
+        const prov = node && node.classification_provenance;
+        if (!prov || typeof prov !== 'object') return '';
+        const FIELD_LABELS = {
+          'role-tokens':            'Classified as',
+          'tradition':              'Tradition',
+          'polemical-framing':      'Polemically framed as',
+          'reclaimed-self-naming':  'Self-reclaimed as',
+          'canonical-corpus':       'Canonical corpus',
+        };
+        let out = '';
+        for (const field of Object.keys(prov)) {
+          const entries = prov[field];
+          if (!Array.isArray(entries) || !entries.length) continue;
+          const label = FIELD_LABELS[field] || field;
+          out += '<div class="forge-side-panel-provenance forge-side-panel-provenance--' + safeAttr(field) + '">';
+          out += '<div class="forge-side-panel-provenance-label">' + safe(label) + '</div>';
+          out += '<div class="forge-side-panel-provenance-chips">';
+          for (const e of entries) {
+            const value  = e.display || e.value || '';
+            const tier   = e['source-tier'] || '';
+            const src    = e.source || '';
+            const ctx    = e.context || '';
+            const notes  = e.notes || '';
+            const cRat   = e.contested_rationale || '';
+            const lines = [];
+            if (tier) lines.push('[' + tier + '] ' + src);
+            else if (src) lines.push(src);
+            if (ctx) lines.push('Context: ' + ctx);
+            if (notes) lines.push('Note: ' + notes);
+            if (cRat) lines.push('Contested rationale: ' + cRat);
+            const tooltip = lines.join('\n\n');
+            out += '<span class="forge-side-panel-provenance-chip"';
+            if (tier) out += ' data-tier="' + safeAttr(tier) + '"';
+            out += ' title="' + safeAttr(tooltip) + '">';
+            out += '<span class="forge-side-panel-provenance-chip-value">' + safe(value) + '</span>';
+            if (tier) out += '<span class="forge-side-panel-provenance-chip-tier">' + safe(tier) + '</span>';
+            out += '</span>';
+          }
+          out += '</div>';
+          // Distinct source citations (visible — academic transparency, not
+          // just hoverable) — the "why" must be readable per John 2026-06-02.
+          const seen = new Set();
+          for (const e of entries) {
+            const src = e.source || '';
+            if (src && !seen.has(src)) {
+              seen.add(src);
+              out += '<div class="forge-side-panel-provenance-source">↳ ' + safe(src) + '</div>';
+            }
+          }
+          // Contested-case rationale (de-dup)
+          const seenR = new Set();
+          for (const e of entries) {
+            const r = e.contested_rationale || '';
+            if (r && !seenR.has(r)) {
+              seenR.add(r);
+              out += '<div class="forge-side-panel-provenance-rationale">⚖ ' + safe(r) + '</div>';
+            }
+          }
+          out += '</div>';
+        }
+        return out;
+      };
+      const provenanceHtml = renderProvenance();
+
       inner.innerHTML = '<div class="forge-side-panel-content" style="--family-color:' + safe(familyCol) + '">'
         + carouselHtml()
         + '<div class="forge-side-panel-header">'
@@ -2048,6 +2119,10 @@
         +   (tradition ? '<div class="forge-side-panel-tradition">' + safe(tradition) + '</div>' : '')
         + '</div>'
         + (desc ? '<div class="forge-side-panel-desc">' + safe(desc) + '</div>' : '')
+        // ── Provenance block (moved here 2026-06-02 per John: "i should be
+        // able to see immediately here" — academic-backing is the FIRST
+        // block under the description, not buried below bucket-pills).
+        + provenanceHtml
         + actionRowHtml
         + (pills ? '<div class="forge-side-panel-wires">' + pills + '</div>' : '')
         + '<dl class="forge-side-panel-meta">'
