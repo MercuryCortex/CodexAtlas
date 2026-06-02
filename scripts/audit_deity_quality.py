@@ -134,8 +134,11 @@ below_metadata = status_ct.get("stub", 0) + status_ct.get("partial", 0) + status
 incomplete_fields = len(set(no_domains) | set(no_gender) | set(no_role))
 
 # Tracked constants (judgment-based, updated as work proceeds):
+# SOURCE OF TRUTH for coverage = AUDIT/2026-06-02-deity-content-gaps.md (the curated
+# critical+moderate worklist). MODERATE_OPEN mirrors that file's open-item count; do
+# NOT drift the two apart. When the worklist is empty, this is 0 and Coverage is green.
 KNOWN_DUPLICATES = 0       # ninhursag→ninhursag-nintud→ninhursag, velinas-lithuanian→velinas, +mithra/zagreus/verethraghna/xuanwu all merged 2026-06-02
-MODERATE_OPEN    = 37      # coverage gaps remaining (Meso+Norse moderates filled 2026-06-02)
+MODERATE_OPEN    = 0       # ALL moderate-coverage gaps filled 2026-06-02 (Roman 8, Hittite 5, Arabian 4, Hindu 5, Buddhist 6, Jain 2, Chinese 4, Shinto 4, Korean 2, Celtic 6, Slavic 3, Baltic 3, Finnic 2, African 10, Polynesian 3, Zoroastrian 3, +Four Sons of Horus) — all graded 0-MAJOR by read-only fact-check agents
 
 def row(key, label, target, current, ok, detail=""):
     return {"key": key, "label": label, "target": target,
