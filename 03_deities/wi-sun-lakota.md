@@ -15,7 +15,16 @@ child-of: []
 consort: ["Haŋwí (the Moon)"]
 attributes: ["the sun disk", "the red of sunrise", "the sun dance (Wiwáŋyaŋg Wačhípi)"]
 attested-in: []
-syncretic-edges: []
+equivalents: []
+syncretic-edges:
+  - target: "[[wakan-tanka]]"
+    type: "constituent-of"
+    source: "Wí is one of the four Superior Wakan Beings within the Lakota Sixteen-Wakan hierarchy that together constitute Wakan Tanka (the Great Mystery/Great Spirit). Walker, Lakota Belief and Ritual, 1980"
+    source-tier: T1
+  - target: "[[white-buffalo-calf-woman]]"
+    type: "scholarly-parallel"
+    source: "Wí and the Sun Dance (Wiwáŋyaŋg Wačhípi) belong to the same Lakota ceremonial complex established/sanctified through White Buffalo Calf Woman's gift of the sacred pipe"
+    source-tier: T2
 status: "metadata"
 refs:
   - title: "Lakota Belief and Ritual"

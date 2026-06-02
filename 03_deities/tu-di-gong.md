@@ -10,6 +10,20 @@ period-active-latest: 2026
 domains: ["protection of local territory", "agriculture", "prosperity", "mediation between community and heaven"]
 gender: "masculine (usually depicted as an elderly, white-bearded official)"
 role: "hyper-local bureaucratic deity; lowest rung of the divine hierarchy; annual report-sender to the Jade Emperor; every neighborhood, village, and plot has one"
+parent-of: []
+child-of: []
+consort: ["tu-di-po"]
+attested-in: []
+equivalents: []
+syncretic-edges:
+  - target: "[[jade-emperor]]"
+    type: "constituent-of"
+    source: "Tu Di Gong is the lowest rank of the celestial bureaucracy headed by the Jade Emperor, to whom he reports annually on his small jurisdiction — the 'imperial metaphor' of Chinese popular religion. Feuchtwang 1992"
+    source-tier: T1
+  - target: "cheng-huang"
+    type: "constituent-of"
+    source: "He stands one rung below the Cheng Huang (City God) in the territorial divine hierarchy (plot/village → city → heaven)"
+    source-tier: T2
 status: "metadata"
 refs:
   - title: "Popular Religion in China: The Imperial Metaphor"

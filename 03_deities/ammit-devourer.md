@@ -16,6 +16,19 @@ appearances:
   - "[[phase-1-010-book-of-the-dead]]"
   - "[[ritual-weighing-of-the-heart]]"
 iconography: "Composite beast: crocodile head, lion forequarters, hippopotamus hindquarters — the three most-dangerous Nile animals fused into one judgment-figure"
+attested-in: ["[[phase-1-010-book-of-the-dead]]"]
+equivalents: []
+syncretic-edges:
+  - target: "[[ma-at]]"
+    type: "constituent-of"
+    source: "Ammit is the executioner-consequence of the weighing-of-the-heart tribunal: if the heart outweighs the feather of Ma'at, she devours it (the 'second death'). Book of the Dead 125; Hornung 1999"
+    source-tier: T1
+  - target: "[[michael-archangel]]"
+    type: "scholarly-parallel"
+    appearance-tier: 3
+    role-in-context: "the weighing-of-souls (psychostasia) inherited by Christian Last-Judgment iconography"
+    source: "The Egyptian weighing-of-the-heart is the iconographic ancestor of the Christian weighing-of-souls — Michael with the scales at the Last Judgment; the 'second death' echoes in Rev 20:14. Hornung 1999"
+    source-tier: T2
 status: "metadata"
 refs:
   - title: "The Ancient Egyptian Books of the Afterlife"
