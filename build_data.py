@@ -269,12 +269,14 @@ TRADITION_FAMILY_ORDER = [
     "Vedic",
     "Buddhist",
     "Chinese",
+    "Korean",
     # African / Egyptian
     "Egyptian",
     "African",
     # Greco-Roman / Mediterranean
     "Etruscan",
     "Hermetic",
+    "Phrygian",
     "Mystery",
     "Greek",
     "Roman",
@@ -320,6 +322,8 @@ FAMILY_COLORS = {
     "Etruscan":         "#c47a50",
     "Hermetic":         "#a8a3b8",
     "Mystery":          "#a85a8a",
+    "Phrygian":         "#b0566a",  # Cybele rose (Anatolian, distinct from Mystery)
+    "Korean":           "#4a78b0",  # Korean blue (distinct from Chinese teal)
     "Greek":            "#8a5ac4",
     "Roman":            "#7a5a9a",
     "Celtic":           "#4a8a4a",
