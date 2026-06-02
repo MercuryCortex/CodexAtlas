@@ -18,7 +18,7 @@ equivalents: []
 syncretic-edges:
   - target: "[[demeter]]"
     type: "constituent-of"
-    source: "Triptolemus is the Eleusinian prince whom Demeter, in gratitude during her search for Persephone, teaches the arts of agriculture and sends across the world in a winged serpent-chariot to spread grain-farming. Homeric Hymn to Demeter; Parker 1996"
+    source: "Triptolemus is the Eleusinian prince favoured by Demeter during her search for Persephone (named in the Homeric Hymn to Demeter); the developed myth in which she teaches him agriculture and sends him across the world in a winged serpent-chariot is elaborated in later sources (Apollodorus 1.5.2; Ovid, Metamorphoses 5; Pausanias). Parker 1996"
     source-tier: T1
   - target: "[[persephone-greek]]"
     type: "constituent-of"
@@ -43,4 +43,4 @@ tags: [deity, greek, triptolemus, agriculture, eleusis, demeter, grain]
 
 # Triptolemus
 
-Triptolemus (*Triptólemos*) is the Eleusinian hero-god of **agriculture** — the mortal prince of Eleusis whom **[[demeter]]**, received kindly there during her grief-stricken search for **[[persephone-greek]]**, rewards by teaching him the **arts of grain-farming** and sending him across the world in a **winged chariot drawn by serpents** to give humankind the gift of cultivated wheat. He is thus the divine culture-hero of the move from wild gathering to settled agriculture — and a central figure of the **Eleusinian Mysteries**, the most revered initiation cult of the Greek world, where he stands beside Demeter and Persephone in the great relief-iconography (most famously the Great Eleusinian Relief). To "bring the gifts of Demeter" through Triptolemus was, for the Greeks, to bring civilization itself.
+Triptolemus (*Triptólemos*) is the Eleusinian hero-god of **agriculture** — the mortal prince of Eleusis whom **[[demeter]]**, received kindly at Eleusis during her grief-stricken search for **[[persephone-greek]]**, favours and instructs. In the *Homeric Hymn to Demeter* he is one of the Eleusinian princes taught her rites; the fuller, more familiar myth — in which she teaches him the **arts of grain-farming** and sends him across the world in a **winged chariot drawn by serpents** to give humankind the gift of cultivated wheat — is elaborated in later authors (Apollodorus, Ovid, Pausanias). He is thus the divine culture-hero of the move from wild gathering to settled agriculture — and a central figure of the **Eleusinian Mysteries**, the most revered initiation cult of the Greek world, where he stands beside Demeter and Persephone in the great relief-iconography (most famously the Great Eleusinian Relief). To "bring the gifts of Demeter" through Triptolemus was, for the Greeks, to bring civilization itself.

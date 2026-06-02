@@ -3,7 +3,7 @@ type: deity
 id: "shala"
 name: "Shala"
 aka: ["Šala", "Šalaš", "the Lady of the Furrow"]
-tradition: "Akkadian"
+tradition: "Mesopotamian (northern; possibly Hurrian origin)"
 period-active-earliest: -2000
 period-active-latest: -300
 domains: ["grain and the furrowed field", "rain-fed fertility", "compassion / mercy", "consort of the storm-god"]

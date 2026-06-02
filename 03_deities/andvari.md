@@ -2,7 +2,7 @@
 type: deity
 id: "andvari"
 name: "Andvari"
-aka: ["Andvari", "Alberich (Germanic / Nibelungenlied parallel)", "Andварi"]
+aka: ["Andvarinn", "Alberich (Germanic / Nibelungenlied parallel)"]
 tradition: "Norse"
 period-active-earliest: 800
 period-active-latest: 1300

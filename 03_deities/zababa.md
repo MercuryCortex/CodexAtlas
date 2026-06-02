@@ -12,10 +12,10 @@ gender: "masculine"
 role: "war-god and tutelary deity of the city of Kish"
 parent-of: []
 child-of: ["[[enlil]]"]
-consort: ["[[ishtar-akkadian]]"]
+consort: ["[[ishtar-akkadian]] (Ishtar of Kish, earlier)", "Bau (later, post-Old-Babylonian)"]
 attributes: ["the eagle-headed mace/standard", "weapons of war", "the city of Kish"]
 attested-in: []
-equivalents: ["[[nergal]]"]
+equivalents: []
 syncretic-edges:
   - target: "[[ninurta]]"
     type: "scholarly-parallel"

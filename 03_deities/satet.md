@@ -9,7 +9,7 @@ period-active-earliest: -3000
 period-active-latest: 400
 domains: ["the Nile inundation (its source at the cataract)", "the southern frontier of Egypt", "purification", "archery / guardianship of the border"]
 gender: "feminine"
-role: "goddess of the Nile flood and the southern border; head of the Elephantine triad"
+role: "goddess of the Nile flood and the southern border; senior goddess of the Elephantine triad (headed by Khnum)"
 parent-of: ["[[anuket]]"]
 child-of: []
 consort: ["[[khnum]]"]
@@ -44,4 +44,4 @@ tags: [deity, egyptian, satet, satis, elephantine, nile-flood, cataract, khnum]
 
 # Satet
 
-Satet (Greek **Satis**) is the Egyptian goddess of the **Nile inundation** and guardian of Egypt's **southern frontier** at Elephantine (Aswan), where the river was believed to surge up from caverns beneath the First Cataract. As head of the **Elephantine triad** — with her consort the ram-creator **[[khnum]]** and their daughter **[[anuket]]** — she **releases the flood-waters** that bring Egypt's life each year, and purifies the king and the dead with cataract-water in four jars. She wears the White Crown of Upper Egypt flanked by antelope horns and carries **bow and arrows**, marking her as the archer-protector of the southern border against Nubia. Her star was Sothis/Sirius, whose heliacal rising heralded the flood — linking her (and the triad) to the precise astronomical timing of Egypt's agricultural year.
+Satet (Greek **Satis**) is the Egyptian goddess of the **Nile inundation** and guardian of Egypt's **southern frontier** at Elephantine (Aswan), where the river was believed to surge up from caverns beneath the First Cataract. As the senior goddess of the **Elephantine triad** — headed by the ram-creator **[[khnum]]**, with Satet as his consort and **[[anuket]]** their daughter — she **releases the flood-waters** that bring Egypt's life each year, and purifies the king and the dead with cataract-water in four jars. She wears the White Crown of Upper Egypt flanked by antelope horns and carries **bow and arrows**, marking her as the archer-protector of the southern border against Nubia. Her star was Sothis/Sirius, whose heliacal rising heralded the flood — linking her (and the triad) to the precise astronomical timing of Egypt's agricultural year.

@@ -8,8 +8,8 @@ period-active-earliest: -2600
 period-active-latest: -500
 domains: ["wisdom and dream-interpretation", "divine motherhood", "the cattle-byre / pastoral fertility"]
 gender: "feminine"
-role: "goddess-mother of Gilgamesh and Dumuzi; wise interpreter of dreams"
-parent-of: ["[[gilgamesh-nephilim]]", "[[dumuzi-tammuz]]"]
+role: "divine mother of Gilgamesh; wise interpreter of dreams"
+parent-of: ["[[gilgamesh-nephilim]]"]
 child-of: []
 consort: ["lugalbanda"]
 attributes: ["the wild cow (her name = 'Lady Wild Cow')", "wisdom and prophetic dream-reading"]
@@ -39,4 +39,4 @@ tags: [deity, sumerian, mesopotamian, ninsun, wild-cow, gilgamesh, dream-interpr
 
 # Ninsun
 
-Ninsun (*Nin-sumun*, "Lady Wild Cow"; also **Rimat-Ninsun**) is the Sumerian goddess of **wisdom and divine motherhood** — best known as the **mother of [[gilgamesh-nephilim|Gilgamesh]]** (by the deified hero-king **Lugalbanda**) and of the shepherd-god **[[dumuzi-tammuz|Dumuzi]]**. Her bovine name marks her as a goddess of the fertile cattle-byre, but her great quality is **wisdom**: in the *Epic of Gilgamesh* she is the calm, sagacious mother who **interprets her son's prophetic dreams** of the coming of Enkidu, formally adopts the wild man Enkidu as her own son to bind the two heroes, and intercedes with the sun-god Shamash for their protection on the Cedar Forest journey. She is the divine archetype of the wise mother — the counselor whose interpretation steadies the restless hero.
+Ninsun (*Nin-sumun*, "Lady Wild Cow"; also **Rimat-Ninsun**) is the Sumerian goddess of **wisdom and divine motherhood** — best known as the **mother of [[gilgamesh-nephilim|Gilgamesh]]** (by the deified hero-king **Lugalbanda**); a cattle-region variant also makes her the mother of the shepherd-god **[[dumuzi-tammuz|Dumuzi]]** (whose more standard mother is Duttur). Her bovine name marks her as a goddess of the fertile cattle-byre, but her great quality is **wisdom**: in the *Epic of Gilgamesh* she is the calm, sagacious mother who **interprets her son's prophetic dreams** of the coming of Enkidu, formally adopts the wild man Enkidu as her own son to bind the two heroes, and intercedes with the sun-god Shamash for their protection on the Cedar Forest journey. She is the divine archetype of the wise mother — the counselor whose interpretation steadies the restless hero.

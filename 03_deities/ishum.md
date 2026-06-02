@@ -17,8 +17,8 @@ attested-in: ["[[erra-akkadian]]"]
 equivalents: []
 syncretic-edges:
   - target: "[[erra-akkadian]]"
-    type: "polemic-against"
-    source: "In the Erra Epic, Ishum is the level-headed vizier-herald who repeatedly tries to restrain the war-god Erra's murderous rampage and finally talks him down — the voice of measured counsel against destructive fury. Foster, Before the Muses; Black & Green 1992"
+    type: "constituent-of"
+    source: "In the Erra Epic, Ishum is Erra's LOYAL vizier-herald who repeatedly restrains the war-god's murderous rampage and finally talks him down — the voice of measured counsel against destructive fury (a restraining-companion relation within the pantheon, not polemic). Foster, Before the Muses; Black & Green 1992"
     source-tier: T1
   - target: "[[nuska]]"
     type: "scholarly-parallel"

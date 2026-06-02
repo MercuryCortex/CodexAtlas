@@ -15,11 +15,11 @@ child-of: []
 consort: ["mehit"]
 attributes: ["spear and rope (hunting the enemies of Ra)", "four-plumed crown", "raised arm / striding warrior"]
 attested-in: []
-equivalents: ["[[ares]]"]
+equivalents: []
 syncretic-edges:
   - target: "[[tefnut]]"
-    type: "constituent-of"
-    source: "Onuris's defining myth is the retrieval of the wandering 'Distant Goddess' (the Eye of Ra, identified with Tefnut/Mehit) from Nubia back to Egypt — his name Inhert means 'he who brings back the distant one'. Wilkinson 2003"
+    type: "scholarly-parallel"
+    source: "Onuris's defining myth is the retrieval of the wandering 'Distant Goddess' (the Eye of Ra) from Nubia — his name Inhert means 'he who brings back the distant one'. His OWN consort and Distant-Goddess is the lioness Mehit; the identification with Tefnut runs chiefly through the Anhur-Shu syncretism (Shu's consort is Tefnut). Wilkinson 2003; Hart 2005"
     source-tier: T1
   - target: "[[ares]]"
     type: "interpretatio-nominal"
@@ -44,4 +44,4 @@ tags: [deity, egyptian, onuris, anhur, war-god, hunter, eye-of-ra, distant-godde
 
 # Onuris
 
-Onuris (Egyptian *Inhert*, "he who brings back the distant one"; also **Anhur**) is the Egyptian **warrior-hunter sky-god** of This and Sebennytos. His name encodes his defining myth: he is the god who **retrieves the "Distant Goddess"** — the Eye of Ra, the fiery solar daughter (identified with **[[tefnut]]** or his consort Mehit) who has stormed off in anger to Nubia — and brings her home to Egypt, pacified, so that the inundation and order may return. As a striding warrior with spear and lasso he hunts down the **enemies of Ra** (above all the chaos-serpent Apophis), which made him a protective sun-warrior often fused as **Anhur-Shu**. His martial character led the Greeks to equate him with **[[ares]]**, and his Sebennytos cult thrived into Roman times. He embodies the active, aggressive defense of cosmic order and the bringing-back of the alienated divine.
+Onuris (Egyptian *Inhert*, "he who brings back the distant one"; also **Anhur**) is the Egyptian **warrior-hunter sky-god** of This and Sebennytos. His name encodes his defining myth: he is the god who **retrieves the "Distant Goddess"** — the Eye of Ra, the fiery solar daughter — in Onuris's own cult his consort the lioness **Mehit**, and by the Anhur-Shu syncretism identified with **[[tefnut]]** — who has stormed off in anger to Nubia — and brings her home to Egypt, pacified, so that the inundation and order may return. As a striding warrior with spear and lasso he hunts down the **enemies of Ra** (above all the chaos-serpent Apophis), which made him a protective sun-warrior often fused as **Anhur-Shu**. His martial character led the Greeks to equate him with **[[ares]]**, and his Sebennytos cult thrived into Roman times. He embodies the active, aggressive defense of cosmic order and the bringing-back of the alienated divine.

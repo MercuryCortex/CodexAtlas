@@ -10,7 +10,7 @@ domains: ["cunning intelligence and practical wisdom (mētis)", "counsel", "the 
 gender: "feminine"
 role: "Titaness of wisdom and craft; first consort of Zeus, mother of Athena"
 parent-of: ["[[athena]]"]
-child-of: []
+child-of: ["[[oceanus]]", "[[tethys]]"]
 consort: ["[[zeus]]"]
 attributes: ["shape-shifting", "the swallowed counsellor within Zeus"]
 attested-in: []
