@@ -18,7 +18,7 @@ function: "buddhist-cliff-temple-complex-and-imperial-patronage-monument"
 key-figures: ["[[emperor-xiaowen-of-northern-wei]] (r. 471–499; relocated the Northern Wei capital from Datong to Luoyang in 494; began the Longmen programme as the successor to the Yungang caves)", "[[empress-wu-zetian]] (r. 690–705; China's only female emperor; principal patron of the Tang-era Longmen expansion including the colossal Vairocana Buddha at Fengxian Si)", "[[gaozong-emperor-tang]] (r. 649–683; co-patron of the Fengxian Si commission with Wu Zetian)", "[[wei-jing]] (sculptor; named in dedicatory inscriptions)"]
 themes: ["[[theme-relic-veneration-as-architectural-programme]]", "[[theme-cave-as-cosmic-interior]]", "[[axis-mundi]]", "[[silk-road-as-religious-transmission-corridor]]"]
 events-related: ["[[event-northern-wei-relocation-to-luoyang-494]]", "[[event-fengxian-si-vairocana-commission-672-675]]"]
-documents-related: ["[[lotus-sutra]] (principal iconographic source for the Northern Wei caves)", "[[vimalakirti-sutra]] (carved in narrative-relief in several caves)", "[[longmen-inscriptions]] (~2800 dedicatory inscriptions; one of the largest single epigraphic corpora in Chinese Buddhism)"]
+documents-related: ["[[phase-4-101-lotus-sutra|Lotus Sūtra]] (principal iconographic source for the Northern Wei caves)", "[[vimalakirti-sutra]] (carved in narrative-relief in several caves)", "[[longmen-inscriptions]] (~2800 dedicatory inscriptions; one of the largest single epigraphic corpora in Chinese Buddhism)"]
 cross-tradition-edges:
   - target: "yungang-grottoes"
     type: "direct-successor-and-architectural-continuation-of"

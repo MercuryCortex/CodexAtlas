@@ -135,7 +135,7 @@ The two stone pagodas in the front courtyard — **Seokgatap** (Pagoda of Shakya
 - **Seokgatap** — a classical **Silla three-storey stone pagoda**, restrained, severe geometric form. The canonical exemplar of the Silla pagoda type that becomes the principal Korean pagoda vocabulary.
 - **Dabotap** — an **elaborately ornamented stone pagoda** of unique design, with a square base supporting an octagonal upper section, decorated with stone lions, carved railings, and ornate brackets. The most distinctive single pagoda in Korean Buddhism.
 
-The pairing of restrained-Shakyamuni and ornate-Many-Treasures pagoda mirrors the iconographic programme of the *[[lotus-sutra|Lotus Sutra]]*'s Chapter 11, in which the Buddha of Many Treasures (Prabhutaratna) appears in his jewelled stupa beside Shakyamuni.
+The pairing of restrained-Shakyamuni and ornate-Many-Treasures pagoda mirrors the iconographic programme of the *[[phase-4-101-lotus-sutra|Lotus Sutra]]*'s Chapter 11, in which the Buddha of Many Treasures (Prabhutaratna) appears in his jewelled stupa beside Shakyamuni.
 
 In 1966, repair work on Seokgatap recovered an extraordinary cache of dedication-objects, including the **Pure Light Dharani Sutra** — a Buddhist printed scroll dated ~706–751 CE that is one of the **oldest surviving printed documents in the world**, possibly predating the [[diamond-sutra-868|Dunhuang Diamond Sutra]] (868 CE) by ~150 years.
 
