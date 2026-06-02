@@ -5,7 +5,7 @@ name: "Xochipilli"
 aka: ["Xōchipilli", "Flower Prince", "Macuilxochitl ('Five-Flower')", "Ahuiateteo (the pleasure-gods)"]
 tradition: "Aztec (Nahua)"
 region: "Central Mexico"
-period-active-earliest: -200
+period-active-earliest: 900
 period-active-latest: 1521
 domains: ["flowers", "art, song, and dance", "games, feasting, and pleasure", "summer, maize, and entheogenic plants", "male sexuality"]
 gender: "masculine"
@@ -33,10 +33,10 @@ refs:
     publisher: "Thames & Hudson"
     type: "reference"
     tier: 1
-  - title: "Mushrooms, Russia and History / Aztec entheogen studies (Wasson; Schultes & Hofmann)"
+  - title: "Plants of the Gods: Origins of Hallucinogenic Use"
     author: "Schultes, R.E., and Hofmann, A."
     year: 1979
-    publisher: "McGraw-Hill (Plants of the Gods)"
+    publisher: "McGraw-Hill"
     type: "monograph"
     tier: 2
 tags: [deity, aztec, nahua, mesoamerican, xochipilli, flowers, art, pleasure, entheogen]

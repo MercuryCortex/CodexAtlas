@@ -2,7 +2,7 @@
 type: deity
 id: "goibniu"
 name: "Goibniu"
-aka: ["Goibhniu", "Gobban Saor (folk)", "Govannon (Welsh cognate)"]
+aka: ["Goibhniu", "Gobán Saor (later folk figure)", "Govannon / Gofannon (Welsh cognate)"]
 tradition: "Irish"
 region: "Ireland"
 period-active-earliest: 900

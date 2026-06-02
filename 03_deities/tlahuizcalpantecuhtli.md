@@ -5,7 +5,7 @@ name: "Tlahuizcalpantecuhtli"
 aka: ["Tlāhuizcalpantēcuhtli", "Lord of the Dawn (House of Dawn)", "Venus-as-Morning-Star"]
 tradition: "Aztec (Nahua)"
 region: "Central Mexico (and broadly Mesoamerica — the Venus cult of the Maya/Toltec)"
-period-active-earliest: -200
+period-active-earliest: 900
 period-active-latest: 1521
 domains: ["Venus as the morning star", "the dangerous dawn-light (its 'spears')", "an aspect/twin of Quetzalcoatl"]
 gender: "masculine"

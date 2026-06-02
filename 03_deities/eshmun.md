@@ -35,15 +35,15 @@ refs:
     publisher: "Peeters (OLA 64)"
     type: "monograph"
     tier: 1
-  - title: "The Religion of the Phoenicians and Arameans"
-    author: "Niehr, Herbert"
-    year: 2014
-    publisher: "in The Oxford Handbook of the Phoenician and Punic Mediterranean"
-    type: "chapter"
+  - title: "The Oxford Handbook of the Phoenician and Punic Mediterranean"
+    author: "Doak, B.R., and López-Ruiz, C. (eds.)"
+    year: 2019
+    publisher: "Oxford University Press"
+    type: "reference"
     tier: 1
 tags: [deity, phoenician, sidonian, canaanite, eshmun, healing, asclepius]
 ---
 
 # Eshmun
 
-Eshmun (Phoenician *ʾšmn*) is the principal god of **Sidon** and the great Phoenician deity of healing. His monumental sanctuary at Bustan el-Sheikh, northeast of Sidon, was a major Levantine healing-cult center from the 7th century BCE; King Eshmunazar II and Bodashtart of Sidon built and dedicated to him. As a god of restored health and youthful vitality, Eshmun is the Phoenician counterpart whom Greeks unfailingly identify with **[[asclepius-greek]]** (Asklepios), the serpent-staff healer — so completely that his Sidonian sanctuary functioned as an Asklepieion in the Hellenistic and Roman periods. A late tradition (Philo of Byblos; Damascius) makes Eshmun the youngest and most beautiful of the eight **Kabeiroi**, beloved of Astronoe/Astarte. His home is Sidonian-Phoenician; the Asklepios identification is a major (tier-2) Greek appearance-wire.
+Eshmun (Phoenician *ʾšmn*) is the principal god of **Sidon** and the great Phoenician deity of healing. His monumental sanctuary at Bustan el-Sheikh, northeast of Sidon, was a major Levantine healing-cult center from the 7th century BCE; King Eshmunazar II and Bodashtart of Sidon built and dedicated to him. As a god of restored health and youthful vitality, Eshmun is the Phoenician counterpart whom Greeks unfailingly identify with **[[asclepius-greek]]** (Asklepios), the serpent-staff healer — so completely that his Sidonian sanctuary functioned as an Asklepieion in the Hellenistic and Roman periods. A late tradition (Philo of Byblos; Damascius) makes Eshmun the eighth — the youngest and most beautiful son after the seven **Kabeiroi** — beloved of Astronoe/Astarte. His home is Sidonian-Phoenician; the Asklepios identification is a major (tier-2) Greek appearance-wire.

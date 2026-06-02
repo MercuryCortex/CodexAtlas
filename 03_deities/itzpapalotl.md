@@ -5,7 +5,7 @@ name: "Itzpapalotl"
 aka: ["Ītzpāpālōtl", "Obsidian Butterfly", "Clawed Butterfly"]
 tradition: "Aztec (Nahua)"
 region: "Central Mexico (and the Chichimec north); the paradise of Tamoanchan"
-period-active-earliest: -200
+period-active-earliest: 900
 period-active-latest: 1521
 domains: ["the warrior-mother / fearsome star-goddess", "death and sacrifice", "the obsidian blade", "the Chichimec ancestral cult", "ruler of Tamoanchan"]
 gender: "feminine"

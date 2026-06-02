@@ -4,7 +4,7 @@ id: "iris-greek"
 name: "Iris"
 aka: ["Îris", "the Rainbow", "messenger of Hera"]
 tradition: "Greek"
-region: "Greece (pan-Hellenic; personified, cult on Delos and Hekate's Aegean)"
+region: "Greece (pan-Hellenic; personified — the rainbow bridging heaven, earth, and sea)"
 period-active-earliest: -700
 period-active-latest: 400
 domains: ["the rainbow", "divine messenger", "sea and sky (the rainbow joining them)"]

@@ -5,7 +5,7 @@ name: "Shani"
 aka: ["Śani", "Shani Dev", "Saturn", "Shanaishchara ('slow-mover')"]
 tradition: "Hindu (Navagraha)"
 region: "India (pan-Hindu; major temples at Shani Shingnapur, Maharashtra, and Tirunallar, Tamil Nadu)"
-period-active-earliest: -100
+period-active-earliest: 400
 period-active-latest: 2026
 domains: ["the planet Saturn", "karmic justice / retribution", "misfortune and discipline", "time and limitation"]
 gender: "masculine"

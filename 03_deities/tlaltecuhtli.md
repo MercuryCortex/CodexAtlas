@@ -5,7 +5,7 @@ name: "Tlaltecuhtli"
 aka: ["Tlāltēcuhtli", "Earth Lord/Lady", "the Earth Monster"]
 tradition: "Aztec (Nahua)"
 region: "Central Mexico (Tenochtitlan — the Templo Mayor)"
-period-active-earliest: -200
+period-active-earliest: 900
 period-active-latest: 1521
 domains: ["the earth (its surface and its devouring maw)", "creation from a dismembered body", "the swallowing of the dead and the sun", "fertility through sacrifice"]
 gender: "varies (earth deity, depicted female; the name is masculine 'Earth Lord')"

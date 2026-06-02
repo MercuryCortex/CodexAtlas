@@ -2,7 +2,7 @@
 type: deity
 id: "nuska"
 name: "Nuska"
-aka: ["Nusku", "Nusku"]
+aka: ["Nusku", "Nuska (Sumerian form)"]
 tradition: "Sumerian"
 region: "Mesopotamia; Nippur (vizier of Enlil) and Harran (with the moon-god Sin)"
 period-active-earliest: -2500

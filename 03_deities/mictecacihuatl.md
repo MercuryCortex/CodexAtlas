@@ -5,7 +5,7 @@ name: "Mictecacihuatl"
 aka: ["Mictēcacihuātl", "Lady of the Dead", "Queen of Mictlan"]
 tradition: "Aztec (Nahua)"
 region: "Central Mexico (Mictlan, the underworld)"
-period-active-earliest: -200
+period-active-earliest: 900
 period-active-latest: 1521
 domains: ["death", "the underworld (Mictlan)", "the guarding of the bones of the dead", "festivals of the dead"]
 gender: "feminine"

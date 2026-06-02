@@ -223,7 +223,7 @@ The Andean ceque system is the **best-documented pre-modern non-Eurasian example
 - [[machu-picchu]], [[ollantaytambo]], [[pisac]] — cognate Pachacuti-era Inca constructions
 - [[gobekli-tepe]], [[malta-temples-c-3600-2500-bce]], [[stonehenge-sacred-site]] — cross-tradition megalithic / cyclopean construction family
 - [[event-siege-of-cusco-1536]] — the rebellion siege
-- [[inti]], [[wiraqocha]] — Inca deities
+- [[inti]], [[viracocha]] — Inca deities
 - [[event-inti-raymi-festival]] — the annual reconstruction
 - [[theme-cosmic-mountain-as-temple-form]], [[axis-mundi]], [[huaca]] — motif anchors
 - [[tradition-inca-andean]] — parent tradition

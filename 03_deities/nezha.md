@@ -21,7 +21,7 @@ syncretic-edges:
     type: "constituent-of"
     source: "Nezha is the third son of the general Li Jing (the Pagoda-bearing Heavenly King); their father-son conflict and reconciliation is the heart of his legend. Shahar, Oedipal God"
     source-tier: T1
-  - target: "vairocana"
+  - target: "nalakubara"
     type: "direct-borrowing"
     appearance-tier: 3
     role-in-context: "Buddhist origin as the yaksha-prince Nalakūbara"

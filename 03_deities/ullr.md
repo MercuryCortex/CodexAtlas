@@ -2,7 +2,7 @@
 type: deity
 id: "ullr"
 name: "Ullr"
-aka: ["Ull", "Ullin", "Holler (Latinized, Saxo)"]
+aka: ["Ull", "Ullin", "Ollerus (Latinized, Saxo Grammaticus)"]
 tradition: "Norse"
 region: "Scandinavia (esp. Norway and Sweden — abundant in place-names)"
 period-active-earliest: 400
