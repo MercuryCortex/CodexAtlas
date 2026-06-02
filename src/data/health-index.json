@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-29T15:14:20Z",
+  "generatedAt": "2026-06-02T00:49:30Z",
   "vault": {
     "totalNodes": 4936,
     "lensCount": 30,
@@ -61,10 +61,11 @@
       "band": "over-baseline",
       "baselineNote": "EoR religious figures + Bowker Oxford Dict. World Religions biographical entries",
       "statuses": {
-        "metadata": 474,
+        "metadata": 472,
         "stub": 690,
-        "(no status)": 16,
-        "full": 37
+        "(no status)": 17,
+        "full": 37,
+        "\"m": 1
       }
     },
     {
