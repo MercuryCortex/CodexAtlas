@@ -1,0 +1,90 @@
+{
+ "generatedAt": "2026-06-02",
+ "totalDeities": 782,
+ "productGrade": false,
+ "passCount": 3,
+ "rowCount": 9,
+ "baseline": {
+  "connected": 19,
+  "sourced": 25,
+  "depth": 37,
+  "fields": 34,
+  "thin": 12,
+  "dupes": 6,
+  "coverage": 121
+ },
+ "rows": [
+  {
+   "key": "connected",
+   "label": "Graph-connected (no orphans)",
+   "target": "0 disconnected",
+   "current": "0",
+   "ok": true,
+   "detail": "every deity has \u22651 structured edge in or out"
+  },
+  {
+   "key": "tradition",
+   "label": "Has home tradition",
+   "target": "100%",
+   "current": "782/782",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "key": "dates",
+   "label": "Has dates",
+   "target": "100%",
+   "current": "782/782",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "key": "sourced",
+   "label": "Sourced (T1 refs)",
+   "target": "0 unsourced",
+   "current": "10",
+   "ok": false,
+   "detail": ""
+  },
+  {
+   "key": "depth",
+   "label": "At least metadata depth",
+   "target": "0 stubs/partials",
+   "current": "20",
+   "ok": false,
+   "detail": "stub + partial + untyped"
+  },
+  {
+   "key": "fields",
+   "label": "Complete schema (domains/gender/role)",
+   "target": "0 missing",
+   "current": "19",
+   "ok": false,
+   "detail": ""
+  },
+  {
+   "key": "thin",
+   "label": "No thin bodies (<400 chars)",
+   "target": "0",
+   "current": "1",
+   "ok": false,
+   "detail": ""
+  },
+  {
+   "key": "dupes",
+   "label": "No duplicates",
+   "target": "0",
+   "current": "2",
+   "ok": false,
+   "detail": "ninhursag, velinas \u2014 pending content-merge"
+  },
+  {
+   "key": "coverage",
+   "label": "Coverage (critical + moderate)",
+   "target": "complete",
+   "current": "~75 moderate open",
+   "ok": false,
+   "detail": "critical tier complete; moderate worklist open"
+  }
+ ]
+}

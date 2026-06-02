@@ -25,7 +25,7 @@
 (function () {
   'use strict';
 
-  const STATE = { cache: null, host: null, isOpen: false };
+  const STATE = { cache: null, bench: null, host: null, isOpen: false };
 
   window._devOverview = {
     open:  openPanel,
@@ -84,12 +84,14 @@
   }
 
   function fetchData() {
-    return fetch('src/data/health-index.json?_=' + Date.now(), { cache: 'no-store' })
-      .then(r => {
-        if (!r.ok) throw new Error('HTTP ' + r.status);
-        return r.json();
-      })
-      .then(d => { STATE.cache = d; return d; });
+    const health = fetch('src/data/health-index.json?_=' + Date.now(), { cache: 'no-store' })
+      .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); });
+    // Benchmark is optional — never let its absence break the panel.
+    const bench = fetch('src/data/deity-product-grade.json?_=' + Date.now(), { cache: 'no-store' })
+      .then(r => r.ok ? r.json() : null).catch(() => null);
+    return Promise.all([health, bench]).then(([d, b]) => {
+      STATE.cache = d; STATE.bench = b; return d;
+    });
   }
 
   function renderLoading() {
@@ -111,12 +113,76 @@
     const overallPct = totalBaseline ? Math.round(d.vault.totalNodes / totalBaseline * 100) : 0;
     const lensBands = countBands(d.lenses);
     body.innerHTML = [
+      renderDeityBenchmark(STATE.bench),
       renderSummary(d, overallPct, totalBaseline, lensBands),
       renderLenses(d.lenses),
       renderFamilies(d.families),
       renderMethodology(d.methodology, d.unmatchedTraditionsTop || []),
       renderFooter(d),
     ].join('');
+  }
+
+  // ── DEITY PRODUCT-GRADE BENCHMARK ──────────────────────────────────────
+  // The current north-star bar: deities are the root layer; everything stems
+  // from here. Each row must go green (target met) before the layer is
+  // "product-grade". Data: src/data/deity-product-grade.json
+  // (rebuilt via `python3 scripts/audit_deity_quality.py`).
+  function renderDeityBenchmark(b) {
+    if (!b || !b.rows) return '';
+    const pass = b.passCount, total = b.rowCount;
+    const pg = !!b.productGrade;
+    const barW = total ? Math.round(pass / total * 100) : 0;
+    const baseline = b.baseline || {};
+    const rows = b.rows.map(r => {
+      const band = r.ok ? 'rich' : 'anemic';
+      const traj = (baseline[r.key] != null && !r.ok)
+        ? '<span class="dev-overview-cell-sub">was ' + escapeHtml(String(baseline[r.key])) + ' → now ' + escapeHtml(r.current) + '</span>'
+        : (baseline[r.key] != null && r.ok)
+          ? '<span class="dev-overview-cell-sub">' + escapeHtml(String(baseline[r.key])) + ' → ' + escapeHtml(r.current) + '</span>'
+          : '';
+      return ''
+        + '<tr class="dev-overview-row dev-overview-row--' + band + '">'
+        +   '<td class="dev-overview-col-label">'
+        +     '<div class="dev-overview-cell-main">' + escapeHtml(r.label) + '</div>'
+        +     (r.detail ? '<div class="dev-overview-cell-sub">' + escapeHtml(r.detail) + '</div>' : '')
+        +   '</td>'
+        +   '<td class="dev-overview-col-num">' + escapeHtml(r.current) + '</td>'
+        +   '<td class="dev-overview-col-num dev-overview-col-base">' + escapeHtml(r.target) + '</td>'
+        +   '<td class="dev-overview-col-statuses">' + traj + '</td>'
+        +   '<td class="dev-overview-col-band">'
+        +     '<span class="dev-overview-band-pill" data-band="' + band + '">' + (r.ok ? 'PASS' : 'OPEN') + '</span>'
+        +   '</td>'
+        + '</tr>';
+    }).join('');
+    return ''
+      + '<section class="dev-overview-section dev-overview-summary">'
+      +   '<h2 class="dev-overview-section-h">🎯 Deity product-grade benchmark '
+      +     '<span class="dev-overview-h-hint">the root layer — everything stems from here</span></h2>'
+      +   '<div class="dev-overview-stat-grid">'
+      +     stat(pass + '<span class="dev-overview-stat-unit">/' + total + '</span>', pg ? 'ROWS GREEN — PRODUCT-GRADE ✓' : 'rows green (target ' + total + '/' + total + ')')
+      +     stat(num(b.totalDeities), 'Deities')
+      +     stat(escapeHtml(b.generatedAt || ''), 'As of')
+      +   '</div>'
+      +   '<div class="dev-overview-band-strip">'
+      +     '<div class="dev-overview-bar" data-band="' + (pg ? 'rich' : 'developing') + '" style="flex:1">'
+      +       '<div class="dev-overview-bar-fill" style="width:' + barW + '%"></div>'
+      +       '<div class="dev-overview-bar-100"></div>'
+      +     '</div>'
+      +     '<span class="dev-overview-band-strip-lbl">' + (pg ? 'all rows green' : (total - pass) + ' rows still open') + '</span>'
+      +   '</div>'
+      +   '<div class="dev-overview-table-wrap">'
+      +     '<table class="dev-overview-table">'
+      +       '<thead><tr>'
+      +         '<th>Quality dimension</th>'
+      +         '<th class="dev-overview-col-num">Current</th>'
+      +         '<th class="dev-overview-col-num">Target</th>'
+      +         '<th>Trajectory</th>'
+      +         '<th>Status</th>'
+      +       '</tr></thead>'
+      +       '<tbody>' + rows + '</tbody>'
+      +     '</table>'
+      +   '</div>'
+      + '</section>';
   }
 
   function renderSummary(d, pct, totalBase, lensBands) {

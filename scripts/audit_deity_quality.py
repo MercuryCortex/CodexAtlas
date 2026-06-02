@@ -5,8 +5,7 @@ Read-only. Measures the dimensions that separate "gaps filled" from
 "product-grade": schema completeness, sourcing, wiring (the cross-tradition
 edges = the Atlas's whole point), stub-depth, orphans, and duplicate risk.
 """
-import os, re, glob, collections
-sys_path = os.getcwd()
+import os, re, glob, collections, json, datetime
 
 FILES = [f for f in glob.glob("03_deities/*.md") if not f.endswith("README.md")]
 N = len(FILES)
@@ -109,3 +108,66 @@ open("/tmp/deity_quality.json","w").write(json.dumps({
   "no_gender": no_gender, "dups": {k:sorted(set(v)) for k,v in dups.items()},
 }, indent=1))
 print("detail -> /tmp/deity_quality.json")
+
+# ── PRODUCT-GRADE BENCHMARK for the DEV OVERVIEW panel ──────────────────────
+# True graph-connectivity (an edge from parent-of/child-of/consort/attested-in/
+# equivalents/syncretic-edges, in OR out) — the real "orphan from the Atlas" set.
+_WL = re.compile(r'\[\[([^|\]]+)')
+_out, _ref = {}, set()
+for path in FILES:
+    s = os.path.basename(path)[:-3]
+    t = open(path, encoding="utf-8").read()
+    fm = t[:t.find("\n---", 4)] if t.find("\n---", 4) > 0 else t
+    o = set()
+    for fld in ("parent-of", "child-of", "consort", "attested-in", "equivalents", "texts-authored", "mentioned-in"):
+        m = re.search(rf"^{fld}:\s*(.+)$", fm, re.M)
+        if m:
+            for w in _WL.findall(m.group(1)):
+                o.add(w.strip())
+    for tg in re.findall(r'-\s*target:\s*"?\[?\[?([a-z0-9-]+)', fm):
+        o.add(tg.strip())
+    o.discard(s); _out[s] = o
+    for x in o:
+        _ref.add(x)
+disconnected = sum(1 for s in {os.path.basename(f)[:-3] for f in FILES} if not _out.get(s) and s not in _ref)
+below_metadata = status_ct.get("stub", 0) + status_ct.get("partial", 0) + status_ct.get("(none)", 0)
+incomplete_fields = len(set(no_domains) | set(no_gender) | set(no_role))
+
+# Tracked constants (judgment-based, updated as work proceeds):
+KNOWN_DUPLICATES = 2       # ninhursag, velinas — pending content-merge
+MODERATE_OPEN    = 75      # coverage gaps remaining in the worklist
+
+def row(key, label, target, current, ok, detail=""):
+    return {"key": key, "label": label, "target": target,
+            "current": str(current), "ok": bool(ok), "detail": detail}
+
+rows = [
+    row("connected", "Graph-connected (no orphans)", "0 disconnected", disconnected, disconnected == 0,
+        "every deity has ≥1 structured edge in or out"),
+    row("tradition", "Has home tradition", "100%", f"{N-len(no_tradition)}/{N}", len(no_tradition) == 0),
+    row("dates", "Has dates", "100%", f"{N-len(no_dates)}/{N}", len(no_dates) == 0),
+    row("sourced", "Sourced (T1 refs)", "0 unsourced", len(no_refs), len(no_refs) == 0),
+    row("depth", "At least metadata depth", "0 stubs/partials", below_metadata, below_metadata == 0,
+        "stub + partial + untyped"),
+    row("fields", "Complete schema (domains/gender/role)", "0 missing", incomplete_fields, incomplete_fields == 0),
+    row("thin", "No thin bodies (<400 chars)", "0", len(thin_body), len(thin_body) == 0),
+    row("dupes", "No duplicates", "0", KNOWN_DUPLICATES, KNOWN_DUPLICATES == 0,
+        "ninhursag, velinas — pending content-merge"),
+    row("coverage", "Coverage (critical + moderate)", "complete", f"~{MODERATE_OPEN} moderate open", MODERATE_OPEN == 0,
+        "critical tier complete; moderate worklist open"),
+]
+product_grade = all(r["ok"] for r in rows)
+bench = {
+    "generatedAt": datetime.date.today().isoformat(),
+    "totalDeities": N,
+    "productGrade": product_grade,
+    "passCount": sum(1 for r in rows if r["ok"]),
+    "rowCount": len(rows),
+    # session-start baseline for the trajectory chips (set 2026-06-02):
+    "baseline": {"connected": 19, "sourced": 25, "depth": 37, "fields": 34, "thin": 12, "dupes": 6, "coverage": 121},
+    "rows": rows,
+}
+os.makedirs("src/data", exist_ok=True)
+open("src/data/deity-product-grade.json", "w", encoding="utf-8").write(json.dumps(bench, indent=1))
+print(f"\nPRODUCT-GRADE: {bench['passCount']}/{bench['rowCount']} rows green "
+      f"({'✅ PRODUCT-GRADE' if product_grade else 'not yet'}) -> src/data/deity-product-grade.json")
