@@ -8,6 +8,8 @@ origin tradition; cross-tradition reach is wired, not membership.
 
 **Status key:** ✅ filled · ⬜ pending
 
+> **✅ ALL CRITICAL COMPLETE (2026-06-02).** All ~52 critical gaps below filled across 5 batches (Canaanite, Greek, ANE-remainder, Asian, Euro/Afr/Amer). Deities 711→771. Remaining work = the MODERATE tier (~80, listed at the bottom) — the next pass.
+
 ---
 
 ## CRITICAL (a major god any standard reference centers)
