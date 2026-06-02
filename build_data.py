@@ -439,7 +439,9 @@ def tradition_family(t: str) -> str:
     if ("yoruba" in s or "ifa" in s or "vodun" in s or "vodou" in s or "santeria" in s
             or "candomble" in s or _re.search(r'\bakan\b', s) or "bantu" in s
             or "ethiopian" in s or "aksumite" in s or "kebra" in s or "african" in s
-            or _re.search(r'\bsan\b', s) or "maasai" in s or "dahomey" in s):
+            or _re.search(r'\bsan\b', s) or "maasai" in s or "dahomey" in s
+            or "igbo" in s or "shona" in s or "zulu" in s or "dogon" in s
+            or _re.search(r'\bewe\b', s) or "ashanti" in s or "kongo" in s):
         return "African"
     # Celtic — \biberian\b and \bbreton\b word-boundaries so Siberian shamanism and
     # André Breton don't false-fire into Celtic.
