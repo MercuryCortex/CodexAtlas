@@ -3,7 +3,9 @@ type: deity
 id: "mahakala"
 name: "Mahakala"
 aka: ["Mahākāla", "Gönpo (Tibetan)"]
-tradition: "Hindu (Śaiva) and Vajrayāna Buddhism (both lineages)"
+tradition: "Hindu (Śaiva)"
+tradition-raw: "Hindu (Śaiva) and Vajrayāna Buddhism (both lineages)"   # pre-migration (membership-vs-wire 2026-06-02)
+tradition-appearances: ['Vajrayāna Buddhism']   # STEP-B worklist
 region: "Indian subcontinent (Hindu); Tibet, Mongolia, East Asia (Buddhist)"
 period-active-earliest: 200
 period-active-latest: 2026

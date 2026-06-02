@@ -3,7 +3,9 @@ type: deity
 id: "hekate"
 name: "Hekate"
 aka: ["Hecate (Latin)", "Trivia (Roman)"]
-tradition: "Greek religion / Roman religion / Chaldean Oracles"
+tradition: "Greek religion"
+tradition-raw: "Greek religion / Roman religion / Chaldean Oracles"   # pre-migration (membership-vs-wire 2026-06-02)
+tradition-appearances: ['Roman religion', 'Chaldean Oracles']   # STEP-B worklist
 region: "Greece, especially Caria; later Mediterranean-wide"
 period-active-earliest: -700
 period-active-latest: 400

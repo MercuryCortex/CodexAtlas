@@ -4,6 +4,8 @@ id: "metatron"
 name: "Metatron"
 aka: ["מטטרון", "the Lesser YHWH", "the Prince of the Presence (Sar ha-Panim)", "Enoch-Metatron"]
 tradition: "Jewish mystical / Hekhalot / Kabbalistic"
+tradition-raw: "Jewish mystical / Hekhalot / Kabbalistic"   # pre-migration (membership-vs-wire 2026-06-02)
+tradition-appearances: []   # STEP-B worklist
 region: "Roman Palestine, Babylonia, medieval Mediterranean"
 period-active-earliest: 300
 period-active-latest: 2026

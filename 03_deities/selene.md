@@ -3,7 +3,9 @@ type: deity
 id: "selene"
 name: "Selene"
 aka: ["Σελήνη", "Mene", "Luna (Roman)"]
-tradition: "Greek; later Greco-Roman, especially salient in magical-papyri and Hekate-syncretic contexts"
+tradition: "Greek"
+tradition-raw: "Greek; later Greco-Roman, especially salient in magical-papyri and Hekate-syncretic contexts"   # pre-migration (membership-vs-wire 2026-06-02)
+tradition-appearances: ['Greco-Roman magical-papyri / Hekate-syncretic']   # STEP-B worklist
 region: "Greece, Roman world; cult-tied to lunar phenomena rather than specific sanctuaries"
 period-active-earliest: -1200
 period-active-latest: 400

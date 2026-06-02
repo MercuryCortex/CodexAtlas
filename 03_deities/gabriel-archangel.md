@@ -3,7 +3,9 @@ type: deity
 id: "gabriel-archangel"
 name: "Gabriel"
 aka: ["Jibril (Arabic)", "Gavri'el (Hebrew)", "the Annunciator"]
-tradition: "Christianity / Judaism / Islam"
+tradition: "Second Temple Judaism"
+tradition-raw: "Christianity / Judaism / Islam"   # pre-migration (membership-vs-wire 2026-06-02)
+tradition-appearances: ['Christianity', 'Islam']   # STEP-B worklist
 region: "Pan-Abrahamic"
 period-active-earliest: -165
 period-active-latest: 2026

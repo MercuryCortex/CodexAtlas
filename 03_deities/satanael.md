@@ -3,7 +3,9 @@ type: deity
 id: "satanael"
 name: "Satanael (Bogomil Satan-Demiurge)"
 aka: ["Satanail", "Sathanael"]
-tradition: "Bogomilism / Catharism — medieval Christian dualism"
+tradition: "Bogomilism and Catharism (medieval dualism)"
+tradition-raw: "Bogomilism / Catharism — medieval Christian dualism"   # pre-migration (membership-vs-wire 2026-06-02)
+tradition-appearances: []   # STEP-B worklist
 region: "Bulgaria, Byzantine Empire, Northern Italy, Languedoc"
 period-active-earliest: 900
 period-active-latest: 1400

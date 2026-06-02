@@ -3,7 +3,9 @@ type: deity
 id: "eros-primordial"
 name: "Eros (Primordial)"
 aka: ["Ἔρως πρωτόγονος", "Cosmic Eros", "Phanes-Eros (Orphic identification)", "Protogonos-Eros"]
-tradition: "Greek (Hesiodic and Orphic cosmogonies); distinct from the Aphroditean son-Eros / Roman Cupid"
+tradition: "Greek (Hesiodic and Orphic cosmogonies)"
+tradition-raw: "Greek (Hesiodic and Orphic cosmogonies); distinct from the Aphroditean son-Eros / Roman Cupid"   # pre-migration (membership-vs-wire 2026-06-02)
+tradition-appearances: []   # STEP-B worklist
 region: "Greek world; mystery-cult and philosophical contexts"
 period-active-earliest: -800
 period-active-latest: 400

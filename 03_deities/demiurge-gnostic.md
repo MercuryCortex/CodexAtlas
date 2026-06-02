@@ -3,7 +3,9 @@ type: deity
 id: "demiurge-gnostic"
 name: "The Demiurge (Gnostic)"
 aka: ["the Craftsman", "the Lower Creator", "Yaldabaoth (Sethian)", "Sakla", "Samael"]
-tradition: "Gnostic Christian / Sethian / Valentinian (concept-figure)"
+tradition: "Sethian and Valentinian Gnosticism"
+tradition-raw: "Gnostic Christian / Sethian / Valentinian (concept-figure)"   # pre-migration (membership-vs-wire 2026-06-02)
+tradition-appearances: []   # STEP-B worklist
 region: "Roman East / Egypt"
 period-active-earliest: 100
 period-active-latest: 400

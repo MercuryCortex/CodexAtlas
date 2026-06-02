@@ -3,7 +3,9 @@ type: deity
 id: "guan-yu"
 name: "Guan Yu (關羽)"
 aka: ["Guan Di (關帝)", "Guan Gong (關公)", "Sangharama Bodhisattva (Buddhist)", "Guandi", "Guan Sheng Di Jun"]
-tradition: "Chinese folk religion / Confucian / Daoist / Buddhist"
+tradition: "Chinese folk religion"
+tradition-raw: "Chinese folk religion / Confucian / Daoist / Buddhist"   # pre-migration (membership-vs-wire 2026-06-02)
+tradition-appearances: ['Confucian', 'Daoist', 'Buddhist']   # STEP-B worklist
 region: "China"
 period-active-earliest: 220
 period-active-latest: 2026

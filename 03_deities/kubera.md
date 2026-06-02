@@ -3,7 +3,9 @@ type: deity
 id: "kubera"
 name: "Kubera"
 aka: ["Kuvera", "Vaiśravaṇa (Buddhist)", "Bishamonten (毘沙門天, Japanese Buddhism)", "Jambhala (Tibetan Buddhism)", "the Lord of Wealth"]
-tradition: "Hindu / Buddhist / Jain"
+tradition: "Hindu"
+tradition-raw: "Hindu / Buddhist / Jain"   # pre-migration (membership-vs-wire 2026-06-02)
+tradition-appearances: ['Buddhist', 'Jain']   # STEP-B worklist
 region: "South Asia → East Asia (as Vaiśravaṇa / Bishamonten)"
 period-active-earliest: -500
 period-active-latest: 2026

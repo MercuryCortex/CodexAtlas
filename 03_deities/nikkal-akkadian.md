@@ -3,7 +3,9 @@ type: deity
 id: "nikkal-akkadian"
 name: "Nikkal"
 aka: ["Nikkal", "Nikkal-wa-Ib (Ugaritic, *Nkl wa-Ib*)", "Nin-gal (Sumerian writing)", "Nikkal-Sheri", "the Lady of Harran (in late cult)"]
-tradition: "Akkadian / West Semitic / Aramaic"
+tradition: "Akkadian"
+tradition-raw: "Akkadian / West Semitic / Aramaic"   # pre-migration (membership-vs-wire 2026-06-02)
+tradition-appearances: ['West Semitic', 'Aramaic']   # STEP-B worklist
 region: "Mesopotamia (Ur originally; via Harran into Aramaic, Ugaritic, and Late Antique contexts); Syria (Ugarit, Emar); the moon-cult zone broadly"
 period-active-earliest: -1800
 period-active-latest: 800

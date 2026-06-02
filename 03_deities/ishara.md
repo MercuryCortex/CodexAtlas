@@ -3,7 +3,9 @@ type: deity
 id: "ishara"
 name: "Ishara"
 aka: ["Išḫara", "Ešḫara", "Akkadian dIš-ḫa-ra", "Hurrian Išḫara", "Hittite Išḫara"]
-tradition: "Mesopotamian / Hurrian / Hittite (cross-cultural Northern Mesopotamian — Levantine)"
+tradition: "Mesopotamian"
+tradition-raw: "Mesopotamian / Hurrian / Hittite (cross-cultural Northern Mesopotamian — Levantine)"   # pre-migration (membership-vs-wire 2026-06-02)
+tradition-appearances: ['Hurrian', 'Hittite']   # STEP-B worklist
 region: "Northern Mesopotamia (Mari, Ebla, Emar, Alalakh); Hurrian and Hittite Anatolia; Late-Bronze-Age Syria"
 period-active-earliest: -2400
 period-active-latest: -500

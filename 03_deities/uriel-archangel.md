@@ -3,7 +3,9 @@ type: deity
 id: "uriel-archangel"
 name: "Uriel"
 aka: ["Uri'el", "the Light of God", "Phanuel (sometimes)"]
-tradition: "Christianity / Judaism"
+tradition: "Second Temple Judaism (1 Enoch)"
+tradition-raw: "Christianity / Judaism"   # pre-migration (membership-vs-wire 2026-06-02)
+tradition-appearances: ['Christianity']   # STEP-B worklist
 region: "Pan-Abrahamic (less central in Islam)"
 period-active-earliest: -300
 period-active-latest: 2026

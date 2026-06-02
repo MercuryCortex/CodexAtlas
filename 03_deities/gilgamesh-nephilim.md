@@ -3,7 +3,9 @@ type: deity
 id: "gilgamesh-nephilim"
 name: "Gilgamesh (Nephilim — Book of Giants Watchers-tradition appearance)"
 aka: ["glgmš (Aramaic 4Q530)", "Gilgamos (Manichaean Greek)", "Gilgameš the Giant", "the Mesopotamian Gilgamesh as Watchers-tradition Nephilim"]
-tradition: "Second-Temple Jewish apocalyptic (Book of Giants) / [[tradition-manichaeism]] (canonical Manichaean Book of Giants) — the *Watchers-tradition-Nephilim* identification of the Mesopotamian Gilgamesh"
+tradition: "Second-Temple Jewish apocalyptic (Book of Giants)"
+tradition-raw: "Second-Temple Jewish apocalyptic (Book of Giants) / [[tradition-manichaeism]] (canonical Manichaean Book of Giants) — the *Watchers-tradition-Nephilim* identification of the Mesopotamian Gilgamesh"   # pre-migration (membership-vs-wire 2026-06-02)
+tradition-appearances: ['Manichaeism']   # STEP-B worklist
 region: "narrative setting: pre-Diluvian world (Book of Giants)"
 period-active-earliest: -200
 period-active-latest: 250

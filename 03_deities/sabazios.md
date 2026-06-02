@@ -3,7 +3,9 @@ type: deity
 id: "sabazios"
 name: "Sabazios"
 aka: ["Sabazius (Latin)", "Sabos", "Σαβάζιος"]
-tradition: "Phrygian / Thracian (origin); Hellenistic-Roman syncretism"
+tradition: "Phrygian / Thracian"
+tradition-raw: "Phrygian / Thracian (origin); Hellenistic-Roman syncretism"   # pre-migration (membership-vs-wire 2026-06-02)
+tradition-appearances: ['Hellenistic-Roman syncretism']   # STEP-B worklist
 region: "Anatolia (Phrygia) and Thrace originally; diffused across the Mediterranean in the Hellenistic and Roman periods"
 period-active-earliest: -500
 period-active-latest: 400

@@ -3,7 +3,9 @@ type: deity
 id: "abrasax"
 name: "Abrasax"
 aka: ["Abraxas", "Abracax", "the 365-God", "the Supreme Archon (Basilidean)"]
-tradition: "Gnostic / Hermetic (Basilidean Gnosticism — Irenaeus, Adversus Haereses I.24)"
+tradition: "Basilidean Gnosticism"
+tradition-raw: "Gnostic / Hermetic (Basilidean Gnosticism — Irenaeus, Adversus Haereses I.24)"   # pre-migration (membership-vs-wire 2026-06-02)
+tradition-appearances: ['Hermetic']   # STEP-B worklist
 region: "Egypt / Roman East"
 period-active-earliest: 120
 period-active-latest: 500

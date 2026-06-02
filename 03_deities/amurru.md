@@ -3,7 +3,9 @@ type: deity
 id: "amurru"
 name: "Amurru"
 aka: ["Martu (Sumerian)", "Amurrum", "MAR.TU (cuneiform sign)", "Bēl Šadê ('Lord of the Mountain')"]
-tradition: "Akkadian / West-Semitic (Amorite)"
+tradition: "Akkadian / Amorite"
+tradition-raw: "Akkadian / West-Semitic (Amorite)"   # pre-migration (membership-vs-wire 2026-06-02)
+tradition-appearances: ['West Semitic']   # STEP-B worklist
 region: "Mesopotamia and the western steppe — the cultural-religious bridge between sedentary Mesopotamian civilization and the West-Semitic pastoralist Amorites"
 period-active-earliest: -2500
 period-active-latest: -500

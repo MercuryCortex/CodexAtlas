@@ -3,7 +3,9 @@ type: deity
 id: "guanyin"
 name: "Guanyin"
 aka: ["Kuan-yin", "Kannon (Japanese)", "Quan Âm (Vietnamese)", "Kwan-um (Korean)", "Guanshiyin (full Chinese form)"]
-tradition: "Chinese Mahāyāna Buddhism (and East Asian Buddhism more broadly); Chinese popular religion"
+tradition: "Chinese popular religion / Chinese Buddhism"
+tradition-raw: "Chinese Mahāyāna Buddhism (and East Asian Buddhism more broadly); Chinese popular religion"   # pre-migration (membership-vs-wire 2026-06-02)
+tradition-appearances: ['derived from [[avalokitesvara]] (Indian Mahāyāna)']   # STEP-B worklist
 region: "China, Taiwan, Korea, Japan, Vietnam, and East Asian diaspora"
 period-active-earliest: 200
 period-active-latest: 2026

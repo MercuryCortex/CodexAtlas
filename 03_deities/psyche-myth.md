@@ -3,7 +3,9 @@ type: deity
 id: "psyche-myth"
 name: "Psyche (Greek/Roman)"
 aka: ["Psyche", "Soul"]
-tradition: "Greco-Roman religion / literary mythology"
+tradition: "Greco-Roman religion"
+tradition-raw: "Greco-Roman religion / literary mythology"   # pre-migration (membership-vs-wire 2026-06-02)
+tradition-appearances: ['literary mythology']   # STEP-B worklist
 region: "Roman Empire (Apuleius's North Africa)"
 period-active-earliest: -500
 period-active-latest: 400

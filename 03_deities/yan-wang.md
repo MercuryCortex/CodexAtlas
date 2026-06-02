@@ -3,7 +3,9 @@ type: deity
 id: "yan-wang"
 name: "Yan Wang"
 aka: ["Yánwáng (閻王)", "Yanluo Wang (閻羅王)", "King Yama of Hell", "Yemma (Japanese 閻魔)", "Yeomra-daewang (Korean 염라대왕)", "the King of Hell (popular usage)"]
-tradition: "Chinese religion / Chinese Buddhism (Daoist-Buddhist syncretic)"
+tradition: "Chinese religion"
+tradition-raw: "Chinese religion / Chinese Buddhism (Daoist-Buddhist syncretic)"   # pre-migration (membership-vs-wire 2026-06-02)
+tradition-appearances: ['Chinese Buddhism (Daoist-Buddhist syncretic)']   # STEP-B worklist
 region: "China; Japan; Korea; Vietnam; pan-East Asian Buddhism"
 period-active-earliest: 400
 period-active-latest: 2026

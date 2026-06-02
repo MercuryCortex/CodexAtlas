@@ -3,7 +3,9 @@ type: deity
 id: "hachiman"
 name: "Hachiman"
 aka: ["Yahata-no-kami", "八幡神", "Hachiman Daibosatsu"]
-tradition: "Shinto / Buddhist syncretism"
+tradition: "Shinto"
+tradition-raw: "Shinto / Buddhist syncretism"   # pre-migration (membership-vs-wire 2026-06-02)
+tradition-appearances: ['Buddhist syncretism']   # STEP-B worklist
 region: "Japan — Usa Hachimangū (Ōita), Iwashimizu Hachimangū (Kyoto), Tsurugaoka Hachimangū (Kamakura)"
 period-active-earliest: 500
 period-active-latest: 2026

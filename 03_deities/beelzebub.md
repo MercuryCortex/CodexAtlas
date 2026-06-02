@@ -3,7 +3,9 @@ type: deity
 id: "beelzebub"
 name: "Beelzebub"
 aka: ["Ba'al Zebub ('Lord of Flies', 2 Kings 1)", "Ba'al Zebul ('Lord of the Lofty Abode' — likely the original epithet)", "Beelzeboul (Greek NT)", "Beelzebufo"]
-tradition: "Hebrew Bible polemical → New Testament demonology → medieval Christian"
+tradition: "Hebrew Bible (polemical, Baal-zebub)"
+tradition-raw: "Hebrew Bible polemical → New Testament demonology → medieval Christian"   # pre-migration (membership-vs-wire 2026-06-02)
+tradition-appearances: ['New Testament demonology', 'medieval Christian']   # STEP-B worklist
 region: "Originally Ekron (Philistine) → Israelite/Jewish polemic → Christian"
 period-active-earliest: -800
 period-active-latest: 2026

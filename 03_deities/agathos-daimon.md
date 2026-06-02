@@ -3,7 +3,9 @@ type: deity
 id: "agathos-daimon"
 name: "Agathos Daimon (Ἀγαθὸς Δαίμων)"
 aka: ["Agathos Daimon", "Good Daemon", "Agathodaemon", "Agathodaimon", "the Good Spirit", "the Beneficial Daemon"]
-tradition: "Greco-Egyptian Hermetic tradition / popular Hellenistic religion"
+tradition: "Greco-Egyptian Hermetic tradition"
+tradition-raw: "Greco-Egyptian Hermetic tradition / popular Hellenistic religion"   # pre-migration (membership-vs-wire 2026-06-02)
+tradition-appearances: ['popular Hellenistic religion']   # STEP-B worklist
 region: "Egypt (especially Alexandria) and the broader Hellenistic Mediterranean"
 period-active-earliest: -400
 period-active-latest: 500

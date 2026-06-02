@@ -3,7 +3,9 @@ type: deity
 id: "lilith"
 name: "Lilith"
 aka: ["לילית", "Lilitu (Akkadian)", "Lilīt"]
-tradition: "Jewish folkloric / Kabbalistic (with Mesopotamian roots)"
+tradition: "Jewish folkloric / Kabbalistic"
+tradition-raw: "Jewish folkloric / Kabbalistic (with Mesopotamian roots)"   # pre-migration (membership-vs-wire 2026-06-02)
+tradition-appearances: ['Mesopotamian lilītu substrate']   # STEP-B worklist
 region: "Mesopotamia (ancient origins); medieval and modern Jewish world"
 period-active-earliest: -2000
 period-active-latest: 2026

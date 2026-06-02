@@ -3,7 +3,9 @@ type: deity
 id: "raphael-archangel"
 name: "Raphael"
 aka: ["Rafa'el", "the Healer", "the Travelers' Angel"]
-tradition: "Christianity / Judaism / Islam"
+tradition: "Second Temple Judaism (Tobit)"
+tradition-raw: "Christianity / Judaism / Islam"   # pre-migration (membership-vs-wire 2026-06-02)
+tradition-appearances: ['Christianity', 'Islam']   # STEP-B worklist
 region: "Pan-Abrahamic"
 period-active-earliest: -200
 period-active-latest: 2026

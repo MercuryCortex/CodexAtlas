@@ -3,7 +3,9 @@ type: deity
 id: "asherah"
 name: "Asherah"
 aka: ["Athirat", "ʾAṯiratu", "Athirat Yammi ('Lady Athirat of the Sea')", "Elat ('Goddess')", "Qudšu ('Holiness')"]
-tradition: "Canaanite / Ugaritic / Israelite folk religion"
+tradition: "Canaanite / Ugaritic"
+tradition-raw: "Canaanite / Ugaritic / Israelite folk religion"   # pre-migration (membership-vs-wire 2026-06-02)
+tradition-appearances: ['Israelite folk religion']   # STEP-B worklist
 region: "Levant (Ugarit, Phoenicia, Canaan, Israel/Judah)"
 period-active-earliest: -2500
 period-active-latest: -600

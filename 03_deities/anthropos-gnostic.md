@@ -3,7 +3,9 @@ type: deity
 id: "anthropos-gnostic"
 name: "Anthropos (Gnostic)"
 aka: ["Adamas", "Geradamas", "the Heavenly Human", "the Perfect Man", "Pigeradamas"]
-tradition: "Sethian Gnosticism / Valentinian Gnosticism / Hermetic"
+tradition: "Sethian Gnosticism"
+tradition-raw: "Sethian Gnosticism / Valentinian Gnosticism / Hermetic"   # pre-migration (membership-vs-wire 2026-06-02)
+tradition-appearances: ['Valentinian Gnosticism', 'Hermetic']   # STEP-B worklist
 region: "Egypt / Syria / Roman Empire"
 period-active-earliest: 50
 period-active-latest: 400

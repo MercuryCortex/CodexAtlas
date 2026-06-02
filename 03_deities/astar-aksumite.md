@@ -3,7 +3,9 @@ type: deity
 id: "astar-aksumite"
 name: "Astar (Aksumite)"
 aka: ["Athtar", "Attar", "ʿaṯtar", "ʿštr"]
-tradition: "South Arabian Sabaean / pre-Christian Aksumite religion"
+tradition: "Pre-Islamic South Arabian (Sabaean)"
+tradition-raw: "South Arabian Sabaean / pre-Christian Aksumite religion"   # pre-migration (membership-vs-wire 2026-06-02)
+tradition-appearances: ['pre-Christian Aksumite']   # STEP-B worklist
 region: "South Arabia → Aksumite Kingdom"
 period-active-earliest: -800
 period-active-latest: 330

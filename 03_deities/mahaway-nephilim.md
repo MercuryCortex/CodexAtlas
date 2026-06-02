@@ -3,7 +3,9 @@ type: deity
 id: "mahaway-nephilim"
 name: "Mahaway (Nephilim, the giant-emissary to Enoch)"
 aka: ["Mahawai", "Maha-way", "Mahaway son of Baraqʼel (per 4Q530)"]
-tradition: "Second-Temple Jewish apocalyptic (Book of Giants) / [[tradition-manichaeism]]"
+tradition: "Second-Temple Jewish apocalyptic (Book of Giants)"
+tradition-raw: "Second-Temple Jewish apocalyptic (Book of Giants) / [[tradition-manichaeism]]"   # pre-migration (membership-vs-wire 2026-06-02)
+tradition-appearances: ['Manichaeism']   # STEP-B worklist
 region: "narrative setting: pre-Diluvian world; flight to Enoch's celestial dwelling"
 period-active-earliest: -200
 period-active-latest: 250

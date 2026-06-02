@@ -3,7 +3,9 @@ type: deity
 id: "dumuzi-tammuz"
 name: "Dumuzi (Sumerian) / Tammuz (Akkadian)"
 aka: ["Dumuzid", "Tammuz", "Dumuzi the Shepherd", "Dumuzi-Amaušumgalanna"]
-tradition: "Sumerian / Akkadian / West Semitic"
+tradition: "Sumerian"
+tradition-raw: "Sumerian / Akkadian / West Semitic"   # pre-migration (membership-vs-wire 2026-06-02)
+tradition-appearances: ['Akkadian', 'West Semitic']   # STEP-B worklist
 region: "Mesopotamia (cult centers Bad-tibira, Uruk; spread westward through Syria into the Levant)"
 period-active-earliest: -3000
 period-active-latest: -100

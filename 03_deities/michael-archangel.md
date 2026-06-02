@@ -3,7 +3,9 @@ type: deity
 id: "michael-archangel"
 name: "Michael (Archangel)"
 aka: ["Mîkhāʾēl (Hebrew, 'Who is like God?')", "Mikha'il (Arabic)", "Michaḗl (Greek)", "the Great Prince", "the Prince of Light"]
-tradition: "Christianity / Judaism / Islam / Mandaeism"
+tradition: "Second Temple Judaism"
+tradition-raw: "Christianity / Judaism / Islam / Mandaeism"   # pre-migration (membership-vs-wire 2026-06-02)
+tradition-appearances: ['Christianity', 'Islam', 'Mandaeism']   # STEP-B worklist
 region: "Pan-Abrahamic"
 period-active-earliest: -200
 period-active-latest: 2026

@@ -3,7 +3,9 @@ type: deity
 id: "sun-wukong"
 name: "Sun Wukong"
 aka: ["Monkey King", "孫悟空", "Great Sage Equal to Heaven (齊天大聖)", "Wùkōng", "Pilgrim Sun", "Handsome Monkey King"]
-tradition: "Chinese folk religion / Daoism / Buddhism (syncretic)"
+tradition: "Chinese folk religion"
+tradition-raw: "Chinese folk religion / Daoism / Buddhism (syncretic)"   # pre-migration (membership-vs-wire 2026-06-02)
+tradition-appearances: ['Daoism', 'Buddhism']   # STEP-B worklist
 region: "China — origin in oral tradition; textual home the novel Xiyouji (西遊記)"
 period-active-earliest: 600
 period-active-latest: 2026

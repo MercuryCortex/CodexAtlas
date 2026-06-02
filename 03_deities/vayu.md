@@ -3,7 +3,9 @@ type: deity
 id: "vayu"
 name: "Vāyu"
 aka: ["Vāyu", "Vāta", "Pavana", "Anila", "Prāṇa-deva (Lord of Breath)", "Gandharva (in some contexts)", "Mukhya-prāṇa (Chief Life-Force)"]
-tradition: "Vedic / Hindu / Zoroastrian (Rigveda; Avesta — dual nature)"
+tradition: "Vedic / Hindu"
+tradition-raw: "Vedic / Hindu / Zoroastrian (Rigveda; Avesta — dual nature)"   # pre-migration (membership-vs-wire 2026-06-02)
+tradition-appearances: ['Zoroastrian (Avestan Vayu — cognate)']   # STEP-B worklist
 region: "South Asia; Central Asia (Zoroastrian)"
 period-active-earliest: -1500
 period-active-latest: 2026

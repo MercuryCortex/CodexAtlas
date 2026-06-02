@@ -3,7 +3,9 @@ type: deity
 id: "ohyah-nephilim"
 name: "Ohyah (Nephilim, son of Shemihazah)"
 aka: ["Ohya", "ʾOhyah", "Ahyah (in some Manichaean recensions, paired with Hahyah)"]
-tradition: "Second-Temple Jewish apocalyptic (Book of Giants Watchers-tradition expansion) / [[tradition-manichaeism]] (canonical Manichaean Book of Giants)"
+tradition: "Second-Temple Jewish apocalyptic (Book of Giants)"
+tradition-raw: "Second-Temple Jewish apocalyptic (Book of Giants Watchers-tradition expansion) / [[tradition-manichaeism]] (canonical Manichaean Book of Giants)"   # pre-migration (membership-vs-wire 2026-06-02)
+tradition-appearances: ['Manichaeism']   # STEP-B worklist
 region: "narrative setting: pre-Diluvian world"
 period-active-earliest: -200
 period-active-latest: 250

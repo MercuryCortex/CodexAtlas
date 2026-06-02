@@ -3,7 +3,9 @@ type: deity
 id: "asmodeus"
 name: "Asmodeus"
 aka: ["Ashmedai (Hebrew)", "Aēšma daēva (Avestan, 'Demon of Wrath')", "Ashmodai", "Sammael (in some kabbalistic identifications)"]
-tradition: "Second Temple Judaism (via Tobit) → Christianity → Kabbalah → modern Solomonic demonology"
+tradition: "Second Temple Judaism (Tobit)"
+tradition-raw: "Second Temple Judaism (via Tobit) → Christianity → Kabbalah → modern Solomonic demonology"   # pre-migration (membership-vs-wire 2026-06-02)
+tradition-appearances: ['Christianity', 'Kabbalah', 'Solomonic demonology']   # STEP-B worklist
 region: "Persian-influenced Second Temple Judaism → Mediterranean Christian-Jewish"
 period-active-earliest: -300
 period-active-latest: 2026

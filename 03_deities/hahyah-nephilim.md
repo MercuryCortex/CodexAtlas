@@ -3,7 +3,9 @@ type: deity
 id: "hahyah-nephilim"
 name: "Hahyah (Nephilim, son of Shemihazah)"
 aka: ["Ahyah", "Hahya"]
-tradition: "Second-Temple Jewish apocalyptic (Book of Giants) / [[tradition-manichaeism]]"
+tradition: "Second-Temple Jewish apocalyptic (Book of Giants)"
+tradition-raw: "Second-Temple Jewish apocalyptic (Book of Giants) / [[tradition-manichaeism]]"   # pre-migration (membership-vs-wire 2026-06-02)
+tradition-appearances: ['Manichaeism']   # STEP-B worklist
 region: "narrative setting: pre-Diluvian world"
 period-active-earliest: -200
 period-active-latest: 250

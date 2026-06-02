@@ -3,7 +3,9 @@ type: deity
 id: "sophia-gnostic"
 name: "Sophia (Gnostic)"
 aka: ["Wisdom", "Pistis Sophia (in some texts; distinct in others)", "the Mother", "Achamoth (Valentinian — the lower Sophia)", "Barbelo-Sophia (in some Sethian texts)"]
-tradition: "Gnostic Christian / Sethian / Valentinian"
+tradition: "Sethian and Valentinian Gnosticism"
+tradition-raw: "Gnostic Christian / Sethian / Valentinian"   # pre-migration (membership-vs-wire 2026-06-02)
+tradition-appearances: []   # STEP-B worklist
 region: "Roman East / Egypt"
 period-active-earliest: 100
 period-active-latest: 400

@@ -3,7 +3,9 @@ type: deity
 id: "iao-gnostic"
 name: "Iao"
 aka: ["Iao Sabaoth", "Iao Sabaoth Adonai", "Iabe", "Iao the Supreme", "the Tetragrammaton in Greek dress"]
-tradition: "Gnostic / Hermetic (Greek Magical Papyri; Nag Hammadi; Origen Contra Celsum)"
+tradition: "Gnostic (Greek Magical Papyri / Nag Hammadi)"
+tradition-raw: "Gnostic / Hermetic (Greek Magical Papyri; Nag Hammadi; Origen Contra Celsum)"   # pre-migration (membership-vs-wire 2026-06-02)
+tradition-appearances: ['Hermetic']   # STEP-B worklist
 region: "Egypt / Roman East"
 period-active-earliest: -200
 period-active-latest: 500

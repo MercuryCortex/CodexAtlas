@@ -3,7 +3,9 @@ type: deity
 id: "almaqah"
 name: "Almaqah (Almouqah)"
 aka: ["Almouqah", "Almuqah", "Ilmuqah", "Ilumquh", "ʾlmqh (Sabaean epigraphy)"]
-tradition: "South Arabian Sabaean religion / pre-Christian Aksumite religion (via Sabaean migration to Aksum)"
+tradition: "Pre-Islamic South Arabian (Sabaean)"
+tradition-raw: "South Arabian Sabaean religion / pre-Christian Aksumite religion (via Sabaean migration to Aksum)"   # pre-migration (membership-vs-wire 2026-06-02)
+tradition-appearances: ['pre-Christian Aksumite (via Sabaean migration)']   # STEP-B worklist
 region: "Saba / South Arabia (Yemen) → Aksumite Kingdom (highland Tigray) via pre-Christian-period cultural-religious continuity"
 period-active-earliest: -800
 period-active-latest: 330

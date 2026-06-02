@@ -3,7 +3,9 @@ type: deity
 id: "hubal"
 name: "Hubal"
 aka: ["Hubal", "هبل", "Hbl (epigraphic consonantal)", "the principal idol of the Kaaba"]
-tradition: "Pre-Islamic Arabian (Hejazi / Quraysh) — likely Nabataean / Levantine import"
+tradition: "Pre-Islamic Arabian (Hejazi / Quraysh)"
+tradition-raw: "Pre-Islamic Arabian (Hejazi / Quraysh) — likely Nabataean / Levantine import"   # pre-migration (membership-vs-wire 2026-06-02)
+tradition-appearances: ['Nabataean / Levantine import']   # STEP-B worklist
 region: "Arabian Peninsula — principal cult image inside the Kaaba at Mecca; possible Nabataean / Levantine cultic origin"
 period-active-earliest: -200
 period-active-latest: 630

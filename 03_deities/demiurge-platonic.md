@@ -3,7 +3,9 @@ type: deity
 id: "demiurge-platonic"
 name: "The Demiurge (Platonic)"
 aka: ["dēmiourgos", "Platonic craftsman", "Timaeus demiurge", "Nous (in Plotinus)"]
-tradition: "Platonism / Middle Platonism / Neoplatonism (concept-figure)"
+tradition: "Platonist philosophy (Greek)"
+tradition-raw: "Platonism / Middle Platonism / Neoplatonism (concept-figure)"   # pre-migration (membership-vs-wire 2026-06-02)
+tradition-appearances: ['Middle Platonism', 'Neoplatonism']   # STEP-B worklist
 region: "Greek Mediterranean — Athens, Alexandria, Apamea, Rome"
 period-active-earliest: -360
 period-active-latest: 500
