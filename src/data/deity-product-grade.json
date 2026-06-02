@@ -42,7 +42,7 @@
    "key": "sourced",
    "label": "Sourced (T1 refs)",
    "target": "0 unsourced",
-   "current": "10",
+   "current": "7",
    "ok": false,
    "detail": ""
   },
@@ -50,7 +50,7 @@
    "key": "depth",
    "label": "At least metadata depth",
    "target": "0 stubs/partials",
-   "current": "12",
+   "current": "11",
    "ok": false,
    "detail": "stub + partial + untyped"
   },
@@ -58,7 +58,7 @@
    "key": "fields",
    "label": "Complete schema (domains/gender/role)",
    "target": "0 missing",
-   "current": "10",
+   "current": "7",
    "ok": false,
    "detail": ""
   },
