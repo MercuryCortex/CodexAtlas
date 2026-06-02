@@ -270,7 +270,62 @@ The Pantheon V2 view (`src/js/views/pantheon-v2.js`) is the **design prototype**
 
 ---
 
-## 9. What's NOT in this file
+## 9. Controlled-vocabulary primitive (added 2026-05-31)
+
+The vault has accumulated several free-text YAML fields whose values drift (tradition strings, role descriptions, sub-tradition labels) — each becomes a Pattern-A/C/D loop per HOW-WE-WORK §5 rule #10. The fix is a **reusable controlled-vocabulary primitive**: each such field gets a YAML vocab file with a standard schema, a build-time validator, a build-time pass-through, and a runtime filter — all generic, inherited by every controlled-vocab field via a single registry.
+
+**Standard schema for any controlled-vocab YAML** (`00_meta/{field-name}-vocabulary.yaml`):
+
+```yaml
+field_name: role-tokens              # the YAML field this vocab governs
+node_type_scope: ["person"]          # which node types this field applies to
+allow_array: true                    # field is array (true) or scalar (false)
+lens_qualifying_flag: figure_qualifying   # optional — boolean per entry
+
+entries:
+  - id: lowercase-slug                # the canonical identifier
+    display: "Human Label"            # for UI
+    figure_qualifying: true           # optional flag (lens-membership)
+    source-tier: T1                   # T1-T4 per §5 source-integrity policy
+    source: "Heschel 1962 The Prophets"   # primary citation
+    secondary: ["Jones 2005 ER entry 'prophets'"]
+    aliases: ["prophet", "prophet | messenger"]   # free-text strings that
+                                                   # resolve here (normalize input)
+    notes: "Hebrew/Christian/Islamic prophetic-revelation figures..."
+```
+
+**The registry** (`00_meta/controlled-vocab-registry.yaml`) lists every active controlled-vocab field + its vocab file + node-type scope. Future agents add a new controlled-vocab field by:
+
+1. Creating the vocab YAML (the only field-specific work).
+2. Adding an entry to `controlled-vocab-registry.yaml`.
+3. Optionally adding a one-line filter call in `mode.js` if a new lens consumes it.
+
+**No new validator / build / filter code.** The substrate is built once.
+
+**Currently active controlled-vocab fields (2026-05-31):**
+
+| Field | Vocab file | Node types | Drives lens |
+|---|---|---|---|
+| `role-tokens:` | `role-vocabulary.yaml` | person | Figures |
+| `tradition:` | `tradition-vocabulary.yaml` | person, deity, symbol, document | (Atlas wedge color) |
+| `polemical-framing:` | `polemical-framing-vocabulary.yaml` | person, tradition, document | (theological-history view) |
+| `reclaimed-self-naming:` | `reclaimed-self-naming-vocabulary.yaml` | person, tradition | — |
+
+**Canonical reference framework for the role taxonomy specifically** (per `role-vocabulary.yaml` anchor declaration):
+- **Primary**: Jones (ed.) 2005. *Encyclopedia of Religion* (2nd ed., 15 vols). Macmillan.
+- **Co-primary actor-typology**: Smart 1996 *Dimensions of the Sacred*; Weber 1922/1978 *Economy and Society* Vol. 2 chs. VI + XIV.
+- **Methodological caveat**: Asad 1993 *Genealogies of Religion* — all such typologies are Christian-derived universals that imperfectly map onto Islamic/Hindu/Buddhist/Indigenous emic categories. The `role-tokens:` field is the etic spine; the prose `role-description:` field preserves tradition-internal nuance.
+- **Tertiary**: Bowker 1997 *Oxford Dictionary of World Religions* (entry-level cross-check).
+
+**Opponent categories never as primary `role-tokens:`** (per cardinal rule #7 + `feedback_deviant_bridges_2026-05-16.md`). They go in `polemical-framing:` with `by:` + `label:` + `source-tier:` + `direction:`.
+
+**Contested cases never silently inferred** (per cardinal rules #7 + #11). They go in `00_meta/role-contested-cases-ratified-YYYY-MM-DD.yaml` (dated, sign-off-locked) — the migration script reads from this file.
+
+For the full vocabulary inventory + Tier-1 citation per entry, see `00_meta/role-vocabulary.yaml`. For the trio-audit-validated rationale, see `AUDIT/2026-05-31-figures-migration-plan-v3.md`.
+
+---
+
+## 10. What's NOT in this file
 
 For SOP and workflow, read:
 - [`CORE-THEMES.md`](CORE-THEMES.md) — the canonical hunt-list (themes / symbols / rituals / morals) with slugs and edge buckets. Use as the dissection lens.
