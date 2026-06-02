@@ -15,7 +15,7 @@ date-rebuilt: [1413, 1418, 1980]
 tradition: "[[tradition-taoism]]"
 traditions-related: ["[[tradition-quanzhen-taoism]] (Complete Perfection school, dominant on Wudang from the Yuan period)", "[[tradition-zhengyi-taoism]]", "[[tradition-chinese-folk-religion]]", "[[tradition-chinese-imperial-cult]] (Ming imperial patronage)"]
 function: "taoist-sacred-mountain-pilgrimage-and-temple-complex-with-imperial-patronage"
-key-figures: ["[[zhenwu]] / [[xuanwu]] (the deity Perfected Warrior / Dark Warrior; principal cultic focus of Wudang; identified by Yongle Emperor as his personal protector and the dynastic patron deity)", "[[zhang-sanfeng]] (semi-legendary Daoist immortal; reputed founder of Wudang internal martial arts and Tai Chi traditions; said to have lived on Wudang in Yuan–Ming transition ~13th–14th c.)", "[[yongle-emperor]] (Ming; r. 1402–1424; principal imperial patron; commissioned the great 1412–1424 building campaign that produced the complex's present form)", "[[wang-xuanfu]] (Tang-era Daoist; founded the early Wudang temple programme ~7th c.)", "[[xu-benshan]] (modern Quanzhen Daoist; principal early-20th-c. revival figure)"]
+key-figures: ["[[xuanwu]] / [[xuanwu]] (the deity Perfected Warrior / Dark Warrior; principal cultic focus of Wudang; identified by Yongle Emperor as his personal protector and the dynastic patron deity)", "[[zhang-sanfeng]] (semi-legendary Daoist immortal; reputed founder of Wudang internal martial arts and Tai Chi traditions; said to have lived on Wudang in Yuan–Ming transition ~13th–14th c.)", "[[yongle-emperor]] (Ming; r. 1402–1424; principal imperial patron; commissioned the great 1412–1424 building campaign that produced the complex's present form)", "[[wang-xuanfu]] (Tang-era Daoist; founded the early Wudang temple programme ~7th c.)", "[[xu-benshan]] (modern Quanzhen Daoist; principal early-20th-c. revival figure)"]
 themes: ["[[theme-sacred-mountain-cult]]", "[[axis-mundi]]", "[[world-axis]]", "[[theme-immortality-cultivation]]", "[[theme-cosmic-mountain-as-temple-form]]"]
 events-related: ["[[event-yongle-wudang-construction-1412-1424]]"]
 documents-related: ["[[xuantian-shangdi-zhuanlu]] (*Records of the Mysterious Heavenly High Lord* — Ming-era hagiography of Zhenwu/Xuanwu)", "[[wudang-shan-zhi]] (*Gazetteer of Mount Wudang* — Ming + Qing editions of the mountain's official record)", "[[tao-te-ching]] (the foundational Daoist text whose cosmology informs the complex)"]
@@ -29,7 +29,7 @@ cross-tradition-edges:
     type: "parallel-cosmic-mountain-doctrine"
     source: "Snodgrass 1985; Naquin & Yu 1992"
     source-tier: T1
-    notes: "[[mount-meru|Mount Meru]] (Indic-Buddhist cosmic mountain), [[mount-kailash|Kailash]] (its earthly identification in Tibet), and Wudang occupy parallel theological positions as **axis-mundi mountains** in their respective traditions. Wudang is uniquely **identified with the deity [[zhenwu|Zhenwu / Xuanwu]]** — the cosmic-warrior of the north — rather than being primarily a Buddhist cosmic-mountain identification."
+    notes: "[[mount-meru|Mount Meru]] (Indic-Buddhist cosmic mountain), [[mount-kailash|Kailash]] (its earthly identification in Tibet), and Wudang occupy parallel theological positions as **axis-mundi mountains** in their respective traditions. Wudang is uniquely **identified with the deity [[xuanwu|Zhenwu / Xuanwu]]** — the cosmic-warrior of the north — rather than being primarily a Buddhist cosmic-mountain identification."
   - target: "temple-of-heaven-beijing"
     type: "parallel-ming-imperial-cosmological-architecture"
     source: "Steinhardt 2019; Lagerwey 1992"
@@ -105,7 +105,7 @@ tags: [sacred-site, sacred-mountain, taoism, china, hubei, wudang, zhenwu, xuanw
 The complex is unique among Chinese sacred-mountain sites in two respects:
 
 1. **Massive Ming-imperial patronage**: the [[yongle-emperor|Yongle Emperor]] commissioned a **major 1412–1424 building campaign** that constructed or reconstructed nearly the entire principal architectural programme, producing the most architecturally coherent and monumental Daoist mountain-complex in China.
-2. **The deity Zhenwu / Xuanwu**: Wudang is the principal cultic centre of **[[zhenwu|Zhenwu (Perfected Warrior) / Xuanwu (Dark Warrior)]]** — the **cosmic-warrior deity of the north**, who Yongle identified as his personal patron and dynastic protector.
+2. **The deity Zhenwu / Xuanwu**: Wudang is the principal cultic centre of **[[xuanwu|Zhenwu (Perfected Warrior) / Xuanwu (Dark Warrior)]]** — the **cosmic-warrior deity of the north**, who Yongle identified as his personal patron and dynastic protector.
 
 UNESCO World Heritage (1994, File 705).
 
@@ -139,7 +139,7 @@ The principal mid-mountain temple, completed 1413, the **best-preserved Ming-Dao
 
 ### Forbidden Golden City (Jindian — the Golden Hall)
 
-The **summit sanctuary on Heavenly Pillar Peak** (1612 m). Completed 1418. A **small bronze-cast hall** (~5.5 × 4.3 m), entirely of gilded copper-bronze components, on a white-marble platform. The hall houses the principal cult image of [[zhenwu|Zhenwu]] (also bronze-cast). Surrounding the Golden Hall is a stone wall — the "Forbidden Golden City" — enclosing the summit sanctum.
+The **summit sanctuary on Heavenly Pillar Peak** (1612 m). Completed 1418. A **small bronze-cast hall** (~5.5 × 4.3 m), entirely of gilded copper-bronze components, on a white-marble platform. The hall houses the principal cult image of [[xuanwu|Zhenwu]] (also bronze-cast). Surrounding the Golden Hall is a stone wall — the "Forbidden Golden City" — enclosing the summit sanctum.
 
 The bronze hall is itself a marvel of metallurgical construction: each piece cast separately, the components assembled with mortise-and-tenon joinery in bronze, gilded with gold leaf. It is structurally analogous to a wooden hall, executed entirely in metal. The choice of bronze is a deliberate **incorruptibility-symbolism**: bronze does not rust, does not burn — the cosmic body of Zhenwu does not decay.
 
@@ -149,7 +149,7 @@ A network of smaller shrines, hermitages, and bridges threads along the principa
 
 ## The Zhenwu / Xuanwu cult
 
-[[zhenwu|Zhenwu (Perfected Warrior)]] / [[xuanwu|Xuanwu (Dark Warrior)]] is the principal deity of Wudang. He is the **cosmic-warrior personification of the north** — one of the Four Symbols (*Si Xiang*) of Chinese cosmology, paired with the Vermilion Bird (south), Azure Dragon (east), and White Tiger (west). His emblems are the **snake and tortoise entwined** (the cold-blooded creatures of the north).
+[[xuanwu|Zhenwu (Perfected Warrior)]] / [[xuanwu|Xuanwu (Dark Warrior)]] is the principal deity of Wudang. He is the **cosmic-warrior personification of the north** — one of the Four Symbols (*Si Xiang*) of Chinese cosmology, paired with the Vermilion Bird (south), Azure Dragon (east), and White Tiger (west). His emblems are the **snake and tortoise entwined** (the cold-blooded creatures of the north).
 
 In late-imperial Chinese religion Zhenwu becomes a major **deity of exorcism, military protection, and ruler-legitimacy**. The Yongle Emperor identified Zhenwu as the deity who had guided his usurpation; the Wudang building campaign is the architectural expression of that political-theological identification.
 
@@ -178,7 +178,7 @@ The dual-register imperial-religious legitimation programme is the **Ming-Yongle
 
 ## See also
 
-- [[zhenwu]] / [[xuanwu]] — the principal cult deity
+- [[xuanwu]] / [[xuanwu]] — the principal cult deity
 - [[zhang-sanfeng]] — the traditional founder of Wudang internal martial arts
 - [[temple-of-heaven-beijing]], [[forbidden-city-beijing]] — Yongle's Confucian-register companion programmes
 - [[mount-kailash]], [[mount-meru]] — cross-tradition sacred-mountain parallels
