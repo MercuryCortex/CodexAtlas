@@ -3,7 +3,7 @@ type: deity
 id: "melek-taus"
 name: "Melek Taus"
 aka: ["Melek Taus", "Tawûsê Melek", "Peacock Angel", "Melek Ta'us"]
-role: "chief angel; divine viceroy; contested figure"
+role: "chief of the seven angels; divine viceroy of creation"
 tradition: "[[tradition-yazidi]]"
 region: "Kurdistan (Iraq, Syria, Turkey)"
 period-active-earliest: 1162
@@ -11,12 +11,36 @@ period-active-latest: 2026
 geo-lat: 36.82
 geo-lon: 43.07
 historicity: "mythological"
+gender: "masculine"
+domains: ["chief of the seven angels / divine viceroy", "mediator between God and humanity", "the refusal-to-bow as supreme fidelity"]
 attested-in:
   - "[[phase-5-061-kiteba-cilwe]]"
+equivalents: []
+syncretic-edges:
+  - target: "[[iblis-shaytan]]"
+    type: "negative-identification"
+    appearance-tier: 2
+    role-in-context: "the hostile outsider conflation that Yazidis REJECT"
+    source: "Externally, Muslim authorities identified Melek Taus with Iblis/Shaytan to justify persecution; Yazidis firmly reject the equation — his refusal to bow to Adam was loyalty to God alone, not rebellion. Kreyenbroek 1995; Açıkyıldız 2010"
+    source-tier: T1
+    notes: "DEVIANT-BRIDGE handling: this wire documents a contested misidentification AS rejected, not as fact. The shared 'refused to bow to Adam' motif is real; the moral valence is inverted (fidelity vs fall)."
 key-themes:
   - "[[dualism-cosmic]]"
   - "[[theme-persecution-as-legitimation]]"
 status: "metadata"
+refs:
+  - title: "Yezidism: Its Background, Observances and Textual Tradition"
+    author: "Kreyenbroek, Philip G."
+    year: 1995
+    publisher: "Edwin Mellen Press"
+    type: "monograph"
+    tier: 1
+  - title: "The Yezidis: The History of a Community, Culture and Religion"
+    author: "Açıkyıldız, Birgül"
+    year: 2010
+    publisher: "I.B. Tauris"
+    type: "monograph"
+    tier: 1
 tags: [deity, yazidi, angel, peacock, kurdish, melek-taus, contested, angelology]
 date-earliest: 1162
 dating-basis: B5
