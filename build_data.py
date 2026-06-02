@@ -389,11 +389,17 @@ def tradition_family(t: str) -> str:
         return "Hermetic"
     if s.startswith("roman") or "italic religion" in s:
         return "Roman"
+    # Phrygian (membership-vs-wire 2026-06-02) — Cybele/Attis/Sabazios ORIGINATE in
+    # Phrygian/Anatolian religion. Their fame as Greco-Roman MYSTERY cults is a
+    # reception (an appearance-wire), not their home family. Checked BEFORE Mystery
+    # so origin wins. Only attis/cybele/sabazios carry "phrygian" in tradition.
+    if "phrygian" in s:
+        return "Phrygian"
     # Mystery — also catch nodes explicitly marked as mystery-cult layer
     # (e.g. dionysus-mystery: "Greek and Roman mystery-cult layers (distinguished from civic Olympian Dionysus)")
     if (("mystery-cult" in s or "mystery cult" in s)
             or (not s.startswith("greek") and ("mystery" in s or "mithra" in s or "orphic" in s
-                                               or "eleusin" in s or "phrygian" in s or "bacchic" in s))):
+                                               or "eleusin" in s or "bacchic" in s))):
         return "Mystery"
     # --- Ancient origin traditions checked BEFORE Christian so that strings like
     #     "Pre-Christian Slavic", "Zoroastrian → Christian demonology", "Celtic
@@ -477,6 +483,13 @@ def tradition_family(t: str) -> str:
             or "tantric" in s or "vaishnav" in s or "shakta" in s or "shaiv" in s
             or "bhakti" in s or "vedanta" in s or "jain" in s or "hindutva" in s):
         return "Vedic"
+    # Korean (membership-vs-wire 2026-06-02) — Korean shamanism (Muism) + Korean
+    # founding myth (Hwanin/Hwanung/Tangun) is its OWN origin family, NOT Chinese.
+    # Keyed on ORIGIN markers (startswith korean / muism) so Indian-Buddhist deities
+    # that merely list Korean reception in the tail (Dizang's "Mahāyāna Buddhism
+    # (Chinese, Japanese, Korean ...)") still fall through to Buddhist below.
+    if s.startswith("korean") or "muism" in s:
+        return "Korean"
     # Chinese — uses STARTSWITH guards on Chinese-keyword leads so deified Chinese
     # generals/officials (Guan Yu, Mazu, Sun Wukong, Yan Wang) whose tradition strings
     # start with "Chinese folk religion / ... / Buddhist" land in Chinese (origin-wins),
@@ -486,7 +499,7 @@ def tradition_family(t: str) -> str:
     # Buddhist check below. \bshang\b word-boundary prevents Shanghai/Shangri-La hits.
     if (s.startswith("chinese") or s.startswith("confucian") or s.startswith("daoist")
             or s.startswith("daoism") or s.startswith("taoist") or s.startswith("taoism")
-            or s.startswith("korean") or s.startswith("zhou")
+            or s.startswith("zhou")
             or _re.search(r'\bshang\b', s)):
         return "Chinese"
     # Buddhist — catches Indian-Buddhist origin deities even when their tradition
@@ -501,7 +514,7 @@ def tradition_family(t: str) -> str:
     # Chinese — fallback for tradition strings that mention Chinese keywords in the
     # tail (no Vedic/Buddhist origin marker fired earlier).
     if ("chinese" in s or "confucian" in s or "daoist" in s or "daoism" in s
-            or "taoist" in s or "taoism" in s or "korean" in s):
+            or "taoist" in s or "taoism" in s):
         return "Chinese"
     if "zoroastr" in s or "avesta" in s or "iranian" in s or "ahura" in s:
         return "Zoroastrian"
