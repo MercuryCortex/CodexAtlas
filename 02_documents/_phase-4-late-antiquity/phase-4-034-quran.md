@@ -18,12 +18,12 @@ city-of-origin: "Mecca and Medina"
 authorship: "revealed (according to Islamic tradition: God's word, transmitted via the angel Jibrīl/Gabriel to Muhammad over ~22 years 610–632; collected and codified under Caliph Uthman ~650)"
 key-figures: ["[[muhammad-ibn-abdullah]]", "[[khadija-bint-khuwaylid]]", "[[abu-bakr]]", "[[umar-ibn-al-khattab]]", "[[uthman]]", "[[ali-ibn-abi-talib]]", "[[aisha-bint-abi-bakr]]"]
 themes: ["[[hidden-god]]", "[[chosen-people]]", "[[end-times-judgment]]", "[[divine-kingship]]", "[[hanif-monotheism]]", "[[satanic-verses-incident]]"]
-parallels: ["[[phase-2-005-hebrew-bible-j-source]]", "[[phase-3-016-gospel-of-mark]]", "[[phase-4-080-garima-gospels]]", "[[phase-4-081-mashafa-henok-geez-1-enoch]]", "Syriac Christian homiletic tradition"]
+parallels: ["[[document-genesis]]", "[[document-exodus]]", "[[document-matthew]]", "[[document-john]]", "[[phase-2-005-hebrew-bible-j-source]]", "[[phase-3-016-gospel-of-mark]]", "[[phase-4-080-garima-gospels]]", "[[phase-4-081-mashafa-henok-geez-1-enoch]]", "Syriac Christian homiletic tradition"]
 influenced-by: ["Late-antique Jewish, Christian, and Arabian religious traditions (an enormous and contested literature; in particular: Hijazi-Arabian polytheism in polemical engagement [[allat]] / [[al-uzza]] / [[manat]] / [[wadd]] / [[nasr-pre-islamic]] / [[hubal]] — see [[tradition-pre-islamic-arabian]]; Talmudic and Targumic narrative material; Syriac Christological controversies — Griffith 2013, Reynolds 2010; the [[hanif-monotheism|*ḥanīf*]] late-antique Arabian Abrahamic monotheist milieu; Aksumite Christian Yemen — Bowersock 2013, *Sūrat al-Fīl* 105 and [[event-kaleb-aksum-himyar-invasion-525]])"]
 influences: ["all subsequent Islamic tradition", "Arabic linguistic development", "medieval Mediterranean theology, philosophy, and science (via [[falsafa]] tradition and [[tahafut-controversy]])"]
 deities-mentioned: ["[[allah]]", "[[allat]]", "[[al-uzza]]", "[[manat]]", "[[hubal]]", "[[wadd]]", "[[nasr-pre-islamic]]"]
 events-context: ["[[event-hegira-622]]", "[[event-conquest-of-mecca-630]]", "[[event-death-of-muhammad-632]]", "[[event-first-fitna-656-661]]"]
-status: "metadata"
+status: "full"
 preservation: "Continuous Islamic manuscript and recitative transmission. The Uthmanic codification (~650 CE) standardized the consonantal text; later layers (vowels, diacritics) were added. The Birmingham Quran manuscript (radiocarbon dated 568–645 CE) is among the earliest known fragments. The Sanaa Palimpsest (discovered 1972) preserves a partly variant pre-Uthmanic textual tradition. We treat the Quran with the same source-integrity care the vault applies to the Hebrew Bible: as primary historical evidence for the religious thought of its time and milieu."
 refs:
   - title: "The Study Quran: A New Translation and Commentary"

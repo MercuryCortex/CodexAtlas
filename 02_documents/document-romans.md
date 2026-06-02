@@ -33,10 +33,10 @@ refs:
     type: "critical-edition"
     tier: 1
     notes: "Major critical commentary."
-  - title: "The Epistle to the Romans (NIGTC)"
+  - title: "Romans 1–8 / 9–16 (Word Biblical Commentary 38)"
     author: "Dunn, James D.G."
     year: 1988
-    publisher: "Eerdmans"
+    publisher: "Word Books"
     type: "critical-edition"
     tier: 1
     notes: "Leading 'New Perspective on Paul' commentary."

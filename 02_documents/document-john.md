@@ -24,7 +24,7 @@ influences: ["the entire development of Christology and Trinitarian theology (th
 deities-mentioned: ["[[yahweh]]", "[[jesus-christ-deity]]", "[[holy-spirit]]"]
 events-context: ["The expulsion of Jesus-followers from the synagogue (the aposynagōgos crisis) at the end of the 1st century", "The encounter of Jewish messianism with Hellenistic Logos philosophy", "The early shaping of high Christology"]
 status: "full"
-preservation: "Home to the single oldest New Testament manuscript fragment, 𝔓⁵² (Rylands Library Papyrus, c. 125 CE, John 18); fully attested in the early papyri (𝔓⁶⁶, 𝔓⁷⁵) and the 4th-c. uncials."
+preservation: "Home to 𝔓⁵² (Rylands Library Papyrus, John 18), conventionally dated c. 125 CE and long cited as the oldest New Testament fragment — though Nongbri and others argue the palaeographic window extends later into the 2nd c.; fully attested in the early papyri (𝔓⁶⁶, 𝔓⁷⁵) and the 4th-c. uncials."
 refs:
   - title: "The Gospel According to John (Anchor Yale Bible, 2 vols.)"
     author: "Brown, Raymond E."
@@ -39,10 +39,10 @@ refs:
     publisher: "Eerdmans"
     type: "critical-edition"
     tier: 1
-  - title: "The Prologue of the Gospel of John (on Logos and Wisdom)"
+  - title: "The Prologue of John and Hellenistic Jewish Speculation"
     author: "Tobin, Thomas H."
     year: 1990
-    publisher: "Catholic Biblical Quarterly 52"
+    publisher: "Catholic Biblical Quarterly 52, pp. 252–269"
     type: "article"
     tier: 1
     notes: "On the Wisdom/Logos background of the prologue."
