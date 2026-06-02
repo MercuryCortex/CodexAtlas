@@ -135,7 +135,7 @@ incomplete_fields = len(set(no_domains) | set(no_gender) | set(no_role))
 
 # Tracked constants (judgment-based, updated as work proceeds):
 KNOWN_DUPLICATES = 0       # ninhursag→ninhursag-nintud→ninhursag, velinas-lithuanian→velinas, +mithra/zagreus/verethraghna/xuanwu all merged 2026-06-02
-MODERATE_OPEN    = 50      # coverage gaps remaining (Greek+Egyptian moderates filled 2026-06-02)
+MODERATE_OPEN    = 37      # coverage gaps remaining (Meso+Norse moderates filled 2026-06-02)
 
 def row(key, label, target, current, ok, detail=""):
     return {"key": key, "label": label, "target": target,

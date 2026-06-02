@@ -1,6 +1,6 @@
 {
  "generatedAt": "2026-06-02",
- "totalDeities": 805,
+ "totalDeities": 818,
  "productGrade": false,
  "passCount": 8,
  "rowCount": 9,
@@ -26,7 +26,7 @@
    "key": "tradition",
    "label": "Has home tradition",
    "target": "100%",
-   "current": "805/805",
+   "current": "818/818",
    "ok": true,
    "detail": ""
   },
@@ -34,7 +34,7 @@
    "key": "dates",
    "label": "Has dates",
    "target": "100%",
-   "current": "805/805",
+   "current": "818/818",
    "ok": true,
    "detail": ""
   },
@@ -82,7 +82,7 @@
    "key": "coverage",
    "label": "Coverage (critical + moderate)",
    "target": "complete",
-   "current": "~50 moderate open",
+   "current": "~37 moderate open",
    "ok": false,
    "detail": "critical tier complete; moderate worklist open"
   }
