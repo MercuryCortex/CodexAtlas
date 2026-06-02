@@ -251,6 +251,16 @@ entries:
     notes: "Reads-signs religious specialist. Mesoamerican daykeepers, Yijing diviners. Distinct from oracle (which speaks for a god) and from babalawo (which is Ifá-specific and gets its own tradition-specific token below)."
     aliases: ["diviner"]
 
+  - id: gnostic-redeemer-figure
+    display: "Gnostic redeemer-figure"
+    tier: 1
+    figure_qualifying: true
+    source-tier: T1
+    source: "Williams, Michael Allen 1996. Rethinking 'Gnosticism'. Princeton UP."
+    secondary: ["Brakke, David 2010. The Gnostics. Harvard UP.", "Turner, John D. 2001. Sethian Gnosticism and the Platonic Tradition. Peeters.", "King, Karen 2003. What Is Gnosticism? Harvard UP.", "Pearson, Birger A. 2007. Ancient Gnosticism. Fortress."]
+    notes: "Cosmic-redeemer / aeon-tier figure within Gnostic theology. Includes the Sethian-cosmic-Seth, Sophia (as cosmic redeemer-figure, not deity-tier), Christ-Logos in Valentinian + Sethian frameworks, Allogenes / the Stranger. Distinct from `prophet-abrahamic` (Gnostic redeemer is cosmic-theological role, not Abrahamic-prophet category). Distinct from deity-tier figures in 03_deities/ which are first-order divine beings. Per Williams 1996 + Brakke 2010 anti-essentialist framing: the role is real WITHIN Gnostic theological discourse even if 'Gnosticism' as a unified category is constructed."
+    aliases: ["gnostic redeemer", "Sethian redeemer", "cosmic redeemer-figure (Gnostic)"]
+
   # ────────────────────────────────────────────────────────────────────────
   # TIER 2 — Religious authority (multi-tradition disambiguated)
   # ────────────────────────────────────────────────────────────────────────

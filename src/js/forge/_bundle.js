@@ -2096,13 +2096,20 @@
               out += '<div class="forge-side-panel-provenance-source">↳ ' + safe(src) + '</div>';
             }
           }
-          // Contested-case rationale (de-dup)
+          // Contested-case rationale (de-dup) — wrapped in <details> so
+          // collapsed-by-default (2026-06-02 per John: "super ugly… needs
+          // to be down"). Keep the chips + source citations visible
+          // above; users expand the rationale only if they want the full
+          // scholarly justification.
           const seenR = new Set();
           for (const e of entries) {
             const r = e.contested_rationale || '';
             if (r && !seenR.has(r)) {
               seenR.add(r);
-              out += '<div class="forge-side-panel-provenance-rationale">⚖ ' + safe(r) + '</div>';
+              out += '<details class="forge-side-panel-provenance-rationale-wrap">'
+                +    '<summary class="forge-side-panel-provenance-rationale-summary">⚖ Why this classification? <span class="forge-side-panel-provenance-rationale-summary-hint">(scholarly rationale)</span></summary>'
+                +    '<div class="forge-side-panel-provenance-rationale">' + safe(r) + '</div>'
+                +    '</details>';
             }
           }
           out += '</div>';
