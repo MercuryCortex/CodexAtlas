@@ -1,0 +1,146 @@
+# Polemical-Framing Controlled Vocabulary
+#
+# Built 2026-05-31 per AUDIT/2026-05-31-figures-migration-plan-v3.md §2.
+# The second instance of the reusable controlled-vocabulary primitive (after
+# role-vocabulary.yaml). Same schema shape.
+#
+# Purpose: opponent-claimed categorizations of religious figures NEVER go into
+# the authoritative role-tokens: field. They go HERE — with source-attribution
+# for who applied the label, what direction (outsider / reciprocal /
+# self-claimed-orthodox), and source-tier.
+#
+# Anchored in:
+#   - Brakke, David 2010. The Gnostics: Myth, Ritual, and Diversity in Early
+#     Christianity. Harvard UP.
+#   - Iricinschi, Eduard & Zellentin, Holger (eds.) 2008. Heresy and Identity
+#     in Late Antiquity. Mohr Siebeck.
+#   - King, Karen 2003. What Is Gnosticism? Harvard UP.
+#
+# Per feedback_deviant_bridges_2026-05-16.md (project memory): document
+# polemics AS polemics, not as truth. The vault stores cross-tradition
+# content; getting opponent-categorization right respects insider integrity.
+
+field_name: polemical-framing
+node_type_scope: ["person", "tradition", "document"]
+allow_array: true
+lens_qualifying_flag: ~       # this vocab does not drive lens membership
+
+entries:
+
+  - label: heresiarch
+    direction: outsider
+    source-tier: T1
+    source: "Brakke 2010 *The Gnostics*"
+    notes: "Christian-orthodox label for Marcion, Valentinus, Arius, Mani, Cathars, Bogomils. Per Brakke 2010 + King 2003: 'heresy/orthodoxy' is a discursive construction, not a description of doctrinal reality."
+
+  - label: antichrist
+    direction: outsider
+    source-tier: T1
+    source: "McGinn, Bernard 1994. Antichrist: Two Thousand Years of the Human Fascination with Evil. HarperSanFrancisco."
+
+  - label: false-prophet
+    direction: outsider
+    source-tier: T1
+    source: "Various; cross-tradition usage"
+    notes: "Used by traditions about other traditions' prophets. Especially Christian about Joseph Smith / Muhammad / Bahá'u'lláh; Sunni about Bábí + Bahá'í; mainline-Hindu about Sai Baba (Sathya); Sikh about post-Granth claimants."
+
+  - label: schismatic
+    direction: reciprocal
+    source-tier: T1
+    source: "Standard ecclesiastical-history references"
+    notes: "Catholic ↔ Orthodox post-1054, Sunni ↔ Shia post-Karbala."
+
+  - label: infidel
+    direction: outsider
+    source-tier: T1
+    source: "Various; cross-tradition usage"
+    notes: "Christian ↔ Muslim mutual usage in medieval-modern contexts."
+
+  - label: kafir
+    direction: outsider
+    source-tier: T1
+    source: "Cook, Michael 2000. Commanding Right and Forbidding Wrong in Islamic Thought. Cambridge UP."
+    notes: "Islamic polemic against non-believers / apostates."
+
+  - label: mushrik
+    direction: outsider
+    source-tier: T1
+    source: "Hawting, Gerald 1999. The Idea of Idolatry and the Emergence of Islam. Cambridge UP."
+    notes: "Islamic polytheist-accusation; commonly applied to Hindus and (polemically) to Christian Trinitarianism."
+
+  - label: idolater
+    direction: outsider
+    source-tier: T1
+    source: "Halbertal & Margalit 1992. Idolatry. Harvard UP."
+    notes: "Protestant about Catholic; Muslim about polytheist; Israelite-prophetic about Canaanite."
+
+  - label: apostate
+    direction: outsider
+    source-tier: T1
+    source: "Bromley, David G. (ed.) 1998. The Politics of Religious Apostasy. Praeger."
+    notes: "Multi-tradition about defectors."
+
+  - label: dhimmi
+    direction: outsider
+    source-tier: T1
+    source: "Bat Ye'or 1985. The Dhimmi: Jews and Christians under Islam. Fairleigh Dickinson UP. (contested-source; Cohen 1994 *Under Crescent and Cross* is the cross-check)"
+    notes: "Islamic legal category for non-Muslims under Muslim rule. Polemical only when applied to a figure as primary identity."
+
+  - label: mleccha
+    direction: outsider
+    source-tier: T1
+    source: "Doniger, Wendy 2009. The Hindus: An Alternative History. Penguin."
+    notes: "Hindu/Buddhist barbarian-outsider category."
+
+  - label: crypto-jew
+    direction: outsider
+    source-tier: T1
+    source: "Roth, Cecil 1932. A History of the Marranos. JPS."
+    notes: "Early-modern Iberian polemic against Conversos."
+
+  - label: crypto-muslim
+    direction: outsider
+    source-tier: T1
+    source: "Harvey, L.P. 2005. Muslims in Spain, 1500 to 1614. University of Chicago Press."
+    notes: "Early-modern Iberian polemic against Moriscos."
+
+  - label: crypto-christian
+    direction: outsider
+    source-tier: T1
+    source: "Various Inquisition-history references"
+
+  - label: demoniac
+    direction: outsider
+    source-tier: T1
+    source: "Levack, Brian P. 2013. The Devil Within: Possession and Exorcism in the Christian West. Yale UP."
+    notes: "Historic Christian polemic about figures with altered states (mystics, prophets, possessed)."
+
+  - label: cult-leader
+    direction: outsider
+    source-tier: T1
+    source: "Bromley & Hammond (eds.) 1987. The Future of New Religious Movements. Mercer UP."
+    notes: "Modern anti-cult-movement polemic (Singer, AFF). NEVER as role-tokens: — always polemical-framing here."
+
+  - label: magician
+    direction: outsider
+    source-tier: T1
+    source: "Hanegraaff 2012 *Esotericism and the Academy*"
+    notes: "Polemical usage. magus-zoroastrian is a separate INSIDER Zoroastrian-priest category. magus (Western esoteric, Crowley etc.) is also an insider role per Hanegraaff. ONLY use this `magician` polemical label when the framing is outsider-derogatory."
+
+  - label: witch
+    direction: outsider
+    source-tier: T1
+    source: "Cohn, Norman 1975. Europe's Inner Demons. Sussex University Press."
+    notes: "Christian polemic — early-modern witch-hunt accusations. Compare reclaimed-self-naming `witch` which is Wiccan affirmative usage. Two-token system per Auditor B 2026-05-31."
+
+  - label: pagan
+    direction: outsider
+    source-tier: T1
+    source: "Markus, R.A. 1990. The End of Ancient Christianity. Cambridge UP."
+    notes: "Christian polemic — late antique. Compare reclaimed-self-naming `pagan` which is Modern-Pagan / Heathen / Wiccan affirmative usage."
+
+  - label: bon-po
+    direction: outsider
+    source-tier: T1
+    source: "Kvaerne, Per 1995. The Bon Religion of Tibet. Shambhala."
+    notes: "When applied by Buddhists about pre-Buddhist Tibetan religion polemically. The Bön tradition itself uses bon-po as positive self-identification."

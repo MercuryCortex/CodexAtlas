@@ -1,0 +1,105 @@
+# Controlled-Vocabulary Registry
+#
+# THE schema authority for every active controlled-vocabulary field in the vault.
+# Listed in HOW-WE-WORK.md §9 master files; cannot be silently mutated.
+#
+# Built 2026-05-31 per AUDIT/2026-05-31-figures-migration-plan-v3.md §9.5
+# (architectural directive: controlled-vocab as reusable primitive for ALL
+# future charts/lenses). When a new chart needs a categorical field, add
+# its vocab here — the validator, build, and filter infrastructure inherit
+# automatically.
+#
+# Anchor: HOW-WE-WORK.md §5 cardinal rule #11 (NEVER menu-pick) + §5 #10
+# (LOOP-DETECTION PROTOCOL) + ONTOLOGY.md §"Controlled-vocabulary primitive".
+
+# Active controlled-vocab fields (canonical sources of truth)
+active_fields:
+
+  role-tokens:
+    vocab_file: 00_meta/role-vocabulary.yaml
+    node_type_scope: ["person"]
+    allow_array: true
+    lens_qualifying_flag: figure_qualifying
+    drives_lens: figures
+    description: |
+      Controlled vocabulary of religious-leadership roles. Drives the Figures
+      lens via filterByControlledVocab('role-tokens', FIGURE_QUALIFYING_ROLES).
+      Replaces the hand-typed FIGURES_IDS set as the authoritative source.
+      Multi-value array; index-0 = primary insider-frame; tie-break by
+      decision-tree-step ascending then alphabetic.
+    shipped: 2026-05-31
+
+  tradition:
+    vocab_file: 00_meta/tradition-vocabulary.yaml
+    node_type_scope: ["person", "deity", "symbol", "document"]
+    allow_array: false
+    lens_qualifying_flag: ~
+    drives_lens: ~  # but drives Atlas wedge color via tradition_color()
+    description: |
+      Controlled vocabulary of religious-tradition identifiers. Wired in
+      Stage 1.5 of the canonical-corpus + role migrations (this batch).
+      Closes the dormancy bug from 2026-05-14.
+    shipped: 2026-05-31 (consumer wiring this batch)
+
+  polemical-framing:
+    vocab_file: 00_meta/polemical-framing-vocabulary.yaml
+    node_type_scope: ["person", "tradition", "document"]
+    allow_array: true
+    lens_qualifying_flag: ~
+    drives_lens: ~
+    description: |
+      Opponent-claimed categorizations. Keeps polemical labels (heresiarch,
+      antichrist, false-prophet, etc.) out of authoritative role-tokens:
+      per feedback_deviant_bridges memory. Validates label + direction +
+      source-tier + source per entry.
+    shipped: 2026-05-31
+
+  reclaimed-self-naming:
+    vocab_file: 00_meta/reclaimed-self-naming-vocabulary.yaml
+    node_type_scope: ["person", "tradition"]
+    allow_array: true
+    lens_qualifying_flag: ~
+    drives_lens: ~
+    description: |
+      Terms that exist as both polemic-from-outside AND affirmative-self-
+      claim (witch, pagan, queer). Captures the affirmative direction;
+      polemical-framing captures the polemic direction. Same term may
+      appear in both for a figure depending on tradition.
+    shipped: 2026-05-31
+
+# Predicted future fields (NOT yet active — listed for architectural reference)
+predicted_future_fields:
+
+  sub-tradition:
+    status: "next migration after this one ratifies (predicted next-loop per rule #10)"
+    notes: "Currently free-text. Will follow same v1→v2→v3 ratification cycle."
+
+  themes:
+    status: "free-text in current `themes:` field; controlled-vocab when a Themes chart needs filtering"
+
+  genre:
+    status: "absent; future field for documents-by-genre chart"
+
+  era:
+    status: "absent; future field for timeline-by-era chart"
+
+  region-canonical:
+    status: "currently free-text `region:`; future controlled-vocab when a Map lens needs region clustering"
+
+  category:
+    status: "currently free-text; controlled-vocab when category-based filtering is needed"
+
+# Framework infrastructure (the substrate every active field consumes)
+framework:
+  validator: "lint_yaml.py validate_controlled_vocab(field_name, vocab_path, options)"
+  build_passthrough: "build_data.py emit_controlled_vocab_field(field_name)"
+  filter_pattern: "mode.js filterByControlledVocab(nodes, field_name, qualifying_set, opts)"
+  documentation: "00_meta/ONTOLOGY.md §'Controlled-vocabulary primitive'"
+  registry_consumer: "lint_yaml.py loads this file at startup; validates every active field"
+
+# Per HOW-WE-WORK §5 rule #11: when adding a new controlled-vocab field,
+# the ONLY additions required are:
+#   1. The vocab YAML file (the only field-specific work)
+#   2. An entry in this registry's active_fields
+#   3. (Optional) one filter call in mode.js if a new lens consumes it
+# No new validator/build/filter code. The substrate is built ONCE.

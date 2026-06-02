@@ -1,0 +1,1586 @@
+# Role Controlled Vocabulary
+#
+# Built 2026-05-31 per AUDIT/2026-05-31-figures-migration-plan-v3.md.
+# Mirrors 00_meta/tradition-vocabulary.yaml schema. The FIRST INSTANCE of the
+# reusable controlled-vocabulary primitive per HOW-WE-WORK §5 rule #11 +
+# v3 plan §9.5 (architectural directive — future controlled-vocab fields
+# inherit this same shape).
+#
+# Anchored in Eliade/Jones 2005 *Encyclopedia of Religion* 2nd ed. (Macmillan,
+# 15 vols) — the religious-studies discipline's reference of record — with
+# Smart 1996 *Dimensions of the Sacred* + Weber 1922 *Economy and Society*
+# Vol. 2 chs. VI + XIV as co-primary for the typology of religious actors.
+# Asad 1993 *Genealogies of Religion* is the methodological caveat:
+# all such typologies are Christian-derived universals that imperfectly map
+# onto Islamic / Hindu / Buddhist / Indigenous emic categories. The
+# role-tokens: field is the etic spine; the prose role-description: field
+# preserves tradition-internal nuance.
+#
+# Per-tradition specialists cited where applicable. Bowker 1997
+# *Oxford Dictionary of World Religions* used as tertiary cross-check.
+#
+# Schema for each entry (locked 2026-05-31, controlled-vocab primitive #1):
+#   - id:                 lowercase slug (the canonical identifier)
+#   - display:            human-readable label for UI
+#   - tier:               1-5 per the v3 plan taxonomy
+#   - figure_qualifying:  bool — does this role qualify a person for the Figures lens
+#   - source-tier:        T1-T4 per methodology.md §Source-integrity policy
+#   - source:             primary Tier-1 reference defining the category
+#   - secondary:          optional list of secondary references
+#   - notes:              scope boundary / disambiguation / cross-tradition caveats
+#   - aliases:            free-text strings observed in current node YAML that
+#                          resolve to this id (normalization input for the
+#                          generic build_data.py + migrate_roles.py)
+
+field_name: role-tokens
+node_type_scope: ["person"]
+allow_array: true
+lens_qualifying_flag: figure_qualifying
+
+# Anchor declaration (machine-readable for methodology.md cross-link)
+anchor:
+  primary:
+    - citation: "Jones, Lindsay (ed.) 2005. Encyclopedia of Religion (2nd ed.). 15 vols. Macmillan Reference."
+      role: "comparative-religion classification spine"
+    - citation: "Smart, Ninian 1996. Dimensions of the Sacred. University of California Press."
+      role: "co-primary for typology of religious actors"
+    - citation: "Weber, Max 1922/1978. Economy and Society. University of California Press. Vol. 2 chs. VI + XIV."
+      role: "sociology-of-religion foundational typology (prophet/priest/magician/sage)"
+  methodological_caveat:
+    citation: "Asad, Talal 1993. Genealogies of Religion: Discipline and Reasons of Power in Christianity and Islam. Johns Hopkins University Press."
+    note: "All such typologies are Christian-derived universals that imperfectly map onto Islamic/Hindu/Buddhist/Indigenous emic categories. role-tokens: is the etic spine; role-description: preserves emic nuance."
+  tertiary:
+    - citation: "Bowker, John (ed.) 1997. The Oxford Dictionary of World Religions. Oxford University Press."
+      role: "entry-level cross-check lookup"
+
+entries:
+
+  # ────────────────────────────────────────────────────────────────────────
+  # TIER 1 — Founders + revelation-bearers + tradition-defining figures
+  # ────────────────────────────────────────────────────────────────────────
+
+  - id: founder
+    display: "Founder of a tradition"
+    tier: 1
+    figure_qualifying: true
+    source-tier: T1
+    source: "Jones 2005 *Encyclopedia of Religion* entry 'Founders of Religions'"
+    secondary: ["Smart 1996 *Dimensions of the Sacred*", "Hammer 2001 *Claiming Knowledge*"]
+    notes: "Generic founder category. Used when no more specific Tier-1 token applies. Multi-role with prophet-*/avatar-*/manifestation-* when appropriate."
+    aliases: ["founder", "founder / prophet", "founder / Wicca", "founder / occultist / poet"]
+
+  - id: prophet-abrahamic
+    display: "Prophet (Abrahamic — Hebrew / Christian / Islamic)"
+    tier: 1
+    figure_qualifying: true
+    source-tier: T1
+    source: "Heschel, Abraham Joshua 1962. The Prophets. Jewish Publication Society."
+    secondary: ["Crone, Patricia 2004. God's Rule: Government and Islam. Columbia UP.", "Jones 2005 entry 'Prophecy'"]
+    notes: "Hebrew Bible navi, NT prophet, Quranic nabi. Distinct from prophet-indigenous (Ghost Dance, Longhouse Religion) and prophet-non-abrahamic (modern revelation-bearers outside Abrahamic and Indigenous frameworks). Do NOT apply to Joseph Smith (LDS doctrinal claim, not academic-neutral) or Bahá'u'lláh (use manifestation-bahai)."
+    aliases: ["prophet", "prophet | messenger", "Hebrew prophet", "Old Testament prophet", "biblical prophet"]
+
+  - id: prophet-indigenous
+    display: "Prophet (Indigenous-tradition revelation-bearer)"
+    tier: 1
+    figure_qualifying: true
+    source-tier: T1
+    source: "Hittman, Michael 1990. Wovoka and the Ghost Dance. University of Nebraska Press."
+    secondary: ["Wallace, Anthony F.C. 1969. The Death and Rebirth of the Seneca. Vintage.", "Mooney, James 1896. The Ghost-Dance Religion and the Sioux Outbreak of 1890. Bureau of American Ethnology."]
+    notes: "Wovoka, Smohalla, Handsome Lake, Tenskwatawa, Black Hawk. Ghost Dance + Longhouse Religion + Indian Shaker Church revelation-bearers. **CARDINAL: NOT prophet-abrahamic.** Calling Wovoka an Abrahamic prophet is colonial framing — per Auditor B 2026-05-31."
+    aliases: ["Northern Paiute prophet", "Ghost Dance prophet", "indigenous prophet"]
+
+  - id: prophet-non-abrahamic
+    display: "Prophet (modern non-Abrahamic, non-Indigenous revelation-bearer)"
+    tier: 1
+    figure_qualifying: true
+    source-tier: T1
+    source: "Bogdan & Starr 2012 *Aleister Crowley and Western Esotericism*. Oxford UP."
+    secondary: ["Gottschalk, Stephen 1973. The Emergence of Christian Science in American Religious Life. UC Press.", "Hammer 2001 *Claiming Knowledge*"]
+    notes: "Modern revelation-bearer outside Abrahamic and Indigenous frameworks. Crowley (Liber AL), Mary Baker Eddy (Science and Health). The category exists to give Tier-1 acknowledgement without smuggling Abrahamic-prophet framing onto NRM founders."
+    aliases: []
+
+  - id: messenger-islamic
+    display: "Messenger (Islamic rasūl)"
+    tier: 1
+    figure_qualifying: true
+    source-tier: T1
+    source: "Crone 2004 *God's Rule*"
+    secondary: ["Bowker 1997 entry 'rasul'"]
+    notes: "Islamic theological category for revelation-bearer-with-scripture. Muhammad is both prophet-abrahamic AND messenger-islamic. Distinct from generic prophet-abrahamic."
+    aliases: ["rasul", "messenger of Allah"]
+
+  - id: manifestation-bahai
+    display: "Manifestation of God (Bahá'í maẓhar-i ilāhī)"
+    tier: 1
+    figure_qualifying: true
+    source-tier: T1
+    source: "Smith, Peter 2008. An Introduction to the Baha'i Faith. Cambridge UP."
+    secondary: ["Cole, Juan 1998. Modernity and the Millennium. Columbia UP."]
+    notes: "Bahá'í progressive-revelation category. INCLUDES but EXCEEDS Abrahamic prophet. Bahá'u'lláh, the Báb. The Bahá'í tradition also classes Krishna, Buddha, Zoroaster, Moses, Jesus, Muhammad as Manifestations — see role-description: for cross-tradition recognition. **Replaces v2's prophet-abrahamic for Bahá'í figures** per Auditor A + B 2026-05-31."
+    aliases: []
+
+  - id: avatar-hindu
+    display: "Avatar (Hindu incarnation, when historicized-person)"
+    tier: 1
+    figure_qualifying: true
+    source-tier: T1
+    source: "Klostermaier, Klaus 2007. A Survey of Hinduism (3rd ed.). SUNY Press."
+    notes: "Applies only when a historical-or-quasi-historical figure is venerated as avatar. Mythic full-incarnations (Vishnu's complete ten) are deities in 03_deities/, not persons. Use with caution — controversial across Vaishnava sampradayas. Krishna debated; Kalki eschatological (flag confidence: low)."
+    aliases: ["avatar", "incarnation of Vishnu"]
+
+  - id: tirthankara-jain
+    display: "Tīrthaṅkara (Jain ford-maker)"
+    tier: 1
+    figure_qualifying: true
+    source-tier: T1
+    source: "Dundas, Paul 2002. The Jains (2nd ed.). Routledge."
+    notes: "The 24 Jain Tīrthaṅkaras from Rishabha (cosmological deep time) through Mahavira (-599 to -527). Tradition-internal Jain category; not Western 'founder.'"
+    aliases: ["tirthankara", "ford-maker"]
+
+  - id: mahasiddha
+    display: "Mahāsiddha (Buddhist tantric perfected-being)"
+    tier: 1
+    figure_qualifying: true
+    source-tier: T1
+    source: "Davidson, Ronald M. 2002. Indian Esoteric Buddhism. Columbia UP."
+    secondary: ["White, David Gordon 1996. The Alchemical Body. University of Chicago Press.", "Robinson, James B. 1979. Buddha's Lions: The Lives of the Eighty-Four Siddhas."]
+    notes: "The 84 Mahāsiddhas + Nath siddhas. Distinct from bodhisattva-mahayana (philosophical-vow path) and guru-hindu (modern Hindu lineage) and acharya-buddhist (Mahāyāna scholastic). Naropa, Tilopa, Saraha, Virūpa."
+    aliases: ["mahasiddha", "Mahāsiddha", "siddha (Buddhist)"]
+
+  - id: acharya-hindu
+    display: "Ācārya (Hindu sampradaya-founding doctrinal teacher)"
+    tier: 1
+    figure_qualifying: true
+    source-tier: T1
+    source: "Lipner, Julius 2010. Hindus: Their Religious Beliefs and Practices (2nd ed.). Routledge."
+    secondary: ["Mlecko, Joel 1982. 'The Guru in Hindu Tradition.' Numen 29(1).", "Copeman & Ikegame 2012 *The Guru in South Asia*. Routledge."]
+    notes: "**CARDINAL: NOT theologian.** Hindu insider category. Sankara (Advaita), Ramanuja (Vishishtadvaita), Madhva (Dvaita), Nimbarka, Vallabha, Chaitanya. Per Auditor B 2026-05-31: forcing Hindu acharyas into Western 'theologian' is exactly the Asad-1993 Christian-categorial imposition the methodological-humility caveat warns against."
+    aliases: ["acharya", "ācārya"]
+
+  - id: acharya-jain
+    display: "Ācārya (Jain doctrinal teacher)"
+    tier: 1
+    figure_qualifying: true
+    source-tier: T1
+    source: "Dundas 2002 *The Jains*"
+    notes: "Digambara/Svetambara doctrinal-teacher lineage. Kundakunda, Umasvati, Hemachandra. Distinct from acharya-hindu."
+    aliases: []
+
+  - id: acharya-buddhist
+    display: "Ācārya (Mahāyāna scholastic-doctrinal teacher)"
+    tier: 1
+    figure_qualifying: true
+    source-tier: T1
+    source: "Williams, Paul 1989. Mahāyāna Buddhism: The Doctrinal Foundations. Routledge."
+    notes: "Asanga, Vasubandhu, Nāgārjuna, Atiśa, Tsongkhapa, Shantideva. Distinct from mahasiddha (tantric path) and bodhisattva-mahayana (vow-category). These are the doctrinal-systematic teachers per Williams 1989."
+    aliases: []
+
+  - id: bodhisattva-mahayana
+    display: "Bodhisattva (historical Mahāyāna teacher venerated as such)"
+    tier: 1
+    figure_qualifying: true
+    source-tier: T1
+    source: "Williams 1989 *Mahāyāna Buddhism*"
+    secondary: ["Davidson 2002 *Indian Esoteric Buddhism*"]
+    notes: "BOUNDARY CASE — Davidson 2002 contests historicity of several figures placed here (Padmasambhava). Auditor A 2026-05-31 critique: don't bifurcate 'historicized' vs 'mythic' — let mahasiddha or acharya-buddhist handle most cases. Reserve this token for unambiguous-bodhisattva-veneration cases."
+    aliases: []
+
+  - id: tertön-tibetan
+    display: "Tertön (Tibetan treasure-revealer)"
+    tier: 1
+    figure_qualifying: true
+    source-tier: T1
+    source: "Cuevas, Bryan 2003. The Hidden History of the Tibetan Book of the Dead. Oxford UP."
+    notes: "Tibetan Buddhist terma-discoverer category. Padmasambhava, Karma Lingpa, Dudjom Lingpa."
+    aliases: ["tertön", "terton"]
+
+  - id: lineage-master-tibetan
+    display: "Lineage Master (Tibetan Vajrayāna)"
+    tier: 1
+    figure_qualifying: true
+    source-tier: T1
+    source: "Samuel, Geoffrey 1993. Civilized Shamans: Buddhism in Tibetan Societies. Smithsonian."
+    notes: "Generic Tibetan Vajrayāna lineage-holder when no specific category applies."
+    aliases: []
+
+  - id: guru-sikh
+    display: "Guru (Sikh — one of the Ten)"
+    tier: 1
+    figure_qualifying: true
+    source-tier: T1
+    source: "McLeod, W.H. 1989. Who Is a Sikh? Oxford UP."
+    notes: "**STRICTLY the 10 Sikh Gurus** (Nanak through Gobind Singh, 1469-1708). Lineage ended with Guru Granth Sahib as the 11th and eternal Guru. **DO NOT extend to modern claimants** (Sant Mat / Radha Soami / Dera Sacha Sauda figures — those go into polemical-framing as Sikh-rejected per insider doctrine)."
+    aliases: ["Sikh Guru"]
+
+  - id: guru-hindu
+    display: "Guru (Hindu — modern lineage teacher)"
+    tier: 1
+    figure_qualifying: true
+    source-tier: T1
+    source: "Copeman & Ikegame 2012 *The Guru in South Asia*. Routledge."
+    secondary: ["Mlecko 1982 'The Guru in Hindu Tradition' Numen 29(1)."]
+    notes: "Modern Hindu guru lineages — Ramakrishna, Vivekananda, Aurobindo, Ramana Maharshi, Yogananda, Sai Baba (Shirdi + Sathya), Anandamayi Ma, Nityananda, Muktananda, Mata Amritanandamayi. Per Auditor B 2026-05-31: distinct from guru-sikh; Hindu insiders expect their own token."
+    aliases: ["Hindu guru", "sadguru"]
+
+  - id: rishi-vedic
+    display: "Ṛṣi (Vedic seer)"
+    tier: 1
+    figure_qualifying: true
+    source-tier: T1
+    source: "Witzel, Michael 1997. Inside the Texts, Beyond the Texts. Harvard Oriental Series."
+    secondary: ["Jamison & Brereton 2014. The Rigveda. Oxford UP."]
+    notes: "Vedic mantra-drashtara. The Saptarishi, Vasishtha, Vishvamitra, Atri, Bharadvaja. **Distinct from prophet-abrahamic AND acharya-hindu** — receives śruti, not revelation in the Abrahamic sense. Tradition-internal Vedic-Hindu category per Witzel 1997."
+    aliases: ["rishi", "ṛṣi", "Vedic seer"]
+
+  - id: oracle
+    display: "Oracle (mantic site-specific consulter-of-deity)"
+    tier: 1
+    figure_qualifying: true
+    source-tier: T1
+    source: "Parke & Wormell 1956. The Delphic Oracle. Blackwell."
+    secondary: ["Burkert, Walter 1985. Greek Religion. Harvard UP. §III.8."]
+    notes: "Pythia of Delphi, Sibyls, Etruscan haruspices. **Distinct from prophet** (prophet = revelation-bearer; oracle = consultation-mantic). Per Auditor A 2026-05-31: treating Pythia as prophet-abrahamic reproduces the Christian-universal flattening Asad 1993 warns against."
+    aliases: ["oracle"]
+
+  - id: diviner
+    display: "Diviner (sign-reader religious specialist)"
+    tier: 1
+    figure_qualifying: true
+    source-tier: T1
+    source: "Tedlock, Barbara 1992. Time and the Highland Maya. University of New Mexico Press."
+    notes: "Reads-signs religious specialist. Mesoamerican daykeepers, Yijing diviners. Distinct from oracle (which speaks for a god) and from babalawo (which is Ifá-specific and gets its own tradition-specific token below)."
+    aliases: ["diviner"]
+
+  # ────────────────────────────────────────────────────────────────────────
+  # TIER 2 — Religious authority (multi-tradition disambiguated)
+  # ────────────────────────────────────────────────────────────────────────
+
+  # Christian
+  - id: pope-roman-catholic
+    display: "Pope (Roman Catholic, Bishop of Rome)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Duffy, Eamon 2014. Saints and Sinners: A History of the Popes (4th ed.). Yale UP."
+    notes: "Strictly the Roman Catholic Pope. NOT to be conflated with pope-coptic (Pope of Alexandria, Coptic Orthodox)."
+    aliases: ["Pope", "Roman Catholic Pope", "Bishop of Rome", "Roman Pontiff"]
+
+  - id: pope-coptic
+    display: "Pope (Coptic Orthodox, Pope of Alexandria)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Watson, John H. 2000. Coptic Egypt. Mowbray."
+    notes: "Tawadros II is the 118th Pope of Alexandria. Institutionally distinct from pope-roman-catholic. Per Auditor B 2026-05-31."
+    aliases: ["Pope of Alexandria", "Coptic Pope"]
+
+  - id: patriarch-hebrew
+    display: "Patriarch (Hebrew — Abraham / Isaac / Jacob)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Sarna, Nahum 1989. JPS Torah Commentary: Genesis. Jewish Publication Society."
+    notes: "Genesis patriarchs (and matriarchs by tradition extension). Multi-tradition homograph: distinct from patriarch-christian-orthodox + patriarch-jewish-late-antique + patriarch-oriental-orthodox."
+    aliases: []
+
+  - id: patriarch-jewish-late-antique
+    display: "Patriarch (Late-Antique Jewish Patriarchate of Palestine)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Goodman, Martin 1983. State and Society in Roman Galilee. Rowman & Allanheld."
+    notes: "Nasi of the Patriarchate (Hillel-the-Elder through Gamaliel VI, ca. 30 BCE–425 CE). Multi-tradition homograph: distinct from patriarch-hebrew + patriarch-christian-orthodox."
+    aliases: ["Nasi"]
+
+  - id: patriarch-christian-orthodox
+    display: "Patriarch (Eastern Orthodox)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Brown, Peter 1981. The Cult of the Saints. University of Chicago Press."
+    notes: "Eastern Orthodox sees: Constantinople (Ecumenical Patriarch — first-among-equals), Antioch, Alexandria-Greek, Jerusalem, Moscow + autocephalous heads. Multi-tradition homograph."
+    aliases: ["Patriarch of Constantinople", "Ecumenical Patriarch", "Patriarch of Antioch"]
+
+  - id: patriarch-oriental-orthodox
+    display: "Patriarch (Oriental Orthodox — Armenian / Syriac / Ethiopian / Eritrean)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Pummer, Reinhard 2016. The Samaritans: A Profile. Eerdmans. (also: Meinardus 2002 *Two Thousand Years of Coptic Christianity*)"
+    notes: "Non-Chalcedonian Oriental Orthodox patriarchates. Distinct from catholicos for Armenian Apostolic + Assyrian Church of the East which have their own title-tradition."
+    aliases: []
+
+  - id: catholicos
+    display: "Catholicos (Armenian Apostolic + Assyrian Church of the East)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Brock, Sebastian P. 2004. The Hidden Pearl: The Syrian Orthodox Church and its Ancient Aramaic Heritage. Trans World Film. (and tradition-internal references)"
+    notes: "Autocephalous non-Chalcedonian sees (Etchmiadzin, Cilicia, Selemiyeh). Per Auditor B 2026-05-31: distinct title-tradition; cannot be forced into patriarch-christian-orthodox."
+    aliases: ["Catholicos"]
+
+  - id: bishop-christian
+    display: "Bishop (Christian — diocesan + theological authority)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Brown 1981 *Cult of the Saints*"
+    notes: "Generic Christian bishop category. Augustine of Hippo, Ambrose of Milan, Basil of Caesarea, etc. Multi-tradition: applies across Latin/Greek/Syriac/Armenian/Coptic episcopacy. For specific Anglican Archbishop of Canterbury level use archbishop-anglican."
+    aliases: ["bishop", "Bishop"]
+
+  - id: archbishop-christian
+    display: "Archbishop (Christian — provincial see)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Brown 1981; Hardy 1992 *Anglicanism*"
+    notes: "Generic Christian archbishop category."
+    aliases: ["archbishop", "Archbishop"]
+
+  - id: archbishop-anglican
+    display: "Archbishop (Anglican — Canterbury / York)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Hardy, Daniel W. 1992. Anglicanism. (in The Study of Anglicanism, ed. Sykes & Booty)"
+    notes: "Senior Anglican Communion role. Specifically Canterbury or York. Per Auditor B 2026-05-31 — Anglican insiders expect this disambiguation."
+    aliases: ["Archbishop of Canterbury"]
+
+  - id: pastor-protestant
+    display: "Pastor (Protestant ordained minister)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Niebuhr, H. Richard 1956. The Purpose of the Church and Its Ministry. Harper."
+    notes: "Lutheran, Reformed, Calvinist, Methodist, etc. ordained ministry. Bonhoeffer, Niebuhr (Reinhold), Tillich-as-pastor, Schleiermacher. Per Auditor A + C 2026-05-31: v2 was missing this entirely; defaulted Protestant pastors to bishop-christian (wrong)."
+    aliases: ["Protestant pastor", "Lutheran pastor", "minister"]
+
+  - id: evangelist-gospel-attributed
+    display: "Evangelist (the four Gospel-attributed authors)"
+    tier: 3
+    figure_qualifying: true
+    source-tier: T1
+    source: "Brown, Raymond E. 1997. An Introduction to the New Testament. Doubleday."
+    notes: "Strictly Mark, Matthew, Luke, John as Gospel-authors. Distinct from evangelist-revivalist (Wesley, Whitefield, Graham). Per Auditor B 2026-05-31: term has dual usage; split required."
+    aliases: ["evangelist (Gospel author)", "Mark the Evangelist", "Luke the Evangelist"]
+
+  - id: evangelist-revivalist
+    display: "Evangelist (Protestant revivalist preacher)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Hatch, Nathan O. 1989. The Democratization of American Christianity. Yale UP."
+    notes: "Wesley, Whitefield, Charles Finney, D.L. Moody, Billy Graham, etc."
+    aliases: ["revivalist preacher", "evangelist (revivalist)"]
+
+  - id: doctor-of-the-church
+    display: "Doctor of the Church (Catholic ecclesiastical honor)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "McBrien, Richard P. 1995. Encyclopedia of Catholicism. HarperSanFrancisco."
+    notes: "Specific Catholic honor: 37 figures formally proclaimed Doctors of the Church (Aquinas, Augustine, Bonaventure, Teresa of Ávila, Thérèse, Hildegard, etc.). Per Auditor B 2026-05-31: insider-weighted higher than generic theologian; SITS ALONGSIDE theologian in multi-role array (Aquinas = [doctor-of-the-church, theologian, philosopher-religious, monastic-christian-western])."
+    aliases: ["Doctor of the Church", "Doctor Ecclesiae"]
+
+  # Islamic
+  - id: caliph-sunni
+    display: "Caliph (Sunni)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Crone 2004 *God's Rule*"
+    notes: "Sunni framing of legitimate succession. **Shia rejects caliphal legitimacy** (the four Rashidun caliphs aside; the Imam-line is the parallel Shia category). Multi-tradition acknowledgment encoded in vocab notes."
+    aliases: ["caliph", "Caliph", "Rashidun caliph", "Umayyad caliph", "Abbasid caliph"]
+
+  - id: imam-twelver
+    display: "Imam (Twelver Shia)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Momen, Moojan 1985. An Introduction to Shīʿī Islam. Yale UP."
+    notes: "**STRICTLY the Twelve Imams** (Ali ibn Abi Talib through Muhammad al-Mahdi). Multi-tradition homograph: distinct from imam-ismaili-nizari, imam-ismaili-mustali, imam-zaydi, imam-prayer-leader."
+    aliases: ["Twelver Imam"]
+
+  - id: imam-ismaili-nizari
+    display: "Imam (Nizari Ismaili — Aga Khan lineage)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Daftary, Farhad 2007. The Ismāʿīlīs: Their History and Doctrines (2nd ed.). Cambridge UP."
+    notes: "Living lineage continuing through the Aga Khans. Diverges from Twelver succession after Ja'far al-Sadiq. ~15M global Nizari Ismailis. Per Auditor B 2026-05-31: missing entirely from v2."
+    aliases: ["Aga Khan", "Nizari Imam"]
+
+  - id: imam-ismaili-mustali
+    display: "Imam (Mustali Ismaili — Bohra lineage)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Daftary 2007 *The Ismāʿīlīs*"
+    notes: "Bohra (Tayyibi) Ismaili lineage. Fatimid Imam-Caliphs (Mu'izz, Hakim, Mustansir). Distinct from imam-ismaili-nizari."
+    aliases: ["Bohra Imam", "Fatimid Imam-Caliph"]
+
+  - id: imam-zaydi
+    display: "Imam (Zaydi — Yemen)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Madelung, Wilferd 1965. Der Imam al-Qāsim ibn Ibrāhīm und die Glaubenslehre der Zaiditen. De Gruyter."
+    notes: "Yemen Zaydi imamate (ruled 897-1962). Per Auditor B 2026-05-31."
+    aliases: ["Zaydi Imam"]
+
+  - id: imam-prayer-leader
+    display: "Imam (Islamic prayer-leader, generic)"
+    tier: 2
+    figure_qualifying: false
+    source-tier: T1
+    source: "Bowker 1997 entry 'imam'"
+    notes: "General prayer-leadership role. **Not figure-qualifying alone** — needs to combine with another role for Figures lens. Distinct from imam-{twelver,ismaili-nizari,ismaili-mustali,zaydi} which ARE figure-qualifying."
+    aliases: []
+
+  - id: ayatollah-twelver
+    display: "Ayatollah (modern Twelver mujtahid)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Momen 1985 *An Introduction to Shīʿī Islam*"
+    notes: "Modern Twelver senior mujtahid title. Khomeini, Sistani, Khamenei, Khoei."
+    aliases: ["Ayatollah", "Grand Ayatollah", "Marja"]
+
+  - id: mujtahid
+    display: "Mujtahid (Islamic independent jurist)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Hallaq, Wael 1984. 'Was the Gate of Ijtihad Closed?' International Journal of Middle East Studies 16(1)."
+    notes: "Both Shia and Sunni usage."
+    aliases: []
+
+  - id: sufi-shaykh
+    display: "Shaykh (Sufi master)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Schimmel, Annemarie 1975. Mystical Dimensions of Islam. UNC Press."
+    notes: "Sufi tariqa master. Rumi, Ibn ʿArabī, al-Ghazālī (also theologian + jurist-islamic), Junayd, Hallaj. For boundary-Sufi cases (Schuon, Guénon) flag as confidence: medium per Sedgwick 2004."
+    aliases: ["Sufi shaykh", "Sufi master", "tariqa founder"]
+
+  - id: sufi-pir
+    display: "Pir (Persianate Sufi master)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Schimmel 1975 *Mystical Dimensions of Islam*"
+    notes: "Persianate-tradition Sufi master title. Often used interchangeably with shaykh; some traditions specifically pir."
+    aliases: ["pir"]
+
+  - id: jurist-islamic
+    display: "Jurist (Islamic fiqh)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Hallaq, Wael 2009. An Introduction to Islamic Law. Cambridge UP."
+    notes: "Al-Shafi'i, Abu Hanifa, Malik, Ibn Hanbal (the four Sunni eponyms), Ja'far al-Sadiq (Twelver eponym)."
+    aliases: ["fiqh jurist", "Islamic jurist"]
+
+  - id: mufti
+    display: "Mufti (Islamic legal-opinion issuer)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Hallaq 2009 *Introduction to Islamic Law*"
+    notes: "Issuer of fatwas. Ottoman Shaykh al-Islam, modern Grand Muftis."
+    aliases: ["Mufti", "Grand Mufti"]
+
+  - id: qadi
+    display: "Qadi (Islamic judge)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Hallaq 2009"
+    notes: "Islamic judge in sharia courts. Distinct from mufti (opinion-issuer) and jurist-islamic (jurisprudence-theorist)."
+    aliases: ["qadi"]
+
+  - id: uqqal-druze
+    display: "ʿUqqāl (Druze religious authority)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Firro, Kais 1992. A History of the Druzes. Brill."
+    notes: "Druze *ʿuqqāl* / shaykh al-ʿaql. **Druze is not Islam-internal in insider self-understanding** (separate Tawhid faith). Per Auditor B 2026-05-31."
+    aliases: ["uqqal", "shaykh al-aql"]
+
+  - id: dede-alevi
+    display: "Dede (Alevi religious authority)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Shankland, David 2003. The Alevis in Turkey. Routledge."
+    notes: "Alevi religious leader (dede / pir). **Alevism explicitly rejects classification as Sufism.** Per Auditor B 2026-05-31."
+    aliases: ["dede"]
+
+  # Jewish
+  - id: rabbi-tannaitic
+    display: "Rabbi (Tannaitic, 1st-2nd c. CE)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Neusner, Jacob 1973. From Politics to Piety: The Emergence of Pharisaic Judaism. Prentice-Hall."
+    notes: "Mishnaic-period sages: Hillel, Shammai, Akiva, Yochanan ben Zakkai, Meir, Judah ha-Nasi. Multi-tradition homograph."
+    aliases: ["Tannai", "Tannaitic rabbi"]
+
+  - id: rabbi-amoraic
+    display: "Rabbi (Amoraic, 3rd-5th c. CE)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Neusner 1973; Strack & Stemberger 1991. Introduction to the Talmud and Midrash. T&T Clark."
+    notes: "Talmudic-period sages. Rav, Samuel, Yochanan, Abbaye, Rava."
+    aliases: ["Amora", "Amoraim", "Talmudic sage"]
+
+  - id: rabbi-medieval
+    display: "Rabbi (Geonic + Rishonim, 6th-15th c.)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Brody, Robert 1998. The Geonim of Babylonia and the Shaping of Medieval Jewish Culture. Yale UP."
+    notes: "Saadia Gaon, Rashi, Maimonides (also rabbi-medieval AND jurist-jewish AND philosopher-religious), Nachmanides, Ibn Ezra."
+    aliases: []
+
+  - id: rabbi-modern
+    display: "Rabbi (modern Orthodox / Conservative / Reform)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Sarna, Jonathan D. 2004. American Judaism: A History. Yale UP."
+    notes: "Post-Emancipation. Hirsch (Modern Orthodox), Frankel (positive-historical / Conservative), Geiger (Reform), Soloveitchik."
+    aliases: []
+
+  - id: zaddik-hasidic
+    display: "Tzaddik (Hasidic charismatic-mystical leader)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Idel, Moshe 1995. Hasidism: Between Ecstasy and Magic. SUNY Press."
+    secondary: ["Etkes, Immanuel 2005. The Besht: Magician, Mystic, and Leader. Brandeis UP."]
+    notes: "Baal Shem Tov, Maggid of Mezeritch, Nachman of Breslov. **Categorically distinct from rabbi-medieval / rabbi-modern** (different role, not just period). Per Auditor A 2026-05-31."
+    aliases: ["tzaddik", "tsaddik"]
+
+  - id: rebbe-hasidic
+    display: "Rebbe (Hasidic dynastic head)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Idel 1995; Heilman & Friedman 2010. The Rebbe: The Life and Afterlife of Menachem Mendel Schneerson. Princeton UP."
+    notes: "Lubavitcher, Bobover, Satmar, Belz dynastic-head. Alias of zaddik-hasidic for institutional usage."
+    aliases: ["Rebbe", "Hasidic Rebbe"]
+
+  - id: high-priest-israelite
+    display: "High Priest (Israelite Aaronic line)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Goodenough, Erwin R. 1953-1968. Jewish Symbols in the Greco-Roman Period. Bollingen."
+    aliases: ["High Priest", "Aaron"]
+
+  - id: gaon
+    display: "Gaon (Geonic-period yeshiva head)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Brody 1998 *The Geonim of Babylonia*"
+    notes: "Sura + Pumbedita yeshiva heads, 6th-11th c."
+    aliases: ["Gaon"]
+
+  - id: kabbalist
+    display: "Kabbalist"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Scholem, Gershom 1941. Major Trends in Jewish Mysticism. Schocken."
+    notes: "Cordovero, Luria, Vital (Lurianic transmitter), Abulafia, Moses de León."
+    aliases: ["kabbalist", "Kabbalist"]
+
+  # Buddhist
+  - id: dalai-lama
+    display: "Dalai Lama (Gelug incarnation lineage)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Powers, John 2007. Introduction to Tibetan Buddhism (rev. ed.). Snow Lion."
+    aliases: ["Dalai Lama"]
+
+  - id: panchen-lama
+    display: "Panchen Lama (second-highest Gelug)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Powers 2007 *Introduction to Tibetan Buddhism*"
+    notes: "PRC-Beijing-disputed succession. Per Auditor B 2026-05-31."
+    aliases: ["Panchen Lama"]
+
+  - id: karmapa
+    display: "Karmapa (Karma Kagyu head)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Powers 2007"
+    notes: "17th Karmapa succession disputed. Per Auditor B 2026-05-31."
+    aliases: ["Karmapa"]
+
+  - id: sakya-trizin
+    display: "Sakya Trizin (Sakya school head)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Powers 2007"
+    aliases: ["Sakya Trizin"]
+
+  - id: nyingma-head
+    display: "Nyingma school head (Mindrolling Trichen / etc.)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Powers 2007"
+    aliases: ["Mindrolling Trichen"]
+
+  - id: rinpoche
+    display: "Rinpoche (Tibetan honorific)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T2
+    source: "Powers 2007 *Introduction to Tibetan Buddhism*"
+    notes: "Generic incarnation-lineage honorific. Per Auditor B 2026-05-31: more honorific than role-category; ideally combined with more specific token (tulku, lineage-master-tibetan)."
+    aliases: ["Rinpoche"]
+
+  - id: tulku
+    display: "Tulku (Tibetan recognized-incarnation)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Powers 2007"
+    aliases: []
+
+  - id: lama
+    display: "Lama (Tibetan religious teacher, generic)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T2
+    source: "Powers 2007"
+    notes: "Most general Tibetan-Buddhist teacher term. Combine with more specific role where possible."
+    aliases: ["lama"]
+
+  - id: je-khenpo
+    display: "Je Khenpo (Bhutanese Drukpa head)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Pommaret, Françoise 2003. Bhutan: Mountain Fortress of the Gods. Shambhala."
+    aliases: []
+
+  - id: roshi
+    display: "Rōshi (Zen master, Japanese form)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Dumoulin, Heinrich 2005. Zen Buddhism: A History. Vol. 2: Japan. World Wisdom."
+    notes: "Suzuki Shunryū, Yamada, Aitken, Hakuin (also acharya-buddhist + chan-patriarch alias). Per Auditor B 2026-05-31: missing from v2."
+    aliases: ["roshi", "rōshi", "Zen master (Japanese)"]
+
+  - id: zen-master
+    display: "Zen master (generic Zen / Chan)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Dumoulin, Heinrich 2005. Zen Buddhism: A History. World Wisdom."
+    notes: "Generic Zen/Chan category. Bodhidharma, Huineng, Dōgen, Hakuin."
+    aliases: ["Zen master"]
+
+  - id: chan-patriarch
+    display: "Chan Patriarch (Chinese Chan lineage)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "McRae, John 2003. Seeing through Zen. UC Press."
+    notes: "Bodhidharma + the Six Patriarchs. Distinct from zen-master (broader category)."
+    aliases: []
+
+  - id: sangharaja
+    display: "Sangharaja (Theravada supreme patriarch)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Tambiah, Stanley 1976. World Conqueror and World Renouncer. Cambridge UP."
+    notes: "Thai, Cambodian, Lao supreme monastic head. Per Auditor B 2026-05-31."
+    aliases: ["Sangharaja", "Supreme Patriarch"]
+
+  - id: mahanayaka
+    display: "Mahanayaka (Sri Lankan Theravada monastic head)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Malalgoda, Kitsiri 1976. Buddhism in Sinhalese Society. UC Press."
+    aliases: []
+
+  - id: bhikkhu-theravada
+    display: "Bhikkhu (Theravada monk, when individually significant)"
+    tier: 3
+    figure_qualifying: true
+    source-tier: T1
+    source: "Gethin, Rupert 1998. The Foundations of Buddhism. Oxford UP."
+    notes: "Buddhaghosa, Ajahn Chah, Ajahn Mun, Buddhadasa."
+    aliases: []
+
+  - id: bhikshu-mahayana
+    display: "Bhikṣu (Mahayana monk)"
+    tier: 3
+    figure_qualifying: true
+    source-tier: T1
+    source: "Gethin 1998"
+    aliases: []
+
+  - id: bhikkhuni-theravada
+    display: "Bhikkhuni (Theravada nun)"
+    tier: 3
+    figure_qualifying: true
+    source-tier: T1
+    source: "Gethin 1998"
+    aliases: []
+
+  - id: bhikshuni-mahayana
+    display: "Bhikṣuṇī (Mahayana nun)"
+    tier: 3
+    figure_qualifying: true
+    source-tier: T1
+    source: "Gethin 1998"
+    aliases: []
+
+  - id: arhat-buddhist
+    display: "Arhat (Theravada enlightened-disciple, when historical)"
+    tier: 3
+    figure_qualifying: true
+    source-tier: T1
+    source: "Gombrich, Richard 1988. Theravāda Buddhism. Routledge."
+    notes: "Theravada path-attainment category. Distinct from bodhisattva-mahayana (different soteriology). Per Auditor B 2026-05-31: Theravadin insiders accept this split as doctrinally correct."
+    aliases: ["arhat", "arahant"]
+
+  # Hindu (modern + classical lineages beyond Tier 1 acharya-hindu)
+  - id: alvar
+    display: "Āḻvār (Tamil Vaishnava saint-poet)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Hardy, Friedhelm 1983. Viraha-Bhakti: The Early History of Kṛṣṇa Devotion in South India. Oxford UP."
+    notes: "The 12 Alvars (Nammalvar, Andal, Periyalvar, etc.). Tamil-Vaishnava-specific. Per Auditor B 2026-05-31."
+    aliases: ["alvar", "Āḻvār"]
+
+  - id: nayanar
+    display: "Nāyaṉār (Tamil Shaiva saint-poet)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Peterson, Indira V. 1989. Poems to Śiva: The Hymns of the Tamil Saints. Princeton UP."
+    notes: "The 63 Nayanars. Tamil-Shaiva-specific. Distinct from alvar."
+    aliases: ["nayanar", "Nāyaṉār"]
+
+  - id: bhakti-saint
+    display: "Bhakti saint (pan-sampradaya devotional poet)"
+    tier: 3
+    figure_qualifying: true
+    source-tier: T1
+    source: "Hawley, John Stratton 2015. A Storm of Songs: India and the Idea of the Bhakti Movement. Harvard UP."
+    notes: "Mirabai, Tukaram, Surdas, Tulsidas, Eknath. Distinct from alvar (Tamil-Vaishnava-specific) and sant (Sant-Mat-Nirguna)."
+    aliases: ["bhakti poet", "bhakti saint"]
+
+  - id: sant
+    display: "Sant (Sant-Mat Nirguna devotional teacher)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Schomer, Karine and McLeod, W.H. (eds.) 1987. The Sants: Studies in a Devotional Tradition of India. Motilal Banarsidass."
+    notes: "Kabir, Ravidas, Dadu, Nanak (also guru-sikh). Distinct from bhakti-saint (Saguna-bhakti vs. Sant-Mat-Nirguna)."
+    aliases: ["sant"]
+
+  - id: swami
+    display: "Swami (Hindu sannyasin monastic title)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Olivelle, Patrick 1992. Saṃnyāsa Upaniṣads. Oxford UP."
+    notes: "Sannyasin-rank monastic honorific."
+    aliases: ["Swami", "swami"]
+
+  - id: paramahamsa
+    display: "Paramahamsa (Hindu monastic honorific)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Olivelle 1992 *Saṃnyāsa Upaniṣads*"
+    notes: "Ramakrishna Paramahamsa, Yogananda Paramahamsa. Highest sannyasin level."
+    aliases: ["Paramahamsa"]
+
+  - id: tantric-acharya
+    display: "Tantric Ācārya (Trika Shaiva / Tantric)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Sanderson, Alexis 1988. 'Saivism and the Tantric Traditions.' In The World's Religions, ed. Sutherland et al. Routledge."
+    notes: "Abhinavagupta, Utpaladeva, Kshemaraja, Somananda. Trika Shaiva Kashmiri lineage."
+    aliases: []
+
+  - id: siddha-hindu
+    display: "Siddha (Tamil / Nath Hindu)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "White, David Gordon 1996. The Alchemical Body. University of Chicago Press."
+    notes: "Tamil siddhas (Tirumular, Bhogar), Nath siddhas (Gorakhnath, Matsyendranath — boundary with mahasiddha). Distinct from mahasiddha (Buddhist tantric)."
+    aliases: ["siddha"]
+
+  - id: mahatma
+    display: "Mahātmā (specific Hindu honorific)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Klostermaier 2007"
+    notes: "Narrow usage. Gandhi-Mahatma. NOT a general religious-leadership category."
+    aliases: ["Mahatma"]
+
+  # Zoroastrian
+  - id: magus-zoroastrian
+    display: "Magus (Zoroastrian priest)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Boyce, Mary 1979. Zoroastrians: Their Religious Beliefs and Practices. Routledge."
+    notes: "**Distinct from `magician` polemic.** The Magi as Zoroastrian priestly class."
+    aliases: ["Magus", "Magi"]
+
+  - id: mobed
+    display: "Mobed (Zoroastrian priest)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Boyce 1979 *Zoroastrians*"
+    aliases: ["mobed"]
+
+  - id: dastur
+    display: "Dastur (senior mobed)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Boyce 1979"
+    aliases: []
+
+  # Chinese / Daoist / Confucian / Shinto
+  - id: daoshi
+    display: "Daoshi (Daoist priest)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Schipper, Kristofer 1993. The Taoist Body. UC Press."
+    aliases: ["daoshi", "Daoist priest"]
+
+  - id: zhenren
+    display: "Zhenren (Daoist perfected-person)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Schipper 1993 *The Taoist Body*"
+    aliases: ["zhenren"]
+
+  - id: tianshi
+    display: "Tianshi (Celestial Master — Zhang Daoling lineage)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Kleeman, Terry 2016. Celestial Masters: History and Ritual in Early Daoist Communities. Harvard UP."
+    aliases: ["Celestial Master", "Tianshi"]
+
+  - id: ru-scholar
+    display: "Ru scholar (Confucian ritual-scholar)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Csikszentmihalyi, Mark 2004. Material Virtue: Ethics and the Body in Early China. Brill."
+    aliases: ["Ru scholar"]
+
+  - id: junzi-classical
+    display: "Junzi (classical Confucian exemplary-person)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Csikszentmihalyi 2004 *Material Virtue*"
+    notes: "Insider Confucian category. Mencius, Xunzi, Confucius (also founder + sage-chinese-ru)."
+    aliases: ["junzi"]
+
+  - id: kannushi
+    display: "Kannushi (Shinto priest)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Picken, Stuart D.B. 1994. Essentials of Shinto. Greenwood."
+    aliases: ["kannushi", "Shinto priest"]
+
+  - id: miko
+    display: "Miko (Shinto shrine maiden / shamaness)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Picken 1994 *Essentials of Shinto*"
+    aliases: ["miko"]
+
+  # Yoruba / Diasporic African
+  - id: babalawo
+    display: "Babaláwo (Ifá priest, male)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Bascom, William 1969. Ifa Divination: Communication between Gods and Men in West Africa. Indiana UP."
+    aliases: ["babalawo", "babaláwo", "Ifá priest"]
+
+  - id: iyalawo
+    display: "Iyalawo / Iyanifa (Ifá priestess, female)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Bascom 1969 *Ifa Divination*"
+    aliases: ["iyalawo", "iyanifa"]
+
+  - id: oluwo
+    display: "Olúwo (senior babalawo)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Bascom 1969"
+    aliases: []
+
+  - id: oba-yoruba
+    display: "Oba (Yoruba sacred kingship)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Apter, Andrew 1992. Black Critics and Kings: The Hermeneutics of Power in Yoruba Society. University of Chicago Press."
+    notes: "Ooni of Ife, Alaafin of Oyo. **Religious office, not merely political.** Per Auditor B 2026-05-31."
+    aliases: ["Oba"]
+
+  - id: houngan
+    display: "Houngan (Vodou priest, male)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Métraux, Alfred 1959. Voodoo in Haiti. Oxford UP."
+    aliases: ["houngan"]
+
+  - id: mambo
+    display: "Mambo (Vodou priest, female)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Métraux 1959 *Voodoo in Haiti*"
+    aliases: ["mambo"]
+
+  - id: bokor
+    display: "Bokor (Vodou sorcerer — contested tradition)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T3
+    source: "Hurston, Zora Neale 1938. Tell My Horse. Lippincott."
+    notes: "Contested-tradition figure; some insider houngans reject bokor as legitimate Vodou role. Flag at source-tier: T3."
+    aliases: []
+
+  - id: babalorixa
+    display: "Babalorixá (Candomblé priest, male)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Bastide, Roger 1978. The African Religions of Brazil. Johns Hopkins UP."
+    aliases: ["babalorixá"]
+
+  - id: iyalorixa
+    display: "Iyalorixá (Candomblé priest, female)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Bastide 1978"
+    aliases: ["iyalorixá"]
+
+  - id: santero
+    display: "Santero / Santera (Lukumí Santería priest)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Brandon, George 1993. Santeria from Africa to the New World. Indiana UP."
+    aliases: ["santero", "santera"]
+
+  - id: nganga
+    display: "Nganga (Kongo / Palo religious specialist)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "MacGaffey, Wyatt 1986. Religion and Society in Central Africa: The BaKongo of Lower Zaire. UCP."
+    aliases: []
+
+  - id: bobo-ashanti-priest
+    display: "Bobo Ashanti priest (Rastafari)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Chevannes, Barry 1994. Rastafari: Roots and Ideology. Syracuse UP."
+    aliases: []
+
+  - id: nyahbinghi-elder
+    display: "Nyahbinghi elder (Rastafari)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Chevannes 1994 *Rastafari*"
+    aliases: []
+
+  # Indigenous
+  - id: wichasha-wakan
+    display: "Wičháša Wakȟáŋ (Lakota holy person)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Powers, William K. 1977. Oglala Religion. University of Nebraska Press."
+    notes: "Lakota insider language. Black Elk, Sitting Bull (also chief)."
+    aliases: ["wičháša wakȟáŋ", "Lakota holy man", "Lakota holy person"]
+
+  - id: medicine-person
+    display: "Medicine person (Native American, generic — tradition-specific tokens preferred)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Hultkrantz, Åke 1979. The Religions of the American Indians. UC Press."
+    notes: "Acknowledged contact-tradition English term. Per Auditor B 2026-05-31: use tradition-specific tokens (wichasha-wakan, etc.) where available; medicine-person as fallback."
+    aliases: ["medicine man", "medicine woman", "medicine person"]
+
+  - id: tohunga
+    display: "Tohunga (Maori expert/priest)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Royal, Te Ahukaramū Charles 1998. Te Ngākau: He Wāhanga Iti nō Te Ao Tūroa. Te Whare Wānanga o Awanuiārangi."
+    aliases: ["tohunga"]
+
+  - id: kahuna
+    display: "Kahuna (Hawaiian priest/expert)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Kamakau, Samuel 1991. Ka Po'e Kahiko: The People of Old. Bishop Museum Press."
+    aliases: ["kahuna"]
+
+  - id: angakkuq
+    display: "Angakkuq (Inuit shamanistic specialist)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Saladin d'Anglure, Bernard 2007. Être et renaître inuit, homme, femme ou chamane. Gallimard."
+    notes: "Inuit-native term. 'Shaman' is Evenki/Tungusic and not Inuit-internal; Vine Deloria Jr. critiques the universalizing 'shaman' category. Use tradition-specific tokens where available."
+    aliases: ["angakkuq", "angakok"]
+
+  - id: noaidi
+    display: "Noaidi (Sámi shaman)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Pentikäinen, Juha 1989. Kalevala Mythology. Indiana UP."
+    aliases: ["noaidi"]
+
+  - id: songline-keeper
+    display: "Songline-keeper (Aboriginal Australian religious-knowledge custodian)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Stanner, W.E.H. 1979. White Man Got No Dreaming: Essays 1938-1973. ANU Press."
+    aliases: ["lawman", "Aboriginal lawman", "songline-keeper"]
+
+  - id: clan-mother-haudenosaunee
+    display: "Clan Mother (Haudenosaunee)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Wallace, Anthony F.C. 1969. The Death and Rebirth of the Seneca. Vintage."
+    aliases: []
+
+  - id: faithkeeper-haudenosaunee
+    display: "Faithkeeper (Haudenosaunee)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Wallace 1969"
+    aliases: []
+
+  - id: mudang
+    display: "Mudang (Korean shaman/shamaness)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Kendall, Laurel 1985. Shamans, Housewives, and Other Restless Spirits. University of Hawaii Press."
+    notes: "Korean Muism insider term. **Avoid 'Korean shaman' framing where mudang is the precise term.**"
+    aliases: ["mudang"]
+
+  - id: shaman-siberian
+    display: "Shaman (Siberian — Evenki/Buryat/Yakut/etc.)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Vitebsky, Piers 1995. The Shaman. Macmillan."
+    notes: "Origin tradition of the word 'shaman' (Evenki). Other 'shaman' applications are categorial extensions; use tradition-specific tokens where available."
+    aliases: []
+
+  - id: shaman-mongolian
+    display: "Shaman (Mongolian)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Heissig, Walther 1980. The Religions of Mongolia. UC Press."
+    aliases: []
+
+  # Modern Pagan / Wicca / Heathen
+  - id: priest-wiccan
+    display: "Wiccan high priest"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Hutton, Ronald 1999. The Triumph of the Moon: A History of Modern Pagan Witchcraft. Oxford UP."
+    aliases: []
+
+  - id: priestess-wiccan
+    display: "Wiccan high priestess"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Hutton 1999 *The Triumph of the Moon*"
+    notes: "Doreen Valiente, Maxine Sanders, Stewart & Janet Farrar."
+    aliases: []
+
+  - id: druid-modern
+    display: "Druid (modern, OBOD / ADF)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Bowman, Marion 2002. 'Contemporary Celtic Spirituality.' In New Directions in Celtic Studies, ed. Hale & Payton. University of Exeter Press."
+    notes: "Modern Druidic revival. **Distinct from druid-iron-age** (which is legendary/archaeological)."
+    aliases: ["modern druid"]
+
+  - id: gothi
+    display: "Goði / Gyðja (Modern Heathen / Ásatrú clergy)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Strmiska, Michael (ed.) 2005. Modern Paganism in World Cultures. ABC-CLIO."
+    aliases: ["gothi", "gythia"]
+
+  - id: priest-thelema
+    display: "Thelemic priest (O.T.O. / Ecclesia Gnostica Catholica)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Bogdan & Starr 2012 *Aleister Crowley and Western Esotericism*"
+    aliases: []
+
+  # ────────────────────────────────────────────────────────────────────────
+  # TIER 2b — Theological / philosophical / juristic authority (broad)
+  # ────────────────────────────────────────────────────────────────────────
+
+  - id: theologian
+    display: "Theologian (generic — doctrinal-systematic thinker)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Jones 2005 *Encyclopedia of Religion* entry 'Theology'"
+    notes: "Use as PRIMARY only for systematic-doctrinal theology in traditions that have a 'theology' category in their own terms (Christianity, Jewish thought, post-Mu'tazila Islam). For Hindu acharyas use acharya-hindu; Buddhist scholastics use acharya-buddhist."
+    aliases: ["theologian"]
+
+  - id: philosopher-religious
+    display: "Religious philosopher"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Jones 2005 entry 'Philosophy and Religion'"
+    notes: "Religiously-philosophical thinker. Plotinus, Plato (in religious mode), Maimonides (also rabbi-medieval + jurist-jewish)."
+    aliases: ["religious philosopher"]
+
+  - id: jurist-jewish
+    display: "Jurist (Jewish halakhic authority)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Elon, Menachem 1994. Jewish Law: History, Sources, Principles. JPS."
+    notes: "Maimonides, Caro (Shulchan Aruch), Karo, Isserles."
+    aliases: ["halakhic jurist"]
+
+  - id: sage-chinese-ru
+    display: "Sage (Chinese Ru / Confucian)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Csikszentmihalyi 2004 *Material Virtue*"
+    notes: "Confucius, Mencius, Xunzi, Zhu Xi (also philosopher-religious). **Distinct from pan-tradition 'sage'** which Auditor A 2026-05-31 demonstrated is exactly the Asad-1993 Christian-universal flattening."
+    aliases: ["Confucian sage"]
+
+  - id: presocratic-philosopher
+    display: "Pre-Socratic philosopher"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Kingsley, Peter 1995. Ancient Philosophy, Mystery, and Magic: Empedocles and the Pythagorean Tradition. Oxford UP."
+    notes: "Heraclitus, Pythagoras, Empedocles, Anaximander. Per Auditor A 2026-05-31: distinct category from 'sage'; Greek-specific."
+    aliases: ["pre-Socratic"]
+
+  - id: mystic
+    display: "Mystic (generic mystical-experience defining figure)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "McGinn, Bernard 1991-2017. The Presence of God: A History of Western Christian Mysticism. 7 vols. Crossroad."
+    notes: "Use generic mystic only when no tradition-specific token applies. Prefer wali-sufi, bhakta, jnani, kabbalist, sant-bhakti where applicable. Per Auditor A 2026-05-31."
+    aliases: ["mystic"]
+
+  - id: mystic-christian
+    display: "Mystic (Christian apophatic / experiential)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "McGinn 1991-2017"
+    notes: "Eckhart, Teresa of Ávila, John of the Cross, Julian of Norwich. Distinct from wali-sufi (which is Islamic-Sufi) and bhakta (Hindu)."
+    aliases: []
+
+  - id: mystic-syncretic
+    display: "Mystic (syncretic / non-mainstream-aligned)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T2
+    source: "Hanegraaff 2012 *Esotericism and the Academy*"
+    notes: "For cross-tradition mystics not cleanly in one school. Ramakrishna (Hindu-Sufi-Christian), Crowley (Hermetic-Thelemic), Gurdjieff."
+    aliases: []
+
+  - id: magus
+    display: "Magus (Western esoteric magical-order role)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Hanegraaff, Wouter 2012. Esotericism and the Academy. Cambridge UP."
+    notes: "Crowley (self-identified Magus per Thelemic doctrine), John Dee, Eliphas Lévi. **Distinct from `magician` polemic** (which is a polemical-framing label, not a primary role)."
+    aliases: ["Magus"]
+
+  # ────────────────────────────────────────────────────────────────────────
+  # TIER 3 — Exemplars (multi-tradition disambiguated)
+  # ────────────────────────────────────────────────────────────────────────
+
+  - id: apostle-christian
+    display: "Apostle (Christian)"
+    tier: 3
+    figure_qualifying: true
+    source-tier: T1
+    source: "Brown, Raymond E. 1997. An Introduction to the New Testament. Doubleday."
+    notes: "The Twelve + Paul + Barnabas + Mary Magdalene (Eastern Orthodox 'apostle-to-the-apostles' tradition per Brock 2003) + Junia. **John ratified Mary Magdalene as apostle-christian per Brock 2003.**"
+    aliases: ["apostle", "Apostle"]
+
+  - id: disciple-christian
+    display: "Disciple (Christian — Seventy / Seventy-two / named-non-12)"
+    tier: 3
+    figure_qualifying: true
+    source-tier: T1
+    source: "Brown 1997 *Introduction to the New Testament*"
+    aliases: ["disciple"]
+
+  - id: monastic-christian-western
+    display: "Monastic (Western Christian — Benedictine / Cistercian / Franciscan / etc.)"
+    tier: 3
+    figure_qualifying: true
+    source-tier: T1
+    source: "Wittberg, Patricia 1994. The Rise and Fall of Catholic Religious Orders. SUNY Press."
+    notes: "Anthony of Egypt (proto-monastic), Benedict of Nursia, Bernard of Clairvaux, Francis of Assisi, Dominic, Hildegard of Bingen, Therese of Lisieux."
+    aliases: ["monk (Western)", "monastic (Catholic)"]
+
+  - id: monastic-christian-eastern
+    display: "Monastic (Eastern Christian — Athonite / Russian / Coptic)"
+    tier: 3
+    figure_qualifying: true
+    source-tier: T1
+    source: "Speake, Graham 2018. Mount Athos: Renewal in Paradise. Yale UP."
+    notes: "Sergius of Radonezh, Seraphim of Sarov, Maximus the Confessor, Athonite monastics."
+    aliases: []
+
+  - id: nun-christian
+    display: "Nun (Christian)"
+    tier: 3
+    figure_qualifying: true
+    source-tier: T1
+    source: "Wittberg 1994"
+    aliases: []
+
+  - id: saint-roman-catholic
+    display: "Saint (Roman Catholic canonized)"
+    tier: 3
+    figure_qualifying: true
+    source-tier: T1
+    source: "Wetzstein, Thomas 2004. Heilige vor Gericht: Das Kanonisationsverfahren im europäischen Spätmittelalter. Böhlau."
+    notes: "Formal post-1234 papal-procedure canonization. Distinct from saint-eastern-orthodox, saint-oriental-orthodox, saint-anglican — different processes."
+    aliases: ["Roman Catholic saint"]
+
+  - id: saint-eastern-orthodox
+    display: "Saint (Eastern Orthodox glorified)"
+    tier: 3
+    figure_qualifying: true
+    source-tier: T1
+    source: "Hackel, Sergei 1981. The Orthodox Church. Penguin."
+    aliases: ["Eastern Orthodox saint"]
+
+  - id: saint-oriental-orthodox
+    display: "Saint (Oriental Orthodox — Coptic / Ethiopian / Syriac / Armenian)"
+    tier: 3
+    figure_qualifying: true
+    source-tier: T1
+    source: "Meinardus, Otto 2002. Two Thousand Years of Coptic Christianity. AUC Press."
+    aliases: ["Coptic saint", "Ethiopian saint"]
+
+  - id: saint-anglican
+    display: "Saint (Anglican commemoration)"
+    tier: 3
+    figure_qualifying: true
+    source-tier: T1
+    source: "Hardy 1992 *Anglicanism*"
+    aliases: []
+
+  - id: wali-sufi
+    display: "Walī (Sufi 'friend of God')"
+    tier: 3
+    figure_qualifying: true
+    source-tier: T1
+    source: "Schimmel 1975 *Mystical Dimensions of Islam*"
+    notes: "Muslim 'friend of God' — Sufi tradition. Distinct from saint-* (Christian canonization processes)."
+    aliases: ["wali"]
+
+  - id: sant-bhakti
+    display: "Sant (Hindu Bhakti tradition — holy person)"
+    tier: 3
+    figure_qualifying: true
+    source-tier: T1
+    source: "Hawley 2015 *A Storm of Songs*"
+    notes: "Bhakti-tradition holy person framing. Often overlaps with bhakti-saint."
+    aliases: []
+
+  - id: kevali
+    display: "Kevali (Jain enlightened being)"
+    tier: 3
+    figure_qualifying: true
+    source-tier: T1
+    source: "Dundas 2002 *The Jains*"
+    aliases: []
+
+  - id: martyr-christian
+    display: "Martyr (Christian)"
+    tier: 3
+    figure_qualifying: true
+    source-tier: T1
+    source: "Bowersock, G.W. 1995. Martyrdom and Rome. Cambridge UP."
+    notes: "Acta Martyrum tradition. Distinct from martyr-shia + martyr-sikh-shahid + martyr-bahai + martyr-sunni — different theological frames."
+    aliases: ["Christian martyr"]
+
+  - id: martyr-shia
+    display: "Martyr (Shia)"
+    tier: 3
+    figure_qualifying: true
+    source-tier: T1
+    source: "Ayoub, Mahmoud 1978. Redemptive Suffering in Islām: A Study of the Devotional Aspects of ʿĀshūrāʾ in Twelver Shīʿism. Mouton."
+    notes: "Imam Husayn at Karbala = foundational martyrdom paradigm. ʿĀshūrāʾ ritual."
+    aliases: ["Shia martyr", "Karbala martyr"]
+
+  - id: martyr-sunni
+    display: "Martyr (Sunni shahīd)"
+    tier: 3
+    figure_qualifying: true
+    source-tier: T1
+    source: "Cook, David 2007. Martyrdom in Islam. Cambridge UP."
+    aliases: ["Sunni martyr", "shahīd"]
+
+  - id: martyr-sikh-shahid
+    display: "Martyr (Sikh shahīd)"
+    tier: 3
+    figure_qualifying: true
+    source-tier: T1
+    source: "McLeod 1989 *Who Is a Sikh?*"
+    notes: "Tegh Bahadur (9th Guru), Arjan (5th Guru), Banda Singh Bahadur."
+    aliases: ["Sikh martyr", "shahid"]
+
+  - id: martyr-bahai
+    display: "Martyr (Bahá'í)"
+    tier: 3
+    figure_qualifying: true
+    source-tier: T1
+    source: "Smith 2008 *An Introduction to the Baha'i Faith*"
+    notes: "The Báb (executed 1850), 20,000 Bábí martyrs of mid-19th-c. Iran."
+    aliases: []
+
+  - id: sahabi
+    display: "Sahabi (Companion of Muhammad)"
+    tier: 3
+    figure_qualifying: true
+    source-tier: T1
+    source: "Madelung, Wilferd 1997. The Succession to Muhammad. Cambridge UP."
+    aliases: ["Sahabi", "Companion of the Prophet"]
+
+  - id: tabiun
+    display: "Tabiʿūn (Successor to the Sahaba)"
+    tier: 3
+    figure_qualifying: true
+    source-tier: T1
+    source: "Madelung 1997"
+    aliases: ["tabiun"]
+
+  # ────────────────────────────────────────────────────────────────────────
+  # TIER 4 — Political-religious dual roles
+  # ────────────────────────────────────────────────────────────────────────
+
+  - id: emperor
+    display: "Emperor (when religious dimension is documented)"
+    tier: 4
+    figure_qualifying: true
+    source-tier: T1
+    source: "Jones 2005 *Encyclopedia of Religion* entry 'Kingship and Sacred Kingship'"
+    notes: "Constantine, Justinian, Charlemagne, Asoka (also religious-patron), Akbar (also religious-reformer). Multi-role with religious-reformer or religious-patron per documented role."
+    aliases: ["emperor", "Emperor"]
+
+  - id: king
+    display: "King (when religious dimension is documented)"
+    tier: 4
+    figure_qualifying: true
+    source-tier: T1
+    source: "Jones 2005 'Kingship and Sacred Kingship'"
+    notes: "David, Solomon, Henry VIII (also religious-reformer), Suleiman (also caliph-sunni)."
+    aliases: ["king", "King"]
+
+  - id: queen
+    display: "Queen (when religious dimension is documented)"
+    tier: 4
+    figure_qualifying: true
+    source-tier: T1
+    source: "Jones 2005"
+    notes: "Helena, Theodora, Elizabeth I (also religious-reformer)."
+    aliases: ["queen", "Queen"]
+
+  - id: pharaoh
+    display: "Pharaoh"
+    tier: 4
+    figure_qualifying: true
+    source-tier: T1
+    source: "Wilkinson, Toby 2010. The Rise and Fall of Ancient Egypt. Bloomsbury."
+    notes: "Pharaohs as sacred-kingship; multi-role with religious-reformer (Akhenaten) or founder (Akhenaten — Atenism) where documented."
+    aliases: ["pharaoh", "Pharaoh"]
+
+  - id: religious-reformer
+    display: "Religious reformer (INTERNAL doctrinal/liturgical reform)"
+    tier: 4
+    figure_qualifying: true
+    source-tier: T1
+    source: "MacCulloch, Diarmaid 2003. The Reformation: A History. Viking."
+    notes: "**CHANGED DOCTRINE** (distinct from religious-patron, who supported a tradition without changing it). Luther, Calvin, Wycliffe, Akhenaten (Atenism), Akbar (Din-i-Ilahi), Henry VIII (English Reformation), Ram Mohan Roy (Brahmo Samaj)."
+    aliases: ["religious reformer", "reformer"]
+
+  - id: religious-patron
+    display: "Religious patron (SUPPORTED without changing doctrine)"
+    tier: 4
+    figure_qualifying: true
+    source-tier: T1
+    source: "Thapar, Romila 1997. Asoka and the Decline of the Mauryas (rev. ed.). Oxford UP India."
+    secondary: ["Strong, John S. 1983. The Legend of King Aśoka. Princeton UP."]
+    notes: "**CARDINAL DISTINCTION FROM religious-reformer:** patron supports a tradition without changing it. Asoka, Kanishka, Harsha, Constantine-as-patron (separate from his political-religious-reformer dimension). Per Auditor A 2026-05-31."
+    aliases: ["dharma-rāja", "patron of Buddhism", "patron of Christianity"]
+
+  - id: state-founder-religious
+    display: "State founder (with religious dimension)"
+    tier: 4
+    figure_qualifying: true
+    source-tier: T1
+    source: "Bowker 1997"
+    notes: "Khomeini (Islamic Republic), Joseph Smith (early Mormon community organization). NOT figure-qualifying alone — must combine with another role."
+    aliases: []
+
+  - id: state-founder-secular
+    display: "State founder (secular)"
+    tier: 5
+    figure_qualifying: false
+    source-tier: T1
+    source: "Standard political-history references"
+    notes: "**Explicit NON-qualifying** — Ben-Gurion, Atatürk, when not in religious leadership. Token exists to mark these explicitly out of Figures."
+    aliases: []
+
+  # ────────────────────────────────────────────────────────────────────────
+  # TIER 5 — NON-qualifying (kept for other lenses; OUT of Figures)
+  # ────────────────────────────────────────────────────────────────────────
+
+  - id: scholar-academic-religion
+    display: "Scholar of religion (modern academic)"
+    tier: 5
+    figure_qualifying: false
+    source-tier: T1
+    source: "Jones 2005 *Encyclopedia of Religion* entry 'Study of Religion'"
+    notes: "Modern academic about religion, NOT within religious leadership. Frazer, Durkheim, Eliade, Jonas, Pagels, Yates, Bowker himself, Ehrman, Bellah, James-as-philosopher. NOT figure. Use ALONGSIDE theologian or pastor-protestant if the person is also ordained / produces systematic theology within a tradition (Otto = scholar-academic-religion + theologian; Hick = same)."
+    aliases: ["historian of religion", "religious studies scholar", "comparative religion scholar"]
+
+  - id: scholar-alternative
+    display: "Scholar (alternative / fringe — Tier 3/4 source-marked)"
+    tier: 5
+    figure_qualifying: false
+    source-tier: T4
+    source: "Per feedback_deviant_bridges_2026-05-16.md (project memory) — Tier-1-vs-Tier-4 sourcing per node; document fabrications AS fabrications."
+    notes: "Hancock, Donnelly, Cayce-as-theorist. **Documented AS alternative, not smuggled as truth.** Node-level source-tier: T4 marks this explicitly. Cayce-as-founder of A.R.E. uses founder + this scholar-alternative is a SECONDARY role capturing the popular-pseudoscholarly aspect."
+    aliases: []
+
+  - id: psychologist-of-religion
+    display: "Psychologist of religion (modern academic)"
+    tier: 5
+    figure_qualifying: false
+    source-tier: T1
+    source: "Jones 2005 entry 'Psychology of Religion'"
+    notes: "William James, Jung (see Jung-boundary-case in contested-cases YAML). NOT figure. For Jung specifically, add polemical-framing: by: Noll 1994, label: cult-founder, source-tier: T2 to capture contestation."
+    aliases: []
+
+  - id: author-secular
+    display: "Author (secular, not in religious leadership)"
+    tier: 5
+    figure_qualifying: false
+    source-tier: T1
+    source: "Standard literary-reference works"
+    notes: "Writers without religious leadership role. Most ordinary `04_persons/` entries who only authored documents."
+    aliases: ["author", "writer", "poet"]
+
+  - id: witness
+    display: "Witness (named in scripture/chronicle, no leadership role)"
+    tier: 5
+    figure_qualifying: false
+    source-tier: T1
+    source: "Brown 1997 *Introduction to the New Testament*"
+    notes: "Samaritan woman (Sychar), Roman centurion at cross."
+    aliases: []
+
+  - id: legendary-isolated
+    display: "Legendary figure (not tied to continuous tradition)"
+    tier: 5
+    figure_qualifying: false
+    source-tier: T1
+    source: "Standard mythological-reference works"
+    notes: "Romulus (Roman religion ends; no continuous Romulus-cult), King Arthur (if historicized-only)."
+    aliases: []
+
+  - id: legendary-disputed
+    display: "Legendary figure (historicity contested)"
+    tier: 5
+    figure_qualifying: false
+    source-tier: T1
+    source: "Various per-figure scholarship"
+    notes: "Lao Tzu, Lycurgus of Sparta, Numa Pompilius. Figure exists in tradition but academic consensus on historicity is unsettled. Token captures the contestation."
+    aliases: []
+
+  - id: historical-cited
+    display: "Historical figure (cited, no religious role)"
+    tier: 5
+    figure_qualifying: false
+    source-tier: T1
+    source: "Standard history references"
+    notes: "Marco Polo, ordinary kings named for events."
+    aliases: []

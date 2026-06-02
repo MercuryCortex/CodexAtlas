@@ -1,0 +1,46 @@
+# Reclaimed-Self-Naming Controlled Vocabulary
+#
+# Built 2026-05-31 per AUDIT/2026-05-31-figures-migration-plan-v3.md §2.
+# The third instance of the reusable controlled-vocabulary primitive.
+#
+# Purpose: terms that exist as BOTH polemic-from-outside AND affirmative-
+# self-claim from a distinct tradition. Per Auditor B 2026-05-31:
+# "witch" and "pagan" both have this dual life. The polemical-framing
+# vocab captures the polemic-from-outside direction; this vocab captures
+# the affirmative self-claim from the reclaiming tradition.
+#
+# A figure may have BOTH polemical-framing: by: Christian-orthodox label: witch
+# AND reclaimed-self-naming: tradition: Wicca label: witch — for the same
+# label, capturing the dual life across traditions.
+
+field_name: reclaimed-self-naming
+node_type_scope: ["person", "tradition"]
+allow_array: true
+lens_qualifying_flag: ~
+
+entries:
+
+  - label: witch
+    reclaiming-tradition: "Wicca / Modern Pagan witchcraft"
+    source-tier: T1
+    source: "Hutton, Ronald 1999. The Triumph of the Moon: A History of Modern Pagan Witchcraft. Oxford UP."
+    notes: "Gerald Gardner, Doreen Valiente, Alex & Maxine Sanders, Stewart & Janet Farrar. Affirmative self-claim post-Hutton-1999 articulation."
+
+  - label: pagan
+    reclaiming-tradition: "Heathen / Wiccan / Modern Pagan"
+    source-tier: T1
+    source: "Magliocco, Sabina 2004. Witching Culture: Folklore and Neo-Paganism in America. University of Pennsylvania Press."
+    secondary: ["Hutton 1999 *The Triumph of the Moon*"]
+    notes: "Modern affirmative reclamation post-1960s. ADF (A Druid Fellowship), OBOD, Reclaiming, eclectic-Wiccan traditions."
+
+  - label: queer
+    reclaiming-tradition: "Queer Theology / LGBT religious-studies"
+    source-tier: T1
+    source: "Cheng, Patrick S. 2011. Radical Love: An Introduction to Queer Theology. Seabury Books."
+    notes: "Affirmative reclamation in LGBT theological-academic context."
+
+  - label: heretic
+    reclaiming-tradition: "Cathar / Free-Spirit / occasional self-claim"
+    source-tier: T1
+    source: "Brakke 2010 *The Gnostics*"
+    notes: "Context-aware. Marcion explicitly rejected the label; Cathars sometimes embraced it; Free-Spirit mystics (Marguerite Porete) navigated complex self-vs-opponent framings."
