@@ -650,6 +650,167 @@ All 14 of v2's known failure modes addressed.
 
 ---
 
+## §9.5 — Controlled-vocabulary as REUSABLE PRIMITIVE (architectural directive, 2026-05-31)
+
+**John's directive (2026-05-31, exact words):**
+> *"REMEMBER, we will produce A LOT of charts and functionality, so please remember that or have that in consideration"*
+
+The role-vocabulary is not a one-off for Figures. It's the **first instance of a reusable controlled-vocabulary primitive** that every future categorical chart/lens will consume. The architecture must reflect this.
+
+### Concrete primitives that share this pattern
+
+The vault will accumulate many controlled-vocabulary fields, each driving a chart/lens/filter:
+
+| Field | Status | Drives |
+|---|---|---|
+| `role-tokens:` | THIS MIGRATION | Figures lens |
+| `tradition:` | vocab exists (`tradition-vocabulary.yaml`, dormant); consumer wires in Stage 1.5 | Atlas wedge color, family clustering |
+| `sub-tradition:` | currently free-text | Future drilldown wheels (Buddhism → Theravada/Mahayana/Vajrayana; Christianity → Catholic/Orthodox/Protestant/etc.) |
+| `polemical-framing:` (label) | THIS MIGRATION | Theological-history view; opponent-claim audit |
+| `reclaimed-self-naming:` (label) | THIS MIGRATION | Western-Pagan-reclamation lens |
+| `themes:` (entries) | currently free-text | Future themes chart |
+| `category:` | currently free-text | Future category filter |
+| `genre:` (documents) | currently absent | Future literary-genre chart |
+| `era:` | currently absent | Future timeline-band chart |
+| `region-canonical:` | currently free-text (`region:`) | Future map chart |
+| ... | future | future charts |
+
+**Predicted: at least 10-15 controlled-vocab fields by end of 2026.** Each will need vocab file + validator + build pass-through + mode.js filter.
+
+### The reusable framework (built in this migration; inherited by all future)
+
+**One generic shape, used by every controlled-vocab field:**
+
+1. **Vocab file** at `00_meta/{field-name}-vocabulary.yaml` with a STANDARD schema (see below).
+2. **`lint_yaml.py validate_controlled_vocab(field_name, vocab_path, options)`** — a GENERIC function that any controlled-vocab field calls. Not field-specific.
+3. **`build_data.py emit_controlled_vocab_field(field_name)`** — generic pass-through pattern.
+4. **`mode.js filterByControlledVocab(field_name, qualifying_set)`** — generic filter pattern.
+5. **`00_meta/controlled-vocab-registry.yaml`** — registry listing every active controlled-vocab field + its vocab file + its node-type scope. Auto-loaded by the validator.
+
+### Standard vocab schema (used by EVERY future field)
+
+```yaml
+# 00_meta/{field-name}-vocabulary.yaml
+# Standard schema (locked 2026-05-31, controlled-vocab primitive #1).
+# Every controlled-vocab YAML in the project conforms to this shape.
+
+field_name: role-tokens              # the YAML field this vocab governs
+node_type_scope: ["person"]          # which node types this field applies to
+allow_array: true                    # field is array (true) or scalar (false)
+lens_qualifying_flag: figure_qualifying   # optional — boolean per entry
+                                          # determines lens membership
+
+entries:
+  - id: lowercase-slug                # the canonical identifier
+    display: "Human Label"            # for UI
+    tier: 1                           # optional categorization (role-specific)
+    figure_qualifying: true           # optional flag (lens-membership)
+    source-tier: T1                   # T1-T4 per source-integrity policy
+    source: "Heschel 1962 The Prophets"   # primary citation
+    secondary: ["Jones 2005 ER entry 'prophets'"]  # optional
+    aliases:                          # free-text strings that resolve here
+      - "prophet"                     # (build_data.py uses these to normalize
+      - "prophet | messenger"         # existing free-text to canonical id)
+    notes: "Hebrew/Christian/Islamic prophetic-revelation figures..."
+```
+
+### Generic validator function (built once; called per field)
+
+```python
+# lint_yaml.py
+def validate_controlled_vocab(field_name, vocab_path, options=None):
+    """Generic controlled-vocabulary validator. Used by every field.
+
+    Args:
+        field_name: YAML field name (e.g., 'role-tokens', 'tradition',
+                    'sub-tradition', 'themes').
+        vocab_path: path to the vocab YAML.
+        options: dict with:
+            - allow_array: bool (default True)
+            - node_type_scope: list of types to validate (default: all)
+            - strict_field_name_match: bool (default True)
+
+    Performs:
+        1. Vocab self-check: every entry has required keys; no duplicate ids;
+           every alias is unique across the vocab.
+        2. Per-node check: for every node of in-scope type, every value of
+           the field must resolve to a known canonical id (either directly
+           or via aliases).
+
+    Reports per-field stats; errors are validator-blocking.
+    """
+    ...
+
+# Wired in via the registry:
+def main():
+    registry = load_yaml('00_meta/controlled-vocab-registry.yaml')
+    for field_name, vocab_path in registry['active_fields'].items():
+        validate_controlled_vocab(field_name, vocab_path)
+```
+
+This means **the next chart's controlled-vocab field gets a 5-line addition to the registry** — no new validator code, no new build_data.py code, no new mode.js code. The infrastructure compounds.
+
+### Generic build_data.py pattern
+
+```python
+# build_data.py — controlled-vocab pass-through generalization
+CONTROLLED_VOCAB_FIELDS = load_yaml('00_meta/controlled-vocab-registry.yaml')['active_fields']
+
+for field_name in CONTROLLED_VOCAB_FIELDS:
+    if node.type in CONTROLLED_VOCAB_FIELDS[field_name]['node_type_scope']:
+        node[field_name_underscored] = fm.get(field_name, [] if allow_array else None) or default
+```
+
+One block replaces the hand-typed `canonical_corpus`, future `role_tokens`, future `sub_tradition`, etc.
+
+### Generic mode.js filter pattern
+
+```javascript
+// engine/graph/mode.js — generic controlled-vocab lens filter
+function filterByControlledVocab(nodes, fieldName, qualifyingSet, opts={}) {
+  return nodes.filter(n => {
+    if (opts.requiredType && n.type !== opts.requiredType) return false;
+    const values = n[fieldName.replace(/-/g, '_')];
+    if (!Array.isArray(values)) return values && qualifyingSet.has(values);
+    return values.some(v => qualifyingSet.has(v));
+  });
+}
+
+// Figures lens: 5 lines.
+if (mode === 'figures') return filterByControlledVocab(nodes, 'role-tokens',
+                                                       FIGURE_QUALIFYING_ROLES,
+                                                       { requiredType: 'person' });
+```
+
+Future chart that wants "show all nodes with sub-tradition in {set}" = 5 lines.
+
+### Persistence of the architectural primitive
+
+The framework persists in three places:
+
+1. **`00_meta/controlled-vocab-registry.yaml`** — registry of all active fields. THE schema authority. Listed in HOW-WE-WORK §9 master files.
+2. **`00_meta/HOW-WE-WORK.md §8` (When-to-read table)** — adds row: `controlled-vocab-registry.yaml | Adding a new controlled-vocabulary field OR shipping a new chart that filters on a categorical YAML field.`
+3. **`00_meta/ONTOLOGY.md §"Controlled-vocabulary primitive"`** — new section explaining the pattern + how to add a new vocab + the canonical schema.
+
+### What this Stage 1.5 actually ships
+
+Stage 1.5 becomes the **infrastructure substrate for all future controlled-vocab charts**, not just the tradition-consumer wiring:
+
+- Generic `validate_controlled_vocab()` in `lint_yaml.py`.
+- Generic vocab-registry loader in `build_data.py` (replaces per-field hand-typed passthrough).
+- Generic `filterByControlledVocab()` in `mode.js`.
+- `controlled-vocab-registry.yaml` with: `role-tokens`, `tradition` (turning on the 2026-05-14 dormancy fix), `polemical-framing-labels`, `reclaimed-self-naming-labels`.
+- Documentation in `ONTOLOGY.md §"Controlled-vocabulary primitive"` + `HOW-WE-WORK.md §8/§9`.
+
+**Effect on future migrations:** when `sub-tradition` canonization gets ratified (the predicted next-loop), it ships as:
+- vocab file (the only new work)
+- 1 line added to the registry
+- 1 line in `mode.js` if a new lens consumes it
+
+No new validator, build, or filter code. The architectural substrate is built once, here.
+
+---
+
 ## §10 — Ratification asks (what blocks Stage 0.5)
 
 Per John's standing instruction: *"NEVER let me pick if im overlooking"* — I am NOT presenting these as menu picks. They are points where the protocol requires your explicit signal because the call is yours, not mine. Items 1-5 are non-overlookable (the framework needs your name on them); item 6 is a sanity check.
