@@ -3,8 +3,9 @@ type: person
 id: "madhva"
 name: "Madhva"
 aka: ["Madhvācārya", "Ānanda Tīrtha", "Pūrṇa Prajña", "Vāsudeva"]
-role: "philosopher, theologian, founder of Udupi maṭha"
 tradition: "Hindu — Dvaita Vedanta"
+role-tokens: ["acharya-hindu", "philosopher-religious"]
+role-description: "Madhvācārya — 13th c. acharya of Dvaita Vedānta; founder of the Tattva-vāda dualist school; lineage continues at Udupi Krishna Matha."
 region: "Karnataka (south India — Udupi)"
 date-born: 1238
 date-died: 1317

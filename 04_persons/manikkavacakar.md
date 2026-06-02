@@ -3,8 +3,9 @@ type: person
 id: "manikkavacakar"
 name: "Manikkavacakar"
 aka: ["Māṇikkavācakar (he whose words are rubies)", "Tiruvātavurār"]
-role: "Tamil Shaiva poet-saint / Nayanar-adjacent / Saiva Siddhanta foundational poet"
+role-description: "Tamil Shaiva poet-saint / Nayanar-adjacent / Saiva Siddhanta foundational poet"
 tradition: "Hindu Bhakti (Tamil Shaivism — Saiva Siddhanta)"
+role-tokens: ["author-secular"]
 region: "Madurai / Chidambaram, Tamil Nadu (south India)"
 date-born: 800
 date-died: 870

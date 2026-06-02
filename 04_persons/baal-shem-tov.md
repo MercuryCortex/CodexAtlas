@@ -3,8 +3,9 @@ type: person
 id: "baal-shem-tov"
 name: "Israel ben Eliezer (the Baal Shem Tov)"
 aka: ["Besht (acronym)", "Yisroel ben Eliezer"]
-role: "Kabbalist / founder of Hasidism / faith-healer"
+role-description: "Kabbalist / founder of Hasidism / faith-healer"
 tradition: "Jewish Kabbalah → Hasidism"
+role-tokens: ["kabbalist"]
 region: "Podolia (Polish-Ukrainian borderlands)"
 date-born: 1698
 date-died: 1760

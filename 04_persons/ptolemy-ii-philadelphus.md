@@ -3,8 +3,9 @@ type: person
 id: "ptolemy-ii-philadelphus"
 name: "Ptolemy II Philadelphus"
 aka: ["Πτολεμαῖος Φιλάδελφος", "Philadelphus ('sibling-lover')"]
-role: "king | Pharaoh | patron-of-letters | religious-cult-developer"
+role-description: "king | Pharaoh | patron-of-letters | religious-cult-developer"
 tradition: "Hellenistic Greek (Macedonian) ruling Egypt as Pharaoh"
+role-tokens: ["king", "pharaoh"]
 region: "Egypt (Alexandria); Ptolemaic possessions in Cyprus, Coele-Syria, parts of Asia Minor"
 date-born: -308
 date-died: -246

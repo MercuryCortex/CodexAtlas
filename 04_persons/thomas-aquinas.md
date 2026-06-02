@@ -3,8 +3,9 @@ type: person
 id: "thomas-aquinas"
 name: "Thomas Aquinas"
 aka: ["Tommaso d'Aquino", "Thomas of Aquino", "Doctor Angelicus", "Doctor Communis"]
-role: "Dominican friar, philosopher, theologian, university master"
 tradition: "Latin Christian — Dominican scholastic"
+role-tokens: ["doctor-of-the-church", "theologian", "philosopher-religious", "monastic-christian-western"]
+role-description: "Thomas Aquinas (Tommaso d'Aquino) — Italian Dominican friar; author of *Summa Theologiae* + *Summa Contra Gentiles*; canonized 1323; declared Doctor of the Church 1567 (the *Doctor Angelicus*)."
 region: "Italy (origin), France (Paris), Italy (career)"
 date-born: 1225
 date-died: 1274

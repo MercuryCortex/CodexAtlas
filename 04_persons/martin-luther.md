@@ -3,8 +3,9 @@ type: person
 id: "martin-luther"
 name: "Martin Luther"
 aka: []
-role: "reformer / theologian / monk → pastor"
+role-description: "reformer / theologian / monk → pastor"
 tradition: "Protestant Christianity (Lutheran)"
+role-tokens: ["religious-reformer", "theologian"]
 region: "Saxony (Eisleben, Erfurt, Wittenberg)"
 date-born: 1483
 date-died: 1546

@@ -3,8 +3,9 @@ type: person
 id: "antiochus-iv-epiphanes"
 name: "Antiochus IV Epiphanes"
 aka: ["Antiochus Epiphanes", "the King of the North (Dan 11)"]
-role: "king | persecutor"
+role-description: "king | persecutor"
 tradition: "Seleucid Empire"
+role-tokens: ["king"]
 region: "Seleucid Syria / Judaea"
 date-born: -215
 date-died: -164
@@ -36,7 +37,7 @@ syncretic-edges:
     source: "Worthington 2014; Bickerman 1979 *The God of the Maccabees*"
     source-tier: "T1"
     notes: "Antiochus IV is the great-grandson (via Seleucus I Nicator) of one of Alexander's Diadochi. Antiochus's Hellenizing forced-imposition program is the **extreme tail** of the Hellenization process Alexander inaugurated; the Maccabean reaction is the most successful local-tradition resistance to that program."
-  - target: "[[antichrist-figure]]"
+  - target: "[antichrist-figure]"
     type: "prefiguration-claim"
     source: "Hippolytus *De Antichristo*; medieval Latin Antichrist tradition (Adso of Montier-en-Der ~954); McGinn 1994 *Antichrist*"
     source-tier: "T1"

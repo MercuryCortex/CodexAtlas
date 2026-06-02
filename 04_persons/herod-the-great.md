@@ -3,8 +3,9 @@ type: person
 id: "herod-the-great"
 name: "Herod the Great"
 aka: ["Herod I", "Hordos (Hebrew)", "Hērōdēs (Greek)"]
-role: "king"
+role-description: "king"
 tradition: "Hasmonean-aligned Judaism (with Idumean origin); Roman client kingdom"
+role-tokens: ["king"]
 region: "Judea, Galilee, Idumea, Samaria, Iturea, Trans-Jordan"
 date-born: -73
 date-died: -4

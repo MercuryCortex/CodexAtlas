@@ -3,8 +3,9 @@ type: person
 id: "mary-baker-eddy"
 name: "Mary Baker Eddy"
 aka: []
-role: "founder / Christian Science"
+role-description: "founder / Christian Science"
 tradition: "Christian Science"
+role-tokens: ["founder"]
 region: "United States (New England)"
 date-born: 1821
 date-died: 1910

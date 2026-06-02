@@ -4,10 +4,11 @@ id: "luis-de-camoes"
 name: "Luís Vaz de Camões"
 aka: ["Luís de Camões", "Camoens (old English spelling)", "the Prince of Portuguese Poets", "Homero Português (the Portuguese Homer)"]
 tradition: "[[tradition-portuguese-hermeticism]] / Renaissance humanism"
+role-tokens: ["author-secular"]
 region: "Portugal (Lisbon); Goa (Mozambique, Macau)"
 date-born: 1524
 date-died: 1580
-role: "Portuguese Renaissance poet; author of *Os Lusíadas* (1572), the national epic of Portugal; soldier, exile, and prisoner in the Estado da India; the foundational literary mythologist of Portuguese imperial identity and the hermetic-Sebastianist tradition"
+role-description: "Portuguese Renaissance poet; author of *Os Lusíadas* (1572), the national epic of Portugal; soldier, exile, and prisoner in the Estado da India; the foundational literary mythologist of Portuguese imperial identity and the hermetic-Sebastianist tradition"
 key-works: ["[[phase-6-041-camoes-os-lusiadas]]"]
 tradition-affiliation: ["[[tradition-portuguese-hermeticism]]"]
 influenced: ["[[fernando-pessoa]] (Mensagem explicitly rewrites Os Lusíadas)", "[[tradition-sebastianism]]", "[[fifth-empire-quinto-imperio]]"]

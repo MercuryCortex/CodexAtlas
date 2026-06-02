@@ -3,8 +3,9 @@ type: person
 id: "paul-of-tarsus"
 name: "Paul of Tarsus"
 aka: ["Saul of Tarsus", "Paulos", "Sha'ul", "the Apostle to the Gentiles"]
-role: "founder | mystic | scholar"
+role-description: "founder | mystic | scholar"
 tradition: "Pharisaic Judaism → earliest Christianity"
+role-tokens: ["founder", "mystic"]
 region: "Tarsus (Cilicia); Damascus; Antioch; Asia Minor; Greece; Rome"
 date-born: 5
 date-died: 65

@@ -7,7 +7,7 @@ birth: -1420
 death: -1391
 region: "Egypt"
 city-of-origin: "Thebes"
-role: "Pharaoh (18th Dynasty)"
+role-description: "Pharaoh (18th Dynasty)"
 traditions: ["[[tradition-egyptian-religion]]"]
 mentioned-in: ["[[sphinx-of-giza]]"]
 status: "stub"
@@ -19,6 +19,8 @@ refs:
     type: "monograph"
     tier: 1
 tags: [person, pharaoh, egypt, 18th-dynasty, new-kingdom, sphinx, dream-stele, thutmose]
+role-tokens: ["pharaoh"]
+role-description: "Pharaoh (18th Dynasty)"
 ---
 
 # Thutmose IV

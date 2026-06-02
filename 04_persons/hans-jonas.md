@@ -3,8 +3,9 @@ type: person
 id: "hans-jonas"
 name: "Hans Jonas"
 aka: []
-role: "scholar / philosopher / historian of religion"
+role-description: "scholar / philosopher / historian of religion"
 tradition: "Comparative religion (academic) / philosophy of religion"
+role-tokens: ["scholar-academic-religion"]
 region: "Germany → Palestine → Canada → United States"
 date-born: 1903
 date-died: 1993

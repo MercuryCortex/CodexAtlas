@@ -3,8 +3,9 @@ type: person
 id: "empedocles"
 name: "Empedocles of Acragas"
 aka: ["Ἐμπεδοκλῆς", "Empedocles of Akragas / Agrigento"]
-role: "philosopher | poet | physician | ritualist | wonder-worker"
+role-description: "philosopher | poet | physician | ritualist | wonder-worker"
 tradition: "Pre-Socratic Greek (Pythagorean and Eleatic milieu)"
+role-tokens: ["author-secular"]
 region: "Sicily (Acragas / Akragas / modern Agrigento); travels in Magna Graecia and the Peloponnese"
 date-born: -495
 date-died: -435

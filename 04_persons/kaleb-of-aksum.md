@@ -3,8 +3,9 @@ type: person
 id: "kaleb-of-aksum"
 name: "Kaleb of Aksum (Ella Atsbeha)"
 aka: ["Kaleb", "Ella Atsbeha", "Hellesthaeus", "Elesboas (in Procopius)", "Saint Elesbaan (Catholic calendar)"]
-role: "king, warrior, ascetic-saint"
+role-description: "king, warrior, ascetic-saint"
 tradition: "[[tradition-ethiopian-orthodox-tewahedo]]"
+role-tokens: ["king"]
 region: "Aksumite Kingdom (Aksum and across the Red Sea into Himyar / Yemen)"
 date-born:
 date-died: 540

@@ -3,8 +3,9 @@ type: person
 id: "doreen-valiente"
 name: "Doreen Valiente"
 aka: ["Mother of Modern Witchcraft"]
-role: "founder / Wicca"
 tradition: "Wicca / Modern Pagan"
+role-tokens: ["priestess-wiccan"]
+role-description: "Doreen Valiente — 'Mother of modern Wicca'; revised Gardner's *Book of Shadows*; author of multiple foundational Wiccan liturgies."
 region: "United Kingdom"
 date-born: 1922
 date-died: 1999

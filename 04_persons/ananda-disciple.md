@@ -3,8 +3,9 @@ type: person
 id: "ananda-disciple"
 name: "Ānanda"
 aka: ["Ānanda Thera", "Ven. Ānanda", "the Buddha's attendant", "Foremost in hearing the teaching"]
-role: "disciple | canonical reciter | Buddhist saint"
+role-description: "disciple | canonical reciter | Buddhist saint"
 tradition: "Buddhism (pre-sectarian; foundational to all schools)"
+role-tokens: ["disciple-christian"]
 region: "Magadha / Kosala (Gangetic plain)"
 date-born: -480
 date-died: -380

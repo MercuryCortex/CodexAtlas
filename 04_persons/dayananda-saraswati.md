@@ -3,8 +3,9 @@ type: person
 id: "dayananda-saraswati"
 name: "Dayananda Saraswati"
 aka: ["Dayānanda Sarasvatī", "Maharshi Dayananda", "Mulshankar (birth name)"]
-role: "reformer / founder of Arya Samaj / Vedic restorationist"
+role-description: "reformer / founder of Arya Samaj / Vedic restorationist"
 tradition: "Hindu modernism — Arya Samaj"
+role-tokens: ["religious-reformer"]
 region: "Gujarat (origin) → North India (Bombay / Lahore / Punjab / Rajasthan)"
 date-born: 1824
 date-died: 1883

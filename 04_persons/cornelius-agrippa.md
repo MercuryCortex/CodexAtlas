@@ -3,8 +3,9 @@ type: person
 id: "cornelius-agrippa"
 name: "Heinrich Cornelius Agrippa von Nettesheim"
 aka: ["Agrippa"]
-role: "magus / philosopher / soldier / physician"
+role-description: "magus / philosopher / soldier / physician"
 tradition: "Renaissance magic / Hermetic-Kabbalist syncretism"
+role-tokens: ["magus"]
 region: "Germany, France, Low Countries, Italy"
 date-born: 1486
 date-died: 1535

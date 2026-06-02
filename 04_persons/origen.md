@@ -3,8 +3,9 @@ type: person
 id: "origen"
 name: "Origen"
 aka: ["Ōrigenēs Adamantios", "Origen Adamantius"]
-role: "theologian / exegete (Alexandrian → Caesarean)"
+role-description: "theologian / exegete (Alexandrian → Caesarean)"
 tradition: "Patristic Christian (Alexandrian school)"
+role-tokens: ["theologian"]
 region: "Alexandria → Caesarea Maritima"
 date-born: 185
 date-died: 254

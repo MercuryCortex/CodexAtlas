@@ -3,8 +3,9 @@ type: person
 id: "silas-silvanus"
 name: "Silas / Silvanus"
 aka: ["Silas (Acts)", "Silvanus (Pauline epistles)", "Silouanos"]
-role: "disciple | apostolic delegate"
+role-description: "disciple | apostolic delegate"
 tradition: "earliest Christianity"
+role-tokens: ["disciple-christian"]
 region: "Jerusalem → Antioch → Asia Minor, Macedonia, Greece"
 date-born: 5
 date-died: 70

@@ -3,8 +3,9 @@ type: person
 id: "paracelsus"
 name: "Paracelsus"
 aka: ["Philippus Aureolus Theophrastus Bombastus von Hohenheim", "Theophrastus von Hohenheim"]
-role: "physician / alchemist / mystic / natural philosopher"
+role-description: "physician / alchemist / mystic / natural philosopher"
 tradition: "Christian alchemy / Renaissance magic"
+role-tokens: ["mystic"]
 region: "Swiss Confederation / German lands / Austria"
 date-born: 1493
 date-died: 1541

@@ -3,8 +3,9 @@ type: person
 id: "hermas"
 name: "Hermas"
 aka: ["Hermas of Rome", "Hermas the Shepherd-author"]
-role: "prophet | apostolic father"
+role-description: "prophet | apostolic father"
 tradition: "Patristic Christian (proto-orthodox)"
+role-tokens: ["prophet-abrahamic"]
 region: "Rome"
 date-born: 80
 date-died: 160

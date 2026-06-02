@@ -3,8 +3,9 @@ type: person
 id: "jesus-of-nazareth"
 name: "Jesus of Nazareth"
 aka: ["Yeshua ben Yosef", "Jesus Christ (Iēsous Christos)", "Yeshu (rabbinic)", "ʿĪsā ibn Maryam (Arabic)"]
-role: "prophet | founder | mystic"
 tradition: "Second Temple Judaism → origin of Christianity"
+role-tokens: ["founder", "prophet-abrahamic"]
+role-description: "Jesus of Nazareth — founder of Christianity; Hebrew Bible prophet category extended by Christian tradition to Messiah / Son of God / Second Person of the Trinity; Islamic tradition recognizes him as ʿĪsā ibn Maryam (Jesus son of Mary), the next-to-last prophet before Muhammad."
 region: "Galilee, Judea"
 date-born: -4
 date-died: 30

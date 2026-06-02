@@ -3,8 +3,9 @@ type: person
 id: "suhrawardi"
 name: "Suhrawardi"
 aka: ["Shihāb al-Dīn Yaḥyā al-Suhrawardī", "Suhrawardī al-Maqtūl ('the executed one')", "Shaykh al-Ishrāq (the Master of Illumination)"]
-role: "philosopher, mystic"
+role-description: "philosopher, mystic"
 tradition: "Islamic philosophy — Illuminationism (Ishrāqiyya)"
+role-tokens: ["mystic"]
 region: "Iran (origin), Anatolia, Syria (Aleppo, death)"
 date-born: 1154
 date-died: 1191

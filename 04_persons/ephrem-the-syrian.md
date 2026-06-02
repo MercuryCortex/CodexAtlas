@@ -3,8 +3,9 @@ type: person
 id: "ephrem-the-syrian"
 name: "Ephrem the Syrian"
 aka: ["Aphrem", "Mar Ephrem", "Ephraim Syrus", "Ephrem of Nisibis", "Ephrem of Edessa", "Harp of the Spirit"]
-role: "deacon / theologian / hymnographer / exegete"
+role-description: "deacon / theologian / hymnographer / exegete"
 tradition: "Syriac Christian"
+role-tokens: ["theologian"]
 region: "Roman Syria / Mesopotamia — Nisibis, Edessa"
 date-born: 306
 date-died: 373

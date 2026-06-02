@@ -3,8 +3,9 @@ type: person
 id: "joseph-smith"
 name: "Joseph Smith Jr."
 aka: []
-role: "founder / prophet"
 tradition: "Mormonism / Latter-day Saint"
+role-tokens: ["founder"]
+role-description: "Joseph Smith Jr. — founder of the Church of Jesus Christ of Latter-day Saints (1830). LDS doctrine frames him as 'the Prophet' restoring Abrahamic prophetic line; mainstream academic religious-studies treats him as NRM founder (Bushman 2005, Brodie 1945, Shipps 1985)."
 region: "United States (Vermont → New York → Ohio → Missouri → Illinois)"
 date-born: 1805
 date-died: 1844

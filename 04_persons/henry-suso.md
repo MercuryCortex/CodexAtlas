@@ -3,8 +3,9 @@ type: person
 id: "henry-suso"
 name: "Henry Suso"
 aka: ["Heinrich Seuse", "Heinrich von Berg", "Amandus (his self-given name)", "Doctor Seraphicus"]
-role: "Dominican friar / mystic / theologian / hagiographer of his own life"
+role-description: "Dominican friar / mystic / theologian / hagiographer of his own life"
 tradition: "Latin Christianity (Dominican; Rhineland mysticism)"
+role-tokens: ["mystic", "theologian"]
 region: "Upper Rhine (Konstanz, Ulm, Switzerland)"
 date-born: 1295
 date-died: 1366

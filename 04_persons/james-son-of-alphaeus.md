@@ -3,8 +3,9 @@ type: person
 id: "james-son-of-alphaeus"
 name: "James, son of Alphaeus"
 aka: ["Yaakov bar Halfai", "James the Less (traditional, by conflation)", "Iakōbos ho tou Alphaiou"]
-role: "apostle"
+role-description: "apostle"
 tradition: "earliest Christianity"
+role-tokens: ["apostle-christian"]
 region: "Galilee"
 date-born: 0
 date-died: 70

@@ -3,8 +3,9 @@ type: person
 id: "bardaisan-of-edessa"
 name: "Bardaisan of Edessa"
 aka: ["Bardesanes (Greek)", "Bar Daiṣān ('son of the Daisan river')", "Bardesanes the Syrian"]
-role: "theologian / philosopher / poet (Christian, heterodox)"
+role-description: "theologian / philosopher / poet (Christian, heterodox)"
 tradition: "Syriac Christianity (heterodox Edessan)"
+role-tokens: ["theologian"]
 region: "Edessa (Osrhoene, eastern Syria)"
 date-born: 154
 date-died: 222

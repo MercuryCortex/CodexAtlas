@@ -3,8 +3,9 @@ type: person
 id: "athanasius-kircher"
 name: "Athanasius Kircher"
 aka: []
-role: "Jesuit polymath / orientalist / proto-Egyptologist"
+role-description: "Jesuit polymath / orientalist / proto-Egyptologist"
 tradition: "Jesuit universal-history scholarship / Catholic Renaissance Hermeticism"
+role-tokens: ["monastic-christian-western"]
 region: "Germany / Rome"
 date-born: 1602
 date-died: 1680

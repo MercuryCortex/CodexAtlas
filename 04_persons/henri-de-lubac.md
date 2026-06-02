@@ -3,8 +3,9 @@ type: person
 id: "henri-de-lubac"
 name: "Henri de Lubac"
 aka: []
-role: "Jesuit theologian / patristic scholar / nouvelle théologie figure"
+role-description: "Jesuit theologian / patristic scholar / nouvelle théologie figure"
 tradition: "Roman Catholicism / Society of Jesus / ressourcement / nouvelle théologie"
+role-tokens: ["monastic-christian-western"]
 region: "France (Lyon / Fourvière)"
 date-born: 1896
 date-died: 1991

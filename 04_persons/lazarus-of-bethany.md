@@ -3,8 +3,9 @@ type: person
 id: "lazarus-of-bethany"
 name: "Lazarus of Bethany"
 aka: ["Eleazar", "the Beloved Disciple (per minority Bauckham-type proposals)"]
-role: "disciple"
+role-description: "disciple"
 tradition: "earliest Christianity"
+role-tokens: ["disciple-christian"]
 region: "Bethany"
 date-born: 5
 date-died: 70

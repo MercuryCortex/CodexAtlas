@@ -3,8 +3,9 @@ type: person
 id: "marshall-vian-summers"
 name: "Marshall Vian Summers"
 aka: []
-role: "founder / Society for the New Message from God"
+role-description: "founder / Society for the New Message from God"
 tradition: "New Message from God / New Age channeled"
+role-tokens: ["founder"]
 region: "United States (Colorado)"
 date-born: 1949
 date-died:

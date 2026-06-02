@@ -3,8 +3,9 @@ type: person
 id: "thales"
 name: "Thales of Miletus"
 aka: ["Θαλῆς ὁ Μιλήσιος", "Thales of Miletus", "the first of the Seven Sages"]
-role: "philosopher | natural-scientist | engineer | astronomer | sage"
+role-description: "philosopher | natural-scientist | engineer | astronomer | sage"
 tradition: "Pre-Socratic Greek (the Milesian school of Ionian natural philosophy)"
+role-tokens: ["presocratic-philosopher"]
 region: "Miletus (Ionian Greek city on the coast of Asia Minor)"
 date-born: -624
 date-died: -546

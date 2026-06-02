@@ -3,8 +3,9 @@ type: person
 id: "apollinaris-of-laodicea"
 name: "Apollinaris of Laodicea"
 aka: ["Apollinarius the Younger", "Apollinarios"]
-role: "bishop / heresiarch (Apollinarianism)"
+role-description: "bishop / heresiarch (Apollinarianism)"
 tradition: "Patristic Christian (anti-Arian, condemned for Christology)"
+role-tokens: ["bishop-christian"]
 region: "Syria — Laodicea"
 date-born: 310
 date-died: 390

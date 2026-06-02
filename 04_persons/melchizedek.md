@@ -3,8 +3,9 @@ type: person
 id: "melchizedek"
 name: "Melchizedek"
 aka: ["Melkīṣédeq (Hebrew)", "Melchizedek priest-king of Salem", "Melki-Tsedeq", "Μελχισέδεκ", "the priest-king of righteousness"]
-role: "priest-king | typological figure"
+role-description: "priest-king | typological figure"
 tradition: "Hebrew Bible / Second-Temple Judaism / Christianity (esp. Letter to the Hebrews) / Mormonism / Mandaean tradition"
+role-tokens: ["king"]
 region: "Salem (traditionally Jerusalem) — Genesis 14"
 date-born: -2000
 date-died: -2000

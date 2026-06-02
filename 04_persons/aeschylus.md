@@ -3,8 +3,9 @@ type: person
 id: "aeschylus"
 name: "Aeschylus of Eleusis"
 aka: ["Αἰσχύλος", "Aeschylus the Athenian"]
-role: "tragic poet | religious dramatist | founder of Greek tragedy | Eleusinian initiate"
+role-description: "tragic poet | religious dramatist | founder of Greek tragedy | Eleusinian initiate"
 tradition: "Greek (Athenian dramatic tradition); deeply Eleusinian-religious by birth and initiation"
+role-tokens: ["author-secular"]
 region: "Eleusis (birth) → Athens → Sicily (Syracuse and Gela, late life)"
 date-born: -525
 date-died: -456

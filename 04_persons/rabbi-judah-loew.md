@@ -3,8 +3,9 @@ type: person
 id: "rabbi-judah-loew"
 name: "Judah Loew ben Bezalel"
 aka: ["Maharal of Prague", "Maharal", "Der Hohe Rabbi Löw", "MaHaRaL"]
-role: "rabbi / Kabbalist / philosopher"
+role-description: "rabbi / Kabbalist / philosopher"
 tradition: "Ashkenazi Judaism / Kabbalah"
+role-tokens: ["kabbalist"]
 region: "Prague (Bohemia)"
 date-born: 1520
 date-died: 1609

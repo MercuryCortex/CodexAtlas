@@ -3,8 +3,9 @@ type: person
 id: "meister-eckhart"
 name: "Meister Eckhart"
 aka: ["Eckhart von Hochheim OP", "Magister Eckhardus", "Johannes Eckhart von Hochheim", "Meister Eckhart", "the Rhineland Mystic"]
-role: "Dominican friar, theologian, vernacular preacher"
+role-description: "Dominican friar, theologian, vernacular preacher"
 tradition: "Latin Christian — Dominican Rhineland mysticism"
+role-tokens: ["theologian"]
 region: "Holy Roman Empire — Thuringia (origin), Paris, Strasbourg, Cologne, Avignon"
 date-born: 1260
 date-died: 1328

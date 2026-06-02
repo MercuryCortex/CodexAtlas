@@ -3,6 +3,8 @@ type: person
 id: "constantine-the-great"
 name: "Constantine The Great"
 status: "stub"
+role-tokens: ["emperor", "religious-patron"]
+role-description: "Constantine I — Roman emperor (306-337); Edict of Milan 313; convened First Council of Nicaea 325; founded Constantinople."
 ---
 
 # Constantine The Great

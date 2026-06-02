@@ -3,8 +3,9 @@ type: person
 id: "giyorgis-of-sagla"
 name: "Giyorgis of Sagla (Abba Giyorgis II)"
 aka: ["Abba Giyorgis", "George of Sagla", "Gäbrä Mäsih ('Servant of the Messiah' — monastic name)"]
-role: "theologian, monk, scholar"
+role-description: "theologian, monk, scholar"
 tradition: "[[tradition-ethiopian-orthodox-tewahedo]]"
+role-tokens: ["theologian"]
 region: "Amhara region (central Ethiopian highlands); educated at Hayq Estifanos and Debre Libanos"
 date-born: 1365
 date-died: 1425

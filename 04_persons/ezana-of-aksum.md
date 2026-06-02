@@ -3,8 +3,9 @@ type: person
 id: "ezana-of-aksum"
 name: "Ezana of Aksum"
 aka: ["ʿEzana", "Aezanas", "Aizan", "ዔዛና"]
-role: "king, reformer"
+role-description: "king, reformer"
 tradition: "[[tradition-ethiopian-orthodox-tewahedo]] (first Christian king); previously pre-Christian South-Arabian-derived Aksumite paganism"
+role-tokens: ["king", "religious-reformer"]
 region: "Aksumite Kingdom (highland Tigray and northern Ethiopia / Eritrea)"
 date-born:
 date-died: 360

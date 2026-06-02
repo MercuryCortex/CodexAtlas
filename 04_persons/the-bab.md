@@ -3,8 +3,9 @@ type: person
 id: "the-bab"
 name: "The Báb"
 aka: ["Siyyid `Alí Muḥammad Shírází"]
-role: "founder / prophet"
 tradition: "Bábí / Bahá'í Faith (precursor manifestation)"
+role-tokens: ["founder", "manifestation-bahai", "martyr-bahai"]
+role-description: "Siyyid `Alí-Muhammad Shírází (the Báb) — founder of Bábism (1844); recognized in Bahá'í faith as the Manifestation immediately preceding Bahá'u'lláh; executed by firing squad in Tabriz 1850 (martyrdom of central paradigmatic importance in Bábí-Bahá'í tradition)."
 region: "Iran (Shiraz)"
 date-born: 1819
 date-died: 1850

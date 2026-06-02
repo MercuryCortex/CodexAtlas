@@ -3,8 +3,9 @@ type: person
 id: "gamaliel-the-elder"
 name: "Gamaliel the Elder"
 aka: ["Rabban Gamaliel I", "Gamliel ha-Zaqen", "Gamaliel I"]
-role: "rabbi (Tannaitic) / Pharisaic leader / Sanhedrin member"
+role-description: "rabbi (Tannaitic) / Pharisaic leader / Sanhedrin member"
 tradition: "Pharisaic Judaism (early Tannaitic)"
+role-tokens: ["rabbi-tannaitic"]
 region: "Jerusalem"
 date-born: -10
 date-died: 52

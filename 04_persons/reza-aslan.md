@@ -3,8 +3,9 @@ type: person
 id: "reza-aslan"
 name: "Reza Aslan"
 aka: []
-role: "popular religious-studies writer / public intellectual"
+role-description: "popular religious-studies writer / public intellectual"
 tradition: "Comparative religion (popular) / Islam (Shia background)"
+role-tokens: ["author-secular"]
 region: "United States (UC Riverside / independent)"
 date-born: 1972
 date-died:

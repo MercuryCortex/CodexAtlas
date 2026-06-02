@@ -3,8 +3,9 @@ type: person
 id: "justinian-i"
 name: "Justinian I"
 aka: ["Justinian the Great", "Flavius Petrus Sabbatius Iustinianus"]
-role: "emperor"
+role-description: "emperor"
 tradition: "Eastern Christian (Chalcedonian)"
+role-tokens: ["emperor"]
 region: "Eastern Roman / Byzantine Empire"
 date-born: 482
 date-died: 565

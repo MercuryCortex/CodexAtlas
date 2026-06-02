@@ -3,8 +3,9 @@ type: person
 id: "alexander-the-great"
 name: "Alexander the Great"
 aka: ["Alexander III of Macedon", "Ἀλέξανδρος ὁ Μέγας (Aléxandros ho Mégas)", "Iskandar (Persian / Arabic)", "[[dhu-al-qarnayn|Dhū al-Qarnayn]] (the Two-Horned-One — traditional Islamic identification per Quran 18:83-101, contested in modern tafsir)", "Sikandar (South Asian)"]
-role: "king; emperor; founder of the Hellenistic world-system"
+role-description: "king; emperor; founder of the Hellenistic world-system"
 tradition: "Hellenic / Argead Macedonian (with cult-honors as son of Zeus-Ammon by Egyptian and Greek priesthoods)"
+role-tokens: ["king", "emperor"]
 family: "Macedonian"
 region: "From Macedon to Egypt to the Indus — the largest empire of classical antiquity"
 date-born: -356

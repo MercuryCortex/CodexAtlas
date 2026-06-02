@@ -3,8 +3,9 @@ type: person
 id: "james-son-of-zebedee"
 name: "James, son of Zebedee"
 aka: ["Yaakov bar Zavdai", "James the Greater", "Jacobus Maior", "Iakōbos ho tou Zebedaiou"]
-role: "apostle | martyr"
+role-description: "apostle | martyr"
 tradition: "earliest Christianity"
+role-tokens: ["apostle-christian"]
 region: "Galilee → Jerusalem"
 date-born: -5
 date-died: 44

@@ -3,8 +3,9 @@ type: person
 id: "edgar-cayce"
 name: "Edgar Cayce"
 aka: ["the Sleeping Prophet"]
-role: "trance-medium / prophet / esotericist"
 tradition: "American esoteric / trance prophecy"
+role-tokens: ["founder", "scholar-alternative"]
+role-description: "Edgar Cayce — American psychic / 'sleeping prophet'; founder of the Association for Research and Enlightenment (1931, Virginia Beach). Atlantis readings + holistic-health predictions. Per academic-religious-studies frame: T4 alternative."
 region: "United States (Kentucky → Alabama → Ohio → Virginia Beach)"
 date-born: 1877
 date-died: 1945

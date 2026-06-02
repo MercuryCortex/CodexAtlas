@@ -3,8 +3,9 @@ type: person
 id: "valerian-emperor"
 name: "Valerian"
 aka: ["Publius Licinius Valerianus"]
-role: "emperor / persecutor"
+role-description: "emperor / persecutor"
 tradition: "Roman state religion (pagan)"
+role-tokens: ["emperor"]
 region: "Rome / Empire"
 date-born: 200
 date-died: 264

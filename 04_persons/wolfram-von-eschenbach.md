@@ -4,10 +4,11 @@ id: "wolfram-von-eschenbach"
 name: "Wolfram von Eschenbach"
 aka: ["Wolfram", "the author of Parzival"]
 tradition: "Latin Christianity (German medieval literary culture)"
+role-tokens: ["author-secular"]
 region: "Bavaria (Eschenbach, near Ansbach — now Wolframs-Eschenbach, Bavaria)"
 date-born: 1170
 date-died: 1220
-role: "German medieval poet; author of *Parzival* (~1200–1210) — the most theologically complex and cross-culturally sophisticated Grail romance, which identifies the Grail guardians as *Templeise* (Templars) and claims an Islamic-Arabic textual source"
+role-description: "German medieval poet; author of *Parzival* (~1200–1210) — the most theologically complex and cross-culturally sophisticated Grail romance, which identifies the Grail guardians as *Templeise* (Templars) and claims an Islamic-Arabic textual source"
 key-works: ["*Parzival* (~1200–1210) — the Grail romance that created the Templar-Grail literary connection", "*Willehalm* (~1210–1220) — unfinished epic on the Battle of Aliscans; notable for its theology of interfaith tolerance", "*Titurel* (~1210–1220) — fragment on the Grail castle"]
 tradition-affiliation: []
 influenced: ["[[theme-holy-grail]] (the Parzival Grail is the source for the Templar-Grail identification in Western cultural imagination)", "[[tradition-knights-templar]] (his *Templeise* became the primary literary vehicle for associating Templars with the Grail)", "Wagner's *Parsifal* (1882 — Wolfram is the most direct source for Wagner's opera; Wagner's Grail theology is explicitly Wolfram-derived)", "T.S. Eliot (*The Waste Land*) via Jessie Weston's scholarship on Wolfram"]

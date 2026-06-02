@@ -3,8 +3,9 @@ type: person
 id: "anaximenes"
 name: "Anaximenes of Miletus"
 aka: ["Ἀναξιμένης", "Anaximenes of Miletus"]
-role: "philosopher | natural-scientist | meteorologist"
+role-description: "philosopher | natural-scientist | meteorologist"
 tradition: "Pre-Socratic Greek (Milesian school)"
+role-tokens: ["presocratic-philosopher"]
 region: "Miletus (Ionian Greek city on the coast of Asia Minor)"
 date-born: -586
 date-died: -526

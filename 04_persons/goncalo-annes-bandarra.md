@@ -3,8 +3,9 @@ type: person
 id: "goncalo-annes-bandarra"
 name: "Gonçalo Annes Bandarra"
 aka: ["Bandarra", "Gonçalo Anes Bandarra", "the Cobbler-Prophet of Trancoso"]
-role: "prophet"
+role-description: "prophet"
 tradition: "[[tradition-sebastianism]]"
+role-tokens: ["prophet-abrahamic"]
 region: "Portugal (Trancoso, Beira region)"
 date-born: 1500
 date-died: 1556

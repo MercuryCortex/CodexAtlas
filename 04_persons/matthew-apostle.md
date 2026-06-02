@@ -3,8 +3,9 @@ type: person
 id: "matthew-apostle"
 name: "Matthew the Apostle"
 aka: ["Levi son of Alphaeus", "Mattityahu", "Maththaios", "Matthew the Tax Collector"]
-role: "apostle"
+role-description: "apostle"
 tradition: "earliest Christianity"
+role-tokens: ["apostle-christian"]
 region: "Capernaum (Galilee); later traditions: Ethiopia, Parthia, Macedonia"
 date-born: -5
 date-died: 70

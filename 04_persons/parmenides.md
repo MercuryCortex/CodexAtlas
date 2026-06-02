@@ -3,8 +3,9 @@ type: person
 id: "parmenides"
 name: "Parmenides of Elea"
 aka: ["Parmenidēs"]
-role: "philosopher"
+role-description: "philosopher"
 tradition: "Greek philosophy (Presocratic, Eleatic)"
+role-tokens: ["presocratic-philosopher"]
 region: "Elea (Velia, southern Italy)"
 date-born: -515
 date-died: -440

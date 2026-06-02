@@ -3,8 +3,9 @@ type: person
 id: "hosea-prophet"
 name: "Hosea"
 aka: ["הוֹשֵׁעַ", "Hoshea"]
-role: "prophet"
+role-description: "prophet"
 tradition: "Israelite (Northern Kingdom)"
+role-tokens: ["prophet-abrahamic"]
 region: "Northern Kingdom of Israel"
 date-born:
 date-died:

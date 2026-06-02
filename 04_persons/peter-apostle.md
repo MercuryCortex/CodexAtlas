@@ -3,8 +3,9 @@ type: person
 id: "peter-apostle"
 name: "Peter the Apostle"
 aka: ["Simon Peter", "Simeon bar Yonah", "Cephas (Aramaic 'rock')", "Simon Kepha"]
-role: "founder | apostle"
+role-description: "founder | apostle"
 tradition: "earliest Christianity"
+role-tokens: ["founder", "apostle-christian"]
 region: "Galilee (Bethsaida/Capernaum), Jerusalem, Antioch, Rome (traditional)"
 date-born: -5
 date-died: 65

@@ -3,8 +3,9 @@ type: person
 id: "amos-prophet"
 name: "Amos"
 aka: ["עָמוֹס"]
-role: "prophet"
+role-description: "prophet"
 tradition: "Israelite (pre-exilic)"
+role-tokens: ["prophet-abrahamic"]
 region: "Judah (Tekoa) / Northern Kingdom of Israel (where he prophesied)"
 date-born:
 date-died:

@@ -3,8 +3,9 @@ type: person
 id: "orpheus"
 name: "Orpheus"
 aka: ["Orpheús (Ὀρφεύς)"]
-role: "legendary singer-poet; founder-figure of the Orphic mystery tradition"
+role-description: "legendary singer-poet; founder-figure of the Orphic mystery tradition"
 tradition: "Greek mystery religion (Orphism); influence on Pythagoreanism, Platonism, and later esoteric currents"
+role-tokens: ["author-secular"]
 region: "Thrace (mythological origin); Athenian-Hellenistic-period literary and cultic diffusion across the Greek world and into Magna Graecia"
 date-born:
 date-died:

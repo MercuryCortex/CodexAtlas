@@ -3,8 +3,9 @@ type: person
 id: "ptolemy-i-soter"
 name: "Ptolemy I Soter"
 aka: ["Πτολεμαῖος Σωτήρ", "Ptolemy Lagides", "Soter ('Savior')"]
-role: "king | general | founder of the Ptolemaic dynasty | religious-cult-engineer | historian"
+role-description: "king | general | founder of the Ptolemaic dynasty | religious-cult-engineer | historian"
 tradition: "Hellenistic Greek (Macedonian) ruling Egypt as Pharaoh; founder of the Greco-Egyptian state-cult"
+role-tokens: ["king"]
 region: "Macedon, Egypt (Alexandria, Memphis); travels throughout the eastern Mediterranean"
 date-born: -367
 date-died: -282

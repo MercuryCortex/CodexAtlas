@@ -3,8 +3,9 @@ type: person
 id: "tiberius-emperor"
 name: "Tiberius"
 aka: ["Tiberius Caesar Augustus", "Tiberius Claudius Nero"]
-role: "emperor"
+role-description: "emperor"
 tradition: "Roman imperial"
+role-tokens: ["emperor"]
 region: "Roman Empire"
 date-born: -42
 date-died: 37

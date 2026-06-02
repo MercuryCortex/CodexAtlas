@@ -3,8 +3,9 @@ type: person
 id: "lut"
 name: "Lūṭ"
 aka: ["Lūṭ", "Lot (Hebrew)", "Lot (Genesis)"]
-role: "prophet | nephew of Abraham"
+role-description: "prophet | nephew of Abraham"
 tradition: "Islam (Quranic prophet); Israelite / Hebrew Bible"
+role-tokens: ["prophet-abrahamic"]
 region: "Canaan / Sodom (Saddūm in Arabic tradition)"
 date-born: ""
 date-died: ""

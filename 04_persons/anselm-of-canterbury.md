@@ -3,8 +3,9 @@ type: person
 id: "anselm-of-canterbury"
 name: "Anselm of Canterbury"
 aka: ["Anselmus Cantuariensis", "Anselm of Aosta", "Anselm of Bec"]
-role: "monk, abbot, archbishop, philosopher, theologian"
+role-description: "monk, abbot, archbishop, philosopher, theologian"
 tradition: "Latin Christian — early scholastic"
+role-tokens: ["archbishop-christian", "theologian"]
 region: "Burgundy (origin), Normandy (Bec), England (Canterbury)"
 date-born: 1033
 date-died: 1109

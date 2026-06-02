@@ -3,8 +3,16 @@ type: person
 id: "mary-magdalene"
 name: "Mary Magdalene"
 aka: ["Mariam ha-Magdalit", "Maria Magdalene", "Mariam (Aramaic)", "the Apostle to the Apostles (medieval epithet)"]
-role: "disciple | mystic"
 tradition: "earliest Christianity; Gnostic traditions"
+role-tokens: ["apostle-christian", "saint-roman-catholic", "saint-eastern-orthodox"]
+role-description: "Mary Magdalene (Maria of Magdala) — disciple of Jesus; first to witness the empty tomb (per all four canonical Gospels); 'apostle to the apostles' in Eastern Orthodox tradition (Brock 2003); contested in Western tradition (Schaberg 2002)."
+polemical-framing:
+  - by: "Western Christian medieval-tradition (conflation with Mary of Bethany + unnamed sinful woman of Luke 7)"
+    label: "penitent-prostitute"
+    source-tier: T1
+    source: ""
+    direction: outsider
+    note: "Per Schaberg 2002 — the prostitute identification was a 6th-c. Gregory-the-Great conflation, retracted by Vatican II."
 region: "Magdala (Migdal) on the Sea of Galilee; Jerusalem"
 date-born: 5
 date-died: 65

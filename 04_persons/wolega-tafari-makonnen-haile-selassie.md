@@ -3,8 +3,9 @@ type: person
 id: "wolega-tafari-makonnen-haile-selassie"
 name: "Tafari Makonnen / Haile Selassie I"
 aka: ["Tafari Makonnen", "Ras Tafari", "Haile Selassie I", "His Imperial Majesty", "King of Kings", "Lord of Lords", "Conquering Lion of the Tribe of Judah"]
-role: "Emperor of Ethiopia (1930–1974) / Rastafarian messianic figure"
+role-description: "Emperor of Ethiopia (1930–1974) / Rastafarian messianic figure"
 tradition: "Ethiopian Orthodox Christianity (officially) / [[tradition-rastafari]] (object of religious veneration outside Ethiopia)"
+role-tokens: ["emperor"]
 region: "Ethiopia (Addis Ababa, Harar)"
 date-born: 1892
 date-died: 1975

@@ -3,8 +3,9 @@ type: person
 id: "hans-urs-von-balthasar"
 name: "Hans Urs von Balthasar"
 aka: []
-role: "theologian / patristic and literary scholar"
+role-description: "theologian / patristic and literary scholar"
 tradition: "Roman Catholicism / Society of Jesus (briefly) / ressourcement / Communio"
+role-tokens: ["theologian"]
 region: "Switzerland (Basel / Lucerne)"
 date-born: 1905
 date-died: 1988

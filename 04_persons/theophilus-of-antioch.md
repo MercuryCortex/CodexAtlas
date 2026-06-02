@@ -3,8 +3,9 @@ type: person
 id: "theophilus-of-antioch"
 name: "Theophilus of Antioch"
 aka: ["Theophilos"]
-role: "bishop / apologist"
+role-description: "bishop / apologist"
 tradition: "Patristic Christian (proto-orthodox)"
+role-tokens: ["bishop-christian"]
 region: "Antioch (Syria)"
 date-born: 120
 date-died: 185

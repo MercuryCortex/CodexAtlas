@@ -3,8 +3,9 @@ type: person
 id: "shariputra"
 name: "Śāriputra"
 aka: ["Sāriputta (Pali)", "Upatissa (personal name; given before joining the saṅgha)", "Foremost in wisdom (paññā)", "Dharma-sēnāpati ('General of the Dharma')"]
-role: "disciple | systematic theologian | Buddhist saint"
+role-description: "disciple | systematic theologian | Buddhist saint"
 tradition: "Buddhism (pre-sectarian; foundational across all schools)"
+role-tokens: ["disciple-christian"]
 region: "Magadha (born at Upatissa village near Nāḷandā, modern Bihar)"
 date-born: -490
 date-died: -410

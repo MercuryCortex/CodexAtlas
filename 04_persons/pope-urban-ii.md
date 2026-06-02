@@ -3,8 +3,9 @@ type: person
 id: "pope-urban-ii"
 name: "Pope Urban II"
 aka: ["Odo of Châtillon-sur-Marne", "Otto of Lagery", "Urbanus II"]
-role: "pope / preacher of the First Crusade"
+role-description: "pope / preacher of the First Crusade"
 tradition: "Latin Christianity"
+role-tokens: ["pope-roman-catholic"]
 region: "France (Reims, Cluny) → Rome / Italy"
 date-born: 1042
 date-died: 1099

@@ -6,10 +6,12 @@ aka: ["Aurangzeb Alamgir", "ʿĀlamgīr I", "Muhi-ud-Din Muhammad", "the last gr
 birth: 1618
 death: 1707
 nationality: "Mughal (Indian)"
-role: "Mughal Emperor (r. 1658–1707); reversed Akbar's syncretic policies; executed Guru Tegh Bahadur 1675"
+role-description: "Mughal Emperor (r. 1658–1707); reversed Akbar's syncretic policies; executed Guru Tegh Bahadur 1675"
 mentioned-in: ["[[event-death-of-guru-tegh-bahadur-1675]]"]
 status: "stub"
 tags: [person, mughal, india, emperor, islam, sunni, aurangzeb, sikhism, 17th-century, persecution]
+role-tokens: ["guru-sikh", "emperor"]
+role-description: "Mughal Emperor (r. 1658–1707); reversed Akbar's syncretic policies; executed Guru Tegh Bahadur 1675"
 ---
 
 # Aurangzeb

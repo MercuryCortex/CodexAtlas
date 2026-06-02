@@ -3,8 +3,9 @@ type: person
 id: "heraclitus"
 name: "Heraclitus of Ephesus"
 aka: ["Hērakleitos", "Heraclitus the Obscure", "the weeping philosopher"]
-role: "philosopher"
+role-description: "philosopher"
 tradition: "Greek philosophy (Presocratic)"
+role-tokens: ["presocratic-philosopher"]
 region: "Ephesus (Ionian Asia Minor)"
 date-born: -535
 date-died: -475

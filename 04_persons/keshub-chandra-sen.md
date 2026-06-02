@@ -3,8 +3,9 @@ type: person
 id: "keshub-chandra-sen"
 name: "Keshub Chandra Sen"
 aka: ["Keshab Chandra Sen", "Keshub Chunder Sen", "Brahmananda Keshab"]
-role: "reformer / Brahmo Samaj leader / interfaith universalist"
+role-description: "reformer / Brahmo Samaj leader / interfaith universalist"
 tradition: "Hindu modernism — Brahmo Samaj / Naba-Bidhan (New Dispensation)"
+role-tokens: ["religious-reformer"]
 region: "Bengal (Calcutta) / England / pan-India lecture tour"
 date-born: 1838
 date-died: 1884

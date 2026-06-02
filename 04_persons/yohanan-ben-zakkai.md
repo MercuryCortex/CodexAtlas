@@ -3,8 +3,9 @@ type: person
 id: "yohanan-ben-zakkai"
 name: "Yohanan ben Zakkai"
 aka: ["Rabban Yohanan ben Zakkai", "Yochanan ben Zakkai", "RYBZ"]
-role: "rabbi (Tannaitic) / Pharisaic leader / academy founder"
+role-description: "rabbi (Tannaitic) / Pharisaic leader / academy founder"
 tradition: "early Rabbinic Judaism (Tannaitic; Pharisaic background)"
+role-tokens: ["rabbi-tannaitic"]
 region: "Jerusalem → Yavneh (Jamnia, coastal Judea)"
 date-born: -10
 date-died: 90

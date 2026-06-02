@@ -3,8 +3,9 @@ type: person
 id: "eliezer-ben-hyrcanus"
 name: "Eliezer ben Hyrcanus"
 aka: ["Rabbi Eliezer ben Hyrcanus", "Eliezer the Great", "R. Eliezer"]
-role: "rabbi (Tannaitic)"
+role-description: "rabbi (Tannaitic)"
 tradition: "early Rabbinic Judaism (Tannaitic; Shammaite tendency)"
+role-tokens: ["rabbi-tannaitic"]
 region: "Lydda, Yavneh"
 date-born: 40
 date-died: 120

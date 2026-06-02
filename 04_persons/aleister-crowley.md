@@ -3,8 +3,15 @@ type: person
 id: "aleister-crowley"
 name: "Aleister Crowley"
 aka: ["Edward Alexander Crowley", "Frater Perdurabo", "Master Therion", "The Beast 666"]
-role: "founder / occultist / poet"
 tradition: "Thelema"
+role-tokens: ["founder", "prophet-non-abrahamic", "magus", "mystic-syncretic"]
+role-description: "Aleister Crowley — founder of Thelema; self-styled 'Prophet of the Aeon of Horus'; Liber AL vel Legis 1904."
+polemical-framing:
+  - by: "mainline-Christianity + older academy"
+    label: "occultist"
+    source-tier: T2
+    source: ""
+    direction: outsider
 region: "United Kingdom (Leamington Spa) → world"
 date-born: 1875
 date-died: 1947

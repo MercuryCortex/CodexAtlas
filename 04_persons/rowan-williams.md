@@ -3,8 +3,9 @@ type: person
 id: "rowan-williams"
 name: "Rowan Williams"
 aka: ["Rowan Douglas Williams, Baron Williams of Oystermouth"]
-role: "theologian / Anglican archbishop / patristic scholar"
+role-description: "theologian / Anglican archbishop / patristic scholar"
 tradition: "Anglican (Church in Wales / Church of England) / patristic and Russian-Orthodox-informed theology"
+role-tokens: ["theologian"]
 region: "United Kingdom (Wales / Cambridge / Canterbury)"
 date-born: 1950
 date-died:

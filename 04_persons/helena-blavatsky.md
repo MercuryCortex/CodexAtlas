@@ -3,8 +3,9 @@ type: person
 id: "helena-blavatsky"
 name: "Helena Petrovna Blavatsky"
 aka: ["HPB", "Madame Blavatsky", "Yelena Petrovna Blavatskaya"]
-role: "founder / esotericist"
 tradition: "Theosophy"
+role-tokens: ["founder", "mystic-syncretic"]
+role-description: "Helena Petrovna Blavatsky — co-founder of the Theosophical Society (1875); author of *The Secret Doctrine* (1888)."
 region: "Russia → world (United States / India / Europe)"
 date-born: 1831
 date-died: 1891

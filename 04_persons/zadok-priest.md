@@ -3,8 +3,9 @@ type: person
 id: "zadok-priest"
 name: "Zadok"
 aka: ["Tsadoq", "Sadoc"]
-role: "high priest"
+role-description: "high priest"
 tradition: "Israelite / United Monarchy"
+role-tokens: ["high-priest-israelite"]
 region: "Jerusalem"
 date-born: -1030
 date-died: -960

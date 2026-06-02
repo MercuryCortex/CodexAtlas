@@ -3,8 +3,9 @@ type: person
 id: "david-bentley-hart"
 name: "David Bentley Hart"
 aka: []
-role: "theologian / philosopher / translator"
+role-description: "theologian / philosopher / translator"
 tradition: "Eastern Orthodox theology / classical theism / Christian universalism"
+role-tokens: ["theologian"]
 region: "United States (Indiana / Notre Dame)"
 date-born: 1965
 date-died:

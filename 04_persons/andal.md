@@ -3,8 +3,9 @@ type: person
 id: "andal"
 name: "Andal"
 aka: ["Āṇṭāḷ", "Goda Devi", "Sudikkodutta Nacchiyar (she who gave worn garlands)"]
-role: "Tamil Alvar poet-saint / Vaishnava devotional poet / only female Alvar"
+role-description: "Tamil Alvar poet-saint / Vaishnava devotional poet / only female Alvar"
 tradition: "Hindu Bhakti (Tamil Vaishnava — Alvar tradition; Sri Vaishnavism)"
+role-tokens: ["author-secular"]
 region: "Srivilliputhur, Tamil Nadu (south India)"
 date-born: 720
 date-died: 750

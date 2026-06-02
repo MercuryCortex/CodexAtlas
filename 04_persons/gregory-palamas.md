@@ -3,8 +3,9 @@ type: person
 id: "gregory-palamas"
 name: "Gregory Palamas"
 aka: ["Gregorios Palamas", "Saint Gregory Palamas"]
-role: "Athonite monk, archbishop, theologian"
+role-description: "Athonite monk, archbishop, theologian"
 tradition: "Eastern Orthodox Christianity — Hesychast / Palamite"
+role-tokens: ["archbishop-christian", "theologian"]
 region: "Byzantine Empire — Constantinople, Mount Athos, Thessalonica"
 date-born: 1296
 date-died: 1359

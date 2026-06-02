@@ -3,8 +3,9 @@ type: person
 id: "william-blake"
 name: "William Blake"
 aka: ["Blake", "the Bard", "the Visionary Poet"]
-role: "poet, engraver, visionary mythmaker"
+role-description: "poet, engraver, visionary mythmaker"
 tradition: "English Romanticism / Christian mysticism / personal synthetic mythology"
+role-tokens: ["author-secular"]
 region: "London, England"
 date-born: 1757
 date-died: 1827

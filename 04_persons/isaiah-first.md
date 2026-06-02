@@ -3,8 +3,9 @@ type: person
 id: "isaiah-first"
 name: "Isaiah of Jerusalem (First Isaiah)"
 aka: ["יְשַׁעְיָהוּ", "Isaiah ben Amoz", "Proto-Isaiah"]
-role: "prophet"
+role-description: "prophet"
 tradition: "Judahite"
+role-tokens: ["prophet-abrahamic"]
 region: "Kingdom of Judah, Jerusalem"
 date-born: -760
 date-died: -690

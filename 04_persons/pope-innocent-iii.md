@@ -3,8 +3,9 @@ type: person
 id: "pope-innocent-iii"
 name: "Pope Innocent III"
 aka: ["Lotario dei Conti di Segni", "Innocentius III"]
-role: "pope / canon lawyer / political theologian"
+role-description: "pope / canon lawyer / political theologian"
 tradition: "Latin Christianity"
+role-tokens: ["pope-roman-catholic"]
 region: "Italy (Segni / Rome)"
 date-born: 1160
 date-died: 1216

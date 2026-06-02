@@ -3,8 +3,9 @@ type: person
 id: "paul-of-samosata"
 name: "Paul of Samosata"
 aka: ["Paulos ho Samosateus"]
-role: "bishop / heresiarch (deposed)"
+role-description: "bishop / heresiarch (deposed)"
 tradition: "Christian (Adoptionist / dynamic-monarchian)"
+role-tokens: ["bishop-christian"]
 region: "Samosata (Syria) → Antioch"
 date-born: 200
 date-died: 275

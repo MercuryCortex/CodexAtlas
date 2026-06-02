@@ -3,8 +3,9 @@ type: person
 id: "maximus-the-confessor"
 name: "Maximus the Confessor"
 aka: ["Maximos ho Homologētēs", "Saint Maximus"]
-role: "monk, theologian, confessor (martyr-without-death-but-with-mutilation)"
+role-description: "monk, theologian, confessor (martyr-without-death-but-with-mutilation)"
 tradition: "Eastern Christian — Chalcedonian"
+role-tokens: ["theologian"]
 region: "Byzantine Empire — Constantinople, Carthage, Rome, exile in Lazica"
 date-born: 580
 date-died: 662

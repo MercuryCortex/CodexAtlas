@@ -3,8 +3,9 @@ type: person
 id: "herod-antipas"
 name: "Herod Antipas"
 aka: ["Antipater"]
-role: "king"
+role-description: "king"
 tradition: "Herodian / Roman-Judean"
+role-tokens: ["king"]
 region: "Galilee / Perea"
 date-born: -20
 date-died: 39

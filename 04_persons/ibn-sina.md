@@ -3,8 +3,9 @@ type: person
 id: "ibn-sina"
 name: "Ibn Sīnā (Abū ʿAlī al-Ḥusayn ibn ʿAbd Allāh ibn Sīnā)"
 aka: ["Avicenna (Latin — via Hebrew *Aven Sina*, possibly al-Andalus / Jewish-mediated)", "Ibn Sina", "Abū ʿAlī al-Ḥusayn ibn ʿAbd Allāh ibn Sīnā", "al-Shaykh al-Raʾīs (the Chief Master)"]
-role: "philosopher / physician / scientist / poet / statesman — the keystone figure of falsafa"
+role-description: "philosopher / physician / scientist / poet / statesman — the keystone figure of falsafa"
 tradition: "Islam (loose Shīʿī / Twelver background; Avicenna's theology is philosophical not narrowly sectarian); Falsafa (Greek-Arabic philosophical tradition)"
+role-tokens: ["author-secular"]
 region: "Persia / Khwārazm / Iran — born Afshana near Bukhara (modern Uzbekistan); courts at Bukhara, Gurgānj, Gurgān, Rayy, Hamadān, Iṣfahān; died Hamadān"
 date-born: 980
 date-died: 1037

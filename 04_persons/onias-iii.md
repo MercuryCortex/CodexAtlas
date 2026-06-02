@@ -3,8 +3,9 @@ type: person
 id: "onias-iii"
 name: "Onias III"
 aka: ["Honia III", "Ḥonyo"]
-role: "high priest"
+role-description: "high priest"
 tradition: "Second Temple Judaism"
+role-tokens: ["high-priest-israelite"]
 region: "Jerusalem / Antioch (died in exile)"
 date-born: -220
 date-died: -170

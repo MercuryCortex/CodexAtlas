@@ -3,8 +3,9 @@ type: person
 id: "decius-emperor"
 name: "Decius"
 aka: ["Gaius Messius Quintus Decius Traianus"]
-role: "emperor / persecutor"
+role-description: "emperor / persecutor"
 tradition: "Roman state religion (pagan)"
+role-tokens: ["emperor"]
 region: "Rome / Empire"
 date-born: 201
 date-died: 251

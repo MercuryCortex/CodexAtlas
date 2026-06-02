@@ -3,8 +3,9 @@ type: person
 id: "tsongkhapa"
 name: "Tsongkhapa"
 aka: ["Je Tsongkhapa Lobsang Drakpa", "Tsong-kha-pa"]
-role: "Tibetan Buddhist scholar, reformer, founder of Gelug school"
+role-description: "Tibetan Buddhist scholar, reformer, founder of Gelug school"
 tradition: "Vajrayāna Buddhism — Gelug (Yellow Hat)"
+role-tokens: ["religious-reformer"]
 region: "Tibet (Amdo origin; central Tibet career)"
 date-born: 1357
 date-died: 1419

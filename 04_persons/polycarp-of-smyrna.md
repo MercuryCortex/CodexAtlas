@@ -3,8 +3,9 @@ type: person
 id: "polycarp-of-smyrna"
 name: "Polycarp of Smyrna"
 aka: ["Polykarpos"]
-role: "bishop / martyr / apostolic father"
+role-description: "bishop / martyr / apostolic father"
 tradition: "Patristic Christian (proto-orthodox)"
+role-tokens: ["bishop-christian"]
 region: "Smyrna (Asia Minor)"
 date-born: 69
 date-died: 155

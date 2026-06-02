@@ -3,8 +3,9 @@ type: person
 id: "ramana-maharshi"
 name: "Ramana Maharshi"
 aka: ["Venkataraman Iyer"]
-role: "sage / Advaita Vedanta"
 tradition: "Hindu modernism / Advaita Vedanta"
+role-tokens: ["guru-hindu", "mystic-syncretic"]
+role-description: "Ramana Maharshi (Venkataraman Iyer) — 20th-c. Hindu sage; lived at Arunachala (Tiruvannamalai) from 1896; teacher of self-inquiry (vichara)."
 region: "Tamil Nadu, India (Tiruvannamalai)"
 date-born: 1879
 date-died: 1950

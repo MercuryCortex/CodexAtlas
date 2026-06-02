@@ -3,8 +3,9 @@ type: person
 id: "tomas-de-torquemada"
 name: "Tomás de Torquemada"
 aka: ["Thomas de Torquemada", "Tomas de Torquemada", "Grand Inquisitor Torquemada"]
-role: "First Grand Inquisitor of the Spanish Inquisition; Dominican friar; confessor to Queen Isabella I"
+role-description: "First Grand Inquisitor of the Spanish Inquisition; Dominican friar; confessor to Queen Isabella I"
 tradition: "Medieval Christianity / Roman Catholicism"
+role-tokens: ["monastic-christian-western", "queen"]
 region: "Castile and Aragon (Spain)"
 date-born: 1420
 date-died: 1498

@@ -3,8 +3,9 @@ type: person
 id: "al-ghazali"
 name: "Al-Ghazali"
 aka: ["Abū Ḥāmid Muḥammad al-Ghazālī", "Algazel (medieval Latin)", "Hujjat al-Islam (the Proof of Islam)"]
-role: "philosopher, theologian, jurist, Sufi"
+role-description: "philosopher, theologian, jurist, Sufi"
 tradition: "Sunni Islam — Shāfiʿī jurisprudence / Ash'arite theology / Sufism"
+role-tokens: ["theologian"]
 region: "Khurasan, Iraq, Syria, Egypt"
 date-born: 1058
 date-died: 1111

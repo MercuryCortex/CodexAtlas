@@ -3,8 +3,9 @@ type: person
 id: "john-chrysostom"
 name: "John Chrysostom"
 aka: ["Iōannēs ho Chrysostomos", "John the Golden-Mouthed"]
-role: "bishop / preacher (Christian)"
+role-description: "bishop / preacher (Christian)"
 tradition: "Patristic Christian (Antiochene)"
+role-tokens: ["bishop-christian"]
 region: "Antioch → Constantinople"
 date-born: 347
 date-died: 407

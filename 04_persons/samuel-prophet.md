@@ -3,8 +3,9 @@ type: person
 id: "samuel-prophet"
 name: "Samuel"
 aka: ["Shmuel"]
-role: "prophet"
+role-description: "prophet"
 tradition: "Israelite / pre-monarchic"
+role-tokens: ["prophet-abrahamic"]
 region: "Israel / Ephraim"
 date-born: -1075
 date-died: -1010

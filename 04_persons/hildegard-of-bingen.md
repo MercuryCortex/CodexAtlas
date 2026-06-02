@@ -3,8 +3,9 @@ type: person
 id: "hildegard-of-bingen"
 name: "Hildegard of Bingen"
 aka: ["Hildegardis Bingensis", "Sibyl of the Rhine"]
-role: "Benedictine abbess, visionary, theologian, composer, naturalist"
 tradition: "Latin Christian — Benedictine visionary tradition"
+role-tokens: ["doctor-of-the-church", "monastic-christian-western", "mystic-christian", "theologian"]
+role-description: "Hildegard of Bingen — Benedictine abbess; visionary mystic; composer; polymath. Canonized 2012; declared Doctor of the Church October 7, 2012 (4th woman to receive this title)."
 region: "Holy Roman Empire — Rhineland (Bingen / Rupertsberg / Eibingen)"
 date-born: 1098
 date-died: 1179

@@ -3,8 +3,9 @@ type: person
 id: "priscillian"
 name: "Priscillian"
 aka: ["Priscillianus"]
-role: "bishop / heresiarch (executed; first Christian executed for heresy)"
+role-description: "bishop / heresiarch (executed; first Christian executed for heresy)"
 tradition: "Christian (Hispano-Galician; ascetic / esoteric / accused of Manichaeism)"
+role-tokens: ["bishop-christian"]
 region: "Spain / Gaul — Avila, Trier"
 date-born: 340
 date-died: 385

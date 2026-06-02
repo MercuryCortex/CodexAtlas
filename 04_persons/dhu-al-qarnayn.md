@@ -3,8 +3,9 @@ type: person
 id: "dhu-al-qarnayn"
 name: "Dhū al-Qarnayn"
 aka: ["Dhū al-Qarnayn", "He of the Two Horns", "the Two-Horned One"]
-role: "legendary king | world-conqueror | builder of the wall against Gog and Magog"
+role-description: "legendary king | world-conqueror | builder of the wall against Gog and Magog"
 tradition: "Islam (Quranic legendary figure)"
+role-tokens: ["king"]
 region: "world-spanning (eastern and western limits of the earth, in the narrative)"
 date-born: ""
 date-died: ""

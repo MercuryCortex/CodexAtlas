@@ -3,8 +3,9 @@ type: person
 id: "hesiod"
 name: "Hesiod"
 aka: ["Ἡσίοδος", "Hēsiodos"]
-role: "poet"
+role-description: "poet"
 tradition: "Greek"
+role-tokens: ["author-secular"]
 region: "Boeotia (Ascra, near Mount Helicon)"
 date-born: -750
 date-died: -680

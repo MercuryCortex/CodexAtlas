@@ -3,8 +3,9 @@ type: person
 id: "charles-taze-russell"
 name: "Charles Taze Russell"
 aka: ["Pastor Russell"]
-role: "founder / Bible Student / Jehovah's Witnesses precursor"
+role-description: "founder / Bible Student / Jehovah's Witnesses precursor"
 tradition: "Jehovah's Witnesses (via the Bible Student / Watch Tower movement)"
+role-tokens: ["founder"]
 region: "United States (Pennsylvania)"
 date-born: 1852
 date-died: 1916

@@ -3,8 +3,9 @@ type: person
 id: "eusebius-of-caesarea"
 name: "Eusebius of Caesarea"
 aka: ["Eusebius Pamphili", "Eusebios"]
-role: "bishop / historian"
+role-description: "bishop / historian"
 tradition: "Patristic Christian"
+role-tokens: ["bishop-christian"]
 region: "Caesarea Maritima"
 date-born: 263
 date-died: 340

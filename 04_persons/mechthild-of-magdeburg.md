@@ -3,8 +3,9 @@ type: person
 id: "mechthild-of-magdeburg"
 name: "Mechthild of Magdeburg"
 aka: ["Mechthild von Magdeburg", "Mechtilde of Magdeburg"]
-role: "Beguine mystic / vernacular theologian"
+role-description: "Beguine mystic / vernacular theologian"
 tradition: "Latin Christianity (Beguine, then Cistercian — Helfta)"
+role-tokens: ["monastic-christian-western"]
 region: "Saxony (Holy Roman Empire) — Magdeburg and Helfta"
 date-born: 1207
 date-died: 1282

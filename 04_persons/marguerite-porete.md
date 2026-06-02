@@ -3,8 +3,9 @@ type: person
 id: "marguerite-porete"
 name: "Marguerite Porete"
 aka: ["Margaret Porete", "Marguerite of Hainaut"]
-role: "mystic / theologian / vernacular author"
+role-description: "mystic / theologian / vernacular author"
 tradition: "Latin Christianity (Beguine; vernacular mysticism)"
+role-tokens: ["mystic", "theologian"]
 region: "Hainaut (Low Countries) / Northern France"
 date-born: 1250
 date-died: 1310

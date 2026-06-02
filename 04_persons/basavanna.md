@@ -3,8 +3,9 @@ type: person
 id: "basavanna"
 name: "Basavanna"
 aka: ["Basava", "Basaveshwara", "Bhakti Bhandari Basavanna"]
-role: "philosopher, social reformer, poet-saint, founder of Lingayat movement"
+role-description: "philosopher, social reformer, poet-saint, founder of Lingayat movement"
 tradition: "Hindu — Vīraśaiva / Lingāyat (founded by Basavanna); sub-tradition of Shaivism"
+role-tokens: ["author-secular"]
 region: "Karnataka (Deccan India)"
 date-born: 1131
 date-died: 1168

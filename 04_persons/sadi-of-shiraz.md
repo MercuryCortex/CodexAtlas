@@ -3,8 +3,9 @@ type: person
 id: "sadi-of-shiraz"
 name: "Muṣliḥ al-Dīn Saʿdī Shīrāzī"
 aka: ["Saʿdī", "Sadi", "Saadi", "Sa'di of Shiraz", "سعدی شیرازی", "Gulistan author"]
-role: mystic
+role-description: mystic
 tradition: "Islam (Sufism — Persian ethical-literary tradition)"
+role-tokens: ["mystic"]
 region: "Fars / Southwest Persia"
 date-born: 1210
 date-died: 1292

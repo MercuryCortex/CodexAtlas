@@ -3,8 +3,9 @@ type: person
 id: "lalibela-king"
 name: "Gebre Mesqel Lalibela (Zagwe king)"
 aka: ["Lalibela", "Gebre Mesqel", "Lalibäla", "Saint Lalibela"]
-role: "king, builder, saint"
+role-description: "king, builder, saint"
 tradition: "[[tradition-ethiopian-orthodox-tewahedo]] (Zagwe dynasty)"
+role-tokens: ["king"]
 region: "Zagwe-period Ethiopia; capital at Roha (renamed Lalibela in his honor; Lasta region, Wollo)"
 date-born: 1162
 date-died: 1221

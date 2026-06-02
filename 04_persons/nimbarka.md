@@ -3,8 +3,9 @@ type: person
 id: "nimbarka"
 name: "Nimbarka"
 aka: ["Nimbārkācārya", "Niyamānanda", "Aruṇa Muni"]
-role: "philosopher / Vedanta commentator / founder of Nimbarka sampradaya"
+role-description: "philosopher / Vedanta commentator / founder of Nimbarka sampradaya"
 tradition: "Hindu — Dvaitādvaita Vedanta / Nimbarka sampradaya / Radha-Krishna bhakti"
+role-tokens: ["acharya-hindu"]
 region: "Nimbāgrāma / Vrindavan (Mathura district) — origin disputed (some sources Andhra)"
 date-born: 1130
 date-died: 1200

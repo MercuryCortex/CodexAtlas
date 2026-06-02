@@ -3,8 +3,9 @@ type: person
 id: "yongming-yanshou"
 name: "Yongming Yanshou (永明延壽)"
 aka: ["Yenshou", "the Master of Yongming", "Zong Jing (author of Record of the Mind-Mirror)"]
-role: "Tang-Song Chan master; architect of Chan + Pure Land synthesis; Sanjiao synthesizer"
+role-description: "Tang-Song Chan master; architect of Chan + Pure Land synthesis; Sanjiao synthesizer"
 tradition: "Chan Buddhism / Pure Land Buddhism"
+role-tokens: ["zen-master"]
 region: "Five Dynasties / early Song China (Hangzhou)"
 date-born: 904
 date-died: 975

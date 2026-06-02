@@ -3,8 +3,9 @@ type: person
 id: "montanus"
 name: "Montanus"
 aka: ["Montanos"]
-role: "heresiarch / prophet"
+role-description: "heresiarch / prophet"
 tradition: "Montanism (the *New Prophecy*)"
+role-tokens: ["prophet-abrahamic"]
 region: "Phrygia (specifically Ardabau / Pepuza area)"
 date-born: 130
 date-died: 180

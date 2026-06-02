@@ -3,8 +3,9 @@ type: person
 id: "elijah-prophet"
 name: "Elijah"
 aka: ["Eliyahu", "Ilyas"]
-role: "prophet"
+role-description: "prophet"
 tradition: "Israelite / Northern Kingdom"
+role-tokens: ["prophet-abrahamic"]
 region: "Israel / Gilead"
 date-born: -900
 date-died: -849

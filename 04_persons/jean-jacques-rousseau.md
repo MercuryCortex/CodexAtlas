@@ -3,8 +3,9 @@ type: person
 id: "jean-jacques-rousseau"
 name: "Jean-Jacques Rousseau"
 aka: ["J.-J. Rousseau"]
-role: "philosopher / political theorist / novelist"
+role-description: "philosopher / political theorist / novelist"
 tradition: "French Enlightenment"
+role-tokens: ["author-secular"]
 region: "Geneva (born); Paris; Ermenonville"
 date-born: 1712
 date-died: 1778

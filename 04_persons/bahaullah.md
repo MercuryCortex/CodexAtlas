@@ -3,8 +3,9 @@ type: person
 id: "bahaullah"
 name: "Bahá'u'lláh"
 aka: ["Mírzá Husayn-`Alí Núrí"]
-role: "founder / prophet"
 tradition: "Bahá'í Faith"
+role-tokens: ["founder", "manifestation-bahai"]
+role-description: "Mírzá Husayn-`Alí Núrí (Bahá'u'lláh) — Persian religious leader; founder of the Bahá'í Faith. Bahá'í doctrine frames him as the most recent Manifestation of God (mazhar-i ilāhī) — a category that includes Krishna, Buddha, Zoroaster, Moses, Jesus, Muhammad, the Báb."
 region: "Iran → Ottoman Iraq → Ottoman Turkey → Ottoman Palestine (Akka)"
 date-born: 1817
 date-died: 1892

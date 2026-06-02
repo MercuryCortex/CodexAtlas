@@ -3,8 +3,9 @@ type: person
 id: "pothinus-of-lyon"
 name: "Pothinus of Lyon"
 aka: ["Pothinos", "Pothinus the bishop of Lugdunum"]
-role: "bishop / martyr"
+role-description: "bishop / martyr"
 tradition: "Patristic Christian (proto-orthodox)"
+role-tokens: ["bishop-christian"]
 region: "Asia Minor (origin) → Lyon (Lugdunum, Gaul)"
 date-born: 87
 date-died: 177

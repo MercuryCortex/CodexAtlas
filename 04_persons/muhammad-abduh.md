@@ -3,8 +3,9 @@ type: person
 id: "muhammad-abduh"
 name: "Muhammad Abduh"
 aka: []
-role: "reformer / Islamic modernist"
+role-description: "reformer / Islamic modernist"
 tradition: "Islamic modernism"
+role-tokens: ["religious-reformer"]
 region: "Egypt"
 date-born: 1849
 date-died: 1905

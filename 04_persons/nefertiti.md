@@ -4,8 +4,9 @@ id: nefertiti
 name: Nefertiti
 aka: ["Neferneferuaten (possible post-Akhenaten pharaonic name)", "Lady of Grace, Sweet of Love"]
 tradition: egyptian-religion
+role-tokens: ["pharaoh", "queen"]
 period: [c. -1370, c. -1330]
-role: Queen consort of Akhenaten; probable co-regent; possible female pharaoh under the name Neferneferuaten
+role-description: Queen consort of Akhenaten; probable co-regent; possible female pharaoh under the name Neferneferuaten
 attested-in:
   - "[[phase-1-012-amarna-letters]]"
   - "[[phase-1-011-great-hymn-to-aten]]"

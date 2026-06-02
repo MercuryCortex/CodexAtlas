@@ -3,8 +3,9 @@ type: person
 id: "frumentius"
 name: "Frumentius (Abba Salama / Kesate Birhan)"
 aka: ["Abba Salama I", "Father of Peace", "Kesate Birhan (Revealer of Light)", "Φρουμέντιος", "Fremnatos"]
-role: "missionary, bishop, founder"
+role-description: "missionary, bishop, founder"
 tradition: "[[tradition-ethiopian-orthodox-tewahedo]] / [[tradition-coptic-orthodox]] (consecrating church)"
+role-tokens: ["bishop-christian", "founder"]
 region: "Tyre → Aksum (highland Tigray, northern Ethiopia)"
 date-born: 300
 date-died: 380

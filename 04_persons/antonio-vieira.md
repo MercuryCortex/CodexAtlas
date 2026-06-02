@@ -4,10 +4,11 @@ id: "antonio-vieira"
 name: "António Vieira"
 aka: ["Padre António Vieira", "Father Antonio Vieira", "the Emperor of the Portuguese Language (Fernando Pessoa's epithet)", "the Apostle of Brazil"]
 tradition: "[[tradition-portuguese-hermeticism]] / [[tradition-christianity-canonical]] (Jesuit)"
+role-tokens: ["monastic-christian-western"]
 region: "Portugal (Lisbon, Évora); Brazil (Bahia); Rome"
 date-born: 1608
 date-died: 1697
-role: "Portuguese Jesuit priest, missionary in Brazil, court preacher to João IV, Sebastianist theologian, diplomat, and author of the most important systematic articulation of the Fifth Empire (Quinto Império) theology; prosecuted by the Portuguese Inquisition (1663–1667) for his prophetic writings; rehabilitated; continued writing *Clavis Prophetarum* until his death"
+role-description: "Portuguese Jesuit priest, missionary in Brazil, court preacher to João IV, Sebastianist theologian, diplomat, and author of the most important systematic articulation of the Fifth Empire (Quinto Império) theology; prosecuted by the Portuguese Inquisition (1663–1667) for his prophetic writings; rehabilitated; continued writing *Clavis Prophetarum* until his death"
 key-works: ["Clavis Prophetarum (posthumous, composed 1663–1697)", "História do Futuro (1664, incomplete)", "Sermões (collected sermons, ~200 texts)"]
 tradition-affiliation: ["[[tradition-portuguese-hermeticism]]", "[[tradition-sebastianism]]", "Society of Jesus (Jesuit Order)"]
 influenced: ["[[fifth-empire-quinto-imperio]] (his systematic theology is the definitive scholastic articulation)", "[[tradition-sebastianism]]", "[[fernando-pessoa]] (Pessoa lists Vieira as one of the four 'pillars' of Portuguese culture in his notes)", "Brazilian national identity (his defense of indigenous peoples established a model of prophetic-political advocacy)"]

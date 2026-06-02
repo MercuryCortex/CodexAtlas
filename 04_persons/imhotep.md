@@ -3,8 +3,9 @@ type: person
 id: "imhotep"
 name: "Imhotep"
 aka: ["Imouthes (Greek)", "Ii-em-Hotep ('the one who comes in peace')", "Asklepios-Imhotep (Greco-Egyptian deified form)"]
-role: "vizier | royal architect | high priest | deified sage and healing-god"
+role-description: "vizier | royal architect | high priest | deified sage and healing-god"
 tradition: "Egyptian (3rd Dynasty Old Kingdom); deified from the Late Period onward; Hellenistic Greco-Egyptian healing cult"
+role-tokens: ["high-priest-israelite"]
 region: "Egypt — Saqqara, Memphis, Karnak, Deir el-Bahari, Philae"
 date-born: -2680
 date-died: -2620

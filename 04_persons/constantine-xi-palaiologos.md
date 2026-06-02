@@ -3,8 +3,9 @@ type: person
 id: "constantine-xi-palaiologos"
 name: "Constantine XI Palaiologos"
 aka: ["Κωνσταντίνος ΙΑʹ Παλαιολόγος (Kōnstantínos XI Palaiológos)", "Constantine Dragases", "the Last Roman Emperor", "Constantine Δραγάσης Παλαιολόγος"]
-role: "emperor; last Byzantine emperor; died defending Constantinople against Mehmed II"
+role-description: "emperor; last Byzantine emperor; died defending Constantinople against Mehmed II"
 tradition: "Eastern Orthodox Christianity (with conditional acceptance of the Council of Florence 1439 Union)"
+role-tokens: ["emperor"]
 family: "Byzantine"
 region: "Byzantine Empire (reduced to Constantinople + Morea)"
 date-born: 1405

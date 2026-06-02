@@ -3,8 +3,9 @@ type: person
 id: "mani"
 name: "Mani"
 aka: ["Mānī", "Manichaios (Greek)", "Manes (Latin)", "Cubricus (hostile Latin tradition)", "the Apostle of Light", "the Seal of the Prophets (Manichaean)"]
-role: "prophet / founder (Manichaeism)"
+role-description: "prophet / founder (Manichaeism)"
 tradition: "Manichaeism"
+role-tokens: ["prophet-abrahamic"]
 region: "Sasanian Mesopotamia (Babylonia)"
 city-of-origin: "Seleucia-Ctesiphon"
 date-born: 216

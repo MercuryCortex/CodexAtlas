@@ -3,8 +3,9 @@ type: person
 id: "brigham-young"
 name: "Brigham Young"
 aka: []
-role: "founder / prophet / second LDS president"
+role-description: "founder / prophet / second LDS president"
 tradition: "Mormonism (LDS / Utah branch)"
+role-tokens: ["founder", "prophet-abrahamic"]
 region: "United States (Vermont → Utah)"
 date-born: 1801
 date-died: 1877

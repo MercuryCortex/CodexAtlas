@@ -3,8 +3,15 @@ type: person
 id: "simon-magus"
 name: "Simon Magus"
 aka: ["Simon the Magician", "Simon of Gitta", "Σίμων ὁ Μάγος"]
-role: "heresiarch | mystic"
 tradition: "Samaritan religious milieu; proto-Gnosticism (per heresiologists)"
+role-tokens: ["legendary-disputed"]
+role-description: "Simon Magus — 1st-c. figure known almost entirely through Christian polemical sources (Acts 8:9-24; Hippolytus *Refutatio* VI.7-20; Irenaeus *Adversus Haereses* I.23). Treated as founder of heretical 'Simonian' tradition by Christian-orthodox heresiologists; modern scholarship contests both the unity of any 'Simonian' tradition and Simon's historical existence as the heresiologists describe him."
+polemical-framing:
+  - by: "Christian-orthodox (Hippolytus, Irenaeus)"
+    label: "heresiarch"
+    source-tier: T1
+    source: ""
+    direction: outsider
 region: "Samaria (origin); Rome (per legendary tradition)"
 date-born: 1
 date-died: 65

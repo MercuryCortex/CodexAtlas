@@ -3,8 +3,9 @@ type: person
 id: "heraclius-byzantine-emperor"
 name: "Heraclius (Byzantine Emperor)"
 aka: ["Ἡράκλειος (Hērákleios)", "Heraclius I", "Flavius Heraclius Augustus"]
-role: "emperor; last Roman emperor before the Islamic conquests; recovered the True Cross from Sasanian Persia"
+role-description: "emperor; last Roman emperor before the Islamic conquests; recovered the True Cross from Sasanian Persia"
 tradition: "Eastern (Chalcedonian) Christianity; Roman imperial"
+role-tokens: ["emperor"]
 family: "Byzantine"
 region: "Eastern Roman / Byzantine Empire (Constantinople)"
 date-born: 575

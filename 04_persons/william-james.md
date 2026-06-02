@@ -3,8 +3,9 @@ type: person
 id: "william-james"
 name: "William James"
 aka: ["William James of Harvard"]
-role: "philosopher / psychologist / founder of pragmatism / pioneer of comparative religious experience"
 tradition: "American pragmatism / psychology of religion"
+role-tokens: ["psychologist-of-religion"]
+role-description: "William James — Harvard philosopher and psychologist; author of *The Varieties of Religious Experience* (1902 Gifford Lectures)."
 region: "United States (Harvard)"
 date-birth-year: 1842
 date-death-year: 1910

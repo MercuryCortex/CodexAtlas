@@ -4,11 +4,12 @@ id: "prester-john"
 name: "Prester John"
 aka: ["Presbyter Johannes", "Preste João (Portuguese)", "Prête Jean (French)", "the Priest-King", "the Hidden Christian Monarch of the East/Africa"]
 tradition: "Medieval European / Crusade mythology (legend, not historical figure)"
+role-tokens: ["king"]
 region: "Origin: 'somewhere in the East' (original 12th-c. location); subsequently relocated to Ethiopia by Portuguese navigation (15th–16th c.)"
 date-born: null
 date-died: null
 historicity: "legendary — no historical figure behind the name; the legend accreted to various real rulers and kingdoms"
-role: "the legendary Christian king of an immensely powerful realm 'beyond Persia and Armenia' (original 12th-c. location); later transposed to Ethiopia and to the Mongol Great Khans; the search for Prester John's kingdom as a crusading ally against Islam was a primary motivation of Portuguese African exploration; the Portuguese encounter with the real Ethiopian Christian kingdom ended the legend"
+role-description: "the legendary Christian king of an immensely powerful realm 'beyond Persia and Armenia' (original 12th-c. location); later transposed to Ethiopia and to the Mongol Great Khans; the search for Prester John's kingdom as a crusading ally against Islam was a primary motivation of Portuguese African exploration; the Portuguese encounter with the real Ethiopian Christian kingdom ended the legend"
 key-works: ["The Letter of Prester John (~1165 CE — the founding document of the legend; a Latin forgery of unknown authorship, circulated widely in European courts)"]
 tradition-affiliation: []
 influenced: ["[[henry-the-navigator]] (the Prester John search was a stated motivation of the African exploration program)", "[[phase-6-041-camoes-os-lusiadas]] (the providentialist framing of the Discoveries assumes a divinely-guided search for Christian allies)", "[[event-jesuit-mission-ethiopia-1557-1632]] (the Jesuits went to Ethiopia because it was believed to be Prester John's kingdom)"]

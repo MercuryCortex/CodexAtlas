@@ -3,8 +3,9 @@ type: person
 id: "trajan-emperor"
 name: "Trajan"
 aka: ["Marcus Ulpius Nerva Traianus", "Optimus Princeps"]
-role: "emperor"
+role-description: "emperor"
 tradition: "Roman state religion (pagan)"
+role-tokens: ["emperor"]
 region: "Rome / Empire"
 date-born: 53
 date-died: 117

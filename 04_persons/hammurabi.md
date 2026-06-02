@@ -3,8 +3,9 @@ type: person
 id: "hammurabi"
 name: "Hammurabi"
 aka: ["Ḫammurabi", "Hammu-rapi", "Khammurabi"]
-role: "king; legislator"
+role-description: "king; legislator"
 tradition: "Babylonian (Old Babylonian)"
+role-tokens: ["king"]
 region: "Mesopotamia (Babylon)"
 date-born: -1810
 date-died: -1750

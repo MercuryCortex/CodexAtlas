@@ -3,8 +3,9 @@ type: person
 id: "kabir"
 name: "Kabir"
 aka: ["Kabīr Dās", "Sant Kabir"]
-role: "poet | mystic | reformer"
+role-description: "poet | mystic | reformer"
 tradition: "Sant tradition (North Indian bhakti); also revered by Sikhs"
+role-tokens: ["author-secular", "mystic", "religious-reformer"]
 region: "Varanasi (Banaras), North India"
 date-born: 1440
 date-died: 1518

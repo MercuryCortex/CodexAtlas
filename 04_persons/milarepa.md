@@ -3,8 +3,9 @@ type: person
 id: "milarepa"
 name: "Milarepa"
 aka: ["Jetsun Milarepa", "Rje-btsun Mi-la Ras-pa"]
-role: "Tibetan yogi, poet, principal Kagyu lineage holder"
+role-description: "Tibetan yogi, poet, principal Kagyu lineage holder"
 tradition: "Vajrayāna Buddhism — Kagyu school"
+role-tokens: ["author-secular"]
 region: "Tibet (south-central Tibet, Nepal border regions)"
 date-born: 1052
 date-died: 1135

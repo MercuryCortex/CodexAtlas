@@ -3,8 +3,9 @@ type: person
 id: "hafez"
 name: "Khwāja Shams-ud-Dīn Muḥammad Ḥāfeẓ-e Shīrāzī"
 aka: ["Hafez", "Hafiz", "Ḥāfiẓ", "Hafiz of Shiraz", "حافظ شیرازی"]
-role: mystic
+role-description: mystic
 tradition: "Islam (Sufism — Persian lyric poetry)"
+role-tokens: ["mystic"]
 region: "Fars / Southwest Persia"
 date-born: 1315
 date-died: 1390

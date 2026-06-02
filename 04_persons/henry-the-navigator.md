@@ -4,10 +4,11 @@ id: "henry-the-navigator"
 name: "Henry the Navigator"
 aka: ["Infante Dom Henrique", "Henrique o Navegador", "Prince Henry of Portugal", "the Navigator (posthumous epithet — not contemporary)"]
 tradition: "[[tradition-order-of-christ]] / [[tradition-portuguese-hermeticism]]"
+role-tokens: ["king"]
 region: "Portugal (Tomar; Sagres; Lagos); Morocco (Ceuta campaign 1415)"
 date-born: 1394
 date-died: 1460
-role: "Portuguese prince (third son of King João I); Grand Master of the Order of Christ from 1420; organizer and financier of the systematic Portuguese exploration of the African coast (1415–1460); the institutional architect of the Age of Discoveries — without him, there are no Vasco da Gama, no Os Lusíadas, no Adamastor"
+role-description: "Portuguese prince (third son of King João I); Grand Master of the Order of Christ from 1420; organizer and financier of the systematic Portuguese exploration of the African coast (1415–1460); the institutional architect of the Age of Discoveries — without him, there are no Vasco da Gama, no Os Lusíadas, no Adamastor"
 key-works: []
 tradition-affiliation: ["[[tradition-order-of-christ]]", "[[tradition-portuguese-hermeticism]]"]
 influenced: ["[[phase-6-041-camoes-os-lusiadas]] (the Discoveries he initiated are the epic's subject)", "[[adamastor]] (the Cape of Good Hope that Adamastor embodies was first rounded by his explorer Bartolomeu Dias, 1488 — 28 years after Henry's death)", "[[event-order-of-christ-foundation-1319]] (as Grand Master he transformed the Order into the institutional vehicle of exploration)"]

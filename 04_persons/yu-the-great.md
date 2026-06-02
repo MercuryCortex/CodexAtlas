@@ -3,8 +3,9 @@ type: person
 id: "yu-the-great"
 name: "Yu the Great (Da Yu — flood-controller and Xia founder)"
 aka: ["Yu the Great", "Da Yu", "大禹", "Yǔ the Engineer", "Yu of Xia"]
-role: "king, flood-controller, dynastic founder"
+role-description: "king, flood-controller, dynastic founder"
 tradition: "Chinese (Xia dynasty traditional founder)"
+role-tokens: ["king"]
 region: "Yellow River valley (north-central China)"
 date-born:
 date-died:

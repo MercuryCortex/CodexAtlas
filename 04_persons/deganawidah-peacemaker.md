@@ -3,8 +3,9 @@ type: person
 id: "deganawidah-peacemaker"
 name: "Deganawidah (the Peacemaker)"
 aka: ["The Peacemaker", "Dekanawidah", "The Great Peacemaker"]
-role: "prophet / political-theological founder / creator of the Great Law of Peace"
+role-description: "prophet / political-theological founder / creator of the Great Law of Peace"
 tradition: "Haudenosaunee (Iroquois Confederacy)"
+role-tokens: ["prophet-abrahamic"]
 region: "Northeast Woodlands, North America"
 date-born:
 date-died:

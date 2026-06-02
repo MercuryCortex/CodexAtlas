@@ -3,8 +3,9 @@ type: person
 id: "tamil-three-nayanars"
 name: "Appar, Sambandar, and Sundarar (the Mūvar — the Three Tamil Shaiva Nayanars)"
 aka: ["Appar / Tirunāvukkaracar", "Tirujñānasambandar / Sambandar", "Cuntaramūrtti / Sundarar", "the Mūvar (the Three)"]
-role: "Tamil Nayanar Shaiva poet-saints / authors of Tirumurai books 1-7"
+role-description: "Tamil Nayanar Shaiva poet-saints / authors of Tirumurai books 1-7"
 tradition: "Hindu Bhakti (Tamil Shaivism — Nayanar tradition)"
+role-tokens: ["author-secular"]
 region: "Tamil Nadu (south India) — temple country, especially Mylapore, Chidambaram, Tiruvarur"
 date-born: 570
 date-died: 880

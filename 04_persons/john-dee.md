@@ -3,8 +3,9 @@ type: person
 id: "john-dee"
 name: "John Dee"
 aka: ["Dr. John Dee"]
-role: "mathematician / magus / royal adviser"
+role-description: "mathematician / magus / royal adviser"
 tradition: "Renaissance esoteric / Hermetic-Kabbalist"
+role-tokens: ["magus"]
 region: "England / Bohemia"
 date-born: 1527
 date-died: 1609

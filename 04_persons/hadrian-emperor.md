@@ -3,8 +3,9 @@ type: person
 id: "hadrian-emperor"
 name: "Hadrian"
 aka: ["Publius Aelius Hadrianus", "Aelius Hadrianus"]
-role: "emperor"
+role-description: "emperor"
 tradition: "Roman state religion (pagan); Hellenophile"
+role-tokens: ["emperor"]
 region: "Rome / Empire"
 date-born: 76
 date-died: 138

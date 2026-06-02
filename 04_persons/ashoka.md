@@ -5,6 +5,7 @@ type: person
 status: metadata
 tier: 1
 tradition: tradition-buddhism
+role-tokens: ["emperor"]
 date_earliest: -304
 date_latest: -232
 region: "Maurya Empire (South Asia)"

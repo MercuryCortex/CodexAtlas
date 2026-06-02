@@ -3,8 +3,9 @@ type: person
 id: "naram-sin"
 name: "Naram-Sin"
 aka: ["Narām-Sîn (Akkadian; 'Beloved of Sin')", "Naram-Suen", "Naram-Sin of Akkad"]
-role: "king; divinized ruler"
+role-description: "king; divinized ruler"
 tradition: "Akkadian"
+role-tokens: ["king"]
 region: "Mesopotamia (Akkad)"
 date-born:
 date-died: -2218

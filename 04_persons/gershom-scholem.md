@@ -3,8 +3,9 @@ type: person
 id: "gershom-scholem"
 name: "Gershom Scholem"
 aka: ["Gerhard Scholem"]
-role: "scholar / historian of Jewish mysticism / founder of academic Kabbalah studies"
 tradition: "Comparative religion (academic) / Judaic studies"
+role-tokens: ["scholar-academic-religion"]
+role-description: "Gershom Scholem — founder of academic Kabbalah studies; Hebrew University chair. Religiously-engaged Jewish thinker but professionally a historian."
 region: "Germany → British Mandate Palestine / Israel"
 date-born: 1897
 date-died: 1982

@@ -3,8 +3,9 @@ type: person
 id: "elaine-pagels"
 name: "Elaine Pagels"
 aka: []
-role: "scholar / historian of religion"
+role-description: "scholar / historian of religion"
 tradition: "Comparative religion (academic) / early Christian history"
+role-tokens: ["scholar-academic-religion"]
 region: "United States (Princeton)"
 date-born: 1943
 date-died:

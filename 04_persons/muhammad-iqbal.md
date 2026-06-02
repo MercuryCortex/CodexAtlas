@@ -6,7 +6,7 @@ aka: ["Allama Iqbal", "علامہ اقبال", "Sir Muhammad Iqbal", "Poet of th
 birth: 1877
 death: 1938
 nationality: "British Indian (Punjabi)"
-role: "poet, philosopher, jurist; intellectual architect of the Pakistan idea; author of The Reconstruction of Religious Thought in Islam"
+role-description: "poet, philosopher, jurist; intellectual architect of the Pakistan idea; author of The Reconstruction of Religious Thought in Islam"
 authored: ["[[phase-7-046-iqbal-reconstruction-religious-thought]]"]
 status: "metadata"
 refs:
@@ -23,6 +23,8 @@ refs:
     type: "primary"
     tier: 1
 tags: [person, pakistani, indian, iqbal, islamic-modernism, poetry, philosophy, pakistan, bergson, khudi, 20th-century, punjab]
+role-tokens: ["author-secular"]
+role-description: "poet, philosopher, jurist; intellectual architect of the Pakistan idea; author of The Reconstruction of Religious Thought in Islam"
 ---
 
 # Muhammad Iqbal

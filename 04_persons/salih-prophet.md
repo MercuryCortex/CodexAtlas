@@ -3,8 +3,9 @@ type: person
 id: "salih-prophet"
 name: "Ṣāliḥ"
 aka: ["Ṣāliḥ", "prophet of Thamūd"]
-role: "prophet | messenger"
+role-description: "prophet | messenger"
 tradition: "Islam (Quranic prophet tradition)"
+role-tokens: ["prophet-abrahamic"]
 region: "Arabia (al-Ḥijr / Madāʾin Ṣāliḥ, northwestern Arabia)"
 date-born: ""
 date-died: ""

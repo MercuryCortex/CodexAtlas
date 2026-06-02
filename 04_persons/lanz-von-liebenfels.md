@@ -3,8 +3,9 @@ type: person
 id: "lanz-von-liebenfels"
 name: "Jörg Lanz von Liebenfels"
 aka: ["Adolf Josef Lanz (birth name)", "Jörg Lanz von Liebenfels (assumed name with fictional aristocratic claim)", "Frater Georg"]
-role: "Austrian ex-Cistercian / racist-occult author / founder of the Ordo Novi Templi"
+role-description: "Austrian ex-Cistercian / racist-occult author / founder of the Ordo Novi Templi"
 tradition: "[[tradition-ordo-novi-templi]] (founder) / **Ariosophy** (with [[tradition-theosophy|Theosophy]]-and-Templar-revival synthesis) / **right-wing racist-occult Vienna milieu**"
+role-tokens: ["monastic-christian-western"]
 region: "Austria (Vienna; later Hungary)"
 date-born: 1874
 date-died: 1954

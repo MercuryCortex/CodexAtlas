@@ -3,8 +3,9 @@ type: person
 id: "james-brother-of-jesus"
 name: "James the Just (brother of Jesus)"
 aka: ["Ya'akov ha-Tzadik", "James the Brother of the Lord", "James the Just", "Iakōbos"]
-role: "founder | reformer"
+role-description: "founder | reformer"
 tradition: "earliest Christianity (Jerusalem Jewish-Christian)"
+role-tokens: ["founder", "religious-reformer"]
 region: "Galilee (origin), Jerusalem"
 date-born: -1
 date-died: 62

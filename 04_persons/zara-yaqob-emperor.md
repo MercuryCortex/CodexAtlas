@@ -3,8 +3,9 @@ type: person
 id: "zara-yaqob-emperor"
 name: "Zar'a Ya'qob (Emperor of Ethiopia, r. 1434–1468)"
 aka: ["Zär'a Yaʿǝqob", "Constantine I of Ethiopia (regnal name)", "ዘርዐ ያዕቆብ"]
-role: "king, theologian, reformer"
+role-description: "king, theologian, reformer"
 tradition: "[[tradition-ethiopian-orthodox-tewahedo]] (Solomonic dynasty)"
+role-tokens: ["king", "theologian", "religious-reformer"]
 region: "Solomonic Ethiopia (capital migrated; major royal sites: Debre Berhan, Tegulet)"
 date-born: 1399
 date-died: 1468

@@ -3,8 +3,9 @@ type: person
 id: "nathan-of-gaza"
 name: "Nathan of Gaza"
 aka: ["Abraham Nathan ben Elisha Hayyim Ashkenazi"]
-role: "Kabbalist / Sabbatean prophet-theologian"
+role-description: "Kabbalist / Sabbatean prophet-theologian"
 tradition: "Jewish messianism (Sabbatean)"
+role-tokens: ["kabbalist"]
 region: "Ottoman Palestine (Gaza, Jerusalem) / Aegean / Albania"
 date-born: 1643
 date-died: 1680

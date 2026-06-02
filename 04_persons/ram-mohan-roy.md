@@ -3,8 +3,9 @@ type: person
 id: "ram-mohan-roy"
 name: "Ram Mohan Roy"
 aka: ["Rammohun Roy", "Raja Ram Mohan Roy", "Rāmamohana Rāy"]
-role: "reformer / founder of Brahmo Samaj / translator / public intellectual"
+role-description: "reformer / founder of Brahmo Samaj / translator / public intellectual"
 tradition: "Hindu modernism — Brahmo Samaj"
+role-tokens: ["religious-reformer"]
 region: "Bengal (Calcutta) → England"
 date-born: 1772
 date-died: 1833

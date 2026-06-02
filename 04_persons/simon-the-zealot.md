@@ -3,8 +3,9 @@ type: person
 id: "simon-the-zealot"
 name: "Simon the Zealot"
 aka: ["Simōn ho Zēlōtēs", "Simon the Canaanean (Mk/Mt — Aramaic *qan'ana*, 'zealous')", "Simon the Cananaean"]
-role: "apostle"
+role-description: "apostle"
 tradition: "earliest Christianity"
+role-tokens: ["apostle-christian"]
 region: "Galilee"
 date-born: -5
 date-died: 70

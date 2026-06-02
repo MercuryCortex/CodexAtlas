@@ -40,7 +40,7 @@ syncretic-edges:
     source: "Kennedy 2007; Crone & Hinds 1986 *God's Caliph* (Cambridge UP)"
     source-tier: "T2"
     notes: "ʿUmar's establishment of the **caliphate-as-religious-political institution** parallels (in inverted polarity) Constantine's establishment of the Christian-imperial institution: both fuse religious and political authority at the top, both legalize their respective religions as state religions in conquered territories, both establish the legal-administrative framework of a religious-imperial polity. The structural-parallel claim is academic-minority (Crone-Hinds); mainstream Islamic-historical tradition does not frame the comparison this way."
-  - target: "[[umayyad-dynasty]]"
+  - target: "[umayyad-dynasty]"
     type: "continuous-development"
     source: "Kennedy 2007; Donner 2010"
     source-tier: "T1"

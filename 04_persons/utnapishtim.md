@@ -3,8 +3,9 @@ type: person
 id: "utnapishtim"
 name: "Utnapishtim"
 aka: ["Ūta-napišti(m)", "Uta-napishti", "Utanapishtim the Faraway"]
-role: "king, flood-survivor, immortalized sage"
+role-description: "king, flood-survivor, immortalized sage"
 tradition: "Standard Babylonian / Mesopotamian (Gilgamesh XI flood)"
+role-tokens: ["king"]
 region: "Mesopotamia (Shuruppak) → Dilmun / 'mouth of the rivers' (post-flood paradise dwelling)"
 date-born:
 date-died:

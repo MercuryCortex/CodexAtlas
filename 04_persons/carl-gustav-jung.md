@@ -3,8 +3,15 @@ type: person
 id: "carl-gustav-jung"
 name: "Carl Gustav Jung"
 aka: ["C.G. Jung"]
-role: "psychiatrist / depth psychologist / hybrid quasi-religious-founder"
 tradition: "Jungian depth psychology (his school)"
+role-tokens: ["psychologist-of-religion"]
+role-description: "Carl Gustav Jung — Swiss psychoanalyst; founder of analytical psychology; contested-status figure in NRM-studies (Hanegraaff 1996; Noll 1994/1997)."
+polemical-framing:
+  - by: "Noll 1994 *The Jung Cult* + 1997 *The Aryan Christ*"
+    label: "cult-founder"
+    source-tier: T2
+    source: ""
+    direction: outsider
 region: "Switzerland (Küsnacht / Bollingen / Zürich)"
 date-born: 1875
 date-died: 1961

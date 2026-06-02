@@ -3,8 +3,9 @@ type: person
 id: "pherecydes-of-syros"
 name: "Pherecydes of Syros"
 aka: ["Φερεκύδης ὁ Σύριος", "Pherecydes of Syros (not to be confused with the Athenian genealogist Pherecydes of Leros, 5th c.)"]
-role: "theologian | cosmogonic writer | seer | proto-philosopher"
+role-description: "theologian | cosmogonic writer | seer | proto-philosopher"
 tradition: "Pre-Socratic / proto-philosophical Greek (Ionian); influenced by Phoenician and Egyptian sources"
+role-tokens: ["theologian"]
 region: "Syros (Cycladic island in the Aegean); active across the Greek world"
 date-born: -580
 date-died: -520

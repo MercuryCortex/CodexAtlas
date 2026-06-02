@@ -3,8 +3,9 @@ type: person
 id: "abba-garima"
 name: "Abba Garima (Yəsḥaq / Isaac)"
 aka: ["Yəsḥaq", "Isaac of Tigray", "Aba Gärima"]
-role: "monk, founder"
+role-description: "monk, founder"
 tradition: "[[tradition-ethiopian-orthodox-tewahedo]]"
+role-tokens: ["founder"]
 region: "Aksumite Kingdom (Adwa region, Tigray) — earlier provenance: Roman East (Syria or Asia Minor)"
 date-born: 460
 date-died: 540

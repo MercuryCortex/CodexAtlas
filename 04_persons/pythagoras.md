@@ -3,8 +3,9 @@ type: person
 id: "pythagoras"
 name: "Pythagoras"
 aka: ["Pythagóras of Samos (Πυθαγόρας ὁ Σάμιος)"]
-role: "philosopher / mathematician / mystic / religious founder"
+role-description: "philosopher / mathematician / mystic / religious founder"
 tradition: "Pythagoreanism (and via influence: Platonism, Neoplatonism, Hermeticism, Neo-Pythagoreanism)"
+role-tokens: ["mystic"]
 region: "Samos (birth, ionian Greece) → Croton (Magna Graecia, southern Italy)"
 date-born: -570
 date-died: -495

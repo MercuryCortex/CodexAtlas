@@ -3,8 +3,9 @@ type: person
 id: "boethius"
 name: "Boethius"
 aka: ["Anicius Manlius Severinus Boethius"]
-role: "philosopher / theologian / statesman"
+role-description: "philosopher / theologian / statesman"
 tradition: "Latin Christian / Roman Neoplatonist"
+role-tokens: ["theologian"]
 region: "Ostrogothic Italy — Rome, Ticinum (Pavia)"
 date-born: 477
 date-died: 524

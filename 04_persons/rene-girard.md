@@ -3,8 +3,9 @@ type: person
 id: "rene-girard"
 name: "René Girard"
 aka: ["René Noël Théophile Girard"]
-role: "literary critic / cultural anthropologist / philosopher of religion / theorist of mimetic desire"
+role-description: "literary critic / cultural anthropologist / philosopher of religion / theorist of mimetic desire"
 tradition: "Modern religious studies / comparative anthropology"
+role-tokens: ["scholar-academic-religion"]
 region: "France → United States (Stanford)"
 date-born: 1923
 date-died: 2015

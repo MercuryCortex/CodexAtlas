@@ -3,8 +3,9 @@ type: person
 id: "john-son-of-zebedee"
 name: "John, son of Zebedee"
 aka: ["Yochanan bar Zavdai", "Iōannēs ho tou Zebedaiou"]
-role: "apostle"
+role-description: "apostle"
 tradition: "earliest Christianity"
+role-tokens: ["apostle-christian"]
 region: "Galilee → Jerusalem; later tradition: Ephesus"
 date-born: -5
 date-died: 100

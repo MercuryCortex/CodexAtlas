@@ -3,8 +3,9 @@ type: person
 id: "chogyam-trungpa"
 name: "Chögyam Trungpa Rinpoche"
 aka: []
-role: "lama / Vajrayana teacher"
+role-description: "lama / Vajrayana teacher"
 tradition: "Vajrayana Buddhism / Shambhala Buddhism"
+role-tokens: ["lama"]
 region: "Tibet → United Kingdom → United States (Boulder, Colorado)"
 date-born: 1939
 date-died: 1987

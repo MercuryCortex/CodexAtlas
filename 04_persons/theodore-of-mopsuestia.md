@@ -3,8 +3,9 @@ type: person
 id: "theodore-of-mopsuestia"
 name: "Theodore of Mopsuestia"
 aka: ["Theodoros Mopsuestenos", "the Interpreter"]
-role: "bishop / exegete / theologian (Antiochene)"
+role-description: "bishop / exegete / theologian (Antiochene)"
 tradition: "Antiochene Christian"
+role-tokens: ["bishop-christian"]
 region: "Antioch / Mopsuestia (Cilicia)"
 date-born: 350
 date-died: 428

@@ -3,8 +3,9 @@ type: person
 id: "rudolf-otto"
 name: "Rudolf Otto"
 aka: []
-role: "scholar / phenomenologist of religion / theologian"
 tradition: "Comparative religion (academic) / Phenomenology of religion / German liberal Protestantism"
+role-tokens: ["scholar-academic-religion", "theologian"]
+role-description: "Rudolf Otto — Lutheran theologian + comparative-religion phenomenologist; author of *Das Heilige* (1917)."
 region: "Germany (Marburg)"
 date-born: 1869
 date-died: 1937

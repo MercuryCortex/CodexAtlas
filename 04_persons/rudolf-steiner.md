@@ -3,8 +3,9 @@ type: person
 id: "rudolf-steiner"
 name: "Rudolf Steiner"
 aka: []
-role: "founder / esotericist / educator"
 tradition: "Anthroposophy"
+role-tokens: ["founder", "philosopher-religious"]
+role-description: "Rudolf Steiner — founder of Anthroposophy (1912); developer of Waldorf education, biodynamic agriculture, and Anthroposophical medicine."
 region: "Austria-Hungary → Germany → Switzerland (Dornach)"
 date-born: 1861
 date-died: 1925

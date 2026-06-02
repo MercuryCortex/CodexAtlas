@@ -3,8 +3,9 @@ type: person
 id: "kanishka"
 name: "Kaniṣka I"
 aka: ["Kaniṣka the Great", "Kaniṣka Kuṣāṇa", "Bactrian Greek: KANHϷKI", "Chinese: 迦膩色伽"]
-role: "king | religious patron"
+role-description: "king | religious patron"
 tradition: "Kushan state-religion (Zoroastrian-Bactrian + Buddhist + Hindu syncretic); Mahāyāna Buddhist patron"
+role-tokens: ["king"]
 region: "Kushan empire (capitals at Puruṣapura / Peshawar and Mathurā)"
 date-born: 100
 date-died: 150

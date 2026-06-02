@@ -3,8 +3,9 @@ type: person
 id: "hakuin"
 name: "Hakuin Ekaku"
 aka: ["白隠 慧鶴", "Hakuin Zenji"]
-role: "Zen master | reformer"
+role-description: "Zen master | reformer"
 tradition: "Rinzai Zen Buddhism"
+role-tokens: ["zen-master", "religious-reformer"]
 region: "Japan (Hara, Suruga)"
 date-born: 1686
 date-died: 1769

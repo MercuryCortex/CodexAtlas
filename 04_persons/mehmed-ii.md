@@ -3,8 +3,9 @@ type: person
 id: "mehmed-ii"
 name: "Mehmed II"
 aka: ["Mehmet the Conqueror", "Fatih Sultan Mehmed", "Muhammad II", "Mehmed Fatih", "Sultan Mehmet Han"]
-role: "sultan; emperor; conqueror of Constantinople; founder of the Ottoman imperial dispensation"
+role-description: "sultan; emperor; conqueror of Constantinople; founder of the Ottoman imperial dispensation"
 tradition: "Islam — Sunni (Ottoman; Hanafi)"
+role-tokens: ["emperor"]
 family: "Ottoman"
 region: "Ottoman Empire (Edirne, then Constantinople / Istanbul)"
 date-born: 1432

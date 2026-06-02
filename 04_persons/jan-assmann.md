@@ -3,8 +3,9 @@ type: person
 id: "jan-assmann"
 name: "Jan Assmann"
 aka: ["Johann Christoph Assmann", "J. Assmann"]
-role: "Egyptologist; cultural memory theorist; comparative religion scholar"
+role-description: "Egyptologist; cultural memory theorist; comparative religion scholar"
 tradition: "comparative-religion-academic; egyptology"
+role-tokens: ["scholar-academic-religion"]
 region: "Germany (Heidelberg)"
 date-born: 1938
 date-died: 2024

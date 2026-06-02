@@ -3,8 +3,9 @@ type: person
 id: "gregory-the-great"
 name: "Pope Gregory I (the Great)"
 aka: ["Gregorius Magnus", "Gregory I"]
-role: "bishop of Rome / pope / theologian / monk"
+role-description: "bishop of Rome / pope / theologian / monk"
 tradition: "Latin Christian (Catholic)"
+role-tokens: ["pope-roman-catholic", "theologian"]
 region: "Rome / Latin West"
 date-born: 540
 date-died: 604

@@ -3,8 +3,9 @@ type: person
 id: "santideva"
 name: "Śāntideva"
 aka: ["Shantideva", "Bhusuku (early monastic name)", "Śiwadeva"]
-role: "monk | poet | systematic theologian | Mahāyāna ethicist"
+role-description: "monk | poet | systematic theologian | Mahāyāna ethicist"
 tradition: "Mahāyāna Buddhism (Madhyamaka-Prāsaṅgika lineage; Nālandā)"
+role-tokens: ["author-secular"]
 region: "Nālandā monastic university, Magadha (modern Bihar)"
 date-born: 685
 date-died: 763

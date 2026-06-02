@@ -3,8 +3,9 @@ type: person
 id: "hud-prophet"
 name: "Hūd"
 aka: ["Hūd", "prophet of ʿĀd"]
-role: "prophet | messenger"
+role-description: "prophet | messenger"
 tradition: "Islam (Quranic prophet tradition)"
+role-tokens: ["prophet-abrahamic"]
 region: "Arabia (al-Aḥqāf / ʿĀd territory, southern Arabia)"
 date-born: ""
 date-died: ""

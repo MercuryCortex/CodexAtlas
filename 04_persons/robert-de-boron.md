@@ -4,10 +4,11 @@ id: "robert-de-boron"
 name: "Robert de Boron"
 aka: ["Robert de Borron", "Robert de Boron the Burgundian"]
 tradition: "Latin Christianity (French medieval literary culture)"
+role-tokens: ["author-secular"]
 region: "Burgundy (Boron, near Montbéliard — now Franche-Comté, France); court of Gautier de Montbéliard"
 date-born: 1170
 date-died: 1212
-role: "Burgundian poet (~1190–1212); author of *Joseph d'Arimathie* (~1190–1200) — the first text to explicitly identify the Grail as the cup of the Last Supper and give Joseph of Arimathea the role of first Grail-keeper; the theological hinge between Chrétien's open-ended Grail vessel and the vast Vulgate Cycle"
+role-description: "Burgundian poet (~1190–1212); author of *Joseph d'Arimathie* (~1190–1200) — the first text to explicitly identify the Grail as the cup of the Last Supper and give Joseph of Arimathea the role of first Grail-keeper; the theological hinge between Chrétien's open-ended Grail vessel and the vast Vulgate Cycle"
 key-works: ["*Joseph d'Arimathie* (*Le Roman de l'Estoire dou Graal*, ~1190–1200) — first text to make the Grail = Last Supper cup; Joseph as first keeper; Grail quest as Christianized sacred-vessel quest", "*Merlin* (~1200–1210) — connects Merlin and the Arthurian world to the Grail lineage; the founding text of the prose Merlin tradition", "*Perceval* (a prose redaction attributed to his school, ~1210–1220)"]
 tradition-affiliation: []
 influenced: ["[[theme-holy-grail]] (the Grail = Last Supper cup identification originates with Robert)", "[[joseph-of-arimathea]] (his role as Grail-bearer is Robert's invention — no Gospel source)", "Vulgate/Lancelot-Grail Cycle (~1215–1235 — builds directly on Robert's theological framework; introduces Galahad as the perfect Grail-knight)", "[[event-priory-of-sion-fabrication]] (the *Holy Blood, Holy Grail* bloodline narrative = Robert's 'Grail = vessel of Christ's blood' + Plantard's fabricated genealogy; the punning etymology *san gréal* → *sang réal* depends on Robert's vocabulary)"]

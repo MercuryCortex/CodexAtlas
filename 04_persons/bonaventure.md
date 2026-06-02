@@ -3,8 +3,9 @@ type: person
 id: "bonaventure"
 name: "Bonaventure"
 aka: ["Bonaventura", "Giovanni di Fidanza", "Doctor Seraphicus"]
-role: "Franciscan friar, Minister General, philosopher, theologian, cardinal"
+role-description: "Franciscan friar, Minister General, philosopher, theologian, cardinal"
 tradition: "Latin Christian — Franciscan scholastic"
+role-tokens: ["theologian"]
 region: "Italy and France"
 date-born: 1221
 date-died: 1274

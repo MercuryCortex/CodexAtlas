@@ -3,8 +3,9 @@ type: person
 id: "stephen-mcnallen"
 name: "Stephen McNallen"
 aka: []
-role: "founder / Asatru revival (American)"
+role-description: "founder / Asatru revival (American)"
 tradition: "Asatru / Heathenry"
+role-tokens: ["founder"]
 region: "United States"
 date-born: 1948
 date-died:

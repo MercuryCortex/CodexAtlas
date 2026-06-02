@@ -3,8 +3,9 @@ type: person
 id: "mes-anepada"
 name: "Mes-anepada"
 aka: ["Mesannepada", "Mes-Anne-padda", "Mes-an-ne2-pad3-da"]
-role: "king"
+role-description: "king"
 tradition: "Sumerian"
+role-tokens: ["king"]
 region: "Mesopotamia (Ur)"
 date-born:
 date-died:

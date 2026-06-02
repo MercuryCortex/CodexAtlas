@@ -3,8 +3,9 @@ type: person
 id: "mary-of-bethany"
 name: "Mary of Bethany"
 aka: ["Miryam of Bethany", "Maria of Bethania"]
-role: "disciple"
+role-description: "disciple"
 tradition: "earliest Christianity"
+role-tokens: ["disciple-christian"]
 region: "Bethany (just east of Jerusalem)"
 date-born: 5
 date-died: 60

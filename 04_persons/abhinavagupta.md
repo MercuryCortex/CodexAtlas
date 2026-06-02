@@ -3,8 +3,9 @@ type: person
 id: "abhinavagupta"
 name: "Abhinavagupta"
 aka: ["Abhinavaguptācārya"]
-role: "philosopher, Tantric master, aesthetic theorist"
 tradition: "Hindu — Kashmir Shaivism (Trika); also classical Sanskrit aesthetics"
+role-tokens: ["tantric-acharya", "acharya-hindu", "philosopher-religious"]
+role-description: "Abhinavagupta — 10th-11th c. Kashmiri Trika Shaiva master; composed *Tantrāloka* + *Abhinavabhāratī*; foundational theorist of rasa (aesthetic emotion)."
 region: "Kashmir Valley"
 date-born: 950
 date-died: 1016

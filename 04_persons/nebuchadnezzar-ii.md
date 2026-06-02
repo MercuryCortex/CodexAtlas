@@ -3,8 +3,9 @@ type: person
 id: "nebuchadnezzar-ii"
 name: "Nebuchadnezzar II"
 aka: ["Nabu-kudurri-usur II", "Bukhtanassar"]
-role: "king"
+role-description: "king"
 tradition: "Neo-Babylonian"
+role-tokens: ["king"]
 region: "Babylon"
 date-born: -634
 date-died: -562

@@ -3,8 +3,9 @@ type: person
 id: "timothy"
 name: "Timothy"
 aka: ["Timotheos", "Timotheus"]
-role: "disciple | apostolic delegate"
+role-description: "disciple | apostolic delegate"
 tradition: "earliest Christianity"
+role-tokens: ["disciple-christian"]
 region: "Lystra (Lycaonia) → Asia Minor, Macedonia, Greece"
 date-born: 17
 date-died: 97

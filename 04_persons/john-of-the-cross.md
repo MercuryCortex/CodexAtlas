@@ -3,8 +3,9 @@ type: person
 id: "john-of-the-cross"
 name: "John of the Cross"
 aka: ["San Juan de la Cruz", "Juan de Yepes y Álvarez", "Doctor Mysticus", "Doctor of the Church (1926)"]
-role: "Carmelite reformer / mystical theologian / poet"
+role-description: "Carmelite reformer / mystical theologian / poet"
 tradition: "Latin Christianity (Catholic Counter-Reformation; Discalced Carmelite)"
+role-tokens: ["author-secular"]
 region: "Castile and Andalusia (Spain)"
 date-born: 1542
 date-died: 1591

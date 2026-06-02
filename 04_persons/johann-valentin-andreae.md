@@ -3,8 +3,9 @@ type: person
 id: "johann-valentin-andreae"
 name: "Johann Valentin Andreae"
 aka: []
-role: "Lutheran pastor / Rosicrucian author / educational reformer"
+role-description: "Lutheran pastor / Rosicrucian author / educational reformer"
 tradition: "Lutheran / Rosicrucian / esoteric Protestant"
+role-tokens: ["pastor-protestant"]
 region: "Württemberg, Germany"
 date-born: 1586
 date-died: 1654

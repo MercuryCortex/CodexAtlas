@@ -3,8 +3,9 @@ type: person
 id: "albertus-magnus"
 name: "Albertus Magnus"
 aka: ["Albert the Great", "Albert von Lauingen", "Albertus Teutonicus", "Doctor Universalis", "Saint Albert (canonized 1931)"]
-role: "Dominican theologian / Aristotelian commentator / natural philosopher / alchemist"
+role-description: "Dominican theologian / Aristotelian commentator / natural philosopher / alchemist"
 tradition: "Latin Christianity (Dominican; scholastic)"
+role-tokens: ["monastic-christian-western"]
 region: "Holy Roman Empire (Cologne, Paris, Regensburg)"
 date-born: 1200
 date-died: 1280

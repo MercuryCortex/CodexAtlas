@@ -3,8 +3,9 @@ type: person
 id: "rabia-of-basra"
 name: "Rabia of Basra"
 aka: ["Rābiʿa al-ʿAdawiyya", "Rābiʿa al-Baṣriyya"]
-role: "Sufi mystic, ascetic, poet"
+role-description: "Sufi mystic, ascetic, poet"
 tradition: "Sufi Islam — early Basran ascetic / love-mysticism"
+role-tokens: ["author-secular"]
 region: "Abbasid Iraq (Basra)"
 date-born: 717
 date-died: 801

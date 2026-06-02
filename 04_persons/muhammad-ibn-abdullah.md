@@ -3,8 +3,9 @@ type: person
 id: "muhammad-ibn-abdullah"
 name: "Muhammad ibn Abdullah"
 aka: ["Muhammad", "the Prophet", "Rasūl Allāh"]
-role: "prophet / founder (Islam)"
+role-description: "prophet / founder (Islam)"
 tradition: "Islam"
+role-tokens: ["prophet-abrahamic"]
 region: "Arabia (Mecca and Medina)"
 date-born: 570
 date-died: 632

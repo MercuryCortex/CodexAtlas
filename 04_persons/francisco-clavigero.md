@@ -3,8 +3,9 @@ type: person
 id: "francisco-clavigero"
 name: "Francisco Javier Clavijero (Clavigero)"
 aka: ["Francisco Saverio Clavigero (Italian form)"]
-role: "Jesuit historian / Indigenous-American religious-history scholar"
+role-description: "Jesuit historian / Indigenous-American religious-history scholar"
 tradition: "Roman Catholicism / Mexican Jesuit"
+role-tokens: ["monastic-christian-western"]
 region: "New Spain (born Veracruz); Italy after Jesuit expulsion"
 date-born: 1731
 date-died: 1787

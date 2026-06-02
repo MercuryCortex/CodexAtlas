@@ -3,8 +3,9 @@ type: person
 id: "karen-king"
 name: "Karen L. King"
 aka: []
-role: "scholar / historian of religion"
+role-description: "scholar / historian of religion"
 tradition: "Comparative religion (academic) / early Christian history / Gnosticism studies"
+role-tokens: ["scholar-academic-religion"]
 region: "United States (Harvard Divinity School)"
 date-born: 1954
 date-died:

@@ -3,8 +3,9 @@ type: person
 id: "swami-vivekananda"
 name: "Swami Vivekananda"
 aka: ["Narendranath Datta"]
-role: "founder / Vedanta Society / Hindu modernism"
+role-description: "founder / Vedanta Society / Hindu modernism"
 tradition: "Hindu modernism / Advaita Vedanta"
+role-tokens: ["founder"]
 region: "Bengal, India → United States / United Kingdom"
 date-born: 1863
 date-died: 1902

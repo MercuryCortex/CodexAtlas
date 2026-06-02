@@ -3,8 +3,9 @@ type: person
 id: "martha-of-bethany"
 name: "Martha of Bethany"
 aka: ["Marta", "Martha of Bethania"]
-role: "disciple"
+role-description: "disciple"
 tradition: "earliest Christianity"
+role-tokens: ["disciple-christian"]
 region: "Bethany"
 date-born: 5
 date-died: 60

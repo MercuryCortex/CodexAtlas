@@ -3,8 +3,9 @@ type: person
 id: "pliny-the-younger"
 name: "Pliny the Younger"
 aka: ["Gaius Plinius Caecilius Secundus", "Pliny Minor"]
-role: "Roman senator / governor / letter-writer"
+role-description: "Roman senator / governor / letter-writer"
 tradition: "Roman aristocratic literary (pagan)"
+role-tokens: ["author-secular"]
 region: "Italy; Bithynia-Pontus (as imperial legate)"
 date-born: 61
 date-died: 113

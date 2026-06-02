@@ -3,8 +3,9 @@ type: person
 id: "menelik-i-legendary"
 name: "Menelik I (legendary founder of the Solomonic dynasty)"
 aka: ["Menyelek I", "Bayna Lehkem (Kebra Nagast variant)", "Ebna Hakim ('son of the wise one')", "Mnyl"]
-role: "king, foundational"
+role-description: "king, foundational"
 tradition: "[[tradition-ethiopian-orthodox-tewahedo]]"
+role-tokens: ["king"]
 region: "Ethiopian tradition: Aksum"
 date-born: -990
 date-died: -940

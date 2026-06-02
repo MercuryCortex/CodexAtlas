@@ -3,8 +3,9 @@ type: person
 id: "charlemagne"
 name: "Charlemagne"
 aka: ["Karolus Magnus", "Charles the Great", "Karl der Große"]
-role: "king of the Franks / emperor (Carolingian renovatio)"
 tradition: "Latin Christian (Carolingian)"
+role-tokens: ["emperor", "religious-patron", "religious-reformer"]
+role-description: "Charlemagne (Charles the Great) — King of the Franks 768-814, Holy Roman Emperor 800-814; Carolingian renaissance; liturgical reform via Alcuin."
 region: "Frankish Empire — Aachen as the principal capital"
 date-born: 747
 date-died: 814
@@ -37,7 +38,7 @@ syncretic-edges:
     source: "*Libri Carolini* (~792, composed by Theodulf of Orleans under Charlemagne's direction); Noble 2009 *Images, Iconoclasm, and the Carolingians* (U Pennsylvania Press)"
     source-tier: "T1"
     notes: "The Carolingian *Libri Carolini* polemically rejected the Greek-iconophile decisions of Nicaea II (787), positioning the Frankish court between Greek iconophiles and Greek iconoclasts — an attempted third-position Frankish-Christian theology. The polemic shows the Carolingian self-conception as a parallel Christian-imperial authority entitled to its own theological judgments, against the Byzantine claim to ecumenical-conciliar authority."
-  - target: "[[irminsul]]"
+  - target: "[irminsul]"
     type: "polemic-against"
     source: "Royal Frankish Annals 772; Barbero 2004; Russell 1994 *The Germanization of Early Medieval Christianity* (Oxford UP)"
     source-tier: "T1"

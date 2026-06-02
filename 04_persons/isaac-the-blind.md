@@ -3,8 +3,9 @@ type: person
 id: "isaac-the-blind"
 name: "Isaac the Blind"
 aka: ["Isaac Sagi-Nahor (Hebrew: 'of much light')", "Yitzhak Saggi-Nehor"]
-role: "kabbalist | mystic"
+role-description: "kabbalist | mystic"
 tradition: "Early Kabbalah (Provençal school)"
+role-tokens: ["kabbalist", "mystic"]
 region: "Provence (Posquières)"
 date-born: 1160
 date-died: 1235

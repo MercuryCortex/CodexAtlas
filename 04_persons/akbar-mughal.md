@@ -6,7 +6,6 @@ aka: ["Akbar", "Jalal ud-Din Muhammad Akbar", "Abu'l-Fath Jalal-ud-din Muhammad 
 birth: 1542
 death: 1605
 nationality: "Mughal (Indian)"
-role: "third Mughal emperor (r. 1556–1605); architect of the syncretic Mughal court; founder of the Din-i-Ilahi (~1582)"
 mentioned-in: ["[[tradition-islam-mughal]]"]
 status: "stub"
 refs:
@@ -23,6 +22,8 @@ refs:
     type: "monograph"
     tier: 1
 tags: [person, mughal, india, emperor, islam, sunni, akbar, syncretism, 16th-century]
+role-tokens: ["emperor", "religious-reformer"]
+role-description: "Akbar — Mughal emperor 1556-1605; founder of Din-i-Ilahi syncretic religion; convened Ibādat-Khānā religious-debates."
 ---
 
 # Akbar the Great

@@ -3,8 +3,9 @@ type: person
 id: "cyrus-the-great"
 name: "Cyrus the Great"
 aka: ["Kūruš (Old Persian)", "Cyrus II", "Koreš (Hebrew)", "Kurosh-e Bozorg"]
-role: "king / emperor"
+role-description: "king / emperor"
 tradition: "Achaemenid Persian"
+role-tokens: ["king", "emperor"]
 region: "Iran / pan-Mesopotamian"
 date-born: -600
 date-died: -530

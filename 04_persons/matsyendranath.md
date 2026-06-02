@@ -3,8 +3,9 @@ type: person
 id: "matsyendranath"
 name: "Matsyendranath"
 aka: ["Matsyendranātha", "Mīna-nātha", "Macchindranāth", "Mīnapā (Buddhist mahāsiddha tradition)"]
-role: "Tantric siddha / founder of Nath sampradaya / patriarch of Kaula"
+role-description: "Tantric siddha / founder of Nath sampradaya / patriarch of Kaula"
 tradition: "Hindu — Nath sampradaya / Kaula Tantra; also claimed by Tibetan Buddhist mahāsiddha tradition as Mīnapā"
+role-tokens: ["mahasiddha"]
 region: "Bengal / Nepal / Kamarupa (Assam) — origins variously placed"
 date-born: 900
 date-died: 980

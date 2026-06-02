@@ -3,8 +3,9 @@ type: person
 id: "andre-jean-festugiere"
 name: "André-Jean Festugière"
 aka: ["A.-J. Festugière", "André Festugière", "Père Festugière"]
-role: "scholar"
+role-description: "scholar"
 tradition: "Comparative-religion academic / Dominican classical scholar"
+role-tokens: ["monastic-christian-western"]
 region: "France (Paris) — Dominican Order, Saulchoir / Le Saulchoir"
 date-born: 1898
 date-died: 1982

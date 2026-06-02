@@ -3,8 +3,9 @@ type: person
 id: "anton-lavey"
 name: "Anton Szandor LaVey"
 aka: ["Howard Stanton Levey"]
-role: "founder / Church of Satan"
 tradition: "LaVeyan Satanism"
+role-tokens: ["founder"]
+role-description: "Anton Szandor LaVey — founder of the Church of Satan (San Francisco, 1966)."
 region: "United States (San Francisco)"
 date-born: 1930
 date-died: 1997

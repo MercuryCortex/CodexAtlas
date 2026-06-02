@@ -3,8 +3,9 @@ type: person
 id: "marcus-aurelius-emperor"
 name: "Marcus Aurelius"
 aka: ["Marcus Aurelius Antoninus", "the Philosopher Emperor"]
-role: "emperor / Stoic philosopher"
+role-description: "emperor / Stoic philosopher"
 tradition: "Stoicism (Roman state religion as practice)"
+role-tokens: ["emperor"]
 region: "Rome / Empire"
 date-born: 121
 date-died: 180

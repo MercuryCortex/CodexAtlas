@@ -3,8 +3,9 @@ type: person
 id: "moses-de-leon"
 name: "Moses de León"
 aka: ["Moshe ben Shem-Tov de León", "Moses de León"]
-role: "Kabbalist, principal author of the Zohar"
+role-description: "Kabbalist, principal author of the Zohar"
 tradition: "Kabbalistic Judaism"
+role-tokens: ["kabbalist"]
 region: "Castile (Spain)"
 date-born: 1240
 date-died: 1305

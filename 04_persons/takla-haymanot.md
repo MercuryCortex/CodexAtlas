@@ -3,8 +3,9 @@ type: person
 id: "takla-haymanot"
 name: "Takla Haymanot of Debre Libanos"
 aka: ["Täklä Haymanot", "Saint Tekle Haymanot", "ተክለ ሃይማኖት"]
-role: "monk, founder, reformer, saint"
+role-description: "monk, founder, reformer, saint"
 tradition: "[[tradition-ethiopian-orthodox-tewahedo]]"
+role-tokens: ["founder", "religious-reformer"]
 region: "Shewa region (central Ethiopian highlands) — capital monastery: Debre Libanos"
 date-born: 1215
 date-died: 1313

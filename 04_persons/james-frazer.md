@@ -3,8 +3,9 @@ type: person
 id: "james-frazer"
 name: "Sir James George Frazer"
 aka: []
-role: "scholar / comparativist / anthropologist"
+role-description: "scholar / comparativist / anthropologist"
 tradition: "Comparative religion (academic) / Victorian-evolutionist anthropology"
+role-tokens: ["scholar-academic-religion"]
 region: "Scotland / United Kingdom (Cambridge)"
 date-born: 1854
 date-died: 1941

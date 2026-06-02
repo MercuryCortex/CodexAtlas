@@ -3,8 +3,9 @@ type: person
 id: "miriam-prophetess"
 name: "Miriam"
 aka: ["Miryam", "Mariam"]
-role: "prophet"
+role-description: "prophet"
 tradition: "Israelite / pre-monarchic"
+role-tokens: ["prophet-abrahamic"]
 region: "Egypt / wilderness"
 date-born: -1400
 date-died: -1273

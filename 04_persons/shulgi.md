@@ -3,8 +3,9 @@ type: person
 id: "shulgi"
 name: "Shulgi"
 aka: ["Šulgi", "Shulgi of Ur"]
-role: "king; reformer; divinized ruler"
+role-description: "king; reformer; divinized ruler"
 tradition: "Sumerian (Third Dynasty of Ur)"
+role-tokens: ["king", "religious-reformer"]
 region: "Mesopotamia (Ur)"
 date-born:
 date-died: -2047

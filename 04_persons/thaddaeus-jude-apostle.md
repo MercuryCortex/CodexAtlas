@@ -3,8 +3,9 @@ type: person
 id: "thaddaeus-jude-apostle"
 name: "Thaddaeus / Jude the Apostle"
 aka: ["Lebbaeus Thaddaeus", "Judas son of James (Lukan)", "Yehuda", "Addai (Syriac)", "Jude not Iscariot (Jn 14:22)"]
-role: "apostle"
+role-description: "apostle"
 tradition: "earliest Christianity; Armenian Apostolic; Syriac Christianity"
+role-tokens: ["apostle-christian"]
 region: "Galilee; later traditions: Edessa, Armenia, Persia"
 date-born: -5
 date-died: 70

@@ -3,8 +3,9 @@ type: person
 id: "ashurbanipal"
 name: "Ashurbanipal"
 aka: ["Aššur-bāni-apli ('Aššur is the creator of an heir')", "Sardanapalus (Greek classical-tradition name, e.g., Diodorus, Ctesias — semi-legendary)", "Asnappar (Ezra 4:10 — biblical reference to the deportations under his reign)", "Ashurbanapli", "Assurbanipal"]
-role: "king / library-builder / scribe-king"
+role-description: "king / library-builder / scribe-king"
 tradition: "Neo-Assyrian"
+role-tokens: ["king"]
 region: "Nineveh (modern Mosul, Iraq)"
 date-born: -685
 date-died: -631

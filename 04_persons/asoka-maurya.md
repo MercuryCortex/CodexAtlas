@@ -3,8 +3,9 @@ type: person
 id: "asoka-maurya"
 name: "Aśoka the Great"
 aka: ["Aśokavardhana", "Devānāṃpriya Priyadarśin", "Aśoka Maurya", "Ashoka"]
-role: "king | religious patron | proselytizer"
+role-description: "king | religious patron | proselytizer"
 tradition: "Buddhism (Mauryan state-patronage; non-sectarian *dhamma*)"
+role-tokens: ["king"]
 region: "Mauryan empire (capital Pāṭaliputra, modern Patna)"
 date-born: -304
 date-died: -232

@@ -3,8 +3,9 @@ type: person
 id: "abraham-abulafia"
 name: "Abraham Abulafia"
 aka: ["Avraham ben Shmuel Abulafia"]
-role: "mystic, Kabbalist, messianic claimant"
+role-description: "mystic, Kabbalist, messianic claimant"
 tradition: "Kabbalistic Judaism — Prophetic Kabbalah"
+role-tokens: ["mystic", "kabbalist"]
 region: "Spain, Italy, Sicily, Greece, Holy Land"
 date-born: 1240
 date-died: 1291

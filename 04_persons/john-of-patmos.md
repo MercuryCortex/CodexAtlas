@@ -3,8 +3,9 @@ type: person
 id: "john-of-patmos"
 name: "John of Patmos"
 aka: ["John the Revelator", "John the Seer", "Iōannēs"]
-role: "prophet / visionary / author"
+role-description: "prophet / visionary / author"
 tradition: "Late-first-century Christianity (Asia Minor)"
+role-tokens: ["prophet-abrahamic", "author-secular"]
 region: "Patmos (Aegean) and the seven cities of Roman Asia (Ephesus, Smyrna, Pergamum, Thyatira, Sardis, Philadelphia, Laodicea)"
 date-born:
 date-died:

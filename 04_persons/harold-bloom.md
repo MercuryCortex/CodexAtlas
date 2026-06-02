@@ -3,8 +3,9 @@ type: person
 id: "harold-bloom"
 name: "Harold Bloom"
 aka: []
-role: "scholar / literary critic / religious essayist"
+role-description: "scholar / literary critic / religious essayist"
 tradition: "Comparative religion (popular-academic) / literary criticism / 'American Gnosticism' thesis"
+role-tokens: ["author-secular"]
 region: "United States (Yale)"
 date-born: 1930
 date-died: 2019

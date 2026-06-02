@@ -3,8 +3,9 @@ type: person
 id: "ramprasad-sen"
 name: "Ramprasad Sen"
 aka: ["Ramprasad", "Kavi Ranjan"]
-role: "Bengali Shakta poet / Kali-devotee"
+role-description: "Bengali Shakta poet / Kali-devotee"
 tradition: "Hindu Bhakti (Shakta)"
+role-tokens: ["author-secular"]
 region: "Bengal (Halisahar / Kumarhatta and Calcutta)"
 date-born: 1718
 date-died: 1775

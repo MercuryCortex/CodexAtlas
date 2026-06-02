@@ -3,8 +3,9 @@ type: person
 id: "rabbi-shimon-bar-yochai"
 name: "Rabbi Shimon bar Yochai"
 aka: ["Rashbi", "Shim'on ben Yoḥai"]
-role: "rabbi | sage | (traditional Zohar author)"
+role-description: "rabbi | sage | (traditional Zohar author)"
 tradition: "Tannaitic Judaism / Kabbalistic tradition"
+role-tokens: ["rabbi-tannaitic"]
 region: "Roman Palestine (Galilee — Meron)"
 date-born: 100
 date-died: 160

@@ -3,8 +3,9 @@ type: person
 id: "hippolytus-of-rome"
 name: "Hippolytus of Rome"
 aka: ["Hippolytos"]
-role: "presbyter / heresiologist / theologian / anti-pope"
+role-description: "presbyter / heresiologist / theologian / anti-pope"
 tradition: "Patristic Christian (proto-orthodox; schismatic)"
+role-tokens: ["theologian"]
 region: "Rome"
 date-born: 170
 date-died: 235

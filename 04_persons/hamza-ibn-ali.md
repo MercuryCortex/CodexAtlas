@@ -3,8 +3,9 @@ type: person
 id: "hamza-ibn-ali"
 name: "Hamza ibn ʿAlī"
 aka: ["Hamza ibn Ali", "Hamza ibn 'Ali ibn Ahmad"]
-role: "theologian / founder-jurist of the Druze"
+role-description: "theologian / founder-jurist of the Druze"
 tradition: "[[tradition-druze]]"
+role-tokens: ["theologian"]
 birth: 985
 death: 1021
 floruit-earliest: 1017

@@ -3,8 +3,9 @@ type: person
 id: "titus"
 name: "Titus"
 aka: ["Titos"]
-role: "disciple | apostolic delegate"
+role-description: "disciple | apostolic delegate"
 tradition: "earliest Christianity"
+role-tokens: ["disciple-christian"]
 region: "Crete; Corinth; Dalmatia (per 2 Tim 4:10)"
 date-born: 15
 date-died: 96

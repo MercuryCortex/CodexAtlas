@@ -3,8 +3,9 @@ type: person
 id: "ignatius-of-antioch"
 name: "Ignatius of Antioch"
 aka: ["Theophoros ('God-bearer')", "Ignatius the Theophorus", "Ignatios"]
-role: "bishop / martyr / apostolic father"
+role-description: "bishop / martyr / apostolic father"
 tradition: "Patristic Christian (proto-orthodox)"
+role-tokens: ["bishop-christian"]
 region: "Antioch (Syria) → en route to Rome martyrdom"
 date-born: 35
 date-died: 108

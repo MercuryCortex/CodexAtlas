@@ -3,8 +3,9 @@ type: person
 id: "john-mark"
 name: "John Mark"
 aka: ["Yochanan Markos", "John whose other name was Mark (Acts 12:12, 25)"]
-role: "disciple | missionary"
+role-description: "disciple | missionary"
 tradition: "earliest Christianity"
+role-tokens: ["disciple-christian"]
 region: "Jerusalem → Antioch → Cyprus → (split from Paul) → Rome (traditional)"
 date-born: 10
 date-died: 70

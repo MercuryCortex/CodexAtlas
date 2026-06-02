@@ -3,8 +3,9 @@ type: person
 id: "leo-the-great"
 name: "Pope Leo I (the Great)"
 aka: ["Leo Magnus", "Leo I"]
-role: "bishop of Rome / pope / theologian"
+role-description: "bishop of Rome / pope / theologian"
 tradition: "Latin Christian (Catholic)"
+role-tokens: ["pope-roman-catholic", "theologian"]
 region: "Rome"
 date-born: 400
 date-died: 461

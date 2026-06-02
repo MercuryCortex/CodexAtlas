@@ -3,8 +3,9 @@ type: person
 id: "theodosius-i"
 name: "Theodosius I"
 aka: ["Theodosius the Great", "Flavius Theodosius"]
-role: "emperor"
+role-description: "emperor"
 tradition: "Nicene Christian (Roman imperial)"
+role-tokens: ["emperor"]
 family: "Roman"
 region: "Roman Empire (East then both East and West)"
 date-born: 347

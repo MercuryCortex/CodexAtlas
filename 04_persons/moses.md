@@ -3,8 +3,9 @@ type: person
 id: "moses"
 name: "Moses"
 aka: ["Moshe", "Mūsā (Arabic)", "the Lawgiver"]
-role: "prophet | lawgiver"
+role-description: "prophet | lawgiver"
 tradition: "Israelite religion (founder-figure)"
+role-tokens: ["prophet-abrahamic"]
 region: "Egypt → Sinai → Transjordan"
 date-born: ""
 date-died: ""

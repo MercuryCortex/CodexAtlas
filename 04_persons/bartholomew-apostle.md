@@ -3,8 +3,9 @@ type: person
 id: "bartholomew-apostle"
 name: "Bartholomew the Apostle"
 aka: ["Bar-Talmai", "Nathanael (Johannine identification)", "Bartholomaios"]
-role: "apostle"
+role-description: "apostle"
 tradition: "earliest Christianity"
+role-tokens: ["apostle-christian"]
 region: "Galilee (Cana, per Johannine identification); later tradition: India, Armenia"
 date-born: -5
 date-died: 70

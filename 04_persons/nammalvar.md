@@ -3,8 +3,9 @@ type: person
 id: "nammalvar"
 name: "Nammalvar"
 aka: ["Nammāḻvār", "Caṭakōpan", "Māran", "Parāṅkuśa", "Vakulābharaṇa"]
-role: "Tamil Alvar poet-saint / chief Alvar / Vaishnava theologian-poet"
+role-description: "Tamil Alvar poet-saint / chief Alvar / Vaishnava theologian-poet"
 tradition: "Hindu Bhakti (Tamil Vaishnava — Alvar tradition; Sri Vaishnavism)"
+role-tokens: ["author-secular"]
 region: "Āḻvārtirunagari (Kurukai), Tamil Nadu (south India)"
 date-born: 880
 date-died: 930

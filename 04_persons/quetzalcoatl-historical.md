@@ -3,8 +3,9 @@ type: person
 id: "quetzalcoatl-historical"
 name: "Topiltzin Quetzalcoatl (historical Toltec ruler)"
 aka: ["Ce Acatl Topiltzin", "Topiltzin Quetzalcoatl"]
-role: "priest-king / culture-hero conflated with deity"
+role-description: "priest-king / culture-hero conflated with deity"
 tradition: "Toltec (Nahua)"
+role-tokens: ["king"]
 region: "Central Mexico — Tula (Tollan)"
 date-born: 947
 date-died: 999

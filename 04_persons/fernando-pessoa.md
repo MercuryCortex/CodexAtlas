@@ -3,8 +3,9 @@ type: person
 id: "fernando-pessoa"
 name: "Fernando Pessoa"
 aka: ["Fernando António Nogueira de Seabra Pessoa", "Fernando Pessoa", "Alberto Caeiro (heteronym)", "Ricardo Reis (heteronym)", "Álvaro de Campos (heteronym)", "Bernardo Soares (semi-heteronym)", "Raphael Baldaya (astrological heteronym)"]
-role: "poet / esotericist"
+role-description: "poet / esotericist"
 tradition: "[[tradition-portuguese-hermeticism]]"
+role-tokens: ["author-secular"]
 region: "Portugal (Lisbon) and South Africa (Durban, schooling 1896–1905)"
 date-born: 1888
 date-died: 1935

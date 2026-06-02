@@ -3,8 +3,9 @@ type: person
 id: "elisha-prophet"
 name: "Elisha"
 aka: ["Elisha ben Shaphat", "al-Yasa'"]
-role: "prophet"
+role-description: "prophet"
 tradition: "Israelite / Northern Kingdom"
+role-tokens: ["prophet-abrahamic"]
 region: "Israel"
 date-born: -890
 date-died: -800

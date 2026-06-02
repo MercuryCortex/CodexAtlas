@@ -3,8 +3,9 @@ type: person
 id: "nachmanides"
 name: "Nachmanides"
 aka: ["Rabbi Moses ben Nachman", "Ramban", "Naḥmanides", "Bonastruc da Porta (Catalan name)"]
-role: "Talmudist, Kabbalist, physician, communal leader, Torah commentator"
+role-description: "Talmudist, Kabbalist, physician, communal leader, Torah commentator"
 tradition: "Jewish — Talmudic Judaism and Kabbalah (Gerona school)"
+role-tokens: ["kabbalist"]
 region: "Girona (Catalonia, Crown of Aragon); later Land of Israel (Acre)"
 date-born: 1194
 date-died: 1270

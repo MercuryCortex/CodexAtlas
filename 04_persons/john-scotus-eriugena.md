@@ -3,8 +3,9 @@ type: person
 id: "john-scotus-eriugena"
 name: "John Scotus Eriugena"
 aka: ["Iohannes Scottus Eriugena", "John the Irishman", "Erigena"]
-role: "philosopher, theologian, translator"
+role-description: "philosopher, theologian, translator"
 tradition: "Latin Christian — Carolingian Neoplatonism"
+role-tokens: ["theologian"]
 region: "Ireland (origin), Carolingian Empire / West Francia (career)"
 date-born: 810
 date-died: 877

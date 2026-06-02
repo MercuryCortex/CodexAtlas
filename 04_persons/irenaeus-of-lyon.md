@@ -3,8 +3,9 @@ type: person
 id: "irenaeus-of-lyon"
 name: "Irenaeus of Lyon"
 aka: ["Eirēnaios", "Irenaeus Lugdunensis"]
-role: "bishop / heresiologist"
+role-description: "bishop / heresiologist"
 tradition: "Patristic Christian"
+role-tokens: ["bishop-christian"]
 region: "Smyrna (Asia Minor) → Lugdunum (Lyon, Gaul)"
 date-born: 130
 date-died: 202

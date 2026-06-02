@@ -3,8 +3,9 @@ type: person
 id: "euripides"
 name: "Euripides of Salamis"
 aka: ["Εὐριπίδης", "Euripides the Athenian"]
-role: "tragic poet | religious-theological dramatist | Athenian intellectual"
+role-description: "tragic poet | religious-theological dramatist | Athenian intellectual"
 tradition: "Greek (Athenian dramatic tradition); strongly engaged with Sophistic philosophy and emergent rationalism"
+role-tokens: ["author-secular"]
 region: "Athens (born Salamis); end of life in Macedon at the court of Archelaus"
 date-born: -480
 date-died: -406

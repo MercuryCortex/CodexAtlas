@@ -3,8 +3,9 @@ type: person
 id: "xenophanes"
 name: "Xenophanes of Colophon"
 aka: ["Xenophanēs"]
-role: "philosopher / itinerant poet / critic of religion"
+role-description: "philosopher / itinerant poet / critic of religion"
 tradition: "Greek philosophy (Presocratic)"
+role-tokens: ["presocratic-philosopher", "author-secular"]
 region: "Colophon (Ionian Asia Minor) → Magna Graecia (southern Italy, including Elea)"
 date-born: -570
 date-died: -475

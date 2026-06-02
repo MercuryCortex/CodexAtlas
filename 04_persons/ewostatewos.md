@@ -3,8 +3,9 @@ type: person
 id: "ewostatewos"
 name: "Ewostatewos of Sara'e"
 aka: ["Eustathius of Ethiopia", "Ǝwosṭatewos", "ኤዎስጣቴዎስ"]
-role: "monk, founder, reformer"
+role-description: "monk, founder, reformer"
 tradition: "[[tradition-ethiopian-orthodox-tewahedo]] (House of Ewostatewos)"
+role-tokens: ["founder", "religious-reformer"]
 region: "northern Ethiopia (Sara'e), with travels to Egypt, Jerusalem, Cyprus, Armenia"
 date-born: 1273
 date-died: 1352

@@ -3,8 +3,9 @@ type: person
 id: "clement-of-rome"
 name: "Clement of Rome"
 aka: ["Clemens Romanus", "Klēmēs Rōmēs", "Pope Clement I (later tradition)"]
-role: "bishop / apostolic father"
+role-description: "bishop / apostolic father"
 tradition: "Patristic Christian (proto-orthodox)"
+role-tokens: ["bishop-christian"]
 region: "Rome"
 date-born: 35
 date-died: 99

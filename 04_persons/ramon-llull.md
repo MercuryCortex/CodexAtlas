@@ -3,8 +3,9 @@ type: person
 id: "ramon-llull"
 name: "Ramon Llull"
 aka: ["Raimundus Lullus", "Ramon Llull", "Raymond Lull", "Raymond Lully", "Doctor Illuminatus"]
-role: "philosopher / mystic / Franciscan tertiary / missionary"
+role-description: "philosopher / mystic / Franciscan tertiary / missionary"
 tradition: "Catalan Christianity (Franciscan)"
+role-tokens: ["mystic"]
 sub-tradition: "Founder of Lullism — combinatorial mystical logic"
 label: "philosopher"
 birth: 1232

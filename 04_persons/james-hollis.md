@@ -3,8 +3,9 @@ type: person
 id: "james-hollis"
 name: "James Hollis"
 aka: []
-role: "Jungian analyst / popular writer"
+role-description: "Jungian analyst / popular writer"
 tradition: "Jungian / post-Jungian depth psychology"
+role-tokens: ["author-secular"]
 region: "United States (Texas / Washington DC)"
 date-born: 1940
 date-died:

@@ -3,8 +3,9 @@ type: person
 id: "nestorius"
 name: "Nestorius"
 aka: ["Nestorios"]
-role: "archbishop / heresiarch (in the Catholic / Orthodox judgment)"
+role-description: "archbishop / heresiarch (in the Catholic / Orthodox judgment)"
 tradition: "Antiochene Christian"
+role-tokens: ["archbishop-christian"]
 region: "Antioch, Constantinople, Egyptian exile"
 date-born: 386
 date-died: 451

@@ -3,8 +3,9 @@ type: person
 id: "akhenaten"
 name: "Akhenaten"
 aka: ["Amenhotep IV (birth name)", "Akhanyati", "Neferkheperure-waenre (throne name)", "Ikhnaton"]
-role: "pharaoh; religious reformer; founder of Atenism — candidate for the world's first exclusive monotheism"
 tradition: "Egyptian (Amarna religion)"
+role-tokens: ["pharaoh", "religious-reformer", "founder"]
+role-description: "Akhenaten (Amenhotep IV) — 18th-Dynasty pharaoh; abolished traditional Egyptian polytheism in favor of Aten-only worship (the first attested monotheism per Assmann 1997)."
 region: "Egypt (capital relocated from Thebes to Akhetaten / Tell el-Amarna)"
 date-born: -1370
 date-died: -1336

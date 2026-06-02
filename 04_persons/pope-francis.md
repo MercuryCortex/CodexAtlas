@@ -3,8 +3,9 @@ type: person
 id: "pope-francis"
 name: "Pope Francis"
 aka: ["Jorge Mario Bergoglio", "Francis", "Franciscus"]
-role: "pope / religious leader / theologian"
+role-description: "pope / religious leader / theologian"
 tradition: "Roman Catholicism / Society of Jesus (Jesuit background)"
+role-tokens: ["pope-roman-catholic", "theologian"]
 region: "Argentina → Vatican City"
 date-born: 1936
 date-died:

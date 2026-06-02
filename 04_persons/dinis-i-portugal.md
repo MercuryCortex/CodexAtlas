@@ -4,10 +4,11 @@ id: "dinis-i-portugal"
 name: "Dinis I of Portugal"
 aka: ["Dom Dinis", "Dinis the Farmer (O Lavrador)", "Dinis the Poet-King", "the Father of Portugal (Pai da Pátria)"]
 tradition: "[[tradition-order-of-christ]] / [[tradition-knights-templar]] (successor institution)"
+role-tokens: ["king", "author-secular"]
 region: "Portugal (Lisbon; Tomar; Coimbra)"
 date-born: 1261
 date-died: 1325
-role: "King of Portugal (1279–1325); poet and troubadour; founder of the University of Coimbra (1290); founder of the Order of Christ (1319) as direct successor to the dissolved Knights Templar in Portugal — the single most consequential act in the chain from Templar dissolution to Portuguese maritime empire"
+role-description: "King of Portugal (1279–1325); poet and troubadour; founder of the University of Coimbra (1290); founder of the Order of Christ (1319) as direct successor to the dissolved Knights Templar in Portugal — the single most consequential act in the chain from Templar dissolution to Portuguese maritime empire"
 key-works: []
 tradition-affiliation: ["[[tradition-order-of-christ]]"]
 influenced: ["[[tradition-order-of-christ]] (he founded it)", "[[event-order-of-christ-foundation-1319]]", "[[henry-the-navigator]] (Grand Master of the order Dinis created)", "[[phase-6-041-camoes-os-lusiadas]] (the Discoveries Camões celebrates begin with the institution Dinis preserved)", "Portuguese maritime empire"]

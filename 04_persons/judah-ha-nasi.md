@@ -3,8 +3,9 @@ type: person
 id: "judah-ha-nasi"
 name: "Judah ha-Nasi"
 aka: ["Rabbi Judah the Prince", "Yehuda HaNasi", "Rabbi"]
-role: "redactor / patriarch (Jewish)"
+role-description: "redactor / patriarch (Jewish)"
 tradition: "Rabbinic Judaism (Tannaitic)"
+role-tokens: ["rabbi-tannaitic"]
 region: "Roman Palestine (Galilee)"
 date-born: 135
 date-died: 217

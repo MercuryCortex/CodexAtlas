@@ -3,8 +3,9 @@ type: person
 id: "chaitanya-mahaprabhu"
 name: "Chaitanya Mahaprabhu"
 aka: ["Sri Krishna Chaitanya", "Vishvambhara Misra (birth name)", "Nimai"]
-role: "Hindu bhakti saint / founder of Gaudiya Vaishnavism"
 tradition: "Hindu Bhakti (Gaudiya Vaishnava)"
+role-tokens: ["acharya-hindu", "bhakti-saint"]
+role-description: "Chaitanya Mahāprabhu — 15th-16th c. Gauḍīya Vaiṣṇava saint and ācārya; revered as combined incarnation of Radha and Krishna by Gauḍīya Vaiṣṇavas; founder of the Saṅkīrtana tradition."
 region: "Bengal / Odisha / Vrindavan"
 date-born: 1486
 date-died: 1534

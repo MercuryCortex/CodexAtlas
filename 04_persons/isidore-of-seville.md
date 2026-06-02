@@ -3,8 +3,9 @@ type: person
 id: "isidore-of-seville"
 name: "Isidore of Seville"
 aka: ["Isidorus Hispalensis"]
-role: "bishop / encyclopedist"
+role-description: "bishop / encyclopedist"
 tradition: "Latin Christian (Visigothic Spain)"
+role-tokens: ["bishop-christian"]
 region: "Visigothic Iberia — Seville"
 date-born: 560
 date-died: 636

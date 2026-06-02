@@ -3,8 +3,9 @@ type: person
 id: "constantine-i"
 name: "Constantine I"
 aka: ["Constantine the Great", "Flavius Valerius Aurelius Constantinus"]
-role: "emperor"
+role-description: "emperor"
 tradition: "Roman (converted to Christianity)"
+role-tokens: ["emperor"]
 region: "Roman Empire"
 date-born: 272
 date-died: 337

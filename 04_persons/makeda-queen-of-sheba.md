@@ -3,8 +3,9 @@ type: person
 id: "makeda-queen-of-sheba"
 name: "Makeda, Queen of Sheba (Ethiopian tradition)"
 aka: ["Queen of Sheba", "Makeda", "Bilqis (Quranic tradition)", "Nikaule (Josephus)", "the Queen of the South (Mt 12:42 / Lk 11:31)"]
-role: "queen, foundational matriarch"
+role-description: "queen, foundational matriarch"
 tradition: "[[tradition-ethiopian-orthodox-tewahedo]] (foundational figure of the Solomonic dynasty); also [[tradition-islam]] (Bilqis); [[tradition-judaism]] (1 Kings 10, Targum Sheni)"
+role-tokens: ["queen"]
 region: "Ethiopian tradition: Aksum / Saba (Sheba) — broader ANE tradition: South Arabian Saba (Yemen) and/or Aksum"
 date-born: -1000
 date-died: -950

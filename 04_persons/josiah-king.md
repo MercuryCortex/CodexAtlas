@@ -3,8 +3,9 @@ type: person
 id: "josiah-king"
 name: "Josiah"
 aka: ["יֹאשִׁיָּהוּ", "Yoshiyahu", "Josias"]
-role: "king / reformer"
+role-description: "king / reformer"
 tradition: "Judahite"
+role-tokens: ["king", "religious-reformer"]
 region: "Kingdom of Judah, Jerusalem"
 date-born: -648
 date-died: -609

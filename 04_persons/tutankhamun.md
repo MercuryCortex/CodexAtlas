@@ -3,8 +3,9 @@ type: person
 id: "tutankhamun"
 name: "Tutankhamun"
 aka: ["Tutankhaten (birth name, during Atenism)", "Nebkheperure (throne name)", "Tut-Ankh-Amun ('Living Image of Amun')", "King Tut (popular)"]
-role: "king"
+role-description: "king"
 tradition: "Egyptian (18th Dynasty, end of the Amarna period)"
+role-tokens: ["king"]
 region: "Egypt (Theban + Memphite court; burial at Valley of the Kings, KV62)"
 date-born: -1341
 date-died: -1323

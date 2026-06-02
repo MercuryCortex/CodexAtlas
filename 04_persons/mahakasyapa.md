@@ -3,8 +3,9 @@ type: person
 id: "mahakasyapa"
 name: "Mahākāśyapa"
 aka: ["Mahā-Kassapa (Pali)", "Kāśyapa Thera", "Foremost in ascetic discipline (dhutaṅga)", "the First Patriarch (Chan/Zen lineage)"]
-role: "disciple | monastic head | canonical convener"
+role-description: "disciple | monastic head | canonical convener"
 tradition: "Buddhism (pre-sectarian; first patriarch in Chan/Zen lineage)"
+role-tokens: ["disciple-christian"]
 region: "Magadha (Rājagṛha)"
 date-born: -510
 date-died: -410

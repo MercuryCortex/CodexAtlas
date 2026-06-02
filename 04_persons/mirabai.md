@@ -3,8 +3,9 @@ type: person
 id: "mirabai"
 name: "Mirabai"
 aka: ["Mira Bai", "Mira", "Meera Bai"]
-role: "Hindu bhakti poet-saint / Krishna-devotee / Rajput princess"
+role-description: "Hindu bhakti poet-saint / Krishna-devotee / Rajput princess"
 tradition: "Hindu Bhakti (Vaishnava — Krishna-bhakti)"
+role-tokens: ["author-secular"]
 region: "Rajasthan / Gujarat / Vrindavan / Dwarka"
 date-born: 1498
 date-died: 1547

@@ -3,8 +3,9 @@ type: person
 id: "guru-nanak"
 name: "Guru Nanak"
 aka: ["Guru Nanak Dev Ji", "Baba Nanak"]
-role: "founder / first Sikh Guru / sant-poet"
 tradition: "Sikhism"
+role-tokens: ["founder", "guru-sikh"]
+role-description: "Guru Nanak — founder of Sikhism (1469-1539); first of the Ten Sikh Gurus."
 region: "Punjab (Mughal India)"
 date-born: 1469
 date-died: 1539

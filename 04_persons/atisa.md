@@ -3,8 +3,9 @@ type: person
 id: "atisa"
 name: "Atiśa Dīpaṃkara Śrījñāna"
 aka: ["Atiśa", "Atisha", "Dīpaṃkara Śrījñāna", "Tibetan: Jo bo rje (Jowo Je)", "Pāla Bengal Buddhist master"]
-role: "monk | scholar | translator | reformer"
+role-description: "monk | scholar | translator | reformer"
 tradition: "Indian Mahāyāna-Vajrayāna; Tibetan Buddhism (founder-figure of the Kadampa lineage)"
+role-tokens: ["religious-reformer"]
 region: "Born Bengal (Vikrampurā, modern Bangladesh); studied at Vikramaśīla; final 13 years in Tibet"
 date-born: 982
 date-died: 1054

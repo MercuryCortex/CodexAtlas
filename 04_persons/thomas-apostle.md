@@ -3,8 +3,9 @@ type: person
 id: "thomas-apostle"
 name: "Thomas the Apostle"
 aka: ["Didymos", "Judas Thomas", "Judas Didymus Thomas", "Yehuda Toma", "Toma 'the Twin'"]
-role: "apostle"
+role-description: "apostle"
 tradition: "earliest Christianity; Syriac Christianity; Thomasine tradition"
+role-tokens: ["apostle-christian"]
 region: "Galilee → Edessa (Syria) → 'India' (Malabar coast per Thomas Christian tradition)"
 date-born: -5
 date-died: 72

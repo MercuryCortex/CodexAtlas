@@ -3,8 +3,9 @@ type: person
 id: "melito-of-sardis"
 name: "Melito of Sardis"
 aka: ["Melitōn ho Sardēnos", "Meliton"]
-role: "bishop / apologist / Quartodeciman"
+role-description: "bishop / apologist / Quartodeciman"
 tradition: "Patristic Christian (Quartodeciman Asian)"
+role-tokens: ["bishop-christian"]
 region: "Sardis (Asia Minor)"
 date-born: 110
 date-died: 180

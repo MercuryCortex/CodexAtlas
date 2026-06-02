@@ -3,8 +3,9 @@ type: person
 id: "sarada-devi"
 name: "Sarada Devi"
 aka: ["Śāradā Devī", "the Holy Mother (Śrī Śrī Mā)", "Saradamani Mukhopadhyay"]
-role: "mystic / spiritual consort of Ramakrishna / spiritual successor / co-founder of Ramakrishna Order"
+role-description: "mystic / spiritual consort of Ramakrishna / spiritual successor / co-founder of Ramakrishna Order"
 tradition: "Hindu modernism / Ramakrishna Mission"
+role-tokens: ["mystic"]
 region: "Bengal (Jayrambati / Dakshineswar / Calcutta)"
 date-born: 1853
 date-died: 1920

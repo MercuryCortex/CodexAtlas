@@ -3,8 +3,9 @@ type: person
 id: "ibn-arabi"
 name: "Ibn Arabi"
 aka: ["Muḥyī al-Dīn Ibn ʿArabī", "Al-Shaykh al-Akbar (the Greatest Master)", "Ibn al-ʿArabī (with article to distinguish from the Mālikī jurist)"]
-role: "Sufi master, philosopher, poet"
+role-description: "Sufi master, philosopher, poet"
 tradition: "Sufi Islam — Akbarī school"
+role-tokens: ["sufi-shaykh", "author-secular"]
 region: "Andalusia (birth), Maghreb, Hijaz, Anatolia, Iraq, Syria (residence and death)"
 date-born: 1165
 date-died: 1240

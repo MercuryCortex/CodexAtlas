@@ -3,8 +3,9 @@ type: person
 id: "gilgamesh-king"
 name: "Gilgamesh (historical king of Uruk)"
 aka: ["Bilgames (older Sumerian reading)", "Gištubar (early misreading)", "Gilgameš"]
-role: "king"
+role-description: "king"
 tradition: "Sumerian / Mesopotamian"
+role-tokens: ["king"]
 region: "Mesopotamia (Uruk)"
 date-born:
 date-died:

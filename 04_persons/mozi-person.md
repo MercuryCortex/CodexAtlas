@@ -3,8 +3,9 @@ type: person
 id: "mozi-person"
 name: "Mozi (Mo Di)"
 aka: ["Mòzǐ", "墨子", "Mo Tzu", "Mo Di (墨翟)", "Master Mo"]
-role: "philosopher / founder / fraternity leader"
+role-description: "philosopher / founder / fraternity leader"
 tradition: "Mohism"
+role-tokens: ["founder"]
 region: "State of Lu (modern Shandong) and trans-state Mohist guild activity"
 date-born: -470
 date-died: -390

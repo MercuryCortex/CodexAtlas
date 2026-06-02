@@ -3,8 +3,9 @@ type: person
 id: "annie-besant"
 name: "Annie Besant"
 aka: []
-role: "reformer / Theosophist / Indian-independence activist"
+role-description: "reformer / Theosophist / Indian-independence activist"
 tradition: "Theosophy"
+role-tokens: ["religious-reformer"]
 region: "United Kingdom → India"
 date-born: 1847
 date-died: 1933

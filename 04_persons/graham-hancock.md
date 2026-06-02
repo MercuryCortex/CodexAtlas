@@ -3,8 +3,9 @@ type: person
 id: "graham-hancock"
 name: "Graham Hancock"
 aka: ["Graham Bruce Hancock"]
-role: "journalist / popular author / pseudoarchaeologist"
 tradition: "Late-20th / early-21st-century popular pseudoarchaeology"
+role-tokens: ["scholar-alternative"]
+role-description: "Graham Hancock — popular author of hyperdiffusionist + lost-civilization works (*Fingerprints of the Gods* 1995, *Magicians of the Gods* 2015). Academic-consensus is pseudoscholarship."
 region: "United Kingdom (born Edinburgh); research travel worldwide"
 date-born: 1950
 date-died: ~

@@ -3,8 +3,9 @@ type: person
 id: "jeremiah"
 name: "Jeremiah"
 aka: ["יִרְמְיָהוּ", "Yirmeyahu"]
-role: "prophet"
+role-description: "prophet"
 tradition: "Judahite"
+role-tokens: ["prophet-abrahamic"]
 region: "Kingdom of Judah (Anathoth, Jerusalem); later forced exile to Egypt"
 date-born: -640
 date-died: -570

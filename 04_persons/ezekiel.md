@@ -3,8 +3,9 @@ type: person
 id: "ezekiel"
 name: "Ezekiel"
 aka: ["יְחֶזְקֵאל", "Yeḥezqēl", "Ezekiel ben Buzi", "the prophet-priest of the exile"]
-role: "prophet / priest"
+role-description: "prophet / priest"
 tradition: "Judahite (exilic)"
+role-tokens: ["prophet-abrahamic"]
 sub-tradition: "Priest-prophet in Babylonian exile; founding figure of Merkabah mysticism"
 label: "prophet"
 birth: -622

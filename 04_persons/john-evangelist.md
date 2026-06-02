@@ -3,8 +3,9 @@ type: person
 id: "john-evangelist"
 name: "John the Evangelist"
 aka: ["Iōannēs", "John the Apostle (in traditional identification)", "John son of Zebedee", "the Beloved Disciple", "John the Elder (alternative)"]
-role: "redactor | mystic"
+role-description: "redactor | mystic"
 tradition: "early Christianity (Johannine community)"
+role-tokens: ["mystic"]
 region: "Galilee (apostolic origin per tradition); Ephesus (traditional later residence)"
 date-born: 10
 date-died: 100

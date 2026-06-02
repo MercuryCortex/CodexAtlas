@@ -3,8 +3,9 @@ type: person
 id: "julian-of-norwich"
 name: "Julian of Norwich"
 aka: ["Dame Julian", "Mother Julian"]
-role: "anchoress / mystic / vernacular theologian"
+role-description: "anchoress / mystic / vernacular theologian"
 tradition: "Latin Christianity (anchoritic, English vernacular mystical)"
+role-tokens: ["mystic"]
 region: "Norwich, East Anglia (England)"
 date-born: 1342
 date-died: 1416

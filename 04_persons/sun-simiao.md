@@ -4,9 +4,10 @@ id: "sun-simiao"
 name: "Sun Simiao"
 aka: ["孫思邈", "Sūn Sīmiǎo", "Yaowang (藥王, King of Medicine)", "the Medicine King"]
 tradition: "Chinese"
+role-tokens: ["king"]
 region: "China — Tang dynasty; born Jingzhao (modern Shaanxi); refused imperial court appointments; worked itinerantly"
 dates: "c. 581–682 CE (age ~101 — one of the most reliably attested centenarian scholars in Chinese history)"
-role: "Tang dynasty physician-sage; wrote Qianjin Yao Fang (Prescriptions Worth a Thousand Gold); author of the Chinese equivalent of the Hippocratic Oath; venerated as a deity after death (Yaowang, King of Medicine)"
+role-description: "Tang dynasty physician-sage; wrote Qianjin Yao Fang (Prescriptions Worth a Thousand Gold); author of the Chinese equivalent of the Hippocratic Oath; venerated as a deity after death (Yaowang, King of Medicine)"
 domains: ["clinical medicine", "pharmacopeia", "medical ethics", "diet and lifestyle medicine", "Daoist medicine", "longevity practices"]
 attested-in: ["Jiu Tang Shu (Old Book of Tang, 945 CE) — official biography", "Xin Tang Shu (New Book of Tang, 1060 CE) — confirms biography", "Qianjin Yao Fang (his own work, 652 CE)", "Qianjin Yi Fang (supplementary, c. 680 CE)"]
 tags:

@@ -3,8 +3,9 @@ type: person
 id: "wovoka"
 name: "Wovoka"
 aka: ["Jack Wilson", "the Paiute Prophet", "Cutter (Native English nickname)"]
-role: "Northern Paiute prophet, founder of the second Ghost Dance"
 tradition: "Northern Paiute / pan-tribal Ghost Dance"
+role-tokens: ["prophet-indigenous", "founder"]
+role-description: "Wovoka (Jack Wilson) — Northern Paiute religious leader; founder of the second Ghost Dance (1889) following his vision during the solar eclipse of January 1889. Per Hittman 1990: revelation-bearer in Paiute prophetic tradition, NOT Abrahamic-derivative."
 region: "Walker Lake / Mason Valley, Nevada"
 date-born: 1856
 date-died: 1932

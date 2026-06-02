@@ -3,8 +3,9 @@ type: person
 id: "zacchaeus"
 name: "Zacchaeus"
 aka: ["Zakkai (Aramaic, 'pure')", "Zakchaios"]
-role: "disciple"
+role-description: "disciple"
 tradition: "earliest Christianity"
+role-tokens: ["disciple-christian"]
 region: "Jericho"
 date-born: -10
 date-died: 50

@@ -3,8 +3,9 @@ type: person
 id: "c-s-lewis"
 name: "C.S. Lewis"
 aka: ["Clive Staples Lewis"]
-role: "scholar / Christian apologist / writer"
+role-description: "scholar / Christian apologist / writer"
 tradition: "Christian (Anglican)"
+role-tokens: ["author-secular"]
 region: "United Kingdom (Belfast → Oxford → Cambridge)"
 date-born: 1898
 date-died: 1963

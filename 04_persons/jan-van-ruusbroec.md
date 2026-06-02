@@ -3,8 +3,9 @@ type: person
 id: "jan-van-ruusbroec"
 name: "Jan van Ruusbroec"
 aka: ["John of Ruusbroec", "John Ruysbroeck", "Doctor Admirabilis", "Doctor Divinus"]
-role: "Augustinian canon / mystic / theologian"
+role-description: "Augustinian canon / mystic / theologian"
 tradition: "Latin Christianity (Augustinian canon; Flemish mysticism)"
+role-tokens: ["mystic", "theologian"]
 region: "Brabant (Low Countries) — Brussels / Groenendaal"
 date-born: 1293
 date-died: 1381

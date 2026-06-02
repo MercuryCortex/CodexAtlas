@@ -3,8 +3,9 @@ type: person
 id: "apollonius-of-tyana"
 name: "Apollonius of Tyana"
 aka: ["Apollōnios ho Tyaneus"]
-role: "philosopher | mystic"
+role-description: "philosopher | mystic"
 tradition: "Neo-Pythagorean Greek philosophy with theurgic and miraculous elements"
+role-tokens: ["mystic"]
 region: "Tyana (Cappadocia, origin); travel throughout Mediterranean, Egypt, possibly India"
 date-born: 15
 date-died: 100

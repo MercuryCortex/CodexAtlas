@@ -3,8 +3,9 @@ type: person
 id: "g-i-gurdjieff"
 name: "George Ivanovich Gurdjieff"
 aka: ["G.I. Gurdjieff"]
-role: "founder / esoteric teacher"
 tradition: "The Fourth Way"
+role-tokens: ["founder", "mystic-syncretic"]
+role-description: "George Ivanovich Gurdjieff — founder of the Fourth Way; teacher of esoteric synthesis (1866-1949)."
 region: "Russian Empire (Caucasus / Armenia) → Constantinople → Paris"
 date-born: 1866
 date-died: 1949

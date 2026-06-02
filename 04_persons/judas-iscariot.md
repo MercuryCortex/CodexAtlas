@@ -3,8 +3,9 @@ type: person
 id: "judas-iscariot"
 name: "Judas Iscariot"
 aka: ["Yehuda Ish-Kerioth ('man of Kerioth')", "Ioudas Iskariōtēs", "Judas son of Simon Iscariot (Johannine)"]
-role: "apostle | betrayer (in tradition)"
+role-description: "apostle | betrayer (in tradition)"
 tradition: "earliest Christianity; Sethian/Cainite Gnostic re-evaluation"
+role-tokens: ["apostle-christian"]
 region: "Judea (Kerioth?); Jerusalem"
 date-born: -5
 date-died: 30

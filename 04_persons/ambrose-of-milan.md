@@ -3,8 +3,9 @@ type: person
 id: "ambrose-of-milan"
 name: "Ambrose of Milan"
 aka: ["Aurelius Ambrosius", "Saint Ambrose"]
-role: "bishop / theologian / hymnographer"
+role-description: "bishop / theologian / hymnographer"
 tradition: "Patristic Christian (Latin)"
+role-tokens: ["bishop-christian", "theologian"]
 region: "Mediolanum (Milan) — Western Roman Empire"
 date-born: 339
 date-died: 397

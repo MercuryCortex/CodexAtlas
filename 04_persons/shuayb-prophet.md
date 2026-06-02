@@ -3,8 +3,9 @@ type: person
 id: "shuayb-prophet"
 name: "Shuʿayb"
 aka: ["Shuʿayb", "possibly Jethro (traditional Islamic exegesis)", "prophet of Madyan"]
-role: "prophet | messenger"
+role-description: "prophet | messenger"
 tradition: "Islam (Quranic prophet tradition)"
+role-tokens: ["prophet-abrahamic"]
 region: "Arabia (Madyan / Midian, northwestern Arabia)"
 date-born: ""
 date-died: ""

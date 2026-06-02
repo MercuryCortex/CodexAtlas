@@ -3,8 +3,9 @@ type: person
 id: "diodore-of-tarsus"
 name: "Diodore of Tarsus"
 aka: ["Diodoros Tarsensis"]
-role: "bishop / exegete (founder of Antiochene school)"
+role-description: "bishop / exegete (founder of Antiochene school)"
 tradition: "Antiochene Christian"
+role-tokens: ["bishop-christian"]
 region: "Antioch / Tarsus (Cilicia)"
 date-born: 330
 date-died: 390

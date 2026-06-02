@@ -3,8 +3,9 @@ type: person
 id: "lipit-ishtar"
 name: "Lipit-Ishtar"
 aka: ["Lipit-Eštar", "Lipit-Ištar of Isin"]
-role: "king; legislator"
+role-description: "king; legislator"
 tradition: "Sumerian / Akkadian (First Dynasty of Isin)"
+role-tokens: ["king"]
 region: "Mesopotamia (Isin)"
 date-born:
 date-died: -1924

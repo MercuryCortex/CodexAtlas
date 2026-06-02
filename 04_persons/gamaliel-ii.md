@@ -3,8 +3,9 @@ type: person
 id: "gamaliel-ii"
 name: "Gamaliel II"
 aka: ["Rabban Gamaliel II", "Gamaliel of Yavneh", "Gamliel de-Yavneh"]
-role: "rabbi (Tannaitic) / patriarch / academy president"
+role-description: "rabbi (Tannaitic) / patriarch / academy president"
 tradition: "early Rabbinic Judaism (Tannaitic)"
+role-tokens: ["rabbi-tannaitic"]
 region: "Yavneh (Jamnia)"
 date-born: 50
 date-died: 115

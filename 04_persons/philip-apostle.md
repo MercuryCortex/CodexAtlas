@@ -3,8 +3,9 @@ type: person
 id: "philip-apostle"
 name: "Philip the Apostle"
 aka: ["Philippos", "Philip of Bethsaida"]
-role: "apostle"
+role-description: "apostle"
 tradition: "earliest Christianity"
+role-tokens: ["apostle-christian"]
 region: "Bethsaida (Galilee); later tradition: Hierapolis (Phrygia)"
 date-born: -5
 date-died: 80

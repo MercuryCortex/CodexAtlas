@@ -3,8 +3,9 @@ type: person
 id: "l-ron-hubbard"
 name: "L. Ron Hubbard"
 aka: ["Lafayette Ronald Hubbard", "LRH"]
-role: "founder / Scientology"
+role-description: "founder / Scientology"
 tradition: "Scientology"
+role-tokens: ["founder"]
 region: "United States / Sea (Sea Org) / Britain"
 date-born: 1911
 date-died: 1986

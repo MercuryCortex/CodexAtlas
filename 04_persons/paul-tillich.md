@@ -3,8 +3,9 @@ type: person
 id: "paul-tillich"
 name: "Paul Tillich"
 aka: []
-role: "theologian / philosopher of religion"
+role-description: "theologian / philosopher of religion"
 tradition: "Christian (Lutheran) / existential theology"
+role-tokens: ["theologian"]
 region: "Germany → United States"
 date-born: 1886
 date-died: 1965

@@ -3,8 +3,9 @@ type: person
 id: "john-the-baptist"
 name: "John the Baptist"
 aka: ["Yochanan ben Zechariah", "Iōannēs ho baptistēs", "Yahya ibn Zakariyya (Arabic)", "the Forerunner"]
-role: "prophet"
+role-description: "prophet"
 tradition: "Second Temple Judaism (sectarian, apocalyptic); proto-Christianity"
+role-tokens: ["prophet-abrahamic"]
 region: "Judean wilderness, Jordan River, Galilee"
 date-born: -5
 date-died: 29

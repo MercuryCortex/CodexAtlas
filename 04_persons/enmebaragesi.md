@@ -3,8 +3,9 @@ type: person
 id: "enmebaragesi"
 name: "Enmebaragesi"
 aka: ["En-me-baragesi", "Mebaragesi"]
-role: "king"
+role-description: "king"
 tradition: "Sumerian"
+role-tokens: ["king"]
 region: "Mesopotamia (Kish)"
 date-born:
 date-died:

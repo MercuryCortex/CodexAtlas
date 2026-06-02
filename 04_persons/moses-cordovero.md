@@ -3,8 +3,9 @@ type: person
 id: "moses-cordovero"
 name: "Moses Cordovero"
 aka: ["RaMaK (acronym)", "Moshe Cordovero"]
-role: "Kabbalist / rabbi"
+role-description: "Kabbalist / rabbi"
 tradition: "Jewish Kabbalah"
+role-tokens: ["kabbalist"]
 region: "Safed (Galilee, Ottoman Palestine)"
 date-born: 1522
 date-died: 1570

@@ -3,8 +3,9 @@ type: person
 id: "bernard-of-clairvaux"
 name: "Bernard of Clairvaux"
 aka: ["Bernardus Claraevallensis", "Saint Bernard", "Doctor Mellifluus"]
-role: "monastic reformer / theologian / preacher / political churchman"
+role-description: "monastic reformer / theologian / preacher / political churchman"
 tradition: "Latin Christianity (Cistercian)"
+role-tokens: ["theologian"]
 region: "Burgundy (Kingdom of France)"
 date-born: 1090
 date-died: 1153

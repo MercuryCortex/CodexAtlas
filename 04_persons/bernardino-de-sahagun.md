@@ -3,8 +3,9 @@ type: person
 id: "bernardino-de-sahagun"
 name: "Bernardino de Sahagún"
 aka: ["Sahagún", "Bernardino de Ribeira (birth name)"]
-role: "Franciscan missionary, ethnographer, linguist"
+role-description: "Franciscan missionary, ethnographer, linguist"
 tradition: "Roman Catholicism / Mexica ethnography"
+role-tokens: ["monastic-christian-western"]
 region: "Sahagún (Spain) and New Spain (Mexico)"
 date-born: 1499
 date-died: 1590

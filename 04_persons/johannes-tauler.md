@@ -3,8 +3,9 @@ type: person
 id: "johannes-tauler"
 name: "Johannes Tauler"
 aka: ["John Tauler", "Johann Tauler of Strasbourg"]
-role: "Dominican preacher / mystic"
+role-description: "Dominican preacher / mystic"
 tradition: "Latin Christianity (Dominican; Rhineland mysticism)"
+role-tokens: ["mystic"]
 region: "Strasbourg / Upper Rhine"
 date-born: 1300
 date-died: 1361

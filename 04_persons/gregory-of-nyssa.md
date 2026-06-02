@@ -3,8 +3,9 @@ type: person
 id: "gregory-of-nyssa"
 name: "Gregory of Nyssa"
 aka: ["Grēgorios Nysseus"]
-role: "bishop / theologian (Cappadocian Father)"
+role-description: "bishop / theologian (Cappadocian Father)"
 tradition: "Patristic Christian (Cappadocian)"
+role-tokens: ["bishop-christian"]
 region: "Cappadocia (Anatolia)"
 date-born: 335
 date-died: 395

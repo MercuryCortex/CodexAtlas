@@ -3,8 +3,9 @@ type: person
 id: "augustine-of-hippo"
 name: "Augustine of Hippo"
 aka: ["Aurelius Augustinus", "Saint Augustine"]
-role: "bishop / theologian / philosopher"
+role-description: "bishop / theologian / philosopher"
 tradition: "Patristic Christian (Latin)"
+role-tokens: ["bishop-christian", "theologian"]
 region: "Thagaste → Carthage → Rome → Milan → Hippo Regius (North Africa)"
 date-born: 354
 date-died: 430

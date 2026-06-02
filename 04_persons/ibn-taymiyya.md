@@ -3,8 +3,9 @@ type: person
 id: "ibn-taymiyya"
 name: "Ibn Taymiyya (Taqī al-Dīn Aḥmad ibn ʿAbd al-Ḥalīm ibn Taymiyya)"
 aka: ["Ibn Taymiyya", "Taqī al-Dīn Aḥmad ibn ʿAbd al-Ḥalīm ibn Taymiyya al-Ḥarrānī al-Dimashqī", "Shaykh al-Islām (used by his Ḥanbalī and modern-Salafi devotees)", "the *muḥaqqiq* (investigator / verifier)"]
-role: "Ḥanbalī jurist / theologian / polemicist — the keystone medieval intellectual root of modern Salafism, Wahhābism, and Sunni-revivalist political Islam"
+role-description: "Ḥanbalī jurist / theologian / polemicist — the keystone medieval intellectual root of modern Salafism, Wahhābism, and Sunni-revivalist political Islam"
 tradition: "Islam — Sunnī Ḥanbalī (with substantial intra-Ḥanbalī divergence and post-Ḥanbalī influence into modern Salafism)"
+role-tokens: ["theologian"]
 region: "Mamluk Syria / Egypt — born Ḥarrān (modern Şanlıurfa, Turkey; family fled Mongol invasions to Damascus 1268); active Damascus and Cairo; died Damascus"
 date-born: 1263
 date-died: 1328

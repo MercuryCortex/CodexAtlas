@@ -7,7 +7,7 @@ birth: -2570
 death: -2532
 region: "Giza (Egypt)"
 city-of-origin: "Memphis"
-role: "Pharaoh (4th Dynasty)"
+role-description: "Pharaoh (4th Dynasty)"
 traditions: ["[[tradition-egyptian-religion]]"]
 mentioned-in: ["[[pyramid-of-khafre-giza]]", "[[sphinx-of-giza]]", "[[great-pyramid-of-khufu]]"]
 status: "metadata"
@@ -30,6 +30,8 @@ refs:
     type: "monograph"
     tier: 1
 tags: [person, pharaoh, egypt, giza, 4th-dynasty, old-kingdom, pyramid, sphinx, valley-temple, diorite-statue]
+role-tokens: ["pharaoh"]
+role-description: "Pharaoh (4th Dynasty)"
 ---
 
 # Khafre (Chephren)

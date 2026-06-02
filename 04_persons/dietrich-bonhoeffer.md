@@ -3,8 +3,9 @@ type: person
 id: "dietrich-bonhoeffer"
 name: "Dietrich Bonhoeffer"
 aka: []
-role: "theologian / pastor / resistance"
 tradition: "Christian (Lutheran) / Confessing Church"
+role-tokens: ["theologian", "pastor-protestant", "martyr-christian", "religious-reformer"]
+role-description: "Dietrich Bonhoeffer — Lutheran pastor + theologian + Confessing Church reform-leader; executed Flossenbürg April 9, 1945."
 region: "Germany"
 date-born: 1906
 date-died: 1945

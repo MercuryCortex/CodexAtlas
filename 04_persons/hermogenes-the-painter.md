@@ -3,8 +3,9 @@ type: person
 id: "hermogenes-the-painter"
 name: "Hermogenes the Painter"
 aka: ["Hermogenes", "Hermogenes the Stoic-leaning"]
-role: "heresiarch / theologian"
+role-description: "heresiarch / theologian"
 tradition: "Christian (eclectic, Platonist-Stoic-leaning)"
+role-tokens: ["theologian"]
 region: "Carthage (probably)"
 date-born: 140
 date-died: 200

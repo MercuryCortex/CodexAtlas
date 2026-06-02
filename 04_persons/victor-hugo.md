@@ -6,10 +6,12 @@ aka: ["Victor-Marie Hugo", "Victor Hugo"]
 birth: 1802
 death: 1885
 nationality: "French"
-role: "novelist, poet, playwright, political exile; Cao Dai patron saint"
+role-description: "novelist, poet, playwright, political exile; Cao Dai patron saint"
 mentioned-in: ["[[phase-7-044-cao-dai-canon]]"]
 status: "stub"
 tags: [person, french, novelist, poet, cao-dai, patron-saint, 19th-century, spirit-writing]
+role-tokens: ["author-secular"]
+role-description: "novelist, poet, playwright, political exile; Cao Dai patron saint"
 ---
 
 # Victor Hugo

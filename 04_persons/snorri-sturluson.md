@@ -3,8 +3,9 @@ type: person
 id: "snorri-sturluson"
 name: "Snorri Sturluson"
 aka: ["Snorri"]
-role: "Icelandic chieftain, historian, poet, mythographer; twice lawspeaker of the Alþingi"
+role-description: "Icelandic chieftain, historian, poet, mythographer; twice lawspeaker of the Alþingi"
 tradition: "Medieval Icelandic Christianity / Norse mythography"
+role-tokens: ["author-secular"]
 region: "Iceland (Reykholt)"
 date-born: 1179
 date-died: 1241

@@ -3,8 +3,9 @@ type: person
 id: "gerald-gardner"
 name: "Gerald Brosseau Gardner"
 aka: []
-role: "founder / Wicca"
 tradition: "Wicca / Modern Pagan"
+role-tokens: ["founder", "priest-wiccan"]
+role-description: "Gerald Brosseau Gardner — founder of modern Wicca (Bricket Wood coven, 1954); author of *Witchcraft Today* (1954). Per Hutton 1999."
 region: "United Kingdom (Isle of Man)"
 date-born: 1884
 date-died: 1964

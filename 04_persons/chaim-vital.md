@@ -3,8 +3,9 @@ type: person
 id: "chaim-vital"
 name: "Chaim Vital"
 aka: ["Hayyim Vital", "Maharchav"]
-role: "Kabbalist / Luria's principal disciple / mystical autobiographer"
+role-description: "Kabbalist / Luria's principal disciple / mystical autobiographer"
 tradition: "Jewish Kabbalah (Lurianic)"
+role-tokens: ["kabbalist"]
 region: "Safed → Damascus → Jerusalem (Ottoman)"
 date-born: 1542
 date-died: 1620

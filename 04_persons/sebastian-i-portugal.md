@@ -3,8 +3,9 @@ type: person
 id: "sebastian-i-portugal"
 name: "Sebastian I of Portugal"
 aka: ["Sebastião I de Portugal", "Dom Sebastião", "O Desejado (The Desired One)", "O Encoberto (The Hidden / Shrouded One — post-1578 epithet)"]
-role: "king"
+role-description: "king"
 tradition: "[[tradition-christianity-canonical]]"
+role-tokens: ["king"]
 region: "Portugal (Lisbon)"
 date-born: 1554
 date-died: 1578

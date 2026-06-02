@@ -3,8 +3,9 @@ type: person
 id: "ziusudra"
 name: "Ziusudra"
 aka: ["Zi-ud-sura", "Zisudra", "Xisuthros (Berossus Hellenistic spelling)", "Sîsythes"]
-role: "king, flood-survivor (legendary antediluvian)"
+role-description: "king, flood-survivor (legendary antediluvian)"
 tradition: "Sumerian / Mesopotamian"
+role-tokens: ["king"]
 region: "Mesopotamia (Shuruppak)"
 date-born:
 date-died:

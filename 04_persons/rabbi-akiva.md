@@ -3,8 +3,9 @@ type: person
 id: "rabbi-akiva"
 name: "Rabbi Akiva ben Joseph"
 aka: ["Rabbi Akiva", "Akiva ben Joseph"]
-role: "rabbi | sage | martyr"
+role-description: "rabbi | sage | martyr"
 tradition: "Tannaitic Judaism"
+role-tokens: ["rabbi-tannaitic"]
 region: "Roman Palestine (Lydda, Bnei Brak)"
 date-born: 50
 date-died: 135

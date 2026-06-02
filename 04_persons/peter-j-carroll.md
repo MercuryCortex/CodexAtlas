@@ -3,8 +3,9 @@ type: person
 id: "peter-j-carroll"
 name: "Peter J. Carroll"
 aka: []
-role: "founder / theoretician of chaos magick"
+role-description: "founder / theoretician of chaos magick"
 tradition: "Chaos magick / late-20th-century esotericism / Thelemic descent"
+role-tokens: ["founder"]
 region: "United Kingdom"
 date-born: 1953
 date-died:

@@ -3,8 +3,9 @@ type: person
 id: "hugues-de-payens"
 name: "Hugues de Payens"
 aka: ["Hugo de Paganis", "Hugh of Payns"]
-role: "founder / first Grand Master of the Knights Templar"
+role-description: "founder / first Grand Master of the Knights Templar"
 tradition: "Latin Christianity (military-religious, [[tradition-knights-templar]])"
+role-tokens: ["founder"]
 region: "Champagne (France) → Outremer"
 date-born: 1070
 date-died: 1136

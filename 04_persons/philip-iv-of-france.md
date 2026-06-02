@@ -3,8 +3,9 @@ type: person
 id: "philip-iv-of-france"
 name: "Philip IV of France"
 aka: ["Philip the Fair", "Philippe le Bel", "Philippus IV"]
-role: "king of France"
+role-description: "king of France"
 tradition: "Latin Christianity (lay royal)"
+role-tokens: ["king"]
 region: "Kingdom of France"
 date-born: 1268
 date-died: 1314

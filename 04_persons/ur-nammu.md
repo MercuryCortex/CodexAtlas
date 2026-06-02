@@ -3,8 +3,9 @@ type: person
 id: "ur-nammu"
 name: "Ur-Nammu"
 aka: ["Ur-Namma", "Ur-Engur (older misreading)", "Ur-dNamma"]
-role: "king; legislator"
+role-description: "king; legislator"
 tradition: "Sumerian (Third Dynasty of Ur)"
+role-tokens: ["king"]
 region: "Mesopotamia (Ur)"
 date-born:
 date-died: -2095

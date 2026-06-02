@@ -3,8 +3,9 @@ type: person
 id: "laozi"
 name: "Laozi"
 aka: ["Lao Tzu", "Lao-tzu", "老子", "the Old Master", "Li Er", "Lao Dan"]
-role: "philosopher / founder"
+role-description: "philosopher / founder"
 tradition: "Daoism"
+role-tokens: ["founder"]
 region: "Chu (southern Warring States China)"
 date-born:
 date-died:

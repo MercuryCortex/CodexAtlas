@@ -3,8 +3,9 @@ type: person
 id: "paramahansa-yogananda"
 name: "Paramahansa Yogananda"
 aka: ["Mukunda Lal Ghosh"]
-role: "founder / Self-Realization Fellowship / Kriya Yoga"
+role-description: "founder / Self-Realization Fellowship / Kriya Yoga"
 tradition: "Hindu modernism / Kriya Yoga"
+role-tokens: ["founder"]
 region: "Bengal, India → United States (Los Angeles)"
 date-born: 1893
 date-died: 1952

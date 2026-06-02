@@ -3,8 +3,9 @@ type: person
 id: "dioscorus-of-alexandria"
 name: "Dioscorus I of Alexandria"
 aka: ["Dioscorus the Great (Coptic-Ethiopian-Syriac-Oriental Orthodox)", "Dioscoros", "Διόσκορος"]
-role: "patriarch | theologian"
+role-description: "patriarch | theologian"
 tradition: "Pre-Chalcedonian Alexandrian Christianity; foundational figure for Oriental Orthodoxy"
+role-tokens: ["theologian"]
 region: "Egypt (Alexandria) → exile in Gangra, Paphlagonia (modern Çankırı, Turkey)"
 date-born: 380
 date-died: 454

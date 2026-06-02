@@ -3,8 +3,9 @@ type: person
 id: "joshua-ben-hananiah"
 name: "Joshua ben Hananiah"
 aka: ["Rabbi Yehoshua ben Hananyah", "Joshua the Levite"]
-role: "rabbi (Tannaitic)"
+role-description: "rabbi (Tannaitic)"
 tradition: "early Rabbinic Judaism (Tannaitic; Hillelite tendency)"
+role-tokens: ["rabbi-tannaitic"]
 region: "Roman Palestine"
 date-born: 50
 date-died: 131

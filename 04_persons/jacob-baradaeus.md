@@ -3,8 +3,9 @@ type: person
 id: "jacob-baradaeus"
 name: "Jacob Baradaeus"
 aka: ["Jacob of Edessa-Tella (not to be confused with the later Jacob of Edessa, 640-708)", "Yaʿqub Burdoʿono", "Yaʿqub the Beggar"]
-role: "bishop | underground consecrator"
+role-description: "bishop | underground consecrator"
 tradition: "Miaphysite / Syriac Orthodox"
+role-tokens: ["bishop-christian"]
 region: "Syria-Mesopotamia (operating underground throughout Justinian's empire)"
 date-born: 500
 date-died: 578

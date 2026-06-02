@@ -3,8 +3,9 @@ type: person
 id: "basava"
 name: "Basava"
 aka: ["Basavanna", "Basaveśvara", "Basavarāja"]
-role: "Hindu reformer / Lingayat founder / poet-saint / minister-vacanakara"
+role-description: "Hindu reformer / Lingayat founder / poet-saint / minister-vacanakara"
 tradition: "Hindu — Lingayat / Vīraśaiva tradition"
+role-tokens: ["author-secular"]
 region: "Kalyana / Karnataka (Western Chalukya empire)"
 date-born: 1131
 date-died: 1167

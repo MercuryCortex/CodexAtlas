@@ -3,8 +3,9 @@ type: person
 id: "rishabha"
 name: "Ṛṣabhanātha (Rishabha)"
 aka: ["Ādinātha (First Lord)", "Ṛṣabhadeva", "the First Tīrthaṅkara"]
-role: "first Tīrthaṅkara of the current cosmic cycle; culture-hero and civilization-founder"
+role-description: "first Tīrthaṅkara of the current cosmic cycle; culture-hero and civilization-founder"
 tradition: "Jainism"
+role-tokens: ["tirthankara-jain"]
 region: "legendary India (Ayodhya in Jain texts)"
 date-born: "legendary / cosmological"
 date-died: "legendary / cosmological"

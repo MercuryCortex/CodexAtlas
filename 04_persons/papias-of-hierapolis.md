@@ -3,8 +3,9 @@ type: person
 id: "papias-of-hierapolis"
 name: "Papias of Hierapolis"
 aka: ["Papias", "Papias ho Hierapolitēs"]
-role: "bishop / apostolic father / chronicler"
+role-description: "bishop / apostolic father / chronicler"
 tradition: "Patristic Christian (proto-orthodox)"
+role-tokens: ["bishop-christian"]
 region: "Hierapolis (Phrygia, Asia Minor)"
 date-born: 70
 date-died: 135

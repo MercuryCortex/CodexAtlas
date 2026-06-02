@@ -3,8 +3,9 @@ type: person
 id: "apuleius-of-madaura"
 name: "Apuleius of Madaura"
 aka: ["Lucius Apuleius", "Apuleius Madaurensis", "Apuleius Platonicus"]
-role: "Latin novelist / Platonist philosopher / rhetor / mystery-initiate"
+role-description: "Latin novelist / Platonist philosopher / rhetor / mystery-initiate"
 tradition: "Middle Platonist philosophy / Latin literary culture / Isis-mystery initiate"
+role-tokens: ["author-secular"]
 region: "North Africa (Madauros, Numidia / modern M'daourouch, Algeria) → Carthage → Rome"
 date-born: 124
 date-died: 180

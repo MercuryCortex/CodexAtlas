@@ -3,8 +3,9 @@ type: person
 id: "athanasius"
 name: "Athanasius of Alexandria"
 aka: ["Athanasius the Great", "Athanasios ho Megas"]
-role: "bishop / theologian (anti-Arian)"
+role-description: "bishop / theologian (anti-Arian)"
 tradition: "Patristic Christian (Alexandrian)"
+role-tokens: ["bishop-christian"]
 region: "Alexandria"
 date-born: 296
 date-died: 373

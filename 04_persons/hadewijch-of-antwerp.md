@@ -3,8 +3,9 @@ type: person
 id: "hadewijch-of-antwerp"
 name: "Hadewijch of Antwerp"
 aka: ["Hadewijch", "Hadewych", "Hadewijch of Brabant"]
-role: "Beguine mystic / vernacular poet-theologian"
+role-description: "Beguine mystic / vernacular poet-theologian"
 tradition: "Latin Christianity (Beguine, Brabantine)"
+role-tokens: ["author-secular"]
 region: "Duchy of Brabant (Antwerp / Brussels area, Low Countries)"
 date-born: 1210
 date-died: 1260

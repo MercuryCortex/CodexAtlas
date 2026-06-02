@@ -3,8 +3,9 @@ type: person
 id: "surdas"
 name: "Surdas"
 aka: ["Sūrdās", "Sūr"]
-role: "Hindu bhakti poet-saint / Krishna-devotee / Ashtachhap poet"
+role-description: "Hindu bhakti poet-saint / Krishna-devotee / Ashtachhap poet"
 tradition: "Hindu Bhakti (Vaishnava — Krishna-bhakti, Pushtimarg)"
+role-tokens: ["author-secular"]
 region: "Braj region (Mathura / Vrindavan / Agra), North India"
 date-born: 1478
 date-died: 1581

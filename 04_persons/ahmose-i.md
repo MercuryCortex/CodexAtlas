@@ -5,8 +5,9 @@ name: "Ahmose I"
 aka:
   - "Ahmosis I"
   - "Nb-pḥty-Rꜥ (throne name: 'Ra is Lord of Strength')"
-role: "king | founder"
+role-description: "king | founder"
 tradition: "Ancient Egyptian (18th Dynasty founder)"
+role-tokens: ["king", "founder"]
 region: "Upper Egypt (Thebes) → Lower Egypt (Avaris / Delta)"
 date-born: -1570
 date-died: -1525

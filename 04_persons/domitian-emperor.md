@@ -3,8 +3,9 @@ type: person
 id: "domitian-emperor"
 name: "Domitian"
 aka: ["Titus Flavius Caesar Domitianus Augustus"]
-role: "emperor"
+role-description: "emperor"
 tradition: "Roman state religion (pagan)"
+role-tokens: ["emperor"]
 region: "Rome / Empire"
 date-born: 51
 date-died: 96

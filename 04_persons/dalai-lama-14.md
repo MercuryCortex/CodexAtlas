@@ -3,8 +3,9 @@ type: person
 id: "dalai-lama-14"
 name: "Tenzin Gyatso, the 14th Dalai Lama"
 aka: ["His Holiness the Dalai Lama"]
-role: "lama / political-religious leader"
+role-description: "lama / political-religious leader"
 tradition: "Vajrayana Buddhism / Gelug school"
+role-tokens: ["lama"]
 region: "Tibet → India (Dharamsala)"
 date-born: 1935
 date-died:

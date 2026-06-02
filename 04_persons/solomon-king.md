@@ -3,8 +3,9 @@ type: person
 id: "solomon-king"
 name: "Solomon"
 aka: ["Shlomo", "Sulayman"]
-role: "king"
+role-description: "king"
 tradition: "Israelite / pre-exilic Judah"
+role-tokens: ["king"]
 region: "Israel / Judah"
 date-born: -1000
 date-died: -931

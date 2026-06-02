@@ -3,8 +3,9 @@ type: person
 id: "caesar-augustus"
 name: "Caesar Augustus"
 aka: ["Octavian", "Gaius Octavius Thurinus", "Gaius Julius Caesar Octavianus", "Imperator Caesar Divi Filius Augustus", "Divi filius (Son of the Divine)", "Princeps", "Σεβαστός (Sebastos, Greek)"]
-role: "emperor; founder of the Roman Principate; pontifex maximus"
+role-description: "emperor; founder of the Roman Principate; pontifex maximus"
 tradition: "Roman (imperial cult; later named in the Christian Nativity)"
+role-tokens: ["emperor"]
 family: "Roman"
 region: "Roman Empire (capital Rome; reorganized provinces)"
 date-born: -63

@@ -3,8 +3,9 @@ type: person
 id: "isaac-luria"
 name: "Isaac Luria"
 aka: ["ha-Ari (the Lion)", "Arizal (Ari z\"l)", "Yitzhak Luria Ashkenazi"]
-role: "Kabbalist / mystical teacher"
+role-description: "Kabbalist / mystical teacher"
 tradition: "Jewish Kabbalah (Lurianic)"
+role-tokens: ["kabbalist"]
 region: "Egypt (Cairo) → Safed (Galilee, Ottoman Palestine)"
 date-born: 1534
 date-died: 1572

@@ -3,8 +3,9 @@ type: person
 id: "sargon-of-akkad"
 name: "Sargon of Akkad"
 aka: ["Šarru-kīn (Akkadian; 'true king' / 'legitimate king')", "Sharrukin", "Sargon the Great", "Sargon I"]
-role: "king; founder of empire"
+role-description: "king; founder of empire"
 tradition: "Akkadian (Sumerian / Mesopotamian)"
+role-tokens: ["king"]
 region: "Mesopotamia (Akkad — the lost capital city; sphere of influence: from the Persian Gulf to the Mediterranean coast)"
 date-born:
 date-died: -2279

@@ -6,7 +6,7 @@ aka: ["Mohandas Karamchand Gandhi", "Mahatma Gandhi", "Bapu (Father)", "Gandhi"]
 birth: 1869
 death: 1948
 nationality: "Indian"
-role: "anti-colonial activist, lawyer, religious philosopher; leader of Indian independence movement; architect of satyagraha (nonviolent resistance)"
+role-description: "anti-colonial activist, lawyer, religious philosopher; leader of Indian independence movement; architect of satyagraha (nonviolent resistance)"
 status: "metadata"
 refs:
   - title: "Gandhi: An Autobiography — The Story of My Experiments with Truth"
@@ -28,6 +28,8 @@ refs:
     type: "monograph"
     tier: 1
 tags: [person, indian, gandhi, nonviolence, satyagraha, hinduism, independence, anti-colonial, jainism, tolstoy, 20th-century]
+role-tokens: ["philosopher-religious"]
+role-description: "anti-colonial activist, lawyer, religious philosopher; leader of Indian independence movement; architect of satyagraha (nonviolent resistance)"
 ---
 
 # Mahatma Gandhi

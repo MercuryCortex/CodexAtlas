@@ -3,8 +3,9 @@ type: person
 id: "pseudo-dionysius-the-areopagite"
 name: "Pseudo-Dionysius the Areopagite"
 aka: ["Dionysius the Areopagite (pseudonymous)", "Denys", "Pseudo-Denys"]
-role: "theologian / mystic (anonymous Christian Neoplatonist)"
+role-description: "theologian / mystic (anonymous Christian Neoplatonist)"
 tradition: "Christian Neoplatonism / mystical theology"
+role-tokens: ["theologian"]
 region: "Syria (most likely)"
 date-born:
 date-died:

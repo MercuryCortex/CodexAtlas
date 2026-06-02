@@ -3,8 +3,9 @@ type: person
 id: "enheduanna"
 name: "Enheduanna"
 aka: ["En-hedu-ana", "En-ḫé-du7-an-na", "Enheduana"]
-role: "priestess; poet; first named author"
+role-description: "priestess; poet; first named author"
 tradition: "Sumerian / Akkadian (Sargonic period)"
+role-tokens: ["author-secular"]
 region: "Mesopotamia (Ur)"
 date-born: -2300
 date-died: -2225

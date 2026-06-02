@@ -3,8 +3,9 @@ type: person
 id: "matteo-ricci"
 name: "Matteo Ricci"
 aka: ["Li Madou (利瑪竇)", "Xitai (西泰)"]
-role: "Jesuit missionary / sinologist / mathematician"
+role-description: "Jesuit missionary / sinologist / mathematician"
 tradition: "Jesuit (Society of Jesus)"
+role-tokens: ["monastic-christian-western"]
 region: "Macerata (Italy) → Goa → Macau → Ming China (Zhaoqing, Nanjing, Beijing)"
 date-born: 1552
 date-died: 1610

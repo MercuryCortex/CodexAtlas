@@ -3,8 +3,9 @@ type: person
 id: "marie-laveau"
 name: "Marie Laveau"
 aka: ["Marie Catherine Laveau", "the Voodoo Queen of New Orleans"]
-role: "Voodoo priestess (*manbo* / *queen*); free woman of color; hairdresser"
+role-description: "Voodoo priestess (*manbo* / *queen*); free woman of color; hairdresser"
 tradition: "New Orleans Voodoo (Louisiana, descended from Haitian Vodou) / Roman Catholicism (practicing)"
+role-tokens: ["queen"]
 region: "New Orleans, Louisiana"
 date-born: 1801
 date-died: 1881

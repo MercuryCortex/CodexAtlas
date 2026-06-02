@@ -3,8 +3,9 @@ type: person
 id: "homer"
 name: "Homer"
 aka: ["Ὅμηρος", "Homēros"]
-role: "poet"
+role-description: "poet"
 tradition: "Greek"
+role-tokens: ["author-secular"]
 region: "Ionia (western Anatolia, possibly Chios or Smyrna)"
 date-born:
 date-died:

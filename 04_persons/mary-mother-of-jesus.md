@@ -3,8 +3,9 @@ type: person
 id: "mary-mother-of-jesus"
 name: "Mary (Miriam of Nazareth)"
 aka: ["Miryam", "Maria", "Maryam"]
-role: "founder"
+role-description: "founder"
 tradition: "Earliest Christianity"
+role-tokens: ["founder"]
 region: "Galilee / Judea"
 date-born: -18
 date-died: 48

@@ -3,8 +3,9 @@ type: person
 id: "solon"
 name: "Solon"
 aka: ["Solon of Athens", "Solōn"]
-role: "lawgiver / poet / statesman"
+role-description: "lawgiver / poet / statesman"
 tradition: "Greek (Athenian)"
+role-tokens: ["author-secular"]
 region: "Attica (Athens) and travels in Egypt, Cyprus, Lydia"
 date-born: -630
 date-died: -560

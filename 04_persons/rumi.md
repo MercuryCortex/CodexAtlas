@@ -3,8 +3,9 @@ type: person
 id: "rumi"
 name: "Rumi"
 aka: ["Jalāl al-Dīn Muḥammad Rūmī", "Mawlānā", "Mevlana (Turkish)", "Jalāl al-Dīn Balkhī"]
-role: "Sufi master, poet, theologian"
+role-description: "Sufi master, poet, theologian"
 tradition: "Sufi Islam — Mevlevi (Mawlawiyya)"
+role-tokens: ["sufi-shaykh", "author-secular", "theologian"]
 region: "Khwarazm (birth Balkh), Anatolia (Konya — residence and death)"
 date-born: 1207
 date-died: 1273

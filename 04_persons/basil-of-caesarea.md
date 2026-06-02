@@ -3,8 +3,9 @@ type: person
 id: "basil-of-caesarea"
 name: "Basil of Caesarea"
 aka: ["Basil the Great", "Basileios"]
-role: "bishop / theologian (Cappadocian Father)"
+role-description: "bishop / theologian (Cappadocian Father)"
 tradition: "Patristic Christian (Cappadocian)"
+role-tokens: ["bishop-christian"]
 region: "Cappadocia"
 date-born: 330
 date-died: 379

@@ -3,8 +3,9 @@ type: person
 id: "tertullian"
 name: "Tertullian"
 aka: ["Quintus Septimius Florens Tertullianus"]
-role: "theologian / apologist (Latin Christian)"
+role-description: "theologian / apologist (Latin Christian)"
 tradition: "Patristic Christian (Latin) — later Montanist"
+role-tokens: ["theologian"]
 region: "Carthage"
 date-born: 155
 date-died: 240

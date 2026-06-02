@@ -3,8 +3,9 @@ type: person
 id: "aldous-huxley"
 name: "Aldous Huxley"
 aka: ["Huxley", "A.L. Huxley"]
-role: "novelist, essayist, perennial philosopher, psychedelic researcher"
+role-description: "novelist, essayist, perennial philosopher, psychedelic researcher"
 tradition: "English literature / Vedanta / perennial philosophy"
+role-tokens: ["author-secular"]
 region: "England / California"
 date-born: 1894
 date-died: 1963

@@ -3,8 +3,9 @@ type: person
 id: "clement-of-alexandria"
 name: "Clement of Alexandria"
 aka: ["Titus Flavius Clemens", "Klēmēs Alexandreus"]
-role: "theologian / catechist (Alexandrian Christian)"
+role-description: "theologian / catechist (Alexandrian Christian)"
 tradition: "Patristic Christian (Alexandrian school)"
+role-tokens: ["theologian"]
 region: "Athens (probably) → Alexandria"
 date-born: 150
 date-died: 215

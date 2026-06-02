@@ -3,8 +3,15 @@ type: person
 id: "mircea-eliade"
 name: "Mircea Eliade"
 aka: ["Eliade"]
-role: "scholar / phenomenologist of religion / historian of religions"
 tradition: "Comparative religion (academic) / history of religions"
+role-tokens: ["scholar-academic-religion"]
+role-description: "Mircea Eliade — historian of religion; held University of Chicago Sewell Avery chair. Iron-Guard / nationalist-Romanian-Orthodox involvement documented by Wasserstrom 1999 + Ricketts 1988."
+polemical-framing:
+  - by: "Wasserstrom 1999 *Religion after Religion*; Ricketts 1988 *Mircea Eliade: The Romanian Roots*"
+    label: "religious-advocate-Romanian-Orthodox"
+    source-tier: T1
+    source: ""
+    direction: outsider
 region: "Romania → India → France → United States (Chicago)"
 date-born: 1907
 date-died: 1986

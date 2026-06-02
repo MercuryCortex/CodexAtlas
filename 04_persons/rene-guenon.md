@@ -3,8 +3,9 @@ type: person
 id: "rene-guenon"
 name: "René Guénon"
 aka: ["René Jean Marie Joseph Guénon", "ʿAbd al-Wāḥid Yaḥyá (after his Sufi affiliation, 1930+)"]
-role: "philosopher / esotericist"
 tradition: "[[tradition-traditionalism-perennialist]]"
+role-tokens: ["philosopher-religious", "sufi-shaykh"]
+role-description: "René Guénon (Shaykh ʿAbd al-Wāḥid Yaḥyā) — founder of Traditionalism / Perennial Philosophy; converted to Sufi Islam, lived in Cairo, took shaykh-rank."
 region: "France (Paris, Blois) → Egypt (Cairo, 1930–1951)"
 date-born: 1886
 date-died: 1951

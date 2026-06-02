@@ -3,8 +3,9 @@ type: person
 id: "muawiya-ibn-abi-sufyan"
 name: "Muʿāwiya ibn Abī Sufyān"
 aka: ["Muawiya", "Muʿāwiya I", "Muʿāwiya ibn Abī Sufyān ibn Ḥarb al-Umawī", "Amīr al-Muʾminīn", "founder of the Umayyad caliphate"]
-role: "founder and first caliph of the Umayyad dynasty (r. 661-680); previously governor of Syria (640-661); architect of the post-First-Fitna Sunni Arab imperial order from Damascus"
+role-description: "founder and first caliph of the Umayyad dynasty (r. 661-680); previously governor of Syria (640-661); architect of the post-First-Fitna Sunni Arab imperial order from Damascus"
 tradition: "Islam — Sunnī (controversial in Sunni tradition itself: regarded as a sincere companion of Muhammad and legitimate caliph by mainstream Sunni; criticized as an opportunist by classical Sunni scholarship; relentlessly condemned by Shīʿī tradition for his war against [[ali-ibn-abi-talib|ʿAlī]] and his designation of his son [[husayn-ibn-ali|Yazīd I]] who killed [[husayn-ibn-ali|al-Ḥusayn]] at [[event-karbala-680|Karbala]])"
+role-tokens: ["sahabi"]
 region: "Arabia / Syria — born Mecca (Banu Umayya clan of the Quraysh — Muhammad's principal pre-conquest opponents); governor and caliph from Damascus"
 date-born: 602
 date-died: 680

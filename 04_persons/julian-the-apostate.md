@@ -3,8 +3,9 @@ type: person
 id: "julian-the-apostate"
 name: "Julian the Apostate"
 aka: ["Flavius Claudius Iulianus", "Julian the Philosopher"]
-role: "emperor / philosopher"
+role-description: "emperor / philosopher"
 tradition: "Roman (pagan restorationist; Iamblichean Neoplatonist)"
+role-tokens: ["emperor"]
 region: "Roman Empire"
 date-born: 331
 date-died: 363

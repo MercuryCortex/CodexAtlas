@@ -3,8 +3,9 @@ type: person
 id: "sun-myung-moon"
 name: "Sun Myung Moon"
 aka: ["Reverend Moon"]
-role: "founder / Unification Church"
+role-description: "founder / Unification Church"
 tradition: "Unification Church / Family Federation for World Peace and Unification"
+role-tokens: ["founder"]
 region: "Korea → United States"
 date-born: 1920
 date-died: 2012

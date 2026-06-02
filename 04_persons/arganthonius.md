@@ -4,9 +4,10 @@ id: "arganthonius"
 name: "Arganthonius of Tartessos"
 aka: ["Arganthonios", "King of Tartessos", "the Silver King"]
 tradition: "Tartessian Civilization"
+role-tokens: ["king"]
 region: "Tartessos (southwestern Iberian Peninsula — modern Cádiz, Huelva, Algarve zone)"
 period: "c. -630 to -550 BCE (traditional reign dates)"
-role: "semi-legendary king of Tartessos; the only Tartessian ruler named in surviving ancient sources; famous for extreme longevity (80–120 years of reign according to Herodotus and Anacreon), great wealth, and friendship with the Phocaean Greeks; a figure at the intersection of the Atlantic Bronze Age world and Greek colonial expansion"
+role-description: "semi-legendary king of Tartessos; the only Tartessian ruler named in surviving ancient sources; famous for extreme longevity (80–120 years of reign according to Herodotus and Anacreon), great wealth, and friendship with the Phocaean Greeks; a figure at the intersection of the Atlantic Bronze Age world and Greek colonial expansion"
 status: "stub"
 refs:
   - title: "Histories, Book I.163"

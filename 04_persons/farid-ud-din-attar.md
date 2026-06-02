@@ -3,8 +3,9 @@ type: person
 id: "farid-ud-din-attar"
 name: "Farīd ud-Dīn ʿAṭṭār"
 aka: ["Farīd al-Dīn Muḥammad ibn Ibrāhīm al-Nīshāpūrī", "ʿAṭṭār of Nishapur", "Attar", "فرید الدین عطار", "the Perfumer"]
-role: mystic
+role-description: mystic
 tradition: "Islam (Sufism — Khorasani school)"
+role-tokens: ["mystic"]
 region: "Khorasan / Northeast Persia"
 date-born: 1145
 date-died: 1221

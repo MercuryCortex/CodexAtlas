@@ -3,8 +3,9 @@ type: person
 id: "henry-steel-olcott"
 name: "Henry Steel Olcott"
 aka: []
-role: "founder / co-founder of Theosophical Society / Buddhist convert"
+role-description: "founder / co-founder of Theosophical Society / Buddhist convert"
 tradition: "Theosophy / Buddhist modernism"
+role-tokens: ["founder"]
 region: "United States → India / Ceylon"
 date-born: 1832
 date-died: 1907

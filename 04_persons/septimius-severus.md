@@ -3,8 +3,9 @@ type: person
 id: "septimius-severus"
 name: "Septimius Severus"
 aka: ["Lucius Septimius Severus Augustus"]
-role: "emperor"
+role-description: "emperor"
 tradition: "Roman state religion (pagan; Punic-African background)"
+role-tokens: ["emperor"]
 region: "Rome / Empire (Tripolitania origin)"
 date-born: 145
 date-died: 211

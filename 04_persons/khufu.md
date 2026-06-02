@@ -7,7 +7,7 @@ birth: -2589
 death: -2566
 region: "Giza (Egypt)"
 city-of-origin: "Memphis"
-role: "Pharaoh (4th Dynasty)"
+role-description: "Pharaoh (4th Dynasty)"
 traditions: ["[[tradition-egyptian-religion]]"]
 mentioned-in: ["[[great-pyramid-of-khufu]]", "[[kings-chamber-great-pyramid]]", "[[queens-chamber-great-pyramid]]", "[[grand-gallery-great-pyramid]]", "[[subterranean-chamber-great-pyramid]]", "[[relieving-chambers-great-pyramid]]", "[[pyramid-of-khafre-giza]]"]
 status: "metadata"
@@ -36,6 +36,8 @@ refs:
     type: "monograph"
     tier: 1
 tags: [person, pharaoh, egypt, giza, 4th-dynasty, old-kingdom, pyramid, khufu, mystery, ivory-figurine]
+role-tokens: ["pharaoh"]
+role-description: "Pharaoh (4th Dynasty)"
 ---
 
 # Khufu (Cheops)

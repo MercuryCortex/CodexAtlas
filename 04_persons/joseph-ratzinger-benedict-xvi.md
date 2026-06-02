@@ -3,8 +3,9 @@ type: person
 id: "joseph-ratzinger-benedict-xvi"
 name: "Joseph Ratzinger / Pope Benedict XVI"
 aka: ["Benedict XVI", "Joseph Aloisius Ratzinger"]
-role: "theologian / cardinal / pope"
+role-description: "theologian / cardinal / pope"
 tradition: "Roman Catholicism / ressourcement / Augustinian"
+role-tokens: ["theologian", "pope-roman-catholic"]
 region: "Germany → Vatican City"
 date-born: 1927
 date-died: 2022

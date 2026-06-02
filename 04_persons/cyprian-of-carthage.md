@@ -3,8 +3,9 @@ type: person
 id: "cyprian-of-carthage"
 name: "Cyprian of Carthage"
 aka: ["Thascius Caecilius Cyprianus", "Cyprianus Carthaginiensis"]
-role: "bishop / martyr / theologian"
+role-description: "bishop / martyr / theologian"
 tradition: "Patristic Christian (proto-orthodox); North African"
+role-tokens: ["bishop-christian", "theologian"]
 region: "Carthage"
 date-born: 200
 date-died: 258

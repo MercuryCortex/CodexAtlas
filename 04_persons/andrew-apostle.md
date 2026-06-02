@@ -3,8 +3,9 @@ type: person
 id: "andrew-apostle"
 name: "Andrew the Apostle"
 aka: ["Andreas", "Andreias", "Protokletos (the First-Called)"]
-role: "apostle"
+role-description: "apostle"
 tradition: "earliest Christianity"
+role-tokens: ["apostle-christian"]
 region: "Bethsaida (Galilee); later traditions: Scythia, Thrace, Achaea (Patras)"
 date-born: -5
 date-died: 60

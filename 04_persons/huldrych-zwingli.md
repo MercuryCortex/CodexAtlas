@@ -3,8 +3,9 @@ type: person
 id: "huldrych-zwingli"
 name: "Huldrych Zwingli"
 aka: ["Ulrich Zwingli"]
-role: "reformer / theologian / Zurich pastor"
+role-description: "reformer / theologian / Zurich pastor"
 tradition: "Reformed Protestant Christianity (Zwinglian)"
+role-tokens: ["religious-reformer", "theologian"]
 region: "Swiss Confederation (Zurich)"
 date-born: 1484
 date-died: 1531

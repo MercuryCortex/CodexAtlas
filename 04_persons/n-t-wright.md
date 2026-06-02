@@ -3,8 +3,9 @@ type: person
 id: "n-t-wright"
 name: "N.T. (Tom) Wright"
 aka: ["Nicholas Thomas Wright", "Tom Wright"]
-role: "New Testament scholar / Anglican bishop / theologian"
+role-description: "New Testament scholar / Anglican bishop / theologian"
 tradition: "Anglican (Church of England) / historical Jesus / Pauline studies"
+role-tokens: ["theologian"]
 region: "United Kingdom (Oxford / St Andrews / Wycliffe Hall)"
 date-born: 1948
 date-died:

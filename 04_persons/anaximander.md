@@ -3,8 +3,9 @@ type: person
 id: "anaximander"
 name: "Anaximander of Miletus"
 aka: ["Ἀναξίμανδρος", "Anaximandros"]
-role: "philosopher | astronomer | geographer | cartographer | natural-scientist"
+role-description: "philosopher | astronomer | geographer | cartographer | natural-scientist"
 tradition: "Pre-Socratic Greek (Milesian school)"
+role-tokens: ["presocratic-philosopher"]
 region: "Miletus (Ionian Greek city on the coast of Asia Minor)"
 date-born: -610
 date-died: -546

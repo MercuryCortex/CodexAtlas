@@ -3,8 +3,9 @@ type: person
 id: "martin-buber"
 name: "Martin Buber"
 aka: ["Mordechai Martin Buber"]
-role: "philosopher / theologian / Hebrew Bible translator / Zionist intellectual"
+role-description: "philosopher / theologian / Hebrew Bible translator / Zionist intellectual"
 tradition: "German-Jewish philosophy / dialogical philosophy"
+role-tokens: ["theologian"]
 region: "Vienna (birth) → Lvov / Berlin / Frankfurt → Mandate Palestine / Israel (Jerusalem from 1938)"
 date-born: 1878
 date-died: 1965

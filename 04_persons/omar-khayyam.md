@@ -3,8 +3,9 @@ type: person
 id: "omar-khayyam"
 name: "Omar Khayyam"
 aka: ["Ghiyāth al-Dīn Abū al-Fatḥ ʿUmar ibn Ibrāhīm Khayyām", "عمر خیام"]
-role: "mathematician / astronomer / poet"
+role-description: "mathematician / astronomer / poet"
 tradition: "Islamic Golden Age (Seljuk Persia)"
+role-tokens: ["author-secular"]
 region: "Nishapur (Khorasan, modern Iran)"
 date-born: 1048
 date-died: 1131

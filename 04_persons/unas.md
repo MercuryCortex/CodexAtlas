@@ -3,8 +3,9 @@ type: person
 id: "unas"
 name: "Unas"
 aka: ["Wenis", "Unis", "Onnos"]
-role: "king (pharaoh)"
+role-description: "king (pharaoh)"
 tradition: "Egyptian (Old Kingdom)"
+role-tokens: ["pharaoh", "king"]
 region: "Egypt (capital Memphis; pyramid at Saqqara)"
 date-born: -2390
 date-died: -2345

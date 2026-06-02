@@ -3,8 +3,9 @@ type: person
 id: "hatshepsut"
 name: "Hatshepsut"
 aka: ["Maatkare Hatshepsut", "Hatshepsowe", "Hatchepsut"]
-role: "pharaoh — fifth ruler of the 18th Dynasty; one of Egypt's most successful and most erased rulers"
+role-description: "pharaoh — fifth ruler of the 18th Dynasty; one of Egypt's most successful and most erased rulers"
 tradition: egyptian-religion
+role-tokens: ["pharaoh"]
 region: "Egypt (Thebes / Karnak / Deir el-Bahri)"
 date-born: -1507
 date-died: -1458

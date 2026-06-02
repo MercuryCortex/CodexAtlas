@@ -3,8 +3,9 @@ type: person
 id: "cyril-of-alexandria"
 name: "Cyril of Alexandria"
 aka: ["Kyrillos Alexandreias", "Pillar of Faith"]
-role: "bishop / theologian (anti-Nestorian)"
+role-description: "bishop / theologian (anti-Nestorian)"
 tradition: "Patristic Christian (Alexandrian)"
+role-tokens: ["bishop-christian"]
 region: "Alexandria"
 date-born: 376
 date-died: 444

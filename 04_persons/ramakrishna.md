@@ -3,8 +3,9 @@ type: person
 id: "ramakrishna"
 name: "Ramakrishna Paramahamsa"
 aka: ["Gadadhar Chattopadhyay", "Sri Ramakrishna"]
-role: "mystic / founder of lineage"
+role-description: "mystic / founder of lineage"
 tradition: "Hindu modernism / Ramakrishna Mission"
+role-tokens: ["mystic"]
 region: "Bengal, India"
 date-born: 1836
 date-died: 1886

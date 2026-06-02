@@ -3,8 +3,9 @@ type: person
 id: "siddhartha-gautama-buddha"
 name: "Siddhārtha Gautama (the Buddha)"
 aka: ["Gotama (Pali)", "Śākyamuni ('Sage of the Śākyas')", "Tathāgata", "Bhagavat", "Buddha ('Awakened One')"]
-role: "founder"
+role-description: "founder"
 tradition: "Buddhism"
+role-tokens: ["founder"]
 region: "Magadha / Kosala (modern Bihar / Uttar Pradesh / southern Nepal)"
 date-born: -480
 date-died: -400

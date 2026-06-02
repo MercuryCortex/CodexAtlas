@@ -3,8 +3,9 @@ type: person
 id: "daniel-prophet"
 name: "Daniel"
 aka: ["Daniyyel", "Daniyal", "Belteshazzar"]
-role: "prophet"
+role-description: "prophet"
 tradition: "Second-Temple Jewish (literary frame: 6th-c. BCE Babylonian exile)"
+role-tokens: ["prophet-abrahamic"]
 region: "Babylon"
 date-born: -620
 date-died: -530

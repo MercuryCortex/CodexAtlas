@@ -3,8 +3,9 @@ type: person
 id: "isaac-newton"
 name: "Isaac Newton"
 aka: ["Sir Isaac Newton"]
-role: "mathematician / physicist / alchemist / theologian"
+role-description: "mathematician / physicist / alchemist / theologian"
 tradition: "Early modern science / Arianism (heterodox Christianity)"
+role-tokens: ["theologian"]
 region: "Lincolnshire → Cambridge → London (England)"
 date-born: 1643
 date-died: 1727

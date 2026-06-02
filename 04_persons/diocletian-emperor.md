@@ -3,8 +3,9 @@ type: person
 id: "diocletian-emperor"
 name: "Diocletian"
 aka: ["Gaius Aurelius Valerius Diocletianus"]
-role: "emperor / persecutor"
+role-description: "emperor / persecutor"
 tradition: "Roman state religion (pagan; Jovian self-identification)"
+role-tokens: ["emperor"]
 region: "Rome / Empire (Tetrarchic capitals: Nicomedia, Sirmium, Milan, Trier)"
 date-born: 244
 date-died: 311

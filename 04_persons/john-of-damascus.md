@@ -3,8 +3,9 @@ type: person
 id: "john-of-damascus"
 name: "John of Damascus"
 aka: ["Ioannes Damaskenos", "Yuhanna al-Dimashqi", "Mansur ibn Sarjun"]
-role: "monk / theologian / hymnographer (iconophile)"
+role-description: "monk / theologian / hymnographer (iconophile)"
 tradition: "Eastern Christian (Chalcedonian)"
+role-tokens: ["theologian"]
 region: "Umayyad Caliphate — Damascus, then Mar Saba monastery near Jerusalem"
 date-born: 675
 date-died: 749

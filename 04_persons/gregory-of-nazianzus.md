@@ -3,8 +3,9 @@ type: person
 id: "gregory-of-nazianzus"
 name: "Gregory of Nazianzus"
 aka: ["Gregory the Theologian", "Grēgorios Nazianzēnos"]
-role: "bishop / theologian (Cappadocian Father)"
+role-description: "bishop / theologian (Cappadocian Father)"
 tradition: "Patristic Christian (Cappadocian)"
+role-tokens: ["bishop-christian"]
 region: "Cappadocia → Constantinople"
 date-born: 329
 date-died: 390

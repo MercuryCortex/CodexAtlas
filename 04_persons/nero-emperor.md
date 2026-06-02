@@ -3,8 +3,9 @@ type: person
 id: "nero-emperor"
 name: "Nero"
 aka: ["Nero Claudius Caesar Augustus Germanicus", "Lucius Domitius Ahenobarbus (birth name)"]
-role: "emperor / persecutor"
+role-description: "emperor / persecutor"
 tradition: "Roman state religion (pagan)"
+role-tokens: ["emperor"]
 region: "Rome / Empire"
 date-born: 37
 date-died: 68

@@ -3,8 +3,9 @@ type: person
 id: "cornelius-centurion"
 name: "Cornelius the Centurion"
 aka: ["Kornēlios"]
-role: "convert | disciple"
+role-description: "convert | disciple"
 tradition: "earliest Christianity"
+role-tokens: ["disciple-christian"]
 region: "Caesarea Maritima"
 date-born: 0
 date-died: 70

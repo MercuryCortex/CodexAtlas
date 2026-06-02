@@ -3,8 +3,9 @@ type: person
 id: "david-king"
 name: "David"
 aka: ["Davidh", "Dawid", "Daoud"]
-role: "king"
+role-description: "king"
 tradition: "Israelite / pre-exilic Judah"
+role-tokens: ["king"]
 region: "Israel / Judah"
 date-born: -1040
 date-died: -970

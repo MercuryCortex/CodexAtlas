@@ -3,8 +3,9 @@ type: person
 id: "black-elk"
 name: "Heȟáka Sápa (Black Elk)"
 aka: ["Nicholas Black Elk", "Heȟáka Sápa"]
-role: "Lakota wičháša wakȟáŋ (holy man) / Ghost Dancer / Catholic catechist"
 tradition: "Oglala Lakota / Roman Catholicism (later)"
+role-tokens: ["wichasha-wakan", "mystic-syncretic", "evangelist-revivalist"]
+role-description: "Black Elk (Heȟáka Sápa) — Oglala Lakota wičháša wakȟáŋ (holy man); Ghost Dancer 1890; Catholic catechist (St. Joseph the Worker mission, Manderson SD) from 1904. Multiple roles per Powers 1977 + DeMallie 1984 *The Sixth Grandfather*."
 region: "Northern Plains (born on Little Powder River; lived principally on Pine Ridge Reservation)"
 date-born: 1863
 date-died: 1950

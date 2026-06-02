@@ -3,8 +3,9 @@ type: person
 id: "ishmael-ben-elisha"
 name: "Ishmael ben Elisha"
 aka: ["Rabbi Ishmael", "R. Yishmael ben Elisha", "Ishmael the High Priest's grandson"]
-role: "rabbi (Tannaitic) / mystic"
+role-description: "rabbi (Tannaitic) / mystic"
 tradition: "early Rabbinic Judaism (Tannaitic); ascribed founder of *Hekhalot* mysticism by later tradition"
+role-tokens: ["mystic"]
 region: "Roman Palestine"
 date-born: 90
 date-died: 135

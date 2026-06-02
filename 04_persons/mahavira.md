@@ -3,8 +3,9 @@ type: person
 id: "mahavira"
 name: "Mahāvīra"
 aka: ["Vardhamāna", "Vardhamāna Mahāvīra", "Nigaṇṭha Nātaputta (in Buddhist sources)", "the 24th Tīrthaṅkara"]
-role: "founder"
 tradition: "Jainism"
+role-tokens: ["tirthankara-jain", "founder"]
+role-description: "Mahāvīra (Vardhamāna) — 24th Tīrthaṅkara of the Jain tradition; (-599 to -527, per Dundas 2002); founder of historically-attested Jainism."
 region: "Magadha / Videha (eastern Gangetic plain, modern Bihar)"
 date-born: -599
 date-died: -527

@@ -3,8 +3,9 @@ type: person
 id: "emile-durkheim"
 name: "Émile Durkheim"
 aka: []
-role: "scholar / sociologist of religion"
+role-description: "scholar / sociologist of religion"
 tradition: "Comparative religion (academic) / Sociology of religion"
+role-tokens: ["scholar-academic-religion"]
 region: "France (Épinal → Bordeaux → Paris)"
 date-born: 1858
 date-died: 1917

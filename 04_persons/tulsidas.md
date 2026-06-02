@@ -3,8 +3,9 @@ type: person
 id: "tulsidas"
 name: "Tulsidas"
 aka: ["Goswami Tulsidas", "Tulasidas"]
-role: "Hindu bhakti poet-saint / Rama-devotee"
+role-description: "Hindu bhakti poet-saint / Rama-devotee"
 tradition: "Hindu Bhakti (Vaishnava — Ram-bhakti)"
+role-tokens: ["author-secular"]
 region: "North India (Awadh and Banaras)"
 date-born: 1532
 date-died: 1623

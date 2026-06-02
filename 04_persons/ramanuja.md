@@ -3,8 +3,9 @@ type: person
 id: "ramanuja"
 name: "Ramanuja"
 aka: ["Rāmānujācārya", "Yatirāja", "Bhāṣyakāra"]
-role: "philosopher, theologian, monastic leader, Vedanta commentator"
 tradition: "Hindu — Vishishtadvaita (Sri Vaishnavism)"
+role-tokens: ["acharya-hindu", "philosopher-religious"]
+role-description: "Rāmānuja (Rāmānujācārya) — 11th-12th c. acharya of Viśiṣṭādvaita Vedānta; foremost theologian of Śrī Vaiṣṇavism; commentaries on Brahma-Sūtras, Bhagavad-Gītā, Upaniṣads."
 region: "Tamil Nadu (south India)"
 date-born: 1017
 date-died: 1137

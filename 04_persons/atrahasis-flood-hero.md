@@ -3,8 +3,9 @@ type: person
 id: "atrahasis-flood-hero"
 name: "Atrahasis (the flood-hero)"
 aka: ["Atra-Hasis ('exceedingly wise')", "Atramhasis", "Hasisatra (reversed reading in some recensions)"]
-role: "king, flood-survivor (legendary antediluvian Akkadian)"
+role-description: "king, flood-survivor (legendary antediluvian Akkadian)"
 tradition: "Akkadian / Mesopotamian"
+role-tokens: ["king"]
 region: "Mesopotamia (Shuruppak)"
 date-born:
 date-died:

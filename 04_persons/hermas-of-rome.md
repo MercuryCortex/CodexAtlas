@@ -3,8 +3,9 @@ type: person
 id: "hermas-of-rome"
 name: "Hermas of Rome"
 aka: ["Hermas", "Hermas the Visionary", "Hermas (brother of Pius I)"]
-role: "visionary, prophet, freed-slave Christian author"
+role-description: "visionary, prophet, freed-slave Christian author"
 tradition: "Early Roman Christianity / canonical in [[tradition-ethiopian-orthodox-tewahedo]] (where his work the Shepherd of Hermas remains canonical scripture)"
+role-tokens: ["prophet-abrahamic"]
 region: "Rome (city of)"
 date-born: 95
 date-died: 165

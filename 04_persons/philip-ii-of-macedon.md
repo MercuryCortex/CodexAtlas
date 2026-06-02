@@ -3,8 +3,9 @@ type: person
 id: "philip-ii-of-macedon"
 name: "Philip II of Macedon"
 aka: ["Φίλιππος Βʹ ὁ Μακεδών (Philippos II ho Makedōn)"]
-role: "king"
+role-description: "king"
 tradition: "Hellenic / Argead Macedonian"
+role-tokens: ["king"]
 region: "Macedon"
 date-born: -382
 date-died: -336

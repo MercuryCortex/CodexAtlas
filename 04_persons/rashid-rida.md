@@ -3,8 +3,9 @@ type: person
 id: "rashid-rida"
 name: "Rashid Rida"
 aka: ["Muhammad Rashid Rida"]
-role: "reformer / Islamic modernist-becoming-Salafi"
+role-description: "reformer / Islamic modernist-becoming-Salafi"
 tradition: "Islamic modernism / proto-Salafism"
+role-tokens: ["religious-reformer"]
 region: "Ottoman Syria (Tripoli) → Egypt"
 date-born: 1865
 date-died: 1935

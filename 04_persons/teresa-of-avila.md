@@ -3,8 +3,9 @@ type: person
 id: "teresa-of-avila"
 name: "Teresa of Ávila"
 aka: ["Teresa de Cepeda y Ahumada", "Teresa de Jesús", "Saint Teresa of Jesus", "La Madre Teresa", "Doctor of the Church (1970)"]
-role: "Carmelite reformer / mystic / theologian"
+role-description: "Carmelite reformer / mystic / theologian"
 tradition: "Latin Christianity (Catholic Counter-Reformation; Discalced Carmelite)"
+role-tokens: ["mystic", "theologian"]
 region: "Castile (Spain)"
 date-born: 1515
 date-died: 1582

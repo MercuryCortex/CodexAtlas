@@ -3,8 +3,9 @@ type: person
 id: "john-calvin"
 name: "Jean Calvin"
 aka: ["John Calvin", "Iohannes Calvinus", "Jean Cauvin (birth surname)"]
-role: "reformer / theologian / pastor"
+role-description: "reformer / theologian / pastor"
 tradition: "Reformed Protestant Christianity (Calvinist)"
+role-tokens: ["religious-reformer", "theologian"]
 region: "France → Switzerland (Basel, Geneva, Strasbourg)"
 date-born: 1509
 date-died: 1564

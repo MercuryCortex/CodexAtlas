@@ -3,8 +3,9 @@ type: person
 id: "cleopatra-vii"
 name: "Cleopatra VII Philopator"
 aka: ["Cleopatra VII", "Κλεοπάτρα Φιλοπάτωρ", "Cleopatra Thea Philopator", "Cleopatra the Great"]
-role: "queen | Pharaoh | last ruler of Ptolemaic Egypt | religious-cult-figure (incarnation of Isis)"
+role-description: "queen | Pharaoh | last ruler of Ptolemaic Egypt | religious-cult-figure (incarnation of Isis)"
 tradition: "Hellenistic Greek (Macedonian) ruling Egypt as Pharaoh; ritually identified with Isis"
+role-tokens: ["queen", "pharaoh"]
 region: "Egypt (Alexandria); travels to Rome; Antony's eastern campaign"
 date-born: -69
 date-died: -30

@@ -3,8 +3,9 @@ type: person
 id: "saadia-gaon"
 name: "Saadia Gaon"
 aka: ["Saʿadia ben Yosef", "Saʿadia Gaon", "Saʿid ibn Yūsuf al-Fayyūmī"]
-role: "philosopher, scholar, head of yeshiva (Gaon)"
+role-description: "philosopher, scholar, head of yeshiva (Gaon)"
 tradition: "Rabbinic Judaism — Geonic"
+role-tokens: ["rabbi-medieval"]
 region: "Egypt, Palestine, Iraq"
 date-born: 882
 date-died: 942

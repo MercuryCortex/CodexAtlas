@@ -3,8 +3,9 @@ type: person
 id: "galawdewos-emperor"
 name: "Galawdewos (Emperor of Ethiopia, r. 1540–1559)"
 aka: ["Gälawdewos", "Claudius", "Asnaf Sagad I", "ገላውዴዎስ"]
-role: "king, theologian, defender"
+role-description: "king, theologian, defender"
 tradition: "[[tradition-ethiopian-orthodox-tewahedo]]"
+role-tokens: ["king", "theologian"]
 region: "Solomonic Ethiopia (war-torn 1540s; later relative recovery)"
 date-born: 1521
 date-died: 1559

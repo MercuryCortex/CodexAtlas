@@ -3,8 +3,9 @@ type: person
 id: "zarathustra"
 name: "Zarathustra"
 aka: ["Zoroaster", "Zardošt (New Persian)", "Zaraθuštra (Avestan)", "Zoroastre (French)", "Zaradusht (Arabic)"]
-role: "prophet"
+role-description: "prophet"
 tradition: "Zoroastrian"
+role-tokens: ["prophet-abrahamic"]
 region: "Northeastern Iran / Central Asia (likely Bactria or Sogdiana)"
 date-born: -1200
 date-died: -1100
