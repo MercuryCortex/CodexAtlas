@@ -8055,6 +8055,23 @@ body.view-forge #detail-inner {
   gap: 4px;
   margin-bottom: 6px;
 }
+/* One row per classification: chip + its own source citation, so the
+   chip→source mapping is explicit. 2026-06-02. */
+.forge-side-panel-provenance-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 5px;
+  flex-wrap: wrap;
+}
+.forge-side-panel-provenance-row-source {
+  font-size: 10px;
+  color: var(--text-2, #b5b9c5);
+  line-height: 1.4;
+  opacity: 0.8;
+  flex: 1 1 auto;
+  min-width: 0;
+}
 .forge-side-panel-provenance-chip {
   display: inline-flex;
   align-items: center;
@@ -8065,11 +8082,10 @@ body.view-forge #detail-inner {
   border-radius: 3px;
   font-size: 10.5px;
   color: var(--text-1, #d8dbe2);
-  cursor: help;
-  transition: background 0.15s;
-}
-.forge-side-panel-provenance-chip:hover {
-  background: rgba(255, 255, 255, 0.12);
+  /* No cursor:help — the source citation is shown visibly below the
+     chips (the ↳ lines), so there's no hidden tooltip to advertise.
+     2026-06-02 per John: "why the ? on the cursor that dont show
+     anything?" — removed the false-promise cursor. */
 }
 .forge-side-panel-provenance-chip-tier {
   font-size: 8.5px;

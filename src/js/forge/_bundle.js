@@ -2063,38 +2063,23 @@
           const label = FIELD_LABELS[field] || field;
           out += '<div class="forge-side-panel-provenance forge-side-panel-provenance--' + safeAttr(field) + '">';
           out += '<div class="forge-side-panel-provenance-label">' + safe(label) + '</div>';
-          out += '<div class="forge-side-panel-provenance-chips">';
+          // Each classification rendered as a ROW: chip (role + tier badge)
+          // paired with its OWN source citation directly beneath — so the
+          // chip → source mapping is explicit, not a disconnected list.
+          // 2026-06-02 per John: source must visibly answer "why THIS role".
           for (const e of entries) {
             const value  = e.display || e.value || '';
             const tier   = e['source-tier'] || '';
             const src    = e.source || '';
-            const ctx    = e.context || '';
-            const notes  = e.notes || '';
-            const cRat   = e.contested_rationale || '';
-            const lines = [];
-            if (tier) lines.push('[' + tier + '] ' + src);
-            else if (src) lines.push(src);
-            if (ctx) lines.push('Context: ' + ctx);
-            if (notes) lines.push('Note: ' + notes);
-            if (cRat) lines.push('Contested rationale: ' + cRat);
-            const tooltip = lines.join('\n\n');
+            out += '<div class="forge-side-panel-provenance-row">';
             out += '<span class="forge-side-panel-provenance-chip"';
             if (tier) out += ' data-tier="' + safeAttr(tier) + '"';
-            out += ' title="' + safeAttr(tooltip) + '">';
+            out += '>';
             out += '<span class="forge-side-panel-provenance-chip-value">' + safe(value) + '</span>';
             if (tier) out += '<span class="forge-side-panel-provenance-chip-tier">' + safe(tier) + '</span>';
             out += '</span>';
-          }
-          out += '</div>';
-          // Distinct source citations (visible — academic transparency, not
-          // just hoverable) — the "why" must be readable per John 2026-06-02.
-          const seen = new Set();
-          for (const e of entries) {
-            const src = e.source || '';
-            if (src && !seen.has(src)) {
-              seen.add(src);
-              out += '<div class="forge-side-panel-provenance-source">↳ ' + safe(src) + '</div>';
-            }
+            if (src) out += '<span class="forge-side-panel-provenance-row-source">' + safe(src) + '</span>';
+            out += '</div>';
           }
           // Contested-case rationale (de-dup) — wrapped in <details> so
           // collapsed-by-default (2026-06-02 per John: "super ugly… needs

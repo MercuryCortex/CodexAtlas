@@ -290,8 +290,18 @@ entries:
     figure_qualifying: true
     source-tier: T1
     source: "Sarna, Nahum 1989. JPS Torah Commentary: Genesis. Jewish Publication Society."
-    notes: "Genesis patriarchs (and matriarchs by tradition extension). Multi-tradition homograph: distinct from patriarch-christian-orthodox + patriarch-jewish-late-antique + patriarch-oriental-orthodox."
+    notes: "The avot — Abraham, Isaac, Jacob (and matriarchs by tradition extension). Multi-tradition homograph: distinct from patriarch-antediluvian (Adam→Noah primeval line), patriarch-christian-orthodox, patriarch-jewish-late-antique, patriarch-oriental-orthodox."
     aliases: []
+
+  - id: patriarch-antediluvian
+    display: "Patriarch (antediluvian — Genesis primeval history)"
+    tier: 2
+    figure_qualifying: true
+    source-tier: T1
+    source: "Westermann, Claus 1984. Genesis 1-11: A Continental Commentary. Fortress Press."
+    secondary: ["Hendel, Ronald 1995. 'Genealogy and Tradition in the Hebrew Bible.' JBL.", "Sarna 1989 JPS Torah Commentary: Genesis"]
+    notes: "The ten generations from Adam to Noah (Gen 5 toledot): Adam, Seth, Enosh, Kenan, Mahalalel, Jared, Enoch, Methuselah, Lamech, Noah. Primary biblical / Israelite / Jewish-Bible patriarchal figures of the primeval history (Gen 1-11). Distinct from patriarch-hebrew (the avot — Abraham/Isaac/Jacob). Historicity is legendary/mythological (captured in the node's historicity: field, NOT in role-tokens — the role here is the patriarchal-genealogical office within the Hebrew Bible)."
+    aliases: ["antediluvian patriarch", "primeval patriarch", "biblical patriarch (primeval)"]
 
   - id: patriarch-jewish-late-antique
     display: "Patriarch (Late-Antique Jewish Patriarchate of Palestine)"
