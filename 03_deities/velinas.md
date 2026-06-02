@@ -53,7 +53,14 @@ refs:
     publisher: "Oxford University Press"
     type: "monograph"
     tier: 1
-tags: [deity, baltic, lithuanian, latvian, underworld, chthonic, cattle, PIE, thunderer-vs-serpent, veles-cognate]
+  - title: "The Balts"
+    author: "Gimbutas, Marija"
+    year: 1963
+    publisher: "Praeger"
+    type: "monograph"
+    tier: 1
+    notes: "Foundational treatment of Baltic pre-Christian religion; documents the Velinas–Perkūnas pair and the Christianization-as-demonization (velnias → 'devil')."
+tags: [deity, baltic, lithuanian, latvian, underworld, chthonic, cattle, PIE, thunderer-vs-serpent, veles-cognate, christianization-demonization]
 ---
 
 # Velinas / Velnias
@@ -63,3 +70,6 @@ Velnias ("Lord of the Dead / Cattle Lord") is the Baltic chthonic deity — rule
 This narrative is the **most completely preserved version** of the original PIE combat myth in the Baltic tradition, per Ivanov, Toporov, and West — because Lithuanian retained the cattle-theft and world-tree elements that other Indo-European branches lost. The Vedic parallel (Indra vs. Vritra releasing the cosmic waters) confirms the myth's PIE antiquity.
 
 Velnias is etymologically cognate with Slavic [[veles]] (both from PIE *\*u̯el-*: "the dead, cattle") — a cross-tradition link secured by both etymology and mythology. Where Slavic folk tradition preserved Veles as a cattle/underworld deity, Baltic tradition preserved the complete combat narrative. Together they reconstruct the original PIE cattle-underworld-chthonic-deity with unusual completeness.
+
+## Christianization-as-demonization
+The most striking fact about Velnias is **what his name became**: modern Lithuanian *velnias* simply means "**devil**." The pre-Christian deity-name was demoted, lexically, to the post-Christian word for the Christian Adversary. Lithuania was the **last European pagan state to Christianize** (1387, under Jogaila), making Velnias's demonization both later and more linguistically traceable than most parallel cases. This is the textbook European-pagan parallel of the Zoroastrian *asura → daēva* inversion: an absorbing tradition condemns the predecessor's deity-class wholesale, transforming gods into demons. The same fate befell Slavic [[veles|Veles]] (condemned in 12th-c. Russian sermons), but the Baltic trace is sharper, since Lithuanian lexicalized the demotion into its everyday word for "devil" (Gimbutas 1963; Greimas 1992).

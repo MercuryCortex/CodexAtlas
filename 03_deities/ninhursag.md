@@ -11,10 +11,10 @@ domains: ["mother-goddess", "earth / mountain", "fertility", "creation-of-humani
 gender: "feminine"
 role: "Mother-goddess of Sumerian-Akkadian pantheon; co-creator of humanity with Enki"
 parent-of: []
-child-of: []
-consort: ["[[enki-ea]] (in some traditions)"]
-attributes: ["omega-shaped uterus / horseshoe symbol", "mountain (har-sag = 'mountain peak')", "lion cub on lap"]
-attested-in: ["[[phase-1-006-atrahasis]]", "Enki and Ninhursag (Sumerian myth)", "[[phase-1-008-enuma-elish]]"]
+child-of: ["[[an-sumerian]]"]
+consort: ["[[enki-ea]]"]
+attributes: ["omega-shaped uterus / horseshoe symbol", "mountain (har-sag = 'mountain peak')", "lion cub on lap", "cult center Keš/Kesh and Adab"]
+attested-in: ["[[phase-1-001-kesh-temple-hymn]]", "[[phase-1-006-atrahasis]]", "[[phase-1-008-enuma-elish]]"]
 equivalents: ["[[gaia]]", "[[aditi]]", "[[damkina]]"]
 syncretic-edges:
   - target: "[[enki-ea]]"
@@ -22,7 +22,7 @@ syncretic-edges:
     source: "Atrahasis Tablet I — Enki and Ninhursag co-create humanity from clay mixed with the blood of the slain god We-ila"
     source-tier: T1
     notes: "Co-creation-of-humanity mythologem. Ninhursag shapes the clay; Enki provides the divine component (the *temu* or breath/intelligence). Standard Sumerian cosmogonic-mythology, NOT a genetic-engineering protocol per Sitchin pseudoarchaeology — see [[nibiru-anunnaki]]"
-status: "stub"
+status: "metadata"
 refs:
   - title: "Religion in Ancient Mesopotamia"
     author: "Bottéro, Jean"

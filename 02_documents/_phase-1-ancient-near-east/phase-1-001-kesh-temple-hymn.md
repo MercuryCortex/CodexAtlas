@@ -21,7 +21,7 @@ themes: ["[[divine-kingship]]", "[[creation-by-word]]"]
 parallels: ["[[phase-1-003-enheduanna-hymns]]"]
 influenced-by: []
 influences: ["Sumerian temple-hymn corpus (e.g., Enheduanna's collection of forty-two temple hymns)"]
-deities-mentioned: ["[[ninhursag-nintud]]", "[[enlil]]", "[[an-sumerian]]"]
+deities-mentioned: ["[[ninhursag]]", "[[enlil]]", "[[an-sumerian]]"]
 events-context: ["Early Dynastic IIIa Sumer; flourishing city-state religious culture", "[[event-gobekli-tepe-c-9500-bce]] (parallel-motif only: the Sumerian temple-hymn tradition postdates Göbekli Tepe by ~5,000 years; no documented continuous transmission, but the recurrence of monumental ritual architecture in the same broad Mesopotamian-Anatolian culture-region across deep time is noted; Schmidt 2006 vs. Banning 2011 on the typological-continuity question)"]
 status: "metadata"
 preservation: "Earliest copies (~2600 BCE) on clay tablets from Tell Abū Ṣalābīkh and Fara (Šuruppak); later Old Babylonian copies (~1800 BCE) from the Nippur scribal-school curriculum"
@@ -61,7 +61,7 @@ tags: [phase-1, sumerian, temple-hymn, oldest-religious-text, abu-salabikh, kesh
 # Kesh Temple Hymn
 
 ## What it is
-A Sumerian temple hymn praising the sanctuary of the city Keš and its presiding goddess Nintud (= [[ninhursag-nintud]]). Eight sections (each closed by the formulaic refrain "Will anyone else bring forth something as great as Keš? Will any other mother ever give birth to someone as great as its hero, Ašgi?"). The composition exists in two main recensions: an archaic version preserved on tablets from Tell Abū Ṣalābīkh and Fara (~2600 BCE — among the oldest decipherable literary compositions in any language), and an Old Babylonian curricular version (~1800 BCE) copied by scribal students. Continuous textual transmission across ~800 years.
+A Sumerian temple hymn praising the sanctuary of the city Keš and its presiding goddess Nintud (= [[ninhursag]]). Eight sections (each closed by the formulaic refrain "Will anyone else bring forth something as great as Keš? Will any other mother ever give birth to someone as great as its hero, Ašgi?"). The composition exists in two main recensions: an archaic version preserved on tablets from Tell Abū Ṣalābīkh and Fara (~2600 BCE — among the oldest decipherable literary compositions in any language), and an Old Babylonian curricular version (~1800 BCE) copied by scribal students. Continuous textual transmission across ~800 years.
 
 ## Context
 - **Political milieu.** Early Dynastic IIIa Sumer (~2600 BCE): a network of independent city-states (Ur, Uruk, Lagaš, Umma, Adab, Šuruppak), each with patron deities and temple-economies. Religious literature is becoming a stable written genre alongside the older administrative cuneiform tradition.

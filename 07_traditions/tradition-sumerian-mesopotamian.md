@@ -7,7 +7,7 @@ date-emergence: -3500
 date-end: -100
 region-origin: "Southern Mesopotamia (Sumer)"
 regions-spread: ["Mesopotamia", "Elam (cultural influence)", "Syria (Mari, Ebla)", "Anatolia (Hittite-Hurrian reception)"]
-key-deities: ["[[an-sumerian]]", "[[enlil]]", "[[enki-ea]]", "[[ninhursag-nintud]]", "[[inanna-sumerian]]", "[[ishtar-akkadian]]", "[[nanna-sin]]", "[[utu-shamash]]", "[[marduk]]", "[[tiamat]]", "[[apsu]]", "[[dumuzi-tammuz]]", "[[kingu]]"]
+key-deities: ["[[an-sumerian]]", "[[enlil]]", "[[enki-ea]]", "[[ninhursag]]", "[[inanna-sumerian]]", "[[ishtar-akkadian]]", "[[nanna-sin]]", "[[utu-shamash]]", "[[marduk]]", "[[tiamat]]", "[[apsu]]", "[[dumuzi-tammuz]]", "[[kingu]]"]
 key-persons: ["[[enheduanna]]", "[[hammurabi]]"]
 key-documents: ["[[phase-1-001-kesh-temple-hymn]]", "[[phase-1-003-enheduanna-hymns]]", "[[phase-1-004-gilgamesh-old-babylonian]]", "[[phase-1-005-instructions-of-shuruppak]]", "[[phase-1-006-atrahasis]]", "[[phase-1-007-code-of-hammurabi]]", "[[phase-1-008-enuma-elish]]"]
 sister-traditions: ["[[tradition-canaanite-ugaritic]]", "[[tradition-egyptian]]"]
@@ -76,7 +76,7 @@ The religious culture of the city-states and empires of the Tigris-Euphrates val
 - [[an-sumerian]] — sky-father, nominal head.
 - [[enlil]] — chief executive god; Nippur.
 - [[enki-ea]] — wisdom-and-water god; Eridu.
-- [[ninhursag-nintud]] — mother-goddess; birth.
+- [[ninhursag]] — mother-goddess; birth.
 - [[inanna-sumerian]] / [[ishtar-akkadian]] — love and war; Uruk / Akkad / Nineveh.
 - [[nanna-sin]] — moon; Ur, Harran.
 - [[utu-shamash]] — sun and justice; Larsa, Sippar.

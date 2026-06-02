@@ -21,7 +21,7 @@ themes: ["[[divine-kingship]]", "[[flood-motif]]", "[[antediluvian-civilization]
 parallels: ["[[phase-1-006-atrahasis]]", "[[phase-1-016-eridu-genesis-flood]]", "[[phase-2-005-hebrew-bible-j-source]]", "[[genesis-5-antediluvian-patriarchs]]", "[[phase-3-002-plato-dialogues]]"]
 influenced-by: ["earlier Sumerian historical-chronographic traditions; the Tummal Chronicle"]
 influences: ["the Babylonian King List tradition (BKL A, B); the Assyrian King List; in much-disputed comparative-religion claims, the Genesis 5 antediluvian patriarch list and Plato's Atlantis chronology"]
-deities-mentioned: ["[[an-sumerian]]", "[[enlil]]", "[[enki-ea]]", "[[utu-shamash]]", "[[ninhursag-nintud]]"]
+deities-mentioned: ["[[an-sumerian]]", "[[enlil]]", "[[enki-ea]]", "[[utu-shamash]]", "[[ninhursag]]"]
 events-context: ["compiled in scribal schools of the Ur III through Old Babylonian periods; intended to legitimize successive Mesopotamian dynasties through a continuous kingship-from-the-gods sequence"]
 status: "metadata"
 preservation: "Sixteen substantial manuscripts (and many fragments) preserve overlapping recensions. The principal text is the **Weld-Blundell Prism (WB 444)**, a four-sided clay prism from Larsa, ~-1800 BCE, now in the Ashmolean Museum, Oxford — published by Stephen Langdon (1923) and re-edited by Thorkild Jacobsen (1939). Other major witnesses include the Scheil dynastic prism, the Isin recension, the Tell Leilan fragments, and the Susa fragment. The text is a continuously-amended scribal-school composition, with recensions adapted to legitimize successive dynasties (Ur III, Isin, Larsa)."

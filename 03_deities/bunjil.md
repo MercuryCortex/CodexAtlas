@@ -40,7 +40,6 @@ syncretic-edges:
     source: "Hultkrantz, *The Religions of the American Indians* (1979) — Native American thunderbird as great-raptor sky-being; structural parallel to Bunjil as eaglehawk sky-creator"
     source-tier: T1
 status: "metadata"
-status: "stub"
 refs:
   - title: "The Native Tribes of South-East Australia"
     author: "Howitt, Alfred William"

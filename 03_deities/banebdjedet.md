@@ -22,7 +22,11 @@ syncretic-edges:
     source: "Herodotus, Histories 2.46"
     source-tier: T1
     notes: "Herodotus identifies the ram-god of Mendes with the Greek Pan via shared caprid imagery. Modern Egyptology treats Banebdjedet's primary role (the ba-soul of Osiris, fertility) as distinct from Pan's rustic-sylvan domain, but the ancient identification stands"
-status: "stub"
+  - target: "[[osiris]]"
+    type: "manifestation-of"
+    source: "Banebdjedet is conceived as a ba-soul (animating spirit) of the great gods — specifically the ba of Osiris (and of Ra); the four-headed ram embodies the souls of Ra, Osiris, Shu, and Geb. Wilkinson 2003"
+    source-tier: T1
+status: "metadata"
 refs:
   - title: "The Complete Gods and Goddesses of Ancient Egypt"
     author: "Wilkinson, Richard H."
@@ -38,5 +42,3 @@ tags: [deity, egyptian, mendes, ram-god, herodotus-equation]
 The ram-god of Mendes in the Nile Delta. In Egyptian theology Banebdjedet was conceived as one of the four ba-souls of the great gods — sometimes specifically the ba of Osiris, with the four-headed ram iconography representing the soul-presences of Ra, Osiris, Shu, and Geb (or a similar quaternion depending on the period). His consort was the fish-goddess Hatmehit.
 
 **Herodotus equation.** In *Histories* 2.46, Herodotus identifies Banebdjedet with the Greek Pan, via the shared caprid (goat / ram) iconography. The identification is one of the standard *interpretatio graeca* moves and the load-bearing source for the Pan-Banebdjedet pairing in [[pan-greek]]. Modern Egyptology generally treats Banebdjedet's primary theological function (ba-soul of Osiris, fertility-of-Mendes) as distinct from Pan's rustic-sylvan domain, but the ancient equation stands as documented.
-
-_Stubbed during the 2026-05-23 wiring-law sweep. Awaiting full treatment._

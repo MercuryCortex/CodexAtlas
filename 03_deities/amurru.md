@@ -19,11 +19,15 @@ attributes: ["shepherd's crook", "throw-stick (*gamlu* — the characteristic Am
 attested-in: ["The Sumerian *Marriage of Martu* hymn (Old Babylonian period)", "Lexical lists equating MAR.TU = Amurru", "Old Babylonian personal-name theophoric elements (-Amurru / -Martu)"]
 equivalents: []
 syncretic-edges:
-  - target: "an-sumerian"
-    type: "child-of"
-    source: "Old Babylonian theogonies place Amurru/Martu as son of Anu — the Mesopotamian pantheon's way of integrating the foreign Amorite tutelary deity into its kinship hierarchy"
+  - target: "[[an-sumerian]]"
+    type: "constituent-of"
+    source: "Old Babylonian theogonies place Amurru/Martu as son of Anu — the Mesopotamian pantheon's way of integrating the foreign Amorite tutelary deity into its kinship hierarchy. Black & Green 1992"
     source-tier: T1
-status: "stub"
+  - target: "[[asherah]]"
+    type: "cognate"
+    source: "Amurru's consort is rendered in some sources as Ashratu/Ashratum — the Mesopotamian form of West-Semitic Athirat / the Canaanite Asherah; the Amorite goddess and the Ugaritic/biblical Asherah are one West-Semitic deity. Black & Green 1992"
+    source-tier: T2
+status: "metadata"
 refs:
   - title: "Gods, Demons and Symbols of Ancient Mesopotamia: An Illustrated Dictionary"
     author: "Black, Jeremy; Green, Anthony"
@@ -44,8 +48,4 @@ tags: [deity, akkadian, amorite, west-semitic, nomadic, steppe, martu, sentinel-
 
 Tutelary god of the West-Semitic Amorite (Amurru) population whose presence in Mesopotamia became politically dominant in the early second millennium BCE (the Old Babylonian period). The Sumerian sign **MAR.TU** = Akkadian *Amurrum* = West-Semitic *Amurru*; lexical lists make the equation explicit. The *Marriage of Martu* hymn (Old Babylonian) preserves the most explicit divine portrait: Martu is the rough-edged steppe-god who eats raw meat, dwells in tents, and wins the hand of the Sumerian goddess Adgar-kidug despite the Sumerian elders' disdain for his nomadic ways — a divine-marriage myth that simultaneously dramatizes ethnic anxiety about Amorite integration into Mesopotamian urban civilization.
 
-In some Old Babylonian sources Amurru is paired with [[belet-seri-akkadian]] (Lady of the Steppe), reflecting an alternate reading in which she is his consort (the steppe pair) rather than the netherworld scribe.
-
-## Sentinel note (stub-created 2026-05-21)
-
-Created during the deity-spine-sentinel pass (batch 10) to resolve the dead `[[amurru]]` wikilink in `belet-seri-akkadian.md`. Metadata-tier scaffolding only — expand on the next Mesopotamian or Amorite-focused absorption pass.
+In some Old Babylonian sources Amurru is paired with [[belet-seri-akkadian]] (Lady of the Steppe), reflecting an alternate reading in which she is his consort (the steppe pair) rather than the netherworld scribe. His more widely attested consort, **Ashratu/Ashratum**, is the Mesopotamian rendering of West-Semitic **[[asherah|Athirat/Asherah]]** — so the Amorite steppe-god's wife is the same great goddess later condemned in the Hebrew Bible, a clean thread linking the Mesopotamian periphery to the Canaanite-Israelite world.

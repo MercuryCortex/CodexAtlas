@@ -15,7 +15,7 @@ child-of: []
 consort: ["[[dyaus-pita]]", "[[vishnu]]" ]
 attributes: ["the broad flat earth", "cow (symbol of nourishment)", "lotus", "golden complexion", "holds a pot of grain"]
 attested-in: ["[[phase-2-001-rig-veda-family-books]]", "[[phase-2-003-atharva-veda]]"]
-equivalents: ["[[gaia]]", "[[pachamama]]", "[[papatuanuku]]", "[[asase-yaa]]", "[[ki-sumerian]]", "[[ninhursag-nintud]]"]
+equivalents: ["[[gaia]]", "[[pachamama]]", "[[papatuanuku]]", "[[asase-yaa]]", "[[ki-sumerian]]", "[[ninhursag]]"]
 syncretic-edges:
   - target: "gaia"
     type: "scholarly-parallel"
@@ -109,7 +109,7 @@ In later Puranic and Vaishnava tradition, Pṛthivī merges with **Bhūmi Devī*
 - **[[gaia]]** — *scholarly-parallel* (PIE cognate): Greek Gaia is the earth-mother; paired with Uranos (sky) who parallels Dyaus. The Greek Zeus (< PIE *Dyauṣ*) + Gaia pair is cognate at the name level (Watkins 1995; Macdonell 1897). This is not just structural parallel but linguistically demonstrable shared inheritance.
 - **[[ranginui]]** + **[[papatuanuku]]** — *scholarly-parallel*: Maori sky father (Ranginui) + earth mother (Papatuanuku) locked in embrace, separated by their children — the most structurally identical parallel to the Dyaus-Pṛthivī pair outside the Indo-European family. Independent convergence or very early Pacific transmission.
 - **[[ki-sumerian]]** — *scholarly-parallel*: Sumerian Ki (earth) paired with An (sky, An = Dyaus cognate?); sky-earth divine pair in Mesopotamia; independent of PIE but structurally identical.
-- **[[ninhursag-nintud]]** — *scholarly-parallel*: Sumerian earth/mother-goddess; the fertility-earth complex, parallel to Pṛthivī as life-sustainer.
+- **[[ninhursag]]** — *scholarly-parallel*: Sumerian earth/mother-goddess; the fertility-earth complex, parallel to Pṛthivī as life-sustainer.
 - **[[pachamama]]** — *scholarly-parallel*: Andean Pachamama is the earth-mother who receives offerings before plowing and construction — the closest functional parallel to the Bhūmi Pūjā tradition outside the Indo-European world. Independent convergence of the "ask the earth's permission before disturbing her" ritual logic.
 - **[[asase-yaa]]** — *scholarly-parallel*: Akan (West African) earth goddess; parallel earth-mother theology; independent.
 

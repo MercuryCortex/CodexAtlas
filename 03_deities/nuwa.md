@@ -13,13 +13,13 @@ role: "creator-goddess / cosmic repairer"
 consort: ["[[fuxi]]"]
 attributes: ["serpent-tail (paired with Fuxi's)", "compass (yuán-rule)", "five-colored stones (cosmic-repair)"]
 attested-in: ["Liezi", "Huainanzi (~-139)", "Han stone reliefs (Wu Liang Shrine, 151 CE)"]
-equivalents: ["[[tiamat]]", "[[gaia]]", "[[ninhursag-nintud]]"]
+equivalents: ["[[tiamat]]", "[[gaia]]", "[[ninhursag]]"]
 syncretic-edges:
   - target: "[[fuxi]]"
     type: "ancient-identification"
     source: "Han iconographic pairing — serpent-tailed brother-sister primordial pair"
     source-tier: T1
-  - target: "[[ninhursag-nintud]]"
+  - target: "[[ninhursag]]"
     type: "scholarly-parallel"
     source: "Mother-goddess fashions humans from clay/earth"
     source-tier: T1
@@ -49,7 +49,7 @@ The creator-goddess of Chinese mythology — fashioning humanity from yellow ear
 
 ## Cross-tradition identifications
 - **[[fuxi]]** — brother-consort.
-- **[[ninhursag-nintud]]** — *parallel-motif*: clay-anthropogony mother-goddess.
+- **[[ninhursag]]** — *parallel-motif*: clay-anthropogony mother-goddess.
 - **[[prometheus]]** — *parallel-motif*: clay-anthropogony culture-hero (Hesiod *Works and Days*; Apollodorus *Bibl.* 1.7.1).
 - **[[gaia]]** — *parallel-motif*: primordial earth-mother whose name is etymologically linked to *kuwā*/*kuă*.
 - **Cosmic-repair myth** — distinctive in Chinese mythography compared to most pantheons; the gods elsewhere create the cosmos once, Nüwa **maintains** it.

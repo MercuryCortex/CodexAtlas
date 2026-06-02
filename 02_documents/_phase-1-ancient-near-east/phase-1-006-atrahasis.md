@@ -21,7 +21,7 @@ themes: ["[[flood-motif]]", "[[primordial-waters]]", "[[divine-council]]", "[[cr
 parallels: ["[[phase-1-004-gilgamesh-old-babylonian]]", "[[phase-1-008-enuma-elish]]"]
 influenced-by: ["earlier Sumerian flood traditions (Eridu Genesis, Sumerian Flood Story / Ziusudra)"]
 influences: ["Standard Babylonian Gilgamesh Tablet XI (direct adaptation); (contested mechanism) Hebrew Bible flood narrative Genesis 6–9; broader ANE flood-motif diffusion"]
-deities-mentioned: ["[[enki-ea]]", "[[enlil]]", "[[an-sumerian]]", "[[ninhursag-nintud]]"]
+deities-mentioned: ["[[enki-ea]]", "[[enlil]]", "[[an-sumerian]]", "[[ninhursag]]"]
 events-context: ["Old Babylonian period; reign of Ammi-ṣaduqa of Babylon (the OB principal manuscript is dated to his eleventh regnal year, ~1635 BCE)"]
 status: "full"
 preservation: "Best preserved on three OB tablets (Tablet I: ~416 lines; Tablet II: ~380 lines; Tablet III: ~390 lines) acquired by the British Museum and Geneva from antiquities dealers, with provenance ultimately Sippar. The scribe Ku-Aya / Nūr-Aya signed colophons. Later SB recension fragments from Nineveh's Library of [[ashurbanipal]] supplement the OB. The Sumerian flood story (the so-called Eridu Genesis or Sumerian Flood Story) is a separate but related composition."

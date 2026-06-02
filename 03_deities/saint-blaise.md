@@ -24,7 +24,7 @@ syncretic-edges:
     source: "Tokarev 1957 *Religioznye verovaniya vostochnoslavyanskikh narodov*; Fedotov 1948 *The Russian Religious Mind*; Ivanov & Toporov 1974"
     source-tier: T1
     notes: "Eastern Slavic dvoeverie textbook case. Phonetic alignment Volos/Veles ↔ Vlas(iy)/Blasius + functional alignment 'god of cattle' / 'protector of cattle' made the transfer near-seamless after 988 Christianization. The 'destruction of *idoly Volosa*' in Rostov and Yaroslavl in 11th-c. Russian Lives of Saints marks the moment of overlay. Saint Blaise's 11 February (Old Style 3 February) feast in Eastern Orthodoxy + the cattle-blessing rituals associated with it preserve Veles's livestock-blessing role. The classic Slavic pagan-deity → Christian-saint identity transfer alongside Perun → Elijah"
-status: "stub"
+status: "metadata"
 refs:
   - title: "Religioznye verovaniya vostochnoslavyanskikh narodov XIX-nachala XX veka"
     author: "Tokarev, S.A."
@@ -62,5 +62,3 @@ The Christianization of Kievan Rus' (988 CE) transferred Veles's cattle-and-live
 | Iconography | (horned, serpent-form) | bishop + cattle (in Slavic folk art) |
 
 The phonetic near-identity Volos ↔ Vlas + the shared cattle-patron function made this the cleanest dvoeverie transfer in Eastern Slavic religion alongside Perun → Elijah. Tokarev 1957 is the canonical Russian-language treatment; Fedotov 1948 covers it in English. Old Russian hagiography records *idoly Volosa* (idols of Volos) being destroyed in Rostov and Yaroslavl in the 11th c. — the historical moment of the substitution.
-
-_Stubbed during the 2026-05-23 wiring-law sweep. Awaiting full treatment (esp. the Western European cult lineage and the Croatian Sveti Vlaho-of-Dubrovnik tradition)._

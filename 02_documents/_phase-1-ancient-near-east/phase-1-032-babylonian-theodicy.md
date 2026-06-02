@@ -20,7 +20,7 @@ themes: ["[[righteous-suffering-vindication]]", "[[wisdom-as-cosmic-order]]", "[
 parallels: ["[[phase-1-031-rigveda]]", "[[phase-2-005-hebrew-bible-j-source]]", "[[phase-2-019-deuteronomistic-history]]"]
 influenced-by: ["earlier Babylonian wisdom tradition; shared Mesopotamian lamentation genre"]
 influences: ["[[phase-2-010-hebrew-bible-early-prophets]] (Job; thematic parallel with righteous-sufferer debate structure); [[phase-2-026-han-feizi]] — parallel questioning of divine justice in other traditions; later Hellenistic philosophical theodicy tradition"]
-deities-mentioned: ["[[enlil]]", "[[marduk]]", "[[ninhursag-nintud]]"]
+deities-mentioned: ["[[enlil]]", "[[marduk]]", "[[ninhursag]]"]
 events-context: ["Post-Kassite Babylonia (~1100–900 BCE); period of political instability following the Bronze Age collapse"]
 status: "metadata"
 preservation: "Approximately 27 tablets and fragments, mostly from the library of Ashurbanipal at Nineveh (~7th century BCE), plus Old Babylonian school-tablet copies. The acrostic structure of the original (~27 stanzas of 11 lines each) is partially reconstructible from the extant cuneiform evidence."

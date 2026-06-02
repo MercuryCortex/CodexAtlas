@@ -42,7 +42,7 @@ syncretic-edges:
     source: "Tokarev 1957 *Religioznye verovaniya vostochnoslavyanskikh narodov*; Fedotov 1948 *The Russian Religious Mind*"
     source-tier: T1
     notes: "Eastern Slavic dvoeverie textbook case: Volos / Veles ↔ Vlas(iy) / Blasius — both 'god of cattle' / 'protector of cattle'; St Blaise's 11 February (Old Style 3 February) feast inherits Veles's livestock-blessing role. The classic Slavic pagan-deity → Christian-saint identity transfer alongside Perun → Elijah"
-  - target: "[[velinas-lithuanian]]"
+  - target: "[[velinas]]"
     type: "cognate"
     source: "Gimbutas 1963 *The Balts*; Greimas 1992 *Of Gods and Men*"
     source-tier: T1

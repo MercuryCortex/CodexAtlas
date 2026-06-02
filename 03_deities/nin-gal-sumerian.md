@@ -11,7 +11,7 @@ domains: ["reeds and marshland (her father Ningikuga is a reed god)", "consort-q
 gender: "feminine"
 role: "consort of Nanna/Sin the moon god; mother of Inanna and Utu"
 parent-of: ["[[inanna-sumerian]]", "[[utu-shamash]]", "ishkur"]
-child-of: ["[[ningikuga]]", "[[ninhursag-nintud]]"]
+child-of: ["[[ningikuga]]", "[[ninhursag]]"]
 consort: ["[[nanna-sin]]"]
 attributes: ["seated goddess in horned crown beside Nanna", "lunar disc by association"]
 attested-in: ["[[phase-1-001-kesh-temple-hymn]]", "[[phase-1-003-enheduanna-hymns]]"]
