@@ -538,7 +538,8 @@ def tradition_family(t: str) -> str:
     if _re.search(r'\binca\b', s) or "andean" in s or "quechua" in s or "aymara" in s or "moche" in s:
         return "Andean"
     # "inuit" word-boundary — "continuity" contains "inuit" as substring
-    if "lakota" in s or "iroquois" in s or "haudenosaunee" in s or "navajo" in s or "hopi" in s or "cherokee" in s or "algonqu" in s or "native american" in s or "first nations" in s or "anishin" in s or "pueblo" in s or "diné" in s or _re.search(r'\binuit\b', s) or "yupik" in s or "tlingit" in s or "haida" in s or "tsimshian" in s:
+    if ("lakota" in s or "iroquois" in s or "haudenosaunee" in s or "navajo" in s or "hopi" in s or "cherokee" in s or "algonqu" in s or "native american" in s or "first nations" in s or "anishin" in s or "pueblo" in s or "diné" in s or _re.search(r'\binuit\b', s) or "yupik" in s or "tlingit" in s or "haida" in s or "tsimshian" in s
+            or "pawnee" in s or "zuni" in s or "ojibwe" in s or _re.search(r'\bcree\b', s) or "blackfoot" in s or "apache" in s or "comanche" in s or "shoshone" in s or "cheyenne" in s or _re.search(r'\bsioux\b', s) or "dakota" in s or "abenaki" in s or "wabanaki" in s or "salish" in s or "chinook" in s or "kwakiutl" in s or "mi'kmaq" in s):
         return "Native-American"
     if ("polynesian" in s or "maori" in s or "māori" in s or "hawaiian" in s
             or "samoan" in s or "tongan" in s or "aboriginal" in s or "australian" in s
