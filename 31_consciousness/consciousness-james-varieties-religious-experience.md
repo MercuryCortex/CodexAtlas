@@ -12,7 +12,7 @@ founders: ["[[william-james]]"]
 domains: ["personal-religion-vs-institutional", "healthy-minded vs. sick-soul typology", "conversion", "mysticism (four marks)", "saintliness", "pragmatic-justification-of-religious-experience"]
 source-tier: "T1"
 political-risk-flag: false
-attested-in: ["[[william-james]]", "[[phenomenology-of-religion]]"]
+attested-in: ["[[william-james]]", "[[philosophy-phenomenology-of-religion]]"]
 syncretic-edges:
   - target: "[[william-james]]"
     type: "constituent-of"
