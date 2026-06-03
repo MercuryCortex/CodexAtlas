@@ -23,7 +23,7 @@ influenced-by: ["Bhagavata Purana (Phase 5) — especially Book X", "Jayadeva's 
 influences: ["ISKCON (founded 1966 by Bhaktivedanta Swami Prabhupada — direct institutional descendant)", "modern Bengali religious-cultural life", "Gaudiya Math movement (Bhaktisiddhanta Sarasvati, 20th c.)"]
 deities-mentioned: ["[[krishna]]", "[[radha]]", "[[chaitanya-mahaprabhu]] as Krishna-Radha combined avatar"]
 events-context: ["Chaitanya's life 1486–1534; his sannyasa 1510; his Vrindavan and Puri years; the Six Goswamis' theological systematization at Vrindavan ~1510–1560"]
-status: "partial"
+status: "full"
 preservation: "*Shikshashtakam* — eight short Sanskrit verses, transmitted as Chaitanya's only written composition; the Krishnadasa *Charitamrita* embeds them as part of the narrative. *Chaitanya Charitamrita* — composed c. 1612–1615 at Vrindavan; the most authoritative of the Bengali Chaitanya hagiographies (which include the earlier *Chaitanya Bhagavata* of Vrindavana Dasa Thakura, c. 1545, and Locana Dasa's *Chaitanya Mangala*). Continuous transmission in Bengali and Sanskrit; multiple critical editions and translations including the substantial Bhaktivedanta Book Trust edition (17 vols.)."
 refs:
   - title: "Caitanya Caritāmṛta of Kṛṣṇadāsa Kavirāja: A Translation and Commentary"

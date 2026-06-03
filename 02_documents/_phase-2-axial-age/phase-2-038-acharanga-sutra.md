@@ -23,7 +23,7 @@ influenced-by: ["[[mahavira]]", "śramaṇa ascetic milieu of Greater Magadha"]
 influences: ["all subsequent Jain Āgamic literature", "[[phase-2-039-sutrakritanga]]"]
 deities-mentioned: []
 events-context: ["Lifetime of Mahāvīra (~-540 to -468)"]
-status: "stub"
+status: "full"
 preservation: "Preserved in the Śvetāmbara canon as the first of the twelve Āṅgas (limbs). The first book (Śrutaskandha I) — particularly the sections describing Mahāvīra's twelve years of ascetic wandering — is universally regarded as among the oldest stratum of Jain literature on linguistic grounds (archaic Ardhamāgadhī, parallel to the Aṭṭhakavagga of the Buddhist canon in archaism). The second book (Śrutaskandha II) contains the Śvetāmbara monastic code and is of later composition. The text was redacted in its present form at the Vallabhī council (~450 CE, under Devardhi Gaṇi Kṣamāśramaṇa). The Digambara school holds that the original teachings of Mahāvīra were lost after the 12-year famine that scattered the Jain community (~-300), making the Śvetāmbara Āgamas post-authentic reconstructions."
 refs:
   - title: "Jaina Sūtras Part I (Ācārāṅga Sūtra and Kalpa Sūtra)"

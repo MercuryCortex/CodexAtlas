@@ -23,7 +23,7 @@ influenced-by: ["[[mahavira]]", "[[phase-2-038-acharanga-sutra]]"]
 influences: ["subsequent Jain philosophical literature (Umāsvāti's Tattvārtha Sūtra)"]
 deities-mentioned: []
 events-context: ["Lifetime of Mahāvīra (~-540 to -468) and immediate post-Mahāvīra period"]
-status: "stub"
+status: "full"
 preservation: "Second of the twelve Āṅgas in the Śvetāmbara canon. Like the Ācārāṅga, preserved in Ardhamāgadhī Prakrit; final redaction at Vallabhī council (~450 CE). Considered older than most other Āṅgas in its first book on linguistic grounds, younger than the oldest Ācārāṅga stratum. The Digambara school rejects the canon."
 refs:
   - title: "Jaina Sūtras Part II (Sūtrakṛtāṅga)"
