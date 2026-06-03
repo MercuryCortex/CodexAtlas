@@ -1,0 +1,79 @@
+{
+ "generatedAt": "2026-06-03",
+ "totalDocuments": 518,
+ "productGrade": false,
+ "passCount": 0,
+ "rowCount": 7,
+ "dupClusters": {
+  "mahabharata": [
+   "phase-3-095-mahabharata",
+   "mahabharata"
+  ],
+  "shijing": [
+   "phase-1-024-shijing",
+   "phase-2-032-shijing-book-of-songs"
+  ],
+  "shujing": [
+   "phase-1-025-shujing",
+   "phase-2-033-shujing-book-of-documents"
+  ]
+ },
+ "rows": [
+  {
+   "key": "connected",
+   "label": "Graph-connected (no orphans)",
+   "target": "0 disconnected",
+   "current": "65",
+   "ok": false,
+   "detail": "every doc has \u22651 wikilink wire in or out"
+  },
+  {
+   "key": "tradition",
+   "label": "Has home tradition (wedge)",
+   "target": "100%",
+   "current": "430/518",
+   "ok": false,
+   "detail": "the scripture-exception singular origin"
+  },
+  {
+   "key": "dates",
+   "label": "Has dates",
+   "target": "100%",
+   "current": "485/518",
+   "ok": false,
+   "detail": ""
+  },
+  {
+   "key": "sourced",
+   "label": "Sourced (refs)",
+   "target": "0 unsourced",
+   "current": "72",
+   "ok": false,
+   "detail": ""
+  },
+  {
+   "key": "depth",
+   "label": "At least metadata depth",
+   "target": "0 stubs/partials",
+   "current": "110",
+   "ok": false,
+   "detail": "stub + partial + untyped"
+  },
+  {
+   "key": "thin",
+   "label": "No thin bodies (<400 chars)",
+   "target": "0",
+   "current": "67",
+   "ok": false,
+   "detail": ""
+  },
+  {
+   "key": "dupes",
+   "label": "No duplicate-title clusters",
+   "target": "0",
+   "current": "3",
+   "ok": false,
+   "detail": "auto-detected; resolve via dedup playbook (repoint \u2192 delete)"
+  }
+ ]
+}
