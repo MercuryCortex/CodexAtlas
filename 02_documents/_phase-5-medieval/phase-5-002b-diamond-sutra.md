@@ -23,7 +23,7 @@ influenced-by: ["[[phase-3-031-asthasahasrika-prajnaparamita]] (the Diamond Sutr
 influences: ["[[tradition-zen]] (Huineng's awakening narrative in the [[phase-5-004-platform-sutra-huineng|Platform Sutra]] occurs while hearing the Diamond Sutra recited)", "all East Asian Buddhist liturgy and koan-tradition", "modern global reception (Red Pine 2001; Thich Nhat Hanh)"]
 deities-mentioned: []
 events-context: []
-status: "metadata"
+status: "full"
 preservation: "Continuous transmission via Sanskrit (Nepal + Gilgit MS), Chinese (six classical translations from Kumārajīva 401 CE onward, with Kumārajīva's version becoming the standard East Asian text), and Tibetan. **The Diamond Sutra is the world's earliest dated printed book** — the **Dunhuang Diamond Sutra of 868 CE** (printed in the 9th year of the Xiantong era, 11 May 868, by Wang Jie 'on behalf of his two parents'; recovered by Aurel Stein from the Dunhuang Library Cave in 1907; now in the British Library, Or.8210/P.2) is the earliest extant complete printed book in any language and predates the Gutenberg Bible by ~600 years. Earliest Sanskrit witnesses: the Bajaur Collection Gāndhārī Kharosthi fragments (~1st-2nd c. CE; some scholars dispute their identification as Diamond Sutra) and the Gilgit Sanskrit MS (~6th c. CE)."
 refs:
   - title: "The Diamond Sutra: The Perfection of Wisdom"

@@ -20,7 +20,7 @@ function: "buddhist-cave-temple-and-pilgrimage-complex-of-the-silk-road"
 key-figures: ["[[le-zun]] (Buddhist monk; traditional founder, excavated the first cave 366 CE per the *Lidai Fabao Ji*)", "[[wang-yuanlu]] (Daoist priest-caretaker; discovered the Library Cave 1900)", "[[aurel-stein]] (Hungarian-British archaeologist; removed thousands of Library Cave manuscripts to London 1907)", "[[paul-pelliot]] (French sinologist; removed further Library Cave manuscripts to Paris 1908)", "[[chang-shuhong]] (Chinese painter; principal mid-20th-c. conservator; founded Dunhuang Academy 1944)", "[[fan-jinshi]] (Director of Dunhuang Academy 1998–2014; principal modern conservator)"]
 themes: ["[[silk-road-as-religious-transmission-corridor]]", "[[theme-relic-veneration-as-architectural-programme]]", "[[theme-cave-as-cosmic-interior]]", "[[axis-mundi]]"]
 events-related: ["[[event-mogao-cave-founding-366]]", "[[event-library-cave-sealing-c-1002]]", "[[event-library-cave-discovery-1900]]"]
-documents-related: ["[[dunhuang-manuscripts]] (the ~50,000-document Library Cave corpus — Buddhist, Daoist, Manichaean, Nestorian-Christian, and secular texts in Chinese, Tibetan, Sanskrit, Sogdian, Khotanese, Uighur, Hebrew)", "[[diamond-sutra-868]] (the world's earliest dated printed book; recovered from the Library Cave; Stein 1907)", "[[lidai-fabao-ji]] (Buddhist genealogical history mentioning Le Zun's founding)"]
+documents-related: ["[[dunhuang-manuscripts]] (the ~50,000-document Library Cave corpus — Buddhist, Daoist, Manichaean, Nestorian-Christian, and secular texts in Chinese, Tibetan, Sanskrit, Sogdian, Khotanese, Uighur, Hebrew)", "[[phase-5-002b-diamond-sutra]] (the world's earliest dated printed book; recovered from the Library Cave; Stein 1907)", "[[lidai-fabao-ji]] (Buddhist genealogical history mentioning Le Zun's founding)"]
 cross-tradition-edges:
   - target: "longmen-grottoes"
     type: "successor-cave-temple-complex"
@@ -153,7 +153,7 @@ The form descends from the **Indian rock-cut Buddhist vihara** ([[ajanta-caves|A
 
 In 1900 Wang Yuanlu, clearing sand from the antechamber of Cave 16, broke through a plastered wall and discovered a chamber ~3 m square, packed floor-to-ceiling with **~50,000 documents** dating from roughly the **5th to early 11th centuries**. Languages: Chinese (the great majority), Tibetan, Sanskrit, Sogdian, Khotanese, Uighur, Hebrew. Genres: Buddhist sutras and commentaries (the bulk), Daoist scriptures, Manichaean texts, Nestorian-Christian texts (including the **Jesus Sutras**), Confucian classics, contracts, household-account documents, medical and divinatory texts, popular literature, music scores. The corpus includes:
 
-- The **[[diamond-sutra-868|*Diamond Sutra* of 868 CE]]** — the **world's earliest dated printed book**; complete xylograph; now British Library Or.8210/P.2.
+- The **[[phase-5-002b-diamond-sutra|*Diamond Sutra* of 868 CE]]** — the **world's earliest dated printed book**; complete xylograph; now British Library Or.8210/P.2.
 - The earliest known printed calendar (877 CE).
 - The **Jesus Sutras** — Nestorian-Christian texts in Chinese (T'ang-era *Jingjiao*).
 - Manichaean fragments in Chinese, including the *Compendium of the Doctrines and Styles of the Teaching of Mani the Buddha of Light*.
@@ -194,6 +194,6 @@ Mogao is the **Chinese pivot** of this chain. Its iconographic programme — Pur
 - [[ajanta-caves]], [[bamiyan-buddhas]] — Silk-Road predecessors
 - [[bulguksa-temple-and-seokguram-grotto]], [[horyuji-temple]], [[todaiji-daibutsuden]] — downstream East Asian recipients of the Buddhist iconographic programme
 - [[borobudur-stupa-mandala]] — contemporaneous monumental Mahayana programme in Java
-- [[diamond-sutra-868]], [[dunhuang-manuscripts]] — the Library Cave corpus
+- [[phase-5-002b-diamond-sutra]], [[dunhuang-manuscripts]] — the Library Cave corpus
 - [[silk-road-as-religious-transmission-corridor]] — the motif anchor
 - [[wang-yuanlu]], [[aurel-stein]], [[paul-pelliot]] — discovery + dispersal

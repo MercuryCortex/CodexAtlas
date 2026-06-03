@@ -137,7 +137,7 @@ The two stone pagodas in the front courtyard — **Seokgatap** (Pagoda of Shakya
 
 The pairing of restrained-Shakyamuni and ornate-Many-Treasures pagoda mirrors the iconographic programme of the *[[phase-4-101-lotus-sutra|Lotus Sutra]]*'s Chapter 11, in which the Buddha of Many Treasures (Prabhutaratna) appears in his jewelled stupa beside Shakyamuni.
 
-In 1966, repair work on Seokgatap recovered an extraordinary cache of dedication-objects, including the **Pure Light Dharani Sutra** — a Buddhist printed scroll dated ~706–751 CE that is one of the **oldest surviving printed documents in the world**, possibly predating the [[diamond-sutra-868|Dunhuang Diamond Sutra]] (868 CE) by ~150 years.
+In 1966, repair work on Seokgatap recovered an extraordinary cache of dedication-objects, including the **Pure Light Dharani Sutra** — a Buddhist printed scroll dated ~706–751 CE that is one of the **oldest surviving printed documents in the world**, possibly predating the [[phase-5-002b-diamond-sutra|Dunhuang Diamond Sutra]] (868 CE) by ~150 years.
 
 ## Seokguram — the grotto Buddha
 
@@ -156,7 +156,7 @@ The Buddha's position is **carefully oriented**: it faces **east-south-east**, l
 
 ## The Pure Light Dharani Sutra — earliest printed text
 
-The 1966 discovery in Seokgatap of the **Pure Light Dharani Sutra (*Mugu jeonggwang dae darani-gyŏng*)** — a Buddhist xylograph printed scroll dated by its dedication-context to ~706–751 CE — is one of the most consequential single discoveries in the history of printing. If the early date is correct, it predates the **[[diamond-sutra-868|Diamond Sutra]] of Dunhuang (868 CE)** as the oldest surviving printed document by ~150 years. The Korean claim is internationally contested (with Chinese scholars favouring Tang priority), but the Pure Light Dharani Sutra is **at minimum among the very oldest surviving printed documents** and demonstrates the existence of woodblock printing technology in 8th-c. Silla Korea.
+The 1966 discovery in Seokgatap of the **Pure Light Dharani Sutra (*Mugu jeonggwang dae darani-gyŏng*)** — a Buddhist xylograph printed scroll dated by its dedication-context to ~706–751 CE — is one of the most consequential single discoveries in the history of printing. If the early date is correct, it predates the **[[phase-5-002b-diamond-sutra|Diamond Sutra]] of Dunhuang (868 CE)** as the oldest surviving printed document by ~150 years. The Korean claim is internationally contested (with Chinese scholars favouring Tang priority), but the Pure Light Dharani Sutra is **at minimum among the very oldest surviving printed documents** and demonstrates the existence of woodblock printing technology in 8th-c. Silla Korea.
 
 ## MASSIVE WIN — the East Asian Buddhist transmission chain at its 8th-c. peak
 
@@ -194,7 +194,7 @@ Whether or not the narrative is historically accurate, it is the principal class
 - [[horyuji-temple]] — older Asuka-period Japanese precedent (different transmission wave)
 - [[kim-daeseong]] — the commissioning prime minister
 - [[wonhyo]], [[uisang]] — foundational figures of Korean Hwaom Buddhism
-- [[diamond-sutra-868]] — the Mogao printed-sutra contender (Pure Light Dharani Sutra is the Seokgatap rival claimant for oldest extant print)
+- [[phase-5-002b-diamond-sutra]] — the Mogao printed-sutra contender (Pure Light Dharani Sutra is the Seokgatap rival claimant for oldest extant print)
 - [[samguk-yusa]] — principal classical source
 - [[tradition-hwaom-buddhism]], [[tradition-silla-buddhism]] — parent doctrinal traditions
 - [[phase-4-102-avatamsaka-sutra|Avatamsaka Sutra]] — the principal doctrinal source
