@@ -11,7 +11,11 @@ Emits src/data/document-product-grade.json for the DEV Overview panel.
 """
 import os, re, glob, collections, json, datetime, statistics
 
-FILES = [f for f in glob.glob("02_documents/**/*.md", recursive=True) if not f.endswith("README.md")]
+# Count only real document nodes. Exclude README.md and the auto-generated
+# `_TODO.md` worklist scaffolds (no `type: document` frontmatter) — counting
+# the latter inflated every scorecard row by 8 phantom "documents".
+FILES = [f for f in glob.glob("02_documents/**/*.md", recursive=True)
+         if not os.path.basename(f).startswith("_") and not f.endswith("README.md")]
 N = len(FILES)
 
 def field(text, name):
