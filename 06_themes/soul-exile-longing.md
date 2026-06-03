@@ -6,7 +6,7 @@ aka: ["shawq", "ghurba", "epistrophē", "viraha", "dukkha", "nay-nameh longing",
 category: "anthropological"
 appearances:
   - "[[phase-5-025-rumi-masnavi]]"
-  - "[[phase-5-054-rumi-masnavi]]"
+  - "[[phase-5-025-rumi-masnavi|Masnavi]]"
   - "[[phase-4-019-plotinus-enneads]]"
   - "[[phase-4-002-apocryphon-of-john]]"
   - "[[phase-4-003-gospel-of-truth]]"
@@ -105,7 +105,7 @@ This theme crosses six major traditions without demonstrated contact in most cas
 
 ### 1. Rumi's Nay-nāmeh (Persian Sufism, ~1258 CE)
 
-[[phase-5-054-rumi-masnavi]] opens its first eighteen couplets — the *Nay-nāmeh* — with the cry of the reed flute (*nay*) cut from the reed bed:
+[[phase-5-025-rumi-masnavi|Masnavi]] opens its first eighteen couplets — the *Nay-nāmeh* — with the cry of the reed flute (*nay*) cut from the reed bed:
 
 > "Listen to the reed, how it tells a tale of separations. / Ever since I was cut from the reed bed, man and woman have lamented my complaint."
 

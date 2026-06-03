@@ -86,7 +86,7 @@ Phase 11 wired the textual primary sources:
 - **[[phase-4-060-letter-to-flora]]** — Ptolemaeus the Valentinian; gnosis as the recognition of alien origin
 - **[[phase-5-018-suhrawardi-hikmat-al-ishraq]]** — Suhrawardī's *Wisdom of Illumination*; the Ishrāqī cosmological scaffolding
 - **[[phase-5-021-ibn-arabi-fusus-al-hikam]]** — Ibn Arabi's *Bezels of Wisdom*; the *waḥdat al-wujūd* resolution
-- **[[phase-5-025-rumi-masnavi]]** + **[[phase-5-054-rumi-masnavi]]** — the *Masnavi*; the *Nay-nāmeh* opening
+- **[[phase-5-025-rumi-masnavi]]** + **[[phase-5-025-rumi-masnavi|Masnavi]]** — the *Masnavi*; the *Nay-nāmeh* opening
 - **[[phase-5-005-shankara-brahma-sutra-bhasya]]** — Śaṅkara's commentary on the Brahma Sūtras
 - **[[phase-5-034-vivekachudamani]]** — the *Vivekacūḍāmaṇi* attributed to Śaṅkara
 - **[[phase-2-016-early-buddhist-suttas]]** — the early Buddhist texts; the *dukkha* phenomenology + *anātman* doctrine

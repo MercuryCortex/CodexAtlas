@@ -64,6 +64,6 @@ The Song of Songs generated the most sustained allegorical commentary tradition 
 - → [[bridal-mysticism]]: *source-text*; the Song of Songs is the primary scriptural source for the bridal mysticism tradition in Jewish, Christian, and (indirectly) Sufi contexts
 - → [[bernard-of-clairvaux]]: *inspired*; Bernard's 86 *Sermons on the Song of Songs* (1135–1153 CE) are the high-water mark of Christian bridal mysticism
 - → [[rumi]]: *parallel-motif*; Rumi's love poetry uses the same allegorical grammar (human beloved = divine Beloved; erotic longing = mystical union) independently of but structurally parallel to the Song of Songs tradition
-- → [[phase-5-054-rumi-masnavi]]: *parallel-motif*; the Masnavi's love-mysticism parallels the Song of Songs allegorization tradition
+- → [[phase-5-025-rumi-masnavi|Masnavi]]: *parallel-motif*; the Masnavi's love-mysticism parallels the Song of Songs allegorization tradition
 - → [[phase-2-036-ecclesiastes]]: *shared-milieu*; both texts are late Hebrew Bible compositions with Persian-period loanwords (*pardes*)
 - → [[phase-2-035-job]]: *shared-milieu*; Hebrew Bible wisdom literature cluster
