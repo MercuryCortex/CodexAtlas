@@ -24,7 +24,7 @@ influences: ["the whole of later Hindu religion, ethics, and narrative (the supr
 deities-mentioned: ["[[krishna]]", "[[vishnu]]", "[[shiva]]"]
 events-context: ["The post-Vedic crystallization of dharma-śāstra and the classical Hindu synthesis", "The Gupta-era redaction of the epic into its received form", "The rise of Kṛṣṇa-Vāsudeva devotion and the avatar theology"]
 status: "full"
-preservation: "The textus receptus is the great critical edition of the Bhandarkar Oriental Research Institute (Pune, 1933–1966), constructed from hundreds of manuscripts in many scripts; the earliest substantial manuscripts are mid-first-millennium CE. With ~100,000 verses (ślokas) it is the longest poem in world literature — roughly seven times the Iliad and Odyssey combined."
+preservation: "The standard scholarly text is the great critical edition of the Bhandarkar Oriental Research Institute (Pune, 1933–1966), constructed from hundreds of manuscripts in many scripts (the critically-constituted text runs to ~89,000 verses; the traditional/vulgate figure is ~100,000); the earliest substantial manuscripts are mid-first-millennium CE. It is among the longest poems in world literature — at the traditional count roughly seven times the Iliad and Odyssey combined."
 refs:
   - title: "The Mahābhārata (translation, 3 vols. of a projected complete edition)"
     author: "van Buitenen, J.A.B."
@@ -51,7 +51,7 @@ tags: [document, scripture, hindu, itihasa, mahabharata, epic, dharma, kurukshet
 
 # Mahābhārata
 
-The **Mahābhārata** ("the Great [war of the] Bhārata[s]") is the longest poem in world literature — some **100,000 verses**, roughly seven times the combined length of the Iliad and the Odyssey — and, with the Rāmāyaṇa, one of the two great Sanskrit epics (*itihāsa*) at the foundation of Hindu civilization. Traditionally ascribed to the sage **Vyāsa** (who is also a character and progenitor within the story), it is in fact a vast, layered work of the oral **bardic (sūta) tradition**, grown from an older heroic core (the *Jaya*, "Victory") into its received form across roughly **400 BCE – 400 CE**.
+The **Mahābhārata** ("the Great [war of the] Bhārata[s]") is among the longest poems in world literature — some **100,000 verses** in the traditional count (~89,000 in the critical edition), roughly seven times the combined length of the Iliad and the Odyssey — and, with the Rāmāyaṇa, one of the two great Sanskrit epics (*itihāsa*) at the foundation of Hindu civilization. Traditionally ascribed to the sage **Vyāsa** (who is also a character and progenitor within the story), it is in fact a vast, layered work of the oral **bardic (sūta) tradition**, grown from an older heroic core (the *Jaya*, "Victory") into its received form across roughly **400 BCE – 400 CE**.
 
 ## The story
 
