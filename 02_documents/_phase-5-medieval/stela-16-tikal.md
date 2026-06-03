@@ -33,10 +33,10 @@ refs:
     url: ""
     type: "monograph"
     tier: 1
-  - title: "Tikal: An Illustrated History of the Ancient Maya Capital"
+  - title: "The Lords of Tikal: Rulers of an Ancient Maya City"
     author: "Harrison, Peter D."
     year: 1999
-    publisher: "Thames & Hudson"
+    publisher: "Thames & Hudson (New Aspects of Antiquity)"
     type: "monograph"
     tier: 1
   - title: "The Monuments and Inscriptions of Tikal: The Carved Monuments (Tikal Report No. 33, Part A)"
@@ -75,5 +75,5 @@ A carved **stela** at Tikal, paired with the famous Altar 5, erected by King **J
 
 ## Refs
 1. Martin, S. & Grube, N. (2008). *Chronicle of the Maya Kings and Queens* (2nd ed.). Thames & Hudson.
-2. Harrison, P.D. (1999). *Tikal*. Thames & Hudson.
+2. Harrison, P.D. (1999). *The Lords of Tikal: Rulers of an Ancient Maya City*. Thames & Hudson.
 3. Jones, C. & Satterthwaite, L. (1982). *The Monuments and Inscriptions of Tikal* (Tikal Report 33). Penn Museum.

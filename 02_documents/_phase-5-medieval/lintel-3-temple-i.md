@@ -40,10 +40,10 @@ refs:
     publisher: "Scribner"
     type: "monograph"
     tier: 1
-  - title: "Tikal: An Illustrated History of the Ancient Maya Capital"
+  - title: "The Lords of Tikal: Rulers of an Ancient Maya City"
     author: "Harrison, Peter D."
     year: 1999
-    publisher: "Thames & Hudson"
+    publisher: "Thames & Hudson (New Aspects of Antiquity)"
     type: "monograph"
     tier: 1
 tags: [maya, tikal, hieroglyphic, lintel, temple-i, jasaw-chan-kawiil, calakmul, classic-maya]
@@ -76,4 +76,4 @@ A carved wooden **lintel** from a doorway of **Temple I at Tikal**, the towering
 ## Refs
 1. Martin, S. & Grube, N. (2008). *Chronicle of the Maya Kings and Queens* (2nd ed.). Thames & Hudson.
 2. Schele, L. & Mathews, P. (1998). *The Code of Kings*. Scribner.
-3. Harrison, P.D. (1999). *Tikal*. Thames & Hudson.
+3. Harrison, P.D. (1999). *The Lords of Tikal: Rulers of an Ancient Maya City*. Thames & Hudson.
