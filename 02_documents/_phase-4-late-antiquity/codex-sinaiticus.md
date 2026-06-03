@@ -15,7 +15,7 @@ language: ["Koine Greek"]
 script: "Greek majuscule (biblical uncial), four columns per page"
 region: "Eastern Roman Empire"
 city-of-origin: "uncertain — Caesarea, Alexandria, or Rome have all been proposed"
-authorship: "anonymous; the work of several scribes (Skeat & Milne identified the hands and correctors), produced in a major 4th-century Christian scriptorium"
+authorship: "anonymous; the work of several scribes (Milne & Skeat identified the hands and correctors), produced in a major 4th-century Christian scriptorium"
 key-figures: []
 themes: []
 parallels: ["[[codex-vaticanus]]", "[[phase-3-006-septuagint]]", "[[phase-4-108-peshitta]]", "[[phase-4-037-diatessaron]]"]

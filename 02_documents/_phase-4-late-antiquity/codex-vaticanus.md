@@ -22,9 +22,9 @@ parallels: ["[[codex-sinaiticus]]", "[[phase-3-006-septuagint]]", "[[phase-4-108
 influenced-by: ["[[phase-3-006-septuagint]] (the Greek Old Testament it transmits)", "the developing Christian scriptural canon ([[phase-4-095-new-testament-canon]])"]
 influences: ["modern New Testament textual criticism (the premier witness to the Alexandrian text-type)", "the Westcott–Hort critical edition of 1881 (which gave Vaticanus decisive weight)", "all subsequent critical editions of the Greek New Testament", "[[phase-4-095-new-testament-canon]]"]
 deities-mentioned: []
-events-context: ["the Constantinian church and the production of deluxe Christian Bibles in the 4th century", "the codex's documented presence in the Vatican Library by the 1475 catalogue"]
+events-context: ["the Constantinian church and the production of deluxe Christian Bibles in the 4th century", "the codex's documented presence in the Vatican Library by the late-15th-century catalogues"]
 status: "full"
-preservation: "Held in the Vatican Library (shelfmark *Vat. gr. 1209*), where it is attested by the 1475 catalogue. It contains most of the Greek Old Testament (Septuagint) and the New Testament, but the manuscript is now defective at the end: the New Testament breaks off at **Hebrews 9:14**, so it lacks the rest of Hebrews, the Pastoral Epistles (1–2 Timothy, Titus), Philemon, and Revelation. Written on fine vellum in three columns per page in an especially careful hand; designated **B** (or 03). It is widely judged one of the most reliable witnesses to the New Testament text."
+preservation: "Held in the Vatican Library (shelfmark *Vat. gr. 1209*), where it is attested in the late-15th-century catalogues (probably already the 1475 catalogue, and certainly by 1481). It contains most of the Greek Old Testament (Septuagint) and the New Testament, but the manuscript is now defective at the end: the New Testament breaks off at **Hebrews 9:14**, so it lacks the rest of Hebrews, the Pastoral Epistles (1–2 Timothy, Titus), Philemon, and Revelation. Written on fine vellum in three columns per page in an especially careful hand; designated **B** (or 03). It is widely judged one of the most reliable witnesses to the New Testament text."
 refs:
   - title: "The New Testament in the Original Greek"
     author: "Westcott, B.F. & Hort, F.J.A."
@@ -66,7 +66,7 @@ With [[codex-sinaiticus]], one of the two greatest **4th-century Greek uncial co
 - **Political milieu.** The 4th-century imperial church, in which large parchment Bibles became feasible artefacts of an established religion.
 - **Religious milieu.** A church consolidating its scriptures; Vaticanus's text is notably "clean," reflecting a careful exemplar.
 - **Who was behind it.** Anonymous professional scribes in a major scriptorium; the place of production (Alexandria, Caesarea, or Rome) is debated.
-- **Discovery / transmission.** Unlike Sinaiticus, Vaticanus was never lost — it sat in the Vatican Library, catalogued by 1475, but the church restricted access, and a full reliable collation only came in the 19th century, feeding the critical work of Tischendorf, Tregelles, and above all Westcott and Hort.
+- **Discovery / transmission.** Unlike Sinaiticus, Vaticanus was never lost — it sat in the Vatican Library, catalogued there by the late 15th century, but the church restricted access, and a full reliable collation only came in the 19th century, feeding the critical work of Tischendorf, Tregelles, and above all Westcott and Hort.
 
 ## Connections (provisional)
 - → [[codex-sinaiticus]] — *sibling-witness*: the paired pillars of the Alexandrian New Testament text; their agreements and disagreements are central to textual criticism.
