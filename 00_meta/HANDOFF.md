@@ -1,6 +1,19 @@
-# Session HANDOFF — 2026-05-30 (Codex flow live + Timeline rigor + DATE AUDIT queued)
+# Session HANDOFF — 2026-06-03 (Literature sweep + CITATION-INTEGRITY discovery)
 
-> **🟢 START HERE: `HANDOFF-2026-05-30-codex-flow-and-timeline-rigor.md`**
+> **🟢🟢 START HERE: `HANDOFF-2026-06-03-literature-sweep-and-citation-audit.md`**
+> — the current live state. Deities 9/9 DONE. Literature driven hard this
+> session (stubs 80→32, full 117→180, dupes green; the astrology spine
+> populated). **NEW critical finding:** ~5–7% of older prior-agent node
+> references are fabricated/conflated (real-scholar-wrong-title) — 45 nodes
+> audited + ~16 fixed; **PRIORITY 1 = finish the citation sweep on the ~71
+> remaining older `full` docs before declaring literature 7/7** (the scorecard
+> checks ref *presence*, not *validity*). PRIORITY 2 = the last ~32 stubs.
+> Everything committed (38 commits), gates green, site live on :8742, tree clean.
+> Full roadmap (D1–D5 forks) + proven playbook + worklist in that doc.
+
+---
+
+> **(older) `HANDOFF-2026-05-30-codex-flow-and-timeline-rigor.md`**
 > for the live state. Codex → Egyptian → 5 epoch hulls + book wedges +
 > entity grid + READ → annotated cross-tradition reader all work
 > end-to-end on `http://localhost:8742/?view=scripture`. Timeline LIN
