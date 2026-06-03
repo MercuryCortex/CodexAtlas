@@ -22,7 +22,7 @@ influenced-by: ["[[phase-4-063-ignatius-letters]] (Pol. Phil. 13 acknowledges th
 influences: ["[[phase-4-067-martyrdom-of-polycarp]] (the same community, ~+155)", "[[phase-4-023-irenaeus-against-heresies]] (Irenaeus's bishop-chain back to Polycarp; AH 3.3.4)", "the formation of a *New Testament collection* (Polycarp's quotations indicate a wide canonical-collection at Smyrna by ~+130)"]
 deities-mentioned: ["[[yahweh|the Father]]", "[[jesus-christ-deity]]"]
 events-context: ["The martyrdom of [[ignatius-of-antioch|Ignatius]] (~+108) and Polycarp's reception/forwarding of the Ignatian letter-collection"]
-status: "partial"
+status: "full"
 preservation: "Eight Greek manuscripts survive — all derive from a single archetype that is **mutilated** at Pol. *Phil.* 9.2 (where it abruptly merges into the epistle of Barnabas in mid-sentence). The complete Greek text of chs. 1–9 plus the *Latin version* preserving the rest (chs. 10–14) is the standard reconstruction. The Latin version is independently witnessed."
 refs:
   - title: "The Apostolic Fathers, vol. 1 (Loeb)"

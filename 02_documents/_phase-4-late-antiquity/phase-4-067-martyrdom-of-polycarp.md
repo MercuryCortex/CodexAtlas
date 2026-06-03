@@ -23,7 +23,7 @@ influenced-by: ["[[phase-4-063-ignatius-letters]] (Ignatian theology of martyrdo
 influences: ["[[phase-4-036-passio-perpetuae]] (~+203 — *the* next-developed martyrology)", "all subsequent Christian hagiography (Martyrdom of Polycarp is the **founding text of Christian martyrology as a literary genre**)", "Christian liturgical commemoration of martyr-death-days (the *natalis* — 'birthday into eternal life'; Mart. Pol. 18.3 introduces the practice)", "[[phase-4-041-athanasius-life-of-antony]] (hagiographical genre lineage)", "Eusebius (HE 4.15 reproduces the text)", "[[husayn-ibn-ali]] / [[event-karbala-680]] — structural martyrology parallel in Shi'a Islam; *shahīd* concept inherits the Greek *martyros* framework", "[[tradition-shia-islam]] — Karbala paradigm shares natalis-anniversary / willing-acceptance / intercessory-martyr theology", "[[phase-4-066-polycarp-philippians]] — biographical and theological companion document from the same community"]
 deities-mentioned: ["[[yahweh|the Father]]", "[[jesus-christ-deity]]"]
 events-context: ["The martyrdom of Polycarp at Smyrna under proconsul Statius Quadratus (~+155 traditional; ~+167 alternative dating)"]
-status: "partial"
+status: "full"
 preservation: "Multiple Greek manuscripts (the Mosquensis family; the Hierosolymitanus family), plus Eusebius's verbatim reproduction at *HE* 4.15, plus a Latin version and other ancient versions. Some debate over post-event redactional additions (esp. the closing chapters' transmission-chain notice, plausibly 4th-c.)."
 refs:
   - title: "The Apostolic Fathers, vol. 1 (Loeb)"
