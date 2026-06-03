@@ -19,13 +19,13 @@ function: "principal-shinto-shrine-of-okuninushi-and-the-terrestrial-pantheon"
 key-figures: ["[[okuninushi]] (Ōkuninushi-no-Mikoto; the principal deity; the great earth-deity and ancestor of the terrestrial pantheon; central figure of the *Kojiki*'s 'Izumo cycle' and the *kuni-yuzuri* yielding-of-the-land narrative)", "[[kotoshironushi]] (son of Ōkuninushi; the deity who consents to the *kuni-yuzuri*)", "[[takeminakata]] (son of Ōkuninushi; the deity who resists the *kuni-yuzuri* and is defeated)", "[[ame-no-hohi]] (heavenly deity who served Ōkuninushi after the *kuni-yuzuri*; traditional ancestor of the Izumo-no-kuni-no-miyatsuko priest-lineage)", "[[senge-takatoshi]] (modern Izumo-no-kuni-no-miyatsuko; 84th generation; the priest-lineage continues unbroken from antiquity)"]
 themes: ["[[theme-purity-and-pollution]]", "[[axis-mundi]]", "[[theme-kuni-yuzuri-transfer-of-the-land]]", "[[theme-paired-shrine-cosmology]]"]
 events-related: ["[[event-izumo-taisha-traditional-founding]]", "[[event-kuni-yuzuri-mythological]]", "[[event-1744-izumo-taisha-rebuild]]", "[[event-2008-2013-izumo-taisha-restoration]]"]
-documents-related: ["[[kojiki]] (712 CE — the principal source for the *kuni-yuzuri* narrative and Ōkuninushi's role)", "[[nihon-shoki]] (720 CE)", "[[izumo-no-kuni-fudoki]] (733 CE — the *Gazetteer of Izumo Province*; the most complete surviving regional fudoki and the principal local source)", "[[engishiki]] (927 CE — Heian ritual code)"]
+documents-related: ["[[phase-8-019-kojiki|Kojiki]] (712 CE — the principal source for the *kuni-yuzuri* narrative and Ōkuninushi's role)", "[[phase-8-020-nihon-shoki|Nihon Shoki]] (720 CE)", "[[izumo-no-kuni-fudoki]] (733 CE — the *Gazetteer of Izumo Province*; the most complete surviving regional fudoki and the principal local source)", "[[engishiki]] (927 CE — Heian ritual code)"]
 cross-tradition-edges:
   - target: "ise-grand-shrine"
     type: "paired-with-cosmological-counterpole"
     source: "Bocking 1996; Teeuwen & Breen 2017"
     source-tier: T1
-    notes: "Izumo Taisha and [[ise-grand-shrine|Ise]] form the **two-pole structure of classical Japanese Shintō**: Ise = heavenly/imperial/Amaterasu; Izumo = terrestrial/non-imperial/Ōkuninushi. The [[kojiki|*Kojiki*]]'s narrative of the *kuni-yuzuri* ('transfer of the land') is the mythological articulation of the relationship: Ōkuninushi yields the visible world to Amaterasu's grandson Ninigi in exchange for the great shrine at Izumo where he will be eternally worshipped. The cosmological doctrine is **directly architecturally expressed**: Ise oversees the visible / political realm; Izumo oversees the invisible / spiritual realm."
+    notes: "Izumo Taisha and [[ise-grand-shrine|Ise]] form the **two-pole structure of classical Japanese Shintō**: Ise = heavenly/imperial/Amaterasu; Izumo = terrestrial/non-imperial/Ōkuninushi. The [[phase-8-019-kojiki|*Kojiki*]]'s narrative of the *kuni-yuzuri* ('transfer of the land') is the mythological articulation of the relationship: Ōkuninushi yields the visible world to Amaterasu's grandson Ninigi in exchange for the great shrine at Izumo where he will be eternally worshipped. The cosmological doctrine is **directly architecturally expressed**: Ise oversees the visible / political realm; Izumo oversees the invisible / spiritual realm."
   - target: "todaiji-daibutsuden"
     type: "parallel-monumental-religious-architecture-distinct-tradition"
     source: "Coaldrake 1996"
@@ -100,7 +100,7 @@ tags: [sacred-site, shrine, shinto, japan, shimane, izumo, okuninushi, taisha-zu
 
 ## What it is
 
-**Izumo Taisha** (出雲大社 — "Great Shrine of Izumo"; in older usage *Izumo Ōyashiro*) is **one of the two principal shrines of [[tradition-shinto|Shintō]]**, paired with [[ise-grand-shrine|Ise]]. It is dedicated to **[[okuninushi|Ōkuninushi-no-Mikoto]]** — the great earth-deity and ancestor of the terrestrial pantheon of Japanese mythology, central figure of the [[kojiki|*Kojiki*]]'s 'Izumo cycle' and the *kuni-yuzuri* ('transfer of the land') narrative.
+**Izumo Taisha** (出雲大社 — "Great Shrine of Izumo"; in older usage *Izumo Ōyashiro*) is **one of the two principal shrines of [[tradition-shinto|Shintō]]**, paired with [[ise-grand-shrine|Ise]]. It is dedicated to **[[okuninushi|Ōkuninushi-no-Mikoto]]** — the great earth-deity and ancestor of the terrestrial pantheon of Japanese mythology, central figure of the [[phase-8-019-kojiki|*Kojiki*]]'s 'Izumo cycle' and the *kuni-yuzuri* ('transfer of the land') narrative.
 
 The shrine's distinctive architectural form is *taisha-zukuri* (大社造) — the **most ancient Shintō shrine architectural style**, possibly antedating even Ise's *shinmei-zukuri*. Per medieval texts (notably the *Kuchizusami* of 970 CE), the original Izumo Taisha was **48 jō** (~48 m) tall — making it one of the tallest pre-modern wooden buildings on earth, taller than [[todaiji-daibutsuden|Todaiji]]'s 49 m Daibutsuden. Modern archaeology partially confirms this: in 2000, excavation under the shrine precinct uncovered **three massive cedar pillar-bundles** (each 1.35 m in diameter, bound together to make a ~3 m composite column), dated to the early Kamakura period (~13th c.), consistent with a Heian–Kamakura era structure of dramatic height. The present shrine — rebuilt 1744 — is "only" ~24 m tall, but is still by far the **tallest *taisha-zukuri* shrine in Japan**.
 
@@ -108,7 +108,7 @@ Izumo Taisha is one of the few principal Shintō shrines administered **independ
 
 ## History
 
-- **mythological founding** — per the [[kojiki|*Kojiki*]], the shrine was founded by **Ōkuninushi himself** as the place of his eternal worship, after he yielded the visible land to the heavenly grandson Ninigi in the *kuni-yuzuri* episode. The actual antiquity of the site is impossible to securely establish but is certainly substantial — pre-Buddhist (i.e. pre-538 CE).
+- **mythological founding** — per the [[phase-8-019-kojiki|*Kojiki*]], the shrine was founded by **Ōkuninushi himself** as the place of his eternal worship, after he yielded the visible land to the heavenly grandson Ninigi in the *kuni-yuzuri* episode. The actual antiquity of the site is impossible to securely establish but is certainly substantial — pre-Buddhist (i.e. pre-538 CE).
 - **659 CE** — the *Nihon Shoki* records construction of "the great shrine of Izumo" under Empress Saimei; this is the earliest textually-attested rebuild.
 - **8th c.** — the [[izumo-no-kuni-fudoki|*Izumo no Kuni Fudoki*]] (733 CE) provides the most detailed early account of the shrine and the Izumo theological programme.
 - **~10th–13th c.** — multiple rebuilds at what may have been the maximum architectural height (~48 m per medieval texts; if accurate, this would have made Izumo one of the tallest pre-modern wooden buildings on earth).
@@ -120,7 +120,7 @@ Izumo Taisha is one of the few principal Shintō shrines administered **independ
 
 ## The *kuni-yuzuri* — transfer of the land
 
-The mythological foundation of Izumo Taisha is the [[kojiki|*Kojiki*]]'s *kuni-yuzuri* ("transfer of the land", 国譲り) narrative — one of the most important episodes in classical Japanese mythography.
+The mythological foundation of Izumo Taisha is the [[phase-8-019-kojiki|*Kojiki*]]'s *kuni-yuzuri* ("transfer of the land", 国譲り) narrative — one of the most important episodes in classical Japanese mythography.
 
 The story (Kojiki Book 1, sections 33–37):
 
@@ -193,7 +193,7 @@ It is one of the principal candidates for the project's motif anchor [[theme-pai
 - [[ise-grand-shrine]] — the paired counterpole shrine
 - [[okuninushi]] — the principal deity
 - [[amaterasu]] — Izumo's heavenly counterpart at Ise
-- [[kojiki]], [[nihon-shoki]], [[izumo-no-kuni-fudoki]] — foundational textual sources
+- [[phase-8-019-kojiki|Kojiki]], [[phase-8-020-nihon-shoki|Nihon Shoki]], [[izumo-no-kuni-fudoki]] — foundational textual sources
 - [[kuni-yuzuri]] — the mythological event founding the shrine
 - [[theme-paired-shrine-cosmology]] — motif anchor
 - [[tradition-shinto]], [[tradition-izumo-shinto]] — parent traditions

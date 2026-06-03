@@ -23,9 +23,9 @@ themes:
 parallels:
   - "[[phase-6-024-kircher-oedipus-aegyptiacus]]"
   - "[[phase-6-017-boehme-aurora-mysterium-magnum]]"
-  - "[[phase-3-014-enneads-plotinus]]"
+  - "[[phase-4-019-plotinus-enneads]]"
 influenced-by:
-  - "**Neoplatonic light emanationism** — Plotinus's *Enneads* ([[phase-3-014-enneads-plotinus]]): light as the primary metaphor of divine emanation"
+  - "**Neoplatonic light emanationism** — Plotinus's *Enneads* ([[phase-4-019-plotinus-enneads]]): light as the primary metaphor of divine emanation"
   - "**Ficino's solar theology** — the sun as visible symbol of the invisible divine light (*De Sole*, 1493)"
   - "**[[phase-6-024-kircher-oedipus-aegyptiacus|Kircher's own Egyptian hieroglyph decipherment]]** — the *Ars Magna Lucis* frames optics within the same prisca sapientia ('ancient wisdom') framework as the Oedipus Aegyptiacus"
   - "**Robert Grosseteste's *De Luce*** (c.1225) — the medieval lux-primordialis light-metaphysics tradition"

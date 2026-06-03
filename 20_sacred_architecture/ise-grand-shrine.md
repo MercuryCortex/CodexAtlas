@@ -20,7 +20,7 @@ function: "principal-shinto-shrine-of-amaterasu-and-the-imperial-clan-ancestress
 key-figures: ["[[amaterasu]] (Sun-goddess; principal deity of the Inner Shrine (*Naikū*); ancestress of the Japanese imperial line)", "[[toyouke]] (deity of grain, agriculture, and sustenance; principal deity of the Outer Shrine (*Gekū*); enshrined here from 478 CE per the *Engishiki*)", "[[suinin-tenno]] (legendary 11th emperor; traditional founder of the present site per the *Nihon Shoki*; r. trad. -29 to 70 CE)", "[[yamato-hime-no-mikoto]] (legendary princess; daughter of Suinin; traditional founder of the Naikū per the *Nihon Shoki*; brought Amaterasu's mirror to Ise)", "[[temmu-tenno]] (emperor; established the regular 20-year rebuild (*shikinen sengū*) institution under his reign, 685 CE, with the first cycle completed 690 CE)", "[[motoori-norinaga]] (Edo-period *kokugaku* scholar; principal philological interpreter of the imperial-Shinto tradition centred on Ise)"]
 themes: ["[[theme-architectural-renewal-as-ritual-rebirth]]", "[[theme-purity-and-pollution]]", "[[axis-mundi]]", "[[theme-imperial-cult-architecture]]", "[[theme-tradition-as-controlled-renewal]]"]
 events-related: ["[[event-suinin-tenno-founding-trad-4-bce]]", "[[event-temmu-establishment-of-shikinen-sengu-685]]", "[[event-first-completed-shikinen-sengu-690]]", "[[event-most-recent-shikinen-sengu-2013]]", "[[event-meiji-imperial-pilgrimage-1869]]"]
-documents-related: ["[[nihon-shoki]] (720 CE — the principal classical source for the founding myth)", "[[kojiki]] (712 CE — the foundational Shinto-imperial historiography; locates Amaterasu's lineage)", "[[engishiki]] (927 CE — the Heian ritual code; codifies the Ise priesthood and the rebuild protocol)", "[[yamato-hime-no-mikoto-seiki]] (medieval text on the legendary princess-founder)"]
+documents-related: ["[[phase-8-020-nihon-shoki|Nihon Shoki]] (720 CE — the principal classical source for the founding myth)", "[[phase-8-019-kojiki|Kojiki]] (712 CE — the foundational Shinto-imperial historiography; locates Amaterasu's lineage)", "[[engishiki]] (927 CE — the Heian ritual code; codifies the Ise priesthood and the rebuild protocol)", "[[yamato-hime-no-mikoto-seiki]] (medieval text on the legendary princess-founder)"]
 cross-tradition-edges:
   - target: "izumo-taisha"
     type: "paired-with"
@@ -203,7 +203,7 @@ The contrast with [[hagia-sophia]] / [[forbidden-city-beijing]] / [[borobudur-st
 
 ## Ise and the imperial cult
 
-Ise is the **principal architectural anchor of the Japanese imperial cult**. The shrine is dedicated to Amaterasu, who is — in the canonical [[kojiki|*Kojiki*]] and [[nihon-shoki|*Nihon Shoki*]] mythography — the **direct ancestress of the imperial line** (via her grandson Ninigi, who descended to earth and whose great-grandson Jimmu became the first human emperor).
+Ise is the **principal architectural anchor of the Japanese imperial cult**. The shrine is dedicated to Amaterasu, who is — in the canonical [[phase-8-019-kojiki|*Kojiki*]] and [[phase-8-020-nihon-shoki|*Nihon Shoki*]] mythography — the **direct ancestress of the imperial line** (via her grandson Ninigi, who descended to earth and whose great-grandson Jimmu became the first human emperor).
 
 From the Meiji Restoration (1868) through the 1945 disestablishment, Ise was the architectural centre of **state-Shintō** — the imperial-Shintō ideology that anchored Meiji-Showa Japan. The Meiji Emperor's 1869 pilgrimage to Ise was the first imperial pilgrimage to the shrine in ~600 years and re-centred the imperial-religious programme on Ise. Postwar disestablishment ended the state-cult, but Ise retains its symbolic centrality: imperial accession rituals continue to involve Ise; the emperor's *daijōsai* (great food-offering enthronement rite) explicitly invokes Amaterasu via Ise.
 
@@ -213,7 +213,7 @@ From the Meiji Restoration (1868) through the 1945 disestablishment, Ise was the
 - [[toyouke]] — Outer Shrine deity
 - [[izumo-taisha]] — paired sister-shrine for the terrestrial-deity Ōkuninushi
 - [[yamato-hime-no-mikoto]], [[suinin-tenno]], [[temmu-tenno]] — founding figures
-- [[kojiki]], [[nihon-shoki]], [[engishiki]] — foundational textual sources
+- [[phase-8-019-kojiki|Kojiki]], [[phase-8-020-nihon-shoki|Nihon Shoki]], [[engishiki]] — foundational textual sources
 - [[todaiji-daibutsuden]] — the Buddhist architectural counterpole in Nara
 - [[theme-architectural-renewal-as-ritual-rebirth]] — motif anchor (Ise is its principal exemplar)
 - [[theme-purity-and-pollution]] — Shintō purity-doctrine theme

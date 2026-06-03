@@ -18,7 +18,7 @@ function: "cosmic-axis-temple-built-over-sacred-cave"
 key-figures: ["[[leopoldo-batres]] (1905–1910; the first major excavation; controversial heavy-handed restoration that added a fifth false terrace, since corrected)", "[[laurette-sejourne]] (1950s–60s; iconographic studies of Teotihuacan religion)", "[[rene-millon]] (1960s–80s; Teotihuacan Mapping Project; the systematic urban-scale survey)", "[[saburo-sugiyama]] (1980s–present; current chief excavator of all three pyramids; ASU/Aichi University)", "[[linda-manzanilla]] (UNAM; current Teotihuacan urbanism + religion authority)"]
 themes: ["[[theme-cosmic-mountain-as-temple-form]]", "[[axis-mundi]]", "[[theme-pyramid-as-resurrection-machine]]", "[[sacred-cave]]", "[[divine-kingship]]", "[[astronomical-alignment-calendar-architecture]]"]
 events-related: ["[[event-teotihuacan-collapse-c-550-ce]]", "[[event-aztec-rediscovery-of-teotihuacan]]"]
-documents-related: ["[[phase-8-002-historia-de-los-mexicanos-por-sus-pinturas]]", "[[florentine-codex]]"]
+documents-related: ["[[phase-8-002-historia-de-los-mexicanos-por-sus-pinturas]]", "[[phase-8-004-florentine-codex-sahagun|Florentine Codex]]"]
 cross-tradition-edges:
   - target: "pyramid-of-khufu"
     type: "parallel-form"

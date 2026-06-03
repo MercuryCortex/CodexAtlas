@@ -18,7 +18,7 @@ function: "shinto-shrine-of-the-three-munakata-goddesses-built-over-the-tidal-fl
 key-figures: ["[[saeki-no-kuramoto]] (legendary 6th-c. founder per shrine tradition; established the first shrine in 593 CE)", "[[taira-no-kiyomori]] (1118–1181; Heian-era *daimyō*; principal patron of the 1168 reconstruction; established the present architectural programme)", "[[mōri-motonari]] (Sengoku-era *daimyō*; 16th-c. major patron of restoration after the 1555 Battle of Miyajima)", "[[ichikishima-hime]] (one of the three Munakata goddesses; the principal deity)", "[[tagitsu-hime]] (second of the three Munakata goddesses)", "[[tagori-hime]] (third of the three Munakata goddesses)"]
 themes: ["[[theme-purity-and-pollution]]", "[[axis-mundi]]", "[[theme-sacred-island-as-temple-form]]", "[[theme-tidal-architecture]]", "[[theme-shinbutsu-shugo-shinto-buddhist-fusion]]"]
 events-related: ["[[event-itsukushima-construction-1168]]", "[[event-battle-of-miyajima-1555]]"]
-documents-related: ["[[nihon-shoki]] (mentions the three Munakata goddesses' assignment to islands in the Seto Inland Sea)", "[[heike-monogatari]] (*Tale of the Heike* — extensive treatment of Taira no Kiyomori's patronage of Itsukushima)"]
+documents-related: ["[[phase-8-020-nihon-shoki|Nihon Shoki]] (mentions the three Munakata goddesses' assignment to islands in the Seto Inland Sea)", "[[heike-monogatari]] (*Tale of the Heike* — extensive treatment of Taira no Kiyomori's patronage of Itsukushima)"]
 cross-tradition-edges:
   - target: "ise-grand-shrine"
     type: "parallel-shinto-shrine-architecture"
