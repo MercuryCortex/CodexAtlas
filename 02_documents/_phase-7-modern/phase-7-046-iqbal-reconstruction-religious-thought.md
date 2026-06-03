@@ -4,7 +4,7 @@ id: "phase-7-046-iqbal-reconstruction-religious-thought"
 title: "The Reconstruction of Religious Thought in Islam"
 aka: ["The Reconstruction of Religious Thought in Islam", "Six Lectures on the Reconstruction of Religious Thought in Islam", "Iqbal's Reconstruction"]
 author: "[[muhammad-iqbal]]"
-date-composed: 1930
+date-composed-earliest: 1930
 date-range: "lectures delivered 1928–1929; published 1930; expanded 1934"
 language: "English"
 tradition: "[[tradition-islamic-modernism]]"

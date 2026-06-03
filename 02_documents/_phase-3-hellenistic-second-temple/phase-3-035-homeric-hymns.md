@@ -4,7 +4,7 @@ id: "phase-3-035-homeric-hymns"
 title: "Homeric Hymns"
 aka: ["Homeric Hymns", "Ὕμνοι Ὁμηρικοί", "Hymni Homerici", "33 Homeric Hymns"]
 author: "Anonymous (multiple authors, composed 7th–5th c. BCE; attributed to Homer by tradition)"
-date-composed: -650
+date-composed-earliest: -650
 date-range: "7th–5th century BCE (major hymns); some as late as 3rd c. BCE"
 language: "Ancient Greek (hexameter)"
 tradition: "[[tradition-greek-religion]]"

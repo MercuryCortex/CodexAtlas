@@ -4,7 +4,7 @@ id: "phase-7-043-ofudesaki"
 title: "Ofudesaki"
 aka: ["Ofudesaki", "おふでさき", "Tip of the Divine Writing Brush", "Tenrikyo scripture"]
 author: "Nakayama Miki (1798–1887)"
-date-composed: 1869
+date-composed-earliest: 1869
 date-range: "1869–1882 (written over 14 years in 17 volumes)"
 language: "Japanese (poetic 5-7-5-7-7 waka form)"
 tradition: "[[tradition-tenrikyo]]"

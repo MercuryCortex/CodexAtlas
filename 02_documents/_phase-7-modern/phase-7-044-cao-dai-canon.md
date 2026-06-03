@@ -4,7 +4,7 @@ id: "phase-7-044-cao-dai-canon"
 title: "Cao Dai canonical scriptures"
 aka: ["Caodaist scriptures", "Kinh Thiên Đạo Và Thế Đạo", "Prayers of the Heavenly and Earthly Way", "Thánh Ngôn Hiệp Tuyển", "Collection of Holy Messages"]
 author: "Phạm Công Tắc and founding séance circle (1926); divine dictation via *cơ bút* (spirit-writing planchette)"
-date-composed: 1926
+date-composed-earliest: 1926
 date-range: "primary revelations 1925–1927; ongoing spirit-writing sessions"
 language: "Vietnamese (with Classical Chinese elements)"
 tradition: "[[tradition-cao-dai]]"

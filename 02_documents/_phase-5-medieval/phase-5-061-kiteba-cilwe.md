@@ -4,7 +4,7 @@ id: "phase-5-061-kiteba-cilwe"
 title: "Kitêba Cilwe and Mishefa Reş"
 aka: ["Kiteba Cilwe", "Kitab al-Jilwa", "Book of Illumination", "Mishefa Res", "Mishefa Reş", "Black Book", "Yazidi sacred texts"]
 author: "Traditional; attributed to Şêx Adî ibn Musafir and associates"
-date-composed: 1300
+date-composed-earliest: 1300
 date-range: "written forms ~12th–15th c.; oral tradition far older; both texts of disputed age"
 language: "Kurmanji Kurdish (spoken tradition); later Arabic and Syriac manuscript versions"
 tradition: "[[tradition-yazidi]]"

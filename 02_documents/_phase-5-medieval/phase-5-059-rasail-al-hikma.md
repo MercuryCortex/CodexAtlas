@@ -4,7 +4,7 @@ id: "phase-5-059-rasail-al-hikma"
 title: "Rasāʾil al-Ḥikma"
 aka: ["Rasail al-Hikma", "Epistles of Wisdom", "The Druze Canon", "al-Hikmah"]
 author: "Hamza ibn ʿAlī ibn Aḥmad; Bahāʾ al-Dīn al-Muqtanā; and associates"
-date-composed: 1017
+date-composed-earliest: 1017
 date-range: "1017–1043 CE"
 language: "Arabic"
 tradition: "[[tradition-druze]]"

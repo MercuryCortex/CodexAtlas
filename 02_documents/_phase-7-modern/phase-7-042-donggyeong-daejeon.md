@@ -4,7 +4,7 @@ id: "phase-7-042-donggyeong-daejeon"
 title: "Donggyeong Daejeon"
 aka: ["Donggyeong Daejeon", "東經大全", "Eastern Classic", "Great Scripture of the Eastern Learning"]
 author: "[[choe-je-u]] (Choe Je-u, 1824–1864)"
-date-composed: 1861
+date-composed-earliest: 1861
 date-range: "composed 1861; printed posthumously 1880"
 language: "Classical Chinese (with some Korean vernacular hyangga)"
 tradition: "[[tradition-donghak]]"

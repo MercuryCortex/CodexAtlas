@@ -4,7 +4,7 @@ id: "phase-5-058-nahj-al-balagha"
 title: "Nahj al-Balāgha"
 aka: ["Nahj al-Balagha", "Peak of Eloquence", "The Way of Eloquence"]
 author: "[[ali-ibn-abi-talib]] (attributed); compiled by [[al-sharif-al-radi]]"
-date-composed: 1009
+date-composed-earliest: 1009
 date-range: "compiled ~1009 CE (sayings attributed to Ali ibn Abī Ṭālib, d. 661 CE)"
 language: "Arabic"
 tradition: "[[tradition-shia-islam]]"

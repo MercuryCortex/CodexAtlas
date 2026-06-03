@@ -4,7 +4,7 @@ id: "phase-4-108-peshitta"
 title: "Peshitta"
 aka: ["Peshitta", "Pshitta", "Syriac Bible", "the Simple (translation)"]
 author: "Anonymous; various translators; OT probably translated by Jewish communities in Edessa 1st–2nd c. CE; NT gradually standardized 5th c. CE"
-date-composed: 100
+date-composed-earliest: 100
 date-range: "OT portions ~1st–2nd c. CE; NT portions ~2nd–5th c. CE; Peshitta NT canonical form fixed by Rabbula of Edessa (~411–435 CE)"
 language: "Syriac (Eastern Aramaic)"
 tradition: "[[tradition-syriac-orthodox]]"

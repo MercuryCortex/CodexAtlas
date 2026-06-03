@@ -4,7 +4,7 @@ id: "phase-3-007-samaritan-pentateuch"
 title: "Samaritan Pentateuch"
 aka: ["Samaritan Torah", "Samaritan Pentateuch", "SP", "Tora Qedosha"]
 author: "Traditional; anonymous scribal transmission of Samaritan priestly community"
-date-composed: -400
+date-composed-earliest: -400
 date-range: "textual tradition diverging from proto-Masoretic ~4th c. BCE; continuous living scripture to present"
 language: "Samaritan Hebrew (archaic Hebrew script, not square Aramaic script)"
 tradition: "[[tradition-samaritanism]]"

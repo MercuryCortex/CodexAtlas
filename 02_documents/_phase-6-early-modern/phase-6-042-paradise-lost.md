@@ -2,7 +2,7 @@
 type: document
 id: "phase-6-042-paradise-lost"
 title: "Paradise Lost"
-date-composed: 1658
+date-composed-earliest: 1658
 date-composed-end: 1667
 tradition: "protestantism"
 canonical-corpus: ["protestant-foundational"]

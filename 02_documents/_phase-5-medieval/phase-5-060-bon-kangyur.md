@@ -4,7 +4,7 @@ id: "phase-5-060-bon-kangyur"
 title: "Bön Kanjur"
 aka: ["Bon Kanjur", "Bon Kangyur", "Bön Kanjur", "Yungdrung Bon scriptures"]
 author: "Traditional; various tertons (treasure-text revealers)"
-date-composed: 1300
+date-composed-earliest: 1300
 date-range: "canonical compilation ~13th–15th c.; terma revelations ongoing"
 language: "Tibetan (Classical)"
 tradition: "[[tradition-bon]]"

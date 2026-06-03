@@ -4,7 +4,7 @@ id: "phase-7-045-ambedkar-buddha-and-dhamma"
 title: "The Buddha and His Dhamma"
 aka: ["The Buddha and His Dhamma", "Navayana scripture", "Ambedkar's Buddhism", "Bauddha Dharma"]
 author: "[[ambedkar]]"
-date-composed: 1956
+date-composed-earliest: 1956
 date-range: "written 1950–1956; published posthumously 1957"
 language: "English"
 tradition: "[[tradition-navayana-buddhism]]"
