@@ -24,7 +24,7 @@ influences: ["12th-century Latin Europe (translated twice — by John of Seville
 deities-mentioned: ["[[utu-shamash]]", "[[nanna-sin]]"]
 events-context: ["the Abbasid Greek-to-Arabic translation movement and the 9th-century flowering of the astral sciences in Baghdad", "the 12th-century Latin translation movement (Toledo, Spain)"]
 status: "full"
-preservation: "Survives in Arabic manuscripts and in two independent 12th-century Latin translations (John of Seville, 1133; Hermann of Carinthia, 1140), which made it a standard European textbook. The standard modern edition is the Arabic-with-English critical edition by Keiji Yamamoto & Charles Burnett (Brill, 2000, 2 vols.), which also prints the medieval Latin versions."
+preservation: "Survives in Arabic manuscripts and in two independent 12th-century Latin translations (John of Seville, 1133; Hermann of Carinthia, 1140), which made it a standard European textbook. The standard modern edition is the Arabic-with-English critical edition by Keiji Yamamoto & Charles Burnett (Brill, 2019, 2 vols.), which collates the divergences of the two 12th-century Latin versions and includes a fragment of the Greek version (ed. David Pingree)."
 refs:
   - title: "Abū Maʿšar: The Great Introduction to the Science of the Judgements of the Stars (2 vols., Arabic + English + Latin)"
     author: "Yamamoto, Keiji & Burnett, Charles (eds./trans.)"
@@ -87,7 +87,7 @@ The **standard systematic textbook of Islamic judicial astrology**, written in B
 - **The Islamic hinge of the spine.** Abū Maʿshar is the central Islamic-Golden-Age node where the Greek-and-Persian inheritance ([[phase-3-038-ptolemy-tetrabiblos]], [[phase-3-040-dorotheus-carmen-astrologicum]]) is consolidated and then handed, via Toledo, to Latin Christendom — the link between the ancient and the Renaissance arms of [[tradition-western-astrology]] (Tester 1987).
 
 ## Refs
-1. Yamamoto, K. & Burnett, C. (2019). *Abū Maʿšar: The Great Introduction…* (2 vols.). Brill. — definitive edition (Arabic + Latin + English).
+1. Yamamoto, K. & Burnett, C. (2019). *Abū Maʿšar: The Great Introduction…* (2 vols.). Brill. — definitive edition (Arabic + English; collates the Latin versions, with the Greek fragment ed. Pingree).
 2. Lemay, R. (1962). *Abu Ma'shar and Latin Aristotelianism in the Twelfth Century*. AUB. — the transmission thesis.
 3. Burnett, C. (1997). *The Introduction of Arabic Learning into England*. British Library.
 4. Tester, S.J. (1987). *A History of Western Astrology*. Boydell.

@@ -64,7 +64,7 @@ The **classic Sanskrit textbook of horoscopic (natal) astrology**, composed in t
 ## Context
 - **Political milieu.** Gupta and post-Gupta India, with Ujjain (Avanti) as the prime meridian and capital of Indian mathematical astronomy.
 - **Religious milieu.** Brahmanical Sanskritic learning that had fully absorbed and re-expressed the Greek-derived horoscopic system; Varāhamihira openly honours the *yavanas* (Greeks) as masters of this science even while it is now thoroughly Indian.
-- **Who was behind it.** Varāhamihira, a polymath who also wrote the encyclopaedic *Bṛhat Saṃhitā* and the astronomical *Pañcasiddhāntikā* — the latter explicitly digesting a "Romaka" (Roman) and a "Pauliśa" (Paul-derived) siddhānta, fossils of Greco-Roman astronomy in Sanskrit.
+- **Who was behind it.** Varāhamihira, a polymath who also wrote the encyclopaedic *Bṛhat Saṃhitā* and the astronomical *Pañcasiddhāntikā* — the latter explicitly digesting a "Romaka" (Roman) and a "Pauliśa" siddhānta (named for a "Pauliśa", of Greek derivation), fossils of Greco-Roman astronomy in Sanskrit.
 - **Discovery / transmission.** Continuously transmitted with a major commentarial tradition (Bhaṭṭotpala, 966 CE); a living text of practising *jyotiṣa*.
 
 ## Themes and motifs
