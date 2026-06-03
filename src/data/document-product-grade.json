@@ -1,6 +1,6 @@
 {
  "generatedAt": "2026-06-03",
- "totalDocuments": 507,
+ "totalDocuments": 506,
  "productGrade": false,
  "passCount": 1,
  "rowCount": 7,
@@ -10,7 +10,7 @@
    "key": "connected",
    "label": "Graph-connected (no orphans)",
    "target": "0 disconnected",
-   "current": "56",
+   "current": "55",
    "ok": false,
    "detail": "every doc has \u22651 wikilink wire in or out"
   },
@@ -18,7 +18,7 @@
    "key": "tradition",
    "label": "Has home tradition (wedge)",
    "target": "100%",
-   "current": "429/507",
+   "current": "429/506",
    "ok": false,
    "detail": "the scripture-exception singular origin"
   },
@@ -26,7 +26,7 @@
    "key": "dates",
    "label": "Has dates",
    "target": "100%",
-   "current": "474/507",
+   "current": "473/506",
    "ok": false,
    "detail": ""
   },
@@ -42,7 +42,7 @@
    "key": "depth",
    "label": "At least metadata depth",
    "target": "0 stubs/partials",
-   "current": "100",
+   "current": "99",
    "ok": false,
    "detail": "stub + partial + untyped"
   },
