@@ -117,7 +117,7 @@ A circular letter from the church of Smyrna to the church of Philomelium (in Phr
 
 The pilgrimage industry of medieval Europe — Chaucer's Canterbury Tales, the Camino de Santiago, the *Via Dolorosa* in Jerusalem, the relic trade that funded cathedral construction — all trace institutionally to this one passage in a Smyrnaean community circular of ~+155 CE.
 
-### First use of "catholic church" (katholikē ekklēsia)
+### Earliest "catholic church" in its full ecclesiological sense (katholikē ekklēsia)
 *Mart. Pol.* inscriptio (opening address): "The church of God sojourning at Smyrna, to the church of God sojourning in Philomelium, and to all the parishes (*paroikiai*) of the **holy and universal church** (*katholikē ekklēsia*) everywhere." This is the **earliest attested use of *katholikē ekklēsia* in its full ecclesiological sense** — the church as the single universal body transcending local communities. The term becomes the self-description of Western Christianity (Catholic) and is retained in the Nicene Creed ("one holy, **catholic**, and apostolic church"). The word carries this Smyrnaean-martyrological origin.
 
 ### MASSIVE WIN: Martyrdom transmission chain — Christian → Islamic

@@ -41,10 +41,10 @@ refs:
     type: "critical-edition"
     tier: 1
     notes: "Standard Greek critical edition of the recensions"
-  - title: "The Medieval Bestiary: Animals, Christianity, and Allegory"
+  - title: "Medieval Bestiaries: Text, Image, Ideology"
     author: "Hassig, Debra"
     year: 1995
-    publisher: "Cambridge University Press"
+    publisher: "Cambridge University Press (RES Monographs on Anthropology and Aesthetics)"
     type: "monograph"
     tier: 1
   - title: "Beasts and Saints"
@@ -78,7 +78,7 @@ An anonymous early-Christian **allegorical bestiary** — a collection of roughl
 
 ## Connections (provisional)
 - → [[phase-3-021-hermetic-corpus-earliest]] — *shared-milieu*: the same Greco-Egyptian Alexandrian world of symbolic-allegorical reading of nature.
-- → [[phase-4-080-garima-gospels]] — *shared-tradition*: the Physiologus circulated early in the Ethiopic Christian sphere alongside the gospel tradition.
+- → [[phase-4-080-garima-gospels]] — *shared-sphere*: the Physiologus was translated into Ge'ez and circulated in the same early Ethiopic Christian book-culture that produced the Garima gospel-books (a parallel, not a direct influence).
 
 ## Disputes
 - **Date.** Estimates range across the 2nd–4th centuries; the work grew by recension, so no single date fits.
@@ -91,4 +91,4 @@ An anonymous early-Christian **allegorical bestiary** — a collection of roughl
 ## Refs
 1. Curley, M.J. (1979). *Physiologus: A Medieval Book of Nature Lore*. Texas (repr. Chicago 2009). — standard English.
 2. Sbordone, F. (1936). *Physiologi Graeci*. — Greek critical edition.
-3. Hassig, D. (1995). *The Medieval Bestiary*. Cambridge UP.
+3. Hassig, D. (1995). *Medieval Bestiaries: Text, Image, Ideology*. Cambridge UP.

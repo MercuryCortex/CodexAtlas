@@ -27,13 +27,13 @@ status: "full"
 preservation: "A **palimpsest**: a Syriac manuscript whose original lower text — an **Old Syriac translation of the four gospels** (the *Evangelion da-Mepharreshe*, the 'gospel of the separated [evangelists]'), copied around the late 4th century — was scraped and overwritten in 778 CE with Syriac lives of female saints. With the Curetonian manuscript, it is one of the two surviving witnesses to the **Old Syriac** gospel version, older than and independent of the standard **Peshitta**. It was discovered at **St Catherine's Monastery on Sinai in 1892 by the Scottish scholar Agnes Smith Lewis** (with her twin sister Margaret Dunlop Gibson), and the lower text was recovered photographically."
 refs:
   - title: "The Four Gospels in Syriac Transcribed from the Sinaitic Palimpsest"
-    author: "Lewis, Agnes Smith (ed.)"
+    author: "Bensly, R.L., Harris, J.R. & Burkitt, F.C. (with an introduction by Agnes Smith Lewis)"
     year: 1894
     publisher: "Cambridge University Press"
     url: ""
     type: "critical-edition"
     tier: 1
-    notes: "The editio princeps of the Sinaitic Old Syriac gospels"
+    notes: "The editio princeps; transcribed by Bensly/Harris/Burkitt with Lewis's introduction (Lewis, the discoverer, also published her own 1894 translation)"
   - title: "Evangelion da-Mepharreshe: The Curetonian Version of the Four Gospels, with the Readings of the Sinai Palimpsest (2 vols.)"
     author: "Burkitt, F. Crawford"
     year: 1904
@@ -75,6 +75,6 @@ One of the two surviving witnesses to the **Old Syriac version of the gospels** 
 - **Two Sinai discoveries, one monastery.** That both the greatest Greek Bible (Sinaiticus) and a greatest Syriac gospel witness emerged from the single library of St Catherine's — recovered by Tischendorf and by the Lewis-Gibson sisters — makes the monastery a documented nexus of the modern recovery of the biblical text across languages.
 
 ## Refs
-1. Lewis, A.S. (1894). *The Four Gospels in Syriac… from the Sinaitic Palimpsest*. Cambridge UP. — editio princeps.
+1. Bensly, R.L., Harris, J.R. & Burkitt, F.C. (intro. A.S. Lewis) (1894). *The Four Gospels in Syriac… from the Sinaitic Palimpsest*. Cambridge UP. — editio princeps.
 2. Burkitt, F.C. (1904). *Evangelion da-Mepharreshe* (2 vols.). Cambridge UP. — standard Old Syriac study.
 3. Metzger, B.M. (1977). *The Early Versions of the New Testament*. Oxford (Clarendon).

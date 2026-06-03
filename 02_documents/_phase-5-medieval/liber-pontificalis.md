@@ -41,13 +41,13 @@ refs:
     type: "critical-edition"
     tier: 1
     notes: "The standard critical edition (1886–1892)"
-  - title: "The Popes and the Papacy in the Early Middle Ages, 476–752"
-    author: "Noble, Thomas F.X. (and the broader scholarship on the LP)"
+  - title: "The Republic of St. Peter: The Birth of the Papal State, 680–825"
+    author: "Noble, Thomas F.X."
     year: 1984
-    publisher: "University of Pennsylvania Press"
+    publisher: "University of Pennsylvania Press (The Middle Ages Series)"
     type: "monograph"
     tier: 1
-    notes: "Context for the LP as a source for early papal history"
+    notes: "Context for the LP and the rise of the papal state (cf. also Jeffrey Richards, The Popes and the Papacy in the Early Middle Ages, 1979)"
 tags: [phase-5, latin-christianity, papacy, rome, chronicle, liber-pontificalis, ecclesiastical-history]
 ---
 
@@ -80,4 +80,4 @@ The **Book of Pontiffs** — a serially-compiled collection of short biographies
 ## Refs
 1. Davis, R. (2000). *The Book of Pontiffs (Liber Pontificalis) to AD 715* (TTH, 2nd ed.). Liverpool UP. — standard English.
 2. Duchesne, L. (1886–92). *Le Liber Pontificalis* (2 vols.). — critical edition.
-3. Noble, T.F.X. (1984). *The Popes and the Papacy in the Early Middle Ages*. Penn Press. — context.
+3. Noble, T.F.X. (1984). *The Republic of St. Peter: The Birth of the Papal State, 680–825*. Penn Press. — context.

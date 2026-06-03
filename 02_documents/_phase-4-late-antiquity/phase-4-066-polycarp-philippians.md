@@ -23,7 +23,7 @@ influences: ["[[phase-4-067-martyrdom-of-polycarp]] (the same community, ~+155)"
 deities-mentioned: ["[[yahweh|the Father]]", "[[jesus-christ-deity]]"]
 events-context: ["The martyrdom of [[ignatius-of-antioch|Ignatius]] (~+108) and Polycarp's reception/forwarding of the Ignatian letter-collection"]
 status: "full"
-preservation: "Eight Greek manuscripts survive — all derive from a single archetype that is **mutilated** at Pol. *Phil.* 9.2 (where it abruptly merges into the epistle of Barnabas in mid-sentence). The complete Greek text of chs. 1–9 plus the *Latin version* preserving the rest (chs. 10–14) is the standard reconstruction. The Latin version is independently witnessed."
+preservation: "Nine Greek manuscripts survive — all derive from a single archetype that is **mutilated** at Pol. *Phil.* 9.2 (where it abruptly merges into the epistle of Barnabas in mid-sentence). The complete Greek text of chs. 1–9 plus the *Latin version* preserving the rest (chs. 10–14) is the standard reconstruction. The Latin version is independently witnessed."
 refs:
   - title: "The Apostolic Fathers, vol. 1 (Loeb)"
     author: "Ehrman, Bart D. (ed./tr.)"
@@ -69,7 +69,7 @@ A 14-chapter Greek letter from **[[polycarp-of-smyrna|Polycarp]]** (Bishop of Sm
 - **Political milieu.** Asian Christianity under Trajan / Hadrian. The same Roman-imperial-procedure framework reflected in the [[phase-4-040-pliny-trajan-correspondence|Pliny-Trajan correspondence]] (Bithynia, ~+112) is the legal-environment in which Ignatius died and Polycarp will eventually die.
 - **Religious milieu.** Smyrna and Philippi share Pauline-Christian origins; both received Ignatian correspondence; both face the same proto-orthodox / Docetist / Judaizing-current tensions. Polycarp's letter is more *pastoral* than *theological-controversial* — written by an aged community-stabilizer.
 - **Who was behind it.** Polycarp himself. Whether the letter is one document (Hartog 2013) or two short letters (originally a *cover-note* — chs. 13–14 — accompanying the Ignatian letter-collection, plus a *later moral-pastoral letter* — chs. 1–12 — about the Valens crisis) joined into one (Harrison 1936) is the central scholarly question.
-- **Discovery / transmission.** Continuous Greek transmission. The eight Greek manuscripts derive from a defective archetype mutilated mid-sentence at *Phil.* 9.2; the Latin version preserves the remainder. Irenaeus (*AH* 3.3.4) — who as a youth heard Polycarp at Smyrna — quotes him, confirming both Polycarp's authority and the basic continuity of the letter-tradition.
+- **Discovery / transmission.** Continuous Greek transmission. The nine Greek manuscripts derive from a defective archetype mutilated mid-sentence at *Phil.* 9.2 (where the text runs into *Barnabas*); the Latin version preserves the remainder. Irenaeus (*AH* 3.3.4) — who as a youth heard Polycarp at Smyrna — quotes him, confirming both Polycarp's authority and the basic continuity of the letter-tradition.
 
 ## Themes and motifs
 - [[ecclesial-authority]] — moderate-pastoral form: Polycarp addresses the Philippians as a co-presbyter (his self-designation, *Phil.* opening: "Polycarp and the elders with him") consulting on local clergy-discipline. No monoepiscopal claim.
