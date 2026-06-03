@@ -40,17 +40,17 @@ refs:
     type: "monograph"
     tier: 1
     notes: "Definitive scholarly treatment of the textual problem"
-  - title: "For Love of the Dark One: Songs of Mirabai"
+  - title: "Mirabai: Ecstatic Poems"
     author: "Bly, Robert & Hirshfield, Jane (trans.)"
     year: 2004
     publisher: "Beacon Press"
     type: "primary-translation"
     tier: 3
     notes: "Popular literary translations"
-  - title: "Mira Bai and Her Padas"
+  - title: "Dyed in the Color of Her Lord: Multiple Representations in the Mirabai Tradition"
     author: "Martin-Kershaw, Nancy"
     year: 1995
-    publisher: "PhD dissertation, U Washington"
+    publisher: "PhD dissertation, Graduate Theological Union (Berkeley)"
     type: "monograph"
     tier: 2
   - title: "A Storm of Songs: India and the Idea of the Bhakti Movement"
@@ -131,5 +131,5 @@ The parallel is structural, not historical — Mirabai and the Christian martyrs
 1. Hawley, J.S. & Juergensmeyer, M. (1988). *Songs of the Saints of India*. Oxford UP.
 2. Hawley, J.S. (2005). *Three Bhakti Voices*. Oxford UP.
 3. Hawley, J.S. (2015). *A Storm of Songs*. Harvard UP.
-4. Martin, N. (1999). *Mirabai: Inscribed in Text, Embodied in Life*. (in Hawley & Wulff, *Devi*).
+4. Martin, N. (1996). "Mirabai: Inscribed in Text, Embodied in Life" (in S. Rosen, ed., *Vaiṣṇavī: Women and the Worship of Krishna*, Motilal Banarsidass).
 5. Mukta, P. (1994). *Upholding the Common Life: The Community of Mirabai*. Oxford UP (Delhi).

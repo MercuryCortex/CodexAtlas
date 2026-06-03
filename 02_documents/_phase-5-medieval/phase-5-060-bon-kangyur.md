@@ -28,10 +28,10 @@ influences:
   - "Contemporary Tibetan religious synthesis"
 status: "full"
 refs:
-  - title: "The Heart Drops of Dharmakaya: Dzogchen Practice of the Bön Tradition"
+  - title: "Wonders of the Natural Mind: The Essence of Dzogchen in the Native Bön Tradition of Tibet"
     author: "Wangyal, Tenzin"
     year: 1993
-    publisher: "Snow Lion"
+    publisher: "Station Hill Press"
     type: "monograph"
     tier: 2
   - title: "Drung, Deu and Bön: Narrations, Symbolic Languages and the Bön Tradition in Ancient Tibet"
@@ -40,16 +40,16 @@ refs:
     publisher: "Library of Tibetan Works and Archives"
     type: "monograph"
     tier: 2
-  - title: "The Bon Religion of Tibet"
+  - title: "Bon: The Magic Word — The Indigenous Religion of Tibet"
     author: "Karmay, Samten G. and Watt, Jeff (eds.)"
     year: 2007
-    publisher: "Philip Wilson"
+    publisher: "Rubin Museum of Art / Philip Wilson Publishers"
     type: "edited-volume"
     tier: 1
-  - title: "A Study of the Chronicle of Pad ma dkar po"
+  - title: "The Treasury of Good Sayings: A Tibetan History of Bon"
     author: "Karmay, Samten G."
     year: 1972
-    publisher: "Toyo Bunko"
+    publisher: "Oxford University Press (London Oriental Series 26)"
     type: "monograph"
     tier: 1
 tags: [document, tibet, bon, pre-buddhist, dzogchen, kangyur, terma, tantra, medieval]
@@ -57,7 +57,7 @@ tags: [document, tibet, bon, pre-buddhist, dzogchen, kangyur, terma, tantra, med
 
 # Bön Kanjur
 
-**Bön Kanjur** (Tibetan *Bön bKa' 'gyur*) — the canonical scripture collection of Yungdrung Bön ("Eternal Bön"), systematically compiled ~13th–15th c. CE — is the pre-Buddhist Tibetan religion's scriptural parallel to the Buddhist *Kangyur* (the translated word of the Buddha). Structurally mirroring the Buddhist canon in both format and organizational categories, the Bön Kanjur contains over 300 volumes covering cosmology, ritual, meditation, biography of the founder Tonpa Shenrab, and esoteric contemplative practice. Its most significant sections for cross-tradition comparison are the **Dzogchen** (*rDzogs chen*, "Great Completeness") texts — teachings on the primordially pure nature of mind that overlap so closely with the Vajrayāna Dzogchen corpus that priority and transmission direction remain disputed in scholarship.
+**Bön Kanjur** (Tibetan *Bön bKa' 'gyur*) — the canonical scripture collection of Yungdrung Bön ("Eternal Bön"), systematically compiled ~13th–15th c. CE — is the pre-Buddhist Tibetan religion's scriptural parallel to the Buddhist *Kangyur* (the translated word of the Buddha). Structurally mirroring the Buddhist canon in both format and organizational categories, the Bön Kanjur contains roughly 175–192 volumes (per the Nyima Tendzin catalogue and the modern digitized edition) covering cosmology, ritual, meditation, biography of the founder Tonpa Shenrab, and esoteric contemplative practice. Its most significant sections for cross-tradition comparison are the **Dzogchen** (*rDzogs chen*, "Great Completeness") texts — teachings on the primordially pure nature of mind that overlap so closely with the Vajrayāna Dzogchen corpus that priority and transmission direction remain disputed in scholarship.
 
 ## Structure
 

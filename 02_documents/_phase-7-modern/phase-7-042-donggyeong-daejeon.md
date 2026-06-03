@@ -6,7 +6,7 @@ aka: ["Donggyeong Daejeon", "東經大全", "Eastern Classic", "Great Scripture 
 author: "[[choe-je-u]] (Choe Je-u, 1824–1864)"
 date-composed-earliest: 1861
 date-range: "composed 1861; printed posthumously 1880"
-language: "Classical Chinese (with some Korean vernacular hyangga)"
+language: "Classical Chinese (the separate vernacular-Korean Donghak scripture is the Yongdam Yusa, in gasa verse — not this text)"
 tradition: "[[tradition-donghak]]"
 canonical-corpus: ["cheondogyo-corpus"]
 genre: "canonical-scripture / doctrinal-text"
@@ -29,16 +29,16 @@ influences:
   - "March First Movement (1919) — Son Byong-hui, Cheondogyo leader, was a primary organizer of Korea's independence declaration"
 status: "full"
 refs:
-  - title: "The Donghak Religion in Korea, 1860–1905"
+  - title: "Eastern Learning and the Heavenly Way: The Tonghak and Ch'ŏndogyo Movements and the Twilight of Korean Independence"
     author: "Young, Carl F."
     year: 2014
-    publisher: "Brill"
+    publisher: "University of Hawai'i Press"
     type: "monograph"
     tier: 1
-  - title: "Religion and the Korean Nation: Cheondogyo"
+  - title: "Salvation through Dissent: Tonghak Heterodoxy and Early Modern Korea"
     author: "Kallander, George L."
     year: 2013
-    publisher: "University of Hawaii Press"
+    publisher: "University of Hawai'i Press"
     type: "monograph"
     tier: 1
 tags: [document, korea, donghak, cheondogyo, eastern-learning, modern, anti-imperialism, syncretism]

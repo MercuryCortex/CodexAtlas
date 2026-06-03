@@ -5,7 +5,7 @@ title: "Ofudesaki"
 aka: ["Ofudesaki", "おふでさき", "Tip of the Divine Writing Brush", "Tenrikyo scripture"]
 author: "Nakayama Miki (1798–1887)"
 date-composed-earliest: 1869
-date-range: "1869–1882 (written over 14 years in 17 volumes)"
+date-range: "1869–1882 (written over 14 years in 17 parts)"
 language: "Japanese (poetic 5-7-5-7-7 waka form)"
 tradition: "[[tradition-tenrikyo]]"
 canonical-corpus: ["tenrikyo-corpus"]
@@ -32,24 +32,24 @@ refs:
     publisher: "Tenrikyo Church Headquarters"
     type: "primary-translation"
     tier: 2
-  - title: "A New Religion in Japan: Tenrikyo in Historical Perspective"
+  - title: "Tenrikyo: A Pilgrimage Faith — The Structure and Meanings of a Modern Japanese Religion"
     author: "Ellwood, Robert S."
     year: 1982
-    publisher: "University of Chicago"
+    publisher: "Tenri University Press (Oyasato Research Institute)"
     type: "monograph"
     tier: 2
-  - title: "The Foundress of Tenrikyo: Nakayama Miki"
-    author: "Ueda, Yoshinaru"
+  - title: "The Life of Oyasama, Foundress of Tenrikyo"
+    author: "Tenrikyo Church Headquarters"
     year: 1982
-    publisher: "Tenri University Press"
-    type: "monograph"
+    publisher: "Tenrikyo Church Headquarters"
+    type: "primary-source"
     tier: 2
 tags: [document, japan, tenrikyo, new-religion, female-founder, waka, divine-revelation, modern, healing, nara]
 ---
 
 # Ofudesaki (Tip of the Divine Writing Brush)
 
-**Ofudesaki** ("Tip of the Divine Writing Brush") — written by Nakayama Miki (1798–1887) in 1,711 waka-form verses across 17 volumes between 1869 and 1882 — is the primary canonical scripture of Tenrikyo ("Religion of Divine Wisdom"), a Japanese new religion founded by Nakayama Miki following a series of divine possessions beginning in 1838. Nakayama Miki believed she was the vessel of *Oyagami* ("God the Parent"), and wrote the Ofudesaki as divine dictation — the tip of her brush moved by a divine hand, not her own will.
+**Ofudesaki** ("Tip of the Divine Writing Brush") — written by Nakayama Miki (1798–1887) in 1,711 waka-form verses across 17 parts between 1869 and 1882 — is the primary canonical scripture of Tenrikyo ("Religion of Divine Wisdom"), a Japanese new religion founded by Nakayama Miki following a series of divine possessions beginning in 1838. Nakayama Miki believed she was the vessel of *Oyagami* ("God the Parent"), and wrote the Ofudesaki as divine dictation — the tip of her brush moved by a divine hand, not her own will.
 
 ## Cross-tradition significance
 
