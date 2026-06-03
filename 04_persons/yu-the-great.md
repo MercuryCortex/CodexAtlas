@@ -16,7 +16,7 @@ texts-authored: []
 texts-attributed-to: []
 originator-of: ["the Xia dynasty (traditional founding ~-2070)", "the Chinese water-management engineering tradition"]
 events-participated: ["The Great Flood of Gun-Yu (the Yellow River flood; conventional date ~-2200)"]
-mentioned-in: ["[[phase-1-025-shujing]] *Yu Gong* (Tribute of Yu) chapter — the foundational textual presentation", "*Shiji* (Records of the Grand Historian, Sima Qian ~-100 BCE) — Annals of the Xia", "*Bamboo Annals* (4th c. BCE chronicle)", "*Mencius* 3A.4 (Mencius's foundational Confucian theological-political reading)"]
+mentioned-in: ["[[phase-2-033-shujing-book-of-documents|Shujing]] *Yu Gong* (Tribute of Yu) chapter — the foundational textual presentation", "*Shiji* (Records of the Grand Historian, Sima Qian ~-100 BCE) — Annals of the Xia", "*Bamboo Annals* (4th c. BCE chronicle)", "*Mencius* 3A.4 (Mencius's foundational Confucian theological-political reading)"]
 status: "metadata"
 refs:
   - title: "The Flood Myths of Early China"
@@ -53,7 +53,7 @@ tags: [person, chinese, flood-controller, yu-the-great, xia-dynasty, water-manag
 ## Identity
 **Yu the Great** (Chinese *大禹 Da Yu*, "the Great Yu"; conventional reign ~-2200 BCE) is the traditional founder of the **Xia dynasty** of China and the legendary **flood-controller** of the **Great Flood of Gun-Yu** narrative. His narrative position in Chinese mythology is structurally distinct from the flood-hero traditions of the Mesopotamian, Hebrew, Greek, and Vedic worlds: where those traditions feature a flood-*survivor* who builds an ark, Yu is a flood-*controller* who *tames* the flood through engineering.
 
-The narrative core (canonical in [[phase-1-025-shujing]] *Yu Gong* "Tribute of Yu" and elaborated in Sima Qian's *Shiji* and in Mencius 3A.4):
+The narrative core (canonical in [[phase-2-033-shujing-book-of-documents|Shujing]] *Yu Gong* "Tribute of Yu" and elaborated in Sima Qian's *Shiji* and in Mencius 3A.4):
 
 1. The **Great Flood** devastates the Yellow River basin (the heartland of the emerging Chinese civilization) for nine years.
 2. **Gun** — Yu's father, commissioned by the legendary Emperor Yao — attempts to control the flood by *building dams* (the "blocking" approach). After nine years of failure, Gun is executed by Emperor Shun.
@@ -64,7 +64,7 @@ This makes Yu a **dual-function figure**: flood-controller + dynasty-founder + w
 
 ## Historical evidence
 
-- **[[phase-1-025-shujing]] *Yu Gong* (Tribute of Yu)** — the foundational textual presentation, likely composed in the Warring States period (-500 to -300 BCE) but reflecting much older traditions.
+- **[[phase-2-033-shujing-book-of-documents|Shujing]] *Yu Gong* (Tribute of Yu)** — the foundational textual presentation, likely composed in the Warring States period (-500 to -300 BCE) but reflecting much older traditions.
 - **Sima Qian, *Shiji* (Records of the Grand Historian)** Annals of the Xia (~-100 BCE) — the standard imperial-historiographic form.
 - **Bamboo Annals** (4th c. BCE) — independent chronicle attestation.
 - **Mencius 3A.4** — the foundational Confucian moral-political reading of Yu's self-denying public service.

@@ -12,7 +12,7 @@ floruit-earliest: -510
 floruit-latest: -479
 historicity: "documented"
 texts-authored: []
-texts-attributed-to: ["[[phase-2-015-analects-of-confucius]] (compiled posthumously)", "[[phase-1-024-shijing]] (traditional editorial role rejected by modern scholarship)", "[[phase-1-025-shujing]] (traditional editorial role rejected by modern scholarship)", "[[phase-1-026-yijing]] (traditional authorship of the Ten Wings rejected by modern scholarship)", "the Five Classics (traditionally edited or commented upon by him, but these attributions are largely later)"]
+texts-attributed-to: ["[[phase-2-015-analects-of-confucius]] (compiled posthumously)", "[[phase-2-032-shijing-book-of-songs|Shijing]] (traditional editorial role rejected by modern scholarship)", "[[phase-2-033-shujing-book-of-documents|Shujing]] (traditional editorial role rejected by modern scholarship)", "[[phase-1-026-yijing]] (traditional authorship of the Ten Wings rejected by modern scholarship)", "the Five Classics (traditionally edited or commented upon by him, but these attributions are largely later)"]
 events-participated: []
 mentioned-in: ["[[phase-2-015-analects-of-confucius]]", "[[phase-2-023-mengzi]]", "[[phase-2-024-xunzi]]", "[[phase-2-022-zhuangzi]] (often as parody-foil)", "[[phase-2-026-han-feizi]] (polemical target)", "Sima Qian's Shiji chapter 47"]
 status: "full"
