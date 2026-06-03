@@ -19,7 +19,7 @@ liturgical-tradition: "[[tradition-vedic-hinduism]] + [[tradition-buddhism]] (Ma
 texts-in-language:
   - "[[phase-2-027-bhagavad-gita]]"
   - "[[ramayana]]"
-  - "[[mahabharata]]"
+  - "[[phase-3-095-mahabharata|Mahābhārata]]"
   - "Purāṇas (Vishnu Purana, Bhagavata Purana, etc.)"
   - "Classical philosophical śāstras (Yoga Sutras, Brahma Sutras, Sankara's Bhasyas)"
   - "Kalidasa's poetry (Meghaduta, Shakuntala, Kumarasambhava)"
@@ -77,7 +77,7 @@ This is what makes Sanskrit a *transmission medium*: a 5th-century-CE author in 
 
 | Domain | Examples |
 |---|---|
-| Epic + Puranic | [[mahabharata]], [[ramayana]], the eighteen *Mahāpurāṇas* |
+| Epic + Puranic | [[phase-3-095-mahabharata|Mahābhārata]], [[ramayana]], the eighteen *Mahāpurāṇas* |
 | Philosophical | Brahma Sutras, Sankara's Bhasyas, Madhva, Ramanuja, the six darśanas + their commentary chains |
 | Court poetry (*kāvya*) | Kalidasa, Bhāravi, Māgha, Bāṇa, Jayadeva |
 | Drama | Kalidasa's *Shakuntala* + *Mālavikāgnimitra*; Bhāsa; Śūdraka's *Mṛcchakaṭika* |
