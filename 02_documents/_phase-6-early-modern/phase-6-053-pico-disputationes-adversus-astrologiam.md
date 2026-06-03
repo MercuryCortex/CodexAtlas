@@ -29,7 +29,7 @@ refs:
   - title: "Giovanni Pico della Mirandola: Disputationes adversus astrologiam divinatricem (2 vols., Latin + Italian)"
     author: "Garin, Eugenio (ed.)"
     year: 1946
-    publisher: "Vallecchi / Le Monnier (Edizione Nazionale)"
+    publisher: "Vallecchi (Edizione Nazionale dei Classici del Pensiero Italiano)"
     url: ""
     type: "critical-edition"
     tier: 1

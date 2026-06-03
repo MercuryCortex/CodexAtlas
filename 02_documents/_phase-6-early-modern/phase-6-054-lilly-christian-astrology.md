@@ -2,7 +2,7 @@
 type: document
 id: "phase-6-054-lilly-christian-astrology"
 title: "Christian Astrology"
-aka: ["Christian Astrology Modestly Treated in Three Books", "Lilly's Christian Astrology"]
+aka: ["Christian Astrology Modestly Treated of in Three Books", "Lilly's Christian Astrology"]
 tradition: "English Protestant Christianity"
 canonical-corpus: ["western-astrology"]
 sub-tradition: "Early-modern English vernacular astrology — the horary tradition"
@@ -24,7 +24,7 @@ influences: ["the English almanac and prophecy culture of the Civil War and Inte
 deities-mentioned: []
 events-context: ["the English Civil War and Interregnum — Lilly's almanacs and predictions were political instruments read by Parliament and king alike"]
 status: "full"
-preservation: "Printed in London in 1647 (Books I–II) with a second edition adding Book III (1659). It is the first comprehensive astrological textbook written in the English vernacular. Widely reprinted (including the Regulus facsimile, 1985) and continuously in print as the foundational manual of the modern horary revival."
+preservation: "First published in London in 1647 as *Christian Astrology Modestly Treated of in Three Books* — all three books, including Book III on nativities, appeared in the first edition; a corrected second edition followed in 1659 (Book III carrying its own 1658 title page). It is the first comprehensive astrological textbook written in the English vernacular. Widely reprinted (including the Regulus facsimile, 1985) and continuously in print as the foundational manual of the modern horary revival."
 refs:
   - title: "Christian Astrology (1647 facsimile)"
     author: "Lilly, William (Regulus facsimile ed.)"
@@ -59,13 +59,13 @@ tags: [phase-6, early-modern, astrology, western-astrology, horary, lilly, engla
 # Christian Astrology
 
 ## What it is
-The **first comprehensive astrological textbook in the English language** — *Christian Astrology Modestly Treated in Three Books*, published in London in 1647 by **William Lilly**, the most celebrated English astrologer of the 17th century. Its three books cover the elements of the art, the practice of **horary astrology** (answering specific questions from the chart of the moment they are asked), and natal astrology with worked examples. Because Lilly wrote in clear English rather than scholarly Latin, *Christian Astrology* democratized the technical tradition — and it remains, three and a half centuries later, the foundational text of the modern revival of traditional horary practice.
+The **first comprehensive astrological textbook in the English language** — *Christian Astrology Modestly Treated of in Three Books*, published in London in 1647 by **William Lilly**, the most celebrated English astrologer of the 17th century. Its three books cover the elements of the art, the practice of **horary astrology** (answering specific questions from the chart of the moment they are asked), and natal astrology with worked examples. Because Lilly wrote in clear English rather than scholarly Latin, *Christian Astrology* democratized the technical tradition — and it remains, three and a half centuries later, the foundational text of the modern revival of traditional horary practice.
 
 ## Context
 - **Political milieu.** The English Civil War and Interregnum. Lilly's annual almanacs and predictions were genuine political forces, read and feared by Parliamentarians and Royalists alike; he was called before a parliamentary committee after the 1666 Great Fire of London, which his earlier symbolic prints were said to have foretold.
 - **Religious milieu.** "Christian Astrology" in the title is a deliberate respectability claim — Lilly presents the art as compatible with Protestant piety in a culture suspicious of divination, framing the astrologer as a humble reader of God's providence.
 - **Who was behind it.** Lilly himself, a self-made man who rose from servant to the leading astrologer of the realm.
-- **Discovery / transmission.** Printed 1647 (with Book III added 1659); widely reprinted; the touchstone text of the 20th–21st-century traditional-astrology revival.
+- **Discovery / transmission.** Printed 1647 as a complete work in three books; a corrected second edition followed in 1659; widely reprinted; the touchstone text of the 20th–21st-century traditional-astrology revival.
 
 ## Themes and motifs
 - [[divinatory-omen-reading]] — the fullest early-modern English manual of judicial (especially horary) astrology.
