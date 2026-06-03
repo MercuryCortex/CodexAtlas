@@ -3201,15 +3201,6 @@
             camera.set({ scale: tlFit * 0.20, centerX: tlCtr.x, centerY: tlCtr.y });
           }
         }
-        // BUGFIX (2026-06-03): non-timeline (wheel / scripture / lenses)
-        // preserveZoom restore. fitToExtent above re-framed the camera to
-        // fit-scale; on a style/colour change or relayout (applyUxMode passes
-        // {preserveZoom:true}), restore the user's saved zoom+pan so the chart
-        // keeps the SAME position instead of snapping back to fit ("the zoom
-        // defaults to 100"). The timeline branch handled its own case above.
-        if (local.layoutId !== 'timeline' && preserveZoom && savedCamState) {
-          camera.set(savedCamState);
-        }
         // Phase 5B M-F1 (2026-05-20) — synchronously record the
         // new pack-scale BEFORE the listener-emit from fitToExtent
         // propagates. Otherwise the onChange listener (camera.js
@@ -4416,18 +4407,6 @@
         line.setAttribute('stroke', 'url(#forge-hull-divgrad-' + i + ')');
         hullDividersG.appendChild(line);
       }
-      // BUGFIX (2026-06-03): rebuildHullElements just destroyed + recreated
-      // the hull <path>s as EMPTY (no `d`). Two things must happen or they
-      // stay invisible until the user pans/zooms:
-      //   1) invalidate the syncHulls() camera-idle cache (else a rebuild
-      //      that keeps the same hullData ref + camera — e.g. a style/colour
-      //      change via applyUxMode {preserveZoom:true}, or a view-switch
-      //      into scripture/lenses — hits the idle cache and skips redraw);
-      //   2) force ONE synchronous syncHulls() now, because the per-frame
-      //      draw loop (drawFrame → syncHulls) is camera-idle-skipped and
-      //      would never run on a static rebuild.
-      local._hullsIdleData = null;
-      try { syncHulls(); } catch (e) { /* viewport not ready; drawFrame covers it */ }
     }
     function syncHulls() {
       // DEBUG (2026-05-27): ?no-hulls=1 skips ALL SVG hull work +
