@@ -12,7 +12,7 @@ appearances:
   - "[[phase-1-002-pyramid-texts]] (earliest solar theology — Ra-Atum)"
   - "[[phase-1-009-coffin-texts]] (Middle Kingdom solar theology)"
   - "[[phase-1-010-book-of-the-dead]] (especially BD 15, the New Kingdom solar hymns)"
-  - "[[phase-1-008-shabaka-stone]] (Memphite competitor — Ptah as creator-of-the-creator)"
+  - "[[phase-1-027-memphite-theology-shabaka-stone|Shabaka Stone]] (Memphite competitor — Ptah as creator-of-the-creator)"
   - "[[phase-1-011-great-hymn-to-aten]] (Atenist radical-solar monotheism)"
   - "[[phase-3-026-diodorus-bibliotheca-book-1]] (Diodorus's Hellenistic account of Egyptian solar religion)"
   - "[[phase-4-072-plutarch-de-iside-et-osiride]] (Plutarch's solar-Osirian theological account)"

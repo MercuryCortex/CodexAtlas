@@ -14,7 +14,7 @@ parent-of: []
 child-of: []
 consort: []
 attributes: ["fire", "the Tophet"]
-attested-in: ["[[document-leviticus]]", "[[document-1-kings]]", "[[phase-2-034-books-of-kings]]"]
+attested-in: ["[[document-leviticus]]", "[[phase-2-034-books-of-kings|1 Kings]]", "[[phase-2-034-books-of-kings]]"]
 equivalents: []
 syncretic-edges:
   - target: "[[yahweh]]"

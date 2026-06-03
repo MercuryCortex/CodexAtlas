@@ -28,7 +28,7 @@ cross-tradition-edges:
     type: "principal-modern-monument-of"
     source: "Gandra 2010; Gandra 2015"
     source-tier: T1
-    notes: "Regaleira is the **most elaborate single architectural-symbolic expression of late-19th/early-20th c. Portuguese esoteric thought**. Carvalho Monteiro's library held first editions of [[corpus-hermeticum]], alchemical manuscripts, [[tradition-freemasonry]] texts, and the Portuguese Renaissance literature ([[camões]], [[bandarra]]) that ties Portuguese hermeticism to the [[theme-fifth-empire]] tradition."
+    notes: "Regaleira is the **most elaborate single architectural-symbolic expression of late-19th/early-20th c. Portuguese esoteric thought**. Carvalho Monteiro's library held first editions of [[phase-3-021-hermetic-corpus-earliest|Corpus Hermeticum]], alchemical manuscripts, [[tradition-freemasonry]] texts, and the Portuguese Renaissance literature ([[camões]], [[bandarra]]) that ties Portuguese hermeticism to the [[theme-fifth-empire]] tradition."
   - target: "tradition-rosicrucianism"
     type: "iconographic-commemoration"
     source: "Gandra 2010"
@@ -133,7 +133,7 @@ This is **architectural initiation made walkable**. The estate visitor, even wit
 
 ## Carvalho Monteiro
 
-The estate's commissioner, [[antonio-augusto-carvalho-monteiro|Carvalho Monteiro]] (1848–1920), was a **Coimbra-trained lawyer and entrepreneur** who made his fortune in Brazilian coffee and gemstones, returned to Portugal, and assembled one of the most consequential **esoteric libraries in early-20th-century Europe**: first editions of the [[corpus-hermeticum]] (Ficino's 1471 Latin translation), [[tradition-alchemy-european|alchemical manuscripts]], [[tradition-freemasonry]] texts, [[tradition-rosicrucianism]] manifestos (the *Fama Fraternitatis* 1614 / *Confessio* 1615), Dante in 19th-c. critical editions, [[camões]]'s *Os Lusíadas*, and the [[bandarra]] Trovas tradition — the corpus of Portuguese hermetic prophecy / [[theme-fifth-empire]] eschatology.
+The estate's commissioner, [[antonio-augusto-carvalho-monteiro|Carvalho Monteiro]] (1848–1920), was a **Coimbra-trained lawyer and entrepreneur** who made his fortune in Brazilian coffee and gemstones, returned to Portugal, and assembled one of the most consequential **esoteric libraries in early-20th-century Europe**: first editions of the [[phase-3-021-hermetic-corpus-earliest|Corpus Hermeticum]] (Ficino's 1471 Latin translation), [[tradition-alchemy-european|alchemical manuscripts]], [[tradition-freemasonry]] texts, [[tradition-rosicrucianism]] manifestos (the *Fama Fraternitatis* 1614 / *Confessio* 1615), Dante in 19th-c. critical editions, [[camões]]'s *Os Lusíadas*, and the [[bandarra]] Trovas tradition — the corpus of Portuguese hermetic prophecy / [[theme-fifth-empire]] eschatology.
 
 He was the **classic late-19th-c. esoteric polymath**: nominally Catholic, deeply read in hermetic and esoteric literature, an enthusiastic Rosicrucian/Masonic affiliate (the specifics of his Masonic initiation are debated). The estate is his **single visible architectural argument** about the synthesis of these traditions into a Portuguese national-esoteric programme.
 

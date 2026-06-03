@@ -18,7 +18,7 @@ function: "principal-buddhist-temple-of-silla-korea-with-grotto-buddha-on-the-mo
 key-figures: ["[[kim-daeseong]] (Silla aristocrat and prime minister; principal patron of the 751–774 reconstruction at Bulguksa and the contemporaneous construction of Seokguram; his commission is described in the *Samguk Yusa*)", "[[king-gyeongdeok]] (Silla; r. 742–765; reigning monarch during the principal building campaign)", "[[king-hyegong]] (Silla; r. 765–780; reign in which the building campaign was completed)", "[[wonhyo]] (617–686; Korean Buddhist philosopher; foundational figure of Silla Buddhism whose Hwaom synthesis informed Bulguksa's doctrinal programme)", "[[uisang]] (625–702; Hwaom school founder in Korea; principal doctrinal influence)"]
 themes: ["[[axis-mundi]]", "[[theme-monumental-buddha-as-state-cult]]", "[[theme-cosmic-mountain-as-temple-form]]", "[[theme-cave-as-cosmic-interior]]", "[[silk-road-as-religious-transmission-corridor]]", "[[theme-buddhist-transmission-from-tang-china-to-silla-korea]]"]
 events-related: ["[[event-bulguksa-construction-751-774]]", "[[event-imjin-war-burning-of-bulguksa-1593]]", "[[event-seokguram-rediscovery-1907]]"]
-documents-related: ["[[samguk-yusa]] (*Memorabilia of the Three Kingdoms*, Iryŏn 1281 — the principal classical source describing Kim Daeseong's commission)", "[[samguk-sagi]] (*History of the Three Kingdoms*, Kim Busik 1145)", "[[avatamsaka-sutra]] (*Hwaom-gyŏng* — the principal doctrinal source for Bulguksa)"]
+documents-related: ["[[samguk-yusa]] (*Memorabilia of the Three Kingdoms*, Iryŏn 1281 — the principal classical source describing Kim Daeseong's commission)", "[[samguk-sagi]] (*History of the Three Kingdoms*, Kim Busik 1145)", "[[phase-4-102-avatamsaka-sutra|Avatamsaka Sutra]] (*Hwaom-gyŏng* — the principal doctrinal source for Bulguksa)"]
 cross-tradition-edges:
   - target: "todaiji-daibutsuden"
     type: "japanese-counterpart-different-architectural-mode"
@@ -110,7 +110,7 @@ Bulguksa was Korea's **first UNESCO World Heritage inscription** (jointly with S
 ## History
 
 - **528 CE** — traditional founding under King Beopheung of Silla (the king under whom Silla adopted Buddhism as state religion in 527 CE). The original temple was small.
-- **751–774 CE** — **[[kim-daeseong|Kim Daeseong]]**, Silla prime minister, undertakes the great reconstruction. Per the [[samguk-yusa|*Samguk Yusa*]], Kim built **Bulguksa for his parents in this life** and **Seokguram for his parents in his previous life** — a Mahayana doctrinal-filial gesture combining present-life and previous-life parental devotion. The temple programme is fully Buddhist-cosmological: the architecture instantiates the doctrine of the *Buddha-kṣetra* (Buddha-land) of the *[[avatamsaka-sutra|Avatamsaka Sutra]]*.
+- **751–774 CE** — **[[kim-daeseong|Kim Daeseong]]**, Silla prime minister, undertakes the great reconstruction. Per the [[samguk-yusa|*Samguk Yusa*]], Kim built **Bulguksa for his parents in this life** and **Seokguram for his parents in his previous life** — a Mahayana doctrinal-filial gesture combining present-life and previous-life parental devotion. The temple programme is fully Buddhist-cosmological: the architecture instantiates the doctrine of the *Buddha-kṣetra* (Buddha-land) of the *[[phase-4-102-avatamsaka-sutra|Avatamsaka Sutra]]*.
 - **9th–14th c.** — Bulguksa remains the principal Buddhist temple of Korea through the Unified Silla (668–935) and Goryeo (918–1392) periods, with continuous patronage and several rebuilds.
 - **1593** — the **Imjin War (Japanese invasion of Korea under Toyotomi Hideyoshi)** — Bulguksa is **burned to the ground**; many of the wooden structures destroyed. Stone elements (the two pagodas, the staircases, the platforms) survive.
 - **1604–1805** — gradual reconstruction during the late Joseon period at progressively smaller scales.
@@ -197,5 +197,5 @@ Whether or not the narrative is historically accurate, it is the principal class
 - [[diamond-sutra-868]] — the Mogao printed-sutra contender (Pure Light Dharani Sutra is the Seokgatap rival claimant for oldest extant print)
 - [[samguk-yusa]] — principal classical source
 - [[tradition-hwaom-buddhism]], [[tradition-silla-buddhism]] — parent doctrinal traditions
-- [[avatamsaka-sutra]] — the principal doctrinal source
+- [[phase-4-102-avatamsaka-sutra|Avatamsaka Sutra]] — the principal doctrinal source
 - [[theme-buddhist-transmission-from-tang-china-to-silla-korea]] — motif anchor

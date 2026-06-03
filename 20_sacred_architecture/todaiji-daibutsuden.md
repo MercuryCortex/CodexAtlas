@@ -20,13 +20,13 @@ function: "principal-temple-of-the-kegon-school-and-state-buddhist-monument-of-n
 key-figures: ["[[emperor-shomu]] (r. 724–749; commissioned the Great Buddha and Tōdaiji; principal architectural patron of Nara-period state Buddhism)", "[[empress-komyo]] (Shōmu's consort; co-patron; founded the Hokkeji nunnery as Tōdaiji's sister institution)", "[[gyoki]] (popular Buddhist monk; principal fundraiser for the Daibutsu cast; mobilised commoner labour and donations)", "[[roben]] (founding abbot of Tōdaiji; principal architect of the Kegon doctrinal programme)", "[[bodhisena]] (Indian monk; performed the *kaigen* eye-opening ceremony of the Buddha statue in 752)", "[[chogen]] (monk; principal patron of the 1190s reconstruction after the 1180 fire)", "[[kobben-koyo-shogun]] (Edo-era patron of the 1709 rebuild)"]
 themes: ["[[theme-monumental-buddha-as-state-cult]]", "[[axis-mundi]]", "[[theme-imperial-cult-architecture]]", "[[theme-cosmic-mountain-as-temple-form]]"]
 events-related: ["[[event-todaiji-daibutsu-casting-745-752]]", "[[event-daibutsu-kaigen-ceremony-752]]", "[[event-taira-burning-of-nara-1180]]", "[[event-todaiji-reconstruction-1190]]"]
-documents-related: ["[[avatamsaka-sutra]] (*Kegon-kyō* — the principal doctrinal source for the Vairocana programme at Todaiji)", "[[shoku-nihongi]] (797 CE — primary source for Shōmu's commission of the Daibutsu)", "[[todaiji-yoroku]] (Kamakura-era temple chronicle)"]
+documents-related: ["[[phase-4-102-avatamsaka-sutra|Avatamsaka Sutra]] (*Kegon-kyō* — the principal doctrinal source for the Vairocana programme at Todaiji)", "[[shoku-nihongi]] (797 CE — primary source for Shōmu's commission of the Daibutsu)", "[[todaiji-yoroku]] (Kamakura-era temple chronicle)"]
 cross-tradition-edges:
   - target: "longmen-grottoes"
     type: "stylistic-and-iconographic-ancestor"
     source: "Coaldrake 1996; McNair 2007"
     source-tier: T1
-    notes: "The Todaiji **Vairocana Buddha (*Birushana*)** is the direct Japanese iconographic and theological cognate of the **Vairocana Buddha of Fengxian Si at [[longmen-grottoes|Longmen]]** (Wu Zetian's commission, ~672–675 CE). Both are colossal seated Vairocanas, both are imperial-state-Buddhist patronage monuments, both draw on the same [[avatamsaka-sutra|*Avatamsaka Sutra*]] doctrinal source identifying Vairocana as the cosmic-illuminator Buddha. The Japanese Todaiji commission (~745–752 CE) **post-dates Wu Zetian's Longmen Vairocana by ~70 years** and is in direct architectural-iconographic dialogue with the Tang precedent."
+    notes: "The Todaiji **Vairocana Buddha (*Birushana*)** is the direct Japanese iconographic and theological cognate of the **Vairocana Buddha of Fengxian Si at [[longmen-grottoes|Longmen]]** (Wu Zetian's commission, ~672–675 CE). Both are colossal seated Vairocanas, both are imperial-state-Buddhist patronage monuments, both draw on the same [[phase-4-102-avatamsaka-sutra|*Avatamsaka Sutra*]] doctrinal source identifying Vairocana as the cosmic-illuminator Buddha. The Japanese Todaiji commission (~745–752 CE) **post-dates Wu Zetian's Longmen Vairocana by ~70 years** and is in direct architectural-iconographic dialogue with the Tang precedent."
   - target: "bulguksa-temple-and-seokguram-grotto"
     type: "korean-buddhist-counterpart"
     source: "Steinhardt 2019; Kim 2010"
@@ -139,7 +139,7 @@ The **South Gate (*Nandaimon*)** — Chōgen's 1199 reconstruction — survives 
 
 ## The Daibutsu Vairocana — iconographic programme
 
-The **Daibutsu** is a seated bronze **Vairocana Buddha** (Japanese *Birushana / Roshana*), the cosmic-illuminator Buddha of the *[[avatamsaka-sutra|Avatamsaka Sutra]]* (Japanese *Kegon-kyō*). Specifications:
+The **Daibutsu** is a seated bronze **Vairocana Buddha** (Japanese *Birushana / Roshana*), the cosmic-illuminator Buddha of the *[[phase-4-102-avatamsaka-sutra|Avatamsaka Sutra]]* (Japanese *Kegon-kyō*). Specifications:
 
 - **Height**: ~14.98 m seated (the lotus pedestal adds another ~3 m).
 - **Weight**: ~500 t bronze; the original 752 figure used ~500 t of bronze and ~440 kg of gold for the gilding.
@@ -190,7 +190,7 @@ This identification is one of the most consequential single doctrinal moves of m
 - [[mogao-caves-dunhuang]] — the Silk-Road iconographic archive
 - [[ise-grand-shrine]] — the Shinto counterpart in Nara-period Japan
 - [[emperor-shomu]], [[empress-komyo]], [[chogen]] — principal patrons
-- [[avatamsaka-sutra]] — the principal doctrinal source
+- [[phase-4-102-avatamsaka-sutra|Avatamsaka Sutra]] — the principal doctrinal source
 - [[shosoin-treasury]] — attached imperial collection
 - [[tradition-kegon-buddhism]], [[tradition-nara-buddhism]] — doctrinal traditions
 - [[tradition-shinbutsu-shugo]] — the medieval Shinto-Buddhist fusion in which Tōdaiji's Vairocana = Amaterasu

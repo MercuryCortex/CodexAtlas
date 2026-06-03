@@ -14,7 +14,7 @@ parent-of: []
 child-of: []
 consort: []
 attributes: ["warrior", "national standard of Moab"]
-attested-in: ["[[document-numbers]]", "[[document-1-kings]]", "[[phase-2-034-books-of-kings]]"]
+attested-in: ["[[document-numbers]]", "[[phase-2-034-books-of-kings|1 Kings]]", "[[phase-2-034-books-of-kings]]"]
 equivalents: []
 syncretic-edges:
   - target: "[[yahweh]]"

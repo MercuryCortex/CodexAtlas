@@ -19,7 +19,7 @@ liturgical-tradition: "[[tradition-eastern-orthodoxy]] + [[tradition-greek-ortho
 texts-in-language:
   - "[[phase-3-006-septuagint]] (the Greek translation of the Hebrew Bible, c. -250 to -150)"
   - "The New Testament (1st c. CE; all 27 books composed in Koine)"
-  - "[[corpus-hermeticum]] (2nd-3rd c. CE)"
+  - "[[phase-3-021-hermetic-corpus-earliest|Corpus Hermeticum]] (2nd-3rd c. CE)"
   - "Nag Hammadi Library Greek originals (behind the Coptic translation; cf. [[event-nag-hammadi-discovery]])"
   - "Polybius's *Histories*; Plutarch's *Lives* + *Moralia* (later Atticizing Koine)"
   - "Philo of Alexandria's corpus"
@@ -89,7 +89,7 @@ The entire 27-book New Testament corpus was composed in Koine (mid-1st to early-
 
 ### 3. The carrier of Hellenistic philosophy + Hermetism + Gnosticism
 
-The [[corpus-hermeticum|Corpus Hermeticum]] (2nd-3rd c. CE), the Gnostic Greek-original texts behind the Coptic [[event-nag-hammadi-discovery|Nag Hammadi Library]], Philo of Alexandria's Middle Platonist commentaries on the Bible, the Neoplatonist tradition (Plotinus's *Enneads* are in Koine), and the Hellenistic-Jewish + Christian + Gnostic literary cross-pollination of Alexandria are *all* in Koine.
+The [[phase-3-021-hermetic-corpus-earliest|Corpus Hermeticum]] (2nd-3rd c. CE), the Gnostic Greek-original texts behind the Coptic [[event-nag-hammadi-discovery|Nag Hammadi Library]], Philo of Alexandria's Middle Platonist commentaries on the Bible, the Neoplatonist tradition (Plotinus's *Enneads* are in Koine), and the Hellenistic-Jewish + Christian + Gnostic literary cross-pollination of Alexandria are *all* in Koine.
 
 ## Cognacy in the Indo-European frame
 
@@ -100,7 +100,7 @@ Koine is a daughter of the Hellenic branch of [[language-indo-european-family|In
 - [[language-indo-european-family]] — family
 - [[sanskrit-vedic]] — cognate IE branch (load-bearing for the comparative IE method)
 - [[phase-3-006-septuagint]] — the first major translation
-- [[corpus-hermeticum]] — Hermetic literature
+- [[phase-3-021-hermetic-corpus-earliest|Corpus Hermeticum]] — Hermetic literature
 - [[event-nag-hammadi-discovery]] — Coptic Gnostic library (Greek originals behind several texts)
 - [[alphabet-greek-vowel-revolution]] — the script
 - [[chaoskampf]] — inherited PIE poetic formula preserved in both Greek + Vedic

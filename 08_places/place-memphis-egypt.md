@@ -120,7 +120,7 @@ Memphis is progressively eclipsed by Thebes during the New Kingdom (Theban Amun-
 
 - [[ptah]] · the principal cult deity (eponymous of *Egypt*)
 - [[place-saqqara]] · the necropolis of Memphis
-- [[phase-1-008-shabaka-stone]] · the Memphite Theology text
+- [[phase-1-027-memphite-theology-shabaka-stone|Shabaka Stone]] · the Memphite Theology text
 - [[sekhmet]] · the Memphite triad consort
 - [[narmer]] · traditional founder
 - [[place-heliopolis]] · the rival/companion theological centre in Lower Egypt
