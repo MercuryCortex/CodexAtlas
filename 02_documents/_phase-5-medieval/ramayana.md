@@ -52,7 +52,7 @@ tags: [document, scripture, hindu, itihasa, ramayana, valmiki, epic, rama, hanum
 
 # Rāmāyaṇa
 
-The **Rāmāyaṇa** ("the Journey of Rāma") is the second of the two great Sanskrit epics (*itihāsa*) — traditionally the **first**, revered as the **Ādikāvya, the "first poem,"** composed by the sage **Vālmīki**, the **Ādikavi** ("first poet"). In ~**24,000 verses across seven books (kāṇḍas)** it tells the life of **Rāma**, prince of **Ayodhyā** and an avatar of **[[vishnu|Viṣṇu]]**, and has shaped the moral imagination of South and Southeast Asia for two millennia.
+The **Rāmāyaṇa** ("the Journey of Rāma") is, with the Mahābhārata, one of the two great Sanskrit epics (*itihāsa*) — and by tradition the **first of all poems**, revered as the **Ādikāvya** ("first poem") and ascribed to the sage **Vālmīki**, the **Ādikavi** ("first poet"). In ~**24,000 verses across seven books (kāṇḍas)** it tells the life of **Rāma**, prince of **Ayodhyā** and an avatar of **[[vishnu|Viṣṇu]]**, and has shaped the moral imagination of South and Southeast Asia for two millennia.
 
 ## The story
 
