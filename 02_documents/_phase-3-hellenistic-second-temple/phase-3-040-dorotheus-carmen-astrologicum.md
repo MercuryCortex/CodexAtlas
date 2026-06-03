@@ -2,7 +2,7 @@
 type: document
 id: "phase-3-040-dorotheus-carmen-astrologicum"
 title: "Carmen Astrologicum (Pentateuch)"
-aka: ["Carmen Astrologicum", "Pentateuch", "Pentabiblos", "Kitāb al-Khmasī", "The Five Books of Dorotheus"]
+aka: ["Carmen Astrologicum", "Pentateuch", "Pentabiblos", "Kitāb Dūrūthiyūs", "The Five Books of Dorotheus"]
 tradition: "Hellenistic Greek"
 canonical-corpus: ["hellenistic-astrology"]
 sub-tradition: "Hellenistic horoscopic astrology — electional and inceptional doctrine"
@@ -24,7 +24,7 @@ influences: ["[[phase-3-041-yavanajataka]] (Dorothean material reached India as 
 deities-mentioned: ["[[utu-shamash]]", "[[nanna-sin]]"]
 events-context: ["the early Roman Empire (original); the Sasanian Pahlavi translation movement (3rd–7th c.); the ʿAbbāsid Greek-to-Arabic translation movement (8th–9th c.)"]
 status: "full"
-preservation: "The original Greek hexameter poem is **lost except for fragments and quotations** (notably in Hephaestio of Thebes). The work survives in continuous form only through a remarkable relay: a **Sasanian Pahlavi translation** (3rd century, later updated) was rendered into **Arabic c. 800 CE by ʿUmar ibn al-Farrukhān al-Ṭabarī**, and it is this Arabic *Kitāb* that David Pingree edited and translated (1976). The text thus physically embodies the Hellenistic → Persian → Arabic transmission it is famous for."
+preservation: "The original Greek hexameter poem is **lost except for fragments and quotations** (notably in Hephaestio of Thebes). The work survives in continuous form only through a remarkable relay: a **Sasanian Pahlavi translation** (3rd century, surviving in a later, revised recension) was rendered into **Arabic c. 800 CE by ʿUmar ibn al-Farrukhān al-Ṭabarī**, and it is this Arabic *Kitāb* that David Pingree edited and translated (1976). The text thus physically embodies the Hellenistic → Persian → Arabic transmission it is famous for."
 refs:
   - title: "Dorothei Sidonii Carmen Astrologicum (Teubner; Arabic with English translation)"
     author: "Pingree, David (ed./trans.)"
