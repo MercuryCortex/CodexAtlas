@@ -10,7 +10,7 @@ label: "monumental-inscription"
 date-composed-earliest: -27
 date-composed-latest: 14
 date-redacted: 14
-date-physical-mss-earliest: -10
+date-physical-mss-earliest: 14
 language: ["Latin (with a parallel Greek translation in the eastern copies)"]
 script: "Latin (Roman); Greek"
 region: "the Roman Empire"

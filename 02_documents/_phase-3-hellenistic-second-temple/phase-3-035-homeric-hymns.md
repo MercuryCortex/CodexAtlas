@@ -50,7 +50,7 @@ refs:
   - title: "The Homeric Hymn to Demeter"
     author: "Richardson, N.J."
     year: 1974
-    publisher: "Oxford University Press"
+    publisher: "Clarendon Press (Oxford)"
     type: "critical-edition"
     tier: 1
     notes: "The standard philological commentary"
