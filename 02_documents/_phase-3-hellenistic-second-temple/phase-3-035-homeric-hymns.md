@@ -2,54 +2,95 @@
 type: document
 id: "phase-3-035-homeric-hymns"
 title: "Homeric Hymns"
-aka: ["Homeric Hymns", "Ὕμνοι Ὁμηρικοί", "Hymni Homerici", "33 Homeric Hymns"]
-author: "Anonymous (multiple authors, composed 7th–5th c. BCE; attributed to Homer by tradition)"
-date-composed-earliest: -650
-date-range: "7th–5th century BCE (major hymns); some as late as 3rd c. BCE"
-language: "Ancient Greek (hexameter)"
-tradition: "[[tradition-greek-religion]]"
+aka: ["Ὕμνοι Ὁμηρικοί", "Hymni Homerici", "The 33 Homeric Hymns"]
+tradition: "Greek religion"
 canonical-corpus: ["greek-scripture"]
-genre: "hymn / mythological-narrative / ritual-invocation"
-phase: 3
-region: "Greek world (Ionian coast, mainland Greece)"
-geo-lat: 38.0
-geo-lon: 23.5
-geo-label: "Athens / Ionian Greek world"
-historicity: "documented"
+sub-tradition: "Archaic Greek hexameter hymnody to the Olympian gods"
+label: "hymn-collection"
+date-composed-earliest: -650
+date-composed-latest: -300
+date-redacted:
+date-physical-mss-earliest: 1400
+language: ["Ancient Greek (Homeric hexameter)"]
+script: "Greek"
+region: "the Greek world (Ionia and mainland Greece)"
+city-of-origin: ""
+authorship: "anonymous and multiple; ascribed to Homer in antiquity because the hymns share the Iliad and Odyssey's dactylic hexameter and formulaic diction, not by genuine attribution"
 key-figures: []
-deities-mentioned: ["[[demeter-greek]]", "[[dionysus]]", "[[apollo-greek]]", "[[aphrodite-greek]]", "[[hermes-greek]]", "[[ares]]", "[[adonis]]"]
-influenced-by:
-  - "[[phase-2-008-homeric-epics]] — same hexameter tradition, related mythological world"
-  - "[[tradition-greek-religion]] — Panhellenic mythology and ritual"
-influences:
-  - "[[tradition-orphic]] — Orphic Hymns draw on the Homeric Hymn tradition"
-  - "Roman religious poetry — Ovid's *Metamorphoses* adapts many Homeric Hymn narratives"
-  - "Hellenistic mystery cults — Homeric Hymn to Demeter is foundational for the Eleusinian Mysteries"
-status: "stub"
+themes: ["[[divine-kingship]]"]
+parallels: ["[[phase-3-028-orphic-hymns]]", "[[phase-2-008-homeric-epics]]"]
+influenced-by: ["the Homeric epic tradition ([[phase-2-008-homeric-epics]]) — shared hexameter and mythological world", "Panhellenic cult and local festival traditions for which the hymns were preludes (*prooimia*)"]
+influences: ["[[phase-3-028-orphic-hymns]] (the later Orphic hymnic corpus)", "Roman religious poetry (Ovid's *Metamorphoses* adapts many of these narratives)", "the Hellenistic mystery cults — the Hymn to Demeter is the foundational text of the Eleusinian Mysteries", "the Renaissance recovery of Greek myth"]
+deities-mentioned: ["[[demeter]]", "[[apollo]]", "[[aphrodite-greek]]", "[[hermes-greek]]", "[[dionysus]]", "[[ares]]", "[[adonis]]"]
+events-context: []
+status: "full"
+preservation: "A collection of 33 anonymous Greek hexameter poems, each addressed to an individual deity, transmitted as a corpus from the Byzantine manuscript tradition (earliest important MSS 15th c.). Composed across the 7th–3rd centuries BCE; the hymns functioned as preludes (*prooimia*) sung by rhapsodes before epic recitation. The standard text is M.L. West's Loeb (2003)."
 refs:
-  - title: "The Homeric Hymns"
-    author: "Foley, Helene P. (trans.)"
-    year: 1994
-    publisher: "Princeton University Press"
-    type: "primary-translation"
+  - title: "Homeric Hymns, Homeric Apocrypha, Lives of Homer (Loeb Classical Library)"
+    author: "West, M.L. (ed./trans.)"
+    year: 2003
+    publisher: "Harvard University Press"
+    url: ""
+    type: "critical-edition"
     tier: 1
-  - title: "The Homeric Hymns: A Translation, with Brief Notes"
+    notes: "Standard Greek text and translation of all the hymns"
+  - title: "The Homeric Hymns: A Translation, with Introduction and Notes"
     author: "Athanassakis, Apostolos N."
     year: 2004
-    publisher: "Johns Hopkins University Press"
+    publisher: "Johns Hopkins University Press (2nd ed.)"
     type: "primary-translation"
     tier: 1
-tags: [document, greek, hymn, demeter, apollo, aphrodite, dionysus, hexameter, eleusinian, ritual, ancient]
+  - title: "The Homeric Hymn to Demeter: Translation, Commentary, and Interpretive Essays"
+    author: "Foley, Helene P. (ed.)"
+    year: 1994
+    publisher: "Princeton University Press"
+    type: "critical-edition"
+    tier: 1
+    notes: "On the Demeter hymn and the Eleusinian Mysteries"
+  - title: "The Homeric Hymn to Demeter"
+    author: "Richardson, N.J."
+    year: 1974
+    publisher: "Oxford University Press"
+    type: "critical-edition"
+    tier: 1
+    notes: "The standard philological commentary"
+tags: [phase-3, greek, hymn, homeric, demeter, apollo, eleusinian, hexameter, ritual, ancient]
 ---
 
 # Homeric Hymns
 
-The **Homeric Hymns** are a collection of 33 anonymous Greek hexameter poems addressed to individual Olympian deities, composed between the 7th and 5th centuries BCE (some perhaps as late as the 3rd century BCE). They are called "Homeric" by ancient attribution and because they deploy the same dactylic hexameter and Homeric formulaic language as the Iliad and Odyssey — not because Homer composed them.
+## What it is
+A collection of **33 anonymous Greek hexameter poems**, each a hymn to an individual Olympian deity, composed between the 7th and 3rd centuries BCE. They are "Homeric" only by ancient attribution and by their use of the same dactylic hexameter and formulaic language as the *Iliad* and *Odyssey* — Homer did not compose them. Ranging from a couple of lines to nearly 600, they were sung by rhapsodes as **preludes (*prooimia*)** to longer epic recitations, and several preserve the fullest and earliest narrative forms of major Greek myths.
 
-The most important hymns for the vault's cross-tradition mission:
+## Context
+- **Political milieu.** The archaic and classical Greek world of competitive festivals and Panhellenic sanctuaries, where rhapsodes performed.
+- **Religious milieu.** The hymns are at once literary art and cult document: the longer ones encode the foundation-narratives of specific cults (Eleusis, Delos, Delphi).
+- **Who was behind it.** Anonymous rhapsodes and poets across several centuries; the corpus was assembled later.
+- **Discovery / transmission.** Transmitted through the Byzantine manuscript tradition and recovered for the West in the Renaissance.
 
-**Homeric Hymn to Demeter** (h.Dem., 495 lines): the fullest surviving account of the myth of Persephone's abduction by Hades and the institution of the Eleusinian Mysteries. Lines 480–482 contain the most explicit surviving statement of Eleusinian initiate beatitude: "Blessed is the mortal who has seen these things, but the uninitiated... will never have a like portion in the dark realm." This text is the primary source for the theological content of what ~1,500 years of Greek and Roman initiates experienced.
+## The major hymns
+- **To Demeter** (h.Dem., 495 lines) — the fullest account of [[demeter]]'s grief, the abduction of Persephone by Hades, and the founding of the **Eleusinian Mysteries**; lines 480–82 give the most explicit ancient statement of initiate beatitude ("Blessed is the mortal who has seen these things…").
+- **To Apollo** (h.Ap.) — the birth of [[apollo]] on Delos and his founding of the oracle at Delphi.
+- **To Hermes** (h.Merc.) — the infant [[hermes-greek]] as cattle-thief and inventor of the lyre, the archetypal trickster narrative.
+- **To Aphrodite** (h.Aphr.) — [[aphrodite-greek]]'s union with the mortal Anchises; carries the archaic Greek form of the [[adonis]] myth.
+- **To Dionysus** (h.Dion.) — [[dionysus]]'s epiphany to the pirates, who are turned into dolphins.
 
-**Homeric Hymn to Aphrodite** (h.Aphr.): narrates Aphrodite's union with the mortal Anchises; the myth of [[adonis]] in its most archaic Greek form. The Adonis cult — the dying-and-rising young lover — is documented here.
+## Themes and motifs
+- [[divine-kingship]] — the hymns repeatedly stage the gods establishing their honours (*timai*) and their place in the Olympian order under Zeus.
 
-**Homeric Hymn to Dionysus** (h.Dion.): the pirates' encounter with Dionysus; transformation of the ship's mast into a vine, pirates into dolphins. Shortest of the major hymns but foundational for the god's epiphany theology.
+## Connections (provisional)
+- → [[phase-2-008-homeric-epics]] — *shared-tradition*: same hexameter craft and mythological world.
+- → [[phase-3-028-orphic-hymns]] — *genre-successor*: the later Orphic hymnic corpus builds on this model.
+
+## Disputes
+- **Dating and unity.** The hymns span centuries; dating individual hymns (especially the longer narrative ones) is contested, and the corpus is an artificial later assemblage.
+
+## MASSIVE WIN — cross-tradition edges
+- **The script of the Eleusinian Mysteries.** The Hymn to Demeter is the primary source for the theology of the Mysteries — the dying-and-returning grain-maiden and the promise of a better lot in the afterlife — that some 1,500 years of Greek and Roman initiates experienced, and a key comparandum for the dying-and-rising patterns the Atlas tracks across [[adonis]], Dumuzi, and others (Foley 1994; Richardson 1974).
+- **The archaic Adonis.** The Hymn to Aphrodite preserves the oldest Greek form of the Adonis myth — the Near-Eastern dying-young-lover (Dumuzi/Tammuz, Adon) naturalized into Greek cult, a documented transmission from the Levant into Hellenic religion (West 2003).
+
+## Refs
+1. West, M.L. (2003). *Homeric Hymns…* (Loeb). Harvard UP. — standard text.
+2. Athanassakis, A.N. (2004). *The Homeric Hymns* (2nd ed.). Johns Hopkins UP.
+3. Foley, H.P. (ed.) (1994). *The Homeric Hymn to Demeter*. Princeton UP.
+4. Richardson, N.J. (1974). *The Homeric Hymn to Demeter*. Oxford UP.
