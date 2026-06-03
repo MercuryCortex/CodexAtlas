@@ -24,7 +24,7 @@ influenced-by:
 influences:
   - "[[tradition-tenrikyo]] — canonical scripture of ~2 million adherents worldwide"
   - "Modern Japanese new religions (Tenrikyo is the founding model for the *shin shukyo* movement)"
-status: "stub"
+status: "full"
 refs:
   - title: "Tenrikyo: The Path to Joyousness"
     author: "Tenrikyo Church Headquarters (ed.)"

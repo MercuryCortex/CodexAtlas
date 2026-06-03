@@ -23,7 +23,7 @@ influenced-by: ["[[krishna]]", "Bhagavata Purana (Phase 5)", "Sant tradition (Ka
 influences: ["Modern Hindi devotional canon", "Modern Indian feminist hagiography", "Sikh Adi Granth includes related bhakti poetry (though not Mira's directly)"]
 deities-mentioned: ["[[krishna]] (especially as Giridhar Gopal / Govind)"]
 events-context: ["Sisodia Rajput court at Chittor mid-16th c."]
-status: "partial"
+status: "full"
 preservation: "The Mirabai corpus is a striking case of fluid oral-and-manuscript transmission. No manuscript closer to Mirabai's lifetime than the late 17th c. (the earliest dated padas attributed to Mira are in the Kishangarh, Jaipur, and Dadu-panthi manuscripts of ~1690+). Hawley & Juergensmeyer (1988, *Songs of the Saints of India*) and Hawley (2005, *Three Bhakti Voices*) have shown that the popular Mira corpus is a continuous accretion; only a fraction can be reasonably attributed to a historical Mirabai (c. 1498–c. 1547). The tradition remains powerfully alive in North Indian devotional singing."
 refs:
   - title: "Songs of the Saints of India"

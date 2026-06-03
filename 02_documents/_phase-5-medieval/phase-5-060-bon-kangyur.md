@@ -26,7 +26,7 @@ influences:
   - "[[tradition-vajrayana-buddhism]] — bidirectional: Dzogchen is shared or mutually derived; historical priority disputed"
   - "[[phase-5-029-bardo-thodol]] — Bardo Thodol and Bon death-navigation texts share a closely related framework"
   - "Contemporary Tibetan religious synthesis"
-status: "stub"
+status: "full"
 refs:
   - title: "The Heart Drops of Dharmakaya: Dzogchen Practice of the Bön Tradition"
     author: "Wangyal, Tenzin"

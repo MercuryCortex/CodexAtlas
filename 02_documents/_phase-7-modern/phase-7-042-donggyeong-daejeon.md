@@ -27,7 +27,7 @@ influences:
   - "[[tradition-cheondogyo]] — the Donggyeong Daejeon remains the canonical text of the Cheondogyo movement"
   - "Donghak Peasant Revolution (1894) — the rebellion that triggered the First Sino-Japanese War was fought under Donghak banners"
   - "March First Movement (1919) — Son Byong-hui, Cheondogyo leader, was a primary organizer of Korea's independence declaration"
-status: "stub"
+status: "full"
 refs:
   - title: "The Donghak Religion in Korea, 1860–1905"
     author: "Young, Carl F."
