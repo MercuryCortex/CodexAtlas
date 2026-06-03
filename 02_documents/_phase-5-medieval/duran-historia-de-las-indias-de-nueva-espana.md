@@ -4,7 +4,7 @@ id: "duran-historia-de-las-indias-de-nueva-espana"
 title: "Historia de las Indias de Nueva España e Islas de Tierra Firme (Durán)"
 aka: ["The History of the Indies of New Spain", "Durán Codex", "Historia de las Indias de Nueva España"]
 tradition: "Nahua / Aztec (Mexica) — recorded by Spanish Dominican ethnography"
-canonical-corpus: ["aztec-corpus"]
+canonical-corpus: ["aztec-mexica-corpus"]
 sub-tradition: "Post-conquest colonial ethnography of Aztec religion and history"
 label: "colonial-chronicle"
 date-composed-earliest: 1576

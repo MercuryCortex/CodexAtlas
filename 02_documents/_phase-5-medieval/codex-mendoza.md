@@ -4,7 +4,7 @@ id: "codex-mendoza"
 title: "Codex Mendoza"
 aka: ["Codex Mendoza", "Mendoza Codex", "Codex Mendocino"]
 tradition: "Nahua / Aztec (Mexica) — colonial pictorial manuscript with Spanish glosses"
-canonical-corpus: ["aztec-corpus"]
+canonical-corpus: ["aztec-mexica-corpus"]
 sub-tradition: "Early-colonial Aztec pictorial-documentary manuscript"
 label: "pictorial-codex"
 date-composed-earliest: 1541
