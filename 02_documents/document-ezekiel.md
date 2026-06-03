@@ -33,7 +33,7 @@ refs:
     url: ""
     type: "critical-edition"
     tier: 1
-    notes: "Standard 'holistic' commentary defending the book's coherence"
+    notes: "Standard 'holistic' commentary defending the book's coherence (vol. 22, 1983; vol. 22A, 1997)"
   - title: "Ezekiel 1 / Ezekiel 2 (Hermeneia)"
     author: "Zimmerli, Walther"
     year: 1979

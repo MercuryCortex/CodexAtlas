@@ -4,7 +4,7 @@ id: "phase-3-096-baruch"
 title: "Book of Baruch (1 Baruch)"
 aka: ["Barouch (LXX)", "1 Baruch", "Liber Baruch", "the Book of Baruch"]
 tradition: "Hellenistic Judaism"
-canonical-corpus: ["bible", "tewahedo"]
+canonical-corpus: ["bible", "ethiopic-tewahedo-canon"]
 sub-tradition: "Second-Temple deuterocanonical literature; the Jeremianic tradition"
 label: "deuterocanonical"
 date-composed-earliest: -150
@@ -34,10 +34,10 @@ refs:
     type: "monograph"
     tier: 1
     notes: "The text-critical analysis arguing a Hebrew Vorlage behind Baruch 1:1–3:8"
-  - title: "Baruch and the Epistle of Jeremiah: A Commentary (CEJL)"
+  - title: "Baruch and the Epistle of Jeremiah: A Commentary based on the Texts in Codex Vaticanus (Septuagint Commentary Series)"
     author: "Adams, Sean A."
     year: 2014
-    publisher: "De Gruyter"
+    publisher: "Brill"
     type: "critical-edition"
     tier: 1
     notes: "Current standard commentary"
@@ -88,6 +88,6 @@ A short **deuterocanonical** book of five chapters, transmitted in the Greek Sep
 
 ## Refs
 1. Tov, E. (1976). *The Septuagint Translation of Jeremiah and Baruch*. Scholars Press. — the Hebrew-Vorlage argument.
-2. Adams, S.A. (2014). *Baruch and the Epistle of Jeremiah* (CEJL). De Gruyter. — standard commentary.
+2. Adams, S.A. (2014). *Baruch and the Epistle of Jeremiah* (Septuagint Commentary Series). Brill. — standard commentary.
 3. Steck, O.H. (1993). *Das apokryphe Baruchbuch*. Vandenhoeck & Ruprecht.
 4. Nickelsburg, G.W.E. (2005). *Jewish Literature Between the Bible and the Mishnah*. Fortress.

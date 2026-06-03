@@ -41,10 +41,10 @@ refs:
     type: "critical-edition"
     tier: 1
     notes: "The leading full commentary; on the Chronicler's theology"
-  - title: "2 Chronicles (Anchor Yale Bible)"
+  - title: "2 Chronicles: A Commentary (Hermeneia)"
     author: "Klein, Ralph W."
     year: 2012
-    publisher: "Yale University Press"
+    publisher: "Fortress Press"
     type: "critical-edition"
     tier: 1
   - title: "The Chronicler as Historian"
@@ -88,5 +88,5 @@ A single work of the **Writings (Ketuvim)** — one book in the Hebrew Bible, sp
 ## Refs
 1. Knoppers, G.N. (2003). *1 Chronicles* (Anchor Bible 12, 12A). — genealogies + Davidic narrative.
 2. Japhet, S. (1993). *I & II Chronicles* (OTL). — leading full commentary.
-3. Klein, R.W. (2012). *2 Chronicles* (Anchor Yale Bible).
+3. Klein, R.W. (2012). *2 Chronicles* (Hermeneia). Fortress.
 4. Graham, Hoglund & McKenzie (eds.) (1997). *The Chronicler as Historian*. — methodological essays.
