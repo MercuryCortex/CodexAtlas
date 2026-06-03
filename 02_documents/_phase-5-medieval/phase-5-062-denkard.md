@@ -4,10 +4,11 @@ id: "phase-5-062-denkard"
 title: "Dēnkard"
 aka: ["Denkard", "Denkart", "Dinkart", "Acts of the Religion"]
 author: "Adurfarnbag-i Farroxzadan (compiler, 9th c. CE); Adurbad-i Emedan (redactor)"
-date-composed: 850
+date-composed-earliest: 830
+date-composed-latest: 881
 date-range: "compiled 9th c. CE (material drawn from Sasanian archives, 3rd–7th c.)"
 language: "Middle Persian (Pahlavi)"
-tradition: "[[tradition-zoroastrianism]]"
+tradition: "Zoroastrianism"
 canonical-corpus: ["avesta"]
 genre: "theological-encyclopedia / doxography / apologetics"
 phase: 5
@@ -26,7 +27,7 @@ influences:
   - "[[tradition-zoroastrianism]] — primary surviving source for Sasanian-era Zoroastrian theology"
   - "All post-Sasanian Zoroastrian scholarship (the Denkard IS the archive)"
   - "[[phase-4-107-bundahishn]] — the Bundahishn draws on the same lost Avestan Zand tradition the Denkard preserves"
-status: "stub"
+status: "full"
 refs:
   - title: "The Dēnkard: A Pahlavi Text"
     author: "Madan, Dhanjishah Meherjibhai (ed.)"

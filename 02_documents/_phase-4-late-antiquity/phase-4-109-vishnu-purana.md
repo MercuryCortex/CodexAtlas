@@ -4,10 +4,11 @@ id: "phase-4-109-vishnu-purana"
 title: "Vishnu Purāṇa"
 aka: ["Vishnu Purana", "Viṣṇu Purāṇa", "Vaiṣṇava Purāṇa", "one of the 18 Mahāpurāṇas"]
 author: "Traditional: Parāśara (legendary sage); actual: anonymous redactors, 4th–5th century CE"
-date-composed: 400
+date-composed-earliest: 400
+date-composed-latest: 500
 date-range: "core text c. 400–500 CE; some material older"
 language: "Sanskrit"
-tradition: "[[tradition-bhakti-vaishnavism]]"
+tradition: "Vedic / Hindu"
 canonical-corpus: ["vaishnava-canon"]
 genre: "purana / cosmological-narrative / avatara-theology"
 phase: 4
@@ -17,14 +18,14 @@ geo-lon: 83.0
 geo-label: "Northern India (Gupta period)"
 historicity: "documented"
 key-figures: []
-deities-mentioned: ["[[vishnu]]", "[[lakshmi]]", "[[varaha-avatar]]", "[[kurma-avatar]]", "[[narasimha-avatar]]", "[[vamana-avatar]]", "[[krishna]]"]
+deities-mentioned: ["[[vishnu]]", "[[lakshmi]]", "[[varaha-avatar]]", "[[kurma-avatar]]", "[[narasimha]]", "[[vamana]]", "[[krishna]]"]
 influenced-by:
   - "[[tradition-vedic-hinduism]] — Vedic cosmology and Vishnu as solar deity"
   - "[[phase-2-017-mahabharata-ramayana-oral-layers]] — Epic Vaishnavism"
 influences:
   - "[[tradition-bhakti-vaishnavism]] — one of the foundational Puranic texts for Vaishnava theology"
   - "Later Puranas — the Bhagavata Purana (~9th c.) develops avatara theology further"
-status: "stub"
+status: "full"
 refs:
   - title: "The Vishnu Purana: A System of Hindu Mythology and Tradition"
     author: "Wilson, H.H. (trans.)"
