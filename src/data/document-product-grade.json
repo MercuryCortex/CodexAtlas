@@ -10,7 +10,7 @@
    "key": "connected",
    "label": "Graph-connected (no orphans)",
    "target": "0 disconnected",
-   "current": "46",
+   "current": "28",
    "ok": false,
    "detail": "every doc has \u22651 wikilink wire in or out"
   },
@@ -18,7 +18,7 @@
    "key": "tradition",
    "label": "Has home tradition (wedge)",
    "target": "100%",
-   "current": "449/507",
+   "current": "469/507",
    "ok": false,
    "detail": "the scripture-exception singular origin"
   },
@@ -26,7 +26,7 @@
    "key": "dates",
    "label": "Has dates",
    "target": "100%",
-   "current": "482/507",
+   "current": "498/507",
    "ok": false,
    "detail": ""
   },
@@ -34,7 +34,7 @@
    "key": "sourced",
    "label": "Sourced (refs)",
    "target": "0 unsourced",
-   "current": "47",
+   "current": "30",
    "ok": false,
    "detail": ""
   },
@@ -42,7 +42,7 @@
    "key": "depth",
    "label": "At least metadata depth",
    "target": "0 stubs/partials",
-   "current": "80",
+   "current": "48",
    "ok": false,
    "detail": "stub + partial + untyped"
   },
@@ -50,7 +50,7 @@
    "key": "thin",
    "label": "No thin bodies (<400 chars)",
    "target": "0",
-   "current": "44",
+   "current": "28",
    "ok": false,
    "detail": ""
   },
