@@ -41,13 +41,13 @@ refs:
     type: "monograph"
     tier: 1
     notes: "Boltz's entry on the Zhou Li's textual history"
-  - title: "The Three Rites and the Confucian Ritual Tradition"
-    author: "Nylan, Michael (in The Five 'Confucian' Classics)"
+  - title: "The Five 'Confucian' Classics (ch. 'The Three Rites Canons')"
+    author: "Nylan, Michael"
     year: 2001
     publisher: "Yale University Press"
     type: "monograph"
     tier: 1
-    notes: "On the ritual classics' canonical role"
+    notes: "The chapter 'The Three Rites Canons' on the ritual classics' canonical role"
 tags: [phase-5, chinese, confucian, ritual-classic, zhou-li, statecraft, bureaucracy, canon]
 ---
 
