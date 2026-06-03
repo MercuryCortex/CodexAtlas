@@ -3,7 +3,7 @@ type: theme
 id: "divine-twins"
 name: "Divine Twins"
 category: "mythological-type"
-appearances: ["[[rigveda]]", "[[phase-2-001-iliad]]", "[[phase-8-007-ifa-divination-corpus]]"]
+appearances: ["[[rigveda]]", "[[phase-2-008-homeric-epics|Iliad]]", "[[phase-8-007-ifa-divination-corpus]]"]
 deity-instances: ["[[the-ashvins]]", "[[the-dioskouroi]]", "[[romulus]]"]
 status: "metadata"
 refs:
