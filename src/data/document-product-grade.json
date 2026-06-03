@@ -18,7 +18,7 @@
    "key": "tradition",
    "label": "Has home tradition (wedge)",
    "target": "100%",
-   "current": "428/507",
+   "current": "429/507",
    "ok": false,
    "detail": "the scripture-exception singular origin"
   },
@@ -34,7 +34,7 @@
    "key": "sourced",
    "label": "Sourced (refs)",
    "target": "0 unsourced",
-   "current": "66",
+   "current": "65",
    "ok": false,
    "detail": ""
   },
@@ -42,7 +42,7 @@
    "key": "depth",
    "label": "At least metadata depth",
    "target": "0 stubs/partials",
-   "current": "101",
+   "current": "100",
    "ok": false,
    "detail": "stub + partial + untyped"
   },
@@ -50,7 +50,7 @@
    "key": "thin",
    "label": "No thin bodies (<400 chars)",
    "target": "0",
-   "current": "62",
+   "current": "61",
    "ok": false,
    "detail": ""
   },
