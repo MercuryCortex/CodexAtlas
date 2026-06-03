@@ -48,13 +48,13 @@ refs:
     type: "monograph"
     tier: 1
     notes: "Standard narrative-scholarly study of the pilgrimage"
-  - title: "Miscellanae Nepalica: Early Chinese Reports on Nepal — and the Da Tang Xiyu Ji"
+  - title: "Miscellanae Nepalicae: Early Chinese Reports on Nepal — The Foundation Legend of Nepal in its Trans-Himalayan Context"
     author: "Deeg, Max"
     year: 2016
     publisher: "Lumbini International Research Institute"
     type: "monograph"
     tier: 1
-    notes: "Recent critical scholarship on Xuanzang's record"
+    notes: "Recent critical scholarship treating Xuanzang's record in trans-Himalayan context"
 tags: [phase-5, tang, chinese-buddhism, xuanzang, pilgrimage, silk-road, india-china-transmission, travelogue, buddhist]
 ---
 
@@ -89,4 +89,4 @@ The **geographical and ethnographic record of the monk Xuanzang's pilgrimage to 
 1. Beal, S. (1884). *Si-Yu-Ki: Buddhist Records of the Western World* (2 vols.). Trübner. — classic English.
 2. Li, R. (1996). *The Great Tang Dynasty Record of the Western Regions*. Numata/BDK. — standard modern English.
 3. Wriggins, S.H. (2004). *The Silk Road Journey with Xuanzang*. Westview. — narrative study.
-4. Deeg, M. (2016). studies on the *Da Tang Xiyu Ji*. Lumbini International Research Institute.
+4. Deeg, M. (2016). *Miscellanae Nepalicae*. Lumbini International Research Institute. — Xuanzang's record in trans-Himalayan context.
