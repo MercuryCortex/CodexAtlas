@@ -39,12 +39,13 @@ refs:
     publisher: "Oxford University Press"
     type: "monograph"
     tier: 1
-  - title: "Caitanya Vaiṣṇavism in Bengal: Fate and Freewill"
-    author: "Wong, Lucian"
-    year: 2020
-    publisher: "Routledge / Hindu Studies Series"
+  - title: "Vaiṣṇavism in Bengal, 1486–1900"
+    author: "Chakrabarty, Ramakanta"
+    year: 1985
+    publisher: "Sanskrit Pustak Bhandar (Calcutta)"
     type: "monograph"
     tier: 1
+    notes: "The standard history of Bengal Vaishnavism (replaces a prior fabricated 'Wong 2020' citation; cf. also Sardella & Wong eds., The Legacy of Vaiṣṇavism in Colonial Bengal, Routledge 2020)"
   - title: "Krishna: The Beautiful Legend of God (Bhagavata Purana Book X)"
     author: "Bryant, Edwin F. (trans.)"
     year: 2003
@@ -145,4 +146,4 @@ This is the bhakti tradition's most successful cross-cultural transmission: a 16
 2. Stewart, T.K. (2010). *The Final Word*. Oxford UP.
 3. De, S.K. (1942). *Early History of the Vaishnava Faith and Movement in Bengal*. General Printers (Calcutta).
 4. Hardy, F. (1983). *Viraha-bhakti: The Early History of Kṛṣṇa Devotion in South India*. Oxford UP. — background.
-5. Wong, L. (2020). *Caitanya Vaiṣṇavism in Bengal*. Routledge.
+5. Chakrabarty, R. (1985). *Vaiṣṇavism in Bengal, 1486–1900*. Sanskrit Pustak Bhandar. — standard history.
