@@ -49,9 +49,9 @@ refs:
     tier: 1
     notes: "Definitive philological-philosophical study of Egyptian cosmogonic accounts. Argues that the Memphite Theology is a *Late Period archaizing composition* (probably 25th Dynasty), not a 3rd-millennium original — the 'old papyrus' claim is a scribal back-projection. This dating is now scholarly consensus, replacing the older Sethe-Junker view."
   - title: "Creation Accounts in the Ancient Near East and in the Bible"
-    author: "Hoffmeier, J.K. (and others — Currid, Hoffmeier collaborative)"
-    year: 1983
-    publisher: "Biblical Research Series"
+    author: "Clifford, Richard J."
+    year: 1994
+    publisher: "Catholic Biblical Association (CBQ Monograph Series 26)"
     type: "scholarly-comparison"
     tier: 2
   - title: "Conceptions of God in Ancient Egypt"

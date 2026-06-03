@@ -52,10 +52,10 @@ refs:
     type: "monograph"
     tier: 2
     notes: "Skeptical of the 'first monotheist' framing; emphasizes political-pragmatic motives"
-  - title: "Akhanyati's Sun-Hymn — The Great Hymn to the Aten"
+  - title: "Texts from the Amarna Period in Egypt"
     author: "Murnane, William J."
     year: 1995
-    publisher: "Society of Biblical Literature, *Texts from the Amarna Period in Egypt*"
+    publisher: "Society of Biblical Literature (Writings from the Ancient World 5)"
     type: "primary-translation"
     tier: 1
     notes: "Critical translation with extensive notes, in a corpus volume of all Amarna texts in English"

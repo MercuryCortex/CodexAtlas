@@ -63,10 +63,10 @@ refs:
     type: "primary-translation"
     tier: 1
     notes: "Most recent complete English translation by a specialist Assyriologist"
-  - title: "Why First-Person Did Not Develop in Sumerian Literature"
+  - title: "The Birth of the Author: Co-creating Authorship in Enheduana's Exaltation"
     author: "Helle, Sophus"
     year: 2020
-    publisher: "Journal of the American Oriental Society 140, 4"
+    publisher: "Orbis Litterarum 75, 2 (pp. 55–72)"
     type: "journal-article"
     tier: 2
     notes: "Reconsiders the autobiographical reading of the Exaltation"
@@ -157,5 +157,5 @@ A corpus of Sumerian devotional and theological poetry attributed to Enheduanna,
 2. Sjöberg, Å.W., and Bergmann, E. (1969). *The Sumerian Temple Hymns*. TCS 3. — critical edition of the 42 Temple Hymns.
 3. Helle, S. (2023). *Enheduana, the Complete Poems of the World's First Author*. Yale UP. — current standard English translation.
 4. ETCSL t.4.07.2 — *Exaltation of Inana*. https://etcsl.orinst.ox.ac.uk/cgi-bin/etcsl.cgi?text=t.4.07.2
-5. Helle, S. (2020). "Why First-Person Did Not Develop in Sumerian Literature." JAOS 140: 4. — questions the autobiographical reading.
+5. Helle, S. (2020). "The Birth of the Author: Co-creating Authorship in Enheduana's Exaltation." *Orbis Litterarum* 75, 2. — reconsiders the autobiographical reading.
 6. Foster, B.R. (2005). *Before the Muses*. CDL Press. — context within Akkadian literature.

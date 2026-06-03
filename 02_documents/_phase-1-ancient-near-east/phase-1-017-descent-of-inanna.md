@@ -62,14 +62,14 @@ refs:
     type: "primary-translation"
     tier: 1
     notes: "Includes the Akkadian Descent of Ishtar; useful for the comparative Akkadian-Sumerian reading"
-  - title: "The Image of Dumuzi: A Diachronic Analysis"
+  - title: "Dumuzi's Dream: Aspects of Oral Poetry in a Sumerian Myth"
     author: "Alster, Bendt"
-    year: 1999
-    publisher: "Journal of the American Oriental Society 119: 1–11"
-    type: "journal-article"
+    year: 1972
+    publisher: "Akademisk Forlag (Mesopotamia 1)"
+    type: "monograph"
     tier: 2
-    notes: "Important diachronic study of Dumuzi, with implications for reading the Descent"
-  - title: "The Cult of Inanna at Uruk"
+    notes: "Foundational study of the Dumuzi myth-cycle, relevant to reading the Descent"
+  - title: "The Pantheon of Uruk During the Neo-Babylonian Period"
     author: "Beaulieu, Paul-Alain"
     year: 2003
     publisher: "Cuneiform Monographs 23, Brill"
@@ -193,5 +193,5 @@ Inanna returns trailing demons who will not depart without her substitute. She r
 3. Lapinkivi, P. (2010). *The Neo-Assyrian Myth of Ištar's Descent and Resurrection*. SAACT 6. — Akkadian Descent edition.
 4. Dalley, S. (2000). *Myths from Mesopotamia*, rev. ed. Oxford World's Classics. — translations.
 5. ETCSL — Inana's Descent (1.4.1). https://etcsl.orinst.ox.ac.uk/section1/tr141.htm
-6. Alster, B. (1999). "The Image of Dumuzi." *JAOS* 119. — diachronic Dumuzi study.
+6. Alster, B. (1972). *Dumuzi's Dream*. Akademisk Forlag (Mesopotamia 1). — the Sumerian Dumuzi myth.
 7. Mettinger, T.N.D. (2001). *The Riddle of Resurrection*. Almqvist & Wiksell. — dying-rising-god comparative.
