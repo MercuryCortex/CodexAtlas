@@ -1,53 +1,16 @@
 {
  "generatedAt": "2026-06-03",
- "totalDocuments": 515,
+ "totalDocuments": 507,
  "productGrade": false,
- "passCount": 0,
+ "passCount": 1,
  "rowCount": 7,
- "dupClusters": {
-  "avatamsaka-sutra+phase-4-102-avatamsaka-sutra": [
-   "avatamsaka-sutra",
-   "phase-4-102-avatamsaka-sutra"
-  ],
-  "bhagavata-purana+phase-5-050-bhagavata-purana": [
-   "bhagavata-purana",
-   "phase-5-050-bhagavata-purana"
-  ],
-  "corpus-hermeticum+phase-3-021-hermetic-corpus-earliest": [
-   "corpus-hermeticum",
-   "phase-3-021-hermetic-corpus-earliest"
-  ],
-  "document-1-kings+phase-2-034-books-of-kings": [
-   "document-1-kings",
-   "phase-2-034-books-of-kings"
-  ],
-  "phase-1-008-shabaka-stone+phase-1-027-memphite-theology-shabaka-stone": [
-   "phase-1-008-shabaka-stone",
-   "phase-1-027-memphite-theology-shabaka-stone"
-  ],
-  "phase-2-017-mahabharata-ramayana-oral-layers+ramayana": [
-   "phase-2-017-mahabharata-ramayana-oral-layers",
-   "ramayana"
-  ],
-  "phase-4-050-vishnu-sahasranama+vishnu-sahasranama": [
-   "vishnu-sahasranama",
-   "phase-4-050-vishnu-sahasranama"
-  ],
-  "phase-5-025-rumi-masnavi+phase-5-054-rumi-masnavi": [
-   "phase-5-054-rumi-masnavi",
-   "phase-5-025-rumi-masnavi"
-  ],
-  "phase-5-027-sefer-ha-zohar+phase-5-064-zohar": [
-   "phase-5-064-zohar",
-   "phase-5-027-sefer-ha-zohar"
-  ]
- },
+ "dupClusters": {},
  "rows": [
   {
    "key": "connected",
    "label": "Graph-connected (no orphans)",
    "target": "0 disconnected",
-   "current": "62",
+   "current": "56",
    "ok": false,
    "detail": "every doc has \u22651 wikilink wire in or out"
   },
@@ -55,7 +18,7 @@
    "key": "tradition",
    "label": "Has home tradition (wedge)",
    "target": "100%",
-   "current": "429/515",
+   "current": "428/507",
    "ok": false,
    "detail": "the scripture-exception singular origin"
   },
@@ -63,7 +26,7 @@
    "key": "dates",
    "label": "Has dates",
    "target": "100%",
-   "current": "482/515",
+   "current": "474/507",
    "ok": false,
    "detail": ""
   },
@@ -71,7 +34,7 @@
    "key": "sourced",
    "label": "Sourced (refs)",
    "target": "0 unsourced",
-   "current": "71",
+   "current": "66",
    "ok": false,
    "detail": ""
   },
@@ -79,7 +42,7 @@
    "key": "depth",
    "label": "At least metadata depth",
    "target": "0 stubs/partials",
-   "current": "108",
+   "current": "101",
    "ok": false,
    "detail": "stub + partial + untyped"
   },
@@ -87,7 +50,7 @@
    "key": "thin",
    "label": "No thin bodies (<400 chars)",
    "target": "0",
-   "current": "66",
+   "current": "62",
    "ok": false,
    "detail": ""
   },
@@ -95,9 +58,9 @@
    "key": "dupes",
    "label": "No duplicate-title clusters",
    "target": "0",
-   "current": "9",
-   "ok": false,
-   "detail": "title+aka folded; 7 distinct/strata pairs excluded (curated); resolve rest via dedup playbook"
+   "current": "0",
+   "ok": true,
+   "detail": "title+aka folded; 8 distinct/strata pairs excluded (curated); resolve rest via dedup playbook"
   }
  ]
 }

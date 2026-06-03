@@ -119,6 +119,7 @@ KNOWN_DISTINCT = [
     frozenset({"phase-2-017-mahabharata-ramayana-oral-layers", "phase-3-095-mahabharata"}),   # oral-composition study vs the epic text
     frozenset({"phase-3-004-1-enoch", "phase-4-081-mashafa-henok-geez-1-enoch"}),             # Greek/Aramaic 1 Enoch vs the Ethiopic canonical recension
     frozenset({"phase-6-029-boehme-aurora", "phase-6-017-boehme-aurora-mysterium-magnum"}),   # Aurora vs Mysterium Magnum (different Boehme works)
+    frozenset({"phase-2-017-mahabharata-ramayana-oral-layers", "ramayana"}),                  # oral-composition study vs the Rāmāyaṇa text-node (a fill-gap, not a dup)
 ]
 _actionable = {sl: d for sl, d in _pairs.items() if sl not in KNOWN_DISTINCT}
 dup_clusters = {"+".join(sorted(sl)): [(s, d[s][0], d[s][1]) for s in sl]
