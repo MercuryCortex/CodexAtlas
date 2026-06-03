@@ -2,9 +2,46 @@
  "generatedAt": "2026-06-03",
  "totalDocuments": 515,
  "productGrade": false,
- "passCount": 1,
+ "passCount": 0,
  "rowCount": 7,
- "dupClusters": {},
+ "dupClusters": {
+  "avatamsaka-sutra+phase-4-102-avatamsaka-sutra": [
+   "avatamsaka-sutra",
+   "phase-4-102-avatamsaka-sutra"
+  ],
+  "bhagavata-purana+phase-5-050-bhagavata-purana": [
+   "bhagavata-purana",
+   "phase-5-050-bhagavata-purana"
+  ],
+  "corpus-hermeticum+phase-3-021-hermetic-corpus-earliest": [
+   "corpus-hermeticum",
+   "phase-3-021-hermetic-corpus-earliest"
+  ],
+  "document-1-kings+phase-2-034-books-of-kings": [
+   "document-1-kings",
+   "phase-2-034-books-of-kings"
+  ],
+  "phase-1-008-shabaka-stone+phase-1-027-memphite-theology-shabaka-stone": [
+   "phase-1-008-shabaka-stone",
+   "phase-1-027-memphite-theology-shabaka-stone"
+  ],
+  "phase-2-017-mahabharata-ramayana-oral-layers+ramayana": [
+   "phase-2-017-mahabharata-ramayana-oral-layers",
+   "ramayana"
+  ],
+  "phase-4-050-vishnu-sahasranama+vishnu-sahasranama": [
+   "vishnu-sahasranama",
+   "phase-4-050-vishnu-sahasranama"
+  ],
+  "phase-5-025-rumi-masnavi+phase-5-054-rumi-masnavi": [
+   "phase-5-054-rumi-masnavi",
+   "phase-5-025-rumi-masnavi"
+  ],
+  "phase-5-027-sefer-ha-zohar+phase-5-064-zohar": [
+   "phase-5-064-zohar",
+   "phase-5-027-sefer-ha-zohar"
+  ]
+ },
  "rows": [
   {
    "key": "connected",
@@ -58,9 +95,9 @@
    "key": "dupes",
    "label": "No duplicate-title clusters",
    "target": "0",
-   "current": "0",
-   "ok": true,
-   "detail": "auto-detected; resolve via dedup playbook (repoint \u2192 delete)"
+   "current": "9",
+   "ok": false,
+   "detail": "title+aka folded; 7 distinct/strata pairs excluded (curated); resolve rest via dedup playbook"
   }
  ]
 }

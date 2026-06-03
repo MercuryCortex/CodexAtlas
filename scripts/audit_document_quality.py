@@ -18,11 +18,15 @@ def field(text, name):
     m = re.search(rf"^{name}:\s*(.*)$", text, re.M)
     return m.group(1).strip() if m else None
 
+import unicodedata
 def norm_title(s):
-    s = (s or "").lower()
+    # Fold diacritics (Avataṃsaka -> avatamsaka) so romanization/diacritic
+    # variants cluster. Indexed over title AND aka, so cross-romanization
+    # synonyms (Tao Te Ching == Daodejing) cluster via a shared aka.
+    s = unicodedata.normalize("NFKD", (s or "")).encode("ascii", "ignore").decode("ascii").lower()
     s = re.sub(r"\([^)]*\)", "", s)
     s = re.sub(r"[^a-z0-9 ]", "", s)
-    s = re.sub(r"\b(the|of|book|gospel|sutra|sutta|epistle|sacred|holy|document|st|saint)\b", "", s)
+    s = re.sub(r"\b(the|of|book|gospel|sutra|sutta|epistle|sacred|holy|document|st|saint|classic|jing)\b", "", s)
     return re.sub(r"\s+", " ", s).strip()
 
 status_ct = collections.Counter()
@@ -69,18 +73,58 @@ for path in FILES:
     if not o:
         no_wires.append(slug)
 
+    # Index title AND every aka value (folded), so romanization/diacritic
+    # synonyms for the SAME text cluster (Tao Te Ching == Daodejing via aka).
+    st = (field(t, "status") or "(none)").strip('"')
+    keys = set()
     title = (field(t, "title") or field(t, "name") or "").strip('"')
-    k = norm_title(title)
-    if len(k) >= 3:
-        title_index[k].append((slug, (field(t, "status") or "(none)").strip('"'), len(t)))
+    if title: keys.add(norm_title(title))
+    aka = field(t, "aka")
+    if aka:
+        for a in re.findall(r'"([^"]+)"', aka):
+            keys.add(norm_title(a))
+    for k in keys:
+        if len(k) >= 5:
+            title_index[k].append((slug, st, len(t)))
 
 disconnected = sum(1 for s in {os.path.basename(f)[:-3] for f in FILES}
                    if not _out.get(s) and s not in _ref)
 below_metadata = status_ct.get("stub", 0) + status_ct.get("partial", 0) + status_ct.get("(none)", 0)
 
 # ── AUTOMATIC DUPLICATE DETECTION (the query) ───────────────────────────────
-dup_clusters = {k: v for k, v in title_index.items() if len({s for s, _, _ in v}) > 1}
+# Title+aka clustering casts a wide net (catches diacritic/romanization
+# variants) but OVER-clusters: different works can share a title-phrase
+# (Llull vs Kircher 'Ars Magna'; Madhva vs Shankara 'Brahma Sūtra Bhāṣya'),
+# and some pairs are intentional source-critical STRATA (Rigveda vs its
+# oldest 'family books'; the ancient Zhouyi core vs the received I Ching).
+# So we collapse multi-key clusters to slug-PAIRS and subtract a curated
+# KNOWN_DISTINCT set (recorded scholarly judgments — the deity
+# KNOWN_DUPLICATES pattern). Resolution still needs a human per new cluster.
+raw_clusters = {k: v for k, v in title_index.items() if len({s for s, _, _ in v}) > 1}
+# collapse to unique slug-sets (the same pair surfaces under several keys)
+_pairs = {}  # frozenset(slugs) -> {slug: (status, size)}
+for k, v in raw_clusters.items():
+    slugs = frozenset(s for s, _, _ in v)
+    _pairs.setdefault(slugs, {})
+    for s, st_, sz in v:
+        _pairs[slugs][s] = (st_, sz)
+
+# Curated: flagged-but-genuinely-DIFFERENT (false positives) or intentional
+# source-critical STRATA we deliberately keep as separate nodes.
+KNOWN_DISTINCT = [
+    frozenset({"phase-6-044-llull-ars-magna", "phase-6-052-kircher-ars-magna-lucis"}),       # different works
+    frozenset({"phase-5-022-madhva-brahma-sutra-bhasya", "phase-5-005-shankara-brahma-sutra-bhasya"}),  # different commentaries
+    frozenset({"phase-1-031-rigveda", "phase-2-001-rig-veda-family-books"}),                  # strata: whole vs oldest core
+    frozenset({"phase-2-042-yi-jing-i-ching", "phase-1-026-yijing"}),                         # strata: received classic vs Zhouyi divination core
+    frozenset({"phase-2-017-mahabharata-ramayana-oral-layers", "phase-3-095-mahabharata"}),   # oral-composition study vs the epic text
+    frozenset({"phase-3-004-1-enoch", "phase-4-081-mashafa-henok-geez-1-enoch"}),             # Greek/Aramaic 1 Enoch vs the Ethiopic canonical recension
+    frozenset({"phase-6-029-boehme-aurora", "phase-6-017-boehme-aurora-mysterium-magnum"}),   # Aurora vs Mysterium Magnum (different Boehme works)
+]
+_actionable = {sl: d for sl, d in _pairs.items() if sl not in KNOWN_DISTINCT}
+dup_clusters = {"+".join(sorted(sl)): [(s, d[s][0], d[s][1]) for s in sl]
+                for sl, d in _actionable.items()}
 dup_count = len(dup_clusters)
+known_distinct_count = len(_pairs) - len(_actionable)
 
 print(f"=== DOCUMENT PRODUCT-GRADE SCORECARD ({N} nodes) ===\n")
 print("STATUS distribution:")
@@ -118,7 +162,7 @@ rows = [
         "stub + partial + untyped"),
     row("thin", "No thin bodies (<400 chars)", "0", len(thin_body), len(thin_body) == 0),
     row("dupes", "No duplicate-title clusters", "0", dup_count, dup_count == 0,
-        "auto-detected; resolve via dedup playbook (repoint → delete)"),
+        f"title+aka folded; {known_distinct_count} distinct/strata pairs excluded (curated); resolve rest via dedup playbook"),
 ]
 product_grade = all(r["ok"] for r in rows)
 bench = {
