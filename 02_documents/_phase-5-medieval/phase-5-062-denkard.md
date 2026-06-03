@@ -29,13 +29,13 @@ influences:
   - "[[phase-4-107-bundahishn]] — the Bundahishn draws on the same lost Avestan Zand tradition the Denkard preserves"
 status: "full"
 refs:
-  - title: "The Dēnkard: A Pahlavi Text"
+  - title: "The Complete Text of the Pahlavi Dinkard (2 vols.)"
     author: "Madan, Dhanjishah Meherjibhai (ed.)"
     year: 1911
     publisher: "Society for the Promotion of Researches into the Zoroastrian Religion, Bombay"
     type: "primary-edition"
     tier: 1
-  - title: "Denkart (Dēnkard), Books 3 and 7"
+  - title: "Le troisième livre du Dēnkart (Book 3)"
     author: "de Menasce, Jean (tr.)"
     year: 1973
     publisher: "Klincksieck"
@@ -52,12 +52,12 @@ tags: [document, zoroastrian, pahlavi, middle-persian, theology, encyclopedia, s
 
 # Dēnkard (Acts of the Religion)
 
-**Dēnkard** ("Acts of the Religion") — compiled in nine books by Adurfarnbag-i Farroxzadan (~830 CE) and redacted by Adurbad-i Emedan (~881 CE) — is the largest surviving Middle Persian text and the principal archive of Sasanian-era Zoroastrian theology, heresiography, history, ethics, and cosmology. Of the nine books, Books 1–2 and the beginning of Book 3 are lost; the surviving corpus runs to approximately 169,000 Pahlavi words. Book 3 (the largest) is a Zoroastrian doxographical encyclopedia. Book 7 is the standard Zoroastrian hagiography of Zarathustra. Book 9 summarizes the now-lost *nasks* (books) of the complete Avesta — making the Denkard the primary source for understanding the vast Zoroastrian canon destroyed by the Arab conquest of Persia (637–651 CE).
+**Dēnkard** ("Acts of the Religion") — compiled in nine books by Adurfarnbag-i Farroxzadan (~830 CE) and redacted by Adurbad-i Emedan (~881 CE) — is the largest surviving Middle Persian text and the principal archive of Sasanian-era Zoroastrian theology, heresiography, history, ethics, and cosmology. Of the nine books, Books 1–2 and the beginning of Book 3 are lost; the surviving corpus runs to approximately 169,000 Pahlavi words. Book 3 (the largest) is a Zoroastrian doxographical encyclopedia. Book 7 is the standard Zoroastrian hagiography of Zarathustra. Book 8 surveys the contents of all twenty-one *nasks* (volumes) of the Sasanian Avesta, and Book 9 gives detailed summaries of the three Gathic nasks — making the Denkard the primary source for understanding the vast Zoroastrian canon destroyed by the Arab conquest of Persia (637–651 CE).
 
 ## Significance
 
 ### The archive of the lost Avesta
-The complete Avesta — which Sasanian sources put at 21 *nasks* (volumes) totaling ~345,700 *words* — was largely destroyed during the Arab conquest and subsequent Islamization of Iran. Only approximately one-quarter survives in the form known today. The Denkard's Book 9 provides summaries and quotations from the lost nasks, making it the primary window into the full shape of pre-Islamic Zoroastrian scripture. Without the Denkard, the Avestan tradition would appear far more fragmentary than it actually was.
+The complete Avesta — which Sasanian sources put at 21 *nasks* (volumes) totaling ~345,700 *words* — was largely destroyed during the Arab conquest and subsequent Islamization of Iran. Only approximately one-quarter survives in the form known today. The Denkard's Books 8 and 9 provide summaries and quotations from the lost nasks (Book 8 surveying all twenty-one, Book 9 detailing the Gathic ones), making it the primary window into the full shape of pre-Islamic Zoroastrian scripture. Without the Denkard, the Avestan tradition would appear far more fragmentary than it actually was.
 
 ### Cross-tradition: Zoroastrian influence on Islam
 The Denkard was compiled during the early Abbasid caliphate, when Zoroastrian priestly families (the *mōbedān*) were attempting to preserve their tradition in the face of rapid Islamization. The theological vocabulary of the Denkard — divine wisdom (*xrad*), righteous action (*ašō*), eschatological renovation (*frashkart*) — fed into early Islamic Sufi and philosophical thought through the large Zoroastrian learned class that converted to Islam in the 8th–9th centuries, bringing their conceptual vocabulary with them. The *xrad* (divine wisdom) literature in the Denkard is structurally parallel to Islamic *ḥikma* (wisdom) literature.
