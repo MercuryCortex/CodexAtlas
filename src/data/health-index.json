@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-06-02T00:49:30Z",
+  "generatedAt": "2026-06-04T18:19:38Z",
   "vault": {
-    "totalNodes": 4936,
+    "totalNodes": 5099,
     "lensCount": 30,
     "familyCount": 14,
-    "unmatchedTradNodes": 0,
+    "unmatchedTradNodes": 18,
     "intentionallyCrossTradition": 30
   },
   "lenses": [
@@ -23,33 +23,29 @@
     {
       "folder": "02_documents",
       "label": "Documents",
-      "count": 523,
+      "count": 515,
       "baseline": 550,
-      "ratio": 0.951,
+      "ratio": 0.936,
       "band": "rich",
       "baselineNote": "EoR — scripture + commentary entries across 15 vols (~16% of corpus)",
       "statuses": {
-        "stub": 103,
-        "full": 99,
-        "metadata": 294,
-        "(no status)": 23,
-        "partial": 4
+        "full": 178,
+        "metadata": 321,
+        "(no status)": 16
       }
     },
     {
       "folder": "03_deities",
       "label": "Deities",
-      "count": 718,
+      "count": 889,
       "baseline": 900,
-      "ratio": 0.798,
+      "ratio": 0.988,
       "band": "rich",
       "baselineNote": "EoR deity/numina entries + Leeming Oxford Companion to World Mythology (~3,000 entries)",
       "statuses": {
-        "metadata": 603,
-        "stub": 31,
-        "(no status)": 50,
-        "full": 27,
-        "partial": 7
+        "metadata": 810,
+        "(no status)": 52,
+        "full": 27
       }
     },
     {
@@ -426,13 +422,13 @@
     {
       "key": "mesopotamian",
       "label": "Mesopotamian",
-      "count": 143,
+      "count": 164,
       "baseline": 280,
-      "ratio": 0.511,
+      "ratio": 0.586,
       "band": "developing",
       "perLens": {
         "02_documents": 26,
-        "03_deities": 76,
+        "03_deities": 97,
         "04_persons": 21,
         "05_events": 1,
         "10_music": 3,
@@ -446,13 +442,13 @@
     {
       "key": "egyptian",
       "label": "Egyptian",
-      "count": 112,
+      "count": 125,
       "baseline": 240,
-      "ratio": 0.467,
+      "ratio": 0.521,
       "band": "developing",
       "perLens": {
-        "02_documents": 14,
-        "03_deities": 46,
+        "02_documents": 15,
+        "03_deities": 58,
         "04_persons": 23,
         "06_themes": 5,
         "09_symbols": 2,
@@ -470,13 +466,13 @@
     {
       "key": "abrahamic",
       "label": "Abrahamic",
-      "count": 907,
+      "count": 939,
       "baseline": 700,
-      "ratio": 1.296,
+      "ratio": 1.341,
       "band": "rich",
       "perLens": {
-        "02_documents": 198,
-        "03_deities": 117,
+        "02_documents": 225,
+        "03_deities": 122,
         "04_persons": 411,
         "05_events": 2,
         "09_symbols": 2,
@@ -500,13 +496,13 @@
     {
       "key": "greco-roman",
       "label": "Greco-Roman",
-      "count": 318,
+      "count": 335,
       "baseline": 380,
-      "ratio": 0.837,
+      "ratio": 0.882,
       "band": "rich",
       "perLens": {
-        "02_documents": 41,
-        "03_deities": 100,
+        "02_documents": 44,
+        "03_deities": 114,
         "04_persons": 86,
         "09_symbols": 1,
         "10_music": 23,
@@ -524,13 +520,13 @@
     {
       "key": "iranian",
       "label": "Iranian / Zoroastrian",
-      "count": 56,
+      "count": 59,
       "baseline": 180,
-      "ratio": 0.311,
+      "ratio": 0.328,
       "band": "developing",
       "perLens": {
         "02_documents": 7,
-        "03_deities": 26,
+        "03_deities": 29,
         "04_persons": 4,
         "09_symbols": 1,
         "10_music": 1,
@@ -546,13 +542,13 @@
     {
       "key": "indic",
       "label": "Indic (Hindu / Jain / Sikh)",
-      "count": 229,
+      "count": 267,
       "baseline": 520,
-      "ratio": 0.44,
+      "ratio": 0.513,
       "band": "developing",
       "perLens": {
-        "02_documents": 36,
-        "03_deities": 60,
+        "02_documents": 47,
+        "03_deities": 87,
         "04_persons": 49,
         "10_music": 14,
         "11_alphabets": 2,
@@ -575,13 +571,13 @@
     {
       "key": "buddhist",
       "label": "Buddhist",
-      "count": 146,
+      "count": 167,
       "baseline": 380,
-      "ratio": 0.384,
+      "ratio": 0.439,
       "band": "developing",
       "perLens": {
-        "02_documents": 19,
-        "03_deities": 37,
+        "02_documents": 36,
+        "03_deities": 41,
         "04_persons": 36,
         "10_music": 4,
         "11_alphabets": 1,
@@ -601,13 +597,13 @@
     {
       "key": "east-asian",
       "label": "East Asian (Daoist / Confucian / folk)",
-      "count": 130,
+      "count": 160,
       "baseline": 320,
-      "ratio": 0.406,
+      "ratio": 0.5,
       "band": "developing",
       "perLens": {
-        "02_documents": 27,
-        "03_deities": 40,
+        "02_documents": 34,
+        "03_deities": 63,
         "04_persons": 19,
         "10_music": 8,
         "11_alphabets": 1,
@@ -627,13 +623,13 @@
     {
       "key": "north-european",
       "label": "Norse / Celtic / Slavic / Baltic",
-      "count": 88,
+      "count": 115,
       "baseline": 220,
-      "ratio": 0.4,
+      "ratio": 0.523,
       "band": "developing",
       "perLens": {
         "02_documents": 3,
-        "03_deities": 67,
+        "03_deities": 94,
         "04_persons": 2,
         "10_music": 5,
         "11_alphabets": 2,
@@ -644,13 +640,13 @@
     {
       "key": "african",
       "label": "African (Yoruba / Bantu / Akan / Nilotic etc.)",
-      "count": 65,
+      "count": 76,
       "baseline": 260,
-      "ratio": 0.25,
+      "ratio": 0.292,
       "band": "developing",
       "perLens": {
         "02_documents": 2,
-        "03_deities": 41,
+        "03_deities": 52,
         "04_persons": 1,
         "10_music": 8,
         "13_morals": 1,
@@ -663,13 +659,13 @@
     {
       "key": "mesoamerican",
       "label": "Mesoamerican",
-      "count": 54,
+      "count": 76,
       "baseline": 180,
-      "ratio": 0.3,
+      "ratio": 0.422,
       "band": "developing",
       "perLens": {
-        "02_documents": 5,
-        "03_deities": 31,
+        "02_documents": 14,
+        "03_deities": 44,
         "04_persons": 1,
         "10_music": 3,
         "11_alphabets": 1,
@@ -685,13 +681,13 @@
     {
       "key": "andean-amazonian",
       "label": "Andean / Amazonian",
-      "count": 23,
+      "count": 30,
       "baseline": 120,
-      "ratio": 0.192,
-      "band": "anemic",
+      "ratio": 0.25,
+      "band": "developing",
       "perLens": {
-        "02_documents": 1,
-        "03_deities": 15,
+        "02_documents": 3,
+        "03_deities": 20,
         "10_music": 2,
         "14_rituals": 1,
         "20_sacred_architecture": 4
@@ -700,13 +696,13 @@
     {
       "key": "indigenous-other",
       "label": "Indigenous (N.American / Oceanic / Australian / Arctic)",
-      "count": 79,
+      "count": 86,
       "baseline": 200,
-      "ratio": 0.395,
+      "ratio": 0.43,
       "band": "developing",
       "perLens": {
         "02_documents": 8,
-        "03_deities": 43,
+        "03_deities": 50,
         "04_persons": 3,
         "05_events": 1,
         "10_music": 8,
@@ -719,12 +715,12 @@
     {
       "key": "modern-syncretic",
       "label": "Modern / syncretic / esoteric",
-      "count": 125,
+      "count": 128,
       "baseline": 240,
-      "ratio": 0.521,
+      "ratio": 0.533,
       "band": "developing",
       "perLens": {
-        "02_documents": 35,
+        "02_documents": 38,
         "03_deities": 3,
         "04_persons": 64,
         "10_music": 6,
@@ -755,5 +751,30 @@
       "Stub-status nodes count toward the total. The `statuses` block per lens shows the stub/metadata/full breakdown."
     ]
   },
-  "unmatchedTraditionsTop": []
+  "unmatchedTraditionsTop": [
+    {
+      "tradition": "roman",
+      "count": 12
+    },
+    {
+      "tradition": "phrygian",
+      "count": 2
+    },
+    {
+      "tradition": "phrygian / thracian",
+      "count": 1
+    },
+    {
+      "tradition": "nabataean (north arabian)",
+      "count": 1
+    },
+    {
+      "tradition": "pawnee",
+      "count": 1
+    },
+    {
+      "tradition": "modern occultism (lévi 1856 sabbatic goat)",
+      "count": 1
+    }
+  ]
 }
