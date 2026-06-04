@@ -121,8 +121,8 @@ for path in sorted(glob.glob(os.path.join(DOC_DIR, "**", "*.md"), recursive=True
         # title's token set. An abbreviated body title fully contained in the YAML
         # title (or vice-versa) scores ~1.0 = SAME work = clean. A genuinely
         # different title for the same author scores low = the fabrication signature.
-        best = 0.0
-        best_bt = ""
+        best = -1.0
+        best_bt = cand[0][1]   # always show *some* matched body title, even at 0 overlap
         for ln, bt in cand:
             bttok = toks(bt)
             if not bttok:
@@ -130,6 +130,8 @@ for path in sorted(glob.glob(os.path.join(DOC_DIR, "**", "*.md"), recursive=True
             contain = len(ytok & bttok) / min(len(ytok), len(bttok))
             if contain > best:
                 best, best_bt = contain, bt
+        if best < 0:
+            best = 0.0
         if best < 0.5:   # neither title contains the other -> divergent work, same author
             flags.append((node, yauth, ytitle, best_bt.strip(), round(best, 2)))
 
