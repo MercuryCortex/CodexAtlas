@@ -16,6 +16,7 @@ script: "Latin (chancery hand, on parchment)"
 region: "England (Runnymede, near Windsor)"
 authorship: "negotiated between King John and his rebel barons; drafted with the central involvement of Archbishop Stephen Langton; issued 1215, reissued 1216/1217/1225"
 status: "metadata"
+citation-audited: "2026-06-04"
 key-figures: ["King John of England", "Stephen Langton (Archbishop of Canterbury)", "Pope Innocent III (who annulled the 1215 charter)"]
 themes: ["[[divine-kingship]]"]
 parallels: []

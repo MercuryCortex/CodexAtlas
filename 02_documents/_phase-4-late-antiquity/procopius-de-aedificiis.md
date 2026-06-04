@@ -16,6 +16,7 @@ script: "Greek"
 region: "Constantinople (the Eastern Roman Empire)"
 authorship: "Procopius of Caesarea, the leading historian of the age of Justinian"
 status: "metadata"
+citation-audited: "2026-06-04"
 key-figures: ["[[justinian-i]]", "Anthemius of Tralles and Isidore of Miletus (the architects of Hagia Sophia)"]
 themes: ["[[divine-kingship]]"]
 parallels: ["[[event-hagia-sophia-construction-537]]"]

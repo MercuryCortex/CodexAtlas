@@ -16,6 +16,7 @@ script: "Ethiopic (Geʿez) script"
 region: "Ethiopian highlands (Lasta / the Solomonic court)"
 authorship: "anonymous; a Solomonic-period hagiography preserving earlier traditions about the Zagwe king Lalibäla"
 status: "metadata"
+citation-audited: "2026-06-04"
 key-figures: ["[[lalibela-king]] (the Zagwe saint-king, r. ~late 12th–early 13th c.)"]
 themes: ["[[divine-kingship]]", "[[tewahedo-christology]]"]
 parallels: ["[[tradition-ethiopian-orthodox-tewahedo]]", "[[event-zagwe-lalibela-churches-c1200]]"]
@@ -27,7 +28,7 @@ tags: [phase-5, ethiopian, tewahedo, geez, hagiography, lalibela, zagwe, rock-he
 # Gädlä Lalibäla (Acts of Lalibela)
 
 ## What it is
-The **Gädlä Lalibäla** ("Acts/Contendings of Lalibäla") is the Geʿez hagiography of **[[lalibela-king]]**, the Zagwe-dynasty king (r. ~late 12th–early 13th c.) venerated as a saint by the Ethiopian Orthodox Tewahedo Church and credited with creating the celebrated **rock-hewn churches of Lalibela** ([[event-zagwe-lalibela-churches-c1200]]). Composed in its surviving form during the later Solomonic period (~15th–16th c.) but preserving older tradition, the *gädl* narrates the king's miraculous birth (a swarm of bees foretelling his royalty — *lāl-ībäla*, "the bees recognize his sovereignty"), his persecution, his journey to and vision of the heavenly Jerusalem, and his divinely-commissioned excavation of a "New Jerusalem" of churches hewn from the living rock, built (the legend says) with the help of angels.
+The **Gädlä Lalibäla** ("Acts/Contendings of Lalibäla") is the Geʿez hagiography of **[[lalibela-king]]**, the Zagwe-dynasty king (r. ~late 12th–early 13th c.) venerated as a saint by the Ethiopian Orthodox Tewahedo Church and credited with creating the celebrated **rock-hewn churches of Lalibela** ([[event-zagwe-lalibela-churches-c1200]]). Composed in its surviving form during the later Solomonic period (~15th–16th c.) but preserving older tradition, the *gädl* narrates the king's miraculous birth (a swarm of bees foretelling his royalty — from the Agaw *lāl-ībäla*, "the bees recognize his sovereignty"), his persecution, his journey to and vision of the heavenly Jerusalem, and his divinely-commissioned excavation of a "New Jerusalem" of churches hewn from the living rock, built (the legend says) with the help of angels.
 
 ## Significance
 The Gädlä Lalibäla is the principal indigenous narrative source for one of the wonders of medieval Christianity — the monolithic churches of Lalibela — and for the Ethiopian theology of sacred kingship in which a king, as builder of a New Jerusalem, becomes a saint ([[divine-kingship]], [[tewahedo-christology]]). It belongs to the distinctive Geʿez *gädl* (hagiography) tradition of the [[tradition-ethiopian-orthodox-tewahedo]].

@@ -16,6 +16,7 @@ script: "Latin alphabet"
 region: "Viceroyalty of Peru (the Andes); written by a Jesuit resident in Peru and Mexico"
 authorship: "compiled by the Spanish Jesuit Bernabé Cobo (1582–1657), drawing on earlier sources including the lost work of Polo de Ondegardo"
 status: "metadata"
+citation-audited: "2026-06-04"
 key-figures: ["Bernabé Cobo (the Jesuit chronicler)", "Polo de Ondegardo (a key earlier source)"]
 themes: ["[[divine-kingship]]"]
 parallels: ["[[viracocha]]", "[[inti]]"]

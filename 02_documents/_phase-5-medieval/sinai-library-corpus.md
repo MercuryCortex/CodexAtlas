@@ -17,6 +17,7 @@ script: "Greek, Syriac, Arabic, Georgian, and others"
 region: "Mount Sinai, Egypt (the Monastery of St Catherine)"
 authorship: "thousands of scribes across fifteen centuries; preserved at the Monastery of St Catherine (founded under Justinian, ~548–565)"
 status: "metadata"
+citation-audited: "2026-06-04"
 key-figures: ["Constantin von Tischendorf (who removed the Codex Sinaiticus, 1844/1859)"]
 themes: []
 parallels: ["[[codex-sinaiticus]]", "[[event-discovery-of-codex-sinaiticus-1844]]"]
@@ -28,7 +29,7 @@ tags: [phase-5, christian, sinai, st-catherine, manuscripts, sinaiticus, palimps
 # Sinai Library Corpus
 
 ## What it is
-The **Monastery of St Catherine** at the foot of Mount Sinai — founded under the emperor Justinian (~548–565) and never destroyed — holds one of the oldest and most important continuously-assembled manuscript libraries in the world: some **4,500 manuscripts** in at least eleven languages (Greek, Syriac, Arabic, Georgian, Christian Palestinian Aramaic, Slavonic, and more), second only to the Vatican in its early Christian holdings. It was here that Constantin von Tischendorf identified the fourth-century **[[codex-sinaiticus]]**, one of the two oldest near-complete Bibles, which he removed in 1844 and 1859 ([[event-discovery-of-codex-sinaiticus-1844]]). The library also preserves remarkable **palimpsests** — parchments whose erased under-texts, recovered by modern multispectral imaging, have yielded lost works in Greek, Syriac, and the rare Christian Palestinian Aramaic.
+The **Monastery of St Catherine** at the foot of Mount Sinai — founded under the emperor Justinian (~548–565) and never destroyed — holds one of the oldest and most important continuously-assembled manuscript libraries in the world: some **4,500 manuscripts** in at least eleven languages (Greek, Syriac, Arabic, Georgian, Christian Palestinian Aramaic, Slavonic, and more), whose Greek manuscript collection is second only to the Vatican's. It was here that Constantin von Tischendorf identified the fourth-century **[[codex-sinaiticus]]**, one of the two oldest near-complete Bibles, which he removed in 1844 and 1859 ([[event-discovery-of-codex-sinaiticus-1844]]). The library also preserves remarkable **palimpsests** — parchments whose erased under-texts, recovered by modern multispectral imaging, have yielded lost works in Greek, Syriac, and the rare Christian Palestinian Aramaic.
 
 ## Significance
 The Sinai collection is a primary archive of Eastern Christianity in all its languages, and through the Codex Sinaiticus it sits at the foundation of modern New Testament textual criticism. Its palimpsests continue to return lost texts to scholarship, making the monastery library one of the most generative manuscript troves in the study of religion.
