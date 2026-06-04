@@ -25,6 +25,7 @@ influences: ["the Cūḷavaṃsa (its medieval continuation)", "Southeast Asian 
 deities-mentioned: ["[[siddhartha-gautama-buddha]]"]
 events-context: ["[[event-buddha-parinirvana-c-400-bce]]", "Aśoka's reign and the third Buddhist council (~250 BCE)", "the conversion of Sri Lanka under Mahinda"]
 status: "full"
+citation-audited: "2026-06-04"
 preservation: "Transmitted within the Mahāvihāra of Anurādhapura as a Pali verse chronicle (~37 chapters in its original form), continued centuries later as the Cūḷavaṃsa. Palm-leaf manuscripts survive from the medieval period; the text was edited critically by Wilhelm Geiger (PTS, 1908 text / 1912 translation). It is the single most important narrative source for pre-modern Sri Lankan history and one of the few continuous historical chronicles from the ancient Buddhist world."
 refs:
   - title: "The Mahāvaṃsa, or The Great Chronicle of Ceylon"
@@ -48,7 +49,7 @@ refs:
     type: "monograph"
     tier: 1
     notes: "On the Mahāvaṃsa's afterlife in modern Sinhala identity and politics."
-  - title: "Buddhist History: The Sri Lankan Pāli Vaṃsas"
+  - title: "Buddhist History: The Sri Lankan Pāli Vaṃsas and Their Community"
     author: "Walters, Jonathan S."
     year: 2000
     publisher: "in R. Inden, J. Walters & D. Ali, Querying the Medieval, Oxford University Press"
@@ -114,5 +115,5 @@ The **Mahāvaṃsa** ("Great Chronicle") is a Pali epic-historical poem composed
 1. Geiger, W. (trans.) (1912). *The Mahāvaṃsa, or The Great Chronicle of Ceylon*. Pali Text Society. — standard critical translation.
 2. von Hinüber, O. (1996). *A Handbook of Pāli Literature*. de Gruyter. — dating and genre.
 3. Kemper, S. (1991). *The Presence of the Past: Chronicles, Politics, and Culture in Sinhala Life*. Cornell UP. — modern afterlife.
-4. Walters, J.S. (2000). "Buddhist History: The Sri Lankan Pāli Vaṃsas." In *Querying the Medieval*. Oxford UP. — the vaṃsa genre.
+4. Walters, J.S. (2000). "Buddhist History: The Sri Lankan Pāli Vaṃsas and Their Community." In *Querying the Medieval*. Oxford UP. — the vaṃsa genre.
 5. Rahula, W. (1956). *History of Buddhism in Ceylon*. M. D. Gunasena. — classic reconstruction.

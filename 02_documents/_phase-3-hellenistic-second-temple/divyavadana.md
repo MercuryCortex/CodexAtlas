@@ -25,6 +25,7 @@ influences: ["the Northern (Sanskrit) Aśoka legend (Aśokāvadāna)", "Buddhist
 deities-mentioned: ["[[siddhartha-gautama-buddha]]"]
 events-context: ["Aśoka's reign and Buddhist patronage (~250 BCE) as remembered in the Aśokāvadāna", "the Mūlasarvāstivāda monastic milieu of the early centuries CE"]
 status: "full"
+citation-audited: "2026-06-04"
 preservation: "Preserved in Buddhist Hybrid Sanskrit, mostly through Nepalese palm-leaf manuscripts (the earliest from c. the 17th c., copying much older recensions). The collection of ~38 avadānas was first edited by Cowell and Neil (Cambridge, 1886). Much of the material is demonstrably excerpted from the Mūlasarvāstivāda Vinaya, so the narratives are older than the anthology that gathers them."
 refs:
   - title: "The Divyâvadâna: A Collection of Early Buddhist Legends"

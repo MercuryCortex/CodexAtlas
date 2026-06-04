@@ -25,6 +25,7 @@ influences: ["the Chinese Huayan (Flower Garland) school", "the Borobudur monume
 deities-mentioned: ["[[manjushri]]", "[[samantabhadra-buddha]]", "[[vairocana]]"]
 events-context: ["the early-Mahāyāna sūtra-composition milieu (~1st–3rd c. CE)", "the Chinese translations of Buddhabhadra (420) and Śikṣānanda (699) that canonised the Avataṃsaka"]
 status: "full"
+citation-audited: "2026-06-04"
 preservation: "Survives in Buddhist Hybrid Sanskrit (Nepalese manuscript tradition), in three Chinese translations (within the Avataṃsaka of Buddhabhadra 418–420 and Śikṣānanda 695–699, and as a standalone text by Prajña 796–798), and in Tibetan. The text circulated both independently and as the long climactic book (Chinese *Ru fajie pin*) of the Avataṃsaka. Critically translated within Thomas Cleary's *Flower Ornament Scripture*."
 refs:
   - title: "The Flower Ornament Scripture: A Translation of the Avatamsaka Sutra"
