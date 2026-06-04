@@ -1011,6 +1011,10 @@ body.nav-hidden .side-tab { display: none !important; }
 /* Right side (class) — mixed-case like the old .forge-status-mode label. */
 .app-pill-class .app-pill-label {
   letter-spacing: 0.04em;
+  /* 2026-06-04 (John) — the class pill ("CODEX") matches the master pill
+     ("ATLAS") in all-caps; the codex breadcrumb (Christianity/Bible/Books,
+     which use #app-pill-codex-*-label) is intentionally left Title Case. */
+  text-transform: uppercase;
 }
 .app-pill-icon {
   /* Hidden per the revised compact style — the LABEL is the identity.
