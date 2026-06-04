@@ -1,5 +1,7 @@
 ---
 type: document
+status: "metadata"
+date-composed-earliest: -1550
 id: "phase-1-037-ebers-papyrus"
 title: "Ebers Papyrus"
 aka: ["Papyrus Ebers", "Georg Ebers Papyrus"]

@@ -1,5 +1,6 @@
 ---
 type: document
+status: "metadata"
 id: "phase-3-037-shennong-bencao-jing"
 name: "Shennong Bencao Jing"
 aka: ["Divine Farmer's Materia Medica", "神農本草經", "Shén Nóng Běncǎo Jīng", "Shennong's Classic of Herbal Medicine", "Classic of Herbal Medicine"]

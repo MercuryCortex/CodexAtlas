@@ -1,5 +1,7 @@
 ---
 type: document
+status: "metadata"
+date-composed-earliest: -1600
 id: "phase-1-038-edwin-smith-papyrus"
 title: "Edwin Smith Papyrus"
 aka: ["Edwin Smith Surgical Papyrus"]

@@ -1,5 +1,6 @@
 ---
 type: document
+date-composed-earliest: 712
 id: "phase-8-019-kojiki"
 title: "Kojiki (Record of Ancient Matters)"
 tradition: "Shinto"

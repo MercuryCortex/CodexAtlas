@@ -1,5 +1,7 @@
 ---
 type: document
+status: "metadata"
+date-composed-earliest: -420
 id: "phase-2-045-hippocratic-corpus"
 title: "Hippocratic Corpus"
 aka: ["Corpus Hippocraticum", "Opera Omnia Hippocratis"]

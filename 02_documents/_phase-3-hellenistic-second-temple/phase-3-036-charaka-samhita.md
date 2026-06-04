@@ -1,5 +1,7 @@
 ---
 type: document
+status: "metadata"
+date-composed-earliest: -100
 id: "phase-3-036-charaka-samhita"
 title: "Charaka Samhita"
 aka: ["Carakasaṃhitā", "Compendium of Charaka", "Treatise of Charaka"]

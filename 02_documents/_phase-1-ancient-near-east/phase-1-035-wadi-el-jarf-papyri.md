@@ -1,5 +1,7 @@
 ---
 type: document
+tradition: "Egyptian"
+date-composed-earliest: -2560
 canonical-corpus: ["egyptian-scripture"]
 id: "phase-1-035-wadi-el-jarf-papyri"
 name: "Wadi el-Jarf Papyri"

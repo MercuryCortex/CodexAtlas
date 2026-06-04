@@ -2,6 +2,7 @@
 id: avesta
 title: "The Avesta — Zoroastrian Sacred Scriptures"
 type: document
+date-composed-earliest: -1700
 status: metadata
 tier: 1
 tradition: tradition-zoroastrianism

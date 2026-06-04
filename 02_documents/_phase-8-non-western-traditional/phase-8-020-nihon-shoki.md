@@ -1,5 +1,6 @@
 ---
 type: document
+date-composed-earliest: 720
 id: "phase-8-020-nihon-shoki"
 title: "Nihon Shoki (Chronicles of Japan)"
 tradition: "Shinto"

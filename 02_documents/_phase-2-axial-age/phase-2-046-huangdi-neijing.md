@@ -1,5 +1,6 @@
 ---
 type: document
+status: "metadata"
 id: "phase-2-046-huangdi-neijing"
 name: "Huangdi Neijing"
 aka: ["Yellow Emperor's Classic of Internal Medicine", "黃帝內經", "Huáng Dì Nèi Jīng", "Inner Canon of the Yellow Emperor", "Neijing"]
