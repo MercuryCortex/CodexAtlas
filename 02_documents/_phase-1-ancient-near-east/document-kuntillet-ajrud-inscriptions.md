@@ -39,7 +39,7 @@ refs:
     type: "excavation-report"
     tier: 1
     notes: "Definitive final excavation report; full corpus of inscriptions and iconography"
-  - title: "The Sacred Marriage of Yahweh and Asherah"
+  - title: "The Cult of Asherah in Ancient Israel and Judah: Evidence for a Hebrew Goddess"
     author: "Hadley, Judith M."
     year: 2000
     publisher: "Cambridge University Press"
