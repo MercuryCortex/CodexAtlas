@@ -221,6 +221,7 @@
       +   '<div class="dev-overview-stat-grid">'
       +     stat(pass + '<span class="dev-overview-stat-unit">/' + total + '</span>', pg ? 'ROWS GREEN — PRODUCT-GRADE ✓' : 'rows green (target ' + total + '/' + total + ')')
       +     stat(num(b.totalDocuments), 'Documents')
+      +     stat((b.citationAudit ? num(b.citationAudit.count) : '0') + '<span class="dev-overview-stat-unit"> docs</span>', 'Citations verified' + (b.citationAudit && b.citationAudit.lastSweep ? ' · ' + escapeHtml(b.citationAudit.lastSweep) : ''))
       +     stat(escapeHtml(b.generatedAt || ''), 'As of')
       +   '</div>'
       +   '<div class="dev-overview-band-strip">'

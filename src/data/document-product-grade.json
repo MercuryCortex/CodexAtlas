@@ -1,6 +1,10 @@
 {
- "generatedAt": "2026-06-03",
+ "generatedAt": "2026-06-04",
  "totalDocuments": 507,
+ "citationAudit": {
+  "count": 80,
+  "lastSweep": "2026-06-04"
+ },
  "productGrade": false,
  "passCount": 1,
  "rowCount": 7,

@@ -41,6 +41,7 @@ WIRE_FIELDS = ("themes", "parallels", "influenced-by", "influences",
                "deities-mentioned", "key-figures", "events-context",
                "documents-related", "attested-in", "mentioned-in", "authors")
 _out, _ref = {}, set()
+citation_audited = []  # YAML `citation-audited:` stamps = refs web-verified-clean
 
 for path in FILES:
     t = open(path, encoding="utf-8").read()
@@ -50,6 +51,9 @@ for path in FILES:
     body = t[fm_end+4:] if fm_end > 0 else ""
 
     status_ct[(field(t, "status") or "(none)").strip('"')] += 1
+    _ca = field(t, "citation-audited")
+    if _ca:
+        citation_audited.append(_ca.strip('"'))
     if not field(t, "tradition") or field(t, "tradition") in ('""', "''"):
         no_tradition.append(slug)
     # any date field
@@ -173,6 +177,8 @@ product_grade = all(r["ok"] for r in rows)
 bench = {
     "generatedAt": datetime.date.today().isoformat(),
     "totalDocuments": N,
+    "citationAudit": {"count": len(citation_audited),
+                      "lastSweep": max(citation_audited) if citation_audited else None},
     "productGrade": product_grade,
     "passCount": sum(1 for r in rows if r["ok"]),
     "rowCount": len(rows),
