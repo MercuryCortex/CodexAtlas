@@ -16,6 +16,7 @@ script: "Relief etching (Blake's illuminated printing — text and image on one 
 region: "London, England"
 authorship: "known — William Blake (1757–1827), poet, printmaker, and visionary"
 status: "metadata"
+citation-audited: "2026-06-04"
 key-figures: ["William Blake"]
 themes: ["[[mysticism]]", "[[light-and-darkness-dualism]]"]
 parallels: ["[[phase-5-021-cusa-de-docta-ignorantia]]"]

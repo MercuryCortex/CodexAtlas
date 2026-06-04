@@ -16,6 +16,7 @@ script: "Latin alphabet"
 region: "United States (Harvard / University of California, Berkeley)"
 authorship: "known — Robert N. Bellah (1927–2013), sociologist of religion"
 status: "metadata"
+citation-audited: "2026-06-04"
 key-figures: ["Robert N. Bellah"]
 themes: ["[[divine-kingship]]"]
 parallels: ["[[phase-7-013-eliade-myth-of-eternal-return]]", "[[phase-7-022-hick-interpretation-of-religion]]"]

@@ -16,6 +16,7 @@ script: "Latin"
 region: "Germany / Italy (the Holy Roman Empire; Cusa was a cardinal of the Roman Church)"
 authorship: "known — Nicholas of Cusa (Nikolaus von Kues, 1401–1464), cardinal, philosopher, and mathematician"
 status: "metadata"
+citation-audited: "2026-06-04"
 key-figures: ["Nicholas of Cusa"]
 themes: ["[[apophatic-mysticism]]"]
 parallels: ["[[phase-5-028-meister-eckhart-sermons]]"]

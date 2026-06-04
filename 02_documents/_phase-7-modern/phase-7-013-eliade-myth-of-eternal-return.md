@@ -16,6 +16,7 @@ script: "Latin alphabet"
 region: "Paris (Eliade in exile); later University of Chicago"
 authorship: "known — Mircea Eliade (1907–1986), historian of religions"
 status: "metadata"
+citation-audited: "2026-06-04"
 key-figures: ["Mircea Eliade"]
 themes: ["[[eternal-return]]"]
 parallels: ["[[phase-7-014-bellah-civil-religion-essay]]", "[[phase-7-022-hick-interpretation-of-religion]]"]

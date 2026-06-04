@@ -33,7 +33,7 @@ influences:
   - "Later alchemical emblem books in the German tradition"
 status: "metadata"
 citation-audited: "2026-06-04"
-preservation: "First and only early modern edition: Frankfurt, Lucas Jennis, 1622. The Jennis firm published several key Rosicrucian-Hermetic works in 1617–1628 (Maier's Atalanta Fugiens 1618, Symbola aureae mensae 1617, Tripus Aureus 1618) — the *Philosophia Reformata* belongs to this deliberate publishing program. No modern critical edition; primary copies at the British Library and Bavarian State Library."
+preservation: "First and only early modern edition: Frankfurt, Lucas Jennis, 1622. The Jennis firm published several key Rosicrucian-Hermetic works in 1617–1628 (Maier's Atalanta Fugiens 1617, Symbola aureae mensae 1617, Tripus Aureus 1618) — the *Philosophia Reformata* belongs to this deliberate publishing program. No modern critical edition; primary copies at the British Library and Bavarian State Library."
 refs:
   - title: "Atalanta Fugiens: An Edition of the Fugues, Emblems, and Epigrams"
     author: "de Jong, H.M.E."
@@ -56,7 +56,7 @@ tags: [phase-6, mylius, alchemy, german, emblem, rosarium-tradition, paracelsian
 
 ## Overview
 
-**Johann Daniel Mylius** (c.1583–c.1642) composed the *Philosophia Reformata* (1622) as an ambitious synthesis of the Rosarium Philosophorum tradition and Paracelsian natural philosophy, published by the Lucas Jennis firm in Frankfurt — the same publisher who issued Maier's *Atalanta Fugiens* (1618) and *Symbola aureae mensae* (1617). The Jennis circle represents the peak of Rosicrucian-alchemical publishing in Germany.
+**Johann Daniel Mylius** (c.1583–c.1642) composed the *Philosophia Reformata* (1622) as an ambitious synthesis of the Rosarium Philosophorum tradition and Paracelsian natural philosophy, published by the Lucas Jennis firm in Frankfurt — the same publisher who issued Maier's *Atalanta Fugiens* (1617) and *Symbola aureae mensae* (1617). The Jennis circle represents the peak of Rosicrucian-alchemical publishing in Germany.
 
 The text incorporates the 20 woodcuts from the *Rosarium Philosophorum* and reframes them within a Paracelsian-Rosicrucian philosophical apparatus, making the *Philosophia Reformata* the key bridge between the 1550 Rosarium tradition and the 1610s–1620s Rosicrucian emblem explosion. It is the iconographic connector between the German medieval-Hermetic alchemical tradition and the Rosicrucian synthesis.
 

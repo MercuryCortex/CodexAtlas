@@ -16,6 +16,7 @@ script: "Latin alphabet (Polish)"
 region: "Poland / Moravia (Brno / Brünn) / Offenbach"
 authorship: "the sayings of Jacob Frank (1726–1791), recorded by his disciples"
 status: "metadata"
+citation-audited: "2026-06-04"
 key-figures: ["Jacob Frank (the self-proclaimed messiah)", "Eva Frank (his daughter and successor)"]
 themes: []
 parallels: ["[[phase-6-025-nathan-of-gaza-treatise-on-dragons]]"]

@@ -16,6 +16,7 @@ script: "Latin alphabet"
 region: "United Kingdom / United States (the 1986–87 Gifford Lectures, Edinburgh)"
 authorship: "known — John Hick (1922–2012), philosopher of religion"
 status: "metadata"
+citation-audited: "2026-06-04"
 key-figures: ["John Hick"]
 themes: ["[[religious-pluralism]]"]
 parallels: ["[[phase-7-013-eliade-myth-of-eternal-return]]", "[[phase-7-014-bellah-civil-religion-essay]]"]
