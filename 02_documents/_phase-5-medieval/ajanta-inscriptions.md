@@ -17,6 +17,7 @@ script: "Brāhmī (early and Gupta varieties)"
 region: "Ajaṇṭā, Maharashtra, western India"
 authorship: "donors and patrons of the Ajanta caves — culminating in the Vākāṭaka-period (~460–480 CE) sponsors and the minister Varāhadeva"
 status: "metadata"
+citation-audited: "2026-06-04"
 key-figures: ["Varāhadeva (Vākāṭaka minister, donor of Cave 16)", "Harisena (the Vākāṭaka king under whom the great phase was built)"]
 themes: ["[[theme-rock-cut-architecture-as-relic-of-creation]]"]
 parallels: ["[[divyavadana]]", "[[jataka-tales]]"]
@@ -34,5 +35,5 @@ The rock-cut Buddhist caves of **Ajaṇṭā** in Maharashtra carry a set of ded
 Because Ajanta preserves the finest cycle of early Buddhist mural painting in the world, its inscriptions are disproportionately important: they convert a wall of images into a dated historical archive of patronage, merit-making, and the Vākāṭaka court's Buddhist devotion. They are a model case of donative epigraphy fixing the chronology of a great monument of [[theme-rock-cut-architecture-as-relic-of-creation]].
 
 ## Refs
-1. Spink, Walter M. (2005–2014). *Ajanta: History and Development* (5 vols.). Brill. — the definitive study, built on the inscriptions and patronage.
+1. Spink, Walter M. (2005–2014). *Ajanta: History and Development* (7 vols.). Brill. — the definitive study, built on the inscriptions and patronage.
 2. Cohen, Richard S. (2006). *Beyond Enlightenment: Buddhism, Religion, Modernity*. Routledge. — includes his work on the Ajanta inscriptions and their religious culture.

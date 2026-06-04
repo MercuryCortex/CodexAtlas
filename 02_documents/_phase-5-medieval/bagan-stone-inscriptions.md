@@ -17,6 +17,7 @@ script: "Old Burmese / Mon script (incised)"
 region: "Bagan (Pagan), central Myanmar (Burma)"
 authorship: "kings, queens, and lay donors of the Pagan kingdom recording temple and monastery endowments"
 status: "metadata"
+citation-audited: "2026-06-04"
 key-figures: ["Anawrahta (founder of the Pagan empire, r. ~1044–1077)", "Prince Rajakumar (donor of the Myazedi inscription, 1113)"]
 themes: ["[[divine-kingship]]"]
 parallels: ["[[tradition-theravada]]", "[[mahavamsa]]"]

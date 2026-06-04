@@ -17,6 +17,7 @@ script: "Brāhmī-derived / Nāgarī varieties"
 region: "Ellora (Verul), Maharashtra, western India"
 authorship: "donors and royal patrons across three religions — Buddhist, then Rāṣṭrakūṭa Hindu (the Kailāsa), then Jain"
 status: "metadata"
+citation-audited: "2026-06-04"
 key-figures: ["Kṛṣṇa I (Rāṣṭrakūṭa king, patron of the Kailāsa temple, ~8th c.)"]
 themes: ["[[theme-rock-cut-architecture-as-relic-of-creation]]", "[[theme-hindu-buddhist-architectural-continuity]]"]
 parallels: ["[[ajanta-inscriptions]]", "[[shiva]]"]

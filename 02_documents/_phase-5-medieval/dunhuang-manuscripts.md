@@ -17,6 +17,7 @@ script: "Chinese; Tibetan; various Central Asian scripts; some printed"
 region: "Dunhuang (the Mogao caves), Gansu, on the Silk Road, northwest China"
 authorship: "thousands of scribes, monks, and lay copyists over six centuries; sealed in the 'library cave' (Cave 17) ~1000 CE and rediscovered 1900"
 status: "metadata"
+citation-audited: "2026-06-04"
 key-figures: ["Wang Yuanlu (the Daoist caretaker who found the sealed cave, 1900)", "Aurel Stein and Paul Pelliot (who removed large portions, 1907–08)"]
 themes: []
 parallels: ["[[phase-5-002b-diamond-sutra]]", "[[place-dunhuang]]"]

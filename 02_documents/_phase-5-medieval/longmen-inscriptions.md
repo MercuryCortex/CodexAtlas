@@ -17,6 +17,7 @@ script: "Chinese (the 'Wei stele' calligraphic style; the Longmen Twenty are mod
 region: "Longmen, near Luoyang, Henan, China"
 authorship: "donors from the imperial house downward — Northern Wei to Tang — recording image-dedications"
 status: "metadata"
+citation-audited: "2026-06-04"
 key-figures: ["Empress Wu Zetian (patron of the great Tang Vairocana at Fengxiansi)"]
 themes: ["[[theme-rock-cut-architecture-as-relic-of-creation]]"]
 parallels: ["[[vairocana]]", "[[phase-4-101-lotus-sutra]]"]
