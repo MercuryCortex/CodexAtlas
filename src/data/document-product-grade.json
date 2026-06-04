@@ -2,11 +2,11 @@
  "generatedAt": "2026-06-04",
  "totalDocuments": 507,
  "citationAudit": {
-  "count": 100,
+  "count": 106,
   "lastSweep": "2026-06-04"
  },
- "productGrade": false,
- "passCount": 2,
+ "productGrade": true,
+ "passCount": 7,
  "rowCount": 7,
  "dupClusters": {},
  "rows": [
@@ -14,16 +14,16 @@
    "key": "connected",
    "label": "Graph-connected (no orphans)",
    "target": "0 disconnected",
-   "current": "6",
-   "ok": false,
+   "current": "0",
+   "ok": true,
    "detail": "every doc has \u22651 wikilink wire in or out"
   },
   {
    "key": "tradition",
    "label": "Has home tradition (wedge)",
    "target": "100%",
-   "current": "496/507",
-   "ok": false,
+   "current": "507/507",
+   "ok": true,
    "detail": "the scripture-exception singular origin"
   },
   {
@@ -38,24 +38,24 @@
    "key": "sourced",
    "label": "Sourced (refs)",
    "target": "0 unsourced",
-   "current": "5",
-   "ok": false,
+   "current": "0",
+   "ok": true,
    "detail": ""
   },
   {
    "key": "depth",
    "label": "At least metadata depth",
    "target": "0 stubs/partials",
-   "current": "12",
-   "ok": false,
+   "current": "0",
+   "ok": true,
    "detail": "stub + partial + untyped"
   },
   {
    "key": "thin",
    "label": "No thin bodies (<400 chars)",
    "target": "0",
-   "current": "4",
-   "ok": false,
+   "current": "0",
+   "ok": true,
    "detail": ""
   },
   {
