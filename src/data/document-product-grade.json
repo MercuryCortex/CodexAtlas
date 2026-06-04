@@ -2,7 +2,7 @@
  "generatedAt": "2026-06-04",
  "totalDocuments": 507,
  "citationAudit": {
-  "count": 91,
+  "count": 96,
   "lastSweep": "2026-06-04"
  },
  "productGrade": false,
@@ -14,7 +14,7 @@
    "key": "connected",
    "label": "Graph-connected (no orphans)",
    "target": "0 disconnected",
-   "current": "14",
+   "current": "9",
    "ok": false,
    "detail": "every doc has \u22651 wikilink wire in or out"
   },
@@ -22,7 +22,7 @@
    "key": "tradition",
    "label": "Has home tradition (wedge)",
    "target": "100%",
-   "current": "487/507",
+   "current": "492/507",
    "ok": false,
    "detail": "the scripture-exception singular origin"
   },
@@ -38,7 +38,7 @@
    "key": "sourced",
    "label": "Sourced (refs)",
    "target": "0 unsourced",
-   "current": "14",
+   "current": "9",
    "ok": false,
    "detail": ""
   },
@@ -46,7 +46,7 @@
    "key": "depth",
    "label": "At least metadata depth",
    "target": "0 stubs/partials",
-   "current": "21",
+   "current": "16",
    "ok": false,
    "detail": "stub + partial + untyped"
   },
@@ -54,7 +54,7 @@
    "key": "thin",
    "label": "No thin bodies (<400 chars)",
    "target": "0",
-   "current": "12",
+   "current": "7",
    "ok": false,
    "detail": ""
   },
