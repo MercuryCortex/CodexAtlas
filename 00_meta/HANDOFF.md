@@ -1,6 +1,35 @@
-# Session HANDOFF — 2026-06-03 (Literature sweep + CITATION-INTEGRITY discovery)
+# Session HANDOFF — 2026-06-04 (citation sweep DONE · dev-panel gauge · P2 stubs underway)
 
-> **🟢🟢 START HERE: `HANDOFF-2026-06-03-literature-sweep-and-citation-audit.md`**
+> **🟢🟢 START HERE (2026-06-04 state — newest):** read the **top entries of
+> `00_meta/STATUS.md`** (`opus-stubs-2026-06-04` + `opus-citation-sweep-2026-06-04`)
+> and **`AUDIT/2026-06-04-citation-sweep.md`**. Summary: the D5 citation-integrity
+> sweep over the 80 un-audited full docs is **COMPLETE** (33 fabricated/conflated
+> refs fixed; method = read-only pre-filter + 10-agent grader fleet). A
+> **`citation-audited:` YAML stamp** now drives a **"Citations verified" gauge** on
+> the DEV → Overview Literature panel (currently 86). **P2 stubs in progress: 6 of
+> 32 promoted** (3 Buddhist + 3 Chinese), both batches graded PASS. **26 stubs left**
+> — playbook + worklist in the 2026-06-03 doc §3/§4. OPEN DECISION (logged): whether
+> to extend the citation sweep to the ~86 flagged *metadata* nodes (kuntillet proved
+> the defect reaches them). Everything committed, gates green, tree clean.
+>
+> **⚠️ IF THE VAULT FOLDER WAS MOVED since last session — do these FIRST:**
+> 1. **Start the server from the NEW path:** `nohup python3 scripts/serve.py 8742 &`
+>    (serve.py is path-portable; it chdirs to its own root). `serve.py` is the
+>    canonical server — NOT `serve-node.js`.
+> 2. **Fix `.claude/launch.json`** — its `runtimeArgs` hardcodes the OLD absolute
+>    path to `scripts/serve-node.js`; update to the new path (or repoint at serve.py).
+> 3. **Fix `.claude/settings.json`** — `additionalDirectories` hardcodes the old path.
+> 4. The repo is self-contained (git history travels; no remote). The vault's own
+>    brain (00_meta/, AUDIT/) moves with it. Only the EXTERNAL Claude auto-memory
+>    (`~/.claude/projects/-Users-user-Desktop-Codex-Atlas/memory/MEMORY.md`) is
+>    keyed to the old path and won't auto-load at the new path — but this in-repo
+>    handoff + STATUS carry the full state, so nothing is lost.
+> 5. Cosmetic only (ignore): the help-text path in `index.html`, old paths inside
+>    `AUDIT/2026-05-30-date-scholarship-raw.json`.
+
+---
+
+> **(prior) START HERE: `HANDOFF-2026-06-03-literature-sweep-and-citation-audit.md`**
 > — the current live state. Deities 9/9 DONE. Literature driven hard this
 > session (stubs 80→32, full 117→180, dupes green; the astrology spine
 > populated). **NEW critical finding:** ~5–7% of older prior-agent node
