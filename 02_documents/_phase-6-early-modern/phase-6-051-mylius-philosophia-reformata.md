@@ -31,7 +31,8 @@ influenced-by:
 influences:
   - "The iconographic bridge between the Rosarium woodcut tradition (1550) and the fully developed Rosicrucian emblem tradition of Maier, Fludd, and Khunrath"
   - "Later alchemical emblem books in the German tradition"
-status: "stub"
+status: "metadata"
+citation-audited: "2026-06-04"
 preservation: "First and only early modern edition: Frankfurt, Lucas Jennis, 1622. The Jennis firm published several key Rosicrucian-Hermetic works in 1617–1628 (Maier's Atalanta Fugiens 1618, Symbola aureae mensae 1617, Tripus Aureus 1618) — the *Philosophia Reformata* belongs to this deliberate publishing program. No modern critical edition; primary copies at the British Library and Bavarian State Library."
 refs:
   - title: "Atalanta Fugiens: An Edition of the Fugues, Emblems, and Epigrams"
@@ -41,6 +42,13 @@ refs:
     type: "monograph"
     tier: 1
     notes: "While focused on Maier, this study contextualizes the Jennis publishing circle and the Philosophia Reformata within the broader Rosicrucian emblem tradition"
+  - title: "The Golden Game: Alchemical Engravings of the Seventeenth Century"
+    author: "Klossowski de Rola, Stanislas"
+    year: 1988
+    publisher: "Thames & Hudson"
+    type: "monograph"
+    tier: 2
+    notes: "Surveys and reproduces the 17th-century alchemical emblem books, including Mylius's Philosophia Reformata."
 tags: [phase-6, mylius, alchemy, german, emblem, rosarium-tradition, paracelsian, rosicrucian, jennis-publisher, frankfurt]
 ---
 
@@ -54,4 +62,5 @@ The text incorporates the 20 woodcuts from the *Rosarium Philosophorum* and refr
 
 ## Refs
 
-1. De Jong, H.M.E. (1969). *Atalanta Fugiens*. Brill. Tier 1.
+1. De Jong, H.M.E. (1969). *Atalanta Fugiens*. Brill. — contextualizes the Jennis Rosicrucian emblem circle.
+2. Klossowski de Rola, Stanislas (1988). *The Golden Game: Alchemical Engravings of the Seventeenth Century*. Thames & Hudson. — surveys the Philosophia Reformata emblems.
