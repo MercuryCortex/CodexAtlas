@@ -33,7 +33,7 @@ refs:
     type: "primary-translation"
     tier: 1
     notes: "The only complete English translation. Renders Śikṣānanda's 80-fascicle text. Indispensable; some scholars critique Cleary's looseness in places but no alternative exists."
-  - title: "The Avataṃsaka Sūtra: Its Origin and Influence"
+  - title: "Reflecting Mirrors: Perspectives on Huayan Buddhism"
     author: "Hamar, Imre (ed.)"
     year: 2007
     publisher: "Asiatische Forschungen, Harrassowitz"
@@ -143,7 +143,7 @@ The chain: *Avataṃsaka* (400 CE) → *Huayan school* (Fazang 700 CE) → *Neo-
 
 ## Refs
 1. Cleary, T. (1993). *The Flower Ornament Scripture*. Shambhala.
-2. Hamar, I. (ed.) (2007). *The Avataṃsaka Sūtra: Its Origin and Influence*. Harrassowitz.
+2. Hamar, I. (ed.) (2007). *Reflecting Mirrors: Perspectives on Huayan Buddhism*. Harrassowitz.
 3. Cook, F.H. (1977). *Hua-yen Buddhism: The Jewel Net of Indra*. Penn State.
 4. Chang, G.C.C. (1971). *The Buddhist Teaching of Totality*. Penn State.
 5. Cleary, T. (1989). *Entry into the Realm of Reality* (Gaṇḍavyūha). Shambhala.

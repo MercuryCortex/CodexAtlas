@@ -55,10 +55,10 @@ refs:
     type: "monograph"
     tier: 1
     notes: "Corbin's classic study; controversial 'esoteric Iran' framing but foundational scholarship"
-  - title: "Mystical Astrologies: Ibn ʿArabī's Hermetic Lineage"
+  - title: "Ibn ʿArabī in the Later Islamic Tradition"
     author: "Knysh, Alexander D."
     year: 1999
-    publisher: "Brill"
+    publisher: "SUNY Press"
     type: "monograph"
     tier: 1
   - title: "Ibn ʿArabī's Fuṣūṣ al-Ḥikam: An Annotated Translation"

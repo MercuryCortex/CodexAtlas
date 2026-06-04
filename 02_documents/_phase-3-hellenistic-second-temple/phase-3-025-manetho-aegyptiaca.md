@@ -61,16 +61,16 @@ refs:
     type: "critical-edition-and-translation"
     tier: 1
     notes: "Standard collation of all Manethonian fragments with parallel transmissions"
-  - title: "Manetho's Aigyptiaka and Egyptian Historiography"
+  - title: "Berossos and Manetho, Introduced and Translated"
     author: "Verbrugghe, Gerald P.; Wickersham, John M."
     year: 2001
     publisher: "University of Michigan Press"
     type: "translation-and-study"
     tier: 1
-  - title: "Manetho and the History of Egypt"
+  - title: "Clio's Other Sons: Berossus and Manetho"
     author: "Dillery, John"
     year: 2015
-    publisher: "Oxford University Press"
+    publisher: "University of Michigan Press"
     type: "monograph"
     tier: 1
   - title: "Egypt and the Limits of Hellenism"
@@ -102,7 +102,7 @@ The *Aegyptiaca* is [[manetho]]'s history of Egypt in three books, written in Gr
 
 *Manetho's dynastic list begins not with a human king but with the gods: Ptah/Hephaestus, Ra/Helios, and the other Egyptian deities are recorded as the first rulers of Egypt, followed by demigods, before the historical thirty dynasties begin. This "gods reign on earth" prehistory — treating the divine-human boundary as historically permeable — is the foundational category of Egyptian royal theology rendered in Greek dynastic-list form. Structurally, it is the closest parallel in ancient historiography to the Sumerian King List's antediluvian kings with impossibly long reigns.*
 
-*Citations: Waddell, W.G. (1940). Manetho. Loeb 350. Harvard UP; Dillery, J. (2015). Manetho and the History of Egypt. Oxford UP.*
+*Citations: Waddell, W.G. (1940). Manetho. Loeb 350. Harvard UP; Dillery, J. (2015). Clio's Other Sons: Berossus and Manetho. University of Michigan Press.*
 
 ### Aegyptiaca — The Hyksos narrative (preserved in Josephus, Contra Apionem 1.75–87)
 *Trans. Thackeray, H.St.J. (1926). Josephus: Against Apion. Loeb Classical Library 186. Harvard UP.*
@@ -110,7 +110,7 @@ The *Aegyptiaca* is [[manetho]]'s history of Egypt in three books, written in Gr
 
 *The Hyksos narrative — the most extensively quoted fragment of the Aegyptiaca — was preserved by Josephus as evidence for a Levantine Semitic presence in Egypt that Josephus identified with the biblical Israelites. Manetho used the term *Hyksos* (which he derives as "shepherd-kings," though modern scholarship reads it as "rulers of foreign lands") to describe the Western Semitic rulers of the 15th–17th Dynasties (~-1650 to -1550 BCE). The Hyksos/Israelite equation has been rejected by modern scholarship, but the passage is the anchor for the entire ancient tradition of Egyptian-Jewish apologetic controversy.*
 
-*Citations: Waddell, W.G. (1940). Manetho. Loeb 350; Josephus, Contra Apionem 1.75–105; Dillery, J. (2015). Manetho and the History of Egypt. Oxford UP.*
+*Citations: Waddell, W.G. (1940). Manetho. Loeb 350; Josephus, Contra Apionem 1.75–105; Dillery, J. (2015). Clio's Other Sons: Berossus and Manetho. University of Michigan Press.*
 
 ### Aegyptiaca — The 30-dynasty schema (Africanus epitome, in Eusebius)
 *Trans. Waddell 1940.*
@@ -118,7 +118,7 @@ The *Aegyptiaca* is [[manetho]]'s history of Egypt in three books, written in Gr
 
 *The thirty-dynasty framework introduced by Manetho — still used by modern Egyptology — is the most consequential organizational schema in the history of ancient Near Eastern historical study. Manetho grouped all Egyptian rulers from Menes to Alexander the Great into thirty dynasties, each defined by a ruling family or capital city. The schema is not always historically accurate (some dynasties were simultaneous; some transitions were internal), but it provided a framework that modern Egyptology has retained as a working tool. The system is Manetho's most direct contribution to knowledge — a 2,300-year-old organizational device still in active scholarly use.*
 
-*Citations: Waddell, W.G. (1940). Manetho. Loeb 350; Dillery, J. (2015). Manetho and the History of Egypt. Oxford UP.*
+*Citations: Waddell, W.G. (1940). Manetho. Loeb 350; Dillery, J. (2015). Clio's Other Sons: Berossus and Manetho. University of Michigan Press.*
 
 ## Context
 - **Political milieu.** Early Ptolemaic Egypt. [[ptolemy-i-soter]] (r. -323 / -305 to -282) and [[ptolemy-ii-philadelphus]] (r. -282 to -246) are building Alexandria into the intellectual capital of the Hellenistic world: founding the Library, sponsoring the Septuagint ([[phase-3-006-septuagint]]) under Demetrius of Phalerum (tradition), patronizing Greek scholarship across genres. Native Egyptian priestly elites navigate the new Greek-speaking overlord by writing strategically in Greek.
@@ -150,7 +150,7 @@ The *Aegyptiaca* is [[manetho]]'s history of Egypt in three books, written in Gr
 
 ## MASSIVE WIN — cross-tradition edges
 
-- **Manetho's 30-dynasty schema = most consequential single organizational device in the history of ancient Near Eastern studies — still used by modern Egyptology 2,300 years after its invention**: Manetho grouped all Egyptian rulers from Menes to Alexander the Great into thirty dynasties, each identified by ruling family or capital city. The schema is not always historically accurate — some dynasties overlapped, some transitions were administrative rather than dynastic — but it provided the organizational framework that modern Egyptology has retained as its standard working tool. Every textbook chapter on "Dynasty 12" or "Dynasty 18" (Akhenaten's dynasty) uses Manetho's numbering. No other organizational framework invented by a single ancient author has remained the standard scholarly tool in a field of study for 2,300 years (Dillery, J. 2015. *Manetho and the History of Egypt*. Oxford UP. pp.1–40; Waddell, W.G. 1940. *Manetho*. Loeb 350. Harvard UP. pp.1–30; Redford, D.B. 1986. *Pharaonic King-Lists, Annals and Day-Books*. SSEA. pp.1–30).
+- **Manetho's 30-dynasty schema = most consequential single organizational device in the history of ancient Near Eastern studies — still used by modern Egyptology 2,300 years after its invention**: Manetho grouped all Egyptian rulers from Menes to Alexander the Great into thirty dynasties, each identified by ruling family or capital city. The schema is not always historically accurate — some dynasties overlapped, some transitions were administrative rather than dynastic — but it provided the organizational framework that modern Egyptology has retained as its standard working tool. Every textbook chapter on "Dynasty 12" or "Dynasty 18" (Akhenaten's dynasty) uses Manetho's numbering. No other organizational framework invented by a single ancient author has remained the standard scholarly tool in a field of study for 2,300 years (Dillery, J. 2015. *Clio's Other Sons: Berossus and Manetho*. University of Michigan Press. pp.1–40; Waddell, W.G. 1940. *Manetho*. Loeb 350. Harvard UP. pp.1–30; Redford, D.B. 1986. *Pharaonic King-Lists, Annals and Day-Books*. SSEA. pp.1–30).
 
 - **Manetho's Hyksos narrative (Josephus, Contra Apionem 1.75–105) = foundational text of Jewish-Egyptian apologetic controversy and the documentary basis for the ancient "Israelites in Egypt" debate**: Manetho's account of the Hyksos — Western Semitic rulers of Egypt (-1650 to -1550 BCE) — was seized upon by Josephus as evidence that Levantine Semites (identified as proto-Israelites) had ruled Egypt before the Exodus. Josephus quotes Manetho at extraordinary length both to use him as a witness to Egyptian history and to attack his characterization. The Manetho-Josephus exchange is the oldest surviving example of one tradition's priestly historiography being weaponized for and against another tradition's historical claims — the prototype of all subsequent apologetic controversy about the Exodus and the Jewish-Egyptian relationship (Dillery, J. 2015. pp.41–80; Moyer, I.S. 2011. *Egypt and the Limits of Hellenism*. Cambridge UP. pp.84–141; Gruen, E.S. 1998. *Heritage and Hellenism*. UC Press. pp.1–30).
 
@@ -160,8 +160,8 @@ The *Aegyptiaca* is [[manetho]]'s history of Egypt in three books, written in Gr
 
 ## Refs
 1. Manetho, ed./trans. Waddell, Loeb 350 (1940). — *the standard fragment collection*.
-2. Dillery, J. (2015). *Manetho and the History of Egypt*. OUP. — *the definitive recent study*.
+2. Dillery, J. (2015). *Clio's Other Sons: Berossus and Manetho*. U. Michigan Press. — *the definitive recent study*.
 3. Moyer, I.S. (2011). *Egypt and the Limits of Hellenism*. Cambridge UP.
-4. Verbrugghe & Wickersham (2001). *Manetho's Aigyptiaka*. U. Michigan Press.
+4. Verbrugghe & Wickersham (2001). *Berossos and Manetho, Introduced and Translated*. U. Michigan Press.
 5. Jacoby, F. (ed.) (1958). *FGrH* 609 (Manetho). Brill.
 6. Josephus, *Contra Apionem*, Loeb 186 (Thackeray 1926).

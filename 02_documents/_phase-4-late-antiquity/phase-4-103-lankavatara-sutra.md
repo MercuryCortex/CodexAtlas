@@ -53,10 +53,10 @@ refs:
     publisher: "U Hawaii Press"
     type: "monograph"
     tier: 2
-  - title: "Bodhidharma: The Greatest Zen Master"
+  - title: "Bodhidharma as Textual and Religious Paradigm"
     author: "Faure, Bernard"
     year: 1986
-    publisher: "Cahiers d'Extrême-Asie 2 (and subsequent work)"
+    publisher: "History of Religions 25 (and subsequent work)"
     type: "monograph"
     tier: 1
     notes: "Reconstructs the traditional Bodhidharma narrative as largely legendary; the Bodhidharma-transmitting-the-Laṅkāvatāra-to-Huike story is shown to be a later Chan-self-narrative invention."
@@ -158,7 +158,7 @@ The Chan tradition's early self-designation — "Laṅkāvatāra masters" (*Leng
 1. Suzuki, D.T. (1932). *The Laṅkāvatāra Sūtra*. Routledge.
 2. Red Pine (2012). *The Laṅkāvatāra Sūtra: Translation and Commentary*. Counterpoint.
 3. Suzuki, D.T. (1930). *Studies in the Laṅkāvatāra Sūtra*. Routledge.
-4. Faure, B. (1986). *Bodhidharma: The Greatest Zen Master*. Cahiers d'Extrême-Asie 2.
+4. Faure, B. (1986). "Bodhidharma as Textual and Religious Paradigm." History of Religions 25.
 5. Williams, P. (2009). *Mahayana Buddhism: The Doctrinal Foundations*. Routledge.
 6. McRae, J.R. (1986). *The Northern School and the Formation of Early Ch'an Buddhism*. U Hawaii.
 7. Kalupahana, D.J. (1987). *The Principles of Buddhist Psychology*. SUNY Press.

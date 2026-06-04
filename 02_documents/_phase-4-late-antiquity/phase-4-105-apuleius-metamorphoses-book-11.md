@@ -47,7 +47,7 @@ refs:
     tier: 1
   - title: "Isis in the Ancient World"
     author: "Witt, R.E."
-    year: 1971
+    year: 1997
     publisher: "Johns Hopkins UP"
     type: "monograph"
     tier: 1

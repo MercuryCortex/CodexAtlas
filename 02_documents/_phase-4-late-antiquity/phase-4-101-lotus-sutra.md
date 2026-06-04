@@ -62,10 +62,10 @@ refs:
     type: "monograph"
     tier: 1
     notes: "Reconstructs the Tendai-Nichiren reception of the Lotus as the doctrine of original enlightenment (hongaku)."
-  - title: "Buddhist Cosmologies and the Lotus Sutra's Devotional Imagination"
+  - title: "Tao-sheng's Commentary on the Lotus Sūtra: A Study and Translation"
     author: "Kim, Young-Ho"
     year: 1990
-    publisher: "Numen series, various"
+    publisher: "SUNY Press"
     type: "monograph"
     tier: 2
   - title: "Skilful Means: A Concept in Mahayana Buddhism"

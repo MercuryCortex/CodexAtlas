@@ -76,7 +76,7 @@ refs:
     url: "https://plato.stanford.edu/entries/plotinus/"
     type: "encyclopedia"
     tier: 3
-  - title: "Plotinus and the Gnostics"
+  - title: "Plotinus in Dialogue with the Gnostics"
     author: "Narbonne, Jean-Marc"
     year: 2011
     publisher: "Brill"
@@ -181,5 +181,5 @@ Citation: Ennead II.9.4, 9 (selection from the treatise *Against the Gnostics*),
 2. Henry, P. & Schwyzer, H.-R. (1951–73). *Plotini Opera*, editio maior. — Greek critical edition.
 3. Gerson, L.P. (ed.) (1996). *The Cambridge Companion to Plotinus*. Cambridge UP.
 4. O'Meara, D.J. (1993). *Plotinus*. Clarendon.
-5. Narbonne, J.-M. (2011). *Plotinus and the Gnostics*. Brill.
+5. Narbonne, J.-M. (2011). *Plotinus in Dialogue with the Gnostics*. Brill.
 6. Gerson, L.P. (2018). "Plotinus." *SEP*. https://plato.stanford.edu/entries/plotinus/

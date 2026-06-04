@@ -34,8 +34,8 @@ refs:
     tier: 1
     notes: "The current scholarly standard for the Larger and Smaller Sukhāvatīvyūha; renders Sanskrit and Chinese (Saṃghavarman) recensions in parallel, with critical apparatus. The indispensable scholarly edition."
   - title: "Pure Land, Real World: Modern Buddhism, Japanese Leftists, and the Utopian Imagination"
-    author: "Schroeder, Melissa Anne-Marie (and various)"
-    year: 2019
+    author: "Curley, Melissa Anne-Marie"
+    year: 2017
     publisher: "U Hawaii"
     type: "monograph"
     tier: 2

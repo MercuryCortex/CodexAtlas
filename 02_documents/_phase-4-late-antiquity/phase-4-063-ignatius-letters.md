@@ -44,17 +44,17 @@ refs:
     type: "critical-edition"
     tier: 1
     notes: "Foundational 19th-c. settlement of the three-recension question in favor of the middle recension"
-  - title: "Ignatius of Antioch and the Parting of the Ways"
+  - title: "Ignatius of Antioch: A Martyr Bishop and the Origin of Episcopacy"
     author: "Brent, Allen"
     year: 2007
     publisher: "T&T Clark"
     type: "monograph"
     tier: 1
     notes: "Argues mystery-cult and Greco-Roman civic-religious context for Ignatian episcopacy"
-  - title: "Ignatius and His Time"
+  - title: "The Writings of the Apostolic Fathers"
     author: "Foster, Paul (ed.)"
     year: 2007
-    publisher: "Brill"
+    publisher: "T&T Clark"
     type: "edited-volume"
     tier: 1
 tags: [phase-4, apostolic-fathers, christian, ignatius, antioch, monepiscopacy, martyrdom, real-presence, catholic-church, anti-docetism]
@@ -148,5 +148,5 @@ The same structure appears in:
 1. Ehrman, B. (2003). *The Apostolic Fathers, vol. 1* (Loeb). Harvard UP.
 2. Schoedel, W. (1985). *Ignatius of Antioch* (Hermeneia). Fortress.
 3. Lightfoot, J.B. (1885). *The Apostolic Fathers, Part II*. Macmillan.
-4. Brent, A. (2007). *Ignatius of Antioch and the Parting of the Ways*. T&T Clark.
-5. Foster, P. (ed.) (2007). *Ignatius and His Time*. Brill.
+4. Brent, A. (2007). *Ignatius of Antioch: A Martyr Bishop and the Origin of Episcopacy*. T&T Clark.
+5. Foster, P. (ed.) (2007). *The Writings of the Apostolic Fathers*. T&T Clark.

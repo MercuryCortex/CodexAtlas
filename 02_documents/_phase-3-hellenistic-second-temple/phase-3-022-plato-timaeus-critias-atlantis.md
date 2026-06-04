@@ -60,7 +60,7 @@ refs:
     type: "monograph"
     tier: 1
     notes: "Brisson's treatment of Plato's mythic mode generally, with substantial Atlantis discussion"
-  - title: "Plato's Critias: A Commentary"
+  - title: "Character, Plot and Thought in Plato's Timaeus-Critias"
     author: "Welliver, Warman"
     year: 1977
     publisher: "Brill"
@@ -151,6 +151,6 @@ Citation: *Timaeus* 25a–25d, trans. Jowett 1892; cf. Zeyl 2000 pp. 9–11. The
 3. Vidal-Naquet, P. (2007 [2005 / 1964]). *The Atlantis Story*. University of Exeter Press. — definitive treatment of Atlantis as Platonic political allegory; argues against historical-kernel readings.
 4. Gill, C. (1980). *Plato: The Atlantis Story*. Bristol Classical Press. — standard short philosophical treatment.
 5. Brisson, L. (1998). *Plato the Myth Maker*. University of Chicago Press.
-6. Welliver, W. (1977). *Plato's Critias: A Commentary*. Brill.
+6. Welliver, W. (1977). *Character, Plot and Thought in Plato's Timaeus-Critias*. Brill.
 7. Naddaf, G. (1994). "The Atlantis Myth: An Introduction to Plato's Later Philosophy of History." *Phoenix* 48: 189–209.
 8. Perseus Digital Library — *Timaeus* Greek text: https://www.perseus.tufts.edu/hopper/text?doc=Plat.+Tim.

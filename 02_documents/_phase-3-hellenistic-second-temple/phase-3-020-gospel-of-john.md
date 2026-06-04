@@ -58,10 +58,10 @@ refs:
     publisher: "Mohr Siebeck (German); Eng. Hermeneia forthcoming"
     type: "critical-edition"
     tier: 1
-  - title: "The Gospel of John in the Light of the Old Testament"
+  - title: "The Johannine Question"
     author: "Hengel, Martin"
     year: 1989
-    publisher: "in *The Johannine Question*, SCM/Trinity"
+    publisher: "SCM Press / Trinity Press International"
     type: "monograph"
     tier: 1
   - title: "The Border Lines: The Partition of Judaeo-Christianity"

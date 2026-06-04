@@ -40,24 +40,24 @@ refs:
     type: "monograph"
     tier: 1
     notes: "Lecture VII on Lurianic Kabbalah is the foundational modern account"
-  - title: "Kabbalah Le-Lurianic Yetsirat ha-Olamot" 
+  - title: "Kabbalat Ha-Ari" 
     author: "Avivi, Yosef"
     year: 2008
-    publisher: "Mossad Harav Kook (Hebrew, 3 vols.)"
+    publisher: "Yad Izhak Ben-Zvi (Ben-Zvi Institute), Jerusalem (Hebrew, 3 vols.)"
     type: "monograph"
     tier: 1
     notes: "Comprehensive manuscript-philological reconstruction of the Lurianic corpus"
-  - title: "Hayyim Vital: A Kabbalistic Autobiography"
+  - title: "Jewish Mystical Autobiographies: Book of Visions and Book of Secrets"
     author: "Faierstein, Morris M. (trans.)"
     year: 1999
     publisher: "Paulist Press (Classics of Western Spirituality) — *Sefer ha-Hezyonot*"
     type: "primary-translation"
     tier: 1
     notes: "Vital's autobiographical book of visions"
-  - title: "Beginning of Wisdom: The Kabbalistic Tradition"
+  - title: "From Metaphysics to Midrash: Myth, History, and the Interpretation of Scripture in Lurianic Kabbala"
     author: "Magid, Shaul"
     year: 2008
-    publisher: "Stanford University Press"
+    publisher: "Indiana University Press"
     type: "monograph"
     tier: 1
   - title: "On the Mystical Shape of the Godhead"
@@ -155,7 +155,7 @@ Citation: Chaim Vital, *Sha'ar ha-Gilgulim*, hakdamah 1; paraphrased with refere
 ## Refs
 1. Fine, L. (2003). *Physician of the Soul, Healer of the Cosmos*. Stanford UP.
 2. Scholem, G. (1941). *Major Trends in Jewish Mysticism*. Schocken — Lecture VII.
-3. Avivi, Y. (2008). *Kabbalat Ha-Ari*. Mossad Harav Kook (Hebrew, 3 vols.).
+3. Avivi, Y. (2008). *Kabbalat Ha-Ari*. Yad Izhak Ben-Zvi (Hebrew, 3 vols.).
 4. Magid, S. (2008). *From Metaphysics to Midrash: Myth, History and the Reconstruction of Transgression in the Lurianic Kabbalah*. Indiana UP.
 5. Tishby, I. (1942). *The Doctrine of Evil and the Kelippah in Lurianic Kabbalah*. Jerusalem (Hebrew).
 6. Werblowsky, R.J.Z. (1962). *Joseph Karo: Lawyer and Mystic*. Oxford UP.
