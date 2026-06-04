@@ -16,6 +16,7 @@ script: "Various Indic scripts"
 region: "Indian subcontinent (pan-regional)"
 authorship: "anonymous / multiple (the Bṛhat Saṃhitā of Varāhamihira, the Mānasāra, Mayamata, Samarāṅgaṇa-sūtradhāra, Vāstu-vidyā, etc.)"
 status: "metadata"
+citation-audited: "2026-06-04"
 themes: ["[[theme-mandala-as-architectural-programme]]", "[[theme-hindu-buddhist-architectural-continuity]]"]
 parallels: ["[[shilpa-shastra]]", "[[phase-4-111-varahamihira-brihajjataka]]"]
 influences: ["the planning of Hindu temples, palaces, and cities; the modern revival of 'vastu' design"]

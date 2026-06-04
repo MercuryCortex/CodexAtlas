@@ -17,6 +17,7 @@ script: "Tamil and Grantha script (incised in stone)"
 region: "Thanjavur (Tanjore), Chola country, South India"
 authorship: "royal/temple administration of the Chola emperor Rājarāja I; incised on the Rājarājeśvaram (Bṛhadīśvara) temple"
 status: "metadata"
+citation-audited: "2026-06-04"
 key-figures: ["Rājarāja I (the Chola emperor, r. ~985–1014)"]
 themes: ["[[divine-kingship]]", "[[temple-economy]]"]
 parallels: ["[[shiva]]"]

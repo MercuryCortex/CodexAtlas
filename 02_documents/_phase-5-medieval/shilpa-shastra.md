@@ -16,6 +16,7 @@ script: "Various Indic scripts"
 region: "Indian subcontinent (pan-regional; strong South Indian Āgamic development)"
 authorship: "anonymous / multiple (a class of texts, e.g. the Mānasāra, Mayamata, Śilparatna, and Āgamic and Purāṇic sections)"
 status: "metadata"
+citation-audited: "2026-06-04"
 themes: ["[[theme-hindu-buddhist-architectural-continuity]]", "[[theme-mandala-as-architectural-programme]]"]
 parallels: ["[[vastu-shastra]]", "[[shiva]]", "[[vishnu]]"]
 influences: ["the canonical proportions of Hindu (and much Buddhist/Jain) sacred art and architecture across Asia"]

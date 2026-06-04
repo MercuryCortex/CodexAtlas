@@ -16,6 +16,7 @@ script: "Various Indic scripts"
 region: "North India (the court of Harṣa / Sthāṇvīśvara)"
 authorship: "the poet Mayūra (Mayūrabhaṭṭa), a courtier associated with the court of King Harṣavardhana (~7th c. CE)"
 status: "metadata"
+citation-audited: "2026-06-04"
 key-figures: ["Mayūra (the poet)", "Bāṇabhaṭṭa (his celebrated contemporary and rival)"]
 themes: ["[[divine-kingship]]"]
 parallels: ["[[surya]]"]

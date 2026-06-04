@@ -17,6 +17,7 @@ script: "Odia script (palm-leaf)"
 region: "Puri, Odisha (the Jagannātha temple), eastern India"
 authorship: "the temple servants (karaṇas/record-keepers) of the Jagannātha temple; a continuously-maintained running chronicle"
 status: "metadata"
+citation-audited: "2026-06-04"
 key-figures: ["the Gajapati kings of Odisha", "the temple administration of Jagannātha"]
 themes: ["[[divine-kingship]]"]
 parallels: ["[[jagannath]]", "[[mahavamsa]]"]
