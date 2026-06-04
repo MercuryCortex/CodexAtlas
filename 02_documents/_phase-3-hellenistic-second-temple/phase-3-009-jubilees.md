@@ -46,7 +46,7 @@ refs:
     publisher: "Sheffield Academic Press"
     type: "monograph"
     tier: 2
-  - title: "Heavenly Tablets: Interpretation, Identity, and Tradition in Ancient Judaism"
+  - title: "Enoch and the Mosaic Torah: The Evidence of Jubilees"
     author: "Boccaccini, Gabriele; Ibba, Giovanni (eds.)"
     year: 2009
     publisher: "Eerdmans"

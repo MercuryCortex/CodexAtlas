@@ -40,13 +40,13 @@ refs:
     publisher: "Harvard Oriental Series 25"
     type: "primary-translation"
     tier: 2
-  - title: "Religion and Society in the Veda"
+  - title: "Inside the Texts, Beyond the Texts: New Approaches to the Study of the Vedas"
     author: "Witzel, Michael"
     year: 1997
     publisher: "Harvard Oriental Series Opera Minora"
     type: "monograph"
     tier: 2
-  - title: "Brāhmaṇa and Āraṇyaka Literature"
+  - title: "Vedic Literature (Saṃhitās and Brāhmaṇas)"
     author: "Gonda, Jan"
     year: 1975
     publisher: "Otto Harrassowitz (A History of Indian Literature)"
@@ -118,6 +118,6 @@ The Brāhmaṇas are prose ritual-exegetical texts attached to each Veda, explai
 ## Refs
 1. Eggeling, J. (1882–1900). *The Śatapatha Brāhmaṇa*. SBE 12, 26, 41, 43, 44. https://www.sacred-texts.com/hin/sbe12/.
 2. Keith, A.B. (1920). *Aitareya and Kauṣītaki Brāhmaṇas*. HOS 25.
-3. Gonda, J. (1975). *Brāhmaṇa and Āraṇyaka Literature*. Harrassowitz. — survey.
-4. Witzel, M. (1997). *Religion and Society in the Veda*. HOS Opera Minora.
+3. Gonda, J. (1975). *Vedic Literature (Saṃhitās and Brāhmaṇas)*. Harrassowitz. — survey.
+4. Witzel, M. (1997). *Inside the Texts, Beyond the Texts*. HOS Opera Minora.
 5. Olivelle, P. (1996). *Upaniṣads*. Oxford World's Classics. — for the continuity with the next layer.

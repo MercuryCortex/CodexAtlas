@@ -51,12 +51,6 @@ refs:
     publisher: "Motilal"
     type: "monograph"
     tier: 1
-  - title: "The Sanskrit Sources of Yoga"
-    author: "Witzel, Michael"
-    year: 1998
-    publisher: "(Harvard Oriental Series Opera Minora)"
-    type: "monograph"
-    tier: 1
 tags: [phase-2, vedic, upanishad, shvetashvatara, rudra, shiva-early, theism, sankhya, yoga, indo-iranian]
 ---
 
@@ -121,7 +115,7 @@ A late-Vedic Upaniṣad of ~113 verses in six *adhyāyas* (chapters), attached c
 
 - **ŚU = first Upaniṣadic text identifying brahman with a personal Lord — the birth of Hindu theism**: The older Upaniṣads (Bṛhadāraṇyaka, Chāndogya) speak of brahman as an impersonal absolute; the Śvetāśvatara for the first time identifies that ultimate with a personal Lord (Rudra-Śiva). This is the hinge moment in Indian religious history — the theological move that generates Śaiva Siddhānta, the Bhagavad Gītā's Kṛṣṇa-as-Brahman theology, Rāmānuja's Viśiṣṭādvaita, and the entire devotional tradition of medieval and modern Hinduism. Approximately 800 million Hindus today who pray to a personal God are downstream from this text's identification of brahman with Rudra-Śiva (Larson, G.J. 1969. *History of Religions* 8/3. pp.103–129; Olivelle, P. 1998. pp.xli–xliv; Dasgupta, S. 1922. *A History of Indian Philosophy*. Cambridge UP. vol. 1 pp.258–263).
 
-- **ŚU ch. 2 proto-yoga = oldest organically described yoga discipline in Sanskrit literature, direct textual ancestor of Patañjali**: ŚU 2 provides the earliest sustained Upaniṣadic description of an integrated yogic meditative discipline — posture, prāṇāyāma (breath control), sensory withdrawal, and meditative absorption. This is structurally distinct from the scattered Upaniṣadic references to asceticism (*tapas*) in earlier texts, and it is the direct textual ancestor of Patañjali's *aṣṭāṅga-yoga* and of the global yoga movement whose 300 million practitioners trace their practice, however indirectly, back through this document (Witzel, M. 1998. *Sanskrit Sources of Yoga*. HOS Opera Minora. pp.1–15; Larson & Bhattacharya 2008. pp.12–20; Jacobsen, K.A. 2008. *Yoga Powers*. Brill. pp.1–12).
+- **ŚU ch. 2 proto-yoga = oldest organically described yoga discipline in Sanskrit literature, direct textual ancestor of Patañjali**: ŚU 2 provides the earliest sustained Upaniṣadic description of an integrated yogic meditative discipline — posture, prāṇāyāma (breath control), sensory withdrawal, and meditative absorption. This is structurally distinct from the scattered Upaniṣadic references to asceticism (*tapas*) in earlier texts, and it is the direct textual ancestor of Patañjali's *aṣṭāṅga-yoga* and of the global yoga movement whose 300 million practitioners trace their practice, however indirectly, back through this document (Larson & Bhattacharya 2008. pp.12–20; Jacobsen, K.A. 2008. *Yoga Powers*. Brill. pp.1–12).
 
 - **ŚU 6.23 bhakti = earliest unambiguous occurrence of bhakti as a soteriological term in Sanskrit, the birth certificate of the devotional tradition**: The word *bhakti* occurs explicitly in ŚU 6.23 as the technical term for devotional love for God as a path to liberation — the earliest unambiguous Upaniṣadic usage. This is the textual birth certificate of the devotional tradition that generates the Bhagavad Gītā's *bhakti-yoga*, the medieval bhakti-poets (Kabir, Tukaram, Mirabai, Namdev), the Vaiṣṇava bhakti movements (Chaitanya, ISKCON), and the Sufi *maḥabba* (divine love) parallel structure — the most globally popular form of Hindu practice and a major current in Islamic mysticism (Hardy, F. 1983. *Viraha-Bhakti*. Oxford UP. pp.1–30; Flood, G. 1996. *An Introduction to Hinduism*. Cambridge UP. pp.131–135; Valpey, K. 2020. *Cow Care in Hindu Animal Ethics*. Palgrave. pp.15–18).
 
@@ -130,6 +124,5 @@ A late-Vedic Upaniṣad of ~113 verses in six *adhyāyas* (chapters), attached c
 ## Refs
 1. Olivelle, P. (1998). *The Early Upaniṣads*. Oxford UP. — current critical text/translation.
 2. Larson, G.J. (1969). "Sāṅkhya, Yoga and the Śvetāśvatara Upaniṣad." *History of Religions* 8(3).
-3. Witzel, M. (1998). *The Sanskrit Sources of Yoga*. HOS Opera Minora.
-4. Larson, G.J. & Bhattacharya, R.S. (eds.) (2008). *Yoga: India's Philosophy of Meditation*. Motilal.
-5. Boyce, M. (1992). *A History of Zoroastrianism, vol. 1*. Brill.
+3. Larson, G.J. & Bhattacharya, R.S. (eds.) (2008). *Yoga: India's Philosophy of Meditation*. Motilal.
+4. Boyce, M. (1992). *A History of Zoroastrianism, vol. 1*. Brill.

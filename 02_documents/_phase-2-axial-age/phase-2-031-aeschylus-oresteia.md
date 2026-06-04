@@ -62,7 +62,7 @@ refs:
     publisher: "Cambridge UP"
     type: "monograph"
     tier: 1
-  - title: "Aeschylus' Oresteia: A Reading"
+  - title: "The Oresteia: A Study in Language and Structure"
     author: "Lebeck, Anne"
     year: 1971
     publisher: "Harvard UP"
@@ -176,6 +176,6 @@ Citation: *Eumenides* 681–706 (condensed); trans. Sommerstein. Short fair-use 
 ## Refs
 1. Sommerstein, A.H. (2008). *Aeschylus: Oresteia*, Loeb 146.
 2. Goldhill, S. (1992). *Aeschylus: The Oresteia*. Cambridge UP.
-3. Lebeck, A. (1971). *Aeschylus' Oresteia: A Reading*. Harvard UP.
+3. Lebeck, A. (1971). *The Oresteia: A Study in Language and Structure*. Harvard UP.
 4. Taplin, O. (1977). *The Stagecraft of Aeschylus*. OUP.
 5. Voegelin, E. (1957). *Order and History*, Vol. II. LSU.

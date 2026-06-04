@@ -61,13 +61,13 @@ refs:
     type: "primary-translation"
     tier: 2
     notes: "Selected translation; widely used pre-Hutton."
-  - title: "Xunzi and Augustine on Human Nature: A Comparative Study"
-    author: "Lee, Janghee (and various comparativist literature)"
-    year: 2017
-    publisher: "Philosophy East and West, various journals"
-    type: "journal-article"
+  - title: "Overcoming Our Evil: Human Nature and Spiritual Exercises in Xunzi and Augustine"
+    author: "Stalnaker, Aaron"
+    year: 2006
+    publisher: "Georgetown University Press (Moral Traditions series)"
+    type: "monograph"
     tier: 2
-    notes: "One example of the substantial scholarly literature drawing comparative parallels between Xunzi and Augustine on the corruption of human nature."
+    notes: "The standard book-length comparative study of Xunzi and Augustine on the corruption of human nature and the role of disciplinary practice."
 tags: [phase-2, chinese, confucianism, xunzi, human-nature, ritual, naturalist, jixia-academy]
 ---
 
@@ -138,7 +138,7 @@ The third great classical Confucian text, after the Analects and the Mengzi — 
 
 - **Xunzi's students Han Fei + Li Si → Qin unification = most consequential philosophical school-to-political-program transmission in world history**: Two of Xunzi's students — Han Fei (Legalist theorist, *Han Feizi*) and Li Si (Qin chancellor under Qin Shi Huangdi) — extended Xunzian naturalist premises (ritual as human-made tool; nature requires external control; Heaven does not intervene) into the Legalist theory of the authoritarian Qin state. Li Si as chancellor oversaw the burning of books and the political unification of China under the first emperor (-221), creating the imperial template that governed China for 2,100 years. The path from classroom to continental empire by way of students who radicalized a teacher's naturalism is the most consequential philosophical-to-political transmission in Chinese history (Goldin, P.R. 2011. "Persistent Misconceptions about Chinese 'Legalism.'" *Journal of Chinese Philosophy* 38/1. pp.88–104; Lewis, M.E. 1999. *Writing and Authority in Early China*. SUNY. pp.33–45; Bodde, D. 1986. "The State and Empire of Ch'in." *Cambridge History of China* vol. 1. Cambridge UP. pp.20–53).
 
-- **Xunzi/Augustine structural parallel = most precisely documented East-West parallel in the ethics of human nature**: Both Xunzi and Augustine argue: (a) human nature tends toward disorder/conflict; (b) moral goodness requires deliberate external discipline rather than the unfolding of innate goodness; (c) institutions (ritual/sacrament, law/Church) are necessary precisely because of nature's corruption; (d) the optimistic position (Mengzi's "nature is good" / Pelagius's "humans can choose good by natural power") is dangerous because it removes the necessity of discipline. The structural parallel is precise enough to generate a substantial comparative philosophical literature, while the disanalogies (no Fall, no grace, no eschatology in Xunzi) are equally instructive for the limits of comparison (Lee, J. 2017. *Philosophy East and West* comparative literature; Hutton 2014 pp.xxii–xxvi; Nivison, D.S. 1996. *The Ways of Confucianism*. Open Court. pp.195–207).
+- **Xunzi/Augustine structural parallel = most precisely documented East-West parallel in the ethics of human nature**: Both Xunzi and Augustine argue: (a) human nature tends toward disorder/conflict; (b) moral goodness requires deliberate external discipline rather than the unfolding of innate goodness; (c) institutions (ritual/sacrament, law/Church) are necessary precisely because of nature's corruption; (d) the optimistic position (Mengzi's "nature is good" / Pelagius's "humans can choose good by natural power") is dangerous because it removes the necessity of discipline. The structural parallel is precise enough to generate a substantial comparative philosophical literature, while the disanalogies (no Fall, no grace, no eschatology in Xunzi) are equally instructive for the limits of comparison (Stalnaker, A. 2006. *Overcoming Our Evil*. Georgetown UP; Hutton 2014 pp.xxii–xxvi; Nivison, D.S. 1996. *The Ways of Confucianism*. Open Court. pp.195–207).
 
 ## Refs
 1. Hutton, E.L. (2014). *Xunzi: The Complete Text*. Princeton UP.
@@ -146,4 +146,4 @@ The third great classical Confucian text, after the Analects and the Mengzi — 
 3. Graham, A.C. (1989). *Disputers of the Tao*. Open Court.
 4. Eno, R. (1990). *The Confucian Creation of Heaven*. SUNY.
 5. Watson, B. (1963). *Hsün Tzu: Basic Writings*. Columbia UP.
-6. Lee, J. (2017). "Xunzi and Augustine on Human Nature." *Philosophy East and West*, and related comparative literature.
+6. Stalnaker, A. (2006). *Overcoming Our Evil: Human Nature and Spiritual Exercises in Xunzi and Augustine*. Georgetown UP.

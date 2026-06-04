@@ -32,7 +32,7 @@ refs:
     publisher: "Shambhala"
     type: "primary-translation"
     tier: 1
-  - title: "The Dhammapada: Verses on the Way"
+  - title: "The Word of the Doctrine (Dhammapada)"
     author: "Norman, K.R. (trans.)"
     year: 1997
     publisher: "Pali Text Society"

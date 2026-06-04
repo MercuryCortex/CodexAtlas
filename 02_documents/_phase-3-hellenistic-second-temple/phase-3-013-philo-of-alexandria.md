@@ -60,7 +60,7 @@ refs:
     type: "monograph"
     tier: 1
     notes: "Definitive on Philonic influence on Christianity"
-  - title: "Philo of Alexandria: A Thinker in the Jewish Diaspora"
+  - title: "Philo of Alexandria: An Intellectual Biography"
     author: "Niehoff, Maren R."
     year: 2018
     publisher: "Yale University Press"
@@ -161,5 +161,5 @@ Citation: *De Vita Mosis* II.37–38, trans. Yonge 1854.
 1. Colson, F.H. et al. (1929 onward). *Philo*. Loeb Classical Library (12 vols). — Greek + English: https://www.loebclassics.com/view/philo_judaeus-allegorical_interpretation/1929/pb_LCL226.146.xml
 2. Cohn-Wendland (1896–1930). *Philonis Alexandrini Opera*. — Greek critical text.
 3. Runia, D.T. (1993). *Philo in Early Christian Literature*. Fortress. — definitive on reception.
-4. Niehoff, M.R. (2018). *Philo of Alexandria: A Thinker in the Jewish Diaspora*. Yale UP.
+4. Niehoff, M.R. (2018). *Philo of Alexandria: An Intellectual Biography*. Yale UP.
 5. Calabi, F. (2020). "Philo", SEP: https://plato.stanford.edu/entries/philo/

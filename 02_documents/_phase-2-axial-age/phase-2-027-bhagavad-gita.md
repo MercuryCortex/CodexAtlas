@@ -54,13 +54,6 @@ refs:
     type: "primary-translation"
     tier: 1
     notes: "Earlier philological standard; still widely cited."
-  - title: "Hindu Scriptures"
-    author: "van Buitenen, J.A.B."
-    year: 1981
-    publisher: "University of Chicago Press"
-    type: "primary-translation"
-    tier: 1
-    notes: "Includes a Gītā translation by the BORI Mahābhārata translator; situates the Gītā in the Mahābhārata Book 6 context."
   - title: "The Bhagavadgītā in the Mahābhārata"
     author: "van Buitenen, J.A.B."
     year: 1981

@@ -34,19 +34,19 @@ refs:
     type: "critical-edition"
     tier: 1
     notes: "Standard scholarly translation and commentary"
-  - title: "Wisdom and the Wise: A Commentary on the Wisdom of Solomon"
-    author: "Collins, John J. (in Charlesworth, ed. — and other writings)"
+  - title: "Jewish Wisdom in the Hellenistic Age"
+    author: "Collins, John J."
     year: 1997
-    publisher: "Eerdmans"
+    publisher: "Westminster John Knox (Old Testament Library)"
     type: "monograph"
     tier: 1
-  - title: "The Hellenistic Background of the Letter to the Romans"
+  - title: "Echoes of Scripture in the Letters of Paul"
     author: "Hays, Richard B."
     year: 1989
-    publisher: "Yale UP (in *Echoes of Scripture in the Letters of Paul*)"
+    publisher: "Yale University Press"
     type: "monograph"
     tier: 2
-    notes: "Documents Wisdom 13–15 → Romans 1 dependence"
+    notes: "Documents Wisdom 13–15 → Romans 1 dependence (pp. 42–43)"
   - title: "Sefaria — Wisdom of Solomon"
     author: "Sefaria"
     year: 2024

@@ -66,7 +66,7 @@ refs:
     publisher: "Brill"
     type: "monograph"
     tier: 1
-  - title: "Avestan Liturgies and the Yasna"
+  - title: "The Transmission of the Avesta"
     author: "Cantera, Alberto (ed.)"
     year: 2012
     publisher: "Harrassowitz, Iranica 20"
@@ -163,5 +163,5 @@ The Younger Avestan corpus — composed and accreted around the older Gathic cor
 1. Geldner, K.F. (1886–1896). *Avesta: Die heiligen Bücher der Parsen*. Kohlhammer. — critical edition.
 2. Darmesteter, J. and Mills, L.H. (1880–1887). *The Zend-Avesta*. SBE 4, 23, 31. https://www.sacred-texts.com/zor/. — full English translation.
 3. Boyce, M. (1982). *A History of Zoroastrianism*, vol. II. Brill.
-4. Cantera, A. (ed.) (2012). *Avestan Liturgies and the Yasna*. Iranica 20.
+4. Cantera, A. (ed.) (2012). *The Transmission of the Avesta*. Iranica 20.
 5. Kellens, J. "AVESTA". *Encyclopaedia Iranica*. https://iranicaonline.org/articles/avesta-holy-book.

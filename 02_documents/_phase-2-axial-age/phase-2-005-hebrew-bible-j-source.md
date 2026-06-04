@@ -33,7 +33,7 @@ refs:
     type: "primary-translation"
     tier: 2
     notes: "Color-coded edition isolating J, E, P, D, and Redactor. Accessible but represents a specific (Friedman) reconstruction."
-  - title: "The Yahwist's Primeval History"
+  - title: "Reading the Fractures of Genesis: Historical and Literary Approaches"
     author: "Carr, David M."
     year: 1996
     publisher: "Westminster John Knox"
@@ -168,7 +168,7 @@ J, the "Yahwist", is one of the four classical reconstructed sources of the Pent
 1. Friedman, R.E. (2003). *The Bible with Sources Revealed*. HarperOne. — accessible color-coded edition.
 2. Friedman, R.E. (1987). *Who Wrote the Bible?* HarperOne. — narrative introduction.
 3. Baden, J.S. (2012). *The Composition of the Pentateuch*. Yale UP. — current Neo-Documentarian defense.
-4. Carr, D.M. (1996). *The Yahwist's Primeval History*. Westminster John Knox.
+4. Carr, D.M. (1996). *Reading the Fractures of Genesis*. Westminster John Knox.
 5. Coogan, M.D. (2011). *An Introduction to the Old Testament*, 2nd ed. Oxford UP. — current pedagogical standard.
 6. Smith, M.S. (2002). *The Early History of God: Yahweh and the Other Deities in Ancient Israel*, 2nd ed. Eerdmans. — pre-exilic religion.
 7. Sefaria, *Torah*. https://www.sefaria.org/Torah. — Hebrew/English parallel.

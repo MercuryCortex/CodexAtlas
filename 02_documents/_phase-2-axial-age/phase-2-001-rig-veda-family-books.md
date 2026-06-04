@@ -42,17 +42,17 @@ refs:
     type: "critical-edition"
     tier: 1
     notes: "Metrically restored Sanskrit text; GRETIL hosts the e-text."
-  - title: "The Rigveda Between Two Worlds / Le Ṛgveda entre deux mondes"
-    author: "Witzel, Michael"
+  - title: "The Rig Veda Between Two Worlds (Le Ṛgveda entre deux mondes)"
+    author: "Jamison, Stephanie W."
     year: 2007
     publisher: "Collège de France"
     type: "monograph"
     tier: 2
     notes: "Witzel's mapping of the family books to clans, geography, and relative chronology."
-  - title: "Indra and the Origins of Vedic Sacrifice"
+  - title: "Die Religion des Ṛgveda. Erster Teil: Das religiöse System des Ṛgveda"
     author: "Oberlies, Thomas"
     year: 1998
-    publisher: "Verlag der Österreichischen Akademie der Wissenschaften"
+    publisher: "Sammlung De Nobili, Institut für Indologie, Vienna"
     type: "monograph"
     tier: 2
   - title: "Sacred Texts: The Rig Veda"
@@ -158,7 +158,7 @@ The Rig Veda is the oldest stratum of the Sanskrit Veda: ~1,028 sūktas (hymns) 
 ## Refs
 1. Jamison, S.W. and Brereton, J.P. (2014). *The Rigveda: The Earliest Religious Poetry of India*. Oxford UP. — current standard translation.
 2. van Nooten, B. and Holland, G. (1994). *Rig Veda — A Metrically Restored Text*. HOS 50. — critical Sanskrit text.
-3. Witzel, M. (2007). *The Rigveda Between Two Worlds*. Collège de France. — chronology and clan mapping.
-4. Oberlies, T. (1998). *Indra and the Origins of Vedic Sacrifice*. — Indra's place in the system.
+3. Jamison, S.W. (2007). *The Rig Veda Between Two Worlds*. Collège de France. — chronology and clan mapping.
+4. Oberlies, T. (1998). *Die Religion des Ṛgveda*. Sammlung De Nobili, Vienna. — Indra's place in the system.
 5. Boyce, M. (1975). *A History of Zoroastrianism*, vol. I. Brill. — Indo-Iranian parallels.
 6. Griffith, R.T.H. (1896). *The Rig Veda*. — public-domain translation at https://www.sacred-texts.com/hin/rigveda/.

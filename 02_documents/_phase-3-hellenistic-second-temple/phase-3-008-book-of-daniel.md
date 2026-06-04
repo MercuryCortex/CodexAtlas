@@ -61,9 +61,9 @@ refs:
     url: "https://www.sefaria.org/Daniel"
     type: "primary-translation"
     tier: 1
-  - title: "Persian Apocalypticism and the Book of Daniel"
+  - title: "Forms and Origins of Iranian Apocalypticism"
     author: "Hultgård, Anders"
-    year: 1991
+    year: 1983
     publisher: "in 'Apocalypticism in the Mediterranean World and the Near East', Mohr Siebeck"
     type: "journal-article"
     tier: 2
@@ -150,5 +150,5 @@ The book is bilingual: 2:4b through 7:28 is in Aramaic; the rest (1:1–2:4a; 8�
 1. Collins, J.J. (1993). *Daniel*. Hermeneia, Fortress. — definitive commentary.
 2. Hartman, L.F. & Di Lella, A.A. (1978). *Daniel*. AYB 23.
 3. Collins, J.J. (2016). *The Apocalyptic Imagination*, 3rd ed.
-4. Hultgård, A. (1991). "Persian Apocalypticism and the Book of Daniel".
+4. Hultgård, A. (1983). "Forms and Origins of Iranian Apocalypticism" (in Hellholm, ed.).
 5. Sefaria: https://www.sefaria.org/Daniel

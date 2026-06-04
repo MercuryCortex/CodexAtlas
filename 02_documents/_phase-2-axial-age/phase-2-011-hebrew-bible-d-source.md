@@ -46,7 +46,7 @@ refs:
     publisher: "SCM Press (Eng. trans. 1953)"
     type: "monograph"
     tier: 1
-  - title: "How to Read the Jewish Bible"
+  - title: "How to Read the Bible: A Guide to Scripture, Then and Now"
     author: "Kugel, James L."
     year: 2007
     publisher: "Free Press"
@@ -136,7 +136,7 @@ D, the "Deuteronomic" source, is the third of the four classical reconstructed P
 1. Weinfeld, M. (1991, 2008). *Deuteronomy 1–11* and *Deuteronomy 12–36*. Anchor Bible.
 2. Weinfeld, M. (1972). *Deuteronomy and the Deuteronomic School*. Oxford UP. — Assyrian treaty parallels.
 3. von Rad, G. (1948 / Eng. 1953). *Studies in Deuteronomy*. SCM.
-4. Kugel, J.L. (2007). *How to Read the Jewish Bible*. Free Press.
+4. Kugel, J.L. (2007). *How to Read the Bible: A Guide to Scripture, Then and Now*. Free Press.
 5. Friedman, R.E. (1987). *Who Wrote the Bible?* HarperOne.
 6. Steymans, H.U. (1995). *Deuteronomium 28 und die adê zur Thronfolgeregelung Asarhaddons*. — Esarhaddon treaty parallel.
 7. Sefaria, *Deuteronomy*. https://www.sefaria.org/Deuteronomy.
