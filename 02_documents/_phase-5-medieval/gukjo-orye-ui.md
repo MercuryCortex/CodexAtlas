@@ -16,6 +16,7 @@ script: "Chinese characters (Hanja)"
 region: "Joseon Korea (Hanseong / Seoul, the royal court)"
 authorship: "imperially-commissioned; begun under King Sejong, completed and promulgated under King Seongjong in 1474 (chief compiler Sin Sukju and others)"
 status: "metadata"
+citation-audited: "2026-06-04"
 key-figures: ["King Sejong (initiated the project)", "King Seongjong (promulgated it, 1474)", "Sin Sukju (chief compiler)"]
 themes: ["[[divine-kingship]]"]
 parallels: ["[[tradition-joseon-confucianism]]", "[[phase-2-015-analects-of-confucius]]"]
@@ -32,5 +33,5 @@ The **Gukjo Oryeui** ("Five Rites of State") is the official ritual code of **Jo
 The Gukjo Oryeui is a primary document of one of history's most thoroughgoing projects of Confucianization: the deliberate reconstruction of an entire society's ritual life along Confucian-classical lines, the subject of Martina Deuchler's classic study. Because correct ritual was held to constitute political and cosmic order, the code is the clearest expression of Joseon [[divine-kingship]] — the king as ritual mediator — and of the [[tradition-joseon-confucianism]] that defined Korea for half a millennium. Its rites descend from the classical Confucian ritualism rooted in the world of the [[phase-2-015-analects-of-confucius]].
 
 ## Refs
-1. Deuchler, Martina (1992). *The Confucian Transformation of Korea: A Study of Society and Ideology*. Harvard University Asia Center. — the standard study of Joseon Confucianization, treating the state rites.
+1. Deuchler, Martina (1992). *The Confucian Transformation of Korea: A Study of Society and Ideology*. Council on East Asian Studies, Harvard University. — the standard study of Joseon Confucianization, treating the state rites.
 2. Haboush, JaHyun Kim (1991). "The Confucianization of Korean Society." In G. Rozman (ed.), *The East Asian Region: Confucian Heritage and Its Modern Adaptation*. Princeton University Press. — on Confucian ritual and the Joseon state.

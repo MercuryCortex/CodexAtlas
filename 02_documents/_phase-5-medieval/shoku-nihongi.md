@@ -16,6 +16,7 @@ script: "Chinese characters"
 region: "Nara, Japan (the imperial court)"
 authorship: "imperially-commissioned; final compilation under Sugano no Mamichi, Fujiwara no Tsugutada, and others, presented in 797"
 status: "metadata"
+citation-audited: "2026-06-04"
 key-figures: ["Emperor Shōmu", "Empress Kōken/Shōtoku", "the monk Dōkyō"]
 themes: ["[[divine-kingship]]"]
 parallels: ["[[phase-8-020-nihon-shoki]]", "[[phase-8-019-kojiki]]"]

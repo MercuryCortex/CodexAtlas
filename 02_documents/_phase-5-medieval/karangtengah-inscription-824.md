@@ -17,6 +17,7 @@ script: "Kawi (Old Javanese) script"
 region: "Central Java (the Kedu Plain), Indonesia"
 authorship: "issued under the Śailendra dynasty; records a royal religious foundation"
 status: "metadata"
+citation-audited: "2026-06-04"
 key-figures: ["the Śailendra ruler (and the princess Prāmodavardhanī, associated with the foundation)"]
 themes: []
 parallels: ["[[place-borobudur]]", "[[gandavyuha-sutra]]"]

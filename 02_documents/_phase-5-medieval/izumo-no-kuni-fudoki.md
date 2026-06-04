@@ -16,6 +16,7 @@ script: "Chinese characters (kanbun and phonetic man'yōgana)"
 region: "Izumo Province, western Japan (modern Shimane)"
 authorship: "compiled by the provincial governor Miyake no Omi Kanatari and the Izumo no Omi (the priestly Izumo clan), submitted to the court in 733"
 status: "metadata"
+citation-audited: "2026-06-04"
 key-figures: ["the Izumo no Omi (hereditary priests of the Izumo Grand Shrine)"]
 themes: []
 parallels: ["[[phase-8-019-kojiki]]", "[[phase-8-020-nihon-shoki]]"]
