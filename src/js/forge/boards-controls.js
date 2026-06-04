@@ -433,7 +433,13 @@
 
   // ── INIT ────────────────────────────────────────────────────
   function init() {
-    if (window._boardsControls) return;   // idempotent
+    // 2026-06-04 (John bug #4) — idempotency MUST key on the actual pill,
+    // NOT window._boardsControls: the latter is assigned at module scope
+    // (the 2026-05-29 right-click public-API export) which runs BEFORE this
+    // init() at file bottom, so the old `if (window._boardsControls) return`
+    // ALWAYS fired → installPill() never ran → no Add-node pill in the DOM →
+    // right-click "Add node…" → openAddNode() → null menu → silent throw.
+    if (document.getElementById('app-pill-boards')) return;   // idempotent (pill already mounted)
     const built = installPill();
     if (!built) return;
 
@@ -520,9 +526,17 @@
     document.addEventListener('codex:view-changed', syncVisibility);
     syncVisibility();
 
+    // Full API — must include openAddNode/openInvestigation/closeAll because
+    // app.js's empty-stage right-click "Add node…" calls
+    // window._boardsControls.openAddNode() (and the older module-level export
+    // exposed these). Overwriting with only {open,close} previously dropped
+    // openAddNode for any caller after init ran.
     window._boardsControls = {
-      open:  openAddNode,    // most common entry — surfaces the picker
-      close: closeAll,
+      open:              openAddNode,   // most common entry — surfaces the picker
+      openAddNode:       openAddNode,
+      openInvestigation: openInvestigation,
+      close:             closeAll,
+      closeAll:          closeAll,
     };
   }
 
