@@ -1,6 +1,21 @@
+# Session HANDOFF — 2026-06-05 (🚨 THE COMPLETENESS CRISIS)
+
+> **🚨🚨 START HERE (NEWEST — 2026-06-05): `HANDOFF-2026-06-05-completeness-crisis.md`.**
+> The headline: **"product-grade / 7/7 / 9/9" measures node QUALITY, not canon COMPLETENESS** —
+> so the Bible (and every tradition's canon/pantheon) is **silently half-missing** while the UI
+> says "done" (e.g. all 12 Minor Prophets, Jeremiah, most NT epistles have NO node; the prototype
+> was identical, so it's not a regression). **Do NOT trust "product-grade" as complete.** We are
+> in **PLANNING MODE** (John: *"we plan first"*) on a **general per-tradition completeness/coverage
+> audit** (all 52 religions, not just Christianity). Also: UX #3 (CODEX uppercase) + #4 (Boards
+> Add-node) are DONE+verified; #1/#2 (one canonical side-panel, decouple the legacy `app.js`
+> renderer from `#detail-inner`) is GREENLIT but NOT started. Everything committed, gates green,
+> tree clean. Full detail in that doc.
+
+---
+
 # Session HANDOFF — 2026-06-04 (citation sweep DONE · dev-panel gauge · P2 stubs underway)
 
-> **🟢🟢 START HERE (2026-06-04 state — newest):** read the **top entries of
+> **🟢🟢 (2026-06-04 state):** read the **top entries of
 > `00_meta/STATUS.md`** (`opus-stubs-2026-06-04` + `opus-citation-sweep-2026-06-04`)
 > and **`AUDIT/2026-06-04-citation-sweep.md`**. Summary: the D5 citation-integrity
 > sweep over the 80 un-audited full docs is **COMPLETE** (33 fabricated/conflated
