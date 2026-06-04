@@ -24,6 +24,7 @@ influences: ["[[phase-2-026-han-feizi]] (some structural elements of Legalist co
 deities-mentioned: ["[[tian-heaven]]", "[[shangdi]]"]
 events-context: ["Warring States period (-475 to -221)"]
 status: "full"
+citation-audited: "2026-06-04"
 preservation: "Received text: 53 chapters (originally 71). The text divides into three layers: (1) the 'Core Doctrines' — ten triads of essays on the ten characteristic Mohist topics (Promoting the Worthy, Conforming with Superiors, Universal Love, Condemning Aggression, Moderation in Use, Moderation in Burial, Heaven's Will, Explaining Ghosts, Condemning Music, Condemning Fatalism); each triad presents a 'shang/zhong/xia' (upper/middle/lower) version, reflecting three Later Mohist branches; (2) the 'Mohist Canons' — 6 chapters of dense logical and proto-scientific writing on epistemology, optics, mechanics, and geometry (~-300 BCE); (3) the 'Dialogues' — narrative anecdotes about Mozi. The Han redaction stabilized the text; Mohism collapsed as a tradition by mid-Han, after which the Mozi was essentially preserved but not actively read until its modern rediscovery."
 refs:
   - title: "The Mozi: A Complete Translation"

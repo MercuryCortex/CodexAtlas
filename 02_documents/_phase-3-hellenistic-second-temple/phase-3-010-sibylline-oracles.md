@@ -24,6 +24,7 @@ influences: ["Early Christian apologetics (Justin, Theophilus, Lactantius repeat
 deities-mentioned: ["[[yahweh]]"]
 events-context: ["Antiochus IV (book 3)", "Roman conquest of the eastern Mediterranean", "Destruction of the Second Temple (-70 CE)", "Eruption of Vesuvius (-79 CE)"]
 status: "full"
+citation-audited: "2026-06-04"
 preservation: "Twelve books survive of an original fifteen (books 9, 10 lost; book numbering somewhat unstable). Manuscript tradition is Byzantine; oldest substantial mss are 14th–15th c. Modern critical edition: Geffcken (1902, Berlin)."
 refs:
   - title: "The Sibylline Oracles (in Charlesworth, The Old Testament Pseudepigrapha vol. 1)"

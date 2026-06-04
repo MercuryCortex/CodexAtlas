@@ -24,6 +24,7 @@ influences: ["Gospel of Matthew (used as source — Markan Priority)", "Gospel o
 deities-mentioned: ["[[yahweh]]", "[[jesus-of-nazareth]]"]
 events-context: ["Jesus's ministry, passion, and resurrection (~+30/+33)", "First Jewish Revolt and destruction of the Second Temple (~+66/+70)", "Neronian persecution of Roman Christians (~+64/+65) — possible backdrop"]
 status: "full"
+citation-audited: "2026-06-04"
 preservation: "Earliest fragmentary witness: P45 (Chester Beatty, ~+250). Earliest complete: Codex Vaticanus (B, ~+325) and Codex Sinaiticus (ℵ, ~+350). **The ending of Mark is textually unstable**: the earliest manuscripts end at 16:8 ('they were afraid'); the 'long ending' (16:9–20) and the 'short ending' are later additions, varying across manuscripts."
 refs:
   - title: "The Gospel of Mark (NIGTC)"

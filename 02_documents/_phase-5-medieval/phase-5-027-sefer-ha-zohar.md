@@ -24,6 +24,7 @@ influences: ["Lurianic Kabbalah (Phase 6 — Isaac Luria's entire reading of Kab
 deities-mentioned: ["[[ein-sof]]", "[[the-sefirot]]", "[[shekhinah]]", "[[yahweh]]", "[[lilith]]", "[[metatron]]"]
 events-context: ["[[event-jewish-expulsion-spain-1492]] (post-Zohar; the Zohar's eschatology is read intensely in the post-1492 trauma)"]
 status: "full"
+citation-audited: "2026-06-04"
 preservation: "Massive — the standard *Zohar* runs five volumes in the Mantua 1558 first printed edition. The Aramaic text is famously difficult and the textual tradition is layered (the *Zohar* itself contains internal strata: the main commentary on the Pentateuch; the *Idra Rabba* and *Idra Zuta* ('Greater and Lesser Assemblies'); the *Sifra di-Tzeniuta* ('Book of Concealment'); the *Tikkunei Zohar*; *Raya Mehemna*; *Zohar Hadash* — some of these strata are later additions by Moses de León or by post-Zoharic Castilian writers). Standard modern critical translation: Daniel C. Matt, *The Zohar: Pritzker Edition*, 12 vols, Stanford UP 2003–2017."
 refs:
   - title: "The Zohar: Pritzker Edition (12 vols)"

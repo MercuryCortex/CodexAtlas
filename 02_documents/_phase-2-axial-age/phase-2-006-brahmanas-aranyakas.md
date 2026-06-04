@@ -24,6 +24,7 @@ influences: ["[[phase-2-012-brihadaranyaka-upanishad]]", "[[phase-2-013-chandogy
 deities-mentioned: ["[[prajapati]]", "[[indra]]", "[[agni]]", "[[varuna]]", "[[soma]]"]
 events-context: []
 status: "full"
+citation-audited: "2026-06-04"
 preservation: "Each Veda has its associated Brāhmaṇas (e.g., Śatapatha for Yajurveda, Aitareya / Kauṣītaki for Rigveda, Tāṇḍya / Jaiminīya for Sāmaveda, Gopatha for Atharvaveda) and Āraṇyakas (forest treatises that bridge to the Upaniṣads). Oral transmission within Vedic śākhās (recitational schools); medieval manuscripts."
 refs:
   - title: "The Śatapatha Brāhmaṇa according to the text of the Mādhyandina School"

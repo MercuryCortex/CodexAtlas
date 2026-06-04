@@ -24,6 +24,7 @@ influences: ["[[phase-2-024-xunzi]] (as opponent)", "all subsequent Confucian an
 deities-mentioned: ["[[tian-heaven]]"]
 events-context: ["Warring States period (-475 to -221)"]
 status: "full"
+citation-audited: "2026-06-04"
 preservation: "Seven books, each in two parts (Books 1A-7B). ~35,000 characters total. Continuous transmission via the Han state-Confucian canon. Promoted to one of the Four Books by Zhu Xi (~1190 CE), thereafter foundational to the imperial examination system. Excavated Han bamboo-slip fragments confirm pre-imperial circulation."
 refs:
   - title: "Mengzi: With Selections from Traditional Commentaries"

@@ -24,6 +24,7 @@ influences: ["all subsequent Hindu theistic Vedānta (Ramanuja's Viśiṣṭādv
 deities-mentioned: ["[[rudra-shiva-early]]", "[[brahman]] (as ultimate principle)", "[[purusha]]"]
 events-context: []
 status: "full"
+citation-audited: "2026-06-04"
 preservation: "Continuous oral-textual transmission within the Kṛṣṇa Yajurveda Taittirīya/Maitrāyaṇī school; manuscript transmission from ~1100 CE forward. The text is among the most-commented Upaniṣads in the medieval scholastic tradition — Shankara's commentary (~800), Vijñānabhikṣu's (~16th c.), and many more."
 refs:
   - title: "The Early Upaniṣads: Annotated Text and Translation"

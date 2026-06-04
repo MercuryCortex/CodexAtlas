@@ -24,6 +24,7 @@ influences: ["[[phase-4-004-gospel-of-philip]]", "later Manichaean sayings colle
 deities-mentioned: ["[[the-monad-gnostic]]", "[[the-father-thomasine]]"]
 events-context: ["[[event-nag-hammadi-discovery]]"]
 status: "full"
+citation-audited: "2026-06-04"
 preservation: "Single complete Coptic codex (Nag Hammadi Codex II, tractate 2; discovered 1945, published 1956–59). Three Greek fragments from Oxyrhynchus (P.Oxy. 1, 654, 655; published 1897–1904) preserve ~20% of the sayings and were unidentified as Thomas until the Coptic codex surfaced."
 refs:
   - title: "The Nag Hammadi Scriptures: The Revised and Updated Translation of Sacred Gnostic Texts"

@@ -24,6 +24,7 @@ influences: ["[[phase-2-011-hebrew-bible-d-source]]", "later Pentateuchal redact
 deities-mentioned: ["[[yahweh]]", "[[el-elohim-hebrew]]"]
 events-context: []
 status: "full"
+citation-audited: "2026-06-04"
 preservation: "Like J, no standalone E manuscript; reconstructed within the redacted Pentateuch. Identified by use of *Elohim* for God before Exodus 3 (revelation of the divine name to Moses), northern geographic horizon, interest in Joseph and Ephraim, dream-revelation theophanies, and a more distant, less anthropomorphic God."
 refs:
   - title: "The Bible with Sources Revealed"

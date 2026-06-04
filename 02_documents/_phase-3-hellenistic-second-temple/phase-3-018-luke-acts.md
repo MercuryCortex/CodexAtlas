@@ -24,6 +24,7 @@ influences: ["All subsequent Christian church-history writing (Eusebius, etc.)",
 deities-mentioned: ["[[yahweh]]", "[[jesus-of-nazareth]]", "[[holy-spirit]]"]
 events-context: ["Jesus's ministry, passion, resurrection (~+30/+33)", "Pentecost and apostolic mission (~+30s/+60s)", "Paul's missionary journeys (~+47/+58)", "Destruction of Jerusalem (+70)", "Continued growth of Gentile churches"]
 status: "full"
+citation-audited: "2026-06-04"
 preservation: "P75 (Bodmer XIV/XV, ~+175/+225) contains substantial Luke and John; P45 (~+250) contains all four Gospels including Luke and Acts portions. Complete: Codex Vaticanus, Sinaiticus. Acts has its own textual peculiarity: the **Western Text** (represented by Codex Bezae) is ~8% longer than the Alexandrian text — a textual problem unique to Acts."
 refs:
   - title: "The Gospel According to Luke (Anchor Yale Bible 28, 28A)"

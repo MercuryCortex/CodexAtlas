@@ -37,6 +37,7 @@ hub-edges:
     source: "Reed 2005 *Fallen Angels and the History of Judaism and Christianity*; Stuckenbruck 1997 *The Book of Giants from Qumran*; Forsyth 1987 *The Old Enemy* — 1 Enoch 6-11 (the Watchers' descent) is the founding text of the cosmic-rebel-among-divine-beings tradition in Second-Temple Judaism: 200 heavenly beings led by Šemiḥazah + Azazel descend to Mount Hermon, take human wives, father the giants, teach humanity forbidden arts (metallurgy, cosmetics, divination, sorcery). The Watchers narrative is the Enochic instantiation of the cross-tradition rebel pattern. See [[theme-rebel-against-the-divine]]"
     notes: "Cross-lens: 02_documents → 06_themes. The Watchers narrative directly feeds Christian fallen-angel theology + Manichaean Book of Giants + Bogomil cosmogony"
 status: "full"
+citation-audited: "2026-06-04"
 preservation: "Complete text only in Ge'ez (classical Ethiopic) within the Ethiopian Orthodox biblical canon — uniquely preserved there. See [[phase-4-081-mashafa-henok-geez-1-enoch]] for the Ge'ez-recension textual-witness node. Greek translation partially extant (Codex Panopolitanus, Akhmim, 8th c.). Original Aramaic in Qumran fragments (4Q201–212; ~11 copies of various sections). [[james-bruce-of-kinnaird]] brought three Ge'ez manuscripts from Ethiopia to Europe in 1773 — see [[event-bruce-recovers-enoch-1773]]; full English translation by R.H. Charles (1893, 1912)."
 refs:
   - title: "1 Enoch: A New Translation"

@@ -52,6 +52,7 @@ deities-mentioned:
   - "[[serapis]]"
 events-context: []
 status: "full"
+citation-audited: "2026-06-04"
 preservation: "Fragmentary only — preserved through (1) Josephus *Contra Apionem* 1.73–287; (2) Africanus (3rd c. CE) preserved in Eusebius/Syncellus; (3) Eusebius *Chronicon* (Armenian + Latin Jerome); (4) Syncellus *Ecloga Chronographica* (c. 800 CE)"
 refs:
   - title: "Manetho (Loeb Classical Library 350)"

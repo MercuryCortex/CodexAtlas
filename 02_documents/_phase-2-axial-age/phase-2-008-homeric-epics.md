@@ -24,6 +24,7 @@ influences: ["all subsequent Greek literature; Roman epic (Vergil's Aeneid); Wes
 deities-mentioned: ["[[zeus]]", "[[hera]]", "[[athena]]", "[[apollo]]", "[[ares]]", "[[aphrodite-greek]]", "[[hermes-greek]]", "[[poseidon]]", "[[hades]]", "[[hephaestus]]", "[[artemis]]"]
 events-context: ["Trojan War (legendary, ~-1200 BCE setting)"]
 status: "full"
+citation-audited: "2026-06-04"
 preservation: "Continuous transmission via rhapsodic recitation, then text. Pisistratus of Athens (~-550) is credited with the first authoritative written redaction (the 'Pisistratean recension'). Aristarchus of Samothrace (Alexandria, ~-200) produced the Hellenistic critical text. The medieval manuscript tradition descends through Byzantine copying. Oldest physical witnesses: papyrus fragments from ~-300 BCE (Ptolemaic Egypt); the famous Venetus A manuscript (10th c. CE) preserves Aristarchan scholia."
 refs:
   - title: "The Iliad / The Odyssey (Greek text)"

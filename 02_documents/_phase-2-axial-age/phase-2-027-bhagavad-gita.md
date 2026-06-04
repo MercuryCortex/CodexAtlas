@@ -24,6 +24,7 @@ influences: ["all subsequent Hindu philosophy and devotional theology", "[[phase
 deities-mentioned: ["[[krishna]]", "[[vishnu]]", "[[krishna]]"]
 events-context: ["[[event-bhakti-movement-c-700-1700]] (the Gītā is the textual root of the entire bhakti tradition that flowers from ~700 CE onward)"]
 status: "full"
+citation-audited: "2026-06-04"
 preservation: "700 verses (śloka) in 18 chapters, embedded in Mahābhārata Book 6 (*Bhīṣmaparvan*), chapters 23-40 (BORI critical-edition numbering) or 25-42 (in some recensions). Standard text via the BORI Mahābhārata critical edition (Belvalkar 1947 for Book 6). Earliest substantial commentary tradition: Śaṅkara's *Gītā Bhāṣya* (~8th c.). Continuous Indian transmission as both an embedded Mahābhārata text and a freestanding scripture; from the medieval period onward routinely circulated independently. Earliest physical manuscripts of the freestanding Gītā: ~8th-10th c. on palm-leaf."
 refs:
   - title: "The Bhagavad Gita"

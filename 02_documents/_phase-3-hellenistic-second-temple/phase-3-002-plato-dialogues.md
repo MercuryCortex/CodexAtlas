@@ -24,6 +24,7 @@ influences: ["Middle Platonism", "Philo of Alexandria", "Plotinus and Neoplatoni
 deities-mentioned: ["[[demiurge-platonic]]", "[[zeus]]", "[[eros-greek]]"]
 events-context: ["Founding of the Academy (~-387)", "Trial and execution of Socrates (-399) — narrative backdrop of Phaedo and Apology"]
 status: "full"
+citation-audited: "2026-06-04"
 preservation: "Continuous manuscript tradition through Byzantine scriptoria; oldest substantial Plato witness is P.Oxy. fragments from ~+200 CE; complete medieval mss from the 9th c. (Clarkianus 39, Bodleian). The standard edition is Stephanus (1578), whose pagination is still cited (e.g., *Timaeus* 27d)."
 refs:
   - title: "Plato: Complete Works"

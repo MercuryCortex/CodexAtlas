@@ -43,6 +43,7 @@ hub-edges:
     source: "Boyce 1975 ch. on the Haoma Yašt; Yasna 9-11 (the Haoma Yašt) — the Younger Avesta's Haoma Yašt is the canonical Avestan-tradition documentation of haoma-as-deity + haoma-as-ritual-drink. The Yasna liturgy still uses haoma (Ephedra) in modern Parsi ritual. See [[theme-soma-haoma-eucharist]]"
     notes: "Cross-lens: 02_documents → 06_themes. The Haoma Yašt is the Iranian-branch parallel to Rigveda Mandala 9's Soma corpus"
 status: "full"
+citation-audited: "2026-06-04"
 preservation: "The Yasna (72-chapter liturgy enclosing the Gathas) plus Yashts (21 hymns to individual yazatas), Visperad (extension liturgy), and Vendidad (purity code) survive in priestly transmission. The Sasanian Great Avesta (21 nasks) is largely lost; what survives is the liturgical canon used in actual ritual. Oldest extant Avestan manuscript: K7a (Copenhagen, 1278 CE) and J2 / K5 (Yasna with Pahlavi gloss, 1323 CE)."
 refs:
   - title: "Avesta: Die heiligen Bücher der Parsen"

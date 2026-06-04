@@ -24,6 +24,7 @@ influences: ["[[phase-6-025-nathan-of-gaza-treatise-on-dragons]] (Sabbatean tran
 deities-mentioned: ["Ein Sof", "Sefirot", "Partsufim (Arikh Anpin, Abba, Imma, Zeir Anpin, Nukva)"]
 events-context: ["[[event-jewish-expulsion-spain-1492]]"]
 status: "full"
+citation-audited: "2026-06-04"
 preservation: "Luria himself wrote almost nothing; the tradition is preserved in: (1) Chaim Vital's *Etz Chayyim* and the *Shemonah She'arim* (Eight Gates) compiled by his son Shmuel Vital — the primary Lurianic corpus; (2) Israel Sarug's variant Lurianic system, transmitted to Europe via Naftali Bacharach's *Emeq ha-Melekh* (Amsterdam 1648); (3) Joseph ibn Tabul's separate redaction. First major printings: *Pri Etz Chayyim* (Korec 1782 / 1785), *Etz Chayyim* (Korec 1782). Modern critical study of the manuscript stemma is largely Yosef Avivi's work."
 refs:
   - title: "Physician of the Soul, Healer of the Cosmos: Isaac Luria and His Kabbalistic Fellowship"

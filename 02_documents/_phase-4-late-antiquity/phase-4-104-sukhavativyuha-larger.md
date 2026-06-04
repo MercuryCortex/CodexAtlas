@@ -24,6 +24,7 @@ influences: ["Chinese Pure Land school (Tanluan ~476-542; Daochuo 562-645; Shand
 deities-mentioned: ["[[amitabha]]", "[[avalokitesvara]]"]
 events-context: []
 status: "full"
+citation-audited: "2026-06-04"
 preservation: "Three classical Pure Land sūtras: the *Larger Sukhāvatīvyūha* (this entry), the *Smaller Sukhāvatīvyūha* (Amitābha Sūtra, very short, Kumārajīva 402 CE), and the *Amitāyurdhyāna Sūtra* (Sutra of Meditation on Amitāyus, Chinese composition c. 424 CE — Pure Land's *Visualization Sūtra*, of disputed Indian origin). The Larger Sukhāvatīvyūha exists in five Chinese translations (Lokakṣema c. 188; Zhi Qian c. 230; Saṃghavarman 252 — the standard East Asian text; Bodhiruci 706; Faxian 1001), reflecting the text's importance and continuing translation activity. Sanskrit text in Nepalese manuscript tradition. Tibetan translation by ~9th c."
 refs:
   - title: "The Land of Bliss: The Paradise of the Buddha of Measureless Light"

@@ -47,6 +47,7 @@ deities-mentioned:
   - "[[persephone-greek]]"
 events-context: []
 status: "full"
+citation-audited: "2026-06-04"
 preservation: "Single carbonized papyrus roll recovered 1962 from a Macedonian aristocratic tomb at Derveni (near Thessaloniki); preserved by partial burning on the funeral pyre. **The earliest surviving Greek philosophical text in physical form.** Editio princeps after 44 years of editorial dispute: Kouremenos / Parássoglou / Tsantsanoglou 2006"
 refs:
   - title: "The Derveni Papyrus"

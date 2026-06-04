@@ -41,6 +41,7 @@ hub-edges:
     source: "Plotinus *Enneads* VI.9 'On the Good, or the One'; Sells 1994 *Mystical Languages of Unsaying*; McGinn 1991 *The Foundations of Mysticism* — *Enneads* VI.9 ('the flight of the alone to the Alone') is the founding text of Western mystical-union theology. Porphyry's *Vita Plotini* §23 records Plotinus achieved *henosis* with the One four times in his lifetime. The Enneads VI.9 vocabulary becomes the load-bearing template for Sufi *fanā'* + Kabbalistic *devekut* + Christian *theosis* + Hindu *samādhi*. See [[neoplatonic-henosis]]"
     notes: "Cross-lens: 02_documents → 06_themes. MASSIVE-WIN: a single Plotinian treatise (VI.9, ~30 pages) becomes the philosophical-prose template for the most-cross-traditionally-recurring mystical-experience formulation in world religion"
 status: "full"
+citation-audited: "2026-06-04"
 preservation: "Continuous Byzantine transmission. Porphyry arranged Plotinus' 54 treatises into six sets of nine (*enneads*) and published them ~301 CE, prefaced by his *Life of Plotinus*. Greek manuscripts begin in the 10th century. Marsilio Ficino's Latin translation (1492) launched the Renaissance Platonist revival."
 refs:
   - title: "Plotinus: Enneads (7 vols., Loeb Classical Library)"

@@ -24,6 +24,7 @@ influences: ["[[phase-2-023-mengzi]]", "[[phase-2-024-xunzi]]", "all subsequent 
 deities-mentioned: ["[[tian-heaven]]"]
 events-context: ["Spring and Autumn (-770 to -476) / early Warring States (-475 to -221)"]
 status: "full"
+citation-audited: "2026-06-04"
 preservation: "Twenty books (*pian*); ~500 short passages of dialogue or aphorism. Three textual traditions known in Han: Lu, Qi, and Old Text versions; the received text largely follows the Lu lineage. Definitive received text via the Zhu Xi-school compilation (Song dynasty, ~1190 CE). Excavated Han dynasty bamboo-slip copies (Dingzhou, 1973; Pyongyang Lelang, 1990) push manuscript evidence into the -1st c. BCE."
 refs:
   - title: "The Analects (Lunyu)"

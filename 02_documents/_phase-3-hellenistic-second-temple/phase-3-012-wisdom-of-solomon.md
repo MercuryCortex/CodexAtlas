@@ -24,6 +24,7 @@ influences: ["Philo of Alexandria (direct continuity)", "Pauline epistles (Wisdo
 deities-mentioned: ["[[yahweh]]", "[[wisdom-personified]]"]
 events-context: ["Roman annexation of Egypt (-30)", "Tensions between Alexandrian Jewish community and Greek/Roman authorities", "Possibly: Caligula-era persecution (~+38) or earlier"]
 status: "full"
+citation-audited: "2026-06-04"
 preservation: "Surviving Greek text in the LXX manuscript tradition (Vaticanus, Sinaiticus, Alexandrinus). Latin Vulgate as *Sapientia* (Catholic and Orthodox deuterocanon). Excluded from rabbinic Hebrew canon; Hebrew translations are all medieval back-translations."
 refs:
   - title: "The Book of Wisdom: A New Translation with Introduction and Commentary"

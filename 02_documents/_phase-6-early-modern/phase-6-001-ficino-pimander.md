@@ -24,6 +24,7 @@ influences: ["[[phase-6-003-pico-oration-900-conclusions]]", "[[phase-6-009-agri
 deities-mentioned: ["[[hermes-trismegistus]]", "[[poimandres]]", "[[nous-hermetic]]"]
 events-context: ["[[event-ficino-corpus-hermeticum-translation-1463]]", "[[event-fall-of-constantinople-1453]]"]
 status: "full"
+citation-audited: "2026-06-04"
 preservation: "First printed Treviso 1471 by Gerardus de Lisa; thereafter dozens of Renaissance editions (the 1505 Lefèvre d'Étaples edition added the Asclepius). The Greek manuscript Ficino translated — likely Codex Laurentianus 71,33 plus a sister codex — survives in the Biblioteca Medicea Laurenziana, Florence."
 refs:
   - title: "Hermetica: The Greek Corpus Hermeticum and the Latin Asclepius in a New English Translation, with Notes and Introduction"

@@ -24,6 +24,7 @@ influences: ["Qumran sectarian literature (15+ Hebrew Jubilees mss at Qumran; Co
 deities-mentioned: ["[[yahweh]]", "[[mastema]]", "[[michael-archangel]]", "[[angel-of-the-presence]]"]
 events-context: ["Post-Maccabean / early Hasmonean Judea (~-160/-140)", "Calendar disputes in Second Temple Judaism"]
 status: "full"
+citation-audited: "2026-06-04"
 preservation: "Original Hebrew known only from ~15 fragmentary Qumran manuscripts (1Q17–18, 2Q19–20, 3Q5, 4Q176, 4Q216–224, 11Q12). Complete text only in Ge'ez (classical Ethiopic) within the Ethiopian Orthodox biblical canon. Latin fragments (~25%). Greek translation fully lost."
 refs:
   - title: "The Book of Jubilees"

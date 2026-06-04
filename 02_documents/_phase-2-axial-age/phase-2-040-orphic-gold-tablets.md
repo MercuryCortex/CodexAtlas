@@ -23,6 +23,7 @@ influences: ["Platonic eschatology (Republic 614b–621d Myth of Er; Phaedrus; P
 deities-mentioned: ["[[persephone-greek]]", "[[dionysus]]", "[[mnemosyne]]", "[[hermes-greek]]"]
 events-context: []
 status: "full"
+citation-audited: "2026-06-04"
 refs:
   - title: "Ritual Texts for the Afterlife: Orpheus and the Bacchic Gold Tablets"
     author: "Graf, Fritz and Johnston, Sarah Iles"

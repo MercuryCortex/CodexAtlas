@@ -24,6 +24,7 @@ influences: ["all classical Sanskrit drama (Kālidāsa, Bhāsa, Bhavabhūti)", "
 deities-mentioned: ["Brahmā (mythic instructor)", "Indra (the *prekṣā* — first audience)", "Bharata (the receiving sage)"]
 events-context: []
 status: "full"
+citation-audited: "2026-06-04"
 preservation: "Continuous Sanskrit transmission with two principal recensions (northern, southern; the Kashmir recension Abhinavagupta knew is intermediate). KSTS edition of Abhinavagupta's *Abhinavabhāratī* commentary 1926–1964 (4 vols.). Manuscripts from ~1100 CE forward. The Kūṭiyāṭṭam Sanskrit drama tradition of Kerala has maintained continuous performance practice tracing back to medieval implementations of the Nāṭyaśāstra."
 refs:
   - title: "The Nāṭyaśāstra Ascribed to Bharata-Muni"

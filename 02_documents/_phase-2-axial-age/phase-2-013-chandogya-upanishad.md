@@ -24,6 +24,7 @@ influences: ["all subsequent Vedānta", "Bhagavad Gītā", "Buddhist and Jain sh
 deities-mentioned: ["[[prajapati]]", "[[indra]]", "[[agni]]"]
 events-context: []
 status: "full"
+citation-audited: "2026-06-04"
 preservation: "Forms the closing portion of the Chāndogya Brāhmaṇa, attached to the Sāmaveda. Continuous oral and manuscript transmission."
 refs:
   - title: "The Early Upaniṣads: Annotated Text and Translation"

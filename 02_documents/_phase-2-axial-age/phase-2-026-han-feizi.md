@@ -24,6 +24,7 @@ influences: ["Qin imperial state (Han Fei's contemporary Li Si applied his doctr
 deities-mentioned: []
 events-context: ["Warring States period (-475 to -221)", "Qin unification (-221)"]
 status: "full"
+citation-audited: "2026-06-04"
 preservation: "Received text: 55 chapters (originally 56). Most chapters appear to be by Han Fei himself; a few are clearly Han or later additions. Major chapters: 'The Two Handles' (*Er Bing*, chs. 7-9 on reward and punishment), 'The Five Vermin' (*Wu Du*, ch. 49, his most famous polemic against the Confucians, the wandering knights, the diplomatic talkers, the courtiers, and the merchant-artisans), 'Solitary Indignation' (*Gu Fen*, ch. 11), and the two Daodejing commentaries (*Jie Lao* ch. 20, *Yu Lao* ch. 21) — the earliest Daoist-Legalist hybridization in Chinese thought."
 refs:
   - title: "Han Fei Tzu: Basic Writings"

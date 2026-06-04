@@ -24,6 +24,7 @@ influences: ["Crantor (first commentator on the *Timaeus*, ~-300, who reportedly
 deities-mentioned: ["[[poseidon]] (founder of Atlantis; sires the ten royal lines)", "[[athena]] (patroness of primeval Athens, the counter-polity)", "Zeus (convenes the gods to punish Atlantis at the close of the *Critias* fragment)"]
 events-context: ["Composition during Plato's last decade after the third Sicilian voyage (~-360); the *Critias* breaks off mid-sentence and was never completed", "[[event-thera-eruption-c-1600-bce]] — disputed as a possible cultural-memory kernel (Marinatos / Galanopoulos hypothesis; rejected by Vidal-Naquet)"]
 status: "full"
+citation-audited: "2026-06-04"
 preservation: "Continuous through the Byzantine manuscript tradition alongside the rest of the Platonic corpus. *Timaeus* is one of the most-copied and most-commented Platonic dialogues (it was the only Plato widely read in the Latin West before the Renaissance, via Calcidius's partial 4th-c. CE Latin translation, 17a–53c — which crucially *included* the Atlantis frame). *Critias* survives only as a fragment, breaking off at 121c mid-Zeus-speech; the planned *Hermocrates* was never written."
 refs:
   - title: "Plato: Complete Works"

@@ -36,6 +36,7 @@ hub-edges:
     source: "Kerényi 1976; BeDuhn 2000 *The Manichaean Body* (for the cross-tradition Eucharist context) — John 6:53-56 ('Unless you eat the flesh of the Son of Man and drink his blood, you have no life in you... whoever eats my flesh and drinks my blood abides in me') is the high-Eucharist text of Christian canon — the most explicit drinking-the-substance = drinking-the-god formulation in the New Testament, structurally parallel to the Vedic Soma + Bacchic *entheos* logic. See [[theme-soma-haoma-eucharist]]"
     notes: "Cross-lens: 02_documents → 06_themes"
 status: "full"
+citation-audited: "2026-06-04"
 preservation: "**P52 (Rylands Papyrus 457), ~+125**, a credit-card-sized fragment of John 18 — the oldest surviving New Testament fragment, demonstrating John's circulation in Egypt within decades of composition. Substantial early witnesses: P66 (Bodmer II, ~+200, nearly complete) and P75 (Bodmer XIV/XV, ~+175/+225). Complete: Vaticanus, Sinaiticus."
 refs:
   - title: "The Gospel According to John (Anchor Yale Bible 29, 29A)"

@@ -24,6 +24,7 @@ influences: ["[[tradition-neo-confucianism]] (the Zhongyong's cosmic *cheng* [si
 deities-mentioned: []
 events-context: ["Warring States period (-475 to -221, original composition)", "Song dynasty (Cheng brothers extraction, ~1060s CE; Zhu Xi canonization, ~1190 CE)"]
 status: "full"
+citation-audited: "2026-06-04"
 preservation: "Originally Chapter 31 of the *Liji* (Book of Rites, 禮記), one of the Five Classics. The Cheng brothers identified it as a key philosophical text. [[zhu-xi]] extracted it, placed it last in his Four Books sequence (*Sishu zhangju jizhu*, 1190), and wrote his most philosophically ambitious commentary on it — reading the Zhongyong as a cosmological treatise, not merely an ethical text. The received text is Zhu Xi's arrangement. It consists of 33 chapters in the standard Song-era division, though the text itself is not a continuous argument but a series of statements and passages assembled around the *zhongyong* concept and the cosmic *cheng* (sincerity / self-completing) theme."
 refs:
   - title: "The Four Books: The Basic Teachings of the Later Confucian Tradition"

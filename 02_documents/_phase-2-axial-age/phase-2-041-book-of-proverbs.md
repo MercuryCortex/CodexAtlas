@@ -27,6 +27,7 @@ influences:
   - "[[logos-philonic]]"
   - "[[logos-johannine]]"
 status: "full"
+citation-audited: "2026-06-04"
 refs:
   - title: "Proverbs (Anchor Bible Commentary)"
     author: "Fox, Michael V."

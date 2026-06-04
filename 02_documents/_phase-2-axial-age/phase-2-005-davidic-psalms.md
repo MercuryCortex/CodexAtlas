@@ -24,6 +24,7 @@ influences: ["the entire liturgy of Judaism and Christianity (the Psalms are the
 deities-mentioned: ["[[yahweh]]", "[[el-elohim-hebrew]]", "[[el-canaanite]]", "[[baal-hadad]]"]
 events-context: ["Temple worship of the Judahite monarchy and Second Temple period", "The royal/coronation liturgy of the Davidic kings", "The exilic and post-exilic shaping of the Psalter into a book for study and prayer"]
 status: "full"
+citation-audited: "2026-06-04"
 preservation: "Among the most-copied texts at Qumran (over three dozen Psalms scrolls, incl. the Great Psalms Scroll 11QPsᵃ, which has a divergent order and extra compositions); transmitted in the Masoretic Text and the (differently numbered) Greek Septuagint."
 refs:
   - title: "The Psalms in Israel's Worship (2 vols.)"

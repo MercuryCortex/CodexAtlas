@@ -32,6 +32,7 @@ hub-edges:
     type: "Sufi-Akbari-systematization-of-Mi'raj"
     source: "Schäfer 2009; Schimmel 1975; Corbin 1969 — Ibn Arabi's *Kitāb al-Isrāʾ* (companion text to Fusus) is the philosophical allegorization of Muhammad's Mi'raj in which each heaven corresponds to a stage of mystical-philosophical ascent. The Fusus and Kitab al-Isra together systematize the Mi'raj into Sufi metaphysical pedagogy. See [[merkabah-miraj-ascent-chain]]"
 status: "full"
+citation-audited: "2026-06-04"
 preservation: "Continuous Islamic transmission; one of the most-commented-on books in Islamic intellectual history (~150 medieval and early-modern commentaries documented). Standard Arabic edition: ʿAfīfī (Cairo 1946). The *Fuṣūṣ* is short (27 chapters, ~150 pages); the *Futūḥāt al-Makkiyya* is by contrast a 560-chapter, 37-volume work."
 refs:
   - title: "The Bezels of Wisdom"

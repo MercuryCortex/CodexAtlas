@@ -45,6 +45,7 @@ hub-edges:
     source: "Jamison & Brereton 2014 *Rigveda* (for the Vedic-Iranian PII context); Falk 1989 *Bulletin SOAS* — though the Gathas contain Zarathustra's possible critique of haoma excess (Yasna 32:14 — debated reading), the Gathic stratum's preservation of the *haoma*-cognate vocabulary documents the Iranian-branch retention of the PII *\\*sauma-* sacred-drink tradition. See [[theme-soma-haoma-eucharist]]"
     notes: "Cross-lens: 02_documents → 06_themes. The Gathic critique-and-retention pattern is itself evidence of the ritual's centrality"
 status: "full"
+citation-audited: "2026-06-04"
 preservation: "17 hymns embedded within the Yasna liturgy (Y.28–34, 43–46, 47–50, 51, 53). Composed orally in Old Avestan, transmitted in priestly memorization for ~1500 years before being written down. The first surviving manuscript is the Pahlavi Yasna codex K5 (Copenhagen, 1323 CE) and J2 (Oxford); the oldest dated Avestan manuscript is from 1288 CE (Yasna sade)."
 refs:
   - title: "The Hymns of Zarathustra"

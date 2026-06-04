@@ -24,6 +24,7 @@ influences: ["[[phase-2-026-han-feizi]] (his student Han Fei built Legalism on X
 deities-mentioned: ["[[tian-heaven]]"]
 events-context: ["Warring States period (-475 to -221)"]
 status: "full"
+citation-audited: "2026-06-04"
 preservation: "Received text: 32 essay-chapters (a fundamentally different form from the dialogue-anecdote *Analects* and *Mengzi* — Xunzi writes essays, the first systematic philosophical prose in Chinese). Redacted by Liu Xiang (~-25 BCE) from a larger collection of 322 *pian*. Continuous transmission, though Xunzi was eclipsed in the Song-onward Neo-Confucian canon by the Mengzi (Zhu Xi explicitly excluded Xunzi from the Four Books). Major modern rehabilitation, especially since the mid-20th c."
 refs:
   - title: "Xunzi: The Complete Text"

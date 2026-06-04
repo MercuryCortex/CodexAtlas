@@ -24,6 +24,7 @@ influences: ["public reception of Gnosticism in the late-20th-century West", "fe
 deities-mentioned: ["[[sophia-gnostic]]", "[[yaldabaoth]]", "[[the-monad-gnostic]]"]
 events-context: ["[[event-nag-hammadi-discovery]]"]
 status: "full"
+citation-audited: "2026-06-04"
 preservation: "Continuous in print since 1979; received the National Book Award (1980) and National Book Critics Circle Award; widely translated."
 refs:
   - title: "The Gnostic Gospels"

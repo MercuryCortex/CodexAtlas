@@ -24,6 +24,7 @@ influences: ["[[phase-4-064-epistle-of-barnabas]] (parallel Two Ways)", "*Aposto
 deities-mentioned: ["the [[yahweh|Father]] (in the eucharistic and baptismal formulae)", "[[jesus-christ-deity]] (as 'your servant/child Jesus' — *pais sou Iēsous*)"]
 events-context: []
 status: "full"
+citation-audited: "2026-06-04"
 preservation: "Lost from Western view between the 9th and 19th c.; rediscovered in **Codex Hierosolymitanus 54** (the *Bryennios* manuscript) at the Constantinople Holy Sepulchre library in 1873 by Philotheos Bryennios, who published it in 1883. A Coptic fragment (P. Lond. Or. 9271, ~+4th c.) and a Greek papyrus fragment (P. Oxy. 1782, +4th c.) confirm the text. Latin *Doctrina Apostolorum* preserves the *Two Ways* section independently. Coptic, Georgian, and Ethiopic versions exist."
 refs:
   - title: "The Apostolic Fathers, vol. 1 (Loeb)"

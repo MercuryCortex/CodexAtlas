@@ -24,6 +24,7 @@ influences: ["[[guru-nanak]] and Sikhism (Adi Granth incorporates ~270 Kabir hym
 deities-mentioned: ["*Rām* / *Hari* / *Allāh* / *Khudā* / *Sain* / *Sahib* — addressed indifferently as alternative names for the same nameless divine"]
 events-context: []
 status: "full"
+citation-audited: "2026-06-04"
 preservation: "Three principal manuscript-textual recensions of the Kabir corpus: (1) the *Bijak* (Kabir-Panth recension at Banaras, ~17th c. textualization), (2) the *Kabir-Granthāvalī* (Rajasthani recension via the Dadu-Panth, with earliest manuscripts ~1614), (3) the *Ādi Granth* selections (Sikh recension compiled by Guru Arjan, 1604, the earliest dated Kabir manuscript material). The three recensions overlap substantially but with distinct emphases — the *Bijak* is the most polemical and most strongly *nirguṇa*; the *Granthāvalī* preserves more Krishna-bhakti-inflected material; the Sikh selection emphasizes the unitary-formless God."
 refs:
   - title: "The Bījak of Kabir"

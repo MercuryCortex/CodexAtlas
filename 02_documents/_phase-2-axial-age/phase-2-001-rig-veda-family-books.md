@@ -24,6 +24,7 @@ influences: ["[[phase-2-003-atharva-veda]]", "[[phase-2-006-brahmanas-aranyakas]
 deities-mentioned: ["[[indra]]", "[[agni]]", "[[varuna]]", "[[soma]]", "[[mitra-vedic]]", "[[ushas]]", "[[rudra-shiva-early]]", "[[prajapati]]"]
 events-context: []
 status: "full"
+citation-audited: "2026-06-04"
 preservation: "Transmitted with extraordinary fidelity by oral memorization (pada-pāṭha, krama-pāṭha, ghana-pāṭha recitation modes) for ~2,500 years before any surviving manuscript. The oldest physical manuscripts are paper/birch-bark from ~1000–1500 CE; the textual stability is corroborated by cross-school comparison (Śākala vs. Bāṣkala recensions agree to a remarkable degree)."
 refs:
   - title: "The Rigveda: The Earliest Religious Poetry of India"

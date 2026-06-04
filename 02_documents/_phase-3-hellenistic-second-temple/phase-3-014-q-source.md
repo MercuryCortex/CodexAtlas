@@ -24,6 +24,7 @@ influences: ["Gospel of Matthew (used as source)", "Gospel of Luke (used as sour
 deities-mentioned: ["[[yahweh]]"]
 events-context: ["Jesus's Galilean ministry (~+30)", "Earliest oral and written transmission (~+30/+60)"]
 status: "full"
+citation-audited: "2026-06-04"
 preservation: "**No physical manuscript exists.** Q is a hypothetical document **reconstructed** by extracting from Matthew and Luke the ~235 verses of material they share that does *not* come from Mark. Reconstructed text published in: Robinson-Hoffmann-Kloppenborg *Critical Edition of Q* (2000). [claim: contested] — Q's existence is the majority scholarly hypothesis but not universally accepted (Farrer/Goodacre hypothesis dispenses with Q)."
 refs:
   - title: "The Critical Edition of Q"

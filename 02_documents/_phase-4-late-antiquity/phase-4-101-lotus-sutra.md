@@ -26,6 +26,7 @@ influences: ["Tiantai school of Zhiyi (~538-597 CE)", "Tendai school of Japan (S
 deities-mentioned: ["[[avalokitesvara]]", "[[guanyin]]", "[[manjushri]]", "[[samantabhadra-buddha]]", "[[maitreya]]", "[[vairocana]]"]
 events-context: ["[[event-fourth-buddhist-council-kanishka-c-100]]"]
 status: "full"
+citation-audited: "2026-06-04"
 preservation: "Sanskrit manuscripts: substantial Gilgit, Nepalese, and Central Asian witnesses (the Gilgit Lotus from Kashmir, 5th-6th c. CE, is the most important early manuscript; the Nepalese paper-manuscript tradition preserves the standard Sanskrit recension). The text exists in three main Chinese translations: Dharmarakṣa (286 CE), Kumārajīva (406 CE, the standard East Asian text), and a 601 CE translation by Jñānagupta and Dharmagupta. Tibetan translation by Surendrabodhi and Yeshes-sde (~9th c.). The standard East Asian recension has 28 chapters in Kumārajīva (the Sanskrit has 27 — the 'Devadatta' chapter is a Chinese insertion). Continuous chanted-recitation tradition across East Asia."
 refs:
   - title: "The Lotus Sutra"

@@ -24,6 +24,7 @@ influences: ["all subsequent Buddhist literature", "Jain parallels", "later Mah�
 deities-mentioned: ["[[indra]]", "[[brahma-vedic]]"]
 events-context: ["Lifetime of the Buddha (~-563 to -483 traditional, or ~-480 to -400 by current corrected dating)"]
 status: "full"
+citation-audited: "2026-06-04"
 preservation: "Preserved in the Pali Khuddaka Nikāya as the Sutta Nipāta, of which the Aṭṭhaka-vagga (book 4) and Pārāyana-vagga (book 5) are widely regarded as the oldest stratum on linguistic, metrical, and citation grounds (cited as a separate work in other early texts and in early commentary). Gandhāran Buddhist manuscripts (Kharosthi script, ~-100 to ~+200 CE, found from Afghanistan/Pakistan) include parallel material. Oral transmission through the *bhāṇaka* reciter-tradition; first written down in Sri Lanka (Aluvihare, ~-29 BCE under King Vaṭṭagāminī)."
 refs:
   - title: "The Group of Discourses (Sutta-Nipāta)"

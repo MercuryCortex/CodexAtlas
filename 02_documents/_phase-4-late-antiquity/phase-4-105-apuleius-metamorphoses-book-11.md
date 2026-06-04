@@ -24,6 +24,7 @@ influences: ["Boccaccio *Decameron* (medieval reception)", "Cervantes *Don Quixo
 deities-mentioned: ["[[isis-egyptian]]", "[[isis-hellenistic]]", "[[osiris]]", "[[serapis]]"]
 events-context: []
 status: "full"
+citation-audited: "2026-06-04"
 preservation: "the ***Mediceus*** (Florence, Biblioteca Medicea Laurenziana ms. 68.2 — 11th c.) is the principal manuscript, the source of all surviving copies; additional manuscripts ms. Laur. 29.2 (~12th c.) and ms. Vat. lat. 2194 (~13th c.). First printed edition: Rome 1469. Modern critical edition: Helm 1907 (Teubner); Hanson 1989 (Loeb Classical Library)"
 refs:
   - title: "The Isis Book: A Commentary on Apuleius Metamorphoses XI"

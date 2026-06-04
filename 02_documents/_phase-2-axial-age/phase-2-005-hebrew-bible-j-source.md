@@ -24,6 +24,7 @@ influences: ["[[phase-2-007-hebrew-bible-e-source]]", "[[phase-2-011-hebrew-bibl
 deities-mentioned: ["[[yahweh]]"]
 events-context: []
 status: "full"
+citation-audited: "2026-06-04"
 preservation: "No standalone J manuscript exists; J is a reconstructed source identified within the redacted Torah (Genesis–Numbers, with limited Deuteronomic / Priestly trace). Oldest physical witnesses to the redacted Torah: Dead Sea Scrolls, ~-250 to ~+70 CE; oldest complete Hebrew Masoretic Bible: Aleppo Codex (~930 CE) and Leningrad Codex B19A (1008 CE)."
 refs:
   - title: "The Bible with Sources Revealed"

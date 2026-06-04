@@ -24,6 +24,7 @@ influences: ["all subsequent Islamic tradition", "Arabic linguistic development"
 deities-mentioned: ["[[allah]]", "[[allat]]", "[[al-uzza]]", "[[manat]]", "[[hubal]]", "[[wadd]]", "[[nasr-pre-islamic]]"]
 events-context: ["[[event-hegira-622]]", "[[event-conquest-of-mecca-630]]", "[[event-death-of-muhammad-632]]", "[[event-first-fitna-656-661]]"]
 status: "full"
+citation-audited: "2026-06-04"
 preservation: "Continuous Islamic manuscript and recitative transmission. The Uthmanic codification (~650 CE) standardized the consonantal text; later layers (vowels, diacritics) were added. The Birmingham Quran manuscript (radiocarbon dated 568–645 CE) is among the earliest known fragments. The Sanaa Palimpsest (discovered 1972) preserves a partly variant pre-Uthmanic textual tradition. We treat the Quran with the same source-integrity care the vault applies to the Hebrew Bible: as primary historical evidence for the religious thought of its time and milieu."
 refs:
   - title: "The Study Quran: A New Translation and Commentary"

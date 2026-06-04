@@ -23,6 +23,7 @@ influences: ["[[phase-4-070-josephus-antiquities-of-the-jews]] (Josephus's later
 deities-mentioned: ["[[yahweh|the God of Israel]] (interpreted by Josephus as having transferred favor to Rome)"]
 events-context: ["The **First Jewish War / Great Revolt** of +66–+73 (with Masada falling ~+73/+74)", "Destruction of the Second Temple (+70 — 9th of Av)", "Siege of Jotapata (+67) where Josephus surrendered"]
 status: "full"
+citation-audited: "2026-06-04"
 preservation: "Continuous Greek manuscript transmission. Standard Greek text via medieval Christian copying (Niese 1894 critical edition foundational). The lost Aramaic original (mentioned at *BJ* 1.3 — *aimed at* an Eastern Jewish/Parthian audience) is not extant. Latin paraphrase tradition (*Hegesippus*, 4th c.). Slavonic version (extensive 11th-c. Christian-interpolated paraphrase containing Christian-interpolation passages about Jesus, John the Baptist — generally rejected as late additions)."
 refs:
   - title: "Josephus, with an English Translation (Loeb Classical Library, 10 vols.) — vols. II–III: *The Jewish War* I–VII"

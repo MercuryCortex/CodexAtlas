@@ -33,6 +33,7 @@ hub-edges:
     type: "Pahlavi-eschatological-text"
     source: "Gignoux 1984; Cereti 1995 *The Zand i Wahman Yasn*; Boyce 1975 vol. I — Arda Viraf documents the Pahlavi-period (~400-900 CE) elaboration of Zoroastrian eschatology: the Chinvat Bridge soul-judgment, the heavens of good thought / good speech / good action, the Garōdmān paradise, the hell of the wicked. The work is the most extended single Zoroastrian eschatological-geography text. See [[theme-zoroastrian-cosmogony]]"
 status: "full"
+citation-audited: "2026-06-04"
 refs:
   - title: "The Ardā Wirāz Nāmag: The Iranian 'Divina Commedia'"
     author: "Gignoux, Philippe"

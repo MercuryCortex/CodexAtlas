@@ -24,6 +24,7 @@ influences: ["the post-exilic Hebrew lament tradition; the festival of Tisha B'A
 deities-mentioned: ["[[yahweh]]"]
 events-context: ["the Babylonian sack of Jerusalem and destruction of the First Temple (-586 BCE); the Babylonian Exile"]
 status: "full"
+citation-audited: "2026-06-04"
 preservation: "Five poems of 22, 22, 66, 22, and 22 verses respectively. Chapters 1, 2, 3, and 4 are alphabetic acrostics (each verse, or in ch. 3 each triplet, beginning with successive Hebrew letters from *aleph* to *tav*); ch. 5 is not an acrostic but preserves the 22-verse structure of an acrostic. The acrostic form intensifies the lament's controlled formality — even apocalyptic mourning is alphabetically structured. Chapters 2–4 differ in their letter-order (*pe* before *ayin*), preserving an older Hebrew alphabetic sequence also attested in some pre-exilic abecedaries. Continuous Jewish manuscript tradition; substantial material at Qumran (3QLam, 4QLam, 5QLam). Standard text the MT; LXX preserves a partly independent Greek translation."
 refs:
   - title: "Lamentations: A Commentary"

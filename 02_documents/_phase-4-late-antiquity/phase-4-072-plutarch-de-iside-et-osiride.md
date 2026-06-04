@@ -58,6 +58,7 @@ deities-mentioned:
   - "[[dionysus]]"
 events-context: []
 status: "full"
+citation-audited: "2026-06-04"
 preservation: "Byzantine medieval Greek manuscripts; part of the *Moralia* corpus transmitted continuously since Late Antiquity; first printed in the Aldine *Moralia* (Venice 1509)"
 refs:
   - title: "Plutarch's De Iside et Osiride"

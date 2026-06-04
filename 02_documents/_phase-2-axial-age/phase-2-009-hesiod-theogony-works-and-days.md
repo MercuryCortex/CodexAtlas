@@ -24,6 +24,7 @@ influences: ["all subsequent Greek theogonic and cosmogonic thought (Orphic, Pre
 deities-mentioned: ["[[uranus-greek]]", "[[gaia]]", "[[kronos]]", "[[zeus]]", "[[hera]]", "[[aphrodite-greek]]", "[[poseidon]]", "[[hades]]", "[[demeter]]", "[[apollo]]", "[[artemis]]", "[[athena]]", "[[ares]]", "[[hephaestus]]"]
 events-context: []
 status: "full"
+citation-audited: "2026-06-04"
 preservation: "Continuous transmission via rhapsodes and scholar-editors. Hellenistic Alexandrian scholars (Aristophanes of Byzantium, Aristarchus) edited Hesiod. Medieval manuscripts descend through Byzantine copying; oldest substantial codices are 10th–12th c. CE. The corpus also includes the Shield of Heracles (probably not by Hesiod) and the partly preserved Catalogue of Women."
 refs:
   - title: "Hesiodi opera"

@@ -35,6 +35,7 @@ hub-edges:
     type: "Hermetic-philosophical-source-of-alchemical-tradition"
     source: "Principe 2007; Newman 2004 *Promethean Ambitions*; Fowden 1986 — the Hermetic Corpus's philosophical articulation feeds directly into Zosimos of Panopolis's (~310 CE) visionary-alchemical works + the broader Greco-Egyptian alchemical tradition that transmits through Arabic (Jabir) into Latin European alchemy. See [[alchemy-as-spiritual-discipline]]"
 status: "full"
+citation-audited: "2026-06-04"
 preservation: "**Dispute over date and stratification**: the *Corpus Hermeticum* as we have it is a Byzantine collection of 18 (or 17) Greek treatises, but individual treatises range in composition date from possibly as early as ~+100 (Poimandres) to ~+300. The Coptic Hermetic texts from **Nag Hammadi Codex VI** (*Discourse on the Eighth and Ninth*, *Asclepius* fragments, the *Prayer of Thanksgiving*) demonstrate Hermetic literature circulating among Egyptian Coptic readers by ~+350. The *Asclepius* (Latin Hermetic dialogue) is preserved in the Latin tradition (with translations earliest attributed to Apuleius). The Greek *Corpus Hermeticum* was lost to Latin Europe until Cosimo de' Medici sent Ficino to translate it in 1463."
 refs:
   - title: "Hermetica: The Greek Corpus Hermeticum and the Latin Asclepius"

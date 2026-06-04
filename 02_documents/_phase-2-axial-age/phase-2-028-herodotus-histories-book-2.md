@@ -59,6 +59,7 @@ deities-mentioned:
   - "[[apis-bull]]"
 events-context: []
 status: "full"
+citation-audited: "2026-06-04"
 preservation: "Continuous manuscript transmission since Hellenistic Alexandria; earliest fragments on papyrus from c. -300; medieval Byzantine mss (Laurentianus 70.3, the *Codex Romanus*); first printed by Aldus (Venice 1502)"
 refs:
   - title: "Herodotus, Book II: Introduction"

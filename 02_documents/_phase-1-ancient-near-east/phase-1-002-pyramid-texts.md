@@ -24,6 +24,7 @@ influences: ["[[phase-1-009-coffin-texts]]", "[[phase-1-010-book-of-the-dead]]",
 deities-mentioned: ["[[ra]]", "[[atum]]", "[[osiris]]", "[[isis-egyptian]]", "[[horus]]", "[[set]]", "[[thoth]]", "[[nun]]", "[[anubis]]", "[[ma-at]]", "[[nut]]", "[[ptah]]"]
 events-context: ["End of the 5th Dynasty and the entire 6th Dynasty of the Egyptian Old Kingdom"]
 status: "full"
+citation-audited: "2026-06-04"
 preservation: "Carved in vertical columns on the interior walls of royal pyramids at Saqqara. First attested in the pyramid of Unas (last king of Dynasty 5, ~2345 BCE); subsequently in the pyramids of Teti, Pepi I, Merenre, Pepi II, and several queens. ~800 distinct utterances (spells) survive across the corpus; no single pyramid contains all of them."
 refs:
   - title: "The Ancient Egyptian Pyramid Texts"

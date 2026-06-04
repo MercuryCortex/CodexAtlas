@@ -32,6 +32,7 @@ hub-edges:
     type: "Son-of-Man-Ancient-of-Days-canonical-text"
     source: "Boyarin 2012 *The Jewish Gospels*; Segal 1977 *Two Powers in Heaven*; Collins 1993 — Daniel 7:13-14 ('one like a son of man came with the clouds of heaven and... was presented before the Ancient of Days') is the founding canonical text of the Two-Powers binitarian theology that subsequently develops through 1 Enoch's Elect One → Metatron → Christological Logos. Boyarin's argument: Daniel 7 is the Hebrew-canon SEED of the Christianized particularization Christianity later achieves. See [[theme-two-powers-in-heaven]]"
 status: "full"
+citation-audited: "2026-06-04"
 preservation: "Hebrew-Aramaic Masoretic text + Old Greek (LXX) and Theodotion-Greek (the version the Christian church preferred, displacing the OG); Qumran witnesses (1QDanᵃ, 4QDanᵃ⁻ᵉ, etc.) confirm the Hebrew-Aramaic text by ~-125."
 refs:
   - title: "Daniel: A Commentary on the Book of Daniel"

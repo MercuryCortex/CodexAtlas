@@ -24,6 +24,7 @@ influences: ["Second-Temple messianic literature", "Synoptic Gospels (Mark 1:2�
 deities-mentioned: ["[[yahweh]]"]
 events-context: ["Babylonian exile (586–539 BCE)", "Cyrus's conquest of Babylon (539 BCE) and Edict of Restoration (538 BCE)", "Second Temple period beginnings"]
 status: "full"
+citation-audited: "2026-06-04"
 preservation: "Hebrew Bible textual tradition (Masoretic Text) + Septuagint Greek (~-200) + Great Isaiah Scroll from Qumran (1QIsaᵃ, ~-125, complete) — one of the best-attested books of the Hebrew Bible."
 refs:
   - title: "Isaiah 40–55: A New Translation with Introduction and Commentary"

@@ -40,6 +40,7 @@ hub-edges:
     type: "Gnostic-text-of-binitarian-cosmology"
     source: "Boyarin 2004 *Border Lines*; Segal 1977 *Two Powers in Heaven*; King 2006 — the Sethian cosmogony (Monad + Barbelo-Mother + Christ-Autogenes) is one of the developed binitarian/triadic divine-cosmologies that the rabbinic 'two powers' polemic responds to. The Monad-Barbelo-Christ structure is structurally parallel to the Two-Powers binitarianism Boyarin documents in Second Temple Judaism. See [[theme-two-powers-in-heaven]]"
 status: "full"
+citation-audited: "2026-06-04"
 preservation: "Four Coptic copies — three from Nag Hammadi (NHC II, III, IV) and one from the Berlin Codex (BG 8502,2) acquired 1896. Survives in a 'short recension' (BG, NHC III) and 'long recension' (NHC II, IV) — the long version is roughly one-third longer and includes the Melothesia (a treatise on the demonic origin of body parts) and a long monologue of Pronoia at the end. Comparison gives an exceptionally clear window onto Gnostic textual transmission."
 refs:
   - title: "The Apocryphon of John: Synopsis of Nag Hammadi Codices II,1; III,1; and IV,1 with BG 8502,2"

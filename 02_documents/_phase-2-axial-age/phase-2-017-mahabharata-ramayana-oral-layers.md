@@ -24,6 +24,7 @@ influences: ["all subsequent Hindu literature", "[[phase-2-027-bhagavad-gita]] (
 deities-mentioned: ["[[indra]]", "[[agni]]", "[[varuna]]", "[[rudra-shiva-early]]"]
 events-context: []
 status: "full"
+citation-audited: "2026-06-04"
 preservation: "Mahābhārata: ~100,000 verses (the longest poem in the world); Rāmāyaṇa: ~24,000 verses. Both grew by oral accretion over ~800 years before stabilization. Critical editions: Mahābhārata — Bhandarkar Oriental Research Institute (Sukthankar et al., 1933–1966, 19 vols.); Rāmāyaṇa — Baroda critical edition (1960–1975). Oldest manuscripts ~10th–13th c. CE."
 refs:
   - title: "The Mahābhārata, critical edition"

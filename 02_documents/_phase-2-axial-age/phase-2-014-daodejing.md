@@ -24,6 +24,7 @@ influences: ["[[phase-2-022-zhuangzi]]", "[[phase-2-026-han-feizi]] (earliest po
 deities-mentioned: []
 events-context: ["Warring States period (-475 to -221), the philosophical Hundred Schools"]
 status: "full"
+citation-audited: "2026-06-04"
 preservation: "Multiple recensions: (1) the received text (the Wang Bi recension ~250 CE), 81 chapters in two parts (Dao chs. 1–37, De chs. 38–81); (2) the Mawangdui silk manuscripts (Hunan, excavated 1973), two copies dated ~-200 BCE, with De before Dao; (3) the Guodian bamboo slips (Hubei, excavated 1993), ~-300 BCE, a partial earlier version (~2,000 characters vs. the full ~5,000) that may represent the oldest recoverable layer."
 refs:
   - title: "Tao Te Ching: A New Translation Based on the Recently Discovered Ma-wang-tui Texts"

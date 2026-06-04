@@ -24,6 +24,7 @@ influences: ["All NT scripture-quotation (LXX is the Bible Paul, Luke, etc. quot
 deities-mentioned: ["[[yahweh]] (rendered Kyrios)"]
 events-context: ["Ptolemy II Philadelphus's reign (-285/-246)", "Establishment of the Library of Alexandria", "Growth of Greek-speaking Jewish diaspora"]
 status: "full"
+citation-audited: "2026-06-04"
 preservation: "Earliest fragments are Dead Sea Scrolls' Greek mss (4QLXXLev^a, 7Q1 papLXXExod, etc., ~-150/-50) and Papyrus Fouad 266 (Deut, ~-100). The great Christian codices preserve it complete: **Codex Vaticanus** (B, ~+325), **Codex Sinaiticus** (ℵ, ~+350), **Codex Alexandrinus** (A, ~+450). Critical edition: Göttingen Septuagint (in progress since 1931)."
 refs:
   - title: "A New English Translation of the Septuagint (NETS)"

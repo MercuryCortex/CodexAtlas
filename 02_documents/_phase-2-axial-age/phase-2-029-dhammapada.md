@@ -24,6 +24,7 @@ influences: ["all subsequent Buddhist verse anthologies", "the most-translated B
 deities-mentioned: []
 events-context: []
 status: "full"
+citation-audited: "2026-06-04"
 preservation: "Pali recension preserved in the Khuddaka Nikāya of the Pali canon, redacted at the Aluvihāra in Sri Lanka ~-29 BCE. Gandhāran Dharmapada (Khotan, discovered 1892, Brough 1962) is the oldest physical manuscript witness, ~1st-2nd c. CE in Kharosthi script. Multiple Sanskrit recensions partially preserved (Patna Dharmapada; Udānavarga). Translated to Chinese repeatedly from 224 CE (T 210 *Faju jing*, by Vighna and Zhu Jiangyan) through the Tang. Translated to Tibetan as part of the Kangyur. The most-translated single Buddhist text in modern world languages (>80 modern languages)."
 refs:
   - title: "The Dhammapada: A New Translation"

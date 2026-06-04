@@ -24,6 +24,7 @@ influences: ["Philo of Alexandria (logos)", "Gospel of John prologue (logos)", "
 deities-mentioned: ["[[zeus]]", "[[logos-stoic]]"]
 events-context: ["Founding of the Stoa (~-300)", "Stoic influence on Roman aristocracy (Scipionic circle, ~-150)", "Stoic opposition to early emperors (Helvidius Priscus, Thrasea Paetus)"]
 status: "full"
+citation-audited: "2026-06-04"
 preservation: "Old Stoa entirely lost as continuous texts; survives in **fragments** quoted by later authors (Diogenes Laertius VII, Cicero, Plutarch, Galen, Stobaeus, Sextus Empiricus). Cleanthes' *Hymn to Zeus* survives complete in Stobaeus. Seneca's letters and treatises survive substantially in Latin manuscripts (Codex Ambrosianus, etc.). Epictetus's *Discourses* and *Encheiridion* preserved by his student Arrian. Modern fragment collections: von Arnim *SVF* (1903–24); Long & Sedley *The Hellenistic Philosophers* (1987)."
 refs:
   - title: "The Hellenistic Philosophers"

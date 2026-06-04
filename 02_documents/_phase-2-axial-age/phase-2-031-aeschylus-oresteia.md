@@ -48,6 +48,7 @@ deities-mentioned:
   - "[[gaia]]"
 events-context: []
 status: "full"
+citation-audited: "2026-06-04"
 preservation: "Continuous Byzantine manuscript transmission. *Oresteia* is one of the 7 Aeschylean plays preserved through the Byzantine 'select' tradition. Earliest extant mss c. 10th-11th c. First printed in the Aldine *Aeschylus* of 1518"
 refs:
   - title: "Aeschylus: Oresteia"

@@ -14,6 +14,7 @@ authorship: "anonymous"
 tradition: "syncretic (Egyptian + Greek + Jewish + Gnostic + early Christian)"
 canonical-corpus: ["mystery-cults-corpus"]
 status: "full"
+citation-audited: "2026-06-04"
 refs:
   - title: "The Greek Magical Papyri in Translation, Including the Demotic Spells"
     author: "Betz, Hans Dieter (ed.)"

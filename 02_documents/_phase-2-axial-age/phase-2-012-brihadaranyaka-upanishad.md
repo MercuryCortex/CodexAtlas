@@ -24,6 +24,7 @@ influences: ["all subsequent Vedānta", "Buddhist and Jain ascetic traditions (s
 deities-mentioned: ["[[prajapati]]", "[[indra]]", "[[agni]]", "[[varuna]]"]
 events-context: []
 status: "full"
+citation-audited: "2026-06-04"
 preservation: "Forms the closing portion (final six chapters) of the Śatapatha Brāhmaṇa (Mādhyandina recension); the Kāṇva recension preserves it as a standalone text. Continuous oral transmission; medieval manuscripts."
 refs:
   - title: "The Early Upaniṣads: Annotated Text and Translation"

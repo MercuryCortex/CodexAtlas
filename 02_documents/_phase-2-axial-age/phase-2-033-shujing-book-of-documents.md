@@ -26,6 +26,7 @@ deities-mentioned: ["[[shangdi]]", "[[tian-heaven]]"]
 attested-in: ["[[tradition-confucianism]]", "[[tradition-daoism]]"]
 events-context: ["Zhou conquest of Shang (~-1046)", "Western Zhou (-1046 to -771)"]
 status: "full"
+citation-audited: "2026-06-04"
 preservation: "Two ancient recensions: (1) *Jinwen* 今文 'New Text' — 28 (or 29) chapters in clerical script, transmitted orally by Fu Sheng (~-200 CE) after the Qin book-burnings (-213) and committed to writing early Han; widely accepted as containing the most authentic ancient strata. (2) *Guwen* 古文 'Old Text' — 25 additional chapters, ostensibly recovered from a wall of Confucius's former house, transmitted as part of the standard text from the 4th c. CE; now widely regarded as a 3rd-4th c. CE forgery (argued most decisively by Qing scholar Yan Ruoqu, *Shangshu guwen shuzheng*, 1745). The Tsinghua bamboo slips (acquired 2008, ~-300 BCE) preserve early versions of several chapters — including an early *Bao Xun* ('Treasured Instructions') — and have re-opened the textual-history debate."
 refs:
   - title: "The Shoo King, or The Book of Historical Documents"

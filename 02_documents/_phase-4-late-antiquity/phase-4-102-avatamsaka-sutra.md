@@ -24,6 +24,7 @@ influences: ["[[fazang]] (643-712, Huayan systematizer; *Treatise on the Golden 
 deities-mentioned: ["[[manjushri]]", "[[samantabhadra-buddha]]", "[[vairocana]]"]
 events-context: []
 status: "full"
+citation-audited: "2026-06-04"
 preservation: "The Sanskrit original is largely lost. Two long sections survive in Sanskrit: the *Daśabhūmika* (Ten Bhūmis / Stages of the Bodhisattva Path) and the *Gaṇḍavyūha* (Sudhana's pilgrimage, the final book). The other ~36 chapters survive only in Chinese and Tibetan translation. Three Chinese recensions: (1) Buddhabhadra's 60-fascicle translation, 418-420 CE, 34 chapters; (2) Śikṣānanda's 80-fascicle translation, 695-699 CE, 39 chapters (the East Asian standard); (3) Prajñā's 40-fascicle translation, 795-798 CE, which renders only the Gaṇḍavyūha but in expanded form. Tibetan translation: Surendrabodhi and Yeshes-sde, ~9th c., 45 chapters."
 refs:
   - title: "The Flower Ornament Scripture: A Translation of the Avataṃsaka Sūtra"

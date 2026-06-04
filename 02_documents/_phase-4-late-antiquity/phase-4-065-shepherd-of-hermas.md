@@ -24,6 +24,7 @@ influences: ["Roman penitential practice (the controversial 'one post-baptismal 
 deities-mentioned: ["[[yahweh|the Father]]", "[[jesus-christ-deity|the Son]]", "Holy Spirit (with distinctive Hermas-style angelomorphic Christology)"]
 events-context: ["The Pius I episcopate at Rome (~+140/+155) — *Muratorian Fragment* says Hermas wrote 'while his brother Pius was occupying the bishop's seat'"]
 status: "full"
+citation-audited: "2026-06-04"
 preservation: "Complete Greek text recovered piecemeal: **Codex Sinaiticus** (mid-4th c., partial — first Visions through Mandate 4); **Codex Athous** (14th-c., the Mount Athos Lavra manuscript — discovered 1855, complete through Sim. 9.30); **Papyrus Bodmer 38** (4th c., Greek); **P. Michigan 129** (3rd c.); **P. Oxy.** fragments. The complete Greek text is reconstructed from these plus Old Latin (the *Vulgata* and *Palatina* versions) and Ethiopic versions."
 refs:
   - title: "The Apostolic Fathers, vol. 2 (Loeb)"

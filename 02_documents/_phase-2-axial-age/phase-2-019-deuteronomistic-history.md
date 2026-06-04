@@ -24,6 +24,7 @@ influences: ["the Chronicler's History (1-2 Chronicles, Ezra-Nehemiah — a part
 deities-mentioned: ["[[yahweh]]", "[[baal-hadad]]", "[[asherah]]", "[[el-elohim-hebrew]]"]
 events-context: ["the Josianic reform (-622 BCE)", "the fall of the Northern Kingdom to Assyria (722 BCE)", "Josiah's death at Megiddo (-609 BCE)", "the fall of Jerusalem and the First Temple to Babylon (-586 BCE)", "the Babylonian Exile (~-586 to -538)"]
 status: "full"
+citation-audited: "2026-06-04"
 preservation: "The DtrH as identified by Noth 1943 comprises the four-book historical compilation Joshua–Judges–Samuel–Kings (counted as four books in the Hebrew canon, the *Former Prophets* / *Nevi'im Rishonim*), unified by Deuteronomistic theological framing, recurring formulaic speeches at major junctures (Joshua 23, 1 Samuel 12, 1 Kings 8, the editorial summaries on each Israelite king), and a coherent retrospective theological narrative explaining the 722 fall of Samaria and the 586 fall of Jerusalem as divine judgment on covenant-breaking. Continuous Jewish manuscript tradition. Substantial material preserved in the Dead Sea Scrolls (4QJosh, 4QJudg, 4QSam — the Samuel scrolls being especially important text-critically, showing a Hebrew Vorlage closer to the LXX than the MT for parts of Samuel). The LXX preserves a partly independent Greek translation tradition. The Chronicler (1-2 Chronicles) provides a partial parallel-tradition rewriting of DtrH from a different theological perspective."
 refs:
   - title: "Überlieferungsgeschichtliche Studien (The Deuteronomistic History)"

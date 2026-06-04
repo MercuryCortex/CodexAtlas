@@ -24,6 +24,7 @@ influences: ["the whole devotional (bhakti) tradition of Rāma and Hanumān acro
 deities-mentioned: ["[[rama]]", "[[vishnu]]", "[[hanuman]]"]
 events-context: ["The post-Vedic crystallization of dharma and the classical Hindu synthesis", "The rise of Viṣṇu-avatar theology and Rāma-bhakti", "The eastward and southeastward spread of Indic culture (Greater India)"]
 status: "full"
+citation-audited: "2026-06-04"
 preservation: "The standard scholarly text is the critical edition of the Oriental Institute, Baroda (1960–1975), reconstructed from northern and southern recensions that diverge considerably. With ~24,000 verses in seven books (kāṇḍas) it is roughly a quarter the length of the Mahābhārata. Translated in the ongoing Princeton edition (Goldman et al., 1984– )."
 refs:
   - title: "The Rāmāyaṇa of Vālmīki: An Epic of Ancient India (Princeton translation, 7 vols.)"

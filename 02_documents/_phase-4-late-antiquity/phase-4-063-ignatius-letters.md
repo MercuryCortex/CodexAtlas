@@ -23,6 +23,7 @@ influences: ["[[phase-4-066-polycarp-philippians]] (Pol. *Phil.* 13 confirms rec
 deities-mentioned: ["[[jesus-christ-deity|Jesus Christ (consistently called *theos*)]]", "the Father", "the Holy Spirit"]
 events-context: ["Ignatius's arrest and transport from Antioch to Rome for execution under Trajan (~+107/+110)"]
 status: "full"
+citation-audited: "2026-06-04"
 preservation: "Three recensions: (a) **short** (Syriac, 3 letters — abbreviated); (b) **middle** (Greek, 7 letters — the authentic original; preserved principally in **Codex Mediceo-Laurentianus 57.7** (11th c.) for six letters and **Codex Colbertinus 460** for *To the Romans*); (c) **long** (Greek, 13 letters with interpolations — 4th-c. pseudo-Ignatian expansion). Lightfoot 1885 settled the consensus on the middle recension. Also Latin, Armenian, Arabic, Coptic versions."
 refs:
   - title: "The Apostolic Fathers, vol. 1 (Loeb)"

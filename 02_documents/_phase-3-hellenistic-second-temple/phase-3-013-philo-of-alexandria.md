@@ -24,6 +24,7 @@ influences: ["Gospel of John's Logos prologue (direct or shared-milieu)", "Patri
 deities-mentioned: ["[[yahweh]]", "[[logos-philonic]]", "[[wisdom-personified]]", "[[demiurge-platonic]]"]
 events-context: ["Embassy of Philo to Caligula (~+40 CE) on behalf of Alexandrian Jews — described in *Embassy to Gaius* and *Flaccus*", "Alexandrian pogrom (~+38)"]
 status: "full"
+citation-audited: "2026-06-04"
 preservation: "Roughly 50 surviving works (~30 main treatises plus fragments) preserved through Christian transmission — Eusebius compiled and praised Philo, ensuring Greek mss were copied throughout the Byzantine period. Some works survive only in Armenian translation (esp. *Quaestiones in Genesim et Exodum*). Modern critical edition: Cohn-Wendland (1896–1915, Berlin)."
 refs:
   - title: "The Works of Philo (Loeb Classical Library, 12 vols.)"

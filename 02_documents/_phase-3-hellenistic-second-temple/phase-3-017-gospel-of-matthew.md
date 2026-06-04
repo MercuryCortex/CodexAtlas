@@ -24,6 +24,7 @@ influences: ["All subsequent Christian liturgy and lectionary (Matthew is the mo
 deities-mentioned: ["[[yahweh]]", "[[jesus-of-nazareth]]"]
 events-context: ["Post-70 CE Judaism: Yavneh and emerging rabbinic Judaism", "Conflict between Christian and synagogue Jewish communities in Syria"]
 status: "full"
+citation-audited: "2026-06-04"
 preservation: "Earliest fragmentary witness: P64/67 (~+200). Earliest substantial: P45 (~+250), P66 (Bodmer II, ~+200, mostly John but includes Matthean fragments). Complete: Codex Vaticanus (B, ~+325), Sinaiticus (ℵ, ~+350)."
 refs:
   - title: "The Gospel According to Matthew (Anchor Yale Bible 26)"

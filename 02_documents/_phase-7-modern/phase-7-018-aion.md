@@ -24,6 +24,7 @@ influences: ["[[phase-7-019-mysterium-coniunctionis]]", "Jungian Christology (Ed
 deities-mentioned: ["Christ (read as Self-symbol)", "Antichrist (the shadow of the Christ-symbol)", "[[yaldabaoth]] (Jung discusses Gnostic Christology)"]
 events-context: ["[[event-nag-hammadi-discovery]] (Jung-relevant: Jung Codex 1952 purchase)"]
 status: "full"
+citation-audited: "2026-06-04"
 preservation: "Continuous since 1951; CW vol. 9 part 2 (Princeton/Bollingen 1968, R.F.C. Hull trans.)."
 refs:
   - title: "Aion (CW 9.2)"

@@ -24,6 +24,7 @@ influences: ["Chinese Faxiang school (Yogācāra)", "Chan/Zen lineage (the 'La�
 deities-mentioned: []
 events-context: []
 status: "full"
+citation-audited: "2026-06-04"
 preservation: "Sanskrit text in Nepalese manuscript tradition (the Sanskrit was edited by Bunyiu Nanjio, 1923, *Bibliotheca Otaniensis* I). Three Chinese translations: (1) Guṇabhadra, 443 CE, 4 fascicles — the shortest and earliest; the Chan-tradition's preferred recension; (2) Bodhiruci, 513 CE, 10 fascicles, longer recension; (3) Śikṣānanda, 700-704 CE, 7 fascicles, the most polished Chinese version. Tibetan translation by ~9th c. The 4-fascicle Guṇabhadra recension is the one the Chan tradition (the so-called 'Laṅkāvatāra Masters') took as foundational."
 refs:
   - title: "The Laṅkāvatāra Sūtra: A Mahāyāna Text"

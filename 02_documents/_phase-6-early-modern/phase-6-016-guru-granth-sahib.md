@@ -24,6 +24,7 @@ influences: ["[[tradition-sikhism]]", "Dasam Granth", "Punjabi literary and musi
 deities-mentioned: ["Ek Onkar (One Divine Reality)", "Vahiguru", "Ram, Hari, Allah, Khuda (used non-confessionally as names for the One)"]
 events-context: ["Founding of Sikh Panth by Guru Nanak ~1499", "Compilation under Guru Arjan 1604", "Guru Arjan's execution by Jahangir 1606", "Closing of canon by Guru Gobind Singh 1708"]
 status: "full"
+citation-audited: "2026-06-04"
 preservation: "Original 1604 compilation (the *Adi Bir* or *Kartarpur Bir*) was prepared by Guru Arjan with the scribe Bhai Gurdas at Ramsar near Amritsar and installed at the Harmandir Sahib in August 1604. The *Kartarpur Bir* manuscript survives at the Sodhi family of Kartarpur (though its ownership and authenticity have been contested in Sikh-internal scholarly disputes). The final form, the *Damdami Bir*, was prepared by Guru Gobind Singh in 1705–1706 (incorporating Guru Tegh Bahadur's compositions) and re-installed in 1708; this is the version standard today. 1430 pages in standard pagination. Continuous active liturgical use; the Granth is itself the eleventh and eternal Guru since 1708."
 refs:
   - title: "Sri Guru Granth Sahib, Translation"

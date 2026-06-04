@@ -24,6 +24,7 @@ influences: ["the whole of later Hindu religion, ethics, and narrative (the supr
 deities-mentioned: ["[[krishna]]", "[[vishnu]]", "[[shiva]]"]
 events-context: ["The post-Vedic crystallization of dharma-śāstra and the classical Hindu synthesis", "The Gupta-era redaction of the epic into its received form", "The rise of Kṛṣṇa-Vāsudeva devotion and the avatar theology"]
 status: "full"
+citation-audited: "2026-06-04"
 preservation: "The standard scholarly text is the great critical edition of the Bhandarkar Oriental Research Institute (Pune, 1933–1966), constructed from hundreds of manuscripts in many scripts (the critically-constituted text runs to ~89,000 verses; the traditional/vulgate figure is ~100,000); the earliest substantial manuscripts are mid-first-millennium CE. It is among the longest poems in world literature — at the traditional count roughly seven times the Iliad and Odyssey combined."
 refs:
   - title: "The Mahābhārata (translation, 3 vols. of a projected complete edition)"

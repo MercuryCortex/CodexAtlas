@@ -26,6 +26,7 @@ deities-mentioned: ["[[shangdi]]", "[[tian-heaven]]"]
 attested-in: ["[[tradition-confucianism]]", "[[tradition-daoism]]"]
 events-context: ["Western Zhou (-1046 to -771)", "Spring and Autumn period (-770 to -476)"]
 status: "full"
+citation-audited: "2026-06-04"
 preservation: "305 poems in four sections: (1) *Guo Feng* 國風 ('Airs of the States', 160 poems, regional folk songs from 15 Zhou states); (2) *Xiao Ya* 小雅 ('Lesser Court Hymns', 74 poems); (3) *Da Ya* 大雅 ('Greater Court Hymns', 31 poems, including foundational Zhou dynastic hymns); (4) *Song* 頌 ('Hymns', 40 ritual songs for Zhou, Lu, and Shang ancestor rites). Four Han-period transmission schools (Mao, Qi, Lu, Han); only the Mao recension survives complete, with Mao's prefaces and the Zheng Xuan (~200 CE) commentarial tradition. Excavated bamboo-slip witnesses: Fuyang Han slips (~-165), Shanghai Museum slips (~-300, Warring States — including the *Kongzi Shilun* discussion-of-the-Shijing text), Tsinghua slips, and Anhui University slips."
 refs:
   - title: "The Book of Odes (Shih Ching)"

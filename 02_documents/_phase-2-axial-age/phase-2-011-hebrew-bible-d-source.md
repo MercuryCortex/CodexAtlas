@@ -24,6 +24,7 @@ influences: ["the Deuteronomistic History (Joshua–2 Kings)", "Jeremiah", "all 
 deities-mentioned: ["[[yahweh]]"]
 events-context: ["Josianic reform (~-622 BCE) — 'finding' of the Book of the Law in the Temple (2 Kings 22)"]
 status: "full"
+citation-audited: "2026-06-04"
 preservation: "The reconstructed Ur-Deuteronomium corresponds approximately to Deuteronomy 12–26 (the legal core), surrounded by later Deuteronomistic framing (chs. 1–11, 27–34). Continuous Jewish manuscript tradition. Dead Sea Scrolls preserve substantial Deuteronomy material (4QDeut^n, etc.)."
 refs:
   - title: "Deuteronomy 1–11 / Deuteronomy 12–36"
