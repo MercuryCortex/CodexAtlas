@@ -1,0 +1,217 @@
+{
+ "generatedAt": "2026-06-05",
+ "indexedSlugs": 5191,
+ "neighborhoodsWhole": true,
+ "neighborhoods": [
+  {
+   "id": "the-deep",
+   "label": "The Deep / primordial waters & void (Genesis 1:2 tehom across traditions)",
+   "whole": true,
+   "present": 22,
+   "total": 22,
+   "missing": {}
+  }
+ ],
+ "topDemand": [
+  {
+   "refs": 13,
+   "target": "julius-caesar"
+  },
+  {
+   "refs": 10,
+   "target": "tradition-vaishnavism"
+  },
+  {
+   "refs": 2,
+   "target": "ancestral-beings"
+  },
+  {
+   "refs": 2,
+   "target": "ancestral-pact"
+  },
+  {
+   "refs": 2,
+   "target": "andean-cosmogony"
+  },
+  {
+   "refs": 2,
+   "target": "anthropogony"
+  },
+  {
+   "refs": 2,
+   "target": "anti-jesuit-resistance"
+  },
+  {
+   "refs": 2,
+   "target": "anti-stephanite-polemic"
+  },
+  {
+   "refs": 2,
+   "target": "apocalyptic-tradition"
+  },
+  {
+   "refs": 2,
+   "target": "apocalypticism"
+  },
+  {
+   "refs": 2,
+   "target": "apophasis"
+  },
+  {
+   "refs": 2,
+   "target": "apostle-philip"
+  },
+  {
+   "refs": 2,
+   "target": "bering-strait-migration"
+  },
+  {
+   "refs": 2,
+   "target": "buddha"
+  },
+  {
+   "refs": 2,
+   "target": "canon-tables"
+  },
+  {
+   "refs": 2,
+   "target": "ceremonial-restoration"
+  },
+  {
+   "refs": 2,
+   "target": "christian-legal-codes"
+  },
+  {
+   "refs": 2,
+   "target": "cosmogony"
+  },
+  {
+   "refs": 2,
+   "target": "cosmogony-cosmic-egg"
+  },
+  {
+   "refs": 2,
+   "target": "cosmological-bifurcation"
+  },
+  {
+   "refs": 2,
+   "target": "creation-by-song"
+  },
+  {
+   "refs": 2,
+   "target": "creation-emergence"
+  },
+  {
+   "refs": 2,
+   "target": "creator-trickster"
+  },
+  {
+   "refs": 2,
+   "target": "destiny-doctrine"
+  },
+  {
+   "refs": 2,
+   "target": "disputed-historicity"
+  },
+  {
+   "refs": 2,
+   "target": "divination-systems"
+  },
+  {
+   "refs": 2,
+   "target": "divinatory-systems"
+  },
+  {
+   "refs": 2,
+   "target": "divine-intoxication"
+  },
+  {
+   "refs": 2,
+   "target": "dying-and-rising-god"
+  },
+  {
+   "refs": 2,
+   "target": "ecclesiastical-canon-law"
+  },
+  {
+   "refs": 2,
+   "target": "eclipse-prediction"
+  },
+  {
+   "refs": 2,
+   "target": "ethiopian-anti-catholic-polemic"
+  },
+  {
+   "refs": 2,
+   "target": "evangelist-portraits"
+  },
+  {
+   "refs": 2,
+   "target": "event-aleister-crowley-boca-do-inferno-1930"
+  },
+  {
+   "refs": 2,
+   "target": "event-coronation-of-charlemagne-800"
+  },
+  {
+   "refs": 2,
+   "target": "event-hussein-karbala-680"
+  },
+  {
+   "refs": 2,
+   "target": "event-second-council-of-nicaea-787"
+  },
+  {
+   "refs": 2,
+   "target": "fana-annihilation"
+  },
+  {
+   "refs": 2,
+   "target": "fate-and-doom"
+  },
+  {
+   "refs": 2,
+   "target": "fatima-al-zahra"
+  },
+  {
+   "refs": 2,
+   "target": "fear-of-the-lord"
+  },
+  {
+   "refs": 2,
+   "target": "female-monasticism"
+  },
+  {
+   "refs": 2,
+   "target": "forgery-and-fabrication"
+  },
+  {
+   "refs": 2,
+   "target": "gatumdug"
+  },
+  {
+   "refs": 2,
+   "target": "genesis-5-antediluvian-patriarchs"
+  },
+  {
+   "refs": 2,
+   "target": "golden-age-decline"
+  },
+  {
+   "refs": 2,
+   "target": "grail-cathar-connection"
+  },
+  {
+   "refs": 2,
+   "target": "hakimiyyah"
+  },
+  {
+   "refs": 2,
+   "target": "hero-twins"
+  },
+  {
+   "refs": 2,
+   "target": "heroic-cycle"
+  }
+ ]
+}
