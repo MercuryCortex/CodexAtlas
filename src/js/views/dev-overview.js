@@ -227,6 +227,22 @@
     const demand = (w.topDemand || []).slice(0, 12).map(x =>
       '<li class="dev-overview-cell-sub"><strong>' + x.refs + '×</strong> '
       + escapeHtml(x.target) + '</li>').join('');
+    const rosterRows = (w.rosters || []).map(r => {
+      const band = r.pct >= 100 ? 'rich' : (r.pct >= 80 ? 'developing' : 'anemic');
+      return ''
+        + '<tr class="dev-overview-row dev-overview-row--' + band + '">'
+        +   '<td class="dev-overview-col-label">'
+        +     '<div class="dev-overview-cell-main">' + escapeHtml(r.tradition) + '</div>'
+        +     (r.missing && r.missing.length
+              ? '<div class="dev-overview-cell-sub">missing — ' + escapeHtml(r.missing.join(', ')) + '</div>' : '')
+        +   '</td>'
+        +   '<td class="dev-overview-col-num">' + r.present + '<span class="dev-overview-stat-unit">/' + r.total + '</span></td>'
+        +   '<td class="dev-overview-col-num">' + r.pct + '%</td>'
+        +   '<td class="dev-overview-col-band">'
+        +     '<span class="dev-overview-band-pill" data-band="' + band + '">' + (r.pct >= 100 ? 'COMPLETE' : r.pct + '%') + '</span>'
+        +   '</td>'
+        + '</tr>';
+    }).join('');
     return ''
       + '<section class="dev-overview-section dev-overview-summary">'
       +   '<h2 class="dev-overview-section-h">🔗 Completeness — wire-endpoint coverage '
@@ -246,6 +262,14 @@
       +       '<tbody>' + rows + '</tbody>'
       +     '</table>'
       +   '</div>'
+      +   (rosterRows
+        ? '<div class="dev-overview-cell-sub"><strong>Pantheon roster coverage</strong> — authoritative deity lists, headwaters first (the only bar that sees a god nobody has linked yet):</div>'
+          + '<div class="dev-overview-table-wrap"><table class="dev-overview-table">'
+          + '<thead><tr><th>Tradition pantheon</th>'
+          + '<th class="dev-overview-col-num">Present</th>'
+          + '<th class="dev-overview-col-num">%</th><th>Status</th></tr></thead>'
+          + '<tbody>' + rosterRows + '</tbody></table></div>'
+        : '')
       +   (demand
         ? '<div class="dev-overview-cell-sub"><strong>Top demand</strong> — referenced but missing (the investigation\'s most-wanted next nodes):</div>'
           + '<ul class="dev-overview-demand-list">' + demand + '</ul>'

@@ -1,6 +1,6 @@
 {
  "generatedAt": "2026-06-05",
- "indexedSlugs": 5191,
+ "indexedSlugs": 14892,
  "neighborhoodsWhole": true,
  "neighborhoods": [
   {
@@ -10,6 +10,32 @@
    "present": 22,
    "total": 22,
    "missing": {}
+  }
+ ],
+ "rosters": [
+  {
+   "tradition": "Mesopotamian (Sumerian/Akkadian/Babylonian/Assyrian)",
+   "present": 59,
+   "total": 75,
+   "pct": 78,
+   "missing": [
+    "Aya / Sherida",
+    "Haya",
+    "Shara",
+    "Ishtaran",
+    "Nanaya",
+    "Damu",
+    "Lahar (cattle)",
+    "Ashnan / Ezina (grain)",
+    "Enkimdu",
+    "Enbilulu",
+    "Anzu (storm-bird)",
+    "Humbaba / Huwawa",
+    "Asag / Asakku",
+    "Tishpak",
+    "Anunnaki (collective)",
+    "Igigi (collective)"
+   ]
   }
  ],
  "topDemand": [
@@ -51,23 +77,11 @@
   },
   {
    "refs": 2,
-   "target": "apocalypticism"
-  },
-  {
-   "refs": 2,
-   "target": "apophasis"
-  },
-  {
-   "refs": 2,
    "target": "apostle-philip"
   },
   {
    "refs": 2,
    "target": "bering-strait-migration"
-  },
-  {
-   "refs": 2,
-   "target": "buddha"
   },
   {
    "refs": 2,
@@ -127,10 +141,6 @@
   },
   {
    "refs": 2,
-   "target": "dying-and-rising-god"
-  },
-  {
-   "refs": 2,
    "target": "ecclesiastical-canon-law"
   },
   {
@@ -171,10 +181,6 @@
   },
   {
    "refs": 2,
-   "target": "fatima-al-zahra"
-  },
-  {
-   "refs": 2,
    "target": "fear-of-the-lord"
   },
   {
@@ -207,11 +213,31 @@
   },
   {
    "refs": 2,
-   "target": "hero-twins"
+   "target": "heroic-cycle"
   },
   {
    "refs": 2,
-   "target": "heroic-cycle"
+   "target": "honor-of-fathers"
+  },
+  {
+   "refs": 2,
+   "target": "hozho-balance"
+  },
+  {
+   "refs": 2,
+   "target": "huaca-veneration"
+  },
+  {
+   "refs": 2,
+   "target": "illuminated-manuscript-art"
+  },
+  {
+   "refs": 2,
+   "target": "indigenous-historiography"
+  },
+  {
+   "refs": 2,
+   "target": "jahiliyyah"
   }
  ]
 }
