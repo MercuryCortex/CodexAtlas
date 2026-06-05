@@ -1,6 +1,6 @@
 {
  "generatedAt": "2026-06-05",
- "indexedSlugs": 14892,
+ "indexedSlugs": 14948,
  "neighborhoodsWhole": true,
  "neighborhoods": [
   {
@@ -15,26 +15,70 @@
  "rosters": [
   {
    "tradition": "Mesopotamian (Sumerian/Akkadian/Babylonian/Assyrian)",
-   "present": 59,
+   "present": 75,
    "total": 75,
-   "pct": 78,
+   "pct": 100,
+   "missing": []
+  },
+  {
+   "tradition": "Egyptian",
+   "present": 56,
+   "total": 60,
+   "pct": 93,
    "missing": [
-    "Aya / Sherida",
-    "Haya",
-    "Shara",
-    "Ishtaran",
-    "Nanaya",
-    "Damu",
-    "Lahar (cattle)",
-    "Ashnan / Ezina (grain)",
-    "Enkimdu",
-    "Enbilulu",
-    "Anzu (storm-bird)",
-    "Humbaba / Huwawa",
-    "Asag / Asakku",
-    "Tishpak",
-    "Anunnaki (collective)",
-    "Igigi (collective)"
+    "Seshat",
+    "Heka",
+    "Tatenen",
+    "Hu & Sia"
+   ]
+  },
+  {
+   "tradition": "Greek",
+   "present": 61,
+   "total": 70,
+   "pct": 87,
+   "missing": [
+    "Tartarus",
+    "Erebus",
+    "Charon",
+    "Epimetheus",
+    "Phoebe (Titan)",
+    "Coeus",
+    "Crius",
+    "Proteus",
+    "Ananke"
+   ]
+  },
+  {
+   "tradition": "Canaanite / Ugaritic / Phoenician",
+   "present": 18,
+   "total": 24,
+   "pct": 75,
+   "missing": [
+    "Shahar (dawn \u2014 Isa 14 Helel)",
+    "Shalim (dusk)",
+    "Yarikh (moon)",
+    "Horon",
+    "Kotharat",
+    "Pidray"
+   ]
+  },
+  {
+   "tradition": "Norse",
+   "present": 38,
+   "total": 48,
+   "pct": 79,
+   "missing": [
+    "Nanna (Baldr's wife)",
+    "Nott (night)",
+    "Dagr (day)",
+    "Vili & Ve",
+    "Buri",
+    "Bor",
+    "Nidhogg",
+    "Valkyries",
+    "Modi & Magni",
+    "Eir (healing)"
    ]
   }
  ],
