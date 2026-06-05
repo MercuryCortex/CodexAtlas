@@ -1,6 +1,6 @@
 {
  "generatedAt": "2026-06-05",
- "indexedSlugs": 14948,
+ "indexedSlugs": 14981,
  "neighborhoodsWhole": true,
  "neighborhoods": [
   {
@@ -51,17 +51,10 @@
   },
   {
    "tradition": "Canaanite / Ugaritic / Phoenician",
-   "present": 18,
+   "present": 24,
    "total": 24,
-   "pct": 75,
-   "missing": [
-    "Shahar (dawn \u2014 Isa 14 Helel)",
-    "Shalim (dusk)",
-    "Yarikh (moon)",
-    "Horon",
-    "Kotharat",
-    "Pidray"
-   ]
+   "pct": 100,
+   "missing": []
   },
   {
    "tradition": "Norse",
