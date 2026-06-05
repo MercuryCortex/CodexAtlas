@@ -91,8 +91,14 @@
       .then(r => r.ok ? r.json() : null).catch(() => null);
     const docBench = fetch('src/data/document-product-grade.json?_=' + Date.now(), { cache: 'no-store' })
       .then(r => r.ok ? r.json() : null).catch(() => null);
-    return Promise.all([health, bench, docBench]).then(([d, b, db]) => {
-      STATE.cache = d; STATE.bench = b; STATE.docBench = db; return d;
+    // The COMPLETENESS bar — wire-endpoint coverage (does the investigation's
+    // wiring have both ends?). Distinct from the product-grade QUALITY bars
+    // above, which are blind to a missing node. Rebuilt via
+    // `python3 scripts/audit_wire_coverage.py`.
+    const wireCov = fetch('src/data/wire-coverage.json?_=' + Date.now(), { cache: 'no-store' })
+      .then(r => r.ok ? r.json() : null).catch(() => null);
+    return Promise.all([health, bench, docBench, wireCov]).then(([d, b, db, wc]) => {
+      STATE.cache = d; STATE.bench = b; STATE.docBench = db; STATE.wireCov = wc; return d;
     });
   }
 
@@ -117,6 +123,7 @@
     body.innerHTML = [
       renderDeityBenchmark(STATE.bench),
       renderDocumentBenchmark(STATE.docBench),
+      renderWireCoverage(STATE.wireCov),
       renderSummary(d, overallPct, totalBaseline, lensBands),
       renderLenses(d.lenses),
       renderFamilies(d.families),
@@ -185,6 +192,64 @@
       +       '<tbody>' + rows + '</tbody>'
       +     '</table>'
       +   '</div>'
+      + '</section>';
+  }
+
+  // ── COMPLETENESS — WIRE-ENDPOINT COVERAGE ──────────────────────────────
+  // The SECOND bar. The product-grade benchmarks grade the nodes that EXIST and
+  // are blind to a MISSING node — so a cross-tradition wire can be unbuildable
+  // (one endpoint absent) while everything reads green. This measures whether
+  // the investigation's wiring has both ends. Data: src/data/wire-coverage.json
+  // (rebuilt via `python3 scripts/audit_wire_coverage.py`).
+  function renderWireCoverage(w) {
+    if (!w || !w.neighborhoods) return '';
+    const whole = w.neighborhoods.filter(n => n.whole).length;
+    const total = w.neighborhoods.length;
+    const allWhole = !!w.neighborhoodsWhole;
+    const rows = w.neighborhoods.map(n => {
+      const band = n.whole ? 'rich' : 'anemic';
+      const missTxt = n.whole ? '' : Object.keys(n.missing || {})
+        .map(k => k + ': ' + n.missing[k].join(', ')).join(' · ');
+      return ''
+        + '<tr class="dev-overview-row dev-overview-row--' + band + '">'
+        +   '<td class="dev-overview-col-label">'
+        +     '<div class="dev-overview-cell-main">' + escapeHtml(n.label) + '</div>'
+        +     (missTxt ? '<div class="dev-overview-cell-sub">missing — ' + escapeHtml(missTxt) + '</div>' : '')
+        +   '</td>'
+        +   '<td class="dev-overview-col-num">' + n.present
+        +     '<span class="dev-overview-stat-unit">/' + n.total + '</span></td>'
+        +   '<td class="dev-overview-col-band">'
+        +     '<span class="dev-overview-band-pill" data-band="' + band + '">'
+        +       (n.whole ? 'WHOLE' : 'BROKEN') + '</span>'
+        +   '</td>'
+        + '</tr>';
+    }).join('');
+    const demand = (w.topDemand || []).slice(0, 12).map(x =>
+      '<li class="dev-overview-cell-sub"><strong>' + x.refs + '×</strong> '
+      + escapeHtml(x.target) + '</li>').join('');
+    return ''
+      + '<section class="dev-overview-section dev-overview-summary">'
+      +   '<h2 class="dev-overview-section-h">🔗 Completeness — wire-endpoint coverage '
+      +     '<span class="dev-overview-h-hint">does the investigation\'s wiring have both ends? — not catalogue bookkeeping</span></h2>'
+      +   '<div class="dev-overview-stat-grid">'
+      +     stat(whole + '<span class="dev-overview-stat-unit">/' + total + '</span>', allWhole ? 'NEIGHBORHOODS WHOLE ✓' : 'neighborhoods whole')
+      +     stat(num(w.indexedSlugs), 'Node slugs indexed')
+      +     stat(escapeHtml(w.generatedAt || ''), 'As of')
+      +   '</div>'
+      +   '<div class="dev-overview-table-wrap">'
+      +     '<table class="dev-overview-table">'
+      +       '<thead><tr>'
+      +         '<th>Cross-tradition neighborhood</th>'
+      +         '<th class="dev-overview-col-num">Endpoints</th>'
+      +         '<th>Status</th>'
+      +       '</tr></thead>'
+      +       '<tbody>' + rows + '</tbody>'
+      +     '</table>'
+      +   '</div>'
+      +   (demand
+        ? '<div class="dev-overview-cell-sub"><strong>Top demand</strong> — referenced but missing (the investigation\'s most-wanted next nodes):</div>'
+          + '<ul class="dev-overview-demand-list">' + demand + '</ul>'
+        : '')
       + '</section>';
   }
 
