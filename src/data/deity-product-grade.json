@@ -1,6 +1,6 @@
 {
  "generatedAt": "2026-06-06",
- "totalDeities": 955,
+ "totalDeities": 962,
  "productGrade": true,
  "passCount": 9,
  "rowCount": 9,
@@ -26,7 +26,7 @@
    "key": "tradition",
    "label": "Has home tradition",
    "target": "100%",
-   "current": "955/955",
+   "current": "962/962",
    "ok": true,
    "detail": ""
   },
@@ -34,7 +34,7 @@
    "key": "dates",
    "label": "Has dates",
    "target": "100%",
-   "current": "955/955",
+   "current": "962/962",
    "ok": true,
    "detail": ""
   },

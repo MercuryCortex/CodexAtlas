@@ -351,6 +351,35 @@ ROSTERS = {
         ("Annapurna", ["annapurna"]), ("Nirrti", ["nirrti"]),
         ("Ardhanarishvara", ["ardhanarishvara"]),
     ],
+    "Mesoamerican (Aztec / Maya)": [
+        # Aztec
+        ("Huitzilopochtli", ["huitzilopochtli"]), ("Quetzalcoatl", ["quetzalcoatl"]),
+        ("Tezcatlipoca", ["tezcatlipoca"]), ("Tlaloc", ["tlaloc"]), ("Ehecatl", ["ehecatl"]),
+        ("Xipe Totec", ["xipe-totec"]), ("Xiuhtecuhtli", ["xiuhtecuhtli"]),
+        ("Mictlantecuhtli", ["mictlantecuhtli"]), ("Mictecacihuatl", ["mictecacihuatl"]),
+        ("Coatlicue", ["coatlicue"]), ("Coyolxauhqui", ["coyolxauhqui"]),
+        ("Chalchiuhtlicue", ["chalchiuhtlicue"]), ("Chicomecoatl", ["chicomecoatl"]),
+        ("Centeotl", ["centeotl"]), ("Mayahuel", ["mayahuel"]), ("Xochipilli", ["xochipilli"]),
+        ("Xochiquetzal", ["xochiquetzal"]), ("Tlazolteotl", ["tlazolteotl"]),
+        ("Tlaltecuhtli", ["tlaltecuhtli"]), ("Cipactli", ["cipactli"]), ("Tonatiuh", ["tonatiuh"]),
+        ("Tlahuizcalpantecuhtli", ["tlahuizcalpantecuhtli"]), ("Mixcoatl", ["mixcoatl"]),
+        ("Xolotl", ["xolotl"]), ("Itzpapalotl", ["itzpapalotl"]), ("Ometeotl", ["ometeotl"]),
+        ("Nanahuatzin", ["nanahuatzin"]), ("Tecciztecatl", ["tecciztecatl"]),
+        # Maya
+        ("Itzamna", ["itzamna"]), ("Kukulkan / Gucumatz", ["kukulkan"]),
+        ("Chaac", ["chaac", "chac"]), ("Kinich Ahau", ["kinich-ahau"]), ("Ixchel", ["ixchel"]),
+        ("Hunab Ku", ["hunab-ku"]), ("Kawil / Bolon Dzacab", ["kawil", "bolon-tzakab"]),
+        ("Ah Puch", ["ah-puch"]), ("Cizin", ["cizin"]), ("Camazotz", ["camazotz"]),
+        ("Yum Kaax", ["yum-kaax"]), ("Ek Chuah", ["ek-chuah"]), ("Huracan", ["huracan"]),
+        ("Hun Hunahpu", ["hun-hunahpu"]), ("Hunahpu", ["hunahpu"]), ("Xbalanque", ["ixbalanque"]),
+        ("Vucub Caquix", ["vucub-caquix"]), ("Xmucane & Xpiacoc", ["xmucane-xpiacoc"]),
+        ("Tepeu", ["tepeu"]), ("Ixtab", ["ixtab"]), ("Zipacna", ["zipacna"]),
+        ("Cabracan", ["cabracan"]),
+        # honest remaining gaps
+        ("Tonacatecuhtli", ["tonacatecuhtli"]), ("Metztli (moon)", ["metztli"]),
+        ("Patecatl", ["patecatl"]), ("Yacatecuhtli", ["yacatecuhtli"]),
+        ("Buluc Chabtan", ["buluc-chabtan"]),
+    ],
 }
 
 # ── 3. demand: referenced-but-missing slugs, ranked (linkcheck output) ───────

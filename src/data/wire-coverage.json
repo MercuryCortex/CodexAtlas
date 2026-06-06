@@ -1,6 +1,6 @@
 {
  "generatedAt": "2026-06-06",
- "indexedSlugs": 15125,
+ "indexedSlugs": 15156,
  "neighborhoodsWhole": true,
  "neighborhoods": [
   {
@@ -138,6 +138,18 @@
     "Bhaga",
     "Nirrti",
     "Ardhanarishvara"
+   ]
+  },
+  {
+   "tradition": "Mesoamerican (Aztec / Maya)",
+   "present": 51,
+   "total": 55,
+   "pct": 92,
+   "missing": [
+    "Metztli (moon)",
+    "Patecatl",
+    "Yacatecuhtli",
+    "Buluc Chabtan"
    ]
   }
  ],
