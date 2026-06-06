@@ -1,6 +1,6 @@
 {
- "generatedAt": "2026-06-05",
- "indexedSlugs": 14981,
+ "generatedAt": "2026-06-06",
+ "indexedSlugs": 15076,
  "neighborhoodsWhole": true,
  "neighborhoods": [
   {
@@ -22,32 +22,17 @@
   },
   {
    "tradition": "Egyptian",
-   "present": 56,
+   "present": 60,
    "total": 60,
-   "pct": 93,
-   "missing": [
-    "Seshat",
-    "Heka",
-    "Tatenen",
-    "Hu & Sia"
-   ]
+   "pct": 100,
+   "missing": []
   },
   {
    "tradition": "Greek",
-   "present": 61,
+   "present": 70,
    "total": 70,
-   "pct": 87,
-   "missing": [
-    "Tartarus",
-    "Erebus",
-    "Charon",
-    "Epimetheus",
-    "Phoebe (Titan)",
-    "Coeus",
-    "Crius",
-    "Proteus",
-    "Ananke"
-   ]
+   "pct": 100,
+   "missing": []
   },
   {
    "tradition": "Canaanite / Ugaritic / Phoenician",
@@ -58,21 +43,10 @@
   },
   {
    "tradition": "Norse",
-   "present": 38,
+   "present": 48,
    "total": 48,
-   "pct": 79,
-   "missing": [
-    "Nanna (Baldr's wife)",
-    "Nott (night)",
-    "Dagr (day)",
-    "Vili & Ve",
-    "Buri",
-    "Bor",
-    "Nidhogg",
-    "Valkyries",
-    "Modi & Magni",
-    "Eir (healing)"
-   ]
+   "pct": 100,
+   "missing": []
   }
  ],
  "topDemand": [
