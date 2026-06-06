@@ -129,6 +129,63 @@ NEIGHBORHOODS = {
             "Hindu": ["manu-vedic", "matsya"],
         },
     },
+    "underworld-descent": {
+        "label": "Descent to the underworld — the god/hero who goes down to the land of the dead and returns",
+        "endpoints": {
+            "Mesopotamian": ["inanna-sumerian", "ishtar-akkadian", "ereshkigal", "nergal", "dumuzi-tammuz"],
+            "Greek": ["persephone-greek", "demeter", "hades", "orpheus"],
+            "Egyptian": ["osiris", "isis-egyptian"],
+            "Norse": ["baldr", "hel", "nanna-norse"],
+            "Canaanite": ["baal", "mot"],
+            "hub": ["underworld-descent"],
+        },
+    },
+    "sacred-marriage": {
+        "label": "Sacred marriage (hieros gamos) — the divine wedding that secures fertility/order",
+        "endpoints": {
+            "Mesopotamian": ["inanna-sumerian", "dumuzi-tammuz"],
+            "Canaanite": ["yarikh", "nikkal-akkadian"],
+            "Greek": ["zeus", "hera"],
+            "Egyptian": ["osiris", "isis-egyptian"],
+            "Norse": ["freyr", "gerd", "njord", "skadi"],
+            "hub": ["sacred-marriage"],
+        },
+    },
+    "the-trickster": {
+        "label": "The trickster — the boundary-crossing culture-bringer who is both clever and a fool",
+        "endpoints": {
+            "Norse": ["loki"],
+            "Greek": ["hermes-greek", "prometheus"],
+            "Egyptian": ["set"],
+            "Mesopotamian": ["enki-ea"],
+            "West African": ["eshu", "anansi"],
+            "Native American": ["coyote", "raven-trickster"],
+            "Polynesian": ["maui-polynesian"],
+        },
+    },
+    "the-mother-goddess": {
+        "label": "The great mother-goddess — the divine feminine of earth, fertility, and origin",
+        "endpoints": {
+            "Mesopotamian": ["ninhursag", "inanna-sumerian"],
+            "Greek": ["gaia", "rhea", "demeter"],
+            "Anatolian": ["cybele"],
+            "Egyptian": ["isis-egyptian", "hathor"],
+            "Canaanite": ["asherah", "anat"],
+            "Hindu": ["durga", "parvati"],
+        },
+    },
+    "the-divine-smith": {
+        "label": "The divine smith — the craftsman-god who forges the gods' weapons and wonders",
+        "endpoints": {
+            "Greek": ["hephaestus"],
+            "Canaanite": ["kothar-wa-khasis"],
+            "Egyptian": ["ptah", "khnum"],
+            "Vedic": ["tvashtar"],
+            "Germanic": ["wayland-smith"],
+            "Celtic": ["goibniu"],
+            "Finnish": ["ilmarinen"],
+        },
+    },
 }
 
 # ── 2. PANTHEON ROSTERS (authoritative deity lists, headwaters first) ────────

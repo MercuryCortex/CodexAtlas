@@ -1,6 +1,6 @@
 {
  "generatedAt": "2026-06-06",
- "indexedSlugs": 15082,
+ "indexedSlugs": 15100,
  "neighborhoodsWhole": true,
  "neighborhoods": [
   {
@@ -49,6 +49,46 @@
    "whole": true,
    "present": 7,
    "total": 7,
+   "missing": {}
+  },
+  {
+   "id": "underworld-descent",
+   "label": "Descent to the underworld \u2014 the god/hero who goes down to the land of the dead and returns",
+   "whole": true,
+   "present": 17,
+   "total": 17,
+   "missing": {}
+  },
+  {
+   "id": "sacred-marriage",
+   "label": "Sacred marriage (hieros gamos) \u2014 the divine wedding that secures fertility/order",
+   "whole": true,
+   "present": 13,
+   "total": 13,
+   "missing": {}
+  },
+  {
+   "id": "the-trickster",
+   "label": "The trickster \u2014 the boundary-crossing culture-bringer who is both clever and a fool",
+   "whole": true,
+   "present": 10,
+   "total": 10,
+   "missing": {}
+  },
+  {
+   "id": "the-mother-goddess",
+   "label": "The great mother-goddess \u2014 the divine feminine of earth, fertility, and origin",
+   "whole": true,
+   "present": 12,
+   "total": 12,
+   "missing": {}
+  },
+  {
+   "id": "the-divine-smith",
+   "label": "The divine smith \u2014 the craftsman-god who forges the gods' weapons and wonders",
+   "whole": true,
+   "present": 8,
+   "total": 8,
    "missing": {}
   }
  ],
