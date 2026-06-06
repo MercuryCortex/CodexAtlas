@@ -1,6 +1,6 @@
 {
  "generatedAt": "2026-06-06",
- "indexedSlugs": 15076,
+ "indexedSlugs": 15082,
  "neighborhoodsWhole": true,
  "neighborhoods": [
   {
@@ -9,6 +9,46 @@
    "whole": true,
    "present": 22,
    "total": 22,
+   "missing": {}
+  },
+  {
+   "id": "chaoskampf",
+   "label": "Chaoskampf \u2014 the storm/warrior-god slays the chaos-monster to found order",
+   "whole": true,
+   "present": 23,
+   "total": 23,
+   "missing": {}
+  },
+  {
+   "id": "dying-rising-god",
+   "label": "The dying-and-rising god \u2014 death/descent and return of the vegetation deity",
+   "whole": true,
+   "present": 9,
+   "total": 9,
+   "missing": {}
+  },
+  {
+   "id": "divine-council",
+   "label": "The divine council / assembly of the gods (high god + the decreeing assembly)",
+   "whole": true,
+   "present": 9,
+   "total": 9,
+   "missing": {}
+  },
+  {
+   "id": "the-fates",
+   "label": "The fate-triad \u2014 goddesses who measure out destiny (Indo-European)",
+   "whole": true,
+   "present": 4,
+   "total": 4,
+   "missing": {}
+  },
+  {
+   "id": "the-flood",
+   "label": "The flood-hero \u2014 the righteous survivor of the deluge who re-founds humanity",
+   "whole": true,
+   "present": 7,
+   "total": 7,
    "missing": {}
   }
  ],

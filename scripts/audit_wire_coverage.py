@@ -78,6 +78,57 @@ NEIGHBORHOODS = {
             "hub (themes)": ["primordial-waters", "primordial-darkness", "chaoskampf"],
         },
     },
+    "chaoskampf": {
+        "label": "Chaoskampf — the storm/warrior-god slays the chaos-monster to found order",
+        "endpoints": {
+            "Mesopotamian": ["marduk", "tiamat", "ninurta", "anzu", "asag", "tishpak"],
+            "Canaanite": ["baal", "yam", "lotan", "mot"],
+            "Greek": ["zeus", "typhon", "tartarus"],
+            "Norse": ["thor", "jormungandr", "nidhogg"],
+            "Vedic": ["indra", "vritra"],
+            "Egyptian": ["ra", "apophis"],
+            "Hittite": ["teshub", "illuyanka"],
+            "hub": ["chaoskampf"],
+        },
+    },
+    "dying-rising-god": {
+        "label": "The dying-and-rising god — death/descent and return of the vegetation deity",
+        "endpoints": {
+            "Mesopotamian": ["dumuzi-tammuz", "damu"],
+            "Levantine": ["baal", "adonis"],
+            "Egyptian": ["osiris"],
+            "Greek": ["persephone-greek", "dionysus", "zagreus"],
+            "hub": ["dying-rising-god"],
+        },
+    },
+    "divine-council": {
+        "label": "The divine council / assembly of the gods (high god + the decreeing assembly)",
+        "endpoints": {
+            "Mesopotamian": ["anunnaki", "igigi", "an-sumerian", "enlil"],
+            "Canaanite": ["el-canaanite"],
+            "Hebrew": ["yahweh"],
+            "Greek": ["zeus"],
+            "Norse": ["odin"],
+            "hub": ["divine-council"],
+        },
+    },
+    "the-fates": {
+        "label": "The fate-triad — goddesses who measure out destiny (Indo-European)",
+        "endpoints": {
+            "Norse": ["norns"],
+            "Greek": ["the-moirai", "ananke"],
+            "Mesopotamian (decree of destinies)": ["anunnaki"],
+        },
+    },
+    "the-flood": {
+        "label": "The flood-hero — the righteous survivor of the deluge who re-founds humanity",
+        "endpoints": {
+            "Mesopotamian": ["ziusudra", "utnapishtim", "atrahasis-flood-hero"],
+            "Hebrew": ["noah"],
+            "Greek": ["deucalion"],
+            "Hindu": ["manu-vedic", "matsya"],
+        },
+    },
 }
 
 # ── 2. PANTHEON ROSTERS (authoritative deity lists, headwaters first) ────────
