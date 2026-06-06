@@ -1,6 +1,6 @@
 {
  "generatedAt": "2026-06-06",
- "indexedSlugs": 15100,
+ "indexedSlugs": 15125,
  "neighborhoodsWhole": true,
  "neighborhoods": [
   {
@@ -127,6 +127,18 @@
    "total": 48,
    "pct": 100,
    "missing": []
+  },
+  {
+   "tradition": "Hindu (Vedic / Puranic)",
+   "present": 87,
+   "total": 91,
+   "pct": 95,
+   "missing": [
+    "Aryaman",
+    "Bhaga",
+    "Nirrti",
+    "Ardhanarishvara"
+   ]
   }
  ],
  "topDemand": [

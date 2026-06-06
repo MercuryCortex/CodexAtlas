@@ -306,6 +306,51 @@ ROSTERS = {
         ("Nidhogg", ["nidhogg"]), ("The Norns (fate)", ["norns"]), ("Valkyries", ["valkyrie", "valkyries"]),
         ("Modi & Magni", ["modi-magni", "modi"]), ("Eir (healing)", ["eir-norse", "eir"]),
     ],
+    "Hindu (Vedic / Puranic)": [
+        # Trimurti + great goddesses
+        ("Brahma", ["brahma"]), ("Vishnu", ["vishnu"]), ("Shiva", ["shiva"]),
+        ("Saraswati", ["saraswati"]), ("Lakshmi", ["lakshmi"]), ("Parvati", ["parvati"]),
+        ("Durga", ["durga"]), ("Kali", ["kali"]), ("Shakti", ["shakti"]),
+        ("Tripura Sundari", ["tripura-sundari"]),
+        # Dashavatara (the ten avatars of Vishnu)
+        ("Matsya", ["matsya", "matsya-avatar"]), ("Kurma", ["kurma-avatar"]),
+        ("Varaha", ["varaha-avatar"]), ("Narasimha", ["narasimha"]), ("Vamana", ["vamana"]),
+        ("Parashurama", ["parashurama"]), ("Rama", ["rama"]), ("Krishna", ["krishna"]),
+        ("Balarama", ["balarama"]), ("Kalki", ["kalki"]),
+        # Vaishnava circle
+        ("Narayana", ["narayana"]), ("Garuda", ["garuda"]), ("Radha", ["radha"]),
+        ("Sita", ["sita"]), ("Hanuman", ["hanuman"]), ("Jagannath", ["jagannath"]),
+        ("Venkateswara", ["venkateswara"]), ("Vithoba", ["vithoba"]), ("Ayyappa", ["ayyappa"]),
+        ("Harihara", ["harihara"]), ("Dattatreya", ["dattatreya"]), ("Dhanvantari", ["dhanvantari"]),
+        ("Kamadhenu", ["kamadhenu"]), ("Yashoda", ["yashoda"]),
+        # Shaiva circle
+        ("Rudra", ["rudra-shiva-early"]), ("Ganesha", ["ganesha"]),
+        ("Skanda / Murugan", ["skanda-karthikeya", "murugan"]), ("Nandi", ["nandi"]),
+        ("Bhairava", ["bhairava"]), ("Mahakala", ["mahakala"]), ("Nataraja", ["nataraja"]),
+        ("Khandoba", ["khandoba"]),
+        # goddesses (regional / folk)
+        ("Mariamman", ["mariamman"]), ("Meenakshi", ["meenakshi"]), ("Manasa", ["manasa-devi"]),
+        ("Shitala", ["shitala"]), ("Ganga", ["ganga"]), ("Yamuna", ["yamuna"]),
+        ("Sundareswarar", ["sundareswarar"]),
+        # Vedic gods
+        ("Indra", ["indra"]), ("Agni", ["agni"]), ("Varuna", ["varuna"]), ("Surya", ["surya"]),
+        ("Soma", ["soma"]), ("Vayu", ["vayu"]), ("Mitra", ["mitra-vedic"]), ("Ushas", ["ushas"]),
+        ("Dyaus Pita", ["dyaus-pita"]), ("Aditi", ["aditi"]), ("Ashvins", ["the-ashvins"]),
+        ("Brihaspati", ["brihaspati"]), ("Tvashtar", ["tvashtar"]), ("Vritra", ["vritra"]),
+        ("Apam Napat", ["apam-napat-vedic"]), ("Purusha", ["purusha"]), ("Prajapati", ["prajapati"]),
+        ("Vac", ["vac-goddess"]), ("Savitr", ["savitr"]), ("Maruts", ["maruts"]),
+        # Navagraha (planetary gods)
+        ("Chandra", ["chandra"]), ("Mangala", ["mangala"]), ("Budha", ["budha"]),
+        ("Shukra", ["shukra"]), ("Shani", ["shani"]), ("Rahu", ["rahu"]), ("Ketu", ["ketu"]),
+        # other major figures
+        ("Kubera", ["kubera"]), ("Yama", ["yama-vedic"]), ("Kama", ["kama-vedic"]),
+        ("Narada", ["narada"]), ("Chitragupta", ["chitragupta"]), ("Prithvi", ["prithvi"]),
+        ("Vishvakarma", ["vishvakarma"]), ("Daksha", ["daksha"]), ("Gayatri", ["gayatri"]),
+        # next-tier gaps (honest remaining)
+        ("Pushan", ["pushan"]), ("Aryaman", ["aryaman"]), ("Bhaga", ["bhaga"]),
+        ("Annapurna", ["annapurna"]), ("Nirrti", ["nirrti"]),
+        ("Ardhanarishvara", ["ardhanarishvara"]),
+    ],
 }
 
 # ── 3. demand: referenced-but-missing slugs, ranked (linkcheck output) ───────
