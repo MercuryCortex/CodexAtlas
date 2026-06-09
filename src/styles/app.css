@@ -10299,7 +10299,8 @@ body:not(.view-boards) .app-pill--boards { display: none !important; }
  * subtle radial-gradient background. Ready to build into.
  * ============================================================ */
 .maps-pane,
-.starmap-pane {
+.starmap-pane,
+.alphabets-pane {
   position: absolute;
   top: 0; bottom: 0;
   left:  var(--eff-nav-w);
@@ -10324,6 +10325,46 @@ body:not(.view-boards) .app-pill--boards { display: none !important; }
   position: absolute;
   inset: 0;
   overflow: hidden;
+}
+
+/* ── ALPHABETS V2 — genealogy tree (2026-06-10) ─────────────────
+ * The pane scrolls (the time-axis tree can exceed the viewport);
+ * everything else inherits the shared V2-stage rule above. */
+.alphabets-pane { overflow: auto; }
+.alphabets-stage { position: relative; min-width: 100%; padding: 6px 0 28px; }
+.alphabets-svg { display: block; }
+.alphabets-band-line { stroke: rgba(212,165,90,0.14); stroke-width: 1; }
+.alphabets-band-label {
+  fill: var(--gold, #d4a55a);
+  font: 600 10px/1 "JetBrains Mono", ui-monospace, monospace;
+  letter-spacing: 0.14em;
+  opacity: 0.85;
+}
+.alphabets-edge { fill: none; stroke-width: 1.25; pointer-events: stroke; }
+.alphabets-edge-descent   { stroke: rgba(212,165,90,0.55); }
+.alphabets-edge-sibling   { stroke: rgba(160,170,190,0.45); stroke-dasharray: 5 4; }
+.alphabets-edge-influence { stroke: rgba(160,170,190,0.35); stroke-dasharray: 1.5 3.5; }
+.alphabets-node { cursor: pointer; }
+.alphabets-node circle { stroke: rgba(212,165,90,0.85); stroke-width: 1.25; }
+.alphabets-node:hover circle { stroke-width: 2.25; }
+.alphabets-node-name {
+  fill: var(--text-1, #e6e6e6);
+  font: 500 11px/1 -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif;
+}
+.alphabets-node:hover .alphabets-node-name { fill: var(--gold, #d4a55a); }
+.alphabets-node-date {
+  fill: rgba(230,230,230,0.45);
+  font: 400 9px/1 "JetBrains Mono", ui-monospace, monospace;
+}
+.alphabets-hint {
+  margin: 10px 16px 0;
+  color: rgba(230,230,230,0.4);
+  font: 400 10.5px/1.5 "JetBrains Mono", ui-monospace, monospace;
+}
+.alphabets-empty {
+  padding: 48px;
+  color: rgba(230,230,230,0.5);
+  font: 400 13px/1.5 "JetBrains Mono", ui-monospace, monospace;
 }
 
 /* ============================================================

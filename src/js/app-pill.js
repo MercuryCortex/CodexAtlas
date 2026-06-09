@@ -62,6 +62,10 @@
     { id: 'board',    target: 'boards',                              icon: '⚗', label: 'BOARD'    },
     { id: 'map',      target: 'maps',                                icon: '⌖', label: 'MAP'      },
     { id: 'starmap',  target: 'starmap',                             icon: '♄', label: 'STAR MAP' },
+    // 2026-06-10 — ALPHABETS promoted to the master pill (5→6, John-
+    // ratified N1 per AUDIT/2026-06-10-alphabets-page-plan.md): a
+    // first-class Section like ATLAS/TIMELINE, all writing-systems.
+    { id: 'alphabets', target: 'alphabets',                          icon: 'ℵ', label: 'ALPHABETS' },
   ];
 
   // Reverse lookup: (STATE.view, _forge.getLayout()) → master view entry.

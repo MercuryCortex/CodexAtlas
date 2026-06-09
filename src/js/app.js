@@ -535,7 +535,11 @@ function setView(name) {
   if (window._boardsView && typeof window._boardsView.unmount === 'function') {
     try { window._boardsView.unmount(); } catch (e) { /* ignore */ }
   }
-  document.querySelectorAll('.boards-pane, .boards-bottombar').forEach(el => el.remove());
+  // 2026-06-10 — Alphabets pane teardown, symmetric with Boards.
+  if (window._alphabetsView && typeof window._alphabetsView.unmount === 'function') {
+    try { window._alphabetsView.unmount(); } catch (e) { /* ignore */ }
+  }
+  document.querySelectorAll('.boards-pane, .boards-bottombar, .alphabets-pane').forEach(el => el.remove());
   // ── HASH ROUTER (push view change) ────────────────────────────────
   // On a true view change, pushState so the back button moves between
   // views. Re-renders of the same view use replaceState (or nothing) so
@@ -1398,6 +1402,24 @@ VIEWS.starmap = {
     const svgEl = document.getElementById('svg');
     if (svgEl) svgEl.style.display = 'none';
     if (window._starmapView) window._starmapView.render(pane);
+  },
+};
+// 2026-06-10 — ALPHABETS first-class Section (master pill 5→6, John-
+// ratified N1 per AUDIT/2026-06-10-alphabets-page-plan.md). Same
+// app-shell contract as maps/starmap; the module owns the genealogy.
+VIEWS.alphabets = {
+  title: 'Alphabets',
+  subtitle: 'writing-system genealogy — every script, hieroglyph to Hangul',
+  render() {
+    {const _vc = document.getElementById('view-controls'); if (_vc) _vc.innerHTML = ''; }
+    if (typeof legend !== 'undefined' && legend) legend.style('display', 'none').html('');
+    const canvasEl = document.getElementById('canvas');
+    const pane = document.createElement('div');
+    pane.className = 'alphabets-pane';
+    canvasEl.appendChild(pane);
+    const svgEl = document.getElementById('svg');
+    if (svgEl) svgEl.style.display = 'none';
+    if (window._alphabetsView) window._alphabetsView.render(pane);
   },
 };
 
@@ -9061,183 +9083,6 @@ function renderAstrologyMode(mode, count) {
       '36 Egyptian decans cross-mapped to Western face-rulers, Vedic Nakshatras, Arabic Manazil, Chinese Xiu.');
     default: return shell('Astrology', 'Pick a mode above.');
   }
-}
-
-// VIEWS.alphabets — Script origins, glyph evolution, letter mysticism. 5 modes.
-// Mode renderers: src/js/alphabets/glyph-viewer.js, origin-chain.js, mysticism.js
-// Registered by alphabet-tab-1, 2026-05-16.
-const _alphabetsState = { mode: 'glyphs' };
-
-VIEWS.alphabets = {
-  title: 'Alphabets',
-  subtitle: 'writing systems · glyph origins · letter mysticism · script evolution',
-  render() {
-    document.getElementById('view-controls').innerHTML = `
-      <button class="btn btn-mini alpha-mode" data-mode="glyphs">glyphs</button>
-      <button class="btn btn-mini alpha-mode" data-mode="origin">origin chain</button>
-      <button class="btn btn-mini alpha-mode" data-mode="mysticism">mysticism</button>
-      <button class="btn btn-mini alpha-mode" data-mode="cuneiform">cuneiform</button>
-      <button class="btn btn-mini alpha-mode" data-mode="scripts">scripts</button>
-      <button class="btn btn-mini alpha-mode" data-mode="findings">findings</button>
-    `;
-    document.querySelectorAll('.alpha-mode').forEach(btn => {
-      if (btn.dataset.mode === _alphabetsState.mode) btn.classList.add('active');
-      btn.onclick = () => { _alphabetsState.mode = btn.dataset.mode; setView('alphabets'); };
-    });
-
-    const pane = document.createElement('div');
-    pane.className = 'alpha-pane';
-
-    const liveRenderers = { glyphs: '_alphaGlyphs', origin: '_alphaOrigin', mysticism: '_alphaMysticism', cuneiform: '_alphaCuneiform' };
-    const rendererKey = liveRenderers[_alphabetsState.mode];
-    if (rendererKey && window[rendererKey]) {
-      pane.classList.add('alpha-pane-live');
-      document.getElementById('canvas').appendChild(pane);
-      queueMicrotask(() => window[rendererKey].render(pane));
-      return;
-    }
-    if (_alphabetsState.mode === 'scripts') {
-      renderAlphaScripts(pane);
-      document.getElementById('canvas').appendChild(pane);
-      return;
-    }
-    if (_alphabetsState.mode === 'findings') {
-      pane.classList.add('alpha-pane-live');
-      renderAlphaFindings(pane);
-      document.getElementById('canvas').appendChild(pane);
-      return;
-    }
-    pane.innerHTML = '<div class="alpha-stub">Loading...</div>';
-    document.getElementById('canvas').appendChild(pane);
-  }
-};
-
-function renderAlphaScripts(pane) {
-  const nodes = DATA.nodes.filter(n => n.type === 'alphabet');
-  pane.innerHTML = `
-    <div class="alpha-scripts-header">
-      <h2>Alphabet &amp; Script Nodes</h2>
-      <span class="alpha-count">${nodes.length} nodes in vault</span>
-    </div>
-    <div class="alpha-scripts-grid">
-      ${nodes.map(n => `
-        <div class="alpha-script-card" data-id="${n.id}">
-          <div class="asc-type">${(n['alphabet-type'] || n.type || '')}</div>
-          <div class="asc-title">${n.title || n.id}</div>
-          <div class="asc-tradition">${n.tradition || ''}</div>
-        </div>
-      `).join('')}
-    </div>
-  `;
-  pane.querySelectorAll('.alpha-script-card').forEach(card => {
-    card.onclick = () => {
-      const node = DATA.nodes.find(n => n.id === card.dataset.id);
-      if (node) selectNode(node.id, true);
-    };
-  });
-}
-
-// ── Alpha Findings mode ────────────────────────────────────────────────────
-// Surfaces observations and patterns specific to the alphabet/script domain
-// without leaving the Alphabets tab.
-function renderAlphaFindings(pane) {
-  const ALPHA_SECTIONS = ['Alphabet Layer Discoveries', 'Script and Alphabet Mysteries'];
-  const ALPHA_OBS_IDS = [
-    'letter-is-the-thing-universal',
-    'creation-by-word-six-traditions',
-    'aramaic-hidden-backbone',
-    'greek-vowel-cognitive-threshold',
-    'vowel-solution-triple-convergence',
-    'caucasian-alphabet-burst',
-  ];
-
-  const allObs = window.OBSERVATIONS_DATA || [];
-  const allPat = window.PATTERNS_DATA || [];
-
-  const obs  = ALPHA_OBS_IDS.map(id => allObs.find(o => o.id === id)).filter(Boolean);
-  const pats = allPat.filter(p => ALPHA_SECTIONS.includes(p.section));
-
-  const OBS_BADGE = {
-    'CONCLUSION':  { bg: 'rgba(90,172,168,0.14)',  border: 'rgba(90,172,168,0.5)',  text: '#5aaca8' },
-    'CONVERGENCE': { bg: 'rgba(212,165,90,0.14)',  border: 'rgba(212,165,90,0.5)',  text: '#d4a55a' },
-    'ANOMALY':     { bg: 'rgba(196,74,90,0.14)',   border: 'rgba(196,74,90,0.5)',   text: '#c44a5a' },
-  };
-  const PAT_BADGE = {
-    'CONVERGENCE':  { bg: 'rgba(212,165,90,0.14)',  border: 'rgba(212,165,90,0.5)',  text: '#d4a55a' },
-    'TRANSMISSION': { bg: 'rgba(90,172,168,0.14)',  border: 'rgba(90,172,168,0.5)',  text: '#5aaca8' },
-    'CONCLUSION':   { bg: 'rgba(90,172,168,0.14)',  border: 'rgba(90,172,168,0.5)',  text: '#5aaca8' },
-    'ANOMALY':      { bg: 'rgba(196,74,90,0.14)',   border: 'rgba(196,74,90,0.5)',   text: '#c44a5a' },
-  };
-
-  function badge(cat, map) {
-    const bc = map[cat] || map['CONVERGENCE'];
-    return `<span class="af-badge" style="background:${bc.bg};border-color:${bc.border};color:${bc.text}">${cat}</span>`;
-  }
-
-  function obsCard(o) {
-    const bc = OBS_BADGE[o.category] || OBS_BADGE['CONVERGENCE'];
-    const nodeChips = (o.nodes || o.evidence || []).map(id => {
-      const n = NODES_BY_ID[id];
-      return n ? `<span class="af-chip" data-id="${id}">${n.title}</span>`
-               : `<span class="af-chip af-chip--miss">${id}</span>`;
-    }).join('');
-    return `
-      <div class="af-card af-card--obs" data-id="${(o.nodes || o.evidence || [])[0] || ''}">
-        <div class="af-card-head">
-          ${badge(o.category, OBS_BADGE)}
-          <div class="af-title">${o.title}</div>
-        </div>
-        <div class="af-summary">${o.summary}</div>
-        ${o.body ? `<details class="af-body-wrap"><summary>full argument →</summary><div class="af-body">${o.body.replace(/\n/g,'<br>')}</div></details>` : ''}
-        ${nodeChips ? `<div class="af-chips">${nodeChips}</div>` : ''}
-      </div>`;
-  }
-
-  function patCard(p) {
-    const nodeChips = (p.sources || []).map(id => {
-      const n = NODES_BY_ID[id];
-      return n ? `<span class="af-chip" data-id="${id}">${n.title}</span>`
-               : `<span class="af-chip af-chip--miss">${id}</span>`;
-    }).join('');
-    return `
-      <div class="af-card af-card--pat" data-id="${(p.sources || [])[0] || ''}">
-        <div class="af-card-head">
-          ${badge(p.category, PAT_BADGE)}
-          <div class="af-title">${p.title}</div>
-        </div>
-        <div class="af-summary">${p.summary}</div>
-        ${nodeChips ? `<div class="af-chips">${nodeChips}</div>` : ''}
-      </div>`;
-  }
-
-  pane.innerHTML = `
-    <div class="af-header">
-      <h2>What the alphabet investigation found</h2>
-      <p>5,000 years of writing systems. 39 scripts mapped. These are the cross-tradition patterns that fell out of the investigation — things nobody draws on the same map.</p>
-    </div>
-
-    <div class="af-section-label">Conclusions &amp; observations</div>
-    <div class="af-cards">
-      ${obs.map(obsCard).join('')}
-    </div>
-
-    <div class="af-section-label">Cross-tradition patterns</div>
-    <div class="af-cards">
-      ${pats.map(patCard).join('')}
-    </div>
-  `;
-
-  pane.addEventListener('click', ev => {
-    const chip = ev.target.closest('.af-chip[data-id]');
-    if (chip && chip.dataset.id && NODES_BY_ID[chip.dataset.id]) {
-      selectNode(chip.dataset.id, true);
-      return;
-    }
-    const card = ev.target.closest('.af-card[data-id]');
-    if (card && card.dataset.id && NODES_BY_ID[card.dataset.id]) {
-      selectNode(card.dataset.id, true);
-    }
-  });
 }
 
 // ============================================================

@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=EB+Garamond:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&family=Noto+Serif+Hebrew:wght@400;700&family=Noto+Sans+Egyptian+Hieroglyphs&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="_assets/vendor/maplibre/maplibre-gl.css?v=5.24.0" />
-<link rel="stylesheet" href="src/styles/app.css?v=20260604-ui-cleanup" />
+<link rel="stylesheet" href="src/styles/app.css?v=20260610-alphabets-section" />
 </head>
 <body class="nav-hidden detail-collapsed">
 <!-- ════════════════════════════════════════════════════════════════
@@ -234,6 +234,9 @@
      legacy MapLibre + astrology stays in _legacy/ for reference. -->
 <script src="src/js/views/maps.js?v=20260528-maps-v2-skeleton"></script>
 <script src="src/js/views/starmap.js?v=20260528-starmap-v2-skeleton"></script>
+<!-- ALPHABETS V2 Section (2026-06-10) — writing-system genealogy;
+     master-pill 5→6 per AUDIT/2026-06-10-alphabets-page-plan.md. -->
+<script src="src/js/views/alphabets.js?v=20260610-alphabets-section"></script>
 
 <script src="src/js/graph/theme.js?v=20260517-handoff"></script>
 <script src="src/js/graph/layout.js?v=20260517-handoff"></script>
@@ -243,11 +246,11 @@
 <script src="src/data/patterns.js?v=20260516-patterns-tab"></script>
 <script src="src/data/observations.js?v=20260516-observations-tab"></script>
 <script src="src/data/chains.js?v=20260516-chains-2"></script>
-<script src="src/js/app.js?v=20260609-094231"></script>
+<script src="src/js/app.js?v=20260610-alphabets-section"></script>
 <!-- Phase 22-B (2026-05-23) — app-shell top-bar pill wiring.
      Loads AFTER app.js so window.STATE + window.setView are defined.
      Self-installing IIFE; exposes window._appPill for debug. -->
-<script src="src/js/app-pill.js?v=20260528-map-starmap-v2-skel"></script>
+<script src="src/js/app-pill.js?v=20260610-alphabets-section"></script>
 <!-- ✦ User menu (account drawer) — rebuilt V2-native 2026-05-28.
      Dev Overview entry added 2026-05-29. -->
 <script src="src/js/user-menu.js?v=20260529-dev-overview-v1"></script>
@@ -260,11 +263,12 @@
 <script src="src/js/astrology/wheel.js?v=20260517-handoff"></script>
 <script src="src/js/astrology/now.js?v=20260515-now-events"></script>
 <script src="src/js/astrology/astro-pantheon.js?v=20260517-handoff"></script>
-<script src="src/js/alphabets/glyph-data.js?v=20260609-094231"></script>
-<script src="src/js/alphabets/glyph-viewer.js?v=20260517-svg-glyphs-1"></script>
-<script src="src/js/alphabets/origin-chain.js?v=20260516-alpha-1"></script>
-<script src="src/js/alphabets/mysticism.js?v=20260516-alpha-1"></script>
-<script src="src/js/alphabets/cuneiform-viewer.js?v=20260517-cuneiform-1"></script>
+<!-- 2026-06-10 — legacy alphabets renderers REMOVED from the live tree
+     (rule #8) together with the legacy VIEWS.alphabets block in app.js;
+     ALPHABETS is now the V2 Section (src/js/views/alphabets.js). The
+     src/js/alphabets/* files stay on disk for the _legacy snapshot and
+     the Phase-2 glyph-data harvest (412 KB ALPHA_GLYPH_DATA → pruned
+     src/data/glyph-evolution.js per AUDIT/2026-06-10-alphabets-page-plan.md). -->
 <script src="src/js/dev-panel.js?v=20260530-regated-on-opt-in"></script>
 <script src="src/js/views/scripture-reader.js?v=20260517-reader-nav-19"></script>
 <script src="src/js/views/legacy.js?v=20260525-phase24-v1a"></script>
