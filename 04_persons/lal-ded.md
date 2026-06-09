@@ -4,7 +4,9 @@ id: "lal-ded"
 name: "Lalleshwari"
 aka: ["Lal Ded", "Lalla", "Lal Diddi", "Laleshwari", "Lalla Yogeshwari"]
 role-description: "mystic poet, Shaiva saint, first major Kashmiri literary voice"
-tradition: "Hindu — Kashmir Shaivism (Trika); bridge figure with Kashmiri Sufism"
+tradition: "Hindu — Kashmir Shaivism (Trika)"
+tradition-raw: "Hindu — Kashmir Shaivism (Trika); bridge figure with Kashmiri Sufism"   # pre-migration; full original (membership-vs-wire 2026-06-02)
+tradition-appearances: ['bridge figure with Kashmiri Sufism']   # STEP-B worklist: build appearance wires for these
 role-tokens: ["author-secular"]
 region: "Kashmir Valley"
 date-born: 1320

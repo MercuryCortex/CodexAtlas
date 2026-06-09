@@ -4,7 +4,9 @@ id: "darius-i-the-great"
 name: "Darius I (the Great)"
 aka: ["Darius the Great", "Dārayava(h)uš (Old Persian)", "Dārā (Pahlavi-Persian)", "Darius son of Hystaspes"]
 role-description: "king | imperial-religious-political reformer | inscription-author | systematizer of the Achaemenid Empire"
-tradition: "Zoroastrian (Achaemenid imperial-religious-political context); Hebrew-Bible peripheral character (Ezra 4-6, Daniel 6 — though the Daniel-Darius is likely a different conflated figure)"
+tradition: "Zoroastrian (Achaemenid imperial-religious-political context)"
+tradition-raw: "Zoroastrian (Achaemenid imperial-religious-political context); Hebrew-Bible peripheral character (Ezra 4-6, Daniel 6 — though the Daniel-Darius is likely a different conflated figure)"   # pre-migration; full original (membership-vs-wire 2026-06-02)
+tradition-appearances: ['Hebrew-Bible peripheral character (Ezra 4-6, Daniel 6 — though the Daniel-Darius is likely a different conflated figure)']   # STEP-B worklist: build appearance wires for these
 role-tokens: ["king"]
 region: "Persis (the Achaemenid imperial heartland) → entire Achaemenid Empire from Egypt and Libya in the west to the Indus in the east"
 date-born: -550

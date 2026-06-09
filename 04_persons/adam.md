@@ -4,7 +4,9 @@ id: "adam"
 name: "Adam"
 aka: ["Ādām (Hebrew, אדם, 'human / earth-creature')", "Adam Kadmon (Kabbalistic primordial Adam)", "the First Man"]
 role: "biblical first human; cosmic Anthropos in Hellenistic-Jewish, Gnostic, and Kabbalistic theology"
-tradition: "Hebrew Bible; Christian Bible; Quran; Sethian and Valentinian Gnosticism; Hermetism; Kabbalah; Mandaeism"
+tradition: "Hebrew Bible"
+tradition-raw: "Hebrew Bible; Christian Bible; Quran; Sethian and Valentinian Gnosticism; Hermetism; Kabbalah; Mandaeism"   # pre-migration; full original (membership-vs-wire 2026-06-02)
+tradition-appearances: ['Christian Bible', 'Quran', 'Sethian and Valentinian Gnosticism', 'Hermetism', 'Kabbalah', 'Mandaeism']   # STEP-B worklist: build appearance wires for these
 region: "Mesopotamian-Levantine biblical narrative; Mediterranean Hellenistic-Roman theological development"
 date-born: -3700
 date-died: -2800

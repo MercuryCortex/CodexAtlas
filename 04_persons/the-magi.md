@@ -4,7 +4,9 @@ id: "the-magi"
 name: "The Magi (Zoroastrian Priest-Astrologers)"
 aka: ["Magoi (Greek)", "Magi (Latin)", "the Wise Men from the East", "Caspar / Melchior / Balthasar (medieval Christian-legendary names)", "Magūš (Old Persian)"]
 role: "priest-class | astrologer | religious-political-elite | culture-hero (in Christian Nativity reception)"
-tradition: "Zoroastrian (Median + Achaemenid + Sasanian Persian priesthood); cross-referenced as Christian Nativity figures in Matthew 2"
+tradition: "Zoroastrian (Median + Achaemenid + Sasanian Persian priesthood)"
+tradition-raw: "Zoroastrian (Median + Achaemenid + Sasanian Persian priesthood); cross-referenced as Christian Nativity figures in Matthew 2"   # pre-migration; full original (membership-vs-wire 2026-06-02)
+tradition-appearances: ['cross-referenced as Christian Nativity figures in Matthew 2']   # STEP-B worklist: build appearance wires for these
 region: "Media (northwest Iran) → all of Achaemenid + Parthian + Sasanian Persia → Roman-imperial Mediterranean (via Hellenistic-Roman exoticism); in Christian Nativity legend, journey to Bethlehem"
 date-born: -700
 date-died: 651
