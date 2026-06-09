@@ -1,3 +1,51 @@
+# Session HANDOFF — 2026-06-09 LATE (🎉🎉 THE ENTIRE BIBLE IS COMPLETE — scripture layer begun)
+
+> **🟢🟢 START HERE (NEWEST — 2026-06-09 LATE).** The deity layer was done, so this session
+> opened the **SCRIPTURE** layer (the architectural root; the 2026-06-05 "Bible half-missing"
+> crisis). Two things shipped:
+>
+> 1. **THE SCRIPTURE COMPLETENESS BAR** — `scripts/audit_scripture_coverage.py` (read-only;
+>    emits `src/data/scripture-coverage.json`; sibling of the deity `audit_wire_coverage.py`).
+>    Holds the **authoritative Bible canon** as external truth and classifies every book
+>    **DEDICATED** (own node) / **FOLDED** (covered only inside a grouped node) / **ABSENT**.
+>    Exact id-matching (NOT fuzzy — that false-positives hard). Carries per-canon P/C/O/E
+>    membership for the canon-comparison wheel.
+> 2. **THE WHOLE BIBLE FILLED — 49 new product-grade book nodes** taking it from **36% → 100%**:
+>    Protestant **66/66**, Catholic **73/73**, Orthodox **77/77**, Ethiopian **79/79** — every
+>    book of every major Christian canon now has a dedicated `02_documents/document-*.md` node,
+>    full schema + T1 commentary refs (Anchor Yale / Hermeneia / ICC / WBC / OTL) + cross-tradition
+>    wires. **~11 commits, every gate green throughout (linkcheck held 480 baseline, 0 dead across
+>    all 49 nodes), tree clean.** Per-batch detail = top ~6 entries of `00_meta/STATUS.md`
+>    (`opus-scripture-bar` → `…-bible-A/B/C/D` → `…-bible-deutero`).
+>
+> **RATIFIED MODEL (John, this session): COMPLETE + DISTINGUISH** — every canonical book gets its
+> own node; the scholarly strata/group nodes (J/E/D/P, Deuteronomistic-History, Undisputed-Paulines,
+> Early-Prophets) are KEPT as an extra lens, not deleted.
+>
+> **THE PROVEN LOOP (per book/batch):** (1) anchored pre-check that each wire-target resolves —
+> `grep -rlE "^id:[[:space:]]*\"?<slug>\"?[[:space:]]*$"` (the `$` anchor matters: an un-anchored
+> grep prefix-matched `josiah`→`josiah-king` and cost a linkcheck regression in Batch A). (2) Write
+> the node (template = any `document-*.md` from this session; e.g. `document-jeremiah.md`). (3)
+> Register its id in the matching `CANONS` candidate-list in `audit_scripture_coverage.py` (Lane B).
+> (4) Gates: `build_data.py` → `linkcheck.py --baseline` (480 holds — capture the REAL exit code,
+> don't pipe to tail) → `lint_yaml.py` → `audit_scripture_coverage.py`. (5) Commit **Lane A**
+> (`02_documents/*`) and **Lane B** (`scripts/` + `src/data/` + STATUS) SEPARATELY.
+>
+> **NEXT FRONTIER (John deciding — all queued):**
+> 1. **The canon-comparison wheel** — the bar already holds every book's P/C/O/E membership; "pick a
+>    canon → included-vs-excluded books light up" is now a real Lane-B build John floated 2026-06-05.
+> 2. **DEV → Overview wiring** — surface `scripture-coverage.json` on the DEV panel next to the deity
+>    bar (`src/js/views/dev-overview.js`). Lane B; browser-verify per the cardinal screenshot rule.
+> 3. **The next tradition** — roll the same bar+fill machinery to the **Quran** (114 suras), Vedas,
+>    Tipiṭaka, etc. (Tanakh is already ~complete via the OT overlap.)
+> 4. **PERSONS completeness** — the still-untouched third layer (prophets / apostles / scribes /
+>    kings); note many eponymous figures referenced by the new Bible nodes (jeremiah-prophet,
+>    john-of-patmos exists, most others don't) are persons-layer work.
+>
+> The deity-completeness handoff below (still accurate for that layer) follows.
+
+---
+
 # Session HANDOFF — 2026-06-09 (🎉 DEITY COMPLETENESS LAYER ESSENTIALLY COMPLETE)
 
 > **🟢🟢 START HERE (NEWEST — 2026-06-09).** This session took the **deity** layer of the
