@@ -4,7 +4,7 @@ id: "phase-4-071-josephus-against-apion"
 title: "Against Apion"
 aka: ["Contra Apionem", "Peri archaiotētos Ioudaiōn (On the Antiquity of the Jews)", "CA"]
 tradition: "Hellenistic Judaism / Flavian-Domitianic Roman context"
-canonical-corpus: ["egyptian-scripture", "greek-philosophical-scripture", "hellenistic-jewish"]
+canonical-corpus: ["egyptian-scripture", "hellenistic-jewish"]
 sub-tradition: "Hellenistic-Jewish apologetic"
 label: "apologetic"
 date-composed-earliest: 95

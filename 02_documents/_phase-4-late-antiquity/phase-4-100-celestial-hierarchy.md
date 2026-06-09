@@ -4,7 +4,7 @@ id: "phase-4-celestial-hierarchy"
 title: "Celestial Hierarchy (De Coelesti Hierarchia)"
 aka: ["De Caelesti Hierarchia", "On the Celestial Hierarchy", "The Heavenly Hierarchy"]
 tradition: "Christian Neoplatonism"
-canonical-corpus: ["greek-philosophical-scripture", "neoplatonic", "patristic-corpus", "christian-mystical"]
+canonical-corpus: ["neoplatonic", "patristic-corpus", "christian-mystical"]
 sub-tradition: "Pseudo-Dionysian mystical theology"
 label: "patristic / mystical"
 date-composed: 500

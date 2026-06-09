@@ -4,7 +4,7 @@ id: "phase-1-022-lament-for-ur"
 title: "The Lamentation over the Destruction of Ur"
 aka: ["Lament for Ur", "Ur Lament", "LU", "Lamentation over the Destruction of Ur", "ETCSL 2.2.2"]
 tradition: "Sumerian"
-canonical-corpus: ["mesopotamian-canonical"]
+canonical-corpus: ["mesopotamian"]
 sub-tradition: "Sumerian city-lament genre (one of the five canonical city-laments)"
 label: "lament"
 date-composed-earliest: -2000

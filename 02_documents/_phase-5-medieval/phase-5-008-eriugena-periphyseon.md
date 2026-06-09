@@ -4,7 +4,7 @@ id: "phase-5-008-eriugena-periphyseon"
 title: "Periphyseon (On the Division of Nature)"
 aka: ["De Divisione Naturae", "Periphyseon"]
 tradition: "Latin Christian Neoplatonism"
-canonical-corpus: ["greek-philosophical-scripture", "neoplatonic", "patristic-corpus", "christian-mystical"]
+canonical-corpus: ["neoplatonic", "patristic-corpus", "christian-mystical"]
 sub-tradition: "Carolingian / Christian Platonist"
 label: "patristic"
 date-composed-earliest: 862

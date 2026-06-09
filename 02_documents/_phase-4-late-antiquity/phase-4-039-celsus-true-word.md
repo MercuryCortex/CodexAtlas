@@ -4,7 +4,7 @@ id: "phase-4-039-celsus-true-word"
 title: "Alēthēs Logos / True Word (Celsus)"
 aka: ["True Doctrine", "Logos Alēthēs", "Celsus's Against the Christians"]
 tradition: "Middle Platonism (pagan); anti-Christian polemic"
-canonical-corpus: ["greek-philosophical-scripture"]
+canonical-corpus: ["greek-scripture"]
 sub-tradition: "Hellenistic anti-Christian apologetic"
 label: "anti-christian-polemic"
 date-composed-earliest: 175

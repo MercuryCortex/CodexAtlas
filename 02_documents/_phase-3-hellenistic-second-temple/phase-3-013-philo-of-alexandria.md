@@ -4,7 +4,7 @@ id: "phase-3-013-philo-of-alexandria"
 title: "Philo of Alexandria — On the Creation, Allegorical Interpretation, and the Allegorical Commentary"
 aka: ["Philonic corpus", "Philonis Iudaei Opera"]
 tradition: "Hellenistic Judaism (philosophical)"
-canonical-corpus: ["egyptian-scripture", "greek-philosophical-scripture", "hellenistic-jewish"]
+canonical-corpus: ["egyptian-scripture", "hellenistic-jewish"]
 sub-tradition: "Middle Platonist Hellenistic Judaism — Alexandrian allegorical exegesis"
 label: "philosophical"
 date-composed-earliest: 10

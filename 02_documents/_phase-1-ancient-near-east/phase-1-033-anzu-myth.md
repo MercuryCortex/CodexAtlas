@@ -4,7 +4,7 @@ id: "phase-1-033-anzu-myth"
 title: "Anzu Myth (Myth of Zu)"
 aka: ["Myth of Zu", "Zu Bird Epic", "Ninurta and the Tablet of Destinies"]
 tradition: "mesopotamian"
-canonical-corpus: ["mesopotamian-canonical"]
+canonical-corpus: ["mesopotamian"]
 sub-tradition: "Sumero-Akkadian mythology — Ninurta and Enlil cults"
 label: "mythological-narrative"
 date-composed: "c. 2000 BCE (Old Babylonian); Standard Version c. 1100 BCE"

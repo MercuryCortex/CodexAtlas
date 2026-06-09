@@ -4,7 +4,7 @@ id: "phase-1-007-code-of-hammurabi"
 title: "Code of Hammurabi"
 aka: ["Laws of Hammurabi", "Codex Hammurabi", "CH", "Stele of Hammurabi"]
 tradition: "Babylonian"
-canonical-corpus: ["mesopotamian-canonical"]
+canonical-corpus: ["mesopotamian"]
 sub-tradition: "Old Babylonian royal law / Marduk-mediated kingship theology"
 label: "royal-inscription"
 date-composed-earliest: -1755

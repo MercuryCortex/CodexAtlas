@@ -4,7 +4,7 @@ id: "phase-3-005-stoic-foundational-texts"
 title: "Stoic Foundational Texts (Chrysippus fragments through Seneca and Epictetus)"
 aka: ["Stoa corpus", "Hellenistic and Roman Stoicism"]
 tradition: "Greek and Roman philosophy"
-canonical-corpus: ["greek-philosophical-scripture", "hellenistic-jewish"]
+canonical-corpus: ["greek-scripture"]
 sub-tradition: "Stoicism — Old, Middle, and Roman Stoa"
 label: "philosophical"
 date-composed-earliest: -300

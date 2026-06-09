@@ -4,7 +4,7 @@ id: "phase-1-034-adapa-myth"
 title: "Adapa Myth"
 aka: ["Adapa and the South Wind", "The Legend of Adapa", "Adapa and the Food of Life"]
 tradition: "mesopotamian"
-canonical-corpus: ["mesopotamian-canonical"]
+canonical-corpus: ["mesopotamian"]
 sub-tradition: "Babylonian wisdom literature — Ea cult at Eridu"
 label: "mythological-narrative"
 date-composed: "c. 1400 BCE (Amarna Archive version)"

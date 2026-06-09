@@ -4,7 +4,7 @@ id: "phase-1-021-shumma-izbu"
 title: "Šumma Izbu (Teratological-Omen Series)"
 aka: ["Šumma Izbu", "Shumma Izbu", "the malformed-birth omen series", "izbu", "anomalous-birth omens"]
 tradition: "Akkadian / Mesopotamian"
-canonical-corpus: ["mesopotamian-canonical"]
+canonical-corpus: ["mesopotamian"]
 sub-tradition: "Babylonian and Neo-Assyrian scholarly omen literature"
 label: "divinatory-compendium"
 date-composed-earliest: -1800

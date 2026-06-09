@@ -4,7 +4,7 @@ id: "phase-4-069-josephus-jewish-war"
 title: "The Jewish War"
 aka: ["Bellum Judaicum", "Peri tou Ioudaikou Polemou", "Wars of the Jews", "De Bello Iudaico", "BJ"]
 tradition: "Hellenistic Judaism (Pharisaic background) / Flavian Roman patronage"
-canonical-corpus: ["greek-philosophical-scripture", "hellenistic-jewish"]
+canonical-corpus: ["hellenistic-jewish"]
 sub-tradition: "Greco-Roman historiography by a Jewish participant"
 label: "historiography"
 date-composed-earliest: 75

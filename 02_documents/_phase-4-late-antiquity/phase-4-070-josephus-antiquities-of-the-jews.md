@@ -4,7 +4,7 @@ id: "phase-4-070-josephus-antiquities-of-the-jews"
 title: "Antiquities of the Jews"
 aka: ["Ioudaikē Archaiologia", "Antiquitates Judaicae", "Jewish Antiquities", "AJ"]
 tradition: "Hellenistic Judaism (Pharisaic background) / Flavian-Domitianic Roman patronage"
-canonical-corpus: ["mesopotamian-canonical", "greek-philosophical-scripture", "hellenistic-jewish"]
+canonical-corpus: ["hellenistic-jewish"]
 sub-tradition: "Greco-Roman antiquarian historiography of a non-Greek nation"
 label: "historiography"
 date-composed-earliest: 93

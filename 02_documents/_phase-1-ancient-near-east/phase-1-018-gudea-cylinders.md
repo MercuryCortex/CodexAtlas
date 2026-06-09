@@ -4,7 +4,7 @@ id: "phase-1-018-gudea-cylinders"
 title: "The Gudea Cylinders (The Building of Ningirsu's Temple)"
 aka: ["Gudea Cylinder A", "Gudea Cylinder B", "The Building of Ningirsu's Temple", "The Eninnu Temple Hymn of Gudea", "ETCSL 2.1.7"]
 tradition: "Sumerian / Mesopotamian"
-canonical-corpus: ["mesopotamian-canonical"]
+canonical-corpus: ["mesopotamian"]
 sub-tradition: "Sumerian royal-cultic literature (Second Dynasty of Lagash, late Gutian period)"
 label: "royal-cultic-hymn"
 date-composed-earliest: -2130
