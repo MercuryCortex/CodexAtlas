@@ -1282,11 +1282,6 @@
    "docs": 8
   },
   {
-   "key": "hellenistic-jewish",
-   "label": "hellenistic-jewish",
-   "docs": 8
-  },
-  {
    "key": "tao-corpus",
    "label": "Tao",
    "docs": 7
@@ -1334,6 +1329,11 @@
   {
    "key": "christian-mystical",
    "label": "christian-mystical",
+   "docs": 5
+  },
+  {
+   "key": "hellenistic-jewish",
+   "label": "hellenistic-jewish",
    "docs": 5
   },
   {
