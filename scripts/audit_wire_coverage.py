@@ -188,6 +188,30 @@ NEIGHBORHOODS = {
             "West African (Yoruba)": ["ogun"],
         },
     },
+    "the-divine-twins": {
+        "label": "The divine twins — paired brothers (often horse-linked, of contrasting fate) who found peoples and rescue",
+        "endpoints": {
+            "Vedic": ["the-ashvins"],
+            "Greek": ["the-dioskouroi"],
+            "Roman": ["romulus", "remus"],
+            "Maya (Hero Twins)": ["hunahpu", "ixbalanque"],
+            "Yoruba": ["ibeji"],
+            "hub": ["divine-twins"],
+        },
+    },
+    "the-hunter": {
+        "label": "The hunter / master of animals — the deity of the wild, the chase, and the lord of beasts",
+        "endpoints": {
+            "Greek": ["artemis"],
+            "Roman": ["diana-roman"],
+            "Yoruba": ["osoosi"],
+            "Aztec": ["mixcoatl"],
+            "Celtic": ["cernunnos"],
+            "Norse": ["skadi", "ullr"],
+            "Vedic": ["rudra-shiva-early"],
+            "Egyptian": ["neith"],
+        },
+    },
 }
 
 # ── 2. PANTHEON ROSTERS (authoritative deity lists, headwaters first) ────────

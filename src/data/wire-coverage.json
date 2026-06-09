@@ -1,6 +1,6 @@
 {
  "generatedAt": "2026-06-09",
- "indexedSlugs": 15166,
+ "indexedSlugs": 15169,
  "neighborhoodsWhole": true,
  "neighborhoods": [
   {
@@ -86,6 +86,22 @@
   {
    "id": "the-divine-smith",
    "label": "The divine smith \u2014 the craftsman-god who forges the gods' weapons and wonders",
+   "whole": true,
+   "present": 9,
+   "total": 9,
+   "missing": {}
+  },
+  {
+   "id": "the-divine-twins",
+   "label": "The divine twins \u2014 paired brothers (often horse-linked, of contrasting fate) who found peoples and rescue",
+   "whole": true,
+   "present": 8,
+   "total": 8,
+   "missing": {}
+  },
+  {
+   "id": "the-hunter",
+   "label": "The hunter / master of animals \u2014 the deity of the wild, the chase, and the lord of beasts",
    "whole": true,
    "present": 9,
    "total": 9,
