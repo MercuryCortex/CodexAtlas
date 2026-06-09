@@ -296,6 +296,7 @@
     const CANON_DEFS = [
       ['P', 'Protestant (66)'], ['C', 'Catholic (73)'],
       ['O', 'Eastern Orthodox (78)'], ['E', 'Ethiopian (81, broader)'],
+      ['Q', 'Quran (114 suras)'],
     ];
     const sections = s.canons.map(c => {
       const books = c.books || [];
@@ -310,8 +311,11 @@
         const foldBooks = inCanon.filter(b => b.status === 'FOLDED').map(b => b.book);
         const pct = Math.round(ded / inCanon.length * 100);
         const band = (absentBooks.length === 0 && fold === 0) ? 'rich' : (pct >= 80 ? 'developing' : 'anemic');
-        const sub = absentBooks.length ? 'absent — ' + absentBooks.join(', ')
-          : (fold ? 'folded into a grouped node — ' + foldBooks.join(', ') : '');
+        const cap = function (arr) {
+          return arr.length > 6 ? arr.slice(0, 6).join(', ') + ' …+' + (arr.length - 6) + ' more' : arr.join(', ');
+        };
+        const sub = absentBooks.length ? 'absent — ' + cap(absentBooks)
+          : (fold ? fold + ' folded into the grouped node — ' + cap(foldBooks) : '');
         return ''
           + '<tr class="dev-overview-row dev-overview-row--' + band + '">'
           +   '<td class="dev-overview-col-label">'

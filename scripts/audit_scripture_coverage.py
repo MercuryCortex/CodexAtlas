@@ -173,9 +173,63 @@ BIBLE = [
     ("Revelation",     ["document-revelation"],         PCOE),
 ]
 
+# ── AUTHORITATIVE CANON: the Quran (114 suras) ────────────────────────────────
+# The Quran is ONE revelation in 114 suras (chapter-divisions), NOT a library of
+# distinct books like the Bible — so we distinguish the investigation-significant
+# suras "within reason" (the cross-tradition-wire carriers + the longest/most-
+# famous), keeping the grouped `phase-4-034-quran` node (chronological strata +
+# manzil) as the unifying lens. A not-yet-distinguished sura reads FOLDED
+# (covered by that node), not ABSENT. Each entry: (Name, [candidate ids], {"Q"}).
+Q = "Q"
+QURAN_SURAS = [
+    ("Q1 al-Fātiḥa (The Opening)",         ["document-quran-al-fatiha"], {Q}),
+    ("Q2 al-Baqara (The Cow)",             ["document-quran-al-baqara"], {Q}),
+    ("Q3 Āl ʿImrān (Family of Imran)",     [], {Q}),
+    ("Q4 al-Nisāʾ (Women)",                [], {Q}),
+    ("Q5 al-Māʾida (The Table)",           ["document-quran-al-maeda"], {Q}),
+    ("Q6 al-Anʿām (Cattle)",               [], {Q}),
+    ("Q7 al-Aʿrāf (The Heights)",          [], {Q}),
+    ("Q9 al-Tawba (Repentance)",           [], {Q}),
+    ("Q10 Yūnus (Jonah)",                  [], {Q}),
+    ("Q11 Hūd",                            [], {Q}),
+    ("Q12 Yūsuf (Joseph)",                 ["document-quran-yusuf"], {Q}),
+    ("Q14 Ibrāhīm (Abraham)",              [], {Q}),
+    ("Q16 al-Naḥl (The Bee)",              [], {Q}),
+    ("Q17 al-Isrāʾ (The Night Journey)",   [], {Q}),
+    ("Q18 al-Kahf (The Cave)",             ["document-quran-al-kahf"], {Q}),
+    ("Q19 Maryam (Mary)",                  ["document-quran-maryam"], {Q}),
+    ("Q20 Ṭā Hā (Moses)",                  [], {Q}),
+    ("Q21 al-Anbiyāʾ (The Prophets)",      [], {Q}),
+    ("Q24 al-Nūr (Light)",                 [], {Q}),
+    ("Q27 al-Naml (The Ant; Solomon)",     [], {Q}),
+    ("Q28 al-Qaṣaṣ (The Story; Moses)",    [], {Q}),
+    ("Q33 al-Aḥzāb (The Confederates)",    [], {Q}),
+    ("Q36 Yā Sīn",                         [], {Q}),
+    ("Q40 Ghāfir (Forgiver)",              [], {Q}),
+    ("Q42 al-Shūrā (Consultation)",        [], {Q}),
+    ("Q50 Qāf",                            [], {Q}),
+    ("Q55 al-Raḥmān (The Merciful)",       [], {Q}),
+    ("Q56 al-Wāqiʿa (The Inevitable)",     [], {Q}),
+    ("Q67 al-Mulk (Sovereignty)",          [], {Q}),
+    ("Q71 Nūḥ (Noah)",                     [], {Q}),
+    ("Q96 al-ʿAlaq (The Clot; 1st revelation)", [], {Q}),
+    ("Q97 al-Qadr (The Night of Power)",   [], {Q}),
+    ("Q109 al-Kāfirūn (The Disbelievers)", [], {Q}),
+    ("Q110 al-Naṣr (Divine Support)",      [], {Q}),
+    ("Q112 al-Ikhlāṣ (Sincerity; tawḥīd)", [], {Q}),
+    ("Q113 al-Falaq (Daybreak)",           [], {Q}),
+    ("Q114 al-Nās (Mankind)",              [], {Q}),
+]
+# the whole-Quran node folds every not-yet-distinguished sura (the unifying lens)
+GROUPS["quran-strata"] = ("phase-4-034-quran", [s[0] for s in QURAN_SURAS])
+for _b in [s[0] for s in QURAN_SURAS]:
+    _folds.setdefault(_b, []).append("quran-strata")
+
 CANONS = {
     "Bible (Christianity)": {"books": BIBLE,
                              "canon_sizes": {P: 66, C: 73, O: 78, E: 81}},
+    "Quran (Islam)": {"books": QURAN_SURAS,
+                      "canon_sizes": {Q: 114}},
 }
 
 

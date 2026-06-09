@@ -1,6 +1,6 @@
 {
  "generatedAt": "2026-06-09",
- "indexedDocs": 556,
+ "indexedDocs": 562,
  "canons": [
   {
    "canon": "Bible (Christianity)",
@@ -855,6 +855,311 @@
       "E",
       "O",
       "P"
+     ]
+    }
+   ]
+  },
+  {
+   "canon": "Quran (Islam)",
+   "total": 37,
+   "dedicated": 6,
+   "folded": 31,
+   "absent": 0,
+   "books": [
+    {
+     "book": "Q1 al-F\u0101ti\u1e25a (The Opening)",
+     "status": "DEDICATED",
+     "node": "document-quran-al-fatiha",
+     "canons": [
+      "Q"
+     ]
+    },
+    {
+     "book": "Q2 al-Baqara (The Cow)",
+     "status": "DEDICATED",
+     "node": "document-quran-al-baqara",
+     "canons": [
+      "Q"
+     ]
+    },
+    {
+     "book": "Q3 \u0100l \u02bfImr\u0101n (Family of Imran)",
+     "status": "FOLDED",
+     "node": "phase-4-034-quran",
+     "canons": [
+      "Q"
+     ]
+    },
+    {
+     "book": "Q4 al-Nis\u0101\u02be (Women)",
+     "status": "FOLDED",
+     "node": "phase-4-034-quran",
+     "canons": [
+      "Q"
+     ]
+    },
+    {
+     "book": "Q5 al-M\u0101\u02beida (The Table)",
+     "status": "DEDICATED",
+     "node": "document-quran-al-maeda",
+     "canons": [
+      "Q"
+     ]
+    },
+    {
+     "book": "Q6 al-An\u02bf\u0101m (Cattle)",
+     "status": "FOLDED",
+     "node": "phase-4-034-quran",
+     "canons": [
+      "Q"
+     ]
+    },
+    {
+     "book": "Q7 al-A\u02bfr\u0101f (The Heights)",
+     "status": "FOLDED",
+     "node": "phase-4-034-quran",
+     "canons": [
+      "Q"
+     ]
+    },
+    {
+     "book": "Q9 al-Tawba (Repentance)",
+     "status": "FOLDED",
+     "node": "phase-4-034-quran",
+     "canons": [
+      "Q"
+     ]
+    },
+    {
+     "book": "Q10 Y\u016bnus (Jonah)",
+     "status": "FOLDED",
+     "node": "phase-4-034-quran",
+     "canons": [
+      "Q"
+     ]
+    },
+    {
+     "book": "Q11 H\u016bd",
+     "status": "FOLDED",
+     "node": "phase-4-034-quran",
+     "canons": [
+      "Q"
+     ]
+    },
+    {
+     "book": "Q12 Y\u016bsuf (Joseph)",
+     "status": "DEDICATED",
+     "node": "document-quran-yusuf",
+     "canons": [
+      "Q"
+     ]
+    },
+    {
+     "book": "Q14 Ibr\u0101h\u012bm (Abraham)",
+     "status": "FOLDED",
+     "node": "phase-4-034-quran",
+     "canons": [
+      "Q"
+     ]
+    },
+    {
+     "book": "Q16 al-Na\u1e25l (The Bee)",
+     "status": "FOLDED",
+     "node": "phase-4-034-quran",
+     "canons": [
+      "Q"
+     ]
+    },
+    {
+     "book": "Q17 al-Isr\u0101\u02be (The Night Journey)",
+     "status": "FOLDED",
+     "node": "phase-4-034-quran",
+     "canons": [
+      "Q"
+     ]
+    },
+    {
+     "book": "Q18 al-Kahf (The Cave)",
+     "status": "DEDICATED",
+     "node": "document-quran-al-kahf",
+     "canons": [
+      "Q"
+     ]
+    },
+    {
+     "book": "Q19 Maryam (Mary)",
+     "status": "DEDICATED",
+     "node": "document-quran-maryam",
+     "canons": [
+      "Q"
+     ]
+    },
+    {
+     "book": "Q20 \u1e6c\u0101 H\u0101 (Moses)",
+     "status": "FOLDED",
+     "node": "phase-4-034-quran",
+     "canons": [
+      "Q"
+     ]
+    },
+    {
+     "book": "Q21 al-Anbiy\u0101\u02be (The Prophets)",
+     "status": "FOLDED",
+     "node": "phase-4-034-quran",
+     "canons": [
+      "Q"
+     ]
+    },
+    {
+     "book": "Q24 al-N\u016br (Light)",
+     "status": "FOLDED",
+     "node": "phase-4-034-quran",
+     "canons": [
+      "Q"
+     ]
+    },
+    {
+     "book": "Q27 al-Naml (The Ant; Solomon)",
+     "status": "FOLDED",
+     "node": "phase-4-034-quran",
+     "canons": [
+      "Q"
+     ]
+    },
+    {
+     "book": "Q28 al-Qa\u1e63a\u1e63 (The Story; Moses)",
+     "status": "FOLDED",
+     "node": "phase-4-034-quran",
+     "canons": [
+      "Q"
+     ]
+    },
+    {
+     "book": "Q33 al-A\u1e25z\u0101b (The Confederates)",
+     "status": "FOLDED",
+     "node": "phase-4-034-quran",
+     "canons": [
+      "Q"
+     ]
+    },
+    {
+     "book": "Q36 Y\u0101 S\u012bn",
+     "status": "FOLDED",
+     "node": "phase-4-034-quran",
+     "canons": [
+      "Q"
+     ]
+    },
+    {
+     "book": "Q40 Gh\u0101fir (Forgiver)",
+     "status": "FOLDED",
+     "node": "phase-4-034-quran",
+     "canons": [
+      "Q"
+     ]
+    },
+    {
+     "book": "Q42 al-Sh\u016br\u0101 (Consultation)",
+     "status": "FOLDED",
+     "node": "phase-4-034-quran",
+     "canons": [
+      "Q"
+     ]
+    },
+    {
+     "book": "Q50 Q\u0101f",
+     "status": "FOLDED",
+     "node": "phase-4-034-quran",
+     "canons": [
+      "Q"
+     ]
+    },
+    {
+     "book": "Q55 al-Ra\u1e25m\u0101n (The Merciful)",
+     "status": "FOLDED",
+     "node": "phase-4-034-quran",
+     "canons": [
+      "Q"
+     ]
+    },
+    {
+     "book": "Q56 al-W\u0101qi\u02bfa (The Inevitable)",
+     "status": "FOLDED",
+     "node": "phase-4-034-quran",
+     "canons": [
+      "Q"
+     ]
+    },
+    {
+     "book": "Q67 al-Mulk (Sovereignty)",
+     "status": "FOLDED",
+     "node": "phase-4-034-quran",
+     "canons": [
+      "Q"
+     ]
+    },
+    {
+     "book": "Q71 N\u016b\u1e25 (Noah)",
+     "status": "FOLDED",
+     "node": "phase-4-034-quran",
+     "canons": [
+      "Q"
+     ]
+    },
+    {
+     "book": "Q96 al-\u02bfAlaq (The Clot; 1st revelation)",
+     "status": "FOLDED",
+     "node": "phase-4-034-quran",
+     "canons": [
+      "Q"
+     ]
+    },
+    {
+     "book": "Q97 al-Qadr (The Night of Power)",
+     "status": "FOLDED",
+     "node": "phase-4-034-quran",
+     "canons": [
+      "Q"
+     ]
+    },
+    {
+     "book": "Q109 al-K\u0101fir\u016bn (The Disbelievers)",
+     "status": "FOLDED",
+     "node": "phase-4-034-quran",
+     "canons": [
+      "Q"
+     ]
+    },
+    {
+     "book": "Q110 al-Na\u1e63r (Divine Support)",
+     "status": "FOLDED",
+     "node": "phase-4-034-quran",
+     "canons": [
+      "Q"
+     ]
+    },
+    {
+     "book": "Q112 al-Ikhl\u0101\u1e63 (Sincerity; taw\u1e25\u012bd)",
+     "status": "FOLDED",
+     "node": "phase-4-034-quran",
+     "canons": [
+      "Q"
+     ]
+    },
+    {
+     "book": "Q113 al-Falaq (Daybreak)",
+     "status": "FOLDED",
+     "node": "phase-4-034-quran",
+     "canons": [
+      "Q"
+     ]
+    },
+    {
+     "book": "Q114 al-N\u0101s (Mankind)",
+     "status": "FOLDED",
+     "node": "phase-4-034-quran",
+     "canons": [
+      "Q"
      ]
     }
    ]

@@ -23,7 +23,7 @@
 > Early-Prophets) are KEPT as an extra lens, not deleted.
 >
 > **THE PROVEN LOOP (per book/batch):** (1) anchored pre-check that each wire-target resolves —
-> `grep -rlE "^id:[[:space:]]*\"?<slug>\"?[[:space:]]*$"` (the `$` anchor matters: an un-anchored
+> `grep -rlE "^id:[ \t]*\"?<slug>\"?[ \t]*$"` (the `$` anchor matters: an un-anchored
 > grep prefix-matched `josiah`→`josiah-king` and cost a linkcheck regression in Batch A). (2) Write
 > the node (template = any `document-*.md` from this session; e.g. `document-jeremiah.md`). (3)
 > Register its id in the matching `CANONS` candidate-list in `audit_scripture_coverage.py` (Lane B).
