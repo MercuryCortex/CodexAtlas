@@ -1,0 +1,863 @@
+{
+ "generatedAt": "2026-06-09",
+ "indexedDocs": 507,
+ "canons": [
+  {
+   "canon": "Bible (Christianity)",
+   "total": 79,
+   "dedicated": 30,
+   "folded": 13,
+   "absent": 36,
+   "books": [
+    {
+     "book": "Genesis",
+     "status": "DEDICATED",
+     "node": "document-genesis",
+     "canons": [
+      "C",
+      "E",
+      "O",
+      "P"
+     ]
+    },
+    {
+     "book": "Exodus",
+     "status": "DEDICATED",
+     "node": "document-exodus",
+     "canons": [
+      "C",
+      "E",
+      "O",
+      "P"
+     ]
+    },
+    {
+     "book": "Leviticus",
+     "status": "DEDICATED",
+     "node": "document-leviticus",
+     "canons": [
+      "C",
+      "E",
+      "O",
+      "P"
+     ]
+    },
+    {
+     "book": "Numbers",
+     "status": "DEDICATED",
+     "node": "document-numbers",
+     "canons": [
+      "C",
+      "E",
+      "O",
+      "P"
+     ]
+    },
+    {
+     "book": "Deuteronomy",
+     "status": "DEDICATED",
+     "node": "document-deuteronomy",
+     "canons": [
+      "C",
+      "E",
+      "O",
+      "P"
+     ]
+    },
+    {
+     "book": "Joshua",
+     "status": "FOLDED",
+     "node": "phase-2-019-deuteronomistic-history",
+     "canons": [
+      "C",
+      "E",
+      "O",
+      "P"
+     ]
+    },
+    {
+     "book": "Judges",
+     "status": "FOLDED",
+     "node": "phase-2-019-deuteronomistic-history",
+     "canons": [
+      "C",
+      "E",
+      "O",
+      "P"
+     ]
+    },
+    {
+     "book": "Ruth",
+     "status": "ABSENT",
+     "node": null,
+     "canons": [
+      "C",
+      "E",
+      "O",
+      "P"
+     ]
+    },
+    {
+     "book": "1 Samuel",
+     "status": "FOLDED",
+     "node": "phase-2-019-deuteronomistic-history",
+     "canons": [
+      "C",
+      "E",
+      "O",
+      "P"
+     ]
+    },
+    {
+     "book": "2 Samuel",
+     "status": "FOLDED",
+     "node": "phase-2-019-deuteronomistic-history",
+     "canons": [
+      "C",
+      "E",
+      "O",
+      "P"
+     ]
+    },
+    {
+     "book": "1 Kings",
+     "status": "DEDICATED",
+     "node": "phase-2-034-books-of-kings",
+     "canons": [
+      "C",
+      "E",
+      "O",
+      "P"
+     ]
+    },
+    {
+     "book": "2 Kings",
+     "status": "DEDICATED",
+     "node": "phase-2-034-books-of-kings",
+     "canons": [
+      "C",
+      "E",
+      "O",
+      "P"
+     ]
+    },
+    {
+     "book": "1 Chronicles",
+     "status": "DEDICATED",
+     "node": "document-2-chronicles",
+     "canons": [
+      "C",
+      "E",
+      "O",
+      "P"
+     ]
+    },
+    {
+     "book": "2 Chronicles",
+     "status": "DEDICATED",
+     "node": "document-2-chronicles",
+     "canons": [
+      "C",
+      "E",
+      "O",
+      "P"
+     ]
+    },
+    {
+     "book": "Ezra",
+     "status": "ABSENT",
+     "node": null,
+     "canons": [
+      "C",
+      "E",
+      "O",
+      "P"
+     ]
+    },
+    {
+     "book": "Nehemiah",
+     "status": "ABSENT",
+     "node": null,
+     "canons": [
+      "C",
+      "E",
+      "O",
+      "P"
+     ]
+    },
+    {
+     "book": "Esther",
+     "status": "ABSENT",
+     "node": null,
+     "canons": [
+      "C",
+      "E",
+      "O",
+      "P"
+     ]
+    },
+    {
+     "book": "Job",
+     "status": "DEDICATED",
+     "node": "phase-2-job",
+     "canons": [
+      "C",
+      "E",
+      "O",
+      "P"
+     ]
+    },
+    {
+     "book": "Psalms",
+     "status": "DEDICATED",
+     "node": "phase-2-005-davidic-psalms",
+     "canons": [
+      "C",
+      "E",
+      "O",
+      "P"
+     ]
+    },
+    {
+     "book": "Proverbs",
+     "status": "DEDICATED",
+     "node": "phase-2-041-book-of-proverbs",
+     "canons": [
+      "C",
+      "E",
+      "O",
+      "P"
+     ]
+    },
+    {
+     "book": "Ecclesiastes",
+     "status": "DEDICATED",
+     "node": "phase-2-ecclesiastes",
+     "canons": [
+      "C",
+      "E",
+      "O",
+      "P"
+     ]
+    },
+    {
+     "book": "Song of Songs",
+     "status": "DEDICATED",
+     "node": "phase-2-song-of-songs",
+     "canons": [
+      "C",
+      "E",
+      "O",
+      "P"
+     ]
+    },
+    {
+     "book": "Isaiah",
+     "status": "DEDICATED",
+     "node": "phase-3-001-second-third-isaiah",
+     "canons": [
+      "C",
+      "E",
+      "O",
+      "P"
+     ]
+    },
+    {
+     "book": "Jeremiah",
+     "status": "ABSENT",
+     "node": null,
+     "canons": [
+      "C",
+      "E",
+      "O",
+      "P"
+     ]
+    },
+    {
+     "book": "Lamentations",
+     "status": "DEDICATED",
+     "node": "phase-2-020-lamentations",
+     "canons": [
+      "C",
+      "E",
+      "O",
+      "P"
+     ]
+    },
+    {
+     "book": "Ezekiel",
+     "status": "DEDICATED",
+     "node": "document-ezekiel",
+     "canons": [
+      "C",
+      "E",
+      "O",
+      "P"
+     ]
+    },
+    {
+     "book": "Daniel",
+     "status": "DEDICATED",
+     "node": "phase-3-008-book-of-daniel",
+     "canons": [
+      "C",
+      "E",
+      "O",
+      "P"
+     ]
+    },
+    {
+     "book": "Hosea",
+     "status": "FOLDED",
+     "node": "phase-2-010-hebrew-bible-early-prophets",
+     "canons": [
+      "C",
+      "E",
+      "O",
+      "P"
+     ]
+    },
+    {
+     "book": "Joel",
+     "status": "ABSENT",
+     "node": null,
+     "canons": [
+      "C",
+      "E",
+      "O",
+      "P"
+     ]
+    },
+    {
+     "book": "Amos",
+     "status": "FOLDED",
+     "node": "phase-2-010-hebrew-bible-early-prophets",
+     "canons": [
+      "C",
+      "E",
+      "O",
+      "P"
+     ]
+    },
+    {
+     "book": "Obadiah",
+     "status": "ABSENT",
+     "node": null,
+     "canons": [
+      "C",
+      "E",
+      "O",
+      "P"
+     ]
+    },
+    {
+     "book": "Jonah",
+     "status": "ABSENT",
+     "node": null,
+     "canons": [
+      "C",
+      "E",
+      "O",
+      "P"
+     ]
+    },
+    {
+     "book": "Micah",
+     "status": "FOLDED",
+     "node": "phase-2-010-hebrew-bible-early-prophets",
+     "canons": [
+      "C",
+      "E",
+      "O",
+      "P"
+     ]
+    },
+    {
+     "book": "Nahum",
+     "status": "ABSENT",
+     "node": null,
+     "canons": [
+      "C",
+      "E",
+      "O",
+      "P"
+     ]
+    },
+    {
+     "book": "Habakkuk",
+     "status": "ABSENT",
+     "node": null,
+     "canons": [
+      "C",
+      "E",
+      "O",
+      "P"
+     ]
+    },
+    {
+     "book": "Zephaniah",
+     "status": "ABSENT",
+     "node": null,
+     "canons": [
+      "C",
+      "E",
+      "O",
+      "P"
+     ]
+    },
+    {
+     "book": "Haggai",
+     "status": "ABSENT",
+     "node": null,
+     "canons": [
+      "C",
+      "E",
+      "O",
+      "P"
+     ]
+    },
+    {
+     "book": "Zechariah",
+     "status": "ABSENT",
+     "node": null,
+     "canons": [
+      "C",
+      "E",
+      "O",
+      "P"
+     ]
+    },
+    {
+     "book": "Malachi",
+     "status": "ABSENT",
+     "node": null,
+     "canons": [
+      "C",
+      "E",
+      "O",
+      "P"
+     ]
+    },
+    {
+     "book": "Tobit",
+     "status": "ABSENT",
+     "node": null,
+     "canons": [
+      "C",
+      "E",
+      "O"
+     ]
+    },
+    {
+     "book": "Judith",
+     "status": "ABSENT",
+     "node": null,
+     "canons": [
+      "C",
+      "E",
+      "O"
+     ]
+    },
+    {
+     "book": "Wisdom of Solomon",
+     "status": "DEDICATED",
+     "node": "phase-3-012-wisdom-of-solomon",
+     "canons": [
+      "C",
+      "E",
+      "O"
+     ]
+    },
+    {
+     "book": "Sirach",
+     "status": "DEDICATED",
+     "node": "phase-3-007-sirach",
+     "canons": [
+      "C",
+      "E",
+      "O"
+     ]
+    },
+    {
+     "book": "Baruch",
+     "status": "DEDICATED",
+     "node": "phase-3-096-baruch",
+     "canons": [
+      "C",
+      "E",
+      "O"
+     ]
+    },
+    {
+     "book": "1 Maccabees",
+     "status": "ABSENT",
+     "node": null,
+     "canons": [
+      "C",
+      "E",
+      "O"
+     ]
+    },
+    {
+     "book": "2 Maccabees",
+     "status": "ABSENT",
+     "node": null,
+     "canons": [
+      "C",
+      "E",
+      "O"
+     ]
+    },
+    {
+     "book": "1 Esdras",
+     "status": "ABSENT",
+     "node": null,
+     "canons": [
+      "E",
+      "O"
+     ]
+    },
+    {
+     "book": "3 Maccabees",
+     "status": "ABSENT",
+     "node": null,
+     "canons": [
+      "E",
+      "O"
+     ]
+    },
+    {
+     "book": "4 Maccabees",
+     "status": "DEDICATED",
+     "node": "phase-3-019-4-maccabees",
+     "canons": [
+      "E",
+      "O"
+     ]
+    },
+    {
+     "book": "Prayer of Manasseh",
+     "status": "ABSENT",
+     "node": null,
+     "canons": [
+      "E",
+      "O"
+     ]
+    },
+    {
+     "book": "Jubilees",
+     "status": "DEDICATED",
+     "node": "phase-3-009-jubilees",
+     "canons": [
+      "E"
+     ]
+    },
+    {
+     "book": "1 Enoch",
+     "status": "DEDICATED",
+     "node": "phase-3-004-1-enoch",
+     "canons": [
+      "E"
+     ]
+    },
+    {
+     "book": "Matthew",
+     "status": "DEDICATED",
+     "node": "phase-3-017-gospel-of-matthew",
+     "canons": [
+      "C",
+      "E",
+      "O",
+      "P"
+     ]
+    },
+    {
+     "book": "Mark",
+     "status": "DEDICATED",
+     "node": "phase-3-016-gospel-of-mark",
+     "canons": [
+      "C",
+      "E",
+      "O",
+      "P"
+     ]
+    },
+    {
+     "book": "Luke",
+     "status": "DEDICATED",
+     "node": "phase-3-018-luke-acts",
+     "canons": [
+      "C",
+      "E",
+      "O",
+      "P"
+     ]
+    },
+    {
+     "book": "John (Gospel)",
+     "status": "DEDICATED",
+     "node": "phase-3-020-gospel-of-john",
+     "canons": [
+      "C",
+      "E",
+      "O",
+      "P"
+     ]
+    },
+    {
+     "book": "Acts",
+     "status": "DEDICATED",
+     "node": "phase-3-018-luke-acts",
+     "canons": [
+      "C",
+      "E",
+      "O",
+      "P"
+     ]
+    },
+    {
+     "book": "Romans",
+     "status": "DEDICATED",
+     "node": "document-romans",
+     "canons": [
+      "C",
+      "E",
+      "O",
+      "P"
+     ]
+    },
+    {
+     "book": "1 Corinthians",
+     "status": "FOLDED",
+     "node": "phase-3-015-pauline-epistles",
+     "canons": [
+      "C",
+      "E",
+      "O",
+      "P"
+     ]
+    },
+    {
+     "book": "2 Corinthians",
+     "status": "FOLDED",
+     "node": "phase-3-015-pauline-epistles",
+     "canons": [
+      "C",
+      "E",
+      "O",
+      "P"
+     ]
+    },
+    {
+     "book": "Galatians",
+     "status": "FOLDED",
+     "node": "phase-3-015-pauline-epistles",
+     "canons": [
+      "C",
+      "E",
+      "O",
+      "P"
+     ]
+    },
+    {
+     "book": "Ephesians",
+     "status": "ABSENT",
+     "node": null,
+     "canons": [
+      "C",
+      "E",
+      "O",
+      "P"
+     ]
+    },
+    {
+     "book": "Philippians",
+     "status": "FOLDED",
+     "node": "phase-3-015-pauline-epistles",
+     "canons": [
+      "C",
+      "E",
+      "O",
+      "P"
+     ]
+    },
+    {
+     "book": "Colossians",
+     "status": "ABSENT",
+     "node": null,
+     "canons": [
+      "C",
+      "E",
+      "O",
+      "P"
+     ]
+    },
+    {
+     "book": "1 Thessalonians",
+     "status": "FOLDED",
+     "node": "phase-3-015-pauline-epistles",
+     "canons": [
+      "C",
+      "E",
+      "O",
+      "P"
+     ]
+    },
+    {
+     "book": "2 Thessalonians",
+     "status": "ABSENT",
+     "node": null,
+     "canons": [
+      "C",
+      "E",
+      "O",
+      "P"
+     ]
+    },
+    {
+     "book": "1 Timothy",
+     "status": "ABSENT",
+     "node": null,
+     "canons": [
+      "C",
+      "E",
+      "O",
+      "P"
+     ]
+    },
+    {
+     "book": "2 Timothy",
+     "status": "ABSENT",
+     "node": null,
+     "canons": [
+      "C",
+      "E",
+      "O",
+      "P"
+     ]
+    },
+    {
+     "book": "Titus",
+     "status": "ABSENT",
+     "node": null,
+     "canons": [
+      "C",
+      "E",
+      "O",
+      "P"
+     ]
+    },
+    {
+     "book": "Philemon",
+     "status": "FOLDED",
+     "node": "phase-3-015-pauline-epistles",
+     "canons": [
+      "C",
+      "E",
+      "O",
+      "P"
+     ]
+    },
+    {
+     "book": "Hebrews",
+     "status": "ABSENT",
+     "node": null,
+     "canons": [
+      "C",
+      "E",
+      "O",
+      "P"
+     ]
+    },
+    {
+     "book": "James",
+     "status": "ABSENT",
+     "node": null,
+     "canons": [
+      "C",
+      "E",
+      "O",
+      "P"
+     ]
+    },
+    {
+     "book": "1 Peter",
+     "status": "ABSENT",
+     "node": null,
+     "canons": [
+      "C",
+      "E",
+      "O",
+      "P"
+     ]
+    },
+    {
+     "book": "2 Peter",
+     "status": "ABSENT",
+     "node": null,
+     "canons": [
+      "C",
+      "E",
+      "O",
+      "P"
+     ]
+    },
+    {
+     "book": "1 John",
+     "status": "ABSENT",
+     "node": null,
+     "canons": [
+      "C",
+      "E",
+      "O",
+      "P"
+     ]
+    },
+    {
+     "book": "2 John",
+     "status": "ABSENT",
+     "node": null,
+     "canons": [
+      "C",
+      "E",
+      "O",
+      "P"
+     ]
+    },
+    {
+     "book": "3 John",
+     "status": "ABSENT",
+     "node": null,
+     "canons": [
+      "C",
+      "E",
+      "O",
+      "P"
+     ]
+    },
+    {
+     "book": "Jude",
+     "status": "ABSENT",
+     "node": null,
+     "canons": [
+      "C",
+      "E",
+      "O",
+      "P"
+     ]
+    },
+    {
+     "book": "Revelation",
+     "status": "ABSENT",
+     "node": null,
+     "canons": [
+      "C",
+      "E",
+      "O",
+      "P"
+     ]
+    }
+   ]
+  }
+ ]
+}
