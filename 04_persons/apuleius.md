@@ -6,7 +6,15 @@ aka: ["Lucius Apuleius", "Apuleius Platonicus", "Apuleius Madaurensis"]
 role-description: "novelist | rhetorician | Platonist philosopher | mystery-cult initiate | priest of Aesculapius"
 tradition: "Middle Platonism"
 tradition-raw: "Middle Platonism; Latin literary culture; multi-mystery-cult initiate (Isiac + Osirian + others)"   # pre-migration; full original (membership-vs-wire 2026-06-02)
-tradition-appearances: ['Latin literary culture', 'multi-mystery-cult initiate (Isiac + Osirian + others)']   # STEP-B worklist: build appearance wires for these
+tradition-appearances: ['Latin literary culture', 'multi-mystery-cult initiate (Isiac + Osirian + others)']   # STEP-B worklist (wired below)
+syncretic-edges:
+  - target: "[[phase-4-105-apuleius-metamorphoses-book-11]]"
+    type: "attested-in"
+    appearance-tier: 2
+    role-in-context: "isiac-initiate"
+    source: "Griffiths, J. Gwyn (1975) Apuleius of Madauros: The Isis-Book (Metamorphoses XI)"
+    source-tier: "T1"
+    notes: "Metamorphoses book 11 — Lucius's salvation by Isis and initiation into her mysteries — the fullest surviving ancient account of an Isiac initiation; the Platonist author as devotee of the Egyptian goddess."
 role-tokens: ["author-secular"]
 region: "North Africa (Madauros, modern Algeria) — Carthage — Athens — Rome — back to North Africa"
 date-born: 124

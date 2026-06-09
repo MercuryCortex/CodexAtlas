@@ -6,7 +6,15 @@ aka: ["Yehuda Ish-Kerioth ('man of Kerioth')", "Ioudas Iskariōtēs", "Judas son
 role-description: "apostle | betrayer (in tradition)"
 tradition: "earliest Christianity"
 tradition-raw: "earliest Christianity; Sethian/Cainite Gnostic re-evaluation"   # pre-migration; full original (membership-vs-wire 2026-06-02)
-tradition-appearances: ['Sethian/Cainite Gnostic re-evaluation']   # STEP-B worklist: build appearance wires for these
+tradition-appearances: ['Sethian/Cainite Gnostic re-evaluation']   # STEP-B worklist (wired below)
+syncretic-edges:
+  - target: "[[gospel-of-judas-sethian]]"
+    type: "polemic-inversion"
+    appearance-tier: 2
+    role-in-context: "gnostic-favored-disciple"
+    source: "Kasser, Meyer & Wurst (2006) The Gospel of Judas (Critical Edition)"
+    source-tier: "T1"
+    notes: "The Sethian Gospel of Judas inverts the betrayer into the ONE disciple who truly understands Jesus, handing over the body so the inner light can be freed."
 role-tokens: ["apostle-christian"]
 region: "Judea (Kerioth?); Jerusalem"
 date-born: -5

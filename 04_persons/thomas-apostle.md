@@ -6,7 +6,15 @@ aka: ["Didymos", "Judas Thomas", "Judas Didymus Thomas", "Yehuda Toma", "Toma 't
 role-description: "apostle"
 tradition: "earliest Christianity"
 tradition-raw: "earliest Christianity; Syriac Christianity; Thomasine tradition"   # pre-migration; full original (membership-vs-wire 2026-06-02)
-tradition-appearances: ['Syriac Christianity', 'Thomasine tradition']   # STEP-B worklist: build appearance wires for these
+tradition-appearances: ['Syriac Christianity', 'Thomasine tradition']   # STEP-B worklist (wired below)
+syncretic-edges:
+  - target: "[[phase-4-001-gospel-of-thomas]]"
+    type: "direct-borrowing"
+    appearance-tier: 2
+    role-in-context: "thomasine-sayings-tradition"
+    source: "DeConick, April D. (2007) The Original Gospel of Thomas in Translation"
+    source-tier: "T1"
+    notes: "The 114 secret sayings attributed to Didymos Judas Thomas — the Thomasine/Syriac sayings tradition that runs parallel to the canonical Gospels."
 role-tokens: ["apostle-christian"]
 region: "Galilee → Edessa (Syria) → 'India' (Malabar coast per Thomas Christian tradition)"
 date-born: -5

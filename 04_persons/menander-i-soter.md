@@ -6,7 +6,15 @@ aka: ["Menandros A' Sōter", "Milinda (Pali)", "Minedra / Menadra (Kharoṣṭh�
 role-description: "king | religious convert | philosophical interlocutor"
 tradition: "Indo-Greek (Hellenistic)"
 tradition-raw: "Indo-Greek (Hellenistic); Buddhist convert per Pali tradition"   # pre-migration; full original (membership-vs-wire 2026-06-02)
-tradition-appearances: ['Buddhist convert per Pali tradition']   # STEP-B worklist: build appearance wires for these
+tradition-appearances: ['Buddhist convert per Pali tradition']   # STEP-B worklist (wired below)
+syncretic-edges:
+  - target: "[[phase-3-029-milindapanha]]"
+    type: "direct-borrowing"
+    appearance-tier: 2
+    role-in-context: "milinda-buddhist-interlocutor"
+    source: "Rhys Davids, T.W. (1890–94) The Questions of King Milinda (SBE 35–36)"
+    source-tier: "T1"
+    notes: "The Indo-Greek king Milinda (Menander) debates the monk Nāgasena on no-self, karma, and rebirth — a Greek king made the foil for an exposition of Buddhist philosophy, and (in tradition) a convert."
 role-tokens: ["king"]
 region: "Indo-Greek kingdom: Bactria, Arachosia, Gandhāra, Punjab (capital at Sākala = modern Sialkot, Pakistan)"
 date-born: -190
