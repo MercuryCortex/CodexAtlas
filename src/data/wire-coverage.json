@@ -1,6 +1,6 @@
 {
  "generatedAt": "2026-06-09",
- "indexedSlugs": 15210,
+ "indexedSlugs": 15225,
  "neighborhoodsWhole": true,
  "neighborhoods": [
   {
@@ -127,8 +127,8 @@
    "id": "the-sun-god",
    "label": "The sun-god \u2014 the solar deity who crosses the sky each day and sees all",
    "whole": true,
-   "present": 14,
-   "total": 14,
+   "present": 15,
+   "total": 15,
    "missing": {}
   },
   {
@@ -143,16 +143,16 @@
    "id": "the-moon",
    "label": "The moon-deity \u2014 the lunar god/goddess of the month, the tides, and the measure of time",
    "whole": true,
-   "present": 11,
-   "total": 11,
+   "present": 12,
+   "total": 12,
    "missing": {}
   },
   {
    "id": "the-war-god",
    "label": "The war-god \u2014 the deity of battle, slaughter, and martial fury",
    "whole": true,
-   "present": 9,
-   "total": 9,
+   "present": 10,
+   "total": 10,
    "missing": {}
   },
   {
@@ -175,16 +175,16 @@
    "id": "the-divine-scribe",
    "label": "The scribe / wisdom-god \u2014 keeper of writing, knowledge, and the divine record",
    "whole": true,
-   "present": 10,
-   "total": 10,
+   "present": 11,
+   "total": 11,
    "missing": {}
   },
   {
    "id": "the-psychopomp",
    "label": "The psychopomp \u2014 the guide who leads the souls of the dead to the otherworld",
    "whole": true,
-   "present": 8,
-   "total": 8,
+   "present": 9,
+   "total": 9,
    "missing": {}
   },
   {
@@ -209,6 +209,14 @@
    "whole": true,
    "present": 13,
    "total": 13,
+   "missing": {}
+  },
+  {
+   "id": "the-first-man",
+   "label": "The first human / primordial man \u2014 the first mortal, or the being from whom humanity (or the world) is made",
+   "whole": true,
+   "present": 11,
+   "total": 11,
    "missing": {}
   }
  ],
@@ -262,11 +270,10 @@
   },
   {
    "tradition": "Mesoamerican (Aztec / Maya)",
-   "present": 51,
+   "present": 52,
    "total": 55,
-   "pct": 92,
+   "pct": 94,
    "missing": [
-    "Metztli (moon)",
     "Patecatl",
     "Yacatecuhtli",
     "Buluc Chabtan"
@@ -344,12 +351,11 @@
   },
   {
    "tradition": "Chinese (folk + Daoist)",
-   "present": 31,
+   "present": 32,
    "total": 33,
-   "pct": 93,
+   "pct": 96,
    "missing": [
-    "Chenghuang (city god)",
-    "Cangjie (writing)"
+    "Chenghuang (city god)"
    ]
   },
   {
@@ -363,11 +369,10 @@
   },
   {
    "tradition": "Polynesian (Maori / Hawaiian / Tahitian)",
-   "present": 18,
+   "present": 19,
    "total": 21,
-   "pct": 85,
+   "pct": 90,
    "missing": [
-    "Tiki (first man)",
     "Mahuika (fire)",
     "Kamapua'a"
    ]
@@ -395,11 +400,10 @@
   },
   {
    "tradition": "Etruscan",
-   "present": 10,
+   "present": 11,
    "total": 14,
-   "pct": 71,
+   "pct": 78,
    "missing": [
-    "Laran (war)",
     "Vanth (death-demon)",
     "Usil (sun)",
     "Tivr (moon)"
@@ -416,11 +420,10 @@
   },
   {
    "tradition": "Korean (folk / shamanic)",
-   "present": 5,
+   "present": 6,
    "total": 8,
-   "pct": 62,
+   "pct": 75,
    "missing": [
-    "Yeomra (death-king)",
     "Yongwang (dragon kings)",
     "Jowangsin (hearth)"
    ]

@@ -270,6 +270,7 @@ NEIGHBORHOODS = {
             "Aztec": ["tonatiuh"],
             "Maya": ["kinich-ahau"],
             "Baltic": ["saule"],
+            "Armenian": ["mihr-armenian"],
         },
     },
     "the-love-goddess": {
@@ -301,7 +302,7 @@ NEIGHBORHOODS = {
             "Andean": ["mama-quilla"],
             "Baltic": ["meness"],
             "Arabian": ["sin-hadhramaut"],
-            "Aztec": ["tecciztecatl"],
+            "Aztec": ["tecciztecatl", "metztli"],
         },
     },
     "the-war-god": {
@@ -314,6 +315,7 @@ NEIGHBORHOODS = {
             "Celtic": ["the-morrigan"],
             "Aztec": ["huitzilopochtli"],
             "Armenian": ["vahagn"],
+            "Etruscan": ["laran"],
         },
     },
     "world-tree": {
@@ -349,6 +351,7 @@ NEIGHBORHOODS = {
             "Shinto": ["omoikane"],
             "Celtic": ["ogma"],
             "Armenian": ["tir-armenian"],
+            "Chinese": ["cangjie"],
         },
     },
     "the-psychopomp": {
@@ -361,6 +364,7 @@ NEIGHBORHOODS = {
             "Aztec": ["xolotl", "mictlantecuhtli"],
             "Celtic": ["the-morrigan"],
             "Maori": ["hine-nui-te-po"],
+            "Korean": ["yeomra"],
         },
     },
     "the-sea": {
@@ -401,6 +405,18 @@ NEIGHBORHOODS = {
             "Armenian": ["vahagn"],
             "Slavic": ["perun"],
             "Christian": ["michael-archangel"],
+        },
+    },
+    "the-first-man": {
+        "label": "The first human / primordial man — the first mortal, or the being from whom humanity (or the world) is made",
+        "endpoints": {
+            "Norse": ["ymir"],
+            "Vedic": ["purusha", "manu", "manu-vedic"],
+            "Chinese": ["pangu", "nuwa", "fuxi"],
+            "Iranian": ["yima-jamshid"],
+            "Greek": ["prometheus"],
+            "Hebrew": ["adam"],
+            "Polynesian": ["tiki"],
         },
     },
 }
