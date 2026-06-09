@@ -1,13 +1,13 @@
 {
  "generatedAt": "2026-06-09",
- "indexedDocs": 510,
+ "indexedDocs": 522,
  "canons": [
   {
    "canon": "Bible (Christianity)",
    "total": 79,
-   "dedicated": 33,
-   "folded": 13,
-   "absent": 33,
+   "dedicated": 45,
+   "folded": 10,
+   "absent": 24,
    "books": [
     {
      "book": "Genesis",
@@ -308,8 +308,8 @@
     },
     {
      "book": "Hosea",
-     "status": "FOLDED",
-     "node": "phase-2-010-hebrew-bible-early-prophets",
+     "status": "DEDICATED",
+     "node": "document-hosea",
      "canons": [
       "C",
       "E",
@@ -319,8 +319,8 @@
     },
     {
      "book": "Joel",
-     "status": "ABSENT",
-     "node": null,
+     "status": "DEDICATED",
+     "node": "document-joel",
      "canons": [
       "C",
       "E",
@@ -330,8 +330,8 @@
     },
     {
      "book": "Amos",
-     "status": "FOLDED",
-     "node": "phase-2-010-hebrew-bible-early-prophets",
+     "status": "DEDICATED",
+     "node": "document-amos",
      "canons": [
       "C",
       "E",
@@ -341,8 +341,8 @@
     },
     {
      "book": "Obadiah",
-     "status": "ABSENT",
-     "node": null,
+     "status": "DEDICATED",
+     "node": "document-obadiah",
      "canons": [
       "C",
       "E",
@@ -352,8 +352,8 @@
     },
     {
      "book": "Jonah",
-     "status": "ABSENT",
-     "node": null,
+     "status": "DEDICATED",
+     "node": "document-jonah",
      "canons": [
       "C",
       "E",
@@ -363,8 +363,8 @@
     },
     {
      "book": "Micah",
-     "status": "FOLDED",
-     "node": "phase-2-010-hebrew-bible-early-prophets",
+     "status": "DEDICATED",
+     "node": "document-micah",
      "canons": [
       "C",
       "E",
@@ -374,8 +374,8 @@
     },
     {
      "book": "Nahum",
-     "status": "ABSENT",
-     "node": null,
+     "status": "DEDICATED",
+     "node": "document-nahum",
      "canons": [
       "C",
       "E",
@@ -385,8 +385,8 @@
     },
     {
      "book": "Habakkuk",
-     "status": "ABSENT",
-     "node": null,
+     "status": "DEDICATED",
+     "node": "document-habakkuk",
      "canons": [
       "C",
       "E",
@@ -396,8 +396,8 @@
     },
     {
      "book": "Zephaniah",
-     "status": "ABSENT",
-     "node": null,
+     "status": "DEDICATED",
+     "node": "document-zephaniah",
      "canons": [
       "C",
       "E",
@@ -407,8 +407,8 @@
     },
     {
      "book": "Haggai",
-     "status": "ABSENT",
-     "node": null,
+     "status": "DEDICATED",
+     "node": "document-haggai",
      "canons": [
       "C",
       "E",
@@ -418,8 +418,8 @@
     },
     {
      "book": "Zechariah",
-     "status": "ABSENT",
-     "node": null,
+     "status": "DEDICATED",
+     "node": "document-zechariah",
      "canons": [
       "C",
       "E",
@@ -429,8 +429,8 @@
     },
     {
      "book": "Malachi",
-     "status": "ABSENT",
-     "node": null,
+     "status": "DEDICATED",
+     "node": "document-malachi",
      "canons": [
       "C",
       "E",

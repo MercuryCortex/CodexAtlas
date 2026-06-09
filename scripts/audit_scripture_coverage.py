@@ -114,19 +114,19 @@ BIBLE = [
     ("Lamentations",   ["phase-2-020-lamentations"],    PCOE),
     ("Ezekiel",        ["document-ezekiel"],            PCOE),
     ("Daniel",         ["phase-3-008-book-of-daniel"],  PCOE),
-    # ── Minor Prophets / The Twelve (12) ──
-    ("Hosea",          [],                              PCOE),  # folded: early-prophets
-    ("Joel",           [],                              PCOE),
-    ("Amos",           [],                              PCOE),  # folded: early-prophets
-    ("Obadiah",        [],                              PCOE),
-    ("Jonah",          [],                              PCOE),
-    ("Micah",          [],                              PCOE),  # folded: early-prophets
-    ("Nahum",          [],                              PCOE),
-    ("Habakkuk",       [],                              PCOE),
-    ("Zephaniah",      [],                              PCOE),
-    ("Haggai",         [],                              PCOE),
-    ("Zechariah",      [],                              PCOE),
-    ("Malachi",        [],                              PCOE),
+    # ── Minor Prophets / The Twelve (12) — all now dedicated (Batch B) ──
+    ("Hosea",          ["document-hosea"],              PCOE),  # was folded: early-prophets
+    ("Joel",           ["document-joel"],               PCOE),
+    ("Amos",           ["document-amos"],               PCOE),  # was folded: early-prophets
+    ("Obadiah",        ["document-obadiah"],            PCOE),
+    ("Jonah",          ["document-jonah"],              PCOE),
+    ("Micah",          ["document-micah"],              PCOE),  # was folded: early-prophets
+    ("Nahum",          ["document-nahum"],              PCOE),
+    ("Habakkuk",       ["document-habakkuk"],           PCOE),
+    ("Zephaniah",      ["document-zephaniah"],          PCOE),
+    ("Haggai",         ["document-haggai"],             PCOE),
+    ("Zechariah",      ["document-zechariah"],          PCOE),
+    ("Malachi",        ["document-malachi"],            PCOE),
     # ── Deuterocanon (Catholic / Orthodox / Ethiopian) ──
     ("Tobit",          [],                              COE),
     ("Judith",         [],                              COE),
