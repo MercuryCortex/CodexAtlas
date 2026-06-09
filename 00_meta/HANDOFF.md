@@ -31,13 +31,21 @@
 > don't pipe to tail) → `lint_yaml.py` → `audit_scripture_coverage.py`. (5) Commit **Lane A**
 > (`02_documents/*`) and **Lane B** (`scripts/` + `src/data/` + STATUS) SEPARATELY.
 >
-> **NEXT FRONTIER (John deciding — all queued):**
+> **DONE since this handoff (2026-06-09 LATER):** ✅ **DEV → Overview wiring** — the scripture bar is
+> live on the DEV panel next to the deity one (`renderScriptureCoverage` in `dev-overview.js`,
+> screenshot-verified, renders Bible 4-canons + Quran). ✅ **Quran loop opened** — 6 flagship suras
+> distinguished (al-Fātiḥa/al-Baqara/al-Māʾida/Yūsuf/al-Kahf/Maryam); the bar's Quran roster reads
+> **6/37 within-reason (16%)**, the rest FOLDED into `phase-4-034-quran` (the strata lens). See the
+> top STATUS entries `opus-scripture-quran-A` + `opus-scripture-dev-panel`.
+>
+> **NEXT FRONTIER (John deciding):**
 > 1. **The canon-comparison wheel** — the bar already holds every book's P/C/O/E membership; "pick a
 >    canon → included-vs-excluded books light up" is now a real Lane-B build John floated 2026-06-05.
-> 2. **DEV → Overview wiring** — surface `scripture-coverage.json` on the DEV panel next to the deity
->    bar (`src/js/views/dev-overview.js`). Lane B; browser-verify per the cardinal screenshot rule.
-> 3. **The next tradition** — roll the same bar+fill machinery to the **Quran** (114 suras), Vedas,
->    Tipiṭaka, etc. (Tanakh is already ~complete via the OT overlap.)
+> 2. **Quran fill — continue** (within-reason, the ratified-by-default model): the next high-wire suras
+>    (al-Isrāʾ 17 Night-Journey, Ṭā-Hā 20, al-Anbiyāʾ 21, al-Ikhlāṣ 112…), then the long tail. ⚠️ the
+>    **all-114-vs-within-reason** granularity was MY call (John didn't answer the unit question) — fully
+>    reversible; confirm with him before going to all 114.
+> 3. **More traditions** — Vedas, Tipiṭaka, etc. (Tanakh is already ~complete via the OT overlap).
 > 4. **PERSONS completeness** — the still-untouched third layer (prophets / apostles / scribes /
 >    kings); note many eponymous figures referenced by the new Bible nodes (jeremiah-prophet,
 >    john-of-patmos exists, most others don't) are persons-layer work.
