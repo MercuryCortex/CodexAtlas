@@ -97,8 +97,14 @@
     // `python3 scripts/audit_wire_coverage.py`.
     const wireCov = fetch('src/data/wire-coverage.json?_=' + Date.now(), { cache: 'no-store' })
       .then(r => r.ok ? r.json() : null).catch(() => null);
-    return Promise.all([health, bench, docBench, wireCov]).then(([d, b, db, wc]) => {
-      STATE.cache = d; STATE.bench = b; STATE.docBench = db; STATE.wireCov = wc; return d;
+    // The SCRIPTURE completeness bar — per-canon book coverage (is the canon
+    // WHOLE, or a curated selection?). Sibling of wire-coverage; the quality
+    // scorecards are blind to a missing book. Rebuilt via
+    // `python3 scripts/audit_scripture_coverage.py`.
+    const scriptureCov = fetch('src/data/scripture-coverage.json?_=' + Date.now(), { cache: 'no-store' })
+      .then(r => r.ok ? r.json() : null).catch(() => null);
+    return Promise.all([health, bench, docBench, wireCov, scriptureCov]).then(([d, b, db, wc, sc]) => {
+      STATE.cache = d; STATE.bench = b; STATE.docBench = db; STATE.wireCov = wc; STATE.scriptureCov = sc; return d;
     });
   }
 
@@ -124,6 +130,7 @@
       renderDeityBenchmark(STATE.bench),
       renderDocumentBenchmark(STATE.docBench),
       renderWireCoverage(STATE.wireCov),
+      renderScriptureCoverage(STATE.scriptureCov),
       renderSummary(d, overallPct, totalBaseline, lensBands),
       renderLenses(d.lenses),
       renderFamilies(d.families),
@@ -274,6 +281,74 @@
         ? '<div class="dev-overview-cell-sub"><strong>Top demand</strong> — referenced but missing (the investigation\'s most-wanted next nodes):</div>'
           + '<ul class="dev-overview-demand-list">' + demand + '</ul>'
         : '')
+      + '</section>';
+  }
+
+  // ── SCRIPTURE COMPLETENESS — per-canon book coverage ───────────────────
+  // The scripture sibling of wire-coverage: holds the AUTHORITATIVE canon
+  // book-list as external truth and reports DEDICATED / FOLDED / ABSENT per
+  // book. The quality scorecards grade nodes that EXIST and are blind to a
+  // missing book — this is the bar that sees the Bible is (was) half-empty.
+  // Data: src/data/scripture-coverage.json (rebuilt via
+  // `python3 scripts/audit_scripture_coverage.py`).
+  function renderScriptureCoverage(s) {
+    if (!s || !s.canons || !s.canons.length) return '';
+    const CANON_DEFS = [
+      ['P', 'Protestant (66)'], ['C', 'Catholic (73)'],
+      ['O', 'Eastern Orthodox (78)'], ['E', 'Ethiopian (81, broader)'],
+    ];
+    const sections = s.canons.map(c => {
+      const books = c.books || [];
+      const overallPct = c.total ? Math.round(c.dedicated / c.total * 100) : 0;
+      const canonRows = CANON_DEFS.map(function (def) {
+        const letter = def[0], label = def[1];
+        const inCanon = books.filter(b => (b.canons || []).indexOf(letter) >= 0);
+        if (!inCanon.length) return '';
+        const ded = inCanon.filter(b => b.status === 'DEDICATED').length;
+        const fold = inCanon.filter(b => b.status === 'FOLDED').length;
+        const absentBooks = inCanon.filter(b => b.status === 'ABSENT').map(b => b.book);
+        const foldBooks = inCanon.filter(b => b.status === 'FOLDED').map(b => b.book);
+        const pct = Math.round(ded / inCanon.length * 100);
+        const band = (absentBooks.length === 0 && fold === 0) ? 'rich' : (pct >= 80 ? 'developing' : 'anemic');
+        const sub = absentBooks.length ? 'absent — ' + absentBooks.join(', ')
+          : (fold ? 'folded into a grouped node — ' + foldBooks.join(', ') : '');
+        return ''
+          + '<tr class="dev-overview-row dev-overview-row--' + band + '">'
+          +   '<td class="dev-overview-col-label">'
+          +     '<div class="dev-overview-cell-main">' + escapeHtml(label) + '</div>'
+          +     (sub ? '<div class="dev-overview-cell-sub">' + escapeHtml(sub) + '</div>' : '')
+          +   '</td>'
+          +   '<td class="dev-overview-col-num">' + ded + '<span class="dev-overview-stat-unit">/' + inCanon.length + '</span></td>'
+          +   '<td class="dev-overview-col-num">' + pct + '%</td>'
+          +   '<td class="dev-overview-col-band">'
+          +     '<span class="dev-overview-band-pill" data-band="' + band + '">'
+          +       ((absentBooks.length === 0 && fold === 0) ? 'COMPLETE' : pct + '%') + '</span>'
+          +   '</td>'
+          + '</tr>';
+      }).join('');
+      return ''
+        + '<div class="dev-overview-cell-sub"><strong>' + escapeHtml(c.canon) + '</strong> — '
+        +   c.dedicated + ' dedicated · ' + c.folded + ' folded · ' + c.absent + ' absent '
+        +   '(of ' + c.total + ' books — ' + overallPct + '% distinguished):</div>'
+        + '<div class="dev-overview-table-wrap"><table class="dev-overview-table">'
+        +   '<thead><tr><th>Canon</th>'
+        +   '<th class="dev-overview-col-num">Dedicated</th>'
+        +   '<th class="dev-overview-col-num">%</th><th>Status</th></tr></thead>'
+        +   '<tbody>' + canonRows + '</tbody></table></div>';
+    }).join('');
+    const totalDed = s.canons.reduce((n, c) => n + (c.dedicated || 0), 0);
+    const totalAll = s.canons.reduce((n, c) => n + (c.total || 0), 0);
+    const totalAbsent = s.canons.reduce((n, c) => n + (c.absent || 0), 0);
+    return ''
+      + '<section class="dev-overview-section dev-overview-summary">'
+      +   '<h2 class="dev-overview-section-h">📖 Completeness — scripture canon coverage '
+      +     '<span class="dev-overview-h-hint">is the canon WHOLE? — every book a node, not a curated selection</span></h2>'
+      +   '<div class="dev-overview-stat-grid">'
+      +     stat(totalDed + '<span class="dev-overview-stat-unit">/' + totalAll + '</span>', totalAbsent === 0 ? 'BOOKS DEDICATED ✓' : 'books dedicated')
+      +     stat(num(s.indexedDocs), 'Document nodes indexed')
+      +     stat(escapeHtml(s.generatedAt || ''), 'As of')
+      +   '</div>'
+      +   sections
       + '</section>';
   }
 
