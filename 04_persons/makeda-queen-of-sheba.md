@@ -4,7 +4,9 @@ id: "makeda-queen-of-sheba"
 name: "Makeda, Queen of Sheba (Ethiopian tradition)"
 aka: ["Queen of Sheba", "Makeda", "Bilqis (Quranic tradition)", "Nikaule (Josephus)", "the Queen of the South (Mt 12:42 / Lk 11:31)"]
 role-description: "queen, foundational matriarch"
-tradition: "[[tradition-ethiopian-orthodox-tewahedo]] (foundational figure of the Solomonic dynasty); also [[tradition-islam]] (Bilqis); [[tradition-judaism]] (1 Kings 10, Targum Sheni)"
+tradition: "Hebrew Bible"
+tradition-raw: "[[tradition-ethiopian-orthodox-tewahedo]] (foundational figure of the Solomonic dynasty); also [[tradition-islam]] (Bilqis); [[tradition-judaism]] (1 Kings 10, Targum Sheni)"   # pre-migration; ANALYZER-MISORDERED — origin is 1 Kings 10 (listed last); corrected to Hebrew-Bible home (membership-vs-wire 2026-06-02)
+tradition-appearances: ['Ethiopian Orthodox Tewahedo (Makeda — Solomonic-dynasty foundation, Kebra Nagast)', 'Islam (Bilqis)', 'rabbinic Judaism (Targum Sheni)']   # STEP-B worklist: build appearance wires for these
 role-tokens: ["queen"]
 region: "Ethiopian tradition: Aksum / Saba (Sheba) — broader ANE tradition: South Arabian Saba (Yemen) and/or Aksum"
 date-born: -1000

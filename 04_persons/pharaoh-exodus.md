@@ -4,7 +4,9 @@ id: "pharaoh-exodus"
 name: "Firʿawn (Pharaoh)"
 aka: ["Firʿawn", "Pharaoh of the Exodus", "Pharaoh of Moses", "the Tyrant Pharaoh"]
 role: "antagonist | oppressor | paradigmatic tyrant"
-tradition: "Islam (Quranic figure); Israelite / Hebrew Bible tradition"
+tradition: "Hebrew Bible"
+tradition-raw: "Islam (Quranic figure); Israelite / Hebrew Bible tradition"   # pre-migration; ANALYZER-MISORDERED — origin is Exodus (Pharaoh of the oppression), not the Quran; corrected to Hebrew-Bible home (membership-vs-wire 2026-06-02)
+tradition-appearances: ['Islam (Quranic figure)']   # STEP-B worklist: build appearance wires for these
 region: "Egypt (Quranic narrative)"
 date-born: ""
 date-died: ""

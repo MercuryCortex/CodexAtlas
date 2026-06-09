@@ -4,7 +4,9 @@ id: "lut"
 name: "Lūṭ"
 aka: ["Lūṭ", "Lot (Hebrew)", "Lot (Genesis)"]
 role-description: "prophet | nephew of Abraham"
-tradition: "Islam (Quranic prophet); Israelite / Hebrew Bible"
+tradition: "Hebrew Bible"
+tradition-raw: "Islam (Quranic prophet); Israelite / Hebrew Bible"   # pre-migration; ANALYZER-MISORDERED — origin is Genesis 19 (Lot), not the Quran; corrected to Hebrew-Bible home (membership-vs-wire 2026-06-02)
+tradition-appearances: ['Islam (Quranic prophet)']   # STEP-B worklist: build appearance wires for these
 role-tokens: ["prophet-abrahamic"]
 region: "Canaan / Sodom (Saddūm in Arabic tradition)"
 date-born: ""
