@@ -1,13 +1,13 @@
 {
  "generatedAt": "2026-06-09",
- "indexedDocs": 522,
+ "indexedDocs": 539,
  "canons": [
   {
    "canon": "Bible (Christianity)",
    "total": 79,
-   "dedicated": 45,
+   "dedicated": 62,
    "folded": 10,
-   "absent": 24,
+   "absent": 7,
    "books": [
     {
      "book": "Genesis",
@@ -88,8 +88,8 @@
     },
     {
      "book": "Ruth",
-     "status": "ABSENT",
-     "node": null,
+     "status": "DEDICATED",
+     "node": "document-ruth",
      "canons": [
       "C",
       "E",
@@ -165,8 +165,8 @@
     },
     {
      "book": "Ezra",
-     "status": "ABSENT",
-     "node": null,
+     "status": "DEDICATED",
+     "node": "document-ezra",
      "canons": [
       "C",
       "E",
@@ -176,8 +176,8 @@
     },
     {
      "book": "Nehemiah",
-     "status": "ABSENT",
-     "node": null,
+     "status": "DEDICATED",
+     "node": "document-nehemiah",
      "canons": [
       "C",
       "E",
@@ -187,8 +187,8 @@
     },
     {
      "book": "Esther",
-     "status": "ABSENT",
-     "node": null,
+     "status": "DEDICATED",
+     "node": "document-esther",
      "canons": [
       "C",
       "E",
@@ -661,8 +661,8 @@
     },
     {
      "book": "Ephesians",
-     "status": "ABSENT",
-     "node": null,
+     "status": "DEDICATED",
+     "node": "document-ephesians",
      "canons": [
       "C",
       "E",
@@ -683,8 +683,8 @@
     },
     {
      "book": "Colossians",
-     "status": "ABSENT",
-     "node": null,
+     "status": "DEDICATED",
+     "node": "document-colossians",
      "canons": [
       "C",
       "E",
@@ -705,8 +705,8 @@
     },
     {
      "book": "2 Thessalonians",
-     "status": "ABSENT",
-     "node": null,
+     "status": "DEDICATED",
+     "node": "document-2-thessalonians",
      "canons": [
       "C",
       "E",
@@ -716,8 +716,8 @@
     },
     {
      "book": "1 Timothy",
-     "status": "ABSENT",
-     "node": null,
+     "status": "DEDICATED",
+     "node": "document-1-timothy",
      "canons": [
       "C",
       "E",
@@ -727,8 +727,8 @@
     },
     {
      "book": "2 Timothy",
-     "status": "ABSENT",
-     "node": null,
+     "status": "DEDICATED",
+     "node": "document-2-timothy",
      "canons": [
       "C",
       "E",
@@ -738,8 +738,8 @@
     },
     {
      "book": "Titus",
-     "status": "ABSENT",
-     "node": null,
+     "status": "DEDICATED",
+     "node": "document-titus",
      "canons": [
       "C",
       "E",
@@ -771,8 +771,8 @@
     },
     {
      "book": "James",
-     "status": "ABSENT",
-     "node": null,
+     "status": "DEDICATED",
+     "node": "document-james",
      "canons": [
       "C",
       "E",
@@ -782,8 +782,8 @@
     },
     {
      "book": "1 Peter",
-     "status": "ABSENT",
-     "node": null,
+     "status": "DEDICATED",
+     "node": "document-1-peter",
      "canons": [
       "C",
       "E",
@@ -793,8 +793,8 @@
     },
     {
      "book": "2 Peter",
-     "status": "ABSENT",
-     "node": null,
+     "status": "DEDICATED",
+     "node": "document-2-peter",
      "canons": [
       "C",
       "E",
@@ -804,8 +804,8 @@
     },
     {
      "book": "1 John",
-     "status": "ABSENT",
-     "node": null,
+     "status": "DEDICATED",
+     "node": "document-1-john",
      "canons": [
       "C",
       "E",
@@ -815,8 +815,8 @@
     },
     {
      "book": "2 John",
-     "status": "ABSENT",
-     "node": null,
+     "status": "DEDICATED",
+     "node": "document-2-john",
      "canons": [
       "C",
       "E",
@@ -826,8 +826,8 @@
     },
     {
      "book": "3 John",
-     "status": "ABSENT",
-     "node": null,
+     "status": "DEDICATED",
+     "node": "document-3-john",
      "canons": [
       "C",
       "E",
@@ -837,8 +837,8 @@
     },
     {
      "book": "Jude",
-     "status": "ABSENT",
-     "node": null,
+     "status": "DEDICATED",
+     "node": "document-jude",
      "canons": [
       "C",
       "E",

@@ -92,16 +92,16 @@ BIBLE = [
     # ── Former Prophets / OT Historical ──
     ("Joshua",         [],                              PCOE),  # folded: DH
     ("Judges",         [],                              PCOE),  # folded: DH
-    ("Ruth",           [],                              PCOE),
+    ("Ruth",           ["document-ruth"],               PCOE),
     ("1 Samuel",       [],                              PCOE),  # folded: DH
     ("2 Samuel",       [],                              PCOE),  # folded: DH
     ("1 Kings",        ["phase-2-034-books-of-kings"],  PCOE),
     ("2 Kings",        ["phase-2-034-books-of-kings"],  PCOE),
     ("1 Chronicles",   ["document-2-chronicles"],       PCOE),
     ("2 Chronicles",   ["document-2-chronicles"],       PCOE),
-    ("Ezra",           [],                              PCOE),
-    ("Nehemiah",       [],                              PCOE),
-    ("Esther",         [],                              PCOE),
+    ("Ezra",           ["document-ezra"],               PCOE),
+    ("Nehemiah",       ["document-nehemiah"],           PCOE),
+    ("Esther",         ["document-esther"],             PCOE),
     # ── Wisdom / Writings (5) ──
     ("Job",            ["phase-2-job"],                 PCOE),
     ("Psalms",         ["phase-2-005-davidic-psalms"],  PCOE),
@@ -152,24 +152,24 @@ BIBLE = [
     ("1 Corinthians",  [],                              PCOE),  # folded: paulines
     ("2 Corinthians",  [],                              PCOE),  # folded: paulines
     ("Galatians",      [],                              PCOE),  # folded: paulines
-    ("Ephesians",      [],                              PCOE),
+    ("Ephesians",      ["document-ephesians"],          PCOE),
     ("Philippians",    [],                              PCOE),  # folded: paulines
-    ("Colossians",     [],                              PCOE),
+    ("Colossians",     ["document-colossians"],         PCOE),
     ("1 Thessalonians",[],                              PCOE),  # folded: paulines
-    ("2 Thessalonians",[],                              PCOE),
-    ("1 Timothy",      [],                              PCOE),
-    ("2 Timothy",      [],                              PCOE),
-    ("Titus",          [],                              PCOE),
+    ("2 Thessalonians",["document-2-thessalonians"],    PCOE),
+    ("1 Timothy",      ["document-1-timothy"],          PCOE),
+    ("2 Timothy",      ["document-2-timothy"],          PCOE),
+    ("Titus",          ["document-titus"],              PCOE),
     ("Philemon",       [],                              PCOE),  # folded: paulines
     # ── General / Catholic epistles + Hebrews + Revelation (9) ──
     ("Hebrews",        ["document-hebrews"],            PCOE),
-    ("James",          [],                              PCOE),
-    ("1 Peter",        [],                              PCOE),
-    ("2 Peter",        [],                              PCOE),
-    ("1 John",         [],                              PCOE),
-    ("2 John",         [],                              PCOE),
-    ("3 John",         [],                              PCOE),
-    ("Jude",           [],                              PCOE),
+    ("James",          ["document-james"],              PCOE),
+    ("1 Peter",        ["document-1-peter"],            PCOE),
+    ("2 Peter",        ["document-2-peter"],            PCOE),
+    ("1 John",         ["document-1-john"],             PCOE),
+    ("2 John",         ["document-2-john"],             PCOE),
+    ("3 John",         ["document-3-john"],             PCOE),
+    ("Jude",           ["document-jude"],               PCOE),
     ("Revelation",     ["document-revelation"],         PCOE),
 ]
 
