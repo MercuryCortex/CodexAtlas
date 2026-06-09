@@ -487,6 +487,89 @@ ROSTERS = {
         ("Hachiman", ["hachiman"]), ("Tenjin (Sugawara no Michizane)", ["tenjin"]),
         ("Toyouke", ["toyouke", "toyouke-omikami"]),
     ],
+    "Celtic (Irish + Gaulish + Welsh)": [
+        # Irish — Tuatha Dé Danann
+        ("The Dagda", ["dagda", "the-dagda"]), ("Lugh", ["lugh"]), ("Brigid", ["brigid"]),
+        ("Nuada", ["nuada"]), ("The Morrigan", ["the-morrigan", "morrigan"]),
+        ("Macha", ["macha"]), ("Badb", ["badb"]), ("Nemain", ["nemain"]),
+        ("Dian Cecht", ["dian-cecht"]), ("Goibniu", ["goibniu"]), ("Ogma", ["ogma"]),
+        ("Danu", ["danu"]), ("Boann", ["boann"]), ("Aengus Og", ["aengus-og", "aengus"]),
+        ("Manannan mac Lir", ["manannan-mac-lir", "manannan"]), ("Lir", ["lir"]),
+        ("Balor (Fomorian)", ["balor"]), ("Bres", ["bres"]), ("Donn", ["donn-celtic", "donn"]),
+        ("Aine", ["aine"]), ("Midir", ["midir"]), ("Etain", ["etain"]),
+        # Gaulish
+        ("Cernunnos", ["cernunnos"]), ("Belenos", ["belenos"]), ("Taranis", ["taranis"]),
+        ("Teutates", ["teutates"]), ("Epona", ["epona"]), ("Sucellus", ["sucellus"]),
+        ("Lugus", ["lugus"]), ("Sulis", ["sulis"]), ("Rosmerta", ["rosmerta"]),
+        ("Nodens", ["nodens"]), ("Maponos", ["maponos"]),
+        # Welsh
+        ("Arianrhod", ["arianrhod"]), ("Gwydion", ["gwydion"]), ("Lleu Llaw Gyffes", ["lleu-llaw-gyffes", "lleu"]),
+        ("Rhiannon", ["rhiannon"]), ("Bran the Blessed", ["bran-the-blessed", "bran"]),
+        ("Arawn", ["arawn"]), ("Cerridwen", ["cerridwen"]),
+    ],
+    "Slavic (pre-Christian)": [
+        ("Perun", ["perun"]), ("Veles", ["veles"]), ("Svarog", ["svarog"]),
+        ("Dazhbog", ["dazhbog"]), ("Mokosh", ["mokosh"]), ("Stribog", ["stribog"]),
+        ("Svantovit", ["svantovit"]), ("Chernobog", ["chernobog"]), ("Belobog", ["belobog"]),
+        ("Jarilo", ["jarilo"]), ("Marzanna / Morana", ["marzanna", "morana"]),
+        ("Khors", ["khors"]), ("Simargl", ["simargl"]), ("Zorya", ["zorya"]),
+        ("Rod", ["rod-slavic", "rod"]), ("Kupala", ["kupala"]),
+        # honest gaps
+        ("Triglav", ["triglav"]), ("Lada", ["lada"]), ("Devana", ["devana"]),
+    ],
+    "Zoroastrian / Iranian": [
+        ("Ahura Mazda", ["ahura-mazda"]), ("Angra Mainyu / Ahriman", ["angra-mainyu-ahriman", "ahriman"]),
+        ("Spenta Mainyu", ["spenta-mainyu"]),
+        # the Amesha Spentas
+        ("Vohu Manah", ["vohu-manah"]), ("Asha Vahishta", ["asha-vahishta"]),
+        ("Khshathra Vairya", ["khshathra-vairya"]), ("Spenta Armaiti", ["spenta-armaiti"]),
+        ("Haurvatat", ["haurvatat"]), ("Ameretat", ["ameretat"]),
+        ("The Amesha Spentas", ["the-amesha-spentas"]),
+        # yazatas
+        ("Mithra", ["mithra-zoroastrian", "mithra"]), ("Anahita", ["anahita-zoroastrian", "anahita"]),
+        ("Verethragna", ["verethragna", "verethraghna"]), ("Sraosha", ["sraosha"]),
+        ("Rashnu", ["rashnu-zoroastrian", "rashnu"]), ("Ashi", ["ashi"]), ("Atar (fire)", ["atar"]),
+        ("Haoma", ["haoma-zoroastrian", "haoma"]), ("Tishtrya", ["tishtrya"]),
+        ("Vayu", ["vayu-iranian", "vayu"]), ("Apam Napat", ["apam-napat-zoroastrian"]),
+        ("Daena", ["daena"]),
+        # daevas + figures
+        ("Aeshma", ["aeshma"]), ("Druj", ["druj"]), ("Nanghaithya", ["nanghaithya-daeva"]),
+        ("Yima / Jamshid", ["yima-jamshid"]), ("Zurvan", ["zurvan"]), ("Saoshyant", ["saoshyant"]),
+        # honest gaps
+        ("Mah (moon)", ["mah", "mah-zoroastrian"]), ("Geush Urvan (ox-soul)", ["geush-urvan"]),
+        ("Asman (sky)", ["asman"]),
+    ],
+    "Hittite / Hurrian (Anatolian)": [
+        ("Tarhunna / Teshub (storm)", ["tarhunna", "teshub"]), ("Hebat", ["hebat"]),
+        ("Sun-goddess of Arinna", ["sun-goddess-of-arinna"]), ("Istanu (sun)", ["istanu"]),
+        ("Telipinu (vanishing god)", ["telipinu"]), ("Kumarbi", ["kumarbi"]),
+        ("Illuyanka (dragon)", ["illuyanka"]), ("Inara", ["inara"]), ("Shaushka", ["shaushka-hurrian", "shaushka"]),
+        ("Hannahanna", ["hannahanna"]), ("Kamrusepa (healing)", ["kamrusepa"]),
+        ("Sharruma", ["sharruma"]), ("Kubaba", ["kubaba"]), ("Shala", ["shala"]),
+        ("Runtiya", ["runtiya"]),
+        # honest gaps
+        ("Halki (grain)", ["halki"]), ("Wurusemu", ["wurusemu"]), ("Aranzah (Tigris)", ["aranzah"]),
+    ],
+    "Chinese (folk + Daoist)": [
+        # cosmogonic / high gods
+        ("Pangu", ["pangu"]), ("Nuwa", ["nuwa"]), ("Fuxi", ["fuxi"]), ("Shangdi", ["shangdi"]),
+        ("Tian (Heaven)", ["tian-heaven", "tian"]), ("Jade Emperor", ["jade-emperor"]),
+        ("Three Pure Ones", ["three-pure-ones"]), ("Xi Wangmu", ["xi-wangmu"]), ("Doumu", ["doumu"]),
+        # culture heroes
+        ("Shennong", ["shennong"]), ("Huangdi (Yellow Emperor)", ["huangdi"]),
+        ("Hou Yi", ["hou-yi"]), ("Chang'e", ["chang-e"]),
+        # popular gods
+        ("Guanyin", ["guanyin"]), ("Mazu", ["mazu"]), ("Guan Yu", ["guan-yu"]),
+        ("Caishen (wealth)", ["caishen"]), ("Zao Jun (kitchen)", ["zao-jun"]),
+        ("Tu Di Gong (earth)", ["tu-di-gong"]), ("Wenchang (literature)", ["wenchang"]),
+        ("Leigong (thunder)", ["leigong"]), ("Longwang (dragon kings)", ["longwang"]),
+        ("Yan-wang (hell)", ["yan-wang"]), ("Xuanwu", ["xuanwu"]),
+        ("Erlang Shen", ["erlang-shen"]), ("Nezha", ["nezha"]), ("Sun Wukong", ["sun-wukong"]),
+        ("Gonggong", ["gonggong"]), ("Eight Immortals", ["ba-xian"]),
+        # honest gaps
+        ("Zhurong (fire)", ["zhurong"]), ("Houtu (earth-queen)", ["houtu"]),
+        ("Chenghuang (city god)", ["chenghuang"]), ("Cangjie (writing)", ["cangjie"]),
+    ],
 }
 
 # ── 3. demand: referenced-but-missing slugs, ranked (linkcheck output) ───────

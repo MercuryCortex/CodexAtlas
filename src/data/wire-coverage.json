@@ -1,6 +1,6 @@
 {
  "generatedAt": "2026-06-09",
- "indexedSlugs": 15181,
+ "indexedSlugs": 15199,
  "neighborhoodsWhole": true,
  "neighborhoods": [
   {
@@ -199,6 +199,53 @@
     "Kuninotokotachi",
     "Futsunushi",
     "Ame-no-Koyane"
+   ]
+  },
+  {
+   "tradition": "Celtic (Irish + Gaulish + Welsh)",
+   "present": 40,
+   "total": 40,
+   "pct": 100,
+   "missing": []
+  },
+  {
+   "tradition": "Slavic (pre-Christian)",
+   "present": 17,
+   "total": 19,
+   "pct": 89,
+   "missing": [
+    "Lada",
+    "Devana"
+   ]
+  },
+  {
+   "tradition": "Zoroastrian / Iranian",
+   "present": 29,
+   "total": 31,
+   "pct": 93,
+   "missing": [
+    "Mah (moon)",
+    "Asman (sky)"
+   ]
+  },
+  {
+   "tradition": "Hittite / Hurrian (Anatolian)",
+   "present": 16,
+   "total": 18,
+   "pct": 88,
+   "missing": [
+    "Halki (grain)",
+    "Aranzah (Tigris)"
+   ]
+  },
+  {
+   "tradition": "Chinese (folk + Daoist)",
+   "present": 31,
+   "total": 33,
+   "pct": 93,
+   "missing": [
+    "Chenghuang (city god)",
+    "Cangjie (writing)"
    ]
   }
  ],
