@@ -4,16 +4,16 @@ _Auto-generated 2026-06-09. Targets sorted by incoming reference count (descendi
 
 | Refs | Target | Sources (first 3) |
 |---:|---|---|
-| 13 | `julius-caesar` | `caesar-augustus`, `alexander-the-great`, `tradition-roman-religion` … |
-| 10 | `tradition-vaishnavism` | `darshan-deity-viewing-hindu`, `kirtan-call-response-bhakti`, `sudarshana-chakra` … |
+| 13 | `julius-caesar` | `event-pax-romana-begins-27-bce`, `tradition-roman-religion`, `caesar-augustus` … |
+| 10 | `tradition-vaishnavism` | `tilaka-hindu-forehead-mark`, `kirtan-call-response-bhakti`, `darshan-deity-viewing-hindu` … |
 | 2 | `phase-2-018-pali-canon-suttas` | `theme-buddhist-transmission-of-hindu-deities`, `sakra-buddhist` |
 | 2 | `john-anthony-west` | `kings-chamber-great-pyramid`, `sphinx-of-giza` |
-| 2 | `buddha` | `alexander-the-great`, `cross-tradition-deity-bridges-2026-05-23` |
+| 2 | `buddha` | `cross-tradition-deity-bridges-2026-05-23`, `alexander-the-great` |
 | 2 | `event-aleister-crowley-boca-do-inferno-1930` | `tradition-portuguese-hermeticism`, `fernando-pessoa` |
 | 2 | `event-coronation-of-charlemagne-800` | `divine-kingship`, `charlemagne` |
-| 2 | `ralph-waldo-emerson` | `william-james`, `thomas-taylor-neoplatonist` |
+| 2 | `ralph-waldo-emerson` | `thomas-taylor-neoplatonist`, `william-james` |
 | 2 | `providence-and-fate` | `phase-3-005-stoic-foundational-texts` |
-| 2 | `onomacritus` | `tradition-orphic`, `phase-3-027-derveni-papyrus` |
+| 2 | `onomacritus` | `phase-3-027-derveni-papyrus`, `tradition-orphic` |
 | 2 | `theodicy` | `phase-3-032-4-ezra-ethiopic-recension` |
 | 2 | `fear-of-the-lord` | `phase-3-007-sirach` |
 | 2 | `honor-of-fathers` | `phase-3-007-sirach` |
@@ -21,11 +21,11 @@ _Auto-generated 2026-06-09. Targets sorted by incoming reference count (descendi
 | 2 | `poor-and-marginalized` | `phase-3-018-luke-acts` |
 | 2 | `rabbi-ishmael-ben-elisha` | `tradition-merkavah-mysticism`, `phase-5-013-hekhalot-literature` |
 | 2 | `rabbi-nehunya-ben-ha-qanah` | `tradition-merkavah-mysticism`, `phase-5-013-hekhalot-literature` |
-| 2 | `judas-maccabeus` | `tradition-second-temple-judaism`, `phase-5-049-yosippon-ethiopian-recension` |
+| 2 | `judas-maccabeus` | `phase-5-049-yosippon-ethiopian-recension`, `tradition-second-temple-judaism` |
 | 2 | `josephus-flavius` | `phase-5-049-yosippon-ethiopian-recension` |
 | 2 | `wisdom-literature` | `phase-5-052-sadi-gulistan` |
 | 2 | `political-ethics` | `phase-5-052-sadi-gulistan` |
-| 2 | `kshemaraja` | `phase-5-006-vijnana-bhairava-tantra`, `tradition-kashmir-shaivism` |
+| 2 | `kshemaraja` | `tradition-kashmir-shaivism`, `phase-5-006-vijnana-bhairava-tantra` |
 | 2 | `divine-intoxication` | `phase-5-053-hafez-divan` |
 | 2 | `love-mysticism` | `phase-5-053-hafez-divan` |
 | 2 | `fana-annihilation` | `phase-5-053-hafez-divan` |
@@ -49,7 +49,7 @@ _Auto-generated 2026-06-09. Targets sorted by incoming reference count (descendi
 | 2 | `pistis-sophia` | `phase-4-007-on-the-origin-of-the-world`, `phase-4-009-pistis-sophia` |
 | 2 | `john-the-baptist-mandaean` | `phase-4-017-ginza-rba`, `phase-4-018-mandaean-book-of-john` |
 | 2 | `tradition-sethian-gnosticism` | `gospel-of-judas-sethian` |
-| 2 | `the-father-valentinian` | `phase-4-003-gospel-of-truth`, `phase-4-004-gospel-of-philip` |
+| 2 | `the-father-valentinian` | `phase-4-004-gospel-of-philip`, `phase-4-003-gospel-of-truth` |
 | 2 | `cosmogony` | `phase-4-085-ovid-metamorphoses-book-1` |
 | 2 | `anthropogony` | `phase-4-085-ovid-metamorphoses-book-1` |
 | 2 | `golden-age-decline` | `phase-4-085-ovid-metamorphoses-book-1` |
@@ -58,9 +58,9 @@ _Auto-generated 2026-06-09. Targets sorted by incoming reference count (descendi
 | 2 | `canon-tables` | `phase-4-080-garima-gospels` |
 | 2 | `illuminated-manuscript-art` | `phase-4-080-garima-gospels` |
 | 2 | `genesis-5-antediluvian-patriarchs` | `phase-1-015-sumerian-king-list` |
-| 2 | `shamash` | `phase-1-020-shumma-alu`, `divinatory-omen-reading` |
+| 2 | `shamash` | `divinatory-omen-reading`, `phase-1-020-shumma-alu` |
 | 2 | `gatumdug` | `phase-1-018-gudea-cylinders` |
-| 2 | `apocalypticism` | `tradition-second-temple-judaism`, `phase-6-043-dee-libri-mysteriorum-enochian` |
+| 2 | `apocalypticism` | `phase-6-043-dee-libri-mysteriorum-enochian`, `tradition-second-temple-judaism` |
 | 2 | `shiva-deity` | `phase-6-019-tulsidas-ramcharitmanas`, `bhakti-devotion` |
 | 2 | `venus-cycle` | `phase-8-003-dresden-codex-maya` |
 | 2 | `eclipse-prediction` | `phase-8-003-dresden-codex-maya` |
@@ -99,7 +99,7 @@ _Auto-generated 2026-06-09. Targets sorted by incoming reference count (descendi
 | 2 | `poetic-craft` | `phase-8-015-prose-edda-snorri` |
 | 2 | `mythological-systematization` | `phase-8-015-prose-edda-snorri` |
 | 2 | `tradition-gandhara-buddhism` | `kasaya-buddhist-robe`, `pharaonic-nemes-and-uraeus` |
-| 2 | `phase-4-083-apuleius-metamorphoses-book-11` | `MASSIVE-WINS-AND-INVESTIGATION-LEADS-session-2026-05-14`, `2026-05-14` |
+| 2 | `phase-4-083-apuleius-metamorphoses-book-11` | `2026-05-14`, `MASSIVE-WINS-AND-INVESTIGATION-LEADS-session-2026-05-14` |
 | 2 | `slug` | `HANDOFF-2026-05-29-shell-foundation-wrong`, `asymmetric-backlinks-2026-05-23` |
 | 2 | `dying-and-rising-god` | `sacred-marriage`, `MASSIVE-WINS-AND-INVESTIGATION-LEADS-session-2026-05-15` |
 | 2 | `deity-slug` | `sacred-geometry-lens-spec-2026-05-23`, `MUSIC-INVESTIGATION` |
@@ -108,10 +108,10 @@ _Auto-generated 2026-06-09. Targets sorted by incoming reference count (descendi
 | 2 | `color-slug` | `sacred-geometry-lens-spec-2026-05-23` |
 | 2 | `red` | `sacred-geometry-lens-spec-2026-05-23` |
 | 2 | `geometry-slug` | `sacred-geometry-lens-spec-2026-05-23` |
-| 2 | `was-sceptre` | `forge-deity-spine-findings-2026-05-21`, `06_symbology_proposal` |
+| 2 | `was-sceptre` | `06_symbology_proposal`, `forge-deity-spine-findings-2026-05-21` |
 | 2 | `minerva` | `tradition-roman-religion` |
 | 2 | `syncretism-indigenous` | `tradition-won-buddhism`, `tradition-donghak` |
-| 2 | `sphinx-guardian` | `lamassu-symbol`, `tetramorph` |
+| 2 | `sphinx-guardian` | `tetramorph`, `lamassu-symbol` |
 | 2 | `fatima-al-zahra` | `hamsa` |
 | 2 | `phase-2-004-old-testament-hebrew-bible` | `sacred-smoke`, `sacred-spring` |
 | 2 | `solomon` | `sacred-ring` |
