@@ -1,3 +1,42 @@
+# Session HANDOFF — 2026-06-09 LATE-NIGHT (🎉 THE QURAN IS COMPLETE — 37/37 within-reason suras distinguished)
+
+> **🟢🟢🟢 START HERE (NEWEST — 2026-06-09 LATE-NIGHT).** Per John (*"your recco"* → finish the Quran).
+> The within-reason Quran went **12/37 → 37/37 DEDICATED (100%)**: the 25 remaining FOLDED suras are now
+> product-grade `02_documents/document-quran-*` nodes. **6 commits (5 Lane-A batches + 1 Lane-B roster),
+> every gate green throughout (build 0 / linkcheck 480 baseline holds, 0 dead across all 25 / lint 0),
+> tree clean. Screenshot-verified on DEV → Overview: SCRIPTURE CANON COVERAGE 116/116; Quran 37/37 COMPLETE.**
+>
+> **The 25 added:** Nūḥ(71) al-Aʿrāf(7) Yūnus(10) Hūd(11) al-Naml(27) · al-Qaṣaṣ(28) Ibrāhīm(14) Ghāfir(40)
+> al-Naḥl(16) al-Tawba(9) · al-ʿAlaq(96) al-Qadr(97) al-Raḥmān(55) al-Mulk(67) Yā-Sīn(36) · Qāf(50)
+> al-Wāqiʿa(56) al-Kāfirūn(109) al-Falaq(113) al-Nās(114) · al-Anʿām(6) al-Nūr(24) al-Aḥzāb(33) al-Shūrā(42)
+> al-Naṣr(110). Marquee cross-tradition wires landed: the flood lineage, Bilqīs↔Kebra Nagast, the Light
+> Verse↔Ghazālī, Yā-Sīn↔Ezekiel-37, al-Raḥmān↔Psalm-136, the dhimma (al-Tawba — written straight, Friedmann-T1,
+> the 9:5/9:29 debate named and anchored on the 9:6 asylum clause).
+>
+> **VERIFIED WIRE PALETTE (re-use for any Quran/Bible work — these are *basenames*, which is what linkcheck
+> resolves; confirmed by anchored grep this session):** figures `allah` `muhammad-prophet` `adam` `noah`
+> `abraham-patriarch` `moses` `solomon-king` `david-king` `hud-prophet` `salih-prophet` `jesus-of-nazareth`
+> `mary-mother-of-jesus`; Quran group `phase-4-034-quran`. **Bible — NB id≠filename: many OT books are
+> `phase-N-*` nodes inside `02_documents/_phase-*/` subfolders, so a non-recursive `ls` misses them:**
+> `document-genesis` `document-exodus` `document-deuteronomy` `document-jonah` `document-1-samuel`
+> `document-2-samuel` `document-2-chronicles` `document-ezekiel` `document-jeremiah`,
+> `phase-2-005-davidic-psalms` (Psalms), `phase-2-034-books-of-kings` (Kings), `phase-2-035-job`,
+> `phase-2-041-book-of-proverbs`, `phase-3-001-second-third-isaiah`, `phase-3-008-book-of-daniel`. Mesopotamian
+> flood/creation: `phase-1-006-atrahasis` `phase-1-008-enuma-elish` `phase-1-016-eridu-genesis-flood`
+> `phase-1-015-sumerian-king-list` `document-gilgamesh-standard-babylonian`.
+>
+> **🟢 RECOMMENDED NEXT:** roster the **Eastern corpora** — Vedas (20 docs) and the Tipiṭaka (19 docs) already
+> exist in the vault but are NOT canon-rostered on the completeness bar; point the same
+> `audit_scripture_coverage.py` machinery at them. (Tanakh is already ~complete via the OT overlap.)
+> **⚠️ Do NOT open the Persons layer without John** — 384/1217 persons carry multi-valued `tradition:` = the
+> unresolved 2026-06-02 membership-vs-wire crisis; it needs design-WITH-John, not ad-hoc patching. The
+> **all-114-vs-within-reason** Quran granularity remains John's call (within-reason is the ratified default;
+> fully reversible — the strata node `phase-4-034-quran` still folds every not-yet-distinguished sura).
+>
+> The 2026-06-09 NIGHT block below remains accurate for the Bible / corpora / deity layers.
+
+---
+
 # Session HANDOFF — 2026-06-09 NIGHT (SCRIPTURE LAYER DRIVEN HARD — Bible done, 7 corpora filled, panel live)
 
 > **🟢🟢🟢 START HERE (NEWEST — 2026-06-09 NIGHT).** A very large scripture session (~100 new
