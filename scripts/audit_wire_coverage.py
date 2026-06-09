@@ -99,6 +99,7 @@ NEIGHBORHOODS = {
             "Egyptian": ["osiris"],
             "Greek": ["persephone-greek", "dionysus", "zagreus"],
             "Roman": ["proserpina-roman"],
+            "Etruscan": ["fufluns"],
             "hub": ["dying-rising-god"],
         },
     },
@@ -190,6 +191,7 @@ NEIGHBORHOODS = {
             "Finnish": ["ilmarinen"],
             "West African (Yoruba)": ["ogun"],
             "Roman": ["vulcan-roman"],
+            "Etruscan": ["sethlans"],
         },
     },
     "the-divine-twins": {
@@ -569,6 +571,82 @@ ROSTERS = {
         # honest gaps
         ("Zhurong (fire)", ["zhurong"]), ("Houtu (earth-queen)", ["houtu"]),
         ("Chenghuang (city god)", ["chenghuang"]), ("Cangjie (writing)", ["cangjie"]),
+    ],
+    "Andean (Inca + pre-Inca)": [
+        ("Viracocha (creator)", ["viracocha"]), ("Inti (sun)", ["inti"]),
+        ("Mama Quilla (moon)", ["mama-quilla"]), ("Pachamama (earth)", ["pachamama"]),
+        ("Mama Cocha (sea)", ["mama-cocha"]), ("Illapa (thunder)", ["illapa"]),
+        ("Pachacamac", ["pachacamac"]), ("Supay (underworld)", ["supay"]),
+        ("Chasca (Venus)", ["chasca"]), ("Mama Sara (maize)", ["mama-sara"]),
+        ("Catequil (thunder)", ["catequil"]), ("Coniraya", ["coniraya"]),
+        ("Tunupa", ["tunupa"]), ("Pariacaca", ["pariacaca"]), ("Vichama", ["vichama"]),
+        ("Urcuchillay", ["urcuchillay"]), ("Apus (mountain spirits)", ["apus"]),
+        ("Ekeko", ["ekeko"]), ("Manco Capac (founder)", ["manco-capac"]), ("Inkarri", ["inkarri"]),
+        # honest gaps
+        ("Cavillaca", ["cavillaca"]), ("Punchao (sun-image)", ["punchao"]),
+    ],
+    "Polynesian (Maori / Hawaiian / Tahitian)": [
+        # the great gods (cognate across the islands)
+        ("Tane / Kane", ["tane", "kane-hawaiian"]), ("Tangaroa / Kanaloa", ["tangaroa", "kanaloa"]),
+        ("Tu / Ku", ["tu-maori", "ku"]), ("Rongo / Lono", ["rongo-maori", "lono"]),
+        ("Tawhirimatea (winds)", ["tawhirimatea"]), ("Haumia-tiketike", ["haumia-tiketike"]),
+        # sky & earth, the supreme
+        ("Ranginui (sky-father)", ["ranginui"]), ("Papatuanuku (earth-mother)", ["papatuanuku"]),
+        ("Io-matua-kore (supreme)", ["io-matua-kore"]), ("Wakea (Hawaiian sky)", ["wakea"]),
+        # other major
+        ("Maui (trickster-hero)", ["maui-polynesian"]), ("Hine-nui-te-po (death)", ["hine-nui-te-po"]),
+        ("Whiro (dark)", ["whiro"]), ("Ruaumoko (earthquakes)", ["ruaumoko"]),
+        ("Pele (volcano)", ["pele"]), ("Haumea", ["haumea"]), ("Hina", ["hina"]),
+        ("Oro (Tahitian war)", ["oro-polynesian"]),
+        # honest gaps
+        ("Tiki (first man)", ["tiki"]), ("Mahuika (fire)", ["mahuika"]), ("Kamapua'a", ["kamapuaa"]),
+    ],
+    "Pre-Islamic Arabian": [
+        ("Allah (high god)", ["allah"]), ("Allat", ["allat"]), ("al-Uzza", ["al-uzza"]),
+        ("Manat", ["manat"]), ("Hubal", ["hubal"]), ("Dushara (Nabataean)", ["dushara"]),
+        ("Almaqah (Sabaean)", ["almaqah"]), ("Athtar (Venus)", ["athtar"]),
+        ("Shams (sun)", ["shams-arabian"]), ("Sin (moon)", ["sin-hadhramaut"]),
+        ("Ruda", ["ruda"]), ("Manaf", ["manaf"]),
+        # the five idols of Noah's people (Q 71:23)
+        ("Wadd", ["wadd"]), ("Suwa", ["suwa"]), ("Yaghuth", ["yaghuth"]),
+        ("Yauq", ["yauq"]), ("Nasr", ["nasr-pre-islamic"]),
+        # honest gaps
+        ("Quzah (storm)", ["quzah"]), ("Isaf & Na'ila", ["isaf-naila"]),
+    ],
+    "Baltic (Lithuanian / Latvian / Prussian)": [
+        ("Dievas (sky-god)", ["dievas-baltic"]), ("Perkunas (thunder)", ["perkunas"]),
+        ("Saule (sun)", ["saule"]), ("Meness (moon)", ["meness"]),
+        ("Ausrine (dawn / Venus)", ["ausrine"]), ("Laima (fate)", ["laima"]),
+        ("Gabija (hearth-fire)", ["gabija"]), ("Zemyna (earth)", ["zemyna"]),
+        ("Medeina (forest/hunt)", ["medeina"]), ("Velinas / Velnias (underworld)", ["velinas"]),
+        # honest gaps
+        ("Potrimpo", ["potrimpo"]), ("Patollo / Pikuolis", ["patollo", "pikuolis"]),
+        ("Auseklis", ["auseklis"]),
+    ],
+    "Etruscan": [
+        ("Tinia (sky-king)", ["tinia"]), ("Uni (queen)", ["uni-etruscan"]),
+        ("Menrva", ["menvra-etruscan"]), ("Nethuns (sea)", ["nethuns"]),
+        ("Turms (messenger)", ["turms"]), ("Charun (death-demon)", ["charun-etruscan"]),
+        ("Aita (underworld)", ["aita"]), ("Turan (love)", ["turan"]),
+        ("Fufluns (wine)", ["fufluns"]), ("Sethlans (smith)", ["sethlans"]),
+        # honest gaps
+        ("Laran (war)", ["laran"]), ("Vanth (death-demon)", ["vanth"]),
+        ("Usil (sun)", ["usil"]), ("Tivr (moon)", ["tivr"]),
+    ],
+    "Armenian (pre-Christian)": [
+        ("Aramazd (supreme)", ["aramazd"]), ("Anahit (mother)", ["anahit-armenian"]),
+        ("Vahagn (dragon-slayer)", ["vahagn"]), ("Astghik (love)", ["astghik"]),
+        ("Nane (war-mother)", ["nane-armenian"]), ("Tir (scribe)", ["tir-armenian"]),
+        # honest gaps
+        ("Mihr (sun)", ["mihr-armenian", "mihr"]), ("Spandaramet (earth)", ["spandaramet"]),
+    ],
+    "Korean (folk / shamanic)": [
+        ("Hwanin (heavenly king)", ["hwanin"]), ("Hwanung", ["hwanung"]),
+        ("Tangun (founder)", ["tangun"]), ("Samsin (birth-grandmothers)", ["samsin"]),
+        ("Sansin (mountain god)", ["sansin"]),
+        # honest gaps
+        ("Yeomra (death-king)", ["yeomra", "yomra"]), ("Yongwang (dragon kings)", ["yongwang"]),
+        ("Jowangsin (hearth)", ["jowangsin"]),
     ],
 }
 

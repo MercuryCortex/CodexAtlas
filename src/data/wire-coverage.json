@@ -1,6 +1,6 @@
 {
  "generatedAt": "2026-06-09",
- "indexedSlugs": 15199,
+ "indexedSlugs": 15210,
  "neighborhoodsWhole": true,
  "neighborhoods": [
   {
@@ -23,8 +23,8 @@
    "id": "dying-rising-god",
    "label": "The dying-and-rising god \u2014 death/descent and return of the vegetation deity",
    "whole": true,
-   "present": 10,
-   "total": 10,
+   "present": 11,
+   "total": 11,
    "missing": {}
   },
   {
@@ -87,8 +87,8 @@
    "id": "the-divine-smith",
    "label": "The divine smith \u2014 the craftsman-god who forges the gods' weapons and wonders",
    "whole": true,
-   "present": 10,
-   "total": 10,
+   "present": 11,
+   "total": 11,
    "missing": {}
   },
   {
@@ -246,6 +246,79 @@
    "missing": [
     "Chenghuang (city god)",
     "Cangjie (writing)"
+   ]
+  },
+  {
+   "tradition": "Andean (Inca + pre-Inca)",
+   "present": 21,
+   "total": 22,
+   "pct": 95,
+   "missing": [
+    "Cavillaca"
+   ]
+  },
+  {
+   "tradition": "Polynesian (Maori / Hawaiian / Tahitian)",
+   "present": 18,
+   "total": 21,
+   "pct": 85,
+   "missing": [
+    "Tiki (first man)",
+    "Mahuika (fire)",
+    "Kamapua'a"
+   ]
+  },
+  {
+   "tradition": "Pre-Islamic Arabian",
+   "present": 17,
+   "total": 19,
+   "pct": 89,
+   "missing": [
+    "Quzah (storm)",
+    "Isaf & Na'ila"
+   ]
+  },
+  {
+   "tradition": "Baltic (Lithuanian / Latvian / Prussian)",
+   "present": 10,
+   "total": 13,
+   "pct": 76,
+   "missing": [
+    "Potrimpo",
+    "Patollo / Pikuolis",
+    "Auseklis"
+   ]
+  },
+  {
+   "tradition": "Etruscan",
+   "present": 10,
+   "total": 14,
+   "pct": 71,
+   "missing": [
+    "Laran (war)",
+    "Vanth (death-demon)",
+    "Usil (sun)",
+    "Tivr (moon)"
+   ]
+  },
+  {
+   "tradition": "Armenian (pre-Christian)",
+   "present": 7,
+   "total": 8,
+   "pct": 87,
+   "missing": [
+    "Spandaramet (earth)"
+   ]
+  },
+  {
+   "tradition": "Korean (folk / shamanic)",
+   "present": 5,
+   "total": 8,
+   "pct": 62,
+   "missing": [
+    "Yeomra (death-king)",
+    "Yongwang (dragon kings)",
+    "Jowangsin (hearth)"
    ]
   }
  ],
