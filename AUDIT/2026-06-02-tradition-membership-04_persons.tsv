@@ -191,7 +191,7 @@ cachicata-quarry.md	NO_TRADITION
 caesar-augustus.md	SINGULAR	HIGH	Roman		Roman (imperial cult; later named in the Christian Nativity)
 cahokia-woodhenge.md	NO_TRADITION				
 caiaphas.md	MULTI_SAME_FAMILY	REVIEW	Israelite		Second-Temple Jewish / Sadducean
-cainan-son-of-arpachshad.md	MULTI_CROSS_FAMILY	HIGH	Christian	Israelite	[[tradition-ethiopian-orthodox-tewahedo]] (canonical Genesis genealogy) / [[tradition-judaism]] (LXX + Jubilees retain him; Hebrew Masoretic Text omits him) / [[tradition-christianity-canonical]] (Luke 3:36 retains him — proves NT followed LXX-tradition)
+cainan-son-of-arpachshad.md	SINGULAR	HIGH	Israelite		Second Temple Judaism
 camões.md	NO_TRADITION				
 candrakirti.md	SINGULAR	HIGH	Buddhist		Madhyamaka Buddhism (Prāsaṅgika)
 caracol-chichen-itza.md	NO_TRADITION				
@@ -336,7 +336,7 @@ eutyches.md	SINGULAR	HIGH	Christian		Christian (Constantinopolitan monastic; Mon
 evagrius-ponticus.md	SINGULAR	HIGH	Christian		Patristic Christian (Egyptian Coptic / Cappadocian-trained)
 eve.md	SINGULAR	HIGH	Israelite		Israelite religion (founder-figure)
 ewostatewos.md	SINGULAR	HIGH	Christian		[[tradition-ethiopian-orthodox-tewahedo]] (House of Ewostatewos)
-ezana-of-aksum.md	MULTI_CROSS_FAMILY	HIGH	Christian	Aksumite	[[tradition-ethiopian-orthodox-tewahedo]] (first Christian king); previously pre-Christian South-Arabian-derived Aksumite paganism
+ezana-of-aksum.md	SINGULAR	HIGH	Aksumite		Aksumite religion
 ezekiel.md	SINGULAR	HIGH	Israelite		Judahite (exilic)
 ezra.md	NO_TRADITION				
 fajada-butte-sun-dagger.md	NO_TRADITION				
@@ -562,7 +562,7 @@ jean-pierre-protzen.md	NO_TRADITION
 jeong-do-jeon.md	NO_TRADITION				
 jeremiah.md	SINGULAR	HIGH	Israelite		Judahite
 jerome.md	SINGULAR	HIGH	Christian		Patristic Christian (Latin)
-jesus-of-nazareth.md	MULTI_CROSS_FAMILY	HIGH	Israelite	Christian	Second Temple Judaism → origin of Christianity
+jesus-of-nazareth.md	SINGULAR	HIGH	Christian		Christianity
 jiajing-emperor.md	NO_TRADITION				
 jill-neitzel.md	NO_TRADITION				
 joao-de-castilho.md	NO_TRADITION				
@@ -865,7 +865,7 @@ patanjali-yoga-sutras-author.md	MULTI_SAME_FAMILY	HIGH	Vedic-Hindu		Hindu — Yo
 paukar-marka.md	NO_TRADITION				
 paul-frankl.md	NO_TRADITION				
 paul-of-samosata.md	SINGULAR	HIGH	Christian		Christian (Adoptionist / dynamic-monarchian)
-paul-of-tarsus.md	MULTI_CROSS_FAMILY	HIGH	Israelite	Christian	Pharisaic Judaism → earliest Christianity
+paul-of-tarsus.md	SINGULAR	HIGH	Christian		Christianity
 paul-pelliot.md	NO_TRADITION				
 paul-strachan.md	NO_TRADITION				
 paul-tillich.md	MULTI_SAME_FAMILY	REVIEW	Christian		Christian (Lutheran) / existential theology
@@ -888,7 +888,7 @@ peter-j-carroll.md	MULTI_SAME_FAMILY	REVIEW	UNKNOWN		Chaos magick / late-20th-ce
 pham-cong-tac.md	NO_TRADITION				
 pharaoh-exodus.md	SINGULAR	HIGH	Israelite		Hebrew Bible
 pherecydes-of-syros.md	MULTI_CROSS_FAMILY	MEDIUM	Greek	Canaanite | Egyptian	Pre-Socratic / proto-philosophical Greek (Ionian); influenced by Phoenician and Egyptian sources
-phidias.md	MULTI_CROSS_FAMILY	HIGH	Greek	Neoplatonist	[[tradition-greek-religion]] (religious art); [[tradition-neoplatonism]] (later reception)
+phidias.md	SINGULAR	HIGH	Greek		Greek religion
 philip-apostle.md	SINGULAR	HIGH	Christian		earliest Christianity
 philip-ii-of-macedon.md	MULTI_SAME_FAMILY	REVIEW	Greek		Hellenic / Argead Macedonian
 philip-iv-of-france.md	SINGULAR	HIGH	Christian		Latin Christianity (lay royal)
@@ -1043,7 +1043,7 @@ sihyaj-kahk.md	NO_TRADITION
 silas-silvanus.md	SINGULAR	HIGH	Christian		earliest Christianity
 silk-road-as-religious-transmission-corridor.md	NO_TRADITION				
 simeon-the-stylite.md	SINGULAR	HIGH	Christian		Patristic Christian (Syrian)
-simon-magus.md	MULTI_CROSS_FAMILY	HIGH	Israelite	Gnostic	Samaritan religious milieu; proto-Gnosticism (per heresiologists)
+simon-magus.md	SINGULAR	HIGH	Israelite		Samaritan religious milieu
 simon-the-zealot.md	SINGULAR	HIGH	Christian		earliest Christianity
 sir-thomas-stamford-raffles.md	NO_TRADITION				
 slaves-atlantic.md	NO_TRADITION				
@@ -1055,7 +1055,7 @@ soga-no-umako.md	NO_TRADITION
 solomon-king.md	MULTI_SAME_FAMILY	REVIEW	Israelite		Israelite / pre-exilic Judah
 solon.md	SINGULAR	HIGH	Greek		Greek (Athenian)
 sotaesan.md	SINGULAR	HIGH	Buddhist		[[tradition-won-buddhism]]
-spyridon-marinatos.md	MULTI_CROSS_FAMILY	HIGH	Academic	Greek	[[tradition-comparative-religion-academic]] (archaeological method); secular Greek scholarship
+spyridon-marinatos.md	SINGULAR	HIGH	Academic		academic study of religion
 sri-aurobindo.md	MULTI_SAME_FAMILY	HIGH	Vedic-Hindu		Hindu modernism / Integral Yoga
 sri-yukteswar.md	MULTI_SAME_FAMILY	HIGH	Vedic-Hindu		Hindu modernism / Kriya Yoga
 st-peters-basilica.md	NO_TRADITION				
@@ -1202,7 +1202,7 @@ zadok-priest.md	MULTI_SAME_FAMILY	REVIEW	Israelite		Israelite / United Monarchy
 zara-yaqob-emperor.md	SINGULAR	HIGH	Christian		[[tradition-ethiopian-orthodox-tewahedo]] (Solomonic dynasty)
 zarathustra.md	SINGULAR	HIGH	Zoroastrian		Zoroastrian
 zecharia-sitchin.md	MULTI_SAME_FAMILY	REVIEW	UNKNOWN		alternative-history / popular pseudoarchaeology
-zechariah-priest.md	MULTI_CROSS_FAMILY	HIGH	Islamic	Israelite | Christian	Islam (Quranic figure); Second Temple Judaism / Christianity
+zechariah-priest.md	SINGULAR	HIGH	Israelite		Second Temple Judaism
 zemaryalai-tarzi.md	NO_TRADITION				
 zeno-of-citium.md	SINGULAR	HIGH	Greek		Greek philosophy — Stoicism (founder)
 zerubbabel.md	MULTI_SAME_FAMILY	REVIEW	UNKNOWN		post-exilic Judah / Persian period
