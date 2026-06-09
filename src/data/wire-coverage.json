@@ -106,6 +106,62 @@
    "present": 9,
    "total": 9,
    "missing": {}
+  },
+  {
+   "id": "the-storm-god",
+   "label": "The storm-god \u2014 the thunder-wielding sky-warrior, king or champion of the pantheon (PIE *Perkwunos and beyond)",
+   "whole": true,
+   "present": 20,
+   "total": 20,
+   "missing": {}
+  },
+  {
+   "id": "the-sky-father",
+   "label": "The sky-father \u2014 the PIE *Dyeus and the bright-sky high god, father of the gods",
+   "whole": true,
+   "present": 12,
+   "total": 12,
+   "missing": {}
+  },
+  {
+   "id": "the-sun-god",
+   "label": "The sun-god \u2014 the solar deity who crosses the sky each day and sees all",
+   "whole": true,
+   "present": 14,
+   "total": 14,
+   "missing": {}
+  },
+  {
+   "id": "the-love-goddess",
+   "label": "The love-goddess \u2014 the deity of love, beauty, and desire (the Inanna lineage and its parallels)",
+   "whole": true,
+   "present": 12,
+   "total": 12,
+   "missing": {}
+  },
+  {
+   "id": "the-moon",
+   "label": "The moon-deity \u2014 the lunar god/goddess of the month, the tides, and the measure of time",
+   "whole": true,
+   "present": 11,
+   "total": 11,
+   "missing": {}
+  },
+  {
+   "id": "the-war-god",
+   "label": "The war-god \u2014 the deity of battle, slaughter, and martial fury",
+   "whole": true,
+   "present": 9,
+   "total": 9,
+   "missing": {}
+  },
+  {
+   "id": "world-tree",
+   "label": "The world-tree / axis mundi \u2014 the cosmic tree or pillar joining heaven, earth, and the underworld",
+   "whole": true,
+   "present": 7,
+   "total": 7,
+   "missing": {}
   }
  ],
  "rosters": [
