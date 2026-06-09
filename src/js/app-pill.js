@@ -128,6 +128,14 @@
         && typeof window._forge.setClassFilter === 'function') {
       return window._forge;
     }
+    // 2026-06-10 — ALPHABETS exposes the same class-API contract:
+    // its two classes are GENEALOGY (the zoomable tree) and GLYPHS
+    // (the per-letter grid). One Section, two surfaces — "the usual".
+    if (mv.target === 'alphabets'
+        && window._alphabetsView
+        && typeof window._alphabetsView.setClassFilter === 'function') {
+      return window._alphabetsView;
+    }
     return null;
   }
   function syncClassPill() {

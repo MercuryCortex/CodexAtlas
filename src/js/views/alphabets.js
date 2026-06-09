@@ -6,34 +6,38 @@
 // (John ratified N1: ALPHABETS is a first-class master-pill
 // Section like ATLAS / TIMELINE, showing ALL alphabets).
 //
-// Phase 0 — carve-step skeleton (pane mounts + routes, clean dark
-//           stage, zero legacy chrome).
-// Phase 1 — the genealogy tree (hero): ALL type:alphabet nodes from
-//           the live VAULT_DATA, time on X, branch bands on Y,
-//           descent edges normalized older→younger (§4.4 of the
-//           plan), click-through to the global detail panel via
-//           window.selectNode. SVG (few-large elements — the
-//           canonical "stay SVG" case).
+// TWO CLASSES on one Section (the pill's right side, "the usual"):
+//   · GENEALOGY — the time-on-X tree of ALL type:alphabet nodes
+//     read LIVE from VAULT_DATA, wheel-zoom + drag-pan (2026-06-10
+//     per John: "I can't zoom in or out like the timeline").
+//   · GLYPHS — the REAL alphabets (per John: "like the PROTOTYPE
+//     one"): the 22-letter grid + per-script lead view + the
+//     5-step transmission-chain card. CONTENT harvested from the
+//     legacy ALPHA_GLYPH_DATA (the 412 KB hand-curated table);
+//     the legacy AESTHETIC is not copied (V2 tokens throughout).
 //
-// Single source of truth: window.VAULT_DATA. The legacy
-// origin-chain.js hardcoded NODES/EDGES are deliberately NOT
-// read (two-sources-of-truth, rule #10).
+// Single source of truth: window.VAULT_DATA for the tree;
+// window.ALPHA_GLYPH_DATA (data-only module) for the letters.
+// The legacy origin-chain hardcoded graph is NOT read (rule #10).
 //
 // Boundary contract (public API):
-//   window._alphabetsView = { render(pane), unmount() }
-//
-// VIEWS.alphabets in src/js/app.js delegates to render(pane).
+//   window._alphabetsView = {
+//     render(pane), unmount(),
+//     // app-pill class API (same contract as window._forge):
+//     supportedClasses(), getClassFilter(), setClassFilter(v),
+//   }
 // ============================================================
 (function () {
   'use strict';
 
   let _pane = null;
+  let _mode = 'genealogy';            // 'genealogy' | 'glyphs'
+  let _script = 'hieroglyph';         // GLYPHS lead script
+  let _expandedName = null;           // GLYPHS expanded letter
 
-  // ── Branch bands (display grouping for Phase 1) ─────────────────
-  // NOTE: this is a VIEW-side display map, never fed to the layout
-  // engine (rule #9 — the wheel's spread gets a declared groupBy when
-  // Phase 3 lands; the ratified longer-term home is a `script-family:`
-  // YAML field on the 11_alphabets nodes — Lane A backlog).
+  // ── Branch bands (display grouping for the tree) ─────────────────
+  // VIEW-side display map, never fed to the layout engine (rule #9;
+  // the ratified longer-term home is a `script-family:` YAML field).
   const BANDS = [
     { key: 'origins',   label: 'ORIGINS & UNDECIPHERED' },
     { key: 'semitic',   label: 'SEMITIC LINE' },
@@ -89,8 +93,7 @@
   };
 
   // Display-position fallbacks for nodes whose vault YAML has no date
-  // yet (render position ONLY — flagged as Lane-A backlog in the plan;
-  // standard reference dates, not vault data).
+  // yet (render position ONLY — Lane-A backlog; standard reference dates).
   const DATE_FALLBACK = {
     'alphabet-proto-elamite': -3100,
     'alphabet-linear-a': -1800,
@@ -104,7 +107,6 @@
     'alphabet-cherokee': 1821,
   };
 
-  // Descent-edge classification (§4.4 normalization).
   const DESCENT_TYPES = {
     'ancestor-of': 'fwd', 'parent': 'fwd', 'ancestor': 'fwd',
     'descendant': 'fwd', 'child': 'fwd',
@@ -118,6 +120,9 @@
     return y < 0 ? (-y) + ' BCE' : y + ' CE';
   }
 
+  // ════════════════════════════════════════════════════════════════
+  // CLASS 1 — GENEALOGY (the tree)
+  // ════════════════════════════════════════════════════════════════
   function buildModel() {
     const D = window.VAULT_DATA;
     if (!D || !D.nodes) return null;
@@ -133,7 +138,6 @@
     const byId = {};
     nodes.forEach(n => { byId[n.id] = n; });
 
-    // Collect alphabet↔alphabet edges; normalize descent older→younger.
     const seen = new Set();
     const edges = [];
     (D.edges || []).forEach(e => {
@@ -156,7 +160,6 @@
     return { nodes: nodes, edges: edges };
   }
 
-  // ── Layout: x = time, y = branch band with greedy sub-rows ───────
   function layout(model, viewW) {
     const PAD_L = 170, PAD_R = 60, ROW_H = 46, BAND_PAD = 26;
     const dates = model.nodes.map(n => n.date).filter(d => d != null);
@@ -164,16 +167,16 @@
     const W = Math.max(viewW, 1500);
     const x = d => PAD_L + ((d - dMin) / (dMax - dMin)) * (W - PAD_L - PAD_R);
 
-    let y = 64; // clear the floating app-pill — first band label must stay readable
+    let y = 64; // clear the floating app-pill — first band label stays readable
     const bandsOut = [];
     BANDS.forEach(band => {
       const members = model.nodes.filter(n => n.band === band.key)
         .sort((a, b) => (a.date ?? 9e9) - (b.date ?? 9e9));
       if (!members.length) return;
-      const rows = []; // greedy interval rows to avoid label overlap
+      const rows = [];
       members.forEach(n => {
         n.x = n.date != null ? x(n.date) : W - PAD_R;
-        let r = rows.findIndex(last => n.x - last > 185); // gap covers the longest label widths
+        let r = rows.findIndex(last => n.x - last > 185); // gap covers the longest labels
         if (r === -1) { rows.push(n.x); r = rows.length - 1; }
         else rows[r] = n.x;
         n.y = y + 22 + r * ROW_H;
@@ -183,6 +186,48 @@
       y += h;
     });
     return { W: W, H: y + 20, bands: bandsOut };
+  }
+
+  // Wheel-zoom (to cursor) + drag-pan + dblclick-reset on the tree svg —
+  // the TIMELINE-style camera John asked for (2026-06-10).
+  function wireZoom(svg, W, H) {
+    const vb = { x: 0, y: 0, w: W, h: H };
+    const apply = () => svg.setAttribute('viewBox', vb.x + ' ' + vb.y + ' ' + vb.w + ' ' + vb.h);
+    apply();
+
+    svg.addEventListener('wheel', e => {
+      e.preventDefault();
+      const f = Math.exp(e.deltaY * 0.002);                  // >1 = zoom out
+      const newW = Math.min(W * 1.25, Math.max(W / 10, vb.w * f));
+      const scale = newW / vb.w;
+      const r = svg.getBoundingClientRect();
+      if (!r.width || !r.height) return;                     // degenerate viewport guard
+      const cx = vb.x + ((e.clientX - r.left) / r.width) * vb.w;
+      const cy = vb.y + ((e.clientY - r.top) / r.height) * vb.h;
+      vb.x = cx - (cx - vb.x) * scale;
+      vb.y = cy - (cy - vb.y) * scale;
+      vb.w = newW; vb.h = vb.h * scale;
+      apply();
+    }, { passive: false });
+
+    let drag = null;
+    svg.addEventListener('pointerdown', e => {
+      if (e.target.closest('.alphabets-node')) return;       // node clicks stay clicks
+      drag = { px: e.clientX, py: e.clientY, x: vb.x, y: vb.y };
+      svg.setPointerCapture(e.pointerId);
+      svg.classList.add('is-panning');
+    });
+    svg.addEventListener('pointermove', e => {
+      if (!drag) return;
+      const r = svg.getBoundingClientRect();
+      vb.x = drag.x - (e.clientX - drag.px) * (vb.w / r.width);
+      vb.y = drag.y - (e.clientY - drag.py) * (vb.h / r.height);
+      apply();
+    });
+    const end = e => { drag = null; svg.classList.remove('is-panning'); };
+    svg.addEventListener('pointerup', end);
+    svg.addEventListener('pointercancel', end);
+    svg.addEventListener('dblclick', () => { vb.x = 0; vb.y = 0; vb.w = W; vb.h = H; apply(); });
   }
 
   function renderTree(stage) {
@@ -195,11 +240,8 @@
     const NS = 'http://www.w3.org/2000/svg';
     const svg = document.createElementNS(NS, 'svg');
     svg.setAttribute('class', 'alphabets-svg');
-    svg.setAttribute('width', geo.W);
-    svg.setAttribute('height', geo.H);
-    svg.setAttribute('viewBox', '0 0 ' + geo.W + ' ' + geo.H);
+    svg.setAttribute('preserveAspectRatio', 'xMidYMid meet');
 
-    // Band separators + labels
     geo.bands.forEach(b => {
       const line = document.createElementNS(NS, 'line');
       line.setAttribute('x1', 0); line.setAttribute('x2', geo.W);
@@ -213,7 +255,6 @@
       svg.appendChild(lab);
     });
 
-    // Edges under nodes. Descent = solid bézier; sibling = dashed; influence = dotted.
     model.edges.forEach(e => {
       if (e.s.x == null || e.t.x == null) return;
       const p = document.createElementNS(NS, 'path');
@@ -226,7 +267,6 @@
       svg.appendChild(p);
     });
 
-    // Node chips: dot + name + date; click → global detail panel.
     model.nodes.forEach(n => {
       if (n.x == null) return;
       const g = document.createElementNS(NS, 'g');
@@ -256,11 +296,194 @@
     });
 
     stage.appendChild(svg);
+    wireZoom(svg, geo.W, geo.H);
 
     const hint = document.createElement('div');
     hint.className = 'alphabets-hint';
-    hint.textContent = model.nodes.length + ' writing-systems · solid = descent · dashed = sibling · dotted = influence · * = display date pending vault fill · click a script → its node';
+    hint.textContent = model.nodes.length + ' writing-systems · scroll = zoom · drag = pan · double-click = reset · solid = descent · dashed = sibling · dotted = influence · * = display date pending vault fill · click a script → its node';
     stage.appendChild(hint);
+  }
+
+  // ════════════════════════════════════════════════════════════════
+  // CLASS 2 — GLYPHS (the REAL alphabets; data = ALPHA_GLYPH_DATA)
+  // ════════════════════════════════════════════════════════════════
+  const SCRIPTS = [
+    { id: 'hieroglyph', label: 'Hieroglyph' },
+    { id: 'phoenician', label: 'Phoenician' },
+    { id: 'hebrew',     label: 'Hebrew' },
+    { id: 'arabic',     label: 'Arabic' },
+    { id: 'greek',      label: 'Greek' },
+    { id: 'latin',      label: 'Latin' },
+    { id: 'ogham',      label: 'Ogham' },
+    { id: 'futhark',    label: 'Futhark' },
+    { id: 'chinese',    label: 'Chinese' },
+    { id: 'japanese',   label: 'Japanese' },
+    { id: 'devanagari', label: 'Devanagari' },
+    { id: 'hangul',     label: 'Hangul' },
+    { id: 'aztec',      label: 'Aztec' },
+    { id: 'maya',       label: 'Maya' },
+    { id: 'quipu',      label: 'Quipu' },
+  ];
+  const STANDALONE = { chinese: 1, japanese: 1, devanagari: 1, hangul: 1, aztec: 1, maya: 1, quipu: 1 };
+  const HIER_FONT = "'Noto Sans Egyptian Hieroglyphs', serif";
+
+  function glyphChar(g, scriptId) {
+    switch (scriptId) {
+      case 'hieroglyph': return g.unicode ? String.fromCodePoint(g.unicode) : '';
+      case 'phoenician': return g.phoenician || '';
+      case 'hebrew':     return g.hebrew || '';
+      case 'arabic':     return g.arabic || '';
+      case 'greek':      return (g.greek || '').split(' ')[0];
+      case 'latin':      return g.letter || '';
+      default:           return g.unicode ? String.fromCodePoint(g.unicode) : '';
+    }
+  }
+  function glyphFont(scriptId) {
+    return scriptId === 'hieroglyph' ? HIER_FONT : 'inherit';
+  }
+  function svgGlyph(g, cls) {
+    return '<svg class="' + cls + '" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2.5">' + g.glyphSVG + '</svg>';
+  }
+  function esc(s) { return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;'); }
+
+  function renderGlyphs(stage) {
+    const DATA = window.ALPHA_GLYPH_DATA;
+    if (!DATA) {
+      stage.innerHTML = '<div class="alphabets-empty">ALPHA_GLYPH_DATA not loaded.</div>';
+      return;
+    }
+
+    const chips = '<div class="alphabets-script-row">' + SCRIPTS.map(s =>
+      '<button type="button" class="alphabets-script-chip' + (s.id === _script ? ' is-active' : '') + '" data-script="' + s.id + '">' + s.label + '</button>'
+    ).join('') + '</div>';
+
+    const isStandalone = !!STANDALONE[_script];
+    let rows = DATA.filter(g => {
+      if (isStandalone) return g.scriptOnly && g.scriptOnly.includes(_script);
+      if (!g.scriptOnly) return true;
+      return g.scriptOnly.includes(_script);
+    });
+    if (_script === 'latin') {
+      rows = rows.filter(g => g.letter && g.letter.trim() !== '')
+                 .sort((a, b) => a.letter.localeCompare(b.letter));
+    }
+
+    const latinNote = _script === 'latin'
+      ? '<div class="alphabets-glyph-note"><b>Latin kept 19 of 22 Phoenician letters.</b> Dropped: Teth, Tsade, Qoph as redundant sounds — added: G (from C), Y + Z (re-borrowed from Greek for loanwords).</div>'
+      : '';
+
+    const grid = '<div class="alphabets-glyph-grid">' + rows.map(g => {
+      const main = g.glyphSVG ? svgGlyph(g, 'alphabets-glyph-svg') : esc(glyphChar(g, _script));
+      return '<button type="button" class="alphabets-glyph-cell' + (g.name === _expandedName ? ' is-open' : '') + '" data-name="' + esc(g.name) + '">'
+        + '<span class="alphabets-glyph-char" style="font-family:' + glyphFont(_script) + '">' + main + '</span>'
+        + '<span class="alphabets-glyph-name">' + esc(g.name) + '</span>'
+        + '<span class="alphabets-glyph-meaning">' + esc(g.meaning) + '</span>'
+        + '</button>';
+    }).join('') + '</div>';
+
+    stage.innerHTML = chips + latinNote + '<div class="alphabets-glyph-expand-slot"></div>' + grid
+      + '<div class="alphabets-hint">' + rows.length + ' letters · lead script: ' + esc(_script) + ' · click a letter for its transmission chain</div>';
+
+    stage.querySelectorAll('.alphabets-script-chip').forEach(b => {
+      b.addEventListener('click', () => { _script = b.dataset.script; _expandedName = null; renderGlyphs(stage); });
+    });
+    stage.querySelectorAll('.alphabets-glyph-cell').forEach(b => {
+      b.addEventListener('click', () => {
+        _expandedName = (_expandedName === b.dataset.name) ? null : b.dataset.name;
+        renderGlyphs(stage);
+        if (_expandedName) renderExpanded(stage, DATA.find(g => g.name === _expandedName));
+      });
+    });
+    if (_expandedName) {
+      const g = DATA.find(x => x.name === _expandedName);
+      if (g) renderExpanded(stage, g);
+    }
+  }
+
+  function renderExpanded(stage, g) {
+    if (!g) return;
+    const slot = stage.querySelector('.alphabets-glyph-expand-slot');
+    if (!slot) return;
+    const isHier = g.unicode != null && g.unicode >= 0x13000 && g.unicode <= 0x1342F;
+    const isScriptOnly = !!(g.scriptOnly && g.scriptOnly.length);
+    const safe = v => (!v || v === '(none)') ? '' : v;
+    const big = g.glyphSVG ? svgGlyph(g, 'alphabets-glyph-svg alphabets-exp-bigsvg')
+      : '<span style="font-family:' + (isHier ? HIER_FONT : 'inherit') + '">'
+        + esc(isHier || isScriptOnly ? String.fromCodePoint(g.unicode) : (g.arabic || g.hebrew || g.phoenician || g.letter || '')) + '</span>';
+    const gard = g.gardiner ? 'Gardiner ' + esc(g.gardiner) + ' · U+' + (g.unicode || 0).toString(16).toUpperCase()
+               : (g.unicode ? 'U+' + g.unicode.toString(16).toUpperCase() : '');
+
+    const chainStep = (ch, label, sub, hier) =>
+      '<div class="alphabets-chain-step">'
+      + '<span class="alphabets-chain-glyph"' + (hier ? ' style="font-family:' + HIER_FONT + '"' : '') + '>' + esc(ch) + '</span>'
+      + '<span class="alphabets-chain-label">' + label + '</span>'
+      + '<span class="alphabets-chain-sub">' + sub + '</span></div>';
+    const arrow = '<span class="alphabets-chain-arrow">→</span>';
+    const hierChar = isHier ? String.fromCodePoint(g.unicode) : '';
+    const chain = isScriptOnly
+      ? '<div class="alphabets-exp-chainlabel">PICTOGRAPHIC ORIGIN</div>'
+      : '<div class="alphabets-exp-chainlabel">TRANSMISSION CHAIN</div>'
+        + '<div class="alphabets-chain">'
+        + chainStep(hierChar, 'Egyptian', 'c. 2000 BCE', true) + arrow
+        + chainStep(hierChar, 'Proto-Sinaitic', 'c. 1850 BCE', true) + arrow
+        + chainStep(g.phoenician || '', 'Phoenician', 'c. 1050 BCE') + arrow
+        + chainStep((g.greek || '').split(' ')[0], 'Greek', 'c. 800 BCE') + arrow
+        + chainStep((g.latin || g.letter || '').split(' ')[0], 'Latin', 'c. 600 BCE+')
+        + '</div>';
+
+    const desc = [['Hebrew', g.hebrew], ['Arabic', g.arabic], ['Greek', g.greek], ['Latin', g.latin], ['Sound', g.phoneme]]
+      .filter(p => safe(p[1]))
+      .map(p => '<span class="alphabets-exp-desc"><b>' + p[0] + '</b> ' + esc(p[1]) + '</span>').join('');
+
+    const related = (g.relatedNodes || []).map(id =>
+      '<button type="button" class="alphabets-exp-node" data-id="' + esc(id) + '">' + esc(id.replace(/^alphabet-/, '').replace(/-/g, ' ')) + '</button>'
+    ).join('');
+
+    slot.innerHTML =
+      '<div class="alphabets-glyph-expanded">'
+      + '<button type="button" class="alphabets-exp-close" title="Close">✕</button>'
+      + '<div class="alphabets-exp-letter">'
+      +   '<div class="alphabets-exp-big">' + big + '</div>'
+      +   '<div class="alphabets-exp-name">' + esc(g.name) + ' — “' + esc(g.meaning) + '”</div>'
+      +   (gard ? '<div class="alphabets-exp-gardiner">' + gard + '</div>' : '')
+      +   (desc ? '<div class="alphabets-exp-descs">' + desc + '</div>' : '')
+      + '</div>'
+      + '<div class="alphabets-exp-chain">' + chain
+      +   (g.note ? '<div class="alphabets-exp-note">' + esc(g.note) + '</div>' : '')
+      + '</div>'
+      + '<div class="alphabets-exp-inv">'
+      +   (g.investigationHighlight
+          ? '<div class="alphabets-exp-invlabel">WHAT THE INVESTIGATION FOUND</div>'
+            + '<div class="alphabets-exp-invtext">' + esc(g.investigationHighlight) + '</div>'
+            + (related ? '<div class="alphabets-exp-nodes">' + related + '</div>' : '')
+          : '')
+      + '</div>'
+      + '</div>';
+
+    slot.querySelector('.alphabets-exp-close').addEventListener('click', () => {
+      _expandedName = null;
+      renderGlyphs(stage);
+    });
+    slot.querySelectorAll('.alphabets-exp-node[data-id]').forEach(chip => {
+      chip.addEventListener('click', e => {
+        e.stopPropagation();
+        if (window.selectNode) window.selectNode(chip.dataset.id, true);
+      });
+    });
+    slot.scrollIntoView({ block: 'nearest' });
+  }
+
+  // ════════════════════════════════════════════════════════════════
+  // Mode plumbing + app-pill class API (same contract as _forge)
+  // ════════════════════════════════════════════════════════════════
+  function renderMode() {
+    if (!_pane) return;
+    _pane.classList.toggle('is-glyphs', _mode === 'glyphs');
+    const stage = _pane.querySelector('#alphabets-stage');
+    if (!stage) return;
+    stage.innerHTML = '';
+    if (_mode === 'glyphs') renderGlyphs(stage);
+    else renderTree(stage);
   }
 
   function render(pane) {
@@ -268,10 +491,27 @@
     _pane = pane;
     pane.classList.add('alphabets-pane');
     pane.innerHTML = '<div class="alphabets-stage" id="alphabets-stage"></div>';
-    renderTree(pane.querySelector('#alphabets-stage'));
+    renderMode();
   }
 
-  function unmount() { _pane = null; }
+  function unmount() { _pane = null; _expandedName = null; }
 
-  window._alphabetsView = { render: render, unmount: unmount };
+  window._alphabetsView = {
+    render: render,
+    unmount: unmount,
+    supportedClasses: function () {
+      return [
+        { value: 'genealogy', label: 'Genealogy', glyph: '⌁' },
+        { value: 'glyphs',    label: 'Glyphs',    glyph: 'ℵ' },
+      ];
+    },
+    getClassFilter: function () { return _mode; },
+    setClassFilter: function (v) {
+      if (v !== 'genealogy' && v !== 'glyphs') return;
+      _mode = v;
+      renderMode();
+      // the pill listens for this to refresh its class label
+      try { document.dispatchEvent(new CustomEvent('codex:class-changed')); } catch (e) { /* ignore */ }
+    },
+  };
 })();

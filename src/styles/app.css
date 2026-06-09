@@ -10327,12 +10327,18 @@ body:not(.view-boards) .app-pill--boards { display: none !important; }
   overflow: hidden;
 }
 
-/* ── ALPHABETS V2 — genealogy tree (2026-06-10) ─────────────────
- * The pane scrolls (the time-axis tree can exceed the viewport);
- * everything else inherits the shared V2-stage rule above. */
-.alphabets-pane { overflow: auto; }
-.alphabets-stage { position: relative; min-width: 100%; padding: 6px 0 28px; }
-.alphabets-svg { display: block; }
+/* ── ALPHABETS V2 — genealogy tree + glyphs grid (2026-06-10) ───
+ * GENEALOGY: the svg fills the pane; wheel-zoom + drag-pan own the
+ * surface (overflow hidden). GLYPHS: normal flowing grid, scrolls. */
+.alphabets-pane.is-glyphs { overflow: auto; }
+.alphabets-stage { position: absolute; inset: 0; }
+.alphabets-pane.is-glyphs .alphabets-stage {
+  position: relative; inset: auto;
+  min-height: 100%;
+  padding: 58px 18px 28px;            /* clears the floating app-pill */
+}
+.alphabets-svg { display: block; width: 100%; height: 100%; cursor: grab; }
+.alphabets-svg.is-panning { cursor: grabbing; }
 .alphabets-band-line { stroke: rgba(212,165,90,0.14); stroke-width: 1; }
 .alphabets-band-label {
   fill: var(--gold, #d4a55a);
@@ -10357,15 +10363,124 @@ body:not(.view-boards) .app-pill--boards { display: none !important; }
   font: 400 9px/1 "JetBrains Mono", ui-monospace, monospace;
 }
 .alphabets-hint {
-  margin: 10px 16px 0;
+  position: absolute;
+  left: 16px; right: 16px; bottom: 10px;
+  pointer-events: none;
   color: rgba(230,230,230,0.4);
   font: 400 10.5px/1.5 "JetBrains Mono", ui-monospace, monospace;
+}
+.alphabets-pane.is-glyphs .alphabets-hint {
+  position: static;
+  margin-top: 12px;
+  pointer-events: auto;
 }
 .alphabets-empty {
   padding: 48px;
   color: rgba(230,230,230,0.5);
   font: 400 13px/1.5 "JetBrains Mono", ui-monospace, monospace;
 }
+
+/* GLYPHS class — script chips, letter grid, transmission-chain card */
+.alphabets-script-row { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+.alphabets-script-chip {
+  padding: 4px 11px;
+  border: 1px solid rgba(212,165,90,0.28);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text-2, #b9bec8);
+  font: 500 10.5px/1 "JetBrains Mono", ui-monospace, monospace;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+}
+.alphabets-script-chip:hover { border-color: var(--gold, #d4a55a); color: var(--text-1, #e6e6e6); }
+.alphabets-script-chip.is-active {
+  border-color: var(--gold, #d4a55a);
+  background: rgba(212,165,90,0.14);
+  color: var(--gold, #d4a55a);
+}
+.alphabets-glyph-note {
+  margin: 0 0 12px;
+  color: var(--text-2, #b9bec8);
+  font: 400 11.5px/1.5 -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+}
+.alphabets-glyph-note b { color: var(--gold, #d4a55a); font-weight: 600; }
+.alphabets-glyph-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(108px, 1fr));
+  gap: 8px;
+}
+.alphabets-glyph-cell {
+  display: flex; flex-direction: column; align-items: center; gap: 3px;
+  padding: 12px 6px 9px;
+  border: 1px solid rgba(212,165,90,0.16);
+  border-radius: 10px;
+  background: rgba(255,255,255,0.015);
+  color: var(--text-1, #e6e6e6);
+  cursor: pointer;
+}
+.alphabets-glyph-cell:hover { border-color: rgba(212,165,90,0.55); background: rgba(212,165,90,0.05); }
+.alphabets-glyph-cell.is-open { border-color: var(--gold, #d4a55a); background: rgba(212,165,90,0.10); }
+.alphabets-glyph-char { font-size: 30px; line-height: 1.15; }
+.alphabets-glyph-svg { width: 1em; height: 1em; display: block; overflow: visible; }
+.alphabets-glyph-name { font: 500 11px/1.2 -apple-system, BlinkMacSystemFont, system-ui, sans-serif; }
+.alphabets-glyph-meaning {
+  color: rgba(230,230,230,0.45);
+  font: 400 9.5px/1.2 "JetBrains Mono", ui-monospace, monospace;
+}
+.alphabets-glyph-expanded {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(150px, 0.8fr) minmax(260px, 1.6fr) minmax(220px, 1.2fr);
+  gap: 18px;
+  margin: 0 0 14px;
+  padding: 18px 38px 16px 18px;
+  border: 1px solid rgba(212,165,90,0.4);
+  border-radius: 12px;
+  background: rgba(212,165,90,0.05);
+}
+.alphabets-exp-close {
+  position: absolute; top: 8px; right: 10px;
+  border: none; background: none;
+  color: rgba(230,230,230,0.5);
+  font-size: 13px; cursor: pointer;
+}
+.alphabets-exp-close:hover { color: var(--gold, #d4a55a); }
+.alphabets-exp-big { font-size: 64px; line-height: 1.1; color: var(--gold, #d4a55a); }
+.alphabets-exp-bigsvg { width: 1em; height: 1em; }
+.alphabets-exp-name { margin-top: 6px; font: 600 13px/1.35 -apple-system, BlinkMacSystemFont, system-ui, sans-serif; }
+.alphabets-exp-gardiner {
+  margin-top: 3px;
+  color: rgba(230,230,230,0.45);
+  font: 400 9.5px/1.4 "JetBrains Mono", ui-monospace, monospace;
+}
+.alphabets-exp-descs { display: flex; flex-wrap: wrap; gap: 4px 12px; margin-top: 8px; }
+.alphabets-exp-desc { font: 400 11px/1.5 -apple-system, BlinkMacSystemFont, system-ui, sans-serif; color: var(--text-2, #b9bec8); }
+.alphabets-exp-desc b { color: var(--gold, #d4a55a); font-weight: 600; margin-right: 3px; }
+.alphabets-exp-chainlabel, .alphabets-exp-invlabel {
+  color: var(--gold, #d4a55a);
+  font: 600 9.5px/1 "JetBrains Mono", ui-monospace, monospace;
+  letter-spacing: 0.14em;
+  margin-bottom: 9px;
+}
+.alphabets-chain { display: flex; align-items: center; flex-wrap: wrap; gap: 7px; }
+.alphabets-chain-step { display: flex; flex-direction: column; align-items: center; gap: 2px; min-width: 58px; }
+.alphabets-chain-glyph { font-size: 25px; line-height: 1.15; }
+.alphabets-chain-label { font: 500 9.5px/1.2 -apple-system, BlinkMacSystemFont, system-ui, sans-serif; }
+.alphabets-chain-sub { color: rgba(230,230,230,0.4); font: 400 8.5px/1.2 "JetBrains Mono", ui-monospace, monospace; }
+.alphabets-chain-arrow { color: rgba(212,165,90,0.6); font-size: 13px; }
+.alphabets-exp-note { margin-top: 11px; color: var(--text-2, #b9bec8); font: 400 11.5px/1.55 -apple-system, BlinkMacSystemFont, system-ui, sans-serif; }
+.alphabets-exp-invtext { color: var(--text-1, #e6e6e6); font: 400 11.5px/1.55 -apple-system, BlinkMacSystemFont, system-ui, sans-serif; }
+.alphabets-exp-nodes { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 9px; }
+.alphabets-exp-node {
+  padding: 3px 9px;
+  border: 1px solid rgba(212,165,90,0.3);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text-2, #b9bec8);
+  font: 400 9.5px/1.2 "JetBrains Mono", ui-monospace, monospace;
+  cursor: pointer;
+}
+.alphabets-exp-node:hover { border-color: var(--gold, #d4a55a); color: var(--gold, #d4a55a); }
 
 /* ============================================================
  * Legacy-chrome hide scope — V2 skeleton views
