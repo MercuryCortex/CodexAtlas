@@ -104,7 +104,7 @@ april-deconick.md	MULTI_CROSS_FAMILY	MEDIUM	Academic	Gnostic | Christian	Compara
 apu-salkantay.md	NO_TRADITION				
 apu-veronica.md	NO_TRADITION				
 apuleius-of-madaura.md	MULTI_CROSS_FAMILY	MEDIUM	Greek	Literary | Mystery	Middle Platonist philosophy / Latin literary culture / Isis-mystery initiate
-apuleius.md	MULTI_CROSS_FAMILY	HIGH	Greek	Literary | Mystery	Middle Platonism; Latin literary culture; multi-mystery-cult initiate (Isiac + Osirian + others)
+apuleius.md	SINGULAR	HIGH	Greek		Middle Platonism
 aquila.md	SINGULAR	HIGH	Christian		earliest Christianity
 archbishop-damianos-of-sinai.md	NO_TRADITION				
 archbishop-konrad-von-hochstaden.md	NO_TRADITION				
@@ -249,7 +249,7 @@ cosimo-de-medici.md	SINGULAR	REVIEW	UNKNOWN		Florentine Renaissance
 crispin-branfoot.md	NO_TRADITION				
 critias-younger.md	SINGULAR	HIGH	Greek		Greek (Athenian)
 crusader-mediterranean.md	NO_TRADITION				
-cyprian-of-carthage.md	MULTI_CROSS_FAMILY	HIGH	Christian	African	Patristic Christian (proto-orthodox); North African
+cyprian-of-carthage.md	SINGULAR	HIGH	Christian		Patristic Christian (proto-orthodox)
 cyril-of-alexandria.md	SINGULAR	HIGH	Christian		Patristic Christian (Alexandrian)
 cyrus-the-great.md	SINGULAR	REVIEW	UNKNOWN		Achaemenid Persian
 d-t-suzuki.md	MULTI_SAME_FAMILY	HIGH	Buddhist		Buddhist modernism / Zen
@@ -453,7 +453,7 @@ henry-suso.md	SINGULAR	HIGH	Christian		Latin Christianity (Dominican; Rhineland 
 henry-the-navigator.md	MULTI_SAME_FAMILY	REVIEW	Hermetic		[[tradition-order-of-christ]] / [[tradition-portuguese-hermeticism]]
 heracleon-valentinian.md	SINGULAR	HIGH	Christian		Valentinian Gnostic Christianity (Italian school)
 heraclitus.md	SINGULAR	HIGH	Greek		Greek philosophy (Presocratic)
-heraclius-byzantine-emperor.md	MULTI_CROSS_FAMILY	HIGH	Christian	Roman	Eastern (Chalcedonian) Christianity; Roman imperial
+heraclius-byzantine-emperor.md	SINGULAR	HIGH	Christian		Eastern (Chalcedonian) Christianity
 heraclius-of-jerusalem.md	NO_TRADITION				
 hermas-of-rome.md	MULTI_SAME_FAMILY	HIGH	Christian	received-in:canonical in [[tradition-ethiopian-orthodox-tewahedo]]	Early Roman Christianity / canonical in [[tradition-ethiopian-orthodox-tewahedo]] (where his work the Shepherd of Hermas remains canonical scripture)
 hermas.md	SINGULAR	HIGH	Christian		Patristic Christian (proto-orthodox)
@@ -462,7 +462,7 @@ hermogenes-the-painter.md	SINGULAR	HIGH	Christian		Christian (eclectic, Platonis
 hernan-cortes.md	NO_TRADITION				
 hernando-pizarro.md	NO_TRADITION				
 herod-antipas.md	MULTI_SAME_FAMILY	REVIEW	Roman		Herodian / Roman-Judean
-herod-the-great.md	MULTI_CROSS_FAMILY	HIGH	Israelite	Roman	Hasmonean-aligned Judaism (with Idumean origin); Roman client kingdom
+herod-the-great.md	SINGULAR	HIGH	Israelite		Hasmonean-aligned Judaism (with Idumean origin)
 herodotus.md	SINGULAR	HIGH	Greek		Greek (Ionian prose ethnography)
 hesiod.md	SINGULAR	HIGH	Greek		Greek
 hiawatha-haudenosaunee.md	SINGULAR	HIGH	Indigenous-N-American		Haudenosaunee (Onondaga or Mohawk — traditions vary)
@@ -589,7 +589,7 @@ john-rick.md	NO_TRADITION
 john-rowe.md	NO_TRADITION				
 john-scotus-eriugena.md	SINGULAR	HIGH	Christian		Latin Christian — Carolingian Neoplatonism
 john-son-of-zebedee.md	SINGULAR	HIGH	Christian		earliest Christianity
-john-the-baptist.md	MULTI_CROSS_FAMILY	HIGH	Israelite	Christian	Second Temple Judaism (sectarian, apocalyptic); proto-Christianity
+john-the-baptist.md	SINGULAR	HIGH	Israelite		Second Temple Judaism (sectarian, apocalyptic)
 jongmyo-jerye.md	NO_TRADITION				
 jongmyo-jeryeak.md	NO_TRADITION				
 jordan-peterson.md	MULTI_SAME_FAMILY	REVIEW	UNKNOWN		Clinical psychology + Jungian / mythological reading of religion (popular)
@@ -608,7 +608,7 @@ joseph-patriarch.md	MULTI_SAME_FAMILY	HIGH	Israelite		Israelite / pre-monarchic
 joseph-ratzinger-benedict-xvi.md	MULTI_SAME_FAMILY	REVIEW	Christian		Roman Catholicism / ressourcement / Augustinian
 joseph-smith.md	MULTI_SAME_FAMILY	HIGH	Christian		Mormonism / Latter-day Saint
 joseph-von-hammer-purgstall.md	MULTI_SAME_FAMILY	REVIEW	Academic		Habsburg Austrian academic Orientalism / Vienna esoteric-philological milieu
-josephus.md	MULTI_CROSS_FAMILY	HIGH	Israelite	Roman	Hellenistic Judaism (Pharisaic education); Flavian Roman patronage
+josephus.md	SINGULAR	HIGH	Israelite		Hellenistic Judaism (Pharisaic education)
 joshua-ben-hananiah.md	SINGULAR	HIGH	Rabbinic		early Rabbinic Judaism (Tannaitic; Hillelite tendency)
 joshua-bin-nun.md	MULTI_SAME_FAMILY	HIGH	Israelite		Israelite / pre-monarchic
 joshua-the-high-priest.md	NO_TRADITION				
@@ -616,7 +616,7 @@ josiah-king.md	SINGULAR	HIGH	Israelite		Judahite
 juan-bassegoda-nonell.md	NO_TRADITION				
 juan-pizarro.md	NO_TRADITION				
 judah-ha-nasi.md	SINGULAR	HIGH	Rabbinic		Rabbinic Judaism (Tannaitic)
-judas-iscariot.md	MULTI_CROSS_FAMILY	HIGH	Christian	Gnostic	earliest Christianity; Sethian/Cainite Gnostic re-evaluation
+judas-iscariot.md	SINGULAR	HIGH	Christian		earliest Christianity
 julian-of-norwich.md	SINGULAR	HIGH	Christian		Latin Christianity (anchoritic, English vernacular mystical)
 julian-the-apostate.md	SINGULAR	HIGH	Roman		Roman (pagan restorationist; Iamblichean Neoplatonist)
 julio-c-tello.md	NO_TRADITION				
@@ -749,7 +749,7 @@ martha-of-bethany.md	SINGULAR	HIGH	Christian		earliest Christianity
 martin-buber.md	MULTI_SAME_FAMILY	REVIEW	Israelite		German-Jewish philosophy / dialogical philosophy
 martin-luther.md	SINGULAR	HIGH	Christian		Protestant Christianity (Lutheran)
 mary-baker-eddy.md	SINGULAR	HIGH	Christian		Christian Science
-mary-magdalene.md	MULTI_CROSS_FAMILY	HIGH	Christian	Gnostic	earliest Christianity; Gnostic traditions
+mary-magdalene.md	SINGULAR	HIGH	Christian		earliest Christianity
 mary-mother-of-jesus.md	SINGULAR	HIGH	Christian		Earliest Christianity
 mary-of-bethany.md	SINGULAR	HIGH	Christian		earliest Christianity
 master-gerhard.md	NO_TRADITION				
@@ -767,14 +767,14 @@ melchizedek.md	MULTI_CROSS_FAMILY	MEDIUM	Israelite	Christian | Mandaean	Hebrew B
 melchor-arteaga.md	NO_TRADITION				
 melito-of-sardis.md	SINGULAR	HIGH	Christian		Patristic Christian (Quartodeciman Asian)
 melvin-fowler.md	NO_TRADITION				
-menander-i-soter.md	MULTI_CROSS_FAMILY	HIGH	Greek	Buddhist	Indo-Greek (Hellenistic); Buddhist convert per Pali tradition
+menander-i-soter.md	SINGULAR	HIGH	Greek		Indo-Greek (Hellenistic)
 menander-of-samaria.md	MULTI_CROSS_FAMILY	MEDIUM	Israelite	Gnostic	Samaritan religious milieu; Simonian / proto-Gnostic
 menelik-i-legendary.md	SINGULAR	HIGH	Christian		[[tradition-ethiopian-orthodox-tewahedo]]
 mengzi-person.md	SINGULAR	HIGH	Chinese		Confucianism
 merle-greene-robertson.md	NO_TRADITION				
 mes-anepada.md	SINGULAR	HIGH	Mesopotamian		Sumerian
 mesa-verde.md	NO_TRADITION				
-michael-archangel-person.md	MULTI_CROSS_FAMILY	HIGH	Israelite	Christian | Islamic | Mandaean	Second Temple Judaism → Christianity → Islam → Mandaeism
+michael-archangel-person.md	SINGULAR	HIGH	Israelite		Second Temple Judaism
 michael-i-cerularius.md	NO_TRADITION				
 michael-maier.md	MULTI_CROSS_FAMILY	MEDIUM	Christian	Hermetic | Modern-Esoteric	Latin Christianity (Lutheran) / Renaissance Hermetic-alchemical / Rosicrucian
 michael-sendivogius.md	SINGULAR	REVIEW	UNKNOWN		Polish-Bohemian Latin alchemy
@@ -936,7 +936,7 @@ pseudo-dionysius-the-areopagite.md	MULTI_SAME_FAMILY	REVIEW	Christian		Christian
 pseudo-dionysius.md	SINGULAR	HIGH	Christian		Christian
 ptolemaeus-valentinian.md	SINGULAR	HIGH	Christian		Valentinian Gnostic Christianity (Italian branch)
 ptolemaeus.md	SINGULAR	HIGH	Gnostic		Valentinian Gnosticism (Italian school)
-ptolemy-i-soter.md	MULTI_CROSS_FAMILY	HIGH	Greek	Egyptian	Hellenistic Greek (Macedonian) ruling Egypt as Pharaoh; founder of the Greco-Egyptian state-cult
+ptolemy-i-soter.md	SINGULAR	HIGH	Greek		Hellenistic Greek (Macedonian) ruling Egypt as Pharaoh
 ptolemy-ii-philadelphus.md	SINGULAR	HIGH	Greek		Hellenistic Greek (Macedonian) ruling Egypt as Pharaoh
 ptolemy-iii-euergetes.md	NO_TRADITION				
 ptolemy-xii-auletes.md	NO_TRADITION				
@@ -1104,7 +1104,7 @@ theodosius-i.md	SINGULAR	HIGH	Christian		Nicene Christian (Roman imperial)
 theodotus-valentinian.md	SINGULAR	HIGH	Christian		Valentinian Gnostic Christianity (Eastern school)
 theophilus-of-antioch.md	SINGULAR	HIGH	Christian		Patristic Christian (proto-orthodox)
 thich-nhat-hanh.md	MULTI_SAME_FAMILY	REVIEW	Buddhist		Buddhist modernism / Engaged Buddhism / Plum Village
-thomas-apostle.md	MULTI_CROSS_FAMILY	HIGH	Christian	Gnostic	earliest Christianity; Syriac Christianity; Thomasine tradition
+thomas-apostle.md	SINGULAR	HIGH	Christian		earliest Christianity
 thomas-aquinas.md	SINGULAR	HIGH	Christian		Latin Christian — Dominican scholastic
 thomas-emerson.md	NO_TRADITION				
 thomas-taylor-neoplatonist.md	MULTI_SAME_FAMILY	REVIEW	Neoplatonist		Neoplatonism / Pagan philosophy
