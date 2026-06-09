@@ -1,13 +1,13 @@
 {
  "generatedAt": "2026-06-09",
- "indexedDocs": 549,
+ "indexedDocs": 556,
  "canons": [
   {
    "canon": "Bible (Christianity)",
    "total": 79,
-   "dedicated": 72,
+   "dedicated": 79,
    "folded": 0,
-   "absent": 7,
+   "absent": 0,
    "books": [
     {
      "book": "Genesis",
@@ -440,8 +440,8 @@
     },
     {
      "book": "Tobit",
-     "status": "ABSENT",
-     "node": null,
+     "status": "DEDICATED",
+     "node": "document-tobit",
      "canons": [
       "C",
       "E",
@@ -450,8 +450,8 @@
     },
     {
      "book": "Judith",
-     "status": "ABSENT",
-     "node": null,
+     "status": "DEDICATED",
+     "node": "document-judith",
      "canons": [
       "C",
       "E",
@@ -490,8 +490,8 @@
     },
     {
      "book": "1 Maccabees",
-     "status": "ABSENT",
-     "node": null,
+     "status": "DEDICATED",
+     "node": "document-1-maccabees",
      "canons": [
       "C",
       "E",
@@ -500,8 +500,8 @@
     },
     {
      "book": "2 Maccabees",
-     "status": "ABSENT",
-     "node": null,
+     "status": "DEDICATED",
+     "node": "document-2-maccabees",
      "canons": [
       "C",
       "E",
@@ -510,8 +510,8 @@
     },
     {
      "book": "1 Esdras",
-     "status": "ABSENT",
-     "node": null,
+     "status": "DEDICATED",
+     "node": "document-1-esdras",
      "canons": [
       "E",
       "O"
@@ -519,8 +519,8 @@
     },
     {
      "book": "3 Maccabees",
-     "status": "ABSENT",
-     "node": null,
+     "status": "DEDICATED",
+     "node": "document-3-maccabees",
      "canons": [
       "E",
       "O"
@@ -537,8 +537,8 @@
     },
     {
      "book": "Prayer of Manasseh",
-     "status": "ABSENT",
-     "node": null,
+     "status": "DEDICATED",
+     "node": "document-prayer-of-manasseh",
      "canons": [
       "E",
       "O"
