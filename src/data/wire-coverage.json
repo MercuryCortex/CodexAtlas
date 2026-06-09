@@ -162,6 +162,54 @@
    "present": 7,
    "total": 7,
    "missing": {}
+  },
+  {
+   "id": "the-healer",
+   "label": "The divine healer / physician \u2014 the god of medicine, healing, and the cure",
+   "whole": true,
+   "present": 9,
+   "total": 9,
+   "missing": {}
+  },
+  {
+   "id": "the-divine-scribe",
+   "label": "The scribe / wisdom-god \u2014 keeper of writing, knowledge, and the divine record",
+   "whole": true,
+   "present": 10,
+   "total": 10,
+   "missing": {}
+  },
+  {
+   "id": "the-psychopomp",
+   "label": "The psychopomp \u2014 the guide who leads the souls of the dead to the otherworld",
+   "whole": true,
+   "present": 8,
+   "total": 8,
+   "missing": {}
+  },
+  {
+   "id": "the-sea",
+   "label": "The sea-god \u2014 the sovereign of the ocean and the deep waters",
+   "whole": true,
+   "present": 12,
+   "total": 12,
+   "missing": {}
+  },
+  {
+   "id": "the-dawn",
+   "label": "The dawn-goddess \u2014 the PIE *Hausos and the radiant maiden of the morning",
+   "whole": true,
+   "present": 5,
+   "total": 5,
+   "missing": {}
+  },
+  {
+   "id": "the-dragon-slayer",
+   "label": "The dragon-slayer \u2014 the hero/god who slays the serpent or dragon (the heroic form of chaoskampf)",
+   "whole": true,
+   "present": 13,
+   "total": 13,
+   "missing": {}
   }
  ],
  "rosters": [
