@@ -1,6 +1,6 @@
 {
  "generatedAt": "2026-06-09",
- "indexedSlugs": 15225,
+ "indexedSlugs": 15235,
  "neighborhoodsWhole": true,
  "neighborhoods": [
   {
@@ -183,8 +183,8 @@
    "id": "the-psychopomp",
    "label": "The psychopomp \u2014 the guide who leads the souls of the dead to the otherworld",
    "whole": true,
-   "present": 9,
-   "total": 9,
+   "present": 10,
+   "total": 10,
    "missing": {}
   },
   {
@@ -258,12 +258,10 @@
   },
   {
    "tradition": "Hindu (Vedic / Puranic)",
-   "present": 87,
+   "present": 89,
    "total": 91,
-   "pct": 95,
+   "pct": 97,
    "missing": [
-    "Aryaman",
-    "Bhaga",
     "Nirrti",
     "Ardhanarishvara"
    ]
@@ -302,13 +300,12 @@
   },
   {
    "tradition": "Shinto (kami)",
-   "present": 34,
+   "present": 35,
    "total": 38,
-   "pct": 89,
+   "pct": 92,
    "missing": [
     "Kamimusubi",
     "Kuninotokotachi",
-    "Futsunushi",
     "Ame-no-Koyane"
    ]
   },
@@ -369,11 +366,10 @@
   },
   {
    "tradition": "Polynesian (Maori / Hawaiian / Tahitian)",
-   "present": 19,
+   "present": 20,
    "total": 21,
-   "pct": 90,
+   "pct": 95,
    "missing": [
-    "Mahuika (fire)",
     "Kamapua'a"
    ]
   },
@@ -400,11 +396,10 @@
   },
   {
    "tradition": "Etruscan",
-   "present": 11,
+   "present": 12,
    "total": 14,
-   "pct": 78,
+   "pct": 85,
    "missing": [
-    "Vanth (death-demon)",
     "Usil (sun)",
     "Tivr (moon)"
    ]

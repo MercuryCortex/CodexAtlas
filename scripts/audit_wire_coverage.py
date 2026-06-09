@@ -365,6 +365,7 @@ NEIGHBORHOODS = {
             "Celtic": ["the-morrigan"],
             "Maori": ["hine-nui-te-po"],
             "Korean": ["yeomra"],
+            "Etruscan": ["vanth"],
         },
     },
     "the-sea": {
