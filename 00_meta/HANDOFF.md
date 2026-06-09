@@ -1,3 +1,46 @@
+# Session HANDOFF — 2026-06-09 (🎉 DEITY COMPLETENESS LAYER ESSENTIALLY COMPLETE)
+
+> **🟢🟢 START HERE (NEWEST — 2026-06-09).** This session took the **deity** layer of the
+> completeness bar to **essentially complete**: **22 pantheon rosters** (every major world
+> tradition) + **26 cross-tradition neighborhoods, ALL WHOLE**. Membership integrity is **clean**
+> (the 2026-06-02 crisis is resolved — the analyzer now reports **3 MEDIUM cases of 966, 0 HIGH**).
+> The **folder move** (→ `~/Desktop/PRODUCT DEVELOPMENT/Codex Atlas`) is **closed**
+> (`.claude/settings.json` + `launch.json` repointed; **71 agent-memory files migrated** to the
+> new path's memory dir). **978 deity nodes, scorecard 9/9, tree clean, ~15 commits this session,
+> every gate green throughout.** Per-batch detail = the top ~9 entries of `00_meta/STATUS.md`.
+>
+> **THE INSTRUMENT:** `scripts/audit_wire_coverage.py` (read-only; emits `src/data/wire-coverage.json`;
+> surfaced on DEV → Overview). Two measures: **ROSTERS** (per-tradition pantheon present-vs-missing,
+> informational) + **NEIGHBORHOODS** (every endpoint of a cross-tradition cluster must exist, or the
+> bar FAILS exit 1). 22 rosters + 26 neighborhoods are wired in; all neighborhoods WHOLE.
+>
+> **THE PROVEN LOOP (per roster/neighborhood):** (1) **recon present slugs FIRST** —
+> `grep -ilE "^tradition:.*<trad>" 03_deities/*.md` — **⚠️ CHECK THE SLUG-SUFFIX CONVENTION**
+> (`-roman`/`-greek`/`-zoroastrian`/`-hurrian`/`-armenian`/bare, etc.) BEFORE creating any node, or
+> you write a duplicate (cost me 5 dup nodes on the Roman batch — the `audit_deity_quality.py`
+> dup-detector caught them, but verify up front). (2) Build the roster/neighborhood with present
+> slugs + honestly-flagged gaps. (3) Fill the high-value genuine gaps as **9/9 product-grade** nodes
+> (singular `tradition:`, T1 refs, cross-tradition `syncretic-edges` per MEMBERSHIP-AND-WIRES).
+> (4) Gates: `build_data.py` (dup-ID) → `linkcheck.py --baseline` (480 holds) → `lint_yaml.py` →
+> `audit_deity_quality.py` (9/9) → `audit_wire_coverage.py` (WHOLE). (5) Commit **Lane A** (content
+> `03_deities/*`) and **Lane B** (`scripts/` + `src/data/`) SEPARATELY + STATUS + ACTIVE-CONTENT.
+>
+> **NEXT FRONTIER (strategic — John deciding):**
+> 1. **SCRIPTURE completeness** *(recommended)* — the architectural ROOT
+>    (`project_scripture_is_the_root_of_truth`), and the place John called *"critical and fatal"*:
+>    the Bible is ~half-missing (no node for the 12 Minor Prophets, Jeremiah, most NT epistles —
+>    see `HANDOFF-2026-06-05-completeness-crisis.md`). Point the same per-tradition completeness
+>    machinery at the scripture corpus.
+> 2. **PERSONS** completeness — the third layer (prophets / scribes / kings / scholars).
+> 3. **Deity cleanup (low-value tail):** ~20 scattered secondary roster gaps (Mah, Cangjie, Yeomra,
+>    Lada, Aranzah…); the `the-first-man` neighborhood (figures Adam/Manu/Gayōmard/Tiki live in
+>    `04_persons` — needs a persons-aware wiring approach); optional motifs (sacred-king, grain).
+>
+> Everything committed, tree clean, server-safe. The deity completeness mission is, for practical
+> purposes, **done** — the remainder is cleanup. The high-value next move is the **next layer**.
+
+---
+
 # Session HANDOFF — 2026-06-05 (🚨 THE COMPLETENESS CRISIS)
 
 > **🚨🚨 START HERE (NEWEST — 2026-06-05): `HANDOFF-2026-06-05-completeness-crisis.md`.**
