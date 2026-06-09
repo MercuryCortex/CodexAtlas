@@ -1,23 +1,25 @@
 file	class	conviction	origin_family	appearances	raw_tradition
 README.md	NO_TRADITION				
 abathur.md	SINGULAR	HIGH	Mandaean		Mandaean
-abrasax.md	MULTI_CROSS_FAMILY	MEDIUM	Gnostic	Hermetic	Gnostic / Hermetic (Basilidean Gnosticism — Irenaeus, Adversus Haereses I.24)
-adad.md	NO_TRADITION				
+abrasax.md	SINGULAR	HIGH	Gnostic		Basilidean Gnosticism
+acala.md	MULTI_SAME_FAMILY	HIGH	Buddhist		Mahayana / Vajrayana Buddhism
+adad.md	MULTI_SAME_FAMILY	HIGH	Mesopotamian		Akkadian / Babylonian
 adamas-gnostic.md	SINGULAR	HIGH	Gnostic		Gnostic (Sethian — Apocryphon of John, NHC II.1)
 adamastor.md	SINGULAR	HIGH	Literary		Portuguese Renaissance literature (literary mythology)
 aditi.md	SINGULAR	HIGH	Vedic-Hindu		Vedic (Rigveda — RV 1.89.10)
 adonis.md	SINGULAR	HIGH	Greek		Greek
 aegir-norse.md	MULTI_SAME_FAMILY	HIGH	Norse		Norse paganism / Germanic
 aengus-og.md	SINGULAR	HIGH	Celtic		Irish Celtic
-aeshma.md	MULTI_CROSS_FAMILY	HIGH	Zoroastrian	Israelite | Rabbinic | Christian	Zoroastrian (daevic / demonic register) → Hebrew Apocrypha → rabbinic Judaism → Christian demonology
+aeshma.md	SINGULAR	HIGH	Zoroastrian		Zoroastrian (daevic / demonic register)
 aganju.md	SINGULAR	HIGH	Yoruba-Diaspora		Yoruba religion (Nigeria / Diaspora)
-agathos-daimon.md	MULTI_CROSS_FAMILY	MEDIUM	Hermetic	Greek	Greco-Egyptian Hermetic tradition / popular Hellenistic religion
+agathos-daimon.md	SINGULAR	HIGH	Hermetic		Greco-Egyptian Hermetic tradition
 agni.md	MULTI_SAME_FAMILY	HIGH	Vedic-Hindu		Vedic / Hindu
 ah-puch.md	SINGULAR	HIGH	Maya		Maya paganism (Popol Vuh; Dresden Codex; Diego de Landa's Relación de las cosas de Yucatán)
 ahti.md	SINGULAR	HIGH	Slavic-Finnic		Finnish paganism (Kalevala; Finnish folk religion)
 ahura-mazda.md	SINGULAR	HIGH	Zoroastrian		Zoroastrian
 aida-wedo.md	SINGULAR	HIGH	Yoruba-Diaspora		[[tradition-vodou-haitian]]
 aine.md	MULTI_SAME_FAMILY	REVIEW	Celtic		Irish Celtic / Munster tradition
+aita.md	SINGULAR	HIGH	Etruscan		Etruscan
 akshobhya.md	SINGULAR	HIGH	Buddhist		Mahāyāna Buddhism (esp. Vajrayana)
 al-haqq.md	SINGULAR	HIGH	Islamic		Sufi Islam — Akbarī school
 al-uzza.md	SINGULAR	HIGH	Pre-Islamic-Arabian		Pre-Islamic Arabian (Hijazi, Quraysh, Nabataean — broader North-Arabian)
@@ -26,33 +28,42 @@ albion.md	SINGULAR	HIGH	Modern-Esoteric		Blakean mythology
 allah.md	SINGULAR	HIGH	Islamic		Islam (and pre-Islamic Arabian high-god, with continuity disputed in degree)
 allat.md	SINGULAR	HIGH	Pre-Islamic-Arabian		Pre-Islamic Arabian (Nabataean, Palmyrene, Hejazi, broader North-Arabian)
 allatu-akkadian.md	MULTI_SAME_FAMILY	HIGH	Mesopotamian		Akkadian / Babylonian
-almaqah.md	MULTI_CROSS_FAMILY	MEDIUM	Pre-Islamic-Arabian	Aksumite	South Arabian Sabaean religion / pre-Christian Aksumite religion (via Sabaean migration to Aksum)
+almaqah.md	SINGULAR	HIGH	Pre-Islamic-Arabian		Pre-Islamic South Arabian (Sabaean)
+amadioha.md	SINGULAR	HIGH	African		Igbo
 amaterasu.md	SINGULAR	HIGH	Shinto		Shinto
 amaunet.md	SINGULAR	HIGH	Egyptian		Egyptian (Hermopolitan theology — the Ogdoad)
 ame-no-hohi.md	SINGULAR	HIGH	Shinto		Shinto (Japanese)
+ame-no-tajikarao.md	SINGULAR	HIGH	Shinto		Shinto
 ame-no-uzume.md	SINGULAR	HIGH	Shinto		Shinto (Japanese)
 amenominakanushi.md	SINGULAR	HIGH	Shinto		Shinto
 ameretat.md	MULTI_SAME_FAMILY	REVIEW	Zoroastrian		Zoroastrian (Avestan and Pahlavi); the sixth of the six Amesha Spentas; feminine
 amitabha.md	SINGULAR	HIGH	Buddhist		Mahayana Buddhism — Pure Land schools
 amma-dogon.md	SINGULAR	HIGH	African		Dogon religion (West African — Mali/Burkina Faso)
-ammit-devourer.md	NO_TRADITION				
+ammit-devourer.md	SINGULAR	HIGH	Egyptian		Egyptian"   # assigned (membership-vs-wire 2026-06-02)
 amoghasiddhi.md	SINGULAR	HIGH	Buddhist		Mahāyāna Buddhism (Vajrayana)
+amphitrite.md	SINGULAR	HIGH	Greek		Greek
 amun-ra.md	SINGULAR	HIGH	Egyptian		Egyptian (New Kingdom state theology)
 amun.md	SINGULAR	HIGH	Egyptian		Egyptian (Theban, then state-religious)
-amurru.md	MULTI_CROSS_FAMILY	MEDIUM	Mesopotamian	Canaanite	Akkadian / West-Semitic (Amorite)
+amurru.md	MULTI_SAME_FAMILY	REVIEW	Mesopotamian		Akkadian / Amorite
 an-sumerian.md	MULTI_SAME_FAMILY	HIGH	Mesopotamian		Sumerian / Mesopotamian
 anahit-armenian.md	SINGULAR	REVIEW	UNKNOWN		Armenian pre-Christian paganism
-anahita-zoroastrian.md	NO_TRADITION				
+anahita-zoroastrian.md	SINGULAR	HIGH	Zoroastrian		Zoroastrian (Avestan)
 anahita.md	SINGULAR	HIGH	Zoroastrian		Zoroastrian
+ananke.md	SINGULAR	HIGH	Greek		Greek (Orphic and philosophical)
 anansi.md	MULTI_SAME_FAMILY	HIGH	African		Akan (Ashanti) / African
 anat.md	MULTI_SAME_FAMILY	HIGH	Canaanite		Canaanite / Ugaritic / (Egyptian under 19th Dynasty)
+andvari.md	SINGULAR	HIGH	Norse		Norse
 angel-of-the-presence.md	MULTI_SAME_FAMILY	HIGH	Israelite	received-in:canonical in [[tradition-ethiopian-orthodox-tewahedo]]	Second-Temple Jewish apocalyptic (Jubilees-specific) / canonical in [[tradition-ethiopian-orthodox-tewahedo]] (where Jubilees is full scripture)
 angra-mainyu-ahriman.md	SINGULAR	HIGH	Zoroastrian		Zoroastrian
 anput.md	SINGULAR	HIGH	Egyptian		Egyptian
 anshar-kishar.md	SINGULAR	HIGH	Mesopotamian		Mesopotamian (Sumerian / Akkadian / Babylonian)
-anthropos-gnostic.md	MULTI_CROSS_FAMILY	MEDIUM	Gnostic	Hermetic	Sethian Gnosticism / Valentinian Gnosticism / Hermetic
+anthropos-gnostic.md	SINGULAR	HIGH	Gnostic		Sethian Gnosticism
 anubis.md	SINGULAR	HIGH	Egyptian		Egyptian
-apam-napat-vedic.md	SINGULAR	HIGH	Vedic-Hindu		tradition-vedic
+anuket.md	SINGULAR	HIGH	Egyptian		Egyptian
+anunnaki.md	SINGULAR	HIGH	Mesopotamian		Mesopotamian (Sumerian / Akkadian)
+anyanwu.md	SINGULAR	HIGH	African		Igbo religion (Nigeria)
+anzu.md	MULTI_SAME_FAMILY	HIGH	Mesopotamian		Sumerian / Akkadian
+apam-napat-vedic.md	SINGULAR	HIGH	Vedic-Hindu		Vedic
 apam-napat-zoroastrian.md	MULTI_SAME_FAMILY	REVIEW	Zoroastrian		Zoroastrian (Avestan); a Proto-Indo-Iranian-inherited yazata
 aphrodite-greek.md	SINGULAR	HIGH	Greek		Greek
 apis-bull.md	SINGULAR	HIGH	Egyptian		Egyptian (Memphite cult)
@@ -62,30 +73,41 @@ apophis.md	SINGULAR	HIGH	Egyptian		Egyptian
 apsu.md	MULTI_SAME_FAMILY	HIGH	Mesopotamian		Sumerian / Babylonian
 apus.md	MULTI_SAME_FAMILY	HIGH	Andean		Quechua / Aymara / pan-Andean (pre-Inca origin, continuous practice into the 21st century)
 aramazd.md	SINGULAR	REVIEW	UNKNOWN		Armenian pre-Christian paganism (Movses Khorenatsi, 5th c. CE)
+arawn.md	SINGULAR	HIGH	Celtic		Welsh (Brittonic)
 ares.md	SINGULAR	HIGH	Greek		Greek
 ariadne.md	SINGULAR	HIGH	Greek		Greek religion (Cretan-Dionysian)
+arianrhod.md	SINGULAR	HIGH	Celtic		Welsh (Brittonic)
 armaros.md	MULTI_SAME_FAMILY	HIGH	Israelite	received-in:canonical in [[tradition-ethiopian-orthodox-tewahedo]]	Second-Temple Jewish apocalyptic (Enochic) / canonical in [[tradition-ethiopian-orthodox-tewahedo]]
 artemis.md	SINGULAR	HIGH	Greek		Greek
+aryaman.md	SINGULAR	HIGH	Vedic-Hindu		Vedic
+asag.md	SINGULAR	HIGH	Mesopotamian		Sumerian
 asase-yaa.md	SINGULAR	HIGH	African		Akan (Asante, Fante, and related Akan peoples)
 asbeel.md	MULTI_SAME_FAMILY	HIGH	Israelite	received-in:canonical in [[tradition-ethiopian-orthodox-tewahedo]]	Second-Temple Jewish apocalyptic (Enochic) / canonical in [[tradition-ethiopian-orthodox-tewahedo]]
-asclepius-greek.md	MULTI_CROSS_FAMILY	HIGH	Greek	Roman	Greek (Thessalian / Epidaurian origin); pan-Hellenic and Greco-Roman healing cult
+asclepius-greek.md	SINGULAR	HIGH	Greek		Greek (Thessalian / Epidaurian origin)
 asha-vahishta.md	MULTI_SAME_FAMILY	REVIEW	Zoroastrian		Zoroastrian (Avestan and Pahlavi); the first-and-foremost of the six Amesha Spentas
-asherah.md	MULTI_CROSS_FAMILY	MEDIUM	Canaanite	Israelite	Canaanite / Ugaritic / Israelite folk religion
+asherah.md	MULTI_SAME_FAMILY	HIGH	Canaanite		Canaanite / Ugaritic
+ashi.md	SINGULAR	HIGH	Zoroastrian		Zoroastrian
+ashnan.md	SINGULAR	HIGH	Mesopotamian		Sumerian
 ashur.md	SINGULAR	HIGH	Mesopotamian		Assyrian (Mesopotamian)
-asmodeus.md	MULTI_CROSS_FAMILY	MEDIUM	Israelite	Christian | Rabbinic	Second Temple Judaism (via Tobit) → Christianity → Kabbalah → modern Solomonic demonology
-astar-aksumite.md	MULTI_CROSS_FAMILY	MEDIUM	Pre-Islamic-Arabian	Aksumite	South Arabian Sabaean / pre-Christian Aksumite religion
+asmodeus.md	SINGULAR	HIGH	Israelite		Second Temple Judaism (Tobit)
+astar-aksumite.md	SINGULAR	HIGH	Pre-Islamic-Arabian		Pre-Islamic South Arabian (Sabaean)
 astarte-canaanite.md	MULTI_SAME_FAMILY	HIGH	Canaanite		Canaanite / Phoenician
 astghik.md	SINGULAR	REVIEW	UNKNOWN		Armenian pre-Christian paganism
 ataecina.md	MULTI_SAME_FAMILY	REVIEW	Celtic		Lusitanian Religion (pre-Roman Iberian) — Baetica and western Lusitania
 atar.md	SINGULAR	HIGH	Zoroastrian		Zoroastrian (Avestan and Pahlavi)
 aten.md	SINGULAR	HIGH	Egyptian		Egyptian (Amarna religion)
 athena.md	SINGULAR	HIGH	Greek		Greek
+athtar.md	SINGULAR	HIGH	Canaanite		Canaanite (Ugaritic; with South Arabian cognate)
 atlas-titan.md	SINGULAR	HIGH	Greek		Greek religion
-attis.md	MULTI_CROSS_FAMILY	HIGH	Phrygian	Greek | Roman	Phrygian → Greek → Roman mystery cult
+attis.md	SINGULAR	HIGH	Phrygian		Phrygian
 atum.md	SINGULAR	HIGH	Egyptian		Egyptian
+audumla.md	SINGULAR	HIGH	Norse		Norse
 aurora-roman.md	SINGULAR	HIGH	Roman		Roman religion
+ausrine.md	SINGULAR	HIGH	Baltic		Baltic paganism (Lithuanian)
 avalokitesvara.md	MULTI_SAME_FAMILY	HIGH	Buddhist		Mahāyāna and Vajrayāna Buddhism
 awonawilona.md	SINGULAR	HIGH	Indigenous-N-American		Zuni (A:shiwi) — Pueblo Southwest
+aya-sherida.md	MULTI_SAME_FAMILY	HIGH	Mesopotamian		Sumerian / Akkadian
+ayyappa.md	SINGULAR	HIGH	Vedic-Hindu		Hindu (Tamil-Malayalam Shaiva-Vaishnava)
 azazel.md	MULTI_SAME_FAMILY	HIGH	Israelite		Israelite religion / Second Temple apocalyptic / Jewish demonology
 ba-xian.md	SINGULAR	HIGH	Chinese		Daoism (folk-and-religious-Daoism; Quanzhen and Zhengyi schools)
 baal-hadad.md	MULTI_SAME_FAMILY	HIGH	Canaanite		Canaanite / Ugaritic / West Semitic
@@ -93,34 +115,49 @@ baal.md	MULTI_SAME_FAMILY	HIGH	Canaanite		Canaanite / Ugaritic
 babalu-aye.md	SINGULAR	HIGH	Yoruba-Diaspora		Yoruba religion (Nigeria / Diaspora)
 bacchus.md	MULTI_SAME_FAMILY	HIGH	Roman		Roman religion / Italic religion; Hellenistic-Roman mystery cult
 baiame.md	MULTI_SAME_FAMILY	HIGH	Aboriginal-Australian		Specific southeastern Australian Aboriginal nations — Wiradjuri, Kamilaroi, Wonnarua, Eora; contested as pan-Aboriginal
+balarama.md	SINGULAR	HIGH	Vedic-Hindu		Hindu (Vaishnava)
 baldr.md	MULTI_SAME_FAMILY	HIGH	Norse		Norse / Germanic
+balor.md	SINGULAR	HIGH	Celtic		Irish
 bandua.md	SINGULAR	HIGH	Celtic		Lusitanian Religion (pre-Roman Iberian) — Gallaecia, Lusitania, northwestern Iberian Peninsula
 banebdjedet.md	SINGULAR	HIGH	Egyptian		Egyptian
-baphomet.md	MULTI_CROSS_FAMILY	MEDIUM	Hermetic	Modern-Esoteric	Accusation: [[tradition-knights-templar]] (alleged); Occult reception: [[tradition-hermeticism]] / [[tradition-rosicrucianism]] / Modern Satanism
+baphomet.md	SINGULAR	HIGH	Modern-Esoteric		Modern occultism (Lévi 1856 Sabbatic Goat)
 baraqel.md	MULTI_SAME_FAMILY	HIGH	Israelite	received-in:canonical in [[tradition-ethiopian-orthodox-tewahedo]]	Second-Temple Jewish apocalyptic (Enochic) / canonical in [[tradition-ethiopian-orthodox-tewahedo]]
 barbelo.md	SINGULAR	HIGH	Gnostic		Sethian Gnostic
 baron-samedi.md	SINGULAR	HIGH	Yoruba-Diaspora		Haitian Vodou
 bastet.md	SINGULAR	HIGH	Egyptian		Egyptian (Old Kingdom onward; major cult Bubastis)
 bau-sumerian.md	SINGULAR	HIGH	Mesopotamian		Sumerian
-beelzebub.md	MULTI_CROSS_FAMILY	MEDIUM	Israelite	Christian	Hebrew Bible polemical → New Testament demonology → medieval Christian
+beelzebub.md	SINGULAR	HIGH	Israelite		Hebrew Bible (polemical, Baal-zebub)
 beher.md	SINGULAR	HIGH	Aksumite		Pre-Christian Aksumite religion
 belenos.md	SINGULAR	HIGH	Celtic		Celtic paganism (Gaulish — pan-Celtic; inscriptions from Gaul, Noricum, Aquileia, Britain)
 belet-seri-akkadian.md	MULTI_SAME_FAMILY	HIGH	Mesopotamian		Akkadian / Babylonian
 belial.md	MULTI_SAME_FAMILY	HIGH	Israelite		Israelite religion / Second Temple apocalyptic / Qumran
+bellona.md	SINGULAR	HIGH	Roman		Roman religion
+belobog.md	SINGULAR	HIGH	Slavic-Finnic		Pre-Christian Slavic
 benzaiten.md	MULTI_SAME_FAMILY	HIGH	Buddhist		Japanese Buddhism (Shichifukujin) / Shinto-Buddhist syncretic
 bergelmir.md	SINGULAR	HIGH	Norse		[[tradition-norse]]
 bes.md	SINGULAR	HIGH	Egyptian		Egyptian (Middle Kingdom onward; popular / household religion)
+bhaga.md	SINGULAR	HIGH	Vedic-Hindu		Vedic
 bhairava.md	SINGULAR	HIGH	Vedic-Hindu		Hindu — Shaivism (Tantric, especially Kashmir Trika and Kāpālika streams)
 bhaisajyaguru.md	SINGULAR	HIGH	Buddhist		Mahayana Buddhism (pan-Mahayana)
 boann.md	SINGULAR	HIGH	Celtic		Irish Celtic
 bolon-tzakab.md	MULTI_SAME_FAMILY	HIGH	Maya		Classic Maya / Yucatec Maya
 bondye-vodou.md	SINGULAR	HIGH	Yoruba-Diaspora		Haitian Vodou
+bor-norse.md	SINGULAR	HIGH	Norse		Norse (Eddic cosmogony)
 bragi.md	SINGULAR	HIGH	Norse		Norse paganism
 brahma.md	SINGULAR	HIGH	Vedic-Hindu		Hindu (Vedic-Brahmanic; Puranic)
 bran-the-blessed.md	SINGULAR	HIGH	Celtic		Celtic paganism (Welsh)
-brigid.md	MULTI_CROSS_FAMILY	HIGH	Celtic	Christian	Celtic paganism (Gaelic) → Irish Christianity
+bres.md	SINGULAR	HIGH	Celtic		Celtic paganism (Gaelic)
+brigid.md	SINGULAR	HIGH	Celtic		Celtic paganism (Gaelic)
+brihaspati.md	SINGULAR	HIGH	Vedic-Hindu		Vedic
+budha.md	SINGULAR	HIGH	Vedic-Hindu		Hindu (Puranic / Jyotisha)
+bumba.md	SINGULAR	HIGH	African		Bantu (Kuba / Bushongo, D.R. Congo)
 bunjil.md	SINGULAR	HIGH	Aboriginal-Australian		Aboriginal Australian — Kulin nation (Wurundjeri, Boon Wurrung, Taungurung, Dja Dja Wurrung, Wathaurong; south-central Victoria, Australia)
+buri.md	SINGULAR	HIGH	Norse		Norse (Eddic cosmogony)
+cabracan.md	SINGULAR	HIGH	Maya		Maya (K'iche')
 cagn.md	SINGULAR	REVIEW	UNKNOWN		ǀXam San (Khoisan / Bushmen) — Southern Africa
+caishen.md	MULTI_SAME_FAMILY	HIGH	Chinese		Daoism / Chinese folk religion
+camazotz.md	SINGULAR	HIGH	Maya		Maya (Kʼicheʼ)
+cangjie.md	SINGULAR	HIGH	Chinese		Chinese
 cao-dai-god.md	SINGULAR	REVIEW	UNKNOWN		[[tradition-cao-dai]]
 catequil.md	SINGULAR	HIGH	Andean		Andean (pre-Inca origin — Conchucos region of central Peru; absorbed into Inca state pantheon)
 centeotl.md	MULTI_SAME_FAMILY	HIGH	Nahua-Aztec		Nahua / Aztec (Mexica)
@@ -135,7 +172,10 @@ chandra.md	MULTI_SAME_FAMILY	HIGH	Vedic-Hindu		Vedic / Hindu (Rigveda, Atharvave
 chang-e.md	MULTI_SAME_FAMILY	HIGH	Chinese		Chinese folk religion / Daoism (Huainanzi, c. 139 BCE; Mid-Autumn Festival living tradition)
 changing-woman.md	SINGULAR	HIGH	Indigenous-N-American		Diné (Navajo)
 chaos-primordial.md	SINGULAR	HIGH	Greek		Greek (Hesiodic and Orphic cosmogonic)
+charon.md	SINGULAR	HIGH	Greek		Greek
 charun-etruscan.md	SINGULAR	HIGH	Etruscan		Etruscan religion
+chasca.md	SINGULAR	HIGH	Andean		Inca
+chemosh.md	SINGULAR	REVIEW	UNKNOWN		Moabite (Canaanite / West Semitic)
 chernobog.md	SINGULAR	HIGH	Slavic-Finnic		Slavic (primarily West and Baltic Slavic; medieval attestation)
 chicomecoatl.md	MULTI_SAME_FAMILY	HIGH	Nahua-Aztec		Nahua / Aztec (Mexica)
 chitragupta.md	SINGULAR	HIGH	Vedic-Hindu		Hinduism (Puranic, pan-Hindu)
@@ -145,155 +185,222 @@ chukwu-igbo.md	SINGULAR	HIGH	African		[[tradition-igbo-religion]]
 cipactli.md	MULTI_SAME_FAMILY	HIGH	Nahua-Aztec		Nahua / Aztec
 cizin.md	MULTI_SAME_FAMILY	HIGH	Maya		Yucatec Maya and Classic Maya (Tzeltal, Tzotzil, and other Maya groups continue cult variants)
 coatlicue.md	MULTI_SAME_FAMILY	HIGH	Nahua-Aztec		Nahua / Aztec
+coeus.md	SINGULAR	HIGH	Greek		Greek
 coniraya.md	MULTI_SAME_FAMILY	HIGH	Andean		Andean / Inca (Huarochirí Manuscript, c. 1608 CE — Francisco de Avila's collection)
 corn-mother.md	MULTI_SAME_FAMILY	REVIEW	Indigenous-N-American		Eastern Woodlands / Pueblo (pan-North American agricultural traditions)
 coyolxauhqui.md	MULTI_SAME_FAMILY	HIGH	Nahua-Aztec		Nahua / Aztec (Mexica)
 coyote-navajo.md	SINGULAR	HIGH	Indigenous-N-American		Diné (Navajo)
+coyote.md	SINGULAR	REVIEW	UNKNOWN		Indigenous North American
+crius.md	SINGULAR	HIGH	Greek		Greek
 cupid-roman.md	SINGULAR	HIGH	Roman		Roman religion
-cybele.md	MULTI_CROSS_FAMILY	HIGH	Phrygian	Greek | Roman	Phrygian → Greek → Roman mystery cult
+cybele.md	SINGULAR	HIGH	Phrygian		Phrygian
+daena.md	SINGULAR	HIGH	Zoroastrian		Zoroastrian
 dagda.md	SINGULAR	HIGH	Celtic		Celtic paganism (Gaelic)
 dagon.md	MULTI_SAME_FAMILY	HIGH	Canaanite		Northwest Semitic / Canaanite / Philistine
+dagr.md	SINGULAR	HIGH	Norse		Norse (Eddic)
+daikokuten.md	SINGULAR	HIGH	Buddhist		Japanese Buddhism (esoteric Mahākāla cult; later folk Shichifukujin)
+daksha.md	SINGULAR	HIGH	Vedic-Hindu		Hindu (Puranic)
 damballa.md	SINGULAR	HIGH	Yoruba-Diaspora		Haitian Vodou
 damkina.md	MULTI_SAME_FAMILY	HIGH	Mesopotamian		Sumerian / Babylonian
+damu.md	SINGULAR	HIGH	Mesopotamian		Sumerian
 dan-aida-hwedo.md	MULTI_SAME_FAMILY	HIGH	Yoruba-Diaspora		Fon-Ewe vodun (Dahomey / Kingdom of Whydah); preserved in Haitian Vodou as [[damballa]] + Aida-Wedo
 danu.md	SINGULAR	HIGH	Celtic		Celtic paganism (Indo-European / Proto-Celtic)
 daramulan.md	MULTI_SAME_FAMILY	REVIEW	Aboriginal-Australian		Yuin, Wiradjuri, Gamilaroi, and other south-eastern Australian Aboriginal nations
 dattatreya.md	MULTI_SAME_FAMILY	REVIEW	Vedic-Hindu		Hindu — pan-Indian syncretic; especially central in Maharashtra (Nāth-sampradāya), Karnataka, Gujarat
 dazhbog.md	SINGULAR	HIGH	Slavic-Finnic		Pre-Christian Slavic
 demeter.md	SINGULAR	HIGH	Greek		Greek
-demiurge-gnostic.md	MULTI_CROSS_FAMILY	MEDIUM	Christian	Gnostic	Gnostic Christian / Sethian / Valentinian (concept-figure)
-demiurge-platonic.md	MULTI_CROSS_FAMILY	MEDIUM	Greek	Neoplatonist	Platonism / Middle Platonism / Neoplatonism (concept-figure)
+demiurge-gnostic.md	MULTI_SAME_FAMILY	HIGH	Gnostic		Sethian and Valentinian Gnosticism
+demiurge-platonic.md	SINGULAR	HIGH	Greek		Platonist philosophy (Greek)
 dhanvantari.md	SINGULAR	HIGH	Vedic-Hindu		Hindu
+dian-cecht.md	SINGULAR	HIGH	Celtic		Irish
 diana-roman.md	SINGULAR	HIGH	Roman		Roman religion
 dievas-baltic.md	SINGULAR	HIGH	Baltic		Baltic paganism
-dionysus-mystery.md	MULTI_CROSS_FAMILY	MEDIUM	Greek	Roman	Greek and Roman mystery-cult layers (distinguished from civic Olympian Dionysus)
+dionysus-mystery.md	SINGULAR	HIGH	Roman		Greco-Roman mystery-cult (Bacchic / Dionysiac)
 dionysus.md	SINGULAR	HIGH	Greek		Greek
+dipankara.md	SINGULAR	HIGH	Buddhist		Buddhism (pan-Buddhist — Theravāda and Mahāyāna; Indian origin)
+dis-pater.md	SINGULAR	HIGH	Roman		Roman
 dizang-ksitigarbha.md	SINGULAR	HIGH	Buddhist		Mahāyāna Buddhism (Chinese, Japanese, Korean — pan-East Asian)
 donn-celtic.md	SINGULAR	HIGH	Celtic		Irish Celtic paganism (Lebor Gabála Érenn, Metrical Dindshenchas)
+doumu.md	MULTI_SAME_FAMILY	HIGH	Chinese		Daoism / Chinese folk religion
 druj.md	SINGULAR	HIGH	Zoroastrian		Zoroastrian (Avestan and Pahlavi)
-dumuzi-tammuz.md	MULTI_CROSS_FAMILY	MEDIUM	Mesopotamian	Canaanite	Sumerian / Akkadian / West Semitic
+dumuzi-tammuz.md	SINGULAR	HIGH	Mesopotamian		Sumerian
 durga.md	MULTI_SAME_FAMILY	REVIEW	Vedic-Hindu		Hindu — Shakta / Shaivite / Pan-Hindu
+dushara.md	SINGULAR	HIGH	Pre-Islamic-Arabian		Nabataean (North Arabian)
 dyaus-pita.md	MULTI_SAME_FAMILY	REVIEW	Vedic-Hindu		Vedic Hindu (Vedic-period); reconstructed Proto-Indo-European ancestor
 ebisu.md	SINGULAR	HIGH	Shinto		Shinto
 ehecatl.md	MULTI_SAME_FAMILY	HIGH	Nahua-Aztec		Nahua / Aztec
-eileithyia-greek.md	SINGULAR	HIGH	Greek		tradition-greek-religion
+eileithyia-greek.md	SINGULAR	HIGH	Greek		Greek
 ein-sof.md	SINGULAR	HIGH	Rabbinic		Kabbalistic Judaism
+eir-norse.md	SINGULAR	HIGH	Norse		Norse (Eddic)
+ek-chuah.md	SINGULAR	HIGH	Maya		Maya
 ekeko.md	MULTI_SAME_FAMILY	HIGH	Andean		Aymara (pre-Inca) and Andean (Bolivia, Peru, northern Chile, northwest Argentina) — pre-Columbian origin, continuous practice into the 21st century
 el-canaanite.md	MULTI_SAME_FAMILY	HIGH	Canaanite		Canaanite / Ugaritic
 el-elohim-hebrew.md	MULTI_SAME_FAMILY	HIGH	Israelite		Israelite / Hebrew Bible
 el-shaddai.md	SINGULAR	HIGH	Israelite		Israelite (patriarchal / pre-Mosaic stratum)
+enbilulu.md	MULTI_SAME_FAMILY	HIGH	Mesopotamian		Sumerian / Babylonian
 endovelicus.md	SINGULAR	HIGH	Celtic		Lusitanian Religion (pre-Roman Iberian)
 enki-ea.md	MULTI_SAME_FAMILY	HIGH	Mesopotamian		Sumerian / Mesopotamian
+enkimdu.md	SINGULAR	HIGH	Mesopotamian		Sumerian
 enlil.md	MULTI_SAME_FAMILY	HIGH	Mesopotamian		Sumerian / Mesopotamian
 enma-japanese.md	MULTI_SAME_FAMILY	HIGH	Buddhist		Japanese Buddhism / Chinese Buddhism (Yánluó)
 eos-greek.md	SINGULAR	HIGH	Greek		Greek paganism (Hesiod Theogony; Iliad; Odyssey)
+epimetheus.md	SINGULAR	HIGH	Greek		Greek
 epona.md	SINGULAR	HIGH	Celtic		Celtic paganism (Gaulish) — adopted into Roman cavalry worship
+erebus.md	SINGULAR	HIGH	Greek		Greek (Hesiodic cosmogonic)
 ereshkigal.md	MULTI_SAME_FAMILY	HIGH	Mesopotamian		Sumerian / Akkadian
+eris.md	SINGULAR	HIGH	Greek		Greek
 erlang-shen.md	MULTI_SAME_FAMILY	HIGH	Chinese		Chinese folk religion / Daoism
-eros-primordial.md	MULTI_CROSS_FAMILY	MEDIUM	Greek	Roman	Greek (Hesiodic and Orphic cosmogonies); distinct from the Aphroditean son-Eros / Roman Cupid
+eros-primordial.md	SINGULAR	HIGH	Greek		Greek (Hesiodic and Orphic cosmogonies)
 erra-akkadian.md	MULTI_SAME_FAMILY	HIGH	Mesopotamian		Akkadian / Babylonian
 erzulie.md	SINGULAR	HIGH	Yoruba-Diaspora		Haitian Vodou
+eshmun.md	SINGULAR	HIGH	Canaanite		Phoenician (Sidonian)
 eshu.md	SINGULAR	HIGH	Yoruba-Diaspora		Yoruba
+etain.md	SINGULAR	HIGH	Celtic		Celtic
 father-of-greatness.md	SINGULAR	HIGH	Manichaean		Manichaean
 faunus-roman.md	SINGULAR	HIGH	Roman		Roman religion
 fenrir.md	SINGULAR	HIGH	Norse		Norse paganism
 flint-deity.md	SINGULAR	HIGH	Indigenous-N-American		Haudenosaunee (Iroquois)
+flora-roman.md	SINGULAR	HIGH	Roman		Roman
+forseti.md	SINGULAR	HIGH	Norse		Norse
 fortuna.md	SINGULAR	HIGH	Roman		Roman religion (with Hellenistic Tyche substrate)
+four-sons-of-horus.md	SINGULAR	HIGH	Egyptian		Egyptian
 freyja.md	MULTI_SAME_FAMILY	HIGH	Norse		Norse / Germanic
 freyr.md	MULTI_SAME_FAMILY	HIGH	Norse		Norse / Germanic
 frigg.md	MULTI_SAME_FAMILY	HIGH	Norse		Norse / Germanic
+fufluns.md	SINGULAR	HIGH	Etruscan		Etruscan
 fujin.md	SINGULAR	HIGH	Shinto		Shinto
+futsunushi.md	SINGULAR	HIGH	Shinto		Shinto
 fuxi.md	SINGULAR	HIGH	Chinese		Chinese mythology (Confucian + Daoist appropriation)
-gabriel-archangel.md	MULTI_CROSS_FAMILY	MEDIUM	Christian	Israelite | Islamic	Christianity / Judaism / Islam
+gabija.md	SINGULAR	HIGH	Baltic		Baltic paganism (Lithuanian)
+gabriel-archangel.md	SINGULAR	HIGH	Israelite		Second Temple Judaism
 gadreel.md	MULTI_SAME_FAMILY	HIGH	Israelite	received-in:canonical in [[tradition-ethiopian-orthodox-tewahedo]]	Second-Temple Jewish apocalyptic (Enochic) / canonical in [[tradition-ethiopian-orthodox-tewahedo]]
 gaia.md	SINGULAR	HIGH	Greek		Greek
 ganesha.md	SINGULAR	HIGH	Vedic-Hindu		Hindu — Pan-Hindu (Śaiva origin)
+ganga.md	SINGULAR	HIGH	Vedic-Hindu		Hindu
 garuda.md	MULTI_SAME_FAMILY	HIGH	Vedic-Hindu		Vedic / Puranic Hinduism + Buddhism + Jainism
+gayatri.md	SINGULAR	HIGH	Vedic-Hindu		Hindu
 geb.md	SINGULAR	HIGH	Egyptian		Egyptian
 gede-loa.md	SINGULAR	HIGH	Yoruba-Diaspora		Haitian Vodou
 gefjon.md	SINGULAR	HIGH	Norse		Norse paganism (Prose Edda; Skaldic verse)
+gerd.md	SINGULAR	HIGH	Norse		Norse (Eddic)
 geshtinanna.md	SINGULAR	HIGH	Mesopotamian		Sumerian
-gilgamesh-nephilim.md	MULTI_CROSS_FAMILY	MEDIUM	Israelite	Manichaean	Second-Temple Jewish apocalyptic (Book of Giants) / [[tradition-manichaeism]] (canonical Manichaean Book of Giants) — the *Watchers-tradition-Nephilim* identification of the Mesopotamian Gilgamesh
+gibil.md	SINGULAR	HIGH	Mesopotamian		Sumerian
+gilgamesh-nephilim.md	SINGULAR	HIGH	Israelite		Second-Temple Jewish apocalyptic (Book of Giants)
+ginnungagap.md	SINGULAR	HIGH	Norse		Norse (Eddic cosmogony)
 gitche-manitou.md	MULTI_SAME_FAMILY	REVIEW	Islamic		Algonquian — especially Anishinaabe (Ojibwe, Odawa, Potawatomi); related concepts among Cree, other Algonquian peoples
 glooscap.md	MULTI_SAME_FAMILY	REVIEW	UNKNOWN		Wabanaki / Algonquian — pan-Northeast-Woodlands (Mi'kmaq, Maliseet, Passamaquoddy, Penobscot, Abenaki)
 god-the-father-christian.md	SINGULAR	HIGH	Christian		Christianity
+goibniu.md	SINGULAR	HIGH	Celtic		Irish
 gonggong.md	SINGULAR	HIGH	Chinese		Chinese (pre-Qin mythology; classical-philosophical reception)
 gu-vodun.md	MULTI_SAME_FAMILY	HIGH	Yoruba-Diaspora		Fon-Ewe vodun (Dahomey); preserved in Haitian Vodou + Brazilian Candomblé Jeje
-guan-yu.md	MULTI_CROSS_FAMILY	MEDIUM	Chinese	Buddhist	Chinese folk religion / Confucian / Daoist / Buddhist
-guanyin.md	MULTI_CROSS_FAMILY	HIGH	Buddhist	Chinese	Chinese Mahāyāna Buddhism (and East Asian Buddhism more broadly); Chinese popular religion
+guan-yu.md	SINGULAR	HIGH	Chinese		Chinese folk religion
+guanyin.md	MULTI_CROSS_FAMILY	MEDIUM	Chinese	Buddhist	Chinese popular religion / Chinese Buddhism
 gugalanna.md	SINGULAR	HIGH	Mesopotamian		Sumerian
+guhyasamaja.md	SINGULAR	HIGH	Buddhist		Vajrayāna Buddhism (Indian Mahāsiddha origin; Tibetan — esp. Gelug)
 gula-akkadian.md	MULTI_SAME_FAMILY	HIGH	Mesopotamian		Akkadian / Babylonian
 gwydion.md	SINGULAR	HIGH	Celtic		Celtic paganism (Welsh) — Mabinogi tradition
-hachiman.md	MULTI_CROSS_FAMILY	MEDIUM	Shinto	Buddhist	Shinto / Buddhist syncretism
+hachiman.md	SINGULAR	HIGH	Shinto		Shinto
 hades.md	SINGULAR	HIGH	Greek		Greek
-hahyah-nephilim.md	MULTI_CROSS_FAMILY	MEDIUM	Israelite	Manichaean	Second-Temple Jewish apocalyptic (Book of Giants) / [[tradition-manichaeism]]
+hahyah-nephilim.md	SINGULAR	HIGH	Israelite		Second-Temple Jewish apocalyptic (Book of Giants)
+hannahanna.md	SINGULAR	HIGH	Hittite		Hittite
 hanullim.md	SINGULAR	HIGH	Korean		[[tradition-donghak]]
 hanuman.md	MULTI_SAME_FAMILY	HIGH	Vedic-Hindu		Hindu — Vaiṣṇava (Rāma-bhakti); pan-Hindu
 haoma-zoroastrian.md	SINGULAR	HIGH	Zoroastrian		Zoroastrian (Avestan) — Yasna ritual tradition
+hapi-nile.md	SINGULAR	HIGH	Egyptian		Egyptian
 harihara.md	SINGULAR	HIGH	Vedic-Hindu		Hindu — syncretic Vaishnava-Shaiva composite
 hariti.md	SINGULAR	HIGH	Buddhist		Buddhism — early Indian, Gandhāran, Chinese, Japanese (esp. Nichiren)
 hathor.md	SINGULAR	HIGH	Egyptian		Egyptian
+hauhet.md	SINGULAR	HIGH	Egyptian		Egyptian (Hermopolitan theology — the Ogdoad)
+haumea.md	SINGULAR	HIGH	Polynesian		Hawaiian
 haumia-tiketike.md	SINGULAR	HIGH	Polynesian		Māori
 haurvatat.md	MULTI_SAME_FAMILY	REVIEW	Zoroastrian		Zoroastrian (Avestan and Pahlavi); the fifth of the six Amesha Spentas; feminine
+haya.md	MULTI_SAME_FAMILY	HIGH	Mesopotamian		Sumerian / Akkadian
 hayyi-rabbi.md	SINGULAR	HIGH	Mandaean		Mandaean
 head-of-days.md	MULTI_SAME_FAMILY	HIGH	Israelite	received-in:canonical in [[tradition-ethiopian-orthodox-tewahedo]]	Second-Temple Jewish apocalyptic (Enochic, Book of Parables) / canonical in [[tradition-ethiopian-orthodox-tewahedo]]
 hebat.md	SINGULAR	HIGH	Hittite		Hurrian–Hittite
+hebe.md	SINGULAR	HIGH	Greek		Greek
+heh-egyptian.md	SINGULAR	HIGH	Egyptian		Egyptian (Hermopolitan theology — the Ogdoad)
 heimdall.md	SINGULAR	HIGH	Norse		Norse paganism
-hekate.md	MULTI_CROSS_FAMILY	MEDIUM	Greek	Roman	Greek religion / Roman religion / Chaldean Oracles
+heka-egyptian.md	SINGULAR	HIGH	Egyptian		Egyptian
+hekate.md	SINGULAR	HIGH	Greek		Greek religion
 hel.md	MULTI_SAME_FAMILY	HIGH	Norse		Norse / Germanic
-helios.md	MULTI_CROSS_FAMILY	HIGH	Greek	Roman	Greek; later Greco-Roman with substantial late-antique syncretic elaboration
+helios.md	SINGULAR	HIGH	Greek		Greek
 hephaestus.md	SINGULAR	HIGH	Greek		Greek
+heqet.md	SINGULAR	HIGH	Egyptian		Egyptian
 hera.md	SINGULAR	HIGH	Greek		Greek
-heracles.md	MULTI_CROSS_FAMILY	HIGH	Greek	Canaanite | Roman	Greek (pan-Hellenic hero-god); Phoenician syncretism with Melkart; Roman Hercules cult
+heracles.md	SINGULAR	HIGH	Greek		Greek (pan-Hellenic hero-god)
 hercules.md	SINGULAR	HIGH	Roman		Roman religion (continuation of Greek Heracles; Etruscan Hercle intermediate)
 hermes-greek.md	SINGULAR	HIGH	Greek		Greek
 hermes-trismegistus.md	SINGULAR	HIGH	Hermetic		Greco-Egyptian Hermetic syncretism
 hermoni.md	MULTI_SAME_FAMILY	HIGH	Israelite	received-in:canonical in [[tradition-ethiopian-orthodox-tewahedo]]	Second-Temple Jewish apocalyptic (Enochic) / canonical in [[tradition-ethiopian-orthodox-tewahedo]]
 hestia.md	SINGULAR	HIGH	Greek		Greek (pan-Hellenic; one of the twelve Olympians)
+hevajra.md	SINGULAR	HIGH	Buddhist		Vajrayāna Buddhism (Tibetan — esp. Sakya, also Kagyu; Indian Mahāsiddha origin)
 heviosso.md	MULTI_SAME_FAMILY	REVIEW	Yoruba-Diaspora		Fon-Ewe vodun (Dahomey); preserved in Haitian Vodou via Sogbo / Bade
 hina.md	SINGULAR	HIGH	Polynesian		Pan-Polynesian (attested across Hawaiian, Māori, Tahitian, Samoan, Tongan, Cook Islands, Marquesan, and other Polynesian traditions)
+hine-nui-te-po.md	SINGULAR	HIGH	Polynesian		Māori
 hod.md	SINGULAR	HIGH	Norse		Norse paganism
+hoenir.md	SINGULAR	HIGH	Norse		Norse
 hokmah-hebrew.md	MULTI_SAME_FAMILY	HIGH	Israelite		Hebrew / Second Temple Jewish
 holy-spirit.md	SINGULAR	HIGH	Christian		Christianity (Trinitarian)
+horon.md	SINGULAR	HIGH	Canaanite		Canaanite (Ugaritic)
 horus.md	SINGULAR	HIGH	Egyptian		Egyptian
 hou-yi.md	MULTI_SAME_FAMILY	HIGH	Chinese		Chinese mythology / Daoism (Huainanzi, c. 139 BCE; Shanhaijing)
-hubal.md	MULTI_CROSS_FAMILY	MEDIUM	Pre-Islamic-Arabian	Canaanite	Pre-Islamic Arabian (Hejazi / Quraysh) — likely Nabataean / Levantine import
+houtu.md	SINGULAR	HIGH	Chinese		Chinese
+hu-sia.md	SINGULAR	HIGH	Egyptian		Egyptian
+huangdi.md	SINGULAR	HIGH	Chinese		Chinese religion
+hubal.md	SINGULAR	HIGH	Pre-Islamic-Arabian		Pre-Islamic Arabian (Hejazi / Quraysh)
 huitzilopochtli.md	MULTI_SAME_FAMILY	HIGH	Nahua-Aztec		Nahua / Aztec (Mexica) — Mexica-specific patron
+humbaba.md	MULTI_SAME_FAMILY	HIGH	Mesopotamian		Sumerian / Akkadian
 hun-hunahpu.md	MULTI_SAME_FAMILY	HIGH	Maya		K'iche' Maya (Popol Vuh) and Classic Maya
 hunab-ku.md	SINGULAR	HIGH	Maya		Yucatec Maya (post-Conquest colonial period) — pre-Conquest historicity contested
 hunahpu.md	SINGULAR	HIGH	Maya		K'iche' Maya
-hwanin.md	MULTI_CROSS_FAMILY	HIGH	Korean	Buddhist	Korean shamanism (Muism) / Korean mythology; Buddhist interpretation
+huracan.md	SINGULAR	HIGH	Maya		Maya
+hwanin.md	MULTI_SAME_FAMILY	HIGH	Korean		Korean shamanism (Muism) / Korean mythology
 hwanung.md	MULTI_SAME_FAMILY	HIGH	Korean		Korean shamanism (Muism) / Korean mythology
 hygieia.md	SINGULAR	HIGH	Greek		Greek
+hyperion.md	SINGULAR	HIGH	Greek		Greek
+hypnos.md	SINGULAR	HIGH	Greek		Greek
 iacchus.md	MULTI_SAME_FAMILY	REVIEW	Greek		Greek (Eleusinian mystery cult); identified syncretically with Dionysus, Zagreus
-iao-gnostic.md	MULTI_CROSS_FAMILY	HIGH	Gnostic	Hermetic	Gnostic / Hermetic (Greek Magical Papyri; Nag Hammadi; Origen Contra Celsum)
+iao-gnostic.md	SINGULAR	HIGH	Gnostic		Gnostic (Greek Magical Papyri / Nag Hammadi)
 iapetus.md	SINGULAR	HIGH	Greek		Greek religion
+ibeji.md	SINGULAR	HIGH	Yoruba-Diaspora		Yoruba
 iblis-shaytan.md	SINGULAR	HIGH	Islamic		Islam
-ichikishima-hime.md	NO_TRADITION				
+ichikishima-hime.md	SINGULAR	HIGH	Shinto		Shinto
 idunn.md	SINGULAR	HIGH	Norse		Norse paganism
-ihy.md	SINGULAR	HIGH	Egyptian		tradition-egyptian-religion
+igigi.md	SINGULAR	HIGH	Mesopotamian		Mesopotamian (Akkadian / Babylonian)
+ihy.md	SINGULAR	HIGH	Egyptian		Egyptian
+ikenga.md	SINGULAR	HIGH	African		Igbo religion (Nigeria)
 iktomi.md	MULTI_SAME_FAMILY	REVIEW	Indigenous-N-American		Lakota / Dakota / Nakota (Sioux)
 illapa.md	MULTI_SAME_FAMILY	HIGH	Andean		Inca (Tawantinsuyu) / Andean
 illuyanka.md	SINGULAR	HIGH	Hittite		Hittite (with Hattic substrate)
+ilmarinen.md	SINGULAR	HIGH	Slavic-Finnic		Finnic
 ilmatar.md	SINGULAR	HIGH	Slavic-Finnic		finno-karelian
 inanna-sumerian.md	SINGULAR	HIGH	Mesopotamian		Sumerian
+inara.md	SINGULAR	HIGH	Hittite		Hittite
 inari.md	SINGULAR	HIGH	Shinto		Shinto (with Buddhist syncretic layer as Dakiniten)
 indra.md	MULTI_SAME_FAMILY	HIGH	Vedic-Hindu		Vedic / Hindu
 inkarri.md	SINGULAR	HIGH	Andean		Post-conquest Andean Quechua (folk eschatology — emerged after the Spanish conquest)
 inti.md	MULTI_SAME_FAMILY	HIGH	Andean		Inca (Tawantinsuyu) / Andean Quechua
 inyan.md	SINGULAR	HIGH	Indigenous-N-American		Lakota
 io-matua-kore.md	SINGULAR	HIGH	Polynesian		Māori (specific iwi — Tūhoe, Ngāti Kahungunu, others; contested pre-contact authenticity)
-ishara.md	MULTI_CROSS_FAMILY	MEDIUM	Mesopotamian	Hittite	Mesopotamian / Hurrian / Hittite (cross-cultural Northern Mesopotamian — Levantine)
+iris-greek.md	SINGULAR	HIGH	Greek		Greek
+ishara.md	SINGULAR	HIGH	Mesopotamian		Mesopotamian
 ishtar-akkadian.md	MULTI_SAME_FAMILY	HIGH	Mesopotamian		Akkadian / Babylonian / Assyrian
+ishtaran.md	MULTI_SAME_FAMILY	HIGH	Mesopotamian		Sumerian / Akkadian
+ishum.md	SINGULAR	HIGH	Mesopotamian		Akkadian
 isis-egyptian.md	SINGULAR	HIGH	Egyptian		Egyptian (dynastic-funerary cult, Old Kingdom through Ptolemaic core — distinct from the Hellenistic mystery-cult layer; see [[isis-hellenistic]])
 isis-hellenistic.md	SINGULAR	HIGH	Roman		Hellenistic-Roman mystery cult (with Egyptian roots)
 israfil.md	MULTI_SAME_FAMILY	HIGH	Islamic		Sunni and Shia Islamic theology (hadith tradition)
+istanu.md	SINGULAR	HIGH	Hittite		Hittite
 itzamna.md	SINGULAR	HIGH	Maya		Maya
+itzpapalotl.md	SINGULAR	HIGH	Nahua-Aztec		Aztec (Nahua)
 ixbalanque.md	SINGULAR	HIGH	Maya		Maya paganism (Popol Vuh — K'iche' Maya)
 ixchel.md	SINGULAR	HIGH	Maya		Yucatec Maya
+ixtab.md	SINGULAR	HIGH	Maya		Maya (Yucatec)
 izanagi.md	SINGULAR	HIGH	Shinto		Shinto
 izanami.md	SINGULAR	HIGH	Shinto		Shinto
 jade-emperor.md	MULTI_SAME_FAMILY	HIGH	Chinese		Daoism / Chinese folk religion
+jagannath.md	SINGULAR	HIGH	Vedic-Hindu		Hindu (Vaishnava)
 janus.md	SINGULAR	HIGH	Roman		Roman religion
 jarilo.md	SINGULAR	HIGH	Slavic-Finnic		Pre-Christian Slavic
 jesus-christ-deity.md	SINGULAR	HIGH	Christian		Christianity
@@ -308,182 +415,258 @@ kalfu-vodou.md	SINGULAR	HIGH	Yoruba-Diaspora		Haitian Vodou (Petwo rite)
 kali.md	MULTI_SAME_FAMILY	HIGH	Vedic-Hindu		Hindu — Shakta / Tantric
 kalki.md	SINGULAR	HIGH	Vedic-Hindu		Vaishnava Hinduism
 kama-vedic.md	MULTI_SAME_FAMILY	HIGH	Vedic-Hindu		Vedic religion / Hinduism
+kamadhenu.md	SINGULAR	HIGH	Vedic-Hindu		Hindu
+kamrusepa.md	SINGULAR	HIGH	Hittite		Hittite
+kanaloa.md	SINGULAR	HIGH	Polynesian		Hawaiian
 kane-hawaiian.md	SINGULAR	HIGH	Polynesian		Hawaiian (Kanaka Maoli)
 kasdeja.md	MULTI_SAME_FAMILY	HIGH	Israelite	received-in:canonical in [[tradition-ethiopian-orthodox-tewahedo]]	Second-Temple Jewish apocalyptic (Enochic) / canonical in [[tradition-ethiopian-orthodox-tewahedo]]
+kauket.md	SINGULAR	HIGH	Egyptian		Egyptian (Hermopolitan theology — the Ogdoad)
+kawil.md	SINGULAR	HIGH	Maya		Maya
 kek-egyptian.md	SINGULAR	HIGH	Egyptian		Egyptian (Hermopolitan theology — the Ogdoad)
+ketu.md	SINGULAR	HIGH	Vedic-Hindu		Hindu (Navagraha)
+khandoba.md	SINGULAR	HIGH	Vedic-Hindu		Hindu
 khepri.md	SINGULAR	HIGH	Egyptian		Egyptian
 khnum.md	SINGULAR	HIGH	Egyptian		Egyptian (Old Kingdom onward; cult center Elephantine and Esna)
 khonsu.md	SINGULAR	HIGH	Egyptian		Egyptian (Theban; New Kingdom)
+khors.md	SINGULAR	HIGH	Slavic-Finnic		Pre-Christian Slavic (East Slavic)
 khshathra-vairya.md	MULTI_SAME_FAMILY	REVIEW	Zoroastrian		Zoroastrian (Avestan and Pahlavi); the third of the six Amesha Spentas
 ki-sumerian.md	MULTI_SAME_FAMILY	HIGH	Mesopotamian		Sumerian (early); subsequently absorbed into Akkadian Antu
 kingu.md	SINGULAR	HIGH	Mesopotamian		Babylonian
+kinich-ahau.md	SINGULAR	HIGH	Maya		Maya
 kokabiel.md	MULTI_SAME_FAMILY	HIGH	Israelite	received-in:canonical in [[tradition-ethiopian-orthodox-tewahedo]]	Second-Temple Jewish apocalyptic (Enochic) / canonical in [[tradition-ethiopian-orthodox-tewahedo]]
-kotoshironushi.md	NO_TRADITION				
+kokopelli.md	SINGULAR	HIGH	Indigenous-N-American		Puebloan (Hopi)
+konohanasakuya-hime.md	SINGULAR	HIGH	Shinto		Shinto
+kothar-wa-khasis.md	SINGULAR	HIGH	Canaanite		Ugaritic (Canaanite)
+kotharat.md	SINGULAR	HIGH	Canaanite		Canaanite (Ugaritic)
+kotoshironushi.md	SINGULAR	HIGH	Shinto		Shinto
 krishna.md	SINGULAR	HIGH	Vedic-Hindu		Hindu — Vaiṣṇava
 kronos.md	SINGULAR	HIGH	Greek		Greek
 ku.md	SINGULAR	HIGH	Polynesian		Hawaiian
-kubera.md	MULTI_CROSS_FAMILY	MEDIUM	Vedic-Hindu	Buddhist | Jain	Hindu / Buddhist / Jain
+kubaba.md	SINGULAR	HIGH	Hittite		Anatolian (Syro-Hittite)
+kubera.md	SINGULAR	HIGH	Vedic-Hindu		Hindu
 kukulkan.md	MULTI_SAME_FAMILY	HIGH	Maya		Yucatec Maya / K'iche' Maya — pan-Mesoamerican Feathered-Serpent complex
 kumarbi.md	SINGULAR	HIGH	Hittite		Hurrian–Hittite
 kupala.md	SINGULAR	HIGH	Slavic-Finnic		Slavic paganism (attested in 12th-c. church chronicles; surviving folk practice)
 kurma-avatar.md	SINGULAR	HIGH	Vedic-Hindu		hinduism
+lahar.md	SINGULAR	HIGH	Mesopotamian		Sumerian
 lahmu-lahamu.md	SINGULAR	HIGH	Mesopotamian		Babylonian (with Sumerian-period antecedents)
 laima.md	SINGULAR	HIGH	Baltic		Baltic (Lithuanian and Latvian)
 lakshmi.md	SINGULAR	HIGH	Vedic-Hindu		Hindu — Vaiṣṇava
+lamashtu.md	MULTI_SAME_FAMILY	HIGH	Mesopotamian		Akkadian / Babylonian
 lamassu.md	SINGULAR	HIGH	Mesopotamian		Assyrian (Mesopotamian)
+laran.md	SINGULAR	HIGH	Etruscan		Etruscan
 lasiren-vodou.md	SINGULAR	HIGH	Yoruba-Diaspora		[[tradition-vodou-haitian]]
 laz.md	MULTI_SAME_FAMILY	HIGH	Mesopotamian		Akkadian / Babylonian
 leigong.md	MULTI_SAME_FAMILY	HIGH	Chinese		Chinese folk religion / Daoism
+leto.md	SINGULAR	HIGH	Greek		Greek
 leviathan.md	SINGULAR	HIGH	Israelite		Hebrew (Israelite / Jewish, with later Christian reception)
-lilith.md	MULTI_CROSS_FAMILY	MEDIUM	Israelite	Rabbinic	Jewish folkloric / Kabbalistic (with Mesopotamian roots)
+leza.md	SINGULAR	HIGH	African		Bantu religion (Central/Southern African)
+liber.md	SINGULAR	HIGH	Roman		Roman
+lilith.md	MULTI_CROSS_FAMILY	MEDIUM	Israelite	Rabbinic	Jewish folkloric / Kabbalistic
 lir.md	SINGULAR	HIGH	Celtic		Irish Celtic paganism (Irish mythological cycle)
 lleu-llaw-gyffes.md	SINGULAR	HIGH	Celtic		Celtic paganism (Welsh) — Mabinogi tradition
 logos-stoic.md	SINGULAR	HIGH	Greek		Stoic philosophy
 loki.md	MULTI_SAME_FAMILY	HIGH	Norse		Norse / Germanic
+longwang.md	SINGULAR	HIGH	Chinese		Chinese folk religion (Daoist + Buddhist syncretic layers)
 lono.md	SINGULAR	HIGH	Polynesian		Hawaiian
 los.md	SINGULAR	HIGH	Modern-Esoteric		Blakean mythology
 lotan.md	SINGULAR	HIGH	Canaanite		Ugaritic (Canaanite)
-lucifer.md	MULTI_CROSS_FAMILY	MEDIUM	Christian	Modern-Esoteric	Christianity (post-Jerome Vulgate) → Romantic reception → Modern Satanism
+louhi.md	MULTI_SAME_FAMILY	REVIEW	Slavic-Finnic		Finno-Karelian — Kalevala / runo-poetry tradition
+lucifer.md	SINGULAR	HIGH	Christian		Christianity (post-Jerome Vulgate, Isa 14:12 Helel)
 lugalbanda.md	MULTI_SAME_FAMILY	HIGH	Mesopotamian		Sumerian / Akkadian (Mesopotamian) — historical king of Uruk, posthumously deified
 lugh.md	SINGULAR	HIGH	Celtic		Celtic paganism (Gaelic + Welsh + Continental)
 lugus.md	SINGULAR	HIGH	Celtic		Celtic (pan-Celtic — Gaulish, Iberian, Insular)
+luna-roman.md	SINGULAR	HIGH	Roman		Roman
 ma-at.md	SINGULAR	HIGH	Egyptian		Egyptian
 macha.md	SINGULAR	HIGH	Celtic		Irish Celtic
-mahakala.md	MULTI_CROSS_FAMILY	MEDIUM	Vedic-Hindu	Buddhist	Hindu (Śaiva) and Vajrayāna Buddhism (both lineages)
+mahakala.md	SINGULAR	HIGH	Vedic-Hindu		Hindu (Śaiva)
+mahasthamaprapta.md	SINGULAR	HIGH	Buddhist		Mahāyāna Buddhism — esp. Pure Land schools
 mahavira-jain.md	SINGULAR	HIGH	Jain		Jain (Agamas — Jain canonical scripture; 6th-5th c. BCE)
-mahaway-nephilim.md	MULTI_CROSS_FAMILY	MEDIUM	Israelite	Manichaean	Second-Temple Jewish apocalyptic (Book of Giants) / [[tradition-manichaeism]]
+mahaway-nephilim.md	SINGULAR	HIGH	Israelite		Second-Temple Jewish apocalyptic (Book of Giants)
 mahrem.md	SINGULAR	HIGH	Aksumite		Pre-Christian Aksumite religion
+mahuika.md	SINGULAR	HIGH	Polynesian		Polynesian
 maitreya.md	SINGULAR	HIGH	Buddhist		Buddhism — Theravāda, Mahāyāna, Vajrayana (universal)
 mama-cocha.md	SINGULAR	HIGH	Andean		Andean (Inca and pre-Inca coastal cultures)
 mama-quilla.md	MULTI_SAME_FAMILY	HIGH	Andean		Inca (Tawantinsuyu) / Andean
 mama-sara.md	SINGULAR	HIGH	Andean		Andean (Quechua / pan-Andean, Inca and post-Inca)
 mami-wata.md	SINGULAR	HIGH	African		Pan-African folk religion (West/Central Africa and diaspora; 15th c. onwards — possibly older water-deity substratum)
 manabozho.md	SINGULAR	HIGH	Islamic		Anishinaabe (Ojibwe / Chippewa / Algonquian tradition)
+manaf.md	SINGULAR	HIGH	Pre-Islamic-Arabian		Pre-Islamic Arabian (Hejazi / Quraysh)
 manannan-mac-lir.md	SINGULAR	HIGH	Celtic		Celtic paganism (Gaelic + Welsh)
 manasa-devi.md	SINGULAR	HIGH	Vedic-Hindu		Hindu (Bengali folk tradition / Shakta)
 manat.md	SINGULAR	HIGH	Pre-Islamic-Arabian		Pre-Islamic Arabian (Hijazi — particularly Aws and Khazraj tribes of Yathrib / Medina; Nabataean — Manawat at Hegra)
+manco-capac.md	SINGULAR	HIGH	Andean		Inca
 manda-d-hayyi.md	SINGULAR	HIGH	Mandaean		Mandaean
+mangala.md	SINGULAR	HIGH	Vedic-Hindu		Hindu (Navagraha)
+mani-norse.md	SINGULAR	HIGH	Norse		Norse
 manjushri.md	MULTI_SAME_FAMILY	HIGH	Buddhist		Mahayana / Vajrayana Buddhism
+manu-vedic.md	SINGULAR	HIGH	Vedic-Hindu		Hindu (Vedic and Puranic)
+maponos.md	SINGULAR	HIGH	Celtic		Celtic paganism (Romano-British / Gaulish)
 mara-demon.md	MULTI_SAME_FAMILY	HIGH	Buddhist		Theravāda / Mahāyāna Buddhism (pan-Buddhist)
 marassa-twins.md	SINGULAR	HIGH	Yoruba-Diaspora		Haitian Vodou
 marduk.md	SINGULAR	HIGH	Mesopotamian		Babylonian
+mariamman.md	SINGULAR	HIGH	Vedic-Hindu		Hindu
+marici.md	MULTI_SAME_FAMILY	HIGH	Buddhist		Mahāyāna and Vajrayāna Buddhism
 mars-roman.md	SINGULAR	HIGH	Roman		Roman religion
+maruts.md	SINGULAR	HIGH	Vedic-Hindu		Hindu (Vedic)
 mary-of-zion.md	SINGULAR	HIGH	Christian		[[tradition-ethiopian-orthodox-tewahedo]] (the cult-specific Aksumite Marian figure)
 mary-theotokos.md	SINGULAR	HIGH	Christian		Christianity
 marzanna.md	SINGULAR	HIGH	Slavic-Finnic		Pre-Christian Slavic
+masauwu.md	SINGULAR	HIGH	Indigenous-N-American		Hopi (Puebloan)
 mastema.md	MULTI_SAME_FAMILY	REVIEW	Israelite	received-in:canonical in [[tradition-ethiopian-orthodox-tewahedo]]	Second-Temple Jewish apocalyptic / Jubilees-specific demonology / canonical in [[tradition-ethiopian-orthodox-tewahedo]] (where Jubilees is full scripture)
 matsya-avatar.md	MULTI_SAME_FAMILY	HIGH	Vedic-Hindu		[[tradition-vedic-hinduism]] / [[tradition-bhakti-vaishnavism]]
+matsya.md	SINGULAR	HIGH	Vedic-Hindu		Hindu (Puranic)
 maui-polynesian.md	SINGULAR	HIGH	Polynesian		Pan-Polynesian — Māori, Hawaiian (Māui), Tahitian, Samoan
 mawu-lisa.md	MULTI_SAME_FAMILY	HIGH	Yoruba-Diaspora		Fon / Ewe (Dahomey, Benin, Togo) — Vodun tradition
 mayahuel.md	MULTI_SAME_FAMILY	HIGH	Nahua-Aztec		Aztec / Mexica religion (continuation of older Mesoamerican agave cult)
 mazu.md	SINGULAR	HIGH	Chinese		Chinese folk religion (Daoist + Buddhist syncretic layers)
+medeina.md	SINGULAR	HIGH	Baltic		Baltic paganism (Lithuanian)
 meder.md	SINGULAR	HIGH	Aksumite		Pre-Christian Aksumite religion
-meenakshi.md	NO_TRADITION				
+meenakshi.md	SINGULAR	HIGH	Vedic-Hindu		Hindu (Tamil Shaiva)
 melek-hamza.md	SINGULAR	REVIEW	UNKNOWN		Druze (Rasa'il al-Hikma, 11th c. CE)
 melek-taus.md	SINGULAR	REVIEW	UNKNOWN		[[tradition-yazidi]]
 melqart.md	SINGULAR	HIGH	Canaanite		Phoenician
 meness.md	SINGULAR	HIGH	Baltic		Baltic (Latvian primarily; Lithuanian form Mēnuo)
 menvra-etruscan.md	SINGULAR	HIGH	Etruscan		Etruscan religion
 mercury-roman.md	SINGULAR	HIGH	Roman		Roman religion
+meretseger.md	SINGULAR	HIGH	Egyptian		Egyptian
 metatron.md	MULTI_CROSS_FAMILY	MEDIUM	Israelite	Rabbinic	Jewish mystical / Hekhalot / Kabbalistic
-michael-archangel.md	MULTI_CROSS_FAMILY	MEDIUM	Christian	Israelite | Islamic | Mandaean	Christianity / Judaism / Islam / Mandaeism
+metis.md	SINGULAR	HIGH	Greek		Greek
+metztli.md	SINGULAR	HIGH	Nahua-Aztec		Aztec
+michael-archangel.md	SINGULAR	HIGH	Israelite		Second Temple Judaism
+mictecacihuatl.md	SINGULAR	HIGH	Nahua-Aztec		Aztec (Nahua)
 mictlantecuhtli.md	MULTI_SAME_FAMILY	HIGH	Nahua-Aztec		Nahua / Aztec
+midir.md	SINGULAR	HIGH	Celtic		Celtic
 mielikki.md	SINGULAR	HIGH	Slavic-Finnic		Finnish paganism (Kalevala; Finnish hunting folk religion)
+mihr-armenian.md	SINGULAR	REVIEW	UNKNOWN		Armenian
 mimir-norse.md	SINGULAR	HIGH	Norse		Norse paganism
 min-egyptian.md	SINGULAR	HIGH	Egyptian		Egyptian
 minerva-roman.md	SINGULAR	HIGH	Roman		Roman religion (Etruscan-Italic origin)
 mithra-zoroastrian.md	SINGULAR	HIGH	Zoroastrian		Zoroastrian
-mithra.md	MULTI_SAME_FAMILY	HIGH	Zoroastrian		Zoroastrian; pre-Zoroastrian Indo-Iranian
 mithras-roman.md	SINGULAR	HIGH	Roman		Roman mystery cult
 mitra-vedic.md	MULTI_SAME_FAMILY	HIGH	Vedic-Hindu		Vedic / Hindu
 mixcoatl.md	MULTI_SAME_FAMILY	REVIEW	Nahua-Aztec		Nahua / Aztec (Mexica); patron of Tlaxcala under the name Camaxtli; pan-Mesoamerican Chichimec hunter-god
 mnemosyne.md	SINGULAR	HIGH	Greek		Greek religion (esp. Orphic + Pythagorean)
+modi-magni.md	SINGULAR	HIGH	Norse		Norse (Eddic)
 mokosh.md	SINGULAR	HIGH	Slavic-Finnic		Pre-Christian Slavic
+moloch.md	MULTI_SAME_FAMILY	REVIEW	Canaanite		Canaanite / Ammonite (West Semitic)
+montu.md	SINGULAR	HIGH	Egyptian		Egyptian
 mot.md	MULTI_SAME_FAMILY	HIGH	Canaanite		Canaanite / Ugaritic
 muhammad-al-mahdi.md	SINGULAR	HIGH	Islamic		Islam (primarily Twelver Shīʿism; also Sunnī eschatology)
 mullissu-akkadian.md	MULTI_SAME_FAMILY	HIGH	Mesopotamian		Akkadian / Babylonian / Assyrian
+mulungu.md	SINGULAR	HIGH	African		Bantu religion (East/Central African)
+mummu.md	SINGULAR	HIGH	Mesopotamian		Babylonian (Akkadian)
 murugan.md	MULTI_SAME_FAMILY	HIGH	Vedic-Hindu		Tamil Shaiva / South Indian Hinduism
 mut.md	SINGULAR	HIGH	Egyptian		Egyptian (Theban; New Kingdom onward)
 mwari.md	SINGULAR	REVIEW	UNKNOWN		Shona traditional religion
 nabia.md	MULTI_SAME_FAMILY	HIGH	Celtic		Lusitanian Religion / Gallaecian (pre-Roman Iberian)
 nabu.md	MULTI_SAME_FAMILY	HIGH	Mesopotamian		Babylonian / Assyrian
+nammu.md	SINGULAR	HIGH	Mesopotamian		Sumerian
+namtar.md	SINGULAR	HIGH	Mesopotamian		Sumerian
 nana-buluku.md	MULTI_SAME_FAMILY	HIGH	Yoruba-Diaspora		Fon / Ewe (Dahomey) — Vodun; reception in Yoruba (Nanã), Candomblé (Nanã Burukê), and Haitian Vodou (Nanan-bouclou)
+nanahuatzin.md	MULTI_SAME_FAMILY	HIGH	Nahua-Aztec		Aztec / Mexica
+nanaya.md	MULTI_SAME_FAMILY	HIGH	Mesopotamian		Sumerian / Akkadian / Babylonian
 nandi.md	SINGULAR	HIGH	Vedic-Hindu		Hindu (Shaiva)
 nane-armenian.md	SINGULAR	REVIEW	UNKNOWN		Armenian pre-Christian paganism
 nanghaithya-daeva.md	SINGULAR	HIGH	Zoroastrian		Zoroastrian (Avestan and Pahlavi; daevic-class divine being demoted from earlier divine status)
+nanna-norse.md	SINGULAR	HIGH	Norse		Norse (Eddic)
 nanna-sin.md	MULTI_SAME_FAMILY	HIGH	Mesopotamian		Sumerian / Akkadian / Babylonian
 nanshe-sumerian.md	SINGULAR	HIGH	Mesopotamian		Sumerian
-narada.md	SINGULAR	HIGH	Vedic-Hindu		tradition-vedic-hinduism
+narada.md	SINGULAR	HIGH	Vedic-Hindu		Vedic
 narasimha.md	MULTI_SAME_FAMILY	HIGH	Vedic-Hindu		Vedic / Hindu (Vishnu Purana, Bhagavata Purana)
 narayana.md	MULTI_SAME_FAMILY	HIGH	Vedic-Hindu		Vedic / Vaishnava Hinduism
 nasr-pre-islamic.md	SINGULAR	HIGH	Pre-Islamic-Arabian		Pre-Islamic Arabian (South Arabian — Himyaritic context; Quranic-preserved antediluvian-pantheon listing)
+naunet.md	SINGULAR	HIGH	Egyptian		Egyptian (Hermopolitan theology — the Ogdoad)
 nefertem.md	SINGULAR	HIGH	Egyptian		Egyptian
 neith.md	SINGULAR	HIGH	Egyptian		Egyptian (Predynastic / Old Kingdom; Saite-period revival)
 nekhbet.md	SINGULAR	HIGH	Egyptian		Egyptian
 nemesis-greek.md	SINGULAR	HIGH	Greek		Greek paganism (Hesiod Theogony 223; Pindar; sanctuary at Rhamnous)
+neminatha.md	SINGULAR	HIGH	Jain		Jainism
 nephthys.md	SINGULAR	HIGH	Egyptian		Egyptian
 neptune-roman.md	SINGULAR	HIGH	Roman		Roman religion
+nereus.md	SINGULAR	HIGH	Greek		Greek
 nergal.md	MULTI_SAME_FAMILY	HIGH	Mesopotamian		Sumerian / Akkadian
 nerthus.md	SINGULAR	HIGH	Norse		Germanic paganism (attested by Tacitus, 98 CE)
 nethuns.md	SINGULAR	HIGH	Etruscan		Etruscan religion
+nezha.md	SINGULAR	HIGH	Chinese		Chinese religion
 ngai-maasai.md	SINGULAR	HIGH	African		Maasai traditional religion
+nidhogg.md	SINGULAR	HIGH	Norse		Norse (Eddic)
 nike-greek.md	SINGULAR	HIGH	Greek		Ancient Greek religion
-nikkal-akkadian.md	MULTI_CROSS_FAMILY	MEDIUM	Mesopotamian	Canaanite	Akkadian / West Semitic / Aramaic
+nikkal-akkadian.md	SINGULAR	HIGH	Mesopotamian		Akkadian
 nin-gal-sumerian.md	SINGULAR	HIGH	Mesopotamian		Sumerian
 nin-girsu.md	SINGULAR	HIGH	Mesopotamian		Sumerian
 nin-lil-sumerian.md	SINGULAR	HIGH	Mesopotamian		Sumerian
 ninazu.md	MULTI_SAME_FAMILY	HIGH	Mesopotamian		Sumerian / Akkadian
 ningikuga.md	SINGULAR	HIGH	Mesopotamian		Sumerian
 ningishzida.md	MULTI_SAME_FAMILY	HIGH	Mesopotamian		Sumerian / Akkadian (Mesopotamian)
-ninhursag-nintud.md	MULTI_SAME_FAMILY	HIGH	Mesopotamian		Sumerian / Mesopotamian
 ninhursag.md	MULTI_SAME_FAMILY	HIGH	Mesopotamian		Sumerian / Akkadian
+ninigi.md	SINGULAR	HIGH	Shinto		Shinto
 ninisina.md	SINGULAR	HIGH	Mesopotamian		Sumerian
 ninkarrak.md	MULTI_SAME_FAMILY	HIGH	Mesopotamian		Sumerian / Akkadian (Mesopotamian)
 ninkasi.md	SINGULAR	HIGH	Mesopotamian		Sumerian
+ninshubur.md	SINGULAR	HIGH	Mesopotamian		Sumerian
+ninsun.md	SINGULAR	HIGH	Mesopotamian		Sumerian
 ninurta.md	MULTI_SAME_FAMILY	HIGH	Mesopotamian		Sumerian / Akkadian / Mesopotamian
 nisaba.md	SINGULAR	HIGH	Mesopotamian		Sumerian
 njord.md	MULTI_SAME_FAMILY	HIGH	Norse		Norse / Germanic
+nodens.md	SINGULAR	HIGH	Celtic		Celtic paganism (Romano-British)
 nommo.md	SINGULAR	HIGH	African		Dogon religion (West African — Mali/Burkina Faso)
 norea.md	SINGULAR	HIGH	Gnostic		Sethian Gnosticism
+norns.md	SINGULAR	HIGH	Norse		Norse (Eddic)
+nott-norse.md	SINGULAR	HIGH	Norse		Norse (Eddic)
 nous-hermetic.md	SINGULAR	HIGH	Hermetic		Hermetic
 nous-plotinus.md	SINGULAR	HIGH	Neoplatonist		Neoplatonism
 nuada.md	SINGULAR	HIGH	Celtic		Celtic paganism (Gaelic + Welsh + Romano-British)
 nun.md	SINGULAR	HIGH	Egyptian		Egyptian
 nungal.md	SINGULAR	HIGH	Mesopotamian		Sumerian
 nur-muhammadi.md	SINGULAR	HIGH	Islamic		Sufi Islam — Akbarī school
+nuska.md	SINGULAR	HIGH	Mesopotamian		Sumerian
 nut.md	SINGULAR	HIGH	Egyptian		Egyptian
 nuwa.md	SINGULAR	HIGH	Chinese		Chinese mythology
 nyame.md	SINGULAR	HIGH	African		Akan (Asante, Fante, Twi, and related Akan peoples)
 nyx-primordial.md	SINGULAR	HIGH	Greek		Greek (Hesiodic and especially Orphic cosmogonies)
 nzambi.md	SINGULAR	HIGH	African		BaKongo (Kongo Kingdom and related Central African peoples)
+oba-orisha.md	SINGULAR	HIGH	Yoruba-Diaspora		Yoruba
 obatala.md	SINGULAR	HIGH	Yoruba-Diaspora		Yoruba
+oceanus.md	SINGULAR	HIGH	Greek		Greek
 odin.md	MULTI_SAME_FAMILY	HIGH	Norse		Norse / Germanic
 oduduwa.md	SINGULAR	HIGH	Yoruba-Diaspora		Yoruba religion (Nigeria / Diaspora)
 ogma.md	SINGULAR	HIGH	Celtic		Irish Celtic (and Gaulish)
 ogou-vodou.md	SINGULAR	HIGH	Yoruba-Diaspora		[[tradition-vodou-haitian]]
 ogun.md	SINGULAR	HIGH	Yoruba-Diaspora		Yoruba (and Vodou via Dahomean-Yoruba transmission)
-ohyah-nephilim.md	MULTI_CROSS_FAMILY	MEDIUM	Israelite	Manichaean	Second-Temple Jewish apocalyptic (Book of Giants Watchers-tradition expansion) / [[tradition-manichaeism]] (canonical Manichaean Book of Giants)
+ohyah-nephilim.md	SINGULAR	HIGH	Israelite		Second-Temple Jewish apocalyptic (Book of Giants)
 okuninushi.md	SINGULAR	HIGH	Shinto		Shinto
 olodumare.md	SINGULAR	HIGH	Yoruba-Diaspora		Yoruba
 olokun.md	SINGULAR	HIGH	Yoruba-Diaspora		Yoruba religion (Nigeria / Diaspora)
 ometeotl.md	MULTI_SAME_FAMILY	HIGH	Nahua-Aztec		Nahua / Aztec
+omoikane.md	SINGULAR	HIGH	Shinto		Shinto
+onuris.md	SINGULAR	HIGH	Egyptian		Egyptian
+ops-roman.md	SINGULAR	HIGH	Roman		Roman
+orisha-oko.md	SINGULAR	HIGH	Yoruba-Diaspora		Yoruba
 oro-polynesian.md	MULTI_SAME_FAMILY	REVIEW	Polynesian		Society Islands / Polynesian religion (Society Islands — 17th-18th c.; Marae Taputapuatea)
 orunmila.md	MULTI_SAME_FAMILY	HIGH	Yoruba-Diaspora		Yoruba traditional religion (Ifá) → Santería (Lucumí), Candomblé
 osanyin.md	SINGULAR	HIGH	Yoruba-Diaspora		[[tradition-yoruba]]
+oshumare.md	SINGULAR	HIGH	Yoruba-Diaspora		Yoruba
 oshun.md	SINGULAR	HIGH	Yoruba-Diaspora		Yoruba
 osiris.md	SINGULAR	HIGH	Egyptian		Egyptian
+osoosi.md	SINGULAR	HIGH	Yoruba-Diaspora		Yoruba
 oya.md	SINGULAR	HIGH	Yoruba-Diaspora		Yoruba
 oyagami.md	SINGULAR	REVIEW	UNKNOWN		[[tradition-tenrikyo]]
+oyamatsumi.md	SINGULAR	HIGH	Shinto		Shinto
 pachacamac.md	SINGULAR	HIGH	Andean		Andean (Coastal Quechua / pre-Inca and Inca)
 pachamama.md	MULTI_SAME_FAMILY	HIGH	Andean		Quechua / Aymara / pan-Andean
 padmasambhava.md	SINGULAR	HIGH	Buddhist		Vajrayāna Buddhism — Nyingma school
+padmavati.md	SINGULAR	HIGH	Jain		Jainism
+palden-lhamo.md	SINGULAR	HIGH	Buddhist		Vajrayāna Buddhism (Tibetan; Indian Śrī Devī origins)
 palongawhoya.md	SINGULAR	HIGH	Indigenous-N-American		hopi
 pan-greek.md	SINGULAR	HIGH	Greek		Greek (Arcadian; later pan-Hellenic and Greco-Roman)
 panacea.md	SINGULAR	HIGH	Greek		Greek
 pangu.md	SINGULAR	HIGH	Chinese		Chinese mythology (Daoist-folk synthesis)
 papa-legba.md	SINGULAR	HIGH	Yoruba-Diaspora		Haitian Vodou
 papatuanuku.md	SINGULAR	HIGH	Polynesian		Māori
+parashurama.md	SINGULAR	HIGH	Vedic-Hindu		Hindu (Vaishnava)
 pariacaca.md	MULTI_SAME_FAMILY	HIGH	Andean		Andean / Inca (Huarochirí Manuscript, c. 1608 CE)
+parshvanatha.md	SINGULAR	HIGH	Jain		Jain (Agamas; the Tirthankara tradition)
 parvati.md	SINGULAR	HIGH	Vedic-Hindu		Puranic Hinduism (Shaiva + Shakta)
 pazuzu.md	MULTI_SAME_FAMILY	HIGH	Mesopotamian		Assyrian / Babylonian
 pele.md	SINGULAR	HIGH	Polynesian		Hawaiian
@@ -492,19 +675,24 @@ perkunas.md	SINGULAR	HIGH	Baltic		Baltic paganism (Lithuanian + Latvian)
 persephone-greek.md	SINGULAR	HIGH	Greek		Greek
 perun.md	SINGULAR	HIGH	Slavic-Finnic		Pre-Christian Slavic
 phanes-protogonos.md	SINGULAR	HIGH	Mystery		Greek Orphic mystery-cult cosmogony
+phoebe-titan.md	SINGULAR	HIGH	Greek		Greek
+pidray.md	SINGULAR	HIGH	Canaanite		Canaanite (Ugaritic)
 pluto-roman.md	SINGULAR	HIGH	Roman		Roman religion
+plutus.md	SINGULAR	HIGH	Greek		Greek
 poimandres.md	SINGULAR	HIGH	Hermetic		Hermetic
-poqanghoya.md	SINGULAR	HIGH	Indigenous-N-American		hopi
+pomona.md	SINGULAR	HIGH	Roman		Roman
+poqanghoya.md	SINGULAR	HIGH	Indigenous-N-American		Hopi (Puebloan)
 poseidon.md	SINGULAR	HIGH	Greek		Greek
 prajapati.md	MULTI_SAME_FAMILY	HIGH	Vedic-Hindu		Vedic / Hindu
 prajnaparamita-goddess.md	SINGULAR	HIGH	Buddhist		Mahayana Buddhism
-priapus-greek-roman.md	SINGULAR	HIGH	Greek		tradition-greek-religion
+priapus-greek-roman.md	SINGULAR	HIGH	Greek		Greek
 primal-man-manichaean.md	SINGULAR	HIGH	Manichaean		Manichaeism
 prince-of-darkness-manichaean.md	SINGULAR	HIGH	Manichaean		Manichaean
 prithvi.md	MULTI_SAME_FAMILY	HIGH	Vedic-Hindu		Vedic / Hindu (Rigveda; Atharvaveda AV 12.1; Puranas)
 prometheus.md	SINGULAR	HIGH	Greek		Greek religion + Greek philosophy (Romantic and modern reception)
 proserpina-roman.md	SINGULAR	HIGH	Roman		Roman religion
-psyche-myth.md	MULTI_CROSS_FAMILY	MEDIUM	Roman	Literary	Greco-Roman religion / literary mythology
+proteus-greek.md	SINGULAR	HIGH	Greek		Greek
+psyche-myth.md	SINGULAR	HIGH	Roman		Greco-Roman religion
 ptah.md	SINGULAR	HIGH	Egyptian		Egyptian
 ptahil.md	SINGULAR	HIGH	Mandaean		Mandaean
 purusha.md	MULTI_SAME_FAMILY	HIGH	Vedic-Hindu		Vedic / Sāṃkhya / classical Hindu
@@ -513,16 +701,20 @@ quirinus-roman.md	SINGULAR	HIGH	Roman		Roman religion
 ra.md	SINGULAR	HIGH	Egyptian		egyptian-religion
 radha.md	SINGULAR	HIGH	Vedic-Hindu		Gaudiya Vaishnavism (with antecedents in Bengali, Braj, and earlier bhakti)
 raguel-archangel.md	MULTI_SAME_FAMILY	HIGH	Israelite	received-in:canonical in [[tradition-ethiopian-orthodox-tewahedo]] | received-in:liturgically retained in [[tradition-coptic-orthodox]]	Second-Temple Jewish apocalyptic (Enochic) / canonical in [[tradition-ethiopian-orthodox-tewahedo]] / liturgically retained in [[tradition-coptic-orthodox]]
+rahu.md	SINGULAR	HIGH	Vedic-Hindu		Hindu (Navagraha)
 raijin.md	SINGULAR	HIGH	Shinto		Shinto
 rainbow-serpent.md	MULTI_SAME_FAMILY	HIGH	Aboriginal-Australian		Australian Aboriginal — widely attested across northern, central, and parts of southeastern Aboriginal Australia
 rama.md	SINGULAR	HIGH	Vedic-Hindu		Vaishnavism — Ramaite devotionalism
 ran.md	SINGULAR	HIGH	Norse		Norse paganism (Eddic poetry; Prose Edda)
 ranginui.md	SINGULAR	HIGH	Polynesian		Māori
-raphael-archangel.md	MULTI_CROSS_FAMILY	MEDIUM	Christian	Israelite | Islamic	Christianity / Judaism / Islam
+raphael-archangel.md	SINGULAR	HIGH	Israelite		Second Temple Judaism (Tobit)
 rashnu-zoroastrian.md	SINGULAR	HIGH	Zoroastrian		Zoroastrian (Avestan and Pahlavi)
 ratnasambhava.md	SINGULAR	HIGH	Buddhist		Mahāyāna Buddhism (Vajrayana)
 raven-trickster.md	SINGULAR	REVIEW	UNKNOWN		Pacific Northwest Coast (Haida, Tlingit, Tsimshian, and related nations)
 remiel-archangel.md	MULTI_SAME_FAMILY	HIGH	Israelite	received-in:canonical in [[tradition-ethiopian-orthodox-tewahedo]]	Second-Temple Jewish apocalyptic (Enochic + Ezran) / canonical in [[tradition-ethiopian-orthodox-tewahedo]]
+remus.md	SINGULAR	HIGH	Roman		Roman
+renenutet.md	SINGULAR	HIGH	Egyptian		Egyptian
+resheph.md	MULTI_SAME_FAMILY	HIGH	Canaanite		Canaanite / Ugaritic (West Semitic)
 reue-lusitanian.md	SINGULAR	HIGH	Celtic		Lusitanian Religion (pre-Roman Iberian)
 rhea.md	SINGULAR	HIGH	Greek		Greek religion
 rhiannon.md	SINGULAR	HIGH	Celtic		Celtic paganism (Welsh) — Mabinogi tradition
@@ -530,14 +722,21 @@ rishabha-jain.md	SINGULAR	HIGH	Jain		Jain (Jain Agamas; Kalpa Sutra — earliest
 rod-slavic.md	SINGULAR	HIGH	Slavic-Finnic		Pre-Christian Slavic (pre-Perun layer)
 romulus.md	SINGULAR	HIGH	Roman		Roman (founding mythology)
 rongo-maori.md	SINGULAR	HIGH	Polynesian		Māori (and wider Polynesia)
+rosmerta.md	SINGULAR	HIGH	Celtic		Celtic paganism (Gaulish / Gallo-Roman)
+ruaumoko.md	SINGULAR	HIGH	Polynesian		Māori
+ruda.md	SINGULAR	HIGH	Pre-Islamic-Arabian		Pre-Islamic Arabian (North Arabian — Thamudic / Safaitic)
 rudra-shiva-early.md	MULTI_SAME_FAMILY	HIGH	Vedic-Hindu		Vedic / proto-Hindu
 ruha.md	SINGULAR	HIGH	Mandaean		Mandaean
+runtiya.md	SINGULAR	HIGH	Hittite		Hittite
 ryujin.md	SINGULAR	HIGH	Shinto		Shinto
-sabazios.md	MULTI_CROSS_FAMILY	MEDIUM	Phrygian	Roman	Phrygian / Thracian (origin); Hellenistic-Roman syncretism
-saint-blaise.md	MULTI_CROSS_FAMILY	HIGH	Christian	Roman	Christianity (Eastern Orthodox + Catholic); Roman / Byzantine martyrology
+sabazios.md	MULTI_SAME_FAMILY	REVIEW	Phrygian		Phrygian / Thracian
+saint-blaise.md	SINGULAR	HIGH	Christian		Christianity (Eastern Orthodox + Catholic)
 saklas.md	SINGULAR	HIGH	Gnostic		Gnostic (Sethian — Apocryphon of John; Gospel of Judas)
+sakpata.md	MULTI_SAME_FAMILY	HIGH	Yoruba-Diaspora		Fon / Ewe (Dahomey, Benin, Togo) — Vodun tradition
 sakra-buddhist.md	SINGULAR	HIGH	Buddhist		Buddhism (Theravāda, Mahāyāna, Esoteric)
 samantabhadra-buddha.md	SINGULAR	HIGH	Buddhist		Vajrayāna Buddhism — Nyingma school
+samsin.md	MULTI_SAME_FAMILY	HIGH	Korean		Korean shamanism (Muism) / Korean folk religion
+sansin.md	MULTI_SAME_FAMILY	HIGH	Korean		Korean shamanism (Muism) / Korean folk religion
 saoshyant.md	MULTI_SAME_FAMILY	REVIEW	Zoroastrian		Zoroastrian (Avestan and Pahlavi traditions); central to Sasanian and later Parsi eschatology
 sapling-deity.md	SINGULAR	HIGH	Indigenous-N-American		Haudenosaunee (Iroquois)
 saraqael-archangel.md	MULTI_SAME_FAMILY	HIGH	Israelite	received-in:canonical in [[tradition-ethiopian-orthodox-tewahedo]] | received-in:liturgically retained in [[tradition-coptic-orthodox]]	Second-Temple Jewish apocalyptic (Enochic) / canonical in [[tradition-ethiopian-orthodox-tewahedo]] / liturgically retained in [[tradition-coptic-orthodox]]
@@ -545,72 +744,105 @@ saraswati.md	SINGULAR	HIGH	Vedic-Hindu		Hindu — Pan-Hindu (Vedic origin)
 sarpanit.md	SINGULAR	HIGH	Mesopotamian		Babylonian (Akkadian) — drawing on Sumerian prototypes
 sarutahiko.md	SINGULAR	HIGH	Shinto		Shinto (Japanese)
 satan-christian.md	SINGULAR	HIGH	Christian		Christianity (from Second Temple Jewish substrate)
-satanael.md	MULTI_CROSS_FAMILY	MEDIUM	Gnostic	Christian	Bogomilism / Catharism — medieval Christian dualism
+satanael.md	MULTI_SAME_FAMILY	HIGH	Gnostic		Bogomilism and Catharism (medieval dualism)
+satet.md	SINGULAR	HIGH	Egyptian		Egyptian
 saturn-roman.md	SINGULAR	HIGH	Roman		Roman religion
 saule.md	SINGULAR	HIGH	Baltic		Baltic paganism
+savitr.md	SINGULAR	HIGH	Vedic-Hindu		Hindu (Vedic)
 sedna-inuit.md	SINGULAR	HIGH	Indigenous-N-American		Inuit (pan-Arctic — Nunavut, Alaska, Greenland)
 sekhmet.md	SINGULAR	HIGH	Egyptian		Egyptian
-selene.md	MULTI_CROSS_FAMILY	MEDIUM	Greek	Roman	Greek; later Greco-Roman, especially salient in magical-papyri and Hekate-syncretic contexts
+selene.md	SINGULAR	HIGH	Greek		Greek
 selket.md	SINGULAR	HIGH	Egyptian		Ancient Egyptian
 semyaza.md	MULTI_SAME_FAMILY	REVIEW	Israelite	received-in:scripture in [[tradition-ethiopian-orthodox-tewahedo]]	Second-Temple Jewish apocalyptic (Enochic Judaism) / canonical scripture in [[tradition-ethiopian-orthodox-tewahedo]]
 serapis.md	SINGULAR	HIGH	Egyptian		Greco-Egyptian (Ptolemaic syncretic state cult)
+seshat.md	SINGULAR	HIGH	Egyptian		Egyptian
 set.md	SINGULAR	HIGH	Egyptian		Egyptian
-shakti.md	NO_TRADITION				
+sethlans.md	SINGULAR	HIGH	Etruscan		Etruscan
+shahar.md	SINGULAR	HIGH	Canaanite		Canaanite (Ugaritic)
+shakti.md	SINGULAR	HIGH	Vedic-Hindu		Hindu (Shakta)
+shala.md	SINGULAR	HIGH	Mesopotamian		Mesopotamian (northern; possibly Hurrian origin)
+shalim.md	SINGULAR	HIGH	Canaanite		Canaanite (Ugaritic)
+shams-arabian.md	SINGULAR	HIGH	Pre-Islamic-Arabian		Pre-Islamic South Arabian (Sabaean / Himyarite)
 shangdi.md	SINGULAR	HIGH	Chinese		Chinese (Shang / early Zhou)
 shango.md	SINGULAR	HIGH	Yoruba-Diaspora		Yoruba
+shani.md	SINGULAR	HIGH	Vedic-Hindu		Hindu (Navagraha)
+shapash.md	SINGULAR	HIGH	Canaanite		Ugaritic (Canaanite)
+shara.md	SINGULAR	HIGH	Mesopotamian		Sumerian
+sharruma.md	SINGULAR	HIGH	Hittite		Hittite (Hurrian)
 shaushka-hurrian.md	SINGULAR	HIGH	Hittite		Hurrian–Hittite religion
 shekhinah.md	MULTI_SAME_FAMILY	HIGH	Rabbinic		Rabbinic Judaism (early); Kabbalistic Judaism (mature)
 shennong.md	SINGULAR	HIGH	Chinese		Chinese
+shitala.md	SINGULAR	HIGH	Vedic-Hindu		Hindu
 shiva.md	SINGULAR	HIGH	Vedic-Hindu		Hindu — Shaivism (the broader cultic-theological tradition; the Tamil Shaiva Siddhānta, the Kashmir Trika non-dualist Shaivism, the Lingāyat/Vīraśaiva, the Nāth, and the Smārta integrations are all distinct sub-traditions)
 shu.md	SINGULAR	HIGH	Egyptian		Egyptian
+shukra.md	SINGULAR	HIGH	Vedic-Hindu		Vedic
 sif.md	SINGULAR	HIGH	Norse		Norse paganism
 sigyn.md	SINGULAR	HIGH	Norse		Norse paganism (Prose Edda: Gylfaginning 50; Völuspá 35)
+silvanus.md	SINGULAR	HIGH	Roman		Roman
+simargl.md	SINGULAR	HIGH	Slavic-Finnic		Pre-Christian Slavic (East Slavic)
 simbi-kongo.md	SINGULAR	HIGH	African		[[tradition-bantu-kongo]]
+sin-hadhramaut.md	SINGULAR	HIGH	Pre-Islamic-Arabian		Pre-Islamic South Arabian (Hadramitic; kingdom of Hadramawt)
 siris-akkadian.md	MULTI_SAME_FAMILY	HIGH	Mesopotamian		Akkadian / Babylonian
 sita.md	SINGULAR	HIGH	Vedic-Hindu		Bhakti Vaishnavism (Ramayana cycle)
 skadi.md	SINGULAR	HIGH	Norse		Norse paganism
 skanda-karthikeya.md	MULTI_SAME_FAMILY	REVIEW	Vedic-Hindu		Hindu — pan-Indian; especially Tamil Murugan-cult of South India and Sri Lanka
 sky-woman-haudenosaunee.md	SINGULAR	HIGH	Indigenous-N-American		haudenosaunee
 sobek.md	SINGULAR	HIGH	Egyptian		Egyptian (Old Kingdom onward; major cult Fayum and Kom Ombo)
+sokar.md	SINGULAR	HIGH	Egyptian		Egyptian
 sol-invictus.md	MULTI_SAME_FAMILY	REVIEW	Roman		Roman state cult (3rd–4th centuries CE); broader syncretic solar theology
+sol-norse.md	SINGULAR	HIGH	Norse		Norse
 soma.md	MULTI_SAME_FAMILY	HIGH	Vedic-Hindu		Vedic / Hindu
-sophia-gnostic.md	MULTI_CROSS_FAMILY	MEDIUM	Christian	Gnostic	Gnostic Christian / Sethian / Valentinian
+sophia-gnostic.md	MULTI_SAME_FAMILY	HIGH	Gnostic		Sethian and Valentinian Gnosticism
 spenta-armaiti.md	MULTI_SAME_FAMILY	REVIEW	Zoroastrian		Zoroastrian (Avestan and Pahlavi); the fourth of the six Amesha Spentas; feminine
 spenta-mainyu.md	SINGULAR	HIGH	Zoroastrian		Zoroastrian
 spider-grandmother-hopi.md	SINGULAR	HIGH	Indigenous-N-American		hopi
 spider-woman-navajo.md	SINGULAR	HIGH	Indigenous-N-American		Diné (Navajo)
 sraosha.md	SINGULAR	HIGH	Zoroastrian		Zoroastrian (Avestan and Pahlavi)
 stribog.md	SINGULAR	HIGH	Slavic-Finnic		Slavic (East Slavic primarily)
+sucellus.md	SINGULAR	HIGH	Celtic		Celtic paganism (Gaulish / Gallo-Roman)
+sukunabikona.md	SINGULAR	HIGH	Shinto		Shinto
+sulis.md	SINGULAR	HIGH	Celtic		Celtic paganism (Romano-British)
 sun-bearer.md	SINGULAR	HIGH	Indigenous-N-American		Diné (Navajo)
 sun-goddess-of-arinna.md	SINGULAR	HIGH	Hittite		Hittite (with Hattic substrate)
-sun-wukong.md	MULTI_CROSS_FAMILY	MEDIUM	Chinese	Buddhist	Chinese folk religion / Daoism / Buddhism (syncretic)
-sundareswarar.md	NO_TRADITION				
+sun-wukong.md	SINGULAR	HIGH	Chinese		Chinese folk religion
+sundareswarar.md	SINGULAR	HIGH	Vedic-Hindu		Hindu (Tamil Shaiva)
 supay.md	MULTI_SAME_FAMILY	HIGH	Andean		Inca / Andean
+surtr.md	SINGULAR	HIGH	Norse		Norse
 surya.md	SINGULAR	HIGH	Vedic-Hindu		Hindu (Vedic-Brahmanic; Puranic; Saura sect)
 susanoo.md	SINGULAR	HIGH	Shinto		Shinto
 suwa.md	SINGULAR	HIGH	Pre-Islamic-Arabian		Pre-Islamic Arabian (Hudhayl tribe, Hejazi; Quranic-preserved antediluvian-pantheon listing)
 svantovit.md	SINGULAR	HIGH	Slavic-Finnic		Pre-Christian Slavic (West Slavic / Polabian)
 svarog.md	SINGULAR	HIGH	Slavic-Finnic		Pre-Christian Slavic
-tagitsu-hime.md	NO_TRADITION				
-tagori-hime.md	NO_TRADITION				
+tagitsu-hime.md	SINGULAR	HIGH	Shinto		Shinto
+tagori-hime.md	SINGULAR	HIGH	Shinto		Shinto
 takamimusubi.md	SINGULAR	HIGH	Shinto		Shinto (Kojiki / Nihon Shoki — Japanese)
 takemikazuchi.md	SINGULAR	HIGH	Shinto		Shinto
-takeminakata.md	NO_TRADITION				
+takeminakata.md	SINGULAR	HIGH	Shinto		Shinto
 tane.md	SINGULAR	HIGH	Polynesian		Māori
 tangaroa.md	MULTI_SAME_FAMILY	HIGH	Polynesian		Pan-Polynesian — Māori, Tahitian, Samoan; Hawaiian Kanaloa is the cognate
 tangun.md	MULTI_SAME_FAMILY	HIGH	Korean		Korean shamanism (Muism) / Korean founding mythology / modern Korean national religion
+tanit.md	MULTI_SAME_FAMILY	HIGH	Canaanite		Phoenician / Punic (Carthaginian)
 tapio.md	SINGULAR	HIGH	Slavic-Finnic		Finnish paganism (Kalevala; Finnish hunting folk religion)
 tara.md	MULTI_SAME_FAMILY	HIGH	Buddhist		Vajrayāna Buddhism — Tibetan, Mongolian, Himalayan; older Mahāyāna roots
 taranis.md	SINGULAR	HIGH	Celtic		Celtic paganism (Gaulish — attested by Caesar and Lucan)
+tarhunna.md	SINGULAR	HIGH	Hittite		Hittite (Luwian)
+tartarus.md	SINGULAR	HIGH	Greek		Greek (Hesiodic and Orphic cosmogonic)
 tat-hermetic.md	SINGULAR	HIGH	Hermetic		Hermetic (Corpus Hermeticum — especially CH XIII 'On Rebirth')
-tathagata.md	SINGULAR	HIGH	Buddhist		[[tradition-buddhism]]
+tatenen.md	SINGULAR	HIGH	Egyptian		Egyptian (Memphite theology)
+tathagata.md	SINGULAR	HIGH	Buddhist		Buddhism
 taweret.md	SINGULAR	HIGH	Egyptian		Egyptian
 tawhirimatea.md	SINGULAR	HIGH	Polynesian		Māori
+tecciztecatl.md	MULTI_SAME_FAMILY	HIGH	Nahua-Aztec		Aztec / Mexica
 tefnut.md	SINGULAR	HIGH	Egyptian		Egyptian
 telipinu.md	SINGULAR	HIGH	Hittite		Hittite (with Hattic substrate)
+tellus.md	SINGULAR	HIGH	Roman		Roman
+tenjin.md	SINGULAR	HIGH	Shinto		Shinto
+tepeu.md	SINGULAR	HIGH	Maya		Maya (K'iche')
 teshub.md	SINGULAR	HIGH	Hittite		Hurrian–Hittite
+tethys.md	SINGULAR	HIGH	Greek		Greek
 teutates.md	SINGULAR	HIGH	Celtic		Celtic paganism (Gaulish — attested by Caesar, Lucan)
 tezcatlipoca.md	MULTI_SAME_FAMILY	HIGH	Nahua-Aztec		Nahua / Aztec (Mexica)
+thanatos-greek.md	SINGULAR	HIGH	Greek		Greek
 the-amesha-spentas.md	SINGULAR	HIGH	Zoroastrian		Zoroastrian
 the-ashvins.md	SINGULAR	HIGH	Vedic-Hindu		Vedic Hinduism
 the-dioskouroi.md	SINGULAR	HIGH	Greek		Greek (Panhellenic)
@@ -628,61 +860,88 @@ the-sefirot.md	SINGULAR	HIGH	Rabbinic		Kabbalistic Judaism
 the-shepherd-angel-of-repentance.md	MULTI_SAME_FAMILY	HIGH	Christian	received-in:canonical in [[tradition-ethiopian-orthodox-tewahedo]]	Early Roman Christianity / canonical in [[tradition-ethiopian-orthodox-tewahedo]] (where the Shepherd of Hermas remains scripture)
 the-trinity.md	SINGULAR	HIGH	Christian		Christianity
 the-world-soul.md	SINGULAR	HIGH	Neoplatonist		Neoplatonism
+theia.md	SINGULAR	HIGH	Greek		Greek
 themis.md	SINGULAR	HIGH	Greek		Greek religion
 thor.md	MULTI_SAME_FAMILY	HIGH	Norse		Norse / Germanic
 thoth.md	SINGULAR	HIGH	Egyptian		Egyptian
 three-pure-ones.md	SINGULAR	HIGH	Chinese		Daoism
 tiamat.md	SINGULAR	HIGH	Mesopotamian		Babylonian (Akkadian) — drawing on Sumerian prototypes
 tian-heaven.md	SINGULAR	HIGH	Chinese		Chinese (Zhou onward)
+tiki.md	SINGULAR	HIGH	Polynesian		Polynesian
 tinia.md	SINGULAR	HIGH	Etruscan		Etruscan religion
 tir-armenian.md	SINGULAR	REVIEW	UNKNOWN		Armenian pre-Christian paganism
+tirawa.md	SINGULAR	REVIEW	UNKNOWN		Pawnee
+tishpak.md	SINGULAR	HIGH	Mesopotamian		Akkadian (Eshnunna)
 tishtrya.md	SINGULAR	HIGH	Zoroastrian		Zoroastrian (Avestan) — Yasht cycle
+tlahuizcalpantecuhtli.md	SINGULAR	HIGH	Nahua-Aztec		Aztec (Nahua)
 tlaloc.md	MULTI_SAME_FAMILY	HIGH	Nahua-Aztec		Nahua / Aztec — pan-Mesoamerican
+tlaltecuhtli.md	SINGULAR	HIGH	Nahua-Aztec		Aztec (Nahua)
 tlazolteotl.md	MULTI_SAME_FAMILY	HIGH	Nahua-Aztec		Nahua / Aztec (Mexica) — earlier Huastec origin (Gulf Coast)
 tonatiuh.md	MULTI_SAME_FAMILY	HIGH	Nahua-Aztec		Nahua / Aztec
 toyouke-omikami.md	SINGULAR	HIGH	Shinto		Shinto
-toyouke.md	NO_TRADITION				
+toyouke.md	SINGULAR	HIGH	Shinto		Shinto
 trebaruna.md	SINGULAR	HIGH	Celtic		Lusitanian Religion (pre-Roman Iberian)
+triglav.md	SINGULAR	HIGH	Slavic-Finnic		Slavic
+triptolemus.md	SINGULAR	HIGH	Greek		Greek
+tripura-sundari.md	SINGULAR	HIGH	Vedic-Hindu		Hindu
+triton.md	SINGULAR	HIGH	Greek		Greek
+tsui-goab.md	SINGULAR	HIGH	African		Khoikhoi (Khoe) religion — Southern African
 tsukuyomi.md	SINGULAR	HIGH	Shinto		Shinto
 tu-di-gong.md	SINGULAR	HIGH	Chinese		Chinese folk religion
 tu-maori.md	SINGULAR	HIGH	Polynesian		Māori
+tunupa.md	SINGULAR	HIGH	Andean		Aymara (Andean)
+tuoni.md	MULTI_SAME_FAMILY	REVIEW	Slavic-Finnic		Finno-Karelian — Kalevala / runo-poetry tradition
+turan.md	SINGULAR	HIGH	Etruscan		Etruscan
 turms.md	SINGULAR	HIGH	Etruscan		Etruscan religion
+tvashtar.md	SINGULAR	HIGH	Vedic-Hindu		Hindu (Vedic)
 tyche-greek.md	SINGULAR	HIGH	Greek		Greek paganism (Hellenistic period, 4th c. BCE onwards; Pindar Olympian 12)
 typhon.md	SINGULAR	HIGH	Greek		Greek (with Anatolian / Hittite substrate)
 tyr.md	MULTI_SAME_FAMILY	HIGH	Norse		Norse / Germanic
 ukko.md	SINGULAR	HIGH	Slavic-Finnic		Finno-Karelian (pre-Christian)
+ullr.md	SINGULAR	HIGH	Norse		Norse
 uni-etruscan.md	SINGULAR	HIGH	Etruscan		Etruscan religion
 unkulunkulu-zulu.md	SINGULAR	HIGH	African		Zulu traditional religion
 uranus-greek.md	SINGULAR	HIGH	Greek		Greek
-uriel-archangel.md	MULTI_CROSS_FAMILY	MEDIUM	Christian	Israelite	Christianity / Judaism
+urcuchillay.md	SINGULAR	HIGH	Andean		Inca
+uriel-archangel.md	SINGULAR	HIGH	Israelite		Second Temple Judaism (1 Enoch)
 urizen.md	SINGULAR	HIGH	Modern-Esoteric		Blakean mythology
 ushas.md	SINGULAR	HIGH	Vedic-Hindu		Vedic (Rigveda)
 utu-shamash.md	MULTI_SAME_FAMILY	HIGH	Mesopotamian		Sumerian / Akkadian / Babylonian
-vac-goddess.md	SINGULAR	HIGH	Vedic-Hindu		tradition-vedic-hinduism
+vac-goddess.md	SINGULAR	HIGH	Vedic-Hindu		Vedic
 vahagn.md	SINGULAR	REVIEW	UNKNOWN		Armenian pre-Christian paganism (Movses Khorenatsi — birth hymn)
 vainamoinen.md	MULTI_SAME_FAMILY	REVIEW	Slavic-Finnic		Finno-Karelian — Kalevala / runo-poetry tradition
 vairocana.md	SINGULAR	HIGH	Buddhist		Mahāyāna Buddhism (esp. Huayan, Shingon, Tiantai, Tibetan)
 vajradhara.md	SINGULAR	HIGH	Buddhist		Vajrayāna Buddhism — Sarma (New Translation) schools
-vajrakilaya-yidam.md	SINGULAR	HIGH	Buddhist		[[tradition-vajrayana-buddhism]]
+vajrakilaya-yidam.md	SINGULAR	HIGH	Buddhist		Vajrayana Buddhism
 vajrapani.md	MULTI_SAME_FAMILY	HIGH	Buddhist		Mahāyāna and Vajrayāna Buddhism (Indian origin; pan-East-Asian reception)
 vajrasattva.md	SINGULAR	HIGH	Buddhist		Vajrayāna Buddhism
 vajrayogini.md	SINGULAR	HIGH	Buddhist		Vajrayāna Buddhism (Tibetan — Kagyu, Gelug, Sakya schools)
+vali.md	SINGULAR	HIGH	Norse		Norse
+valkyrie.md	SINGULAR	HIGH	Norse		Norse (Eddic)
+vamana.md	SINGULAR	HIGH	Vedic-Hindu		Hindu (Vaishnava)
+vanth.md	SINGULAR	HIGH	Etruscan		Etruscan
 varaha-avatar.md	SINGULAR	HIGH	Vedic-Hindu		hinduism
 varuna.md	MULTI_SAME_FAMILY	HIGH	Vedic-Hindu		Vedic / Hindu
-vayu.md	MULTI_CROSS_FAMILY	HIGH	Vedic-Hindu	Zoroastrian	Vedic / Hindu / Zoroastrian (Rigveda; Avesta — dual nature)
+vayu-iranian.md	SINGULAR	HIGH	Zoroastrian		Zoroastrian
+vayu.md	MULTI_SAME_FAMILY	HIGH	Vedic-Hindu		Vedic / Hindu
 veles.md	SINGULAR	HIGH	Slavic-Finnic		Pre-Christian Slavic
-velinas-lithuanian.md	MULTI_SAME_FAMILY	REVIEW	Baltic		Baltic (Lithuanian + Latvian); pre-Christian pagan
 velinas.md	SINGULAR	HIGH	Baltic		Baltic (Lithuanian and Latvian)
+venkateswara.md	SINGULAR	HIGH	Vedic-Hindu		Hindu (Vaishnava)
 venus-roman.md	SINGULAR	HIGH	Roman		Roman religion
-verethraghna-zoroastrian.md	SINGULAR	HIGH	Zoroastrian		Zoroastrian
-verethragna.md	MULTI_CROSS_FAMILY	HIGH	Zoroastrian	Vedic-Hindu	Zoroastrian (Avestan and Pahlavi); cognate with Vedic Indra-Vrtrahan
+verethragna.md	SINGULAR	HIGH	Zoroastrian		Zoroastrian (Avestan and Pahlavi)
+vertumnus.md	SINGULAR	HIGH	Roman		Roman
 vesta.md	SINGULAR	HIGH	Roman		Roman religion
+vichama.md	SINGULAR	HIGH	Andean		Inca
 victoria-roman.md	SINGULAR	HIGH	Roman		Roman religion
 vidar.md	SINGULAR	HIGH	Norse		Norse paganism (Prose Edda; Völuspá)
+vili-ve.md	SINGULAR	HIGH	Norse		Norse (Eddic cosmogony)
 viracocha.md	MULTI_SAME_FAMILY	HIGH	Andean		Inca / pre-Inca Andean
 vishnu.md	MULTI_SAME_FAMILY	HIGH	Vedic-Hindu		Vedic / Vaishnava Hinduism
+vishvakarma.md	SINGULAR	HIGH	Vedic-Hindu		Hindu
+vithoba.md	SINGULAR	HIGH	Vedic-Hindu		Hindu (Vaishnava)
 vohu-manah.md	MULTI_SAME_FAMILY	REVIEW	Zoroastrian		Zoroastrian (Avestan and Pahlavi); the second Amesha Spenta
 vritra.md	SINGULAR	HIGH	Vedic-Hindu		Vedic (Hinduism)
+vucub-caquix.md	SINGULAR	HIGH	Maya		Maya (Kʼicheʼ)
 vulcan-roman.md	SINGULAR	HIGH	Roman		Roman religion
 waa-the-crow.md	SINGULAR	HIGH	Aboriginal-Australian		Kulin Nation (Wurundjeri / Boon Wurrung / Taungurung / Wathaurong / Dja Dja Wurrung) — Aboriginal Australian
 wadd.md	SINGULAR	HIGH	Pre-Islamic-Arabian		Pre-Islamic Arabian (Minaean / Sabaean South Arabian; Quranic-preserved antediluvian-pantheon listing)
@@ -691,30 +950,43 @@ waheguru.md	SINGULAR	HIGH	Sikh		Sikh (Guru Granth Sahib — Gurbani)
 wakan-tanka.md	SINGULAR	HIGH	Indigenous-N-American		Lakota (and broader Sioux — Dakota, Nakota)
 wakea.md	MULTI_SAME_FAMILY	HIGH	Polynesian		Hawaiian / Polynesian religion (Kumulipo — Hawaiian creation chant)
 wandjina.md	MULTI_SAME_FAMILY	REVIEW	Aboriginal-Australian		Aboriginal Australian — Worora / Ngarinyin / Wunambal — Kimberley region, Western Australia (Mowanjum community continues active custodianship)
+watatsumi.md	SINGULAR	HIGH	Shinto		Shinto
+wayland-smith.md	SINGULAR	HIGH	Norse		Germanic (Norse and Anglo-Saxon legend)
+wenchang.md	MULTI_SAME_FAMILY	HIGH	Chinese		Daoism / Chinese folk religion
+wepwawet.md	SINGULAR	HIGH	Egyptian		Egyptian
+whiro.md	SINGULAR	HIGH	Polynesian		Māori
 white-buffalo-calf-woman.md	SINGULAR	HIGH	Indigenous-N-American		Lakota
 wi-sun-lakota.md	SINGULAR	HIGH	Indigenous-N-American		Lakota
-wiraqocha.md	NO_TRADITION				
 xi-wangmu.md	MULTI_SAME_FAMILY	HIGH	Chinese		Chinese folk religion / Daoism
 xipe-totec.md	MULTI_SAME_FAMILY	HIGH	Nahua-Aztec		Nahua / Aztec
+xiuhtecuhtli.md	SINGULAR	HIGH	Nahua-Aztec		Aztec (Nahua)
+xmucane-xpiacoc.md	SINGULAR	HIGH	Maya		Maya (K'iche')
+xochipilli.md	SINGULAR	HIGH	Nahua-Aztec		Aztec (Nahua)
 xochiquetzal.md	MULTI_SAME_FAMILY	HIGH	Nahua-Aztec		Nahua / Aztec
-xuanwu.md	NO_TRADITION				
+xolotl.md	SINGULAR	HIGH	Nahua-Aztec		Aztec (Nahua)
+xuanwu.md	SINGULAR	HIGH	Chinese		Chinese (Daoist)
 yaghuth.md	SINGULAR	HIGH	Pre-Islamic-Arabian		Pre-Islamic Arabian (Madhḥij tribal confederation; Quranic-preserved antediluvian-pantheon listing)
 yahweh.md	MULTI_SAME_FAMILY	HIGH	Israelite		Israelite / Jewish
 yaldabaoth.md	SINGULAR	HIGH	Gnostic		Sethian Gnostic
 yam.md	MULTI_SAME_FAMILY	HIGH	Canaanite		Canaanite / Ugaritic
 yama-vedic.md	SINGULAR	HIGH	Vedic-Hindu		Vedic Hinduism (continued in Puranic Hinduism, Buddhism, Jainism)
 yamantaka.md	SINGULAR	HIGH	Buddhist		Vajrayana Buddhism (Geluk, Sakya, Nyingma)
-yan-wang.md	MULTI_CROSS_FAMILY	MEDIUM	Chinese	Buddhist	Chinese religion / Chinese Buddhism (Daoist-Buddhist syncretic)
+yamuna.md	SINGULAR	HIGH	Vedic-Hindu		Hindu
+yan-wang.md	SINGULAR	HIGH	Chinese		Chinese religion
+yarikh.md	SINGULAR	HIGH	Canaanite		Canaanite (Ugaritic)
 yashoda.md	MULTI_SAME_FAMILY	HIGH	Vedic-Hindu		Vaishnavism / Bhakti
 yauq.md	SINGULAR	HIGH	Pre-Islamic-Arabian		Pre-Islamic Arabian (Hamdān tribal confederation; Quranic-preserved antediluvian-pantheon listing)
 yemoja.md	SINGULAR	HIGH	Yoruba-Diaspora		Yoruba
-yima-jamshid.md	MULTI_CROSS_FAMILY	HIGH	Zoroastrian	Vedic-Hindu	Zoroastrian (Avestan and Pahlavi); cognate with Vedic Yama
+yeomra.md	SINGULAR	HIGH	Korean		Korean
+yima-jamshid.md	SINGULAR	HIGH	Zoroastrian		Zoroastrian (Avestan and Pahlavi)
 ymir.md	SINGULAR	HIGH	Norse		Norse paganism
 yum-kaax.md	SINGULAR	HIGH	Maya		Yucatec Maya
-zagreus-orphic.md	MULTI_SAME_FAMILY	HIGH	Mystery		Orphic / Greek mystery religion
+zababa.md	SINGULAR	HIGH	Mesopotamian		Akkadian
 zagreus.md	SINGULAR	HIGH	Mystery		Orphic (within Greek mystery religion)
 zao-jun.md	SINGULAR	HIGH	Chinese		Chinese
 zemyna.md	SINGULAR	HIGH	Baltic		Baltic (Lithuanian)
 zeus.md	SINGULAR	HIGH	Greek		Greek
-zhenwu.md	NO_TRADITION				
+zhurong.md	SINGULAR	HIGH	Chinese		Chinese
+zipacna.md	SINGULAR	HIGH	Maya		Maya (K'iche')
 zorya.md	SINGULAR	HIGH	Slavic-Finnic		Slavic paganism (folk tradition; 17th-c. spell manuscripts; Propp's analysis)
+zurvan.md	MULTI_SAME_FAMILY	REVIEW	Zoroastrian		Iranian / Zoroastrian (Zurvanite)

@@ -17,7 +17,7 @@ achaemenid-persia.md	NO_TRADITION
 achilles.md	SINGULAR	HIGH	Greek		Hellenic (Iliad)
 actun-tunichil-muknal.md	NO_TRADITION				
 adam-hardy.md	NO_TRADITION				
-adam.md	MULTI_CROSS_FAMILY	HIGH	Israelite	Christian | Islamic | Gnostic | Hermetic | Rabbinic | Mandaean	Hebrew Bible; Christian Bible; Quran; Sethian and Valentinian Gnosticism; Hermetism; Kabbalah; Mandaeism
+adam.md	SINGULAR	HIGH	Israelite		Hebrew Bible
 adi-shankara.md	NO_TRADITION				
 adolf-katzenellenbogen.md	NO_TRADITION				
 adrian-snodgrass.md	NO_TRADITION				
@@ -257,7 +257,7 @@ dalai-lama-14.md	MULTI_SAME_FAMILY	REVIEW	Buddhist		Vajrayana Buddhism / Gelug s
 dalmatic.md	NO_TRADITION				
 daniel-prophet.md	SINGULAR	HIGH	Israelite		Second-Temple Jewish (literary frame: 6th-c. BCE Babylonian exile)
 dante-alighieri.md	SINGULAR	HIGH	Christian		medieval-christianity
-darius-i-the-great.md	MULTI_CROSS_FAMILY	HIGH	Zoroastrian	Israelite	Zoroastrian (Achaemenid imperial-religious-political context); Hebrew-Bible peripheral character (Ezra 4-6, Daniel 6 — though the Daniel-Darius is likely a different conflated figure)
+darius-i-the-great.md	SINGULAR	HIGH	Zoroastrian		Zoroastrian (Achaemenid imperial-religious-political context)
 david-bentley-hart.md	MULTI_SAME_FAMILY	REVIEW	Christian		Eastern Orthodox theology / classical theism / Christian universalism
 david-brakke.md	MULTI_CROSS_FAMILY	MEDIUM	Academic	Christian | Gnostic	Comparative religion (academic) / early Christianity / Gnostic studies
 david-king.md	MULTI_SAME_FAMILY	REVIEW	Israelite		Israelite / pre-exilic Judah
@@ -336,7 +336,7 @@ eutyches.md	SINGULAR	HIGH	Christian		Christian (Constantinopolitan monastic; Mon
 evagrius-ponticus.md	SINGULAR	HIGH	Christian		Patristic Christian (Egyptian Coptic / Cappadocian-trained)
 eve.md	SINGULAR	HIGH	Israelite		Israelite religion (founder-figure)
 ewostatewos.md	SINGULAR	HIGH	Christian		[[tradition-ethiopian-orthodox-tewahedo]] (House of Ewostatewos)
-ezana-of-aksum.md	MULTI_SAME_FAMILY	HIGH	Christian		[[tradition-ethiopian-orthodox-tewahedo]] (first Christian king); previously pre-Christian South-Arabian-derived Aksumite paganism
+ezana-of-aksum.md	MULTI_CROSS_FAMILY	HIGH	Christian	Aksumite	[[tradition-ethiopian-orthodox-tewahedo]] (first Christian king); previously pre-Christian South-Arabian-derived Aksumite paganism
 ezekiel.md	SINGULAR	HIGH	Israelite		Judahite (exilic)
 ezra.md	NO_TRADITION				
 fajada-butte-sun-dagger.md	NO_TRADITION				
@@ -675,7 +675,7 @@ kurt-weitzmann.md	NO_TRADITION
 l-ron-hubbard.md	SINGULAR	REVIEW	UNKNOWN		Scientology
 la-tene-celtic.md	NO_TRADITION				
 lactantius.md	SINGULAR	HIGH	Christian		Christianity (Constantinian Latin)
-lal-ded.md	MULTI_CROSS_FAMILY	HIGH	Vedic-Hindu	Islamic	Hindu — Kashmir Shaivism (Trika); bridge figure with Kashmiri Sufism
+lal-ded.md	SINGULAR	HIGH	Vedic-Hindu		Hindu — Kashmir Shaivism (Trika)
 lalibela-king.md	SINGULAR	HIGH	Christian		[[tradition-ethiopian-orthodox-tewahedo]] (Zagwe dynasty)
 lanz-von-liebenfels.md	MULTI_SAME_FAMILY	REVIEW	Modern-Esoteric		[[tradition-ordo-novi-templi]] (founder) / **Ariosophy** (with [[tradition-theosophy|Theosophy]]-and-Templar-revival synthesis) / **right-wing racist-occult Vienna milieu**
 lanzon-monolith.md	NO_TRADITION				
@@ -1015,7 +1015,7 @@ senusret-i.md	NO_TRADITION
 septimius-severus.md	SINGULAR	HIGH	Roman		Roman state religion (pagan; Punic-African background)
 serapeum-of-alexandria.md	NO_TRADITION				
 serapeum-of-saqqara.md	NO_TRADITION				
-seth.md	MULTI_CROSS_FAMILY	HIGH	Israelite	Christian | Mandaean | Islamic	Hebrew Bible; Sethian Gnostic Christianity; Mandaeism (as Šitil); Islam
+seth.md	SINGULAR	HIGH	Israelite		Hebrew Bible
 seti-i.md	NO_TRADITION				
 severus-of-antioch.md	MULTI_SAME_FAMILY	REVIEW	Christian		Pre-Chalcedonian Antiochene Christianity; foundational systematic theologian of Oriental Orthodoxy
 shabaka.md	NO_TRADITION				
@@ -1094,7 +1094,7 @@ tertullian.md	SINGULAR	HIGH	Christian		Patristic Christian (Latin) — later Mon
 thaddaeus-jude-apostle.md	MULTI_SAME_FAMILY	HIGH	Christian		earliest Christianity; Armenian Apostolic; Syriac Christianity
 thales.md	SINGULAR	HIGH	Greek		Pre-Socratic Greek (the Milesian school of Ionian natural philosophy)
 the-bab.md	MULTI_SAME_FAMILY	REVIEW	UNKNOWN		Bábí / Bahá'í Faith (precursor manifestation)
-the-magi.md	MULTI_CROSS_FAMILY	HIGH	Zoroastrian	Christian	Zoroastrian (Median + Achaemenid + Sasanian Persian priesthood); cross-referenced as Christian Nativity figures in Matthew 2
+the-magi.md	SINGULAR	HIGH	Zoroastrian		Zoroastrian (Median + Achaemenid + Sasanian Persian priesthood)
 the-nine-saints.md	MULTI_SAME_FAMILY	REVIEW	Christian		[[tradition-ethiopian-orthodox-tewahedo]] (the founding monastic generation); origin: [[tradition-syriac-orthodox]] / [[tradition-oriental-orthodox]]
 thecla.md	MULTI_CROSS_FAMILY	MEDIUM	Christian	Gnostic	earliest Christianity; encratite/proto-Gnostic currents
 theodoor-van-erp.md	NO_TRADITION				
