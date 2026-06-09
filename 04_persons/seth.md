@@ -5,7 +5,29 @@ name: "Seth"
 aka: ["Shēt (Hebrew)", "Sēth (Greek)", "Allogenes / Allogeneus (Sethian)"]
 tradition: "Hebrew Bible"
 tradition-raw: "Hebrew Bible; Sethian Gnostic Christianity; Mandaeism (as Šitil); Islam"   # pre-migration; full original (membership-vs-wire 2026-06-02)
-tradition-appearances: ['Sethian Gnostic Christianity', 'Mandaeism (as Šitil)', 'Islam']   # STEP-B worklist: build appearance wires for these
+tradition-appearances: ['Sethian Gnostic Christianity', 'Mandaeism (as Šitil)', 'Islam']   # STEP-B worklist (wired below)
+syncretic-edges:
+  - target: "[[phase-4-002-apocryphon-of-john]]"
+    type: "direct-borrowing"
+    appearance-tier: 2
+    role-in-context: "gnostic-redeemer-figure"
+    source: "Turner, John D. (2001) Sethian Gnosticism and the Platonic Tradition"
+    source-tier: "T1"
+    notes: "Hebrew Seth (Gen 4:25) adopted by the Sethians as the cosmic-redemptive Seed of Seth; the saved race descends from him."
+  - target: "[[document-gospel-of-the-egyptians]]"
+    type: "direct-borrowing"
+    appearance-tier: 2
+    role-in-context: "gnostic-redeemer-figure"
+    source: "Böhlig & Wisse (1975) Nag Hammadi Codices III,2 and IV,2: The Gospel of the Egyptians"
+    source-tier: "T1"
+    notes: "The Holy Book of the Great Invisible Spirit centers the heavenly Seth as savior descending to rescue his seed."
+  - target: "[[phase-4-017-ginza-rba]]"
+    type: "direct-borrowing"
+    appearance-tier: 3
+    role-in-context: "mandaean-lightworld-figure"
+    source: "Buckley, Jorunn J. (2002) The Mandaeans: Ancient Texts and Modern People"
+    source-tier: "T1"
+    notes: "Adopted into Mandaeism as Šitil, a pure being of the World of Light, son of Adam."
 role-tokens: ["patriarch-antediluvian", "gnostic-redeemer-figure", "prophet-abrahamic"]
 role-description: "Seth (Hebrew Šēt, 'appointed' / 'granted') — biblical patriarch (third son of Adam per Gen 4:25-26; 5:3-8). In the Hebrew Bible a minor genealogical figure; theological importance was constructed retroactively. In Sethian Gnostic Christianity (~2nd-4th c. CE) Seth becomes a cosmic-redemptive figure of enormous importance — the 'third begetting' and the heavenly Seth (Allogenes / 'the Stranger') is the cosmic-mythic origin of the saved-spiritual race ('the seed of Seth'). The Mandaean tradition makes Seth (as Šītil / Shīth) one of the great Light-prophets. Islamic tradition recognizes him as a prophet (Shīth) in post-Quranic prophet-lists."
 region: "Mesopotamian-Levantine biblical tradition; Egyptian-Syrian Gnostic milieu"

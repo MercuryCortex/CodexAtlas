@@ -6,7 +6,50 @@ aka: ["Ādām (Hebrew, אדם, 'human / earth-creature')", "Adam Kadmon (Kabbali
 role: "biblical first human; cosmic Anthropos in Hellenistic-Jewish, Gnostic, and Kabbalistic theology"
 tradition: "Hebrew Bible"
 tradition-raw: "Hebrew Bible; Christian Bible; Quran; Sethian and Valentinian Gnosticism; Hermetism; Kabbalah; Mandaeism"   # pre-migration; full original (membership-vs-wire 2026-06-02)
-tradition-appearances: ['Christian Bible', 'Quran', 'Sethian and Valentinian Gnosticism', 'Hermetism', 'Kabbalah', 'Mandaeism']   # STEP-B worklist: build appearance wires for these
+tradition-appearances: ['Christian Bible', 'Quran', 'Sethian and Valentinian Gnosticism', 'Hermetism', 'Kabbalah', 'Mandaeism']   # STEP-B worklist (wired below)
+syncretic-edges:
+  - target: "[[document-quran-al-baqara]]"
+    type: "attested-in"
+    appearance-tier: 2
+    role-in-context: "first-prophet-and-vicegerent"
+    source: "Nasr, S.H. (ed.) (2015) The Study Quran, on Q 2:30–39"
+    source-tier: "T1"
+    notes: "Ādam in the Quran: taught the names, the angels prostrate, Iblīs refuses (2:30–39); the first prophet, no inherited sin."
+  - target: "[[document-romans]]"
+    type: "direct-borrowing"
+    appearance-tier: 2
+    role-in-context: "first-adam-typological"
+    source: "Dunn, James D.G. (1988) Romans (Word Biblical Commentary), on Rom 5:12–21"
+    source-tier: "T1"
+    notes: "Paul's Adam–Christ typology: death through the first Adam, life through the last Adam (Christ)."
+  - target: "[[phase-4-002-apocryphon-of-john]]"
+    type: "direct-borrowing"
+    appearance-tier: 2
+    role-in-context: "gnostic-protoplast"
+    source: "King, Karen L. (2006) The Secret Revelation of John"
+    source-tier: "T1"
+    notes: "Adam fashioned by the lower archons; the divine spark breathed in — the Sethian re-reading of Genesis 2."
+  - target: "[[phase-5-027-sefer-ha-zohar]]"
+    type: "direct-borrowing"
+    appearance-tier: 2
+    role-in-context: "adam-kadmon-primordial-man"
+    source: "Scholem, Gershom (1941) Major Trends in Jewish Mysticism"
+    source-tier: "T1"
+    notes: "Kabbalistic Adam Kadmon — the supernal primordial Man, the configuration of the sefirot, distinct from earthly Adam."
+  - target: "[[phase-4-011-corpus-hermeticum-i]]"
+    type: "parallel-motif"
+    appearance-tier: 3
+    role-in-context: "hermetic-anthropos"
+    source: "Copenhaver, Brian (1992) Hermetica"
+    source-tier: "T1"
+    notes: "The Poimandres Anthropos — primal divine Man who descends into nature — a Greco-Egyptian parallel to Adam."
+  - target: "[[phase-4-017-ginza-rba]]"
+    type: "direct-borrowing"
+    appearance-tier: 3
+    role-in-context: "mandaean-adam"
+    source: "Buckley, Jorunn J. (2002) The Mandaeans"
+    source-tier: "T1"
+    notes: "Adam as first man in the Mandaean Ginza; his hidden soul Adam Kasia belongs to the Light-World."
 region: "Mesopotamian-Levantine biblical narrative; Mediterranean Hellenistic-Roman theological development"
 date-born: -3700
 date-died: -2800

@@ -6,7 +6,22 @@ aka: ["Queen of Sheba", "Makeda", "Bilqis (Quranic tradition)", "Nikaule (Joseph
 role-description: "queen, foundational matriarch"
 tradition: "Hebrew Bible"
 tradition-raw: "[[tradition-ethiopian-orthodox-tewahedo]] (foundational figure of the Solomonic dynasty); also [[tradition-islam]] (Bilqis); [[tradition-judaism]] (1 Kings 10, Targum Sheni)"   # pre-migration; ANALYZER-MISORDERED — origin is 1 Kings 10 (listed last); corrected to Hebrew-Bible home (membership-vs-wire 2026-06-02)
-tradition-appearances: ['Ethiopian Orthodox Tewahedo (Makeda — Solomonic-dynasty foundation, Kebra Nagast)', 'Islam (Bilqis)', 'rabbinic Judaism (Targum Sheni)']   # STEP-B worklist: build appearance wires for these
+tradition-appearances: ['Ethiopian Orthodox Tewahedo (Makeda — Solomonic-dynasty foundation, Kebra Nagast)', 'Islam (Bilqis)', 'rabbinic Judaism (Targum Sheni)']   # STEP-B worklist (wired below)
+syncretic-edges:
+  - target: "[[phase-8-008-kebra-nagast]]"
+    type: "direct-borrowing"
+    appearance-tier: 2
+    role-in-context: "solomonic-dynasty-matriarch"
+    source: "Budge, E.A.W. (1922) The Queen of Sheba and Her Only Son Menyelek (Kebra Nagast)"
+    source-tier: "T1"
+    notes: "The Kebra Nagast remakes the 1 Kings queen as Makeda, mother of Menelik I by Solomon — founding charter of the Ethiopian Solomonic dynasty."
+  - target: "[[document-quran-al-naml]]"
+    type: "attested-in"
+    appearance-tier: 2
+    role-in-context: "queen-bilqis-convert"
+    source: "Lassner, Jacob (1993) Demonizing the Queen of Sheba"
+    source-tier: "T1"
+    notes: "Quran 27:22–44 elaborates her as Bilqīs, the sun-worshipping queen who submits to 'the Lord of the Worlds' in Solomon's glass pavilion."
 role-tokens: ["queen"]
 region: "Ethiopian tradition: Aksum / Saba (Sheba) — broader ANE tradition: South Arabian Saba (Yemen) and/or Aksum"
 date-born: -1000

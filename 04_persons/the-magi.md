@@ -6,7 +6,15 @@ aka: ["Magoi (Greek)", "Magi (Latin)", "the Wise Men from the East", "Caspar / M
 role: "priest-class | astrologer | religious-political-elite | culture-hero (in Christian Nativity reception)"
 tradition: "Zoroastrian (Median + Achaemenid + Sasanian Persian priesthood)"
 tradition-raw: "Zoroastrian (Median + Achaemenid + Sasanian Persian priesthood); cross-referenced as Christian Nativity figures in Matthew 2"   # pre-migration; full original (membership-vs-wire 2026-06-02)
-tradition-appearances: ['cross-referenced as Christian Nativity figures in Matthew 2']   # STEP-B worklist: build appearance wires for these
+tradition-appearances: ['cross-referenced as Christian Nativity figures in Matthew 2']   # STEP-B worklist (wired below)
+syncretic-edges:
+  - target: "[[phase-3-017-gospel-of-matthew]]"
+    type: "direct-borrowing"
+    appearance-tier: 2
+    role-in-context: "nativity-magi"
+    source: "Brown, Raymond E. (1993) The Birth of the Messiah (2nd ed.)"
+    source-tier: "T1"
+    notes: "Matthew 2:1–12 brings magoi (Persian/Babylonian priest-astrologers) to the Nativity following the star — Zoroastrian sacred expertise enlisted to acclaim the Christian Messiah."
 region: "Media (northwest Iran) → all of Achaemenid + Parthian + Sasanian Persia → Roman-imperial Mediterranean (via Hellenistic-Roman exoticism); in Christian Nativity legend, journey to Bethlehem"
 date-born: -700
 date-died: 651
