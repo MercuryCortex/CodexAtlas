@@ -138,6 +138,7 @@ NEIGHBORHOODS = {
             "Egyptian": ["osiris", "isis-egyptian"],
             "Norse": ["baldr", "hel", "nanna-norse"],
             "Canaanite": ["baal", "mot"],
+            "Shinto": ["izanagi", "izanami"],
             "hub": ["underworld-descent"],
         },
     },
@@ -456,6 +457,35 @@ ROSTERS = {
         # significant secondary — honest remaining gaps
         ("Liber", ["liber", "liber-roman"]), ("Terminus", ["terminus", "terminus-roman"]),
         ("The Lares", ["the-lares", "lares"]), ("The Penates", ["the-penates", "penates"]),
+    ],
+    "Shinto (kami)": [
+        # primordial / creators
+        ("Amenominakanushi", ["amenominakanushi"]), ("Takamimusubi", ["takamimusubi"]),
+        ("Kamimusubi", ["kamimusubi"]), ("Kuninotokotachi", ["kuninotokotachi"]),
+        ("Izanagi", ["izanagi"]), ("Izanami", ["izanami"]),
+        # the three noble children
+        ("Amaterasu", ["amaterasu"]), ("Tsukuyomi", ["tsukuyomi"]), ("Susanoo", ["susanoo"]),
+        # the heavenly host (Takamagahara)
+        ("Ame-no-Uzume", ["ame-no-uzume"]), ("Omoikane", ["omoikane"]),
+        ("Ame-no-Tajikarao", ["ame-no-tajikarao"]), ("Futsunushi", ["futsunushi"]),
+        ("Takemikazuchi", ["takemikazuchi"]), ("Ame-no-Koyane", ["ame-no-koyane"]),
+        ("Ame-no-Hohi", ["ame-no-hohi"]), ("Ninigi", ["ninigi"]), ("Sarutahiko", ["sarutahiko"]),
+        # earthly kami (Kunitsukami / Izumo)
+        ("Okuninushi", ["okuninushi"]), ("Kotoshironushi", ["kotoshironushi"]),
+        ("Takeminakata", ["takeminakata"]), ("Sukunabikona", ["sukunabikona"]),
+        ("Konohanasakuya-hime", ["konohanasakuya-hime"]),
+        # nature kami
+        ("Watatsumi / Ryujin", ["watatsumi", "ryujin"]), ("Oyamatsumi", ["oyamatsumi"]),
+        ("Raijin (thunder)", ["raijin"]), ("Fujin (wind)", ["fujin"]),
+        ("Kagutsuchi (fire)", ["kagutsuchi"]), ("Inari (rice)", ["inari"]),
+        # the Munakata sisters
+        ("Ichikishima-hime", ["ichikishima-hime"]), ("Tagitsu-hime", ["tagitsu-hime"]),
+        ("Tagori-hime", ["tagori-hime"]),
+        # Shichifukujin (Seven Lucky Gods — Shinto/Buddhist)
+        ("Ebisu", ["ebisu"]), ("Daikokuten", ["daikokuten"]), ("Benzaiten", ["benzaiten"]),
+        # deified / cultic
+        ("Hachiman", ["hachiman"]), ("Tenjin (Sugawara no Michizane)", ["tenjin"]),
+        ("Toyouke", ["toyouke", "toyouke-omikami"]),
     ],
 }
 

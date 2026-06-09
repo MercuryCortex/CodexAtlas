@@ -1,6 +1,6 @@
 {
  "generatedAt": "2026-06-09",
- "indexedSlugs": 15169,
+ "indexedSlugs": 15181,
  "neighborhoodsWhole": true,
  "neighborhoods": [
   {
@@ -55,8 +55,8 @@
    "id": "underworld-descent",
    "label": "Descent to the underworld \u2014 the god/hero who goes down to the land of the dead and returns",
    "whole": true,
-   "present": 17,
-   "total": 17,
+   "present": 19,
+   "total": 19,
    "missing": {}
   },
   {
@@ -187,6 +187,18 @@
     "Terminus",
     "The Lares",
     "The Penates"
+   ]
+  },
+  {
+   "tradition": "Shinto (kami)",
+   "present": 34,
+   "total": 38,
+   "pct": 89,
+   "missing": [
+    "Kamimusubi",
+    "Kuninotokotachi",
+    "Futsunushi",
+    "Ame-no-Koyane"
    ]
   }
  ],
