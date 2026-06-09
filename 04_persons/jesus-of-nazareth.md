@@ -5,7 +5,29 @@ name: "Jesus of Nazareth"
 aka: ["Yeshua ben Yosef", "Jesus Christ (Iēsous Christos)", "Yeshu (rabbinic)", "ʿĪsā ibn Maryam (Arabic)"]
 tradition: "Christianity"
 tradition-raw: "Second Temple Judaism → origin of Christianity"   # pre-migration; FOUNDER-RULE (spec §2 'Christ→Christianity', John-ratified 2026-06-09) — home = the tradition he originates; Second Temple Judaism is the natal milieu Christianity emerged from
-tradition-appearances: ['Second Temple Judaism (natal milieu — Christianity emerged from it)', 'Islam (ʿĪsā ibn Maryam)', 'rabbinic Judaism (Yeshu, polemical)']   # STEP-B worklist: build appearance wires for these
+tradition-appearances: ['Second Temple Judaism (natal milieu — Christianity emerged from it)', 'Islam (ʿĪsā ibn Maryam)', 'rabbinic Judaism (Yeshu, polemical)']   # STEP-B worklist (wired below)
+syncretic-edges:
+  - target: "[[document-quran-maryam]]"
+    type: "attested-in"
+    appearance-tier: 2
+    role-in-context: "isa-prophet-messiah"
+    source: "Reynolds, Gabriel Said (2010) The Qur'an and Its Biblical Subtext"
+    source-tier: "T1"
+    notes: "ʿĪsā ibn Maryam in Sūrat Maryam (19) — virgin-born, speaks from the cradle, a prophet and 'word' of God, but not divine and (per 4:157) not crucified."
+  - target: "[[document-quran-al-imran]]"
+    type: "attested-in"
+    appearance-tier: 2
+    role-in-context: "isa-prophet-messiah"
+    source: "Nasr, S.H. (ed.) (2015) The Study Quran, on Q 3:45–59"
+    source-tier: "T1"
+    notes: "Āl ʿImrān 3:45–59: the annunciation to Maryam, ʿĪsā as Messiah and word from God; 3:59 'the likeness of Jesus before God is as the likeness of Adam.'"
+  - target: "[[phase-4-033-babylonian-talmud]]"
+    type: "polemic-inversion"
+    appearance-tier: 3
+    role-in-context: "yeshu-polemical"
+    source: "Schäfer, Peter (2007) Jesus in the Talmud"
+    source-tier: "T1"
+    notes: "The scattered Yeshu passages (e.g. b. Sanhedrin 43a) — execution on the eve of Passover, the disciples — which Schäfer reads as deliberate rabbinic counter-narratives to the Gospel accounts."
 role-tokens: ["founder", "prophet-abrahamic"]
 role-description: "Jesus of Nazareth — founder of Christianity; Hebrew Bible prophet category extended by Christian tradition to Messiah / Son of God / Second Person of the Trinity; Islamic tradition recognizes him as ʿĪsā ibn Maryam (Jesus son of Mary), the next-to-last prophet before Muhammad."
 region: "Galilee, Judea"

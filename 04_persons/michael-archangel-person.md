@@ -6,7 +6,22 @@ aka: ["Mîkhāʾēl (Hebrew, 'Who is like God?')", "Mikha'il (Arabic)", "Micha�
 role: "angelic figure"
 tradition: "Second Temple Judaism"
 tradition-raw: "Second Temple Judaism → Christianity → Islam → Mandaeism"   # pre-migration; full original (membership-vs-wire 2026-06-02)
-tradition-appearances: ['Christianity', 'Islam', 'Mandaeism']   # STEP-B worklist: build appearance wires for these
+tradition-appearances: ['Christianity', 'Islam', 'Mandaeism (thin — unwired)']   # STEP-B worklist (Christianity + Islam wired below)
+syncretic-edges:
+  - target: "[[document-revelation]]"
+    type: "direct-borrowing"
+    appearance-tier: 2
+    role-in-context: "archangel-dragon-slayer"
+    source: "Aune, David E. (1998) Revelation 6–16 (Word Biblical Commentary), on Rev 12:7–9"
+    source-tier: "T1"
+    notes: "Revelation 12:7–9 — Michael and his angels war against the dragon and cast Satan down — the Jewish archangel (Daniel 10–12) carried into Christian apocalyptic."
+  - target: "[[document-quran-al-baqara]]"
+    type: "attested-in"
+    appearance-tier: 3
+    role-in-context: "mikal-archangel"
+    source: "Nasr, S.H. (ed.) (2015) The Study Quran, on Q 2:98"
+    source-tier: "T1"
+    notes: "Mīkāl is named at Q 2:98 alongside Jibrīl (Gabriel) — one of the very few angels named in the Quran; enmity to them is enmity to God."
 region: "Levant — Jewish-Christian-Islamic continuity"
 date-born: ""
 date-died: ""

@@ -6,7 +6,22 @@ aka: ["Yochanan ben Zechariah", "Iōannēs ho baptistēs", "Yahya ibn Zakariyya 
 role-description: "prophet"
 tradition: "Second Temple Judaism (sectarian, apocalyptic)"
 tradition-raw: "Second Temple Judaism (sectarian, apocalyptic); proto-Christianity"   # pre-migration; full original (membership-vs-wire 2026-06-02)
-tradition-appearances: ['proto-Christianity']   # STEP-B worklist: build appearance wires for these
+tradition-appearances: ['proto-Christianity', 'Mandaeism (Yahia — chief prophet)']   # STEP-B worklist (wired below)
+syncretic-edges:
+  - target: "[[phase-3-016-gospel-of-mark]]"
+    type: "direct-borrowing"
+    appearance-tier: 2
+    role-in-context: "forerunner-baptist"
+    source: "Marcus, Joel (2000) Mark 1–8 (Anchor Yale Bible), on Mark 1:4–11"
+    source-tier: "T1"
+    notes: "Mark opens with John baptizing in the wilderness and baptizing Jesus — the Second-Temple Jewish prophet enlisted as the Christian forerunner of the Messiah."
+  - target: "[[phase-4-018-mandaean-book-of-john]]"
+    type: "direct-borrowing"
+    appearance-tier: 2
+    role-in-context: "mandaean-chief-prophet"
+    source: "Häberl, Charles G. & McGrath, James F. (2020) The Mandaean Book of John: Text and Translation"
+    source-tier: "T1"
+    notes: "In Mandaeism (the only surviving Gnostic religion) Yahia-Yohana is the supreme prophet, revered ABOVE Jesus — the Draša d-Yahia is built around him; the Mandaeans reject Jesus as a false messiah."
 role-tokens: ["prophet-abrahamic"]
 region: "Judean wilderness, Jordan River, Galilee"
 date-born: -5
