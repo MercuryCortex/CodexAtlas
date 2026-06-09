@@ -1177,6 +1177,11 @@
    "docs": 44
   },
   {
+   "key": "mesopotamian",
+   "label": "Mesopotamian",
+   "docs": 26
+  },
+  {
    "key": "egyptian-scripture",
    "label": "Egyptian",
    "docs": 22
@@ -1207,6 +1212,11 @@
    "docs": 18
   },
   {
+   "key": "greek-scripture",
+   "label": "Greek",
+   "docs": 17
+  },
+  {
    "key": "israelite-religion",
    "label": "Israelite religion",
    "docs": 16
@@ -1217,18 +1227,8 @@
    "docs": 15
   },
   {
-   "key": "greek-scripture",
-   "label": "Greek",
-   "docs": 15
-  },
-  {
    "key": "ethiopic-tewahedo-canon",
    "label": "Ethiopic Tewahedo",
-   "docs": 14
-  },
-  {
-   "key": "mesopotamian",
-   "label": "Mesopotamian",
    "docs": 14
   },
   {
@@ -1237,18 +1237,8 @@
    "docs": 13
   },
   {
-   "key": "mesopotamian-canonical",
-   "label": "mesopotamian-canonical",
-   "docs": 13
-  },
-  {
    "key": "hermetica",
    "label": "Hermetica",
-   "docs": 12
-  },
-  {
-   "key": "greek-philosophical-scripture",
-   "label": "greek-philosophical-scripture",
    "docs": 12
   },
   {
@@ -1277,11 +1267,6 @@
    "docs": 10
   },
   {
-   "key": "hellenistic-jewish",
-   "label": "hellenistic-jewish",
-   "docs": 9
-  },
-  {
    "key": "maya-corpus",
    "label": "maya-corpus",
    "docs": 9
@@ -1294,6 +1279,11 @@
   {
    "key": "buddhist-pilgrimage-chronicles",
    "label": "buddhist-pilgrimage-chronicles",
+   "docs": 8
+  },
+  {
+   "key": "hellenistic-jewish",
+   "label": "hellenistic-jewish",
    "docs": 8
   },
   {
