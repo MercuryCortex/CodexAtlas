@@ -1,6 +1,6 @@
 {
  "generatedAt": "2026-06-09",
- "indexedDocs": 562,
+ "indexedDocs": 568,
  "canons": [
   {
    "canon": "Bible (Christianity)",
@@ -862,8 +862,8 @@
   {
    "canon": "Quran (Islam)",
    "total": 37,
-   "dedicated": 6,
-   "folded": 31,
+   "dedicated": 12,
+   "folded": 25,
    "absent": 0,
    "books": [
     {
@@ -884,16 +884,16 @@
     },
     {
      "book": "Q3 \u0100l \u02bfImr\u0101n (Family of Imran)",
-     "status": "FOLDED",
-     "node": "phase-4-034-quran",
+     "status": "DEDICATED",
+     "node": "document-quran-al-imran",
      "canons": [
       "Q"
      ]
     },
     {
      "book": "Q4 al-Nis\u0101\u02be (Women)",
-     "status": "FOLDED",
-     "node": "phase-4-034-quran",
+     "status": "DEDICATED",
+     "node": "document-quran-an-nisa",
      "canons": [
       "Q"
      ]
@@ -972,8 +972,8 @@
     },
     {
      "book": "Q17 al-Isr\u0101\u02be (The Night Journey)",
-     "status": "FOLDED",
-     "node": "phase-4-034-quran",
+     "status": "DEDICATED",
+     "node": "document-quran-al-isra",
      "canons": [
       "Q"
      ]
@@ -996,16 +996,16 @@
     },
     {
      "book": "Q20 \u1e6c\u0101 H\u0101 (Moses)",
-     "status": "FOLDED",
-     "node": "phase-4-034-quran",
+     "status": "DEDICATED",
+     "node": "document-quran-ta-ha",
      "canons": [
       "Q"
      ]
     },
     {
      "book": "Q21 al-Anbiy\u0101\u02be (The Prophets)",
-     "status": "FOLDED",
-     "node": "phase-4-034-quran",
+     "status": "DEDICATED",
+     "node": "document-quran-al-anbiya",
      "canons": [
       "Q"
      ]
@@ -1140,8 +1140,8 @@
     },
     {
      "book": "Q112 al-Ikhl\u0101\u1e63 (Sincerity; taw\u1e25\u012bd)",
-     "status": "FOLDED",
-     "node": "phase-4-034-quran",
+     "status": "DEDICATED",
+     "node": "document-quran-al-ikhlas",
      "canons": [
       "Q"
      ]
