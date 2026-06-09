@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-06-04T18:19:38Z",
+  "generatedAt": "2026-06-09T19:04:35Z",
   "vault": {
-    "totalNodes": 5099,
+    "totalNodes": 5292,
     "lensCount": 30,
     "familyCount": 14,
-    "unmatchedTradNodes": 18,
+    "unmatchedTradNodes": 22,
     "intentionallyCrossTradition": 30
   },
   "lenses": [
@@ -23,27 +23,27 @@
     {
       "folder": "02_documents",
       "label": "Documents",
-      "count": 515,
+      "count": 604,
       "baseline": 550,
-      "ratio": 0.936,
+      "ratio": 1.098,
       "band": "rich",
       "baselineNote": "EoR — scripture + commentary entries across 15 vols (~16% of corpus)",
       "statuses": {
+        "metadata": 410,
         "full": 178,
-        "metadata": 321,
         "(no status)": 16
       }
     },
     {
       "folder": "03_deities",
       "label": "Deities",
-      "count": 889,
+      "count": 990,
       "baseline": 900,
-      "ratio": 0.988,
+      "ratio": 1.1,
       "band": "rich",
       "baselineNote": "EoR deity/numina entries + Leeming Oxford Companion to World Mythology (~3,000 entries)",
       "statuses": {
-        "metadata": 810,
+        "metadata": 911,
         "(no status)": 52,
         "full": 27
       }
@@ -157,14 +157,13 @@
     {
       "folder": "11_alphabets",
       "label": "Alphabets",
-      "count": 41,
+      "count": 42,
       "baseline": 80,
-      "ratio": 0.512,
+      "ratio": 0.525,
       "band": "developing",
       "baselineNote": "Daniels-Bright World's Writing Systems + sacred-script entries",
       "statuses": {
-        "full": 40,
-        "stub": 1
+        "full": 42
       }
     },
     {
@@ -247,15 +246,14 @@
     {
       "folder": "18_languages",
       "label": "Languages",
-      "count": 32,
+      "count": 34,
       "baseline": 120,
-      "ratio": 0.267,
+      "ratio": 0.283,
       "band": "developing",
       "baselineNote": "Brown Encyc. of Lang. & Linguistics — sacred / liturgical language entries",
       "statuses": {
-        "(no status)": 21,
-        "metadata": 10,
-        "stub": 1
+        "(no status)": 23,
+        "metadata": 11
       }
     },
     {
@@ -422,17 +420,17 @@
     {
       "key": "mesopotamian",
       "label": "Mesopotamian",
-      "count": 164,
+      "count": 196,
       "baseline": 280,
-      "ratio": 0.586,
-      "band": "developing",
+      "ratio": 0.7,
+      "band": "rich",
       "perLens": {
-        "02_documents": 26,
-        "03_deities": 97,
+        "02_documents": 32,
+        "03_deities": 122,
         "04_persons": 21,
         "05_events": 1,
         "10_music": 3,
-        "11_alphabets": 3,
+        "11_alphabets": 4,
         "14_rituals": 3,
         "16_mathematics": 2,
         "17_medicine": 1,
@@ -442,13 +440,13 @@
     {
       "key": "egyptian",
       "label": "Egyptian",
-      "count": 125,
+      "count": 139,
       "baseline": 240,
-      "ratio": 0.521,
+      "ratio": 0.579,
       "band": "developing",
       "perLens": {
-        "02_documents": 15,
-        "03_deities": 58,
+        "02_documents": 21,
+        "03_deities": 66,
         "04_persons": 23,
         "06_themes": 5,
         "09_symbols": 2,
@@ -466,12 +464,12 @@
     {
       "key": "abrahamic",
       "label": "Abrahamic",
-      "count": 939,
+      "count": 1004,
       "baseline": 700,
-      "ratio": 1.341,
+      "ratio": 1.434,
       "band": "rich",
       "perLens": {
-        "02_documents": 225,
+        "02_documents": 290,
         "03_deities": 122,
         "04_persons": 411,
         "05_events": 2,
@@ -496,13 +494,13 @@
     {
       "key": "greco-roman",
       "label": "Greco-Roman",
-      "count": 335,
+      "count": 362,
       "baseline": 380,
-      "ratio": 0.882,
+      "ratio": 0.953,
       "band": "rich",
       "perLens": {
-        "02_documents": 44,
-        "03_deities": 114,
+        "02_documents": 56,
+        "03_deities": 129,
         "04_persons": 86,
         "09_symbols": 1,
         "10_music": 23,
@@ -542,13 +540,13 @@
     {
       "key": "indic",
       "label": "Indic (Hindu / Jain / Sikh)",
-      "count": 267,
+      "count": 278,
       "baseline": 520,
-      "ratio": 0.513,
+      "ratio": 0.535,
       "band": "developing",
       "perLens": {
         "02_documents": 47,
-        "03_deities": 87,
+        "03_deities": 98,
         "04_persons": 49,
         "10_music": 14,
         "11_alphabets": 2,
@@ -597,13 +595,13 @@
     {
       "key": "east-asian",
       "label": "East Asian (Daoist / Confucian / folk)",
-      "count": 160,
+      "count": 169,
       "baseline": 320,
-      "ratio": 0.5,
+      "ratio": 0.528,
       "band": "developing",
       "perLens": {
         "02_documents": 34,
-        "03_deities": 63,
+        "03_deities": 72,
         "04_persons": 19,
         "10_music": 8,
         "11_alphabets": 1,
@@ -623,13 +621,13 @@
     {
       "key": "north-european",
       "label": "Norse / Celtic / Slavic / Baltic",
-      "count": 115,
+      "count": 132,
       "baseline": 220,
-      "ratio": 0.523,
-      "band": "developing",
+      "ratio": 0.6,
+      "band": "rich",
       "perLens": {
         "02_documents": 3,
-        "03_deities": 94,
+        "03_deities": 111,
         "04_persons": 2,
         "10_music": 5,
         "11_alphabets": 2,
@@ -640,13 +638,13 @@
     {
       "key": "african",
       "label": "African (Yoruba / Bantu / Akan / Nilotic etc.)",
-      "count": 76,
+      "count": 78,
       "baseline": 260,
-      "ratio": 0.292,
+      "ratio": 0.3,
       "band": "developing",
       "perLens": {
         "02_documents": 2,
-        "03_deities": 52,
+        "03_deities": 54,
         "04_persons": 1,
         "10_music": 8,
         "13_morals": 1,
@@ -659,13 +657,13 @@
     {
       "key": "mesoamerican",
       "label": "Mesoamerican",
-      "count": 76,
+      "count": 84,
       "baseline": 180,
-      "ratio": 0.422,
+      "ratio": 0.467,
       "band": "developing",
       "perLens": {
         "02_documents": 14,
-        "03_deities": 44,
+        "03_deities": 52,
         "04_persons": 1,
         "10_music": 3,
         "11_alphabets": 1,
@@ -696,13 +694,13 @@
     {
       "key": "indigenous-other",
       "label": "Indigenous (N.American / Oceanic / Australian / Arctic)",
-      "count": 86,
+      "count": 88,
       "baseline": 200,
-      "ratio": 0.43,
+      "ratio": 0.44,
       "band": "developing",
       "perLens": {
         "02_documents": 8,
-        "03_deities": 50,
+        "03_deities": 52,
         "04_persons": 3,
         "05_events": 1,
         "10_music": 8,
@@ -754,7 +752,7 @@
   "unmatchedTraditionsTop": [
     {
       "tradition": "roman",
-      "count": 12
+      "count": 14
     },
     {
       "tradition": "phrygian",
@@ -770,6 +768,14 @@
     },
     {
       "tradition": "pawnee",
+      "count": 1
+    },
+    {
+      "tradition": "indigenous north american",
+      "count": 1
+    },
+    {
+      "tradition": "armenian",
       "count": 1
     },
     {

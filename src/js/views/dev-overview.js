@@ -343,6 +343,22 @@
     const totalDed = s.canons.reduce((n, c) => n + (c.dedicated || 0), 0);
     const totalAll = s.canons.reduce((n, c) => n + (c.total || 0), 0);
     const totalAbsent = s.canons.reduce((n, c) => n + (c.absent || 0), 0);
+    // All scripture corpora — document-node count per canonical-corpus tag.
+    const corpora = (s.corpora || []).filter(c => c.docs >= 4).slice(0, 32);
+    const corporaRows = corpora.map(function (c) {
+      const band = c.docs >= 15 ? 'rich' : (c.docs >= 8 ? 'developing' : 'anemic');
+      return '<tr class="dev-overview-row dev-overview-row--' + band + '">'
+        + '<td class="dev-overview-col-label"><div class="dev-overview-cell-main">' + escapeHtml(c.label) + '</div></td>'
+        + '<td class="dev-overview-col-num">' + c.docs + '<span class="dev-overview-stat-unit"> docs</span></td>'
+        + '</tr>';
+    }).join('');
+    const corporaBlock = corpora.length
+      ? '<div class="dev-overview-cell-sub"><strong>All scripture corpora</strong> — document nodes per corpus (top '
+        + corpora.length + ' of ' + (s.corpora || []).length + '; canonical-corpus tag):</div>'
+        + '<div class="dev-overview-table-wrap"><table class="dev-overview-table">'
+        + '<thead><tr><th>Corpus</th><th class="dev-overview-col-num">Docs</th></tr></thead>'
+        + '<tbody>' + corporaRows + '</tbody></table></div>'
+      : '';
     return ''
       + '<section class="dev-overview-section dev-overview-summary">'
       +   '<h2 class="dev-overview-section-h">📖 Completeness — scripture canon coverage '
@@ -353,6 +369,7 @@
       +     stat(escapeHtml(s.generatedAt || ''), 'As of')
       +   '</div>'
       +   sections
+      +   corporaBlock
       + '</section>';
   }
 

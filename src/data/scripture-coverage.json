@@ -1,6 +1,6 @@
 {
  "generatedAt": "2026-06-09",
- "indexedDocs": 580,
+ "indexedDocs": 596,
  "canons": [
   {
    "canon": "Bible (Christianity)",
@@ -1163,6 +1163,738 @@
      ]
     }
    ]
+  }
+ ],
+ "corpora": [
+  {
+   "key": "bible",
+   "label": "Bible (Christianity)",
+   "docs": 95
+  },
+  {
+   "key": "tanakh",
+   "label": "Tanakh (Judaism)",
+   "docs": 44
+  },
+  {
+   "key": "egyptian-scripture",
+   "label": "Egyptian",
+   "docs": 22
+  },
+  {
+   "key": "nag-hammadi",
+   "label": "Gnostic (Nag Hammadi)",
+   "docs": 22
+  },
+  {
+   "key": "patristic-corpus",
+   "label": "patristic-corpus",
+   "docs": 21
+  },
+  {
+   "key": "vedas",
+   "label": "Vedas (Hinduism)",
+   "docs": 20
+  },
+  {
+   "key": "tipitaka",
+   "label": "Tipi\u1e6daka (Buddhism)",
+   "docs": 19
+  },
+  {
+   "key": "comparative-religion-academic",
+   "label": "comparative-religion-academic",
+   "docs": 18
+  },
+  {
+   "key": "israelite-religion",
+   "label": "Israelite religion",
+   "docs": 16
+  },
+  {
+   "key": "confucian-classics",
+   "label": "Confucian",
+   "docs": 15
+  },
+  {
+   "key": "greek-scripture",
+   "label": "Greek",
+   "docs": 15
+  },
+  {
+   "key": "ethiopic-tewahedo-canon",
+   "label": "Ethiopic Tewahedo",
+   "docs": 14
+  },
+  {
+   "key": "mesopotamian",
+   "label": "Mesopotamian",
+   "docs": 14
+  },
+  {
+   "key": "quran",
+   "label": "Quran (Islam)",
+   "docs": 13
+  },
+  {
+   "key": "mesopotamian-canonical",
+   "label": "mesopotamian-canonical",
+   "docs": 13
+  },
+  {
+   "key": "hermetica",
+   "label": "Hermetica",
+   "docs": 12
+  },
+  {
+   "key": "greek-philosophical-scripture",
+   "label": "greek-philosophical-scripture",
+   "docs": 12
+  },
+  {
+   "key": "vaishnava-canon",
+   "label": "vaishnava-canon",
+   "docs": 11
+  },
+  {
+   "key": "western-alchemy-corpus",
+   "label": "western-alchemy-corpus",
+   "docs": 11
+  },
+  {
+   "key": "neoplatonist-corpus",
+   "label": "Neoplatonist",
+   "docs": 10
+  },
+  {
+   "key": "latin-catholic-medieval",
+   "label": "latin-catholic-medieval",
+   "docs": 10
+  },
+  {
+   "key": "renaissance-magic-corpus",
+   "label": "renaissance-magic-corpus",
+   "docs": 10
+  },
+  {
+   "key": "hellenistic-jewish",
+   "label": "hellenistic-jewish",
+   "docs": 9
+  },
+  {
+   "key": "maya-corpus",
+   "label": "maya-corpus",
+   "docs": 9
+  },
+  {
+   "key": "apostolic-fathers",
+   "label": "apostolic-fathers",
+   "docs": 8
+  },
+  {
+   "key": "buddhist-pilgrimage-chronicles",
+   "label": "buddhist-pilgrimage-chronicles",
+   "docs": 8
+  },
+  {
+   "key": "tao-corpus",
+   "label": "Tao",
+   "docs": 7
+  },
+  {
+   "key": "islamic-theological",
+   "label": "islamic-theological",
+   "docs": 7
+  },
+  {
+   "key": "roman-scripture",
+   "label": "roman-scripture",
+   "docs": 7
+  },
+  {
+   "key": "western-occult-modern",
+   "label": "western-occult-modern",
+   "docs": 7
+  },
+  {
+   "key": "avesta",
+   "label": "Avesta (Zoroastrian)",
+   "docs": 6
+  },
+  {
+   "key": "mystery-cults-corpus",
+   "label": "mystery-cults-corpus",
+   "docs": 6
+  },
+  {
+   "key": "renaissance-esotericism",
+   "label": "renaissance-esotericism",
+   "docs": 6
+  },
+  {
+   "key": "aztec-mexica-corpus",
+   "label": "aztec-mexica-corpus",
+   "docs": 5
+  },
+  {
+   "key": "byzantine-orthodox",
+   "label": "byzantine-orthodox",
+   "docs": 5
+  },
+  {
+   "key": "christian-mystical",
+   "label": "christian-mystical",
+   "docs": 5
+  },
+  {
+   "key": "indigenous-north-american-corpus",
+   "label": "indigenous-north-american-corpus",
+   "docs": 5
+  },
+  {
+   "key": "rabbinic-corpus",
+   "label": "Rabbinic (Judaism)",
+   "docs": 4
+  },
+  {
+   "key": "chinese-mahayana-chan-huayan-tiantai",
+   "label": "chinese-mahayana-chan-huayan-tiantai",
+   "docs": 4
+  },
+  {
+   "key": "hellenistic-astrology",
+   "label": "hellenistic-astrology",
+   "docs": 4
+  },
+  {
+   "key": "kojiki-nihongi",
+   "label": "kojiki-nihongi",
+   "docs": 4
+  },
+  {
+   "key": "madhyamaka-prajnaparamita-corpus",
+   "label": "madhyamaka-prajnaparamita-corpus",
+   "docs": 4
+  },
+  {
+   "key": "portuguese-hermetic",
+   "label": "portuguese-hermetic",
+   "docs": 4
+  },
+  {
+   "key": "shaiva-tantric-canon",
+   "label": "shaiva-tantric-canon",
+   "docs": 4
+  },
+  {
+   "key": "sufi-persian",
+   "label": "sufi-persian",
+   "docs": 4
+  },
+  {
+   "key": "hurro-hittite",
+   "label": "Hurro-Hittite",
+   "docs": 3
+  },
+  {
+   "key": "kabbalistic-corpus",
+   "label": "Kabbalistic",
+   "docs": 3
+  },
+  {
+   "key": "mandaean-corpus",
+   "label": "Mandaean",
+   "docs": 3
+  },
+  {
+   "key": "manichaean-corpus",
+   "label": "Manichaean",
+   "docs": 3
+  },
+  {
+   "key": "mesoamerican-sacred",
+   "label": "Mesoamerican",
+   "docs": 3
+  },
+  {
+   "key": "norse-eddic",
+   "label": "Norse-Eddic",
+   "docs": 3
+  },
+  {
+   "key": "advaita-vedanta-corpus",
+   "label": "advaita-vedanta-corpus",
+   "docs": 3
+  },
+  {
+   "key": "christian-apocrypha",
+   "label": "christian-apocrypha",
+   "docs": 3
+  },
+  {
+   "key": "christian-theosophy",
+   "label": "christian-theosophy",
+   "docs": 3
+  },
+  {
+   "key": "hindu-modernism-corpus",
+   "label": "hindu-modernism-corpus",
+   "docs": 3
+  },
+  {
+   "key": "kabbalah",
+   "label": "kabbalah",
+   "docs": 3
+  },
+  {
+   "key": "lost-civilization-corpus",
+   "label": "lost-civilization-corpus",
+   "docs": 3
+  },
+  {
+   "key": "neoplatonic",
+   "label": "neoplatonic",
+   "docs": 3
+  },
+  {
+   "key": "new-thought-corpus",
+   "label": "new-thought-corpus",
+   "docs": 3
+  },
+  {
+   "key": "protestant-foundational",
+   "label": "protestant-foundational",
+   "docs": 3
+  },
+  {
+   "key": "syriac-christianity",
+   "label": "syriac-christianity",
+   "docs": 3
+  },
+  {
+   "key": "templar-corpus",
+   "label": "templar-corpus",
+   "docs": 3
+  },
+  {
+   "key": "tewahedo",
+   "label": "tewahedo",
+   "docs": 3
+  },
+  {
+   "key": "theosophy-corpus",
+   "label": "theosophy-corpus",
+   "docs": 3
+  },
+  {
+   "key": "western-astrology",
+   "label": "western-astrology",
+   "docs": 3
+  },
+  {
+   "key": "canaanite-ugaritic",
+   "label": "Canaanite / Ugaritic",
+   "docs": 2
+  },
+  {
+   "key": "hadith-corpus",
+   "label": "Hadith (Islam)",
+   "docs": 2
+  },
+  {
+   "key": "jain-agamas",
+   "label": "Jain \u0100gamas",
+   "docs": 2
+  },
+  {
+   "key": "andean-chronicles-corpus",
+   "label": "andean-chronicles-corpus",
+   "docs": 2
+  },
+  {
+   "key": "arabic-neoplatonism",
+   "label": "arabic-neoplatonism",
+   "docs": 2
+  },
+  {
+   "key": "bahai-corpus",
+   "label": "bahai-corpus",
+   "docs": 2
+  },
+  {
+   "key": "cathar-bogomil",
+   "label": "cathar-bogomil",
+   "docs": 2
+  },
+  {
+   "key": "daoist-medical-corpus",
+   "label": "daoist-medical-corpus",
+   "docs": 2
+  },
+  {
+   "key": "gnostic-scripture",
+   "label": "gnostic-scripture",
+   "docs": 2
+  },
+  {
+   "key": "hesychast-philokalia-corpus",
+   "label": "hesychast-philokalia-corpus",
+   "docs": 2
+  },
+  {
+   "key": "hindu-architectural-corpus",
+   "label": "hindu-architectural-corpus",
+   "docs": 2
+  },
+  {
+   "key": "islamic-astrology",
+   "label": "islamic-astrology",
+   "docs": 2
+  },
+  {
+   "key": "ismaili-corpus",
+   "label": "ismaili-corpus",
+   "docs": 2
+  },
+  {
+   "key": "jewish-medieval-thought",
+   "label": "jewish-medieval-thought",
+   "docs": 2
+  },
+  {
+   "key": "jyotisha",
+   "label": "jyotisha",
+   "docs": 2
+  },
+  {
+   "key": "korean-historical-corpus",
+   "label": "korean-historical-corpus",
+   "docs": 2
+  },
+  {
+   "key": "polish-frankism-sabbatean-corpus",
+   "label": "polish-frankism-sabbatean-corpus",
+   "docs": 2
+  },
+  {
+   "key": "polynesian-corpus",
+   "label": "polynesian-corpus",
+   "docs": 2
+  },
+  {
+   "key": "reformation",
+   "label": "reformation",
+   "docs": 2
+  },
+  {
+   "key": "rosicrucian-corpus",
+   "label": "rosicrucian-corpus",
+   "docs": 2
+  },
+  {
+   "key": "south-asian-modernism",
+   "label": "south-asian-modernism",
+   "docs": 2
+  },
+  {
+   "key": "spanish-mystical",
+   "label": "spanish-mystical",
+   "docs": 2
+  },
+  {
+   "key": "syriac-christian-corpus",
+   "label": "syriac-christian-corpus",
+   "docs": 2
+  },
+  {
+   "key": "tamil-shaiva-corpus",
+   "label": "tamil-shaiva-corpus",
+   "docs": 2
+  },
+  {
+   "key": "thelema-corpus",
+   "label": "thelema-corpus",
+   "docs": 2
+  },
+  {
+   "key": "theravada-jataka-corpus",
+   "label": "theravada-jataka-corpus",
+   "docs": 2
+  },
+  {
+   "key": "yogacara-corpus",
+   "label": "yogacara-corpus",
+   "docs": 2
+  },
+  {
+   "key": "quran-manzil",
+   "label": "Quran \u2014 manzil divisions",
+   "docs": 1
+  },
+  {
+   "key": "aboriginal-dreaming-corpus",
+   "label": "aboriginal-dreaming-corpus",
+   "docs": 1
+  },
+  {
+   "key": "alevi-corpus",
+   "label": "alevi-corpus",
+   "docs": 1
+  },
+  {
+   "key": "andean-quechua-corpus",
+   "label": "andean-quechua-corpus",
+   "docs": 1
+  },
+  {
+   "key": "anthroposophy-corpus",
+   "label": "anthroposophy-corpus",
+   "docs": 1
+  },
+  {
+   "key": "ayurveda-corpus",
+   "label": "ayurveda-corpus",
+   "docs": 1
+  },
+  {
+   "key": "bahai-scripture",
+   "label": "bahai-scripture",
+   "docs": 1
+  },
+  {
+   "key": "bon-corpus",
+   "label": "bon-corpus",
+   "docs": 1
+  },
+  {
+   "key": "byzantine-corpus",
+   "label": "byzantine-corpus",
+   "docs": 1
+  },
+  {
+   "key": "cao-dai-corpus",
+   "label": "cao-dai-corpus",
+   "docs": 1
+  },
+  {
+   "key": "cheondogyo-corpus",
+   "label": "cheondogyo-corpus",
+   "docs": 1
+  },
+  {
+   "key": "christian-bestiary",
+   "label": "christian-bestiary",
+   "docs": 1
+  },
+  {
+   "key": "druze-corpus",
+   "label": "druze-corpus",
+   "docs": 1
+  },
+  {
+   "key": "english-mystical-poetry",
+   "label": "english-mystical-poetry",
+   "docs": 1
+  },
+  {
+   "key": "finno-karelian-corpus",
+   "label": "finno-karelian-corpus",
+   "docs": 1
+  },
+  {
+   "key": "freemasonry-corpus",
+   "label": "freemasonry-corpus",
+   "docs": 1
+  },
+  {
+   "key": "greek-medical-corpus",
+   "label": "greek-medical-corpus",
+   "docs": 1
+  },
+  {
+   "key": "guru-granth",
+   "label": "guru-granth",
+   "docs": 1
+  },
+  {
+   "key": "haitian-vodou-corpus",
+   "label": "haitian-vodou-corpus",
+   "docs": 1
+  },
+  {
+   "key": "hindu-stotra-corpus",
+   "label": "hindu-stotra-corpus",
+   "docs": 1
+  },
+  {
+   "key": "ishraqi-corpus",
+   "label": "ishraqi-corpus",
+   "docs": 1
+  },
+  {
+   "key": "islamic-medical-corpus",
+   "label": "islamic-medical-corpus",
+   "docs": 1
+  },
+  {
+   "key": "islamic-philosophical",
+   "label": "islamic-philosophical",
+   "docs": 1
+  },
+  {
+   "key": "islamism-corpus",
+   "label": "islamism-corpus",
+   "docs": 1
+  },
+  {
+   "key": "jagannath-corpus",
+   "label": "jagannath-corpus",
+   "docs": 1
+  },
+  {
+   "key": "japanese-historical-corpus",
+   "label": "japanese-historical-corpus",
+   "docs": 1
+  },
+  {
+   "key": "kebra-nagast",
+   "label": "kebra-nagast",
+   "docs": 1
+  },
+  {
+   "key": "korean-ritual-corpus",
+   "label": "korean-ritual-corpus",
+   "docs": 1
+  },
+  {
+   "key": "laveyan-satanism-corpus",
+   "label": "laveyan-satanism-corpus",
+   "docs": 1
+  },
+  {
+   "key": "lucumi-santeria-corpus",
+   "label": "lucumi-santeria-corpus",
+   "docs": 1
+  },
+  {
+   "key": "medieval-legal-corpus",
+   "label": "medieval-legal-corpus",
+   "docs": 1
+  },
+  {
+   "key": "mormon",
+   "label": "mormon",
+   "docs": 1
+  },
+  {
+   "key": "pure-land-buddhist-corpus",
+   "label": "pure-land-buddhist-corpus",
+   "docs": 1
+  },
+  {
+   "key": "rastafari-corpus",
+   "label": "rastafari-corpus",
+   "docs": 1
+  },
+  {
+   "key": "samaritan-corpus",
+   "label": "samaritan-corpus",
+   "docs": 1
+  },
+  {
+   "key": "sant-nirguna-corpus",
+   "label": "sant-nirguna-corpus",
+   "docs": 1
+  },
+  {
+   "key": "scholastic-corpus",
+   "label": "scholastic-corpus",
+   "docs": 1
+  },
+  {
+   "key": "school-of-isfahan",
+   "label": "school-of-isfahan",
+   "docs": 1
+  },
+  {
+   "key": "scientology-corpus",
+   "label": "scientology-corpus",
+   "docs": 1
+  },
+  {
+   "key": "shakta-canon",
+   "label": "shakta-canon",
+   "docs": 1
+  },
+  {
+   "key": "shia-corpus",
+   "label": "shia-corpus",
+   "docs": 1
+  },
+  {
+   "key": "shinto-engishiki",
+   "label": "shinto-engishiki",
+   "docs": 1
+  },
+  {
+   "key": "south-asian-sufi-reform",
+   "label": "south-asian-sufi-reform",
+   "docs": 1
+  },
+  {
+   "key": "swedenborgian-new-church",
+   "label": "swedenborgian-new-church",
+   "docs": 1
+  },
+  {
+   "key": "tafsir-corpus",
+   "label": "tafsir-corpus",
+   "docs": 1
+  },
+  {
+   "key": "tamil-epic-corpus",
+   "label": "tamil-epic-corpus",
+   "docs": 1
+  },
+  {
+   "key": "tenrikyo-corpus",
+   "label": "tenrikyo-corpus",
+   "docs": 1
+  },
+  {
+   "key": "tibetan-vajrayana-corpus",
+   "label": "tibetan-vajrayana-corpus",
+   "docs": 1
+  },
+  {
+   "key": "traditionalist-school",
+   "label": "traditionalist-school",
+   "docs": 1
+  },
+  {
+   "key": "twelver-shia-hadith-corpus",
+   "label": "twelver-shia-hadith-corpus",
+   "docs": 1
+  },
+  {
+   "key": "wicca-corpus",
+   "label": "wicca-corpus",
+   "docs": 1
+  },
+  {
+   "key": "yazidi-corpus",
+   "label": "yazidi-corpus",
+   "docs": 1
+  },
+  {
+   "key": "yoruba-ifa-corpus",
+   "label": "yoruba-ifa-corpus",
+   "docs": 1
+  },
+  {
+   "key": "zen-japanese-canon",
+   "label": "zen-japanese-canon",
+   "docs": 1
   }
  ]
 }

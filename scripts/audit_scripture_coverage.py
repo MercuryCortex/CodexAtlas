@@ -282,10 +282,65 @@ for cname, cdef in CANONS.items():
                       "dedicated": n_ded, "folded": n_fold, "absent": n_abs,
                       "books": rows})
 
+# ── ALL scripture corpora — document coverage (by canonical-corpus tag) ───────
+# So the panel surfaces every corpus (Mesopotamian, Egyptian, Gnostic, Greek,
+# Neoplatonist, Vedas, Tipiṭaka, …), not only the canon-rostered Bible + Quran.
+import collections
+_cc_inline = re.compile(r'^canonical-corpus:\s*\[(.*?)\]', re.M)
+_cc_block = re.compile(r'^canonical-corpus:\s*$', re.M)
+corpus_counts = collections.Counter()
+for f in glob.glob("02_documents/**/*.md", recursive=True):
+    if os.path.basename(f).startswith("_") or os.path.basename(f).lower() == "readme.md":
+        continue
+    try:
+        t = open(f, encoding="utf-8").read(2500)
+    except OSError:
+        continue
+    vals = []
+    m = _cc_inline.search(t)
+    if m:
+        vals = re.findall(r'"([^"]+)"', m.group(1))
+    else:
+        mm = _cc_block.search(t)
+        if mm:
+            for line in t[mm.end():].splitlines():
+                ls = line.strip()
+                if ls.startswith("- "):
+                    vals.append(ls[2:].strip().strip("\"'"))
+                elif ls and not ls.startswith("#"):
+                    break
+    for v in vals:
+        v = v.strip()
+        if v:
+            corpus_counts[v] += 1
+
+CORPUS_LABELS = {
+    "bible": "Bible (Christianity)", "tanakh": "Tanakh (Judaism)",
+    "quran": "Quran (Islam)", "quran-manzil": "Quran — manzil divisions",
+    "mesopotamian": "Mesopotamian", "egyptian-scripture": "Egyptian",
+    "nag-hammadi": "Gnostic (Nag Hammadi)", "hermetica": "Hermetica",
+    "greek-scripture": "Greek", "neoplatonist-corpus": "Neoplatonist",
+    "israelite-religion": "Israelite religion", "canaanite-ugaritic": "Canaanite / Ugaritic",
+    "hurro-hittite": "Hurro-Hittite", "rabbinic-corpus": "Rabbinic (Judaism)",
+    "vedas": "Vedas (Hinduism)", "tipitaka": "Tipiṭaka (Buddhism)",
+    "avesta": "Avesta (Zoroastrian)", "tao-corpus": "Tao", "confucian-classics": "Confucian",
+    "kabbalistic-corpus": "Kabbalistic", "hadith-corpus": "Hadith (Islam)",
+    "mandaean-corpus": "Mandaean", "manichaean-corpus": "Manichaean",
+    "ethiopic-tewahedo-canon": "Ethiopic Tewahedo", "mesoamerican-sacred": "Mesoamerican",
+    "norse-eddic": "Norse-Eddic", "jain-agamas": "Jain Āgamas",
+}
+corpora_out = sorted(
+    ({"key": k, "label": CORPUS_LABELS.get(k, k), "docs": n} for k, n in corpus_counts.items()),
+    key=lambda x: (-x["docs"], x["label"]))
+print(f"\nSCRIPTURE CORPORA — document coverage ({len(corpora_out)} corpora):")
+for c in corpora_out[:45]:
+    print(f"   {c['docs']:3d}  {c['label']}")
+
 out = {
     "generatedAt": datetime.date.today().isoformat(),
     "indexedDocs": len(present_ids),
     "canons": canon_out,
+    "corpora": corpora_out,
 }
 os.makedirs("src/data", exist_ok=True)
 open("src/data/scripture-coverage.json", "w", encoding="utf-8").write(json.dumps(out, indent=1))
