@@ -4,7 +4,9 @@ id: "herod-the-great"
 name: "Herod the Great"
 aka: ["Herod I", "Hordos (Hebrew)", "Hērōdēs (Greek)"]
 role-description: "king"
-tradition: "Hasmonean-aligned Judaism (with Idumean origin); Roman client kingdom"
+tradition: "Hasmonean-aligned Judaism (with Idumean origin)"
+tradition-raw: "Hasmonean-aligned Judaism (with Idumean origin); Roman client kingdom"   # pre-migration; full original (membership-vs-wire 2026-06-02)
+tradition-appearances: ['Roman client kingdom']   # STEP-B worklist: build appearance wires for these
 role-tokens: ["king"]
 region: "Judea, Galilee, Idumea, Samaria, Iturea, Trans-Jordan"
 date-born: -73

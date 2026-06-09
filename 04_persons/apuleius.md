@@ -4,7 +4,9 @@ id: "apuleius"
 name: "Apuleius of Madauros"
 aka: ["Lucius Apuleius", "Apuleius Platonicus", "Apuleius Madaurensis"]
 role-description: "novelist | rhetorician | Platonist philosopher | mystery-cult initiate | priest of Aesculapius"
-tradition: "Middle Platonism; Latin literary culture; multi-mystery-cult initiate (Isiac + Osirian + others)"
+tradition: "Middle Platonism"
+tradition-raw: "Middle Platonism; Latin literary culture; multi-mystery-cult initiate (Isiac + Osirian + others)"   # pre-migration; full original (membership-vs-wire 2026-06-02)
+tradition-appearances: ['Latin literary culture', 'multi-mystery-cult initiate (Isiac + Osirian + others)']   # STEP-B worklist: build appearance wires for these
 role-tokens: ["author-secular"]
 region: "North Africa (Madauros, modern Algeria) — Carthage — Athens — Rome — back to North Africa"
 date-born: 124

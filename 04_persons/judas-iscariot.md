@@ -4,7 +4,9 @@ id: "judas-iscariot"
 name: "Judas Iscariot"
 aka: ["Yehuda Ish-Kerioth ('man of Kerioth')", "Ioudas Iskariōtēs", "Judas son of Simon Iscariot (Johannine)"]
 role-description: "apostle | betrayer (in tradition)"
-tradition: "earliest Christianity; Sethian/Cainite Gnostic re-evaluation"
+tradition: "earliest Christianity"
+tradition-raw: "earliest Christianity; Sethian/Cainite Gnostic re-evaluation"   # pre-migration; full original (membership-vs-wire 2026-06-02)
+tradition-appearances: ['Sethian/Cainite Gnostic re-evaluation']   # STEP-B worklist: build appearance wires for these
 role-tokens: ["apostle-christian"]
 region: "Judea (Kerioth?); Jerusalem"
 date-born: -5

@@ -4,7 +4,9 @@ id: "josephus"
 name: "Flavius Josephus"
 aka: ["Yosef ben Matityahu", "Titus Flavius Josephus", "Josephus the Historian"]
 role: "scholar | scribe"
-tradition: "Hellenistic Judaism (Pharisaic education); Flavian Roman patronage"
+tradition: "Hellenistic Judaism (Pharisaic education)"
+tradition-raw: "Hellenistic Judaism (Pharisaic education); Flavian Roman patronage"   # pre-migration; full original (membership-vs-wire 2026-06-02)
+tradition-appearances: ['Flavian Roman patronage']   # STEP-B worklist: build appearance wires for these
 region: "Jerusalem (origin); Galilee (1st Jewish War); Rome (post-+70 retirement and writing)"
 date-born: 37
 date-died: 100

@@ -4,7 +4,9 @@ id: "thomas-apostle"
 name: "Thomas the Apostle"
 aka: ["Didymos", "Judas Thomas", "Judas Didymus Thomas", "Yehuda Toma", "Toma 'the Twin'"]
 role-description: "apostle"
-tradition: "earliest Christianity; Syriac Christianity; Thomasine tradition"
+tradition: "earliest Christianity"
+tradition-raw: "earliest Christianity; Syriac Christianity; Thomasine tradition"   # pre-migration; full original (membership-vs-wire 2026-06-02)
+tradition-appearances: ['Syriac Christianity', 'Thomasine tradition']   # STEP-B worklist: build appearance wires for these
 role-tokens: ["apostle-christian"]
 region: "Galilee → Edessa (Syria) → 'India' (Malabar coast per Thomas Christian tradition)"
 date-born: -5

@@ -4,7 +4,9 @@ id: "heraclius-byzantine-emperor"
 name: "Heraclius (Byzantine Emperor)"
 aka: ["Ἡράκλειος (Hērákleios)", "Heraclius I", "Flavius Heraclius Augustus"]
 role-description: "emperor; last Roman emperor before the Islamic conquests; recovered the True Cross from Sasanian Persia"
-tradition: "Eastern (Chalcedonian) Christianity; Roman imperial"
+tradition: "Eastern (Chalcedonian) Christianity"
+tradition-raw: "Eastern (Chalcedonian) Christianity; Roman imperial"   # pre-migration; full original (membership-vs-wire 2026-06-02)
+tradition-appearances: ['Roman imperial']   # STEP-B worklist: build appearance wires for these
 role-tokens: ["emperor"]
 family: "Byzantine"
 region: "Eastern Roman / Byzantine Empire (Constantinople)"

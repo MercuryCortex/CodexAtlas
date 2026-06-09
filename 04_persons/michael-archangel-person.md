@@ -4,7 +4,9 @@ id: "michael-archangel-person"
 name: "Michael (Archangel)"
 aka: ["Mîkhāʾēl (Hebrew, 'Who is like God?')", "Mikha'il (Arabic)", "Michaḗl (Greek)", "the Prince of Light", "the Great Prince"]
 role: "angelic figure"
-tradition: "Second Temple Judaism → Christianity → Islam → Mandaeism"
+tradition: "Second Temple Judaism"
+tradition-raw: "Second Temple Judaism → Christianity → Islam → Mandaeism"   # pre-migration; full original (membership-vs-wire 2026-06-02)
+tradition-appearances: ['Christianity', 'Islam', 'Mandaeism']   # STEP-B worklist: build appearance wires for these
 region: "Levant — Jewish-Christian-Islamic continuity"
 date-born: ""
 date-died: ""

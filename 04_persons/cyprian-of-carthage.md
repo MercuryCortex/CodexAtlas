@@ -4,7 +4,9 @@ id: "cyprian-of-carthage"
 name: "Cyprian of Carthage"
 aka: ["Thascius Caecilius Cyprianus", "Cyprianus Carthaginiensis"]
 role-description: "bishop / martyr / theologian"
-tradition: "Patristic Christian (proto-orthodox); North African"
+tradition: "Patristic Christian (proto-orthodox)"
+tradition-raw: "Patristic Christian (proto-orthodox); North African"   # pre-migration; full original (membership-vs-wire 2026-06-02)
+tradition-appearances: ['North African']   # STEP-B worklist: build appearance wires for these
 role-tokens: ["bishop-christian", "theologian"]
 region: "Carthage"
 date-born: 200

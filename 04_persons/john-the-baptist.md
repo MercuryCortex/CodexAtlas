@@ -4,7 +4,9 @@ id: "john-the-baptist"
 name: "John the Baptist"
 aka: ["Yochanan ben Zechariah", "Iōannēs ho baptistēs", "Yahya ibn Zakariyya (Arabic)", "the Forerunner"]
 role-description: "prophet"
-tradition: "Second Temple Judaism (sectarian, apocalyptic); proto-Christianity"
+tradition: "Second Temple Judaism (sectarian, apocalyptic)"
+tradition-raw: "Second Temple Judaism (sectarian, apocalyptic); proto-Christianity"   # pre-migration; full original (membership-vs-wire 2026-06-02)
+tradition-appearances: ['proto-Christianity']   # STEP-B worklist: build appearance wires for these
 role-tokens: ["prophet-abrahamic"]
 region: "Judean wilderness, Jordan River, Galilee"
 date-born: -5

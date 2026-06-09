@@ -3,7 +3,9 @@ type: person
 id: "mary-magdalene"
 name: "Mary Magdalene"
 aka: ["Mariam ha-Magdalit", "Maria Magdalene", "Mariam (Aramaic)", "the Apostle to the Apostles (medieval epithet)"]
-tradition: "earliest Christianity; Gnostic traditions"
+tradition: "earliest Christianity"
+tradition-raw: "earliest Christianity; Gnostic traditions"   # pre-migration; full original (membership-vs-wire 2026-06-02)
+tradition-appearances: ['Gnostic traditions']   # STEP-B worklist: build appearance wires for these
 role-tokens: ["apostle-christian", "saint-roman-catholic", "saint-eastern-orthodox"]
 role-description: "Mary Magdalene (Maria of Magdala) — disciple of Jesus; first to witness the empty tomb (per all four canonical Gospels); 'apostle to the apostles' in Eastern Orthodox tradition (Brock 2003); contested in Western tradition (Schaberg 2002)."
 polemical-framing:

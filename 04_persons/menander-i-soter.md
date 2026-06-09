@@ -4,7 +4,9 @@ id: "menander-i-soter"
 name: "Menander I Sōter"
 aka: ["Menandros A' Sōter", "Milinda (Pali)", "Minedra / Menadra (Kharoṣṭhī coinage)", "Menander the Indo-Greek king"]
 role-description: "king | religious convert | philosophical interlocutor"
-tradition: "Indo-Greek (Hellenistic); Buddhist convert per Pali tradition"
+tradition: "Indo-Greek (Hellenistic)"
+tradition-raw: "Indo-Greek (Hellenistic); Buddhist convert per Pali tradition"   # pre-migration; full original (membership-vs-wire 2026-06-02)
+tradition-appearances: ['Buddhist convert per Pali tradition']   # STEP-B worklist: build appearance wires for these
 role-tokens: ["king"]
 region: "Indo-Greek kingdom: Bactria, Arachosia, Gandhāra, Punjab (capital at Sākala = modern Sialkot, Pakistan)"
 date-born: -190

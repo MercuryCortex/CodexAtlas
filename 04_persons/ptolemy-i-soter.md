@@ -4,7 +4,9 @@ id: "ptolemy-i-soter"
 name: "Ptolemy I Soter"
 aka: ["Πτολεμαῖος Σωτήρ", "Ptolemy Lagides", "Soter ('Savior')"]
 role-description: "king | general | founder of the Ptolemaic dynasty | religious-cult-engineer | historian"
-tradition: "Hellenistic Greek (Macedonian) ruling Egypt as Pharaoh; founder of the Greco-Egyptian state-cult"
+tradition: "Hellenistic Greek (Macedonian) ruling Egypt as Pharaoh"
+tradition-raw: "Hellenistic Greek (Macedonian) ruling Egypt as Pharaoh; founder of the Greco-Egyptian state-cult"   # pre-migration; full original (membership-vs-wire 2026-06-02)
+tradition-appearances: ['founder of the Greco-Egyptian state-cult']   # STEP-B worklist: build appearance wires for these
 role-tokens: ["king"]
 region: "Macedon, Egypt (Alexandria, Memphis); travels throughout the eastern Mediterranean"
 date-born: -367
