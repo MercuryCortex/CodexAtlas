@@ -704,7 +704,7 @@ luis-lumbreras.md	NO_TRADITION
 luke-evangelist.md	SINGULAR	HIGH	Christian		earliest Christianity (Pauline circle)
 luoyang-henan.md	NO_TRADITION				
 luqman-sage.md	SINGULAR	HIGH	Islamic		Islam (Quranic wisdom figure)
-lut.md	MULTI_CROSS_FAMILY	HIGH	Islamic	Israelite	Islam (Quranic prophet); Israelite / Hebrew Bible
+lut.md	SINGULAR	HIGH	Israelite		Hebrew Bible
 lydia-of-thyatira.md	SINGULAR	HIGH	Christian		earliest Christianity
 lynn-meskell.md	NO_TRADITION				
 macarius-of-jerusalem.md	NO_TRADITION				
@@ -719,7 +719,7 @@ mahayana-sutras.md	NO_TRADITION
 mahmud-of-ghazni.md	NO_TRADITION				
 maimonides.md	SINGULAR	HIGH	Rabbinic		Rabbinic Judaism — medieval Aristotelian philosophy
 majorville-cairn-alberta.md	NO_TRADITION				
-makeda-queen-of-sheba.md	MULTI_CROSS_FAMILY	HIGH	Christian	Islamic | Israelite	[[tradition-ethiopian-orthodox-tewahedo]] (foundational figure of the Solomonic dynasty); also [[tradition-islam]] (Bilqis); [[tradition-judaism]] (1 Kings 10, Targum Sheni)
+makeda-queen-of-sheba.md	SINGULAR	HIGH	Israelite		Hebrew Bible
 malcolm-miller.md	NO_TRADITION				
 manchu-qing.md	NO_TRADITION				
 manco-inca-yupanqui.md	NO_TRADITION				
@@ -886,7 +886,7 @@ person-zheng-he.md	NO_TRADITION
 peter-apostle.md	SINGULAR	HIGH	Christian		earliest Christianity
 peter-j-carroll.md	MULTI_SAME_FAMILY	REVIEW	UNKNOWN		Chaos magick / late-20th-century esotericism / Thelemic descent
 pham-cong-tac.md	NO_TRADITION				
-pharaoh-exodus.md	MULTI_CROSS_FAMILY	HIGH	Islamic	Israelite	Islam (Quranic figure); Israelite / Hebrew Bible tradition
+pharaoh-exodus.md	SINGULAR	HIGH	Israelite		Hebrew Bible
 pherecydes-of-syros.md	MULTI_CROSS_FAMILY	MEDIUM	Greek	Canaanite | Egyptian	Pre-Socratic / proto-philosophical Greek (Ionian); influenced by Phoenician and Egyptian sources
 phidias.md	MULTI_CROSS_FAMILY	HIGH	Greek	Neoplatonist	[[tradition-greek-religion]] (religious art); [[tradition-neoplatonism]] (later reception)
 philip-apostle.md	SINGULAR	HIGH	Christian		earliest Christianity
