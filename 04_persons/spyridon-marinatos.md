@@ -4,7 +4,9 @@ id: "spyridon-marinatos"
 name: "Spyridon Marinatos"
 aka: ["Spiridon Marinatos", "Spyridon N. Marinatos"]
 role: "archaeologist, excavator of Akrotiri (Thera/Santorini), Greek Minister of Culture"
-tradition: "[[tradition-comparative-religion-academic]] (archaeological method); secular Greek scholarship"
+tradition: "academic study of religion"
+tradition-raw: "[[tradition-comparative-religion-academic]] (archaeological method); secular Greek scholarship"   # pre-migration; modern academic/secular — both segments are scholarly method, not a religious membership (membership-vs-wire 2026-06-02)
+tradition-appearances: ['secular Greek scholarship']   # STEP-B worklist: build appearance wires for these
 region: "Greece (Athens); Thera/Santorini excavation"
 date-birth-year: 1901
 date-death-year: 1974

@@ -4,7 +4,9 @@ id: "zechariah-priest"
 name: "Zakariyyā"
 aka: ["Zakariyyā", "Zechariah (Greek/Latin)", "Zechariah the father of John the Baptist"]
 role: "priest | father of Yaḥyā (John the Baptist)"
-tradition: "Islam (Quranic figure); Second Temple Judaism / Christianity"
+tradition: "Second Temple Judaism"
+tradition-raw: "Islam (Quranic figure); Second Temple Judaism / Christianity"   # pre-migration; ANALYZER-MISORDERED — a Second-Temple Jewish Temple priest (the figure's identity), first named in Luke; corrected to Israelite home (membership-vs-wire 2026-06-02)
+tradition-appearances: ['Christianity (named in Luke 1)', 'Islam (Zakariyyā)']   # STEP-B worklist: build appearance wires for these
 region: "Jerusalem / Temple"
 date-born: ""
 date-died: ""

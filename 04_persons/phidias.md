@@ -4,7 +4,9 @@ id: "phidias"
 name: "Phidias"
 aka: ["Pheidias", "Pheidias of Athens"]
 role: "sculptor, architect, overseer of the Parthenon sculptural program"
-tradition: "[[tradition-greek-religion]] (religious art); [[tradition-neoplatonism]] (later reception)"
+tradition: "Greek religion"
+tradition-raw: "[[tradition-greek-religion]] (religious art); [[tradition-neoplatonism]] (later reception)"   # pre-migration; origin = Greek religion (5th-c. BCE cult statues of Zeus/Athena); the Neoplatonist reading of his statues as theophany is an appearance (membership-vs-wire 2026-06-02)
+tradition-appearances: ['Neoplatonism (later reception of his statues as theophany)']   # STEP-B worklist: build appearance wires for these
 region: "Athens, Greece; Olympia, Greece"
 date-birth-year: -490
 date-death-year: -430

@@ -4,7 +4,9 @@ id: "cainan-son-of-arpachshad"
 name: "Cainan (son of Arpachshad)"
 aka: ["Kenan", "Kainan", "Cain II (to distinguish from Cain son of Adam — the post-Diluvian Cainan)", "Cainan II"]
 role: "antediluvian / immediately-post-Diluvian patriarch"
-tradition: "[[tradition-ethiopian-orthodox-tewahedo]] (canonical Genesis genealogy) / [[tradition-judaism]] (LXX + Jubilees retain him; Hebrew Masoretic Text omits him) / [[tradition-christianity-canonical]] (Luke 3:36 retains him — proves NT followed LXX-tradition)"
+tradition: "Second Temple Judaism"
+tradition-raw: "[[tradition-ethiopian-orthodox-tewahedo]] (canonical Genesis genealogy) / [[tradition-judaism]] (LXX + Jubilees retain him; Hebrew Masoretic Text omits him) / [[tradition-christianity-canonical]] (Luke 3:36 retains him — proves NT followed LXX-tradition)"   # pre-migration; origin = the Septuagint/Jubilees genealogy (Hellenistic Judaism), omitted from the Masoretic; corrected to Israelite home (membership-vs-wire 2026-06-02)
+tradition-appearances: ['Ethiopian Orthodox Tewahedo (canonical)', 'Christianity (Luke 3:36)']   # STEP-B worklist: build appearance wires for these
 region: "post-Diluvian patriarchal narrative"
 date-born:
 date-died:

@@ -3,7 +3,9 @@ type: person
 id: "jesus-of-nazareth"
 name: "Jesus of Nazareth"
 aka: ["Yeshua ben Yosef", "Jesus Christ (Iēsous Christos)", "Yeshu (rabbinic)", "ʿĪsā ibn Maryam (Arabic)"]
-tradition: "Second Temple Judaism → origin of Christianity"
+tradition: "Christianity"
+tradition-raw: "Second Temple Judaism → origin of Christianity"   # pre-migration; FOUNDER-RULE (spec §2 'Christ→Christianity', John-ratified 2026-06-09) — home = the tradition he originates; Second Temple Judaism is the natal milieu Christianity emerged from
+tradition-appearances: ['Second Temple Judaism (natal milieu — Christianity emerged from it)', 'Islam (ʿĪsā ibn Maryam)', 'rabbinic Judaism (Yeshu, polemical)']   # STEP-B worklist: build appearance wires for these
 role-tokens: ["founder", "prophet-abrahamic"]
 role-description: "Jesus of Nazareth — founder of Christianity; Hebrew Bible prophet category extended by Christian tradition to Messiah / Son of God / Second Person of the Trinity; Islamic tradition recognizes him as ʿĪsā ibn Maryam (Jesus son of Mary), the next-to-last prophet before Muhammad."
 region: "Galilee, Judea"

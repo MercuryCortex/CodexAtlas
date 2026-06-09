@@ -4,7 +4,9 @@ id: "ezana-of-aksum"
 name: "Ezana of Aksum"
 aka: ["ʿEzana", "Aezanas", "Aizan", "ዔዛና"]
 role-description: "king, reformer"
-tradition: "[[tradition-ethiopian-orthodox-tewahedo]] (first Christian king); previously pre-Christian South-Arabian-derived Aksumite paganism"
+tradition: "Aksumite religion"
+tradition-raw: "[[tradition-ethiopian-orthodox-tewahedo]] (first Christian king); previously pre-Christian South-Arabian-derived Aksumite paganism"   # pre-migration; §4.1 natal origin = pre-Christian Aksumite (South-Arabian-derived) paganism; his conversion is the great transmission wire (membership-vs-wire 2026-06-02)
+tradition-appearances: ['Ethiopian Orthodox Tewahedo (first Christian king — conversion)']   # STEP-B worklist: build appearance wires for these
 role-tokens: ["king", "religious-reformer"]
 region: "Aksumite Kingdom (highland Tigray and northern Ethiopia / Eritrea)"
 date-born:

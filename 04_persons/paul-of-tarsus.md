@@ -4,7 +4,9 @@ id: "paul-of-tarsus"
 name: "Paul of Tarsus"
 aka: ["Saul of Tarsus", "Paulos", "Sha'ul", "the Apostle to the Gentiles"]
 role-description: "founder | mystic | scholar"
-tradition: "Pharisaic Judaism → earliest Christianity"
+tradition: "Christianity"
+tradition-raw: "Pharisaic Judaism → earliest Christianity"   # pre-migration; FOUNDER-RULE (spec §2) — Christian apostle homes to Christianity; Pharisaic Judaism is the natal milieu
+tradition-appearances: ['Pharisaic Judaism (natal milieu)']   # STEP-B worklist: build appearance wires for these
 role-tokens: ["founder", "mystic"]
 region: "Tarsus (Cilicia); Damascus; Antioch; Asia Minor; Greece; Rome"
 date-born: 5

@@ -3,7 +3,9 @@ type: person
 id: "simon-magus"
 name: "Simon Magus"
 aka: ["Simon the Magician", "Simon of Gitta", "Σίμων ὁ Μάγος"]
-tradition: "Samaritan religious milieu; proto-Gnosticism (per heresiologists)"
+tradition: "Samaritan religious milieu"
+tradition-raw: "Samaritan religious milieu; proto-Gnosticism (per heresiologists)"   # pre-migration; origin = Samaritan milieu (Acts 8 'of Gitta'); the proto-Gnostic 'Simonian' identity is a heresiological reception (membership-vs-wire 2026-06-02)
+tradition-appearances: ['proto-Gnosticism (per heresiologists — Justin/Irenaeus/Hippolytus)']   # STEP-B worklist: build appearance wires for these
 role-tokens: ["legendary-disputed"]
 role-description: "Simon Magus — 1st-c. figure known almost entirely through Christian polemical sources (Acts 8:9-24; Hippolytus *Refutatio* VI.7-20; Irenaeus *Adversus Haereses* I.23). Treated as founder of heretical 'Simonian' tradition by Christian-orthodox heresiologists; modern scholarship contests both the unity of any 'Simonian' tradition and Simon's historical existence as the heresiologists describe him."
 polemical-framing:
