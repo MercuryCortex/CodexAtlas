@@ -1,12 +1,12 @@
 {
  "generatedAt": "2026-06-09",
- "indexedDocs": 539,
+ "indexedDocs": 549,
  "canons": [
   {
    "canon": "Bible (Christianity)",
    "total": 79,
-   "dedicated": 62,
-   "folded": 10,
+   "dedicated": 72,
+   "folded": 0,
    "absent": 7,
    "books": [
     {
@@ -66,8 +66,8 @@
     },
     {
      "book": "Joshua",
-     "status": "FOLDED",
-     "node": "phase-2-019-deuteronomistic-history",
+     "status": "DEDICATED",
+     "node": "document-joshua",
      "canons": [
       "C",
       "E",
@@ -77,8 +77,8 @@
     },
     {
      "book": "Judges",
-     "status": "FOLDED",
-     "node": "phase-2-019-deuteronomistic-history",
+     "status": "DEDICATED",
+     "node": "document-judges",
      "canons": [
       "C",
       "E",
@@ -99,8 +99,8 @@
     },
     {
      "book": "1 Samuel",
-     "status": "FOLDED",
-     "node": "phase-2-019-deuteronomistic-history",
+     "status": "DEDICATED",
+     "node": "document-1-samuel",
      "canons": [
       "C",
       "E",
@@ -110,8 +110,8 @@
     },
     {
      "book": "2 Samuel",
-     "status": "FOLDED",
-     "node": "phase-2-019-deuteronomistic-history",
+     "status": "DEDICATED",
+     "node": "document-2-samuel",
      "canons": [
       "C",
       "E",
@@ -628,8 +628,8 @@
     },
     {
      "book": "1 Corinthians",
-     "status": "FOLDED",
-     "node": "phase-3-015-pauline-epistles",
+     "status": "DEDICATED",
+     "node": "document-1-corinthians",
      "canons": [
       "C",
       "E",
@@ -639,8 +639,8 @@
     },
     {
      "book": "2 Corinthians",
-     "status": "FOLDED",
-     "node": "phase-3-015-pauline-epistles",
+     "status": "DEDICATED",
+     "node": "document-2-corinthians",
      "canons": [
       "C",
       "E",
@@ -650,8 +650,8 @@
     },
     {
      "book": "Galatians",
-     "status": "FOLDED",
-     "node": "phase-3-015-pauline-epistles",
+     "status": "DEDICATED",
+     "node": "document-galatians",
      "canons": [
       "C",
       "E",
@@ -672,8 +672,8 @@
     },
     {
      "book": "Philippians",
-     "status": "FOLDED",
-     "node": "phase-3-015-pauline-epistles",
+     "status": "DEDICATED",
+     "node": "document-philippians",
      "canons": [
       "C",
       "E",
@@ -694,8 +694,8 @@
     },
     {
      "book": "1 Thessalonians",
-     "status": "FOLDED",
-     "node": "phase-3-015-pauline-epistles",
+     "status": "DEDICATED",
+     "node": "document-1-thessalonians",
      "canons": [
       "C",
       "E",
@@ -749,8 +749,8 @@
     },
     {
      "book": "Philemon",
-     "status": "FOLDED",
-     "node": "phase-3-015-pauline-epistles",
+     "status": "DEDICATED",
+     "node": "document-philemon",
      "canons": [
       "C",
       "E",
