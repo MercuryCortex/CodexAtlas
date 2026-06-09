@@ -29,7 +29,7 @@ APPLY = "--apply" in sys.argv
 
 # Allow-list: (file, expected-origin-family) — the 11 rock-solid HIGH deities.
 # guanyin / iao-gnostic / vayu deliberately EXCLUDED (contested origin -> John).
-TARGETS = [
+DEITY_TARGETS = [
     ("03_deities/aeshma.md",            "Zoroastrian"),
     ("03_deities/asclepius-greek.md",   "Greek"),
     ("03_deities/attis.md",             "Phrygian"),
@@ -42,6 +42,24 @@ TARGETS = [
     ("03_deities/verethragna.md",       "Zoroastrian"),
     ("03_deities/yima-jamshid.md",      "Zoroastrian"),
 ]
+
+# PERSONS sweep (membership-vs-wire §8 step 3). Batch 1 — origin-first, clean
+# leading token, uncontested. Each first-segment prefix-resolves in
+# tradition-vocabulary.yaml. DELIBERATELY EXCLUDED here:
+#   - founder cases (jesus, paul) -> the spec §2 "Christ->Christianity" vs §4.1
+#     "earliest-attestation" tension is John's call (§4.5 flag).
+#   - analyzer-misordered received figures (lut, pharaoh-exodus, zechariah-priest,
+#     makeda, cainan) -> first segment is the RECEIVING tradition; origin is the
+#     Hebrew Bible. Handled in a corrected batch, not this verbatim run.
+PERSON_TARGETS = [
+    ("04_persons/seth.md",               "Israelite"),   # Hebrew Bible -> Gnostic/Mandaean/Islam wires
+    ("04_persons/adam.md",               "Israelite"),   # Hebrew Bible -> Christian/Quran/Gnostic/Hermetic/Kabbalah/Mandaean
+    ("04_persons/the-magi.md",           "Zoroastrian"), # -> Christian Nativity (Matthew 2)
+    ("04_persons/darius-i-the-great.md", "Zoroastrian"), # -> Hebrew-Bible peripheral appearance
+    ("04_persons/lal-ded.md",            "Hindu"),       # Kashmir Shaivism -> Kashmiri-Sufi bridge
+]
+
+TARGETS = PERSON_TARGETS if "--persons" in sys.argv else DEITY_TARGETS
 
 # Paren-aware top-level split on ;  →  ->   (NOT "/", which is within-family).
 def split_top_level(s: str):
