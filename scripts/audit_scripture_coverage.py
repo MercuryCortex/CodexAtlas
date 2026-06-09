@@ -110,7 +110,7 @@ BIBLE = [
     ("Song of Songs",  ["phase-2-song-of-songs"],       PCOE),
     # ── Major Prophets (5) ──
     ("Isaiah",         ["phase-3-001-second-third-isaiah"], PCOE),
-    ("Jeremiah",       [],                              PCOE),
+    ("Jeremiah",       ["document-jeremiah"],           PCOE),
     ("Lamentations",   ["phase-2-020-lamentations"],    PCOE),
     ("Ezekiel",        ["document-ezekiel"],            PCOE),
     ("Daniel",         ["phase-3-008-book-of-daniel"],  PCOE),
@@ -162,7 +162,7 @@ BIBLE = [
     ("Titus",          [],                              PCOE),
     ("Philemon",       [],                              PCOE),  # folded: paulines
     # ── General / Catholic epistles + Hebrews + Revelation (9) ──
-    ("Hebrews",        [],                              PCOE),
+    ("Hebrews",        ["document-hebrews"],            PCOE),
     ("James",          [],                              PCOE),
     ("1 Peter",        [],                              PCOE),
     ("2 Peter",        [],                              PCOE),
@@ -170,7 +170,7 @@ BIBLE = [
     ("2 John",         [],                              PCOE),
     ("3 John",         [],                              PCOE),
     ("Jude",           [],                              PCOE),
-    ("Revelation",     [],                              PCOE),
+    ("Revelation",     ["document-revelation"],         PCOE),
 ]
 
 CANONS = {

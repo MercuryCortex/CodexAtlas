@@ -1,13 +1,13 @@
 {
  "generatedAt": "2026-06-09",
- "indexedDocs": 507,
+ "indexedDocs": 510,
  "canons": [
   {
    "canon": "Bible (Christianity)",
    "total": 79,
-   "dedicated": 30,
+   "dedicated": 33,
    "folded": 13,
-   "absent": 36,
+   "absent": 33,
    "books": [
     {
      "book": "Genesis",
@@ -264,8 +264,8 @@
     },
     {
      "book": "Jeremiah",
-     "status": "ABSENT",
-     "node": null,
+     "status": "DEDICATED",
+     "node": "document-jeremiah",
      "canons": [
       "C",
       "E",
@@ -760,8 +760,8 @@
     },
     {
      "book": "Hebrews",
-     "status": "ABSENT",
-     "node": null,
+     "status": "DEDICATED",
+     "node": "document-hebrews",
      "canons": [
       "C",
       "E",
@@ -848,8 +848,8 @@
     },
     {
      "book": "Revelation",
-     "status": "ABSENT",
-     "node": null,
+     "status": "DEDICATED",
+     "node": "document-revelation",
      "canons": [
       "C",
       "E",
