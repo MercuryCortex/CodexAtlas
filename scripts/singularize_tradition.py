@@ -57,6 +57,19 @@ PERSON_TARGETS = [
     ("04_persons/the-magi.md",           "Zoroastrian"), # -> Christian Nativity (Matthew 2)
     ("04_persons/darius-i-the-great.md", "Zoroastrian"), # -> Hebrew-Bible peripheral appearance
     ("04_persons/lal-ded.md",            "Hindu"),       # Kashmir Shaivism -> Kashmiri-Sufi bridge
+    # batch 2 — non-founder HIGH, origin-first (founders jesus/paul still held, §4.5)
+    ("04_persons/john-the-baptist.md",           "Israelite"),  # Second Temple Jewish prophet -> Christian/Mandaean reach
+    ("04_persons/michael-archangel-person.md",   "Israelite"),  # -> Christianity/Islam/Mandaeism
+    ("04_persons/josephus.md",                   "Israelite"),  # historian; Roman-patronage appearance
+    ("04_persons/herod-the-great.md",            "Israelite"),  # Roman-client appearance
+    ("04_persons/judas-iscariot.md",             "Christian"),  # -> Sethian/Cainite Gnostic re-evaluation
+    ("04_persons/mary-magdalene.md",             "Christian"),  # -> Gnostic reception
+    ("04_persons/thomas-apostle.md",             "Christian"),  # -> Syriac/Thomasine (within-family)
+    ("04_persons/cyprian-of-carthage.md",        "Christian"),  # Patristic; North-African descriptor
+    ("04_persons/heraclius-byzantine-emperor.md","Christian"),  # Roman-imperial descriptor
+    ("04_persons/apuleius.md",                   "Greek"),      # Middle Platonist; Isiac-initiate appearance
+    ("04_persons/menander-i-soter.md",           "Greek"),      # Indo-Greek -> Buddhist (Milindapañha) appearance
+    ("04_persons/ptolemy-i-soter.md",            "Greek"),      # -> Greco-Egyptian state-cult
 ]
 
 TARGETS = PERSON_TARGETS if "--persons" in sys.argv else DEITY_TARGETS
