@@ -98,6 +98,7 @@ NEIGHBORHOODS = {
             "Levantine": ["baal", "adonis"],
             "Egyptian": ["osiris"],
             "Greek": ["persephone-greek", "dionysus", "zagreus"],
+            "Roman": ["proserpina-roman"],
             "hub": ["dying-rising-god"],
         },
     },
@@ -173,6 +174,7 @@ NEIGHBORHOODS = {
             "Canaanite": ["asherah", "anat"],
             "Hindu": ["durga", "parvati"],
             "West African (Yoruba)": ["yemoja", "oshun"],
+            "Roman": ["ceres-roman"],
         },
     },
     "the-divine-smith": {
@@ -186,6 +188,7 @@ NEIGHBORHOODS = {
             "Celtic": ["goibniu"],
             "Finnish": ["ilmarinen"],
             "West African (Yoruba)": ["ogun"],
+            "Roman": ["vulcan-roman"],
         },
     },
     "the-divine-twins": {
@@ -432,6 +435,27 @@ ROSTERS = {
         # significant secondary — honest remaining gaps
         ("Erinle / Inle (healer-hunter)", ["erinle", "inle"]),
         ("Logunede (youth; Oshun x Oshosi)", ["logunede", "logun-ede"]),
+    ],
+    "Roman (Dii Consentes + state cult)": [
+        # the Dii Consentes (the twelve)
+        ("Jupiter", ["jupiter"]), ("Juno", ["juno"]), ("Neptune", ["neptune-roman"]),
+        ("Minerva", ["minerva-roman"]), ("Mars", ["mars-roman"]), ("Venus", ["venus-roman"]),
+        ("Apollo", ["apollo"]), ("Diana", ["diana-roman"]), ("Vulcan", ["vulcan-roman"]),
+        ("Mercury", ["mercury-roman"]), ("Vesta", ["vesta"]), ("Ceres", ["ceres-roman"]),
+        # underworld + Aventine + Liberalia
+        ("Pluto / Dis Pater", ["pluto-roman", "dis-pater"]), ("Proserpina", ["proserpina-roman"]),
+        ("Bacchus / Liber", ["bacchus", "liber"]),
+        # the old Italic / state gods
+        ("Saturn", ["saturn-roman"]), ("Janus", ["janus"]), ("Quirinus", ["quirinus-roman"]),
+        ("Bellona", ["bellona"]), ("Fortuna", ["fortuna"]), ("Victoria", ["victoria-roman"]),
+        ("Sol Invictus", ["sol-invictus"]), ("Luna", ["luna-roman"]), ("Aurora", ["aurora-roman"]),
+        ("Pomona", ["pomona"]), ("Vertumnus", ["vertumnus"]),
+        ("Faunus", ["faunus-roman"]), ("Flora", ["flora-roman"]), ("Ops", ["ops-roman"]),
+        ("Cupid / Amor", ["cupid-roman", "amor"]),
+        ("Romulus", ["romulus"]), ("Remus", ["remus"]),
+        # significant secondary — honest remaining gaps
+        ("Liber", ["liber", "liber-roman"]), ("Terminus", ["terminus", "terminus-roman"]),
+        ("The Lares", ["the-lares", "lares"]), ("The Penates", ["the-penates", "penates"]),
     ],
 }
 

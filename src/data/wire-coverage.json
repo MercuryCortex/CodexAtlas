@@ -23,8 +23,8 @@
    "id": "dying-rising-god",
    "label": "The dying-and-rising god \u2014 death/descent and return of the vegetation deity",
    "whole": true,
-   "present": 9,
-   "total": 9,
+   "present": 10,
+   "total": 10,
    "missing": {}
   },
   {
@@ -79,16 +79,16 @@
    "id": "the-mother-goddess",
    "label": "The great mother-goddess \u2014 the divine feminine of earth, fertility, and origin",
    "whole": true,
-   "present": 14,
-   "total": 14,
+   "present": 15,
+   "total": 15,
    "missing": {}
   },
   {
    "id": "the-divine-smith",
    "label": "The divine smith \u2014 the craftsman-god who forges the gods' weapons and wonders",
    "whole": true,
-   "present": 9,
-   "total": 9,
+   "present": 10,
+   "total": 10,
    "missing": {}
   },
   {
@@ -176,6 +176,17 @@
    "missing": [
     "Erinle / Inle (healer-hunter)",
     "Logunede (youth; Oshun x Oshosi)"
+   ]
+  },
+  {
+   "tradition": "Roman (Dii Consentes + state cult)",
+   "present": 33,
+   "total": 36,
+   "pct": 91,
+   "missing": [
+    "Terminus",
+    "The Lares",
+    "The Penates"
    ]
   }
  ],
