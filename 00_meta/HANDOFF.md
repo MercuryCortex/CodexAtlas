@@ -28,8 +28,15 @@
 > **🟢 RECOMMENDED NEXT:** roster the **Eastern corpora** — Vedas (20 docs) and the Tipiṭaka (19 docs) already
 > exist in the vault but are NOT canon-rostered on the completeness bar; point the same
 > `audit_scripture_coverage.py` machinery at them. (Tanakh is already ~complete via the OT overlap.)
-> **⚠️ Do NOT open the Persons layer without John** — 384/1217 persons carry multi-valued `tradition:` = the
-> unresolved 2026-06-02 membership-vs-wire crisis; it needs design-WITH-John, not ad-hoc patching. The
+> **PERSONS MEMBERSHIP SWEEP IS IN FLIGHT (corrected 2026-06-09 — the old "persons blocked" line was STALE).**
+> The membership-vs-wire model is RATIFIED (`MEMBERSHIP-AND-WIRES.md`; §9 "build may proceed") and the
+> `singularize_tradition.py` tooling is proven on deities. Real worklist is **82 cross-family (28 HIGH/54 MEDIUM)**,
+> NOT the 384 raw-multivalued count. Step A is **20/28 HIGH done** (analyzer cross-family 82→62); each gets a
+> singular origin + `tradition-raw` (reversible) + `tradition-appearances` (Step-B worklist). REMAINING: **2 founders
+> (jesus/paul) HELD pending John's §4.5 founder-home rule** — spec §2 "Christ→Christianity" vs §4.1 earliest-attestation,
+> a call that cascades to Muhammad/Buddha/Zoroaster/Nanak/Mani; 6 borderline (zechariah-priest/cainan/ezana/phidias/
+> spyridon-marinatos/simon-magus); the **54 MEDIUM** (per-node, never auto-applied §9.3); then **Step B = build the
+> appearance wires** (where the MASSIVE-WINS get drawn). The
 > **all-114-vs-within-reason** Quran granularity remains John's call (within-reason is the ratified default;
 > fully reversible — the strata node `phase-4-034-quran` still folds every not-yet-distinguished sura).
 >
