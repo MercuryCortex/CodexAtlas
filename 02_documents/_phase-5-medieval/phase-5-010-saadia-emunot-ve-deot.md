@@ -4,7 +4,7 @@ id: "phase-5-010-saadia-emunot-ve-deot"
 title: "Emunot ve-Deot (The Book of Beliefs and Opinions)"
 aka: ["Kitāb al-Amānāt wa-l-Iʿtiqādāt", "Sefer ha-Emunot ve-ha-Deot"]
 tradition: "Rabbinic Judaism — medieval Jewish philosophy"
-canonical-corpus: ["hellenistic-jewish", "jewish-medieval-thought"]
+canonical-corpus: ["jewish-medieval-thought"]
 sub-tradition: "Geonic / Kalām-influenced rationalist Judaism"
 label: "rabbinic-talmud"
 date-composed-earliest: 932

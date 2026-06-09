@@ -1,3 +1,68 @@
+# Session HANDOFF — 2026-06-09 NIGHT (SCRIPTURE LAYER DRIVEN HARD — Bible done, 7 corpora filled, panel live)
+
+> **🟢🟢🟢 START HERE (NEWEST — 2026-06-09 NIGHT).** A very large scripture session (~100 new
+> product-grade nodes, ~33 commits, **every gate green throughout, tree clean**). Per-batch detail =
+> the top ~14 entries of `00_meta/STATUS.md`. What stands now:
+>
+> **STATE OF COMPLETION (check it live on DEV → Overview → scripture section):**
+> - **Deities** ✅ done (990 nodes · 22 rosters · 27 neighborhoods WHOLE) — *prior session*.
+> - **Bible** ✅ **100%** — all 4 canons (Protestant 66 · Catholic 73 · Orthodox 77 · Ethiopian 81),
+>   79 dedicated book-nodes. The 2026-06-05 "Bible half-missing" crisis is CLOSED.
+> - **Quran** 🔄 **32%** — 12/37 within-reason suras (al-Fātiḥa, al-Baqara, al-Māʾida [5:32∥Mishnah],
+>   Yūsuf, al-Kahf, Maryam, Āl-ʿImrān, al-Nisāʾ [4:157], al-Isrāʾ, Ṭā-Hā, al-Anbiyāʾ, al-Ikhlāṣ).
+> - **5 ancient/classical corpora filled** (figures already existed; texts were the gap):
+>   **Mesopotamian** 26 (Gilgamesh-SB∥Genesis, Ludlul∥Job, Enki-Ninhursag Dilmun∥Eden…) ·
+>   **Egyptian** 22 (Contendings, Book of Gates, Ptahhotep∥Proverbs, Osiris∥resurrection…) ·
+>   **Gnostic/Nag-Hammadi** 22 · **Greek** 17 (Heraclitus-Logos∥John-1, Parmenides, the Derveni
+>   Papyrus, the Orphic Gold Tablets, Pythagoras…) · **Neoplatonist** 10 (Porphyry, Pseudo-Dionysius,
+>   Proclus, Boethius, Sallustius, Iamblichus).
+> - **Alphabets / Languages** ✅ ~complete (`11_alphabets` 42, `18_languages` 34, **0 stubs**;
+>   added Proto-Sinaitic, Ugaritic, Hittite).
+> - **Persons** ⬜ **~5%** (1,217 nodes; 690 stub / 487 metadata / 40 full) — THE big remaining layer.
+>
+> **NEW TOOLING:** the scripture bar (`audit_scripture_coverage.py`) now also emits **per-corpus
+> document counts** for ALL ~144 scripture corpora, surfaced as an "All scripture corpora" table on
+> DEV → Overview (`renderScriptureCoverage` in `dev-overview.js`). The corpus-tag vocabulary was
+> normalized this session (merged the stray `mesopotamian-canonical`→`mesopotamian`; deleted the junk
+> `greek-philosophical-scripture` per membership-vs-wire).
+>
+> **🟢 MY RECOMMENDED NEXT (fresh agent):** **finish the Quran** — the proven Lane-A loop, 32% → ~100%
+> within-reason, completes the second Abrahamic root and maximizes the cross-tradition MASSIVE-WINS.
+> Next high-wire suras: **al-Aʿrāf (7), al-Tawba (9), Nūḥ (71, the flood∥Genesis), Yā-Sīn (36),
+> al-Raḥmān (55), al-Mulk (67), al-Falaq+al-Nās (113-114), al-ʿAlaq (96, the first revelation)**, then
+> the tail. After the Quran: roster the **Eastern corpora** (Vedas 20 / Tipiṭaka 19 docs exist but are
+> not canon-rostered on the bar). **⚠️ Do NOT start the Persons layer without John** — 384/1217 persons
+> have multi-valued `tradition:` fields = the unresolved 2026-06-02 MEMBERSHIP-VS-WIRE crisis
+> (`feedback_membership_vs_wire_crisis`); it needs design-WITH-John, not ad-hoc patching.
+>
+> **THE PROVEN SCRIPTURE-FILL LOOP (per batch):** (1) recon what exists + the corpus's house-style
+> fields (`grep` an existing sibling node). (2) **anchored** wire-target check before writing —
+> `grep -rlE "^id:[ \t]*\"?<slug>\"?[ \t]*$"` (the `$` anchor matters). (3) Write product-grade nodes
+> (template = any `02_documents/document-*.md` from this session; full schema, T1 refs, cross-tradition
+> wires). (4) Register node ids in the bar's roster (for canon-rostered corpora). (5) Gates:
+> `build_data.py` → `linkcheck.py --baseline` (480 holds; capture the REAL exit code) → `lint_yaml.py`
+> → `audit_scripture_coverage.py`. (6) Commit **Lane A** (`02_documents/*`) and **Lane B**
+> (`scripts/`+`src/`) SEPARATELY.
+>
+> **GOTCHAS THAT BIT ME (don't repeat):**
+> - **Double-bracket footgun (×4 this session):** a doubled-square-bracket slug in STATUS/HANDOFF
+>   prose parses as a wikilink and trips linkcheck even inside backticks/code spans. Write slugs as
+>   plain backticked text — never doubled square brackets — in coordination prose
+>   (`feedback_status_log_backtick_wikilinks`).
+> - **id-vs-filename:** the completeness BAR matches the `id:` field, but **linkcheck resolves
+>   wikilinks on the FILENAME-stem**. Some old nodes differ (Job's id is `phase-2-job` but its file is
+>   `phase-2-035-job.md`; Ecclesiastes = `phase-2-036-ecclesiastes`). Wikilink the FILENAME.
+> - **slug-suffix convention** (`-roman`/`-greek`/`-egyptian`/`josiah-king`/`nebuchadnezzar-ii`): an
+>   un-anchored `^id: slug` grep prefix-matches longer ids → false "exists". Use the `$`-anchored form.
+> - **Lane discipline:** the pre-commit hook refuses Lane-A (`0N_*` content) + Lane-B (`src/`,`scripts/`)
+>   in one commit. `00_meta/` is coordination (allowed either side).
+>
+> Everything committed; tree clean; site live on `:8742` (`scripts/serve.py 8742` is canonical;
+> preview tool reuses it). The deity-completeness + Bible-completeness handoffs below remain accurate
+> for those layers.
+
+---
+
 # Session HANDOFF — 2026-06-09 LATE (🎉🎉 THE ENTIRE BIBLE IS COMPLETE — scripture layer begun)
 
 > **🟢🟢 START HERE (NEWEST — 2026-06-09 LATE).** The deity layer was done, so this session

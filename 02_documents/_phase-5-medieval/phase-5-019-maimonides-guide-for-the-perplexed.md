@@ -4,7 +4,7 @@ id: "phase-5-019-maimonides-guide-for-the-perplexed"
 title: "The Guide for the Perplexed"
 aka: ["Dalālat al-Ḥāʾirīn", "Moreh Nevukhim", "Moreh ha-Nevukhim"]
 tradition: "Rabbinic Judaism — medieval Jewish philosophy"
-canonical-corpus: ["hellenistic-jewish", "jewish-medieval-thought"]
+canonical-corpus: ["jewish-medieval-thought"]
 sub-tradition: "Jewish Aristotelianism"
 label: "rabbinic-talmud"
 date-composed-earliest: 1185
