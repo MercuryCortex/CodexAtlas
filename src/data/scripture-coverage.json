@@ -1,6 +1,6 @@
 {
  "generatedAt": "2026-06-09",
- "indexedDocs": 596,
+ "indexedDocs": 621,
  "canons": [
   {
    "canon": "Bible (Christianity)",
@@ -862,8 +862,8 @@
   {
    "canon": "Quran (Islam)",
    "total": 37,
-   "dedicated": 12,
-   "folded": 25,
+   "dedicated": 37,
+   "folded": 0,
    "absent": 0,
    "books": [
     {
@@ -908,40 +908,40 @@
     },
     {
      "book": "Q6 al-An\u02bf\u0101m (Cattle)",
-     "status": "FOLDED",
-     "node": "phase-4-034-quran",
+     "status": "DEDICATED",
+     "node": "document-quran-al-anam",
      "canons": [
       "Q"
      ]
     },
     {
      "book": "Q7 al-A\u02bfr\u0101f (The Heights)",
-     "status": "FOLDED",
-     "node": "phase-4-034-quran",
+     "status": "DEDICATED",
+     "node": "document-quran-al-araf",
      "canons": [
       "Q"
      ]
     },
     {
      "book": "Q9 al-Tawba (Repentance)",
-     "status": "FOLDED",
-     "node": "phase-4-034-quran",
+     "status": "DEDICATED",
+     "node": "document-quran-al-tawba",
      "canons": [
       "Q"
      ]
     },
     {
      "book": "Q10 Y\u016bnus (Jonah)",
-     "status": "FOLDED",
-     "node": "phase-4-034-quran",
+     "status": "DEDICATED",
+     "node": "document-quran-yunus",
      "canons": [
       "Q"
      ]
     },
     {
      "book": "Q11 H\u016bd",
-     "status": "FOLDED",
-     "node": "phase-4-034-quran",
+     "status": "DEDICATED",
+     "node": "document-quran-hud",
      "canons": [
       "Q"
      ]
@@ -956,16 +956,16 @@
     },
     {
      "book": "Q14 Ibr\u0101h\u012bm (Abraham)",
-     "status": "FOLDED",
-     "node": "phase-4-034-quran",
+     "status": "DEDICATED",
+     "node": "document-quran-ibrahim",
      "canons": [
       "Q"
      ]
     },
     {
      "book": "Q16 al-Na\u1e25l (The Bee)",
-     "status": "FOLDED",
-     "node": "phase-4-034-quran",
+     "status": "DEDICATED",
+     "node": "document-quran-al-nahl",
      "canons": [
       "Q"
      ]
@@ -1012,128 +1012,128 @@
     },
     {
      "book": "Q24 al-N\u016br (Light)",
-     "status": "FOLDED",
-     "node": "phase-4-034-quran",
+     "status": "DEDICATED",
+     "node": "document-quran-al-nur",
      "canons": [
       "Q"
      ]
     },
     {
      "book": "Q27 al-Naml (The Ant; Solomon)",
-     "status": "FOLDED",
-     "node": "phase-4-034-quran",
+     "status": "DEDICATED",
+     "node": "document-quran-al-naml",
      "canons": [
       "Q"
      ]
     },
     {
      "book": "Q28 al-Qa\u1e63a\u1e63 (The Story; Moses)",
-     "status": "FOLDED",
-     "node": "phase-4-034-quran",
+     "status": "DEDICATED",
+     "node": "document-quran-al-qasas",
      "canons": [
       "Q"
      ]
     },
     {
      "book": "Q33 al-A\u1e25z\u0101b (The Confederates)",
-     "status": "FOLDED",
-     "node": "phase-4-034-quran",
+     "status": "DEDICATED",
+     "node": "document-quran-al-ahzab",
      "canons": [
       "Q"
      ]
     },
     {
      "book": "Q36 Y\u0101 S\u012bn",
-     "status": "FOLDED",
-     "node": "phase-4-034-quran",
+     "status": "DEDICATED",
+     "node": "document-quran-ya-sin",
      "canons": [
       "Q"
      ]
     },
     {
      "book": "Q40 Gh\u0101fir (Forgiver)",
-     "status": "FOLDED",
-     "node": "phase-4-034-quran",
+     "status": "DEDICATED",
+     "node": "document-quran-ghafir",
      "canons": [
       "Q"
      ]
     },
     {
      "book": "Q42 al-Sh\u016br\u0101 (Consultation)",
-     "status": "FOLDED",
-     "node": "phase-4-034-quran",
+     "status": "DEDICATED",
+     "node": "document-quran-al-shura",
      "canons": [
       "Q"
      ]
     },
     {
      "book": "Q50 Q\u0101f",
-     "status": "FOLDED",
-     "node": "phase-4-034-quran",
+     "status": "DEDICATED",
+     "node": "document-quran-qaf",
      "canons": [
       "Q"
      ]
     },
     {
      "book": "Q55 al-Ra\u1e25m\u0101n (The Merciful)",
-     "status": "FOLDED",
-     "node": "phase-4-034-quran",
+     "status": "DEDICATED",
+     "node": "document-quran-al-rahman",
      "canons": [
       "Q"
      ]
     },
     {
      "book": "Q56 al-W\u0101qi\u02bfa (The Inevitable)",
-     "status": "FOLDED",
-     "node": "phase-4-034-quran",
+     "status": "DEDICATED",
+     "node": "document-quran-al-waqia",
      "canons": [
       "Q"
      ]
     },
     {
      "book": "Q67 al-Mulk (Sovereignty)",
-     "status": "FOLDED",
-     "node": "phase-4-034-quran",
+     "status": "DEDICATED",
+     "node": "document-quran-al-mulk",
      "canons": [
       "Q"
      ]
     },
     {
      "book": "Q71 N\u016b\u1e25 (Noah)",
-     "status": "FOLDED",
-     "node": "phase-4-034-quran",
+     "status": "DEDICATED",
+     "node": "document-quran-nuh",
      "canons": [
       "Q"
      ]
     },
     {
      "book": "Q96 al-\u02bfAlaq (The Clot; 1st revelation)",
-     "status": "FOLDED",
-     "node": "phase-4-034-quran",
+     "status": "DEDICATED",
+     "node": "document-quran-al-alaq",
      "canons": [
       "Q"
      ]
     },
     {
      "book": "Q97 al-Qadr (The Night of Power)",
-     "status": "FOLDED",
-     "node": "phase-4-034-quran",
+     "status": "DEDICATED",
+     "node": "document-quran-al-qadr",
      "canons": [
       "Q"
      ]
     },
     {
      "book": "Q109 al-K\u0101fir\u016bn (The Disbelievers)",
-     "status": "FOLDED",
-     "node": "phase-4-034-quran",
+     "status": "DEDICATED",
+     "node": "document-quran-al-kafirun",
      "canons": [
       "Q"
      ]
     },
     {
      "book": "Q110 al-Na\u1e63r (Divine Support)",
-     "status": "FOLDED",
-     "node": "phase-4-034-quran",
+     "status": "DEDICATED",
+     "node": "document-quran-al-nasr",
      "canons": [
       "Q"
      ]
@@ -1148,16 +1148,16 @@
     },
     {
      "book": "Q113 al-Falaq (Daybreak)",
-     "status": "FOLDED",
-     "node": "phase-4-034-quran",
+     "status": "DEDICATED",
+     "node": "document-quran-al-falaq",
      "canons": [
       "Q"
      ]
     },
     {
      "book": "Q114 al-N\u0101s (Mankind)",
-     "status": "FOLDED",
-     "node": "phase-4-034-quran",
+     "status": "DEDICATED",
+     "node": "document-quran-al-nas",
      "canons": [
       "Q"
      ]
@@ -1175,6 +1175,11 @@
    "key": "tanakh",
    "label": "Tanakh (Judaism)",
    "docs": 44
+  },
+  {
+   "key": "quran",
+   "label": "Quran (Islam)",
+   "docs": 38
   },
   {
    "key": "mesopotamian",
@@ -1230,11 +1235,6 @@
    "key": "ethiopic-tewahedo-canon",
    "label": "Ethiopic Tewahedo",
    "docs": 14
-  },
-  {
-   "key": "quran",
-   "label": "Quran (Islam)",
-   "docs": 13
   },
   {
    "key": "hermetica",
