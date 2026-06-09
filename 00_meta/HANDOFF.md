@@ -31,12 +31,17 @@
 > **PERSONS MEMBERSHIP SWEEP IS IN FLIGHT (corrected 2026-06-09 — the old "persons blocked" line was STALE).**
 > The membership-vs-wire model is RATIFIED (`MEMBERSHIP-AND-WIRES.md`; §9 "build may proceed") and the
 > `singularize_tradition.py` tooling is proven on deities. Real worklist is **82 cross-family (28 HIGH/54 MEDIUM)**,
-> NOT the 384 raw-multivalued count. Step A is **20/28 HIGH done** (analyzer cross-family 82→62); each gets a
-> singular origin + `tradition-raw` (reversible) + `tradition-appearances` (Step-B worklist). REMAINING: **2 founders
-> (jesus/paul) HELD pending John's §4.5 founder-home rule** — spec §2 "Christ→Christianity" vs §4.1 earliest-attestation,
-> a call that cascades to Muhammad/Buddha/Zoroaster/Nanak/Mani; 6 borderline (zechariah-priest/cainan/ezana/phidias/
-> spyridon-marinatos/simon-magus); the **54 MEDIUM** (per-node, never auto-applied §9.3); then **Step B = build the
-> appearance wires** (where the MASSIVE-WINS get drawn). The
+> NOT the 384 raw-multivalued count. Step A HIGH tier is **COMPLETE (28/28)** —
+> founder rule RESOLVED (John ratified spec §2: founder homes to the tradition he originates; jesus/paul→Christianity,
+> their natal Judaism + Islamic ʿĪsā / rabbinic Yeshu receptions become wires). analyzer HIGH 28→0, cross-family
+> 82→54, SINGULAR 436→464; each node keeps `tradition-raw` (reversible) + `tradition-appearances` (Step-B worklist).
+> REMAINING: **54 MEDIUM** — but these are MOSTLY modern scholars (Pagels/Vermes/Brakke/DeConick→academic), scientists
+> (Newton/Galileo/Copernicus), and esotericists (Lévi/Ashmole/Regardie): intellectual-biography flags = low-value
+> cleanup; the genuine religious figures are a minority (gabriel-archangel/hagar/barlaam-and-josaphat/black-elk). NB
+> most MEDIUM use `/` separators (which the applier treats as within-family), so they need manual review, not the
+> applier. **HIGHER-VALUE next = Step B: build the appearance wires for the 28 already-singularized HIGH figures
+> (Seth→Gnostic/Mandaean/Islam, Adam→6 traditions, the Magi→Nativity, Makeda→Ethiopian/Islam, Jesus→Islamic ʿĪsā) —
+> where the MASSIVE-WINS get DRAWN** (the `tradition-appearances` worklist on each node is the to-wire list). The
 > **all-114-vs-within-reason** Quran granularity remains John's call (within-reason is the ratified default;
 > fully reversible — the strata node `phase-4-034-quran` still folds every not-yet-distinguished sura).
 >
