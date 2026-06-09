@@ -1,6 +1,6 @@
 {
- "generatedAt": "2026-06-06",
- "indexedSlugs": 15156,
+ "generatedAt": "2026-06-09",
+ "indexedSlugs": 15166,
  "neighborhoodsWhole": true,
  "neighborhoods": [
   {
@@ -79,16 +79,16 @@
    "id": "the-mother-goddess",
    "label": "The great mother-goddess \u2014 the divine feminine of earth, fertility, and origin",
    "whole": true,
-   "present": 12,
-   "total": 12,
+   "present": 14,
+   "total": 14,
    "missing": {}
   },
   {
    "id": "the-divine-smith",
    "label": "The divine smith \u2014 the craftsman-god who forges the gods' weapons and wonders",
    "whole": true,
-   "present": 8,
-   "total": 8,
+   "present": 9,
+   "total": 9,
    "missing": {}
   }
  ],
@@ -150,6 +150,16 @@
     "Patecatl",
     "Yacatecuhtli",
     "Buluc Chabtan"
+   ]
+  },
+  {
+   "tradition": "Yoruba (Orisha \u2014 West African)",
+   "present": 19,
+   "total": 21,
+   "pct": 90,
+   "missing": [
+    "Erinle / Inle (healer-hunter)",
+    "Logunede (youth; Oshun x Oshosi)"
    ]
   }
  ],

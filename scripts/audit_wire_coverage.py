@@ -172,6 +172,7 @@ NEIGHBORHOODS = {
             "Egyptian": ["isis-egyptian", "hathor"],
             "Canaanite": ["asherah", "anat"],
             "Hindu": ["durga", "parvati"],
+            "West African (Yoruba)": ["yemoja", "oshun"],
         },
     },
     "the-divine-smith": {
@@ -184,6 +185,7 @@ NEIGHBORHOODS = {
             "Germanic": ["wayland-smith"],
             "Celtic": ["goibniu"],
             "Finnish": ["ilmarinen"],
+            "West African (Yoruba)": ["ogun"],
         },
     },
 }
@@ -379,6 +381,33 @@ ROSTERS = {
         ("Tonacatecuhtli", ["tonacatecuhtli"]), ("Metztli (moon)", ["metztli"]),
         ("Patecatl", ["patecatl"]), ("Yacatecuhtli", ["yacatecuhtli"]),
         ("Buluc Chabtan", ["buluc-chabtan"]),
+    ],
+    "Yoruba (Orisha — West African)": [
+        # supreme & cosmogonic
+        ("Olodumare / Olorun (supreme)", ["olodumare"]),
+        ("Obatala / Orisha-nla (sky / shaper of bodies)", ["obatala"]),
+        ("Oduduwa (earth / founder of Ife)", ["oduduwa"]),
+        ("Orunmila (Ifa / wisdom & divination)", ["orunmila"]),
+        # the Warriors
+        ("Eshu / Elegba (trickster-messenger)", ["eshu"]),
+        ("Ogun (iron / war / smith)", ["ogun"]),
+        ("Oshosi (hunter)", ["osoosi"]),
+        # great orisha
+        ("Shango (thunder / justice / deified Alaafin)", ["shango"]),
+        ("Oya (storm / Niger / gate of the dead)", ["oya"]),
+        ("Oshun (river / love / fertility)", ["oshun"]),
+        ("Yemoja (waters / great mother)", ["yemoja"]),
+        ("Oba (river / marriage)", ["oba-orisha"]),
+        ("Olokun (sea / depths)", ["olokun"]),
+        ("Oshumare (rainbow serpent)", ["oshumare"]),
+        ("Babalu-Aye / Obaluaye (Shopona — disease & healing)", ["babalu-aye"]),
+        ("Osanyin (herbs / medicine)", ["osanyin"]),
+        ("Aganju (volcano / wilderness)", ["aganju"]),
+        ("Orisha Oko (agriculture)", ["orisha-oko"]),
+        ("Ibeji (divine twins)", ["ibeji"]),
+        # significant secondary — honest remaining gaps
+        ("Erinle / Inle (healer-hunter)", ["erinle", "inle"]),
+        ("Logunede (youth; Oshun x Oshosi)", ["logunede", "logun-ede"]),
     ],
 }
 
