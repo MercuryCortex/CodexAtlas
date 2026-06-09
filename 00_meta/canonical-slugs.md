@@ -1284,7 +1284,7 @@ canonical-slug
 - `doctrine-water-as-divine-gift-zoroastrianism`
 - `shema`
 
-### document (507 nodes)
+### document (580 nodes)
 
 - `ajanta-inscriptions`
 - `avesta`
@@ -1298,15 +1298,88 @@ canonical-slug
 - `da-ming-huidian`
 - `da-qing-huidian`
 - `divyavadana`
+- `document-1-corinthians`
+- `document-1-esdras`
+- `document-1-john`
+- `document-1-maccabees`
+- `document-1-peter`
+- `document-1-samuel`
+- `document-1-thessalonians`
+- `document-1-timothy`
 - `document-2-chronicles`
+- `document-2-corinthians`
+- `document-2-john`
+- `document-2-maccabees`
+- `document-2-peter`
+- `document-2-samuel`
+- `document-2-thessalonians`
+- `document-2-timothy`
+- `document-3-john`
+- `document-3-maccabees`
+- `document-amos`
+- `document-book-of-gates`
+- `document-book-of-the-heavenly-cow`
+- `document-colossians`
+- `document-contendings-of-horus-and-seth`
+- `document-descent-of-ishtar`
 - `document-deuteronomy`
+- `document-dispute-man-and-his-ba`
+- `document-enki-and-ninhursag`
+- `document-ephesians`
+- `document-erra-and-ishum`
+- `document-esther`
 - `document-exodus`
 - `document-ezekiel`
+- `document-ezra`
+- `document-galatians`
 - `document-genesis`
+- `document-gilgamesh-standard-babylonian`
+- `document-great-hymn-to-osiris`
+- `document-habakkuk`
+- `document-haggai`
+- `document-hebrews`
+- `document-hosea`
+- `document-instruction-of-ptahhotep`
+- `document-james`
+- `document-jeremiah`
+- `document-joel`
+- `document-jonah`
+- `document-joshua`
+- `document-jude`
+- `document-judges`
+- `document-judith`
 - `document-kuntillet-ajrud-inscriptions`
 - `document-leviticus`
+- `document-ludlul-bel-nemeqi`
+- `document-malachi`
+- `document-micah`
+- `document-nahum`
+- `document-nehemiah`
+- `document-nergal-and-ereshkigal`
 - `document-numbers`
+- `document-obadiah`
+- `document-philemon`
+- `document-philippians`
+- `document-prayer-of-manasseh`
+- `document-quran-al-anbiya`
+- `document-quran-al-baqara`
+- `document-quran-al-fatiha`
+- `document-quran-al-ikhlas`
+- `document-quran-al-imran`
+- `document-quran-al-isra`
+- `document-quran-al-kahf`
+- `document-quran-al-maeda`
+- `document-quran-an-nisa`
+- `document-quran-maryam`
+- `document-quran-ta-ha`
+- `document-quran-yusuf`
+- `document-revelation`
 - `document-romans`
+- `document-ruth`
+- `document-titus`
+- `document-tobit`
+- `document-zechariah`
+- `document-zephaniah`
 - `dunhuang-manuscripts`
 - `duran-historia-de-las-indias-de-nueva-espana`
 - `ellora-inscriptions`
@@ -5322,17 +5395,17 @@ canonical-slug
 
 | Refs | Dead target | Suggested canonical (existing) |
 |---:|---|---|
-| 10 | `tradition-vaishnavism` | `tradition-shinbutsu-shugo` |
-| 2 | `tradition-sethian-gnosticism` | `tradition-shinbutsu-shugo` |
-| 2 | `the-father-valentinian` | `heracleon-valentinian` |
-| 2 | `phase-7-002-doctrine-and-covenants` | `ark-of-the-covenant-symbol` |
-| 2 | `phase-2-018-pali-canon-suttas` | `phase-2-016-early-buddhist-suttas` |
+| 10 | `tradition-vaishnavism` | `tradition-pythagorean` |
+| 2 | `tradition-sethian-gnosticism` | `tradition-pythagorean` |
+| 2 | `the-father-valentinian` | `theodotus-valentinian` |
+| 2 | `phase-7-002-doctrine-and-covenants` | `theme-lex-talionis-covenant-code` |
+| 2 | `phase-2-018-pali-canon-suttas` | `phase-2-019-deuteronomistic-history` |
 | 2 | `love-mysticism` | `mysticism` |
 | 2 | `ge'ez-language-transmission` | `oral-tradition-transmission` |
 | 2 | `event-coronation-of-charlemagne-800` | `event-coronado-expedition-1540` |
 | 2 | `event-aleister-crowley-boca-do-inferno-1930` | `event-alexander-indian-campaign-327-325-bce` |
-| 2 | `ethiopian-anti-catholic-polemic` | `ethiopian-systematic-theology` |
+| 2 | `ethiopian-anti-catholic-polemic` | `ethiopian-geez-calendar` |
 | 2 | `ecclesiastical-canon-law` | `ecclesial-authority` |
-| 2 | `christian-legal-codes` | `christian-pagan-site-overlay` |
+| 2 | `christian-legal-codes` | `lent-christian-fast` |
 | 2 | `anti-stephanite-polemic` | `stephanie-meece` |
 | 2 | `anthropogony` | `anthropos-myth` |
