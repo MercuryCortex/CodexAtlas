@@ -468,8 +468,34 @@
     //    (9000 BCE → today), independent of what dates exist in the
     //    data. Dots populate within the spine; line + ticks + camera
     //    fit + center all key off the spine, not the data range.
-    const xLo = TIMELINE_FLOOR_BCE;
-    const xHi = spineHi();
+    // 2026-06-10 — opts.dataFit (the genealogy lanes): frame the DATA
+    // range instead of the fixed 9000-BCE spine. A 42-node class like
+    // Alphabets occupies less than half the spine — spine-framing parks
+    // it in a void and the label LOD starves. With dataFit the xRange
+    // (and therefore the fit-scale override, the zoom-reset, the axis
+    // ticks, and the camera world) all derive from the dated min/max
+    // ± padding. The MAIN timeline (no dataFit) keeps John's spine-
+    // fixed spec untouched.
+    let xLo = TIMELINE_FLOOR_BCE;
+    let xHi = spineHi();
+    if (opts.dataFit && allDated.length) {
+      let dLo = Infinity, dHi = -Infinity;
+      for (const n of allDated) {
+        const d = effectiveDate(n);
+        if (d < dLo) dLo = d;
+        if (d > dHi) dHi = d;
+      }
+      if (isFinite(dLo) && isFinite(dHi)) {
+        const padYears = Math.max(150, (dHi - dLo) * 0.06);
+        xLo = Math.max(TIMELINE_FLOOR_BCE, Math.floor(dLo - padYears));
+        xHi = Math.min(spineHi(), Math.ceil(dHi + padYears));
+        if (xHi - xLo < 600) {           // degenerate tiny-span guard
+          const mid = (xLo + xHi) / 2;
+          xLo = Math.floor(mid - 300);
+          xHi = Math.ceil(mid + 300);
+        }
+      }
+    }
     const xSpanYears = Math.max(1, xHi - xLo);
     const xSpanWorld = xSpanYears * X_SCALE;
     // Phase TL-2 Step 6 — origin-centered world. spine midpoint =

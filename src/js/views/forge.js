@@ -3120,6 +3120,9 @@
           colorOverride: _colorOverride,
           parkUndated:   true,
           bandBy: _tb ? function (n) { return _tb.assign[n.id] || 'OTHER'; } : undefined,
+          // banded modes frame the DATA range (the genealogy view);
+          // the main timeline keeps the spine-fixed framing.
+          dataFit: !!_tb,
         });
         local._layoutCache.set(_layoutKey, lay);
       } else {
