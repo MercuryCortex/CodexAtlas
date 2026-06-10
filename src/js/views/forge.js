@@ -4815,6 +4815,26 @@
       else                      bgFade = (0.30 - zoomPct) / (0.30 - 0.15);
       bgImage.style.opacity = bgFade.toFixed(3);
 
+      // 2026-06-10 — playback follows visibility. Browsers pause muted
+      // video-only media they deem invisible ("The play() request was
+      // interrupted because video-only background media was paused to
+      // save power" — Chromium; Safari is more aggressive still), and
+      // the one-shot play() at element creation was never retried — so
+      // the BG video sat frozen/black on zoom-out. Cooperate with the
+      // policy instead of fighting it: any tick where the BG is visible
+      // and paused → play() (muted video needs no gesture); fully
+      // faded out → pause() (saves the decode loop at idle zoom).
+      if (bgImage.tagName === 'VIDEO') {
+        if (bgFade > 0 && bgImage.paused) {
+          try {
+            const p = bgImage.play();
+            if (p && p.catch) p.catch(() => {});
+          } catch (_) {}
+        } else if (bgFade === 0 && !bgImage.paused) {
+          try { bgImage.pause(); } catch (_) {}
+        }
+      }
+
       // ── BG WORLD-OBJECT TRANSFORM (Phase 21AJ, 2026-05-22) ────
       // World-scaled by default, with a VIEWPORT-COVER FLOOR so
       // the BG never shrinks smaller than the viewport. John bug:

@@ -173,7 +173,7 @@
   <p>Then refresh this page.</p>
 </div>
 
-<script src="data.js?v=20260610-052819" onerror="document.getElementById('missing-data').style.display='flex'"></script>
+<script src="data.js?v=20260610-200103" onerror="document.getElementById('missing-data').style.display='flex'"></script>
 <script src="https://d3js.org/d3.v7.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <script src="_assets/vendor/maplibre/maplibre-gl.js"></script>
@@ -224,7 +224,7 @@
      rebuildForMode tries to cull the active set. -->
 <script src="src/js/engine/graph/viewport-filter.js?v=20260527T0625-reverted-blinking"></script>
 <script src="src/js/forge/_bundle.js?v=20260610-shell-kill"></script>
-<script src="src/js/views/forge.js?v=20260610-yaml-lanes"></script>
+<script src="src/js/views/forge.js?v=20260610-bg-video-play"></script>
 <script src="src/js/views/boards.js?v=20260529-boards-deleteSelected-public-api"></script>
 <!-- Boards V2 Investigation Library data — 32 MASSIVE WINS + 11
      TRANSMISSIONS generated from MASSIVE-WINS-INDEX.md. Loads BEFORE
@@ -258,12 +258,12 @@
 <!-- ALPHA_GLYPH_DATA must load BEFORE app.js: the boot router can land
      directly on ?view=alphabets, whose GLYPHS surface reads the table at
      first render (2026-06-10 boot-race fix). Data-only module. -->
-<script src="src/js/alphabets/glyph-data.js?v=20260610-052819"></script>
+<script src="src/js/alphabets/glyph-data.js?v=20260610-200103"></script>
 <!-- CANONICAL NODE INSPECTOR (2026-06-10) — the V2 renderer behind
      window.selectNode for every non-Forge surface; replaces the deleted
      V01 renderDetail(). Loads BEFORE app.js (boot-race rule). -->
 <script src="src/js/inspector.js?v=20260610-panel-parity"></script>
-<script src="src/js/app.js?v=20260610-shell-kill"></script>
+<script src="src/js/app.js?v=20260610-200103"></script>
 <!-- Phase 22-B (2026-05-23) — app-shell top-bar pill wiring.
      Loads AFTER app.js so window.STATE + window.setView are defined.
      Self-installing IIFE; exposes window._appPill for debug. -->
