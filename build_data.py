@@ -1323,8 +1323,18 @@ def main():
                         or fm.get("date_composed")
                         or fm.get("date_start")
                         or fm.get("date_born")
+                        # 2026-06-10 — the PLAIN hyphen spelling. 1,134 nodes
+                        # vault-wide carry `date-earliest:` (the 11_alphabets
+                        # batch among them); every variant above was mapped
+                        # EXCEPT this base form, so those dates silently
+                        # nulled and the TIMELINE dropped the nodes (the
+                        # "Aramaic/Hangul missing from the genealogy" bug).
+                        or fm.get("date-earliest")
                     ),
-                    "date_latest":   fm.get("date-composed-latest")   or fm.get("period-active-latest")   or fm.get("date-end")   or fm.get("date-died") or fm.get("period-latest"),
+                    # 2026-06-10 — date-latest/date_latest added: the latest-
+                    # chain had NEITHER the plain hyphen nor the underscore
+                    # spelling (same blind-spot class as above).
+                    "date_latest":   fm.get("date-composed-latest")   or fm.get("period-active-latest")   or fm.get("date-end")   or fm.get("date-died") or fm.get("period-latest") or fm.get("date-latest") or fm.get("date_latest"),
                     # Phase B-DATING-1 — dating_basis: B1..B7. Set
                     # by author for B2..B5 (with cited source). B6
                     # is auto-synthesized below (family median).

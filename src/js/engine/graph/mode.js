@@ -21,6 +21,71 @@
   //   glyph    — Unicode glyph for the dropdown row (UI only)
   //   nodeType — `n.type` value(s) this mode renders; null for
   //              non-type predicates (handled in filterNodesByMode)
+  // ── ALPHABETS timeline lanes (2026-06-10, rule #9) ────────────
+  // The TIMELINE layout's Y-banding is a swappable input (opts.bandBy,
+  // timeline.js). For the Alphabets class the lanes are WRITING-SYSTEM
+  // families — the script-genealogy view John asked for — instead of
+  // tradition families (Phoenician sits under "Canaanite" etc., which
+  // scatters the descent story). Slug→lane map is the sanctioned
+  // interim per AUDIT/2026-06-10-alphabets-page-plan.md §3.2; the
+  // ratified long-term home is a `script-family:` YAML field on the
+  // 11_alphabets nodes (Lane-A backlog).
+  const ALPHABET_TIMELINE_BANDS = Object.freeze({
+    order: Object.freeze([
+      'ORIGINS & UNDECIPHERED',
+      'SEMITIC LINE',
+      'GREEK → EUROPE',
+      'ARAMAIC → ARABIC & PERSIA',
+      'ASIA',
+      'AMERICAS & PACIFIC',
+      'LETTER MYSTICISM & FINDINGS',
+    ]),
+    assign: Object.freeze({
+      'alphabet-cuneiform-sacred': 'ORIGINS & UNDECIPHERED',
+      'alphabet-medu-netjer': 'ORIGINS & UNDECIPHERED',
+      'alphabet-indus-valley-script': 'ORIGINS & UNDECIPHERED',
+      'alphabet-proto-elamite': 'ORIGINS & UNDECIPHERED',
+      'alphabet-linear-a': 'ORIGINS & UNDECIPHERED',
+      'alphabet-proto-sinaitic': 'SEMITIC LINE',
+      'alphabet-ugaritic': 'SEMITIC LINE',
+      'alphabet-phoenician': 'SEMITIC LINE',
+      'alphabet-hebrew-aleph-bet': 'SEMITIC LINE',
+      'alphabet-aramaic': 'SEMITIC LINE',
+      'alphabet-syriac': 'SEMITIC LINE',
+      'alphabet-south-arabian': 'SEMITIC LINE',
+      'alphabet-geez-ethiopic': 'SEMITIC LINE',
+      'alphabet-greek-vowel-revolution': 'GREEK → EUROPE',
+      'alphabet-latin': 'GREEK → EUROPE',
+      'alphabet-coptic': 'GREEK → EUROPE',
+      'alphabet-glagolitic-cyrillic': 'GREEK → EUROPE',
+      'alphabet-elder-futhark': 'GREEK → EUROPE',
+      'alphabet-ogham': 'GREEK → EUROPE',
+      'alphabet-armenian': 'GREEK → EUROPE',
+      'alphabet-georgian': 'GREEK → EUROPE',
+      'alphabet-arabic-quran': 'ARAMAIC → ARABIC & PERSIA',
+      'alphabet-arabic-calligraphy': 'ARAMAIC → ARABIC & PERSIA',
+      'alphabet-quran-sacred-language': 'ARAMAIC → ARABIC & PERSIA',
+      'alphabet-huruf-muqattaat': 'ARAMAIC → ARABIC & PERSIA',
+      'alphabet-avestan': 'ARAMAIC → ARABIC & PERSIA',
+      'alphabet-brahmi-origin': 'ASIA',
+      'alphabet-devanagari-sacred': 'ASIA',
+      'alphabet-tibetan-tantric': 'ASIA',
+      'alphabet-chinese-oracle-bones': 'ASIA',
+      'alphabet-hangul': 'ASIA',
+      'alphabet-mayan-glyphs': 'AMERICAS & PACIFIC',
+      'alphabet-cherokee': 'AMERICAS & PACIFIC',
+      'alphabet-rongorongo': 'AMERICAS & PACIFIC',
+      'alphabet-creation-by-word': 'LETTER MYSTICISM & FINDINGS',
+      'alphabet-letter-as-cosmos': 'LETTER MYSTICISM & FINDINGS',
+      'alphabet-sacred-language-convergence': 'LETTER MYSTICISM & FINDINGS',
+      'alphabet-isopsephy-greek': 'LETTER MYSTICISM & FINDINGS',
+      'alphabet-gematria-hebrew': 'LETTER MYSTICISM & FINDINGS',
+      'alphabet-sefer-yetzirah': 'LETTER MYSTICISM & FINDINGS',
+      'alphabet-ilm-al-huruf': 'LETTER MYSTICISM & FINDINGS',
+      'alphabet-masoretes': 'LETTER MYSTICISM & FINDINGS',
+    }),
+  });
+
   const MODES = Object.freeze([
     // Original 16-lens modes (pre-2026-05-18). 2026-05-28: Codex
     // promoted to position 2 (right after Deities) per John —
@@ -33,7 +98,8 @@
     { value: 'events',      label: 'Events',      glyph: '◆',  nodeType: 'event' },
     { value: 'rituals',     label: 'Rituals',     glyph: '✚',  nodeType: 'ritual' },
     { value: 'music',       label: 'Music',       glyph: '♩',  nodeType: 'music' },
-    { value: 'alphabet',    label: 'Alphabets',   glyph: 'ℵ',  nodeType: 'alphabet' },
+    { value: 'alphabet',    label: 'Alphabets',   glyph: 'ℵ',  nodeType: 'alphabet',
+      timelineBands: ALPHABET_TIMELINE_BANDS },
     { value: 'alchemy',     label: 'Alchemy',     glyph: '△',  nodeType: 'alchemy' },
     { value: 'philosophy',  label: 'Philosophy',  glyph: '○',  nodeType: 'philosophy' },
     { value: 'morals',      label: 'Morals',      glyph: '⚖',  nodeType: 'moral' },

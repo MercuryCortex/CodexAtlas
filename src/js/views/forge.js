@@ -3108,9 +3108,18 @@
       if (_layoutCacheHit) {
         // Cache hit — skip the recompute.
       } else if (_layoutId === 'timeline' && typeof layout.timelineLayout === 'function') {
-        lay = layout.timelineLayout(modeNodes, _familyOrder, {
+        // 2026-06-10 — rule-#9 swappable banding: a mode may declare its
+        // own timeline lanes via `timelineBands: {order, assign}` on its
+        // mode.js catalog entry. Alphabets lanes by WRITING-SYSTEM family
+        // (the script-genealogy view); every other mode keeps the default
+        // tradition-family lanes. The cache key already varies by modeId,
+        // so banded + default layouts never collide.
+        const _tbEntry = (modemod.MODES || []).find(mm => mm.value === modeId);
+        const _tb = (_tbEntry && _tbEntry.timelineBands) || null;
+        lay = layout.timelineLayout(modeNodes, _tb ? _tb.order.slice() : _familyOrder, {
           colorOverride: _colorOverride,
           parkUndated:   true,
+          bandBy: _tb ? function (n) { return _tb.assign[n.id] || 'OTHER'; } : undefined,
         });
         local._layoutCache.set(_layoutKey, lay);
       } else {

@@ -247,7 +247,7 @@
     supportedClasses: function () {
       return [
         { value: 'glyphs',    label: 'Glyphs',              glyph: 'ℵ' },
-        { value: 'genealogy', label: 'Genealogy (Timeline)', glyph: '⌁' },
+        { value: 'genealogy', label: 'Genealogy', glyph: '⌁' },
       ];
     },
     getClassFilter: function () { return 'glyphs'; },

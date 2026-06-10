@@ -394,6 +394,12 @@
     opts = opts || {};
     const parkUndated = (opts.parkUndated !== false);   // default true
     const colorOverride = (typeof opts.colorOverride === 'function') ? opts.colorOverride : null;
+    // 2026-06-10 — rule-#9 swappable banding. The Y-band grouping key is
+    // a DECLARED input (opts.bandBy: node → band-name); defaults to the
+    // tradition family for every existing caller. First consumer: the
+    // Alphabets class lanes by WRITING-SYSTEM family (the genealogy
+    // view) instead of tradition family. ONE engine, MANY spreads.
+    const bandBy = (typeof opts.bandBy === 'function') ? opts.bandBy : familyOf;
 
     const positions = new Map();
     const bands     = {};
@@ -431,7 +437,7 @@
         // this branch should be essentially empty.
         continue;
       }
-      const f = familyOf(n);
+      const f = bandBy(n);
       if (!byFamily[f]) byFamily[f] = [];
       byFamily[f].push(n);
       allDated.push(n);
