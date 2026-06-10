@@ -29,7 +29,7 @@ category: language     # language | language-family | linguistic-finding
 family: indo-european-family
 parent-language: proto-indo-iranian
 descendant-languages: [sanskrit-classical, pali, prakrit-languages]
-script-used: [brahmi, devanagari]
+scripts-used: [brahmi, devanagari]
 date-attested-earliest: -1500
 date-attested-latest: -500
 liturgical-tradition: vedic-religion

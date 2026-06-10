@@ -7,8 +7,11 @@ alphabet-type: script
 status: full
 tier: 1
 tradition: tradition-coptic-orthodox
-date_earliest: -3100
+date_earliest: 150
 date_latest: 2026
+dating-basis: B5
+dating-basis-source: "Layton, B. 2000 *A Coptic Grammar*. Harrassowitz (2nd ed. 2011)"
+dating-basis-notes: "Script emergence, not language: the Coptic alphabet (Greek letters + 6–7 demotic signs) emerges 1st–3rd c. CE — Old Coptic glosses and horoscopes 1st–2nd c., standardized literary Coptic with the 3rd-c. biblical translations; 150 is the scholarly-consensus midpoint of that emergence window. The previous -3100 encoded the EGYPTIAN-LANGUAGE continuity story, which the body keeps as narrative; the script-stage ancestry (hieroglyphs → hieratic → demotic) now lives in alphabet-hieratic-demotic."
 region: "Egypt (Nile Valley; Alexandria; Upper Egypt); global Coptic diaspora"
 tags:
   - alphabet
