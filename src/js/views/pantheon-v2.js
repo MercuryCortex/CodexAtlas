@@ -1839,8 +1839,6 @@
       try {
         if (!document.body.classList.contains('detail-collapsed')) {
           document.body.classList.add('detail-collapsed');
-          const dt = document.getElementById('detail-toggle');
-          if (dt) dt.textContent = '‹';
           if (window._codexAnimateDetail) window._codexAnimateDetail();
         }
         const detailInner = document.getElementById('detail-inner');

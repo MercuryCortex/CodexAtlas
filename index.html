@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=EB+Garamond:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&family=Noto+Serif+Hebrew:wght@400;700&family=Noto+Sans+Egyptian+Hieroglyphs&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="_assets/vendor/maplibre/maplibre-gl.css?v=5.24.0" />
-<link rel="stylesheet" href="src/styles/app.css?v=20260610-panel-prose-sans" />
+<link rel="stylesheet" href="src/styles/app.css?v=20260610-shell-kill" />
 </head>
 <body class="nav-hidden detail-collapsed">
 <!-- ════════════════════════════════════════════════════════════════
@@ -145,8 +145,13 @@
   <div class="tooltip" id="tooltip"></div>
 </main>
 
+<!-- V2 NODE PANEL (2026-06-10 — INCIDENT §4 kill). The V01 shell
+     (the rail chevron + 36px collapsed strip) is DELETED. The panel
+     hides ENTIRELY when collapsed on every view; the ✕ inside the
+     open panel is the one close affordance. Content renderers:
+     src/js/inspector.js (all views) + the Forge driver. -->
 <aside class="detail" id="detail">
-  <button class="detail-toggle" id="detail-toggle" title="Collapse detail">›</button>
+  <button class="detail-close" id="detail-close" type="button" title="Close panel" aria-label="Close panel">✕</button>
   <div class="detail-inner" id="detail-inner">
     <div class="empty">Select a node to inspect.</div>
   </div>
@@ -179,7 +184,7 @@
 <script src="_assets/vendor/elk/elk.bundled.js"></script>
 <script src="src/js/layout/elk-layout.js?v=20260517-handoff"></script>
 <script src="src/js/edge-buckets.js?v=20260517-edge-buckets-universal"></script>
-<script src="src/js/views/pantheon-v2.js?v=20260517-edge-buckets-universal"></script>
+<script src="src/js/views/pantheon-v2.js?v=20260610-shell-kill"></script>
 
 <!-- Forge: proprietary WebGPU engine (Phase 5 — dev panel). -->
 <script src="src/js/engine/contract.js?v=20260525-phase24-v1"></script>
@@ -218,7 +223,7 @@
      forge.js so window.AtlasViewportFilter exists when
      rebuildForMode tries to cull the active set. -->
 <script src="src/js/engine/graph/viewport-filter.js?v=20260527T0625-reverted-blinking"></script>
-<script src="src/js/forge/_bundle.js?v=20260610-panel-parity"></script>
+<script src="src/js/forge/_bundle.js?v=20260610-shell-kill"></script>
 <script src="src/js/views/forge.js?v=20260610-yaml-lanes"></script>
 <script src="src/js/views/boards.js?v=20260529-boards-deleteSelected-public-api"></script>
 <!-- Boards V2 Investigation Library data — 32 MASSIVE WINS + 11
@@ -258,7 +263,7 @@
      window.selectNode for every non-Forge surface; replaces the deleted
      V01 renderDetail(). Loads BEFORE app.js (boot-race rule). -->
 <script src="src/js/inspector.js?v=20260610-panel-parity"></script>
-<script src="src/js/app.js?v=20260610-investigation-v1"></script>
+<script src="src/js/app.js?v=20260610-shell-kill"></script>
 <!-- Phase 22-B (2026-05-23) — app-shell top-bar pill wiring.
      Loads AFTER app.js so window.STATE + window.setView are defined.
      Self-installing IIFE; exposes window._appPill for debug. -->
@@ -282,7 +287,7 @@
      before app.js — per the 2026-06-10 boot-race fix. The four legacy
      renderer modules stay on disk for the _legacy snapshot. -->
 <script src="src/js/dev-panel.js?v=20260530-regated-on-opt-in"></script>
-<script src="src/js/views/scripture-reader.js?v=20260610-canonical-inspector"></script>
+<script src="src/js/views/scripture-reader.js?v=20260610-shell-kill"></script>
 <script src="src/js/views/legacy.js?v=20260525-phase24-v1a"></script>
 </body>
 </html>

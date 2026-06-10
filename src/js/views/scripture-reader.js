@@ -519,8 +519,6 @@ window.ScriptureReader = (function () {
     });
 
     document.body.classList.remove('detail-collapsed');
-    const dt = document.getElementById('detail-toggle');
-    if (dt) dt.textContent = '›';
   }
 
   function _unpinEntity() {
@@ -583,8 +581,6 @@ window.ScriptureReader = (function () {
     const el = document.getElementById('detail-inner');
     if (el) el.innerHTML = '<div class="empty">Select a node to inspect.</div>';
     document.body.classList.add('detail-collapsed');
-    const dt = document.getElementById('detail-toggle');
-    if (dt) dt.textContent = '‹';
   }
 
   // ── Transmissions index ───────────────────────────────────────

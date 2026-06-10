@@ -2185,6 +2185,14 @@
     // double-click handler can refresh the active-tab marker
     // immediately when it switches openTabId.
     local._renderTabs = renderTabs;
+    // 2026-06-10 (INCIDENT §4) — public close for the shared panel ✕
+    // (app.js _closeDetailPanel routes here on Forge so the active
+    // deity-tab state stays consistent with the panel).
+    window._forgeSidePanel.closePanel = function () {
+      local.openTabId = null;
+      setPanelOpen(false);
+      renderTabs();
+    };
 
     // Phase 19D — click a neighbor inside an expanded wire list →
     // lock + switch the panel to that deity. Event-delegated on

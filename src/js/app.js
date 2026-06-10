@@ -593,8 +593,6 @@ function setView(name) {
   const _collapseOnViewChange = (name === 'pantheon' || name === 'documents' || name === 'timeline' || name === 'transmission' || name === 'scripture' || name === 'alphabets');
   if (_collapseOnViewChange && _isViewChange) {
     document.body.classList.add('detail-collapsed');
-    const dt = document.getElementById('detail-toggle');
-    if (dt) dt.textContent = '‹';
   }
   const v = VIEWS[name];
   // 2026-05-30 — view-header <h2 id="view-title"> + .subtitle DELETED
@@ -620,8 +618,6 @@ function selectNode(id, opensDetail) {
   // untouched. User: "when we click on a event the side panel should open to show info".
   if (opensDetail !== false) {
     document.body.classList.remove('detail-collapsed');
-    const dt = document.getElementById('detail-toggle');
-    if (dt) dt.textContent = '›';
     if (window._codexAnimateDetail) window._codexAnimateDetail();
   }
   d3.selectAll('.node-circle').classed('selected', d => d && d.id === id);
@@ -10671,11 +10667,25 @@ function _kickDetailToggle() {
   }
 }
 window._codexAnimateDetail = _kickDetailToggle;
-document.getElementById('detail-toggle').addEventListener('click', () => {
+// 2026-06-10 (INCIDENT §4) — the V01 detail-toggle (rail chevron) is
+// DELETED with its markup. The panel hides ENTIRELY when collapsed on
+// every view; the ✕ inside the open panel is the one close affordance.
+// On Forge, route through the side-panel's closePanel so the active
+// deity-tab state stays consistent with the panel.
+function _closeDetailPanel() {
   _kickDetailToggle();
-  document.body.classList.toggle('detail-collapsed');
-  document.getElementById('detail-toggle').textContent = document.body.classList.contains('detail-collapsed') ? '‹' : '›';
-});
+  if (window.STATE && STATE.view === 'forge'
+      && window._forgeSidePanel && typeof window._forgeSidePanel.closePanel === 'function') {
+    window._forgeSidePanel.closePanel();
+    return;
+  }
+  document.body.classList.add('detail-collapsed');
+}
+window._closeDetailPanel = _closeDetailPanel;
+{
+  const _dc = document.getElementById('detail-close');
+  if (_dc) _dc.addEventListener('click', _closeDetailPanel);
+}
 
 // CLICK-EMPTY-TO-CLOSE — clicking the empty SVG canvas (not a node, not a legend row,
 // not a control) collapses the detail panel. Pairs with selectNode's auto-open behavior:
@@ -10696,10 +10706,7 @@ document.getElementById('svg').addEventListener('click', (ev) => {
   ].join(','))) return;
   // Empty canvas click. Close the detail panel if it's open.
   if (!document.body.classList.contains('detail-collapsed')) {
-    document.body.classList.add('detail-collapsed');
-    const dt = document.getElementById('detail-toggle');
-    if (dt) dt.textContent = '‹';
-    if (window._codexAnimateDetail) window._codexAnimateDetail();
+    _closeDetailPanel();
   }
 });
 
@@ -10707,7 +10714,15 @@ document.addEventListener('keydown', (ev) => {
   if (ev.target.tagName === 'INPUT') return;
   // 2026-05-28 legacy-isolation: `[` toggled the now-deleted side-tab; key is dead in V2.
   if (ev.key === '[' && _sideTabEl) _sideTabEl.click();
-  if (ev.key === ']') { const dt = document.getElementById('detail-toggle'); if (dt) dt.click(); }
+  if (ev.key === ']') {
+    // toggle the panel: closed → re-open (last content); open → close
+    if (document.body.classList.contains('detail-collapsed')) {
+      _kickDetailToggle();
+      document.body.classList.remove('detail-collapsed');
+    } else {
+      _closeDetailPanel();
+    }
+  }
 });
 
 let resizeTimer;
