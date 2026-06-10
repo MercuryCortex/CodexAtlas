@@ -10323,6 +10323,21 @@ body:not(.view-boards) .app-pill--boards { display: none !important; }
   background: rgba(212,165,90,0.14);
   color: var(--gold, #d4a55a);
 }
+/* The visible GENEALOGY entry point (2026-06-10 — John couldn't find
+ * the class-side path; this chip is the same canonical handoff). */
+.alphabets-genealogy-chip {
+  border-color: var(--gold, #d4a55a);
+  background: rgba(212,165,90,0.18);
+  color: var(--gold, #d4a55a);
+  font-weight: 600;
+}
+.alphabets-genealogy-chip:hover { background: rgba(212,165,90,0.3); }
+.alphabets-script-sep {
+  width: 1px;
+  align-self: stretch;
+  background: rgba(212,165,90,0.25);
+  margin: 0 5px;
+}
 .alphabets-glyph-note {
   margin: 0 0 12px;
   color: var(--text-2, #b9bec8);

@@ -29,6 +29,20 @@ PORT = int(sys.argv[1]) if len(sys.argv) > 1 else 8742
 
 
 class RangeRequestHandler(http.server.SimpleHTTPRequestHandler):
+    def end_headers(self):
+        # 2026-06-10 — Cache-Control: no-store on EVERY response.
+        # serve.py sent no cache headers at all, so Safari disk-cached
+        # the whole build (index.html included) and served stale code
+        # indefinitely — the documented "edit isn't shipping" trap
+        # (feedback_server_hijack_and_safari_cache). Injecting here
+        # covers every path: the custom Range sender below AND the
+        # stdlib directory/fallback senders, which all funnel through
+        # end_headers().
+        self.send_header("Cache-Control", "no-store")
+        self.send_header("Pragma", "no-cache")
+        self.send_header("Expires", "0")
+        super().end_headers()
+
     def do_GET(self):
         f = self.send_head_with_range()
         if f:

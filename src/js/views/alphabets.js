@@ -90,7 +90,14 @@
       return;
     }
 
-    const chips = '<div class="alphabets-script-row">' + SCRIPTS.map(s =>
+    // 2026-06-10 — visible GENEALOGY entry point (John couldn't find it
+    // behind the pill's class side). One in-pane chip, same handoff as
+    // the pill: the canonical TIMELINE scoped to alphabets with the
+    // writing-system lanes.
+    const chips = '<div class="alphabets-script-row">'
+      + '<button type="button" class="alphabets-script-chip alphabets-genealogy-chip" data-genealogy="1" title="The writing-system genealogy — every script on the canonical timeline">⌁ GENEALOGY TIMELINE</button>'
+      + '<span class="alphabets-script-sep" aria-hidden="true"></span>'
+      + SCRIPTS.map(s =>
       '<button type="button" class="alphabets-script-chip' + (s.id === _script ? ' is-active' : '') + '" data-script="' + s.id + '">' + s.label + '</button>'
     ).join('') + '</div>';
 
@@ -121,8 +128,12 @@
     stage.innerHTML = chips + latinNote + grid
       + '<div class="alphabets-hint">' + rows.length + ' letters · lead script: ' + esc(_script) + ' · click a letter for its transmission chain</div>';
 
-    stage.querySelectorAll('.alphabets-script-chip').forEach(b => {
+    stage.querySelectorAll('.alphabets-script-chip[data-script]').forEach(b => {
       b.addEventListener('click', () => { _script = b.dataset.script; _expandedName = null; renderGlyphs(stage); });
+    });
+    const gen = stage.querySelector('[data-genealogy]');
+    if (gen) gen.addEventListener('click', () => {
+      if (window._alphabetsView) window._alphabetsView.setClassFilter('genealogy');
     });
     // 2026-06-10 — IN-PLACE expansion (John: "everytime i click it pushes
     // me back to the top of the page losing my path"). The card inserts
