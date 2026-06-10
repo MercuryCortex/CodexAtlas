@@ -112,3 +112,40 @@ outputs of these checks:**
 *Filed by the responsible agent, 2026-06-10, at John's direction ("log out and report
 hardcore"). The failure chain above is mine where it is mine; the trap is the project's
 and is now named.*
+
+
+---
+
+## 7. ADDENDUM (2026-06-10, later) — execution state + the §4.3 recipe
+
+John greenlit the kill ("go, you earned this now"). Executed and verified:
+
+- **§4.1 ✓** `grep -n "detail-toggle" index.html` → NO MATCH (chevron + every JS callsite
+  deleted in commit `b1ad95c7`).
+- **§4.2 ✓** `grep -nE "view-forge.*(detail|toggle)" src/styles/app.css` → NO MATCH (the
+  Phase-19D/E forge-scoped hides deleted; their behavior universalized).
+- **§4.4 ✓** collapsed = `display:none` + zero layout reservation on EVERY view
+  (`--detail-w-collapsed` deleted, all consumers patched). Screenshot: alphabets
+  collapsed runs full-bleed — the rail John circled is gone.
+- **§4.5 ✓** screenshots both states on a non-forge view + the ATLAS Zeus baseline.
+- **§4.3 OPEN — deliberately.** Visual parity is achieved (colors/typography/meta/title
+  all single-look as of `71386f92`/`47291edf`/`b1ad95c7`), but TWO markup sources still
+  exist (`src/js/forge/side-panel.js` render() + `src/js/inspector.js`). Hand-sync is a
+  drift countdown; the merge into one shared content-builder is the remaining item. It
+  was NOT attempted at the end of a 60-commit session on the most-protected surface —
+  that is this incident's own lesson applied.
+
+**The §4.3 execution recipe (for the focused batch that lands it):**
+1. Baseline FIRST: `window._forgeDebug.toggleLock('zeus')` → click the deity tab →
+   screenshot. This hook (forge.js ~1925) opens the Forge panel reliably in the preview
+   — search-Enter and LS-hydration do NOT work for this; two attempts failed before the
+   hook was found.
+2. Extract the shared content-builders (header/desc/provenance/buckets/meta/body/refs +
+   the vocab maps TYPE_HUMAN/SUBTYPE_HUMAN/BUCKET_HUMAN/DATING_BASIS_LABELS + the body
+   transforms) into one module loaded before inspector.js AND before the forge bundle
+   (boot-race rule). Drivers keep their own data-prep + delegated handlers; section
+   markup comes only from the shared module (forge passes attr-injector fns for its
+   data-* contract).
+3. After: re-screenshot Zeus + a non-forge node; pixel-compare against the baseline.
+   `bash scripts/build-forge-bundle.sh` after any side-panel.js edit.
+4. Only then may anyone write that §4 is fully met.
