@@ -583,7 +583,10 @@ function setView(name) {
   // opening the panel changes the SVG width, which trips the observer).
   // The gate was previously the showMapThumb flag; it now lists the views
   // explicitly so it stays accurate after the legacy purge.
-  const _collapseOnViewChange = (name === 'pantheon' || name === 'documents' || name === 'timeline' || name === 'transmission' || name === 'scripture');
+  // 2026-06-10 — 'alphabets' added: entering the GLYPHS surface starts
+  // with the inspector collapsed; a related-node chip click (selectNode)
+  // still opens it on demand.
+  const _collapseOnViewChange = (name === 'pantheon' || name === 'documents' || name === 'timeline' || name === 'transmission' || name === 'scripture' || name === 'alphabets');
   if (_collapseOnViewChange && _isViewChange) {
     document.body.classList.add('detail-collapsed');
     const dt = document.getElementById('detail-toggle');
