@@ -604,7 +604,12 @@ function setView(name) {
   v.render();
 }
 function selectNode(id, opensDetail) {
-  STATE.selected = id; renderDetail();
+  STATE.selected = id;
+  // 2026-06-10 — the canonical V2 inspector (src/js/inspector.js)
+  // replaces the deleted V01 renderDetail() for every non-Forge
+  // surface. Same .forge-side-panel-* markup language as the Forge
+  // inspector — one look everywhere a node opens.
+  if (window._inspector) window._inspector.show(id);
   // Default behavior: clicking a node opens the detail panel. Pass `opensDetail: false`
   // only to update selection without uncollapsing the panel. Previously the default was the
   // opposite — only index-view callers passed `true`, graph clicks left the panel state
@@ -971,94 +976,9 @@ window.setView = setView;
 // ============================================================
 // DETAIL
 // ============================================================
-function renderDetail() {
-  const el = document.getElementById('detail-inner');
-  const id = STATE.selected;
-  if (!id || !NODES_BY_ID[id]) { el.innerHTML = '<div class="empty">Select a node to inspect.</div>'; return; }
-  const n = NODES_BY_ID[id];
-  const dateStr = fmtDateRange(n.date_earliest, n.date_latest);
-  const outEdges = EDGES.filter(e => e.source === id).slice(0, 80);
-  const inEdges  = EDGES.filter(e => e.target === id).slice(0, 80);
-
-  const bodyHTML = n.body
-    ? marked.parse(n.body.replace(/\[\[([^\]\|]+)(?:\|[^\]]*)?\]\]/g, (m, link) => {
-        const target = link.trim().replace(/^.*\//, '').replace(/\.md$/, '');
-        const targetNode = NODES_BY_ID[target];
-        if (targetNode) return `<a href="#" onclick="event.preventDefault(); selectNode('${target}'); return false;">${targetNode.title}</a>`;
-        return `<span style="color:var(--text-3)">${link}</span>`;
-      }))
-    : '<p style="color:var(--text-3)"><em>No body content (stub).</em></p>';
-
-  const refsHTML = (n.refs && n.refs.length)
-    ? '<h4 style="font-family: var(--serif); color: var(--gold); margin-top: 1.4em;">References</h4>' +
-      '<ol style="padding-left: 18px; font-size: 12px;">' +
-      n.refs.map(r => {
-        if (typeof r === 'string') return `<li>${r}</li>`;
-        const title = r.title || ''; const author = r.author || '';
-        const year = r.year ? ` (${r.year})` : ''; const pub = r.publisher ? `, ${r.publisher}` : '';
-        const url = r.url ? ` <a href="${r.url}" target="_blank">→</a>` : '';
-        const tier = r.tier ? ` <span style="color:var(--text-3); font-family: var(--mono); font-size: 10px;">T${r.tier}</span>` : '';
-        return `<li>${author}${year}. <em>${title}</em>${pub}.${url}${tier}</li>`;
-      }).join('') + '</ol>'
-    : '';
-
-  // Thumbnail: curated `depictions[0]` from YAML takes precedence (lets agents
-  // override the auto-fetched Wikipedia thumb without touching the cache), then
-  // fall back to the Wikipedia thumb from fetch_thumbnails.py's cache.
-  const curatedDep = (n.depictions && n.depictions[0]) || null;
-  const thumbSrc = (curatedDep && curatedDep.src) || n.thumbnail || '';
-  const thumbCaption = curatedDep ? (curatedDep.caption || '') : (n.thumb_title || '');
-  const thumbSource = curatedDep ? (curatedDep.source || '') : '';
-  const thumbLicense = curatedDep ? (curatedDep.license || '') : '';
-  const _placeholderSrc = `_assets/placeholders/class-${n.type}.svg`;
-  const thumbHTML = thumbSrc
-    ? `<img class="thumb" src="${thumbSrc}" alt="${n.title}"
-         onerror="this.src='${_placeholderSrc}';this.classList.add('thumb-placeholder');this.onerror=null;var a=this.nextElementSibling;if(a&&a.classList.contains('thumb-attribution'))a.style.display='none'" />
-       <div class="thumb-attribution">
-         <span>${thumbCaption}${thumbSource ? ' — ' + thumbSource : ''}${thumbLicense ? ' (' + thumbLicense + ')' : ''}</span>
-         ${(!curatedDep && n.thumb_page) ? `<a href="${n.thumb_page}" target="_blank">wikipedia →</a>` : ''}
-       </div>`
-    : `<img class="thumb thumb-placeholder" src="${_placeholderSrc}" alt="${n.type}" />`;
-
-  el.innerHTML = `
-    ${thumbHTML}
-    <h3>${n.title}</h3>
-    <div class="meta">
-      <span class="pill" style="color:${n.family_color || n.tradition_color}; border-color:${n.family_color || n.tradition_color}">${n.type}</span>
-      ${n.family ? `<span class="pill family">${n.family}</span>` : ''}
-      ${n.tradition && n.tradition !== n.family ? `<span class="pill" style="color: var(--text-2)">${n.tradition}</span>` : ''}
-      ${dateStr ? `<span class="pill date">${dateStr}</span>` : ''}
-      ${n.status ? `<span class="pill status">${n.status}</span>` : ''}
-      ${n.label ? `<span class="pill">${n.label}</span>` : ''}
-    </div>
-    <div class="body-md">${bodyHTML}</div>
-    ${refsHTML}
-    ${(outEdges.length || inEdges.length) ? `
-      <div class="links-out">
-        ${outEdges.length ? `
-          <h4>Outgoing edges (${outEdges.length})</h4>
-          ${outEdges.map(e => {
-            const t = NODES_BY_ID[e.target];
-            return `<div class="link-edge" onclick="selectNode('${e.target}')">
-              <span class="etype">${e.type}</span>
-              <span class="etarget">${t ? t.title : e.target}</span>
-            </div>`;
-          }).join('')}` : ''}
-        ${inEdges.length ? `
-          <h4 style="margin-top:14px;">Incoming edges (${inEdges.length})</h4>
-          ${inEdges.map(e => {
-            const t = NODES_BY_ID[e.source];
-            return `<div class="link-edge" onclick="selectNode('${e.source}')">
-              <span class="etype">${e.type}</span>
-              <span class="etarget">${t ? t.title : e.source}</span>
-            </div>`;
-          }).join('')}` : ''}
-      </div>` : ''}
-    <div style="margin-top: 16px; font-family: var(--mono); font-size: 10px; color: var(--text-3);">
-      ${n.path || ''}
-    </div>
-  `;
-}
+// 2026-06-10 — the V01 renderDetail() renderer (inline-styled serif panel)
+// was DELETED (rule #8). The canonical inspector lives in src/js/inspector.js;
+// selectNode delegates to window._inspector.show(id).
 
 // ============================================================
 // PANTHEON — radial wedge layout

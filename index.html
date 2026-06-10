@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=EB+Garamond:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&family=Noto+Serif+Hebrew:wght@400;700&family=Noto+Sans+Egyptian+Hieroglyphs&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="_assets/vendor/maplibre/maplibre-gl.css?v=5.24.0" />
-<link rel="stylesheet" href="src/styles/app.css?v=20260610-canonical-handoff" />
+<link rel="stylesheet" href="src/styles/app.css?v=20260610-canonical-inspector" />
 </head>
 <body class="nav-hidden detail-collapsed">
 <!-- ════════════════════════════════════════════════════════════════
@@ -250,7 +250,11 @@
      directly on ?view=alphabets, whose GLYPHS surface reads the table at
      first render (2026-06-10 boot-race fix). Data-only module. -->
 <script src="src/js/alphabets/glyph-data.js?v=20260610-glyphs-class"></script>
-<script src="src/js/app.js?v=20260610-detail-collapse"></script>
+<!-- CANONICAL NODE INSPECTOR (2026-06-10) — the V2 renderer behind
+     window.selectNode for every non-Forge surface; replaces the deleted
+     V01 renderDetail(). Loads BEFORE app.js (boot-race rule). -->
+<script src="src/js/inspector.js?v=20260610-canonical-inspector"></script>
+<script src="src/js/app.js?v=20260610-canonical-inspector"></script>
 <!-- Phase 22-B (2026-05-23) — app-shell top-bar pill wiring.
      Loads AFTER app.js so window.STATE + window.setView are defined.
      Self-installing IIFE; exposes window._appPill for debug. -->
@@ -274,7 +278,7 @@
      before app.js — per the 2026-06-10 boot-race fix. The four legacy
      renderer modules stay on disk for the _legacy snapshot. -->
 <script src="src/js/dev-panel.js?v=20260530-regated-on-opt-in"></script>
-<script src="src/js/views/scripture-reader.js?v=20260517-reader-nav-19"></script>
+<script src="src/js/views/scripture-reader.js?v=20260610-canonical-inspector"></script>
 <script src="src/js/views/legacy.js?v=20260525-phase24-v1a"></script>
 </body>
 </html>

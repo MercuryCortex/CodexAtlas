@@ -504,8 +504,9 @@ window.ScriptureReader = (function () {
 
     const vaultJump = el.querySelector('#sr-vault-jump');
     if (vaultJump) vaultJump.onclick = () => {
-      if (window.STATE) STATE.selected = ent.node;
-      if (window.renderDetail) renderDetail();
+      // 2026-06-10 — route through the canonical selectNode →
+      // _inspector pipeline (the V01 renderDetail was deleted).
+      if (window.selectNode) window.selectNode(ent.node, false);
     };
 
     el.querySelectorAll('.sr-parallel.linked').forEach(row => {
