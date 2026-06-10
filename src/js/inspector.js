@@ -164,6 +164,12 @@
 
   function renderBodyMd(raw) {
     if (!raw) return '';
+    // 2026-06-10 — consumer-facing language (John: internal jargon
+    // "CANT HAPPEN, all this will be consumer facing"). Node bodies
+    // carry internal '## MASSIVE WIN — …' research headings; display
+    // them as plain findings. The vault text is untouched — the full
+    // jargon-tagged corpus feeds the Investigation section.
+    raw = raw.replace(/^(#{1,6})\s*MASSIVE[ -]WIN[S]?\b[^\n]*/gim, '$1 Cross-tradition findings');
     const withLinks = raw.replace(
       /\[\[([a-zA-Z0-9\-_]+)(?:\|([^\]]+))?\]\]/g,
       (m, slug, label) => {

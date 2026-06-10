@@ -6,26 +6,31 @@
 // (John ratified N1: ALPHABETS is a first-class master-pill
 // Section like ATLAS / TIMELINE, showing ALL alphabets).
 //
-// TWO CLASSES on one Section (the pill's right side, "the usual"):
+// THREE CLASSES on one Section (the pill's right side, "the usual"):
 //   · GLYPHS (default) — the REAL alphabets (per John: "like the
 //     PROTOTYPE one"): the 22-letter grid + per-script lead view +
 //     the 5-step transmission-chain card. CONTENT harvested from
 //     the legacy ALPHA_GLYPH_DATA (the 412 KB hand-curated table);
 //     the legacy AESTHETIC is not copied (V2 tokens throughout).
-//     A reader-like surface — legitimately bespoke, like the Codex
-//     READ panel.
-//   · GENEALOGY — DELEGATES to the CANONICAL Forge engine
-//     (timeline layout + the alphabet class from mode.js). The
-//     2026-06-10 hand-rolled SVG tree was a parallel mini-engine —
-//     rule #9 forbids it ("ONE engine, MANY spreads"); John caught
-//     it instantly ("old NON canonical tech"). DELETED same day.
-//     Graphs of alphabet nodes are the engine's job:
-//     ATLAS|Alphabets (wheel) · TIMELINE|Alphabets (timeline).
+//   · GENEALOGY — the VERTICAL genealogy page (John, 2026-06-10:
+//     "the timeline that was before I liked a lot? VERTICAL …
+//     JUST BUILD IT properly LIKE we have" — an explicit owner
+//     ratification of this bespoke curated surface; it is an
+//     ALPHABETS-section page, NOT the global TIMELINE). Stacked
+//     writing-system bands, every script a labeled chip, descent
+//     béziers, wheel-zoom + drag-pan. Built properly: bands read
+//     from the ENGINE's single-source lane map (mode.js
+//     ALPHABET_TIMELINE_BANDS — no duplicated grouping, rule #10);
+//     dates read live from VAULT_DATA (the 2026-06-10 pipeline
+//     rescue feeds all 42).
+//   · TIMELINE — hands off to the canonical Forge engine
+//     (TIMELINE|Alphabets, dataFit lanes). "KEEP this one as well —
+//     this one is a TIMELINE, that's it" (John).
 //
 // Single source of truth: window.ALPHA_GLYPH_DATA (data-only
-// module) for the letters; graph rendering = the Forge engine on
-// VAULT_DATA. The legacy origin-chain hardcoded graph is NOT read
-// (rule #10).
+// module) for the letters; VAULT_DATA for the genealogy nodes +
+// edges; mode.js for the lane map. The legacy origin-chain
+// hardcoded graph is NOT read (rule #10).
 //
 // Boundary contract (public API):
 //   window._alphabetsView = {
@@ -38,8 +43,221 @@
   'use strict';
 
   let _pane = null;
+  let _mode = 'glyphs';               // 'glyphs' | 'genealogy'
   let _script = 'hieroglyph';         // GLYPHS lead script
   let _expandedName = null;           // GLYPHS expanded letter
+
+  // ════════════════════════════════════════════════════════════════
+  // GENEALOGY — the vertical page (John-ratified bespoke surface)
+  // ════════════════════════════════════════════════════════════════
+  // Lanes come from the ENGINE's single source (mode.js
+  // ALPHABET_TIMELINE_BANDS) — never duplicated here (rule #10).
+  function laneConfig() {
+    const M = window.AtlasEngineMode;
+    const entry = M && Array.isArray(M.MODES) ? M.MODES.find(m => m.value === 'alphabet') : null;
+    const tb = entry && entry.timelineBands;
+    if (tb && tb.order && tb.assign) return tb;
+    return { order: ['WRITING SYSTEMS'], assign: {} };
+  }
+
+  const DESCENT_TYPES = {
+    'ancestor-of': 'fwd', 'parent': 'fwd', 'ancestor': 'fwd',
+    'descendant': 'fwd', 'child': 'fwd',
+    'descended-from': 'rev', 'adapted-from': 'rev',
+  };
+  const DASHED_TYPES = { 'sibling': 1, 'sibling-branch': 1, 'parallel-development': 1 };
+  const DOTTED_TYPES = { 'influenced-by': 1 };
+
+  function fmtDate(y) {
+    if (y == null) return 'undated';
+    return y < 0 ? (-y) + ' BCE' : y + ' CE';
+  }
+
+  function buildModel() {
+    const D = window.VAULT_DATA;
+    if (!D || !D.nodes) return null;
+    const tb = laneConfig();
+    const nodes = D.nodes.filter(n => n.type === 'alphabet').map(n => ({
+      id: n.id,
+      title: (n.title || n.id).split('—')[0].trim(),
+      full: n.title || n.id,
+      date: (n.date_earliest != null) ? n.date_earliest : null,
+      band: tb.assign[n.id] || 'OTHER',
+      color: n.family_color || 'var(--gold)',
+    }));
+    const byId = {};
+    nodes.forEach(n => { byId[n.id] = n; });
+
+    const seen = new Set();
+    const edges = [];
+    (D.edges || []).forEach(e => {
+      const a = byId[e.source], b = byId[e.target];
+      if (!a || !b || a === b) return;
+      let cls = null, s = a, t = b;
+      if (DESCENT_TYPES[e.type]) {
+        cls = 'descent';
+        if (DESCENT_TYPES[e.type] === 'rev') { s = b; t = a; }
+        // Date is the final arbiter (the live data mixes directions).
+        if (s.date != null && t.date != null && s.date > t.date) { const tmp = s; s = t; t = tmp; }
+      } else if (DASHED_TYPES[e.type]) cls = 'sibling';
+      else if (DOTTED_TYPES[e.type]) cls = 'influence';
+      else return; // parallel-form / convergence stay off the hero tree
+      const key = cls === 'descent' ? (s.id + '→' + t.id) : [s.id, t.id].sort().join('~') + cls;
+      if (seen.has(key)) return;
+      seen.add(key);
+      edges.push({ s: s, t: t, cls: cls, type: e.type });
+    });
+    return { nodes: nodes, edges: edges, laneOrder: tb.order.slice() };
+  }
+
+  function layoutTree(model, viewW) {
+    const PAD_L = 170, PAD_R = 60, ROW_H = 46, BAND_PAD = 26;
+    const dates = model.nodes.map(n => n.date).filter(d => d != null);
+    const dMin = Math.min.apply(null, dates), dMax = Math.max.apply(null, dates);
+    const W = Math.max(viewW, 1500);
+    const x = d => PAD_L + ((d - dMin) / (dMax - dMin)) * (W - PAD_L - PAD_R);
+
+    // Fixed lane order from the engine map + any unknown bands appended
+    // (future scripts auto-land instead of vanishing).
+    const order = model.laneOrder.slice();
+    for (const n of model.nodes) if (order.indexOf(n.band) === -1) order.push(n.band);
+
+    let y = 64; // clear the floating app-pill
+    const bandsOut = [];
+    order.forEach(label => {
+      const members = model.nodes.filter(n => n.band === label)
+        .sort((a, b) => (a.date ?? 9e9) - (b.date ?? 9e9));
+      if (!members.length) return;
+      const rows = [];
+      members.forEach(n => {
+        n.x = n.date != null ? x(n.date) : W - PAD_R;
+        let r = rows.findIndex(last => n.x - last > 185);
+        if (r === -1) { rows.push(n.x); r = rows.length - 1; }
+        else rows[r] = n.x;
+        n.y = y + 22 + r * ROW_H;
+      });
+      const h = 22 + rows.length * ROW_H + BAND_PAD;
+      bandsOut.push({ label: label, y: y, h: h });
+      y += h;
+    });
+    return { W: W, H: y + 20, bands: bandsOut };
+  }
+
+  // Wheel-zoom (to cursor) + drag-pan + dblclick-reset.
+  function wireZoom(svg, W, H) {
+    const vb = { x: 0, y: 0, w: W, h: H };
+    const apply = () => svg.setAttribute('viewBox', vb.x + ' ' + vb.y + ' ' + vb.w + ' ' + vb.h);
+    apply();
+
+    svg.addEventListener('wheel', e => {
+      e.preventDefault();
+      const f = Math.exp(e.deltaY * 0.002);
+      const newW = Math.min(W * 1.25, Math.max(W / 10, vb.w * f));
+      const scale = newW / vb.w;
+      const r = svg.getBoundingClientRect();
+      if (!r.width || !r.height) return;               // degenerate guard
+      const cx = vb.x + ((e.clientX - r.left) / r.width) * vb.w;
+      const cy = vb.y + ((e.clientY - r.top) / r.height) * vb.h;
+      vb.x = cx - (cx - vb.x) * scale;
+      vb.y = cy - (cy - vb.y) * scale;
+      vb.w = newW; vb.h = vb.h * scale;
+      apply();
+    }, { passive: false });
+
+    let drag = null;
+    svg.addEventListener('pointerdown', e => {
+      if (e.target.closest('.alphabets-node')) return;
+      drag = { px: e.clientX, py: e.clientY, x: vb.x, y: vb.y };
+      svg.setPointerCapture(e.pointerId);
+      svg.classList.add('is-panning');
+    });
+    svg.addEventListener('pointermove', e => {
+      if (!drag) return;
+      const r = svg.getBoundingClientRect();
+      if (!r.width || !r.height) return;
+      vb.x = drag.x - (e.clientX - drag.px) * (vb.w / r.width);
+      vb.y = drag.y - (e.clientY - drag.py) * (vb.h / r.height);
+      apply();
+    });
+    const end = () => { drag = null; svg.classList.remove('is-panning'); };
+    svg.addEventListener('pointerup', end);
+    svg.addEventListener('pointercancel', end);
+    svg.addEventListener('dblclick', () => { vb.x = 0; vb.y = 0; vb.w = W; vb.h = H; apply(); });
+  }
+
+  function renderTree(stage) {
+    const model = buildModel();
+    if (!model) {
+      stage.innerHTML = '<div class="alphabets-empty">VAULT_DATA not loaded.</div>';
+      return;
+    }
+    const geo = layoutTree(model, stage.clientWidth || 1500);
+    const NS = 'http://www.w3.org/2000/svg';
+    const svg = document.createElementNS(NS, 'svg');
+    svg.setAttribute('class', 'alphabets-svg');
+    svg.setAttribute('preserveAspectRatio', 'xMidYMid meet');
+
+    geo.bands.forEach(b => {
+      const line = document.createElementNS(NS, 'line');
+      line.setAttribute('x1', 0); line.setAttribute('x2', geo.W);
+      line.setAttribute('y1', b.y); line.setAttribute('y2', b.y);
+      line.setAttribute('class', 'alphabets-band-line');
+      svg.appendChild(line);
+      const lab = document.createElementNS(NS, 'text');
+      lab.setAttribute('x', 14); lab.setAttribute('y', b.y + 16);
+      lab.setAttribute('class', 'alphabets-band-label');
+      lab.textContent = b.label;
+      svg.appendChild(lab);
+    });
+
+    model.edges.forEach(e => {
+      if (e.s.x == null || e.t.x == null) return;
+      const p = document.createElementNS(NS, 'path');
+      const mx = (e.s.x + e.t.x) / 2;
+      p.setAttribute('d', 'M' + e.s.x + ',' + e.s.y + ' C' + mx + ',' + e.s.y + ' ' + mx + ',' + e.t.y + ' ' + e.t.x + ',' + e.t.y);
+      p.setAttribute('class', 'alphabets-edge alphabets-edge-' + e.cls);
+      const ti = document.createElementNS(NS, 'title');
+      ti.textContent = e.s.title + ' — ' + e.type + ' → ' + e.t.title;
+      p.appendChild(ti);
+      svg.appendChild(p);
+    });
+
+    model.nodes.forEach(n => {
+      if (n.x == null) return;
+      const g = document.createElementNS(NS, 'g');
+      g.setAttribute('class', 'alphabets-node');
+      g.setAttribute('transform', 'translate(' + n.x + ',' + n.y + ')');
+      const c = document.createElementNS(NS, 'circle');
+      c.setAttribute('r', 6.5);
+      c.setAttribute('style', 'fill:' + n.color);
+      g.appendChild(c);
+      const t1 = document.createElementNS(NS, 'text');
+      t1.setAttribute('class', 'alphabets-node-name');
+      t1.setAttribute('x', 10); t1.setAttribute('y', 1);
+      t1.textContent = n.title;
+      g.appendChild(t1);
+      const t2 = document.createElementNS(NS, 'text');
+      t2.setAttribute('class', 'alphabets-node-date');
+      t2.setAttribute('x', 10); t2.setAttribute('y', 13);
+      t2.textContent = fmtDate(n.date);
+      g.appendChild(t2);
+      const ti = document.createElementNS(NS, 'title');
+      ti.textContent = n.full + '\n' + fmtDate(n.date);
+      g.appendChild(ti);
+      g.addEventListener('click', function () {
+        if (window.selectNode) window.selectNode(n.id, true);
+      });
+      svg.appendChild(g);
+    });
+
+    stage.appendChild(svg);
+    wireZoom(svg, geo.W, geo.H);
+
+    const hint = document.createElement('div');
+    hint.className = 'alphabets-hint';
+    hint.textContent = model.nodes.length + ' writing-systems · scroll = zoom · drag = pan · double-click = reset · solid = descent · dashed = sibling · dotted = influence · click a script → its node';
+    stage.appendChild(hint);
+  }
 
   // ════════════════════════════════════════════════════════════════
   // GLYPHS (the REAL alphabets; data = ALPHA_GLYPH_DATA)
@@ -219,7 +437,7 @@
       + '<div class="alphabets-exp-inv">'
       +   (g.investigationHighlight
           ? '<div class="alphabets-exp-invlabel">WHAT THE INVESTIGATION FOUND</div>'
-            + '<div class="alphabets-exp-invtext">' + esc(g.investigationHighlight) + '</div>'
+            + '<div class="alphabets-exp-invtext">' + esc(String(g.investigationHighlight).replace(/^\s*MASSIVE WIN\s*[—–-]\s*/i, '')) + '</div>'
             + (related ? '<div class="alphabets-exp-nodes">' + related + '</div>' : '')
           : '')
       + '</div>'
@@ -240,14 +458,25 @@
   }
 
   // ════════════════════════════════════════════════════════════════
-  // app-pill class API (same contract as _forge)
+  // Mode plumbing + app-pill class API (same contract as _forge)
   // ════════════════════════════════════════════════════════════════
+  function renderMode() {
+    if (!_pane) return;
+    _pane.classList.toggle('is-glyphs', _mode === 'glyphs');
+    _pane.classList.toggle('is-genealogy', _mode === 'genealogy');
+    const stage = _pane.querySelector('#alphabets-stage');
+    if (!stage) return;
+    stage.innerHTML = '';
+    if (_mode === 'genealogy') renderTree(stage);
+    else renderGlyphs(stage);
+  }
+
   function render(pane) {
     if (!pane) return;
     _pane = pane;
-    pane.classList.add('alphabets-pane', 'is-glyphs');
+    pane.classList.add('alphabets-pane');
     pane.innerHTML = '<div class="alphabets-stage" id="alphabets-stage"></div>';
-    renderGlyphs(pane.querySelector('#alphabets-stage'));
+    renderMode();
   }
 
   function unmount() { _pane = null; _expandedName = null; }
@@ -257,24 +486,21 @@
     unmount: unmount,
     supportedClasses: function () {
       return [
-        { value: 'glyphs',    label: 'Glyphs',              glyph: 'ℵ' },
+        { value: 'glyphs',    label: 'Glyphs',    glyph: 'ℵ' },
         { value: 'genealogy', label: 'Genealogy', glyph: '⌁' },
+        { value: 'timeline',  label: 'Timeline',  glyph: '⎯' },
       ];
     },
-    getClassFilter: function () { return 'glyphs'; },
+    getClassFilter: function () { return _mode; },
     setClassFilter: function (v) {
-      if (v === 'genealogy') {
-        // CANONICAL handoff — the genealogy IS the Forge engine's
-        // timeline scoped to the alphabet class (rule #9: one engine,
-        // many spreads). No bespoke graph here. Mirror the app-pill's
-        // master-click mechanism exactly: setView first, then defer a
-        // tick so the freshly-mounted _forge public API exists before
-        // setLayout/setClassFilter (the pill does the same).
+      if (v === 'timeline') {
+        // Canonical handoff — the engine TIMELINE scoped to the
+        // alphabet class ("KEEP this one as well — this one is a
+        // TIMELINE, that's it"). Mirror the app-pill's master-click
+        // mechanism: setView first, then poll until the freshly-
+        // mounted _forge public API acknowledges (a single deferred
+        // call can hit the OLD destroyed instance and no-op).
         try { window.setView('forge'); } catch (e) { /* not fatal */ }
-        // The fresh forge instance installs its public API during
-        // mount; a single deferred call can hit the OLD destroyed
-        // instance (setLayout then no-ops, returns false). Poll on
-        // the return value until the live instance acknowledges.
         let tries = 0;
         const apply = function () {
           tries++;
@@ -289,7 +515,10 @@
         setTimeout(apply, 0);
         return;
       }
-      // 'glyphs' is the only in-pane class.
+      if (v !== 'glyphs' && v !== 'genealogy') return;
+      _mode = v;
+      renderMode();
+      // the pill listens for this to refresh its class label
       try { document.dispatchEvent(new CustomEvent('codex:class-changed')); } catch (e) { /* ignore */ }
     },
   };
