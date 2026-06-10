@@ -28,19 +28,38 @@ ROOT = Path(__file__).resolve().parent.parent
 PORT = int(sys.argv[1]) if len(sys.argv) > 1 else 8742
 
 
+# Media/binary extensions are EXEMPT from no-store. Safari's media
+# loader fetches <video>/<audio> via Range requests and ABORTS the
+# load when those 206 responses carry no-store — the 2026-06-10
+# blanket no-store made the Forge zoom-out BG video vanish in Safari
+# while Chromium kept playing it. serve-node.js proved the working
+# configuration for weeks: no-store on code 200s, NO cache headers on
+# media ranges. These assets are immutable + ?v= cache-busted in the
+# HTML, so letting the browser cache them is correct (and stops the
+# 27 MB BG video re-downloading on every reload).
+MEDIA_EXT = {
+    ".mov", ".mp4", ".webm", ".m4v", ".mp3", ".m4a", ".wav", ".ogg",
+    ".jpg", ".jpeg", ".png", ".webp", ".gif", ".avif", ".ico",
+    ".woff", ".woff2", ".pmtiles",
+}
+
+
 class RangeRequestHandler(http.server.SimpleHTTPRequestHandler):
     def end_headers(self):
-        # 2026-06-10 — Cache-Control: no-store on EVERY response.
-        # serve.py sent no cache headers at all, so Safari disk-cached
-        # the whole build (index.html included) and served stale code
-        # indefinitely — the documented "edit isn't shipping" trap
-        # (feedback_server_hijack_and_safari_cache). Injecting here
+        # 2026-06-10 — Cache-Control: no-store on every CODE/DATA
+        # response. serve.py sent no cache headers at all, so Safari
+        # disk-cached the whole build (index.html included) and served
+        # stale code indefinitely — the documented "edit isn't shipping"
+        # trap (feedback_server_hijack_and_safari_cache). Injecting here
         # covers every path: the custom Range sender below AND the
         # stdlib directory/fallback senders, which all funnel through
-        # end_headers().
-        self.send_header("Cache-Control", "no-store")
-        self.send_header("Pragma", "no-cache")
-        self.send_header("Expires", "0")
+        # end_headers(). Media is exempt (MEDIA_EXT above) — no-store
+        # on media Range responses kills Safari playback.
+        ext = os.path.splitext(self.path.split("?", 1)[0])[1].lower()
+        if ext not in MEDIA_EXT:
+            self.send_header("Cache-Control", "no-store")
+            self.send_header("Pragma", "no-cache")
+            self.send_header("Expires", "0")
         super().end_headers()
 
     def do_GET(self):
