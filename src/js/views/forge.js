@@ -3119,7 +3119,9 @@
         lay = layout.timelineLayout(modeNodes, _tb ? _tb.order.slice() : _familyOrder, {
           colorOverride: _colorOverride,
           parkUndated:   true,
-          bandBy: _tb ? function (n) { return _tb.assign[n.id] || 'OTHER'; } : undefined,
+          // single source: the node's vault-declared field (script_family),
+          // mapped to a display lane via the mode's 7-token laneOf map.
+          bandBy: _tb ? function (n) { return _tb.laneOf[n[_tb.byField]] || 'OTHER'; } : undefined,
           // banded modes frame the DATA range (the genealogy view);
           // the main timeline keeps the spine-fixed framing.
           dataFit: !!_tb,

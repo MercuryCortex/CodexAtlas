@@ -24,12 +24,14 @@
   // ── ALPHABETS timeline lanes (2026-06-10, rule #9) ────────────
   // The TIMELINE layout's Y-banding is a swappable input (opts.bandBy,
   // timeline.js). For the Alphabets class the lanes are WRITING-SYSTEM
-  // families — the script-genealogy view John asked for — instead of
-  // tradition families (Phoenician sits under "Canaanite" etc., which
-  // scatters the descent story). Slug→lane map is the sanctioned
-  // interim per AUDIT/2026-06-10-alphabets-page-plan.md §3.2; the
-  // ratified long-term home is a `script-family:` YAML field on the
-  // 11_alphabets nodes (Lane-A backlog).
+  // families — instead of tradition families (Phoenician sits under
+  // "Canaanite" etc., which scatters the descent story).
+  //
+  // 2026-06-10 (later) — SINGLE SOURCE: every 11_alphabets node now
+  // carries a `script-family:` YAML field (7-token vocab; Lane-A batch
+  // 242cac45), emitted by build_data.py as `n.script_family`. The
+  // interim 47-slug map is DELETED (rule #10 — two sources of truth);
+  // this entry only maps the 7 vocab tokens to display-lane labels.
   const ALPHABET_TIMELINE_BANDS = Object.freeze({
     order: Object.freeze([
       'ORIGINS & UNDECIPHERED',
@@ -40,49 +42,15 @@
       'AMERICAS & PACIFIC',
       'LETTER MYSTICISM & FINDINGS',
     ]),
-    assign: Object.freeze({
-      'alphabet-cuneiform-sacred': 'ORIGINS & UNDECIPHERED',
-      'alphabet-medu-netjer': 'ORIGINS & UNDECIPHERED',
-      'alphabet-indus-valley-script': 'ORIGINS & UNDECIPHERED',
-      'alphabet-proto-elamite': 'ORIGINS & UNDECIPHERED',
-      'alphabet-linear-a': 'ORIGINS & UNDECIPHERED',
-      'alphabet-proto-sinaitic': 'SEMITIC LINE',
-      'alphabet-ugaritic': 'SEMITIC LINE',
-      'alphabet-phoenician': 'SEMITIC LINE',
-      'alphabet-hebrew-aleph-bet': 'SEMITIC LINE',
-      'alphabet-aramaic': 'SEMITIC LINE',
-      'alphabet-syriac': 'SEMITIC LINE',
-      'alphabet-south-arabian': 'SEMITIC LINE',
-      'alphabet-geez-ethiopic': 'SEMITIC LINE',
-      'alphabet-greek-vowel-revolution': 'GREEK → EUROPE',
-      'alphabet-latin': 'GREEK → EUROPE',
-      'alphabet-coptic': 'GREEK → EUROPE',
-      'alphabet-glagolitic-cyrillic': 'GREEK → EUROPE',
-      'alphabet-elder-futhark': 'GREEK → EUROPE',
-      'alphabet-ogham': 'GREEK → EUROPE',
-      'alphabet-armenian': 'GREEK → EUROPE',
-      'alphabet-georgian': 'GREEK → EUROPE',
-      'alphabet-arabic-quran': 'ARAMAIC → ARABIC & PERSIA',
-      'alphabet-arabic-calligraphy': 'ARAMAIC → ARABIC & PERSIA',
-      'alphabet-quran-sacred-language': 'ARAMAIC → ARABIC & PERSIA',
-      'alphabet-huruf-muqattaat': 'ARAMAIC → ARABIC & PERSIA',
-      'alphabet-avestan': 'ARAMAIC → ARABIC & PERSIA',
-      'alphabet-brahmi-origin': 'ASIA',
-      'alphabet-devanagari-sacred': 'ASIA',
-      'alphabet-tibetan-tantric': 'ASIA',
-      'alphabet-chinese-oracle-bones': 'ASIA',
-      'alphabet-hangul': 'ASIA',
-      'alphabet-mayan-glyphs': 'AMERICAS & PACIFIC',
-      'alphabet-cherokee': 'AMERICAS & PACIFIC',
-      'alphabet-rongorongo': 'AMERICAS & PACIFIC',
-      'alphabet-creation-by-word': 'LETTER MYSTICISM & FINDINGS',
-      'alphabet-letter-as-cosmos': 'LETTER MYSTICISM & FINDINGS',
-      'alphabet-sacred-language-convergence': 'LETTER MYSTICISM & FINDINGS',
-      'alphabet-isopsephy-greek': 'LETTER MYSTICISM & FINDINGS',
-      'alphabet-gematria-hebrew': 'LETTER MYSTICISM & FINDINGS',
-      'alphabet-sefer-yetzirah': 'LETTER MYSTICISM & FINDINGS',
-      'alphabet-ilm-al-huruf': 'LETTER MYSTICISM & FINDINGS',
-      'alphabet-masoretes': 'LETTER MYSTICISM & FINDINGS',
+    byField: 'script_family',
+    laneOf: Object.freeze({
+      'origins-undeciphered':   'ORIGINS & UNDECIPHERED',
+      'semitic':                'SEMITIC LINE',
+      'greek-european':         'GREEK → EUROPE',
+      'aramaic-arabic-persian': 'ARAMAIC → ARABIC & PERSIA',
+      'asian':                  'ASIA',
+      'americas-pacific':       'AMERICAS & PACIFIC',
+      'letter-mysticism':       'LETTER MYSTICISM & FINDINGS',
     }),
   });
 

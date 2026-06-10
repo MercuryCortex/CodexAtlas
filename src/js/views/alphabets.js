@@ -56,8 +56,8 @@
     const M = window.AtlasEngineMode;
     const entry = M && Array.isArray(M.MODES) ? M.MODES.find(m => m.value === 'alphabet') : null;
     const tb = entry && entry.timelineBands;
-    if (tb && tb.order && tb.assign) return tb;
-    return { order: ['WRITING SYSTEMS'], assign: {} };
+    if (tb && tb.order && tb.laneOf) return tb;
+    return { order: ['WRITING SYSTEMS'], byField: 'script_family', laneOf: {} };
   }
 
   const DESCENT_TYPES = {
@@ -82,7 +82,8 @@
       title: (n.title || n.id).split('—')[0].trim(),
       full: n.title || n.id,
       date: (n.date_earliest != null) ? n.date_earliest : null,
-      band: tb.assign[n.id] || 'OTHER',
+      // single source: the vault-declared script-family token → lane label
+      band: tb.laneOf[n[tb.byField || 'script_family']] || 'OTHER',
       color: n.family_color || 'var(--gold)',
     }));
     const byId = {};

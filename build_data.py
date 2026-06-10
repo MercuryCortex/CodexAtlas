@@ -1343,6 +1343,12 @@ def main():
                     "dating_basis_source": fm.get("dating-basis-source") or fm.get("dating_basis_source"),
                     "dating_basis_notes":  fm.get("dating-basis-notes") or fm.get("dating_basis_notes"),
                     "region": fm.get("region", ""),
+                    # 2026-06-10 — writing-system family (11_alphabets nodes;
+                    # 7-token vocab). The genealogy lanes (vertical page +
+                    # the engine TIMELINE bandBy) read THIS field — the vault
+                    # YAML is the single source; the per-slug lane map in
+                    # mode.js is deleted (rule #10).
+                    "script_family": fm.get("script-family") or fm.get("script_family") or "",
                     "language": fm.get("language", []),
                     "themes": fm.get("themes", []),
                     "domains": fm.get("domains", []),
