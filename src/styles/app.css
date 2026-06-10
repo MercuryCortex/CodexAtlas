@@ -10363,6 +10363,13 @@ body:not(.view-boards) .app-pill--boards { display: none !important; }
   border-radius: 12px;
   background: rgba(212,165,90,0.05);
 }
+/* 2026-06-10 — the card now lives INSIDE the letter grid, inserted
+ * right after the clicked cell as a full-width row (in-place expand;
+ * no scroll-to-top). */
+.alphabets-glyph-grid .alphabets-glyph-expanded {
+  grid-column: 1 / -1;
+  margin: 4px 0 6px;
+}
 .alphabets-exp-close {
   position: absolute; top: 8px; right: 10px;
   border: none; background: none;

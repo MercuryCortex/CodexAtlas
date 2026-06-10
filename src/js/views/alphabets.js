@@ -118,29 +118,45 @@
         + '</button>';
     }).join('') + '</div>';
 
-    stage.innerHTML = chips + latinNote + '<div class="alphabets-glyph-expand-slot"></div>' + grid
+    stage.innerHTML = chips + latinNote + grid
       + '<div class="alphabets-hint">' + rows.length + ' letters · lead script: ' + esc(_script) + ' · click a letter for its transmission chain</div>';
 
     stage.querySelectorAll('.alphabets-script-chip').forEach(b => {
       b.addEventListener('click', () => { _script = b.dataset.script; _expandedName = null; renderGlyphs(stage); });
     });
+    // 2026-06-10 — IN-PLACE expansion (John: "everytime i click it pushes
+    // me back to the top of the page losing my path"). The card inserts
+    // directly after the clicked cell as a full-width grid row — no grid
+    // re-render, no scroll reset.
+    function openCard(cell) {
+      const old = stage.querySelector('.alphabets-glyph-expanded');
+      if (old) old.remove();
+      stage.querySelectorAll('.alphabets-glyph-cell.is-open').forEach(c => c.classList.remove('is-open'));
+      const name = cell.dataset.name;
+      if (_expandedName === name) { _expandedName = null; return; }
+      const g = DATA.find(x => x.name === name);
+      if (!g) { _expandedName = null; return; }
+      _expandedName = name;
+      cell.classList.add('is-open');
+      const card = buildExpanded(g, () => { _expandedName = null; cell.classList.remove('is-open'); });
+      cell.insertAdjacentElement('afterend', card);
+      card.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+    }
     stage.querySelectorAll('.alphabets-glyph-cell').forEach(b => {
-      b.addEventListener('click', () => {
-        _expandedName = (_expandedName === b.dataset.name) ? null : b.dataset.name;
-        renderGlyphs(stage);
-        if (_expandedName) renderExpanded(stage, DATA.find(g => g.name === _expandedName));
-      });
+      b.addEventListener('click', () => openCard(b));
     });
+    // Restore a previously-open card (e.g. re-entering the view).
     if (_expandedName) {
-      const g = DATA.find(x => x.name === _expandedName);
-      if (g) renderExpanded(stage, g);
+      const cell = [...stage.querySelectorAll('.alphabets-glyph-cell')].find(c => c.dataset.name === _expandedName);
+      if (cell) { _expandedName = null; openCard(cell); }
+      else _expandedName = null;
     }
   }
 
-  function renderExpanded(stage, g) {
-    if (!g) return;
-    const slot = stage.querySelector('.alphabets-glyph-expand-slot');
-    if (!slot) return;
+  // Builds + RETURNS the expanded letter-card element. The caller inserts
+  // it directly after the clicked cell (full-width grid row) — in-place,
+  // no grid re-render, no scroll jump.
+  function buildExpanded(g, onClose) {
     const isHier = g.unicode != null && g.unicode >= 0x13000 && g.unicode <= 0x1342F;
     const isScriptOnly = !!(g.scriptOnly && g.scriptOnly.length);
     const safe = v => (!v || v === '(none)') ? '' : v;
@@ -176,7 +192,8 @@
       '<button type="button" class="alphabets-exp-node" data-id="' + esc(id) + '">' + esc(id.replace(/^alphabet-/, '').replace(/-/g, ' ')) + '</button>'
     ).join('');
 
-    slot.innerHTML =
+    const holder = document.createElement('div');
+    holder.innerHTML =
       '<div class="alphabets-glyph-expanded">'
       + '<button type="button" class="alphabets-exp-close" title="Close">✕</button>'
       + '<div class="alphabets-exp-letter">'
@@ -197,17 +214,18 @@
       + '</div>'
       + '</div>';
 
-    slot.querySelector('.alphabets-exp-close').addEventListener('click', () => {
-      _expandedName = null;
-      renderGlyphs(stage);
+    const card = holder.firstElementChild;
+    card.querySelector('.alphabets-exp-close').addEventListener('click', () => {
+      card.remove();
+      if (onClose) onClose();
     });
-    slot.querySelectorAll('.alphabets-exp-node[data-id]').forEach(chip => {
+    card.querySelectorAll('.alphabets-exp-node[data-id]').forEach(chip => {
       chip.addEventListener('click', e => {
         e.stopPropagation();
         if (window.selectNode) window.selectNode(chip.dataset.id, true);
       });
     });
-    slot.scrollIntoView({ block: 'nearest' });
+    return card;
   }
 
   // ════════════════════════════════════════════════════════════════
