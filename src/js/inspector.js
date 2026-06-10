@@ -42,6 +42,8 @@
   ));
 
   let _nodesById = null;
+  let _currentId = null;              // node currently shown (carousel nav re-renders)
+  const _thumbIdx = Object.create(null);   // per-node carousel index
   function nodesById() {
     if (_nodesById) return _nodesById;
     const map = new Map();
@@ -92,11 +94,18 @@
     transmission: 'Transmission', parallel: 'Parallel', association: 'Association',
     kinship: 'Kinship', attestation: 'Attestation', polemic: 'Polemic', fusion: 'Fusion',
   };
-  // Static bucket accents (mirrors the engine PARAM defaults closely
-  // enough for the shared look; the forge panel reads live params).
+  // Bucket accents = the ENGINE's PARAM_DEFAULTS active_color_* values
+  // (forge.js ~510) verbatim, so the inspector's wire pills wear the
+  // SAME colors as the Forge deity panel (John: "NOT THE SAME!!" —
+  // 2026-06-10). Keep in sync with PARAM_DEFAULTS if those change.
   const BUCKET_COLOR = {
-    transmission: '#d4a55a', parallel: '#5aaca8', association: '#8b93a6',
-    kinship: '#b07acc', attestation: '#6f9fd8', polemic: '#c44a5a', fusion: '#7ec47a',
+    transmission: '#5a4bd5',   // violet
+    parallel:     '#004093',   // deep blue
+    association:  '#097a8e',   // teal
+    kinship:      '#0f8f31',   // green
+    attestation:  '#9cad8c',   // sage
+    polemic:      '#710713',   // deep crimson
+    fusion:       '#725b3f',   // warm brown
   };
   // Mirrors side-panel.js TYPE_HUMAN (see header note).
   const TYPE_HUMAN = {
@@ -162,7 +171,7 @@
     return _docnodeToTextKey[docNodeId] || null;
   }
 
-  function renderBodyMd(raw) {
+  function renderBodyMd(raw, nodeTitle) {
     if (!raw) return '';
     // 2026-06-10 — consumer-facing language (John: internal jargon
     // "CANT HAPPEN, all this will be consumer facing"). Node bodies
@@ -170,6 +179,16 @@
     // them as plain findings. The vault text is untouched — the full
     // jargon-tagged corpus feeds the Investigation section.
     raw = raw.replace(/^(#{1,6})\s*MASSIVE[ -]WIN[S]?\b[^\n]*/gim, '$1 Cross-tradition findings');
+    // Drop a leading markdown heading that duplicates the node title
+    // (vault bodies start with `# <Title>`; the panel header already
+    // shows it — rendering both reads as the giant duplicated title).
+    if (nodeTitle) {
+      const norm = s => String(s).toLowerCase().replace(/[^a-z0-9]+/g, '');
+      const m = raw.match(/^\s*#{1,3}\s+([^\n]+)\n/);
+      if (m && norm(m[1]).slice(0, 40) === norm(nodeTitle).slice(0, 40)) {
+        raw = raw.slice(m.index + m[0].length);
+      }
+    }
     const withLinks = raw.replace(
       /\[\[([a-zA-Z0-9\-_]+)(?:\|([^\]]+))?\]\]/g,
       (m, slug, label) => {
@@ -233,6 +252,7 @@
     if (!inner) return;
     const node = nodesById().get(id);
     if (!node) { clear(); return; }
+    _currentId = id;
 
     const title = node.title || node.name || id;
     const tradition = node.tradition || node.family || '';
@@ -247,17 +267,36 @@
     const place = node.region || node.location || '';
     const domains = Array.isArray(node.domains) ? node.domains.join(', ') : '';
 
-    // ── thumb (first curated depiction, else the Wikipedia thumb) ──
-    const dep0 = (Array.isArray(node.depictions) && node.depictions[0]) || null;
-    const thumbSrc = (dep0 && (dep0.source || dep0.src)) || node.thumbnail || '';
-    const thumbCap = (dep0 && dep0.caption) || '';
-    const thumbAttr = (dep0 && dep0.attribution) || (node.thumbnail && !dep0 ? 'Wikipedia' : '');
-    const thumbHtml = thumbSrc
-      ? '<div class="forge-side-panel-thumb"><img src="' + safe(thumbSrc) + '" alt="' + safe(thumbCap || title) + '" />'
-        + ((thumbCap || thumbAttr)
+    // ── image carousel — same shape as the Forge panel (depictions[]
+    // + the Wikipedia thumb, deduped; arrows + index when >1) ──
+    const imageList = [];
+    const seenUrls = new Set();
+    for (const d of (Array.isArray(node.depictions) ? node.depictions : [])) {
+      const src0 = d && (d.source || d.src);
+      if (!src0 || seenUrls.has(src0)) continue;
+      seenUrls.add(src0);
+      imageList.push({ src: src0, caption: d.caption || '', attribution: d.attribution || '' });
+    }
+    if (node.thumbnail && !seenUrls.has(node.thumbnail)) {
+      imageList.push({ src: node.thumbnail, caption: '', attribution: 'Wikipedia' });
+    }
+    let thumbIdx = _thumbIdx[id] || 0;
+    if (thumbIdx >= imageList.length) thumbIdx = 0;
+    _thumbIdx[id] = thumbIdx;
+    const img = imageList[thumbIdx] || null;
+    const showArrows = imageList.length > 1;
+    const thumbHtml = img
+      ? '<div class="forge-side-panel-thumb' + (showArrows ? ' has-carousel' : '') + '">'
+        + '<img src="' + safe(img.src) + '" alt="' + safe(img.caption || title) + '" />'
+        + (showArrows
+            ? '<button class="forge-side-panel-thumb-prev" data-inspector-thumb="prev" aria-label="Previous image">‹</button>'
+            + '<button class="forge-side-panel-thumb-next" data-inspector-thumb="next" aria-label="Next image">›</button>'
+            : '')
+        + ((showArrows || img.caption || img.attribution)
             ? '<div class="forge-side-panel-thumb-meta">'
-              + (thumbCap ? '<div class="forge-side-panel-thumb-caption">' + safe(thumbCap) + '</div>' : '')
-              + (thumbAttr ? '<div class="forge-side-panel-thumb-attribution">' + safe(thumbAttr) + '</div>' : '')
+              + (img.caption ? '<div class="forge-side-panel-thumb-caption">' + safe(img.caption) + '</div>' : '')
+              + (img.attribution ? '<div class="forge-side-panel-thumb-attribution">' + safe(img.attribution) + '</div>' : '')
+              + (showArrows ? '<div class="forge-side-panel-thumb-index">' + (thumbIdx + 1) + ' / ' + imageList.length + '</div>' : '')
               + '</div>'
             : '')
         + '</div>'
@@ -352,7 +391,7 @@
         + '</ol>'
       : '';
 
-    const bodyHtml = renderBodyMd(bodyRaw);
+    const bodyHtml = renderBodyMd(bodyRaw, title);
     const readBtn = (node.type === 'document' && textKeyForDoc(id))
       ? '<button class="forge-side-panel-read-btn" data-inspector-read="' + safe(textKeyForDoc(id)) + '" type="button">✠ Open in reader</button>'
       : '';
@@ -376,6 +415,8 @@
       + '<dl class="forge-side-panel-meta">'
       + (dateStr ? '<dt>Date</dt><dd>' + safe(dateStr) + '</dd>' : '')
       + (dbLabel ? '<dt>Basis</dt><dd class="forge-side-panel-dating-basis">' + safe(dbLabel) + '</dd>' : '')
+      + (node.dating_basis_source ? '<dt>Source</dt><dd>' + safe(node.dating_basis_source) + '</dd>' : '')
+      + (node.dating_basis_notes ? '<dt>Notes</dt><dd class="forge-side-panel-dating-notes">' + safe(node.dating_basis_notes) + '</dd>' : '')
       + (place ? '<dt>Place</dt><dd>' + safe(place) + '</dd>' : '')
       + (domains ? '<dt>Domains</dt><dd>' + safe(domains) + '</dd>' : '')
       + '</dl>'
@@ -403,6 +444,19 @@
     if (jump) {
       e.preventDefault(); e.stopPropagation();
       show(jump.getAttribute('data-inspector-jump'));
+      return;
+    }
+    const thumbNav = e.target.closest('[data-inspector-thumb]');
+    if (thumbNav && _currentId) {
+      e.stopPropagation();
+      const dir = thumbNav.getAttribute('data-inspector-thumb');
+      const cur = _thumbIdx[_currentId] || 0;
+      _thumbIdx[_currentId] = cur + (dir === 'next' ? 1 : -1);
+      // show() clamps/wraps the index against the rebuilt image list
+      const n = nodesById().get(_currentId);
+      const imgs = ((n && Array.isArray(n.depictions)) ? n.depictions.length : 0) + ((n && n.thumbnail) ? 1 : 0);
+      if (_thumbIdx[_currentId] < 0) _thumbIdx[_currentId] = Math.max(0, imgs - 1);
+      show(_currentId);
       return;
     }
     const row = e.target.closest('[data-inspector-id]');

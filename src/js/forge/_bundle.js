@@ -1989,6 +1989,21 @@
       // the side-panel acts like the chart in click-through behavior.
       const renderBodyMd = (raw) => {
         if (!raw) return '';
+        // 2026-06-10 — consumer-language + title-dedup, SAME transforms as
+        // the canonical inspector (src/js/inspector.js) so the two panels
+        // render identically (John: "NOT THE SAME!!"):
+        // (a) internal '## MASSIVE WIN…' research headings display as
+        //     plain findings (vault text untouched);
+        // (b) a leading markdown heading that duplicates the node title is
+        //     dropped (the panel header already shows it).
+        raw = raw.replace(/^(#{1,6})\s*MASSIVE[ -]WIN[S]?\b[^\n]*/gim, '$1 Cross-tradition findings');
+        {
+          const norm = (s) => String(s).toLowerCase().replace(/[^a-z0-9]+/g, '');
+          const m = raw.match(/^\s*#{1,3}\s+([^\n]+)\n/);
+          if (m && norm(m[1]).slice(0, 40) === norm(title).slice(0, 40)) {
+            raw = raw.slice(m.index + m[0].length);
+          }
+        }
         // Rewrite [[slug]] / [[slug|display]] → click-jump buttons (in-mode
         // only — out-of-mode targets become inert spans so the panel doesn't
         // promise a navigation that won't fire).
