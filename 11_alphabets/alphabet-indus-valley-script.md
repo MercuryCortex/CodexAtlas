@@ -2,6 +2,7 @@
 id: alphabet-indus-valley-script
 title: "Indus Valley Script — The Greatest Unsolved Mystery in the History of Writing"
 type: alphabet
+script-family: origins-undeciphered
 alphabet-type: script
 status: full
 tier: 1

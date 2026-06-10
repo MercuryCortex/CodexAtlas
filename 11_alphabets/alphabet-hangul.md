@@ -1,5 +1,6 @@
 ---
 type: alphabet
+script-family: asian
 id: "alphabet-hangul"
 title: "Hangul — The Alphabet as Act of Social Justice"
 alphabet-type: featural

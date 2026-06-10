@@ -2,6 +2,7 @@
 id: alphabet-letter-as-cosmos
 title: "The Letter IS the Thing — Alphabets as Cosmological Blueprints"
 type: alphabet
+script-family: letter-mysticism
 alphabet-type: synthesis
 status: full
 tier: 1

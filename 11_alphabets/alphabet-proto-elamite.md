@@ -1,5 +1,6 @@
 ---
 type: alphabet
+script-family: origins-undeciphered
 id: "alphabet-proto-elamite"
 title: "Proto-Elamite"
 alphabet-type: undecoded

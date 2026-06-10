@@ -1,5 +1,6 @@
 ---
 type: alphabet
+script-family: greek-european
 id: "alphabet-armenian"
 title: "Armenian Alphabet — The Script That Survived a Genocide"
 alphabet-type: invented-missionary

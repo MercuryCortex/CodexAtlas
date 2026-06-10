@@ -2,6 +2,7 @@
 id: "alphabet-greek-vowel-revolution"
 title: "Greek Alphabet — The Vowel Revolution"
 type: alphabet
+script-family: greek-european
 alphabet-type: true-alphabet
 status: full
 tier: 1

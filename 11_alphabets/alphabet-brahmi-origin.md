@@ -2,6 +2,7 @@
 id: alphabet-brahmi-origin
 title: "Brahmi — The Most Consequential Disputed Origin in Writing History"
 type: alphabet
+script-family: asian
 alphabet-type: script
 status: full
 tier: 1

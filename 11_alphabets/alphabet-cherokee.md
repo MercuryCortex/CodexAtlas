@@ -1,5 +1,6 @@
 ---
 type: alphabet
+script-family: americas-pacific
 id: "alphabet-cherokee"
 title: "Cherokee Syllabary — One Man Invents Writing in a Decade"
 alphabet-type: syllabary

@@ -2,6 +2,7 @@
 id: alphabet-geez-ethiopic
 title: "Ge'ez (Ethiopic) Script — The Abugida That Saved 1 Enoch"
 type: alphabet
+script-family: semitic
 alphabet-type: abugida
 status: full
 tier: 1

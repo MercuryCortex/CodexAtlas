@@ -2,6 +2,7 @@
 id: alphabet-syriac
 title: "Syriac — The Aramaic Dialect That Carried Christianity to China"
 type: alphabet
+script-family: semitic
 alphabet-type: abjad
 date-earliest: 100
 date-latest: 2026

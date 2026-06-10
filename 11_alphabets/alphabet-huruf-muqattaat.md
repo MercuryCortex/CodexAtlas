@@ -2,6 +2,7 @@
 id: alphabet-huruf-muqattaat
 title: "Huruf al-Muqatta'at — The Mysterious Letters of the Quran"
 type: alphabet
+script-family: aramaic-arabic-persian
 alphabet-type: mysticism
 status: full
 tier: 1

@@ -2,6 +2,7 @@
 id: alphabet-sacred-language-convergence
 title: "Sacred Language Preservation — Six Traditions, Same Response"
 type: alphabet
+script-family: letter-mysticism
 alphabet-type: convergence-pattern
 status: full
 tier: 1

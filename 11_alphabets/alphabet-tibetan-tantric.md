@@ -2,6 +2,7 @@
 id: alphabet-tibetan-tantric
 title: "Tibetan Script — Seed Syllables, OM, and the Letter as Deity"
 type: alphabet
+script-family: asian
 alphabet-type: sacred-language
 status: full
 tier: 1

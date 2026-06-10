@@ -1,5 +1,6 @@
 ---
 type: alphabet
+script-family: origins-undeciphered
 id: "alphabet-linear-a"
 title: "Linear A"
 alphabet-type: undecoded

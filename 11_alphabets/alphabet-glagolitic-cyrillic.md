@@ -1,5 +1,6 @@
 ---
 type: alphabet
+script-family: greek-european
 id: "alphabet-glagolitic-cyrillic"
 title: "Glagolitic & Cyrillic — The Alphabet as Geopolitical Weapon"
 alphabet-type: invented-missionary

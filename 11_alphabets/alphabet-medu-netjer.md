@@ -2,6 +2,7 @@
 id: alphabet-medu-netjer
 title: "Medu Netjer — Egyptian Hieroglyphs as 'Words of God'"
 type: alphabet
+script-family: origins-undeciphered
 alphabet-type: script
 status: full
 tier: 1

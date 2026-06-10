@@ -2,6 +2,7 @@
 id: alphabet-avestan
 title: "Avestan Script — The First Alphabet Created for a Religion"
 type: alphabet
+script-family: aramaic-arabic-persian
 alphabet-type: sacred-language
 status: full
 tier: 1

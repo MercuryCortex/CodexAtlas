@@ -2,6 +2,7 @@
 id: alphabet-sefer-yetzirah
 title: "Sefer Yetzirah — Letters as the Materials of Creation"
 type: alphabet
+script-family: letter-mysticism
 alphabet-type: mysticism
 status: full
 tier: 1

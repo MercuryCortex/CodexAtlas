@@ -2,6 +2,7 @@
 id: alphabet-arabic-quran
 title: "Arabic Alphabet in the Quran — The Script as Sacred Object"
 type: alphabet
+script-family: aramaic-arabic-persian
 alphabet-type: abjad
 status: full
 tier: 1

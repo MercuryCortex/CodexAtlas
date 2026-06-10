@@ -2,6 +2,7 @@
 id: alphabet-devanagari-sacred
 title: "Devanagari — 'City of the Gods' Script"
 type: alphabet
+script-family: asian
 alphabet-type: sacred-language
 status: full
 tier: 1

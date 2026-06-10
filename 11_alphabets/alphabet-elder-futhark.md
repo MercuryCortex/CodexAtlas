@@ -2,6 +2,7 @@
 id: alphabet-elder-futhark
 title: "Elder Futhark — Runes and the Operative Theory of Writing"
 type: alphabet
+script-family: greek-european
 alphabet-type: script
 status: full
 tier: 1

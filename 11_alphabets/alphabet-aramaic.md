@@ -2,6 +2,7 @@
 id: alphabet-aramaic
 title: "Aramaic — The Language Everyone Has Heard But No One Knows They've Heard"
 type: alphabet
+script-family: semitic
 alphabet-type: abjad
 date-earliest: -800
 date-latest: 2026

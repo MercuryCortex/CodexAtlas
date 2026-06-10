@@ -1,5 +1,6 @@
 ---
 type: alphabet
+script-family: greek-european
 id: "alphabet-georgian"
 title: "Georgian Alphabet — Three Scripts, One Nation, 1,600 Years"
 alphabet-type: invented-missionary

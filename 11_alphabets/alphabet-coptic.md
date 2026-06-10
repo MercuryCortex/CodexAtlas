@@ -2,6 +2,7 @@
 id: alphabet-coptic
 title: "Coptic — The Death and Afterlife of Egyptian Sacred Writing"
 type: alphabet
+script-family: greek-european
 alphabet-type: script
 status: full
 tier: 1

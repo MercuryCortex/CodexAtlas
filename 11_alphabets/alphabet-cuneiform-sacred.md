@@ -2,6 +2,7 @@
 id: alphabet-cuneiform-sacred
 title: "Cuneiform — Writing as Sacred Temple Technology"
 type: alphabet
+script-family: origins-undeciphered
 alphabet-type: script
 status: full
 tier: 1

@@ -2,6 +2,7 @@
 id: alphabet-mayan-glyphs
 title: "Mayan Glyphs — The Americas' Only Fully Deciphered Writing System"
 type: alphabet
+script-family: americas-pacific
 alphabet-type: script
 status: full
 tier: 1

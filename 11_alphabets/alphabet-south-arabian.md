@@ -2,6 +2,7 @@
 id: alphabet-south-arabian
 title: "Epigraphic South Arabian — The Fork That Proves Proto-Sinaitic"
 type: alphabet
+script-family: semitic
 alphabet-type: abjad
 status: full
 tier: 1

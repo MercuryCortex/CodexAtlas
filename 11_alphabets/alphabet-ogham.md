@@ -2,6 +2,7 @@
 id: alphabet-ogham
 title: "Ogham — Celtic Tree-Alphabet and Acrophonic Double"
 type: alphabet
+script-family: greek-european
 alphabet-type: script
 status: full
 tier: 1

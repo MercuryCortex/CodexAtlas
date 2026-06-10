@@ -1,5 +1,6 @@
 ---
 type: alphabet
+script-family: americas-pacific
 id: "alphabet-rongorongo"
 title: "Rongorongo"
 alphabet-type: undecoded

@@ -2,6 +2,7 @@
 id: alphabet-chinese-oracle-bones
 title: "Chinese Oracle-Bone Script — Divination as the Origin of Chinese Writing"
 type: alphabet
+script-family: asian
 alphabet-type: script
 status: full
 tier: 1

@@ -2,6 +2,7 @@
 id: alphabet-ilm-al-huruf
 title: "'Ilm al-Huruf — The Islamic Science of Letters"
 type: alphabet
+script-family: letter-mysticism
 alphabet-type: mysticism
 status: full
 tier: 1

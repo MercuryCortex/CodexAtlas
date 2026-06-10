@@ -2,6 +2,7 @@
 id: alphabet-quran-sacred-language
 title: "The Quran as Sacred Language — Arabic as Divinely Chosen Tongue"
 type: alphabet
+script-family: aramaic-arabic-persian
 alphabet-type: theology
 status: full
 tier: 1

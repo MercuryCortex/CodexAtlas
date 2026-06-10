@@ -2,6 +2,7 @@
 id: "alphabet-latin"
 title: "Latin Alphabet — Western Greek via Etruscan"
 type: alphabet
+script-family: greek-european
 alphabet-type: true-alphabet
 status: full
 tier: 1

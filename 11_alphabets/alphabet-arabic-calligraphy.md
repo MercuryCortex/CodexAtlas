@@ -2,6 +2,7 @@
 id: alphabet-arabic-calligraphy
 title: "Arabic Calligraphy — The Geometry of the Divine Name"
 type: alphabet
+script-family: aramaic-arabic-persian
 alphabet-type: calligraphic-tradition
 status: full
 tier: 1

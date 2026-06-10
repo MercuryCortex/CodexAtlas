@@ -2,6 +2,7 @@
 id: alphabet-proto-sinaitic
 title: "Proto-Sinaitic — The First Alphabet"
 type: alphabet
+script-family: semitic
 alphabet-type: script
 status: full
 tier: 1

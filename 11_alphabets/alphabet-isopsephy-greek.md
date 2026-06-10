@@ -2,6 +2,7 @@
 id: alphabet-isopsephy-greek
 title: "Isopsephy — Greek Letter-Number Mysticism and the Phoenician Legacy"
 type: alphabet
+script-family: letter-mysticism
 alphabet-type: mysticism
 status: full
 tier: 1

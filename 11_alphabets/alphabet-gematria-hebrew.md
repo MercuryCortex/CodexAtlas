@@ -2,6 +2,7 @@
 id: alphabet-gematria-hebrew
 title: "Gematria — The Torah as Encoded Mathematics"
 type: alphabet
+script-family: letter-mysticism
 alphabet-type: mysticism
 status: full
 tier: 1

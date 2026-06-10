@@ -2,6 +2,7 @@
 id: alphabet-hebrew-aleph-bet
 title: "Hebrew Aleph-Bet — 22 Letters That Became the Architecture of the Universe"
 type: alphabet
+script-family: semitic
 alphabet-type: consonantal-abjad
 status: full
 tier: 1

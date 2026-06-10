@@ -2,6 +2,7 @@
 id: alphabet-creation-by-word
 title: "Creation by Word — Seven-Tradition Convergence"
 type: alphabet
+script-family: letter-mysticism
 alphabet-type: convergence-pattern
 status: full
 tier: 1

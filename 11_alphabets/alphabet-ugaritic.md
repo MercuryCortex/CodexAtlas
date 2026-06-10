@@ -2,6 +2,7 @@
 id: alphabet-ugaritic
 title: "Ugaritic Alphabetic Cuneiform — The Bridge Script"
 type: alphabet
+script-family: semitic
 alphabet-type: script
 status: full
 tier: 1

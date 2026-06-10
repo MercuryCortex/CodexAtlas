@@ -2,6 +2,7 @@
 id: alphabet-phoenician
 title: "Phoenician Alphabet — The Mother of All Western Scripts"
 type: alphabet
+script-family: semitic
 alphabet-type: script
 status: full
 tier: 1

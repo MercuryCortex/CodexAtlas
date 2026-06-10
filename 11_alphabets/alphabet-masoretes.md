@@ -2,6 +2,7 @@
 id: alphabet-masoretes
 title: "The Masoretes — The People Who Gave the Bible Its Vowels"
 type: alphabet
+script-family: letter-mysticism
 alphabet-type: vocalization-system
 status: full
 tier: 1
