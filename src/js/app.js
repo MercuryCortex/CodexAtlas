@@ -539,7 +539,11 @@ function setView(name) {
   if (window._alphabetsView && typeof window._alphabetsView.unmount === 'function') {
     try { window._alphabetsView.unmount(); } catch (e) { /* ignore */ }
   }
-  document.querySelectorAll('.boards-pane, .boards-bottombar, .alphabets-pane').forEach(el => el.remove());
+  // 2026-06-10 — Investigation pane teardown, symmetric with Alphabets.
+  if (window._investigationView && typeof window._investigationView.unmount === 'function') {
+    try { window._investigationView.unmount(); } catch (e) { /* ignore */ }
+  }
+  document.querySelectorAll('.boards-pane, .boards-bottombar, .alphabets-pane, .investigation-pane').forEach(el => el.remove());
   // ── HASH ROUTER (push view change) ────────────────────────────────
   // On a true view change, pushState so the back button moves between
   // views. Re-renders of the same view use replaceState (or nothing) so
@@ -1343,6 +1347,24 @@ VIEWS.alphabets = {
     const svgEl = document.getElementById('svg');
     if (svgEl) svgEl.style.display = 'none';
     if (window._alphabetsView) window._alphabetsView.render(pane);
+  },
+};
+// 2026-06-10 — INVESTIGATION Section: the consumer-facing findings page
+// (every documented cross-tradition finding, searchable). Same app-shell
+// contract as maps/starmap/alphabets; module owns chrome + data loading.
+VIEWS.investigation = {
+  title: 'Investigation',
+  subtitle: 'what the record shows — every documented finding, with its evidence',
+  render() {
+    {const _vc = document.getElementById('view-controls'); if (_vc) _vc.innerHTML = ''; }
+    if (typeof legend !== 'undefined' && legend) legend.style('display', 'none').html('');
+    const canvasEl = document.getElementById('canvas');
+    const pane = document.createElement('div');
+    pane.className = 'investigation-pane';
+    canvasEl.appendChild(pane);
+    const svgEl = document.getElementById('svg');
+    if (svgEl) svgEl.style.display = 'none';
+    if (window._investigationView) window._investigationView.render(pane);
   },
 };
 

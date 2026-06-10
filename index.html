@@ -237,6 +237,10 @@
 <!-- ALPHABETS V2 Section (2026-06-10) — writing-system genealogy;
      master-pill 5→6 per AUDIT/2026-06-10-alphabets-page-plan.md. -->
 <script src="src/js/views/alphabets.js?v=20260610-yaml-lanes"></script>
+<!-- INVESTIGATION V2 Section (2026-06-10) — the consumer findings page;
+     data = src/data/investigation-index.json (module fetches it itself,
+     regenerate via scripts/build_investigation_index.py). -->
+<script src="src/js/views/investigation.js?v=20260610-investigation-v1"></script>
 
 <script src="src/js/graph/theme.js?v=20260517-handoff"></script>
 <script src="src/js/graph/layout.js?v=20260517-handoff"></script>
@@ -254,11 +258,11 @@
      window.selectNode for every non-Forge surface; replaces the deleted
      V01 renderDetail(). Loads BEFORE app.js (boot-race rule). -->
 <script src="src/js/inspector.js?v=20260610-consumer-language"></script>
-<script src="src/js/app.js?v=20260610-052819"></script>
+<script src="src/js/app.js?v=20260610-investigation-v1"></script>
 <!-- Phase 22-B (2026-05-23) — app-shell top-bar pill wiring.
      Loads AFTER app.js so window.STATE + window.setView are defined.
      Self-installing IIFE; exposes window._appPill for debug. -->
-<script src="src/js/app-pill.js?v=20260610-glyphs-class"></script>
+<script src="src/js/app-pill.js?v=20260610-investigation-v1"></script>
 <!-- ✦ User menu (account drawer) — rebuilt V2-native 2026-05-28.
      Dev Overview entry added 2026-05-29. -->
 <script src="src/js/user-menu.js?v=20260529-dev-overview-v1"></script>

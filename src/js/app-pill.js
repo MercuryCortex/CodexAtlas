@@ -66,6 +66,10 @@
     // ratified N1 per AUDIT/2026-06-10-alphabets-page-plan.md): a
     // first-class Section like ATLAS/TIMELINE, all writing-systems.
     { id: 'alphabets', target: 'alphabets',                          icon: 'ℵ', label: 'ALPHABETS' },
+    // 2026-06-10 — INVESTIGATION Section (John: "all massive wins and
+    // STUFF we learn must come to a PAGE section called Investigation").
+    // The consumer-facing findings page; 1,252 harvested findings.
+    { id: 'investigation', target: 'investigation',                  icon: '◈', label: 'INVESTIGATION' },
   ];
 
   // Reverse lookup: (STATE.view, _forge.getLayout()) → master view entry.
