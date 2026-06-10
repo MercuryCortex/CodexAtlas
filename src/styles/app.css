@@ -10546,9 +10546,16 @@ body.view-starmap .tier-legend { display: none !important; }
   padding-top: 14px;
   border-top: 1px solid rgba(212,165,90,0.10);
   color: var(--text-1, #d6d2c4);
-  font-size: 12px;
-  line-height: 1.55;
+  /* 2026-06-10 — prose reads SANS. The content wrapper (line ~7827)
+     forces var(--mono) on the whole panel — right for the chrome
+     (labels/meta/pills), wrong for long node bodies, which rendered
+     as a terminal wall and read as "the old prototype panel" (John).
+     Body + refs override back to the app's reading face. */
+  font-family: var(--sans, "Inter", -apple-system, sans-serif);
+  font-size: 12.5px;
+  line-height: 1.62;
 }
+.forge-side-panel-refs { font-family: var(--sans, "Inter", -apple-system, sans-serif); }
 .forge-side-panel-body h1,
 .forge-side-panel-body h2,
 .forge-side-panel-body h3,
