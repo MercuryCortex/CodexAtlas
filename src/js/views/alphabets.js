@@ -325,7 +325,7 @@
     // the pill: the canonical TIMELINE scoped to alphabets with the
     // writing-system lanes.
     const chips = '<div class="alphabets-script-row">'
-      + '<button type="button" class="alphabets-script-chip alphabets-genealogy-chip" data-genealogy="1" title="The writing-system genealogy — every script on the canonical timeline">⌁ GENEALOGY TIMELINE</button>'
+      + '<button type="button" class="alphabets-script-chip alphabets-genealogy-chip" data-genealogy="1" title="The writing-system genealogy — the vertical descent map of every script">⌁ GENEALOGY</button>'
       + '<span class="alphabets-script-sep" aria-hidden="true"></span>'
       + SCRIPTS.map(s =>
       '<button type="button" class="alphabets-script-chip' + (s.id === _script ? ' is-active' : '') + '" data-script="' + s.id + '">' + s.label + '</button>'
@@ -496,44 +496,26 @@
   window._alphabetsView = {
     render: render,
     unmount: unmount,
+    // 2026-06-13 — THE LEFT-PICK IS A LOCK (John): "when you LOCK on
+    // the left option it only filters to the right, DOESN'T go back."
+    // The right side of a Section NEVER navigates out of it. The
+    // 'Timeline' class was REMOVED here for two violations at once:
+    // it jumped the master (ALPHABETS → TIMELINE), and it duplicated
+    // a page that already exists at TIMELINE → Alphabets/Languages
+    // ("if there's a page that is the same then it's a problem").
+    // ALPHABETS carries only its own surfaces: Glyphs + Genealogy,
+    // both rendered INSIDE this Section. GENEALOGY history: the
+    // engine-cascade replacement (ac911420) failed John's sight test
+    // ("2 Timelines?") — the bespoke vertical page is the surface,
+    // owner-ratified twice; see the banner above renderTree().
     supportedClasses: function () {
       return [
         { value: 'glyphs',    label: 'Glyphs',    glyph: 'ℵ' },
         { value: 'genealogy', label: 'Genealogy', glyph: '⌁' },
-        { value: 'timeline',  label: 'Timeline',  glyph: '⎯' },
       ];
     },
     getClassFilter: function () { return _mode; },
     setClassFilter: function (v) {
-      if (v === 'timeline') {
-        // Canonical handoff — the engine TIMELINE scoped to the
-        // alphabet class. NOTE 2026-06-13: GENEALOGY was briefly
-        // routed here too (engine cascade layout, commit ac911420)
-        // and FAILED John's sight test — "the Page that i loved of
-        // the languages in vertical, disappeared? now i got 2
-        // Timelines?" The engine cascade renders as a second
-        // horizontal timeline, not the vertical page. GENEALOGY is
-        // the bespoke page again (owner-ratified TWICE now); the
-        // engine 'genealogy' layout remains engine infra. Any future
-        // engine replacement must reproduce the PAGE look (portrait
-        // descent flow, no timeline chrome) and pass John's eye
-        // BEFORE rerouting this class.
-        const targetLayout = v;
-        try { window.setView('forge'); } catch (e) { /* not fatal */ }
-        let tries = 0;
-        const apply = function () {
-          tries++;
-          const f = window._forge;
-          let ok = false;
-          try {
-            ok = !!(f && typeof f.setLayout === 'function' && f.setLayout(targetLayout) === true);
-            if (ok && typeof f.setClassFilter === 'function') f.setClassFilter('alphabet');
-          } catch (e) { ok = false; }
-          if (!ok && tries < 30) setTimeout(apply, 100);
-        };
-        setTimeout(apply, 0);
-        return;
-      }
       if (v !== 'glyphs' && v !== 'genealogy') return;
       _mode = v;
       renderMode();
