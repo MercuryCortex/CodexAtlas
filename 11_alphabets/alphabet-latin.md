@@ -35,6 +35,7 @@ The Latin script — with its characteristic C, G, Q forms that differ from East
 
 ## Connections
 
+- Principal languages written: [[language-latin-classical]] + [[language-latin-ecclesiastical]]; as the manuscript script of northern Europe it also carries [[language-old-norse]] and [[language-old-irish]]
 - Parent: [[alphabet-greek-vowel-revolution]] — Western Greek is the source, via Etruscan intermediary
 - Grandparent: [[alphabet-phoenician]] — the ultimate Semitic ancestor
 - Etruscan intermediary: undercovered in vault — Etruscan is partially deciphered (sounds known, language largely untranslated); a candidate for a dedicated node

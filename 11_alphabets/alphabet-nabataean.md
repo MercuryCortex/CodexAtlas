@@ -100,6 +100,7 @@ Phoenician (c. -1050)
 
 ## Connections
 
+- Principal language written: [[language-nabataean-aramaic]] — Aramaic of record over spoken Arabic: the diglossia inside which the Arabic letterforms emerged
 - Parent script: [[alphabet-aramaic]] — Nabataean is a cursive daughter of the Achaemenid chancellery script
 - Child script: [[alphabet-arabic-quran]] — the Arabic alphabet is Nabataean cursive carried to completion; [[alphabet-arabic-calligraphy]] elevates the inherited connected-letter aesthetic to sacred art
 - Sibling: [[alphabet-syriac]] — the other great Aramaic cursive; the rejected former candidate for Arabic's parent

@@ -60,6 +60,7 @@ After Cyrillic replaced it in most Slavic territories, Glagolitic survived uniqu
 
 ## Connections
 
+- The language it was created for: [[language-old-church-slavonic]] — the Cyril-Methodian scriptural project
 - [[alphabet-phoenician]] — Cyrillic is structurally "Greek + Glagolitic supplement"; Greek descends from Phoenician; the alphabet transmission chain (Egyptian hieroglyphs → Proto-Sinaitic → Phoenician → Greek → Cyrillic) runs through the brothers' work
 - [[alphabet-sacred-language-convergence]] — Old Church Slavonic as the fifth attested case of a sacred language whose divine validity was politically contested
 - [[tradition-eastern-orthodoxy]] — the Glagolitic/Cyrillic mission is one of the foundational acts of Eastern Orthodox missionary theology

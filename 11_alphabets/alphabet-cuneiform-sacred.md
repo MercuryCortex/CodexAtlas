@@ -101,6 +101,7 @@ This is the same institutional context that produced [[music-mesopotamian-temple
 
 ## Connections
 
+- Principal languages written: [[language-sumerian]] (the inventors), [[language-akkadian]], [[language-hittite]] — plus the alphabetic offshoot language at [[language-ugaritic]]
 - Scribal deity: [[nabu]] (Babylonian patron of writing) — parallel to [[thoth]] and [[hermes-trismegistus]]
 - Downstream writing systems: [[alphabet-ugaritic]] (cuneiform-medium alphabet); [[alphabet-medu-netjer]] (parallel independent invention)
 - Literary tradition: Gilgamesh Epic, Enuma Elish, Inanna hymns — all cuneiform corpus

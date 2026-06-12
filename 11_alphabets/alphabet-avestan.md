@@ -118,6 +118,7 @@ The Avestan script and the Zoroastrian sound theology are two sides of the same 
 
 ## Connections
 
+- The languages it was built to fix: [[language-old-avestan]] + [[language-younger-avestan]] — the orally-preserved Zoroastrian liturgical corpus
 - Zoroastrian tradition: [[tradition-zoroastrianism]]
 - Persian-Zoroastrian context: [[tradition-persian-zoroastrian]]
 - Prophet: [[zarathustra]]

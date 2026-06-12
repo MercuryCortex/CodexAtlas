@@ -65,6 +65,7 @@ In Islamic cosmological thought, the Arabic letters precede the Quran — they a
 
 ## Investigation Connections
 
+- The language the script fixed: [[classical-arabic]] — and the diglossia it emerged from: [[language-nabataean-aramaic]]
 - The Aten Hymn parallel: Just as the Great Hymn to the Aten (c. 1350 BCE) contains near-verbatim correspondences with Psalm 104, the Quran contains explicit responses to and refinements of earlier Abrahamic revelation — but claims to supersede rather than derive from them.
 - The Ptah parallel: The Memphite Theology (God creates through word/thought) → John 1:1 (Logos) → Quranic theology (the Quran as pre-existing divine word, uncreated) forms a 3,000-year chain of the "divine word as creative and eternal."
 - The script-as-sovereign-emblem pattern: Arabic script on coinage and architecture was a political-theological statement — the Umayyad Caliph Abd al-Malik (685–705 CE) replaced Byzantine iconographic coinage with Arabic text, making the word the emblem of Islamic sovereignty.

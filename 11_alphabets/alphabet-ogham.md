@@ -133,6 +133,7 @@ The parallel to the Elder Futhark is instructive: both scripts served pre-Christ
 
 ## Connections
 
+- The language it encodes: [[language-old-irish]] — its Primitive Irish stage on the stones; the saga and law literature followed in Latin letters
 - Celtic tradition: [[tradition-celtic]]
 - Irish-Celtic tradition: [[tradition-irish-celtic]]
 - Druidic tradition: [[tradition-druidism]]

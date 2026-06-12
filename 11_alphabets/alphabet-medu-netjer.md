@@ -121,6 +121,7 @@ This is the earliest known instance of the **esoteric script** theme: sacred wri
 
 ## Connections
 
+- The language it writes: [[language-egyptian-hieroglyphic]] — continuous through [[language-demotic-egyptian]] to [[language-coptic]]
 - Patron deity: [[thoth]] — inventor of writing, divine messenger, psychopomp; synchronized with [[hermes-trismegistus]] in Hellenistic period
 - Scribal deity parallel: [[nabu]] (Babylonian) — same archetype, independent tradition
 - Tradition: [[tradition-egyptian]]

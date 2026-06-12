@@ -119,6 +119,7 @@ See [[phase-8-001-popol-vuh]] for the full document node.
 
 ## Cross-Tradition Connections
 
+- The language of the inscriptions: [[language-classic-maya]] (Classic Ch'olti'an) — with the colonial daughter literature at [[phase-8-001-popol-vuh]] (K'iche') and [[phase-8-005-chilam-balam]] (Yucatec)
 - Maya creator deity and patron of writing: [[itzamna]]
 - Rain deity in Maya inscriptions: [[chaac]]
 - The Maya creation epic: [[phase-8-001-popol-vuh]]

@@ -121,6 +121,7 @@ The [[alphabet-isopsephy-greek]] system — the Greek equivalent of Hebrew gemat
 
 ## Connections
 
+- Principal languages written: [[language-ancient-greek]] (Homer through Plato) → [[koine-greek]] (Septuagint + New Testament)
 - Parent script: [[alphabet-phoenician]] — the Phoenician abjad is Greek's direct ancestor; Greek is Phoenician + vowels
 - Parallel sibling: [[alphabet-aramaic]] — same Phoenician source, c. same date, different phonological system, different solution; Aramaic stayed vowelless and became the vehicle for Semitic religious traditions (Talmud, Zohar, Syriac Christianity, Quran); Greek added vowels and became the vehicle for Western philosophical tradition
 - Descendant: [[alphabet-elder-futhark]] — via Western Greek → Etruscan → North Italic or directly, the runic tradition inherits letter-form ancestry from the Western Greek branch

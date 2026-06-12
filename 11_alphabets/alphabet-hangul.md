@@ -77,6 +77,7 @@ This makes Hangul the **only writing system where the theory that letters map to
 
 ## Connections
 
+- The language it was created for: [[language-middle-korean]] — first printed in the dynastic hymns and the Buddhist *eonhae* corpus
 - [[alphabet-letter-as-cosmos]] — Hangul is the most explicit and empirically defensible case: the letter IS the anatomical diagram of the sound
 - [[alphabet-devanagari-sacred]] — parallel vowel cosmology: earth/human/heaven in Hangul; pranic cosmic states in Sanskrit; two independent traditions, zero contact, both embedding cosmological structure in vowel system
 - [[alphabet-sacred-language-convergence]] — Hangul was suppressed because *hanja* carried the prestige of classical Chinese civilization; vernacular vs. sacred-language politics parallel to Latin vs. vernacular in medieval Europe and Arabic vs. vernacular in Islamic world

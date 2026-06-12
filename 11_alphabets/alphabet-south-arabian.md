@@ -133,3 +133,4 @@ Two branches from one fork, 4,000+ years of parallel development, both still liv
 - Downstream Islamic tradition (Arabic script absorbed the Sabaean heritage zone): [[tradition-islam]]
 - Ethiopian host tradition: [[tradition-ethiopian-orthodox-tewahedo]]
 - Sacred language convergence: [[alphabet-sacred-language-convergence]]
+- The language of the inscriptions: [[language-sabaic]] — Saba's epigraphic corpus, from the Almaqah dedications to the Rahmanist monotheist formulary

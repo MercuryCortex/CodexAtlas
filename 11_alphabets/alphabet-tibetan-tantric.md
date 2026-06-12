@@ -104,6 +104,7 @@ Both systems organize the cosmos through a fivefold schema. One does it through 
 
 ## Connections
 
+- The language it was created for: [[language-classical-tibetan]] — the language of the Kanjur-Tengyur canon
 - Script ancestor: [[alphabet-brahmi-origin]]
 - Sister-script: [[alphabet-devanagari-sacred]]
 - Tantric context: [[tradition-tantra]]

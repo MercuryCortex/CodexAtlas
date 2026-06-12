@@ -113,6 +113,7 @@ Both conclusions are investigation findings of the highest order.
 
 ## Connections
 
+- Principal languages written: [[language-sanskrit-classical]], [[sanskrit-vedic|Vedic Sanskrit]] (in its late written transmission), [[language-pali]], [[language-ardhamagadhi-prakrit]] — the Indic scriptural spectrum
 - Direct descendant: [[alphabet-devanagari-sacred]]
 - Buddhist descendant: [[alphabet-tibetan-tantric]]
 - Emperor who deployed Brahmi for dharma: [[ashoka]]

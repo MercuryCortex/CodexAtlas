@@ -126,6 +126,7 @@ The [[phase-1-002-pyramid-texts]] (c. 2400–2150 BCE) are the oldest substantia
 
 ## Connections
 
+- Principal language written: [[language-coptic]] — the final phase of the Egyptian language
 - [[alphabet-medu-netjer]] — the ancestor script; Coptic is what hieroglyphs became after 3,000 years of evolution
 - [[alphabet-sacred-language-convergence]] — Coptic is the 7th case; the most consequential accidental sacred-language preservation in linguistic history
 - [[alphabet-creation-by-word]] — the creation-by-word theology of the [[phase-1-002-pyramid-texts]] (Ptah speaks the cosmos) is the background tradition against which Gnostic Logos theology (Nag Hammadi) emerges

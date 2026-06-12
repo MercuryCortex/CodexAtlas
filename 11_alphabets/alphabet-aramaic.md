@@ -133,6 +133,7 @@ This is itself a transmission phenomenon: not Aramaic as a living language but A
 
 ## Connections
 
+- Principal language written: [[language-aramaic-imperial]] — with the daughter corpora at [[language-syriac]], [[language-babylonian-aramaic]], [[language-galilean-aramaic]], [[language-nabataean-aramaic]], [[language-mandaic]]
 - Parent script: [[alphabet-phoenician]] — Aramaic descends from Phoenician c. 900–800 BCE
 - Hebrew descendant: [[alphabet-hebrew-aleph-bet]] — the square Hebrew script (ktav Ashurit) used for Torah scrolls today is Aramaic script adapted for Hebrew
 - Arabic descendant: [[alphabet-arabic-calligraphy]] — via Nabataean → Arabic; every Quranic letter traces to Aramaic

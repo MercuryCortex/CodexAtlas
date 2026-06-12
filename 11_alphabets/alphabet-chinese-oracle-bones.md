@@ -116,6 +116,7 @@ Chinese characters retained sacred-operative function across multiple traditions
 
 ## Cross-Tradition Connections
 
+- The language of the inscriptions: [[language-old-chinese]] — whose later literary fixation is [[language-classical-chinese]]
 - Tradition contexts: [[tradition-daoism]], [[tradition-confucianism]]
 - The deity who is the patron of Chinese writing: [[jade-emperor]] (as cosmic administrator in folk tradition; the Shang Di of oracle-bones context)
 - The Shang dynasty context: [[shang-dynasty]]

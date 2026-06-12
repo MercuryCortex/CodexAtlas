@@ -126,6 +126,7 @@ What is not contested: the early Islamic community in Arabia was in sustained co
 
 ## Connections
 
+- Principal language written: [[language-syriac]] — the language of the Peshitta and the Syriac Christian library
 - Parent language: [[alphabet-aramaic]] — Syriac is the eastern Aramaic dialect; Estrangela script descends from Aramaic
 - Tradition contexts: [[tradition-syriac-orthodox]] — Syriac Orthodox Church, still using Serto script in liturgy
 - Nestorian tradition: [[tradition-nestorian]] — Church of the East, the primary vehicle of Syriac Christianity's eastward expansion

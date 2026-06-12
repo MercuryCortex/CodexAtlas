@@ -84,6 +84,7 @@ The pattern is not coincidence. A people that can write is harder to erase. The 
 
 ## Connections
 
+- The language it was created for: [[language-cherokee]] — whose syllabary-written sacred formulas and 1860 New Testament are the script's religious corpus
 - [[alphabet-rongorongo]] — the contrasting case: Indigenous script, colonial encounter, total destruction of reading tradition; Cherokee survived because deliberate design made it teacher-independent
 - [[alphabet-mayan-glyphs]] — parallel: Indigenous script survives colonial destruction; contrast: Maya required academic reconstruction, Cherokee required no reconstruction
 - [[alphabet-phoenician]] — Sequoyah borrowed Latin/Greek/Hebrew letter shapes and assigned new values, independently replicating the letter-shape-reuse pattern that drove the entire Mediterranean alphabet transmission chain

@@ -82,6 +82,7 @@ The script died at home before it died abroad. The Arab conquest of Sogdiana (ea
 
 ## Connections
 
+- Principal language written: [[language-sogdian]] — the Silk-Road lingua franca whose Buddhist / Manichaean / Christian corpora travelled in this script and its confessional rivals
 - Parent: [[alphabet-aramaic]] — Imperial Aramaic chancellery cursive, heterograms included
 - Sibling: [[alphabet-syriac]] — the other Aramaic cursive on the Silk Road; the script of Christian Sogdian literature
 - Child line: [[alphabet-mongolian]] — via Old Uyghur (the 762 Manichaean conversion is the vector); thence Manchu

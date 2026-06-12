@@ -97,6 +97,7 @@ The Hebrew Bible's authors were writing in full awareness of the Ugaritic/Canaan
 
 ## Connections
 
+- The language it writes: [[language-ugaritic]] — the language of the Baal Cycle
 - Tradition: [[tradition-canaanite-ugaritic]]
 - Key deity: [[baal]] (storm/death-resurrection cycle), [[el-canaanite]] (head of divine council, predecessor of Yahweh's El-layer), Anat (warrior goddess)
 - Downstream deity: [[yahweh]] (emerges from El's council per Deuteronomy 32:8-9 DSS)

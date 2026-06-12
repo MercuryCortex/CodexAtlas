@@ -109,6 +109,7 @@ Both conclusions are extraordinary.
 
 ## Connections
 
+- Principal language written: [[language-sanskrit-classical]] (and the late written transmission of [[sanskrit-vedic]])
 - Script ancestor: [[alphabet-brahmi-origin]]
 - Script descendant: [[alphabet-tibetan-tantric]] (via Brahmi)
 - Goddess of sacred speech: [[vac-goddess]]

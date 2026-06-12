@@ -169,6 +169,8 @@ The Hebrew aleph-bet occupies a structurally unique position in the vault: it is
 
 No other script in the vault carries this density of simultaneous historical, theological, numerical, political, and cross-traditional meaning.
 
+The language side of this script lives at [[hebrew-biblical]] and [[language-mishnaic-hebrew]]; the same square letters also carry the Jewish Aramaic corpus ([[language-babylonian-aramaic]], [[language-galilean-aramaic]]).
+
 ---
 
 *Node created by `alphabet-hebrew-script-1`. MASSIVE WIN: The "holy" ktav Ashurit used in Torah scrolls is the Aramaic imperial script absorbed during Babylonian captivity — the Talmud itself records the debate over whether Moses received foreign letters; the original Hebrew Paleo-Hebrew script survives only on nationalist coins and as the typographic marker for the Tetragrammaton in the Dead Sea Scrolls. Cross-tradition: Yod/Iota connection in Matthew 5:18 embeds Hebrew letter-mysticism in the Sermon on the Mount; Shin in the Priestly Blessing = the Vulcan salute = a Hebrew letter encoded in the human body.*

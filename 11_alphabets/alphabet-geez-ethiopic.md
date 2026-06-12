@@ -110,6 +110,7 @@ The script-transmission context includes Aksumite military and commercial domina
 
 ## Connections
 
+- Principal language written: [[language-geez]] — with the script's South Arabian source-language at [[language-sabaic]]
 - Direct scriptural ancestor: [[alphabet-south-arabian]] — the Sabaean/Epigraphic South Arabian script from which Ge'ez letter forms derive
 - Sacred language convergence: [[alphabet-sacred-language-convergence]] — Ge'ez as the sixth case
 - Vowel parallel (Greek): [[alphabet-greek-vowel-revolution]]

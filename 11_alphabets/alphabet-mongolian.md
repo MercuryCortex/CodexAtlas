@@ -79,6 +79,7 @@ The script remains in daily use in **Inner Mongolia** (China), where it is co-of
 
 ## Connections
 
+- Principal language written: [[language-classical-mongolian]] — from the Secret History's Middle Mongol to the Kanjur-Tanjur canonical translations
 - Parent line: [[alphabet-sogdian]] — via Old Uyghur; the Manichaean-conversion vector of 762 made the merchant cursive dynastic
 - Deep ancestor: [[alphabet-aramaic]] — the Achaemenid chancellery hand, surviving rotated at the far end of Asia
 - Liturgical partner and Phags-pa source: [[alphabet-tibetan-tantric]] — the Kanjur/Tanjur translation canon; the 1269 designed-script detour

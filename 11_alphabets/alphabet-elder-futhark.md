@@ -120,6 +120,7 @@ The runic magical-instrument function is not unique — it is the dominant mode 
 
 ## Connections
 
+- Principal language written: [[language-old-norse]] — Proto-Norse in the Elder row, Viking-Age Old Norse in the Younger; the Eddic manuscripts themselves use [[alphabet-latin|Latin letters]]
 - Runic ordeal deity: [[odin]]
 - World Tree: [[yggdrasil]]
 - Norse-Germanic tradition: [[tradition-norse-germanic]]

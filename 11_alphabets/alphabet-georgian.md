@@ -106,6 +106,7 @@ Like Armenian, Georgian developed a tradition of letter mysticism, though less e
 
 ## Connections
 
+- The language it was created for: [[language-old-georgian]] — the Khanmeti Bible stratum, the Shushanik martyrdom, and the Balavariani relay
 - [[alphabet-armenian]] — sister script: both invented within 25 years of each other, both in the Caucasus, both attributed to the Mashtots circle; together they constitute the most concentrated deliberate alphabet-invention burst in history
 - [[tradition-georgian-orthodox]] — the Georgian Orthodox Church was the primary preservation mechanism for the script across 16 centuries of conquest; the church and the script are structurally inseparable, as with the Armenian case
 - [[tradition-armenian-apostolic]] — the commissioning tradition for the Armenian script and likely the originating context for the Georgian script; the Caucasian Christian network of the 5th century was the creative matrix for both

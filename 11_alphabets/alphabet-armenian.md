@@ -98,6 +98,7 @@ See [[alphabet-georgian]] for the sister script.
 
 ## Connections
 
+- The language it was created for: [[language-classical-armenian]] (Grabar) — the 'Queen of Translations' Bible and the Golden-Age corpus
 - [[tradition-armenian-apostolic]] — the alphabet was commissioned by the Catholicos and remains the backbone of Armenian Christian identity; the church and the script are inseparable
 - [[event-armenian-genocide]] — the genocide specifically targeted the Armenian script as the medium of national identity; the script's survival is the most documented case of script-as-resistance-vector in modern history
 - [[alphabet-georgian]] — sister script invented within 25 years of the Armenian; the Caucasian alphabet burst 405–430 CE is unique in world history; attributed to the same inventor (Mesrop Mashtots) by Armenian sources; Georgian sources give King Pharsman V credit

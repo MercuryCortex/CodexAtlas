@@ -143,6 +143,7 @@ The specific trajectory of the first letter encodes the entire transmission hist
 
 ## Connections
 
+- Principal language written: [[language-phoenician]] — the Canaanite dialect of Byblos / Tyre / Sidon and of Punic Carthage
 - Ancestral scripts: [[proto-sinaitic]] (direct ancestor via Proto-Canaanite); [[alphabet-ugaritic]] (inherits letter-order); [[alphabet-medu-netjer]] (grandparent via acrophonic principle)
 - Transmission to Kabbalah: [[tradition-kabbalah]] (Hebrew alphabet as cosmic creative force — theology with Egyptian-script roots)
 - Transmission to Islam: [[tradition-islam]] (Arabic script descended from Nabataean → Aramaic → Phoenician)

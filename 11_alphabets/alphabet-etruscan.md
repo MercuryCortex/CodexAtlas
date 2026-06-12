@@ -90,6 +90,7 @@ Phoenician (c. -1050)
 
 ## Connections
 
+- Principal language written: [[language-etruscan]] — the non-Indo-European isolate of the *disciplina Etrusca*
 - Parent: [[alphabet-greek-vowel-revolution]] — the Euboean Greek alphabet of Pithekoussai/Cumae, received whole c. 700 BCE
 - Child: [[alphabet-latin]] — Rome learned its letters from Etruria; the C/G story and F's value are Etruscan inheritance
 - Contested child: [[alphabet-elder-futhark]] — the North Italic thesis routes the runes through Etruscan-derived alpine scripts
