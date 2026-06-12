@@ -81,6 +81,7 @@ This is the single largest documented cross-tradition scholarly-textual transmis
 - [[alphabet-arabic-quran]] — the script
 - [[phase-4-034-quran]] — the linguistic fix-point text
 - [[tradition-islam]] — the religious tradition
+- [[language-nabataean-aramaic]] — the written language of the Nabataeans: source of the Arabic script and of an Aramaic loan-stratum in the Quranic lexicon
 - [[koine-greek]] / [[language-sanskrit-classical]] / [[language-latin-classical]] — cosmopolitan-language comparators
 - [[ibn-sina]] / [[al-khwarizmi]] / [[al-biruni]] / [[al-tusi-astronomer]] — Islamic-civilization figures working in this language
 - Hunayn ibn Ishaq — chief Greco-Arabic translator (9th c. CE; not yet in vault)

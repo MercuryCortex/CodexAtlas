@@ -6,7 +6,7 @@ aka: ["ἡ κοινὴ διάλεκτος (hē koinḕ diálektos, 'the common d
 category: "language"
 family: "[[language-indo-european-family]]"
 sub-family: "Hellenic → Greek → post-Classical Greek"
-parent-language: "Attic Greek + Ionic Greek (the principal contributors); also Doric + Aeolic substrates"
+parent-language: "[[language-ancient-greek|Attic + Ionic Greek]] (the principal contributors); also Doric + Aeolic substrates"
 descendant-languages: "Medieval (Byzantine) Greek → Modern Greek"
 scripts-used: "Greek alphabet ([[alphabet-greek-vowel-revolution]])"
 date-attested-earliest: -300
@@ -97,6 +97,7 @@ Koine is a daughter of the Hellenic branch of [[language-indo-european-family|In
 
 ## Vault connections
 
+- [[language-ancient-greek]] — parent stage (Archaic + Classical Greek: Homer, Hesiod, the Presocratics, Plato)
 - [[language-indo-european-family]] — family
 - [[sanskrit-vedic]] — cognate IE branch (load-bearing for the comparative IE method)
 - [[phase-3-006-septuagint]] — the first major translation

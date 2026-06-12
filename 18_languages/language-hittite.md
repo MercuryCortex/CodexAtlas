@@ -6,7 +6,7 @@ aka: ["Hittite", "Nešili / Neša-language (the Hittites' own name)", "the langu
 category: "language"
 family: "Indo-European > Anatolian"
 sub-family: "Anatolian branch (the earliest-attested and first-to-split branch of Indo-European; sister to Luwian, Palaic, Lydian, Lycian)"
-parent-language: "Proto-Indo-European (via Proto-Anatolian)"
+parent-language: "[[language-proto-indo-european|Proto-Indo-European]] (via Proto-Anatolian)"
 descendant-languages: "None directly; the Anatolian branch died out in antiquity, but Hittite is the single most important witness for reconstructing Proto-Indo-European"
 scripts-used: "[[alphabet-cuneiform-sacred|Cuneiform]] (borrowed from Mesopotamia via Akkadian scribes) for the archives; the related Luwian was also written in Anatolian Hieroglyphs"
 date-attested-earliest: -1650

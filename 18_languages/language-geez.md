@@ -5,7 +5,7 @@ title: "Ge'ez (Classical Ethiopic)"
 aka: ["Ge'ez", "Gəʿəz", "ግዕዝ", "Classical Ethiopic", "Old Ethiopic"]
 category: "language"
 family: "Afroasiatic → Semitic → South Semitic → Ethiopian Semitic → Northern Ethiopian"
-parent-language: "South Semitic (continuity with Sabaic + epigraphic South-Arabian forms; reflects the long-debated South-Arabian-into-Ethiopia transmission)"
+parent-language: "South Semitic (continuity debate with [[language-sabaic|Sabaic]] + epigraphic South-Arabian forms; current consensus treats Ethio-Semitic as a sister of Sabaic, not its daughter — the script + prestige culture crossed the Red Sea, the language did not)"
 descendant-languages: "Tigrinya (Eritrea + Tigray), Tigre (Eritrea), Amharic (the dominant modern Ethiopian-Semitic language), Argobba, Harari, the Gurage languages"
 scripts-used: "[[alphabet-geez-ethiopic]] (the Ge'ez script — a syllabary / abugida derived from Sabaic; remains in use for Tigrinya + Amharic + liturgical Ge'ez)"
 date-attested-earliest: 100
@@ -19,7 +19,7 @@ texts-in-language:
   - "[[phase-4-082-ethiopic-biblical-canon]] (the Ethiopic biblical canon — 81 books, broader than the Hebrew / Catholic / Protestant canons)"
   - "[[phase-4-081-mashafa-henok-geez-1-enoch]] (the Ge'ez Book of Enoch — the only complete witness to 1 Enoch; the Aramaic + Greek versions are fragmentary)"
   - "[[phase-3-032-4-ezra-ethiopic-recension]] (4 Ezra in Ethiopic recension)"
-  - "*Kebra Nagast* ('Glory of the Kings' — Ethiopian national epic + theological-political charter)"
+  - "[[phase-8-008-kebra-nagast|*Kebra Nagast*]] ('Glory of the Kings' — Ethiopian national epic + theological-political charter)"
   - "*Fetha Nagast* (Ethiopian legal code)"
   - "Liturgical corpus (the Ethiopian Orthodox liturgy)"
 syncretic-edges:
@@ -95,6 +95,7 @@ Ge'ez sits with [[language-old-avestan|Old Avestan]] + [[language-latin-classica
 - [[aksum]] — the Aksumite political-cultural origin
 - [[phase-4-082-ethiopic-biblical-canon]] — the broadest Christian biblical canon
 - [[phase-4-081-mashafa-henok-geez-1-enoch]] — the only complete 1 Enoch
+- [[language-sabaic]] — the South Arabian sister language (script-and-culture donor, not parent)
 - [[language-old-avestan]] / [[language-latin-classical]] / [[language-sanskrit-classical]] / [[classical-arabic]] — comparative liturgical-language frame
 - [[ethiopian-geez-calendar]] — the calendrical system
 

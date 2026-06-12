@@ -6,7 +6,7 @@ aka: ["Egyptian (final phase)", "ⲘⲈⲦⲢⲈⲘ̀ⲚⲬⲎⲘⲒ ('the speec
 category: "language"
 family: "Afroasiatic → Egyptian"
 sub-family: "The final attested phase of the Egyptian language. Egyptian itself is one of the six branches of Afroasiatic alongside Semitic, Berber, Cushitic, Chadic, Omotic."
-parent-language: "Demotic Egyptian (the spoken + cursive register of Late Egyptian, c. -650 to +500)"
+parent-language: "[[language-demotic-egyptian|Demotic Egyptian]] (the spoken + cursive register of Late Egyptian, c. -650 to +500)"
 descendant-languages: "None as a living vernacular (Coptic ceased to be a spoken vernacular probably by the 17th-18th c. under Arabic pressure); continues in continuous liturgical use in the Coptic Orthodox Church to the present"
 scripts-used: "[[alphabet-coptic|Coptic alphabet]] — the Greek alphabet (24 letters) supplemented by 6-7 letters derived from Demotic to represent Egyptian-specific consonants (ϣ š, ϥ f, ϧ ḫ in Bohairic, ϩ h, ϫ ǧ, ϭ č, ϯ ti)"
 date-attested-earliest: 100
@@ -113,6 +113,7 @@ After the 7th-c. Arab-Islamic conquest of Egypt (641), Coptic gradually loses gr
 
 - [[alphabet-coptic]] — the script
 - [[alphabet-medu-netjer]] — hieroglyphic ancestor
+- [[language-demotic-egyptian]] — parent language stage
 - [[koine-greek]] — translation-source + loanword-source
 - [[language-syriac]] — parallel late-antique Christian language
 - [[event-nag-hammadi-discovery]] — the foundational Gnostic library

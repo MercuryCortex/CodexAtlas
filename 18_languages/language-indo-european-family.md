@@ -22,6 +22,7 @@ date-earliest: -4500
 dating-basis: B1
 dating-basis-source: "Mallory & Adams 2006 *Oxford Introduction to PIE*; Anthony, D. 2007 *The Horse, The Wheel, and Language* Princeton UP"
 dating-basis-notes: "Proto-Indo-European unity dated by linguistic-archaeological convergence to c. -4500 to -2500 in the Pontic-Caspian steppe (Kurgan / Yamnaya hypothesis); first attested daughter language (Hittite) c. -1700; family remains spoken (English / Hindi / Spanish / Portuguese / Russian / Bengali / Persian etc.) into the present."
+scripts-used: "Not applicable (family hub) — the member languages span nearly the whole script spectrum: [[alphabet-cuneiform-sacred|cuneiform]] (Hittite), Linear B + the Greek alphabet ([[alphabet-greek-vowel-revolution]]), [[alphabet-brahmi-origin|Brāhmī]]-line scripts (Indo-Aryan), [[alphabet-avestan]], [[alphabet-latin]], runes ([[alphabet-elder-futhark]]), [[alphabet-ogham]], [[alphabet-armenian]], [[alphabet-glagolitic-cyrillic]]; see the member-language nodes"
 syncretic-edges:
   - target: "[[language-proto-indo-european]]"
     type: "continuous-development"

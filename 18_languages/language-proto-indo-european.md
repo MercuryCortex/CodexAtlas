@@ -12,6 +12,7 @@ dating-basis: B1
 dating-basis-source: "Mallory & Adams 2006; Anthony 2007 *The Horse, the Wheel, and Language*"
 dating-basis-notes: "Reconstructed (not directly attested); linguistic + archaeological convergence dates the PIE unity to c. -4500 to -2500 in the Pontic-Caspian steppe (Kurgan / Yamnaya hypothesis; competing Anatolian hypothesis of Renfrew dates it earlier, c. -6500). The Yamnaya hypothesis has been substantially strengthened by ancient-DNA evidence post-2015 (Haak et al. 2015, Allentoft et al. 2015)."
 status-attestation: "reconstructed (not directly attested)"
+scripts-used: "None — reconstructed proto-language, never written. Its earliest-written daughters are Hittite ([[alphabet-cuneiform-sacred|cuneiform]], c. -1650) and Mycenaean Greek (Linear B, c. -1400); the Indo-Iranian liturgical corpora ([[sanskrit-vedic]], [[language-old-avestan]]) were carried orally for a further millennium-plus before reaching script"
 syncretic-edges:
   - target: "[[language-indo-european-family]]"
     type: "continuous-development"

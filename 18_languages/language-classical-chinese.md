@@ -6,9 +6,9 @@ aka: ["wényánwén 文言文", "Literary Sinitic", "Classical Chinese", "kanbun
 category: "language"
 family: "Sino-Tibetan → Sinitic"
 sub-family: "Old Chinese (-1250 to -200, the spoken language behind the classical canon) → Middle Chinese (200-1000 CE, the spoken language reconstructed via Tang-Song rime tables) → Old Mandarin → modern Mandarin / Cantonese / Hokkien / Wu / Hakka / Min etc. (the modern Sinitic spoken descendants). Classical Chinese itself is a *literary register* preserved orthographically + scholastically across all these phases."
-parent-language: "Old Chinese / spoken pre-classical Sinitic (Shang oracle-bone language → Western Zhou bronze inscriptions → classical period)"
+parent-language: "[[language-old-chinese|Old Chinese]] (Shang oracle-bone language → Western Zhou bronze inscriptions → classical period)"
 descendant-languages: "Modern Mandarin + Cantonese + Wu + Min + Hakka + Hokkien + Xiang + Gan (the Sinitic spoken languages). Classical Chinese itself remains in active partial-use for ceremonial, scholarly, religious, and high-register contexts; modern Standard Written Chinese (báihuà) is a partial vernacularization of Classical Chinese established as the official register after 1919-1920."
-scripts-used: "Chinese characters (汉字 / 漢字, *hànzì*; *kanji* in Japanese, *hanja* in Korean, *chữ Hán* in Vietnamese). Logographic + morphosyllabic system originating in the Shang oracle bones (c. -1250); ~50,000+ characters in the largest dictionaries, though active classical use draws on ~3,000-5,000."
+scripts-used: "Chinese characters (汉字 / 漢字, *hànzì*; *kanji* in Japanese, *hanja* in Korean, *chữ Hán* in Vietnamese). Logographic + morphosyllabic system originating in the Shang oracle bones ([[alphabet-chinese-oracle-bones]], c. -1250); ~50,000+ characters in the largest dictionaries, though active classical use draws on ~3,000-5,000."
 date-attested-earliest: -1250
 date-attested-latest: 2026
 date-earliest: -500
@@ -125,6 +125,7 @@ The 1919-1920 May Fourth Movement promoted *báihuà* (written Mandarin vernacul
 - [[tradition-daoism]] — primary religious-cultural context
 - [[tradition-mahayana-buddhism]] — primary religious-cultural context
 - [[alphabet-chinese-oracle-bones]] — earliest Chinese writing
+- [[language-old-chinese]] — the oracle-bone + bronze-inscription ancestor stage
 - [[confucius]] / [[laozi]] / [[zhuangzi-person]] — key figures
 - [[xuanzang]] / [[kumarajiva]] — translator-bridges from Sanskrit / BHS
 

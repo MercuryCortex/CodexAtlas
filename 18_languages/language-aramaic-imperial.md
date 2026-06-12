@@ -7,7 +7,7 @@ category: "language"
 family: "Afroasiatic → Semitic → Central Semitic → Northwest Semitic → Aramaic"
 sub-family: "Old Aramaic (-900 to -700) → Imperial / Achaemenid Aramaic (-700 to -200) → Middle Aramaic (-200 to 200) → Late Aramaic (200-700: Jewish Babylonian Aramaic, Syriac, Mandaic, Christian Palestinian Aramaic, etc.) → Neo-Aramaic varieties (Turoyo, Assyrian Neo-Aramaic, etc.)"
 parent-language: "Proto-Aramaic (a Northwest Semitic sister of Proto-Canaanite)"
-descendant-languages: "[[language-syriac|Syriac]], Jewish Babylonian Aramaic (the Babylonian Talmud), Jewish Palestinian Aramaic (Targums + Jerusalem Talmud), Christian Palestinian Aramaic, Mandaic, Samaritan Aramaic, Nabataean, Palmyrene; modern Neo-Aramaic varieties (Turoyo, Assyrian Neo-Aramaic, Mandaic)"
+descendant-languages: "[[language-syriac|Syriac]], Jewish Babylonian Aramaic (the Babylonian Talmud), Jewish Palestinian Aramaic (Targums + Jerusalem Talmud), Christian Palestinian Aramaic, Mandaic, Samaritan Aramaic, [[language-nabataean-aramaic|Nabataean]], Palmyrene; modern Neo-Aramaic varieties (Turoyo, Assyrian Neo-Aramaic, Mandaic)"
 scripts-used: "Imperial Aramaic abjad ([[alphabet-aramaic]], a Phoenician-derived consonantal script that becomes the ancestor of the Hebrew square script, Syriac, Nabataean → Arabic, Brāhmī-route to Indic scripts, etc.)"
 date-attested-earliest: -900
 date-attested-latest: -200
@@ -124,6 +124,7 @@ Few language-script systems have generated as many descendant writing traditions
 - [[hebrew-biblical]] — Northwest Semitic sister
 - [[language-syriac]] — principal Christian Aramaic descendant
 - [[phase-4-033-babylonian-talmud]] — Jewish Babylonian Aramaic monument
+- [[language-nabataean-aramaic]] — the Nabataean continuation (the script handoff to Arabic)
 - [[classical-arabic]] — Nabataean-Aramaic script ancestor of Arabic
 - [[alphabet-arabic-quran]] / [[alphabet-hebrew-aleph-bet]] / [[alphabet-syriac]] — descendant scripts
 - [[tradition-judaism]] / [[tradition-syriac-christianity]] / [[tradition-nestorian-christianity]] — institutional contexts

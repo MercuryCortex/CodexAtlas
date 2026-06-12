@@ -8,7 +8,7 @@ family: "[[language-indo-european-family]]"
 sub-family: "Italic → Latino-Faliscan → Latin"
 parent-language: "Old Latin (pre-Republican)"
 descendant-languages: "Vulgar Latin → Romance languages (Italian / French / Spanish / Portuguese / Romanian / Catalan / Occitan); Late Latin → Medieval Latin (continued scholarly + ecclesiastical use)"
-scripts-used: "Latin alphabet (derived from Etruscan, ultimately Greek + Phoenician — see [[alphabet-greek-vowel-revolution]])"
+scripts-used: "[[alphabet-latin|Latin alphabet]] (derived from Etruscan — [[alphabet-etruscan]] — ultimately Greek + Phoenician; see [[alphabet-greek-vowel-revolution]])"
 date-attested-earliest: -700
 date-attested-latest: 2026
 date-earliest: -100
@@ -63,6 +63,7 @@ Pollock 2006's *The Language of the Gods in the World of Men* draws an extended 
 - [[koine-greek]] — sister cosmopolitan-language of the Hellenistic Mediterranean
 - [[language-sanskrit-classical]] — cosmopolitan-language parallel
 - [[language-proto-indo-european]] — grandparent
+- [[language-etruscan]] — script vector + substrate loanwords (*persona* < Etruscan *phersu*)
 
 ## Refs
 

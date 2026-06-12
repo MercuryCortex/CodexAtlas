@@ -13,6 +13,7 @@ dating-basis: B1
 dating-basis-source: "Mallory & Adams 2006 ch. 3; Anthony 2007 ch. 16 (Sintashta / Andronovo horizon)"
 dating-basis-notes: "Reconstructed (not directly attested). The Proto-Indo-Iranian unity is dated by linguistic reconstruction + archaeological correlation to c. -2500 to -1500 in the Sintashta-Andronovo horizon (southern Urals / Central Asia steppe), shortly before the Indo-Aryan and Iranian branches separated and migrated southward into the Iranian plateau (Iranian branch) and the Indian subcontinent (Indo-Aryan branch)."
 status-attestation: "reconstructed (not directly attested)"
+scripts-used: "None — reconstructed proto-language, never written. Both daughter liturgical corpora were composed and transmitted orally: the Vedic line reached script only via [[alphabet-brahmi-origin|Brāhmī]] (c. -300) and the Avestan line via the purpose-built [[alphabet-avestan|Avestan alphabet]] (5th-6th c. CE)"
 descendant-languages:
   - "[[sanskrit-vedic]] (and from it Classical Sanskrit, Pali, Prakrit, modern Indo-Aryan languages)"
   - "[[language-old-avestan]] (and from it Young Avestan, Old Persian, Middle Persian, Modern Persian, Khotanese, Sogdian, Bactrian, Khwarezmian, Ossetic, Kurdish, Pashto, Tajik, Yaghnobi)"
