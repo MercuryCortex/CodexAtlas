@@ -186,6 +186,14 @@
     svg.addEventListener('dblclick', () => { vb.x = 0; vb.y = 0; vb.w = W; vb.h = H; apply(); });
   }
 
+  // ══════════════════════════════════════════════════════════════
+  // UNREACHABLE since 2026-06-13 — the Genealogy class now hands off
+  // to the ENGINE layout `genealogy` (timelineLayout cascade variant:
+  // same 7 lanes, descent rows, canonical camera/zoom/chrome). This
+  // bespoke SVG renderer + its helpers (buildModel/layoutTree/wireZoom)
+  // are kept ONE review cycle for visual comparison and are DELETED on
+  // John's sign-off of the engine version. Do not re-wire.
+  // ══════════════════════════════════════════════════════════════
   function renderTree(stage) {
     const model = buildModel();
     if (!model) {
@@ -494,13 +502,18 @@
     },
     getClassFilter: function () { return _mode; },
     setClassFilter: function (v) {
-      if (v === 'timeline') {
-        // Canonical handoff — the engine TIMELINE scoped to the
-        // alphabet class ("KEEP this one as well — this one is a
-        // TIMELINE, that's it"). Mirror the app-pill's master-click
-        // mechanism: setView first, then poll until the freshly-
-        // mounted _forge public API acknowledges (a single deferred
-        // call can hit the OLD destroyed instance and no-op).
+      if (v === 'timeline' || v === 'genealogy') {
+        // Canonical handoff — the engine, scoped to the alphabet
+        // class. TIMELINE = the chronology spread; GENEALOGY
+        // (2026-06-13) = the cascade layout — the vertical band-map
+        // rebuilt ON the engine (same lanes + descent rows,
+        // Deities-grade camera/zoom/chrome; replaces the bespoke SVG
+        // page, which is unreachable below pending John's sign-off).
+        // Mirror the app-pill's master-click mechanism: setView
+        // first, then poll until the freshly-mounted _forge public
+        // API acknowledges (a single deferred call can hit the OLD
+        // destroyed instance and no-op).
+        const targetLayout = v;
         try { window.setView('forge'); } catch (e) { /* not fatal */ }
         let tries = 0;
         const apply = function () {
@@ -508,7 +521,7 @@
           const f = window._forge;
           let ok = false;
           try {
-            ok = !!(f && typeof f.setLayout === 'function' && f.setLayout('timeline') === true);
+            ok = !!(f && typeof f.setLayout === 'function' && f.setLayout(targetLayout) === true);
             if (ok && typeof f.setClassFilter === 'function') f.setClassFilter('alphabet');
           } catch (e) { ok = false; }
           if (!ok && tries < 30) setTimeout(apply, 100);
@@ -516,7 +529,7 @@
         setTimeout(apply, 0);
         return;
       }
-      if (v !== 'glyphs' && v !== 'genealogy') return;
+      if (v !== 'glyphs') return;
       _mode = v;
       renderMode();
       // the pill listens for this to refresh its class label

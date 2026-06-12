@@ -201,6 +201,12 @@
     const view = (window.STATE && window.STATE.view) || 'forge';
     if (view === 'forge' && window._forge && typeof window._forge.getLayout === 'function') {
       const lay = window._forge.getLayout();
+      // 2026-06-13 — GENEALOGY is a forge layout reached from the
+      // ALPHABETS section (not a master-menu entry). Display-only
+      // synthetic entry so the pill face reads where the user is.
+      if (lay === 'genealogy') {
+        return { id: 'genealogy', target: 'forge', layout: 'genealogy', icon: '⌁', label: 'GENEALOGY' };
+      }
       const mv = MASTER_VIEWS.find(m => m.target === 'forge' && m.layout === lay);
       if (mv) return mv;
     }

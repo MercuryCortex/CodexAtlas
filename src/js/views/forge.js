@@ -1661,7 +1661,7 @@
         // gizmo 75% — giving freedom to pan once you're off the
         // zoom floor. Wheel keeps linear (radial layouts are
         // already self-fitting at any zoom).
-        const tCurve = (local.layoutId === 'timeline')
+        const tCurve = isTimeLayout(local.layoutId)
           ? Math.sqrt(t)
           : t;
         const x0 = dlc.x + ((ext.x0 - maxMrg) - dlc.x) * tCurve;
@@ -1670,6 +1670,16 @@
         const y1 = dlc.y + ((ext.y1 + maxMrg) - dlc.y) * tCurve;
         camera.setPanBounds(x0, y0, x1, y1);
       }
+    }
+
+    // 2026-06-13 — the time-X layout FAMILY. 'genealogy' is the
+    // timelineLayout cascade variant (rule #9: one engine, second
+    // Y-allocator) — every timeline-specific behavior (fit override,
+    // chrome, label thresholds, BG sizing, pan-bound curve, density
+    // reset) applies to both. Branch on this helper, never on
+    // `=== 'timeline'`, so the next time-X layout inherits for free.
+    function isTimeLayout(id) {
+      return id === 'timeline' || id === 'genealogy';
     }
 
     // ── Local mount state ──────────────────────────────
@@ -2385,7 +2395,7 @@
           // Phase 22-K → 22-N (2026-05-24) — timeline gizmo-click =
           // 20% gizmo (scan-the-whole-spine view).
           let targetScale, targetCx = 0, targetCy = 0;
-          if (local.layoutId === 'timeline'
+          if (isTimeLayout(local.layoutId)
               && local.mode && local.mode.xRange
               && window.AtlasEngineLayout
               && window.AtlasEngineLayout.computeTimelineFitScale) {
@@ -2405,7 +2415,7 @@
           // John: "when we click on the zoom button it should also
           // slide the density to default". Skipped for wheel mode
           // where there's no density slider.
-          if (local.layoutId === 'timeline'
+          if (isTimeLayout(local.layoutId)
               && window.AtlasEngineLayout
               && typeof window.AtlasEngineLayout.setTimelineBandHeightScale === 'function') {
             const changed = window.AtlasEngineLayout.setTimelineBandHeightScale(1.0);
@@ -3107,7 +3117,7 @@
       const _layoutCacheHit = !!lay;
       if (_layoutCacheHit) {
         // Cache hit — skip the recompute.
-      } else if (_layoutId === 'timeline' && typeof layout.timelineLayout === 'function') {
+      } else if (isTimeLayout(_layoutId) && typeof layout.timelineLayout === 'function') {
         // 2026-06-10 — rule-#9 swappable banding: a mode may declare its
         // own timeline lanes via `timelineBands: {order, assign}` on its
         // mode.js catalog entry. Alphabets lanes by WRITING-SYSTEM family
@@ -3116,15 +3126,60 @@
         // so banded + default layouts never collide.
         const _tbEntry = (modemod.MODES || []).find(mm => mm.value === modeId);
         const _tb = (_tbEntry && _tbEntry.timelineBands) || null;
+        // 2026-06-13 — GENEALOGY layout = the cascade variant of the
+        // SAME timelineLayout (rule #9: one time-X engine, a second
+        // within-band Y-allocator). Descent depth is computed HERE from
+        // the active edge set (the layout module stays edge-agnostic):
+        // child──descended-from──▶parent etc. Longest-path-from-root
+        // depth, memoized, cycle-guarded. Generic: any class whose
+        // edges carry descent semantics gets a genealogy for free.
+        let _cascade;
+        if (_layoutId === 'genealogy') {
+          const PARENT_AT_TARGET = {
+            'descended-from': 1, 'adapted-from': 1, 'child': 1, 'descendant': 1,
+          };
+          const PARENT_AT_SOURCE = {
+            'ancestor-of': 1, 'parent': 1, 'ancestor': 1,
+          };
+          const _parents = new Map();   // childId → [parentIds]
+          for (const e of modeEdges) {
+            let child = null, parent = null;
+            if (PARENT_AT_TARGET[e.type])      { child = e.source; parent = e.target; }
+            else if (PARENT_AT_SOURCE[e.type]) { child = e.target; parent = e.source; }
+            if (!child || !parent || child === parent) continue;
+            if (!_parents.has(child)) _parents.set(child, []);
+            _parents.get(child).push(parent);
+          }
+          const _depthMemo = new Map();
+          const _inStack = new Set();
+          const _depthOf = function (id) {
+            if (_depthMemo.has(id)) return _depthMemo.get(id);
+            if (_inStack.has(id)) return 0;          // cycle guard
+            _inStack.add(id);
+            let d = 0;
+            const ps = _parents.get(id);
+            if (ps) {
+              for (const p of ps) {
+                const pd = _depthOf(p) + 1;
+                if (pd > d) d = pd;
+              }
+            }
+            _inStack.delete(id);
+            _depthMemo.set(id, d);
+            return d;
+          };
+          _cascade = _depthOf;
+        }
         lay = layout.timelineLayout(modeNodes, _tb ? _tb.order.slice() : _familyOrder, {
           colorOverride: _colorOverride,
           parkUndated:   true,
           // single source: the node's vault-declared field (script_family),
           // mapped to a display lane via the mode's 7-token laneOf map.
           bandBy: _tb ? function (n) { return _tb.laneOf[n[_tb.byField]] || 'OTHER'; } : undefined,
-          // banded modes frame the DATA range (the genealogy view);
+          // banded modes + the genealogy frame the DATA range;
           // the main timeline keeps the spine-fixed framing.
-          dataFit: !!_tb,
+          dataFit: !!_tb || _layoutId === 'genealogy',
+          cascade: _cascade,
         });
         local._layoutCache.set(_layoutKey, lay);
       } else {
@@ -3195,7 +3250,7 @@
         // "fit" (gizmo 100%) so the user pans/zooms like TradingView.
         // After fitToExtent, override camera.scale + center for the
         // timeline-specific feel.
-        if (local.layoutId === 'timeline' && lay.xRange
+        if (isTimeLayout(local.layoutId) && lay.xRange
             && window.AtlasEngineLayout
             && window.AtlasEngineLayout.computeTimelineFitScale) {
           const tlFit = window.AtlasEngineLayout.computeTimelineFitScale(
@@ -3369,7 +3424,7 @@
         // undefined → defaults to (0, 0). Timeline writes its
         // natural center so zoom-out doesn't shift the line off-
         // center to the right.
-        deadLockCenter: (local.layoutId === 'timeline' && lay.xRange && window.AtlasEngineLayout && window.AtlasEngineLayout.computeTimelineCenter)
+        deadLockCenter: (isTimeLayout(local.layoutId) && lay.xRange && window.AtlasEngineLayout && window.AtlasEngineLayout.computeTimelineCenter)
           ? window.AtlasEngineLayout.computeTimelineCenter(lay.xRange, ext)
           : null,
       };
@@ -3383,11 +3438,11 @@
         // body.fv-layout-timeline and .fv-timeline-only under
         // body.fv-layout-wheel. Set BEFORE mounting the chrome so
         // the panels paint with the right visibility on first render.
-        document.body.classList.toggle('fv-layout-timeline', local.layoutId === 'timeline');
-        document.body.classList.toggle('fv-layout-wheel',    local.layoutId !== 'timeline');
+        document.body.classList.toggle('fv-layout-timeline', isTimeLayout(local.layoutId));
+        document.body.classList.toggle('fv-layout-wheel',    !isTimeLayout(local.layoutId));
         const chrome = window.AtlasTimelineChrome;
         if (chrome) {
-          if (local.layoutId === 'timeline' && lay.xRange) {
+          if (isTimeLayout(local.layoutId) && lay.xRange) {
             const stageEl = (rootEl && rootEl.querySelector) ? rootEl.querySelector('.forge-stage') : null;
             chrome.mount({
               hostEl: stageEl || rootEl,
@@ -3665,7 +3720,7 @@
       // gives the TradingView feel where the default zoom shows
       // detail and zoom-out gives the overview. See
       // layout/timeline.js FIT_OVERSCAN.
-      if (local.layoutId === 'timeline'
+      if (isTimeLayout(local.layoutId)
           && local.mode.xRange
           && window.AtlasEngineLayout
           && window.AtlasEngineLayout.computeTimelineFitScale) {
@@ -4504,7 +4559,7 @@
       // overwrite the timeline-chrome opacity write every frame
       // otherwise. Skip the assignment + the early-return when the
       // timeline layout is active.
-      if (local.layoutId === 'timeline') {
+      if (isTimeLayout(local.layoutId)) {
         // Don't write opacity — chrome owns it. But still keep
         // building the geometry so toggles + camera changes apply.
         fade = 1.0;
@@ -4866,7 +4921,7 @@
       // Wheel branch untouched.
       const coverWidthPx = Math.max(vp.w, vp.h * imgAspect);
       let widthPx;
-      if (local.layoutId === 'timeline') {
+      if (isTimeLayout(local.layoutId)) {
         const ratio = Math.max(1, zoomPct / FLOOR_PCT);   // 1.0 at floor (10%), grows
         widthPx = coverWidthPx * ratio;
       } else {
@@ -4900,7 +4955,7 @@
       // because the spine IS the canonical X axis.
       // Wheel mode keeps the full world-tracking behavior — its
       // small square world stays inside the BG envelope anyway.
-      if (local.layoutId === 'timeline') {
+      if (isTimeLayout(local.layoutId)) {
         dy = 0;
       }
 
@@ -6922,7 +6977,7 @@
       // need to see them here." So timeline mode drops ALL tier
       // thresholds to a low value — every label is eligible at
       // any zoom; collision-prune still trims at extreme overlap.
-      if (local.layoutId === 'timeline') {
+      if (isTimeLayout(local.layoutId)) {
         return {
           tierZoomThresholds: [0.01, 0.05, 0.10, 0.15, 0.20, 0.25],
           maxLabels:          p.label_idle_max,

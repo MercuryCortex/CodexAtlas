@@ -87,7 +87,11 @@
     // will register their own setLayout in their own _<view>.* API.
     window._forge.setLayout = function (layoutId) {
       if (local.destroyed) return false;
-      const valid = (layoutId === 'wheel' || layoutId === 'timeline');
+      // 2026-06-13 — 'genealogy' = the timelineLayout cascade variant
+      // (descent-generation rows inside the time bands). Same engine,
+      // same chrome family as 'timeline'.
+      const valid = (layoutId === 'wheel' || layoutId === 'timeline'
+                  || layoutId === 'genealogy');
       if (!valid) {
         console.warn('[forge] unknown layoutId:', layoutId);
         return false;
@@ -158,7 +162,7 @@
 
     window._forge.focusTimelineRange = function (yearLo, yearHi) {
       if (local.destroyed) return false;
-      if (local.layoutId !== 'timeline') return false;
+      if (local.layoutId !== 'timeline' && local.layoutId !== 'genealogy') return false;
       if (!isFinite(yearLo) || !isFinite(yearHi)) return false;
       if (yearLo >= yearHi) return false;
       const ENG = window.AtlasEngineLayout;

@@ -400,6 +400,13 @@
     // Alphabets class lanes by WRITING-SYSTEM family (the genealogy
     // view) instead of tradition family. ONE engine, MANY spreads.
     const bandBy = (typeof opts.bandBy === 'function') ? opts.bandBy : familyOf;
+    // 2026-06-13 — GENEALOGY cascade (rule #9, second Y-allocator).
+    // opts.cascade: (nodeId) → descent-generation depth. When present,
+    // within-band Y = generation row (roots at the band top, each
+    // descent generation one row lower) instead of the cluster packer.
+    // The caller computes depths from its descent edges — this module
+    // stays edge-agnostic. X stays rigorous chronology either way.
+    const cascadeOf = (typeof opts.cascade === 'function') ? opts.cascade : null;
 
     const positions = new Map();
     const bands     = {};
@@ -524,10 +531,42 @@
     // Phase TL-2 Step 7b — scale every band height by _bandHeightScale
     // (UI slider). Affects band rects AND dot Y placement together.
     const bandScale = _bandHeightScale;
+    // 2026-06-13 — cascade pre-pass: per band, normalize each member's
+    // global descent depth to a band-local row (depth − band-min-depth)
+    // so every band's cascade starts at its own top edge. Band height
+    // then scales with generation count, not member count.
+    const CASCADE_ROW_H = 34;       // world units per generation row
+    let cascadeRows = null;         // fam → { rowOf: Map<id,row>, maxRow }
+    if (cascadeOf) {
+      cascadeRows = Object.create(null);
+      for (const fam of orderedFamilies) {
+        const dOf = new Map();
+        let minD = Infinity;
+        for (const m of byFamily[fam]) {
+          let d = 0;
+          try { d = (cascadeOf(m.id) | 0); } catch (_) { d = 0; }
+          dOf.set(m.id, d);
+          if (d < minD) minD = d;
+        }
+        if (!isFinite(minD)) minD = 0;
+        const rowOf = new Map();
+        let maxRow = 0;
+        for (const ent of dOf) {
+          const r = Math.max(0, ent[1] - minD);
+          rowOf.set(ent[0], r);
+          if (r > maxRow) maxRow = r;
+        }
+        cascadeRows[fam] = { rowOf, maxRow };
+      }
+    }
     let yCursor = TIME_AXIS_PAD;
     for (const fam of orderedFamilies) {
       const members = byFamily[fam];
-      const h = bandHeightFor(members.length) * bandScale;
+      const h = (cascadeRows
+        ? Math.max(MIN_BAND_H,
+            Math.min(MAX_BAND_H * 1.6,
+              (cascadeRows[fam].maxRow + 1) * CASCADE_ROW_H + 2 * ROW_PAD))
+        : bandHeightFor(members.length)) * bandScale;
       const y0 = yCursor;
       const y1 = yCursor + h;
       // Color resolution: prefer caller's override; otherwise pull
@@ -602,6 +641,43 @@
         if (a.baseX !== b.baseX) return a.baseX - b.baseX;
         return (a.id < b.id) ? -1 : (a.id > b.id ? 1 : 0);
       });
+
+      // 2026-06-13 — GENEALOGY cascade placement. Y = generation row
+      // (roots at the band top, descendants stepping down — the tree
+      // reading of the vertical genealogy). X stays rigorous chronology.
+      // Same-row near-collisions get a small deterministic vertical
+      // stagger so labels stay legible without bending the dates.
+      if (cascadeRows) {
+        const info = cascadeRows[fam];
+        const rowStep = (band.height - 2 * ROW_PAD) / Math.max(1, info.maxRow);
+        const byRow = new Map();
+        for (const it of items) {
+          const r = info.rowOf.get(it.id) || 0;
+          if (!byRow.has(r)) byRow.set(r, []);
+          byRow.get(r).push(it);
+        }
+        for (const ent of byRow) {
+          const r = ent[0], rowItems = ent[1];   // already X-sorted (items was)
+          const yBase = (info.maxRow === 0)
+            ? bandMidY
+            : band.y0 + ROW_PAD + r * rowStep;
+          let lastX = -Infinity, runLen = 0;
+          for (const it of rowItems) {
+            let y = yBase;
+            if (it.baseX - lastX < MIN_X_SPACING * 2) {
+              runLen++;
+              const dir = (runLen % 2 === 1) ? 1 : -1;
+              const k = Math.ceil(runLen / 2);
+              y = yBase + dir * Math.min(k * 12, bandInnerHalf * 0.85);
+            } else {
+              runLen = 0;
+            }
+            positions.set(it.id, { x: it.baseX, y: y });
+            lastX = it.baseX;
+          }
+        }
+        continue;   // cascade replaces the cluster packer for this band
+      }
 
       // (b) build clusters by walking left-to-right.
       const clusters = [];
