@@ -187,12 +187,15 @@
   }
 
   // ══════════════════════════════════════════════════════════════
-  // UNREACHABLE since 2026-06-13 — the Genealogy class now hands off
-  // to the ENGINE layout `genealogy` (timelineLayout cascade variant:
-  // same 7 lanes, descent rows, canonical camera/zoom/chrome). This
-  // bespoke SVG renderer + its helpers (buildModel/layoutTree/wireZoom)
-  // are kept ONE review cycle for visual comparison and are DELETED on
-  // John's sign-off of the engine version. Do not re-wire.
+  // THE VERTICAL GENEALOGY PAGE — owner-ratified TWICE (2026-06-10
+  // "which was BEAUTIFUL layed out" restore a148515b; 2026-06-13 the
+  // engine-cascade replacement ac911420 FAILED John's sight test —
+  // "the Page that i loved... disappeared? now i got 2 Timelines?" —
+  // and this page was restored same day). This bespoke SVG renderer
+  // IS the GENEALOGY class surface. Do NOT delete or reroute it to
+  // the engine unless an engine version reproduces THIS page's look
+  // (portrait descent flow, quiet styling, no timeline chrome) AND
+  // John approves it on sight FIRST.
   // ══════════════════════════════════════════════════════════════
   function renderTree(stage) {
     const model = buildModel();
@@ -502,17 +505,19 @@
     },
     getClassFilter: function () { return _mode; },
     setClassFilter: function (v) {
-      if (v === 'timeline' || v === 'genealogy') {
-        // Canonical handoff — the engine, scoped to the alphabet
-        // class. TIMELINE = the chronology spread; GENEALOGY
-        // (2026-06-13) = the cascade layout — the vertical band-map
-        // rebuilt ON the engine (same lanes + descent rows,
-        // Deities-grade camera/zoom/chrome; replaces the bespoke SVG
-        // page, which is unreachable below pending John's sign-off).
-        // Mirror the app-pill's master-click mechanism: setView
-        // first, then poll until the freshly-mounted _forge public
-        // API acknowledges (a single deferred call can hit the OLD
-        // destroyed instance and no-op).
+      if (v === 'timeline') {
+        // Canonical handoff — the engine TIMELINE scoped to the
+        // alphabet class. NOTE 2026-06-13: GENEALOGY was briefly
+        // routed here too (engine cascade layout, commit ac911420)
+        // and FAILED John's sight test — "the Page that i loved of
+        // the languages in vertical, disappeared? now i got 2
+        // Timelines?" The engine cascade renders as a second
+        // horizontal timeline, not the vertical page. GENEALOGY is
+        // the bespoke page again (owner-ratified TWICE now); the
+        // engine 'genealogy' layout remains engine infra. Any future
+        // engine replacement must reproduce the PAGE look (portrait
+        // descent flow, no timeline chrome) and pass John's eye
+        // BEFORE rerouting this class.
         const targetLayout = v;
         try { window.setView('forge'); } catch (e) { /* not fatal */ }
         let tries = 0;
@@ -529,7 +534,7 @@
         setTimeout(apply, 0);
         return;
       }
-      if (v !== 'glyphs') return;
+      if (v !== 'glyphs' && v !== 'genealogy') return;
       _mode = v;
       renderMode();
       // the pill listens for this to refresh its class label
