@@ -11094,3 +11094,40 @@ body.view-boards .boards-multi-bar { bottom: 64px; }
   border-radius: 3px;
 }
 
+/* ══════════════════════════════════════════════════════════════
+   CONSTRUCTION NOTE (2026-06-13) — interim surface for not-yet-built
+   Sections (MAP, STAR MAP). View-owned: rendered INSIDE the section's
+   own pane by its VIEWS.* renderer (rule #8 — no global chrome).
+   Deleted with the placeholder when the real build lands.
+   ══════════════════════════════════════════════════════════════ */
+.construction-note {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  text-align: center;
+  pointer-events: none;
+}
+.construction-note .construction-glyph {
+  font-size: 64px;
+  line-height: 1;
+  color: rgba(212, 175, 110, 0.38);
+}
+.construction-note .construction-title {
+  font-family: var(--mono);
+  font-size: 13px;
+  letter-spacing: 0.42em;
+  text-indent: 0.42em;
+  color: rgba(232, 226, 214, 0.55);
+}
+.construction-note .construction-sub {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  letter-spacing: 0.08em;
+  line-height: 1.7;
+  max-width: 440px;
+  color: rgba(232, 226, 214, 0.34);
+}

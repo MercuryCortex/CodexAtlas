@@ -28,9 +28,18 @@
     if (!pane) return;
     _pane = pane;
     pane.classList.add('starmap-pane');
+    // 2026-06-13 — construction note; the design for this Section
+    // (sky \u00d7 timeline, scrubbable) is at
+    // AUDIT/2026-06-13-starmap-design.md. Deleted when the build lands.
     pane.innerHTML = [
       '<div class="starmap-shell" id="starmap-shell">',
-      '  <div class="starmap-stage" id="starmap-stage"></div>',
+      '  <div class="starmap-stage" id="starmap-stage">',
+      '    <div class="construction-note">',
+      '      <div class="construction-glyph">\u2644</div>',
+      '      <div class="construction-title">STAR MAP</div>',
+      '      <div class="construction-sub">Under construction \u2014 the night sky crossed with the timeline: scrub through the eras and watch the heavens move. In design.</div>',
+      '    </div>',
+      '  </div>',
       '</div>',
     ].join('\n');
   }

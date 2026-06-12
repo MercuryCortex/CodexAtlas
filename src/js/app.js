@@ -1309,6 +1309,8 @@ VIEWS.maps = {
     canvasEl.appendChild(pane);
     const svgEl = document.getElementById('svg');
     if (svgEl) svgEl.style.display = 'none';
+    // 2026-06-13 — the construction note renders inside maps.js
+    // (the pane's owner) — single markup source, no app.js fallback.
     if (window._mapsView) window._mapsView.render(pane);
   },
 };
@@ -1324,6 +1326,8 @@ VIEWS.starmap = {
     canvasEl.appendChild(pane);
     const svgEl = document.getElementById('svg');
     if (svgEl) svgEl.style.display = 'none';
+    // 2026-06-13 — the construction note renders inside starmap.js
+    // (the pane's owner); design: AUDIT/2026-06-13-starmap-design.md.
     if (window._starmapView) window._starmapView.render(pane);
   },
 };
