@@ -16,6 +16,12 @@ dating-basis: B1
 dating-basis-source: "Clackson, J. & Horrocks, G. 2007 *The Blackwell History of the Latin Language* Wiley-Blackwell"
 dating-basis-notes: "Classical Latin conventionally dated -100 to +200 (the Ciceronian + Augustan + Silver-Age literary register). Continues as Late Latin → Medieval Latin in scholarly + ecclesiastical use to the present; the Vatican still issues documents in Latin."
 liturgical-tradition: "[[tradition-roman-catholicism]] (Latin Mass + Vulgate); medieval European scholarship"
+texts-in-language:
+  - "Cicero's philosophical-religious corpus (*De Natura Deorum*, *De Divinatione*, *Somnium Scipionis* — the classic Roman statements on the gods + divination)"
+  - "Vergil's *Aeneid* (the Roman national-religious epic) + the *Fourth Eclogue* (read for centuries as messianic prophecy)"
+  - "[[phase-4-085-ovid-metamorphoses-book-1|Ovid's *Metamorphoses*]] (the great mythological compendium; Book 1 carries the Roman flood + creation narratives)"
+  - "Lucretius's *De Rerum Natura* (Epicurean anti-religious cosmology — the counter-voice)"
+  - "[[phase-4-105-apuleius-metamorphoses-book-11|Apuleius's *Metamorphoses* Book 11]] (the Isis-initiation narrative — the fullest first-person mystery-cult testimony in Latin)"
 syncretic-edges:
   - target: "[[language-indo-european-family]]"
     type: "cognate"

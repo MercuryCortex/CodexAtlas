@@ -19,9 +19,10 @@ liturgical-tradition: "[[tradition-roman-catholicism]] + (historically) all Lati
 texts-in-language:
   - "The Vulgate Bible of [[jerome]] (translation completed 382-405; the standard Latin Bible for the next 1500+ years)"
   - "The Vetus Latina (the pre-Vulgate Old-Latin Bible translations, 2nd-4th c.)"
-  - "Augustine's *Confessions*, *De Civitate Dei*, *De Trinitate*, the sermons + letters (354-430)"
+  - "Augustine's [[phase-4-028-augustine-confessions|*Confessions*]], [[phase-4-029-augustine-city-of-god|*De Civitate Dei*]], *De Trinitate*, the sermons + letters (354-430)"
   - "Ambrose's hymns + treatises (340-397)"
   - "Pope Gregory the Great's *Moralia*, *Pastoral Care*, *Dialogues* (590-604)"
+  - "[[phase-4-048-benedict-rule|The Rule of St Benedict]] (c. 530 — the constitutional document of Western monasticism)"
   - "The Latin liturgical corpus — Tridentine Mass, Liturgy of the Hours, the *Te Deum*, the *Dies Irae*, the *Stabat Mater*, the *Veni Creator*"
   - "Aquinas's *Summa Theologiae* + *Summa contra Gentiles* (13th c.; Latin scholasticism's apex)"
   - "Bede's *Historia Ecclesiastica Gentis Anglorum* (731)"

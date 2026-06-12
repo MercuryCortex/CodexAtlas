@@ -18,7 +18,7 @@ dating-basis-notes: "Earliest experimental 'Old Coptic' texts (Greek alphabet + 
 liturgical-tradition: "[[tradition-coptic-orthodox]] + (formerly) Coptic Catholic Church"
 texts-in-language:
   - "Coptic translations of the Bible (Sahidic + Bohairic Old + New Testaments, 3rd-4th c. onward)"
-  - "[[event-nag-hammadi-discovery|The Nag Hammadi Library]] (Coptic translations of Greek Gnostic + Hermetic + Sethian + Valentinian + Thomasine texts, 4th c. CE codices)"
+  - "[[event-nag-hammadi-discovery|The Nag Hammadi Library]] (Coptic translations of Greek Gnostic + Hermetic + Sethian + Valentinian + Thomasine texts, 4th c. CE codices) — incl. [[phase-4-001-gospel-of-thomas|the Gospel of Thomas]], [[phase-4-004-gospel-of-philip|the Gospel of Philip]], [[phase-4-003-gospel-of-truth|the Gospel of Truth]]"
   - "Shenoute of Atripe's monastic homilies + canons (4th-5th c.; the founding corpus of classical Sahidic Coptic literature)"
   - "Pachomian monastic rules + letters (4th c.; the foundational documents of Egyptian + global cenobitic monasticism)"
   - "Lives of the Desert Fathers (the *Apophthegmata Patrum*, Coptic versions)"

@@ -11,7 +11,7 @@ status: "metadata"
 scripts-used: "The distinctive Mandaic alphabet (Mandaic: *abagada*), a 24-letter script derived from a cursive Aramaic/Parthian chancery hand; uniquely it treats vowels as full letters and is held by Mandaeans to be itself sacred, each letter a living being"
 liturgical-tradition: "Mandaeism — the only surviving Gnostic religion; a baptismal (masbuta) faith of lower Mesopotamia revering Adam, Seth, Noah, Shem, and above all John the Baptist (Yahya Yuhana), while rejecting Jesus and Abraham as false prophets"
 texts-in-language:
-  - "Ginza Rabba ('Great Treasure') — the principal Mandaean scripture"
+  - "[[phase-4-017-ginza-rba|Ginza Rabba]] ('Great Treasure') — the principal Mandaean scripture"
   - "The Mandaean Book of John (Drasha d-Yahya) — teachings centred on John the Baptist"
   - "The Qolasta (the canonical prayerbook and liturgy of baptism and the masiqta death-mass)"
   - "Magical and incantation bowls (Mandaic is well attested on Late Antique Mesopotamian incantation bowls)"
