@@ -15,7 +15,7 @@ child-of: []
 consort: []
 attributes: ["no anthropomorphic iconography — Chaos is principle, not figure"]
 attested-in: ["[[phase-2-009-hesiod-theogony-works-and-days]]"]
-equivalents: ["[[primordial-waters]] (Egyptian Nun)", "[[apsu]] / [[tiamat]] (Mesopotamian primordial waters)"]
+equivalents: ["[[primordial-waters]] (Egyptian Nun)", "[[apsu]] / [[tiamat]] (Mesopotamian primordial waters)", "[[tehom]] (Hebrew — the deep of Gen 1:2)"]
 syncretic-edges:
   - target: "nun"
     type: "scholarly-parallel"

@@ -15,7 +15,7 @@ child-of: []
 consort: ["Naunet (in the Hermopolitan Ogdoad)"]
 attributes: ["bearded man with arms raised supporting the solar bark (in the daily-rebirth scene)", "water-wave hieroglyph"]
 attested-in: ["[[phase-1-002-pyramid-texts]]", "[[phase-1-009-coffin-texts]]", "[[phase-1-010-book-of-the-dead]]"]
-equivalents: []
+equivalents: ["[[tehom]] (Hebrew — the deep of Gen 1:2)", "[[tiamat]]", "[[nammu]]"]
 syncretic-edges:
   - target: "[[apsu]]"
     type: "scholarly-parallel"

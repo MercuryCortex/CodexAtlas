@@ -15,7 +15,7 @@ child-of: []
 consort: []
 attributes: ["written with the sign ENGUR (the cosmic groundwater / Abzu)", "no developed iconography — Nammu is a cosmological principle"]
 attested-in: ["[[phase-1-008-enuma-elish]]"]
-equivalents: ["[[tiamat]] (Babylonian primordial sea; Nammu is the Sumerian prototype)", "[[nun]] (Egyptian primordial waters)"]
+equivalents: ["[[tiamat]] (Babylonian primordial sea; Nammu is the Sumerian prototype)", "[[nun]] (Egyptian primordial waters)", "[[tehom]] (Hebrew — the deep of Gen 1:2)"]
 syncretic-edges:
   - target: "[[tiamat]]"
     type: "prototype-ancestor"

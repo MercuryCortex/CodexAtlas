@@ -15,7 +15,7 @@ child-of: []
 consort: []
 attributes: ["no anthropomorphic iconography — Ginnungagap is a cosmological condition, not a figure", "the void between the ice of Niflheim (north) and the fire of Muspelheim (south)"]
 attested-in: ["[[phase-8-014-poetic-edda]]", "[[phase-8-015-prose-edda-snorri]]"]
-equivalents: ["[[chaos-primordial]] (Greek Khaos — the 'yawning gap'; near-exact semantic twin)", "[[tiamat]] / [[nun]] (the primordial abyss of Near-Eastern cosmogony)"]
+equivalents: ["[[chaos-primordial]] (Greek Khaos — the 'yawning gap'; near-exact semantic twin)", "[[tiamat]] / [[nun]] (the primordial abyss of Near-Eastern cosmogony)", "[[tehom]] (Hebrew — the deep of Gen 1:2)"]
 syncretic-edges:
   - target: "[[chaos-primordial]]"
     type: "parallel-motif"
