@@ -645,17 +645,7 @@
       if (_popup) { _popup.remove(); }
     });
 
-    // Click an individual circle → the chart workflow: toggle the LOCK (tab +
-    // transmission wires). It does NOT open the panel — the panel opens when
-    // you click the TAB (exactly like the deities chart). 2026-06-13.
-    _map.on('click', 'maps-circles', (ev) => {
-      if (!ev.features || !ev.features.length) return;
-      toggleNode(ev.features[0].properties.id);
-    });
-
-    // FOCUS dots (revealed neighbors) are first-class: hover labels them,
-    // click toggles their lock too — so you can walk the graph node-to-node
-    // out of the bundles. 2026-06-13.
+    // FOCUS dots (revealed neighbors) — hover labels them.
     _map.on('mousemove', 'maps-focus-circles', (ev) => {
       if (!ev.features || !ev.features.length) return;
       _map.getCanvas().style.cursor = 'pointer';
@@ -666,49 +656,41 @@
       _popup.setLngLat(ev.lngLat).setHTML('<div class="maps-tip-title">' + escapeHtml(p.title) + '</div>').addTo(_map);
     });
     _map.on('mouseleave', 'maps-focus-circles', () => { _map.getCanvas().style.cursor = ''; if (_popup) _popup.remove(); });
-    _map.on('click', 'maps-focus-circles', (ev) => {
-      if (!ev.features || !ev.features.length) return;
-      ev.preventDefault && ev.preventDefault();
-      toggleNode(ev.features[0].properties.id);
-    });
-
-    // Click empty map (no node, no cluster) → close the panel, like clicking
-    // empty canvas on a chart. Locks (tabs + wires) persist — re-click a node
-    // to unlock it.
-    _map.on('click', (ev) => {
-      const hit = _map.queryRenderedFeatures(ev.point, {
-        layers: layersThatExist(['maps-circles', 'maps-clusters', 'maps-focus-circles'])
-      });
-      if (hit && hit.length) return;   // a node/cluster/focus handler owns this click
-      if (_activeId) closePanel();
-    });
-
-    // Cluster cursor + click-to-zoom (the node-zoom decluttering behavior).
     _map.on('mouseenter', 'maps-clusters', () => { _map.getCanvas().style.cursor = 'pointer'; });
     _map.on('mouseleave', 'maps-clusters', () => { _map.getCanvas().style.cursor = ''; });
-    _map.on('click', 'maps-clusters', (ev) => {
-      const feats = _map.queryRenderedFeatures(ev.point, { layers: ['maps-clusters'] });
-      if (!feats.length) return;
-      const clusterId = feats[0].properties.cluster_id;
-      const coord = feats[0].geometry.coordinates;
+
+    // ONE click handler, ONE action per click. 2026-06-13 — separate per-layer
+    // handlers were the bug: a revealed neighbor that's ALSO a normal dot sits
+    // in two layers, so a click fired BOTH handlers → toggleNode ran twice →
+    // lock-then-unlock cancelled itself → clicking the other-side node did
+    // nothing (John: "i need to click ON the otherside node"). Now: priority
+    // focus-dot → node-circle → cluster → empty, acting exactly once. Clicking
+    // a revealed neighbor locks IT → draws its wires → reveals its neighbors
+    // (walk the graph hop by hop).
+    function expandCluster(feat) {
+      const clusterId = feat.properties.cluster_id;
+      const coord = feat.geometry.coordinates;
       const src = _map.getSource('maps-nodes');
       const cur = _map.getZoom();
       const ease = (targetZoom) => {
-        const FLOOR = 6.4; // ensure a click always breaks the cluster
+        const FLOOR = 6.4;
         const candidate = (typeof targetZoom === 'number' && isFinite(targetZoom))
-          ? Math.max(targetZoom + 0.5, FLOOR)
-          : Math.max(cur + 2.2, FLOOR);
-        const want = Math.min(_map.getMaxZoom(), candidate);
-        _map.easeTo({ center: coord, zoom: want, duration: 500 });
+          ? Math.max(targetZoom + 0.5, FLOOR) : Math.max(cur + 2.2, FLOOR);
+        _map.easeTo({ center: coord, zoom: Math.min(_map.getMaxZoom(), candidate), duration: 500 });
       };
-      // getClusterExpansionZoom is callback in v3- and Promise in v5 — handle both.
       try {
-        const r = src.getClusterExpansionZoom(clusterId, (err, z) => {
-          if (err) { ease(); return; }
-          ease(z);
-        });
+        const r = src.getClusterExpansionZoom(clusterId, (err, z) => { if (err) ease(); else ease(z); });
         if (r && typeof r.then === 'function') r.then(ease).catch(() => ease());
       } catch (_) { ease(); }
+    }
+    _map.on('click', (ev) => {
+      const focus = _map.queryRenderedFeatures(ev.point, { layers: layersThatExist(['maps-focus-circles']) });
+      if (focus.length) { toggleNode(focus[0].properties.id); return; }
+      const circ = _map.queryRenderedFeatures(ev.point, { layers: layersThatExist(['maps-circles']) });
+      if (circ.length) { toggleNode(circ[0].properties.id); return; }
+      const clus = _map.queryRenderedFeatures(ev.point, { layers: layersThatExist(['maps-clusters']) });
+      if (clus.length) { expandCluster(clus[0]); return; }
+      if (_activeId) closePanel();   // empty click → close the panel (locks persist)
     });
   }
 
