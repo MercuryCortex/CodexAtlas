@@ -10277,6 +10277,110 @@ body:not(.view-boards) .app-pill--boards { display: none !important; }
   overflow: hidden;
 }
 
+/* ══════════════════════════════════════════════════════════════
+   MAP V2 — real MapLibre geographic map (2026-06-13).
+   The inner #maps-map is the MapLibre target (MapLibre sets
+   position:relative inline, so the fill comes from width/height
+   100% within the explicitly-sized .maps-stage). Control + tooltip
+   theming mirrors the legacy .atlas-map blocks above so both map
+   surfaces share one visual language (cardinal rule #8 — view owns
+   its chrome, but reuse the canonical look).
+   ══════════════════════════════════════════════════════════════ */
+.maps-map {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.maps-map .maplibregl-canvas { cursor: grab; }
+.maps-map .maplibregl-canvas:active { cursor: grabbing; }
+.maps-map .maplibregl-canvas:focus { outline: none; }
+
+/* MapLibre nav + attribution controls — token-palette theming. */
+.maps-map .maplibregl-ctrl-group {
+  background: var(--bg-1);
+  border: 1px solid var(--border);
+  box-shadow: 0 8px 18px -10px rgba(0,0,0,0.6);
+}
+.maps-map .maplibregl-ctrl-group button {
+  background: var(--bg-1);
+  border-color: var(--border);
+  transition: background var(--t-micro) var(--ease);
+}
+.maps-map .maplibregl-ctrl-group button:hover { background: var(--bg-3); }
+.maps-map .maplibregl-ctrl-group button + button { border-top-color: var(--border-soft); }
+.maps-map .maplibregl-ctrl-zoom-in span,
+.maps-map .maplibregl-ctrl-zoom-out span {
+  filter: invert(0.9) sepia(0.15) hue-rotate(20deg) saturate(0.6);
+}
+.maps-map .maplibregl-ctrl-attrib {
+  background: rgba(13,17,25,0.62);
+  color: var(--text-3);
+  font-family: var(--mono);
+  font-size: var(--micro);
+}
+.maps-map .maplibregl-ctrl-attrib a { color: var(--text-2); }
+.maps-map .maplibregl-ctrl-attrib a:hover { color: var(--gold); }
+.maps-map .maplibregl-ctrl-attrib-button { background-color: var(--bg-1); }
+
+/* Hover tooltip — a TINY label only (full node content is the inspector).
+   The MapLibre Popup wrapper class is .maps-tip (set in maps.js). */
+.maplibregl-popup.maps-tip .maplibregl-popup-content {
+  background: var(--bg-1);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 7px 10px;
+  box-shadow: 0 10px 24px -12px rgba(0,0,0,0.7);
+  pointer-events: none;
+}
+.maplibregl-popup.maps-tip .maplibregl-popup-tip { display: none; }
+.maps-tip .maps-tip-title {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text-1);
+  line-height: 1.3;
+}
+.maps-tip .maps-tip-meta {
+  margin-top: 2px;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.04em;
+  color: var(--text-2);
+}
+
+/* MAP empty / error state — same idiom as the construction-note it replaced. */
+.maps-empty {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  text-align: center;
+  pointer-events: none;
+}
+.maps-empty .maps-empty-glyph {
+  font-size: 64px;
+  line-height: 1;
+  color: rgba(212, 175, 110, 0.38);
+}
+.maps-empty .maps-empty-title {
+  font-family: var(--mono);
+  font-size: 13px;
+  letter-spacing: 0.42em;
+  text-indent: 0.42em;
+  color: rgba(232, 226, 214, 0.55);
+}
+.maps-empty .maps-empty-sub {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  letter-spacing: 0.08em;
+  line-height: 1.7;
+  max-width: 440px;
+  color: rgba(232, 226, 214, 0.34);
+}
+
 /* ── ALPHABETS V2 — GLYPHS grid + the VERTICAL GENEALOGY page ───
  * (2026-06-10, John-ratified). GLYPHS: flowing grid, scrolls.
  * GENEALOGY: the vertical band-map — svg fills the pane, wheel-zoom
@@ -10478,13 +10582,17 @@ body.view-boards aside.detail,
 body.view-boards .legend,
 body.view-boards .tier-legend,
 body.view-maps .view-header,
-body.view-maps aside.detail,
 body.view-maps .legend,
 body.view-maps .tier-legend,
 body.view-starmap .view-header,
 body.view-starmap aside.detail,
 body.view-starmap .legend,
 body.view-starmap .tier-legend { display: none !important; }
+/* 2026-06-13 — MAP now plots real nodes; clicking one opens the CANONICAL
+   aside.detail inspector (window._inspector.show), so it must NOT be hidden
+   on view-maps. (It WAS hidden while MAP was a skeleton with no inspector.)
+   Only .view-header / .legend / .tier-legend stay hidden — the map doesn't
+   use those. STAR MAP is still a skeleton, so it keeps hiding aside.detail. */
 
 /* ════════════════════════════════════════════════════════════════
    FORGE SIDE-PANEL — 2026-05-29 additions

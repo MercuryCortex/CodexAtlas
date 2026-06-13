@@ -543,7 +543,21 @@ function setView(name) {
   if (window._investigationView && typeof window._investigationView.unmount === 'function') {
     try { window._investigationView.unmount(); } catch (e) { /* ignore */ }
   }
-  document.querySelectorAll('.boards-pane, .boards-bottombar, .alphabets-pane, .investigation-pane').forEach(el => el.remove());
+  // 2026-06-13 — Map pane teardown, symmetric with Boards/Alphabets. The MAP
+  // view (src/js/views/maps.js) holds a live MapLibre GL instance + a
+  // ResizeObserver; unmount() must run BEFORE the .maps-pane DOM node is
+  // removed or the GL context + every map listener leak across view changes
+  // (a known failure class in this project). The construction-note skeleton
+  // it replaced held no resources, so this teardown hook is new with the map.
+  if (window._mapsView && typeof window._mapsView.unmount === 'function') {
+    try { window._mapsView.unmount(); } catch (e) { /* ignore */ }
+  }
+  // STAR MAP pane teardown (still a skeleton today, but symmetric so a future
+  // celestial-sphere build that holds resources tears down cleanly too).
+  if (window._starmapView && typeof window._starmapView.unmount === 'function') {
+    try { window._starmapView.unmount(); } catch (e) { /* ignore */ }
+  }
+  document.querySelectorAll('.boards-pane, .boards-bottombar, .alphabets-pane, .investigation-pane, .maps-pane, .starmap-pane').forEach(el => el.remove());
   // ── HASH ROUTER (push view change) ────────────────────────────────
   // On a true view change, pushState so the back button moves between
   // views. Re-renders of the same view use replaceState (or nothing) so
@@ -1309,8 +1323,10 @@ VIEWS.maps = {
     canvasEl.appendChild(pane);
     const svgEl = document.getElementById('svg');
     if (svgEl) svgEl.style.display = 'none';
-    // 2026-06-13 — the construction note renders inside maps.js
-    // (the pane's owner) — single markup source, no app.js fallback.
+    // 2026-06-13 — the real geographic map renders inside maps.js (the pane's
+    // owner): MapLibre GL + offline PMTiles basemap, vault nodes plotted +
+    // clustered, click → canonical inspector. unmount() (called in the setView
+    // teardown above) tears the MapLibre instance down on view change.
     if (window._mapsView) window._mapsView.render(pane);
   },
 };

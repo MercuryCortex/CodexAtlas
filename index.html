@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=EB+Garamond:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&family=Noto+Serif+Hebrew:wght@400;700&family=Noto+Sans+Egyptian+Hieroglyphs&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="_assets/vendor/maplibre/maplibre-gl.css?v=5.24.0" />
-<link rel="stylesheet" href="src/styles/app.css?v=20260613-genealogy" />
+<link rel="stylesheet" href="src/styles/app.css?v=20260613-map-build" />
 </head>
 <body class="nav-hidden detail-collapsed">
 <!-- ════════════════════════════════════════════════════════════════
@@ -237,7 +237,7 @@
 <!-- V2 skeletons for MAP + STAR MAP (filed 2026-05-28 alongside the
      legacy-isolation lock). Empty stages, ready to build into; the
      legacy MapLibre + astrology stays in _legacy/ for reference. -->
-<script src="src/js/views/maps.js?v=20260613-genealogy"></script>
+<script src="src/js/views/maps.js?v=20260613-map-build4"></script>
 <script src="src/js/views/starmap.js?v=20260613-genealogy"></script>
 <!-- ALPHABETS V2 Section (2026-06-10) — writing-system genealogy;
      master-pill 5→6 per AUDIT/2026-06-10-alphabets-page-plan.md. -->
@@ -263,7 +263,7 @@
      window.selectNode for every non-Forge surface; replaces the deleted
      V01 renderDetail(). Loads BEFORE app.js (boot-race rule). -->
 <script src="src/js/inspector.js?v=20260610-panel-parity"></script>
-<script src="src/js/app.js?v=20260613-044052"></script>
+<script src="src/js/app.js?v=20260613-map-build"></script>
 <!-- Phase 22-B (2026-05-23) — app-shell top-bar pill wiring.
      Loads AFTER app.js so window.STATE + window.setView are defined.
      Self-installing IIFE; exposes window._appPill for debug. -->
