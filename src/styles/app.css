@@ -2278,16 +2278,27 @@ aside.detail {
    The V01 .detail-toggle chevron is DELETED with its markup. */
 body.detail-collapsed aside.detail { display: none; }
 .detail-close {
-  position: absolute; top: 10px; right: 12px; z-index: 4;
-  width: 24px; height: 24px;
-  background: none; border: none;
-  color: rgba(230,230,230,0.45);
-  font-size: 13px; line-height: 1;
+  /* 2026-06-13 — was a 45%-grey glyph with no background: invisible over
+     the node image at the panel top (John: "the side panels dont CLOSE
+     theres no option to close"). Now a clearly-visible dark chip that
+     reads on any backdrop, raised above the image. */
+  position: absolute; top: 12px; right: 14px; z-index: 6;
+  width: 30px; height: 30px;
+  background: rgba(13,17,25,0.72); border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 50%;
+  color: rgba(245,245,245,0.92);
+  font-size: 14px; line-height: 1;
   display: flex; align-items: center; justify-content: center;
   cursor: pointer;
-  transition: color 150ms ease;
+  -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px);
+  box-shadow: 0 4px 12px -4px rgba(0,0,0,0.6);
+  transition: color 150ms ease, background 150ms ease, border-color 150ms ease;
 }
-.detail-close:hover { color: var(--gold); }
+.detail-close:hover {
+  color: var(--gold);
+  background: rgba(13,17,25,0.92);
+  border-color: var(--gold);
+}
 .detail-inner {
   /* symmetric since 2026-06-10 — the 38px left gutter existed to clear
      the deleted V01 chevron */
