@@ -291,7 +291,13 @@
     { id: 'maya',       label: 'Maya' },
     { id: 'quipu',      label: 'Quipu' },
   ];
-  const STANDALONE = { chinese: 1, japanese: 1, devanagari: 1, hangul: 1, aztec: 1, maya: 1, quipu: 1 };
+  // STANDALONE scripts render ONLY their own scriptOnly records — they do
+  // NOT inherit the 22-letter Proto-Sinaitic/Phoenician spine. Ogham and
+  // Elder Futhark are independent traditions (Ogham has no Phoenician descent
+  // at all; the runic order/forms are their own), so showing the Semitic
+  // spine under their chips was inaccurate — they belong here, not on the
+  // chain-derived side (hieroglyph/phoenician/hebrew/arabic/greek/latin).
+  const STANDALONE = { ogham: 1, futhark: 1, chinese: 1, japanese: 1, devanagari: 1, hangul: 1, aztec: 1, maya: 1, quipu: 1 };
   const HIER_FONT = "'Noto Sans Egyptian Hieroglyphs', serif";
 
   function glyphChar(g, scriptId) {

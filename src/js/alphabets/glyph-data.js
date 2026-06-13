@@ -117,12 +117,12 @@ window.ALPHA_GLYPH_DATA = [
     relatedNodes: ['alphabet-sefer-yetzirah', 'alphabet-gematria-hebrew', 'alphabet-hebrew-aleph-bet'],
   },
   {
-    letter: 'S', name: 'Samekh', meaning: 'fish / pillar / spine', gardiner: 'K1',
-    unicode: 0x1319B, phoneme: 's', greek: 'Ξ xi (archaic) / unclear', latin: 'S (via sigma)',
+    letter: '', name: 'Samekh', meaning: 'fish / pillar / spine', gardiner: 'K1',
+    unicode: 0x1319B, phoneme: 's', greek: 'Ξ xi', latin: '(none — fed Greek Ξ, dropped from Latin)',
     hebrew: 'ס', arabic: 'س', phoenician: '\u{1090E}',
-    note: 'A fish, tent-peg, or supporting pillar — scholars disagree. Samekh fed into S in Hebrew but its Greek path is debated; sigma (Σ) may derive from a different letter. The letter\'s shape — a closed circle or fish-bone — supports the fish reading.',
-    investigationHighlight: 'The most disputed origin of the 22. Samekh\'s hieroglyphic source is genuinely contested — fish, tent-peg, or pillar — and its path into Greek is unclear. This is one of the few cases where the Proto-Sinaitic acrophonic principle (letter = picture of the thing whose name begins with that sound) breaks down. Samekh shows the limit of how far back we can trace the chain with certainty.',
-    relatedNodes: ['alphabet-phoenician', 'proto-sinaitic', 'alphabet-medu-netjer'],
+    note: 'A fish, tent-peg, or supporting pillar — scholars disagree. Samekh became Greek Xi (Ξ), the "ks" letter; Latin had no descendant of it (Latin S comes from Shin, via sigma). The letter\'s shape — a closed circle or fish-bone — supports the fish reading.',
+    investigationHighlight: 'The most disputed origin of the 22. Samekh\'s hieroglyphic source is genuinely contested — fish, tent-peg, or pillar. Its path is clearer than its picture: Samekh fed Greek Xi (Ξ), which Latin used only as a numeral and then dropped, so no Latin letter descends from it. The Latin S comes instead from Shin (via Greek sigma). Samekh shows the limit of how far back the acrophonic principle (letter = picture of the thing whose name begins with that sound) can be traced with certainty.',
+    relatedNodes: ['alphabet-phoenician', 'alphabet-proto-sinaitic', 'alphabet-medu-netjer'],
   },
   {
     letter: 'O', name: 'Ayin', meaning: 'eye', gardiner: 'D4',
@@ -994,6 +994,20 @@ window.ALPHA_GLYPH_DATA = [
     investigationHighlight: 'Rowan as protective threshold marker (Celtic) ↔ Mezuzah on doorpost (Hebrew) ↔ Ayat al-Kursi verse (Islamic). Three writing traditions, all converting their most powerful sign/text into a physical protection placed at entrances. The alphabet-as-talisman is not a Kabbalistic invention — it is a pan-alphabetic instinct.',
     relatedNodes: ['alphabet-ogham', 'alphabet-ilm-al-huruf'] },
 
+  { unicode: 0x1683, name: 'Fearn', meaning: 'alder tree', phoneme: 'F', letter: 'F',
+    hebrew: '', arabic: '', phoenician: '', greek: '', section: 'First Aicme',
+    gardiner: '', scriptOnly: ['ogham'],
+    note: 'The alder — the tree that bleeds. Cut alder turns from white to red-orange, so it was read as a wounded, living wood. It resists rot underwater and was used for piles, bridges, and shields; in the Cad Goddeu (Battle of the Trees) the alder leads the host.',
+    investigationHighlight: 'The alder "bleeds" red when cut and survives underwater where other woods rot — so it became the Celtic tree of the threshold between worlds, used for the piles of crannogs and causeways. A wood that endures the water and bears the colour of blood gathers the same charge as the Egyptian acacia of Osiris and the cross-timber of later Christian legend: the tree that suffers and yet bridges.',
+    relatedNodes: ['alphabet-ogham'] },
+
+  { unicode: 0x1684, name: 'Sail', meaning: 'willow tree', phoneme: 'S', letter: 'S',
+    hebrew: '', arabic: '', phoenician: '', greek: '', section: 'First Aicme',
+    gardiner: '', scriptOnly: ['ogham'],
+    note: 'The willow — water-loving, moon-associated, the tree of grief and of poetic inspiration. Willow grows back from a cut branch pushed into wet ground; it embodies flexible survival and the rhythms of the moon and tides.',
+    investigationHighlight: 'The willow (Sail) was the moon-and-water tree of the Celts, just as the willow weeps "by the rivers of Babylon" where the exiles hung their harps (Psalm 137), and as Greek willow groves were sacred to Hecate and Persephone. The water-tree of mourning and of song recurs across Irish, Hebrew, and Greek imagination — the same plant bent over the same dark water.',
+    relatedNodes: ['alphabet-ogham'] },
+
   { unicode: 0x1685, name: 'Nion', meaning: 'ash tree', phoneme: 'N', letter: 'N',
     hebrew: '', arabic: '', phoenician: '', greek: '', section: 'First Aicme',
     gardiner: '', scriptOnly: ['ogham'],
@@ -1001,11 +1015,25 @@ window.ALPHA_GLYPH_DATA = [
     investigationHighlight: 'Ogham Nion (ash) = Norse Yggdrasil (ash) = Hindu Ashvattha (sacred fig/world tree) = Kabbalistic Tree of Life = Mayan World Tree. Every tradition that developed a writing system placed that system in or under a World Tree. The alphabet lives in the tree that holds the cosmos together.',
     relatedNodes: ['alphabet-ogham', 'alphabet-elder-futhark'] },
 
+  { unicode: 0x1686, name: 'Úath', meaning: 'hawthorn / fear / the terror', phoneme: 'H', letter: 'H',
+    hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Second Aicme',
+    gardiner: '', scriptOnly: ['ogham'],
+    note: 'Hawthorn — and úath also means "fear, terror, the dread thing." The lone hawthorn was a fairy-tree never cut for fear of the Otherworld; its blossom was thought to smell of plague and death even as it crowned the May.',
+    investigationHighlight: 'The hawthorn (Úath) is the Celtic taboo-tree: a solitary thorn left standing in cleared fields into modern times, because to fell a fairy hawthorn invited ruin. The same dread attaches to forbidden sacred ground everywhere — the untouchable grove, the holy of holies one may not enter, the tabu of the Polynesian source-word itself. The letter H carries the sound of the thing one does not approach.',
+    relatedNodes: ['alphabet-ogham'] },
+
   { unicode: 0x1687, name: 'Dair', meaning: 'oak tree', phoneme: 'D', letter: 'D',
     hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Second Aicme',
     gardiner: '', scriptOnly: ['ogham'],
     note: 'The Druid\'s tree — "Druid" may mean "oak-knower." Druidic ritual required oak groves (nemeton). The oak is where the sacred teaching lives.',
     investigationHighlight: 'Druid oak groves ↔ Dodona oracle oak (Zeus) ↔ Abraham\'s Terebinth at Mamre (where God appeared) ↔ Buddha\'s enlightenment under the Bodhi fig. The World Religious Moment happens under a sacred tree. Druids, Greeks, Hebrews, and Buddhists independently chose the tree as the site of divine contact.',
+    relatedNodes: ['alphabet-ogham'] },
+
+  { unicode: 0x1688, name: 'Tinne', meaning: 'holly / iron / the metal bar', phoneme: 'T', letter: 'T',
+    hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Second Aicme',
+    gardiner: '', scriptOnly: ['ogham'],
+    note: 'Holly — the evergreen that holds its green and red through midwinter — and tinne also means a bar or ingot of metal, especially iron. The warrior\'s tree: hard wood for spear-shafts and chariot-shafts, the defender that stays armed when all else is bare.',
+    investigationHighlight: 'Holly (Tinne) keeps its green and berry-red through the dead of winter, so it became the midwinter evergreen of the Celts long before it was hung at Christmas — the pre-Christian solstice token absorbed, like the yew in the churchyard and the Yule log on the fire, into the new calendar. The warrior-tree of iron and the festival-green of the returning sun are the same letter.',
     relatedNodes: ['alphabet-ogham'] },
 
   { unicode: 0x1689, name: 'Coll', meaning: 'hazel tree', phoneme: 'C', letter: 'C',
@@ -1036,6 +1064,20 @@ window.ALPHA_GLYPH_DATA = [
     investigationHighlight: 'Ogham Gort (ivy) ↔ Greek Dionysus (ivy wreath) ↔ Hebrew vine in the Song of Songs. All three connect the clinging vine to ecstatic states and divine intoxication. The Dionysian mysteries, Celtic druidry, and Hebrew mysticism converge on the same plant as the ecstasy marker.',
     relatedNodes: ['alphabet-ogham'] },
 
+  { unicode: 0x168D, name: 'nGéadal', meaning: 'reed / broom / the healing herb', phoneme: 'NG', letter: 'NG',
+    hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Third Aicme',
+    gardiner: '', scriptOnly: ['ogham'],
+    note: 'The reed (or broom) — gétal, linked to the word for "wounding" and "killing" but also to healing herbs. The reed is the arrow-shaft and the writing-pen at once: the plant that both wounds and records.',
+    investigationHighlight: 'The reed (nGéadal) is the arrow-shaft and the scribe\'s pen in one plant — the same doubleness as the Egyptian reed-pen cut from the marshes that wrote the Book of the Dead, and the Mesopotamian reed-stylus that pressed cuneiform into clay. The reed that pierces and the reed that writes is, across Egypt, Sumer, and Ireland, the same stalk: writing is cut from the weapon-plant.',
+    relatedNodes: ['alphabet-ogham'] },
+
+  { unicode: 0x168E, name: 'Straif', meaning: 'blackthorn / sloe / strife', phoneme: 'Z / St', letter: 'Z',
+    hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Third Aicme',
+    gardiner: '', scriptOnly: ['ogham'],
+    note: 'Blackthorn — the bitter sloe, the dense black-barked thorn from which the Irish shillelagh and the cursing-rod were cut. Straif carries the sense of strife and dark magic; the blackthorn winter is the late cold snap when it flowers.',
+    investigationHighlight: 'Blackthorn (Straif) was the wood of the cursing-rod and the fighting-stick, the malevolent twin of the protective hawthorn — paired light-and-dark thorns the way the Norse runes pair Algiz (warding) against inverted death-forms, and Kabbalah pairs the Tree of Life against the Qliphoth. A writing system that grows from trees inevitably encodes the orchard\'s own division: the tree that heals and the tree that harms.',
+    relatedNodes: ['alphabet-ogham'] },
+
   { unicode: 0x168F, name: 'Ruis', meaning: 'elder tree', phoneme: 'R', letter: 'R',
     hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Third Aicme',
     gardiner: '', scriptOnly: ['ogham'],
@@ -1044,17 +1086,77 @@ window.ALPHA_GLYPH_DATA = [
     relatedNodes: ['alphabet-ogham'] },
 
   { unicode: 0x1690, name: 'Ailm', meaning: 'pine / fir', phoneme: 'A', letter: 'A',
-    hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Forfeda (Vowels)',
+    hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Fourth Aicme (Vowels)',
     gardiner: '', scriptOnly: ['ogham'],
-    note: 'First of the Forfeda — the vowel supplement added later. Ailm (pine/fir) = A.',
-    investigationHighlight: 'Greeks added vowels to the Phoenician consonant abjad (c. 800 BCE). Irish added the Forfeda vowel letters to Ogham centuries later. Both independently solved the same problem: a consonant-only alphabet cannot represent their spoken language. The vowel supplement was invented twice, in unrelated traditions, by the same cognitive pressure.',
-    relatedNodes: ['alphabet-ogham', 'alphabet-phoenician'] },
+    note: 'First of the fourth aicme — the five vowels (A O U E I), drawn as notches straight across the central stemline. Ailm (pine/fir) = A. The cry "ailm!" was said to be the first sound a person makes.',
+    investigationHighlight: 'The Greek alphabet added vowels to the Phoenician consonant abjad (c. 800 BCE); Ogham was built with a dedicated vowel aicme of its own. Both writing traditions concluded that a consonant-only system cannot fully render their spoken language. The solution — explicit vowel signs — was reached independently, under the same cognitive pressure, in two unrelated traditions.',
+    relatedNodes: ['alphabet-ogham', 'alphabet-greek-vowel-revolution'] },
+
+  { unicode: 0x1691, name: 'Onn', meaning: 'gorse / furze', phoneme: 'O', letter: 'O',
+    hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Fourth Aicme (Vowels)',
+    gardiner: '', scriptOnly: ['ogham'],
+    note: 'Gorse — the spiny evergreen shrub that blooms gold even in winter. Its flowers were used to dye Easter eggs in Ireland; the bush burns hot and fast, used for quick fires.',
+    investigationHighlight: 'Gorse (Onn) blooms when little else does, giving rise to the saying "when gorse is out of bloom, kissing is out of season" — i.e. never, because gorse always has some flower. The Ogham vowel for O is the ever-blooming plant. Like the Norse Sowilo (sun) and the Egyptian solar Ra, the bright-gold sign anchors a vowel of light in the writing system of a sun-poor northern land.',
+    relatedNodes: ['alphabet-ogham'] },
+
+  { unicode: 0x1692, name: 'Úr', meaning: 'heather / earth / the grave-soil', phoneme: 'U', letter: 'U',
+    hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Fourth Aicme (Vowels)',
+    gardiner: '', scriptOnly: ['ogham'],
+    note: 'Heather — the moorland flower, but úr also means "fresh earth" and "clay," the soil of the grave. Heather was used for bedding, ale, and thatch; the word carries both new growth and the ground we return to.',
+    investigationHighlight: 'Úr collapses two meanings — fresh earth and grave-clay — into one vowel, the way Hebrew adamah (soil) underlies adam (the human formed from it) and the grave that receives the body. Earth as both origin and destination is a near-universal idea; the Ogham vowel U carries the whole arc of dust-to-dust in a single notch.',
+    relatedNodes: ['alphabet-ogham'] },
+
+  { unicode: 0x1693, name: 'Edad', meaning: 'aspen / trembling tree', phoneme: 'E', letter: 'E',
+    hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Fourth Aicme (Vowels)',
+    gardiner: '', scriptOnly: ['ogham'],
+    note: 'The aspen — whose leaves tremble in the faintest breeze. The "shield-tree": aspen wood was used for shields, and its restless shimmer was read as a sign of courage tested. Paired with Idad (yew) as the two near-synonymous tree-names ending the vowel aicme.',
+    investigationHighlight: 'The trembling aspen (Edad) was read across northern Europe as a tree that "talks" — its ceaseless leaf-shiver heard as whispering spirits, just as the Dodona oak\'s rustle was an oracle to the Greeks and the Burning Bush spoke to Moses. A tree whose movement is divine speech recurs from Ireland to Greece to Sinai. The vowel E is the sound of leaves that never go still.',
+    relatedNodes: ['alphabet-ogham'] },
 
   { unicode: 0x1694, name: 'Idad', meaning: 'yew tree', phoneme: 'I', letter: 'I',
-    hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Forfeda (Vowels)',
+    hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Fourth Aicme (Vowels)',
     gardiner: '', scriptOnly: ['ogham'],
     note: 'The oldest living tree in Britain (Fortingall Yew, ~5,000 years). Evergreen, poisonous, living for millennia — simultaneously immortality and death.',
     investigationHighlight: 'Yew trees grow in virtually every ancient British churchyard — not because Christians planted them, but because churches were built where the sacred yew already stood. Pre-Christian sacred sites co-opted. This is the same pattern as the Kaaba (pre-Islamic site incorporated), the Temple Mount (pre-Israelite site incorporated), and Chartres Cathedral (built on Druidic ground). Sacred geography persists across religious changes.',
+    relatedNodes: ['alphabet-ogham'] },
+
+  // The Forfeda — five supplementary letters added after the four aicmí
+  // (medieval manuscript period) for sounds the original twenty could not
+  // write, chiefly diphthongs and the borrowed P. The same impulse that made
+  // Greeks invent Φ Χ Ψ Ω and Romans add Y and Z for Greek loanwords.
+  { unicode: 0x1695, name: 'Éabhadh', meaning: 'aspen / the great grove', phoneme: 'EA', letter: 'EA',
+    hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Forfeda (Supplement)',
+    gardiner: '', scriptOnly: ['ogham'],
+    note: 'First of the forfeda — a diphthong sign (ea / ch / k) added to write sounds the twenty feda could not. Drawn as an X-shaped cross on the stemline. Associated in the tree-list with the aspen or the "great grove."',
+    investigationHighlight: 'The forfeda are Ogham\'s late expansion: five extra letters grafted on for diphthongs and a borrowed P. Every alphabet that survives long enough grows this way — Greek added Φ Χ Ψ Ω, Latin re-borrowed Y and Z, Hebrew developed five final-forms. A living script is never finished; it accretes signs as the language it serves changes. The forfeda are the Irish chapter of that universal pattern.',
+    relatedNodes: ['alphabet-ogham', 'alphabet-greek-vowel-revolution'] },
+
+  { unicode: 0x1696, name: 'Ór', meaning: 'gold / spindle-tree', phoneme: 'OI', letter: 'OI',
+    hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Forfeda (Supplement)',
+    gardiner: '', scriptOnly: ['ogham'],
+    note: 'A forfid for the diphthong "oi." Its name means "gold," tied in the tree-lore to the spindle-tree (feorus). A spiral or looped shape distinct from the simple notches of the original feda.',
+    investigationHighlight: 'Ór ("gold") names a letter the way Phoenician named Aleph "ox" and Beth "house": by the most valued thing whose name carried the sound. Gold as the standard of value crosses every literate culture — the Egyptian nbw hieroglyph, the Latin aurum, the Hebrew zahav. The Ogham supplement reaches, like the founding alphabets did, for the word that everyone agreed was precious.',
+    relatedNodes: ['alphabet-ogham'] },
+
+  { unicode: 0x1697, name: 'Uilleann', meaning: 'elbow / honeysuckle', phoneme: 'UI', letter: 'UI',
+    hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Forfeda (Supplement)',
+    gardiner: '', scriptOnly: ['ogham'],
+    note: 'A forfid for "ui," its name meaning "elbow" — and the same word names the elbow-bend of the Irish uilleann pipes. In the tree-list it is the honeysuckle (woodbine), the clinging fragrant vine.',
+    investigationHighlight: 'Uilleann ("elbow") names a letter after a joint of the body, the way Proto-Sinaitic named letters Yod (hand), Kaph (palm), Resh (head), Ayin (eye), Pe (mouth). The body is the first writing-surface every tradition reaches for: when a new sign is needed, the human frame supplies the picture. Ireland, three thousand years after the Sinai turquoise mines, reached for the same source.',
+    relatedNodes: ['alphabet-ogham'] },
+
+  { unicode: 0x1698, name: 'Ifín', meaning: 'gooseberry / the pine', phoneme: 'IO / P', letter: 'P',
+    hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Forfeda (Supplement)',
+    gardiner: '', scriptOnly: ['ogham'],
+    note: 'The forfid that supplied the P-sound, which native Old Irish lacked entirely — added to write Latin and borrowed words (the related letter Peith, U+169A, is the simplified "P" form). The gooseberry or pine in the tree-lore.',
+    investigationHighlight: 'Old Irish had no native P-sound; the letter Ifín/Peith had to be invented to write Latin loanwords and Christian vocabulary. This is the mirror of Latin\'s own borrowing of Y and Z for Greek, and of Greek\'s repurposing of Semitic signs for vowels: scripts grow a new letter at exactly the point a foreign faith or language pushes a foreign sound into the mouth. The P entered Irish writing with the Church.',
+    relatedNodes: ['alphabet-ogham', 'alphabet-latin'] },
+
+  { unicode: 0x1699, name: 'Eamhancholl', meaning: 'twin of hazel / X-sound', phoneme: 'AE / X', letter: 'AE',
+    hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Forfeda (Supplement)',
+    gardiner: '', scriptOnly: ['ogham'],
+    note: 'The last forfid — its name means "twin of hazel" (eamhan + coll). Drawn as a doubled or crossed form, used for the "ae" / x sounds. The final sign of the fully expanded Ogham alphabet.',
+    investigationHighlight: 'Eamhancholl ("twin of hazel") closes the expanded Ogham the way Tav (the mark/cross) closes Hebrew and Omega closes Greek — the last sign is a doubling, a completion, a return to an earlier letter (hazel/Coll). Alphabets like to end on closure: a seal, a twin, a final mark. The Ogham wheel shuts by naming itself the twin of a tree already inside it.',
     relatedNodes: ['alphabet-ogham'] },
 
   // ── ELDER FUTHARK (Norse/Germanic) ─────────────────────────────────────────
@@ -1086,6 +1188,13 @@ window.ALPHA_GLYPH_DATA = [
     investigationHighlight: 'Odin hung on Yggdrasil nine days for the runes. Moses received Torah on Sinai forty days. Muhammad received the Quran in a cave during a period of isolation. All three sacred writing traditions encode: the alphabet is not invented — it is revealed. Writing is divine gift, obtained through personal sacrifice or ordeal. The Norse, Hebrew, and Islamic traditions independently theologize the origin of writing identically.',
     relatedNodes: ['alphabet-elder-futhark', 'alphabet-ilm-al-huruf'] },
 
+  { unicode: 0x16B1, name: 'Raidho', meaning: 'riding / journey / the wheel', phoneme: 'R', letter: 'R',
+    hebrew: '', arabic: '', phoenician: '', greek: '', section: 'First Aett (Freyr)',
+    gardiner: '', scriptOnly: ['futhark'],
+    note: 'The riding-rune — the journey, the road, the turning wheel. Raidho is movement with purpose: the wagon, the path travelled, and the rhythm of the cosmos turning.',
+    investigationHighlight: 'Raidho (the cosmic ride) ↔ Vedic Ṛta (the turning cosmic order, same Indo-European root as "rite" and "right") ↔ Egyptian Ra crossing the sky in his solar barque ↔ Greek Helios driving the sun-chariot. The wheel/journey of the sun across the sky is one of the oldest Indo-European images, and the rune for the ordered journey shares a root with the Sanskrit word for cosmic order itself.',
+    relatedNodes: ['alphabet-elder-futhark'] },
+
   { unicode: 0x16B2, name: 'Kenaz', meaning: 'torch / knowledge / craft', phoneme: 'K', letter: 'K',
     hebrew: '', arabic: '', phoenician: '', greek: '', section: 'First Aett (Freyr)',
     gardiner: '', scriptOnly: ['futhark'],
@@ -1100,11 +1209,25 @@ window.ALPHA_GLYPH_DATA = [
     investigationHighlight: 'Gebo (gift-obligation) encodes the same principle as Hebrew covenant (brit) — a mutual obligation created by a sacred act. Norse gift-exchange economy and Hebrew covenant theology both structure sacred relationships as reciprocal obligation. The Gebo rune is theology of relationship encoded in a single mark.',
     relatedNodes: ['alphabet-elder-futhark'] },
 
+  { unicode: 0x16B9, name: 'Wunjo', meaning: 'joy / harmony / belonging', phoneme: 'W', letter: 'W',
+    hebrew: '', arabic: '', phoenician: '', greek: '', section: 'First Aett (Freyr)',
+    gardiner: '', scriptOnly: ['futhark'],
+    note: 'Joy — the eighth rune, closing the first aett. Wunjo is not pleasure but belonging: the contentment of kin in harmony, the well-made fit. Its descendant is the Old English letter Wynn (ƿ), the original way English wrote the W-sound.',
+    investigationHighlight: 'Wunjo (joy-as-harmony) closes the first aett the way Hebrew arranges its alphabet around completion-points. The rune became the Anglo-Saxon letter Wynn (ƿ) — English wrote its W with this rune-derived letter for centuries before "double-U" (uu/vv) replaced it. The Norse joy-rune literally spelled English words until the Norman scribes overwrote it. A pagan rune for harmony survived inside Christian English manuscripts.',
+    relatedNodes: ['alphabet-elder-futhark'] },
+
   { unicode: 0x16BA, name: 'Hagalaz', meaning: 'hail / disruption', phoneme: 'H', letter: 'H',
     hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Second Aett (Heimdall)',
     gardiner: '', scriptOnly: ['futhark'],
     note: 'The second aett opens with chaos. Hail destroys crops without warning. The second eight runes deal with forces beyond human control.',
     investigationHighlight: 'Every alphabet has a structural hinge where order gives way to complication. Hebrew: Mem/Nun/Samekh (waters, fish, scaffold) form the middle. Greek: Xi/Omicron mark the less-common letter zone. Elder Futhark: Hagalaz opens the second aett with disruption. The alphabet encodes the structure of reality: order, then chaos, then resolution.',
+    relatedNodes: ['alphabet-elder-futhark'] },
+
+  { unicode: 0x16BE, name: 'Nauthiz', meaning: 'need / necessity / constraint', phoneme: 'N', letter: 'N',
+    hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Second Aett (Heimdall)',
+    gardiner: '', scriptOnly: ['futhark'],
+    note: 'The need-rune — hardship, constraint, the friction that forces growth. Nauthiz is the need-fire kindled by friction in time of plague. Necessity as teacher: what is lacking shapes what is made.',
+    investigationHighlight: 'Nauthiz (productive necessity) ↔ Greek Ananke (Necessity, the primordial force even the gods obey) ↔ Hindu karma (the binding consequence that constrains) ↔ Norse Norns who carve fate into Yggdrasil. Multiple traditions personify Necessity as a power above the gods themselves. The rune for need carries the same idea as the Greek goddess no Olympian could overrule: some constraints are woven into the structure of reality.',
     relatedNodes: ['alphabet-elder-futhark'] },
 
   { unicode: 0x16C1, name: 'Isa', meaning: 'ice / stillness / stasis', phoneme: 'I', letter: 'I',
@@ -1121,14 +1244,56 @@ window.ALPHA_GLYPH_DATA = [
     investigationHighlight: 'Jera (right timing) ↔ Chinese Yi/I Ching (the right moment) ↔ Hebrew Moed (appointed festival time) ↔ Greek Kairos (sacred time vs chronos ordinary time). Four traditions encode: there is a time that is not like other times. The alphabet contains the philosophy of time.',
     relatedNodes: ['alphabet-elder-futhark'] },
 
-  { unicode: 0x16D2, name: 'Tiwaz', meaning: 'Tyr / justice / sacrifice', phoneme: 'T', letter: 'T',
+  { unicode: 0x16C7, name: 'Eihwaz', meaning: 'yew tree / death-and-life axis', phoneme: 'ï (ei)', letter: 'EI',
+    hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Second Aett (Heimdall)',
+    gardiner: '', scriptOnly: ['futhark'],
+    note: 'The yew-rune — the evergreen that is also poisonous, simultaneously life and death. Yew wood made the best bows; the tree marked graves. Eihwaz is the world-axis Yggdrasil itself (sometimes read as a yew rather than an ash).',
+    investigationHighlight: 'Eihwaz (the yew = death-and-life world-tree) ↔ Ogham Idad (yew, the death-tree among the Irish feda) ↔ the churchyard yews of Britain that predate the churches. Two independent northern European writing traditions — Norse runes and Irish Ogham — both made the poisonous evergreen yew their tree of the death-life threshold. The same tree, the same meaning, encoded twice without contact.',
+    relatedNodes: ['alphabet-elder-futhark', 'alphabet-ogham'] },
+
+  { unicode: 0x16C8, name: 'Perthro', meaning: 'lot-cup / chance / fate', phoneme: 'P', letter: 'P',
+    hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Second Aett (Heimdall)',
+    gardiner: '', scriptOnly: ['futhark'],
+    note: 'The most mysterious rune — usually read as the dice-cup or lot-casting vessel, the hidden workings of fate and chance. Its meaning was already obscure when recorded; it is the rune of what cannot be known in advance.',
+    investigationHighlight: 'Perthro (the lot-cup of fate) ↔ casting lots in the Hebrew Bible (the Urim and Thummim; "the lot is cast into the lap, but its every decision is from the LORD," Proverbs 16:33) ↔ Greek divination by klēros (lot). The rune for randomized divination encodes a near-universal idea: chance is the medium through which fate speaks. Drawing lots was a sacred act, not a game, across Norse, Hebrew, and Greek practice.',
+    relatedNodes: ['alphabet-elder-futhark'] },
+
+  { unicode: 0x16C9, name: 'Algiz', meaning: 'elk / protection / the warding hand', phoneme: 'Z', letter: 'Z',
+    hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Second Aett (Heimdall)',
+    gardiner: '', scriptOnly: ['futhark'],
+    note: 'The protection-rune — splayed elk antlers, or a hand raised to ward. Its upward-branching shape became the "life rune" of later esoteric tradition; inverted, the "death rune." A sign of the boundary between the human and the divine.',
+    investigationHighlight: 'Algiz (the warding upraised hand) ↔ the Hebrew priestly blessing hand-shape (which became the Vulcan salute via Shin) ↔ the Egyptian ka-sign (D28, two upraised arms = the protecting life-force). Across Norse, Hebrew, and Egyptian symbol systems, the upraised splayed hand means protection and the channel to the divine. The gesture predates and outlives every alphabet that recorded it.',
+    relatedNodes: ['alphabet-elder-futhark'] },
+
+  { unicode: 0x16CB, name: 'Sowilo', meaning: 'sun / victory / wholeness', phoneme: 'S', letter: 'S',
+    hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Second Aett (Heimdall)',
+    gardiner: '', scriptOnly: ['futhark'],
+    note: 'The sun-rune — the lightning-bolt zigzag of solar power, victory, and wholeness. Closing the second aett, Sowilo is the life-giving sun the long northern winter waits for. Later misappropriated, doubled, as a 20th-century political emblem.',
+    investigationHighlight: 'Sowilo (the sun = wholeness/victory) ↔ Egyptian Ra (the sun as supreme deity) ↔ the Vedic Surya ↔ Christian "Sol Invictus" absorbed into the dating of Christmas. Every tradition that wrote made the sun a sign of triumph and completeness. The sun-rune sits where the second aett resolves, the way solar imagery resolves the cosmologies built around it: light defeats the dark.',
+    relatedNodes: ['alphabet-elder-futhark'] },
+
+  { unicode: 0x16CF, name: 'Tiwaz', meaning: 'Tyr / justice / sacrifice', phoneme: 'T', letter: 'T',
     hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Third Aett (Tyr)',
     gardiner: '', scriptOnly: ['futhark'],
     note: 'Tyr sacrificed his hand to bind the Fenris wolf — giving up something precious to maintain cosmic order. The third aett opens with just sacrifice.',
-    investigationHighlight: 'Tyr sacrifices his hand for order (Norse) ↔ Abraham sacrifices his son for God (Hebrew) ↔ Odin sacrifices his eye for wisdom (Norse) ↔ Christ crucified for salvation (Christian). The divine figure who sacrifices part of themselves to maintain or restore cosmic order is the most cross-culturally consistent mythological structure in the vault.',
+    investigationHighlight: 'Tyr sacrifices his hand for order (Norse) ↔ Abraham sacrifices his son for God (Hebrew) ↔ Odin sacrifices his eye for wisdom (Norse) ↔ Christ crucified for salvation (Christian). The divine figure who sacrifices part of themselves to maintain or restore cosmic order is one of the most cross-culturally consistent mythological structures the Atlas tracks.',
     relatedNodes: ['alphabet-elder-futhark'] },
 
-  { unicode: 0x16D6, name: 'Mannaz', meaning: 'humanity / self / mind', phoneme: 'M', letter: 'M',
+  { unicode: 0x16D2, name: 'Berkano', meaning: 'birch / birth / the mother', phoneme: 'B', letter: 'B',
+    hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Third Aett (Tyr)',
+    gardiner: '', scriptOnly: ['futhark'],
+    note: 'The birch-rune — birth, growth, the nurturing mother, new beginnings. Its shape is two breasts or a pregnant belly. Birch is the first tree to leaf in spring; Berkano is the rune of fertility and renewal.',
+    investigationHighlight: 'Berkano (birch = the mother/birth) ↔ Ogham Beith (birch, the very first Irish letter) ↔ Phoenician Beth (house, the second letter, the dwelling). Three traditions place birch or the dwelling near the head of the alphabet and tie it to origins. Norse and Irish both chose the birch — the pioneer tree that colonizes bare ground — as a sign of beginnings; the alphabet itself begins where the forest begins.',
+    relatedNodes: ['alphabet-elder-futhark', 'alphabet-ogham'] },
+
+  { unicode: 0x16D6, name: 'Ehwaz', meaning: 'horse / partnership / trust', phoneme: 'E', letter: 'E',
+    hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Third Aett (Tyr)',
+    gardiner: '', scriptOnly: ['futhark'],
+    note: 'The horse-rune — the bond between rider and steed, the trusted partnership, movement achieved together. Tacitus records that the Germanic peoples kept sacred white horses and read omens from them. Ehwaz is two beings moving as one.',
+    investigationHighlight: 'Ehwaz (the sacred horse-bond) ↔ the Vedic Ashvamedha (horse sacrifice, the supreme royal rite) ↔ the Greek Pegasus and the Dioscuri\'s horses ↔ Sleipnir, Odin\'s eight-legged steed. The horse as a sacred partner and vehicle to the divine recurs across Indo-European traditions descended from a common steppe horse-culture. The rune for "horse" preserves the animal that carried the whole Indo-European world.',
+    relatedNodes: ['alphabet-elder-futhark'] },
+
+  { unicode: 0x16D7, name: 'Mannaz', meaning: 'humanity / self / mind', phoneme: 'M', letter: 'M',
     hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Third Aett (Tyr)',
     gardiner: '', scriptOnly: ['futhark'],
     note: 'The human rune — individual self, social being, and reflecting mind. Its shape is two Wunjo (joy) runes facing each other.',
@@ -1140,6 +1305,13 @@ window.ALPHA_GLYPH_DATA = [
     gardiner: '', scriptOnly: ['futhark'],
     note: 'The water-rune — the unconscious, the flow of life, the reflective lake. Used in runic magic for intuition and deep forces.',
     investigationHighlight: 'Laguz (water/unconscious) mirrors Proto-Sinaitic Mem (water), Egyptian N35 (wavy water lines), and Greek Mu. Across every writing tradition from Semitic to Germanic, a water sign appears in the second half of the alphabet. Water = the deep/unconscious was encoded in writing 3,000 years before Jung named it.',
+    relatedNodes: ['alphabet-elder-futhark'] },
+
+  { unicode: 0x16DC, name: 'Ingwaz', meaning: 'Ing / the seed / latent potential', phoneme: 'ŋ (ng)', letter: 'NG',
+    hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Third Aett (Tyr)',
+    gardiner: '', scriptOnly: ['futhark'],
+    note: 'The rune of Ing (Yngvi-Freyr), the fertility god, and of the stored seed waiting to sprout. Its diamond shape is a sealed container of potential. Ingwaz is gestation: energy gathered, held, and released at the right moment.',
+    investigationHighlight: 'Ingwaz (the sealed seed of the fertility god) ↔ Egyptian Osiris as the buried grain that resurrects ↔ the Eleusinian Mysteries, where a single cut wheat-ear was the central revelation. The seed that dies underground to be reborn is one of the oldest sacred patterns; the rune for the fertility god Ing holds the same image the dying-and-rising grain gods carry across the Mediterranean.',
     relatedNodes: ['alphabet-elder-futhark'] },
 
   { unicode: 0x16DE, name: 'Dagaz', meaning: 'day / dawn / breakthrough', phoneme: 'D', letter: 'D',
@@ -1160,6 +1332,11 @@ window.ALPHA_GLYPH_DATA = [
   // 214 Kangxi radicals are the "alphabet" of Chinese — every character is built from these.
   // Oracle Bone Script (甲骨文) c. 1250 BCE — earliest attested Chinese writing.
   // Sections follow semantic categories, not stroke count.
+  // NOTE: Chinese is logographic — there is no fixed "complete letter set" to
+  // exhaust (the Kangxi system has 214 radicals, and tens of thousands of
+  // characters built from them). What follows is a CURATED, ACCURATE
+  // investigation set — the radicals and characters whose form or etymology
+  // carries a cross-tradition finding — NOT an exhaustive inventory.
 
   // Numbers ──────────────────────────────────────────────────────────────────
   { unicode: 0x4E00, name: 'Yi', meaning: 'one', phoneme: 'yī',
@@ -1208,7 +1385,7 @@ window.ALPHA_GLYPH_DATA = [
     letter: '', hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Numbers (数字)',
     gardiner: '', scriptOnly: ['chinese'],
     note: 'Eight — the Eight Trigrams (八卦, bāguà) of the I Ching. The character shows two separated marks suggesting division. Eight is the most cosmologically loaded number in Chinese thought.',
-    investigationHighlight: 'MASSIVE WIN: 八卦 (Eight Trigrams) = the 8 possible combinations of three binary lines = the complete set of 3-variable boolean logic = the basis of all 64 I Ching hexagrams. Leibniz showed these are identical to 3-bit binary numbers. The Chinese ancient sages encoded complete binary combinatorics as a cosmological system 3,000 years before formal logic.',
+    investigationHighlight: '八卦 (Eight Trigrams) = the 8 possible combinations of three binary lines = the complete set of 3-variable boolean logic = the basis of all 64 I Ching hexagrams. Leibniz showed these are identical to 3-bit binary numbers. The Chinese ancient sages encoded complete binary combinatorics as a cosmological system 3,000 years before formal logic.',
     relatedNodes: ['alphabet-chinese-oracle-bones'] },
   { unicode: 0x4E5D, name: 'Jiu', meaning: 'nine / extreme', phoneme: 'jiǔ',
     letter: '', hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Numbers (数字)',
@@ -1240,7 +1417,7 @@ window.ALPHA_GLYPH_DATA = [
     letter: '', hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Nature (自然)',
     gardiner: '', scriptOnly: ['chinese'],
     note: 'Oracle Bone Script 日 is a circle with a dot at center — the eye of the sun. Evolution: circle-with-dot (OBS, c. 1250 BCE) → rectangular form (Small Seal, 221 BCE) → modern square 日. The dot was lost when the brush replaced the bone-stylus.',
-    investigationHighlight: 'MASSIVE WIN: The Oracle Bone 日 (circle + central dot) is structurally identical to the Egyptian Ra hieroglyph N5 (circle + dot). Two civilizations 7,000 miles apart, zero contact in 1250 BCE, both drew the sun as a circle with a dot. The dot represents the visible solar disk. Independent convergence on the same visual solution.',
+    investigationHighlight: 'The Oracle Bone 日 (circle + central dot) is structurally identical to the Egyptian Ra hieroglyph N5 (circle + dot). Two civilizations 7,000 miles apart, zero contact in 1250 BCE, both drew the sun as a circle with a dot. The dot represents the visible solar disk. Independent convergence on the same visual solution.',
     relatedNodes: ['alphabet-chinese-oracle-bones', 'alphabet-creation-by-word'] },
   { unicode: 0x6708, name: 'Yue', meaning: 'moon / month', phoneme: 'yuè',
     letter: '', hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Nature (自然)',
@@ -1320,7 +1497,7 @@ window.ALPHA_GLYPH_DATA = [
     letter: '', hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Body (身体)',
     gardiner: '', scriptOnly: ['chinese'],
     note: 'The heart with two ventricles shown. 心 is the Chinese seat of BOTH emotion AND thought — there is no separate word for "mind" in classical Chinese that isn\'t heart-based. 思 (think), 想 (want/think), 感 (feel), 忘 (forget), 意 (meaning/intention) — all contain 心.',
-    investigationHighlight: 'MASSIVE WIN: In Chinese, thinking happens in the heart (心), not the brain. Compare: Hebrew lev (heart) as the seat of wisdom and understanding; Arabic qalb (heart) as the seat of spiritual intelligence in Sufi thought; Greek kardia vs. nous distinction. Modern neuroscience: the gut has 100 million neurons; the heart has 40,000 neurons and a semi-autonomous nervous system. Who was right?',
+    investigationHighlight: 'In Chinese, thinking happens in the heart (心), not the brain. Compare: Hebrew lev (heart) as the seat of wisdom and understanding; Arabic qalb (heart) as the seat of spiritual intelligence in Sufi thought; Greek kardia vs. nous distinction. Modern neuroscience: the gut has 100 million neurons; the heart has 40,000 neurons and a semi-autonomous nervous system. Who was right?',
     relatedNodes: ['alphabet-chinese-oracle-bones', 'alphabet-letter-as-cosmos'] },
   { unicode: 0x8033, name: 'Er', meaning: 'ear / hear', phoneme: 'ěr',
     letter: '', hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Body (身体)',
@@ -1346,7 +1523,7 @@ window.ALPHA_GLYPH_DATA = [
     letter: '', hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Animals (动物)',
     gardiner: '', scriptOnly: ['chinese'],
     note: 'Oracle Bone form: a cow head with horns facing forward. The first domesticated large animal. 牛 radical: 物 (thing/object), 牧 (graze/shepherd), 特 (special/bull).',
-    investigationHighlight: 'MASSIVE WIN: The Chinese Oracle Bone 牛 (cow head with horns) is structurally identical to the Semitic Aleph origin (ox-head). Two traditions, same first domesticated animal, same pictogram as foundational letter/character. The cow/ox is the most universal animal in sacred traditions: Egyptian Apis bull, Hindu sacred cow, Mithraic bull-slaying, Greek bull sacrifice, Semitic Aleph. The ox is the beginning of civilization everywhere.',
+    investigationHighlight: 'The Chinese Oracle Bone 牛 (cow head with horns) is structurally identical to the Semitic Aleph origin (ox-head). Two traditions, same first domesticated animal, same pictogram as foundational letter/character. The cow/ox is the most universal animal in sacred traditions: Egyptian Apis bull, Hindu sacred cow, Mithraic bull-slaying, Greek bull sacrifice, Semitic Aleph. The ox is the beginning of civilization everywhere.',
     relatedNodes: ['alphabet-chinese-oracle-bones', 'alphabet-creation-by-word'] },
   { unicode: 0x7F8A, name: 'Yang', meaning: 'sheep / goat', phoneme: 'yáng',
     letter: '', hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Animals (动物)',
@@ -1376,7 +1553,7 @@ window.ALPHA_GLYPH_DATA = [
     letter: '', hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Animals (动物)',
     gardiner: '', scriptOnly: ['chinese'],
     note: 'A complex pictogram of a horned, scaled creature. Chinese dragon is benevolent, associated with water and imperial power — the opposite of the Western dragon. 龙 = emperor symbol; 龙年 = dragon year in zodiac cycle.',
-    investigationHighlight: 'MASSIVE WIN: The dragon appears independently in Chinese (水龙 water dragon = auspicious), European (fire-breathing = malevolent), Mesoamerican (Quetzalcoatl = feathered serpent), Indian (Naga = sacred serpent), Mesopotamian (Tiamat = primordial dragon). No possible contact between all five. The large serpentine creature = boundary between order and chaos in every tradition. Jung: the dragon is a universal archetype of the unconscious.',
+    investigationHighlight: 'The dragon appears independently in Chinese (水龙 water dragon = auspicious), European (fire-breathing = malevolent), Mesoamerican (Quetzalcoatl = feathered serpent), Indian (Naga = sacred serpent), Mesopotamian (Tiamat = primordial dragon). No possible contact between all five. The large serpentine creature = boundary between order and chaos in every tradition. Jung: the dragon is a universal archetype of the unconscious.',
     relatedNodes: ['alphabet-chinese-oracle-bones', 'alphabet-letter-as-cosmos'] },
 
   // Power & Cosmos (天地) ────────────────────────────────────────────────────
@@ -1396,7 +1573,7 @@ window.ALPHA_GLYPH_DATA = [
     letter: '', hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Power & Cosmos (天地)',
     gardiner: '', scriptOnly: ['chinese'],
     note: 'Three horizontal lines (Heaven, Humanity, Earth) connected by a single vertical stroke. The king is the axis mundi — the being who connects all three realms. Attested interpretation in Dong Zhongshu (c. 150 BCE).',
-    investigationHighlight: 'MASSIVE WIN: 王 (three realms united by a connecting axis) is the Hermetic axiom "As Above, So Below" encoded as a single character. Compare: Egyptian pharaoh as living Horus/Osiris bridge, Vedic priest as yagna-mediator between gods and humans, Norse World Tree as the cosmic axis. The figure who connects cosmic layers = the king = the priest.',
+    investigationHighlight: '王 (three realms united by a connecting axis) is the Hermetic axiom "As Above, So Below" encoded as a single character. Compare: Egyptian pharaoh as living Horus/Osiris bridge, Vedic priest as yagna-mediator between gods and humans, Norse World Tree as the cosmic axis. The figure who connects cosmic layers = the king = the priest.',
     relatedNodes: ['alphabet-chinese-oracle-bones', 'alphabet-letter-as-cosmos', 'tradition-confucianism'] },
   { unicode: 0x5927, name: 'Da', meaning: 'large / great', phoneme: 'dà',
     letter: '', hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Power & Cosmos (天地)',
@@ -1408,7 +1585,7 @@ window.ALPHA_GLYPH_DATA = [
     letter: '', hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Power & Cosmos (天地)',
     gardiner: '', scriptOnly: ['chinese'],
     note: 'A seated or kneeling woman with crossed arms. 女 is one of the most productive radicals: 母 (mother), 妻 (wife), 好 (good = woman+child), 姓 (surname — historically traced through mother), 妙 (wonderful = woman+small/subtle), 嫌 (dislike).',
-    investigationHighlight: 'MASSIVE WIN: 好 (good) = 女 (woman) + 子 (child). In Chinese, "goodness" is a mother with her child. Compare: Hebrew tov (good) in Genesis 1 — "God saw that it was good" — applied to completed creation. Chinese: goodness = completed family unit. The most philosophical concept in ethics (what is "good"?) gets its answer in a pictogram: a mother holding her child.',
+    investigationHighlight: '好 (good) = 女 (woman) + 子 (child). In Chinese, "goodness" is a mother with her child. Compare: Hebrew tov (good) in Genesis 1 — "God saw that it was good" — applied to completed creation. Chinese: goodness = completed family unit. The most philosophical concept in ethics (what is "good"?) gets its answer in a pictogram: a mother holding her child.',
     relatedNodes: ['alphabet-chinese-oracle-bones'] },
   { unicode: 0x7236, name: 'Fu', meaning: 'father', phoneme: 'fù',
     letter: '', hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Power & Cosmos (天地)',
@@ -1440,7 +1617,7 @@ window.ALPHA_GLYPH_DATA = [
     letter: '', hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Direction & Space (方位)',
     gardiner: '', scriptOnly: ['chinese'],
     note: 'An arrow or flag hitting the center of a target. 中 means "center" AND "China" (中国 = Middle Kingdom). The Chinese name for China is "the centered kingdom" — the nation as cosmic center.',
-    investigationHighlight: 'MASSIVE WIN: Every major civilization called itself the center of the world. 中国 (Middle Kingdom = China), Mesos Gaia (Mediterranean = Middle Sea), Navel of the World (Delphi), Omphalos (Greek navel stone), Jerusalem as cosmic center, Mecca as qibla-center, Mount Meru as axis mundi. The impulse to be "the center" is universal. The character for "center" became the name of a civilization.',
+    investigationHighlight: 'Every major civilization called itself the center of the world. 中国 (Middle Kingdom = China), Mesos Gaia (Mediterranean = Middle Sea), Navel of the World (Delphi), Omphalos (Greek navel stone), Jerusalem as cosmic center, Mecca as qibla-center, Mount Meru as axis mundi. The impulse to be "the center" is universal. The character for "center" became the name of a civilization.',
     relatedNodes: ['alphabet-chinese-oracle-bones', 'alphabet-letter-as-cosmos'] },
   { unicode: 0x5DE6, name: 'Zuo', meaning: 'left / assist', phoneme: 'zuǒ',
     letter: '', hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Direction & Space (方位)',
@@ -1466,7 +1643,7 @@ window.ALPHA_GLYPH_DATA = [
     letter: '', hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Philosophy (道德)',
     gardiner: '', scriptOnly: ['chinese'],
     note: 'Originally: steam rising from cooking rice. 气 = the visible-but-intangible substance that fills and animates everything. Chinese medicine, martial arts (qigong), and cosmology all operate on the theory of qi-circulation.',
-    investigationHighlight: 'MASSIVE WIN: 气 (qi/vital energy) = Greek pneuma (breath/spirit/vital force) = Hebrew ruach (wind/breath/spirit) = Sanskrit prana (breath/life-force) = Latin spiritus (breath/spirit). FIVE traditions independently arrived at the concept: there is an invisible energetic substance that animates living things, that breath is its most accessible form, and that spiritual practice involves working with this substance. The universe is full of something we can almost grasp.',
+    investigationHighlight: '气 (qi/vital energy) = Greek pneuma (breath/spirit/vital force) = Hebrew ruach (wind/breath/spirit) = Sanskrit prana (breath/life-force) = Latin spiritus (breath/spirit). FIVE traditions independently arrived at the concept: there is an invisible energetic substance that animates living things, that breath is its most accessible form, and that spiritual practice involves working with this substance. The universe is full of something we can almost grasp.',
     relatedNodes: ['alphabet-chinese-oracle-bones', 'alphabet-letter-as-cosmos'] },
   { unicode: 0x5FB7, name: 'De', meaning: 'virtue / power / inner strength', phoneme: 'dé',
     letter: '', hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Philosophy (道德)',
@@ -1486,7 +1663,7 @@ window.ALPHA_GLYPH_DATA = [
     letter: '', hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Writing & Civilization (文字)',
     gardiner: '', scriptOnly: ['chinese'],
     note: '字 = 宀 (roof/house) + 子 (child). A "written character" is literally "a child under a roof." The character for WRITING encodes education: protecting and raising a child under the shelter of culture.',
-    investigationHighlight: 'MASSIVE WIN: 字 (written character = child under roof) encodes writing as cultural transmission to the next generation. Compare: Hebrew "Yod" (hand that teaches), Sanskrit "akshara" (syllable = imperishable). Chinese goes further: the CHARACTER for "character" IS the act of transmission — raising a child. Writing = parenthood.',
+    investigationHighlight: '字 (written character = child under roof) encodes writing as cultural transmission to the next generation. Compare: Hebrew "Yod" (hand that teaches), Sanskrit "akshara" (syllable = imperishable). Chinese goes further: the CHARACTER for "character" IS the act of transmission — raising a child. Writing = parenthood.',
     relatedNodes: ['alphabet-chinese-oracle-bones', 'alphabet-creation-by-word', 'alphabet-letter-as-cosmos'] },
   { unicode: 0x4E66, name: 'Shu', meaning: 'book / write', phoneme: 'shū',
     letter: '', hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Writing & Civilization (文字)',
@@ -1517,7 +1694,7 @@ window.ALPHA_GLYPH_DATA = [
     letter: '', hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Vowels (あ行)',
     gardiner: '', scriptOnly: ['japanese'],
     note: 'Hiragana あ derives from cursive 安 (peace/tranquility) = 宀 (roof) + 女 (woman). "Peaceful" = "a woman under a roof." The first sound of the Japanese syllabary was mapped to the kanji for shelter and security.',
-    investigationHighlight: 'MASSIVE WIN: The first sound of Japanese writing (あ → 安 → woman-under-roof = peace) was codified by women at the Heian court (794–1185 CE). These women — Murasaki Shikibu, Sei Shōnagon — invented hiragana because they were excluded from the official Chinese-character system. The world\'s first novel (The Tale of Genji, c. 1008 CE) was written in a script invented by its author\'s excluded gender.',
+    investigationHighlight: 'The first sound of Japanese writing (あ → 安 → woman-under-roof = peace) was codified by women at the Heian court (794–1185 CE). These women — Murasaki Shikibu, Sei Shōnagon — invented hiragana because they were excluded from the official Chinese-character system. The world\'s first novel (The Tale of Genji, c. 1008 CE) was written in a script invented by its author\'s excluded gender.',
     relatedNodes: ['alphabet-chinese-oracle-bones', 'alphabet-creation-by-word'] },
   { unicode: 0x3044, name: 'I', meaning: '"use / by means of" (from kanji 以)', phoneme: 'i',
     letter: '', hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Vowels (あ行)',
@@ -1631,7 +1808,7 @@ window.ALPHA_GLYPH_DATA = [
     letter: '', hebrew: '', arabic: '', phoenician: '', greek: '', section: 'T-row (た行)',
     gardiner: '', scriptOnly: ['japanese'],
     note: 'て from 天 (heaven) — the same character as Chinese 天! The Japanese sound "te" is the simplified cursive of the Chinese character for heaven. The T-row\'s third syllable carries the sky.',
-    investigationHighlight: 'MASSIVE WIN: Japanese て = Chinese 天 (heaven). The direct transmission is visible in the cursive simplification. This single hiragana shows the entire Japan-China script relationship: Chinese concepts → Japanese sounds. 手 (hand) is also "te" — the hands reach toward heaven. The Japanese "te" sounds of human agency (して = doing) and cosmic orientation (天) collapse into one syllable.',
+    investigationHighlight: 'Japanese て = Chinese 天 (heaven). The direct transmission is visible in the cursive simplification. This single hiragana shows the entire Japan-China script relationship: Chinese concepts → Japanese sounds. 手 (hand) is also "te" — the hands reach toward heaven. The Japanese "te" sounds of human agency (して = doing) and cosmic orientation (天) collapse into one syllable.',
     relatedNodes: ['alphabet-creation-by-word', 'alphabet-chinese-oracle-bones'] },
   { unicode: 0x3068, name: 'To', meaning: 'from kanji 止 (stop / foot)', phoneme: 'to',
     letter: '', hebrew: '', arabic: '', phoenician: '', greek: '', section: 'T-row (た行)',
@@ -1727,7 +1904,7 @@ window.ALPHA_GLYPH_DATA = [
     letter: '', hebrew: '', arabic: '', phoenician: '', greek: '', section: 'M-row (ま行)',
     gardiner: '', scriptOnly: ['japanese'],
     note: 'め from 女 (woman) — the same character as Chinese 女. The Japanese me-syllable carries "woman": 目 (me = eye), 芽 (me = bud/sprout). The eye that sees new growth.',
-    investigationHighlight: 'MASSIVE WIN: め from 女 (woman) — the "me" syllable in Japanese literally derives from the character for "woman." This is the origin of the word me (目 = eye) and the seed/bud (芽). In Japanese, "me" sounds = seeing + sprouting + femininity. The M-row syllable for "me" is rooted in the feminine, perception, and new life simultaneously.',
+    investigationHighlight: 'め from 女 (woman) — the "me" syllable in Japanese literally derives from the character for "woman." This is the origin of the word me (目 = eye) and the seed/bud (芽). In Japanese, "me" sounds = seeing + sprouting + femininity. The M-row syllable for "me" is rooted in the feminine, perception, and new life simultaneously.',
     relatedNodes: ['alphabet-creation-by-word'] },
   { unicode: 0x3082, name: 'Mo', meaning: 'from kanji 毛 (hair / fur)', phoneme: 'mo',
     letter: '', hebrew: '', arabic: '', phoenician: '', greek: '', section: 'M-row (ま行)',
@@ -1793,7 +1970,7 @@ window.ALPHA_GLYPH_DATA = [
     letter: '', hebrew: '', arabic: '', phoenician: '', greek: '', section: 'W-row (わ行)',
     gardiner: '', scriptOnly: ['japanese'],
     note: 'わ from 和 (harmony, peace, Japan). 和 = grain + mouth = the harmony of sharing food. 大和 (Yamato) = Great Harmony = the ancient name of Japan. Japan calls itself "the country of harmony."',
-    investigationHighlight: 'MASSIVE WIN: わ from 和 (harmony = grain + mouth = shared meal). Japan\'s self-definition (大和 Yamato = Great Harmony) is rooted in the sound "wa." Compare: Chinese 中 (center = Middle Kingdom), Indian Bharata (the cherished = India\'s Sanskrit name), Hebrew Eretz Yisrael (land of God-wrestlers). Every civilization names itself after its highest value. Japan chose harmony.',
+    investigationHighlight: 'わ from 和 (harmony = grain + mouth = shared meal). Japan\'s self-definition (大和 Yamato = Great Harmony) is rooted in the sound "wa." Compare: Chinese 中 (center = Middle Kingdom), Indian Bharata (the cherished = India\'s Sanskrit name), Hebrew Eretz Yisrael (land of God-wrestlers). Every civilization names itself after its highest value. Japan chose harmony.',
     relatedNodes: ['alphabet-creation-by-word', 'alphabet-letter-as-cosmos'] },
   { unicode: 0x3092, name: 'Wo', meaning: 'accusative particle (from kanji 遠 far)', phoneme: 'o/wo',
     letter: '', hebrew: '', arabic: '', phoenician: '', greek: '', section: 'W-row (わ行)',
@@ -1819,7 +1996,7 @@ window.ALPHA_GLYPH_DATA = [
     letter: '', hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Sacred Syllables',
     gardiner: '', scriptOnly: ['devanagari'],
     note: 'OM (AUM) = A (waking state) + U (dream state) + M (deep sleep) + the silence after = turiya (the fourth, pure consciousness). The three curves represent the three states; the dot above is the fourth. Written as a single compound character in Devanagari.',
-    investigationHighlight: 'MASSIVE WIN: OM is the most analyzed single syllable in human history. Hindu tradition: OM = Brahman = the sound-form of ultimate reality. Physics: 136.1 Hz = orbital frequency of Earth around the Sun = the \'Om tone\' of the cosmos (Peter Hamel). Tibetan Buddhism uses OM MANI PADME HUM as its core mantra. Christianity: "In the beginning was the Word (Logos)" = the same claim. Five traditions, one assertion: reality has a sonic foundation.',
+    investigationHighlight: 'OM is the most analyzed single syllable in human history. Hindu tradition: OM = Brahman = the sound-form of ultimate reality. Physics: 136.1 Hz = orbital frequency of Earth around the Sun = the \'Om tone\' of the cosmos (Peter Hamel). Tibetan Buddhism uses OM MANI PADME HUM as its core mantra. Christianity: "In the beginning was the Word (Logos)" = the same claim. Five traditions, one assertion: reality has a sonic foundation.',
     relatedNodes: ['alphabet-devanagari-sacred', 'alphabet-creation-by-word', 'alphabet-letter-as-cosmos'] },
 
   // Vowels (स्वर Svara) ────────────────────────────────────────────────────────
@@ -1847,6 +2024,12 @@ window.ALPHA_GLYPH_DATA = [
     note: 'उ — lips rounded, back of throat. The \'u\' in AUM. Sanskrit phoneticians (Panini, c. 400 BCE) classified vowels by: place of articulation (front/central/back), aperture (open/close), and lip rounding — the same three parameters used in modern phonetics.',
     investigationHighlight: 'Panini\'s Shiva Sutras (the 14 notational lines that organize Sanskrit phonology) encode ALL Sanskrit sounds in 14 compact aphorisms. Chomsky\'s generative grammar and modern formal linguistics trace their theoretical ancestry to Panini. The oldest grammar is also the most mathematically elegant. Writing is computation.',
     relatedNodes: ['alphabet-devanagari-sacred', 'alphabet-creation-by-word'] },
+  { unicode: 0x090B, name: 'Ri (vocalic)', meaning: 'the syllabic R — a vowel made of a consonant', phoneme: 'ṛ',
+    letter: '', hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Vowels (स्वर)',
+    gardiner: '', scriptOnly: ['devanagari'],
+    note: 'ऋ — the vocalic ṛ, an "r" that functions as a full vowel (as in the loosely-anglicised "Rigveda", properly Ṛgveda). Sanskrit treats ऋ, ऌ and the semivowels as a continuum between vowel and consonant — the syllabic liquids the European alphabets never gave a vowel-sign.',
+    investigationHighlight: 'The vocalic ṛ (ऋ) is the vowel hiding inside the name of the oldest scripture: Ṛgveda, not "Rig." Sanskrit grammarians recognised that r and l can carry a syllable on their own — the same syllabic-r that English speakers actually pronounce in "butter" but never write as a vowel. Pāṇini\'s phonology gave the syllabic liquid a letter; the Greek and Latin alphabets, inheriting the same Indo-European sound, simply lacked the sign for it.',
+    relatedNodes: ['alphabet-devanagari-sacred', 'alphabet-brahmi-origin'] },
   { unicode: 0x090F, name: 'E', meaning: 'the front mid vowel', phoneme: 'e',
     letter: '', hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Vowels (स्वर)',
     gardiner: '', scriptOnly: ['devanagari'],
@@ -1879,12 +2062,6 @@ window.ALPHA_GLYPH_DATA = [
     note: 'ज — voiced palatal affricate. The palatal row (ca-cha-ja-jha-nya) is produced where the tongue touches the hard palate. जगत् (jagat = world), जीव (jiva = soul/life-force), ज्ञान (jnana = knowledge/gnosis).',
     investigationHighlight: 'ज्ञान (jnana = knowledge) = Greek gnosis = English \'know\' = Latin gnoscere = all from Proto-Indo-European *gno- (to know). The \'j/gn\' sound cluster is the acoustic signature of knowledge across the Indo-European family. Sanskrit preserved it in its palatal row; Greek palatalized it into \'gn\'; English reduced it to a silent g (\'gnosis\', \'know\'). The history of sound change IS the history of thought.',
     relatedNodes: ['alphabet-devanagari-sacred'] },
-  { unicode: 0x091F, name: 'Ta (retroflex)', meaning: 'retroflex stop — unique to Sanskrit family', phoneme: 'ṭ',
-    letter: '', hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Retroflexes — ट-row',
-    gardiner: '', scriptOnly: ['devanagari'],
-    note: 'ट — the retroflex t, produced with the tongue tip curled back to touch the roof of the mouth. The retroflex series (ṭa-ṭha-ḍa-ḍha-ṇa) is the phonological fingerprint of Indic languages — no other language family developed a full retroflex series.',
-    investigationHighlight: 'MASSIVE WIN: The retroflex consonants (ट ठ ड ढ ण) exist ONLY in Indic languages. They are the acoustic signature that no other civilization developed. When English borrowed Sanskrit words (jungle < jangal, loot < lut, bungalow < bangla), the retroflex sounds were approximated with dental t/d. Every borrowed Indic word in English is a acoustic approximation of sounds that English cannot make. The body\'s phonetic range is civilization-specific.',
-    relatedNodes: ['alphabet-devanagari-sacred', 'alphabet-brahmi-origin'] },
   { unicode: 0x0924, name: 'Ta (dental)', meaning: 'dental stop — soft t', phoneme: 't',
     letter: '', hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Dentals — त-row',
     gardiner: '', scriptOnly: ['devanagari'],
@@ -1945,7 +2122,7 @@ window.ALPHA_GLYPH_DATA = [
     letter: '', hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Consonants (자음)',
     gardiner: '', scriptOnly: ['hangul'],
     note: 'ㄱ shows the profile of the back of the tongue raised to touch the velum (soft palate) — the exact articulatory position of the k/g sound. It literally IS a diagram of the mouth making the sound. King Sejong\'s Hunminjeongeum (1446 CE) explicitly states this design principle.',
-    investigationHighlight: 'MASSIVE WIN: Hangul is the ONLY writing system in the world where letter shapes are anatomical diagrams of the vocal tract positions that produce each sound. The Hunminjeongeum (訓民正音, \'Proper Sounds for the Instruction of the People\') documents this design principle explicitly. King Sejong designed a rational, learnable alphabet specifically to end aristocratic literacy monopoly. Most peasants learned it in days.',
+    investigationHighlight: 'Hangul is the ONLY writing system in the world where letter shapes are anatomical diagrams of the vocal tract positions that produce each sound. The Hunminjeongeum (訓民正音, \'Proper Sounds for the Instruction of the People\') documents this design principle explicitly. King Sejong designed a rational, learnable alphabet specifically to end aristocratic literacy monopoly. Most peasants learned it in days.',
     relatedNodes: ['alphabet-hangul', 'alphabet-creation-by-word'] },
   { unicode: 0x3134, name: 'Nieun (ㄴ)', meaning: 'tongue tip touching upper teeth ridge', phoneme: 'n',
     letter: '', hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Consonants (자음)',
@@ -2007,7 +2184,7 @@ window.ALPHA_GLYPH_DATA = [
     letter: '', hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Vowels (모음)',
     gardiner: '', scriptOnly: ['hangul'],
     note: 'ㅏ = the sky principle (ㆍ) moved outward to the right of a vertical stroke. The three cosmic elements: ㆍ (sky = a dot), ㅡ (earth = a horizontal line), ㅣ (human = a vertical line). All 10 basic vowels are combinations of these three.',
-    investigationHighlight: 'MASSIVE WIN: Hangul vowels encode a cosmology. The three base elements — ㆍ (sky/heaven), ㅡ (earth/flat), ㅣ (human/upright) — map to the Confucian/Daoist triadic cosmos (Heaven-Earth-Human = 三才 sancai). The Korean vowel table is simultaneously a phonetic chart AND a cosmological diagram. Compare: Hebrew vowel points encode the divine name; Sanskrit vowels map to chakras. Every tradition maps its vowels to its deepest categories.',
+    investigationHighlight: 'Hangul vowels encode a cosmology. The three base elements — ㆍ (sky/heaven), ㅡ (earth/flat), ㅣ (human/upright) — map to the Confucian/Daoist triadic cosmos (Heaven-Earth-Human = 三才 sancai). The Korean vowel table is simultaneously a phonetic chart AND a cosmological diagram. Compare: Hebrew vowel points encode the divine name; Sanskrit vowels map to chakras. Every tradition maps its vowels to its deepest categories.',
     relatedNodes: ['alphabet-hangul', 'alphabet-letter-as-cosmos', 'alphabet-creation-by-word'] },
   { unicode: 0x3153, name: 'Eo (ㅓ)', meaning: 'Sky principle — vertical inward', phoneme: 'eo',
     letter: '', hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Vowels (모음)',
@@ -2104,12 +2281,12 @@ window.ALPHA_GLYPH_DATA = [
     gardiner: '', scriptOnly: ['devanagari'],
     note: 'ञ = ña, the palatal nasal. Appears in jñāna (knowledge/gnosis), jñāpti (awareness). The word jñāna is the Sanskrit cognate of Greek gnosis — same root (Proto-Indo-European *ǵneh₃).',
     investigationHighlight: 'Sanskrit jñāna = Greek gnosis = Latin cognitio = English cognition — all from PIE root *ǵneh₃ (to know). The Bhagavad Gita\'s jñāna-yoga (path of knowledge) and Gnostic gnosis share not just the concept but the actual word, diverged 4,000 years prior. When Paul writes "gnosis" in 1 Corinthians 8:1, he is using a word cognate with Sanskrit jñāna. The Indo-European vocabulary of knowing was already ancient.',
-    relatedNodes: ['alphabet-devanagari-sacred', 'alphabet-creation-by-word', 'isopsephy-greek'] },
+    relatedNodes: ['alphabet-devanagari-sacred', 'alphabet-creation-by-word', 'alphabet-isopsephy-greek'] },
   { unicode: 0x091F, name: 'Tta', meaning: 'retroflex stop — the tongue curves back', phoneme: 'tta',
     letter: '', hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Retroflex Consonants (ट-वर्ग)',
     gardiner: '', scriptOnly: ['devanagari'],
-    note: 'ट = ṭa, unaspirated retroflex stop. Produced with the tongue curled back to touch the hard palate. This series (ट ठ ड ढ ण) does not exist in any European language — it is the phonological signature of the Indian subcontinent.',
-    investigationHighlight: 'The retroflex series is the most distinctive feature of Sanskrit phonology and has no parallel in Greek, Latin, Persian, or Arabic. Linguists use the presence of retroflex consonants as a diagnostic for Dravidian substratum influence — Proto-Dravidian speakers learning Sanskrit introduced retroflex sounds. The Devanagari alphabet preserves evidence of the Indo-Aryan / Dravidian linguistic contact in its phonological system.',
+    note: 'ट = ṭa, unaspirated retroflex stop. Produced with the tongue curled back to touch the hard palate. This series (ट ठ ड ढ ण) does not exist in any European language — it is the phonological signature of the Indian subcontinent. When English borrowed Sanskrit-family words (jungle < jaṅgal, loot < lūṭ, bungalow < baṅglā), the retroflex sounds were flattened to ordinary dental t/d.',
+    investigationHighlight: 'The retroflex series is the most distinctive feature of Sanskrit phonology and has no parallel in Greek, Latin, Persian, or Arabic. Linguists use the presence of retroflex consonants as a diagnostic for Dravidian substratum influence — Proto-Dravidian speakers learning Sanskrit introduced retroflex sounds. Every Indic loanword in English is an approximation of sounds English cannot make: the Devanagari alphabet preserves the evidence of Indo-Aryan / Dravidian linguistic contact in its phonological system.',
     relatedNodes: ['alphabet-devanagari-sacred', 'alphabet-brahmi-origin', 'alphabet-indus-valley-script'] },
   { unicode: 0x0920, name: 'Ttha', meaning: 'aspirated retroflex — the curled breath', phoneme: 'ttha',
     letter: '', hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Retroflex Consonants (ट-वर्ग)',
@@ -2123,6 +2300,12 @@ window.ALPHA_GLYPH_DATA = [
     note: 'ड = ḍa, voiced retroflex stop. Sanskrit ḍamaru (Shiva\'s hourglass drum — the instrument of creation). The drum ḍamaru is depicted in Nataraja iconography as the sound of the universe creating itself.',
     investigationHighlight: 'Shiva\'s ḍamaru drum appears in the Nataraja myth as the source of the Sanskrit alphabet: 14 sounds emitted in 14 beats of the drum = the Śivasūtras, the seed-syllables from which Pāṇini derived the entire grammatical system. The Nataraja dance (ananda tandava = dance of bliss) terminates in the first consonant of the retroflex row — the sound of creation requires the curled tongue. Myth embeds phonology.',
     relatedNodes: ['alphabet-devanagari-sacred', 'alphabet-creation-by-word', 'alphabet-letter-as-cosmos'] },
+  { unicode: 0x0922, name: 'Ddha', meaning: 'aspirated voiced retroflex — the curled voice with breath', phoneme: 'ḍha',
+    letter: '', hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Retroflex Consonants (ट-वर्ग)',
+    gardiner: '', scriptOnly: ['devanagari'],
+    note: 'ढ = ḍha, the voiced aspirated retroflex stop — the fourth member of the retroflex row, completing the five-fold series ट ठ ड ढ ण. The voiced-aspirate "breathy voice" sounds (ḍha, dha, bha, gha, jha) are a distinct phonation type Sanskrit treats as full phonemes.',
+    investigationHighlight: 'The voiced aspirates (gh, jh, ḍh, dh, bh) of Sanskrit are a complete fourth column the five-fold varga grid requires — and a phonation type (murmured / breathy voice) that Greek and Latin lost entirely though their Indo-European ancestor had it. Comparative linguistics reconstructed Proto-Indo-European *bh *dh *gh precisely because Sanskrit preserved the column the European branches collapsed. The Devanagari grid is, letter for letter, a fuller record of the parent language than the Greek or Latin alphabets are.',
+    relatedNodes: ['alphabet-devanagari-sacred', 'alphabet-brahmi-origin'] },
   { unicode: 0x0923, name: 'Nna', meaning: 'retroflex nasal — the resonance of the curved tongue', phoneme: 'nna',
     letter: '', hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Retroflex Consonants (ट-वर्ग)',
     gardiner: '', scriptOnly: ['devanagari'],
@@ -2140,7 +2323,7 @@ window.ALPHA_GLYPH_DATA = [
     gardiner: '', scriptOnly: ['devanagari'],
     note: 'द = da, voiced dental stop. Sanskrit deva (divine/shining one), dharma (cosmic order/duty), daśa (ten). The root div/dyu (to shine) gives deva — cognate with Latin deus, Greek theos, English divine.',
     investigationHighlight: 'Sanskrit deva = Latin deus = Greek theos = Proto-Indo-European *deywós (shining/sky). The Sanskrit alphabet\'s da carries the root of divinity encoded in PIE linguistics. When Vedic priests invoked the devas, they were using a word whose phonological history extends to the same root as Zeus (from *Dyeus pḥtḗr = "sky father"). Jupiter, Zeus, Dyaus Pitā, and Deus are one word in five languages, diverged 4,000+ years ago.',
-    relatedNodes: ['alphabet-devanagari-sacred', 'alphabet-creation-by-word', 'sacred-language-convergence'] },
+    relatedNodes: ['alphabet-devanagari-sacred', 'alphabet-creation-by-word', 'alphabet-sacred-language-convergence'] },
   { unicode: 0x0927, name: 'Dha', meaning: 'voiced aspirated dental', phoneme: 'dha',
     letter: '', hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Dental Consonants (त-वर्ग)',
     gardiner: '', scriptOnly: ['devanagari'],
@@ -2170,13 +2353,13 @@ window.ALPHA_GLYPH_DATA = [
     gardiner: '', scriptOnly: ['devanagari'],
     note: 'ल = la, the lateral approximant. Sanskrit lakṣmī (fortune/beauty — name of the goddess), loka (world), lalita (graceful/playful). Lalitā is an epithet of the goddess — the playful, graceful force.',
     investigationHighlight: 'The l sound is classified in Sanskrit grammar as antastha (between consonants and vowels) — a semivowel. The category antastha includes y, r, l, v — all sounds that flow rather than stop. Compare: Greek and Latin l-words for light/flow (lux, λευκός, luna). The lateral flow of l is consistently associated with light, water, and grace across unrelated languages. Is this coincidence or phonaesthetics — the non-arbitrary sound symbolism that pre-dates Saussure?',
-    relatedNodes: ['alphabet-devanagari-sacred', 'alphabet-creation-by-word', 'sacred-language-convergence'] },
+    relatedNodes: ['alphabet-devanagari-sacred', 'alphabet-creation-by-word', 'alphabet-sacred-language-convergence'] },
   { unicode: 0x0935, name: 'Va', meaning: 'labio-dental approximant — the lip-touch of the wind', phoneme: 'va',
     letter: '', hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Semivowels (अन्तस्थ)',
     gardiner: '', scriptOnly: ['devanagari'],
     note: 'व = va, labio-dental approximant. Sanskrit vāyu (wind/breath — Vedic wind-god), vāk (sacred speech), veda (knowledge — root vid = to know). Vāk is the goddess of speech, the Sanskrit equivalent of Logos.',
     investigationHighlight: 'Sanskrit vāk (sacred speech/voice) is the direct parallel of Greek Logos — both are the divine power of articulate language that creates. Rig Veda 10.125 (Devi Sukta) is spoken entirely by Vāk in first person: "I am the queen... I am carried on both sides of the heavens." This is the oldest known personification of Language as a divine feminine power — 1,000+ years before John 1:1. The Logos tradition begins with Vāk.',
-    relatedNodes: ['alphabet-devanagari-sacred', 'alphabet-creation-by-word', 'alphabet-letter-as-cosmos', 'sacred-language-convergence'] },
+    relatedNodes: ['alphabet-devanagari-sacred', 'alphabet-creation-by-word', 'alphabet-letter-as-cosmos', 'alphabet-sacred-language-convergence'] },
   { unicode: 0x0937, name: 'Ssa', meaning: 'retroflex sibilant — the curled hiss', phoneme: 'ssa',
     letter: '', hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Sibilants & Aspirate (ऊष्म)',
     gardiner: '', scriptOnly: ['devanagari'],
@@ -2188,7 +2371,7 @@ window.ALPHA_GLYPH_DATA = [
     gardiner: '', scriptOnly: ['devanagari'],
     note: 'स = sa, dental sibilant. Sanskrit sat (truth/being/existence), sattva (clarity/goodness — one of the 3 guṇas), sama (equal/same — the source of English \'same\'). Sa begins sat, the first word of sat-cit-ānanda (being-consciousness-bliss).',
     investigationHighlight: 'Sanskrit sat (truth/being) → Latin esse (to be) → English is/essence: the same root *h₁es- (to be) in PIE. When Parmenides wrote "Being is" (c. 475 BCE), he was articulating the same root that Sanskrit sat encodes. The Sanskrit letter sa carries the oldest known phoneme for existence. The s-sound for being/truth recurs across traditions: Hebrew Shema (hear/be-aware), Arabic salaam (peace = wholeness of being). The sibillant s and existence are linked across continents.',
-    relatedNodes: ['alphabet-devanagari-sacred', 'alphabet-creation-by-word', 'alphabet-letter-as-cosmos', 'sacred-language-convergence'] },
+    relatedNodes: ['alphabet-devanagari-sacred', 'alphabet-creation-by-word', 'alphabet-letter-as-cosmos', 'alphabet-sacred-language-convergence'] },
   { unicode: 0x0902, name: 'Anusvara', meaning: 'the dot above — resonance after the vowel', phoneme: 'm (nasal)',
     letter: '', hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Special Marks (विशेष)',
     gardiner: '', scriptOnly: ['devanagari'],
@@ -2253,13 +2436,16 @@ window.ALPHA_GLYPH_DATA = [
   // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   // AZTEC — 20 Day Signs (Tonalpohualli)
   // The sacred 260-day calendar: 20 signs × 13 numbers
+  // This IS the complete set: all 20 day-signs of the Tonalpohualli cycle
+  // (the Aztec "alphabet" is logographic/calendrical, not phonetic). The
+  // signs are not in Unicode, so each renders from a hand-drawn glyphSVG.
   // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
   { glyphSVG: '<rect x="8" y="58" width="84" height="14" rx="2"/><path d="M18 58L23 38L28 58M38 58L43 38L48 58M58 58L63 38L68 58M76 58L81 38L86 58"/>', name: 'Cipactli', meaning: 'primordial caiman — the earth\'s body', phoneme: 'ci-pac-tli',
     letter: '', hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Days 1–5 (The Primordial Powers)',
     gardiner: '', scriptOnly: ['aztec'],
     note: 'Day 1. Cipactli is the primordial earth-monster — a crocodilian creature floating on the cosmic waters. Tezcatlipoca and Quetzalcoatl tore Cipactli apart to make the earth: her body became land, her blood became rivers, her eyes became caves and wells. Day-sign patron: Tonacatecuhtli (Lord of Sustenance). Presides over birth and the origin of all things. Starting every 260-day cycle, Cipactli reminds the Aztec that the ground beneath their feet is the corpse of a god.',
-    investigationHighlight: 'Creation-from-dismemberment: Cipactli is torn apart to make the world. This is a MASSIVE WIN cross-tradition pattern: Tiamat (Babylonian — Marduk splits her body to make sky and earth, Enuma Elish), Ymir (Norse — Odin/Vili/Ve kill the frost-giant and make the world from his body, Prose Edda), Purusha (Vedic — the cosmic man is sacrificed and his body becomes every part of the universe, RV 10.90). Four independent civilizations envisioned the physical world as the dismembered body of a primordial being. The creation cost is always the same: a divine being must die so the world can exist.',
+    investigationHighlight: 'Creation-from-dismemberment: Cipactli is torn apart to make the world. This is a deep cross-tradition pattern: Tiamat (Babylonian — Marduk splits her body to make sky and earth, Enuma Elish), Ymir (Norse — Odin/Vili/Ve kill the frost-giant and make the world from his body, Prose Edda), Purusha (Vedic — the cosmic man is sacrificed and his body becomes every part of the universe, RV 10.90). Four independent civilizations envisioned the physical world as the dismembered body of a primordial being. The creation cost is always the same: a divine being must die so the world can exist.',
     relatedNodes: ['mesoamerican-cosmogony', 'tezcatlipoca', 'quetzalcoatl', 'tradition-aztec-mexica'] },
 
   { glyphSVG: '<path d="M50 15Q80 15 82 50Q82 80 50 82Q22 82 18 55Q14 32 36 22Q50 16 62 24Q72 32 70 48Q68 62 54 65Q41 66 37 56Q33 46 40 42"/>', name: 'Ehecatl', meaning: 'wind — the breath of Quetzalcoatl', phoneme: 'e-he-catl',
@@ -2294,21 +2480,21 @@ window.ALPHA_GLYPH_DATA = [
     letter: '', hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Days 6–10 (Death & the Underworld)',
     gardiner: '', scriptOnly: ['aztec'],
     note: 'Day 6. Miquiztli (skull) is one of the most feared day-signs — associated with Tecuciztecatl, the moon god who hesitated before leaping into the sacrificial fire at Teotihuacan. His cowardice made him the moon (dimmer) rather than the sun. Patron deity: the Lord of the Dead. Those born under Miquiztli were marked for an early death — unless they received careful ritual intervention to neutralize the sign\'s force. Miquiztli is the direct ancestor of the Día de los Muertos skull iconography still carried by 60 million Mexican Catholics.',
-    investigationHighlight: 'The skull as sacred symbol (not just death-warning) has a MASSIVE WIN trajectory: Aztec Miquiztli skull → Día de los Muertos calavera (Mexico\'s most globally recognized sacred image) is the longest-running sacred symbol in continuous use in the Americas — 3,000+ years from Olmec skull iconography to modern sugar skulls. The same skull-as-sacred trajectory appears in: Christian memento mori (skull = reminder of mortality = invitation to live rightly), Tibetan kapāla (skull cup used in tantric ritual — death\'s vessel = enlightenment\'s cup), Mexican santería ofrendas. The skull is both the sign of death and the invitation to transcend it across all traditions.',
+    investigationHighlight: 'The skull as sacred symbol (not just death-warning) has a remarkable trajectory: Aztec Miquiztli skull → Día de los Muertos calavera (Mexico\'s most globally recognized sacred image) is the longest-running sacred symbol in continuous use in the Americas — 3,000+ years from Olmec skull iconography to modern sugar skulls. The same skull-as-sacred trajectory appears in: Christian memento mori (skull = reminder of mortality = invitation to live rightly), Tibetan kapāla (skull cup used in tantric ritual — death\'s vessel = enlightenment\'s cup), Mexican santería ofrendas. The skull is both the sign of death and the invitation to transcend it across all traditions.',
     relatedNodes: ['mictlantecuhtli', 'tradition-aztec-mexica', 'mesoamerican-cosmogony'] },
 
   { glyphSVG: '<ellipse cx="50" cy="74" rx="16" ry="12"/><line x1="50" y1="62" x2="50" y2="40"/><path d="M50 40Q40 28 28 16M50 40Q60 28 72 16"/><path d="M28 16L20 8M28 16L34 8M72 16L66 8M72 16L80 8" stroke-width="1.5"/>', name: 'Mazatl', meaning: 'deer — grace at the threshold of the wild', phoneme: 'ma-zatl',
     letter: '', hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Days 6–10 (Death & the Underworld)',
     gardiner: '', scriptOnly: ['aztec'],
     note: 'Day 7. Mazatl (deer) is associated with Tlaloc, the ancient rain deity. The deer was the quintessential hunting animal — its ritual death a metaphor for the controlled taking of life from nature. The Wixáritari (Huichol) peyote pilgrimage reenacts a primordial deer hunt — following the deer (a god-form) into the desert to find peyote (the sacred plant). The deer, maize, and peyote form the sacred triad of adjacent Mesoamerican traditions that predate Aztec dominance.',
-    investigationHighlight: 'The deer as sacred liminal animal — between wilderness and civilization — is a MASSIVE WIN cross-tradition pattern: Aztec Mazatl / Vedic Mriga (the sacred deer; Shiva is sometimes depicted with a deer in his hand; Daksha becomes a deer and is decapitated) / Celtic Cernunnos (the Horned One with antlered head = the animistic lord of the wild) / Artemis/Diana (goddess of the hunt, the deer as her sacred animal) / Scythian stag-style gold plaques (deer = cosmic axis in Eurasian shamanism, the axis mundi as a leaping stag). Five independent traditions across Eurasia and the Americas made the deer the sacred animal of the liminal zone — not domesticated, not chaotic, but poised exactly at the threshold.',
+    investigationHighlight: 'The deer as sacred liminal animal — between wilderness and civilization — is a striking cross-tradition pattern: Aztec Mazatl / Vedic Mriga (the sacred deer; Shiva is sometimes depicted with a deer in his hand; Daksha becomes a deer and is decapitated) / Celtic Cernunnos (the Horned One with antlered head = the animistic lord of the wild) / Artemis/Diana (goddess of the hunt, the deer as her sacred animal) / Scythian stag-style gold plaques (deer = cosmic axis in Eurasian shamanism, the axis mundi as a leaping stag). Five independent traditions across Eurasia and the Americas made the deer the sacred animal of the liminal zone — not domesticated, not chaotic, but poised exactly at the threshold.',
     relatedNodes: ['tlaloc', 'tradition-aztec-mexica', 'ritual-aztec-autosacrifice'] },
 
   { glyphSVG: '<ellipse cx="50" cy="68" rx="20" ry="16"/><path d="M36 54Q32 30 30 14M46 52Q48 28 46 14"/><circle cx="40" cy="62" r="4" fill="currentColor"/>', name: 'Tochtli', meaning: 'rabbit — the moon\'s face, the drunkard\'s patron', phoneme: 'toch-tli',
     letter: '', hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Days 6–10 (Death & the Underworld)',
     gardiner: '', scriptOnly: ['aztec'],
     note: 'Day 8. Tochtli (rabbit) is associated with pulque (the fermented agave drink) and with the 400 Rabbit deities (Centzon Totochtin) who personified drunkenness in its many forms. The Aztecs saw a rabbit\'s face in the moon — the same pareidolia seen in China, Japan, and India. Years named Tochtli were associated with abundant harvests (the rabbit\'s fertility) but also with excess and loss of control.',
-    investigationHighlight: 'MASSIVE WIN — the rabbit in the moon across Pacific cultures. Aztec Tochtli (rabbit on the moon) = Chinese Jade Rabbit (yutu, the moon hare pounding the elixir of immortality) = Japanese Tsuki no Usagi (the moon rabbit pounding mochi rice cakes) = Hindu moon-rabbit (the Bodhisattva-as-rabbit immolates himself to feed a hungry Indra; Indra places the rabbit\'s image on the moon in gratitude — Jataka Tale 316). Zero contact between Mexico and East Asia. The same visual pareidolia — the rabbit\'s silhouette in the lunar maria — was observed independently and became sacred narrative on both sides of the Pacific. The same pattern in the sky generated the same animal image in cultures with no communication.',
+    investigationHighlight: 'the rabbit in the moon across Pacific cultures. Aztec Tochtli (rabbit on the moon) = Chinese Jade Rabbit (yutu, the moon hare pounding the elixir of immortality) = Japanese Tsuki no Usagi (the moon rabbit pounding mochi rice cakes) = Hindu moon-rabbit (the Bodhisattva-as-rabbit immolates himself to feed a hungry Indra; Indra places the rabbit\'s image on the moon in gratitude — Jataka Tale 316). Zero contact between Mexico and East Asia. The same visual pareidolia — the rabbit\'s silhouette in the lunar maria — was observed independently and became sacred narrative on both sides of the Pacific. The same pattern in the sky generated the same animal image in cultures with no communication.',
     relatedNodes: ['tradition-aztec-mexica', 'mesoamerican-cosmogony'] },
 
   { glyphSVG: '<path d="M8 35Q23 22 38 35Q53 48 68 35Q83 22 92 35"/><path d="M8 52Q23 39 38 52Q53 65 68 52Q83 39 92 52"/><path d="M8 69Q23 56 38 69Q53 82 68 69Q83 56 92 69"/>', name: 'Atl', meaning: 'water — the life-force and the destroyer of the previous world', phoneme: 'a-tl',
@@ -2343,7 +2529,7 @@ window.ALPHA_GLYPH_DATA = [
     letter: '', hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Days 11–15 (Wild Forces)',
     gardiner: '', scriptOnly: ['aztec'],
     note: 'Day 13. Acatl (reed) is associated with Tezcatlipoca and with the god Itztlacoliuhqui (bent obsidian knife, god of cold and fate). The reed made arrow shafts — weapons and instruments. But Acatl\'s most consequential role: Ce Acatl (One Reed) was the calendrical name of the legendary priest-king Quetzalcoatl of Tula (Ce Acatl Topiltzin Quetzalcoatl). He was prophesied to return on a One Reed year. Hernán Cortés arrived at Veracruz in 1519 — a Ce Acatl year in the Aztec calendar.',
-    investigationHighlight: 'MASSIVE WIN — the day-sign that shaped first contact. The Aztec calendar made 1519 the year prophesied for Quetzalcoatl\'s return — and Cortés arrived. Whether Moctezuma II actually believed Cortés was the returning god is contested by modern historians (some argue it is a post-conquest Spanish narrative). But the calendrical fact is real and documented in indigenous sources: 1519 = Ce Acatl. A writing system generated a prophecy that collided with history. The reed that makes arrows also inscribes destinies. Compare: the Christian year-count (Anno Domini) organized European history around a birth date; the Aztec Acatl organized Mesoamerican history around a return date. Both made a calendar into a cosmological clock.',
+    investigationHighlight: 'the day-sign that shaped first contact. The Aztec calendar made 1519 the year prophesied for Quetzalcoatl\'s return — and Cortés arrived. Whether Moctezuma II actually believed Cortés was the returning god is contested by modern historians (some argue it is a post-conquest Spanish narrative). But the calendrical fact is real and documented in indigenous sources: 1519 = Ce Acatl. A writing system generated a prophecy that collided with history. The reed that makes arrows also inscribes destinies. Compare: the Christian year-count (Anno Domini) organized European history around a birth date; the Aztec Acatl organized Mesoamerican history around a return date. Both made a calendar into a cosmological clock.',
     relatedNodes: ['quetzalcoatl', 'quetzalcoatl-historical', 'tezcatlipoca', 'tradition-aztec-mexica'] },
 
   { glyphSVG: '<ellipse cx="50" cy="55" rx="32" ry="26"/><path d="M34 30Q48 20 66 30L62 55Q50 64 38 55Z"/><ellipse cx="32" cy="46" rx="5" ry="7"/><ellipse cx="68" cy="46" rx="5" ry="7"/><ellipse cx="50" cy="68" rx="5" ry="7"/>', name: 'Ocelotl', meaning: 'jaguar — the night sky made flesh, Tezcatlipoca\'s shadow', phoneme: 'o-ce-lotl',
@@ -2357,7 +2543,7 @@ window.ALPHA_GLYPH_DATA = [
     letter: '', hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Days 11–15 (Wild Forces)',
     gardiner: '', scriptOnly: ['aztec'],
     note: 'Day 15. Cuauhtli (eagle) is the day of the sun\'s peak — the eagle soaring at noon. Associated with Xipe Totec (Our Lord the Flayed One, god of spring renewal) and with Huitzilopochtli (sun and war god). The Eagle Warriors (Cuāuhtli) were the elite Aztec warrior society dedicated to feeding the sun with blood. The eagle was the sun\'s animal: it soared highest, saw furthest, and its plunging dive at sunset was the sun descending into the underworld to fight its way through the night.',
-    investigationHighlight: 'The eagle as solar symbol is a MASSIVE WIN universal: Aztec Cuauhtli = Egyptian Horus (falcon/eagle = the sun itself, the royal sky-god) = Roman Aquila (eagle = Jupiter = the supreme god, carried on legionary standards) = Norse Hraesvelgr (eagle at Yggdrasil\'s crown = the highest cosmic point) = Vedic Garuda (eagle = vehicle of Vishnu = the solar principle) = American bald eagle (inheriting Roman Aquila symbolism via heraldic tradition). The eagle\'s flight height connects it to the sun across six independent traditions. The highest-flying bird = the closest to the divine light. The Aztec made this theological equation explicit by organizing elite warriors around it.',
+    investigationHighlight: 'The eagle as solar symbol is a near-universal: Aztec Cuauhtli = Egyptian Horus (falcon/eagle = the sun itself, the royal sky-god) = Roman Aquila (eagle = Jupiter = the supreme god, carried on legionary standards) = Norse Hraesvelgr (eagle at Yggdrasil\'s crown = the highest cosmic point) = Vedic Garuda (eagle = vehicle of Vishnu = the solar principle) = American bald eagle (inheriting Roman Aquila symbolism via heraldic tradition). The eagle\'s flight height connects it to the sun across six independent traditions. The highest-flying bird = the closest to the divine light. The Aztec made this theological equation explicit by organizing elite warriors around it.',
     relatedNodes: ['tonatiuh', 'huitzilopochtli', 'tradition-aztec-mexica', 'ritual-aztec-autosacrifice'] },
 
   { glyphSVG: '<path d="M50 15Q82 15 84 50Q84 80 52 82Q24 82 20 58Q16 36 36 24Q50 18 64 26Q76 34 74 50Q72 64 58 66Q44 68 40 56Q36 46 44 42"/>', name: 'Cozcacuauhtli', meaning: 'vulture — patience, age, and the wisdom of survival', phoneme: 'coz-ca-cuauh-tli',
@@ -2385,7 +2571,7 @@ window.ALPHA_GLYPH_DATA = [
     letter: '', hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Days 16–20 (Completion & Return)',
     gardiner: '', scriptOnly: ['aztec'],
     note: 'Day 19. Quiahuitl (rain) is associated with Tlaloc, the ancient rain deity predating the Aztec — attested at Teotihuacan (c. 100-650 CE) and likely Olmec in origin. The rain sign represents both life-giving water and the catastrophic deluge. The Fourth Sun (Nahui Quiahuitl = Four Rain) was destroyed by a rain of fire — the life-giver becomes the destroyer. To ensure rain, Aztec priests ritually drowned children at Tlaloc\'s mountain shrines: their tears were understood as rain through sympathetic magic.',
-    investigationHighlight: 'Rain-magic through sympathetic action is a MASSIVE WIN cross-tradition pattern: Aztec child-tears = rain (Tlaloc ritual drowning) / ancient Chinese rain dances invoking Long Wang the dragon-king of waters / Vedic Varuna hymns for rain (RV 7.89: "Let me not go to the house of clay" — fear of death-without-rain) / ancient Egyptian Opening of the Waterways festival (Nile flood = Osiris\'s generative power; ritual action triggers cosmic response) / Aboriginal Australian rain ceremonies (songs activate Dreamtime water sources). Five civilizations concluded that rain does not fall without human ritual performance. The sky requires human action to respond. This is the opposite of deism — a fully interactive cosmology.',
+    investigationHighlight: 'Rain-magic through sympathetic action is a wide cross-tradition pattern: Aztec child-tears = rain (Tlaloc ritual drowning) / ancient Chinese rain dances invoking Long Wang the dragon-king of waters / Vedic Varuna hymns for rain (RV 7.89: "Let me not go to the house of clay" — fear of death-without-rain) / ancient Egyptian Opening of the Waterways festival (Nile flood = Osiris\'s generative power; ritual action triggers cosmic response) / Aboriginal Australian rain ceremonies (songs activate Dreamtime water sources). Five civilizations concluded that rain does not fall without human ritual performance. The sky requires human action to respond. This is the opposite of deism — a fully interactive cosmology.',
     relatedNodes: ['tlaloc', 'tradition-aztec-mexica', 'ritual-inca-capacocha'] },
 
   { glyphSVG: '<circle cx="50" cy="50" r="8"/><ellipse cx="50" cy="24" rx="8" ry="16"/><ellipse cx="76" cy="50" rx="16" ry="8"/><ellipse cx="50" cy="76" rx="8" ry="16"/><ellipse cx="24" cy="50" rx="16" ry="8"/><ellipse cx="69" cy="31" rx="8" ry="16" transform="rotate(45 69 31)"/><ellipse cx="69" cy="69" rx="8" ry="16" transform="rotate(-45 69 69)"/><ellipse cx="31" cy="69" rx="8" ry="16" transform="rotate(45 31 69)"/><ellipse cx="31" cy="31" rx="8" ry="16" transform="rotate(-45 31 31)"/>', name: 'Xochitl', meaning: 'flower — beauty, completion, and the divine feminine\'s final word', phoneme: 'xo-chitl',
@@ -2399,6 +2585,9 @@ window.ALPHA_GLYPH_DATA = [
   // MAYA — 20 Tzolkin Day Signs
   // The 260-day sacred calendar: same structure as Aztec Tonalpohualli
   // from a common Olmec origin c. 1200 BCE
+  // This IS the complete set: all 20 day-signs of the Tzolk'in cycle. The
+  // full Maya logosyllabic script (>800 signs) is far larger and is NOT
+  // catalogued here; the day-signs render from hand-drawn glyphSVG (not Unicode).
   // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
   { glyphSVG: '<rect x="8" y="58" width="84" height="14" rx="2"/><path d="M18 58L23 38L28 58M38 58L43 38L48 58M58 58L63 38L68 58M76 58L81 38L86 58"/>', name: 'Imix', meaning: 'water-lily, primordial sea, crocodilian earth', phoneme: 'i-mix',
@@ -2426,7 +2615,7 @@ window.ALPHA_GLYPH_DATA = [
     letter: '', hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Days 1–5 (Primordial Forces)',
     gardiner: '', scriptOnly: ['maya'],
     note: 'Day 4. K\'an (maize/ripe yellow) is one of the most sacred day signs — maize was not merely a food crop for the Maya; humanity itself was made from maize. The Popol Vuh (K\'iche\' Maya creation epic) explicitly states: after two failed attempts (mud-people, wood-people), the gods finally made successful humans from white and yellow maize ground by Xmucane (the grandmother deity). Maya rulers wore elaborate maize-god headdresses. The maize god Hun Hunahpu was decapitated, buried, and reborn as the corn plant — the first death-and-resurrection cycle in Maya mythology.',
-    investigationHighlight: 'MASSIVE WIN — Humanity made from the sacred crop. The Popol Vuh\'s humans-from-maize theology is the Mesoamerican instance of the "humans made from divine material" pattern: Maya humans from maize / Mesopotamian humans from the blood of the slain god Kingu (Enuma Elish) / Norse humans from trees (Ash + Elm, given life by Odin/Vili/Ve) / Greek humans fashioned by Prometheus from clay + fire stolen from heaven / Chinese humans from Nuwa\'s clay figures or her own body. Every creation mythology had to answer: what are humans made OF? The answer encodes the culture\'s hierarchy of value. Maya answer: maize — the crop that made civilization possible.',
+    investigationHighlight: 'Humanity made from the sacred crop. The Popol Vuh\'s humans-from-maize theology is the Mesoamerican instance of the "humans made from divine material" pattern: Maya humans from maize / Mesopotamian humans from the blood of the slain god Kingu (Enuma Elish) / Norse humans from trees (Ash + Elm, given life by Odin/Vili/Ve) / Greek humans fashioned by Prometheus from clay + fire stolen from heaven / Chinese humans from Nuwa\'s clay figures or her own body. Every creation mythology had to answer: what are humans made OF? The answer encodes the culture\'s hierarchy of value. Maya answer: maize — the crop that made civilization possible.',
     relatedNodes: ['mayan-calendar', 'tradition-maya-religion', 'mesoamerican-cosmogony', 'hun-hunahpu'] },
 
   { glyphSVG: '<path d="M50 18Q70 18 76 35Q82 52 68 62Q50 72 36 62Q24 52 28 38Q32 28 44 28"/><path d="M44 28L36 20M44 28L36 36"/>', name: 'Chikchan', meaning: 'celestial serpent, lightning, the sky-serpent\'s electricity', phoneme: 'chik-chan',
@@ -2454,7 +2643,7 @@ window.ALPHA_GLYPH_DATA = [
     letter: '', hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Days 6–10 (Death & Transformation)',
     gardiner: '', scriptOnly: ['maya'],
     note: 'Day 8. Lamat (Venus / star / rabbit) is one of the most cosmologically charged day signs — it represents Venus, the brightest and most calendrically significant non-solar body in Maya astronomy. The Dresden Codex (one of four surviving Maya books) contains Venus tables of extraordinary precision: the Maya tracked Venus\'s 584-day synodic cycle and could predict its heliacal rise and set to within one day across centuries. The Venus star at Lamat also connects to the rabbit — the Maya saw a rabbit in the moon (the same pareidolia seen in Mexico, China, Japan, and India). The star-over-rabbit glyph encodes both celestial observations.',
-    investigationHighlight: 'MASSIVE WIN — The Dresden Codex Venus tables: the Maya tracked Venus to within 1 day of accuracy across 384 years. The Dresden Codex (surviving Maya book, c. 1200 CE, recording much older data) contains Venus almanacs that predict Venus\'s heliacal rise for 384 years without accumulated error. This required: systematic observation over centuries, a mathematical framework for period adjustment, and a theological motivation (Venus = Kukulkan/Quetzalcoatl\'s star — its return predicted divine events). The precision exceeds Greek astronomical calculation for the same period. The Maya achieved this without telescopes, using only naked-eye observation recorded in a book that was nearly entirely destroyed.',
+    investigationHighlight: 'The Dresden Codex Venus tables: the Maya tracked Venus to within 1 day of accuracy across 384 years. The Dresden Codex (surviving Maya book, c. 1200 CE, recording much older data) contains Venus almanacs that predict Venus\'s heliacal rise for 384 years without accumulated error. This required: systematic observation over centuries, a mathematical framework for period adjustment, and a theological motivation (Venus = Kukulkan/Quetzalcoatl\'s star — its return predicted divine events). The precision exceeds Greek astronomical calculation for the same period. The Maya achieved this without telescopes, using only naked-eye observation recorded in a book that was nearly entirely destroyed.',
     relatedNodes: ['mayan-calendar', 'tradition-maya-religion', 'alphabet-mayan-glyphs'] },
 
   { glyphSVG: '<path d="M8 35Q23 22 38 35Q53 48 68 35Q83 22 92 35"/><path d="M8 52Q23 39 38 52Q53 65 68 52Q83 39 92 52"/><path d="M8 69Q23 56 38 69Q53 82 68 69Q83 56 92 69"/>', name: 'Muluk', meaning: 'water, jade, the offering — the precious liquid', phoneme: 'mu-luk',
@@ -2482,7 +2671,7 @@ window.ALPHA_GLYPH_DATA = [
     letter: '', hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Days 11–15 (Skill & Power)',
     gardiner: '', scriptOnly: ['maya'],
     note: 'Day 12. Eb (road / rain) represents the road of life, the cosmic path, and the Milky Way — which the Maya called the Xibalba Be (Road to Xibalba / Road of the Dead) or the White Road. The Milky Way was the cosmic path souls traveled after death. On certain dates, the Milky Way aligns with the horizon as a great cosmic road connecting earth to the sky. Eb is also associated with rain — the path of water from sky to earth. The road glyph encodes both the terrestrial and celestial path: every road is a model of the cosmic journey.',
-    investigationHighlight: 'The Milky Way as the road of the dead: MASSIVE WIN cross-tradition pattern. Maya Xibalba Be (Milky Way = road to the underworld) = Norse Heiðrún/Bifröst (the rainbow bridge to Asgard runs alongside the sky road) = Greek Galaxy (Milky Way = path of souls; Elysian Fields are at the galaxy\'s edge) = Hindu Devayāna (the Way of the Gods through the heavens) = Egyptian Am-Duat (the night sky as the geography of the underworld journey). Five civilizations looked at the Milky Way and saw: a road. A path. The way to whatever comes after death. The same astronomical feature generated the same cosmological metaphor across all ancient cultures that had dark enough skies to see it clearly.',
+    investigationHighlight: 'The Milky Way as the road of the dead — a striking cross-tradition pattern. Maya Xibalba Be (Milky Way = road to the underworld) = Norse Heiðrún/Bifröst (the rainbow bridge to Asgard runs alongside the sky road) = Greek Galaxy (Milky Way = path of souls; Elysian Fields are at the galaxy\'s edge) = Hindu Devayāna (the Way of the Gods through the heavens) = Egyptian Am-Duat (the night sky as the geography of the underworld journey). Five civilizations looked at the Milky Way and saw: a road. A path. The way to whatever comes after death. The same astronomical feature generated the same cosmological metaphor across all ancient cultures that had dark enough skies to see it clearly.',
     relatedNodes: ['mayan-calendar', 'tradition-maya-religion', 'tradition-mesoamerican'] },
 
   { glyphSVG: '<line x1="50" y1="88" x2="50" y2="14"/><path d="M50 40Q35 32 24 26M50 40Q65 32 76 26"/><path d="M50 60Q38 52 28 46M50 60Q62 52 72 46"/><circle cx="50" cy="14" r="6"/>', name: 'Ben', meaning: 'maize stalk, reed, the growing pillar connecting earth and sky', phoneme: 'ben',
@@ -2544,16 +2733,20 @@ window.ALPHA_GLYPH_DATA = [
   // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   // INCA QUIPU — Knotted-String Records
   // The only known 3-dimensional writing/recording system
+  // Quipu is not phonetic and is NOT encoded in Unicode; this is a CURATED,
+  // representative vocabulary of its knot-types, cord colours and structures
+  // (the meaningful "signs" of the system), each shown via an approximating
+  // emoji/symbol glyph — NOT a real quipu codepoint and NOT exhaustive.
   // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
   { unicode: 0x1FAA2, name: 'Figure-Eight Knot (= 1)', meaning: 'the unit knot — encodes 1 in the ones position', phoneme: '1',
     letter: '', hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Knot Types (Numerical Encoding)',
     gardiner: '', scriptOnly: ['quipu'],
     note: 'The figure-eight knot at the terminal (lowest) position of a pendant string = 1 in the units column. The quipu uses a positional decimal system: knot position on the string (distance from the main cord) determines place value — ones at bottom, then tens, then hundreds, then thousands. About 700 quipus survive; most encode census and tribute data from Tawantinsuyu (the Inca empire of 12 million people). Quipucamayoc (quipu specialists) served as the Inca empire\'s professional accountants, archivists, and historians.',
-    investigationHighlight: 'MASSIVE WIN — the quipu uses the same positional decimal logic as Hindu-Arabic numerals, independently invented. The key mathematical insight is positional value: the same knot-type means different things based on its position on the string. Hindu-Arabic notation (digits 0-9 with positional place values) was developed in India c. 6th century CE, transmitted to Europe via al-Khwarizmi c. 825 CE. The Inca quipu (c. 1400-1532 CE) encoded the same positional decimal principle in three dimensions — knot type × position × twist direction. Same abstract mathematics, zero historical contact, radically different substrate: marks on flat surface vs. knots in 3D space.',
+    investigationHighlight: 'the quipu uses the same positional decimal logic as Hindu-Arabic numerals, independently invented. The key mathematical insight is positional value: the same knot-type means different things based on its position on the string. Hindu-Arabic notation (digits 0-9 with positional place values) was developed in India c. 6th century CE, transmitted to Europe via al-Khwarizmi c. 825 CE. The Inca quipu (c. 1400-1532 CE) encoded the same positional decimal principle in three dimensions — knot type × position × twist direction. Same abstract mathematics, zero historical contact, radically different substrate: marks on flat surface vs. knots in 3D space.',
     relatedNodes: ['quipu', 'tradition-inca-andean', 'mathematics-zero-india'] },
 
-  { unicode: 0x1FAA2, name: 'Long Knot (= 2 to 9)', meaning: 'multi-turn knot — each additional loop adds one', phoneme: '2–9',
+  { unicode: 0x27B0, name: 'Long Knot (= 2 to 9)', meaning: 'multi-turn knot — each additional loop adds one', phoneme: '2–9',
     letter: '', hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Knot Types (Numerical Encoding)',
     gardiner: '', scriptOnly: ['quipu'],
     note: 'The long knot encodes values 2 through 9 by the number of turns: 3 loops = 3, 7 loops = 7. This is analog encoding of digital values — the physical count of loops IS the number. In contrast to the figure-eight (always = 1) and the single overhand knot (= position markers for higher place values), the long knot encodes the digit directly in the object\'s form. Quipucamayoc could read a quipu by touch in complete darkness — the knot count was legible by feel alone.',
@@ -2578,7 +2771,7 @@ window.ALPHA_GLYPH_DATA = [
     letter: '', hebrew: '', arabic: '', phoenician: '', greek: '', section: 'String Colors (Semantic Encoding)',
     gardiner: '', scriptOnly: ['quipu'],
     note: 'Yellow strings encoded data relating to gold, maize (the sacred staple crop), or solar/divine matters. Inti (the Sun) was the supreme Inca deity; gold was his sweat, silver was the moon\'s sweat. Maize was so sacred that the Sapa Inca ritually planted the first furrows each planting season. A yellow-string quipu in a coastal administrative center would encode agricultural tribute in maize — quantities owed, paid, and stored in the qollqas (state storehouses that provisioned the entire empire without monetary currency).',
-    investigationHighlight: 'The Inca managed food distribution for 12 million people without money. The quipu was the accounting tool for the mit\'a system (labor tax paid in work, not coin) and the qollqa storehouses (state granaries redistributing food via state planning). This is a MASSIVE WIN parallel: Mesopotamian administrative economy (cuneiform tablets tracking grain and labor for temple estates, c. 3200 BCE), Inca quipu economy (knotted string tracking mit\'a labor and qollqa stores, c. 1400 CE), modern supply-chain database (SQL tables encoding inventory and logistics, c. 1970 CE). Three civilizations — separated by 4,800 years — independently invented bureaucratic data management as the technological core of large-scale redistribution.',
+    investigationHighlight: 'The Inca managed food distribution for 12 million people without money. The quipu was the accounting tool for the mit\'a system (labor tax paid in work, not coin) and the qollqa storehouses (state granaries redistributing food via state planning). This is a striking parallel: Mesopotamian administrative economy (cuneiform tablets tracking grain and labor for temple estates, c. 3200 BCE), Inca quipu economy (knotted string tracking mit\'a labor and qollqa stores, c. 1400 CE), modern supply-chain database (SQL tables encoding inventory and logistics, c. 1970 CE). Three civilizations — separated by 4,800 years — independently invented bureaucratic data management as the technological core of large-scale redistribution.',
     relatedNodes: ['quipu', 'tradition-inca-andean', 'music-inca-huanca-sacred'] },
 
   { unicode: 0x2B1B, name: 'Black String', meaning: 'time, disease, death — Supay\'s domain', phoneme: 'black',
@@ -2599,7 +2792,7 @@ window.ALPHA_GLYPH_DATA = [
     letter: '', hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Structural Logic (Spatial Architecture)',
     gardiner: '', scriptOnly: ['quipu'],
     note: 'The direction in which the cord is plied (S-twist = spiraling left; Z-twist = spiraling right) encodes binary information beyond color and knot type. Gary Urton (2003, Signs of the Inka Khipu) identified up to 24 binary features per sign element: knot type, ply direction, knot orientation, attachment direction, spin direction, cord color, color arrangement (solid/mottled/mixed/speckled), and spatial positioning. With 24 binary features, each quipu sign-element carries up to 2²⁴ = 16,777,216 possible information states.',
-    investigationHighlight: 'MASSIVE WIN — binary encoding, Andes c. 1400 CE. Urton\'s analysis showed quipus embed systematic binary oppositions (S/Z twist being the most fundamental) in their physical structure. This is the mathematical principle Leibniz formalized in 1679 (binary arithmetic: 0 and 1 as the basis of all computation, which he connected to the Yi Jing\'s broken/unbroken lines). Three independent discoveries of binary encoding as an information technology: Yi Jing (c. 1000 BCE, two types of line in 64 hexagrams), Inca quipu (c. 1400 CE, S/Z twist + multiple binary cord properties), Leibniz binary calculus (1679), digital computing (1940s). The Inca version is the most physically embedded — not marks on a surface but orientation in 3D space.',
+    investigationHighlight: 'binary encoding, Andes c. 1400 CE. Urton\'s analysis showed quipus embed systematic binary oppositions (S/Z twist being the most fundamental) in their physical structure. This is the mathematical principle Leibniz formalized in 1679 (binary arithmetic: 0 and 1 as the basis of all computation, which he connected to the Yi Jing\'s broken/unbroken lines). Three independent discoveries of binary encoding as an information technology: Yi Jing (c. 1000 BCE, two types of line in 64 hexagrams), Inca quipu (c. 1400 CE, S/Z twist + multiple binary cord properties), Leibniz binary calculus (1679), digital computing (1940s). The Inca version is the most physically embedded — not marks on a surface but orientation in 3D space.',
     relatedNodes: ['quipu', 'tradition-inca-andean', 'music-inca-music-cosmology'] },
 
   { unicode: 0x1F9F5, name: 'Main Cord', meaning: 'the spine — everything hangs from this axis', phoneme: 'cord',

@@ -241,7 +241,7 @@
 <script src="src/js/views/starmap.js?v=20260613-genealogy"></script>
 <!-- ALPHABETS V2 Section (2026-06-10) — writing-system genealogy;
      master-pill 5→6 per AUDIT/2026-06-10-alphabets-page-plan.md. -->
-<script src="src/js/views/alphabets.js?v=20260613-left-pick-lock"></script>
+<script src="src/js/views/alphabets.js?v=20260613-glyph-fill"></script>
 <!-- INVESTIGATION V2 Section (2026-06-10) — the consumer findings page;
      data = src/data/investigation-index.json (module fetches it itself,
      regenerate via scripts/build_investigation_index.py). -->
@@ -258,7 +258,7 @@
 <!-- ALPHA_GLYPH_DATA must load BEFORE app.js: the boot router can land
      directly on ?view=alphabets, whose GLYPHS surface reads the table at
      first render (2026-06-10 boot-race fix). Data-only module. -->
-<script src="src/js/alphabets/glyph-data.js?v=20260613-044052"></script>
+<script src="src/js/alphabets/glyph-data.js?v=20260613-glyph-fill"></script>
 <!-- CANONICAL NODE INSPECTOR (2026-06-10) — the V2 renderer behind
      window.selectNode for every non-Forge surface; replaces the deleted
      V01 renderDetail(). Loads BEFORE app.js (boot-race rule). -->
