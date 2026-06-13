@@ -10699,6 +10699,14 @@ function _closeDetailPanel() {
     window._forgeSidePanel.closePanel();
     return;
   }
+  // 2026-06-13 — on MAP, route through the map's closePanel so the node-tab
+  // active-state resets too (else the ✕ collapses the panel but the tab stays
+  // "active" — John's "tabs hang in the air after closing").
+  if (window.STATE && STATE.view === 'maps'
+      && window._mapsView && typeof window._mapsView.closePanel === 'function') {
+    window._mapsView.closePanel();
+    return;
+  }
   document.body.classList.add('detail-collapsed');
 }
 window._closeDetailPanel = _closeDetailPanel;

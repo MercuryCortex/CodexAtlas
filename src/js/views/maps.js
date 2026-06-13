@@ -52,9 +52,10 @@
   let _classFilter = 'all';
   let _allGeoNodes = null;   // full geo set (cached so a lens switch re-filters without re-querying)
   // 2026-06-13 — node interaction state (wires + tabs, the chart workflow).
-  let _lockedIds = [];       // node ids with an open tab (click-to-lock stack)
-  let _activeId = null;      // node whose panel + wires are showing
+  let _lockedIds = [];       // node ids locked (a tab + wires) — the focus set
+  let _activeId = null;      // node whose detail PANEL is open (null = panel closed)
   let _nodeTabsEl = null;    // the right-edge tab strip (#maps-node-tabs)
+  let _jitterPos = null;     // id → [lng,lat] rendered dot position (for wire endpoints)
 
   // type → display label + glyph, mirroring the engine's class catalog
   // so the lens names read the same as everywhere else. Unmapped types
@@ -209,6 +210,11 @@
     });
     const ITEMS_PER_RING = 8;
     const STEP = 0.06; // degrees per ring — bounded spread so dots stay regional
+    // 2026-06-13 — remember each node's JITTERED position so transmission
+    // wires connect to the exact rendered dot, not the raw shared centroid
+    // (John: "the wires are not connecting to the REAL NODE instead to the
+    // center of the bundled nodes").
+    _jitterPos = new Map();
 
     return {
       type: 'FeatureCollection',
@@ -228,6 +234,7 @@
           lng += r * Math.cos(angle) * lonFactor;
           lat += r * Math.sin(angle);
         }
+        _jitterPos.set(n.id, [lng, lat]);
         const deg = degById.get(n.id) || 0;
         return {
           type: 'Feature',
@@ -315,8 +322,9 @@
     // Debug handle for verification (parallels window._forgeDebug).
     window._mapsDebug = {
       map: () => _map,
-      buildWireFeatures: (id) => buildWireFeatures(id),
-      selectNode: (id) => selectNode(id),
+      buildWireFeatures: () => buildWireFeatures(),
+      toggleNode: (id) => toggleNode(id),
+      openPanel: (id) => openPanel(id),
       lockedIds: () => _lockedIds.slice(),
       activeId: () => _activeId
     };
@@ -594,22 +602,23 @@
       if (_popup) { _popup.remove(); }
     });
 
-    // Click an individual circle → the chart workflow: lock it (tab) + open
-    // the canonical inspector + draw its transmission wires. 2026-06-13.
+    // Click an individual circle → the chart workflow: toggle the LOCK (tab +
+    // transmission wires). It does NOT open the panel — the panel opens when
+    // you click the TAB (exactly like the deities chart). 2026-06-13.
     _map.on('click', 'maps-circles', (ev) => {
       if (!ev.features || !ev.features.length) return;
-      ev._codexHitNode = true;   // mark so the empty-click handler below skips
-      selectNode(ev.features[0].properties.id);
+      toggleNode(ev.features[0].properties.id);
     });
 
-    // Click empty map (no node, no cluster) → deselect, like clicking empty
-    // canvas on a chart: clears the wires + collapses the panel (tabs stay).
+    // Click empty map (no node, no cluster) → close the panel, like clicking
+    // empty canvas on a chart. Locks (tabs + wires) persist — re-click a node
+    // to unlock it.
     _map.on('click', (ev) => {
       const hit = _map.queryRenderedFeatures(ev.point, {
         layers: layersThatExist(['maps-circles', 'maps-clusters'])
       });
       if (hit && hit.length) return;   // a node/cluster handler owns this click
-      if (_activeId) deselect();
+      if (_activeId) closePanel();
     });
 
     // Cluster cursor + click-to-zoom (the node-zoom decluttering behavior).
@@ -662,52 +671,53 @@
   // opens the canonical inspector, AND draws its transmission wires to
   // every connected geo-node, bucket-colored exactly like the engine.
   // ============================================================
-  var MAX_WIRES = 160;   // cap so a mega-hub doesn't carpet the globe
+  var MAX_WIRES = 220;   // cap on the TOTAL wires across the locked set
 
-  // LineStrings from a node to each connected GEO node, colored by bucket.
-  function buildWireFeatures(id) {
+  // The rendered-dot position for a node (jittered), falling back to raw geo.
+  function posOf(id) {
+    if (_jitterPos && _jitterPos.has(id)) return _jitterPos.get(id);
+    const n = _nodesById && _nodesById.get(id);
+    return (n && n.geo) ? [n.geo.lon, n.geo.lat] : null;
+  }
+
+  // Union of bucket-colored LineStrings for every LOCKED node → its connected
+  // geo-nodes. Endpoints use the JITTERED dot positions so a wire lands on the
+  // actual marker, not the shared centroid (John's "connect to the REAL NODE").
+  function buildWireFeatures() {
     const v = vault();
-    const origin = _nodesById && _nodesById.get(id);
-    if (!v || !Array.isArray(v.edges) || !origin || !origin.geo) {
+    if (!v || !Array.isArray(v.edges) || !_lockedIds.length) {
       return { type: 'FeatureCollection', features: [] };
     }
-    const o = [origin.geo.lon, origin.geo.lat];
     const B = window._inspectorBuckets || null;
-    const colorOf = (type) => {
-      if (B && B.bucketOf && B.BUCKET_COLOR) return B.BUCKET_COLOR[B.bucketOf(type)] || '#7a8090';
-      return '#7a8090';
-    };
+    const colorOf = (type) => (B && B.bucketOf && B.BUCKET_COLOR)
+      ? (B.BUCKET_COLOR[B.bucketOf(type)] || '#7a8090') : '#7a8090';
+    const lockedSet = new Set(_lockedIds);
     const feats = [];
-    const seen = new Set();
+    const seenPair = new Set();
     for (const e of v.edges) {
-      if (!e) continue;
-      let other = null;
-      if (e.source === id) other = e.target;
-      else if (e.target === id) other = e.source;
-      else continue;
-      if (!other || other === id || seen.has(other)) continue;
-      const on = _nodesById.get(other);          // only geo-tagged nodes are in _nodesById
-      if (!on || !on.geo) continue;
-      if (on.geo.lon === origin.geo.lon && on.geo.lat === origin.geo.lat) continue; // same point → no visible line
-      seen.add(other);
+      if (!e || !e.source || !e.target || e.source === e.target) continue;
+      // an edge qualifies if EITHER end is in the locked set
+      const sIn = lockedSet.has(e.source), tIn = lockedSet.has(e.target);
+      if (!sIn && !tIn) continue;
+      const a = posOf(e.source), b = posOf(e.target);
+      if (!a || !b) continue;                              // a non-geo endpoint
+      if (a[0] === b[0] && a[1] === b[1]) continue;        // same point → no line
+      const key = e.source < e.target ? e.source + '|' + e.target : e.target + '|' + e.source;
+      if (seenPair.has(key)) continue;
+      seenPair.add(key);
       feats.push({
         type: 'Feature',
-        geometry: { type: 'LineString', coordinates: [o, [on.geo.lon, on.geo.lat]] },
+        geometry: { type: 'LineString', coordinates: [a, b] },
         properties: { color: colorOf(e.type) }
       });
       if (feats.length >= MAX_WIRES) break;
     }
     return { type: 'FeatureCollection', features: feats };
   }
-  function drawWires(id) {
+  function redrawWires() {
     if (!_map) return;
     const src = _map.getSource('maps-wires');
-    if (src) { try { src.setData(buildWireFeatures(id)); } catch (e) { /* layer not ready */ } }
-  }
-  function clearWires() {
-    if (!_map) return;
-    const src = _map.getSource('maps-wires');
-    if (src) { try { src.setData({ type: 'FeatureCollection', features: [] }); } catch (e) {} }
+    if (src) { try { src.setData(buildWireFeatures()); } catch (e) { /* layer not ready */ } }
   }
 
   // Right-edge tab strip — reuses the chart's .forge-deity-tabs / .forge-
@@ -724,8 +734,10 @@
       if (!btn) return;
       const tid = btn.getAttribute('data-id');
       if (!tid) return;
-      if (tid === _activeId) { deselect(); }          // click active → close (like the chart)
-      else { selectNode(tid); }
+      // Tab click toggles the PANEL (exactly like the deities chart):
+      // active tab → close panel; other tab → open it.
+      if (tid === _activeId) closePanel();
+      else openPanel(tid);
     });
     return _nodeTabsEl;
   }
@@ -733,7 +745,7 @@
     const strip = ensureTabStrip();
     if (!_lockedIds.length) { strip.style.display = 'none'; strip.innerHTML = ''; return; }
     strip.style.display = '';
-    strip.classList.toggle('panel-open', !document.body.classList.contains('detail-collapsed'));
+    strip.classList.toggle('panel-open', _activeId != null && !document.body.classList.contains('detail-collapsed'));
     strip.innerHTML = _lockedIds.map((id) => {
       const n = _nodesById && _nodesById.get(id);
       const color = (n && (n.family_color || n.tradition_color)) || '#999';
@@ -747,22 +759,34 @@
     }).join('');
   }
 
-  // The unified click: lock + tab + inspector + wires (the chart workflow).
-  function selectNode(id) {
+  // NODE CLICK = toggle LOCK (exactly like the chart): adds/removes a tab +
+  // its wires. It does NOT open the panel (John: "they SHOULD NOT OPEN when
+  // we click — PAY attention of how they work in the deities chart").
+  function toggleNode(id) {
     if (!id) return;
-    _activeId = id;
-    if (_lockedIds.indexOf(id) < 0) _lockedIds.push(id);
-    openInspector(id);
-    drawWires(id);
+    const i = _lockedIds.indexOf(id);
+    if (i >= 0) {
+      _lockedIds.splice(i, 1);            // re-click a locked node → unlock it
+      if (_activeId === id) closePanel(); // (its tab is gone; close panel if it was showing)
+    } else {
+      _lockedIds.push(id);                // lock → tab + wires appear, panel stays closed
+    }
+    redrawWires();
     renderNodeTabs();
   }
-  // Click empty / close active tab → collapse panel + clear wires (tabs stay,
-  // same as the charts).
-  function deselect() {
+  // TAB CLICK opens the panel for a locked node.
+  function openPanel(id) {
+    if (!id) return;
+    _activeId = id;
+    openInspector(id);                    // removes detail-collapsed + renders
+    renderNodeTabs();
+  }
+  // Close the PANEL only — the locks (tabs + wires) persist, like the chart.
+  // Called by the tab-toggle, the empty-map click, AND the shared ✕ (routed
+  // via app.js _closeDetailPanel so the tab's active-state never hangs).
+  function closePanel() {
     _activeId = null;
-    clearWires();
     document.body.classList.add('detail-collapsed');
-    if (window._inspector && window._inspector.clear) { try { window._inspector.clear(); } catch (e) {} }
     renderNodeTabs();
   }
 
@@ -865,6 +889,10 @@
     unmount: unmount,
     supportedClasses: supportedClasses,
     getClassFilter: getClassFilter,
-    setClassFilter: setClassFilter
+    setClassFilter: setClassFilter,
+    // closePanel — called by app.js _closeDetailPanel (the shared ✕) when
+    // STATE.view==='maps', so closing the panel resets the tab active-state
+    // instead of leaving it hanging.
+    closePanel: closePanel
   };
 })();
