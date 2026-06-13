@@ -51,6 +51,10 @@
   // navigates out of MAP). 'all' = every geo-tagged node.
   let _classFilter = 'all';
   let _allGeoNodes = null;   // full geo set (cached so a lens switch re-filters without re-querying)
+  // 2026-06-13 — node interaction state (wires + tabs, the chart workflow).
+  let _lockedIds = [];       // node ids with an open tab (click-to-lock stack)
+  let _activeId = null;      // node whose panel + wires are showing
+  let _nodeTabsEl = null;    // the right-edge tab strip (#maps-node-tabs)
 
   // type → display label + glyph, mirroring the engine's class catalog
   // so the lens names read the same as everywhere else. Unmapped types
@@ -309,7 +313,13 @@
     }
 
     // Debug handle for verification (parallels window._forgeDebug).
-    window._mapsDebug = { map: () => _map };
+    window._mapsDebug = {
+      map: () => _map,
+      buildWireFeatures: (id) => buildWireFeatures(id),
+      selectNode: (id) => selectNode(id),
+      lockedIds: () => _lockedIds.slice(),
+      activeId: () => _activeId
+    };
 
     // No rotation — keep it a flat reading map.
     try {
@@ -441,6 +451,25 @@
       return; // layers already exist on a re-render
     }
 
+    // --- transmission wires (2026-06-13) — bucket-colored lines from the
+    // selected node to its connected geo-nodes, drawn UNDER the dots so the
+    // markers stay readable. Empty until a node is clicked (like the charts:
+    // "Click and transmission wires appears"). Source data set by drawWires().
+    if (!_map.getSource('maps-wires')) {
+      _map.addSource('maps-wires', { type: 'geojson', data: { type: 'FeatureCollection', features: [] } });
+      _map.addLayer({
+        id: 'maps-wire-lines',
+        type: 'line',
+        source: 'maps-wires',
+        layout: { 'line-cap': 'round', 'line-join': 'round' },
+        paint: {
+          'line-color': ['coalesce', ['get', 'color'], '#7a8090'],
+          'line-width': ['interpolate', ['linear'], ['zoom'], 1, 0.6, 5, 1.4, 9, 2.4],
+          'line-opacity': 0.55
+        }
+      });
+    }
+
     // --- cluster bubbles (gold ringed, sized by point_count) ---
     _map.addLayer({
       id: 'maps-clusters',
@@ -565,12 +594,22 @@
       if (_popup) { _popup.remove(); }
     });
 
-    // Click an individual circle → open THE canonical node panel (rule: same
-    // inspector everywhere — no bespoke map popup with node content).
+    // Click an individual circle → the chart workflow: lock it (tab) + open
+    // the canonical inspector + draw its transmission wires. 2026-06-13.
     _map.on('click', 'maps-circles', (ev) => {
       if (!ev.features || !ev.features.length) return;
-      const id = ev.features[0].properties.id;
-      openInspector(id);
+      ev._codexHitNode = true;   // mark so the empty-click handler below skips
+      selectNode(ev.features[0].properties.id);
+    });
+
+    // Click empty map (no node, no cluster) → deselect, like clicking empty
+    // canvas on a chart: clears the wires + collapses the panel (tabs stay).
+    _map.on('click', (ev) => {
+      const hit = _map.queryRenderedFeatures(ev.point, {
+        layers: layersThatExist(['maps-circles', 'maps-clusters'])
+      });
+      if (hit && hit.length) return;   // a node/cluster handler owns this click
+      if (_activeId) deselect();
     });
 
     // Cluster cursor + click-to-zoom (the node-zoom decluttering behavior).
@@ -615,6 +654,118 @@
     }
   }
 
+  // ============================================================
+  // NODE INTERACTION — wires + tabs (2026-06-13). John: "the nodes need
+  // to work exactly like the charts — Click and transmission wires
+  // appears! then the side panel workflow is the same … TABS". Clicking
+  // a marker locks it (a tab on the right, reusing the chart's tab CSS),
+  // opens the canonical inspector, AND draws its transmission wires to
+  // every connected geo-node, bucket-colored exactly like the engine.
+  // ============================================================
+  var MAX_WIRES = 160;   // cap so a mega-hub doesn't carpet the globe
+
+  // LineStrings from a node to each connected GEO node, colored by bucket.
+  function buildWireFeatures(id) {
+    const v = vault();
+    const origin = _nodesById && _nodesById.get(id);
+    if (!v || !Array.isArray(v.edges) || !origin || !origin.geo) {
+      return { type: 'FeatureCollection', features: [] };
+    }
+    const o = [origin.geo.lon, origin.geo.lat];
+    const B = window._inspectorBuckets || null;
+    const colorOf = (type) => {
+      if (B && B.bucketOf && B.BUCKET_COLOR) return B.BUCKET_COLOR[B.bucketOf(type)] || '#7a8090';
+      return '#7a8090';
+    };
+    const feats = [];
+    const seen = new Set();
+    for (const e of v.edges) {
+      if (!e) continue;
+      let other = null;
+      if (e.source === id) other = e.target;
+      else if (e.target === id) other = e.source;
+      else continue;
+      if (!other || other === id || seen.has(other)) continue;
+      const on = _nodesById.get(other);          // only geo-tagged nodes are in _nodesById
+      if (!on || !on.geo) continue;
+      if (on.geo.lon === origin.geo.lon && on.geo.lat === origin.geo.lat) continue; // same point → no visible line
+      seen.add(other);
+      feats.push({
+        type: 'Feature',
+        geometry: { type: 'LineString', coordinates: [o, [on.geo.lon, on.geo.lat]] },
+        properties: { color: colorOf(e.type) }
+      });
+      if (feats.length >= MAX_WIRES) break;
+    }
+    return { type: 'FeatureCollection', features: feats };
+  }
+  function drawWires(id) {
+    if (!_map) return;
+    const src = _map.getSource('maps-wires');
+    if (src) { try { src.setData(buildWireFeatures(id)); } catch (e) { /* layer not ready */ } }
+  }
+  function clearWires() {
+    if (!_map) return;
+    const src = _map.getSource('maps-wires');
+    if (src) { try { src.setData({ type: 'FeatureCollection', features: [] }); } catch (e) {} }
+  }
+
+  // Right-edge tab strip — reuses the chart's .forge-deity-tabs / .forge-
+  // deity-tab CSS so the workflow looks identical. Own id (#maps-node-tabs)
+  // so it never collides with the forge strip; torn down in unmount().
+  function ensureTabStrip() {
+    if (_nodeTabsEl && _nodeTabsEl.parentNode) return _nodeTabsEl;
+    _nodeTabsEl = document.createElement('div');
+    _nodeTabsEl.className = 'forge-deity-tabs';
+    _nodeTabsEl.id = 'maps-node-tabs';
+    document.body.appendChild(_nodeTabsEl);
+    _nodeTabsEl.addEventListener('click', (e) => {
+      const btn = e.target.closest('.forge-deity-tab');
+      if (!btn) return;
+      const tid = btn.getAttribute('data-id');
+      if (!tid) return;
+      if (tid === _activeId) { deselect(); }          // click active → close (like the chart)
+      else { selectNode(tid); }
+    });
+    return _nodeTabsEl;
+  }
+  function renderNodeTabs() {
+    const strip = ensureTabStrip();
+    if (!_lockedIds.length) { strip.style.display = 'none'; strip.innerHTML = ''; return; }
+    strip.style.display = '';
+    strip.classList.toggle('panel-open', !document.body.classList.contains('detail-collapsed'));
+    strip.innerHTML = _lockedIds.map((id) => {
+      const n = _nodesById && _nodesById.get(id);
+      const color = (n && (n.family_color || n.tradition_color)) || '#999';
+      const title = (n && n.title) || id;
+      const active = (id === _activeId);
+      return '<button class="forge-deity-tab' + (active ? ' is-active' : '') + '"'
+        + ' data-id="' + escapeHtml(id) + '" title="' + escapeHtml(title) + '">'
+        + '<span class="forge-deity-tab-chevron">' + (active ? '›' : '‹') + '</span>'
+        + '<span class="forge-deity-tab-dot" style="background:' + escapeHtml(color) + '"></span>'
+        + '</button>';
+    }).join('');
+  }
+
+  // The unified click: lock + tab + inspector + wires (the chart workflow).
+  function selectNode(id) {
+    if (!id) return;
+    _activeId = id;
+    if (_lockedIds.indexOf(id) < 0) _lockedIds.push(id);
+    openInspector(id);
+    drawWires(id);
+    renderNodeTabs();
+  }
+  // Click empty / close active tab → collapse panel + clear wires (tabs stay,
+  // same as the charts).
+  function deselect() {
+    _activeId = null;
+    clearWires();
+    document.body.classList.add('detail-collapsed');
+    if (window._inspector && window._inspector.clear) { try { window._inspector.clear(); } catch (e) {} }
+    renderNodeTabs();
+  }
+
   // ---- empty / error state (reuses the maps-stage shell) ----
   function showEmpty(message) {
     const stage = _pane && _pane.querySelector('#maps-stage');
@@ -654,6 +805,14 @@
       _map = null;
     }
     try { window._mapsDebug = null; } catch (_) {}
+    // 2026-06-13 — tear down the body-level tab strip + reset interaction
+    // state so nothing bleeds to the next view (the stuck-tabs lesson).
+    if (_nodeTabsEl && _nodeTabsEl.parentNode) {
+      try { _nodeTabsEl.parentNode.removeChild(_nodeTabsEl); } catch (_) {}
+    }
+    _nodeTabsEl = null;
+    _lockedIds = [];
+    _activeId = null;
     _allGeoNodes = null;      // re-built on next render; _classFilter persists (keeps the lens)
     _nodesById = null;
     _degreeById = null;

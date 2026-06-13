@@ -524,4 +524,8 @@
   }, true);
 
   window._inspector = { show: show, clear: clear };
+  // 2026-06-13 — expose the bucket routing + colors so other views (the
+  // MAP wires) classify + color edges identically — one source, no third
+  // copy of the bucket logic to drift.
+  window._inspectorBuckets = { bucketOf: bucketOf, BUCKET_COLOR: BUCKET_COLOR, BUCKET_HUMAN: BUCKET_HUMAN };
 })();
