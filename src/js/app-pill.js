@@ -140,6 +140,14 @@
         && typeof window._alphabetsView.setClassFilter === 'function') {
       return window._alphabetsView;
     }
+    // 2026-06-13 — MAP exposes the same contract: its lenses are the
+    // node CLASSES present on the map (Deities / Figures / Documents /
+    // …). Filters the plotted nodes WITHIN the Section (left-pick-lock).
+    if (mv.target === 'maps'
+        && window._mapsView
+        && typeof window._mapsView.setClassFilter === 'function') {
+      return window._mapsView;
+    }
     return null;
   }
   function syncClassPill() {

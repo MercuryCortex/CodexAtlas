@@ -44,6 +44,41 @@
   let _degreeById = null;    // id -> degree (computed from edges)
   let _protocolRegistered = false;
   let _styleErrShown = false;
+  // 2026-06-13 — MAP lenses (class filter). Persists across mounts so
+  // re-entering MAP keeps the chosen lens. The right-pill class side
+  // drives this via the standard app-pill contract; it filters the
+  // map's nodes WITHIN the Section (left-pick-lock law — never
+  // navigates out of MAP). 'all' = every geo-tagged node.
+  let _classFilter = 'all';
+  let _allGeoNodes = null;   // full geo set (cached so a lens switch re-filters without re-querying)
+
+  // type → display label + glyph, mirroring the engine's class catalog
+  // so the lens names read the same as everywhere else. Unmapped types
+  // fall back to a title-cased label.
+  const CLASS_META = {
+    deity:         { label: 'Deities',      glyph: '◉' },
+    person:        { label: 'Figures',      glyph: '⚜' },
+    document:      { label: 'Documents',    glyph: '❡' },
+    symbol:        { label: 'Symbols',      glyph: '✦' },
+    event:         { label: 'Events',       glyph: '◆' },
+    ritual:        { label: 'Rituals',      glyph: '✚' },
+    'sacred-site': { label: 'Sacred sites', glyph: '▲' },
+    place:         { label: 'Places',       glyph: '◐' },
+    tradition:     { label: 'Traditions',   glyph: '⊙' },
+    monument:      { label: 'Monuments',    glyph: '▮' },
+    music:         { label: 'Music',        glyph: '♩' },
+    alphabet:      { label: 'Alphabets',    glyph: 'ℵ' },
+    language:      { label: 'Languages',    glyph: 'A' },
+    mathematics:   { label: 'Mathematics',  glyph: '∑' },
+    medicine:      { label: 'Medicine',     glyph: '⚕' },
+    philosophy:    { label: 'Philosophy',   glyph: '○' },
+    moral:         { label: 'Morals',       glyph: '⚖' },
+    alchemy:       { label: 'Alchemy',      glyph: '△' }
+  };
+  function _titleCase(t) {
+    return String(t || 'other').replace(/[-_]+/g, ' ')
+      .replace(/\b\w/g, c => c.toUpperCase());
+  }
 
   // ---- PMTiles protocol registration (idempotent) ----
   // The offline basemap is served through the pmtiles:// custom protocol.
@@ -247,7 +282,10 @@
     _degreeById = computeDegree();
     _nodesById = new Map();
     nodes.forEach(n => _nodesById.set(n.id, n));
-    const fc = buildFeatureCollection(nodes, _degreeById);
+    // 2026-06-13 — cache the full geo set so a lens switch re-filters
+    // instantly, and seed the initial source with the active lens.
+    _allGeoNodes = nodes;
+    const fc = buildFeatureCollection(_nodesForFilter(), _degreeById);
 
     // --- init the MapLibre map ---
     try {
@@ -616,11 +654,58 @@
       _map = null;
     }
     try { window._mapsDebug = null; } catch (_) {}
+    _allGeoNodes = null;      // re-built on next render; _classFilter persists (keeps the lens)
     _nodesById = null;
     _degreeById = null;
     _styleErrShown = false;
     _pane = null;
   }
 
-  window._mapsView = { render: render, unmount: unmount };
+  // ============================================================
+  // CLASS LENSES — the app-pill right-side contract (same as _forge /
+  // _alphabetsView). Filters the plotted nodes WITHIN the MAP Section;
+  // never navigates out (left-pick-lock law). 2026-06-13.
+  // ============================================================
+  function _nodesForFilter() {
+    const all = _allGeoNodes || geoNodes();
+    if (_classFilter === 'all') return all;
+    return all.filter(n => (n.type || '') === _classFilter);
+  }
+  function supportedClasses() {
+    const counts = new Map();
+    (_allGeoNodes || geoNodes()).forEach(n => {
+      const t = n.type || 'other';
+      counts.set(t, (counts.get(t) || 0) + 1);
+    });
+    const list = [{ value: 'all', label: 'All', glyph: '∗' }];
+    Array.from(counts.entries())
+      .sort((a, b) => b[1] - a[1])            // most-populated lens first
+      .forEach(function (pair) {
+        const t = pair[0];
+        const m = CLASS_META[t] || { label: _titleCase(t), glyph: '·' };
+        list.push({ value: t, label: m.label, glyph: m.glyph });
+      });
+    return list;
+  }
+  function getClassFilter() { return _classFilter; }
+  function setClassFilter(v) {
+    _classFilter = v || 'all';
+    // Re-filter the live source (MapLibre re-clusters on setData).
+    if (_map && _allGeoNodes) {
+      try {
+        const src = _map.getSource('maps-nodes');
+        if (src) src.setData(buildFeatureCollection(_nodesForFilter(), _degreeById));
+      } catch (e) { /* source not ready yet — initial render seeds the filter */ }
+    }
+    // the pill listens for this to refresh its class label
+    try { document.dispatchEvent(new CustomEvent('codex:class-changed')); } catch (e) { /* ignore */ }
+  }
+
+  window._mapsView = {
+    render: render,
+    unmount: unmount,
+    supportedClasses: supportedClasses,
+    getClassFilter: getClassFilter,
+    setClassFilter: setClassFilter
+  };
 })();
