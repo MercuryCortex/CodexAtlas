@@ -47,6 +47,24 @@ BASELINE_PATH = VAULT / "AUDIT" / "dead-link-baseline.txt"
 # `#` (anchor). Matches the pattern used vault-wide.
 LINK_RE = re.compile(r'\[\[([^\]|#]+?)(?:[#|][^\]]*)?\]\]')
 
+# Code spans must NOT be parsed for wikilinks: backticks are exactly how the
+# vault NEUTRALISES a literal [[…]] example in STATUS/AUDIT/commit prose (see
+# 00_meta/HOW-WE-WORK.md §5 / feedback_status_log_backtick_wikilinks). A real
+# live wikilink is never wrapped in backticks, so stripping code spans before
+# scanning can only ever REMOVE false-positive dead targets, never add one —
+# safe for the --baseline gate (the dead set can only shrink). This ends the
+# recurring `[[…]]`-in-backticks self-reference trap that bit the gate 5×.
+FENCED_CODE_RE = re.compile(r'```.*?```', re.DOTALL)
+INLINE_CODE_RE = re.compile(r'`[^`\n]*`')
+
+
+def strip_code_spans(text):
+    """Remove fenced (```…```) and inline (`…`) code so their contents are
+    not parsed as wikilinks. Position-agnostic: linkcheck only needs slugs."""
+    text = FENCED_CODE_RE.sub('', text)
+    text = INLINE_CODE_RE.sub('', text)
+    return text
+
 
 def scan_vault():
     """Walk every .md file and return (stems, targets, target_files)."""
@@ -56,7 +74,7 @@ def scan_vault():
     target_files = {}
     for f in md_files:
         try:
-            text = open(f, encoding="utf-8").read()
+            text = strip_code_spans(open(f, encoding="utf-8").read())
         except Exception:
             continue
         for m in LINK_RE.finditer(text):
