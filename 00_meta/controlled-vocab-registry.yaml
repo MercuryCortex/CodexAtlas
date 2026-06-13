@@ -31,7 +31,7 @@ active_fields:
 
   tradition:
     vocab_file: 00_meta/tradition-vocabulary.yaml
-    node_type_scope: ["person", "deity", "symbol", "document"]
+    node_type_scope: ["person", "deity", "symbol", "document", "language"]
     allow_array: false
     lens_qualifying_flag: ~
     drives_lens: ~  # but drives Atlas wedge color via tradition_color()
