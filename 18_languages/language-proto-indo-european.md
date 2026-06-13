@@ -4,6 +4,7 @@ id: "language-proto-indo-european"
 title: "Proto-Indo-European (PIE)"
 aka: ["PIE", "Indo-European Proto-Language", "Urindogermanisch"]
 category: "language"
+tradition: "tradition-proto-indo-european-religion"
 family: "[[language-indo-european-family]] (the reconstructed root)"
 date-attested-earliest: -4500
 date-attested-latest: -2500

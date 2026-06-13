@@ -4,6 +4,7 @@ id: "language-pali"
 title: "Pali (Pāḷi)"
 aka: ["Pāḷi", "Magadhi-derived Middle Indic", "the canonical language of Theravāda Buddhism", "Pāḷibhāṣā"]
 category: "language"
+tradition: "tradition-buddhism-theravada"
 family: "Indo-European → Indo-Iranian → Indo-Aryan → Middle Indo-Aryan"
 sub-family: "Middle Indo-Aryan (Prakrit) — specifically a literary Prakrit conventionally associated with the Magadha region of eastern India where the Buddha taught, although linguists debate the geographic origin"
 parent-language: "[[sanskrit-vedic]] / Old Indo-Aryan (a sister Middle-Indo-Aryan to other Prakrits; not a direct descendant of Classical Sanskrit but of an earlier vernacular register)"

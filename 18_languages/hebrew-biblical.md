@@ -4,6 +4,7 @@ id: "hebrew-biblical"
 title: "Biblical Hebrew (לְשׁוֹן הַקֹּדֶשׁ, leshon ha-qodesh)"
 aka: ["Classical Hebrew", "Old Hebrew", "leshon ha-qodesh ('the holy tongue')", "עִבְרִית מִקְרָאִית"]
 category: "language"
+tradition: "tradition-judaism"
 family: "Afroasiatic → Semitic → Central Semitic → Northwest Semitic → Canaanite"
 sub-family: "Canaanite (alongside Phoenician, Moabite, Edomite, Ammonite, Ugaritic-adjacent)"
 parent-language: "Proto-Northwest-Semitic / Proto-Canaanite"

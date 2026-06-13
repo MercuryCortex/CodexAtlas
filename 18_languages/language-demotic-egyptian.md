@@ -4,6 +4,7 @@ id: "language-demotic-egyptian"
 title: "Demotic Egyptian"
 aka: ["sḫ šꜥ.t ('writing of documents')", "Demotic", "the vernacular Egyptian of the Late + Ptolemaic + Roman periods"]
 category: "language"
+tradition: "tradition-egyptian-religion"
 family: "Afroasiatic → Egyptian"
 sub-family: "The vernacular phase of the Egyptian language between Late Egyptian and Coptic"
 parent-language: "[[language-egyptian-hieroglyphic]] (specifically Late Egyptian)"

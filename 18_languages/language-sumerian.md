@@ -4,6 +4,7 @@ id: "language-sumerian"
 title: "Sumerian (Eme-ĝir, 𒅴𒂠)"
 aka: ["Eme-ĝir ('native tongue', the Sumerians' own name for it)", "Eme-sal (the parallel sociolectal register associated with women + goddesses)"]
 category: "language"
+tradition: "tradition-sumerian-mesopotamian"
 family: "Language isolate (no demonstrable genetic relationship to any other language family despite many proposed connections — Dravidian, Uralic, Caucasian, Munda — none accepted)"
 sub-family: "Eme-ĝir (the standard literary + administrative dialect) + Eme-sal (an associated register used in women's speech + goddess-liturgy)"
 parent-language: "Unknown (isolate)"

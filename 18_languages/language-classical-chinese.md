@@ -4,6 +4,7 @@ id: "language-classical-chinese"
 title: "Classical Chinese (Literary Sinitic)"
 aka: ["wényánwén 文言文", "Literary Sinitic", "Classical Chinese", "kanbun (in Japanese reading-tradition)", "hanmun (in Korean reading-tradition)", "Hán văn (in Vietnamese reading-tradition)"]
 category: "language"
+tradition: "tradition-confucianism"
 family: "Sino-Tibetan → Sinitic"
 sub-family: "Old Chinese (-1250 to -200, the spoken language behind the classical canon) → Middle Chinese (200-1000 CE, the spoken language reconstructed via Tang-Song rime tables) → Old Mandarin → modern Mandarin / Cantonese / Hokkien / Wu / Hakka / Min etc. (the modern Sinitic spoken descendants). Classical Chinese itself is a *literary register* preserved orthographically + scholastically across all these phases."
 parent-language: "[[language-old-chinese|Old Chinese]] (Shang oracle-bone language → Western Zhou bronze inscriptions → classical period)"

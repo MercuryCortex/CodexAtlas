@@ -4,6 +4,7 @@ id: "language-indo-european-family"
 title: "Indo-European Language Family"
 aka: ["IE", "Aryan family (obsolete and now objectionable terminology)", "Indogermanisch (German tradition)"]
 category: "language-family"
+tradition: "tradition-proto-indo-european-religion"
 parent-language: "[[language-proto-indo-european]] (the reconstructed common ancestor)"
 sub-families:
   - "Anatolian (Hittite, Luwian — earliest attested branch, c. -1700 onwards)"

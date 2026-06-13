@@ -4,6 +4,7 @@ id: "language-old-church-slavonic"
 title: "Old Church Slavonic (словѣньскыи ѩзыкъ)"
 aka: ["Old Bulgarian", "Old Slavonic", "OCS", "Old Macedonian", "Church Slavonic (in its later recensional continuations)"]
 category: "language"
+tradition: "tradition-eastern-orthodoxy"
 family: "[[language-indo-european-family]]"
 sub-family: "Balto-Slavic → Slavic → South Slavic → Eastern South Slavic (literary register based on the Thessalonican Macedonian-Bulgarian dialect spoken by Cyril + Methodius)"
 parent-language: "Common Slavic (the very-late Proto-Slavic stage of c. 800-900 CE, before the major dialect splits)"

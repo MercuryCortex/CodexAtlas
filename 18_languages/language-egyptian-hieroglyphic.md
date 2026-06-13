@@ -4,6 +4,7 @@ id: "language-egyptian-hieroglyphic"
 title: "Egyptian (Old / Middle / Late Egyptian)"
 aka: ["mdw nṯr ('words of the god')", "Ancient Egyptian", "Pharaonic Egyptian"]
 category: "language"
+tradition: "tradition-egyptian-religion"
 family: "Afroasiatic → Egyptian (the entire family is one branch)"
 sub-family: "The Egyptian branch is the only one within Afroasiatic that consists of a single language with a continuous attested history of ~4,000 years; periodized as Old Egyptian → Middle Egyptian → Late Egyptian → Demotic → Coptic"
 parent-language: "Proto-Afroasiatic (the wider family also produces Semitic, Berber, Chadic, Cushitic, Omotic branches)"

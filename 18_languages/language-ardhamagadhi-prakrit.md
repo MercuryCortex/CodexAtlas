@@ -4,6 +4,7 @@ id: "language-ardhamagadhi-prakrit"
 title: "Ardha-Māgadhī Prakrit"
 aka: ["Ardhamagadhi", "Ārṣa Prakrit ('the Prakrit of the seers')", "Jain Prakrit", "the canonical language of the Śvetāmbara Jain canon", "अर्धमागधी"]
 category: "language"
+tradition: "tradition-jainism"
 family: "Indo-European → Indo-Iranian → Indo-Aryan → Middle Indo-Aryan"
 sub-family: "Middle Indo-Aryan (Prakrit) — geographically associated with the eastern-Indian Magadha region (modern Bihar / eastern UP) and chronologically with the late centuries BCE; cousin to [[language-pali|Pali]] (also Middle Indo-Aryan, associated with the same general region but distinct sectarian tradition)"
 parent-language: "[[sanskrit-vedic]] / Old Indo-Aryan via the unattested vernacular registers that paralleled Vedic + early Classical Sanskrit"

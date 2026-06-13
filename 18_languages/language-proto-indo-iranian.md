@@ -4,6 +4,7 @@ id: "language-proto-indo-iranian"
 title: "Proto-Indo-Iranian"
 aka: ["PIIr", "Aryan (in the narrow technical sense, *not* the racialized usage)"]
 category: "language"
+tradition: "tradition-proto-indo-european-religion"
 family: "[[language-indo-european-family]]"
 parent-language: "[[language-proto-indo-european]]"
 date-attested-earliest: -2500

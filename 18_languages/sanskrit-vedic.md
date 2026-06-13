@@ -4,6 +4,7 @@ id: "sanskrit-vedic"
 title: "Vedic Sanskrit"
 aka: ["Old Indo-Aryan", "Vedic", "chandas (the metrical liturgical register)"]
 category: "language"
+tradition: "tradition-vedic"
 family: "[[language-indo-european-family]]"
 sub-family: "Indo-Iranian → Indo-Aryan → Old Indo-Aryan"
 parent-language: "[[language-proto-indo-iranian]]"

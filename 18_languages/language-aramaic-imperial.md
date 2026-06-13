@@ -4,6 +4,7 @@ id: "language-aramaic-imperial"
 title: "Imperial Aramaic (Aramaya, אֲרָמָיָא)"
 aka: ["Achaemenid Aramaic", "Reichsaramäisch", "Official Aramaic", "Standard Literary Aramaic"]
 category: "language"
+tradition: "tradition-judaism"
 family: "Afroasiatic → Semitic → Central Semitic → Northwest Semitic → Aramaic"
 sub-family: "Old Aramaic (-900 to -700) → Imperial / Achaemenid Aramaic (-700 to -200) → Middle Aramaic (-200 to 200) → Late Aramaic (200-700: Jewish Babylonian Aramaic, Syriac, Mandaic, Christian Palestinian Aramaic, etc.) → Neo-Aramaic varieties (Turoyo, Assyrian Neo-Aramaic, etc.)"
 parent-language: "Proto-Aramaic (a Northwest Semitic sister of Proto-Canaanite)"

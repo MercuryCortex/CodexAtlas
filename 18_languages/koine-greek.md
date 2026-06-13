@@ -4,6 +4,7 @@ id: "koine-greek"
 title: "Koine Greek"
 aka: ["ἡ κοινὴ διάλεκτος (hē koinḕ diálektos, 'the common dialect')", "Hellenistic Greek", "Biblical Greek", "New Testament Greek"]
 category: "language"
+tradition: "tradition-early-christianity"
 family: "[[language-indo-european-family]]"
 sub-family: "Hellenic → Greek → post-Classical Greek"
 parent-language: "[[language-ancient-greek|Attic + Ionic Greek]] (the principal contributors); also Doric + Aeolic substrates"

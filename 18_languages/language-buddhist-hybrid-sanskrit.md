@@ -4,6 +4,7 @@ id: "language-buddhist-hybrid-sanskrit"
 title: "Buddhist Hybrid Sanskrit"
 aka: ["BHS", "Mixed Sanskrit", "Mahāyāna Sanskrit", "Gāthā-language Sanskrit", "Mischsprache"]
 category: "language"
+tradition: "tradition-buddhism-mahayana"
 family: "Indo-European → Indo-Iranian → Indo-Aryan → Middle / hybrid-Old Indo-Aryan"
 sub-family: "A literary register that combines Middle Indo-Aryan (Prakrit-like) morphology + vocabulary with Sanskritized phonology + spelling — the result of progressive retro-Sanskritization of an originally Middle-Indo-Aryan Buddhist canonical tradition"
 parent-language: "An undocumented Middle Indo-Aryan oral-canonical Buddhist tradition (Edgerton's *proto-canonical Buddhist Middle Indic*) — a sister-register to [[language-pali|Pali]] preserving early-Buddhist material in a different linguistic-geographic stream"

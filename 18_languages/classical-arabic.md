@@ -4,6 +4,7 @@ id: "classical-arabic"
 title: "Classical Arabic (al-ʿarabiyya al-fuṣḥā)"
 aka: ["Quranic Arabic", "al-fuṣḥā", "العربية الفصحى", "Literary Arabic"]
 category: "language"
+tradition: "tradition-islam"
 family: "Afroasiatic → Semitic → Central Semitic → Arabic"
 parent-language: "Proto-Arabic / pre-Islamic Old Arabic (Safaitic + Hismaic + Nabataean Aramaic / Arabic inscriptions)"
 descendant-languages: "Modern Standard Arabic (MSA, the written + formal register), 25+ spoken Arabic vernacular varieties (Egyptian, Levantine, Maghrebi, Gulf, Iraqi, Yemeni, etc.)"

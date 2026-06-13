@@ -3,6 +3,7 @@ type: language
 id: "language-mandaic"
 name: "Classical Mandaic"
 aka: ["Mandaic", "Mandean Aramaic", "Eastern Aramaic — Mandaean variety"]
+tradition: "tradition-mandaeism"
 family: "Afro-Asiatic / Semitic / West Semitic / Aramaic / Eastern Aramaic / Late Eastern Aramaic"
 region: "Lower Mesopotamia (Mandaean communities of southern Iraq + Khuzestan); diaspora globally since ~1990"
 date-earliest: 200

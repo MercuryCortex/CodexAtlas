@@ -4,6 +4,7 @@ id: "language-mishnaic-hebrew"
 title: "Mishnaic Hebrew"
 aka: ["Tannaitic Hebrew", "Lashon Ḥakhamim ('the language of the Sages')", "Rabbinic Hebrew (early phase)", "לְשׁוֹן חֲכָמִים"]
 category: "language"
+tradition: "tradition-rabbinic-judaism"
 family: "Afroasiatic → Semitic → Central Semitic → Northwest Semitic → Canaanite"
 sub-family: "Mishnaic Hebrew is the immediate successor register of [[hebrew-biblical|Biblical Hebrew]] — the language of the Tannaitic period (c. -200 to +200 CE), distinct in vocabulary + morphology + syntax from Late Biblical Hebrew although clearly continuous with it"
 parent-language: "[[hebrew-biblical|Biblical Hebrew]] (with substantial Aramaic substratum from the diglossic Second Temple + early Rabbinic period)"

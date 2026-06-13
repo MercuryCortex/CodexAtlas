@@ -4,6 +4,7 @@ id: "language-old-persian"
 title: "Old Persian"
 aka: ["Achaemenid Persian", "Old Iranian (southwestern)", "the language of the Behistun Inscription"]
 category: "language"
+tradition: "tradition-zoroastrianism"
 family: "Afroasiatic? No — Indo-European → Indo-Iranian → Iranian → Old Iranian → Southwestern Old Iranian"
 sub-family: "Southwestern Old Iranian (parallel to Median in the northwest; cousin to [[language-old-avestan|Old/Younger Avestan]] in the east)"
 parent-language: "[[language-proto-indo-iranian]] (via Proto-Iranian)"

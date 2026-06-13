@@ -4,6 +4,7 @@ id: "language-ugaritic"
 title: "Ugaritic (the language of Ras Shamra)"
 aka: ["Ugaritic", "the language of the Ras Shamra / Ugarit tablets"]
 category: "language"
+tradition: "tradition-canaanite-ugaritic"
 family: "Afro-Asiatic > Semitic > West Semitic > Northwest Semitic"
 sub-family: "Northwest Semitic (closely related to, but distinct from, Canaanite/Phoenician-Hebrew and Aramaic; its exact sub-grouping is debated)"
 parent-language: "Proto-Northwest-Semitic"

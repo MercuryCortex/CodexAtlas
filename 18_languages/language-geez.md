@@ -4,6 +4,7 @@ id: "language-geez"
 title: "Ge'ez (Classical Ethiopic)"
 aka: ["Ge'ez", "Gəʿəz", "ግዕዝ", "Classical Ethiopic", "Old Ethiopic"]
 category: "language"
+tradition: "tradition-ethiopian-orthodox-tewahedo"
 family: "Afroasiatic → Semitic → South Semitic → Ethiopian Semitic → Northern Ethiopian"
 parent-language: "South Semitic (continuity debate with [[language-sabaic|Sabaic]] + epigraphic South-Arabian forms; current consensus treats Ethio-Semitic as a sister of Sabaic, not its daughter — the script + prestige culture crossed the Red Sea, the language did not)"
 descendant-languages: "Tigrinya (Eritrea + Tigray), Tigre (Eritrea), Amharic (the dominant modern Ethiopian-Semitic language), Argobba, Harari, the Gurage languages"

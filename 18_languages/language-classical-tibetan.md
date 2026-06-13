@@ -4,6 +4,7 @@ id: "language-classical-tibetan"
 title: "Classical Tibetan"
 aka: ["chos-skad ('religious language')", "Bod-yig", "Old Tibetan (the pre-Classical -700 to -1000 stratum)", "Literary Tibetan"]
 category: "language"
+tradition: "tradition-tibetan-buddhism"
 family: "Sino-Tibetan → Tibeto-Burman → Bodish → Tibetan"
 sub-family: "Tibetan (sister to Tamangic, distant relative to Burmese in the wider Tibeto-Burman family; the entire family is one of the two principal branches of Sino-Tibetan alongside Sinitic)"
 parent-language: "Proto-Tibetic (reconstructed from Tibetan + Tamang + Tshangla + Sherpa + Balti + Ladakhi + numerous Himalayan Tibetan varieties)"

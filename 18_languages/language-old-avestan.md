@@ -4,6 +4,7 @@ id: "language-old-avestan"
 title: "Old Avestan (Gathic Avestan)"
 aka: ["Gathic Avestan", "Gāθā-Avestan", "Older Avestan"]
 category: "language"
+tradition: "tradition-zoroastrianism"
 family: "[[language-indo-european-family]]"
 sub-family: "Indo-Iranian → Iranian → Old Iranian"
 parent-language: "[[language-proto-indo-iranian]]"

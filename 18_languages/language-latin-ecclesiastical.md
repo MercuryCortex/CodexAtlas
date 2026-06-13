@@ -4,6 +4,7 @@ id: "language-latin-ecclesiastical"
 title: "Ecclesiastical Latin (Latina ecclesiastica)"
 aka: ["Christian Latin", "Late Latin", "Liturgical Latin", "Vulgar Latin (in part)", "Church Latin", "Medieval Latin (continuum)"]
 category: "language"
+tradition: "tradition-roman-catholicism"
 family: "[[language-indo-european-family]]"
 sub-family: "Italic → Latino-Faliscan → Latin → Late + Christian Latin"
 parent-language: "[[language-latin-classical|Classical Latin]] + spoken Vulgar Latin (the everyday register that diverges from Cicero's literary norm)"

@@ -4,6 +4,7 @@ id: "language-hittite"
 title: "Hittite (Neši-li — the oldest attested Indo-European language)"
 aka: ["Hittite", "Nešili / Neša-language (the Hittites' own name)", "the language of Hattusa"]
 category: "language"
+tradition: "tradition-hittite"
 family: "Indo-European > Anatolian"
 sub-family: "Anatolian branch (the earliest-attested and first-to-split branch of Indo-European; sister to Luwian, Palaic, Lydian, Lycian)"
 parent-language: "[[language-proto-indo-european|Proto-Indo-European]] (via Proto-Anatolian)"

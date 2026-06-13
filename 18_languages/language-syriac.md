@@ -4,6 +4,7 @@ id: "language-syriac"
 title: "Syriac (Suryāyā, ܠܫܢܐ ܣܘܪܝܝܐ)"
 aka: ["Classical Syriac", "Edessene Aramaic", "Suryoyo", "lešānā suryāyā"]
 category: "language"
+tradition: "tradition-syriac-christianity"
 family: "Afroasiatic → Semitic → Central Semitic → Northwest Semitic → Aramaic → Eastern Aramaic"
 sub-family: "Late Aramaic (alongside Jewish Babylonian Aramaic, Mandaic, Christian Palestinian Aramaic)"
 parent-language: "[[language-aramaic-imperial]] / Middle Aramaic Edessene vernacular"

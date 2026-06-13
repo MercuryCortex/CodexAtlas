@@ -4,6 +4,7 @@ id: "language-coptic"
 title: "Coptic (ⲘⲈⲦⲢⲈⲘ̀ⲚⲬⲎⲘⲒ, met-rem-ən-kīmi)"
 aka: ["Egyptian (final phase)", "ⲘⲈⲦⲢⲈⲘ̀ⲚⲬⲎⲘⲒ ('the speech of Egypt')", "Bohairic + Sahidic + Akhmimic + Fayyumic + Lycopolitan dialects"]
 category: "language"
+tradition: "tradition-egyptian-coptic-christianity"
 family: "Afroasiatic → Egyptian"
 sub-family: "The final attested phase of the Egyptian language. Egyptian itself is one of the six branches of Afroasiatic alongside Semitic, Berber, Cushitic, Chadic, Omotic."
 parent-language: "[[language-demotic-egyptian|Demotic Egyptian]] (the spoken + cursive register of Late Egyptian, c. -650 to +500)"

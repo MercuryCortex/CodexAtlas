@@ -4,6 +4,7 @@ id: "language-babylonian-aramaic"
 title: "Jewish Babylonian Aramaic"
 aka: ["JBA", "Babylonian Talmudic Aramaic", "Eastern Late Aramaic (Jewish)", "the Aramaic of the Bavli", "ארמית בבלית יהודית"]
 category: "language"
+tradition: "tradition-rabbinic-judaism"
 family: "Afroasiatic → Semitic → Central Semitic → Northwest Semitic → Aramaic → Eastern Late Aramaic"
 sub-family: "Eastern Late Aramaic (alongside [[language-syriac|Syriac]] and Mandaic; the eastern branch of Late Aramaic post-200 CE, parallel to Western Late Aramaic = Galilean / Christian Palestinian / Samaritan)"
 parent-language: "[[language-aramaic-imperial]] (Imperial Aramaic) via the Middle Aramaic phase; specifically the eastern Mesopotamian Aramaic dialect that becomes the everyday + scholarly Jewish vernacular of Sasanian Babylonia"

@@ -4,6 +4,7 @@ id: "language-latin-classical"
 title: "Classical Latin"
 aka: ["sermo eruditus", "Ciceronian Latin"]
 category: "language"
+tradition: "tradition-roman-religion"
 family: "[[language-indo-european-family]]"
 sub-family: "Italic → Latino-Faliscan → Latin"
 parent-language: "Old Latin (pre-Republican)"

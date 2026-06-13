@@ -4,6 +4,7 @@ id: "language-galilean-aramaic"
 title: "Galilean Aramaic (Jewish Palestinian Aramaic)"
 aka: ["Jewish Palestinian Aramaic", "JPA", "Western Late Aramaic", "the Aramaic of the Jerusalem Talmud", "ארמית גלילית"]
 category: "language"
+tradition: "tradition-judaism"
 family: "Afroasiatic → Semitic → Central Semitic → Northwest Semitic → Aramaic → Western Late Aramaic"
 sub-family: "Western Late Aramaic (alongside Christian Palestinian Aramaic + Samaritan Aramaic + Nabataean → Arabic-script lateness; cousin to Eastern Late Aramaic varieties Syriac + Babylonian Aramaic + Mandaic)"
 parent-language: "[[language-aramaic-imperial]] (Imperial / Achaemenid Aramaic, via the Middle Aramaic phase c. -200 to +200)"

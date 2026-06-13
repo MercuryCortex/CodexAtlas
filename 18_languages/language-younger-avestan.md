@@ -4,6 +4,7 @@ id: "language-younger-avestan"
 title: "Younger Avestan"
 aka: ["Recent Avestan", "Standard Avestan", "the language of the Younger Avesta"]
 category: "language"
+tradition: "tradition-zoroastrianism"
 family: "Indo-European → Indo-Iranian → Iranian → Old Iranian → Eastern Old Iranian"
 sub-family: "Eastern Old Iranian (sister to [[language-old-avestan|Old/Gathic Avestan]] within the Avestan group, parallel to Old Persian on the southwestern side)"
 parent-language: "[[language-old-avestan]] (continuous chronological successor; alternatively, both Old + Younger Avestan descend separately from a Proto-Avestan stage)"

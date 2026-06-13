@@ -4,6 +4,7 @@ id: "language-sanskrit-classical"
 title: "Classical Sanskrit"
 aka: ["Pāṇinian Sanskrit", "saṃskṛta ('refined, perfected')"]
 category: "language"
+tradition: "tradition-hinduism"
 family: "[[language-indo-european-family]]"
 sub-family: "Indo-Iranian → Indo-Aryan → Old Indo-Aryan (Pāṇinian register)"
 parent-language: "[[sanskrit-vedic]]"

@@ -4,6 +4,7 @@ id: "language-akkadian"
 title: "Akkadian (Akkadû, 𒀝𒅗𒁺𒌑)"
 aka: ["Babylonian-Assyrian", "Babylonian", "Assyrian", "lišān akkadî"]
 category: "language"
+tradition: "tradition-mesopotamian"
 family: "Afroasiatic → Semitic → East Semitic"
 sub-family: "East Semitic (the only well-attested branch of East Semitic; the other branch, Eblaite, is sister-language to Akkadian, 3rd-millennium BCE only)"
 parent-language: "Proto-Semitic / Proto-East-Semitic"

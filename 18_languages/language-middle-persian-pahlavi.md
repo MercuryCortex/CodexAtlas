@@ -4,6 +4,7 @@ id: "language-middle-persian-pahlavi"
 title: "Middle Persian (Pahlavi)"
 aka: ["Pahlavi", "Pārsīg", "Sasanian Persian", "Book Pahlavi"]
 category: "language"
+tradition: "tradition-zoroastrianism"
 family: "Indo-European → Indo-Iranian → Iranian → Middle Iranian → Southwestern Middle Iranian"
 sub-family: "Southwestern Middle Iranian (parallel to Parthian = Northwestern Middle Iranian in Arsacid-era usage; cousin to Sogdian + Khotanese + Bactrian in eastern Middle Iranian)"
 parent-language: "[[language-old-persian]] (continuous descent through unattested Late Old Persian / Early Middle Persian phase, c. -300 to -100)"
