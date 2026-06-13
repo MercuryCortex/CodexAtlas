@@ -322,7 +322,7 @@
     // Debug handle for verification (parallels window._forgeDebug).
     window._mapsDebug = {
       map: () => _map,
-      buildWireFeatures: () => buildWireFeatures(),
+      computeOverlay: () => computeOverlay(),
       toggleNode: (id) => toggleNode(id),
       openPanel: (id) => openPanel(id),
       lockedIds: () => _lockedIds.slice(),
@@ -568,6 +568,49 @@
       console.warn('[maps] node labels unavailable:', e && e.message);
     }
 
+    // --- FOCUS layer (2026-06-13) — when nodes are locked, their connected
+    // nodes are lifted OUT of their clusters and drawn here as individual
+    // dots ON TOP, regardless of zoom, so the wires land on visible markers
+    // (John: "those NODES come out of the bundle being revealed next to
+    // it"). Unclustered source; populated by refreshOverlay(); empty when
+    // nothing is locked.
+    if (!_map.getSource('maps-focus')) {
+      _map.addSource('maps-focus', { type: 'geojson', data: { type: 'FeatureCollection', features: [] } });
+      _map.addLayer({
+        id: 'maps-focus-circles',
+        type: 'circle',
+        source: 'maps-focus',
+        paint: {
+          'circle-radius': ['interpolate', ['linear'], ['zoom'], 1, 5, 5, 7, 9, 9],
+          'circle-color': ['get', 'color'],
+          // locked nodes get a gold ring; revealed neighbors a soft white ring
+          'circle-stroke-width': ['case', ['get', 'isLocked'], 2.5, 1.5],
+          'circle-stroke-color': ['case', ['get', 'isLocked'], token('--gold', '#d4a55a'), 'rgba(255,255,255,0.85)'],
+          'circle-opacity': 1
+        }
+      });
+      _map.addLayer({
+        id: 'maps-focus-labels',
+        type: 'symbol',
+        source: 'maps-focus',
+        layout: {
+          'text-field': ['get', 'title'],
+          'text-font': ['Noto Sans Regular'],
+          'text-size': 12,
+          'text-anchor': 'left',
+          'text-offset': [0.9, 0],
+          'text-allow-overlap': false,
+          'text-optional': true,
+          'symbol-sort-key': ['case', ['get', 'isLocked'], -1000, 0]
+        },
+        paint: {
+          'text-color': token('--text-1', '#e8e2d6'),
+          'text-halo-color': token('--bg-0', '#07090f'),
+          'text-halo-width': 1.4
+        }
+      });
+    }
+
     wireInteractions();
   }
 
@@ -610,14 +653,33 @@
       toggleNode(ev.features[0].properties.id);
     });
 
+    // FOCUS dots (revealed neighbors) are first-class: hover labels them,
+    // click toggles their lock too — so you can walk the graph node-to-node
+    // out of the bundles. 2026-06-13.
+    _map.on('mousemove', 'maps-focus-circles', (ev) => {
+      if (!ev.features || !ev.features.length) return;
+      _map.getCanvas().style.cursor = 'pointer';
+      const p = ev.features[0].properties;
+      if (!_popup) {
+        _popup = new maplibregl.Popup({ closeButton: false, closeOnClick: false, className: 'maps-tip', offset: 10, maxWidth: '240px' });
+      }
+      _popup.setLngLat(ev.lngLat).setHTML('<div class="maps-tip-title">' + escapeHtml(p.title) + '</div>').addTo(_map);
+    });
+    _map.on('mouseleave', 'maps-focus-circles', () => { _map.getCanvas().style.cursor = ''; if (_popup) _popup.remove(); });
+    _map.on('click', 'maps-focus-circles', (ev) => {
+      if (!ev.features || !ev.features.length) return;
+      ev.preventDefault && ev.preventDefault();
+      toggleNode(ev.features[0].properties.id);
+    });
+
     // Click empty map (no node, no cluster) → close the panel, like clicking
     // empty canvas on a chart. Locks (tabs + wires) persist — re-click a node
     // to unlock it.
     _map.on('click', (ev) => {
       const hit = _map.queryRenderedFeatures(ev.point, {
-        layers: layersThatExist(['maps-circles', 'maps-clusters'])
+        layers: layersThatExist(['maps-circles', 'maps-clusters', 'maps-focus-circles'])
       });
-      if (hit && hit.length) return;   // a node/cluster handler owns this click
+      if (hit && hit.length) return;   // a node/cluster/focus handler owns this click
       if (_activeId) closePanel();
     });
 
@@ -680,23 +742,22 @@
     return (n && n.geo) ? [n.geo.lon, n.geo.lat] : null;
   }
 
-  // Union of bucket-colored LineStrings for every LOCKED node → its connected
-  // geo-nodes. Endpoints use the JITTERED dot positions so a wire lands on the
-  // actual marker, not the shared centroid (John's "connect to the REAL NODE").
-  function buildWireFeatures() {
+  // Compute the overlay for the LOCKED set: bucket-colored wires to every
+  // connected geo-node, PLUS the set of endpoint node ids (so those nodes can
+  // be lifted out of their clusters into the focus layer). Endpoints use the
+  // JITTERED dot positions so wires + revealed dots line up exactly.
+  function computeOverlay() {
+    const wires = { type: 'FeatureCollection', features: [] };
+    const focusIds = new Set(_lockedIds);   // locked nodes are always revealed
     const v = vault();
-    if (!v || !Array.isArray(v.edges) || !_lockedIds.length) {
-      return { type: 'FeatureCollection', features: [] };
-    }
+    if (!v || !Array.isArray(v.edges) || !_lockedIds.length) return { wires, focusIds };
     const B = window._inspectorBuckets || null;
     const colorOf = (type) => (B && B.bucketOf && B.BUCKET_COLOR)
       ? (B.BUCKET_COLOR[B.bucketOf(type)] || '#7a8090') : '#7a8090';
     const lockedSet = new Set(_lockedIds);
-    const feats = [];
     const seenPair = new Set();
     for (const e of v.edges) {
       if (!e || !e.source || !e.target || e.source === e.target) continue;
-      // an edge qualifies if EITHER end is in the locked set
       const sIn = lockedSet.has(e.source), tIn = lockedSet.has(e.target);
       if (!sIn && !tIn) continue;
       const a = posOf(e.source), b = posOf(e.target);
@@ -705,19 +766,45 @@
       const key = e.source < e.target ? e.source + '|' + e.target : e.target + '|' + e.source;
       if (seenPair.has(key)) continue;
       seenPair.add(key);
-      feats.push({
+      wires.features.push({
         type: 'Feature',
         geometry: { type: 'LineString', coordinates: [a, b] },
         properties: { color: colorOf(e.type) }
       });
-      if (feats.length >= MAX_WIRES) break;
+      focusIds.add(e.source); focusIds.add(e.target);     // reveal both endpoints
+      if (wires.features.length >= MAX_WIRES) break;
     }
+    return { wires, focusIds };
+  }
+  // Point features for the revealed (focus) nodes — drawn unclustered on top.
+  function focusCollection(focusIds) {
+    const lockedSet = new Set(_lockedIds);
+    const feats = [];
+    focusIds.forEach((id) => {
+      const p = posOf(id);
+      const n = _nodesById && _nodesById.get(id);
+      if (!p || !n) return;
+      feats.push({
+        type: 'Feature',
+        geometry: { type: 'Point', coordinates: p },
+        properties: {
+          id: id,
+          title: n.title || id,
+          color: n.family_color || n.tradition_color || '#7a8090',
+          isLocked: lockedSet.has(id)
+        }
+      });
+    });
     return { type: 'FeatureCollection', features: feats };
   }
-  function redrawWires() {
+  // Push wires + focus dots to the map. One call keeps them in lockstep.
+  function refreshOverlay() {
     if (!_map) return;
-    const src = _map.getSource('maps-wires');
-    if (src) { try { src.setData(buildWireFeatures()); } catch (e) { /* layer not ready */ } }
+    const { wires, focusIds } = computeOverlay();
+    const ws = _map.getSource('maps-wires');
+    if (ws) { try { ws.setData(wires); } catch (e) {} }
+    const fs = _map.getSource('maps-focus');
+    if (fs) { try { fs.setData(focusCollection(focusIds)); } catch (e) {} }
   }
 
   // Right-edge tab strip — reuses the chart's .forge-deity-tabs / .forge-
@@ -769,9 +856,9 @@
       _lockedIds.splice(i, 1);            // re-click a locked node → unlock it
       if (_activeId === id) closePanel(); // (its tab is gone; close panel if it was showing)
     } else {
-      _lockedIds.push(id);                // lock → tab + wires appear, panel stays closed
+      _lockedIds.push(id);                // lock → tab + wires + revealed dots, panel stays closed
     }
-    redrawWires();
+    refreshOverlay();
     renderNodeTabs();
   }
   // TAB CLICK opens the panel for a locked node.
@@ -837,6 +924,7 @@
     _nodeTabsEl = null;
     _lockedIds = [];
     _activeId = null;
+    _jitterPos = null;
     _allGeoNodes = null;      // re-built on next render; _classFilter persists (keeps the lens)
     _nodesById = null;
     _degreeById = null;
