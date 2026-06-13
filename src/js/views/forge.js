@@ -1882,6 +1882,23 @@
           try { local._fxPulseDot.parentNode.removeChild(local._fxPulseDot); } catch (_) {}
           local._fxPulseDot = null;
         }
+        // 2026-06-13 — tear down the body-level deity-tabs strip + the
+        // shared inspector panel so neither bleeds onto the next view
+        // (John: "some tabs stuck on the right like a bug"). The tabs
+        // strip is appended to <body>, so the forge that created it
+        // must remove it on the way out. Then collapse + clear the
+        // shared panel so the next view starts clean — matches the
+        // "click empty / leave → disappears" behavior of the Atlas.
+        try {
+          if (window._forgeSidePanel && typeof window._forgeSidePanel.teardown === 'function') {
+            window._forgeSidePanel.teardown();
+          }
+        } catch (e) { /* ignore */ }
+        try {
+          document.body.classList.add('detail-collapsed');
+          const _inner = document.getElementById('detail-inner');
+          if (_inner) _inner.innerHTML = '';
+        } catch (e) { /* ignore */ }
         try { camera.stopAnim(); } catch (e) { /* ignore */ }
       },
     };

@@ -2194,6 +2194,22 @@
       renderTabs();
     };
 
+    // 2026-06-13 — TEARDOWN. The tabs strip is appended to <body>
+    // (line ~43) so it escapes the forge-stage box — which means it
+    // ALSO survives the forge pane's removal on a view change unless
+    // explicitly torn down. John: "when we jump around pages some
+    // tabs stuck on the right like a bug." Forge's destroy() calls
+    // this so the body-level strip + its state leave WITH the forge,
+    // never bleeding onto MAP / BOARD / INVESTIGATION / etc.
+    window._forgeSidePanel.teardown = function () {
+      try { clearTimeout(local._sidePanelPulseTimer); } catch (_) {}
+      local.deityTabs = [];
+      local.openTabId = null;
+      if (tabsEl && tabsEl.parentNode) {
+        try { tabsEl.parentNode.removeChild(tabsEl); } catch (_) {}
+      }
+    };
+
     // Phase 19D — click a neighbor inside an expanded wire list →
     // lock + switch the panel to that deity. Event-delegated on
     // the global inner so it works for every render pass without
