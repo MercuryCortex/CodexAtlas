@@ -14,7 +14,7 @@ appearances:
 related-themes:
   - "[[alchemy-as-spiritual-discipline]]"
   - "[[divine-feminine]]"
-  - "[[dying-and-rising-god]]"
+  - "[[dying-rising-god|dying-and-rising god]]"
   - "[[psychostasia-soul-weighing]]"
   - "[[non-duality]]"
 status: "metadata"

@@ -17,7 +17,7 @@ variants:
   - id: "hamsa-downward"
     description: "Palm-downward orientation, less common; the palm-upward (fingers pointing up) form is standard for the apotropaic function."
 deity-instances:
-  - "[[fatima-al-zahra]]"
+  - "[[fatima-bint-muhammad|Fatima al-Zahra]]"
   - "[[miriam-prophetess]]"
 tradition-context:
   - "[[tradition-judaism]]"
@@ -127,7 +127,7 @@ The Tophet inscriptions and hand-shaped votive objects from Carthage (c. -800 to
 The **Hand of Miriam** (*Yad Miriam*) reinterprets the pre-Jewish apotropaic symbol by attaching it to Miriam the Prophetess (Exodus 15:20), who led the women of Israel in song at the Red Sea and was associated with deliverance. The Judaization of a shared symbol is medieval in origin; the biblical Miriam has no hand-amulet association in the Hebrew Bible. See [[miriam-prophetess]].
 
 ### Islamic
-The **Hand of Fatima** (*Khamsa Fatima*, or *Yad Fatima*) names the amulet for Fatima al-Zahra, daughter of the Prophet and wife of Ali. In Shia Islam, the five fingers specifically encode the **Five People of the Cloak** (Ahl al-Kisāʾ). See [[fatima-al-zahra]].
+The **Hand of Fatima** (*Khamsa Fatima*, or *Yad Fatima*) names the amulet for Fatima al-Zahra, daughter of the Prophet and wife of Ali. In Shia Islam, the five fingers specifically encode the **Five People of the Cloak** (Ahl al-Kisāʾ). See [[fatima-bint-muhammad|Fatima al-Zahra]].
 
 ### The Central Eye
 The integration of the eye motif into the palm produces a second-order symbol: the palm-hand catches the evil gaze while the central eye deflects and returns it. The blue glass nazar bead (the classic anti-evil-eye amulet of the Levant and Anatolia) is frequently embedded in the palm — making the hamsa a fusion of the Semitic hand-power tradition and the Mediterranean evil-eye-bead tradition. See [[eye-of-horus-wedjat]] for the Egyptian layer.

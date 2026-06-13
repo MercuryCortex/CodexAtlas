@@ -6,7 +6,7 @@ aka: ["*archōn*", "planetary ruler", "demiurge's servant", "the seven powers"]
 category: "cosmogonic"
 traditions-where-attested: ["Sethian Gnosticism", "Valentinian Gnosticism", "Hermetism (planetary Governors)", "Pauline 'principalities and powers'", "Mandaean (planet-spirits)", "Manichaean (the Archons of the firmament)"]
 appearances: ["[[phase-4-002-apocryphon-of-john]]", "[[phase-4-006-hypostasis-of-the-archons]]", "[[phase-4-011-corpus-hermeticum-i]]", "[[phase-3-015-pauline-epistles]]"]
-deity-instances: ["[[ialdabaoth]]", "[[demiurge-gnostic]]"]
+deity-instances: ["[[yaldabaoth|Ialdabaoth]]", "[[demiurge-gnostic]]"]
 status: "stub"
 refs:
   - title: "The Gnostic Bible"

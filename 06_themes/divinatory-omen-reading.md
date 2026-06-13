@@ -6,7 +6,7 @@ aka: ["extispicy", "hepatoscopy", "*šumma* divination", "omen literature"]
 category: "ritual"
 traditions-where-attested: ["Mesopotamian (Akkadian)", "Etruscan", "Roman (haruspicy)", "Chinese (oracle bones)", "Greek (oneiromancy, ornithomancy)", "Israelite (Urim and Thummim)"]
 appearances: ["[[phase-1-019-enuma-anu-enlil]]", "[[phase-1-020-shumma-alu]]", "[[phase-1-021-shumma-izbu]]"]
-deity-instances: ["[[shamash]]", "[[adad]]"]
+deity-instances: ["[[utu-shamash|Shamash]]", "[[adad]]"]
 status: "stub"
 refs:
   - title: "Mesopotamian Divination Texts: Conversing with the Gods"

@@ -16,7 +16,7 @@ script: "Mandaic script"
 region: "Southern Mesopotamia"
 city-of-origin: "lower Mesopotamia"
 authorship: "school (anonymous)"
-key-figures: ["[[john-the-baptist-mandaean]]", "[[jesus-of-nazareth]]", "[[manda-d-hayyi]]"]
+key-figures: ["[[john-the-baptist|John the Baptist (Mandaean Yahyā)]]", "[[jesus-of-nazareth]]", "[[manda-d-hayyi]]"]
 themes: ["[[divine-feminine]]", "[[soul-as-spark]]", "[[mystery-initiation]]"]
 parallels: ["[[phase-4-017-ginza-rba]]"]
 influenced-by: ["[[phase-4-017-ginza-rba]]"]

@@ -90,7 +90,7 @@ Sufi *shawq* (longing for the divine Beloved, for the return to God, for the end
 See [[soul-exile-longing]] for the wider cluster (Gnostic pneuma-in-hylē, Plotinian epistrophē, Vedāntic avidyā, Buddhist dukkha). Saudade and hiraeth are the Celtic-Atlantic variants: the exile is not cosmic (the soul separated from God) but geographical (the community separated from its western paradise) and historical (the civilization separated from its age of greatness).
 
 ## Fernando Pessoa and Saudade as National Theology
-Fernando Pessoa's [[pessoa-fernando|*Mensagem*]] (1934) — the only Portuguese-language book he published in his lifetime — is Portugal's most sophisticated meditation on saudade as national theology:
+Fernando Pessoa's [[fernando-pessoa|*Mensagem*]] (1934) — the only Portuguese-language book he published in his lifetime — is Portugal's most sophisticated meditation on saudade as national theology:
 
 *"To be great, be whole;*
 *Exclude nothing, exaggerate nothing that is you.*
@@ -99,7 +99,7 @@ Fernando Pessoa's [[pessoa-fernando|*Mensagem*]] (1934) — the only Portuguese-
 *So, in each lake, the moon shines with full splendor,*
 *Because it is high."*
 
-Pessoa's saudade in *Mensagem* is specifically the saudade for the Age of Discoveries — the 15th–16th century moment when Portugal *was* the world's most advanced maritime civilization — and the implicit claim that the Sebastianist return (*o Encoberto* — the Hidden King) will restore that greatness. But Pessoa's *Mensagem* transmutes the political Sebastianism into a mystical-philosophical position: the return is an interior awakening, not a historical event. Saudade becomes the evidence that Portugal's destiny is not exhausted — because you only experience saudade for something real. The longing proves the reality of what is longed for. See [[sebastianism-quinto-imperio]], [[pessoa-fernando]].
+Pessoa's saudade in *Mensagem* is specifically the saudade for the Age of Discoveries — the 15th–16th century moment when Portugal *was* the world's most advanced maritime civilization — and the implicit claim that the Sebastianist return (*o Encoberto* — the Hidden King) will restore that greatness. But Pessoa's *Mensagem* transmutes the political Sebastianism into a mystical-philosophical position: the return is an interior awakening, not a historical event. Saudade becomes the evidence that Portugal's destiny is not exhausted — because you only experience saudade for something real. The longing proves the reality of what is longed for. See [[sebastianism-quinto-imperio]], [[fernando-pessoa|Fernando Pessoa]].
 
 This is, structurally, identical to C.S. Lewis's argument from *Sehnsucht*: the human longing for transcendence that nothing earthly satisfies is itself evidence of a transcendent object. Lewis: "If I find in myself a desire which no experience in this world can satisfy, the most probable explanation is that I was made for another world." Pessoa: if Portugal experiences saudade for its own greatness, that greatness was real and will return. Two entirely independent Atlantic-facing cultures (Welsh Lewis, Atlantic Portuguese Pessoa) making the same argument from the same emotion.
 

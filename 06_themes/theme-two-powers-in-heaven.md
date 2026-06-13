@@ -5,7 +5,7 @@ name: "Two Powers in Heaven"
 aka: ["second God", "the divine vice-regent", "the Lesser YHWH", "the Sar ha-Panim", "biblical binitarianism"]
 traditions-where-attested: ["Second Temple Judaism", "Merkavah mysticism", "Hekhalot literature", "Gnosticism", "Christianity (Trinitarian theology)"]
 documents-attested:
-  - "[[phase-1-028-daniel]]"
+  - "[[phase-3-008-book-of-daniel|Daniel]]"
   - "[[phase-3-004-1-enoch]]"
   - "[[phase-5-013-hekhalot-literature]]"
   - "[[phase-4-033-babylonian-talmud]]"
@@ -163,7 +163,7 @@ Kabbalistic Tiferet / Metatron (Zohar, ~1280) — medieval Jewish continuation
 | → [[the-elect-one-enochic]] | divine-figure | The pre-existent Son of Man of 1 Enoch; structurally the same figure as Metatron |
 | → [[logos-philonic]] | MASSIVE-WIN | Philo's "Second God" is the same structural position as Metatron in different philosophical vocabulary |
 | → [[logos-johannine]] | MASSIVE-WIN | The Johannine Logos-Christ is the Christian elaboration of the Jewish two-powers theology |
-| → [[phase-1-028-daniel]] | primary-source | Daniel 7 — the Ancient of Days + Son of Man as the canonical two-powers text |
+| → [[phase-3-008-book-of-daniel|Daniel]] | primary-source | Daniel 7 — the Ancient of Days + Son of Man as the canonical two-powers text |
 | → [[phase-3-004-1-enoch]] | primary-source | The Parables of Enoch; the Son of Man / Elect One |
 | → [[phase-5-013-hekhalot-literature]] | primary-source | 3 Enoch; Metatron as the Lesser YHWH |
 | → [[tradition-kabbalah]] | downstream | The Zohar's Tiferet / Keter dynamic preserves the two-powers structure inside medieval Jewish mysticism |

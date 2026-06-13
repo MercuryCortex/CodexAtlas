@@ -7,7 +7,7 @@ date-emergence: -700
 date-end: 400
 region-origin: "Italian peninsula (Latium, Etruscan Rome)"
 regions-spread: ["Italian peninsula", "Western Mediterranean", "Roman Empire (all provinces with Roman administration)"]
-key-deities: ["[[jupiter]]", "[[mars-roman]]", "[[venus-roman]]", "[[mercury-roman]]", "[[juno]]", "[[minerva]]", "[[vesta]]", "[[janus]]", "[[saturn-roman]]"]
+key-deities: ["[[jupiter]]", "[[mars-roman]]", "[[venus-roman]]", "[[mercury-roman]]", "[[juno]]", "[[minerva-roman|Minerva]]", "[[vesta]]", "[[janus]]", "[[saturn-roman]]"]
 key-persons: ["[[numa-pompilius]] (legendary religious founder)", "[[augustus]] (religious reformer / pontifex maximus)", "[[julius-caesar]]", "[[julian-the-apostate]] (Phase 4: last pagan emperor)", "[[symmachus]] (Phase 4: pagan defender)"]
 key-documents: ["XII Tables (~-450)", "Cicero *De Natura Deorum*, *De Divinatione*", "Vergil *Aeneid*", "Ovid *Fasti*", "Varro (lost antiquarian-theological corpus, partially preserved in Augustine *De Civitate Dei*)"]
 sister-traditions: ["[[tradition-greek-religion]]", "[[tradition-etruscan-religion]]", "[[tradition-mystery-cults]]", "[[tradition-hellenistic-philosophy]]"]
@@ -60,7 +60,7 @@ Roman religion is the **state-cult, household-cult, and imperial-cult complex** 
 ## Pantheon (key deities)
 - [[jupiter]] — sky-king; Iuppiter Optimus Maximus on the Capitoline.
 - [[juno]] — queen of the gods; protectress of women.
-- [[minerva]] — wisdom, crafts, war strategy.
+- [[minerva-roman|Minerva]] — wisdom, crafts, war strategy.
 - [[mars-roman]] — war and agriculture; father of Romulus.
 - [[venus-roman]] — love; ancestress of the Julian gens.
 - [[mercury-roman]] — commerce, travelers, messages.

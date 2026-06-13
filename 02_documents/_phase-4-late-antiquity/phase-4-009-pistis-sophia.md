@@ -16,7 +16,7 @@ script: "Coptic uncial"
 region: "Egypt"
 city-of-origin: "unknown"
 authorship: "anonymous"
-key-figures: ["[[mary-magdalene]]", "[[jesus-of-nazareth]]", "[[apostle-john]]", "[[apostle-philip]]", "[[apostle-thomas]]"]
+key-figures: ["[[mary-magdalene]]", "[[jesus-of-nazareth]]", "[[apostle-john]]", "[[philip-apostle|Apostle Philip]]", "[[thomas-apostle|Apostle Thomas]]"]
 themes: ["[[divine-feminine]]", "[[gnosis-as-salvation]]", "[[psychopomp]]", "[[mystery-initiation]]"]
 parallels: ["[[phase-4-005-gospel-of-mary]]", "[[phase-4-002-apocryphon-of-john]]", "Books of Jeu (Bruce Codex)"]
 influenced-by: ["earlier Sethian and Valentinian mythologies", "Hellenistic astrology and magic"]

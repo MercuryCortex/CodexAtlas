@@ -6,7 +6,7 @@ aka: ["Gnostic aeons", "*aiōn*", "*sefirot* (Kabbalistic analog)", "Hermetic *d
 category: "cosmogonic"
 traditions-where-attested: ["Sethian Gnosticism", "Valentinian Gnosticism", "Hermetism (dekanoi as planetary aeons)", "Kabbalah (sefirot as functional parallel)", "Mandaeism (Uthras as comparable)"]
 appearances: ["[[phase-4-002-apocryphon-of-john]]", "[[phase-4-003-gospel-of-truth]]", "[[phase-4-011-corpus-hermeticum-i]]", "[[phase-5-012-sefer-yetzirah]]"]
-deity-instances: ["[[barbelo]]", "[[sophia-gnostic]]", "[[ialdabaoth]]"]
+deity-instances: ["[[barbelo]]", "[[sophia-gnostic]]", "[[yaldabaoth|Ialdabaoth]]"]
 status: "stub"
 refs:
   - title: "Rethinking 'Gnosticism': An Argument for Dismantling a Dubious Category"

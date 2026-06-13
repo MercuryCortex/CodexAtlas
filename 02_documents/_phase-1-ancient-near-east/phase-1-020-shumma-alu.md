@@ -21,7 +21,7 @@ themes: ["[[divinatory-omen-reading]]", "[[wisdom-as-cosmic-order]]", "[[divinat
 parallels: ["[[phase-1-019-enuma-anu-enlil]]", "[[phase-1-021-shumma-izbu]]", "[[phase-1-007-code-of-hammurabi]]"]
 influenced-by: ["Old Babylonian terrestrial-omen forerunners; the broader Mesopotamian scholarly-scribal *ṭupšarrūtu* tradition"]
 influences: ["Hittite-language adaptations (Boğazköy archives); Aramaic and later Jewish omen-literature traditions; the broader concept of everyday-event divination in the Hellenistic Greek world"]
-deities-mentioned: ["[[shamash]]", "[[marduk]]", "[[ishtar-akkadian]]"]
+deities-mentioned: ["[[utu-shamash|Shamash]]", "[[marduk]]", "[[ishtar-akkadian]]"]
 events-context: []
 status: "metadata"
 preservation: "The canonical series consists of approximately 107 tablets, of which roughly 75 are reasonably well attested, plus a substantial body of unplaced fragments. The opening incipit gives the series its name: *šumma ālu ina mēlê šakin* — 'If a city is set on a height...'. Topics span the entire range of everyday observable phenomena in the urban Babylonian environment: city features and orientation, houses, doors, hearths, snakes and other animals encountered indoors, dreams, sexual behavior, dogs barking, scorpions, birth marks of livestock, the appearance of strangers, and much more. The principal sources are the Neo-Assyrian library tablets from Nineveh (British Museum collection), with substantial additional material from Sultantepe, Assur, Kalhu (Nimrud), and Babylonian centers. Sally Freedman's multi-volume critical edition (Occasional Publications of the Samuel Noah Kramer Fund, 1998, 2006, 2017) is the standard."

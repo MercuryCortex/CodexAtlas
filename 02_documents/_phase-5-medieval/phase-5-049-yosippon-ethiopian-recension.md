@@ -16,10 +16,10 @@ script: "Geʼez (Ethiopic) for the Ethiopian recension"
 region: "10th-c. Byzantine southern Italy (composition); Ethiopian monastic centers (Geʼez recension)"
 city-of-origin: "southern Italy (probably Naples or Capua) for the Hebrew original; Ethiopian monastic compilation for the Geʼez"
 authorship: "anonymous Hebrew compiler ~10th c., pseudonymously attributed to *Joseph ben Gurion ha-Kohen* (a conflation of the Hellenistic-Jewish historian Josephus and the Hasmonean-era Joseph ben Gurion); the Geʼez recension is anonymous"
-key-figures: ["Hellenistic / Hasmonean / Second-Temple-era figures recapitulated from Josephus, 1–2 Maccabees, and Pseudo-Hegesippus", "[[mattathias]] / [[judas-maccabeus]] (Maccabean revolt)", "[[herod-the-great]] (Herodian court)", "[[josephus-flavius]] (the pseudo-namesake)"]
+key-figures: ["Hellenistic / Hasmonean / Second-Temple-era figures recapitulated from Josephus, 1–2 Maccabees, and Pseudo-Hegesippus", "[[mattathias]] / [[judas-maccabeus]] (Maccabean revolt)", "[[herod-the-great]] (Herodian court)", "[[josephus|Josephus]] (the pseudo-namesake)"]
 themes: ["[[ethiopic-canon-broad]]", "[[martyrdom-theology]]", "[[messianic-revelation]]"]
 parallels: ["[[phase-4-070-josephus-antiquities-of-the-jews]] (the principal source — Yosippon adapts Josephus's narrative)", "[[phase-4-069-josephus-jewish-war]]", "Pseudo-Hegesippus *De Excidio Hierosolymitano* (Latin 4th-c. paraphrase of Josephus — a load-bearing intermediary)", "1–2 Maccabees (LXX) — also recapitulated"]
-influenced-by: ["[[josephus-flavius]] *Antiquities* + *Jewish War*", "Pseudo-Hegesippus *De Excidio* (Latin)", "1–2 Maccabees", "Jerome's Latin Vulgate apocrypha", "Italian-Jewish 10th-c. cultural setting"]
+influenced-by: ["[[josephus|Josephus]] *Antiquities* + *Jewish War*", "Pseudo-Hegesippus *De Excidio* (Latin)", "1–2 Maccabees", "Jerome's Latin Vulgate apocrypha", "Italian-Jewish 10th-c. cultural setting"]
 influences: ["the Ethiopian Geʼez canonical reception (where it becomes scriptural-canonical, the only Christian context where the work attains canonical-scriptural status)", "later Hebrew historical writing"]
 deities-mentioned: ["[[yahweh]]"]
 events-context: ["the Maccabean revolt", "Herod's reign", "the destruction of the Second Temple"]

@@ -16,7 +16,7 @@ script: "Mandaic script (derived from Aramaic, with distinctive letterforms)"
 region: "Southern Mesopotamia (Iraqi/Khuzestan marshlands)"
 city-of-origin: "lower Mesopotamia (Mishan / Maishan / Characene)"
 authorship: "school (anonymous, redacted over centuries)"
-key-figures: ["[[manda-d-hayyi]]", "[[john-the-baptist-mandaean]]", "[[adam]]", "[[seth]]"]
+key-figures: ["[[manda-d-hayyi]]", "[[john-the-baptist|John the Baptist (Mandaean Yahyā)]]", "[[adam]]", "[[seth]]"]
 themes: ["[[dualism-spirit-matter]]", "[[divine-feminine]]", "[[demiurge]]", "[[soul-as-spark]]", "[[psychopomp]]"]
 parallels: ["[[phase-4-018-mandaean-book-of-john]]", "[[phase-4-002-apocryphon-of-john]]"]
 influenced-by: ["Mesopotamian astral religion", "Jewish-Christian baptist sects (Elchasaite milieu)", "Babylonian-Jewish wisdom traditions"]

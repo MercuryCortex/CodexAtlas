@@ -17,7 +17,7 @@ region: "Fars / Southwest Persia"
 city-of-origin: "Shiraz (Fars province, under Muzaffarid and Timurid patronage)"
 authorship: "known — [[hafez|Khwāja Shams-ud-Dīn Muḥammad Ḥāfeẓ-e Shīrāzī]]"
 key-figures: ["[[hafez]]", "[[sadi-of-shiraz]] (major predecessor in Shirazi literary culture)"]
-themes: ["[[tradition-sufism]]", "[[divine-intoxication]]", "[[love-mysticism]]", "[[fana-annihilation]]", "[[perennial-philosophy]]"]
+themes: ["[[tradition-sufism]]", "[[divine-intoxication]]", "[[love-mysticism]]", "[[fanaa-annihilation|fanāʾ]]", "[[perennial-philosophy]]"]
 parallels: ["[[phase-5-025-rumi-masnavi]]", "[[phase-5-051-attar-conference-of-birds]]", "[[phase-5-052-sadi-gulistan]]"]
 influenced-by: ["Saʿdī Shīrāzī — the dominant Shirazi poetic predecessor; ʿAṭṭār — the Seven-Valley and *fanāʾ* theology; Rūmī — the mystical-love register of the *ghazal*; Ibn ʿArabī — the *waḥdat al-wujūd* (unity of being) that underlies the beloved/God ambiguity; Quranic imagery throughout; pre-Islamic Persian poetry and the wine-court tradition of the Sassanid era"]
 influences: ["The entire Shirazi and Iranian cultural tradition from 1400 CE onward; Goethe's *West-östlicher Divan* (1819) — the most direct East-West literary cross-pollination in European letters; Ralph Waldo Emerson's translations; Friedrich Rückert (German translations); the Mughal court poetry of Akbar's era; Iranian *fāl-e Ḥāfeẓ* (bibliomancy) — the *Dīvān* used as oracle for 600+ years; Hermann Hesse's *Siddhartha* atmosphere absorbed from Hafez via Goethe"]
@@ -83,7 +83,7 @@ The *Dīvān* is used in Iran for **fāl-e Ḥāfeẓ** — bibliomancy, the pra
 
 - **[[divine-intoxication]]** — The wine (*mey*) in Hafez is the Sufi symbol of the *kashf* (divine unveiling) — the dissolution of the rational-legal self in the experience of God. The tavern (*mey-khāna*) is the Sufi lodge; the wine-bearer (*sāqī*) is the Sufi master or the divine itself. This parallels the Dionysian wine-intoxication, the Christian Eucharistic wine, and the Vedic *soma* as universal symbols of altered states through divine communion.
 - **[[love-mysticism]]** — The beloved (*maʿshūq*) in the *ghazal* operates on the simultaneous registers of human erotic love and mystical union with God. This double register is not evasion but precision: the Sufi tradition holds that the experience of *ʿishq* (overwhelming love) is the same experience at whatever level it appears, and that human erotic love is a *zikr* (remembrance) of divine love.
-- **[[fana-annihilation]]** — The *ghazal*'s formal completion in the final couplet (where the poet names himself and addresses himself) is a literary *fanāʾ*: the individual voice dissolves into the poem, the poem dissolves into the tradition, the tradition dissolves into the One.
+- **[[fanaa-annihilation|fanāʾ]]** — The *ghazal*'s formal completion in the final couplet (where the poet names himself and addresses himself) is a literary *fanāʾ*: the individual voice dissolves into the poem, the poem dissolves into the tradition, the tradition dissolves into the One.
 - **[[perennial-philosophy]]** — Hafez's *ghazal* as a genre achieves something philosophically remarkable: by holding the human and the divine in permanent ambiguity, it refuses the distinction. The beloved is both human and God because the separation between human and divine is the very illusion the mystical path aims to dissolve.
 
 ## Connections (provisional)

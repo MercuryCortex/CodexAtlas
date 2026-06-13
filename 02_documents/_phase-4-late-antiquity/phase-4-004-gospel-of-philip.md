@@ -16,7 +16,7 @@ script: "Coptic uncial"
 region: "Egypt (preservation); Syrian composition possible (Bethge, Isenberg)"
 city-of-origin: "unknown"
 authorship: "anonymous; attribution to apostle Philip is pseudepigraphic"
-key-figures: ["[[jesus-of-nazareth]]", "[[mary-magdalene]]", "[[apostle-philip]]"]
+key-figures: ["[[jesus-of-nazareth]]", "[[mary-magdalene]]", "[[philip-apostle|Apostle Philip]]"]
 themes: ["[[sacred-marriage]]", "[[divine-feminine]]", "[[gnosis-as-salvation]]", "[[mystery-initiation]]"]
 parallels: ["[[phase-4-003-gospel-of-truth]]", "[[phase-4-005-gospel-of-mary]]", "[[phase-4-001-gospel-of-thomas]]"]
 influenced-by: ["Valentinian theology (Ptolemaeus, Heracleon)", "Syrian Christian sacramental tradition"]
