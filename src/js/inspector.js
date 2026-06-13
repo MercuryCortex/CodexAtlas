@@ -55,6 +55,21 @@
     return map;
   }
 
+  // 2026-06-13 — clean the tradition line for display. Some nodes carry
+  // `tradition` as a raw `[[tradition-foo-bar]]` wikilink slug, which was
+  // rendering literally (John saw "[[TRADITION-PORTUGUESE-HERMETICISM]]"
+  // on Pessoa, vs Zeus's clean "GREEK"). Strip the brackets, resolve the
+  // slug to its tradition node's title when one exists, else de-slug.
+  function cleanTradition(t) {
+    if (!t) return '';
+    let s = String(t).trim();
+    const wl = s.match(/^\[\[([^\]|]+)(?:\|([^\]]+))?\]\]$/);
+    if (wl) s = (wl[2] || wl[1]).trim();          // [[slug|alias]] → alias||slug
+    const node = nodesById().get(s);              // resolve slug → node title
+    if (node && node.title) return node.title.split('—')[0].trim();
+    return s.replace(/^tradition-/, '').replace(/[-_]+/g, ' ').trim();
+  }
+
   // 7-bucket routing (HOW-WE-WORK §7) — used when the engine's
   // window.EDGE_BUCKET map isn't installed (non-forge sessions).
   const FALLBACK_BUCKET = {
@@ -255,7 +270,7 @@
     _currentId = id;
 
     const title = node.title || node.name || id;
-    const tradition = node.tradition || node.family || '';
+    const tradition = cleanTradition(node.tradition || node.family || '');
     const aka = Array.isArray(node.aka) ? node.aka.filter(Boolean) : [];
     let desc = node.role || node.description || node.brief || '';
     if (!desc && Array.isArray(node.domains) && node.domains.length) desc = node.domains.join(', ');
