@@ -12,6 +12,12 @@ tags: [alphabet, cherokee, syllabary, sequoyah, deliberate-invention, indigenous
 dating-basis: B1
 dating-basis-source: "\"Cushman, E. 2011 *The Cherokee Syllabary*. Univ. Oklahoma\""
 dating-basis-notes: "Sequoyah's syllabary 1821."
+tier: 1
+refs:
+  - "Bender, Margaret. *Signs of Cherokee Culture: Sequoyah's Syllabary in Eastern Cherokee Life*. University of North Carolina Press, 2002. [T1]"
+  - "Cushman, Ellen. *The Cherokee Syllabary: Writing the People's Perseverance*. University of Oklahoma Press, 2011. [T1]"
+  - "Foreman, Grant. *Sequoyah*. University of Oklahoma Press, 1938. [T2 — classic biography, supplemented by later scholarship]"
+  - "Feeling, Durbin, and William Pulte. *Cherokee-English Dictionary*. Cherokee Nation of Oklahoma, 1975. [T1 — primary linguistic reference]"
 ---
 
 ## What it is

@@ -76,13 +76,16 @@ The genius of Proto-Sinaitic is **acrophony**: a picture stands for the first so
 - Acrophony — the picture-to-sound principle that made the alphabet possible.
 - Levantine-Egyptian contact — the cultural seam where the alphabet was born.
 
-## Connections (provisional)
-- → [[alphabet-medu-netjer]] — *adapted-from*: Egyptian hieroglyphs supplied the shapes, repurposed by acrophony.
-- → [[alphabet-phoenician]] — *ancestor-of*: the direct line to Phoenician and thence to Greek, Aramaic, Hebrew, Arabic, and Latin.
-- → [[alphabet-ugaritic]] — *parallel-form*: a contemporary, independently cuneiform-shaped West Semitic abjad.
-
-## MASSIVE WIN — cross-tradition edges
+## Cross-tradition findings
 - **One invention behind almost every alphabet on earth — and the letters still carry their Bronze Age names.** Proto-Sinaitic is the single root from which the Phoenician, Greek, Latin, Cyrillic, Aramaic, Hebrew, Arabic, and (via Aramaic) Brahmic and even Mongolian scripts all descend. Its fingerprints are still visible: the Hebrew letter-names *aleph* (ox), *bet* (house), *gimel* (camel/throwstick), *dalet* (door) are the Semitic words for the things the original Sinai pictures depicted, frozen into the alphabet ~3,800 years ago and inherited — as *alpha, beta, gamma, delta* and then *A, B, C, D* — by every Western reader since. That the inventors were West Semitic workers in the Egyptian orbit places the birth of the alphabet in exactly the Levantine-Egyptian world the Bible remembers as the matrix of Israel's origins (Sass 1991; Hamilton 2006; Goldwasser 2010).
+- **The alphabet was invented from the bottom of a society, not the top.** Egyptian and Mesopotamian writing were guarded scribal monopolies requiring years of training. Proto-Sinaitic was made by labourers and miners — "the invention of the alphabet by illiterates" (Goldwasser) — who needed only ~27 signs to capture a Semitic language. Every later democratization-of-literacy story (the Phoenician merchant abjad, King Sejong's deliberately learnable [[alphabet-hangul]], the printing press) repeats this founding move: writing escapes the professional class.
+
+## Vault Connections
+- Parent: [[alphabet-medu-netjer]] — *adapted-from*: Egyptian hieroglyphs supplied the shapes, repurposed by acrophony
+- Child: [[alphabet-phoenician]] — *ancestor-of*: the direct line to Phoenician and thence to Greek, Aramaic, Hebrew, Arabic, and Latin
+- South Semitic line: [[alphabet-south-arabian]] — *ancestor-of*: the other branch, leading to Geʿez
+- Contemporary parallel: [[alphabet-ugaritic]] — *parallel-form*: an independently cuneiform-shaped West Semitic abjad of the same era
+- Cultural matrix: [[tradition-canaanite-ugaritic]] — the West Semitic world inside the Egyptian orbit where the alphabet was born
 
 ## Refs
 1. Sass, B. (1991). *Studia Alphabetica*. Universitätsverlag Freiburg.

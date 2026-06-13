@@ -12,6 +12,12 @@ tags: [alphabet, glagolitic, cyrillic, slavic, byzantine, missionary, deliberate
 dating-basis: B1
 dating-basis-source: "\"Cubberley, P. 1996 'The Slavic Alphabets' in Daniels & Bright eds. *The World's Writing Systems*. OUP\""
 dating-basis-notes: "Glagolitic by Cyril and Methodius 862; Cyrillic c. 893 (Preslav)."
+tier: 1
+refs:
+  - "Dvornik, Francis. *Byzantine Missions Among the Slavs: SS. Constantine-Cyril and Methodius*. Rutgers University Press, 1970. [T1 — standard scholarly treatment]"
+  - "Vlasto, A. P. *The Entry of the Slavs into Christendom*. Cambridge University Press, 1970. [T1]"
+  - "Cleminson, Ralph. 'The Glagolitic Script.' In *The Slavonic Languages*, ed. Comrie and Corbett. Routledge, 1993. [T2]"
+  - "Cubberley, Paul. 'The Slavic Alphabets.' In *The World's Writing Systems*, ed. Daniels and Bright. Oxford University Press, 1996. [T2 — the palaeographic survey of Glagolitic and Cyrillic]"
 ---
 
 ## What it is

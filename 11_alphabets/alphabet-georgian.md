@@ -12,6 +12,13 @@ tags: [alphabet, georgian, mashtots, missionary, deliberate-invention, identity-
 dating-basis: B1
 dating-basis-source: "\"Rapp, S. 2014 *The Sasanian World through Georgian Eyes*. Ashgate\""
 dating-basis-notes: "Mrgvlovani (Asomtavruli) c. 430; tradition attributes to Mashtots."
+tier: 1
+refs:
+  - "Gippert, Jost. 'The Georgian Alphabet.' In *The World's Writing Systems*, ed. Daniels and Bright. Oxford University Press, 1996. [T1 — best English-language survey of the script's origins]"
+  - "Fähnrich, Heinz. *Grammatik der altgeorgischen Sprache*. Buske, 1994. [T1 — standard scholarly grammar; treats script history]"
+  - "Rapp, Stephen H., Jr. *The Sasanian World through Georgian Eyes*. Ashgate, 2014. [T1 — the Georgian-Persian period]"
+  - "Gamkrelidze, Thomas V. 'The Phonological System of Old Georgian.' *Revue des études géorgiennes et caucasiennes* 1 (1985). [T1 — the phonological design of the script]"
+  - "Silogava, Valeri, and Kakha Shengelia. *History of Georgia: From the Ancient Times to the 20th Century*. Caucasus University Publishing House, 2007. [T2]"
 ---
 
 ## What it is

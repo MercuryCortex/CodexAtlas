@@ -8,6 +8,7 @@ date-earliest: -1800
 date-latest: -1450
 region: "Minoan Crete; Aegean islands (Thera, Melos, Kea, Kythera, Rhodes)"
 status: full
+tier: 1
 tags: [alphabet, minoan, undecoded, bronze-age, aegean, undeciphered]
 cross-alphabet-edges:
   - target: alphabet-phoenician

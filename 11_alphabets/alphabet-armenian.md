@@ -12,6 +12,13 @@ tags: [alphabet, armenian, mashtots, missionary, deliberate-invention, identity-
 dating-basis: B1
 dating-basis-source: "\"Russell, J. 2017 *Yet Another Armenian Mythology*. Princeton\""
 dating-basis-notes: "Mashtots's Armenian alphabet 405 CE."
+tier: 1
+refs:
+  - "Macler, Frédéric. 'L'alphabet arménien: son origine et son histoire.' *Revue de l'Orient chrétien* 19 (1914). [T1 — primary scholarly treatment of the alphabet's origin]"
+  - "Sanjian, Avedis K. *The Armenian Communities in Syria under Ottoman Dominion*. Harvard University Press, 1965. [T1]"
+  - "Mathews, Thomas F., and Roger S. Wieck, eds. *Treasures in Heaven: Armenian Illuminated Manuscripts*. The Pierpont Morgan Library, 1994. [T1 — the manuscript tradition]"
+  - "Kévorkian, Raymond. *The Armenian Genocide: A Complete History*. I.B. Tauris, 2011. [T1 — definitive history of the genocide]"
+  - "Samuelian, Thomas J. 'The First Alphabet to Translate the Bible: The Invention of the Armenian Script.' In *The Bible in the Armenian Tradition*. J. Paul Getty Museum, 2006. [T2]"
 ---
 
 ## What it is

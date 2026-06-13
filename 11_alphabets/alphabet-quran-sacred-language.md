@@ -31,6 +31,12 @@ cross-alphabet-edges:
   - target: alphabet-ilm-al-huruf
     type: child
     note: "'Ilm al-Huruf (Islamic letter-mysticism) is the systematic theology of what the divine choice of Arabic means at the cosmological level"
+refs:
+  - "Graham, William A. *Beyond the Written Word: Oral Aspects of Scripture in the History of Religion*. Cambridge University Press, 1987. [T1 — the standard study of scripture-as-recited; central treatment of the Quran's oral/Arabic primacy]"
+  - "Madigan, Daniel A. *The Qur'ân's Self-Image: Writing and Authority in Islam's Scripture*. Princeton University Press, 2001. [T1 — the Quran's theology of its own writtenness and language]"
+  - "Wild, Stefan, ed. *The Qur'an as Text*. Brill, 1996. [T2 — scholarly essays on Quranic textuality and language]"
+  - "Watt, W. Montgomery, and Richard Bell. *Introduction to the Qur'an*. Edinburgh University Press, 1970. [T2 — standard introduction; the created/uncreated controversy and i'jaz doctrine]"
+  - "Versteegh, Kees. *The Arabic Language*. 2nd ed. Edinburgh University Press, 2014. [T2 — the phonology of Arabic, including the ḍād, and the grammarians' theology of the 28 letters]"
 ---
 
 # The Quran as Sacred Language — Arabic as Divinely Chosen Tongue
@@ -63,8 +69,18 @@ The theological school of Ash'arism (developed by al-Ash'ari, 874–936 CE) hold
 
 The Mu'tazilite position (that the Quran was created in time) was condemned as heresy at the Abbasid court. The stakes of the "created vs. uncreated Quran" controversy (833–848 CE) reveal what is actually at issue: if the Arabic of the Quran is eternal, then Arabic letters are cosmological realities. If the Quran was created in time, the letters are historical artifacts. The orthodox position chose cosmic status for the Arabic alphabet.
 
-## Investigation Connections
+## Cross-tradition findings
 
-- **The Ptah chain**: Memphite Theology (divine word creates reality) → John 1:1 (Logos as eternal, pre-existing) → Ash'arite Quran theology (uncreated Arabic speech) = three thousand years of the same claim about language and cosmos. The specific letters shift (Egyptian hieroglyphs → Greek Logos → Arabic 28) but the structure is identical.
-- **The Dad parallel**: The theological argument from phonological uniqueness ("God chose the language with the one letter no one else has") mirrors the Jewish claim about Hebrew as the Adamic language — the original tongue in which God named creation. Both traditions argue their sacred language is divinely necessary, not historically contingent.
-- **The untranslatability parallel**: The closest equivalent is the Vedic tradition's assertion that the Sanskrit of the Vedas is "apaurusheya" (not of human origin) and that its sounds (not meanings) carry the cosmic power — mantras work because of their phonology, not their semantics. Arabic Quran theology and Vedic mantra theory make structurally identical claims from opposite ends of the linguistic world.
+- **The Ptah chain — divine speech as the substrate of reality, restated for three thousand years.** Memphite Theology ([[alphabet-medu-netjer]]: Ptah speaks the world into being) → John 1:1 (the Logos as eternal, pre-existing) → Ash'arite Quran theology (the uncreated Arabic speech of God). The specific letters shift — Egyptian hieroglyphs → Greek Logos → the Arabic 28 — but the structure is identical: language is not a tool God uses but the medium reality is made of. See [[alphabet-creation-by-word]] for the synthesized pattern.
+- **The Dad and the argument from phonological uniqueness.** The claim "God chose the one language with a letter no other people can pronounce" (Lughat al-Ḍād) mirrors the Jewish claim that Hebrew is the Adamic tongue — the original language in which God named creation ([[alphabet-hebrew-aleph-bet]]). Both traditions argue their sacred language is divinely necessary, not historically contingent; both make the body's phonology a theological boundary.
+- **The untranslatability parallel — Quran and Veda from opposite ends of the linguistic world.** The closest analogue to the Quran's untranslatability doctrine is the Vedic assertion that Sanskrit is *apauruṣeya* (not of human origin) and that mantras work through their *sounds*, not their meanings ([[alphabet-devanagari-sacred]]). Two traditions with no contact concluded that a sacred text's power lives in its phonology, which is why neither can be translated without loss. The convergence is catalogued at [[alphabet-sacred-language-convergence]].
+
+## Vault Connections
+
+- Sibling node (the script and its mechanics): [[alphabet-arabic-quran]]
+- The Quran's purest assertion of its own unknowable Arabic: [[alphabet-huruf-muqattaat]]
+- The systematic letter-theology that follows from the divine choice of Arabic: [[alphabet-ilm-al-huruf]]
+- The calligraphic expression of the sacred script: [[alphabet-arabic-calligraphy]]
+- The cross-tradition synthesis of "language is the cosmos": [[alphabet-creation-by-word]], [[alphabet-sacred-language-convergence]]
+- Parallel sacred-tongue theologies: [[alphabet-hebrew-aleph-bet]] (Adamic Hebrew), [[alphabet-devanagari-sacred]] (apauruṣeya Sanskrit)
+- Tradition: [[tradition-islam]]

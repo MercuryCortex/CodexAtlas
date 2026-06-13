@@ -12,6 +12,11 @@ tags: [alphabet, hangul, korean, sejong, deliberate-invention, featural, social-
 dating-basis: B1
 dating-basis-source: "\"Lee, K.-M. 1997 *The Origin of Hunminjeongeum*. Seoul Nat. Univ.\""
 dating-basis-notes: "Hangul promulgated 1443; published 1446."
+tier: 1
+refs:
+  - "Sampson, Geoffrey. *Writing Systems: A Linguistic Introduction*. Stanford University Press, 1985. [T1 — includes the extended featural analysis of Hangul that coined the 'featural' category]"
+  - "Ledyard, Gari K. *The Korean Language Reform of 1446: The Origin, Background, and Early History of the Korean Alphabet*. Univ. of California, Berkeley PhD dissertation, 1966; repr. Singusa, 1998. [T1 — the definitive scholarly history]"
+  - "Sejong (King). *Hunminjeongeum Haeryebon* (1446). Trans. Sek Yen Kim-Cho, *The Korean Alphabet of 1446*. Humanity Books, 2003. [T1 — primary source; the inventor's own design treatise]"
 ---
 
 ## What it is

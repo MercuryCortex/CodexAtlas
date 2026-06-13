@@ -8,6 +8,7 @@ date-earliest: -3200
 date-latest: -2900
 region: "Susa and southwest Iran (Elamite heartland / modern Khuzestan Province)"
 status: full
+tier: 1
 tags: [alphabet, elamite, undecoded, bronze-age, ancient-near-east, iran, oldest-script]
 cross-alphabet-edges:
   - target: alphabet-cuneiform-sacred

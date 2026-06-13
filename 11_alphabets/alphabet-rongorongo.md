@@ -8,6 +8,7 @@ date-earliest: 1200
 date-latest: 1864
 region: "Easter Island (Rapa Nui), southeastern Pacific Ocean"
 status: full
+tier: 1
 tags: [alphabet, polynesian, undecoded, oceanic, easter-island, rongorongo, colonial-destruction]
 cross-alphabet-edges:
   - target: alphabet-mayan-glyphs

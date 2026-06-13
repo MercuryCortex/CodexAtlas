@@ -35,6 +35,14 @@ cross-alphabet-edges:
   - target: alphabet-phoenician
     type: ancestor
     note: "The Arabic abjad descends from Phoenician via Aramaic and Nabataean; all 22 Phoenician consonants are present in Arabic's 28, with 6 extensions for Arabic-specific phonemes"
+  - target: alphabet-nabataean
+    type: descended-from
+    note: "The immediate parent: the cursive Nabataean script of the Arab traders of Petra (itself from Aramaic) developed directly into the Arabic letterforms by c. 400-500 CE"
+refs:
+  - "Déroche, François. *The Abbasid Tradition: Qur'ans of the 8th to the 10th Centuries AD*. Nour Foundation, 1992. [T1 — the leading study of early Quranic manuscripts and the development of the script]"
+  - "Graham, William A. *Beyond the Written Word: Oral Aspects of Scripture in the History of Religion*. Cambridge University Press, 1987. [T1 — oral primacy of the recited Quran]"
+  - "Gruendler, Beatrice. *The Development of the Arabic Scripts: From the Nabatean Era to the First Islamic Century*. Scholars Press, 1993. [T2 — the Nabataean-to-Arabic palaeographic transition and the dotting system]"
+  - "Robin, Christian Julien. 'La réforme de l'écriture arabe à l'époque du califat médinois.' *Mélanges de l'Université Saint-Joseph* 59 (2006): 319-364. [T1 — the standardization of the Arabic script under the early caliphate]"
 ---
 
 # Arabic Alphabet in the Quran — The Script as Sacred Object
@@ -63,9 +71,19 @@ This mirrors the structure of the Hebrew Torah (Torah is read from a scroll with
 
 In Islamic cosmological thought, the Arabic letters precede the Quran — they are the tools God used to speak the world into existence. The Sufi tradition (particularly Ibn Arabi, 1165–1240 CE) developed an elaborate letter-cosmology: the 28 Arabic letters correspond to the 28 stations of the moon, the 28 "breath-positions" of the human vocal tract, and the 28 cosmic stations through which divine reality descends into matter. The alphabet is not a human invention — it is the infrastructure of existence.
 
-## Investigation Connections
+## Cross-tradition findings
 
-- The language the script fixed: [[classical-arabic]] — and the diglossia it emerged from: [[language-nabataean-aramaic]]
-- The Aten Hymn parallel: Just as the Great Hymn to the Aten (c. 1350 BCE) contains near-verbatim correspondences with Psalm 104, the Quran contains explicit responses to and refinements of earlier Abrahamic revelation — but claims to supersede rather than derive from them.
-- The Ptah parallel: The Memphite Theology (God creates through word/thought) → John 1:1 (Logos) → Quranic theology (the Quran as pre-existing divine word, uncreated) forms a 3,000-year chain of the "divine word as creative and eternal."
-- The script-as-sovereign-emblem pattern: Arabic script on coinage and architecture was a political-theological statement — the Umayyad Caliph Abd al-Malik (685–705 CE) replaced Byzantine iconographic coinage with Arabic text, making the word the emblem of Islamic sovereignty.
+- **The Ptah chain — the divine word as creative and eternal, restated for three millennia.** Memphite Theology ([[alphabet-medu-netjer]]: God creates through word and thought) → John 1:1 (the Logos) → Quranic theology (the Quran as pre-existing, uncreated divine word). The synthesized pattern lives at [[alphabet-creation-by-word]]; the Quran's own version of it is detailed in [[alphabet-quran-sacred-language]].
+- **Oral primacy as a shared Abrahamic-and-Vedic structure.** The Quran's consonantal skeleton cannot be read without the oral tradition that supplies its vowels — exactly the situation of the unpointed Hebrew Torah before [[alphabet-masoretes]] added the nikud, and of the Vedas, transmitted by voice for millennia. Three traditions hold the *recited* form to be primary and the *written* form a mnemonic for it.
+- **Script as sovereign emblem.** When the Umayyad caliph Abd al-Malik (685–705 CE) replaced Byzantine figural coinage with pure Arabic text, he made the word itself the emblem of Islamic sovereignty — the same move by which deliberately-invented national scripts later asserted identity. The letter, not the image, becomes the flag.
+
+## Vault Connections
+
+- The language the script fixed: [[classical-arabic]] — and the Aramaic diglossic substrate it emerged from: [[language-nabataean-aramaic]]
+- Immediate ancestor scripts: [[alphabet-nabataean]] → [[alphabet-aramaic]] → [[alphabet-phoenician]]
+- Sibling theology node (Arabic as divinely chosen tongue): [[alphabet-quran-sacred-language]]
+- The Quran's mysterious isolated letters: [[alphabet-huruf-muqattaat]]
+- Letter-mysticism built on the Quranic alphabet: [[alphabet-ilm-al-huruf]]
+- The script's sacred visual form: [[alphabet-arabic-calligraphy]]
+- Parallel sacred-tongue / oral-primacy traditions: [[alphabet-hebrew-aleph-bet]], [[alphabet-masoretes]]
+- Tradition: [[tradition-islam]]
