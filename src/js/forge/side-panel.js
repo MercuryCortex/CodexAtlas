@@ -587,6 +587,12 @@
         // (b) a leading markdown heading that duplicates the node title is
         //     dropped (the panel header already shows it).
         raw = raw.replace(/^(#{1,6})\s*MASSIVE[ -]WIN[S]?\b[^\n]*/gim, '$1 Cross-tradition findings');
+        // 2026-06-13 — catch mid-heading + inline occurrences too (kept in
+        // sync with inspector.js renderBodyMd). Path-safe via (?![\w/-]) so
+        // [[00_meta/MASSIVE-WIN-essays/…]] wikilinks stay intact. Display-only.
+        raw = raw.replace(/MASSIVE[ -]WINS(?![\w/-])/gi, 'cross-tradition findings')
+                 .replace(/MASSIVE[ -]WIN(?![\w/-])/gi, 'cross-tradition finding')
+                 .replace(/cross-tradition\s+cross-tradition/gi, 'cross-tradition');
         {
           const norm = (s) => String(s).toLowerCase().replace(/[^a-z0-9]+/g, '');
           const m = raw.match(/^\s*#{1,3}\s+([^\n]+)\n/);
@@ -598,9 +604,14 @@
         // only — out-of-mode targets become inert spans so the panel doesn't
         // promise a navigation that won't fire).
         const withLinks = raw.replace(
-          /\[\[([a-zA-Z0-9\-_]+)(?:\|([^\]]+))?\]\]/g,
+          // 2026-06-13 — allow PATH wikilinks (kept in sync with
+          // inspector.js): show the alias / last path segment, never the
+          // raw "[[…]]" (which leaked essay paths like MASSIVE-WIN-essays).
+          /\[\[([^\]|]+)(?:\|([^\]]+))?\]\]/g,
           (m, slug, label) => {
-            const text = safe(label || slug);
+            slug = String(slug).trim();
+            const display = label || (slug.indexOf('/') >= 0 ? slug.split('/').pop() : slug);
+            const text = safe(display);
             // Conservative inert span — wiring an in-panel jump is a Step-2
             // improvement; the link is correct text-wise either way.
             return '<a class="forge-side-panel-body-link" data-codex-jump="' + safeAttr(slug) + '">' + text + '</a>';

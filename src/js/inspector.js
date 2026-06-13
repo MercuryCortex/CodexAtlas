@@ -194,6 +194,17 @@
     // them as plain findings. The vault text is untouched — the full
     // jargon-tagged corpus feeds the Investigation section.
     raw = raw.replace(/^(#{1,6})\s*MASSIVE[ -]WIN[S]?\b[^\n]*/gim, '$1 Cross-tradition findings');
+    // 2026-06-13 — catch every OTHER occurrence the canonical rule above
+    // misses: MASSIVE WIN sitting mid-heading ("### The MASSIVE WIN: …")
+    // AND inline in prose / edge-annotation bullets ("…*MASSIVE WIN
+    // downstream*…"). Both leaked to readers. The negative lookahead
+    // (?![\w/-]) keeps it from touching wikilink PATHS like
+    // [[00_meta/MASSIVE-WIN-essays/…]] (which must stay intact), and the
+    // collapse fixes "cross-tradition cross-tradition" redundancy.
+    // Display-only — vault source + the Investigation harvest are untouched.
+    raw = raw.replace(/MASSIVE[ -]WINS(?![\w/-])/gi, 'cross-tradition findings')
+             .replace(/MASSIVE[ -]WIN(?![\w/-])/gi, 'cross-tradition finding')
+             .replace(/cross-tradition\s+cross-tradition/gi, 'cross-tradition');
     // Drop a leading markdown heading that duplicates the node title
     // (vault bodies start with `# <Title>`; the panel header already
     // shows it — rendering both reads as the giant duplicated title).
@@ -205,9 +216,15 @@
       }
     }
     const withLinks = raw.replace(
-      /\[\[([a-zA-Z0-9\-_]+)(?:\|([^\]]+))?\]\]/g,
+      // 2026-06-13 — slug now allows PATH wikilinks ([[00_meta/foo/bar|alias]]),
+      // which the old [a-zA-Z0-9_-]+ slug missed → they rendered as raw
+      // "[[…]]" text (ugly + leaked the path, e.g. MASSIVE-WIN-essays). Show
+      // the alias when present, else the last path segment.
+      /\[\[([^\]|]+)(?:\|([^\]]+))?\]\]/g,
       (m, slug, label) => {
-        const text = safe(label || slug);
+        slug = String(slug).trim();
+        const display = label || (slug.indexOf('/') >= 0 ? slug.split('/').pop() : slug);
+        const text = safe(display);
         if (nodesById().has(slug)) {
           return '<a class="forge-side-panel-body-link" data-inspector-jump="' + safe(slug) + '">' + text + '</a>';
         }
