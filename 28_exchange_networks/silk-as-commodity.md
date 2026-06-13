@@ -98,7 +98,7 @@ The monopoly breaks in two great rupture events:
 
 ## MASSIVE-WIN clusters
 
-This commodity is the **central case** for **cluster 7** of the README MASSIVE-WIN list (commodity monopoly and sacrality). Silk's Chinese-origin monopoly produces a global luxury substrate; Byzantine purple silk weaponises it for imperial-priestly status; the Catholic Church absorbs the colour-grammar; the system runs from Justinian's smuggling-monks (552 CE) through to the modern College of Cardinals (whose scarlet *biretta* and red silk *moiré* sash are continuous with this 1,500-year chain).
+This commodity is the **central case** for **cluster 7** of the README cross-tradition list (commodity monopoly and sacrality). Silk's Chinese-origin monopoly produces a global luxury substrate; Byzantine purple silk weaponises it for imperial-priestly status; the Catholic Church absorbs the colour-grammar; the system runs from Justinian's smuggling-monks (552 CE) through to the modern College of Cardinals (whose scarlet *biretta* and red silk *moiré* sash are continuous with this 1,500-year chain).
 
 It is also the structural cargo of **cluster 2** (Silk Road as Buddhism corridor — the silk IS the Buddhism in many cases; Tang gift-*kesa* to Japanese temples ARE the transmission), **cluster 3** (Manila Galleon — Chinese silk crosses the Pacific to Acapulco, lining colonial Mexican churches and Andean processional vestments by the early 17th c.), and **cluster 5** (Spice Routes as Portuguese-imperial-theology vehicle — the *Carreira da Índia* carries silk westward; Portuguese-Goan silk vestments end up in every Padroado mission from Macau to Mozambique).
 

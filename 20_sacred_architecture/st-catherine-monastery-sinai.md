@@ -183,7 +183,7 @@ For the **Eastern Christian tradition** specifically, the monastery is:
 
 ## MASSIVE WIN — the Codex Sinaiticus discovery + the architectural longue durée
 
-St. Catherine's holds **two MASSIVE WIN positions** in the broader Codex Atlas investigation:
+St. Catherine's holds **two key positions** in the broader Codex Atlas investigation:
 
 ### 1. The Codex Sinaiticus discovery as document-transmission event
 

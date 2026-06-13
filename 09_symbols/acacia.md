@@ -79,7 +79,7 @@ tags: [symbol, phytomorphic, masonic, egyptian, hebrew, osiris, resurrection, ac
 
 ## Identity
 
-The acacia (*Acacia nilotica*, *Acacia seyal*, *Vachellia tortilis*) is a sacred phytomorphic symbol encoding resurrection, immortality, and the persistence of life in arid conditions. Its role as a symbol of immortality appears in three converging documentary traditions: Egyptian religion (the acacia as Osiris's death-and-resurrection tree), the Hebrew Bible (the *shittim* wood of the Ark of the Covenant and Tabernacle), and Freemasonry (the sprig of acacia marking Hiram Abiff's grave in the 3rd degree Master Mason ritual). The structural parallel between all three traditions — a sacred tree marking the threshold between death and resurrection — constitutes one of the vault's strongest phytomorphic MASSIVE WIN cross-tradition connections.
+The acacia (*Acacia nilotica*, *Acacia seyal*, *Vachellia tortilis*) is a sacred phytomorphic symbol encoding resurrection, immortality, and the persistence of life in arid conditions. Its role as a symbol of immortality appears in three converging documentary traditions: Egyptian religion (the acacia as Osiris's death-and-resurrection tree), the Hebrew Bible (the *shittim* wood of the Ark of the Covenant and Tabernacle), and Freemasonry (the sprig of acacia marking Hiram Abiff's grave in the 3rd degree Master Mason ritual). The structural parallel between all three traditions — a sacred tree marking the threshold between death and resurrection — constitutes one of the vault's strongest phytomorphic cross-tradition connections.
 
 ## Earliest attestation
 

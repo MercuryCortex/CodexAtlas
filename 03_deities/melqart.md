@@ -88,7 +88,7 @@ The most exciting cross-tradition connection: multiple scholars (Cross 1973; Wya
 - **Delilah and the cutting of strength**: The enemy woman who drains the solar hero's power appears across the Heracles/Melqart tradition (Omphale enslaving Heracles; Delilah cutting Samson's hair = cutting the solar rays)
 - **Location**: Samson's territory is in the Philistine zone of coastal Canaan, heavily Phoenicianized — exactly the zone where Melqart mythology would circulate
 
-The Samson-Melqart parallel is one of the vault's strongest MASSIVE WINS in the Hebrew Bible / Phoenician religion nexus. See [[heracles]], [[dying-rising-god]], [[baal-hadad]].
+The Samson-Melqart parallel is one of the vault's strongest cross-tradition findings in the Hebrew Bible / Phoenician religion nexus. See [[heracles]], [[dying-rising-god]], [[baal-hadad]].
 
 ## Melqart and the Western Boundary of the World
 The Gades temple's position at the world's western edge made Melqart the deity of **liminality** — the threshold between the known world and the infinite ocean. The "Pillars of Heracles" mythology (whether referring to the Strait of Gibraltar or the Gades temple columns) encodes this: the hero sets up a boundary marker at the world's edge, saying *ne plus ultra* ("nothing further"). This is a Phoenician maritime ideology translated into mythological form: "here is the limit of navigation; here is where the world ends and the divine begins."

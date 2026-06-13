@@ -109,9 +109,9 @@ The twelve *Skandhas* form a thematic arc from cosmological prologue to apocalyp
 
 **Books 5–6** — Cosmological and mythological material; geography of the universe; hymns to Viṣṇu.
 
-**Book 7** — The Prahlāda narrative (the *Bhāgavata*'s paradigmatic martyrdom story; see MASSIVE-win edges below). The life of Prahlāda, the child-devotee of Viṣṇu persecuted by his demonic father Hiraṇyakaśipu, who is destroyed when Viṣṇu appears in the Narasiṃha (Man-Lion) form.
+**Book 7** — The Prahlāda narrative (the *Bhāgavata*'s paradigmatic martyrdom story; see the cross-tradition edges below). The life of Prahlāda, the child-devotee of Viṣṇu persecuted by his demonic father Hiraṇyakaśipu, who is destroyed when Viṣṇu appears in the Narasiṃha (Man-Lion) form.
 
-**Book 8** — The Gajendra Moksha (liberation of the elephant; see MASSIVE-win edges). The Vāmana (Dwarf) avatāra story — Viṣṇu reclaims the three worlds from the demon-king Bali.
+**Book 8** — The Gajendra Moksha (liberation of the elephant; see the cross-tradition edges). The Vāmana (Dwarf) avatāra story — Viṣṇu reclaims the three worlds from the demon-king Bali.
 
 **Books 9–10** — The Solomonic core. Book 9 narrates the genealogies of the solar and lunar dynasties leading to Krishna. **Book 10** is the heart of the entire *Bhāgavata*: the complete life of Krishna — his miraculous birth in Kaṃsa's prison, his transfer to Vrindavan, the killing of Pūtanā (the demoness who tried to poison him with her breast), the childhood pranks, the lifting of Govardhana, the **Rāsa-līlā** (Books 10.29–33, the night-dance with the Gopīs), the departure for Mathura, the killing of Kaṃsa, and his later life in Dvārakā.
 

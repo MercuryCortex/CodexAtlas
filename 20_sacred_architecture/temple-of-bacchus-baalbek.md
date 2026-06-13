@@ -169,7 +169,7 @@ For architectural historians, the Bacchus temple is therefore the **principal th
 
 **Without the Temple of Bacchus**, our knowledge of high-imperial Roman temple architecture in its complete form would be **substantially impoverished**. The temple is one of the most significant single architectural-archaeological objects of the Roman East — not for scale (the Jupiter Temple was larger), but for **completeness**.
 
-A second, smaller MASSIVE WIN: the Bacchus temple was the temple **never converted to a church**, in contrast to the architectural sibling tradition where so many pagan temples (Pantheon at Rome, Parthenon at Athens, dozens of provincial temples) were reconsecrated as churches and then modified to fit Christian worship. **The Bacchus temple is therefore the cleanest surviving example of a pagan Roman temple in its non-Christianised state** — preserving the pagan ornamental programme without intervening medieval Christian overlay.
+A second, smaller cross-tradition finding: the Bacchus temple was the temple **never converted to a church**, in contrast to the architectural sibling tradition where so many pagan temples (Pantheon at Rome, Parthenon at Athens, dozens of provincial temples) were reconsecrated as churches and then modified to fit Christian worship. **The Bacchus temple is therefore the cleanest surviving example of a pagan Roman temple in its non-Christianised state** — preserving the pagan ornamental programme without intervening medieval Christian overlay.
 
 ## See also
 

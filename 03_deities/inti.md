@@ -71,7 +71,7 @@ Inti is the most politically formalized instantiation of a universal pattern: th
 
 The structural pattern is invariant: the solar deity is maximally universal (everyone sees the sun), maximally powerful (nothing lives without it), and maximally imperial (rules over all territory the sun touches). The political theology follows necessarily.
 
-**MASSIVE WIN — Inti Raymi ↔ Christmas**: Sol Invictus' December 25 natalis solis (birthday of the unconquered sun) was selected by the 4th-c. Church for the Nativity of Christ partly because it was an existing solar feast. When Spanish missionaries moved Peru's Corpus Christi celebration to June (near the June-solstice Inti Raymi), they replicated in the colonial Andes the same solar-feast substitution that had occurred in Rome 1,200 years earlier.
+**Cross-tradition finding — Inti Raymi ↔ Christmas**: Sol Invictus' December 25 natalis solis (birthday of the unconquered sun) was selected by the 4th-c. Church for the Nativity of Christ partly because it was an existing solar feast. When Spanish missionaries moved Peru's Corpus Christi celebration to June (near the June-solstice Inti Raymi), they replicated in the colonial Andes the same solar-feast substitution that had occurred in Rome 1,200 years earlier.
 
 ## Iconography
 Golden disk with rays and a human face — the *Punchao*. Solar imagery throughout Inca art.

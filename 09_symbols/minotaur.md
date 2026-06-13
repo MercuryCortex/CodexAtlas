@@ -107,7 +107,7 @@ The Knossos frescoes (c. -1500) depict athletes — both male and female, shown 
 
 ## Cross-family appearance
 
-**MASSIVE WIN: The cosmic-bovine archetype across four traditions.** The Minotaur is the Greek-Minoan instance of the cosmic-bovine vocabulary that appears independently across the Old World:
+**Cross-tradition finding: The cosmic-bovine archetype across four traditions.** The Minotaur is the Greek-Minoan instance of the cosmic-bovine vocabulary that appears independently across the Old World:
 
 | Tradition | Entity | Period | Function |
 |-----------|--------|--------|---------|

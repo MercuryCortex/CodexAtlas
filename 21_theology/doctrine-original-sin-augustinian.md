@@ -148,7 +148,7 @@ The Augustinian doctrine is structurally inseparable from the Anselmian-Reformat
 
 ## Cross-tradition positioning
 
-**MASSIVE-WIN comparison — Indic karma**: Augustinian original-sin and Hindu/Buddhist `doctrine-karma-action-fruit` both articulate **the inheritance of pre-personal-moral-conditioning** as the underlying problem of human existence — but their mechanisms are radically asymmetric:
+**Cross-tradition comparison — Indic karma**: Augustinian original-sin and Hindu/Buddhist `doctrine-karma-action-fruit` both articulate **the inheritance of pre-personal-moral-conditioning** as the underlying problem of human existence — but their mechanisms are radically asymmetric:
 
 | Dimension | Augustinian Original Sin | Indic Karma |
 |---|---|---|

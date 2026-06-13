@@ -107,7 +107,7 @@ The primary intellectual achievement of Gnosticism, from the perspective of Code
 | Jesus "came in the flesh" (1 John 4:2) | Christ appeared to take a body but was purely spiritual (docetism) | At issue: is matter redeemable or simply escaped? |
 | The Hebrew Bible is God's revelation | The Hebrew Bible is the demiurge's propaganda | At issue: is Israel's covenant with the true God or a regional archon? |
 
-**This mirroring is the MASSIVE WIN:** Gnosticism is the best evidence we have of what early Christianity looked like from the *outside* of orthodoxy-in-formation. The heresiological polemics of Irenaeus, Tertullian, and Hippolytus — written to combat Gnosticism — preserve more detail about Gnostic theology than most Gnostic primary texts that survived. The enemy's portrait is evidence.
+**This mirroring is the key finding:** Gnosticism is the best evidence we have of what early Christianity looked like from the *outside* of orthodoxy-in-formation. The heresiological polemics of Irenaeus, Tertullian, and Hippolytus — written to combat Gnosticism — preserve more detail about Gnostic theology than most Gnostic primary texts that survived. The enemy's portrait is evidence.
 
 ---
 

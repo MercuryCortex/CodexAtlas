@@ -140,7 +140,7 @@ Vajrayāna further radicalizes through the doctrine of innate-purity: saṃsāra
 
 ## Cross-tradition positioning
 
-**MASSIVE-WIN parallel — Hindu mokṣa**: see [[doctrine-moksha-hindu-liberation]]. Bronkhorst 2007 (*Greater Magadha*) argues both develop from a shared eastern-Gangetic ascetic-renunciate substrate ~-500 to -200. The structural-cognate (release-from-saṃsāra as soteric goal) is genetic; the theological-asymmetry (anātman vs ātman-realization) is the principal inter-tradition dispute in classical Indian philosophy.
+**Cross-tradition parallel — Hindu mokṣa**: see [[doctrine-moksha-hindu-liberation]]. Bronkhorst 2007 (*Greater Magadha*) argues both develop from a shared eastern-Gangetic ascetic-renunciate substrate ~-500 to -200. The structural-cognate (release-from-saṃsāra as soteric goal) is genetic; the theological-asymmetry (anātman vs ātman-realization) is the principal inter-tradition dispute in classical Indian philosophy.
 
 **Parallel — Sufi fanāʾ**: Buddhist *nirvāṇa* ("blowing out / extinguishment") and Sufi *fanāʾ* ("annihilation / extinction") both center on the **extinction of the self-as-locus** as soteric attainment. The convergent extinction-vocabulary has been remarked since 19th-c. comparative religion. The asymmetry: nirvāṇa's extinguishment is of the conditioning-craving (no positive theistic-union); fanāʾ's extinction is *into* the divine reality. Convergent surface, deep theological asymmetry.
 

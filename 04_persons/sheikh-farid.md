@@ -40,7 +40,7 @@ Punjabi Muslim Sufi saint of the Chishti order; the dominant Chishti master in P
 
 This is one of the cleanest documented cross-tradition canonization events in world religious history: the central scripture of one tradition (Sikhism) contains, *as canonical*, the devotional poetry of a saint from another tradition (Islamic Sufism) — recited daily in gurdwaras worldwide. The cross-tradition incorporation is institutional and active, not merely historical.
 
-See [[phase-6-016-guru-granth-sahib]] "MASSIVE WIN: Sheikh Farid's Poetry Canonized in a Sikh Scripture" section; Singh 2000 documents the canonization in detail.
+See the "Sheikh Farid's Poetry Canonized in a Sikh Scripture" section of [[phase-6-016-guru-granth-sahib]]; Singh 2000 documents the canonization in detail.
 
 ## Lineage
 

@@ -80,7 +80,7 @@ The Carreira was simultaneously:
 - A **state monopoly** — the Crown licensed and regulated every voyage; cargo was royal property in significant measure; the *Casa da Índia* in Lisbon was the central regulatory and accounting institution.
 - A **religious project** — the Portuguese Crown held the *Padroado Régio* (royal patronage of the Church in overseas territories) granted by Pope Alexander VI in 1493 (*Inter Caetera*) and confirmed by Pope Leo X in 1514 (*Praecelsae Devotionis*). Every Carreira voyage carried missionaries, religious cargo, and Inquisitorial apparatus alongside spices.
 
-This is what makes the Carreira the **textbook case for cluster 5** of the README MASSIVE-WIN list: *Spice Routes as Portuguese-imperial-theology vehicle*. Trade route + Crown patronage of religion are inseparable; the same ships, the same captains, the same calendar.
+This is what makes the Carreira the **textbook case for cluster 5** of the README cross-tradition list: *Spice Routes as Portuguese-imperial-theology vehicle*. Trade route + Crown patronage of religion are inseparable; the same ships, the same captains, the same calendar.
 
 ## Routes / commodity flow + period
 

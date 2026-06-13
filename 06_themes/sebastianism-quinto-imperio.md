@@ -55,7 +55,7 @@ Pessoa's *Mensagem* (1934), his only Portuguese-language book published in his l
 
 ## Cross-tradition parallels
 
-**Sebastianism ↔ Jewish messianism — structural MASSIVE WIN**
+**Sebastianism ↔ Jewish messianism — a structural cross-tradition finding**
 The Sebastianist tradition developed in precisely the milieu most saturated with Jewish messianic ideas: the Portuguese New Christian community, descendants of the 1497 forced conversions, maintaining crypto-Jewish practice while theorizing within Catholic eschatological categories. Bandarra's *Trovas* show clear Jewish messianic motifs (the hidden king-redeemer, the national redemption, the gathering of the exiles). Vieira's correspondence with the Amsterdam Sephardic community (Menasseh ben Israel's circle, which was also in contact with Sabbatai Zevi's movement) shows direct engagement between Portuguese Catholic Fifth Empire theology and Jewish messianic expectation. The structural parallel — a hidden savior who will return from hiddenness to restore the people and inaugurate a golden age — is the Sebastianist form of what appears in Jewish (*Mashiach*), Islamic (*Mahdi* / *Dajjal* defeat), and Zoroastrian (*Saoshyant*) eschatologies.
 
 **Sebastianism ↔ Islamic Hidden Imam (Twelver Shiism)**

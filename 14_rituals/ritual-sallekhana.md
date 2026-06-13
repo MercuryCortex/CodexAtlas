@@ -52,7 +52,7 @@ The theological logic is consistent with Jain ontology: the body is not the self
 
 ## Cross-Tradition Connections: Sanctioned Voluntary Death
 
-**MASSIVE WIN:** Four traditions independently legitimize voluntary chosen death under specific spiritual conditions as the highest form of release — each with completely different theological reasoning and zero documented borrowing:
+**Cross-tradition finding:** Four traditions independently legitimize voluntary chosen death under specific spiritual conditions as the highest form of release — each with completely different theological reasoning and zero documented borrowing:
 
 | Tradition | Practice | Theological framing | Conditions |
 |---|---|---|---|

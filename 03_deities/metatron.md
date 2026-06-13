@@ -135,7 +135,7 @@ The *Hekhalot Rabbati* and associated texts narrate how practitioners of Hekhalo
 
 The Sar ha-Torah literature connects Metatron to the phenomenon of *maggidim* in later Kabbalah — angelic teachers who appeared to mystics and transmitted secret Torah. Joseph Karo's *Maggid Meisharim* (16th c.) describes his *maggid* in terms that closely parallel the Sar ha-Torah tradition.
 
-**MASSIVE WIN**: The Metatron-as-Torah-mediator tradition is structurally identical to the Philonic Logos-as-Mosaic-Torah interpretation, the Johannine Logos-in-whom-the-Word-dwells, and the Gnostic *Barbelo* or *Protennoia* as the divine self-disclosure that descends to teach. All are variants of: *the divine revelation requires an intermediate angelic/Logos figure to cross the ontological gap between infinite God and finite human learner.*
+**Cross-tradition finding**: The Metatron-as-Torah-mediator tradition is structurally identical to the Philonic Logos-as-Mosaic-Torah interpretation, the Johannine Logos-in-whom-the-Word-dwells, and the Gnostic *Barbelo* or *Protennoia* as the divine self-disclosure that descends to teach. All are variants of: *the divine revelation requires an intermediate angelic/Logos figure to cross the ontological gap between infinite God and finite human learner.*
 
 ---
 

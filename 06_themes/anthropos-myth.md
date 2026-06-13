@@ -74,7 +74,7 @@ A primordial cosmic *Man* (Greek *Anthrōpos*, Sanskrit *Puruṣa*, Hebrew *Adam
 
 ## MASSIVE WIN: The Cross-Tradition Convergence
 
-The Anthropos Myth is one of the most widely distributed cosmogonic structures in world religion. In at least six independent traditions, the **cosmos is the body of a Primordial Human** — and the **history of the cosmos is the history of that Human's fragmentation and restoration**. The fact of independent convergence is the MASSIVE WIN.
+The Anthropos Myth is one of the most widely distributed cosmogonic structures in world religion. In at least six independent traditions, the **cosmos is the body of a Primordial Human** — and the **history of the cosmos is the history of that Human's fragmentation and restoration**. The fact of independent convergence is the key finding.
 
 ### The Six-Tradition Grid
 

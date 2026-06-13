@@ -145,7 +145,7 @@ Eastern Orthodoxy **rejects the Latin doctrine of purgatory** while accepting (1
 
 ## Cross-tradition positioning
 
-**MASSIVE-WIN parallel — Tibetan Vajrayāna bardo**: Catholic purgatory and Tibetan bardo are the **two most-developed religious doctrines of the post-mortem intermediate state**. Structural parallels:
+**Cross-tradition parallel — Tibetan Vajrayāna bardo**: Catholic purgatory and Tibetan bardo are the **two most-developed religious doctrines of the post-mortem intermediate state**. Structural parallels:
 
 - Both posit a doctrinally-elaborated interval between death and ultimate destiny.
 - Both develop distinctive literary traditions: Dante's *Divine Comedy* ↔ *Bardo Thödol* (Tibetan Book of the Dead).

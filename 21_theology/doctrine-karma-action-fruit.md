@@ -144,7 +144,7 @@ Classical Indic theology distinguishes types of karma:
 
 ## Cross-tradition positioning
 
-**MASSIVE-WIN comparison — Augustinian original-sin**: Indic karma and `doctrine-original-sin-augustinian` both articulate **the inheritance of pre-personal-moral-conditioning** as the underlying problem of human existence — but their mechanisms are radically asymmetric:
+**Cross-tradition comparison — Augustinian original-sin**: Indic karma and `doctrine-original-sin-augustinian` both articulate **the inheritance of pre-personal-moral-conditioning** as the underlying problem of human existence — but their mechanisms are radically asymmetric:
 
 | Dimension | Indic Karma | Augustinian Original Sin |
 |---|---|---|

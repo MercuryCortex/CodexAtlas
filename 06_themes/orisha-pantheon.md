@@ -78,7 +78,7 @@ The *babalawo*'s training takes approximately 7 years of intensive apprenticeshi
 
 ## Cross-tradition parallels
 
-**MASSIVE WIN — structural analogy to the Greek Olympian pantheon:**
+**Cross-tradition finding — structural analogy to the Greek Olympian pantheon:**
 The orisha system and the Greco-Roman Olympian pantheon are structurally identical: a supreme sky-god (Zeus/[[olodumare]]) presides over a council of specialized domain-deities who interact with humans, pursue personal agendas, and are approached through specific ritual protocols. [[shango]] (thunder, masculine power) = Zeus/Jupiter. [[oshun]] (love, beauty, water) = Aphrodite/Venus. [[ogun]] (war, iron) = Ares/Mars. [[eshu]] (trickster, crossroads, communication) = Hermes/Mercury. The parallel is functional, not historical — an independently convergent solution to the same theological problem: how to articulate the multiple aspects of divine reality in terms of specific human concerns.
 
 **Vedic *deva* system:**

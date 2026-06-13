@@ -76,7 +76,7 @@ The Priestly cosmogony of Genesis 1 is also an evolutionary cosmogony of sorts: 
 
 ## Cross-tradition significance
 
-**MASSIVE-win**: The Hawaiian Kumulipo's proto-evolutionary framework and the Maori staged-void cosmogony represent the deepest speculative cosmogonic thinking in Pacific traditions. Beckwith (1951) emphasizes this as a remarkable intellectual achievement: the encoding of biological observation in genealogical cosmogonic form, independently of any contact with Mediterranean or Asian scientific traditions.
+**Cross-tradition finding**: The Hawaiian Kumulipo's proto-evolutionary framework and the Maori staged-void cosmogony represent the deepest speculative cosmogonic thinking in Pacific traditions. Beckwith (1951) emphasizes this as a remarkable intellectual achievement: the encoding of biological observation in genealogical cosmogonic form, independently of any contact with Mediterranean or Asian scientific traditions.
 
 The structural parallel: **Kumulipo's 16 wā ≈ Genesis P's 7 days ≈ Hesiod's Theogony's generational unfolding** — all three are staged-emergence cosmogonies in which each stage enables the next, and the final stage (royalty / humanity / Zeus's sovereignty) retrospectively legitimates the whole sequence.
 

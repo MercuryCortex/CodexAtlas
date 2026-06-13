@@ -53,7 +53,7 @@ The Five Ks are worn **continuously** by every *Amritdhari* (initiated) Sikh —
 
 ## Cross-tradition parallels
 
-**MASSIVE-WIN: Mnemonic-commandment-garment.** The Five Ks are an extraordinarily elaborated case of the cross-tradition pattern: **a permanent body-worn garment commanded as a daily recall to religious commitment**. The closest parallels:
+**Cross-tradition finding: Mnemonic-commandment-garment.** The Five Ks are an extraordinarily elaborated case of the cross-tradition pattern: **a permanent body-worn garment commanded as a daily recall to religious commitment**. The closest parallels:
 
 - **Jewish tallit-with-tzitzit** ([[tallit-with-tzitzit]]) — explicitly mnemonic by Pentateuchal command (Numbers 15:39 — "you shall look upon it and remember")
 - **Jewish tefillin** — leather phylacteries worn on the arm and forehead during morning prayer, containing scriptural passages — explicitly mnemonic (Deuteronomy 6:8)
@@ -63,7 +63,7 @@ The Five Ks are worn **continuously** by every *Amritdhari* (initiated) Sikh —
 
 The Sikh case is unusual in being a **conscious religious legislative act** (Vaisakhi 1699 — a precisely-dated institution by a known legislator). The Jewish tallit and tefillin sit in Pentateuchal commandment context; the Nazirite vow is voluntary and temporary; the Sikh Five Ks are the **most elaborated permanent-mnemonic body-covenant** in any world religion. The parallels are documented in W. H. McLeod's *Sikhism* (1997), Eleanor Nesbitt's *Sikhism: A Very Short Introduction* (2005), and J. P. S. Uberoi's classic essay "The Five Symbols of Sikhism" (in *Religion in Modern India*, ed. Robert D. Baird, 1989).
 
-**MASSIVE-WIN: Initiatory clothing ceremony.** *Amrit Sanchar* (Khalsa initiation) is the Sikh instance of the cross-tradition robing-into-new-identity ritual structure. The candidate:
+**Cross-tradition finding: Initiatory clothing ceremony.** *Amrit Sanchar* (Khalsa initiation) is the Sikh instance of the cross-tradition robing-into-new-identity ritual structure. The candidate:
 
 1. Bathes and dresses in clean clothes (preparation)
 2. Approaches the Panj Pyare (Five Beloved Ones — five Khalsa Sikhs representing the original 1699 community)

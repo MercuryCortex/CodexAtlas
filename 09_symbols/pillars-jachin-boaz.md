@@ -115,7 +115,7 @@ The **Pillars of Jachin and Boaz** are the two **free-standing bronze columns** 
 
 The pillars are the origin emblem of speculative **[[tradition-freemasonry|Freemasonry]]** — the Fellowcraft (2°) degree ritual involves symbolic passage between them as an initiatory threshold, and Masonic lodge rooms replicate them at the entrance or display them on tracing boards. They became the central architectural metaphor of the Masonic tradition's Solomonic origin myth.
 
-**THE MASSIVE WIN**: The Masonic lodge's two pillars are simultaneously the Kabbalistic Tree of Life's two outer sefirotic columns — the **Pillar of Severity** (Boaz/left) and the **Pillar of Mercy** (Jachin/right). The lodge room IS the Kabbalistic cosmological diagram.
+**The key finding**: The Masonic lodge's two pillars are simultaneously the Kabbalistic Tree of Life's two outer sefirotic columns — the **Pillar of Severity** (Boaz/left) and the **Pillar of Mercy** (Jachin/right). The lodge room IS the Kabbalistic cosmological diagram.
 
 ## Earliest attestation
 

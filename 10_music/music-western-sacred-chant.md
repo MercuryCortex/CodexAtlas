@@ -90,7 +90,7 @@ The core functional unit of chant is the **psalm tone** — a simple melodic for
 
 This system means that the entire 150 Psalms could be sung by a moderately trained cantor — the psalm tone is simple enough to memorize and flexible enough to accommodate any psalm text. Benedictine monks following the Rule of St. Benedict (*Ora et Labora*) sang the complete Psalter every week, in the eight canonical hours (Lauds, Prime, Terce, Sext, None, Vespers, Compline, Vigils/Matins).
 
-The MASSIVE WIN: **this is a direct continuation of the Jewish Psalm-singing tradition**. The Psalms were composed as songs (the Hebrew title is *Tehillim* — "songs of praise"). The Jerusalem Temple had professional singers (the Levitical choirs). Early Christian communities inherited the Psalter from Jewish practice and adapted it to Christian liturgical use. The Gregorian psalm tone system is thus a Christianized version of a practice that traces back to the Second Temple period and, through the Davidic tradition, to approximately 1000 BCE.
+The key finding: **this is a direct continuation of the Jewish Psalm-singing tradition**. The Psalms were composed as songs (the Hebrew title is *Tehillim* — "songs of praise"). The Jerusalem Temple had professional singers (the Levitical choirs). Early Christian communities inherited the Psalter from Jewish practice and adapted it to Christian liturgical use. The Gregorian psalm tone system is thus a Christianized version of a practice that traces back to the Second Temple period and, through the Davidic tradition, to approximately 1000 BCE.
 
 The sonic thread: **David's kinnor → Second Temple Levitical song → early Christian psalmody → Gregorian chant → Benedictine Divine Office → present-day Solesmes**.
 

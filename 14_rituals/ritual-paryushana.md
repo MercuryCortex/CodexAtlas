@@ -61,7 +61,7 @@ The monsoon timing is not accidental. Monks cease traveling because each step in
 
 ## Cross-Tradition Connections: The Annual Moral Accounting
 
-**MASSIVE WIN:** Four traditions have built an annual collective moral accounting into their liturgical calendar — all arriving independently at the conclusion that ordinary time must be periodically interrupted for a collective reckoning of moral debt:
+**Cross-tradition finding:** Four traditions have built an annual collective moral accounting into their liturgical calendar — all arriving independently at the conclusion that ordinary time must be periodically interrupted for a collective reckoning of moral debt:
 
 | Tradition | Festival | Duration | Core mechanism | Season |
 |---|---|---|---|---|

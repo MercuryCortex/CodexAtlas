@@ -70,7 +70,7 @@ Orthodox monasticism's strict black is one of the most-uniform monastic color-co
 
 ## Cross-tradition position
 
-**MASSIVE-WIN — graduated monastic initiation as cross-tradition pattern**: the three-degree Orthodox progression (rasophore → stavrophore → megaloschemos) parallels graduated initiation systems in other monastic traditions:
+**Cross-tradition finding — graduated monastic initiation as a recurring pattern**: the three-degree Orthodox progression (rasophore → stavrophore → megaloschemos) parallels graduated initiation systems in other monastic traditions:
 
 - **Theravāda Buddhist** ordination has graduated stages: *upāsaka* (lay disciple) → *samaṇera* (novice, 10 precepts, robes) → *bhikkhu* (fully ordained, 227 precepts, full triple-robe) — three steps with distinct vesture
 - **Tibetan Vajrayāna** has graduated stages of empowerment + ordination + retreats with vesture differences

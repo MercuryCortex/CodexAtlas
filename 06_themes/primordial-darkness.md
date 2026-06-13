@@ -66,7 +66,7 @@ The cosmogonic concept of an undifferentiated primordial darkness, void, or unma
 
 Long (1963) identifies the **darkness-to-light sequence** as the most universal cosmogonic structure, appearing in traditions with no documented contact. The generative character of primordial darkness — darkness as *womb* or *potential* rather than merely absence — is a recurrent finding: Hawaiian *pō*, Maori *Te Pō*, Egyptian *Nun*, Hebrew *tehom*, Vedic *tamas* are all generative, not merely negative.
 
-MASSIVE-win: the cosmogonic darkness-to-light sequence appears independently in Oceanic (Polynesian), East African (Egyptian), Near Eastern (Mesopotamian/Hebrew), Indo-Iranian (Vedic), European (Greek/Norse), and Mesoamerican traditions. This is either (a) a retained common human cognitive pattern reflecting the physiology of waking/sleeping and birth, or (b) parallel cultural invention, or (c) very deep structural resonances in early agricultural societies. Long (1963) argues for (a) with cultural elaboration.
+Cross-tradition finding: the cosmogonic darkness-to-light sequence appears independently in Oceanic (Polynesian), East African (Egyptian), Near Eastern (Mesopotamian/Hebrew), Indo-Iranian (Vedic), European (Greek/Norse), and Mesoamerican traditions. This is either (a) a retained common human cognitive pattern reflecting the physiology of waking/sleeping and birth, or (b) parallel cultural invention, or (c) very deep structural resonances in early agricultural societies. Long (1963) argues for (a) with cultural elaboration.
 
 ## Related themes
 

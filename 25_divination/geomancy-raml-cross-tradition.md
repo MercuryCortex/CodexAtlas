@@ -81,7 +81,7 @@ Robert Fludd's *Utriusque Cosmi Historia* (1617-21) gives geomancy a full cosmol
 
 Geomancy sits at three cross-tradition junctures:
 
-1. **Binary-permutation divination cluster** — parallel-form with Yi Jing (Chinese) + Ifá (Yoruba). Independent emergence + similar mathematical-structural foundation. The MASSIVE-WIN: four-bit binary divinatory systems emerge independently in West African, Chinese, and Islamic-North-African cultural contexts.
+1. **Binary-permutation divination cluster** — parallel-form with Yi Jing (Chinese) + Ifá (Yoruba). Independent emergence + similar mathematical-structural foundation. The key finding: four-bit binary divinatory systems emerge independently in West African, Chinese, and Islamic-North-African cultural contexts.
 
 2. **Hermetic transmission chain** — Islamic → European geomancy is one of the principal Arabic→Latin transmission lines via the 12-13th-c. Toledo translation movement. The system is part of the broader [[hermetic-transmission-chain|hermetic-philosophical-transmission]] from Islamic to Christian Latin Europe.
 

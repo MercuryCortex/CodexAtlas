@@ -130,7 +130,7 @@ Egypt had **at least three major competing cosmological schools**, and their com
 
 The theological competition between these three schools was not purely academic: it was politically freighted. Heliopolis was the traditional home of solar-royal theology (the pharaoh as son of Re); Memphis was the administrative capital for much of Egyptian history and its *ptah*-theology reflected Memphite priestly power; Thebes under the New Kingdom promoted Amun to supreme status, incorporating both solar and hidden-god attributes.
 
-**MASSIVE WIN cross-tradition implication:** These three Egyptian creation schools collectively map onto a recurring typological problem in all monotheistic traditions:
+**Cross-tradition implication:** These three Egyptian creation schools collectively map onto a recurring typological problem in all monotheistic traditions:
 - Creation by a personal willful God (Ennead/Atum) ↔ Genesis 1's "*Elohim* created" (personal divine agent)
 - Creation from primordial impersonal forces (Ogdoad) ↔ Gnostic *pleroma* / primordial void accounts
 - Creation by divine Word/Logos (Memphite/Ptah) ↔ John 1:1 ("In the beginning was the Logos")

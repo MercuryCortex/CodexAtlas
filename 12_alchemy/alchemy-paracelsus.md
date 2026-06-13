@@ -75,7 +75,7 @@ Paracelsus's practical medical chemistry — **spagyrics** (from Greek *spao*, t
 
 He coined the word "zinc" (*Zincum*) for the metal zinc. He introduced laudanum (opium dissolved in alcohol) as a pain medicine. His concept of dose-dependent medicine ("the dose makes the poison") is still cited in toxicology.
 
-**MASSIVE WIN: The God-as-Alchemist Template Across Traditions**
+**Cross-tradition finding: The God-as-Alchemist Template Across Traditions**
 
 Paracelsus's God-the-Cosmic-Alchemist is not unique to Christian alchemy. The template — a divine principle that creates by performing an alchemical or craftsman's operation on undifferentiated matter — appears across traditions:
 

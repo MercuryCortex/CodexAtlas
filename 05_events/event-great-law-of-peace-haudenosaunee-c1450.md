@@ -130,7 +130,7 @@ This is the vault's most consequential cross-tradition influence case: whether, 
 
 **Fenton (1998) — the definitive scholarly verdict**: The Great Law is a genuine and extraordinary political achievement; the Founding Fathers demonstrably knew of it and were influenced by the *general concept* of confederate union; the specific mechanisms of the US Constitution derive primarily from English-Lockean sources. The influence is real but should be characterized as *one factor among many* rather than as the template.
 
-**Investigative finding**: The influence debate is itself a MASSIVE WIN for the vault, because it surfaces the suppressed history of Indigenous political thought. Whether the influence was architectural (direct borrowing of structural features) or atmospheric (a proof-of-concept that a confederate union could work), the fact that the oldest constitutional democracy in continuous operation served as context for the founding of the United States' constitutional democracy is under-documented in mainstream political history. That suppression is itself a historical phenomenon worth recording.
+**Investigative finding**: The influence debate is itself a major finding for the vault, because it surfaces the suppressed history of Indigenous political thought. Whether the influence was architectural (direct borrowing of structural features) or atmospheric (a proof-of-concept that a confederate union could work), the fact that the oldest constitutional democracy in continuous operation served as context for the founding of the United States' constitutional democracy is under-documented in mainstream political history. That suppression is itself a historical phenomenon worth recording.
 
 ## Cross-Tradition Political Theology Comparisons
 

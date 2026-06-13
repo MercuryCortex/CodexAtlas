@@ -23,7 +23,7 @@ Section (deities / persons / documents / events / sacred-sites / …), never nav
 - Verify in Safari (preview can't render MapLibre).
 
 ### 2. Inspector tradition raw-bracket nit
-Pessoa's panel showed `[[TRADITION-PORTUGUESE-HERMETICISM]]` literally instead of a
+Pessoa's panel showed `\[\[TRADITION-PORTUGUESE-HERMETICISM\]\]` literally instead of a
 clean label (Zeus shows "GREEK"). The inspector falls back to the raw wikilink slug when
 a tradition doesn't resolve to a titled node. Fix: render the tradition as a clean
 de-slugged label (strip `[[ ]]`, title-case) with the resolved node title when present.

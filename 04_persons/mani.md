@@ -111,7 +111,7 @@ After the commissioning vision (~240 CE), Mani:
 
 Mani died (~274 CE) under **Bahram I** at the instigation of the Zoroastrian high priest **Kartir**, who perceived Mani's syncretism as a threat to Zoroastrian orthodoxy. After twenty-six days of imprisonment, Mani died; his skin was reportedly stuffed and hung at the Gundeshapur gate.
 
-**MASSIVE WIN — martyrdom parallel**: The pattern of the mystic-prophet killed by the religious establishment recurs:
+**Cross-tradition finding — martyrdom parallel**: The pattern of the mystic-prophet killed by the religious establishment recurs:
 - Jesus crucified at the instigation of the Temple priesthood (Caiaphas) + Roman authority
 - Al-Hallaj hanged (922 CE) by the Abbasid Caliph at the urging of orthodox jurists
 - Mani killed by the Zoroastrian priesthood under Sasanian authority

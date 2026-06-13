@@ -174,7 +174,7 @@ The formula appears across daughter-language traditions in nearly identical word
 
 The phonological correspondences are systematic — these are **genuine cognates**, not parallel adoptions. The formula's persistence across separated daughter languages over 4,000+ years of divergence is some of the strongest evidence in comparative mythology for a **shared Proto-Indo-European mytheme** that predates the dispersal of the IE peoples.
 
-The MASSIVE-WIN finding: the chaoskampf pattern is *partly inherited* (across IE traditions) and *partly convergent* (the IE family ↔ Mesopotamian / Canaanite / Egyptian — which are NOT IE, but share the structural pattern, plausibly through Bronze Age cultural networks). The pattern's full cross-tradition reach combines **genuine genealogical inheritance** (within IE) with **areal diffusion and independent convergence** (between language families) — making it one of the most thoroughly documented cross-tradition mythemes in world religion.
+The key finding: the chaoskampf pattern is *partly inherited* (across IE traditions) and *partly convergent* (the IE family ↔ Mesopotamian / Canaanite / Egyptian — which are NOT IE, but share the structural pattern, plausibly through Bronze Age cultural networks). The pattern's full cross-tradition reach combines **genuine genealogical inheritance** (within IE) with **areal diffusion and independent convergence** (between language families) — making it one of the most thoroughly documented cross-tradition mythemes in world religion.
 
 ---
 

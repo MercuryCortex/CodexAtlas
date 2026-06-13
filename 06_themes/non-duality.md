@@ -127,7 +127,7 @@ dating-basis-notes: "Advaita non-duality Chandogya 6.8.7 (tat tvam asi) c. -700;
 
 Non-duality is typically a **soteriological-experiential** claim more than a doctrinal one: the apparent duality is *grasped through* in realization, after which the seeing reveals that it never was real *as duality*. The realization (*sākṣātkāra*, *fanā*, *kenshō*, *henōsis*, *unio mystica*) does not destroy the apparent two-ness in the way demolition destroys a building; rather, the apparent two-ness is recognized as *appearing within* a single field of awareness / being / suchness that was never bifurcated.
 
-This is one of the **most consistently attested cross-tradition realizations** in the comparative study of religion. It appears independently — by current scholarly consensus on the historical record — in Vedic Upaniṣadic Indian tradition, Mahāyāna Buddhism, Daoism, Neoplatonism, Akbarī Sufism, German Christian mysticism, and Pueblo Native American cosmogony. The MASSIVE-WIN finding is that these independent emergences arrive at strikingly similar formulations.
+This is one of the **most consistently attested cross-tradition realizations** in the comparative study of religion. It appears independently — by current scholarly consensus on the historical record — in Vedic Upaniṣadic Indian tradition, Mahāyāna Buddhism, Daoism, Neoplatonism, Akbarī Sufism, German Christian mysticism, and Pueblo Native American cosmogony. The key finding is that these independent emergences arrive at strikingly similar formulations.
 
 ---
 
@@ -172,7 +172,7 @@ Across nine major independent traditions, the same realization is articulated wi
 
 The formulations are not identical — Advaita affirms an absolute, Madhyamaka does not posit one; Sufi non-dualism preserves the asymmetric relation (creature comes-into-being from God, not the reverse); Daoism is naturalist where Vedanta is idealist. **Loy 1988 maps these differences carefully and concludes**: these are NOT the same metaphysics, but they ARE structurally homologous *soteriological recognitions* — different routes to the same kind of seeing.
 
-The MASSIVE-WIN finding is **convergent emergence**: independent traditions, with documented zero contact in the deepest cases (Advaita ↔ Zuni; Hesychasm ↔ Madhyamaka), arriving at remarkably parallel realizations. This is some of the strongest evidence in the comparative-religion record for the existence of cross-cultural mystical structures — though the constructivist counter-arguments (Katz 1978, Proudfoot 1985) demand that any such claim be hedged.
+The key finding is **convergent emergence**: independent traditions, with documented zero contact in the deepest cases (Advaita ↔ Zuni; Hesychasm ↔ Madhyamaka), arriving at remarkably parallel realizations. This is some of the strongest evidence in the comparative-religion record for the existence of cross-cultural mystical structures — though the constructivist counter-arguments (Katz 1978, Proudfoot 1985) demand that any such claim be hedged.
 
 ---
 

@@ -97,7 +97,7 @@ A two-part (or three-part) extension of the book of Isaiah, attached to the 8th-
 > the uneven ground shall become level,
 >   and the rough places a plain."
 
-*The opening word — *naḥamû* ("comfort") — twice repeated — is the exilic prophetic cry of reversal. The Septuagint and New Testament repunctuate 40:3 (see MASSIVE WIN below), generating the entire John-the-Baptist-as-forerunner tradition.*
+*The opening word — *naḥamû* ("comfort") — twice repeated — is the exilic prophetic cry of reversal. The Septuagint and New Testament repunctuate 40:3 (see the cross-tradition findings below), generating the entire John-the-Baptist-as-forerunner tradition.*
 
 ### Isaiah 45:1–6 — Cyrus named as Yahweh's "anointed"
 *Trans. NRSV*

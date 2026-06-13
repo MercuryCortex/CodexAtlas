@@ -152,7 +152,7 @@ The doctrine is **not exclusively Indic**. Pre-modern parallels:
 
 ## Cross-tradition positioning
 
-**MASSIVE-WIN polemic — Christian bodily-resurrection**: the Christian eschatological doctrine **explicitly rejects** the cyclic-rebirth schema. Christian eschatology is **linear** (one embodied life → one death → one bodily resurrection → one judgment → eternal state). The Christian-Indic divide on this point is one of the deepest cross-tradition theological divides:
+**Cross-tradition polemic — Christian bodily-resurrection**: the Christian eschatological doctrine **explicitly rejects** the cyclic-rebirth schema. Christian eschatology is **linear** (one embodied life → one death → one bodily resurrection → one judgment → eternal state). The Christian-Indic divide on this point is one of the deepest cross-tradition theological divides:
 
 - **Linear bodily-resurrection** (Christian, also Pharisaic-Jewish, Islamic): one life, one resurrection, eternal-state.
 - **Cyclic rebirth** (Indic): beginningless saṃsāra until liberation; no eschatological-bodily-resurrection of all-the-dead.

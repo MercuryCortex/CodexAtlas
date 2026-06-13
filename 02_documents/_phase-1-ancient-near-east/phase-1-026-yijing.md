@@ -131,7 +131,7 @@ The Ten Wings' cosmogonic sequence (undivided unity → binary opposition → mu
 
 All four are independent instantiations of the same cosmogonic logic: primordial unity generates multiplicity through sequential differentiation. The Yijing's version is notable for being the most explicitly *mathematical* (binary combinatorics) and the earliest to generate a complete combinatorial map of all possible states.
 
-**3. MASSIVE WIN: 64 hexagrams ↔ 64 DNA codons — convergent binary coding of universal information**
+**3. Cross-tradition finding: 64 hexagrams ↔ 64 DNA codons — convergent binary coding of universal information**
 The structural parallel Leibniz noticed (hexagrams = binary sequences) has a modern extension: **DNA's genetic code** operates through four bases (A, T, G, C) read in triplets (codons) = 4³ = 64 possible codons. The Yijing: 2 elements (yin/yang) in sequences of 6 = 2⁶ = 64 hexagrams. The biological universe encodes all life information in 64 units; the Yijing encodes all cosmic-change information in 64 units. Both are binary-combinatorial systems that cover a complete state-space. The parallel is typological (no transmission) — but it is the kind of structural resonance the Atlas exists to document.
 
 **4. Yi Jing → Cantong Qi → Jabir = the alchemy transmission spine's cosmological root**

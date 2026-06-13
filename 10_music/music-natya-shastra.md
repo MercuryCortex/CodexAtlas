@@ -117,7 +117,7 @@ The *rasa* theory (Chapter 6) is Bharata's most influential contribution. He ide
 
 A ninth rasa — *Śānta* (Tranquility/Peace) — was added by Abhinavagupta in his 10th-century commentary, who argued it was the ground state underlying all eight. This addition is significant: it places aesthetic experience itself within the framework of liberation theology (*moksha*).
 
-**MASSIVE WIN:** Bharata's rasa theory is a theory of *emotional cosmology* — not a psychology of the performer or audience, but a map of cosmic emotional states that music, drama, and dance make temporally present. Rasa is not "what you feel" when you hear music; it is what the music *is*, independent of any individual's response. This is structurally identical to Plato's claim in the *Republic* that musical modes directly shape the soul because musical order reflects cosmic order (Books III and IV). Two philosophers, separated by culture and 400 years, making the same ontological claim about music's nature.
+**Cross-tradition finding:** Bharata's rasa theory is a theory of *emotional cosmology* — not a psychology of the performer or audience, but a map of cosmic emotional states that music, drama, and dance make temporally present. Rasa is not "what you feel" when you hear music; it is what the music *is*, independent of any individual's response. This is structurally identical to Plato's claim in the *Republic* that musical modes directly shape the soul because musical order reflects cosmic order (Books III and IV). Two philosophers, separated by culture and 400 years, making the same ontological claim about music's nature.
 
 ## MASSIVE WIN: The Fifth Veda Strategy
 

@@ -50,7 +50,7 @@ The Guru Granth Sahib's frame: *Vand Chakko* — share and consume together. Cha
 
 ## Cross-Tradition Connections: The Communal Meal as Anti-Hierarchy Technology
 
-**MASSIVE WIN:** Three traditions independently developed the communal meal as the primary technology for dismantling social hierarchy — each in a different century, each using a different theological justification:
+**Cross-tradition finding:** Three traditions independently developed the communal meal as the primary technology for dismantling social hierarchy — each in a different century, each using a different theological justification:
 
 | Tradition | Practice | Anti-hierarchy claim | Date |
 |---|---|---|---|

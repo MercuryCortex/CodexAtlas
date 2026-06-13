@@ -119,7 +119,7 @@ The Saoshyant provides **the principal pre-Christian Near Eastern future-savior 
 ### The transmission window
 The **Achaemenid period (-550 to -330)** is the period of MAXIMUM Zoroastrian-Jewish religious contact: the Jewish exiles return from Babylon to Yehud under Persian patronage (Cyrus's edict, -539), live under Persian-Zoroastrian imperial-religious culture for two centuries, and develop the **distinctively-Second-Temple theological innovations** (cosmic dualism, angelology and demonology, resurrection-of-the-dead, future-messiah-figure, final judgment) that distinguish Second-Temple Judaism from First-Temple. Boyce 1991 and Hultgård 1998 treat these developments as substantially Persian-influenced; conservative-evangelical scholarship (Yamauchi 1990) resists the influence-claim.
 
-The scholarly debate is real but **the structural parallels are uncontested**. The Codex Atlas's "MASSIVE-win" mission is exactly to surface these comparative-structural patterns regardless of where one stands on the direction-of-influence question.
+The scholarly debate is real but **the structural parallels are uncontested**. The Codex Atlas's cross-tradition mission is exactly to surface these comparative-structural patterns regardless of where one stands on the direction-of-influence question.
 
 ### MASSIVE-WIN: Saoshyant ↔ Hidden Imam / Mahdi
 

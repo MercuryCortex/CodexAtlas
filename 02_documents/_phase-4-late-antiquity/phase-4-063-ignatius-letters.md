@@ -110,7 +110,7 @@ Ignatius's *Letter to the Romans* is the most extreme Christian martyrdom text o
 
 **The structural pattern.** Ignatius does not merely embrace martyrdom as noble death (as Stoic philosophy would frame it). He frames it as **total annihilation of the self in and through God** — the self is wheat that must be ground to become the body of Christ; the self's eros must be crucified; the self must *become* an imitation of God's own suffering. This is not heroism. It is **the dissolution of the individual self into the divine**.
 
-**The cross-tradition parallel — MASSIVE WIN:**
+**The cross-tradition parallel — key finding:**
 
 The same structure appears in:
 

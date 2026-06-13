@@ -131,7 +131,7 @@ Mani's answer to the problem of evil is unique in the history of religion: the m
 5. **The Extraction Engine**: The sun and moon collect the light released by righteous actions and ascetic practice. The moon waxes as it fills with extracted light; it wanes as it passes the light to the sun; the sun conveys it to the Light World. The visible lunar cycle is the cosmic light-extraction mechanism made observable.
 6. **The Eschaton**: When sufficient light has been extracted, the cosmos reaches its purpose and a final conflagration separates the remaining light from darkness permanently.
 
-**MASSIVE WIN**: This cosmogony inverts the standard dualist problem (evil is a cosmic mistake to be overcome) into a teleological framework (evil is the precondition for the cosmos's redemptive work). It is the most technologically sophisticated ancient cosmogony — a cosmic machine with input, processing, and output.
+**Cross-tradition finding**: This cosmogony inverts the standard dualist problem (evil is a cosmic mistake to be overcome) into a teleological framework (evil is the precondition for the cosmos's redemptive work). It is the most technologically sophisticated ancient cosmogony — a cosmic machine with input, processing, and output.
 
 ## Augustine's 9 Years as a Manichaean — The Greatest Irony in Western Theology
 
@@ -139,7 +139,7 @@ Augustine of Hippo (~354–430 CE) was a Manichaean *auditor* (hearer — the lo
 
 Augustine left Manichaeism partly because Faustus of Milevis, the leading Manichaean teacher he finally met (~383 CE), failed to satisfy his intellectual questions about Manichaean astronomy and cosmology.
 
-**MASSIVE WIN**: Augustine's subsequent theology is in continuous dialogue with Manichaeism — specifically, in *opposition* to it, and this opposition shapes Western Christianity's most consequential doctrines:
+**Cross-tradition finding**: Augustine's subsequent theology is in continuous dialogue with Manichaeism — specifically, in *opposition* to it, and this opposition shapes Western Christianity's most consequential doctrines:
 
 1. **Original sin** (*peccatum originale*): Against the Manichaean claim that evil is a structural cosmic principle (matter itself is evil, the body is the prison of the soul, the flesh is irredeemable), Augustine insists that evil is not a substance but an absence of good (*privatio boni*), and that sin is a human moral failure, not a cosmic necessity. The Manichaean position made sin inevitable and excusable; Augustine needed a doctrine that made sin genuinely culpable. The result: original sin as a real and guilty inheritance from Adam, transmitted biologically.
 

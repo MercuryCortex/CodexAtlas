@@ -141,7 +141,7 @@ The most precisely parallel doctrinal convergence in the comparative-religion re
 
 Shinran was working in Kamakura-period Japan; Luther was working in Reformation-era Germany. There is no historical connection. The convergence is structural. This is arguably the single most precise doctrinal parallel across two entirely independent religious traditions anywhere in the comparative-religion literature.
 
-*MASSIVE WIN: The vault's clearest case of convergent soteriological development. The Bloom 1965 study documents it explicitly; the Christian-Buddhist dialogue at Claremont and Nanzan has worked it through at length.*
+*Cross-tradition finding: The vault's clearest case of convergent soteriological development. The Bloom 1965 study documents it explicitly; the Christian-Buddhist dialogue at Claremont and Nanzan has worked it through at length.*
 
 ### 2. The nembutsu and the single sacred formula — cross-tradition substrate
 The *nembutsu* — *Namu Amida Butsu* / *Namo Amituofo* / *Namo Amitabhaya* — is the most-recited single religious formula in human history over the past millennium (given the demographic weight of East Asian Pure Land Buddhism). It belongs to a cross-tradition substrate of single-formula devotional practices:

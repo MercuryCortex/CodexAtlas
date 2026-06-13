@@ -96,7 +96,7 @@ The Tibetan writing system's five vowel signs correspond to the five elements in
 
 The body's five elements are the five vowels made physical. The alphabet maps the cosmos and the body simultaneously through the same phonemic structure.
 
-**MASSIVE WIN:** This five-vowel/five-element correspondence appears in two completely unconnected traditions:
+**Cross-tradition finding:** This five-vowel/five-element correspondence appears in two completely unconnected traditions:
 1. Sanskrit/Tibetan tantric tradition: 5 vowels = 5 elements (earth/water/fire/wind/space)
 2. Greek/Pythagorean tradition: 5 Platonic solids = 5 elements (earth/water/fire/air/ether)
 

@@ -130,7 +130,7 @@ tags: [symbol, phytomorphic, egyptian, hindu, buddhist, coptic, jain, lotus, pad
 
 # Lotus
 
-> **Methodology discipline note:** The lotus is the user's flagged "MASSIVE WIN" cross-tradition phytomorphic symbol. The Egyptian and Indic lotus-traditions developed in **parallel** with no documented Bronze Age transmission between them; the Coptic Christian continuity from Egyptian iconography IS documented (`ancestor-of`); the Buddhist tradition inherits from the Hindu (`ancestor-of`); the Botticelli Venus-on-shell ↔ Lakshmi-on-lotus is `visual-cognate` only, NOT transmission.
+> **Methodology discipline note:** The lotus is the user's flagged headline cross-tradition phytomorphic symbol. The Egyptian and Indic lotus-traditions developed in **parallel** with no documented Bronze Age transmission between them; the Coptic Christian continuity from Egyptian iconography IS documented (`ancestor-of`); the Buddhist tradition inherits from the Hindu (`ancestor-of`); the Botticelli Venus-on-shell ↔ Lakshmi-on-lotus is `visual-cognate` only, NOT transmission.
 
 ## Identity
 

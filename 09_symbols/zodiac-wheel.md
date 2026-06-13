@@ -153,7 +153,7 @@ The zodiac wheel is one instantiation of the cosmic wheel as a cross-traditional
 
 - **Precession and the "Age of Aquarius":** The astrological tradition of "Great Ages" — Taurus, Aries, Pisces, Aquarius — defined by where the vernal equinox falls in the precession cycle, maps directly onto the periodization of religious history. The Axial Age (c. −800 to −200 BCE) coincides with the "Age of Aries" in traditional astrology — worth investigating whether ancient thinkers were aware of this.
 - **The Zodiac in Islam:** Islamic astronomical tradition (*'ilm al-hay'a*) maintained the Ptolemaic zodiac; Islamic astrology (*'ilm al-nujūm*) was one of the most sophisticated traditions of the medieval period. The Arabic zodiac signs are direct translations of the Greek. Investigate the relationship between the zodiac and the Islamic cosmological tradition more fully.
-- **The Zodiac and the Alphabet:** The Kabbalistic tradition (particularly Sefer Yetzirah) assigns the 12 Hebrew letters to the 12 zodiac signs. This is a documented cross-mapping of two 12-unit systems within Jewish esotericism — a MASSIVE WIN thread for the [[tradition-christian-kabbalah]] connection.
+- **The Zodiac and the Alphabet:** The Kabbalistic tradition (particularly Sefer Yetzirah) assigns the 12 Hebrew letters to the 12 zodiac signs. This is a documented cross-mapping of two 12-unit systems within Jewish esotericism — a major cross-tradition thread for the [[tradition-christian-kabbalah]] connection.
 
 ---
 

@@ -96,7 +96,7 @@ Stephan Feuchtwang's analysis (*Popular Religion in China*, 2001) identifies thi
 
 ## Cross-tradition MASSIVE WIN parallels
 
-**1. MASSIVE WIN: Zao Jun ↔ Chitragupta ↔ Thoth ↔ Book of Life — the divine-ledger universal at every scale**
+**1. Cross-tradition finding: Zao Jun ↔ Chitragupta ↔ Thoth ↔ Book of Life — the divine-ledger universal at every scale**
 The divine recording system that makes afterlife justice possible appears at every scale:
 - **Thoth** (Egyptian): records the weighing result at Osiris's cosmic tribunal — post-mortem, universal scale
 - **Chitragupta** (Hindu): reads the complete karmic ledger at Yama's court — post-mortem, all souls

@@ -97,7 +97,7 @@ The theme covers: (1) the *lex talionis* formula specifically; (2) the "goring o
 
 ## What this means for the vault
 
-This theme is a **MASSIVE-win cross-tradition bridge**: it traces the legal-ethical framework of Mosaic law — the heart of Judaism and (through rabbinic tradition) of Christianity and Islam — back into Mesopotamian royal-legal theology. Whether the mechanism is direct borrowing (Wright) or shared milieu (Westbrook), the Israelite lawgiver tradition did not emerge in a vacuum but in dialogue with the same legal-theological currents that produced Hammurabi's Shamash-commissioned stele.
+This theme is a **major cross-tradition bridge**: it traces the legal-ethical framework of Mosaic law — the heart of Judaism and (through rabbinic tradition) of Christianity and Islam — back into Mesopotamian royal-legal theology. Whether the mechanism is direct borrowing (Wright) or shared milieu (Westbrook), the Israelite lawgiver tradition did not emerge in a vacuum but in dialogue with the same legal-theological currents that produced Hammurabi's Shamash-commissioned stele.
 
 ## Connections claimed
 

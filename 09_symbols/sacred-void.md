@@ -128,9 +128,9 @@ tags: [symbol, cosmological, buddhist, hindu, jewish, christian, taoist, egyptia
 
 ## Identity
 
-The **Sacred Void** is one of the most universal theological symbols in world religion: the **primordial nothingness** from which the cosmos emerges, the **ultimate ground** that underlies all existence, and the **supreme mystical state** in which the self is dissolved into undifferentiated awareness. What is remarkable — and constitutes one of the most striking cross-tradition MASSIVE WINs in comparative religion — is that traditions separated by millennia and continents independently developed formal theologies of the void as the highest reality: Buddhist *śūnyatā*, Kabbalistic *Ayin/Ein Sof*, Christian apophatic theology's *via negativa*, Taoist *wu*/Wuji, Egyptian Nun, Greek Chaos, Gnostic kenoma. The formal structure is the same: ultimate reality is better approached by *negation* (saying what it is NOT) than by *predication* (saying what it IS). The Void is not the absence of God but the mode of God's presence prior to all categories.
+The **Sacred Void** is one of the most universal theological symbols in world religion: the **primordial nothingness** from which the cosmos emerges, the **ultimate ground** that underlies all existence, and the **supreme mystical state** in which the self is dissolved into undifferentiated awareness. What is remarkable — and constitutes one of the most striking cross-tradition findings in comparative religion — is that traditions separated by millennia and continents independently developed formal theologies of the void as the highest reality: Buddhist *śūnyatā*, Kabbalistic *Ayin/Ein Sof*, Christian apophatic theology's *via negativa*, Taoist *wu*/Wuji, Egyptian Nun, Greek Chaos, Gnostic kenoma. The formal structure is the same: ultimate reality is better approached by *negation* (saying what it is NOT) than by *predication* (saying what it IS). The Void is not the absence of God but the mode of God's presence prior to all categories.
 
-This is the cross-tradition MASSIVE WIN: **three of the most rigorous mystical theologies in world history — Madhyamaka Buddhism (2nd c. CE), Kabbalistic Lurianism (16th c. CE), and Christian Rhineland mysticism (13th–14th c. CE) — converge independently on the claim that the highest reality is void, non-conceptual, and accessible only by radical self-emptying.** Nagarjuna, Isaac Luria, and Meister Eckhart would have understood each other.
+This is the key cross-tradition finding: **three of the most rigorous mystical theologies in world history — Madhyamaka Buddhism (2nd c. CE), Kabbalistic Lurianism (16th c. CE), and Christian Rhineland mysticism (13th–14th c. CE) — converge independently on the claim that the highest reality is void, non-conceptual, and accessible only by radical self-emptying.** Nagarjuna, Isaac Luria, and Meister Eckhart would have understood each other.
 
 ## Earliest attestation
 
@@ -178,7 +178,7 @@ The Void appears across traditions in two distinct theological registers:
 
 **2. Mystical void** — the state accessed through contemplation: Buddhist śūnyatā, Kabbalistic Ayin, Christian apophatic darkness, Sufi fanāʾ (annihilation). The void as the highest mystical state — ultimate reality experienced directly.
 
-The cross-tradition MASSIVE WIN: both registers appear in every major tradition. The cosmogonic void and the mystical void are the same reality described from two different temporal angles — before and after the self's journey into it.
+The key cross-tradition finding: both registers appear in every major tradition. The cosmogonic void and the mystical void are the same reality described from two different temporal angles — before and after the self's journey into it.
 
 ## Contested interpretations
 

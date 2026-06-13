@@ -54,7 +54,7 @@ Their functions in Greek religion:
 - **Athletes and horsemen**: Twin patrons of competitive athletics and cavalry; depicted with white horses
 - **Gemini**: Their constellation = Gemini (the Twins); still one of the zodiac's twelve signs
 
-**MASSIVE WIN — Dioscuri → Cosmas and Damian**: The Dioscuri's cult was so deeply embedded in Mediterranean religious consciousness that as Christianity displaced the old religion, the divine twin motif was reformulated as twin Christian saints. Cosmas and Damian — brothers, physicians, martyred together, patron saints of medicine — are structurally the Dioscuri christianized: divine twins who heal, inseparable in life and death, working miracles as a pair. The feast day of Cosmas and Damian (September 26) in Rome was celebrated at the very temple of Castor and Pollux in the Roman Forum. The appropriation is not accidental.
+**Cross-tradition finding — Dioscuri → Cosmas and Damian**: The Dioscuri's cult was so deeply embedded in Mediterranean religious consciousness that as Christianity displaced the old religion, the divine twin motif was reformulated as twin Christian saints. Cosmas and Damian — brothers, physicians, martyred together, patron saints of medicine — are structurally the Dioscuri christianized: divine twins who heal, inseparable in life and death, working miracles as a pair. The feast day of Cosmas and Damian (September 26) in Rome was celebrated at the very temple of Castor and Pollux in the Roman Forum. The appropriation is not accidental.
 
 ### Romulus and Remus: The Founding Twins
 

@@ -59,7 +59,7 @@ Genealogical cosmogony is arguably the most archaic form — it appears in the e
 
 ## Cross-tradition significance
 
-**MASSIVE-win**: Genealogical cosmogony is the bridge connecting Hawaiian, Maori, Greek, Vedic, and (partially) Egyptian cosmogonies — all expressing the deep cognitive pattern that reality is structured like a family tree, that origins are generative, and that to name a thing is to place it in its genealogical web.
+**Cross-tradition finding**: Genealogical cosmogony is the bridge connecting Hawaiian, Maori, Greek, Vedic, and (partially) Egyptian cosmogonies — all expressing the deep cognitive pattern that reality is structured like a family tree, that origins are generative, and that to name a thing is to place it in its genealogical web.
 
 The Maori *whakapapa* as an epistemological system — where genealogical recitation is simultaneously philosophical analysis — has no exact Western parallel until Hegel's dialectical unfolding of the Absolute or Whitehead's process philosophy. Alpers (1964) and Beckwith (1951) both emphasize the philosophical depth being done in the form of genealogical enumeration.
 

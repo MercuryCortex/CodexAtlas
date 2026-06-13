@@ -105,10 +105,10 @@ The 700-verse philosophical-devotional poem embedded in Mahābhārata Book 6 (*B
 
 ## Cross-tradition MASSIVE WIN parallels
 
-**1. MASSIVE WIN: Arjuna-Krishna chariot dialogue ↔ Plato's Phaedrus chariot allegory — independent convergent chariot metaphysics**
+**1. Cross-tradition finding: Arjuna-Krishna chariot dialogue ↔ Plato's Phaedrus chariot allegory — independent convergent chariot metaphysics**
 Plato's *Phaedrus* (~370 BCE) presents the soul as a charioteer driving two horses (the noble and the base). The Gītā presents the body as a chariot, the senses as horses, the mind as the reins, and the Soul (with the divine Self as guide) as the rider — Krishna as the divine inner charioteer. Both use **the chariot as the structure of the soul** with the rational/divine element in the charioteer position guiding the passionate/sensory horses. No transmission is possible in either direction. This is the most precise structural parallel in classical philosophy — the same metaphor, the same mapping, in Greek and Sanskrit independently.
 
-**2. MASSIVE WIN: Krishna's theophany (Ch. 11 Viśvarūpa) ↔ Ezekiel's Merkavah ↔ Isaiah 6 ↔ Revelation 4 — the divine-throne vision universal**
+**2. Cross-tradition finding: Krishna's theophany (Ch. 11 Viśvarūpa) ↔ Ezekiel's Merkavah ↔ Isaiah 6 ↔ Revelation 4 — the divine-throne vision universal**
 The Viśvarūpa is a divine self-revelation of overwhelming, terrifying totality — the human observer sees the divine in its true cosmic magnitude, is prostrated, and requires divine reassurance. The grammar is identical across traditions:
 - **Isaiah 6** (~-740 BCE): "I saw the Lord seated on a high and lofty throne... seraphim crying 'Holy, Holy, Holy'" — terrifying divine majesty; Isaiah prostrated; divine reassurance + commissioning
 - **Ezekiel 1** (~-593 BCE): the Merkavah chariot-throne — four living creatures, wheels within wheels, crystal vault, fire — overwhelming divine form; Ezekiel falls on his face

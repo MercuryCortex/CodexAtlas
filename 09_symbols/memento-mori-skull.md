@@ -177,7 +177,7 @@ In Freemasonry's 3rd degree (Master Mason), the initiate spends time before the 
 
 The candidate is instructed to write their last will and testament, meditating on what they leave behind as they "die" to their profane identity and are "raised" as a Master Mason in the subsequent ceremony. The skull is the *memento mori* embedded at the center of initiatory ritual.
 
-The MASSIVE WIN: the skull functions identically in the Masonic Chamber of Reflection and the Tibetan Tantric charnel-ground practice:
+The key finding: the skull functions identically in the Masonic Chamber of Reflection and the Tibetan Tantric charnel-ground practice:
 - Both place the skull at the threshold of initiation
 - Both frame death-confrontation as prerequisite to new knowledge
 - Both are framed as *death* of a lesser self and *rebirth* of a higher one

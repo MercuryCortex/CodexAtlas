@@ -58,7 +58,7 @@ The complete eschatological narrative, drawn primarily from *Völuspá* (Poetic 
 
 ## Cross-tradition pattern
 
-**MASSIVE WIN — oldest Indo-European apocalyptic:** Ragnarök is almost certainly older than the Norse literary sources that preserve it (the Poetic Edda was composed ~900–1100 CE; written down ~1270). Its structural parallels with other Indo-European eschatologies strongly suggest a Proto-Indo-European origin.
+**Cross-tradition finding — oldest Indo-European apocalyptic:** Ragnarök is almost certainly older than the Norse literary sources that preserve it (the Poetic Edda was composed ~900–1100 CE; written down ~1270). Its structural parallels with other Indo-European eschatologies strongly suggest a Proto-Indo-European origin.
 
 **Zoroastrian *Frashokereti*:** The structural parallel with [[frashokereti-cosmic-renovation]] is the most direct and theologically significant. Both involve: a final battle between cosmic forces; specific deity-demon matchups with predetermined outcomes; a period of world-dissolution; and a renewal/renovation of the world. The Zoroastrian version has the good god winning; Ragnarök has the gods and their adversaries destroying each other. Both traditions are Indo-Iranian and Indo-European respectively — this may reflect a genuine shared ancestral eschatological template with diverging theological development.
 

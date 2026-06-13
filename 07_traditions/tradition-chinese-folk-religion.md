@@ -65,7 +65,7 @@ The most distinctive structural feature of Chinese folk religion: **the cosmos i
 
 **The bureaucratic logic:** gods are appointed by the Jade Emperor, serve their function, and are accountable. A god who fails his constituency can be dismissed; a successful local deity may be promoted to a wider jurisdiction. This is documented: the Jade Emperor himself was promoted from a lesser deity in historical Chinese religious texts. The system is inherently syncretic — new deities enter through imperial appointment.
 
-**MASSIVE WIN:** This is the only major world religion to organize its pantheon on an explicitly bureaucratic model. It mirrors and legitimizes the imperial governance structure: the same logic of hierarchical accountability, imperial decree, and merit-based promotion operates in both the celestial and terrestrial realms. Weber (1951) recognized this as a unique case of religious-political homology.
+**Cross-tradition finding:** This is the only major world religion to organize its pantheon on an explicitly bureaucratic model. It mirrors and legitimizes the imperial governance structure: the same logic of hierarchical accountability, imperial decree, and merit-based promotion operates in both the celestial and terrestrial realms. Weber (1951) recognized this as a unique case of religious-political homology.
 
 ---
 

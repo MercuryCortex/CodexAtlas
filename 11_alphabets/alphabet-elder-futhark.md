@@ -80,7 +80,7 @@ In Germanic tradition, the god *suffers* for writing. The script is the prize of
 
 3. **The structure parallels the shamanic initiatory ordeal.** Comparative religion (Mircea Eliade, *Shamanism: Archaic Techniques of Ecstasy*, 1951) identified the widespread shamanic pattern: the candidate must undergo a symbolic death (often hanging, drowning, or burial), be dismembered or transformed in the underworld, and emerge reconstituted with new power. Odin's runic ordeal is this pattern exactly. Runes = shamanic knowledge obtained through death-and-return.
 
-**Cross-tradition MASSIVE WIN:** The existing pattern `odin-christ-prometheus-shaman` in patterns.js captures part of this. All four traditions (Odin on Yggdrasil, Christ on the Cross, Prometheus on the rock, shamanic initiation) share the structure of divine suffering on a vertical structure to obtain or transmit cosmic knowledge. What is unique to the runic case is that the *product* of the ordeal is a writing system. The alphabet is obtained through death.
+**Cross-tradition finding:** The existing pattern `odin-christ-prometheus-shaman` in patterns.js captures part of this. All four traditions (Odin on Yggdrasil, Christ on the Cross, Prometheus on the rock, shamanic initiation) share the structure of divine suffering on a vertical structure to obtain or transmit cosmic knowledge. What is unique to the runic case is that the *product* of the ordeal is a writing system. The alphabet is obtained through death.
 
 ## The Three Aettir — Cosmic Organization Encoded in the Alphabet
 
@@ -116,7 +116,7 @@ The runic magical-instrument function is not unique — it is the dominant mode 
 - **Sanskrit**: Yantra inscriptions — sacred diagrams incorporating seed syllables at precise geometric positions to create physical fields of sacred force.
 - **Egyptian**: Amulets with hieroglyphic inscriptions (ankh, wadjet-eye, djed-pillar) deployed as protective objects; the *per-ankh* (house of life) as a scriptorium where writing sacred texts was itself a magical-cosmic act.
 
-**MASSIVE WIN pattern:** Every major pre-modern script tradition treats letters as operative tools — things that *do* things. Ferdinand de Saussure's "arbitrary sign" theory (1916) is the first formal theory of language that strips letters of operative power and asserts the sign-signified relationship is purely conventional. Every pre-modern literate tradition agrees that letters ARE things, not representations of things. The 20th century scientific consensus on language is the outlier, not the rule. See patterns.js entry `operative-writing-pattern`.
+**Cross-tradition finding:** Every major pre-modern script tradition treats letters as operative tools — things that *do* things. Ferdinand de Saussure's "arbitrary sign" theory (1916) is the first formal theory of language that strips letters of operative power and asserts the sign-signified relationship is purely conventional. Every pre-modern literate tradition agrees that letters ARE things, not representations of things. The 20th century scientific consensus on language is the outlier, not the rule. See patterns.js entry `operative-writing-pattern`.
 
 ## Connections
 

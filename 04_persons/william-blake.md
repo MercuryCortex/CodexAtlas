@@ -92,7 +92,7 @@ Blake created an original mythology that is simultaneously a cosmogony, a theodi
 
 This is the [[adam-kadmon]] tradition in Romantic disguise. Kathleen Raine (1968) demonstrated that Blake derived the Albion concept from Thomas Taylor's Neoplatonic translations and from the Kabbalistic tradition he received through Jacob Boehme. But Blake radicalized it: in the Kabbalistic tradition, Adam Kadmon falls into the broken vessels (*shevirat ha-kelim*); in Blake's tradition, Albion falls into the sleep of materialism and self-enclosure. The restoration of Albion (*Jerusalem*) is the cosmic tikkun.
 
-**MASSIVE WIN**: Albion / Adam Kadmon / Gnostic Anthropos / Vedic Purusha / Zoroastrian Gayōmart / Paul's "Body of Christ" — the cross-tradition claim that **the cosmos has a human form**, and that the restoration of cosmic wholeness is the same event as the restoration of the primordial Human. See [[anthropos-myth]].
+**Cross-tradition finding**: Albion / Adam Kadmon / Gnostic Anthropos / Vedic Purusha / Zoroastrian Gayōmart / Paul's "Body of Christ" — the cross-tradition claim that **the cosmos has a human form**, and that the restoration of cosmic wholeness is the same event as the restoration of the primordial Human. See [[anthropos-myth]].
 
 ### Urizen — the Demiurge (= Gnostic Yaldabaoth / Plato's Demiurge inverted)
 **Urizen** (pun: "Your Reason" + "Horizon") is Blake's principal antagonist — the god of reason, law, measurement, and abstraction. He is the fallen aspect of Albion who has separated himself from the other Zoas and attempted to rule alone. Urizen *creates* the fallen material world as an act of self-imposed limitation:
@@ -147,7 +147,7 @@ Blake arrived at the Gnostic cosmogony, the Kabbalistic divine-exile narrative, 
 - The Four Zoas' dissociation = shevirat ha-kelim (the shattering of the vessels)
 - The Four Zoas' reintegration into Albion = tikkun / apokatastasis (cosmic restoration)
 
-The fact that a London engraver in 1800, working from Boehme and the KJV, independently reconstructed a myth structurally identical to the Jewish-Gnostic tradition of 2nd-century Alexandria — *this* is the MASSIVE WIN. It suggests these are not arbitrary cultural constructs but deep mappings of human spiritual experience.
+The fact that a London engraver in 1800, working from Boehme and the KJV, independently reconstructed a myth structurally identical to the Jewish-Gnostic tradition of 2nd-century Alexandria — *this* is the key finding. It suggests these are not arbitrary cultural constructs but deep mappings of human spiritual experience.
 
 ---
 

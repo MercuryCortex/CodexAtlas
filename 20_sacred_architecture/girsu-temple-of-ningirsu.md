@@ -173,7 +173,7 @@ The parallel structure is striking:
 
 **Either the Israelite narrative is drawing from a shared West Asian temple-building genre of which Gudea is the principal extant ancestor, or both descend from a common deeper source.** Hurowitz's monograph documents this point-by-point with sufficient evidential weight that the parallel is now **mainstream consensus in biblical studies**.
 
-The MASSIVE WIN here is that **the Solomon narrative — one of the foundational texts of Western religious identity — is not a unique theological invention but the Israelite instance of an architectural-theological literary genre that is well-attested across the West Asian temple-building tradition for over a thousand years before Solomon**. The Eninnu is the genre's best-preserved earlier exemplar.
+The key finding here is that **the Solomon narrative — one of the foundational texts of Western religious identity — is not a unique theological invention but the Israelite instance of an architectural-theological literary genre that is well-attested across the West Asian temple-building tradition for over a thousand years before Solomon**. The Eninnu is the genre's best-preserved earlier exemplar.
 
 This places the Solomon temple-build narrative in the same family as Gudea's Eninnu, Tukulti-Ninurta's Assur temple, Esarhaddon's restoration of Babylon, Nebuchadnezzar II's Etemenanki rebuild, and the broader Mesopotamian-and-Levantine **royal-builder-of-the-god's-house** tradition. The shared West Asian theology of kingship-as-temple-building is one of the most consequential cross-tradition continuities in the religious-architectural record.
 

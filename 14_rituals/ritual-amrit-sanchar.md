@@ -52,7 +52,7 @@ The reversal — Guru initiating the Five, then being initiated by the Five — 
 
 ## Cross-Tradition Connections: The Initiatory Liquid
 
-**MASSIVE WIN:** The same deep structure — a specific liquid transmits membership in the sacred community — appears across five major traditions with no documented borrowing:
+**Cross-tradition finding:** The same deep structure — a specific liquid transmits membership in the sacred community — appears across five major traditions with no documented borrowing:
 
 | Tradition | Ritual | Liquid | Agent |
 |---|---|---|---|

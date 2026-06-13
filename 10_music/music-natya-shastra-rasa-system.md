@@ -121,7 +121,7 @@ When rasa is successfully evoked in performance, the audience's individual emoti
 
 Abhinavagupta locates this in Kashmir Shaivism: the ground state of all rasa is *Śānta* (peace) because the ground of all consciousness is Shiva-consciousness — pure, undivided awareness. The ninth rasa is not another emotion; it is what consciousness *is* when the other eight emotions have dissolved back into their source.
 
-**Massive Win**: This means that successful music performance — raga played correctly, at the correct time, in the correct rasa — is a technology of liberation. Not a path to liberation, not a symbol of liberation: an actual temporary realization of the liberated state. This is structurally identical to Sufi *sama* (the claim that music in the correct context directly produces *fana*, ego-dissolution) and to Christian mystical theology's claim that liturgical music participates in divine praise rather than merely representing it.
+**Cross-tradition finding**: This means that successful music performance — raga played correctly, at the correct time, in the correct rasa — is a technology of liberation. Not a path to liberation, not a symbol of liberation: an actual temporary realization of the liberated state. This is structurally identical to Sufi *sama* (the claim that music in the correct context directly produces *fana*, ego-dissolution) and to Christian mystical theology's claim that liturgical music participates in divine praise rather than merely representing it.
 
 ## The Comparative Rasa-Ethos Table
 

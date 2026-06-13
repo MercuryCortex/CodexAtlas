@@ -142,7 +142,7 @@ Aulén's *Christus Victor* (1931) reframes the typology and recovers the model f
 
 ## Cross-tradition positioning
 
-**MASSIVE-WIN parallel — Zoroastrian Saoshyant + Frashokereti**: the Christus-Victor cosmic-warfare framing has its closest structural analogue in the Zoroastrian eschatological-defeat-of-Angra-Mainyu by [[saoshyant]] / Astvat-ereta inaugurating the [[doctrine-frashokereti]]. Cohn 1993 documents the Persian-period transmission channels into Second-Temple Judaism + early Christianity. The cosmic-dualism + final-victory schema is structurally Iranian; Christianity adopts and Christologizes the template. The Christus-Victor model preserves this Iranian-substrate more faithfully than any other Western soteriology.
+**Cross-tradition parallel — Zoroastrian Saoshyant + Frashokereti**: the Christus-Victor cosmic-warfare framing has its closest structural analogue in the Zoroastrian eschatological-defeat-of-Angra-Mainyu by [[saoshyant]] / Astvat-ereta inaugurating the [[doctrine-frashokereti]]. Cohn 1993 documents the Persian-period transmission channels into Second-Temple Judaism + early Christianity. The cosmic-dualism + final-victory schema is structurally Iranian; Christianity adopts and Christologizes the template. The Christus-Victor model preserves this Iranian-substrate more faithfully than any other Western soteriology.
 
 **vs. Anselmian satisfaction**: see [[doctrine-atonement-substitutionary-anselmian]] — the displacement is the principal hinge of Western atonement-theology.
 

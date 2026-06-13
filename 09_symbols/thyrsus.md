@@ -97,7 +97,7 @@ The thyrsus is the **carried-staff** of [[dionysus]] and his cult-followers (mae
 ### Christian appropriation context
 The thyrsus does **NOT** acquire direct Christian iconographic-appropriation in the way the [[phoenix-bennu]] or [[halo-nimbus]] do. **This is itself theologically significant**: Christianity systematically *resisted* Dionysian iconographic borrowing in a way it did not resist Sol-Invictus or phoenix-symbolism. The Bacchic-mystery-cult was too obvious a competitor; absorbing its specific ritual-implements would have been theologically untenable. Patristic polemic against Bacchic religion (Clement *Protrepticus* 2 attacks Bacchic mysteries by name) keeps the thyrsus on the *outside* of Christian iconographic vocabulary.
 
-**The MASSIVE-win edge here is the structural-thematic parallel**, not iconographic transmission:
+**The key edge here is the structural-thematic parallel**, not iconographic transmission:
 
 1. **Thyrsus + wine + vine = Bacchic Eucharistic-pattern.** The Dionysian ritual-meal-with-wine-and-thyrsus is the **principal pagan-mystery-cult Eucharistic-parallel** that Christianity had to differentiate itself from. **Justin Martyr** *1 Apology* 66 and **Clement of Alexandria** *Protrepticus* 2 explicitly polemicize against the Bacchic-Eucharistic-parallel.
 

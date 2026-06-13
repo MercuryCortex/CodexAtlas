@@ -85,7 +85,7 @@ A **maritime branch** developed by the Hellenistic and Roman periods, sailing fr
 
 ## Cultural and religious transmission carried
 
-This route is **the principal cluster-1 MASSIVE-WIN** for the lens: **trade-as-theology-transport** in its most demonstrable form.
+This route is **the principal cluster-1 cross-tradition finding** for the lens: **trade-as-theology-transport** in its most demonstrable form.
 
 **Frankincense and myrrh enter the Hebrew Bible's ritual code as imports along this route.** The Tabernacle incense formulation in [[document-exodus]] 30:34-38 specifies *levonah* (frankincense — Hebrew cognate of Arabic *lubān*, "milk", from the resin's appearance) as one of four ingredients. The Temple offerings in [[document-leviticus]] include frankincense on the showbread and the grain offerings. The wealth of the Sabaean queen (the **Queen of Sheba** of [[phase-2-034-books-of-kings|1 Kings]] 10:1-13 and [[document-2-chronicles]] 9) is grounded in the same incense economy; the gifts she brings Solomon — "spices, and gold, and precious stones" — are the literal cargo of this route. The very motif of *gold-frankincense-myrrh* in the Magi narrative of [[phase-3-017-gospel-of-matthew|Matthew]] 2:11 is **a précis of the high-value cargo of the Incense Route**: the Magi (Greek *magoi*, Persian/Median priests) bring exactly the three commodities that this trade defines.
 

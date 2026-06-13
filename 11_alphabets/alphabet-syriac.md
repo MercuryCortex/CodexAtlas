@@ -90,7 +90,7 @@ The geographic reach of Syriac Christianity before 1000 CE is the most extraordi
 
 The **Nestorian Stone** (大秦景教流行中国碑, "Stele on the Spread of the Luminous Religion of Daqin in China," 781 CE) commemorates 150 years of Nestorian Christianity in China. It is a 9-foot stone stele, bilingual in Chinese and Syriac, recording in precise theological language (using Buddhist and Daoist vocabulary in Chinese) the core claims of Nestorian Christianity. It was erected in 781 CE during a period of relative Tang tolerance for foreign religions. Following the Tang Huichang Suppression of foreign religions (845 CE), it was buried — and remained buried until its rediscovery in 1625, when Jesuit missionaries recognized its Christian content and were astonished to find evidence of Chinese Christianity 1,000 years before them.
 
-**MASSIVE WIN — The Longest Documented Graphic Transmission Chain in Human History**:
+**Cross-tradition finding — The Longest Documented Graphic Transmission Chain in Human History**:
 
 ```
 Egyptian hieroglyphs (c. 3200 BCE)

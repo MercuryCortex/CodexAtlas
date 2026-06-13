@@ -139,7 +139,7 @@ Chinese Huayan (Fazang, Chengguan 7th-8th c.) and Japanese Kegon develop the Dha
 
 The Trikāya is the **central Mahāyāna comparison-pair node** for the Atlas's triadic-divinity cluster.
 
-**MASSIVE-WIN parallel — Christian Trinity (Nicene)**: the principal comparative-theology topic in Buddhist-Christian dialogue since Lai 1980s + Williams 1989. The classical mapping:
+**Cross-tradition parallel — Christian Trinity (Nicene)**: the principal comparative-theology topic in Buddhist-Christian dialogue since Lai 1980s + Williams 1989. The classical mapping:
 
 | Christian Trinity | Buddhist Trikāya |
 |---|---|

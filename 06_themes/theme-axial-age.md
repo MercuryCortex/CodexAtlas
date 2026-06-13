@@ -118,9 +118,9 @@ This is why the Axial Age traditions are *still* the living religions of the wor
 
 ## MASSIVE WIN: The Axial Age as the Meta-Framework for Codex Atlas
 
-The Axial Age thesis is the **organizing lens** for a large portion of Codex Atlas cross-tradition MASSIVE WINs. The structural parallels noted throughout the Atlas — between Greek logos and Chinese Dao, between Zoroastrian asha and Hebrew tzedek, between Buddhist nirvana and Upanishadic moksha, between the Prophets' ethical monotheism and Plato's Form of the Good — are not accidents. They are products of the same cognitive-spiritual breakthrough occurring in parallel across Old World civilizations.
+The Axial Age thesis is the **organizing lens** for a large portion of Codex Atlas cross-tradition findings. The structural parallels noted throughout the Atlas — between Greek logos and Chinese Dao, between Zoroastrian asha and Hebrew tzedek, between Buddhist nirvana and Upanishadic moksha, between the Prophets' ethical monotheism and Plato's Form of the Good — are not accidents. They are products of the same cognitive-spiritual breakthrough occurring in parallel across Old World civilizations.
 
-Specific MASSIVE WINs that the Axial Age framework explains:
+Specific cross-tradition findings that the Axial Age framework explains:
 - **[[logos-cosmic-reason]] ↔ Chinese Dao**: Heraclitean logos (rational principle governing all) and Laozi's Dao (the unnamed source underlying all) are structurally near-identical propositions from independent traditions within the same Axial period
 - **[[theme-zoroastrian-cosmogony]] ↔ Platonic demiurge**: Both posit a structure in which a good creative power orders matter against a resistant principle; both emerged within a century of each other in different civilizations
 - **[[frashokereti-cosmic-renovation]] ↔ Platonic anamnesis**: Both posit that the final state of things is a return to original perfection; both emerged in the Axial window

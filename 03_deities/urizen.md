@@ -94,7 +94,7 @@ The result is structurally identical to the Gnostic Yaldabaoth:
 | Imprisons humanity in bodies of law and reason | Imprisons divine sparks in material bodies |
 | Los (Blake's counter-figure) works to liberate | Christ / Sophia descend to liberate the pneumatics |
 
-Blake did not *copy* the Gnostic myth. He *reconstructed* it from first principles, working from the Bible, Milton, Boehme, and his own visionary logic. That the results are structurally identical is the MASSIVE WIN — it suggests both Blake and the 2nd-century Gnostics were independently mapping the same deep pattern of spiritual experience.
+Blake did not *copy* the Gnostic myth. He *reconstructed* it from first principles, working from the Bible, Milton, Boehme, and his own visionary logic. That the results are structurally identical is the key finding — it suggests both Blake and the 2nd-century Gnostics were independently mapping the same deep pattern of spiritual experience.
 
 ---
 

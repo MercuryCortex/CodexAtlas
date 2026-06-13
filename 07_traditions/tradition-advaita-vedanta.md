@@ -80,7 +80,7 @@ Advaita Vedanta ("non-dual Vedānta") is the Hindu philosophical-theological sch
 - vs. [[tradition-buddhism]]: both acknowledge the conventional reality of the empirical self while holding ultimate reality to be non-personal and beyond ordinary conceptualization. Rāmānuja accused Shankara of being a disguised Buddhist; modern scholarship confirms Gaudapada's Mādhyamaka debts. Key divergence: Advaita asserts a universal ātman/Brahman identity; Buddhism denies any permanent self (*anātman*).
 - vs. [[tradition-gnosticism]]: both posit the material world as appearance veiling a deeper reality; both offer liberation via knowledge; both distinguish a cosmic ignorance-principle (Demiurge / Avidyā) from the true ground of being.
 - vs. [[tradition-hermeticism]]: the Hermetic principle "as above, so below" and the divine spark (*pneuma*) ascending to the One offers structural parallels to ātman-Brahman identity; both traditions influenced early modern comparative religion.
-- vs. [[tradition-neoplatonism]]: see MASSIVE wins above. The Plotinian One / Intellect / Soul emanation structure is the closest Western philosophical parallel to Brahman / Hiraṇyagarbha / jīva.
+- vs. [[tradition-neoplatonism]]: see the cross-tradition findings above. The Plotinian One / Intellect / Soul emanation structure is the closest Western philosophical parallel to Brahman / Hiraṇyagarbha / jīva.
 
 ## Refs
 1. Radhakrishnan, S. and Moore, C.A. (eds.) (1957). *A Source Book in Indian Philosophy*. Princeton UP.

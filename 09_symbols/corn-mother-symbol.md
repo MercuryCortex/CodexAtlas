@@ -129,7 +129,7 @@ The deification of the primary grain crop is the **single most universal form of
 
 ## The Eucharist as Grain-Deity Theology
 
-The most important MASSIVE WIN in this node: the Christian Eucharist is the continuation of grain-deity theology within Christianity.
+The most important cross-tradition finding in this node: the Christian Eucharist is the continuation of grain-deity theology within Christianity.
 
 Paul makes the logic explicit in 1 Corinthians 15:36–38: "What you sow does not come to life unless it dies... What you sow is not the body that is to be, but a bare grain." He is not using an analogy — he is invoking the universally available theological logic of grain farming that every agricultural civilization had already theologized. Christ's self-identification as the 'bread of life' (John 6:35) and the 'grain of wheat' that must die to bear fruit (John 12:24) places him explicitly within the grain-deity tradition.
 

@@ -64,7 +64,7 @@ The Vedic **mundan** rite (child's first head shave, typically performed at age 
 
 ## Cross-tradition position
 
-**MASSIVE-WIN — head-hair as universal religious-status marker**: the cross-tradition prevalence of tonsure makes it one of the strongest examples of **convergent religious-bodily practice** in human cultures. The convergence is striking because:
+**Cross-tradition finding — head-hair as a universal religious-status marker**: the cross-tradition prevalence of tonsure makes it one of the strongest examples of **convergent religious-bodily practice** in human cultures. The convergence is striking because:
 - The practice arose independently in geographically + chronologically distant traditions
 - No single transmission can explain (Egyptian priestly head-shaving + Vedic mundan + Buddhist shave + Christian tonsure are not connected)
 - The underlying religious logic is similar across traditions: hair-removal as renunciation, as humility-marker, as community-membership-sign, as separation from lay-vanity

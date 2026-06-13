@@ -99,7 +99,7 @@ Women putting on tefillin became a significant **religious-feminist statement** 
 
 ## Cross-tradition position
 
-**MASSIVE-WIN — literal biblical-text-binding as Jewish distinctive**: tefillin represent one of the few major religious practices that derives from a **literal application of a biblical command**. The Deuteronomy 6:8 "bind them as a sign upon your hand" is read both:
+**Cross-tradition finding — literal biblical-text-binding as a Jewish distinctive**: tefillin represent one of the few major religious practices that derives from a **literal application of a biblical command**. The Deuteronomy 6:8 "bind them as a sign upon your hand" is read both:
 - **Metaphorically** — internalize God's words; let them shape your hand-actions + your mind-thinking
 - **Literally** — physically bind biblical text to hand + forehead
 

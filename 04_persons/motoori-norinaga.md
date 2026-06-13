@@ -47,7 +47,7 @@ Motoori Norinaga (1730–1801) is the central figure of the Edo-period *Kokugaku
 
 ## Cross-tradition position
 
-**Kokugaku and European Romanticism — structural MASSIVE WIN**
+**Kokugaku and European Romanticism — a structural cross-tradition finding**
 Norinaga's intellectual project is precisely contemporary with and structurally identical to European Romantic nativism (c. 1760–1830): both movements are *philological recovery projects* seeking to excavate an authentic national spirit from beneath cosmopolitan universalist overlay (Chinese-Buddhist rationalism in Japan; Enlightenment reason in Europe). The specific parallels:
 
 | Norinaga / Kokugaku | European Romantic Nativism |

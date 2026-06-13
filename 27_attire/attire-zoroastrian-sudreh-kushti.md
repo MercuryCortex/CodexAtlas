@@ -70,7 +70,7 @@ The kushti-kar is among the most-frequently-performed daily religious-physical o
 
 ## Cross-tradition position
 
-**MASSIVE-WIN — Indo-Iranian sacred-cord parallel**: the Zoroastrian kushti and the Hindu **yajñopavīta** (sacred thread of the dvija-castes) share structural and theological parallels striking enough that scholars debate the historical relationship:
+**Cross-tradition finding — Indo-Iranian sacred-cord parallel**: the Zoroastrian kushti and the Hindu **yajñopavīta** (sacred thread of the dvija-castes) share structural and theological parallels striking enough that scholars debate the historical relationship:
 
 - Both are **cords worn continuously** by religiously-initiated males
 - Both have **specific strand-counts** with theological-numerical significance

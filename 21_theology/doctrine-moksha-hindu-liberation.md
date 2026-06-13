@@ -138,14 +138,14 @@ The six classical Hindu darśanas + the principal Vedānta sub-schools interpret
 
 ## Cross-tradition positioning
 
-**MASSIVE-WIN parallel — Buddhist nirvāṇa**: Hindu mokṣa and Buddhist nirvāṇa emerge in the **same Gangetic-plain ascetic-renunciate context** (~-500 to -200) addressing the same shared problem: release from saṃsāra. Bronkhorst 2007 (*Greater Magadha*) makes the structural argument that both develop from a common eastern-Gangetic non-Vedic substrate. The principal asymmetries:
+**Cross-tradition parallel — Buddhist nirvāṇa**: Hindu mokṣa and Buddhist nirvāṇa emerge in the **same Gangetic-plain ascetic-renunciate context** (~-500 to -200) addressing the same shared problem: release from saṃsāra. Bronkhorst 2007 (*Greater Magadha*) makes the structural argument that both develop from a common eastern-Gangetic non-Vedic substrate. The principal asymmetries:
 
 - Mokṣa typically affirms a true-Self that is realized in liberation (ātman = Brahman; puruṣa-isolation; eternal participation).
 - Nirvāṇa explicitly *denies* the metaphysical self (anātman) and frames the goal as **cessation of craving** (taṇhā-nirodha), not realization of any positive Self-identity.
 
 The Hindu-Buddhist debate on this point is the central inter-tradition theological dispute in classical Indian philosophy (Śaṅkara vs. Buddhist Mādhyamika; Rāmānuja's critique of Advaita-Buddhist convergence).
 
-**MASSIVE-WIN parallel — Eastern Orthodox theōsis**: Advaita-mokṣa (ātman-Brahman identity-realization) and Eastern Orthodox theōsis (participation in divine nature) are the **two most-developed religious doctrines of human-divine ontological-union** as the soteric goal. Both reject the Western juridical-atonement framework. The comparative-theology project (Otto 1932; Panikkar 1979; Coward 1985) treats this as one of the deepest cross-tradition convergences in world religion.
+**Cross-tradition parallel — Eastern Orthodox theōsis**: Advaita-mokṣa (ātman-Brahman identity-realization) and Eastern Orthodox theōsis (participation in divine nature) are the **two most-developed religious doctrines of human-divine ontological-union** as the soteric goal. Both reject the Western juridical-atonement framework. The comparative-theology project (Otto 1932; Panikkar 1979; Coward 1985) treats this as one of the deepest cross-tradition convergences in world religion.
 
 **vs. Western Christian satisfaction-atonement**: mokṣa has no concept of debt-to-be-paid, no honor-of-deity-offended, no vicarious-substitution. The Hindu soteric problem is *avidyā* (ignorance) and karmic-conditioning, not legal-guilt. The mokṣa-mechanism is *jñāna* (knowledge) + ethical purification + devotional practice — *self*-transformation rather than substitutionary-payment.
 

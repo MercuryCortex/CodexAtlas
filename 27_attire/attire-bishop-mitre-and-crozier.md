@@ -53,7 +53,7 @@ The bishop's deacon traditionally hands the mitre and crozier as needed and rece
 
 ## Cross-tradition position
 
-**MASSIVE-WIN — staff + headdress as universal religious-authority insignia**: the bishop's mitre-and-crozier pair is the principal Christian instance of a near-universal cross-tradition pattern: **religious-authority figures distinguished by (a) elevated headdress + (b) carried staff**. Parallel cases:
+**Cross-tradition finding — staff + headdress as universal religious-authority insignia**: the bishop's mitre-and-crozier pair is the principal Christian instance of a near-universal cross-tradition pattern: **religious-authority figures distinguished by (a) elevated headdress + (b) carried staff**. Parallel cases:
 
 - **Pharaonic regalia** ([[pharaonic-nemes-and-uraeus]]) — nemes headdress + crook and flail (the heka + nekhakha; the crook is one of the oldest documented "shepherd-staff" sovereignty objects, ~3100 BCE)
 - **Buddhist monastic** — kashaya robe ([[kasaya-buddhist-robe]]) + alms-bowl + walking-staff (khakkhara, the "sounding staff" with metal rings)

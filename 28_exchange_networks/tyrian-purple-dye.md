@@ -99,7 +99,7 @@ The dye-industry is **structurally Phoenician**: the great producing centres are
 
 ## MASSIVE-WIN clusters
 
-This dye is the **canonical case for cluster 7** of the README MASSIVE-WIN list: *single Phoenician city's commodity monopoly produces a colour that becomes priestly-imperial across the Mediterranean for two millennia*. The chain is unbroken and visible to the present:
+This dye is the **canonical case for cluster 7** of the README cross-tradition list: *single Phoenician city's commodity monopoly produces a colour that becomes priestly-imperial across the Mediterranean for two millennia*. The chain is unbroken and visible to the present:
 
 **Phoenician dye-vat at Tyre (1500 BCE)** → **Hebrew Tabernacle *argaman* curtain** → **Roman senatorial *toga praetexta*** → **Augustan imperial purple** → **Byzantine *porphyrogenetos* nursery** → **Charlemagne's coronation robe** (Byzantine purple silk gift) → **medieval purple Gospel codices** → **Catholic cardinal's red biretta** → **modern papal liturgical dress code**
 

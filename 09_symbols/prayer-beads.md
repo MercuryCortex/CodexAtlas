@@ -90,7 +90,7 @@ tags: [symbol, cosmological, ritual-object, hindu, buddhist, catholic, islamic, 
 
 ## The documented transmission chain
 
-**MASSIVE WIN: This is one of the best-documented cross-tradition technological transmissions in religious history.**
+**Cross-tradition finding: This is one of the best-documented cross-tradition technological transmissions in religious history.**
 
 The chain: **Hindu *japa mālā*** → **Buddhist *mālā*** → (probable westward Silk Road transmission) → **Eastern Orthodox prayer rope** (*komboskini*/*chotki*) → **Catholic rosary** (*rosarium*).
 

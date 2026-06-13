@@ -167,7 +167,7 @@ William Blake's **Albion** — independently reconstructed from Boehme and the K
 - The project of *Jerusalem* is Albion's **awakening and restoration** — tikkun at cosmic scale
 - **Jerusalem** (Albion's Emanation) is the divine feminine separated from the cosmic Human — the Shekinah in exile
 
-Blake arrived at this structure through Jacob Boehme (who received Kabbalistic ideas through Christian channels) and through his own visionary logic — not through direct access to Kabbalistic texts. The structural identity with Adam Kadmon is the MASSIVE WIN.
+Blake arrived at this structure through Jacob Boehme (who received Kabbalistic ideas through Christian channels) and through his own visionary logic — not through direct access to Kabbalistic texts. The structural identity with Adam Kadmon is the key finding.
 
 ---
 

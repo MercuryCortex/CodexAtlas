@@ -71,7 +71,7 @@ When Orpheus sailed with the Argonauts, he countered the Sirens' deadly song not
 ### 3. The Descent to Hades: Music Overcomes Death
 The most theologially powerful episode: Orpheus descends to the underworld to retrieve Eurydice (his dead wife) and his music **persuades Persephone and Hades themselves**. This unprecedented event — the gods of the dead relenting — is possible because Orpheus's music operates at a level of cosmic necessity that even divine authority cannot override. He moves Hades not by argument but by beauty.
 
-The MASSIVE WIN connection: **this descent-and-return structure is the shamanic template**. Mircea Eliade's foundational comparative study of shamanism identifies the musician-shaman's journey to the underworld and return as a cross-cultural archetype spanning Siberian, Central Asian, and Amerindian traditions. Orpheus is the Greek instantiation of the shamanic initiatory descent. The music is not metaphorically the shaman's power tool — the lyre IS the axis between worlds.
+The key finding: **this descent-and-return structure is the shamanic template**. Mircea Eliade's foundational comparative study of shamanism identifies the musician-shaman's journey to the underworld and return as a cross-cultural archetype spanning Siberian, Central Asian, and Amerindian traditions. Orpheus is the Greek instantiation of the shamanic initiatory descent. The music is not metaphorically the shaman's power tool — the lyre IS the axis between worlds.
 
 ## The Orphic Hymns: Sacred Sound as Summoning
 

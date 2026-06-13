@@ -96,14 +96,14 @@ Note: these are attestations of the *hypothesis*, not of the *historical Templar
 
 ## Why this matters for the Codex Atlas wedge
 
-This is precisely the kind of cross-tradition tracing edge the Atlas was built to handle with discipline. The user's framing — *connections from Christianity back to older traditions = MASSIVE win* — applies most acutely *and most dangerously* to this hypothesis: it is the highest-prize possible Christianity → Gnostic → Mandaean → Egyptian-or-Levantine-pre-Christian transmission edge in the medieval Latin record, AND it is also the most documented case of historical-imagination-running-ahead-of-evidence.
+This is precisely the kind of cross-tradition tracing edge the Atlas was built to handle with discipline. The user's framing — *connections from Christianity back to older traditions are the prize* — applies most acutely *and most dangerously* to this hypothesis: it is the highest-prize possible Christianity → Gnostic → Mandaean → Egyptian-or-Levantine-pre-Christian transmission edge in the medieval Latin record, AND it is also the most documented case of historical-imagination-running-ahead-of-evidence.
 
 The honest handling:
 - **The Outremer contact zone is real** — and is the right *historical* place to look for medieval-Latin → Eastern-Christian-and-pre-Christian transmission.
 - **The Templars *as such* are not the documented transmission channel** — but they are the institutional artifact that *occupied* the contact zone for two centuries.
 - **The post-1312 reception of the Templar legend is the actual evidentiary site of "Templar-Gnostic transmission"** — the transmission happens *in the imagination of 18th-21st-c. esotericists*, who themselves become the channels that move pseudo-Gnostic ideas back into modern Western religious thought.
 
-So: a MASSIVE-win edge for the **reception-history** branch of the Atlas (post-1700 esotericism); a more limited but real edge for the **Outremer contact-zone** as a historical-geographic fact; and a *cautionary node* against treating the medieval 12th-13th-c. Templars as themselves Gnostic.
+So: a major edge for the **reception-history** branch of the Atlas (post-1700 esotericism); a more limited but real edge for the **Outremer contact-zone** as a historical-geographic fact; and a *cautionary node* against treating the medieval 12th-13th-c. Templars as themselves Gnostic.
 
 ## Refs
 1. Barber, M. (2006). *The Trial of the Templars*. Cambridge UP.

@@ -69,7 +69,7 @@ The letters ARE trees. The sound value is extracted from the tree name. The lett
 
 ### The Extraordinary Parallel with Proto-Sinaitic
 
-**MASSIVE WIN:** [[proto-sinaitic]] (c. 1850 BCE, Sinai) uses the same acrophonic principle, constructed identically but independently:
+**Cross-tradition finding:** [[proto-sinaitic]] (c. 1850 BCE, Sinai) uses the same acrophonic principle, constructed identically but independently:
 
 | Proto-Sinaitic letter | Named thing | Sound value |
 |---|---|---|

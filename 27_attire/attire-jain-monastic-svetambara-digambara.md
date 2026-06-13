@@ -63,7 +63,7 @@ This female-liberation question is the deepest doctrinal divide between the two 
 
 ## Cross-tradition position
 
-**MASSIVE-WIN — clothing as doctrinal question in Jainism**: the Jain Śvetāmbara-vs-Digambara split is one of the few documented cases in any religious tradition where **clothing-or-nudity is the central doctrinal divide**. Most religious-attire variations (Sunni vs. Shi'a turbans, Catholic vs. Orthodox cassocks, Theravāda vs. Mahāyāna robes) involve color + form-style + sub-lineage marking — not the fundamental yes/no question of clothing-at-all.
+**Cross-tradition finding — clothing as a doctrinal question in Jainism**: the Jain Śvetāmbara-vs-Digambara split is one of the few documented cases in any religious tradition where **clothing-or-nudity is the central doctrinal divide**. Most religious-attire variations (Sunni vs. Shi'a turbans, Catholic vs. Orthodox cassocks, Theravāda vs. Mahāyāna robes) involve color + form-style + sub-lineage marking — not the fundamental yes/no question of clothing-at-all.
 
 The closest cross-tradition parallels:
 - **Naga sādhus** ([[sannyasin-saffron]] sub-traditions) in Hindu monasticism — the militant-ascetic Naga akhada lineage practices full or near-full nudity, especially at the Kumbh Mela bathing rites. Naga practice is paralleled by but distinct from Digambara practice; Naga is one of multiple Hindu monastic sub-types whereas Digambara is one of two Jain main types.

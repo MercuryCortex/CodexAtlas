@@ -57,7 +57,7 @@ In Buddhist cosmography, the 31 realms of existence are arranged vertically arou
 
 In Jain cosmography, the equivalent mountain is *Meru* or *Sumeru* as well, though the specific cosmographic details differ from Hindu and Buddhist accounts. All three traditions independently converged on the same mountain name and central position, suggesting a common archaic Indic cosmographic tradition.
 
-**MASSIVE WIN — Stupa as Meru**: The [[stupa]] is the architectural realization of Mount Meru. The hemispherical dome (*anda* = "egg/womb") = the mountain itself; the *harmika* (square railing at the summit) = the divine palace at the peak; the central pole (*yasti*) = the axis mundi running through Meru's core; the tiered umbrella-discs (*chattravali*) = the successive divine realms above. Every stupa built across Asia for 2,500 years encodes this cosmography: to circumambulate a stupa is to ritually circumambulate Mount Meru.
+**Cross-tradition finding — Stupa as Meru**: The [[stupa]] is the architectural realization of Mount Meru. The hemispherical dome (*anda* = "egg/womb") = the mountain itself; the *harmika* (square railing at the summit) = the divine palace at the peak; the central pole (*yasti*) = the axis mundi running through Meru's core; the tiered umbrella-discs (*chattravali*) = the successive divine realms above. Every stupa built across Asia for 2,500 years encodes this cosmography: to circumambulate a stupa is to ritually circumambulate Mount Meru.
 
 ### Mount Olympus (Greek)
 

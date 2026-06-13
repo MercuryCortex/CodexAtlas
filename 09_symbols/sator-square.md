@@ -111,7 +111,7 @@ The SATOR square's most remarkable feature is its documented appearance across t
 - **Ethiopian Orthodox Christianity** — appears in the *ketab* (protective amulet) tradition, part of the broader Ethiopian magical compendium (*mäzgäbä serat*).
 - **Medieval Western Europe** (England, Germany, Switzerland, France, Hungary) — inscribed on church beams, domestic timbers, and amulets from at least the 8th c. CE.
 
-**MASSIVE WIN:** The same palindrome square crosses pagan Roman → possibly pre-Nicene Christian → Coptic → Ethiopian Orthodox → medieval European Catholic; this single word arrangement is documented in traditions spanning 2,000 years across four continents. No other Latin magical formula has this distribution.
+**Cross-tradition finding:** The same palindrome square crosses pagan Roman → possibly pre-Nicene Christian → Coptic → Ethiopian Orthodox → medieval European Catholic; this single word arrangement is documented in traditions spanning 2,000 years across four continents. No other Latin magical formula has this distribution.
 
 The **word-square form** as a category connects to the broader pan-civilizational tradition of visual-textual magical instruments:
 - **Hebrew gematria / *gematria* amulets** — letter arrangements as sacred numerical-magical matrices.

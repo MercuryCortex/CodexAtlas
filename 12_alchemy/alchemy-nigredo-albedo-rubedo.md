@@ -83,7 +83,7 @@ The final stage: the white is transformed by the addition of fire into the red. 
 
 In soul-alchemy reading: the completion of individuation (Jung), the state of *theosis* (deification) in Christian mysticism, the full integration of the individual with the divine principle. The Rubedo is the return — but a return to the starting point transformed, now gold rather than lead, now conscious of its own nature.
 
-**MASSIVE WIN: The Universal Death-Rebirth Pattern**
+**Cross-tradition finding: The Universal Death-Rebirth Pattern**
 
 The Nigredo-Albedo-Rubedo sequence is the alchemical formulation of the universal initiatory pattern identified by Arnold van Gennep (1909) as the structure of all rites of passage: **separation** (from the ordinary world) → **liminality** (the threshold state, between worlds) → **reincorporation** (return, transformed). This three-stage pattern appears in every context where human transformation is intentionally cultivated:
 

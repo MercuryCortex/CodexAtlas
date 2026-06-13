@@ -134,7 +134,7 @@ Five attested variants: Ezekiel-chariot (biblical), Hekhalot-Merkavah (1st–7th
 ## Refs
 
 1. Gershom Scholem, *Major Trends in Jewish Mysticism* (Schocken Books, 1946). Tier 1 — load-bearing.
-2. David J. Halperin, *The Faces of the Chariot* (Mohr Siebeck, 1988). Tier 1 — load-bearing; primary source for the hayyot → Tetramorph → astrology MASSIVE WIN.
+2. David J. Halperin, *The Faces of the Chariot* (Mohr Siebeck, 1988). Tier 1 — load-bearing; primary source for the hayyot → Tetramorph → astrology cross-tradition finding.
 3. Ithamar Gruenwald, *Apocalyptic and Merkavah Mysticism* (Brill, 1980). Tier 1.
 4. Moshe Idel, *Kabbalah: New Perspectives* (Yale UP, 1988). Tier 1.
 5. Christopher Rowland, *The Open Heaven* (Crossroad, 1982). Tier 1.

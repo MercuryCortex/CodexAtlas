@@ -75,7 +75,7 @@ Zosimos's Gnostic theology is not peripheral to his alchemy — it IS his alchem
 
 This is the earliest fully articulated statement of **soul alchemy**: the laboratory work and the spiritual transformation are a single process with two registers, material and psychological-spiritual. The operator cannot separate them.
 
-**MASSIVE WIN: Transmutation as Salvation — Cross-Tradition**
+**Cross-tradition finding: Transmutation as Salvation**
 
 Zosimos's identification of chemical transmutation with spiritual salvation is not unique to alchemy. It is a specific formulation of the universal transformational pattern:
 

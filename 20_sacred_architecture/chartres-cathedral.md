@@ -200,7 +200,7 @@ This is **the cleanest documented religious-architectural transmission chain in 
 
 What Chartres uniquely contributes: **the three-storey elevation that becomes the canonical High Gothic form**. Notre-Dame de Paris had pioneered Gothic but in a four-storey elevation; Chartres demonstrates that the gallery-storey can be omitted and the clerestory greatly enlarged — releasing the luminous stained-glass programme that defines High Gothic.
 
-For **Christian sacred architecture broadly**, Chartres' MASSIVE WIN is the **luminous interior as Marian-theological space**:
+For **Christian sacred architecture broadly**, Chartres' standout finding is the **luminous interior as Marian-theological space**:
 - The cathedral's interior is architecturally engineered for **maximum stained-glass area**
 - The blue-of-Chartres glass produces a particular luminous-blue interior atmosphere
 - Walking through Chartres is walking through the Marian narrative AS architecture-and-light

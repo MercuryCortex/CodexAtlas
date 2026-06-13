@@ -104,7 +104,7 @@ Additional partly preserved compositions include the *Song of LAMMA*, *Song of S
 - → [[teshub]] — *features-deity*: Teshub is the cycle's victor, the storm-god who establishes permanent cosmic kingship
 - → [[kronos]] — *source-of*: the Kumarbi Cycle is the documented mythological source for the Hesiodic Kronos figure
 - → [[chaoskampf]] — *theme-of*: the Teshub combats with Hedammu and Ullikummi are core instances of the chaoskampf pattern
-- → Phoenician cosmogony of Sanchuniathon (via Philo of Byblos preserved in Eusebius's *Praeparatio Evangelica*) — *parallel-motif* / intermediary: Phoenician theogony has Elioun (Hypsistos) → Sky castrated by son Kronos-El → Demarous (Hadad). Burkert 1992 argues this is the Phoenician intermediary preserving the cycle for Archaic Greek reception; see the MASSIVE WIN section above for full transmission argument.
+- → Phoenician cosmogony of Sanchuniathon (via Philo of Byblos preserved in Eusebius's *Praeparatio Evangelica*) — *parallel-motif* / intermediary: Phoenician theogony has Elioun (Hypsistos) → Sky castrated by son Kronos-El → Demarous (Hadad). Burkert 1992 argues this is the Phoenician intermediary preserving the cycle for Archaic Greek reception; see the cross-tradition findings section above for the full transmission argument.
 
 ## MASSIVE WIN: The Bachvarova Transmission Argument — Best-Documented ANE→Greek Source Text
 

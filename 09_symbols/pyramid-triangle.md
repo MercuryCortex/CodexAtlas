@@ -134,7 +134,7 @@ The most important historiographic caution in pyramid-symbolism studies: **the p
 
 The pyramid form as "sacred mountain" is a near-universal architectural intuition — the shape of a mountain IS a triangle/pyramid, so any tradition that wants to build a sacred mountain will build a pyramid. This does not indicate Egyptian influence; it indicates that the pyramid is the natural architectural form of the mountain-as-cosmos concept.
 
-**MASSIVE WIN finding**: The one thing that IS specifically Egyptian is the **solar-ascent theology** encoded in the angle and the pyramidion — the specific religious reading of the pyramid as "petrified sunbeam allowing the dead pharaoh to ascend to Re's barque" (documented in Pyramid Texts). Every other tradition with pyramidal architecture has a *different* theology (mountain, platform for sacrifice, stupa/dharma-body, etc.). The pyramid form converges; the theology diverges. The Egyptian pyramid is theologically unique even as it shares its geometric form with the rest of the world.
+**Cross-tradition finding**: The one thing that IS specifically Egyptian is the **solar-ascent theology** encoded in the angle and the pyramidion — the specific religious reading of the pyramid as "petrified sunbeam allowing the dead pharaoh to ascend to Re's barque" (documented in Pyramid Texts). Every other tradition with pyramidal architecture has a *different* theology (mountain, platform for sacrifice, stupa/dharma-body, etc.). The pyramid form converges; the theology diverges. The Egyptian pyramid is theologically unique even as it shares its geometric form with the rest of the world.
 
 Source: Lehner, Mark. *The Complete Pyramids*. Thames & Hudson, 1997. (Tier 1)
 

@@ -122,7 +122,7 @@ The transition away from modes toward major/minor tonality was gradual and conte
 
 The Byzantine chant tradition maintained its own parallel mode system (the Octoechos, eight echoi or modes) independently of the Western Gregorian tradition, carrying the unbroken Greek practice through the Eastern church. The characteristic Byzantine practice of the **ison** — a sustained drone note held beneath the melody — is the Eastern church's equivalent of the Western modal tonal center.
 
-This makes the medieval church modes and the Byzantine ison two branches of the same ancient Greek tradition, diverged after the 4th century but sharing common roots. The ison connects to the broader cross-tradition [[music-sacred-drone]] pattern (Hindu tanpura, Tibetan singing bowls, Sufi zikr drone) — a further MASSIVE WIN: monophonic sacred chant over a sustained drone appears to be **a universal sacred-sound technology** that Christian, Hindu, Buddhist, and Sufi traditions independently discovered.
+This makes the medieval church modes and the Byzantine ison two branches of the same ancient Greek tradition, diverged after the 4th century but sharing common roots. The ison connects to the broader cross-tradition [[music-sacred-drone]] pattern (Hindu tanpura, Tibetan singing bowls, Sufi zikr drone) — a further cross-tradition finding: monophonic sacred chant over a sustained drone appears to be **a universal sacred-sound technology** that Christian, Hindu, Buddhist, and Sufi traditions independently discovered.
 
 ## Equal Temperament and What Was Lost
 

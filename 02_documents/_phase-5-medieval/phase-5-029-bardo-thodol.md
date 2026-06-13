@@ -121,7 +121,7 @@ The Evans-Wentz 1927 edition explicitly named the parallel in the title — *The
 
 ### What makes the structural parallel significant
 
-The convergence is not coincidental in the diffusionist sense (the texts did not influence each other); it is convergent in the structural sense: the same existential problem (the dying person does not know the post-mortem terrain; the stakes of wrong navigation are permanent) generates the same genre of solution (a written/recited text providing route-finding knowledge). The genre is the solution to the universal problem of dying-without-a-map. That three major civilizations arrived at this genre independently is itself the MASSIVE WIN finding — it means the problem is universal enough to generate the same answer across unconnected traditions.
+The convergence is not coincidental in the diffusionist sense (the texts did not influence each other); it is convergent in the structural sense: the same existential problem (the dying person does not know the post-mortem terrain; the stakes of wrong navigation are permanent) generates the same genre of solution (a written/recited text providing route-finding knowledge). The genre is the solution to the universal problem of dying-without-a-map. That three major civilizations arrived at this genre independently is itself the key cross-tradition finding — it means the problem is universal enough to generate the same answer across unconnected traditions.
 
 ### Connection to [[theme-graduated-afterlife]]: most explicit articulation
 

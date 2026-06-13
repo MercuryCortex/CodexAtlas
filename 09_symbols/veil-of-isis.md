@@ -121,7 +121,7 @@ See YAML for sub-forms. The core distinction is:
 
 ## Cross-family appearance
 
-**MASSIVE WIN — the veiled sacred as universal structure**
+**Cross-tradition finding — the veiled sacred as universal structure**
 
 The Veil of Isis is the Western Hermetic form of a universal metaphysical principle: ultimate reality is veiled; initiation or philosophical practice is the process of unveiling. This pattern appears independently in at least four major traditions:
 

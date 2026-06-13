@@ -105,7 +105,7 @@ The double-headed eagle is a theriomorphic symbol depicting a single eagle body 
 
 ## Cross-family appearance
 
-The double-headed eagle uniquely unites the following traditions — a MASSIVE WIN for cross-tradition mapping:
+The double-headed eagle uniquely unites the following traditions — a major finding for cross-tradition mapping:
 
 | Tradition | Date | Context | Notes |
 |---|---|---|---|

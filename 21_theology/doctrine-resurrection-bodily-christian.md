@@ -152,7 +152,7 @@ Bynum 1995 documents the medieval-Western obsession with **material-continuity**
 
 ## Cross-tradition positioning
 
-**MASSIVE-WIN parallel — Zoroastrian Frashokereti**: see above. The principal Iranian inheritance.
+**Cross-tradition parallel — Zoroastrian Frashokereti**: see above. The principal Iranian inheritance.
 
 **Polemic against Hindu/Buddhist reincarnation**: the Christian doctrine **explicitly rejects** the cyclic-rebirth schema. Christian eschatology is **linear** (one embodied life → one death → one bodily resurrection → one judgment → eternal state), against Indic eschatology's **cyclic** (saṃsāra → liberation). The 553 Constantinople II condemnation of Origenist pre-existence-of-souls forecloses the Christian-internal possibility of metempsychosis. See `doctrine-reincarnation-samsara` for the cross-tradition opposition. The early Church Fathers (Tertullian, Augustine) explicitly polemicize against Pythagorean-Platonic metempsychosis as incompatible with biblical bodily-resurrection.
 

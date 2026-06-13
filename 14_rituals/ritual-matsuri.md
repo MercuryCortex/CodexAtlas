@@ -54,7 +54,7 @@ This has enormous theological implications. Unlike traditions where the divine i
 
 ## Cross-Tradition Connections: The Processional Portable Deity
 
-**MASSIVE WIN:** The portable divine container — a consecrated vessel that carries the divine presence through human space, transforming the space it passes through — is one of the world's most universal ritual technologies. Five traditions developed this independently:
+**Cross-tradition finding:** The portable divine container — a consecrated vessel that carries the divine presence through human space, transforming the space it passes through — is one of the world's most universal ritual technologies. Five traditions developed this independently:
 
 | Tradition | Container | Divine content | Festival context |
 |---|---|---|---|

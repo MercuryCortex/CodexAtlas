@@ -103,7 +103,7 @@ Plato's case in *Republic* III is the first systematic argument for state music 
 3. Therefore: ban the modes that imitate bad character.
 4. Preserve only Dorian (martial virtue) and Phrygian (religious courage).
 
-The MASSIVE WIN here: **this is the same logic later used by the Church Fathers to regulate Christian liturgical music.** Augustine (*Confessions* X.33) is tormented by whether beautiful music corrupts piety. Pope Gregory I's codification of modes for liturgical use is Plato's argument applied to Christian practice. The Western church inherited not just the modes themselves but the *ethical framework* for policing them.
+The key finding here: **this is the same logic later used by the Church Fathers to regulate Christian liturgical music.** Augustine (*Confessions* X.33) is tormented by whether beautiful music corrupts piety. Pope Gregory I's codification of modes for liturgical use is Plato's argument applied to Christian practice. The Western church inherited not just the modes themselves but the *ethical framework* for policing them.
 
 ## Transmission to Byzantine Chant and European Church Modes
 

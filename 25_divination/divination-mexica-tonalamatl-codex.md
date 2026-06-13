@@ -83,7 +83,7 @@ Sahagún's *Florentine Codex* Book 4 ("The Art of Divination") provides the cont
 
 ## Cross-tradition position
 
-**MASSIVE-WIN — the calendrical-divinatory codex as Mesoamerican type**: the tonalamatl is a distinctive Mesoamerican divinatory technology that has no direct parallel outside the Mesoamerican culture-area. Its closest cross-tradition parallels are:
+**Cross-tradition finding — the calendrical-divinatory codex as a Mesoamerican type**: the tonalamatl is a distinctive Mesoamerican divinatory technology that has no direct parallel outside the Mesoamerican culture-area. Its closest cross-tradition parallels are:
 
 - **Mayan tzolkin divination** (the Mayan 260-day calendar, parallel to the tonalpohualli; the Madrid Codex + Paris Codex + Dresden Codex include divinatory pages) — same 260-day calendrical structure, same day-sign-by-day-sign augury approach; the Mesoamerican calendrical-divinatory complex extends from Maya to Mexica
 - **Chinese hemerology** (択日, *zeri*) — selecting auspicious days from the sexagenary calendar for marriage, burial, building. The structural parallel is strong: a calendrical system with day-by-day auspicious-vs-inauspicious characterization, consulted for major actions. The Chinese tradition is text-based rather than pictorial; the Mesoamerican is iconographic. But the underlying divinatory ontology — calendar-time as differentially-qualified — is the same.

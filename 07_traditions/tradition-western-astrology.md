@@ -93,7 +93,7 @@ The tradition is distinguished from its parallel cousin [[tradition-jyotisha-ind
 
 ## Why this matters for the Codex Atlas thesis
 
-The user's framing — *connections from Christianity back to older religions / cross-tradition tracing edges are MASSIVE wins* — applies to Western Astrology with unique density. The astrological tradition is **the most-load-bearing single cross-tradition transmission spine in this vault**, threading institutional, textual, and personnel continuity across:
+The user's framing — *connections from Christianity back to older religions / cross-tradition tracing edges are the prize* — applies to Western Astrology with unique density. The astrological tradition is **the most-load-bearing single cross-tradition transmission spine in this vault**, threading institutional, textual, and personnel continuity across:
 
 - **Mesopotamian astral religion** ([[tradition-sumerian-mesopotamian]], [[tradition-mesopotamian]])
 - **Egyptian decan / solar-theology tradition** ([[tradition-egyptian]])
@@ -106,7 +106,7 @@ The user's framing — *connections from Christianity back to older religions / 
 - **Latin Renaissance recovery** ([[tradition-renaissance-hermeticism]], [[tradition-christian-kabbalah]])
 - **Modern occult revival** ([[tradition-theosophy]], [[tradition-thelema]], [[tradition-portuguese-hermeticism]], [[tradition-traditionalism-perennialist]])
 
-Each of these links carries documented institutional-textual transmission, not speculative resemblance. **This is the cleanest "MASSIVE-win" wedge in the vault** for the cross-tradition map: the same set of astrological doctrines (natal chart, zodiacal twelvefold, planetary correspondences, predictive techniques) re-emerges in tradition after tradition with continuous textual descent.
+Each of these links carries documented institutional-textual transmission, not speculative resemblance. **This is the cleanest cross-tradition wedge in the vault** for the cross-tradition map: the same set of astrological doctrines (natal chart, zodiacal twelvefold, planetary correspondences, predictive techniques) re-emerges in tradition after tradition with continuous textual descent.
 
 ## Historical phases
 

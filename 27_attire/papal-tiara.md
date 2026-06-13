@@ -57,7 +57,7 @@ This is one of the most extravagant religious-political claims ever placed in a 
 
 ## Cross-tradition parallels
 
-**MASSIVE-WIN: Divine kingship — Pharaonic pschent → papal triregnum lineage.** The papal tiara is the principal Christian instance of the **divine-king triple-or-double crown** typology that extends back through:
+**Cross-tradition finding: Divine kingship — Pharaonic pschent → papal triregnum lineage.** The papal tiara is the principal Christian instance of the **divine-king triple-or-double crown** typology that extends back through:
 
 - **Pharaonic pschent** ([[pharaonic-nemes-and-uraeus]]) — the double-crown of Upper-and-Lower Egypt
 - **Hellenistic kingly diadems** (Ptolemaic, Seleucid)

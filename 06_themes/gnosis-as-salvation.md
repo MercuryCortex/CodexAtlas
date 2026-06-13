@@ -230,7 +230,7 @@ Older scholarship (Reitzenstein 1904, Jonas 1934, Rudolph 1977) treated Gnostici
 - *Polygenetic*: probably all of the above; current scholarship recognizes Jewish-Platonic synthesis as the proximate matrix with Iranian elements operative especially in Manichaean and Mandaean cases.
 
 **(3) Is non-Western *jñāna* / *prajñā* / *maʿrifa* the "same thing" as Gnostic gnosis?**
-Comparative-religion scholars (post-Smith 1987) are wary of strong identity claims. The current consensus: **structural homology** is real and well-documented (saving-knowledge as a soteriological category recurs); **historical identity** is not (these are independent emergences with at most peripheral late contact). The vault uses this distinction throughout — citing the structural parallel as the MASSIVE-WIN, declining to claim ancestry or transmission unless specifically documented.
+Comparative-religion scholars (post-Smith 1987) are wary of strong identity claims. The current consensus: **structural homology** is real and well-documented (saving-knowledge as a soteriological category recurs); **historical identity** is not (these are independent emergences with at most peripheral late contact). The vault uses this distinction throughout — citing the structural parallel as the key cross-tradition finding, declining to claim ancestry or transmission unless specifically documented.
 
 ---
 

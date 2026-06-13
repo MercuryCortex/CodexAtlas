@@ -125,7 +125,7 @@ The consequence for *Varieties*: James drew on Vivekananda's accounts of Advaita
 
 **The noetic quality claim applied to Vedanta:** Vivekananda's account of *samādhi* carries all four of James's marks — and the noetic claim is especially sharp. In Advaita Vedanta, the highest mystical state (*nirvikalpa samādhi*) is not just a feeling but a direct apprehension of *Brahman* as identical with *Ātman* — pure consciousness knowing itself. James identified this as the non-Christian case most strongly supporting the noetic-quality claim: the experience feels like genuine knowledge of ultimate reality, not merely a pleasant emotional state. The question of whether this "knowledge" is veridical is exactly the controversy that Proudfoot (1985), Stace (1960), Katz (1978), and Wainwright (1981) subsequently fought over.
 
-**MASSIVE WIN wiring**: [[swami-vivekananda]] ↔ James = the first direct conversation between American pragmatist philosophy and Advaita Vedanta. Both agreed that mystical experience is the core of religion; they disagreed about monism (Vivekananda's Advaita) vs. pluralism (James's radical empiricism). Their public correspondence on this point is documented in James's letters and Vivekananda's Complete Works vol. 8.
+**Cross-tradition wiring**: [[swami-vivekananda]] ↔ James = the first direct conversation between American pragmatist philosophy and Advaita Vedanta. Both agreed that mystical experience is the core of religion; they disagreed about monism (Vivekananda's Advaita) vs. pluralism (James's radical empiricism). Their public correspondence on this point is documented in James's letters and Vivekananda's Complete Works vol. 8.
 
 ## The will to believe and religious pluralism
 

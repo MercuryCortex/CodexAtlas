@@ -147,7 +147,7 @@ The *Ardā Wirāz Nāmag* stands at the intersection of four major religious-lit
 3. **Islamic Mi'raj** — structurally: the pre-Islamic Iranian soul-journey in Islamic dress
 4. **Dante's Commedia** — the Western literary tradition's highest expression of afterlife geography, structurally downstream of the Arda Viraf chain
 
-For the Codex Atlas, this document is a **MASSIVE-WIN** bridge node: it connects the Zoroastrian tradition to the Islamic and Western literary traditions through a traceable structural chain, demonstrating that the detailed, imaginative geography of heaven and hell that most Western readers associate with Christianity and Islam is in large part a Zoroastrian inheritance.
+For the Codex Atlas, this document is a **major cross-tradition** bridge node: it connects the Zoroastrian tradition to the Islamic and Western literary traditions through a traceable structural chain, demonstrating that the detailed, imaginative geography of heaven and hell that most Western readers associate with Christianity and Islam is in large part a Zoroastrian inheritance.
 
 ## Edge connections
 

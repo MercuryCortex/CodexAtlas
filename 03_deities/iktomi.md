@@ -53,7 +53,7 @@ tags: [deity, native-american, lakota, sioux, iktomi, spider, trickster, plains,
 
 The **Lakota spider-trickster** — one of the firstborn beings created by [[inyan]] (the rock, the Lakota primordial). Iktomi appears variously as a spider, as a man, as any animal or object he chooses; he is the shapeshifter par excellence. His narratives teach **through disruption and mistake** — Iktomi schemes, the schemes go wrong, the audience learns. He is the inventor of language and the namer of things in some tellings.
 
-**Cross-continental North American trickster convergence — MASSIVE WIN.** Iktomi is one node of a remarkable cross-continental pattern: the **trickster-as-culture-hero** is the same theological role filled by regionally appropriate figures across North America:
+**Cross-continental North American trickster convergence.** Iktomi is one node of a remarkable cross-continental pattern: the **trickster-as-culture-hero** is the same theological role filled by regionally appropriate figures across North America:
 
 - **Iktomi** (Lakota / Plains) — spider
 - **Coyote** ([[coyote-navajo]]; Plains, Southwest, California) — coyote

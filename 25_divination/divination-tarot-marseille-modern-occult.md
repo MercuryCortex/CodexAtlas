@@ -84,7 +84,7 @@ Within the post-1909 ecosystem, the **Tarot de Marseille** persists as the alter
 
 ## Cross-tradition position
 
-**MASSIVE-WIN — invented-tradition divination as case study**: tarot is the most-documented modern instance of an **invented esoteric tradition**. The components are:
+**Cross-tradition finding — invented-tradition divination as a case study**: tarot is the most-documented modern instance of an **invented esoteric tradition**. The components are:
 1. A pre-existing material culture object (15th-c. Italian playing cards) without esoteric content
 2. A speculative origin-claim (Court de Gébelin 1781) projecting ancient-wisdom origin
 3. A systematized correspondence scheme (Lévi 1854) linking the object to an existing prestigious esoteric tradition (Kabbalah)

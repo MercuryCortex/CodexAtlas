@@ -81,7 +81,7 @@ Two of the most sophisticated anti-absolutist epistemologies in ancient philosop
 Nāgārjuna would critique *anekāntavāda* as still presupposing a real object with multiple real aspects to be predicated about — a form of subtle *svabhāva*-attachment. Jain logicians counter that Madhyamaka's systematic negation is itself a one-sided absolutism (absolutism of negation). The debate is live in classical Indian philosophical texts, and unresolved.
 
 ### Jain karma-matter and Gnostic pneuma-in-hylē
-The structural parallel between the Jain *jīva* (soul) weighed down by literal subtle karma-*matter* and the Gnostic pneumatic spark trapped in material darkness is one of the vault's cleaner MASSIVE WINS. Both traditions posit:
+The structural parallel between the Jain *jīva* (soul) weighed down by literal subtle karma-*matter* and the Gnostic pneumatic spark trapped in material darkness is one of the vault's cleaner cross-tradition findings. Both traditions posit:
 - A luminous true self (soul / pneuma) that is inherently pure and omniscient
 - Entanglement in matter as the cause of bondage and ignorance
 - Liberation as the physical/metaphysical extraction of self from matter

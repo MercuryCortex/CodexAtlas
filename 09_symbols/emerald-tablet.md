@@ -174,7 +174,7 @@ The *logos* (rational fire, divine reason) pervades all levels of existence. The
 ### 5. Chinese Correlative Cosmology
 Heaven/Earth/Humanity (*tiān/dì/rén*) correspondence: the triad of levels through which *qì* flows, carrying the patterns of one level into the others. The 64 hexagrams of the **I Ching** encode correspondences between cosmic, social, and personal states — the same macrocosm-microcosm mapping the Tablet performs. Chinese correlative cosmology operates via **resonance** (*gǎnyìng*): things of the same category at different levels mutually activate each other, exactly as the Tablet's metals below respond to planets above.
 
-**All five arrived at structurally identical conclusions via independent paths.** The Emerald Tablet is the most *memorable* and most *compressed* formulation of a philosophical insight that is genuinely cross-cultural. This is the grade-A MASSIVE WIN in the Tablet's dossier.
+**All five arrived at structurally identical conclusions via independent paths.** The Emerald Tablet is the most *memorable* and most *compressed* formulation of a philosophical insight that is genuinely cross-cultural. This is the grade-A cross-tradition finding in the Tablet's dossier.
 
 ---
 

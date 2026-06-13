@@ -161,7 +161,7 @@ dating-basis-notes: "Cross-tradition transmission spine across ~5,500 years. Ear
 
 A single divine-feminine pattern — *Queen of Heaven*, mother-of-the-gods, intercessor between mortals and the supreme, paired with a dying-rising consort, iconographically marked by star + dove + crescent + mother-with-child — recurs across roughly 5,500 years of Mediterranean and Western Asian religion. The same epithet (*nin-an-na* / *Šarrat šamê* / *šemes el-šamayim* / *Regina Caeli*) is applied to Inanna at Uruk (-3500), to Ishtar in Akkadian liturgy, to Asherah at Kuntillet ʿAjrud, to the Jeremiah-condemned cult of Jerusalem (-600), to Isis in Apuleius's *Metamorphoses* (~160 CE), and finally to the Virgin Mary in Latin Marian liturgy. This is not Eliade-mode telescope identification ("all goddesses are one Goddess"); the connections are individually documented, the transmission routes are individually traced, and the pattern of suppression-displacement-return is itself the load-bearing finding.
 
-This hub aggregates the spine — the load-bearing nodes, the cross-tradition syncretic edges, the transmission-mechanism arguments, and the documented exceptions where the pattern *fails* to apply. The full essay is at [`00_meta/MASSIVE-WIN-essays/feminine-divine-transmission.md`](../00_meta/MASSIVE-WIN-essays/feminine-divine-transmission.md).
+This hub aggregates the spine — the load-bearing nodes, the cross-tradition syncretic edges, the transmission-mechanism arguments, and the documented exceptions where the pattern *fails* to apply. The full essay is [the feminine-divine transmission panorama](../00_meta/MASSIVE-WIN-essays/feminine-divine-transmission.md).
 
 ---
 

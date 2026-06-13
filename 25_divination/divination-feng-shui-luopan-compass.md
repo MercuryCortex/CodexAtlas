@@ -104,7 +104,7 @@ By the late 1990s, "feng shui" had entered Western interior-design vocabulary, o
 
 ## Cross-tradition position
 
-**MASSIVE-WIN — sacred siting as cross-tradition pattern**: feng shui is the principal East Asian instance of the **religious-cosmological siting** pattern that recurs across traditions:
+**Cross-tradition finding — sacred siting as a recurring pattern**: feng shui is the principal East Asian instance of the **religious-cosmological siting** pattern that recurs across traditions:
 - **Vāstu Śāstra** (Indian sacred architecture; see Sanskrit *Mānasāra* + *Mayamatam* texts) — 8×8 or 9×9 vāstu-puruṣa-maṇḍala for site planning + temple orientation
 - **Roman augural templum** — the inaugurated rectangular sky-section defining auspicious building space ([[augury-roman-bird-omens]])
 - **Etruscan disciplina** — ritual delineation of urban space (sulcus primigenius)

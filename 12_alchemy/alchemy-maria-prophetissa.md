@@ -76,7 +76,7 @@ Maria's most philosophically resonant statement — the **Axiom of Maria** — i
 
 **Cross-Tradition: Jewish Woman, Greek Methods, Egyptian Context**
 
-Maria's cultural position is a MASSIVE WIN for cross-tradition investigation. She is:
+Maria's cultural position is a major cross-tradition finding for the investigation. She is:
 
 - **Jewish** — operating within a tradition that had sophisticated cosmological numerology (Merkabah mysticism, proto-Kabbalistic speculation on divine names and numbers was already active in Alexandria by the 1st century CE) and a strong tradition of sacred craft: Exodus describes Bezalel, the divinely gifted craftsman who built the Tabernacle, as filled with "the Spirit of God, in wisdom, in understanding, and in knowledge, and in all manner of workmanship" (Ex. 31:3). The sacred metalworker is a recognized figure in the Hebrew tradition.
 - **Greek-educated** — her natural philosophy is Aristotelian; her concept of the four elements and their transformation follows the Greek framework that dominated Alexandrian intellectual life.

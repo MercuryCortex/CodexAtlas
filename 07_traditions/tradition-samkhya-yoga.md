@@ -77,7 +77,7 @@ Sāṃkhya and Yoga are two of the six classical *āstika* (Veda-accepting) phil
 - vs. [[tradition-advaita-vedanta]]: most significant Indian philosophical rivalry. Both accept the Vedas; both aim at moksha. But Advaita is *non-dualist* (one real ground: Brahman); Sāṃkhya is *dualist* (two ultimate reals: puruṣa + prakṛti). Shankara's Brahmasūtra commentary attacks Sāṃkhya at length. The two schools share vocabulary (ātman, moksha) but mean radically different things.
 - vs. [[tradition-buddhism]]: the parallel samādhi/jhāna terminologies and the śramaṇic milieu link them; Buddhism denies both the permanent puruṣa and the creator-God (*Īśvara*) of Yoga.
 - vs. [[tradition-jainism]]: same śramaṇic competitive milieu; both posit a plurality of individual souls; both have elaborate cosmologies. Jainism's *jīva/ajīva* duality echoes Sāṃkhya's puruṣa/prakṛti, but with different mechanics.
-- vs. [[tradition-daoism]]: see MASSIVE wins above — the prāṇa/qi subtle-body parallel.
+- vs. [[tradition-daoism]]: see the cross-tradition findings above — the prāṇa/qi subtle-body parallel.
 
 ## Refs
 1. Larson, G.J. (1979). *Classical Sāṃkhya*. Motilal Banarsidass.

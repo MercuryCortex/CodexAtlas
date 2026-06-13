@@ -176,7 +176,7 @@ The Upaniṣadic **neti neti** ("not this, not this") of *Bṛhadāraṇyaka* 2.
 
 ## Cross-tradition positioning
 
-**MASSIVE-WIN parallel — Sufi fanāʾ + Eastern Orthodox theōsis + Advaita non-dualism + Madhyamaka śūnyatā**: see Sells 1994 + Izutsu 1983 + Coward 1985. The cross-tradition apophatic-mystical convergence is among the most-developed comparative-theological topics in 20th-21st-c. religious studies.
+**Cross-tradition parallel — Sufi fanāʾ + Eastern Orthodox theōsis + Advaita non-dualism + Madhyamaka śūnyatā**: see Sells 1994 + Izutsu 1983 + Coward 1985. The cross-tradition apophatic-mystical convergence is among the most-developed comparative-theological topics in 20th-21st-c. religious studies.
 
 The convergence is **structural-strategic**, not doctrinal-identical. The traditions agree on:
 - Ultimate reality exceeds conceptual grasp.

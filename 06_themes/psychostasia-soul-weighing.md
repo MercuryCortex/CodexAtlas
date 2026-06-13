@@ -102,7 +102,7 @@ In Platonic eschatology (*Phaedrus*, *Republic* Book X — the Myth of Er), the 
 
 **Medieval Christian Last Judgment iconography** (Romanesque tympana, Byzantine mosaics, Bosch, Michelangelo's Sistine Chapel) introduces the **scales** explicitly: **Michael the Archangel** holds the scales; souls are weighed; the damned descend to hell, the saved ascend to paradise. The scales motif — absent from the New Testament — enters Christian iconography directly from the Egyptian/Greek tradition, transmitted through late antique syncretic visual culture.
 
-**MASSIVE WIN**: The **weighing scales** held by **Archangel Michael** in Christian Last Judgment art is a direct iconographic transmission from **Anubis at the scales** in Egyptian Spell 125 — one of the most traceable single-motif transmissions in world art history.
+**Cross-tradition finding**: The **weighing scales** held by **Archangel Michael** in Christian Last Judgment art is a direct iconographic transmission from **Anubis at the scales** in Egyptian Spell 125 — one of the most traceable single-motif transmissions in world art history.
 
 ### Islamic: the Mizan (Balance)
 

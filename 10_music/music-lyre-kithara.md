@@ -114,7 +114,7 @@ The theological parallels to the Greek tradition are striking:
 | Kithara player is priestly figure | David dances before the Ark in musician-priestly role |
 | Orpheus descends to Hades | Psalms 22, 88 as descent to Sheol in song |
 
-The MASSIVE WIN: **the Davidic tradition and the Orphic tradition are parallel elaborations of the archaic Near Eastern lyre-musician-priest archetype.** The shared root is the Mesopotamian tradition of the en-priest as musician-keeper of cosmic order. Lyre iconography in Mesopotamia (the Great Lyre of Ur, c. -2600 BCE) shows the instrument as sacred object long before either Greek or Hebrew traditions crystallized.
+The key finding: **the Davidic tradition and the Orphic tradition are parallel elaborations of the archaic Near Eastern lyre-musician-priest archetype.** The shared root is the Mesopotamian tradition of the en-priest as musician-keeper of cosmic order. Lyre iconography in Mesopotamia (the Great Lyre of Ur, c. -2600 BCE) shows the instrument as sacred object long before either Greek or Hebrew traditions crystallized.
 
 ## The Psalms as Sacred Music Theology
 

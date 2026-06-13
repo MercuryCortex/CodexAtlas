@@ -86,7 +86,7 @@ A second transmission wave came in the **14th-15th centuries** via Perso-Arabic 
 
 ## Cross-tradition position
 
-**MASSIVE-WIN — horary astrology as cross-tradition genre**: praśna is one node in the cross-tradition **horary astrology** family — the genre of astrological consultation that casts a chart not for a birth but for the moment of inquiry. The family includes:
+**Cross-tradition finding — horary astrology as a shared genre**: praśna is one node in the cross-tradition **horary astrology** family — the genre of astrological consultation that casts a chart not for a birth but for the moment of inquiry. The family includes:
 
 - **Hellenistic katarchic astrology** (Dorotheus of Sidon ~+75, Hephaistio of Thebes ~+415) — the foundational Greek horary tradition; cast a chart for the moment a question is asked or an action initiated
 - **Perso-Arabic horary** (Sahl ibn Bishr ~+820, Abū Maʿshar ~870, al-Kindi ~870) — systematic medieval Arabic-Persian elaboration; the transmission corridor between Hellenistic and Indian + Hellenistic and Latin-medieval traditions
@@ -95,7 +95,7 @@ A second transmission wave came in the **14th-15th centuries** via Perso-Arabic 
 
 The cross-tradition horary genre shares: question-moment chart-casting + 12-house frame + planetary lordship-of-houses + specific yes/no-answering rules. The Indian praśna + Western horary lineages share a common Hellenistic ancestor + diverged via Persian intermediation; their contemporary forms (Praśna Mārga's Kerala tradition + Lilly's 17th-c. system) show remarkable structural parallels (same question-typology, similar planet-house significations) that reflect this shared inheritance.
 
-**MASSIVE-WIN — praśna vs. natal as divinatory-ontology divide**: praśna and natal astrology embody two different divinatory ontologies:
+**Cross-tradition finding — praśna vs. natal as a divinatory-ontology divide**: praśna and natal astrology embody two different divinatory ontologies:
 - **Natal**: the moment of birth is a cosmic stamp on a person; reading the chart reads the person
 - **Praśna / horary**: the moment of asking is a cosmic register of the question's state-of-the-world; reading the chart reads the question's answer
 

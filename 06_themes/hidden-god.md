@@ -111,7 +111,7 @@ The supreme divine reality is **unknowable in principle** — beyond predicates,
 
 The pattern is distinct from mere divine transcendence (a high god who is far away or only loosely involved with creation). The hidden god is hidden **in principle**: knowable only by what it is *not*, or only through emanated lower hypostases that "appear" while the source remains concealed. The apophatic move is the active production of unknowability through systematic linguistic negation — not a failure of theology but its supreme accomplishment.
 
-This is one of the most consistently attested cross-tradition theological structures in world religion. The convergence across Kabbalistic Judaism, Christian apophaticism, Akbarī Sufism, Daoism, Advaita Vedānta, and Mahāyāna Buddhism is so close that it constitutes one of the most striking MASSIVE-WIN findings in the comparative study of religion (Sells 1994).
+This is one of the most consistently attested cross-tradition theological structures in world religion. The convergence across Kabbalistic Judaism, Christian apophaticism, Akbarī Sufism, Daoism, Advaita Vedānta, and Mahāyāna Buddhism is so close that it constitutes one of the most striking cross-tradition findings in the comparative study of religion (Sells 1994).
 
 ---
 
@@ -153,7 +153,7 @@ The cross-tradition agreement of Kabbalistic [[ein-sof]] / Plotinian [[the-one-p
 
 Sells 1994 (*Mystical Languages of Unsaying*) argues that this is **not coincidence and not transmission** — it is the *performative structure of apophasis itself* recurring. Whenever a tradition follows the logic of "the supreme reality cannot be limited by predicates" rigorously, the same language emerges, because the language is dictated by the logic.
 
-The MASSIVE-WIN claim is therefore **convergent emergence** of a theological structure: independent traditions arriving at near-identical apophatic vocabularies because each is reasoning through the same problem with the same constraints. Documented historical transmission contributes to some specific cases (Plotinus → Pseudo-Dionysius → Eckhart is a clean transmission chain; Kabbalah and Sufism almost certainly engaged with Neoplatonist sources via Arabic philosophy), but the **Awonawilona ↔ Ein Sof** convergence cannot be explained by transmission (zero contact between 13th-c. Castilian Kabbalists and pre-Conquest Zuni; documented in Tedlock 1983) and is one of the cleanest cases of cross-cultural theological convergence in the world religion record.
+The central claim is therefore **convergent emergence** of a theological structure: independent traditions arriving at near-identical apophatic vocabularies because each is reasoning through the same problem with the same constraints. Documented historical transmission contributes to some specific cases (Plotinus → Pseudo-Dionysius → Eckhart is a clean transmission chain; Kabbalah and Sufism almost certainly engaged with Neoplatonist sources via Arabic philosophy), but the **Awonawilona ↔ Ein Sof** convergence cannot be explained by transmission (zero contact between 13th-c. Castilian Kabbalists and pre-Conquest Zuni; documented in Tedlock 1983) and is one of the cleanest cases of cross-cultural theological convergence in the world religion record.
 
 ---
 

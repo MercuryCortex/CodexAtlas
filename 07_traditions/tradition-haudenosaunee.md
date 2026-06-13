@@ -80,7 +80,7 @@ The twins contend throughout creation and eventually in direct combat. Flint is 
 ## Relations to neighbors
 - vs. [[tradition-lakota]]: both Indigenous North American traditions; structurally distinct (Lakota: vision-quest-centered, bands; Haudenosaunee: confederacy-longhouse, consensus-council).
 - vs. [[tradition-christianity-canonical]]: Jesuit missions from 1640s (Jogues, Brébeuf); Mohawk converts (Kateri Tekakwitha, canonized 2012); the Longhouse religion explicitly resists assimilation to Christianity while selectively incorporating elements.
-- vs. tradition of Western political philosophy: documented direct influence on the Articles of Confederation and the US Constitution — see MASSIVE WIN section below.
+- vs. tradition of Western political philosophy: documented direct influence on the Articles of Confederation and the US Constitution — see the cross-tradition findings section below.
 
 ---
 

@@ -69,7 +69,7 @@ In 399 BCE he was charged with *impiety* (asebeia — failure to recognize the c
 
 ## Cross-tradition significance
 
-**MASSIVE-win — Socrates as Christian precursor:**
+**Cross-tradition finding — Socrates as Christian precursor:**
 
 Justin Martyr (~150 CE, *Apologia* 1.46) explicitly calls Socrates a "Christian before Christ" (*meta logou biōsas*): he lived according to the Logos, was persecuted for exposing false gods, and was condemned for turning people to true virtue. This is the founding statement of the Christian appropriation of Socrates as proto-Christian martyr.
 

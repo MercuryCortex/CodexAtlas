@@ -89,7 +89,7 @@ The precision of megalithic astronomy implies a systematic, long-term observatio
 
 This is a **pre-linguistic theology** — a religion expressed entirely in stone, landscape, and astronomical event rather than text, narrative, or deity-name. It predates the Celtic gods by 2,000–3,000 years, predates the Indo-European linguistic family's arrival in Atlantic Europe (by most estimates), and predates writing in Western Europe by 2,000+ years.
 
-**MASSIVE WIN — Megalithic Astronomy as the Substrate of All Western Solar Religion**
+**Cross-tradition finding — Megalithic Astronomy as the Substrate of All Western Solar Religion**
 The solar death-and-resurrection cycle that appears in:
 - Egyptian Osiris ritual (the sun's nightly death in the west and morning resurrection)
 - Melqart's *egersis* ritual at Gades (annual fire-death and awakening)

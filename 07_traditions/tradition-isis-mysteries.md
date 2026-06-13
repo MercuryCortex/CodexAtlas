@@ -53,7 +53,7 @@ tags: [tradition, mystery-cult, isis-mysteries, isis-hellenistic, serapis, osiri
 ## Overview
 The **Isis Mysteries** are the Hellenistic-and-Roman-period mystery-cult of the Egyptian goddess **[[isis-egyptian|Isis]]** ([[isis-hellenistic|in her Hellenistic-Roman syncretic form]]), institutionally architected under **Ptolemy I Soter** in Alexandria (~280 BCE) through the Serapis-Isis cult-complex, and spreading across the Hellenistic and Roman Mediterranean as one of the most successful **non-Greco-Roman-origin** mystery-religions of antiquity. The cult survived until **537 CE**, when **Justinian closed the Philae temple of Isis** — making the Isis cult the **longest-surviving** of all ancient Mediterranean polytheistic religions and the *last* working Egyptian-religious tradition.
 
-The Isis cult is **one of the load-bearing transmission-edges of the Codex Atlas wedge**: the **Isis-Lactans iconography** (the seated Isis nursing the infant Harpocrates / Horus) is the direct iconographic ancestor of the **Mary-Theotokos** nursing-Madonna iconography (the *Virgin and Child*), transmitted through **Coptic Christianity** in Egypt. Witt 1971 and Frankfurter 1998 are the load-bearing scholarship on this transmission — see [[mary-theotokos]] and the v0.6 STATUS "MASSIVE win" list edge #8.
+The Isis cult is **one of the load-bearing transmission-edges of the Codex Atlas wedge**: the **Isis-Lactans iconography** (the seated Isis nursing the infant Harpocrates / Horus) is the direct iconographic ancestor of the **Mary-Theotokos** nursing-Madonna iconography (the *Virgin and Child*), transmitted through **Coptic Christianity** in Egypt. Witt 1971 and Frankfurter 1998 are the load-bearing scholarship on this transmission — see [[mary-theotokos]] and the v0.6 STATUS cross-tradition list edge #8.
 
 ## Historical phases
 1. **Egyptian substrate (~3000 BCE – 300 BCE)** — the cult of Isis is one of the oldest continuous Egyptian religious traditions, originating in the Old Kingdom or earlier.
@@ -83,7 +83,7 @@ The Isis cult is **one of the load-bearing transmission-edges of the Codex Atlas
 - vs. **[[tradition-christianity-canonical]]**: institutionally suppressed (closed 537) but **iconographically inherited via Coptic Christianity into Mary-Theotokos painting** — see [[mary-theotokos]] and Witt 1971 + Frankfurter 1998.
 
 ## Cross-tradition tracing edges (MASSIVE-win)
-1. **Isis-Lactans iconography → Mary-Theotokos nursing-Madonna iconography** — via Coptic Christianity in Egypt. **The clearest documented Egyptian-religion → Christianity iconographic transmission.** Witt 1971; Frankfurter 1998. **Already on the v0.6 STATUS "10 MASSIVE wins" list** as edge #8.
+1. **Isis-Lactans iconography → Mary-Theotokos nursing-Madonna iconography** — via Coptic Christianity in Egypt. **The clearest documented Egyptian-religion → Christianity iconographic transmission.** Witt 1971; Frankfurter 1998. **Already on the v0.6 STATUS "10 cross-tradition findings" list** as edge #8.
 2. **Isis aretalogical *I-am-Isis-queen-of-every-land* henotheism ↔ Christian Mariology *one-Mother-with-many-titles*** — structural cognate.
 3. **Isis death-and-rebirth soteriology ↔ Christian baptismal death-and-rebirth** — structural cognate; both inherit from a broader Mediterranean mystery-soteriology pattern.
 4. **Apuleius Met. 11 as principal first-person mystery-initiation account** — a methodologically load-bearing text for any comparative mystery-cult / early-Christian-initiation study.

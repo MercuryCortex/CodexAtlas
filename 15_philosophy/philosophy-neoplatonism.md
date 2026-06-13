@@ -63,7 +63,7 @@ Neoplatonism is the shared philosophical grammar of late-antique and medieval my
 
 **Islamic Sufi metaphysics**: [[ibn-arabi]]'s *[[phase-5-021-ibn-arabi-fusus-al-hikam|Fusus al-Hikam]]* and [[wahdat-al-wujud]] (unity of being) is a direct philosophical descendant of Neoplatonism via the Arabic translation movement — "The One" becomes "al-Haqq" (the Real), and the seeker's annihilation in the Real (fana) is henosis under another name. [[al-hallaj]]'s "Ana'l-Haqq" is The One speaking through the soul that has achieved union.
 
-**MASSIVE WIN — The Hidden Grammar:** You cannot read Christian mysticism (Dionysius, Eckhart), Islamic mysticism (al-Hallaj, Ibn Arabi), or Jewish mysticism (Kabbalah) and understand what they are actually arguing without knowing that they all think in Neoplatonic categories. The categories were absorbed, often unconsciously, through the late-antique intellectual atmosphere. Neoplatonism is not one mystical system among many — it is the metalanguage in which Western and Islamic mysticism was written for a thousand years (200–1200 CE).
+**Cross-tradition finding — The Hidden Grammar:** You cannot read Christian mysticism (Dionysius, Eckhart), Islamic mysticism (al-Hallaj, Ibn Arabi), or Jewish mysticism (Kabbalah) and understand what they are actually arguing without knowing that they all think in Neoplatonic categories. The categories were absorbed, often unconsciously, through the late-antique intellectual atmosphere. Neoplatonism is not one mystical system among many — it is the metalanguage in which Western and Islamic mysticism was written for a thousand years (200–1200 CE).
 
 ## The Apophatic Convergence
 

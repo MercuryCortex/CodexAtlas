@@ -96,7 +96,7 @@ The **Paris Commune** (March-May 1871) briefly revived the Republican Calendar d
 
 ## Cross-tradition position
 
-**MASSIVE-WIN — secular calendar reform as case study**: the French Republican Calendar is the principal world-historical instance of an **anti-religious calendar reform**. Comparison with other religious-to-secular calendar transitions:
+**Cross-tradition finding — secular calendar reform as a case study**: the French Republican Calendar is the principal world-historical instance of an **anti-religious calendar reform**. Comparison with other religious-to-secular calendar transitions:
 
 - **Soviet 5-day continuous workweek (1929) + 6-day workweek (1931)** — Stalinist calendar reform aimed at suppressing Orthodox Sunday observance; collapsed 1940 because of labor-coordination problems analogous to the French failure
 - **Khmer Rouge year-numbering (Year Zero, 1975)** — Pol Pot's regime used a Year-Zero ideological convention; reverted with regime collapse 1979

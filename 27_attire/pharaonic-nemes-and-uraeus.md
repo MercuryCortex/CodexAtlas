@@ -56,7 +56,7 @@ The royal regalia ensemble:
 
 ## Cross-tradition parallels
 
-**MASSIVE-WIN: Divine kingship regalia lineage.** The Pharaonic regalia is the **earliest fully-documented divine-kingship costume**, and it is the iconographic root of a vast subsequent typology:
+**Cross-tradition finding: Divine kingship regalia lineage.** The Pharaonic regalia is the **earliest fully-documented divine-kingship costume**, and it is the iconographic root of a vast subsequent typology:
 
 - **Hellenistic Ptolemaic** crowns — direct continuation; Ptolemaic kings depicted in fully Pharaonic regalia on Egyptian-style temple reliefs (Edfu, Dendera, Philae) AND in Hellenistic diademed portraits on coinage. The Ptolemaic dynasty deliberately maintains both costume traditions for Egyptian and Greek audiences.
 - **Roman imperial diadem** — Diocletian (r. 284-305) institutes the wearing of a jeweled diadem, breaking the Augustan "first citizen" pose and adopting the Hellenistic divine-king costume. Constantine continues. This is the bridge from Pharaonic to Byzantine.

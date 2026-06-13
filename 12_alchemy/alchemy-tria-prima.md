@@ -75,7 +75,7 @@ The Tria Prima's most consequential practical application is Paracelsus's medica
 
 The procedure: maceration + distillation extracts the Mercury (volatile essence); fermentation releases the Sulfur (aromatic/active principle); calcination isolates the Salt (mineral ash). Recombining the purified Mercury, Sulfur, and Salt produces a *spagyric tincture* — a medicine in which each prime has been individually purified. The result is often genuinely more effective than crude whole-plant remedies, because concentration and purification do increase the potency of active botanical compounds. Paracelsian spagyrics, despite being based on a false theory, accidentally anticipates modern pharmacological extraction methods.
 
-**MASSIVE WIN: Five Traditions, One Three-Fold Structure**
+**Cross-tradition finding: Five Traditions, One Three-Fold Structure**
 
 The Tria Prima's most significant cross-tradition implication is that five independent traditions arrive at a three-fold principle for structuring the human microcosm and/or cosmic reality:
 

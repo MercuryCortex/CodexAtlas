@@ -90,7 +90,7 @@ The **three-coin method** (san bian fa) — toss three coins six times, counting
 
 **Within the Chinese divination spectrum**: the yarrow method is one node on a procedural-elaboration spectrum that runs scapulimancy (Shang) → milfoil/yarrow (Zhou) → coin-toss (Han onward) → spirit-writing (Ming-Qing) → modern coin/app-based methods. Each represents the same underlying divinatory ontology — random mechanism mapped to fixed textual content — at different levels of ritual elaboration.
 
-**MASSIVE-WIN — universal "elaborate vs. abbreviated divination" pattern**: nearly every documented divination system shows the same yarrow/coin polarity:
+**Cross-tradition finding — the universal "elaborate vs. abbreviated divination" pattern**: nearly every documented divination system shows the same yarrow/coin polarity:
 - **Yoruba [[ifa-odu-divination]]**: the ikin (16 palm-nuts manipulated through 8 passes) vs. the opele (chain with 8 half-shells, single throw) — same odu produced, different procedural complexity
 - **Tarot**: full Celtic Cross spread vs. single-card draw
 - **Tibetan [[mo-divination-tibetan]]**: full butter-lamp + dice ritual vs. simple dice-toss

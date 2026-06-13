@@ -119,7 +119,7 @@ The Shekinah in exile is one of the most widely paralleled structures in the Atl
 | **Hindu (Śākta)** | Śakti / Devī | The divine feminine separated from Śiva in manifestation; the cosmos is their dance of separation-and-reunion | Mahāpralaya; Śiva-Śakti reunion |
 | **Christian** | [[holy-spirit]] / Sophia | The divine Wisdom / Spirit displaced by the masculine Trinity formulation | Sophia-Christology recovery; feminist theological recovery |
 
-**The MASSIVE WIN**: William Blake's **Jerusalem** — Albion's rejected Emanation who wanders weeping while the Cosmic Human sleeps — is the most developed modern literary instance of the Shekinah-in-exile motif, independently arrived at through Boehme's theosophy and the KJV. Blake had no access to the Zohar. The structural identity is the finding.
+**The key finding**: William Blake's **Jerusalem** — Albion's rejected Emanation who wanders weeping while the Cosmic Human sleeps — is the most developed modern literary instance of the Shekinah-in-exile motif, independently arrived at through Boehme's theosophy and the KJV. Blake had no access to the Zohar. The structural identity is the finding.
 
 ---
 

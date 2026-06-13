@@ -189,7 +189,7 @@ Three traditions, across 1,800 years, all posit a **divine feminine figure in ex
 | Kabbalistic (13th–16th c.) | [[shekhinah]] | Driven into exile with Israel when the Temple falls; separated from the divine masculine | God mourns her exile; the Zohar's Shabbat-meals are re-unifications | Messianic gathering — Shekhinah returns to the divine seat |
 | Blakean (1804–1820) | Jerusalem (Blake's Emanation of [[albion]]) | Separated from Albion when he turns toward Vala (nature); fragments into division | Los's eternal labor to rebuild Jerusalem in England | Albion's awakening — Jerusalem re-united with Albion at the end of Blake's poem |
 
-**Cross-tradition anchor (MASSIVE WIN):** All three figures are divine-feminine principles exiled from a broken masculine divine order. The Gnostic Sophia → Kabbalistic Shekinah parallel was identified by Scholem (1941) as the single most structurally significant convergence between Gnosticism and Kabbalah. Blake independently reconstructed the same structure — Sophia/Shekinah → Jerusalem — receiving the Gnostic-Kabbalistic thread through [[jakob-boehme]]'s Sophia theology (the Shekinah mediated via Christian Kabbalah / Khunrath) and the KJV Wisdom literature.
+**Cross-tradition anchor:** All three figures are divine-feminine principles exiled from a broken masculine divine order. The Gnostic Sophia → Kabbalistic Shekinah parallel was identified by Scholem (1941) as the single most structurally significant convergence between Gnosticism and Kabbalah. Blake independently reconstructed the same structure — Sophia/Shekinah → Jerusalem — receiving the Gnostic-Kabbalistic thread through [[jakob-boehme]]'s Sophia theology (the Shekinah mediated via Christian Kabbalah / Khunrath) and the KJV Wisdom literature.
 
 ---
 

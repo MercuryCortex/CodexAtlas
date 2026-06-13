@@ -137,7 +137,7 @@ Western reception (Lopez 2011): the 1927 Evans-Wentz English edition popularized
 
 ## Cross-tradition positioning
 
-**MASSIVE-WIN parallel — Catholic purgatory**: Tibetan bardo and `doctrine-purgatory-catholic` are the **two most-elaborately-developed religious doctrines of the post-mortem intermediate state** in world religion. Structural parallels:
+**Cross-tradition parallel — Catholic purgatory**: Tibetan bardo and `doctrine-purgatory-catholic` are the **two most-elaborately-developed religious doctrines of the post-mortem intermediate state** in world religion. Structural parallels:
 
 | Parallel | Catholic purgatory | Tibetan bardo |
 |---|---|---|

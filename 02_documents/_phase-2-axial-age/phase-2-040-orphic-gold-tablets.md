@@ -129,7 +129,7 @@ Plato's eschatological myths — the Myth of Er (*Republic* 614b–621d), the Ph
 - In the *Phaedrus*, the soul that has beheld the Forms (true knowledge) retains memory of them; the Form-knowledge is functionally equivalent to the tablets' Mnemosyne
 - In the *Gorgias* and *Phaedo*, afterlife judgment allocates souls to distinct destinations calibrated to their moral quality — the graduated-afterlife pattern
 
-Scholars debate causation: did Plato receive the memory/forgetting binary from the Orphic tradition, or did the tablets' instructions formalize in ritual terms what was already a shared Pythagorean-Orphic philosophical doctrine? Graf and Johnston (2007) conclude that Plato knew the Orphic discourse on the soul's divine origin and the problem of forgetfulness, and incorporated it into his philosophical mythology — while transforming it from a ritual technology into a philosophical claim about the nature of knowledge (Forms as what the soul already knew before birth, cf. *Meno* 81b–82a). This is a MASSIVE WIN cross-tradition edge: the Orphic tablets are arguably a direct influence on the single most important philosophical treatment of the afterlife in the Western tradition.
+Scholars debate causation: did Plato receive the memory/forgetting binary from the Orphic tradition, or did the tablets' instructions formalize in ritual terms what was already a shared Pythagorean-Orphic philosophical doctrine? Graf and Johnston (2007) conclude that Plato knew the Orphic discourse on the soul's divine origin and the problem of forgetfulness, and incorporated it into his philosophical mythology — while transforming it from a ritual technology into a philosophical claim about the nature of knowledge (Forms as what the soul already knew before birth, cf. *Meno* 81b–82a). This is a major cross-tradition edge: the Orphic tablets are arguably a direct influence on the single most important philosophical treatment of the afterlife in the Western tradition.
 
 ### Connection to [[pythagoras]]: the Pythagorean-Orphic synthesis
 
@@ -148,7 +148,7 @@ The transmission claim from Egyptian to Greek must be held carefully:
 - **Not proven:** Direct textual transmission from Egyptian *Book of the Dead* to Orphic tablet tradition; West (1997) and Graf (2007) note parallel without claiming dependence
 - **Alternative:** Independent development of parallel structures under similar conditions (initiates preparing the dead for navigation of a judged afterlife) — possible, not ruled out
 
-The vault documents the structural parallel as a MASSIVE WIN cross-tradition finding while maintaining scholarly honesty about the transmission status.
+The vault documents the structural parallel as a major cross-tradition finding while maintaining scholarly honesty about the transmission status.
 
 ---
 

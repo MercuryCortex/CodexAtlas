@@ -62,7 +62,7 @@ The dīkṣā is irreversible. The candidate is now in the fourth āśrama for l
 
 ## Cross-tradition parallels
 
-**MASSIVE-WIN: Saffron / orange as renunciation.** The Hindu sannyāsin is the foundational case of the Indic **saffron-cluster**:
+**Cross-tradition finding: Saffron / orange as renunciation.** The Hindu sannyāsin is the foundational case of the Indic **saffron-cluster**:
 
 - **Buddhist *kāṣāya*** (the word itself = "saffron / ochre-dyed")
 - **Jain monastics** (orange-saffron, though the major schism produces white-clad shvetambara and naked digambara)
@@ -71,7 +71,7 @@ The dīkṣā is irreversible. The candidate is now in the fourth āśrama for l
 
 The semantic across all four traditions: saffron = the color of fire (burning attachment), the color of cheap natural dye (economic asceticism), and the color of high-visibility ascetic identification (a renunciate must be visibly OTHER to ordinary society). The shared origin in the 6th-5th c. BCE Magadha-Kosala śramaṇa milieu makes this a partially-shared inheritance, but each tradition formalized it independently. **Color symbolism divergence**: saffron-as-renunciation in the Indic complex contrasts with saffron-yellow as **imperial monopoly** in **Chinese court dress** (the emperor's yellow). Same color, opposite valence.
 
-**MASSIVE-WIN: Initiatory clothing ceremony.** Sannyāsa-dīkṣā is the Hindu instance of the cross-tradition robing-into-new-identity pattern shared by:
+**Cross-tradition finding: Initiatory clothing ceremony.** Sannyāsa-dīkṣā is the Hindu instance of the cross-tradition robing-into-new-identity pattern shared by:
 
 - **Buddhist *upasampada*** higher ordination ([[kasaya-buddhist-robe]])
 - **Sufi khirqah-investiture** ([[sufi-khirqah]])

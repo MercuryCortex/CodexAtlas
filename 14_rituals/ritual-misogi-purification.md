@@ -62,7 +62,7 @@ Kegare is not punishment and carries no inherent moral judgment. A parent mourni
 
 ## Cross-Tradition Connections: Water-as-Purification
 
-**MASSIVE WIN:** Water purification before sacred acts is the single most universal ritual technology across all world traditions. But the five major systems each classify *what requires purification* differently, revealing five different understandings of the sacred:
+**Cross-tradition finding:** Water purification before sacred acts is the single most universal ritual technology across all world traditions. But the five major systems each classify *what requires purification* differently, revealing five different understandings of the sacred:
 
 | Tradition | Ritual | What is purified | What triggers pollution |
 |---|---|---|---|

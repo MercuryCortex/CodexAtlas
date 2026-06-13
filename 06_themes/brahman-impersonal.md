@@ -57,7 +57,7 @@ The classical Upanishadic texts Shankara cites as his pramāṇas (textual autho
 
 ## Cross-tradition significance
 
-**MASSIVE-win — The "apophatic absolute" as a global theological convergence:**
+**Cross-tradition finding — The "apophatic absolute" as a global theological convergence:**
 
 Nirguṇa Brahman is structurally the closest Hindu parallel to four other major traditions' "absolute beyond predication" — all of which were accused of heresy or heterodoxy for positing a reality that transcends the personal God of popular religion:
 

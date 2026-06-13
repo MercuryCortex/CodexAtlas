@@ -169,7 +169,7 @@ Beyond the specific dynastic-succession function, the temple serves as a **publi
 
 ## MASSIVE WIN — Maison Carrée is the principal surviving Augustan-Roman temple, and through Jefferson the ancestor of American neoclassicism
 
-The Maison Carrée's principal MASSIVE WIN is its **architectural-historical role as the most-completely-surviving Augustan Roman temple**, making it the **definitive three-dimensional reference object** for Augustan-period Roman temple architecture. **No other building survives so intact from this period.**
+The Maison Carrée's principal finding is its **architectural-historical role as the most-completely-surviving Augustan Roman temple**, making it the **definitive three-dimensional reference object** for Augustan-period Roman temple architecture. **No other building survives so intact from this period.**
 
 This is consequential because:
 
@@ -179,7 +179,7 @@ This is consequential because:
 
 **3. The pseudoperipteral type-specimen.** As the canonical surviving example of the pseudoperipteral form, the Maison Carrée is the **principal architectural-historical reference** for the Roman synthesis of Greek and Italic temple traditions. Any architectural-historical understanding of the Roman pseudoperipteral type depends on this single building.
 
-**A second MASSIVE WIN: the Maison Carrée is the cleanest documentary witness for the architectural-religious mechanism of imperial-cult dynastic succession.** The temple's dedication to Gaius and Lucius Caesar — both of whom died before inheriting — preserves an **architectural enactment of a succession-plan that history falsified**. This is one of the most poignant single Augustan-imperial-cult survivals: the political logic of the imperial cult's succession-affirmation mechanism, frozen in stone at the moment when the affirmation failed. The building is therefore an architectural document not only for what imperial-cult temples looked like, but for what the imperial cult was *doing* — using architecture to manufacture dynastic legitimacy in advance of dynastic facts.
+**A second finding: the Maison Carrée is the cleanest documentary witness for the architectural-religious mechanism of imperial-cult dynastic succession.** The temple's dedication to Gaius and Lucius Caesar — both of whom died before inheriting — preserves an **architectural enactment of a succession-plan that history falsified**. This is one of the most poignant single Augustan-imperial-cult survivals: the political logic of the imperial cult's succession-affirmation mechanism, frozen in stone at the moment when the affirmation failed. The building is therefore an architectural document not only for what imperial-cult temples looked like, but for what the imperial cult was *doing* — using architecture to manufacture dynastic legitimacy in advance of dynastic facts.
 
 ## See also
 

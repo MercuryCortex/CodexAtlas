@@ -86,7 +86,7 @@ The parallel reading: every alchemical operation in the flask corresponds to an 
 - Distillation = the refining of awareness to its essential clarity
 - Coagulation = the fixing of the realized state in a form that persists in the world
 
-**MASSIVE WIN: The Great Work as Universal Transformational Project**
+**Cross-tradition finding: The Great Work as Universal Transformational Project**
 
 The Opus Magnum is the alchemical name for what every major mystical tradition calls its final goal. The structural mapping across six traditions is the central finding of the vault's alchemy layer:
 

@@ -170,7 +170,7 @@ Hávamál stanzas 138–141 (Old Norse; Codex Regius c. 1270 CE) record the cent
 
 > *I know that I hung on the wind-tossed tree, nine whole nights, wounded with a spear, given to Odin, myself to myself, on that tree that no one knows from what root it grew. No bread they gave me, no drink from the horn; I peered downward, I took up the runes, screaming I took them, and fell back from there.*
 
-Key points: (a) Odin is self-sacrificing — "myself to myself" (*sjálfr sjálfum mér*) — the deity is simultaneously sacrificer and victim; (b) the tree is Yggdrasil, the world-axis; (c) the runes are *taken up* (*nam ek upp rúnar*), not invented — they pre-exist and Odin discovers them through ordeal; (d) the mechanism is suffering, isolation, and proximity to death. The pattern is a MASSIVE WIN: it is structurally identical to multiple divine-suffering-for-knowledge traditions across world religions.
+Key points: (a) Odin is self-sacrificing — "myself to myself" (*sjálfr sjálfum mér*) — the deity is simultaneously sacrificer and victim; (b) the tree is Yggdrasil, the world-axis; (c) the runes are *taken up* (*nam ek upp rúnar*), not invented — they pre-exist and Odin discovers them through ordeal; (d) the mechanism is suffering, isolation, and proximity to death. The pattern is a key finding: it is structurally identical to multiple divine-suffering-for-knowledge traditions across world religions.
 
 ## Variants
 

@@ -122,7 +122,7 @@ The received Shujing (58 chapters) is divided into five parts:
 - Shaped the political theology of Korea, Japan, and Vietnam as Sinicized polities
 - Remained operative as an ideological framework from ~-1046 to 1912 CE
 
-**2. Parallel to the Hebrew prophetic tradition — the MASSIVE WIN cross-tradition edge.** The *Tian Ming* concept — divine withdrawal of favor from unjust rulers — is structurally parallel to the Deuteronomistic and prophetic theology of YHWH's conditional covenant with Israel and the Davidic line. Both traditions develop "sacred history" as a vehicle for political theology:
+**2. Parallel to the Hebrew prophetic tradition — the key cross-tradition edge.** The *Tian Ming* concept — divine withdrawal of favor from unjust rulers — is structurally parallel to the Deuteronomistic and prophetic theology of YHWH's conditional covenant with Israel and the Davidic line. Both traditions develop "sacred history" as a vehicle for political theology:
 - Both argue that political catastrophe (the fall of Shang; the fall of the Northern Kingdom; the Babylonian exile) is not military or geopolitical but theological — evidence of divine judgment on moral failure.
 - Both use the *genre of preserved speech by founding figures* (the Duke of Zhou's speeches; Moses's Deuteronomy; the prophets) as the vehicle for this theology.
 - Both ground legitimacy in ethical behavior (*de* virtue; covenant *hesed*) rather than in pure hereditary descent.

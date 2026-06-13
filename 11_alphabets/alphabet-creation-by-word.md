@@ -66,7 +66,7 @@ The Hebrew word **davar** (דבר) carries two meanings simultaneously: *word* a
 
 **Sefer Yetzirah** (c. 3rd–6th c. CE; see [[alphabet-sefer-yetzirah]]) makes this explicit: God created the universe using 22 Hebrew letters plus 10 sefirot. The letters are not metaphors for creation — they are its materials. The text uses three verbs: *chaqaq* (engraved), *chatzav* (carved), *vayatzar* (formed). These are stonemason's verbs, not poet's verbs. The letters are the stones; the universe is the building.
 
-**MASSIVE WIN:** The Midrash Bereshit Rabbah (c. 5th c. CE) states: "God looked into the Torah and created the world." The Torah — a text composed of letters — is the blueprint. God was the architect who consulted the drawings before building. [[creation-by-word]] is not a metaphor in these texts. Architecture and language are the same act.
+**Cross-tradition finding:** The Midrash Bereshit Rabbah (c. 5th c. CE) states: "God looked into the Torah and created the world." The Torah — a text composed of letters — is the blueprint. God was the architect who consulted the drawings before building. [[creation-by-word]] is not a metaphor in these texts. Architecture and language are the same act.
 
 ---
 

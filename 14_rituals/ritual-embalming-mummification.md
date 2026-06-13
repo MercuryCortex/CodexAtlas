@@ -96,7 +96,7 @@ The 70-day duration is not arbitrary. It corresponds to:
 | **Expose/destroy** | Buddhist sky burial | body = final gift to sentient beings | karma travels; no bodily resurrection; dana releases merit |
 | **Burn** | Hindu cremation | body = Agni's fuel | atman is immortal; physical form is illusion |
 
-**The MASSIVE WIN**: Egyptian mummification and Christian burial are the same theological answer (preserve the body for future use by the soul), and Zoroastrian dakhma + Buddhist sky burial are the same opposite answer (destroy/expose the body to prevent it polluting the cosmos or burdening the soul). Two complete and opposite solutions to an identical problem, both with multi-tradition attestation, across a 3,500-year timespan.
+**The key finding**: Egyptian mummification and Christian burial are the same theological answer (preserve the body for future use by the soul), and Zoroastrian dakhma + Buddhist sky burial are the same opposite answer (destroy/expose the body to prevent it polluting the cosmos or burdening the soul). Two complete and opposite solutions to an identical problem, both with multi-tradition attestation, across a 3,500-year timespan.
 
 ## The Anubis Mask
 

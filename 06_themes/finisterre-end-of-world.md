@@ -37,7 +37,7 @@ dating-basis-notes: "Atlantic-end-of-world motif: Pytheas of Massalia c. -325 (U
 
 # Finisterre — The Sacred End of the World
 
-**Cabo Finisterre** (Galicia, northwestern Iberia) and nearby **Cabo da Roca** (Portugal — the westernmost point of continental Europe) occupy one of the most mythologically loaded geographical positions in the history of religion. This is, from the perspective of every European and Mediterranean civilization that faced west, **the literal end of the world** — the last solid ground before the infinite and unknown Atlantic. The Roman name *Finis Terrae* ("End of the Earth") names the function directly. What makes this a vault MASSIVE WIN is that the sacred meaning of the western edge is independently attested across virtually every tradition that knew about it.
+**Cabo Finisterre** (Galicia, northwestern Iberia) and nearby **Cabo da Roca** (Portugal — the westernmost point of continental Europe) occupy one of the most mythologically loaded geographical positions in the history of religion. This is, from the perspective of every European and Mediterranean civilization that faced west, **the literal end of the world** — the last solid ground before the infinite and unknown Atlantic. The Roman name *Finis Terrae* ("End of the Earth") names the function directly. What makes this a standout vault finding is that the sacred meaning of the western edge is independently attested across virtually every tradition that knew about it.
 
 ## The Cross-Tradition Map
 

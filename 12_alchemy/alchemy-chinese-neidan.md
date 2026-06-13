@@ -75,7 +75,7 @@ The body's three Cinnabar Fields (*dantian*, 丹田 — literally "cinnabar fiel
 
 This is a complete internal laboratory with specific anatomical locations, directional flows, and precise operations — just described in a biological-energetic vocabulary rather than a metallurgical one.
 
-**MASSIVE WIN: Independent Parallel Development**
+**Cross-tradition finding: Independent Parallel Development**
 
 The convergence between Western soul alchemy and Chinese Neidan is among the strongest cross-tradition parallels in the vault, precisely because the independence of development is extremely well-documented:
 

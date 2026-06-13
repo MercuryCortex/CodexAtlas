@@ -74,7 +74,7 @@ After 1822, the Egyptians could speak for themselves. Within a generation of the
 
 Every Egyptian-language node in the vault — every Phase 1 Egyptian document — exists in modern accessible form because of one scholar who taught himself to read a dead script using a living liturgical language as his key.
 
-**The structural MASSIVE WIN:** the Coptic Christian church — a tradition that survived from late antiquity precisely because it was embedded in Christian liturgical practice — was the archive that made the pre-Christian Egyptian religious world legible again. Christianity preserved the key that unlocked its own predecessor religion.
+**The key structural finding:** the Coptic Christian church — a tradition that survived from late antiquity precisely because it was embedded in Christian liturgical practice — was the archive that made the pre-Christian Egyptian religious world legible again. Christianity preserved the key that unlocked its own predecessor religion.
 
 ## Young vs. Champollion
 

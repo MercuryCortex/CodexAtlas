@@ -125,7 +125,7 @@ In Southeast Asian temple architecture, Garuda and Naga are not merely opposed m
 
 ## Cross-family appearance
 
-**MASSIVE WIN: The eagle-vs-serpent cosmic duality is structurally universal.** The Garuda-Naga polarity (aerial/solar divine eagle vs. chthonic/aquatic serpent) appears as an independent structural solution to the problem of cosmic duality across multiple traditions with no documented mutual transmission:
+**Cross-tradition finding: The eagle-vs-serpent cosmic duality is structurally universal.** The Garuda-Naga polarity (aerial/solar divine eagle vs. chthonic/aquatic serpent) appears as an independent structural solution to the problem of cosmic duality across multiple traditions with no documented mutual transmission:
 
 | Tradition | Eagle figure | Serpent figure | Period |
 |-----------|-------------|----------------|--------|
@@ -139,7 +139,7 @@ In Southeast Asian temple architecture, Garuda and Naga are not merely opposed m
 
 The **Aztec case** is perhaps the most striking: the founding vision of Tenochtitlan — an eagle perched on a cactus devouring a serpent — which now appears on the Mexican national flag, encodes the same eagle-over-serpent cosmic-victory that Garuda represents in Hindu tradition. Zero documented transmission between Aztec and Indic traditions. This is independent convergence on the same symbolic solution across hemispheres.
 
-**MASSIVE WIN: Garuda's amrita-theft as cosmic axis traversal.** The myth of Garuda ascending from earth to heaven to steal the amrita parallels three further traditions:
+**Cross-tradition finding: Garuda's amrita-theft as cosmic axis traversal.** The myth of Garuda ascending from earth to heaven to steal the amrita parallels three further traditions:
 
 1. **Greek Prometheus** stealing fire from heaven for humanity's benefit (directional: heaven → earth; divine substance is fire not nectar; structure identical)
 2. **Vedic Syena** stealing Soma (direct textual ancestor; same Indian tradition, earlier form)

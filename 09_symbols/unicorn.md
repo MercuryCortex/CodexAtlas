@@ -103,7 +103,7 @@ Scotland's national animal since at least the 12th century. In Scottish heraldry
 
 ## Cross-family appearance: The MASSIVE WIN
 
-**MASSIVE WIN — Independent convergence: the Western unicorn and the Chinese qilin.**
+**Cross-tradition finding — Independent convergence: the Western unicorn and the Chinese qilin.**
 
 The **European unicorn** (*monokerōs*, the creature of the Physiologus and the bestiaries) and the **Chinese qilin** (麒麟) are **independent parallel forms** of the same symbolic archetype: a rare, sacred, single-horned (or sometimes two-horned) creature of extreme benevolence that appears only at the birth or death of a great sage or divine figure, signaling cosmic significance.
 

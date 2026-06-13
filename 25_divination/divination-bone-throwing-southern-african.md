@@ -83,7 +83,7 @@ The completed Sangoma is simultaneously diviner, herbalist, ritual specialist, c
 
 ## Cross-tradition position
 
-**MASSIVE-WIN — universal astragalus divination**: the goat/sheep astragalus is one of the most-universally-attested divination instruments in human history. Documented uses:
+**Cross-tradition finding — universal astragalus divination**: the goat/sheep astragalus is one of the most-universally-attested divination instruments in human history. Documented uses:
 - **Greek [[astragalomancy-knucklebone]]** — astragali used as 4-sided dice in Greek + Roman divination; results read against pre-set astragalus-tables
 - **Mesopotamian** — astragali from -3000 onward in temple deposits; precursor to dice
 - **Mongolian *shagai***: traditional 4-side astragalus dice

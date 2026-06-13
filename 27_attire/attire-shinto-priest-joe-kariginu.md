@@ -68,7 +68,7 @@ The miko vesture is less hierarchically-stratified than kannushi vesture (miko t
 
 ## Cross-tradition position
 
-**MASSIVE-WIN — ritual continuity through court-dress preservation**: Shinto priestly attire is the principal world instance of a **religious tradition preserving past-era civilian-court dress as its ritual costume**. The Heian forms preserved in modern Shinto ritual constitute an unbroken thousand-year continuity of dress practice in active use. Comparative cases:
+**Cross-tradition finding — ritual continuity through court-dress preservation**: Shinto priestly attire is the principal world instance of a **religious tradition preserving past-era civilian-court dress as its ritual costume**. The Heian forms preserved in modern Shinto ritual constitute an unbroken thousand-year continuity of dress practice in active use. Comparative cases:
 
 - **Anglican clerical surplice + cope** — descend from medieval European liturgical forms, but underwent substantial Reformation + Counter-Reformation revisions; less direct continuity than Shinto
 - **Catholic chasuble** ([[vestment-chasuble]]) — derives from late-Roman *paenula*; ~1,500 years of substantial continuity but with form-evolution (the chasuble's shape changed substantially between medieval + Baroque + modern periods)

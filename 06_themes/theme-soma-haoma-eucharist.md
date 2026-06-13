@@ -125,7 +125,7 @@ Key Vedic soma features:
 - **Indra drinks soma**: The battle-god Indra drinks extraordinary quantities of soma before his cosmic battle with the dragon Vṛtra. Soma is battle-fuel for the gods.
 - **The soma sacrifice** (*soma yāga*): The central Vedic ritual. The pressing, filtering, and offering of soma juice is the ritual around which the entire Vedic sacrificial system is organized. The Brahmin *hotṛ* priest's role is specifically tied to the soma offering.
 
-**MASSIVE WIN**: The identification of soma with the deity (drinking the substance = drinking the god) is the structural heart of the Eucharistic theology "this is my body / this is my blood." Two independent ancient cultures (PII/Vedic and Jewish-Christian) arrived at the same ritual logic: the sacred substance IS the divine being, and consuming it creates real divine union.
+**Cross-tradition finding**: The identification of soma with the deity (drinking the substance = drinking the god) is the structural heart of the Eucharistic theology "this is my body / this is my blood." Two independent ancient cultures (PII/Vedic and Jewish-Christian) arrived at the same ritual logic: the sacred substance IS the divine being, and consuming it creates real divine union.
 
 ## Stage 3: Avestan Haoma (Avesta, Yasna 9–11)
 
@@ -168,7 +168,7 @@ The Christian Eucharist is the endpoint of the transmission chain — or rather,
 - **Consubstantiation / Real Presence** (Lutheran): Christ is truly present in, with, and under the bread and wine; the substances are not replaced but the divine presence is real.
 - **Memorial / Symbolic** (Zwinglian/Reformed): The Eucharist is a memorial sign, not an ontological transformation. Even in this minimal interpretation, the *logic* of divine body-and-blood being consumed by the worshiper to create union persists.
 
-**MASSIVE WIN** — structural comparison with Vedic soma:
+**Cross-tradition finding** — structural comparison with Vedic soma:
 | Feature | Vedic Soma | Christian Eucharist |
 |---|---|---|
 | Substance = deity | Soma the plant = Soma the god | Bread/wine = body/blood of Christ |

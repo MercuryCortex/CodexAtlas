@@ -93,7 +93,7 @@ The most important scholarly debate about the earth-diver motif:
 
 ## MASSIVE WIN
 
-The earth-diver motif is a MASSIVE WIN because it is one of the clearest demonstrations that **Indigenous North American cosmogony is not theologically naive**: the Haudenosaunee, Ojibwe, and Cherokee earth-diver traditions are sophisticated cosmogonic narratives wrestling with the same philosophical question as the Vedic *Hiranyagarbha* and the Finnish *Kalevala* — what preceded the world, and how did the world come from nothing? The answer — *from below the water* — is a structural theological claim about the relation between order and chaos (earth from the depths of primordial ocean = organized cosmos emerging from unformed void). This is structurally identical to the Egyptian *Nun* (primordial waters from which creation emerges) and the *tehom* of Genesis 1 (the deep over which God's spirit moves).
+The earth-diver motif is a major cross-tradition finding because it is one of the clearest demonstrations that **Indigenous North American cosmogony is not theologically naive**: the Haudenosaunee, Ojibwe, and Cherokee earth-diver traditions are sophisticated cosmogonic narratives wrestling with the same philosophical question as the Vedic *Hiranyagarbha* and the Finnish *Kalevala* — what preceded the world, and how did the world come from nothing? The answer — *from below the water* — is a structural theological claim about the relation between order and chaos (earth from the depths of primordial ocean = organized cosmos emerging from unformed void). This is structurally identical to the Egyptian *Nun* (primordial waters from which creation emerges) and the *tehom* of Genesis 1 (the deep over which God's spirit moves).
 
 ## Edge Connections
 

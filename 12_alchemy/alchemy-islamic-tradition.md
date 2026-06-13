@@ -73,7 +73,7 @@ The very word "alchemy" is Arabic. The etymology of *al-kīmiyāʾ* is disputed:
 
 This 12th-century translation event is the single most important fact in the history of European alchemy: without it, the Arabic scientific tradition stays in Arabic and does not reach Albertus Magnus (c. 1260), Roger Bacon (c. 1267), Paul of Taranto ("pseudo-Geber," c. 1280s), or ultimately Paracelsus (1493–1541) and Newton (1643–1727).
 
-**MASSIVE WIN: "Alchemy" is an Arabic Word — Everything Flows Through Islam**
+**Cross-tradition finding: "Alchemy" is an Arabic Word — Everything Flows Through Islam**
 
 The complete vocabulary of European alchemy that eventually became the vocabulary of modern chemistry is Arabic in origin:
 

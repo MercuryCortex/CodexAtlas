@@ -69,7 +69,7 @@ This is one of the most important cross-tradition transmission chains in the vau
 **The complete chain:**
 Avestan afterlife doctrine (~600 BCE?) → [[phase-4-086-arda-viraf-namag]] (3rd–5th c. CE) → Islamic *Mi'rāj* literature (7th–12th c. CE) → *Liber Scalae Machometi* (Latin, 1264 CE) → *Divina Commedia* (1308–1321 CE) → entire Western literary tradition of the afterlife
 
-This is a **MASSIVE WIN** for the vault: the text that most educated Westerners associate with the Christian imagination of hell and heaven descends *plausibly* — with strong circumstantial evidence — from a Zoroastrian prototype via Islamic transmission. The Zoroastrian → Islamic leg is demonstrated; the Islamic → Dante leg rests on Cerulli's well-supported but unproved hypothesis of transmission through Brunetto Latini. Three traditions across fifteen centuries converge in this single poem.
+This is a **major cross-tradition finding**: the text that most educated Westerners associate with the Christian imagination of hell and heaven descends *plausibly* — with strong circumstantial evidence — from a Zoroastrian prototype via Islamic transmission. The Zoroastrian → Islamic leg is demonstrated; the Islamic → Dante leg rests on Cerulli's well-supported but unproved hypothesis of transmission through Brunetto Latini. Three traditions across fifteen centuries converge in this single poem.
 
 ## Edge connections
 

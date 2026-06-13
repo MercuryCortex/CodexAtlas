@@ -61,7 +61,7 @@ The sequence, reconstructed from the *Völuspá* (Poetic Edda) and Snorri Sturlu
 
 The Norse creation-from-a-dismembered-primordial-body is one of the most widespread and theologically significant cross-tradition patterns in the vault:
 
-**MASSIVE WIN — Vedic Purusha Sūkta (Rigveda 10.90):** The most direct structural parallel. The cosmic man **Purusha** is sacrificed by the gods; from his body emerge the four varnas, the moon, sun, Indra, Agni, and the entire cosmos. The Vedic and Norse myths almost certainly reflect a shared **Proto-Indo-European cosmogonic template** — primordial being sacrificed or dismembered → body becomes the world. This is one of the strongest evidence points for a common Indo-European mythological substrate. See [[cosmic-body-cosmogony]].
+**Cross-tradition finding — Vedic Purusha Sūkta (Rigveda 10.90):** The most direct structural parallel. The cosmic man **Purusha** is sacrificed by the gods; from his body emerge the four varnas, the moon, sun, Indra, Agni, and the entire cosmos. The Vedic and Norse myths almost certainly reflect a shared **Proto-Indo-European cosmogonic template** — primordial being sacrificed or dismembered → body becomes the world. This is one of the strongest evidence points for a common Indo-European mythological substrate. See [[cosmic-body-cosmogony]].
 
 **Mesopotamian Enuma Elish:** [[tiamat]] (the salt-water chaos-dragon) is slain by [[marduk]]; from her body he creates the sky and earth (upper and lower halves of her divided corpse), her eyes become the sources of the Tigris and Euphrates. The same grammar: primordial being killed → body becomes the structured world. The Norse and Babylonian traditions may share this via independent parallel evolution or very ancient common ancestry.
 

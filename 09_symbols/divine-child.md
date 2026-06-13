@@ -51,7 +51,7 @@ The infant [[horus]] (*Har-pa-khered*, Egyptian "Horus the child") is the son of
 
 The nursing [[isis-egyptian]] (*Isis Lactans*) holding the infant [[horus]] at her breast is one of the most frequently produced images in the entire history of Egyptian material culture. Faience figurines, ivory carvings, and bronze statuettes of the nursing Isis survive in the thousands from the Late Period and Ptolemaic era. The image was so widespread that it entered the visual vocabulary of the entire Mediterranean world.
 
-**MASSIVE WIN — Isis Lactans → Madonna and Child**: André Grabar's foundational study (*Christian Iconography: A Study of its Origins*, 1968) documents the direct iconographic transmission from the nursing Isis to the enthroned Virgin Mary holding the Christ child. The compositional scheme — a divine mother enthroned, holding an infant god at breast or on her lap — passes from Egyptian into Coptic Christian and then into Western Christian iconographic tradition. This is one of the most well-documented cases of direct religious iconographic transmission in art history.
+**Cross-tradition finding — Isis Lactans → Madonna and Child**: André Grabar's foundational study (*Christian Iconography: A Study of its Origins*, 1968) documents the direct iconographic transmission from the nursing Isis to the enthroned Virgin Mary holding the Christ child. The compositional scheme — a divine mother enthroned, holding an infant god at breast or on her lap — passes from Egyptian into Coptic Christian and then into Western Christian iconographic tradition. This is one of the most well-documented cases of direct religious iconographic transmission in art history.
 
 ### Krishna as the Divine Child
 

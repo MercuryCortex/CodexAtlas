@@ -120,7 +120,7 @@ This network is the **operational answer** to the question that the Silk Road ra
 
 This is **cluster 2** of the README (Silk Road as Buddhism corridor) seen from the **carrier's side**: the Sogdians ARE the silk-road-as-religious-transmission-corridor in its most documented operational form. They simultaneously serve **cluster 1**'s structural argument (trade-as-religious-transmission) and Curtin's general theoretical model of the trade diaspora.
 
-A secondary MASSIVE-WIN cluster surfaces here that the README does not enumerate: **the trade diaspora as a model of religious pluralism**. The Sogdian merchant family of Tang Chang'an — Zoroastrian father, Manichaean son, Buddhist daughter-in-law, Nestorian grandchild, all under one roof, all funded by the same caravan trade — is **a model for thinking about cross-tradition religious life** that the rest of the vault should probably foreground.
+A secondary cross-tradition cluster surfaces here that the README does not enumerate: **the trade diaspora as a model of religious pluralism**. The Sogdian merchant family of Tang Chang'an — Zoroastrian father, Manichaean son, Buddhist daughter-in-law, Nestorian grandchild, all under one roof, all funded by the same caravan trade — is **a model for thinking about cross-tradition religious life** that the rest of the vault should probably foreground.
 
 ## Sources
 

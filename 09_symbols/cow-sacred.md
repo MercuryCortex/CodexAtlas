@@ -128,7 +128,7 @@ Hathor (Ḥwt-Ḥr, 'House of Horus') is one of the most ancient and most-attest
 
 ## Cross-family appearance
 
-**MASSIVE WIN: The cosmic nourisher-bovine is a cross-traditional archetype documented in seven independent streams.**
+**Cross-tradition finding: The cosmic nourisher-bovine is a cross-traditional archetype documented in seven independent streams.**
 
 | Tradition | Entity | Role | Period |
 |-----------|--------|------|--------|

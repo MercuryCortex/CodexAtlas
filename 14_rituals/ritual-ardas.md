@@ -50,7 +50,7 @@ The prayer is recited aloud by a single representative who speaks *on behalf of 
 
 ## Cross-Tradition Connections: Posture IS Theology
 
-**MASSIVE WIN:** The posture of standing in prayer is not universal — it is a specific theological statement, and different traditions have chosen different postures with full awareness of the theological implications:
+**Cross-tradition finding:** The posture of standing in prayer is not universal — it is a specific theological statement, and different traditions have chosen different postures with full awareness of the theological implications:
 
 | Tradition | Prayer | Posture | Theological claim |
 |---|---|---|---|

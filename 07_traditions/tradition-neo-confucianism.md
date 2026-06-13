@@ -129,7 +129,7 @@ All four are **historical movements that democratized epistemic authority** — 
 
 ## Confucianism → Enlightenment Europe (the Jesuit transmission)
 
-Neo-Confucianism is the form of Confucianism the Jesuits encountered and transmitted to Europe. The transmission chain is one of the vault's most consequential MASSIVE WINs:
+Neo-Confucianism is the form of Confucianism the Jesuits encountered and transmitted to Europe. The transmission chain is one of the vault's most consequential cross-tradition findings:
 
 1. **Matteo Ricci SJ** arrives in China 1582; learns classical Chinese and Neo-Confucian texts; writes *Tianzhu shiyi* (*True Meaning of the Lord of Heaven*, 1603) — presents Christianity as compatible with Confucianism (not Buddhism/Daoism).
 2. **Jesuit translations** of the Four Books flood European intellectual life: *Confucius Sinarum Philosophus* (1687) — partial translation of the Four Books into Latin, produced by Couplet and three colleagues; this is the first systematic European encounter with Chinese philosophy.

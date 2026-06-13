@@ -110,7 +110,7 @@ The **Mosaic Pavement** is the **black-and-white checkered floor** of the **[[tr
 
 The name derives from *mosaic* (Latin *musaicum*, from the Greek Muses) and references the ancient tradition of **Roman tessellated floors** (*opus sectile*, *opus scutulatum*) with geometric black-and-white patterns. The *tessellated border* — a chequered edge surrounding the pavement — is equally part of the symbolic furniture.
 
-**THE MASSIVE WIN**: The Masonic black-and-white floor is the most architecturally visible expression in Western esotericism of the **cosmic Light/Darkness dualism** that runs from **Zoroaster** (c. -600) through **Mani** (3rd c. CE), **Bogomilism** (10th c.), and **Catharism** (12th c.) to the modern lodge. Albert Pike (*Morals and Dogma*, 1871) explicitly connects the Masonic pavement to **Zoroastrian** and **Manichaean** dualism. The chain: **Masonic mosaic pavement → Zoroastrian Ahura Mazda/Angra Mainyu dualism → Iranian plateau c. -600 BCE** is documented in the primary Masonic esoteric source.
+**The key finding**: The Masonic black-and-white floor is the most architecturally visible expression in Western esotericism of the **cosmic Light/Darkness dualism** that runs from **Zoroaster** (c. -600) through **Mani** (3rd c. CE), **Bogomilism** (10th c.), and **Catharism** (12th c.) to the modern lodge. Albert Pike (*Morals and Dogma*, 1871) explicitly connects the Masonic pavement to **Zoroastrian** and **Manichaean** dualism. The chain: **Masonic mosaic pavement → Zoroastrian Ahura Mazda/Angra Mainyu dualism → Iranian plateau c. -600 BCE** is documented in the primary Masonic esoteric source.
 
 ## Earliest attestation
 

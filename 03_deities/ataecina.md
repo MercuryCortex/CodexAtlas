@@ -75,7 +75,7 @@ The triple function (regeneration / underworld-queen / death-sender) is the char
 
 ## Cross-tradition parallels
 
-**The Atlantic chthonic goddess spine — MASSIVE WIN**
+**The Atlantic chthonic goddess spine — a cross-tradition finding**
 Ataecina sits at the western terminus of a reconstructable IE chthonic goddess type that runs from eastern to western Europe:
 
 | Tradition | Figure | Domain | Etymology |

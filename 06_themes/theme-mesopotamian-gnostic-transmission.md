@@ -128,7 +128,7 @@ dating-basis-notes: "Mesopotamian-Gnostic transmission from Babylonian exile c. 
 
 The Codex Atlas treats **Gnosticism** as a 2nd–4th c. CE Mediterranean religious phenomenon with multiple recognizable upstreams: Jewish apocalyptic and wisdom literature, Platonist philosophy, Egyptian Hermetism, and **Mesopotamian myth and cosmology** mediated through the Hellenistic-Jewish synthesis. This theme node documents the **Mesopotamian → Gnostic** chain specifically — the documentable lines of inheritance running from Sumerian / Akkadian / Babylonian religious materials through Second-Temple Jewish reception into the Gnostic systems of late antiquity.
 
-The original 2026-05-21 cross-tradition bridge audit flagged the **Gnostic ↔ Mesopotamian** bridge as **anemic (2 edges only)** despite being one of the genuinely load-bearing transmission chains in late-antique religious history — and one of John's specifically named "MASSIVE-WIN gold" zones. This node thickens the bridge by documenting **five distinct chains of inheritance** with their primary-source basis, scholarly literature, and the points where transmission is firm vs. structural-parallel-only.
+The original 2026-05-21 cross-tradition bridge audit flagged the **Gnostic ↔ Mesopotamian** bridge as **anemic (2 edges only)** despite being one of the genuinely load-bearing transmission chains in late-antique religious history — and one of John's specifically named cross-tradition "gold" zones. This node thickens the bridge by documenting **five distinct chains of inheritance** with their primary-source basis, scholarly literature, and the points where transmission is firm vs. structural-parallel-only.
 
 ---
 

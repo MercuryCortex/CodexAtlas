@@ -171,5 +171,5 @@ The Aten's historical influence is paradoxical: the cult was suppressed so thoro
 - **[[jan-assmann]]** — the scholar whose Mosaic Distinction thesis makes Aten theologically central to Western religious history
 - **[[tradition-judaism]]** — the tradition Assmann argues is structurally shaped by the Atenist exclusive-monotheism template
 - **[[event-amarna-period-1353-1336]]** — the historical event node for the Atenist revolution
-- **[[phase-1-011-great-hymn-to-aten]]** — the primary devotional text of Atenism; its parallel to Psalm 104 is the MASSIVE WIN literary connection
+- **[[phase-1-011-great-hymn-to-aten]]** — the primary devotional text of Atenism; its parallel to Psalm 104 is the key cross-tradition literary connection
 - **[[phase-1-012-amarna-letters]]** — diplomatic correspondence from the Amarna period; context for the Egyptian-Canaanite cultural milieu that bridges the Great Hymn and Hebrew psalmody

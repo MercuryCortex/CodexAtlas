@@ -45,7 +45,7 @@ Cuneiform (from Latin *cuneus* = wedge) is the world's oldest known writing syst
 
 The earliest tablets from Uruk Level IV (c. 3200–3000 BCE) are almost entirely administrative: ration lists, animal counts, field measurements, labor tallies. The institution that required writing was the redistributive temple economy — the "great organization" that coordinated thousands of workers, herds, and craft specialists under divine sponsorship. Writing solved the problem of memory at scale in service of the divine household.
 
-**This is the MASSIVE WIN:** writing was not invented for literature, communication, or philosophy. It was invented as sacred accounting. The distinction between the religious and the bureaucratic did not exist in Sumer. The temple IS the economy IS the cosmos IS the divine will. Cuneiform tablets ARE theology made administrative.
+**This is the key finding:** writing was not invented for literature, communication, or philosophy. It was invented as sacred accounting. The distinction between the religious and the bureaucratic did not exist in Sumer. The temple IS the economy IS the cosmos IS the divine will. Cuneiform tablets ARE theology made administrative.
 
 ## From Accounting to Cosmology: The Scribal Explosion (c. 2600–2000 BCE)
 
@@ -64,7 +64,7 @@ As writing accumulated sacred weight, it acquired a divine patron. **Nabu** (Bab
 
 Nabu held the "tablet of destinies" — the cosmic document on which the fates of all beings were written. To write was to participate in the divine act of ordering reality. The scribal act was not merely practical; it was mimesis of the divine: the scribe who carved a tablet was doing what Nabu did in the heavens.
 
-**MASSIVE WIN — The Scribal Deity Triad:**
+**Cross-tradition finding — The Scribal Deity Triad:**
 - **Nabu** (Babylonian/Sumerian): god of writing, wisdom, destiny, son of Marduk → associated with the planet Mercury
 - **[[thoth]]** (Egyptian): ibis-headed god of writing, wisdom, magic, the moon → inventor of hieroglyphs (medu netjer)
 - **[[hermes-trismegistus]]** (Greek/Hellenistic): divine messenger, inventor of writing, guide of souls → associated with Mercury, synchronized with Thoth by the Ptolemaic period

@@ -73,7 +73,7 @@ The harmony within the human person — the proportional relationship between bo
 
 This is the Platonic doctrine from the *Timaeus*: the soul is constructed from harmonic ratios (see [[music-plato-timaeus-worldsoul]]). Illness, vice, and psychological disorder are literally disharmony — wrong ratios in the soul's constitution. Healing is retuning.
 
-The MASSIVE WIN: **this model is the philosophical basis for music therapy**. The tradition of using music to heal — from David playing to calm Saul's "evil spirit" (1 Samuel 16), to Pythagoras reportedly prescribing specific modes for specific conditions, to the Islamic physician Ibn Sina's music therapy chapters, to modern neuroscience — all trace back to the Boethian musica humana framework.
+The key finding: **this model is the philosophical basis for music therapy**. The tradition of using music to heal — from David playing to calm Saul's "evil spirit" (1 Samuel 16), to Pythagoras reportedly prescribing specific modes for specific conditions, to the Islamic physician Ibn Sina's music therapy chapters, to modern neuroscience — all trace back to the Boethian musica humana framework.
 
 ### 3. Musica Instrumentalis (Music of Instruments)
 The audible music humans actually produce and perform — singing, playing instruments. This is the *lowest* tier in the Boethian hierarchy. Practical performance is almost an afterthought.

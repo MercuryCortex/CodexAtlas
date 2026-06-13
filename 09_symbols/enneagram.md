@@ -114,7 +114,7 @@ The Enneagram is a circle with 9 equally spaced points connected by two overlaid
 
 ## Cross-family appearance
 
-**MASSIVE WIN — sacred numerical structure as personality map: a cross-tradition pattern**
+**Cross-tradition finding — sacred numerical structure as personality map**
 
 The enneagram personality system is the only major contemporary personality typology with claimed roots in esoteric/mystical tradition. But this is not unique as a *type* of system: the idea that cosmic numerical structure maps directly onto human psychological types is ancient and cross-traditional.
 

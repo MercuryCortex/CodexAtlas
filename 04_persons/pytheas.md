@@ -66,7 +66,7 @@ This is Iceland, the Faroe Islands, or possibly the Norwegian coast. The midnigh
 
 If Pytheas reached the Arctic circle, he did so ~1,800 years before the Norse exploration of the same waters and ~1,900 years before any European is conventionally thought to have known these regions existed. He was not believed for 2,300 years. He was right.
 
-**MASSIVE WIN — Pytheas as the First Scientific Observer of the Megalithic World**
+**Cross-tradition finding — Pytheas as the First Scientific Observer of the Megalithic World**
 Pytheas sailed the same Atlantic coastline as the builders of Almendres, Carnac, Stonehenge, and Newgrange — roughly 3,000 years after the megalithic tradition peaked. He was the first person to describe what he saw in scientific rather than mythological terms:
 - The Tin Islands (Cornwall) — the same Cornwall from which megalith-era traders shipped tin to Iberia for Bronze Age manufacturing
 - Cape Finisterre — the sacred western promontory where every Atlantic tradition from Melqart to the Camino de Santiago recognized the world's end

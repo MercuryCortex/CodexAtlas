@@ -77,7 +77,7 @@ This **4-year directional rotation** within the 52-year Calendar Round structure
 
 ## Cross-tradition position
 
-**MASSIVE-WIN — interlocking-cycle calendars as Mesoamerican signature**: the Calendar Round is the most-developed instance of an **interlocking multi-cycle calendar system** in world history. The principle — independently-running counts with different periods producing a longer composite cycle — appears in some other traditions but never with the same elaboration:
+**Cross-tradition finding — interlocking-cycle calendars as a Mesoamerican signature**: the Calendar Round is the most-developed instance of an **interlocking multi-cycle calendar system** in world history. The principle — independently-running counts with different periods producing a longer composite cycle — appears in some other traditions but never with the same elaboration:
 
 - **Chinese sexagenary cycle** ([[chinese-sexagenary-calendar]]) — interlocks 10 Heavenly Stems + 12 Earthly Branches to produce a 60-year cycle. Structural parallel to Calendar Round; both produce a multi-decade composite cycle from short components.
 - **Hindu Yuga system** — interlocks four ages (Krita, Treta, Dvapara, Kali) into a Mahayuga (4.32 million years) into a Kalpa (4.32 billion years). Cosmological-temporal nesting, longer scale than Calendar Round.

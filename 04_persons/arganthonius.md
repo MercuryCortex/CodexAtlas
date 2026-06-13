@@ -62,7 +62,7 @@ Herodotus gives Arganthonius 120 years of life and 80 of reign; Anacreon, writin
 2. A mythological elaboration — the wealthy, remote, hospitable western king given legendary longevity as an attribute of his otherworldly Western position. The world's western edge was the land of eternal life and blessed immortals in Greek mythology (Elysian Fields, Isles of the Blessed) — a king who lived there for 120 years is structurally consistent with the Greek mythological imagination about the West
 3. A genuine oral tradition from Tartessos itself — a king whose reign was memorable enough to preserve for three generations before Herodotus wrote it down
 
-**MASSIVE WIN — The 120-Year King and the Western Immortal Archetype**
+**Cross-tradition finding — The 120-Year King and the Western Immortal Archetype**
 Arganthonius's legendary age connects him to a cross-tradition archetype: the figure at the world's western edge who has transcended normal mortality.
 - The Celtic Otherworld (*Tír na nÓg* = "Land of Youth") is characterized by the absence of aging and death
 - The biblical Methuselah (969 years), Enoch (365 years, "taken by God"), and the antediluvian patriarchs embody the same structure: the closer to the sacred origin/edge, the longer the life
