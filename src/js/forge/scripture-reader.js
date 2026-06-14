@@ -282,10 +282,10 @@
 
   function attach(deps) {
     const local = deps.local;
-    // toggleLock + triggerClickPulse — held for Step 5 (entity clicks
-    // → lock wheel node). Not used by skeleton.
-    // const toggleLock        = deps.toggleLock;
-    // const triggerClickPulse = deps.triggerClickPulse;
+    // toggleLock + triggerClickPulse — Step 5 (entity clicks → lock the
+    // wheel node + draw its cross-tradition wires). Wired 2026-06-14.
+    const toggleLock        = deps.toggleLock;
+    const triggerClickPulse = deps.triggerClickPulse;
 
     if (!local) return;
     // Re-entry guard: an idempotent attach lets dev reload the bundle
@@ -486,12 +486,31 @@
     if (backBtn) backBtn.addEventListener('click', close);
 
     // Cross-tradition link clicks → swap to the referenced text.
+    // Annotated-entity clicks → LOCK the term's node on the wheel and draw
+    // its cross-tradition wires (the Step-5 design intent; toggleLock +
+    // triggerClickPulse were injected for exactly this). This is the
+    // forge-native node surface: in forge view the shared aside#detail
+    // inspector is suppressed (forge owns its wheel + side-panel), so we
+    // route through the wheel, not selectNode. Reading 'the deep' and
+    // clicking it lights up tehom ↔ Tiamat · Nun · Ginnungagap on the wheel.
+    // Guard on a resolvable node so dead/blank annotations stay inert.
     overlay.addEventListener('click', function (ev) {
       const linked = ev.target.closest('.forge-reader-xtrad-item.is-linked');
       if (linked) {
         ev.stopPropagation();
         const tid = linked.getAttribute('data-textid');
         if (tid) open(tid);
+        return;
+      }
+      const ent = ev.target.closest('.forge-reader-ent');
+      if (ent) {
+        const node = ent.getAttribute('data-node');
+        if (node && window.NODES_BY_ID && window.NODES_BY_ID[node] &&
+            typeof toggleLock === 'function') {
+          ev.stopPropagation();
+          toggleLock(node);
+          if (typeof triggerClickPulse === 'function') triggerClickPulse(node);
+        }
       }
     });
 
