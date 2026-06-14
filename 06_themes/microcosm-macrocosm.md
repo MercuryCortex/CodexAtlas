@@ -1,12 +1,13 @@
 ---
 type: theme
 id: "microcosm-macrocosm"
+parallels: ["[[as-above-so-below]]", "[[hermetic-correspondences]]", "[[signatures-of-things]]", "[[sympathetic-magic]]", "[[anthropos-myth]]", "[[cosmic-body-cosmogony]]", "[[sefirot]]", "[[chain-of-being]]", "[[adam-kadmon]]"]
 name: "Microcosm-macrocosm"
 aka: ["as above, so below", "anthropos-as-cosmos", "correspondences"]
 category: "cosmogonic"
 appearances: ["[[phase-3-002-plato-dialogues]]", "[[phase-4-011-corpus-hermeticum-i]]", "[[phase-4-012-asclepius]]", "[[phase-5-012-sefer-yetzirah]]", "[[phase-5-027-sefer-ha-zohar]]", "[[phase-5-014-abhinavagupta-tantraloka]]", "[[phase-6-001-ficino-pimander]]", "[[phase-6-008-paracelsus-corpus]]", "[[phase-6-009-agrippa-de-occulta-philosophia]]", "[[phase-6-022-fludd-utriusque-cosmi-historia]]", "[[phase-6-024-kircher-oedipus-aegyptiacus]]"]
-deity-instances: ["[[adam-kadmon]]"]
-status: "stub"
+deity-instances: ["[[purusha]]"]
+status: "full"
 refs:
   - title: "Microcosmus and Macrocosmus in Medieval Philosophy"
     author: "Allers, Rudolf"

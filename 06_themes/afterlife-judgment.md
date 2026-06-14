@@ -1,11 +1,12 @@
 ---
 type: theme
 id: "afterlife-judgment"
+parallels: ["[[psychostasia-soul-weighing]]", "[[cinvat-bridge-judgment]]", "[[end-times-judgment]]"]
 name: "Afterlife and post-mortem judgment"
 category: "eschatological"
 appearances: ["[[phase-1-002-pyramid-texts]]", "[[phase-1-009-coffin-texts]]", "[[phase-1-010-book-of-the-dead]]"]
 deity-instances: ["[[osiris]]", "[[anubis]]", "[[ma-at]]", "[[thoth]]"]
-status: "stub"
+status: "metadata"
 refs:
   - title: "The Ancient Egyptian Book of the Dead"
     author: "Faulkner, Raymond O. (trans.); Andrews, Carol (ed.)"

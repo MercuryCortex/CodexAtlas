@@ -1,6 +1,7 @@
 ---
 type: theme
 id: "psychostasia-soul-weighing"
+parallels: ["[[anubis]]", "[[thoth]]", "[[ammit-devourer]]", "[[yama-vedic]]", "[[chitragupta]]", "[[enma-japanese]]", "[[mithra-zoroastrian]]", "[[rashnu-zoroastrian]]", "[[sraosha]]", "[[michael-archangel]]", "[[zeus]]", "[[tartarus]]", "[[cinvat-bridge-judgment]]", "[[end-times-judgment]]"]
 name: "Psychostasia — Weighing of the Soul"
 aka: ["soul-weighing", "judgment of the dead", "weighing of the heart", "last judgment scales", "divine tribunal", "psychostasia"]
 category: "eschatological / soteriological"
@@ -17,7 +18,7 @@ related-themes:
   - "[[ascent-of-the-soul]]"
   - "[[katabasis-and-anabasis]]"
   - "[[divine-kingship]]"
-status: "metadata"
+status: "full"
 refs:
   - title: "The Ancient Egyptian Book of the Dead"
     author: "Faulkner, R.O. (trans.)"

@@ -32,9 +32,16 @@ parallels:
   - "[[neoplatonic-henosis]]"
   - "[[ma-at-logos-sophia]]"
   - "[[perennial-philosophy]]"
+  - "[[johannes-reuchlin]]"
+  - "[[isaac-casaubon]]"
+  - "[[zoroaster-prophet]]"
+  - "[[orpheus]]"
+  - "[[pythagoras]]"
+  - "[[plato]]"
+  - "[[moses]]"
 appearances: ["[[phase-6-001-ficino-pimander]]", "[[phase-6-002-ficino-theologia-platonica]]", "[[phase-6-003-pico-oration-900-conclusions]]", "[[phase-6-004-pico-heptaplus-conclusiones-cabalisticae]]", "[[phase-6-006-reuchlin-de-arte-cabalistica]]", "[[phase-6-009-agrippa-de-occulta-philosophia]]", "[[phase-6-014-bruno-de-la-causa-eroici-furori]]", "[[phase-6-024-kircher-oedipus-aegyptiacus]]"]
 deity-instances: ["[[hermes-trismegistus-pseudepigraphic-author]]"]
-status: "metadata"
+status: "full"
 refs:
   - title: "The Ancient Theology: Studies in Christian Platonism from the Fifteenth to the Eighteenth Century"
     author: "Walker, D.P."
