@@ -113,7 +113,7 @@ The Logos transmission chain is entirely internal to the Greek-Jewish-Christian 
 ### Egyptian Memphite Theology — Ptah creates by speaking (Egypt, ~700 BCE, recording older tradition)
 The **Shabaka Stone** (Cairo Museum) records a text attributed to Pharaoh Shabaka (~700 BCE) but claiming to transcribe a much older papyrus. The theology: **Ptah creates all things by the thought of his heart and the speech of his tongue** — "the sight of the eyes, the hearing of the ears, the smelling of air by the nose, they send up a report to the heart" — and the heart (reason/thought) formulates the creative command, which the tongue (word/speech) executes. Ptah is both the divine Mind (*Thought*) and the divine Word (*Speech*) who creates through their unity.
 
-This is the earliest documented formulation of the mind-word creative theology that reappears in Stoic logos, Philonic logos, and John 1:1. It is independent of the Greek tradition (Egyptians had no knowledge of Heraclitus) and predates it.
+This is often cited as among the earliest documented formulations of the mind-word creative theology that reappears in Stoic logos, Philonic logos, and John 1:1. There is no evidence of its dependence on the Greek tradition (Egyptians had no knowledge of Heraclitus) and predates it.
 
 ### Chinese Dao — the nameless principle underlying all (China, ~400–300 BCE)
 **Laozi, Dao De Jing 1**: "The Dao that can be spoken is not the eternal Dao. The name that can be named is not the eternal Name. The Nameless is the beginning of Heaven and Earth; the Named is the mother of ten thousand things."

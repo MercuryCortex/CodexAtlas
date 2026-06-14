@@ -45,9 +45,9 @@ The soul (or a visionary, or the dying) ascends through cosmic levels — typica
 - **Mithraic:** Origen *Contra Celsum* VI.22 preserves Celsus's description of a Mithraic seven-rung ladder of metals corresponding to planetary spheres; iconography supports planetary ascent symbolism.
 - **Hermetic:** [[phase-4-011-corpus-hermeticum-i]] *Poimandres* — at death the soul rises through the planetary spheres, surrendering at each sphere the vice it accreted there during descent; the *Discourse on the Eighth and Ninth* [[phase-4-013-discourse-on-the-eighth-and-ninth]] is an *operative* Hermetic ascent ritual (Nag Hammadi).
 - **Neoplatonic ascent:** [[phase-4-019-plotinus-enneads]] — the soul's return (*epistrophē*) through Soul, Nous, to the One; Plotinus reports four episodes of *henōsis* (mystical union); Iamblichus and Proclus systematize this as theurgic ascent. [[phase-4-020-iamblichus-on-the-mysteries]], [[phase-4-022-chaldean-oracles]] — theurgic operations to elevate the soul.
-- **Pauline:** 2 Cor 12 — Paul's third-heaven rapture; the foundational Christian ascent-text.
+- **Pauline:** 2 Cor 12 — Paul's third-heaven rapture; a foundational Christian ascent-text.
 - **Sufi *miʿrāj*:** Quranic *Sūra al-Isrāʾ* and Hadith of Muhammad's night journey; later philosophically interiorized in Avicenna's *Risāla fī l-Miʿrāj* and Sufi tradition. [[phase-5-025-rumi-masnavi]] — Rūmī's spiritual ascent as the central Sufi imagery.
-- **Dante:** *Paradiso* — the consummate Christian-Aristotelian-Neoplatonist literary synthesis of the entire ascent tradition (planetary spheres, primum mobile, Empyrean, visio Dei).
+- **Dante:** *Paradiso* — a consummate literary synthesis of much of the ascent tradition (planetary spheres, primum mobile, Empyrean, visio Dei).
 - **Renaissance magical ascent:** [[phase-6-009-agrippa-de-occulta-philosophia]] — Agrippa's "religious magic" makes ascent operative; planetary ladders feed into Hermetic ceremonial magic that survives into Phase 7 (Golden Dawn).
 
 ## Disputes

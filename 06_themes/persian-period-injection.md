@@ -115,7 +115,7 @@ dating-basis-notes: "Persian-period Zoroastrian influence on Jewish eschatology 
 
 # Persian Period Injection — Zoroastrian Doctrines into Second Temple Judaism
 
-During the Babylonian captivity (586–538 BCE) and the subsequent Achaemenid Persian rule (~538–332 BCE), Jewish theology underwent the most consequential doctrinal transformation in its history. Direct contact with Zoroastrianism introduced or dramatically amplified several ideas that became foundational to Judaism, Christianity, and Islam. No other two-century window produced a larger shift in the theological architecture of the Abrahamic traditions.
+During the Babylonian captivity (586–538 BCE) and the subsequent Achaemenid Persian rule (~538–332 BCE), Jewish theology underwent one of the most consequential doctrinal transformations in its history (its magnitude disputed — Yamauchi, Levenson). Direct contact with Zoroastrianism introduced or dramatically amplified several ideas that became foundational to Judaism, Christianity, and Islam. No other two-century window produced a larger shift in the theological architecture of the Abrahamic traditions.
 
 This node is a synthesis companion to [[theme-zoroastrian-jewish-exchange]] (the general cross-tradition hub) and [[theme-satan-angra-mainyu-transfer]] (the adversary transformation specifically). This node focuses on the **full spectrum of the injection event** — all five doctrinal channels — and on the uniquely important status of Isaiah 45:1 (Cyrus as *mashiach*) as the instantiation-point where Persian kingship theology directly entered Jewish messianism.
 

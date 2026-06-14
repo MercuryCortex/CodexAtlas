@@ -73,7 +73,7 @@ dating-basis-notes: "Inanna-Dumuzi sacred-marriage hymns c. -2100 (OB recension)
 
 ## Definition
 
-The **hieros gamos** (ἱερὸς γάμος, "sacred marriage") is the cross-civilizational motif of a divine union — between two deities, between a deity and a human representative, or between the divine masculine and feminine principles — whose enactment (ritual or mystical) renews cosmic fertility, legitimizes royal power, or achieves spiritual transformation. It is one of the oldest continuously attested religious motifs in the world (~3000 BCE to the present) and one of the most thoroughly cross-tradition patterns in the Atlas.
+The **hieros gamos** (ἱερὸς γάμος, "sacred marriage") is the cross-civilizational motif of a divine union — between two deities, between a deity and a human representative, or between the divine masculine and feminine principles — whose enactment (ritual or mystical) renews cosmic fertility, legitimizes royal power, or achieves spiritual transformation. It is one of the oldest attested religious motifs (earliest hymns ~2100 BCE) — though scholars (Nissinen & Uro 2008) caution against reading its recurrences as a single continuous transmission and one of the most thoroughly cross-tradition patterns in the Atlas.
 
 ## The transmission spine
 

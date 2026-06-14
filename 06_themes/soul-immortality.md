@@ -47,7 +47,7 @@ The soul (psychē, ātman, nepheš in some traditions, ruh) survives bodily deat
 - **Hellenistic Judaism:** [[phase-3-012-wisdom-of-solomon]] 3:1: "the souls of the righteous are in the hand of God"; Wisdom marries Platonic soul-immortality to biblical theology. [[phase-3-019-4-maccabees]] develops martyrological soul-immortality (the seven martyred sons go to the patriarchs).
 - **Philo:** Soul-immortality as Platonic doctrine integrated with Mosaic Law.
 - **Christian dispute:** Pauline and Synoptic Jesus tradition emphasize bodily *resurrection*, not Platonic soul-immortality. Patristic synthesis fuses both (Augustine: soul-immortality between death and resurrection). The 20th-c. critique (Cullmann 1958, "Immortality of the Soul or Resurrection of the Dead?") sharpened the distinction.
-- **Plotinian Neoplatonism:** [[phase-4-019-plotinus-enneads]] — the rational soul is undescended and eternal; embodiment is partial. The most metaphysically robust version of Greek soul-immortality.
+- **Plotinian Neoplatonism:** [[phase-4-019-plotinus-enneads]] — the rational soul is undescended and eternal; embodiment is partial. One of the most metaphysically developed versions of Greek soul-immortality.
 
 ## Disputes
 - **Hebrew Bible.** Whether ANY Hebrew Bible texts teach robust soul-immortality (vs. shadowy Sheol-existence) is contested. Most current scholarship: the explicit doctrine first appears in Hellenistic Jewish texts under Greek influence (Wisdom, 4 Macc).

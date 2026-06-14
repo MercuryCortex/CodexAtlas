@@ -57,7 +57,7 @@ The martyrdom-theology framework extends into modernity in two traditions with u
 
 - **Sikh martyrdom**: The two martyred Gurus — [[event-death-of-guru-arjan-1606|Guru Arjan Dev Ji]] (tortured by Jahangir, 1606) and [[event-death-of-guru-tegh-bahadur-1675|Guru Tegh Bahadur]] (beheaded by Aurangzeb for defending Hindu religious freedom, 1675) — are the paradigmatic *shahids* of the Sikh tradition. Their martyrdoms are not peripheral; they transform the tradition's fundamental character from pacifist bhakti movement to the Khalsa warrior community.
 
-- **Bahá'í martyrdom**: [[event-bab-execution-1850|The Bab's execution]] (1850) is the hinge of Bahá'í history — a founding martyrdom that directly enables Bahá'u'lláh's emergence. The ~20,000 Bábís killed in the founding persecution constitute the most intense per-capita founding-persecution in modern religious history. Bahá'u'lláh composed his foundational texts in prison — making the tradition's scriptures literally products of the persecution that martyrdom-theology narrates.
+- **Bahá'í martyrdom**: [[event-bab-execution-1850|The Bab's execution]] (1850) is the hinge of Bahá'í history — a founding martyrdom that directly enables Bahá'u'lláh's emergence. The ~20,000 Bábís killed in the founding persecution constitute one of the most intense founding-persecutions in modern religious history (figures debated, several thousand to ~20,000). Bahá'u'lláh composed his foundational texts in prison — making the tradition's scriptures literally products of the persecution that martyrdom-theology narrates.
 
 ## Connections
 - → [[event-crucifixion-of-jesus-c30ce]] — *founding-event*: Jesus as the paradigmatic martyr whose death the theology explicates

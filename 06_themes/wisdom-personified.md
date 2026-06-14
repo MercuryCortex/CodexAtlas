@@ -47,7 +47,7 @@ A feminine, quasi-hypostatic Wisdom — *Hokmah* / *Sophia* — who is present a
 ## Manifestations
 - **Proverbs 8:** The pivotal text. Wisdom (Hokmah) speaks in the first person: "The LORD created me at the beginning of his way ... I was beside him, like a master worker; and I was daily his delight, rejoicing before him always, rejoicing in his inhabited world and delighting in the human race" (8:22, 30–31). Already a near-hypostasis in the post-exilic Hebrew Bible.
 - **Sirach 24:** [[phase-3-007-sirach]] — Wisdom's autobiographical hymn: she came forth from the mouth of the Most High, sought a dwelling, was assigned to Israel, identified with the Torah ("All this is the book of the covenant of the Most High God, the Law that Moses commanded us," 24:23).
-- **Wisdom of Solomon 7–9:** [[phase-3-012-wisdom-of-solomon]] — the most Hellenistic-philosophical articulation; Wisdom is "a breath of the power of God ... a pure emanation of the glory of the Almighty ... a reflection of eternal light, a spotless mirror" (7:25–26). Predicates fuse Stoic *pneuma*, Platonic emanation, and Israelite covenant.
+- **Wisdom of Solomon 7–9:** [[phase-3-012-wisdom-of-solomon]] — the most thoroughly Hellenistic-philosophical of the Second Temple Wisdom texts; Wisdom is "a breath of the power of God ... a pure emanation of the glory of the Almighty ... a reflection of eternal light, a spotless mirror" (7:25–26). Predicates fuse Stoic *pneuma*, Platonic emanation, and Israelite covenant.
 - **Philo:** [[phase-3-013-philo-of-alexandria]] — Sophia and Logos are largely interchangeable in Philo's allegorical exegesis; both name God's creative-revelatory hypostasis.
 - **Johannine Logos:** [[phase-3-020-gospel-of-john]] 1 — many scholars (Dunn, Hurtado, M. Scott) see the prologue's Logos as a re-attribution of Wisdom predicates to Christ.
 - **Gnostic Sophia:** [[sophia-gnostic]] in [[phase-4-002-apocryphon-of-john]] and Valentinian texts — the personification is radicalized into a mythological agent whose error initiates the cosmogonic fall. See [[divine-feminine]].
@@ -68,7 +68,7 @@ A feminine, quasi-hypostatic Wisdom — *Hokmah* / *Sophia* — who is present a
 
 ## MASSIVE WIN: Vedic Vāk and the Parallel First-Person Wisdom
 
-**Rig Veda 10.125** (the *Devī Sūkta*, "Hymn to the Goddess", ~1000–800 BCE) is the earliest parallel to Proverbs 8. Vāk — divine Speech, the cosmic Word — speaks in the *first person*:
+**Rig Veda 10.125** (the *Devī Sūkta*, "Hymn to the Goddess", ~1000–800 BCE) is among the earliest documented parallels to Proverbs 8. Vāk — divine Speech, the cosmic Word — speaks in the *first person*:
 
 > "I move with the Rudras, with the Vasus, with the Ādityas and All-Gods I wander.
 > I hold aloft both Mitra and Varuṇa, I hold aloft Indra-Agni and both Aśvins.
