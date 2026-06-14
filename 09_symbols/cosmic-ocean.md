@@ -39,6 +39,7 @@ deity-instances:
   - "[[marduk]]"
   - "[[vishnu]]"
   - "[[apas]]"
+  - "[[primordial-sea-popol-vuh]]"
   - "[[gaia]]"
 tradition-context:
   - "[[tradition-egyptian-religion]]"
