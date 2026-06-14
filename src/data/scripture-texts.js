@@ -235,7 +235,7 @@ SCRIPTURE_TEXTS['enuma-elish-1'] = {
         },
         { ref: 'I.5–6', text: 'Their waters were mingled together, and no field was formed, no marsh was to be seen;',
           entities: [
-            { word: 'waters were mingled', node: 'cosmic-ocean', type: 'symbol',
+            { word: 'waters were mingled', node: 'tiamat', type: 'deity',
               note: 'The primordial state: no differentiation, no boundary, no form. Creation will be the act of separation — dividing the primordial waters into ordered categories. This "commingling before separation" is the cosmogonic zero-point shared by Genesis 1:2, Egyptian Nun theology, and the Norse Ginnungagap.',
               parallels: [
                 { label: 'Genesis 1:2', textId: 'genesis-1', note: '"Without form, and void; and darkness was upon the face of the deep" — same state of undifferentiated pre-creation.' },
@@ -276,7 +276,7 @@ SCRIPTURE_TEXTS['enuma-elish-1'] = {
       verses: [
         { ref: 'I.100–102', text: 'He who begat him was Ea; his mother was Damkina. Within the deep was he conceived, within the pure abode was he born.',
           entities: [
-            { word: 'deep', node: 'cosmic-ocean', type: 'symbol',
+            { word: 'deep', node: 'apsu', type: 'deity',
               note: 'Marduk is born within the primordial deep — from the chaos-waters themselves. The champion of cosmic order is born from the very substance he will defeat. This is the same paradox as the Egyptian Horus (born of Osiris who was destroyed by chaos) and the Christian Logos (born into the world to redeem it).',
               parallels: []
             },
@@ -4063,7 +4063,7 @@ SCRIPTURE_TEXTS['voluspa'] = {
             norse:      'Hlýðask vil ek· hljóðs biðk allar helgar kindir· meiri ok minni mǫgr Heimdallar· viltu at ek Valfǫðr vel fram telja forn spjǫll fíra þau er fremst um man',
           },
           entities: [
-            { word: 'no sand nor sea nor cool waves, no earth below, no heaven above', node: 'primordial-darkness', type: 'concept',
+            { word: 'no sand nor sea nor cool waves, no earth below, no heaven above', node: 'ginnungagap', type: 'deity',
               note: 'The Völuspá\'s pre-creation void — Ginnungagap ("yawning void/gap") — names an absolute emptiness before all existence: no earth, no sky, no sea, no grass. This is the Norse form of the same universal cosmogonic starting point found in Genesis 1:2 (darkness over the deep), Nasadiya Sukta ("neither being nor non-being existed"), the Hermetic primordial darkness and water (CH III), and the Popol Vuh ("all was in suspense, all calm, in silence... the sky alone, and the vast sea"). All creation narratives begin by naming what was absent before the first creative act.',
               parallels: [
                 { label: 'Nasadiya Sukta — "neither non-being nor being existed"', textId: 'nasadiya-sukta', note: 'The Vedic "nāsad āsīn no sad āsīt" (neither non-existence nor existence) and the Völuspá\'s list of absences (no sand, no sea, no earth, no sky) are both naming the absolute pre-creation void by negation. The cosmogonic strategy of defining the origin by what was not yet there appears across all traditions.' },
