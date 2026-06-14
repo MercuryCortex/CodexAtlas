@@ -15,7 +15,7 @@ child-of: []
 consort: ["[[apsu]]"]
 attributes: ["serpentine/dragon form (in late iconography)", "horn", "tail"]
 attested-in: ["[[phase-1-008-enuma-elish]]"]
-equivalents: ["[[typhon]]", "[[vritra]]", "[[lotan]]", "[[apophis]]", "[[illuyanka]]", "[[sophia-gnostic]]", "[[jormungandr]]", "[[leviathan]]", "[[yam]]", "[[nun]]", "[[tehom]] (Hebrew cognate — the deep of Gen 1:2)", "[[ymir]]", "[[pangu]]", "[[nuwa]]", "[[ryujin]]", "[[chalchiuhtlicue]]", "[[cipactli]]", "[[coyolxauhqui]]", "[[aegir-norse]]", "[[sedna-inuit]]", "[[yemoja]]", "[[aditi]]"]
+equivalents: ["[[typhon]]", "[[vritra]]", "[[lotan]]", "[[apophis]]", "[[illuyanka]]", "[[sophia-gnostic]]", "[[jormungandr]]", "[[leviathan]]", "[[yam]]", "[[nun]]", "[[tehom]] (Hebrew cognate — the deep of Gen 1:2)", "[[apas]] (Vedic Waters / salila)", "[[ymir]]", "[[pangu]]", "[[nuwa]]", "[[ryujin]]", "[[chalchiuhtlicue]]", "[[cipactli]]", "[[coyolxauhqui]]", "[[aegir-norse]]", "[[sedna-inuit]]", "[[yemoja]]", "[[aditi]]"]
 syncretic-edges:
   - target: "[[typhon]]"
     type: "parallel-motif"

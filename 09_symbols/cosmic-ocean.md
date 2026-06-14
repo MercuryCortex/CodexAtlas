@@ -38,6 +38,7 @@ deity-instances:
   - "[[atum]]"
   - "[[marduk]]"
   - "[[vishnu]]"
+  - "[[apas]]"
   - "[[gaia]]"
 tradition-context:
   - "[[tradition-egyptian-religion]]"
