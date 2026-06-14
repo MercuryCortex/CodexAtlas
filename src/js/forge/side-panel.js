@@ -207,9 +207,30 @@
       try { if (typeof hideTip === 'function') hideTip(); } catch (_) {}
       const id = local.openTabId;
       const m = local.mode;
-      const node = (id && m && m.nodesById && m.nodesById.get) ? m.nodesById.get(id) : null;
+      let node = (id && m && m.nodesById && m.nodesById.get) ? m.nodesById.get(id) : null;
+      // 2026-06-14 — cross-type fallback. A reader/entity click can lock a node
+      // whose type isn't the current wheel mode (a theme/person/symbol clicked
+      // while on the deity wheel). It still gets a tab; render it from the FULL
+      // vault so its cross-tradition wire-list shows (out-of-mode neighbours are
+      // already tagged + click-disabled by the bucket logic below). Without this
+      // the panel bailed to the empty state for every cross-type term — the
+      // reason the flood/dying-rising/etc. clusters never surfaced on a click.
+      if (!node && id) {
+        if (!local._vaultNodesById) {
+          const vd = window.VAULT_DATA;
+          const map = new Map();
+          if (vd && Array.isArray(vd.nodes)) {
+            for (let i = 0; i < vd.nodes.length; i++) {
+              const n = vd.nodes[i];
+              if (n && n.id) map.set(n.id, n);
+            }
+          }
+          local._vaultNodesById = map;
+        }
+        node = local._vaultNodesById.get(id) || null;
+      }
       if (!node) {
-        inner.innerHTML = '<div class="empty">Select a deity to inspect.</div>';
+        inner.innerHTML = '<div class="empty">Select a node to inspect.</div>';
         return;
       }
       // Field readers — use BAKED data.js fields. Falls back
@@ -792,6 +813,20 @@
     window._forgeSidePanel.closePanel = function () {
       local.openTabId = null;
       setPanelOpen(false);
+      renderTabs();
+    };
+
+    // 2026-06-14 — public open-for-node, for TYPE-AWARE reader clicks. When a
+    // reader/entity click locks a node that ISN'T plotted on the current wheel
+    // (a cross-type cluster member — a theme/person/symbol on the deity wheel),
+    // there are no wheel-wires to see, so the caller opens its panel directly
+    // to surface the connection list. Mirrors the tab-click open path.
+    window._forgeSidePanel.openFor = function (id) {
+      if (!id) return;
+      if (local.deityTabs.indexOf(id) < 0) local.deityTabs.push(id);
+      local.openTabId = id;
+      setPanelOpen(true);
+      render();
       renderTabs();
     };
 

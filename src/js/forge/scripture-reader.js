@@ -510,6 +510,19 @@
           ev.stopPropagation();
           toggleLock(node);
           if (typeof triggerClickPulse === 'function') triggerClickPulse(node);
+          // TYPE-AWARE (2026-06-14): a node whose type matches the current
+          // wheel class is plotted → toggleLock lights its wheel-wires (the
+          // all-deity cosmogony case). A cross-type member (theme/person/
+          // symbol on the deity wheel) has NO wheel feedback, so on lock-ADD
+          // open its panel directly to surface the cross-tradition connection
+          // list. This makes the 83%-of-clusters that are cross-type readable.
+          const m = local.mode;
+          const plotted = !!(m && m.nodesById && m.nodesById.get && m.nodesById.get(node));
+          const nowLocked = !!(local.lockedSet && local.lockedSet.has && local.lockedSet.has(node));
+          if (nowLocked && !plotted &&
+              window._forgeSidePanel && typeof window._forgeSidePanel.openFor === 'function') {
+            window._forgeSidePanel.openFor(node);
+          }
         }
       }
     });
