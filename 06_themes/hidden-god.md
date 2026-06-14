@@ -1,6 +1,7 @@
 ---
 type: theme
 id: "hidden-god"
+parallels: ["[[brahman-impersonal]]", "[[emptiness-sunyata]]", "[[amun]]"]
 name: "Hidden god (deus absconditus)"
 aka: ["deus absconditus", "the unknown God", "the Father beyond being", "the apophatic absolute", "the Real beyond manifestation", "the Godhead beyond God"]
 category: "theological / apophatic"
@@ -29,7 +30,7 @@ related-themes:
   - "[[ascent-of-the-soul]]"
   - "[[microcosm-macrocosm]]"
   - "[[soul-as-spark]]"
-status: "metadata"
+status: "full"
 refs:
   - title: "The Gnostic Religion"
     author: "Jonas, Hans"

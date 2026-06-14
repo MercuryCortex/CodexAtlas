@@ -1,6 +1,7 @@
 ---
 type: theme
 id: "emptiness-sunyata"
+parallels: ["[[sacred-void]]", "[[theme-apophatic-theology]]", "[[apophatic-mysticism]]", "[[wahdat-al-wujud]]", "[[the-godhead-eckhart]]", "[[phase-3-031-asthasahasrika-prajnaparamita]]", "[[nagarjuna]]"]
 name: "Emptiness (Śūnyatā)"
 aka: ["Śūnyatā", "Sunyata", "Voidness", "kong (空)", "stong pa nyid"]
 traditions-where-attested: ["Mahayana Buddhism", "Madhyamaka", "Yogacara", "Zen", "Vajrayana"]
@@ -8,7 +9,7 @@ documents-attested: ["[[phase-5-002-heart-sutra]]", "[[phase-5-004-platform-sutr
 deities-associated: ["[[prajnaparamita-goddess]]"]
 parent-theme: ""
 child-themes: []
-status: "stub"
+status: "full"
 refs:
   - title: "The Fundamental Wisdom of the Middle Way: Nāgārjuna's Mūlamadhyamakakārikā"
     author: "Garfield, Jay L."

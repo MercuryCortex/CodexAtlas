@@ -1,6 +1,7 @@
 ---
 type: theme
 id: "divine-feminine"
+parallels: ["[[durga]]", "[[guanyin]]", "[[kali]]", "[[shakti]]"]
 name: "Divine feminine"
 aka: ["goddess traditions", "feminine divine principle"]
 category: "theological"

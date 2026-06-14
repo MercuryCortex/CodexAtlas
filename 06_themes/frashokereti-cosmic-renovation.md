@@ -1,6 +1,7 @@
 ---
 type: theme
 id: "frashokereti-cosmic-renovation"
+parallels: ["[[apocalyptic-revelation]]", "[[ragnarok-apocalyptic]]", "[[end-times-judgment]]", "[[cinvat-bridge-judgment]]"]
 name: "Frashokereti (Cosmic Renovation)"
 aka: ["Frašōkərəti (Avestan)", "Frašegird (Pahlavi)", "the Renovation", "the Making-Wonderful", "the Final Renovation of the Cosmos"]
 category: "eschatological"
@@ -21,7 +22,7 @@ related-themes:
   - "[[resurrection-of-the-dead]]"
   - "[[messianism]]"
   - "[[tikkun-olam]]"
-status: "metadata"
+status: "full"
 refs:
   - title: "A History of Zoroastrianism (3 vols.)"
     author: "Boyce, Mary"
@@ -93,7 +94,7 @@ The structural parallels with Christian eschatology are **dense and uncontested*
 
 ### Frashokereti → Islamic Yawm al-Qiyāmah
 
-Islamic eschatology (the Day of Resurrection, the Sirat Bridge, the universal judgment) draws on **both** Christian and Zoroastrian eschatological vocabulary, mediated through the religious-cultural environment of late-antique-Near-Eastern Arabia. The **Sirat Bridge** (the bridge across hell that all souls must cross) is structurally parallel to the **[[cinvat-bridge|Cinvat Bridge]]** of Zoroastrian eschatology.
+Islamic eschatology (the Day of Resurrection, the Sirat Bridge, the universal judgment) draws on **both** Christian and Zoroastrian eschatological vocabulary, mediated through the religious-cultural environment of late-antique-Near-Eastern Arabia. The **Sirat Bridge** (the bridge across hell that all souls must cross) is structurally parallel to the **[[cinvat-bridge-judgment|Cinvat Bridge]]** of Zoroastrian eschatology.
 
 ### Frashokereti ↔ Tikkun Olam (MASSIVE-WIN)
 

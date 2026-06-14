@@ -1,6 +1,7 @@
 ---
 type: theme
 id: "mystery-initiation"
+parallels: ["[[dionysus]]", "[[zagreus]]", "[[orpheus]]", "[[event-eleusinian-mysteries-c1500-bce-396-ce]]", "[[eleusinian-mystery-revelation]]", "[[initiation]]", "[[logos-philonic]]"]
 name: "Mystery initiation"
 aka: ["mysteria", "telete", "esoteric initiation"]
 category: "ritual"

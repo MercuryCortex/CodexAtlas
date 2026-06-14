@@ -1,11 +1,12 @@
 ---
 type: theme
 id: "creation-by-word"
+parallels: ["[[tepeu]]", "[[huracan]]", "[[kukulkan]]", "[[phase-8-001-popol-vuh]]"]
 name: "Creation by word / speech"
 category: "cosmogonic"
 appearances: ["[[phase-1-027-memphite-theology-shabaka-stone]]", "[[phase-2-018-hebrew-bible-p-source]]", "[[phase-3-020-gospel-of-john]]", "[[phase-4-034-quran]]", "[[spider-grandmother-hopi]]", "[[palongawhoya]]"]
 deity-instances: ["[[ptah]]", "[[yahweh]]", "[[allah]]", "[[spider-grandmother-hopi]]"]
-status: "metadata"
+status: "full"
 refs:
   - title: "The Memphite Theology of Creation"
     author: "Allen, James P."
