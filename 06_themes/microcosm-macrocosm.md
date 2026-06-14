@@ -46,7 +46,7 @@ The doctrine that the human being (or some other particular order — the temple
 - **Vitruvian / architectural:** Vitruvius (1st c. BCE) puts the human body in a circle and square — the source of Leonardo's *Vitruvian Man*. Temple architecture from Solomon's Temple onward is microcosmic.
 - **Renaissance Hermetism:** [[phase-6-001-ficino-pimander]], [[phase-6-009-agrippa-de-occulta-philosophia]] — Ficino's *De Vita* prescribes microcosmic regimens (planetary diet, music, talismans) to align the human with cosmic forces.
 - **Paracelsian medicine:** [[phase-6-008-paracelsus-corpus]] — body-organs correspond to planets and metals; *doctrine of signatures* — every plant bears outward signs of its medical sympathies; the iatrochemical paradigm.
-- **Robert Fludd's diagrams:** [[phase-6-022-fludd-utriusque-cosmi-historia]] — the most lavish visual encyclopedia of microcosm-macrocosm correspondences ever printed; the *Utriusque Cosmi Historia* (1617–21) is the genre's high baroque monument.
+- **Robert Fludd's diagrams:** [[phase-6-022-fludd-utriusque-cosmi-historia]] — one of the most elaborate visual encyclopedias of microcosm-macrocosm correspondences printed in the period; the *Utriusque Cosmi Historia* (1617–21) is among the genre's most ambitious baroque expressions.
 - **Kircher's universal system:** [[phase-6-024-kircher-oedipus-aegyptiacus]] — incorporates microcosm-macrocosm into a global Egyptian-Hermetic-Hieroglyphic decoding.
 
 ## Disputes

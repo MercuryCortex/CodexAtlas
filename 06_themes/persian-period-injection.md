@@ -157,7 +157,7 @@ The Zoroastrian [[cinvat-bridge-judgment]] — the soul's post-mortem judgment o
 
 ## MASSIVE-WIN Connections
 
-The importance of this node is that it documents the single most consequential cross-tradition transmission event in Abrahamic religious history:
+The importance of this node is that it documents one of the most consequential cross-tradition transmission events in Abrahamic religious history (its magnitude disputed — Yamauchi, Levenson):
 
 - **[[tradition-zoroastrianism]] → [[tradition-judaism]] doctrinal transfer**: the architectural transformation of Second Temple Judaism is substantially Zoroastrian in origin — which means the theological architecture of Christianity and Islam inherits Iranian categories through the Jewish medium
 - **Cyrus as *mashiach* (Isaiah 45:1)**: the Jewish messianic concept was formed at least partly in direct contact with the Persian king who embodied a Zoroastrian conception of divine kingship; the concept was shaped by encountering its first instance

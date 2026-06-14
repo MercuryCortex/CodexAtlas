@@ -173,7 +173,7 @@ Across nine major independent traditions, the same realization is articulated wi
 
 The formulations are not identical — Advaita affirms an absolute, Madhyamaka does not posit one; Sufi non-dualism preserves the asymmetric relation (creature comes-into-being from God, not the reverse); Daoism is naturalist where Vedanta is idealist. **Loy 1988 maps these differences carefully and concludes**: these are NOT the same metaphysics, but they ARE structurally homologous *soteriological recognitions* — different routes to the same kind of seeing.
 
-The key finding is **convergent emergence**: independent traditions, with documented zero contact in the deepest cases (Advaita ↔ Zuni; Hesychasm ↔ Madhyamaka), arriving at remarkably parallel realizations. This is some of the strongest evidence in the comparative-religion record for the existence of cross-cultural mystical structures — though the constructivist counter-arguments (Katz 1978, Proudfoot 1985) demand that any such claim be hedged.
+The key finding is **convergent emergence**: independent traditions, with no known channel of historical contact in the deepest cases (Advaita ↔ Zuni; Hesychasm ↔ Madhyamaka), arriving at remarkably parallel realizations. This is some of the strongest evidence in the comparative-religion record for the existence of cross-cultural mystical structures — though the constructivist counter-arguments (Katz 1978, Proudfoot 1985) demand that any such claim be hedged.
 
 ---
 

@@ -124,7 +124,7 @@ The **Kabbalat Shabbat** liturgy (welcoming the Sabbath) is structurally a brida
 - The congregation turns to face the door (or west) at the final verse, bowing to welcome the Bride
 - The Friday night Kiddush is a wedding blessing
 
-This is the **hieros gamos made weekly and domestic**: every Jewish household enacts the sacred union of the divine masculine and feminine every Friday night. The Sumerian temple ritual has become the kitchen table.
+This is the **hieros gamos made weekly and domestic**: the Kabbalistic Shabbat liturgy (Zohar; Lurianic Safed) reads the Friday-night reception as a weekly hieros gamos — a mystical reading, even where the liturgy is now near-universal. The Sumerian temple ritual has become the kitchen table.
 
 ### 7. Christian mystical bridal theology (~1100–1600 CE)
 

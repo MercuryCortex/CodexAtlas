@@ -49,7 +49,7 @@ The *Heart Sutra*'s famous formula *form is emptiness, emptiness is form* (*rūp
 
 ## The Trika counterpoint — the foundational split in non-dual thought
 
-Śūnyatā and Kashmir Shaivism's *cit* (Śiva as self-luminous consciousness) are the two rival answers to the question "what is the nature of the ultimate ground?" and represent the deepest philosophical fault line in the vault:
+Śūnyatā and Kashmir Shaivism's *cit* (Śiva as self-luminous consciousness) are the two rival answers to the question "what is the nature of the ultimate ground?" and represent one of the sharpest philosophical fault lines in the non-dual material gathered here:
 
 | | Madhyamaka (Nāgārjuna) | Trika Kashmir Shaivism |
 |---|---|---|

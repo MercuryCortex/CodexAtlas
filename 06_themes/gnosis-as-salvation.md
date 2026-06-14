@@ -168,7 +168,7 @@ The Mandaean cosmogony in [[phase-4-017-ginza-rba]] (the Great Treasure) present
 
 ## Manichaean — cosmological knowledge of the mixture
 
-Mani (3rd c. CE Persia) systematized saving-gnosis on the largest geographical scale of any ancient gnostic configuration — Manichaean missions reached Spain to China, persisting for ~1,000 years.
+Mani (3rd c. CE Persia) systematized saving-gnosis on the largest geographical scale of any ancient gnostic configuration — Manichaean communities are attested from the western Mediterranean to Tang China, the eastern tradition surviving into roughly the 14th century.
 
 The Manichaean cosmology is dualistic from the start: Light (the Father of Greatness, [[father-of-greatness]]) and Darkness (the Prince of Darkness, [[prince-of-darkness-manichaean]]) are originally separate; through cosmic warfare, Light particles become entangled with Darkness (the present world); through a long sequence of cosmic agents — Primal Man, Living Spirit, Jesus the Splendor — the Light particles are gradually liberated and gathered.
 
@@ -178,7 +178,7 @@ The Manichaean cosmology is dualistic from the start: Light (the Father of Great
 
 ## MASSIVE-WIN — the Buddhist parallel: *prajñā* as saving-wisdom
 
-The Mahāyāna Buddhist soteriology of *prajñā* (wisdom) — especially in the *Prajñāpāramitā* ("Perfection of Wisdom") sūtras (~100 BCE onward) — is the **most extensive non-Western parallel** to Gnostic-Hermetic saving-gnosis. The structural homology runs deep:
+The Mahāyāna Buddhist soteriology of *prajñā* (wisdom) — especially in the *Prajñāpāramitā* ("Perfection of Wisdom") sūtras (~100 BCE onward) — is one of the **most fully developed non-Western parallels** to Gnostic-Hermetic saving-gnosis. The structural homology runs deep:
 
 - **The bound condition:** Sentient beings are trapped in *saṃsāra* (cyclical existence) through *avidyā* (ignorance) of the empty / dependently-arisen nature of phenomena.
 - **The saving cognition:** *Prajñā* — the direct, non-conceptual realization that all phenomena are *śūnya* (empty) of inherent existence — *is* the liberation.

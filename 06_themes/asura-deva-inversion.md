@@ -135,7 +135,7 @@ Justin Martyr (*Apologia* 1.5, ~150 CE): "What the poets call gods are actually 
 In Vajrayana Buddhism, many *devas* (Hindu gods) appear as guardians (*dharmapāla*) who have been subdued by bodhisattvas and bound to protect the Dharma — a structural parallel where the previous tradition's supreme beings are incorporated as subordinates.
 
 ### 4. The Interpretatio Diabolica as a general pattern
-Every missionary religion that encountered functioning polytheistic systems had to answer: are the local gods real? The standard answer from ~500 CE onward: yes, but they are demons, fallen beings, or subordinate powers. This is the asura/deva inversion applied across cultures. The BMAC-era schism is the first documented instance of this pattern.
+Every missionary religion that encountered functioning polytheistic systems had to answer: are the local gods real? The standard answer from ~500 CE onward: yes, but they are demons, fallen beings, or subordinate powers. This is the asura/deva inversion applied across cultures. The BMAC-era schism is the earliest instance of this pattern documented in this Atlas.
 
 ## MASSIVE-WIN cross-tradition edges
 
@@ -145,7 +145,7 @@ Every missionary religion that encountered functioning polytheistic systems had 
 
 ### The asura/deva inversion → Zoroastrian dualism → Persian Period Injection → Satan
 
-The chain runs: BMAC theological conflict → daēva condemnation → [[dualism-cosmic]] (the cosmos is the battlefield of two opposed principles: Ahura Mazda/Spenta Mainyu vs. Angra Mainyu/Ahriman) → **[[persian-period-injection]]** (Zoroastrian doctrines enter Second Temple Judaism during the Achaemenid period, 539–333 BCE) → the **cosmic adversary/Satan** figure in Judaism and Christianity. The Satan figure as we know him — a fallen, powerful adversary of God, not merely a tempter or a tester — is structurally a Jewish-period absorption of the Zoroastrian *Angra Mainyu* concept, itself the product of the daēva reform. See [[theme-satan-angra-mainyu-transfer]].
+The chain runs: BMAC theological conflict → daēva condemnation → [[dualism-cosmic]] (the cosmos is the battlefield of two opposed principles: Ahura Mazda/Spenta Mainyu vs. Angra Mainyu/Ahriman) → **[[persian-period-injection]]** (Zoroastrian doctrines enter Second Temple Judaism during the Achaemenid period, 539–333 BCE) → the **cosmic adversary/Satan** figure in Judaism and Christianity. The Satan figure as we know him — a fallen, powerful adversary of God, not merely a tempter or a tester — is widely argued to reflect a Second-Temple absorption of the Zoroastrian *Angra Mainyu* concept (the extent and even direction of Persian influence on Jewish dualism remains debated), itself the product of the daēva reform. See [[theme-satan-angra-mainyu-transfer]].
 
 ### Ahura Mazda as proto-monotheism
 

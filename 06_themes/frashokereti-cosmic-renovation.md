@@ -80,7 +80,7 @@ The Pahlavi-period elaboration of Frashokereti (built on Avestan foundations) sp
 
 ### Frashokereti → Christian Resurrection and New Creation
 
-The structural parallels with Christian eschatology are **dense and uncontested**:
+The structural parallels with Christian eschatology are **dense, though the direction and mechanism of transmission remain debated** (Boyce vs Yamauchi):
 
 1. **Universal bodily resurrection** — Frashokereti's universal bodily resurrection parallels the Christian doctrine of bodily resurrection of all the dead (John 5:28-29; Revelation 20:11-15). Both traditions affirm **bodily-rather-than-only-spiritual** resurrection in distinction from Greek-philosophical immortality-of-the-soul-only.
 
@@ -88,7 +88,7 @@ The structural parallels with Christian eschatology are **dense and uncontested*
 
 3. **Final cosmic combat against the cosmic adversary** — Saoshyant defeats Angra Mainyu; Christ defeats Satan/Antichrist (Revelation 19-20). The cosmic-combat-then-renovation structure is shared.
 
-4. **Cosmic renovation / new heavens and earth** — Frashokereti's renovated cosmos parallels Revelation 21:1: "*καινὸν οὐρανὸν καὶ γῆν καινήν*" — "**new heavens and a new earth**." 2 Peter 3:13 makes the same claim explicitly. **The Christian doctrine of the new creation is structurally Frashokereti.**
+4. **Cosmic renovation / new heavens and earth** — Frashokereti's renovated cosmos parallels Revelation 21:1: "*καινὸν οὐρανὸν καὶ γῆν καινήν*" — "**new heavens and a new earth**." 2 Peter 3:13 makes the same claim explicitly. **The Christian new-creation motif is structurally parallel to Frashokereti** (the direction of influence debated — Boyce vs Yamauchi).
 
 5. **Universal salvation (or at least universal-purification)** — Zoroastrian Frashokereti is **universalist** (all are raised, all pass through purifying fire, all enter the renovated cosmos). This is structurally close to Origen's *apokatastasis* (the doctrine of universal eventual salvation) — Origen explicitly identified Zoroaster as a source for this doctrine (Origen *Contra Celsum* 1.16; though Origen is hostile, the identification matters). More directly: **Gregory of Nyssa** (335–395 CE) develops the doctrine of *apokatastasis* in *On the Soul and Resurrection* and *The Great Catechism* — a purification-by-fire universalism structurally identical to Frashokereti's molten-metal purification. Gregory was the most philosophically sophisticated of the Cappadocian Fathers and his universalism may represent conscious or unconscious absorption of Zoroastrian eschatological logic via the Persian-Cappadocian cultural interface of late antiquity.
 

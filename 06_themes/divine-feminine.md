@@ -129,13 +129,13 @@ The Shekinah is the structural successor to Asherah within monotheism: the femin
 This is the suppressed Asherah/Wisdom tradition exploding back into theological prominence: the Gnostics refuse to erase the feminine divine and instead make her the *engine* of the entire cosmogonic-soteriological drama. The Apocryphon of John ([[phase-4-002-apocryphon-of-john]]), Gospel of Mary ([[phase-4-005-gospel-of-mary]]), and Trimorphic Protennoia ([[phase-4-008-trimorphic-protennoia]]) feature feminine divine figures as the primary revealer-voices.
 
 ### Station 6: Mary — Queen of Heaven (Christianity, 3rd century CE onward)
-The Virgin Mary inherits Inanna's exact epithet — *Regina Caeli* (Queen of Heaven) — along with her iconographic star and dove. Marian development follows a clear trajectory:
+The Virgin Mary takes up the same *Regina Caeli* (Queen of Heaven) title and the star-and-dove iconography of a recurring Queen-of-Heaven complex (Inanna/Ishtar, Astarte, Aphrodite/Venus) — a scholarly reconstruction of motif-continuity, not a documented link-by-link inheritance. Marian development follows a clear trajectory:
 - **2nd century**: Theotokos (God-bearer) debate in progress
 - **431 CE, Council of Ephesus**: Mary declared *Theotokos* (God-bearer) — explicitly at Ephesus, the city where Artemis's great temple stood
 - **Medieval**: Mary as *Mediatrix*, *Stella Maris* (Star of the Sea = Venus/Ishtar's planet), *Sedes Sapientiae* (Seat of Wisdom = the throne of Sophia)
 - **1950**: Dogma of the Assumption — Mary bodily taken to heaven; functionally the closest official Catholicism has come to a goddess
 
-The location of the Ephesus council at the city of Artemis's great temple was not accidental: Ephesus was a major Artemis-cult city, and the Council's Mary-definition effectively redirected local goddess-veneration into a Marian channel.
+The location of the 431 CE Theotokos council at Ephesus, a major Artemis-cult city, has often been read (the history-of-religions school) as significant — though the council's stated agenda was Christological (the Nestorian controversy): Ephesus was a major Artemis-cult city, and the Council's Mary-definition effectively redirected local goddess-veneration into a Marian channel.
 
 ### Station 7: Anāhitā — the Zoroastrian Goddess (Iran, ~550 BCE onward)
 [[anahita-zoroastrian]] — The Iranian goddess of water, fertility, and wisdom; her name means "the unpolluted, the immaculate." Artaxerxes II (405–359 BCE) paired her with Ahura Mazda and Mithra in the first explicitly triadic Zoroastrian inscription (Persepolis, Hamadan, Susa). She is the *Ashi* of the Avesta — divine grace and abundance — personified as a beautiful woman.
