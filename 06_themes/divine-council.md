@@ -4,8 +4,8 @@ id: "divine-council"
 name: "Divine council"
 category: "theological"
 appearances: ["[[phase-1-008-enuma-elish]]", "[[phase-1-013-baal-cycle]]"]
-deity-instances: []
-status: "stub"
+deity-instances: ["[[el-canaanite]]", "[[anunnaki]]", "[[igigi]]", "[[baal-hadad]]", "[[yahweh]]", "[[el-elohim-hebrew]]", "[[zeus]]", "[[marduk]]", "[[an-sumerian]]"]
+status: "full"
 refs:
   - title: "The Divine Council in Late Canonical and Non-Canonical Second Temple Jewish Literature"
     author: "Heiser, Michael S."

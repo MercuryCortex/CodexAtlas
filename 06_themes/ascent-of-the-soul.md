@@ -6,7 +6,8 @@ aka: ["soul-ascent", "heavenly ascent", "celestial journey", "miʿrāj", "merkav
 category: "soteriological"
 appearances: ["[[phase-3-004-1-enoch]]", "[[phase-3-013-philo-of-alexandria]]", "[[phase-4-011-corpus-hermeticum-i]]", "[[phase-4-013-discourse-on-the-eighth-and-ninth]]", "[[phase-4-019-plotinus-enneads]]", "[[phase-4-020-iamblichus-on-the-mysteries]]", "[[phase-4-022-chaldean-oracles]]", "[[phase-5-013-hekhalot-literature]]", "[[phase-5-025-rumi-masnavi]]", "[[phase-6-009-agrippa-de-occulta-philosophia]]"]
 deity-instances: []
-status: "stub"
+parallels: ["[[merkabah-miraj-ascent-chain]]", "[[henosis]]", "[[neoplatonic-henosis]]", "[[theurgy]]", "[[hermetic-rebirth]]", "[[heavenly-tour]]", "[[dying-rising-god]]"]
+status: "full"
 refs:
   - title: "Out of This World: Otherworldly Journeys from Gilgamesh to Albert Einstein"
     author: "Couliano, Ioan P."

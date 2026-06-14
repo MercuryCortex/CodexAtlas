@@ -5,8 +5,8 @@ name: "Messianism"
 aka: ["messianic expectation", "māšîaḥ", "Christos"]
 category: "soteriological"
 appearances: ["[[phase-2-010-hebrew-bible-early-prophets]]", "[[phase-3-001-second-third-isaiah]]", "[[phase-3-008-book-of-daniel]]", "[[phase-3-011-dead-sea-scrolls]]", "[[phase-3-014-q-source]]", "[[phase-3-015-pauline-epistles]]", "[[phase-3-016-gospel-of-mark]]", "[[phase-3-017-gospel-of-matthew]]"]
-deity-instances: []
-status: "stub"
+deity-instances: ["[[saoshyant]]", "[[maitreya]]", "[[kalki]]", "[[muhammad-al-mahdi]]", "[[jesus-christ-deity]]"]
+status: "full"
 refs:
   - title: "The Messiah: Developments in Earliest Judaism and Christianity"
     author: "Charlesworth, James H. (ed.)"

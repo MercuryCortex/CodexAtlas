@@ -6,7 +6,8 @@ aka: ["immortality of the soul", "athanasia"]
 category: "anthropological"
 appearances: ["[[phase-2-008-homeric-epics]]", "[[phase-2-012-brihadaranyaka-upanishad]]", "[[phase-2-013-chandogya-upanishad]]", "[[phase-3-002-plato-dialogues]]", "[[phase-3-012-wisdom-of-solomon]]", "[[phase-3-019-4-maccabees]]", "[[phase-4-019-plotinus-enneads]]"]
 deity-instances: []
-status: "stub"
+parallels: ["[[soul-as-spark]]", "[[soul-exile-longing]]", "[[reincarnation]]", "[[resurrection-of-the-dead]]", "[[anatman-no-self]]", "[[ascent-of-the-soul]]"]
+status: "full"
 refs:
   - title: "The Cambridge Companion to Plato's Phaedo"
     author: "Ebrey, David (ed.)"
