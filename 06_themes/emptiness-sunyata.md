@@ -1,7 +1,7 @@
 ---
 type: theme
 id: "emptiness-sunyata"
-parallels: ["[[sacred-void]]", "[[theme-apophatic-theology]]", "[[apophatic-mysticism]]", "[[wahdat-al-wujud]]", "[[the-godhead-eckhart]]", "[[phase-3-031-asthasahasrika-prajnaparamita]]", "[[nagarjuna]]"]
+parallels: ["[[sacred-void]]", "[[theme-apophatic-theology]]", "[[apophatic-mysticism]]", "[[wahdat-al-wujud]]", "[[the-godhead-eckhart]]", "[[phase-3-031-asthasahasrika-prajnaparamita]]", "[[nagarjuna]]", "[[dao]]"]
 name: "Emptiness (Śūnyatā)"
 aka: ["Śūnyatā", "Sunyata", "Voidness", "kong (空)", "stong pa nyid"]
 traditions-where-attested: ["Mahayana Buddhism", "Madhyamaka", "Yogacara", "Zen", "Vajrayana"]

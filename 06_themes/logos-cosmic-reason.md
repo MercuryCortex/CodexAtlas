@@ -1,7 +1,7 @@
 ---
 type: theme
 id: "logos-cosmic-reason"
-parallels: ["[[vac-goddess]]", "[[ptah]]", "[[ma-at]]", "[[asha-vahishta]]", "[[philo-of-alexandria]]", "[[origen]]", "[[heraclitus]]", "[[laozi]]"]
+parallels: ["[[vac-goddess]]", "[[ptah]]", "[[ma-at]]", "[[asha-vahishta]]", "[[philo-of-alexandria]]", "[[origen]]", "[[heraclitus]]", "[[laozi]]", "[[dao]]", "[[memra]]", "[[moral-rta-cosmic-order]]"]
 name: "Logos as cosmic reason"
 aka: ["divine word", "cosmic logos", "logos spermatikos"]
 category: "theological"

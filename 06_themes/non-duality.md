@@ -1,7 +1,7 @@
 ---
 type: theme
 id: "non-duality"
-parallels: ["[[emptiness-sunyata]]", "[[wahdat-al-wujud]]", "[[fanaa-annihilation]]", "[[henosis]]", "[[neoplatonic-henosis]]", "[[pratyabhijna]]", "[[panentheism]]", "[[brahman-impersonal]]", "[[idealism-metaphysical]]", "[[perennial-philosophy]]", "[[divine-unity]]"]
+parallels: ["[[emptiness-sunyata]]", "[[wahdat-al-wujud]]", "[[fanaa-annihilation]]", "[[henosis]]", "[[neoplatonic-henosis]]", "[[pratyabhijna]]", "[[panentheism]]", "[[brahman-impersonal]]", "[[idealism-metaphysical]]", "[[perennial-philosophy]]", "[[divine-unity]]", "[[dao]]"]
 name: "Non-duality"
 aka: ["nondualism", "advaita", "wahdat al-wujud", "śūnyatā (related)", "monistic-mysticism", "the great identification", "two-not-two"]
 category: "soteriological / metaphysical"

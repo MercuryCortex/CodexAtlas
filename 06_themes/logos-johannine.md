@@ -6,6 +6,7 @@ aka: ["Logos of the Fourth Gospel", "the Word made flesh"]
 category: "theological"
 appearances: ["[[phase-3-020-gospel-of-john]]", "[[phase-4-003-gospel-of-truth]]", "[[phase-4-025-clement-stromata]]"]
 deity-instances: []
+parallels: ["[[memra]]"]
 parent-theme: "[[logos-cosmic-reason]]"
 status: "full"
 related-themes:

@@ -35,6 +35,7 @@ deity-instances:
   - "[[leviathan]]"
   - "[[ninurta]]"
   - "[[kumarbi]]"
+  - "[[rahab]]"
 related-themes:
   - "[[divine-kingship]]"
   - "[[primordial-waters]]"

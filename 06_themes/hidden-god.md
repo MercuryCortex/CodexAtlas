@@ -1,7 +1,7 @@
 ---
 type: theme
 id: "hidden-god"
-parallels: ["[[brahman-impersonal]]", "[[emptiness-sunyata]]", "[[amun]]"]
+parallels: ["[[brahman-impersonal]]", "[[emptiness-sunyata]]", "[[amun]]", "[[dao]]"]
 name: "Hidden god (deus absconditus)"
 aka: ["deus absconditus", "the unknown God", "the Father beyond being", "the apophatic absolute", "the Real beyond manifestation", "the Godhead beyond God"]
 category: "theological / apophatic"
