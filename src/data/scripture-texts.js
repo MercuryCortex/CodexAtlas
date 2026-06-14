@@ -294,6 +294,68 @@ SCRIPTURE_TEXTS['enuma-elish-1'] = {
   ]
 };
 
+// ── ENUMA ELISH — TABLET IV (Marduk slays Tiamat) ─────────────────────────────
+SCRIPTURE_TEXTS['enuma-elish-4'] = {
+  id: 'enuma-elish-4',
+  title: 'Enuma Elish — Tablet IV (Marduk Slays Tiamat)',
+  shortTitle: 'Enuma Elish IV',
+  corpus: 'Mesopotamian · Babylonian',
+  tradId: 'tradition-mesopotamian',
+  date: 'c. 1800–1100 BCE (Old Babylonian to Kassite period)',
+  docNode: 'phase-1-008-enuma-elish',
+  language: 'Akkadian · L.W. King translation (1902)',
+  translations: [
+    { id: 'king', label: 'King (1902)', note: 'L. W. King, The Seven Tablets of Creation (1902) — public domain' },
+  ],
+  intro: 'Tablet IV is the climax of the Babylonian creation epic: the storm-god Marduk meets Tiamat, the primordial salt-sea, in single combat, slays her, and splits her body to form the cosmos. It is the type-specimen of the Chaoskampf — the storm-god-versus-chaos-dragon mytheme that recurs as Baal vs Yam, Indra vs Vritra, Zeus vs Typhon, and YHWH vs Leviathan — and the source of the cosmos-from-a-slain-body cosmogony shared with the Norse Ymir and the Chinese Pangu. The defeated Tiamat is the same primordial deep that Genesis 1:2 calls tehom.',
+  crossTradition: [
+    { label: 'Genesis 1 — the deep (tehom)', textId: 'genesis-1', note: 'The tehom of Gen 1:2 is linguistically cognate with Tiamat; Psalm 74 and Isaiah 51 preserve the older combat (YHWH splitting the sea, crushing Leviathan/Rahab) that Genesis demythologises.' },
+    { label: 'Indra vs Vritra (Vedic)', note: 'The storm-god slays the serpent who withholds the waters — the Indo-European reflex of the combat.' },
+    { label: 'Baal vs Yam (Ugaritic)', note: 'Baal defeats Sea and the seven-headed Lotan — the Canaanite link between Mesopotamia and Israel.' },
+    { label: 'Ymir / Pangu — world from a body', note: 'The cosmos shaped from a slain primordial being is cosmic-body cosmogony, reached again independently in the Norse and Chinese traditions.' },
+  ],
+  sections: [
+    {
+      heading: 'The Combat and the Cosmos',
+      verses: [
+        { ref: 'IV',
+          text: 'The lord spread out his net and caught her, and the evil wind that was behind him he let loose in her face.',
+          textVersions: { king: 'The lord spread out his net and caught her, and the evil wind that was behind him he let loose in her face.' },
+          entities: [
+            { word: 'The lord', node: 'marduk', type: 'deity',
+              note: 'Marduk, the Babylonian storm-god and city-god of Babylon, champion of the younger gods.',
+              parallels: [ { label: 'Baal (Ugaritic)', note: 'storm-god who defeats Sea' }, { label: 'Indra (Vedic)', note: 'storm-god who slays Vritra to free the waters' } ] },
+            { word: 'evil wind', node: 'chaoskampf', type: 'theme',
+              note: 'The winds Marduk created are his weapon against the chaos-sea — the type-specimen of the storm-god-versus-chaos-dragon Chaoskampf.',
+              parallels: [ { label: 'Zeus vs Typhon (Greek)', note: 'the sky-god vs the hundred-headed chaos-monster' }, { label: 'Thor vs Jormungandr (Norse)', note: 'the thunder-god vs the world-serpent' } ] },
+          ]
+        },
+        { ref: 'IV',
+          text: 'As Tiamat opened her mouth to its full extent, he drove in the evil wind, while as yet she had not shut her lips.',
+          textVersions: { king: 'As Tiamat opened her mouth to its full extent, he drove in the evil wind, while as yet she had not shut her lips.' },
+          entities: [
+            { word: 'Tiamat', node: 'tiamat', type: 'deity',
+              note: 'The primordial salt-sea and mother of the first gods, here the chaos-dragon Marduk must defeat; cognate with Hebrew tehom.',
+              parallels: [ { label: 'tehom (Hebrew)', textId: 'genesis-1', note: 'the deep of Gen 1:2 — linguistically cognate with Tiamat' }, { label: 'Leviathan / Yam', note: 'the chaos-sea YHWH splits in Psalm 74' } ] },
+          ]
+        },
+        { ref: 'IV',
+          text: 'He split her up like a flat fish into two halves; one half of her he stablished as a covering for heaven.',
+          textVersions: { king: 'He split her up like a flat fish into two halves; one half of her he stablished as a covering for heaven.' },
+          entities: [
+            { word: 'split her up like a flat fish into two halves', node: 'cosmic-body-cosmogony', type: 'theme',
+              note: 'The cosmos is formed from the dismembered body of the slain primordial being — Tiamat becomes sky and earth.',
+              parallels: [ { label: 'Ymir (Norse)', note: 'the world made from the slain frost-giant body' }, { label: 'Pangu (Chinese)', note: 'the cosmos formed from the primordial giant body' }, { label: 'Purusha (Vedic)', note: 'the cosmic person dismembered to make the world' } ] },
+            { word: 'covering for heaven', node: 'tiamat', type: 'deity',
+              note: 'The upper half of Tiamat becomes the firmament — the waters above, as in Genesis 1:7.',
+              parallels: [ { label: 'waters above the firmament', textId: 'genesis-1', note: 'Gen 1:7 separates the waters above from the waters below' } ] },
+          ]
+        },
+      ]
+    }
+  ],
+};
+
 // ── DESCENT OF INANNA (opening) ───────────────────────────────────────────────
 SCRIPTURE_TEXTS['descent-inanna'] = {
   id: 'descent-inanna',
