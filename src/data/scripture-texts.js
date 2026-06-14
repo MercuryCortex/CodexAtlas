@@ -715,7 +715,7 @@ SCRIPTURE_TEXTS['nasadiya-sukta'] = {
             sanskrit:  'nā́sad āsīn nó sád āsīt tadā́nīṃ nā́sīd rájo nó víomā paró yat\nkím āvarīvaḥ kúha kásya śármann ámbhaḥ kím āsīd gáhanaṃ gabhīrám\n[not-non-being was nor being was-then]\n[not was realm-of-air nor sky beyond-it]\n[what covered where of-what shelter]\n[water — what was — fathomless deep?]\n\nNote: The opening nā́sad... nó sád = "neither non-being (asat) nor being (sat)" — the text begins before the being/non-being distinction itself. This is more radical than Genesis 1:1 (which assumes being: "In the beginning GOD CREATED") or even the Tao Te Ching (which names the Tao as the primordial ground). The Nasadiya refuses to grant the pre-creation state any predicate at all.',
           },
           entities: [
-            { word: 'water', node: 'cosmic-ocean', type: 'symbol',
+            { word: 'water', node: 'apas', type: 'deity',
               note: 'The primordial question: "Was water there, unfathomed depth of water?" — the Vedic cosmic ocean as pre-creation substrate. The same deep waters appear in Genesis 1:2 (tehom/"the deep"), Enuma Elish (Apsu + Tiamat), the Memphite Theology (Nun), and the Popol Vuh ("only the sea alone pooled under all the sky"). Across five independent ancient traditions on three continents, the primordial state is waters — possibly because all early civilisations arose near water, possibly encoding a genuine cosmological intuition about formless potential.',
               parallels: [
                 { label: 'tehom / the deep — Genesis 1:2',   textId: 'genesis-1',        note: '"Darkness was upon the face of the deep" — same pre-creation waters.' },
