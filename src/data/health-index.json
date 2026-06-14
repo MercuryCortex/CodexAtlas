@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-06-09T19:04:35Z",
+  "generatedAt": "2026-06-14T01:11:03Z",
   "vault": {
-    "totalNodes": 5292,
+    "totalNodes": 5357,
     "lensCount": 30,
     "familyCount": 14,
-    "unmatchedTradNodes": 22,
+    "unmatchedTradNodes": 30,
     "intentionallyCrossTradition": 30
   },
   "lenses": [
@@ -23,13 +23,13 @@
     {
       "folder": "02_documents",
       "label": "Documents",
-      "count": 604,
+      "count": 629,
       "baseline": 550,
-      "ratio": 1.098,
+      "ratio": 1.144,
       "band": "rich",
       "baselineNote": "EoR — scripture + commentary entries across 15 vols (~16% of corpus)",
       "statuses": {
-        "metadata": 410,
+        "metadata": 435,
         "full": 178,
         "(no status)": 16
       }
@@ -37,31 +37,30 @@
     {
       "folder": "03_deities",
       "label": "Deities",
-      "count": 990,
+      "count": 994,
       "baseline": 900,
-      "ratio": 1.1,
+      "ratio": 1.104,
       "band": "rich",
       "baselineNote": "EoR deity/numina entries + Leeming Oxford Companion to World Mythology (~3,000 entries)",
       "statuses": {
-        "metadata": 911,
-        "(no status)": 52,
+        "metadata": 913,
+        "(no status)": 54,
         "full": 27
       }
     },
     {
       "folder": "04_persons",
       "label": "Persons",
-      "count": 1217,
+      "count": 1226,
       "baseline": 750,
-      "ratio": 1.623,
+      "ratio": 1.635,
       "band": "over-baseline",
       "baselineNote": "EoR religious figures + Bowker Oxford Dict. World Religions biographical entries",
       "statuses": {
-        "metadata": 472,
+        "metadata": 481,
         "stub": 690,
-        "(no status)": 17,
-        "full": 37,
-        "\"m": 1
+        "(no status)": 18,
+        "full": 37
       }
     },
     {
@@ -82,14 +81,14 @@
     {
       "folder": "06_themes",
       "label": "Themes / motifs",
-      "count": 509,
+      "count": 511,
       "baseline": 350,
-      "ratio": 1.454,
+      "ratio": 1.46,
       "band": "rich",
       "baselineNote": "EoR concept/topic entries (Bynum 2011 + Eliade themes vocabulary)",
       "statuses": {
         "stub": 313,
-        "metadata": 160,
+        "metadata": 162,
         "full": 27,
         "(no status)": 6,
         "partial": 2,
@@ -99,14 +98,14 @@
     {
       "folder": "07_traditions",
       "label": "Traditions",
-      "count": 329,
+      "count": 332,
       "baseline": 280,
-      "ratio": 1.175,
+      "ratio": 1.186,
       "band": "rich",
       "baselineNote": "EoR + Bowker — named living + extinct religious traditions and schools",
       "statuses": {
         "stub": 168,
-        "metadata": 140,
+        "metadata": 143,
         "full": 13,
         "(no status)": 7,
         "partial": 1
@@ -157,13 +156,13 @@
     {
       "folder": "11_alphabets",
       "label": "Alphabets",
-      "count": 42,
+      "count": 47,
       "baseline": 80,
-      "ratio": 0.525,
+      "ratio": 0.588,
       "band": "developing",
       "baselineNote": "Daniels-Bright World's Writing Systems + sacred-script entries",
       "statuses": {
-        "full": 42
+        "full": 47
       }
     },
     {
@@ -246,14 +245,14 @@
     {
       "folder": "18_languages",
       "label": "Languages",
-      "count": 34,
+      "count": 49,
       "baseline": 120,
-      "ratio": 0.283,
+      "ratio": 0.408,
       "band": "developing",
       "baselineNote": "Brown Encyc. of Lang. & Linguistics — sacred / liturgical language entries",
       "statuses": {
         "(no status)": 23,
-        "metadata": 11
+        "metadata": 26
       }
     },
     {
@@ -327,14 +326,14 @@
     {
       "folder": "24_pharmacology",
       "label": "Pharmacology",
-      "count": 16,
+      "count": 17,
       "baseline": 70,
-      "ratio": 0.229,
+      "ratio": 0.243,
       "band": "anemic",
       "baselineNote": "Schultes-Hofmann Plants of the Gods + sacred-entheogen / pharmacy entries",
       "statuses": {
         "(no status)": 12,
-        "metadata": 1,
+        "metadata": 2,
         "stub": 3
       }
     },
@@ -354,14 +353,14 @@
     {
       "folder": "26_calendars",
       "label": "Calendars",
-      "count": 22,
+      "count": 23,
       "baseline": 70,
-      "ratio": 0.314,
+      "ratio": 0.329,
       "band": "developing",
       "baselineNote": "Richards Mapping Time + Steel Marking Time religious-calendar entries",
       "statuses": {
         "(no status)": 4,
-        "metadata": 17,
+        "metadata": 18,
         "\"metada": 1
       }
     },
@@ -420,13 +419,13 @@
     {
       "key": "mesopotamian",
       "label": "Mesopotamian",
-      "count": 196,
+      "count": 203,
       "baseline": 280,
-      "ratio": 0.7,
+      "ratio": 0.725,
       "band": "rich",
       "perLens": {
         "02_documents": 32,
-        "03_deities": 122,
+        "03_deities": 123,
         "04_persons": 21,
         "05_events": 1,
         "10_music": 3,
@@ -434,28 +433,31 @@
         "14_rituals": 3,
         "16_mathematics": 2,
         "17_medicine": 1,
-        "20_sacred_architecture": 7
+        "18_languages": 5,
+        "20_sacred_architecture": 7,
+        "24_pharmacology": 1
       }
     },
     {
       "key": "egyptian",
       "label": "Egyptian",
-      "count": 139,
+      "count": 144,
       "baseline": 240,
-      "ratio": 0.579,
-      "band": "developing",
+      "ratio": 0.6,
+      "band": "rich",
       "perLens": {
         "02_documents": 21,
         "03_deities": 66,
-        "04_persons": 23,
+        "04_persons": 24,
         "06_themes": 5,
         "09_symbols": 2,
         "10_music": 2,
-        "11_alphabets": 1,
+        "11_alphabets": 2,
         "13_morals": 1,
         "14_rituals": 7,
         "16_mathematics": 1,
         "17_medicine": 1,
+        "18_languages": 3,
         "20_sacred_architecture": 6,
         "26_calendars": 2,
         "27_attire": 1
@@ -464,14 +466,14 @@
     {
       "key": "abrahamic",
       "label": "Abrahamic",
-      "count": 1004,
+      "count": 1046,
       "baseline": 700,
-      "ratio": 1.434,
+      "ratio": 1.494,
       "band": "rich",
       "perLens": {
-        "02_documents": 290,
-        "03_deities": 122,
-        "04_persons": 411,
+        "02_documents": 315,
+        "03_deities": 125,
+        "04_persons": 412,
         "05_events": 2,
         "09_symbols": 2,
         "10_music": 21,
@@ -482,6 +484,7 @@
         "15_philosophy": 9,
         "16_mathematics": 3,
         "17_medicine": 4,
+        "18_languages": 13,
         "20_sacred_architecture": 16,
         "21_theology": 20,
         "22_practices": 14,
@@ -494,14 +497,14 @@
     {
       "key": "greco-roman",
       "label": "Greco-Roman",
-      "count": 362,
+      "count": 366,
       "baseline": 380,
-      "ratio": 0.953,
+      "ratio": 0.963,
       "band": "rich",
       "perLens": {
         "02_documents": 56,
         "03_deities": 129,
-        "04_persons": 86,
+        "04_persons": 87,
         "09_symbols": 1,
         "10_music": 23,
         "11_alphabets": 3,
@@ -511,6 +514,7 @@
         "15_philosophy": 6,
         "16_mathematics": 7,
         "17_medicine": 3,
+        "18_languages": 3,
         "20_sacred_architecture": 10,
         "25_divination": 1
       }
@@ -518,19 +522,20 @@
     {
       "key": "iranian",
       "label": "Iranian / Zoroastrian",
-      "count": 59,
+      "count": 66,
       "baseline": 180,
-      "ratio": 0.328,
+      "ratio": 0.367,
       "band": "developing",
       "perLens": {
         "02_documents": 7,
         "03_deities": 29,
-        "04_persons": 4,
+        "04_persons": 6,
         "09_symbols": 1,
         "10_music": 1,
         "11_alphabets": 1,
         "13_morals": 2,
         "14_rituals": 3,
+        "18_languages": 5,
         "21_theology": 7,
         "22_practices": 2,
         "26_calendars": 1,
@@ -540,14 +545,14 @@
     {
       "key": "indic",
       "label": "Indic (Hindu / Jain / Sikh)",
-      "count": 278,
+      "count": 282,
       "baseline": 520,
-      "ratio": 0.535,
+      "ratio": 0.542,
       "band": "developing",
       "perLens": {
         "02_documents": 47,
         "03_deities": 98,
-        "04_persons": 49,
+        "04_persons": 50,
         "10_music": 14,
         "11_alphabets": 2,
         "12_alchemy": 1,
@@ -556,6 +561,7 @@
         "15_philosophy": 8,
         "16_mathematics": 4,
         "17_medicine": 2,
+        "18_languages": 3,
         "20_sacred_architecture": 6,
         "21_theology": 7,
         "22_practices": 8,
@@ -569,9 +575,9 @@
     {
       "key": "buddhist",
       "label": "Buddhist",
-      "count": 167,
+      "count": 171,
       "baseline": 380,
-      "ratio": 0.439,
+      "ratio": 0.45,
       "band": "developing",
       "perLens": {
         "02_documents": 36,
@@ -583,6 +589,7 @@
         "14_rituals": 6,
         "15_philosophy": 2,
         "17_medicine": 2,
+        "18_languages": 4,
         "20_sacred_architecture": 10,
         "21_theology": 5,
         "22_practices": 6,
@@ -595,9 +602,9 @@
     {
       "key": "east-asian",
       "label": "East Asian (Daoist / Confucian / folk)",
-      "count": 169,
+      "count": 171,
       "baseline": 320,
-      "ratio": 0.528,
+      "ratio": 0.534,
       "band": "developing",
       "perLens": {
         "02_documents": 34,
@@ -611,6 +618,7 @@
         "15_philosophy": 6,
         "16_mathematics": 2,
         "17_medicine": 2,
+        "18_languages": 2,
         "20_sacred_architecture": 5,
         "22_practices": 2,
         "25_divination": 3,
@@ -621,9 +629,9 @@
     {
       "key": "north-european",
       "label": "Norse / Celtic / Slavic / Baltic",
-      "count": 132,
+      "count": 134,
       "baseline": 220,
-      "ratio": 0.6,
+      "ratio": 0.609,
       "band": "rich",
       "perLens": {
         "02_documents": 3,
@@ -632,6 +640,7 @@
         "10_music": 5,
         "11_alphabets": 2,
         "14_rituals": 8,
+        "18_languages": 2,
         "26_calendars": 1
       }
     },
@@ -657,9 +666,9 @@
     {
       "key": "mesoamerican",
       "label": "Mesoamerican",
-      "count": 84,
+      "count": 86,
       "baseline": 180,
-      "ratio": 0.467,
+      "ratio": 0.478,
       "band": "developing",
       "perLens": {
         "02_documents": 14,
@@ -670,10 +679,11 @@
         "14_rituals": 1,
         "16_mathematics": 1,
         "17_medicine": 1,
+        "18_languages": 1,
         "19_astronomy": 1,
         "20_sacred_architecture": 5,
         "25_divination": 1,
-        "26_calendars": 3
+        "26_calendars": 4
       }
     },
     {
@@ -694,9 +704,9 @@
     {
       "key": "indigenous-other",
       "label": "Indigenous (N.American / Oceanic / Australian / Arctic)",
-      "count": 88,
+      "count": 89,
       "baseline": 200,
-      "ratio": 0.44,
+      "ratio": 0.445,
       "band": "developing",
       "perLens": {
         "02_documents": 8,
@@ -706,6 +716,7 @@
         "10_music": 8,
         "14_rituals": 9,
         "17_medicine": 1,
+        "18_languages": 1,
         "20_sacred_architecture": 3,
         "22_practices": 3
       }
@@ -713,14 +724,14 @@
     {
       "key": "modern-syncretic",
       "label": "Modern / syncretic / esoteric",
-      "count": 128,
+      "count": 130,
       "baseline": 240,
-      "ratio": 0.533,
+      "ratio": 0.542,
       "band": "developing",
       "perLens": {
         "02_documents": 38,
         "03_deities": 3,
-        "04_persons": 64,
+        "04_persons": 66,
         "10_music": 6,
         "12_alchemy": 1,
         "13_morals": 1,
@@ -755,6 +766,10 @@
       "count": 14
     },
     {
+      "tradition": "tradition-proto-indo-european-religion",
+      "count": 3
+    },
+    {
       "tradition": "phrygian",
       "count": 2
     },
@@ -780,6 +795,26 @@
     },
     {
       "tradition": "modern occultism (lévi 1856 sabbatic goat)",
+      "count": 1
+    },
+    {
+      "tradition": "aksumite religion",
+      "count": 1
+    },
+    {
+      "tradition": "tradition-nabataeans",
+      "count": 1
+    },
+    {
+      "tradition": "tradition-mandaeism",
+      "count": 1
+    },
+    {
+      "tradition": "tradition-sabaean-religion",
+      "count": 1
+    },
+    {
+      "tradition": "tradition-eurasian-steppe-cultures",
       "count": 1
     }
   ]

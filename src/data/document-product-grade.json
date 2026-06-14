@@ -1,14 +1,76 @@
 {
- "generatedAt": "2026-06-04",
- "totalDocuments": 507,
+ "generatedAt": "2026-06-14",
+ "totalDocuments": 621,
  "citationAudit": {
   "count": 112,
   "lastSweep": "2026-06-04"
  },
- "productGrade": true,
- "passCount": 7,
+ "productGrade": false,
+ "passCount": 6,
  "rowCount": 7,
- "dupClusters": {},
+ "dupClusters": {
+  "document-1-timothy+document-2-timothy+document-titus": [
+   "document-1-timothy",
+   "document-2-timothy",
+   "document-titus"
+  ],
+  "document-boethius-consolation+phase-4-049-boethius-consolation-of-philosophy": [
+   "phase-4-049-boethius-consolation-of-philosophy",
+   "document-boethius-consolation"
+  ],
+  "document-corpus-areopagiticum+phase-4-030-pseudo-dionysius": [
+   "phase-4-030-pseudo-dionysius",
+   "document-corpus-areopagiticum"
+  ],
+  "document-corpus-areopagiticum+phase-4-100-celestial-hierarchy": [
+   "phase-4-100-celestial-hierarchy",
+   "document-corpus-areopagiticum"
+  ],
+  "document-derveni-papyrus+phase-3-027-derveni-papyrus": [
+   "phase-3-027-derveni-papyrus",
+   "document-derveni-papyrus"
+  ],
+  "document-ezra+document-nehemiah": [
+   "document-nehemiah",
+   "document-ezra"
+  ],
+  "document-heraclitus-fragments+document-parmenides-poem": [
+   "document-parmenides-poem",
+   "document-heraclitus-fragments"
+  ],
+  "document-jonah+document-quran-yunus": [
+   "document-jonah",
+   "document-quran-yunus"
+  ],
+  "document-ludlul-bel-nemeqi+phase-1-032-babylonian-theodicy": [
+   "document-ludlul-bel-nemeqi",
+   "phase-1-032-babylonian-theodicy"
+  ],
+  "document-orphic-gold-tablets+phase-2-040-orphic-gold-tablets": [
+   "document-orphic-gold-tablets",
+   "phase-2-040-orphic-gold-tablets"
+  ],
+  "document-porphyry-isagoge-and-life+phase-5-017-peter-lombard-sentences": [
+   "phase-5-017-peter-lombard-sentences",
+   "document-porphyry-isagoge-and-life"
+  ],
+  "document-proclus-platonic-theology+phase-6-002-ficino-theologia-platonica": [
+   "phase-6-002-ficino-theologia-platonica",
+   "document-proclus-platonic-theology"
+  ],
+  "document-quran-al-falaq+document-quran-al-nas": [
+   "document-quran-al-nas",
+   "document-quran-al-falaq"
+  ],
+  "document-quran-al-nas+phase-8-001-popol-vuh": [
+   "phase-8-001-popol-vuh",
+   "document-quran-al-nas"
+  ],
+  "document-quran-al-nur+phase-5-038-mashafa-berhan": [
+   "document-quran-al-nur",
+   "phase-5-038-mashafa-berhan"
+  ]
+ },
  "rows": [
   {
    "key": "connected",
@@ -22,7 +84,7 @@
    "key": "tradition",
    "label": "Has home tradition (wedge)",
    "target": "100%",
-   "current": "507/507",
+   "current": "621/621",
    "ok": true,
    "detail": "the scripture-exception singular origin"
   },
@@ -30,7 +92,7 @@
    "key": "dates",
    "label": "Has dates",
    "target": "100%",
-   "current": "507/507",
+   "current": "621/621",
    "ok": true,
    "detail": ""
   },
@@ -62,8 +124,8 @@
    "key": "dupes",
    "label": "No duplicate-title clusters",
    "target": "0",
-   "current": "0",
-   "ok": true,
+   "current": "15",
+   "ok": false,
    "detail": "title+aka folded; 8 distinct/strata pairs excluded (curated); resolve rest via dedup playbook"
   }
  ]
