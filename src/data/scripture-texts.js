@@ -1356,7 +1356,7 @@ SCRIPTURE_TEXTS['yasna-30'] = {
             { word: 'two primal Spirits', node: 'spenta-mainyu', type: 'deity',
               note: 'Spenta Mainyu (Holy Spirit) and Angra Mainyu (Destructive Spirit) — twin principles who chose their natures at the beginning. The theology is radical: evil is not God\'s creation but the result of a free cosmic choice.',
             },
-            { word: 'Better and the Bad', node: 'ahriman', type: 'theme',
+            { word: 'Better and the Bad', node: 'angra-mainyu-ahriman', type: 'theme',
               note: 'Ahriman (Angra Mainyu) chose evil freely — making Zoroastrianism the world\'s first systematic theodicy by principle rather than by narrative. The daēvas (cognate with Sanskrit deva = gods) become demons in Zoroastrianism — the same word inverted in valence across the Indo-Iranian split.',
               parallels: [
                 { label: 'Isaiah 45:5 / Yaldabaoth Inversion', note: 'The Gnostic inversion of the Hebrew God into an ignorant Demiurge is structurally parallel: the "god" of one tradition becomes the "demon" of another.' },
@@ -1404,7 +1404,7 @@ SCRIPTURE_TEXTS['yasna-30'] = {
         { ref: 'Y 30.6',
           text: 'Between them the daêvas did not choose aright, for as they deliberated, delusion overcame them, so that they chose the most Evil Mind. Then they rushed together to Violence, that they might enfeeble the world of men.',
           entities: [
-            { word: 'daêvas', node: 'ahriman', type: 'theme',
+            { word: 'daêvas', node: 'angra-mainyu-ahriman', type: 'theme',
               note: 'Daēvas — Zoroastrian demons. Cognate with Sanskrit deva (gods) and Latin deus (god). The most striking cross-traditional inversion in comparative religion: in Vedic religion deva are good divine beings; in Zoroastrianism the same word means demons. The same linguistic family split into opposite valences. The Aēshma Daēva (demon of wrath) survives in Hebrew as Asmodeus (Book of Tobit) — one of the clearest documented Zoroastrian→Jewish transmissions.',
             },
           ]
@@ -1423,120 +1423,6 @@ SCRIPTURE_TEXTS['yasna-30'] = {
 };
 
 // ── 13. GOSPEL OF THOMAS — SELECTED LOGIA ─────────────────────────────────
-SCRIPTURE_TEXTS['gospel-of-thomas'] = {
-  title      : 'Gospel of Thomas — Selected Logia',
-  docNode: 'phase-4-001-gospel-of-thomas',
-  shortTitle : 'Gospel of Thomas',
-  tradition  : 'Gnostic / Early Christianity',
-  date       : 'c. 50–140 CE (Greek original lost; Coptic Nag Hammadi ms. c. 340 CE)',
-  intro      : 'The Gospel of Thomas is 114 sayings attributed to Jesus, discovered at Nag Hammadi in 1945. Unlike the canonical gospels, it has no narrative, no passion story, no resurrection — only sayings. Logion 1 frames everything: "Whoever discovers the meaning of these sayings will not taste death." Salvation is understanding, not faith. Thomas is the key text for the self-knowledge (gnosis) tradition: the divine is not remote but the very ground of the seeker\'s identity. Logion 77 is the vault\'s sharpest single-sentence statement of divine immanence, shared structurally by Advaita Vedanta, Rhineland mysticism, Sufi waḥdat al-wujūd, and Huayan Buddhism.',
-  crossTradition : [
-    { label: 'John 1 — Logos theology', textId: 'john-1', note: '"I am the light that is above them all" (L.77) is Thomas\'s compressed version of the Logos prologue — same claim, aphoristic form.' },
-    { label: 'Chandogya 6.8 — Tat Tvam Asi', textId: 'chandogya-621', note: '"The kingdom is inside you and outside you" (L.3) is the closest New Testament parallel to tat tvam asi.' },
-    { label: 'Poimandres — Self-Knowledge as Salvation', textId: 'poimandres', note: '"Know thyself and know the Father" maps precisely onto Thomas\'s gnosis-as-salvation structure.' },
-    { label: 'Tao Te Ching — The Unspoken', textId: 'tao-te-ching-1', note: 'L.1 ("secret sayings") shares the Daoist structure: the truth that saves cannot be fully transmitted in language.' },
-  ],
-  translations : [
-    { id: 'patterson', label: 'Patterson-Meyer 1992 (T1)' },
-    { id: 'lambdin',   label: 'Lambdin 1988 (T1)' },
-    { id: 'coptic',    label: 'Coptic (original)' },
-  ],
-  sections : [
-    {
-      heading : 'The Frame and the Kingdom',
-      verses  : [
-        { ref: 'L. 1',
-          text: 'And he said: Whoever discovers the interpretation of these sayings will not taste death.',
-          textVersions: {
-            lambdin: 'And he said, "Whoever finds the interpretation of these sayings will not experience death."',
-            coptic:  'auw peJaF Je petahe ermhneian nneiSaJe naJi Jipe mmou an\n[And he said: Whoever finds the interpretation of these words will not taste death]',
-          },
-          entities: [
-            { word: 'interpretation', node: 'tradition-gnosticism', type: 'theme',
-              note: 'Hermēneia — interpretation, discernment, gnosis. The gospel frames itself as a riddle-collection requiring decoding — salvation is understanding, not belief. This is the structural difference between Gnostic and Catholic Christian soteriology. Irenaeus attacked Thomas\'s emphasis on individual interpretation as anarchic; Thomas vindicates the Gnostic position from the first word.',
-              parallels: [
-                { label: 'Zen kōan tradition', note: 'The kōan — an unresolvable riddle triggering enlightenment — is structurally identical to Thomas\'s "hidden sayings requiring interpretation."' },
-              ]
-            },
-          ]
-        },
-        { ref: 'L. 3',
-          text: 'Jesus said: If your leaders say to you, "Look, the kingdom is in the sky," then the birds of the sky will precede you. If they say to you, "It is in the sea," then the fish will precede you. Rather, the kingdom is inside you and it is outside you.',
-          entities: [
-            { word: 'kingdom', node: 'logos-johannine', type: 'theme',
-              note: 'The kingdom (Coptic: tmntrro) is Thomas\'s term for the state of realized divine self-knowledge — not a future political event or post-mortem reward but a present condition. "Inside you and outside you" = the divine ground is both the seeker\'s own depth AND the structure of all things. This is the precise claim of Chandogya\'s tat tvam asi and Huayan\'s mutual interpenetration.',
-              parallels: [
-                { label: 'Tat Tvam Asi — Chandogya 6.8', textId: 'chandogya-621', note: '"That art thou" — the Brahman you seek is identical with the self that seeks. Thomas\'s "inside you" is the New Testament\'s nearest statement of this.' },
-              ]
-            },
-          ]
-        },
-        { ref: 'L. 22',
-          text: 'Jesus said to them: When you make the two into one, and when you make the inner like the outer and the outer like the inner, and the upper like the lower, and when you make male and female into a single one, so that the male will not be male nor the female be female — then you will enter the kingdom.',
-          entities: [
-            { word: 'make the two into one', node: 'anthropos-gnostic', type: 'theme',
-              note: 'The restoration of the androgynous Anthropos — the primal Human who existed before the division into male and female. In Gnostic cosmology the Fall is the sundering of primal unity into multiplicity; salvation is the reversal. Paul\'s "neither male nor female" (Gal 3:28) is the same move in a different register.',
-              parallels: [
-                { label: 'Poimandres — Androgynous Anthropos', textId: 'poimandres', note: 'Poimandres CH I.14–15: the primal Anthropos descends into matter, becomes divided. Gnostic salvation = the undoing of this division.' },
-              ]
-            },
-          ]
-        },
-      ]
-    },
-    {
-      heading : 'Light Sayings',
-      verses  : [
-        { ref: 'L. 50',
-          text: 'Jesus said: If they say to you, "Where did you come from?" say to them, "We came from the light, from the place where the light came into being by itself, established itself, and appeared in their image." If they say to you, "Is it you?" say, "We are its children, and we are the chosen of the living Father."',
-          entities: [
-            { word: 'light', node: 'primordial-darkness', type: 'theme',
-              note: 'Thomas\'s light theology: the divine ground IS light (L.77), the Gnostic soul COMES FROM light (L.50), and the light is self-generating ("came into being by itself"). This is the Coptic equivalent of the Greek autogenes (self-begotten) — the Sethian Gnostic designation for Christ as the third principle of the divine triad.',
-              parallels: [
-                { label: 'John 1:4–5 — Life was the light', textId: 'john-1', note: '"In him was life, and the life was the light of men." The Johannine Light-Life equation parallels Thomas\'s light theology.' },
-                { label: 'Poimandres — Nous as pure light', textId: 'poimandres', note: 'CH I.4: "I beheld a boundless light." The Hermetic Nous is pure undifferentiated light — same as Thomas\'s generative light.' },
-              ]
-            },
-          ]
-        },
-        { ref: 'L. 77',
-          text: 'Jesus said: I am the light that is above them all. I am the All; the All came forth from me, and the All attained to me. Split a piece of wood — I am there. Lift up the stone, and you will find me there.',
-          textVersions: {
-            coptic: 'JeJ pe pouoein eteHiJn Pthr\nanoJ pe pthr\naf ei ebol nHht auw pthrf aJn eHrai eroJ\nBoq nnoue JeanoJ eimmaau\nTwwbe eHrai mpwne tetnaHe eroJ eHrai mmaau\n[I am the light that is above all things\nI am everything\nfrom me everything came and to me everything returns\nSplit wood: I am there\nlift the stone and you will find me there]',
-          },
-          entities: [
-            { word: 'I am the light', node: 'logos-johannine', type: 'theme',
-              note: '"I am the light that is above them all" — the most explicit statement of divine omnipresence in Thomas. "I am the All; the All came forth from me" is simultaneously the Johannine Logos theology, the Hermetic Nous-as-source doctrine, and the Vedantic tat tvam asi.',
-              parallels: [
-                { label: 'John 8:12 — "I am the light of the world"', textId: 'john-1', note: 'The canonical parallel — same "I am" + light claim, without Thomas\'s immanence extension into wood and stone.' },
-                { label: 'Tat Tvam Asi — Chandogya', textId: 'chandogya-621', note: '"I am the All" = "I am Brahman." The divine ground is not merely present in all things but IS all things.' },
-              ]
-            },
-            { word: 'Split a piece of wood', node: 'tradition-gnosticism', type: 'theme',
-              note: 'The radical immanence of L.77b: "Split wood — I am there. Lift up the stone — you will find me." The most concrete statement of panentheism in the gospel tradition. Parallels Meister Eckhart: "God is in a stone or a log, though they do not know it" — and Zen\'s "Buddha-nature is in a dried dung-stick" (Yunmen). 1,200 years and 8,000 km separate these three statements; same structure.',
-              parallels: [
-                { label: 'Eckhart — God in a Stone', note: 'Meister Eckhart: "God is equally in all things: in a stone, in a log of wood." Structurally identical to L.77b.' },
-              ]
-            },
-          ]
-        },
-        { ref: 'L. 108',
-          text: 'Jesus said: Whoever drinks from my mouth will become like me; I myself shall become that person, and the hidden things will be revealed to that person.',
-          entities: [
-            { word: 'become like me', node: 'anthropos-gnostic', type: 'theme',
-              note: 'The Thomas soteriology at its most explicit: the goal is not union into the divine but mutual identification — "I myself shall become that person." This is the theosis doctrine (Athanasius: "God became man so that man might become God") taken to its radical conclusion. Parallels Sufi fanāʾ — complete dissolution into the divine — and Vedantic "I am Brahman."',
-              parallels: [
-                { label: 'Sufi Fanāʾ — al-Hallaj', note: 'Ana al-Haqq ("I am the Truth") — al-Hallaj\'s claim of complete divine identification. Thomas\'s logion is the same claim from the mouth of Jesus.' },
-              ]
-            },
-          ]
-        },
-      ]
-    },
-  ]
-};
-
-// ── 14. SEFER YETZIRAH — CHAPTERS 1–2 ─────────────────────────────────────
 SCRIPTURE_TEXTS['sefer-yetzirah'] = {
   title      : 'Sefer Yetzirah — Book of Formation (Chs. 1–2)',
   docNode: 'phase-5-012-sefer-yetzirah',
@@ -2667,7 +2553,7 @@ SCRIPTURE_TEXTS['book-of-dead-125'] = {
             egyptian: 'ḫft ı̓ṱ.ṱ m ı̓ȝt-mȝʿt nfrt ı̓m n ı̓sft nb.s sı̓.tw s m ı̓rr.f ı̓rr.f mȝʿ.f m-ḫft nṯrw',
           },
           entities: [
-            { word: 'Hall of the Two Truths', node: 'maat', type: 'concept',
+            { word: 'Hall of the Two Truths', node: 'ma-at', type: 'concept',
               note: 'The "Hall of Two Truths" (ı̓ȝt-mȝʿt nfrt ı̓m n ı̓sft) — the hall of Ma\'at-in-truth and Ma\'at-free-from-evil — is the Egyptian court of divine judgment presided over by Osiris. Ma\'at (ّmȝʿt) is simultaneously the goddess of truth/justice and the cosmic principle of right order that holds the universe together. The heart is weighed against her feather: if the heart is lighter than Ma\'at\'s feather, the person passes into the afterlife; if heavier with sin, it is devoured by Ammit (the "devourer").',
               parallels: [
                 { label: 'Zoroastrian Chinvat Bridge — judgment passage', textId: 'yasna-30', note: 'The Chinvat Bridge (Bridge of the Separator) in Zoroastrianism, which the soul must cross after death — wide for the righteous, narrow as a razor-edge for the wicked — is the Iranian version of the Egyptian Hall of Two Truths as the post-death judgment passage.' },
@@ -2690,7 +2576,7 @@ SCRIPTURE_TEXTS['book-of-dead-125'] = {
             egyptian: 'n ı̓r.n.ı̓ ı̓sft n rmṯ· n ı̓r.n.ı̓ sfx ḥr-tp.sn· n ı̓r.n.ı̓ bı̓n m bw nfr· n rx.n.ı̓ ı̓sft',
           },
           entities: [
-            { word: 'I have not done falsehood', node: 'maat', type: 'concept',
+            { word: 'I have not done falsehood', node: 'ma-at', type: 'concept',
               note: 'The Negative Confession is structured as 42 declarations (one for each of 42 assessor-gods / nomes of Egypt), each denying a specific moral transgression. The structure — comprehensive ethical inventory organized around denials — is the world\'s oldest systematic moral code, predating the Ten Commandments by several centuries. The specific content (no killing, no stealing, no falsehood, no exploitation of the poor) maps directly onto the Decalogue and the Sermon on the Mount.',
               parallels: [
                 { label: 'Ten Commandments — the same prohibitions in imperative form', note: 'The Ten Commandments (Exodus 20) state in imperative form what the Negative Confession states in declarative form: "You shall not kill" = "I have not killed." The content overlap is extensive and the Egyptian origin is the dominant scholarly hypothesis for the structure.' },
@@ -2725,7 +2611,7 @@ SCRIPTURE_TEXTS['book-of-dead-125'] = {
                 { label: 'Hermes Psychopomp — guide of souls to the underworld', note: 'The Greek Hermes Psychopomp (guide of souls) who leads the dead to Hades is the direct Greek equivalent of Anubis, transmitted through the Egyptian-Greek cultural synthesis of the Ptolemaic period. The Hermetic tradition keeps this connection explicitly: Hermes = Thoth = the divine messenger and soul-guide.' },
               ]
             },
-            { word: 'feather of Ma\'at', node: 'maat', type: 'symbol',
+            { word: 'feather of Ma\'at', node: 'feather-of-maat', type: 'symbol',
               note: 'The single ostrich feather of Ma\'at (truth/justice/cosmic order) as the counterweight against the human heart is one of the most arresting images in religious history. The heart (ib) — the seat of consciousness, memory, and moral will — is weighed against truth itself. A heart "lighter than a feather" is one that has been emptied of ego, attachment, and wrongdoing; a "heavy heart" is burdened with sin. This is the origin of the Western metaphor of the heavy conscience.',
               parallels: [
                 { label: 'The heavy heart — burden of guilt as literal weight', note: 'The metaphor of a "heavy heart" (conscience burdened by guilt) in English and all European languages ultimately derives from the Egyptian psychostasia: a heart made heavy by sin literally sinks the scales of Ma\'at\'s judgment.' },
@@ -4495,7 +4381,7 @@ SCRIPTURE_TEXTS['john-3'] = {
             greek: 'Ἦν δὲ ἄνθρωπος ἐκ τῶν Φαρισαίων, Νικόδημος ὄνομα αὐτῷ, ἄρχων τῶν Ἰουδαίων· οὗτος ἦλθεν πρὸς αὐτὸν νυκτός',
           },
           entities: [
-            { word: 'by night', node: 'logos', type: 'symbol',
+            { word: 'by night', node: 'logos-cosmic-reason', type: 'symbol',
               note: 'Nicodemus comes nuktos — by night — a loaded detail in the Fourth Gospel, where light and darkness are consistently theological categories. Night = the realm of ignorance. That Nicodemus comes in darkness signals his initial status: a man of learning who is still operating without illumination. By the Gospel\'s end (19:39), Nicodemus helps bury Jesus — having moved through darkness toward something else. The night framing echoes John 1\'s "the light shines in the darkness, and the darkness did not overcome it."',
               parallels: [
                 { label: 'Apocryphon of John — John also comes in grief and darkness', textId: 'apocryphon-of-john', note: 'The Apocryphon opens with John (the apostle) leaving the Temple after the crucifixion in grief — also a movement through darkness toward revelation. Both seekers (Nicodemus and John) approach their revelation from a state of incomplete understanding, and both receive illuminating teaching in that state.' },
@@ -4549,7 +4435,7 @@ SCRIPTURE_TEXTS['john-3'] = {
             greek: 'τὸ πνεῦμα ὅπου θέλει πνεῖ, καὶ τὴν φωνὴν αὐτοῦ ἀκούεις, ἀλλ᾽ οὐκ οἶδας πόθεν ἔρχεται καὶ ποῦ ὑπάγει· οὕτως ἐστὶν πᾶς ὁ γεγεννημένος ἐκ τοῦ πνεύματος.',
           },
           entities: [
-            { word: 'wind blows where it chooses', node: 'pneuma', type: 'concept',
+            { word: 'wind blows where it chooses', node: 'ruach-pneuma', type: 'concept',
               note: 'Pneuma in Greek means both wind and spirit — the same pun operates in Hebrew (ruach), Arabic (ruh), and Sanskrit (prana). Jesus\' wind/spirit saying exploits this: you can hear the wind but not see where it comes from or goes — pneumatic rebirth has the same quality of invisible causality. This is Jesus\' most Taoist moment: the unpredictable, ungovernable movement of wind is the operative principle.',
               parallels: [
                 { label: 'Tao Te Ching 1 — the Tao that cannot be named or grasped', textId: 'tao-te-ching-1', note: 'Laozi\'s Tao that cannot be named, flows everywhere without being seen, and generates all things without claiming credit — and Jesus\' pneuma that blows where it chooses and generates new birth in those it touches — are functionally equivalent concepts. Tao and pneuma are both invisible ordering principles that operate by spontaneous, ungovernable flow.' },
@@ -5131,7 +5017,7 @@ SCRIPTURE_TEXTS['1-corinthians-15'] = {
             greek: 'οὕτως καὶ ἡ ἀνάστασις τῶν νεκρῶν. σπείρεται ἐν φθορᾷ, ἐγείρεται ἐν ἀφθαρσίᾳ· σπείρεται ἐν ἀτιμίᾳ, ἐγείρεται ἐν δόξῃ· σπείρεται ἐν ἀσθενείᾳ, ἐγείρεται ἐν δυνάμει· σπείρεται σῶμα ψυχικόν, ἐγείρεται σῶμα πνευματικόν.',
           },
           entities: [
-            { word: 'spiritual body', node: 'pneuma', type: 'concept',
+            { word: 'spiritual body', node: 'ruach-pneuma', type: 'concept',
               note: 'Soma pneumatikon — spiritual body. This is Paul\'s most paradoxical coinage: soma (body) is the material, particular, individual form; pneumatikon (spiritual) is the non-material, universal principle. A "spiritual body" should be a contradiction in terms — yet Paul insists on both words. He is not describing a ghost (pure spirit) or a resuscitated corpse (pure body) but a third thing: a mode of embodied existence whose substance is pneuma rather than matter. This is the closest Paul comes to the Hermetic concept of a body of light.',
               parallels: [
                 { label: 'Corpus Hermeticum XIII — the body of light of the reborn', textId: 'corpus-hermeticum-13', note: 'CH XIII\'s rebirth produces a transformed body: the tormentors (vices) are replaced by the powers of God, and the reborn soul is described as clothed in divine light. Paul\'s soma pneumatikon and the Hermetic body of light are the same intuition from different traditions: transformation produces not the destruction of individual existence but its elevation to a higher, luminous mode.' },
@@ -5153,7 +5039,7 @@ SCRIPTURE_TEXTS['1-corinthians-15'] = {
             greek: 'οὕτως καὶ γέγραπται· ἐγένετο ὁ πρῶτος ἄνθρωπος Ἀδὰμ εἰς ψυχὴν ζῶσαν· ὁ ἔσχατος Ἀδὰμ εἰς πνεῦμα ζῳοποιοῦν.',
           },
           entities: [
-            { word: 'the last Adam became a life-giving spirit', node: 'logos', type: 'concept',
+            { word: 'the last Adam became a life-giving spirit', node: 'logos-cosmic-reason', type: 'concept',
               note: 'Eschatos Adam — last Adam. Paul is doing something audacious: identifying Christ with a cosmic Anthropos figure who is the heavenly template for which the earthly Adam was only a copy. This is a direct engagement with the Philonic concept of the "heavenly Man" (ho kat\' eikona anthropos) — the divine image in Genesis 1:27 versus the earthly man formed from dust in Genesis 2:7. Paul reads these as two different beings: the first Adam (earthly, from Genesis 2) and the last Adam (heavenly, identified with Christ). This is almost identical to the Hermetic Anthropos who descends through the spheres and falls in love with Nature.',
               parallels: [
                 { label: 'Poimandres (CH I) — the Anthropos descending from heaven', textId: 'corpus-hermeticum-1', note: 'CH I\'s Anthropos — the divine Man who descends through the planetary spheres, falls in love with Nature, and becomes entrapped in matter — is the Hermetic version of Paul\'s Adam typology. For Paul, the first Adam fell into earthly existence; the last Adam (Christ) came from heaven to redeem. For Poimandres, the Anthropos descended and is trapped; the return journey is gnosis. Both texts use a two-Adam or two-Anthropos structure to map the fall and the redemption.' },
@@ -5486,7 +5372,7 @@ SCRIPTURE_TEXTS['gospel-of-thomas'] = {
             greek: '',
           },
           entities: [
-            { word: 'the Kingdom is inside of you, and it is outside of you', node: 'logos', type: 'concept',
+            { word: 'the Kingdom is inside of you, and it is outside of you', node: 'logos-cosmic-reason', type: 'concept',
               note: 'Thomas L.3 gives the fullest version of the kingdom saying — it is both within and without. This is more radical than Luke 17:21 ("the kingdom of God is among you"), which can be read as external (Jesus\'s presence). Thomas specifies: inside AND outside — not in a spatial location (sky or sea) but as the encompassing reality that the self participates in. "When you come to know yourselves" — self-knowledge is the path to recognition. This is the Thomas gospel\'s Delphic "know thyself" moment.',
               parallels: [
                 { label: 'Corpus Hermeticum XI — God contains all things and all things contain God', textId: 'corpus-hermeticum-11', note: 'CH XI\'s "God contains all things" and Thomas L.3\'s "the Kingdom is inside of you, and it is outside of you" map the same topology: the divine is simultaneously the container of all existence and the content of each individual. Inside and outside collapse into each other when the divine is both the innermost and the outermost.' },
@@ -5524,7 +5410,7 @@ SCRIPTURE_TEXTS['gospel-of-thomas'] = {
             greek: '',
           },
           entities: [
-            { word: 'Split a piece of wood, and I am there', node: 'logos', type: 'concept',
+            { word: 'Split a piece of wood, and I am there', node: 'logos-cosmic-reason', type: 'concept',
               note: 'Thomas L.77 is the most radical immanence statement in early Christian literature. The divine Logos is in wood and stone — not figuratively (in the sense that God created them) but literally present in the material. "Split wood, lift stone" — the most ordinary manual labor — reveals the divine. This is the complete opposite of the Gnostic tendency toward world-rejection. Thomas L.77 uses Gnostic language ("I am the All") to arrive at a profoundly immanent conclusion. The wood and stone are not prisons for the divine spark (the Gnostic view); they are vessels in which the divine is present for those who know how to find it.',
               parallels: [
                 { label: 'Corpus Hermeticum XI — God contains all things, everything is full of God', textId: 'corpus-hermeticum-11', note: 'CH XI: "God is everything, and everything is God." Thomas L.77: "I am the All. From me did the All come forth, and unto me did the All extend." Both texts state divine immanence as an identity claim — not "God is like all things" but "the All is the divine" — and both locate that divine All in every material thing.' },
@@ -5546,7 +5432,7 @@ SCRIPTURE_TEXTS['gospel-of-thomas'] = {
             greek: '',
           },
           entities: [
-            { word: 'There is light within a man of light', node: 'logos', type: 'concept',
+            { word: 'There is light within a man of light', node: 'logos-cosmic-reason', type: 'concept',
               note: 'Thomas L.24 gives the inner-light teaching: the "man of light" (anthropos tou phōtos) contains light as an inherent possession. This is not a metaphor for moral virtue but a cosmological claim: certain humans carry divine light as their nature (the pneumatics, in Gnostic terminology). The warning "if he does not shine, he is darkness" is Thomas\'s most pressing soteriological statement: possessing the light is not enough; it must be activated. This is the Thomas gospel\'s version of the Bardo instruction "recognize it, do not flee."',
               parallels: [
                 { label: 'Poimandres — the divine Nous in the human soul', textId: 'corpus-hermeticum-1', note: 'CH I: the Nous (divine mind) descends and becomes trapped in human form, yet remains divine in its nature. Thomas L.24\'s "man of light" who carries light within is the Hermetic pneumatic: the person in whom the divine Nous is actively operative, radiating the light that was always present.' },
@@ -5633,7 +5519,7 @@ SCRIPTURE_TEXTS['ibn-arabi-fusus'] = {
             arabic: 'حقيقة عيسى من حيث تركيبه العنصري حقيقة آدم نفخ الله فيه من روحه كما نفخ في آدم',
           },
           entities: [
-            { word: 'The Spirit of God is Jesus because the divine breath', node: 'logos', type: 'concept',
+            { word: 'The Spirit of God is Jesus because the divine breath', node: 'logos-cosmic-reason', type: 'concept',
               note: 'Ibn Arabi synthesizes the Quranic titles for Jesus (Ruh Allah — Spirit of God; Kalima — His Word) with the Hermetic and Johannine Logos. Jesus = Word of God = the pre-eternal Logos made temporal — the same move John 1:14 makes ("the Word became flesh"). Ibn Arabi is doing Islamic Logos theology: the Haqiqa Muhammadiyya is the ultimate Logos; Jesus is one of its supreme temporal manifestations. This chapter is where Ibn Arabi comes closest to the Johannine Prologue while remaining firmly within Islamic theology.',
               parallels: [
                 { label: 'John 1 — "In the beginning was the Logos... and the Logos became flesh"', textId: 'corpus-hermeticum-1', note: 'John 1:14\'s Logos made flesh and Ibn Arabi\'s "Spirit of God is Jesus because the divine breath that brought him into existence named him His Word" are the same theological claim in Christian and Islamic registers: Jesus is the incarnation of the pre-eternal divine Word/Logos. Ibn Arabi reads the Quranic titles for Jesus (Ruh Allah, Kalima) through a Logos theology that is explicitly parallel to John 1.' },
@@ -6020,7 +5906,7 @@ SCRIPTURE_TEXTS['romans-8'] = {
             greek: 'ὡσαύτως δὲ καὶ τὸ πνεῦμα συναντιλαμβάνεται τῇ ἀσθενείᾳ ἡμῶν· τὸ γὰρ τί προσευξώμεθα καθὸ δεῖ οὐκ οἴδαμεν, ἀλλὰ αὐτὸ τὸ πνεῦμα ὑπερεντυγχάνει στεναγμοῖς ἀλαλήτοις',
           },
           entities: [
-            { word: 'sighs too deep for words', node: 'pneuma', type: 'concept',
+            { word: 'sighs too deep for words', node: 'ruach-pneuma', type: 'concept',
               note: 'Stenagmois alalètois — "inexpressible groanings" or "sighs too deep for words." This is Paul\'s most apophatic moment: the deepest prayer is not speech but pre-linguistic groaning. The Spirit itself does not use words in this intercession — it works through a mode of communication that exceeds language. This is the Pauline equivalent of the apophatic tradition: the deepest divine communication transcends ordinary linguistic categories. It also links to the Bardo Thodol\'s pre-linguistic state of the dying consciousness encountering the Clear Light, and to the Rumi reed\'s wordless cry of longing.',
               parallels: [
                 { label: 'Rumi Masnavi — the reed\'s fire is not made of breath or words', textId: 'rumi-masnavi', note: 'Rumi: "the fire of Love is not made of breath" — the reed\'s cry transcends ordinary speech. Paul\'s Spirit interceding with "sighs too deep for words" and Rumi\'s love that operates beyond verbal expression are both accounts of the divine communication that exceeds language. Both texts locate the deepest spiritual reality in the pre-linguistic or trans-linguistic register.' },
@@ -6452,7 +6338,7 @@ SCRIPTURE_TEXTS['surah-ya-sin'] = {
             arabic: 'إِنَّمَآ أَمۡرُهُۥٓ إِذَآ أَرَادَ شَيۡـًٔا أَن يَقُولَ لَهُۥ كُن فَيَكُونُ',
           },
           entities: [
-            { word: '"Be!" — and it is', node: 'logos', type: 'concept',
+            { word: '"Be!" — and it is', node: 'logos-cosmic-reason', type: 'concept',
               note: 'Kun fa-yakun — "Be! and it is." This is the Quranic Logos formulation: the divine creative act is a speech act, and the gap between command and fulfillment is zero. The Arabic subjunctive (yakun — "it becomes/is") immediately follows the imperative (kun — "be!") — the becoming is simultaneous with the willing. This is the Islamic formulation of the Johannine Logos ("through him all things were made"), the Memphite Ptah\'s creative speech, the Hebrew divine word that does not return empty, and the Sefer Yetzirah\'s letters that create. All these traditions converge: the divine creates through language, and divine language is not a representation of what is but the cause of what is.',
               parallels: [
                 { label: 'Memphite Theology — Ptah creates through the tongue speaking what the heart conceived', textId: 'memphite-theology', note: 'Memphite Theology: "And so Ptah was satisfied, after he had made all things and all divine words." The Quran\'s "Kun fa-yakun" and the Memphite Theology\'s creative tongue of Ptah are both theologies of creation through divine speech, separated by 2,000 years and a continent. The Memphite theology is the oldest; the Quranic formulation is the most economical. Both establish: divine speech = existence.' },
@@ -7329,7 +7215,7 @@ SCRIPTURE_TEXTS['acts-17-areopagus'] = {
             greek: 'ἐν αὐτῷ γὰρ ζῶμεν καὶ κινούμεθα καὶ ἐσμέν, ὡς καί τινες τῶν καθ᾽ ὑμᾶς ποιητῶν εἰρήκασιν.',
           },
           entities: [
-            { word: 'In him we live and move and have our being', node: 'logos', type: 'concept',
+            { word: 'In him we live and move and have our being', node: 'logos-cosmic-reason', type: 'concept',
               note: '"En auto gar zomen kai kinoumetha kai esmen" — Paul quotes this from Epimenides of Crete (originally about Zeus). The verse is the most explicitly panentheistic statement in the New Testament: not only does God exist, but all existence, all movement, all being occurs within God. Three verbs — zomen (we live), kinoumetha (we move), esmen (we are) — cover the totality of creaturely existence. This is not just a theological claim about divine omnipresence; it is a claim that the divine IS the field within which creaturely existence occurs — the ground, not an object within the ground.',
               parallels: [
                 { label: 'Isha Upanishad 1 — "All this — whatever moves in this moving world — is pervaded by the Lord"', textId: 'isha-upanishad', note: 'Isha 1: "All this — whatever moves in this moving world — is to be pervaded by the Lord." Acts 17:28: "In him we live and move and have our being." These are the most direct cross-traditional parallels in the corpus on divine immanence. The Isha\'s "whatever moves" and Paul\'s "we live and MOVE" even share the emphasis on movement as the category of existence most obviously grounded in the divine. Paul quotes a Greek poet who was describing Zeus; the Isha describes Brahman-as-Ishvara. The theological convergence is so precise that Christian-Hindu dialogue has consistently returned to this pair.' },
@@ -7853,13 +7739,13 @@ SCRIPTURE_TEXTS['colossians-1'] = {
             greek: 'ὅς ἐστιν εἰκὼν τοῦ θεοῦ τοῦ ἀοράτου, πρωτότοκος πάσης κτίσεως... τὰ πάντα ἐν αὐτῷ συνέστηκεν.',
           },
           entities: [
-            { word: 'image of the invisible God', node: 'logos', type: 'concept',
+            { word: 'image of the invisible God', node: 'logos-cosmic-reason', type: 'concept',
               note: 'Greek: eikon tou theou tou aoratou — image of the unseen God. The invisible God becomes visible through Christ as image. This echoes Wisdom of Solomon 7:26 ("a spotless mirror of the working of God, and an image of his goodness") and Genesis 1:26 ("let us make humankind in our image"). The hymn is stacking these references deliberately: Christ is the original Image of which humanity is a copy; he is the Sophia-Logos through whom the invisible God becomes accessible. The "image of the invisible God" is the NT\'s most direct engagement with the apophatic tradition: the divine is in itself invisible/unknowable, but accessible through the mediating image.',
               parallels: [
                 { label: 'Poimandres — the divine Mind whose image is the Logos', textId: 'poimandres', note: 'Corpus Hermeticum I: the Father (Mind/Nous) is invisible light; the Son-Logos is the radiance that makes the Father visible. "The Father of all, who contains light and life... sends his own Logos (Son) to the beautiful world." Colossians 1:15: Christ is the "image of the invisible God." The Hermetic Father-Logos relationship and the Colossians God-Christ relationship are the same structure: the invisible divine becomes accessible through the Son-Logos-Image. Both texts are articulating, in different cultural registers, the same fundamental theological principle: the unknowable becomes known through a mediating manifestation.' },
               ]
             },
-            { word: 'in him all things hold together', node: 'logos', type: 'concept',
+            { word: 'in him all things hold together', node: 'logos-cosmic-reason', type: 'concept',
               note: 'Greek: ta panta en auto synesteken — all things have been held together in him (perfect tense: a past act with continuing present effect). This is the most cosmologically radical claim in the NT: Christ is not merely the creator of the universe (past) or its redeemer (future) but its current principle of cohesion. The universe does not hold together by physical forces alone but by a personal divine principle. This is the Stoic logos doctrine — the rational principle immanent in all things, holding the cosmos together — translated into Christological terms. Paul (or the hymn\'s author) is claiming that the Stoic logos IS Christ.',
               parallels: [
                 { label: 'Isha Upanishad 1 — "all this is pervaded by the Lord"', textId: 'isha-upanishad', note: 'Isha 1: "All this — whatever moves in this moving world — is to be pervaded (vasyam) by the Lord." Colossians 1:17: "in him all things hold together (synesteken)." The Sanskrit vasyam means "to be pervaded, to be clothed, to be dwelt in" — the divine is the field within which all things exist and from which they draw their being. The Greek synesteken means "to stand together, to cohere, to be held in unity" — Christ is the principle by which scattered multiplicity maintains its coherence. Two different metaphors (pervasion vs. cohesion) for the same metaphysical claim: remove the divine and the world falls apart.' },
@@ -9590,7 +9476,7 @@ SCRIPTURE_TEXTS['gospel-of-truth'] = {
           ref: 'pp. 38:6–39:13',
           text: 'Now the name of the Father is the Son. It is he who, in the beginning, gave a name to the one who came forth from him — he was the same one, and he begot him for a son. He gave him his name which belonged to him — for the Father possesses everything which exists within him. He possesses the name; he has the Son. It is possible for them to see him. But the name is invisible, for it alone is the mystery of the invisible about to come to ears completely filled with it through the Father\'s agency.',
           entities: [
-            { word: 'the name of the Father is the Son', node: 'logos', type: 'concept',
+            { word: 'the name of the Father is the Son', node: 'logos-cosmic-reason', type: 'concept',
               note: 'The most theologically dense claim in the Gospel of Truth: the Son IS the Father\'s Name. In ancient Near Eastern thought (Hebrew, Egyptian, and Mesopotamian), the name is not a label but the being itself — to know the name is to know the thing. The Father\'s Name is his innermost self-disclosure. To say "the Son is the Father\'s Name" is to say: the Son is the Father\'s self-expression, his self-revelation, his innermost reality made available to others. This is the Valentinian equivalent of John 1\'s "the Word was with God and the Word was God" — the Son/Logos/Name is not separate from the Father but is the Father\'s own act of self-expression.',
               parallels: [
                 { label: 'John 1 — "In the beginning was the Word; and the Word was with God"', textId: 'john-1', note: 'John 1:1 and Gospel of Truth p. 38: both identify the Son/Word/Name with the Father\'s primordial self-expression. For John, the Logos is "with God" in the beginning and "is God" — participating fully in the divine nature while being the medium of divine self-expression. For Valentinus, the Name is the Father\'s "mystery" made accessible — invisible but transmitted through the Son. Both texts are theorizing the same theological problem: how does the absolutely transcendent God make himself known? Through his own self-expression: Logos / Name.' },
