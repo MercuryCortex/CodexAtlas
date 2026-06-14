@@ -1,7 +1,7 @@
 ---
 type: theme
 id: "asura-deva-inversion"
-parallels: ["[[the-ashvins]]", "[[nanghaithya-daeva]]", "[[asha-vahishta]]", "[[agni]]", "[[spenta-mainyu]]", "[[zarathustra]]"]
+parallels: ["[[the-ashvins]]", "[[nanghaithya-daeva]]", "[[asha-vahishta]]", "[[agni]]", "[[spenta-mainyu]]", "[[zarathustra]]", "[[saurva]]"]
 name: "Asura/Deva Inversion — The Indo-Iranian Theological Schism"
 aka: ["deva/daeva inversion", "asura/ahura inversion", "Indo-Iranian theological schism", "the daeva-worship polemic"]
 category: "comparative-religion | historical-linguistics | theology"

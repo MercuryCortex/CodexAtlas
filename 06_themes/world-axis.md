@@ -7,7 +7,7 @@ category: "cosmogonic"
 traditions-where-attested: ["Sumerian (cosmic mountain)", "Vedic (Mt. Meru)", "Norse (Yggdrasil)", "Israelite (Mount Zion, Jacob's ladder)", "Christian (the Cross as axis)", "Mesoamerican (the World Tree, *yax che'el kab*)", "Siberian shamanic (the world pillar)", "Buddhist (Mt. Sumeru)"]
 appearances: ["[[phase-2-017-mahabharata-ramayana-oral-layers]]", "[[phase-1-002-pyramid-texts]]", "[[phase-8-014-poetic-edda]]", "[[phase-8-001-popol-vuh]]"]
 deity-instances: []
-parallels: ["[[axis-mundi]]", "[[world-tree]]", "[[world-mountain]]", "[[yggdrasil]]", "[[djed-pillar]]", "[[jacobs-ladder]]", "[[omphalos]]", "[[shamanic-drum]]", "[[stupa]]", "[[north-star]]", "[[maypole-irminsul]]", "[[obelisk]]"]
+parallels: ["[[axis-mundi]]", "[[world-tree]]", "[[world-mountain]]", "[[yggdrasil]]", "[[djed-pillar]]", "[[jacobs-ladder]]", "[[omphalos]]", "[[shamanic-drum]]", "[[stupa]]", "[[north-star]]", "[[maypole-irminsul]]", "[[obelisk]]", "[[mount-meru]]"]
 status: "full"
 refs:
   - title: "The Sacred and the Profane"

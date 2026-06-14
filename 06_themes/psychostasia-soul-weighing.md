@@ -1,7 +1,7 @@
 ---
 type: theme
 id: "psychostasia-soul-weighing"
-parallels: ["[[anubis]]", "[[thoth]]", "[[ammit-devourer]]", "[[yama-vedic]]", "[[chitragupta]]", "[[enma-japanese]]", "[[mithra-zoroastrian]]", "[[rashnu-zoroastrian]]", "[[sraosha]]", "[[michael-archangel]]", "[[zeus]]", "[[tartarus]]", "[[cinvat-bridge-judgment]]", "[[end-times-judgment]]"]
+parallels: ["[[anubis]]", "[[thoth]]", "[[ammit-devourer]]", "[[yama-vedic]]", "[[chitragupta]]", "[[enma-japanese]]", "[[mithra-zoroastrian]]", "[[rashnu-zoroastrian]]", "[[sraosha]]", "[[michael-archangel]]", "[[zeus]]", "[[tartarus]]", "[[cinvat-bridge-judgment]]", "[[end-times-judgment]]", "[[minos]]", "[[rhadamanthus]]", "[[aeacus]]"]
 name: "Psychostasia — Weighing of the Soul"
 aka: ["soul-weighing", "judgment of the dead", "weighing of the heart", "last judgment scales", "divine tribunal", "psychostasia"]
 category: "eschatological / soteriological"

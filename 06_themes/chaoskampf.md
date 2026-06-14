@@ -36,6 +36,13 @@ deity-instances:
   - "[[ninurta]]"
   - "[[kumarbi]]"
   - "[[rahab]]"
+  - "[[tannin]]"
+  - "[[behemoth]]"
+  - "[[azi-dahaka]]"
+  - "[[thraetaona]]"
+  - "[[python]]"
+  - "[[yamata-no-orochi]]"
+  - "[[ullikummi]]"
 related-themes:
   - "[[divine-kingship]]"
   - "[[primordial-waters]]"

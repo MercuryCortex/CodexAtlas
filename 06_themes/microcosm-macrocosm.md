@@ -1,7 +1,7 @@
 ---
 type: theme
 id: "microcosm-macrocosm"
-parallels: ["[[as-above-so-below]]", "[[hermetic-correspondences]]", "[[signatures-of-things]]", "[[sympathetic-magic]]", "[[anthropos-myth]]", "[[cosmic-body-cosmogony]]", "[[sefirot]]", "[[chain-of-being]]", "[[adam-kadmon]]"]
+parallels: ["[[as-above-so-below]]", "[[hermetic-correspondences]]", "[[signatures-of-things]]", "[[sympathetic-magic]]", "[[anthropos-myth]]", "[[cosmic-body-cosmogony]]", "[[sefirot]]", "[[chain-of-being]]", "[[adam-kadmon]]", "[[vitruvian-man]]"]
 name: "Microcosm-macrocosm"
 aka: ["as above, so below", "anthropos-as-cosmos", "correspondences"]
 category: "cosmogonic"
