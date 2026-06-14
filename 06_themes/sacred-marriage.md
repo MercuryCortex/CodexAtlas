@@ -114,7 +114,7 @@ Carl Jung, in *Psychology and Alchemy* (1944), identified the *coniunctio* as th
 
 ### 6. Kabbalistic: Shekhinah as Bride — MASSIVE WIN
 
-**Cross-tradition finding**: The most widely-practiced living instantiation of the hieros gamos tradition is **Shabbat** — observed by approximately 15 million Jews weekly.
+**Cross-tradition finding**: A widely-practiced living instantiation of the hieros gamos tradition is **Shabbat**, observed weekly across the Jewish world.
 
 The Kabbalistic theology of Shabbat (crystallized in the Zohar and in the 16th-c. Safed school of Isaac Luria): the **Shekhinah** (the divine feminine presence, the feminine aspect of God) is the Bride; the **Holy One Blessed Be He** (the masculine aspect of the divine) is the Bridegroom. **Shabbat is their weekly reunion** — the marriage that was separated by the exile of the Shekhinah from her divine counterpart, reunited each Friday night when Israel observes Shabbat.
 
