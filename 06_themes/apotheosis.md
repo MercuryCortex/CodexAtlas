@@ -1,13 +1,14 @@
 ---
 type: theme
 id: "apotheosis"
+parallels: ["[[heracles]]", "[[asclepius-greek]]", "[[ba-xian]]", "[[alexander-the-great]]", "[[caesar-augustus]]", "[[athanasius]]", "[[maximus-the-confessor]]", "[[gregory-palamas]]", "[[irenaeus-of-lyon]]", "[[plotinus]]"]
 name: "Apotheosis (Deification of Mortals)"
 aka: ["*deificatio*", "*theosis*", "imperial divinization", "*divus*"]
 category: "soteriological"
 traditions-where-attested: ["Greek hero-cult", "Hellenistic ruler-cult (Alexander, Ptolemies, Seleucids)", "Roman imperial cult", "Christian theosis (Greek Fathers)", "Daoist *xian* immortality", "modern saint-veneration"]
 appearances: ["[[phase-3-024-suetonius-twelve-caesars]]", "[[phase-4-019-plotinus-enneads]]", "[[phase-4-030-pseudo-dionysius]]", "[[phase-5-003-maximus-confessor-ambigua]]"]
 deity-instances: []
-status: "stub"
+status: "full"
 refs:
   - title: "The Imperial Cult in the Latin West"
     author: "Fishwick, Duncan"

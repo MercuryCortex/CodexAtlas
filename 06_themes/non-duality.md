@@ -1,6 +1,7 @@
 ---
 type: theme
 id: "non-duality"
+parallels: ["[[emptiness-sunyata]]", "[[wahdat-al-wujud]]", "[[fanaa-annihilation]]", "[[henosis]]", "[[neoplatonic-henosis]]", "[[pratyabhijna]]", "[[panentheism]]", "[[brahman-impersonal]]", "[[idealism-metaphysical]]", "[[perennial-philosophy]]", "[[divine-unity]]"]
 name: "Non-duality"
 aka: ["nondualism", "advaita", "wahdat al-wujud", "śūnyatā (related)", "monistic-mysticism", "the great identification", "two-not-two"]
 category: "soteriological / metaphysical"
@@ -32,7 +33,7 @@ related-themes:
   - "[[ascent-of-the-soul]]"
   - "[[microcosm-macrocosm]]"
   - "[[soul-as-spark]]"
-status: "metadata"
+status: "full"
 refs:
   - title: "Nonduality: A Study in Comparative Philosophy"
     author: "Loy, David"

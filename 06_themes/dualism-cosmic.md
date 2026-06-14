@@ -1,6 +1,7 @@
 ---
 type: theme
 id: "dualism-cosmic"
+parallels: ["[[light-and-darkness-dualism]]", "[[two-spirits-doctrine]]"]
 name: "Cosmic dualism"
 aka: ["cosmic-dualism", "Zoroastrian dualism", "two-principles dualism"]
 category: "theological"

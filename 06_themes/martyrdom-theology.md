@@ -1,12 +1,13 @@
 ---
 type: theme
 id: "martyrdom-theology"
+parallels: ["[[event-crucifixion-of-jesus-c30ce]]", "[[event-stoning-of-stephen-c35ce]]", "[[event-karbala-680]]", "[[husayn-ibn-ali]]", "[[event-execution-of-al-hallaj-922]]", "[[event-death-of-guru-arjan-1606]]", "[[event-death-of-guru-tegh-bahadur-1675]]", "[[event-bab-execution-1850]]", "[[theme-persecution-as-legitimation]]", "[[theme-dying-founder-paradigm]]", "[[scapegoat-mechanism]]", "[[rene-girard]]", "[[phase-4-036-passio-perpetuae]]"]
 name: "Martyrdom Theology"
 aka: ["theology of martyrdom", "noble death", "witness-by-suffering", "shahāda (in death sense)"]
 category: "soteriological"
 appearances: ["[[phase-3-019-4-maccabees]]", "[[phase-3-015-pauline-epistles]]", "[[phase-3-016-gospel-of-mark]]", "[[phase-4-023-irenaeus-against-heresies]]", "[[phase-4-024-tertullian-apology]]", "[[phase-4-034-quran]]", "[[phase-4-063-ignatius-letters]]", "[[phase-4-066-polycarp-philippians]]", "[[phase-4-067-martyrdom-of-polycarp]]"]
 deity-instances: []
-status: "metadata"
+status: "full"
 refs:
   - title: "Martyrdom and Rome"
     author: "Bowersock, G.W."

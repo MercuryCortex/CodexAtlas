@@ -1,6 +1,7 @@
 ---
 type: theme
 id: "wisdom-personified"
+parallels: ["[[ma-at]]", "[[saraswati]]", "[[athena]]", "[[daena]]", "[[vac-goddess]]", "[[shekhinah]]", "[[isis-egyptian]]", "[[isis-hellenistic]]", "[[pistis-sophia]]", "[[sophia-pleroma]]"]
 name: "Wisdom personified (Sophia / Hokmah)"
 aka: ["Sophia", "Hokmah", "Chokmah", "personified wisdom", "sophia-wisdom-personified"]
 category: "theological"

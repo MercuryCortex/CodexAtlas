@@ -1,6 +1,7 @@
 ---
 type: theme
 id: "gnosis-as-salvation"
+parallels: ["[[yaldabaoth]]", "[[avalokitesvara]]", "[[manjushri]]", "[[father-of-greatness]]", "[[prince-of-darkness-manichaean]]", "[[event-nag-hammadi-discovery]]", "[[phase-6-001-ficino-pimander]]"]
 name: "Gnosis as salvation"
 aka: ["saving knowledge", "salvation-by-knowing", "epistemic soteriology", "self-recognition as liberation"]
 category: "soteriological / epistemic"
@@ -30,7 +31,7 @@ related-themes:
   - "[[ascent-of-the-soul]]"
   - "[[soul-as-spark]]"
   - "[[microcosm-macrocosm]]"
-status: "metadata"
+status: "full"
 refs:
   - title: "Gnosis: The Nature and History of Gnosticism"
     author: "Rudolph, Kurt"
