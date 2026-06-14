@@ -1,6 +1,7 @@
 ---
 type: theme
 id: "executed-divine-claimant"
+parallels: ["[[mani]]", "[[husayn-ibn-ali]]", "[[the-bab]]", "[[jan-hus]]", "[[frances-yates]]", "[[hermes-trismegistus]]", "[[event-mani-execution-274-or-277]]", "[[event-karbala-680]]", "[[theme-dying-founder-paradigm]]", "[[theme-manichaeism-synthesis]]", "[[dying-rising-god]]", "[[tradition-manichaeism]]"]
 name: "The Executed Divine Claimant — Mystic Martyrdom Pattern"
 aka:
   - "martyrdom of the divine claimant"
@@ -39,7 +40,7 @@ related-traditions:
   - "[[tradition-christianity-canonical]]"
   - "[[tradition-sufism]]"
   - "[[tradition-neoplatonism]]"
-status: "metadata"
+status: "full"
 refs:
   - title: "The Passion of al-Hallaj: Mystic and Martyr of Islam (4 vols.)"
     author: "Massignon, Louis"

@@ -1,6 +1,7 @@
 ---
 type: theme
 id: "sacred-marriage"
+parallels: ["[[anat]]", "[[el-canaanite]]", "[[asherah]]", "[[shekhinah]]", "[[zeus]]", "[[hera]]", "[[adonis]]", "[[phase-2-037-song-of-songs]]", "[[hosea-prophet]]", "[[bernard-of-clairvaux]]", "[[origen]]", "[[teresa-of-avila]]", "[[john-of-the-cross]]", "[[coniunctio]]", "[[alchemical-marriage]]", "[[sefirot]]", "[[hieros-gamos]]"]
 name: "Sacred Marriage (Hieros Gamos)"
 aka: ["hieros gamos", "ἱερὸς γάμος", "sacred union", "divine marriage", "coniunctio", "bridal mysticism", "theogamy"]
 category: "ritual / mystical / cosmological"
@@ -17,7 +18,7 @@ related-themes:
   - "[[dying-rising-god|dying-and-rising god]]"
   - "[[psychostasia-soul-weighing]]"
   - "[[non-duality]]"
-status: "metadata"
+status: "full"
 refs:
   - title: "Inanna, Queen of Heaven and Earth: Her Stories and Hymns from Sumer"
     author: "Wolkstein, Diane & Kramer, Samuel Noah"
