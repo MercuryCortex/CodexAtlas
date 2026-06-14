@@ -3925,7 +3925,7 @@ SCRIPTURE_TEXTS['gilgamesh'] = {
             akkadian: 'ina ûm šebî ašpuram summatam / summu illik ittallak / lā iṣṣa / itūr / ašpuram sisinnam',
           },
           entities: [
-            { word: 'dove went off, but came back', node: 'noah', type: 'symbol',
+            { word: 'dove went, then came back', node: 'flood-motif', type: 'theme',
               note: 'The sequence dove → swallow → raven, with the raven finally not returning, appears in both Gilgamesh Tablet XI and Genesis 8. In Genesis, the order is raven first (8:7), then dove twice (8:8-12), with the olive branch in the second dove mission. The variation in order between the two accounts suggests both are drawing on a common Mesopotamian flood-narrative tradition rather than one directly copying the other. The dove with olive branch that does not appear in Gilgamesh but does in Genesis may be a Hebrew theological addition (olive = peace, covenant with God).',
               parallels: [
                 { label: 'Genesis 8:7-12 — the raven and the dove after Noah\'s flood', textId: 'genesis-1', note: 'Genesis 8:7: "Then he sent out a raven; it kept flying back and forth until the water dried up." Genesis 8:8: "Then he sent out a dove... the dove could find no place to set its feet... and returned." The bird-sending sequence in both Gilgamesh and Genesis is the most structurally specific parallel — it identifies a single ancestral flood narrative from which both derive.' },
