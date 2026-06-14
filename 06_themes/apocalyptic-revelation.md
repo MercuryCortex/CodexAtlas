@@ -4,9 +4,11 @@ id: "apocalyptic-revelation"
 name: "Apocalyptic revelation"
 aka: ["apocalypticism", "unveiling", "ʾāpōkālypsis"]
 category: "eschatological"
-appearances: ["[[phase-3-004-1-enoch]]", "[[phase-3-008-book-of-daniel]]", "[[phase-3-009-jubilees]]", "[[phase-3-010-sibylline-oracles]]", "[[phase-3-011-dead-sea-scrolls]]", "[[phase-3-015-pauline-epistles]]", "[[phase-3-020-gospel-of-john]]", "[[phase-4-002-apocryphon-of-john]]"]
+appearances: ["[[phase-3-004-1-enoch]]", "[[phase-3-008-book-of-daniel]]", "[[document-revelation]]", "[[phase-3-009-jubilees]]", "[[phase-3-010-sibylline-oracles]]", "[[phase-3-011-dead-sea-scrolls]]", "[[phase-3-015-pauline-epistles]]", "[[phase-3-020-gospel-of-john]]", "[[phase-4-002-apocryphon-of-john]]"]
 deity-instances: []
-status: "stub"
+parallels: ["[[frashokereti-cosmic-renovation]]", "[[ragnarok-apocalyptic]]", "[[end-times-judgment]]", "[[eschatological-war]]", "[[eschatological-imminence]]", "[[final-judgment]]", "[[messianism]]"]
+key-figures: ["[[enoch]]"]
+status: "full"
 refs:
   - title: "The Apocalyptic Imagination"
     author: "Collins, John J."
@@ -44,8 +46,11 @@ A genre and a worldview. As genre (per the SBL Genres Project, Collins 1979): a 
 - **Qumran:** [[phase-3-011-dead-sea-scrolls]] — community organized eschatologically; *War Scroll* (1QM), *Pesharim*, *Two Spirits* discourse (1QS 3–4).
 - **Paul:** [[phase-3-015-pauline-epistles]] — Pauline theology is structurally apocalyptic: present evil age (Gal 1:4), imminent return of Christ, resurrection of the dead, transformation of all creation. Käsemann (1969): "Apocalyptic was the mother of all Christian theology."
 - **Synoptic apocalyptic discourse:** Mk 13 / Mt 24 / Lk 21 — the "Little Apocalypse."
-- **Book of Revelation:** Jewish-Christian apocalyptic absorbing imagery from Daniel, Ezekiel, Zechariah.
+- **Book of Revelation:** [[document-revelation]] — Jewish-Christian apocalyptic absorbing imagery from Daniel, Ezekiel, Zechariah.
 - **Sethian Gnostic apocalypses:** [[phase-4-002-apocryphon-of-john]] reframes the genre — the revelation is cosmological rather than historical-eschatological, but the form (risen Christ instructs an apostle in heavenly secrets) is recognizably apocalyptic.
+
+## Cross-tradition parallels
+The apocalyptic arc — cosmic dualism, a final battle, divine victory, and a renovated world — recurs beyond the Jewish-Christian sphere. The closest comparand is Zoroastrian **[[frashokereti-cosmic-renovation|frashōkereti]]**, the "making-wonderful" of the world after the final defeat of Aŋra Mainyu, with its resurrection of the dead and last judgment; scholarship since Bousset (1903) has argued this Persian eschatology shaped Jewish apocalyptic after the Exile (the dependence is debated — see Sources below). The Norse **[[ragnarok-apocalyptic|Ragnarök]]** shares the structure — the doom of the gods, a final battle, and a renewed earth rising from the sea — but its resemblance is better explained as common **Indo-European** eschatological inheritance than as Zoroastrian transmission. In the Atlas these sit beside the other end-of-history themes — **[[end-times-judgment]]**, **[[eschatological-war]]**, **[[final-judgment]]** — while the eschatological *deliverer* (Saoshyant, the returning Christ, the Mahdi, Maitreya, Kalki) is the concern of the sibling **[[messianism]]** cluster.
 
 ## Sources and influences
 - **Zoroastrian background.** Scholarship since Bousset (1903) has argued Persian eschatology (cosmic dualism, resurrection, last judgment, final renovation of the world) underlies Jewish apocalyptic developments after the Babylonian Exile. Collins (1984) cautions that direct dependence is hard to prove given the dating uncertainties for Zoroastrian texts, but the broad influence is widely accepted.
