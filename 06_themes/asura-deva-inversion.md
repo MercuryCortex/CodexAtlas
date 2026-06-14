@@ -1,6 +1,7 @@
 ---
 type: theme
 id: "asura-deva-inversion"
+parallels: ["[[the-ashvins]]", "[[nanghaithya-daeva]]", "[[asha-vahishta]]", "[[agni]]", "[[spenta-mainyu]]", "[[zarathustra]]"]
 name: "Asura/Deva Inversion — The Indo-Iranian Theological Schism"
 aka: ["deva/daeva inversion", "asura/ahura inversion", "Indo-Iranian theological schism", "the daeva-worship polemic"]
 category: "comparative-religion | historical-linguistics | theology"
@@ -78,7 +79,7 @@ refs:
     tier: 1
     notes: "Philological analysis of the asha (aša) concept and its relation to the asura/ahura word family"
 tags: [theme, indo-iranian, comparative-religion, theology, linguistics, asura, deva, MASSIVE-WIN]
-status: "metadata"
+status: "full"
 date-earliest: -1500
 dating-basis: B5
 dating-basis-source: "\"Mallory, J. & Adams, D. 2006 *The Oxford Introduction to Proto-Indo-European*. OUP\""

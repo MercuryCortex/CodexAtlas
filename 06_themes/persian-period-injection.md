@@ -1,6 +1,7 @@
 ---
 type: theme
 id: "persian-period-injection"
+parallels: ["[[uriel-archangel]]", "[[raguel-archangel]]", "[[saraqael-archangel]]", "[[remiel-archangel]]", "[[cinvat-bridge-judgment]]", "[[afterlife-judgment]]"]
 name: "Persian Period Injection — Zoroastrian Doctrines into Second Temple Judaism"
 aka:
   - "Achaemenid period theological transformation"
@@ -45,7 +46,7 @@ related-traditions:
   - "[[tradition-essenes]]"
   - "[[tradition-christianity-canonical]]"
   - "[[tradition-islam]]"
-status: "metadata"
+status: "full"
 refs:
   - title: "A History of Zoroastrianism, Vol. II: Under the Achaemenians"
     author: "Boyce, Mary"

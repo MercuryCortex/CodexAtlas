@@ -1,11 +1,12 @@
 ---
 type: theme
 id: "katabasis-and-anabasis"
+parallels: ["[[osiris]]", "[[heracles]]", "[[demeter]]", "[[ishtar-akkadian]]", "[[izanagi]]", "[[jesus-christ-deity]]", "[[orpheus]]", "[[muhammad-ibn-abdullah]]", "[[event-muhammads-miraj-619]]", "[[hero-twins]]", "[[phase-8-001-popol-vuh]]"]
 name: "Katabasis and anabasis (descent and ascent of the soul)"
 category: "soteriological / ritual / cosmological"
 appearances: ["[[tradition-eleusinian-mysteries]]", "[[tradition-dionysian-mysteries]]", "[[tradition-mithraic-mysteries]]", "[[tradition-isis-mysteries]]", "[[phase-4-105-apuleius-metamorphoses-book-11]]", "[[phase-4-011-corpus-hermeticum-i]] (*Poimandres* — the Hermetic soul-ascent through the seven planetary spheres)", "[[phase-4-019-plotinus-enneads]]", "[[phase-1-017-descent-of-inanna]] (Mesopotamian prototype)", "[[phase-4-030-pseudo-dionysius]] (Christian transposition)"]
 deity-instances: ["[[persephone-greek]] (Eleusinian descent-and-return)", "[[dionysus]] / [[zagreus]] (Bacchic-Orphic descent)", "[[isis-egyptian]] (Isis recovers Osiris from the underworld)", "[[inanna-sumerian]] (the prototype underworld-descent)", "[[mithras-roman]] (Beck's seven-grade soul-ascent reading)"]
-status: "metadata"
+status: "full"
 refs:
   - title: "Ancient Mystery Cults"
     author: "Burkert, Walter"

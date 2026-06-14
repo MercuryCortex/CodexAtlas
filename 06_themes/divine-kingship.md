@@ -1,6 +1,7 @@
 ---
 type: theme
 id: "divine-kingship"
+parallels: ["[[naram-sin]]", "[[shulgi]]", "[[hammurabi]]", "[[david-king]]", "[[solomon-king]]", "[[darius-i-the-great]]", "[[alexander-the-great]]", "[[caesar-augustus]]", "[[constantine-the-great]]", "[[theodosius-i]]", "[[charlemagne]]", "[[manco-capac]]", "[[an-sumerian]]", "[[enlil]]", "[[ahura-mazda]]", "[[huitzilopochtli]]", "[[bolon-tzakab]]"]
 name: "Divine kingship"
 aka: ["sacral kingship", "sacred rule", "god-king", "the king-as-cosmic-axis", "ruler-deification"]
 category: "political-theological"
@@ -30,7 +31,7 @@ related-themes:
   - "[[messianism]]"
   - "[[apotheosis]]"
   - "[[divine-council]]"
-status: "metadata"
+status: "full"
 refs:
   - title: "Kingship and the Gods: A Study of Ancient Near Eastern Religion as the Integration of Society and Nature"
     author: "Frankfort, Henri"

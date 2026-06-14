@@ -1,6 +1,7 @@
 ---
 type: theme
 id: "chaoskampf"
+parallels: ["[[tishpak]]", "[[anzu]]", "[[apollo]]", "[[horus]]", "[[set]]", "[[lugh]]", "[[balor]]", "[[fenrir]]", "[[vidar]]", "[[surtr]]", "[[gonggong]]", "[[yu-the-great]]", "[[quetzalcoatl]]", "[[tezcatlipoca]]", "[[cipactli]]", "[[saoshyant]]", "[[tehom]]", "[[susanoo]]"]
 name: "Chaoskampf (combat with chaos)"
 aka: ["combat myth", "dragon-slaying creation", "primordial-waters combat", "storm-god vs serpent", "creation-from-corpse"]
 category: "cosmogonic / mythological"
@@ -40,7 +41,7 @@ related-themes:
   - "[[apocalyptic-thunderer-vs-serpent]]"
   - "[[chosen-people]]"
   - "[[divine-council]]"
-status: "metadata"
+status: "full"
 refs:
   - title: "Schöpfung und Chaos in Urzeit und Endzeit"
     author: "Gunkel, Hermann"
