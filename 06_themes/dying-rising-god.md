@@ -7,13 +7,13 @@ category: "soteriological"
 period-earliest: -3000
 period-latest: 400
 region: "Egypt; Mesopotamia; Levant; Greece; Rome; Near East"
-key-figures: ["[[osiris]]", "[[dumuzi-tammuz]]", "[[baal]]", "[[adonis]]", "[[attis]]", "[[dionysus]]", "[[mettinger]]"]
+key-figures: ["[[osiris]]", "[[dumuzi-tammuz]]", "[[baal]]", "[[adonis]]", "[[attis]]", "[[dionysus]]", "[[melqart]]", "[[eshmun]]", "[[jesus-christ-deity]]", "[[mettinger]]"]
 documents: ["[[phase-1-027-memphite-theology-shabaka-stone]]", "[[phase-1-013-baal-cycle]]"]
 traditions: ["[[tradition-egyptian]]", "[[tradition-early-christianity]]", "[[tradition-mystery-cults]]"]
 parallels: ["[[ma-at-logos-sophia]]", "[[neoplatonic-henosis]]", "[[psychostasia-soul-weighing]]"]
-appearances: ["[[osiris]]", "[[dumuzi-tammuz]]", "[[baal]]", "[[adonis]]", "[[attis]]", "[[dionysus]]"]
-deity-instances: ["[[osiris]]", "[[dumuzi-tammuz]]", "[[baal]]", "[[adonis]]", "[[attis]]", "[[dionysus]]", "[[melqart]]"]
-status: "metadata"
+appearances: ["[[osiris]]", "[[dumuzi-tammuz]]", "[[baal]]", "[[adonis]]", "[[attis]]", "[[dionysus]]", "[[melqart]]", "[[eshmun]]", "[[jesus-christ-deity]]"]
+deity-instances: ["[[osiris]]", "[[dumuzi-tammuz]]", "[[baal]]", "[[adonis]]", "[[attis]]", "[[dionysus]]", "[[melqart]]", "[[eshmun]]", "[[jesus-christ-deity]]", "[[quetzalcoatl]]"]
+status: "full"
 refs:
   - title: "The Riddle of Resurrection: 'Dying and Rising Gods' in the Ancient Near East"
     author: "Mettinger, Tryggve N.D."
@@ -116,6 +116,14 @@ Mettinger: this is "genuine death and revival" in the strong sense. The Baal Cyc
 
 The Dionysian parallel to Christ is structural: the dismemberment and reconstitution as cosmic sacrifice; the sparagmos (tearing apart) and omophagia (eating the raw flesh) as communion; the vine and wine as the god's body. Paul's eucharistic language (1 Corinthians 11) uses vocabulary (σῶμα/soma, breaking, blood) that echoes both the Passover tradition AND the Dionysian mystery meal. This is structural parallel, not necessarily direct borrowing.
 
+### Melqart and Eshmun (Phoenician, c. -900 onward)
+
+**[[melqart]]** of Tyre and **[[eshmun]]** of Sidon are, for Mettinger, among the strictest pre-Christian cases — those where the explicit death-and-return language is least disputable. Melqart's annual *egersis* ("awakening" / resurrection) festival is attested by Josephus and by inscriptions naming a *miqim elim*, an "awakener of the god": the deity is burned in effigy and ritually revived. Eshmun, the Sidonian healing god whom the Greeks identified with Asclepius, likewise dies and returns. Their Phoenician cult travelled with Tyrian and Sidonian trade across the Mediterranean.
+
+### Jesus Christ (the Christian case)
+
+**[[jesus-christ-deity]]** is the case against which all the others are measured. The Christian claim — a god who genuinely dies, is buried, and rises bodily on the third day, with the resurrection as the hinge of salvation history — is both the most theologically developed instance and the reason the category exists as a scholarly problem: Frazer read Christ as the last vegetation-god, while Smith argued the reverse, that scholars read "resurrection" *into* the pagan cases from the Christian one. The honest position (Mettinger; see the debate below) is that the pre-Christian cases are real but their theology differs, and the Christian resurrection was structurally legible to a Mediterranean audience steeped in Osiris, Baal, Adonis, and Dionysus without being a simple derivation from any one of them.
+
 ## The Frazer–Smith–Mettinger Debate
 
 | Scholar | Date | Position |
@@ -138,9 +146,13 @@ Clement of Alexandria explicitly compares pagan mystery cult initiations (Eleusi
 
 Origen's doctrine of apokatastasis (universal restoration of all souls) uses the same structural logic as the Osirian underworld rule: death is not final annihilation but transformation toward renewal.
 
+## The New-World convergence (Quetzalcoatl)
+
+**[[quetzalcoatl]]** sits outside the transmission network entirely. In the Mesoamerican tradition the Feathered Serpent dies — immolating himself, or descending to Mictlan — and is reborn as the morning star, the planet Venus, whose disappearance and heliacal reappearance furnish the astronomical "resurrection." Because Mesoamerica had no contact with the Old World, this is **independent convergence**, not a member of the Egypt → Levant → Alexandria chain — the same evidential role the [[primordial-sea-popol-vuh|Maya primordial sea]] plays for the cosmogony cluster. It is wired into this theme as a structural parallel that *bounds* the transmission claim, never as a link within it.
+
 ## Significance for the Vault
 
-- The dying-and-rising-god pattern is a **genuine cross-tradition transmission network** anchored in Egypt → Levant → Greek mystery cults → Alexandria → early Christianity
+- The **Old-World** dying-and-rising-god pattern forms a genuine cross-tradition network of resonance and partial influence anchored in Egypt → Levant → Greek mystery cults → Alexandria → early Christianity (the New-World Quetzalcoatl case above is independent convergence, not part of this chain)
 - The mechanism is not simple plagiarism but **cultural resonance**: audiences familiar with Osiris, Baal, Adonis, and Dionysus found the Christian resurrection narrative structurally legible because it fit a recognizable religious grammar
 - The Alexandrian school ([[clement-of-alexandria]], [[origen]]) self-consciously positioned Christianity as the fulfillment and supersession of this tradition
 - The strictest scholarly claim (Mettinger): the category is real, the parallels are genuine, but theology-of-borrowing claims require more evidence than is usually provided
