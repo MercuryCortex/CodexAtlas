@@ -30,7 +30,7 @@ const AUTHOR_SCHEMA = {
     slug: { type: 'string' },
     exists: { type: 'boolean', description: 'true if a node for this concept ALREADY exists under any slug/variant — if so, do NOT author; report the path' },
     existsPath: { type: ['string', 'null'] },
-    type: { type: 'string', enum: ['deity', 'person', 'theme', 'symbol', 'event'] },
+    type: { type: 'string', description: 'node type — figure types (deity/person/theme/symbol/event) OR a domain type matching the target folder (alchemy/astronomy/divination-system/mathematics/ritual/music/...). Read a sibling node in the target folder and match its type exactly.' },
     tradition: { type: 'string', description: 'SINGULAR origin tradition only — never a multi-tradition list' },
     region: { type: 'string' },
     fileDir: { type: 'string', description: 'e.g. 03_deities or 06_themes or 04_persons or 09_symbols' },
