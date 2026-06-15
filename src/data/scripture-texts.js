@@ -17578,3 +17578,554 @@ SCRIPTURE_TEXTS['psalm-89'] = {
     }
   ],
 };
+
+// ── Psalm 104:1–30 (Bless the LORD, O my soul — Leviathan made to play) ──
+SCRIPTURE_TEXTS['psalm-104'] = {
+  "id": "psalm-104",
+  "title": "Psalm 104:1–30 (Bless the LORD, O my soul — Leviathan made to play)",
+  "shortTitle": "Psalm 104",
+  "corpus": "Hebrew Bible (Psalms)",
+  "tradId": "tradition-second-temple-judaism",
+  "date": "c. 10th–6th century BCE (a creation hymn within the Psalter)",
+  "docNode": "phase-2-005-davidic-psalms",
+  "language": "Hebrew · King James Version (1611). Verse text verbatim from the public-domain KJV (per the aruljohn/Bible-kjv public-domain KJV text); the one curly apostrophe in v15 (\"man's heart\") is rendered as a straight apostrophe to match this corpus's KJV convention — wording is unaltered.",
+  "translations": [
+    {
+      "id": "kjv",
+      "label": "KJV (1611)",
+      "note": "King James Version — public domain"
+    }
+  ],
+  "intro": "Psalm 104 is the great creation-hymn of the Psalter: a sweeping survey of an ordered cosmos in which YHWH stretches out the heavens, sets the chaos-waters a bound they may not pass, and feeds every living thing in its season. Its hinge is v26 — \"there is that leviathan, whom thou hast made to play therein\" — where the sea-dragon of the Chaoskampf, the monster Psalm 74 and Isaiah 51 remember YHWH slaying, is demythologised into a creature God formed to frolic in the sea (Day 1985). And its second half (vv. 19–30) carries the most-documented inter-textual parallel in ancient religious literature: the verbal correspondences with the Great Hymn to the Aten — lions abroad at night, ships on the sea, all life living on the breath God gives — that since Breasted (1912) have been read as either direct Egyptian transmission or a shared Near-Eastern solar-hymn genre (Assmann 1995). It surfaces the two faces of the chaos-sea: tamed Leviathan and the deep set to bounds.",
+  "crossTradition": [
+    {
+      "label": "The Great Hymn to the Aten — the documented parallel",
+      "textId": "hymn-to-aten",
+      "note": "The verbal parallels between Psalm 104 and Akhenaten's Aten hymn are among the most cited inter-textual links in ancient literature: the Aten sets and the land lies in death-like darkness while lions emerge and serpents stir (Ps 104:20–21); creatures gather at dawn (Ps 104:22); ships sail (Ps 104:26); all life depends on the god's breath (Ps 104:29–30). Breasted (1912) called the Psalm 'an echo' of the hymn; Assmann (1995) frames it as either direct transmission or a shared Near-Eastern solar-hymn genre."
+    },
+    {
+      "label": "Psalm 74 — the heads of Leviathan broken",
+      "textId": "psalm-74",
+      "note": "The combat pole of the same chaos-dragon. Where Psalm 74 remembers YHWH breaking the heads of Leviathan and the dragons at the foundation of order, Psalm 104:26 has the same Leviathan reduced to a plaything — the chaos-monster demythologised (Day 1985)."
+    },
+    {
+      "label": "Isaiah 51 — the cutting of Rahab and the drying of the deep",
+      "textId": "isaiah-51",
+      "note": "The prophetic Chaoskampf naming Rahab, the dragon (tannin), and the deep (tehom). Psalm 104:6–9 (the deep covering the earth, set to a bound it may not pass) is the demythologised counterpart: the same primeval waters, now merely bounded rather than fought (Day 1985)."
+    },
+    {
+      "label": "Enuma Elish IV — Marduk and the chaos-sea Tiamat",
+      "textId": "enuma-elish-4",
+      "note": "The Mesopotamian type-specimen of the Chaoskampf. The deep (tehom) that Psalm 104:6 says covered the earth is linguistically cognate with Tiamat; Psalm 104 is the pole at which the chaos-sea is wholly subordinated — bounded and assigned, not split in combat (Gunkel 1895; Day 1985)."
+    },
+    {
+      "label": "Genesis 1 — the ordered, demythologised cosmos",
+      "textId": "genesis-1",
+      "note": "Psalm 104 is a poetic counterpart to the Priestly creation: heavens stretched out, waters separated and bounded, lights set for seasons, creatures made 'in wisdom' rather than begotten in combat — the same demythologising the Chaoskampf into ordered fiat (Gunkel 1895; Day 1985)."
+    },
+    {
+      "label": "Job 40–41 — Leviathan as God's creature",
+      "textId": "job-40-41",
+      "note": "Job exhibits Leviathan as the untameable beast only God can master; Psalm 104:26 goes one step further, making the same dragon a plaything God formed to sport in the sea. Two readings of the chaos-serpent reduced to a creature (Day 1985)."
+    }
+  ],
+  "sections": [
+    {
+      "heading": "The LORD who stretches the heavens and bounds the deep",
+      "verses": [
+        {
+          "ref": "104:1",
+          "text": "Bless the LORD, O my soul. O LORD my God, thou art very great; thou art clothed with honour and majesty.",
+          "textVersions": {
+            "kjv": "Bless the LORD, O my soul. O LORD my God, thou art very great; thou art clothed with honour and majesty."
+          },
+          "entities": [
+            {
+              "word": "LORD",
+              "node": "yahweh",
+              "type": "deity",
+              "note": "YHWH, the God of Israel, here the sole creator and sustainer of the whole cosmos — the storm-god of the Hebrew tradition addressed not as combatant but as robed king of an ordered world.",
+              "parallels": [
+                {
+                  "label": "Aten (Egyptian)",
+                  "textId": "hymn-to-aten",
+                  "note": "the sole creator-sun of Akhenaten's hymn, the document whose verbal parallels with this Psalm are the most cited in ancient literature (Breasted 1912; Assmann 1995)"
+                },
+                {
+                  "label": "Marduk (Babylonian)",
+                  "textId": "enuma-elish-4",
+                  "note": "the creator storm-god of the Chaoskampf; here the combat behind YHWH's kingship is left unspoken, demythologised into majesty (Gunkel 1895)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "104:2",
+          "text": "Who coverest thyself with light as with a garment: who stretchest out the heavens like a curtain:",
+          "textVersions": {
+            "kjv": "Who coverest thyself with light as with a garment: who stretchest out the heavens like a curtain:"
+          },
+          "entities": [
+            {
+              "word": "stretchest out the heavens like a curtain",
+              "node": "creation-by-word",
+              "type": "theme",
+              "note": "Creation by sovereign, effortless act — the heavens spread like cloth rather than won in battle; the same demythologised cosmogony as the Priestly fiat of Genesis 1 (Gunkel 1895).",
+              "parallels": [
+                {
+                  "label": "Genesis 1 — the firmament",
+                  "textId": "genesis-1",
+                  "note": "the heavens established by divine command, the chaos-combat reduced to ordering speech"
+                }
+              ]
+            },
+            {
+              "word": "light as with a garment",
+              "node": "aten",
+              "type": "deity",
+              "note": "YHWH robed in light as his first attribute; the Aten hymn likewise opens with the god as radiance filling every land — one of the structural correspondences Breasted (1912) flagged between the two texts.",
+              "parallels": [
+                {
+                  "label": "The Great Hymn to the Aten — the god as light",
+                  "textId": "hymn-to-aten",
+                  "note": "the Aten is the visible light that clothes and fills the world; Assmann (1995) treats the light-imagery as part of the shared solar-hymn matrix"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "104:6",
+          "text": "Thou coveredst it with the deep as with a garment: the waters stood above the mountains.",
+          "textVersions": {
+            "kjv": "Thou coveredst it with the deep as with a garment: the waters stood above the mountains."
+          },
+          "entities": [
+            {
+              "word": "the deep",
+              "node": "tehom",
+              "type": "deity",
+              "note": "tehom, the primordial deep that once covered the earth — the same deep of Genesis 1:2, here a passive element God drapes and then drives back, not a dragon he fights; linguistically cognate with Tiamat (Gunkel 1895; Day 1985).",
+              "parallels": [
+                {
+                  "label": "tehom (Genesis 1:2)",
+                  "textId": "genesis-1",
+                  "note": "the deep over which the Spirit moves before the ordering of the world"
+                },
+                {
+                  "label": "Tiamat (Babylonian)",
+                  "textId": "enuma-elish-4",
+                  "note": "the chaos-salt-sea Marduk splits; tehom is the cognate term, here wholly subordinated rather than slain (Gunkel 1895)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "104:7",
+          "text": "At thy rebuke they fled; at the voice of thy thunder they hasted away.",
+          "textVersions": {
+            "kjv": "At thy rebuke they fled; at the voice of thy thunder they hasted away."
+          },
+          "entities": [
+            {
+              "word": "at the voice of thy thunder",
+              "node": "chaoskampf",
+              "type": "theme",
+              "note": "A residue of the storm-god combat: YHWH's thunder-voice routs the waters. The Chaoskampf survives here as a rebuke that scatters the sea rather than a battle that splits a dragon — the combat demythologised (Gunkel 1895; Day 1985).",
+              "parallels": [
+                {
+                  "label": "Marduk's storm-weapons (Babylonian)",
+                  "textId": "enuma-elish-4",
+                  "note": "the winds and tempest Marduk drives against Tiamat; the storm-theophany behind the Hebrew rebuke"
+                },
+                {
+                  "label": "Baal the thunderer (Ugaritic)",
+                  "textId": "isaiah-51",
+                  "note": "the Canaanite storm-god who masters Sea (Yam); the proximate Semitic source of YHWH's combat role (Day 1985)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "104:9",
+          "text": "Thou hast set a bound that they may not pass over; that they turn not again to cover the earth.",
+          "textVersions": {
+            "kjv": "Thou hast set a bound that they may not pass over; that they turn not again to cover the earth."
+          },
+          "entities": [
+            {
+              "word": "set a bound that they may not pass over",
+              "node": "yam",
+              "type": "deity",
+              "note": "The chaos-sea (Yam) confined to a fixed limit — the central image of Psalm 104's demythologising: the sea is not killed but assigned bounds, the same boundary-setting God puts to Job (38:8–11) and the order that replaces combat (Day 1985).",
+              "parallels": [
+                {
+                  "label": "Yam (Ugaritic)",
+                  "textId": "isaiah-51",
+                  "note": "Sea, the chaos-adversary the storm-god defeats; in the Psalm the adversary is merely bounded, not battled (Day 1985)"
+                },
+                {
+                  "label": "Tiamat bounded (Babylonian)",
+                  "textId": "enuma-elish-4",
+                  "note": "Marduk sets bars and guards so Tiamat's waters cannot escape; the Psalm keeps the bounding while dropping the combat (Gunkel 1895)"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Lions at night, ships, and Leviathan at play",
+      "verses": [
+        {
+          "ref": "104:19",
+          "text": "He appointed the moon for seasons: the sun knoweth his going down.",
+          "textVersions": {
+            "kjv": "He appointed the moon for seasons: the sun knoweth his going down."
+          },
+          "entities": [
+            {
+              "word": "the sun knoweth his going down",
+              "node": "aten",
+              "type": "deity",
+              "note": "The sun's setting opens the night-section (vv. 19–23) whose lions-abroad and dawn-gathering imagery is the core of the Aten parallel; the Aten's setting likewise plunges the land into death-like darkness (Breasted 1912; Assmann 1995).",
+              "parallels": [
+                {
+                  "label": "The Great Hymn to the Aten — the sun sets into darkness",
+                  "textId": "hymn-to-aten",
+                  "note": "'When you set in the western horizon the land is in darkness, in the condition of death' — the verse the night-section of Psalm 104 most closely tracks"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "104:20",
+          "text": "Thou makest darkness, and it is night: wherein all the beasts of the forest do creep forth.",
+          "textVersions": {
+            "kjv": "Thou makest darkness, and it is night: wherein all the beasts of the forest do creep forth."
+          },
+          "entities": [
+            {
+              "word": "all the beasts of the forest do creep forth",
+              "node": "aten",
+              "type": "deity",
+              "note": "The strongest single verbal parallel between Psalm 104 and the Aten hymn: in both, sunset brings darkness in which the wild beasts come out — the lions and creeping things of the night (Breasted 1912; Assmann 1995).",
+              "parallels": [
+                {
+                  "label": "The Great Hymn to the Aten — beasts abroad at night",
+                  "textId": "hymn-to-aten",
+                  "note": "'Every lion comes out from its den, all the serpents bite; darkness hovers' — the Aten passage Ps 104:20–21 mirrors almost line for line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "104:21",
+          "text": "The young lions roar after their prey, and seek their meat from God.",
+          "textVersions": {
+            "kjv": "The young lions roar after their prey, and seek their meat from God."
+          },
+          "entities": [
+            {
+              "word": "young lions roar after their prey",
+              "node": "aten",
+              "type": "deity",
+              "note": "The roaring night-lions seeking their food from God match the Aten hymn's lions emerging at the sun's setting — part of the cluster of correspondences that ground the transmission hypothesis (Breasted 1912; Assmann 1995).",
+              "parallels": [
+                {
+                  "label": "The Great Hymn to the Aten — lions of the night",
+                  "textId": "hymn-to-aten",
+                  "note": "the lions that 'come out from their dens' when the Aten has set; the shared image of predators abroad in the god-made night"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "104:24",
+          "text": "O LORD, how manifold are thy works! in wisdom hast thou made them all: the earth is full of thy riches.",
+          "textVersions": {
+            "kjv": "O LORD, how manifold are thy works! in wisdom hast thou made them all: the earth is full of thy riches."
+          },
+          "entities": [
+            {
+              "word": "in wisdom hast thou made them all",
+              "node": "creation-by-word",
+              "type": "theme",
+              "note": "Creation is the work of wisdom, not of combat — the Psalm's thesis statement, demythologising the Chaoskampf into an ordered, providential making (Gunkel 1895; Day 1985).",
+              "parallels": [
+                {
+                  "label": "Genesis 1 — creation by ordered fiat",
+                  "textId": "genesis-1",
+                  "note": "the world made good and ordered by command rather than won in battle"
+                },
+                {
+                  "label": "The Great Hymn to the Aten — the god who makes all",
+                  "textId": "hymn-to-aten",
+                  "note": "the Aten as sole maker of every land and creature; the same all-creating, all-sustaining sovereignty (Assmann 1995)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "104:25",
+          "text": "So is this great and wide sea, wherein are things creeping innumerable, both small and great beasts.",
+          "textVersions": {
+            "kjv": "So is this great and wide sea, wherein are things creeping innumerable, both small and great beasts."
+          },
+          "entities": [
+            {
+              "word": "this great and wide sea",
+              "node": "yam",
+              "type": "deity",
+              "note": "The sea (Yam), once the chaos-adversary, is here simply a vast habitat teeming with God's creatures — the chaos-waters domesticated into part of the ordered world (Day 1985).",
+              "parallels": [
+                {
+                  "label": "Yam (Ugaritic)",
+                  "textId": "isaiah-51",
+                  "note": "Sea, the storm-god's chaos-enemy; in the Psalm it is reduced to a well-stocked ocean (Day 1985)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "104:26",
+          "text": "There go the ships: there is that leviathan, whom thou hast made to play therein.",
+          "textVersions": {
+            "kjv": "There go the ships: there is that leviathan, whom thou hast made to play therein."
+          },
+          "entities": [
+            {
+              "word": "that leviathan",
+              "node": "leviathan",
+              "type": "deity",
+              "note": "The hinge of the Psalm. Leviathan — the many-headed chaos-serpent whose heads YHWH breaks in Psalm 74 and whom Isaiah 27 says God will slay — is here demythologised into a creature God formed merely to sport in the sea: the chaos-dragon turned plaything, the clearest Hebrew domestication of the Chaoskampf monster (Day 1985).",
+              "parallels": [
+                {
+                  "label": "Lotan (Ugaritic)",
+                  "node": "lotan",
+                  "note": "the seven-headed serpent of the Baal Cycle; secure cognate (Ugaritic ltn = Hebrew lwytn) and the Canaanite source of the Hebrew dragon (Day 1985)"
+                },
+                {
+                  "label": "Leviathan slain (Psalm 74)",
+                  "textId": "psalm-74",
+                  "note": "the combat pole — YHWH breaking the heads of Leviathan — against which Ps 104's 'made to play' is the demythologised foil (Day 1985)"
+                },
+                {
+                  "label": "Tiamat (Babylonian)",
+                  "textId": "enuma-elish-4",
+                  "note": "the chaos-sea of the Mesopotamian Chaoskampf; Leviathan is the structural Hebrew counterpart (Gunkel 1895)"
+                },
+                {
+                  "label": "Apophis (Egyptian)",
+                  "node": "apophis",
+                  "note": "the chaos-serpent of the sun's nightly combat; the Egyptian parallel-form of the sea/serpent chaos-monster"
+                },
+                {
+                  "label": "Vritra (Vedic)",
+                  "node": "vritra",
+                  "note": "the serpent Indra slays to free the waters; the Indo-European reflex of the chaos-serpent combat"
+                }
+              ]
+            },
+            {
+              "word": "made to play therein",
+              "node": "chaoskampf",
+              "type": "theme",
+              "note": "The Chaoskampf inverted: the monster is not fought but formed 'to play' — Day (1985) reads this as the furthest the Hebrew Bible takes the demythologising of the chaos-dragon, the combat dissolved into God's untroubled sovereignty over a creature that merely frolics.",
+              "parallels": [
+                {
+                  "label": "Job 40–41 — Leviathan as creature",
+                  "textId": "job-40-41",
+                  "note": "the dragon exhibited as God's untameable handiwork; Ps 104 goes further, making it a plaything (Day 1985)"
+                },
+                {
+                  "label": "The Great Hymn to the Aten — ships on the sea",
+                  "textId": "hymn-to-aten",
+                  "note": "'ships sail upstream and downstream' under the Aten; Ps 104:26 pairs the same ships with the tamed Leviathan (Breasted 1912)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "104:29",
+          "text": "Thou hidest thy face, they are troubled: thou takest away their breath, they die, and return to their dust.",
+          "textVersions": {
+            "kjv": "Thou hidest thy face, they are troubled: thou takest away their breath, they die, and return to their dust."
+          },
+          "entities": [
+            {
+              "word": "thou takest away their breath",
+              "node": "aten",
+              "type": "deity",
+              "note": "All life hangs on the breath the creator gives and withdraws — the climactic Aten parallel: in both texts the god's presence is the life of every creature and its absence their death (Breasted 1912; Assmann 1995).",
+              "parallels": [
+                {
+                  "label": "The Great Hymn to the Aten — life from the god's breath",
+                  "textId": "hymn-to-aten",
+                  "note": "the Aten gives breath to every nostril and life to all he made; Ps 104:29–30 is the closest Hebrew echo (Assmann 1995)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "104:30",
+          "text": "Thou sendest forth thy spirit, they are created: and thou renewest the face of the earth.",
+          "textVersions": {
+            "kjv": "Thou sendest forth thy spirit, they are created: and thou renewest the face of the earth."
+          },
+          "entities": [
+            {
+              "word": "Thou sendest forth thy spirit, they are created",
+              "node": "creation-by-word",
+              "type": "theme",
+              "note": "Continuous creation by the divine breath/spirit (ruach): the world is not made once and left but perpetually renewed by God's sustaining breath — the same providential cosmogony, and the verse that completes the Aten breath-of-life parallel (Day 1985; Assmann 1995).",
+              "parallels": [
+                {
+                  "label": "Genesis 1 — the Spirit over the waters",
+                  "textId": "genesis-1",
+                  "note": "the ruach of God present at creation; here the same breath continually re-creates the world"
+                },
+                {
+                  "label": "The Great Hymn to the Aten — the god renews life daily",
+                  "textId": "hymn-to-aten",
+                  "note": "the Aten re-creates the world at each dawn; Ps 104:30's daily renewal of the earth is the structural twin (Assmann 1995)"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
+
+// ── Isaiah 27:1 (Leviathan the piercing serpent — the LORD slays the dragon in the sea) ──
+SCRIPTURE_TEXTS['isaiah-27'] = {
+  "id": "isaiah-27",
+  "title": "Isaiah 27:1 (Leviathan the piercing serpent — the LORD slays the dragon in the sea)",
+  "shortTitle": "Isaiah 27",
+  "corpus": "Hebrew Bible (Latter Prophets · the \"Isaiah Apocalypse,\" Isaiah 24–27)",
+  "tradId": "tradition-second-temple-judaism",
+  "date": "c. 5th–3rd century BCE (the apocalyptic redaction of Isaiah 24–27, later than First Isaiah; the underlying chaos-combat imagery is far older)",
+  "docNode": "phase-3-001-second-third-isaiah",
+  "language": "Hebrew · King James Version (1611)",
+  "translations": [
+    {
+      "id": "kjv",
+      "label": "KJV (1611)",
+      "note": "King James Version — public domain"
+    }
+  ],
+  "intro": "Isaiah 27:1 carries the single most important transmission datum in the whole Hebrew Chaoskampf: it names Leviathan with the doubled epithet \"the piercing serpent\" / \"that crooked serpent,\" which is a near-exact Hebrew calque of the Ugaritic epithet pair used of Lotan in the Baal Cycle (KTU 1.5.i.1–3: ltn bṯn brḥ … bṯn ʿqltn, \"Lotan the fleeing serpent … the writhing serpent\"). Where most chaos-combat parallels are merely structural, this verse preserves the actual Canaanite poetic formula word for word — Hebrew nāḥāš bāriaḥ // nāḥāš ʿăqallātôn answering Ugaritic bṯn brḥ // bṯn ʿqltn — making Isaiah 27:1 the clearest case of direct literary inheritance from Ugarit into Israelite scripture. The verse fuses three chaos-names (Leviathan the serpent, Leviathan the writhing serpent, and the tannin \"in the sea\") and recasts the primeval combat as an eschatological act: \"in that day\" the LORD will at last slay the dragon, the chaos finally undone.",
+  "crossTradition": [],
+  "sections": [
+    {
+      "heading": "The slaying of the dragon in the sea",
+      "verses": [
+        {
+          "ref": "27:1",
+          "text": "In that day the LORD with his sore and great and strong sword shall punish leviathan the piercing serpent, even leviathan that crooked serpent; and he shall slay the dragon that is in the sea.",
+          "textVersions": {
+            "kjv": "In that day the LORD with his sore and great and strong sword shall punish leviathan the piercing serpent, even leviathan that crooked serpent; and he shall slay the dragon that is in the sea."
+          },
+          "entities": [
+            {
+              "word": "the LORD",
+              "node": "yahweh",
+              "type": "deity",
+              "note": "YHWH as the divine warrior who wields the sword against the chaos-serpent — the storm-god of the Hebrew Chaoskampf, here in the role Ugarit assigns to Baal (and Anat) against Lotan.",
+              "parallels": [
+                {
+                  "label": "Baal (Ugaritic)",
+                  "textId": "baal-cycle-1",
+                  "note": "The storm-god who defeats Sea and the seven-headed Lotan in the Baal Cycle; Day 1985 reads YHWH-vs-Leviathan as the Yahwistic recension of Baal-vs-Lotan."
+                },
+                {
+                  "label": "Marduk (Babylonian)",
+                  "textId": "enuma-elish-4",
+                  "note": "The storm-god who slays the chaos-sea Tiamat — the broader ancient Near Eastern combat-pattern (Day 1985)."
+                }
+              ]
+            },
+            {
+              "word": "leviathan the piercing serpent",
+              "node": "leviathan",
+              "type": "deity",
+              "note": "Leviathan (Hebrew lwytn), the many-headed chaos-serpent of the sea. The epithet 'piercing serpent' (Hebrew nāḥāš bāriaḥ, 'fleeing/fugitive serpent') is the direct calque of Ugaritic bṯn brḥ used of Lotan in KTU 1.5.i.1–3; Ugaritic ltn and Hebrew lwytn are the same Northwest Semitic root for the same seven-headed serpent (Day 1985, Smith 1994).",
+              "parallels": [
+                {
+                  "label": "Lotan (Ugaritic) — the same serpent, the same epithet",
+                  "textId": "baal-cycle-1",
+                  "note": "KTU 1.5.i.1–3 calls Lotan bṯn brḥ ('the fleeing serpent'); Isaiah 27:1 calls Leviathan nāḥāš bāriaḥ — the exact Hebrew calque. Secure cognate ltn = lwytn (Day 1985; Smith 1994 The Ugaritic Baal Cycle vol. 1)."
+                },
+                {
+                  "label": "Leviathan crushed (Psalm 74)",
+                  "textId": "psalm-74",
+                  "note": "The same chaos-serpent whose heads YHWH breaks in Ps 74:14; 27:1 turns that past combat into a future one (Day 1985)."
+                }
+              ]
+            },
+            {
+              "word": "that crooked serpent",
+              "node": "leviathan",
+              "type": "deity",
+              "note": "The second epithet, 'crooked serpent' (Hebrew nāḥāš ʿăqallātôn, 'writhing/twisting serpent'), calques Ugaritic bṯn ʿqltn applied to Lotan in the same Ugaritic line — completing the doubled epithet-pair that makes Isaiah 27:1 the clearest verbal inheritance from the Baal Cycle (Day 1985, Smith 1994).",
+              "parallels": [
+                {
+                  "label": "Lotan ʿqltn (Ugaritic)",
+                  "textId": "baal-cycle-1",
+                  "note": "The matching Ugaritic epithet bṯn ʿqltn ('writhing serpent') of Lotan in KTU 1.5.i.1–3; the parallelism bṯn brḥ // bṯn ʿqltn is reproduced as bāriaḥ // ʿăqallātôn (Day 1985, p. 4 ff.)."
+                }
+              ]
+            },
+            {
+              "word": "the dragon that is in the sea",
+              "node": "tannin",
+              "type": "deity",
+              "note": "Tannin, the sea-dragon, here in synonymous parallelism with Leviathan as the chaos-power 'in the sea.' Cognate with the Ugaritic tnn that Anat boasts of vanquishing; in the Hebrew Bible tannin is the dragon of the deep that the divine warrior subdues (Day 1985).",
+              "parallels": [
+                {
+                  "label": "Tannin / the dragon (Isaiah 51)",
+                  "textId": "isaiah-51",
+                  "note": "The same tannin YHWH 'wounds' in Isa 51:9, paired there with Rahab — the recurring Hebrew chaos-dragon (Day 1985)."
+                },
+                {
+                  "label": "the dragons whose heads are broken (Psalm 74)",
+                  "textId": "psalm-74",
+                  "note": "The plural tanninim of Ps 74:13, the multi-headed chaos-dragons of the waters (Day 1985)."
+                }
+              ]
+            },
+            {
+              "word": "shall slay the dragon",
+              "node": "chaoskampf",
+              "type": "theme",
+              "note": "The Chaoskampf — the storm-god's victory over the chaos-serpent — here recast eschatologically: 'in that day' the combat that grounded creation is projected forward as the final undoing of chaos. The wider mytheme recurs by independent Indo-European convergence (Indra vs Vritra, Zeus vs Typhon) even as the specific epithets here descend by transmission from Ugarit (Day 1985 for the Semitic line; Watkins 1995 for the Indo-European *gʷhen- h₃gʷhi- 'slay the serpent' formula).",
+              "parallels": [
+                {
+                  "label": "Indra vs Vritra (Vedic)",
+                  "note": "The storm-god slays the serpent to free the waters — the Indo-European reflex of the dragon-combat (Watkins 1995, How to Kill a Dragon)."
+                },
+                {
+                  "label": "Zeus vs Typhon (Greek)",
+                  "note": "The sky-god's defeat of the hundred-headed chaos-monster — a convergent (not transmitted) parallel to the dragon-slaying (Watkins 1995)."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};

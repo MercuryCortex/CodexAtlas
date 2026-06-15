@@ -173,7 +173,7 @@
   <p>Then refresh this page.</p>
 </div>
 
-<script src="data.js?v=20260615-124000" onerror="document.getElementById('missing-data').style.display='flex'"></script>
+<script src="data.js?v=20260615-161649" onerror="document.getElementById('missing-data').style.display='flex'"></script>
 <script src="https://d3js.org/d3.v7.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <script src="_assets/vendor/maplibre/maplibre-gl.js"></script>
@@ -251,19 +251,19 @@
 <script src="src/js/graph/layout.js?v=20260517-handoff"></script>
 <script src="src/js/graph/renderer.js?v=20260517-handoff"></script>
 
-<script src="src/data/scripture-texts.js?v=20260615-chaoskampf-cluster"></script>
+<script src="src/data/scripture-texts.js?v=20260615-creation-batch1"></script>
 <script src="src/data/patterns.js?v=20260516-patterns-tab"></script>
 <script src="src/data/observations.js?v=20260516-observations-tab"></script>
 <script src="src/data/chains.js?v=20260516-chains-2"></script>
 <!-- ALPHA_GLYPH_DATA must load BEFORE app.js: the boot router can land
      directly on ?view=alphabets, whose GLYPHS surface reads the table at
      first render (2026-06-10 boot-race fix). Data-only module. -->
-<script src="src/js/alphabets/glyph-data.js?v=20260615-124000"></script>
+<script src="src/js/alphabets/glyph-data.js?v=20260615-161649"></script>
 <!-- CANONICAL NODE INSPECTOR (2026-06-10) — the V2 renderer behind
      window.selectNode for every non-Forge surface; replaces the deleted
      V01 renderDetail(). Loads BEFORE app.js (boot-race rule). -->
 <script src="src/js/inspector.js?v=20260613-mapwires"></script>
-<script src="src/js/app.js?v=20260615-124000"></script>
+<script src="src/js/app.js?v=20260615-161649"></script>
 <!-- Phase 22-B (2026-05-23) — app-shell top-bar pill wiring.
      Loads AFTER app.js so window.STATE + window.setView are defined.
      Self-installing IIFE; exposes window._appPill for debug. -->
