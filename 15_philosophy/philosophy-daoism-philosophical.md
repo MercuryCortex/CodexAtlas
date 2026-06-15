@@ -73,7 +73,7 @@ All three ethical systems were codified within approximately 200–300 years of 
 
 ### Zhuangzi / Nagarjuna / Wittgenstein / Derrida: Perspectivism and Deconstruction
 
-[[zhuangzi-person]]'s perspectivism and [[nagarjuna]]'s prasanga method are structurally identical deconstructive operations: both demonstrate that no fixed perspective or positive metaphysical claim can be maintained without generating contradiction or absurdity. Both move from this demonstration to a position of philosophical equanimity — the sage doesn't cling to positions, conventional or ultimate.
+[[zhuangzi]]'s perspectivism and [[nagarjuna]]'s prasanga method are structurally identical deconstructive operations: both demonstrate that no fixed perspective or positive metaphysical claim can be maintained without generating contradiction or absurdity. Both move from this demonstration to a position of philosophical equanimity — the sage doesn't cling to positions, conventional or ultimate.
 
 [[wittgenstein]]'s language games and [[derrida]]'s différance are their 20th-century analytic and continental analogues. The comparison is not merely formal: all four engage the problem of whether language can reach beyond itself to the real — and all four answer "no" while using language to make the point.
 

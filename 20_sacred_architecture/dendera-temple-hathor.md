@@ -15,7 +15,7 @@ duration-construction-years: 2500
 tradition: "[[tradition-egyptian-religion]]"
 traditions-related: ["[[tradition-ptolemaic-egypt]]", "[[tradition-roman-egypt]]"]
 function: "principal-cult-temple-of-hathor"
-key-figures: ["[[ptolemy-xii-auletes]] (the current temple's principal construction)", "[[cleopatra-vii]] (depicted on the outer hypostyle hall reliefs with her son Caesarion)", "[[augustus-roman-emperor]] (Roman-period additions and re-decoration)", "[[hathor]] (principal deity)", "[[horus]] (consort, in the Edfu-Dendera sacred-marriage cycle)", "[[ihy]] (their child)"]
+key-figures: ["[[ptolemy-xii-auletes]] (the current temple's principal construction)", "[[cleopatra-vii]] (depicted on the outer hypostyle hall reliefs with her son Caesarion)", "[[caesar-augustus]] (Roman-period additions and re-decoration)", "[[hathor]] (principal deity)", "[[horus]] (consort, in the Edfu-Dendera sacred-marriage cycle)", "[[ihy]] (their child)"]
 themes: ["[[heliopolis-ennead]] (Dendera cosmogony — the daughter-Hathor / Hathor-Tefnut return-of-the-distant-goddess myth)", "[[divine-kingship-solar]]", "[[sacred-marriage]]", "[[axis-mundi]]"]
 events-related: []
 documents-related: ["[[phase-1-002-pyramid-texts]] (early Hathor textual material)", "[[phase-1-009-coffin-texts]]"]

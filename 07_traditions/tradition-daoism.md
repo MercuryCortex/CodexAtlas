@@ -8,7 +8,7 @@ date-end:
 region-origin: "Warring States China (especially southern Chu cultural sphere)"
 regions-spread: ["pan-Chinese", "Korea, Japan, Vietnam (via cultural transmission)", "global modern diaspora"]
 key-deities: []
-key-persons: ["[[laozi]]", "[[zhuangzi-person]]"]
+key-persons: ["[[laozi]]", "[[zhuangzi]]"]
 key-documents: ["[[phase-2-014-daodejing]]"]
 key-themes: ["[[alchemy-as-spiritual-discipline]]", "[[soul-immortality]]", "[[ascent-of-the-soul]]"]
 sister-traditions: ["[[tradition-confucianism]]", "[[tradition-buddhism]]"]
@@ -53,7 +53,7 @@ Daoism (Taoism) is the Chinese tradition centered on the *dào* (道, "way") —
 
 ## Key persons
 - [[laozi]] — traditional founder (legendary; textual tradition ~4th–3rd c. BCE).
-- [[zhuangzi-person]] — author of the Zhuangzi (~4th c. BCE); the literary and philosophical heart of classical Daoism.
+- [[zhuangzi]] — author of the Zhuangzi (~4th c. BCE); the literary and philosophical heart of classical Daoism.
 - (Phase 3+: Zhang Daoling, Ge Hong, Tao Hongjing, Wang Zhe.)
 
 ## Defining doctrines
@@ -104,7 +104,7 @@ All four traditions share the counterintuitive logic: *doing less achieves more*
 The structural similarity between DDJ's apophatic grammar and Plotinus's apophatic theology (both working from ~-400 to +270 with no historical contact) is among the vault's cleanest philosophical cross-tradition findings. Both use the same logical move: the predication of any quality to the Absolute immediately limits it, making the predication false — therefore the Absolute is above all qualities, and the only honest language is silence or paradox. Plotinus's Ennead V.5 reads almost like DDJ commentary. This was noticed by early Jesuit missionaries in China (Matteo Ricci, Roberto de Nobili) and became a recurring theme in perennialist thought.
 
 ### Zhuangzi ↔ Nāgārjuna — perspectivism and the dissolution of fixed views
-See [[zhuangzi-person]] for the full analysis. The *Qiwulun* (Chapter 2 of the *Zhuangzi*, "On the Equalization of Things") and Nāgārjuna's *Vigrahavyāvartanī* make the same philosophical move: every apparently fixed perspective on things is perspective-relative; the effort to find a view-from-nowhere fails; liberation lies in recognizing this without retreating into nihilism. Two of the ancient world's most sophisticated anti-absolutists working independently in India and China, ~500 years apart.
+See [[zhuangzi]] for the full analysis. The *Qiwulun* (Chapter 2 of the *Zhuangzi*, "On the Equalization of Things") and Nāgārjuna's *Vigrahavyāvartanī* make the same philosophical move: every apparently fixed perspective on things is perspective-relative; the effort to find a view-from-nowhere fails; liberation lies in recognizing this without retreating into nihilism. Two of the ancient world's most sophisticated anti-absolutists working independently in India and China, ~500 years apart.
 
 ### Neidan (inner alchemy) ↔ Western alchemical *opus*
 Daoist *neidan* ("inner alchemy") transmutes the practitioner's inner energies (*jīng/qì/shén* — essence, breath/energy, spirit) through meditation and physical practice — building an "immortal embryo" that survives physical death. The Western alchemical *opus* transmutes lead to gold through chemical-symbolic operations that the Hermetic tradition increasingly interpreted as inner transformation of the practitioner. Both traditions use transformation-of-matter as the operative metaphor for transformation-of-self; both develop a parallel exoteric (literal) and esoteric (spiritual) reading of their technical vocabulary. No historical contact between the traditions — the parallel was first noted systematically by Jung (1944, *Psychology and Alchemy*) and remains a major structural parallel. See [[alchemy-as-spiritual-discipline]], [[tradition-hermeticism]].
@@ -114,7 +114,7 @@ Daoist *neidan* ("inner alchemy") transmutes the practitioner's inner energies (
 | Edge | Type | Description |
 |---|---|---|
 | → [[laozi]] | founding-figure | Traditional author of the Daodejing; legendary sage |
-| → [[zhuangzi-person]] | key-figure | Literary and philosophical heart of classical Daoism; perspectivism |
+| → [[zhuangzi]] | key-figure | Literary and philosophical heart of classical Daoism; perspectivism |
 | → [[tradition-confucianism]] | co-tradition | The canonical Chinese pairing; Daoist spontaneity vs. Confucian ritual-cultivation |
 | → [[tradition-zen]] | structural-synthesis | Chan Buddhism absorbed Daoist anti-textual sensibility and *wu-wei* as its Sinitic substrate |
 | → [[tradition-sanjiao]] | component-of | Daoism is one of the Three Teachings; provides the cosmological and spiritual-practice layer |

@@ -16,7 +16,7 @@ script: "Pre-Qin Chinese characters; later seal and clerical script"
 region: "Warring States China (southern / Chu cultural sphere for the Inner Chapters)"
 city-of-origin: ""
 authorship: "attributed (Inner Chapters by Zhuang Zhou, ~-369 to ~-286; Outer and Miscellaneous Chapters by school followers and editors)"
-key-figures: ["[[zhuangzi-person]]", "Guo Xiang (~252-312 CE, the redactor of the received 33-chapter text)"]
+key-figures: ["[[zhuangzi]]", "Guo Xiang (~252-312 CE, the redactor of the received 33-chapter text)"]
 themes: ["[[non-duality]]", "[[primordial-waters]]", "[[divine-immanence]]"]
 parallels: ["[[phase-2-014-daodejing]]", "[[phase-2-015-analects-of-confucius]]"]
 influenced-by: ["[[phase-2-014-daodejing]]", "logician / school-of-names tradition (Hui Shi)"]
@@ -151,7 +151,7 @@ The Cook Ding parable is the **oldest extended philosophical parable on the phen
 | Target | Relation type | Notes |
 |---|---|---|
 | [[nagarjuna]] | scholarly-parallel | Independent discovery of anti-absolutist epistemology: Qiwulun perspectivism (China, ~4th c. BCE) and Nāgārjuna's śūnyatā/prasaṅga method (India, ~2nd c. CE) reach the same meta-philosophical position 500 years apart |
-| [[zhuangzi-person]] | authored-by | Inner Chapters (~-369 to ~-286) attributed to the historical Zhuang Zhou; Outer and Miscellaneous Chapters are school tradition |
+| [[zhuangzi]] | authored-by | Inner Chapters (~-369 to ~-286) attributed to the historical Zhuang Zhou; Outer and Miscellaneous Chapters are school tradition |
 | [[tradition-daoism]] | root-tradition | The Zhuangzi is one of the two foundational texts of philosophical Daoism (with the Daodejing); the tradition stems from these |
 | [[tradition-chan]] | direct-influence | Chan Buddhism's anti-textual spontaneity ethic, "encounter dialogues," and rhetorical indirection are deeply continuous with the Zhuangzi; sinification of Buddhism passed through the Zhuangzi as its primary conceptual resource |
 | [[tradition-zen]] | direct-influence | Zen inherits from Chan; the koan tradition's strategy of breaking conceptual fixation mirrors the Qiwulun's strategy |

@@ -88,12 +88,12 @@ Nodes: [[nagarjuna]], [[derrida]]
 **Two of the ancient world's most sophisticated anti-absolutists. ~500 years apart, independent.**
 Zhuangzi's *Qiwulun* ("On the Equalization of Things"): every perspective is perspective-relative; "this" and "that" are always relative to a standpoint; liberation = recognizing this without retreating into nihilism. Nāgārjuna's *Vigrahavyāvartanī*: every proposition self-refutes; śūnyatā itself is empty; not nihilism but the deepest positive insight. Both: anti-absolutism without nihilism, arrived at independently.
 Source: Graham (1981) [T1]; Garfield (1995) [T1]
-Nodes: [[phase-2-022-zhuangzi]], [[nagarjuna]], [[zhuangzi-person]]
+Nodes: [[phase-2-022-zhuangzi]], [[nagarjuna]], [[zhuangzi]]
 
 ### 15. Jain Anekāntavāda ↔ Zhuangzi ↔ Nāgārjuna — Anti-Absolutist Cluster
 **Three traditions, three methods, same conclusion: no single view captures the whole.**
 Jain *anekāntavāda* (additive): all seven *syāt* predicates are simultaneously valid; reality is irreducibly many-sided. Zhuangzi (perspectival): all views are perspective-relative; the sage floats between them. Nāgārjuna (dissolving): all views self-refute. Same destination — anti-absolutism — via opposite methods (adding / floating / dissolving).
-Nodes: [[tradition-jainism]], [[zhuangzi-person]], [[nagarjuna]]
+Nodes: [[tradition-jainism]], [[zhuangzi]], [[nagarjuna]]
 
 ### 16. Confucius ↔ Socrates — Axial Age Mirror
 **Near-exact contemporaries in unconnected civilizations. The Axial Age in its sharpest form.**

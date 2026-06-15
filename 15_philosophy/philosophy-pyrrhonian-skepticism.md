@@ -63,7 +63,7 @@ Pyrrho's epoché reaches the same terminus through a different method: not syste
 
 ### Pyrrhonian Ataraxia / Daoist Equanimity
 
-[[zhuangzi-person]]'s perspectivism — no standpoint is final; the sage moves between perspectives without clinging — produces a state of equanimity structurally identical to Pyrrhonian ataraxia. The parallel is independent (Zhuangzi and Pyrrho were contemporary, c. 350–270 BCE, with no documented contact) and therefore represents one of the strongest cases for convergent philosophical development:
+[[zhuangzi]]'s perspectivism — no standpoint is final; the sage moves between perspectives without clinging — produces a state of equanimity structurally identical to Pyrrhonian ataraxia. The parallel is independent (Zhuangzi and Pyrrho were contemporary, c. 350–270 BCE, with no documented contact) and therefore represents one of the strongest cases for convergent philosophical development:
 
 - Zhuangzi's sage: releases fixed perspectives → moves freely with what arises → equanimity
 - Pyrrhonian skeptic: suspends all assertions → follows appearances without assenting to them → tranquility

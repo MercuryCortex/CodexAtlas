@@ -98,7 +98,7 @@ Three traditions, with no documented mutual influence at the time of their devel
 
 - [[alchemy-chinese-neidan]] — the dedicated alchemy vault node for this tradition; neidan as the internal path vs. outer waidan
 - [[laozi]] — the Daoist founder; the *Tao Te Ching* as the philosophical ground of neidan practice
-- [[zhuangzi-person]] — Zhuangzi's descriptions of the perfected person map directly onto neidan's spirit-embryo goal
+- [[zhuangzi]] — Zhuangzi's descriptions of the perfected person map directly onto neidan's spirit-embryo goal
 - [[tradition-daoism]] — parent tradition; neidan as its highest internal practice
 - [[alchemy-as-spiritual-discipline]] — Western alchemy structural parallel: opus magnum as inner transformation; Jungian reading closes the gap
 - [[kundalini]] — Hindu tantric structural parallel; energy ascent through the body's axial channel; shakti vs. shen

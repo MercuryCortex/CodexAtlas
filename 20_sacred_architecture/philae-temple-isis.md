@@ -15,7 +15,7 @@ duration-construction-years: 764
 tradition: "[[tradition-egyptian-religion]]"
 traditions-related: ["[[tradition-ptolemaic-egypt]]", "[[tradition-roman-egypt]]", "[tradition-meroitic-nubian]"]
 function: "principal-cult-temple-of-isis-late-period"
-key-figures: ["[nectanebo-i] (30th Dynasty; original Kiosk of Nectanebo)", "[[ptolemy-ii-philadelphus]] (principal Ptolemaic phase)", "[[ptolemy-iii-euergetes]] (continued building)", "[[ptolemy-xii-auletes]] (extensions)", "[[augustus-roman-emperor]] (Augustan additions — pronaos and minor structures)", "[trajan-roman-emperor] (Trajan's Kiosk — the canonical exterior view)", "[[isis-egyptian]] (principal deity)", "[[osiris]] (the *abaton* — tomb of Osiris on the nearby Bigeh island, theologically twinned with Philae)"]
+key-figures: ["[nectanebo-i] (30th Dynasty; original Kiosk of Nectanebo)", "[[ptolemy-ii-philadelphus]] (principal Ptolemaic phase)", "[[ptolemy-iii-euergetes]] (continued building)", "[[ptolemy-xii-auletes]] (extensions)", "[[caesar-augustus]] (Augustan additions — pronaos and minor structures)", "[trajan-roman-emperor] (Trajan's Kiosk — the canonical exterior view)", "[[isis-egyptian]] (principal deity)", "[[osiris]] (the *abaton* — tomb of Osiris on the nearby Bigeh island, theologically twinned with Philae)"]
 themes: ["[hellenistic-religious-synthesis]", "[isis-mysteries-mediterranean-dispersal]", "[[divine-kingship-solar]]"]
 events-related: []
 documents-related: ["[[phase-1-002-pyramid-texts]] (early Isis material)", "[[phase-1-010-book-of-the-dead]]"]

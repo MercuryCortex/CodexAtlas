@@ -34,7 +34,7 @@ parallels:
   - "[[perennial-philosophy]]"
   - "[[johannes-reuchlin]]"
   - "[[isaac-casaubon]]"
-  - "[[zoroaster-prophet]]"
+  - "[[zarathustra]]"
   - "[[orpheus]]"
   - "[[pythagoras]]"
   - "[[plato]]"

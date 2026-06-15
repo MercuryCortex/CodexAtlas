@@ -142,7 +142,7 @@ Robert Magliola (*Derrida on the Mend*, Purdue UP, 1984) documented this compari
 
 ## MASSIVE WIN 3 — Nāgārjuna ↔ Zhuangzi: anti-absolutism independent of each other
 
-[[zhuangzi-person]]'s *Qiwulun* ("On the Equalization of Things," ch. 2 of the *Zhuangzi*) argues that every linguistic position (shi/bi — "this" / "that") generates its counterpart; there is no view-from-nowhere. Every fixed standpoint is perspectival and generates its own refutation when pressed. The response is not nihilism but *wuwei* — non-assertive engagement with the flow of things, prior to conceptual fixation.
+[[zhuangzi]]'s *Qiwulun* ("On the Equalization of Things," ch. 2 of the *Zhuangzi*) argues that every linguistic position (shi/bi — "this" / "that") generates its counterpart; there is no view-from-nowhere. Every fixed standpoint is perspectival and generates its own refutation when pressed. The response is not nihilism but *wuwei* — non-assertive engagement with the flow of things, prior to conceptual fixation.
 
 Nāgārjuna's *prasaṅga* makes the identical philosophical move: every fixed position generates its own refutation; anti-absolutism without nihilism. The parallel was documented in the *Zhuangzi* node (see [[phase-2-022-zhuangzi]]; committed `d9e6db4`). The wiring is reciprocal: Nāgārjuna ↔ Zhuangzi are structurally parallel anti-absolutists who arrived at the same philosophical conclusion approximately 500 years apart and with no documented historical contact. This is one of the vault's strongest cases of independent discovery.
 
@@ -173,7 +173,7 @@ See [[theme-apophatic-theology]] and [[apophatic-mysticism]] for the Christian t
 | [[phase-4-075-mulamadhyamakakarika]] | primary-text | The foundational philosophical text |
 | [[theme-apophatic-theology]] | key-instance | Two Truths :: cataphatic/apophatic parallel |
 | [[apophatic-mysticism]] | structural-parallel | Dissolution of conceptual ground |
-| [[zhuangzi-person]] | structural-parallel | Both anti-absolutists; independent; ~500 years apart |
+| [[zhuangzi]] | structural-parallel | Both anti-absolutists; independent; ~500 years apart |
 | [[wittgenstein]] | structural-parallel | Philosophy's self-dissolution; silence vs. śūnyatā |
 | [[derrida]] | structural-parallel | Différance :: śūnyatā; documented by Magliola 1984 |
 | [[candrakirti]] | chief-commentator | Prāsaṅgika interpretation; *Prasannapadā* |

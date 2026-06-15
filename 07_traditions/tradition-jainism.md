@@ -116,10 +116,10 @@ This is not relativism — it is the claim that reality is genuinely complex and
 | Tradition | Figure | Anti-absolutist move | Dates |
 |---|---|---|---|
 | Jain | Mahāvīra / Umāsvāti | *Anekāntavāda*: reality is genuinely many-sided; all seven predications simultaneously valid | ~-500 onward |
-| Daoist | [[zhuangzi-person]] | *Qiwulun* ("discourse on the equalization of things"): no single perspective captures the whole; the sage rides perspectives without fixing | ~-300 CE |
+| Daoist | [[zhuangzi]] | *Qiwulun* ("discourse on the equalization of things"): no single perspective captures the whole; the sage rides perspectives without fixing | ~-300 CE |
 | Buddhist | [[nagarjuna]] | *Śūnyatā* / *Madhyamaka*: all views fail to latch onto fixed nature; systematic reductio of any stable position | ~150 CE |
 
-The critical distinction: *anekāntavāda* is **additive** (all perspectives simultaneously valid — reality has all these aspects at once); Nāgārjuna's *śūnyatā* is **dissolving** (the attempt to predicate fails entirely — things have no fixed nature to be found). Nāgārjuna would critique *anekāntavāda* as presupposing a real object with multiple real aspects — a subtle form of *svabhāva*-attachment. Jain logicians counter that Madhyamaka's systematic negation is itself an absolutism (absolutism of negation). The debate is live in classical Indian philosophical literature and unresolved. See [[anekantavada]], [[zhuangzi-person]], [[nagarjuna]].
+The critical distinction: *anekāntavāda* is **additive** (all perspectives simultaneously valid — reality has all these aspects at once); Nāgārjuna's *śūnyatā* is **dissolving** (the attempt to predicate fails entirely — things have no fixed nature to be found). Nāgārjuna would critique *anekāntavāda* as presupposing a real object with multiple real aspects — a subtle form of *svabhāva*-attachment. Jain logicians counter that Madhyamaka's systematic negation is itself an absolutism (absolutism of negation). The debate is live in classical Indian philosophical literature and unresolved. See [[anekantavada]], [[zhuangzi]], [[nagarjuna]].
 
 ## MASSIVE WIN: Jain cosmology — the most consistent non-theism in world religion
 
@@ -148,7 +148,7 @@ The canonical texts (*Āgamas*) exist in two forms: the Śvetāmbara tradition a
 | [[tradition-buddhism]] | sibling-tradition | Same śramaṇa milieu; Buddha and Mahāvīra near-contemporaneous; Pali Canon cross-attestation |
 | [[tradition-vedic-hinduism]] | sibling-tradition | Shared Gangetic cultural context; Jainism rejects Vedic authority and animal sacrifice |
 | [[tradition-sikhism]] | sibling-tradition | Shared Gujarati merchant milieu; Jain merchants patrons of early Sikh langars |
-| [[zhuangzi-person]] | structural-parallel | *Anekāntavāda* ↔ *Qiwulun* perspectivism — two independent anti-absolutist philosophies |
+| [[zhuangzi]] | structural-parallel | *Anekāntavāda* ↔ *Qiwulun* perspectivism — two independent anti-absolutist philosophies |
 | [[nagarjuna]] | structural-parallel | *Anekāntavāda* predates and parallels Madhyamaka; the Jain-Madhyamaka debate is live in classical texts |
 | [[anekantavada]] | instantiates | The syādvāda / saptabhaṅgī system; the vault's oldest systematic perspectivism |
 | [[tradition-gnosticism]] | structural-parallel | *Jīva* trapped in karma-matter ↔ pneuma trapped in hylē; luminous true self requiring extraction from matter |

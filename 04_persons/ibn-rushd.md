@@ -14,7 +14,23 @@ texts-attributed-to: []
 originator-of: ["the doctrine of the unicity of the material intellect (the *intellectus materialis* is one shared cosmic intellect, individuated only in the imagined-phantasms of each human; thence the controversy of *Latin Averroism* over personal vs. cosmic immortality)", "the 'double-truth' polemical-charge framework (whether Averroes himself held that philosophical and revealed truths can both be true while contradicting each other, or whether the charge is the Latin-Averroist / Sigerian extension, is disputed — see Disputes)", "the *Faṣl al-Maqāl* harmony-of-philosophy-and-revealed-religion thesis"]
 events-participated: []
 mentioned-in: ["[[phase-5-024-aquinas-summa-theologiae]] (Aquinas refers to Averroes as 'the Commentator' tout court — 503 citations in the *Summa Theologiae* and the *Summa contra Gentiles*; both critical and approving)", "[[phase-5-045-al-ghazali-tahafut-al-falasifa]] (Averroes's target)", "[[phase-5-019-maimonides-guide-for-the-perplexed]] (younger Andalusi-Jewish contemporary; Maimonides cites Averroes with cautious approval)"]
-status: "metadata"
+cross-tradition-edges:
+  - target: aristotle
+    type: heir-of
+    note: "The Commentator: three-level commentaries (Short/Middle/Long) on virtually the whole Aristotelian corpus; the channel through which Aristotle's Physics, Metaphysics, De Anima, and Ethics entered Latin scholasticism."
+  - target: al-farabi
+    type: heir-of
+    note: "Inherited the Platonic-Aristotelian falsafa synthesis al-Farabi founded; corrected it back toward a stricter, de-Neoplatonized Aristotle."
+  - target: thomas-aquinas
+    type: ancestor-of
+    note: "Aquinas calls him 'the Commentator' (503 citations); agrees on the Aristotelian framework while writing De Unitate Intellectus against the unicity-of-intellect doctrine."
+  - target: mathematics-house-of-wisdom
+    type: heir-of
+    note: "The Almohad-Andalusi terminus of the Greek-Arabic translation project the House of Wisdom began."
+  - target: tradition-neoplatonism
+    type: contrast
+    note: "Where al-Farabi and Avicenna Neoplatonized Aristotle, Averroes sought the 'pure' Aristotle stripped of emanationist accretions — the de-Neoplatonized Aristotelianism Latin Averroism transmitted."
+status: "full"
 refs:
   - title: "Averroes and the Enlightenment"
     author: "Wahba, Mourad, and Mona Abousenna (eds.)"

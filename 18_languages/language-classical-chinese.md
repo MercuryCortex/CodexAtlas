@@ -127,7 +127,7 @@ The 1919-1920 May Fourth Movement promoted *báihuà* (written Mandarin vernacul
 - [[tradition-mahayana-buddhism]] — primary religious-cultural context
 - [[alphabet-chinese-oracle-bones]] — earliest Chinese writing
 - [[language-old-chinese]] — the oracle-bone + bronze-inscription ancestor stage
-- [[confucius]] / [[laozi]] / [[zhuangzi-person]] — key figures
+- [[confucius]] / [[laozi]] / [[zhuangzi]] — key figures
 - [[xuanzang]] / [[kumarajiva]] — translator-bridges from Sanskrit / BHS
 
 ## Refs

@@ -71,7 +71,7 @@ Between approximately **800 and 200 BCE**, five independent civilizations with n
 | **Persia** | [[zarathustra]] (c. 628–551 BCE, dates disputed) | Ethical dualism: Ahura Mazda vs. Angra Mainyu; individual moral choice has cosmic weight |
 | **Israel** | [[isaiah-first]] + Jeremiah, Ezekiel, Amos (8th–6th c. BCE) | Ethical monotheism over sacrificial religion; justice demanded over temple cult |
 | **India** | [[siddhartha-gautama-buddha]] (c. 563–483 BCE), [[mahavira]], Upanishadic teachers | Interiorization: liberation through individual ethical-spiritual practice, not Brahminical ritual |
-| **China** | [[confucius]] (551–479 BCE), [[laozi]], [[zhuangzi-person]] | Self-cultivation and ethical rectification as the ground of social and cosmic order |
+| **China** | [[confucius]] (551–479 BCE), [[laozi]], [[zhuangzi]] | Self-cultivation and ethical rectification as the ground of social and cosmic order |
 | **Greece** | [[socrates]] (470–399 BCE), [[plato]], [[heraclitus]] | Examined life; philosophical ethics over inherited piety; the soul as the locus of value |
 
 Karl Jaspers named this the *Achsenzeit* — the Axial Age — in *Vom Ursprung und Ziel der Geschichte* (1949). His claim: this is the pivot of world history. The cognitive-spiritual forms generated in this 600-year window are still the living religions and philosophies of most of humanity in the 21st century.

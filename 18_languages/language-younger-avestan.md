@@ -39,7 +39,7 @@ syncretic-edges:
     source: "Cantera, A. 2004 *Studien zur Pahlavi-Übersetzung des Avesta* Harrassowitz; Boyce, M. 1968 *The Letter of Tansar*"
     source-tier: "T1"
     notes: "The Younger Avestan corpus was preserved with running Pahlavi (Middle Persian) translation + commentary — the *Zand*. This is the load-bearing vehicle by which Avestan content survived the post-Sasanian transition. Modern scholarly editions of the Younger Avesta routinely consult the Pahlavi Zand for hard passages."
-  - target: "[[zoroaster-prophet]]"
+  - target: "[[zarathustra]]"
     type: "parallel-motif"
     source: "Boyce, M. 1975 *History of Zoroastrianism* vol. 1 ch. 6; Skjærvø 2011 *Spirit of Zoroastrianism*"
     source-tier: "T1"
@@ -112,7 +112,7 @@ The Younger Avestan corpus was transmitted orally in priestly memorization for ~
 - [[tradition-persian-zoroastrian]] — the religious tradition
 - [[phase-2-004-yasna-younger-avesta]] — the Yasna corpus
 - [[mithra-zoroastrian]] / [[anahita-zoroastrian]] — major Younger-Avestan yazatas
-- [[zoroaster-prophet]] — founder of the tradition
+- [[zarathustra]] — founder of the tradition
 
 ## Refs
 
