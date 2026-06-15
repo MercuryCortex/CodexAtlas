@@ -1,6 +1,6 @@
 ---
 type: document
-id: "phase-4-celestial-hierarchy"
+id: "phase-4-100-celestial-hierarchy"
 title: "Celestial Hierarchy (De Coelesti Hierarchia)"
 aka: ["De Caelesti Hierarchia", "On the Celestial Hierarchy", "The Heavenly Hierarchy"]
 tradition: "Christian Neoplatonism"
