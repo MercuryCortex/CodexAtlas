@@ -18129,3 +18129,541 @@ SCRIPTURE_TEXTS['isaiah-27'] = {
     }
   ]
 };
+
+// -- Ezekiel 8:13–14 (Women Weeping for Tammuz) --
+SCRIPTURE_TEXTS['ezekiel-8-tammuz'] = {
+  "id": "ezekiel-8-tammuz",
+  "title": "Ezekiel 8:13–14 (Women Weeping for Tammuz)",
+  "shortTitle": "Ezekiel 8",
+  "corpus": "Hebrew Bible (Latter Prophets · Ezekiel)",
+  "tradId": "tradition-second-temple-judaism",
+  "date": "c. 592 BCE (Ezekiel's temple-vision, dated to the sixth year of the exile, Ezek 8:1)",
+  "docNode": "document-ezekiel",
+  "language": "Hebrew · King James Version (1611)",
+  "translations": [
+    {
+      "id": "kjv",
+      "label": "KJV (1611)",
+      "note": "King James Version — public domain"
+    }
+  ],
+  "intro": "In a visionary tour of the Jerusalem temple's \"abominations,\" the exilic prophet-priest Ezekiel is shown women performing the ritual mourning-wail for Tammuz at the temple's north gate — the single direct biblical attestation that the Mesopotamian dying-and-rising vegetation god Dumuzi/Tammuz had a living cult inside Judah's own sanctuary in the 6th century BCE. The verse is a polemic, condemning the rite as idolatry; but in condemning it the Hebrew Bible preserves a snapshot of the cross-tradition reach of the Tammuz mourning-cult, the same lament that surfaces as Inanna/Ishtar mourning Dumuzi in Mesopotamia, Aphrodite mourning Adonis in the Greek Adonia, and Isis mourning Osiris in Egypt. Whether these constitute one transmitted \"dying-and-rising god\" pattern or a looser convergence is the central scholarly debate, reopened by Mettinger 2001 against J.Z. Smith's skepticism.",
+  "crossTradition": [
+    {
+      "label": "Descent of Inanna (Sumerian)",
+      "textId": "descent-inanna",
+      "note": "The Tammuz Ezekiel's women weep for is Dumuzi, the consort Inanna sends to the underworld in her place at the climax of the Descent; the mourning-rite is the cultic counterpart of that myth. Jacobsen 1976 (The Treasures of Darkness) reconstructs the Dumuzi lament-liturgy as the ritual core of the descent narrative."
+    },
+    {
+      "label": "Adonis / the Adonia (Greek-Phoenician)",
+      "note": "Adonis IS Tammuz/Dumuzi: the name derives from Semitic adon ('lord'), and the Byblos cult is a Hellenization of the Phoenician-Mesopotamian Tammuz cult — Lucian, De Dea Syria 6–8 explicitly identifies the two. West 1997 (The East Face of Helicon) and Burkert 1992 (The Orientalizing Revolution) document the transmission; the Athenian women's lament of the Adonia is the Greek form of Ezekiel's weeping women."
+    },
+    {
+      "label": "Osiris (Egyptian)",
+      "note": "Frazer 1906 (Adonis Attis Osiris) made Tammuz, Adonis, and Osiris the three core cases of the dying-and-rising vegetation god; Mettinger 2001 defends Dumuzi-Tammuz, Baal, and Osiris as genuine cases on strict textual evidence while rejecting Frazer's over-generalization. Isis mourning the slain Osiris is the Egyptian parallel to Inanna/Aphrodite mourning Dumuzi/Adonis."
+    },
+    {
+      "label": "Jonathan Z. Smith's skeptical critique",
+      "note": "Smith 1987 ('Dying and Rising Gods', Encyclopedia of Religion) argued the explicit resurrection language is largely absent from the pre-Christian sources and that the category was a modern projection of Christian theology backward. Mettinger 2001 is the direct rehabilitation; the panel keeps both poles to mark the live debate rather than assert a settled transmission."
+    }
+  ],
+  "sections": [
+    {
+      "heading": "The Fourth Abomination: Women Weeping for Tammuz",
+      "verses": [
+        {
+          "ref": "8:13",
+          "text": "He said also unto me, Turn thee yet again, and thou shalt see greater abominations that they do.",
+          "textVersions": {
+            "kjv": "He said also unto me, Turn thee yet again, and thou shalt see greater abominations that they do."
+          },
+          "entities": []
+        },
+        {
+          "ref": "8:14",
+          "text": "Then he brought me to the door of the gate of the LORD's house which was toward the north; and, behold, there sat women weeping for Tammuz.",
+          "textVersions": {
+            "kjv": "Then he brought me to the door of the gate of the LORD's house which was toward the north; and, behold, there sat women weeping for Tammuz."
+          },
+          "entities": [
+            {
+              "word": "Tammuz",
+              "node": "dumuzi-tammuz",
+              "type": "deity",
+              "note": "Tammuz is the Akkadian/West-Semitic form of Sumerian Dumuzi, the shepherd-consort of Inanna/Ishtar and the archetypal dying-and-rising vegetation god of Mesopotamia. This verse is the only direct attestation of his cult in the Hebrew Bible: the fourth-month ritual wail for the god's death (the Babylonian month Du'uzu is named for him) had reached the Jerusalem temple itself. Jacobsen 1976 reconstructs the Dumuzi mourning-liturgy; the rite enacts the god's annual descent to the underworld narrated in the Descent of Inanna.",
+              "parallels": [
+                {
+                  "label": "Dumuzi (Sumerian) — Descent of Inanna",
+                  "textId": "descent-inanna",
+                  "note": "Tammuz = Dumuzi, the consort given over to the underworld in Inanna's place; the secure Sumerian-Akkadian identity. Jacobsen 1976."
+                },
+                {
+                  "label": "Adonis (Greek-Phoenician)",
+                  "note": "Adonis IS Tammuz; the name = Semitic adon ('lord'). Lucian De Dea Syria 6–8 identifies Byblian Adonis with Phoenician Tammuz; West 1997 and Burkert 1992 trace the transmission into the Greek Adonia."
+                },
+                {
+                  "label": "Osiris (Egyptian)",
+                  "note": "Frazer 1906 grouped Tammuz, Adonis, and Osiris as the core dying-rising vegetation gods; Mettinger 2001 accepts Dumuzi-Tammuz and Osiris as genuine cases on textual evidence."
+                },
+                {
+                  "label": "Ishtar / Ereshkigal (Akkadian)",
+                  "note": "In the Akkadian Descent of Ishtar, Ishtar mourns and Tammuz is wailed over with the same lament-formulae; the underworld is ruled by Ereshkigal. The Akkadian recension is the bridge between the Sumerian myth and the West-Semitic Tammuz cult Ezekiel condemns."
+                }
+              ]
+            },
+            {
+              "word": "women weeping",
+              "node": "dying-rising-god",
+              "type": "theme",
+              "note": "The ritual lament by women for the dead god is the cultic signature of the dying-and-rising-god complex: the divine consort (Inanna/Ishtar, Aphrodite, Isis) and her human votaries mourn the god's death and prepare his return. Frazer 1890 (The Golden Bough) originated the comparative category from exactly this mourning-rite; J.Z. Smith 1987 demolished its over-broad form; Mettinger 2001 rehabilitated a limited, textually-grounded version. Ezekiel's weeping women are the Judahite instance of the same rite attested as the Adonia in Athens and the Osiris-mourning in Egypt.",
+              "parallels": [
+                {
+                  "label": "Aphrodite mourning Adonis (the Adonia)",
+                  "note": "The Athenian women's lament of the Adonia festival is the Greek counterpart of Ezekiel's weeping women; Burkert 1992 and West 1997 document the Near-Eastern origin of the rite."
+                },
+                {
+                  "label": "Isis mourning Osiris (Egyptian)",
+                  "note": "Plutarch, De Iside et Osiride (~CE 120) gives the fullest narrative of Isis's mourning and reassembly of the slain Osiris; Mettinger 2001 treats it as a parallel case of the divine-consort lament."
+                },
+                {
+                  "label": "Anat mourning Baal (Ugaritic)",
+                  "note": "In the Ugaritic Baal Cycle (Smith 1994) Anat mourns the dead Baal as Inanna mourns Dumuzi — the West-Semitic instance of the consort-lament closest to Ezekiel's Levantine setting."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
+
+// -- Homeric Hymn to Demeter 1–50, 398–403 (The Rape of Persephone and Her Return) --
+SCRIPTURE_TEXTS['homeric-hymn-demeter'] = {
+  "id": "homeric-hymn-demeter",
+  "title": "Homeric Hymn to Demeter 1–50, 398–403 (The Rape of Persephone and Her Return)",
+  "shortTitle": "Hymn to Demeter",
+  "corpus": "Greek · Archaic Hexameter Hymnody",
+  "tradId": "tradition-greek-religion",
+  "date": "c. 650–550 BCE (Archaic period; the foundational Eleusinian text)",
+  "docNode": "phase-3-035-homeric-hymns",
+  "language": "Ancient Greek (Homeric hexameter) · Hugh G. Evelyn-White translation (Loeb Classical Library, 1914) — public domain",
+  "translations": [
+    {
+      "id": "evelyn-white",
+      "label": "Evelyn-White (1914)",
+      "note": "Hugh G. Evelyn-White, Loeb Classical Library 1914 — public domain"
+    }
+  ],
+  "intro": "The longest of the Homeric Hymns and the foundational narrative of the Eleusinian Mysteries. Hades seizes Persephone into the underworld; her mother Demeter, the grain-goddess, blights the earth in grief until Zeus brokers a settlement: because Persephone has tasted the pomegranate seed she must spend a third of each year below and two-thirds above. That annual descent-and-return (katabasis and anabasis) is the Greek form of the dying-and-rising vegetation cycle whose oldest narrative is the Sumerian Descent of Inanna. Burkert (1985) reads the Hymn as the cult-myth (hieros logos) of Eleusis; Mettinger (2001), reassessing Frazer's \"dying-and-rising god\" category, treats the Persephone–Demeter complex and its Near Eastern analogues (Dumuzi, Adonis, Osiris) as a genuine seasonal-mortality pattern rather than a single diffused myth — the honest framing this entry preserves: structural convergence plus, in the Inanna/Dumuzi case, demonstrable Levantine transmission.",
+  "crossTradition": [
+    {
+      "label": "Descent of Inanna (Sumerian)",
+      "textId": "descent-inanna",
+      "note": "The oldest narrative of a deity who descends to the realm of the dead and returns; Dumuzi's release for half the year is the earliest seasonal descent-and-return, and Burkert (Greek Religion, 1985, 159–161) and Mettinger (The Riddle of Resurrection, 2001) treat the Persephone myth as the Greek member of the same Near-Eastern seasonal-mortality pattern."
+    },
+    {
+      "label": "Adonis / Aphrodite (Greek–Phoenician)",
+      "note": "Adonis (= Phoenician Dumuzi/Tammuz) spends part of the year with Persephone below and part with Aphrodite above — the closest structural twin of Persephone's division of the year; Burkert (1985, 176–177) traces the Adonis cult's Levantine origin, an instance of actual transmission rather than mere convergence."
+    },
+    {
+      "label": "Osiris (Egyptian)",
+      "note": "The god who dies, is mourned, and rules the underworld as a power of regeneration; Plutarch (De Iside et Osiride) already identified Osiris with the dying-and-rising complex, and Mettinger (2001) classes Osiris and Persephone together while noting Osiris rises to rule the dead, not the living."
+    },
+    {
+      "label": "Eleusinian Mysteries (the cult)",
+      "note": "The Hymn is the hieros logos of the Eleusinian initiation; Burkert (1985, 285–290) and Foley (The Homeric Hymn to Demeter, 1994) read the grain (Demeter's gift) and Persephone's return as the mystery's promise of a better lot beyond death."
+    },
+    {
+      "label": "Christ — descent and resurrection",
+      "note": "The katabasis-and-anabasis structure — a divine figure who descends to the dead and returns — is the pattern later Christian writers apply to Christ's descensus ad inferos and resurrection; the convergence is structural, not a claim of derivation (Eliade, A History of Religious Ideas, 1978, on the seasonal-vegetation substrate)."
+    }
+  ],
+  "sections": [
+    {
+      "heading": "The Seizure (lines 1–50)",
+      "verses": [
+        {
+          "ref": "1–4",
+          "text": "I begin to sing of rich-haired Demeter, awful goddess—of her and her trim-ankled daughter whom Aidoneus rapt away, given to him by all-seeing Zeus the loud-thunderer.",
+          "textVersions": {
+            "evelyn-white": "I begin to sing of rich-haired Demeter, awful goddess—of her and her trim-ankled daughter whom Aidoneus rapt away, given to him by all-seeing Zeus the loud-thunderer."
+          },
+          "entities": [
+            {
+              "word": "Demeter",
+              "node": "demeter",
+              "type": "deity",
+              "note": "The Greek goddess of grain, the harvest, and the fertile earth; her grief at her daughter's loss will withhold the crops from the world. Burkert (Greek Religion, 1985, 159) identifies her as the grain-mother whose myth grounds the Eleusinian agrarian cult.",
+              "parallels": [
+                {
+                  "label": "Inanna mourning Dumuzi (Sumerian)",
+                  "textId": "descent-inanna",
+                  "note": "The bereaved goddess whose grief is bound to the failure and return of vegetation; the structural antecedent of Demeter's mourning (Mettinger, The Riddle of Resurrection, 2001)."
+                },
+                {
+                  "label": "Isis mourning Osiris (Egyptian)",
+                  "note": "The grieving goddess who seeks her lost partner and restores life; Plutarch (De Iside et Osiride) set the Isis–Osiris and Demeter–Persephone complexes side by side."
+                }
+              ]
+            },
+            {
+              "word": "Aidoneus",
+              "node": "hades",
+              "type": "deity",
+              "note": "Aidoneus is the epic by-form of Hades, lord of the underworld; he abducts Persephone to be his bride in the realm of the dead. The act sets the descent in motion. (Evelyn-White, Loeb 1914.)",
+              "parallels": [
+                {
+                  "label": "Ereshkigal's underworld (Sumerian)",
+                  "textId": "descent-inanna",
+                  "note": "The Kur, land of no return, into which Inanna descends; Hades' realm fills the same cosmological slot in the Greek system (Burkert, 1985, 196–199)."
+                }
+              ]
+            },
+            {
+              "word": "Zeus",
+              "node": "zeus",
+              "type": "deity",
+              "note": "Zeus, the sky-father, has consented to the abduction without Demeter's knowledge — the act that drives the whole crisis. Burkert (1985, 159–160) notes that the Hymn frames the seizure as sanctioned by Zeus, making the eventual settlement a negotiation among the Olympians.",
+              "parallels": [
+                {
+                  "label": "Enlil / An sanctioning the cosmic order (Sumerian)",
+                  "note": "The high sky/storm authority whose decree governs movement between the upper and lower worlds; comparative function rather than transmission (Mettinger, 2001)."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "5–18",
+          "text": "Apart from Demeter, lady of the golden sword and glorious fruits, she was playing with the deep-bosomed daughters of Oceanus and gathering flowers over a soft meadow, roses and crocuses and beautiful violets, irises also and hyacinths and the narcissus, which Earth made to grow at the will of Zeus and to please the Host of Many, to be a snare for the bloom-like girl—a marvellous, radiant flower.",
+          "textVersions": {
+            "evelyn-white": "Apart from Demeter, lady of the golden sword and glorious fruits, she was playing with the deep-bosomed daughters of Oceanus and gathering flowers over a soft meadow, roses and crocuses and beautiful violets, irises also and hyacinths and the narcissus, which Earth made to grow at the will of Zeus and to please the Host of Many, to be a snare for the bloom-like girl—a marvellous, radiant flower."
+          },
+          "entities": [
+            {
+              "word": "lady of the golden sword and glorious fruits",
+              "node": "wheat-grain",
+              "type": "symbol",
+              "note": "Demeter's defining attribute is the grain and the cultivated fruits of the earth; the cut ear of wheat is her emblem and, at Eleusis, the central symbol of the mystery — the seed that must go into the dark earth to rise again. Burkert (1985, 159, 285–290) and Foley (The Homeric Hymn to Demeter, 1994) read the grain as the visible figure of Persephone's descent and return.",
+              "parallels": [
+                {
+                  "label": "Osiris as the sprouting grain (Egyptian)",
+                  "note": "Osiris was figured as germinating barley ('Osiris beds'); the buried-seed-that-rises image attaches to both gods independently (Mettinger, 2001)."
+                },
+                {
+                  "label": "Dumuzi the shepherd-and-grain god (Sumerian)",
+                  "textId": "descent-inanna",
+                  "note": "The vegetation power whose seasonal absence and return tracks the agricultural year, as Demeter's grain does (Mettinger, 2001)."
+                }
+              ]
+            },
+            {
+              "word": "narcissus",
+              "node": "eleusinian-mystery-revelation",
+              "type": "theme",
+              "note": "The narcissus is the bait Earth grows 'at the will of Zeus' to lure Persephone — the trap that opens the underworld. As the cult-myth of Eleusis, the Hymn turns this descent into the pattern the initiate re-experiences: a passage through death toward a blessed lot. Burkert (1985, 285–290) treats the Hymn as the hieros logos of the Mysteries.",
+              "parallels": [
+                {
+                  "label": "Inanna's me and her descent (Sumerian)",
+                  "textId": "descent-inanna",
+                  "note": "The deliberate, fated descent of a deity into the lower world; the Greek and Sumerian narratives both make the descent a structured ritual passage (Mettinger, 2001)."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "15–21",
+          "text": "And the girl was amazed and reached out with both hands to take the lovely toy; but the wide-pathed earth yawned there in the plain of Nysa, and the lord, Host of Many, with his immortal horses sprang out upon her—the Son of Cronos, He who has many names. He caught her up reluctant on his golden car and bare her away lamenting.",
+          "textVersions": {
+            "evelyn-white": "And the girl was amazed and reached out with both hands to take the lovely toy; but the wide-pathed earth yawned there in the plain of Nysa, and the lord, Host of Many, with his immortal horses sprang out upon her—the Son of Cronos, He who has many names. He caught her up reluctant on his golden car and bare her away lamenting."
+          },
+          "entities": [
+            {
+              "word": "the lord, Host of Many",
+              "node": "hades",
+              "type": "deity",
+              "note": "'Host of Many' (Polydegmon) — Hades named for the multitude of the dead he receives. His emergence through the gaping earth is the moment of the katabasis. (Evelyn-White, Loeb 1914; Burkert 1985, 196.)",
+              "parallels": [
+                {
+                  "label": "Ereshkigal, queen of the Great Below (Sumerian)",
+                  "textId": "descent-inanna",
+                  "note": "The ruler of the land of the dead who claims the descending deity; Hades plays the abductor-sovereign role in the Greek reflex (Burkert, 1985, 196–199)."
+                }
+              ]
+            },
+            {
+              "word": "the wide-pathed earth yawned",
+              "node": "underworld-descent",
+              "type": "theme",
+              "note": "The earth splits open and the deity is taken down into the realm of the dead — the descent (katabasis) proper. This is the Greek instance of the descent-to-the-underworld mytheme whose oldest narrative form is Inanna's. Burkert (1985, 159–161) and Mettinger (2001) place the Persephone descent within the Near-Eastern seasonal pattern.",
+              "parallels": [
+                {
+                  "label": "Inanna's descent through the seven gates (Sumerian)",
+                  "textId": "descent-inanna",
+                  "note": "The earliest surviving narrative of a deity's descent into the land of the dead; Persephone's seizure is the Greek member of the type (Mettinger, The Riddle of Resurrection, 2001)."
+                },
+                {
+                  "label": "Osiris into the Duat (Egyptian)",
+                  "note": "The god who passes into the underworld and becomes its lord; the descent here issues in rule over the dead rather than seasonal return (Mettinger, 2001)."
+                }
+              ]
+            },
+            {
+              "word": "golden car and bare her away lamenting",
+              "node": "katabasis-and-anabasis",
+              "type": "theme",
+              "note": "The carrying-down that will be answered, by the settlement, with an annual carrying-up: the descent-and-return (katabasis kai anabasis) that structures the whole Hymn. Burkert (1985, 160) reads Persephone's alternation as the mythic register of the agricultural year.",
+              "parallels": [
+                {
+                  "label": "Dumuzi's release for half the year (Sumerian)",
+                  "textId": "descent-inanna",
+                  "note": "Dumuzi alternates with his sister between the underworld and the living world — the oldest descent-and-return cycle, and the type Burkert and Mettinger compare to Persephone's."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "The Settlement: a third of the year below (lines 398–403)",
+      "verses": [
+        {
+          "ref": "398–403",
+          "text": "but if you have tasted food, you must go back again beneath the secret places of the earth, there to dwell a third part of the seasons every year: yet for the two parts you shall be with me and the other deathless gods.",
+          "textVersions": {
+            "evelyn-white": "but if you have tasted food, you must go back again beneath the secret places of the earth, there to dwell a third part of the seasons every year: yet for the two parts you shall be with me and the other deathless gods."
+          },
+          "entities": [
+            {
+              "word": "a third part of the seasons every year",
+              "node": "dying-rising-god",
+              "type": "theme",
+              "note": "Because Persephone ate the pomegranate seed below, she must return to the underworld for a third of each year — the annual death-and-return that makes her the Greek figure of the seasonal dying-and-rising vegetation power. Mettinger (The Riddle of Resurrection, 2001) treats the Persephone–Demeter complex as a genuine seasonal-mortality pattern alongside Dumuzi, Adonis, and Osiris, correcting Frazer's looser single-diffusion model.",
+              "parallels": [
+                {
+                  "label": "Dumuzi / Tammuz (Sumerian–Babylonian)",
+                  "textId": "descent-inanna",
+                  "note": "The vegetation god who spends part of the year in the underworld and part above; the oldest attested form of the alternation Persephone enacts (Mettinger, 2001)."
+                },
+                {
+                  "label": "Adonis (Greek–Phoenician)",
+                  "note": "Divided his year between Persephone below and Aphrodite above — the closest structural parallel; Burkert (1985, 176–177) derives the Adonis cult from the Levant, a case of transmission as well as convergence."
+                },
+                {
+                  "label": "Osiris (Egyptian)",
+                  "note": "The dying god who rises to rule the dead; Mettinger (2001) groups him with Persephone while noting his return is to sovereignty over the underworld rather than to the upper world."
+                }
+              ]
+            },
+            {
+              "word": "the secret places of the earth",
+              "node": "mystery-initiation",
+              "type": "theme",
+              "note": "Persephone's recurring passage beneath the earth is the model the Eleusinian initiate re-lives; the Mysteries promised those who 'have seen these things' a better portion among the dead. Burkert (1985, 285–290) and Foley (1994) read the Hymn as the cult-legend underwriting that initiatory hope.",
+              "parallels": [
+                {
+                  "label": "Inanna's ritualized descent (Sumerian)",
+                  "textId": "descent-inanna",
+                  "note": "A deity's structured descent into and return from the land of the dead; both traditions ritualize the passage, though only Eleusis turns it into a personal initiation (Mettinger, 2001)."
+                }
+              ]
+            },
+            {
+              "word": "you shall be with me and the other deathless gods",
+              "node": "sacred-marriage",
+              "type": "theme",
+              "note": "Persephone is now Hades' queen and consort: the abduction has become a marriage that binds the upper and lower worlds, her shuttling between them sealing the union of death and fertility. Burkert (1985, 160) notes the Hymn casts the settlement as Persephone's enthronement as bride of the underworld.",
+              "parallels": [
+                {
+                  "label": "Inanna and Dumuzi (Sumerian)",
+                  "textId": "descent-inanna",
+                  "note": "The sacred-marriage pairing of the fertility goddess and the vegetation god whose union and separation drive the seasonal cycle (Mettinger, 2001)."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
+
+// -- Hosea 6:1–3 (After two days will he revive us; in the third day he will raise us up) --
+SCRIPTURE_TEXTS['hosea-6'] = {
+  "id": "hosea-6",
+  "title": "Hosea 6:1–3 (After two days will he revive us; in the third day he will raise us up)",
+  "shortTitle": "Hosea 6",
+  "corpus": "Hebrew Bible (Latter Prophets · The Twelve)",
+  "tradId": "tradition-second-temple-judaism",
+  "date": "c. 750–722 BCE (the prophet Hosea, northern kingdom; with later Judahite redaction)",
+  "docNode": "document-hosea",
+  "language": "Hebrew · King James Version (1611)",
+  "translations": [
+    {
+      "id": "kjv",
+      "label": "KJV (1611)",
+      "note": "King James Version — public domain"
+    }
+  ],
+  "intro": "A penitential liturgy placed on the lips of a wounded Israel: the LORD who \"hath torn\" will heal, and \"after two days will he revive us: in the third day he will raise us up.\" In its own eighth-century setting the oracle is national, not eschatological — the \"two days / third day\" is the idiom of swift, certain restoration, and the closing images of YHWH coming \"as the rain, as the latter and former rain\" deliberately claim for YHWH the fertility-and-revival powers the northern kingdom credited to Baal (Wolff 1974; Andersen–Freedman 1980). The text is the classic test case for the \"dying-and-rising god\" question: Frazer read such revival language as borrowed from the Tammuz/Adonis cycle, but Mettinger (2001) — re-opening the category after a century of skepticism — argues the Hebrew motif is a structural convergence and polemic against the Canaanite dying-rising deities, not a transmission from them. Later Judaism and especially Christianity then re-read 6:2 eschatologically, making it a proof-text for the \"third-day\" resurrection (Day 2000).",
+  "crossTradition": [
+    {
+      "label": "Descent of Inanna (Sumerian) — the dying-rising prototype",
+      "textId": "descent-inanna",
+      "note": "The oldest narrative of death-and-return in the underworld; Mettinger 2001 treats the Dumuzi/Inanna cycle as the type the Hebrew revival-language converges on and polemicizes against, NOT a source Hosea borrowed."
+    },
+    {
+      "label": "Plutarch · Osiris-Isis (Egyptian) — death and revival of the god",
+      "textId": "plutarch-de-iside-1",
+      "note": "Osiris is Mettinger's (2001) other principal dying-and-rising deity of the ANE; the agricultural revival grammar ('he hath torn… he will heal… revive us') is the same structural slot, reached independently in Egyptian myth."
+    },
+    {
+      "label": "Ezekiel 37 — the valley of dry bones",
+      "textId": "ezekiel-37-dry-bones",
+      "note": "The other great Hebrew national-revival vision: the resurrection imagery is the corporate restoration of Israel from exile, the same figure Hosea 6:2 uses — Day 2000 reads both as way-stations from national revival toward individual resurrection."
+    },
+    {
+      "label": "Isaiah 52–53 — the suffering servant who lives again",
+      "textId": "isaiah-53",
+      "note": "The servant who is 'cut off' yet 'shall prolong his days' (Isa 53:8,10) is the other prophetic text where death-and-vindication language is applied to YHWH's people; both feed the later resurrection reading (Day 2000)."
+    },
+    {
+      "label": "Daniel 12 / Daniel 7 — the rise of bodily resurrection",
+      "textId": "daniel-7",
+      "note": "By the 2nd century BCE the corporate revival of Hosea/Ezekiel has become explicit individual resurrection of the dead (Dan 12:2); Day 2000 traces this trajectory out of the prophetic revival oracles."
+    },
+    {
+      "label": "1 Corinthians 15 — 'raised on the third day according to the scriptures'",
+      "textId": "1-corinthians-15",
+      "note": "Paul's 'third day according to the scriptures' (1 Cor 15:4) is widely held to echo Hosea 6:2; the New Testament reads the national-revival oracle as a prophecy of Christ's bodily resurrection (Day 2000)."
+    }
+  ],
+  "sections": [
+    {
+      "heading": "Come, and let us return unto the LORD",
+      "verses": [
+        {
+          "ref": "6:1",
+          "text": "Come, and let us return unto the LORD: for he hath torn, and he will heal us; he hath smitten, and he will bind us up.",
+          "textVersions": {
+            "kjv": "Come, and let us return unto the LORD: for he hath torn, and he will heal us; he hath smitten, and he will bind us up."
+          },
+          "entities": [
+            {
+              "word": "the LORD",
+              "node": "yahweh",
+              "type": "deity",
+              "note": "YHWH, the God of Israel, here both the one who wounds ('he hath torn') and the one who heals — the prophet claims for YHWH alone the life-giving powers the northern kingdom credited to Baal (Wolff 1974).",
+              "parallels": [
+                {
+                  "label": "Baal (Ugaritic) — the storm-and-fertility god displaced",
+                  "note": "Hosea's polemic recasts YHWH as the true giver of rain and revival against the Baal fertility cult of the north (Day 2000; the Hosea doc's own redaction note)."
+                }
+              ]
+            },
+            {
+              "word": "he hath torn, and he will heal us",
+              "node": "dying-rising-god",
+              "type": "theme",
+              "note": "The wound-then-revive grammar is the structural shape Mettinger (2001) isolates in the dying-and-rising deities of the ANE; in Hosea it is transferred to the covenant God and the nation, a convergence with — and polemic against — the Tammuz/Baal pattern, not a borrowing from it.",
+              "parallels": [
+                {
+                  "label": "Dumuzi/Tammuz (Mesopotamian)",
+                  "textId": "descent-inanna",
+                  "note": "The dying-and-returning shepherd-god whose seasonal revival the motif structurally parallels (Mettinger 2001)."
+                },
+                {
+                  "label": "Osiris (Egyptian)",
+                  "textId": "plutarch-de-iside-1",
+                  "note": "The god killed and revived; the other principal ANE dying-rising deity in Mettinger's (2001) re-examination."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "6:2",
+          "text": "After two days will he revive us: in the third day he will raise us up, and we shall live in his sight.",
+          "textVersions": {
+            "kjv": "After two days will he revive us: in the third day he will raise us up, and we shall live in his sight."
+          },
+          "entities": [
+            {
+              "word": "in the third day he will raise us up",
+              "node": "resurrection-of-the-dead",
+              "type": "theme",
+              "note": "In its eighth-century context the 'two days / third day' is an idiom for swift and certain national restoration (Wolff 1974; Andersen–Freedman 1980). Only later is it read as bodily resurrection: Day (2000) traces the line from this corporate revival to the explicit resurrection of Daniel 12, and the New Testament makes it the 'third day according to the scriptures' of Christ's rising.",
+              "parallels": [
+                {
+                  "label": "Daniel 12 — they that sleep shall awake",
+                  "textId": "daniel-7",
+                  "note": "The corporate revival becomes individual resurrection of the dead by the 2nd century BCE (Day 2000)."
+                },
+                {
+                  "label": "1 Corinthians 15:4 — raised the third day according to the scriptures",
+                  "textId": "1-corinthians-15",
+                  "note": "Paul's 'third day' formula is widely read as an echo of Hosea 6:2 (Day 2000)."
+                },
+                {
+                  "label": "Ezekiel 37 — the dry bones revived",
+                  "textId": "ezekiel-37-dry-bones",
+                  "note": "The parallel prophetic figure of national resurrection from exile (Day 2000)."
+                }
+              ]
+            },
+            {
+              "word": "revive us",
+              "node": "dying-rising-god",
+              "type": "theme",
+              "note": "The verb of reviving (Hebrew ḥyh) carries the agricultural connotation of life returning after death; Mettinger (2001) reads the imagery as the Hebrew counterpart to — and rejection of — the seasonal revival of the dying-rising deities.",
+              "parallels": [
+                {
+                  "label": "Inanna's return from the Great Below",
+                  "textId": "descent-inanna",
+                  "note": "The oldest death-and-return narrative; the structural prototype of revival-after-death (Mettinger 2001)."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "6:3",
+          "text": "Then shall we know, if we follow on to know the LORD: his going forth is prepared as the morning; and he shall come unto us as the rain, as the latter and former rain unto the earth.",
+          "textVersions": {
+            "kjv": "Then shall we know, if we follow on to know the LORD: his going forth is prepared as the morning; and he shall come unto us as the rain, as the latter and former rain unto the earth."
+          },
+          "entities": [
+            {
+              "word": "he shall come unto us as the rain",
+              "node": "yahweh",
+              "type": "deity",
+              "note": "YHWH's coming 'as the rain' and 'as the latter and former rain' claims the fertility function of the storm-god for the covenant God — the heart of Hosea's anti-Baal polemic (Wolff 1974; Day 2000).",
+              "parallels": [
+                {
+                  "label": "Baal the rain-giver (Ugaritic)",
+                  "note": "The fertility power Hosea strips from Baal and gives to YHWH (Day 2000)."
+                }
+              ]
+            },
+            {
+              "word": "to know the LORD",
+              "node": "sacred-marriage",
+              "type": "theme",
+              "note": "Hosea frames the whole covenant as a marriage between YHWH and Israel (Hos 1–3), so 'to know the LORD' carries the intimate, covenantal-marital sense; the book is the source of the bride-and-bridegroom covenant metaphor later traditions inherit (Wolff 1974; the Hosea doc's transmission note: Jeremiah 2–3, Ezekiel 16/23, and the NT 'bride of Christ').",
+              "parallels": [
+                {
+                  "label": "Sacred marriage of Inanna and Dumuzi (Sumerian)",
+                  "textId": "descent-inanna",
+                  "note": "The hieros-gamos of goddess and shepherd-king that Hosea's covenant-marriage imagery structurally inverts and moralizes (Day 2000)."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
