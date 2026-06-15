@@ -6006,7 +6006,7 @@ SCRIPTURE_TEXTS['romans-8'] = {
 
 SCRIPTURE_TEXTS['ecclesiastes-1'] = {
   title: 'Ecclesiastes — Vanity of Vanities',
-  docNode: 'phase-2-ecclesiastes',
+  docNode: 'phase-2-036-ecclesiastes',
   shortTitle: 'Ecclesiastes',
   tradition: 'Hebrew Bible',
   date: 'c. 450–200 BCE',
@@ -7924,7 +7924,7 @@ SCRIPTURE_TEXTS['philippians-2'] = {
 
 SCRIPTURE_TEXTS['song-of-songs'] = {
   title: 'Song of Songs',
-  docNode: 'phase-2-song-of-songs',
+  docNode: 'phase-2-037-song-of-songs',
   shortTitle: 'Song of Songs',
   tradition: 'Christianity',
   date: 'c. 10th–3rd century BCE',
