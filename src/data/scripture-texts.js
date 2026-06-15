@@ -1691,7 +1691,7 @@ SCRIPTURE_TEXTS['quran-fatiha-nur'] = {
 // ── 16. JOB 38 — GOD FROM THE WHIRLWIND ──────────────────────────────────
 SCRIPTURE_TEXTS['job-38'] = {
   title      : 'Job 38–42 — The Voice from the Whirlwind',
-  docNode: 'phase-2-job',
+  docNode: 'phase-2-035-job',
   shortTitle : 'Job 38 — Whirlwind',
   tradition  : 'Hebrew Bible / Wisdom Literature',
   date       : 'c. 6th–4th century BCE (text); the story may be pre-Israelite',
