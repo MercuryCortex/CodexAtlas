@@ -2,7 +2,7 @@
 type: theme
 id: "origin-of-evil"
 name: "Origin of Evil"
-aka: ["theodicy", "whence evil", "the problem of evil"]
+aka: ["whence evil", "the problem of evil", "the origin of sin"]
 category: "theological"
 appearances: ["[[phase-3-004-1-enoch]]", "[[phase-2-002-gathas-of-zarathustra]]", "[[phase-4-002-apocryphon-of-john]]", "[[phase-4-029-augustine-city-of-god]]"]
 deity-instances: ["[[angra-mainyu-ahriman]]", "[[yaldabaoth]]", "[[satanael]]"]
