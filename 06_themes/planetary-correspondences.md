@@ -73,10 +73,10 @@ refs:
     type: "monograph"
     tier: 1
     notes: "Classic account of the diffusion of Babylonian–Hellenistic astral religion, including the planetary week, into the Roman world."
-  - title: "The History of the Heavens: A History of Scientific Cosmology (Histoire de l'astronomie ancienne)"
+  - title: "A History of Ancient Mathematical Astronomy"
     author: "Neugebauer, Otto"
     year: 1975
-    publisher: "Springer (A History of Ancient Mathematical Astronomy)"
+    publisher: "Springer-Verlag (3 vols., Studies in the History of Mathematics and Physical Sciences 1)"
     type: "monograph"
     tier: 1
     notes: "Definitive technical history; documents the Mesopotamian origin of planetary astronomy and its Hellenistic transmission. Cited for the astronomical substrate, not the correspondence symbolism."

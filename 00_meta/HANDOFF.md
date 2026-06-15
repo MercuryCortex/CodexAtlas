@@ -101,8 +101,10 @@
 >   plain backticked text — never doubled square brackets — in coordination prose
 >   (`feedback_status_log_backtick_wikilinks`).
 > - **id-vs-filename:** the completeness BAR matches the `id:` field, but **linkcheck resolves
->   wikilinks on the FILENAME-stem**. Some old nodes differ (Job's id is `phase-2-job` but its file is
->   `phase-2-035-job.md`; Ecclesiastes = `phase-2-036-ecclesiastes`). Wikilink the FILENAME.
+>   wikilinks on the FILENAME-stem**, but build_data keys nodes on `id:` — so when they differ, edges
+>   silently fail to draw. **Keep `id:` == filename-stem.** (Job's `phase-2-job` vs `phase-2-035-job.md`
+>   mismatch was reconciled to the filename form 2026-06-15; audit other phase-N docs for the same drift.)
+>   Wikilink the FILENAME.
 > - **slug-suffix convention** (`-roman`/`-greek`/`-egyptian`/`josiah-king`/`nebuchadnezzar-ii`): an
 >   un-anchored `^id: slug` grep prefix-matches longer ids → false "exists". Use the `$`-anchored form.
 > - **Lane discipline:** the pre-commit hook refuses Lane-A (`0N_*` content) + Lane-B (`src/`,`scripts/`)
