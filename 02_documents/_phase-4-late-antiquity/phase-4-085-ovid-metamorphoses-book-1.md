@@ -17,7 +17,7 @@ region: "Augustan Rome / Tomis (Ovid's exile-place after 8 CE)"
 city-of-origin: "Rome"
 authorship: "known: Publius Ovidius Naso (Ovid, 43 BCE – 17/18 CE)"
 key-figures: ["[[ovid]]", "[[deucalion]]", "[[pyrrha]]", "[[prometheus]]", "Jupiter (the deity who sends the flood)"]
-themes: ["[[flood-motif]]", "[[cosmogony]]", "[[anthropogony]]", "[[golden-age-decline]]"]
+themes: ["[[flood-motif]]", "[[cosmogony]]", "[[anthropos-myth]]", "[[four-ages-degeneration]]"]
 parallels: ["[[phase-1-006-atrahasis]]", "[[phase-1-016-eridu-genesis-flood]]", "[[phase-1-004-gilgamesh-old-babylonian]] Tablet XI", "Genesis 6–9", "Apollodorus *Bibliotheca* 1.7.2", "[[phase-3-022-plato-timaeus-critias-atlantis]] (Plato's multiple-floods reference)"]
 influenced-by: ["Pindar *Olympian* 9", "Hesiod *Works and Days* (golden-age decline pattern)", "Apollodorus *Bibliotheca* (Greek mythological-handbook tradition)", "Greek poetic and mythographic sources broadly"]
 influences: ["medieval and Renaissance Latin reception of Greek mythology (Ovid Met. is THE principal Latin channel)", "Dante *Divine Comedy*", "Petrarch", "Boccaccio *Genealogia Deorum Gentilium*", "Chaucer", "Shakespeare (esp. *A Midsummer Night's Dream*, *The Tempest*)", "Milton", "Renaissance painting (Bernini, Titian, Rubens, Poussin all draw on Met. directly)"]
@@ -78,8 +78,8 @@ The work is **the principal Latin channel** through which Greek mythology reache
 
 - [[flood-motif]] — Ovid 1.253–415 is the principal Latin literary form of the Mediterranean flood-tradition.
 - [[cosmogony]] — Ovid 1.1–88 is one of the most-influential cosmogonic passages in Western literature.
-- [[anthropogony]] — the repopulation-by-stones motif (1.395–415) is the Greek-Roman tradition's distinctive post-flood-anthropogony.
-- [[golden-age-decline]] — the four-ages structure (1.89–150) integrates the Hesiodic decline-of-the-ages pattern.
+- [[anthropos-myth]] — the repopulation-by-stones motif (1.395–415) is the Greek-Roman tradition's distinctive post-flood-anthropogony.
+- [[four-ages-degeneration]] — the four-ages structure (1.89–150) integrates the Hesiodic decline-of-the-ages pattern.
 
 ## Connections (provisional)
 

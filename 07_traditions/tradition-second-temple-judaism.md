@@ -26,7 +26,7 @@ key-documents:
   - "[[phase-3-012-wisdom-of-solomon]] — wisdom + immortality; ~50 BCE–50 CE (Alexandria)"
   - "[[phase-3-013-philo-of-alexandria]] — Platonic-Jewish synthesis; Logos theology"
 key-themes:
-  - "[[apocalypticism]]"
+  - "[[apocalyptic-revelation]]"
   - "[[messianic-revelation]]"
   - "[[persian-period-injection]]"
   - "[[logos-cosmic-reason]]"

@@ -17,7 +17,7 @@ region: "Pan-Indian (the Mahābhārata is a multi-regional epic; the VS itself i
 city-of-origin: ""
 authorship: "redacted (the Anuśāsana-parvan layer of the Mahābhārata, attributed to Vyāsa; the recited speaker in narrative is Bhīṣma to Yudhiṣṭhira)"
 key-figures: ["Bhīṣma (narrative speaker)", "Yudhiṣṭhira (narrative interlocutor)", "Vyāsa (traditional Mahābhārata author)"]
-themes: ["[[divine-name]]", "[[divine-emanation]]", "[[avatar-doctrine]]", "[[divine-immanence]]", "[[bhakti-devotion]]", "[[apophasis]]"]
+themes: ["[[divine-name]]", "[[divine-emanation]]", "[[avatar-doctrine]]", "[[divine-immanence]]", "[[bhakti-devotion]]", "[[theme-apophatic-theology]]"]
 parallels: ["[[phase-3-008-book-of-daniel]] (names-of-God devotion)", "Sufi *al-asmāʾ al-ḥusnā* (the 99 Names of Allāh)", "Christian *Jesus Prayer* / litanies of the divine names"]
 influenced-by: ["[[phase-2-001-rig-veda-family-books]] (the *Puruṣa Sūkta* RV 10.90 supplies several VS names)", "early Vaishnava theological-devotional literature", "the Mahābhārata's broader Vaishnava strata"]
 influences: ["all subsequent Vaishnava liturgy", "[[phase-5-005-shankara-brahma-sutra-bhasya]] (Shankara wrote a commentary on the VS)", "[[phase-5-016-ramanuja-sribhasya]] (Ramanuja's school produced commentaries)", "[[phase-5-022-madhva-brahma-sutra-bhasya]] (Madhva wrote a commentary)", "modern Hindu daily liturgical recitation worldwide"]
@@ -76,7 +76,7 @@ A litany of one thousand epithets-names of the god Viṣṇu, embedded in the An
 - [[avatar-doctrine]] — the names include the principal *avatāra* references (Matsya, Kūrma, Varāha, Narasiṃha, Vāmana, Paraśurāma, Rāma, Krishna), grounding the developed *daśāvatāra* (ten-avatāra) doctrine in liturgical recitation.
 - [[divine-emanation]] — the names range from concrete-personal (Krishna, Rāma) through cosmological-impersonal (Brahman, Sarva, Vyāpī — All-Pervader) — articulating Viṣṇu as both personal divinity and ultimate metaphysical ground.
 - [[bhakti-devotion]] — the recitation itself is a devotional act; the *phala-śruti* verses promise specific benefits (health, prosperity, liberation) to the reciter.
-- [[divine-immanence]] / [[apophasis]] — names like *Aprameya* (Immeasurable), *Avyaya* (Imperishable), and *Avyakta* (Unmanifest) articulate the apophatic-immanent register alongside the personal-devotional one.
+- [[divine-immanence]] / [[theme-apophatic-theology]] — names like *Aprameya* (Immeasurable), *Avyaya* (Imperishable), and *Avyakta* (Unmanifest) articulate the apophatic-immanent register alongside the personal-devotional one.
 
 ## Connections (provisional)
 - → [[phase-2-001-rig-veda-family-books]] — *direct-quote* / *parallel-motif*: the *Puruṣa Sūkta* (RV 10.90) supplies several VS names (*Puruṣa*, *Vāsudeva*, *Viṣṇu*) and conceptually grounds the names-of-God / cosmic-divinity tradition.

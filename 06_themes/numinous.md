@@ -36,7 +36,7 @@ Rudolf Otto's category (*Das Heilige*, 1917) for the *non-rational, non-ethical*
 
 The category remains contested. Critics (Proudfoot, Wayne Proudfoot 1985 *Religious Experience*) argued that Otto's "numinous" is itself a culturally-shaped construction — there is no pre-conceptual numinous experience independent of the interpretive frameworks the subject already holds. Defenders insist on the cross-cultural recurrence of *mysterium tremendum* phenomenology.
 
-Related: [[hierophany]], [[sacred-and-profane]], [[mysterium-tremendum]].
+Related: [[hierophany]], [[sacred-and-profane]], [[consciousness-otto-numinous-mysterium-tremendum]].
 
 ## Refs
 1. Otto, *The Idea of the Holy*, 1917.

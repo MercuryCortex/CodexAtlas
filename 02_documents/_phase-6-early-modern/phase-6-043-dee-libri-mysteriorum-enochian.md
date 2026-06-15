@@ -20,7 +20,7 @@ key-figures:
   - "[[edward-kelley]]"
 themes:
   - "[[prisca-theologia]]"
-  - "[[apocalypticism]]"
+  - "[[apocalyptic-revelation]]"
   - "[[merkabah-miraj-ascent-chain]]"
 parallels:
   - "[[phase-5-013-hekhalot-literature]]"

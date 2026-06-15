@@ -17,7 +17,7 @@ region: "Aotearoa / New Zealand"
 city-of-origin: "various — iwi-specific (tribal) versions; Ngāti Awa, Ngāti Porou, Tūhoe, Tainui, Te Arawa traditions"
 authorship: "anonymous Māori oral tradition; tohunga (priest-experts) custodians; collected by William Colenso, Edward Shortland, John White, Elsdon Best, and others 1840s onward"
 key-figures: []
-themes: ["[[primordial-darkness]]", "[[genealogical-cosmogony]]", "[[evolutionary-cosmogony]]", "[[sky-earth-separation]]"]
+themes: ["[[primordial-darkness]]", "[[genealogical-cosmogony]]", "[[evolutionary-cosmogony]]", "[[world-parent-cosmogony]]"]
 parallels: ["[[phase-8-010-kumulipo]]"]
 influenced-by: ["ancestral Polynesian cosmogonic substrate (shared with Hawaiian, Tahitian, Cook Islands traditions)"]
 influences: ["20th-c. Māori cultural revitalization (Te Reo movement, Treaty of Waitangi Tribunal jurisprudence)"]
@@ -77,7 +77,7 @@ The Māori cosmogonic tradition, transmitted through chant and *whakapapa* (gene
 
 ## Themes and motifs
 - [[primordial-darkness]] — *Te Pō* sequence; multiple Nights of increasing differentiation precede the World of Light.
-- [[sky-earth-separation]] — Ranginui and Papatūānuku's forced separation by Tāne is the central cosmogonic event. Compare Egyptian Geb-Nut separation; Sumerian An-Ki separation; Hesiod's Ouranos-Gaia (similar separation, very different mechanism).
+- [[world-parent-cosmogony]] — Ranginui and Papatūānuku's forced separation by Tāne is the central cosmogonic event. Compare Egyptian Geb-Nut separation; Sumerian An-Ki separation; Hesiod's Ouranos-Gaia (similar separation, very different mechanism).
 - [[genealogical-cosmogony]] — *whakapapa* makes cosmogony, genealogy, and identity continuous; human iwi descend genealogically from atua.
 - [[evolutionary-cosmogony]] — emergence through phases of increasing differentiation, parallel structurally to the Kumulipo's species-pair emergence.
 

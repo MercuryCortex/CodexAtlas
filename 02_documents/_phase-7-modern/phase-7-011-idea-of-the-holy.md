@@ -17,7 +17,7 @@ region: "Germany"
 city-of-origin: "Breslau / Marburg"
 authorship: "known: Rudolf Otto (1869–1937)"
 key-figures: ["[[rudolf-otto]]"]
-themes: ["[[numinous]]", "[[mysterium-tremendum]]"]
+themes: ["[[numinous]]", "[[consciousness-otto-numinous-mysterium-tremendum]]"]
 parallels: ["[[phase-7-022-sacred-and-profane]]", "[[phase-7-010-elementary-forms-religious-life]]"]
 influenced-by: ["Schleiermacher (*Reden über die Religion*, 1799 — religion as 'feeling of absolute dependence')", "Kant (epistemic limits + the moral 'sublime')", "William James *Varieties of Religious Experience* (1902)"]
 influences: ["Mircea Eliade (Otto's *numinous* + *hierophany* underlies Eliade's *sacred*)", "C.G. Jung (Jung adopts *numinous* as a working term)", "later phenomenology of religion (van der Leeuw, Wach, Smart)"]
