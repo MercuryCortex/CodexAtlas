@@ -17346,3 +17346,70 @@ SCRIPTURE_TEXTS['han-feizi'] = {
 
 
 
+
+// ── ISAIAH 51:9–11 (the Hebrew Chaoskampf — YHWH cuts Rahab) ──────────────────
+SCRIPTURE_TEXTS['isaiah-51'] = {
+  id: 'isaiah-51',
+  title: 'Isaiah 51:9–11 (Awake, O arm of the LORD — the cutting of Rahab)',
+  shortTitle: 'Isaiah 51',
+  corpus: 'Hebrew Bible (Latter Prophets · Deutero-Isaiah)',
+  tradId: 'tradition-second-temple-judaism',
+  date: 'c. 540 BCE (Deutero-Isaiah, the Babylonian exile)',
+  docNode: 'phase-3-001-second-third-isaiah',
+  language: 'Hebrew · King James Version (1611)',
+  translations: [
+    { id: 'kjv', label: 'KJV (1611)', note: 'King James Version — public domain' },
+  ],
+  intro: 'Isaiah 51:9–10 is the clearest surviving Hebrew Chaoskampf. The exilic prophet rouses the "arm of the LORD" by invoking the primeval combat that Genesis 1 had demythologised — YHWH cutting Rahab, wounding the dragon (tannin), and drying the sea and the great deep (tehom). The same passage fuses that cosmogonic combat with the Exodus sea-crossing ("a way for the ransomed to pass over") and the coming return from Babylon: creation, redemption, and eschatology become one act of the divine warrior. It names the two chaos-beings Rahab and Tannin beside the deep (tehom) and the Sea (Yam) — the Hebrew end of the same combat the Enuma Elish tells of Marduk and Tiamat.',
+  crossTradition: [
+    { label: 'Enuma Elish IV (Marduk slays Tiamat)', textId: 'enuma-elish-4', note: 'The Mesopotamian original of the combat: Marduk splits the chaos-sea Tiamat. Isaiah invokes the same storm-god-vs-chaos-sea pattern, YHWH cutting Rahab and the dragon and drying the deep (tehom is cognate with Tiamat).' },
+    { label: 'Genesis 1 — the demythologised deep', textId: 'genesis-1', note: 'Where the Priestly Genesis 1 reduces the chaos-sea to an inert tehom that God orders by speech, Isaiah 51 keeps the older living combat YHWH fought against Rahab and the dragon.' },
+    { label: 'Baal Cycle — Baal vs Yam / Lotan', textId: 'baal-cycle-1', note: 'The Canaanite combat (Baal defeats Sea and the seven-headed Lotan) the Hebrew tradition inherits; Lotan = Leviathan, the dragon = tannin.' },
+    { label: 'Psalm 74 — breaking the heads of the dragons', note: 'The parallel Hebrew combat-psalm: God divides the sea and breaks the heads of the dragons and Leviathan (Ps 74:13–14). [not yet staged]' },
+  ],
+  sections: [
+    {
+      heading: 'Awake, O arm of the LORD',
+      verses: [
+        { ref: '51:9',
+          text: 'Awake, awake, put on strength, O arm of the LORD; awake, as in the ancient days, in the generations of old. Art thou not it that hath cut Rahab, and wounded the dragon?',
+          textVersions: { kjv: 'Awake, awake, put on strength, O arm of the LORD; awake, as in the ancient days, in the generations of old. Art thou not it that hath cut Rahab, and wounded the dragon?' },
+          entities: [
+            { word: 'arm of the LORD', node: 'yahweh', type: 'deity',
+              note: 'YHWH as the divine warrior whose "arm" performed the primeval victory — the storm-god of the Hebrew Chaoskampf.',
+              parallels: [ { label: 'Marduk (Babylonian)', textId: 'enuma-elish-4', note: 'the storm-god who slays the chaos-sea Tiamat' }, { label: 'Baal (Ugaritic)', textId: 'baal-cycle-1', note: 'the storm-god who defeats Sea and Lotan' } ] },
+            { word: 'ancient days', node: 'chaoskampf', type: 'theme',
+              note: 'The "ancient days" are the primeval combat — the Chaoskampf, the storm-god\'s victory over the chaos-dragon that grounds YHWH\'s present power to redeem.',
+              parallels: [ { label: 'Indra vs Vritra (Vedic)', note: 'the storm-god slays the serpent to free the waters' }, { label: 'Zeus vs Typhon (Greek)', note: 'the sky-god vs the chaos-monster' } ] },
+            { word: 'Rahab', node: 'rahab', type: 'deity',
+              note: 'Rahab, the Hebrew chaos-monster of the sea ("the Blusterer"), cut to pieces by YHWH at the foundation of order — a native Israelite name for the defeated primordial sea.',
+              parallels: [ { label: 'Tiamat (Babylonian)', textId: 'enuma-elish-4', note: 'the primordial salt-sea Marduk splits; the structural parallel to Rahab' }, { label: 'Leviathan', note: 'the other Hebrew chaos-serpent, paired with Rahab and the dragon' } ] },
+            { word: 'the dragon', node: 'tannin', type: 'deity',
+              note: 'Tannin, the sea-dragon, in synonymous parallelism with Rahab; the chaos-serpent YHWH "wounds". Cognate with the Ugaritic tnn that Anat vanquishes.',
+              parallels: [ { label: 'Lotan / Leviathan', textId: 'baal-cycle-1', note: 'the seven-headed serpent of the Baal Cycle; Ugaritic ltn = Hebrew lwytn (Leviathan)' } ] },
+          ]
+        },
+        { ref: '51:10',
+          text: 'Art thou not it which hath dried the sea, the waters of the great deep; that hath made the depths of the sea a way for the ransomed to pass over?',
+          textVersions: { kjv: 'Art thou not it which hath dried the sea, the waters of the great deep; that hath made the depths of the sea a way for the ransomed to pass over?' },
+          entities: [
+            { word: 'dried the sea', node: 'yam', type: 'deity',
+              note: 'Yam, the Sea — at once the chaos-waters of the combat and the Red Sea of the Exodus; Isaiah fuses the two.',
+              parallels: [ { label: 'Yam (Ugaritic)', textId: 'baal-cycle-1', note: 'Sea, the adversary Baal defeats' } ] },
+            { word: 'the waters of the great deep', node: 'tehom', type: 'deity',
+              note: 'tehom rabbah, "the great deep" — the same primordial deep of Genesis 1:2, here the chaos-waters YHWH dries; linguistically cognate with Tiamat.',
+              parallels: [ { label: 'tehom (Genesis 1:2)', textId: 'genesis-1', note: 'the deep over which the Spirit moves' }, { label: 'Tiamat (Babylonian)', textId: 'enuma-elish-4', note: 'the cognate primordial sea' } ] },
+            { word: 'a way for the ransomed to pass over', node: 'chaoskampf', type: 'theme',
+              note: 'The cosmogonic combat is historicised into the Exodus sea-crossing and projected forward into the return from exile — the same arm that cut Rahab dries the sea for the redeemed.',
+              parallels: [ { label: 'Exodus 14 — the sea-crossing', note: 'the drying of the sea for Israel to pass; the historical reflex of the primeval combat' } ] },
+          ]
+        },
+        { ref: '51:11',
+          text: 'Therefore the redeemed of the LORD shall return, and come with singing unto Zion; and everlasting joy shall be upon their head: they shall obtain gladness and joy; and sorrow and mourning shall flee away.',
+          textVersions: { kjv: 'Therefore the redeemed of the LORD shall return, and come with singing unto Zion; and everlasting joy shall be upon their head: they shall obtain gladness and joy; and sorrow and mourning shall flee away.' },
+          entities: []
+        },
+      ]
+    }
+  ],
+};
