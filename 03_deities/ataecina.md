@@ -80,10 +80,10 @@ Ataecina sits at the western terminus of a reconstructable IE chthonic goddess t
 
 | Tradition | Figure | Domain | Etymology |
 |---|---|---|---|
-| Sumerian | **[[inanna-sumerian\|Inanna]]** | Descent and return | "Queen of Heaven" |
-| Greek | **[[persephone-greek\|Persephone]]** | Underworld queen / spring return | *pherein-phonos* (debated) |
+| Sumerian | **[[inanna-sumerian]]** | Descent and return | "Queen of Heaven" |
+| Greek | **[[persephone-greek]]** | Underworld queen / spring return | *pherein-phonos* (debated) |
 | Roman | **Proserpina** | Identified with Persephone | *proserpere* = "to creep forth" |
-| Celtic (Irish) | **[[the-morrigan\|The Morrigan]]** | Death, battle, sovereignty | "Great Queen / Phantom Queen" |
+| Celtic (Irish) | **[[the-morrigan]]** | Death, battle, sovereignty | "Great Queen / Phantom Queen" |
 | Lusitanian | **Ataecina** | Underworld, regeneration, curses | *\*ati-gena* = "Reborn" |
 
 The Inanna descent → Persephone abduction → Ataecina-Proserpina identification is not a linear historical chain but an **independent instantiation of the same agricultural-seasonal logic**: the earth dies in winter because the goddess is below; the earth returns to life when the goddess returns. This mythological logic is so universally human (you can see it working in your own landscape every winter) that it appears independently wherever agriculture and seasonal climate coexist.
@@ -92,7 +92,7 @@ The Inanna descent → Persephone abduction → Ataecina-Proserpina identificati
 Nabia (waters, rivers, the surface of the earth, the living) + Ataecina (the underworld, the dead, the dark earth, the regenerative) = the complete sacred feminine of Lusitanian religion. This is the same dualism that appears in:
 - Greek: **Demeter** (earth, grain, the living) + **Persephone** (underworld, the dead, the return)
 - Norse: **Freya** (love, life, fertility) + **Hel** (ruler of the dead)
-- Mesopotamian: **Inanna** (heaven, desire, life) + **[[ereshkigal\|Ereshkigal]]** (the Great Below, death)
+- Mesopotamian: **Inanna** (heaven, desire, life) + **[[ereshkigal]]** (the Great Below, death)
 
 In all these traditions, the divine feminine is split between surface-life and underground-death — and the split is simultaneously a structural tension and a structural complementarity. The vault's Nabia + Ataecina pairing is the Iberian node in this universal IE pattern.
 

@@ -33,7 +33,7 @@ cross-symbol-edges:
     target: "[[tetramorph]]"
     note: "The lamassu combines the same four components (human head, lion/bull body, eagle wings) that appear in Ezekiel's merkabah creatures and subsequently in the Christian tetramorph. The lamassu is the Mesopotamian visual template for the composite four-part guardian that Ezekiel (in Babylonian exile) transforms into the hayot ha-kodesh."
   - type: "parallel-form"
-    target: "[[sphinx-guardian]]"
+    target: "[[sphinx-symbol]]"
     note: "Both are composite threshold-guardian figures (human intelligence + animal strength) deployed at palace/sacred-site entrances to ward off evil; the Egyptian sphinx and Mesopotamian lamassu represent independent developments of the same composite-guardian theological logic"
   - type: "parallel-form"
     target: "[[gorgoneion]]"

@@ -9,7 +9,7 @@ event-type: "exegetical (founding misreading)"
 participants:
   - "[[origen]] — the interpreter who made the move"
   - "[[jerome]] (c. 384 CE — translated Helel as 'Lucifer' in the Vulgate, canonizing the name)"
-  - "[[augustine]] (c. 400 CE — canonized the Satan cosmology in *De civitate Dei*)"
+  - "[[augustine-of-hippo]] (c. 400 CE — canonized the Satan cosmology in *De civitate Dei*)"
 documents-produced:
   - "[[phase-4-026-origen-on-first-principles]] — *Peri Archōn* (On First Principles) Book 1, Chapter 5, §5 — the locus classicus"
 documents-affected:

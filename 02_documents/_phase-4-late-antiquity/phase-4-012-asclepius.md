@@ -16,7 +16,7 @@ script: "Latin uncial"
 region: "Egypt (original); transmitted to Latin West via uncertain channels"
 city-of-origin: "Alexandria? (the temple-lament passage suggests Egyptian provenance)"
 authorship: "anonymous (Hermes Trismegistus pseudepigraphic)"
-key-figures: ["[[hermes-trismegistus]]", "[[asclepius-disciple]]", "[[tat]]", "[[ammon]]"]
+key-figures: ["[[hermes-trismegistus]]", "[[asclepius-disciple]]", "[[tat-hermetic]]", "[[ammon]]"]
 themes: ["[[creation-by-word]]", "[[hidden-god]]", "[[divine-kingship]]", "[[end-times-judgment]]"]
 parallels: ["[[phase-4-011-corpus-hermeticum-i]]", "[[phase-4-013-discourse-on-the-eighth-and-ninth]]"]
 influenced-by: ["Middle Platonism", "Egyptian theology"]

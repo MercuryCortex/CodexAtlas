@@ -40,7 +40,7 @@ cross-symbol-edges:
     target: "[[eye-of-horus-wedjat]]"
     note: "Both Egyptian guardian-symbol complexes originate in Horus theology; the Sons of Horus are extensions of Horus-protective power"
   - type: "parallel-form"
-    target: "[[sphinx-guardian]]"
+    target: "[[sphinx-symbol]]"
     note: "Both are composite guardian figures (human + animal) deployed at cardinal points/thresholds; the androsphinx and the Four Sons share the logic of composite divine guardianship"
   - type: "ancestor-of"
     target: "[[axis-mundi]]"

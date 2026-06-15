@@ -111,4 +111,4 @@ Henry Kamen's revisionist work (1997) requires historiographical care:
 - → [[tradition-judaism-sephardic]] — *primary-target*: the tradition's most intensive diaspora formation triggered by the Inquisition
 - → [[event-death-of-jan-hus-1415]] — *parallel-Catholic-persecution*: same institutional-religious logic, earlier instance
 - → [[martyrdom-theology]] — *Catholic-institutional-version*: the Inquisition as the church's persecution instrument turned inward
-- → [[spinoza]] — *downstream-figure*: Spinoza's family are Portuguese Marranos; the Inquisition's shadow reaches Enlightenment philosophy
+- → [[baruch-spinoza]] — *downstream-figure*: Spinoza's family are Portuguese Marranos; the Inquisition's shadow reaches Enlightenment philosophy

@@ -15,7 +15,7 @@ child-of: ["[[enki-ea]]", "Ninti (Sumerian rib/life goddess; mother of Ninkasi i
 consort: []
 attributes: ["beer-vat", "drinking-tube (the cuneiform sign for beer)", "barley sheaf"]
 attested-in: ["[[phase-1-005-instructions-of-shuruppak]]?"]
-equivalents: ["[[siris-akkadian]]?", "[[siraš-akkadian]]?"]
+equivalents: ["[[siris-akkadian]]?", "[[siris-akkadian]]?"]
 syncretic-edges:
   - target: "[[siris-akkadian]]"
     type: "ancient-identification"

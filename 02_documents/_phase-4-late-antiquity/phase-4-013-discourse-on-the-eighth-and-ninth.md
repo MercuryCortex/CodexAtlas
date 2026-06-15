@@ -16,7 +16,7 @@ script: "Coptic uncial"
 region: "Egypt"
 city-of-origin: "unknown"
 authorship: "anonymous Hermetic teacher (Hermes Trismegistus pseudepigraphic)"
-key-figures: ["[[hermes-trismegistus]]", "[[tat]]"]
+key-figures: ["[[hermes-trismegistus]]", "[[tat-hermetic]]"]
 themes: ["[[mystery-initiation]]", "[[gnosis-as-salvation]]", "[[psychopomp]]"]
 parallels: ["[[phase-4-011-corpus-hermeticum-i]]", "[[phase-4-012-asclepius]]", "[[phase-4-075-corpus-hermeticum-xiii-rebirth]]", "[[phase-4-078-prayer-of-thanksgiving-nhc-vi-7]]", "[[phase-4-079-coptic-asclepius-nhc-vi-8]]"]
 influenced-by: ["Hermetic initiatory tradition"]

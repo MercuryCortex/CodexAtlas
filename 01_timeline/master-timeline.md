@@ -83,7 +83,7 @@ The chronological spine of the vault. Every document, event, and (where dated) d
 | +90 | [[phase-3-020-gospel-of-john]] | document | Early Christianity — Johannine | Logos prologue (= Stoic→Philo→John); high Christology |
 | +100 | [[phase-3-021-hermetic-corpus-earliest]] | document | Greco-Egyptian Hermetism | Poimandres + earliest stratum; Phase 3/4 boundary (flagged) |
 
-**Phase 3 deities seeded:** Hellenistic syncretisms — [[serapis]], [[isis-hellenistic]], [[hermes-trismegistus]]. Roman — [[jupiter]], [[mars-roman]], [[venus-roman]], [[mercury-roman]], [[mithras-roman]]. Mystery-cult — [[cybele]], [[attis]], [[adonis-hellenistic]], [[dionysus-mystery]]. Philosophical concept-deity — [[logos-stoic]].
+**Phase 3 deities seeded:** Hellenistic syncretisms — [[serapis]], [[isis-hellenistic]], [[hermes-trismegistus]]. Roman — [[jupiter]], [[mars-roman]], [[venus-roman]], [[mercury-roman]], [[mithras-roman]]. Mystery-cult — [[cybele]], [[attis]], [[adonis]], [[dionysus-mystery]]. Philosophical concept-deity — [[logos-stoic]].
 
 **Phase 3 persons seeded:** [[plato]], [[aristotle]], [[epicurus]], [[zeno-of-citium]], [[philo-of-alexandria]], [[john-the-baptist]], [[jesus-of-nazareth]], [[paul-of-tarsus]], [[peter-apostle]], [[mark-evangelist]], [[matthew-evangelist]], [[luke-evangelist]], [[john-evangelist]], [[james-brother-of-jesus]], [[mary-magdalene]], [[simon-magus]], [[apollonius-of-tyana]], [[josephus]], [[herod-the-great]], [[pontius-pilate]].
 

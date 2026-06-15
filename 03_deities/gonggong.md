@@ -50,7 +50,7 @@ tags: [deity, chinese, water, flood-causer, gonggong, cosmic-rebel, mount-buzhou
 ## Identity
 **Gonggong** (Chinese *共工*, *Gōnggōng*) is the Chinese mythological **water-deity whose actions cause the cosmic flood** that produces the Great Flood of the Yu-Gun tradition (see [[yu-the-great]]). The canonical narrative (Huainanzi 3, ~-139 BCE, with *Liezi* and *Shanhaijing* parallels):
 
-> Gonggong, defeated in a contest for cosmic supremacy with **Zhuanxu** (the high god / sage-emperor), in his rage **butts Mount Buzhou** — the northwestern cosmic pillar that holds up the sky. The pillar is broken; the sky tilts and falls in the northwest, the earth-corners tilt in the southeast. Rivers and seas pour out from the broken cosmic order. **[[nüwa]]** (the creator-goddess) repairs the broken sky by melting colored stones; **Yu the Great** subsequently controls the flood-waters through engineering.
+> Gonggong, defeated in a contest for cosmic supremacy with **Zhuanxu** (the high god / sage-emperor), in his rage **butts Mount Buzhou** — the northwestern cosmic pillar that holds up the sky. The pillar is broken; the sky tilts and falls in the northwest, the earth-corners tilt in the southeast. Rivers and seas pour out from the broken cosmic order. **[[nuwa]]** (the creator-goddess) repairs the broken sky by melting colored stones; **Yu the Great** subsequently controls the flood-waters through engineering.
 
 This makes Gonggong structurally **the Chinese counterpart of [[enlil]]** — the deity whose decision (or action) *causes* the catastrophic flood, in distinction from:
 
