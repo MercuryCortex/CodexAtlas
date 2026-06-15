@@ -98,7 +98,7 @@ This chain is why every medieval European university taught Aristotelian logic a
 - [[mathematics-pythagorean-sacred]] — his most important philosophical opponent; his critique defines the Plato-Aristotle split
 - [[mathematics-house-of-wisdom]] — the institution that transmitted his corpus and extended it
 - [[al-farabi]] — "the Second Teacher"; the Islamic philosopher who systematized the Platonic-Aristotelian synthesis
-- [[avicenna]] — the most important Islamic Aristotelian; rewrote the entire corpus in Islamic context
+- [[ibn-sina]] — the most important Islamic Aristotelian; rewrote the entire corpus in Islamic context
 - [[thomas-aquinas]] — the Christian Aristotelian synthesis; *Summa Theologiae* uses Aristotelian categories throughout
 - [[tradition-neoplatonism]] — the tradition that incorporated Aristotelian logic while defending Plato
 - [[galileo-galilei]] — the physicist whose experiments refuted Aristotelian physics

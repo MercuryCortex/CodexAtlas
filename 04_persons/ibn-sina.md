@@ -2,20 +2,39 @@
 type: person
 id: "ibn-sina"
 name: "Ibn Sīnā (Abū ʿAlī al-Ḥusayn ibn ʿAbd Allāh ibn Sīnā)"
-aka: ["Avicenna (Latin — via Hebrew *Aven Sina*, possibly al-Andalus / Jewish-mediated)", "Ibn Sina", "Abū ʿAlī al-Ḥusayn ibn ʿAbd Allāh ibn Sīnā", "al-Shaykh al-Raʾīs (the Chief Master)"]
+aka: ["Avicenna (Latin — via Hebrew *Aven Sina*, possibly al-Andalus / Jewish-mediated)", "Ibn Sina", "ابن سینا", "Abū ʿAlī al-Ḥusayn ibn ʿAbd Allāh ibn Sīnā", "al-Shaykh al-Raʾīs (the Chief Master)", "The Prince of Physicians (Latin *princeps medicorum*)"]
 role-description: "philosopher / physician / scientist / poet / statesman — the keystone figure of falsafa"
-tradition: "Islam (loose Shīʿī / Twelver background; Avicenna's theology is philosophical not narrowly sectarian); Falsafa (Greek-Arabic philosophical tradition)"
+tradition: "Islam (madhhab debated — an Ismāʿīlī family background per the autobiographical Sīra, later variously claimed as Sunnī/Ḥanafī and as Twelver Shīʿī; his theology is philosophical rather than narrowly sectarian — Gutas 1988); Falsafa (the Greek-Arabic philosophical tradition)"
 role-tokens: ["author-secular"]
 region: "Persia / Khwārazm / Iran — born Afshana near Bukhara (modern Uzbekistan); courts at Bukhara, Gurgānj, Gurgān, Rayy, Hamadān, Iṣfahān; died Hamadān"
 date-born: 980
 date-died: 1037
 historicity: "documented (with an autobiographical *Sīra* dictated to his disciple al-Jūzjānī — one of the earliest extant Islamic-philosophical autobiographies)"
-texts-authored: ["[[phase-5-044-ibn-sina-kitab-al-shifa]] *Kitāb al-Shifāʾ* (Book of Healing — Avicenna's encyclopedic philosophical *summa*: logic / physics / mathematics / metaphysics. The Metaphysics section translated into Latin in the Toledo School 12th c. as *Liber de philosophia prima sive scientia divina* — the principal Avicennian text for Latin scholasticism)", "*al-Najāt* (The Salvation — shorter *summa* version of the *Shifāʾ*)", "*Kitāb al-Qānūn fī al-Ṭibb* (The Canon of Medicine — the medical *summa*; translated into Latin in the 12th c.; the standard European medical textbook from the 13th to the 17th century, used at Bologna, Padua, Montpellier, Paris)", "*al-Ishārāt wa-l-Tanbīhāt* (Pointers and Reminders — Avicenna's late philosophical-spiritual work, more compressed and personal than the *Shifāʾ*; the foundational text for the post-Avicennian Eastern (Persian) philosophical tradition through Suhrawardi and Mulla Sadra)", "*Risāla fī al-ʿishq* (Treatise on Love)", "*Ḥayy ibn Yaqẓān* (a short Avicennian philosophical allegory — the seed-form of Ibn Tufayl's later [[phase-5-047-ibn-tufayl-hayy-ibn-yaqdhan|*Ḥayy ibn Yaqẓān*]] novel)", "various medical, astronomical, mathematical, and poetic works"]
+texts-authored: ["[[phase-5-044-ibn-sina-kitab-al-shifa]] *Kitāb al-Shifāʾ* (Book of Healing — Avicenna's encyclopedic philosophical *summa*: logic / physics / mathematics / metaphysics. The Metaphysics section translated into Latin in the Toledo School 12th c. as *Liber de philosophia prima sive scientia divina* — the principal Avicennian text for Latin scholasticism)", "*al-Najāt* (The Salvation — shorter *summa* version of the *Shifāʾ*)", "[[phase-5-063-avicenna-canon-of-medicine]] *Kitāb al-Qānūn fī al-Ṭibb* (The Canon of Medicine — the medical *summa* in 5 books, integrating Galenic medicine with Aristotelian natural philosophy; translated into Latin by Gerard of Cremona in the 12th c.; the standard European medical textbook from the 13th to the 17th century, used at Bologna, Padua, Montpellier, Paris)", "*al-Ishārāt wa-l-Tanbīhāt* (Pointers and Reminders — Avicenna's late philosophical-spiritual work, more compressed and personal than the *Shifāʾ*; the foundational text for the post-Avicennian Eastern (Persian) philosophical tradition through Suhrawardi and Mulla Sadra)", "*Risāla fī al-ʿishq* (Treatise on Love)", "*Ḥayy ibn Yaqẓān* (a short Avicennian philosophical allegory — the seed-form of Ibn Tufayl's later [[phase-5-047-ibn-tufayl-hayy-ibn-yaqdhan|*Ḥayy ibn Yaqẓān*]] novel)", "various medical, astronomical, mathematical, and poetic works"]
 texts-attributed-to: []
-originator-of: ["the *essence / existence distinction* (māhiyya / wujūd) — Avicenna's foundational metaphysical move", "the *flying-man* thought-experiment (proof of substantial self-existence apart from sensible body)", "the *Necessary Being / contingent being* argument for God's existence (*wājib al-wujūd* / *mumkin al-wujūd*) — the principal Avicennian natural-theology argument that becomes Aquinas's Third Way", "the *floating-physician* / clinical-observation method in medicine"]
+originator-of: ["the *essence / existence distinction* (māhiyya / wujūd) — Avicenna's foundational metaphysical move", "the *flying-man* thought-experiment (proof of substantial self-existence apart from sensible body)", "the *Necessary Being / contingent being* argument for God's existence (*wājib al-wujūd* / *mumkin al-wujūd*) — the principal Avicennian natural-theology argument that becomes Aquinas's Third Way", "the *floating-physician* / clinical-observation method in medicine", "[[medicine-islamic-golden-age]] — the medical synthesis his *Canon* culminates", "the reproducibility / single-case-proves-nothing clinical standard and an early contagion-and-quarantine theory (*Canon*, Book I)"]
 events-participated: []
-mentioned-in: ["[[phase-5-019-maimonides-guide-for-the-perplexed]]", "[[phase-5-024-aquinas-summa-theologiae]]", "[[phase-5-046-ibn-rushd-tahafut-al-tahafut]]", "[[phase-5-045-al-ghazali-tahafut-al-falasifa]] (Ghazali's principal target is Avicenna-via-Farabi)"]
-status: "metadata"
+mentioned-in: ["[[phase-5-019-maimonides-guide-for-the-perplexed]]", "[[phase-5-024-aquinas-summa-theologiae]]", "[[phase-5-046-ibn-rushd-tahafut-al-tahafut]]", "[[phase-5-057-ibn-rushd-aristotle-commentaries]]", "[[phase-5-045-al-ghazali-tahafut-al-falasifa]] (Ghazali's principal target is Avicenna-via-Farabi)"]
+cross-tradition-edges:
+  - target: aristotle
+    type: heir-of
+    note: "Recast the Aristotelian corpus in Arabic philosophical form; the Shifāʾ covers logic, physics, mathematics, and metaphysics in explicit dialogue with Aristotle."
+  - target: al-farabi
+    type: heir-of
+    note: "Credits al-Farabi's Intentions of Aristotle's Metaphysics as the work that finally unlocked Aristotle for him; extends al-Farabi's Platonic-Aristotelian-prophetological synthesis."
+  - target: hippocrates
+    type: heir-of
+    note: "The Canon systematizes and extends the Hippocratic-Galenic medical tradition."
+  - target: galen-of-pergamon
+    type: heir-of
+    note: "The Canon integrates Galenic humoral medicine with Aristotelian natural philosophy into one summa."
+  - target: thomas-aquinas
+    type: ancestor-of
+    note: "Aquinas engages Avicenna more than any other non-Christian philosopher (400+ citations); the essence/existence distinction and the contingency argument (the Third Way) are Avicennian."
+  - target: medicine-islamic-golden-age
+    type: parallel-form
+    note: "The Canon is the culminating synthesis of Islamic Golden Age medicine."
+status: "full"
 refs:
   - title: "Avicenna and the Aristotelian Tradition: Introduction to Reading Avicenna's Philosophical Works"
     author: "Gutas, Dimitri"
@@ -57,6 +76,20 @@ refs:
     publisher: "Columbia University Press / I.B. Tauris (multi-volume)"
     type: "primary-translation"
     tier: 1
+  - title: "Islamic Medicine"
+    author: "Savage-Smith, Emilie"
+    year: 1992
+    publisher: "Edinburgh University Press"
+    type: "monograph"
+    tier: 2
+    notes: "The Canon's place in Islamic medical history and its European reception."
+  - title: "The Life of Ibn Sīnā: A Critical Edition and Annotated Translation of the Autobiography"
+    author: "Gohlman, William E."
+    year: 1974
+    publisher: "SUNY Press"
+    type: "biography"
+    tier: 1
+    notes: "Critical edition + translation of the autobiographical Sīra."
 tags: [person, islamic, persian, samanid, buyid, falsafa, philosopher, physician, polymath, avicenna, shaykh-al-raʾis, essence-existence-distinction, flying-man, necessary-being, latin-scholastic-source, canon-of-medicine, european-medical-textbook]
 ---
 
@@ -74,6 +107,14 @@ Documented. The autobiographical *Sīra* (dictated to al-Jūzjānī) is **the fo
 - ***Kitāb al-Qānūn fī al-Ṭibb* (The Canon of Medicine)** — the medical *summa* in 5 books, integrating Galenic medicine with Aristotelian natural philosophy. **Translated into Latin by Gerard of Cremona in the 12th c.** and used as the **standard European medical textbook from c. 1200 to c. 1700** at Bologna, Padua, Montpellier, Paris. Vesalius's anatomical work in the 16th c. begins the European displacement of the *Canon*. (Siraisi 1987.)
 - ***al-Ishārāt wa-l-Tanbīhāt* (Pointers and Reminders)** — Avicenna's late philosophical-spiritual work; more compressed and personal than the *Shifāʾ*, with mystical-philosophical notes that the post-Avicennian Persian tradition (Suhrawardi → Mulla Sadra) extends. The foundational text of the **Eastern (Persian) Avicennian tradition**.
 - ***Ḥayy ibn Yaqẓān*** — a short Avicennian philosophical allegory (the original; not the Ibn Tufayl novel). Avicenna's *Ḥayy* is a brief allegorical encounter with the personified Active Intellect ("Living, son of Vigilant"); [[ibn-tufayl|Ibn Tufayl]]'s 12th-c. [[phase-5-046-ibn-tufayl-hayy-ibn-yaqdhan|novel of the same title]] is a deliberate Avicennian-Andalusi extension into the natural-religion / autodidact-on-an-island form.
+
+## Medicine — the *Canon* and clinical method
+
+Alongside being the keystone philosopher of *falsafa*, Ibn Sīnā was **the most influential physician of the post-classical world**. The **[[phase-5-063-avicenna-canon-of-medicine|*Kitāb al-Qānūn fī al-Ṭibb* (Canon of Medicine)]]** (c. 1025) organised the whole of Greek, Persian, and Islamic medicine into a five-book *summa*: (I) general principles, the causes of health and disease, and an early **contagion-and-quarantine** theory; (II) a materia medica of some 800 substances; (III) systematic pathology organ-by-organ with differential diagnosis; (IV) conditions crossing organs — fevers, poisons, contagious diseases, surgery; (V) compound drugs.
+
+Beyond systematisation the *Canon* advances a genuinely **clinical method**: drugs to be tested in pure form before combination and on animals before humans; the cure of a single case proves nothing — a result must be **reproducible** (an early articulation of the experimental-clinical standard); **psychosomatic** causation (his pulse-test diagnosis of lovesickness is a first documented psychosomatic clinical test); and a staging-like account of cancer. Gerard of Cremona's 12th-c. Latin translation made the *Canon* the **standard European medical textbook from c. 1200 to c. 1700**, required at Bologna, Padua, Montpellier, and Paris; [[hippocrates|Hippocratic]] and [[galen-of-pergamon|Galenic]] medicine reached Latin Europe largely through it. He is the culminating figure of [[medicine-islamic-golden-age|Islamic Golden Age medicine]]. (Siraisi 1987; Savage-Smith 1992.)
+
+**MASSIVE WIN — one corpus, two civilisations, ~600 years.** The *Canon* was the dominant medical authority in *both* the Islamic world and Latin Europe **simultaneously**, from c. 1025 to c. 1650 — no other single medical text has held such authority across so broad a cultural and geographic range for so long.
 
 ## Role in the tradition
 - **The principal Islamic philosopher of all time.** Avicenna's metaphysics, epistemology, psychology, philosophical theology, and natural philosophy structure the rest of Islamic philosophy. Even his principal critic — **[[al-ghazali]] in [[phase-5-045-al-ghazali-tahafut-al-falasifa|*Tahāfut al-Falāsifa*]]** — is fundamentally targeting Avicennian theses (the eternity of the world, God's knowledge of particulars, bodily resurrection) and proceeds by deep engagement with Avicennian arguments. [[ibn-rushd|Averroes]]'s reply ([[phase-5-046-ibn-rushd-tahafut-al-tahafut|*Tahāfut al-Tahāfut*]]) is partly a re-defense of Avicenna and partly a critique of Avicenna in favor of a more strictly Aristotelian reading.
@@ -94,3 +135,5 @@ Documented. The autobiographical *Sīra* (dictated to al-Jūzjānī) is **the fo
 3. Marmura, M. E. (2005). *The Metaphysics of The Healing*. BYU Press.
 4. Inati, S. C. (1984-2014). *Avicenna's Pointers and Reminders*. Columbia UP / I.B. Tauris.
 5. Siraisi, N. G. (1987). *Avicenna in Renaissance Italy*. Princeton UP.
+6. Savage-Smith, E. (1992). *Islamic Medicine*. Edinburgh UP. Tier 2.
+7. Gohlman, W. E. (1974). *The Life of Ibn Sīnā* (critical edition + translation of the autobiographical *Sīra*). SUNY Press.

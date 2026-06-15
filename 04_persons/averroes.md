@@ -93,7 +93,7 @@ Two of Averroes's doctrines made him the most controversial philosopher of the 1
 - [[al-farabi]] — the predecessor who established the Platonic-Aristotelian synthesis he refined
 - [[thomas-aquinas]] — the Christian philosopher who built on and argued against him simultaneously
 - [[mathematics-house-of-wisdom]] — the Islamic intellectual tradition he culminated
-- [[avicenna]] — predecessor whose Neoplatonized Aristotelianism he partly corrected
+- [[ibn-sina]] — predecessor whose Neoplatonized Aristotelianism he partly corrected
 
 ## References
 

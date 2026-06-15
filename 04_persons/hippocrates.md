@@ -115,7 +115,7 @@ This is the founding text of **secular medicine**: the argument that divine myst
 - [[panacea]] — Asklepios's daughter; goddess of universal cure; named in Oath line 1; root of "panacea"
 - [[apollo]] — grandfather of the medical divine family; invoked first in the Oath
 - [[galen-of-pergamon]] — the systematizer of Hippocratic medicine; extended Hippocrates's authority 500 years later
-- [[avicenna]] — the Islamic inheritor; the Canon of Medicine is built on Galenic Hippocratism
+- [[ibn-sina]] — the Islamic inheritor; the Canon of Medicine is built on Galenic Hippocratism
 - [[medicine-asklepion-cult]] — the contemporaneous divine healing tradition; Hippocratic rationalism emerged alongside it on Kos
 - [[moral-ahimsa-nonviolence]] — "do no harm" = ahimsa; Axial Age parallel formulations
 - [[pythagoras]] — Edelstein's thesis: the Oath may be a Pythagorean brotherhood text

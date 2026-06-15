@@ -63,7 +63,7 @@ Many of these substances have confirmed pharmacological activity by modern analy
 - [[hippocrates]] — parallel figure; Hippocratic Corpus composed in the same era
 - [[phase-2-045-hippocratic-corpus]] — structural parallel; both define their medical tradition
 - [[physicians-oath]] — Vimānasthāna 8.13 is the Āyurvedic parallel to the Hippocratic Oath; same form, 5,000 miles apart
-- [[avicenna]] — the Islamic inheritor who incorporated Ayurvedic drug knowledge
+- [[ibn-sina]] — the Islamic inheritor who incorporated Ayurvedic drug knowledge
 - [[sacred-pharmacology]] — the pharmacopoeia tradition
 
 ## References

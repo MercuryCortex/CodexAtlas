@@ -84,5 +84,5 @@ This parallel to the Hippocratic Oath — articulated 1,000 years later, with no
 - [[phase-2-046-huangdi-neijing]] — the foundational text his work expands and transmits
 - [[phase-3-037-shennong-bencao-jing]] — the pharmacopeia tradition his Qianjin Yao Fang extends
 - [[hippocrates]] — ethical-founder parallel; independent convergence on the physician's oath as medical ethics
-- [[avicenna]] — great-synthesizer parallel; Tang China / Islamic Golden Age encyclopedic summa as the same intellectual form
+- [[ibn-sina]] — great-synthesizer parallel; Tang China / Islamic Golden Age encyclopedic summa as the same intellectual form
 - [[healer-priest]] — Sun Simiao's posthumous deification as Yaowang is the Chinese tradition's clearest case of the healer-priest becoming divine patron

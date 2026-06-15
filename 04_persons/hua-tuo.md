@@ -85,4 +85,4 @@ Hua Tuo also developed the **Wuqinxi** (五禽戲, "Five Animal Frolics") — a 
 - [[phase-2-046-huangdi-neijing]] — the theoretical framework within which his clinical practice operated
 - [[hippocrates]] — structural parallel: founder-surgeon of complementary traditions, clinical case recorder
 - [[sacred-pharmacology]] — mafeisan as the Chinese tradition's paradigm case of surgical pharmacopeia
-- [[avicenna]] — later Islamic parallel; Canon of Medicine also develops surgical pharmacopeia and anesthesia concepts
+- [[ibn-sina]] — later Islamic parallel; Canon of Medicine also develops surgical pharmacopeia and anesthesia concepts

@@ -13,7 +13,7 @@ date_latest: 1025
 phase: 5
 genre: "medical encyclopedia — systematic medicine, pharmacology, pathology, ethics, surgery"
 language: "Arabic"
-author: "[[avicenna]]"
+author: "[[ibn-sina]]"
 significance: "The most influential medical textbook in history; standard in Islamic medical schools through the 19th century and in European universities through the 17th century; systematized all prior medical knowledge (Greek, Indian, Persian) into a unified canonical form"
 tags:
   - medicine
@@ -24,7 +24,7 @@ tags:
 tier: 1
 ---
 
-The *Qānūn fī al-Ṭibb* (Canon of Medicine, c. 1012–1025 CE) by [[avicenna]] (Ibn Sina, 980–1037 CE) is the most influential medical textbook in history — the culminating synthesis of three medical traditions (Greek/Galenic, Indian/Ayurvedic, Persian) into a unified, systematic encyclopedia that defined medical education in the Islamic world and Europe for over 600 years.
+The *Qānūn fī al-Ṭibb* (Canon of Medicine, c. 1012–1025 CE) by [[ibn-sina]] (Ibn Sina, 980–1037 CE) is the most influential medical textbook in history — the culminating synthesis of three medical traditions (Greek/Galenic, Indian/Ayurvedic, Persian) into a unified, systematic encyclopedia that defined medical education in the Islamic world and Europe for over 600 years.
 
 ## The Five Books
 
@@ -58,7 +58,7 @@ The Canon is not merely encyclopedic — it contains original clinical observati
 
 ## Vault Connections
 
-- [[avicenna]] — the author; the Canon is his primary legacy
+- [[ibn-sina]] — the author; the Canon is his primary legacy
 - [[medicine-islamic-golden-age]] — the tradition it culminates and transmits
 - [[medicine-hippocratic]] — the Greek tradition it received, organized, and retransmitted
 - [[medicine-ayurveda]] — the Indian tradition it incorporated (Book II materia medica)

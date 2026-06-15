@@ -6,7 +6,7 @@ aka: ["final causation", "final cause", "telos", "purposiveness in nature", "the
 tradition: "Greek philosophy (Aristotelian)"
 region: "(cross-cultural — origin: Classical Greece / Aristotelian Lyceum)"
 category: "metaphysical / cosmological"
-parallels: ["[[unmoved-mover]]", "[[five-ways]]", "[[logos-cosmic-reason]]", "[[logos-stoic]]", "[[stoic-virtue]]", "[[falsafa]]", "[[avicenna]]", "[[evolutionary-cosmogony]]"]
+parallels: ["[[unmoved-mover]]", "[[five-ways]]", "[[logos-cosmic-reason]]", "[[logos-stoic]]", "[[stoic-virtue]]", "[[falsafa]]", "[[ibn-sina]]", "[[evolutionary-cosmogony]]"]
 cross-tradition-parallels: ["[[unmoved-mover]]", "[[logos-cosmic-reason]]", "[[falsafa]]"]
 appearances:
   - "[[phase-3-003-aristotle-metaphysics]]"
@@ -14,7 +14,7 @@ appearances:
   - "[[phase-5-024-aquinas-summa-theologiae]]"
   - "[[phase-5-044-ibn-sina-kitab-al-shifa]]"
 deity-instances: []
-key-figures: ["[[aristotle]]", "[[thomas-aquinas]]", "[[avicenna]]"]
+key-figures: ["[[aristotle]]", "[[thomas-aquinas]]", "[[ibn-sina]]"]
 related-themes:
   - "[[unmoved-mover]]"
   - "[[five-ways]]"
@@ -97,7 +97,7 @@ The Stoics transform Aristotle's immanent ends into a **cosmic providence**: the
 
 ### Islamic falsafa — Avicenna (c. 1020)
 
-In [[falsafa]], the Arabic-Aristotelian tradition, [[avicenna|Avicenna (Ibn Sīnā)]] inherits Aristotelian final causation and weds it to a Neoplatonic emanationist cosmology in the *Kitāb al-Shifāʾ* ([[phase-5-044-ibn-sina-kitab-al-shifa]]). Avicenna treats the final cause as "the cause of the causality of the other causes" — the end for which a thing exists is metaphysically prior even to its efficient cause — and grounds the order of the cosmos in the **Necessary Existent** (*Wājib al-Wujūd*) from which all being proceeds. (Al-Ghazālī's *Tahāfut al-falāsifa* then attacks the *necessity* of this causal order, a debate that prefigures later occasionalism.)
+In [[falsafa]], the Arabic-Aristotelian tradition, [[ibn-sina|Avicenna (Ibn Sīnā)]] inherits Aristotelian final causation and weds it to a Neoplatonic emanationist cosmology in the *Kitāb al-Shifāʾ* ([[phase-5-044-ibn-sina-kitab-al-shifa]]). Avicenna treats the final cause as "the cause of the causality of the other causes" — the end for which a thing exists is metaphysically prior even to its efficient cause — and grounds the order of the cosmos in the **Necessary Existent** (*Wājib al-Wujūd*) from which all being proceeds. (Al-Ghazālī's *Tahāfut al-falāsifa* then attacks the *necessity* of this causal order, a debate that prefigures later occasionalism.)
 
 ### Aquinas — the Fifth Way (c. 1265)
 
@@ -109,7 +109,7 @@ Paley's *Natural Theology* (1802) gives the design-argument its most famous Engl
 
 ## Cross-tradition significance (transmission vs. convergence)
 
-Unlike the [[chaoskampf]] mytheme — where the cross-tradition reach mixes genuine Indo-European *genealogical* inheritance with areal convergence — the teleological tradition treated here is overwhelmingly a case of **documented historical transmission, not independent convergence**. There is a single, traceable textual pipeline: Aristotle's *Physics*/*Metaphysics* → the Hellenistic schools (Stoic *pronoia*) → the Baghdad Graeco-Arabic translation movement → [[avicenna|Avicenna]] and the *falsafa* tradition → the 12th–13th-c. Latin translations → [[thomas-aquinas|Aquinas]] and the Scholastics → early-modern natural theology → Paley. Each stage is attested by surviving texts and named translators (Gutas 1998; Davidson 1992; Hasse 2016). The cross-tradition "parallel" here is therefore a **transmission-chain**, and the honest framing is genealogical, not convergent.
+Unlike the [[chaoskampf]] mytheme — where the cross-tradition reach mixes genuine Indo-European *genealogical* inheritance with areal convergence — the teleological tradition treated here is overwhelmingly a case of **documented historical transmission, not independent convergence**. There is a single, traceable textual pipeline: Aristotle's *Physics*/*Metaphysics* → the Hellenistic schools (Stoic *pronoia*) → the Baghdad Graeco-Arabic translation movement → [[ibn-sina|Avicenna]] and the *falsafa* tradition → the 12th–13th-c. Latin translations → [[thomas-aquinas|Aquinas]] and the Scholastics → early-modern natural theology → Paley. Each stage is attested by surviving texts and named translators (Gutas 1998; Davidson 1992; Hasse 2016). The cross-tradition "parallel" here is therefore a **transmission-chain**, and the honest framing is genealogical, not convergent.
 
 The genuinely *convergent* (independent) parallels are weaker and must be flagged as such. The Stoic identification of teleology with the cosmic [[logos-cosmic-reason|Logos]] has structural analogues in other "cosmic-order" concepts that arose without demonstrable contact — Egyptian *ma'at*, Vedic *ṛta*, Chinese *dao* — but these are parallels of **cosmic-order / intelligible-structure**, not specifically of *final causation as a mode of explanation*; the technical four-cause apparatus is a Greek invention with no independent twin. Treating, say, the Daoist *dao* or Confucian heaven-mandate as "teleology" is a typological stretch that the careful comparativist resists. The secure claim is narrow: **final-cause explanation is a Greek philosophical innovation that was transmitted, not reinvented**, across the Mediterranean-Near Eastern philosophical *koine*.
 

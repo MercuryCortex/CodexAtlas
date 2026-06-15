@@ -55,7 +55,7 @@ Wrong physiology, productive methodology. The framework drove systematic clinica
 - [[medicine-hippocratic]] — the tradition hub
 - [[asclepius-greek]] — invoked in the Hippocratic Oath opening
 - [[galen-of-pergamon]] — systematized and extended the Corpus (2nd century CE)
-- [[avicenna]] — organized the entire Galenic/Hippocratic synthesis in the Canon of Medicine
+- [[ibn-sina]] — organized the entire Galenic/Hippocratic synthesis in the Canon of Medicine
 - [[medicine-asklepion-cult]] — the contemporaneous divine healing tradition
 
 ## References

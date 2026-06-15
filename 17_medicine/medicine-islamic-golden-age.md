@@ -95,7 +95,7 @@ The modern hospital's defining features — ward separation by condition, traine
 
 ## Vault Connections
 
-- [[avicenna]] — the Canon of Medicine; the single most influential medical text after Hippocratic corpus
+- [[ibn-sina]] — the Canon of Medicine; the single most influential medical text after Hippocratic corpus
 - [[phase-5-063-avicenna-canon-of-medicine]] — primary text
 - [[tradition-islam]] — parent tradition; medicine as religious obligation
 - [[medicine-hippocratic]] — the Greek tradition that Islamic medicine inherited, extended, and preserved
