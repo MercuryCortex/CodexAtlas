@@ -3277,7 +3277,7 @@ const SCRIPTURE_CORPORA = {
       ]},
       { id: 'wisdom-writings', label: 'Wisdom & later writings', color: '#c4a05a', books: [
         { id: 'phase-2-034-books-of-kings',    label: 'Books of Kings' },
-        { id: 'phase-2-job',                   label: 'Job' },
+        { id: 'phase-2-035-job',                   label: 'Job' },
         { id: 'phase-2-041-book-of-proverbs',  label: 'Proverbs' },
         { id: 'phase-2-ecclesiastes',          label: 'Ecclesiastes' },
         { id: 'phase-2-song-of-songs',         label: 'Song of Songs' },
@@ -3391,7 +3391,7 @@ const SCRIPTURE_CORPORA = {
       ]},
       { id: 'tanakh-ketuvim', label: 'Ketuvim · Writings', color: '#a09a78', books: [
         { id: 'phase-2-034-books-of-kings',  label: 'Books of Kings' },
-        { id: 'phase-2-job',                 label: 'Job' },
+        { id: 'phase-2-035-job',                 label: 'Job' },
         { id: 'phase-2-041-book-of-proverbs', label: 'Proverbs' },
         { id: 'phase-2-ecclesiastes',        label: 'Ecclesiastes' },
         { id: 'phase-2-song-of-songs',       label: 'Song of Songs' },

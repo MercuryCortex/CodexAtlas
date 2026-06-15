@@ -164,7 +164,7 @@
     'phase-2-029-dhammapada',
     'phase-2-038-acharanga-sutra',
     'phase-2-042-yi-jing-i-ching',
-    'phase-2-job',
+    'phase-2-035-job',
     'phase-3-001-second-third-isaiah',
     'phase-3-008-book-of-daniel',
     'phase-3-011-dead-sea-scrolls',
