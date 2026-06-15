@@ -17413,3 +17413,168 @@ SCRIPTURE_TEXTS['isaiah-51'] = {
     }
   ],
 };
+
+// ── PSALM 74:12–17 (God breaks the heads of Leviathan) ───────────────────────
+SCRIPTURE_TEXTS['psalm-74'] = {
+  id: 'psalm-74',
+  title: 'Psalm 74:12–17 (Thou brakest the heads of leviathan)',
+  shortTitle: 'Psalm 74',
+  corpus: 'Hebrew Bible (Psalms)',
+  tradId: 'tradition-second-temple-judaism',
+  date: 'c. 6th century BCE (exilic communal lament)',
+  docNode: 'phase-2-005-davidic-psalms',
+  language: 'Hebrew · King James Version (1611)',
+  translations: [ { id: 'kjv', label: 'KJV (1611)', note: 'King James Version — public domain' } ],
+  intro: 'Psalm 74 is a communal lament over the destruction of the Temple that grounds its plea for rescue in the primeval combat: the God who "divided the sea" and "brake the heads of the dragons" and of Leviathan is invoked to act again in history. It is the clearest Psalter Chaoskampf, naming Leviathan and the dragons (tanninim) explicitly as the chaos-powers YHWH crushed at the foundation of the ordered world.',
+  crossTradition: [
+    { label: 'Enuma Elish IV (Marduk slays Tiamat)', textId: 'enuma-elish-4', note: 'The Mesopotamian original: the storm-god splits the chaos-sea. Psalm 74 is the Hebrew reflex — YHWH breaks the heads of Leviathan and the dragons.' },
+    { label: 'Isaiah 51 — the cutting of Rahab', textId: 'isaiah-51', note: 'The parallel prophetic Chaoskampf (Rahab + the dragon + the deep); together with Psalm 74 it shows the living combat the Priestly Genesis 1 demythologised.' },
+    { label: 'Baal Cycle — Baal vs Lotan', textId: 'baal-cycle-1', note: 'The seven-headed Lotan (Ugaritic ltn = Hebrew lwytn, Leviathan) that Baal/Anat defeat; the Canaanite source of the Hebrew dragon.' },
+  ],
+  sections: [
+    {
+      heading: 'Thou didst divide the sea',
+      verses: [
+        { ref: '74:13',
+          text: 'Thou didst divide the sea by thy strength: thou brakest the heads of the dragons in the waters.',
+          textVersions: { kjv: 'Thou didst divide the sea by thy strength: thou brakest the heads of the dragons in the waters.' },
+          entities: [
+            { word: 'divide the sea', node: 'yam', type: 'deity',
+              note: 'The chaos-sea (Yam) split by the divine warrior — both the cosmogonic deep and, by fusion, the Red Sea of the Exodus.',
+              parallels: [ { label: 'Yam (Ugaritic)', textId: 'baal-cycle-1', note: 'Sea, the adversary Baal defeats' } ] },
+            { word: 'the heads of the dragons', node: 'tannin', type: 'deity',
+              note: 'The dragons (tanninim) of the chaos-waters whose heads YHWH breaks; the sea-dragon Tannin in its plural, monstrous form.',
+              parallels: [ { label: 'Tiamat (Babylonian)', textId: 'enuma-elish-4', note: 'the multi-headed chaos-sea Marduk splits' } ] },
+          ]
+        },
+        { ref: '74:14',
+          text: 'Thou brakest the heads of leviathan in pieces, and gavest him to be meat to the people inhabiting the wilderness.',
+          textVersions: { kjv: 'Thou brakest the heads of leviathan in pieces, and gavest him to be meat to the people inhabiting the wilderness.' },
+          entities: [
+            { word: 'leviathan', node: 'leviathan', type: 'deity',
+              note: 'Leviathan, the many-headed chaos-serpent of the sea, crushed by YHWH; later the eschatological banquet-creature of rabbinic tradition.',
+              parallels: [ { label: 'Lotan (Ugaritic)', textId: 'baal-cycle-1', note: 'the seven-headed serpent; secure cognate ltn = lwytn' }, { label: 'Tiamat (Babylonian)', textId: 'enuma-elish-4', note: 'the chaos-sea, structural parallel' } ] },
+            { word: 'brakest the heads of leviathan', node: 'chaoskampf', type: 'theme',
+              note: 'The Chaoskampf — the divine warrior\'s victory over the chaos-dragon that grounds his kingship and his power to redeem.',
+              parallels: [ { label: 'Indra vs Vritra (Vedic)', note: 'the storm-god slays the serpent to free the waters' } ] },
+          ]
+        },
+      ]
+    }
+  ],
+};
+
+// ── JOB 40:15 – 41:34 (Behemoth and Leviathan) ───────────────────────────────
+SCRIPTURE_TEXTS['job-40-41'] = {
+  id: 'job-40-41',
+  title: 'Job 40:15 – 41:34 (Behemoth and Leviathan)',
+  shortTitle: 'Job 40–41',
+  corpus: 'Hebrew Bible (Wisdom · Job)',
+  tradId: 'tradition-second-temple-judaism',
+  date: 'c. 6th–4th century BCE (the divine speeches)',
+  docNode: 'phase-2-035-job',
+  language: 'Hebrew · King James Version (1611)',
+  translations: [ { id: 'kjv', label: 'KJV (1611)', note: 'King James Version — public domain' } ],
+  intro: 'The climax of God\'s answer to Job from the whirlwind parades the two great chaos-beasts that God alone can master: Behemoth, the land-chaos beast ("the chief of the ways of God"), and Leviathan, the sea-chaos dragon ("king over all the children of pride"). It is the fullest portrait of the chaos-monsters in the Hebrew Bible — and the question whether they are mythic chaos-beings or naturalistic hippopotamus-and-crocodile is the classic interpretive crux.',
+  crossTradition: [
+    { label: 'Enuma Elish IV (Tiamat the chaos-sea)', textId: 'enuma-elish-4', note: 'Leviathan is the Hebrew end of the chaos-dragon Marduk defeats; Job displays the beast God masters without combat.' },
+    { label: 'Psalm 74 — the heads of Leviathan', textId: 'psalm-74', note: 'The combat-version: where Job exhibits Leviathan as God\'s creature, Psalm 74 remembers YHWH breaking its heads.' },
+    { label: 'Isaiah 51 — Rahab and the dragon', textId: 'isaiah-51', note: 'The prophetic chaos-combat naming Rahab and Tannin; the same chaos-monster complex.' },
+    { label: 'Baal Cycle — Lotan', textId: 'baal-cycle-1', note: 'The seven-headed serpent of the Ugaritic combat; the cognate of Leviathan.' },
+  ],
+  sections: [
+    {
+      heading: 'Behemoth',
+      verses: [
+        { ref: '40:15',
+          text: 'Behold now behemoth, which I made with thee; he eateth grass as an ox.',
+          textVersions: { kjv: 'Behold now behemoth, which I made with thee; he eateth grass as an ox.' },
+          entities: [
+            { word: 'behemoth', node: 'behemoth', type: 'deity',
+              note: 'Behemoth, the primordial land-chaos beast, paired with the sea-chaos Leviathan as the two creatures only God can master; read by naturalists as the hippopotamus, by mythologists as a chaos-monster.',
+              parallels: [ { label: 'Leviathan (the sea-pair)', textId: 'psalm-74', note: 'Behemoth (land) and Leviathan (sea) are the eschatological-banquet pair of 1 Enoch / 4 Ezra' }, { label: 'Tiamat (Babylonian)', textId: 'enuma-elish-4', note: 'the primordial chaos defeated/mastered by the creator' } ] },
+          ]
+        },
+        { ref: '40:19',
+          text: 'He is the chief of the ways of God: he that made him can make his sword to approach unto him.',
+          textVersions: { kjv: 'He is the chief of the ways of God: he that made him can make his sword to approach unto him.' },
+          entities: [
+            { word: 'chief of the ways of God', node: 'behemoth', type: 'deity',
+              note: '"First of the ways of God" — the primacy that marks Behemoth as more than a zoo specimen; the same status the mythological reading takes as the mark of a primordial chaos-creature.',
+              parallels: [] },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'Leviathan',
+      verses: [
+        { ref: '41:1',
+          text: 'Canst thou draw out leviathan with an hook? or his tongue with a cord which thou lettest down?',
+          textVersions: { kjv: 'Canst thou draw out leviathan with an hook? or his tongue with a cord which thou lettest down?' },
+          entities: [
+            { word: 'leviathan', node: 'leviathan', type: 'deity',
+              note: 'Leviathan, the sea-chaos dragon, here the untameable creature that only God can master — the same serpent Psalm 74 and Isaiah 27 say YHWH crushed.',
+              parallels: [ { label: 'Lotan (Ugaritic)', textId: 'baal-cycle-1', note: 'the seven-headed serpent; secure cognate' }, { label: 'Tiamat (Babylonian)', textId: 'enuma-elish-4', note: 'the chaos-sea' } ] },
+          ]
+        },
+        { ref: '41:34',
+          text: 'He beholdeth all high things: he is a king over all the children of pride.',
+          textVersions: { kjv: 'He beholdeth all high things: he is a king over all the children of pride.' },
+          entities: [
+            { word: 'king over all the children of pride', node: 'chaoskampf', type: 'theme',
+              note: 'Leviathan crowned as sovereign of chaos — the chaos-power whose mastery, in Job by display rather than combat, demonstrates the creator\'s rule.',
+              parallels: [ { label: 'Tiamat / Yam / Vritra', note: 'the chaos-sovereign the creator-god overcomes across the Chaoskampf traditions' } ] },
+          ]
+        },
+      ]
+    }
+  ],
+};
+
+// ── PSALM 89:9–10 (Thou hast broken Rahab in pieces) ─────────────────────────
+SCRIPTURE_TEXTS['psalm-89'] = {
+  id: 'psalm-89',
+  title: 'Psalm 89:9–10 (Thou hast broken Rahab in pieces)',
+  shortTitle: 'Psalm 89',
+  corpus: 'Hebrew Bible (Psalms)',
+  tradId: 'tradition-second-temple-judaism',
+  date: 'c. 6th century BCE',
+  docNode: 'phase-2-005-davidic-psalms',
+  language: 'Hebrew · King James Version (1611)',
+  translations: [ { id: 'kjv', label: 'KJV (1611)', note: 'King James Version — public domain' } ],
+  intro: 'Psalm 89 grounds YHWH\'s cosmic kingship in the victory over the chaos-sea, naming Rahab directly: "Thou hast broken Rahab in pieces." It is the most KJV-literal of the Rahab texts — the divine warrior who stills the raging sea and shatters the chaos-monster is the same God who establishes the Davidic throne.',
+  crossTradition: [
+    { label: 'Enuma Elish IV (Marduk slays Tiamat)', textId: 'enuma-elish-4', note: 'Rahab is the Hebrew chaos-sea that the creator crushes — the structural parallel to Tiamat split by Marduk.' },
+    { label: 'Isaiah 51 — the cutting of Rahab', textId: 'isaiah-51', note: 'The other great Rahab text; together they fix Rahab as a name for the defeated primordial sea.' },
+    { label: 'Baal Cycle — Baal stills the Sea', textId: 'baal-cycle-1', note: 'The Canaanite storm-god\'s mastery of Sea (Yam), the tradition the Hebrew chaos-combat inherits.' },
+  ],
+  sections: [
+    {
+      heading: 'Thou rulest the raging of the sea',
+      verses: [
+        { ref: '89:9',
+          text: 'Thou rulest the raging of the sea: when the waves thereof arise, thou stillest them.',
+          textVersions: { kjv: 'Thou rulest the raging of the sea: when the waves thereof arise, thou stillest them.' },
+          entities: [
+            { word: 'the raging of the sea', node: 'yam', type: 'deity',
+              note: 'The chaos-sea (Yam) whose raging the divine king stills — the watery chaos the creator subdues.',
+              parallels: [ { label: 'Yam (Ugaritic)', textId: 'baal-cycle-1', note: 'Sea, the adversary the storm-god masters' } ] },
+          ]
+        },
+        { ref: '89:10',
+          text: 'Thou hast broken Rahab in pieces, as one that is slain; thou hast scattered thine enemies with thy strong arm.',
+          textVersions: { kjv: 'Thou hast broken Rahab in pieces, as one that is slain; thou hast scattered thine enemies with thy strong arm.' },
+          entities: [
+            { word: 'Rahab', node: 'rahab', type: 'deity',
+              note: 'Rahab, the Hebrew chaos-monster of the sea, "broken in pieces" by YHWH — a native Israelite name for the defeated primordial chaos, paired with Leviathan and Tannin.',
+              parallels: [ { label: 'Tiamat (Babylonian)', textId: 'enuma-elish-4', note: 'the primordial sea split by the creator; structural parallel' }, { label: 'Rahab in Isaiah 51', textId: 'isaiah-51', note: 'the prophetic cutting of Rahab' } ] },
+            { word: 'thy strong arm', node: 'yahweh', type: 'deity',
+              note: 'The "arm" of YHWH, the divine warrior whose strength performs the primeval victory (cf. "the arm of the LORD", Isaiah 51:9).',
+              parallels: [ { label: 'Marduk (Babylonian)', textId: 'enuma-elish-4', note: 'the storm-god who slays the chaos-sea' } ] },
+          ]
+        },
+      ]
+    }
+  ],
+};
