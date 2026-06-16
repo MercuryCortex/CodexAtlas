@@ -10575,6 +10575,38 @@ body:not(.view-boards) .app-pill--boards { display: none !important; }
 }
 .alphabets-exp-node:hover { border-color: var(--gold, #d4a55a); color: var(--gold, #d4a55a); }
 
+/* 2026-06-16 — script → language → scripture rail (Alphabets glyph view) */
+.alphabets-rail { margin: 22px 2px 6px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.08); }
+.alphabets-rail-head {
+  font: 500 10px/1.4 "JetBrains Mono", ui-monospace, monospace;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--text-3, #8a8f99); margin-bottom: 13px;
+}
+.alphabets-rail-arr { color: var(--text-3, #8a8f99); opacity: 0.6; margin: 0 2px; }
+.alphabets-rail-codex { color: var(--gold, #d4a55a); }
+.alphabets-rail-row {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 8px;
+  padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.alphabets-rail-lang {
+  flex: 0 0 auto; padding: 4px 11px;
+  border: 1px solid rgba(212,165,90,0.5); border-radius: 6px;
+  background: rgba(212,165,90,0.06); color: var(--gold, #d4a55a);
+  font: 500 12px/1.25 -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  cursor: pointer;
+}
+.alphabets-rail-lang:hover { background: var(--gold, #d4a55a); color: #0b0d10; }
+.alphabets-rail-texts { display: flex; flex-wrap: wrap; gap: 5px; }
+.alphabets-rail-text {
+  padding: 3px 9px;
+  border: 1px solid rgba(255,255,255,0.14); border-radius: 6px;
+  background: transparent; color: var(--text-2, #b9bec8);
+  font: 400 11px/1.25 -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  cursor: pointer;
+}
+.alphabets-rail-text:hover { border-color: var(--gold, #d4a55a); color: var(--gold, #d4a55a); }
+.alphabets-rail-notexts { color: var(--text-3, #8a8f99); font: 400 11px/1.25 system-ui, sans-serif; opacity: 0.5; }
+
 /* ============================================================
  * Legacy-chrome hide scope — V2 skeleton views
  * Filed 2026-05-28 per AUDIT/2026-05-28-legacy-isolation-locked.md

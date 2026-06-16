@@ -368,6 +368,64 @@
   }
   function esc(s) { return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;'); }
 
+  // ── script → language → scripture rail (2026-06-16) ─────────────
+  // Maps each glyph-strip script-id to its 11_alphabets vault node, then
+  // follows the newly-wired language edges: <script> <--written-in-script--
+  // languages --attests-text--> the documents/scripture, landing a click in
+  // the Codex inspector. Edges come from build_data's scalar-wikilink harvester.
+  const SCRIPT_NODE = {
+    hieroglyph: 'alphabet-medu-netjer', phoenician: 'alphabet-phoenician',
+    hebrew: 'alphabet-hebrew-aleph-bet', arabic: 'alphabet-arabic-quran',
+    syriac: 'alphabet-syriac', aramaic: 'alphabet-aramaic',
+    ugaritic: 'alphabet-ugaritic', 'south-arabian': 'alphabet-south-arabian',
+    nabataean: 'alphabet-nabataean', sogdian: 'alphabet-sogdian',
+    greek: 'alphabet-greek-vowel-revolution', coptic: 'alphabet-coptic',
+    etruscan: 'alphabet-etruscan', latin: 'alphabet-latin',
+    armenian: 'alphabet-armenian', georgian: 'alphabet-georgian',
+    glagolitic: 'alphabet-glagolitic-cyrillic', geez: 'alphabet-geez-ethiopic',
+    avestan: 'alphabet-avestan', brahmi: 'alphabet-brahmi-origin',
+    tibetan: 'alphabet-tibetan-tantric', mongolian: 'alphabet-mongolian',
+    cherokee: 'alphabet-cherokee', ogham: 'alphabet-ogham',
+    futhark: 'alphabet-elder-futhark', chinese: 'alphabet-chinese-oracle-bones',
+    devanagari: 'alphabet-devanagari-sacred', hangul: 'alphabet-hangul',
+    maya: 'alphabet-mayan-glyphs',
+  };
+  let _titleCache = null;
+  function titleOf(id) {
+    const D = window.VAULT_DATA;
+    if (!_titleCache && D) { _titleCache = {}; (D.nodes || []).forEach(n => { _titleCache[n.id] = n.title || n.id; }); }
+    return (_titleCache && _titleCache[id]) || id;
+  }
+  function buildRail(scriptId) {
+    const D = window.VAULT_DATA;
+    const slug = SCRIPT_NODE[scriptId];
+    if (!D || !slug) return '';
+    const edges = D.edges || [];
+    const langs = [], seenL = {};
+    edges.forEach(e => {
+      if (e.type === 'written-in-script' && e.target === slug && !seenL[e.source]) { seenL[e.source] = 1; langs.push(e.source); }
+    });
+    if (!langs.length) return '';
+    const rows = langs.map(lid => {
+      const texts = [], seenT = {};
+      edges.forEach(e => {
+        if (e.type === 'attests-text' && e.source === lid && !seenT[e.target]) { seenT[e.target] = 1; texts.push(e.target); }
+      });
+      const langName = esc(String(titleOf(lid)).replace(/\s*\(.*$/, '').trim());
+      const textChips = texts.length
+        ? '<div class="alphabets-rail-texts">' + texts.map(tid =>
+            '<button type="button" class="alphabets-rail-text" data-id="' + esc(tid) + '">' + esc(titleOf(tid)) + '</button>').join('') + '</div>'
+        : '<span class="alphabets-rail-notexts">no texts wired yet</span>';
+      return '<div class="alphabets-rail-row">'
+        + '<button type="button" class="alphabets-rail-lang" data-id="' + esc(lid) + '">' + langName + '</button>'
+        + textChips + '</div>';
+    }).join('');
+    const label = (SCRIPTS.find(s => s.id === scriptId) || {}).label || scriptId;
+    return '<div class="alphabets-rail">'
+      + '<div class="alphabets-rail-head">' + esc(label) + ' <span class="alphabets-rail-arr">→</span> language <span class="alphabets-rail-arr">→</span> <span class="alphabets-rail-codex">scripture</span></div>'
+      + rows + '</div>';
+  }
+
   function renderGlyphs(stage) {
     const DATA = window.ALPHA_GLYPH_DATA;
     if (!DATA) {
@@ -411,7 +469,8 @@
     }).join('') + '</div>';
 
     stage.innerHTML = chips + latinNote + grid
-      + '<div class="alphabets-hint">' + rows.length + ' letters · lead script: ' + esc(_script) + ' · click a letter for its transmission chain</div>';
+      + '<div class="alphabets-hint">' + rows.length + ' letters · lead script: ' + esc(_script) + ' · click a letter for its transmission chain</div>'
+      + buildRail(_script);
 
     stage.querySelectorAll('.alphabets-script-chip[data-script]').forEach(b => {
       b.addEventListener('click', () => { _script = b.dataset.script; _expandedName = null; renderGlyphs(stage); });
@@ -440,6 +499,10 @@
     }
     stage.querySelectorAll('.alphabets-glyph-cell').forEach(b => {
       b.addEventListener('click', () => openCard(b));
+    });
+    // script → language → scripture rail: open the language / text node in the inspector.
+    stage.querySelectorAll('.alphabets-rail-lang, .alphabets-rail-text').forEach(b => {
+      b.addEventListener('click', e => { e.stopPropagation(); if (window.selectNode) window.selectNode(b.dataset.id, true); });
     });
     // Restore a previously-open card (e.g. re-entering the view).
     if (_expandedName) {
