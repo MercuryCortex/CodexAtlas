@@ -772,6 +772,41 @@ def collect_node_edges(nodes_by_id):
                         edge_obj["edge_notes"] = str(notes_text)
                     edges.append(edge_obj)
 
+        # === Scalar wikilink-edge fields (2026-06-16) ==================
+        # Some folders carry cross-references as a SCALAR field (a string,
+        # or a YAML list of strings) with [[wikilinks]] embedded in prose,
+        # NOT as a structured-edge block. 18_languages prompted this:
+        # `scripts-used:` ([[alphabet-*]]) and `texts-in-language:`
+        # ([[document-*]]) held the language↔script↔scripture wiring as
+        # inert prose. Harvest every [[slug]] in these fields into real
+        # edges so the script→language→scripture chain exists in the graph
+        # (powers the Alphabets lens' rail + the languages wheel-class).
+        SCALAR_WIKILINK_EDGE_FIELDS = [
+            ("scripts-used",      "written-in-script"),   # 18_languages → 11_alphabets
+            ("texts-in-language", "attests-text"),        # 18_languages → 02_documents
+        ]
+        for sw_field, sw_etype in SCALAR_WIKILINK_EDGE_FIELDS:
+            sw_raw = fm.get(sw_field)
+            if sw_raw is None:
+                continue
+            sw_chunks = sw_raw if isinstance(sw_raw, list) else [sw_raw]
+            sw_seen = set()
+            for sw_chunk in sw_chunks:
+                for sw_target in wikilinks(str(sw_chunk)):
+                    sw_target = sw_target.split("|", 1)[0].strip().lower()
+                    if not sw_target or sw_target == node_id or sw_target in sw_seen:
+                        continue
+                    if not SLUG_RE.match(sw_target):
+                        continue
+                    sw_seen.add(sw_target)
+                    edges.append({
+                        "source": node_id,
+                        "target": sw_target,
+                        "type": sw_etype,
+                        "field": sw_field,
+                        "source_tier": "T1",
+                    })
+
         # === 2026-05-29 — Body-table edges =============================
         # Many MASSIVE-WIN essay nodes (and a lot of person/theme nodes)
         # encode their cross-tradition wirings as markdown TABLE rows in
