@@ -282,12 +282,19 @@
     { id: 'syriac',     label: 'Syriac' },
     { id: 'aramaic',    label: 'Aramaic' },
     { id: 'samaritan',  label: 'Samaritan' },
+    { id: 'ugaritic',   label: 'Ugaritic' },
+    { id: 'south-arabian', label: 'S. Arabian' },
     { id: 'greek',      label: 'Greek' },
     { id: 'coptic',     label: 'Coptic' },
+    { id: 'etruscan',   label: 'Etruscan' },
     { id: 'latin',      label: 'Latin' },
     { id: 'armenian',   label: 'Armenian' },
     { id: 'georgian',   label: 'Georgian' },
+    { id: 'glagolitic', label: 'Glagolitic' },
     { id: 'geez',       label: 'Geʿez' },
+    { id: 'avestan',    label: 'Avestan' },
+    { id: 'brahmi',     label: 'Brahmi' },
+    { id: 'tibetan',    label: 'Tibetan' },
     { id: 'cherokee',   label: 'Cherokee' },
     { id: 'ogham',      label: 'Ogham' },
     { id: 'futhark',    label: 'Futhark' },
@@ -305,7 +312,7 @@
   // at all; the runic order/forms are their own), so showing the Semitic
   // spine under their chips was inaccurate — they belong here, not on the
   // chain-derived side (hieroglyph/phoenician/hebrew/arabic/greek/latin).
-  const STANDALONE = { ogham: 1, futhark: 1, chinese: 1, japanese: 1, devanagari: 1, hangul: 1, aztec: 1, maya: 1, quipu: 1, coptic: 1, georgian: 1, armenian: 1, geez: 1, cherokee: 1 };
+  const STANDALONE = { ogham: 1, futhark: 1, chinese: 1, japanese: 1, devanagari: 1, hangul: 1, aztec: 1, maya: 1, quipu: 1, coptic: 1, georgian: 1, armenian: 1, geez: 1, cherokee: 1, etruscan: 1, ugaritic: 1, glagolitic: 1, avestan: 1, brahmi: 1, tibetan: 1, 'south-arabian': 1 };
   const HIER_FONT = "'Noto Sans Egyptian Hieroglyphs', serif";
   // Syriac (Estrangela) — the Aramaic-branch abjad, 1:1 with the 22-letter spine.
   const SYRIAC = { Aleph:'ܐ', Beth:'ܒ', Gimel:'ܓ', Daleth:'ܕ', He:'ܗ', Waw:'ܘ', Zayin:'ܙ', Heth:'ܚ', Teth:'ܛ', Yod:'ܝ', Kaph:'ܟ', Lamedh:'ܠ', Mem:'ܡ', Nun:'ܢ', Samekh:'ܣ', Ayin:'ܥ', Pe:'ܦ', Tsade:'ܨ', Qoph:'ܩ', Resh:'ܪ', Shin:'ܫ', Taw:'ܬ' };
@@ -340,6 +347,13 @@
       case 'armenian':   return "'Noto Sans Armenian', sans-serif";
       case 'geez':       return "'Noto Sans Ethiopic', serif";
       case 'cherokee':   return "'Noto Sans Cherokee', sans-serif";
+      case 'etruscan':   return "'Noto Sans Old Italic', serif";
+      case 'ugaritic':   return "'Noto Sans Ugaritic', serif";
+      case 'glagolitic': return "'Noto Sans Glagolitic', serif";
+      case 'avestan':    return "'Noto Sans Avestan', serif";
+      case 'brahmi':     return "'Noto Sans Brahmi', serif";
+      case 'tibetan':    return "'Noto Sans Tibetan', serif";
+      case 'south-arabian': return "'Noto Sans Old South Arabian', serif";
       default:           return 'inherit';
     }
   }
