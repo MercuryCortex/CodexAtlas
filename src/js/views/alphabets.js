@@ -279,6 +279,7 @@
     { id: 'phoenician', label: 'Phoenician' },
     { id: 'hebrew',     label: 'Hebrew' },
     { id: 'arabic',     label: 'Arabic' },
+    { id: 'syriac',     label: 'Syriac' },
     { id: 'greek',      label: 'Greek' },
     { id: 'latin',      label: 'Latin' },
     { id: 'ogham',      label: 'Ogham' },
@@ -299,6 +300,8 @@
   // chain-derived side (hieroglyph/phoenician/hebrew/arabic/greek/latin).
   const STANDALONE = { ogham: 1, futhark: 1, chinese: 1, japanese: 1, devanagari: 1, hangul: 1, aztec: 1, maya: 1, quipu: 1 };
   const HIER_FONT = "'Noto Sans Egyptian Hieroglyphs', serif";
+  // Syriac (Estrangela) — the Aramaic-branch abjad, 1:1 with the 22-letter spine.
+  const SYRIAC = { Aleph:'ܐ', Beth:'ܒ', Gimel:'ܓ', Daleth:'ܕ', He:'ܗ', Waw:'ܘ', Zayin:'ܙ', Heth:'ܚ', Teth:'ܛ', Yod:'ܝ', Kaph:'ܟ', Lamedh:'ܠ', Mem:'ܡ', Nun:'ܢ', Samekh:'ܣ', Ayin:'ܥ', Pe:'ܦ', Tsade:'ܨ', Qoph:'ܩ', Resh:'ܪ', Shin:'ܫ', Taw:'ܬ' };
 
   function glyphChar(g, scriptId) {
     switch (scriptId) {
@@ -306,6 +309,7 @@
       case 'phoenician': return g.phoenician || '';
       case 'hebrew':     return g.hebrew || '';
       case 'arabic':     return g.arabic || '';
+      case 'syriac':     return SYRIAC[g.name] || '';
       case 'greek':      return (g.greek || '').split(' ')[0];
       case 'latin':      return g.letter || '';
       default:           return g.unicode ? String.fromCodePoint(g.unicode) : '';
