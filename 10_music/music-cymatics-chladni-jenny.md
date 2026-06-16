@@ -43,7 +43,7 @@ refs:
   - "Chladni, Ernst. Entdeckungen über die Theorie des Klanges (Discoveries on the Theory of Sound). Leipzig (1787)"
   - "Jenny, Hans. Cymatics: A Study of Wave Phenomena and Vibration. Basilius Presse (1967)"
   - "Waller, Michael. 'Chladni Figures: A Study in Symmetry.' Proceedings of the Royal Society (1961)"
-  - "Reid, John Stuart. 'CymaScope: The Science of Cymatics.' (2002)"
+  - "Reid, John Stuart. 'CymaScope: The Science of Cymatics.' (2002) — NOTE: CymaScope is an instrument for photographing cymatic patterns in fluid, not a peer-reviewed model of hearing; it does NOT support the claim that the cochlea 'performs cymatics' (see §The Basilar Membrane)."
 ---
 
 # Cymatics: Sound Creates Visible Form
@@ -68,11 +68,13 @@ In the 1880s, Theosophical researchers — particularly those working in the sch
 
 Their claim: sacred geometers across traditions were not inventing arbitrary patterns but were somehow perceiving or empirically deriving the actual geometric forms that sound produces in matter. Whether through trance, fine sand meditation, or direct acoustic demonstration, the sacred geometric traditions were mapping a physical acoustic fact.
 
-## The Basilar Membrane Convergence
+## The Basilar Membrane — a real convergence, stated precisely
 
-Modern neuroscience adds the most striking data point: the human basilar membrane in the cochlea converts incoming sound waves into position-encoded neural signals by performing cymatics on itself. Sound pressure waves create traveling waves on the basilar membrane; the membrane's tapering geometry causes different frequencies to produce standing-wave peaks at different positions. The **ear literally performs cymatics** — the frequency-to-position mapping that allows pitch perception is the same standing-wave geometry that Chladni demonstrated on plates.
+Modern neuroscience offers a genuine and striking connection here — but the popular version overstates it, so it is worth getting exactly right. The cochlea performs **frequency-to-place mapping** (tonotopy): the basilar membrane is stiff and narrow at the base and floppy and wide at the apex, so a tone of a given frequency drives its largest response at a specific position along the membrane's length. Pitch is, in part, *where* the membrane responds most — a real frequency→geometry relationship, and the reason the harmonic series and the layout of the auditory nerve are so deeply linked.
 
-This means the human nervous system evolved to perceive pitch *through* the geometry of standing waves. When sacred traditions claim that certain sound geometries affect consciousness differently, they are pointing (without the vocabulary) at the fact that the brain processes different frequencies through different physical locations in an acoustically cymatic structure.
+But the mechanism is **not** cymatics. A Chladni plate (and Jenny's driven fluids) forms a *standing* wave whose **fixed** nodal lines collect the sand. The cochlea instead carries a **traveling wave** down a graded, dispersive, actively-amplified membrane — the wave sweeps in, peaks at its place, and dies away; it does not set up a stationary nodal pattern. This was established by Georg von Békésy (Nobel Prize, 1961) and later refined by the discovery of active amplification by the outer hair cells (the "cochlear amplifier"). So the honest statement is: **the ear maps frequency to position** — a beautiful and real fact — but it does so as a *traveling-wave filter*, not by "performing cymatics," and CymaScope-style fluid imaging is not evidence about how hearing works.
+
+What genuinely unifies the Chladni plate, the atomic orbital, and the cochlea's place-map is deeper and survives scrutiny: each is a case of a **bounded medium selecting spatial structure by frequency**. That is the convergence worth keeping — no overstatement required.
 
 ## The Vault Argument
 
@@ -80,4 +82,4 @@ Cymatics is the **bridge node** between two separate vault clusters that have be
 - The acoustic-physics cluster ([[music-harmonic-series-physics]], overtones, ratios)
 - The sacred-geometry cluster ([[sacred-geometry-cosmic-proportion]], yantra, mandala)
 
-The standing-wave geometry that produces the harmonic series also produces sacred geometric forms in matter. Sacred geometers were — regardless of tradition or theological vocabulary — mapping acoustic standing-wave topology. The convergence is not metaphorical; it is a direct physical identity.
+The standing-wave geometry that produces the harmonic series also produces geometric forms in matter, and some of those forms resemble traditional sacred diagrams. Sacred geometers were — in their own vocabulary — exploring the shapes that bounded vibration can take. Stated carefully, this is a real **morphological resemblance** grounded in shared mathematics (bounded standing waves) — not a literal claim that a yantra *is* a sound figure. The honest bridge is the shared math, not an identity of objects.
