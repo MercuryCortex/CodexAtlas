@@ -18667,3 +18667,584 @@ SCRIPTURE_TEXTS['hosea-6'] = {
     }
   ]
 };
+
+// -- Ovid, Metamorphoses I.1–88 (Chaos ordered into the cosmos) --
+SCRIPTURE_TEXTS['ovid-metamorphoses-1'] = {
+  "id": "ovid-metamorphoses-1",
+  "title": "Ovid, Metamorphoses I.1–88 (Chaos ordered into the cosmos)",
+  "shortTitle": "Ovid, Metamorphoses I",
+  "corpus": "Greco-Roman · Latin epic (Augustan)",
+  "tradId": "tradition-roman-religion",
+  "date": "c. 8 CE (completed in Augustan Rome before Ovid's exile to Tomis)",
+  "docNode": "phase-4-085-ovid-metamorphoses-book-1",
+  "language": "Classical Latin (Augustan hexameter) · Brookes More translation (Boston: Cornhill, 1922) — public domain",
+  "translations": [
+    {
+      "id": "brookes-more",
+      "label": "Brookes More (1922)",
+      "note": "Brookes More, Ovid Metamorphoses (Boston: Cornhill, 1922) — public domain"
+    }
+  ],
+  "intro": "The opening of Ovid's Metamorphoses is the great Greco-Roman literary cosmogony: before anything else there is Chaos, \"a rude and undeveloped mass\" (rudis indigestaque moles) in which all the discordant elements lie congested in a shapeless heap, until \"God, or kindly Nature\" ends the strife and separates sky from sea from land, assigns each element its place, and at last man is made and given an upright face to behold the stars. Ovid is not transmitting a cult-myth but versifying the learned cosmogony of his age — a literary fusion of Hesiod's Chaos, Empedoclean strife-and-order, and Stoic-Epicurean physics. Its convergence with the formless deep of Genesis 1 and the ordering-of-chaos of the Enuma Elish is the convergence of a shared ancient grammar of creation (chaos → separation → ordered world → man), reached through the common Eastern-Mediterranean inheritance Martin West traced in The East Face of Helicon — not a case of Ovid borrowing from Scripture.",
+  "crossTradition": [
+    {
+      "label": "Genesis 1 — the formless deep ordered by separation",
+      "textId": "genesis-1",
+      "note": "Both texts open on an unformed primordial state (Ovid's Chaos / Hebrew tohu wa-bohu over tehom) that is ordered by an act of separation — Ovid's god cuts land from sky and sea from land, while Genesis 1 divides light from dark, waters above from waters below, sea from dry land. M. L. West (The East Face of Helicon, 1997) sets the Greek separation-cosmogonies in the same East-Mediterranean stream as the Near-Eastern creation accounts; the convergence is structural and inherited, not Ovid quoting Scripture."
+    },
+    {
+      "label": "Enuma Elish IV — chaos divided into cosmos",
+      "textId": "enuma-elish-4",
+      "note": "The Babylonian epic makes the cosmos by splitting the chaos-body Tiamat into sky and earth; Ovid makes it by separating the elements of Chaos and assigning each its station. West (1997) and Kirk–Raven–Schofield (The Presocratic Philosophers, 1983) read the Greek 'separation' model — out of which Ovid's literary version grows — as the demythologised heir of exactly this Near-Eastern division-of-the-waters cosmogony."
+    },
+    {
+      "label": "Hesiod, Theogony 116 — 'first of all Chaos came to be'",
+      "note": "Ovid's Chaos is the Roman literary descendant of Hesiod's primal Χάος (Theogony 116). West's edition and commentary on the Theogony (1966) is the standard treatment of this Greek Chaos as a yawning gap / unformed state — the headwater of the entire Greco-Roman chaos-cosmogony Ovid inherits."
+    },
+    {
+      "label": "Nasadiya Sukta (Rig Veda X.129) — neither being nor non-being",
+      "textId": "nasadiya-sukta",
+      "note": "The Vedic creation-hymn opens, like Ovid, on an undifferentiated primordial state before the elements are sorted ('there was neither non-existence nor existence then'). The parallel is typological — the widespread ancient intuition of an unformed pre-cosmic condition — not a line of transmission; cf. Eliade, The Myth of the Eternal Return, on the cross-cultural chaos-to-cosmos pattern."
+    },
+    {
+      "label": "Cosmic-body & world-parent cosmogonies (Ymir, Pangu, Purusha)",
+      "note": "Ovid's ordering-of-Chaos belongs to the 'separation' family of cosmogony, distinct from the 'cosmos-from-a-slain/sacrificed body' family (Tiamat, Ymir, Pangu, Purusha). Bruce Lincoln (Myth, Cosmos, and Society, 1986) maps these as parallel Indo-European/Near-Eastern solutions to the same problem; placing Ovid in the separation-branch is what makes his kinship with Genesis 1 (also separation) sharper than with the body-dismemberment myths."
+    }
+  ],
+  "sections": [
+    {
+      "heading": "The Invocation",
+      "verses": [
+        {
+          "ref": "I.1–4",
+          "text": "My soul is wrought to sing of forms transformed to bodies new and strange! Immortal Gods inspire my heart, for ye have changed yourselves and all things you have changed! Oh lead my song in smooth and measured strains, from olden days when earth began to this completed time!",
+          "textVersions": {
+            "brookes-more": "My soul is wrought to sing of forms transformed to bodies new and strange! Immortal Gods inspire my heart, for ye have changed yourselves and all things you have changed! Oh lead my song in smooth and measured strains, from olden days when earth began to this completed time!"
+          },
+          "entities": [
+            {
+              "word": "from olden days when earth began",
+              "node": "anthropos-myth",
+              "type": "theme",
+              "note": "Ovid programmatically begins his universal history at the cosmogony — 'when earth began' (prima ab origine mundi) — making the creation of the world and of man the foundation of the whole poem.",
+              "parallels": [
+                {
+                  "label": "Genesis 1:1 — 'In the beginning'",
+                  "textId": "genesis-1",
+                  "note": "Both works frame everything that follows by opening at the origin of the cosmos; cf. M. L. West, The East Face of Helicon (1997), on shared opening conventions of cosmogonic narrative."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Before Creation: Chaos",
+      "verses": [
+        {
+          "ref": "I.5–9",
+          "text": "Before the ocean and the earth appeared— before the skies had overspread them all— the face of Nature in a vast expanse was naught but Chaos uniformly waste. It was a rude and undeveloped mass, that nothing made except a ponderous weight; and all discordant elements confused, were there congested in a shapeless heap.",
+          "textVersions": {
+            "brookes-more": "Before the ocean and the earth appeared— before the skies had overspread them all— the face of Nature in a vast expanse was naught but Chaos uniformly waste. It was a rude and undeveloped mass, that nothing made except a ponderous weight; and all discordant elements confused, were there congested in a shapeless heap."
+          },
+          "entities": [
+            {
+              "word": "Chaos",
+              "node": "chaos-primordial",
+              "type": "deity",
+              "note": "Ovid's Chaos translates Hesiod's primal Χάος (Theogony 116): not 'disorder' in the modern sense but the unformed, undifferentiated pre-cosmic condition. Bömer's standard commentary (P. Ovidius Naso, Metamorphosen, Buch I–III, 1969) traces Ovid's Chaos to the Hesiodic-Stoic tradition rather than to any single source.",
+              "parallels": [
+                {
+                  "label": "tohu wa-bohu / tehom (Genesis 1:2)",
+                  "textId": "genesis-1",
+                  "note": "The Hebrew 'without form and void' over 'the deep' is the functional equivalent of Ovid's Chaos — the unformed state preceding the ordered world; M. L. West (The East Face of Helicon, 1997) places both in one East-Mediterranean cosmogonic stream."
+                },
+                {
+                  "label": "Tiamat (Enuma Elish)",
+                  "textId": "enuma-elish-4",
+                  "note": "The Babylonian chaos-sea from which the cosmos is divided; Kirk–Raven–Schofield (The Presocratic Philosophers, 1983) read the Greek chaos-and-separation model behind Ovid as the demythologised heir of this Near-Eastern type."
+                }
+              ]
+            },
+            {
+              "word": "a rude and undeveloped mass",
+              "node": "primordial-waters",
+              "type": "theme",
+              "note": "Brookes More's rendering of the famous Latin tag rudis indigestaque moles — the inert, undigested primordial 'lump' that holds all elements unsorted. It is the Latin literary type-specimen of the formless primordial substrate that ordering-cosmogonies must articulate.",
+              "parallels": [
+                {
+                  "label": "the deep / the waters (Genesis 1:2)",
+                  "textId": "genesis-1",
+                  "note": "The dark, unbounded primordial waters over which the Spirit moves; both Ovid's moles and the tehom are the raw, unordered material that creation works upon. Cf. Hermann Gunkel, Schöpfung und Chaos (1895), on the formless-primordium motif."
+                },
+                {
+                  "label": "the waters before the gods (Enuma Elish I)",
+                  "textId": "enuma-elish-4",
+                  "note": "In the Babylonian epic the commingled fresh and salt waters precede all distinction; the structural parallel to Ovid's congested, undivided mass."
+                }
+              ]
+            },
+            {
+              "word": "all discordant elements confused",
+              "node": "world-parent-cosmogony",
+              "type": "theme",
+              "note": "The four elements lie warring and unseparated within Chaos — Ovid's Empedoclean colouring (Strife holding the elements jumbled before Love/order sorts them). Kirk–Raven–Schofield (The Presocratic Philosophers, 1983) detail the Empedoclean strife-and-mixture physics Ovid versifies here.",
+              "parallels": [
+                {
+                  "label": "separation of waters above and below (Genesis 1:6–7)",
+                  "textId": "genesis-1",
+                  "note": "Where Genesis orders by dividing the waters, Ovid orders by un-confusing the warring elements; both turn an undifferentiated whole into a structured cosmos by separation. Cf. M. L. West, The East Face of Helicon (1997)."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "A God, or Nature, Orders the World",
+      "verses": [
+        {
+          "ref": "I.21–25",
+          "text": "But God, or kindly Nature, ended strife— he cut the land from skies, the sea from land, the heavens ethereal from material air; and when were all evolved from that dark mass he bound the fractious parts in tranquil peace.",
+          "textVersions": {
+            "brookes-more": "But God, or kindly Nature, ended strife— he cut the land from skies, the sea from land, the heavens ethereal from material air; and when were all evolved from that dark mass he bound the fractious parts in tranquil peace."
+          },
+          "entities": [
+            {
+              "word": "God, or kindly Nature",
+              "node": "demiurge",
+              "type": "theme",
+              "note": "Ovid's studiedly non-committal deus et melior natura — 'God, or kindly Nature' — is the ordering agent who imposes form on Chaos, deliberately left philosophically open between a personal creator and an impersonal cosmic principle. Stephen Wheeler (A Discourse of Wonders, 1999) reads this indeterminacy as Ovid's signature blend of Stoic, Epicurean and Platonic cosmology; the figure is functionally the Platonic Demiurge of the Timaeus, the craftsman who orders pre-existing matter.",
+              "parallels": [
+                {
+                  "label": "Elohim ordering by speech (Genesis 1)",
+                  "textId": "genesis-1",
+                  "note": "Both an ordering agent brings cosmos out of the formless state — but Genesis' God creates and divides by sovereign word, where Ovid's god/Nature sorts pre-existing matter; the contrast (creation vs. ordering of existing stuff) is itself instructive. Cf. Gerhard von Rad, Genesis (1972), on creation-by-separation."
+                },
+                {
+                  "label": "Marduk ordering Tiamat's body (Enuma Elish IV–V)",
+                  "textId": "enuma-elish-4",
+                  "note": "Marduk likewise imposes cosmic order on the chaos-material; West (1997) and Kirk–Raven–Schofield (1983) treat the Greek 'orderer-of-chaos' that Ovid inherits as kin to this Near-Eastern divine ordering."
+                }
+              ]
+            },
+            {
+              "word": "he cut the land from skies, the sea from land",
+              "node": "primordial-waters",
+              "type": "theme",
+              "note": "Creation-by-separation: the single act that turns Chaos into cosmos is the cutting-apart of sky, sea and land — the same logic of division that structures the Priestly creation week. This 'separation' cosmogony is the branch of creation-myth Ovid shares most directly with Genesis 1.",
+              "parallels": [
+                {
+                  "label": "God divides the waters, then sea from dry land (Genesis 1:6–10)",
+                  "textId": "genesis-1",
+                  "note": "The Hebrew account orders the world by successive separations (light/dark, waters above/below, sea/land) exactly as Ovid does; M. L. West (The East Face of Helicon, 1997) identifies separation-of-the-elements as a shared East-Mediterranean cosmogonic pattern."
+                },
+                {
+                  "label": "Tiamat split into sky and earth (Enuma Elish IV)",
+                  "textId": "enuma-elish-4",
+                  "note": "Marduk divides the chaos-body into heaven and earth — the Mesopotamian division-cosmogony standing behind the Greek separation-model Ovid versifies."
+                }
+              ]
+            },
+            {
+              "word": "the heavens ethereal from material air",
+              "node": "chaoskampf",
+              "type": "theme",
+              "note": "Ovid's cosmogony is pointedly NON-combative: order comes by peaceful separation and binding 'in tranquil peace,' not by a storm-god slaying a chaos-dragon. This marks the contrast with the Chaoskampf type (Marduk vs Tiamat, Baal vs Yam, YHWH vs Rahab) — the literary-philosophical Greco-Roman cosmogony has demythologised the combat into physics. Naming the absence is the point: Kirk–Raven–Schofield (The Presocratic Philosophers, 1983) show the Greek tradition replacing the combat-myth with element-theory.",
+              "parallels": [
+                {
+                  "label": "Marduk slays the chaos-sea (Enuma Elish IV)",
+                  "textId": "enuma-elish-4",
+                  "note": "The combat-cosmogony Ovid does NOT use: order there is won by violence against Tiamat, whereas Ovid's god ends strife by separation alone. The contrast clarifies what the 'separation' branch (Ovid, Genesis 1) shares against the 'combat' branch."
+                },
+                {
+                  "label": "the cutting of Rahab (Isaiah 51)",
+                  "textId": "enuma-elish-4",
+                  "note": "Hebrew poetry preserves the combat (YHWH cutting Rahab and the dragon) that Priestly Genesis — like Ovid — suppresses in favour of orderly separation; cf. Hermann Gunkel, Schöpfung und Chaos (1895)."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "The Elements Take Their Places",
+      "verses": [
+        {
+          "ref": "I.26–30",
+          "text": "The fiery element of convex heaven leaped from the mass devoid of dragging weight, and chose the summit arch to which the air as next in quality was next in place.",
+          "textVersions": {
+            "brookes-more": "The fiery element of convex heaven leaped from the mass devoid of dragging weight, and chose the summit arch to which the air as next in quality was next in place."
+          },
+          "entities": [
+            {
+              "word": "The fiery element of convex heaven",
+              "node": "cosmic-body-cosmogony",
+              "type": "theme",
+              "note": "Each of the four elements assumes its proper cosmic station by weight — fire highest, then air, then earth and water below. This is Stoic-Empedoclean physics (the elements sorting by gravity into a layered cosmos), the learned natural philosophy Ovid renders as poetry. Stephen Wheeler (A Discourse of Wonders, 1999) and Bömer's commentary (1969) document the philosophical sources.",
+              "parallels": [
+                {
+                  "label": "firmament dividing the waters (Genesis 1:6–8)",
+                  "textId": "genesis-1",
+                  "note": "Both cosmogonies build a vertically layered world (heaven above, waters/earth below) out of the initial undivided mass; the architecture of separation is shared even though the physics (element-weight vs. divine fiat) differs. Cf. von Rad, Genesis (1972)."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "The Creation of Man",
+      "verses": [
+        {
+          "ref": "I.76–78",
+          "text": "Did the Unknown God designing then a better world make man of seed divine? or did Prometheus take the new soil of earth (that still contained some godly element of Heaven's Life) and use it to create the race of man; first mingling it with water of new streams;",
+          "textVersions": {
+            "brookes-more": "Did the Unknown God designing then a better world make man of seed divine? or did Prometheus take the new soil of earth (that still contained some godly element of Heaven's Life) and use it to create the race of man; first mingling it with water of new streams;"
+          },
+          "entities": [
+            {
+              "word": "Prometheus",
+              "node": "prometheus",
+              "type": "deity",
+              "note": "Ovid offers two alternative makers of man — the 'Unknown God' from divine seed, or the Titan Prometheus moulding earth mixed with river-water. The Promethean clay-modelling anthropogony is the Greek myth (cf. Hesiod, Works and Days; Apollodorus 1.7.1) of man fashioned from earth and water, which Ovid sets beside the Stoic 'divine seed' account.",
+              "parallels": [
+                {
+                  "label": "man formed of dust + breath (Genesis 2:7)",
+                  "textId": "genesis-1",
+                  "note": "The Promethean 'earth mingled with water' shaped into man closely parallels YHWH forming man of the dust of the ground; both are clay-modelling anthropogonies. M. L. West (The East Face of Helicon, 1997) and earlier folklorists (cf. Frazer, Folk-Lore in the Old Testament, 1918) note the wide distribution of the 'man from clay' motif across the Near East and Mediterranean."
+                },
+                {
+                  "label": "man fashioned from clay (Enuma Elish VI / Atrahasis)",
+                  "textId": "enuma-elish-4",
+                  "note": "In Mesopotamian cosmogony humankind is moulded from clay mixed with divine blood; the structural kin of Ovid's earth-and-water man with its retained 'godly element of Heaven's Life.'"
+                }
+              ]
+            },
+            {
+              "word": "make man of seed divine",
+              "node": "anthropos-myth",
+              "type": "theme",
+              "note": "The alternative anthropogony — man made 'of seed divine,' retaining a spark of the heaven from which the world was separated. This is the Stoic doctrine of the divine pneuma in man, set by Ovid against the Promethean clay version; the deliberate doubling (god-or-Prometheus, seed-or-clay) is characteristic of his learned, non-dogmatic cosmology.",
+              "parallels": [
+                {
+                  "label": "man in the image of God (Genesis 1:26–27)",
+                  "textId": "genesis-1",
+                  "note": "Ovid's 'godly element of Heaven's Life' in man functions like the Hebrew 'image and likeness of God' — both make humankind uniquely participant in the divine; cf. von Rad, Genesis (1972), on the imago Dei."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "I.84–86",
+          "text": "On earth the brute creation bends its gaze, but man was given a lofty countenance and was commanded to behold the skies; and with an upright face may view the stars:—",
+          "textVersions": {
+            "brookes-more": "On earth the brute creation bends its gaze, but man was given a lofty countenance and was commanded to behold the skies; and with an upright face may view the stars:—"
+          },
+          "entities": [
+            {
+              "word": "man was given a lofty countenance",
+              "node": "anthropos-myth",
+              "type": "theme",
+              "note": "The capstone of Ovid's creation: man alone is given an upright stance and a face turned to the heavens (os sublime), set apart from the beasts that look down. This is the Latin locus classicus of the 'erect, sky-gazing man' topos and the climax that completes the movement Chaos → cosmos → man.",
+              "parallels": [
+                {
+                  "label": "man given dominion (Genesis 1:28)",
+                  "textId": "genesis-1",
+                  "note": "Both cosmogonies place the making of man as the crowning act distinguishing him from the animals — Ovid by the heaven-turned face, Genesis by dominion and the divine image. Cf. M. L. West, The East Face of Helicon (1997), on man as the culmination of creation-narratives."
+                }
+              ]
+            },
+            {
+              "word": "and was commanded to behold the skies",
+              "node": "four-ages-degeneration",
+              "type": "theme",
+              "note": "Immediately after man is made and set upright to behold the heavens, Ovid's narrative turns to the Four Ages — Golden, Silver, Bronze, Iron — a sequence of moral decline. This four-ages degeneration scheme (Hesiod's five races, Works and Days 109–201, compressed to four) is the frame the creation-of-man passage hands off to.",
+              "parallels": [
+                {
+                  "label": "Hesiod's races of men (Works and Days)",
+                  "textId": "enuma-elish-4",
+                  "note": "Ovid adapts Hesiod's myth of successive ages of decline directly after the cosmogony; M. L. West's edition of Works and Days (1978) is the standard treatment of the ages-of-man scheme Ovid inherits. [no Hesiod reader staged]"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
+
+// -- Rig Veda 10.121 — Hiraṇyagarbha (the Golden Embryo) --
+SCRIPTURE_TEXTS['rigveda-10-121'] = {
+  "id": "rigveda-10-121",
+  "title": "Rig Veda 10.121 — Hiraṇyagarbha (the Golden Embryo)",
+  "shortTitle": "Hiraṇyagarbha Sūkta",
+  "corpus": "Vedic · Rig Veda",
+  "tradId": "tradition-vedic-hinduism",
+  "date": "c. 1200–1000 BCE (late Maṇḍala 10; canonical c. 1000 BCE)",
+  "docNode": "phase-1-031-rigveda",
+  "language": "Sanskrit · R.T.H. Griffith translation (1896)",
+  "translations": [
+    {
+      "id": "griffith",
+      "label": "Griffith (1896)",
+      "note": "Ralph T.H. Griffith, The Hymns of the Rigveda (1896) — public domain"
+    }
+  ],
+  "intro": "The \"Hymn to the Unknown God\" (named Ka, \"Who?\", from its refrain) and one of the great cosmogonies of the Rig Veda. In the beginning rose Hiraṇyagarbha, the Golden Embryo or Golden Womb, born the one lord of all created beings, who fixed and upholds earth and heaven. The hymn's central image is the cosmic germ borne upon the primordial waters: \"What time the mighty waters came, containing the universal germ, producing Agni.\" Each of its first nine verses presses the same question — \"What God shall we adore with our oblation?\" — refusing to name the creator until the tenth verse answers: Prajāpati, the Lord of Creatures. The hymn stands beside its companion in the same book, the Nāsadīya Sūkta (RV 10.129): where the Nāsadīya ends in agnostic doubt, the Hiraṇyagarbha resolves its question into a single creator-lord, and it is a key witness to the late-Vedic drift toward one cosmic god (Jamison & Brereton 2014; Doniger 1981). Its waters-bearing-the-germ cosmogony sets the Vedic deep beside the tehom of Genesis 1, the Egyptian Nun, and the Babylonian Tiamat.",
+  "crossTradition": [
+    {
+      "label": "Rig Veda 10.129 — Nāsadīya Sūkta",
+      "textId": "nasadiya-sukta",
+      "note": "Its companion creation hymn in the same book of the Rig Veda. The Nāsadīya's pre-creation waters and its 'Warmth (tapas)' that births 'that Unit' are the same cosmogonic moment the Hiraṇyagarbha gives a name and a lord; where the Nāsadīya ends in doubt ('he verily knows it, or perhaps he knows not'), the Hiraṇyagarbha answers its refrain with Prajāpati. Brereton ('Edifying Puzzlement', JAOS 1999) and Jamison & Brereton (2014) read the two as a deliberately paired pair of 'riddle' cosmogonies."
+    },
+    {
+      "label": "Rig Veda 10.90 — Puruṣa Sūkta",
+      "textId": "purusha-sukta",
+      "note": "The other late-Maṇḍala-10 creation hymn, where the cosmos is made from the dismembered body of the cosmic Person rather than hatched from the Golden Womb. Macdonell (Vedic Mythology, 1898) groups Hiraṇyagarbha, Puruṣa and the Nāsadīya as the three speculative cosmogonies of the latest Rig Veda."
+    },
+    {
+      "label": "Genesis 1:2 — the deep (tehom)",
+      "textId": "genesis-1",
+      "note": "'Darkness was upon the face of the deep' — the same primordial waters as substrate of creation. Day (God's Conflict with the Dragon and the Sea, 1985) and the wider Religionsgeschichte tradition treat the waters-before-creation as a shared ancient Near Eastern / Indo-European motif rather than a borrowing."
+    },
+    {
+      "label": "Enuma Elish — Apsu and Tiamat (Babylonian)",
+      "textId": "enuma-elish-1",
+      "note": "The commingled fresh and salt primordial waters out of which the first gods are born — the Mesopotamian form of the deep that the Hiraṇyagarbha calls 'the mighty waters' bearing the universal germ. Heidel (The Babylonian Genesis, 1951) is the standard comparison of the watery beginnings."
+    },
+    {
+      "label": "Memphite Theology — Nun (Egyptian)",
+      "textId": "memphite-theology",
+      "note": "The undifferentiated primordial ocean Nun, from which the creator (Atum / Ptah) emerges — the Egyptian counterpart of the Vedic salila bearing the cosmic embryo. Assmann (The Search for God in Ancient Egypt, 2001) treats Nun as the type of the pre-creation deep."
+    },
+    {
+      "label": "Völuspá — Ginnungagap (Norse)",
+      "textId": "voluspa",
+      "note": "The Indo-European cousin: the Norse pre-creation void/abyss out of which the cosmos arises. The apas.md vault node lists Ginnungagap among the cross-tradition equivalents of the Vedic Waters; Lincoln (Myth, Cosmos, and Society, 1986) reconstructs a shared Proto-Indo-European cosmogonic background."
+    }
+  ],
+  "sections": [
+    {
+      "heading": "The Golden Embryo, Lord of Creation",
+      "verses": [
+        {
+          "ref": "10.121.1",
+          "text": "IN the beginning rose Hiranyagarbha, born Only Lord of all created beings. He fixed and holdeth up this earth and heaven. What God shall we adore with our oblation?",
+          "textVersions": {
+            "griffith": "IN the beginning rose Hiranyagarbha, born Only Lord of all created beings. He fixed and holdeth up this earth and heaven. What God shall we adore with our oblation?"
+          },
+          "entities": [
+            {
+              "word": "Hiranyagarbha",
+              "node": "prajapati",
+              "type": "deity",
+              "note": "Hiraṇyagarbha, the 'Golden Embryo' or 'Golden Womb', who rises in the beginning as the one lord of all beings — identified at the hymn's close (v. 10) and in the later tradition with Prajāpati, the Lord of Creatures (the Prajāpati node's aka is literally 'Hiraṇyagarbha (Golden Embryo)'). Jamison & Brereton (2014) and Doniger (1981) read this hymn as a key step in the late-Rigvedic move toward a single creator-god.",
+              "parallels": [
+                {
+                  "label": "Atum (Egyptian)",
+                  "textId": "memphite-theology",
+                  "note": "the creator who self-arises upon the primordial waters of Nun — the Egyptian 'one lord' of the watery beginning (Assmann 2001)."
+                },
+                {
+                  "label": "Elohim — Genesis 1",
+                  "textId": "genesis-1",
+                  "note": "the single creator who orders earth and heaven over the deep, where the Vedic hymn still asks 'what God?' before naming him (Day 1985)."
+                }
+              ]
+            },
+            {
+              "word": "born Only Lord of all created beings",
+              "node": "cosmic-egg",
+              "type": "symbol",
+              "note": "The 'Golden Embryo / Womb' (garbha) is the Vedic cosmic egg — the primordial form concentrating before creation unfolds, named Brahmāṇḍa ('egg of Brahmā') in later Hinduism (the cosmic-egg node's aka includes 'Hiranyagarbha' and 'Brahmanda'). Macdonell (Vedic Mythology, 1898) traces the golden-germ image from this hymn into Brāhmaṇa cosmogony.",
+              "parallels": [
+                {
+                  "label": "Orphic egg / Phanes (Greek)",
+                  "textId": "orphic-theogony",
+                  "note": "Phanes hatches from the primordial egg — the same pre-creation concentration before the first divine being emerges; West (The Orphic Poems, 1983) notes the structural kinship with the Indic golden germ."
+                },
+                {
+                  "label": "Pangu's egg (Chinese)",
+                  "note": "the cosmos formed when Pangu breaks out of the cosmic egg — an independently reached world-egg cosmogony (Lincoln 1986 on the comparative type)."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "The Waters and the Universal Germ",
+      "verses": [
+        {
+          "ref": "10.121.7",
+          "text": "What time the mighty waters came, containing the universal germ, producing Agni, Thence sprang the Gods' one spirit into being. What God shall we adore with our oblation?",
+          "textVersions": {
+            "griffith": "What time the mighty waters came, containing the universal germ, producing Agni, Thence sprang the Gods' one spirit into being. What God shall we adore with our oblation?"
+          },
+          "entities": [
+            {
+              "word": "the mighty waters",
+              "node": "apas",
+              "type": "deity",
+              "note": "Āpaḥ / salila, the deified Vedic primordial Waters that bear the cosmic germ (garbha) and bring forth Agni — the undifferentiated flood that is the substrate of creation. The vault's apas.md node cites exactly this verse (RV 10.121.7) and lists Tiamat, Nun, Tehom and Ginnungagap as its cross-tradition equivalents. Macdonell (Vedic Mythology, 1898) and Jamison & Brereton (2014) gloss the Waters here as the cosmogonic deep carrying the embryo.",
+              "parallels": [
+                {
+                  "label": "tehom / the deep — Genesis 1:2",
+                  "textId": "genesis-1",
+                  "note": "'darkness was upon the face of the deep' — the same primordial waters as the matrix of creation (Day 1985; Heidel 1951)."
+                },
+                {
+                  "label": "Apsu + Tiamat — Enuma Elish",
+                  "textId": "enuma-elish-1",
+                  "note": "the commingled fresh and salt waters out of which the first gods are born — the Mesopotamian deep (Heidel, The Babylonian Genesis, 1951)."
+                },
+                {
+                  "label": "Nun (Egyptian)",
+                  "textId": "memphite-theology",
+                  "note": "the primordial ocean from which the creator self-arises (Assmann 2001)."
+                }
+              ]
+            },
+            {
+              "word": "the universal germ",
+              "node": "primordial-waters",
+              "type": "theme",
+              "note": "The 'universal germ' (garbha, the cosmic embryo) carried on the waters is the seed of the ordered world — the Vedic instance of the primordial-waters cosmogony in which formless deep precedes and bears creation. The primordial-waters theme node groups RV 10.121 with the Enuma Elish, the Pyramid Texts and the Popol Vuh as the same cosmogonic type (Heidel 1951; Eliade, Patterns in Comparative Religion, 1958, on water as undifferentiated potency).",
+              "parallels": [
+                {
+                  "label": "'the sea alone' — Popol Vuh (Maya)",
+                  "textId": "genesis-1",
+                  "note": "per Eliade (1958), independent traditions on three continents begin from undifferentiated waters; the Maya 'only the sea alone is pooled under all the sky' is the New-World instance (cited via the genesis-1 reader's deep-waters panel)."
+                },
+                {
+                  "label": "Ginnungagap (Norse)",
+                  "textId": "voluspa",
+                  "note": "the Indo-European cousin: the pre-creation void/abyss out of which the cosmos arises (Lincoln, Myth, Cosmos, and Society, 1986)."
+                }
+              ]
+            },
+            {
+              "word": "producing Agni",
+              "node": "evolutionary-cosmogony",
+              "type": "theme",
+              "note": "Creation here proceeds in stages — the waters come, then bear the germ, which produces Agni (fire), whence springs 'the Gods' one spirit': a staged emergence rather than a single fiat. Jamison & Brereton (2014) note the sequential 'and then... and then' structure of the hymn's cosmogony.",
+              "parallels": [
+                {
+                  "label": "Warmth births 'that Unit' — Nāsadīya (RV 10.129.3)",
+                  "textId": "nasadiya-sukta",
+                  "note": "the companion hymn's staged emergence — darkness, then water, then 'by the great power of Warmth was born that Unit' (Brereton, JAOS 1999, pairs the two hymns' graded cosmogonies)."
+                },
+                {
+                  "label": "the seven-day sequence — Genesis 1",
+                  "textId": "genesis-1",
+                  "note": "the Priestly cosmogony as staged emergence; the evolutionary-cosmogony theme node groups the P-source with progressive-creation chants."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "10.121.8",
+          "text": "He in his might surveyed the floods containing productive force and generating Worship. He is the God of gods, and none beside him. What God shall we adore with our oblation?",
+          "textVersions": {
+            "griffith": "He in his might surveyed the floods containing productive force and generating Worship. He is the God of gods, and none beside him. What God shall we adore with our oblation?"
+          },
+          "entities": [
+            {
+              "word": "the floods containing productive force",
+              "node": "apas",
+              "type": "deity",
+              "note": "The creator surveys the primordial floods (the Waters, Āpaḥ) that hold the generative power of the cosmos — the deep as productive matrix, not yet a foe. Unlike the Chaoskampf reflexes (Indra vs Vṛtra, Marduk vs Tiamat) where the waters are an adversary, here in the Hiraṇyagarbha the waters are surveyed and ordered, closer to the demythologised deep of Genesis 1 (Day 1985 on the spectrum from combat to ordering).",
+              "parallels": [
+                {
+                  "label": "Tiamat as matrix vs foe",
+                  "textId": "enuma-elish-1",
+                  "note": "in Enuma Elish the waters are both mother (Tiamat bears the gods) and enemy (Marduk splits her); the Hiraṇyagarbha keeps only the maternal-matrix aspect (Heidel 1951)."
+                },
+                {
+                  "label": "the Spirit over the waters — Genesis 1:2",
+                  "textId": "genesis-1",
+                  "note": "Elohim's spirit moving over the deep, ordering rather than fighting it — the same surveyed, non-combative deep (Gunkel/Day tradition)."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "The Begetter and the Naming of Prajāpati",
+      "verses": [
+        {
+          "ref": "10.121.9",
+          "text": "Neer may he harm us who is earth's Begetter, nor he whose laws are sure, the heavens' Creator, He who brought forth the great and lucid waters. What God shall we adore with our oblation?",
+          "textVersions": {
+            "griffith": "Neer may he harm us who is earth's Begetter, nor he whose laws are sure, the heavens' Creator, He who brought forth the great and lucid waters. What God shall we adore with our oblation?"
+          },
+          "entities": [
+            {
+              "word": "the great and lucid waters",
+              "node": "primordial-waters",
+              "type": "theme",
+              "note": "The creator 'brought forth the great and lucid waters' — the bright cosmic waters as the first product (or first matrix) of creation. The hymn returns a third time to the primordial waters, framing the whole cosmogony around the deep (Macdonell 1898).",
+              "parallels": [
+                {
+                  "label": "the waters above and below — Genesis 1",
+                  "textId": "genesis-1",
+                  "note": "the creator separates and brings forth the waters at creation; same waters-centred cosmogony (Day 1985)."
+                }
+              ]
+            },
+            {
+              "word": "earth's Begetter",
+              "node": "prajapati",
+              "type": "deity",
+              "note": "The unnamed 'Begetter' of earth and 'Creator' of the heavens — the one whose 'laws are sure' (a hint of ṛta, cosmic order) — about to be named Prajāpati in the final verse. Jamison & Brereton (2014) note the deliberate withholding of the name until v. 10.",
+              "parallels": [
+                {
+                  "label": "Varuṇa, lord of ṛta (Vedic)",
+                  "note": "the guardian of fixed cosmic law whose ordering function this 'whose laws are sure' creator absorbs (Macdonell, Vedic Mythology, 1898)."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "10.121.10",
+          "text": "Prajapati! thou only comprehendest all these created things, and none beside thee. Grant us our hearts' desire when we invoke thee: may we have store of riches in possession.",
+          "textVersions": {
+            "griffith": "Prajapati! thou only comprehendest all these created things, and none beside thee. Grant us our hearts' desire when we invoke thee: may we have store of riches in possession."
+          },
+          "entities": [
+            {
+              "word": "Prajapati",
+              "node": "prajapati",
+              "type": "deity",
+              "note": "The hymn's nine-fold question 'What God shall we adore?' is finally answered: Prajāpati, the Lord of Creatures, who alone comprehends all created things — the Golden Embryo of v. 1 now named. Scholars regard this tenth verse as a later editorial 'answer' appended to resolve the Ka ('Who?') riddle, fixing the creator's identity (Jamison & Brereton 2014; Doniger 1981, who notes the verse turns an open question into a doxology).",
+              "parallels": [
+                {
+                  "label": "Puruṣa — the cosmic Person (RV 10.90)",
+                  "textId": "purusha-sukta",
+                  "note": "the other late-Rigvedic creator whose body becomes the cosmos; in the Brāhmaṇas Prajāpati and Puruṣa merge into a single creator-by-sacrifice (Macdonell 1898)."
+                },
+                {
+                  "label": "'That One' (tad ekam) — Nāsadīya (RV 10.129.2)",
+                  "textId": "nasadiya-sukta",
+                  "note": "the neuter Absolute the companion hymn leaves unnamed; the Hiraṇyagarbha instead gives the One a personal name, Prajāpati (Brereton, JAOS 1999)."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
