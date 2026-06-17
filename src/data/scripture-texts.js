@@ -19248,3 +19248,224 @@ SCRIPTURE_TEXTS['rigveda-10-121'] = {
     }
   ]
 };
+
+// -- Genesis 8:6–12 (Noah sends the raven and the dove — the bird-scout) --
+SCRIPTURE_TEXTS['genesis-8'] = {
+  "id": "genesis-8",
+  "title": "Genesis 8:6–12 (Noah sends the raven and the dove — the bird-scout)",
+  "shortTitle": "Genesis 8",
+  "corpus": "Hebrew Bible (Torah · Genesis · the flood pericope)",
+  "tradId": "tradition-second-temple-judaism",
+  "date": "c. 950–550 BCE (J/Yahwist flood strand, edited into the Priestly flood frame)",
+  "docNode": "document-genesis",
+  "language": "Hebrew · King James Version (1611) — public domain. Text verified verbatim against ebible.org (eng-kjv) and BibleGateway KJV, incl. the 1611 spelling \"pluckt off\".",
+  "translations": [
+    {
+      "id": "kjv",
+      "label": "KJV (1611)",
+      "note": "King James Version — public domain"
+    }
+  ],
+  "intro": "After the flood Noah opens the ark and sends out birds to test whether the waters have abated — first a raven that flies \"to and fro,\" then a dove three times: it finds no rest and returns, returns with a fresh olive leaf, and finally does not return at all. This bird-scout sequence is the single most-cited proof of literary dependence between the Hebrew flood story and its Mesopotamian forerunners: the same device appears in Gilgamesh Tablet XI, where Utnapishtim releases a dove, a swallow, and a raven, and the raven — finding the waters receded — does not come back. Because the Mesopotamian flood (Atrahasis, the Sumerian Eridu Genesis, and Gilgamesh XI) predates Genesis by several centuries, Alexander Heidel made the bird-scout his key case for transmission rather than coincidence; the order of the birds differs (Genesis raven-then-dove; Gilgamesh dove-then-raven) and the olive leaf is a distinctively Hebrew touch, which is why most scholars posit a shared ancestral tradition rather than direct copying.",
+  "crossTradition": [
+    {
+      "label": "Gilgamesh Tablet XI — Utnapishtim's bird-scout (dove · swallow · raven)",
+      "textId": "gilgamesh",
+      "note": "The closest parallel: Utnapishtim sends a dove, then a swallow, then a raven; the raven sees the waters recede and does not return. Heidel 1949 makes this the decisive case that Genesis 8 inherits a Mesopotamian flood narrative; George 2003 dates the Standard Babylonian text well before Genesis. Order differs (Genesis raven-first) and the olive leaf is absent in Gilgamesh — most read this as shared tradition, not direct copying."
+    },
+    {
+      "label": "Atrahasis Epic — the Old Babylonian flood source",
+      "textId": "atrahasis-epic",
+      "note": "Lambert & Millard 1969 (Atra-hasis: The Babylonian Story of the Flood) treat Atrahasis (c. 1700 BCE) as the underlying Akkadian flood text behind Gilgamesh XI and, at one remove, Genesis; the flood-hero Atrahasis is the structural ancestor of both Utnapishtim and Noah."
+    },
+    {
+      "label": "Eridu Genesis — Ziusudra, the Sumerian survivor",
+      "textId": "eridu-genesis-flood-1",
+      "note": "Jacobsen 1981 (The Eridu Genesis) shows the Sumerian flood-survivor Ziusudra as the earliest named link in the chain; the Sumerian tradition is the headwater the later Akkadian and Hebrew versions descend from."
+    },
+    {
+      "label": "Deucalion and Pyrrha (Greek)",
+      "note": "Frazer 1918 (Folk-Lore in the Old Testament, vol. 1) catalogues Deucalion's ark, the survival of one righteous pair, and the post-flood repopulation as the Greek reflex of the same Near-Eastern flood complex; West 1997 (The East Face of Helicon) traces the Greek flood material to Near-Eastern transmission."
+    },
+    {
+      "label": "Manu and the fish (Matsya, Vedic/Hindu)",
+      "note": "Frazer 1918 includes the Shatapatha Brahmana's Manu, warned by a fish (later identified as Vishnu's Matsya avatar) and saved in a boat, in the worldwide flood-survivor type; Dundes 1988 (The Flood Myth) frames Manu within the comparative debate over diffusion versus independent invention."
+    }
+  ],
+  "sections": [
+    {
+      "heading": "The raven and the dove (Genesis 8:6–12)",
+      "verses": [
+        {
+          "ref": "8:6",
+          "text": "And it came to pass at the end of forty days, that Noah opened the window of the ark which he had made:",
+          "textVersions": {
+            "kjv": "And it came to pass at the end of forty days, that Noah opened the window of the ark which he had made:"
+          },
+          "entities": [
+            {
+              "word": "Noah",
+              "node": "noah",
+              "type": "person",
+              "note": "Noah, the righteous flood-survivor of Genesis; the Hebrew counterpart of the Mesopotamian flood-heroes. He opens the ark and conducts the bird-test that the older epics assign to Utnapishtim and Atrahasis.",
+              "parallels": [
+                {
+                  "label": "Utnapishtim (Gilgamesh XI)",
+                  "textId": "gilgamesh",
+                  "note": "The Babylonian flood-survivor who sends out the dove, swallow, and raven; Heidel 1949 reads Noah's bird-test as inherited from this figure's episode."
+                },
+                {
+                  "label": "Atrahasis (Old Babylonian)",
+                  "textId": "atrahasis-epic",
+                  "note": "Lambert & Millard 1969 identify Atrahasis as the earlier Akkadian flood-hero standing behind both Utnapishtim and Noah."
+                },
+                {
+                  "label": "Ziusudra (Sumerian)",
+                  "textId": "eridu-genesis-flood-1",
+                  "note": "Jacobsen 1981 places the Sumerian Ziusudra at the head of the flood-survivor line that Noah caps."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "8:7",
+          "text": "And he sent forth a raven, which went forth to and fro, until the waters were dried up from off the earth.",
+          "textVersions": {
+            "kjv": "And he sent forth a raven, which went forth to and fro, until the waters were dried up from off the earth."
+          },
+          "entities": [
+            {
+              "word": "a raven",
+              "node": "flood-motif",
+              "type": "theme",
+              "note": "The raven sent first in Genesis is the same scout-bird that, in Gilgamesh XI, is sent last and does not return; the raven that locates the receding waters is a fixed element of the bird-scout episode. (No distinct scout-raven node exists in the vault — the only raven node, raven-trickster, is the Odinic/trickster raven, a different figure — so the raven is surfaced here through the flood-motif theme.)",
+              "parallels": [
+                {
+                  "label": "Gilgamesh XI — the raven that does not return",
+                  "textId": "gilgamesh",
+                  "note": "Heidel 1949: in Gilgamesh the raven is released last and, finding the waters down, eats and preens and stays away — the reversed-order counterpart of Genesis 8:7's raven going 'to and fro' until the waters dry."
+                },
+                {
+                  "label": "Eridu Genesis / Atrahasis — the shared flood tradition",
+                  "textId": "atrahasis-epic",
+                  "note": "Dundes 1988 frames the bird-scout as a transmitted formula within the Mesopotamian flood complex (Eridu Genesis → Atrahasis → Gilgamesh → Genesis), not an independently invented detail."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "8:8",
+          "text": "Also he sent forth a dove from him, to see if the waters were abated from off the face of the ground;",
+          "textVersions": {
+            "kjv": "Also he sent forth a dove from him, to see if the waters were abated from off the face of the ground;"
+          },
+          "entities": [
+            {
+              "word": "a dove",
+              "node": "dove",
+              "type": "symbol",
+              "note": "The dove is the carrier of the bird-scout's most distinctive Hebrew development. In Gilgamesh XI the dove is the FIRST bird sent and returns for want of a perch; Genesis keeps the returning dove but sends it three times and gives it the olive leaf. The dove.md node itself records that Gilgamesh's flood-dove prefigures Noah's 'by at least 500 years.'",
+              "parallels": [
+                {
+                  "label": "Gilgamesh XI — the dove sent first, returns for no perch",
+                  "textId": "gilgamesh",
+                  "note": "Heidel 1949: 'The dove went off, but came back to me; no perch was visible to it' (Tablet XI) is the direct antecedent of Genesis 8:9's dove that 'found no rest for the sole of her foot.'"
+                },
+                {
+                  "label": "Atrahasis — the Old Babylonian flood source",
+                  "textId": "atrahasis-epic",
+                  "note": "Lambert & Millard 1969 treat the bird-scout as part of the Atrahasis-derived flood material that Genesis reworks; the dove is the shared kernel beneath both."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "8:9",
+          "text": "But the dove found no rest for the sole of her foot, and she returned unto him into the ark, for the waters were on the face of the whole earth: then he put forth his hand, and took her, and pulled her in unto him into the ark.",
+          "textVersions": {
+            "kjv": "But the dove found no rest for the sole of her foot, and she returned unto him into the ark, for the waters were on the face of the whole earth: then he put forth his hand, and took her, and pulled her in unto him into the ark."
+          },
+          "entities": [
+            {
+              "word": "found no rest for the sole of her foot",
+              "node": "flood-motif",
+              "type": "theme",
+              "note": "The 'no resting-place, therefore it returned' formula is verbally close to Gilgamesh XI ('no perch was visible to it, and it turned around'); this near-identity of phrasing, not just plot, is why Heidel 1949 argued for transmission rather than convergence.",
+              "parallels": [
+                {
+                  "label": "Gilgamesh XI — 'no landing-place was visible to it'",
+                  "textId": "gilgamesh",
+                  "note": "George 2003 renders the Babylonian line 'no landing-place was visible to it, and it turned back' — the formulaic match Heidel 1949 builds his dependence argument on."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "8:10",
+          "text": "And he stayed yet other seven days; and again he sent forth the dove out of the ark;",
+          "textVersions": {
+            "kjv": "And he stayed yet other seven days; and again he sent forth the dove out of the ark;"
+          },
+          "entities": []
+        },
+        {
+          "ref": "8:11",
+          "text": "And the dove came in to him in the evening; and, lo, in her mouth was an olive leaf pluckt off: so Noah knew that the waters were abated from off the earth.",
+          "textVersions": {
+            "kjv": "And the dove came in to him in the evening; and, lo, in her mouth was an olive leaf pluckt off: so Noah knew that the waters were abated from off the earth."
+          },
+          "entities": [
+            {
+              "word": "an olive leaf pluckt off",
+              "node": "dove",
+              "type": "symbol",
+              "note": "The olive leaf in the dove's mouth has no counterpart in the Mesopotamian bird-scout; it is the Hebrew narrative's own addition, signalling the first green growth and the restored peace between God and earth. Heidel 1949 notes precisely this divergence — the olive-leaf detail and the reversed bird-order — as the reason the relationship is shared ancestry rather than verbatim copying. The dove + olive consequently becomes the enduring emblem of peace and reconciliation.",
+              "parallels": [
+                {
+                  "label": "Gilgamesh XI — no olive leaf (the Hebrew addition)",
+                  "textId": "gilgamesh",
+                  "note": "Heidel 1949: the absence of the olive leaf in Gilgamesh, against its presence in Genesis, marks the point where the Hebrew author shapes the inherited episode to his own covenantal theology."
+                },
+                {
+                  "label": "Dove of peace (cross-tradition emblem)",
+                  "note": "Frazer 1918 observes that the Genesis olive-bearing dove, absent from the Babylonian sources, is the detail that gave the Western tradition its peace-symbol; it is a Hebrew narrative innovation on the shared flood material."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "8:12",
+          "text": "And he stayed yet other seven days; and sent forth the dove; which returned not again unto him any more.",
+          "textVersions": {
+            "kjv": "And he stayed yet other seven days; and sent forth the dove; which returned not again unto him any more."
+          },
+          "entities": [
+            {
+              "word": "returned not again unto him any more",
+              "node": "flood-motif",
+              "type": "theme",
+              "note": "The final bird that does not return — signalling habitable land — is the climactic beat the two traditions share: in Genesis it is the dove's third flight, in Gilgamesh XI the raven that 'did not turn around.' The same plot-function (a bird that fails to come back = the waters are gone) closes both bird-scout episodes.",
+              "parallels": [
+                {
+                  "label": "Gilgamesh XI — the raven that 'did not turn around'",
+                  "textId": "gilgamesh",
+                  "note": "Heidel 1949 pairs Genesis 8:12 (the dove that 'returned not again') with the Gilgamesh raven that stays away; the matching climactic function, across the swapped bird-order, is core to his transmission case."
+                },
+                {
+                  "label": "Eridu Genesis / Atrahasis — the shared flood complex",
+                  "textId": "eridu-genesis-flood-1",
+                  "note": "Dundes 1988 reads the whole bird-scout, including its closing non-returning bird, as a transmitted unit within the Mesopotamian-to-Hebrew flood tradition rather than a polygenetic motif."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
