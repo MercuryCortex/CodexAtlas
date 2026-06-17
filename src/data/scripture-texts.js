@@ -19469,3 +19469,838 @@ SCRIPTURE_TEXTS['genesis-8'] = {
     }
   ]
 };
+
+// -- Genesis 11:1–9 (The Tower of Babel — the confusion of tongues) --
+SCRIPTURE_TEXTS['genesis-11'] = {
+  "id": "genesis-11",
+  "title": "Genesis 11:1–9 (The Tower of Babel — the confusion of tongues)",
+  "shortTitle": "Genesis 11",
+  "corpus": "Hebrew Bible (Torah · Primeval History)",
+  "tradId": "tradition-second-temple-judaism",
+  "date": "c. 10th–6th century BCE (Yahwist/J source of the Primeval History)",
+  "docNode": "document-genesis",
+  "language": "Hebrew · King James Version (1611)",
+  "translations": [
+    {
+      "id": "kjv",
+      "label": "KJV (1611)",
+      "note": "King James Version — public domain"
+    }
+  ],
+  "intro": "Genesis 11:1–9 is the Hebrew etiology of the multiplicity of human languages: the whole earth, of one speech, settles in the plain of Shinar (Babylonia) and builds a city and a tower \"whose top may reach unto heaven,\" so YHWH comes down, confounds their language, and scatters them over the earth. Speiser (Anchor Bible, 1964) reads it as a Yahwist polemic against Babylon: the Akkadian Bāb-ili (\"gate of the god\") is folk-etymologically rewritten through Hebrew bālal (\"to confound\") so that the name \"Babel\" means not \"gate of god\" but \"confusion,\" and the great ziggurat the Babylonians built as a stairway to heaven becomes an emblem of human hubris struck down. Kramer (1968) identified the closest ancient-Near-Eastern parallel — the Sumerian \"Enmerkar and the Lord of Aratta,\" which preserves a memory of a time when all peoples spoke one tongue before the god Enki \"changed the speech in their mouths.\" It is the Hebrew charter for why humanity speaks many languages, and the mythic root of the Atlas language layer.",
+  "crossTradition": [
+    {
+      "label": "Genesis 1 — the Priestly creation",
+      "textId": "genesis-1",
+      "note": "Babel closes the Primeval History (Gen 1–11) that Genesis 1 opens; together with the Flood it forms the J/P arc of humanity's estrangement from God before the call of Abraham. Speiser (1964) treats Gen 1–11 as a single edited prologue drawing on Mesopotamian tradition."
+    },
+    {
+      "label": "Acts 2 — Pentecost (the undoing of Babel)",
+      "textId": "acts-2-pentecost",
+      "note": "The descent of the Spirit at Pentecost, when each hearer understands in his own tongue, is read in Christian tradition as the deliberate reversal of Babel — the scattered languages reunited in the Spirit. The pairing is patristic (Augustine) and is built into the lectionary."
+    },
+    {
+      "label": "Enuma Elish IV (Marduk and Babylon)",
+      "textId": "enuma-elish-4",
+      "note": "The Babylonian epic that the Babel story polemicizes against: Esagila and the ziggurat Etemenanki were Marduk's house at Babylon, the cosmic axis the Enuma Elish celebrates. Genesis inverts that boast into the scene of confusion (Speiser 1964)."
+    },
+    {
+      "label": "Enmerkar and the Lord of Aratta (Sumerian)",
+      "note": "The closest ANE parallel: a Sumerian epic preserving a 'spell of Nudimmud' in which humanity once spoke one language until the god Enki changed the speech in their mouths. Kramer ('The \"Babel of Tongues\": A Sumerian Version,' JAOS 1968) argued this is the nearest extant analogue to the confusion-of-tongues motif — convergent or distantly cognate, not a direct source. [not staged]"
+    },
+    {
+      "label": "Independent origin-of-languages myths (convergence)",
+      "note": "Etiologies for the diversity of tongues recur worldwide with no possible contact (e.g. accounts gathered by Frazer in 'Folk-Lore in the Old Testament,' 1918) — evidence that 'why do we speak different languages?' is a near-universal question answered independently, so the Babel pattern is convergence, not transmission, beyond the Mesopotamian sphere."
+    }
+  ],
+  "sections": [
+    {
+      "heading": "One language, and the plain of Shinar",
+      "verses": [
+        {
+          "ref": "11:1",
+          "text": "And the whole earth was of one language, and of one speech.",
+          "textVersions": {
+            "kjv": "And the whole earth was of one language, and of one speech."
+          },
+          "entities": [
+            {
+              "word": "one language",
+              "node": "language-sumerian",
+              "type": "language",
+              "note": "The single primeval tongue is the premise of the etiology — its loss is what the story explains. The Atlas language layer descends from this: every distinct language is, mythically, a shard of the one speech YHWH confounded. The closest extant analogue, Kramer's Sumerian 'Enmerkar and the Lord of Aratta,' is itself in Sumerian, the oldest written language.",
+              "parallels": [
+                {
+                  "label": "Enmerkar and the Lord of Aratta (Sumerian)",
+                  "note": "Kramer (JAOS 1968) reads the 'spell of Nudimmud' there — when all the world spoke to Enlil in one tongue — as the nearest ANE parallel to the single primeval language of Gen 11:1."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "11:2",
+          "text": "And it came to pass, as they journeyed from the east, that they found a plain in the land of Shinar; and they dwelt there.",
+          "textVersions": {
+            "kjv": "And it came to pass, as they journeyed from the east, that they found a plain in the land of Shinar; and they dwelt there."
+          },
+          "entities": [
+            {
+              "word": "the land of Shinar",
+              "node": "etemenanki",
+              "type": "sacred-site",
+              "note": "Shinar is Babylonia; the plain and its tower point to Babylon itself. The great ziggurat Etemenanki ('House of the Foundation of Heaven and Earth') at Babylon, rebuilt by Nebuchadnezzar II, is the principal candidate for the historical referent of the tower (Speiser 1964; the Atlas node for Etemenanki names it as the probable referent).",
+              "parallels": [
+                {
+                  "label": "Esagila and Etemenanki at Babylon",
+                  "textId": "enuma-elish-4",
+                  "note": "Marduk's temple-complex at Babylon — the very monument the Enuma Elish celebrates as the cosmic center, here reframed as the failed tower."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Let us build a city and a tower",
+      "verses": [
+        {
+          "ref": "11:3",
+          "text": "And they said one to another, Go to, let us make brick, and burn them throughly. And they had brick for stone, and slime had they for morter.",
+          "textVersions": {
+            "kjv": "And they said one to another, Go to, let us make brick, and burn them throughly. And they had brick for stone, and slime had they for morter."
+          },
+          "entities": [
+            {
+              "word": "let us make brick, and burn them throughly",
+              "node": "theme-ziggurat-as-stairway-to-heaven",
+              "type": "theme",
+              "note": "The detail is precise Mesopotamian building technique — kiln-fired mudbrick set in bitumen ('slime'), exactly how Babylonian ziggurats were built, not the cut stone of Canaan. Speiser (1964) notes the narrator describes genuine Babylonian construction, signaling that the target is the ziggurat.",
+              "parallels": [
+                {
+                  "label": "Etemenanki / Ziggurat of Ur",
+                  "note": "The seven-tiered baked-brick ziggurat is the architectural form the story describes and inverts (Speiser 1964)."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "11:4",
+          "text": "And they said, Go to, let us build us a city and a tower, whose top may reach unto heaven; and let us make us a name, lest we be scattered abroad upon the face of the whole earth.",
+          "textVersions": {
+            "kjv": "And they said, Go to, let us build us a city and a tower, whose top may reach unto heaven; and let us make us a name, lest we be scattered abroad upon the face of the whole earth."
+          },
+          "entities": [
+            {
+              "word": "a tower, whose top may reach unto heaven",
+              "node": "tower-of-babel",
+              "type": "symbol",
+              "note": "The Tower of Babel — the Hebrew polemic inversion of the Mesopotamian ziggurat as the stairway by which heaven and earth are joined. 'Whose top may reach unto heaven' renders the standard Akkadian description of a ziggurat's summit; the piety of the original is rewritten as hubris (Speiser 1964).",
+              "parallels": [
+                {
+                  "label": "Ziggurat as stairway to heaven (bāb-ili)",
+                  "note": "Speiser (1964): the ziggurat was the 'gate of the god' joining heaven and earth; Genesis reframes the same structure as overreaching pride."
+                },
+                {
+                  "label": "Etemenanki ('Foundation of Heaven and Earth')",
+                  "textId": "enuma-elish-4",
+                  "note": "The Babylon ziggurat whose very name claims to bind heaven to earth — the probable referent of the tower."
+                }
+              ]
+            },
+            {
+              "word": "a tower",
+              "node": "theme-ziggurat-as-stairway-to-heaven",
+              "type": "theme",
+              "note": "The ziggurat-as-axis-mundi motif: a built mountain linking the divine and human realms. Across Mesopotamia this is an act of devotion; Genesis 11 is the Israelite counter-reading that treats the heaven-reaching tower as transgression (the Atlas theme node records this polemic inversion explicitly).",
+              "parallels": [
+                {
+                  "label": "Mesopotamian temple-platform as cosmic axis",
+                  "note": "The ziggurat as the meeting-point of heaven and earth — the positive valence Genesis inverts (Speiser 1964)."
+                }
+              ]
+            },
+            {
+              "word": "let us make us a name",
+              "node": "city-of-god-vs-earthly-city",
+              "type": "theme",
+              "note": "The builders seek a 'name' (renown, šēm) by their own work — the seed of Augustine's earthly city founded on self-love and the libido dominandi, read against the city of God. Augustine takes Babel as the type of the earthly city scattered by pride (City of God XVI.4).",
+              "parallels": [
+                {
+                  "label": "Augustine — the two cities",
+                  "note": "Augustine (City of God XVI.4) reads Babel as the earthly city's self-exaltation, confounded and scattered — the archetype of Babylon-as-pride."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "The LORD comes down and confounds",
+      "verses": [
+        {
+          "ref": "11:5",
+          "text": "And the LORD came down to see the city and the tower, which the children of men builded.",
+          "textVersions": {
+            "kjv": "And the LORD came down to see the city and the tower, which the children of men builded."
+          },
+          "entities": [
+            {
+              "word": "the LORD came down",
+              "node": "yahweh",
+              "type": "deity",
+              "note": "YHWH must 'come down' to see the tower built to reach heaven — an ironic anthropomorphism that measures the gap between human ambition and the divine, characteristic of the Yahwist (J) source (Speiser 1964).",
+              "parallels": [
+                {
+                  "label": "YHWH 'goes down' to Sodom (Gen 18:21)",
+                  "textId": "genesis-1",
+                  "note": "The same J idiom of YHWH descending to inspect human affairs; part of the Primeval-History narrative voice that opens with Genesis 1."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "11:6",
+          "text": "And the LORD said, Behold, the people is one, and they have all one language; and this they begin to do: and now nothing will be restrained from them, which they have imagined to do.",
+          "textVersions": {
+            "kjv": "And the LORD said, Behold, the people is one, and they have all one language; and this they begin to do: and now nothing will be restrained from them, which they have imagined to do."
+          },
+          "entities": []
+        },
+        {
+          "ref": "11:7",
+          "text": "Go to, let us go down, and there confound their language, that they may not understand one another's speech.",
+          "textVersions": {
+            "kjv": "Go to, let us go down, and there confound their language, that they may not understand one another's speech."
+          },
+          "entities": [
+            {
+              "word": "confound their language",
+              "node": "language-akkadian",
+              "type": "language",
+              "note": "The confusion of tongues is the etiology proper — the one speech shattered into mutually unintelligible languages. Kramer (1968) found the nearest parallel in the Sumerian Enmerkar epic, where Enki 'changes the speech in the mouths' of a once-unified mankind; the motif belongs to the Akkadian-Sumerian cultural matrix Genesis engages.",
+              "parallels": [
+                {
+                  "label": "Enmerkar and the Lord of Aratta — Enki changes their speech",
+                  "note": "Kramer (JAOS 1968): the 'spell of Nudimmud' has Enki put 'contention into the speech' of a humanity that had spoken to Enlil in one tongue — the closest extant analogue to the confounding of language."
+                },
+                {
+                  "label": "Pentecost reverses the confusion",
+                  "textId": "acts-2-pentecost",
+                  "note": "Acts 2's gift of tongues, where every nation hears in its own language, is read patristically as the undoing of Babel's confusion (Augustine)."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Therefore is the name of it called Babel",
+      "verses": [
+        {
+          "ref": "11:8",
+          "text": "So the LORD scattered them abroad from thence upon the face of all the earth: and they left off to build the city.",
+          "textVersions": {
+            "kjv": "So the LORD scattered them abroad from thence upon the face of all the earth: and they left off to build the city."
+          },
+          "entities": [
+            {
+              "word": "scattered them abroad",
+              "node": "yahweh",
+              "type": "deity",
+              "note": "The dispersal is YHWH's act and the precise fulfilment of what the builders feared in v.4 ('lest we be scattered') — the attempt to avoid scattering causes it (Speiser 1964). The scattering of the nations sets up the Table of Nations (Gen 10) and the call of Abraham (Gen 12).",
+              "parallels": [
+                {
+                  "label": "The Table of Nations (Gen 10)",
+                  "note": "Genesis frames the dispersal as the origin of the seventy nations; Babel is its theological cause (Speiser 1964)."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "11:9",
+          "text": "Therefore is the name of it called Babel; because the LORD did there confound the language of all the earth: and from thence did the LORD scatter them abroad upon the face of all the earth.",
+          "textVersions": {
+            "kjv": "Therefore is the name of it called Babel; because the LORD did there confound the language of all the earth: and from thence did the LORD scatter them abroad upon the face of all the earth."
+          },
+          "entities": [
+            {
+              "word": "called Babel",
+              "node": "tower-of-babel",
+              "type": "symbol",
+              "note": "The closing pun: Akkadian Bāb-ili meant 'gate of the god,' but the Hebrew narrator derives the name from bālal, 'to confound,' so 'Babel' = 'confusion.' Speiser (1964) calls this the deliberate Yahwist subversion of Babylon's own self-glorifying etymology — the city that called itself the gate of heaven is renamed the place of babble.",
+              "parallels": [
+                {
+                  "label": "bāb-ili ('gate of god') vs Hebrew bālal ('to confuse')",
+                  "note": "Speiser (1964): the folk-etymology rewrites Babylon's prestige name into a verdict of confusion — the linguistic heart of the polemic."
+                },
+                {
+                  "label": "Babylon as archetype of pride (Augustine)",
+                  "note": "Augustine (City of God XVI.4) makes 'Babel = confusion' the emblem of the earthly city; the Babylon of Revelation 17–18 inherits the same valence."
+                }
+              ]
+            },
+            {
+              "word": "confound the language of all the earth",
+              "node": "language-sumerian",
+              "type": "language",
+              "note": "The verse states the etiology's purpose plainly: this is why the earth has many languages. It is the Hebrew mythic charter for the diversity the Atlas language layer maps. Frazer (Folk-Lore in the Old Testament, 1918) collected many independent origin-of-languages tales worldwide, showing the question is near-universal and answered by convergence beyond the Mesopotamian sphere.",
+              "parallels": [
+                {
+                  "label": "Independent origin-of-languages myths",
+                  "note": "Frazer (1918) gathered confusion-of-tongues and origin-of-languages stories from peoples with no contact with the Near East — convergence on a universal etiological question, not transmission."
+                },
+                {
+                  "label": "Enmerkar (Sumerian) — the one prior tongue",
+                  "note": "Kramer (1968): the nearest genuine ANE analogue, within the cultural sphere Genesis knew."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
+
+// -- Psalm 29 (the voice of the LORD upon the waters — the storm-god enthroned) --
+SCRIPTURE_TEXTS['psalm-29'] = {
+  "id": "psalm-29",
+  "title": "Psalm 29 (the voice of the LORD upon the waters — the storm-god enthroned)",
+  "shortTitle": "Psalm 29",
+  "corpus": "Hebrew Bible (Psalms · Book I)",
+  "tradId": "tradition-second-temple-judaism",
+  "date": "monarchic-era hymn (c. 10th–9th century BCE core), redacted into the Psalter by c. 300 BCE",
+  "docNode": "phase-2-005-davidic-psalms",
+  "language": "Hebrew · King James Version (1611) — public domain",
+  "translations": [
+    {
+      "id": "kjv",
+      "label": "KJV (1611)",
+      "note": "King James Version — public domain"
+    }
+  ],
+  "intro": "Psalm 29 is the textbook case of Ugaritic-to-Hebrew literary borrowing in the Psalter: a Canaanite Baal storm-hymn repurposed for YHWH. The seven-fold \"voice of the LORD\" (qol YHWH) thunders over the waters, breaks the cedars of Lebanon, makes Sirion skip, shakes the wilderness, and the psalm closes with YHWH enthroned — \"the LORD sitteth upon the flood; yea, the LORD sitteth King for ever.\" Ginsberg (1935) first proposed that the hymn is a barely-Yahwised Phoenician/Canaanite storm-poem; Cross (1973) made it the showpiece of the Baal-hymn thesis, and Day (1985) set it within the Hebrew chaos-combat tradition. The geography (Lebanon, Sirion = Mount Hermon, the northern cedar-forests) and the imagery (the storm-god enthroned over the cosmic waters after mastering them) belong to Baal/Hadad of Ugarit, transferred wholesale to the God of Israel.",
+  "crossTradition": [
+    {
+      "label": "Baal Cycle — Baal the storm-god enthroned over Sea",
+      "textId": "baal-cycle-1",
+      "note": "Cross (1973) and Day (1985): Psalm 29 is a Canaanite Baal hymn repurposed for YHWH. Baal (Baʿlu/Hadad), the storm-god 'Rider on the Clouds,' wins kingship by mastering Yamm (Sea) and is enthroned on Mount Sapan; Psalm 29 transfers that enthroned-over-the-waters storm-theophany to YHWH. The shared geography (Lebanon, Sirion = Hermon) is the northern Canaanite homeland of the Baal cult."
+    },
+    {
+      "label": "Enuma Elish IV — Marduk enthroned after splitting Tiamat",
+      "textId": "enuma-elish-4",
+      "note": "Day (1985): the Mesopotamian member of the same storm-god-masters-the-chaos-sea-then-reigns pattern. Marduk, the Babylonian storm-god, defeats the chaos-sea Tiamat and is acclaimed king of the gods; Psalm 29's enthronement 'upon the flood' is the Hebrew reflex of the same Chaoskampf-to-kingship grammar."
+    },
+    {
+      "label": "Psalm 89 — YHWH stills the sea and reigns",
+      "textId": "psalm-89",
+      "note": "Day (1985): the companion Hebrew enthronement-psalm that names the chaos-combat directly ('Thou hast broken Rahab in pieces'). Where Psalm 89 keeps the explicit monster-combat, Psalm 29 keeps only the storm-theophany and the enthronement over the flood — two faces of the one Canaanite-derived kingship hymn."
+    },
+    {
+      "label": "1 Kings 18 — Elijah's polemic against Baal the storm-god",
+      "textId": "1-kings-18-elijah",
+      "note": "The historical other side of the borrowing: the Hebrew Bible elsewhere wages open polemic against Baal-worship (Elijah on Carmel), yet Psalm 29 quietly annexes Baal's own storm-hymn for YHWH. Cross (1973) reads this as the deliberate appropriation by which YHWH absorbs the storm-god's prerogatives."
+    },
+    {
+      "label": "Psalm 68:4 — YHWH as 'Rider on the Clouds'",
+      "note": "Smith (1994) on the Baal Cycle: 'Rider on the Clouds' (rkb ʿrpt) is a fixed Ugaritic epithet of Baal transferred to YHWH in Ps 68:4 — the same wholesale storm-god transfer that produced Psalm 29. [not yet staged]"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "Give unto the LORD glory and strength",
+      "verses": [
+        {
+          "ref": "29:1",
+          "text": "Give unto the LORD, O ye mighty, give unto the LORD glory and strength.",
+          "textVersions": {
+            "kjv": "Give unto the LORD, O ye mighty, give unto the LORD glory and strength."
+          },
+          "entities": [
+            {
+              "word": "O ye mighty",
+              "node": "el-canaanite",
+              "type": "deity",
+              "note": "Hebrew bənê ʾēlîm — literally 'sons of the gods / sons of El,' the members of the divine council summoned to acclaim YHWH. Cross (1973) and Day (1985): this is a Canaanite formula, the assembly of El's sons known from Ugarit, here turned into YHWH's heavenly court — a tell-tale mark of the psalm's Canaanite substrate.",
+              "parallels": [
+                {
+                  "label": "the divine council of El (Ugaritic)",
+                  "textId": "baal-cycle-1",
+                  "note": "Smith (1994): the bn ʾil, the sons of El who form the Ugaritic pantheon-assembly; Ps 29:1 addresses the same council, reassigned to YHWH"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "29:2",
+          "text": "Give unto the LORD the glory due unto his name; worship the LORD in the beauty of holiness.",
+          "textVersions": {
+            "kjv": "Give unto the LORD the glory due unto his name; worship the LORD in the beauty of holiness."
+          },
+          "entities": [
+            {
+              "word": "the LORD",
+              "node": "yahweh",
+              "type": "deity",
+              "note": "YHWH, the God of Israel, here invested with the storm-theophany and the cosmic kingship that the source-hymn assigned to Baal. Cross (1973): the psalm is a Yahwistic re-use of a Canaanite storm-poem, YHWH stepping into the role of the storm-god.",
+              "parallels": [
+                {
+                  "label": "Baal/Hadad (Ugaritic)",
+                  "textId": "baal-cycle-1",
+                  "note": "the storm-god whose hymn this once was, per Ginsberg (1935) and Cross (1973)"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "The voice of the LORD upon the waters",
+      "verses": [
+        {
+          "ref": "29:3",
+          "text": "The voice of the LORD is upon the waters: the God of glory thundereth: the LORD is upon many waters.",
+          "textVersions": {
+            "kjv": "The voice of the LORD is upon the waters: the God of glory thundereth: the LORD is upon many waters."
+          },
+          "entities": [
+            {
+              "word": "The voice of the LORD is upon the waters",
+              "node": "baal-hadad",
+              "type": "deity",
+              "note": "The 'voice of the LORD' (qol YHWH) is thunder — the storm-god's weapon. Ginsberg (1935) and Cross (1973): this is the signature of Baal/Hadad, the West Semitic storm-god whose voice is the thunder over the cosmic waters; the docNode itself lists the Baal Cycle as the source of Psalm 29's storm imagery. Day (1985) sets the thunder-over-the-waters within the Chaoskampf the storm-god wages against Sea.",
+              "parallels": [
+                {
+                  "label": "Baal the thunderer (Ugaritic)",
+                  "textId": "baal-cycle-1",
+                  "note": "Smith (1994): Baal/Hadad gives forth his holy voice — thunder — to assert his rule; Ps 29 transfers the thundering voice to YHWH"
+                },
+                {
+                  "label": "Marduk's storm-weapons (Babylonian)",
+                  "textId": "enuma-elish-4",
+                  "note": "Day (1985): the storm-god's winds and lightnings deployed against the chaos-sea — the same storm-arsenal motif"
+                }
+              ]
+            },
+            {
+              "word": "upon many waters",
+              "node": "primordial-waters",
+              "type": "theme",
+              "note": "The 'many waters' (mayim rabbim) are the cosmic deep over which the storm-god asserts mastery — the same primordial waters the docNode (phase-2-005) flags as a key Psalter theme. Day (1985): YHWH's lordship over the mayim rabbim is the demythologised form of the storm-god's victory over Sea.",
+              "parallels": [
+                {
+                  "label": "Yamm, the Sea (Ugaritic)",
+                  "textId": "baal-cycle-1",
+                  "note": "the chaos-waters Baal masters before his enthronement"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "29:4",
+          "text": "The voice of the LORD is powerful; the voice of the LORD is full of majesty.",
+          "textVersions": {
+            "kjv": "The voice of the LORD is powerful; the voice of the LORD is full of majesty."
+          },
+          "entities": [
+            {
+              "word": "The voice of the LORD",
+              "node": "baal-hadad",
+              "type": "deity",
+              "note": "The first of the seven-fold qol YHWH refrains. Cross (1973): the seven 'voices' are the sevenfold thunder of the storm-god, a fixed liturgical pattern lifted from the Canaanite hymn; the sevenfold structure is itself a Northwest Semitic poetic signature.",
+              "parallels": [
+                {
+                  "label": "the seven thunders of Baal (Ugaritic)",
+                  "textId": "baal-cycle-1",
+                  "note": "Ginsberg (1935): the sevenfold thunder-voice as a Canaanite hymnic device"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "29:5",
+          "text": "The voice of the LORD breaketh the cedars; yea, the LORD breaketh the cedars of Lebanon.",
+          "textVersions": {
+            "kjv": "The voice of the LORD breaketh the cedars; yea, the LORD breaketh the cedars of Lebanon."
+          },
+          "entities": [
+            {
+              "word": "the cedars of Lebanon",
+              "node": "baal-hadad",
+              "type": "deity",
+              "note": "Lebanon's cedar-forests are the northern homeland of the Baal cult; the storm splintering the cedars is Baal/Hadad's own theophany over his home mountains. Cross (1973): the Lebanon-and-Sirion geography is the decisive evidence that Psalm 29 originated as a Canaanite (Phoenician) hymn, not an Israelite one.",
+              "parallels": [
+                {
+                  "label": "Baal of Mount Sapan / Lebanon (Ugaritic)",
+                  "textId": "baal-cycle-1",
+                  "note": "Smith (1994): Baal's seat is the northern Syrian highlands; the storm-theophany belongs to that landscape"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "29:6",
+          "text": "He maketh them also to skip like a calf; Lebanon and Sirion like a young unicorn.",
+          "textVersions": {
+            "kjv": "He maketh them also to skip like a calf; Lebanon and Sirion like a young unicorn."
+          },
+          "entities": [
+            {
+              "word": "Lebanon and Sirion",
+              "node": "baal-hadad",
+              "type": "deity",
+              "note": "Sirion is the Sidonian/Phoenician name for Mount Hermon (cf. Deut 3:9) — a Canaanite, not Israelite, toponym. Cross (1973): the pairing 'Lebanon and Sirion' is lifted straight from Canaanite geography and is among the clearest fingerprints of the hymn's Phoenician origin.",
+              "parallels": [
+                {
+                  "label": "the Canaanite storm-mountains (Ugaritic)",
+                  "textId": "baal-cycle-1",
+                  "note": "Day (1985): Hermon/Sirion as part of the northern range over which the storm-god rides"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "The voice of the LORD shaketh the wilderness",
+      "verses": [
+        {
+          "ref": "29:7",
+          "text": "The voice of the LORD divideth the flames of fire.",
+          "textVersions": {
+            "kjv": "The voice of the LORD divideth the flames of fire."
+          },
+          "entities": [
+            {
+              "word": "the flames of fire",
+              "node": "baal-hadad",
+              "type": "deity",
+              "note": "The lightning that splits from the thunder — the storm-god's fire-weapon accompanying his voice. Cross (1973): thunder (the voice) plus forked lightning (the flames) is the complete Canaanite storm-theophany transferred to YHWH.",
+              "parallels": [
+                {
+                  "label": "Baal's lightning-spear (Ugaritic)",
+                  "textId": "baal-cycle-1",
+                  "note": "Smith (1994): Baal/Hadad is iconographically the god who wields the thunderbolt and the lightning-lance"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "29:8",
+          "text": "The voice of the LORD shaketh the wilderness; the LORD shaketh the wilderness of Kadesh.",
+          "textVersions": {
+            "kjv": "The voice of the LORD shaketh the wilderness; the LORD shaketh the wilderness of Kadesh."
+          },
+          "entities": [
+            {
+              "word": "The voice of the LORD",
+              "node": "chaoskampf",
+              "type": "theme",
+              "note": "The storm-theophany that convulses the cosmos — the divine warrior whose approach shakes nature is the storm-god of the Chaoskampf, his power displayed after the mastery of the waters. Day (1985): the convulsing of nature is the standard accompaniment of the storm-god-king's manifestation.",
+              "parallels": [
+                {
+                  "label": "Marduk's advance (Babylonian)",
+                  "textId": "enuma-elish-4",
+                  "note": "Day (1985): the storm-god's coming shakes the cosmos; the Chaoskampf hero's theophany"
+                },
+                {
+                  "label": "Baal's storm-march (Ugaritic)",
+                  "textId": "baal-cycle-1",
+                  "note": "the storm-god's progress that makes the earth tremble"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "The LORD sitteth King for ever",
+      "verses": [
+        {
+          "ref": "29:9",
+          "text": "The voice of the LORD maketh the hinds to calve, and discovereth the forests: and in his temple doth every one speak of his glory.",
+          "textVersions": {
+            "kjv": "The voice of the LORD maketh the hinds to calve, and discovereth the forests: and in his temple doth every one speak of his glory."
+          },
+          "entities": [
+            {
+              "word": "in his temple doth every one speak of his glory",
+              "node": "divine-kingship",
+              "type": "theme",
+              "note": "The storm-theophany resolves into worship in the divine palace/temple — exactly the pattern of the Baal Cycle, where Baal's victory and enthronement culminate in the building of his palace on Mount Sapan. Cross (1973): the move from storm to temple-acclamation is the hymn's Canaanite enthronement-structure.",
+              "parallels": [
+                {
+                  "label": "Baal's palace on Sapan (Ugaritic)",
+                  "textId": "baal-cycle-1",
+                  "note": "Smith (1994): the storm-god's kingship is sealed by the construction of his heavenly palace after the defeat of Sea"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "29:10",
+          "text": "The LORD sitteth upon the flood; yea, the LORD sitteth King for ever.",
+          "textVersions": {
+            "kjv": "The LORD sitteth upon the flood; yea, the LORD sitteth King for ever."
+          },
+          "entities": [
+            {
+              "word": "The LORD sitteth upon the flood",
+              "node": "primordial-waters",
+              "type": "theme",
+              "note": "YHWH enthroned over the mabbul (the cosmic flood-waters) — the storm-god seated above the chaos-sea he has mastered. Day (1985): 'sitteth upon the flood' is the enthronement-over-the-tamed-waters that is the goal of the whole Chaoskampf; the storm-god reigns precisely because he subdued the deep.",
+              "parallels": [
+                {
+                  "label": "Yamm subdued (Ugaritic)",
+                  "textId": "baal-cycle-1",
+                  "note": "Baal enthroned after defeating Sea — the structural template for YHWH 'upon the flood'"
+                },
+                {
+                  "label": "Tiamat split, Marduk enthroned (Babylonian)",
+                  "textId": "enuma-elish-4",
+                  "note": "Day (1985): kingship-over-the-conquered-chaos-sea, the Mesopotamian parallel"
+                }
+              ]
+            },
+            {
+              "word": "the LORD sitteth King for ever",
+              "node": "divine-kingship",
+              "type": "theme",
+              "note": "The climactic enthronement: YHWH proclaimed eternal king. Cross (1973) and Day (1985): this is the point of the borrowing — the storm-god's hard-won kingship-after-the-chaos-combat is annexed to YHWH, making Psalm 29 the showpiece of the divine-kingship cluster and the clearest Ugaritic-to-Hebrew transfer in the Psalter.",
+              "parallels": [
+                {
+                  "label": "Baal proclaimed king (Ugaritic)",
+                  "textId": "baal-cycle-1",
+                  "note": "Smith (1994): 'now is our King' — the divine council acclaims the storm-god's eternal kingship, the model for YHWH 'King for ever'"
+                },
+                {
+                  "label": "Marduk king of the gods (Babylonian)",
+                  "textId": "enuma-elish-4",
+                  "note": "the storm-god enthroned as cosmic sovereign after the chaos-combat"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "29:11",
+          "text": "The LORD will give strength unto his people; the LORD will bless his people with peace.",
+          "textVersions": {
+            "kjv": "The LORD will give strength unto his people; the LORD will bless his people with peace."
+          },
+          "entities": [
+            {
+              "word": "The LORD",
+              "node": "yahweh",
+              "type": "deity",
+              "note": "The hymn closes by turning the storm-god's cosmic power to Israel's benefit — strength and peace (shalom) flow from the enthroned king. Mowinckel (The Psalms in Israel's Worship): the enthronement-psalm ends by applying the king's victory to the worshipping community.",
+              "parallels": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
+
+// -- Psalm 110 (The LORD said unto my Lord — a priest for ever after the order of Melchizedek) --
+SCRIPTURE_TEXTS['psalm-110'] = {
+  "id": "psalm-110",
+  "title": "Psalm 110 (The LORD said unto my Lord — a priest for ever after the order of Melchizedek)",
+  "shortTitle": "Psalm 110",
+  "corpus": "Hebrew Bible (Psalms · Royal Psalms)",
+  "tradId": "tradition-second-temple-judaism",
+  "date": "c. 10th–9th century BCE (royal-cult coronation oracle; final form in the Davidic Psalter)",
+  "docNode": "phase-2-005-davidic-psalms",
+  "language": "Hebrew · King James Version (1611) — public domain",
+  "translations": [
+    {
+      "id": "kjv",
+      "label": "KJV (1611)",
+      "note": "King James Version — public domain"
+    }
+  ],
+  "intro": "Psalm 110 is the royal-enthronement oracle of the Judahite king and the single most-cited Hebrew text in the New Testament. Its first verse — \"The LORD said unto my Lord, Sit thou at my right hand\" — is a divine word installing the king at YHWH's right hand, the seat of cosmic regency; its fourth verse swears the king an eternal priesthood \"after the order of Melchizedek,\" fusing throne and altar in one figure. Sigmund Mowinckel (He That Cometh, 1956) read the psalm as an enthronement liturgy of the pre-exilic royal cult, and John Day (King and Messiah in Israel and the Ancient Near East, 1998) places it in the wider Ancient-Near-Eastern pattern of the king seated beside his god. The right-hand-enthronement and eternal-priesthood motifs are exactly the threads later Judaism (11QMelchizedek) and earliest Christianity (Hebrews 5–7) pull on to build their messianism — making this psalm a headwater for both the divine-kingship and messianism hubs.",
+  "crossTradition": [
+    {
+      "label": "Pyramid Texts — the dead king enthroned on Osiris",
+      "textId": "pyramid-texts",
+      "note": "The Egyptian throne-of-Osiris enthronement is the oldest reflex of the 'seated beside the god' motif. Day 1998 and the Atlas Pyramid-Texts entry pair the two: the vindicated Egyptian king sits on Osiris's throne with sceptre in hand, as Psalm 110:1 seats the Judahite king at YHWH's right hand — cognate royal-cult enthronement imagery, not a borrowing."
+    },
+    {
+      "label": "ANE sacral-kingship — the king at the god's right hand / enemies as footstool",
+      "note": "Mowinckel 1956 reads Ps 110 as a coronation oracle of the pre-exilic royal cult; Day 1998 sets the right-hand seat and the footstool-of-enemies within the shared Egyptian and Mesopotamian iconography of the king enthroned beside his deity (cf. the Egyptian image of the pharaoh's feet upon the bound 'Nine Bows')."
+    },
+    {
+      "label": "Melchizedek in Hebrews 5–7 — the eternal high-priesthood",
+      "note": "The Letter to the Hebrews (5:6, 6:20, 7:1–28) makes Ps 110:4 its central proof-text, reading the priest 'after the order of Melchizedek' as an eternal, non-Levitical priesthood fulfilled in Christ. John Day 1998 traces this Christological reuse directly to the psalm's coupling of kingship and priesthood. [Hebrews 5–7 not yet staged]"
+    },
+    {
+      "label": "11QMelchizedek (11Q13) — the heavenly Melchizedek of Qumran",
+      "note": "The Dead Sea Scroll 11Q13 recasts Melchizedek as a heavenly deliverer who executes God's judgement in the last jubilee — an independent Second-Temple expansion of the Genesis 14 / Psalm 110 priest-king, witnessing the same eschatological pull the New Testament gives him (primary text: 11Q13 = 11QMelchizedek)."
+    },
+    {
+      "label": "Psalm 2:7 — 'Thou art my Son'",
+      "note": "The companion royal/coronation psalm: where Ps 110 enthrones the king at the god's right hand and ordains his priesthood, Ps 2 declares his divine sonship ('Thou art my Son; this day have I begotten thee'). Mowinckel 1956 groups both as enthronement oracles of the royal cult; the New Testament pairs them as the twin Messianic proof-texts. [Psalm 2 not yet staged]"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "Sit thou at my right hand",
+      "verses": [
+        {
+          "ref": "110:1",
+          "text": "The LORD said unto my Lord, Sit thou at my right hand, until I make thine enemies thy footstool.",
+          "textVersions": {
+            "kjv": "The LORD said unto my Lord, Sit thou at my right hand, until I make thine enemies thy footstool."
+          },
+          "entities": [
+            {
+              "word": "The LORD said unto my Lord",
+              "node": "yahweh",
+              "type": "deity",
+              "note": "YHWH (the first 'LORD') addresses the king (the second 'Lord', Hebrew adoni, 'my lord') with a coronation decree. Mowinckel 1956 reads this as the enthronement oracle of the royal cult — the national god installing his anointed regent.",
+              "parallels": [
+                {
+                  "label": "Pyramid Texts — Ra grasps the king's hand",
+                  "textId": "pyramid-texts",
+                  "note": "the Egyptian god raises the dead king to his throne; the cognate royal-cult act of a deity installing the king"
+                }
+              ]
+            },
+            {
+              "word": "Sit thou at my right hand",
+              "node": "divine-kingship",
+              "type": "theme",
+              "note": "The right hand of the deity is the seat of co-regency. John Day 1998 sets this within Ancient-Near-Eastern sacral-kingship — the king enthroned beside his god — the motif Christianity later turns into 'seated at the right hand of God'.",
+              "parallels": [
+                {
+                  "label": "Pyramid Texts — the throne of Osiris",
+                  "textId": "pyramid-texts",
+                  "note": "the vindicated king seated on Osiris's throne, sceptre in hand; oldest reflex of enthronement beside the god (Day 1998)"
+                },
+                {
+                  "label": "Mesopotamian / Egyptian enthronement iconography",
+                  "note": "Mowinckel 1956: the right-hand seat is a fixed image of the king's installation in the royal cult"
+                }
+              ]
+            },
+            {
+              "word": "thine enemies thy footstool",
+              "node": "divine-kingship",
+              "type": "theme",
+              "note": "The footstool-of-enemies is shared royal iconography of the conquering king. Day 1998 compares the Egyptian image of the pharaoh's feet resting on the bound foreign foes ('the Nine Bows') — the king's universal dominion expressed as enemies underfoot.",
+              "parallels": [
+                {
+                  "label": "Egyptian royal iconography — the Nine Bows underfoot",
+                  "note": "the pharaoh's footstool depicting the subdued nations; the same dominion-image (Day 1998)"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "A priest for ever after the order of Melchizedek",
+      "verses": [
+        {
+          "ref": "110:4",
+          "text": "The LORD hath sworn, and will not repent, Thou art a priest for ever after the order of Melchizedek.",
+          "textVersions": {
+            "kjv": "The LORD hath sworn, and will not repent, Thou art a priest for ever after the order of Melchizedek."
+          },
+          "entities": [
+            {
+              "word": "Thou art a priest for ever",
+              "node": "divine-kingship",
+              "type": "theme",
+              "note": "The king is sworn an eternal priesthood, fusing throne and altar in one person — the priest-king. Mowinckel 1956 reads the oath as a permanent royal-cultic prerogative of the Davidic house, the Jerusalem king inheriting the sacral functions of the older Salem priest-kingship.",
+              "parallels": [
+                {
+                  "label": "Pyramid Texts — the king as cultic mediator",
+                  "textId": "pyramid-texts",
+                  "note": "the divinised Egyptian king who unites royal and priestly office; the priest-king pattern (Day 1998)"
+                }
+              ]
+            },
+            {
+              "word": "after the order of Melchizedek",
+              "node": "melchizedek",
+              "type": "person",
+              "note": "Melchizedek, the priest-king of Salem who blesses Abram in Genesis 14:18–20, is invoked as the prototype of a non-Levitical, royal priesthood. John Day 1998 sees Ps 110 grafting the Davidic king onto the older Jebusite Salem priest-kingship; the Letter to the Hebrews (5–7) then makes this verse the charter of Christ's eternal high-priesthood.",
+              "parallels": [
+                {
+                  "label": "Hebrews 5–7 — Christ as eternal high priest",
+                  "note": "the New Testament's central reuse of Ps 110:4 (Heb 5:6; 6:20; 7:1–28), reading Melchizedek's priesthood as everlasting (Day 1998); [not yet staged]"
+                },
+                {
+                  "label": "11QMelchizedek (11Q13) — the heavenly Melchizedek",
+                  "note": "the Qumran scroll's eschatological deliverer-Melchizedek, an independent Second-Temple expansion of the same priest-king (primary text 11Q13)"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "The Lord at thy right hand",
+      "verses": [
+        {
+          "ref": "110:5",
+          "text": "The Lord at thy right hand shall strike through kings in the day of his wrath.",
+          "textVersions": {
+            "kjv": "The Lord at thy right hand shall strike through kings in the day of his wrath."
+          },
+          "entities": [
+            {
+              "word": "The Lord at thy right hand",
+              "node": "yahweh",
+              "type": "deity",
+              "note": "The deity now stands at the king's right hand as his warrior-champion — the enthronement of v.1 reciprocated, YHWH fighting beside his anointed. Mowinckel 1956 reads the psalm's second half as the cultic promise of victory that accompanies the coronation oracle.",
+              "parallels": [
+                {
+                  "label": "ANE divine-warrior kingship",
+                  "note": "the god who marches at the king's side in battle; the royal-cult guarantee of conquest (Day 1998)"
+                }
+              ]
+            },
+            {
+              "word": "strike through kings in the day of his wrath",
+              "node": "messianism",
+              "type": "theme",
+              "note": "The world-conquering 'day of wrath' is the seed of the psalm's later Messianic reading: the enthroned priest-king who subdues the nations becomes, in Second-Temple and Christian reception, the eschatological deliverer. Mowinckel 1956 traces how the royal oracle was re-read messianically once the monarchy fell.",
+              "parallels": [
+                {
+                  "label": "11QMelchizedek — judgement in the last jubilee",
+                  "note": "the Qumran Melchizedek executing God's eschatological judgement; the royal-conquest motif turned apocalyptic (Day 1998)"
+                },
+                {
+                  "label": "Psalm 2 — the nations shattered",
+                  "note": "the companion royal psalm whose king 'shall break them with a rod of iron'; the twin Messianic proof-text (Mowinckel 1956); [not yet staged]"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
