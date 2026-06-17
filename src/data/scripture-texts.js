@@ -21182,3 +21182,761 @@ SCRIPTURE_TEXTS['song-of-songs-8'] = {
     }
   ]
 };
+
+// -- Job 1:6–12 (The sons of God and the Satan before the throne) --
+SCRIPTURE_TEXTS['job-1-council'] = {
+  "id": "job-1-council",
+  "title": "Job 1:6–12 (The sons of God and the Satan before the throne)",
+  "shortTitle": "Job 1",
+  "corpus": "Hebrew Bible (Writings · Job)",
+  "tradId": "tradition-second-temple-judaism",
+  "date": "c. 6th–4th century BCE (post-exilic; prose frame possibly older folk-tale)",
+  "docNode": "phase-2-035-job",
+  "language": "Hebrew · King James Version (1611)",
+  "translations": [
+    {
+      "id": "kjv",
+      "label": "KJV (1611)",
+      "note": "King James Version — public domain"
+    }
+  ],
+  "intro": "The prologue of Job stages a scene of the heavenly court: \"the sons of God\" (bene ha-elohim) come to present themselves before YHWH, and \"the Satan\" (ha-satan, with the definite article — \"the accuser/adversary\") comes among them as one of the assembly. Here the satan is not yet the cosmic enemy of later tradition but a functionary of the divine council — a roving prosecutor who patrols the earth and brings YHWH's attention to a case. The scene is the Hebrew inheritance of the older Near Eastern assembly of the gods: the Ugaritic council of El (puhru) and the Mesopotamian assembly (the Anunnaki/Igigi) that the Enuma Elish convenes. Reading the definite-article ha-satan as a title rather than a name (Mullen 1980; Day 1988) shows the figure mid-transformation, before the Persian-period dualism that would turn the prosecuting satan into the cosmic adversary.",
+  "crossTradition": [
+    {
+      "label": "Enuma Elish — the assembly of the gods",
+      "textId": "enuma-elish-4",
+      "note": "The Mesopotamian divine assembly (puhrum) the gods convene to confront Tiamat and exalt Marduk; the institutional background of the heavenly court Job inherits (Mullen 1980, The Assembly of the Gods)."
+    },
+    {
+      "label": "Baal Cycle — the council of El",
+      "textId": "baal-cycle-1",
+      "note": "The Ugaritic assembly of El (puhru moʿd) that the Hebrew bene ha-elohim / 'sons of God' directly reflect; Israel's council is the Canaanite council with YHWH at its head (Mullen 1980; Smith 2001)."
+    },
+    {
+      "label": "Angra Mainyu / Ahriman (Zoroastrian)",
+      "note": "The cosmic adversary present in Zoroastrianism from inception; the Persian-period model toward which the Hebrew prosecuting satan drifts — from court-functionary to cosmic enemy (Day 1988, An Adversary in Heaven; the satan/Angra-Mainyu transfer)."
+    },
+    {
+      "label": "Zechariah 3:1–2 — ha-satan the accuser",
+      "note": "The other post-exilic court scene where ha-satan stands at the right hand to accuse; the same prosecutorial role, still inside the council, not yet the devil (Day 1988)."
+    }
+  ],
+  "sections": [
+    {
+      "heading": "The heavenly court convenes",
+      "verses": [
+        {
+          "ref": "1:6",
+          "text": "Now there was a day when the sons of God came to present themselves before the LORD, and Satan came also among them.",
+          "textVersions": {
+            "kjv": "Now there was a day when the sons of God came to present themselves before the LORD, and Satan came also among them."
+          },
+          "entities": [
+            {
+              "word": "the sons of God",
+              "node": "divine-council",
+              "type": "theme",
+              "note": "The bene ha-elohim, 'sons of God' — the members of YHWH's heavenly assembly who present themselves before the throne. This is the Hebrew form of the ancient Near Eastern divine council (Mullen 1980, The Assembly of the Gods).",
+              "parallels": [
+                {
+                  "label": "assembly of El (Ugaritic)",
+                  "textId": "baal-cycle-1",
+                  "note": "the council of El (puhru moʿd) whose 'sons of El' (bn il) the Hebrew bene ha-elohim reflect (Mullen 1980; Smith 2001)"
+                },
+                {
+                  "label": "assembly of the gods (Babylonian)",
+                  "textId": "enuma-elish-4",
+                  "note": "the puhrum the gods convene in the Enuma Elish; the Mesopotamian institutional parallel (Mullen 1980)"
+                }
+              ]
+            },
+            {
+              "word": "present themselves before the LORD",
+              "node": "yahweh",
+              "type": "deity",
+              "note": "YHWH presides over the council as El presides over the Ugaritic assembly — the high god enthroned amid the sons of God (Mullen 1980; Smith 2001).",
+              "parallels": [
+                {
+                  "label": "El enthroned (Ugaritic)",
+                  "textId": "baal-cycle-1",
+                  "note": "El as head of the divine assembly; YHWH occupies the same presiding seat (Smith 2001)"
+                }
+              ]
+            },
+            {
+              "word": "Satan",
+              "node": "theme-satan-angra-mainyu-transfer",
+              "type": "theme",
+              "note": "Hebrew ha-satan — 'the adversary/the accuser', with the definite article, marking a title and office rather than a proper name. In Job he is a member of the divine council, a prosecuting functionary who patrols the earth; the cosmic-enemy 'Satan' is a later development, not yet present here (Day 1988, An Adversary in Heaven).",
+              "parallels": [
+                {
+                  "label": "ha-satan → cosmic adversary",
+                  "note": "the Persian-period transformation of the court prosecutor into the dualistic cosmic enemy — the satan / Angra Mainyu transfer (Day 1988)"
+                },
+                {
+                  "label": "Angra Mainyu (Zoroastrian)",
+                  "note": "the cosmic adversary of Zoroastrianism, present as God's opponent from the start; the model the prosecuting satan drifts toward under Persian influence (Day 1988)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "1:7",
+          "text": "And the LORD said unto Satan, Whence comest thou? Then Satan answered the LORD, and said, From going to and fro in the earth, and from walking up and down in it.",
+          "textVersions": {
+            "kjv": "And the LORD said unto Satan, Whence comest thou? Then Satan answered the LORD, and said, From going to and fro in the earth, and from walking up and down in it."
+          },
+          "entities": [
+            {
+              "word": "going to and fro in the earth",
+              "node": "theme-satan-angra-mainyu-transfer",
+              "type": "theme",
+              "note": "The satan's task is to patrol the earth — a roving inspector reporting to the council, the prosecutorial role of ha-satan; some read it against the Persian 'eyes and ears of the king', the royal informants (Day 1988).",
+              "parallels": [
+                {
+                  "label": "the king's roving informants (Persian)",
+                  "note": "the Achaemenid 'eyes of the king' who patrolled the empire and reported to the throne; the administrative image behind the patrolling satan (Day 1988)"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "The wager over Job",
+      "verses": [
+        {
+          "ref": "1:8",
+          "text": "And the LORD said unto Satan, Hast thou considered my servant Job, that there is none like him in the earth, a perfect and an upright man, one that feareth God, and escheweth evil?",
+          "textVersions": {
+            "kjv": "And the LORD said unto Satan, Hast thou considered my servant Job, that there is none like him in the earth, a perfect and an upright man, one that feareth God, and escheweth evil?"
+          },
+          "entities": []
+        },
+        {
+          "ref": "1:9",
+          "text": "Then Satan answered the LORD, and said, Doth Job fear God for nought?",
+          "textVersions": {
+            "kjv": "Then Satan answered the LORD, and said, Doth Job fear God for nought?"
+          },
+          "entities": [
+            {
+              "word": "Doth Job fear God for nought",
+              "node": "theme-satan-angra-mainyu-transfer",
+              "type": "theme",
+              "note": "The satan's function in the council is to question and accuse — here he challenges the disinterestedness of Job's piety. This is prosecution within the assembly, not rebellion against it; the adversary still answers to YHWH and acts only by permission (Day 1988).",
+              "parallels": [
+                {
+                  "label": "ha-satan the accuser (Zechariah 3)",
+                  "note": "the same accusatory office: ha-satan stands to accuse the high priest before the angel of YHWH, still a court role (Day 1988)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "1:10",
+          "text": "Hast not thou made an hedge about him, and about his house, and about all that he hath on every side? thou hast blessed the work of his hands, and his substance is increased in the land.",
+          "textVersions": {
+            "kjv": "Hast not thou made an hedge about him, and about his house, and about all that he hath on every side? thou hast blessed the work of his hands, and his substance is increased in the land."
+          },
+          "entities": []
+        },
+        {
+          "ref": "1:11",
+          "text": "But put forth thine hand now, and touch all that he hath, and he will curse thee to thy face.",
+          "textVersions": {
+            "kjv": "But put forth thine hand now, and touch all that he hath, and he will curse thee to thy face."
+          },
+          "entities": []
+        },
+        {
+          "ref": "1:12",
+          "text": "And the LORD said unto Satan, Behold, all that he hath is in thy power; only upon himself put not forth thine hand. So Satan went forth from the presence of the LORD.",
+          "textVersions": {
+            "kjv": "And the LORD said unto Satan, Behold, all that he hath is in thy power; only upon himself put not forth thine hand. So Satan went forth from the presence of the LORD."
+          },
+          "entities": [
+            {
+              "word": "all that he hath is in thy power",
+              "node": "divine-council",
+              "type": "theme",
+              "note": "The decisive act remains YHWH's: the satan can do nothing but what the council's head authorizes. The scene shows the assembly as the locus of decision, the high god granting and bounding the adversary's commission — the council polity the Hebrew tradition inherits from Ugarit and Mesopotamia (Mullen 1980).",
+              "parallels": [
+                {
+                  "label": "decree of the assembly (Ugaritic/Babylonian)",
+                  "textId": "enuma-elish-4",
+                  "note": "in the Near Eastern council the high god's word, ratified by the assembly, is what authorizes action; the satan acts only under that grant (Mullen 1980)"
+                }
+              ]
+            },
+            {
+              "word": "the presence of the LORD",
+              "node": "yahweh",
+              "type": "deity",
+              "note": "The satan departs 'from the presence of the LORD' — he comes and goes from the throne-room as a member of the court, underscoring that in Job he belongs to YHWH's assembly rather than opposing it from outside (Day 1988).",
+              "parallels": [
+                {
+                  "label": "servant of the council (Ugaritic)",
+                  "textId": "baal-cycle-1",
+                  "note": "messengers and functionaries who come and go from El's presence; the satan occupies an analogous courtier role (Mullen 1980)"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
+
+// -- Ezekiel 28:11–19 (The King of Tyre — the anointed cherub cast out of Eden) --
+SCRIPTURE_TEXTS['ezekiel-28'] = {
+  "id": "ezekiel-28",
+  "title": "Ezekiel 28:11–19 (The King of Tyre — the anointed cherub cast out of Eden)",
+  "shortTitle": "Ezekiel 28",
+  "corpus": "Hebrew Bible (Latter Prophets · Ezekiel)",
+  "tradId": "tradition-second-temple-judaism",
+  "date": "c. 587–571 BCE (the oracles against Tyre, Ezekiel in the Babylonian exile)",
+  "docNode": "document-ezekiel",
+  "language": "Hebrew · King James Version (1611) — public domain",
+  "translations": [
+    {
+      "id": "kjv",
+      "label": "KJV (1611)",
+      "note": "King James Version — public domain"
+    }
+  ],
+  "intro": "The second oracle against the prince of Tyre (Ezekiel 28:11–19) is a lament that mythologises a doomed king into a primordial being: a figure who \"hast been in Eden the garden of God,\" who is \"the anointed cherub that covereth\" upon \"the holy mountain of God,\" who \"wast perfect in thy ways from the day that thou wast created, till iniquity was found in thee,\" whose \"heart was lifted up because of thy beauty\" — and whom God therefore casts \"to the ground\" and brings \"to ashes.\" Read on its own terms it is a polemic against royal hubris dressed in the imagery of a garden-of-God / mountain-of-God paradise myth. But together with Isaiah 14's taunt against the king of Babylon as Hêlēl ben-Šaḥar (the \"Day Star, son of the morning\" who said \"I will ascend... I will be like the most High\" and was \"cast down to hell\"), this passage became one of the two root-texts that later Christian tradition fused — by way of the Septuagint's Heōsphoros and Jerome's Vulgate Lucifer — into the myth of the proud angel cast out of heaven, the Lucifer/Satan of the Western imagination. The Atlas treats that fusion as reception, not the text's original sense: Ezekiel's cherub is a Tyrian king, and the cosmic-rebel reading is a later wire.",
+  "crossTradition": [
+    {
+      "label": "Isaiah 14:12–15 — Hêlēl ben-Šaḥar, the Day Star cast down",
+      "note": "The twin root-text. Isaiah's taunt against the king of Babylon as the 'Day Star, son of the morning' who would 'ascend into heaven' and was 'cast down to hell' is the morning-star-fall counterpart to Ezekiel's Eden-cherub-fall; the two together became the scriptural seed of the Lucifer myth. Surfaced here via the `phosphoros` and `shahar` nodes (Isaiah 14 is not yet staged as a reader). Day 2000, Yahweh and the Gods of Canaan; DDD s.v. 'Helel'."
+    },
+    {
+      "label": "Phosphoros / Lucifer — the morning-star fall-figure",
+      "textId": "enuma-elish-1",
+      "note": "NOTE: this textId is a placeholder for the morning-star/Chaoskampf complex only — the actual fall-figure lives in the `phosphoros` and `lucifer` vault NODES, not a staged reader. The philological chain Hêlēl → LXX Heōsphoros → Vulgate Lucifer is what fused Isaiah 14 and Ezekiel 28 into the single 'proud light-bringer cast down' figure of Christian tradition. Kelly 2006, Satan: A Biography; Day 2000."
+    },
+    {
+      "label": "Angra Mainyu / Ahriman — the Iranian cosmic rebel cast down",
+      "note": "The Zoroastrian Hostile Spirit who, by ethical CHOICE (Yasna 30: the twin spirits who chose), assaults Ahura Mazda's good creation and is defeated at the end of time — the Iranian instance of the rebel-against-the-divine pattern that scholarship cites as a structural input to the Second Temple development of Satan. Forsyth 1987, The Old Enemy; Russell 1977, The Devil; Shaked 1984."
+    },
+    {
+      "label": "The asura/deva (daēva) inversion — the demonised once-divine class",
+      "note": "The Indo-Iranian schism in which one tradition's gods become the other's demons (Avestan daēva = 'demon' vs. Vedic deva = 'god') is the deep-background grammar of 'a being once exalted, later cast down/demonised' that the fall-of-the-proud motif instantiates within the Abrahamic stream. West 2007, Indo-European Poetry and Myth; Skjærvø, Encyclopaedia Iranica s.v. 'Daēva'."
+    },
+    {
+      "label": "Enuma Elish — the rebel against the divine order",
+      "textId": "enuma-elish-4",
+      "note": "Distinguishes the TYPE: Tiamat is a PRIMORDIAL-CHAOS rebel slain in combat, whereas Ezekiel's cherub and Angra Mainyu are figures who FALL from an exalted, created/blessed state through iniquity — the ethical-fall rebel, a distinct branch of the rebel-against-the-divine family. Forsyth 1987 draws exactly this contrast."
+    }
+  ],
+  "sections": [
+    {
+      "heading": "The lamentation upon the king of Tyrus",
+      "verses": [
+        {
+          "ref": "28:11",
+          "text": "Moreover the word of the Lord came unto me, saying,",
+          "textVersions": {
+            "kjv": "Moreover the word of the Lord came unto me, saying,"
+          },
+          "entities": []
+        },
+        {
+          "ref": "28:12",
+          "text": "Son of man, take up a lamentation upon the king of Tyrus, and say unto him, Thus saith the Lord GOD; Thou sealest up the sum, full of wisdom, and perfect in beauty.",
+          "textVersions": {
+            "kjv": "Son of man, take up a lamentation upon the king of Tyrus, and say unto him, Thus saith the Lord GOD; Thou sealest up the sum, full of wisdom, and perfect in beauty."
+          },
+          "entities": [
+            {
+              "word": "the king of Tyrus",
+              "node": "theme-rebel-against-the-divine",
+              "type": "theme",
+              "note": "The historical addressee is the king of Tyre (Tyrus), the wealthy Phoenician merchant-city; the lament mythologises him into the type of the exalted being who overreaches and falls — the proud-rebel pattern. The Atlas keeps the addressee a Tyrian king (origin reading) and treats the cosmic-rebel identification as a later wire. Forsyth 1987, The Old Enemy.",
+              "parallels": [
+                {
+                  "label": "Hêlēl, king of Babylon (Isaiah 14)",
+                  "note": "the parallel oracle mythologises the king of Babylon as the fallen Day Star — the same 'proud foreign king as cosmic rebel' rhetorical move. Day 2000."
+                }
+              ]
+            },
+            {
+              "word": "perfect in beauty",
+              "node": "phosphoros",
+              "type": "deity",
+              "note": "The 'perfect in beauty' radiant figure anticipates the brightness-and-pride theme (v.17) that links this lament to the morning-star (Phosphoros/Heōsphoros/Lucifer) imagery of Isaiah 14. The Greek Heōsphoros is the Septuagint's word for Isaiah 14:12's Hêlēl, the philological bridge to Lucifer. Kelly 2006; Day 2000.",
+              "parallels": [
+                {
+                  "label": "Hêlēl ben-Šaḥar / Shahar (Canaanite-Hebrew)",
+                  "note": "the Canaanite dawn-god Shahar lies behind the 'Day Star, son of Dawn' the brilliant-then-fallen morning star of Isaiah 14. Day 2000; DDD s.v. 'Helel'."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "28:13",
+          "text": "Thou hast been in Eden the garden of God; every precious stone was thy covering, the sardius, topaz, and the diamond, the beryl, the onyx, and the jasper, the sapphire, the emerald, and the carbuncle, and gold: the workmanship of thy tabrets and of thy pipes was prepared in thee in the day that thou wast created.",
+          "textVersions": {
+            "kjv": "Thou hast been in Eden the garden of God; every precious stone was thy covering, the sardius, topaz, and the diamond, the beryl, the onyx, and the jasper, the sapphire, the emerald, and the carbuncle, and gold: the workmanship of thy tabrets and of thy pipes was prepared in thee in the day that thou wast created."
+          },
+          "entities": [
+            {
+              "word": "Eden the garden of God",
+              "node": "fall-of-humanity",
+              "type": "theme",
+              "note": "Ezekiel sets the king in 'Eden the garden of God' — a paradise-garden setting that differs from the Genesis 2–3 Eden (here jewel-strewn, on the 'holy mountain of God'), evidence of a parallel Eden tradition. The shared element is the garden-of-God paradise from which a being is expelled for transgression. Greenberg 1997 (Ezekiel 21–37, Anchor Bible); Day 2000.",
+              "parallels": [
+                {
+                  "label": "Genesis 2–3 — the garden and the expulsion",
+                  "note": "the better-known Eden, from which Adam is driven for transgression; Ezekiel 28 is a second, royal/cherubic Eden tradition. Greenberg 1997."
+                }
+              ]
+            },
+            {
+              "word": "in the day that thou wast created",
+              "node": "origin-of-evil",
+              "type": "theme",
+              "note": "The figure is a CREATED being (not co-eternal) who later falls — the structural premise behind the Christian Satanology that read this verse with Isaiah 14 as the biography of a once-good angel. It also frames the theodicy question (whence evil in a good creation) at the heart of the origin-of-evil theme. Russell 1977, The Devil; Forsyth 1987.",
+              "parallels": [
+                {
+                  "label": "Angra Mainyu (Zoroastrian)",
+                  "note": "BUT distinct: in orthodox Zoroastrianism the Hostile Spirit is uncreated and co-eternal, not a created being who falls — the asymmetry Ezekiel's 'thou wast created' does NOT share. Boyce 1975; Russell 1977."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "The anointed cherub, perfect till iniquity",
+      "verses": [
+        {
+          "ref": "28:14",
+          "text": "Thou art the anointed cherub that covereth; and I have set thee so: thou wast upon the holy mountain of God; thou hast walked up and down in the midst of the stones of fire.",
+          "textVersions": {
+            "kjv": "Thou art the anointed cherub that covereth; and I have set thee so: thou wast upon the holy mountain of God; thou hast walked up and down in the midst of the stones of fire."
+          },
+          "entities": [
+            {
+              "word": "the anointed cherub that covereth",
+              "node": "theme-rebel-against-the-divine",
+              "type": "theme",
+              "note": "The phrase later Christian tradition read as Satan's pre-fall identity — the guardian cherub on the mountain of God. In the Hebrew, the king of Tyre is LIKENED to a cherub (the throne-guardian winged being of the ark and temple), an image of the highest created glory; the cosmic-rebel reading fuses it with Isaiah 14. Russell 1977; Forsyth 1987.",
+              "parallels": [
+                {
+                  "label": "Lucifer / Satan (Christian reception)",
+                  "note": "patristic and medieval exegesis (e.g. via the Vulgate) made 'the anointed cherub' Satan's angelic office before his fall — the Atlas marks this a WIRE/reception, not Ezekiel's plain sense. Kelly 2006; Russell 1977."
+                }
+              ]
+            },
+            {
+              "word": "the holy mountain of God",
+              "node": "shahar",
+              "type": "deity",
+              "note": "The 'holy mountain of God' on which the cherub walks echoes the cosmic-mountain throne the morning-star figure of Isaiah 14 tries to mount ('I will ascend... I will sit upon the mount of the congregation'); both draw on the Canaanite mythology of the divine mountain (the seat of El / the dawn-god Shahar). Day 2000, Yahweh and the Gods of Canaan; DDD s.v. 'Helel'.",
+              "parallels": [
+                {
+                  "label": "Athtar's failed ascent (Ugaritic)",
+                  "note": "the masculine Venus-star Athtar mounts Baal's throne on the cosmic mountain and proves too small — the Canaanite 'morning star who overreaches the divine seat' that feeds the same complex. Day 2000."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "28:15",
+          "text": "Thou wast perfect in thy ways from the day that thou wast created, till iniquity was found in thee.",
+          "textVersions": {
+            "kjv": "Thou wast perfect in thy ways from the day that thou wast created, till iniquity was found in thee."
+          },
+          "entities": [
+            {
+              "word": "perfect in thy ways from the day that thou wast created, till iniquity was found in thee",
+              "node": "origin-of-evil",
+              "type": "theme",
+              "note": "The hinge of the whole fall-of-the-proud motif: a being created blameless in whom iniquity then ARISES — the verse that let later tradition narrate the origin of evil as the fall of a once-perfect creature rather than an eternal dark principle. Russell 1977, The Devil; Forsyth 1987, The Old Enemy.",
+              "parallels": [
+                {
+                  "label": "Angra Mainyu's choice (Zoroastrian)",
+                  "note": "the Gathic twin spirits CHOOSE between truth and the Lie (Yasna 30) — evil as an ethical choice by a free being, the closest structural analogue to 'iniquity was found in thee', and a cited input to Second-Temple Satanology. Forsyth 1987; Shaked 1984."
+                },
+                {
+                  "label": "asura/deva inversion",
+                  "note": "the deep Indo-Iranian grammar of a once-honoured class (asura/daēva) demonised — the background to 'a glorious being turned evil'. West 2007; Skjærvø, EncIr 'Daēva'."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "I will cast thee to the ground",
+      "verses": [
+        {
+          "ref": "28:16",
+          "text": "By the multitude of thy merchandise they have filled the midst of thee with violence, and thou hast sinned: therefore I will cast thee as profane out of the mountain of God: and I will destroy thee, O covering cherub, from the midst of the stones of fire.",
+          "textVersions": {
+            "kjv": "By the multitude of thy merchandise they have filled the midst of thee with violence, and thou hast sinned: therefore I will cast thee as profane out of the mountain of God: and I will destroy thee, O covering cherub, from the midst of the stones of fire."
+          },
+          "entities": [
+            {
+              "word": "I will cast thee as profane out of the mountain of God",
+              "node": "theme-satan-angra-mainyu-transfer",
+              "type": "theme",
+              "note": "The casting-out of the cherub from the mountain of God is the image later fused with Isaiah 14's 'thou shalt be brought down to hell' to produce the expulsion-of-Satan-from-heaven narrative — the climactic moment of the Second-Temple-through-Christian transformation of the adversary into a fallen cosmic being. Russell 1977; Forsyth 1987; Shaked 1984.",
+              "parallels": [
+                {
+                  "label": "Angra Mainyu hurled back (Zoroastrian)",
+                  "note": "the Hostile Spirit, having invaded the good creation, is cast back into darkness and finally defeated at frashokereti — the Iranian 'adversary cast down' structure that scholarship sets behind the Jewish development. Boyce 1975; Russell 1977."
+                },
+                {
+                  "label": "The fall of the Watchers (1 Enoch)",
+                  "note": "the rebel angels cast down for transgression — the other Second-Temple text feeding the fallen-being complex alongside Ezekiel 28 and Isaiah 14. Russell 1977."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "28:17",
+          "text": "Thine heart was lifted up because of thy beauty, thou hast corrupted thy wisdom by reason of thy brightness: I will cast thee to the ground, I will lay thee before kings, that they may behold thee.",
+          "textVersions": {
+            "kjv": "Thine heart was lifted up because of thy beauty, thou hast corrupted thy wisdom by reason of thy brightness: I will cast thee to the ground, I will lay thee before kings, that they may behold thee."
+          },
+          "entities": [
+            {
+              "word": "Thine heart was lifted up because of thy beauty",
+              "node": "theme-rebel-against-the-divine",
+              "type": "theme",
+              "note": "PRIDE in one's own beauty/brightness as the cause of the fall — the defining sin of the proud-rebel-being, the exact charge Isaiah 14 levels at the Day Star ('thou hast said in thine heart, I will ascend'). This is the core of the hubris-and-fall mytheme. Forsyth 1987, The Old Enemy; Day 2000.",
+              "parallels": [
+                {
+                  "label": "Hêlēl's 'I will ascend' (Isaiah 14)",
+                  "note": "the morning star's boast 'I will be like the most High' — the twin-text expression of the same lifted-up heart. Day 2000; DDD s.v. 'Helel'."
+                }
+              ]
+            },
+            {
+              "word": "by reason of thy brightness",
+              "node": "phosphoros",
+              "type": "deity",
+              "note": "'Brightness' as the corrupting glory ties the Tyrian cherub to the LUMINOUS morning-star imagery of Isaiah 14 — the radiance of Phosphoros/Heōsphoros (the light-bringer, planet Venus at dawn) that Latin rendered Lucifer. The brightness-corrupted-by-pride link is what let the two texts be read as one figure. Kelly 2006, Satan: A Biography; Day 2000.",
+              "parallels": [
+                {
+                  "label": "Lucifer (Latin calque)",
+                  "note": "Lucifer = 'light-bringer', Jerome's Vulgate rendering of Hêlēl; the bright fallen morning star became the proper name of the devil in Western tradition. Kelly 2006."
+                }
+              ]
+            },
+            {
+              "word": "I will cast thee to the ground",
+              "node": "angra-mainyu-ahriman",
+              "type": "deity",
+              "note": "The casting-down verdict. Comparatively this is the ethical-FALL casting-down (a blessed being undone by pride), to be distinguished from the combat-defeat of a primordial-chaos rebel; Angra Mainyu — the Hostile Spirit defeated and consigned to darkness — is the Iranian instance of this rebel-cast-down pattern cited as structural background to the biblical fall-figure. Forsyth 1987; Russell 1977; Boyce 1975.",
+              "parallels": [
+                {
+                  "label": "Tiamat split by Marduk (Babylonian)",
+                  "textId": "enuma-elish-4",
+                  "note": "CONTRAST: Tiamat is a chaos-monster slain in combat at creation, NOT a fall-from-glory rebel — Forsyth 1987 distinguishes the two branches of the rebel-against-the-divine family."
+                },
+                {
+                  "label": "asura/deva inversion",
+                  "note": "the demonisation of a formerly-exalted divine class — the comparative frame for 'a glorious being brought to the ground'. West 2007; Skjærvø, EncIr."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Brought to ashes — a terror, never any more",
+      "verses": [
+        {
+          "ref": "28:18",
+          "text": "Thou hast defiled thy sanctuaries by the multitude of thine iniquities, by the iniquity of thy traffick; therefore will I bring forth a fire from the midst of thee, it shall devour thee, and I will bring thee to ashes upon the earth in the sight of all them that behold thee.",
+          "textVersions": {
+            "kjv": "Thou hast defiled thy sanctuaries by the multitude of thine iniquities, by the iniquity of thy traffick; therefore will I bring forth a fire from the midst of thee, it shall devour thee, and I will bring thee to ashes upon the earth in the sight of all them that behold thee."
+          },
+          "entities": [
+            {
+              "word": "I will bring thee to ashes upon the earth",
+              "node": "origin-of-evil",
+              "type": "theme",
+              "note": "The annihilation of the fallen being. In the plain oracle this is the destruction of Tyre; read with the cosmic-rebel tradition it foreshadows the final consignment of the fallen one to fire — the eschatological end of evil that the origin-of-evil theme bookends. Russell 1977, The Devil.",
+              "parallels": [
+                {
+                  "label": "Angra Mainyu's final defeat (Zoroastrian)",
+                  "note": "the Hostile Spirit destroyed by fire/molten metal at frashokereti, the cosmic renovation — evil rendered powerless at history's end. Boyce 1975; Russell 1977."
+                },
+                {
+                  "label": "Satan cast into the lake of fire (Revelation 20)",
+                  "note": "the Christian eschatological reflex: the fallen adversary finally destroyed in fire. Russell 1977."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "28:19",
+          "text": "All they that know thee among the people shall be astonished at thee: thou shalt be a terror, and never shalt thou be any more.",
+          "textVersions": {
+            "kjv": "All they that know thee among the people shall be astonished at thee: thou shalt be a terror, and never shalt thou be any more."
+          },
+          "entities": []
+        }
+      ]
+    }
+  ]
+};
+
+// -- 1 Kings 19:9–13 (Elijah at Horeb — the still small voice) --
+SCRIPTURE_TEXTS['1-kings-19-still-small-voice'] = {
+  "id": "1-kings-19-still-small-voice",
+  "title": "1 Kings 19:9–13 (Elijah at Horeb — the still small voice)",
+  "shortTitle": "1 Kings 19",
+  "corpus": "Hebrew Bible (Former Prophets · Sefer Melakhim, within the Deuteronomistic History)",
+  "tradId": "tradition-second-temple-judaism",
+  "date": "~9th c. BCE narrative setting · ~7th–6th c. BCE Deuteronomistic-Historical composition (Noth 1943 → Cross 1973)",
+  "docNode": "phase-2-034-books-of-kings",
+  "language": "Biblical Hebrew · King James Version (1611) — public domain",
+  "translations": [
+    {
+      "id": "kjv",
+      "label": "KJV (1611)",
+      "note": "King James Version — public domain"
+    }
+  ],
+  "intro": "At Horeb, the mountain of God, Elijah is granted a theophany that systematically dismantles the storm-god pattern it invokes: a great wind rends the mountains, then an earthquake, then a fire — \"but the LORD was not in the wind... not in the earthquake... not in the fire\" — and after the fire comes \"a still small voice\" (Hebrew qôl dᵉmāmāh daqqāh, literally \"a sound of thin silence\"). It is the Hebrew Bible's clearest apophatic theophany: where Psalm 29 and the Canaanite Baal hymns enthrone the deity precisely IN the thunder, earthquake, and fire of the storm, 1 Kings 19 stages the divine self-disclosure in the negation of all three, turning against the storm-theophany toward a hidden, ineffable God who speaks in silence. The scene comes immediately after Elijah's polemic against the prophets of Baal on Carmel (1 Kings 18), and its \"voice of thin silence\" became a touchstone of the cross-tradition via negativa — the Tao that cannot be named, the neti-neti of the Upanishads, and the \"divine darkness\" of Pseudo-Dionysius.",
+  "crossTradition": [
+    {
+      "label": "Psalm 29 — the storm-god enthroned IN the thunder (the contrast)",
+      "textId": "psalm-29",
+      "note": "Psalm 29 is the inverse case: a barely-Yahwised Canaanite Baal storm-hymn in which the sevenfold 'voice of the LORD' (qol YHWH) thunders over the waters, breaks the cedars, and shakes the wilderness — the deity present precisely IN the storm. Cross (1973) and Day (1985) identify it as a transferred Baal-theophany. 1 Kings 19 deliberately withholds the LORD from wind, earthquake, and fire, inverting the storm-theophany Psalm 29 preserves."
+    },
+    {
+      "label": "1 Kings 18 — Elijah's polemic against Baal on Carmel (the prior scene)",
+      "textId": "1-kings-18-elijah",
+      "note": "The immediately preceding chapter, where Elijah's God answers by fire from heaven on Mount Carmel against the impotent storm-god Baal. The Horeb theophany of chapter 19 completes the polemic: the God who once answered with fire is now revealed to be 'not in the fire' itself — a further deconstruction of the storm-god the Baal-prophets served (Cogan 2000; Mark S. Smith 2002, The Early History of God)."
+    },
+    {
+      "label": "Tao Te Ching 1 — the Tao that cannot be named",
+      "textId": "tao-te-ching-1",
+      "note": "The purest formulation of apophatic ground: 'The name that can be named is not the enduring and unchanging name.' The 'sound of thin silence' is the Hebrew counterpart — the divine presence that eludes the loud, nameable manifestations (wind/quake/fire) the way the eternal Tao eludes every name (cf. theme-apophatic-theology, which lists Daoist xuán among the via-negativa convergences)."
+    },
+    {
+      "label": "Brihadaranyaka Upanishad — neti, neti ('not this, not this')",
+      "note": "The Upanishadic formula for Brahman — neti neti, 'not this, not this' — denies every predicate to reach the absolute (Brihadaranyaka 2.3.6; 4.5.15). The Horeb theophany performs the same negation narratively: not in the wind, not in the earthquake, not in the fire. The via-negativa node and theme-apophatic-theology both name neti neti as the Vedantic member of this cross-tradition convergence (Olivelle 1996; cf. theme-apophatic-theology)."
+    },
+    {
+      "label": "Pseudo-Dionysius — the 'divine darkness' beyond all theophany",
+      "note": "In the Mystical Theology, Pseudo-Dionysius (c. 5th–6th c. CE) describes the soul plunging into the 'darkness of unknowing' beyond every sensible and intelligible manifestation of God. Eliade (1958) and the apophatic-theology tradition read Elijah's silence-after-the-fire as a proto-apophatic image of the same God-beyond-manifestation (apophatic-mysticism; Turner 1995, The Darkness of God)."
+    },
+    {
+      "label": "Maimonides — God known only by negative attributes",
+      "note": "Maimonides (Guide for the Perplexed I.58–59) argues every positive divine attribute must be reduced to a negation, since the finite cannot predicate anything of the infinite. The Horeb pattern — three negations culminating in silence — is the narrative ancestor of this negative-theology programme in the medieval Jewish tradition (via-negativa; theme-apophatic-theology)."
+    }
+  ],
+  "sections": [
+    {
+      "heading": "The word of the LORD at Horeb",
+      "verses": [
+        {
+          "ref": "19:9",
+          "text": "And he came thither unto a cave, and lodged there; and, behold, the word of the LORD came to him, and he said unto him, What doest thou here, Elijah?",
+          "textVersions": {
+            "kjv": "And he came thither unto a cave, and lodged there; and, behold, the word of the LORD came to him, and he said unto him, What doest thou here, Elijah?"
+          },
+          "entities": [
+            {
+              "word": "the word of the LORD",
+              "node": "yahweh",
+              "type": "deity",
+              "note": "YHWH, the God of Israel, here at Horeb (= Sinai), the mountain of the covenant. The scene is staged as a counter-theophany to the Sinai of Exodus 19 (cloud, fire, earthquake) and to the storm-god imagery the Baal cult assigned to its deity (Cross 1973, Canaanite Myth and Hebrew Epic).",
+              "parallels": [
+                {
+                  "label": "Baal/Hadad (Ugaritic) — the storm-god this God is NOT",
+                  "note": "Cross (1973) and Day (1985): the wind/earthquake/fire are the stock equipment of the Canaanite storm-god Baal-Hadad; 1 Kings 19 withholds YHWH from all three"
+                }
+              ]
+            },
+            {
+              "word": "What doest thou here, Elijah",
+              "node": "elijah-prophet",
+              "type": "person",
+              "note": "Elijah the Tishbite, the ninth-century prophet of the northern kingdom, who has fled Jezebel after the Carmel contest (1 Kings 18) and journeyed forty days to Horeb. The repeated divine question frames the theophany (Cogan 2000, Anchor Bible 1 Kings).",
+              "parallels": [
+                {
+                  "label": "Moses at Horeb (Exodus 3)",
+                  "textId": "genesis-1",
+                  "note": "Elijah is deliberately cast as a second Moses at the same mountain of God — the wilderness as the universal site of decisive divine encounter (Eliade 1958)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "19:10",
+          "text": "And he said, I have been very jealous for the LORD God of hosts: for the children of Israel have forsaken thy covenant, thrown down thine altars, and slain thy prophets with the sword; and I, even I only, am left; and they seek my life, to take it away.",
+          "textVersions": {
+            "kjv": "And he said, I have been very jealous for the LORD God of hosts: for the children of Israel have forsaken thy covenant, thrown down thine altars, and slain thy prophets with the sword; and I, even I only, am left; and they seek my life, to take it away."
+          },
+          "entities": [
+            {
+              "word": "I, even I only, am left",
+              "node": "elijah-prophet",
+              "type": "person",
+              "note": "Elijah's complaint of total isolation — the despairing prophet at the covenant mountain, to whom the answer comes not in spectacle but in silence and a recommissioning. The verse motivates the apophatic mode of the theophany that follows (Mark S. Smith 2002).",
+              "parallels": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Not in the wind, the earthquake, or the fire",
+      "verses": [
+        {
+          "ref": "19:11",
+          "text": "And he said, Go forth, and stand upon the mount before the LORD. And, behold, the LORD passed by, and a great and strong wind rent the mountains, and brake in pieces the rocks before the LORD; but the LORD was not in the wind: and after the wind an earthquake; but the LORD was not in the earthquake:",
+          "textVersions": {
+            "kjv": "And he said, Go forth, and stand upon the mount before the LORD. And, behold, the LORD passed by, and a great and strong wind rent the mountains, and brake in pieces the rocks before the LORD; but the LORD was not in the wind: and after the wind an earthquake; but the LORD was not in the earthquake:"
+          },
+          "entities": [
+            {
+              "word": "stand upon the mount before the LORD",
+              "node": "theme-sacred-mountain-as-theophanic-locus",
+              "type": "theme",
+              "note": "Horeb/Sinai as the theophanic mountain — the cosmic high place where the deity is encountered. The motif is pan-traditional (Sinai, Sapan/Zaphon of Baal, Olympus, Meru), but 1 Kings 19 subverts the expected storm-theophany of the mountain-cult by emptying its phenomena of the divine presence (Clifford 1972, The Cosmic Mountain in Canaan and the Old Testament).",
+              "parallels": [
+                {
+                  "label": "Mount Sapan/Zaphon (Ugaritic)",
+                  "note": "Clifford (1972): Baal is enthroned on the storm-wracked cosmic mountain; Horeb is the Hebrew counter-mountain where the storm does NOT carry the god"
+                },
+                {
+                  "label": "Sinai of Exodus 19 (cloud, fire, smoke, quake)",
+                  "textId": "genesis-1",
+                  "note": "the earlier Sinai theophany 1 Kings 19 deliberately echoes and reverses — there God is IN the fire and quake, here He is not"
+                }
+              ]
+            },
+            {
+              "word": "a great and strong wind",
+              "node": "baal",
+              "type": "deity",
+              "note": "Wind, earthquake, and fire are the conventional retinue of the Near Eastern storm-god — Baal-Hadad 'who rides the clouds,' whose theophany IS the thunderstorm. By naming them only to deny the LORD's presence in each, the narrative wages the same polemic against the storm-god that Elijah waged on Carmel (Cross 1973; Day 1985, God's Conflict with the Dragon and the Sea).",
+              "parallels": [
+                {
+                  "label": "Baal the storm-god enthroned in the tempest (Psalm 29)",
+                  "textId": "psalm-29",
+                  "note": "Cross (1973): Psalm 29 keeps the storm-theophany (the 'voice of the LORD' that thunders and shakes); 1 Kings 19 strips it away"
+                },
+                {
+                  "label": "Marduk's winds against Tiamat (Enuma Elish IV)",
+                  "textId": "enuma-elish-4",
+                  "note": "the storm-god's winds as his cosmogonic weapon — the type the Horeb theophany refuses"
+                }
+              ]
+            },
+            {
+              "word": "the LORD was not in the wind",
+              "node": "via-negativa",
+              "type": "theme",
+              "note": "The apophatic turn proper: the threefold 'the LORD was not in...' is a narrative via negativa, denying each loud manifestation in turn. The via-negativa node names neti neti and tanzih among the same family of negation-theologies, of which this is the Hebrew-Bible narrative ancestor (Turner 1995).",
+              "parallels": [
+                {
+                  "label": "neti, neti — 'not this, not this' (Brihadaranyaka)",
+                  "note": "Olivelle (1996): the Upanishadic denial of every predicate to Brahman; the same negation-structure as 'not in the wind... not in the quake... not in the fire'"
+                },
+                {
+                  "label": "tanzih — divine incomparability (Islamic kalam / Ibn Arabi)",
+                  "note": "the Islamic apophatic move of stripping all created likeness from God, listed in theme-apophatic-theology alongside the via negativa"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "19:12",
+          "text": "And after the earthquake a fire; but the LORD was not in the fire: and after the fire a still small voice.",
+          "textVersions": {
+            "kjv": "And after the earthquake a fire; but the LORD was not in the fire: and after the fire a still small voice."
+          },
+          "entities": [
+            {
+              "word": "the LORD was not in the fire",
+              "node": "theme-apophatic-theology",
+              "type": "theme",
+              "note": "The completion of the negation: even fire — the most charged Sinai theophany-medium (Exodus 19:18; the burning bush) — does not contain God. This narrative apophasis is the Hebrew-Bible node in the cross-tradition convergence of negative theology that the theme-apophatic-theology entry tracks from Plotinus and Pseudo-Dionysius to Maimonides and Ibn Arabi (Turner 1995, The Darkness of God).",
+              "parallels": [
+                {
+                  "label": "Pseudo-Dionysius — the 'divine darkness' beyond all manifestation",
+                  "note": "Mystical Theology: God is met in the darkness of unknowing beyond every sensible theophany, including light/fire (apophatic-mysticism)"
+                },
+                {
+                  "label": "Maimonides — negative attributes (Guide I.58)",
+                  "note": "every positive predicate of God reduced to negation; the medieval Jewish systematisation of the Horeb logic"
+                }
+              ]
+            },
+            {
+              "word": "a still small voice",
+              "node": "hidden-god",
+              "type": "theme",
+              "note": "Hebrew qôl dᵉmāmāh daqqāh — literally 'a sound of thin silence' / 'a voice of thin stillness' (the repo's own gloss). The paradoxical phrase — an audible silence — is the Hebrew Bible's defining image of the deus absconditus, the hidden God who is present in his very withdrawal from spectacle. The hidden-god node lists Brahman, the Dao, and Amun as the cross-tradition members of this apophatic-absolute family (Eliade 1958; Lane 1953 on the philology of dᵉmāmāh).",
+              "parallels": [
+                {
+                  "label": "The Tao that cannot be named (Tao Te Ching 1)",
+                  "textId": "tao-te-ching-1",
+                  "note": "the eternal Tao eludes every name as the LORD eludes wind, quake, and fire — the 'thin silence' is the Hebrew counterpart of the nameless Dao"
+                },
+                {
+                  "label": "Brahman as neti neti (Brihadaranyaka)",
+                  "note": "the absolute reached only by negation; the 'sound of thin silence' is the positive residue left when every loud predicate is denied"
+                },
+                {
+                  "label": "Amun, 'the Hidden One' (Egyptian)",
+                  "note": "hidden-god lists Amun — whose very name means 'hidden' — as a parallel deus absconditus; Assmann (2001) on Amun as the concealed god behind all manifestation"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "19:13",
+          "text": "And it was so, when Elijah heard it, that he wrapped his face in his mantle, and went out, and stood in the entering in of the cave. And, behold, there came a voice unto him, and said, What doest thou here, Elijah?",
+          "textVersions": {
+            "kjv": "And it was so, when Elijah heard it, that he wrapped his face in his mantle, and went out, and stood in the entering in of the cave. And, behold, there came a voice unto him, and said, What doest thou here, Elijah?"
+          },
+          "entities": [
+            {
+              "word": "wrapped his face in his mantle",
+              "node": "apophatic-mysticism",
+              "type": "theme",
+              "note": "Elijah veils his face before the voice, as Moses hid his face at the bush (Exodus 3:6) and Isaiah cried 'I am undone' before the throne (Isaiah 6:5). The hidden/averted face is the experiential pole of the via negativa: the finite cannot sustain direct vision of the infinite, so the encounter is mediated by veiling and silence rather than spectacle (Turner 1995; the repo's own apophatic framing of the hidden face).",
+              "parallels": [
+                {
+                  "label": "Moses hides his face at the burning bush (Exodus 3:6)",
+                  "textId": "genesis-1",
+                  "note": "the same gesture of veiling before the unbearable divine presence at the same mountain"
+                },
+                {
+                  "label": "The 'cloud of unknowing' (Christian apophatic)",
+                  "note": "apophatic-mysticism: the soul meets God only by entering a darkness/cloud that hides the divine face from direct sight"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
