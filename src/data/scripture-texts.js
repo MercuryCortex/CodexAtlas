@@ -20304,3 +20304,881 @@ SCRIPTURE_TEXTS['psalm-110'] = {
     }
   ]
 };
+
+// -- Genesis 28:10–19 (Jacob's Ladder — the gate of heaven at Bethel) --
+SCRIPTURE_TEXTS['genesis-28'] = {
+  "id": "genesis-28",
+  "title": "Genesis 28:10–19 (Jacob's Ladder — the gate of heaven at Bethel)",
+  "shortTitle": "Genesis 28",
+  "corpus": "Hebrew Bible (Torah · Patriarchal Narrative)",
+  "tradId": "tradition-second-temple-judaism",
+  "date": "c. 10th–6th century BCE (Elohist/Yahwist patriarchal tradition, edited into the Torah)",
+  "docNode": "document-genesis",
+  "language": "Hebrew · King James Version (1611)",
+  "translations": [
+    {
+      "id": "kjv",
+      "label": "KJV (1611)",
+      "note": "King James Version — public domain"
+    }
+  ],
+  "intro": "Genesis 28:10–19 is the Hebrew axis-mundi rendered as narrative: fleeing Esau, Jacob sleeps at a \"certain place,\" takes a stone for a pillow, and dreams of a ladder (Hebrew sullam) set up on the earth with its top reaching to heaven, the angels of God ascending and descending on it, and YHWH standing above it. Waking, he calls the place \"the house of God\" (Beth-El) and \"the gate of heaven,\" anoints his stone-pillow as a standing pillar (massebah), and names the site Bethel. Speiser (Anchor Bible Genesis, 1964) and the Atlas's own axis-mundi nodes read the ladder as the cosmic conduit joining heaven and earth — and as the deliberate counterpoint to the Babel tower of Genesis 11: there humans build a ziggurat up toward heaven and are scattered, here God lowers the stairway and gives a covenant. Where the Mesopotamian Bab-ili means \"gate of the god,\" Bethel is the \"gate of heaven\" — the same axis-mundi grammar, inverted from human hubris to divine condescension.",
+  "crossTradition": [
+    {
+      "label": "Genesis 11 — the Tower of Babel (the polemic inverse)",
+      "textId": "genesis-11",
+      "note": "Speiser (1964) frames Babel as a Yahwist polemic against the Babylonian ziggurat (Bab-ili, 'gate of the god'): humans build UP toward heaven and are scattered. Genesis 28 is its structural mirror — God LOWERS the stairway and gives a covenant, and the site is the 'gate of heaven' (Bethel) rather than a tower of confusion."
+    },
+    {
+      "label": "Enuma Elish IV — Etemenanki, the cosmic axis at Babylon",
+      "textId": "enuma-elish-4",
+      "note": "The ziggurat Etemenanki ('House of the Foundation of Heaven and Earth'), Marduk's house at Babylon, is the Mesopotamian axis-mundi as institutional architecture (named in the Atlas axis-mundi node as dur-an-ki, 'bond of heaven and earth'). Speiser (1964) takes the ziggurat-as-stairway-to-heaven as the form the Hebrew ladder both echoes and answers."
+    },
+    {
+      "label": "John 1:51 — Christ as the new ladder",
+      "textId": "john-1",
+      "note": "Jesus tells Nathanael the disciples 'shall see heaven open, and the angels of God ascending and descending upon the Son of man' (John 1:51) — an explicit citation of Gen 28:12 that identifies Christ as the axis-mundi made flesh (the Atlas jacobs-ladder node records this as the New-Testament re-reading of the ladder)."
+    },
+    {
+      "label": "Norse Yggdrasil / Mesoamerican World Tree — the vertical axis",
+      "note": "Eliade (The Sacred and the Profane, 1957) treats the ladder, the cosmic tree (Yggdrasil), the world-mountain (Meru/Sumeru), and the temple as variant forms of one axis-mundi motif linking underworld, earth, and heaven; J. Z. Smith (To Take Place, 1987) deflated Eliade's universalism while keeping the descriptive parallel — so the Mesoamerican World Tree and Norse Yggdrasil are convergent expressions of the same vertical grammar, not transmission from Israel. [not staged]"
+    },
+    {
+      "label": "Muhammad's Mi'raj — the prophetic ascent",
+      "note": "Schimmel (And Muhammad Is His Messenger, 1985): the Night Journey, in which the Prophet ascends through seven heavens to the Lote Tree of the Utmost Boundary, is the same Abrahamic cosmological schema (axis-mundi as ascent-conduit) as Jacob's ladder — an independent elaboration within the family, per the Atlas jacobs-ladder node. [not staged]"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "The dream of the ladder",
+      "verses": [
+        {
+          "ref": "28:10",
+          "text": "And Jacob went out from Beersheba, and went toward Haran.",
+          "textVersions": {
+            "kjv": "And Jacob went out from Beersheba, and went toward Haran."
+          },
+          "entities": []
+        },
+        {
+          "ref": "28:11",
+          "text": "And he lighted upon a certain place, and tarried there all night, because the sun was set; and he took of the stones of that place, and put them for his pillows, and lay down in that place to sleep.",
+          "textVersions": {
+            "kjv": "And he lighted upon a certain place, and tarried there all night, because the sun was set; and he took of the stones of that place, and put them for his pillows, and lay down in that place to sleep."
+          },
+          "entities": [
+            {
+              "word": "the stones of that place",
+              "node": "omphalos",
+              "type": "symbol",
+              "note": "The stone Jacob sleeps on and later anoints as a pillar (v.18) is the sacred standing-stone (massebah) marking the world's center — the 'navel' where heaven touches earth, the omphalos-function in Hebrew form (the Atlas jacobs-ladder node identifies the anointed stone with the omphalos / sacred center).",
+              "parallels": [
+                {
+                  "label": "Omphalos at Delphi (Greek)",
+                  "note": "Eliade (The Sacred and the Profane, 1957) reads the anointed stone marking the meeting-point of earth and heaven as the same center-of-the-world function as the Delphic omphalos."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "28:12",
+          "text": "And he dreamed, and behold a ladder set up on the earth, and the top of it reached to heaven: and behold the angels of God ascending and descending on it.",
+          "textVersions": {
+            "kjv": "And he dreamed, and behold a ladder set up on the earth, and the top of it reached to heaven: and behold the angels of God ascending and descending on it."
+          },
+          "entities": [
+            {
+              "word": "a ladder set up on the earth, and the top of it reached to heaven",
+              "node": "jacobs-ladder",
+              "type": "symbol",
+              "note": "The ladder (Hebrew sullam) set on earth with its top reaching to heaven is the axis-mundi literalized in dream-narrative — a continuously-used conduit between worlds (Speiser, Anchor Bible Genesis, 1964; the Atlas jacobs-ladder node).",
+              "parallels": [
+                {
+                  "label": "John 1:51 — Christ as the ladder",
+                  "textId": "john-1",
+                  "note": "Jesus cites Gen 28:12 verbatim — 'the angels of God ascending and descending upon the Son of man' — making himself the new ladder (the Atlas jacobs-ladder node)."
+                },
+                {
+                  "label": "Etemenanki / the ziggurat-stairway",
+                  "textId": "enuma-elish-4",
+                  "note": "Speiser (1964): the Mesopotamian ziggurat was the built stairway joining heaven and earth; the Hebrew ladder is the same axis-form, here God-given rather than man-built."
+                }
+              ]
+            },
+            {
+              "word": "a ladder set up on the earth, and the top of it reached to heaven",
+              "node": "axis-mundi",
+              "type": "symbol",
+              "note": "The vertical structure joining earth and heaven is the axis mundi — the cosmic pillar / world-axis that recurs as ziggurat (dur-an-ki, 'bond of heaven and earth'), Djed-pillar, Yggdrasil, and Mount Meru (Eliade, The Sacred and the Profane, 1957; the Atlas axis-mundi node names the ladder among its forms).",
+              "parallels": [
+                {
+                  "label": "Mesopotamian ziggurat (dur-an-ki)",
+                  "textId": "enuma-elish-4",
+                  "note": "The Atlas axis-mundi node names Etemenanki, 'House of the Foundation of Heaven and Earth,' as the axis mundi as institutional architecture — the form Babel inverts and Bethel answers (Speiser 1964)."
+                },
+                {
+                  "label": "Yggdrasil / Mount Meru (convergence)",
+                  "note": "Eliade (1957) groups the world-tree and world-mountain with the ladder as one axis-mundi motif; J. Z. Smith (To Take Place, 1987) keeps the parallel as descriptive convergence, not transmission."
+                }
+              ]
+            },
+            {
+              "word": "a ladder set up on the earth, and the top of it reached to heaven",
+              "node": "world-axis",
+              "type": "theme",
+              "note": "The Atlas world-axis theme lists 'ladder of Jacob' among its forms and names Gen 28:10–17 explicitly: the cross-cultural motif of a mountain, tree, pillar, or ladder connecting underworld, earth, and heaven and locating the cosmic center (Eliade 1957; J. Z. Smith 1987).",
+              "parallels": [
+                {
+                  "label": "World-mountain / cosmic tree",
+                  "note": "Eliade (1957) treats mountain, tree, pillar, and ladder as interchangeable realizations of the single world-axis; the Atlas world-axis node catalogues Zion, Meru, Yggdrasil, and the ladder together."
+                }
+              ]
+            },
+            {
+              "word": "the angels of God ascending and descending on it",
+              "node": "world-mountain",
+              "type": "symbol",
+              "note": "The two-way traffic of angels marks the ladder as the active axis where the divine and human realms meet — the same connector-function the world-mountain serves (the Atlas world-mountain / jacobs-ladder nodes treat ladder and mountain as parallel forms of the vertical axis).",
+              "parallels": [
+                {
+                  "label": "Muhammad's Mi'raj — ascent through the heavens",
+                  "note": "Schimmel (1985): the prophetic ascent to the Lote Tree of the Utmost Boundary is the same Abrahamic axis-mundi schema of vertical traffic between earth and heaven (the Atlas jacobs-ladder node)."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "28:13",
+          "text": "And, behold, the LORD stood above it, and said, I am the LORD God of Abraham thy father, and the God of Isaac: the land whereon thou liest, to thee will I give it, and to thy seed;",
+          "textVersions": {
+            "kjv": "And, behold, the LORD stood above it, and said, I am the LORD God of Abraham thy father, and the God of Isaac: the land whereon thou liest, to thee will I give it, and to thy seed;"
+          },
+          "entities": [
+            {
+              "word": "the LORD stood above it",
+              "node": "yahweh",
+              "type": "deity",
+              "note": "YHWH stands at the head of the ladder and grants the land-and-seed covenant — the axis-mundi terminates not in an abstract heaven but in the personal covenant God of the patriarchs (Speiser, Anchor Bible Genesis, 1964).",
+              "parallels": [
+                {
+                  "label": "YHWH 'comes down' at Babel (Gen 11:5)",
+                  "textId": "genesis-11",
+                  "note": "The inverse motion: at Babel YHWH descends to scatter the tower-builders; at Bethel he stands above the God-given ladder to bless — the polemic pairing Speiser (1964) draws between the two heaven-and-earth scenes."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "The house of God and the gate of heaven",
+      "verses": [
+        {
+          "ref": "28:16",
+          "text": "And Jacob awaked out of his sleep, and he said, Surely the LORD is in this place; and I knew it not.",
+          "textVersions": {
+            "kjv": "And Jacob awaked out of his sleep, and he said, Surely the LORD is in this place; and I knew it not."
+          },
+          "entities": []
+        },
+        {
+          "ref": "28:17",
+          "text": "And he was afraid, and said, How dreadful is this place! this is none other but the house of God, and this is the gate of heaven.",
+          "textVersions": {
+            "kjv": "And he was afraid, and said, How dreadful is this place! this is none other but the house of God, and this is the gate of heaven."
+          },
+          "entities": [
+            {
+              "word": "this is the gate of heaven",
+              "node": "etemenanki",
+              "type": "sacred-site",
+              "note": "'Gate of heaven' is the precise axis-mundi formula: the Babylonian ziggurat Etemenanki at Babylon was Bab-ili, 'gate of the god,' the bond of heaven and earth (Speiser, Anchor Bible Genesis, 1964). Bethel claims the same function — the point where heaven is accessible — but as a God-disclosed site rather than a man-built tower.",
+              "parallels": [
+                {
+                  "label": "Bab-ili 'gate of the god' vs Bethel 'gate of heaven'",
+                  "textId": "genesis-11",
+                  "note": "Speiser (1964): the Babel narrative folk-etymologizes Bab-ili ('gate of god') into 'confusion' (balal); Genesis 28 gives the un-polemicized form of the same idea — a true 'gate of heaven' at Bethel."
+                }
+              ]
+            },
+            {
+              "word": "this is none other but the house of God",
+              "node": "theme-ziggurat-as-stairway-to-heaven",
+              "type": "theme",
+              "note": "The ziggurat-as-stairway motif — a built mountain joining the divine and human realms — is the form Genesis 11 inverts as hubris and Genesis 28 affirms as grace: the 'house of God' (Beth-El) is the legitimate counterpart to the rejected tower (the Atlas ziggurat-as-stairway theme records this polemic; Speiser 1964).",
+              "parallels": [
+                {
+                  "label": "Mesopotamian temple-platform as cosmic axis",
+                  "textId": "enuma-elish-4",
+                  "note": "The ziggurat as the meeting-point of heaven and earth carries a positive valence in Mesopotamia (Etemenanki); Genesis 28 keeps that positive valence for Bethel while Genesis 11 reverses it for Babel (Speiser 1964)."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "28:18",
+          "text": "And Jacob rose up early in the morning, and took the stone that he had put for his pillows, and set it up for a pillar, and poured oil upon the top of it.",
+          "textVersions": {
+            "kjv": "And Jacob rose up early in the morning, and took the stone that he had put for his pillows, and set it up for a pillar, and poured oil upon the top of it."
+          },
+          "entities": [
+            {
+              "word": "set it up for a pillar, and poured oil upon the top of it",
+              "node": "omphalos",
+              "type": "symbol",
+              "note": "Jacob raises the stone as a massebah (sacred standing-stone) and anoints it — the oldest Hebrew temple-theology, the anointed stone that IS God's house, marking where heaven touched earth (the Atlas jacobs-ladder node; massebot are archaeologically attested across Canaan).",
+              "parallels": [
+                {
+                  "label": "Anointed center-stone / omphalos",
+                  "note": "Eliade (The Sacred and the Profane, 1957): the consecrated stone fixing the center of the world is the same sacred-center logic as the omphalos and the foundation-stone."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "28:19",
+          "text": "And he called the name of that place Bethel: but the name of that city was called Luz at the first.",
+          "textVersions": {
+            "kjv": "And he called the name of that place Bethel: but the name of that city was called Luz at the first."
+          },
+          "entities": [
+            {
+              "word": "Bethel",
+              "node": "world-axis",
+              "type": "theme",
+              "note": "Bethel — Beth-El, 'house of God' — is the axis-site, the named center where the vertical world-axis touches the earth (the Atlas world-axis node lists Jacob's ladder and Bethel among its forms; Idel, Ascensions on High in Jewish Mysticism, 2005, traces the later Jewish elaboration of the ladder/pillar as the channel of ascent). No dedicated Bethel or Jacob node yet exists in the vault.",
+              "parallels": [
+                {
+                  "label": "Bab-ili 'gate of the god' (Babel)",
+                  "textId": "genesis-11",
+                  "note": "Speiser (1964): Bethel ('house of God') and Bab-ili ('gate of the god') name the same axis-mundi function; Genesis sets the patriarch's honest Bethel against the Babylonians' Babel."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
+
+// -- Exodus 15:1–18 (The Song of the Sea — "The LORD is a man of war") --
+SCRIPTURE_TEXTS['exodus-15'] = {
+  "id": "exodus-15",
+  "title": "Exodus 15:1–18 (The Song of the Sea — \"The LORD is a man of war\")",
+  "shortTitle": "Exodus 15",
+  "corpus": "Hebrew Bible (Torah · Exodus)",
+  "tradId": "tradition-second-temple-judaism",
+  "date": "archaic poem, possibly 13th–12th century BCE; among the oldest in the Hebrew Bible (Cross & Freedman)",
+  "docNode": "document-exodus",
+  "language": "Hebrew · King James Version (1611) — public domain",
+  "translations": [
+    {
+      "id": "kjv",
+      "label": "KJV (1611)",
+      "note": "King James Version — public domain"
+    }
+  ],
+  "intro": "The Song of the Sea is the victory hymn sung after the crossing — and, on the orthographic and linguistic evidence, one of the oldest poems in the Hebrew Bible (Cross & Freedman, Studies in Ancient Yahwistic Poetry). It hails YHWH as \"a man of war\" who casts Pharaoh's chariots into the sea: he blasts with his nostrils so the floods \"stood upright as an heap,\" he blows with his wind and \"the sea covered them.\" Frank Moore Cross (Canaanite Myth and Hebrew Epic, 1973) reads this as the historicised form of the Chaoskampf — the Canaanite storm-god's defeat of the Sea (Baal vs Yam) recast as YHWH's defeat of Egypt at the sea — and John Day (God's Conflict with the Dragon and the Sea, 1985) traces the same divine-warrior-versus-Sea grammar. The hymn ends where the Baal Cycle and Enuma Elish end: with the victorious god enthroned in his sanctuary, reigning \"for ever and ever.\"",
+  "crossTradition": [
+    {
+      "label": "Baal Cycle — Baal defeats Yam (Sea)",
+      "textId": "baal-cycle-1",
+      "note": "The Ugaritic storm-god's combat with Prince Sea (Yam) is, for Cross (1973) and Day (1985), the direct West-Semitic ancestor of the Song's grammar: the storm-god masters the Sea and is enthroned. Exodus 15 historicises that combat as YHWH's victory at the sea over Pharaoh."
+    },
+    {
+      "label": "Enuma Elish IV — Marduk slays Tiamat",
+      "textId": "enuma-elish-4",
+      "note": "The Mesopotamian type-specimen of the Chaoskampf: the storm-god Marduk splits the chaos-sea Tiamat with his winds, then builds his sanctuary. The Song's 'blast of thy nostrils' and 'thou didst blow with thy wind' belong to the same storm-god-versus-Sea pattern (Gunkel; Day 1985)."
+    },
+    {
+      "label": "Psalm 29 — YHWH enthroned upon the flood",
+      "textId": "psalm-29",
+      "note": "A Hebrew hymn Cross (1973) argued was adapted from a Canaanite Baal hymn: the voice of YHWH thunders 'upon many waters' and he 'sitteth King upon the flood' — the same storm-god enthroned-over-the-waters theology that crowns the Song of the Sea."
+    },
+    {
+      "label": "Isaiah 51 — the cutting of Rahab",
+      "textId": "isaiah-51",
+      "note": "The exilic prophet fuses the primeval combat (cutting Rahab, drying the sea) with the Exodus sea-crossing ('a way for the ransomed to pass over') — explicit late evidence that the sea-event was read in Chaoskampf terms (Day 1985)."
+    },
+    {
+      "label": "Psalm 74 / Psalm 89 — the divine warrior crushes the chaos-sea",
+      "textId": "psalm-74",
+      "note": "The Psalter combat-texts: YHWH divides the sea, breaks the heads of the dragons and Leviathan (Ps 74), and breaks Rahab in pieces 'with thy strong arm' (Ps 89) — the same divine-warrior arm that triumphs in the Song (Day 1985)."
+    }
+  ],
+  "sections": [
+    {
+      "heading": "I will sing unto the LORD — he hath triumphed gloriously",
+      "verses": [
+        {
+          "ref": "15:1",
+          "text": "Then sang Moses and the children of Israel this song unto the LORD, and spake, saying, I will sing unto the LORD, for he hath triumphed gloriously: the horse and his rider hath he thrown into the sea.",
+          "textVersions": {
+            "kjv": "Then sang Moses and the children of Israel this song unto the LORD, and spake, saying, I will sing unto the LORD, for he hath triumphed gloriously: the horse and his rider hath he thrown into the sea."
+          },
+          "entities": [
+            {
+              "word": "Then sang Moses",
+              "node": "moses",
+              "type": "person",
+              "note": "Moses, the Israelite lawgiver and prophet, named as the one who leads the hymn; the song is attributed to the Exodus generation. Cross & Freedman read the archaic orthography and metre as marking it among the oldest Hebrew poetry, older than its narrative frame.",
+              "parallels": []
+            },
+            {
+              "word": "the horse and his rider hath he thrown into the sea",
+              "node": "yam",
+              "type": "deity",
+              "note": "The sea (Hebrew yam) as the instrument of YHWH's victory: the same word names the Canaanite chaos-deity Sea. Here the Sea, once the storm-god's adversary, has become the weapon by which the divine warrior drowns the enemy — the inversion Cross (1973) and Day (1985) trace.",
+              "parallels": [
+                {
+                  "label": "Yam / Sea (Ugaritic)",
+                  "textId": "baal-cycle-1",
+                  "note": "the deified Sea that Baal must defeat; in the Song the sea is mastered and turned against Pharaoh"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "15:2",
+          "text": "The LORD is my strength and song, and he is become my salvation: he is my God, and I will prepare him an habitation; my father's God, and I will exalt him.",
+          "textVersions": {
+            "kjv": "The LORD is my strength and song, and he is become my salvation: he is my God, and I will prepare him an habitation; my father's God, and I will exalt him."
+          },
+          "entities": []
+        },
+        {
+          "ref": "15:3",
+          "text": "The LORD is a man of war: the LORD is his name.",
+          "textVersions": {
+            "kjv": "The LORD is a man of war: the LORD is his name."
+          },
+          "entities": [
+            {
+              "word": "a man of war",
+              "node": "chaoskampf",
+              "type": "theme",
+              "note": "The clearest statement of YHWH as the divine warrior. Frank Moore Cross (Canaanite Myth and Hebrew Epic, 1973) made this title the centre of his case that early Israel inherited the Canaanite storm-god's warrior profile; the Chaoskampf node carries the divine-warrior motif where no dedicated node exists.",
+              "parallels": [
+                {
+                  "label": "Marduk (Babylonian)",
+                  "textId": "enuma-elish-4",
+                  "note": "the warrior storm-god who battles the chaos-sea"
+                },
+                {
+                  "label": "Baal (Ugaritic)",
+                  "textId": "baal-cycle-1",
+                  "note": "the storm-god who defeats Sea and is acclaimed king"
+                }
+              ]
+            },
+            {
+              "word": "the LORD is his name",
+              "node": "yahweh",
+              "type": "deity",
+              "note": "YHWH named as the divine warrior himself. Cross (1973) connects the war-name to the epithet 'YHWH of hosts' (YHWH tseba'ot), the LORD of the heavenly armies — the storm-god at the head of his host.",
+              "parallels": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Pharaoh's chariots cast into the sea",
+      "verses": [
+        {
+          "ref": "15:4",
+          "text": "Pharaoh's chariots and his host hath he cast into the sea: his chosen captains also are drowned in the Red sea.",
+          "textVersions": {
+            "kjv": "Pharaoh's chariots and his host hath he cast into the sea: his chosen captains also are drowned in the Red sea."
+          },
+          "entities": [
+            {
+              "word": "hath he cast into the sea",
+              "node": "chaoskampf",
+              "type": "theme",
+              "note": "The historicisation of the combat: where the storm-god casts down the chaos-Sea, here YHWH casts the historical enemy into the sea. Day (1985) treats the Exodus sea-event as the chief place where the Chaoskampf is read into Israel's history.",
+              "parallels": [
+                {
+                  "label": "Marduk casts down Tiamat (Babylonian)",
+                  "textId": "enuma-elish-4",
+                  "note": "the storm-god overthrows the chaos-sea — the cosmic pattern historicised at the Red Sea"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "15:5",
+          "text": "The depths have covered them: they sank into the bottom as a stone.",
+          "textVersions": {
+            "kjv": "The depths have covered them: they sank into the bottom as a stone."
+          },
+          "entities": [
+            {
+              "word": "The depths",
+              "node": "tehom",
+              "type": "deity",
+              "note": "'The depths' (Hebrew tehomot) — the primordial deep, tehom, the same chaos-waters of Genesis 1:2, linguistically cognate with Babylonian Tiamat. Here the deep swallows Pharaoh's host, the cosmogonic abyss pressed into the service of history (Day 1985).",
+              "parallels": [
+                {
+                  "label": "tehom / Tiamat (Babylonian)",
+                  "textId": "enuma-elish-4",
+                  "note": "the deep cognate with the chaos-sea Marduk splits"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "15:6",
+          "text": "Thy right hand, O LORD, is become glorious in power: thy right hand, O LORD, hath dashed in pieces the enemy.",
+          "textVersions": {
+            "kjv": "Thy right hand, O LORD, is become glorious in power: thy right hand, O LORD, hath dashed in pieces the enemy."
+          },
+          "entities": [
+            {
+              "word": "thy right hand, O LORD, hath dashed in pieces the enemy",
+              "node": "yahweh",
+              "type": "deity",
+              "note": "The 'right hand' (and 'arm', v.16) of YHWH the divine warrior — the same warrior-arm that 'broke Rahab in pieces' in Psalm 89:10 and 'cut Rahab' in Isaiah 51:9. The verb 'dashed in pieces' echoes the shattering of the chaos-monster (Day 1985).",
+              "parallels": [
+                {
+                  "label": "the arm of the LORD cuts Rahab (Isaiah 51)",
+                  "textId": "isaiah-51",
+                  "note": "the same warrior-arm performing the primeval combat"
+                },
+                {
+                  "label": "Thou hast broken Rahab in pieces (Psalm 89)",
+                  "textId": "psalm-89",
+                  "note": "YHWH shatters the chaos-monster 'with thy strong arm'"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "15:7",
+          "text": "And in the greatness of thine excellency thou hast overthrown them that rose up against thee: thou sentest forth thy wrath, which consumed them as stubble.",
+          "textVersions": {
+            "kjv": "And in the greatness of thine excellency thou hast overthrown them that rose up against thee: thou sentest forth thy wrath, which consumed them as stubble."
+          },
+          "entities": []
+        }
+      ]
+    },
+    {
+      "heading": "The blast of thy nostrils — the floods stood upright as an heap",
+      "verses": [
+        {
+          "ref": "15:8",
+          "text": "And with the blast of thy nostrils the waters were gathered together, the floods stood upright as an heap, and the depths were congealed in the heart of the sea.",
+          "textVersions": {
+            "kjv": "And with the blast of thy nostrils the waters were gathered together, the floods stood upright as an heap, and the depths were congealed in the heart of the sea."
+          },
+          "entities": [
+            {
+              "word": "the blast of thy nostrils",
+              "node": "chaoskampf",
+              "type": "theme",
+              "note": "The storm-god's wind/breath as the weapon that masters the Sea — the signature of the Chaoskampf. In Enuma Elish IV, Marduk drives the 'evil wind' into Tiamat's mouth; here the divine warrior's nostril-blast piles up the waters (Gunkel, Schopfung und Chaos; Day 1985).",
+              "parallels": [
+                {
+                  "label": "Marduk drives the evil wind into Tiamat",
+                  "textId": "enuma-elish-4",
+                  "note": "the storm-god's wind subdues the chaos-sea"
+                },
+                {
+                  "label": "Baal the storm-god masters Sea",
+                  "textId": "baal-cycle-1",
+                  "note": "the Canaanite weather-god who defeats Yam"
+                }
+              ]
+            },
+            {
+              "word": "the floods stood upright as an heap",
+              "node": "yam",
+              "type": "deity",
+              "note": "The sea-waters (yam) made to 'stand upright' and congeal — the chaos-waters mastered and walled by the divine warrior. Cross (1973) reads the heaping of the sea as the mythic mastery of Sea recast as the historical sea-crossing.",
+              "parallels": [
+                {
+                  "label": "Yam / Sea heaped and walled (Ugaritic)",
+                  "textId": "baal-cycle-1",
+                  "note": "the Sea-deity subdued by the storm-god"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "15:9",
+          "text": "The enemy said, I will pursue, I will overtake, I will divide the spoil; my lust shall be satisfied upon them; I will draw my sword, my hand shall destroy them.",
+          "textVersions": {
+            "kjv": "The enemy said, I will pursue, I will overtake, I will divide the spoil; my lust shall be satisfied upon them; I will draw my sword, my hand shall destroy them."
+          },
+          "entities": []
+        },
+        {
+          "ref": "15:10",
+          "text": "Thou didst blow with thy wind, the sea covered them: they sank as lead in the mighty waters.",
+          "textVersions": {
+            "kjv": "Thou didst blow with thy wind, the sea covered them: they sank as lead in the mighty waters."
+          },
+          "entities": [
+            {
+              "word": "Thou didst blow with thy wind",
+              "node": "chaoskampf",
+              "type": "theme",
+              "note": "The second wind-stroke: the divine warrior blows and the heaped Sea collapses on the enemy. The control of the waters by divine breath is, for Day (1985), the storm-god's defining act, here turned to drowning Pharaoh's host.",
+              "parallels": [
+                {
+                  "label": "the storm-god's wind over the waters (Babylonian)",
+                  "textId": "enuma-elish-4",
+                  "note": "Marduk's winds against the chaos-sea"
+                }
+              ]
+            },
+            {
+              "word": "the sea covered them",
+              "node": "yam",
+              "type": "deity",
+              "note": "The sea (yam) closes over the enemy — the chaos-waters, mastered, become the executioner of history's tyrant.",
+              "parallels": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Who is like unto thee, O LORD, among the gods",
+      "verses": [
+        {
+          "ref": "15:11",
+          "text": "Who is like unto thee, O LORD, among the gods? who is like thee, glorious in holiness, fearful in praises, doing wonders?",
+          "textVersions": {
+            "kjv": "Who is like unto thee, O LORD, among the gods? who is like thee, glorious in holiness, fearful in praises, doing wonders?"
+          },
+          "entities": [
+            {
+              "word": "among the gods",
+              "node": "yahweh",
+              "type": "deity",
+              "note": "The incomparability formula set explicitly 'among the gods' — a poem that does not yet deny the other gods but exalts YHWH above them. Cross (1973) reads the early-Israelite divine warrior as supreme within, not yet outside, the West-Semitic divine assembly.",
+              "parallels": [
+                {
+                  "label": "YHWH above the gods enthroned on the waters (Psalm 29)",
+                  "textId": "psalm-29",
+                  "note": "the divine assembly ascribing glory to the storm-god enthroned over the flood"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "15:12",
+          "text": "Thou stretchedst out thy right hand, the earth swallowed them.",
+          "textVersions": {
+            "kjv": "Thou stretchedst out thy right hand, the earth swallowed them."
+          },
+          "entities": []
+        },
+        {
+          "ref": "15:13",
+          "text": "Thou in thy mercy hast led forth the people which thou hast redeemed: thou hast guided them in thy strength unto thy holy habitation.",
+          "textVersions": {
+            "kjv": "Thou in thy mercy hast led forth the people which thou hast redeemed: thou hast guided them in thy strength unto thy holy habitation."
+          },
+          "entities": [
+            {
+              "word": "thy holy habitation",
+              "node": "chaoskampf",
+              "type": "theme",
+              "note": "The hymn pivots from combat to sanctuary — the divine warrior leads the redeemed to his 'holy habitation.' Cross (1973) identifies the combat-then-temple sequence as the structural signature of the Canaanite pattern (Baal defeats Yam, then his palace is built); the Song follows it exactly.",
+              "parallels": [
+                {
+                  "label": "Baal's palace built after his victory",
+                  "textId": "baal-cycle-1",
+                  "note": "combat over Sea followed by the storm-god's house — the same victory-to-sanctuary arc"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "The LORD shall reign for ever and ever",
+      "verses": [
+        {
+          "ref": "15:14",
+          "text": "The people shall hear, and be afraid: sorrow shall take hold on the inhabitants of Palestina.",
+          "textVersions": {
+            "kjv": "The people shall hear, and be afraid: sorrow shall take hold on the inhabitants of Palestina."
+          },
+          "entities": []
+        },
+        {
+          "ref": "15:15",
+          "text": "Then the dukes of Edom shall be amazed; the mighty men of Moab, trembling shall take hold upon them; all the inhabitants of Canaan shall melt away.",
+          "textVersions": {
+            "kjv": "Then the dukes of Edom shall be amazed; the mighty men of Moab, trembling shall take hold upon them; all the inhabitants of Canaan shall melt away."
+          },
+          "entities": []
+        },
+        {
+          "ref": "15:16",
+          "text": "Fear and dread shall fall upon them; by the greatness of thine arm they shall be as still as a stone; till thy people pass over, O LORD, till the people pass over, which thou hast purchased.",
+          "textVersions": {
+            "kjv": "Fear and dread shall fall upon them; by the greatness of thine arm they shall be as still as a stone; till thy people pass over, O LORD, till the people pass over, which thou hast purchased."
+          },
+          "entities": [
+            {
+              "word": "by the greatness of thine arm",
+              "node": "yahweh",
+              "type": "deity",
+              "note": "The 'arm' of YHWH again (cf. v.6) — the divine-warrior arm whose power both drowns the enemy and brings the people through; the recurring metonym for the storm-god's might (Cross 1973; Day 1985).",
+              "parallels": [
+                {
+                  "label": "the arm of the LORD (Isaiah 51)",
+                  "textId": "isaiah-51",
+                  "note": "the warrior-arm that performs the primeval victory and the redemption"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "15:17",
+          "text": "Thou shalt bring them in, and plant them in the mountain of thine inheritance, in the place, O LORD, which thou hast made for thee to dwell in, in the Sanctuary, O Lord, which thy hands have established.",
+          "textVersions": {
+            "kjv": "Thou shalt bring them in, and plant them in the mountain of thine inheritance, in the place, O LORD, which thou hast made for thee to dwell in, in the Sanctuary, O Lord, which thy hands have established."
+          },
+          "entities": [
+            {
+              "word": "the mountain of thine inheritance",
+              "node": "chaoskampf",
+              "type": "theme",
+              "note": "The victorious god installed on his holy mountain/sanctuary — the close of the Canaanite combat-myth. Cross (1973) compares Baal's enthronement on Mount Zaphon after defeating Sea; the Song ends with YHWH planted on the mountain of his inheritance.",
+              "parallels": [
+                {
+                  "label": "Baal enthroned on his mountain (Zaphon)",
+                  "textId": "baal-cycle-1",
+                  "note": "the storm-god's mountain-sanctuary after the defeat of Sea"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "15:18",
+          "text": "The LORD shall reign for ever and ever.",
+          "textVersions": {
+            "kjv": "The LORD shall reign for ever and ever."
+          },
+          "entities": [
+            {
+              "word": "The LORD shall reign for ever and ever",
+              "node": "yahweh",
+              "type": "deity",
+              "note": "The hymn ends on the eternal kingship of YHWH — the acclamation of the storm-god as king that crowns the Chaoskampf. In the Baal Cycle and Enuma Elish the defeat of Sea yields the god's kingship; the Song's final line, 'The LORD shall reign for ever and ever,' is that same enthronement (Cross 1973; Day 1985).",
+              "parallels": [
+                {
+                  "label": "Marduk made king after slaying Tiamat",
+                  "textId": "enuma-elish-4",
+                  "note": "the storm-god proclaimed king of the gods after the combat"
+                },
+                {
+                  "label": "YHWH sitteth King upon the flood (Psalm 29)",
+                  "textId": "psalm-29",
+                  "note": "the divine warrior enthroned as eternal king over the waters"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
+
+// -- Song of Solomon 8:6–7 (Love is strong as death; many waters cannot quench love) --
+SCRIPTURE_TEXTS['song-of-songs-8'] = {
+  "id": "song-of-songs-8",
+  "title": "Song of Solomon 8:6–7 (Love is strong as death; many waters cannot quench love)",
+  "shortTitle": "Song of Solomon 8",
+  "corpus": "Hebrew Bible (Writings · Wisdom / Love Poetry)",
+  "tradId": "tradition-second-temple-judaism",
+  "date": "c. 5th–3rd century BCE (Persian to early Hellenistic period; Solomonic attribution conventional)",
+  "docNode": "phase-2-037-song-of-songs",
+  "language": "Hebrew · King James Version (1611)",
+  "translations": [
+    {
+      "id": "kjv",
+      "label": "KJV (1611)",
+      "note": "King James Version — public domain"
+    }
+  ],
+  "intro": "The climactic love-poetry of the Song of Songs, and its single approach to an explicit theological claim: love is set equal to death itself in strength. Eight chapters of frankly erotic verse with no named God close on the lover's plea to be sealed on the beloved's heart, \"for love is strong as death; jealousy is cruel as the grave,\" its flame a fire that many waters cannot quench. From Rabbi Akiva (\"the Holy of Holies\") through Origen, Bernard of Clairvaux, John of the Cross, and the Zohar, this passage is the proof-text of the bridal allegory — the love between God and Israel, Christ and the soul. Its love-and-death grammar also stands at the far Hebrew end of the ancient Near Eastern sacred-marriage tradition that begins with the Sumerian Inanna–Dumuzi love poetry, though whether that is transmission or shared convention is debated (Pope 1977).",
+  "crossTradition": [
+    {
+      "label": "Inanna & Dumuzi — Sumerian sacred-marriage love poetry",
+      "textId": "descent-inanna",
+      "note": "The oldest sacred-marriage corpus: the courtship and bridal songs of Inanna and Dumuzi/Tammuz, in which the goddess's love is bound to her lover's death and descent. Pope (Song of Songs, Anchor Bible, 1977) argues the Song stands in continuity with this Near Eastern love-and-death poetry; others (Exum 2005) read the parallel as shared convention rather than direct dependence."
+    },
+    {
+      "label": "Zohar — the Song as the inner face of Torah",
+      "textId": "zohar-ein-sof",
+      "note": "Kabbalah reads the Song as the union of the Holy One (Tiferet) and the Shekhinah (the feminine divine / Israel); Song 8:6's sealing is their cosmic betrothal. Fishbane (The Kiss of God; Biblical Myth and Rabbinic Mythmaking) traces this erotic-theological reading of the Song in rabbinic and kabbalistic tradition."
+    },
+    {
+      "label": "John of the Cross — the dark night and the living flame",
+      "note": "The Spanish Carmelite mystic's Cántico Espiritual is a verse-by-verse re-voicing of the Song; his 'living flame of love' is Song 8:6's 'coals of fire... a most vehement flame' read as the soul's union with God. Bernard McGinn (The Presence of God) documents the Song as the master-text of Christian bridal mysticism."
+    },
+    {
+      "label": "Bernard of Clairvaux — 86 sermons on the Song",
+      "note": "Bernard preached 86 sermons on the first chapters of the Song, fixing the soul-as-bride allegory for the Latin Middle Ages. Pope (1977) and McGinn survey this allegorical history that turned erotic poetry into the canonical language of mystical union."
+    }
+  ],
+  "sections": [
+    {
+      "heading": "Set me as a seal upon thine heart",
+      "verses": [
+        {
+          "ref": "8:6",
+          "text": "Set me as a seal upon thine heart, as a seal upon thine arm: for love is strong as death; jealousy is cruel as the grave: the coals thereof are coals of fire, which hath a most vehement flame.",
+          "textVersions": {
+            "kjv": "Set me as a seal upon thine heart, as a seal upon thine arm: for love is strong as death; jealousy is cruel as the grave: the coals thereof are coals of fire, which hath a most vehement flame."
+          },
+          "entities": [
+            {
+              "word": "seal upon thine heart",
+              "node": "sacred-marriage",
+              "type": "theme",
+              "note": "The seal (Hebrew chotam) is the engraved signet that binds two persons; the lover asks to be made the beloved's inalienable mark — a betrothal-bond. The Song's nuptial frame is the late Hebrew member of the ancient Near Eastern sacred-marriage tradition (Pope 1977).",
+              "parallels": [
+                {
+                  "label": "Inanna–Dumuzi bridal songs",
+                  "textId": "descent-inanna",
+                  "note": "The Sumerian sacred-marriage love poetry Pope (Anchor Bible, 1977) sets as background to the Song's nuptial language."
+                },
+                {
+                  "label": "hieros gamos (sacred union)",
+                  "note": "Eliade (Patterns in Comparative Religion) treats the divine-bridal seal as a reflex of the hieros-gamos type — the cosmically charged union of god and consort."
+                }
+              ]
+            },
+            {
+              "word": "love is strong as death",
+              "node": "bridal-mysticism",
+              "type": "theme",
+              "note": "The Song's nearest thing to a theological proposition: love equals death in absolute strength. From Akiva onward this is read as the love of God and Israel; for the medieval mystics it is Christ and the soul. Fishbane and McGinn document this passage as the engine of the bridal-mysticism tradition.",
+              "parallels": [
+                {
+                  "label": "Origen — the Song as the soul's ascent",
+                  "note": "Origen's commentary and homilies on the Song founded the Christian allegory of the soul-bride seeking the Word; McGinn (The Presence of God) traces the line from Origen forward."
+                },
+                {
+                  "label": "Zohar — Tiferet and Shekhinah",
+                  "textId": "zohar-ein-sof",
+                  "note": "Kabbalah reads the verse as the union of the masculine divine and the Shekhinah; Fishbane (The Kiss of God) traces the erotic-mystical reading."
+                }
+              ]
+            },
+            {
+              "word": "the grave",
+              "node": "dumuzi-tammuz",
+              "type": "deity",
+              "note": "The pairing of love with death/Sheol places the Song at the far end of the Near Eastern sacred-marriage poetry, where the bridegroom-god Dumuzi/Tammuz is the lover bound to the underworld. Pope (1977) reads the Song's love-and-death motif against this dying-bridegroom background; the dependence is debated, not proven.",
+              "parallels": [
+                {
+                  "label": "Inanna mourns Dumuzi",
+                  "textId": "descent-inanna",
+                  "note": "In the Descent, Inanna's love consigns Dumuzi to the underworld in her place — the prototypical fusion of the goddess's love with her lover's death."
+                },
+                {
+                  "label": "Ishtar / Tammuz lament",
+                  "node": "inanna-sumerian",
+                  "note": "The Akkadian Ishtar–Tammuz mourning-cult (cf. Ezek 8:14) is the same love-and-death sacred-marriage complex; Pope (1977) cites it as Near Eastern background."
+                }
+              ]
+            },
+            {
+              "word": "coals of fire, which hath a most vehement flame",
+              "node": "soul-as-bride",
+              "type": "theme",
+              "note": "The flame (Hebrew shalhevethyah) may carry the divine name -yah, 'a flame of YHWH' (Pope 1977; Murphy 2002) — which would make the fire of love the only explicit trace of God in the Song. For the bridal mystics this fire is the burning of divine love in the soul-bride.",
+              "parallels": [
+                {
+                  "label": "John of the Cross — Living Flame of Love",
+                  "node": "john-of-the-cross",
+                  "note": "John's Llama de amor viva renders this 'vehement flame' as the fire of the soul's union with God; McGinn (The Presence of God) sets him within the Song-rooted bridal tradition."
+                },
+                {
+                  "label": "Bernard of Clairvaux — the kiss and the flame",
+                  "node": "bernard-of-clairvaux",
+                  "note": "Bernard's 86 Sermons on the Song read its fire and kiss as the ardor of the soul-bride for the Word; Pope (1977) surveys the allegorical reception."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Many waters cannot quench love",
+      "verses": [
+        {
+          "ref": "8:7",
+          "text": "Many waters cannot quench love, neither can the floods drown it: if a man would give all the substance of his house for love, it would utterly be contemned.",
+          "textVersions": {
+            "kjv": "Many waters cannot quench love, neither can the floods drown it: if a man would give all the substance of his house for love, it would utterly be contemned."
+          },
+          "entities": [
+            {
+              "word": "Many waters cannot quench love",
+              "node": "primordial-waters",
+              "type": "theme",
+              "note": "'Many waters' (mayim rabbim) and 'the floods' are the cosmic chaos-waters of Hebrew imagination — the same tehom/Yam that elsewhere must be subdued (Ps 74; Isa 51). Here, by image-convergence rather than the combat-myth, love is the one force those waters cannot overwhelm. The link is shared poetic vocabulary, not the Chaoskampf narrative (Pope 1977; Murphy 2002).",
+              "parallels": [
+                {
+                  "label": "tehom / Yam — the chaos-waters",
+                  "textId": "isaiah-51",
+                  "note": "Where Isaiah 51 has YHWH dry the great deep in the primeval combat, the Song makes love the thing 'many waters cannot quench' — the same flood-vocabulary turned to erotic-theological use, not the combat itself."
+                },
+                {
+                  "label": "Inanna's descent through the waters of the Kur",
+                  "textId": "descent-inanna",
+                  "note": "The sacred-marriage goddess whose love survives the realm of death; Pope (1977) reads the Song's love-conquers-the-depths motif against this Near Eastern background."
+                }
+              ]
+            },
+            {
+              "word": "neither can the floods drown it",
+              "node": "hieros-gamos",
+              "type": "symbol",
+              "note": "Read mystically, the indestructible bridal love is the cosmic union itself: the Zohar makes the lovers Tiferet and the Shekhinah, whose joining sustains creation. Eliade treats such unquenchable god-and-consort love as the hieros-gamos archetype; Fishbane traces its kabbalistic form.",
+              "parallels": [
+                {
+                  "label": "Shekhinah as the divine bride",
+                  "node": "shekhinah",
+                  "note": "In Kabbalah the Shekhinah is the feminine divine / community of Israel whose union with the Holy One the Song enacts; Fishbane (The Kiss of God) documents this."
+                },
+                {
+                  "label": "the divine feminine of the sacred marriage",
+                  "node": "divine-feminine",
+                  "note": "Inanna, the Shekhinah, and the Song's Bride are successive faces of the bridal divine-feminine in the sacred-marriage stream (Pope 1977; Eliade)."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
