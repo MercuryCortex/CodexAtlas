@@ -22758,3 +22758,996 @@ SCRIPTURE_TEXTS['genesis-6'] = {
     }
   ]
 };
+
+// ── SINAI COMPLEX (Exodus 20 / Leviticus 16 / Exodus 33) — 2026-06-20 ─────────
+
+// -- Exodus 20:1–17 (The Ten Commandments — the Decalogue) --
+SCRIPTURE_TEXTS['exodus-20'] = {
+  "id": "exodus-20",
+  "title": "Exodus 20:1–17 (The Ten Commandments — the Decalogue)",
+  "shortTitle": "Exodus 20",
+  "corpus": "Hebrew Bible (Torah · Exodus / Pentateuch)",
+  "tradId": "tradition-second-temple-judaism",
+  "date": "narrative setting at Sinai; text reaching its form c. 7th–6th century BCE (the \"Ethical Decalogue,\" Exodus 20:2–17)",
+  "docNode": "document-exodus",
+  "language": "Hebrew · King James Version (1611), public domain",
+  "translations": [
+    {
+      "id": "kjv",
+      "label": "KJV (1611)",
+      "note": "King James Version — public domain"
+    }
+  ],
+  "intro": "The \"Ten Words\" (Hebrew aseret ha-devarim; Greek dekalogos) spoken by YHWH at Sinai are the apodictic core of Israelite covenant law: no other gods, no graven image, the divine name, the sabbath, honour of parents, and the prohibitions of killing, adultery, stealing, false witness, and coveting. Their cross-tradition force is that they sit inside the dense Ancient Near Eastern law-and-ethics field — the casuistic (\"if a man…\") stelae of Mesopotamia such as the Code of Hammurabi, and the declarative Egyptian ethics of the Book of the Dead's \"Negative Confession,\" where the deceased tells Ma'at \"I have not killed, I have not stolen.\" Albrecht Alt isolated the Decalogue's distinctive apodictic form against this background; the parallels are convergence in a shared legal-ethical world rather than proof of direct borrowing, and the most striking mirror — Egypt declares innocence to the dead while Israel commands in advance — is a difference of orientation, not a copy.",
+  "crossTradition": [
+    {
+      "label": "Book of the Dead 125 — the Negative Confession (declarative mirror of the prohibitions)",
+      "textId": "book-of-dead-125",
+      "note": "In Book of the Dead 125 the deceased recites declarations of innocence before the 42 assessor-gods of Ma'at — 'I have not killed,' 'I have not stolen,' 'I have not done falsehood' — the same ethical inventory the Decalogue casts as commands. Jan Assmann (Ma'at: Gerechtigkeit und Unsterblichkeit) and Nahum Sarna (Exodus, JPS) note the content overlap; the orientation is inverted — Egypt declares past innocence to the dead, Israel commands future obedience to the living."
+    },
+    {
+      "label": "Code of Hammurabi — casuistic ANE law vs. apodictic command",
+      "note": "The great Babylonian law-stele of Hammurabi (c. 1750 BCE; ANET, Pritchard) frames law casuistically: 'If a man…, then…' — case-by-case penalties. Albrecht Alt ('The Origins of Israelite Law') distinguished this casuistic form, shared across the ANE, from the Decalogue's unconditional apodictic 'Thou shalt not,' which he argued was the native Israelite covenant form. Same legal world, contrasting grammar of obligation."
+    },
+    {
+      "label": "Egyptian Ma'at — cosmic-ethical order as the ground of law",
+      "note": "Ma'at, the Egyptian principle of truth/justice/right-order against which the heart is weighed, is the conceptual counterpart to covenant righteousness: the moral demand is grounded in the order of the cosmos and the will of the divine. Jan Assmann reads Ma'at as 'connective justice'; the Decalogue grounds the same ethical order in YHWH's covenant and the Exodus deliverance rather than in cosmic balance."
+    },
+    {
+      "label": "Deuteronomy 5 — the second Decalogue and the sabbath's reframing",
+      "note": "The parallel Decalogue at Deuteronomy 5:6–21 grounds the sabbath in the Exodus deliverance ('remember that thou wast a servant in the land of Egypt') rather than in creation (Exodus 20:11). Moshe Weinfeld (Deuteronomy and the Deuteronomic School) treats the two recensions as the signature of distinct schools — Priestly creation-rationale vs. Deuteronomic liberation-rationale. [not yet staged]"
+    },
+    {
+      "label": "Hittite suzerain-vassal treaty form",
+      "note": "George Mendenhall and Moshe Weinfeld showed the covenant framing — sovereign's self-identification ('I am the LORD thy God, which have brought thee out…') followed by stipulations — mirrors the second-millennium Hittite suzerain-vassal treaty structure. The Decalogue's prologue-plus-stipulations is the covenant adaptation of an ANE diplomatic form. [not yet staged]"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "I. The covenant prologue and the first commandments",
+      "verses": [
+        {
+          "ref": "20:1",
+          "text": "And God spake all these words, saying,",
+          "textVersions": {
+            "kjv": "And God spake all these words, saying,"
+          },
+          "entities": [
+            {
+              "word": "God spake all these words",
+              "node": "theme-sacred-mountain-as-theophanic-locus",
+              "type": "theme",
+              "note": "The Decalogue is delivered in the Sinai theophany — God speaking from the mountain in fire, cloud, and trumpet-blast (Exodus 19). Brevard Childs (Exodus, OTL) reads the sacred mountain as the locus where heaven and earth meet and covenant law is given.",
+              "parallels": [
+                {
+                  "label": "Egyptian Ma'at — divine order proclaimed from the cosmos",
+                  "note": "Where Sinai locates the giving of law in a mountain theophany, Egyptian ethics ground moral order in Ma'at, the cosmic principle present from creation. Jan Assmann contrasts the historicised, event-bound Israelite revelation with the cosmologically grounded Egyptian order."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "20:2",
+          "text": "I am the LORD thy God, which have brought thee out of the land of Egypt, out of the house of bondage.",
+          "textVersions": {
+            "kjv": "I am the LORD thy God, which have brought thee out of the land of Egypt, out of the house of bondage."
+          },
+          "entities": [
+            {
+              "word": "I am the LORD thy God",
+              "node": "yahweh",
+              "type": "deity",
+              "note": "The covenant prologue: YHWH identifies himself by the Exodus deliverance before issuing any command. Nahum Sarna (Exodus, JPS) notes that grace precedes law — the relationship is grounded in an act of liberation, not abstract sovereignty.",
+              "parallels": [
+                {
+                  "label": "Hammurabi's prologue — the king authorised by the gods",
+                  "note": "The Code of Hammurabi opens with a divine-mandate prologue establishing the lawgiver's authority (ANET, Pritchard). Here YHWH himself is both deliverer and lawgiver — the self-identification replaces the human king's claim to divine commission."
+                },
+                {
+                  "label": "Hittite treaty preamble — the suzerain names himself",
+                  "note": "Moshe Weinfeld and George Mendenhall identify the 'I am X who did Y for you' form as the suzerain's self-identification in Hittite vassal treaties, here adapted to the divine covenant."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "20:3",
+          "text": "Thou shalt have no other gods before me.",
+          "textVersions": {
+            "kjv": "Thou shalt have no other gods before me."
+          },
+          "entities": [
+            {
+              "word": "no other gods before me",
+              "node": "henotheism-monolatry",
+              "type": "theme",
+              "note": "The first commandment demands exclusive worship of YHWH without (at this stage) denying other gods' existence — what scholars term monolatry or henotheism, the cult of one god among many. Childs (Exodus, OTL) and Sarna read 'before me' (al panai) as 'in my presence / besides me,' an exclusivity claim that hardens into full monotheism only in Deutero-Isaiah.",
+              "parallels": [
+                {
+                  "label": "Akhenaten's Aten cult — the disputed monotheistic precedent",
+                  "textId": "hymn-to-aten",
+                  "note": "Jan Assmann (Moses the Egyptian) treats Akhenaten's exclusive Aten cult as the 'Mosaic distinction' avant la lettre — the first move toward a single exclusive god — though the historical link to Israelite monolatry is contested, not demonstrated."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "20:4",
+          "text": "Thou shalt not make unto thee any graven image, or any likeness of any thing that is in heaven above, or that is in the earth beneath, or that is in the water under the earth:",
+          "textVersions": {
+            "kjv": "Thou shalt not make unto thee any graven image, or any likeness of any thing that is in heaven above, or that is in the earth beneath, or that is in the water under the earth:"
+          },
+          "entities": [
+            {
+              "word": "any graven image",
+              "node": "iconography-and-aniconism",
+              "type": "theme",
+              "note": "The aniconic prohibition — YHWH may not be depicted in any cult-image — is among the most distinctive features of Israelite religion against its ANE neighbours, whose temples centred on the divine statue. Sarna (Exodus, JPS) and Childs (Exodus, OTL) stress that aniconism distinguishes Israelite worship from the image-centred cults of Egypt and Mesopotamia.",
+              "parallels": [
+                {
+                  "label": "Book of the Dead 125 — image-centred Egyptian cult",
+                  "textId": "book-of-dead-125",
+                  "note": "Egyptian religion centres on the cult-image and the weighing before the gods' statues; the Decalogue's ban on images is the deliberate Israelite refusal of precisely this image-theology. Assmann frames aniconism as the negative correlate of the 'Mosaic distinction.'"
+                }
+              ]
+            },
+            {
+              "word": "any likeness of any thing",
+              "node": "critique-of-idolatry",
+              "type": "theme",
+              "note": "The prohibition grounds the later prophetic and Deuteronomistic polemic against idols (Isaiah 44, Jeremiah 10) — the mockery of worshipping crafted objects. Moshe Weinfeld traces the developed anti-idolatry rhetoric to the Deuteronomic school.",
+              "parallels": [
+                {
+                  "label": "Egyptian Ma'at — falsifying the balance / false worship",
+                  "note": "The Negative Confession's denials include cultic offences ('I have not falsified the balance,' 'I have not stolen the offerings'); Israel reframes cultic fidelity as the rejection of images altogether rather than correct image-service."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "20:5",
+          "text": "Thou shalt not bow down thyself to them, nor serve them: for I the LORD thy God am a jealous God, visiting the iniquity of the fathers upon the children unto the third and fourth generation of them that hate me;",
+          "textVersions": {
+            "kjv": "Thou shalt not bow down thyself to them, nor serve them: for I the LORD thy God am a jealous God, visiting the iniquity of the fathers upon the children unto the third and fourth generation of them that hate me;"
+          },
+          "entities": [
+            {
+              "word": "a jealous God",
+              "node": "yahweh",
+              "type": "deity",
+              "note": "YHWH as 'jealous' (qanna) — brooking no rival cult. Childs (Exodus, OTL) reads divine jealousy as the covenant demand for undivided loyalty, the affective counterpart of the suzerain's claim to exclusive vassal-allegiance.",
+              "parallels": [
+                {
+                  "label": "Hittite treaty — the suzerain forbids foreign alliances",
+                  "note": "Mendenhall and Weinfeld: the vassal's exclusive loyalty to one suzerain, forbidding alliance with rival kings, is the political form behind YHWH's covenant 'jealousy.'"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "20:6",
+          "text": "And shewing mercy unto thousands of them that love me, and keep my commandments.",
+          "textVersions": {
+            "kjv": "And shewing mercy unto thousands of them that love me, and keep my commandments."
+          },
+          "entities": []
+        }
+      ]
+    },
+    {
+      "heading": "II. The name, the sabbath, and the honour of parents",
+      "verses": [
+        {
+          "ref": "20:7",
+          "text": "Thou shalt not take the name of the LORD thy God in vain; for the LORD will not hold him guiltless that taketh his name in vain.",
+          "textVersions": {
+            "kjv": "Thou shalt not take the name of the LORD thy God in vain; for the LORD will not hold him guiltless that taketh his name in vain."
+          },
+          "entities": [
+            {
+              "word": "the name of the LORD thy God",
+              "node": "name-of-god",
+              "type": "theme",
+              "note": "The divine name YHWH (the Tetragrammaton) is itself sacred; the commandment guards against its misuse in false oaths and magic. Sarna (Exodus, JPS) reads 'in vain' (la-shav) as 'falsely / for emptiness,' covering perjury and the manipulation of the name.",
+              "parallels": [
+                {
+                  "label": "Egyptian theology — knowing the true name confers power",
+                  "note": "In Egyptian magico-religious thought (e.g. the myth of Isis extracting Ra's secret name) the true divine name confers power over the god. The Israelite commandment reverses this: the name is to be revered, not wielded."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "20:8",
+          "text": "Remember the sabbath day, to keep it holy.",
+          "textVersions": {
+            "kjv": "Remember the sabbath day, to keep it holy."
+          },
+          "entities": [
+            {
+              "word": "the sabbath day",
+              "node": "theme-lex-talionis-covenant-code",
+              "type": "theme",
+              "note": "The sabbath command stands at the structural centre of the Decalogue and is its most expansive. Childs (Exodus, OTL) notes that no exact ANE parallel to a recurring seventh-day rest of this character is securely attested, making the sabbath a distinctive covenant institution.",
+              "parallels": [
+                {
+                  "label": "Mesopotamian unlucky days / shapattu",
+                  "note": "Scholars (discussed in Childs, Exodus, OTL) have compared the Babylonian shapattu (the full-moon day) and the 'evil days' on which activity was restricted, but the resemblance is partial — the weekly, creation-grounded sabbath has no exact precedent."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "20:9",
+          "text": "Six days shalt thou labour, and do all thy work:",
+          "textVersions": {
+            "kjv": "Six days shalt thou labour, and do all thy work:"
+          },
+          "entities": []
+        },
+        {
+          "ref": "20:10",
+          "text": "But the seventh day is the sabbath of the LORD thy God: in it thou shalt not do any work, thou, nor thy son, nor thy daughter, thy manservant, nor thy maidservant, nor thy cattle, nor thy stranger that is within thy gates:",
+          "textVersions": {
+            "kjv": "But the seventh day is the sabbath of the LORD thy God: in it thou shalt not do any work, thou, nor thy son, nor thy daughter, thy manservant, nor thy maidservant, nor thy cattle, nor thy stranger that is within thy gates:"
+          },
+          "entities": []
+        },
+        {
+          "ref": "20:11",
+          "text": "For in six days the LORD made heaven and earth, the sea, and all that in them is, and rested the seventh day: wherefore the LORD blessed the sabbath day, and hallowed it.",
+          "textVersions": {
+            "kjv": "For in six days the LORD made heaven and earth, the sea, and all that in them is, and rested the seventh day: wherefore the LORD blessed the sabbath day, and hallowed it."
+          },
+          "entities": [
+            {
+              "word": "in six days the LORD made heaven and earth",
+              "node": "yahweh",
+              "type": "deity",
+              "note": "The Priestly rationale: the sabbath is grounded in the six-day creation of Genesis 1 (also P). Moshe Weinfeld contrasts this creation-rationale with the Deuteronomic liberation-rationale at Deuteronomy 5:15 ('remember that thou wast a servant'), assigning the two Decalogue recensions to distinct schools.",
+              "parallels": [
+                {
+                  "label": "Deuteronomy 5:15 — the sabbath grounded in the Exodus instead",
+                  "note": "Weinfeld (Deuteronomy and the Deuteronomic School): where Exodus 20 grounds the sabbath in creation, Deuteronomy 5 grounds it in deliverance from Egyptian slavery — the signature of the Deuteronomic reframing."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "20:12",
+          "text": "Honour thy father and thy mother: that thy days may be long upon the land which the LORD thy God giveth thee.",
+          "textVersions": {
+            "kjv": "Honour thy father and thy mother: that thy days may be long upon the land which the LORD thy God giveth thee."
+          },
+          "entities": [
+            {
+              "word": "Honour thy father and thy mother",
+              "node": "theme-lex-talionis-covenant-code",
+              "type": "theme",
+              "note": "The hinge commandment — the only one of the 'second table' with a positive form and an attached promise. Sarna (Exodus, JPS) notes its placement bridges duties to God and duties to neighbour, treating parental honour as quasi-sacred.",
+              "parallels": [
+                {
+                  "label": "Book of the Dead 125 — honour to parents and the dead",
+                  "textId": "book-of-dead-125",
+                  "note": "The Egyptian ethic of filial piety and proper care for parents and ancestors (reflected across wisdom texts and the Negative Confession's ethics) is the shared ANE value the commandment encodes as covenant law."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "III. The prohibitions — killing, adultery, theft, false witness, coveting",
+      "verses": [
+        {
+          "ref": "20:13",
+          "text": "Thou shalt not kill.",
+          "textVersions": {
+            "kjv": "Thou shalt not kill."
+          },
+          "entities": [
+            {
+              "word": "Thou shalt not kill",
+              "node": "theme-lex-talionis-covenant-code",
+              "type": "theme",
+              "note": "Apodictic prohibition of unlawful killing (Hebrew ratzach, distinct from lawful killing in war/justice — Sarna, Exodus). Albrecht Alt ('The Origins of Israelite Law') identified this unconditional 'Thou shalt not' form as the native Israelite apodictic law, against the casuistic ANE norm.",
+              "parallels": [
+                {
+                  "label": "Book of the Dead 125 — 'I have not killed'",
+                  "textId": "book-of-dead-125",
+                  "note": "The Negative Confession's declaration 'I have not killed, I have not commanded to kill' is the exact ethical content in declarative form — the deceased asserts past innocence where the Decalogue commands future restraint (Assmann; Sarna)."
+                },
+                {
+                  "label": "Code of Hammurabi — casuistic homicide law",
+                  "note": "Hammurabi treats killing case-by-case with graded penalties ('If a man…', ANET, Pritchard); Alt's point is the contrast of legal grammar — conditional case-law vs. the Decalogue's unconditional command."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "20:14",
+          "text": "Thou shalt not commit adultery.",
+          "textVersions": {
+            "kjv": "Thou shalt not commit adultery."
+          },
+          "entities": [
+            {
+              "word": "Thou shalt not commit adultery",
+              "node": "theme-lex-talionis-covenant-code",
+              "type": "theme",
+              "note": "Apodictic prohibition protecting the marriage bond. Childs (Exodus, OTL) notes the second-table prohibitions presuppose, but do not spell out, the casuistic penalties found elsewhere in the covenant code (Exodus 21–23).",
+              "parallels": [
+                {
+                  "label": "Book of the Dead 125 — 'I have not committed adultery'",
+                  "textId": "book-of-dead-125",
+                  "note": "The Negative Confession includes denials of sexual transgression; Assmann reads these as part of the shared ANE ethical inventory the Decalogue reformulates as command."
+                },
+                {
+                  "label": "Code of Hammurabi §§129–132 — casuistic adultery law",
+                  "note": "Hammurabi prescribes specific penalties for adultery (drowning, ordeal; ANET, Pritchard) — the casuistic counterpart Alt contrasts with the apodictic 'Thou shalt not.'"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "20:15",
+          "text": "Thou shalt not steal.",
+          "textVersions": {
+            "kjv": "Thou shalt not steal."
+          },
+          "entities": [
+            {
+              "word": "Thou shalt not steal",
+              "node": "theme-lex-talionis-covenant-code",
+              "type": "theme",
+              "note": "Apodictic prohibition of theft. Alt's apodictic/casuistic distinction is clearest here: the bare 'Thou shalt not steal' contrasts with the detailed theft tariffs of both Hammurabi and the Israelite covenant code (Exodus 22).",
+              "parallels": [
+                {
+                  "label": "Book of the Dead 125 — 'I have not stolen'",
+                  "textId": "book-of-dead-125",
+                  "note": "'I have not stolen / I have not stolen the offerings of the gods' stands among the 42 declarations — the declarative mirror of the command (Assmann, Ma'at; Sarna)."
+                },
+                {
+                  "label": "Code of Hammurabi §§6–8 — casuistic theft tariffs",
+                  "note": "Hammurabi sets graded restitution and death penalties for theft of temple/palace property (ANET, Pritchard); the case-by-case form is exactly what Alt distinguishes from the Decalogue."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "20:16",
+          "text": "Thou shalt not bear false witness against thy neighbour.",
+          "textVersions": {
+            "kjv": "Thou shalt not bear false witness against thy neighbour."
+          },
+          "entities": [
+            {
+              "word": "false witness against thy neighbour",
+              "node": "theme-lex-talionis-covenant-code",
+              "type": "theme",
+              "note": "Prohibition of perjury, protecting the judicial process. Sarna (Exodus, JPS) connects it to the integrity of testimony on which covenant justice depends.",
+              "parallels": [
+                {
+                  "label": "Book of the Dead 125 — 'I have not borne false witness' / 'I have not done falsehood'",
+                  "textId": "book-of-dead-125",
+                  "note": "The Negative Confession opens with 'I have not done falsehood against men' — the same concern for truthful speech that the commandment protects in court (Assmann)."
+                },
+                {
+                  "label": "Egyptian Ma'at — truth as the cosmic measure",
+                  "note": "Ma'at is truth/justice personified; bearing false witness is the social form of Isfet (disorder/falsehood), the cosmic antagonist of Ma'at. Assmann frames truthful testimony as participation in Ma'at's order."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "20:17",
+          "text": "Thou shalt not covet thy neighbour's house, thou shalt not covet thy neighbour's wife, nor his manservant, nor his maidservant, nor his ox, nor his ass, nor any thing that is thy neighbour's.",
+          "textVersions": {
+            "kjv": "Thou shalt not covet thy neighbour's house, thou shalt not covet thy neighbour's wife, nor his manservant, nor his maidservant, nor his ox, nor his ass, nor any thing that is thy neighbour's."
+          },
+          "entities": [
+            {
+              "word": "Thou shalt not covet",
+              "node": "theme-lex-talionis-covenant-code",
+              "type": "theme",
+              "note": "The tenth commandment is distinctive in legislating inner desire, not only outward act. Childs (Exodus, OTL) notes its move from deed to intention is unusual in ANE law, which typically penalises acts; Weinfeld discusses how Deuteronomy 5 separates 'coveting' wife from house, reflecting redactional reordering.",
+              "parallels": [
+                {
+                  "label": "Egyptian Ma'at — the heart weighed for inner disposition",
+                  "textId": "book-of-dead-125",
+                  "note": "In Book of the Dead 125 the heart itself — the seat of intention — is weighed against Ma'at's feather, so that inner disposition, not only act, determines judgment. This is the closest ANE analogue to legislating desire (Assmann, Ma'at)."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
+
+// -- Leviticus 16:7–10, 20–22 (The Day of Atonement — the goat for Azazel, the scapegoat) --
+SCRIPTURE_TEXTS['leviticus-16'] = {
+  "id": "leviticus-16",
+  "title": "Leviticus 16:7–10, 20–22 (The Day of Atonement — the goat for Azazel, the scapegoat)",
+  "shortTitle": "Leviticus 16",
+  "corpus": "Hebrew Bible (Torah · Leviticus — Priestly source)",
+  "tradId": "tradition-second-temple-judaism",
+  "date": "c. 700–450 BCE (Priestly stratum; Yom Kippur ritual codified in exilic/post-exilic priestly circles)",
+  "docNode": "document-leviticus",
+  "language": "Hebrew · King James Version (1611), public domain (KJV renders la-Azazel as \"the scapegoat\")",
+  "translations": [
+    {
+      "id": "kjv",
+      "label": "KJV (1611)",
+      "note": "King James Version — public domain"
+    }
+  ],
+  "intro": "Leviticus 16 prescribes the rite of the Day of Atonement (Yom Kippur), the priestly system's annual purgation of the sanctuary and the people. Two goats are taken: lots are cast, one \"for the LORD\" (sacrificed as a sin offering) and one \"for Azazel\" — the KJV's \"scapegoat.\" Over the live goat the high priest lays both hands, confesses all the iniquities of Israel, and sends it away into the wilderness to \"bear upon him all their iniquities unto a land not inhabited.\" The passage is the paradigm case of the elimination/substitution ritual: sin is materialised, transferred onto a living carrier, and physically expelled. The enigmatic name Azazel — a demon, a place, or an abstract \"removal\" in the Leviticus text — was later read as a fallen Watcher in 1 Enoch, fusing the wilderness-goat recipient with the chief rebel angel to whom \"all sin\" is ascribed; and the wider Near Eastern and Greek worlds knew structurally identical purgation rites (the Hittite kuppuru and the Greek pharmakos).",
+  "crossTradition": [
+    {
+      "label": "Genesis 6 — the sons of God / the Watchers",
+      "textId": "genesis-6",
+      "note": "In 1 Enoch the wilderness-Azazel of Leviticus 16 is fused with one of the two chief Watchers who descend in Genesis 6:1–4; the same Azazel wired into the Watchers narrative is the figure to whom the Leviticus goat is sent. Annette Yoshiko Reed (Fallen Angels and the History of Judaism and Christianity, 2005) and Loren Stuckenbruck (The Book of Giants from Qumran, 1997) trace this identification."
+    },
+    {
+      "label": "Book of Enoch (1 Enoch 8–10) — Azazel the chief Watcher who bears all sin",
+      "textId": "book-of-enoch",
+      "note": "1 Enoch 8 makes Asael/Azazel the Watcher who teaches metalworking, weaponry, and cosmetics; in 1 Enoch 10:8 'the whole earth has been corrupted through the works that were taught by Azazel: to him ascribe all sin.' The Apocalypse of Abraham 13–14 echoes the Leviticus 16 scapegoat directly. Daniel Stökl Ben Ezra (The Impact of Yom Kippur on Early Christianity, 2003) documents this reception."
+    },
+    {
+      "label": "Greek pharmakos — the human scapegoat expelled to purify the polis",
+      "note": "At the Thargelia, Greek cities (Athens, Abdera, Massalia) drove out a pharmakos — a marginal human laden with the community's pollution — to purify the city. Jan Bremmer ('Scapegoat Rituals in Ancient Greece,' HSCP 87, 1983) treats it as the structural Greek analogue of the Azazel rite; René Girard (Violence and the Sacred, 1977) reads both as the same surrogate-victim mechanism."
+    },
+    {
+      "label": "Hittite & Mesopotamian elimination/substitution rituals",
+      "note": "David P. Wright (The Disposal of Impurity, 1987) shows the Azazel rite belongs to a Near Eastern class of 'elimination rituals' in which impurity or plague is loaded onto an animal driven into the wilderness or enemy territory; the Mesopotamian kuppuru purification rites (cognate with Hebrew kipper, 'to atone') transfer sin onto a substitute. Jacob Milgrom (Leviticus 1–16, Anchor Bible, 1991) and the Leviticus document node both note these analogues."
+    },
+    {
+      "label": "Christian Yom Kippur typology — Christ as the goat that bears sin",
+      "note": "Hebrews 9–10 and the Epistle of Barnabas 7 read the two goats as types of Christ (the slain goat = atoning death; the sent-away goat = sin-bearer). Daniel Stökl Ben Ezra (The Impact of Yom Kippur on Early Christianity, 2003) traces the scapegoat's transformation into a Christological figure. [not yet staged]"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "The two goats: one for the LORD, one for Azazel (16:7–10)",
+      "verses": [
+        {
+          "ref": "16:7",
+          "text": "And he shall take the two goats, and present them before the LORD at the door of the tabernacle of the congregation.",
+          "textVersions": {
+            "kjv": "And he shall take the two goats, and present them before the LORD at the door of the tabernacle of the congregation."
+          },
+          "entities": [
+            {
+              "word": "the two goats",
+              "node": "sacrifice-substitution",
+              "type": "symbol",
+              "note": "The paired goats are the mechanism of substitution-sacrifice: one stands in for divine satisfaction, one carries the community's pollution away. Milgrom (Leviticus 1–16, Anchor Bible, 1991) reads the pair as a single bipartite rite of purgation, not two separate offerings.",
+              "parallels": [
+                {
+                  "label": "Greek pharmakos",
+                  "note": "the human substitute expelled to carry off the city's pollution — Bremmer, 'Scapegoat Rituals in Ancient Greece' (1983)"
+                },
+                {
+                  "label": "the Akedah ram (Genesis 22)",
+                  "textId": "e-source-aqedah",
+                  "note": "the God-provided ram substituted for Isaac; the substitution logic codified in the same priestly corpus — Milgrom (1991)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "16:8",
+          "text": "And Aaron shall cast lots upon the two goats; one lot for the LORD, and the other lot for the scapegoat.",
+          "textVersions": {
+            "kjv": "And Aaron shall cast lots upon the two goats; one lot for the LORD, and the other lot for the scapegoat."
+          },
+          "entities": [
+            {
+              "word": "Aaron",
+              "node": "aaron",
+              "type": "person",
+              "note": "Aaron, the first high priest, performs the rite; Leviticus 16 is the foundational charter of the Yom Kippur liturgy he and his successors enact annually. Milgrom (Leviticus 1–16, 1991) treats ch. 16 as the climax of the Priestly cultic system.",
+              "parallels": []
+            },
+            {
+              "word": "the scapegoat",
+              "node": "azazel",
+              "type": "deity",
+              "note": "The KJV's 'scapegoat' (following the Vulgate caper emissarius) translates Hebrew la-Azazel, 'for Azazel.' Milgrom (Leviticus 1–16, 1991) and most scholars read Azazel as a demonic being of the wilderness, the counterpart of the LORD in the lottery — making the rite a controlled disposal of impurity into the demonic realm, not a sacrifice to a rival god.",
+              "parallels": [
+                {
+                  "label": "Azazel the Watcher (1 Enoch 8–10)",
+                  "textId": "book-of-enoch",
+                  "note": "1 Enoch fuses the Leviticus wilderness-Azazel with the chief fallen Watcher 'to whom all sin' is ascribed — Reed (2005); Stökl Ben Ezra (2003)"
+                },
+                {
+                  "label": "Hittite elimination-ritual carrier",
+                  "note": "the animal driven into enemy territory bearing impurity — Wright, The Disposal of Impurity (1987)"
+                }
+              ]
+            },
+            {
+              "word": "cast lots",
+              "node": "scapegoat-mechanism",
+              "type": "theme",
+              "note": "The lottery randomises selection so the victim is chosen impersonally — a feature Girard (Violence and the Sacred, 1977) identifies as central to the scapegoat mechanism, which conceals the arbitrariness of the surrogate victim.",
+              "parallels": []
+            }
+          ]
+        },
+        {
+          "ref": "16:9",
+          "text": "And Aaron shall bring the goat upon which the LORD'S lot fell, and offer him for a sin offering.",
+          "textVersions": {
+            "kjv": "And Aaron shall bring the goat upon which the LORD'S lot fell, and offer him for a sin offering."
+          },
+          "entities": [
+            {
+              "word": "a sin offering",
+              "node": "blood-sacred",
+              "type": "symbol",
+              "note": "The LORD's goat is slaughtered as a chatta't (sin/purification offering); its blood purges the sanctuary of accumulated impurity. Milgrom (Leviticus 1–16, 1991) argues the chatta't blood is a ritual detergent that cleanses the sanctum, not the offerer.",
+              "parallels": [
+                {
+                  "label": "covenant and Eucharistic blood",
+                  "note": "the Hebrew system in which blood seals covenant and purges sin underlies the New Testament theology of Christ's blood — Hebrews 9; documented in the blood-sacred symbol node"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "16:10",
+          "text": "But the goat, on which the lot fell to be the scapegoat, shall be presented alive before the LORD, to make an atonement with him, and to let him go for a scapegoat into the wilderness.",
+          "textVersions": {
+            "kjv": "But the goat, on which the lot fell to be the scapegoat, shall be presented alive before the LORD, to make an atonement with him, and to let him go for a scapegoat into the wilderness."
+          },
+          "entities": [
+            {
+              "word": "to make an atonement",
+              "node": "satisfaction-atonement",
+              "type": "theme",
+              "note": "Hebrew kipper, 'to atone/purge,' is the root of Yom Kippur; Milgrom (Leviticus 1–16, 1991) renders it 'to purge.' The kuppuru purification rites of Mesopotamia share the cognate root kpr, marking a shared Near Eastern logic of ritual purgation.",
+              "parallels": [
+                {
+                  "label": "Mesopotamian kuppuru rites",
+                  "note": "cognate kpr purification rituals transferring impurity onto a substitute — Wright, The Disposal of Impurity (1987)"
+                }
+              ]
+            },
+            {
+              "word": "into the wilderness",
+              "node": "azazel",
+              "type": "deity",
+              "note": "The wilderness (midbar) is the chaotic, uninhabited realm of demons and Azazel — the proper destination for expelled impurity. Mary Douglas (Leviticus as Literature, 1999) reads the spatial logic: holiness moves toward the sanctuary's center, impurity is driven to the desert margin.",
+              "parallels": [
+                {
+                  "label": "Azazel bound in the wilderness (1 Enoch 10:4–8)",
+                  "textId": "book-of-enoch",
+                  "note": "the Watcher Azazel is bound in a desert place until judgment — the same wilderness-Azazel topology; Stuckenbruck (1997)"
+                },
+                {
+                  "label": "pharmakos driven outside the city",
+                  "note": "the Greek scapegoat expelled beyond the civic boundary into the wild — Bremmer (1983)"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "The live goat bears the iniquities away (16:20–22)",
+      "verses": [
+        {
+          "ref": "16:20",
+          "text": "And when he hath made an end of reconciling the holy place, and the tabernacle of the congregation, and the altar, he shall bring the live goat:",
+          "textVersions": {
+            "kjv": "And when he hath made an end of reconciling the holy place, and the tabernacle of the congregation, and the altar, he shall bring the live goat:"
+          },
+          "entities": [
+            {
+              "word": "reconciling the holy place",
+              "node": "satisfaction-atonement",
+              "type": "theme",
+              "note": "The first phase purges the sanctuary itself; only then is the live goat brought to remove the people's sins. Milgrom (Leviticus 1–16, 1991) stresses the two-stage structure: the sanctuary is decontaminated by blood before the populace's iniquities are eliminated by the goat.",
+              "parallels": []
+            }
+          ]
+        },
+        {
+          "ref": "16:21",
+          "text": "And Aaron shall lay both his hands upon the head of the live goat, and confess over him all the iniquities of the children of Israel, and all their transgressions in all their sins, putting them upon the head of the goat, and shall send him away by the hand of a fit man into the wilderness:",
+          "textVersions": {
+            "kjv": "And Aaron shall lay both his hands upon the head of the live goat, and confess over him all the iniquities of the children of Israel, and all their transgressions in all their sins, putting them upon the head of the goat, and shall send him away by the hand of a fit man into the wilderness:"
+          },
+          "entities": [
+            {
+              "word": "lay both his hands upon the head of the live goat",
+              "node": "sacrifice-substitution",
+              "type": "symbol",
+              "note": "The two-handed semikhah (only here in the priestly law, elsewhere one hand) effects the transfer of sin onto the carrier. Milgrom (Leviticus 1–16, 1991) notes the doubled gesture marks identification and transference — the goat becomes the bearer of what is confessed over it.",
+              "parallels": [
+                {
+                  "label": "Hittite/Mesopotamian transference rites",
+                  "note": "impurity is laid by gesture onto a substitute animal — Wright, The Disposal of Impurity (1987)"
+                }
+              ]
+            },
+            {
+              "word": "confess over him all the iniquities",
+              "node": "scapegoat-mechanism",
+              "type": "theme",
+              "note": "The confession verbalises and concentrates the entire community's guilt onto a single innocent carrier — the surrogate-victim logic Girard (Violence and the Sacred, 1977) sees as the foundation of sacrificial order. The scapegoat-mechanism node lists the Azazel goat as the paradigm case.",
+              "parallels": [
+                {
+                  "label": "the pharmakos as bearer of civic pollution",
+                  "note": "the human scapegoat onto whom the polis's guilt is loaded — Bremmer (1983); Girard (1977)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "16:22",
+          "text": "And the goat shall bear upon him all their iniquities unto a land not inhabited: and he shall let go the goat in the wilderness.",
+          "textVersions": {
+            "kjv": "And the goat shall bear upon him all their iniquities unto a land not inhabited: and he shall let go the goat in the wilderness."
+          },
+          "entities": [
+            {
+              "word": "bear upon him all their iniquities",
+              "node": "vicarious-atonement",
+              "type": "theme",
+              "note": "The goat carries the people's guilt in their stead — the clearest Hebrew ritual statement of vicarious sin-bearing, which (via the Suffering Servant of Isaiah 53 who 'bare the sin of many') feeds the later Jewish and Christian theology of expiatory death-for-others. Stökl Ben Ezra (The Impact of Yom Kippur on Early Christianity, 2003).",
+              "parallels": [
+                {
+                  "label": "Christ as the sin-bearing goat (Hebrews 9–10; Barnabas 7)",
+                  "note": "early Christianity read the sent-away goat as a type of Christ bearing the sins of many — Stökl Ben Ezra (2003)"
+                }
+              ]
+            },
+            {
+              "word": "unto a land not inhabited",
+              "node": "azazel",
+              "type": "deity",
+              "note": "The 'cut-off land' (eretz gezerah) is the uninhabited wilderness of Azazel; the impurity is removed beyond the bounds of ordered, inhabited space so it cannot return. Douglas (Leviticus as Literature, 1999) reads the spatial cosmology; Milgrom (1991) glosses eretz gezerah as the inaccessible desert.",
+              "parallels": [
+                {
+                  "label": "the desert as demonic realm",
+                  "note": "the midbar as the dwelling of Azazel and the se'irim (goat-demons, Lev 17:7) — Milgrom, Leviticus 1–16 (1991)"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
+
+// -- Exodus 33:12–23 (Moses: 'shew me thy glory' — 'thou shalt see my back parts') --
+SCRIPTURE_TEXTS['exodus-33'] = {
+  "id": "exodus-33",
+  "title": "Exodus 33:12–23 (Moses: 'shew me thy glory' — 'thou shalt see my back parts')",
+  "shortTitle": "Exodus 33",
+  "corpus": "Hebrew Bible (Torah · Exodus)",
+  "tradId": "tradition-second-temple-judaism",
+  "date": "c. 9th–6th century BCE (J/E narrative strata, redacted in the Persian period)",
+  "docNode": "document-exodus",
+  "language": "Hebrew · King James Version (1611) — public domain",
+  "translations": [
+    {
+      "id": "kjv",
+      "label": "KJV (1611)",
+      "note": "King James Version — public domain"
+    }
+  ],
+  "intro": "Exodus 33:12–23 is the Hebrew root-text of the cataphatic/apophatic tension at the heart of monotheism: God reveals the Name yet hides the Face. Moses, emboldened by the promise that YHWH knows him \"by name,\" presses the ultimate request — \"I beseech thee, shew me thy glory.\" YHWH answers by making all his goodness pass before Moses and proclaiming the Name, but draws an absolute limit: \"thou canst not see my face: for there shall no man see me, and live.\" Moses is hidden in a cleft of the rock, covered by the divine hand, and shown only God's \"back parts.\" Gregory of Nyssa made this cleft-of-the-rock scene the classic proof-text of apophatic ascent (Life of Moses); through Pseudo-Dionysius and the medieval mystics it became the scriptural anchor of the via negativa — the conviction that the divine essence is approached only in unknowing.",
+  "crossTradition": [
+    {
+      "label": "1 Kings 19 — the still small voice",
+      "textId": "1-kings-19-still-small-voice",
+      "note": "The companion apophatic theophany at the same mountain (Horeb/Sinai): YHWH is NOT in the wind, earthquake, or fire, but in a 'still small voice.' Brevard Childs (Exodus, OTL, 1974) and Nahum Sarna (Exodus, JPS, 1991) read Exodus 33 and 1 Kings 19 together as the two great Sinai/Horeb texts that withhold the direct vision of God while granting his presence."
+    },
+    {
+      "label": "Tao Te Ching 1 — the Tao that cannot be named",
+      "textId": "tao-te-ching-1",
+      "note": "Laozi's 'the name that can be named is not the eternal name' is the East-Asian analogue of the hidden Face: the ultimate reveals itself through language yet cannot be captured by it. The convergence is structural (independently reached apophatic logic), not transmission — a parallel noted in studies of cross-cultural negative theology such as Bernard McGinn, The Foundations of Mysticism (1991)."
+    },
+    {
+      "label": "Brihadaranyaka — neti neti",
+      "textId": "brihadaranyaka-neti-neti",
+      "note": "The Upanishadic 'not this, not this' strips every positive predicate from Brahman, just as Exodus denies the seeing of the Face. McGinn (Foundations of Mysticism) and the comparative apophatic literature pair the Hebrew hiddenness of the Face with the Indian via negativa as two ancient solutions to the unsayable absolute."
+    },
+    {
+      "label": "Pseudo-Dionysius — the Mystical Theology",
+      "textId": "pseudo-dionysius-mystical-theology",
+      "note": "Dionysius makes Moses' ascent into the 'darkness of unknowing' on the mountain the model of the apophatic ascent. Bernard McGinn (The Foundations of Mysticism, 1991) traces how Exodus 33 (read through Gregory of Nyssa) becomes the scriptural foundation of the Dionysian divine darkness."
+    },
+    {
+      "label": "The Cloud of Unknowing",
+      "textId": "cloud-of-unknowing",
+      "note": "The 14th-century English mystic places the soul in a 'cloud of unknowing' where God is met in love and not in sight — the vernacular heir of the Sinai darkness and the unseeable Face of Exodus 33 (McGinn, Foundations of Mysticism)."
+    },
+    {
+      "label": "Gregory of Nyssa — Life of Moses",
+      "note": "Gregory of Nyssa's Life of Moses (Vita Moysis) is the locus classicus that turns the cleft of the rock and the vision of God's 'back parts' into the proof-text of apophatic ascent: the more the soul advances, the more it knows God to be incomprehensible. [not yet staged]"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "Moses pleads to know God's ways and presence (33:12–17)",
+      "verses": [
+        {
+          "ref": "33:12",
+          "text": "And Moses said unto the LORD, See, thou sayest unto me, Bring up this people: and thou hast not let me know whom thou wilt send with me. Yet thou hast said, I know thee by name, and thou hast also found grace in my sight.",
+          "textVersions": {
+            "kjv": "And Moses said unto the LORD, See, thou sayest unto me, Bring up this people: and thou hast not let me know whom thou wilt send with me. Yet thou hast said, I know thee by name, and thou hast also found grace in my sight."
+          },
+          "entities": [
+            {
+              "word": "the LORD",
+              "node": "yahweh",
+              "type": "deity",
+              "note": "YHWH, the God of Israel; the small-capital 'LORD' renders the Tetragrammaton, whose proclamation is the pivot of this episode (Sarna, Exodus, JPS, 1991).",
+              "parallels": [
+                {
+                  "label": "the still small voice (1 Kings 19)",
+                  "textId": "1-kings-19-still-small-voice",
+                  "note": "the same God who withholds the visible form and is known by voice and presence at Horeb"
+                }
+              ]
+            },
+            {
+              "word": "Moses",
+              "node": "moses",
+              "type": "person",
+              "note": "Moses, the prophet and mediator; uniquely 'known by name' by God, which emboldens his request to see the divine glory (Childs, Exodus, OTL, 1974).",
+              "parallels": [
+                {
+                  "label": "Moses on the mountain of unknowing",
+                  "textId": "pseudo-dionysius-mystical-theology",
+                  "note": "Dionysius makes this same Moses the type of the soul that ascends into the divine darkness (McGinn, Foundations of Mysticism)"
+                }
+              ]
+            },
+            {
+              "word": "I know thee by name",
+              "node": "divine-name",
+              "type": "theme",
+              "note": "The motif of the Name frames the episode: God knows Moses 'by name,' and will in turn proclaim his own Name — the cataphatic pole that stands against the hidden Face (Sarna, Exodus, JPS, 1991).",
+              "parallels": [
+                {
+                  "label": "the name that cannot be named",
+                  "textId": "tao-te-ching-1",
+                  "note": "Laozi's eternal name that eludes naming — the apophatic counterpoint to the proclaimed divine Name (McGinn, Foundations of Mysticism)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "33:14",
+          "text": "And he said, My presence shall go with thee, and I will give thee rest.",
+          "textVersions": {
+            "kjv": "And he said, My presence shall go with thee, and I will give thee rest."
+          },
+          "entities": [
+            {
+              "word": "My presence",
+              "node": "shekhinah",
+              "type": "deity",
+              "note": "The 'presence' (Hebrew panim, 'face') that goes with Israel; later Rabbinic theology develops this indwelling Presence as the Shekhinah — God present without God's essence being seen (Sarna, Exodus, JPS, 1991).",
+              "parallels": [
+                {
+                  "label": "God in the still small voice",
+                  "textId": "1-kings-19-still-small-voice",
+                  "note": "presence granted as voice rather than visible form"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Shew me thy glory — the Name proclaimed, the Face withheld (33:18–23)",
+      "verses": [
+        {
+          "ref": "33:18",
+          "text": "And he said, I beseech thee, shew me thy glory.",
+          "textVersions": {
+            "kjv": "And he said, I beseech thee, shew me thy glory."
+          },
+          "entities": [
+            {
+              "word": "shew me thy glory",
+              "node": "theme-sacred-mountain-as-theophanic-locus",
+              "type": "theme",
+              "note": "Moses' request for the kavod ('glory') is the climax of the Sinai theophany; the sacred mountain is the locus where the divine glory may pass by, yet not be fully seen (Childs, Exodus, OTL, 1974).",
+              "parallels": [
+                {
+                  "label": "the glory not in wind, quake, or fire",
+                  "textId": "1-kings-19-still-small-voice",
+                  "note": "the parallel Horeb theophany where the manifest glory is withheld for a 'still small voice'"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "33:19",
+          "text": "And he said, I will make all my goodness pass before thee, and I will proclaim the name of the LORD before thee; and will be gracious to whom I will be gracious, and will shew mercy on whom I will shew mercy.",
+          "textVersions": {
+            "kjv": "And he said, I will make all my goodness pass before thee, and I will proclaim the name of the LORD before thee; and will be gracious to whom I will be gracious, and will shew mercy on whom I will shew mercy."
+          },
+          "entities": [
+            {
+              "word": "proclaim the name of the LORD",
+              "node": "divine-name",
+              "type": "theme",
+              "note": "The cataphatic moment: God grants the Name (proclaimed in full at Exod 34:6–7) even while denying the Face — revelation by Name set against concealment of essence (Sarna, Exodus, JPS, 1991).",
+              "parallels": [
+                {
+                  "label": "the Tao that can be named",
+                  "textId": "tao-te-ching-1",
+                  "note": "the East-Asian apophatic refusal of the nameable ultimate (McGinn, Foundations of Mysticism)"
+                },
+                {
+                  "label": "neti neti",
+                  "textId": "brihadaranyaka-neti-neti",
+                  "note": "Brahman approached by negation, as the divine essence here is approached only by what is withheld"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "33:20",
+          "text": "And he said, Thou canst not see my face: for there shall no man see me, and live.",
+          "textVersions": {
+            "kjv": "And he said, Thou canst not see my face: for there shall no man see me, and live."
+          },
+          "entities": [
+            {
+              "word": "Thou canst not see my face",
+              "node": "hidden-god",
+              "type": "theme",
+              "note": "The absolute limit on theophany — the deus absconditus motif: the divine Face is unseeable, and the essence remains hidden even at the height of revelation (McGinn, Foundations of Mysticism, 1991; Childs, Exodus, OTL, 1974).",
+              "parallels": [
+                {
+                  "label": "the divine darkness of unknowing",
+                  "textId": "pseudo-dionysius-mystical-theology",
+                  "note": "Dionysius reads Moses' ascent as entry into the darkness where God is met beyond sight"
+                },
+                {
+                  "label": "the cloud of unknowing",
+                  "textId": "cloud-of-unknowing",
+                  "note": "the English mystic's apophatic 'cloud' where God is unseen yet present"
+                }
+              ]
+            },
+            {
+              "word": "there shall no man see me, and live",
+              "node": "theme-apophatic-theology",
+              "type": "theme",
+              "note": "The verse that grounds the via negativa: the divine essence cannot be beheld directly. Gregory of Nyssa (Life of Moses) made the unseeable Face the proof-text of the apophatic ascent, transmitted through Pseudo-Dionysius into the medieval mystics (McGinn, The Foundations of Mysticism, 1991).",
+              "parallels": [
+                {
+                  "label": "neti neti — the unsayable Brahman",
+                  "textId": "brihadaranyaka-neti-neti",
+                  "note": "the Upanishadic systematic negation, the Indian analogue of unknowing"
+                },
+                {
+                  "label": "the Mystical Theology",
+                  "textId": "pseudo-dionysius-mystical-theology",
+                  "note": "the locus classicus of Christian apophatic theology, built on Moses' ascent"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "33:21",
+          "text": "And the LORD said, Behold, there is a place by me, and thou shalt stand upon a rock:",
+          "textVersions": {
+            "kjv": "And the LORD said, Behold, there is a place by me, and thou shalt stand upon a rock:"
+          },
+          "entities": []
+        },
+        {
+          "ref": "33:22",
+          "text": "And it shall come to pass, while my glory passeth by, that I will put thee in a clift of the rock, and will cover thee with my hand while I pass by:",
+          "textVersions": {
+            "kjv": "And it shall come to pass, while my glory passeth by, that I will put thee in a clift of the rock, and will cover thee with my hand while I pass by:"
+          },
+          "entities": [
+            {
+              "word": "a clift of the rock",
+              "node": "via-negativa",
+              "type": "theme",
+              "note": "The cleft of the rock — where Moses is hidden and shielded by the divine hand — became, in Gregory of Nyssa's Life of Moses, the classic image of the apophatic via negativa: the soul knows God most truly in not-seeing (McGinn, The Foundations of Mysticism, 1991).",
+              "parallels": [
+                {
+                  "label": "the cloud of unknowing",
+                  "textId": "cloud-of-unknowing",
+                  "note": "the soul hidden from sight, meeting God in darkness rather than vision"
+                }
+              ]
+            },
+            {
+              "word": "my glory passeth by",
+              "node": "divine-darkness",
+              "type": "theme",
+              "note": "The glory passes while Moses is covered — the kavod given only as passage, never as direct sight; the Dionysian and Carmelite traditions read this as the theophanic darkness in which God is present yet unseen (McGinn, Foundations of Mysticism, 1991).",
+              "parallels": [
+                {
+                  "label": "divine darkness of the Mystical Theology",
+                  "textId": "pseudo-dionysius-mystical-theology",
+                  "note": "the gnophos / darkness into which Moses enters on the mountain"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "33:23",
+          "text": "And I will take away mine hand, and thou shalt see my back parts: but my face shall not be seen.",
+          "textVersions": {
+            "kjv": "And I will take away mine hand, and thou shalt see my back parts: but my face shall not be seen."
+          },
+          "entities": [
+            {
+              "word": "thou shalt see my back parts",
+              "node": "hidden-god",
+              "type": "theme",
+              "note": "Moses is granted only the 'back parts' (Hebrew achor) — the after-effect or trace of the passing God, never the Face. This withholding is the defining gesture of the hidden God: revelation as trace, not vision (Sarna, Exodus, JPS, 1991; McGinn, Foundations of Mysticism).",
+              "parallels": [
+                {
+                  "label": "God not in wind, quake, or fire",
+                  "textId": "1-kings-19-still-small-voice",
+                  "note": "the parallel theophany of indirection — God known by what is left, not by direct manifestation"
+                }
+              ]
+            },
+            {
+              "word": "my face shall not be seen",
+              "node": "theme-apophatic-theology",
+              "type": "theme",
+              "note": "The closing affirmation of the unseeable essence; the scriptural seed of the entire apophatic tradition from Gregory of Nyssa and Pseudo-Dionysius to the Cloud-author (McGinn, The Foundations of Mysticism, 1991).",
+              "parallels": [
+                {
+                  "label": "neti neti",
+                  "textId": "brihadaranyaka-neti-neti",
+                  "note": "the unsayable absolute reached only by negation"
+                },
+                {
+                  "label": "the unnameable Tao",
+                  "textId": "tao-te-ching-1",
+                  "note": "the ultimate that reveals itself yet refuses capture"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
