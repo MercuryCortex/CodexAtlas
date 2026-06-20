@@ -23751,3 +23751,695 @@ SCRIPTURE_TEXTS['exodus-33'] = {
     }
   ]
 };
+
+// ── APOCALYPTIC (Daniel 2 / Daniel 12 / Joel 2) — 2026-06-20 ──────────────────
+
+// -- Daniel 2:31–45 (Nebuchadnezzar's Dream — the Four-Metal Image and the Stone Cut Without Hands) --
+SCRIPTURE_TEXTS['daniel-2'] = {
+  "id": "daniel-2",
+  "title": "Daniel 2:31–45 (Nebuchadnezzar's Dream — the Four-Metal Image and the Stone Cut Without Hands)",
+  "shortTitle": "Daniel 2",
+  "corpus": "Hebrew Bible (Writings · Daniel, Aramaic court-tales and apocalypse)",
+  "tradId": "tradition-second-temple-judaism",
+  "date": "c. 167–164 BCE (the apocalyptic redaction; the Aramaic court-tale stratum is older)",
+  "docNode": "phase-3-008-book-of-daniel",
+  "language": "Aramaic · King James Version (1611) — public domain",
+  "translations": [
+    {
+      "id": "kjv",
+      "label": "KJV (1611)",
+      "note": "King James Version — public domain"
+    }
+  ],
+  "intro": "Daniel 2 is the metallic-statue half of the great Danielic doublet: Nebuchadnezzar dreams of a colossal image — head of gold, breast and arms of silver, belly and thighs of brass, legs of iron, feet of mingled iron and clay — which a stone \"cut out without hands\" smashes at the feet, after which the stone becomes a great mountain that fills the whole earth. Daniel reads the four metals as four successive world-empires and the stone as the everlasting kingdom God will \"set up\" at the end of days. The same four empires are re-seen in Daniel 7 as four beasts rising from the sea, with the everlasting dominion given to \"one like the Son of man\" — Daniel 2 is the metals, Daniel 7 the beasts (Collins, Daniel [Hermeneia] 1993). The descending-metals frame places the vision inside a wider ancient Mediterranean and Iranian decline-schema — Hesiod's golden-to-iron ages and the Zoroastrian Bahman Yasht's four-metal tree — though shared schema is not proven borrowing.",
+  "crossTradition": [
+    {
+      "label": "Daniel 7 — the four beasts and the Son of Man (the doublet)",
+      "textId": "daniel-7",
+      "note": "Daniel 2 and Daniel 7 are the locus classicus of the four-kingdoms schema, the SAME imperial succession re-encoded: Dan 2 as four metals smashed by the stone-kingdom, Dan 7 as four beasts from the sea whose dominion passes to 'one like the Son of man.' Collins, Daniel (Hermeneia, 1993), treats the two visions as deliberate doublets framing the book's apocalyptic core."
+    },
+    {
+      "label": "Hesiod, Works and Days 106–201 — the metallic ages of man",
+      "note": "Hesiod's descending golden→silver→bronze→iron races (with the heroic age inserted) are the Greek form of the same metals-as-declining-epochs schema; M. L. West, The East Face of Helicon (1997), argues a common Near-Eastern background rather than direct dependence — a shared ANE/Mediterranean decline-schema, not proven borrowing."
+    },
+    {
+      "label": "Bahman Yasht / Zand-i Wahman Yasn — the four-metal tree",
+      "note": "The Pahlavi Bahman Yasht presents Zarathustra a vision of a tree with four metal branches (gold, silver, steel, iron-mixed-with-clay), each a future age ending in evil — strikingly close to Daniel 2's metals-with-clay. David Flusser, 'The Four Empires in the Fourth Sibyl and in the Book of Daniel' (1972), treats the four-metals apocalyptic schema as a transmitted ANE pattern; but the Pahlavi text's dating is contested (3rd–9th c. CE redaction over older Avestan tradition), so the parallel is debated, not demonstrated borrowing."
+    },
+    {
+      "label": "The Fifth Empire (Quinto Império) — Daniel 2's afterlife",
+      "note": "Daniel 2's stone-kingdom that supersedes the four metals became the Western 'fifth monarchy' of political eschatology — the everlasting kingdom after the four empires — reactivated in Portuguese Sebastianism (Bandarra, António Vieira) and revived poetically by Pessoa. Norman Cohn, Cosmos, Chaos and the World to Come (1993), traces this apocalyptic political imagination from Daniel forward."
+    }
+  ],
+  "sections": [
+    {
+      "heading": "The Dream-Image: Gold to Iron-and-Clay (2:31–33)",
+      "verses": [
+        {
+          "ref": "2:31",
+          "text": "Thou, O king, sawest, and behold a great image. This great image, whose brightness was excellent, stood before thee; and the form thereof was terrible.",
+          "textVersions": {
+            "kjv": "Thou, O king, sawest, and behold a great image. This great image, whose brightness was excellent, stood before thee; and the form thereof was terrible."
+          },
+          "entities": [
+            {
+              "word": "a great image",
+              "node": "nebuchadnezzar-ii",
+              "type": "person",
+              "note": "The dream is Nebuchadnezzar II's, Neo-Babylonian king and the conqueror of Jerusalem (587 BCE); the book makes the founder of the first 'gold' empire the dreamer who sees the whole succession that will undo his own. Collins, Daniel (Hermeneia, 1993), notes the court-tale's irony: the world-conqueror is shown the transience of all empire including his own.",
+              "parallels": []
+            }
+          ]
+        },
+        {
+          "ref": "2:32",
+          "text": "This image's head was of fine gold, his breast and his arms of silver, his belly and his thighs of brass,",
+          "textVersions": {
+            "kjv": "This image's head was of fine gold, his breast and his arms of silver, his belly and his thighs of brass,"
+          },
+          "entities": [
+            {
+              "word": "head was of fine gold",
+              "node": "four-ages-degeneration",
+              "type": "theme",
+              "note": "The descending metals — gold, silver, brass, iron — are the type-specimen of the metallic decline-schema: time read as progressive degeneration from a golden first age. M. L. West, The East Face of Helicon (1997), and the Atlas theme node both place Daniel 2's metals beside Hesiod's ages and the Iranian four-metal tree as a shared ancient schema.",
+              "parallels": [
+                {
+                  "label": "Hesiod, Works and Days 106–201",
+                  "note": "the golden→silver→bronze→iron races of man; the Greek metallic-ages decline-schema (West 1997 reads a common Near-Eastern background, not direct borrowing)."
+                },
+                {
+                  "label": "Vedic/Puranic yugas",
+                  "note": "Krita(gold)→Treta(silver)→Dvapara(bronze)→Kali(iron), decreasing in 4:3:2:1 ratio; an independent Indic instance of metals-as-declining-ages (the systematic form is post-Vedic)."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "2:33",
+          "text": "His legs of iron, his feet part of iron and part of clay.",
+          "textVersions": {
+            "kjv": "His legs of iron, his feet part of iron and part of clay."
+          },
+          "entities": [
+            {
+              "word": "feet part of iron and part of clay",
+              "node": "four-kingdoms-schema",
+              "type": "theme",
+              "note": "The mingled iron-and-clay feet are the schema's weakest and final stratum — the divided, unstable last kingdom. In the Maccabean reading (Collins, Daniel [Hermeneia] 1993) the four are Babylon(gold)–Media(silver)–Persia(brass)–Greece(iron), with the iron-clay feet the fractured Hellenistic successor-states (the Seleucid–Ptolemaic split) on the eve of God's intervention.",
+              "parallels": [
+                {
+                  "label": "Bahman Yasht — the four-metal tree",
+                  "note": "the Pahlavi tree's fourth branch is likewise 'iron mixed with clay,' a close formal parallel to Daniel 2's feet (Flusser 1972); the Pahlavi dating is contested, so the relation is debated."
+                },
+                {
+                  "label": "Daniel 7 — the fourth beast with iron teeth",
+                  "textId": "daniel-7",
+                  "note": "the iron of Daniel 2's fourth kingdom returns as the 'great iron teeth' of Daniel 7's terrifying fourth beast — the same final empire across the doublet."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "The Stone Cut Without Hands (2:34–35)",
+      "verses": [
+        {
+          "ref": "2:34",
+          "text": "Thou sawest till that a stone was cut out without hands, which smote the image upon his feet that were of iron and clay, and brake them to pieces.",
+          "textVersions": {
+            "kjv": "Thou sawest till that a stone was cut out without hands, which smote the image upon his feet that were of iron and clay, and brake them to pieces."
+          },
+          "entities": [
+            {
+              "word": "a stone was cut out without hands",
+              "node": "messianism",
+              "type": "theme",
+              "note": "The stone 'cut out without hands' — not made by human agency — is read as the inbreaking kingdom of God / the messianic agent, in contrast to the man-made empires it shatters. Collins, Daniel (Hermeneia, 1993), notes the 'without hands' (Aramaic di-la bidayin) marks the kingdom as divine, not the work of human conquest; later Jewish and Christian exegesis reads the stone messianically.",
+              "parallels": [
+                {
+                  "label": "Daniel 7 — the everlasting dominion given to the Son of Man",
+                  "textId": "daniel-7",
+                  "note": "the stone-kingdom of Dan 2 corresponds to the everlasting dominion given 'one like the Son of man' in Dan 7:13–14 — the divine, non-human kingdom that succeeds the four empires in both halves of the doublet."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "2:35",
+          "text": "Then was the iron, the clay, the brass, the silver, and the gold, broken to pieces together, and became like the chaff of the summer threshingfloors; and the wind carried them away, that no place was found for them: and the stone that smote the image became a great mountain, and filled the whole earth.",
+          "textVersions": {
+            "kjv": "Then was the iron, the clay, the brass, the silver, and the gold, broken to pieces together, and became like the chaff of the summer threshingfloors; and the wind carried them away, that no place was found for them: and the stone that smote the image became a great mountain, and filled the whole earth."
+          },
+          "entities": [
+            {
+              "word": "the stone that smote the image became a great mountain, and filled the whole earth",
+              "node": "world-mountain",
+              "type": "symbol",
+              "note": "The stone grows into a cosmic mountain that fills the earth — the kingdom of God imaged as the world-mountain, the axis where the divine order overspreads all creation. The mountain-filling-the-earth fuses the stone-kingdom with the ancient cosmic-mountain symbol (the sacred mountain as the place of divine sovereignty and the world's center).",
+              "parallels": [
+                {
+                  "label": "Zion / the mountain of the LORD's house exalted above the hills",
+                  "note": "Isaiah 2:2 / Micah 4:1 — the eschatological mountain raised above all others to which the nations stream; the Hebrew cosmic-mountain image the growing stone evokes (theme of the sacred mountain as theophanic locus)."
+                }
+              ]
+            },
+            {
+              "word": "became like the chaff of the summer threshingfloors",
+              "node": "eschatological-imminence",
+              "type": "theme",
+              "note": "The empires reduced to wind-blown chaff is the apocalyptic figure of judgment dissolving the present world-order at the imminent end; Cohn, Cosmos, Chaos and the World to Come (1993), situates Daniel's chaff-and-stone within the emergent ancient-Near-Eastern apocalyptic expectation of a final divine overthrow of history.",
+              "parallels": [
+                {
+                  "label": "Psalm 1 — the wicked like chaff the wind driveth away",
+                  "note": "the chaff-driven-by-wind image of judgment shared with the Psalter; the standard Hebrew figure for the annihilation of the unrighteous order."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "The Interpretation: Four Kingdoms and the Everlasting Kingdom (2:36–45)",
+      "verses": [
+        {
+          "ref": "2:37–38",
+          "text": "Thou, O king, art a king of kings: for the God of heaven hath given thee a kingdom, power, and strength, and glory. And wheresoever the children of men dwell, the beasts of the field and the fowls of the heaven hath he given into thine hand, and hath made thee ruler over them all. Thou art this head of gold.",
+          "textVersions": {
+            "kjv": "Thou, O king, art a king of kings: for the God of heaven hath given thee a kingdom, power, and strength, and glory. And wheresoever the children of men dwell, the beasts of the field and the fowls of the heaven hath he given into thine hand, and hath made thee ruler over them all. Thou art this head of gold."
+          },
+          "entities": [
+            {
+              "word": "Thou art this head of gold",
+              "node": "four-kingdoms-schema",
+              "type": "theme",
+              "note": "Daniel fixes the first kingdom explicitly: Nebuchadnezzar's Babylon is the head of gold. The chain from this identified head is what generates the four-empire sequence; the standard Maccabean reading runs Babylon–Media–Persia–Greece (Collins, Daniel [Hermeneia] 1993), against the later Christian Babylon–Persia–Greece–Rome reading.",
+              "parallels": [
+                {
+                  "label": "Fourth Sibylline Oracle — the four-empire succession",
+                  "note": "Flusser, 'The Four Empires in the Fourth Sibyl and in the Book of Daniel' (1972), shows the same four-empires schema operating in the Sibylline material, evidence the framework circulated beyond Daniel in the Hellenistic apocalyptic milieu."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "2:39–40",
+          "text": "And after thee shall arise another kingdom inferior to thee, and another third kingdom of brass, which shall bear rule over all the earth. And the fourth kingdom shall be strong as iron: forasmuch as iron breaketh in pieces and subdueth all things: and as iron that breaketh all these, shall it break in pieces and bruise.",
+          "textVersions": {
+            "kjv": "And after thee shall arise another kingdom inferior to thee, and another third kingdom of brass, which shall bear rule over all the earth. And the fourth kingdom shall be strong as iron: forasmuch as iron breaketh in pieces and subdueth all things: and as iron that breaketh all these, shall it break in pieces and bruise."
+          },
+          "entities": [
+            {
+              "word": "the fourth kingdom shall be strong as iron",
+              "node": "four-kingdoms-schema",
+              "type": "theme",
+              "note": "The iron fourth kingdom — all-crushing, then divided in the iron-clay feet — is the schema's climax; in the Maccabean reading it is the Greek/Hellenistic empire whose tyrant Antiochus IV is the apocalypse's target. The decline from gold to iron is at once a sequence of metals (decreasing worth) and of force (increasing brutality), per the theme node and Collins (1993).",
+              "parallels": [
+                {
+                  "label": "Daniel 7 — the dreadful iron-toothed fourth beast",
+                  "textId": "daniel-7",
+                  "note": "the iron fourth kingdom of Dan 2 is the 'exceedingly strong' fourth beast 'with great iron teeth' of Dan 7 — the doublet's identical terminal empire."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "2:44",
+          "text": "And in the days of these kings shall the God of heaven set up a kingdom, which shall never be destroyed: and the kingdom shall not be left to other people, but it shall break in pieces and consume all these kingdoms, and it shall stand for ever.",
+          "textVersions": {
+            "kjv": "And in the days of these kings shall the God of heaven set up a kingdom, which shall never be destroyed: and the kingdom shall not be left to other people, but it shall break in pieces and consume all these kingdoms, and it shall stand for ever."
+          },
+          "entities": [
+            {
+              "word": "shall the God of heaven set up a kingdom, which shall never be destroyed",
+              "node": "reign-of-god",
+              "type": "theme",
+              "note": "The everlasting kingdom 'set up' by the God of heaven — succeeding and consuming the four empires, never to pass to another people — is Daniel 2's formulation of the reign of God / kingdom of God. Collins, Daniel (Hermeneia, 1993), reads this as the apocalyptic hope of a final divine sovereignty replacing all human empire; it is the conceptual root of the New Testament 'kingdom of God.'",
+              "parallels": [
+                {
+                  "label": "Daniel 7 — the everlasting dominion that shall not pass away",
+                  "textId": "daniel-7",
+                  "note": "'his dominion is an everlasting dominion... his kingdom that which shall not be destroyed' (Dan 7:14) — the same never-ending divine kingdom, given there to the Son of Man, that the stone-kingdom enacts here."
+                }
+              ]
+            },
+            {
+              "word": "it shall break in pieces and consume all these kingdoms",
+              "node": "fifth-empire-quinto-imperio",
+              "type": "theme",
+              "note": "The kingdom that breaks and supersedes the four metals became the Western 'fifth monarchy' / Quinto Império of political eschatology — the everlasting fifth kingdom after Daniel's four. Cohn, Cosmos, Chaos and the World to Come (1993), traces the long afterlife of this scheme; it drove Portuguese Sebastianism (Bandarra, Vieira) and recurs in Pessoa.",
+              "parallels": [
+                {
+                  "label": "English Fifth Monarchy Men (17th c.)",
+                  "note": "the radical Puritan movement named directly from Daniel 2/7 expecting the imminent 'fifth monarchy' of Christ to succeed the four; a literal political activation of the stone-kingdom."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "2:45",
+          "text": "Forasmuch as thou sawest that the stone was cut out of the mountain without hands, and that it brake in pieces the iron, the brass, the clay, the silver, and the gold; the great God hath made known to the king what shall come to pass hereafter: and the dream is certain, and the interpretation thereof sure.",
+          "textVersions": {
+            "kjv": "Forasmuch as thou sawest that the stone was cut out of the mountain without hands, and that it brake in pieces the iron, the brass, the clay, the silver, and the gold; the great God hath made known to the king what shall come to pass hereafter: and the dream is certain, and the interpretation thereof sure."
+          },
+          "entities": [
+            {
+              "word": "the stone was cut out of the mountain without hands",
+              "node": "messianism",
+              "type": "theme",
+              "note": "Verse 45 adds that the stone was 'cut out of the mountain' — the divine kingdom proceeds from a heavenly/cosmic source, not human hands. The messianic reading of the stone (the kingdom and its agent) is developed in later Jewish and Christian exegesis; Collins, Daniel (Hermeneia, 1993), notes the 'without hands' tag as the marker of divine, non-human origin.",
+              "parallels": [
+                {
+                  "label": "apocalyptic revelation of 'what shall come to pass hereafter'",
+                  "note": "the dream-and-interpretation form ('the great God hath made known... what shall come to pass hereafter; the dream is certain') is the apocalyptic revelatory pattern — hidden future disclosed by God through a seer (theme of apocalyptic revelation; Cohn 1993)."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
+
+// -- Daniel 12:1–3 (Michael stands up — many that sleep in the dust shall awake) --
+SCRIPTURE_TEXTS['daniel-12'] = {
+  "id": "daniel-12",
+  "title": "Daniel 12:1–3 (Michael stands up — many that sleep in the dust shall awake)",
+  "shortTitle": "Daniel 12",
+  "corpus": "Hebrew Bible (Writings · Book of Daniel, the apocalyptic vision)",
+  "tradId": "tradition-second-temple-judaism",
+  "date": "c. 165 BCE (the Maccabean crisis under Antiochus IV Epiphanes)",
+  "docNode": "phase-3-008-book-of-daniel",
+  "language": "Hebrew · King James Version (1611) — public domain",
+  "translations": [
+    {
+      "id": "kjv",
+      "label": "KJV (1611)",
+      "note": "King James Version — public domain"
+    }
+  ],
+  "intro": "Daniel 12:1–3 is the clearest explicit statement of individual bodily resurrection in the Hebrew Bible. Composed in the heat of the Maccabean crisis (c. 165 BCE), the closing oracle of Daniel's apocalypse promises that the archangel Michael, the \"great prince\" who guards Israel, will arise in a time of unprecedented trouble, and that \"many of them that sleep in the dust of the earth shall awake\" — some to everlasting life, some to everlasting contempt — while the wise \"shine as the brightness of the firmament\" and as \"the stars for ever and ever.\" Where Ezekiel 37 had pictured a corporate national revival, Daniel 12 names a future, two-outcome resurrection of individuals to judgment. Its cross-tradition significance is enormous: it is the seed-text that 1 Corinthians 15, 4 Ezra and rabbinic doctrine develop, and it stands at the center of the long scholarly debate over whether Second-Temple resurrection belief crystallised under Persian-period Zoroastrian influence (Boyce, Shaked) — a parallel to be hedged, not asserted as proven derivation (Collins, Levenson).",
+  "crossTradition": [
+    {
+      "label": "Ezekiel 37 — the valley of dry bones",
+      "textId": "ezekiel-37-dry-bones",
+      "note": "The earlier exilic vision Daniel presupposes: bones knit together and the breath returns. Levenson (Resurrection and the Restoration of Israel, 2006) reads Ezekiel as a metaphor for national restoration that Daniel 12 then literalises into the resurrection of individuals to judgment — the decisive Hebrew-Bible step from corporate revival to personal resurrection."
+    },
+    {
+      "label": "1 Corinthians 15 — the developed resurrection",
+      "textId": "1-corinthians-15",
+      "note": "Paul's full resurrection theology grows directly from the Daniel-line apocalyptic hope; Segal (Life After Death, 2004) traces the trajectory from Daniel's 'awakening of the sleepers' through Pharisaic belief to the Christian claim of Jesus as the firstfruits raised."
+    },
+    {
+      "label": "4 Ezra — the later apocalyptic resurrection",
+      "textId": "4-ezra",
+      "note": "The post-70 CE apocalypse that elaborates Daniel's two-outcome awakening into a developed scheme of the dead surrendered by the earth and the chambers of souls (4 Ezra 7); Collins (Daniel, Hermeneia, 1993) places both in the same Jewish apocalyptic stream."
+    },
+    {
+      "label": "Yasna 30 — the Gathic choice of two destinies",
+      "textId": "yasna-30",
+      "note": "Zarathustra's primal choice between Truth and the Lie, assigning the wicked and the righteous to opposed final fates — the Persian-period background often invoked for Daniel's two-outcome eschatology. Boyce and Shaked argue Zoroastrian eschatology shaped emergent Jewish resurrection belief; the direction of influence is debated (Collins, Levenson) and is offered here as a parallel plus plausible influence, not proven derivation."
+    },
+    {
+      "label": "Bundahishn 1 — frashokereti / bodily renovation",
+      "textId": "bundahishn-1",
+      "note": "The Zoroastrian doctrine of the final bodily resurrection and renovation of the world (frashokereti), the principal pre-Christian Near Eastern model for cosmic resurrection eschatology (Boyce, 1975–91; Hultgård, 1998). Its much-discussed relation to Daniel's resurrection hope is a genuine parallel whose transmission-mechanism remains contested."
+    }
+  ],
+  "sections": [
+    {
+      "heading": "Michael stands up and the dead awake",
+      "verses": [
+        {
+          "ref": "12:1",
+          "text": "And at that time shall Michael stand up, the great prince which standeth for the children of thy people: and there shall be a time of trouble, such as never was since there was a nation even to that same time: and at that time thy people shall be delivered, every one that shall be found written in the book.",
+          "textVersions": {
+            "kjv": "And at that time shall Michael stand up, the great prince which standeth for the children of thy people: and there shall be a time of trouble, such as never was since there was a nation even to that same time: and at that time thy people shall be delivered, every one that shall be found written in the book."
+          },
+          "entities": [
+            {
+              "word": "Michael",
+              "node": "michael-archangel",
+              "type": "deity",
+              "note": "Michael, the archangel and warrior 'great prince' who guards Israel; his arising signals the eschatological crisis. The Book of Daniel (12:1; cf. 10:13, 21) is the earliest text to name Michael as Israel's angelic patron, and Collins (Daniel, Hermeneia, 1993) reads his 'standing up' as the heavenly counterpart to the earthly deliverance.",
+              "parallels": [
+                {
+                  "label": "4 Ezra — the angelic mediators of the end",
+                  "textId": "4-ezra",
+                  "note": "The later apocalyptic tradition in which named angels superintend the resurrection and judgment that Daniel inaugurates (Collins, Daniel, Hermeneia, 1993)."
+                }
+              ]
+            },
+            {
+              "word": "a time of trouble, such as never was",
+              "node": "end-times-judgment",
+              "type": "theme",
+              "note": "The unprecedented tribulation preceding the end — the apocalyptic 'time of trouble' that frames the resurrection-and-deliverance. Collins (Daniel, Hermeneia) identifies this as the eschatological woe that the Maccabean author reads onto the Antiochene persecution.",
+              "parallels": [
+                {
+                  "label": "Frashokereti — the final assault and renovation",
+                  "textId": "bundahishn-1",
+                  "note": "The Zoroastrian end-time ordeal that precedes the universal renovation; a structural parallel to the apocalyptic tribulation (Boyce, 1975–91; Hultgård, 1998)."
+                }
+              ]
+            },
+            {
+              "word": "written in the book",
+              "node": "final-judgment",
+              "type": "theme",
+              "note": "The heavenly 'book' of the names of the delivered — the bookkeeping of the last judgment in which the saved are those found inscribed. Collins (Daniel, Hermeneia) links it to the 'books opened' of Daniel 7:10 and the Second-Temple motif of the celestial registers.",
+              "parallels": [
+                {
+                  "label": "Yasna 30 — the assignment of two final destinies",
+                  "textId": "yasna-30",
+                  "note": "Zarathustra's reckoning that allots opposed final fates to the followers of Truth and of the Lie; Shaked argues the Persian judgment-scheme stands behind emerging Jewish eschatology (Shaked, in Boyce & Grenet)."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "12:2",
+          "text": "And many of them that sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt.",
+          "textVersions": {
+            "kjv": "And many of them that sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt."
+          },
+          "entities": [
+            {
+              "word": "them that sleep in the dust of the earth shall awake",
+              "node": "resurrection-of-the-dead",
+              "type": "theme",
+              "note": "The clearest explicit individual bodily-resurrection text in the Hebrew Bible (c. 165 BCE): the dead 'sleeping in the dust' are raised. Collins (Daniel, Hermeneia, 1993) and Levenson (Resurrection and the Restoration of Israel, 2006) treat Daniel 12:2 as the decisive Hebrew-Bible attestation of personal resurrection, advancing beyond Ezekiel's corporate vision; Segal (Life After Death, 2004) makes it the hinge of the whole Western resurrection trajectory.",
+              "parallels": [
+                {
+                  "label": "Ezekiel 37 — the dry bones revive",
+                  "textId": "ezekiel-37-dry-bones",
+                  "note": "The national-revival vision that precedes and is literalised by Daniel's individual resurrection (Levenson, Resurrection and the Restoration of Israel, 2006)."
+                },
+                {
+                  "label": "1 Corinthians 15 — the developed resurrection of the dead",
+                  "textId": "1-corinthians-15",
+                  "note": "Paul's mature resurrection doctrine grows from this Danielic 'awakening of the sleepers' (Segal, Life After Death, 2004)."
+                },
+                {
+                  "label": "Bundahishn — universal bodily resurrection",
+                  "textId": "bundahishn-1",
+                  "note": "The Zoroastrian raising of all the dead in restored bodies; the much-discussed Persian-period analogue, offered as parallel and plausible influence rather than proven derivation (Boyce, 1975–91; the direction of influence is debated — Yamauchi, Collins)."
+                }
+              ]
+            },
+            {
+              "word": "some to everlasting life, and some to shame and everlasting contempt",
+              "node": "afterlife-judgment",
+              "type": "theme",
+              "note": "The two-outcome eschatology — resurrection unto either everlasting life or everlasting contempt — the earliest Hebrew statement of a forensic afterlife with divided destinies. Collins (Daniel, Hermeneia) notes that Daniel limits the awakening to 'many' (the conspicuously righteous and wicked), not yet a universal resurrection.",
+              "parallels": [
+                {
+                  "label": "Yasna 30 — Truth and the Lie, the two destinies",
+                  "textId": "yasna-30",
+                  "note": "The Gathic primal choice that assigns the righteous and the wicked to opposed final ends; the Zoroastrian two-fate scheme often invoked as background to Daniel's divided outcomes, with transmission contested (Boyce; Shaked)."
+                },
+                {
+                  "label": "Frashokereti — final separation and renovation",
+                  "textId": "bundahishn-1",
+                  "note": "The Zoroastrian final judgment by molten metal that separates the saved and damned before the renovation (Hultgård, 1998); a parallel to Daniel's two-outcome awakening."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "12:3",
+          "text": "And they that be wise shall shine as the brightness of the firmament; and they that turn many to righteousness as the stars for ever and ever.",
+          "textVersions": {
+            "kjv": "And they that be wise shall shine as the brightness of the firmament; and they that turn many to righteousness as the stars for ever and ever."
+          },
+          "entities": [
+            {
+              "word": "they that be wise shall shine as the brightness of the firmament",
+              "node": "resurrection-of-the-dead",
+              "type": "theme",
+              "note": "The risen 'wise' (the maskilim, the teachers of Daniel's circle) are exalted to astral glory — an astral immortality fused with the resurrection hope. Collins (Daniel, Hermeneia, 1993) identifies the maskilim as the author's own group and reads their shining as elevation to angelic, star-like status among the heavenly host.",
+              "parallels": [
+                {
+                  "label": "1 Corinthians 15 — the glory of the risen body",
+                  "textId": "1-corinthians-15",
+                  "note": "Paul's contrast of celestial and terrestrial bodies and 'the glory of the stars' (1 Cor 15:40–41) echoes Daniel's astral imagery for the risen righteous (Segal, Life After Death, 2004)."
+                }
+              ]
+            },
+            {
+              "word": "as the stars for ever and ever",
+              "node": "messianism",
+              "type": "theme",
+              "note": "The everlasting astral exaltation of the righteous — the wise who 'turn many to righteousness' shine eternally as stars, a hope that feeds the eschatological reward-tradition of Second-Temple and rabbinic Judaism. Collins (Daniel, Hermeneia) connects the star-imagery to the ancient Near Eastern identification of the heavenly host with the stars.",
+              "parallels": [
+                {
+                  "label": "4 Ezra — the shining of the righteous at the end",
+                  "textId": "4-ezra",
+                  "note": "The later apocalyptic promise that the faces of the saved 'shall shine above the stars' (4 Ezra 7:97), an explicit development of Daniel 12:3 (Collins, Daniel, Hermeneia, 1993)."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
+
+// -- Joel 2:28–32 (I will pour out my spirit upon all flesh — the great and terrible day of the LORD) --
+SCRIPTURE_TEXTS['joel-2-28'] = {
+  "id": "joel-2-28",
+  "title": "Joel 2:28–32 (I will pour out my spirit upon all flesh — the great and terrible day of the LORD)",
+  "shortTitle": "Joel 2",
+  "corpus": "Hebrew Bible (Latter Prophets · the Book of the Twelve · Joel)",
+  "tradId": "tradition-second-temple-judaism",
+  "date": "c. 450–350 BCE (post-exilic Persian-period Judah)",
+  "docNode": "document-joel",
+  "language": "Hebrew · King James Version (1611) — public domain. (KJV/English versification 2:28–32; = MT chapter 3:1–5.)",
+  "translations": [
+    {
+      "id": "kjv",
+      "label": "KJV (1611)",
+      "note": "King James Version — public domain"
+    }
+  ],
+  "intro": "Joel 2:28–32 is the great post-exilic vision of the outpoured spirit and the Day of the LORD. After a devastating locust plague read as the sign of the coming Day, the prophet promises that YHWH will pour out his ruach \"upon all flesh\" — sons and daughters, old and young, even male and female servants — so that prophecy, once the gift of a chosen few, becomes universal. That outpouring is framed by cosmic portents (blood, fire, pillars of smoke; the sun darkened, the moon turned to blood) that herald \"the great and the terrible day of the LORD.\" The passage is the single most directly cited prophetic text in the New Testament — Peter quotes it verbatim at Pentecost (Acts 2:17–21) to interpret the descent of the Spirit — and its darkness-and-blood imagery places it inside the wider ancient family of cosmic-dissolution \"last day\" texts that includes Amos's inversion of the Day and the Norse Ragnarök.",
+  "crossTradition": [
+    {
+      "label": "Acts 2 — Peter quotes Joel at Pentecost",
+      "textId": "acts-2-pentecost",
+      "note": "Acts 2:17–21 cites Joel 2:28–32 almost verbatim ('I will pour out my Spirit upon all flesh') as fulfilled in the descent of the Spirit; the Lukan author turns Joel's cosmic Day-of-the-LORD into the founding charter of the Christian community. Wolff (Joel and Amos, Hermeneia, 1977) treats Acts 2 as the decisive Wirkungsgeschichte of the Joel oracle."
+    },
+    {
+      "label": "Amos 5 — the Day of the LORD as darkness, not light",
+      "textId": "amos-5",
+      "note": "Amos 5:18–20 inverts the popular hope: the Day of the LORD is 'darkness, and not light.' Wolff (Joel and Amos, Hermeneia, 1977) reads Joel as standing in the same Day-of-the-LORD prophetic stream Amos first turned against Israel itself; document-joel names Amos and Zephaniah as the Day-of-the-LORD tradition Joel inherits."
+    },
+    {
+      "label": "Völuspá — Ragnarök, the sun darkened and the world dissolved",
+      "textId": "voluspa",
+      "note": "The Norse seeress's prophecy of Ragnarök — sun blackened, stars vanishing, the world consumed — is a comparative cosmic-dissolution 'day,' not a genealogical borrowing. Mircea Eliade (The Myth of the Eternal Return) reads such end-of-world catastrophes as a recurrent structure across traditions; the Codex theme cosmic-cataclysm explicitly pairs the biblical Day with Götterdämmerung."
+    },
+    {
+      "label": "Book of Daniel / 1 Enoch — the apocalyptic Day and final judgment",
+      "note": "John J. Collins (The Apocalyptic Imagination) places Joel's cosmic portents and Day-of-the-LORD on the trajectory toward the full Second-Temple apocalypses (Daniel, 1 Enoch), where the Day becomes a cosmic judgment scene. [not yet staged]"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "The outpouring of the spirit (2:28–29)",
+      "verses": [
+        {
+          "ref": "2:28",
+          "text": "And it shall come to pass afterward, that I will pour out my spirit upon all flesh; and your sons and your daughters shall prophesy, your old men shall dream dreams, your young men shall see visions:",
+          "textVersions": {
+            "kjv": "And it shall come to pass afterward, that I will pour out my spirit upon all flesh; and your sons and your daughters shall prophesy, your old men shall dream dreams, your young men shall see visions:"
+          },
+          "entities": [
+            {
+              "word": "pour out my spirit",
+              "node": "ruach-pneuma",
+              "type": "symbol",
+              "note": "The ruach poured out is wind-breath-spirit, the same word that hovers over the deep in Genesis 1:2 and animates the dry bones of Ezekiel 37; here it is 'poured' like water (a liquid metaphor Crenshaw, Joel [Anchor Bible 24C, 1995], stresses against the locust-drought backdrop). The Codex ruach-pneuma symbol gathers the Hebrew rûaḥ with Greek pneûma, Latin spiritus, and Sanskrit prāṇa as the cross-cultural wind-breath-spirit complex.",
+              "parallels": [
+                {
+                  "label": "Holy Spirit at Pentecost (Acts 2)",
+                  "textId": "acts-2-pentecost",
+                  "note": "Acts 2:2–4 renders the same outpouring as a 'rushing mighty wind' (pneuma) and tongues of fire; the Greek pneuma carries the same wind/breath/spirit triple sense as Hebrew rûaḥ. Wolff (Hermeneia, 1977) reads Pentecost as the direct citation-fulfillment of this verse."
+                },
+                {
+                  "label": "Ezekiel 37 — the breath into the dry bones",
+                  "note": "Ezekiel 37:9–14: the rûaḥ breathed into the slain so they live. Crenshaw (Anchor Bible, 1995) links Joel's outpouring to the prophetic spirit-animation tradition. [not yet staged]"
+                }
+              ]
+            },
+            {
+              "word": "upon all flesh",
+              "node": "yahweh",
+              "type": "deity",
+              "note": "YHWH is the subject who pours out the spirit; the radical move is the universalising of prophecy — 'all flesh,' irrespective of age, status, or sex. Crenshaw (Joel, Anchor Bible 24C, 1995) calls this the democratization of the prophetic gift that had previously belonged to chosen individuals. document-joel lists yahweh as the sole deity of the book.",
+              "parallels": [
+                {
+                  "label": "YHWH of Acts 2 ('God declares')",
+                  "textId": "acts-2-pentecost",
+                  "note": "Peter's citation re-voices YHWH's first-person promise as the act of the one God now poured out on the gathered community (Acts 2:17). Wolff (Hermeneia, 1977)."
+                }
+              ]
+            },
+            {
+              "word": "your sons and your daughters shall prophesy",
+              "node": "fulfillment-of-prophecy",
+              "type": "theme",
+              "note": "Prophecy becomes a universal possession rather than the office of a few — the inversion that the New Testament reads as fulfilled 'in the last days.' Crenshaw (Joel, Anchor Bible, 1995) and Wolff (Hermeneia, 1977) both note that Joel anticipates the cessation-of-mediated-prophecy theme; Luke-Acts makes it the explicit promise-fulfillment hinge.",
+              "parallels": [
+                {
+                  "label": "Acts 2:16 — 'this is that which was spoken by the prophet Joel'",
+                  "textId": "acts-2-pentecost",
+                  "note": "The Lukan fulfillment formula ('this is that') applied directly to Joel; the Codex fulfillment-of-prophecy theme is keyed to Luke-Acts and the Septuagint. Wolff (Hermeneia, 1977)."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "2:29",
+          "text": "And also upon the servants and upon the handmaids in those days will I pour out my spirit.",
+          "textVersions": {
+            "kjv": "And also upon the servants and upon the handmaids in those days will I pour out my spirit."
+          },
+          "entities": [
+            {
+              "word": "upon the servants and upon the handmaids",
+              "node": "holy-spirit",
+              "type": "deity",
+              "note": "The outpouring reaches even bondservants of both sexes — the most radical edge of the universalism. Christian theology reads this verse, via Acts 2:18, as the charter of the Holy Spirit given to every believer; the Codex holy-spirit node carries the explicit 'Ruach ha-Qodesh (Hebrew Bible substrate)' lineage back to texts like this one. Crenshaw (Anchor Bible, 1995) stresses the inclusion of slaves as the high-water mark of Joel's egalitarian vision.",
+              "parallels": [
+                {
+                  "label": "Acts 2:18 — 'on my servants and on my handmaidens I will pour out... my Spirit'",
+                  "textId": "acts-2-pentecost",
+                  "note": "Peter's version preserves the servants/handmaidens clause and even adds 'and they shall prophesy,' underscoring the universal pneumatology. Wolff (Hermeneia, 1977)."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "The cosmic portents and the day of the LORD (2:30–32)",
+      "verses": [
+        {
+          "ref": "2:30",
+          "text": "And I will shew wonders in the heavens and in the earth, blood, and fire, and pillars of smoke.",
+          "textVersions": {
+            "kjv": "And I will shew wonders in the heavens and in the earth, blood, and fire, and pillars of smoke."
+          },
+          "entities": [
+            {
+              "word": "blood, and fire, and pillars of smoke",
+              "node": "cosmic-cataclysm",
+              "type": "theme",
+              "note": "The triad of portents inaugurates the cosmic-dissolution imagery of the Day; Crenshaw (Joel, Anchor Bible, 1995) reads the locust-plague and the 'fire' and 'smoke' as the natural disaster mythologized into eschatological sign. The Codex cosmic-cataclysm theme (aka Götterdämmerung, pralaya, ekpyrosis) gathers these world-ending portents across traditions, with Eliade (The Myth of the Eternal Return) as its anchor.",
+              "parallels": [
+                {
+                  "label": "Völuspá — Ragnarök's fire and the world's burning",
+                  "textId": "voluspa",
+                  "note": "The Norse end brings fire (Surtr) and the dissolution of the ordered cosmos; Eliade (Myth of the Eternal Return) treats both as instances of the recurrent world-catastrophe pattern — a comparative motif, not a borrowing."
+                }
+              ]
+            },
+            {
+              "word": "wonders in the heavens and in the earth",
+              "node": "apocalyptic-revelation",
+              "type": "theme",
+              "note": "The cosmic 'wonders' are signs unveiling the imminent divine intervention — the apocalyptic mode of disclosure. Collins (The Apocalyptic Imagination) places Joel on the trajectory from prophecy toward apocalypse; document-joel's own front-matter lists apocalyptic-revelation as a primary theme of the book.",
+              "parallels": [
+                {
+                  "label": "Revelation 6 / Daniel — cosmic signs of the end",
+                  "note": "Collins (The Apocalyptic Imagination) traces Joel's darkened-sun and bloodied-moon into the full apocalypses (Daniel, Revelation 6:12). [not yet staged]"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "2:31",
+          "text": "The sun shall be turned into darkness, and the moon into blood, before the great and the terrible day of the LORD come.",
+          "textVersions": {
+            "kjv": "The sun shall be turned into darkness, and the moon into blood, before the great and the terrible day of the LORD come."
+          },
+          "entities": [
+            {
+              "word": "The sun shall be turned into darkness, and the moon into blood",
+              "node": "cosmic-cataclysm",
+              "type": "symbol",
+              "note": "The darkening of the sun and the bloodying of the moon are the signature cosmic-portent of the biblical Day; Wolff (Joel and Amos, Hermeneia, 1977) reads the imagery as the unmaking of creation's lights that precedes judgment. The same pair recurs in Isaiah 13, Ezekiel 32, Mark 13, and Revelation 6.",
+              "parallels": [
+                {
+                  "label": "Völuspá — the sun turns black, the stars vanish",
+                  "textId": "voluspa",
+                  "note": "At Ragnarök the sun blackens and the stars fall from heaven; Eliade (The Myth of the Eternal Return) reads the darkening-of-the-luminaries as a shared structure of the cosmic end-day, a comparative convergence rather than transmission."
+                },
+                {
+                  "label": "Amos 5 — the Day as darkness, not light",
+                  "textId": "amos-5",
+                  "note": "Amos 5:18–20 already makes the Day darkness; Joel literalizes the darkening into the sun itself. Wolff (Hermeneia, 1977) places Joel inside the Day-of-the-LORD stream Amos inaugurated."
+                }
+              ]
+            },
+            {
+              "word": "the great and the terrible day of the LORD",
+              "node": "end-times-judgment",
+              "type": "theme",
+              "note": "The yom YHWH — the Day of the LORD — is the climactic divine intervention of judgment and reversal; the Codex end-times-judgment node carries 'Day of the Lord' among its aka and lists the early Hebrew prophets among its appearances. Wolff (Joel and Amos, Hermeneia, 1977) and Crenshaw (Anchor Bible, 1995) both treat Joel as a, perhaps the, central post-exilic development of this tradition inherited from Amos and Zephaniah.",
+              "parallels": [
+                {
+                  "label": "Amos 5 — the original prophetic Day-of-the-LORD",
+                  "textId": "amos-5",
+                  "note": "The 8th-century prophet first turned the Day against Israel; Joel reworks it for the post-exilic community. Wolff (Hermeneia, 1977) reads the two together."
+                },
+                {
+                  "label": "Final judgment across traditions (Yawm al-Din, the great assize)",
+                  "note": "The Codex final-judgment node (redirected into end-times-judgment) gathers the Day with the Islamic Yawm al-Din and the Zoroastrian judgment; Collins (The Apocalyptic Imagination) maps the convergence. [not yet staged]"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "2:32",
+          "text": "And it shall come to pass, that whosoever shall call on the name of the LORD shall be delivered: for in mount Zion and in Jerusalem shall be deliverance, as the LORD hath said, and in the remnant whom the LORD shall call.",
+          "textVersions": {
+            "kjv": "And it shall come to pass, that whosoever shall call on the name of the LORD shall be delivered: for in mount Zion and in Jerusalem shall be deliverance, as the LORD hath said, and in the remnant whom the LORD shall call."
+          },
+          "entities": [
+            {
+              "word": "whosoever shall call on the name of the LORD shall be delivered",
+              "node": "yahweh",
+              "type": "deity",
+              "note": "Deliverance hinges on calling on the name of YHWH — a universal soteriological clause Paul will later cite (Romans 10:13) to extend salvation to Jew and Greek alike. Crenshaw (Joel, Anchor Bible 24C, 1995) notes the tension between this universal 'whosoever' and the particular 'remnant' that follows; Wolff (Hermeneia, 1977) treats the verse as the hinge of the whole oracle.",
+              "parallels": [
+                {
+                  "label": "Acts 2:21 — 'whosoever shall call on the name of the Lord shall be saved'",
+                  "textId": "acts-2-pentecost",
+                  "note": "Peter ends the Joel citation on exactly this clause, making it the gospel invitation of Pentecost. Wolff (Hermeneia, 1977) calls it the verse that bears the whole weight of the New Testament reception."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
