@@ -24443,3 +24443,731 @@ SCRIPTURE_TEXTS['joel-2-28'] = {
     }
   ]
 };
+
+// ── DAVIDIC / MESSIANIC KINGSHIP (Psalm 2 / 2 Samuel 7 / Psalm 72) — 2026-06-20 ─
+
+// -- Psalm 2 (Why do the heathen rage — the LORD's Anointed: 'Thou art my Son; this day have I begotten thee') --
+SCRIPTURE_TEXTS['psalm-2'] = {
+  "id": "psalm-2",
+  "title": "Psalm 2 (Why do the heathen rage — the LORD's Anointed: 'Thou art my Son; this day have I begotten thee')",
+  "shortTitle": "Psalm 2",
+  "corpus": "Hebrew Bible (Psalms · Book I)",
+  "tradId": "tradition-second-temple-judaism",
+  "date": "c. 10th–6th century BCE (pre-exilic royal enthronement psalm; Book I of the Psalter)",
+  "docNode": "phase-2-005-davidic-psalms",
+  "language": "Hebrew · King James Version (1611) — public domain",
+  "translations": [
+    {
+      "id": "kjv",
+      "label": "KJV (1611)",
+      "note": "King James Version — public domain"
+    }
+  ],
+  "intro": "Psalm 2 is the classic royal/enthronement psalm of the Davidic monarchy and the New Testament's most-quoted messianic proof-text. The nations rage and their kings take counsel against the LORD and his Anointed (mashiah); God laughs from heaven, sets his king on Zion, and pronounces the adoption-decree 'Thou art my Son; this day have I begotten thee,' granting him the nations for an inheritance and ending with the charge 'Kiss the Son.' The divine-sonship language is the shared ancient-Near-Eastern sacral-kingship idiom — Pharaoh begotten of Ra/Amun, the Mesopotamian king adopted with 'you are my son' enthronement formulae — here adapted to YHWH's covenant with the house of David rather than borrowed wholesale (Mowinckel, Mettinger, Day). Read with its companion royal psalm (Ps 110) and the everlasting dominion of Daniel 7, it is the seedbed of later Jewish and Christian messianism (Collins).",
+  "crossTradition": [
+    {
+      "label": "Psalm 110 — the priest-king at God's right hand",
+      "textId": "psalm-110",
+      "note": "The companion royal/coronation psalm. Where Ps 2 declares the king's divine sonship and gives him the nations, Ps 110 enthrones him at YHWH's right hand and ordains his priesthood 'after the order of Melchizedek.' Mowinckel (He That Cometh, 1956) groups both as enthronement oracles of the royal cult; the New Testament pairs them as the twin Messianic proof-texts."
+    },
+    {
+      "label": "Daniel 7 — the everlasting dominion given the Son of Man",
+      "textId": "daniel-7",
+      "note": "Daniel 7:14 grants the 'one like a son of man' an everlasting dominion over all peoples and nations — the apocalyptic transformation of Psalm 2's universal-rule decree ('the heathen for thine inheritance'). Collins (The Scepter and the Star) traces the line from the royal psalm to the eschatological deliverer."
+    },
+    {
+      "label": "Egyptian royal divine-sonship (Pharaoh begotten of Ra/Amun)",
+      "note": "In Egyptian coronation theology Pharaoh is 'the son of Ra,' physically begotten of the god (the divine-birth reliefs of Hatshepsut and Amenhotep III); the adoption-formula 'this day have I begotten thee' is the Israelite analogue of this sacral-kingship idiom, applied to YHWH's covenant king rather than to a literal theogamy. Mettinger (King and Messiah, 1976) and Day (Psalms, 1990) read it as adapted convention, not borrowing."
+    },
+    {
+      "label": "Mesopotamian adoption of the king ('you are my son')",
+      "note": "Mesopotamian royal ideology declares the king the son of the city-god — the enthronement language by which the deity adopts the ruler. Mowinckel (1956) sets Psalm 2:7 within this wider ANE coronation pattern: the begetting is juridical adoption at accession, the moment the king becomes the god's son and viceregent."
+    }
+  ],
+  "sections": [
+    {
+      "heading": "The nations rage against the LORD and his Anointed",
+      "verses": [
+        {
+          "ref": "2:1",
+          "text": "Why do the heathen rage, and the people imagine a vain thing?",
+          "textVersions": {
+            "kjv": "Why do the heathen rage, and the people imagine a vain thing?"
+          },
+          "entities": [
+            {
+              "word": "the heathen",
+              "node": "messianic-future-savior",
+              "type": "theme",
+              "note": "The raging nations (Heb. goyim) are the rebellious peoples whose subjection to YHWH's king the psalm proclaims — the universal-rule horizon that later feeds Jewish and Christian messianic expectation. Collins (The Scepter and the Star) traces the line from this royal hope to the future deliverer.",
+              "parallels": [
+                {
+                  "label": "Daniel 7 — dominion over all peoples",
+                  "textId": "daniel-7",
+                  "note": "the everlasting dominion over 'all people, nations, and languages' given the one like a son of man — the eschatological reach of Psalm 2's nations-motif"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "2:2",
+          "text": "The kings of the earth set themselves, and the rulers take counsel together, against the LORD, and against his anointed, saying,",
+          "textVersions": {
+            "kjv": "The kings of the earth set themselves, and the rulers take counsel together, against the LORD, and against his anointed, saying,"
+          },
+          "entities": [
+            {
+              "word": "the LORD",
+              "node": "yahweh",
+              "type": "deity",
+              "note": "YHWH, the covenant God of Israel, whose decree installs and defends the Davidic king; the psalm's whole force is that rebellion against the king is rebellion against YHWH himself. Day (Psalms, 1990) reads the royal psalms as the cult-theology of YHWH's earthly viceregent.",
+              "parallels": [
+                {
+                  "label": "YHWH enthroned at whose right hand the king sits",
+                  "textId": "psalm-110",
+                  "note": "in the companion psalm YHWH sets the king at his right hand and subdues his enemies — the same divine-warrior backing of the monarch"
+                }
+              ]
+            },
+            {
+              "word": "his anointed",
+              "node": "messianism",
+              "type": "theme",
+              "note": "The mashiah ('anointed one') is the reigning Davidic king, consecrated with oil at his accession; this is the root royal sense from which the later eschatological 'Messiah' develops. Mowinckel (He That Cometh, 1956) distinguishes the cultic royal anointed of the enthronement psalms from the future Messiah it eventually generates.",
+              "parallels": [
+                {
+                  "label": "Daniel 7 — the everlasting kingdom",
+                  "textId": "daniel-7",
+                  "note": "the apocalyptic dominion that the royal-messianic hope becomes once the monarchy has fallen"
+                },
+                {
+                  "label": "the priest-king 'after the order of Melchizedek'",
+                  "textId": "psalm-110",
+                  "note": "the companion enthronement oracle anointing the same royal figure as priest as well as king"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "God sets his king upon Zion — 'Thou art my Son'",
+      "verses": [
+        {
+          "ref": "2:4",
+          "text": "He that sitteth in the heavens shall laugh: the Lord shall have them in derision.",
+          "textVersions": {
+            "kjv": "He that sitteth in the heavens shall laugh: the Lord shall have them in derision."
+          },
+          "entities": []
+        },
+        {
+          "ref": "2:6",
+          "text": "Yet have I set my king upon my holy hill of Zion.",
+          "textVersions": {
+            "kjv": "Yet have I set my king upon my holy hill of Zion."
+          },
+          "entities": [
+            {
+              "word": "my king",
+              "node": "david-king",
+              "type": "person",
+              "note": "The Davidic king whom YHWH installs on Zion; Psalm 2 is the coronation/enthronement liturgy of the house of David, the dynasty to whom the eternal covenant of 2 Samuel 7 is given. Mettinger (King and Messiah, 1976) reads the psalm as the accession ritual of the Davidic monarch.",
+              "parallels": [
+                {
+                  "label": "the king enthroned at God's right hand",
+                  "textId": "psalm-110",
+                  "note": "the companion psalm of the same Davidic royal cult"
+                }
+              ]
+            },
+            {
+              "word": "my holy hill of Zion",
+              "node": "sacred-king",
+              "type": "theme",
+              "note": "Zion, the royal-temple mountain, is the cultic seat of the sacral king — the holy hill where YHWH's chosen ruler is installed and from which his rule radiates over the nations. Day (Psalms, 1990) ties the Zion-theology of the royal psalms to the ideology of divine kingship.",
+              "parallels": [
+                {
+                  "label": "Egyptian Pharaoh enthroned as son of the god",
+                  "note": "the sacral king installed on the god's holy seat is the broad ANE pattern; Mettinger (King and Messiah, 1976) reads Israel's Zion-kingship as its covenant-bound adaptation"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "2:7",
+          "text": "I will declare the decree: the LORD hath said unto me, Thou art my Son; this day have I begotten thee.",
+          "textVersions": {
+            "kjv": "I will declare the decree: the LORD hath said unto me, Thou art my Son; this day have I begotten thee."
+          },
+          "entities": [
+            {
+              "word": "Thou art my Son; this day have I begotten thee",
+              "node": "divine-kingship",
+              "type": "theme",
+              "note": "The coronation adoption-formula: at his accession the Davidic king becomes YHWH's 'son,' begotten 'this day' (the enthronement). Mettinger (King and Messiah, 1976) and Mowinckel (He That Cometh, 1956) read the begetting as juridical adoption, the shared ANE sacral-kingship idiom — Pharaoh 'son of Ra,' the Mesopotamian king adopted with 'you are my son' — adapted to YHWH's covenant with David, not borrowed as literal theogamy. Day (Psalms, 1990) stresses the convention is reshaped by Israelite covenant theology.",
+              "parallels": [
+                {
+                  "label": "Egyptian Pharaoh begotten of Ra/Amun",
+                  "note": "the divine-birth coronation theology (Hatshepsut, Amenhotep III) in which the king is physically begotten of the god — the Egyptian form of royal divine-sonship the formula echoes by convention (Mettinger 1976)"
+                },
+                {
+                  "label": "Mesopotamian 'you are my son' enthronement language",
+                  "note": "the city-god's adoption of the king at accession; Mowinckel (1956) sets Ps 2:7 within this ANE coronation pattern"
+                },
+                {
+                  "label": "the Son of Man given everlasting dominion",
+                  "textId": "daniel-7",
+                  "note": "the same sonship-and-universal-rule complex transformed into apocalyptic key (Collins, The Scepter and the Star)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "2:8",
+          "text": "Ask of me, and I shall give thee the heathen for thine inheritance, and the uttermost parts of the earth for thy possession.",
+          "textVersions": {
+            "kjv": "Ask of me, and I shall give thee the heathen for thine inheritance, and the uttermost parts of the earth for thy possession."
+          },
+          "entities": [
+            {
+              "word": "the uttermost parts of the earth for thy possession",
+              "node": "sacred-king",
+              "type": "theme",
+              "note": "The universal dominion granted the sacral king — world-rule as the gift of the enthroning god. Mowinckel (He That Cometh, 1956) reads the cosmic scope of the king's rule as standard royal-cult hyperbole later read eschatologically.",
+              "parallels": [
+                {
+                  "label": "Daniel 7 — dominion to the ends of the earth",
+                  "textId": "daniel-7",
+                  "note": "'all people, nations, and languages should serve him' — the eschatological form of the world-rule decree"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Kiss the Son",
+      "verses": [
+        {
+          "ref": "2:12",
+          "text": "Kiss the Son, lest he be angry, and ye perish from the way, when his wrath is kindled but a little. Blessed are all they that put their trust in him.",
+          "textVersions": {
+            "kjv": "Kiss the Son, lest he be angry, and ye perish from the way, when his wrath is kindled but a little. Blessed are all they that put their trust in him."
+          },
+          "entities": [
+            {
+              "word": "Kiss the Son",
+              "node": "messianism",
+              "type": "theme",
+              "note": "The closing charge of homage to the enthroned royal 'Son' — submission to YHWH's anointed king. This royal-homage line, with v.7's begetting, became central to later messianic reading: the New Testament cites Ps 2:7 of Christ (Acts 13:33, Heb 1:5, 5:5). Collins (The Scepter and the Star) and Mowinckel (1956) trace the path from cultic royal psalm to messianic proof-text.",
+              "parallels": [
+                {
+                  "label": "the priest-king at God's right hand",
+                  "textId": "psalm-110",
+                  "note": "the other royal psalm the New Testament reads of the Messiah; together the twin proof-texts of messianic enthronement"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
+
+// -- 2 Samuel 7:8–16 (The Davidic Covenant — Nathan's oracle of the everlasting throne) --
+SCRIPTURE_TEXTS['2-samuel-7'] = {
+  "id": "2-samuel-7",
+  "title": "2 Samuel 7:8–16 (The Davidic Covenant — Nathan's oracle of the everlasting throne)",
+  "shortTitle": "2 Samuel 7",
+  "corpus": "Hebrew Bible (Former Prophets · Deuteronomistic History · 2 Samuel)",
+  "tradId": "tradition-second-temple-judaism",
+  "date": "narrative set c. 10th c. BCE (United Monarchy); the oracle in its present Deuteronomistic form c. 7th–6th c. BCE",
+  "docNode": "document-2-samuel",
+  "language": "Hebrew · King James Version (1611) — public domain (verified verbatim against the Project Gutenberg KJV, eBook #10)",
+  "translations": [
+    {
+      "id": "kjv",
+      "label": "KJV (1611)",
+      "note": "King James Version — public domain"
+    }
+  ],
+  "intro": "Nathan's oracle in 2 Samuel 7 is the foundational dynastic covenant of the Hebrew Bible — the textual root from which all later messianism grows. When David proposes to build YHWH a \"house\" (a temple), the oracle turns the word back on him: YHWH will instead build David a \"house\" (a dynasty), set up his \"seed\" after him, \"stablish the throne of his kingdom for ever,\" and adopt the king as a son (\"I will be his father, and he shall be my son\"). Tryggve Mettinger (King and Messiah, 1976) and P. Kyle McCarter (II Samuel, Anchor Bible, 1984) read this as the charter of Judahite royal theology — an unconditional grant of perpetual kingship to the Davidic line. Jon D. Levenson stresses its character as an \"eternal covenant\" of grant rather than of obligation, and Walter Brueggemann underscores the radical tension between the dynastic promise and the prophetic word that delivers it. The same promise is read across the Ancient Near East against the god-guaranteed perpetual dynasty of Mesopotamian and Ugaritic royal grants, where the patron god \"builds the house\" of the king.",
+  "crossTradition": [
+    {
+      "label": "Psalm 110 — the priest-king of the Davidic line at God's right hand",
+      "textId": "psalm-110",
+      "note": "Psalm 110 is the royal-enthronement oracle that develops 2 Samuel 7's adopted Davidic king into the figure seated at YHWH's right hand and sworn an eternal priesthood. John Day (King and Messiah in Israel and the Ancient Near East, 1998) and Mettinger 1976 link the dynastic grant of 2 Samuel 7 to the enthronement royal psalms as the twin pillars of the Davidic royal cult."
+    },
+    {
+      "label": "Luke 1 — the Magnificat: the covenant carried into the Nativity",
+      "textId": "luke-1-magnificat",
+      "note": "Mary's song closes by claiming the fulfilment of the promise sworn 'to Abraham, and to his seed for ever' (Luke 1:55), the same perpetual-seed covenant language 2 Samuel 7 fixes on the house of David. Brueggemann and Levenson trace the eternal Davidic grant forward as the matrix the Gospels invoke to install Jesus as Davidic heir."
+    },
+    {
+      "label": "ANE eternal-dynasty royal ideology — the god who builds the king's 'house'",
+      "note": "Mettinger 1976 and McCarter 1984 set the oracle within the Ancient-Near-Eastern royal grant: the Mesopotamian and Ugaritic ideology in which a patron god guarantees a perpetual dynasty and 'builds the house' of the king. The wordplay of 2 Samuel 7 (temple-house vs dynasty-house) is the Israelite reflex of this shared sacral-kingship convention — convergent royal ideology, not a literary borrowing."
+    },
+    {
+      "label": "Davidic-covenant theology — the unconditional eternal grant",
+      "note": "Jon D. Levenson reads 2 Samuel 7 as the paradigm 'covenant of grant': an unconditional, everlasting commitment to the Davidic line, contrasted with the conditional Sinai covenant. Mettinger 1976 makes this the seedbed of Israelite messianism — the textual root from which the expectation of an eternal anointed king of David's seed later grows."
+    }
+  ],
+  "sections": [
+    {
+      "heading": "The promise to David — 'I took thee from the sheepcote'",
+      "verses": [
+        {
+          "ref": "7:8",
+          "text": "Now therefore so shalt thou say unto my servant David, Thus saith the LORD of hosts, I took thee from the sheepcote, from following the sheep, to be ruler over my people, over Israel:",
+          "textVersions": {
+            "kjv": "Now therefore so shalt thou say unto my servant David, Thus saith the LORD of hosts, I took thee from the sheepcote, from following the sheep, to be ruler over my people, over Israel:"
+          },
+          "entities": [
+            {
+              "word": "my servant David",
+              "node": "david-king",
+              "type": "person",
+              "note": "David, the shepherd-king taken 'from following the sheep' to rule Israel — the recipient of the dynastic oracle and the dynastic founder around whom all later messianism crystallises. McCarter (II Samuel, 1984) treats the oracle as the legitimating charter of David's house.",
+              "parallels": [
+                {
+                  "label": "Psalm 110 — the enthroned Davidic king",
+                  "textId": "psalm-110",
+                  "note": "the royal-cult enthronement of the same Davidic line seated at YHWH's right hand (Day 1998)"
+                }
+              ]
+            },
+            {
+              "word": "Thus saith the LORD of hosts",
+              "node": "yahweh",
+              "type": "deity",
+              "note": "YHWH, the covenant-god who issues the dynastic grant through the prophet Nathan; the divine guarantor whose word 'builds the house' of David. Mettinger 1976 reads the oracle as YHWH's unconditional commitment to the royal line.",
+              "parallels": [
+                {
+                  "label": "ANE patron-god of the dynasty",
+                  "note": "the Mesopotamian/Ugaritic royal grant in which the patron god guarantees a perpetual dynasty (Mettinger 1976; McCarter 1984)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "7:9",
+          "text": "And I was with thee whithersoever thou wentest, and have cut off all thine enemies out of thy sight, and have made thee a great name, like unto the name of the great men that are in the earth.",
+          "textVersions": {
+            "kjv": "And I was with thee whithersoever thou wentest, and have cut off all thine enemies out of thy sight, and have made thee a great name, like unto the name of the great men that are in the earth."
+          },
+          "entities": [
+            {
+              "word": "made thee a great name",
+              "node": "divine-kingship",
+              "type": "theme",
+              "note": "The 'great name' granted by the deity is the legitimation of sacral kingship — the king's renown is the god's gift, a topos of Ancient-Near-Eastern royal theology. Mettinger 1976 situates the motif within the shared ideology of divine kingship.",
+              "parallels": [
+                {
+                  "label": "ANE sacral kingship — the god-given royal name",
+                  "note": "the king's name and victory as the patron god's grant, a shared Near-Eastern royal convention (Mettinger 1976)"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "The everlasting throne — 'I will be his father, and he shall be my son'",
+      "verses": [
+        {
+          "ref": "7:11",
+          "text": "And as since the time that I commanded judges to be over my people Israel, and have caused thee to rest from all thine enemies. Also the LORD telleth thee that he will make thee an house.",
+          "textVersions": {
+            "kjv": "And as since the time that I commanded judges to be over my people Israel, and have caused thee to rest from all thine enemies. Also the LORD telleth thee that he will make thee an house."
+          },
+          "entities": [
+            {
+              "word": "make thee an house",
+              "node": "theme-divine-kingship-and-temple-as-royal-pact",
+              "type": "theme",
+              "note": "The pivotal wordplay: David offered to build YHWH a 'house' (temple); YHWH answers that he will build David a 'house' (dynasty). The temple-as-royal-pact and the dynastic grant are fused in one term. McCarter 1984 and Brueggemann read the bayit pun as the structural hinge of the oracle.",
+              "parallels": [
+                {
+                  "label": "ANE temple-building royal inscriptions",
+                  "note": "the king's temple-building as the architectural expression of his covenant with the patron deity (Gudea, Nabonidus); the Israelite reflex (Mettinger 1976)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "7:12",
+          "text": "And when thy days be fulfilled, and thou shalt sleep with thy fathers, I will set up thy seed after thee, which shall proceed out of thy bowels, and I will establish his kingdom.",
+          "textVersions": {
+            "kjv": "And when thy days be fulfilled, and thou shalt sleep with thy fathers, I will set up thy seed after thee, which shall proceed out of thy bowels, and I will establish his kingdom."
+          },
+          "entities": [
+            {
+              "word": "set up thy seed after thee",
+              "node": "messianic-genealogy",
+              "type": "theme",
+              "note": "The promise of the perpetual 'seed' (zera) of David is the genealogical engine of messianism: the everlasting royal lineage from which the anointed king is expected. Mettinger 1976 makes the Davidic seed-promise the seedbed of later messianic expectation.",
+              "parallels": [
+                {
+                  "label": "Luke 1 — 'to Abraham, and to his seed for ever'",
+                  "textId": "luke-1-magnificat",
+                  "note": "the Magnificat claims the same perpetual-seed covenant fulfilled in the Nativity (Luke 1:55)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "7:13",
+          "text": "He shall build an house for my name, and I will stablish the throne of his kingdom for ever.",
+          "textVersions": {
+            "kjv": "He shall build an house for my name, and I will stablish the throne of his kingdom for ever."
+          },
+          "entities": [
+            {
+              "word": "stablish the throne of his kingdom for ever",
+              "node": "messianism",
+              "type": "theme",
+              "note": "The everlasting throne (kisse) of David's line is the textual root of all later messianism — the unconditional, perpetual kingship Mettinger (King and Messiah, 1976) traces forward into the expectation of an eternal anointed Davidide. Levenson reads the 'for ever' as the mark of the eternal covenant of grant.",
+              "parallels": [
+                {
+                  "label": "Psalm 110 — the eternal priest-king",
+                  "textId": "psalm-110",
+                  "note": "the everlasting royal-priestly office of the same line; the New Testament's chief messianic proof-text (Day 1998)"
+                },
+                {
+                  "label": "ANE eternal-dynasty ideology",
+                  "note": "the god-guaranteed perpetual throne of Mesopotamian/Ugaritic royal grants (Mettinger 1976)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "7:14",
+          "text": "I will be his father, and he shall be my son. If he commit iniquity, I will chasten him with the rod of men, and with the stripes of the children of men:",
+          "textVersions": {
+            "kjv": "I will be his father, and he shall be my son. If he commit iniquity, I will chasten him with the rod of men, and with the stripes of the children of men:"
+          },
+          "entities": [
+            {
+              "word": "I will be his father, and he shall be my son",
+              "node": "divine-kingship",
+              "type": "theme",
+              "note": "The divine adoption of the Davidic king as YHWH's 'son' is the core formula of Israelite divine kingship — the king as the deity's adopted offspring. Mettinger 1976 reads the father-son formula against the Ancient-Near-Eastern adoption of the king by the patron god (cf. the Egyptian pharaoh as son of the god, and the Mesopotamian king's divine sonship).",
+              "parallels": [
+                {
+                  "label": "Psalm 110 / Psalm 2 — the enthroned divine son",
+                  "textId": "psalm-110",
+                  "note": "the companion royal psalms that declare the king's divine sonship and right-hand enthronement (Day 1998)"
+                },
+                {
+                  "label": "Egyptian pharaonic divine sonship",
+                  "note": "the pharaoh as the bodily son of the god; the Near-Eastern royal-adoption convention to which the Davidic formula is a reflex (Mettinger 1976)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "7:16",
+          "text": "And thine house and thy kingdom shall be established for ever before thee: thy throne shall be established for ever.",
+          "textVersions": {
+            "kjv": "And thine house and thy kingdom shall be established for ever before thee: thy throne shall be established for ever."
+          },
+          "entities": [
+            {
+              "word": "thine house and thy kingdom shall be established for ever",
+              "node": "prophet-and-king",
+              "type": "theme",
+              "note": "The oracle is delivered by the prophet Nathan to the king David — the paradigmatic prophet-and-king encounter in which the prophetic word both grants and conditions the throne. Brueggemann reads the prophet as the bearer of the dynastic promise; McCarter 1984 sets Nathan's oracle at the head of the Deuteronomistic theology of kingship.",
+              "parallels": [
+                {
+                  "label": "Davidic-covenant grant theology",
+                  "note": "Levenson's reading of the eternal, unconditional covenant of grant to David's house, mediated by the prophet"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
+
+// -- Psalm 72 (Give the king thy judgments — the ideal king, justice for the poor, dominion from sea to sea) --
+SCRIPTURE_TEXTS['psalm-72'] = {
+  "id": "psalm-72",
+  "title": "Psalm 72 (Give the king thy judgments — the ideal king, justice for the poor, dominion from sea to sea)",
+  "shortTitle": "Psalm 72",
+  "corpus": "Hebrew Bible (Psalms · Royal Psalms)",
+  "tradId": "tradition-second-temple-judaism",
+  "date": "c. 10th–8th century BCE (a royal psalm of the Judahite monarchy; superscribed \"for Solomon\", final form in the Davidic Psalter)",
+  "docNode": "phase-2-005-davidic-psalms",
+  "language": "Hebrew · King James Version (1611) — public domain",
+  "translations": [
+    {
+      "id": "kjv",
+      "label": "KJV (1611)",
+      "note": "King James Version — public domain"
+    }
+  ],
+  "intro": "Psalm 72 is the great royal psalm of justice: a prayer that God endow the king with his own judgments and righteousness so that the throne becomes the instrument of God's justice on earth. Its centre is not conquest but the protection of the powerless — the king \"shall judge thy poor with judgment\", \"deliver the needy when he crieth\", and \"break in pieces the oppressor\" — and from that justice flows cosmic fertility, the king descending \"like rain upon the mown grass\" while the righteous flourish and his dominion reaches \"from sea to sea\". Sigmund Mowinckel read it as a coronation liturgy of the pre-exilic royal cult, and John Day set it inside the wider Ancient-Near-Eastern royal ideology — the king as guarantor of order, the \"shepherd of the people\", the rain-bringer — that runs from the prologue of Hammurabi's Code (the king raised up \"to cause justice to prevail... that the strong may not oppress the weak\") through the Egyptian king as upholder of Ma'at. Its portrait of the just, fertility-bringing, world-ruling king fed directly into later messianism, which projected the psalm's ideal onto a coming anointed one.",
+  "crossTradition": [
+    {
+      "label": "Psalm 110 — the enthroned Davidic king",
+      "textId": "psalm-110",
+      "note": "The companion royal psalm: Psalm 110 installs the king at YHWH's right hand as eternal priest-king, Psalm 72 specifies what that throne is FOR — justice for the poor and cosmic fertility. Mowinckel (He That Cometh, 1956) and John Day (King and Messiah in Israel and the Ancient Near East, 1998) read both as liturgies of the same pre-exilic royal cult; together they are the twin headwaters of Hebrew royal-messianic ideology."
+    },
+    {
+      "label": "Luke 1 — the Magnificat (the king who lifts the poor and casts down the mighty)",
+      "textId": "luke-1-magnificat",
+      "note": "Mary's song carries Psalm 72's justice-reversal into the Gospel: the king who 'shall break in pieces the oppressor' and 'deliver the needy' becomes the God who 'hath put down the mighty from their seats, and exalted them of low degree'. Moshe Weinfeld (Social Justice in Ancient Israel, 1995) traces this royal-justice ideal — the protection of the poor as the king's first duty — as the continuous thread the New Testament inherits and radicalises."
+    },
+    {
+      "label": "Code of Hammurabi — the king set up to make justice prevail",
+      "note": "The prologue of Hammurabi's Code declares the king raised up by the gods 'to cause justice to prevail in the land, to destroy the wicked and the evil-doers; so that the strong should not harm the weak'. Day (Psalms, 1990; King and Messiah, 1998) treats this Mesopotamian royal-justice ideology as the direct Ancient-Near-Eastern background to Psalm 72: the king as the divinely-appointed guarantor of justice for the powerless."
+    },
+    {
+      "label": "Egyptian kingship — the king as upholder of Ma'at",
+      "note": "In Egyptian royal theology the pharaoh's whole legitimacy is to establish and maintain Ma'at — truth, justice, cosmic order — against chaos. Othmar Keel (The Symbolism of the Biblical World, 1978) and Moshe Weinfeld read Psalm 72's king-as-guarantor-of-justice and king-as-source-of-cosmic-fertility against this Egyptian pattern: the just king sustains the order of the world itself."
+    },
+    {
+      "label": "Mesopotamian royal ideology — the 'shepherd of the people' and the rain-bringing king",
+      "note": "Mesopotamian kings styled themselves the 'shepherd' (re'um) of their people and their reigns as eras of abundance and rain. Keel (1978) and Day (1990) connect Psalm 72's image of the king descending 'like rain upon the mown grass', under whom 'the righteous flourish', to this Ancient-Near-Eastern motif of the just king as the source of fertility and life for the land."
+    }
+  ],
+  "sections": [
+    {
+      "heading": "Give the king thy judgments",
+      "verses": [
+        {
+          "ref": "72:1",
+          "text": "Give the king thy judgments, O God, and thy righteousness unto the king's son.",
+          "textVersions": {
+            "kjv": "Give the king thy judgments, O God, and thy righteousness unto the king's son."
+          },
+          "entities": [
+            {
+              "word": "the king",
+              "node": "divine-kingship",
+              "type": "theme",
+              "note": "The Judahite king receives God's own 'judgments' and 'righteousness' — the throne is the channel of divine justice on earth, the central claim of Ancient-Near-Eastern sacral kingship. John Day (King and Messiah in Israel and the Ancient Near East, 1998) sets Psalm 72 inside this royal ideology.",
+              "parallels": [
+                {
+                  "label": "Hammurabi (Babylonian)",
+                  "note": "the king raised up by the gods to make justice prevail (Code prologue); Day (1998) treats this as the direct ANE background"
+                },
+                {
+                  "label": "Pharaoh as upholder of Ma'at (Egyptian)",
+                  "note": "the king's legitimacy is to maintain cosmic order/justice; Keel, The Symbolism of the Biblical World (1978)"
+                }
+              ]
+            },
+            {
+              "word": "O God",
+              "node": "yahweh",
+              "type": "deity",
+              "note": "YHWH, the God of Israel, the source of the king's righteousness; the king rules only as the delegate of the divine judge. Mowinckel (He That Cometh, 1956) reads the psalm as a royal-cult liturgy addressed to YHWH.",
+              "parallels": [
+                {
+                  "label": "Marduk and the Babylonian king",
+                  "node": "marduk",
+                  "note": "in Mesopotamia kingship 'descends from heaven'; the king rules as the god's appointee, the structural parallel Day (1998) draws"
+                }
+              ]
+            },
+            {
+              "word": "the king's son",
+              "node": "david-king",
+              "type": "person",
+              "note": "The Davidic dynastic line — the 'king's son' marks the hereditary royal house of David through which the promise of justice is transmitted; ~73 Psalms carry the pseudonymous Davidic attribution.",
+              "parallels": [
+                {
+                  "label": "Solomon (the superscription)",
+                  "node": "solomon-king",
+                  "note": "the psalm is superscribed 'for Solomon' in the KJV/Hebrew; the wise just king is its named ideal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "72:2",
+          "text": "He shall judge thy people with righteousness, and thy poor with judgment.",
+          "textVersions": {
+            "kjv": "He shall judge thy people with righteousness, and thy poor with judgment."
+          },
+          "entities": [
+            {
+              "word": "thy poor with judgment",
+              "node": "sacred-king",
+              "type": "theme",
+              "note": "The first duty of the sacral king is justice for the poor — the defence of the powerless, not conquest, is the proof of legitimate kingship. Moshe Weinfeld (Social Justice in Ancient Israel, 1995) makes Psalm 72 the centrepiece of the ANE royal-justice ideal.",
+              "parallels": [
+                {
+                  "label": "Hammurabi — 'that the strong may not oppress the weak'",
+                  "note": "the Code's prologue makes protection of the weak the king's charter; Weinfeld (1995) and Day (1990) read Ps 72 against it"
+                },
+                {
+                  "label": "Magnificat (Luke 1)",
+                  "textId": "luke-1-magnificat",
+                  "note": "the same justice-reversal: the mighty cast down, the lowly lifted, the hungry filled"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "72:4",
+          "text": "He shall judge the poor of the people, he shall save the children of the needy, and shall break in pieces the oppressor.",
+          "textVersions": {
+            "kjv": "He shall judge the poor of the people, he shall save the children of the needy, and shall break in pieces the oppressor."
+          },
+          "entities": [
+            {
+              "word": "break in pieces the oppressor",
+              "node": "messianism",
+              "type": "theme",
+              "note": "The king who crushes the oppressor and saves the needy is the seed of messianic expectation: when no historical king fulfilled the ideal, it was projected onto a coming anointed one. John J. Collins (The Scepter and the Star, 1995) traces this royal ideal into Second-Temple messianism.",
+              "parallels": [
+                {
+                  "label": "Magnificat (Luke 1)",
+                  "textId": "luke-1-magnificat",
+                  "note": "'he hath put down the mighty from their seats, and exalted them of low degree' — Ps 72's reversal carried into the Gospel"
+                },
+                {
+                  "label": "Psalm 110 — the priest-king",
+                  "textId": "psalm-110",
+                  "note": "the companion royal psalm; together the headwaters of Hebrew messianism (Day 1998)"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "He shall come down like rain",
+      "verses": [
+        {
+          "ref": "72:6",
+          "text": "He shall come down like rain upon the mown grass: as showers that water the earth.",
+          "textVersions": {
+            "kjv": "He shall come down like rain upon the mown grass: as showers that water the earth."
+          },
+          "entities": [
+            {
+              "word": "like rain upon the mown grass",
+              "node": "sacred-king",
+              "type": "theme",
+              "note": "The just king is the source of cosmic fertility — his righteousness makes the land fruitful, the ANE motif of the king as rain-bringer and guarantor of abundance. Othmar Keel (The Symbolism of the Biblical World, 1978) reads this image against the Mesopotamian rain-bringing-king ideology.",
+              "parallels": [
+                {
+                  "label": "Mesopotamian 'shepherd of the people'",
+                  "node": "marduk",
+                  "note": "kings styled their reigns as eras of rain and abundance under the storm-god's favour; Keel (1978)"
+                },
+                {
+                  "label": "Pharaoh and Ma'at (Egyptian)",
+                  "node": "ma-at",
+                  "note": "the king who maintains cosmic order sustains the Nile's fertility; the just king sustains the world's order (Keel 1978)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "72:7",
+          "text": "In his days shall the righteous flourish; and abundance of peace so long as the moon endureth.",
+          "textVersions": {
+            "kjv": "In his days shall the righteous flourish; and abundance of peace so long as the moon endureth."
+          },
+          "entities": [
+            {
+              "word": "the righteous flourish",
+              "node": "divine-kingship",
+              "type": "theme",
+              "note": "Under the just king the cosmos itself flourishes and peace endures 'so long as the moon' — the reign of the sacral king is co-extensive with cosmic order. Mowinckel (He That Cometh, 1956) reads this as the royal cult's vision of the king as the axis of cosmic well-being.",
+              "parallels": [
+                {
+                  "label": "Pharaoh as cosmic axis (Egyptian)",
+                  "node": "ma-at",
+                  "note": "the king's justice (Ma'at) keeps chaos at bay and the world ordered; Keel (1978)"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Dominion from sea to sea",
+      "verses": [
+        {
+          "ref": "72:8",
+          "text": "He shall have dominion also from sea to sea, and from the river unto the ends of the earth.",
+          "textVersions": {
+            "kjv": "He shall have dominion also from sea to sea, and from the river unto the ends of the earth."
+          },
+          "entities": [
+            {
+              "word": "dominion also from sea to sea",
+              "node": "messianism",
+              "type": "theme",
+              "note": "The universal, world-wide reach of the king's rule — 'to the ends of the earth' — is the imperial-ideal element that later messianism absorbed as the world-dominion of the coming anointed one. Collins (The Scepter and the Star, 1995) traces this universalising of the royal ideal.",
+              "parallels": [
+                {
+                  "label": "Psalm 110 — the king who rules in the midst of his enemies",
+                  "textId": "psalm-110",
+                  "note": "the companion royal psalm's vision of world-regency at YHWH's right hand"
+                },
+                {
+                  "label": "Naram-Sin / Mesopotamian 'king of the four quarters'",
+                  "node": "divine-kingship",
+                  "note": "the ANE claim of universal dominion the Hebrew royal psalm shares; Day (1998)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "72:12",
+          "text": "For he shall deliver the needy when he crieth; the poor also, and him that hath no helper.",
+          "textVersions": {
+            "kjv": "For he shall deliver the needy when he crieth; the poor also, and him that hath no helper."
+          },
+          "entities": [
+            {
+              "word": "deliver the needy when he crieth",
+              "node": "sacred-king",
+              "type": "theme",
+              "note": "The psalm closes its justice-portrait where it began: the king's legitimacy is measured by his rescue of the one 'that hath no helper'. Weinfeld (Social Justice in Ancient Israel, 1995) makes this the defining clause of the Hebrew and ANE royal-justice ideal.",
+              "parallels": [
+                {
+                  "label": "Hammurabi — protector of the weak and the orphan",
+                  "node": "hammurabi",
+                  "note": "the Code's epilogue names the king as the one to whom the wronged man comes for justice; the direct ANE parallel (Weinfeld 1995)"
+                },
+                {
+                  "label": "Magnificat (Luke 1)",
+                  "textId": "luke-1-magnificat",
+                  "note": "'he hath filled the hungry with good things' — the same care for the helpless"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
