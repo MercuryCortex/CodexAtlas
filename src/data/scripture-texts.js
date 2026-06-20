@@ -21835,3 +21835,926 @@ SCRIPTURE_TEXTS['1-kings-19-still-small-voice'] = {
     }
   ]
 };
+
+// ── GENESIS PRIMEVAL CYCLE (2/4/6) — 2026-06-20 ───────────────────────────────
+
+// -- Genesis 2:4–9, 15–25 — The Garden of Eden (Man Formed from the Dust) --
+SCRIPTURE_TEXTS['genesis-2'] = {
+  "id": "genesis-2",
+  "title": "Genesis 2:4–9, 15–25 — The Garden of Eden (Man Formed from the Dust)",
+  "shortTitle": "Genesis 2",
+  "corpus": "Hebrew Bible (Torah · J / Yahwist source)",
+  "tradId": "tradition-second-temple-judaism",
+  "date": "c. 950–850 BCE (the J / Yahwist stratum; Wellhausen, Friedman)",
+  "docNode": "document-genesis",
+  "language": "Hebrew · King James Version (1611) — public domain",
+  "translations": [
+    {
+      "id": "kjv",
+      "label": "KJV (1611)",
+      "note": "King James Version — public domain"
+    }
+  ],
+  "intro": "Genesis 2:4b–25 is the J (Yahwist) creation account — the doublet to the Priestly Genesis 1. Where the P account orders the cosmos by divine speech from above, the J account is earthy and artisanal: YHWH forms ('yatsar', the potter's verb) the man from the dust of the 'adamah (ground) and breathes the breath of life into his nostrils, plants a garden eastward in Eden with the tree of life and the tree of the knowledge of good and evil, sets four rivers flowing from it, judges that 'it is not good that the man should be alone,' and builds the woman from the man's rib. The account belongs to the wider ancient Near Eastern anthropogony in which the first humans are shaped from clay or dust: the Mesopotamian Atrahasis and Enuma Elish fashion humanity from clay mixed with the blood of a slain god, and the Egyptian Khnum throws human bodies on a potter's wheel. The honest relationship is one of shared mytheme and regional convergence — Israel reworks the common Near Eastern material into a monotheized garden cosmogony — rather than direct textual borrowing (Speiser; Wenham).",
+  "crossTradition": [
+    {
+      "label": "Atrahasis Epic — humanity fashioned from clay and the blood of a slain god",
+      "textId": "atrahasis-epic",
+      "note": "In Atrahasis I the mother-goddess Mami/Nintu (Ninhursag) mixes clay with the flesh and blood of the slain god We-ila so that humanity bears a divine 'spirit' (etemmu) and is made to carry the gods' labour. Genesis 2 shares the clay/dust-formed-human mytheme but replaces the slain-god ingredient with YHWH's own breath. Lambert & Millard, Atrahasis: The Babylonian Story of the Flood (1969); Speiser, Genesis (Anchor Bible, 1964)."
+    },
+    {
+      "label": "Enuma Elish — man made from the blood of Kingu to bear the gods' labour",
+      "textId": "enuma-elish-1",
+      "note": "In Enuma Elish VI Marduk has Ea fashion humankind from the blood of the slain rebel-god Kingu, expressly to relieve the gods of toil — the same 'humans created to serve the gods' purpose Genesis 2 inverts into 'to dress and keep the garden.' Lambert, Babylonian Creation Myths (2013); Wenham, Genesis 1–15 (WBC, 1987)."
+    },
+    {
+      "label": "Genesis 1 — the Priestly creation account (the doublet)",
+      "textId": "genesis-1",
+      "note": "Genesis 2:4 marks the seam between the two creation stories: the cosmic, speech-ordered P account (1:1–2:4a) and the earthy, garden-centred J account (2:4b–25). The order even differs — in P man is created last, after plants and animals; in J the man is formed first, then the garden, then the animals, then the woman. Classic source-critical doublet (Wellhausen; Speiser)."
+    },
+    {
+      "label": "Genesis 3 — the Fall in the same garden",
+      "textId": "genesis-3",
+      "note": "Genesis 3 is the direct sequel: the same J garden, the same tree of life and tree of knowledge, the same 'adam and his wife, now tempted by the serpent and expelled. Genesis 2 builds the stage (the trees, the command, the woman) that Genesis 3 overturns. Wenham, Genesis 1–15 (WBC, 1987)."
+    },
+    {
+      "label": "Enki and Ninhursag — the Sumerian Dilmun paradise",
+      "note": "The Sumerian 'Enki and Ninhursag' opens in Dilmun, a pure, deathless land where no creature preys and no sickness comes — a paradise-garden watered by Enki, in which eight plants grow and are eaten, prompting a curse and a healing of body-parts (including a rib: Ninti, 'lady of the rib / lady of life'). Kramer noticed the rib-and-life pun as a possible deep background to Eve ('mother of all living') built from Adam's rib. Samuel Noah Kramer, History Begins at Sumer; Thorkild Jacobsen, The Harps That Once."
+    },
+    {
+      "label": "Khnum — the Egyptian ram-god who shapes humanity on the potter's wheel",
+      "note": "At Elephantine and Esna, Khnum is the creator who forms each human body (and its ka) on his potter's wheel from Nile clay — the Egyptian counterpart to YHWH 'forming' ('yatsar', the potter's verb) the man from the dust. A regional convergence on the divine-potter image, not a borrowing. Jan Assmann, The Mind of Egypt; Wenham, Genesis 1–15 (WBC, 1987)."
+    }
+  ],
+  "sections": [
+    {
+      "heading": "Man Formed from the Dust (2:4–9)",
+      "verses": [
+        {
+          "ref": "2:4–5",
+          "text": "These are the generations of the heavens and of the earth when they were created, in the day that the LORD God made the earth and the heavens, And every plant of the field before it was in the earth, and every herb of the field before it grew: for the LORD God had not caused it to rain upon the earth, and there was not a man to till the ground.",
+          "textVersions": {
+            "kjv": "These are the generations of the heavens and of the earth when they were created, in the day that the LORD God made the earth and the heavens, And every plant of the field before it was in the earth, and every herb of the field before it grew: for the LORD God had not caused it to rain upon the earth, and there was not a man to till the ground."
+          },
+          "entities": [
+            {
+              "word": "the LORD God",
+              "node": "yahweh",
+              "type": "deity",
+              "note": "The J source's distinctive double name YHWH 'Elohim ('the LORD God') begins here at 2:4b — the seam where the Priestly creation account (which uses 'Elohim alone) gives way to the Yahwist garden narrative. The personal, anthropomorphic deity who forms, plants, breathes, and walks in the garden. Speiser, Genesis (Anchor Bible, 1964); R.E. Friedman, Who Wrote the Bible?",
+              "parallels": [
+                {
+                  "label": "'Elohim of Genesis 1 (the P account)",
+                  "textId": "genesis-1",
+                  "note": "Genesis 1 uses 'Elohim throughout; the shift to YHWH 'Elohim at 2:4b is the classic source-critical marker of the J/P seam. Wellhausen; Speiser."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "2:7",
+          "text": "And the LORD God formed man of the dust of the ground, and breathed into his nostrils the breath of life; and man became a living soul.",
+          "textVersions": {
+            "kjv": "And the LORD God formed man of the dust of the ground, and breathed into his nostrils the breath of life; and man became a living soul."
+          },
+          "entities": [
+            {
+              "word": "formed man of the dust of the ground",
+              "node": "adam",
+              "type": "person",
+              "note": "The Hebrew puns 'adam (man) on 'adamah (ground): the earth-creature is taken from the earth. The verb 'formed' (yatsar) is the potter's word — YHWH moulds the man as a craftsman moulds clay. This 'first human shaped from clay/dust' mytheme is shared across the ancient Near East, though Genesis uniquely makes the animating ingredient God's own breath rather than a slain god's blood. Speiser, Genesis (Anchor Bible, 1964); Wenham, Genesis 1–15 (WBC, 1987).",
+              "parallels": [
+                {
+                  "label": "Atrahasis — humanity from clay and the blood of We-ila",
+                  "textId": "atrahasis-epic",
+                  "note": "In Atrahasis I, Nintu/Mami (Ninhursag) mixes clay with the flesh and blood of the slain god We-ila, so the human bears a divine etemmu (spirit). Same clay-formed-human mytheme; different animating ingredient. Lambert & Millard, Atrahasis (1969)."
+                },
+                {
+                  "label": "Enuma Elish — man from the blood of Kingu",
+                  "textId": "enuma-elish-1",
+                  "note": "Marduk has Ea create humankind from the blood of the slain rebel Kingu to bear the gods' labour. Lambert, Babylonian Creation Myths (2013)."
+                },
+                {
+                  "label": "Khnum the divine potter (Egyptian)",
+                  "note": "Khnum shapes each human body on his potter's wheel from Nile clay; the Egyptian convergence on the divine-potter image behind Hebrew yatsar ('formed'). Jan Assmann, The Mind of Egypt."
+                }
+              ]
+            },
+            {
+              "word": "breathed into his nostrils the breath of life",
+              "node": "anthropos-myth",
+              "type": "theme",
+              "note": "The divine breath (neshamah / ruach) animating the dust-formed body is the J account's anthropogony — the making of the primal human, the Anthropos. The motif of a first/cosmic man given life by a divine in-breathing or divine substance recurs across traditions (Adam Kadmon, the Gnostic Anthropos, the Vedic Purusha). The 'anthropos-myth' theme is attested in the J source (phase-2-005-hebrew-bible-j-source) itself. Speiser, Genesis (Anchor Bible, 1964).",
+              "parallels": [
+                {
+                  "label": "Atrahasis — the divine etemmu given to humankind",
+                  "textId": "atrahasis-epic",
+                  "note": "The slain god's blood gives humanity an etemmu (ghost/spirit); the structural analogue to YHWH's in-breathed breath of life. Lambert & Millard, Atrahasis (1969)."
+                },
+                {
+                  "label": "Enuma Elish — the divine element from Kingu",
+                  "textId": "enuma-elish-1",
+                  "note": "Humanity carries a divine component from the slain Kingu — the Babylonian version of the 'human animated by a god-given substance' mytheme. Lambert, Babylonian Creation Myths (2013)."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "2:8",
+          "text": "And the LORD God planted a garden eastward in Eden; and there he put the man whom he had formed.",
+          "textVersions": {
+            "kjv": "And the LORD God planted a garden eastward in Eden; and there he put the man whom he had formed."
+          },
+          "entities": [
+            {
+              "word": "a garden eastward in Eden",
+              "node": "tree-of-life",
+              "type": "symbol",
+              "note": "Eden's garden, planted 'eastward,' is the prototypical paradise — an enclosed, well-watered divine garden at the world's source-point. The Septuagint renders gan ('garden') as paradeisos, the Persian loanword for a royal walled park, which gives English 'paradise.' (The Codex 'tree-of-life' symbol — Etz Chayyim — is the garden's central tree; see 2:9.) The walled-garden-of-the-gods type recurs across the Near East. Wenham, Genesis 1–15 (WBC, 1987); Speiser, Genesis (Anchor Bible, 1964).",
+              "parallels": [
+                {
+                  "label": "Dilmun, the Sumerian paradise (Enki and Ninhursag)",
+                  "note": "The Sumerian Dilmun is a pure, deathless land where no creature kills and no sickness comes — the closest Mesopotamian analogue to Eden as a primeval paradise. Samuel Noah Kramer, History Begins at Sumer; Thorkild Jacobsen, The Harps That Once."
+                },
+                {
+                  "label": "Garden of Eden of Genesis 3",
+                  "textId": "genesis-3",
+                  "note": "The same garden, with the same two trees, becomes the scene of the temptation and expulsion in the immediate sequel. Wenham, Genesis 1–15 (WBC, 1987)."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "2:9",
+          "text": "And out of the ground made the LORD God to grow every tree that is pleasant to the sight, and good for food; the tree of life also in the midst of the garden, and the tree of knowledge of good and evil.",
+          "textVersions": {
+            "kjv": "And out of the ground made the LORD God to grow every tree that is pleasant to the sight, and good for food; the tree of life also in the midst of the garden, and the tree of knowledge of good and evil."
+          },
+          "entities": [
+            {
+              "word": "the tree of life",
+              "node": "tree-of-life",
+              "type": "symbol",
+              "note": "The Etz Chayyim, planted 'in the midst of the garden' — the tree whose fruit confers unending life (Gen 3:22), guarded after the expulsion by cherubim and a flaming sword. The life-giving central tree is a widespread sacred-tree symbol: the Mesopotamian stylized 'sacred tree,' the Kabbalistic sefirotic Tree of Life, the Norse Yggdrasil, the Bodhi tree. Wenham, Genesis 1–15 (WBC, 1987); Mircea Eliade, The Sacred and the Profane.",
+              "parallels": [
+                {
+                  "label": "The plant of life in Gilgamesh",
+                  "note": "In Gilgamesh XI the hero wins a thorny plant that 'makes the old man young' from the bottom of the freshwater Apsu, only to lose it to a serpent — the same rejuvenation-plant-and-serpent complex that shadows the Eden trees. Andrew George, The Babylonian Gilgamesh Epic (2003)."
+                },
+                {
+                  "label": "Tree of life retained in Genesis 3",
+                  "textId": "genesis-3",
+                  "note": "Genesis 3:22–24 closes the access to this same tree, the cherubim and flaming sword guarding 'the way of the tree of life.' Wenham, Genesis 1–15 (WBC, 1987)."
+                }
+              ]
+            },
+            {
+              "word": "in the midst of the garden",
+              "node": "world-tree",
+              "type": "symbol",
+              "note": "The central tree at the garden's midpoint functions as a cosmic-tree / world-tree image — the sacred tree at the navel of the ordered world, around which paradise is arranged. The 'world-tree' symbol (Yggdrasil, the Mayan ceiba, the Assyrian sacred tree) marks the cosmic center. Mircea Eliade, The Sacred and the Profane; Images and Symbols.",
+              "parallels": [
+                {
+                  "label": "Yggdrasil, the Norse world-tree",
+                  "note": "The cosmic ash at the centre of the nine worlds — a developed world-tree symbol of the same axis-of-the-world type as the central Eden tree. Eliade, The Sacred and the Profane."
+                }
+              ]
+            },
+            {
+              "word": "the tree of knowledge of good and evil",
+              "node": "fall-of-humanity",
+              "type": "theme",
+              "note": "The tree whose forbidden fruit confers da'at tov wa-ra (the knowing of good and evil) — moral/experiential discernment, set up here as the prohibited centre of the garden that the J account's sequel (Genesis 3) will make the instrument of the fall. The 'fall-of-humanity' theme is grounded in this prohibition. Wenham, Genesis 1–15 (WBC, 1987); Gunkel, Genesis (1901).",
+              "parallels": [
+                {
+                  "label": "The eating of forbidden plants in 'Enki and Ninhursag'",
+                  "note": "In the Sumerian Dilmun myth Enki eats the eight plants he should not, bringing a curse and sickness on himself — a Mesopotamian 'forbidden-eating-in-paradise-brings-affliction' analogue. Kramer, History Begins at Sumer; Jacobsen, The Harps That Once."
+                },
+                {
+                  "label": "The transgression of Genesis 3",
+                  "textId": "genesis-3",
+                  "note": "Genesis 3 is the fulfilment: the woman and the man eat from this very tree, their eyes are opened, and they are driven out. Wenham, Genesis 1–15 (WBC, 1987)."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "The Four Rivers and the Garden's Charge (2:10–17)",
+      "verses": [
+        {
+          "ref": "2:10–14",
+          "text": "And a river went out of Eden to water the garden; and from thence it was parted, and became into four heads. The name of the first is Pison: that is it which compasseth the whole land of Havilah, where there is gold; And the gold of that land is good: there is bdellium and the onyx stone. And the name of the second river is Gihon: the same is it that compasseth the whole land of Ethiopia. And the name of the third river is Hiddekel: that is it which goeth toward the east of Assyria. And the fourth river is Euphrates.",
+          "textVersions": {
+            "kjv": "And a river went out of Eden to water the garden; and from thence it was parted, and became into four heads. The name of the first is Pison: that is it which compasseth the whole land of Havilah, where there is gold; And the gold of that land is good: there is bdellium and the onyx stone. And the name of the second river is Gihon: the same is it that compasseth the whole land of Ethiopia. And the name of the third river is Hiddekel: that is it which goeth toward the east of Assyria. And the fourth river is Euphrates."
+          },
+          "entities": [
+            {
+              "word": "a river went out of Eden",
+              "node": "sacred-river",
+              "type": "symbol",
+              "note": "A single river rises in Eden, waters the garden, and divides into four 'heads' that flow out to the inhabited world — the sacred source-river that makes Eden the watered centre of the earth. The 'sacred-river' symbol explicitly includes the 'rivers of paradise.' Two of the four (Hiddekel = the Tigris; Euphrates) are the real rivers of Mesopotamia, anchoring the mythic geography in the Fertile Crescent. Speiser, Genesis (Anchor Bible, 1964); Wenham, Genesis 1–15 (WBC, 1987).",
+              "parallels": [
+                {
+                  "label": "Dilmun watered by Enki's sweet water",
+                  "note": "In 'Enki and Ninhursag' Enki brings up fresh water to make Dilmun fertile — the paradise-watered-from-its-divine-source motif. Kramer, History Begins at Sumer; Jacobsen, The Harps That Once."
+                }
+              ]
+            },
+            {
+              "word": "Hiddekel",
+              "node": "sacred-river",
+              "type": "symbol",
+              "note": "Hiddekel is the Hebrew name for the Tigris (Akkadian Idiglat); paired with the Euphrates, it places the four-river system squarely in Mesopotamia. The naming of the actual great rivers of Sumer-Babylon roots Eden's mythic geography in the land between the rivers. Speiser, Genesis (Anchor Bible, 1964).",
+              "parallels": []
+            }
+          ]
+        },
+        {
+          "ref": "2:15–17",
+          "text": "And the LORD God took the man, and put him into the garden of Eden to dress it and to keep it. And the LORD God commanded the man, saying, Of every tree of the garden thou mayest freely eat: But of the tree of the knowledge of good and evil, thou shalt not eat of it: for in the day that thou eatest thereof thou shalt surely die.",
+          "textVersions": {
+            "kjv": "And the LORD God took the man, and put him into the garden of Eden to dress it and to keep it. And the LORD God commanded the man, saying, Of every tree of the garden thou mayest freely eat: But of the tree of the knowledge of good and evil, thou shalt not eat of it: for in the day that thou eatest thereof thou shalt surely die."
+          },
+          "entities": [
+            {
+              "word": "to dress it and to keep it",
+              "node": "adam",
+              "type": "person",
+              "note": "The man's vocation is to till and guard the garden — a striking inversion of the Mesopotamian rationale, where humans are made expressly to do the gods' agricultural labour and feed them. In J the man tends a god's garden not as a slave relieving divine toil but as its appointed keeper. Wenham, Genesis 1–15 (WBC, 1987); Speiser, Genesis (Anchor Bible, 1964).",
+              "parallels": [
+                {
+                  "label": "Humanity created to bear the gods' labour (Atrahasis)",
+                  "textId": "atrahasis-epic",
+                  "note": "In Atrahasis humankind is fashioned precisely so the lesser gods can lay down the digging-baskets — the toil-bearing purpose Genesis reworks into garden-keeping. Lambert & Millard, Atrahasis (1969)."
+                },
+                {
+                  "label": "The labour-relief of Enuma Elish",
+                  "textId": "enuma-elish-1",
+                  "note": "Marduk creates man from Kingu's blood so 'the gods may be at ease' — the same servitude-purpose. Lambert, Babylonian Creation Myths (2013)."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "It Is Not Good That the Man Should Be Alone (2:18–25)",
+      "verses": [
+        {
+          "ref": "2:18–20",
+          "text": "And the LORD God said, It is not good that the man should be alone; I will make him an help meet for him. And out of the ground the LORD God formed every beast of the field, and every fowl of the air; and brought them unto Adam to see what he would call them: and whatsoever Adam called every living creature, that was the name thereof. And Adam gave names to all cattle, and to the fowl of the air, and to every beast of the field; but for Adam there was not found an help meet for him.",
+          "textVersions": {
+            "kjv": "And the LORD God said, It is not good that the man should be alone; I will make him an help meet for him. And out of the ground the LORD God formed every beast of the field, and every fowl of the air; and brought them unto Adam to see what he would call them: and whatsoever Adam called every living creature, that was the name thereof. And Adam gave names to all cattle, and to the fowl of the air, and to every beast of the field; but for Adam there was not found an help meet for him."
+          },
+          "entities": [
+            {
+              "word": "It is not good that the man should be alone",
+              "node": "adam",
+              "type": "person",
+              "note": "The only 'not good' in a creation otherwise pronounced good — the verdict that motivates the making of the woman and grounds the J account's view of humanity as essentially relational. Wenham, Genesis 1–15 (WBC, 1987).",
+              "parallels": []
+            },
+            {
+              "word": "Adam gave names to all cattle",
+              "node": "anthropos-myth",
+              "type": "theme",
+              "note": "The primal man names every living creature — an act of dominion-by-naming that marks the Anthropos as the ordering centre of the animal world, naming as the first human cultural act. The 'anthropos-myth' theme (the primordial/cosmic first man) underlies the figure. Speiser, Genesis (Anchor Bible, 1964); Gunkel, Genesis (1901).",
+              "parallels": []
+            }
+          ]
+        },
+        {
+          "ref": "2:21–23",
+          "text": "And the LORD God caused a deep sleep to fall upon Adam, and he slept: and he took one of his ribs, and closed up the flesh instead thereof; And the rib, which the LORD God had taken from man, made he a woman, and brought her unto the man. And Adam said, This is now bone of my bones, and flesh of my flesh: she shall be called Woman, because she was taken out of Man.",
+          "textVersions": {
+            "kjv": "And the LORD God caused a deep sleep to fall upon Adam, and he slept: and he took one of his ribs, and closed up the flesh instead thereof; And the rib, which the LORD God had taken from man, made he a woman, and brought her unto the man. And Adam said, This is now bone of my bones, and flesh of my flesh: she shall be called Woman, because she was taken out of Man."
+          },
+          "entities": [
+            {
+              "word": "one of his ribs",
+              "node": "eve",
+              "type": "person",
+              "note": "The woman is 'built' (banah, a construction verb) from the man's rib (tsela). Kramer's celebrated suggestion connects the rib to the Sumerian 'Enki and Ninhursag': there the goddess Ninti is created to heal Enki's rib, and her name puns on 'lady of the rib' and 'lady who makes live' — the same rib/life ambiguity that Eve, 'mother of all living' (Gen 3:20), carries. Whether this is genealogical or a striking convergence is debated; the pun lives in Sumerian, not Hebrew. Samuel Noah Kramer, History Begins at Sumer; Speiser, Genesis (Anchor Bible, 1964).",
+              "parallels": [
+                {
+                  "label": "Ninti, 'lady of the rib / lady of life' (Enki and Ninhursag)",
+                  "note": "In the Sumerian myth Ninhursag bears Ninti to heal Enki's aching rib; the Sumerian word 'ti' means both 'rib' and 'to make live,' the precise double meaning that Eve as rib-born 'mother of all living' echoes. Kramer, History Begins at Sumer; Jacobsen, The Harps That Once."
+                }
+              ]
+            },
+            {
+              "word": "Woman, because she was taken out of Man",
+              "node": "eve",
+              "type": "person",
+              "note": "The folk-etymology puns 'ishshah (woman) on 'ish (man) — a Hebrew sound-play, not a true derivation, asserting the woman's consubstantiality with the man ('bone of my bones, and flesh of my flesh'). Eve is named only later, at 3:20. Wenham, Genesis 1–15 (WBC, 1987); Speiser, Genesis (Anchor Bible, 1964).",
+              "parallels": []
+            }
+          ]
+        },
+        {
+          "ref": "2:24–25",
+          "text": "Therefore shall a man leave his father and his mother, and shall cleave unto his wife: and they shall be one flesh. And they were both naked, the man and his wife, and were not ashamed.",
+          "textVersions": {
+            "kjv": "Therefore shall a man leave his father and his mother, and shall cleave unto his wife: and they shall be one flesh. And they were both naked, the man and his wife, and were not ashamed."
+          },
+          "entities": [
+            {
+              "word": "they were both naked, the man and his wife, and were not ashamed",
+              "node": "fall-of-humanity",
+              "type": "theme",
+              "note": "The closing note of unashamed nakedness ('arummim) is the pre-fall state of transparent innocence — set up here precisely so that Genesis 3 can overturn it: after eating, 'they knew that they were naked' (3:7), and shame enters. The verse is the deliberate hinge into the fall narrative; 'arom (naked) puns with 'arum (crafty), the serpent's epithet in 3:1. Wenham, Genesis 1–15 (WBC, 1987); Gunkel, Genesis (1901).",
+              "parallels": [
+                {
+                  "label": "The shame of Genesis 3:7",
+                  "textId": "genesis-3",
+                  "note": "The same nakedness becomes the occasion of shame and concealment immediately after the transgression — Genesis 2:25 is written to be reversed by Genesis 3:7. Wenham, Genesis 1–15 (WBC, 1987)."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
+
+// -- Genesis 4:1–16 (Cain and Abel — the First Murder) --
+SCRIPTURE_TEXTS['genesis-4'] = {
+  "id": "genesis-4",
+  "title": "Genesis 4:1–16 (Cain and Abel — the First Murder)",
+  "shortTitle": "Genesis 4",
+  "corpus": "Hebrew Bible (Torah)",
+  "tradId": "tradition-second-temple-judaism",
+  "date": "c. 10th–6th century BCE (Yahwist / J source)",
+  "docNode": "document-genesis",
+  "language": "Hebrew · King James Version (1611), Oxford standard text — public domain",
+  "translations": [
+    {
+      "id": "kjv",
+      "label": "KJV (1611)",
+      "note": "King James Version — public domain"
+    }
+  ],
+  "intro": "Genesis 4 is the first story after Eden and the Bible's first death: two brothers — Cain the tiller of the ground and Abel the keeper of sheep — bring offerings to YHWH, who respects Abel's but not Cain's, and Cain rises up in the field and slays his brother. It is a Yahwistic (J) narrative whose deep structure is the ancient Near Eastern farmer-versus-herder rivalry, known from the Sumerian disputation poems (Dumuzi and Enkimdu; Lahar and Ashnan) where the contest is judged and reconciled WITHOUT bloodshed — Genesis inverts the form into fratricide. Cain is then cursed from the ground, marked for protection, driven out as a wanderer, and goes on to found the first city — the violent foundation that links the text to the Roman Romulus-and-Remus tradition where the city is likewise born of a brother's murder.",
+  "crossTradition": [
+    {
+      "label": "Dumuzi and Enkimdu (Sumerian disputation)",
+      "note": "The shepherd-god Dumuzi and the farmer-god Enkimdu compete for Inanna's hand; she favors the shepherd, but the rivals are RECONCILED — Enkimdu yields his fields in friendship. Genesis 4 takes the same herder-vs-farmer contest, keeps the divine preference for the herdsman (Abel/Dumuzi), and inverts the peaceful resolution into murder. Samuel Noah Kramer, Sumerian Mythology (1961); cf. the enkimdu vault node."
+    },
+    {
+      "label": "Lahar and Ashnan (Sumerian disputation)",
+      "note": "The cattle-god Lahar and the grain-goddess Ashnan dispute which feeds gods and men; a second Sumerian instance of the same agriculture-vs-pastoralism debate form that underlies the Cain/Abel pairing. Kramer 1961; Black & Green, Gods, Demons and Symbols of Ancient Mesopotamia (1992)."
+    },
+    {
+      "label": "Romulus and Remus (Roman foundation)",
+      "note": "The fratricidal foundation of a city: Romulus kills his twin Remus, then founds Rome — the structural twin of Cain slaying Abel and building the first city (Enoch). Both make the archetypal city the offspring of a brother's blood. Claus Westermann, Genesis 1–11 (1984) notes the city-building of Cain as an etiology of civilization born in violence."
+    },
+    {
+      "label": "'Blood that cries from the ground' (legal-cosmic motif)",
+      "note": "Abel's blood 'crieth unto me from the ground' makes unavenged kin-murder a cosmic pollution that the earth itself accuses — the same blood-cries-out-for-vengeance logic later generalized in Israelite blood-guilt law and echoed in Greek miasma (the Erinyes pursuing kin-murderers). Westermann, Genesis 1–11 (1984)."
+    },
+    {
+      "label": "Original sin / fall-after-the-Fall (Augustinian reception)",
+      "note": "In Christian reception (Augustine, City of God), Cain is read as founder of the earthly city (civitas terrena) over against Abel the pilgrim of the city of God — the fratricide becomes the type of the two-cities division of humanity. Gerald Bonner / Gerard O'Daly on Augustine's two-cities doctrine."
+    }
+  ],
+  "sections": [
+    {
+      "heading": "The Two Brothers and Their Offerings",
+      "verses": [
+        {
+          "ref": "Genesis 4:1",
+          "text": "And Adam knew Eve his wife; and she conceived, and bare Cain, and said, I have gotten a man from the LORD.",
+          "textVersions": {
+            "kjv": "And Adam knew Eve his wife; and she conceived, and bare Cain, and said, I have gotten a man from the LORD."
+          },
+          "entities": [
+            {
+              "word": "Adam",
+              "node": "adam",
+              "type": "person",
+              "note": "The first human of the Hebrew Bible; Cain and Abel's father. The wordplay 'gotten' (qaniti) on 'Cain' (Qayin) is a Yahwistic naming etiology. Claus Westermann, Genesis 1–11 (1984).",
+              "parallels": []
+            },
+            {
+              "word": "Eve",
+              "node": "eve",
+              "type": "person",
+              "note": "The primordial mother; her naming-speech over Cain frames the first birth as a quasi-creative act ('I have gotten a man from the LORD'). Westermann, Genesis 1–11 (1984).",
+              "parallels": []
+            }
+          ]
+        },
+        {
+          "ref": "Genesis 4:2",
+          "text": "And she again bare his brother Abel. And Abel was a keeper of sheep, but Cain was a tiller of the ground.",
+          "textVersions": {
+            "kjv": "And she again bare his brother Abel. And Abel was a keeper of sheep, but Cain was a tiller of the ground."
+          },
+          "entities": [
+            {
+              "word": "keeper of sheep",
+              "node": "dumuzi-tammuz",
+              "type": "deity",
+              "note": "The herder-vs-farmer pairing (Abel keeper of sheep / Cain tiller of the ground) is the ancient Near Eastern shepherd-vs-cultivator contrast. Dumuzi the shepherd-god is the divine pastoralist of the Sumerian disputation 'Dumuzi and Enkimdu,' the type Abel occupies. Samuel Noah Kramer, Sumerian Mythology (1961).",
+              "parallels": [
+                {
+                  "label": "Enkimdu the farmer-god (Sumerian)",
+                  "note": "Dumuzi the shepherd's rival, the cultivator — the structural counterpart to Cain the tiller. Kramer 1961; Black & Green 1992."
+                },
+                {
+                  "label": "Lahar the cattle-god (Sumerian)",
+                  "note": "The herding-power of the Lahar-vs-Ashnan disputation, a second Sumerian instance of pastoral-vs-agricultural rivalry. Kramer 1961."
+                }
+              ]
+            },
+            {
+              "word": "tiller of the ground",
+              "node": "enkimdu",
+              "type": "deity",
+              "note": "Cain the cultivator answers to the farmer-god Enkimdu of the Sumerian courtship-disputation, where the farmer competes against the shepherd for Inanna — but the Sumerian poem ends in reconciliation, NOT murder, which is precisely Genesis's inversion. Kramer, Sumerian Mythology (1961); the enkimdu vault node names the Dumuzi–Enkimdu disputation directly.",
+              "parallels": [
+                {
+                  "label": "Ashnan the grain-goddess (Sumerian)",
+                  "note": "The agricultural power of the Lahar-vs-Ashnan debate; the farming side of the same disputation form. Kramer 1961; Black & Green 1992."
+                },
+                {
+                  "label": "Dumuzi and Enkimdu — peaceful resolution",
+                  "note": "Inanna favors the shepherd, yet the farmer Enkimdu yields in friendship; Genesis keeps the divine preference but converts the contest into fratricide. Kramer 1961."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "Genesis 4:3",
+          "text": "And in process of time it came to pass, that Cain brought of the fruit of the ground an offering unto the LORD.",
+          "textVersions": {
+            "kjv": "And in process of time it came to pass, that Cain brought of the fruit of the ground an offering unto the LORD."
+          },
+          "entities": [
+            {
+              "word": "an offering",
+              "node": "sacrifice-substitution",
+              "type": "symbol",
+              "note": "The brothers' competing offerings make Genesis 4 a primal sacrifice narrative: the difference between accepted and rejected gift drives the plot. Westermann reads the preference for the animal offering as reflecting the herder-favoring outlook of the J narrator. Westermann, Genesis 1–11 (1984).",
+              "parallels": [
+                {
+                  "label": "Disputation-poem gift contest (Sumerian)",
+                  "note": "In Dumuzi–Enkimdu the suitors press rival GIFTS (the shepherd's milk and cream vs the farmer's grain and beans); the structure of competing offerings judged by a higher power is shared. Kramer 1961."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "Genesis 4:4",
+          "text": "And Abel, he also brought of the firstlings of his flock and of the fat thereof. And the LORD had respect unto Abel and to his offering:",
+          "textVersions": {
+            "kjv": "And Abel, he also brought of the firstlings of his flock and of the fat thereof. And the LORD had respect unto Abel and to his offering:"
+          },
+          "entities": [
+            {
+              "word": "the LORD had respect unto Abel",
+              "node": "sacrifice-substitution",
+              "type": "symbol",
+              "note": "YHWH's acceptance of the animal (blood) offering over the vegetable offering anticipates the later Israelite priority of blood sacrifice; the text gives no stated reason, and the unexplained divine preference is the narrative's engine. Westermann, Genesis 1–11 (1984).",
+              "parallels": [
+                {
+                  "label": "Inanna favors the shepherd (Sumerian)",
+                  "note": "The goddess's choice of Dumuzi the herder over Enkimdu the farmer is the same 'higher power prefers the pastoralist' verdict — but it provokes no violence. Kramer 1961."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "Genesis 4:5",
+          "text": "But unto Cain and to his offering he had not respect. And Cain was very wroth, and his countenance fell.",
+          "textVersions": {
+            "kjv": "But unto Cain and to his offering he had not respect. And Cain was very wroth, and his countenance fell."
+          },
+          "entities": [
+            {
+              "word": "Cain was very wroth",
+              "node": "original-sin",
+              "type": "theme",
+              "note": "Cain's wrath after the Fall extends the spread of sin from Adam's transgression into the first violence between humans; in Christian reception this is the post-Edenic progress of sin into murder. Augustine treats Cain as the first citizen of the earthly city. O'Daly on Augustine; Westermann, Genesis 1–11 (1984).",
+              "parallels": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "The Murder and the Blood",
+      "verses": [
+        {
+          "ref": "Genesis 4:8",
+          "text": "And Cain talked with Abel his brother: and it came to pass, when they were in the field, that Cain rose up against Abel his brother, and slew him.",
+          "textVersions": {
+            "kjv": "And Cain talked with Abel his brother: and it came to pass, when they were in the field, that Cain rose up against Abel his brother, and slew him."
+          },
+          "entities": [
+            {
+              "word": "slew him",
+              "node": "blood-sacred",
+              "type": "symbol",
+              "note": "The first human death is fratricide; the shed blood becomes the cosmically charged 'sacred blood' that pollutes the ground and cries for vengeance (v.10). The earth that received the blood is itself implicated. Westermann, Genesis 1–11 (1984).",
+              "parallels": [
+                {
+                  "label": "Romulus slays Remus (Roman)",
+                  "note": "The other archetypal fratricide that founds a civilization; the murdered brother's blood is the ground of the city. Westermann 1984 on Cain as city-founder."
+                }
+              ]
+            },
+            {
+              "word": "his brother",
+              "node": "city-of-god-vs-earthly-city",
+              "type": "theme",
+              "note": "For Augustine the murder of brother by brother is the founding crime of the civitas terrena (earthly city) — Cain founds the earthly city as Romulus founds Rome by killing Remus, while Abel, the slain pilgrim, belongs to the city of God. Augustine, City of God XV; Gerard O'Daly, Augustine's City of God: A Reader's Guide.",
+              "parallels": [
+                {
+                  "label": "Romulus and Remus (Roman)",
+                  "note": "Augustine himself pairs Cain/Abel with Romulus/Remus as twin myths of fratricidal city-foundation. O'Daly on City of God XV."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "Genesis 4:9",
+          "text": "And the LORD said unto Cain, Where is Abel thy brother? And he said, I know not: Am I my brother's keeper?",
+          "textVersions": {
+            "kjv": "And the LORD said unto Cain, Where is Abel thy brother? And he said, I know not: Am I my brother's keeper?"
+          },
+          "entities": [
+            {
+              "word": "Am I my brother's keeper",
+              "node": "city-of-god-vs-earthly-city",
+              "type": "theme",
+              "note": "Cain's evasive question is the Bible's first denial of social responsibility; in the two-cities reading it marks the self-loving disposition (amor sui) that constitutes the earthly city against the God-loving love of the city of God. O'Daly, Augustine's City of God; Westermann, Genesis 1–11 (1984).",
+              "parallels": []
+            }
+          ]
+        },
+        {
+          "ref": "Genesis 4:10",
+          "text": "And he said, What hast thou done? the voice of thy brother's blood crieth unto me from the ground.",
+          "textVersions": {
+            "kjv": "And he said, What hast thou done? the voice of thy brother's blood crieth unto me from the ground."
+          },
+          "entities": [
+            {
+              "word": "thy brother's blood crieth unto me from the ground",
+              "node": "blood-sacred",
+              "type": "symbol",
+              "note": "Unavenged kin-blood is a cosmic pollutant that the ground itself broadcasts as an accusation — the root of the Israelite conception of blood-guilt (the land defiled by innocent blood). Westermann, Genesis 1–11 (1984).",
+              "parallels": [
+                {
+                  "label": "Greek miasma / the Erinyes",
+                  "note": "In Greek thought kin-murder generates miasma and rouses the Erinyes (Furies) who pursue the shedder of kindred blood — the same logic of blood that cries for vengeance. Westermann 1984 notes the cross-cultural blood-cries-out motif."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Exile, the Mark, and the First City",
+      "verses": [
+        {
+          "ref": "Genesis 4:12",
+          "text": "When thou tillest the ground, it shall not henceforth yield unto thee her strength; a fugitive and a vagabond shalt thou be in the earth.",
+          "textVersions": {
+            "kjv": "When thou tillest the ground, it shall not henceforth yield unto thee her strength; a fugitive and a vagabond shalt thou be in the earth."
+          },
+          "entities": [
+            {
+              "word": "a fugitive and a vagabond shalt thou be",
+              "node": "original-sin",
+              "type": "theme",
+              "note": "Cain's sentence to restless wandering is the curse that follows the murder; the tiller is cut off from the ground that received his brother's blood, deepening the post-Edenic alienation of humanity from the soil. Westermann, Genesis 1–11 (1984).",
+              "parallels": []
+            }
+          ]
+        },
+        {
+          "ref": "Genesis 4:15",
+          "text": "And the LORD said unto him, Therefore whosoever slayeth Cain, vengeance shall be taken on him sevenfold. And the LORD set a mark upon Cain, lest any finding him should kill him.",
+          "textVersions": {
+            "kjv": "And the LORD said unto him, Therefore whosoever slayeth Cain, vengeance shall be taken on him sevenfold. And the LORD set a mark upon Cain, lest any finding him should kill him."
+          },
+          "entities": [
+            {
+              "word": "a mark upon Cain",
+              "node": "blood-sacred",
+              "type": "symbol",
+              "note": "The protective sign ('mark of Cain') shields the first murderer from the very blood-vengeance his crime set loose; the sevenfold vengeance clause shows the narrative wrestling with the blood-feud logic it has invoked. Westermann, Genesis 1–11 (1984); on the textual history of the sign, Ronald Hendel, The Text of Genesis 1–11 (1998).",
+              "parallels": []
+            }
+          ]
+        },
+        {
+          "ref": "Genesis 4:16",
+          "text": "And Cain went out from the presence of the LORD, and dwelt in the land of Nod, on the east of Eden.",
+          "textVersions": {
+            "kjv": "And Cain went out from the presence of the LORD, and dwelt in the land of Nod, on the east of Eden."
+          },
+          "entities": [
+            {
+              "word": "dwelt in the land of Nod",
+              "node": "city-of-god-vs-earthly-city",
+              "type": "theme",
+              "note": "Cain's eastward exile to Nod ('wandering') sets up the immediately following verse (4:17), where the wanderer paradoxically builds the FIRST CITY and names it Enoch after his son — civilization founded by the fratricide, the seed of Augustine's earthly city. Westermann, Genesis 1–11 (1984); O'Daly on City of God XV.",
+              "parallels": [
+                {
+                  "label": "Romulus founds Rome (Roman)",
+                  "note": "The murderer-founder building the archetypal city is shared with the Roman foundation myth; both make the city the issue of a brother's blood. Westermann 1984."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
+
+// -- Genesis 6:1-8 (The sons of God and the Nephilim — the Watchers) --
+SCRIPTURE_TEXTS['genesis-6'] = {
+  "id": "genesis-6",
+  "title": "Genesis 6:1-8 (The sons of God and the Nephilim — the Watchers)",
+  "shortTitle": "Genesis 6",
+  "corpus": "Hebrew Bible (Torah · Genesis · primeval history)",
+  "tradId": "tradition-second-temple-judaism",
+  "date": "c. 950–550 BCE (J/Yahwist primeval-history strand; the Genesis 6:1–4 fragment is widely held to be older than the Watchers expansion that elaborates it)",
+  "docNode": "document-genesis",
+  "language": "Hebrew · King James Version (1611) — public domain. Text verified verbatim against the standard KJV (ebible.org eng-kjv / BibleGateway KJV).",
+  "translations": [
+    {
+      "id": "kjv",
+      "label": "KJV (1611)",
+      "note": "King James Version — public domain"
+    }
+  ],
+  "intro": "These eight verses are the single most consequential fragment in the primeval history: the \"sons of God\" (bene ha-elohim) see the daughters of men, take them as wives, and beget the Nephilim/giants — \"mighty men which were of old, men of renown\" — whereupon YHWH limits human life to 120 years, sees that the wickedness of man is great, is grieved at his heart, and resolves the flood, while Noah alone finds grace. The passage is cryptic and compressed almost to the point of incoherence, which is precisely why it became the seed of an enormous interpretive tradition. The Book of the Watchers (1 Enoch 6–16) expands these verses into a full myth: 200 Watchers led by Shemihazah and Azazel descend on Mount Hermon, swear an oath, take wives, beget devouring giants, and teach humanity forbidden arts (metallurgy, weapons, cosmetics, sorcery, astrology) — making the Watchers, not Adam, the primary etiology of evil for most of Second Temple Judaism. The decisive comparative claim (Annus 2010) is that this whole complex inherits the Mesopotamian apkallu — the seven antediluvian fish-sages who brought civilization before the flood — with the civilizing knowledge inverted into corrupting knowledge.",
+  "crossTradition": [
+    {
+      "label": "1 Enoch — the Book of the Watchers (the full expansion)",
+      "textId": "book-of-enoch",
+      "note": "1 Enoch 6–16 is the midrashic blowing-up of these four verses: Shemihazah and Azazel lead 200 Watchers down to Mount Hermon, they take wives and beget giants, and teach forbidden arts; their offspring's violence triggers the flood. Nickelsburg & VanderKam 2001 (1 Enoch: A Commentary) and VanderKam 1984 (Enoch and the Growth of an Apocalyptic Tradition) treat the Genesis fragment as the kernel and 1 Enoch as the developed tradition."
+    },
+    {
+      "label": "Jubilees 5 — the retelling",
+      "textId": "book-of-jubilees",
+      "note": "Jubilees 5 (2nd c. BCE) recasts the Watchers: they descended originally on a righteous mission to teach humans, then fell; the giants' violence and the demons that issue from them require the flood as remedy (VanderKam 1984; Reed 2005)."
+    },
+    {
+      "label": "Genesis 8 — the flood that follows",
+      "textId": "genesis-8",
+      "note": "The corruption these verses describe is the stated cause of the flood; Genesis 8 is its aftermath, where Noah — the one who 'found grace' here in 6:8 — sends out the bird-scout and the waters abate."
+    },
+    {
+      "label": "Mesopotamian apkallu — the seven antediluvian sages",
+      "note": "Annus 2010 ('On the Origin of the Watchers,' JSP 19) reconstructs the inheritance chain: the seven apkallu (fish-sages from Enki/Ea's Abzu who brought writing, metallurgy, and astrology before the flood) are the structural ancestors of the Watchers, the seventh apkallu Utuabzu 'taken to heaven' paralleling Enoch 'taken' by God. Kvanvig 1988 (Roots of Apocalyptic) earlier argued the apkallu-as-antediluvian-revealers background; the civilizing arts become forbidden arts."
+    },
+    {
+      "label": "Greek Titans / Gigantomachy",
+      "textId": "book-of-enoch",
+      "note": "Hanson 1977 ('Rebellion in Heaven, Azazel, and Euhemeristic Heroes,' JBL 96) sees Hellenistic Titanomachy/Gigantomachy coloring in the giants narrative — divine-human hybrids of vast strength crushed by the high god. Annus 2010 and VanderKam favor a primarily Mesopotamian-Canaanite substrate with possible Hellenistic-period influence on the Titan framing; the consensus is convergent imagery, not a single source."
+    },
+    {
+      "label": "Demigods and the deluge — the JBL reading",
+      "textId": "book-of-enoch",
+      "note": "Hendel 1987 ('Of Demigods and the Deluge,' JBL 106) argues Genesis 6:1–4 is a deliberately truncated theogonic myth of divine-human unions producing semi-divine heroes — the same ancient Near Eastern and Greek 'race of heroes' tradition — that the flood is sent to abolish, the Priestly redactor compressing and condemning what was once a heroic genealogy."
+    }
+  ],
+  "sections": [
+    {
+      "heading": "The sons of God and the daughters of men (Genesis 6:1–4)",
+      "verses": [
+        {
+          "ref": "6:1",
+          "text": "And it came to pass, when men began to multiply on the face of the earth, and daughters were born unto them,",
+          "textVersions": {
+            "kjv": "And it came to pass, when men began to multiply on the face of the earth, and daughters were born unto them,"
+          },
+          "entities": []
+        },
+        {
+          "ref": "6:2",
+          "text": "That the sons of God saw the daughters of men that they were fair; and they took them wives of all which they chose.",
+          "textVersions": {
+            "kjv": "That the sons of God saw the daughters of men that they were fair; and they took them wives of all which they chose."
+          },
+          "entities": [
+            {
+              "word": "the sons of God",
+              "node": "divine-council",
+              "type": "theme",
+              "note": "Bene ha-elohim, 'sons of God' — in the oldest reading the members of YHWH's heavenly assembly, the Hebrew form of the ancient Near Eastern divine council (Mullen 1980, The Assembly of the Gods). The same phrase opens the heavenly-court scenes of Job 1 and is cognate with the Ugaritic 'sons of El' (bn 'il).",
+              "parallels": [
+                {
+                  "label": "Job 1 — the sons of God before the throne",
+                  "textId": "job-1-council",
+                  "note": "the same bene ha-elohim present themselves before YHWH; the council reading the Genesis fragment shares (Mullen 1980)."
+                },
+                {
+                  "label": "Ugaritic council of El (bn 'il)",
+                  "note": "the assembly of the gods under El that the Hebrew 'sons of God' inherit (Smith 2001, The Origins of Biblical Monotheism)."
+                }
+              ]
+            },
+            {
+              "word": "took them wives",
+              "node": "watchers-and-fallen-angels",
+              "type": "theme",
+              "note": "In the dominant Second Temple reading the 'sons of God' are the Watchers ('ir, 'wakeful one') who transgress the boundary between heaven and earth by taking human wives — a metaphysical violation that the Book of the Watchers expands into the primary etiology of evil (Reed 2005, Fallen Angels and the History of Judaism and Christianity; Stuckenbruck 2014, The Myth of Rebellious Angels).",
+              "parallels": [
+                {
+                  "label": "Shemihazah, chief of the Watchers",
+                  "node": "semyaza",
+                  "note": "1 Enoch 6 names Shemihazah as the leader who binds the 200 Watchers by oath on Mount Hermon to take wives (Reed 2005, on the Shemihazah leadership tradition)."
+                },
+                {
+                  "label": "Azazel, the parallel Watcher-leader",
+                  "node": "azazel",
+                  "note": "the second Watcher-leadership strand, who teaches metalworking and weapons and receives the blame for the earth's corruption (1 Enoch 8–10; Reed 2005, Asael and Šemiḥazah)."
+                },
+                {
+                  "label": "Hieros gamos / forbidden heaven-earth union",
+                  "node": "sacred-marriage",
+                  "note": "the union of divine and human is the dark inverse of the sacred-marriage motif — a transgressive theogamy across the cosmic boundary rather than a sanctioned one (Hendel 1987, on the demigod unions Genesis 6 condemns)."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "6:3",
+          "text": "And the LORD said, My spirit shall not always strive with man, for that he also is flesh: yet his days shall be an hundred and twenty years.",
+          "textVersions": {
+            "kjv": "And the LORD said, My spirit shall not always strive with man, for that he also is flesh: yet his days shall be an hundred and twenty years."
+          },
+          "entities": [
+            {
+              "word": "the LORD",
+              "node": "yahweh",
+              "type": "deity",
+              "note": "YHWH, who responds to the boundary-crossing by capping human lifespan — the deity reasserting the line between the divine and the merely 'flesh' (Hendel 1987 reads the 120-year limit as the curtailment of the near-immortality the divine-human unions threatened to confer).",
+              "parallels": [
+                {
+                  "label": "Mesopotamian shortening of human life",
+                  "node": "flood-motif",
+                  "note": "in Atrahasis the gods limit and then nearly destroy overgrown humanity; Hendel 1987 and Kvanvig 1988 compare the divine resolve to curtail the human race that Genesis 6 shares with the Mesopotamian flood prologue."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "6:4",
+          "text": "There were giants in the earth in those days; and also after that, when the sons of God came in unto the daughters of men, and they bare children to them, the same became mighty men which were of old, men of renown.",
+          "textVersions": {
+            "kjv": "There were giants in the earth in those days; and also after that, when the sons of God came in unto the daughters of men, and they bare children to them, the same became mighty men which were of old, men of renown."
+          },
+          "entities": [
+            {
+              "word": "giants",
+              "node": "gilgamesh-nephilim",
+              "type": "deity",
+              "note": "The Nephilim (KJV 'giants,' via the Septuagint gigantes) — the hybrid offspring of the Watchers and human women. The Qumran Book of Giants names individual Nephilim, including Gilgamesh (glgmš, 4Q530), absorbing the Mesopotamian hero into the Watchers tradition as a pre-Diluvian giant (Stuckenbruck 1997, The Book of Giants from Qumran).",
+              "parallels": [
+                {
+                  "label": "The Watchers' devouring giants (1 Enoch 7)",
+                  "textId": "book-of-enoch",
+                  "note": "1 Enoch 7 makes the giants 3,000 cubits tall, consuming all human food and then humans themselves; their spirits become the unclean demons (Nickelsburg & VanderKam 2001)."
+                },
+                {
+                  "label": "Greek Titans / Gigantes",
+                  "node": "atlas-titan",
+                  "note": "the gigantes and Titans of Greek myth — vast divine-human or earth-born beings the Olympians overthrow; Hanson 1977 sees Hellenistic Titanomachy imagery in the Nephilim narrative, though Annus 2010 favors a Mesopotamian substrate."
+                }
+              ]
+            },
+            {
+              "word": "men of renown",
+              "node": "antediluvian-civilization",
+              "type": "theme",
+              "note": "'The mighty men which were of old, men of renown' (gibborim ... anshe ha-shem) frame the Nephilim as the heroic age before the flood. Hendel 1987 ('Of Demigods and the Deluge') reads this as a truncated 'race of heroes' theogony — divine-human demigods of the antediluvian world — that the flood is sent to abolish.",
+              "parallels": [
+                {
+                  "label": "The apkallu — antediluvian sages of Mesopotamia",
+                  "node": "apkallu",
+                  "note": "Annus 2010 reconstructs the Watchers/giants complex as the inheritance of the seven apkallu, the antediluvian fish-sages who brought civilization before the flood; Kvanvig 1988 (Roots of Apocalyptic) first developed the apkallu-as-antediluvian-revealers background. The civilizing arts of the sages become the corrupting arts of the Watchers."
+                },
+                {
+                  "label": "Greek 'race of heroes' before the flood",
+                  "note": "Hendel 1987 and West 1997 (The East Face of Helicon) compare Hesiod's heroic race — demigod sons of gods and mortal women, ended by Zeus — as the Greek reflex of the same demigods-before-the-deluge pattern."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "The grief of God and the grace of Noah (Genesis 6:5–8)",
+      "verses": [
+        {
+          "ref": "6:5",
+          "text": "And GOD saw that the wickedness of man was great in the earth, and that every imagination of the thoughts of his heart was only evil continually.",
+          "textVersions": {
+            "kjv": "And GOD saw that the wickedness of man was great in the earth, and that every imagination of the thoughts of his heart was only evil continually."
+          },
+          "entities": [
+            {
+              "word": "wickedness of man was great",
+              "node": "original-sin",
+              "type": "theme",
+              "note": "The verdict on human corruption that motivates the flood. In the Second Temple Watchers reading this corruption is the consequence of the Watchers' forbidden teaching, not of Adam — for 400+ years the Watchers, not the Eden narrative, were the primary etiology of evil in Jewish thought (Reed 2005; Wright 2005, The Origin of Evil Spirits).",
+              "parallels": [
+                {
+                  "label": "The earth corrupted by the Watchers (1 Enoch 8–9)",
+                  "textId": "book-of-enoch",
+                  "note": "in 1 Enoch the cry of the corrupted earth reaches heaven because of the Watchers' arts and the giants' violence — the explicit cause the Genesis verdict leaves unstated (Nickelsburg & VanderKam 2001)."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "6:6",
+          "text": "And it repented the LORD that he had made man on the earth, and it grieved him at his heart.",
+          "textVersions": {
+            "kjv": "And it repented the LORD that he had made man on the earth, and it grieved him at his heart."
+          },
+          "entities": []
+        },
+        {
+          "ref": "6:7",
+          "text": "And the LORD said, I will destroy man whom I have created from the face of the earth; both man, and beast, and the creeping thing, and the fowls of the air; for it repenteth me that I have made them.",
+          "textVersions": {
+            "kjv": "And the LORD said, I will destroy man whom I have created from the face of the earth; both man, and beast, and the creeping thing, and the fowls of the air; for it repenteth me that I have made them."
+          },
+          "entities": [
+            {
+              "word": "I will destroy man",
+              "node": "flood-motif",
+              "type": "theme",
+              "note": "The divine resolve to wipe out humanity by flood — the Hebrew form of the ancient Near Eastern flood-as-remedy. In Atrahasis the gods send the flood to silence an overgrown, noisy humanity; here the cause is moral corruption (Lambert & Millard 1969, Atra-hasis; Kvanvig 1988).",
+              "parallels": [
+                {
+                  "label": "Atrahasis — the gods resolve the flood",
+                  "textId": "atrahasis-epic",
+                  "note": "the Old Babylonian flood resolution that underlies the Mesopotamian-Hebrew flood complex (Lambert & Millard 1969)."
+                },
+                {
+                  "label": "Gilgamesh XI — the deluge",
+                  "textId": "gilgamesh",
+                  "note": "the Standard Babylonian flood narrative; the cross-tradition flood that Genesis 6–9 inherits at one remove (George 2003)."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "6:8",
+          "text": "But Noah found grace in the eyes of the LORD.",
+          "textVersions": {
+            "kjv": "But Noah found grace in the eyes of the LORD."
+          },
+          "entities": [
+            {
+              "word": "Noah",
+              "node": "noah",
+              "type": "person",
+              "note": "Noah, the righteous flood-survivor singled out by grace — the Hebrew counterpart of the Mesopotamian flood-heroes Atrahasis, Ziusudra, and Utnapishtim, who are likewise the one human chosen to survive the deluge (Heidel 1949, The Gilgamesh Epic and Old Testament Parallels).",
+              "parallels": [
+                {
+                  "label": "Utnapishtim / Atrahasis — the chosen survivor",
+                  "textId": "atrahasis-epic",
+                  "note": "the one righteous (or favored) man warned and saved from the flood; the structural ancestor of Noah (Lambert & Millard 1969)."
+                },
+                {
+                  "label": "Ziusudra — the Sumerian survivor",
+                  "textId": "eridu-genesis-flood-1",
+                  "note": "the earliest named flood-survivor, the headwater of the survivor tradition Noah descends from (Jacobsen 1981, The Eridu Genesis)."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
