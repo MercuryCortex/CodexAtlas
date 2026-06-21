@@ -26029,3 +26029,970 @@ SCRIPTURE_TEXTS['exodus-12'] = {
     }
   ]
 };
+
+// ── CROSS-TRADITION HEADWATERS (Hammurabi / Hesiod Theogony / Hesiod Five Ages) — 2026-06-20 ─
+
+// -- The Code of Hammurabi — Prologue, the Lex Talionis, and Epilogue --
+SCRIPTURE_TEXTS['code-of-hammurabi'] = {
+  "id": "code-of-hammurabi",
+  "title": "The Code of Hammurabi — Prologue, the Lex Talionis, and Epilogue",
+  "shortTitle": "Code of Hammurabi",
+  "corpus": "Mesopotamian · Old Babylonian law",
+  "tradId": "tradition-mesopotamian",
+  "date": "c. 1754 BCE (reign of Hammurabi of Babylon, c. 1792–1750 BCE)",
+  "docNode": "phase-1-007-code-of-hammurabi",
+  "language": "Akkadian · Leonard William King translation (1910), public domain (Avalon Project, Yale Law School)",
+  "translations": [
+    {
+      "id": "king1910",
+      "label": "L.W. King (1910)",
+      "note": "Public domain — Avalon Project, Yale Law School"
+    }
+  ],
+  "intro": "The most famous law collection of the ancient Near East, inscribed on a black diorite stele crowned by a relief of the sun-god Shamash handing Hammurabi the rod-and-ring of authority. The Prologue frames the entire code as a divine commission — the gods call Hammurabi \"to bring about the rule of righteousness in the land... so that the strong should not harm the weak\" — and the Epilogue closes on the same royal-justice ideology, the protection of \"the widows and orphans.\" Its laws are CASUISTIC (\"If a man...\"), the same case-law grammar found in the Hebrew Covenant Code (Exodus 21–23), and its lex talionis (§196 \"an eye for an eye\") is the direct ancient-Near-Eastern background of the talion formula in Exodus 21:24. Albrecht Alt's classic distinction between this casuistic form and the APODICTIC \"thou shalt not\" of the Decalogue makes Hammurabi the indispensable comparative foil for reading biblical law.",
+  "crossTradition": [
+    {
+      "label": "Exodus 20–23 — casuistic vs. apodictic law",
+      "textId": "exodus-20",
+      "note": "Albrecht Alt (Die Ursprünge des israelitischen Rechts, 1934) distinguished Hammurabi's CASUISTIC 'if a man...' case-law from the APODICTIC 'thou shalt not' of the Decalogue; David P. Wright (Inventing God's Law, 2009) argues the biblical Covenant Code directly used and revised the Laws of Hammurabi."
+    },
+    {
+      "label": "Exodus 21:24 — 'eye for eye, tooth for tooth'",
+      "textId": "exodus-20",
+      "note": "The lex talionis of §196/§200 is the same talion formula in Exod 21:24; Raymond Westbrook (A History of Ancient Near Eastern Law, 2003) reads talion as a shared ANE legal principle of measured retribution, not literal mutilation in practice."
+    },
+    {
+      "label": "Psalm 72 — the king who protects the poor and weak",
+      "textId": "psalm-72",
+      "note": "Hammurabi's claim to shield 'the widows and orphans' and ensure 'the strong might not injure the weak' is the same royal-justice ideology as Ps 72:4, 12–14; Moshe Weinfeld (Social Justice in Ancient Israel and the Ancient Near East, 1995) traces this 'mīšarum' justice ideal across Mesopotamian and Israelite kingship."
+    },
+    {
+      "label": "The feather of Maat (Egyptian)",
+      "note": "Egyptian royal ideology grounds the king's justice in maat (cosmic order/truth), weighed against the heart; Henri Frankfort (Kingship and the Gods, 1948) sets the Mesopotamian solar-justice of Shamash beside the Egyptian maat as parallel sacral-justice systems."
+    },
+    {
+      "label": "Shamash / Utu as divine judge",
+      "note": "The sun-god who sees all is the patron of law and oaths across Mesopotamia; the stele relief of Shamash investing Hammurabi is the visual claim that the code is divinely authored — Thorkild Jacobsen (The Treasures of Darkness, 1976) on the sun-god as cosmic judge."
+    }
+  ],
+  "sections": [
+    {
+      "heading": "Prologue — The King Called to Justice",
+      "verses": [
+        {
+          "ref": "Prologue",
+          "text": "then Anu and Bel called by name me, Hammurabi, the exalted prince, who feared God, to bring about the rule of righteousness in the land, to destroy the wicked and the evil-doers; so that the strong should not harm the weak; so that I should rule over the black-headed people like Shamash, and enlighten the land, to further the well-being of mankind.",
+          "textVersions": {
+            "king1910": "then Anu and Bel called by name me, Hammurabi, the exalted prince, who feared God, to bring about the rule of righteousness in the land, to destroy the wicked and the evil-doers; so that the strong should not harm the weak; so that I should rule over the black-headed people like Shamash, and enlighten the land, to further the well-being of mankind."
+          },
+          "entities": [
+            {
+              "word": "Shamash",
+              "node": "utu-shamash",
+              "type": "deity",
+              "note": "Utu (Sumerian) / Shamash (Akkadian), the sun-god and divine judge, patron of law and oaths; the stele's relief shows him handing Hammurabi the rod-and-ring of authority. Hammurabi rules 'like Shamash' — the king as the sun-god's earthly agent of justice.",
+              "parallels": [
+                {
+                  "label": "Feather of Maat (Egyptian)",
+                  "note": "In Egypt the king's justice is grounded in maat (cosmic order); Henri Frankfort (Kingship and the Gods, 1948) treats Shamash-justice and maat as parallel sacral-justice systems."
+                },
+                {
+                  "label": "YHWH as judge (Hebrew Bible)",
+                  "textId": "psalm-72",
+                  "note": "Ps 72 invokes the same divine source for royal justice; Moshe Weinfeld (Social Justice in Ancient Israel and the ANE, 1995) traces the shared 'justice for the weak' ideal."
+                }
+              ]
+            },
+            {
+              "word": "the strong should not harm the weak",
+              "node": "theme-lex-talionis-covenant-code",
+              "type": "theme",
+              "note": "The Mesopotamian mīšarum (equity/justice) ideal: the king's purpose is to restrain the powerful from oppressing the powerless. This same formula closes the Epilogue. David P. Wright (Inventing God's Law, 2009) sets this royal-justice frame beside the biblical Covenant Code.",
+              "parallels": [
+                {
+                  "label": "Psalm 72:4 — 'He shall judge the poor'",
+                  "textId": "psalm-72",
+                  "note": "the ideal king 'shall save the children of the needy, and shall break in pieces the oppressor' — the same protection-of-the-weak ideology."
+                },
+                {
+                  "label": "Exodus 22:22 — widow and fatherless",
+                  "textId": "exodus-20",
+                  "note": "the Covenant Code's protection of widow and orphan echoes the same ANE royal-justice duty Hammurabi claims."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "Prologue (close)",
+          "text": "When Marduk sent me to rule over men, to give the protection of right to the land, I did right and righteousness in . . . , and brought about the well-being of the oppressed.",
+          "textVersions": {
+            "king1910": "When Marduk sent me to rule over men, to give the protection of right to the land, I did right and righteousness in . . . , and brought about the well-being of the oppressed."
+          },
+          "entities": [
+            {
+              "word": "Marduk",
+              "node": "divine-kingship",
+              "type": "theme",
+              "note": "Marduk, city-god of Babylon, is the divine authority behind Hammurabi's kingship; the code is presented as a divine commission, the template of Mesopotamian sacral kingship. Henri Frankfort (Kingship and the Gods, 1948) on the Mesopotamian king as the gods' chosen agent.",
+              "parallels": [
+                {
+                  "label": "Hammurabi as sacred king",
+                  "note": "Hammurabi (c. 1792–1750 BCE) is the type-specimen of the law-giving sacral king; the Code's first-person prologue is in his distinctive royal voice."
+                },
+                {
+                  "label": "Davidic kingship (Hebrew Bible)",
+                  "textId": "psalm-72",
+                  "note": "Solomon/the Davidic king is likewise divinely commissioned to rule in righteousness — the shared ANE ideology of god-authorized kingship."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "The Lex Talionis — Casuistic Law",
+      "verses": [
+        {
+          "ref": "§196",
+          "text": "If a man put out the eye of another man, his eye shall be put out.",
+          "textVersions": {
+            "king1910": "If a man put out the eye of another man, his eye shall be put out."
+          },
+          "entities": [
+            {
+              "word": "If a man put out the eye of another man, his eye shall be put out",
+              "node": "theme-lex-talionis-covenant-code",
+              "type": "theme",
+              "note": "The lex talionis ('law of retaliation') — measured, equivalent retribution — in its classic 'eye for eye' form. The casuistic 'If a man...' structure is the same case-law grammar as the Hebrew Covenant Code. Albrecht Alt (Die Ursprünge des israelitischen Rechts, 1934) distinguished this casuistic form from the apodictic Decalogue.",
+              "parallels": [
+                {
+                  "label": "Exodus 21:24 — 'eye for eye'",
+                  "textId": "exodus-20",
+                  "note": "the talion formula appears almost verbatim in the Covenant Code; Raymond Westbrook (A History of ANE Law, 2003) reads it as a shared ANE principle of equivalent compensation."
+                },
+                {
+                  "label": "Decalogue — apodictic contrast",
+                  "textId": "exodus-20",
+                  "note": "contrast the unconditional 'Thou shalt not kill' (Exod 20:13); Alt's casuistic-vs-apodictic distinction makes Hammurabi the comparative foil for biblical law."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "§197",
+          "text": "If he break another man's bone, his bone shall be broken.",
+          "textVersions": {
+            "king1910": "If he break another man's bone, his bone shall be broken."
+          },
+          "entities": [
+            {
+              "word": "his bone shall be broken",
+              "node": "utu-shamash",
+              "type": "deity",
+              "note": "The talion principle extends from eye to bone to tooth — graded by the social rank of victim and offender (free man, freed man, slave each draw different penalties in §§196–205), all under the sun-god Shamash's patronage of law. Martha Roth (Law Collections from Mesopotamia and Asia Minor, 1995) details the rank-graded talion.",
+              "parallels": [
+                {
+                  "label": "Exodus 21:18–19 — bodily injury",
+                  "textId": "exodus-20",
+                  "note": "the Covenant Code's injury laws share the casuistic 'if a man...' frame and concern with compensation for bodily harm."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "§200",
+          "text": "If a man knock out the teeth of his equal, his teeth shall be knocked out.",
+          "textVersions": {
+            "king1910": "If a man knock out the teeth of his equal, his teeth shall be knocked out."
+          },
+          "entities": [
+            {
+              "word": "If a man knock out the teeth of his equal, his teeth shall be knocked out",
+              "node": "theme-lex-talionis-covenant-code",
+              "type": "theme",
+              "note": "'A tooth for a tooth' — note 'of his equal': talion applies in full only between social equals, with monetary compensation substituting where ranks differ (§201: a freed man's tooth = one-third of a gold mina). Westbrook (A History of ANE Law, 2003) stresses talion as a principle of proportionality, not necessarily literal enforcement.",
+              "parallels": [
+                {
+                  "label": "Exodus 21:24 — 'tooth for tooth'",
+                  "textId": "exodus-20",
+                  "note": "the paired eye/tooth talion of Exod 21:24 directly parallels §§196/200; David P. Wright (Inventing God's Law, 2009) argues for literary dependence."
+                },
+                {
+                  "label": "Matthew 5:38 — antithesis",
+                  "note": "Jesus cites 'an eye for an eye, and a tooth for a tooth' to reverse it ('resist not evil') — the talion tradition that runs from Hammurabi through the Torah into the Gospel."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Epilogue — That the Strong Might Not Injure the Weak",
+      "verses": [
+        {
+          "ref": "Epilogue",
+          "text": "That the strong might not injure the weak, in order to protect the widows and orphans, I have in Babylon the city where Anu and Bel raise high their head, in E-Sagil, the Temple, whose foundations stand firm as heaven and earth, in order to bespeak justice in the land, to settle all disputes, and heal all injuries, set up these my precious words, written upon my memorial stone, before the image of me, as king of righteousness.",
+          "textVersions": {
+            "king1910": "That the strong might not injure the weak, in order to protect the widows and orphans, I have in Babylon the city where Anu and Bel raise high their head, in E-Sagil, the Temple, whose foundations stand firm as heaven and earth, in order to bespeak justice in the land, to settle all disputes, and heal all injuries, set up these my precious words, written upon my memorial stone, before the image of me, as king of righteousness."
+          },
+          "entities": [
+            {
+              "word": "That the strong might not injure the weak, in order to protect the widows and orphans",
+              "node": "theme-lex-talionis-covenant-code",
+              "type": "theme",
+              "note": "The Epilogue restates the Prologue's commission — restraint of the powerful and protection of widow and orphan — bracketing the whole code in royal-justice ideology. Moshe Weinfeld (Social Justice in Ancient Israel and the ANE, 1995) shows this 'widow and orphan' formula as the standard ANE marker of just kingship.",
+              "parallels": [
+                {
+                  "label": "Psalm 72:12–14 — deliver the needy",
+                  "textId": "psalm-72",
+                  "note": "'For he shall deliver the needy... and him that hath no helper' — the same protection-of-the-weak as the measure of the just king."
+                },
+                {
+                  "label": "Exodus 22:22 — 'Ye shall not afflict any widow, or fatherless child'",
+                  "textId": "exodus-20",
+                  "note": "the Covenant Code makes the same widow/orphan protection a divine command rather than a royal boast."
+                }
+              ]
+            },
+            {
+              "word": "king of righteousness",
+              "node": "divine-kingship-solar",
+              "type": "theme",
+              "note": "Hammurabi's self-title as 'king of righteousness' ruling 'like Shamash' (the sun) is solar-justice royal ideology — the king mirrors the all-seeing sun-god who dispenses cosmic order. Henri Frankfort (Kingship and the Gods, 1948) on solar kingship across Egypt and Mesopotamia.",
+              "parallels": [
+                {
+                  "label": "Sun-disk royal iconography",
+                  "note": "the solar disk as emblem of divine authority handed to the king; the Shamash relief atop the stele is the Mesopotamian instance."
+                },
+                {
+                  "label": "Psalm 72:5–6 — king enduring 'as long as the sun'",
+                  "textId": "psalm-72",
+                  "note": "the Davidic king's justice is likened to the sun and rain — the same solar-justice imagery applied to Israelite kingship."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
+
+// -- Hesiod, Theogony 116–138, 176–206, 453–506, 820–868 (Chaos, the Succession of the Gods, and Zeus vs. Typhoeus) --
+SCRIPTURE_TEXTS['hesiod-theogony'] = {
+  "id": "hesiod-theogony",
+  "title": "Hesiod, Theogony 116–138, 176–206, 453–506, 820–868 (Chaos, the Succession of the Gods, and Zeus vs. Typhoeus)",
+  "shortTitle": "Theogony",
+  "corpus": "Greek · Archaic Theogonic Epic",
+  "tradId": "tradition-greek-religion",
+  "date": "c. 730–700 BCE (Archaic period; the foundational Greek systematic theogony)",
+  "docNode": "phase-2-009-hesiod-theogony-works-and-days",
+  "language": "Ancient Greek (dactylic hexameter) · Hugh G. Evelyn-White translation (Loeb Classical Library, 1914) — public domain (Project Gutenberg #348)",
+  "translations": [
+    {
+      "id": "evelyn-white1914",
+      "label": "Evelyn-White (1914)",
+      "note": "Public domain — Loeb Classical Library / Project Gutenberg #348"
+    }
+  ],
+  "intro": "The Theogony is the foundational systematic cosmogony of Greek religion: Hesiod organises inherited oral myth into a single genealogical sequence that runs from the first gap (Chaos) through the earth-mother Gaia and her offspring to the present reign of Zeus. It carries two of the comparative study of religion's most important cross-tradition structures. First, the succession myth — Ouranos castrated by his son Kronos, Kronos swallowing his own children, Zeus deposing Kronos — is the Greek member of a documented Anatolian-Aegean transmission chain that M. L. West (The East Face of Helicon, 1997) and Walter Burkert (The Orientalizing Revolution, 1992) trace back to the Hittite-Hurrian Kumarbi cycle (the Song of Kumarbi and the Song of Ullikummi), where the sky-god Anu is castrated and Kumarbi swallows the divine seed; the Hesiodic and Hittite versions are close enough that direct transmission, not mere convergence, is the scholarly consensus. Second, the Typhonomachy (Zeus blasting the hundred-headed Typhoeus) is the Greek form of the Chaoskampf — the storm-god-versus-chaos-monster combat whose Near Eastern members are Marduk vs. Tiamat, Baal vs. Yam, and YHWH vs. Leviathan. The opening cosmogony — order emerging by genealogy out of an initial Chaos — is the Greek analogue to the formless beginning of Genesis 1, the Apsu-and-Tiamat opening of Enuma Elish, and the \"what was there before\" of the Vedic Nasadiya Sukta.",
+  "crossTradition": [
+    {
+      "label": "Enuma Elish I — Apsu and Tiamat (Babylonian theogony)",
+      "textId": "enuma-elish-1",
+      "note": "The Babylonian gods are likewise born by genealogical succession out of a primordial pair (Apsu the fresh water, Tiamat the salt sea), and younger gods displace the older generation; West (East Face of Helicon, 1997, 278–286) and Burkert (Orientalizing Revolution, 1992) treat the Mesopotamian succession as part of the same Near Eastern theogonic stream that reaches Hesiod through Anatolian and Phoenician contact."
+    },
+    {
+      "label": "Enuma Elish IV — Marduk slays Tiamat (the Chaoskampf)",
+      "textId": "enuma-elish-4",
+      "note": "Zeus's blasting of Typhoeus is the Greek form of the same storm-god-vs.-chaos-monster combat in which Marduk splits the chaos-sea Tiamat; West (1997, 300–304) lists Hesiod's Typhonomachy among the Greek reflexes of the Near Eastern combat myth."
+    },
+    {
+      "label": "Baal Cycle — Baal vs. Yam (Ugaritic Chaoskampf)",
+      "textId": "baal-cycle-1",
+      "note": "The Ugaritic combat between the storm-god Baal and Sea (Yam) is the Levantine member of the same combat pattern; Burkert (Orientalizing Revolution, 1992) treats the Levant as a transmission corridor by which such mythemes reached the Aegean."
+    },
+    {
+      "label": "Genesis 1 — order from the formless beginning",
+      "textId": "genesis-1",
+      "note": "Both texts narrate an ordered cosmos emerging from an initial undifferentiated state; where the Priestly Genesis 1 orders the deep (tehom) by divine speech, Hesiod orders the world by divine genealogy out of Chaos — the same cosmogonic question answered in two registers (Eliade, A History of Religious Ideas I, 1978)."
+    },
+    {
+      "label": "Orphic Theogony — Night, the Cosmic Egg, Phanes",
+      "textId": "orphic-theogony",
+      "note": "The Orphic theogonies are the speculative Greek revision of Hesiod, prefixing Night and a cosmic egg before the Hesiodic sequence; West (The Orphic Poems, 1983) reads them as deliberate reworkings of the Theogony's genealogy of the gods."
+    },
+    {
+      "label": "Nasadiya Sukta — \"what was there before\" (Vedic)",
+      "textId": "nasadiya-sukta",
+      "note": "The Vedic creation hymn (Rig Veda 10.129) opens with the same cosmogonic question Hesiod answers — what existed at the first — and, like the Theogony, makes Desire (kama / Eros) the first generative principle; the Eros-as-cosmogonic-power parallel is noted by West (East Face of Helicon, 1997)."
+    },
+    {
+      "label": "Song of Kumarbi / Song of Ullikummi (Hittite-Hurrian)",
+      "note": "The documented Anatolian source behind the Greek succession: in the Kumarbi cycle the sky-god Anu is castrated by Kumarbi, who swallows the divine seed and is in turn displaced by the storm-god Teshub, and the monster Ullikummi rises against the storm-god — the precise template of Ouranos→Kronos→Zeus and the Typhonomachy. West (The East Face of Helicon, 1997, 277–305) and Burkert (The Orientalizing Revolution, 1992) treat this as direct transmission, not convergence. [not staged]"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "The Cosmogony — Chaos, Earth, and Eros (ll. 116–138)",
+      "verses": [
+        {
+          "ref": "116–122",
+          "text": "Verily at the first Chaos came to be, but next wide-bosomed Earth, the ever-sure foundations of all the deathless ones who hold the peaks of snowy Olympus, and dim Tartarus in the depth of the wide-pathed Earth, and Eros (Love), fairest among the deathless gods, who unnerves the limbs and overcomes the mind and wise counsels of all gods and all men within them.",
+          "textVersions": {
+            "evelyn-white1914": "Verily at the first Chaos came to be, but next wide-bosomed Earth, the ever-sure foundations of all the deathless ones who hold the peaks of snowy Olympus, and dim Tartarus in the depth of the wide-pathed Earth, and Eros (Love), fairest among the deathless gods, who unnerves the limbs and overcomes the mind and wise counsels of all gods and all men within them."
+          },
+          "entities": [
+            {
+              "word": "Chaos",
+              "node": "chaos-primordial",
+              "type": "deity",
+              "note": "The primordial Chaos (chasm, gap, yawning void) is the first thing to come to be — not disorder in the modern sense but the originating gap out of which the ordered world is generated; West (Hesiod: Theogony, 1966, ad loc.) glosses it as the cosmic void.",
+              "parallels": [
+                {
+                  "label": "Apsu and Tiamat (Babylonian)",
+                  "textId": "enuma-elish-1",
+                  "note": "The Mesopotamian primordial waters out of which the gods are generated; the structural analogue of the Greek initial Chaos (West, East Face of Helicon, 1997)."
+                },
+                {
+                  "label": "the formless deep (Genesis 1:2)",
+                  "textId": "genesis-1",
+                  "note": "The undifferentiated beginning that ordered creation proceeds from; the Hebrew register of the same cosmogonic starting point."
+                }
+              ]
+            },
+            {
+              "word": "wide-bosomed Earth",
+              "node": "gaia",
+              "type": "deity",
+              "note": "Gaia, the earth-mother, is the second to come to be and the genealogical root of nearly all the gods; West (1966) identifies her as the generative foundation of Hesiod's whole theogony.",
+              "parallels": [
+                {
+                  "label": "world-parent / earth-mother cosmogony",
+                  "note": "Gaia is the earth-pole of the sky-father/earth-mother pairing whose separation generates the world — the same structure as Mesopotamian Apsu-Tiamat and Maori Rangi-Papa (per the vault's world-parent-cosmogony theme)."
+                }
+              ]
+            },
+            {
+              "word": "dim Tartarus",
+              "node": "tartarus",
+              "type": "deity",
+              "note": "Tartarus, the lowest abyss beneath the earth, comes to be among the very first beings and is later the prison into which the Titans and Typhoeus are cast.",
+              "parallels": []
+            },
+            {
+              "word": "Eros (Love)",
+              "node": "eros-primordial",
+              "type": "deity",
+              "note": "The primordial Eros — the generative attraction that makes the genealogical proliferation of the gods possible — is one of the first beings, before the gods of the developed pantheon; West (1966) stresses this is the cosmogonic Eros, distinct from the later son of Aphrodite.",
+              "parallels": [
+                {
+                  "label": "Desire (kama) as first principle (Vedic)",
+                  "textId": "nasadiya-sukta",
+                  "note": "The Nasadiya Sukta (RV 10.129) makes Desire the first seed of mind to arise — the same placement of erotic/desiring force at the origin of the cosmos that West (East Face of Helicon, 1997) compares with Hesiod's Eros."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "123–138",
+          "text": "From Chaos came forth Erebus and black Night; but of Night were born Aether and Day, whom she conceived and bare from union in love with Erebus. And Earth first bare starry Heaven, equal to herself, to cover her on every side, and to be an ever-sure abiding-place for the blessed gods. And she brought forth long Hills, graceful haunts of the goddess-Nymphs who dwell amongst the glens of the hills. She bare also the fruitless deep with his raging swell, Pontus, without sweet union of love. But afterwards she lay with Heaven and bare deep-swirling Oceanus, Coeus and Crius and Hyperion and Iapetus, Theia and Rhea, Themis and Mnemosyne and gold-crowned Phoebe and lovely Tethys. After them was born Cronos the wily, youngest and most terrible of her children, and he hated his lusty sire.",
+          "textVersions": {
+            "evelyn-white1914": "From Chaos came forth Erebus and black Night; but of Night were born Aether and Day, whom she conceived and bare from union in love with Erebus. And Earth first bare starry Heaven, equal to herself, to cover her on every side, and to be an ever-sure abiding-place for the blessed gods. And she brought forth long Hills, graceful haunts of the goddess-Nymphs who dwell amongst the glens of the hills. She bare also the fruitless deep with his raging swell, Pontus, without sweet union of love. But afterwards she lay with Heaven and bare deep-swirling Oceanus, Coeus and Crius and Hyperion and Iapetus, Theia and Rhea, Themis and Mnemosyne and gold-crowned Phoebe and lovely Tethys. After them was born Cronos the wily, youngest and most terrible of her children, and he hated his lusty sire."
+          },
+          "entities": [
+            {
+              "word": "Earth first bare starry Heaven",
+              "node": "genealogical-cosmogony",
+              "type": "theme",
+              "note": "Hesiod's cosmogony is genealogical: the cosmos is built up as a family tree, each part of the world born from a divine parent — Earth bears Heaven, the Hills, and the Sea before mating with Heaven to bear the Titans. The vault's genealogical-cosmogony theme places the Theogony beside the Maori chants and the Vedic Purusha Sukta as cosmogony-as-divine-genealogy.",
+              "parallels": [
+                {
+                  "label": "theogony from Apsu and Tiamat (Babylonian)",
+                  "textId": "enuma-elish-1",
+                  "note": "The Babylonian gods are likewise generated as successive divine births from a primordial pair; West (East Face of Helicon, 1997) compares the genealogical scaffolding of the two theogonies."
+                }
+              ]
+            },
+            {
+              "word": "After them was born Cronos the wily",
+              "node": "kronos",
+              "type": "deity",
+              "note": "Kronos, youngest and most terrible of the Titans, who hates his father Heaven — the figure who will castrate Ouranos and inaugurate the succession of generations; West (1966) and Burkert (Orientalizing Revolution, 1992) identify him as the Greek counterpart of the Hurrian Kumarbi.",
+              "parallels": [
+                {
+                  "label": "Kumarbi (Hittite-Hurrian)",
+                  "note": "In the Song of Kumarbi, Kumarbi castrates the sky-god Anu and swallows his seed — the direct Anatolian source of Kronos's deeds (West, East Face of Helicon, 1997, 277–286; Burkert, 1992)."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "The Castration of Heaven (ll. 176–187)",
+      "verses": [
+        {
+          "ref": "176–187",
+          "text": "And Heaven came, bringing on night and longing for love, and he lay about Earth spreading himself full upon her. Then the son from his ambush stretched forth his left hand and in his right took the great long sickle with jagged teeth, and swiftly lopped off his own father's members and cast them away to fall behind him. And not vainly did they fall from his hand; for all the bloody drops that gushed forth Earth received, and as the seasons moved round she bare the strong Erinyes and the great Giants with gleaming armour, holding long spears in their hands and the Nymphs whom they call Meliae all over the boundless earth.",
+          "textVersions": {
+            "evelyn-white1914": "And Heaven came, bringing on night and longing for love, and he lay about Earth spreading himself full upon her. Then the son from his ambush stretched forth his left hand and in his right took the great long sickle with jagged teeth, and swiftly lopped off his own father's members and cast them away to fall behind him. And not vainly did they fall from his hand; for all the bloody drops that gushed forth Earth received, and as the seasons moved round she bare the strong Erinyes and the great Giants with gleaming armour, holding long spears in their hands and the Nymphs whom they call Meliae all over the boundless earth."
+          },
+          "entities": [
+            {
+              "word": "And Heaven came",
+              "node": "uranus-greek",
+              "type": "deity",
+              "note": "Ouranos (Heaven), the sky-father born of Gaia who then mates with her; his castration by Kronos is the first act of the succession myth and the violent separation of sky from earth.",
+              "parallels": [
+                {
+                  "label": "Anu the sky-god (Hittite-Hurrian)",
+                  "note": "In the Song of Kumarbi the sky-god Anu is castrated by Kumarbi, who bites off and swallows his genitals — the Anatolian original of the Ouranos episode (West, East Face of Helicon, 1997, 279–283; Burkert, Orientalizing Revolution, 1992)."
+                },
+                {
+                  "label": "sky-father/earth-mother separation",
+                  "note": "The forcible separation of Heaven (Ouranos) from Earth (Gaia) is the Greek instance of the world-parent cosmogony in which a primordial sky-earth couple is parted so the world can come into being (per the vault's world-parent-cosmogony theme)."
+                }
+              ]
+            },
+            {
+              "word": "the great long sickle with jagged teeth",
+              "node": "kronos",
+              "type": "deity",
+              "note": "Kronos's sickle, the weapon with which he castrates his father — the act that wins him the kingship of the gods and that he in turn fears from his own children; West (1966) treats the harpe-sickle as a motif paralleled in the Hurrian-Hittite material.",
+              "parallels": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "The Succession — Cronos Swallows His Children, Zeus Prevails (ll. 453–506)",
+      "verses": [
+        {
+          "ref": "453–467",
+          "text": "But Rhea was subject in love to Cronos and bare splendid children, Hestia, Demeter, and gold-shod Hera and strong Hades, pitiless in heart, who dwells under the earth, and the loud-crashing Earth-Shaker, and wise Zeus, father of gods and men, by whose thunder the wide earth is shaken. These great Cronos swallowed as each came forth from the womb to his mother's knees with this intent, that no other of the proud sons of Heaven should hold the kingly office amongst the deathless gods. For he learned from Earth and starry Heaven that he was destined to be overcome by his own son, strong though he was, through the contriving of great Zeus.",
+          "textVersions": {
+            "evelyn-white1914": "But Rhea was subject in love to Cronos and bare splendid children, Hestia, Demeter, and gold-shod Hera and strong Hades, pitiless in heart, who dwells under the earth, and the loud-crashing Earth-Shaker, and wise Zeus, father of gods and men, by whose thunder the wide earth is shaken. These great Cronos swallowed as each came forth from the womb to his mother's knees with this intent, that no other of the proud sons of Heaven should hold the kingly office amongst the deathless gods. For he learned from Earth and starry Heaven that he was destined to be overcome by his own son, strong though he was, through the contriving of great Zeus."
+          },
+          "entities": [
+            {
+              "word": "These great Cronos swallowed",
+              "node": "kronos",
+              "type": "deity",
+              "note": "Kronos swallows each child at birth to forestall the prophecy that a son will overthrow him — the central motif of the succession myth, in which each ruling generation tries and fails to prevent its own displacement; West (1966) and Burkert (Orientalizing Revolution, 1992) derive the swallowing motif from the Hurrian Kumarbi, who swallows the sky-god's seed.",
+              "parallels": [
+                {
+                  "label": "Kumarbi swallows the divine seed (Hittite-Hurrian)",
+                  "note": "After castrating Anu, Kumarbi swallows his seed and becomes pregnant with the storm-god who will depose him — the structural source of Kronos's swallowing of his children (West, East Face of Helicon, 1997, 280–286)."
+                }
+              ]
+            },
+            {
+              "word": "wise Zeus, father of gods and men",
+              "node": "zeus",
+              "type": "deity",
+              "note": "Zeus, the youngest son destined to overthrow Kronos and become the reigning sky-king of the developed pantheon; his victory ends the succession of violent generations and inaugurates the present cosmic order.",
+              "parallels": [
+                {
+                  "label": "Teshub the storm-god (Hittite-Hurrian)",
+                  "note": "In the Kumarbi cycle the storm-god Teshub is the one who finally takes the kingship of heaven from Kumarbi — the role Zeus plays in Hesiod (Burkert, Orientalizing Revolution, 1992; West, 1997)."
+                },
+                {
+                  "label": "Marduk (Babylonian)",
+                  "textId": "enuma-elish-4",
+                  "note": "The younger storm-god who supplants the older order and reigns — the Mesopotamian member of the same storm-god-kingship pattern."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "479–491",
+          "text": "Thither came Earth carrying him swiftly through the black night to Lyctus first, and took him in her arms and hid him in a remote cave beneath the secret places of the holy earth on thick-wooded Mount Aegeum; but to the mightily ruling son of Heaven, the earlier king of the gods, she gave a great stone wrapped in swaddling clothes. Then he took it in his hands and thrust it down into his belly: wretch! he knew not in his heart that in place of the stone his son was left behind, unconquered and untroubled, and that he was soon to overcome him by force and might and drive him from his honours, himself to reign over the deathless gods.",
+          "textVersions": {
+            "evelyn-white1914": "Thither came Earth carrying him swiftly through the black night to Lyctus first, and took him in her arms and hid him in a remote cave beneath the secret places of the holy earth on thick-wooded Mount Aegeum; but to the mightily ruling son of Heaven, the earlier king of the gods, she gave a great stone wrapped in swaddling clothes. Then he took it in his hands and thrust it down into his belly: wretch! he knew not in his heart that in place of the stone his son was left behind, unconquered and untroubled, and that he was soon to overcome him by force and might and drive him from his honours, himself to reign over the deathless gods."
+          },
+          "entities": [
+            {
+              "word": "a great stone wrapped in swaddling clothes",
+              "node": "genealogical-cosmogony",
+              "type": "theme",
+              "note": "Gaia substitutes a swaddled stone for the infant Zeus, which Kronos swallows — the ruse that lets the succession proceed to its appointed end; the stone is later set up at Delphi (Pytho). The motif of deceiving the swallowing father belongs to the inherited Near Eastern succession schema (West, 1966; Burkert, 1992).",
+              "parallels": []
+            }
+          ]
+        },
+        {
+          "ref": "492–506",
+          "text": "After that, the strength and glorious limbs of the prince increased quickly, and as the years rolled on, great Cronos the wily was beguiled by the deep suggestions of Earth, and brought up again his offspring, vanquished by the arts and might of his own son, and he vomited up first the stone which he had swallowed last. And Zeus set it fast in the wide-pathed earth at goodly Pytho under the glens of Parnassus, to be a sign thenceforth and a marvel to mortal men. And he set free from their deadly bonds the brothers of his father, sons of Heaven whom his father in his foolishness had bound. And they remembered to be grateful to him for his kindness, and gave him thunder and the glowing thunderbolt and lightening: for before that, huge Earth had hidden these. In them he trusts and rules over mortals and immortals.",
+          "textVersions": {
+            "evelyn-white1914": "After that, the strength and glorious limbs of the prince increased quickly, and as the years rolled on, great Cronos the wily was beguiled by the deep suggestions of Earth, and brought up again his offspring, vanquished by the arts and might of his own son, and he vomited up first the stone which he had swallowed last. And Zeus set it fast in the wide-pathed earth at goodly Pytho under the glens of Parnassus, to be a sign thenceforth and a marvel to mortal men. And he set free from their deadly bonds the brothers of his father, sons of Heaven whom his father in his foolishness had bound. And they remembered to be grateful to him for his kindness, and gave him thunder and the glowing thunderbolt and lightening: for before that, huge Earth had hidden these. In them he trusts and rules over mortals and immortals."
+          },
+          "entities": [
+            {
+              "word": "gave him thunder and the glowing thunderbolt and lightening",
+              "node": "zeus",
+              "type": "deity",
+              "note": "Zeus receives the thunderbolt from the freed Cyclopes — the weapon with which he will reign over gods and men and, in the next movement, blast Typhoeus; the storm-god's lightning is the instrument of his sovereignty (West, 1966).",
+              "parallels": [
+                {
+                  "label": "the storm-god's weapon (Near Eastern)",
+                  "note": "The storm-god armed with the thunderbolt who wins and holds the kingship — Marduk, Baal, and Teshub all wield the storm-weapon (West, East Face of Helicon, 1997)."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "The Typhonomachy — Zeus Blasts Typhoeus (ll. 820–868)",
+      "verses": [
+        {
+          "ref": "820–835",
+          "text": "But when Zeus had driven the Titans from heaven, huge Earth bare her youngest child Typhoeus of the love of Tartarus, by the aid of golden Aphrodite. Strength was with his hands in all that he did and the feet of the strong god were untiring. From his shoulders grew an hundred heads of a snake, a fearful dragon, with dark, flickering tongues, and from under the brows of his eyes in his marvellous heads flashed fire, and fire burned from his heads as he glared.",
+          "textVersions": {
+            "evelyn-white1914": "But when Zeus had driven the Titans from heaven, huge Earth bare her youngest child Typhoeus of the love of Tartarus, by the aid of golden Aphrodite. Strength was with his hands in all that he did and the feet of the strong god were untiring. From his shoulders grew an hundred heads of a snake, a fearful dragon, with dark, flickering tongues, and from under the brows of his eyes in his marvellous heads flashed fire, and fire burned from his heads as he glared."
+          },
+          "entities": [
+            {
+              "word": "Typhoeus",
+              "node": "typhon",
+              "type": "deity",
+              "note": "Typhoeus (Typhon), the hundred-headed serpent-monster born of Earth and Tartarus, who rises to challenge Zeus for the kingship of the cosmos — the Greek chaos-monster of the combat myth; West (1966, ad loc.) and Burkert (Orientalizing Revolution, 1992) connect him with the Hurrian stone-monster Ullikummi and the Hittite serpent Illuyanka.",
+              "parallels": [
+                {
+                  "label": "Ullikummi / Illuyanka (Hittite-Hurrian)",
+                  "note": "The monstrous adversary the storm-god must defeat to secure his reign; West (East Face of Helicon, 1997, 300–304) treats Typhoeus as the Greek reflex of these Anatolian combat-monsters."
+                },
+                {
+                  "label": "Tiamat (Babylonian)",
+                  "textId": "enuma-elish-4",
+                  "note": "The chaos-being the storm-god defeats to establish cosmic order; Typhoeus is the Greek member of the same chaos-monster role Tiamat fills in Babylon."
+                },
+                {
+                  "label": "Lotan / Leviathan (Ugaritic-Hebrew)",
+                  "textId": "baal-cycle-1",
+                  "note": "The many-headed sea-serpent the storm-god overcomes — the Levantine member of the combat; the hundred snake-heads of Typhoeus echo the seven-headed Lotan."
+                }
+              ]
+            },
+            {
+              "word": "of the love of Tartarus",
+              "node": "tartarus",
+              "type": "deity",
+              "note": "Typhoeus is begotten by Earth of the abyss Tartarus — the chaos-monster springs from the lowest depth, and to that same Tartarus Zeus will cast him down at the end of the combat.",
+              "parallels": []
+            }
+          ]
+        },
+        {
+          "ref": "836–852",
+          "text": "And truly a thing past help would have happened on that day, and he would have come to reign over mortals and immortals, had not the father of men and gods been quick to perceive it. But he thundered hard and mightily: and the earth around resounded terribly and the wide heaven above, and the sea and Ocean's streams and the nether parts of the earth. Great Olympus reeled beneath the divine feet of the king as he arose and earth groaned thereat. And through the two of them heat took hold on the dark-blue sea, through the thunder and lightning, and through the fire from the monster, and the scorching winds and blazing thunderbolt.",
+          "textVersions": {
+            "evelyn-white1914": "And truly a thing past help would have happened on that day, and he would have come to reign over mortals and immortals, had not the father of men and gods been quick to perceive it. But he thundered hard and mightily: and the earth around resounded terribly and the wide heaven above, and the sea and Ocean's streams and the nether parts of the earth. Great Olympus reeled beneath the divine feet of the king as he arose and earth groaned thereat. And through the two of them heat took hold on the dark-blue sea, through the thunder and lightning, and through the fire from the monster, and the scorching winds and blazing thunderbolt."
+          },
+          "entities": [
+            {
+              "word": "he would have come to reign over mortals and immortals",
+              "node": "chaoskampf",
+              "type": "theme",
+              "note": "The whole cosmic order hangs on the outcome: had Typhoeus won he would have ruled in Zeus's place. This is the defining stake of the Chaoskampf — the storm-god's combat against the chaos-monster is fought to decide who holds the kingship of the cosmos; the vault's chaoskampf theme places Zeus-vs-Typhoeus in the six-tradition combat cluster.",
+              "parallels": [
+                {
+                  "label": "Marduk vs. Tiamat (Babylonian)",
+                  "textId": "enuma-elish-4",
+                  "note": "The type-specimen of the combat: the storm-god slays the chaos-sea to win the kingship and build the cosmos; West (East Face of Helicon, 1997, 300–304) names Hesiod's Typhonomachy among its Greek reflexes."
+                },
+                {
+                  "label": "Baal vs. Yam (Ugaritic)",
+                  "textId": "baal-cycle-1",
+                  "note": "The Canaanite storm-god defeats Sea to secure his kingship — the Levantine member of the same combat (Burkert, Orientalizing Revolution, 1992)."
+                },
+                {
+                  "label": "YHWH cutting Rahab / the dragon (Hebrew)",
+                  "note": "The Hebrew reflex preserved in Isaiah 51 and Psalm 74, where the divine warrior crushes the chaos-serpent at the foundation of order; Day (God's Conflict with the Dragon and the Sea, 1985) catalogues the shared combat pattern. [not staged]"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "853–868",
+          "text": "So when Zeus had raised up his might and seized his arms, thunder and lightning and lurid thunderbolt, he leaped from Olympus and struck him, and burned all the marvellous heads of the monster about him. But when Zeus had conquered him and lashed him with strokes, Typhoeus was hurled down, a maimed wreck, so that the huge earth groaned. A great part of huge earth was scorched by the terrible vapour and melted as tin melts when heated by men's art in channelled crucibles; or as iron, which is hardest of all things, is softened by glowing fire in mountain glens and melts in the divine earth through the strength of Hephaestus. Even so, then, the earth melted in the glow of the blazing fire. And in the bitterness of his anger Zeus cast him into wide Tartarus.",
+          "textVersions": {
+            "evelyn-white1914": "So when Zeus had raised up his might and seized his arms, thunder and lightning and lurid thunderbolt, he leaped from Olympus and struck him, and burned all the marvellous heads of the monster about him. But when Zeus had conquered him and lashed him with strokes, Typhoeus was hurled down, a maimed wreck, so that the huge earth groaned. A great part of huge earth was scorched by the terrible vapour and melted as tin melts when heated by men's art in channelled crucibles; or as iron, which is hardest of all things, is softened by glowing fire in mountain glens and melts in the divine earth through the strength of Hephaestus. Even so, then, the earth melted in the glow of the blazing fire. And in the bitterness of his anger Zeus cast him into wide Tartarus."
+          },
+          "entities": [
+            {
+              "word": "Zeus had raised up his might and seized his arms",
+              "node": "zeus",
+              "type": "deity",
+              "note": "Zeus the storm-god defeats the chaos-monster with thunder, lightning, and the thunderbolt — the victory that secures his reign over gods and men and completes the succession from Ouranos through Kronos to Zeus.",
+              "parallels": [
+                {
+                  "label": "Teshub vs. Ullikummi (Hittite-Hurrian)",
+                  "note": "The storm-god's defeat of the rising monster to secure the kingship — the Anatolian template Burkert (1992) and West (1997) see behind the Typhonomachy."
+                }
+              ]
+            },
+            {
+              "word": "Zeus cast him into wide Tartarus",
+              "node": "chaoskampf",
+              "type": "theme",
+              "note": "The defeated chaos-monster is imprisoned in the abyss rather than annihilated — the combat ends, as in the Near Eastern versions, with the chaos-power bound beneath the ordered world; West (East Face of Helicon, 1997) and Burkert (Orientalizing Revolution, 1992) read the casting-down of Typhoeus as the Greek close of the inherited combat myth.",
+              "parallels": [
+                {
+                  "label": "Tiamat split to form the cosmos (Babylonian)",
+                  "textId": "enuma-elish-4",
+                  "note": "The Babylonian combat ends with the chaos-being's body bound into the structure of the world; the Greek version ends with Typhoeus bound in Tartarus — both subordinate the defeated chaos to the new order."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
+
+// -- Hesiod, Works and Days 106–201 (The Five Races of Man — gold to iron) --
+SCRIPTURE_TEXTS['hesiod-five-ages'] = {
+  "id": "hesiod-five-ages",
+  "title": "Hesiod, Works and Days 106–201 (The Five Races of Man — gold to iron)",
+  "shortTitle": "Hesiod, Five Ages",
+  "corpus": "Greek · Archaic didactic epic (Hesiod)",
+  "tradId": "tradition-greek-religion",
+  "date": null,
+  "docNode": "phase-2-009-hesiod-theogony-works-and-days",
+  "language": "Greek (Archaic dactylic hexameter) · Hugh G. Evelyn-White translation (Loeb Classical Library, 1914) — public domain",
+  "translations": [
+    {
+      "id": "evelyn-white1914",
+      "label": "Evelyn-White (1914)",
+      "note": "Public domain — Loeb Classical Library / Project Gutenberg #348"
+    }
+  ],
+  "intro": "The Five Races (or Ages) of Man is the oldest extant \"world-age decline\" narrative in the Western tradition: the deathless gods make a golden race that lives \"like gods without sorrow of heart, remote and free from toil,\" followed by a degenerate silver race, a violent bronze race, an anomalous nobler race of hero-demigods, and the present iron race, in which \"men never rest from labour and sorrow by day.\" The metals descend in value as the human condition decays from primordial ease toward present misery. This is the Greek node of a metallic-decline schema that recurs in Ovid's Four Ages (the Latin reception), Daniel 2's four-metal image (the Hebrew apocalyptic reflex), the Vedic/Puranic yugas, and the Zoroastrian Bahman Yasht's four-metal tree — a shared ancient grammar of decline whose origin (inherited Proto-Indo-European tradition versus diffused Near-Eastern schema) is debated, not demonstrated.",
+  "crossTradition": [
+    {
+      "label": "Ovid, Metamorphoses I — the Four Ages of gold/silver/bronze/iron",
+      "textId": "ovid-metamorphoses-1",
+      "note": "Ovid's Aetas aurea / argentea / aenea / ferrea (Met. I.89–150) is the direct Latin reception of Hesiod's metallic races, dropping the anomalous Heroic Age to make a clean four-metal descent. M. L. West, The East Face of Helicon (1997), and the standard Ovid commentaries treat the Augustan Four Ages as a literary refashioning of the Hesiodic schema."
+    },
+    {
+      "label": "Daniel 2 — Nebuchadnezzar's four-metal image",
+      "textId": "daniel-2",
+      "note": "Nebuchadnezzar's colossus (head of gold, breast of silver, belly of brass, legs of iron, feet of iron-and-clay) is the same metals-as-declining-epochs pattern read as four world-empires. West (1997) and Flusser, 'The Four Empires in the Fourth Sibyl and in the Book of Daniel' (1972), set Hesiod and Daniel inside a common Near-Eastern/Mediterranean decline-schema rather than positing direct dependence."
+    },
+    {
+      "label": "Vedic / Puranic yugas — Krita (gold) to Kali (iron)",
+      "note": "The four-yuga cycle (Krita/Satya → Treta → Dvapara → Kali) shares Hesiod's structure of primordial perfection, progressive moral decline, and a worst present age. West (1997, 312–319) argues this reflects a shared Proto-Indo-European inheritance rather than Greek–Indian contact; Eliade, The Myth of the Eternal Return (1949/1954), reads the yuga decline as a type-case of the cosmic-ages pattern."
+    },
+    {
+      "label": "Zoroastrian Bahman Yasht — the four-metal tree",
+      "note": "The Pahlavi Zand-i Wahman Yasn shows Zarathustra a tree with four metal branches (gold, silver, steel, iron-mixed-with-clay), each a worsening future age — strikingly close to Daniel 2's metals-with-clay. The text's late redaction (3rd–9th c. CE over older Avestan tradition) makes the relationship a debated parallel, not demonstrated transmission; Flusser (1972) treats the four-metals apocalyptic as a transmitted ANE pattern."
+    },
+    {
+      "label": "Vernant — the Races as a structural, not chronological, sequence",
+      "note": "Jean-Pierre Vernant, 'Le mythe hésiodique des races' (1960), argues the five races are not a simple linear decline but a structured system of paired and opposed conditions (just/unjust, hubris/dikē) — reframing the 'decline' as Hesiod's moral architecture and explaining the Heroic Age's intrusion into the metallic series."
+    }
+  ],
+  "sections": [
+    {
+      "heading": "How the gods and mortal men sprang from one source (ll. 106–108)",
+      "verses": [
+        {
+          "ref": "ll. 106–108",
+          "text": "Or if you will, I will sum you up another tale well and skilfully—and do you lay it up in your heart,—how the gods and mortal men sprang from one source.",
+          "textVersions": {
+            "evelyn-white1914": "Or if you will, I will sum you up another tale well and skilfully—and do you lay it up in your heart,—how the gods and mortal men sprang from one source."
+          },
+          "entities": [
+            {
+              "word": "how the gods and mortal men sprang from one source",
+              "node": "four-ages-degeneration",
+              "type": "theme",
+              "note": "Hesiod frames the Five Races as a single descending genealogy of humankind — the type-specimen of the world-age decline schema. West (1997) and Vernant (1960) treat this prologue as the opening of a structured myth of successive humanities, not a casual aside.",
+              "parallels": [
+                {
+                  "label": "Ovid's Four Ages",
+                  "textId": "ovid-metamorphoses-1",
+                  "note": "the Latin retelling that fixes the metallic-decline frame in Western literature"
+                },
+                {
+                  "label": "the Vedic yuga cycle",
+                  "note": "the parallel four-phase decline from primordial perfection (Krita) to present worst age (Kali); West 1997 reads a shared PIE inheritance"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "The Golden Race (ll. 109–120)",
+      "verses": [
+        {
+          "ref": "ll. 109–120",
+          "text": "First of all the deathless gods who dwell on Olympus made a golden race of mortal men who lived in the time of Cronos when he was reigning in heaven. And they lived like gods without sorrow of heart, remote and free from toil and grief: miserable age rested not on them; but with legs and arms never failing they made merry with feasting beyond the reach of all evils. When they died, it was as though they were overcome with sleep, and they had all good things; for the fruitful earth unforced bare them fruit abundantly and without stint. They dwelt in ease and peace upon their lands with many good things, rich in flocks and loved by the blessed gods.",
+          "textVersions": {
+            "evelyn-white1914": "First of all the deathless gods who dwell on Olympus made a golden race of mortal men who lived in the time of Cronos when he was reigning in heaven. And they lived like gods without sorrow of heart, remote and free from toil and grief: miserable age rested not on them; but with legs and arms never failing they made merry with feasting beyond the reach of all evils. When they died, it was as though they were overcome with sleep, and they had all good things; for the fruitful earth unforced bare them fruit abundantly and without stint. They dwelt in ease and peace upon their lands with many good things, rich in flocks and loved by the blessed gods."
+          },
+          "entities": [
+            {
+              "word": "a golden race",
+              "node": "four-ages-degeneration",
+              "type": "theme",
+              "note": "The golden race is the primordial best state from which all later races decline — the 'gold' of the metallic schema. West (1997) and Vernant (1960) make it the apex against which the descending silver/bronze/iron measure their fall.",
+              "parallels": [
+                {
+                  "label": "Aetas aurea (Ovid)",
+                  "textId": "ovid-metamorphoses-1",
+                  "note": "Ovid's 'golden age' is the direct Latin descendant of Hesiod's golden race"
+                },
+                {
+                  "label": "head of gold (Daniel 2)",
+                  "textId": "daniel-2",
+                  "note": "the gold that heads Nebuchadnezzar's descending image — the same metal-as-best-epoch convention"
+                },
+                {
+                  "label": "Krita/Satya yuga",
+                  "note": "the Vedic golden first age of perfect dharma; West 1997 reads a shared inheritance"
+                }
+              ]
+            },
+            {
+              "word": "the time of Cronos when he was reigning in heaven",
+              "node": "kronos",
+              "type": "deity",
+              "note": "Hesiod sets the golden race under the reign of Cronos (Kronos) — the 'reign of Kronos' becomes the proverbial Greek byword for a lost paradise of plenty before Zeus. West (1978/1997) notes the golden age is tied to the displaced elder god's rule.",
+              "parallels": [
+                {
+                  "label": "Saturn's golden age (Roman)",
+                  "textId": "ovid-metamorphoses-1",
+                  "note": "the Roman Saturn (= Kronos) presides over the Latin golden age in Ovid — the same elder-god-paradise motif"
+                }
+              ]
+            },
+            {
+              "word": "remote and free from toil and grief",
+              "node": "four-ages-degeneration",
+              "type": "theme",
+              "note": "The golden race lives 'free from toil' — the absence of labour and sorrow that defines the primordial paradise and that the iron age inverts ('men never rest from labour'). Vernant (1960) makes this toil/toil-less polarity the structural hinge of the whole myth.",
+              "parallels": [
+                {
+                  "label": "the toil-less golden age (Ovid)",
+                  "textId": "ovid-metamorphoses-1",
+                  "note": "Ovid's golden age likewise needs no labour: the earth yields unforced — the same paradise-of-plenty topos"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "The Silver Race (ll. 121–139)",
+      "verses": [
+        {
+          "ref": "ll. 127–139",
+          "text": "then they who dwell on Olympus made a second generation which was of silver and less noble by far. It was like the golden race neither in body nor in spirit. A child was brought up at his good mother’s side an hundred years, an utter simpleton, playing childishly in his own home. But when they were full grown and were come to the full measure of their prime, they lived only a little time in sorrow because of their foolishness, for they could not keep from sinning and from wronging one another, nor would they serve the immortals, nor sacrifice on the holy altars of the blessed ones as it is right for men to do wherever they dwell. Then Zeus the son of Cronos was angry and put them away, because they would not give honour to the blessed gods who live on Olympus.",
+          "textVersions": {
+            "evelyn-white1914": "then they who dwell on Olympus made a second generation which was of silver and less noble by far. It was like the golden race neither in body nor in spirit. A child was brought up at his good mother’s side an hundred years, an utter simpleton, playing childishly in his own home. But when they were full grown and were come to the full measure of their prime, they lived only a little time in sorrow because of their foolishness, for they could not keep from sinning and from wronging one another, nor would they serve the immortals, nor sacrifice on the holy altars of the blessed ones as it is right for men to do wherever they dwell. Then Zeus the son of Cronos was angry and put them away, because they would not give honour to the blessed gods who live on Olympus."
+          },
+          "entities": [
+            {
+              "word": "a second generation which was of silver and less noble by far",
+              "node": "four-ages-degeneration",
+              "type": "theme",
+              "note": "The silver race is the first descent of the metallic schema — inferior to gold 'in body nor in spirit,' marked by impiety. West (1997) reads the moral deterioration, not just the metal's lesser worth, as the engine of Hesiod's decline.",
+              "parallels": [
+                {
+                  "label": "Aetas argentea (Ovid)",
+                  "textId": "ovid-metamorphoses-1",
+                  "note": "Ovid's silver age, second and lesser, directly continues the Hesiodic descent"
+                },
+                {
+                  "label": "breast and arms of silver (Daniel 2)",
+                  "textId": "daniel-2",
+                  "note": "the silver second tier of the four-metal image"
+                }
+              ]
+            },
+            {
+              "word": "Zeus the son of Cronos was angry and put them away",
+              "node": "zeus",
+              "type": "deity",
+              "note": "With the silver race the agency shifts to Zeus, who destroys the impious generation — Hesiod marks the transition from the reign of Kronos (gold) to the order of Zeus that governs the later, harder ages. West (1978) notes Zeus becomes the recurring destroyer and maker of the post-golden races.",
+              "parallels": [
+                {
+                  "label": "Jupiter ends the silver age (Ovid)",
+                  "textId": "ovid-metamorphoses-1",
+                  "note": "in Ovid it is Jupiter (= Zeus) who shortens the year and hardens life as the ages decline"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "The Bronze Race (ll. 140–155)",
+      "verses": [
+        {
+          "ref": "ll. 143–155",
+          "text": "Zeus the Father made a third generation of mortal men, a brazen race, sprung from ash-trees; and it was in no way equal to the silver age, but was terrible and strong. They loved the lamentable works of Ares and deeds of violence; they ate no bread, but were hard of heart like adamant, fearful men. Great was their strength and unconquerable the arms which grew from their shoulders on their strong limbs. Their armour was of bronze, and their houses of bronze, and of bronze were their implements: there was no black iron. These were destroyed by their own hands and passed to the dank house of chill Hades, and left no name: terrible though they were, black Death seized them, and they left the bright light of the sun.",
+          "textVersions": {
+            "evelyn-white1914": "Zeus the Father made a third generation of mortal men, a brazen race, sprung from ash-trees; and it was in no way equal to the silver age, but was terrible and strong. They loved the lamentable works of Ares and deeds of violence; they ate no bread, but were hard of heart like adamant, fearful men. Great was their strength and unconquerable the arms which grew from their shoulders on their strong limbs. Their armour was of bronze, and their houses of bronze, and of bronze were their implements: there was no black iron. These were destroyed by their own hands and passed to the dank house of chill Hades, and left no name: terrible though they were, black Death seized them, and they left the bright light of the sun."
+          },
+          "entities": [
+            {
+              "word": "a brazen race",
+              "node": "four-ages-degeneration",
+              "type": "theme",
+              "note": "The bronze race is the third metallic descent — defined by violence and war ('the lamentable works of Ares') and self-destruction. West (1997) notes Hesiod here aligns the metal with a material-culture marker ('there was no black iron'), grounding the schema in a remembered bronze-then-iron metallurgical sequence.",
+              "parallels": [
+                {
+                  "label": "Aetas aenea (Ovid)",
+                  "textId": "ovid-metamorphoses-1",
+                  "note": "Ovid's bronze age, fiercer and readier for arms, continues the descent"
+                },
+                {
+                  "label": "belly and thighs of brass (Daniel 2)",
+                  "textId": "daniel-2",
+                  "note": "the brass/bronze third tier of Nebuchadnezzar's image"
+                }
+              ]
+            },
+            {
+              "word": "Zeus the Father made a third generation",
+              "node": "zeus",
+              "type": "deity",
+              "note": "Zeus continues as the maker of each successive race; Hesiod's repeated 'Zeus made' formula structures the sequence under the Olympian order. West (1978) treats the formula as the connective tissue of the races-myth.",
+              "parallels": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "The Race of Heroes / Demigods (ll. 156–169b)",
+      "verses": [
+        {
+          "ref": "ll. 156–169b",
+          "text": "Zeus the son of Cronos made yet another, the fourth, upon the fruitful earth, which was nobler and more righteous, a god-like race of hero-men who are called demi-gods, the race before our own, throughout the boundless earth. Grim war and dread battle destroyed a part of them, some in the land of Cadmus at seven-gated Thebe when they fought for the flocks of Oedipus, and some, when it had brought them in ships over the great sea gulf to Troy for rich-haired Helen’s sake: there death’s end enshrouded a part of them. But to the others father Zeus the son of Cronos gave a living and an abode apart from men, and made them dwell at the ends of earth. And they live untouched by sorrow in the islands of the blessed along the shore of deep swirling Ocean, happy heroes for whom the grain-giving earth bears honey-sweet fruit flourishing thrice a year.",
+          "textVersions": {
+            "evelyn-white1914": "Zeus the son of Cronos made yet another, the fourth, upon the fruitful earth, which was nobler and more righteous, a god-like race of hero-men who are called demi-gods, the race before our own, throughout the boundless earth. Grim war and dread battle destroyed a part of them, some in the land of Cadmus at seven-gated Thebe when they fought for the flocks of Oedipus, and some, when it had brought them in ships over the great sea gulf to Troy for rich-haired Helen’s sake: there death’s end enshrouded a part of them. But to the others father Zeus the son of Cronos gave a living and an abode apart from men, and made them dwell at the ends of earth. And they live untouched by sorrow in the islands of the blessed along the shore of deep swirling Ocean, happy heroes for whom the grain-giving earth bears honey-sweet fruit flourishing thrice a year."
+          },
+          "entities": [
+            {
+              "word": "a god-like race of hero-men who are called demi-gods",
+              "node": "four-ages-degeneration",
+              "type": "theme",
+              "note": "The Heroic Age is the famous anomaly in the schema: nobler than the bronze race it follows, it breaks the smooth metallic descent. West (1997, 312–319) reads it as Hesiod's adaptation of an inherited four/five-metal scheme to accommodate the Trojan/Theban heroic legends of Greek tradition — the reason Ovid and the Iranian/Vedic forms lack it.",
+              "parallels": [
+                {
+                  "label": "Ovid omits the Heroic Age",
+                  "textId": "ovid-metamorphoses-1",
+                  "note": "Ovid drops the heroes to restore a clean four-metal gold→iron descent — evidence the heroes are a Greek-specific insertion"
+                }
+              ]
+            },
+            {
+              "word": "the islands of the blessed along the shore of deep swirling Ocean",
+              "node": "theme-heroes-paradise-island",
+              "type": "theme",
+              "note": "The surviving heroes are translated to the Isles of the Blessed at the ends of the earth — the Greek 'heroes' paradise island,' the model later Greek and Roman eschatology inherits (Elysium, the Isles of the Blessed). The vault theme-node traces this from Hesiod through Plato to later receptions.",
+              "parallels": [
+                {
+                  "label": "Elysian Fields / Isles of the Blessed (Plato)",
+                  "note": "Plato's Timaeus/Critias inheritance of the Hesiodic blessed-isles tradition; cf. the vault theme-node theme-heroes-paradise-island"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "The Iron Race — the present age (ll. 169c–201)",
+      "verses": [
+        {
+          "ref": "ll. 169c–169d",
+          "text": "And again far-seeing Zeus made yet another generation, the fifth, of men who are upon the bounteous earth.",
+          "textVersions": {
+            "evelyn-white1914": "And again far-seeing Zeus made yet another generation, the fifth, of men who are upon the bounteous earth."
+          },
+          "entities": [
+            {
+              "word": "the fifth",
+              "node": "four-ages-degeneration",
+              "type": "theme",
+              "note": "Hesiod's fifth and present race closes the descending sequence — the schema's terminal, worst age. Vernant (1960) and West (1997) treat the present iron age as the rhetorical target of the whole myth, framing Hesiod's exhortation to justice.",
+              "parallels": []
+            }
+          ]
+        },
+        {
+          "ref": "ll. 170–178",
+          "text": "Thereafter, would that I were not among the men of the fifth generation, but either had died before or been born afterwards. For now truly is a race of iron, and men never rest from labour and sorrow by day, and from perishing by night; and the gods shall lay sore trouble upon them. But, notwithstanding, even these shall have some good mingled with their evils. And Zeus will destroy this race of mortal men also when they come to have grey hair on the temples at their birth.",
+          "textVersions": {
+            "evelyn-white1914": "Thereafter, would that I were not among the men of the fifth generation, but either had died before or been born afterwards. For now truly is a race of iron, and men never rest from labour and sorrow by day, and from perishing by night; and the gods shall lay sore trouble upon them. But, notwithstanding, even these shall have some good mingled with their evils. And Zeus will destroy this race of mortal men also when they come to have grey hair on the temples at their birth."
+          },
+          "entities": [
+            {
+              "word": "a race of iron",
+              "node": "four-ages-degeneration",
+              "type": "theme",
+              "note": "The iron race is the nadir of the metallic schema — the present, hardest age. The descent gold→silver→bronze→iron is the core sequence Ovid, Daniel, and the Iranian/Vedic forms all share. West (1997) holds the shared iron-as-worst convention reflects a common ancient decline-schema, not proven borrowing in any one direction.",
+              "parallels": [
+                {
+                  "label": "Aetas ferrea (Ovid)",
+                  "textId": "ovid-metamorphoses-1",
+                  "note": "Ovid's iron age, the worst and last, ends his Four Ages just as Hesiod's iron race ends the Five"
+                },
+                {
+                  "label": "legs of iron (Daniel 2)",
+                  "textId": "daniel-2",
+                  "note": "the iron fourth tier of Nebuchadnezzar's image — the same iron-as-final-epoch convention"
+                },
+                {
+                  "label": "Kali yuga",
+                  "note": "the Vedic iron/dark final age of moral collapse; Eliade (1949) reads it as the type-parallel to Hesiod's iron race"
+                }
+              ]
+            },
+            {
+              "word": "men never rest from labour and sorrow by day",
+              "node": "four-ages-degeneration",
+              "type": "theme",
+              "note": "The defining mark of the iron age — ceaseless toil — exactly inverts the golden race's life 'remote and free from toil.' Vernant (1960) makes this toil/toil-less inversion the structural frame that binds the first and last races into a single moral system.",
+              "parallels": [
+                {
+                  "label": "the toil-less golden race (above)",
+                  "note": "the deliberate antithesis: the iron age's unresting labour against the golden race 'free from toil and grief'"
+                }
+              ]
+            },
+            {
+              "word": "Zeus will destroy this race",
+              "node": "zeus",
+              "type": "deity",
+              "note": "Zeus, who made each race, will also end the iron one — closing the cycle of divine making and unmaking that structures the whole myth. West (1978) notes the eschatological note ('grey hair at birth') marks the iron age's predicted dissolution.",
+              "parallels": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
