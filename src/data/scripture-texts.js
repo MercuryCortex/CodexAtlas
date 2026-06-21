@@ -25590,7 +25590,7 @@ SCRIPTURE_TEXTS['genesis-15'] = {
           "entities": [
             {
               "word": "Take me an heifer of three years old, and a she goat of three years old, and a ram of three years old",
-              "node": "yahweh",
+              "node": "covenant",
               "type": "deity",
               "note": "YHWH prescribes the materials of the covenant-cutting (karat berit). Speiser, Genesis (Anchor Bible, 1964), identifies the assembled animals as the apparatus of the ancient Near Eastern ratification-by-dismemberment oath rather than an ordinary sacrifice — none of the animals is burnt or offered on an altar.",
               "parallels": [
@@ -25611,7 +25611,7 @@ SCRIPTURE_TEXTS['genesis-15'] = {
           "entities": [
             {
               "word": "divided them in the midst, and laid each piece one against another",
-              "node": "yahweh",
+              "node": "covenant",
               "type": "deity",
               "note": "The animals are halved and arranged to form a corridor through which the oath-takers will pass. Wenham, Genesis 1–15 (WBC, 1987), explains the arrangement creates the path for the self-maledictory passage: 'may the one who breaks this oath be made like these severed beasts.'",
               "parallels": [
@@ -25701,7 +25701,7 @@ SCRIPTURE_TEXTS['genesis-15'] = {
           "entities": [
             {
               "word": "the LORD made a covenant with Abram",
-              "node": "yahweh",
+              "node": "covenant",
               "type": "deity",
               "note": "'Made a covenant' renders karat berit, literally 'cut a covenant' — the Hebrew idiom preserving the dismemberment rite just enacted. YHWH is grammatically the sole party who 'cuts,' confirming the unilateral grant. McCarthy, Treaty and Covenant (1978), notes the verb karat encodes the cutting-of-animals at the root of all Hebrew covenant language.",
               "parallels": [
