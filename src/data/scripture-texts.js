@@ -26996,3 +26996,653 @@ SCRIPTURE_TEXTS['hesiod-five-ages'] = {
     }
   ]
 };
+
+// ── ANE WISDOM (Ptahhotep / Proverbs 22 — the words of the wise) — 2026-06-21 ───
+
+// -- The Maxims of Ptahhotep — Prologue and Maxims 1, 5, 38 (the oldest book of instruction) --
+SCRIPTURE_TEXTS['ptahhotep'] = {
+  "id": "ptahhotep",
+  "title": "The Maxims of Ptahhotep — Prologue and Maxims 1, 5, 38 (the oldest book of instruction)",
+  "shortTitle": "Ptahhotep",
+  "corpus": "Egyptian · Old Kingdom wisdom (sebayt / instruction-genre)",
+  "tradId": "tradition-old-kingdom-egypt",
+  "date": "composed c. 2400–1990 BCE (set at the 5th-Dynasty court of King Isôsi/Djedkare; fullest copy in the Middle Kingdom Papyrus Prisse)",
+  "docNode": "document-instruction-of-ptahhotep",
+  "language": "Middle Egyptian · Battiscombe G. Gunn translation, \"The Instruction of Ptah-hotep\" (Wisdom of the East series, 1906; public domain). Text from the Project Gutenberg edition (e-text 30508), made by Gunn directly from the Papyrus Prisse. Editorial page-number braces ({NN}) and footnote-reference superscripts are omitted; Gunn's wording, capitalization, and punctuation are reproduced verbatim.",
+  "translations": [
+    {
+      "id": "gunn1906",
+      "label": "B.G. Gunn (1906)",
+      "note": "Public domain — Wisdom of the East / Project Gutenberg 30508"
+    }
+  ],
+  "intro": "The Instruction of Ptahhotep is the oldest substantially preserved book of wisdom in the world — a sebayt (\"instruction\") attributed to a vizier under the 5th-Dynasty king Isôsi (Djedkare) and surviving most fully on the Middle Kingdom Papyrus Prisse. Cast as an aged father's counsel to his son and successor, it founds the international Near Eastern instruction genre: a father-to-son teaching on humility, speech, listening, and right conduct, all governed by Ma'at — truth, justice, and cosmic order. It is the headwater of the convergent tradition that Hebrew wisdom (Proverbs, Ecclesiastes, Sirach) later joins. The Atlas frames this as GENRE convergence, not direct borrowing: the one demonstrable line of Egyptian-to-Hebrew literary dependence runs through the much later Instruction of Amenemope (behind Proverbs 22:17–24:22), not through Ptahhotep, which stands a millennium earlier as the genre's source-spring.",
+  "crossTradition": [
+    {
+      "label": "Proverbs 8 — personified Wisdom / father-to-son instruction",
+      "textId": "proverbs-8",
+      "note": "The Hebrew book of Proverbs belongs to the same international instruction genre Ptahhotep founds: a sage's father-to-son counsel grounded in an ordering principle (Hebrew chokhmah answering Egyptian Ma'at). Miriam Lichtheim (Ancient Egyptian Literature, vol. 1, 1973) and R.B. Parkinson (The Tale of Sinuhe, 1997) treat Ptahhotep as the genre's earliest exemplar; the direct literary borrowing into Proverbs runs through Amenemope, not Ptahhotep."
+    },
+    {
+      "label": "Ecclesiastes 1 — the wisdom-reflection on toil and transience",
+      "textId": "ecclesiastes-1",
+      "note": "Qoheleth's meditation on the limits of human striving sits in the same wisdom stream; Ptahhotep's prologue on the decay of old age and the value of handed-down counsel is an early Egyptian instance of the same reflective register (Lichtheim 1973)."
+    },
+    {
+      "label": "Sirach — Ben Sira's instruction (the later sebayt heir)",
+      "textId": "sirach",
+      "note": "Ben Sira's 2nd-century-BCE instruction is the latest large flowering of the same father-to-son teaching form; the genre Ptahhotep originates reaches Hellenistic Judaism here (Lichtheim 1973; Parkinson 1997)."
+    },
+    {
+      "label": "Instruction of Amenemope → Proverbs 22:17–24:22",
+      "note": "The ONE demonstrable Egyptian-to-Hebrew literary borrowing — the New Kingdom Amenemope lies directly behind the 'Thirty Sayings' of Proverbs. Ptahhotep is the genre's millennium-earlier headwater, a convergent ancestor rather than a textual source (Lichtheim, Ancient Egyptian Literature vol. 2, 1976; the document node records this distinction)."
+    },
+    {
+      "label": "Ma'at → Logos → Sophia (the cosmic-order chain)",
+      "note": "Jan Assmann (Ma'at: Gerechtigkeit und Unsterblichkeit im alten Ägypten, 1990) traces the Egyptian ordering principle Ma'at as the deep ancestor of the Greek Logos and the biblical/Hellenistic Sophia — the chain the Atlas registers in the theme node ma-at-logos-sophia. Ptahhotep is the earliest instruction governed wholly by Ma'at."
+    }
+  ],
+  "sections": [
+    {
+      "heading": "Prologue — Ptahhotep on old age, and the king's leave to instruct",
+      "verses": [
+        {
+          "ref": "A",
+          "text": "The Governor of his City, the Vizier, Ptah-hotep, he said: 'O Prince, my Lord, the end of life is at hand; old age descendeth [upon me]; feebleness cometh, and childishness is renewed. He [that is old] lieth down in misery every day. The eyes are small; the ears are deaf. Energy is diminished, the heart hath no rest. The mouth is silent, and he speaketh no word; the heart stoppeth, and he remembereth not yesterday. The bones are painful throughout the body; good turneth unto evil. All taste departeth. These things doeth old age for mankind, being evil in all things. The nose is stopped, and he breatheth not for weakness (?), whether standing or sitting.",
+          "textVersions": {
+            "gunn1906": "The Governor of his City, the Vizier, Ptah-hotep, he said: 'O Prince, my Lord, the end of life is at hand; old age descendeth [upon me]; feebleness cometh, and childishness is renewed. He [that is old] lieth down in misery every day. The eyes are small; the ears are deaf. Energy is diminished, the heart hath no rest. The mouth is silent, and he speaketh no word; the heart stoppeth, and he remembereth not yesterday. The bones are painful throughout the body; good turneth unto evil. All taste departeth. These things doeth old age for mankind, being evil in all things. The nose is stopped, and he breatheth not for weakness (?), whether standing or sitting."
+          },
+          "entities": [
+            {
+              "word": "Ptah-hotep",
+              "node": "ptah",
+              "type": "deity",
+              "note": "The vizier's name means 'Ptah is satisfied/at peace' — theophoric in the Memphite creator-god Ptah, patron of craftsmen and (in the Memphite Theology) the demiurge who creates by heart and tongue. The instruction's setting is the Memphite court tradition (Lichtheim, Ancient Egyptian Literature vol. 1, 1973).",
+              "parallels": [
+                {
+                  "label": "Ptah as creator by word",
+                  "textId": "memphite-theology",
+                  "note": "The Memphite Theology has Ptah conceive the world in the heart and bring it forth by the tongue — the Egyptian word-cosmogony Ptahhotep's milieu assumes."
+                }
+              ]
+            },
+            {
+              "word": "old age",
+              "node": "wisdom-as-cosmic-order",
+              "type": "theme",
+              "note": "The opening lament on bodily decay frames wisdom as what survives the failing body — the counsel of the elders handed down. This reflective register on transience is the wisdom genre's signature (Lichtheim 1973).",
+              "parallels": [
+                {
+                  "label": "Qoheleth on toil and transience",
+                  "textId": "ecclesiastes-1",
+                  "note": "the Hebrew wisdom-reflection on the limits of human striving — the same register a millennium later"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "A",
+          "text": "'Command me, thy servant, therefore, to make over my princely authority [to my son]. Let me speak unto him the words of them that hearken to the counsel of the men of old time; those that hearkened unto the gods. I pray thee, let this thing be done, that sin may be banished from among persons of understanding, that thou may enlighten the lands.' Said the Majesty of this God: 'Instruct him, then, in the words of old time; may he be a wonder unto the children of princes, that they may enter and hearken with him. Make straight all their hearts; and discourse with him, without causing weariness.'",
+          "textVersions": {
+            "gunn1906": "'Command me, thy servant, therefore, to make over my princely authority [to my son]. Let me speak unto him the words of them that hearken to the counsel of the men of old time; those that hearkened unto the gods. I pray thee, let this thing be done, that sin may be banished from among persons of understanding, that thou may enlighten the lands.' Said the Majesty of this God: 'Instruct him, then, in the words of old time; may he be a wonder unto the children of princes, that they may enter and hearken with him. Make straight all their hearts; and discourse with him, without causing weariness.'"
+          },
+          "entities": [
+            {
+              "word": "the words of them that hearken to the counsel of the men of old time",
+              "node": "wisdom-as-cosmic-order",
+              "type": "theme",
+              "note": "The instruction is explicitly transmitted wisdom — 'the words of old time' passed father-to-son and king-sanctioned. This transmission frame is the constitutive form of the sebayt and of the whole Near Eastern instruction genre (Parkinson, The Tale of Sinuhe, 1997).",
+              "parallels": [
+                {
+                  "label": "Proverbs — 'hear, my son, the instruction of thy father'",
+                  "textId": "proverbs-8",
+                  "note": "the Hebrew instruction inherits the identical father-to-son transmission form (Lichtheim 1973)"
+                },
+                {
+                  "label": "Sirach — Ben Sira's handed-down teaching",
+                  "textId": "sirach",
+                  "note": "the genre's latest large heir, transmitted instruction in Hellenistic Judaism"
+                }
+              ]
+            },
+            {
+              "word": "that sin may be banished from among persons of understanding",
+              "node": "ma-at",
+              "type": "deity",
+              "note": "Banishing 'sin' (isfet, disorder) is the work of Ma'at — truth and right order personified as the goddess. The vizier's whole instruction is conduct that upholds Ma'at against chaos (Assmann, Ma'at, 1990).",
+              "parallels": [
+                {
+                  "label": "Ma'at → Logos → Sophia",
+                  "note": "Assmann (1990) traces Ma'at as the ancestor of the cosmic-order principle that becomes Logos and Sophia in the Hellenistic chain"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Maxim 1 — Be not proud because thou art learned",
+      "verses": [
+        {
+          "ref": "1",
+          "text": "He said unto his son: 1. Be not proud because thou art learned; but discourse with the ignorant man, as with the sage. For no limit can be set to skill, neither is there any craftsman that possesseth full advantages. Fair speech is more rare than the emerald that is found by slave-maidens on the pebbles.",
+          "textVersions": {
+            "gunn1906": "He said unto his son: 1. Be not proud because thou art learned; but discourse with the ignorant man, as with the sage. For no limit can be set to skill, neither is there any craftsman that possesseth full advantages. Fair speech is more rare than the emerald that is found by slave-maidens on the pebbles."
+          },
+          "entities": [
+            {
+              "word": "Be not proud because thou art learned",
+              "node": "wisdom-personified",
+              "type": "theme",
+              "note": "The foundational maxim of the instruction genre: humility before knowledge, the learned to address the ignorant as an equal. Gunn's 1906 wording; the much-quoted form 'Be not arrogant because of thy knowledge' is a later rendering of the same line (Lichtheim 1973 translates 'Don't be proud of your knowledge').",
+              "parallels": [
+                {
+                  "label": "Proverbs — 'be not wise in thine own eyes'",
+                  "textId": "proverbs-8",
+                  "note": "the Hebrew wisdom commonplace warning against self-conceit in the learned — the same instruction-genre value (Lichtheim 1973)"
+                },
+                {
+                  "label": "Sirach — humility and the limits of the sage",
+                  "textId": "sirach",
+                  "note": "Ben Sira repeats the instruction-genre warning against pride in one's wisdom"
+                }
+              ]
+            },
+            {
+              "word": "Fair speech is more rare than the emerald",
+              "node": "thoth",
+              "type": "deity",
+              "note": "The prizing of measured, true speech is the domain of Thoth, Egyptian god of writing, words, and the recording of Ma'at; eloquence governed by right order is the courtier's art Ptahhotep teaches (Parkinson 1997).",
+              "parallels": [
+                {
+                  "label": "Seshat — goddess of writing and record",
+                  "note": "Thoth's counterpart, patroness of writing and measurement, who registers the scribal craft the instruction trains"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Maxim 5 — Great is Truth (Ma'at), never overthrown",
+      "verses": [
+        {
+          "ref": "5",
+          "text": "5. If thou be a leader, as one directing the conduct of the multitude, endeavour always to be gracious, that thine own conduct be without defect. Great is Truth, appointing a straight path; never hath it been overthrown since the reign of Osiris. One that oversteppeth the laws shall be punished. Overstepping is by the covetous man; but degradations (?) bear off his riches, for the season of his evil-doing ceaseth not. For he saith, 'I will obtain by myself for myself,' and saith not, 'I will obtain because I am allowed.' But the limits of justice are steadfast; it is that which a man repeateth from his father.",
+          "textVersions": {
+            "gunn1906": "5. If thou be a leader, as one directing the conduct of the multitude, endeavour always to be gracious, that thine own conduct be without defect. Great is Truth, appointing a straight path; never hath it been overthrown since the reign of Osiris. One that oversteppeth the laws shall be punished. Overstepping is by the covetous man; but degradations (?) bear off his riches, for the season of his evil-doing ceaseth not. For he saith, 'I will obtain by myself for myself,' and saith not, 'I will obtain because I am allowed.' But the limits of justice are steadfast; it is that which a man repeateth from his father."
+          },
+          "entities": [
+            {
+              "word": "Great is Truth, appointing a straight path",
+              "node": "ma-at",
+              "type": "deity",
+              "note": "'Truth' here renders Egyptian maat — the goddess and principle of truth, justice, and cosmic order. Its endurance is the instruction's theological keystone: right order is older than any reign and cannot be overthrown (Assmann, Ma'at, 1990; Lichtheim 1973).",
+              "parallels": [
+                {
+                  "label": "Ma'at → Logos → Sophia",
+                  "note": "Assmann (1990) reads Ma'at as the headwater of the enduring cosmic-order principle that flows into Logos and Sophia"
+                },
+                {
+                  "label": "Wisdom established before creation",
+                  "textId": "proverbs-8",
+                  "note": "Proverbs 8 personifies a cosmic ordering Wisdom 'from everlasting' — the Hebrew analogue to enduring Ma'at; the structural parallel, not a borrowing (Assmann 1990)"
+                }
+              ]
+            },
+            {
+              "word": "never hath it been overthrown since the reign of Osiris",
+              "node": "osiris",
+              "type": "deity",
+              "note": "Osiris, the once-living king and lord of the dead, marks the primeval reign since which Ma'at has stood unbroken; his judgement of the dead weighs the heart against the feather of Ma'at (Lichtheim 1973).",
+              "parallels": [
+                {
+                  "label": "The weighing of the heart against Ma'at",
+                  "textId": "book-of-dead-125",
+                  "note": "Book of the Dead 125 stages Osiris' tribunal where the heart is weighed against the feather of Ma'at — the afterlife enforcement of the right order Ptahhotep teaches"
+                }
+              ]
+            },
+            {
+              "word": "the limits of justice are steadfast",
+              "node": "wisdom-as-cosmic-order",
+              "type": "theme",
+              "note": "Justice as a fixed, transmissible order ('that which a man repeateth from his father') is wisdom as cosmic order — the same conviction that grounds Vedic rita, Zoroastrian asha, and Hebrew chokhmah (Assmann 1990; the Atlas theme node lists the cross-tradition set).",
+              "parallels": [
+                {
+                  "label": "Asha / Rita / Chokhmah — the order-principle across traditions",
+                  "note": "the Atlas registers Ma'at alongside Vedic Rita, Zoroastrian Asha, and Hebrew Chokhmah as instances of one cosmic-order theme (Assmann 1990)"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Maxim 38 — The obedience of the hearkening son",
+      "verses": [
+        {
+          "ref": "38",
+          "text": "38. A splendid thing is the obedience of an obedient son; he cometh in and listeneth obediently. Excellent in hearing, excellent in speaking, is every man that obeyeth what is noble; and the obedience of an obeyer is a noble thing. Obedience is better than all things that are; it maketh good-will. How good it is that a son should take that from his father by which he hath reached old age (Obedience). That which is desired by the God is obedience; disobedience is abhorred of the God.",
+          "textVersions": {
+            "gunn1906": "38. A splendid thing is the obedience of an obedient son; he cometh in and listeneth obediently. Excellent in hearing, excellent in speaking, is every man that obeyeth what is noble; and the obedience of an obeyer is a noble thing. Obedience is better than all things that are; it maketh good-will. How good it is that a son should take that from his father by which he hath reached old age (Obedience). That which is desired by the God is obedience; disobedience is abhorred of the God."
+          },
+          "entities": [
+            {
+              "word": "he cometh in and listeneth obediently",
+              "node": "wisdom-as-cosmic-order",
+              "type": "theme",
+              "note": "'Hearing' (Egyptian sedjem) is the instruction's master-virtue: to hear is to obey is to be wise. The son who hearkens reproduces his father's wisdom and so perpetuates Ma'at across generations (Lichtheim 1973; Parkinson 1997).",
+              "parallels": [
+                {
+                  "label": "Proverbs — 'hear, my son'",
+                  "textId": "proverbs-8",
+                  "note": "the Hebrew instruction is built on the same imperative to HEAR the father's teaching; the listening son is the genre's ideal pupil (Lichtheim 1973)"
+                },
+                {
+                  "label": "Sirach — the discipline of hearing wisdom",
+                  "textId": "sirach",
+                  "note": "Ben Sira's pupil, like Ptahhotep's son, is formed by hearkening to handed-down instruction"
+                }
+              ]
+            },
+            {
+              "word": "That which is desired by the God is obedience",
+              "node": "ma-at",
+              "type": "deity",
+              "note": "Obedience to right teaching is obedience to Ma'at — the divine order; disobedience (isfet) is 'abhorred of the God.' The ethical and the cosmic are one in the Egyptian conception (Assmann, Ma'at, 1990).",
+              "parallels": [
+                {
+                  "label": "Ma'at as the order the wise uphold",
+                  "note": "obedience to Ma'at is the conduct that sustains cosmic order — the principle Assmann (1990) tracks into Logos/Sophia"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
+
+// -- Proverbs 22:17–23:11 (The Words of the Wise — the Thirty Sayings) --
+SCRIPTURE_TEXTS['proverbs-22-23'] = {
+  "id": "proverbs-22-23",
+  "title": "Proverbs 22:17–23:11 (The Words of the Wise — the Thirty Sayings)",
+  "shortTitle": "Proverbs 22:17–23:11 — Words of the Wise",
+  "corpus": "Hebrew Bible (Wisdom · Proverbs · The Words of the Wise)",
+  "tradId": "tradition-second-temple-judaism",
+  "date": "c. 6th–5th century BCE (Hebrew compilation; reworking a Ramesside Egyptian source, c. 1300–1075 BCE)",
+  "docNode": "phase-2-041-book-of-proverbs",
+  "language": "Hebrew · King James Version (1611) — public-domain text, Project Gutenberg KJV (eBook #10)",
+  "translations": [
+    {
+      "id": "kjv",
+      "label": "KJV (1611)",
+      "note": "King James Version — public domain"
+    }
+  ],
+  "intro": "Proverbs 22:17–23:11 opens the collection the book itself labels 'the words of the wise' (22:17). It is the single most securely documented case of cross-cultural borrowing in the Hebrew Bible: since Adolf Erman's 1924 demonstration, scholarship has recognized this section as a Hebrew reworking of the Egyptian Instruction of Amenemope (Papyrus BM 10474, a Ramesside sapiential text). The famous crux is 22:20 — 'Have not I written to thee excellent things' — where the consonants (shilshom / sheloshim) are widely emended to 'thirty sayings,' matching Amenemope's thirty numbered chapters. Roughly a dozen units (the warnings against robbing the poor, removing the ancient landmark, befriending the angry man, dining with a ruler, and chasing riches that 'fly away as an eagle') follow Amenemope's sequence. The passage shows the Atlas's transmission thesis at its clearest: not vague convergence but a traceable line of dependence from the Egyptian ethic of ma'at into Hebrew wisdom — and through Proverbs into the later Sophia/Logos tradition.",
+  "crossTradition": [
+    {
+      "label": "The Instruction of Amenemope (Egyptian)",
+      "note": "The documented Egyptian source. Since E.A.W. Budge's 1923 publication of Papyrus BM 10474, scholars have recognized that Proverbs 22:17-23:11 reworks the Egyptian Instruction of Amenemope: Adolf Erman (1924) first demonstrated the dependence; Fox (Proverbs 10-31, Anchor Yale, 2009) treats the borrowing as established. The opening 'Bow down thine ear, and hear the words of the wise' parallels Amenemope's 'Give thy ears, hear the things that are spoken,' and roughly a dozen units of 22:22-23:11 follow Amenemope's order. NOT YET STAGED as a reader entry."
+    },
+    {
+      "label": "Proverbs 8 — Lady Wisdom at creation",
+      "textId": "proverbs-8",
+      "note": "The same book's personified Wisdom (Hokmah). Fox (Anchor Bible) and von Rad (Wisdom in Israel) read the Hokmah figure of Prov 8 against the Egyptian Ma'at-as-divine-order background that the Amenemope borrowing in 22:17ff makes concrete: the Egyptian wisdom tradition stands behind both the sayings-collection and the cosmic Wisdom poem."
+    },
+    {
+      "label": "Instruction of Ptahhotep (Egyptian)",
+      "note": "The oldest Egyptian sebayt ('instruction'). Crenshaw (Old Testament Wisdom) and Lichtheim (Ancient Egyptian Literature) place Proverbs in the same international instruction genre running from Ptahhotep (Old Kingdom) through Amenemope (Ramesside) to the Hebrew sayings — the father-to-son ethical manual aligning conduct with cosmic order (ma'at). NOT YET STAGED."
+    },
+    {
+      "label": "The Weighing of the Heart against the feather of Ma'at",
+      "note": "Williams (1961) and Karenga (Maat, the Moral Ideal in Ancient Egypt, 2004) note that Amenemope's ethic — the 'silent/truly tranquil man' who keeps ma'at versus the 'heated man' — is the ethical world Proverbs imports; the 22:24 warning against the 'angry'/'furious man' is the Hebrew reflex of Amenemope's contrast of the tranquil and the passionate man."
+    }
+  ],
+  "sections": [
+    {
+      "heading": "The words of the wise — and the 'thirty sayings'",
+      "verses": [
+        {
+          "ref": "22:17",
+          "text": "Bow down thine ear, and hear the words of the wise, and apply thine heart unto my knowledge.",
+          "textVersions": {
+            "kjv": "Bow down thine ear, and hear the words of the wise, and apply thine heart unto my knowledge."
+          },
+          "entities": [
+            {
+              "word": "words of the wise",
+              "node": "wisdom-as-cosmic-order",
+              "type": "theme",
+              "note": "The heading of the collection (Hebrew 'dibre hakamim'). Fox (Proverbs 10-31, Anchor Yale, 2009) and Whybray (The Book of Proverbs) treat 22:17 as the title of the Amenemope-dependent unit; the opening 'Bow down thine ear, and hear' renders the Egyptian instruction's standard 'Give thy ears, hear the things that are spoken' (Amenemope ch. 1). 'Wisdom' here is the practical discipline of attunement to right cosmic-moral order — the Hebrew chokhmah cognate in function to Egyptian ma'at.",
+              "parallels": [
+                {
+                  "label": "Ma'at (Egyptian)",
+                  "note": "Ma'at, goddess and principle of truth/cosmic order, is the standard the Egyptian instruction-literature teaches; Karenga (Maat, the Moral Ideal in Ancient Egypt, 2004) shows the sebayt genre is the practical discipline of living by ma'at — the role 'the words of the wise' play for chokhmah."
+                },
+                {
+                  "label": "Instruction of Ptahhotep / Amenemope",
+                  "note": "Crenshaw (Old Testament Wisdom) and Lichtheim (Ancient Egyptian Literature, vol. 2) place 22:17ff in the international 'instruction' (sebayt) genre running from Ptahhotep through Amenemope into Hebrew Proverbs."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "22:18",
+          "text": "For it is a pleasant thing if thou keep them within thee; they shall withal be fitted in thy lips.",
+          "textVersions": {
+            "kjv": "For it is a pleasant thing if thou keep them within thee; they shall withal be fitted in thy lips."
+          },
+          "entities": []
+        },
+        {
+          "ref": "22:19",
+          "text": "That thy trust may be in the LORD, I have made known to thee this day, even to thee.",
+          "textVersions": {
+            "kjv": "That thy trust may be in the LORD, I have made known to thee this day, even to thee."
+          },
+          "entities": []
+        },
+        {
+          "ref": "22:20",
+          "text": "Have not I written to thee excellent things in counsels and knowledge,",
+          "textVersions": {
+            "kjv": "Have not I written to thee excellent things in counsels and knowledge,"
+          },
+          "entities": [
+            {
+              "word": "excellent things",
+              "node": "wisdom-as-cosmic-order",
+              "type": "theme",
+              "note": "The most-discussed phrase in the Egyptian-source debate. The Hebrew (kethib 'shilshom' / qere 'shalishim') is widely emended to 'sheloshim' = 'thirty,' yielding 'Have I not written for you thirty sayings?' — matching the thirty numbered chapters of Amenemope. Erman (1924) proposed the reading; Fox (Anchor Yale, 2009) and Williams (1961) endorse 'thirty sayings' as the key external evidence that Proverbs depends on the Egyptian text. John Ruffle ('The Teaching of Amenemope and Its Connection with the Book of Proverbs,' Tyndale Bulletin 1977) cautions that the dependence is real but looser than a chapter-by-chapter copy.",
+              "parallels": [
+                {
+                  "label": "Amenemope's 'Thirty Chapters'",
+                  "note": "Amenemope's epilogue commends its 'thirty chapters'; the emended 22:20 'thirty sayings' is the structural fingerprint. Assmann (Moses the Egyptian) and the ma-at-logos-sophia synthesis (citing Fox's Anchor Bible Proverbs) trace the Egyptian wisdom-order into Hebrew and later Sophia/Logos theology."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "22:21",
+          "text": "That I might make thee know the certainty of the words of truth; that thou mightest answer the words of truth to them that send unto thee?",
+          "textVersions": {
+            "kjv": "That I might make thee know the certainty of the words of truth; that thou mightest answer the words of truth to them that send unto thee?"
+          },
+          "entities": []
+        }
+      ]
+    },
+    {
+      "heading": "Rob not the poor — justice in the gate",
+      "verses": [
+        {
+          "ref": "22:22",
+          "text": "Rob not the poor, because he is poor: neither oppress the afflicted in the gate:",
+          "textVersions": {
+            "kjv": "Rob not the poor, because he is poor: neither oppress the afflicted in the gate:"
+          },
+          "entities": [
+            {
+              "word": "Rob not the poor",
+              "node": "wisdom-as-cosmic-order",
+              "type": "theme",
+              "note": "A direct verbal parallel to Amenemope ch. 2: 'Beware of robbing the poor, of oppressing the afflicted.' Fox (Anchor Yale, 2009) lists this among the strongest one-to-one correspondences; Whybray notes the shared social ethic of protecting the powerless 'in the gate' (the place of legal judgment). The defense of the poor is, in the Egyptian framing, an act of ma'at — keeping the cosmic-moral order by which the strong do not devour the weak.",
+              "parallels": [
+                {
+                  "label": "Ma'at — the order that protects the weak",
+                  "note": "In Egyptian thought 'doing ma'at' centrally meant defending the widow, orphan, and poor; Karenga (2004) documents this as the core of the ma'at ethic that Amenemope transmits and Proverbs 22:22 imports almost word-for-word."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "22:23",
+          "text": "For the LORD will plead their cause, and spoil the soul of those that spoiled them.",
+          "textVersions": {
+            "kjv": "For the LORD will plead their cause, and spoil the soul of those that spoiled them."
+          },
+          "entities": []
+        }
+      ]
+    },
+    {
+      "heading": "The angry man — and the diligent before kings",
+      "verses": [
+        {
+          "ref": "22:24",
+          "text": "Make no friendship with an angry man; and with a furious man thou shalt not go:",
+          "textVersions": {
+            "kjv": "Make no friendship with an angry man; and with a furious man thou shalt not go:"
+          },
+          "entities": [
+            {
+              "word": "angry man",
+              "node": "feather-of-maat",
+              "type": "symbol",
+              "note": "Amenemope's governing contrast is between the 'truly silent/tranquil man' (the man of ma'at, weighed true against the feather) and the 'heated man' or 'hot-bellied' man who is ruled by passion. Williams (1961) and Lichtheim identify 22:24's warning against the 'angry' and 'furious' man as the Hebrew reflex of this Egyptian polarity. The feather of Ma'at is the post-mortem weighing-standard against which the calm, ordered heart is measured.",
+              "parallels": [
+                {
+                  "label": "The 'heated man' vs the 'silent man' (Amenemope)",
+                  "note": "Assmann (Moses the Egyptian) and the ma-at-logos-sophia theme track how Egyptian sapiential ideals of self-mastered, ordered conduct passed into Hebrew and Hellenistic wisdom; the tranquil-vs-passionate-man motif is among the clearest carried-over units."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "22:25",
+          "text": "Lest thou learn his ways, and get a snare to thy soul.",
+          "textVersions": {
+            "kjv": "Lest thou learn his ways, and get a snare to thy soul."
+          },
+          "entities": []
+        },
+        {
+          "ref": "22:26",
+          "text": "Be not thou one of them that strike hands, or of them that are sureties for debts.",
+          "textVersions": {
+            "kjv": "Be not thou one of them that strike hands, or of them that are sureties for debts."
+          },
+          "entities": []
+        },
+        {
+          "ref": "22:27",
+          "text": "If thou hast nothing to pay, why should he take away thy bed from under thee?",
+          "textVersions": {
+            "kjv": "If thou hast nothing to pay, why should he take away thy bed from under thee?"
+          },
+          "entities": []
+        },
+        {
+          "ref": "22:28",
+          "text": "Remove not the ancient landmark, which thy fathers have set.",
+          "textVersions": {
+            "kjv": "Remove not the ancient landmark, which thy fathers have set."
+          },
+          "entities": [
+            {
+              "word": "ancient landmark",
+              "node": "wisdom-as-cosmic-order",
+              "type": "theme",
+              "note": "The boundary-stone prohibition. Amenemope ch. 6 warns at length against moving the boundary-marker of the fields and encroaching on the widow's land. Fox (Anchor Yale, 2009) and Ruffle (1977) treat this as one of the surest correspondences, since it recurs (with 'the fields of the fatherless') at 23:10. To move a landmark is to violate the surveyed, god-given order of the land — a breach of ma'at, the right ordering of the world.",
+              "parallels": [
+                {
+                  "label": "Amenemope ch. 6 — do not move the boundary-stone",
+                  "note": "The Egyptian boundary-stone (under the protection of the gods and the moon-god Thoth, scribe of ma'at) is what may not be moved; Williams (1961) and Fox align Prov 22:28/23:10 with this chapter of Amenemope."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "22:29",
+          "text": "Seest thou a man diligent in his business? he shall stand before kings; he shall not stand before mean men.",
+          "textVersions": {
+            "kjv": "Seest thou a man diligent in his business? he shall stand before kings; he shall not stand before mean men."
+          },
+          "entities": [
+            {
+              "word": "stand before kings",
+              "node": "wisdom-as-cosmic-order",
+              "type": "theme",
+              "note": "Amenemope's epilogue promises that the scribe who masters the instruction 'shall find himself worthy to be a courtier' — the diligent, skilled man advanced to royal service. Fox (Anchor Yale, 2009) notes 22:29 closely matches this; the saying reflects the scribal-school setting (Egyptian and Hebrew alike) in which wisdom is training for the bureaucracy of the king.",
+              "parallels": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Dining with a ruler — and riches that fly away",
+      "verses": [
+        {
+          "ref": "23:1",
+          "text": "When thou sittest to eat with a ruler, consider diligently what is before thee:",
+          "textVersions": {
+            "kjv": "When thou sittest to eat with a ruler, consider diligently what is before thee:"
+          },
+          "entities": [
+            {
+              "word": "eat with a ruler",
+              "node": "wisdom-as-cosmic-order",
+              "type": "theme",
+              "note": "Amenemope ch. 23 instructs: 'Do not eat bread before a noble... look at the cup before you' — restraint at a superior's table. Fox (Anchor Yale, 2009) and Whybray identify 23:1-3 as a tight rendering of this Egyptian unit, including the violent hyperbole of the knife to the throat (23:2) for the gluttonous.",
+              "parallels": []
+            }
+          ]
+        },
+        {
+          "ref": "23:2",
+          "text": "And put a knife to thy throat, if thou be a man given to appetite.",
+          "textVersions": {
+            "kjv": "And put a knife to thy throat, if thou be a man given to appetite."
+          },
+          "entities": []
+        },
+        {
+          "ref": "23:3",
+          "text": "Be not desirous of his dainties: for they are deceitful meat.",
+          "textVersions": {
+            "kjv": "Be not desirous of his dainties: for they are deceitful meat."
+          },
+          "entities": []
+        },
+        {
+          "ref": "23:4",
+          "text": "Labour not to be rich: cease from thine own wisdom.",
+          "textVersions": {
+            "kjv": "Labour not to be rich: cease from thine own wisdom."
+          },
+          "entities": [
+            {
+              "word": "Labour not to be rich",
+              "node": "ma-at-logos-sophia",
+              "type": "theme",
+              "note": "Amenemope ch. 7: 'Do not strain to seek increase... if riches come to thee by theft they will not spend the night with thee.' Fox (Anchor Yale, 2009) treats 23:4-5 as one of the most verbally exact correspondences; the warning that wealth grows wings and flies off (23:5) echoes Amenemope's 'they have made themselves wings like geese and flown to heaven.'",
+              "parallels": [
+                {
+                  "label": "Amenemope ch. 7 — riches grow wings",
+                  "note": "The Egyptian text's image of ill-gotten wealth sprouting wings (geese flying to heaven) is rendered in 23:5 as riches that 'fly away as an eagle'; Erman (1924) and Williams (1961) cite this as decisive verbal evidence of borrowing."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "23:5",
+          "text": "Wilt thou set thine eyes upon that which is not? for riches certainly make themselves wings; they fly away as an eagle toward heaven.",
+          "textVersions": {
+            "kjv": "Wilt thou set thine eyes upon that which is not? for riches certainly make themselves wings; they fly away as an eagle toward heaven."
+          },
+          "entities": []
+        },
+        {
+          "ref": "23:6",
+          "text": "Eat thou not the bread of him that hath an evil eye, neither desire thou his dainty meats:",
+          "textVersions": {
+            "kjv": "Eat thou not the bread of him that hath an evil eye, neither desire thou his dainty meats:"
+          },
+          "entities": []
+        },
+        {
+          "ref": "23:7",
+          "text": "For as he thinketh in his heart, so is he: Eat and drink, saith he to thee; but his heart is not with thee.",
+          "textVersions": {
+            "kjv": "For as he thinketh in his heart, so is he: Eat and drink, saith he to thee; but his heart is not with thee."
+          },
+          "entities": []
+        },
+        {
+          "ref": "23:8",
+          "text": "The morsel which thou hast eaten shalt thou vomit up, and lose thy sweet words.",
+          "textVersions": {
+            "kjv": "The morsel which thou hast eaten shalt thou vomit up, and lose thy sweet words."
+          },
+          "entities": []
+        },
+        {
+          "ref": "23:9",
+          "text": "Speak not in the ears of a fool: for he will despise the wisdom of thy words.",
+          "textVersions": {
+            "kjv": "Speak not in the ears of a fool: for he will despise the wisdom of thy words."
+          },
+          "entities": [
+            {
+              "word": "wisdom of thy words",
+              "node": "wisdom-personified",
+              "type": "theme",
+              "note": "Wisdom (chokhmah) as the prized possession not to be wasted on the scoffer. The personified-Wisdom strand of Proverbs (developed fully in Prov 8) stands behind the sayings collection; von Rad (Wisdom in Israel) and Fox connect the practical sayings of the 'words of the wise' to the larger Hokmah figure the book personifies.",
+              "parallels": [
+                {
+                  "label": "Lady Wisdom / Hokmah (Proverbs 8)",
+                  "textId": "proverbs-8",
+                  "note": "The same book's personified Wisdom, against whom the practical sayings here gain their authority; the Egyptian ma'at-as-divine-order background informs both (Fox, Anchor Bible)."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "23:10",
+          "text": "Remove not the old landmark; and enter not into the fields of the fatherless:",
+          "textVersions": {
+            "kjv": "Remove not the old landmark; and enter not into the fields of the fatherless:"
+          },
+          "entities": [
+            {
+              "word": "old landmark",
+              "node": "feather-of-maat",
+              "type": "symbol",
+              "note": "The boundary-marker prohibition repeated, now explicitly joined to 'the fields of the fatherless' — the precise scenario of Amenemope ch. 6 (do not encroach on the widow's/orphan's boundary). Ruffle (1977) and Fox note that the recurrence of the landmark motif at both 22:28 and 23:10 strengthens the case for dependence on this Egyptian chapter. Protecting the orphan's boundary is, in the Egyptian frame, the deed that weighs true against the feather of Ma'at.",
+              "parallels": [
+                {
+                  "label": "Amenemope ch. 6 — the widow's boundary",
+                  "note": "The Egyptian boundary-stone of the orphan/widow, protected by the gods; Williams (1961) aligns 23:10 with this chapter as a near-direct rendering."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "23:11",
+          "text": "For their redeemer is mighty; he shall plead their cause with thee.",
+          "textVersions": {
+            "kjv": "For their redeemer is mighty; he shall plead their cause with thee."
+          },
+          "entities": []
+        }
+      ]
+    }
+  ]
+};
