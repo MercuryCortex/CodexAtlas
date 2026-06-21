@@ -25171,3 +25171,861 @@ SCRIPTURE_TEXTS['psalm-72'] = {
     }
   ]
 };
+
+// ── COVENANTS & REDEMPTION (Genesis 9 / Genesis 15 / Exodus 12) — 2026-06-20 ───
+
+// -- Genesis 9:8–17 (The bow in the cloud — the Noahic covenant with all flesh) --
+SCRIPTURE_TEXTS['genesis-9'] = {
+  "id": "genesis-9",
+  "title": "Genesis 9:8–17 (The bow in the cloud — the Noahic covenant with all flesh)",
+  "shortTitle": "Genesis 9",
+  "corpus": "Hebrew Bible (Torah · Genesis · the flood pericope · Priestly covenant)",
+  "tradId": "tradition-second-temple-judaism",
+  "date": "c. 550 BCE (Priestly source; the flood-covenant pericope edited into the Genesis flood frame)",
+  "docNode": "document-genesis",
+  "language": "Hebrew · King James Version (1611) — public domain. Text verified verbatim against three independent public-domain editions: ebible.org (eng-kjv), the Project Gutenberg KJV (etext #10), and openbible.com (KJV).",
+  "translations": [
+    {
+      "id": "kjv",
+      "label": "KJV (1611)",
+      "note": "King James Version — public domain"
+    }
+  ],
+  "intro": "Genesis 9:8–17 is the close of the flood story and the first of the great biblical covenants. Following directly on Genesis 8 — where the waters abate and Noah's sacrifice provokes God's resolve never again to curse the ground — God here binds himself by an unconditional covenant (Hebrew berit) with Noah, his descendants, and \"every living creature of all flesh\": never again to destroy the earth by water. The token (Hebrew 'ot) is \"my bow in the cloud\" — the rainbow. The passage belongs to the Priestly source and is the structural counterpart, in the Hebrew tradition, to the resolution of the Mesopotamian flood: in Gilgamesh XI and Atrahasis the gods, having flooded humanity, regret the deed and re-order the world so the catastrophe will not simply recur. The single word qeshet (\"bow\") is also the ordinary Hebrew word for the warrior's bow, and Gerhard von Rad and others read the divine bow \"set in the cloud\" as the war-bow hung up — the storm-deity laying down the weapon of his flood-judgment. That same rainbow appears across traditions as a bridge or path between heaven and earth (the Norse Bifröst, the Greek Iris).",
+  "crossTradition": [
+    {
+      "label": "Genesis 8 — the waters abate (the bird-scout this directly follows)",
+      "textId": "genesis-8",
+      "note": "Genesis 9 is the covenant-resolution of the flood whose ending Genesis 8 narrates: Noah sends the raven and dove, the waters dry, Noah sacrifices, and God resolves never again to curse the ground (Gen 8:21). Wenham (Genesis 1–15, WBC, 1987) reads 8:20–9:17 as a single Priestly/Yahwistic conclusion in which the divine resolve of 8:21 is formalised into the berit of chapter 9."
+    },
+    {
+      "label": "Gilgamesh Tablet XI — Utnapishtim's sacrifice and the gods' resolve",
+      "textId": "gilgamesh",
+      "note": "The closest structural parallel: after the flood Utnapishtim offers sacrifice, the gods 'gathered like flies' over the offering, and Ea rebukes Enlil so that mankind will not be destroyed wholesale again — Heidel (The Gilgamesh Epic and Old Testament Parallels, 1949) and Speiser (Genesis, Anchor Bible, 1964) note that the post-flood divine sacrifice and resolve-not-to-flood are common to Gilgamesh XI and Genesis 8–9."
+    },
+    {
+      "label": "Atrahasis Epic — the gods' regret and the re-ordering of humanity",
+      "textId": "atrahasis-epic",
+      "note": "In Atrahasis the flood is the gods' attempt to silence noisy humanity; afterward the divine assembly regrets the near-extermination and installs new limits (mortality, infertility, infant death) so the catastrophe need not recur. Tikva Frymer-Kensky ('The Atrahasis Epic and Its Significance for Genesis 1–9', 1977) argues the post-flood re-ordering in Atrahasis is the conceptual analogue of the Noahic covenant's permanent new arrangement."
+    },
+    {
+      "label": "Bifröst — the Norse rainbow-bridge",
+      "note": "The rainbow appears in Norse myth as Bifröst, the burning bridge joining Midgard and Ásgard (Snorri's Gylfaginning). It is a different theological function (a passage, not a covenant-token), but the same natural phenomenon read as a divinely-set link between the human and divine realms — a cross-tradition convergence on the rainbow as heaven-earth bridge, noted in comparative treatments of the motif."
+    },
+    {
+      "label": "Iris — the Greek rainbow as divine messenger",
+      "note": "In Homer and Hesiod the rainbow is the goddess Iris, the path along which the gods' messages travel between Olympus, earth, and the underworld. Like the Hebrew bow it makes the rainbow a sign of communication from the divine; the convergence is independent (personification vs. covenant-token), not transmission."
+    }
+  ],
+  "sections": [
+    {
+      "heading": "I establish my covenant with you and with all flesh",
+      "verses": [
+        {
+          "ref": "9:8",
+          "text": "And God spake unto Noah, and to his sons with him, saying,",
+          "textVersions": {
+            "kjv": "And God spake unto Noah, and to his sons with him, saying,"
+          },
+          "entities": [
+            {
+              "word": "Noah",
+              "node": "noah",
+              "type": "person",
+              "note": "Noah, the flood-survivor and second progenitor of humanity, here the covenant-partner; the Hebrew counterpart of the Mesopotamian flood-heroes Utnapishtim and Atrahasis.",
+              "parallels": [
+                {
+                  "label": "Utnapishtim (Babylonian)",
+                  "textId": "gilgamesh",
+                  "note": "the flood-survivor of Gilgamesh XI granted a divine boon after the flood; Heidel 1949 and Speiser 1964 treat him as the structural counterpart of Noah"
+                },
+                {
+                  "label": "Atrahasis (Old Babylonian)",
+                  "textId": "atrahasis-epic",
+                  "note": "the flood-hero of the Atrahasis epic, the Akkadian ancestor-figure behind both Utnapishtim and Noah (Lambert & Millard 1969)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "9:9",
+          "text": "And I, behold, I establish my covenant with you, and with your seed after you;",
+          "textVersions": {
+            "kjv": "And I, behold, I establish my covenant with you, and with your seed after you;"
+          },
+          "entities": [
+            {
+              "word": "covenant",
+              "node": "rainbow-covenant",
+              "type": "symbol",
+              "note": "Hebrew berit — the binding, here a unilateral divine self-obligation guaranteed by the rainbow-token. Wenham (Genesis 1–15, WBC, 1987) classes it as an unconditional 'covenant of grant', not a treaty with stipulations on the human party; the rainbow is its visible sign.",
+              "parallels": [
+                {
+                  "label": "the re-ordering after the Atrahasis flood",
+                  "textId": "atrahasis-epic",
+                  "note": "Frymer-Kensky 1977 reads the permanent post-flood arrangement of Atrahasis as the conceptual analogue of the Noahic covenant — the gods bind the future so the flood need not recur"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "9:10",
+          "text": "And with every living creature that is with you, of the fowl, of the cattle, and of every beast of the earth with you; from all that go out of the ark, to every beast of the earth.",
+          "textVersions": {
+            "kjv": "And with every living creature that is with you, of the fowl, of the cattle, and of every beast of the earth with you; from all that go out of the ark, to every beast of the earth."
+          },
+          "entities": [
+            {
+              "word": "every living creature",
+              "node": "flood-motif",
+              "type": "theme",
+              "note": "The covenant's reach to 'all flesh' makes it the most universal of the biblical covenants — its partner is the whole of post-diluvian creation, not Israel alone. Speiser (Genesis, Anchor Bible, 1964) notes the Priestly stress on universality, distinguishing it from the later Abrahamic and Sinai covenants.",
+              "parallels": [
+                {
+                  "label": "the flood survivors across traditions",
+                  "textId": "atrahasis-epic",
+                  "note": "the flood-motif as the global re-set of life — Ziusudra, Atrahasis, Utnapishtim, Noah, Deucalion, Manu — catalogued by Heidel 1949 as a single diffused/convergent narrative type"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "9:11",
+          "text": "And I will establish my covenant with you; neither shall all flesh be cut off any more by the waters of a flood; neither shall there any more be a flood to destroy the earth.",
+          "textVersions": {
+            "kjv": "And I will establish my covenant with you; neither shall all flesh be cut off any more by the waters of a flood; neither shall there any more be a flood to destroy the earth."
+          },
+          "entities": [
+            {
+              "word": "a flood to destroy the earth",
+              "node": "flood-motif",
+              "type": "theme",
+              "note": "The covenant is defined by the promise that the flood (Hebrew mabbul) will not return — the negative of the very catastrophe the chapter resolves. The Mesopotamian flood-stories reach the same resolution: in Gilgamesh XI Ea declares the wholesale destruction was unjust and must not recur.",
+              "parallels": [
+                {
+                  "label": "Gilgamesh XI — never flood again",
+                  "textId": "gilgamesh",
+                  "note": "Ea's rebuke of Enlil after the flood: the gods resolve not to destroy all mankind by flood again — the closest ANE parallel to the never-again clause (Speiser 1964)"
+                },
+                {
+                  "label": "Atrahasis — the new limits on humanity",
+                  "textId": "atrahasis-epic",
+                  "note": "the post-flood installation of mortality and birth-controls in place of mass-drowning (Frymer-Kensky 1977)"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "I do set my bow in the cloud",
+      "verses": [
+        {
+          "ref": "9:12",
+          "text": "And God said, This is the token of the covenant which I make between me and you and every living creature that is with you, for perpetual generations:",
+          "textVersions": {
+            "kjv": "And God said, This is the token of the covenant which I make between me and you and every living creature that is with you, for perpetual generations:"
+          },
+          "entities": [
+            {
+              "word": "token of the covenant",
+              "node": "rainbow-covenant",
+              "type": "symbol",
+              "note": "Hebrew 'ot berit, the 'sign of the covenant'. In the Priestly source each covenant has its physical sign (the sabbath, circumcision, here the rainbow); the sign is a memorial that triggers God's remembrance, not a condition on humanity (von Rad, Genesis, OTL).",
+              "parallels": [
+                {
+                  "label": "Iris — the rainbow as divine sign",
+                  "note": "the Greek rainbow personified as Iris, the gods' messenger; an independent reading of the rainbow as a divine communication-sign (Homer, Iliad; Hesiod, Theogony)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "9:13",
+          "text": "I do set my bow in the cloud, and it shall be for a token of a covenant between me and the earth.",
+          "textVersions": {
+            "kjv": "I do set my bow in the cloud, and it shall be for a token of a covenant between me and the earth."
+          },
+          "entities": [
+            {
+              "word": "bow",
+              "node": "rainbow-covenant",
+              "type": "symbol",
+              "note": "Hebrew qeshet — the same word for the warrior's war-bow. Von Rad (Genesis, OTL) and Wenham (Genesis 1–15, WBC, 1987) read the divine bow 'set in the cloud' as the storm-deity's war-bow hung up: God lays down the weapon of his flood-judgment, and the disarmed bow becomes the pledge of peace. The rainbow's arc, pointed away from the earth, visualises the suspended weapon.",
+              "parallels": [
+                {
+                  "label": "Bifröst (Norse)",
+                  "node": "rainbow-bridge",
+                  "note": "the Norse rainbow read as Bifröst, the bridge between Midgard and Ásgard (Snorri, Gylfaginning) — a parallel reading of the rainbow as a divinely-set link between human and divine realms"
+                },
+                {
+                  "label": "Iris (Greek)",
+                  "note": "Iris, the personified rainbow and the path of the gods' messages (Homer, Hesiod) — the rainbow as the visible route of divine communication"
+                }
+              ]
+            },
+            {
+              "word": "in the cloud",
+              "node": "yahweh",
+              "type": "deity",
+              "note": "The bow is God's (qashti, 'my bow'); the storm-imagery — cloud, bow — casts YHWH in the role of the storm-deity who has just wielded the flood and now suspends his weapon. The same divine-warrior 'arm' that fights the chaos-sea in Isaiah 51 and Psalm 74 here lays down its bow.",
+              "parallels": [
+                {
+                  "label": "the storm-warrior who lays down the bow",
+                  "note": "von Rad (Genesis, OTL) reads the hung-up qeshet as the deity disarming after judgment — the storm-god's bow at rest"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "9:14",
+          "text": "And it shall come to pass, when I bring a cloud over the earth, that the bow shall be seen in the cloud:",
+          "textVersions": {
+            "kjv": "And it shall come to pass, when I bring a cloud over the earth, that the bow shall be seen in the cloud:"
+          },
+          "entities": []
+        },
+        {
+          "ref": "9:15",
+          "text": "And I will remember my covenant, which is between me and you and every living creature of all flesh; and the waters shall no more become a flood to destroy all flesh.",
+          "textVersions": {
+            "kjv": "And I will remember my covenant, which is between me and you and every living creature of all flesh; and the waters shall no more become a flood to destroy all flesh."
+          },
+          "entities": [
+            {
+              "word": "I will remember my covenant",
+              "node": "rainbow-covenant",
+              "type": "symbol",
+              "note": "The sign functions toward God, not humanity: when God sees the bow he 'remembers' (Hebrew zakar) and withholds the flood. Wenham (Genesis 1–15, WBC, 1987) stresses that the rainbow is a reminder to the deity — the covenant's permanence rests on God's self-binding memory, not on human conduct.",
+              "parallels": []
+            }
+          ]
+        },
+        {
+          "ref": "9:16",
+          "text": "And the bow shall be in the cloud; and I will look upon it, that I may remember the everlasting covenant between God and every living creature of all flesh that is upon the earth.",
+          "textVersions": {
+            "kjv": "And the bow shall be in the cloud; and I will look upon it, that I may remember the everlasting covenant between God and every living creature of all flesh that is upon the earth."
+          },
+          "entities": [
+            {
+              "word": "everlasting covenant",
+              "node": "rainbow-covenant",
+              "type": "symbol",
+              "note": "Hebrew berit 'olam, 'perpetual covenant'. The Priestly source reserves this formula for its three foundational covenants (Noah, Abraham/circumcision, the sabbath); the Noahic is the broadest, embracing all living creatures in perpetuity (Speiser, Genesis, Anchor Bible, 1964).",
+              "parallels": []
+            }
+          ]
+        },
+        {
+          "ref": "9:17",
+          "text": "And God said unto Noah, This is the token of the covenant, which I have established between me and all flesh that is upon the earth.",
+          "textVersions": {
+            "kjv": "And God said unto Noah, This is the token of the covenant, which I have established between me and all flesh that is upon the earth."
+          },
+          "entities": [
+            {
+              "word": "all flesh that is upon the earth",
+              "node": "flood-motif",
+              "type": "theme",
+              "note": "The closing reiteration fixes the covenant's universal scope — 'all flesh', the whole of life that survived the flood. The flood-and-renewal frame ends not in a punishment but in a permanent guarantee, the inverse of the catastrophe the motif opens with.",
+              "parallels": [
+                {
+                  "label": "the post-flood renewal across traditions",
+                  "textId": "gilgamesh",
+                  "note": "the survivor and his descendants repopulate a world that the gods pledge not to drown again — the renewal-half of the flood-motif shared by Gilgamesh XI, Atrahasis, and Genesis (Heidel 1949)"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
+
+// -- Genesis 15:5–18 (The Abrahamic Covenant — the smoking furnace between the pieces) --
+SCRIPTURE_TEXTS['genesis-15'] = {
+  "id": "genesis-15",
+  "title": "Genesis 15:5–18 (The Abrahamic Covenant — the smoking furnace between the pieces)",
+  "shortTitle": "Genesis 15",
+  "corpus": "Hebrew Bible (Torah · Genesis / Sefer Bereshit)",
+  "tradId": "tradition-second-temple-judaism",
+  "date": "Narrative set in the patriarchal age; J/E composition c. 10th–8th c. BCE, final redaction c. 5th c. BCE",
+  "docNode": "document-genesis",
+  "language": "Hebrew · King James Version (1611) — public domain",
+  "translations": [
+    {
+      "id": "kjv",
+      "label": "KJV (1611)",
+      "note": "King James Version — public domain"
+    }
+  ],
+  "intro": "Genesis 15 is the covenant-cutting (Hebrew karat berit, \"to cut a covenant\") that founds the entire Abrahamic tradition. God promises Abram seed as numberless as the stars, and \"he believed in the LORD; and he counted it to him for righteousness\" (15:6) — the single verse on which Paul will later build his whole gospel of justification by faith (Galatians 3:6; Romans 4). The chapter then stages the rite itself: a heifer, she-goat, ram, turtledove and pigeon are divided, and at nightfall \"a smoking furnace, and a burning lamp\" pass between the severed pieces while Abram lies in a deep sleep. The form is the ancient Near Eastern self-curse oath documented in the Mari and Alalakh treaty rites and made explicit at Jeremiah 34:18: to pass between the dismembered animals is to enact \"may I be cut like these if I break this oath.\" The decisive theological inversion — the asymmetry Gordon Wenham and Moshe Weinfeld both stress — is that here God ALONE (the furnace and lamp) passes through, binding himself unilaterally and leaving Abram passive; it is a covenant of grant, not a parity treaty.",
+  "crossTradition": [
+    {
+      "label": "Genesis 22 — the Binding of Isaac (the Aqedah)",
+      "textId": "e-source-aqedah",
+      "note": "The next great Abraham-covenant test: where Genesis 15 promises and secures the seed by oath, Genesis 22 demands the seed back. The two chapters frame the Abraham cycle's theology of promise-and-test; Gen 22's 'because thou hast done this thing... in blessing I will bless thee, and in multiplying I will multiply thy seed as the stars' (22:16–17) deliberately re-cites the Gen 15:5 star-promise. Wenham, Genesis 1–15 (WBC, 1987), treats the two as a single promise arc."
+    },
+    {
+      "label": "Galatians 3 — 'Abraham believed God, and it was accounted to him for righteousness'",
+      "textId": "galatians-3",
+      "note": "Paul builds his entire law-versus-promise gospel on Genesis 15:6. In Galatians 3:6–18 he argues the promise to Abraham's seed was given by oath 430 years BEFORE the Sinai law and so cannot be annulled by it; the Gentiles are heirs 'according to the promise' (Gal 3:29). The unilateral, God-alone-passing covenant of Genesis 15 is the textual ground of Paul's sola-gratia reading."
+    },
+    {
+      "label": "Mari & Alalakh treaty rites — covenant by dismemberment",
+      "note": "E. A. Speiser, Genesis (Anchor Bible, 1964), and Dennis J. McCarthy, Treaty and Covenant (2nd ed. 1978), document the ancient Near Eastern oath-ceremony in which the parties pass between severed animals as a dramatized self-curse ('so may I be cut'). The Mari letters and the Alalakh texts attest the killing of an animal to ratify a treaty; Genesis 15 adapts this legal form to a divine self-binding."
+    },
+    {
+      "label": "Jeremiah 34:18 — the explicit self-curse",
+      "note": "Jeremiah 34:18 makes the Genesis 15 rite's logic explicit: those who 'cut the calf in twain, and passed between the parts thereof' and then broke the covenant will themselves be given over to death. McCarthy, Treaty and Covenant (1978), cites this as the interpretive key to the smoking-furnace passage — the divided animals ARE the self-malediction."
+    },
+    {
+      "label": "Hittite & ANE covenant-of-grant pattern",
+      "note": "Moshe Weinfeld, 'The Covenant of Grant in the Old Testament and in the Ancient Near East' (JAOS 90, 1970), classifies Genesis 15 as a royal land-grant: an unconditional gift secured by the suzerain's own oath, contrasting with the conditional vassal-treaty (Sinai). The asymmetry — God alone passing through — is the formal signature of grant rather than parity treaty."
+    }
+  ],
+  "sections": [
+    {
+      "heading": "The promise of the seed and the faith counted for righteousness (15:5–7)",
+      "verses": [
+        {
+          "ref": "15:5",
+          "text": "And he brought him forth abroad, and said, Look now toward heaven, and tell the stars, if thou be able to number them: and he said unto him, So shall thy seed be.",
+          "textVersions": {
+            "kjv": "And he brought him forth abroad, and said, Look now toward heaven, and tell the stars, if thou be able to number them: and he said unto him, So shall thy seed be."
+          },
+          "entities": [
+            {
+              "word": "tell the stars",
+              "node": "messianic-genealogy",
+              "type": "theme",
+              "note": "The star-promise founds the Abrahamic seed-line — the numberless descendants whose royal narrowing into the Davidic and ultimately messianic lineage is the Hebrew Bible's central genealogical claim. Wenham, Genesis 1–15 (WBC, 1987), notes the star-as-seed image is re-cited at Gen 22:17, 26:4, and Exod 32:13 as the formulaic guarantee of the promise.",
+              "parallels": [
+                {
+                  "label": "Genesis 22 — 'thy seed as the stars of the heaven'",
+                  "textId": "e-source-aqedah",
+                  "note": "The Aqedah re-affirms the identical star-promise after the test (Gen 22:17), binding the two chapters into one covenant arc."
+                }
+              ]
+            },
+            {
+              "word": "thy seed",
+              "node": "chosen-people",
+              "type": "theme",
+              "note": "The election of Abraham's offspring as the covenant people — the foundational act of divine choosing from which Israel's self-understanding as the chosen nation derives. The node's 'covenant people / elect' framing is grounded here at the seed-promise.",
+              "parallels": [
+                {
+                  "label": "Galatians 3:29 — heirs 'according to the promise'",
+                  "textId": "galatians-3",
+                  "note": "Paul universalizes the seed: those in Christ become 'Abraham's seed' and inherit the promise, extending election beyond ethnic descent (Gal 3:29)."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "15:6",
+          "text": "And he believed in the LORD; and he counted it to him for righteousness.",
+          "textVersions": {
+            "kjv": "And he believed in the LORD; and he counted it to him for righteousness."
+          },
+          "entities": [
+            {
+              "word": "he believed in the LORD",
+              "node": "justification-by-faith",
+              "type": "theme",
+              "note": "The locus classicus of justification by faith. Abram's trust in the bare promise — not any work or law — is 'counted' (Hebrew chashav, an accounting/imputation verb) as righteousness. Alister McGrath, Iustitia Dei (1986), traces the entire Christian doctrine of imputed righteousness (sola fide) back through Paul to this verse; it is the single Old Testament text Paul quotes to ground the doctrine.",
+              "parallels": [
+                {
+                  "label": "Galatians 3:6 / Romans 4:3 — 'Abraham believed God'",
+                  "textId": "galatians-3",
+                  "note": "Paul cites Gen 15:6 verbatim (LXX) as the proof-text that righteousness comes by faith apart from the works of the law; it anchors both Galatians 3 and the extended argument of Romans 4."
+                }
+              ]
+            },
+            {
+              "word": "the LORD",
+              "node": "yahweh",
+              "type": "deity",
+              "note": "YHWH, the covenant God of Israel, here the maker and guarantor of the unilateral oath to Abram; the 'LORD' (small-capitals KJV) renders the Tetragrammaton.",
+              "parallels": []
+            }
+          ]
+        },
+        {
+          "ref": "15:7",
+          "text": "And he said unto him, I am the LORD that brought thee out of Ur of the Chaldees, to give thee this land to inherit it.",
+          "textVersions": {
+            "kjv": "And he said unto him, I am the LORD that brought thee out of Ur of the Chaldees, to give thee this land to inherit it."
+          },
+          "entities": [
+            {
+              "word": "to give thee this land to inherit it",
+              "node": "chosen-people",
+              "type": "theme",
+              "note": "The land-grant element of the covenant — the territorial promise that, with the seed-promise, defines the election of Abraham's people. Weinfeld, JAOS 90 (1970), identifies the unconditional land-grant as the formal core of the Genesis 15 covenant-of-grant.",
+              "parallels": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "The covenant-cutting rite — the divided animals (15:8–11)",
+      "verses": [
+        {
+          "ref": "15:9",
+          "text": "And he said unto him, Take me an heifer of three years old, and a she goat of three years old, and a ram of three years old, and a turtledove, and a young pigeon.",
+          "textVersions": {
+            "kjv": "And he said unto him, Take me an heifer of three years old, and a she goat of three years old, and a ram of three years old, and a turtledove, and a young pigeon."
+          },
+          "entities": [
+            {
+              "word": "Take me an heifer of three years old, and a she goat of three years old, and a ram of three years old",
+              "node": "yahweh",
+              "type": "deity",
+              "note": "YHWH prescribes the materials of the covenant-cutting (karat berit). Speiser, Genesis (Anchor Bible, 1964), identifies the assembled animals as the apparatus of the ancient Near Eastern ratification-by-dismemberment oath rather than an ordinary sacrifice — none of the animals is burnt or offered on an altar.",
+              "parallels": [
+                {
+                  "label": "Mari & Alalakh treaty rites",
+                  "note": "McCarthy, Treaty and Covenant (1978), and Speiser (1964) document the slaughter and dividing of animals as the standard ANE legal act of cutting a covenant."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "15:10",
+          "text": "And he took unto him all these, and divided them in the midst, and laid each piece one against another: but the birds divided he not.",
+          "textVersions": {
+            "kjv": "And he took unto him all these, and divided them in the midst, and laid each piece one against another: but the birds divided he not."
+          },
+          "entities": [
+            {
+              "word": "divided them in the midst, and laid each piece one against another",
+              "node": "yahweh",
+              "type": "deity",
+              "note": "The animals are halved and arranged to form a corridor through which the oath-takers will pass. Wenham, Genesis 1–15 (WBC, 1987), explains the arrangement creates the path for the self-maledictory passage: 'may the one who breaks this oath be made like these severed beasts.'",
+              "parallels": [
+                {
+                  "label": "Jeremiah 34:18 — passing 'between the parts'",
+                  "note": "Jer 34:18 makes the self-curse of passing between the divided pieces explicit, confirming the legal force of the arrangement here (McCarthy, 1978)."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "The horror of darkness and the prophecy of bondage (15:12–16)",
+      "verses": [
+        {
+          "ref": "15:12",
+          "text": "And when the sun was going down, a deep sleep fell upon Abram; and, lo, an horror of great darkness fell upon him.",
+          "textVersions": {
+            "kjv": "And when the sun was going down, a deep sleep fell upon Abram; and, lo, an horror of great darkness fell upon him."
+          },
+          "entities": [
+            {
+              "word": "a deep sleep fell upon Abram",
+              "node": "abraham-patriarch",
+              "type": "person",
+              "note": "Abram is plunged into a tardemah (deep sleep, the same word used for Adam at Gen 2:21) so that he is PASSIVE during the rite. Wenham, Genesis 1–15 (WBC, 1987), and Weinfeld, JAOS 90 (1970), stress this passivity as the formal marker of a unilateral covenant: Abram does not himself walk between the pieces; God alone will.",
+              "parallels": [
+                {
+                  "label": "Genesis 22 — Abraham the tested patriarch",
+                  "textId": "e-source-aqedah",
+                  "note": "The same patriarch, here the passive recipient of an unconditional oath, is in Gen 22 the active agent of radical obedience — the two poles of the Abraham figure."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "15:13",
+          "text": "And he said unto Abram, Know of a surety that thy seed shall be a stranger in a land that is not theirs, and shall serve them; and they shall afflict them four hundred years;",
+          "textVersions": {
+            "kjv": "And he said unto Abram, Know of a surety that thy seed shall be a stranger in a land that is not theirs, and shall serve them; and they shall afflict them four hundred years;"
+          },
+          "entities": [
+            {
+              "word": "thy seed shall be a stranger in a land that is not theirs",
+              "node": "messianic-genealogy",
+              "type": "theme",
+              "note": "The promised seed-line is foretold to pass through Egyptian bondage before inheriting the land — the covenant promise embraces the Exodus. Speiser, Genesis (Anchor Bible, 1964), reads the prophecy of the four hundred years as binding the patriarchal promise to the national redemption narrative.",
+              "parallels": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "The smoking furnace and the unilateral oath (15:17–18)",
+      "verses": [
+        {
+          "ref": "15:17",
+          "text": "And it came to pass, that, when the sun went down, and it was dark, behold a smoking furnace, and a burning lamp that passed between those pieces.",
+          "textVersions": {
+            "kjv": "And it came to pass, that, when the sun went down, and it was dark, behold a smoking furnace, and a burning lamp that passed between those pieces."
+          },
+          "entities": [
+            {
+              "word": "a smoking furnace, and a burning lamp that passed between those pieces",
+              "node": "yahweh",
+              "type": "deity",
+              "note": "The theophany: God manifest as fire (the smoking furnace and burning lamp / torch) passes alone between the severed animals. This is the decisive inversion of the ANE rite — only the divine party walks the path of the self-curse, binding GOD unilaterally. Weinfeld, JAOS 90 (1970), classes this as the signature of a covenant-of-grant; Wenham, Genesis 1–15 (WBC, 1987), notes the fire-and-smoke imagery anticipates the Sinai theophany (Exod 19:18, 'the smoke thereof ascended as the smoke of a furnace').",
+              "parallels": [
+                {
+                  "label": "Mari & Alalakh / Jeremiah 34:18 — the self-curse oath",
+                  "note": "In the ordinary ANE rite (Speiser 1964; McCarthy 1978) the human oath-takers pass between the pieces invoking the curse on themselves; here God alone passes, an asymmetry with no parallel in the treaty literature — God swears by and against himself."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "15:18",
+          "text": "In the same day the LORD made a covenant with Abram, saying, Unto thy seed have I given this land, from the river of Egypt unto the great river, the river Euphrates:",
+          "textVersions": {
+            "kjv": "In the same day the LORD made a covenant with Abram, saying, Unto thy seed have I given this land, from the river of Egypt unto the great river, the river Euphrates:"
+          },
+          "entities": [
+            {
+              "word": "the LORD made a covenant with Abram",
+              "node": "yahweh",
+              "type": "deity",
+              "note": "'Made a covenant' renders karat berit, literally 'cut a covenant' — the Hebrew idiom preserving the dismemberment rite just enacted. YHWH is grammatically the sole party who 'cuts,' confirming the unilateral grant. McCarthy, Treaty and Covenant (1978), notes the verb karat encodes the cutting-of-animals at the root of all Hebrew covenant language.",
+              "parallels": [
+                {
+                  "label": "Galatians 3 — the covenant prior to the law",
+                  "textId": "galatians-3",
+                  "note": "Paul (Gal 3:15–18) treats this Abrahamic covenant as a ratified, irrevocable grant that the later Sinai law cannot annul or supplement."
+                }
+              ]
+            },
+            {
+              "word": "Unto thy seed have I given this land",
+              "node": "chosen-people",
+              "type": "theme",
+              "note": "The land-grant clause: an unconditional, perfect-tense gift ('have I given') of the territory to Abraham's elect seed. Weinfeld, JAOS 90 (1970), identifies this perfect-tense formula as characteristic of the royal grant — the gift is treated as already accomplished.",
+              "parallels": [
+                {
+                  "label": "Genesis 22 — possessing 'the gate of his enemies'",
+                  "textId": "e-source-aqedah",
+                  "note": "The Aqedah's reward-oath (Gen 22:17) re-states the land-and-seed grant, tying the two covenant scenes together."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
+
+// -- Exodus 12:1–13, 21–23 (The Passover — the blood on the lintel, the destroyer passes over) --
+SCRIPTURE_TEXTS['exodus-12'] = {
+  "id": "exodus-12",
+  "title": "Exodus 12:1–13, 21–23 (The Passover — the blood on the lintel, the destroyer passes over)",
+  "shortTitle": "Exodus 12 (Passover)",
+  "corpus": "Hebrew Bible (Torah · Exodus)",
+  "tradId": "tradition-second-temple-judaism",
+  "date": "narrative set on the eve of the Exodus; the chapter interweaves an old apotropaic blood-rite with the later Priestly Passover legislation (P), reaching its received form in the exilic/post-exilic period (Propp; Childs)",
+  "docNode": "document-exodus",
+  "language": "Hebrew · King James Version (1611), public domain",
+  "translations": [
+    {
+      "id": "kjv",
+      "label": "KJV (1611)",
+      "note": "King James Version — public domain"
+    }
+  ],
+  "intro": "Exodus 12 founds the Passover. Each household takes a lamb without blemish, kills it at evening, and strikes its blood on the two side posts and the lintel of the door; that night the LORD passes through Egypt to smite every firstborn, but when he sees the blood he \"passes over\" the marked houses and will not let \"the destroyer\" enter. The night becomes a perpetual feast. Scholars read the chapter as the literary fusion of an archaic apotropaic blood-rite — blood smeared on the door to ward off a plague-bringing destroyer, a practice with wide Ancient Near Eastern analogues — with the Priestly festival calendar (Sarna; Childs; Propp). The same paschal lamb, \"without blemish\" and with no bone broken (Exod 12:46), becomes in early Christianity the type of Christ: \"Christ our passover is sacrificed for us\" (1 Cor 5:7), and John's Gospel times the crucifixion to the slaughter of the Passover lambs.",
+  "crossTradition": [
+    {
+      "label": "Exodus 15 — the Song of the Sea",
+      "textId": "exodus-15",
+      "note": "Cross & Freedman; Childs — the deliverance the Passover inaugurates"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "This month shall be the beginning of months",
+      "verses": [
+        {
+          "ref": "12:1",
+          "text": "And the LORD spake unto Moses and Aaron in the land of Egypt, saying,",
+          "textVersions": {
+            "kjv": "And the LORD spake unto Moses and Aaron in the land of Egypt, saying,"
+          },
+          "entities": [
+            {
+              "word": "Moses",
+              "node": "moses",
+              "type": "person",
+              "note": "Moses, with Aaron, receives the Passover legislation in Egypt; the lawgiver who mediates the founding rite of Israel's deliverance.",
+              "parallels": []
+            }
+          ]
+        },
+        {
+          "ref": "12:2",
+          "text": "This month shall be unto you the beginning of months: it shall be the first month of the year to you.",
+          "textVersions": {
+            "kjv": "This month shall be unto you the beginning of months: it shall be the first month of the year to you."
+          },
+          "entities": [
+            {
+              "word": "the beginning of months",
+              "node": "hebrew-calendar",
+              "type": "practice",
+              "note": "Exodus 12:2 makes the month of the Exodus (Nisan) the first ritual month of the Hebrew year — the calendrical charter the Hebrew lunisolar calendar still cites for anchoring Pesach to the spring (Sarna).",
+              "parallels": []
+            }
+          ]
+        },
+        {
+          "ref": "12:3",
+          "text": "Speak ye unto all the congregation of Israel, saying, In the tenth day of this month they shall take to them every man a lamb, according to the house of their fathers, a lamb for an house:",
+          "textVersions": {
+            "kjv": "Speak ye unto all the congregation of Israel, saying, In the tenth day of this month they shall take to them every man a lamb, according to the house of their fathers, a lamb for an house:"
+          },
+          "entities": []
+        },
+        {
+          "ref": "12:5",
+          "text": "Your lamb shall be without blemish, a male of the first year: ye shall take it out from the sheep, or from the goats:",
+          "textVersions": {
+            "kjv": "Your lamb shall be without blemish, a male of the first year: ye shall take it out from the sheep, or from the goats:"
+          },
+          "entities": [
+            {
+              "word": "without blemish",
+              "node": "sacrifice-substitution",
+              "type": "symbol",
+              "note": "The unblemished male lamb is the substitute whose death spares the household's firstborn; Childs and Propp read the perfection requirement as marking it a true sacrificial offering. The same 'without blemish' standard grounds the paschal-lamb→Christ typology in 1 Peter 1:19.",
+              "parallels": [
+                {
+                  "label": "Leviticus 16 — the goats of atonement",
+                  "textId": "leviticus-16",
+                  "note": "the substitution-logic of the Day of Atonement, where one goat is killed and the other bears sin away (Milgrom)"
+                },
+                {
+                  "label": "John 19 — Christ the paschal lamb",
+                  "textId": "john-19",
+                  "note": "the unblemished, unbroken paschal lamb read as the type of the crucified Christ (1 Cor 5:7)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "12:6",
+          "text": "And ye shall keep it up until the fourteenth day of the same month: and the whole assembly of the congregation of Israel shall kill it in the evening.",
+          "textVersions": {
+            "kjv": "And ye shall keep it up until the fourteenth day of the same month: and the whole assembly of the congregation of Israel shall kill it in the evening."
+          },
+          "entities": []
+        },
+        {
+          "ref": "12:7",
+          "text": "And they shall take of the blood, and strike it on the two side posts and on the upper door post of the houses, wherein they shall eat it.",
+          "textVersions": {
+            "kjv": "And they shall take of the blood, and strike it on the two side posts and on the upper door post of the houses, wherein they shall eat it."
+          },
+          "entities": [
+            {
+              "word": "strike it on the two side posts and on the upper door post",
+              "node": "blood-sacred",
+              "type": "symbol",
+              "note": "Blood smeared on the doorframe is the apotropaic mark that wards off the destroyer — Sarna and Propp identify this as an archaic blood-rite (blood as a protective sign on the threshold) absorbed into the Passover. The covenant-blood symbolism is the same complex as Exod 24:8, 'the blood of the covenant.'",
+              "parallels": [
+                {
+                  "label": "ANE apotropaic blood-rite",
+                  "note": "smearing blood on a threshold to repel a plague-demon is a widespread Ancient Near Eastern warding practice (Propp; Sarna)"
+                },
+                {
+                  "label": "Leviticus 16 — blood as ritual detergent",
+                  "textId": "leviticus-16",
+                  "note": "the priestly use of sacrificial blood to purge and protect sacred space (Milgrom)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "12:8",
+          "text": "And they shall eat the flesh in that night, roast with fire, and unleavened bread; and with bitter herbs they shall eat it.",
+          "textVersions": {
+            "kjv": "And they shall eat the flesh in that night, roast with fire, and unleavened bread; and with bitter herbs they shall eat it."
+          },
+          "entities": []
+        },
+        {
+          "ref": "12:11",
+          "text": "And thus shall ye eat it; with your loins girded, your shoes on your feet, and your staff in your hand; and ye shall eat it in haste: it is the LORD'S passover.",
+          "textVersions": {
+            "kjv": "And thus shall ye eat it; with your loins girded, your shoes on your feet, and your staff in your hand; and ye shall eat it in haste: it is the LORD'S passover."
+          },
+          "entities": [
+            {
+              "word": "it is the LORD'S passover",
+              "node": "hebrew-calendar",
+              "type": "practice",
+              "note": "The night's meal is instituted as the LORD's Passover (pesach), the perpetual spring festival of the Hebrew calendar; Sarna and Childs note the chapter fuses the founding event with its annual liturgical re-enactment.",
+              "parallels": [
+                {
+                  "label": "John 19 — the Passover of the crucifixion",
+                  "textId": "john-19",
+                  "note": "the feast whose timing John uses to frame Jesus' death as the slaughter of the paschal lambs (Brown)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "12:12",
+          "text": "For I will pass through the land of Egypt this night, and will smite all the firstborn in the land of Egypt, both man and beast; and against all the gods of Egypt I will execute judgment: I am the LORD.",
+          "textVersions": {
+            "kjv": "For I will pass through the land of Egypt this night, and will smite all the firstborn in the land of Egypt, both man and beast; and against all the gods of Egypt I will execute judgment: I am the LORD."
+          },
+          "entities": [
+            {
+              "word": "smite all the firstborn",
+              "node": "sacrifice-substitution",
+              "type": "symbol",
+              "note": "The slaying of Egypt's firstborn is the counterpart to Israel's redeemed firstborn (Exod 13:11–15): the lamb dies in the firstborn's place. Levenson reads the chapter through the firstborn-sacrifice/substitution logic latent across the Hebrew Bible.",
+              "parallels": [
+                {
+                  "label": "The firstborn-substitution",
+                  "note": "the paschal lamb as the substitute that redeems Israel's own firstborn (Levenson, The Death and Resurrection of the Beloved Son)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "12:13",
+          "text": "And the blood shall be to you for a token upon the houses where ye are: and when I see the blood, I will pass over you, and the plague shall not be upon you to destroy you, when I smite the land of Egypt.",
+          "textVersions": {
+            "kjv": "And the blood shall be to you for a token upon the houses where ye are: and when I see the blood, I will pass over you, and the plague shall not be upon you to destroy you, when I smite the land of Egypt."
+          },
+          "entities": [
+            {
+              "word": "the blood shall be to you for a token",
+              "node": "blood-sacred",
+              "type": "symbol",
+              "note": "The blood is explicitly a 'token' — a protective sign that turns the plague aside; Sarna stresses that the rite's apotropaic force is here subordinated to the LORD's own seeing of the sign.",
+              "parallels": []
+            },
+            {
+              "word": "I will pass over you",
+              "node": "destroyer-healer",
+              "type": "theme",
+              "note": "The same divine action that smites Egypt 'passes over' the blood-marked houses: the one power both destroys and spares, the destroyer-healer ambivalence the chapter manages by the apotropaic mark (Childs; Propp).",
+              "parallels": [
+                {
+                  "label": "The destroyer who both smites and spares",
+                  "note": "the single agency that kills the firstborn yet passes over the marked door — the destroyer/healer ambivalence (Propp; Childs)"
+                }
+              ]
+            },
+            {
+              "word": "the plague",
+              "node": "destroyer-healer",
+              "type": "theme",
+              "note": "The plague-bringing power against which the blood wards; Propp connects the 'destroyer' (mashchit) of v.23 to a plague-demon agency the old rite was designed to repel.",
+              "parallels": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Strike the lintel — the destroyer shall not come in",
+      "verses": [
+        {
+          "ref": "12:21",
+          "text": "Then Moses called for all the elders of Israel, and said unto them, Draw out and take you a lamb according to your families, and kill the passover.",
+          "textVersions": {
+            "kjv": "Then Moses called for all the elders of Israel, and said unto them, Draw out and take you a lamb according to your families, and kill the passover."
+          },
+          "entities": [
+            {
+              "word": "Moses",
+              "node": "moses",
+              "type": "person",
+              "note": "Moses transmits the rite to the elders: he commands them to take the lamb and 'kill the passover,' enacting the legislation he received in v.1.",
+              "parallels": []
+            },
+            {
+              "word": "kill the passover",
+              "node": "sacrifice-substitution",
+              "type": "symbol",
+              "note": "'The passover' here names the slaughtered lamb itself — the sacrificial victim whose death the rite turns into protection (Sarna).",
+              "parallels": []
+            }
+          ]
+        },
+        {
+          "ref": "12:22",
+          "text": "And ye shall take a bunch of hyssop, and dip it in the blood that is in the bason, and strike the lintel and the two side posts with the blood that is in the bason; and none of you shall go out at the door of his house until the morning.",
+          "textVersions": {
+            "kjv": "And ye shall take a bunch of hyssop, and dip it in the blood that is in the bason, and strike the lintel and the two side posts with the blood that is in the bason; and none of you shall go out at the door of his house until the morning."
+          },
+          "entities": [
+            {
+              "word": "strike the lintel and the two side posts with the blood",
+              "node": "blood-sacred",
+              "type": "symbol",
+              "note": "The hyssop-and-blood application to lintel and doorposts is the apotropaic core of the older rite; Propp notes the hyssop sprinkler and the threshold-marking are hallmarks of ancient purification/warding ritual.",
+              "parallels": [
+                {
+                  "label": "ANE apotropaic blood-rite",
+                  "note": "blood applied with hyssop to the threshold to bar the destroyer — an archaic warding practice (Propp)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "12:23",
+          "text": "For the LORD will pass through to smite the Egyptians; and when he seeth the blood upon the lintel, and on the two side posts, the LORD will pass over the door, and will not suffer the destroyer to come in unto your houses to smite you.",
+          "textVersions": {
+            "kjv": "For the LORD will pass through to smite the Egyptians; and when he seeth the blood upon the lintel, and on the two side posts, the LORD will pass over the door, and will not suffer the destroyer to come in unto your houses to smite you."
+          },
+          "entities": [
+            {
+              "word": "the destroyer",
+              "node": "destroyer-healer",
+              "type": "theme",
+              "note": "The mashchit, 'the destroyer' — the plague-agency that the blood-marked door bars. Propp and Childs see here the trace of an older belief in a destroying demon, now constrained by and subordinate to the LORD's command.",
+              "parallels": [
+                {
+                  "label": "The destroyer-demon barred by blood",
+                  "note": "the apotropaic logic — blood on the door repels the plague-dealing destroyer (Propp; Sarna)"
+                }
+              ]
+            },
+            {
+              "word": "the LORD will pass over the door",
+              "node": "hebrew-calendar",
+              "type": "practice",
+              "note": "The verb pasach ('pass over / protect') gives the festival its name; Sarna notes the etymology that the chapter itself supplies for Pesach.",
+              "parallels": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
