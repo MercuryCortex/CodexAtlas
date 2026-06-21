@@ -27646,3 +27646,720 @@ SCRIPTURE_TEXTS['proverbs-22-23'] = {
     }
   ]
 };
+
+// ── HEADWATERS: LOGOS / THEODICY / DESCENT (Heraclitus / Ludlul / Descent of Ishtar) — 2026-06-21 ─
+
+// -- Heraclitus — Fragments on the Logos, the Ever-Living Fire, and the Unity of Opposites --
+SCRIPTURE_TEXTS['heraclitus-fragments'] = {
+  "id": "heraclitus-fragments",
+  "title": "Heraclitus — Fragments on the Logos, the Ever-Living Fire, and the Unity of Opposites",
+  "shortTitle": "Heraclitus — Fragments",
+  "corpus": "Greek · Presocratic Philosophy",
+  "tradId": "tradition-ancient-greek",
+  "date": "c. 500 BCE (floruit, 69th Olympiad c. 504–501 BCE)",
+  "docNode": "document-heraclitus-fragments",
+  "language": "Greek (Ionic) · John Burnet translation, Early Greek Philosophy, 3rd ed. (1920) — public domain (Burnet's own fragment numbering; Diels-Kranz B-numbers cited in refs)",
+  "translations": [
+    {
+      "id": "burnet1920",
+      "label": "John Burnet (1920)",
+      "note": "Public domain — Early Greek Philosophy, 3rd ed."
+    }
+  ],
+  "intro": "Heraclitus of Ephesus (c. 535–475 BCE) left a single lost book, On Nature, surviving in about 130 aphoristic fragments (Diels-Kranz DK22). Three ideas anchor them: the LOGOS — the hidden rational order that \"holds forever\" and that all things obey, though men fail to grasp it; the ever-living FIRE that \"no one of gods or men has made,\" kindling and going out in measure; and the UNITY OF OPPOSITES and FLUX (\"the way up and the way down is one and the same\"; \"you cannot step twice into the same rivers\"). The fragment word logos — at once \"word,\" \"account,\" and \"reason\" — is the headwater of the most consequential term in Western religious thought: the Stoics made it the immanent divine fire-reason (logos spermatikos), Philo of Alexandria hypostatized it as God's \"second god\" and bridge to the Hebrew dabar, and the prologue of John then declared \"In the beginning was the Logos.\" This entry surfaces that transmission honestly: a genuine historical chain (Heraclitus → Stoa → Philo → John), running alongside structural convergences (the Egyptian Ptah, the Chinese Dao) that scholarship treats as parallel, not derivation.",
+  "crossTradition": [
+    {
+      "label": "John 1 — \"In the beginning was the Logos\"",
+      "textId": "john-1",
+      "note": "The single most important Logos wire. John's prologue takes the philosophical Logos — Heraclitus's cosmic reason as transmitted and transformed through the Stoa and Philo — and identifies it with a person: the pre-existent Word through whom all things were made, now \"made flesh.\" Kirk-Raven-Schofield and Kahn trace the term's genealogy from Heraclitus; whether John depends directly on Philo, on a shared Hellenistic-Jewish logos theology, or on the Wisdom tradition is debated (Bultmann; Dunn; Boyarin), but the structural debt of the word logos to the Greek philosophical tradition is not."
+    },
+    {
+      "label": "Corpus Hermeticum — the creative Logos from Nous",
+      "textId": "corpus-hermeticum-3",
+      "note": "In the Hermetica the Logos is the luminous Word that springs from Nous (Mind) and orders creation — a Greco-Egyptian synthesis of the same logos-as-cosmic-structuring-principle, developed in Hellenistic Alexandria alongside the Philonic and Johannine forms (Kahn; Fowden, The Egyptian Hermes)."
+    },
+    {
+      "label": "Acts 17 — Paul among the philosophers at Athens",
+      "textId": "acts-17-areopagus",
+      "note": "The historical meeting-point of the two streams: Paul quotes Greek poets (\"in him we live and move and have our being\") to Stoics and Epicureans on the Areopagus. The Stoic logos that Paul's hearers held — the immanent divine reason descended from Heraclitus — is the conceptual bridge that lets the Logos-Christology of John be heard in Greek."
+    },
+    {
+      "label": "Laozi — the Dao, the nameless ordering principle",
+      "note": "The Daodejing's Dao is, like the Heraclitean logos, the hidden order governing all apparent multiplicity and change — present in all things yet beyond naming. Kirk-Raven-Schofield and comparative scholars (Graham; Kahn) treat this as structural convergence within the Axial-Age window, NOT transmission: there is no demonstrable contact between Ephesus and Warring-States China."
+    },
+    {
+      "label": "Ptah of Memphis — creation by heart and tongue",
+      "note": "The Shabaka Stone records Ptah creating \"by the thought of his heart and the speech of his tongue\" — among the earliest documented mind-and-word creative theologies. Often cited (Assmann; the logos-cosmic-reason node) as an independent Egyptian anticipation of the Logos; the Egyptians had no knowledge of Heraclitus, so this is convergence, not derivation."
+    }
+  ],
+  "sections": [
+    {
+      "heading": "The Logos",
+      "verses": [
+        {
+          "ref": "DK B1 (Burnet fr. 2)",
+          "text": "Though this Word is true evermore, yet men are as unable to understand it when they hear it for the first time as before they have heard it at all.",
+          "textVersions": {
+            "burnet1920": "Though this Word is true evermore, yet men are as unable to understand it when they hear it for the first time as before they have heard it at all."
+          },
+          "entities": [
+            {
+              "word": "this Word",
+              "node": "logos-cosmic-reason",
+              "type": "theme",
+              "note": "Greek logos — at once \"word,\" \"account,\" \"measure,\" and \"reason.\" Burnet renders it \"Word\"; it is the hidden rational order that \"holds forever\" and that all things obey. This fragment (DK B1) is the earliest philosophical use of logos as the structuring principle of the cosmos (Kahn, The Art and Thought of Heraclitus, 1979; Kirk-Raven-Schofield, The Presocratic Philosophers, 1983).",
+              "parallels": [
+                {
+                  "label": "Logos of John 1",
+                  "textId": "john-1",
+                  "note": "The Johannine prologue's pre-existent Logos through whom all things were made is the term's most consequential heir, mediated through the Stoa and Philo (Kahn; Kirk-Raven-Schofield)."
+                },
+                {
+                  "label": "Stoic logos spermatikos",
+                  "note": "The Stoics claimed Heraclitus as ancestor and developed logos into the immanent divine fire-reason pervading the cosmos; whether Heraclitus's logos does the cosmological work the Stoics retroject is itself debated (Kirk-Raven-Schofield)."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "DK B2 (Burnet fr. 92)",
+          "text": "So we must follow the common, yet though my Word is common, the many live as if they had a wisdom of their own.",
+          "textVersions": {
+            "burnet1920": "So we must follow the common, yet though my Word is common, the many live as if they had a wisdom of their own."
+          },
+          "entities": [
+            {
+              "word": "the common",
+              "node": "logos-cosmic-reason",
+              "type": "theme",
+              "note": "The logos is xynos — \"common,\" shared by all — yet most live as though wisdom were private. The fragment grounds Heraclitus's claim that the cosmic order is universal and public, not idiosyncratic (Kahn, 1979).",
+              "parallels": [
+                {
+                  "label": "Stoic cosmopolitan logos",
+                  "note": "The Stoics built their cosmopolitanism on exactly this \"common logos\" — the single reason shared by all rational beings, a direct development of Heraclitus's xynos logos (Kirk-Raven-Schofield, 1983)."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "DK B50 (Burnet fr. 1)",
+          "text": "It is wise to hearken, not to me, but to my Word, and to confess that all things are one.",
+          "textVersions": {
+            "burnet1920": "It is wise to hearken, not to me, but to my Word, and to confess that all things are one."
+          },
+          "entities": [
+            {
+              "word": "my Word",
+              "node": "logos-cosmic-reason",
+              "type": "theme",
+              "note": "Heraclitus distinguishes himself from the logos: wisdom lies not in the speaker but in the order he reports. \"All things are one\" (hen panta einai) names the deep unity beneath surface plurality — the doctrine the later tradition seized on (Burnet, Early Greek Philosophy, 1920; Kahn, 1979).",
+              "parallels": [
+                {
+                  "label": "\"that all things are one\" → John's unity in the Logos",
+                  "textId": "john-1",
+                  "note": "The Heraclitean move from the Logos to the unity of all things is structurally echoed in John's Logos through whom all things came to be — Kahn traces the genealogy of the term across this distance (Kahn, 1979)."
+                },
+                {
+                  "label": "Dao — \"the one\" from which the ten thousand things issue",
+                  "note": "Laozi: \"The Dao gives birth to one... three gives birth to the ten thousand things\" — the same unity-beneath-multiplicity, treated by comparativists as Axial-Age convergence, not contact (Kirk-Raven-Schofield; Graham)."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "The Ever-Living Fire",
+      "verses": [
+        {
+          "ref": "DK B30 (Burnet fr. 20)",
+          "text": "This world, which is the same for all, no one of gods or men has made; but it was ever, is now, and ever shall be an ever-living Fire, with measures of it kindling, and measures going out.",
+          "textVersions": {
+            "burnet1920": "This world, which is the same for all, no one of gods or men has made; but it was ever, is now, and ever shall be an ever-living Fire, with measures of it kindling, and measures going out."
+          },
+          "entities": [
+            {
+              "word": "an ever-living Fire",
+              "node": "sacred-fire",
+              "type": "symbol",
+              "note": "Heraclitus's primary cosmic substance is fire (pyr) — not a created thing but the self-existing process of the cosmos itself, kindling and quenching \"in measure\" (metra). The Stoics took this literally: the divine logos IS a fire-pneuma pervading all things (Kahn, 1979; Kirk-Raven-Schofield, 1983).",
+              "parallels": [
+                {
+                  "label": "Stoic divine fire = logos = Zeus",
+                  "note": "The Stoic identification of logos with a creative cosmic fire (pyr technikon) descends directly from this fragment; Zeus, Fate, Providence and the fiery pneuma are one rational necessity (Kirk-Raven-Schofield, 1983)."
+                },
+                {
+                  "label": "Zoroastrian sacred fire (atar)",
+                  "note": "Fire as the visible token of cosmic order and divine reason is a recurring Indo-Iranian and Greek motif; the parallel is thematic, not a transmission claim."
+                }
+              ]
+            },
+            {
+              "word": "measures of it kindling, and measures going out",
+              "node": "cosmic-cycles",
+              "type": "theme",
+              "note": "The cosmos runs on measured exchange — fire kindling and quenching by fixed measure (metra). This is the ordered, cyclical reading of Heraclitus that Kirk and Kahn defend against the caricature of pure chaos: the flux is governed flux (Kirk-Raven-Schofield, 1983; Kahn, 1979).",
+              "parallels": [
+                {
+                  "label": "Stoic ekpyrosis (cosmic conflagration)",
+                  "note": "The Stoics extended the measured fire into a doctrine of periodic world-conflagration and renewal (ekpyrosis), a cyclical cosmology rooted in Heraclitus's fire-measures (Kirk-Raven-Schofield, 1983)."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "The Unity of Opposites and the Flux",
+      "verses": [
+        {
+          "ref": "DK B60 (Burnet fr. 69)",
+          "text": "The way up and the way down is one and the same.",
+          "textVersions": {
+            "burnet1920": "The way up and the way down is one and the same."
+          },
+          "entities": [
+            {
+              "word": "The way up and the way down",
+              "node": "logos-cosmic-reason",
+              "type": "theme",
+              "note": "The signature unity-of-opposites fragment: a single road, named differently according to direction. For Heraclitus opposites are not contradictions to be resolved but a single ordered tension — the deep meaning of the logos that says \"all things are one\" (Kahn, 1979). Aristotle's reading of Heraclitus as a denier of non-contradiction (Metaphysics IV.5) is, modern scholars hold, a polemical simplification (Kirk-Raven-Schofield, 1983).",
+              "parallels": [
+                {
+                  "label": "Dao — unity of complementary opposites",
+                  "note": "The Daoist coincidence of opposites (high/low, full/empty) within one ordering principle is the closest structural analogue; Graham and comparative scholars read it as independent Axial-Age convergence (Kirk-Raven-Schofield, 1983)."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "DK B12 (Burnet frs. 41–42)",
+          "text": "You cannot step twice into the same rivers; for fresh waters are ever flowing in upon you.",
+          "textVersions": {
+            "burnet1920": "You cannot step twice into the same rivers; for fresh waters are ever flowing in upon you."
+          },
+          "entities": [
+            {
+              "word": "the same rivers",
+              "node": "cosmic-cycles",
+              "type": "theme",
+              "note": "The river image: the river persists as a river precisely because its waters are always changing — stability is a pattern maintained through flux, not the absence of flux. Kirk argues B12 (not the later paraphrase panta rhei) is the authentic core; the \"everything flows\" slogan is a doxographical summary, not a verbatim fragment (Kirk-Raven-Schofield, 1983; Kahn, 1979).",
+              "parallels": [
+                {
+                  "label": "Plato's flux-Heraclitus (Theaetetus, Cratylus)",
+                  "note": "Plato's portrait of Heraclitus as the philosopher of pure flux — against which he develops the unchanging Forms — set the terms of later reception but flattens the \"measured\" flux of the fragments themselves (Kahn, 1979)."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "DK B49a (Burnet fr. 81)",
+          "text": "We step and do not step into the same rivers; we are and are not.",
+          "textVersions": {
+            "burnet1920": "We step and do not step into the same rivers; we are and are not."
+          },
+          "entities": [
+            {
+              "word": "we are and are not",
+              "node": "heraclitus",
+              "type": "person",
+              "note": "The paradoxical extension of the river image to the self: persistence and change held together in a single statement. The form — affirmation and negation joined — is Heraclitus's characteristic \"obscurity\" (ho skoteinos), and the basis of Hegel's later claim that Heraclitus founded dialectic (Kahn, The Art and Thought of Heraclitus, 1979).",
+              "parallels": [
+                {
+                  "label": "Heraclitean logos as ordered tension",
+                  "note": "\"We are and are not\" is the unity-of-opposites applied to identity itself; it belongs to the same logos that holds \"the way up and the way down\" as one (Kahn, 1979)."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
+
+// -- Ludlul bēl nēmeqi — The Poem of the Righteous Sufferer (the "Babylonian Job") --
+SCRIPTURE_TEXTS['ludlul-bel-nemeqi'] = {
+  "id": "ludlul-bel-nemeqi",
+  "title": "Ludlul bēl nēmeqi — The Poem of the Righteous Sufferer (the \"Babylonian Job\")",
+  "shortTitle": "Ludlul (Babylonian Job)",
+  "corpus": "Mesopotamian · Babylonian (Akkadian wisdom literature)",
+  "tradId": "tradition-mesopotamian",
+  "date": "c. 1300–1200 BCE (Kassite Babylonia; composed under or near Nazi-Maruttash). Tablets survive from Ashurbanipal's library, 7th c. BCE.",
+  "docNode": "document-ludlul-bel-nemeqi",
+  "language": "Akkadian (Standard Babylonian, cuneiform) · English translation of Robert W. Rogers, \"Cuneiform Parallels to the Old Testament\" (1912), pp. 164–169 — public domain. Rogers titles it \"Fragment of Wisdom Literature, The So-Called Babylonian Job, Second Tablet of the Wisdom of Tabi-utul-Ellil\" (his reading of the sufferer's name; the fuller text now reads it Shubshi-meshre-Shakkan).",
+  "translations": [
+    {
+      "id": "rogers1912",
+      "label": "R.W. Rogers (1912)",
+      "note": "Public domain — Cuneiform Parallels to the Old Testament"
+    }
+  ],
+  "intro": "Ludlul bēl nēmeqi (\"I will praise the lord of wisdom\") is the great Babylonian poem of the righteous sufferer: a pious nobleman, abandoned by his god and goddess and struck with undeserved disease, who cries that no one can fathom the will of the gods — and is at last healed by Marduk. It is the classic Mesopotamian theodicy, and the closest Near Eastern analogue to the Book of Job: the same confrontation with innocent suffering and the inscrutability of divine justice, centuries before the Hebrew poem. The convergence is one of shared problem and shared wisdom-tradition, not of literary borrowing — Ludlul, the \"Babylonian Theodicy,\" and the Sumerian \"Man and his God\" form the wider righteous-sufferer stream of the ancient Near East from which Job's question also rises (W. G. Lambert, \"Babylonian Wisdom Literature,\" 1960).",
+  "crossTradition": [
+    {
+      "label": "Job 1 — the heavenly wager",
+      "textId": "job-1-council",
+      "note": "The Hebrew frame poses Ludlul's exact question — does a man serve God for nothing? — and tests it on a demonstrably righteous sufferer. Carol Newsom (The Book of Job, 1996) and W. G. Lambert (Babylonian Wisdom Literature, 1960, pp. 21–27) treat Ludlul as the prime Mesopotamian analogue to Job's problem of innocent suffering."
+    },
+    {
+      "label": "Job 38 — the Voice from the whirlwind",
+      "textId": "job-38",
+      "note": "Job's god answers not with a reason but with the unsearchable counsel of creation; Ludlul's sufferer already laments that 'the way of the gods' is full of darkness and beyond pale-faced men. Both poems resolve the theodicy by asserting the inscrutability of the divine, not by justifying the suffering (Newsom 1996; Lambert 1960)."
+    },
+    {
+      "label": "Job 40–41 — Behemoth and Leviathan",
+      "textId": "job-40-41",
+      "note": "The whirlwind speeches end by displaying God's mastery over the chaos-beasts rather than vindicating the sufferer — the same move as Ludlul, where restoration comes by Marduk's mercy, not by the sufferer being proved right (Newsom, The Book of Job, 1996)."
+    },
+    {
+      "label": "The Babylonian Theodicy (Akkadian)",
+      "note": "A 27-stanza acrostic dialogue between a sufferer and a friend on why the gods let the wicked prosper — the direct Mesopotamian counterpart to the Job dialogues. W. G. Lambert (Babylonian Wisdom Literature, 1960, pp. 63–91) edits it alongside Ludlul as the core of the righteous-sufferer tradition. [not yet staged]"
+    },
+    {
+      "label": "'Man and his God' (Sumerian)",
+      "note": "The earliest known righteous-sufferer poem (Old Babylonian, in Sumerian): a man laments his undeserved affliction and is restored by his personal god. Lambert (1960) and S. N. Kramer place it at the head of the tradition Ludlul develops and Job inherits. [not yet staged]"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "Abandoned by god and goddess",
+      "verses": [
+        {
+          "ref": "Tablet II, 3–5",
+          "text": "Wherever I turn, there is evil, evil— Oppression is increased, righteousness I see not. I have cried unto my god, but he showed me not his face. I invoked my goddess, but she lifted not up her head.",
+          "textVersions": {
+            "rogers1912": "Wherever I turn, there is evil, evil— Oppression is increased, righteousness I see not. I have cried unto my god, but he showed me not his face. I invoked my goddess, but she lifted not up her head."
+          },
+          "entities": [
+            {
+              "word": "my god",
+              "node": "hidden-god",
+              "type": "theme",
+              "note": "The sufferer's personal god has turned his face away — the deus absconditus of Mesopotamian piety, the god who withdraws and will not be read. W. G. Lambert (Babylonian Wisdom Literature, 1960) calls this the central religious crisis of Ludlul: the breakdown of the assumed link between piety and protection.",
+              "parallels": [
+                {
+                  "label": "Job 38 — the whirlwind",
+                  "textId": "job-38",
+                  "note": "Job too is met by a god who refuses to explain; the hiddenness of the divine answer is the shared resolution (Carol Newsom, The Book of Job, 1996)."
+                },
+                {
+                  "label": "Psalm 22 — 'why hast thou forsaken me'",
+                  "note": "The Hebrew lament of the abandoned righteous one is the same posture of the forsaken sufferer crying to a silent god (Lambert 1960; Newsom 1996). [not yet staged]"
+                }
+              ]
+            },
+            {
+              "word": "my goddess",
+              "node": "righteous-suffering-vindication",
+              "type": "theme",
+              "note": "The poem's premise is that the sufferer is innocent and pious — his cult is faultless — yet he is afflicted; this is the righteous-sufferer pattern in its purest Mesopotamian form. W. G. Lambert (1960) names Ludlul the type-specimen of the genre that lies behind Job.",
+              "parallels": [
+                {
+                  "label": "Job 1 — the wager on Job's righteousness",
+                  "textId": "job-1-council",
+                  "note": "Job is staged as a man 'perfect and upright' whose suffering is explicitly undeserved — the same innocent-sufferer premise (Newsom, The Book of Job, 1996)."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "Tablet II, 17–18",
+          "text": "The god helped me not, he took me not by the hand, The goddess did not pity me, she came not to my side.",
+          "textVersions": {
+            "rogers1912": "The god helped me not, he took me not by the hand, The goddess did not pity me, she came not to my side."
+          },
+          "entities": [
+            {
+              "word": "The god helped me not",
+              "node": "theodicy",
+              "type": "theme",
+              "note": "The undeserved abandonment of a righteous man by his gods is the engine of the Mesopotamian theodicy — the problem of why the pious suffer. W. G. Lambert (Babylonian Wisdom Literature, 1960) reads Ludlul as Babylon's most sustained attempt to hold divine justice together with manifest innocent suffering.",
+              "parallels": [
+                {
+                  "label": "Job 1 — does Job serve God for nothing?",
+                  "textId": "job-1-council",
+                  "note": "The Hebrew frame asks Ludlul's question directly and answers it by ordeal rather than argument (Carol Newsom, The Book of Job, 1996)."
+                },
+                {
+                  "label": "The Babylonian Theodicy",
+                  "note": "The Akkadian dialogue-poem debates the same charge — that the gods reward the wicked and ruin the devout (Lambert 1960, pp. 63–91). [not yet staged]"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "What seems good to oneself is an offence to the god",
+      "verses": [
+        {
+          "ref": "Tablet II, 33–38",
+          "text": "That which seemeth good to itself, that is evil with god, And that which in its heart is rejected, that is good with god. Who can understand the counsel of the gods in heaven? The plan of the gods full of darkness, who shall establish it? How shall pale-faced men understand the way of the gods!",
+          "textVersions": {
+            "rogers1912": "That which seemeth good to itself, that is evil with god, And that which in its heart is rejected, that is good with god. Who can understand the counsel of the gods in heaven? The plan of the gods full of darkness, who shall establish it? How shall pale-faced men understand the way of the gods!"
+          },
+          "entities": [
+            {
+              "word": "that is evil with god",
+              "node": "theodicy",
+              "type": "theme",
+              "note": "The poem's most quoted lines: human and divine measures of good are inverted, so the moral order is unknowable from below. This is Ludlul's distinctive theodicy — not that suffering is deserved, but that divine justice is inscrutable. W. G. Lambert (Babylonian Wisdom Literature, 1960, pp. 21–62) treats this couplet as the heart of the poem.",
+              "parallels": [
+                {
+                  "label": "Job 38 — the Voice from the whirlwind",
+                  "textId": "job-38",
+                  "note": "God answers Job's protest by parading the unsearchable order of creation rather than by justifying the suffering — the same appeal to divine inscrutability (Carol Newsom, The Book of Job, 1996)."
+                },
+                {
+                  "label": "Ecclesiastes — 'no man can find out the work of God'",
+                  "note": "The Hebrew wisdom recognition that the divine plan is hidden from human reckoning is the same epistemic humility (Lambert 1960). [not yet staged]"
+                }
+              ]
+            },
+            {
+              "word": "the way of the gods",
+              "node": "hidden-god",
+              "type": "theme",
+              "note": "The 'plan of the gods full of darkness' is the inscrutable, hidden divinity whose will cannot be inferred from one's own piety — the kernel of the wisdom crisis. Lambert (1960) and Carol Newsom (1996) both read Job's whirlwind theophany as the Hebrew counterpart to this confession of unknowing.",
+              "parallels": [
+                {
+                  "label": "The Babylonian Theodicy",
+                  "note": "'The divine mind, like the centre of the heavens, is remote; knowledge of it is difficult' — the dialogue restates Ludlul's claim that the gods' will is unknowable (Lambert 1960, pp. 63–91). [not yet staged]"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Restored by Marduk, the lord of wisdom",
+      "verses": [
+        {
+          "ref": "Marduk restores the sufferer",
+          "text": "I attained unto (long) life, I moved beyond the appointed time.",
+          "textVersions": {
+            "rogers1912": "I attained unto (long) life, I moved beyond the appointed time."
+          },
+          "entities": [
+            {
+              "word": "I attained unto (long) life",
+              "node": "marduk",
+              "type": "deity",
+              "note": "The poem's title, Ludlul bēl nēmeqi, means 'I will praise the lord of wisdom' — Marduk, the city-god of Babylon, who alone wounds and heals. The whole composition is a thanksgiving for Marduk's mercy after he, and only he, restores the sufferer; the elevation of Marduk to supreme cosmic status is the theological backdrop (W. G. Lambert, Babylonian Wisdom Literature, 1960).",
+              "parallels": [
+                {
+                  "label": "Enuma Elish IV — Marduk made king of the gods",
+                  "textId": "enuma-elish-4",
+                  "note": "The same Marduk whose kingship the creation epic establishes is here the god of personal salvation; Ludlul is the devotional face of Babylon's Marduk theology (Lambert 1960)."
+                },
+                {
+                  "label": "Job 1 — 'the LORD gave, and the LORD hath taken away'",
+                  "textId": "job-1-council",
+                  "note": "The sufferer who blesses the god that both afflicts and restores is the shared posture of Job and the Babylonian poem (Carol Newsom, The Book of Job, 1996)."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
+
+// -- The Descent of Ishtar to the Underworld (Akkadian) --
+SCRIPTURE_TEXTS['descent-ishtar'] = {
+  "id": "descent-ishtar",
+  "title": "The Descent of Ishtar to the Underworld (Akkadian)",
+  "shortTitle": "Descent of Ishtar",
+  "corpus": "Mesopotamian · Akkadian (Babylonian-Assyrian)",
+  "tradId": "tradition-mesopotamian",
+  "date": "c. 1100–700 BCE (Akkadian recension; tablets from Nineveh and Assur)",
+  "docNode": "document-descent-of-ishtar",
+  "language": "Akkadian · M. Jastrow translation, \"Descent of the Goddess Ishtar into the Lower World\" (1915, public domain)",
+  "translations": [
+    {
+      "id": "jastrow1915",
+      "label": "M. Jastrow (1915)",
+      "note": "Public domain"
+    }
+  ],
+  "intro": "The Akkadian Descent of Ishtar is the later, shorter recension of the same myth told at length in the Sumerian Descent of Inanna: the goddess of love and war goes down to Kurnugi, the \"land of no return,\" passes through seven gates and is stripped of one garment or ornament at each, dies in the realm of her sister Ereshkigal, and is revived with the \"waters of life.\" While she lies dead below, all sexual procreation ceases on earth — the bull does not mount the cow, no man approaches the maid — and the gods must contrive her release. The poem closes addressing Tammuz (Dumuzi), \"the lover of her youth,\" the dying-and-rising vegetation god whose annual mourning-rite this descent explains; it is the Mesopotamian taproot of the cross-tradition \"dying-and-rising god\" pattern (Tammuz/Adonis/Osiris) whose very existence as a category is the central debate from Frazer through J.Z. Smith to Mettinger.",
+  "crossTradition": [
+    {
+      "label": "Descent of Inanna (Sumerian) — the older recension",
+      "textId": "descent-inanna",
+      "note": "This Akkadian poem is the shorter later recension of the same myth: Inanna = Ishtar, the seven gates and seven me/garments, Ereshkigal, the corpse hung from a hook, and the water/food of life all carry over. In the fuller Sumerian version Inanna escapes only by surrendering Dumuzi as her substitute — the substitution the Akkadian text presupposes when it closes on Tammuz. Thorkild Jacobsen, The Treasures of Darkness (1976), reconstructs both recensions and the underlying Dumuzi lament-liturgy."
+    },
+    {
+      "label": "Ezekiel 8:14 — women weeping for Tammuz",
+      "textId": "ezekiel-8-tammuz",
+      "note": "Ezekiel's vision of women wailing for Tammuz at the north gate of the Jerusalem temple is the cultic counterpart this descent narrates: the annual mourning-rite for the god who goes down to the underworld. The single direct biblical attestation that the Mesopotamian dying-rising cult reached Judah itself (Jacobsen 1976; the Babylonian fourth month Du'uzu is named for him)."
+    },
+    {
+      "label": "Homeric Hymn to Demeter — Persephone's descent and return",
+      "textId": "homeric-hymn-demeter",
+      "note": "The Greek dying-rising structure: a goddess goes to the realm of the dead, fertility fails on the earth in her absence (Demeter blights the grain), and a negotiated return restores it. Mettinger, The Riddle of Resurrection (2001), and earlier comparative work treat the Eleusinian and Mesopotamian descent-myths as parallel cases of the seasonal death-and-return pattern, while warning against collapsing their differences."
+    },
+    {
+      "label": "Osiris (Egyptian) and the dying-rising-god debate",
+      "note": "J.G. Frazer, Adonis Attis Osiris (1906), made Tammuz, Adonis, and Osiris the three core cases of a single dying-and-rising vegetation god. Jonathan Z. Smith ('Dying and Rising Gods', Encyclopedia of Religion, 1987) argued the category was a modern projection and that explicit resurrection language is largely absent from the pre-Christian sources. Tryggve Mettinger, The Riddle of Resurrection (2001), is the direct rehabilitation, defending Dumuzi-Tammuz, Baal, and Osiris as genuine cases on strict textual evidence. The panel keeps both poles to mark a live debate rather than assert a settled transmission."
+    }
+  ],
+  "sections": [
+    {
+      "heading": "To the Land of No Return",
+      "verses": [
+        {
+          "ref": "lines 1–4",
+          "text": "To the land of no return, the land of darkness, Ishtar, the daughter of Sin directed her thought, Directed her thought, Ishtar, the daughter of Sin, To the house of shadows, the dwelling, of Irkalla,",
+          "textVersions": {
+            "jastrow1915": "To the land of no return, the land of darkness, Ishtar, the daughter of Sin directed her thought, Directed her thought, Ishtar, the daughter of Sin, To the house of shadows, the dwelling, of Irkalla,"
+          },
+          "entities": [
+            {
+              "word": "Ishtar",
+              "node": "ishtar-akkadian",
+              "type": "deity",
+              "note": "Ishtar, the Akkadian goddess of love and war and the planet Venus, counterpart of Sumerian Inanna and daughter of the moon-god Sin. Her voluntary descent to the realm of the dead is the type-scene of the divine katabasis. The Venus connection is encoded in the myth: the planet's disappearance at inferior conjunction maps onto the goddess's sojourn below (Jacobsen 1976).",
+              "parallels": [
+                {
+                  "label": "Inanna (Sumerian)",
+                  "textId": "descent-inanna",
+                  "note": "Ishtar is the Akkadian Inanna; the Akkadian poem is the later recension of the Sumerian Descent (Jacobsen 1976)."
+                },
+                {
+                  "label": "Persephone / Demeter (Greek)",
+                  "textId": "homeric-hymn-demeter",
+                  "note": "The goddess whose descent to the dead suspends fertility on earth; Mettinger 2001 treats the two as parallel seasonal death-and-return myths."
+                }
+              ]
+            },
+            {
+              "word": "the land of no return",
+              "node": "underworld-descent",
+              "type": "theme",
+              "note": "Kurnugi, the 'land of no return' — the Mesopotamian underworld, a place not of punishment but of cessation, where (in the following lines) the dead 'have no light, in darkness they dwell' and 'dust is their nourishment, clay their food.' The descent-and-return through it is the template for the later katabasis tradition (Jacobsen 1976).",
+              "parallels": [
+                {
+                  "label": "Descent of Inanna — the Great Below (Kur)",
+                  "textId": "descent-inanna",
+                  "note": "The Sumerian Kur, the same realm of no return ruled by Ereshkigal (Jacobsen 1976)."
+                },
+                {
+                  "label": "Hades / the Greek underworld",
+                  "textId": "homeric-hymn-demeter",
+                  "note": "Persephone's realm of the dead; structurally the same land-of-no-return whose claim on the goddess must be negotiated."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "lines 5–8",
+          "text": "To the house without exit for him who enters therein, To the road, whence there is no turning, To the house without light for him who enters therein, The place where dust is their nourishment, clay their food.",
+          "textVersions": {
+            "jastrow1915": "To the house without exit for him who enters therein, To the road, whence there is no turning, To the house without light for him who enters therein, The place where dust is their nourishment, clay their food."
+          },
+          "entities": []
+        }
+      ]
+    },
+    {
+      "heading": "The Threat at the Gate",
+      "verses": [
+        {
+          "ref": "Ishtar to the gatekeeper",
+          "text": "I will bring up the dead to eat the living. And the dead will outnumber the living.",
+          "textVersions": {
+            "jastrow1915": "I will bring up the dead to eat the living. And the dead will outnumber the living."
+          },
+          "entities": [
+            {
+              "word": "the dead to eat the living",
+              "node": "katabasis-and-anabasis",
+              "type": "theme",
+              "note": "Ishtar's threat to shatter the gate of the underworld and let the dead overrun the living is the violent assertion of the living goddess against the realm of death — the agon at the threshold that defines the katabasis (descent) before the anabasis (return). The same threat-formula recurs almost verbatim in the Standard Babylonian Gilgamesh Tablet VI, spoken by Ishtar (Jacobsen 1976).",
+              "parallels": [
+                {
+                  "label": "Descent of Inanna — knocking at the outer gate",
+                  "textId": "descent-inanna",
+                  "note": "Inanna's demand at the gate of the Kur is the Sumerian form of the same threshold-confrontation (Jacobsen 1976)."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "The Seven Gates",
+      "verses": [
+        {
+          "ref": "the first gate",
+          "text": "He bade her enter the first gate, which he opened wide, and took the large crown off her head: \"Why, O gatekeeper, dost thou remove the large crown off my head?\" \"Enter, O lady, such are the decrees of Ereshkigal.\"",
+          "textVersions": {
+            "jastrow1915": "He bade her enter the first gate, which he opened wide, and took the large crown off her head: \"Why, O gatekeeper, dost thou remove the large crown off my head?\" \"Enter, O lady, such are the decrees of Ereshkigal.\""
+          },
+          "entities": [
+            {
+              "word": "the first gate",
+              "node": "katabasis-and-anabasis",
+              "type": "theme",
+              "note": "At each of the seven gates the gatekeeper strips Ishtar of one garment or ornament — crown, earrings, necklace, breast-ornaments, birth-stone girdle, hand-and-foot spangles, and finally her loin-cloth — so that she arrives before Ereshkigal naked and powerless. The progressive stripping is read as (1) the divestiture of divine power required to enter death and (2) an astral encoding of the descent through seven heavens; it is the literary ancestor of the seven-gated descent motif (Jacobsen 1976; Mettinger 2001).",
+              "parallels": [
+                {
+                  "label": "Descent of Inanna — the seven me at the seven gates",
+                  "textId": "descent-inanna",
+                  "note": "In the Sumerian recension Inanna is stripped of her seven me (divine powers) at the seven gates — the older form of the same sequence (Jacobsen 1976)."
+                }
+              ]
+            },
+            {
+              "word": "Ereshkigal",
+              "node": "ereshkigal",
+              "type": "deity",
+              "note": "Ereshkigal, queen of the underworld and Ishtar's sister, whose 'decrees' govern the stripping at each gate. She is the death-pole of the Mesopotamian divine feminine over against Ishtar's life-pole; the sisters' confrontation enacts the cosmic opposition of fertility and death (Jacobsen 1976).",
+              "parallels": [
+                {
+                  "label": "Ereshkigal in the Descent of Inanna",
+                  "textId": "descent-inanna",
+                  "note": "The same underworld queen and sister; the figure carries unchanged from the Sumerian recension (Jacobsen 1976)."
+                },
+                {
+                  "label": "Hades (Greek)",
+                  "textId": "homeric-hymn-demeter",
+                  "note": "The undivided Greek lord of the dead who holds Persephone below; the structural counterpart of Ereshkigal's domain."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "the seventh gate",
+          "text": "The seventh gate he bade her enter, opened it wide, and removed her loin-cloth. \"Why, O gatekeeper, dost thou remove my loin-cloth?\" \"Enter, O lady, for such are the decrees of Ereshkigal.\"",
+          "textVersions": {
+            "jastrow1915": "The seventh gate he bade her enter, opened it wide, and removed her loin-cloth. \"Why, O gatekeeper, dost thou remove my loin-cloth?\" \"Enter, O lady, for such are the decrees of Ereshkigal.\""
+          },
+          "entities": []
+        }
+      ]
+    },
+    {
+      "heading": "The Failing of the Earth",
+      "verses": [
+        {
+          "ref": "after the descent",
+          "text": "After the lady Ishtar had gone down into the land of no return, The bull did not mount the cow, the ass approached not the she-ass, To the maid in the street, no man drew near",
+          "textVersions": {
+            "jastrow1915": "After the lady Ishtar had gone down into the land of no return, The bull did not mount the cow, the ass approached not the she-ass, To the maid in the street, no man drew near"
+          },
+          "entities": [
+            {
+              "word": "The bull did not mount the cow",
+              "node": "sacred-marriage",
+              "type": "theme",
+              "note": "With Ishtar held in the underworld, all sexual generation ceases on earth — bull and cow, ass and she-ass, man and maid. The goddess of love and procreation is the guarantor of fertility; her absence below blights it above. This explicit cessation-of-procreation is the strongest textual warrant for reading the descent as a seasonal fertility myth (Mettinger 2001), and the inverse of the sacred-marriage rite by which Inanna/Ishtar's union with the king secured the land's increase (Jacobsen 1976).",
+              "parallels": [
+                {
+                  "label": "Demeter blighting the grain (Greek)",
+                  "textId": "homeric-hymn-demeter",
+                  "note": "Demeter makes the earth barren while Persephone is below — the Greek form of fertility failing during the goddess's underworld absence (Mettinger 2001)."
+                },
+                {
+                  "label": "Descent of Inanna",
+                  "textId": "descent-inanna",
+                  "note": "The same suspension of the world's fecundity during the goddess's death below (Jacobsen 1976)."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "The Waters of Life and the Return",
+      "verses": [
+        {
+          "ref": "the revival",
+          "text": "He sprinkled Ishtar with the waters of life and took hold of her. Through the first gate he led her out and returned to her her loin-cloth.",
+          "textVersions": {
+            "jastrow1915": "He sprinkled Ishtar with the waters of life and took hold of her. Through the first gate he led her out and returned to her her loin-cloth."
+          },
+          "entities": [
+            {
+              "word": "the waters of life",
+              "node": "resurrection-of-the-dead",
+              "type": "theme",
+              "note": "Ishtar is revived by the 'waters of life' and led back up through the seven gates, receiving her garments and ornaments in reverse order. The resurrective-substance motif — water or food of life that undoes death — is among the most widely distributed in world religion (water of life, amrita, ambrosia, the elixir). Whether Ishtar's revival constitutes a true 'resurrection,' and whether the dying-rising-god category is even coherent, is the J.Z. Smith (1987) vs. Mettinger (2001) debate.",
+              "parallels": [
+                {
+                  "label": "Descent of Inanna — the water and food of life",
+                  "textId": "descent-inanna",
+                  "note": "In the Sumerian recension the life-giving water and food are sprinkled on Inanna's corpse and she arises — the same resurrective substance (Jacobsen 1976)."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "the close — Tammuz",
+          "text": "\"If she (Ishtar) will not grant thee her release, To Tammuz, the lover of her youth, Pour out pure waters, pour out fine oil; With a festival garment deck him that he may play on the flute of lapis lazuli,",
+          "textVersions": {
+            "jastrow1915": "\"If she (Ishtar) will not grant thee her release, To Tammuz, the lover of her youth, Pour out pure waters, pour out fine oil; With a festival garment deck him that he may play on the flute of lapis lazuli,"
+          },
+          "entities": [
+            {
+              "word": "Tammuz",
+              "node": "dumuzi-tammuz",
+              "type": "deity",
+              "note": "The poem closes addressing Tammuz, Akkadian form of Sumerian Dumuzi, the shepherd-consort of Ishtar and the archetypal dying-and-rising vegetation god. In the fuller Sumerian Descent of Inanna he is surrendered as Inanna's substitute to the underworld and spends half the year below; the Akkadian text here invokes his mourning-rite, the annual lament for the dead god (Jacobsen 1976). This is the lament Ezekiel 8:14 condemns and the cult Frazer, Smith, and Mettinger debate.",
+              "parallels": [
+                {
+                  "label": "Dumuzi given as Inanna's substitute (Sumerian)",
+                  "textId": "descent-inanna",
+                  "note": "The substitution presupposed here is spelled out in the Sumerian recension: Inanna consigns Dumuzi to take her place below (Jacobsen 1976)."
+                },
+                {
+                  "label": "Ezekiel 8:14 — weeping for Tammuz",
+                  "textId": "ezekiel-8-tammuz",
+                  "note": "The mourning-rite the Akkadian poem invokes is the very rite Ezekiel sees performed at the Jerusalem temple (Jacobsen 1976)."
+                },
+                {
+                  "label": "Adonis / Osiris — the dying-rising-god debate",
+                  "note": "Frazer 1906 folded Tammuz, Adonis, and Osiris into one pan-Mediterranean dying-rising god; J.Z. Smith 1987 challenged the category; Mettinger 2001 defends Dumuzi-Tammuz specifically while rejecting Frazer's over-generalization."
+                }
+              ]
+            },
+            {
+              "word": "the lover of her youth",
+              "node": "lamentation-genre",
+              "type": "theme",
+              "note": "'Tammuz, the lover of her youth' echoes the Gilgamesh Tablet VI formula 'Tammuz, the husband of your youth, for whom you have decreed wailing year after year.' The Tammuz lament is the cultic-poetic genre — the women's seasonal wail for the dead god — that the descent myth narrates and explains (Jacobsen 1976).",
+              "parallels": [
+                {
+                  "label": "Women weeping for Tammuz (Ezekiel 8:14)",
+                  "textId": "ezekiel-8-tammuz",
+                  "note": "The Hebrew Bible's snapshot of the same Tammuz-lament genre reaching Judah (Jacobsen 1976)."
+                },
+                {
+                  "label": "The Adonia lament (Greek-Phoenician)",
+                  "note": "The Athenian women's lament for Adonis = the Greek form of the Tammuz wail; West 1997 and Burkert 1992 trace the transmission."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
