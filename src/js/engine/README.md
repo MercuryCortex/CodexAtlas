@@ -57,7 +57,7 @@ scene.drawShape({ kind: 'circle', x, y, r, style: { fill: '#c47a3a' } });
 
 ### 3. No third-party libraries in this folder.
 
-Every line here is ours (or ported from the portable core, which is also John's). No npm dependencies, no graph libraries, no rendering libraries. Browser APIs (WebGPU, WebGL2, Canvas2D, DOM) are the only "external" surface.
+Every line here is ours (or ported from the portable core). No npm dependencies, no graph libraries, no rendering libraries. Browser APIs (WebGPU, WebGL2, Canvas2D, DOM) are the only "external" surface.
 
 ### 4. Pure functions where possible.
 
