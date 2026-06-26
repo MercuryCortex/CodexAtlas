@@ -85,3 +85,21 @@ Art Direction/
 #   - .obsidian/{app,appearance,core-plugins,graph}.json (vault-wide config — populated by opus-housekeeper-1)
 #   - _assets/ screenshots (intentional visual-evolution history per AUDIT/10)
 #   - AGENTS.md, README.md, AUDIT/, 00_meta/ (everything human-edited)
+
+# === Secrets & credentials (never commit) — added 2026-06-26 pre-push privacy gate ===
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+*.keystore
+credentials.json
+secrets.json
+*.secret
+.npmrc
+.netrc
+
+# === Per-machine Claude config (path/identity-bearing; workflows stay tracked) ===
+.claude/settings.json
+.claude/settings.local.json
