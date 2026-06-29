@@ -31352,3 +31352,1332 @@ SCRIPTURE_TEXTS['phaedo'] = {
     }
   ]
 };
+
+// -- Marcus Aurelius, Meditations II.3; IV.23, 40; VII.9 (All things are woven together — the Stoic Logos) --
+SCRIPTURE_TEXTS['meditations-marcus-aurelius'] = {
+  "id": "meditations-marcus-aurelius",
+  "title": "Marcus Aurelius, Meditations II.3; IV.23, 40; VII.9 (All things are woven together — the Stoic Logos)",
+  "shortTitle": "Meditations — the Stoic Logos",
+  "corpus": "Greek · Roman Stoicism (Meditations / Ta eis heauton)",
+  "tradId": "tradition-hellenistic-philosophy",
+  "date": "c. 170–180 CE (Marcus Aurelius Antoninus, written on campaign; private Stoic journal)",
+  "docNode": "phase-3-005-stoic-foundational-texts",
+  "language": "Koine Greek · George Long, The Thoughts of the Emperor M. Aurelius Antoninus (London: Bell & Daldy, 1862) — public domain. Book II.3, IV.23, IV.40, VII.9. Long's original hyphenated forms (\"co-ordinated\", \"(order)\") are preserved as printed in the 1862 edition (text as mirrored at the Internet Classics Archive and Standard Ebooks).",
+  "translations": [
+    {
+      "id": "long",
+      "label": "Long 1862",
+      "note": "George Long, The Thoughts of the Emperor M. Aurelius Antoninus, 1862 — public domain"
+    }
+  ],
+  "intro": "Marcus Aurelius' Meditations is the last great text of the Roman Stoa and the most personal surviving statement of the doctrine Cleanthes had hymned four centuries earlier: that the cosmos is a single rational, living, providential order, and that the human mind shares in that order. The climactic line — \"All things are implicated with one another, and the bond is holy... there is one universe made up of all things, and one God who pervades all things, and one substance, and one law, one common reason in all intelligent animals, and one truth\" (VII.9) — is the mature Stoic logos in one breath: the immanent divine Reason that Heraclitus first called logos, that the Old Stoa identified with Zeus and the cosmic fire, and that runs (through Philo) into the Johannine prologue. This entry surfaces an honest mixture: a real historical transmission (Heraclitus → the Stoa → Marcus, and the Stoic milieu that shaped Paul's Greek) alongside structural convergences (Psalm 104's cosmic-order praise) that scholarship treats as parallel, not derivation.",
+  "crossTradition": [
+    {
+      "label": "Cleanthes — Hymn to Zeus (the cosmic Logos = Zeus = Providence)",
+      "note": "The headwater statement of the same doctrine. Cleanthes' Zeus 'piloting this world in harmony with Law' and Marcus' 'one God who pervades all things... one common reason' are the identical Stoic identification of god, logos, law, and providence. Long & Sedley (The Hellenistic Philosophers, 1987, §54) and Hadot (The Inner Citadel, 1998) read Marcus as the practiced application of the Old-Stoa physics Cleanthes hymned.",
+      "textId": "cleanthes-hymn"
+    },
+    {
+      "label": "Heraclitus — the Logos that is one and common",
+      "note": "The acknowledged ancestor. Marcus quotes Heraclitus by name (IV.46) and his 'one common reason in all intelligent animals' is the Stoic development of Heraclitus's xynos logos, the 'common' account all things obey. Long & Sedley (1987, §46) and Kahn (The Art and Thought of Heraclitus, 1979) trace the Stoic fire-logos directly to Heraclitus.",
+      "textId": "heraclitus-fragments"
+    },
+    {
+      "label": "Romans 12 — 'be ye transformed by the renewing of your mind'",
+      "note": "Convergent ethic, debated transmission. Paul's call to be transformed by the renewing of the mind (nous) and to discern the will of God runs close to the Stoic governing of the hēgemonikon (ruling faculty) that is Marcus' central practice. Engberg-Pedersen (Paul and the Stoics, 2000) argues for real Stoic structuring of Pauline ethics; others read it as parallel — the entry flags both.",
+      "textId": "romans-12"
+    },
+    {
+      "label": "Psalm 104 — providential cosmic order",
+      "note": "Structural convergence, not transmission. Both praise a single sovereign whose ordering sustains the whole cosmos and to whom every creature looks; the resemblance is a shared hymnic vision of providential order reached independently in Israelite and Greek settings (cf. Thom, Cleanthes' Hymn to Zeus, 2005, on the Greek parallel to Hebrew creation-praise).",
+      "textId": "psalm-104"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "Book II.3 — All that is from the gods is full of Providence",
+      "verses": [
+        {
+          "ref": "II.3",
+          "text": "All that is from the gods is full of Providence. That which is from fortune is not separated from nature or without an interweaving and involution with the things which are ordered by Providence. From thence all things flow; and there is besides necessity, and that which is for the advantage of the whole universe, of which thou art a part. But that is good for every part of nature which the nature of the whole brings, and what serves to maintain this nature.",
+          "textVersions": {
+            "long": "All that is from the gods is full of Providence. That which is from fortune is not separated from nature or without an interweaving and involution with the things which are ordered by Providence. From thence all things flow; and there is besides necessity, and that which is for the advantage of the whole universe, of which thou art a part. But that is good for every part of nature which the nature of the whole brings, and what serves to maintain this nature."
+          },
+          "entities": [
+            {
+              "word": "full of Providence",
+              "node": "providence-and-fate",
+              "type": "theme",
+              "note": "Stoic pronoia (providence): nothing is mere accident, because the cosmos is administered throughout by the rational logos. Marcus pairs providence with 'necessity' and 'fortune' in the standard Stoic way, where fate (heimarmenē) is 'the logos by which the cosmos is administered' (Long & Sedley 1987, §54–55; Hadot, The Inner Citadel, 1998).",
+              "parallels": [
+                {
+                  "label": "Cleanthes — 'piloting this world in harmony with Law'",
+                  "note": "The same providential governance: Cleanthes' Zeus steers (kybernan) the cosmos by law; Marcus lives out that pronoia as daily discipline (Hadot 1998).",
+                  "textId": "cleanthes-hymn"
+                },
+                {
+                  "label": "Psalm 104 — providential ordering of the cosmos",
+                  "note": "A convergent vision of a single power that orders and sustains the whole creation; treated by scholarship as parallel hymnic form, not borrowing (Thom 2005).",
+                  "textId": "psalm-104"
+                }
+              ]
+            },
+            {
+              "word": "interweaving and involution",
+              "node": "logos-cosmic-reason",
+              "type": "theme",
+              "note": "The Stoic doctrine of cosmic 'sympathy' (sympatheia): all events are woven together because one logos pervades the whole, so 'fortune' is never separable from the providential order. This anticipates the explicit weaving-language of VII.9 (Long & Sedley 1987, §55).",
+              "parallels": [
+                {
+                  "label": "Marcus VII.9 — 'all things are implicated with one another'",
+                  "note": "The same weaving-of-all-events imagery stated explicitly in Book VII; sympatheia as the holy bond of the cosmos (Long & Sedley 1987, §55; Hadot 1998)."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Book IV — the Universe as one, the cosmopolis of Zeus",
+      "verses": [
+        {
+          "ref": "IV.23",
+          "text": "Everything harmonizes with me, which is harmonious to thee, O Universe. Nothing for me is too early nor too late, which is in due time for thee. Everything is fruit to me which thy seasons bring, O Nature: from thee are all things, in thee are all things, to thee all things return. The poet says, Dear city of Cecrops; and wilt not thou say, Dear city of Zeus?",
+          "textVersions": {
+            "long": "Everything harmonizes with me, which is harmonious to thee, O Universe. Nothing for me is too early nor too late, which is in due time for thee. Everything is fruit to me which thy seasons bring, O Nature: from thee are all things, in thee are all things, to thee all things return. The poet says, Dear city of Cecrops; and wilt not thou say, Dear city of Zeus?"
+          },
+          "entities": [
+            {
+              "word": "Dear city of Zeus",
+              "node": "cosmopolitanism",
+              "type": "theme",
+              "note": "The Stoic cosmopolis: against the parochial 'city of Cecrops' (Athens) Marcus sets the whole ordered universe as the true city — the 'dear city of Zeus.' This is the political face of the logos-doctrine: all rational beings are fellow-citizens of the cosmos because they share the one Reason (Long & Sedley 1987, §67; Hadot 1998).",
+              "parallels": [
+                {
+                  "label": "Cleanthes — 'For we Thine offspring are'",
+                  "note": "Cleanthes grounds the kinship of all rational beings (the root of Stoic cosmopolitanism) in their shared descent from the divine logos; Marcus draws the civic conclusion (Thom 2005; Long & Sedley 1987).",
+                  "textId": "cleanthes-hymn"
+                }
+              ]
+            },
+            {
+              "word": "from thee are all things, in thee are all things, to thee all things return",
+              "node": "logos-cosmic-reason",
+              "type": "theme",
+              "note": "The all-things-from-and-to-the-One formula: the cosmos as a single source and end, because one logos pervades it. Hadot (1998) reads this as Marcus' contemplative expression of Stoic physics; the formula's resemblance to Paul's 'of him, and through him, and to him, are all things' (Rom 11:36) is widely noted as a shared Hellenistic idiom.",
+              "parallels": [
+                {
+                  "label": "Romans 12 / Romans 11 — 'of him, and through him, and to him, are all things'",
+                  "note": "Paul's doxological all-things formula shares the Stoic from/through/unto-the-divine idiom; Engberg-Pedersen (2000) argues for genuine Stoic structuring of Paul, others for parallel — flagged as debated.",
+                  "textId": "romans-12"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "IV.40",
+          "text": "Constantly regard the universe as one living being, having one substance and one soul; and observe how all things have reference to one perception, the perception of this one living being; and how all things act with one movement; and how all things are the cooperating causes of all things which exist; observe too the continuous spinning of the thread and the contexture of the web.",
+          "textVersions": {
+            "long": "Constantly regard the universe as one living being, having one substance and one soul; and observe how all things have reference to one perception, the perception of this one living being; and how all things act with one movement; and how all things are the cooperating causes of all things which exist; observe too the continuous spinning of the thread and the contexture of the web."
+          },
+          "entities": [
+            {
+              "word": "one living being, having one substance and one soul",
+              "node": "logos-stoic",
+              "type": "deity",
+              "note": "The Stoic cosmos is a single living, ensouled animal (zōon) whose soul is the immanent divine logos — Zeus, pneuma, and fire under one description. Marcus' 'one substance and one soul' is the Old-Stoa physics Chrysippus systematized (the world as one god-pervaded body) applied as meditation (Long & Sedley 1987, §54; Hadot 1998).",
+              "parallels": [
+                {
+                  "label": "Cleanthes — Zeus as the one soul governing the cosmos",
+                  "note": "Cleanthes' 'mighty God... piloting this world' is the same single cosmic soul Marcus contemplates; the Stoa's identification of Zeus, logos, and world-soul (Long & Sedley 1987, §54).",
+                  "textId": "cleanthes-hymn"
+                },
+                {
+                  "label": "Heraclitus — the soul's share in the cosmic fire",
+                  "note": "The Stoic world-soul as fiery logos descends from Heraclitus's ever-living fire and his teaching that the soul partakes of the cosmic logos (Kahn 1979).",
+                  "textId": "heraclitus-fragments"
+                }
+              ]
+            },
+            {
+              "word": "the continuous spinning of the thread and the contexture of the web",
+              "node": "providence-and-fate",
+              "type": "theme",
+              "note": "Fate (heimarmenē) imaged as spinning and weaving: the unbroken causal web by which the logos administers every event. This is the same weaving-metaphor that becomes explicit at VII.9's 'all things are implicated with one another' (Long & Sedley 1987, §55).",
+              "parallels": [
+                {
+                  "label": "Marcus VII.9 — 'all things are implicated with one another'",
+                  "note": "The spinning-and-web image of fate is restated in Book VII as the holy bond binding the one cosmos; the same Stoic sympatheia (Long & Sedley 1987, §55)."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Book VII.9 — All things are woven together: one universe, one God, one reason",
+      "verses": [
+        {
+          "ref": "VII.9",
+          "text": "All things are implicated with one another, and the bond is holy; and there is hardly anything unconnected with any other thing. For things have been co-ordinated, and they combine to form the same universe (order). For there is one universe made up of all things, and one God who pervades all things, and one substance, and one law, one common reason in all intelligent animals, and one truth; if indeed there is also one perfection for all animals which are of the same stock and participate in the same reason.",
+          "textVersions": {
+            "long": "All things are implicated with one another, and the bond is holy; and there is hardly anything unconnected with any other thing. For things have been co-ordinated, and they combine to form the same universe (order). For there is one universe made up of all things, and one God who pervades all things, and one substance, and one law, one common reason in all intelligent animals, and one truth; if indeed there is also one perfection for all animals which are of the same stock and participate in the same reason."
+          },
+          "entities": [
+            {
+              "word": "the bond is holy",
+              "node": "logos-cosmic-reason",
+              "type": "theme",
+              "note": "The 'holy bond' (hieros desmos) is the logos itself — the rational tie that makes the cosmos one interconnected whole. Marcus sacralizes cosmic sympatheia: the connectedness of all things is divine because the connecting principle is god. (Long & Sedley 1987, §55; Hadot 1998 reads this as the heart of Marcus' 'cosmic consciousness.')",
+              "parallels": [
+                {
+                  "label": "Heraclitus — the one common (xynos) logos",
+                  "note": "Heraclitus's 'common' logos that all things obey is the headwater of Marcus' single binding reason; the Stoa claimed Heraclitus as ancestor (Kahn 1979; Long & Sedley 1987, §46).",
+                  "textId": "heraclitus-fragments"
+                }
+              ]
+            },
+            {
+              "word": "one God who pervades all things",
+              "node": "logos-stoic",
+              "type": "deity",
+              "note": "The Stoic monotheizing pantheism: the one God is not above the cosmos but pervades it as its immanent rational fire — Zeus identified with logos and pneuma. Chrysippus explained the very name Zeus (Zēna) as 'the cause of life' that runs through all things (Long & Sedley 1987, §54).",
+              "parallels": [
+                {
+                  "label": "Cleanthes — 'mighty God, invoked by many a name'",
+                  "note": "Cleanthes' polyōnymos Zeus, the one god the civic pantheon names many ways, is exactly Marcus' 'one God who pervades all things' (Thom 2005; Long & Sedley 1987, §54).",
+                  "textId": "cleanthes-hymn"
+                },
+                {
+                  "label": "Zeus — the Stoic supreme god as cosmic reason",
+                  "note": "The Olympian sky-king is reinterpreted by the Stoa as the immanent logos that pervades the universe; Marcus inherits this allegorized Zeus."
+                }
+              ]
+            },
+            {
+              "word": "one common reason in all intelligent animals",
+              "node": "logos-cosmic-reason",
+              "type": "theme",
+              "note": "The load-bearing claim: the same logos that orders the cosmos is the reason concentrated in rational beings (logos spermatikos), so human mind and cosmic order share one substance. This is the concept transmitted forward — Philo Hellenizes it, the Johannine prologue Christianizes it, Justin develops logos spermatikos (Long & Sedley 1987, §53; Hadot 1998).",
+              "parallels": [
+                {
+                  "label": "Cleanthes — humans 'receive the image of the One'",
+                  "note": "Cleanthes likewise holds that rational beings alone share in the divine logos; the same kinship-through-reason doctrine (Thom 2005).",
+                  "textId": "cleanthes-hymn"
+                },
+                {
+                  "label": "Romans 12 — 'the renewing of your mind'",
+                  "note": "Paul's transformation by the renewing of the nous engages the same rational-faculty the Stoics make the seat of shared divine reason; Engberg-Pedersen (2000) reads a Stoic structure, others a convergence — flagged as debated.",
+                  "textId": "romans-12"
+                }
+              ]
+            },
+            {
+              "word": "one law",
+              "node": "providence-and-fate",
+              "type": "theme",
+              "note": "The single cosmic law (nomos) is the providential logos by which fate orders all events — the same 'Law' Cleanthes' Zeus governs by. Stoic 'natural law' is this immanent rational order, not an external command (Long & Sedley 1987, §54–55).",
+              "parallels": [
+                {
+                  "label": "Cleanthes — 'piloting this world in harmony with Law'",
+                  "note": "Cleanthes' Zeus governs the cosmos by Law (nomos); Marcus' 'one law' is the same providential ordering principle (Thom 2005; Long & Sedley 1987, §54).",
+                  "textId": "cleanthes-hymn"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
+
+// -- Plato, Symposium 210a–212a (Diotima's Ladder of Love — the ascent from beauty to the Beautiful) --
+SCRIPTURE_TEXTS['symposium-ladder'] = {
+  "id": "symposium-ladder",
+  "title": "Plato, Symposium 210a–212a (Diotima's Ladder of Love — the ascent from beauty to the Beautiful)",
+  "shortTitle": "Plato — Symposium (Diotima's Ladder)",
+  "corpus": "Ancient Greek Philosophy (Platonic dialogues)",
+  "tradId": "tradition-hellenistic-philosophy",
+  "date": "c. 385–370 BCE (the Symposium's composition; Diotima's speech is undated within the dramatic frame)",
+  "docNode": "phase-3-002-plato-dialogues",
+  "language": "Greek · English translation by Benjamin Jowett, The Dialogues of Plato, 3rd ed. (Oxford, 1892; first ed. 1871) — public domain (Project Gutenberg etext 1600, \"Symposium\"). Verses quoted verbatim; the plain-text edition renders dashes as a double hyphen (--), preserved here, and retains Jowett's single quotation marks around Diotima's reported speech.",
+  "translations": [
+    {
+      "id": "jowett",
+      "label": "Jowett 1892",
+      "note": "Benjamin Jowett, The Dialogues of Plato 3rd ed., 1892 (Project Gutenberg #1600) — public domain"
+    }
+  ],
+  "intro": "In the climax of the Symposium (Stephanus 210a–212a), Socrates reports the teaching of Diotima of Mantinea: the \"right method\" of love is an ascent (epanabasmoi, the \"steps\") that begins with the love of one beautiful body, rises to all beautiful bodies, then to the beauty of souls, then to laws and institutions, then to the sciences, and at last opens onto \"a single science, which is the science of beauty everywhere\" — the sudden vision of \"beauty absolute, separate, simple, and everlasting.\" This is the fountainhead of the Western mystical-ascent topos: the soul rising by stages of eros from sensible particulars to a vision of the unchanging intelligible. Plotinus systematizes it as the soul's return to the One; the Christian mystics (Pseudo-Dionysius, John of the Cross, Teresa, the Song-commentary tradition) inherit it as the ascent to God, with eros contestedly transmuted into agape. The lineage from Diotima to medieval bridal-mysticism is one of demonstrable textual transmission (through Plotinus and Dionysius) at its head and typological convergence at its branches — a distinction this entry keeps explicit.",
+  "crossTradition": [
+    {
+      "label": "Plotinus — Enneads (the ascent to the One)",
+      "note": "Plotinus reads Diotima's ladder as the soul's return to its source: the lover of beauty 'must ascend' from beautiful bodies to beautiful souls to beauty itself, and beyond beauty to the Good/One (Enneads I.6, On Beauty, closes by quoting and reworking the Symposium ascent). A.H. Armstrong (Plotinus, Loeb, intro. to Ennead I.6) treats I.6 as a direct meditation on Symposium 210–211; this is transmission, not mere parallel.",
+      "textId": "plotinus-enneads"
+    },
+    {
+      "label": "John of the Cross — Dark Night / Ascent of Mount Carmel",
+      "note": "The Christian mystical ascent in which the soul, driven by love, climbs through purgations to union with God. The eros-to-agape lineage is real but contested: Anders Nygren (Agape and Eros, 1932) argued Platonic acquisitive eros and Christian self-giving agape are opposed types and the synthesis a distortion; later scholars (e.g. Catherine Osborne, Eros Unveiled, 1994) defend the continuity Nygren severed.",
+      "textId": "john-of-the-cross-dark-night"
+    },
+    {
+      "label": "Teresa of Ávila — Interior Castle (the mansions of ascent)",
+      "note": "Teresa maps the soul's progress to God as ascent through successive 'mansions' to the innermost dwelling — the same graded-ascent structure as Diotima's ladder, mediated to her through the Dionysian-Augustinian Platonism of Spanish mysticism (Andrew Louth, The Origins of the Christian Mystical Tradition, 1981, traces the Platonic ascent into Christian contemplative theology).",
+      "textId": "teresa-interior-castle-1"
+    },
+    {
+      "label": "Song of Songs 8 — bridal mysticism",
+      "note": "The allegorized Song supplied the erotic vocabulary of the soul's love-ascent to God; fused with the Platonic ladder (via Origen, Gregory of Nyssa, and Dionysius), it became the master-text of medieval bridal-mysticism. Bernard McGinn (The Foundations of Mysticism, 1991) shows the Song-allegory and the Platonic ascent converging in the Christian ascent-tradition.",
+      "textId": "song-of-songs-8"
+    },
+    {
+      "label": "Plato — Phaedo (the soul's affinity with the eternal Forms)",
+      "note": "The Symposium's vision of 'beauty absolute, separate, simple, and everlasting' is the same intelligible, unchanging realm the Phaedo's soul is akin to; the two dialogues give the erotic (Symposium) and the dialectical-eschatological (Phaedo) routes to the Forms (Pierre Hadot, Philosophy as a Way of Life, 1995, on Platonic ascent as spiritual exercise).",
+      "textId": "phaedo"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "I. The Lesser and the Greater Mysteries (210a)",
+      "verses": [
+        {
+          "ref": "Symposium 210a",
+          "text": "'These are the lesser mysteries of love, into which even you, Socrates, may enter; to the greater and more hidden ones which are the crown of these, and to which, if you pursue them in a right spirit, they will lead, I know not whether you will be able to attain.",
+          "textVersions": {
+            "jowett": "'These are the lesser mysteries of love, into which even you, Socrates, may enter; to the greater and more hidden ones which are the crown of these, and to which, if you pursue them in a right spirit, they will lead, I know not whether you will be able to attain."
+          },
+          "entities": [
+            {
+              "word": "the greater and more hidden ones which are the crown",
+              "node": "ascent-of-the-soul",
+              "type": "theme",
+              "note": "Diotima casts the ascent as initiation into 'mysteries' (the mystery-cult vocabulary teletai/epoptika): the lower love is the 'lesser mysteries,' the vision of Beauty itself the 'greater.' This framing of philosophical ascent as graded initiation is the model for every later mystical scala (Pierre Hadot, Philosophy as a Way of Life, 1995, on the ascent as a spiritual exercise of progressive purification).",
+              "parallels": [
+                {
+                  "label": "Plotinus — the ascent as initiation into the One",
+                  "note": "Plotinus uses the same mystery-language: the vision of the One is for the soul that has been 'initiated,' the culmination of an ascent (Enneads I.6.7; VI.9.11). A.H. Armstrong notes Plotinus draws the epoptic vocabulary directly from the Symposium.",
+                  "textId": "plotinus-enneads"
+                },
+                {
+                  "label": "Teresa — the innermost mansion",
+                  "note": "Teresa's seven mansions are likewise a graded, semi-secret ascent whose 'crown' is union in the deepest dwelling — the Diotiman lesser/greater structure in Christian dress (Bernard McGinn, The Foundations of Mysticism, 1991).",
+                  "textId": "teresa-interior-castle-1"
+                }
+              ]
+            },
+            {
+              "word": "a right spirit",
+              "node": "eros-as-philosophical-motive",
+              "type": "theme",
+              "note": "The ascent is powered by eros rightly directed — desire redirected from possessing a beautiful body to begetting wisdom and beholding Beauty. This is the Symposium's central thesis that love is the soul's motive force toward the transcendent (Anders Nygren, Agape and Eros, 1932, named this 'acquisitive' Platonic eros and contrasted it with Christian agape; Catherine Osborne, Eros Unveiled, 1994, contests the sharpness of that opposition).",
+              "parallels": [
+                {
+                  "label": "John of the Cross — love as the engine of ascent",
+                  "note": "For John the soul is drawn up the night of ascent by the 'living flame of love'; the Platonic ladder's erotic motor reappears as the impulse of divine love, the contested eros-to-agape transformation Nygren analysed.",
+                  "textId": "john-of-the-cross-dark-night"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "II. The Ladder Begins — from One Body to All Bodies (210a–b)",
+      "verses": [
+        {
+          "ref": "Symposium 210a–b",
+          "text": "For he who would proceed aright in this matter should begin in youth to visit beautiful forms; and first, if he be guided by his instructor aright, to love one such form only--out of that he should create fair thoughts; and soon he will of himself perceive that the beauty of one form is akin to the beauty of another; and then if beauty of form in general is his pursuit, how foolish would he be not to recognize that the beauty in every form is and the same! And when he perceives this he will abate his violent love of the one, which he will despise and deem a small thing, and will become a lover of all beautiful forms;",
+          "textVersions": {
+            "jowett": "For he who would proceed aright in this matter should begin in youth to visit beautiful forms; and first, if he be guided by his instructor aright, to love one such form only--out of that he should create fair thoughts; and soon he will of himself perceive that the beauty of one form is akin to the beauty of another; and then if beauty of form in general is his pursuit, how foolish would he be not to recognize that the beauty in every form is and the same! And when he perceives this he will abate his violent love of the one, which he will despise and deem a small thing, and will become a lover of all beautiful forms;"
+          },
+          "entities": [
+            {
+              "word": "to love one such form only",
+              "node": "eros-as-philosophical-motive",
+              "type": "theme",
+              "note": "The first rung: love of a single beautiful body. The whole method is a disciplined redirection of this initial erotic attachment, never its suppression — eros is the ladder's first step, not its enemy (Gregory Vlastos, 'The Individual as Object of Love in Plato,' in Platonic Studies, 1973, gave the classic — and critical — reading of this ascent as moving from persons to abstract Beauty).",
+              "parallels": [
+                {
+                  "label": "Bernard / the bridal mystics — from carnal to spiritual love",
+                  "note": "The medieval Song-commentators likewise begin from bodily-erotic language and ascend to spiritual love of God, the same redirection-of-eros structure (Bernard McGinn, The Foundations of Mysticism, 1991).",
+                  "textId": "song-of-songs-8"
+                }
+              ]
+            },
+            {
+              "word": "a lover of all beautiful forms",
+              "node": "forms-and-archetypes",
+              "type": "theme",
+              "note": "The second rung generalizes: recognizing that 'the beauty in every form is one and the same' is the first apprehension that beauty is a single intelligible character distinct from any particular — the entry-point to the Theory of Forms within the ascent (W.D. Ross, Plato's Theory of Ideas, 1951, reads the Symposium ascent as a pedagogy toward grasping the Form of Beauty).",
+              "parallels": [
+                {
+                  "label": "Plato — the unchanging Forms of the Phaedo",
+                  "note": "The 'one and the same' beauty behind all beautiful bodies is the same self-identical Form the Phaedo calls 'the beautiful itself,' grasped by mind and not by sense.",
+                  "textId": "phaedo"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "III. Upward — Souls, Laws, and the Sciences (210b–d)",
+      "verses": [
+        {
+          "ref": "Symposium 210b–d",
+          "text": "in the next stage he will consider that the beauty of the mind is more honourable than the beauty of the outward form. So that if a virtuous soul have but a little comeliness, he will be content to love and tend him, and will search out and bring to the birth thoughts which may improve the young, until he is compelled to contemplate and see the beauty of institutions and laws, and to understand that the beauty of them all is of one family, and that personal beauty is a trifle; and after laws and institutions he will go on to the sciences, that he may see their beauty, being not like a servant in love with the beauty of one youth or man or institution, himself a slave mean and narrow-minded, but drawing towards and contemplating the vast sea of beauty, he will create many fair and noble thoughts and notions in boundless love of wisdom; until on that shore he grows and waxes strong, and at last the vision is revealed to him of a single science, which is the science of beauty everywhere.",
+          "textVersions": {
+            "jowett": "in the next stage he will consider that the beauty of the mind is more honourable than the beauty of the outward form. So that if a virtuous soul have but a little comeliness, he will be content to love and tend him, and will search out and bring to the birth thoughts which may improve the young, until he is compelled to contemplate and see the beauty of institutions and laws, and to understand that the beauty of them all is of one family, and that personal beauty is a trifle; and after laws and institutions he will go on to the sciences, that he may see their beauty, being not like a servant in love with the beauty of one youth or man or institution, himself a slave mean and narrow-minded, but drawing towards and contemplating the vast sea of beauty, he will create many fair and noble thoughts and notions in boundless love of wisdom; until on that shore he grows and waxes strong, and at last the vision is revealed to him of a single science, which is the science of beauty everywhere."
+          },
+          "entities": [
+            {
+              "word": "the beauty of the mind is more honourable",
+              "node": "ascent-of-the-soul",
+              "type": "theme",
+              "note": "The decisive turn from body to soul: beauty of mind outranks beauty of body. From here the ascent climbs through ever-less-sensible objects (souls, laws, sciences), each rung 'more honourable' and more universal — the graded hierarchy of being that structures all later Neoplatonic and Christian ascents (Andrew Louth, The Origins of the Christian Mystical Tradition, 1981).",
+              "parallels": [
+                {
+                  "label": "Plotinus — the ascent from sensible to intelligible beauty",
+                  "note": "Ennead I.6 traces exactly this graded climb — bodily beauty, then beauty of soul and virtue, then Intellect, then the Good beyond beauty (Armstrong, Loeb edition, identifies I.6 as a commentary on this Symposium passage).",
+                  "textId": "plotinus-enneads"
+                },
+                {
+                  "label": "Teresa — ascent through the mansions",
+                  "note": "Teresa's progressive interiorization from outer to inner mansions mirrors Diotima's climb from outward to intelligible beauty (McGinn, 1991).",
+                  "textId": "teresa-interior-castle-1"
+                }
+              ]
+            },
+            {
+              "word": "the vast sea of beauty",
+              "node": "love-mysticism",
+              "type": "theme",
+              "note": "The 'vast sea of beauty' (to poly pelagos tou kalou) is the penultimate vista before the final vision — the lover, no longer enslaved to a single object, contemplates beauty in its boundlessness. The image of immersion in an ocean of the divine becomes a recurring trope of the love-mysticism tradition (Bernard McGinn, The Foundations of Mysticism, 1991, on the 'oceanic' language of mystical union).",
+              "parallels": [
+                {
+                  "label": "The bridal-mystical 'ocean' of divine love",
+                  "note": "The Song-derived mystics speak of being drowned or absorbed in the boundless love of God — the same oceanic figure Diotima reaches at the threshold of the vision.",
+                  "textId": "song-of-songs-8"
+                }
+              ]
+            },
+            {
+              "word": "the science of beauty everywhere",
+              "node": "forms-and-archetypes",
+              "type": "theme",
+              "note": "The summit of the discursive ascent: a single epistēmē whose object is Beauty as such, no longer any particular beautiful thing — knowledge of the Form itself. This 'one science of the beautiful' is what the vision of the next stage discloses (W.D. Ross, Plato's Theory of Ideas, 1951).",
+              "parallels": [
+                {
+                  "label": "Plotinus — Intellect's vision of intelligible Beauty",
+                  "note": "For Plotinus the 'science of beauty everywhere' is the level of Nous, the intelligible world that is itself the realm of true Beauty, just below the One (Enneads I.6; V.8, On the Intelligible Beauty).",
+                  "textId": "plotinus-enneads"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "IV. The Vision — Beauty Absolute (210e–211b)",
+      "verses": [
+        {
+          "ref": "Symposium 210e–211a",
+          "text": "He who has been instructed thus far in the things of love, and who has learned to see the beautiful in due order and succession, when he comes toward the end will suddenly perceive a nature of wondrous beauty (and this, Socrates, is the final cause of all our former toils)--a nature which in the first place is everlasting, not growing and decaying, or waxing and waning;",
+          "textVersions": {
+            "jowett": "He who has been instructed thus far in the things of love, and who has learned to see the beautiful in due order and succession, when he comes toward the end will suddenly perceive a nature of wondrous beauty (and this, Socrates, is the final cause of all our former toils)--a nature which in the first place is everlasting, not growing and decaying, or waxing and waning;"
+          },
+          "entities": [
+            {
+              "word": "suddenly perceive",
+              "node": "mysticism",
+              "type": "theme",
+              "note": "The vision comes 'suddenly' (exaiphnēs): after the graded discursive climb, the apprehension of Beauty itself is immediate and non-discursive — a flash. This 'suddenly' becomes a technical term of the mystical tradition (Pseudo-Dionysius takes exaiphnēs directly from Plato for the instant of divine illumination; cf. Andrew Louth, The Origins of the Christian Mystical Tradition, 1981, and Pierre Hadot on the Platonic 'sudden' vision).",
+              "parallels": [
+                {
+                  "label": "Plotinus — the sudden flash of union",
+                  "note": "Plotinus describes union with the One as a sudden seeing 'as it were a light,' the soul caught up beyond discursive reason (Enneads VI.7.36; VI.9.11) — the exaiphnēs of the Symposium become the instant of mystical union.",
+                  "textId": "plotinus-enneads"
+                },
+                {
+                  "label": "John of the Cross — the instant of contemplative union",
+                  "note": "The dark-night ascent culminates in a passive, sudden infusion of contemplative light — the Platonic exaiphnēs in Carmelite mystical theology.",
+                  "textId": "john-of-the-cross-dark-night"
+                }
+              ]
+            },
+            {
+              "word": "a nature which in the first place is everlasting",
+              "node": "forms-and-archetypes",
+              "type": "theme",
+              "note": "What the lover finally beholds is not a beautiful thing but the Form of Beauty itself — ungenerated, imperishable, unchanging. Its eternity and immutability are precisely the marks of the Forms; the Symposium here gives the most lyrical statement of Platonic Form-ontology (Krämer, Plato and the Foundations of Metaphysics, 1990).",
+              "parallels": [
+                {
+                  "label": "Plato — the eternal, unchanging intelligible",
+                  "note": "'Everlasting, not growing and decaying' is the same predicate the Phaedo assigns to the deathless, indissoluble realm of the Forms with which the soul is akin.",
+                  "textId": "phaedo"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "Symposium 211a–b",
+          "text": "but beauty absolute, separate, simple, and everlasting, which without diminution and without increase, or any change, is imparted to the ever-growing and perishing beauties of all other things.",
+          "textVersions": {
+            "jowett": "but beauty absolute, separate, simple, and everlasting, which without diminution and without increase, or any change, is imparted to the ever-growing and perishing beauties of all other things."
+          },
+          "entities": [
+            {
+              "word": "beauty absolute, separate, simple, and everlasting",
+              "node": "forms-and-archetypes",
+              "type": "theme",
+              "note": "The canonical formula of the Form (auto to kalon): 'separate' (chōris, transcendent of its instances), 'simple' (monoeides, uncompounded), 'everlasting' (aei on). Every particular beautiful thing 'partakes' of it without altering it — the doctrine of participation (methexis) in its most influential single sentence (W.D. Ross, Plato's Theory of Ideas, 1951; Krämer, 1990).",
+              "parallels": [
+                {
+                  "label": "Plotinus — the One beyond all multiplicity",
+                  "note": "Plotinus pushes 'simple' to its limit: the absolutely partless One, source of all beauty yet 'beyond beauty,' in which the soul rests (Enneads VI.9, On the Good or the One). The Symposium's 'simple and everlasting' is the seed of Neoplatonic apophasis (A.H. Armstrong, Cambridge History of Later Greek and Early Medieval Philosophy, 1967).",
+                  "textId": "plotinus-enneads"
+                },
+                {
+                  "label": "Apophatic / negative theology of the ineffable",
+                  "note": "Beauty 'without diminution, increase, or any change,' grasped beyond all images, anticipates the apophatic God of the Dark Night, known only by unknowing (Andrew Louth, 1981, on the Dionysian-Platonic negative way that shapes John of the Cross).",
+                  "textId": "john-of-the-cross-dark-night"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "V. The True Order of Going — the Steps (211c)",
+      "verses": [
+        {
+          "ref": "Symposium 211c",
+          "text": "And the true order of going, or being led by another, to the things of love, is to begin from the beauties of earth and mount upwards for the sake of that other beauty, using these as steps only, and from one going on to two, and from two to all fair forms, and from fair forms to fair practices, and from fair practices to fair notions, until from fair notions he arrives at the notion of absolute beauty, and at last knows what the essence of beauty is.",
+          "textVersions": {
+            "jowett": "And the true order of going, or being led by another, to the things of love, is to begin from the beauties of earth and mount upwards for the sake of that other beauty, using these as steps only, and from one going on to two, and from two to all fair forms, and from fair forms to fair practices, and from fair practices to fair notions, until from fair notions he arrives at the notion of absolute beauty, and at last knows what the essence of beauty is."
+          },
+          "entities": [
+            {
+              "word": "using these as steps only",
+              "node": "ascent-of-the-soul",
+              "type": "theme",
+              "note": "Diotima's own summary of the ladder: the rungs (Greek epanabasmoi, lit. 'steps up') — one body, all bodies, fair practices (laws/institutions), fair notions (sciences), absolute Beauty. This is the literal 'ladder' image (scala) that gives the whole topos its name and that Augustine, Bonaventure (Itinerarium), and the Scala Paradisi tradition inherit (Pierre Hadot, Philosophy as a Way of Life, 1995; Bernard McGinn, 1991, on the medieval 'ladder of ascent').",
+              "parallels": [
+                {
+                  "label": "Plotinus — the soul mounts by stages and leaves the steps behind",
+                  "note": "Plotinus closes Ennead I.6 by quoting this very passage — 'let us fly to our dear country' — and rephrasing the ascent as the soul's flight upward through the levels of beauty to the Good.",
+                  "textId": "plotinus-enneads"
+                },
+                {
+                  "label": "Teresa / John — the ladder of the mansions and the night",
+                  "note": "The Spanish mystics literalize the 'steps': Teresa's seven mansions and John's stair-stepped ascent of Mount Carmel are graded scalae directly continuous with the Diotiman epanabasmoi (McGinn, 1991).",
+                  "textId": "teresa-interior-castle-1"
+                }
+              ]
+            },
+            {
+              "word": "the essence of beauty",
+              "node": "forms-and-archetypes",
+              "type": "theme",
+              "note": "'What the essence of beauty is' (auto ho esti kalon) — to know the Form is the telos of the whole erotic ascent: love that began as desire for a body ends as knowledge of, and communion with, the intelligible itself (Vlastos, Platonic Studies, 1973; Ross, 1951).",
+              "parallels": [
+                {
+                  "label": "Plato — knowledge of the Form itself",
+                  "note": "The Phaedo's philosopher seeks 'the beautiful itself,' 'the equal itself' — the same 'auto ho esti' the Symposium ascent terminates in.",
+                  "textId": "phaedo"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "VI. The Divine Beauty — Friend of God (211e–212a)",
+      "verses": [
+        {
+          "ref": "Symposium 211e–212a",
+          "text": "But what if man had eyes to see the true beauty--the divine beauty, I mean, pure and clear and unalloyed, not clogged with the pollutions of mortality and all the colours and vanities of human life--thither looking, and holding converse with the true beauty simple and divine? Remember how in that communion only, beholding beauty with the eye of the mind, he will be enabled to bring forth, not images of beauty, but realities (for he has hold not of an image but of a reality), and bringing forth and nourishing true virtue to become the friend of God and be immortal, if mortal man may. Would that be an ignoble life?'",
+          "textVersions": {
+            "jowett": "But what if man had eyes to see the true beauty--the divine beauty, I mean, pure and clear and unalloyed, not clogged with the pollutions of mortality and all the colours and vanities of human life--thither looking, and holding converse with the true beauty simple and divine? Remember how in that communion only, beholding beauty with the eye of the mind, he will be enabled to bring forth, not images of beauty, but realities (for he has hold not of an image but of a reality), and bringing forth and nourishing true virtue to become the friend of God and be immortal, if mortal man may. Would that be an ignoble life?'"
+          },
+          "entities": [
+            {
+              "word": "the divine beauty",
+              "node": "love-mysticism",
+              "type": "theme",
+              "note": "At the summit Beauty is called 'divine' (theion): the vision is quasi-religious, a 'communion' (synousia) of the soul with the divine through love. This sacralizing of the philosophical telos is what makes the Symposium the headwater of mystical, not merely epistemological, ascent (Pierre Hadot, Philosophy as a Way of Life, 1995; A.H. Armstrong on Platonic 'thesurgic' contemplation).",
+              "parallels": [
+                {
+                  "label": "Plotinus — likeness to and union with the divine",
+                  "note": "For Plotinus the end is 'becoming god,' the soul made divine by contemplation (Enneads I.2; VI.9.9). Diotima's 'divine beauty' is the conceptual ancestor of the Neoplatonic homoiōsis theōi.",
+                  "textId": "plotinus-enneads"
+                }
+              ]
+            },
+            {
+              "word": "beholding beauty with the eye of the mind",
+              "node": "mysticism",
+              "type": "theme",
+              "note": "The vision is intellectual, not sensory — seen 'with the eye of the mind' (nous), the faculty proper to the intelligible. The 'eye of the soul/mind' becomes a standing image of contemplative perception from the Republic's cave through Augustine's oculus mentis to the medieval mystics (Andrew Louth, The Origins of the Christian Mystical Tradition, 1981).",
+              "parallels": [
+                {
+                  "label": "Plato — the soul's eye turned to the intelligible sun",
+                  "note": "The 'eye of the mind' turning from shadows to the source of light is the cave-allegory's image of the same upward intellectual conversion (periagōgē) Diotima describes erotically.",
+                  "textId": "plato-cave"
+                },
+                {
+                  "label": "John of the Cross — the eye of contemplation in the night",
+                  "note": "John's contemplative 'eye' that sees God in darkness inherits the Platonic oculus mentis through the Augustinian-Dionysian tradition.",
+                  "textId": "john-of-the-cross-dark-night"
+                }
+              ]
+            },
+            {
+              "word": "to become the friend of God and be immortal",
+              "node": "ascent-of-the-soul",
+              "type": "theme",
+              "note": "The fruit of the vision: 'friendship with God' (theophilēs) and a share in immortality. Here the erotic ascent yields a soteriology — communion with the divine that divinizes the contemplative. This 'friend of God' theme is the bridge from Platonic ascent to the Christian language of deifying union (Anders Nygren, Agape and Eros, 1932, located the eros-to-agape tension exactly at this divinizing telos; Catherine Osborne, Eros Unveiled, 1994, reads the continuity more sympathetically).",
+              "parallels": [
+                {
+                  "label": "John of the Cross — transforming union with God",
+                  "note": "The Dark Night ends in 'transforming union,' the soul made 'God by participation' — the Christian fulfilment of Diotima's 'friend of God,' through the contested eros-to-agape transmutation Nygren analysed.",
+                  "textId": "john-of-the-cross-dark-night"
+                },
+                {
+                  "label": "Song-mystics — the soul wedded to the divine Beloved",
+                  "note": "Bridal-mysticism reads the 'friendship/communion with the divine' as spiritual marriage to God, fusing the Platonic ascent with the Song's nuptial imagery (Bernard McGinn, The Foundations of Mysticism, 1991).",
+                  "textId": "song-of-songs-8"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
+
+// -- Shatapatha Brahmana 1.8.1.1-10 (Manu and the Fish — the Indian Flood) --
+SCRIPTURE_TEXTS['manu-and-the-fish'] = {
+  "id": "manu-and-the-fish",
+  "title": "Shatapatha Brahmana 1.8.1.1-10 (Manu and the Fish — the Indian Flood)",
+  "shortTitle": "Manu and the Fish",
+  "corpus": "Vedic · Brahmana prose (White Yajurveda · Madhyandina recension)",
+  "tradId": "tradition-vedic-hinduism",
+  "date": "c. 900–600 BCE (the prose-Brahmana layer of the White Yajurveda; the earliest extant Indian flood narrative)",
+  "docNode": "phase-2-006-brahmanas-aranyakas",
+  "language": "Vedic Sanskrit · Julius Eggeling translation (The Satapatha-Brahmana according to the Text of the Madhyandina School, Part I, Sacred Books of the East vol. 12, Oxford, 1882 — public domain)",
+  "translations": [
+    {
+      "id": "eggeling",
+      "label": "Eggeling 1882 (SBE 12)",
+      "note": "Julius Eggeling, The Satapatha Brahmana Part I (Sacred Books of the East vol. 12), 1882 — public domain"
+    }
+  ],
+  "intro": "Shatapatha Brahmana 1.8.1 is the earliest surviving Indian flood story, embedded in a ritual exegesis of the ida-offering. A little fish leaps into Manu's washing-water and strikes a bargain: rear me, and I will save you from the coming flood. Reared from jar to pit to sea, the fish grows into a great ghasha, tows Manu's ship by a rope tied to its horn up to the northern mountain, and the deluge sweeps away every other creature — Manu alone survives to refound the human race. The fish is anonymous here; only in the later epic and Puranic recensions is it identified as Matsya, the first avatar of Vishnu. Its structural resemblance to the Mesopotamian flood (single survivor, divine warning, ship, mountain-landing) is one of the most-debated cases in comparative mythology — the relation (Bronze-Age Mesopotamian contact, common Indo-European inheritance, or independent convergence) remains genuinely unresolved at Tier 1 (Witzel; Lincoln; West).",
+  "crossTradition": [
+    {
+      "label": "Gilgamesh XI — Utnapishtim and the flood",
+      "note": "The Mesopotamian type-scene Manu's story is most often compared to: a single human is divinely warned, builds a boat, rides out a world-flood, and lands on a mountain. The verbal and structural correspondence is striking, but whether ŚB depends on the Babylonian tradition or reaches the pattern independently is unresolved (Witzel 2001; West, The East Face of Helicon, 1997, pp.481–490).",
+      "textId": "gilgamesh"
+    },
+    {
+      "label": "Atrahasis — the oldest Mesopotamian flood + the warned survivor",
+      "note": "Atrahasis (c. 1700 BCE) is the source-form of the Mesopotamian single-survivor flood that Gilgamesh XI reproduces; it predates ŚB by roughly a millennium, which is why diffusion (Kassite-era contact) is one live hypothesis for the Indian flood — though West 1997 weighs independent Indo-European and convergence accounts as defensible.",
+      "textId": "atrahasis-epic"
+    },
+    {
+      "label": "Eridu Genesis — Ziusudra, the Sumerian flood-survivor",
+      "note": "The Sumerian flood (Ziusudra) is the earliest Mesopotamian witness to the divinely-warned single survivor; together with Atrahasis and Gilgamesh it defines the Near-Eastern flood-complex against which the Indian ŚB narrative is measured in the diffusion-vs-convergence debate (Witzel 2012, The Origins of the World's Mythologies, on flood-myth distribution).",
+      "textId": "eridu-genesis-flood-1"
+    },
+    {
+      "label": "Genesis 8 — Noah, the bird-scout and the mountain-landing",
+      "note": "The Hebrew flood shares the single-survivor-on-a-mountain ending: Noah's ark rests on Ararat as Manu's ship reaches the northern mountain. Genesis 8 adds the bird-scout (raven, dove) absent from ŚB; both are downstream branches of the same flood-motif whose ultimate relations remain debated (Sproul, Primal Myths, 1979).",
+      "textId": "genesis-8"
+    },
+    {
+      "label": "Matsya Purana / Bhagavata Purana — the fish becomes Vishnu",
+      "note": "The diachronic transformation within the Indian tradition itself: the anonymous ŚB fish is identified in the Mahabharata (Vana Parva 187) and the Puranas as Matsya, the first of Vishnu's ten avatars, who also recovers the stolen Vedas. The ŚB preserves the motif before its theological absorption into Vaishnavism (Eggeling 1882, introduction; Witzel 2012)."
+    }
+  ],
+  "sections": [
+    {
+      "heading": "The Fish's Bargain (Shatapatha Brahmana 1.8.1.1–4)",
+      "verses": [
+        {
+          "ref": "1:8:1:1",
+          "text": "In the morning they brought to Manu water for washing, just as now also they (are wont to) bring (water) for washing the hands. When he was washing himself, a fish came into his hands.",
+          "textVersions": {
+            "eggeling": "In the morning they brought to Manu water for washing, just as now also they (are wont to) bring (water) for washing the hands. When he was washing himself, a fish came into his hands."
+          },
+          "entities": [
+            {
+              "word": "Manu",
+              "node": "manu",
+              "type": "person",
+              "note": "Manu (Vaivasvata Manu), the first man and ancestor of humankind in the Vedic tradition; here the sole flood-survivor who refounds the human race. He is the Indian counterpart of the Mesopotamian flood-heroes and of Noah, the named single survivor through whom humanity continues.",
+              "parallels": [
+                {
+                  "label": "Utnapishtim (Babylonian)",
+                  "note": "the single human warned of the flood who survives to repopulate the world (West, The East Face of Helicon, 1997, pp.481–490)",
+                  "textId": "gilgamesh"
+                },
+                {
+                  "label": "Ziusudra (Sumerian)",
+                  "note": "the Sumerian flood-survivor, earliest of the Near-Eastern single-survivor heroes",
+                  "textId": "eridu-genesis-flood-1"
+                },
+                {
+                  "label": "Noah (Hebrew)",
+                  "note": "the Hebrew flood-survivor whose ark lands on a mountain; the same single-survivor-refounds-humanity structure",
+                  "textId": "genesis-8"
+                }
+              ]
+            },
+            {
+              "word": "a fish came into his hands",
+              "node": "matsya-avatar",
+              "type": "deity",
+              "note": "The fish is anonymous in the Shatapatha Brahmana — the earliest layer of the story. Only in the later Mahabharata (Vana Parva 187) and the Puranas is it identified as Matsya, the first avatar of Vishnu; this entry annotates the Vedic kernel before its theological absorption into Vaishnavism (Eggeling 1882; Witzel 2012). Its function — a divine animal that warns the survivor — is the Indian form of the flood-warner role.",
+              "parallels": [
+                {
+                  "label": "Ea/Enki the flood-warner (Babylonian)",
+                  "note": "in Atrahasis and Gilgamesh XI the god Ea warns the survivor through the reed-wall; the helper-warner role the ŚB assigns to the fish (Witzel 2001, 'Comparison and Reconstruction')",
+                  "textId": "atrahasis-epic"
+                },
+                {
+                  "label": "Vishnu (Matsya, the later identification)",
+                  "note": "in the Puranic recension the fish IS Vishnu's first descent (avatara), who also rescues the Vedas — a development absent from the ŚB (Eggeling 1882, introduction)",
+                  "textId": "bhagavad-gita-4"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "1:8:1:2",
+          "text": "It spake to him the word, 'Rear me, I will save thee!' 'Wherefrom wilt thou save me?' 'A flood will carry away all these creatures: from that I will save thee!' 'How am I to rear thee?'",
+          "textVersions": {
+            "eggeling": "It spake to him the word, 'Rear me, I will save thee!' 'Wherefrom wilt thou save me?' 'A flood will carry away all these creatures: from that I will save thee!' 'How am I to rear thee?'"
+          },
+          "entities": [
+            {
+              "word": "A flood will carry away all these creatures",
+              "node": "flood-motif",
+              "type": "theme",
+              "note": "The world-destroying deluge that annihilates all living things save the warned survivor — the core of the flood-motif. The ŚB is its earliest Indian attestation; whether it descends from the Mesopotamian flood-tradition, from a common Indo-European inheritance, or arises by independent convergence is one of the most-discussed and still-unresolved problems in comparative mythology (Witzel 2001; West 1997).",
+              "parallels": [
+                {
+                  "label": "Atrahasis — the flood that ends humanity",
+                  "note": "the oldest Mesopotamian world-flood (c. 1700 BCE), centuries before the ŚB; the chief candidate-source for the diffusion hypothesis (Witzel 2012)",
+                  "textId": "atrahasis-epic"
+                },
+                {
+                  "label": "Gilgamesh XI — the six-day deluge",
+                  "note": "the flood that 'turned all mankind to clay,' sparing only Utnapishtim; the closest narrative analogue (West 1997, pp.481–490)",
+                  "textId": "gilgamesh"
+                },
+                {
+                  "label": "Genesis — the waters that destroy all flesh",
+                  "note": "the Hebrew flood sparing only Noah's household; the same single-survivor flood-motif (Sproul, Primal Myths, 1979)",
+                  "textId": "genesis-8"
+                }
+              ]
+            },
+            {
+              "word": "save thee",
+              "node": "vishnu",
+              "type": "deity",
+              "note": "The fish's saving role is, in the later Vaishnava reading, the inaugural act of Vishnu the Preserver — his first avataric descent (Matsya) to rescue Manu and the dharmic order. In the ŚB itself this theology is not yet present; the salvation is simply the fish keeping its bargain (Eggeling 1882; Witzel 2012).",
+              "parallels": [
+                {
+                  "label": "Vishnu as Preserver / avatar-descender",
+                  "note": "BG 4.7–8 frames Vishnu/Krishna as descending in each age to preserve dharma — the doctrine that later absorbs the flood-fish as Matsya",
+                  "textId": "bhagavad-gita-4"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "The Towing and the Mountain (Shatapatha Brahmana 1.8.1.5–6)",
+      "verses": [
+        {
+          "ref": "1:8:1:5",
+          "text": "After he had reared it in this way, he took it down to the sea. And in the same year which the fish had indicated to him, he attended to (the advice of the fish) by preparing a ship; and when the flood had risen, he entered into the ship. The fish then swam up to him, and to its horn he tied the rope of the ship, and by that means he passed swiftly up to yonder northern mountain.",
+          "textVersions": {
+            "eggeling": "After he had reared it in this way, he took it down to the sea. And in the same year which the fish had indicated to him, he attended to (the advice of the fish) by preparing a ship; and when the flood had risen, he entered into the ship. The fish then swam up to him, and to its horn he tied the rope of the ship, and by that means he passed swiftly up to yonder northern mountain."
+          },
+          "entities": [
+            {
+              "word": "the sea",
+              "node": "primordial-waters",
+              "type": "theme",
+              "note": "The fish must be released into the sea once it outgrows jar and pit; the flood that follows is the return of the all-covering waters from which the survivor alone emerges. The cosmic-waters-and-renewal pattern recurs across the flood traditions and the primordial-ocean cosmogonies (Eliade, The Myth of the Eternal Return, on water as dissolution-and-regeneration).",
+              "parallels": [
+                {
+                  "label": "the deep / tehom (Hebrew)",
+                  "note": "the flood-waters of Genesis are the chaos-deep returning over the ordered world before it recedes",
+                  "textId": "genesis-8"
+                },
+                {
+                  "label": "the all-covering flood (Babylonian)",
+                  "note": "the deluge as a reversion of the world to undifferentiated water before the survivor restarts creation",
+                  "textId": "atrahasis-epic"
+                }
+              ]
+            },
+            {
+              "word": "ship",
+              "node": "flood-motif",
+              "type": "theme",
+              "note": "The constructed vessel by which the warned survivor rides out the flood — a fixed element of the flood-motif type-scene shared with the Mesopotamian boat and Noah's ark. In the ŚB the fish tows the ship by its horn, a distinctively Indian detail (Witzel 2001; West 1997, pp.481–490).",
+              "parallels": [
+                {
+                  "label": "Utnapishtim's boat (Babylonian)",
+                  "note": "the great cube-boat built on Ea's instruction; the survivor's vessel (West 1997)",
+                  "textId": "gilgamesh"
+                },
+                {
+                  "label": "Noah's ark (Hebrew)",
+                  "note": "the ark that carries the survivor through the flood and grounds on a mountain",
+                  "textId": "genesis-8"
+                }
+              ]
+            },
+            {
+              "word": "yonder northern mountain",
+              "node": "world-mountain",
+              "type": "symbol",
+              "note": "The salvific high ground where the ship grounds and the survivor waits out the receding waters — the mountain-landing that closes the flood type-scene. The ŚB's 'northern mountain' is the Indian counterpart of Mt. Nimush (Gilgamesh) and Ararat (Genesis); the survivor descends as the waters subside to refound life (West 1997, pp.481–490; Eliade on the cosmic mountain as the surviving navel of a drowned world).",
+              "parallels": [
+                {
+                  "label": "Mt. Nimush / Nisir (Babylonian)",
+                  "note": "the mountain on which Utnapishtim's boat grounds and holds fast for seven days (West 1997)",
+                  "textId": "gilgamesh"
+                },
+                {
+                  "label": "the mountains of Ararat (Hebrew)",
+                  "note": "where Noah's ark rests as the waters abate (Gen 8:4); the same mountain-landing close",
+                  "textId": "genesis-8"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "1:8:1:6",
+          "text": "It then said, 'I have saved thee. Fasten the ship to a tree; but let not the water cut thee off, whilst thou art on the mountain. As the water subsides, thou mayest gradually descend!' Accordingly he gradually descended, and hence that (slope) of the northern mountain is called 'Alarm's descent.' The flood then swept away all these creatures, and Manu alone remained here.",
+          "textVersions": {
+            "eggeling": "It then said, 'I have saved thee. Fasten the ship to a tree; but let not the water cut thee off, whilst thou art on the mountain. As the water subsides, thou mayest gradually descend!' Accordingly he gradually descended, and hence that (slope) of the northern mountain is called 'Alarm's descent.' The flood then swept away all these creatures, and Manu alone remained here."
+          },
+          "entities": [
+            {
+              "word": "As the water subsides",
+              "node": "flood-motif",
+              "type": "theme",
+              "note": "The waiting-for-the-waters-to-recede phase that ends every flood narrative: the survivor on the mountain watches the deluge abate before descending. In Genesis this interval is filled by the bird-scout (raven, dove); the ŚB has the fish's instruction to descend gradually (Sproul, Primal Myths, 1979; West 1997).",
+              "parallels": [
+                {
+                  "label": "the bird-scout (Hebrew)",
+                  "note": "Noah sends out the raven and the dove to test whether the waters have receded — the receding-flood test-phase the ŚB handles by the fish's instruction (Gen 8:6–12)",
+                  "textId": "genesis-8"
+                },
+                {
+                  "label": "the bird-release (Babylonian)",
+                  "note": "Utnapishtim releases a dove, a swallow, and a raven to test the receding waters; the shared receding-flood motif (West 1997, pp.481–490)",
+                  "textId": "gilgamesh"
+                }
+              ]
+            },
+            {
+              "word": "Manu alone remained here",
+              "node": "manu",
+              "type": "person",
+              "note": "The defining close of the single-survivor flood: every other creature is swept away and Manu alone survives to regenerate humanity (1:8:1:10, 'Through her he generated this race, which is this race of Manu'). The flood as a reset followed by the survivor's refounding of the human line is the structural heart shared with Utnapishtim, Ziusudra, and Noah (Witzel 2012; West 1997).",
+              "parallels": [
+                {
+                  "label": "Utnapishtim survives and is made immortal",
+                  "note": "the Babylonian survivor alone outlasts the flood; the single-survivor outcome (West 1997)",
+                  "textId": "gilgamesh"
+                },
+                {
+                  "label": "Noah and his household alone remain",
+                  "note": "the Hebrew survivor through whom the post-flood human race continues, as Manu refounds his",
+                  "textId": "genesis-8"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
+
+// -- Cicero, Somnium Scipionis — The Dream of Scipio (the cosmic ascent and the harmony of the spheres) --
+SCRIPTURE_TEXTS['dream-of-scipio'] = {
+  "id": "dream-of-scipio",
+  "title": "Cicero, Somnium Scipionis — The Dream of Scipio (the cosmic ascent and the harmony of the spheres)",
+  "shortTitle": "Dream of Scipio",
+  "corpus": "Roman philosophy · Cicero, De Re Publica (Book VI)",
+  "tradId": "tradition-hellenistic-philosophy",
+  "date": "c. 54–51 BCE (the close of Cicero's De Re Publica, Book VI)",
+  "docNode": "phase-3-002-plato-dialogues",
+  "language": "Latin · W. D. Pearman translation (1883), \"Cicero, The Dream of Scipio — Somnium Scipionis,\" pp. 3–14 — public domain",
+  "translations": [
+    {
+      "id": "pearman",
+      "label": "Pearman 1883",
+      "note": "W.D. Pearman, The Dream of Scipio, 1883 — public domain"
+    }
+  ],
+  "intro": "The Somnium Scipionis is the closing myth of Cicero's De Re Publica: the dead Scipio Africanus the Elder appears in a dream to his grandson, lifts him to the starry heights, shows him the Earth shrunk to a single point, and reveals the nine revolving spheres whose unequal-but-measured motion makes a celestial harmony — the \"music of the spheres.\" The elder Scipio teaches that statesmen who serve their country have a fixed place waiting in heaven, and that the true self is not the body but an immortal, self-moving, divine soul. Cicero deliberately rewrites Plato's Myth of Er (Republic X) for a Roman audience and adapts the world-soul and cosmic harmony of the Timaeus; preserved and made canonical for the Latin Middle Ages chiefly through Macrobius' Commentary on the Dream of Scipio, it became the West's primary text for the harmony of the spheres and the heavenly destiny of the soul.",
+  "crossTradition": [
+    {
+      "label": "Plato, Timaeus — the World-Soul and cosmic harmony",
+      "note": "Cicero's revolving spheres and their numerically-proportioned music adapt the Timaeus, where the Demiurge frames the World-Soul on harmonic ratios and sets the heavens revolving (Macrobius read the Somnium as a Latin door into Platonic cosmology; P. Boyancé, 'Études sur le Songe de Scipion,' 1936, traces the Timaeus and Posidonian-Stoic sources behind Cicero's cosmos).",
+      "textId": "plato-timaeus"
+    },
+    {
+      "label": "Plato, Republic X — the Myth of Er",
+      "note": "The Somnium is Cicero's deliberate Roman counterpart to the Myth of Er: an otherworld vision of the spheres and the soul's destiny that closes a dialogue on the just state, as Er's vision closes the Republic (Macrobius, In Somnium Scipionis I.1, states Cicero imitated Plato's Er; A.E. Douglas and W.H. Stahl note the structural mirroring). [not yet staged]"
+    },
+    {
+      "label": "Plotinus, Enneads — the soul's ascent and return",
+      "note": "The Neoplatonic ascent of the soul beyond the moon to its divine home is the developed form of the upward gaze Cicero stages; Macrobius reads the Dream through a Plotinian-Porphyrian lens, fixing it in the late-antique ascent tradition (P. Courcelle, 'Late Latin Writers and Their Greek Sources').",
+      "textId": "plotinus-enneads"
+    },
+    {
+      "label": "Plato, Phaedo — the soul's immortality and kinship with the eternal",
+      "note": "Scipio's proof that the self-moving soul is deathless ('it is not you that are mortal, but this body') is the Roman echo of the Phaedo's argument that the soul is akin to the divine and indissoluble — the body a prison the soul soars from (the 'prison-house' image is itself Platonic, Phaedo 62b).",
+      "textId": "phaedo"
+    },
+    {
+      "label": "Bhagavad-Gita 11 — the cosmic vision granted to a warrior",
+      "note": "A second, independent instance of the revelatory cosmic-vision pattern: a hero is given supernatural sight of the whole ordered universe and his small place within it. The convergence is typological (the genre of the granted cosmic vision), not transmission — there is no historical link between Cicero and the Gita.",
+      "textId": "bhagavad-gita-11"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "A place in heaven for those who serve their country",
+      "verses": [
+        {
+          "ref": "§5 (Rep. VI.13)",
+          "text": "But still, Africanus, so that you may be the readier to defend the Constitution, know this: for all who have preserved their fatherland, furthered it, enriched it, there is in heaven a sure and allotted abode, where they may enjoy an immortality of happiness.",
+          "textVersions": {
+            "pearman": "But still, Africanus, so that you may be the readier to defend the Constitution, know this: for all who have preserved their fatherland, furthered it, enriched it, there is in heaven a sure and allotted abode, where they may enjoy an immortality of happiness."
+          },
+          "entities": [
+            {
+              "word": "a sure and allotted abode, where they may enjoy an immortality of happiness",
+              "node": "soul-immortality",
+              "type": "theme",
+              "note": "Cicero gives the immortal soul a Roman civic destiny: the statesman who serves the commonwealth has a fixed heavenly abode. This couples Greek soul-immortality (the soul-immortality theme node lists Plato's dialogues and Plotinus among its appearances) to the Roman ideal of service to the res publica.",
+              "parallels": [
+                {
+                  "label": "Plato, Phaedo — the soul akin to the divine",
+                  "note": "The Phaedo argues the soul is deathless and kindred to the eternal; Cicero supplies the Roman political form of that immortality (J.N. Bremmer, 'The Rise and Fall of the Afterlife,' on the Greek-to-Roman transmission of soul-immortality).",
+                  "textId": "phaedo"
+                },
+                {
+                  "label": "Plato, Republic X — Er's reward of the just",
+                  "note": "In the Myth of Er the souls of the just are rewarded in the heavens before rebirth; Cicero converts the reward into a permanent celestial seat for the patriot (Macrobius, In Somnium I.1). [not yet staged]"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "§5 (Rep. VI.13)",
+          "text": "For nothing happens in the world more pleasing to that supreme Deity, who governs all the universe, than those gatherings and unions of men allied by common laws, which are called states.",
+          "textVersions": {
+            "pearman": "For nothing happens in the world more pleasing to that supreme Deity, who governs all the universe, than those gatherings and unions of men allied by common laws, which are called states."
+          },
+          "entities": [
+            {
+              "word": "that supreme Deity, who governs all the universe",
+              "node": "logos-cosmic-reason",
+              "type": "theme",
+              "note": "The 'supreme Deity who governs all the universe' is the Stoic governing reason (logos / ratio) ordering the cosmos — Cicero, an Academic shaped by his Stoic teacher Posidonius, frames the divine as the cosmic-ordering mind (P. Boyancé, 'Études sur le Songe de Scipion,' 1936, on the Posidonian-Stoic cosmology behind the Dream).",
+              "parallels": [
+                {
+                  "label": "Plato, Timaeus — the Demiurge orders the cosmos",
+                  "note": "The Timaeus' divine craftsman who orders the world on rational proportion is the Platonic root of Cicero's ordering Deity (Macrobius reads the two together).",
+                  "textId": "plato-timaeus"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "The Earth a point; the nine spheres and their music",
+      "verses": [
+        {
+          "ref": "§8 (Rep. VI.16)",
+          "text": "already the earth itself appeared to me so small, that it grieved me to think of our empire, with which we cover but a point, as it were, of its surface.",
+          "textVersions": {
+            "pearman": "already the earth itself appeared to me so small, that it grieved me to think of our empire, with which we cover but a point, as it were, of its surface."
+          },
+          "entities": [
+            {
+              "word": "the earth itself appeared to me so small, that it grieved me to think of our empire, with which we cover but a point",
+              "node": "microcosm-macrocosm",
+              "type": "theme",
+              "note": "The 'cosmic zoom' that shrinks Earth — and all human empire — to a point seen from the spheres. Cicero makes the contemplative ascent relativize earthly glory; the device passes through Macrobius into Boethius and Dante, and is the ancestor of the 'overview effect' (M.T. Griffin & E.M. Atkins on the Somnium's contemptus mundi; the line is echoed in Lucan and Dante, Paradiso XXII).",
+              "parallels": [
+                {
+                  "label": "Plotinus, Enneads — the ascent above the visible",
+                  "note": "The Neoplatonic turn of the soul's gaze upward and beyond the material relativizes the sensible world, as Cicero's vision relativizes empire (P. Courcelle on the Macrobian-Plotinian reading).",
+                  "textId": "plotinus-enneads"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "§9 (Rep. VI.17)",
+          "text": "See! the universe is linked together in nine circles or rather spheres; one of which is that of the heavens, the outermost of all, which embraces all the other spheres, the supreme deity, which keeps in and holds together all the others; and to this are attached those everlasting orbits of the stars.",
+          "textVersions": {
+            "pearman": "See! the universe is linked together in nine circles or rather spheres; one of which is that of the heavens, the outermost of all, which embraces all the other spheres, the supreme deity, which keeps in and holds together all the others; and to this are attached those everlasting orbits of the stars."
+          },
+          "entities": [
+            {
+              "word": "the universe is linked together in nine circles or rather spheres",
+              "node": "world-axis",
+              "type": "theme",
+              "note": "The geocentric scheme of nested revolving spheres with the motionless Earth at the centre — the cosmological frame inherited from Plato (Timaeus), Eudoxus, and Aristotle, transmitted to the Latin West chiefly through this passage and Macrobius' commentary on it (W.H. Stahl, 'Macrobius: Commentary on the Dream of Scipio,' 1952).",
+              "parallels": [
+                {
+                  "label": "Plato, Timaeus — the spheres framed by the World-Soul",
+                  "note": "In the Timaeus the heavens' circles are laid out by the World-Soul on harmonic divisions; Cicero's nine spheres are the Roman digest of that structure.",
+                  "textId": "plato-timaeus"
+                }
+              ]
+            },
+            {
+              "word": "the outermost of all, which embraces all the other spheres, the supreme deity, which keeps in and holds together all the others",
+              "node": "the-world-soul",
+              "type": "deity",
+              "note": "The outermost sphere identified with the supreme deity that contains and holds together the cosmos is Cicero's compression of the Platonic-Stoic World-Soul — the divine ordering principle that binds the universe into one living whole (the-world-soul node; P. Boyancé, 1936, on the World-Soul behind the Somnium).",
+              "parallels": [
+                {
+                  "label": "Plato, Timaeus — the World-Soul binds the cosmos",
+                  "note": "The Timaeus' World-Soul, diffused through and enclosing the whole, is the source of Cicero's all-embracing outermost divinity (Macrobius reads them together).",
+                  "textId": "plato-timaeus"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "§10 (Rep. VI.18)",
+          "text": "This is that sound, which divided in intervals, unequal, indeed, yet still exactly measured in their fixed proportion, is produced by the impetus and movement of the spheres themselves, and blending sharp tones with grave, therewith makes changing symphonies in unvarying harmony.",
+          "textVersions": {
+            "pearman": "This is that sound, which divided in intervals, unequal, indeed, yet still exactly measured in their fixed proportion, is produced by the impetus and movement of the spheres themselves, and blending sharp tones with grave, therewith makes changing symphonies in unvarying harmony."
+          },
+          "entities": [
+            {
+              "word": "divided in intervals, unequal, indeed, yet still exactly measured in their fixed proportion, is produced by the impetus and movement of the spheres themselves",
+              "node": "music-music-of-spheres",
+              "type": "music",
+              "note": "The locus classicus of the harmony of the spheres for the Latin West: the revolving spheres sound at unequal but numerically fixed intervals, making one concord. The doctrine is Pythagorean-Platonic in origin (musica universalis); Cicero gives it its most influential Latin statement, and Macrobius' commentary fixes it as a standard topic of medieval music theory (W.H. Stahl on Macrobius; the harmony-of-the-spheres tradition traced from Pythagoras through Cicero to Boethius' De Musica).",
+              "parallels": [
+                {
+                  "label": "Plato, Timaeus — the heavens framed on harmonic ratios",
+                  "note": "The World-Soul of the Timaeus is divided on musical proportions (2,3,4,8,9,27); Cicero's 'fixed proportion' of the spheres is the audible reflex of that Platonic harmonic structure (Macrobius makes the link explicit).",
+                  "textId": "plato-timaeus"
+                },
+                {
+                  "label": "Bhagavad-Gita 11 — the ordered cosmos beheld whole",
+                  "note": "A convergent, untransmitted instance of the whole ordered universe disclosed to a hero as a single overwhelming totality — here heard as harmony rather than seen as Vishvarupa.",
+                  "textId": "bhagavad-gita-11"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "You are a god: the immortal, self-moving soul",
+      "verses": [
+        {
+          "ref": "§18 (Rep. VI.26)",
+          "text": "Strive indeed, and be persuaded of this: it is not you that are mortal, but this body. For you are not that which your bodily form presents to view, but it is the mind of any man that is the man, not that figure which can be pointed out by the finger.",
+          "textVersions": {
+            "pearman": "Strive indeed, and be persuaded of this: it is not you that are mortal, but this body. For you are not that which your bodily form presents to view, but it is the mind of any man that is the man, not that figure which can be pointed out by the finger."
+          },
+          "entities": [
+            {
+              "word": "it is not you that are mortal, but this body",
+              "node": "soul-immortality",
+              "type": "theme",
+              "note": "The core teaching: the true self is the immortal soul, not the perishable body — the Platonic-Pythagorean soul-body dualism (the body as the soul's 'prison-house,' a few lines earlier, is the Phaedo's image) put in Cicero's Roman mouth (J.N. Bremmer on Greek soul-immortality entering Roman thought).",
+              "parallels": [
+                {
+                  "label": "Plato, Phaedo — the self is the soul, the body its prison",
+                  "note": "The Phaedo identifies the person with the soul and calls the body its prison; Cicero reproduces both the identification and the prison image (Phaedo 62b, 64c).",
+                  "textId": "phaedo"
+                },
+                {
+                  "label": "Plotinus, Enneads — the soul, not the composite, is the true self",
+                  "note": "Plotinus locates the real self in the higher soul above the body; Cicero's 'the mind of any man is the man' is the Roman germ of that Neoplatonic anthropology.",
+                  "textId": "plotinus-enneads"
+                }
+              ]
+            },
+            {
+              "word": "it is the mind of any man that is the man",
+              "node": "ascent-of-the-soul",
+              "type": "theme",
+              "note": "By identifying the man with his mind/soul, Cicero grounds the heavenward ascent: the divine self can rise to its proper celestial home above the moon, the keynote of the soul's-ascent tradition the ascent-of-the-soul node tracks from the apocalypses through Plotinus and the Hermetica (I.P. Couliano, 'Out of This World,' 1991, on Cicero within the otherworldly-journey tradition).",
+              "parallels": [
+                {
+                  "label": "Plotinus, Enneads — the soul's ascent to its source",
+                  "note": "The recognition that the true self is mind/soul is the precondition of the Plotinian ascent; the Somnium stages an early Roman form of that upward turn (P. Courcelle).",
+                  "textId": "plotinus-enneads"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "§18 (Rep. VI.26)",
+          "text": "Know then that you are a god; since he is a god who possesses force, feeling, memory and prescience, who directs, governs, and moves that body, of which he is the master, just as much as the supreme God of all moves this universe.",
+          "textVersions": {
+            "pearman": "Know then that you are a god; since he is a god who possesses force, feeling, memory and prescience, who directs, governs, and moves that body, of which he is the master, just as much as the supreme God of all moves this universe."
+          },
+          "entities": [
+            {
+              "word": "Know then that you are a god",
+              "node": "microcosm-macrocosm",
+              "type": "theme",
+              "note": "The soul governs its body exactly as the supreme God moves the universe — the human as microcosm mirroring the macrocosm. Cicero makes the analogy explicit ('just as much as the supreme God of all moves this universe'), a formula transmitted through Macrobius into medieval micro-/macrocosm thought (the microcosm-macrocosm node; cf. R. Allers, 'Microcosmus,' Traditio 1944).",
+              "parallels": [
+                {
+                  "label": "Plato, Timaeus — the cosmos a living being moved by soul",
+                  "note": "The Timaeus makes the cosmos a single ensouled animal; Cicero scales the relation down so the human soul-body pair images the God-cosmos pair.",
+                  "textId": "plato-timaeus"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
+
+// -- Jonah 2 (The prayer from the belly of the fish — descent and return) --
+SCRIPTURE_TEXTS['jonah-2'] = {
+  "id": "jonah-2",
+  "title": "Jonah 2 (The prayer from the belly of the fish — descent and return)",
+  "shortTitle": "Jonah 2",
+  "corpus": "Hebrew Bible (Latter Prophets · Book of the Twelve)",
+  "tradId": "tradition-second-temple-judaism",
+  "date": "c. 450–350 BCE (post-exilic; the Book of the Twelve)",
+  "docNode": "document-jonah",
+  "language": "Hebrew · King James Version (1611) — public domain",
+  "translations": [
+    {
+      "id": "kjv",
+      "label": "KJV (1611)",
+      "note": "King James Version — public domain"
+    }
+  ],
+  "intro": "Jonah 2 is a psalm of thanksgiving placed in the mouth of the prophet from inside the great fish: he \"cried by reason of mine affliction,\" \"out of the belly of hell,\" as \"the waters compassed me about, even to the soul,\" yet was \"brought up my life from corruption.\" Read at plain sense — the reading Jack Sasson (Anchor Bible, 1990) and James Limburg (Jonah, OTL, 1993) defend — the poem is a stock individual thanksgiving for rescue from drowning: the sea, the deep, and Sheol are the watery underworld of Israelite cosmology into which the drowning man sinks, not a literal death and bodily resurrection. The descent-and-return shape, however, made the chapter a magnet for later reception: the Gospel of Matthew turns \"three days and three nights\" in the fish into the \"sign of the prophet Jonas\" prefiguring Christ's three days in the earth (Matt 12:40), and Christian typology read the whole episode as a death-and-resurrection sign. The text therefore sits at the head of the katabasis-and-anabasis cluster — the same descent-into-the-deep-and-return pattern that the Mesopotamian Descent of Inanna and its Akkadian recension, the Descent of Ishtar, encode for the underworld goddess.",
+  "crossTradition": [
+    {
+      "label": "Descent of Inanna (Sumerian)",
+      "note": "The oldest narrative of a descent into the realm of the dead and a return; Inanna's underworld sojourn is timed at 'three days and three nights' (the descent-inanna entry already cross-links Jonah's three days). The death-and-return grammar is typological, not a claim of literary borrowing — the parallel is one of pattern, as Mircea Eliade frames the katabasis-and-return as a recurring initiatory structure.",
+      "textId": "descent-inanna"
+    },
+    {
+      "label": "Descent of Ishtar (Akkadian)",
+      "note": "The Akkadian recension of the same myth: Ishtar descends through the seven gates of the land of no return and is brought back up. The shared shape — divine/heroic figure goes down into the deep/underworld and is restored — is the convergent death-and-return pattern, not evidence that the Jonah poet knew the Akkadian text (Sasson, Jonah, treats Jonah 2 as a conventional Israelite thanksgiving psalm).",
+      "textId": "descent-ishtar"
+    },
+    {
+      "label": "Sign of Jonah — Matthew 12:40 (Christian reception)",
+      "note": "Matthew makes the three days in the fish a type of Christ's three days 'in the heart of the earth,' converting Jonah's deliverance-from-drowning into a death-and-resurrection sign. This is later Christian typology read back onto the text; the plain sense of Jonah 2 is rescue from the sea, as Limburg (Jonah, OTL) stresses."
+    },
+    {
+      "label": "Psalm 18 / Psalm 69 — the thanksgiving template",
+      "note": "Jonah 2 is stitched together from the conventional language of Israelite individual thanksgiving psalms (the cords of Sheol, the floods, deliverance from the deep); Sasson and Limburg both read it as a redactional insertion of a stock psalm rather than a composition unique to the fish episode."
+    }
+  ],
+  "sections": [
+    {
+      "heading": "The Prayer from the Belly of the Fish",
+      "verses": [
+        {
+          "ref": "2:1",
+          "text": "Then Jonah prayed unto the LORD his God out of the fish's belly,",
+          "textVersions": {
+            "kjv": "Then Jonah prayed unto the LORD his God out of the fish's belly,"
+          },
+          "entities": [
+            {
+              "word": "the LORD",
+              "node": "yahweh",
+              "type": "deity",
+              "note": "YHWH, the God of Israel, rendered 'the LORD' in the KJV by the standard substitution for the Tetragrammaton. In Jonah the same deity governs sea, storm, fish, and dry land — the universal sovereignty the book asserts against the prophet's parochialism.",
+              "parallels": []
+            }
+          ]
+        },
+        {
+          "ref": "2:2",
+          "text": "And said, I cried by reason of mine affliction unto the LORD, and he heard me; out of the belly of hell cried I, and thou heardest my voice.",
+          "textVersions": {
+            "kjv": "And said, I cried by reason of mine affliction unto the LORD, and he heard me; out of the belly of hell cried I, and thou heardest my voice."
+          },
+          "entities": [
+            {
+              "word": "out of the belly of hell",
+              "node": "underworld-descent",
+              "type": "theme",
+              "note": "The KJV 'hell' renders Hebrew Sheol — the shadowy underworld of the dead, here imaged as the watery deep into which the drowning man sinks. Sasson (Jonah, Anchor Bible 1990) and Limburg (Jonah, OTL 1993) read this as the conventional language of the Israelite thanksgiving psalm: Sheol is the realm of no-return from which YHWH rescues, not a literal afterlife the prophet has entered. The descent into Sheol/the deep is the down-leg of the katabasis pattern.",
+              "parallels": [
+                {
+                  "label": "Inanna's descent to the Great Below",
+                  "note": "Inanna abandons heaven and descends through seven gates to the Kur, the land of no return — the same down-into-the-realm-of-death movement, the oldest surviving instance (the parallel is structural/typological, per Eliade, not a transmission claim).",
+                  "textId": "descent-inanna"
+                },
+                {
+                  "label": "Ishtar enters the land of no return",
+                  "note": "The Akkadian recension: Ishtar descends to the 'house of darkness... the road whose path does not lead back.' Convergent underworld-descent imagery; Sasson treats Jonah 2 as independent Israelite psalm-language.",
+                  "textId": "descent-ishtar"
+                }
+              ]
+            },
+            {
+              "word": "the LORD",
+              "node": "yahweh",
+              "type": "deity",
+              "note": "The one who hears from Sheol — the same YHWH whose reach into the underworld is asserted in Psalm 139:8 ('if I make my bed in hell, behold, thou art there').",
+              "parallels": []
+            }
+          ]
+        },
+        {
+          "ref": "2:3",
+          "text": "For thou hadst cast me into the deep, in the midst of the seas; and the floods compassed me about: all thy billows and thy waves passed over me.",
+          "textVersions": {
+            "kjv": "For thou hadst cast me into the deep, in the midst of the seas; and the floods compassed me about: all thy billows and thy waves passed over me."
+          },
+          "entities": [
+            {
+              "word": "the deep",
+              "node": "underworld-descent",
+              "type": "theme",
+              "note": "The deep (Hebrew metsulah, the watery abyss) doubles as the gateway to Sheol in Israelite cosmology — the drowning man's sinking is simultaneously a descent toward the underworld. Limburg notes the psalm fuses literal sea-peril with the mythic deep, the same threshold the katabasis figure crosses.",
+              "parallels": [
+                {
+                  "label": "The waters of the underworld",
+                  "note": "In the Mesopotamian underworld journey the dead cross watery thresholds; the deep as boundary of the land of the dead is a shared ancient Near Eastern image (Sasson notes the conventional ANE cosmology behind the psalm).",
+                  "textId": "descent-ishtar"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "2:5",
+          "text": "The waters compassed me about, even to the soul: the depth closed me round about, the weeds were wrapped about my head.",
+          "textVersions": {
+            "kjv": "The waters compassed me about, even to the soul: the depth closed me round about, the weeds were wrapped about my head."
+          },
+          "entities": [
+            {
+              "word": "even to the soul",
+              "node": "underworld-descent",
+              "type": "theme",
+              "note": "'Even to the soul' (Hebrew 'ad-nephesh) marks the point of death by drowning — the waters reach the throat/life. Sasson reads the heaping of watery-death images (waters, depth, weeds) as the genre signature of the thanksgiving psalm describing the extremity from which the speaker was delivered.",
+              "parallels": []
+            }
+          ]
+        },
+        {
+          "ref": "2:6",
+          "text": "I went down to the bottoms of the mountains; the earth with her bars was about me for ever: yet hast thou brought up my life from corruption, O LORD my God.",
+          "textVersions": {
+            "kjv": "I went down to the bottoms of the mountains; the earth with her bars was about me for ever: yet hast thou brought up my life from corruption, O LORD my God."
+          },
+          "entities": [
+            {
+              "word": "I went down to the bottoms of the mountains",
+              "node": "katabasis-and-anabasis",
+              "type": "theme",
+              "note": "The down-leg: the speaker reaches the cosmic floor — 'the bottoms of the mountains,' the 'bars' of the earth, the gates of Sheol that close 'for ever.' This is the katabasis (descent) of the katabasis-and-anabasis pattern that the theme node tracks across Inanna, Heracles, Orpheus, Osiris, and the Christian descensus.",
+              "parallels": [
+                {
+                  "label": "Descent through the seven gates",
+                  "note": "Inanna passes the barred gates of the underworld on her way down — the 'bars' of the land of the dead are a shared image; the parallel is the descent structure, per Eliade's reading of katabasis as a recurring form.",
+                  "textId": "descent-inanna"
+                }
+              ]
+            },
+            {
+              "word": "brought up my life from corruption",
+              "node": "resurrection-of-the-dead",
+              "type": "theme",
+              "note": "The up-leg (anabasis): YHWH brings the speaker up from the Pit. At plain sense this is rescue from drowning, not bodily resurrection — Sasson and Limburg both insist the verb describes deliverance from imminent death, not return from it. But the 'bringing up from corruption/the Pit' language is precisely what later tradition mined: Matthew's 'sign of Jonah' (Matt 12:40) and Christian typology read the rising-from-the-deep as a figure of resurrection. The note flags this as later reception, not the text's plain meaning.",
+              "parallels": [
+                {
+                  "label": "Inanna brought back up to life",
+                  "note": "Inanna, made a corpse in the underworld, is revived and brought back up — the death-and-return that later Christian reception saw foreshadowed in Jonah (the typology is reception-history, the structural parallel is what the cluster tracks).",
+                  "textId": "descent-inanna"
+                },
+                {
+                  "label": "Sign of Jonah — Christ's three days (Matt 12:40)",
+                  "note": "Matthew reads the bringing-up from the fish as a type of resurrection from the earth; this is Christian typology imposed on a text whose plain sense, per Limburg, is rescue from the sea."
+                }
+              ]
+            },
+            {
+              "word": "O LORD my God",
+              "node": "yahweh",
+              "type": "deity",
+              "note": "YHWH named as the one who reverses the descent — the agent of the anabasis.",
+              "parallels": []
+            }
+          ]
+        },
+        {
+          "ref": "2:9",
+          "text": "But I will sacrifice unto thee with the voice of thanksgiving; I will pay that that I have vowed. Salvation is of the LORD.",
+          "textVersions": {
+            "kjv": "But I will sacrifice unto thee with the voice of thanksgiving; I will pay that that I have vowed. Salvation is of the LORD."
+          },
+          "entities": [
+            {
+              "word": "Salvation is of the LORD",
+              "node": "yahweh",
+              "type": "deity",
+              "note": "The psalm's closing confession (Hebrew yeshu'atah la-YHWH) — deliverance belongs to YHWH alone. Sasson notes the thanksgiving-psalm form ends, as expected, in a vow of sacrifice and a doxology of rescue.",
+              "parallels": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
