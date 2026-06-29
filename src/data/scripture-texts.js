@@ -32681,3 +32681,1510 @@ SCRIPTURE_TEXTS['jonah-2'] = {
     }
   ]
 };
+
+// -- Lucretius, De Rerum Natura I.146–264; I.418–448; III.417–462; III.830–869 (Nothing from nothing — atoms, the void, and the mortal soul) --
+SCRIPTURE_TEXTS['de-rerum-natura'] = {
+  "id": "de-rerum-natura",
+  "title": "Lucretius, De Rerum Natura I.146–264; I.418–448; III.417–462; III.830–869 (Nothing from nothing — atoms, the void, and the mortal soul)",
+  "shortTitle": "De Rerum Natura — atoms, void, mortal soul",
+  "corpus": "Latin · Roman Epicureanism (De Rerum Natura / On the Nature of Things)",
+  "tradId": "tradition-hellenistic-philosophy",
+  "date": "c. 55 BCE (Titus Lucretius Carus; Epicurean didactic epic in dactylic hexameter, dedicated to Memmius)",
+  "docNode": "phase-3-005-stoic-foundational-texts",
+  "language": "Latin · William Ellery Leonard, Of the Nature of Things: A Metrical Translation (1916), Project Gutenberg eBook #785 — public domain. Book I (\"Substance Is Eternal\"; \"Nothing Exists per se Except Atoms and the Void\") and Book III (\"The Soul Is Mortal\"; \"Folly of the Fear of Death\"). Verse lines are reproduced verbatim as printed in the Leonard text; where two verse lines are joined inline they are separated by \" / \" and every word is preserved exactly.",
+  "translations": [
+    {
+      "id": "leonard",
+      "label": "Leonard 1916",
+      "note": "W.E. Leonard, Of the Nature of Things (metrical translation), 1916 (Project Gutenberg #785) — public domain"
+    }
+  ],
+  "intro": "De Rerum Natura is the fullest surviving statement of Epicurean physics and the ancient world's most thoroughgoing naturalism. From a single axiom — \"Nothing from nothing ever yet was born\" — Lucretius derives a universe of nothing but bodies (atoms) and void, governed by no gods and accomplished \"by no tool of Gods\"; and in Book III he argues that the mind and soul are themselves made of fine atoms, born and perishing with the body, so that \"death to us is nothing.\" The poem is the crucial counter-voice of the Atlas's materialist-dissent cluster: it systematically denies the Stoic providential Logos that Marcus Aurelius would later hymn, and it argues directly against the soul-immortality doctrine of Plato's Phaedo. This entry surfaces an honest mixture — a real transmission (Epicurus → Lucretius; the documented Stoic–Epicurean cosmological debate) alongside a convergence scholarship treats as parallel, not influence (the Vedic Nasadiya Sukta's refusal to assert a creator).",
+  "crossTradition": [
+    {
+      "label": "Marcus Aurelius, Meditations — the Stoic providential Logos Lucretius denies",
+      "note": "The systematic opposite. Where Marcus affirms 'one God who pervades all things... one common reason' governing a providential cosmos, Lucretius insists the world is atoms and void 'accomplished by no tool of Gods.' Long & Sedley (The Hellenistic Philosophers, 1987) present Stoic providence and Epicurean atomism as the two great rival physics of the Hellenistic age; the Atlas stages them as direct counter-voices.",
+      "textId": "meditations-marcus-aurelius"
+    },
+    {
+      "label": "Plato, Phaedo — the immortality of the soul Lucretius argues against",
+      "note": "The doctrine Book III targets. Where the Phaedo argues the soul is incomposite and deathless, Lucretius argues it is a 'subtle fabric, of particles minute' that disperses at death. Sedley (Lucretius and the Transformation of Greek Wisdom, 1998) reads Book III as a sustained Epicurean polemic against Platonic psychology.",
+      "textId": "phaedo"
+    },
+    {
+      "label": "Nasadiya Sukta (Rigveda 10.129) — the Vedic refusal to assert a creator",
+      "note": "Convergence, not transmission. The Vedic hymn's agnostic 'perhaps it formed itself, perhaps not — the one who looks down on it... perhaps he does not know' reaches independently a refusal to ground the world in a knowing creator, paralleling Lucretius's 'no tool of Gods.' Sedley (1998) and Long & Sedley (1987) treat the Epicurean position as a Greek development; the Vedic parallel is structural, reached in a wholly separate setting (no contact claimed).",
+      "textId": "nasadiya-sukta"
+    },
+    {
+      "label": "Cleanthes, Hymn to Zeus — the cosmic Logos as Providence",
+      "note": "The headwater of the providence-doctrine Lucretius rejects. Cleanthes' Zeus 'piloting the cosmos in harmony with Law' is exactly the divine governance Epicurean physics removes from nature. Long & Sedley (1987, §54) set Cleanthes' theology against the Epicurean denial of providence.",
+      "textId": "cleanthes-hymn"
+    },
+    {
+      "label": "Heraclitus — the cosmic fire and Logos",
+      "note": "The deeper ancestor of the rival view. The Stoic logos Lucretius opposes descends from Heraclitus's xynos logos and ever-living fire (Long & Sedley 1987, §46; Kahn, The Art and Thought of Heraclitus, 1979); Lucretius's atomism is the materialist alternative to that Heraclitean–Stoic cosmic Reason.",
+      "textId": "heraclitus-fragments"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "Book I — Substance Is Eternal: nothing from nothing",
+      "verses": [
+        {
+          "ref": "I (Substance Is Eternal)",
+          "text": "But only Nature's aspect and her law, / Which, teaching us, hath this exordium: / Nothing from nothing ever yet was born. / Fear holds dominion over mortality / Only because, seeing in land and sky / So much the cause whereof no wise they know, / Men think Divinities are working there.",
+          "textVersions": {
+            "leonard": "But only Nature's aspect and her law, / Which, teaching us, hath this exordium: / Nothing from nothing ever yet was born. / Fear holds dominion over mortality / Only because, seeing in land and sky / So much the cause whereof no wise they know, / Men think Divinities are working there."
+          },
+          "entities": [
+            {
+              "word": "Nothing from nothing ever yet was born",
+              "node": "evolutionary-cosmogony",
+              "type": "theme",
+              "note": "Lucretius's founding axiom (nil posse creari de nilo): every thing arises from fixed material seeds, never from nothing and never by divine fiat — a naturalistic, seed-based account of how things come to be, opposed to creation by a god's word. Sedley (Lucretius and the Transformation of Greek Wisdom, 1998) shows this 'first principle' is the load-bearing premise of the whole poem.",
+              "parallels": [
+                {
+                  "label": "Nasadiya Sukta — 'whence this creation has arisen... perhaps it formed itself'",
+                  "note": "A convergent refusal to assert a creator; the Vedic hymn reaches independent agnosticism about origins. Long & Sedley (1987) frame the Epicurean position as a Greek argument; the parallel is structural, not a transmission.",
+                  "textId": "nasadiya-sukta"
+                }
+              ]
+            },
+            {
+              "word": "Men think Divinities are working there",
+              "node": "providence-and-fate",
+              "type": "theme",
+              "note": "The diagnosis at the heart of the materialist dissent: ignorance of natural causes makes humans imagine gods govern the world. Lucretius removes divine governance from nature — the exact inverse of the Stoic providence (pronoia) Marcus Aurelius affirms. Long & Sedley (The Hellenistic Philosophers, 1987) present this as the Epicurean rejection of providence.",
+              "parallels": [
+                {
+                  "label": "Marcus Aurelius — 'All that is from the gods is full of Providence'",
+                  "note": "The Stoic counter-thesis: the cosmos is a providential divine order. Lucretius denies precisely this. Long & Sedley (1987) set the two physics as rivals.",
+                  "textId": "meditations-marcus-aurelius"
+                },
+                {
+                  "label": "Cleanthes — Zeus piloting the cosmos by Law",
+                  "note": "The Stoic providence at its source, which Epicurean atomism abolishes (Long & Sedley 1987, §54).",
+                  "textId": "cleanthes-hymn"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "I (Substance Is Eternal, cont.)",
+          "text": "Confess then, naught from nothing can become, / Since all must have their seeds, wherefrom to grow, / Wherefrom to reach the gentle fields of air.",
+          "textVersions": {
+            "leonard": "Confess then, naught from nothing can become, / Since all must have their seeds, wherefrom to grow, / Wherefrom to reach the gentle fields of air."
+          },
+          "entities": [
+            {
+              "word": "all must have their seeds",
+              "node": "evolutionary-cosmogony",
+              "type": "theme",
+              "note": "The positive form of the axiom: each thing grows from determinate material 'seeds' (semina / primordia), which is why like always breeds like — a mechanistic emergence of forms from matter rather than a creation. Sedley (1998) reads this seed-principle as Lucretius's substitute for cosmogonic creation.",
+              "parallels": [
+                {
+                  "label": "Marcus Aurelius — the providential 'nature of the whole'",
+                  "note": "Stoic nature is a rational, providential whole; Lucretian 'nature' is blind seed-and-atom causation. Long & Sedley (1987) contrast the two senses of physis.",
+                  "textId": "meditations-marcus-aurelius"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Book I — Nothing Exists per se Except Atoms and the Void",
+      "verses": [
+        {
+          "ref": "I (Atoms and the Void)",
+          "text": "All nature, then, as self-sustained, consists / Of twain of things: of bodies and of void / In which they're set, and where they're moved around.",
+          "textVersions": {
+            "leonard": "All nature, then, as self-sustained, consists / Of twain of things: of bodies and of void / In which they're set, and where they're moved around."
+          },
+          "entities": [
+            {
+              "word": "bodies and of void",
+              "node": "epicurus",
+              "type": "person",
+              "note": "The core Epicurean ontology — the universe is exhaustively atoms (bodies) and void (the inane) — transmitted from Epicurus, whom Lucretius names as his master and whose lost On Nature this poem expounds. The epicurus node records Lucretius's De Rerum Natura as the full poetic exposition of Epicurean physics. Long & Sedley (1987, §§5–6) give the Epicurean atoms-and-void doctrine.",
+              "parallels": [
+                {
+                  "label": "Marcus Aurelius — 'one substance... one law'",
+                  "note": "Stoic monism (one continuous pneuma-pervaded substance) versus Epicurean dualism of atoms-and-void; the foundational physical disagreement. Long & Sedley (1987).",
+                  "textId": "meditations-marcus-aurelius"
+                }
+              ]
+            },
+            {
+              "word": "void",
+              "node": "free-will-vs-determinism",
+              "type": "theme",
+              "note": "The void is not only ontological room but the space within which Epicurean physics later locates the atomic 'swerve' (clinamen) — the minimal indeterminacy that, in Book II, breaks strict fate and saves freedom of action. Sedley (1998) and Long & Sedley (1987, §20) treat the swerve as Epicurus's answer to the determinism the Stoics embraced.",
+              "parallels": [
+                {
+                  "label": "Marcus Aurelius / Stoic providence-and-fate",
+                  "note": "The Stoics accept an unbroken causal fate (heimarmene) inside providence; Epicureans introduce the swerve to escape it. Long & Sedley (1987, §§20, 55) stage the debate over fate and freedom.",
+                  "textId": "meditations-marcus-aurelius"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Book III — The Soul Is Mortal",
+      "verses": [
+        {
+          "ref": "III (The Soul Is Mortal)",
+          "text": "Now come: that thou mayst able be to know / That minds and the light souls of all that live / Have mortal birth and death, I will go on / Verses to build meet for thy rule of life... / First, then, since I have taught how soul exists / A subtle fabric, of particles minute, / Made up from atoms smaller much than those / Of water's liquid damp, or fog, or smoke, / So in mobility it far excels.",
+          "textVersions": {
+            "leonard": "Now come: that thou mayst able be to know / That minds and the light souls of all that live / Have mortal birth and death, I will go on / Verses to build meet for thy rule of life... / First, then, since I have taught how soul exists / A subtle fabric, of particles minute, / Made up from atoms smaller much than those / Of water's liquid damp, or fog, or smoke, / So in mobility it far excels."
+          },
+          "entities": [
+            {
+              "word": "Have mortal birth and death",
+              "node": "soul-immortality",
+              "type": "theme",
+              "note": "The thesis of Book III, stated against the immortality doctrine: mind and soul are born and die with the body. This entry surfaces the soul-immortality theme as the contrast it denies. Sedley (Lucretius and the Transformation of Greek Wisdom, 1998) reads Book III as Lucretius's polemic against Platonic psychic immortality.",
+              "parallels": [
+                {
+                  "label": "Plato, Phaedo — the soul is deathless and indissoluble",
+                  "note": "The exact doctrine Lucretius argues against; the Phaedo's incomposite immortal soul is the target of Book III's mortality proofs. Sedley (1998).",
+                  "textId": "phaedo"
+                }
+              ]
+            },
+            {
+              "word": "A subtle fabric, of particles minute, / Made up from atoms",
+              "node": "epicurus",
+              "type": "person",
+              "note": "The decisive Epicurean move: the soul itself is corporeal — a tissue of exceedingly fine, mobile atoms — so it cannot survive the body's dispersal. This materialist psychology descends from Epicurus's Letter to Herodotus. Long & Sedley (1987, §14) give the Epicurean account of the corporeal soul.",
+              "parallels": [
+                {
+                  "label": "Phaedo — soul as incomposite, not bodily",
+                  "note": "Plato makes the soul non-bodily and so indissoluble; Lucretius makes it bodily and so mortal — the head-on disagreement. Sedley (1998).",
+                  "textId": "phaedo"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Book III — Folly of the Fear of Death: death is nothing to us",
+      "verses": [
+        {
+          "ref": "III (Folly of the Fear of Death)",
+          "text": "Therefore death to us / Is nothing, nor concerns us in the least, / Since nature of mind is mortal evermore.",
+          "textVersions": {
+            "leonard": "Therefore death to us / Is nothing, nor concerns us in the least, / Since nature of mind is mortal evermore."
+          },
+          "entities": [
+            {
+              "word": "death to us / Is nothing",
+              "node": "soul-immortality",
+              "type": "theme",
+              "note": "The ethical payoff of the mortal-soul argument and the most famous line of the poem (nil igitur mors est ad nos): because the soul perishes, death is the absence of all sensation and so can be neither good nor evil to the one who no longer exists. It is the Epicurean dissolution of the fear that immortality-doctrines presuppose. Long & Sedley (1987, §24) and Sedley (1998) treat 'death is nothing to us' as the central Epicurean consolation.",
+              "parallels": [
+                {
+                  "label": "Plato, Phaedo — death frees the immortal soul",
+                  "note": "The Phaedo also calms the fear of death, but by the opposite route — the soul survives and is liberated. Lucretius reaches the same therapy by denying survival. Sedley (1998) sets the two consolations against each other.",
+                  "textId": "phaedo"
+                },
+                {
+                  "label": "Marcus Aurelius — Stoic equanimity before death within providence",
+                  "note": "Both schools aim at fearlessness before death, but the Stoic grounds it in providential cosmic Reason, the Epicurean in the soul's annihilation. Long & Sedley (1987) contrast the two routes to ataraxia.",
+                  "textId": "meditations-marcus-aurelius"
+                }
+              ]
+            },
+            {
+              "word": "nature of mind is mortal evermore",
+              "node": "free-will-vs-determinism",
+              "type": "theme",
+              "note": "The conclusion ties Book III back to the physics: since the mind is mortal atoms in motion (and, by the swerve, not wholly fate-bound), the good life is one freed from religious dread and the dread of death — Epicurean ethics resting on Epicurean physics. Sedley (1998) reads the poem as a unified physics-into-ethics argument.",
+              "parallels": [
+                {
+                  "label": "Marcus Aurelius / Stoic fate and providence",
+                  "note": "Where Lucretius grounds freedom in the atomic swerve, the Stoic accepts fate and finds freedom only in assent to providence; the rival solutions to determinism. Long & Sedley (1987, §§20, 55, 62).",
+                  "textId": "meditations-marcus-aurelius"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
+
+// -- Psalm 90:1–12 (Lord, thou hast been our dwelling place — divine eternity and human transience) --
+SCRIPTURE_TEXTS['psalm-90'] = {
+  "id": "psalm-90",
+  "title": "Psalm 90:1–12 (Lord, thou hast been our dwelling place — divine eternity and human transience)",
+  "shortTitle": "Psalm 90",
+  "corpus": "Hebrew Bible (Psalms)",
+  "tradId": "tradition-second-temple-judaism",
+  "date": "Superscription ascribes it to Moses; in present form a wisdom-tinged communal lament, c. 6th–4th century BCE",
+  "docNode": "phase-2-005-davidic-psalms",
+  "language": "Hebrew · King James Version (1611). Verse text verbatim from the public-domain KJV (per the aruljohn/Bible-kjv public-domain KJV text, the same corpus source as the staged psalm-104 entry); wording is unaltered.",
+  "translations": [
+    {
+      "id": "kjv",
+      "label": "KJV (1611)",
+      "note": "King James Version — public domain"
+    }
+  ],
+  "intro": "Psalm 90 is the only Psalm the superscription ascribes to Moses, and the Psalter's deepest meditation on time. It sets the absolute eternity of God (\"from everlasting to everlasting, thou art God\") against the radical brevity of human life: a thousand years are to God \"but as yesterday when it is past,\" while mortals are swept off like a flood, withering like grass, their span \"threescore years and ten.\" Its closing petition — \"teach us to number our days, that we may apply our hearts unto wisdom\" — turns the contemplation of transience into the root of practical wisdom (Chokhmah), the same move the wisdom books make. The contrast is sharp against cyclical-time cosmologies: where Hindu yuga theology and Greco-Stoic eternal recurrence dissolve the individual into recurring ages, Psalm 90 holds a linear, irreversible human life under a single eternal God. The verse \"a thousand years in thy sight are but as yesterday\" is consciously reused in 2 Peter 3:8 to relativise the delay of the eschaton — the clearest New Testament re-deployment of the Psalm's time-scale (so Gunkel 1933; Day 1990).",
+  "crossTradition": [
+    {
+      "label": "Ecclesiastes 1 — one generation passeth, the earth abideth",
+      "note": "The Psalter's nearest companion on transience: Qohelet's 'one generation passeth away, and another generation cometh' (Eccl 1:4) is the wisdom-book pole of Psalm 90's 'thou carriest them away as with a flood... as grass which groweth up.' Both set the permanence of a ground (the earth / the eternal God) against the passing of human generations, and both make that recognition the root of practical living rather than despair (Crenshaw 1987; Day 1990).",
+      "textId": "ecclesiastes-1"
+    },
+    {
+      "label": "Psalm 104 — the Creator's ordered relation to time and creation",
+      "note": "The companion creation-Psalm: where Psalm 104 surveys an ordered cosmos in which YHWH 'appointed the moon for seasons' and feeds every creature in its time, Psalm 90 views the same God from the underside of mortal time, measuring human brevity against divine permanence. Two faces of the one Creator's relation to time (Day 1990).",
+      "textId": "psalm-104"
+    },
+    {
+      "label": "Bhagavad-Gita 4.7–8 — the divine across the cosmic ages",
+      "note": "A pointed contrast rather than an equation. Krishna descends 'from age to age' (yuga to yuga) across recurring cosmic cycles; Psalm 90's God is unchanging 'from everlasting to everlasting' over a single linear span in which each human life passes once and does not return. The same vast time-scale, opposite cosmologies of time — cyclic divine descent vs. one eternal God over irreversible history (Zaehner 1969; Eliade 1949 on cyclic vs. linear time).",
+      "textId": "bhagavad-gita-4"
+    },
+    {
+      "label": "Tao Te Ching 1 — the enduring ground beneath passing things",
+      "note": "Laozi's nameless, constant Tao from which the ten thousand named things flow and to which they return is the Chinese analogue of Psalm 90's permanent God against whom transient generations are measured. A structural convergence on the contrast of an abiding ground and fleeting particulars, not a transmission (so the comparative reading in Eliade 1949).",
+      "textId": "tao-te-ching-1"
+    },
+    {
+      "label": "2 Peter 3:8 — 'one day is with the Lord as a thousand years'",
+      "note": "Not yet staged. The clearest New Testament reuse of Psalm 90:4: 2 Peter inverts and applies the Psalm's time-scale ('one day is with the Lord as a thousand years, and a thousand years as one day') to relativise the apparent delay of the Last Day. The direct textual dependence is widely recognised (Bauckham 1983)."
+    }
+  ],
+  "sections": [
+    {
+      "heading": "From everlasting to everlasting, thou art God",
+      "verses": [
+        {
+          "ref": "90:1",
+          "text": "Lord, thou hast been our dwelling place in all generations.",
+          "textVersions": {
+            "kjv": "Lord, thou hast been our dwelling place in all generations."
+          },
+          "entities": [
+            {
+              "word": "Lord",
+              "node": "yahweh",
+              "type": "deity",
+              "note": "The Hebrew here is Adonai ('Lord'), addressing YHWH, the God of Israel — invoked not as combatant or storm-god but as the abiding 'dwelling place' (ma'on) of every generation, the fixed point against which human transience is measured.",
+              "parallels": [
+                {
+                  "label": "Aten (Egyptian)",
+                  "note": "The sole god of Akhenaten's hymn, the constant sun under whom the generations of creatures live and die — a structural analogue to YHWH as the permanence beneath passing life (Assmann 1995)."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "90:2",
+          "text": "Before the mountains were brought forth, or ever thou hadst formed the earth and the world, even from everlasting to everlasting, thou art God.",
+          "textVersions": {
+            "kjv": "Before the mountains were brought forth, or ever thou hadst formed the earth and the world, even from everlasting to everlasting, thou art God."
+          },
+          "entities": [
+            {
+              "word": "from everlasting to everlasting, thou art God",
+              "node": "yahweh",
+              "type": "deity",
+              "note": "The clearest Hebrew statement of divine eternity (me'olam ad olam) — God's existence brackets the whole of created time, preceding even the mountains and the earth. This unbounded, non-cyclical eternity is the axis of the whole Psalm (Gunkel 1933).",
+              "parallels": [
+                {
+                  "label": "Eternal return / cyclical time (Greco-Indian)",
+                  "note": "Psalm 90 is the counterpole to cyclical-time cosmology: it affirms a single God 'from everlasting to everlasting' over irreversible, linear history, against the recurring world-ages of Stoic ekpyrosis and Hindu yuga theology that Eliade groups as 'the myth of the eternal return' (Eliade 1949)."
+                },
+                {
+                  "label": "Brahman, the unborn ground (Vedantic)",
+                  "note": "The Gita's Krishna-Brahman is likewise 'unborn' and beyond the cosmic ages; the contrast with Psalm 90 is that the Vedic eternal manifests cyclically across yugas, where the Hebrew eternal stands over a once-only linear span (Zaehner 1969).",
+                  "textId": "bhagavad-gita-4"
+                }
+              ]
+            },
+            {
+              "word": "thou hadst formed the earth and the world",
+              "node": "yahweh",
+              "type": "deity",
+              "note": "YHWH as sole creator of earth and inhabited world (tevel), the same demythologised creator of Genesis 1 and Psalm 104 — creation here functions to mark the temporal limit before which only God existed.",
+              "parallels": [
+                {
+                  "label": "Genesis 1 — God before the formless earth",
+                  "note": "The Priestly creation by fiat; Psalm 90 presupposes the same demythologised Creator who precedes the ordered world (Gunkel 1895; Day 1990).",
+                  "textId": "genesis-1"
+                },
+                {
+                  "label": "Psalm 104 — the Creator who founded the earth",
+                  "note": "The companion creation-hymn whose God 'laid the foundations of the earth' is the same eternal founder Psalm 90 sets before all created time (Day 1990).",
+                  "textId": "psalm-104"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "90:3",
+          "text": "Thou turnest man to destruction; and sayest, Return, ye children of men.",
+          "textVersions": {
+            "kjv": "Thou turnest man to destruction; and sayest, Return, ye children of men."
+          },
+          "entities": [
+            {
+              "word": "Thou turnest man to destruction",
+              "node": "yahweh",
+              "type": "deity",
+              "note": "God returns mortals to dust (the Hebrew dakka, 'crushed thing,' echoing 'dust thou art' of Gen 3:19) — the divine word that opened human life now speaks its dissolution; the same God who is the dwelling-place is the one who ends each generation.",
+              "parallels": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "A thousand years are but as yesterday",
+      "verses": [
+        {
+          "ref": "90:4",
+          "text": "For a thousand years in thy sight are but as yesterday when it is past, and as a watch in the night.",
+          "textVersions": {
+            "kjv": "For a thousand years in thy sight are but as yesterday when it is past, and as a watch in the night."
+          },
+          "entities": [
+            {
+              "word": "a thousand years in thy sight are but as yesterday when it is past",
+              "node": "yahweh",
+              "type": "deity",
+              "note": "The Psalm's signature relativising of time: against God's eternity even a millennium collapses to a single passed day or a night-watch. The verse is consciously re-deployed in 2 Peter 3:8 ('one day is with the Lord as a thousand years') to defuse the apparent delay of the eschaton — the clearest NT use of the Psalm's time-scale (Bauckham 1983; Gunkel 1933).",
+              "parallels": [
+                {
+                  "label": "Ecclesiastes 1 — the passing of generations",
+                  "note": "Qohelet measures human toil against the abiding earth; Psalm 90 measures human time against the abiding God. Two wisdom statements of the same disproportion between human and cosmic time-scales (Crenshaw 1987).",
+                  "textId": "ecclesiastes-1"
+                },
+                {
+                  "label": "Eternal return — the dissolution of the moment in cosmic time",
+                  "note": "Where Eliade's cyclic cosmologies make every moment a repetition that abolishes profane duration, Psalm 90 shrinks all human duration before a non-repeating divine eternity — same disproportion, opposite metaphysics of time (Eliade 1949)."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "90:5",
+          "text": "Thou carriest them away as with a flood; they are as a sleep: in the morning they are like grass which groweth up.",
+          "textVersions": {
+            "kjv": "Thou carriest them away as with a flood; they are as a sleep: in the morning they are like grass which groweth up."
+          },
+          "entities": [
+            {
+              "word": "like grass which groweth up",
+              "node": "yahweh",
+              "type": "deity",
+              "note": "The grass-simile for human transience (also Ps 103:15, Isa 40:6–8) — the standard Hebrew image of mortal brevity, here governed by the God who 'carries them away.' The flood-image recalls the chaos-waters now reduced to a figure for time sweeping life off.",
+              "parallels": [
+                {
+                  "label": "Isaiah 40:6–8 — all flesh is grass",
+                  "note": "The Deutero-Isaianic 'all flesh is grass... the grass withereth' is the prophetic twin of Psalm 90's grass-simile; both contrast withering humanity with the enduring word/eternity of God (Day 1990)."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "90:6",
+          "text": "In the morning it flourisheth, and groweth up; in the evening it is cut down, and withereth.",
+          "textVersions": {
+            "kjv": "In the morning it flourisheth, and groweth up; in the evening it is cut down, and withereth."
+          },
+          "entities": []
+        }
+      ]
+    },
+    {
+      "heading": "Teach us to number our days",
+      "verses": [
+        {
+          "ref": "90:9",
+          "text": "For all our days are passed away in thy wrath: we spend our years as a tale that is told.",
+          "textVersions": {
+            "kjv": "For all our days are passed away in thy wrath: we spend our years as a tale that is told."
+          },
+          "entities": [
+            {
+              "word": "we spend our years as a tale that is told",
+              "node": "yahweh",
+              "type": "deity",
+              "note": "Human life is likened to a fleeting 'tale' or sigh (Hebrew hegeh, a murmur/moan) — the brevity-motif at its most poignant, the years exhaled and gone. The image is the lament-pole of the same impermanence Ecclesiastes calls hevel (vapor).",
+              "parallels": [
+                {
+                  "label": "Ecclesiastes 1 — all is vapor (hevel)",
+                  "note": "Qohelet's hevel ('breath/vapor') and Psalm 90's life as a murmured 'tale' name the same insubstantiality of human existence; the wisdom-tradition's shared vocabulary of transience (Crenshaw 1987).",
+                  "textId": "ecclesiastes-1"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "90:10",
+          "text": "The days of our years are threescore years and ten; and if by reason of strength they be fourscore years, yet is their strength labour and sorrow; for it is soon cut off, and we fly away.",
+          "textVersions": {
+            "kjv": "The days of our years are threescore years and ten; and if by reason of strength they be fourscore years, yet is their strength labour and sorrow; for it is soon cut off, and we fly away."
+          },
+          "entities": [
+            {
+              "word": "threescore years and ten",
+              "node": "yahweh",
+              "type": "deity",
+              "note": "The proverbial human lifespan — seventy years, eighty 'by reason of strength' — set as a fixed, short measure under the eternal God. The numbering of the span sets up the closing petition to 'number our days.'",
+              "parallels": []
+            }
+          ]
+        },
+        {
+          "ref": "90:12",
+          "text": "So teach us to number our days, that we may apply our hearts unto wisdom.",
+          "textVersions": {
+            "kjv": "So teach us to number our days, that we may apply our hearts unto wisdom."
+          },
+          "entities": [
+            {
+              "word": "apply our hearts unto wisdom",
+              "node": "wisdom-as-cosmic-order",
+              "type": "theme",
+              "note": "The Psalm's resolution: contemplating mortality yields Chokhmah — practical wisdom, the disciplined ordering of a short life under God. This is the sapiential Chokhmah of the wisdom books, the Hebrew member of the cross-cultural 'wisdom as cosmic/moral order' family (Ma'at, Rita/Dharma, Asha, the Logos), not the personified Sophia hypostasis (Crenshaw 1981; von Rad 1972).",
+              "parallels": [
+                {
+                  "label": "Ecclesiastes 1 — wisdom in the face of impermanence",
+                  "note": "Both Psalm 90 and Qohelet turn the recognition of transience toward wisdom and right living rather than despair — the characteristic wisdom-tradition response to mortality (Crenshaw 1987).",
+                  "textId": "ecclesiastes-1"
+                },
+                {
+                  "label": "Ma'at / Rita / Dharma / Asha — wisdom as cosmic-moral order",
+                  "note": "The Hebrew Chokhmah of 'apply our hearts unto wisdom' belongs to the same Near-Eastern and Indo-Iranian family of a wisdom that is the right ordering of life in accord with the cosmic-moral order — Egyptian Ma'at, Vedic Rita, Zoroastrian Asha, Heraclitean Logos (von Rad 1972; Assmann 1990 on Ma'at)."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
+
+// -- Malachi 3:1–3; 4:1–6 (The messenger of the covenant; the Sun of righteousness; the return of Elijah) --
+SCRIPTURE_TEXTS['malachi-3-4'] = {
+  "id": "malachi-3-4",
+  "title": "Malachi 3:1–3; 4:1–6 (The messenger of the covenant; the Sun of righteousness; the return of Elijah)",
+  "shortTitle": "Malachi 3–4",
+  "corpus": "Hebrew Bible (Latter Prophets · Book of the Twelve · Malachi)",
+  "tradId": "tradition-second-temple-judaism",
+  "date": "c. 460–430 BCE (post-exilic, the close of the Book of the Twelve)",
+  "docNode": "document-malachi",
+  "language": "Hebrew · King James Version (1611)",
+  "translations": [
+    {
+      "id": "kjv",
+      "label": "KJV (1611)",
+      "note": "King James Version — public domain"
+    }
+  ],
+  "intro": "Malachi is the last book of the Hebrew prophetic canon, and these verses are its close — and so, in the received order, the last words of the Hebrew prophets before the four-century \"silence\" that ends in the New Testament. They braid three eschatological strands that later traditions would mine relentlessly: the sudden coming of a \"messenger of the covenant\" who clears the way of the LORD; the searching, refining \"day of his coming\" that none can abide; and the dawn of \"the Sun of righteousness\" with healing in his wings upon those who fear the divine name. The book then ends by naming the forerunner outright — \"I will send you Elijah the prophet before the coming of the great and dreadful day of the LORD.\" The messenger → John the Baptist → returning Elijah identification is the New Testament's own reading: Mark 1:2–3 opens the Gospel by quoting Malachi 3:1, and Jesus says of John \"this is Elias, which was for to come\" (Matthew 11:14). The honest cross-tradition picture here is intra-traditional transmission — Malachi feeding directly into Joel's and Amos's \"day of the LORD\" tradition and forward into Christian messianism — not independent convergence with distant pantheons.",
+  "crossTradition": [
+    {
+      "label": "Mark 1:1–15 — the Gospel opens by quoting Malachi 3:1",
+      "note": "Mark 1:2–3 splices Malachi 3:1 ('Behold, I send my messenger before thy face, which shall prepare thy way') with Isaiah 40:3, applying the 'messenger' directly to John the Baptist in the wilderness. The Gospel's very first scriptural citation is this verse — the structural hinge by which the New Testament claims Malachi's forerunner. Joel Marcus, Mark 1–8 (Anchor Yale, 2000), notes the conflated Malachi-Isaiah citation.",
+      "textId": "mark-1"
+    },
+    {
+      "label": "Joel 2:28–32 — the great and terrible day of the LORD",
+      "note": "Joel's post-exilic vision of cosmic portents heralding 'the great and the terrible day of the LORD' uses the same phrase Malachi 4:5 echoes ('the great and dreadful day of the LORD'). Both belong to the post-exilic 'day of the LORD' tradition catalogued by John J. Collins, The Apocalyptic Imagination (1998).",
+      "textId": "joel-2-28"
+    },
+    {
+      "label": "Amos 5:18–20 — the day as darkness, not light",
+      "note": "Amos inverts the popular hope: 'the day of the LORD is darkness, and not light' (Amos 5:18–20), turning judgment back on Israel itself. Malachi 4:1 ('the day cometh, that shall burn as an oven') inherits this scorching-judgment register. Gerhard von Rad, 'The Origin of the Concept of the Day of Yahweh' (JSS 1959), traces the development of the motif from Amos forward.",
+      "textId": "amos-5"
+    },
+    {
+      "label": "Matthew 11:14 — 'this is Elias, which was for to come'",
+      "note": "Jesus identifies John the Baptist as the returning Elijah of Malachi 4:5, completing the messenger → forerunner → Elijah chain. Dale Allison, The New Moses (1993) and his work on Elijah typology document the New Testament reception of Malachi's Elijah promise."
+    }
+  ],
+  "sections": [
+    {
+      "heading": "The messenger of the covenant and the refiner's fire (3:1–3)",
+      "verses": [
+        {
+          "ref": "3:1",
+          "text": "Behold, I will send my messenger, and he shall prepare the way before me: and the Lord, whom ye seek, shall suddenly come to his temple, even the messenger of the covenant, whom ye delight in: behold, he shall come, saith the LORD of hosts.",
+          "textVersions": {
+            "kjv": "Behold, I will send my messenger, and he shall prepare the way before me: and the Lord, whom ye seek, shall suddenly come to his temple, even the messenger of the covenant, whom ye delight in: behold, he shall come, saith the LORD of hosts."
+          },
+          "entities": [
+            {
+              "word": "messenger of the covenant",
+              "node": "covenant",
+              "type": "theme",
+              "note": "Hebrew mal'akh hab-berith — the 'messenger of the covenant', the figure who clears the way before YHWH. The phrase puns on the prophet's own name (mal'akhi, 'my messenger'). The covenant frame here is the Sinai bond whose obligations Malachi indicts Israel for breaking; the messenger comes to enforce and renew it. Andrew Hill, Malachi (Anchor Bible, 1998), treats the messenger-of-the-covenant crux.",
+              "parallels": [
+                {
+                  "label": "Mark 1:2 — 'I send my messenger before thy face'",
+                  "note": "The Gospel of Mark opens by quoting exactly this verse and applying the messenger to John the Baptist preparing the way of the Lord.",
+                  "textId": "mark-1"
+                }
+              ]
+            },
+            {
+              "word": "the Lord, whom ye seek, shall suddenly come to his temple",
+              "node": "yahweh",
+              "type": "deity",
+              "note": "YHWH himself ('the Lord') is the one who comes suddenly to the Temple — the theophany of the divine warrior-judge arriving for the day of reckoning. The post-exilic Second Temple is the stage. David L. Petersen, Zechariah 9–14 and Malachi (OTL, 1995), reads the sudden advent as judicial theophany.",
+              "parallels": [
+                {
+                  "label": "Joel 2:1 — the day of the LORD 'is nigh at hand'",
+                  "note": "The same imminent advent of YHWH for judgment that frames Joel's day-of-the-LORD oracle.",
+                  "textId": "joel-2-28"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "3:2",
+          "text": "But who may abide the day of his coming? and who shall stand when he appeareth? for he is like a refiner's fire, and like fullers' soap:",
+          "textVersions": {
+            "kjv": "But who may abide the day of his coming? and who shall stand when he appeareth? for he is like a refiner's fire, and like fullers' soap:"
+          },
+          "entities": [
+            {
+              "word": "the day of his coming",
+              "node": "end-times-judgment",
+              "type": "theme",
+              "note": "'The day of his coming' is Malachi's form of the prophetic Day of the LORD — here a day of testing no one can endure. John J. Collins, The Apocalyptic Imagination (1998), and von Rad (JSS 1959) trace this 'day' motif from the pre-exilic prophets through the post-exilic books into apocalyptic eschatology.",
+              "parallels": [
+                {
+                  "label": "Amos 5:18–20 — the day as darkness",
+                  "note": "Amos first inverts the day of the LORD into judgment on Israel; Malachi's 'who may abide the day' inherits that unbearable-judgment register.",
+                  "textId": "amos-5"
+                },
+                {
+                  "label": "Joel 2:11 — 'the day of the LORD is great and very terrible; and who can abide it?'",
+                  "note": "Joel 2:11 poses nearly the identical rhetorical question ('who can abide it?'), placing Malachi and Joel in one post-exilic day-of-the-LORD stream.",
+                  "textId": "joel-2-28"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "3:3",
+          "text": "And he shall sit as a refiner and purifier of silver: and he shall purify the sons of Levi, and purge them as gold and silver, that they may offer unto the LORD an offering in righteousness.",
+          "textVersions": {
+            "kjv": "And he shall sit as a refiner and purifier of silver: and he shall purify the sons of Levi, and purge them as gold and silver, that they may offer unto the LORD an offering in righteousness."
+          },
+          "entities": [
+            {
+              "word": "refiner and purifier of silver",
+              "node": "end-times-judgment",
+              "type": "theme",
+              "note": "The eschatological judgment is figured as metallurgical refining — the day that purges rather than annihilates the faithful. The smelting image recurs across the prophetic judgment tradition (cf. Zechariah 13:9, Isaiah 1:25). Petersen (OTL, 1995) discusses the refining-of-the-Levites motif.",
+              "parallels": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "The day that burns; the Sun of righteousness (4:1–3)",
+      "verses": [
+        {
+          "ref": "4:1",
+          "text": "For, behold, the day cometh, that shall burn as an oven; and all the proud, yea, and all that do wickedly, shall be stubble: and the day that cometh shall burn them up, saith the LORD of hosts, that it shall leave them neither root nor branch.",
+          "textVersions": {
+            "kjv": "For, behold, the day cometh, that shall burn as an oven; and all the proud, yea, and all that do wickedly, shall be stubble: and the day that cometh shall burn them up, saith the LORD of hosts, that it shall leave them neither root nor branch."
+          },
+          "entities": [
+            {
+              "word": "the day cometh, that shall burn as an oven",
+              "node": "end-times-judgment",
+              "type": "theme",
+              "note": "The day of the LORD as incinerating fire that leaves the wicked 'neither root nor branch' — the fiery-judgment pole of the motif. Collins (1998) places this burning-day imagery within the trajectory toward later apocalyptic conflagration.",
+              "parallels": [
+                {
+                  "label": "Joel 2:30 — 'blood, and fire, and pillars of smoke'",
+                  "note": "Joel's cosmic-fire portents herald the same great and terrible day; the two post-exilic prophets share the conflagration imagery.",
+                  "textId": "joel-2-28"
+                },
+                {
+                  "label": "Amos 5:18 — 'darkness, and not light'",
+                  "note": "Both Amos and Malachi turn the day against the complacent; Amos as darkness, Malachi as devouring fire.",
+                  "textId": "amos-5"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "4:2",
+          "text": "But unto you that fear my name shall the Sun of righteousness arise with healing in his wings; and ye shall go forth, and grow up as calves of the stall.",
+          "textVersions": {
+            "kjv": "But unto you that fear my name shall the Sun of righteousness arise with healing in his wings; and ye shall go forth, and grow up as calves of the stall."
+          },
+          "entities": [
+            {
+              "word": "the Sun of righteousness arise with healing in his wings",
+              "node": "sun-disk",
+              "type": "symbol",
+              "note": "Hebrew shemesh tsedaqah — the 'Sun of righteousness' rising with healing 'in his wings' (kanaph, also 'rays/skirts'). The 'winged sun' is one of the most widely attested ancient Near Eastern royal-solar emblems — the winged sun-disk of Egypt and Assyria — and most commentators read Malachi as drawing on that shared solar iconography of life-giving, healing radiance for the dawn of vindication. The honest claim is shared regional iconography (the winged-disk emblem), not a borrowed deity: Malachi has demythologized the sun into a metaphor for YHWH's saving justice. John M. P. Smith, Malachi (ICC, 1912), and Andrew Hill, Malachi (Anchor Bible, 1998), discuss the winged-sun-disk background; the symbol node sun-disk catalogues the Aten/Sol Invictus/Christ-halo continuity.",
+              "parallels": [
+                {
+                  "label": "Egyptian/Assyrian winged sun-disk",
+                  "note": "The winged solar disk (Egyptian Behdety; Assyrian Shamash emblem) is the iconographic source of the 'sun with wings' image; Othmar Keel & Christoph Uehlinger, Gods, Goddesses, and Images of God in Ancient Israel (1998), document the winged-disk's diffusion into Israelite imagery."
+                },
+                {
+                  "label": "Christ as the rising sun — Luke 1:78 anatolē",
+                  "note": "The Benedictus calls the messiah 'the dayspring (anatolē, the rising sun) from on high' (Luke 1:78), and later Christian tradition read Malachi's Sun of righteousness as Christ; the Sol-Invictus-to-Christ solar continuity is documented by Steven Hijmans, 'Sol Invictus, the Winter Solstice, and the Origins of Christmas' (2003), and Robin Jensen, The Cross (2017). [not staged]"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "4:3",
+          "text": "And ye shall tread down the wicked; for they shall be ashes under the soles of your feet in the day that I shall do this, saith the LORD of hosts.",
+          "textVersions": {
+            "kjv": "And ye shall tread down the wicked; for they shall be ashes under the soles of your feet in the day that I shall do this, saith the LORD of hosts."
+          },
+          "entities": []
+        }
+      ]
+    },
+    {
+      "heading": "Remember the law; behold, I send Elijah (4:4–6)",
+      "verses": [
+        {
+          "ref": "4:4",
+          "text": "Remember ye the law of Moses my servant, which I commanded unto him in Horeb for all Israel, with the statutes and judgments.",
+          "textVersions": {
+            "kjv": "Remember ye the law of Moses my servant, which I commanded unto him in Horeb for all Israel, with the statutes and judgments."
+          },
+          "entities": [
+            {
+              "word": "the law of Moses my servant",
+              "node": "covenant",
+              "type": "theme",
+              "note": "The closing exhortation grounds the eschatological hope in the Sinai (Horeb) covenant law of Moses — binding the day of the LORD to covenant fidelity. Many scholars (e.g. Petersen, OTL 1995) read 4:4–6 as an editorial colophon framing the whole Book of the Twelve between Torah (Moses) and prophecy (Elijah).",
+              "parallels": []
+            }
+          ]
+        },
+        {
+          "ref": "4:5",
+          "text": "Behold, I will send you Elijah the prophet before the coming of the great and dreadful day of the LORD:",
+          "textVersions": {
+            "kjv": "Behold, I will send you Elijah the prophet before the coming of the great and dreadful day of the LORD:"
+          },
+          "entities": [
+            {
+              "word": "Elijah the prophet",
+              "node": "elijah-prophet",
+              "type": "person",
+              "note": "Elijah — the 9th-century prophet taken up alive in a chariot of fire (2 Kings 2:11) and therefore expected to return — is named as the forerunner of the day of the LORD. This single verse generates the entire later Elijah-as-forerunner tradition: the empty chair at the Passover seder, and the New Testament identification of John the Baptist as the returning Elijah. Dale Allison's work on Elijah typology documents the reception.",
+              "parallels": [
+                {
+                  "label": "Mark 1:2–6; 9:11–13 — John the Baptist as the returning Elijah",
+                  "note": "Mark opens with the Malachi 3:1 messenger and dresses John in Elijah's hairy mantle and leather girdle (Mark 1:6 = 2 Kings 1:8); at 9:11–13 Jesus affirms 'Elias is indeed come.'",
+                  "textId": "mark-1"
+                },
+                {
+                  "label": "Matthew 11:14 — 'this is Elias, which was for to come'",
+                  "note": "Jesus explicitly identifies John with the Elijah of Malachi 4:5 — the most direct New Testament reception of this verse. Allison, The New Moses (1993)."
+                }
+              ]
+            },
+            {
+              "word": "the great and dreadful day of the LORD",
+              "node": "end-times-judgment",
+              "type": "theme",
+              "note": "Malachi's closing phrase — 'the great and dreadful day of the LORD' — is nearly identical to Joel's 'the great and the terrible day of the LORD' (Joel 2:31), and the two are the canonical bookends of the post-exilic day-of-the-LORD tradition. von Rad (JSS 1959); Collins (1998).",
+              "parallels": [
+                {
+                  "label": "Joel 2:31 — 'the great and the terrible day of the LORD'",
+                  "note": "The near-verbatim parallel phrase; Joel and Malachi share the post-exilic formulation of the day.",
+                  "textId": "joel-2-28"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "4:6",
+          "text": "And he shall turn the heart of the fathers to the children, and the heart of the children to their fathers, lest I come and smite the earth with a curse.",
+          "textVersions": {
+            "kjv": "And he shall turn the heart of the fathers to the children, and the heart of the children to their fathers, lest I come and smite the earth with a curse."
+          },
+          "entities": [
+            {
+              "word": "turn the heart of the fathers to the children",
+              "node": "messianism",
+              "type": "theme",
+              "note": "Elijah's restorative work — reconciling fathers and children before the day — is the reconciliation that averts the curse, and it became a core element of Jewish and Christian messianic-forerunner expectation (Sirach 48:10 expands it; Luke 1:17 applies it to John the Baptist). The Hebrew prophetic canon thus ends on a note of eschatological hope rather than judgment. James Charlesworth (ed.), The Messiah (1992), and Collins (1998) treat the forerunner's place in messianism.",
+              "parallels": [
+                {
+                  "label": "Luke 1:17 — John 'in the spirit and power of Elias'",
+                  "note": "The angel tells Zacharias that John will go before the Lord 'in the spirit and power of Elias, to turn the hearts of the fathers to the children' (Luke 1:17) — a direct citation of Malachi 4:6 applied to the Baptist. [not staged]"
+                },
+                {
+                  "label": "Mark 1 — the forerunner of the Messiah",
+                  "note": "Mark frames John's preparatory ministry as exactly this turning-of-hearts forerunner role opening the messianic age.",
+                  "textId": "mark-1"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
+
+// -- Taittiriya Upanishad 2.1–2.9 (Brahman as Reality, Knowledge, Infinity; the five sheaths and the bliss of Brahman) --
+SCRIPTURE_TEXTS['taittiriya-upanishad'] = {
+  "id": "taittiriya-upanishad",
+  "title": "Taittiriya Upanishad 2.1–2.9 (Brahman as Reality, Knowledge, Infinity; the five sheaths and the bliss of Brahman)",
+  "shortTitle": "Taittiriya Upanishad 2",
+  "corpus": "Hindu · Krishna Yajurveda · Taittiriya Aranyaka (Brahmananda Valli)",
+  "tradId": "tradition-vedic-hinduism",
+  "date": "c. 600–400 BCE (late Vedic / early Upanishadic period)",
+  "docNode": "phase-2-013-chandogya-upanishad",
+  "language": "Vedic Sanskrit · Robert Ernest Hume, The Thirteen Principal Upanishads (Oxford University Press, 1921) — public domain. Brahmananda Valli (Second Valli), First through Ninth Anuvakas.",
+  "translations": [
+    {
+      "id": "hume",
+      "label": "Hume 1921",
+      "note": "R.E. Hume, The Thirteen Principal Upanishads, 1921 — public domain"
+    }
+  ],
+  "intro": "The Second Valli of the Taittiriya Upanishad (the Brahmananda Valli, \"Chapter of the Bliss of Brahman\") is the most systematic Upanishadic anatomy of the self. It defines Brahman with the formula satyam jnanam anantam — \"the real, knowledge, the infinite\" — and then traces a nest of five selves or sheaths (later termed kosha): the self made of food (anna), of breath (prana), of mind (manas), of understanding (vijnana), and innermost of bliss (ananda). The bliss-self is the threshold of Brahman itself, \"wherefrom words turn back, together with the mind, not having attained.\" It is a foundational text of Vedanta and supplies the sat-cit-ananda (\"being–consciousness–bliss\") definition of the absolute that Advaita would canonize; Hume's own footnote records Deussen's proposal to read ananda for ananta precisely to surface that culminating thought.",
+  "crossTradition": [
+    {
+      "label": "Mundaka Upanishad — knowing Brahman, becoming Brahman",
+      "note": "The Taittiriya's innermost bliss-self, beyond mind and speech, is the same witnessing absolute the Mundaka reaches with brahma-vid brahmaiva bhavati ('the knower of Brahman becomes Brahman'). Hume (1921) and Deussen, Philosophy of the Upanishads, treat both as articulating the kosha-and-Self structure of Vedantic anthropology.",
+      "textId": "mundaka-upanishad"
+    },
+    {
+      "label": "Katha Upanishad — the Self seated in the heart",
+      "note": "The Taittiriya sets Brahman 'in the secret place [of the heart]'; the Katha likewise places the immortal Self (atman), 'smaller than the small, greater than the great,' seated in the heart of the creature. Deussen groups the two as the classic Yajurveda statements of the indwelling Self.",
+      "textId": "katha-upanishad"
+    },
+    {
+      "label": "Shvetashvatara Upanishad — the One God within",
+      "note": "Both texts move from an impersonal absolute toward an indwelling ground of fearlessness; the Shvetashvatara names the One God 'hidden in all beings,' the Taittiriya the bliss-Self that frees the knower from all fear. Radhakrishnan reads them as the theistic and the non-dual poles of the same Upanishadic theology.",
+      "textId": "shvetashvatara-upanishad"
+    },
+    {
+      "label": "Mandukya Upanishad — the four states and the silent Fourth",
+      "note": "The Taittiriya's bliss-self (ananda-maya), the deepest sheath beyond which words turn back, corresponds to the Mandukya's turiya, the silent 'Fourth' beyond waking, dream, and deep sleep. Hume (1921) and Deussen both link the bliss-sheath to the deep-sleep / turiya analysis of consciousness.",
+      "textId": "mandukya-upanishad"
+    },
+    {
+      "label": "Chandogya 6.2.1 — tat tvam asi and 'in the beginning, Being alone'",
+      "note": "Hume's footnote to Taittiriya 2.7 notes the cosmogony 'this world was non-existent; therefrom Being was produced' is expressly controverted at Chandogya 6.2.1–2, which insists 'in the beginning this was Being (sat) alone.' The two Upanishads stage the classic intra-Vedic debate over whether being arises from non-being.",
+      "textId": "chandogya-621"
+    },
+    {
+      "label": "Plotinus — emanation and the One beyond speech",
+      "note": "The Taittiriya's descent from Atman through space, wind, fire, water, earth to the human person, and the absolute 'wherefrom words turn back,' parallels the Plotinian procession from the One and its ineffability. Radhakrishnan and Deussen note the convergence; both stress it is a structural analogy of mystical metaphysics, not evidence of transmission."
+    }
+  ],
+  "sections": [
+    {
+      "heading": "First Anuvaka — Brahman as the Real, Knowledge, the Infinite; and the self of food (2.1)",
+      "verses": [
+        {
+          "ref": "2.1",
+          "text": "He who knows Brahma as the real (satya), as knowledge (jnana), as the infinite (ananta), set down in the secret place [of the heart], and in the highest heaven (parame vyoman), he obtains all desires, together with the intelligent (vipascit) Brahma.",
+          "textVersions": {
+            "hume": "He who knows Brahma as the real (satya), as knowledge (jnana), as the infinite (ananta), set down in the secret place [of the heart], and in the highest heaven (parame vyoman), he obtains all desires, together with the intelligent (vipascit) Brahma."
+          },
+          "entities": [
+            {
+              "word": "the real (satya), as knowledge (jnana), as the infinite (ananta)",
+              "node": "brahman-impersonal",
+              "type": "theme",
+              "note": "The formula satyam jnanam anantam brahma is the Taittiriya's definition of the impersonal absolute. Deussen, Philosophy of the Upanishads, treats it as the seed of the later sat-cit-ananda ('being, consciousness, bliss') definition of Brahman; Hume's own footnote at 2.1 records Deussen's proposal to emend ananta to ananda to yield that triad and introduce the chapter's culminating thought of bliss.",
+              "parallels": [
+                {
+                  "label": "Mundaka — the imperishable directly known",
+                  "note": "Both define Brahman apophatically as that by which all else becomes known; Hume (1921) groups them as the core Upanishadic Brahman-doctrine.",
+                  "textId": "mundaka-upanishad"
+                },
+                {
+                  "label": "Shvetashvatara — the One hidden in all",
+                  "note": "Radhakrishnan reads the Taittiriya's impersonal satya-jnana-ananta and the Shvetashvatara's personal 'One God' as the two poles of Upanishadic theology.",
+                  "textId": "shvetashvatara-upanishad"
+                }
+              ]
+            },
+            {
+              "word": "in the secret place [of the heart]",
+              "node": "divine-immanence",
+              "type": "theme",
+              "note": "Brahman is 'set down in the secret place,' the guha or cave of the heart — the Upanishadic topos of the absolute indwelling the creature. Deussen and Radhakrishnan note this immanence is what makes the later self-realization (the journey inward through the sheaths) possible.",
+              "parallels": [
+                {
+                  "label": "Katha — the Self seated in the heart",
+                  "note": "The Katha likewise places the immortal Self 'set in the secret place of the heart of the creature'; Deussen treats the two as the paired Yajurveda statements of the indwelling Self.",
+                  "textId": "katha-upanishad"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "2.1",
+          "text": "From this Soul (Atman), verily, space (akasa) arose; from space, wind (vayu); from wind, fire; from fire, water; from water, the earth; from the earth, herbs; from herbs, food; from food, semen; from semen, the person (purusa). This, verily, is the person that consists of the essence of food.",
+          "textVersions": {
+            "hume": "From this Soul (Atman), verily, space (akasa) arose; from space, wind (vayu); from wind, fire; from fire, water; from water, the earth; from the earth, herbs; from herbs, food; from food, semen; from semen, the person (purusa). This, verily, is the person that consists of the essence of food."
+          },
+          "entities": [
+            {
+              "word": "From this Soul (Atman), verily, space (akasa) arose",
+              "node": "non-duality",
+              "type": "theme",
+              "note": "The cosmos descends in graded steps from a single Atman down to the human person — an emanative monism in which the manifold proceeds from one ground. Deussen, Philosophy of the Upanishads, reads this five-element procession as the cosmological face of the same non-dualism the bliss-self expresses subjectively.",
+              "parallels": [
+                {
+                  "label": "Plotinus — procession from the One",
+                  "note": "Radhakrishnan and Deussen note the structural parallel to the Plotinian emanation of all things from the One; both flag it as convergence of mystical metaphysics, not transmission."
+                }
+              ]
+            },
+            {
+              "word": "the person that consists of the essence of food",
+              "node": "soul-immortality",
+              "type": "theme",
+              "note": "The outermost self is anna-maya, the self 'made of food' — the gross body, first of the five sheaths (pancha-kosha) the Vedantic tradition derives from this chapter. Deussen labels the series the classic Upanishadic doctrine of the wrappings (kosha) of the immortal Self; Shankara's Taittiriya-bhashya systematizes them.",
+              "parallels": [
+                {
+                  "label": "Katha — the Self within the perishable body",
+                  "note": "The Katha's contrast of the deathless Self and the mortal body is the two-term version of the Taittiriya's five-term sheath analysis (Radhakrishnan).",
+                  "textId": "katha-upanishad"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Second–Fifth Anuvakas — the selves of breath, mind, and understanding (2.2–2.5)",
+      "verses": [
+        {
+          "ref": "2.2",
+          "text": "Verily, other than and within that one that consists of the essence of food is the self that consists of breath. By that this is filled. This, verily, has the form of a person. The in-breath (prana) is its head; the diffused breath (vyana), the right wing; the out-breath (apana), the left wing; space, the body (atman); the earth, the lower part, the foundation.",
+          "textVersions": {
+            "hume": "Verily, other than and within that one that consists of the essence of food is the self that consists of breath. By that this is filled. This, verily, has the form of a person. The in-breath (prana) is its head; the diffused breath (vyana), the right wing; the out-breath (apana), the left wing; space, the body (atman); the earth, the lower part, the foundation."
+          },
+          "entities": [
+            {
+              "word": "the self that consists of breath",
+              "node": "soul-immortality",
+              "type": "theme",
+              "note": "The second sheath, prana-maya, the self of vital breath, lies 'other than and within' the food-self — the recurring formula (antara, 'within') that makes the five selves a concentric nest, each subtler self enclosed by the grosser. Hume (1921) and Deussen identify this 'within and other than' refrain as the structural signature of the kosha doctrine.",
+              "parallels": [
+                {
+                  "label": "Chandogya 6 — breath as the thread of life",
+                  "note": "The Chandogya likewise makes prana the binding life-principle; Deussen groups the breath-doctrines of the two Upanishads.",
+                  "textId": "chandogya-621"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "2.4",
+          "text": "Verily, other than and within that one that consists of breath is a self that consists of mind (mano-maya). By that this is filled. This, verily, has the form of a person. The Yajur-Veda is its head; the Rig-Veda, the right side; the Sama-Veda, the left side; teaching, the body (atman); the Hymns of the Atharvans and Angirases, the lower part, the foundation. As to that there is also this verse: Wherefrom words turn back, together with the mind, not having attained — the bliss of Brahma he who knows, fears not at any time at all.",
+          "textVersions": {
+            "hume": "Verily, other than and within that one that consists of breath is a self that consists of mind (mano-maya). By that this is filled. This, verily, has the form of a person. The Yajur-Veda is its head; the Rig-Veda, the right side; the Sama-Veda, the left side; teaching, the body (atman); the Hymns of the Atharvans and Angirases, the lower part, the foundation. As to that there is also this verse: Wherefrom words turn back, together with the mind, not having attained — the bliss of Brahma he who knows, fears not at any time at all."
+          },
+          "entities": [
+            {
+              "word": "a self that consists of mind (mano-maya)",
+              "node": "non-duality",
+              "type": "theme",
+              "note": "The third sheath, mano-maya, the self of mind, is built of the Vedas themselves — the mind formed by sacred utterance. Deussen notes the irony Hume also flags: even scripture is interior to the seeker, a sheath to be passed through, not the goal.",
+              "parallels": [
+                {
+                  "label": "Mundaka — Vedas as 'lower knowledge'",
+                  "note": "The Mundaka explicitly ranks the four Vedas as apara vidya ('lower knowledge'), below direct knowledge of Brahman; the Taittiriya makes the same move by placing the Veda-built mind as a mere sheath (Hume 1921).",
+                  "textId": "mundaka-upanishad"
+                }
+              ]
+            },
+            {
+              "word": "Wherefrom words turn back, together with the mind, not having attained",
+              "node": "brahman-impersonal",
+              "type": "theme",
+              "note": "This refrain (yato vaco nivartante) is the Taittiriya's apophatic core: Brahman is that from which speech and mind return, having failed to reach it. Deussen and Radhakrishnan read it as the classic Upanishadic statement of the absolute's ineffability; it recurs verbatim to close the Valli at 2.9.",
+              "parallels": [
+                {
+                  "label": "Mandukya — the silent Fourth (turiya)",
+                  "note": "The Mandukya's turiya, 'unutterable, the cessation of phenomena,' is the same speechless absolute; Hume (1921) links the bliss-self to the Mandukya's Fourth.",
+                  "textId": "mandukya-upanishad"
+                },
+                {
+                  "label": "Mundaka — not grasped by eye or speech",
+                  "note": "The Mundaka's 'not by the eye, not by speech is he grasped' is the same negation of all instrumental knowing (Deussen).",
+                  "textId": "mundaka-upanishad"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "2.4",
+          "text": "Verily, other than and within that one that consists of mind is a self that consists of understanding (vijnana-maya). By that this is filled. This, verily, has the form of a person. Faith (sraddha) is its head; the right (rta), the right side; the true (satya), the left side; contemplation (yoga), the body (atman); might (mahas), the lower part, the foundation.",
+          "textVersions": {
+            "hume": "Verily, other than and within that one that consists of mind is a self that consists of understanding (vijnana-maya). By that this is filled. This, verily, has the form of a person. Faith (sraddha) is its head; the right (rta), the right side; the true (satya), the left side; contemplation (yoga), the body (atman); might (mahas), the lower part, the foundation."
+          },
+          "entities": [
+            {
+              "word": "a self that consists of understanding (vijnana-maya)",
+              "node": "soul-immortality",
+              "type": "theme",
+              "note": "The fourth sheath, vijnana-maya, the self of discriminative understanding — the knowing, intentional subject, headed by faith and built of cosmic order (rta) and truth (satya). Deussen treats it as the intellectual self that 'directs the sacrifice,' the highest of the cognitive sheaths before bliss.",
+              "parallels": [
+                {
+                  "label": "Mandukya — prajna, the knowing self of deep sleep",
+                  "note": "The vijnana-self approaches the Mandukya's prajna; both name the deep cognitive self that is still not the final absolute (Radhakrishnan).",
+                  "textId": "mandukya-upanishad"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Sixth–Seventh Anuvakas — the self of bliss, and Being from non-being (2.6–2.7)",
+      "verses": [
+        {
+          "ref": "2.6",
+          "text": "Verily, other than and within that one that consists of understanding is a self that consists of bliss (ananda-maya). By that this is filled. That one, verily, has the form of a person. Pleasure (priya) is its head; delight (moda), the right side; great delight (pra-moda), the left side; bliss (ananda), the body (atman); Brahma, the lower part, the foundation.",
+          "textVersions": {
+            "hume": "Verily, other than and within that one that consists of understanding is a self that consists of bliss (ananda-maya). By that this is filled. That one, verily, has the form of a person. Pleasure (priya) is its head; delight (moda), the right side; great delight (pra-moda), the left side; bliss (ananda), the body (atman); Brahma, the lower part, the foundation."
+          },
+          "entities": [
+            {
+              "word": "a self that consists of bliss (ananda-maya)",
+              "node": "henosis",
+              "type": "theme",
+              "note": "The fifth and innermost sheath, ananda-maya, the self of bliss, has Brahman itself as its very foundation — the threshold at which the layered self opens into the absolute. Deussen, Philosophy of the Upanishads, calls this the culminating thought of the chapter and the textual root of the sat-cit-ananda formula; the bliss-self is where the knower's union with Brahman is consummated.",
+              "parallels": [
+                {
+                  "label": "Mundaka — 'the knower of Brahman becomes Brahman'",
+                  "note": "The bliss-self resolving into Brahman is the Taittiriya's version of the Mundaka's brahma-vid brahmaiva bhavati; Hume (1921) reads both as mystical identity, not mere proximity.",
+                  "textId": "mundaka-upanishad"
+                },
+                {
+                  "label": "Plotinus — henosis, union with the One",
+                  "note": "Radhakrishnan compares the bliss-self's grounding in Brahman to the Plotinian henosis; both present the term of the inward ascent as ineffable union, flagged as convergence rather than contact."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "2.6",
+          "text": "He desired: 'Would that I were many! Let me procreate myself!' He performed austerity. Having performed austerity, he created this whole world, whatever there is here. Having created it, into it, indeed, he entered.",
+          "textVersions": {
+            "hume": "He desired: 'Would that I were many! Let me procreate myself!' He performed austerity. Having performed austerity, he created this whole world, whatever there is here. Having created it, into it, indeed, he entered."
+          },
+          "entities": [
+            {
+              "word": "into it, indeed, he entered",
+              "node": "divine-immanence",
+              "type": "theme",
+              "note": "After creating the world the absolute 'enters' it — the Upanishadic warrant for divine immanence: the creator is interior to the creation, which is why the self-search through the sheaths arrives at Brahman within. Deussen and Radhakrishnan cite this 'tad srishtva tad evanupravishat' as the locus classicus of Vedantic immanence.",
+              "parallels": [
+                {
+                  "label": "Shvetashvatara — the One hidden in all beings",
+                  "note": "The Shvetashvatara's God 'concealed in all beings, pervading all' is the personal form of the same immanence the Taittiriya states impersonally (Radhakrishnan).",
+                  "textId": "shvetashvatara-upanishad"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "2.7",
+          "text": "In the beginning, verily, this [world] was non-existent. Therefrom, verily, Being (sat) was produced. That made itself a Soul (Atman). Therefore it is called the well-done (su-krta). Verily, what that well-done is—that, verily, is the essence (rasa) [of existence]. For truly, on getting the essence one becomes blissful. For who indeed would breathe, who would live, if there were not this bliss in space! For truly, this (essence) causes bliss. For truly, when one finds fearlessness as a foundation in that which is invisible, bodiless, undefined, non-based, then he has reached fearlessness.",
+          "textVersions": {
+            "hume": "In the beginning, verily, this [world] was non-existent. Therefrom, verily, Being (sat) was produced. That made itself a Soul (Atman). Therefore it is called the well-done (su-krta). Verily, what that well-done is—that, verily, is the essence (rasa) [of existence]. For truly, on getting the essence one becomes blissful. For who indeed would breathe, who would live, if there were not this bliss in space! For truly, this (essence) causes bliss. For truly, when one finds fearlessness as a foundation in that which is invisible, bodiless, undefined, non-based, then he has reached fearlessness."
+          },
+          "entities": [
+            {
+              "word": "In the beginning, verily, this [world] was non-existent. Therefrom, verily, Being (sat) was produced",
+              "node": "non-duality",
+              "type": "theme",
+              "note": "The Taittiriya derives Being (sat) from non-being (asat). Hume's footnote at 2.7 notes this very theory 'is controverted at Chandogya 6.2.1–2,' which insists being was there at the first — staging the famous intra-Upanishadic dispute over the priority of being or non-being.",
+              "parallels": [
+                {
+                  "label": "Chandogya 6.2 — 'Being alone was in the beginning'",
+                  "note": "The Chandogya expressly rejects the from-non-being cosmogony ('How could Being be produced from non-being?'); Hume (1921) and Deussen treat the two passages as the classic opposed answers.",
+                  "textId": "chandogya-621"
+                }
+              ]
+            },
+            {
+              "word": "this bliss in space",
+              "node": "henosis",
+              "type": "theme",
+              "note": "Bliss (ananda) is here cosmologized: it is the very condition of life and breath, 'fearlessness as a foundation' in the invisible and bodiless. Deussen reads this as the bridge from the bliss-sheath to the cosmic principle of bliss that grounds being itself.",
+              "parallels": [
+                {
+                  "label": "Mandukya — the blissful self of deep sleep (ananda-bhuk)",
+                  "note": "The Mandukya calls the deep-sleep self ananda-bhuk, 'the enjoyer of bliss'; Hume (1921) connects the Taittiriya bliss-principle to that analysis.",
+                  "textId": "mandukya-upanishad"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Eighth–Ninth Anuvakas — the calculus of blisses and the fearless knower (2.8–2.9)",
+      "verses": [
+        {
+          "ref": "2.8",
+          "text": "Through fear of Him the Wind (Vayu) doth blow. Through fear of Him the Sun (Surya) doth rise. Through fear of Him both Agni (Fire) and Indra and Death (Mrityu) as fifth do speed along. This is a consideration of bliss. Let there be a youth, a good youth, well read, very quick, very firm, very strong. Let this whole earth be full of wealth for him. That is one human bliss.",
+          "textVersions": {
+            "hume": "Through fear of Him the Wind (Vayu) doth blow. Through fear of Him the Sun (Surya) doth rise. Through fear of Him both Agni (Fire) and Indra and Death (Mrityu) as fifth do speed along. This is a consideration of bliss. Let there be a youth, a good youth, well read, very quick, very firm, very strong. Let this whole earth be full of wealth for him. That is one human bliss."
+          },
+          "entities": [
+            {
+              "word": "Through fear of Him the Wind (Vayu) doth blow",
+              "node": "brahman-impersonal",
+              "type": "theme",
+              "note": "The cosmos runs on 'fear' of Brahman — wind, sun, fire, Indra, and death all keep their order before it. Hume notes the stanza is 'very similar' to Katha 6.3; the same image makes Brahman the unmoved ground whose mere being commands cosmic regularity.",
+              "parallels": [
+                {
+                  "label": "Katha 6.3 — the gods speed in fear of the Imperishable",
+                  "note": "Hume's own footnote at Taittiriya 2.8 marks the near-identity with Katha 6.3; both make cosmic order an effect of awe before Brahman.",
+                  "textId": "katha-upanishad"
+                }
+              ]
+            },
+            {
+              "word": "This is a consideration of bliss",
+              "node": "henosis",
+              "type": "theme",
+              "note": "The mimamsa (consideration) of bliss multiplies a maximal human joy a hundredfold through ascending ranks of Gandharvas, ancestors, and gods up to the single 'bliss of Brahma' — and at every rung stands also 'a man versed in the scriptures and not smitten with desire.' Deussen reads the gradation as teaching that the desireless knower already possesses, here and now, the bliss of Brahman that crowns the cosmic hierarchy.",
+              "parallels": [
+                {
+                  "label": "Brihadaranyaka 4.3 — the hierarchy of blisses",
+                  "note": "Hume's footnote notes the parallel bliss-gradations at Brihadaranyaka 4.3.33; Deussen treats them as one Upanishadic doctrine of graded ananda."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "2.8–2.9",
+          "text": "He who knows this, on departing from this world, proceeds on to that self which consists of food, proceeds on to that self which consists of breath, proceeds on to that self which consists of mind, proceeds on to that self which consists of understanding, proceeds on to that self which consists of bliss. Wherefrom words turn back, together with the mind, not having attained — the bliss of Brahma he who knows, fears not from anything at all.",
+          "textVersions": {
+            "hume": "He who knows this, on departing from this world, proceeds on to that self which consists of food, proceeds on to that self which consists of breath, proceeds on to that self which consists of mind, proceeds on to that self which consists of understanding, proceeds on to that self which consists of bliss. Wherefrom words turn back, together with the mind, not having attained — the bliss of Brahma he who knows, fears not from anything at all."
+          },
+          "entities": [
+            {
+              "word": "proceeds on to that self which consists of bliss",
+              "node": "soul-immortality",
+              "type": "theme",
+              "note": "At death the knower passes inward and upward through all five selves to the bliss-self — the sheaths read as a graded ascent of the immortal Self to its own ground. Hume's note: 'in the self there are various selves, but the true knower must advance to the highest self.' Deussen makes this the soteriological payoff of the kosha doctrine.",
+              "parallels": [
+                {
+                  "label": "Katha — the Self that does not die with the body",
+                  "note": "The Katha's deathless Self surviving the body is the two-term form of this five-term ascent at death (Radhakrishnan).",
+                  "textId": "katha-upanishad"
+                }
+              ]
+            },
+            {
+              "word": "the bliss of Brahma he who knows, fears not from anything at all",
+              "node": "henosis",
+              "type": "theme",
+              "note": "The Valli closes by repeating its refrain (from 2.4) and adding that such a knower is no longer tormented by 'Why have I not done the good? Why have I done the evil?' — saved from both. Deussen reads this freedom from fear and from moral self-reproach as the ethical fruit of union with the bliss-Brahman; the chapter ends 'Such is the mystic doctrine (upanishad).'",
+              "parallels": [
+                {
+                  "label": "Mundaka — grief disappears when the witness is seen",
+                  "note": "The Mundaka's grieving bird whose 'grief disappears' on seeing the Lord parallels the Taittiriya knower freed from fear and self-reproach (Hume 1921).",
+                  "textId": "mundaka-upanishad"
+                },
+                {
+                  "label": "Mandukya — turiya, the cessation of all fear and plurality",
+                  "note": "The fearless bliss-Self answers to the Mandukya's turiya, 'the cessation of phenomena, tranquil, benign'; Hume (1921) connects the two.",
+                  "textId": "mandukya-upanishad"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
+
+// -- The Doctrine of the Mean (Zhongyong) 1, 20, 22, 25 — Sincerity (cheng) as the Way of Heaven --
+SCRIPTURE_TEXTS['doctrine-of-the-mean'] = {
+  "id": "doctrine-of-the-mean",
+  "title": "The Doctrine of the Mean (Zhongyong) 1, 20, 22, 25 — Sincerity (cheng) as the Way of Heaven",
+  "shortTitle": "Zhongyong (Mean)",
+  "corpus": "Confucian classics (Four Books · the Zhongyong, ch. 31 of the Liji)",
+  "tradId": "tradition-confucianism",
+  "date": "Warring States, c. 350–200 BCE (attrib. Zisi, Confucius's grandson); extracted from the Liji and canonized as one of the Four Books by Zhu Xi, 1190 CE",
+  "docNode": "phase-2-044-doctrine-of-the-mean-zhongyong",
+  "language": "Classical Chinese · English of James Legge, The Chinese Classics, Vol. I (2nd rev. ed., Oxford: Clarendon, 1893; first publ. 1861) — public domain. Verbatim from the ctext.org Legge digital edition of the Zhongyong.",
+  "translations": [
+    {
+      "id": "legge",
+      "label": "Legge (Chinese Classics)",
+      "note": "James Legge, The Chinese Classics vol. I (The Doctrine of the Mean) — public domain"
+    }
+  ],
+  "intro": "The Zhongyong (中庸, \"Doctrine of the Mean\" or \"Centrality and Commonality\"), one of the Confucian Four Books, is the classic statement of cheng (誠 — sincerity, integrity, authenticity, \"being-true\") as the hinge between the human and the cosmic. Its opening grounds human nature directly in Heaven (\"What Heaven has conferred is called The Nature\"), and its central chapters (20–26) make sincerity simultaneously a moral discipline for human beings and the very mode of operation of the cosmos: \"Sincerity is the way of Heaven.\" The person of perfect sincerity can develop fully not only his own nature but the nature of all creatures, and so \"assist the transforming and nourishing powers of Heaven and Earth\" and \"form a ternion\" with them. This is the Chinese cognate of the great cosmic-moral-order pattern — the order that elsewhere is called rta, dharma, ma'at, asha, or logos — but located in moral authenticity rather than in a divine fiat or a personified Wisdom. The parallels here are mostly convergence within the broad Axial-Age \"cosmic order is moral order\" intuition (Eliade, Tu Wei-ming), not literary transmission; the Daoist Dao the text invokes is a genuine intra-Chinese borrowing.",
+  "crossTradition": [
+    {
+      "label": "Analects of Confucius — the ethical-cosmic vision without the metaphysics",
+      "note": "Tu Wei-ming (Centrality and Commonality, 1989) argues the Zhongyong supplies the cosmological-metaphysical foundation that the Analects leaves implicit: Confucius teaches ren and li as a way of life and invokes Tian (Heaven) as its sanction, but the Zhongyong systematizes the link between human moral cultivation and the cosmic order under the single concept of cheng (sincerity).",
+      "textId": "confucius-analects"
+    },
+    {
+      "label": "Mengzi 2A.6 — the innate moral nature Heaven confers",
+      "note": "Tu Wei-ming and D.C. Lau both read the Zhongyong's xing (the Nature conferred by Heaven) alongside Mencius's xing shan (human nature is good): both texts ground ethics in a nature that is given, not constructed, and make cultivation the full development of an innate, Heaven-given endowment. The Zhongyong was traditionally ascribed to Zisi, Mencius's teacher's school.",
+      "textId": "mengzi-2a6"
+    },
+    {
+      "label": "Tao Te Ching 1 — the Dao the Zhongyong invokes",
+      "note": "The Zhongyong's 'an accordance with this nature is called The Path (Dao)' adopts the Daoist key-word dao (道, the Way) and bends it to a Confucian, moral sense — a genuine intra-Chinese borrowing rather than a coincidental parallel (Graham, Disputers of the Tao, 1989). Where the Tao Te Ching's Dao is nameless and trans-moral, the Zhongyong's Path is the moral way of Heaven made human.",
+      "textId": "tao-te-ching-1"
+    },
+    {
+      "label": "Wisdom as cosmic order — cheng as the Chinese cognate of rta / ma'at / logos",
+      "note": "The vault's 'wisdom-as-cosmic-order' theme groups the Axial-Age figures of a single cosmic-moral order: Vedic rta/dharma, Egyptian ma'at, Zoroastrian asha, Hebrew chokhmah, Heraclitean and Stoic logos. Cheng is the Confucian member of that family — the integrity that runs through both Heaven and the human heart. The parallel is structural convergence (Eliade, The Sacred and the Profane; Tu Wei-ming 1989), not transmission."
+    },
+    {
+      "label": "Heraclitus — the logos common to cosmos and reason",
+      "note": "Both cheng and the Heraclitean logos name a single ordering principle that is at once the structure of the cosmos and the norm the wise person must align with. The convergence is independent (no contact between Warring-States China and Ephesus); it is the Axial-Age intuition that the order of the world is also the order one ought to live by (Eliade; Jaspers, The Origin and Goal of History).",
+      "textId": "heraclitus-fragments"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "Chapter 1 — What Heaven confers is the Nature; the Path",
+      "verses": [
+        {
+          "ref": "Zhongyong 1",
+          "text": "What Heaven has conferred is called The Nature; an accordance with this nature is called The Path of duty; the regulation of this path is called Instruction.",
+          "textVersions": {
+            "legge": "What Heaven has conferred is called The Nature; an accordance with this nature is called The Path of duty; the regulation of this path is called Instruction."
+          },
+          "entities": [
+            {
+              "word": "What Heaven has conferred",
+              "node": "theme-mandate-of-heaven",
+              "type": "theme",
+              "note": "Tian (Heaven) is the source of human nature: the moral endowment is conferred from above, the same Tian that in the Shujing and Shijing confers and withdraws the dynastic Mandate (tianming). The Zhongyong universalizes the Mandate-of-Heaven logic from the ruler's legitimacy to every person's inner nature (Tu Wei-ming, Centrality and Commonality, 1989).",
+              "parallels": [
+                {
+                  "label": "Mengzi 2A.6 — the Heaven-given nature",
+                  "note": "Mencius likewise grounds the moral sprouts in a nature given by Heaven; D.C. Lau (Mencius, 1970) reads the two texts as a single Zisi–Mencius lineage on the innate, Heaven-conferred moral endowment.",
+                  "textId": "mengzi-2a6"
+                },
+                {
+                  "label": "Wisdom as cosmic order — order descending from the divine",
+                  "note": "That the moral law is conferred from a cosmic source, not invented by humans, is the shared premise of the rta/ma'at/asha/logos family (Eliade; Tu Wei-ming 1989)."
+                }
+              ]
+            },
+            {
+              "word": "an accordance with this nature is called The Path",
+              "node": "dao",
+              "type": "theme",
+              "note": "The 'Path' is dao (道, the Way): living in accordance with the Heaven-conferred nature. The Zhongyong borrows the Daoist key-word and gives it a moral sense — the Way is the human road that follows one's true nature (A.C. Graham, Disputers of the Tao, 1989).",
+              "parallels": [
+                {
+                  "label": "Tao Te Ching 1 — the eternal Dao",
+                  "note": "The same word dao, but the Daoist Dao is nameless and prior to morality, while the Zhongyong's Path is explicitly the moral way of Heaven; the contrast marks the Confucian appropriation of a Daoist term (Graham 1989).",
+                  "textId": "tao-te-ching-1"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Chapter 20 — Sincerity is the way of Heaven",
+      "verses": [
+        {
+          "ref": "Zhongyong 20",
+          "text": "Sincerity is the way of Heaven. The attainment of sincerity is the way of men. He who possesses sincerity is he who, without an effort, hits what is right, and apprehends, without the exercise of thought;-he is the sage who naturally and easily embodies the right way.",
+          "textVersions": {
+            "legge": "Sincerity is the way of Heaven. The attainment of sincerity is the way of men. He who possesses sincerity is he who, without an effort, hits what is right, and apprehends, without the exercise of thought;-he is the sage who naturally and easily embodies the right way."
+          },
+          "entities": [
+            {
+              "word": "Sincerity is the way of Heaven",
+              "node": "wisdom-as-cosmic-order",
+              "type": "theme",
+              "note": "Cheng (誠) is at once a moral quality of persons and the mode of operation of the cosmos: Heaven is sincere (it is reliably, integrally itself), and human beings become moral by attaining that same sincerity. This makes cheng the Confucian member of the cosmic-moral-order family — the Chinese cognate of rta, ma'at, asha, and logos (Tu Wei-ming, Centrality and Commonality, 1989).",
+              "parallels": [
+                {
+                  "label": "Heraclitus — the logos common to all",
+                  "note": "Both name one principle that is simultaneously the law of the cosmos and the norm of the wise person; the convergence is independent Axial-Age parallelism, not transmission (Eliade; Jaspers, The Origin and Goal of History).",
+                  "textId": "heraclitus-fragments"
+                },
+                {
+                  "label": "Wisdom as cosmic order — the order that is both cosmic and moral",
+                  "note": "The vault theme grouping rta/ma'at/asha/chokhmah/logos as a single 'the world's order is the moral order' intuition; cheng belongs to it (Tu Wei-ming 1989; Eliade)."
+                }
+              ]
+            },
+            {
+              "word": "The attainment of sincerity is the way of men",
+              "node": "confucius",
+              "type": "person",
+              "note": "The Confucian program of self-cultivation: where Heaven simply is sincere, human beings must attain sincerity through effort and learning. This is the Zhongyong's systematization of the Analects' teaching that virtue is cultivated, not innate-and-automatic (Tu Wei-ming 1989; D.C. Lau).",
+              "parallels": [
+                {
+                  "label": "Analects — cultivation of virtue",
+                  "note": "The Analects teaches that ren is achieved through disciplined practice; the Zhongyong supplies the metaphysical account of why such cultivation aligns the human with Heaven (Tu Wei-ming, Centrality and Commonality, 1989).",
+                  "textId": "confucius-analects"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Chapter 22 — The most complete sincerity assists Heaven and Earth",
+      "verses": [
+        {
+          "ref": "Zhongyong 22",
+          "text": "It is only he who is possessed of the most complete sincerity that can exist under heaven, who can give its full development to his nature. Able to give its full development to his own nature, he can do the same to the nature of other men. Able to give its full development to the nature of other men, he can give their full development to the natures of animals and things. Able to give their full development to the natures of creatures and things, he can assist the transforming and nourishing powers of Heaven and Earth. Able to assist the transforming and nourishing powers of Heaven and Earth, he may with Heaven and Earth form a ternion.",
+          "textVersions": {
+            "legge": "It is only he who is possessed of the most complete sincerity that can exist under heaven, who can give its full development to his nature. Able to give its full development to his own nature, he can do the same to the nature of other men. Able to give its full development to the nature of other men, he can give their full development to the natures of animals and things. Able to give their full development to the natures of creatures and things, he can assist the transforming and nourishing powers of Heaven and Earth. Able to assist the transforming and nourishing powers of Heaven and Earth, he may with Heaven and Earth form a ternion."
+          },
+          "entities": [
+            {
+              "word": "the most complete sincerity",
+              "node": "wisdom-as-cosmic-order",
+              "type": "theme",
+              "note": "Perfect cheng is cosmically efficacious: the fully sincere person does not merely behave well but participates in the cosmic process itself, completing the natures of all creatures. Cheng is thus not only ethics but cosmology — the human realization of the order that runs through Heaven and Earth (Tu Wei-ming, Centrality and Commonality, 1989).",
+              "parallels": [
+                {
+                  "label": "Wisdom as cosmic order — the human aligned with the cosmic order",
+                  "note": "The cosmic-moral-order theme: in each tradition the sage who aligns with the order (rta/ma'at/asha/logos) participates in sustaining it; cheng is the Confucian instance (Eliade; Tu Wei-ming 1989)."
+                }
+              ]
+            },
+            {
+              "word": "assist the transforming and nourishing powers of Heaven and Earth",
+              "node": "theme-mandate-of-heaven",
+              "type": "theme",
+              "note": "The fully sincere person becomes a co-creator with the cosmos, assisting Heaven-and-Earth in 'transforming and nourishing' (the cosmogonic-generative process). Tu Wei-ming (1989) calls this the Confucian 'anthropocosmic' vision: humanity completes a trinity with Heaven and Earth ('form a ternion') rather than standing over against an external creator.",
+              "parallels": [
+                {
+                  "label": "Mengzi 2A.6 — developing the innate nature to its fullness",
+                  "note": "Mencius's full development (jin xing) of the Heaven-given nature is the Mencian counterpart of the Zhongyong's 'full development to his nature'; both make the perfected human a participant in the cosmic moral order (D.C. Lau, Mencius, 1970; Tu Wei-ming 1989).",
+                  "textId": "mengzi-2a6"
+                },
+                {
+                  "label": "Wisdom as cosmic order — the sage who upholds the order",
+                  "note": "Convergence with the broad pattern in which the wise/just human sustains the cosmic order rather than merely obeying it (Eliade; Tu Wei-ming 1989)."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Chapter 25 — Sincerity is self-completion",
+      "verses": [
+        {
+          "ref": "Zhongyong 25",
+          "text": "Sincerity is that whereby self-completion is effected, and its way is that by which man must direct himself.",
+          "textVersions": {
+            "legge": "Sincerity is that whereby self-completion is effected, and its way is that by which man must direct himself."
+          },
+          "entities": [
+            {
+              "word": "self-completion",
+              "node": "confucius",
+              "type": "person",
+              "note": "Cheng (sincerity/integrity) is the principle of self-realization: to be sincere is to complete oneself, to become fully what one's Heaven-conferred nature is. The Zhongyong thus fuses the Confucian ethic of self-cultivation with a metaphysics of authenticity — being-true to one's nature is simultaneously a moral and an ontological act (Tu Wei-ming, Centrality and Commonality, 1989).",
+              "parallels": [
+                {
+                  "label": "Analects — the cultivated self",
+                  "note": "The Zhongyong gives a metaphysical name (cheng) to the self-cultivation the Analects models in practice; Tu Wei-ming (1989) reads ch. 25 as the Zhongyong's deepest statement of Confucian selfhood.",
+                  "textId": "confucius-analects"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
+
+// -- Grímnismál 40–41 (The World Made from Ymir's Body) --
+SCRIPTURE_TEXTS['grimnismal-40'] = {
+  "id": "grimnismal-40",
+  "title": "Grímnismál 40–41 (The World Made from Ymir's Body)",
+  "shortTitle": "Grímnismál (Ymir's Body)",
+  "corpus": "Old Norse · Poetic Edda (Grímnismál)",
+  "tradId": "tradition-norse",
+  "date": "Grímnismál stratified in the Viking Age (10th c. or earlier); preserved in the Codex Regius, Iceland, c. 1270",
+  "docNode": "phase-8-014-poetic-edda",
+  "language": "Old Norse · Henry Adams Bellows translation (The Poetic Edda, American-Scandinavian Foundation, 1923; public domain, Project Gutenberg eBook #73533 — the same edition as the staged Hávamál Rúnatal). Bellows preserves the mid-line caesura of the ljóðaháttr meter; the long lines are rendered here with the \"|\" caesura mark used in the staged Rúnatal entry.",
+  "translations": [
+    {
+      "id": "bellows",
+      "label": "Bellows 1923",
+      "note": "Henry Adams Bellows, The Poetic Edda, 1923 — public domain"
+    }
+  ],
+  "intro": "In Grímnismál (\"The Lay of Grímnir\"), Odin — disguised as the wanderer Grímnir and bound between two fires — pours out the secret structure of the cosmos to the young king Geirröth. Stanzas 40–41 give Eddic poetry's most compact statement of cosmic-body cosmogony: the world is assembled, piece by piece, from the dismembered body of the slain primal giant Ymir — earth from his flesh, sea from his blood, hills from his bones, trees from his hair, the sky-dome from his skull, the wall of Midgard from his eyebrows, and the clouds from his brain. The same myth opens the staged Völuspá and is expanded in Snorri's Prose Edda (Gylfaginning 7–8); its closest cross-tradition analogue is the Vedic Purusha Sukta (RV 10.90), and comparativists from Lincoln to Puhvel read both as reflexes of a shared Proto-Indo-European dismemberment-cosmogony in which a primordial being is killed and its body becomes the world.",
+  "crossTradition": [
+    {
+      "label": "Purusha Sukta (Vedic) — the world made from the dismembered cosmic Person",
+      "note": "RV 10.90: the gods sacrifice and dismember the cosmic Purusha and his body becomes the universe (moon from mind, sun from eye, sky from head, earth from feet). Bruce Lincoln (Myth, Cosmos, and Society, 1986) treats the Ymir and Purusha texts together as the closest cross-tradition pairing and reconstructs a shared Proto-Indo-European cosmogony built on the homology body-part = world-part; the kinship is genealogical (common IE inheritance), not a claim of direct contact.",
+      "textId": "purusha-sukta"
+    },
+    {
+      "label": "Enuma Elish IV (Babylonian) — the cosmos split from Tiamat's body",
+      "note": "Marduk splits the slain chaos-sea Tiamat 'like a flat fish into two halves' to form heaven and earth — the Near Eastern cosmos-from-a-slain-body cosmogony. Lincoln (1986) and the staged Enuma Elish IV entry group Tiamat, Ymir and Purusha as the type-specimens of the slain-body world-making; here the parallel is typological/areal, not Indo-European descent.",
+      "textId": "enuma-elish-4"
+    },
+    {
+      "label": "Völuspá (Norse) — the creation companion",
+      "note": "The Norse creation companion in the same Poetic Edda: Völuspá opens the cosmos from Ginnungagap and the formation of the worlds from Ymir's body, the fuller narrative frame for the terse catalogue of Grímnismál 40–41 (Lindow, Norse Mythology, 2001).",
+      "textId": "voluspa"
+    },
+    {
+      "label": "Indo-European *dismemberment-cosmogony (Puhvel)",
+      "note": "Jaan Puhvel (Comparative Mythology, 1987) reconstructs a Proto-Indo-European creation myth in which the first being (*Ymir / Indic Yama / 'twin') is killed by his partner and the world is fashioned from the corpse; he reads the Ymir and Purusha cosmogonies as the two clearest survivals of this inherited pattern."
+    }
+  ],
+  "sections": [
+    {
+      "heading": "The world from Ymir's body (Grímnismál 40–41, Bellows)",
+      "verses": [
+        {
+          "ref": "Grímnismál 40 (Bellows)",
+          "text": "Out of Ymir's flesh   |   was fashioned the earth,\n      And the ocean out of his blood;\n    Of his bones the hills,   |   of his hair the trees,\n      Of his skull the heavens high.",
+          "textVersions": {
+            "bellows": "Out of Ymir's flesh   |   was fashioned the earth,\n      And the ocean out of his blood;\n    Of his bones the hills,   |   of his hair the trees,\n      Of his skull the heavens high."
+          },
+          "entities": [
+            {
+              "word": "Ymir's flesh",
+              "node": "ymir",
+              "type": "deity",
+              "note": "Ymir is the primal frost-giant (the hermaphroditic first being born of the rime in Ginnungagap) whom Odin and his brothers slay; the world is built from his corpse. Snorri's Prose Edda (Gylfaginning 7–8) gives the same catalogue — earth from his flesh, sea from his blood, rocks from his bones, sky from his skull (Lindow, Norse Mythology, 2001).",
+              "parallels": [
+                {
+                  "label": "Purusha (Vedic) — the cosmic Person whose body becomes the world",
+                  "note": "Bruce Lincoln (Myth, Cosmos, and Society, 1986) reads Ymir and Purusha as the two clearest Indo-European witnesses to one inherited myth: a primal being is killed and its dismembered body furnishes the substance of the cosmos.",
+                  "textId": "purusha-sukta"
+                },
+                {
+                  "label": "Tiamat (Babylonian) — the slain body split into the cosmos",
+                  "note": "The Babylonian cosmos is formed from the divided corpse of Tiamat; with Ymir and Purusha it is a type-specimen of cosmic-body cosmogony (Lincoln 1986), here an areal/typological rather than IE parallel.",
+                  "textId": "enuma-elish-4"
+                }
+              ]
+            },
+            {
+              "word": "was fashioned the earth,\n      And the ocean out of his blood;\n    Of his bones the hills,   |   of his hair the trees,\n      Of his skull the heavens high.",
+              "node": "cosmic-body-cosmogony",
+              "type": "theme",
+              "note": "The point-by-point homology (flesh→earth, blood→sea, bones→hills, hair→trees, skull→sky) is the defining grammar of cosmic-body cosmogony: each part of the slain body becomes a corresponding part of the world. Bruce Lincoln (Myth, Cosmos, and Society, 1986) tabulates these body→world equations across the Norse, Vedic and Iranian evidence as a Proto-Indo-European inheritance.",
+              "parallels": [
+                {
+                  "label": "Purusha Sukta — body-part = world-part",
+                  "note": "RV 10.90's mind→moon, eye→sun, head→sky, feet→earth is the same homology grammar; Lincoln (1986) pairs it directly with the Ymir catalogue as the canonical Indo-European cosmic-body text.",
+                  "textId": "purusha-sukta"
+                },
+                {
+                  "label": "Tiamat split 'like a flat fish' (Enuma Elish IV)",
+                  "note": "Marduk's division of Tiamat's body into heaven and earth is the Near Eastern form of the slain-body cosmogony (Lincoln 1986).",
+                  "textId": "enuma-elish-4"
+                },
+                {
+                  "label": "*Dismemberment-cosmogony (Puhvel)",
+                  "note": "Jaan Puhvel (Comparative Mythology, 1987) reconstructs this body→world catalogue as a Proto-Indo-European creation pattern surviving most fully in the Ymir and Purusha texts."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "Grímnismál 41 (Bellows)",
+          "text": "Mithgarth the gods   |   from his eyebrows made,\n      And set for the sons of men;\n    And out of his brain   |   the baleful clouds\n      They made to move on high.",
+          "textVersions": {
+            "bellows": "Mithgarth the gods   |   from his eyebrows made,\n      And set for the sons of men;\n    And out of his brain   |   the baleful clouds\n      They made to move on high."
+          },
+          "entities": [
+            {
+              "word": "Mithgarth the gods",
+              "node": "norse-cosmogony",
+              "type": "theme",
+              "note": "Mithgarth (Midgard, 'middle-enclosure') is the inhabited middle world of men, here made from Ymir's eyebrows as a protective wall; the Norse creation arc runs Ginnungagap → slaying of Ymir → the worlds built from his body (Lindow, Norse Mythology, 2001; Simek, Dictionary of Northern Mythology, 1993).",
+              "parallels": [
+                {
+                  "label": "Völuspá — the worlds raised from Ymir's body",
+                  "note": "Völuspá narrates the same creation sequence at greater length, opening from Ginnungagap and the lifting of the lands; Grímnismál 40–41 is the compressed catalogue version of that myth (Lindow 2001).",
+                  "textId": "voluspa"
+                }
+              ]
+            },
+            {
+              "word": "the gods",
+              "node": "odin",
+              "type": "deity",
+              "note": "The fashioning gods are Odin and his brothers Vili and Vé, who in the Prose Edda (Gylfaginning 7–8) slay Ymir and build the world from his corpse; Odin is also the speaker of Grímnismál, disclosing the cosmos he helped make while disguised as Grímnir (Lindow, Norse Mythology, 2001).",
+              "parallels": [
+                {
+                  "label": "The gods who sacrifice Purusha (Vedic)",
+                  "note": "As Odin and his brothers make the world from Ymir's body, the Vedic gods make the world by sacrificing and dividing Purusha — divine agents enacting the dismemberment-cosmogony (Lincoln 1986).",
+                  "textId": "purusha-sukta"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
