@@ -28363,3 +28363,1610 @@ SCRIPTURE_TEXTS['descent-ishtar'] = {
     }
   ]
 };
+
+// -- Hávamál 138–145 (Rúnatal — Odin's Self-Sacrifice on the Windy Tree) --
+SCRIPTURE_TEXTS['havamal-runatal'] = {
+  "id": "havamal-runatal",
+  "title": "Hávamál 138–145 (Rúnatal — Odin's Self-Sacrifice on the Windy Tree)",
+  "shortTitle": "Hávamál (Rúnatal)",
+  "corpus": "Old Norse · Poetic Edda (Hávamál · Rúnatal)",
+  "tradId": "tradition-norse",
+  "date": "Hávamál composed/stratified in the Viking Age (10th c. or earlier); preserved in the Codex Regius, Iceland, c. 1270",
+  "docNode": "phase-8-014-poetic-edda",
+  "language": "Old Norse · Henry Adams Bellows translation (The Poetic Edda, American-Scandinavian Foundation, 1923; public domain, Project Gutenberg eBook #73533). Bellows preserves the \"|\" caesura mark of the fornyrðislag/ljóðaháttr meter.",
+  "translations": [
+    {
+      "id": "bellows",
+      "label": "Bellows 1923",
+      "note": "Henry Adams Bellows, The Poetic Edda (American-Scandinavian Foundation), 1923 — public domain"
+    }
+  ],
+  "intro": "The Rúnatal (\"Tale of the Runes\") is the most arresting passage in the Hávamál: the god Othin tells how he hung nine nights on the windy tree — the world-ash Yggdrasil — pierced with a spear, \"offered to Othin, myself to myself,\" with no loaf and no horn, until he seized the runes from below, shrieking, and fell back from the tree. It is the only voluntary divine self-sacrifice on a cosmic tree in the Germanic corpus, and its structural likeness to the Crucifixion (a god \"hung on a tree,\" pierced, sacrificed) has been debated since the conversion era. Note the numbering: Bellows prints the hanging as stanza 139, while the modern Larrington/Dronke editions number it 138, so the passage is cited variously as Hávamál 138–141 or 139–145. The scholarly consensus (Dronke, Lindow) reads the motif as an independent Indo-European and shamanic initiatory ordeal — the god winning hidden knowledge through an ecstatic brush with death — rather than a borrowing from Christianity, though a minority (Hultgård) allows for contact-era Christian influence on the late poem.",
+  "crossTradition": [
+    {
+      "label": "John 19 — Christ crucified on the tree",
+      "note": "The early-Christian 'hung on a tree' calque (Gal 3:13 citing Deut 21:23; cf. Acts 5:30, 10:39) recast the Cross as a 'tree,' making the pierced, sacrificed, suffering god on the wood the closest structural analogue to Othin's hanging. The comparison was discussed in conversion-era Iceland and is treated by Hultgård (who allows contact influence) and Eliade. Most scholars (Dronke; Lindow 2001) nonetheless read the Rúnatal as an independent Germanic/shamanic ordeal, not a Christian borrowing.",
+      "textId": "john-19"
+    },
+    {
+      "label": "Shamanic initiatory ordeal (Eliade)",
+      "note": "Eliade (Shamanism: Archaic Techniques of Ecstasy, 1964) reads Othin's nine-night hanging, fasting, spear-wound and seizing of the runes as a classic shamanic initiation: dismembering/near-death suffering on the world-tree yields ecstatic access to hidden knowledge. Schjødt (2008) develops the initiatory-ordeal reading in detail."
+    },
+    {
+      "label": "Descent of Inanna (Sumerian) — the god stripped and killed",
+      "note": "Inanna passes through seven gates, is stripped at each, and is killed and hung as a corpse in the underworld before her return — a divine being undergoing death to gain/regain power. Eliade and comparativists group both with the wider katabasis/death-and-return pattern; the kinship is typological, not genealogical (no transmission is claimed).",
+      "textId": "descent-inanna"
+    },
+    {
+      "label": "Yggdrasil — the cosmic axis the god hangs upon",
+      "note": "The 'windy tree' is the world-ash Yggdrasil, the Norse axis mundi; Bellows' own footnote identifies it ('The windy tree: the ash Yggdrasil ... on which Othin ... hanged himself as an offering to himself'). The ordeal is staged on the world-axis, the point where the shaman/god crosses between worlds (Eliade 1964)."
+    }
+  ],
+  "sections": [
+    {
+      "heading": "Othin's hanging on the windy tree (Bellows 138–142)",
+      "verses": [
+        {
+          "ref": "Hávamál 138 (Bellows)",
+          "text": "Now are Hor's words   |   spoken in the hall,\n      Kind for the kindred of men,\n      Cursed for the kindred of giants:\n    Hail to the speaker,   |   and to him who learns!\n      Profit be his who has them!\n      Hail to them who hearken",
+          "textVersions": {
+            "bellows": "Now are Hor's words   |   spoken in the hall,\n      Kind for the kindred of men,\n      Cursed for the kindred of giants:\n    Hail to the speaker,   |   and to him who learns!\n      Profit be his who has them!\n      Hail to them who hearken"
+          },
+          "entities": [
+            {
+              "word": "Hor's words",
+              "node": "odin",
+              "type": "deity",
+              "note": "Hor (Hár, 'the High One') is Othin/Odin, the speaker of the Hávamál ('Sayings of the High One'); this stanza closes the gnomic Loddfáfnismál and hands over to the Rúnatal. Bellows' footnote glosses Hor as Othin.",
+              "parallels": []
+            }
+          ]
+        },
+        {
+          "ref": "Hávamál 139 (Bellows)",
+          "text": "I ween that I hung   |   on the windy tree,\n      Hung there for nights full nine;\n    With the spear I was wounded,   |   and offered I was\n      To Othin, myself to myself,\n    On the tree that none   |   may ever know\n      What root beneath it runs.",
+          "textVersions": {
+            "bellows": "I ween that I hung   |   on the windy tree,\n      Hung there for nights full nine;\n    With the spear I was wounded,   |   and offered I was\n      To Othin, myself to myself,\n    On the tree that none   |   may ever know\n      What root beneath it runs."
+          },
+          "entities": [
+            {
+              "word": "the windy tree",
+              "node": "yggdrasil",
+              "type": "symbol",
+              "note": "Bellows' own footnote identifies the windy tree as 'the ash Yggdrasil ... on which Othin, in order to win the magic runes, hanged himself as an offering to himself, and wounded himself with his own spear.' Yggdrasil ('Othin's Horse,' the gallows so named from this hanging) is the Norse world-ash.",
+              "parallels": [
+                {
+                  "label": "World-ash as axis mundi",
+                  "note": "Yggdrasil is the vertical world-tree on which the ordeal is staged — the cosmic axis (Lindow 2001; Eliade 1964)."
+                }
+              ]
+            },
+            {
+              "word": "the tree",
+              "node": "world-tree",
+              "type": "symbol",
+              "note": "Yggdrasil is the Norse instance of the cross-cultural world-tree — the vertical axis joining the realms; the hanging takes place on the cosmic tree, not an ordinary one (de Vries; Lindow 2001).",
+              "parallels": [
+                {
+                  "label": "Christ's Cross as 'tree'",
+                  "note": "Early Christianity called the Cross a 'tree' (Gal 3:13; Acts 5:30); the wooden axis of a sacrificed god is the shared structural element (Hultgård).",
+                  "textId": "john-19"
+                }
+              ]
+            },
+            {
+              "word": "On the tree",
+              "node": "world-axis",
+              "type": "theme",
+              "note": "The ordeal is fixed on the world-axis — the vertical pole/tree at the center of the cosmos where a being can pass between worlds. Eliade (1964) reads Othin's hanging on Yggdrasil as the axis-mundi pattern of the shamanic ascent/descent.",
+              "parallels": [
+                {
+                  "label": "Axis mundi (cross-tradition)",
+                  "note": "The cosmic pole/tree/mountain as the world-center is a recurrent comparativist pattern (Eliade, The Sacred and the Profane, 1957; Shamanism, 1964)."
+                }
+              ]
+            },
+            {
+              "word": "the spear",
+              "node": "sacrifice-as-cosmic-renewal",
+              "type": "theme",
+              "note": "The spear-wound and the formula 'offered I was to Othin, myself to myself' make this a self-sacrifice in which the god is simultaneously priest and victim, sacrificer and sacrificed — a paradox Schjødt (2008) and Näsström (1995) treat as the defining feature of the Rúnatal.",
+              "parallels": [
+                {
+                  "label": "Christ as priest and victim",
+                  "note": "The 'self-offered' god (offerer = offered) is the structural point of comparison with the Crucifixion (Hultgård); whether this reflects influence or convergence is disputed (Dronke; Lindow).",
+                  "textId": "john-19"
+                }
+              ]
+            },
+            {
+              "word": "Hung there for nights full nine",
+              "node": "shamanism",
+              "type": "theme",
+              "note": "The nine-night fasting vigil, spear-wound, and near-death suffering read as a shamanic initiatory ordeal through which Othin wins ecstatic knowledge (Eliade, Shamanism, 1964; Schjødt, Initiation between Two Worlds, 2008). 'Nine' is the recurrent Norse ritual number.",
+              "parallels": [
+                {
+                  "label": "Inanna stripped and killed",
+                  "note": "A deity undergoing death/ordeal before return; grouped typologically with the katabasis pattern (Eliade).",
+                  "textId": "descent-inanna"
+                }
+              ]
+            },
+            {
+              "word": "myself to myself",
+              "node": "dying-rising-god",
+              "type": "theme",
+              "note": "Othin offered 'to Othin, myself to myself' — the god dies (hangs as an offering) and returns with the runes; the self-to-self formula has no Christian analogue and marks the Norse pattern as distinct even where it resembles the Crucifixion (Dronke 1969/1997; Lindow 2001).",
+              "parallels": [
+                {
+                  "label": "Christ's death and resurrection",
+                  "note": "Voluntary divine death-and-return on a tree; the closest structural parallel, debated as influence vs. convergence (Hultgård vs. Dronke/Lindow).",
+                  "textId": "john-19"
+                },
+                {
+                  "label": "Inanna's death and return",
+                  "note": "The goddess is killed in the underworld and restored — the death-and-return shape, reached independently (Eliade).",
+                  "textId": "descent-inanna"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "Hávamál 140 (Bellows)",
+          "text": "None made me happy   |   with loaf or horn,\n      And there below I looked;\n    I took up the runes,   |   shrieking I took them,\n      And forthwith back I fell.",
+          "textVersions": {
+            "bellows": "None made me happy   |   with loaf or horn,\n      And there below I looked;\n    I took up the runes,   |   shrieking I took them,\n      And forthwith back I fell."
+          },
+          "entities": [
+            {
+              "word": "I took up the runes",
+              "node": "runes",
+              "type": "symbol",
+              "note": "Othin does not invent but takes up (nam ek upp rúnar) the runes — the magical sign-system pre-exists and is seized through the ordeal, 'shrieking.' The runes are won by suffering, not taught (Page, Runes, 1987; Lindow 2001).",
+              "parallels": []
+            },
+            {
+              "word": "shrieking I took them",
+              "node": "shamanism",
+              "type": "theme",
+              "note": "The ecstatic shriek and the seizing of hidden knowledge at the point of death is the climactic moment of the shamanic ordeal-pattern Eliade (1964) identifies in Othin's hanging.",
+              "parallels": []
+            }
+          ]
+        },
+        {
+          "ref": "Hávamál 142 (Bellows)",
+          "text": "Then began I to thrive,   |   and wisdom to get,\n      I grew and well I was;\n    Each word led me on   |   to another word,\n      Each deed to another deed.",
+          "textVersions": {
+            "bellows": "Then began I to thrive,   |   and wisdom to get,\n      I grew and well I was;\n    Each word led me on   |   to another word,\n      Each deed to another deed."
+          },
+          "entities": [
+            {
+              "word": "wisdom to get",
+              "node": "odin",
+              "type": "deity",
+              "note": "The fruit of the ordeal is Othin's defining attribute — wisdom won through self-sacrifice, of a piece with his eye pledged at Mímir's well. Othin is the god of ecstasy, poetry, runes and hidden knowledge (Turville-Petre 1964; Lindow 2001).",
+              "parallels": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "The runes are carved by the gods (Bellows 143–145)",
+      "verses": [
+        {
+          "ref": "Hávamál 143 (Bellows)",
+          "text": "Runes shalt thou find,   |   and fateful signs,\n      That the king of singers colored,\n      And the mighty gods have made;\n    Full strong the signs,   |   full mighty the signs\n      That the ruler of gods doth write.",
+          "textVersions": {
+            "bellows": "Runes shalt thou find,   |   and fateful signs,\n      That the king of singers colored,\n      And the mighty gods have made;\n    Full strong the signs,   |   full mighty the signs\n      That the ruler of gods doth write."
+          },
+          "entities": [
+            {
+              "word": "fateful signs",
+              "node": "runes",
+              "type": "symbol",
+              "note": "Bellows' footnote: 'The king of singers: Othin. The magic signs (runes) were commonly carved in wood, then colored red.' The runes are 'fateful' — bearers of cosmic power, not merely an alphabet (Page 1987).",
+              "parallels": []
+            },
+            {
+              "word": "the ruler of gods",
+              "node": "odin",
+              "type": "deity",
+              "note": "Othin, 'the king of singers' and 'ruler of gods,' is the writer of the runes; his authorship follows directly from his having won them on the tree (Bellows' footnote; Lindow 2001).",
+              "parallels": []
+            }
+          ]
+        },
+        {
+          "ref": "Hávamál 145 (Bellows)",
+          "text": "Knowest how one shall write,   |   knowest how one shall rede?\n    Knowest how one shall tint,   |   knowest how one makes trial?\n    Knowest how one shall ask,   |   knowest how one shall offer?\n    Knowest how one shall send,   |   knowest how one shall sacrifice?",
+          "textVersions": {
+            "bellows": "Knowest how one shall write,   |   knowest how one shall rede?\n    Knowest how one shall tint,   |   knowest how one makes trial?\n    Knowest how one shall ask,   |   knowest how one shall offer?\n    Knowest how one shall send,   |   knowest how one shall sacrifice?"
+          },
+          "entities": [
+            {
+              "word": "knowest how one shall sacrifice",
+              "node": "sacrifice-as-cosmic-renewal",
+              "type": "theme",
+              "note": "The catechism closes the Rúnatal by binding rune-knowledge to the ritual acts of offering and sacrifice (blót) — the runes are operative through the sacrificial economy the section opened with Othin's self-offering (Näsström, Blot, 1995; Schjødt 2008).",
+              "parallels": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
+
+// -- Isaiah 14:12–15 (How art thou fallen, O Lucifer, son of the morning) --
+SCRIPTURE_TEXTS['isaiah-14'] = {
+  "id": "isaiah-14",
+  "title": "Isaiah 14:12–15 (How art thou fallen, O Lucifer, son of the morning)",
+  "shortTitle": "Isaiah 14",
+  "corpus": "Hebrew Bible (Latter Prophets · First Isaiah / Proto-Isaiah)",
+  "tradId": "tradition-second-temple-judaism",
+  "date": "c. 8th–6th century BCE (the māšāl / taunt-song against the king of Babylon, in the Proto-Isaiah / Isaiah 1–39 collection)",
+  "docNode": "phase-2-010-hebrew-bible-early-prophets",
+  "language": "Hebrew · King James Version (1611) — public domain",
+  "translations": [
+    {
+      "id": "kjv",
+      "label": "KJV (1611)",
+      "note": "King James Version — public domain"
+    }
+  ],
+  "intro": "Isaiah 14:12–15 is the taunt-song (māšāl) over the fallen tyrant — in its plain sense a mocking dirge against the king of Babylon, whose hubris the prophet dramatises in the imagery of a fallen astral deity: \"How art thou fallen from heaven, O Lucifer, son of the morning... I will ascend into heaven, I will exalt my throne above the stars of God... I will be like the most High. Yet thou shalt be brought down to hell.\" The Hebrew names the figure Hêlēl ben-Šaḥar, \"Shining One, son of Dawn\" — the morning star (Venus) — and behind it lies a Canaanite myth of the dawn-star who tries to mount the cosmic throne and falls, attested in the Ugaritic Athtar who sits on Baal's empty throne and proves too small to fill it (Day 2000; McKay 1970). With Ezekiel 28 (the anointed cherub cast out of Eden), this is the second of the two scriptural root-texts that the Septuagint's Heōsphoros and Jerome's Vulgate Lucifer fused into the Christian myth of the proud angel cast out of heaven — the Lucifer/Satan of the Western imagination. The Atlas keeps the origin reading (a human king, the king of Babylon) and treats the cosmic-rebel / Satan identification as a later wire (reception), not the text's first sense.",
+  "crossTradition": [
+    {
+      "label": "Ezekiel 28:11–19 — the anointed cherub cast out of Eden",
+      "note": "The twin root-text. Where Isaiah 14 mythologises the king of Babylon as the morning star who falls from heaven, Ezekiel 28 mythologises the king of Tyre as the guardian cherub cast off the mountain of God for iniquity; the two were fused by later Christian tradition into the single biography of the proud light-bearer cast down. Day 2000, Yahweh and the Gods of Canaan; Kelly 2006, Satan: A Biography.",
+      "textId": "ezekiel-28"
+    },
+    {
+      "label": "Baal Cycle — Athtar's failed ascent of Baal's throne",
+      "note": "The closest Canaanite analogue: with Baal dead and his throne empty, El sets the masculine morning-star Athtar upon it, but Athtar's feet do not reach the footstool and his head not the throne's top — he is too small to be king and descends. This 'morning star who reaches for the divine seat and fails' is the Ugaritic background to Hêlēl's failed ascent in Isaiah 14. Day 2000; del Olmo Lete 2004; McKay 1970, JBL, 'Helel and the Dawn-Goddess.'",
+      "textId": "baal-cycle-1"
+    },
+    {
+      "label": "Lucifer / Phosphoros — the morning-star fall-figure (Christian reception)",
+      "note": "The philological chain that made this verse the seed of the Lucifer myth: Hebrew Hêlēl → Septuagint Heōsphoros (the Greek morning-star Phosphoros) → Jerome's Vulgate Lucifer ('light-bringer'). Tertullian and Origen identified the fallen Day Star with Satan and Augustine canonised it (City of God 11.15) — a reading the Atlas marks as later reception, since Isaiah's addressee is a human king. Surfaced via the `lucifer` and `phosphoros` vault nodes. Kelly 2006, Satan: A Biography; Russell 1984, Lucifer."
+    },
+    {
+      "label": "Phaethon — the Greek son of the dawn who falls from the sky",
+      "note": "A structural Greek parallel, not a source: Phaethon, son of Helios/Eos (the Dawn), seizes the sun-chariot, drives it too high, and is hurled flaming to earth by Zeus — a youthful astral over-reacher cast down from heaven. Scholars cite the Phaethon myth as part of the wider Eastern-Mediterranean 'dawn-star who ascends too high and falls' complex behind Hêlēl ben-Šaḥar. No vault node yet. West 1997, The East Face of Helicon; Day 2000."
+    },
+    {
+      "label": "Angra Mainyu / Ahriman — the Iranian cosmic rebel cast down",
+      "note": "The Zoroastrian Hostile Spirit who by ethical choice (Yasna 30) assaults Ahura Mazda's good creation and is defeated at the end of time — the Iranian instance of the rebel-against-the-divine pattern that scholarship cites as a structural input to the Second-Temple development of Satan, into which Isaiah 14 was eventually read. Forsyth 1987, The Old Enemy; Russell 1977, The Devil."
+    }
+  ],
+  "sections": [
+    {
+      "heading": "How art thou fallen from heaven, O Lucifer",
+      "verses": [
+        {
+          "ref": "14:12",
+          "text": "How art thou fallen from heaven, O Lucifer, son of the morning! how art thou cut down to the ground, which didst weaken the nations!",
+          "textVersions": {
+            "kjv": "How art thou fallen from heaven, O Lucifer, son of the morning! how art thou cut down to the ground, which didst weaken the nations!"
+          },
+          "entities": [
+            {
+              "word": "Lucifer, son of the morning",
+              "node": "lucifer",
+              "type": "deity",
+              "note": "The KJV 'Lucifer, son of the morning' renders the Hebrew Hêlēl ben-Šaḥar, 'Shining One, son of Dawn' — the morning star (Venus). 'Lucifer' here is not a name but Jerome's Latin for the morning star (lucifer = 'light-bringer'), inherited by the KJV; the proper-name 'Lucifer = Satan' reading is later Christian reception, not Isaiah's plain sense, where the addressee is the king of Babylon. Day 2000, Yahweh and the Gods of Canaan; Kelly 2006, Satan: A Biography.",
+              "parallels": [
+                {
+                  "label": "Phosphoros / Heōsphoros (Greek morning star)",
+                  "note": "the Septuagint rendered Hêlēl with Heōsphoros, the Greek personified morning star Phosphoros — the philological bridge to the Vulgate's Lucifer. DDD s.v. 'Helel'; Kelly 2006."
+                },
+                {
+                  "label": "Athtar (Ugaritic morning star)",
+                  "note": "the masculine Venus-star who mounts Baal's throne and proves too small to fill it — the Canaanite 'morning star who overreaches the divine seat and fails.' Day 2000; del Olmo Lete 2004.",
+                  "textId": "baal-cycle-1"
+                }
+              ]
+            },
+            {
+              "word": "son of the morning",
+              "node": "shahar",
+              "type": "deity",
+              "note": "The 'morning' / 'Dawn' of 'son of the morning' is the Canaanite dawn-god Šaḥar (Shahar), named in the Hebrew Hêlēl ben-Šaḥar; Isaiah takes up an astral myth in which the dawn-star is the child of the dawn-deity. Day 2000; DDD s.v. 'Helel'; McKay 1970, JBL.",
+              "parallels": [
+                {
+                  "label": "Shahar and Shalim (Ugaritic dawn and dusk)",
+                  "note": "Shahar (Dawn), twin of Shalim (Dusk), sons of El in 'The Birth of the Gracious Gods' (KTU 1.23) — the dawn-deity behind 'son of Dawn.' Wyatt 2002; Day 2000."
+                }
+              ]
+            },
+            {
+              "word": "fallen from heaven",
+              "node": "theme-rebel-against-the-divine",
+              "type": "theme",
+              "note": "The fall of the Day Star is the morning-star branch of the rebel-against-the-divine pattern: an exalted/astral being who reaches above his station and is cast down. The Atlas reads the figure as a human king (the king of Babylon) mythologised through astral imagery; the cosmic-rebel identification is a later wire. Forsyth 1987, The Old Enemy; Day 2000.",
+              "parallels": [
+                {
+                  "label": "The cherub cast down (Ezekiel 28)",
+                  "note": "the twin oracle: the king of Tyre as the guardian cherub cast off the mountain of God — the same 'proud foreign king as fallen cosmic being' move. Day 2000; Forsyth 1987.",
+                  "textId": "ezekiel-28"
+                },
+                {
+                  "label": "Phaethon's fall (Greek)",
+                  "note": "the son of the Dawn who drives the sun-chariot too high and is hurled from the sky — a structural Greek analogue of the astral over-reacher cast down. West 1997, The East Face of Helicon."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "I will ascend into heaven — I will be like the most High",
+      "verses": [
+        {
+          "ref": "14:13",
+          "text": "For thou hast said in thine heart, I will ascend into heaven, I will exalt my throne above the stars of God: I will sit also upon the mount of the congregation, in the sides of the north:",
+          "textVersions": {
+            "kjv": "For thou hast said in thine heart, I will ascend into heaven, I will exalt my throne above the stars of God: I will sit also upon the mount of the congregation, in the sides of the north:"
+          },
+          "entities": [
+            {
+              "word": "I will ascend into heaven",
+              "node": "athtar",
+              "type": "deity",
+              "note": "The boast of ascent is the heart of the myth: the morning star vows to climb to heaven and mount the divine throne. This is the motif of the Ugaritic Athtar, who actually ascends to Baal's empty throne and fails to fill it — the 'failed ascent' half of the morning-star-who-falls complex behind Isaiah 14. Day 2000; del Olmo Lete 2004; McKay 1970, JBL, 'Helel and the Dawn-Goddess.'",
+              "parallels": [
+                {
+                  "label": "Athtar mounts Baal's throne (Ugaritic)",
+                  "note": "set on the throne by El, Athtar's feet do not reach the footstool; too small to be king, he descends — the failed celestial ascent. del Olmo Lete 2004; Smith 1994.",
+                  "textId": "baal-cycle-1"
+                },
+                {
+                  "label": "Phaethon drives too high (Greek)",
+                  "note": "the Dawn's son who ascends the sky-track beyond his power and is cast down — the same over-reaching ascent and fall. West 1997."
+                }
+              ]
+            },
+            {
+              "word": "my throne above the stars of God",
+              "node": "shahar",
+              "type": "deity",
+              "note": "To set a throne 'above the stars of God' on 'the mount of the congregation, in the sides of the north' draws on Canaanite cosmology — the cosmic mountain (Ṣaphon, 'the north') that is the seat of the high god El / the storm-god Baal, the summit the dawn-star myth aspires to reach. Day 2000, Yahweh and the Gods of Canaan; Clifford 1972, The Cosmic Mountain in Canaan and the Old Testament.",
+              "parallels": [
+                {
+                  "label": "Mount Ṣaphon / the divine assembly (Ugaritic)",
+                  "note": "'the mount of the congregation in the sides of the north' = the cosmic-mountain seat of the council of the gods in Canaanite myth. Clifford 1972; Day 2000."
+                }
+              ]
+            },
+            {
+              "word": "I will exalt my throne",
+              "node": "theme-rebel-against-the-divine",
+              "type": "theme",
+              "note": "The throne-usurpation boast ('I will exalt my throne... I will sit upon the mount of the congregation') is the defining gesture of the rebel-against-the-divine type — the creature who seizes the seat of the divine. Read with Ezekiel 28 it became the template for the proud angel's rebellion in Christian Satanology. Forsyth 1987, The Old Enemy; Russell 1977, The Devil.",
+              "parallels": [
+                {
+                  "label": "Athtar usurps Baal's throne (Ugaritic)",
+                  "note": "the would-be king who takes the storm-god's seat and cannot hold it. del Olmo Lete 2004.",
+                  "textId": "baal-cycle-1"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "14:14",
+          "text": "I will ascend above the heights of the clouds; I will be like the most High.",
+          "textVersions": {
+            "kjv": "I will ascend above the heights of the clouds; I will be like the most High."
+          },
+          "entities": [
+            {
+              "word": "I will be like the most High",
+              "node": "origin-of-evil",
+              "type": "theme",
+              "note": "'I will be like the most High' is the pride-to-the-point-of-self-deification that later tradition read as the origin of the primal sin — the creature's grasp at equality with God. It is this verse, fused with Ezekiel 28's 'iniquity was found in thee,' that let Christian exegesis narrate the origin of evil as the fall of a once-exalted being through pride rather than an eternal dark principle. Russell 1977, The Devil; Forsyth 1987, The Old Enemy.",
+              "parallels": [
+                {
+                  "label": "Angra Mainyu's choice (Zoroastrian)",
+                  "note": "the Gathic Hostile Spirit who by ethical choice (Yasna 30) opposes the good creation — evil as the act of a free being, a cited input to Second-Temple Satanology. Forsyth 1987; Shaked 1984."
+                },
+                {
+                  "label": "The cherub's iniquity (Ezekiel 28)",
+                  "note": "'till iniquity was found in thee' — the companion verse that, with this one, frames evil as arising in a created being. Russell 1977.",
+                  "textId": "ezekiel-28"
+                }
+              ]
+            },
+            {
+              "word": "ascend above the heights of the clouds",
+              "node": "athtar",
+              "type": "deity",
+              "note": "The cloud-heights the figure would climb above belong to the storm-god's domain (Baal 'rider of the clouds'); the morning-star's bid to ascend 'above the clouds' is the bid to surpass the storm-god on his own mountain — exactly Athtar's overreach in the Baal Cycle. Day 2000; del Olmo Lete 2004.",
+              "parallels": [
+                {
+                  "label": "Baal 'rider of the clouds' (Ugaritic)",
+                  "note": "the storm-god of the cloud-heights whose throne Athtar (and Hêlēl) try and fail to take. Day 2000; Smith 1994.",
+                  "textId": "baal-cycle-1"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "14:15",
+          "text": "Yet thou shalt be brought down to hell, to the sides of the pit.",
+          "textVersions": {
+            "kjv": "Yet thou shalt be brought down to hell, to the sides of the pit."
+          },
+          "entities": [
+            {
+              "word": "brought down to hell",
+              "node": "theme-rebel-against-the-divine",
+              "type": "theme",
+              "note": "The reversal that closes the taunt: the one who would ascend to heaven is cast down to Sheol ('hell,' the pit) — the fall that defines the rebel-against-the-divine arc. In the plain sense it is the death and humiliation of the king of Babylon; the descent-to-the-underworld of the proud cosmic rebel is the reception reading. Forsyth 1987; Day 2000.",
+              "parallels": [
+                {
+                  "label": "Lucifer cast from heaven (Christian reception)",
+                  "note": "patristic exegesis (Tertullian, Origen, Augustine) read 'brought down to hell' as the fall of Satan from heaven — the Atlas marks this a wire/reception, not Isaiah's plain sense. Kelly 2006; Russell 1984."
+                },
+                {
+                  "label": "Athtar's descent (Ugaritic)",
+                  "note": "the morning-star who, unable to hold the throne, comes down — the descent half of the failed ascent. del Olmo Lete 2004.",
+                  "textId": "baal-cycle-1"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
+
+// -- Dhammacakkappavattana Sutta (SN 56.11) — Setting in Motion the Wheel of the Dhamma --
+SCRIPTURE_TEXTS['dhammacakkappavattana-sutta'] = {
+  "id": "dhammacakkappavattana-sutta",
+  "title": "Dhammacakkappavattana Sutta (SN 56.11) — Setting in Motion the Wheel of the Dhamma",
+  "shortTitle": "Dhammacakka Sutta",
+  "corpus": "Buddhist · Pali Canon (Samyutta Nikaya 56.11 / Vinaya Mahavagga I.6)",
+  "tradId": "tradition-buddhism",
+  "date": "c. 5th–4th century BCE (attributed to the Buddha's first sermon; redacted in the early Pali canon)",
+  "docNode": "phase-2-016-early-buddhist-suttas",
+  "language": "Pali · T. W. Rhys Davids translation (Buddhist Suttas, Sacred Books of the East vol. XI, Oxford: Clarendon Press, 1881) — public domain. OCR diacritic artifacts in the Internet Archive scan have been silently corrected to the printed forms (Tathâgata, Nirvâna); English wording, punctuation, and section numbering are verbatim.",
+  "translations": [
+    {
+      "id": "rhys-davids",
+      "label": "Rhys Davids 1881",
+      "note": "T.W. Rhys Davids, Buddhist Suttas (Sacred Books of the East vol. XI), 1881 — public domain"
+    }
+  ],
+  "intro": "The Buddha's first sermon, preached to the five former companions at the Deer Park (Migadâya) near Benares after his awakening — in Rhys Davids' 1881 rendering, \"The Foundation of the Kingdom of Righteousness.\" It opens by rejecting the two extremes — self-indulgence in sensual pleasure and the self-mortification of the ascetics — and proclaims the Middle Path: the Noble Eightfold Path, and the Four Noble Truths (suffering; its origin in thirst/craving; its cessation; the path). The text is the doctrinal cornerstone of every Buddhist school, and its \"setting in motion the wheel of the Dhamma\" (dhammacakka) gives the dharmachakra its name. Cross-tradition value here is foundational and deliberately modest: the sermon's critique of asceticism converges with the contemporary Jain and śramaṇa milieu it grew out of, and its presentation of a graded ethical path has been read alongside other axial-age ordering schemes.",
+  "crossTradition": [
+    {
+      "label": "Jain / śramaṇa asceticism — the extreme the Buddha rejects",
+      "note": "The Middle Path is defined against the rigorous self-mortification (tapas) of the contemporary śramaṇa movements, above all Jainism. Rupert Gethin, The Foundations of Buddhism (Oxford, 1998), pp. 8–10, 59–63, situates the sermon's rejection of self-mortification within the shared ascetic milieu of Greater Magadha from which both Buddhism and Jainism emerged.",
+      "textId": "acaranga-sutra"
+    },
+    {
+      "label": "Bhagavad Gita — the disciplined middle between extremes",
+      "note": "The Gita's call to act with equanimity, avoiding both indulgence and over-austerity (BG 6.16–17, 'yoga is not for one who eats too much or too little'), is the nearest Brahmanical analogue to the Middle Path — a convergent Indian ideal of balanced discipline, not a borrowing. Gethin, Foundations of Buddhism (1998), notes the shared axial-age Indian vocabulary the Buddha both uses and critiques.",
+      "textId": "bhagavad-gita-4"
+    },
+    {
+      "label": "Dhammapada — the same path stated as ethics",
+      "note": "The Dhammapada repeatedly presents the Eightfold Path as 'the best of paths' (Dhp 273–276); Rhys Davids himself (Buddhist Suttas, 1881, note to §5) cross-refers the Four Truths here to Dhammapada v. 191, marking the two texts as twin statements of the foundational doctrine."
+    },
+    {
+      "label": "Yasna 30 — choosing the right ordered path",
+      "note": "Zarathustra's summons to choose between the two primal spirits and to follow asha (truth/right order) is an independent Iranian axial-age framing of life as a single right path; the parallel is structural (a graded ethical-cosmic order), not genetic. Offered cautiously per Gethin's caution against over-reading axial-age convergences.",
+      "textId": "yasna-30"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "The Two Extremes and the Middle Path",
+      "verses": [
+        {
+          "ref": "§2",
+          "text": "'There are two extremes, O Bhikkhus, which the man who has given up the world ought not to follow — the habitual practice, on the one hand, of those things whose attraction depends upon the passions, and especially of sensuality — a low and pagan way (of seeking satisfaction) unworthy, unprofitable, and fit only for the worldly-minded — and the habitual practice, on the other hand, of asceticism (or self-mortification), which is painful, unworthy, and unprofitable.",
+          "textVersions": {
+            "rhys-davids": "'There are two extremes, O Bhikkhus, which the man who has given up the world ought not to follow — the habitual practice, on the one hand, of those things whose attraction depends upon the passions, and especially of sensuality — a low and pagan way (of seeking satisfaction) unworthy, unprofitable, and fit only for the worldly-minded — and the habitual practice, on the other hand, of asceticism (or self-mortification), which is painful, unworthy, and unprofitable."
+          },
+          "entities": [
+            {
+              "word": "asceticism (or self-mortification)",
+              "node": "monastic-asceticism",
+              "type": "theme",
+              "note": "The sermon's rejection of self-mortification is a direct response to the śramaṇa ascetic milieu the Buddha had himself practised before abandoning it. Gethin, The Foundations of Buddhism (1998), pp. 59–63, frames the Middle Path as defined precisely against this extreme.",
+              "parallels": [
+                {
+                  "label": "Jain austerity (tapas)",
+                  "note": "The Acaranga Sutra's programme of severe bodily austerity is the contemporary Jain ascetic ideal the Buddha critiques as 'painful, unworthy, and unprofitable.' Gethin (1998) treats Jainism as the type-case of the asceticism the Middle Path avoids.",
+                  "textId": "acaranga-sutra"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "§3",
+          "text": "'There is a middle path, O Bhikkhus, avoiding these two extremes, discovered by the Tathâgata — a path which opens the eyes, and bestows understanding, which leads to peace of mind, to the higher wisdom, to full enlightenment, to Nirvâna!",
+          "textVersions": {
+            "rhys-davids": "'There is a middle path, O Bhikkhus, avoiding these two extremes, discovered by the Tathâgata — a path which opens the eyes, and bestows understanding, which leads to peace of mind, to the higher wisdom, to full enlightenment, to Nirvâna!"
+          },
+          "entities": [
+            {
+              "word": "middle path",
+              "node": "siddhartha-gautama-buddha",
+              "type": "person",
+              "note": "The Buddha (here 'the Tathâgata,' the Awakened One) names the Middle Path as his own discovery, distinguishing his teaching from both the Brahmanical and the ascetic schools of his day. Gethin, Foundations of Buddhism (1998), pp. 7–10, treats this sermon as the Buddha's inaugural public formulation of his distinctive path.",
+              "parallels": [
+                {
+                  "label": "Bhagavad Gita — the balanced yogi",
+                  "note": "BG 6.16–17 likewise commends a disciplined mean between indulgence and excess; a convergent Indian ideal of balance rather than a transmission, per Gethin (1998).",
+                  "textId": "bhagavad-gita-4"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "The Noble Eightfold Path",
+      "verses": [
+        {
+          "ref": "§4",
+          "text": "'What is that middle path, O Bhikkhus, avoiding these two extremes, discovered by the Tathâgata — that path which opens the eyes, and bestows understanding, which leads to peace of mind, to the higher wisdom, to full enlightenment, to Nirvâna? Verily! it is this noble eightfold path; that is to say: Right views; Right aspirations; Right speech; Right conduct; Right livelihood; Right effort; Right mindfulness; and Right contemplation.",
+          "textVersions": {
+            "rhys-davids": "'What is that middle path, O Bhikkhus, avoiding these two extremes, discovered by the Tathâgata — that path which opens the eyes, and bestows understanding, which leads to peace of mind, to the higher wisdom, to full enlightenment, to Nirvâna? Verily! it is this noble eightfold path; that is to say: Right views; Right aspirations; Right speech; Right conduct; Right livelihood; Right effort; Right mindfulness; and Right contemplation."
+          },
+          "entities": [
+            {
+              "word": "noble eightfold path",
+              "node": "noble-eightfold-path",
+              "type": "theme",
+              "note": "The eight factors — right views, aspirations, speech, conduct, livelihood, effort, mindfulness, contemplation (samyak-dṛṣṭi through samyak-samādhi) — constitute the content of the Middle Path. Gethin, Foundations of Buddhism (1998), pp. 81–86, presents the path as a graded ethical-meditative-cognitive order rather than a sequence of stages.",
+              "parallels": [
+                {
+                  "label": "Yasna 30 — the path of asha",
+                  "note": "Zarathustra frames righteous life as a single chosen path of asha (right order); a structural parallel of an ethical-cosmic ordering, offered cautiously and not as transmission, per Gethin's (1998) warning against over-reading axial-age convergence.",
+                  "textId": "yasna-30"
+                }
+              ]
+            },
+            {
+              "word": "Right contemplation",
+              "node": "dharmachakra",
+              "type": "symbol",
+              "note": "The sutta's title — dhammacakka-ppavattana, 'setting in motion the wheel of the Dhamma' — gives the eight-spoked dharmachakra its meaning: each spoke is one factor of the Eightfold Path here enumerated. The wheel is the oldest aniconic emblem of the Buddha's teaching. Rhys Davids, Buddhist Suttas (1881), introduction to this sutta.",
+              "parallels": [
+                {
+                  "label": "Dhammapada — path-as-emblem",
+                  "note": "Dhp 273 ('of paths the Eightfold is the best') treats the same eight-factored path as the summary emblem of the doctrine; Rhys Davids cross-refers the two texts in his 1881 notes."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "The Four Noble Truths",
+      "verses": [
+        {
+          "ref": "§5",
+          "text": "'Now this, O Bhikkhus, is the noble truth concerning suffering. 'Birth is attended with pain, decay is painful, disease is painful, death is painful. Union with the unpleasant is painful, painful is separation from the pleasant; and any craving that is unsatisfied, that too is painful. In brief, the five aggregates which spring from attachment (the conditions of individuality and their cause) are painful. 'This then, O Bhikkhus, is the noble truth concerning suffering.",
+          "textVersions": {
+            "rhys-davids": "'Now this, O Bhikkhus, is the noble truth concerning suffering. 'Birth is attended with pain, decay is painful, disease is painful, death is painful. Union with the unpleasant is painful, painful is separation from the pleasant; and any craving that is unsatisfied, that too is painful. In brief, the five aggregates which spring from attachment (the conditions of individuality and their cause) are painful. 'This then, O Bhikkhus, is the noble truth concerning suffering."
+          },
+          "entities": [
+            {
+              "word": "noble truth concerning suffering",
+              "node": "four-noble-truths",
+              "type": "theme",
+              "note": "The First Noble Truth (dukkha): birth, decay, disease, death, and the unsatisfied craving that runs through them all are 'painful.' Gethin, Foundations of Buddhism (1998), pp. 59–62, reads dukkha not as simple pain but as the unsatisfactoriness inherent in conditioned existence.",
+              "parallels": [
+                {
+                  "label": "Ecclesiastes — 'all is vanity'",
+                  "note": "Qoheleth's verdict that all striving under the sun is hevel ('vapour, futility') is a Hebrew wisdom analogue to the diagnosis of conditioned life as unsatisfactory; a thematic convergence, not a link. Offered modestly.",
+                  "textId": "ecclesiastes-1"
+                }
+              ]
+            },
+            {
+              "word": "the five aggregates which spring from attachment",
+              "node": "anatman-no-self",
+              "type": "theme",
+              "note": "The 'five aggregates' (pañcakkhandha) that spring from attachment are, in the Buddhist analysis, all there is to a 'person' — there is no abiding self behind them. Rhys Davids' own 1881 note glosses upādāna ('grasping') as the source of the aggregates and its uprooting as Arahatship; the doctrine of anatta is developed fully in the second sermon (Anattalakkhaṇa Sutta). Gethin, Foundations of Buddhism (1998), pp. 133–139.",
+              "parallels": []
+            }
+          ]
+        },
+        {
+          "ref": "§6",
+          "text": "'Now this, O Bhikkhus, is the noble truth concerning the origin of suffering. 'Verily, it is that thirst (or craving), causing the renewal of existence, accompanied by sensual delight, seeking satisfaction now here, now there — that is to say, the craving for the gratification of the passions, or the craving for (a future) life, or the craving for success (in this present life). 'This then, O Bhikkhus, is the noble truth concerning the origin of suffering.",
+          "textVersions": {
+            "rhys-davids": "'Now this, O Bhikkhus, is the noble truth concerning the origin of suffering. 'Verily, it is that thirst (or craving), causing the renewal of existence, accompanied by sensual delight, seeking satisfaction now here, now there — that is to say, the craving for the gratification of the passions, or the craving for (a future) life, or the craving for success (in this present life). 'This then, O Bhikkhus, is the noble truth concerning the origin of suffering."
+          },
+          "entities": [
+            {
+              "word": "thirst (or craving), causing the renewal of existence",
+              "node": "pratitya-samutpada",
+              "type": "theme",
+              "note": "The Second Noble Truth locates the origin of suffering in taṇhā ('thirst,' craving) that drives the 'renewal of existence' — the engine of rebirth. This craving is the pivotal link in the chain of dependent origination (pratītya-samutpāda) that binds beings to saṃsāra. Gethin, Foundations of Buddhism (1998), pp. 141–149, treats craving as the operative cause within the twelvefold causal chain.",
+              "parallels": []
+            }
+          ]
+        },
+        {
+          "ref": "§7",
+          "text": "'Now this, O Bhikkhus, is the noble truth concerning the destruction of suffering. 'Verily, it is the destruction, in which no passion remains, of this very thirst; the laying aside of, the getting rid of, the being free from, the harbouring no longer of this thirst. 'This then, O Bhikkhus, is the noble truth concerning the destruction of suffering.",
+          "textVersions": {
+            "rhys-davids": "'Now this, O Bhikkhus, is the noble truth concerning the destruction of suffering. 'Verily, it is the destruction, in which no passion remains, of this very thirst; the laying aside of, the getting rid of, the being free from, the harbouring no longer of this thirst. 'This then, O Bhikkhus, is the noble truth concerning the destruction of suffering."
+          },
+          "entities": [
+            {
+              "word": "destruction, in which no passion remains, of this very thirst",
+              "node": "four-noble-truths",
+              "type": "theme",
+              "note": "The Third Noble Truth: the cessation of suffering is the complete extinction of craving — nirodha, the 'destruction in which no passion remains.' Rhys Davids renders the goal of that extinction as 'Nirvâna' (the blowing-out) in §3. Gethin, Foundations of Buddhism (1998), pp. 74–79, treats nirvāṇa as the cessation that follows the ending of craving.",
+              "parallels": [
+                {
+                  "label": "Tao Te Ching — quenching desire",
+                  "note": "The Daodejing's counsel to 'have no desires' so as to behold the mystery (ch. 1) is a convergent East Asian ideal of release through the quieting of craving; a thematic parallel, not a transmission.",
+                  "textId": "tao-te-ching-1"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "§8",
+          "text": "'Now this, O Bhikkhus, is the noble truth concerning the way which leads to the destruction of sorrow. Verily! it is this noble eightfold path; that is to say: 'Right views; Right aspirations; Right speech; Right conduct; Right livelihood; Right effort; Right mindfulness; and Right contemplation. 'This then, O Bhikkhus, is the noble truth concerning the destruction of sorrow.",
+          "textVersions": {
+            "rhys-davids": "'Now this, O Bhikkhus, is the noble truth concerning the way which leads to the destruction of sorrow. Verily! it is this noble eightfold path; that is to say: 'Right views; Right aspirations; Right speech; Right conduct; Right livelihood; Right effort; Right mindfulness; and Right contemplation. 'This then, O Bhikkhus, is the noble truth concerning the destruction of sorrow."
+          },
+          "entities": [
+            {
+              "word": "the way which leads to the destruction of sorrow",
+              "node": "noble-eightfold-path",
+              "type": "theme",
+              "note": "The Fourth Noble Truth identifies the Eightfold Path itself as 'the way' (magga) out of suffering — closing the circle: the Middle Path announced in §3 is the remedy named in the last of the Four Truths. Gethin, Foundations of Buddhism (1998), pp. 81–83, stresses that the path is both the content of the first proclamation and the fourth truth's prescription.",
+              "parallels": [
+                {
+                  "label": "Yasna 30 — the chosen path of right order",
+                  "note": "The Gathic summons to walk the path of asha (truth/right order) is an independent axial-age framing of salvation as a single right way; structural parallel only, per Gethin (1998).",
+                  "textId": "yasna-30"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
+
+// -- Cleanthes — Hymn to Zeus (the Stoic Logos-Hymn) --
+SCRIPTURE_TEXTS['cleanthes-hymn'] = {
+  "id": "cleanthes-hymn",
+  "title": "Cleanthes — Hymn to Zeus (the Stoic Logos-Hymn)",
+  "shortTitle": "Cleanthes — Hymn to Zeus",
+  "corpus": "Greek · Hellenistic Philosophy (Old Stoa)",
+  "tradId": "tradition-hellenistic-philosophy",
+  "date": "c. 250 BCE (Cleanthes of Assos, second head of the Stoa)",
+  "docNode": "phase-3-005-stoic-foundational-texts",
+  "language": "Greek (Koine/Doric coloring) · E. H. Blakeney, The Hymn of Cleanthes: Greek Text Translated into English (Macmillan, 1921) — public domain. OCR-artifact \"0\" silently corrected to the vocative \"O\" as printed.",
+  "translations": [
+    {
+      "id": "blakeney",
+      "label": "Blakeney 1921",
+      "note": "E.H. Blakeney, The Hymn of Cleanthes (Macmillan), 1921 — public domain"
+    }
+  ],
+  "intro": "Cleanthes' Hymn to Zeus (c. 250 BCE) is the only complete text surviving from the Old Stoa — preserved whole by Stobaeus — and the headwater theological statement of the Logos transmission chain. It addresses Zeus not as the Olympian storm-king but as the immanent, rational, fiery principle that \"governs all things with law\": the Stoic logos identified with the supreme god. The hymn's line \"For we Thine offspring are\" is the verse Aratus of Soli echoed and that Paul then quotes on the Areopagus (\"for we are also his offspring\"), making this hymn one of the most consequential cross-tradition bridges in the corpus. This entry surfaces an honest mix: a genuine historical transmission (Heraclitus's logos/fire → the Stoa → Philo and the Johannine prologue; and the Stoic milieu Paul addresses at Athens) running alongside structural convergences (Psalm 104's cosmic-order hymn) that scholarship treats as parallel, not derivation.",
+  "crossTradition": [
+    {
+      "label": "Heraclitus — the Logos and the ever-living Fire",
+      "note": "The hymn's headwater. The Stoa explicitly claimed Heraclitus as ancestor: his logos (the hidden order all things obey) and his ever-living fire 'kindling and going out in measure' become Cleanthes' divine Reason and the 'thunderbolt of living fire' that directs the cosmos. Long & Sedley (The Hellenistic Philosophers, 1987, §46) and Kahn (The Art and Thought of Heraclitus, 1979) trace the Stoic fire-logos doctrine directly to Heraclitus.",
+      "textId": "heraclitus-fragments"
+    },
+    {
+      "label": "Acts 17 — Paul at the Areopagus ('we are also his offspring')",
+      "note": "The most direct wire. Cleanthes' 'For we Thine offspring are' (Hymn l. 4) is the same kinship-formula Aratus of Soli used in his Phaenomena, and Paul quotes it verbatim to Stoics at Athens (Acts 17:28). Paul preaches the Stoic immanent logos his hearers already held in order to be heard in Greek. Thom (Cleanthes' Hymn to Zeus, 2005) and Long & Sedley document the Cleanthes–Aratus–Paul line.",
+      "textId": "acts-17-areopagus"
+    },
+    {
+      "label": "John 1 — 'In the beginning was the Logos'",
+      "note": "The hymn's most consequential heir. Cleanthes' immanent divine logos, Hellenized by Philo and then personalized in John's prologue, is the same term 'through whom all things were made.' The structural debt of the Johannine Logos to the Stoic logos (via Philo) is standard scholarship (Long & Sedley 1987; Kirk-Raven-Schofield, The Presocratic Philosophers, 1983), even where John's direct dependence on Philo is debated.",
+      "textId": "john-1"
+    },
+    {
+      "label": "Psalm 104 — the cosmic-order hymn",
+      "note": "Structural convergence, not transmission. Both are hymns that praise a single sovereign whose law orders the whole cosmos and to whom all creatures look. The resemblance is a shared hymnic form (the cosmos-as-ordered-praise), reached independently in Israelite and Greek settings; scholarship (Thom 2005) treats Cleanthes' monotheizing pantheism as a Greek parallel to, not a borrowing from, Hebrew creation-praise.",
+      "textId": "psalm-104"
+    },
+    {
+      "label": "Corpus Hermeticum — the ordering Logos from Nous",
+      "note": "The Greco-Egyptian sibling. In the Hermetica the Logos springs from Nous (Mind) and orders creation — the same logos-as-cosmic-structuring-principle, developed in Hellenistic Alexandria alongside the Stoic, Philonic, and Johannine forms (Kahn 1979; Fowden, The Egyptian Hermes).",
+      "textId": "corpus-hermeticum-3"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "Invocation — Zeus, ruler of nature, governing all with law",
+      "verses": [
+        {
+          "ref": "lines 1–4",
+          "text": "Most glorious of Immortals, mighty God, Invoked by many a name, O sovran King Of universal Nature, piloting This world in harmony with Law, — all hail!",
+          "textVersions": {
+            "blakeney": "Most glorious of Immortals, mighty God, Invoked by many a name, O sovran King Of universal Nature, piloting This world in harmony with Law, — all hail!"
+          },
+          "entities": [
+            {
+              "word": "mighty God",
+              "node": "zeus",
+              "type": "deity",
+              "note": "The Stoic Zeus is not the anthropomorphic Olympian but the supreme god identified with the immanent, fiery, rational principle of the cosmos. Chrysippus (in the same doc node) explains the name etymologically: he is called Zeus (Zēna) because he is the cause of life (zēn) and pervades all life. Cleanthes addresses the cosmos itself as a single living, rational deity (Long & Sedley 1987, §54).",
+              "parallels": [
+                {
+                  "label": "logos-stoic — Zeus = the divine logos",
+                  "note": "Cleanthes here equates the supreme god with the immanent cosmic reason; the Stoa's distinctive identification of Zeus, logos, fire, and pneuma as one (Long & Sedley 1987)."
+                }
+              ]
+            },
+            {
+              "word": "Invoked by many a name",
+              "node": "logos-stoic",
+              "type": "deity",
+              "note": "'Many-named' (polyōnyme): the Stoics interpreted the entire civic pantheon allegorically as aspects of the one divine logos — so a single god bears many cult-names. This is the pantheistic-monotheism the Stoic doc node describes (Long & Sedley 1987, §54; Thom 2005).",
+              "parallels": [
+                {
+                  "label": "Heraclitus — the logos that is one and common",
+                  "note": "Heraclitus's 'the wise is one' and the 'common' (xynos) logos underlie the Stoic move of collapsing the many gods into one reason (Kahn 1979).",
+                  "textId": "heraclitus-fragments"
+                }
+              ]
+            },
+            {
+              "word": "piloting This world in harmony with Law",
+              "node": "providence-and-fate",
+              "type": "theme",
+              "note": "Divine pronoia (providence) governs all events through law (nomos); nothing happens by accident. The verb 'piloting/steering' (kybernan) is the Stoic image of the logos administering the cosmos as a helmsman steers a ship — the same word the doc node ties to fate as 'the logos by which the cosmos is administered' (Long & Sedley 1987, §54–55).",
+              "parallels": [
+                {
+                  "label": "Heraclitus — 'thunderbolt steers all things'",
+                  "note": "Heraclitus DK B64, 'the thunderbolt steers all things,' is the direct headwater of Cleanthes' steering-by-fire imagery (Kahn 1979; Long & Sedley 1987).",
+                  "textId": "heraclitus-fragments"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Kinship — 'For we Thine offspring are'",
+      "verses": [
+        {
+          "ref": "lines 5–8",
+          "text": "Thee it is meet that mortals should invoke, For we Thine offspring are, and sole of all Created things that live and move on earth Receive from Thee the image of the One.",
+          "textVersions": {
+            "blakeney": "Thee it is meet that mortals should invoke, For we Thine offspring are, and sole of all Created things that live and move on earth Receive from Thee the image of the One."
+          },
+          "entities": [
+            {
+              "word": "For we Thine offspring are",
+              "node": "cosmopolitanism",
+              "type": "theme",
+              "note": "The single most-cited line of the hymn. The kinship-of-all-rational-beings claim — humans share in the divine logos and are therefore the god's 'offspring' — is the root of Stoic cosmopolitanism (humans as 'citizens of the cosmos'). The same Greek formula appears in Aratus of Soli's Phaenomena, and Paul quotes it on the Areopagus (Acts 17:28). Thom (2005) and Long & Sedley (1987) document the Cleanthes–Aratus line.",
+              "parallels": [
+                {
+                  "label": "Acts 17 — 'for we are also his offspring'",
+                  "note": "Paul quotes this exact poet-formula (via Aratus, sharing Cleanthes' wording) to Stoic hearers at Athens; the verse is the scriptural bridge from Stoic logos-theology into Christian preaching (Thom 2005).",
+                  "textId": "acts-17-areopagus"
+                },
+                {
+                  "label": "Acts 17 — 'in him we live and move and have our being'",
+                  "note": "Cleanthes' 'things that live and move on earth' and Paul's 'we live and move and have our being' share the live-and-move idiom for creaturely existence grounded in the divine (Long & Sedley 1987; Thom 2005).",
+                  "textId": "acts-17-areopagus"
+                }
+              ]
+            },
+            {
+              "word": "the image of the One",
+              "node": "logos-cosmic-reason",
+              "type": "theme",
+              "note": "Humans alone 'receive the image' of god because they alone share in the logos — the rational principle (logos spermatikos) seeded throughout the cosmos and concentrated in rational beings. This is the load-bearing concept transmitted forward: Philo Hellenizes it, the Johannine prologue Christianizes it, Justin Martyr develops logos spermatikos (per the Stoic doc node; Long & Sedley 1987, §53).",
+              "parallels": [
+                {
+                  "label": "John 1 — the Logos through whom all things were made",
+                  "note": "The Stoic immanent logos, via Philo, is the conceptual ancestor of the Johannine pre-existent Word (Kirk-Raven-Schofield 1983; Long & Sedley 1987).",
+                  "textId": "john-1"
+                },
+                {
+                  "label": "soul-as-spark — the rational soul as a fragment of divine fire",
+                  "note": "The Stoic doctrine that the human soul is a spark/fragment (apospasma) of the cosmic fire-logos — why humans alone bear 'the image of the One' (Long & Sedley 1987, §53)."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "The thunderbolt of living fire and the Universal Reason",
+      "verses": [
+        {
+          "ref": "lines 9–21",
+          "text": "Therefore I praise Thee, and shall hymn Thy power Unceasingly. Thee the wide world obeys. As onward ever in its course it rolls Where'er Thou guidest, and rejoices still Beneath Thy sway: so strong a minister Is held by Thine unconquerable hands, — That two-edged thunderbolt of living fire That never fails. Under its dreadful blow All Nature reels; therewith Thou dost direct The Universal Reason which, commixt With all the greater and the lesser lights, Moves thro' the Universe. How great Thou art, The Lord supreme for ever and for aye!",
+          "textVersions": {
+            "blakeney": "Therefore I praise Thee, and shall hymn Thy power Unceasingly. Thee the wide world obeys. As onward ever in its course it rolls Where'er Thou guidest, and rejoices still Beneath Thy sway: so strong a minister Is held by Thine unconquerable hands, — That two-edged thunderbolt of living fire That never fails. Under its dreadful blow All Nature reels; therewith Thou dost direct The Universal Reason which, commixt With all the greater and the lesser lights, Moves thro' the Universe. How great Thou art, The Lord supreme for ever and for aye!"
+          },
+          "entities": [
+            {
+              "word": "two-edged thunderbolt of living fire",
+              "node": "sacred-fire",
+              "type": "symbol",
+              "note": "The Stoic divine fire (pyr technikon, 'craftsmanly fire') is the very substance of the cosmic god — Chrysippus calls god 'the intelligent, fiery pneuma' (doc node). Cleanthes' 'living fire' is the active, designing fire that is also the logos; it is the Stoic transformation of Heraclitus's ever-living fire and the seed of the doctrine of ekpyrosis (the periodic cosmic conflagration). The thunderbolt is the traditional emblem of Zeus reinterpreted as this directing fire-reason (Long & Sedley 1987, §46; Thom 2005).",
+              "parallels": [
+                {
+                  "label": "Heraclitus — the ever-living fire kindling in measure",
+                  "note": "Heraclitus DK B30, the cosmos as 'an ever-living fire, kindling in measures and going out in measures,' is the direct source of the Stoic identification of god with designing fire (Kahn 1979; Kirk-Raven-Schofield 1983).",
+                  "textId": "heraclitus-fragments"
+                },
+                {
+                  "label": "Heraclitus — 'the thunderbolt steers all things'",
+                  "note": "Cleanthes' 'thunderbolt of living fire' by which Zeus directs all things renders Heraclitus DK B64 into Stoic theology (Long & Sedley 1987).",
+                  "textId": "heraclitus-fragments"
+                }
+              ]
+            },
+            {
+              "word": "The Universal Reason",
+              "node": "logos-cosmic-reason",
+              "type": "theme",
+              "note": "ho koinos logos — the single cosmic Reason that pervades and animates the whole cosmos, here 'commixt with all the greater and the lesser lights' (sun, moon, stars). This is the central Stoic doctrine and the term's most influential ancient statement before Philo and John: the cosmos is one rational, living God whose soul is the logos (Long & Sedley 1987, §54; Kahn 1979).",
+              "parallels": [
+                {
+                  "label": "John 1 — 'In the beginning was the Logos'",
+                  "note": "The Johannine Logos is the personalized heir of exactly this Stoic 'Universal Reason,' mediated through Philo (Kirk-Raven-Schofield 1983; Long & Sedley 1987).",
+                  "textId": "john-1"
+                },
+                {
+                  "label": "Corpus Hermeticum — the Logos ordering creation from Nous",
+                  "note": "The Hermetic ordering Logos is the Greco-Egyptian sibling of the Stoic cosmic Reason, developed in the same Hellenistic-Alexandrian world (Kahn 1979; Fowden, The Egyptian Hermes).",
+                  "textId": "corpus-hermeticum-3"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Theodicy — order out of chaos, one everlasting Reason",
+      "verses": [
+        {
+          "ref": "lines 22–30",
+          "text": "No work is wrought apart from Thee, O God, Or in the world, or in the heaven above, Or on the deep, save only what is done By sinners in their folly. Nay, Thou canst Make the rough smooth, bring wondrous order forth From chaos; in Thy sight unloveliness Seems beautiful; for so Thou hast fitted things Together, good and evil, that there reigns One everlasting Reason in them all.",
+          "textVersions": {
+            "blakeney": "No work is wrought apart from Thee, O God, Or in the world, or in the heaven above, Or on the deep, save only what is done By sinners in their folly. Nay, Thou canst Make the rough smooth, bring wondrous order forth From chaos; in Thy sight unloveliness Seems beautiful; for so Thou hast fitted things Together, good and evil, that there reigns One everlasting Reason in them all."
+          },
+          "entities": [
+            {
+              "word": "bring wondrous order forth From chaos",
+              "node": "providence-and-fate",
+              "type": "theme",
+              "note": "The Stoic theodicy: providence so 'fits together' good and evil that the whole is harmonious; apparent disorder serves the order of the cosmos. Evil arises only from human folly ('what is done by sinners'), not from the god — the same problem the doc node frames as Stoic compatibilist providence (Long & Sedley 1987, §54; Thom 2005, who treats lines 18–21 as the hymn's theodicy).",
+              "parallels": [
+                {
+                  "label": "Psalm 104 — the cosmic order all creatures depend on",
+                  "note": "Structural convergence: a single sovereign whose ordering wisdom makes a harmonious cosmos. Israelite creation-praise and Stoic providence reach a parallel hymnic theology of order, independently (Thom 2005).",
+                  "textId": "psalm-104"
+                }
+              ]
+            },
+            {
+              "word": "One everlasting Reason in them all",
+              "node": "logos-cosmic-reason",
+              "type": "theme",
+              "note": "heis logos aei — the one eternal logos that unifies even opposites (good and evil) into a single rational whole. This direct echo of Heraclitus's unity-of-opposites is the metaphysical core of the hymn: multiplicity and conflict are reconciled in one reason (Kahn 1979; Long & Sedley 1987, who print this as the hymn's key Stoic claim).",
+              "parallels": [
+                {
+                  "label": "Heraclitus — the unity of opposites",
+                  "note": "Heraclitus's 'the way up and the way down are one and the same' and the harmony of opposites is the headwater of Cleanthes' 'good and evil... one everlasting Reason' (Kahn 1979; Kirk-Raven-Schofield 1983).",
+                  "textId": "heraclitus-fragments"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Closing prayer — deliver us to praise the Universal Law",
+      "verses": [
+        {
+          "ref": "lines 31–39",
+          "text": "O Thou most bounteous God that sittest throned In clouds, the Lord of lightning, save mankind From grievous ignorance! Oh, scatter it Far from their souls, and grant them to achieve True knowledge, on whose might Thou dost rely To govern all the world in righteousness; That so, being honoured, we may Thee requite With honour, chanting without pause Thy deeds. As all men should: since greater guerdon ne'er Befalls or man or god than evermore Duly to praise the Universal Law.",
+          "textVersions": {
+            "blakeney": "O Thou most bounteous God that sittest throned In clouds, the Lord of lightning, save mankind From grievous ignorance! Oh, scatter it Far from their souls, and grant them to achieve True knowledge, on whose might Thou dost rely To govern all the world in righteousness; That so, being honoured, we may Thee requite With honour, chanting without pause Thy deeds. As all men should: since greater guerdon ne'er Befalls or man or god than evermore Duly to praise the Universal Law."
+          },
+          "entities": [
+            {
+              "word": "the Universal Law",
+              "node": "providence-and-fate",
+              "type": "theme",
+              "note": "koinos nomos — the universal law that is the logos itself viewed as binding order. To 'praise the Universal Law' is the hymn's closing act of piety and the ethical telos of Stoicism: living 'in harmony with' the law of nature. Cleanthes elsewhere (the 'Lead me, O Zeus' couplet) makes the same point that wisdom is rational assent to fate (Long & Sedley 1987, §62; Thom 2005).",
+              "parallels": [
+                {
+                  "label": "cosmopolitanism — the law shared by all rational beings",
+                  "note": "The 'Universal Law' is the one nomos shared by all who partake of logos; obedience to it makes one a citizen of the cosmos (Long & Sedley 1987, §67)."
+                },
+                {
+                  "label": "Acts 17 — the God 'not far from each one of us'",
+                  "note": "Cleanthes' prayer that the immanent god deliver mankind from ignorance to true knowledge parallels Paul's claim that the same near, all-pervading God is one whom humans 'grope for and find' (Thom 2005).",
+                  "textId": "acts-17-areopagus"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
+
+// -- Job 28 (But where shall wisdom be found? — the hymn to inaccessible Wisdom) --
+SCRIPTURE_TEXTS['job-28'] = {
+  "id": "job-28",
+  "title": "Job 28 (But where shall wisdom be found? — the hymn to inaccessible Wisdom)",
+  "shortTitle": "Job 28",
+  "corpus": "Hebrew Bible (Writings · Wisdom Literature)",
+  "tradId": "tradition-second-temple-judaism",
+  "date": "c. 600–400 BCE (late pre-exilic to early post-exilic; the poem of Job)",
+  "docNode": "phase-2-035-job",
+  "language": "Hebrew · King James Version (1611), public domain. Text verified verbatim against the Wikisource KJV (Bible (King James)/Job) and ebible.org KJV; \"LORD\" reproduces the KJV small-caps convention for the Tetragrammaton.",
+  "translations": [
+    {
+      "id": "kjv",
+      "label": "KJV (1611)",
+      "note": "King James Version — public domain"
+    }
+  ],
+  "intro": "Job 28 is the self-standing \"Hymn to Wisdom\" — a poem on the inaccessibility of wisdom that interrupts the speeches of Job and is widely read as an editorial meditation set into the dialogue. Its argument is a deliberate descent and ascent: man tunnels into the earth and wrests out silver, gold, sapphire, and onyx — every buried treasure yields to his ingenuity — yet wisdom (hokmah) cannot be mined, bought, or located anywhere in the land of the living. Only God \"understandeth the way thereof,\" and the closing line redirects the search from cosmic speculation to the moral life: \"the fear of the LORD, that is wisdom.\" The Atlas surfaces Job 28 as the clean negative pole of the wisdom/Sophia cluster: where Proverbs 8 and Sirach 24 personify Wisdom as a near-divine figure present at creation, Job 28 insists Wisdom is hidden from all creatures and reserved to God — the two poles of the same Hebrew hokmah tradition that Hellenistic Judaism would fuse with the Egyptian Ma'at-and-Greek-Logos chain of cosmic order.",
+  "crossTradition": [
+    {
+      "label": "Proverbs 8 — Wisdom as the firstborn of creation",
+      "note": "Where Job 28 says wisdom is hidden from all living and known only to God, Proverbs 8 has Wisdom (Hokmah) speak in the first person as God's first creation, present at the founding of the world. Clifford (The Wisdom Literature, 1998) reads the two as the complementary poles of the Hebrew wisdom tradition — the hidden Wisdom of Job 28 and the personified Wisdom of Proverbs 8.",
+      "textId": "proverbs-8"
+    },
+    {
+      "label": "Sirach 24 — Wisdom finds a dwelling in Israel",
+      "note": "Ben Sira resolves the Job 28 search: the inaccessible Wisdom is given a resting-place and identified with the Torah of Moses (Sir 24:23). Crenshaw (Old Testament Wisdom) traces this trajectory from Job 28's 'hidden from the eyes of all living' to Sirach's domestication of Wisdom in the cult and the law.",
+      "textId": "sirach"
+    },
+    {
+      "label": "Ecclesiastes 1 — the limits of human wisdom",
+      "note": "Qoheleth's verdict that 'in much wisdom is much grief' is the skeptical sibling of Job 28: both wisdom poems insist that the human grasp of cosmic wisdom is bounded. Crenshaw groups Job, Qoheleth, and the Job 28 hymn as the 'critical' or interrogative stream of Israelite wisdom.",
+      "textId": "ecclesiastes-1"
+    },
+    {
+      "label": "The Instruction of Ptahhotep — the sebayt headwater of cosmic wisdom",
+      "note": "Job 28 belongs to the international Near Eastern wisdom tradition whose oldest book is the Egyptian sebayt of Ptahhotep, governed by Ma'at (cosmic order). The Atlas frames this as GENRE convergence, not borrowing: Job 28's hokmah-as-cosmic-order is the Hebrew end of the same wisdom genre, not a copy of the Egyptian text. Clifford (The Wisdom Literature, 1998) situates Hebrew wisdom within this wider Egyptian-and-Mesopotamian field.",
+      "textId": "ptahhotep"
+    },
+    {
+      "label": "Ma'at → Logos → Sophia (cosmic order chain)",
+      "note": "Job 28's 'where is the place of understanding?' is one node in the long chain by which the Egyptian Ma'at (cosmic order/truth) flows, via Hellenistic Judaism, into the Greek Logos and the personified Sophia. Assmann (Moses the Egyptian, 1997) traces this Ma'at-to-Logos-to-Sophia transmission of the cosmic-order principle."
+    }
+  ],
+  "sections": [
+    {
+      "heading": "Man mines the earth's treasure",
+      "verses": [
+        {
+          "ref": "28:1",
+          "text": "Surely there is a vein for the silver, and a place for gold where they fine it.",
+          "textVersions": {
+            "kjv": "Surely there is a vein for the silver, and a place for gold where they fine it."
+          },
+          "entities": [
+            {
+              "word": "a place for gold",
+              "node": "wisdom-as-cosmic-order",
+              "type": "theme",
+              "note": "The poem opens with mining as its controlling figure: every buried metal has a known 'place' that human skill can reach — the foil against which wisdom's placelessness will be measured. Clifford (The Wisdom Literature, 1998) reads the mining catalogue as the deliberate counter-image to the unmineable hokmah.",
+              "parallels": [
+                {
+                  "label": "Ma'at / Rita / Asha — cosmic order",
+                  "note": "The 'wisdom as cosmic order' node chains the Egyptian Ma'at, Vedic Rita, and Zoroastrian Asha as the cross-tradition field within which Hebrew hokmah sits; Job 28 is its negative pole — the order that man cannot quarry. (Assmann, Moses the Egyptian, 1997.)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "28:2",
+          "text": "Iron is taken out of the earth, and brass is molten out of the stone.",
+          "textVersions": {
+            "kjv": "Iron is taken out of the earth, and brass is molten out of the stone."
+          },
+          "entities": []
+        },
+        {
+          "ref": "28:7",
+          "text": "There is a path which no fowl knoweth, and which the vulture's eye hath not seen:",
+          "textVersions": {
+            "kjv": "There is a path which no fowl knoweth, and which the vulture's eye hath not seen:"
+          },
+          "entities": []
+        },
+        {
+          "ref": "28:8",
+          "text": "The lion's whelps have not trodden it, nor the fierce lion passed by it.",
+          "textVersions": {
+            "kjv": "The lion's whelps have not trodden it, nor the fierce lion passed by it."
+          },
+          "entities": []
+        }
+      ]
+    },
+    {
+      "heading": "But where shall wisdom be found?",
+      "verses": [
+        {
+          "ref": "28:12",
+          "text": "But where shall wisdom be found? and where is the place of understanding?",
+          "textVersions": {
+            "kjv": "But where shall wisdom be found? and where is the place of understanding?"
+          },
+          "entities": [
+            {
+              "word": "wisdom",
+              "node": "hokmah-hebrew",
+              "type": "deity",
+              "note": "Hebrew hokmah — the same Wisdom that Proverbs 8 and Sirach 24 personify as a feminine figure beside God (Sophia in the Septuagint). Job 28 takes the opposite tack: hokmah has no findable 'place' and is hidden from every creature. The Atlas treats the personified Hokmah figure (a near-hypostasis, 'co-creator with God') and Job 28's hidden hokmah as two faces of one tradition. Crenshaw (Old Testament Wisdom) reads Job 28 as the deliberate negation of the Proverbs-8 claim that Wisdom can be possessed.",
+              "parallels": [
+                {
+                  "label": "Proverbs 8 — Lady Wisdom at creation",
+                  "note": "The personified, accessible Wisdom present at the beginning of God's work; Job 28 is its mirror-opposite — the hidden Wisdom no living thing can reach. (Clifford, The Wisdom Literature, 1998.)",
+                  "textId": "proverbs-8"
+                },
+                {
+                  "label": "Sirach 24 — Wisdom dwells in Israel",
+                  "note": "Ben Sira answers Job 28's question by housing Wisdom in Zion and the Torah; the search ends in the law of Moses. (Crenshaw, Old Testament Wisdom.)",
+                  "textId": "sirach"
+                },
+                {
+                  "label": "Sophia (Gnostic)",
+                  "note": "The Gnostic Sophia inherits the personified Hebrew Hokmah and recasts her as a fallen aeon whose descent and return structure the Pleroma; the hokmah-hebrew node names sophia-gnostic as her transformation."
+                }
+              ]
+            },
+            {
+              "word": "the place of understanding",
+              "node": "wisdom-personified",
+              "type": "theme",
+              "note": "The refrain 'where is the place of understanding?' poses wisdom as something with a location — the very premise the poem denies. The 'wisdom personified (Sophia / Hokmah)' theme tracks how this hidden Wisdom is elsewhere given a face and a dwelling across Proverbs, Sirach, Wisdom of Solomon, and on into John's Logos. Crenshaw (Old Testament Wisdom) treats Job 28 as the critical interrogation that the personification tradition answers.",
+              "parallels": [
+                {
+                  "label": "Ma'at → Logos → Sophia",
+                  "note": "The personified Wisdom of the Hebrew tradition is one link in the Ma'at-to-Logos-to-Sophia chain of the cosmic-order principle. (Assmann, Moses the Egyptian, 1997.)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "28:13",
+          "text": "Man knoweth not the price thereof; neither is it found in the land of the living.",
+          "textVersions": {
+            "kjv": "Man knoweth not the price thereof; neither is it found in the land of the living."
+          },
+          "entities": [
+            {
+              "word": "neither is it found in the land of the living",
+              "node": "theodicy",
+              "type": "theme",
+              "note": "Job 28's verdict that wisdom is hidden from the living is, in its dialogue context, an answer to the book's theodicy problem: the why of innocent suffering lies with a Wisdom no human can locate — the same epistemic humility God enforces from the whirlwind in Job 38-41. Crenshaw (Old Testament Wisdom) and Habel (The Book of Job, 1985) read the hymn as anticipating the divine speeches' insistence on the limits of human knowing.",
+              "parallels": [
+                {
+                  "label": "Ecclesiastes 1 — the limits of wisdom",
+                  "note": "Qoheleth's 'in much wisdom is much grief' is the parallel wisdom-skeptical move; both poems bound the human grasp of cosmic order. (Crenshaw, Old Testament Wisdom.)",
+                  "textId": "ecclesiastes-1"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "28:15",
+          "text": "It cannot be gotten for gold, neither shall silver be weighed for the price thereof.",
+          "textVersions": {
+            "kjv": "It cannot be gotten for gold, neither shall silver be weighed for the price thereof."
+          },
+          "entities": []
+        },
+        {
+          "ref": "28:16",
+          "text": "It cannot be valued with the gold of Ophir, with the precious onyx, or the sapphire.",
+          "textVersions": {
+            "kjv": "It cannot be valued with the gold of Ophir, with the precious onyx, or the sapphire."
+          },
+          "entities": []
+        },
+        {
+          "ref": "28:18",
+          "text": "No mention shall be made of coral, or of pearls: for the price of wisdom is above rubies.",
+          "textVersions": {
+            "kjv": "No mention shall be made of coral, or of pearls: for the price of wisdom is above rubies."
+          },
+          "entities": [
+            {
+              "word": "the price of wisdom is above rubies",
+              "node": "wisdom-as-cosmic-order",
+              "type": "theme",
+              "note": "The priceless-treasure topos — wisdom 'above rubies' — recurs in Proverbs 3:15 and 8:11, marking hokmah as the cosmic order worth more than any mined good. Clifford (The Wisdom Literature, 1998) notes the shared idiom across the Hebrew wisdom corpus.",
+              "parallels": [
+                {
+                  "label": "Proverbs 8 — Wisdom better than rubies",
+                  "note": "Proverbs 8:11 uses the identical 'better than rubies' formula for the personified Wisdom; Job 28 keeps the valuation but denies the access. (Clifford, The Wisdom Literature, 1998.)",
+                  "textId": "proverbs-8"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "28:20",
+          "text": "Whence then cometh wisdom? and where is the place of understanding?",
+          "textVersions": {
+            "kjv": "Whence then cometh wisdom? and where is the place of understanding?"
+          },
+          "entities": []
+        },
+        {
+          "ref": "28:21",
+          "text": "Seeing it is hid from the eyes of all living, and kept close from the fowls of the air.",
+          "textVersions": {
+            "kjv": "Seeing it is hid from the eyes of all living, and kept close from the fowls of the air."
+          },
+          "entities": []
+        }
+      ]
+    },
+    {
+      "heading": "God understandeth the way thereof",
+      "verses": [
+        {
+          "ref": "28:23",
+          "text": "God understandeth the way thereof, and he knoweth the place thereof.",
+          "textVersions": {
+            "kjv": "God understandeth the way thereof, and he knoweth the place thereof."
+          },
+          "entities": [
+            {
+              "word": "God",
+              "node": "yahweh",
+              "type": "deity",
+              "note": "The turn of the poem: the wisdom hidden from every creature is reserved to God alone, who 'knoweth the place thereof.' In the wisdom theology this makes hokmah an attribute by which YHWH ordered creation — the link Proverbs 8 and Sirach 24 develop into a personified co-creator. Habel (The Book of Job, 1985) reads v. 23-27 as grounding wisdom in God's act of creation, anticipating the whirlwind speeches.",
+              "parallels": [
+                {
+                  "label": "Proverbs 8 — YHWH possessed Wisdom at creation",
+                  "note": "Where Job 28 says only God knows Wisdom's place, Proverbs 8 has YHWH 'possess' Wisdom as the firstborn of his way; the same God-and-Wisdom-at-creation theology, personified there, abstract here. (Clifford, The Wisdom Literature, 1998.)",
+                  "textId": "proverbs-8"
+                },
+                {
+                  "label": "Ma'at → Logos → Sophia",
+                  "note": "YHWH's creating-by-wisdom is the Hebrew form of the cosmic-order principle that runs from the Egyptian Ma'at through the Greek Logos to the Christian Sophia. (Assmann, Moses the Egyptian, 1997.)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "28:24",
+          "text": "For he looketh to the ends of the earth, and seeth under the whole heaven;",
+          "textVersions": {
+            "kjv": "For he looketh to the ends of the earth, and seeth under the whole heaven;"
+          },
+          "entities": []
+        },
+        {
+          "ref": "28:28",
+          "text": "And unto man he said, Behold, the fear of the LORD, that is wisdom; and to depart from evil is understanding.",
+          "textVersions": {
+            "kjv": "And unto man he said, Behold, the fear of the LORD, that is wisdom; and to depart from evil is understanding."
+          },
+          "entities": [
+            {
+              "word": "the fear of the LORD, that is wisdom",
+              "node": "wisdom-personified",
+              "type": "theme",
+              "note": "The closing redirection: the cosmic Wisdom hidden from man is, for man, the fear of the LORD — the practical-moral hokmah that opens Proverbs ('the fear of the LORD is the beginning of wisdom,' Prov 1:7) and frames Sirach. Many critics (Crenshaw, Old Testament Wisdom; Habel, The Book of Job, 1985) regard v. 28 as a later editorial coda that moralizes the otherwise agnostic hymn, binding cosmic and ethical wisdom into one.",
+              "parallels": [
+                {
+                  "label": "Sirach — Wisdom and the fear of the Lord",
+                  "note": "Ben Sira makes the fear of the Lord the root and crown of Wisdom (Sir 1:14-20), the explicit development of Job 28:28. (Crenshaw, Old Testament Wisdom.)",
+                  "textId": "sirach"
+                },
+                {
+                  "label": "Proverbs 8 — fear of the LORD as wisdom's beginning",
+                  "note": "The Proverbs frame ('the fear of the LORD is the beginning of knowledge/wisdom') is the maxim Job 28:28 quotes to close the hymn. (Clifford, The Wisdom Literature, 1998.)",
+                  "textId": "proverbs-8"
+                }
+              ]
+            },
+            {
+              "word": "to depart from evil is understanding",
+              "node": "theodicy",
+              "type": "theme",
+              "note": "The hymn ends by collapsing the unanswerable cosmic question into a moral imperative — the same move the book's frame makes when it calls Job one who 'feared God and eschewed evil' (Job 1:1). For the theodicy theme this is the wisdom tradition's characteristic answer: not an explanation of suffering but a discipline of conduct. Habel (The Book of Job, 1985) reads it as the practical resolution the poem offers in place of cosmic disclosure.",
+              "parallels": [
+                {
+                  "label": "Ecclesiastes — fear God and keep his commandments",
+                  "note": "Qoheleth's epilogue reaches the same practical terminus: where cosmic wisdom fails, the duty of man is to fear God. (Crenshaw, Old Testament Wisdom.)",
+                  "textId": "ecclesiastes-1"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
+
+// -- Śvetāśvatara Upaniṣad 3.1–3.20, 4.1–4.5 (The One God of the Manifold World) --
+SCRIPTURE_TEXTS['shvetashvatara-upanishad'] = {
+  "id": "shvetashvatara-upanishad",
+  "title": "Śvetāśvatara Upaniṣad 3.1–3.20, 4.1–4.5 (The One God of the Manifold World)",
+  "shortTitle": "Śvetāśvatara Upaniṣad",
+  "corpus": "Hindu · Vedic (Kṛṣṇa Yajurveda · principal Upaniṣad)",
+  "tradId": "tradition-vedic-hinduism",
+  "date": "c. 500–300 BCE (late Vedic / proto-theistic Upaniṣad)",
+  "docNode": "phase-2-021-shvetashvatara-upanishad",
+  "language": "Vedic Sanskrit · F. Max Müller, Sacred Books of the East vol. 15 (1884) — public domain. (The vault document also cites Robert Ernest Hume, The Thirteen Principal Upanishads, 1921, likewise public domain; the Müller SBE 15 wording is reproduced here.)",
+  "translations": [
+    {
+      "id": "muller",
+      "label": "Müller 1884 (SBE 15)",
+      "note": "F. Max Müller, The Upanishads Part II (Sacred Books of the East vol. 15), 1884 — public domain"
+    }
+  ],
+  "intro": "The Śvetāśvatara is the most overtly theistic of the principal Upaniṣads: where the older Upaniṣads dissolve the world into an impersonal Brahman, this text gathers that absolute into a personal Lord (īśa) — Rudra-Śiva — who is at once the unmanifest ground and the God who \"rules alone by his powers.\" It is the headwater of theistic Vedānta: Rāmānuja's Viśiṣṭādvaita and the whole Śaiva theological tradition ground themselves on its verses. Adhyāya 3 builds the portrait of the One God \"hidden in the bodies of all creatures,\" all-pervading, the cosmic Person (puruṣa) \"smaller than small, greater than great\" who is hidden in the heart; Adhyāya 4 universalises him into the panentheistic litany \"Thou art woman, thou art man.\" Its convergence with the contemporaneous monotheisms of the Axial Age — Deutero-Isaiah's \"I am the LORD, and there is none else,\" Zarathustra's Wise Lord, the unnameable Dao — is one of the sharpest cross-tradition resonances in the Atlas, and a test case for whether such resonance is transmission or independent convergence.",
+  "crossTradition": [
+    {
+      "label": "Isaiah 45 — \"I am the LORD, and there is none else\"",
+      "note": "Deutero-Isaiah's exilic monotheism (c. 540 BCE) is roughly contemporaneous with the Śvetāśvatara. Both insist on the One who rules alone with no second — Müller's 3.2, \"there is one Rudra only, they do not allow a second,\" against Isaiah 45:5–6, \"I am the LORD, and there is none else.\" Deussen (Philosophy of the Upanishads, 1906) treats the Śvetāśvatara as the Upaniṣadic monotheism; the parallel is convergent, not transmitted — two independent Axial-Age formulations of strict singularity.",
+      "textId": "isaiah-45"
+    },
+    {
+      "label": "Yasna 30 — Zoroastrian dualism (contrast)",
+      "note": "A deliberate contrast rather than a convergence. The Gāthās of Zarathustra (the vault doc lists the Gāthās among the Śvetāśvatara's parallels) split reality between two primordial spirits; the Śvetāśvatara gathers good and the terrible alike into a single Rudra who is both auspicious and the wielder of the arrow (3.5–3.6). Where Yasna 30 divides, the Śvetāśvatara unifies — the same Axial problem of evil answered by monism rather than dualism.",
+      "textId": "yasna-30"
+    },
+    {
+      "label": "Tao Te Ching 1 — the unnameable ground",
+      "note": "The Śvetāśvatara's apophatic Lord, \"grasping without hands... he hears without ears... no one knows him\" (3.19), is the Indian counterpart of the Dao \"that can be told\" yet \"is not the eternal Tao.\" Both name an all-producing ground that exceeds the senses and the categories — a convergent apophasis, not a contact, as the comparativist tradition from Deussen onward has stressed.",
+      "textId": "tao-te-ching-1"
+    },
+    {
+      "label": "Muṇḍaka Upaniṣad — the two birds and the witness Self",
+      "note": "The Śvetāśvatara shares with the Muṇḍaka the image of the two birds on one tree (Müller renders it at 4.6) and the formula of the puruṣa \"hidden in the heart.\" The two are sister principal Upaniṣads, but the Śvetāśvatara tilts the shared inheritance toward a personal Lord (Rudra-Śiva) where the Muṇḍaka keeps the impersonal Brahman — the same substrate, theistic versus non-theistic projection.",
+      "textId": "mundaka-upanishad"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "Adhyāya 3 — The One God who rules alone",
+      "verses": [
+        {
+          "ref": "3.1",
+          "text": "The snarer who rules alone by his powers, who rules all the worlds by his powers, who is one and the same, while things arise and exist,—they who know this are immortal.",
+          "textVersions": {
+            "muller": "The snarer who rules alone by his powers, who rules all the worlds by his powers, who is one and the same, while things arise and exist,—they who know this are immortal."
+          },
+          "entities": [
+            {
+              "word": "who rules alone by his powers",
+              "node": "monotheism-strict",
+              "type": "theme",
+              "note": "The opening declaration of a single ruling God — Müller notes Śaṅkara glosses the \"snarer\" (gāla) as māyā, the creative power by which the one Lord projects the many. The verse is the Upaniṣadic statement of strict singularity that Deussen (Philosophy of the Upanishads, 1906) identifies as the text's distinctive theism.",
+              "parallels": [
+                {
+                  "label": "Isaiah 45 — \"there is none else\"",
+                  "note": "Isaiah 45:5–6, \"I am the LORD, and there is none else, there is no God beside me,\" is the contemporaneous Hebrew formulation of the one who rules alone. The resemblance is convergent Axial-Age monotheism, not transmission.",
+                  "textId": "isaiah-45"
+                },
+                {
+                  "label": "Tao Te Ching 1 — the single nameless ground",
+                  "note": "The Dao as the one origin \"of heaven and earth\" is the Chinese parallel to the single ruling principle; both texts ground the manifold in one source that exceeds it.",
+                  "textId": "tao-te-ching-1"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "3.2",
+          "text": "For there is one Rudra only, they do not allow a second, who rules all the worlds by his powers. He stands behind all persons, and after having created all worlds he, the protector, rolls it up at the end of time.",
+          "textVersions": {
+            "muller": "For there is one Rudra only, they do not allow a second, who rules all the worlds by his powers. He stands behind all persons, and after having created all worlds he, the protector, rolls it up at the end of time."
+          },
+          "entities": [
+            {
+              "word": "one Rudra only",
+              "node": "rudra-shiva-early",
+              "type": "deity",
+              "note": "The proto-theistic Rudra of the Śvetāśvatara — the Vedic storm-and-mountain god in the act of becoming the supreme Śiva. The vault document names rudra-shiva-early as the deity the text elevates to absolute status; Rāmānuja's later Viśiṣṭādvaita and Śaiva Siddhānta both read their personal Lord out of this verse.",
+              "parallels": [
+                {
+                  "label": "Isaiah 45 — \"none else... beside me\"",
+                  "note": "\"They do not allow a second\" is structurally the same exclusivity-clause as Isaiah's \"no God beside me\" — the move from one-among-many to the only one.",
+                  "textId": "isaiah-45"
+                }
+              ]
+            },
+            {
+              "word": "rolls it up at the end of time",
+              "node": "providence-and-fate",
+              "type": "theme",
+              "note": "The one Lord as creator, protector, and dissolver of the worlds — the seed of the later Śaiva pañcakṛtya (the fivefold divine acts). Müller's note prefers saṃkukoka, \"draws together,\" i.e. Rudra takes all things back into himself at the end of time.",
+              "parallels": []
+            }
+          ]
+        },
+        {
+          "ref": "3.4",
+          "text": "He, the creator and supporter of the gods, Rudra, the great seer, the lord of all, he who formerly gave birth to Hiranyagarbha, may he endow us with good thoughts.",
+          "textVersions": {
+            "muller": "He, the creator and supporter of the gods, Rudra, the great seer, the lord of all, he who formerly gave birth to Hiranyagarbha, may he endow us with good thoughts."
+          },
+          "entities": [
+            {
+              "word": "who formerly gave birth to Hiranyagarbha",
+              "node": "rudra-shiva-early",
+              "type": "deity",
+              "note": "Rudra is set above even Hiraṇyagarbha (the \"golden germ,\" Brahmā the creator of the older cosmogonies): the text subordinates the inherited demiurge to the new supreme God. Deussen reads this as the deliberate theistic overwriting of the impersonal/Brahmā cosmology with a personal Lord.",
+              "parallels": []
+            }
+          ]
+        },
+        {
+          "ref": "3.7",
+          "text": "Those who know beyond this the High Brahman, the vast, hidden in the bodies of all creatures, and alone enveloping everything, as the Lord, they become immortal.",
+          "textVersions": {
+            "muller": "Those who know beyond this the High Brahman, the vast, hidden in the bodies of all creatures, and alone enveloping everything, as the Lord, they become immortal."
+          },
+          "entities": [
+            {
+              "word": "the High Brahman, the vast, hidden in the bodies of all creatures",
+              "node": "brahman-impersonal",
+              "type": "theme",
+              "note": "The Śvetāśvatara's characteristic fusion: the impersonal Brahman of the older Upaniṣads is here identified with the personal Lord (īśa, Rudra). The text holds the two registers together rather than choosing — the move that makes it the charter of theistic Vedānta (Deussen).",
+              "parallels": [
+                {
+                  "label": "Muṇḍaka Upaniṣad — Brahman hidden in the cave of the heart",
+                  "note": "The Muṇḍaka's Brahman \"set in the cave\" is the same hidden-in-all absolute, but kept impersonal; the Śvetāśvatara personalises it as the Lord.",
+                  "textId": "mundaka-upanishad"
+                }
+              ]
+            },
+            {
+              "word": "hidden in the bodies of all creatures",
+              "node": "hidden-god",
+              "type": "theme",
+              "note": "The deus absconditus motif: the supreme God is concealed within every creature, knowable only to those who \"know beyond.\" This is the verse the tradition (and the cluster) reads as the One God hidden in all beings.",
+              "parallels": [
+                {
+                  "label": "Tao Te Ching 1 — the hidden ground intimated only indirectly",
+                  "note": "The Dao that cannot be directly told, only approached through its expressions, is the apophatic-hidden parallel to the Brahman hidden in all bodies.",
+                  "textId": "tao-te-ching-1"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "3.8",
+          "text": "I know that great person (purusha) of sunlike lustre beyond the darkness. A man who knows him truly, passes over death; there is no other path to go.",
+          "textVersions": {
+            "muller": "I know that great person (purusha) of sunlike lustre beyond the darkness. A man who knows him truly, passes over death; there is no other path to go."
+          },
+          "entities": [
+            {
+              "word": "that great person (purusha) of sunlike lustre beyond the darkness",
+              "node": "purusha",
+              "type": "deity",
+              "note": "The cosmic Person of Ṛgveda 10.90, here identified with the supreme Lord — Müller marks 3.8 as quoting the Puruṣa tradition (the verse echoes Vājasaneyi-Saṃhitā). The Śvetāśvatara annexes the ancient cosmic-man cosmogony to its theism.",
+              "parallels": [
+                {
+                  "label": "Purusha dismembered to make the world",
+                  "note": "The Enuma Elish reader already pairs Purusha with Tiamat and Ymir as cosmic-body cosmogony; here the same Puruṣa is recast as the saving Lord \"beyond the darkness\" rather than the sacrificed victim.",
+                  "textId": "enuma-elish-4"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "3.11",
+          "text": "That Bhagavat exists in the faces, the heads, the necks of all, he dwells in the cave (of the heart) of all beings, he is all-pervading, therefore he is the omnipresent Siva.",
+          "textVersions": {
+            "muller": "That Bhagavat exists in the faces, the heads, the necks of all, he dwells in the cave (of the heart) of all beings, he is all-pervading, therefore he is the omnipresent Siva."
+          },
+          "entities": [
+            {
+              "word": "he is all-pervading, therefore he is the omnipresent Siva",
+              "node": "divine-immanence",
+              "type": "theme",
+              "note": "The all-pervading God indwelling every being — and the explicit naming of Śiva as that omnipresent Lord, a key text for the later Śaiva identification of Rudra with the absolute. Müller's diacritics give Śiva; the vault deity node for the early form is rudra-shiva-early.",
+              "parallels": [
+                {
+                  "label": "Tao Te Ching — the ground present in all things without being known",
+                  "note": "The Dao that acts through all things while remaining unseen is the Chinese parallel to the all-pervading Bhagavat indwelling every creature.",
+                  "textId": "tao-te-ching-1"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "3.16",
+          "text": "Its hands and feet are everywhere, its eyes and head are everywhere, its ears are everywhere, it stands encompassing all in the world.",
+          "textVersions": {
+            "muller": "Its hands and feet are everywhere, its eyes and head are everywhere, its ears are everywhere, it stands encompassing all in the world."
+          },
+          "entities": [
+            {
+              "word": "Its hands and feet are everywhere, its eyes and head are everywhere",
+              "node": "divine-immanence",
+              "type": "theme",
+              "note": "The omnipresence formula (śloka shared with Bhagavad-gītā 13.13 and Ṛgveda 10.81): the God whose organs are everywhere because he is everything's ground. The Śvetāśvatara uses the inherited verse to assert the immanence of its one Lord.",
+              "parallels": []
+            }
+          ]
+        },
+        {
+          "ref": "3.19",
+          "text": "Grasping without hands, hasting without feet, he sees without eyes, he hears without ears. He knows what can be known, but no one knows him; they call him the first, the great person (purusha).",
+          "textVersions": {
+            "muller": "Grasping without hands, hasting without feet, he sees without eyes, he hears without ears. He knows what can be known, but no one knows him; they call him the first, the great person (purusha)."
+          },
+          "entities": [
+            {
+              "word": "He knows what can be known, but no one knows him",
+              "node": "purusha",
+              "type": "deity",
+              "note": "The apophatic Puruṣa: the supreme Person acts and knows through no bodily organ and is himself unknowable — the limit of the via negativa within a theistic frame. Müller's rendering preserves the paradox the Upaniṣad uses to mark the Lord's transcendence of the senses.",
+              "parallels": [
+                {
+                  "label": "Tao Te Ching 1 — the unnameable that exceeds perception",
+                  "note": "\"The Tao that can be told is not the eternal Tao\" — the same apophatic structure: the ground is real but escapes every sense and category.",
+                  "textId": "tao-te-ching-1"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "3.20",
+          "text": "The Self, smaller than small, greater than great, is hidden in the heart of the creature. A man who has left all grief behind, sees the majesty, the Lord, the passionless, by the grace of the creator (the Lord).",
+          "textVersions": {
+            "muller": "The Self, smaller than small, greater than great, is hidden in the heart of the creature. A man who has left all grief behind, sees the majesty, the Lord, the passionless, by the grace of the creator (the Lord)."
+          },
+          "entities": [
+            {
+              "word": "The Self, smaller than small, greater than great, is hidden in the heart of the creature",
+              "node": "hidden-god",
+              "type": "theme",
+              "note": "The aṇoraṇīyān formula (also at Kaṭha 2.20): the God hidden in the heart, simultaneously infinitesimal and infinite. \"By the grace of the creator\" introduces grace (prasāda) — a markedly theistic note Deussen flags as the seed of later bhakti and of Rāmānuja's grace-theology.",
+              "parallels": [
+                {
+                  "label": "Muṇḍaka Upaniṣad — the Self set in the cave of the heart",
+                  "note": "The same hidden-in-the-heart Self; the Muṇḍaka reaches it by knowledge, the Śvetāśvatara adds grace (prasāda) — knowledge versus grace as the two Upaniṣadic routes.",
+                  "textId": "mundaka-upanishad"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Adhyāya 4 — The One who became the manifold",
+      "verses": [
+        {
+          "ref": "4.1",
+          "text": "He, the sun, without any colour, who with set purpose by means of his power (sakti) produces endless colours, in whom all this comes together in the beginning, and comes asunder in the end—may he, the god, endow us with good thoughts.",
+          "textVersions": {
+            "muller": "He, the sun, without any colour, who with set purpose by means of his power (sakti) produces endless colours, in whom all this comes together in the beginning, and comes asunder in the end—may he, the god, endow us with good thoughts."
+          },
+          "entities": [
+            {
+              "word": "who with set purpose by means of his power (sakti) produces endless colours",
+              "node": "divine-emanation",
+              "type": "theme",
+              "note": "The colourless One projecting \"endless colours\" by his śakti is the Upaniṣad's image of emanation: the single ground unfolding the variegated world through its own creative power (the śakti / māyā that Śaṅkara glossed at 3.1). It anticipates the later Śaiva doctrine of Śakti as the Lord's world-producing energy.",
+              "parallels": []
+            }
+          ]
+        },
+        {
+          "ref": "4.2",
+          "text": "That (Self) indeed is Agni (fire), it is Aditya (sun), it is Vayu (wind), it is Kandramas (moon); the same also is the starry firmament, it is Brahman (Hiranyagarbha), it is water, it is Pragapati (Virag).",
+          "textVersions": {
+            "muller": "That (Self) indeed is Agni (fire), it is Aditya (sun), it is Vayu (wind), it is Kandramas (moon); the same also is the starry firmament, it is Brahman (Hiranyagarbha), it is water, it is Pragapati (Virag)."
+          },
+          "entities": [
+            {
+              "word": "That (Self) indeed is Agni (fire), it is Aditya (sun), it is Vayu (wind)",
+              "node": "panentheism",
+              "type": "theme",
+              "note": "The one Self declared identical with each of the great Vedic powers in turn — the all-is-one litany that pulls the older polytheistic pantheon into a single absolute. The pluralism of the Vedic gods is retained as the faces of the one Lord (panentheism rather than their abolition).",
+              "parallels": [
+                {
+                  "label": "Isaiah 45 — the one who is light and darkness, weal and woe",
+                  "note": "Isaiah 45:7, \"I form the light, and create darkness... I the LORD do all these,\" makes the one God the source of every opposed power, as the Śvetāśvatara makes the one Self every cosmic element — the same monotheist absorption of plurality into one.",
+                  "textId": "isaiah-45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "4.3",
+          "text": "Thou art woman, thou art man; thou art youth, thou art maiden; thou, as an old man, totterest along on thy staff; thou art born with thy face turned everywhere.",
+          "textVersions": {
+            "muller": "Thou art woman, thou art man; thou art youth, thou art maiden; thou, as an old man, totterest along on thy staff; thou art born with thy face turned everywhere."
+          },
+          "entities": [
+            {
+              "word": "Thou art woman, thou art man; thou art youth, thou art maiden",
+              "node": "panentheism",
+              "type": "theme",
+              "note": "The Upaniṣad's most famous panentheistic verse: the one Lord is every gender, age, and form. Deussen reads it as the high-water mark of the text's identification of God with all that is, while keeping God personal (\"Thou\") — the precise difference between panentheism and a flat pantheism.",
+              "parallels": [
+                {
+                  "label": "Tao Te Ching — the one ground manifest as the ten-thousand things",
+                  "note": "The Dao as \"the mother of all things\" producing every form parallels the Lord who is at once woman, man, youth, and maiden — one source appearing as all.",
+                  "textId": "tao-te-ching-1"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "4.5",
+          "text": "There is one unborn being (female), red, white, and black, uniform, but producing manifold offspring. There is one unborn being (male) who loves her and lies by her; there is another who leaves her, while she is eating what has to be eaten.",
+          "textVersions": {
+            "muller": "There is one unborn being (female), red, white, and black, uniform, but producing manifold offspring. There is one unborn being (male) who loves her and lies by her; there is another who leaves her, while she is eating what has to be eaten."
+          },
+          "entities": [
+            {
+              "word": "one unborn being (female), red, white, and black, uniform, but producing manifold offspring",
+              "node": "divine-emanation",
+              "type": "theme",
+              "note": "The unborn female (read by the commentators as Prakṛti / Māyā, the Lord's creative nature) producing the manifold world, with the two unborn males — the enjoying soul and the detached witness — beside her. Müller notes 4.5 became the proof-text for the later Sāṃkhya-Vedānta debate over Prakṛti and Puruṣa. The Atlas has no node for māyā, so the emanative producing-power is annotated here as divine-emanation.",
+              "parallels": [
+                {
+                  "label": "Muṇḍaka Upaniṣad — the two birds, eater and watcher",
+                  "note": "The two unborn males — one who clings, one who leaves — are the same pair the Śvetāśvatara renders one verse later (4.6) as the two birds, shared verbatim with the Muṇḍaka: the bound, enjoying self and the free, witnessing Self.",
+                  "textId": "mundaka-upanishad"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
