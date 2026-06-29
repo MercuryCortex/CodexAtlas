@@ -1,6 +1,6 @@
 # Quality issues
 
-_Auto-generated 2026-06-09. Status claims not meeting the bar in methodology.md._
+_Auto-generated 2026-06-29. Status claims not meeting the bar in methodology.md._
 
 | Node | Type | Issue |
 |---|---|---|
@@ -118,7 +118,6 @@ _Auto-generated 2026-06-09. Status claims not meeting the bar in methodology.md.
 | `helen-schucman` | person | status:metadata but only 1 refs |
 | `nicomachus` | person | status:full but only 0 refs |
 | `bahaullah` | person | status:metadata but only 1 refs |
-| `averroes` | person | status:full but only 0 refs |
 | `rashid-rida` | person | status:metadata but only 1 refs |
 | `marshall-vian-summers` | person | status:metadata but only 1 refs |
 | `dutty-boukman` | person | status:metadata but only 1 refs |

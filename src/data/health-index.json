@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-06-14T01:11:03Z",
+  "generatedAt": "2026-06-29T17:48:04Z",
   "vault": {
-    "totalNodes": 5357,
+    "totalNodes": 5389,
     "lensCount": 30,
     "familyCount": 14,
-    "unmatchedTradNodes": 30,
-    "intentionallyCrossTradition": 30
+    "unmatchedTradNodes": 33,
+    "intentionallyCrossTradition": 32
   },
   "lenses": [
     {
@@ -37,30 +37,30 @@
     {
       "folder": "03_deities",
       "label": "Deities",
-      "count": 994,
+      "count": 1011,
       "baseline": 900,
-      "ratio": 1.104,
+      "ratio": 1.123,
       "band": "rich",
       "baselineNote": "EoR deity/numina entries + Leeming Oxford Companion to World Mythology (~3,000 entries)",
       "statuses": {
-        "metadata": 913,
-        "(no status)": 54,
+        "metadata": 914,
+        "(no status)": 70,
         "full": 27
       }
     },
     {
       "folder": "04_persons",
       "label": "Persons",
-      "count": 1226,
+      "count": 1223,
       "baseline": 750,
-      "ratio": 1.635,
+      "ratio": 1.631,
       "band": "over-baseline",
       "baselineNote": "EoR religious figures + Bowker Oxford Dict. World Religions biographical entries",
       "statuses": {
-        "metadata": 481,
-        "stub": 690,
-        "(no status)": 18,
-        "full": 37
+        "metadata": 479,
+        "stub": 686,
+        "(no status)": 23,
+        "full": 35
       }
     },
     {
@@ -81,16 +81,16 @@
     {
       "folder": "06_themes",
       "label": "Themes / motifs",
-      "count": 511,
+      "count": 520,
       "baseline": 350,
-      "ratio": 1.46,
+      "ratio": 1.486,
       "band": "rich",
       "baselineNote": "EoR concept/topic entries (Bynum 2011 + Eliade themes vocabulary)",
       "statuses": {
-        "stub": 313,
-        "metadata": 162,
-        "full": 27,
-        "(no status)": 6,
+        "stub": 301,
+        "full": 59,
+        "metadata": 147,
+        "(no status)": 10,
         "partial": 2,
         "redirect": 1
       }
@@ -128,15 +128,15 @@
     {
       "folder": "09_symbols",
       "label": "Symbols",
-      "count": 283,
+      "count": 284,
       "baseline": 200,
-      "ratio": 1.415,
+      "ratio": 1.42,
       "band": "rich",
       "baselineNote": "Cooper Encyclopedia of Symbols + Chevalier-Gheerbrant Dict. of Symbols",
       "statuses": {
         "metadata": 86,
         "(no status)": 179,
-        "full": 13,
+        "full": 14,
         "stub": 5
       }
     },
@@ -168,13 +168,13 @@
     {
       "folder": "12_alchemy",
       "label": "Alchemy",
-      "count": 35,
+      "count": 36,
       "baseline": 140,
-      "ratio": 0.25,
+      "ratio": 0.257,
       "band": "developing",
       "baselineNote": "Greer 2003 Encyc. of Hermetic & Occult Traditions — alchemy section",
       "statuses": {
-        "full": 31,
+        "full": 32,
         "stub": 4
       }
     },
@@ -219,14 +219,14 @@
     {
       "folder": "16_mathematics",
       "label": "Mathematics",
-      "count": 20,
+      "count": 22,
       "baseline": 60,
-      "ratio": 0.333,
+      "ratio": 0.367,
       "band": "developing",
       "baselineNote": "Sacred-mathematics niche — Schimmel Mystery of Numbers + Lawlor Sacred Geometry",
       "statuses": {
         "(no status)": 12,
-        "full": 8
+        "full": 10
       }
     },
     {
@@ -258,14 +258,14 @@
     {
       "folder": "19_astronomy",
       "label": "Astronomy",
-      "count": 23,
+      "count": 25,
       "baseline": 80,
-      "ratio": 0.287,
+      "ratio": 0.312,
       "band": "developing",
       "baselineNote": "Walker Astronomy Before the Telescope + cultural-astronomy entries",
       "statuses": {
-        "metadata": 21,
-        "(no status)": 2
+        "(no status)": 4,
+        "metadata": 21
       }
     },
     {
@@ -340,26 +340,26 @@
     {
       "folder": "25_divination",
       "label": "Divination",
-      "count": 27,
+      "count": 29,
       "baseline": 110,
-      "ratio": 0.245,
-      "band": "anemic",
+      "ratio": 0.264,
+      "band": "developing",
       "baselineNote": "Greer 2003 + Loewe-Blacker Oracles & Divination cross-cultural entries",
       "statuses": {
         "metadata": 25,
-        "(no status)": 2
+        "(no status)": 4
       }
     },
     {
       "folder": "26_calendars",
       "label": "Calendars",
-      "count": 23,
+      "count": 24,
       "baseline": 70,
-      "ratio": 0.329,
+      "ratio": 0.343,
       "band": "developing",
       "baselineNote": "Richards Mapping Time + Steel Marking Time religious-calendar entries",
       "statuses": {
-        "(no status)": 4,
+        "(no status)": 5,
         "metadata": 18,
         "\"metada": 1
       }
@@ -419,13 +419,13 @@
     {
       "key": "mesopotamian",
       "label": "Mesopotamian",
-      "count": 203,
+      "count": 204,
       "baseline": 280,
-      "ratio": 0.725,
+      "ratio": 0.729,
       "band": "rich",
       "perLens": {
         "02_documents": 32,
-        "03_deities": 123,
+        "03_deities": 124,
         "04_persons": 21,
         "05_events": 1,
         "10_music": 3,
@@ -441,13 +441,13 @@
     {
       "key": "egyptian",
       "label": "Egyptian",
-      "count": 144,
+      "count": 145,
       "baseline": 240,
-      "ratio": 0.6,
+      "ratio": 0.604,
       "band": "rich",
       "perLens": {
         "02_documents": 21,
-        "03_deities": 66,
+        "03_deities": 67,
         "04_persons": 24,
         "06_themes": 5,
         "09_symbols": 2,
@@ -466,15 +466,16 @@
     {
       "key": "abrahamic",
       "label": "Abrahamic",
-      "count": 1046,
+      "count": 1048,
       "baseline": 700,
-      "ratio": 1.494,
+      "ratio": 1.497,
       "band": "rich",
       "perLens": {
         "02_documents": 315,
-        "03_deities": 125,
-        "04_persons": 412,
+        "03_deities": 128,
+        "04_persons": 410,
         "05_events": 2,
+        "06_themes": 1,
         "09_symbols": 2,
         "10_music": 21,
         "11_alphabets": 12,
@@ -497,18 +498,19 @@
     {
       "key": "greco-roman",
       "label": "Greco-Roman",
-      "count": 366,
+      "count": 375,
       "baseline": 380,
-      "ratio": 0.963,
+      "ratio": 0.987,
       "band": "rich",
       "perLens": {
         "02_documents": 56,
-        "03_deities": 129,
-        "04_persons": 87,
+        "03_deities": 134,
+        "04_persons": 89,
+        "06_themes": 1,
         "09_symbols": 1,
         "10_music": 23,
         "11_alphabets": 3,
-        "12_alchemy": 25,
+        "12_alchemy": 26,
         "13_morals": 6,
         "14_rituals": 6,
         "15_philosophy": 6,
@@ -522,13 +524,13 @@
     {
       "key": "iranian",
       "label": "Iranian / Zoroastrian",
-      "count": 66,
+      "count": 69,
       "baseline": 180,
-      "ratio": 0.367,
+      "ratio": 0.383,
       "band": "developing",
       "perLens": {
         "02_documents": 7,
-        "03_deities": 29,
+        "03_deities": 32,
         "04_persons": 6,
         "09_symbols": 1,
         "10_music": 1,
@@ -545,13 +547,13 @@
     {
       "key": "indic",
       "label": "Indic (Hindu / Jain / Sikh)",
-      "count": 282,
+      "count": 284,
       "baseline": 520,
-      "ratio": 0.542,
+      "ratio": 0.546,
       "band": "developing",
       "perLens": {
         "02_documents": 47,
-        "03_deities": 98,
+        "03_deities": 100,
         "04_persons": 50,
         "10_music": 14,
         "11_alphabets": 2,
@@ -602,14 +604,15 @@
     {
       "key": "east-asian",
       "label": "East Asian (Daoist / Confucian / folk)",
-      "count": 171,
+      "count": 173,
       "baseline": 320,
-      "ratio": 0.534,
+      "ratio": 0.541,
       "band": "developing",
       "perLens": {
         "02_documents": 34,
-        "03_deities": 72,
+        "03_deities": 73,
         "04_persons": 19,
+        "06_themes": 1,
         "10_music": 8,
         "11_alphabets": 1,
         "12_alchemy": 1,
@@ -666,13 +669,13 @@
     {
       "key": "mesoamerican",
       "label": "Mesoamerican",
-      "count": 86,
+      "count": 87,
       "baseline": 180,
-      "ratio": 0.478,
+      "ratio": 0.483,
       "band": "developing",
       "perLens": {
         "02_documents": 14,
-        "03_deities": 52,
+        "03_deities": 53,
         "04_persons": 1,
         "10_music": 3,
         "11_alphabets": 1,
@@ -724,9 +727,9 @@
     {
       "key": "modern-syncretic",
       "label": "Modern / syncretic / esoteric",
-      "count": 130,
+      "count": 132,
       "baseline": 240,
-      "ratio": 0.542,
+      "ratio": 0.55,
       "band": "developing",
       "perLens": {
         "02_documents": 38,
@@ -737,6 +740,7 @@
         "13_morals": 1,
         "14_rituals": 7,
         "15_philosophy": 4,
+        "16_mathematics": 2,
         "17_medicine": 1,
         "26_calendars": 1,
         "27_attire": 1,
@@ -763,7 +767,7 @@
   "unmatchedTraditionsTop": [
     {
       "tradition": "roman",
-      "count": 14
+      "count": 15
     },
     {
       "tradition": "tradition-proto-indo-european-religion",
@@ -802,6 +806,10 @@
       "count": 1
     },
     {
+      "tradition": "italian renaissance (western european)",
+      "count": 1
+    },
+    {
       "tradition": "tradition-nabataeans",
       "count": 1
     },
@@ -815,6 +823,10 @@
     },
     {
       "tradition": "tradition-eurasian-steppe-cultures",
+      "count": 1
+    },
+    {
+      "tradition": "comparative (cross-tradition scholarship)",
       "count": 1
     }
   ]

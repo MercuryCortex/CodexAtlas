@@ -1,6 +1,6 @@
 # Canonical slug registry
 
-_Initially seeded 2026-06-09. **Edit this file by hand to lock the canonical form.**_
+_Initially seeded 2026-06-29. **Edit this file by hand to lock the canonical form.**_
 
 When agents or humans rename a node, add the old slug here as an alias so future agents
 can detect and avoid drift. The build_dashboard.py audit cross-checks dead-link targets
@@ -17,7 +17,7 @@ canonical-slug
 ## Currently resolved slugs (auto-seeded — every existing file)
 
 
-### alchemy (35 nodes)
+### alchemy (36 nodes)
 
 - `alchemy-al-razi-rhazes`
 - `alchemy-albertus-magnus`
@@ -51,11 +51,12 @@ canonical-slug
 - `alchemy-saltpetre-purification`
 - `alchemy-sublimation`
 - `alchemy-sulfur-mercury-theory`
+- `alchemy-the-great-work`
 - `alchemy-tria-prima`
 - `alchemy-vitriol-descent`
 - `alchemy-zosimos-of-panopolis`
 
-### alphabet (41 nodes)
+### alphabet (47 nodes)
 
 - `alphabet-arabic-calligraphy`
 - `alphabet-arabic-quran`
@@ -70,6 +71,7 @@ canonical-slug
 - `alphabet-cuneiform-sacred`
 - `alphabet-devanagari-sacred`
 - `alphabet-elder-futhark`
+- `alphabet-etruscan`
 - `alphabet-geez-ethiopic`
 - `alphabet-gematria-hebrew`
 - `alphabet-georgian`
@@ -77,6 +79,7 @@ canonical-slug
 - `alphabet-greek-vowel-revolution`
 - `alphabet-hangul`
 - `alphabet-hebrew-aleph-bet`
+- `alphabet-hieratic-demotic`
 - `alphabet-huruf-muqattaat`
 - `alphabet-ilm-al-huruf`
 - `alphabet-indus-valley-script`
@@ -87,13 +90,17 @@ canonical-slug
 - `alphabet-masoretes`
 - `alphabet-mayan-glyphs`
 - `alphabet-medu-netjer`
+- `alphabet-mongolian`
+- `alphabet-nabataean`
 - `alphabet-ogham`
 - `alphabet-phoenician`
 - `alphabet-proto-elamite`
+- `alphabet-proto-sinaitic`
 - `alphabet-quran-sacred-language`
 - `alphabet-rongorongo`
 - `alphabet-sacred-language-convergence`
 - `alphabet-sefer-yetzirah`
+- `alphabet-sogdian`
 - `alphabet-south-arabian`
 - `alphabet-syriac`
 - `alphabet-tibetan-tantric`
@@ -103,7 +110,7 @@ canonical-slug
 
 - `ASSESSMENT-2026-05-21-end-of-session-block`
 
-### astronomy (23 nodes)
+### astronomy (25 nodes)
 
 - `al-tusi-astronomer`
 - `aryabhata-astronomer`
@@ -115,6 +122,7 @@ canonical-slug
 - `astronomy-chinese-28-mansions`
 - `astronomy-egyptian-decans`
 - `astronomy-indian-nakshatras`
+- `astronomy-lunar-mansions`
 - `astronomy-mayan-long-count`
 - `astronomy-mul-apin`
 - `astronomy-nabta-playa`
@@ -123,6 +131,7 @@ canonical-slug
 - `astronomy-surya-siddhanta`
 - `astronomy-venus-tables-dresden`
 - `astronomy-zij-i-ilkhani`
+- `astronomy-zodiac-comparative`
 - `cheomseongdae-observatory`
 - `hipparchus-astronomer`
 - `maragha-observatory`
@@ -151,7 +160,7 @@ canonical-slug
 - `tallit-with-tzitzit`
 - `vestment-chasuble`
 
-### calendar-system (22 nodes)
+### calendar-system (24 nodes)
 
 - `aztec-tonalpohualli-xiuhpohualli`
 - `bahai-badi-calendar`
@@ -161,6 +170,7 @@ canonical-slug
 - `calendar-japanese-nengo-era-name`
 - `calendar-mesoamerican-calendar-round`
 - `calendar-zoroastrian-fasli-shenshai-kadmi`
+- `calendars-comparative`
 - `chinese-sexagenary-calendar`
 - `coptic-calendar`
 - `egyptian-civil-calendar`
@@ -174,6 +184,7 @@ canonical-slug
 - `liturgical-year-christian`
 - `mayan-calendrical-system`
 - `tibetan-phugpa-calendar`
+- `tonalpohualli`
 - `vikram-samvat-calendar`
 
 ### consciousness-figure (25 nodes)
@@ -204,7 +215,7 @@ canonical-slug
 - `consciousness-zazen-shikantaza-just-sitting`
 - `jung-analytical-psychology`
 
-### deity (990 nodes)
+### deity (1011 nodes)
 
 - `abathur`
 - `abrasax`
@@ -214,6 +225,7 @@ canonical-slug
 - `adamastor`
 - `aditi`
 - `adonis`
+- `aeacus`
 - `aegir-norse`
 - `aengus-og`
 - `aeshma`
@@ -271,6 +283,7 @@ canonical-slug
 - `anzu`
 - `apam-napat-vedic`
 - `apam-napat-zoroastrian`
+- `apas`
 - `aphrodite-greek`
 - `apis-bull`
 - `apkallu`
@@ -315,6 +328,7 @@ canonical-slug
 - `aya-sherida`
 - `ayyappa`
 - `azazel`
+- `azi-dahaka`
 - `ba-xian`
 - `baal`
 - `baal-hadad`
@@ -333,6 +347,7 @@ canonical-slug
 - `bastet`
 - `bau-sumerian`
 - `beelzebub`
+- `behemoth`
 - `beher`
 - `belenos`
 - `belet-seri-akkadian`
@@ -484,6 +499,7 @@ canonical-slug
 - `ganesha`
 - `ganga`
 - `garuda`
+- `gatumdug`
 - `gayatri`
 - `geb`
 - `gede-loa`
@@ -516,6 +532,7 @@ canonical-slug
 - `harihara`
 - `hariti`
 - `hathor`
+- `hatmehit`
 - `hauhet`
 - `haumea`
 - `haumia-tiketike`
@@ -748,6 +765,7 @@ canonical-slug
 - `mimir-norse`
 - `min-egyptian`
 - `minerva-roman`
+- `minos`
 - `mithra-zoroastrian`
 - `mithras-roman`
 - `mitra-vedic`
@@ -882,7 +900,9 @@ canonical-slug
 - `perun`
 - `phanes-protogonos`
 - `phoebe-titan`
+- `phosphoros`
 - `pidray`
+- `pistis-sophia`
 - `pluto-roman`
 - `plutus`
 - `poimandres`
@@ -893,6 +913,7 @@ canonical-slug
 - `prajnaparamita-goddess`
 - `priapus-greek-roman`
 - `primal-man-manichaean`
+- `primordial-sea-popol-vuh`
 - `prince-of-darkness-manichaean`
 - `prithvi`
 - `prometheus`
@@ -902,11 +923,13 @@ canonical-slug
 - `ptah`
 - `ptahil`
 - `purusha`
+- `python`
 - `quetzalcoatl`
 - `quirinus-roman`
 - `ra`
 - `radha`
 - `raguel-archangel`
+- `rahab`
 - `rahu`
 - `raijin`
 - `rainbow-serpent`
@@ -922,6 +945,7 @@ canonical-slug
 - `renenutet`
 - `resheph`
 - `reue-lusitanian`
+- `rhadamanthus`
 - `rhea`
 - `rhiannon`
 - `rishabha-jain`
@@ -954,6 +978,7 @@ canonical-slug
 - `satet`
 - `saturn-roman`
 - `saule`
+- `saurva`
 - `savitr`
 - `sedna-inuit`
 - `sekhmet`
@@ -1028,6 +1053,7 @@ canonical-slug
 - `tangaroa`
 - `tangun`
 - `tanit`
+- `tannin`
 - `tapio`
 - `tara`
 - `taranis`
@@ -1040,6 +1066,7 @@ canonical-slug
 - `tawhirimatea`
 - `tecciztecatl`
 - `tefnut`
+- `tehom`
 - `telipinu`
 - `tellus`
 - `tenjin`
@@ -1055,6 +1082,7 @@ canonical-slug
 - `the-elect-one-enochic`
 - `the-erinyes`
 - `the-evil-god-cathar`
+- `the-father-valentinian`
 - `the-good-god-cathar`
 - `the-lady-ecclesia-hermas`
 - `the-moirai`
@@ -1070,6 +1098,7 @@ canonical-slug
 - `themis`
 - `thor`
 - `thoth`
+- `thraetaona`
 - `three-pure-ones`
 - `tiamat`
 - `tian-heaven`
@@ -1104,6 +1133,7 @@ canonical-slug
 - `typhon`
 - `tyr`
 - `ukko`
+- `ullikummi`
 - `ullr`
 - `uni-etruscan`
 - `unkulunkulu-zulu`
@@ -1128,6 +1158,7 @@ canonical-slug
 - `vanth`
 - `varaha-avatar`
 - `varuna`
+- `vasudeva-vrishni`
 - `vayu`
 - `vayu-iranian`
 - `veles`
@@ -1177,6 +1208,7 @@ canonical-slug
 - `yam`
 - `yama-vedic`
 - `yamantaka`
+- `yamata-no-orochi`
 - `yamuna`
 - `yan-wang`
 - `yarikh`
@@ -1197,18 +1229,20 @@ canonical-slug
 - `zorya`
 - `zurvan`
 
-### divination-system (27 nodes)
+### divination-system (29 nodes)
 
 - `astragalomancy-knucklebone`
 - `augury-roman-bird-omens`
 - `bibliomancy-sortes`
 - `cleromancy-lot-casting`
+- `divination-astrology-comparative`
 - `divination-bone-throwing-southern-african`
 - `divination-feng-shui-luopan-compass`
 - `divination-i-ching-yarrow-stalk-method`
 - `divination-jyotisha-prashna-horary`
 - `divination-mexica-tonalamatl-codex`
 - `divination-tarot-marseille-modern-occult`
+- `divination-typology-comparative`
 - `dream-incubation-asklepieion`
 - `extispicy-mesopotamian`
 - `geomancy-raml-cross-tradition`
@@ -1284,7 +1318,7 @@ canonical-slug
 - `doctrine-water-as-divine-gift-zoroastrianism`
 - `shema`
 
-### document (580 nodes)
+### document (621 nodes)
 
 - `ajanta-inscriptions`
 - `avesta`
@@ -1317,13 +1351,18 @@ canonical-slug
 - `document-3-john`
 - `document-3-maccabees`
 - `document-amos`
+- `document-apocalypse-of-adam`
+- `document-boethius-consolation`
 - `document-book-of-gates`
 - `document-book-of-the-heavenly-cow`
 - `document-colossians`
 - `document-contendings-of-horus-and-seth`
+- `document-corpus-areopagiticum`
+- `document-derveni-papyrus`
 - `document-descent-of-ishtar`
 - `document-deuteronomy`
 - `document-dispute-man-and-his-ba`
+- `document-empedocles`
 - `document-enki-and-ninhursag`
 - `document-ephesians`
 - `document-erra-and-ishum`
@@ -1334,11 +1373,14 @@ canonical-slug
 - `document-galatians`
 - `document-genesis`
 - `document-gilgamesh-standard-babylonian`
+- `document-gospel-of-the-egyptians`
 - `document-great-hymn-to-osiris`
 - `document-habakkuk`
 - `document-haggai`
 - `document-hebrews`
+- `document-heraclitus-fragments`
 - `document-hosea`
+- `document-iamblichus-pythagorean-life`
 - `document-instruction-of-ptahhotep`
 - `document-james`
 - `document-jeremiah`
@@ -1358,26 +1400,59 @@ canonical-slug
 - `document-nergal-and-ereshkigal`
 - `document-numbers`
 - `document-obadiah`
+- `document-orphic-gold-tablets`
+- `document-parmenides-poem`
 - `document-philemon`
 - `document-philippians`
+- `document-porphyry-isagoge-and-life`
 - `document-prayer-of-manasseh`
+- `document-proclus-platonic-theology`
+- `document-pythagorean-golden-verses`
+- `document-quran-al-ahzab`
+- `document-quran-al-alaq`
+- `document-quran-al-anam`
 - `document-quran-al-anbiya`
+- `document-quran-al-araf`
 - `document-quran-al-baqara`
+- `document-quran-al-falaq`
 - `document-quran-al-fatiha`
 - `document-quran-al-ikhlas`
 - `document-quran-al-imran`
 - `document-quran-al-isra`
+- `document-quran-al-kafirun`
 - `document-quran-al-kahf`
 - `document-quran-al-maeda`
+- `document-quran-al-mulk`
+- `document-quran-al-nahl`
+- `document-quran-al-naml`
+- `document-quran-al-nas`
+- `document-quran-al-nasr`
+- `document-quran-al-nur`
+- `document-quran-al-qadr`
+- `document-quran-al-qasas`
+- `document-quran-al-rahman`
+- `document-quran-al-shura`
+- `document-quran-al-tawba`
+- `document-quran-al-waqia`
 - `document-quran-an-nisa`
+- `document-quran-ghafir`
+- `document-quran-hud`
+- `document-quran-ibrahim`
 - `document-quran-maryam`
+- `document-quran-nuh`
+- `document-quran-qaf`
 - `document-quran-ta-ha`
+- `document-quran-ya-sin`
+- `document-quran-yunus`
 - `document-quran-yusuf`
 - `document-revelation`
 - `document-romans`
 - `document-ruth`
+- `document-sallustius-on-the-gods`
+- `document-three-steles-of-seth`
 - `document-titus`
 - `document-tobit`
+- `document-treatise-on-the-resurrection`
 - `document-zechariah`
 - `document-zephaniah`
 - `dunhuang-manuscripts`
@@ -2270,42 +2345,59 @@ canonical-slug
 
 - `FINDINGS-2026-05-21-session-close`
 
-### language (32 nodes)
+### language (49 nodes)
 
 - `classical-arabic`
 - `hebrew-biblical`
 - `koine-greek`
 - `language-akkadian`
+- `language-ancient-greek`
 - `language-aramaic-imperial`
 - `language-ardhamagadhi-prakrit`
 - `language-babylonian-aramaic`
 - `language-buddhist-hybrid-sanskrit`
+- `language-cherokee`
+- `language-classic-maya`
+- `language-classical-armenian`
 - `language-classical-chinese`
+- `language-classical-mongolian`
 - `language-classical-tibetan`
 - `language-coptic`
 - `language-demotic-egyptian`
 - `language-egyptian-hieroglyphic`
+- `language-etruscan`
 - `language-galilean-aramaic`
 - `language-geez`
+- `language-hittite`
 - `language-indo-european-family`
 - `language-latin-classical`
 - `language-latin-ecclesiastical`
 - `language-mandaic`
+- `language-middle-korean`
 - `language-middle-persian-pahlavi`
 - `language-mishnaic-hebrew`
+- `language-nabataean-aramaic`
 - `language-old-avestan`
+- `language-old-chinese`
 - `language-old-church-slavonic`
+- `language-old-georgian`
+- `language-old-irish`
+- `language-old-norse`
 - `language-old-persian`
 - `language-pali`
+- `language-phoenician`
 - `language-proto-indo-european`
 - `language-proto-indo-iranian`
+- `language-sabaic`
 - `language-sanskrit-classical`
+- `language-sogdian`
 - `language-sumerian`
 - `language-syriac`
+- `language-ugaritic`
 - `language-younger-avestan`
 - `sanskrit-vedic`
 
-### mathematics (20 nodes)
+### mathematics (22 nodes)
 
 - `mathematics-abjad-numerals`
 - `mathematics-babylonian-temple`
@@ -2317,11 +2409,13 @@ canonical-slug
 - `mathematics-house-of-wisdom`
 - `mathematics-magic-squares`
 - `mathematics-mayan-vigesimal`
+- `mathematics-numeral-systems`
 - `mathematics-pi-cross-tradition`
 - `mathematics-platonic-solids`
 - `mathematics-pythagorean-sacred`
 - `mathematics-sacred-72`
 - `mathematics-sacred-geometry`
+- `mathematics-sacred-numbers`
 - `mathematics-sexagesimal-babylonian`
 - `mathematics-sulba-sutras`
 - `mathematics-tetractys`
@@ -2505,7 +2599,7 @@ canonical-slug
 - `music-zoroastrian-sacred-sound`
 - `music-zosimos-alchemical-sound`
 
-### person (1217 nodes)
+### person (1223 nodes)
 
 - `aaron`
 - `abba-garima`
@@ -2529,6 +2623,7 @@ canonical-slug
 - `adi-shankara`
 - `adolf-katzenellenbogen`
 - `adrian-snodgrass`
+- `aeneas`
 - `aeschylus`
 - `afonso-i-of-portugal`
 - `agustin-lizarraga`
@@ -2608,6 +2703,7 @@ canonical-slug
 - `apollodorus-of-damascus`
 - `apollonius-of-tyana`
 - `apollos`
+- `apostle-john`
 - `april-deconick`
 - `apu-salkantay`
 - `apu-veronica`
@@ -2636,13 +2732,10 @@ canonical-slug
 - `atisa`
 - `atrahasis-flood-hero`
 - `augustine-of-hippo`
-- `augustus-roman-emperor`
 - `aurangzeb-emperor`
 - `aurel-stein`
 - `avars`
 - `avenue-of-the-dead`
-- `averroes`
-- `avicenna`
 - `baal-shem-tov`
 - `bahaullah`
 - `bahya-ibn-paquda`
@@ -3077,6 +3170,7 @@ canonical-slug
 - `johann-valentin-andreae`
 - `johannes-reuchlin`
 - `johannes-tauler`
+- `john-anthony-west`
 - `john-brumley`
 - `john-calvin`
 - `john-cassian`
@@ -3125,9 +3219,11 @@ canonical-slug
 - `juan-pizarro`
 - `judah-ha-nasi`
 - `judas-iscariot`
+- `judas-maccabeus`
 - `julian-of-norwich`
 - `julian-the-apostate`
 - `julio-c-tello`
+- `julius-caesar`
 - `justin-martyr`
 - `justinian-i`
 - `kabir`
@@ -3174,7 +3270,6 @@ canonical-slug
 - `kuai-xiang`
 - `kulasekhara-pandya`
 - `kumarajiva`
-- `kumarajiva-person`
 - `kuni-yuzuri`
 - `kunjara-mallan-rajaraja-perunthachan`
 - `kuratsukuri-no-tori`
@@ -3350,10 +3445,13 @@ canonical-slug
 - `north-africa`
 - `numenius-of-apamea`
 - `nund-rishi`
+- `odysseus`
+- `oliver-cowdery`
 - `omar-khayyam`
 - `onesimus`
 - `onias-iii`
 - `onias-iv`
+- `onomacritus`
 - `oracle-divination`
 - `oracle-of-delphi`
 - `origen`
@@ -3458,10 +3556,13 @@ canonical-slug
 - `quadratus-the-apologist`
 - `quetzalcoatl-historical`
 - `rabbi-akiva`
+- `rabbi-ishmael-ben-elisha`
 - `rabbi-judah-loew`
+- `rabbi-nehunya-ben-ha-qanah`
 - `rabbi-shimon-bar-yochai`
 - `rabia-of-basra`
 - `rajaraja-i-chola`
+- `ralph-waldo-emerson`
 - `ram-mohan-roy`
 - `ramakrishna`
 - `ramana-maharshi`
@@ -3611,6 +3712,7 @@ canonical-slug
 - `theodosius-i`
 - `theodotus-valentinian`
 - `theophilus-of-antioch`
+- `theseus`
 - `thich-nhat-hanh`
 - `thomas-apostle`
 - `thomas-aquinas`
@@ -3720,9 +3822,7 @@ canonical-slug
 - `zhou-dunyi`
 - `zhu-xi`
 - `zhuangzi`
-- `zhuangzi-person`
 - `ziusudra`
-- `zoroaster-prophet`
 - `zosimos-of-panopolis`
 
 ### philosophy (35 nodes)
@@ -4213,10 +4313,11 @@ canonical-slug
 - `yungang-grottoes`
 - `ziggurat-of-ur`
 
-### substance (16 nodes)
+### substance (17 nodes)
 
 - `balm-of-gilead`
 - `gemstones-diamond-golconda`
+- `lapis-lazuli`
 - `spice-routes-portuguese-overlay`
 - `substance-ayahuasca`
 - `substance-betel`
@@ -4232,7 +4333,7 @@ canonical-slug
 - `substance-tobacco-amerindian`
 - `substance-yerba-mate`
 
-### symbol (283 nodes)
+### symbol (284 nodes)
 
 - `abraxas`
 - `acacia`
@@ -4505,6 +4606,7 @@ canonical-slug
 - `vesica-piscis`
 - `veve`
 - `vine-grape`
+- `vitruvian-man`
 - `voynich-glyphs`
 - `wampum`
 - `was-scepter`
@@ -4546,7 +4648,7 @@ canonical-slug
 - `navigation-gps`
 - `navigation-gyrocompass`
 
-### theme (509 nodes)
+### theme (520 nodes)
 
 - `364-day-solar-calendar`
 - `adam-kadmon`
@@ -4617,12 +4719,14 @@ canonical-slug
 - `cosmic-cataclysm`
 - `cosmic-cycles`
 - `cosmopolitanism`
+- `covenant`
 - `creation-by-word`
 - `critique-of-idolatry`
 - `crucifixion-theology`
 - `crusade-theology-of-malecide`
 - `cusco`
 - `dantidurga`
+- `dao`
 - `demiurge`
 - `destroyer-healer`
 - `diaspora-formation`
@@ -4635,6 +4739,7 @@ canonical-slug
 - `divine-emanation`
 - `divine-feminine`
 - `divine-immanence`
+- `divine-intoxication`
 - `divine-kingship`
 - `divine-kingship-solar`
 - `divine-name`
@@ -4701,6 +4806,7 @@ canonical-slug
 - `hermetic-rebirth`
 - `hermetic-transmission-chain`
 - `hermopolitan-ogdoad`
+- `hero-twins`
 - `hidden-god`
 - `hierophany`
 - `holy-spirit-empowered-witness`
@@ -4730,9 +4836,11 @@ canonical-slug
 - `logos-johannine`
 - `logos-philonic`
 - `lost-continent`
+- `love-mysticism`
 - `ma-at-logos-sophia`
 - `marcionite-canon`
 - `martyrdom-theology`
+- `memra`
 - `merkabah-miraj-ascent-chain`
 - `mesoamerican-cosmogony`
 - `messianic-future-savior`
@@ -4779,6 +4887,7 @@ canonical-slug
 - `pharmakos`
 - `physicians-oath`
 - `pisac`
+- `planetary-correspondences`
 - `possession-ritual`
 - `pratitya-samutpada`
 - `pratyabhijna`
@@ -4790,6 +4899,7 @@ canonical-slug
 - `prisca-theologia`
 - `progressive-revelation`
 - `prophet-and-king`
+- `providence-and-fate`
 - `pseudoarchaeology`
 - `pseudonymity-as-strategy`
 - `psychopomp`
@@ -4846,6 +4956,7 @@ canonical-slug
 - `tahafut-controversy`
 - `tauroctony-as-cosmic-icon`
 - `tawḥīd`
+- `teleology`
 - `templar-gnostic-transmission-hypothesis`
 - `temple-economy`
 - `temple-incubation`
@@ -5020,6 +5131,7 @@ canonical-slug
 - `theme-zoroastrian-cosmogony`
 - `theme-zoroastrian-jewish-exchange`
 - `theme-zurvanite-heresy`
+- `theodicy`
 - `theurgy`
 - `third-century-collision-zone`
 - `tikal`
@@ -5043,6 +5155,7 @@ canonical-slug
 - `upendragupta`
 - `varahadeva`
 - `varanasi`
+- `venus-cycle`
 - `via-negativa`
 - `vicarious-atonement`
 - `visionary-alchemical-allegory`
@@ -5058,7 +5171,7 @@ canonical-slug
 - `zep-tepi`
 - `zeus-pantokrator-transmission`
 
-### tradition (328 nodes)
+### tradition (331 nodes)
 
 - `chandela-dynasty`
 - `khmer-empire`
@@ -5153,6 +5266,7 @@ canonical-slug
 - `tradition-franciscan-order`
 - `tradition-freemasonry`
 - `tradition-french-monarchy`
+- `tradition-gandhara-buddhism`
 - `tradition-georgian-orthodox`
 - `tradition-germanic-gothic`
 - `tradition-germanic-paganism`
@@ -5326,6 +5440,7 @@ canonical-slug
 - `tradition-second-temple-judaism`
 - `tradition-secular-turkish-state`
 - `tradition-seon-buddhism`
+- `tradition-sethian-gnosticism`
 - `tradition-shadhiliyya`
 - `tradition-shaiva-siddhanta`
 - `tradition-shaivism`
@@ -5370,6 +5485,7 @@ canonical-slug
 - `tradition-trappist`
 - `tradition-umayyad`
 - `tradition-uniao-do-vegetal`
+- `tradition-vaishnavism`
 - `tradition-vajrayana`
 - `tradition-vajrayana-buddhism`
 - `tradition-vakataka-dynasty-religion`
@@ -5395,17 +5511,25 @@ canonical-slug
 
 | Refs | Dead target | Suggested canonical (existing) |
 |---:|---|---|
-| 10 | `tradition-vaishnavism` | `tradition-pythagorean` |
-| 2 | `tradition-sethian-gnosticism` | `tradition-pythagorean` |
-| 2 | `the-father-valentinian` | `theodotus-valentinian` |
-| 2 | `phase-7-002-doctrine-and-covenants` | `theme-lex-talionis-covenant-code` |
-| 2 | `phase-2-018-pali-canon-suttas` | `phase-2-019-deuteronomistic-history` |
-| 2 | `love-mysticism` | `mysticism` |
+| 2 | `shamanic-tradition` | `tradition-shinto` |
+| 2 | `sacrifice-ritual` | `sacrifice-substitution` |
+| 2 | `phase-7-002-doctrine-and-covenants` | `phase-2-044-doctrine-of-the-mean-zhongyong` |
+| 2 | `phase-2-018-pali-canon-suttas` | `phase-2-016-early-buddhist-suttas` |
+| 2 | `illuminated-manuscript-art` | `phase-8-006-huarochiri-manuscript` |
+| 2 | `genesis-5-antediluvian-patriarchs` | `antediluvian-civilization` |
 | 2 | `ge'ez-language-transmission` | `oral-tradition-transmission` |
 | 2 | `event-coronation-of-charlemagne-800` | `event-coronado-expedition-1540` |
 | 2 | `event-aleister-crowley-boca-do-inferno-1930` | `event-alexander-indian-campaign-327-325-bce` |
-| 2 | `ethiopian-anti-catholic-polemic` | `ethiopian-geez-calendar` |
+| 2 | `evangelist-portraits` | `mark-evangelist` |
+| 2 | `ethiopian-anti-catholic-polemic` | `ethiopian-marian-devotion` |
 | 2 | `ecclesiastical-canon-law` | `ecclesial-authority` |
+| 2 | `divinatory-systems` | `divinatory-omen-reading` |
+| 2 | `disputed-historicity` | `quetzalcoatl-historical` |
+| 2 | `creation-emergence` | `alphabet-creation-by-word` |
+| 2 | `creation-by-song` | `creation-by-word` |
+| 2 | `cosmological-bifurcation` | `genealogical-cosmogony` |
+| 2 | `cosmogony-cosmic-egg` | `genealogical-cosmogony` |
 | 2 | `christian-legal-codes` | `lent-christian-fast` |
+| 2 | `ceremonial-restoration` | `ceremonial-magick` |
+| 2 | `apocalyptic-tradition` | `document-apocalypse-of-adam` |
 | 2 | `anti-stephanite-polemic` | `stephanie-meece` |
-| 2 | `anthropogony` | `anthropos-myth` |
