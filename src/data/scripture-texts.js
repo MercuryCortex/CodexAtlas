@@ -34188,3 +34188,1456 @@ SCRIPTURE_TEXTS['grimnismal-40'] = {
     }
   ]
 };
+
+// -- The Orphic Gold Tablets — Instructions for the Soul (Petelia + Thurii/Compagno Leaves) --
+SCRIPTURE_TEXTS['orphic-gold-tablets'] = {
+  "id": "orphic-gold-tablets",
+  "title": "The Orphic Gold Tablets — Instructions for the Soul (Petelia + Thurii/Compagno Leaves)",
+  "shortTitle": "Orphic Gold Tablets",
+  "corpus": "Greek · Orphic-Bacchic Mystery Religion",
+  "tradId": "tradition-orphic",
+  "date": "c. 400–100 BCE (Magna Graecia, Thessaly, Crete; oldest from Hipponion c. 400 BCE)",
+  "docNode": "phase-2-040-orphic-gold-tablets",
+  "language": "Archaic and Classical Greek (hexameter funerary formulae) · English translation: Jane Ellen Harrison, Prolegomena to the Study of Greek Religion (Cambridge, 1903), with the critical Appendix by Gilbert Murray — public domain",
+  "translations": [
+    {
+      "id": "harrison",
+      "label": "Harrison 1903",
+      "note": "Jane Ellen Harrison, Prolegomena to the Study of Greek Religion (Murray trans.), 1903 — public domain"
+    }
+  ],
+  "intro": "The Orphic gold tablets (lamellae) are tiny inscribed gold leaves, some only a few centimetres across, folded into the graves of Bacchic-Orphic initiates across the Greek world from the 5th to the 3rd century BCE. They are not hymns or myths but operational instructions for the dead: avoid the spring by the white cypress (forgetting), drink instead from the Lake of Memory (Mnemosyne), and recite the password that claims divine descent — \"I am a child of Earth and of starry Heaven, but my race is of Heaven alone.\" They are the material proof that Greek eschatology possessed a written afterlife-guidance genre centuries before any comparable Christian text, and, as Graf and Johnston (2007) and Bernabé (2008) note, the closest structural cousin of the Egyptian Book of the Dead and the Tibetan Bardo Thodol: three traditions that independently produced a text-as-passport for the soul navigating a structured underworld toward release. The translation here is Jane Ellen Harrison's (1903), with Gilbert Murray's critical Appendix.",
+  "crossTradition": [
+    {
+      "label": "Egyptian Book of the Dead, Spell 125 (the Negative Confession before judgment)",
+      "note": "The structurally closest parallel in the vault: a written funerary text placed with the dead supplying self-identification formulae and passwords to pass divine gatekeepers. Graf & Johnston (Ritual Texts for the Afterlife, 2007) and Bernabé & Jiménez San Cristóbal (Instructions for the Netherworld, 2008) document the parallel at the genre level; West (The Orphic Poems, 1983) and Graf treat the structural isomorphism as proven but direct Egyptian-to-Greek transmission as unproven.",
+      "textId": "book-of-dead-125"
+    },
+    {
+      "label": "Bardo Thodol — the Tibetan Book of the Dead",
+      "note": "The third member of the text-as-guide-for-the-dead genre: instructions read so the consciousness can navigate the structured after-death bardo toward liberation. Eliade (Shamanism; A History of Religious Ideas) and the vault's own Graf-anchored synthesis frame this as a genre convergence (independent development), not transmission — a typological, not genealogical, parallel.",
+      "textId": "bardo-thodol"
+    },
+    {
+      "label": "Descent of Inanna / Ishtar",
+      "note": "The Mesopotamian katabasis: the deity passes seven underworld gates, each with its password and toll. The gold tablets share the gate-and-password structure of the underworld journey, though the Orphic soul seeks release from the cycle of rebirth rather than return to the living world (cf. underworld-descent literature, Graf 2007).",
+      "textId": "descent-inanna"
+    },
+    {
+      "label": "Plato — the Myth of Er and the Plain of Forgetfulness",
+      "note": "Plato's eschatology (Republic 614b–621d; Phaedrus; Meno 81) deploys the same memory-versus-forgetting binary that governs the tablets: souls drink from the Plain of Forgetfulness and lose their past, while knowledge is recollection (anamnesis). Graf & Johnston (2007) conclude Plato knew the Orphic discourse on the soul's divine origin and the danger of forgetfulness and transformed it into philosophy. [not yet staged]"
+    },
+    {
+      "label": "Pythagorean metempsychosis (Magna Graecia)",
+      "note": "The tablets emerge from the same southern-Italian milieu as the Pythagorean communities and share the doctrine of the transmigration of souls and release from the kuklos geneseos (the 'sorrowful weary Wheel'). Herodotus 2.81 links Egyptian, Orphic, and Pythagorean funerary practice; Burkert (Lore and Science in Ancient Pythagoreanism, 1972) and West (1983) treat the Orphic-Pythagorean overlap as documented. [not yet staged]"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "The Petelia Tablet — The Two Springs and the Password",
+      "verses": [
+        {
+          "ref": "Petelia I",
+          "text": "Thou shalt find on the left of the House of Hades a Well-spring, And by the side thereof standing a white cypress. To this Well-spring approach not near.",
+          "textVersions": {
+            "harrison": "Thou shalt find on the left of the House of Hades a Well-spring, And by the side thereof standing a white cypress. To this Well-spring approach not near."
+          },
+          "entities": [
+            {
+              "word": "House of Hades",
+              "node": "theme-guide-through-underworld",
+              "type": "theme",
+              "note": "The tablet IS the guide: the Orphic lamellae externalise the psychopomp's knowledge into a portable written object the dead carry into the underworld. Graf & Johnston (Ritual Texts for the Afterlife, 2007) call this the 'guide-as-handbook' form, with no exact parallel in the Egyptian (divine guide Anubis) or Zoroastrian (Sraosha) traditions.",
+              "parallels": [
+                {
+                  "label": "Book of the Dead — papyrus placed in the tomb to guide the dead",
+                  "note": "Both are written instruction-texts interred with the body to navigate a structured underworld; Bernabé (2008) and Graf (2007) document the genre parallel without claiming transmission.",
+                  "textId": "book-of-dead-125"
+                },
+                {
+                  "label": "Bardo Thodol — text read to guide the consciousness through the bardo",
+                  "note": "The third instance of the text-as-guide genre; a typological convergence (cf. Eliade), not a genealogical link.",
+                  "textId": "bardo-thodol"
+                }
+              ]
+            },
+            {
+              "word": "white cypress",
+              "node": "reincarnation",
+              "type": "theme",
+              "note": "The forbidden spring by the white cypress is the water of Lethe (Forgetting); to drink it erases the soul's memory and precipitates automatic rebirth into the kuklos geneseos, the cycle of births. Harrison (1903) reads Lethe here as the equivalent of Agnoia (Unconsciousness); the tablets' whole aim is release from rebirth (Graf & Johnston 2007).",
+              "parallels": [
+                {
+                  "label": "Plato — the Plain of Forgetfulness (Republic 621a)",
+                  "note": "Souls about to be reborn drink from the river of Unmindfulness and forget their past; the philosophical recasting of the tablets' forbidden spring (Graf & Johnston 2007)."
+                },
+                {
+                  "label": "reincarnation across Indic tradition (samsara)",
+                  "note": "The cycle of rebirth the soul seeks to escape; the Orphic-Pythagorean kuklos geneseos is the Greek structural counterpart (West, The Orphic Poems, 1983)."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "Petelia I",
+          "text": "But thou shalt find another by the Lake of Memory, Cold water flowing forth, and there are Guardians before it.",
+          "textVersions": {
+            "harrison": "But thou shalt find another by the Lake of Memory, Cold water flowing forth, and there are Guardians before it."
+          },
+          "entities": [
+            {
+              "word": "Lake of Memory",
+              "node": "mnemosyne",
+              "type": "deity",
+              "note": "Mnemosyne, the Titaness Memory and mother of the Muses, here personifies the second spring. To drink from her Lake preserves the soul's identity and accumulated spiritual knowledge across death, letting it proceed with full consciousness instead of being swept back into rebirth. Mnemosyne's role as the afterlife spring is attested chiefly in these Orphic tablets (Harrison 1903; Graf & Johnston 2007).",
+              "parallels": [
+                {
+                  "label": "Plato — knowledge as recollection (anamnesis, Meno 81)",
+                  "note": "What Mnemosyne's water preserves is functionally the Platonic Forms the soul knew before birth; Graf & Johnston (2007) trace the memory-doctrine from the tablets into Plato's epistemology."
+                }
+              ]
+            },
+            {
+              "word": "Guardians before it",
+              "node": "afterlife-judgment",
+              "type": "theme",
+              "note": "The Guardians of the spring examine the soul's credentials before granting the water — the underworld gatekeepers the dead must satisfy with the correct formula, paralleled in several tablets by a direct address to Persephone as judge of the blessed dead (Graf & Johnston 2007; Bernabé 2008).",
+              "parallels": [
+                {
+                  "label": "Book of the Dead — the 42 Assessors of the Negative Confession",
+                  "note": "The dead must answer the underworld's divine gatekeepers correctly to pass; the Egyptian Hall of Judgment is the structural parallel to the tablet's Guardians (Bernabé 2008, who notes the parallel without claiming dependence).",
+                  "textId": "book-of-dead-125"
+                },
+                {
+                  "label": "Descent of Inanna — the seven gates and their passwords",
+                  "note": "The gate-and-password structure of the underworld journey; the Mesopotamian katabasis shares the form, differing in goal (Graf 2007).",
+                  "textId": "descent-inanna"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "Petelia I",
+          "text": "Say: 'I am a child of Earth and of Starry Heaven; But my race is of Heaven (alone). This ye know yourselves.'",
+          "textVersions": {
+            "harrison": "Say: 'I am a child of Earth and of Starry Heaven; But my race is of Heaven (alone). This ye know yourselves.'"
+          },
+          "entities": [
+            {
+              "word": "child of Earth and of Starry Heaven",
+              "node": "soul-immortality",
+              "type": "theme",
+              "note": "The soul's self-identification claims descent from both Earth (Gaia) and starry Heaven (Ouranos) — the human's mixed nature. The crucial second clause, 'my race is of Heaven alone,' asserts the soul's properly heavenly, immortal portion, the claim on which its right to the higher path rests (Harrison 1903; Guthrie, Orpheus and Greek Religion, 1935).",
+              "parallels": [
+                {
+                  "label": "Plato — the soul as immortal and akin to the divine (Phaedo)",
+                  "note": "The deathless soul temporarily lodged in the body is the philosophical development of the tablet's 'my race is of Heaven' (Guthrie 1935)."
+                }
+              ]
+            },
+            {
+              "word": "my race is of Heaven (alone)",
+              "node": "soul-as-spark",
+              "type": "theme",
+              "note": "The 'heavenly race' is the divine portion buried in the human being. In the Orphic anthropogony humans are formed from the ash of the Titans who devoured the child Dionysus/Zagreus, so each person carries a Dionysian divine spark within Titanic matter — the original 'divine spark within humanity' theology that feeds Platonic soul-doctrine and Gnostic pneumatology (Guthrie 1935; Graf & Johnston 2007).",
+              "parallels": [
+                {
+                  "label": "Gnostic pneuma — the spark of divine light trapped in matter",
+                  "note": "The Gnostic divine spark needing release is the direct descendant of the Orphic Dionysian spark in Titanic clay (Jonas, The Gnostic Religion, 1958; Guthrie 1935)."
+                },
+                {
+                  "label": "Apocryphon of John — the divine spark to be awakened by gnosis",
+                  "note": "Both make the soul's secret divine origin the key to liberation; the recognition of one's heavenly race is the saving act (cf. the vault's soul-as-spark theme)."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "The Compagno (Thurii) Tablet — Release from the Wheel",
+      "verses": [
+        {
+          "ref": "Compagno (a)",
+          "text": "Out of the pure I come, Pure Queen of Them Below, Eukles and Eubouleus and the other Gods immortal. For I also avow me that I am of your blessed race.",
+          "textVersions": {
+            "harrison": "Out of the pure I come, Pure Queen of Them Below, Eukles and Eubouleus and the other Gods immortal. For I also avow me that I am of your blessed race."
+          },
+          "entities": [
+            {
+              "word": "Pure Queen of Them Below",
+              "node": "persephone-greek",
+              "type": "deity",
+              "note": "Persephone, Queen of the Underworld, addressed directly as the judge before whom the initiate presents ritual credentials. Several tablets ask her to grant the soul passage to the Elysian seats of the Hallowed rather than ordinary Hades (Harrison 1903; Graf & Johnston 2007).",
+              "parallels": [
+                {
+                  "label": "Book of the Dead — Osiris as judge of the dead",
+                  "note": "The presiding underworld deity before whom the dead are vindicated; Persephone occupies the structural seat Osiris holds in the Egyptian judgment (Bernabé 2008).",
+                  "textId": "book-of-dead-125"
+                }
+              ]
+            },
+            {
+              "word": "I am of your blessed race",
+              "node": "mystery-initiation",
+              "type": "theme",
+              "note": "The initiate's claim of kinship with the gods is the password earned through Bacchic initiation (telete); the tablet is the credential of one admitted to the mysteries. Burkert (Ancient Mystery Cults, 1987) and Graf & Johnston (2007) read the tablets as the funerary expression of mystery-cult membership.",
+              "parallels": [
+                {
+                  "label": "Eleusinian mysteries — initiation promising a blessed afterlife",
+                  "note": "Both Eleusinian and Orphic-Bacchic mysteries promised the initiate a better lot after death; Burkert (1987) distinguishes their scopes while noting the shared promise."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "Compagno (a)",
+          "text": "I have flown out of the sorrowful weary Wheel. I have passed with eager feet to the Circle desired. I have sunk beneath the bosom of Despoina, Queen of the Underworld.",
+          "textVersions": {
+            "harrison": "I have flown out of the sorrowful weary Wheel. I have passed with eager feet to the Circle desired. I have sunk beneath the bosom of Despoina, Queen of the Underworld."
+          },
+          "entities": [
+            {
+              "word": "the sorrowful weary Wheel",
+              "node": "reincarnation",
+              "type": "theme",
+              "note": "The 'Wheel' is the kuklos geneseos, the cycle of births and deaths; to 'fly out' of it is the tablets' ultimate soteriological goal — liberation from rebirth, the doctrine the Orphic and Pythagorean traditions of Magna Graecia shared (Harrison 1903; West 1983).",
+              "parallels": [
+                {
+                  "label": "samsara — the wheel of rebirth (Indic traditions)",
+                  "note": "The cycle of birth and death from which release (moksha/nirvana) is sought; the Orphic Wheel is the Greek structural counterpart, a convergence not a transmission (West 1983)."
+                },
+                {
+                  "label": "Pythagorean metempsychosis",
+                  "note": "The transmigration of souls through many lives, the doctrine the tablets share with the Pythagorean communities of southern Italy (Burkert 1972; Herodotus 2.81)."
+                }
+              ]
+            },
+            {
+              "word": "Despoina, Queen of the Underworld",
+              "node": "persephone-greek",
+              "type": "deity",
+              "note": "Despoina ('the Mistress') is a cult title of Persephone; the soul's entry 'into the bosom of Despoina' is its reception by the underworld queen into the blessed company — the goal the credential secures (Harrison 1903; Graf & Johnston 2007).",
+              "parallels": []
+            }
+          ]
+        },
+        {
+          "ref": "Compagno (a)",
+          "text": "Happy and Blessed One, thou shalt be God instead of mortal. A kid I have fallen into milk.",
+          "textVersions": {
+            "harrison": "Happy and Blessed One, thou shalt be God instead of mortal. A kid I have fallen into milk."
+          },
+          "entities": [
+            {
+              "word": "thou shalt be God instead of mortal",
+              "node": "tradition-orphic",
+              "type": "tradition",
+              "note": "The most advanced Orphic formulation: the blessed soul does not merely reach Elysium but is deified (theos egeneto / 'you have become a god'). This apotheosis of the initiate is the Orphic tradition's distinctive end, rooted in the doctrine of the soul's recovered divine origin (Harrison 1903; Guthrie 1935; Graf & Johnston 2007).",
+              "parallels": [
+                {
+                  "label": "Bardo Thodol — liberation by recognizing one's own divine nature",
+                  "note": "Both make the soul's destiny the recovery of a divine identity that was always its own; the Orphic 'thou shalt be God' and the Bardo's recognition of the Clear Light are typological cousins (cf. Eliade), not a historical link.",
+                  "textId": "bardo-thodol"
+                }
+              ]
+            },
+            {
+              "word": "A kid I have fallen into milk",
+              "node": "zagreus",
+              "type": "deity",
+              "note": "The cryptic Bacchic password ('eriphos es gala epeton'): the kid (eriphos) is a Dionysian initiate-symbol, and the milk a god-given drink of blessedness. It encodes the soul's identification with the Bacchic mystery of Dionysus/Zagreus — the dismembered divine child whose spark the initiate carries and to whose company the soul now returns (Harrison 1903; Guthrie 1935).",
+              "parallels": [
+                {
+                  "label": "Zagreus/Dionysus — the dismembered and reborn divine child",
+                  "note": "Zagreus, torn apart by the Titans and reconstituted, is the Orphic dying-and-rising god; the initiate's blessed afterlife participates in his restoration (Guthrie 1935)."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
+
+// -- The Questions of King Milinda — The Chariot of Nagasena (Milindapañha II.1.1, the no-self / anattā dialogue) --
+SCRIPTURE_TEXTS['milinda-chariot'] = {
+  "id": "milinda-chariot",
+  "title": "The Questions of King Milinda — The Chariot of Nagasena (Milindapañha II.1.1, the no-self / anattā dialogue)",
+  "shortTitle": "Milinda — Chariot",
+  "corpus": "Buddhist · Milindapañha (Pali; Book II — \"The Distinguishing Characteristics of Ethical Qualities,\" ch. 1)",
+  "tradId": "tradition-greco-buddhism",
+  "date": "Frame set in the reign of Menander I (c. 165–130 BCE); Pali text composed/redacted c. 100 BCE – 400 CE (early core in the Chinese parallel; later Theravāda expansion)",
+  "docNode": "phase-3-029-milindapanha",
+  "language": "Pali · T. W. Rhys Davids translation (The Questions of King Milinda, Part I, Sacred Books of the East vol. XXXV, Oxford: Clarendon Press, 1890) — public domain. OCR diacritic artifacts in the Internet Archive scan have been silently corrected to the printed forms (Nâgasena, Sûrasena, Vîrasena, Sîhasena, Saññâ, Sankhârâ, Viññâna, Sister Vagirâ); English wording and punctuation are verbatim; Rhys Davids' inline bracketed page-markers (e.g. [27]/[28]) are relocated to the verse ref anchors.",
+  "translations": [
+    {
+      "id": "rhys-davids",
+      "label": "Rhys Davids 1890 (SBE 35)",
+      "note": "T.W. Rhys Davids, The Questions of King Milinda (Sacred Books of the East vol. 35), 1890 — public domain"
+    }
+  ],
+  "intro": "The Milindapañha stages a dialogue between Menander I (Pali \"Milinda\"), the Indo-Greek king who ruled the Bactrian-Gandhāran frontier from his capital at Sākala (Sialkot), and the Buddhist monk Nāgasena. In its most famous passage Nāgasena proves that \"Nāgasena\" names nothing permanent: just as \"chariot\" is not the pole, the axle, the wheels, the framework, the ropes, the yoke, the spokes, or the goad — nor all of them together, nor anything apart from them — but a \"generally understood term, a designation in common use\" for the assembled parts, so \"Nāgasena\" is a convention for the five skandhas (aggregates: form, sensation, perception, the constructing-forces, and consciousness). There is no enduring self (anattā). The dialogue dramatizes in Socratic form the anattā doctrine first set out in the Buddha's early sermons, and it is the single most-cited analogy in the Buddhist analysis of the self; in the modern reception it is the textbook convergence-point with David Hume's bundle-theory of the self (Steven Collins, Selfless Persons, 1982).",
+  "crossTradition": [
+    {
+      "label": "Dhammacakkappavattana Sutta — the first sermon whose anattā this dramatizes",
+      "note": "The chariot dialogue gives narrative-dramatic form to the no-self teaching whose doctrinal root is the Buddha's first sermon and its companion second sermon on the five aggregates as not-self. Rupert Gethin, The Foundations of Buddhism (Oxford, 1998), pp. 133–162, treats the Milindapañha chariot simile as the standard later exposition of the aggregate-analysis announced in this foundational preaching.",
+      "textId": "dhammacakkappavattana-sutta"
+    },
+    {
+      "label": "Heart Sutra — 'form is emptiness' (the Mahāyāna development of anattā into śūnyatā)",
+      "note": "The Milindapañha denies a permanent self in the aggregates (pudgala-nairātmya); the Heart Sutra's 'form is emptiness, emptiness is form' radicalizes this into the emptiness of the dharmas themselves (dharma-nairātmya). Edward Conze, Buddhist Wisdom Books (1958), and Steven Collins, Selfless Persons (1982), pp. 115–116, read the chariot analysis as the early-Buddhist seed the Prajñāpāramitā literature carries to its limit.",
+      "textId": "heart-sutra"
+    },
+    {
+      "label": "Diamond Sutra — no abiding self, person, being, or soul",
+      "note": "The Diamond Sutra's formula that the bodhisattva must hold no notion of a self, a person, a being, or a soul extends the Milindapañha's 'no permanent individuality (no soul)' from the conventional self of a monk to the metaphysical denial of any abiding dharma. Conze's Buddhist Wisdom Books (1958) pairs the two as the conventional and the perfected statements of the same no-self insight.",
+      "textId": "diamond-sutra"
+    },
+    {
+      "label": "Brihadaranyaka Upanishad — neti neti: the Vedāntic Self the Buddha denies",
+      "note": "The great Buddhist–Vedāntic divide. Yājñavalkya's 'not this, not this' strips every predicate from the Self yet still points to an imperishable Ātman behind the aggregates; the Milindapañha runs the same negation through the chariot's parts but reaches the opposite terminus — there is no residual Self at all, only the conditioned skandhas. Steven Collins, Selfless Persons (1982), pp. 1–11, 78–84, frames anattā precisely as Buddhism's refusal of the Upanishadic Ātman.",
+      "textId": "brihadaranyaka-neti-neti"
+    },
+    {
+      "label": "David Hume — the bundle-theory of the self (philosophical convergence, not transmission)",
+      "note": "In prose: Hume's Treatise of Human Nature (1739), I.iv.6, finds on introspection only 'a bundle or collection of different perceptions' and no self over and above them — the conclusion Nāgasena reaches by dismantling the chariot. The parallel is a celebrated case of independent convergence, with no historical contact; Steven Collins, Selfless Persons (1982), pp. 7, 247, and the analytic reception (Mark Siderits; Jan Westerhoff — both cited in this document's references) treat the Milindapañha as the classical Buddhist statement of Humean reductionism about persons."
+    }
+  ],
+  "sections": [
+    {
+      "heading": "Nāgasena is only a name (II.1.1)",
+      "verses": [
+        {
+          "ref": "II.1.1",
+          "text": "I am known as Nâgasena, O king, and it is by that name that my brethren in the faith address me. But although parents, O king, give such a name as Nâgasena, or Sûrasena, or Vîrasena, or Sîhasena, yet this, Sire,—Nâgasena and so on—is only a generally understood term, a designation in common use. For there is no permanent individuality (no soul) involved in the matter.",
+          "textVersions": {
+            "rhys-davids": "I am known as Nâgasena, O king, and it is by that name that my brethren in the faith address me. But although parents, O king, give such a name as Nâgasena, or Sûrasena, or Vîrasena, or Sîhasena, yet this, Sire,—Nâgasena and so on—is only a generally understood term, a designation in common use. For there is no permanent individuality (no soul) involved in the matter."
+          },
+          "entities": [
+            {
+              "word": "Nâgasena",
+              "node": "nagasena",
+              "type": "person",
+              "note": "Nāgasena, the monk who is the dialogue's voice of the Dhamma — likely-historical (the Pali and Chinese recensions agree; no independent Greek attestation). The whole frame turns his own name into the demonstration that a name picks out no enduring self.",
+              "parallels": [
+                {
+                  "label": "Milindapañha (the source document)",
+                  "note": "Per the document node phase-3-029-milindapanha, Nāgasena is the putative source of the dialogue's dialectical content; Rhys Davids (SBE 35, 1890) renders him as the canonical expositor of anattā."
+                }
+              ]
+            },
+            {
+              "word": "a generally understood term, a designation in common use",
+              "node": "anatman-no-self",
+              "type": "theme",
+              "note": "The Pali behind Rhys Davids' phrase is the doctrine of two truths in miniature: 'Nāgasena' is a conventional designation (paññatti / sammuti), not the name of a substantial self. Steven Collins, Selfless Persons (1982), pp. 78–84, treats this exact passage as the locus classicus for the conventional/ultimate distinction in early Buddhist no-self analysis.",
+              "parallels": [
+                {
+                  "label": "Heart Sutra — 'form is emptiness'",
+                  "note": "The Mahāyāna development: the conventionality of the self becomes the emptiness of all dharmas (Conze, Buddhist Wisdom Books, 1958).",
+                  "textId": "heart-sutra"
+                }
+              ]
+            },
+            {
+              "word": "there is no permanent individuality (no soul) involved in the matter",
+              "node": "anatman-no-self",
+              "type": "theme",
+              "note": "Anattā: the denial of any abiding, unchanging self or soul (ātman) underlying experience — the cardinal Buddhist doctrine, set against the Brahmanical and Upanishadic Ātman. Walpola Rahula, What the Buddha Taught (1959), ch. VI, treats this Milindapañha passage as the standard exposition.",
+              "parallels": [
+                {
+                  "label": "Brihadaranyaka Upanishad — neti neti",
+                  "note": "The opposite terminus: Yājñavalkya's negations still point to an imperishable Ātman; Buddhism denies the residue (Collins, Selfless Persons, 1982, pp. 1–11).",
+                  "textId": "brihadaranyaka-neti-neti"
+                },
+                {
+                  "label": "David Hume — no self beyond the bundle of perceptions",
+                  "note": "Treatise I.iv.6 reaches the same conclusion by introspection — independent convergence, no contact (Collins 1982, p. 7)."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "II.1.1",
+          "text": "Is it the outward form then (Rûpa) that is Nâgasena, or the sensations (Vedanâ), or the ideas (Saññâ), or the confections (the constituent elements of character, Sankhârâ), or the consciousness (Viññâna), that is Nâgasena? And to each of these also he answered no. 'Then is it all these Skandhas combined that are Nâgasena?' 'No! great king.' 'But is there anything outside the five Skandhas that is Nâgasena?' And still he answered no.",
+          "textVersions": {
+            "rhys-davids": "Is it the outward form then (Rûpa) that is Nâgasena, or the sensations (Vedanâ), or the ideas (Saññâ), or the confections (the constituent elements of character, Sankhârâ), or the consciousness (Viññâna), that is Nâgasena? And to each of these also he answered no. 'Then is it all these Skandhas combined that are Nâgasena?' 'No! great king.' 'But is there anything outside the five Skandhas that is Nâgasena?' And still he answered no."
+          },
+          "entities": [
+            {
+              "word": "all these Skandhas combined",
+              "node": "anatman-no-self",
+              "type": "theme",
+              "note": "The five khandhas (Skt. skandha): rūpa (form), vedanā (sensation), saññā (perception/ideas), saṅkhārā (the constructing-forces / 'confections'), viññāṇa (consciousness). The self is not any one aggregate, not their sum, and not anything outside them — the negative core of anattā. Sue Hamilton, Identity and Experience (1996), and Collins (1982), pp. 96–116, analyse this fivefold list as the exhaustive inventory that leaves no room for a self.",
+              "parallels": [
+                {
+                  "label": "Diamond Sutra — no notion of a self, a being, or a soul",
+                  "note": "Extends the aggregate-analysis from the conventional self to the denial of any abiding dharma (Conze 1958).",
+                  "textId": "diamond-sutra"
+                }
+              ]
+            },
+            {
+              "word": "the confections (the constituent elements of character, Sankhârâ)",
+              "node": "pratitya-samutpada",
+              "type": "theme",
+              "note": "Saṅkhārā, the volitional constructing-forces, are the conditioning factors that assemble experience moment to moment — the aggregate most directly tied to dependent origination (paṭicca-samuppāda), which is what holds the 'chariot' of the person together without a self. Gethin, Foundations of Buddhism (1998), pp. 135–145, links the aggregate-analysis to the conditionality doctrine.",
+              "parallels": []
+            }
+          ]
+        },
+        {
+          "ref": "II.1.1 [27]",
+          "text": "'Then if you came, Sire, in a carriage, explain to me what that is. Is it the pole that is the chariot?' 'I did not say that.' 'Is it the axle that is the chariot?' 'Certainly not.' 'Is it the wheels, or the framework, or the ropes, or the yoke, or the spokes of the wheels, or the goad, that are the chariot?' And to all these he still answered no. 'Then is it all these parts of it that are the chariot?' 'No, Sir.' 'But is there anything outside them that is the chariot?' And still he answered no.",
+          "textVersions": {
+            "rhys-davids": "'Then if you came, Sire, in a carriage, explain to me what that is. Is it the pole that is the chariot?' 'I did not say that.' 'Is it the axle that is the chariot?' 'Certainly not.' 'Is it the wheels, or the framework, or the ropes, or the yoke, or the spokes of the wheels, or the goad, that are the chariot?' And to all these he still answered no. 'Then is it all these parts of it that are the chariot?' 'No, Sir.' 'But is there anything outside them that is the chariot?' And still he answered no."
+          },
+          "entities": [
+            {
+              "word": "Is it the pole that is the chariot?",
+              "node": "anatman-no-self",
+              "type": "theme",
+              "note": "The chariot simile proper: the king's own state-symbol is turned against him. 'Chariot' is no single part, no totality of parts, and nothing apart from them — the exact structure Nāgasena has just run through the body and the aggregates. Steven Collins, Selfless Persons (1982), pp. 71, 78–84, makes this the paradigm illustration of the reductionist analysis of the self.",
+              "parallels": [
+                {
+                  "label": "David Hume — the self as a bundle, not a substance",
+                  "note": "The dismantling of the chariot into its parts is the standard comparandum for Hume's bundle-theory; independent convergence (Collins 1982, pp. 7, 247)."
+                }
+              ]
+            },
+            {
+              "word": "the wheels, or the framework, or the ropes, or the yoke, or the spokes of the wheels, or the goad",
+              "node": "nagasena",
+              "type": "person",
+              "note": "Nāgasena's enumeration of the parts mirrors his own dissolution into the aggregates: each part is necessary, none is the chariot, and the verdict on the chariot is the verdict on 'Nāgasena.' The analogy is Nāgasena's signature contribution, the reason the Pali tradition treats him as the canonical expositor of anattā (per document node phase-3-029-milindapanha).",
+              "parallels": []
+            }
+          ]
+        },
+        {
+          "ref": "II.1.1 [28]",
+          "text": "'Very good! Your Majesty has rightly grasped the meaning of \"chariot.\" And just even so it is on account of all those things you questioned me about—the thirty-two kinds of organic matter in a human body, and the five constituent elements of being—that I come under the generally understood term, the designation in common use, of \"Nâgasena.\" For it was said, Sire, by our Sister Vagirâ in the presence of the Blessed One: '\"Just as it is by the condition precedent of the co-existence of its various parts that the word 'chariot' is used, just so is it that when the Skandhas are there we talk of a 'being.'\"'",
+          "textVersions": {
+            "rhys-davids": "'Very good! Your Majesty has rightly grasped the meaning of \"chariot.\" And just even so it is on account of all those things you questioned me about—the thirty-two kinds of organic matter in a human body, and the five constituent elements of being—that I come under the generally understood term, the designation in common use, of \"Nâgasena.\" For it was said, Sire, by our Sister Vagirâ in the presence of the Blessed One: '\"Just as it is by the condition precedent of the co-existence of its various parts that the word 'chariot' is used, just so is it that when the Skandhas are there we talk of a 'being.'\"'"
+          },
+          "entities": [
+            {
+              "word": "by the condition precedent of the co-existence of its various parts",
+              "node": "pratitya-samutpada",
+              "type": "theme",
+              "note": "Rhys Davids' phrase renders the conditionality that grounds the convention: a 'being' is spoken of only when the aggregates co-occur — dependent origination (paṭicca-samuppāda) is what licenses the name without supplying a self. Gethin, Foundations of Buddhism (1998), pp. 141–145.",
+              "parallels": []
+            },
+            {
+              "word": "when the Skandhas are there we talk of a 'being.'",
+              "node": "anatman-no-self",
+              "type": "theme",
+              "note": "The closing verse is the bhikkhunī Vajirā's, quoted from the Vajirā Sutta (Saṃyutta Nikāya I.5.10) — Nāgasena grounds his dialectic in canonical authority. Collins, Selfless Persons (1982), pp. 71, 116, and Bhikkhu Bodhi, The Connected Discourses of the Buddha (2000), note 233, trace the chariot verse to Vajirā's sutta as the scriptural source the Milindapañha cites.",
+              "parallels": [
+                {
+                  "label": "Dhammacakkappavattana Sutta — the first-sermon root of the aggregate-analysis",
+                  "note": "The 'being'-as-aggregates formula develops the no-self teaching announced in the Buddha's foundational preaching (Gethin 1998, pp. 133–162).",
+                  "textId": "dhammacakkappavattana-sutta"
+                }
+              ]
+            },
+            {
+              "word": "the five constituent elements of being",
+              "node": "emptiness-sunyata",
+              "type": "theme",
+              "note": "The five skandhas are the bridge from early-Buddhist anattā to the Mahāyāna doctrine of emptiness: the Prajñāpāramitā literature takes the very aggregates Nāgasena lists and declares each 'empty of own-being' (svabhāva-śūnya). Edward Conze, Buddhist Wisdom Books (1958), and Jan Westerhoff (cited in this document's references) treat the Milindapañha's aggregate-reductionism as the conceptual ancestor of śūnyatā.",
+              "parallels": [
+                {
+                  "label": "Heart Sutra — the five aggregates are empty",
+                  "note": "'Form is emptiness': the Heart Sutra applies emptiness to the same five aggregates Nāgasena enumerates (Conze 1958).",
+                  "textId": "heart-sutra"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
+
+// -- Parmenides — On Nature: the Way of Truth (Being is One and Changeless) --
+SCRIPTURE_TEXTS['parmenides-way-of-truth'] = {
+  "id": "parmenides-way-of-truth",
+  "title": "Parmenides — On Nature: the Way of Truth (Being is One and Changeless)",
+  "shortTitle": "Parmenides — Way of Truth",
+  "corpus": "Greek · Presocratic Philosophy",
+  "tradId": "tradition-ancient-greek",
+  "date": "c. 490–450 BCE (the revelation-poem of Parmenides of Elea, in Homeric hexameter; surviving in ~160 lines preserved mainly by Simplicius, 6th c. CE)",
+  "docNode": "document-parmenides-poem",
+  "language": "Ancient Greek (epic hexameter) · John Burnet translation, Early Greek Philosophy (1892; 3rd ed. 1920) — public domain (Burnet d. 1928). The SAME edition used for the staged Heraclitus entry. Fragments cited by Diels-Kranz B-numbers (DK28); this is the standard Burnet rendering, renumbered to agree with Diels-Kranz.",
+  "translations": [
+    {
+      "id": "burnet",
+      "label": "Burnet 1892",
+      "note": "John Burnet, Early Greek Philosophy, 1892/1920 — public domain"
+    }
+  ],
+  "intro": "Parmenides of Elea (c. 515–450 BCE) wrote a single hexameter poem, On Nature, in which a goddess discloses two ways of inquiry: the Way of Truth and the Way of mortal Opinion. The Way of Truth turns on one austere premise — \"It is, and it is impossible for it not to be\" — from which Parmenides deduces that what-is (to eon) is ungenerated, imperishable, whole, unmoving, indivisible, and one; coming-to-be and perishing are mere names mortals have given, illusions of the senses. This is the founding text of Western metaphysics and the birth of deductive argument in philosophy (Kirk-Raven-Schofield, 1983; Mourelatos, 1970). It stands as the deliberate counter-pole to Heraclitus's flux: where Heraclitus made becoming the truth and stability the appearance, Parmenides made changeless Being the truth and becoming the appearance — the two headwaters of all later Greek cosmology. This entry surfaces both a genuine historical line of descent (Parmenides → Plato's Forms → the Neoplatonic One of Plotinus) and structural convergences with the unchanging One of other traditions (the impersonal Brahman, the Dao) that scholarship treats as parallel, not contact.",
+  "crossTradition": [
+    {
+      "label": "Heraclitus — Fragments on the Logos and Flux",
+      "note": "The classic CONTRAST and the two poles of Presocratic cosmology: Heraclitus makes becoming, flux and the unity-of-opposites the deepest truth (\"you cannot step twice into the same rivers\"), while Parmenides makes changeless Being the only truth and denies that becoming can even be thought. Whether Parmenides wrote directly against Heraclitus is debated, but the antithesis structured all later Greek metaphysics — Plato's Theaetetus pairs them as the flux-thinker and the rest-thinker (Kirk-Raven-Schofield, 1983; Mourelatos, 1970).",
+      "textId": "heraclitus-fragments"
+    },
+    {
+      "label": "Plotinus — the Enneads (the One)",
+      "note": "The historical line of descent: the Neoplatonic One (to Hen), the ungenerated source beyond all multiplicity, is read by Plotinus through Parmenides' Being — Plotinus quotes Parmenides and treats Eleatic unity as a forerunner of his first hypostasis, even as he criticizes Parmenides for collapsing Being and the One (Enneads V.1; Mourelatos, 1970; Kirk-Raven-Schofield, 1983).",
+      "textId": "plotinus-enneads"
+    },
+    {
+      "label": "Mundaka Upanishad — the impersonal Brahman",
+      "note": "A structural CONVERGENCE, not a contact: the unchanging, ungenerated One behind the world of appearances. Brahman as the imperishable reality (akshara) that neither comes to be nor passes away parallels Parmenides' to eon — an Axial-Age convergence on a changeless absolute that comparative scholars read as independent (Mourelatos, 1970).",
+      "textId": "mundaka-upanishad"
+    },
+    {
+      "label": "Tao Te Ching 1 — the unnamable constant Tao",
+      "note": "A further convergence: the Dao that is prior to naming and distinction, the One from which the named many derive. Like Parmenides' Being it resists the mortal habit of carving reality into opposed forms; the parallel is treated as independent Axial-Age convergence, not derivation (Mourelatos, 1970).",
+      "textId": "tao-te-ching-1"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "The Two Ways: It Is, and It Cannot Not Be",
+      "verses": [
+        {
+          "ref": "DK B2 (Burnet, Early Greek Philosophy)",
+          "text": "Come now, I will tell thee—and do thou hearken to my saying and carry it away—the only two ways of search that can be thought of. The first, namely, that It is, and that it is impossible for it not to be, is the way of belief, for truth is its companion. The other, namely, that It is not, and that it must needs not be,—that, I tell thee, is a path that none can learn of at all. For thou canst not know what is not—that is impossible—nor utter it;",
+          "textVersions": {
+            "burnet": "Come now, I will tell thee—and do thou hearken to my saying and carry it away—the only two ways of search that can be thought of. The first, namely, that It is, and that it is impossible for it not to be, is the way of belief, for truth is its companion. The other, namely, that It is not, and that it must needs not be,—that, I tell thee, is a path that none can learn of at all. For thou canst not know what is not—that is impossible—nor utter it;"
+          },
+          "entities": [
+            {
+              "word": "It is, and that it is impossible for it not to be",
+              "node": "parmenides",
+              "type": "person",
+              "note": "The founding premise of Western metaphysics, spoken to Parmenides by the goddess: the Way of Truth is the bare assertion of being, esti (\"it is\"). Mourelatos (1970) reads esti as a \"speculative\" or predicative is — \"it is [F], and cannot not-be [F]\" — rather than mere bare existence; Kirk-Raven-Schofield (1983) stress that the second way (\"it is not\") is rejected because what-is-not cannot be thought or named at all.",
+              "parallels": [
+                {
+                  "label": "Heraclitus — \"it is, and is not, the same and not the same\"",
+                  "note": "Parmenides' \"undiscerning crowds\" who hold that a thing both is and is not (DK B6) are widely read as a rebuke of the Heraclitean unity-of-opposites; the antithesis between Eleatic rest and Heraclitean flux is the central fault-line of Presocratic thought (Kirk-Raven-Schofield, 1983).",
+                  "textId": "heraclitus-fragments"
+                }
+              ]
+            },
+            {
+              "word": "the way of belief",
+              "node": "via-negativa",
+              "type": "theme",
+              "note": "The Way of Truth is reached not by observation but by argument: Parmenides proceeds by ruling out what cannot be (becoming, plurality, motion), describing Being almost entirely by negations. This deductive, apophatic method — defining the real by what it is not — is the ancestor of the later negative theology that describes the absolute only by denial (Mourelatos, The Route of Parmenides, 1970).",
+              "parallels": [
+                {
+                  "label": "Neoplatonic apophasis of the One",
+                  "note": "Plotinus likewise reaches the One chiefly by negation (it is not many, not in motion, not in time); the Eleatic technique of deriving the absolute by stripping away predicates feeds the Neoplatonic and later Christian via negativa (Mourelatos, 1970).",
+                  "textId": "plotinus-enneads"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "DK B3 (Burnet, Early Greek Philosophy)",
+          "text": "for it is the same thing that can be thought and that can be.",
+          "textVersions": {
+            "burnet": "for it is the same thing that can be thought and that can be."
+          },
+          "entities": [
+            {
+              "word": "the same thing that can be thought and that can be",
+              "node": "non-duality",
+              "type": "theme",
+              "note": "Parmenides' famous identification of thinking and being (to gar auto noein estin te kai einai): what can be thought is, and what is can be thought; there is no thinkable nothing. Kirk-Raven-Schofield (1983) gloss it as the claim that thought and its object cannot come apart; Mourelatos (1970) reads it as the unity of the route of inquiry with its goal. It is a headwater of metaphysical idealism — the doctrine that the real and the intelligible coincide.",
+              "parallels": [
+                {
+                  "label": "Brahman as the One known by knowing itself",
+                  "note": "The Upanishadic identity of the knower and the known in the imperishable Brahman is a structural convergence on the non-duality of thought and being; comparative scholars treat it as independent, not transmitted (Mourelatos, 1970).",
+                  "textId": "mundaka-upanishad"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Being is Ungenerated, Whole, Unmoving, and One",
+      "verses": [
+        {
+          "ref": "DK B8.1–21 (Burnet, Early Greek Philosophy)",
+          "text": "One path only is left for us to speak of, namely, that It is. In it are very many tokens that what is is uncreated and indestructible; for it is complete, immovable, and without end. Nor was it ever, nor will it be; for now it is, all at once, a continuous one. For what kind of origin for it wilt thou look for? In what way and from what source could it have drawn its increase? I shall not let thee say nor think that it came from what is not; for it can neither be thought nor uttered that anything is not. And, if it came from nothing, what need could have made it arise later rather than sooner? Therefore must it either be altogether or be not at all.",
+          "textVersions": {
+            "burnet": "One path only is left for us to speak of, namely, that It is. In it are very many tokens that what is is uncreated and indestructible; for it is complete, immovable, and without end. Nor was it ever, nor will it be; for now it is, all at once, a continuous one. For what kind of origin for it wilt thou look for? In what way and from what source could it have drawn its increase? I shall not let thee say nor think that it came from what is not; for it can neither be thought nor uttered that anything is not. And, if it came from nothing, what need could have made it arise later rather than sooner? Therefore must it either be altogether or be not at all."
+          },
+          "entities": [
+            {
+              "word": "uncreated and indestructible",
+              "node": "eternal-return",
+              "type": "theme",
+              "note": "Being neither comes to be nor passes away: a thing cannot arise from what-is-not (since what-is-not cannot even be conceived), nor from what already is. Parmenides thereby denies generation and destruction outright — the cosmological denial of becoming. Mourelatos (1970) calls this the heart of the \"route\": the negative-existential premise forecloses any history of the real.",
+              "parallels": [
+                {
+                  "label": "Heraclitus — the ever-living fire \"no one made\"",
+                  "note": "Both deny a temporal origin to the real — but oppositely: Heraclitus's uncreated fire is kindled and quenched in measure (becoming is its life), whereas Parmenides' uncreated Being admits no change at all. The shared 'ungenerated' premise, opposite conclusions (Kirk-Raven-Schofield, 1983).",
+                  "textId": "heraclitus-fragments"
+                }
+              ]
+            },
+            {
+              "word": "now it is, all at once, a continuous one",
+              "node": "the-one-plotinus",
+              "type": "deity",
+              "note": "Being is timeless and undivided — no past, no future, a single continuous present. This is the seed of the Neoplatonic eternal One: Plotinus's nunc stans (the standing now) and the absolute unity beyond time descend from Parmenides' \"all at once, one, continuous\" (Mourelatos, 1970; Kirk-Raven-Schofield, 1983).",
+              "parallels": [
+                {
+                  "label": "Plotinus — the timeless One beyond past and future",
+                  "note": "Plotinus makes eternity the \"life all at once entire\" of the intelligible, and the One the source above even that; the Parmenidean 'all at once' is the acknowledged ancestor (Mourelatos, 1970).",
+                  "textId": "plotinus-enneads"
+                },
+                {
+                  "label": "Brahman — the imperishable behind appearances",
+                  "note": "The unchanging, undivided One behind the play of names and forms is a convergent figure across the Axial Age; the Upanishadic akshara (imperishable) parallels Parmenides' continuous one (Mourelatos, 1970).",
+                  "textId": "mundaka-upanishad"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "DK B8.22–33 (Burnet, Early Greek Philosophy)",
+          "text": "Nor is it divisible, since it is all alike, and there is no more of it in one place than in another, to hinder it from holding together, nor less of it, but everything is full of what is. Wherefore it is wholly continuous; for what is, is in contact with what is. Moreover, it is immovable in the bonds of mighty chains, without beginning and without end; since coming into being and passing away have been driven afar, and true belief has cast them away. It is the same, and it rests in the self-same place, abiding in itself.",
+          "textVersions": {
+            "burnet": "Nor is it divisible, since it is all alike, and there is no more of it in one place than in another, to hinder it from holding together, nor less of it, but everything is full of what is. Wherefore it is wholly continuous; for what is, is in contact with what is. Moreover, it is immovable in the bonds of mighty chains, without beginning and without end; since coming into being and passing away have been driven afar, and true belief has cast them away. It is the same, and it rests in the self-same place, abiding in itself."
+          },
+          "entities": [
+            {
+              "word": "Nor is it divisible, since it is all alike",
+              "node": "henosis",
+              "type": "theme",
+              "note": "Being is indivisible and homogeneous — a plenum, \"everything is full of what is,\" with no gaps of not-being to separate one part from another. From the impossibility of not-being Parmenides derives both continuity and oneness: there is nothing to divide the real (Kirk-Raven-Schofield, 1983). This Eleatic unity (hen, one) is the conceptual ancestor of later doctrines of metaphysical unification.",
+              "parallels": [
+                {
+                  "label": "Neoplatonic henosis — return to the One",
+                  "note": "The Eleatic insistence that the real is strictly one — admitting no internal division — underlies the Neoplatonic henosis, the soul's return to undivided unity; the lineage runs Parmenides → Plato → Plotinus (Mourelatos, 1970).",
+                  "textId": "plotinus-enneads"
+                }
+              ]
+            },
+            {
+              "word": "immovable in the bonds of mighty chains",
+              "node": "ground-of-being",
+              "type": "theme",
+              "note": "Being is held fast — bound by Justice and Necessity so that it cannot move, change, or come to be. The vivid image of Being \"fettered\" expresses its absolute stability: what-is simply is, grounding all without itself becoming. Mourelatos (1970) reads the bonds (Dike, Ananke) as Parmenides' personified logical constraints; the figure of an ungrounded, self-resting reality is the philosophical root of \"being-itself\" as the ground of all that is.",
+              "parallels": [
+                {
+                  "label": "Heraclitus — flux as the truth of things",
+                  "note": "The exact inversion of Heraclitus: where Parmenides chains Being against all motion, Heraclitus makes motion and exchange the very life of the cosmos. The two define the poles within which Plato's Forms (changeless) and the sensible world (flowing) are later positioned (Kirk-Raven-Schofield, 1983).",
+                  "textId": "heraclitus-fragments"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "DK B8.42–49 (Burnet, Early Greek Philosophy)",
+          "text": "Since, then, it has a furthest limit, it is complete on every side, like the mass of a rounded sphere, equally poised from the centre in every direction; for it cannot be greater or smaller in one place than in another. For there is no nothing that could keep it from reaching out equally, nor can aught that is be more here and less there than what is, since it is all inviolable. For the point from which it is equal in every direction tends equally to the limits.",
+          "textVersions": {
+            "burnet": "Since, then, it has a furthest limit, it is complete on every side, like the mass of a rounded sphere, equally poised from the centre in every direction; for it cannot be greater or smaller in one place than in another. For there is no nothing that could keep it from reaching out equally, nor can aught that is be more here and less there than what is, since it is all inviolable. For the point from which it is equal in every direction tends equally to the limits."
+          },
+          "entities": [
+            {
+              "word": "like the mass of a rounded sphere, equally poised from the centre",
+              "node": "non-duality",
+              "type": "theme",
+              "note": "Being is perfect, complete, and equally balanced in every direction — Parmenides' celebrated sphere-image of the whole of what-is. Kirk-Raven-Schofield (1983) caution it is a simile of completeness and uniformity, not a claim that Being is literally a physical ball; Mourelatos (1970) reads the sphere as the figure of Being's perfection and self-equality. It is the most enduring image of the changeless, undivided absolute in Western thought.",
+              "parallels": [
+                {
+                  "label": "The Tao prior to all distinction",
+                  "note": "The undivided, self-equal whole that precedes the carving of reality into named opposites is a convergent figure; the Daoist constant Tao, prior to naming, is read as an independent Axial-Age parallel (Mourelatos, 1970).",
+                  "textId": "tao-te-ching-1"
+                }
+              ]
+            },
+            {
+              "word": "it is all inviolable",
+              "node": "parmenides",
+              "type": "person",
+              "note": "Being is whole and unbreakable — the conclusion of the whole deduction: what-is is one, complete, and admits no degree or difference. Parmenides' achievement, in Mourelatos's reading (1970), is to have made metaphysics a matter of strict inference from a single premise — the first sustained deductive argument in Western philosophy, the model Plato and the Eleatic Zeno inherit.",
+              "parallels": [
+                {
+                  "label": "Plato's changeless Forms",
+                  "note": "The Parmenidean changeless, indivisible real is the direct ancestor of Plato's eternal Forms and, through them, of the Neoplatonic intelligible world — the line of descent that carries Eleatic Being into late-antique metaphysics (Kirk-Raven-Schofield, 1983; Mourelatos, 1970).",
+                  "textId": "plotinus-enneads"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
+
+// -- Yoga Sutras of Patanjali — I.2–4, 12–16; II.28–32, 46, 49, 53–55 (Stilling the Mind; the Eight Limbs) --
+SCRIPTURE_TEXTS['yoga-sutras'] = {
+  "id": "yoga-sutras",
+  "title": "Yoga Sutras of Patanjali — I.2–4, 12–16; II.28–32, 46, 49, 53–55 (Stilling the Mind; the Eight Limbs)",
+  "shortTitle": "Yoga Sutras",
+  "corpus": "Hindu · Classical Yoga darśana (Sāṃkhya-Yoga)",
+  "tradId": "tradition-samkhya-yoga",
+  "date": "c. 2nd c. BCE – 4th c. CE (compiled/redacted ~425 CE)",
+  "docNode": "phase-3-023-yoga-sutras-of-patanjali",
+  "language": "Sanskrit · Swami Vivekananda, Raja Yoga (1896), \"Patanjali's Yoga Aphorisms\" — public domain (reproduced in The Complete Works of Swami Vivekananda, Vol. 1). NOTE: verse numbering follows Vivekananda's enumeration, in which Book I, aphorism 2 = \"Yoga is restraining the mind-stuff\" (= the modern saṃhitā's I.2).",
+  "translations": [
+    {
+      "id": "vivekananda",
+      "label": "Vivekananda 1896",
+      "note": "Swami Vivekananda, Raja Yoga (Patanjali’s Yoga Aphorisms), 1896 — public domain"
+    }
+  ],
+  "intro": "The Yoga Sutras of Patañjali is the foundational manual of classical (rāja) yoga and the root text of the Yoga darśana, the practice-twin of Sāṃkhya. Its second aphorism gives the most compact definition of the path — yogaś citta-vṛtti-nirodhaḥ, \"Yoga is restraining the mind-stuff from taking various forms\" — followed by the consequence that when the fluctuations cease, the seer (puruṣa) rests in its own true nature. Book II lays out the eight limbs (aṣṭāṅga): yama, niyama, āsana, prāṇāyāma, pratyāhāra, dhāraṇā, dhyāna, samādhi — an ascending discipline of ethics, body, breath, and concentration that ends in kaivalya, the \"isolation\" or liberation of pure consciousness from matter (prakṛti). Its cross-tradition significance is double: structurally it is the sibling of the Buddhist Noble Eightfold Path (both eight-fold liberation maps born from the same śramaṇa milieu, yet differing sharply — Yoga isolates an eternal Self, Buddhism denies one), and as a technology of stilling the mind it converges with the Christian apophatic contemplation of The Cloud of Unknowing. The text quoted here follows Swami Vivekananda's 1896 public-domain translation and his aphorism numbering.",
+  "crossTradition": [
+    {
+      "label": "Dhammacakkappavattana Sutta — the Noble Eightfold Path (Buddhist)",
+      "note": "The structural sibling: both Patañjali's eight limbs and the Buddhist Eightfold Path are eight-fold maps to liberation arising from the shared śramaṇa matrix of north-Indian renunciation. But they are NOT identical — Eliade (Yoga: Immortality and Freedom, 1958) and the texts themselves stress the difference: Yoga's goal (kaivalya) is the isolation of an eternal puruṣa/Self from matter, whereas the Buddha's path issues in nibbāna and denies any abiding self (anattā). Same form, opposite metaphysic.",
+      "textId": "dhammacakkappavattana-sutta"
+    },
+    {
+      "label": "Bhagavad Gītā 4 — the yoga of action and meditation (Hindu)",
+      "note": "The Gītā teaches yoga as disciplined action and meditative knowledge within the same Sāṃkhya-Yoga vocabulary; Eliade and the Sāṃkhya-Yoga tradition treat the Gītā (esp. chs. 2–6) and Patañjali as two presentations of the one darśana — the Gītā devotional and karmic, Patañjali technical and analytic.",
+      "textId": "bhagavad-gita-4"
+    },
+    {
+      "label": "Muṇḍaka Upaniṣad — the meditative ascent to Brahman (Hindu)",
+      "note": "The Upaniṣadic background of inward stilling and the ascent of the knower; the Sutras inherit the Upaniṣadic meditative interiority but recast its goal in dualist Sāṃkhya terms (puruṣa isolated from prakṛti) rather than the Upaniṣads' non-dual identity of ātman and Brahman — a doctrinal divergence, not a borrowing.",
+      "textId": "mundaka-upanishad"
+    },
+    {
+      "label": "The Cloud of Unknowing — Christian stilling of the mind (convergence)",
+      "note": "A convergence, not a transmission: the 14th-c. English mystic counsels suppressing every thought and image so the soul rests in naked contemplation — the structural analogue of citta-vṛtti-nirodha, the restraint of mental modifications. Independent traditions reaching the same technology of emptied attention (cf. the comparative phenomenology of contemplation in Eliade).",
+      "textId": "cloud-of-unknowing"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "Book I — Concentration: Its Spiritual Uses (the definition of yoga; restraint and non-attachment)",
+      "verses": [
+        {
+          "ref": "I.2",
+          "text": "Yoga is restraining the mind-stuff (Chitta) from taking various forms (Vrittis).",
+          "textVersions": {
+            "vivekananda": "Yoga is restraining the mind-stuff (Chitta) from taking various forms (Vrittis)."
+          },
+          "entities": [
+            {
+              "word": "restraining the mind-stuff",
+              "node": "ascent-of-the-soul",
+              "type": "theme",
+              "note": "yogaś citta-vṛtti-nirodhaḥ — the famous definition. Eliade (Yoga: Immortality and Freedom, 1958) renders nirodha as the 'cessation' of mental states, the core technique of the whole system; the soul ascends by progressively stilling the fluctuations of consciousness. (No dedicated samādhi/meditation node exists in the vault; annotated to the nearest meditative-ascent theme.)",
+              "parallels": [
+                {
+                  "label": "The Cloud of Unknowing (Christian)",
+                  "note": "the apophatic stilling of all thought so the soul rests in contemplation — a convergent technology of emptied attention, per Eliade's comparative treatment of contemplative states",
+                  "textId": "cloud-of-unknowing"
+                },
+                {
+                  "label": "Noble Eightfold Path — right concentration (Buddhist)",
+                  "note": "sammā-samādhi, the meditative absorption that crowns the Buddhist path; the śramaṇa sibling of citta-vṛtti-nirodha, though aimed at no-self rather than an isolated Self (Eliade 1958)",
+                  "textId": "dhammacakkappavattana-sutta"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "I.3",
+          "text": "At that time the seer (Purusha) rests in his own (unmodified) state.",
+          "textVersions": {
+            "vivekananda": "At that time the seer (Purusha) rests in his own (unmodified) state."
+          },
+          "entities": [
+            {
+              "word": "the seer (Purusha)",
+              "node": "purusha",
+              "type": "deity",
+              "note": "In Sāṃkhya-Yoga puruṣa is pure consciousness, the eternal 'seer' (draṣṭṛ) distinct from all mental and material modification; when the vṛttis cease it abides in its own true nature. Eliade (1958) and Woods (The Yoga-System of Patañjali, Harvard Oriental Series, 1914) both identify this self-abiding of puruṣa as the very goal the discipline serves — the prelude to kaivalya. The vault's puruṣa node explicitly carries the Sāṃkhya 'consciousness-principle' domain.",
+              "parallels": [
+                {
+                  "label": "ātman in the Upaniṣads",
+                  "note": "the inmost Self the meditative ascent uncovers; but Patañjali's puruṣa is plural and isolated, not the single non-dual Brahman-ātman of the Upaniṣads (Eliade 1958)",
+                  "textId": "mundaka-upanishad"
+                },
+                {
+                  "label": "anattā — no-self (Buddhist)",
+                  "note": "the explicit contrast: the Buddha's path issues in liberation WITHOUT an abiding self, the precise point on which Yoga and Buddhism diverge despite their shared eight-fold form",
+                  "textId": "dhammacakkappavattana-sutta"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "I.12",
+          "text": "Their control is by practice and non-attachment.",
+          "textVersions": {
+            "vivekananda": "Their control is by practice and non-attachment."
+          },
+          "entities": [
+            {
+              "word": "practice and non-attachment",
+              "node": "apatheia-and-virtue",
+              "type": "theme",
+              "note": "abhyāsa (practice) and vairāgya (non-attachment/dispassion) are the two means of nirodha. Woods (1914) translates vairāgya as 'passionlessness'; the structural parallel to Hellenistic apatheia — the discipline of freedom from the pull of objects — is noted by Eliade (1958), who titles his treatment 'Yoga: the discipline of freedom.'",
+              "parallels": [
+                {
+                  "label": "Stoic apatheia",
+                  "note": "the cultivated freedom from passion as the precondition of the sage's liberty; a convergent ethic of detachment, per Eliade's framing of yoga as a 'discipline of freedom' (1958)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "I.15",
+          "text": "That effect which comes to those who have given up their thirst after objects, either seen or heard, and which wills to control the objects, is non-attachment.",
+          "textVersions": {
+            "vivekananda": "That effect which comes to those who have given up their thirst after objects, either seen or heard, and which wills to control the objects, is non-attachment."
+          },
+          "entities": [
+            {
+              "word": "given up their thirst after objects",
+              "node": "apatheia-and-virtue",
+              "type": "theme",
+              "note": "vairāgya as the renunciation of craving for sense-objects. Woods (1914) renders it as the consciousness of mastery in one who has ceased to thirst; Eliade (1958) reads it as the ascetic uprooting of desire that frees consciousness from prakṛti.",
+              "parallels": [
+                {
+                  "label": "taṇhā — the thirst that the Buddhist path extinguishes (Buddhist)",
+                  "note": "the 'thirst' (craving) the Second Noble Truth names as the origin of suffering; the same renunciatory vocabulary in the shared śramaṇa world, though directed at no-self",
+                  "textId": "dhammacakkappavattana-sutta"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "I.16",
+          "text": "That is extreme non-attachment which gives up even the qualities, and comes from the knowledge of (the real nature of) the Purusha.",
+          "textVersions": {
+            "vivekananda": "That is extreme non-attachment which gives up even the qualities, and comes from the knowledge of (the real nature of) the Purusha."
+          },
+          "entities": [
+            {
+              "word": "the qualities",
+              "node": "dualism-spirit-matter",
+              "type": "theme",
+              "note": "the guṇas — sattva, rajas, tamas — the three constituents of prakṛti (matter/nature). Highest vairāgya releases even these, when puruṣa is discriminated from prakṛti. Eliade (1958) and Woods (1914) treat the puruṣa/prakṛti split as the radically DUALIST core of Sāṃkhya-Yoga; the vault's Sāṃkhya-Yoga tradition node lists spirit-matter dualism as its key theme. (Note: classical Yoga is dualist, NOT the non-dual Advaita with which it is often confused.)",
+              "parallels": [
+                {
+                  "label": "spirit vs matter (Gnostic / Platonic)",
+                  "note": "the Western dualisms of soul against the material world; Eliade (1958) explicitly contrasts Sāṃkhya's puruṣa/prakṛti dualism with these, noting it is metaphysical rather than moral (matter is not evil, only a fetter)"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Book II — Concentration: Its Practice (the eight limbs; ethics, body, breath, withdrawal)",
+      "verses": [
+        {
+          "ref": "II.28",
+          "text": "By the practice of the different parts of Yogas the impurities being destroyed, knowledge becomes effulgent up to discrimination.",
+          "textVersions": {
+            "vivekananda": "By the practice of the different parts of Yogas the impurities being destroyed, knowledge becomes effulgent up to discrimination."
+          },
+          "entities": [
+            {
+              "word": "knowledge becomes effulgent up to discrimination",
+              "node": "ascent-of-the-soul",
+              "type": "theme",
+              "note": "viveka-khyāti, the 'discriminative discernment' between puruṣa and prakṛti, is the dawning knowledge that practice of the limbs produces. Woods (1914) makes viveka-khyāti the pivot of the whole system; Eliade (1958) calls it the gnosis that immediately precedes kaivalya. (No kaivalya/liberation node exists in the vault.)",
+              "parallels": [
+                {
+                  "label": "gnōsis as saving knowledge (Hermetic / Gnostic)",
+                  "note": "liberation through a transforming knowledge rather than works; the Upaniṣadic and Yogic insistence that it is jñāna/vidyā that frees, a structural parallel Eliade (1958) draws across the contemplative traditions",
+                  "textId": "mundaka-upanishad"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "II.29",
+          "text": "Yama, Niyama, Āsana, Prānāyāma, Pratyāhāra, Dhāranā, Dhyāna, and Samādhi are the eight limbs of Yoga.",
+          "textVersions": {
+            "vivekananda": "Yama, Niyama, Āsana, Prānāyāma, Pratyāhāra, Dhāranā, Dhyāna, and Samādhi are the eight limbs of Yoga."
+          },
+          "entities": [
+            {
+              "word": "the eight limbs of Yoga",
+              "node": "ascent-of-the-soul",
+              "type": "theme",
+              "note": "aṣṭāṅga-yoga: the eight 'limbs' (aṅga) — restraints, observances, posture, breath-control, sense-withdrawal, concentration, meditation, absorption — form a graded ascent from ethics to samādhi. Eliade (1958) and Woods (1914) read them as an integrated psycho-physical technique; the last three (dhāraṇā-dhyāna-samādhi) together form saṃyama, the 'inner' yoga. (Annotated here to ascent-of-the-soul; the vault has no dedicated samādhi or eight-limbs node.)",
+              "parallels": [
+                {
+                  "label": "The Noble Eightfold Path (Buddhist)",
+                  "note": "the structural sibling — right view, intention, speech, action, livelihood, effort, mindfulness, concentration. Both are eight-fold liberation-maps from the shared śramaṇa matrix; Eliade (1958) stresses they are NOT identical — Patañjali's limbs are sequential disciplines crowned by samādhi, the Buddha's are a simultaneous threefold training (ethics-meditation-wisdom), and the goals differ (isolated Self vs. no-self)",
+                  "textId": "dhammacakkappavattana-sutta"
+                },
+                {
+                  "label": "The yoga of action and meditation (Bhagavad Gītā)",
+                  "note": "the Gītā's parallel presentation of yogic discipline as karma- and dhyāna-yoga within the same Sāṃkhya-Yoga frame",
+                  "textId": "bhagavad-gita-4"
+                }
+              ]
+            },
+            {
+              "word": "Samādhi",
+              "node": "ascent-of-the-soul",
+              "type": "theme",
+              "note": "samādhi, the eighth limb — 'absorption,' the unitive consciousness in which the meditator and object merge. Woods (1914) renders it 'concentration'; Eliade (1958) distinguishes saṃprajñāta (with support) from asaṃprajñāta (objectless) samādhi, the latter opening onto kaivalya. (No samādhi node exists in the vault; surfaced via the meditative-ascent theme.)",
+              "parallels": [
+                {
+                  "label": "henōsis — mystical union (Neoplatonic / contemplative)",
+                  "note": "the contemplative absorption in which subject and object collapse; a convergent end-state of stilled attention reached independently, per Eliade's comparative phenomenology of contemplation (1958)",
+                  "textId": "cloud-of-unknowing"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "II.30",
+          "text": "Non-killing, truthfulness, non-stealing, continence, and non-receiving are called Yamas.",
+          "textVersions": {
+            "vivekananda": "Non-killing, truthfulness, non-stealing, continence, and non-receiving are called Yamas."
+          },
+          "entities": [
+            {
+              "word": "Non-killing",
+              "node": "apatheia-and-virtue",
+              "type": "theme",
+              "note": "ahiṃsā, non-violence, the first of the five yamas (ethical restraints). Woods (1914) lists the yamas as the moral foundation without which the higher limbs are barren; the same ahiṃsā is foundational across the śramaṇa traditions.",
+              "parallels": [
+                {
+                  "label": "ahiṃsā / sīla — moral restraint (Buddhist)",
+                  "note": "non-harming and the ethical training (sīla) that grounds the Buddhist path; the shared renunciate ethic of the north-Indian milieu",
+                  "textId": "dhammacakkappavattana-sutta"
+                }
+              ]
+            },
+            {
+              "word": "continence",
+              "node": "monastic-asceticism",
+              "type": "theme",
+              "note": "brahmacarya, celibate self-restraint — one of the yamas and a mark of the ascetic discipline the Sutras presuppose. Eliade (1958) places Yoga within the broader Indian ascetic (tapas) economy in which continence conserves and concentrates spiritual energy.",
+              "parallels": [
+                {
+                  "label": "monastic continence (Christian / cross-cultural)",
+                  "note": "the renunciation of sexuality as a discipline concentrating spiritual power; a convergent ascetic logic, per Eliade's survey of yogic and monastic asceticism (1958)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "II.32",
+          "text": "Internal and external purification, contentment, mortification, study, and worship of God are the Niyamas.",
+          "textVersions": {
+            "vivekananda": "Internal and external purification, contentment, mortification, study, and worship of God are the Niyamas."
+          },
+          "entities": [
+            {
+              "word": "mortification",
+              "node": "monastic-asceticism",
+              "type": "theme",
+              "note": "tapas, ascetic 'heat'/austerity — one of the five niyamas (observances). Eliade (1958) makes tapas central: the disciplined austerity that, in the older Vedic and ascetic traditions, generates transformative inner heat and power, here harnessed to liberation.",
+              "parallels": [
+                {
+                  "label": "ascetic mortification (monastic)",
+                  "note": "bodily austerity as a means of spiritual purification; the cross-cultural ascetic pattern Eliade (1958) traces from Vedic tapas through yogic and monastic practice"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "II.49",
+          "text": "Controlling the motion of the exhalation and the inhalation follows after this.",
+          "textVersions": {
+            "vivekananda": "Controlling the motion of the exhalation and the inhalation follows after this."
+          },
+          "entities": [
+            {
+              "word": "Controlling the motion of the exhalation and the inhalation",
+              "node": "ascent-of-the-soul",
+              "type": "theme",
+              "note": "prāṇāyāma, breath-control, the fourth limb — regulation of the breath (prāṇa) as the hinge between the outer disciplines and the inner withdrawal. Eliade (1958) gives prāṇāyāma extended treatment as the characteristically yogic technique linking physiology to consciousness, the bridge by which the practitioner turns inward toward dhāraṇā and samādhi.",
+              "parallels": [
+                {
+                  "label": "breath as the vehicle of contemplative interiority",
+                  "note": "the regulation of breathing in contemplative practice; Eliade (1958) notes the recurrence of breath-discipline wherever a tradition seeks to still and interiorize attention",
+                  "textId": "cloud-of-unknowing"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "II.54",
+          "text": "The drawing in of the organs is by their giving up their own objects and taking the form of the mind-stuff, as it were.",
+          "textVersions": {
+            "vivekananda": "The drawing in of the organs is by their giving up their own objects and taking the form of the mind-stuff, as it were."
+          },
+          "entities": [
+            {
+              "word": "The drawing in of the organs",
+              "node": "ascent-of-the-soul",
+              "type": "theme",
+              "note": "pratyāhāra, the withdrawal of the senses from their objects — the fifth limb and the threshold of the inner yoga, where consciousness detaches from the external world and turns wholly inward. Woods (1914) translates it as the senses 'imitating' the mind-stuff; Eliade (1958) makes it the decisive turn from the outer to the inner limbs.",
+              "parallels": [
+                {
+                  "label": "withdrawal of attention from the senses (contemplative)",
+                  "note": "the contemplative's deliberate closing-off of sense and image so attention rests inward — the convergent move of interiorization, per Eliade's comparison of contemplative techniques (1958)",
+                  "textId": "cloud-of-unknowing"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
+
+// -- Isaiah 11:1–9 (There shall come forth a rod out of the stem of Jesse — the wolf and the lamb, the peaceable kingdom) --
+SCRIPTURE_TEXTS['isaiah-11'] = {
+  "id": "isaiah-11",
+  "title": "Isaiah 11:1–9 (There shall come forth a rod out of the stem of Jesse — the wolf and the lamb, the peaceable kingdom)",
+  "shortTitle": "Isaiah 11",
+  "corpus": "Hebrew Bible (Latter Prophets · First Isaiah / Proto-Isaiah)",
+  "tradId": "tradition-second-temple-judaism",
+  "date": "c. 8th century BCE (Proto-Isaiah / Isaiah 1–39; the messianic oracle, redacted into the First Isaiah collection)",
+  "docNode": "phase-2-010-hebrew-bible-early-prophets",
+  "language": "Hebrew · King James Version (1611) — public domain",
+  "translations": [
+    {
+      "id": "kjv",
+      "label": "KJV (1611)",
+      "note": "King James Version — public domain"
+    }
+  ],
+  "intro": "Isaiah 11:1–9 is the canonical Hebrew messianic oracle: a \"rod out of the stem of Jesse\" — a new shoot from the felled Davidic dynasty — endowed with the sevenfold spirit of YHWH, who judges the poor with righteousness and inaugurates an Edenic peace in which the wolf dwells with the lamb and a little child leads the predators. It welds three motifs the Atlas tracks as wires, not memberships: the Davidic royal ideology (Mowinckel's \"the ideal king of the future\"), the eschatological reversal of nature, and the holy-mountain locus where the order is realised. The honest framing is layered: the Davidic-king ideology is genuinely inherited Israelite tradition, but the cross-tradition resonance with Hesiod's golden race and Virgil's golden-age child is convergence on a shared ancient hope for a paradisal era restored — a typological parallel scholarship reads as analogy, not borrowing.",
+  "crossTradition": [
+    {
+      "label": "Psalm 2 — the LORD's Anointed enthroned ('Thou art my Son')",
+      "note": "The royal coronation psalm: the māšîaḥ installed on Zion as YHWH's adopted son. Mowinckel (He That Cometh, 1956) reads Isaiah 11 and Psalm 2 as twin expressions of the Davidic royal ideology projected onto an ideal future king.",
+      "textId": "psalm-2"
+    },
+    {
+      "label": "Psalm 72 — the just king under whom the poor flourish",
+      "note": "The king who 'judges the poor with righteousness' and rules from sea to sea; the same royal-justice ideal Isaiah 11:4 voices. Mowinckel and Blenkinsopp (Isaiah 1–39, Anchor Bible) treat Ps 72 as the closest psalmic parallel to the oracle's portrait of the righteous ruler.",
+      "textId": "psalm-72"
+    },
+    {
+      "label": "Daniel 7 — the messianic dominion of the Son of Man",
+      "note": "The later apocalyptic transformation of royal messianism into an everlasting heavenly dominion. Collins (The Scepter and the Star) traces the trajectory from Isaiah 11's Davidic shoot to Daniel 7's transcendent figure.",
+      "textId": "daniel-7"
+    },
+    {
+      "label": "Hesiod, Works and Days — the golden race of peace",
+      "note": "The lost golden age 'free from toil and grief,' the earth yielding without strife. West (Hesiod: Works and Days, 1978) and Mowinckel note the structural convergence: a paradisal era of peace, in Hesiod set in the past, in Isaiah projected forward — analogy, not transmission.",
+      "textId": "hesiod-five-ages"
+    },
+    {
+      "label": "Virgil, Fourth Eclogue — the 'messianic' golden-age child",
+      "note": "Virgil's prophecy (c. 40 BCE) of a newborn child under whom 'the serpent shall perish' and the earth returns to a golden age, the lion no harm to the herds — read since the Christian Middle Ages as a pagan messianic parallel. Eduard Norden (Die Geburt des Kindes, 1924) and W. W. Tarn argued an Eastern (possibly Hebrew/Sibylline) influence; most classicists (e.g. R. G. M. Nisbet) read it as independent Roman golden-age convergence, not borrowing from Isaiah."
+    }
+  ],
+  "sections": [
+    {
+      "heading": "The shoot from Jesse and the spirit of the LORD",
+      "verses": [
+        {
+          "ref": "11:1",
+          "text": "And there shall come forth a rod out of the stem of Jesse, and a Branch shall grow out of his roots:",
+          "textVersions": {
+            "kjv": "And there shall come forth a rod out of the stem of Jesse, and a Branch shall grow out of his roots:"
+          },
+          "entities": [
+            {
+              "word": "a rod out of the stem of Jesse",
+              "node": "messianic-genealogy",
+              "type": "theme",
+              "note": "Jesse is David's father; the 'stem' (stump) of Jesse signals the dynasty cut down to its root, from which a new shoot springs — the legitimating royal-lineage claim that the future deliverer is Davidic by descent. Blenkinsopp (Isaiah 1–39, Anchor Bible) reads the stump-imagery as presupposing the dynasty's humbling.",
+              "parallels": [
+                {
+                  "label": "Psalm 2 — the Davidic son enthroned",
+                  "note": "the māšîaḥ as YHWH's adopted royal son; the genealogical ground of the messianic claim (Mowinckel, He That Cometh)",
+                  "textId": "psalm-2"
+                },
+                {
+                  "label": "Daniel 7 — the dominion given to the Son of Man",
+                  "note": "the later apocalyptic heir of the Davidic hope (Collins, The Scepter and the Star)",
+                  "textId": "daniel-7"
+                }
+              ]
+            },
+            {
+              "word": "Jesse",
+              "node": "david-king",
+              "type": "person",
+              "note": "The shoot springs from Jesse, father of King David; the oracle anchors the future ruler in the historical Davidic house. The Atlas treats David as the origin-tradition node (Israelite / pre-exilic Judah) that the messianic hope projects forward.",
+              "parallels": [
+                {
+                  "label": "Psalm 72 — the ideal Davidic king",
+                  "note": "the royal-justice portrait Mowinckel pairs with Isaiah 11's future king",
+                  "textId": "psalm-72"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "11:2",
+          "text": "And the spirit of the LORD shall rest upon him, the spirit of wisdom and understanding, the spirit of counsel and might, the spirit of knowledge and of the fear of the LORD;",
+          "textVersions": {
+            "kjv": "And the spirit of the LORD shall rest upon him, the spirit of wisdom and understanding, the spirit of counsel and might, the spirit of knowledge and of the fear of the LORD;"
+          },
+          "entities": [
+            {
+              "word": "the spirit of the LORD",
+              "node": "ruach-pneuma",
+              "type": "symbol",
+              "note": "The rûaḥ YHWH that 'rests upon' the anointed one — the same wind-breath-spirit that animates kings and prophets in the Hebrew Bible; here the sevenfold spirit that qualifies the messianic ruler. Blenkinsopp notes the list became the basis of the later 'seven gifts of the Spirit.'",
+              "parallels": [
+                {
+                  "label": "Psalm 2 — the LORD's Anointed",
+                  "note": "the spirit-endowed king installed on Zion (Mowinckel, He That Cometh, on royal charismatic endowment)",
+                  "textId": "psalm-2"
+                }
+              ]
+            },
+            {
+              "word": "the LORD",
+              "node": "yahweh",
+              "type": "deity",
+              "note": "YHWH, whose spirit endows the future king and whose 'knowledge' fills the earth at the oracle's close (v.9); the God of the Davidic covenant whose royal ideology underwrites the messianic hope.",
+              "parallels": [
+                {
+                  "label": "Psalm 72 — judgments given by God to the king",
+                  "note": "the king's righteousness derives from YHWH (Blenkinsopp, Isaiah 1–39)",
+                  "textId": "psalm-72"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "11:4",
+          "text": "But with righteousness shall he judge the poor, and reprove with equity for the meek of the earth: and he shall smite the earth with the rod of his mouth, and with the breath of his lips shall he slay the wicked.",
+          "textVersions": {
+            "kjv": "But with righteousness shall he judge the poor, and reprove with equity for the meek of the earth: and he shall smite the earth with the rod of his mouth, and with the breath of his lips shall he slay the wicked."
+          },
+          "entities": [
+            {
+              "word": "with righteousness shall he judge the poor",
+              "node": "messianism",
+              "type": "theme",
+              "note": "The defining mark of the messianic ruler: justice for the poor and the meek, not judgement by appearance (v.3). Mowinckel (He That Cometh, 1956) identifies this royal-justice ideal as the core of the 'ideal king of the future'; the Atlas treats Israelite messianism as the origin-tradition node from which later savior-figures are wired.",
+              "parallels": [
+                {
+                  "label": "Psalm 72 — the king who delivers the needy",
+                  "note": "'he shall judge the poor of the people' (Ps 72:4) — the closest psalmic parallel (Mowinckel; Blenkinsopp)",
+                  "textId": "psalm-72"
+                },
+                {
+                  "label": "Daniel 7 — everlasting righteous dominion",
+                  "note": "the eschatological extension of the just-king ideal (Collins, The Scepter and the Star)",
+                  "textId": "daniel-7"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "The wolf and the lamb — the peaceable kingdom",
+      "verses": [
+        {
+          "ref": "11:6",
+          "text": "The wolf also shall dwell with the lamb, and the leopard shall lie down with the kid; and the calf and the young lion and the fatling together; and a little child shall lead them.",
+          "textVersions": {
+            "kjv": "The wolf also shall dwell with the lamb, and the leopard shall lie down with the kid; and the calf and the young lion and the fatling together; and a little child shall lead them."
+          },
+          "entities": [
+            {
+              "word": "The wolf also shall dwell with the lamb",
+              "node": "messianic-future-savior",
+              "type": "theme",
+              "note": "The eschatological reversal of nature — predator and prey at peace — that marks the savior's reign. The Atlas treats the future-savior motif as the eschatological theme node carrying the cross-tradition wires; Eliade (The Myth of the Eternal Return) reads such paradise-restored imagery as the return of the primordial Edenic harmony.",
+              "parallels": [
+                {
+                  "label": "Hesiod — the golden race free from strife",
+                  "note": "the lost age of effortless peace; West (Hesiod: Works and Days) on the golden-age topos as convergent ancient hope, not borrowing",
+                  "textId": "hesiod-five-ages"
+                },
+                {
+                  "label": "Virgil, Fourth Eclogue — the lion no harm to the herds",
+                  "note": "the golden-age child under whom predators cease to threaten the flocks; Norden (Die Geburt des Kindes) on the parallel, read by most classicists as independent convergence"
+                }
+              ]
+            },
+            {
+              "word": "a little child shall lead them",
+              "node": "messianism",
+              "type": "theme",
+              "note": "The child leading the tamed beasts is the emblem of the messianic peace — the most-quoted image of Isaiah's 'peaceable kingdom.' Blenkinsopp (Isaiah 1–39) notes the vision restores Edenic conditions under the righteous ruler.",
+              "parallels": [
+                {
+                  "label": "Virgil, Fourth Eclogue — the newborn child of the new age",
+                  "note": "the puer under whom the golden age returns; the Roman 'messianic' child (Norden; Nisbet on convergence)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "11:9",
+          "text": "They shall not hurt nor destroy in all my holy mountain: for the earth shall be full of the knowledge of the LORD, as the waters cover the sea.",
+          "textVersions": {
+            "kjv": "They shall not hurt nor destroy in all my holy mountain: for the earth shall be full of the knowledge of the LORD, as the waters cover the sea."
+          },
+          "entities": [
+            {
+              "word": "my holy mountain",
+              "node": "world-mountain",
+              "type": "symbol",
+              "note": "The 'holy mountain' is Zion, the cosmic-mountain locus where YHWH's order is realised and from which it radiates over the earth; the eschatological peace is centred on the sacred mountain. Eliade (The Sacred and the Profane) reads the holy mountain as the axis mundi where the divine order touches the world.",
+              "parallels": [
+                {
+                  "label": "Cosmic mountain as theophanic centre (Sinai, Meru, Olympus)",
+                  "note": "the cross-tradition sacred-mountain motif as the locus of divine order (Eliade, The Sacred and the Profane)"
+                }
+              ]
+            },
+            {
+              "word": "They shall not hurt nor destroy",
+              "node": "messianic-future-savior",
+              "type": "theme",
+              "note": "The summary of the peaceable kingdom: harm abolished 'in all my holy mountain' once the earth is full of the knowledge of YHWH. Mowinckel and Blenkinsopp read this as the realised goal of the messianic reign — universal peace flowing from universal knowledge of God.",
+              "parallels": [
+                {
+                  "label": "Hesiod — the golden race 'free from toil and grief'",
+                  "note": "the convergent ancient image of a strife-free era (West, Hesiod: Works and Days)",
+                  "textId": "hesiod-five-ages"
+                },
+                {
+                  "label": "Daniel 7 — the everlasting kingdom that shall not be destroyed",
+                  "note": "the eschatological permanence of the messianic order (Collins, The Scepter and the Star)",
+                  "textId": "daniel-7"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
+
+// -- Empedocles — The Four Roots, Love and Strife, and the Transmigration of the Soul --
+SCRIPTURE_TEXTS['empedocles-roots-love-strife'] = {
+  "id": "empedocles-roots-love-strife",
+  "title": "Empedocles — The Four Roots, Love and Strife, and the Transmigration of the Soul",
+  "shortTitle": "Empedocles — Roots, Love & Strife",
+  "corpus": "Greek · Presocratic Philosophy",
+  "tradId": "tradition-ancient-greek",
+  "date": "c. 450 BCE (Empedocles of Acragas, fl. c. 444 BCE; lived c. 494–434 BCE)",
+  "docNode": "document-empedocles",
+  "language": "Greek (epic hexameter) · John Burnet translation, Early Greek Philosophy (1892; cited from the 3rd ed., 1920) — public domain. Burnet's own fragment numbering; Diels-Kranz B-numbers (DK31) cited in refs.",
+  "translations": [
+    {
+      "id": "burnet",
+      "label": "Burnet 1892",
+      "note": "John Burnet, Early Greek Philosophy, 1892/1920 — public domain"
+    }
+  ],
+  "intro": "Empedocles of Acragas (c. 494–434 BCE) — Sicilian philosopher, healer, and self-proclaimed exiled god — answered Parmenides by teaching that all things are made of four eternal \"roots\" (rhizomata): fire, air, water, and earth. These are mingled and parted by two cosmic powers — Love (Philotes), which unites, and Strife (Neikos), which divides — in an endless alternating cycle, Love drawing the roots into a perfect Sphere and Strife tearing them apart again. His companion poem, the Purifications, carries the Orphic-Pythagorean doctrine of the soul's fall and transmigration: the daimon, polluted by bloodshed, wanders thrice ten thousand seasons through plant, animal, and human bodies (\"For I have already been once a boy and a girl, and a bush and a bird and a dumb fish in the sea\"). This entry surfaces two cross-tradition currents honestly: a genuine transmission (the four elements pass through Aristotle into two millennia of Western and Islamic physics, alchemy, and Galenic medicine; the soul-transmigration flows through Plato into Neoplatonism), running alongside structural convergences — the Vedic kama as cosmogonic desire, the Gita's transmigrating self — that scholarship treats as parallel, not derivation.",
+  "crossTradition": [
+    {
+      "label": "Heraclitus — the cosmos governed by alternating opposites",
+      "note": "Empedocles's Love and Strife extend the Heraclitean insight that the world-order is sustained by the strife and harmony of opposed powers (\"war is the father of all\"; \"the way up and the way down is one\"). Kirk-Raven-Schofield (The Presocratic Philosophers, 1983, pp. 280–321) read Empedocles's cyclical cosmos of union and division as a pluralist response to Heraclitean flux and Parmenidean being; the doc node logs the parallel-motif edge.",
+      "textId": "heraclitus-fragments"
+    },
+    {
+      "label": "Rig Veda 10.129 (Nasadiya Sukta) — \"desire (kama) was the first seed\"",
+      "note": "The Vedic hymn makes desire (kama) the first stirring that links being to non-being — love as the primordial cosmogonic force, structurally akin to Empedocles's Philotes (Love) as the power that draws the roots together. Treated as Axial-Age convergence, not contact: there is no demonstrable transmission between Acragas and the Rig Veda (West, Early Greek Philosophy and the Orient, 1971, on Greek–Eastern parallels; KRS 1983).",
+      "textId": "nasadiya-sukta"
+    },
+    {
+      "label": "Bhagavad-Gita 2 — the soul passing through bodies",
+      "note": "Krishna teaches that the embodied self casts off worn bodies as a man changes garments — the same transmigration of an imperishable soul through successive lives that Empedocles claims in the first person (\"a boy and a girl, a bush and a bird and a dumb fish\"). The shared doctrine of metempsychosis is a recurring comparative crux; whether the Greek Orphic-Pythagorean and Indian streams are independent or distantly connected is debated (West 1971; Kingsley, Ancient Philosophy, Mystery, and Magic, 1995), with most scholars treating them as convergence.",
+      "textId": "bhagavad-gita-2"
+    },
+    {
+      "label": "Hesiod — the declining cosmic ages",
+      "note": "Hesiod's myth of successive declining races (gold to iron) gives the Greek tradition its template of a cosmos that runs in cycles of decline; Empedocles's cosmic cycle — the alternating reign of Love and Strife — is the philosophical heir of this cyclical-and-declining cosmology (Eliade, The Myth of the Eternal Return, 1954, on Greek cyclical time; KRS 1983).",
+      "textId": "hesiod-five-ages"
+    },
+    {
+      "label": "Plato, Phaedo & Phaedrus — the soul's fall and return",
+      "note": "Plato makes the Orphic-Pythagorean transmigration and purification that Empedocles transmits central to his eschatology; through Plato it flows into Neoplatonism and into Jewish and Christian debates over the soul's pre-existence. A genuine historical transmission, not a convergence (Wright, Empedocles: The Extant Fragments, 1981; Inwood, The Poem of Empedocles, 2001)."
+    }
+  ],
+  "sections": [
+    {
+      "heading": "The Four Roots",
+      "verses": [
+        {
+          "ref": "DK B6 (Burnet fr. 33)",
+          "text": "Hear first the four roots of all things: shining Zeus, life-bringing Hera, Aidoneus, and Nestis whose tear-drops are a well-spring to mortals.",
+          "textVersions": {
+            "burnet": "Hear first the four roots of all things: shining Zeus, life-bringing Hera, Aidoneus, and Nestis whose tear-drops are a well-spring to mortals."
+          },
+          "entities": [
+            {
+              "word": "the four roots of all things",
+              "node": "dualism-cosmic",
+              "type": "theme",
+              "note": "Empedocles names four eternal \"roots\" (rhizomata) — fire, air, earth, water — under the divine names shining Zeus (fire), life-bringing Hera (air), Aidoneus/Hades (earth), and Nestis (water). They neither come to be nor perish; all change is their mixture and separation, his pluralist answer to Parmenidean being. Aristotle canonized these as the four elements, dominant in Western and Islamic physics and Galenic medicine for two millennia (Kirk-Raven-Schofield, The Presocratic Philosophers, 1983, pp. 286–293; Wright, Empedocles: The Extant Fragments, 1981).",
+              "parallels": [
+                {
+                  "label": "Aristotle's four elements and the four humors",
+                  "note": "Aristotle adopted Empedocles's earth-air-fire-water (adding aether as a fifth), and the scheme became the foundation of Western and Islamic natural philosophy, alchemy, and Galenic four-humor medicine until the Scientific Revolution (Wright 1981; Inwood, The Poem of Empedocles, 2001)."
+                }
+              ]
+            },
+            {
+              "word": "shining Zeus",
+              "node": "sacred-fire",
+              "type": "symbol",
+              "note": "\"Shining Zeus\" is Empedocles's divine name for fire, one of the four roots — fire personified as the radiant sky-god, as Heraclitus had made the ever-living Fire the cosmic substance. The use of god-names for the elements marks Empedocles's fusion of physics with the older theogonic and religious idiom (KRS 1983, pp. 286–289; Kingsley, Ancient Philosophy, Mystery, and Magic, 1995).",
+              "parallels": [
+                {
+                  "label": "Heraclitus — the ever-living Fire",
+                  "note": "For Heraclitus fire is the primary cosmic substance, kindling and quenching in measure; Empedocles demotes it to one root among four but keeps the sacred-fire idiom, naming it for Zeus (KRS 1983).",
+                  "textId": "heraclitus-fragments"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Love and Strife",
+      "verses": [
+        {
+          "ref": "DK B17 (Burnet fr. 17, selected lines)",
+          "text": "At one time it grew together to be one only out of many, at another it parted asunder so as to be many instead of one; fire and water and earth and the mighty height of Air. … And these things never cease continually changing places, at one time all uniting in one through Love, at another each borne in different directions by the repulsion of Strife.",
+          "textVersions": {
+            "burnet": "At one time it grew together to be one only out of many, at another it parted asunder so as to be many instead of one; fire and water and earth and the mighty height of Air. … And these things never cease continually changing places, at one time all uniting in one through Love, at another each borne in different directions by the repulsion of Strife."
+          },
+          "entities": [
+            {
+              "word": "all uniting in one through Love",
+              "node": "cosmic-cycles",
+              "type": "theme",
+              "note": "The cosmos runs on an endless cycle: Love (Philotes) draws the four roots together into a perfect, motionless Sphere; Strife (Neikos) then enters and tears them apart into the differentiated world, until Love prevails again. This alternation of union and division is the master-rhythm of Empedoclean cosmology — governed cycle, not chaos (KRS 1983, pp. 287–305; Wright 1981).",
+              "parallels": [
+                {
+                  "label": "Heraclitus — the measured cycle of kindling and quenching",
+                  "note": "Heraclitus's cosmos of fire kindling and going out \"in measure\" is the nearest Presocratic precedent for Empedocles's cosmic cycle; both make ordered alternation, not a single creation, the law of the world (KRS 1983).",
+                  "textId": "heraclitus-fragments"
+                }
+              ]
+            },
+            {
+              "word": "the repulsion of Strife",
+              "node": "dualism-cosmic",
+              "type": "theme",
+              "note": "Empedocles's two motive powers, Love and Strife, are the first clearly named pair of opposed cosmic forces in Greek thought — union and separation as the only causes of all becoming. This binary of a uniting and a dividing principle is a paradigm of cosmic dualism, distinct from the four material roots it acts upon (KRS 1983, pp. 287–298; Wright 1981).",
+              "parallels": [
+                {
+                  "label": "Rig Veda 10.129 — kama (desire) as the first seed",
+                  "note": "The Nasadiya Sukta makes desire (kama) the first seed of mind that bridges being and non-being — love as a cosmogonic power, a structural convergence with Empedocles's Love (Philotes) as the force that unites the roots; treated as parallel, not transmission (West, Early Greek Philosophy and the Orient, 1971).",
+                  "textId": "nasadiya-sukta"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "The Transmigration of the Soul",
+      "verses": [
+        {
+          "ref": "DK B115 (Burnet fr. 369, selected lines)",
+          "text": "There is an oracle of Necessity, an ancient ordinance of the gods, eternal and sealed fast by broad oaths, that whenever one of the daemons, whose portion is length of days, has sinfully polluted his hands with blood, … he must wander thrice ten thousand seasons from the abodes of the blessed, being born throughout the time in all manners of mortal forms.",
+          "textVersions": {
+            "burnet": "There is an oracle of Necessity, an ancient ordinance of the gods, eternal and sealed fast by broad oaths, that whenever one of the daemons, whose portion is length of days, has sinfully polluted his hands with blood, … he must wander thrice ten thousand seasons from the abodes of the blessed, being born throughout the time in all manners of mortal forms."
+          },
+          "entities": [
+            {
+              "word": "he must wander thrice ten thousand seasons",
+              "node": "reincarnation",
+              "type": "theme",
+              "note": "The fallen daimon, polluted by bloodshed and false oath, is exiled by Necessity to wander \"thrice ten thousand seasons\" through successive mortal bodies before it can return to the divine. This is the Orphic-Pythagorean doctrine of the soul's fall and transmigration (metempsychosis), set out in Empedocles's Purifications (Wright 1981; Kingsley, Ancient Philosophy, Mystery, and Magic, 1995, on the daimonology).",
+              "parallels": [
+                {
+                  "label": "Bhagavad-Gita 2 — the imperishable self passing through bodies",
+                  "note": "The Gita's teaching that the embodied self changes worn-out bodies as a man changes clothes is the Indian counterpart to Empedocles's wandering daimon; the shared metempsychosis is a classic comparative crux, generally read as convergence (West 1971; O'Flaherty, ed., Karma and Rebirth in Classical Indian Traditions, 1980).",
+                  "textId": "bhagavad-gita-2"
+                },
+                {
+                  "label": "Plato — the soul's purificatory cycle of rebirths",
+                  "note": "Plato takes Empedocles's (and Pythagoras's) transmigrating, purifiable soul and makes it central to the Phaedo and Phaedrus, whence it passes into Neoplatonism — a genuine historical transmission within the Greek tradition (Wright 1981; Inwood 2001)."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "DK B117 (Burnet fr. 117)",
+          "text": "For I have been ere now a boy and a girl, a bush and a bird and a dumb fish in the sea.",
+          "textVersions": {
+            "burnet": "For I have been ere now a boy and a girl, a bush and a bird and a dumb fish in the sea."
+          },
+          "entities": [
+            {
+              "word": "a boy and a girl, a bush and a bird and a dumb fish in the sea",
+              "node": "reincarnation",
+              "type": "theme",
+              "note": "Empedocles's most famous line, spoken in the first person: his own soul has already passed through human, plant, animal, and aquatic forms — the lived testimony of transmigration. The same fragment is the headwater image of metempsychosis in Greek philosophy and feeds Plato's myths of the soul (Wright 1981; KRS 1983, pp. 314–321; Kingsley 1995).",
+              "parallels": [
+                {
+                  "label": "Empedocles as exiled daimon and reincarnated seer",
+                  "note": "The first-person voice belongs to Empedocles's self-presentation as a fallen god working his way back to the divine through purification — healer, mystic, and (by legend) one who leapt into Etna; the Purifications frames his philosophy as a soteriology (Kingsley, Ancient Philosophy, Mystery, and Magic, 1995; Inwood 2001)."
+                },
+                {
+                  "label": "The immortal soul and its return to the divine",
+                  "note": "Underlying the transmigration is the conviction that the soul (the daimon) is immortal and divine in origin, exiled into mortal forms and destined to return — the Orphic-Pythagorean soul-doctrine that Empedocles shares with Pythagoras and bequeaths to Plato (Wright 1981; KRS 1983)."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
