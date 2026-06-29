@@ -29970,3 +29970,1385 @@ SCRIPTURE_TEXTS['shvetashvatara-upanishad'] = {
     }
   ]
 };
+
+// -- Ādittapariyāya Sutta (SN 35.28 / Vinaya Mahāvagga I.21) — The Fire Sermon --
+SCRIPTURE_TEXTS['adittapariyaya'] = {
+  "id": "adittapariyaya",
+  "title": "Ādittapariyāya Sutta (SN 35.28 / Vinaya Mahāvagga I.21) — The Fire Sermon",
+  "shortTitle": "The Fire Sermon",
+  "corpus": "Buddhist · Pali Canon (Saṃyutta Nikāya 35.28 / Vinaya Mahāvagga I.21)",
+  "tradId": "tradition-buddhism",
+  "date": "c. 5th–4th century BCE (attributed to the Buddha's third sermon; redacted in the early Pali canon)",
+  "docNode": "phase-2-016-early-buddhist-suttas",
+  "language": "Pali · Henry Clarke Warren translation, Buddhism in Translations (Harvard Oriental Series vol. 3; Cambridge, Mass.: Harvard University Press, 1896), § 73 'The Fire-Sermon' — public domain. English wording, punctuation, and Warren's own printed ellipses \"(. . .)\" condensing the ear/nose/tongue/body/mind block are verbatim from the printed edition (verified against the Wikisource transcription).",
+  "translations": [
+    {
+      "id": "warren",
+      "label": "Warren 1896",
+      "note": "H.C. Warren, Buddhism in Translations (Harvard Oriental Series vol. 3), 1896 — public domain"
+    }
+  ],
+  "intro": "The Buddha's third sermon, the Ādittapariyāya ('Fire Discourse'), preached at Gayā Head to a thousand former fire-worshipping ascetics — the matted-hair jaṭilas led by Uruvela-Kassapa, whose lifelong cult was the tending of sacred fire. The Buddha turns their own central symbol against them: 'All things, O priests, are on fire' — the eye, the ear, the nose, the tongue, the body, the mind, and every sensation they produce, all burning 'with the fire of passion, the fire of hatred, the fire of infatuation; with birth, old age, death, sorrow, lamentation, misery, grief, and despair.' Liberation is the going-out of that fire: aversion, dispassion, freedom, the exhaustion of rebirth. The cross-tradition value is pointed and honest: the same axial-age word — fire — names opposite goods in Heraclitus (the ever-living cosmic Fire/Logos to be aligned with) and in the Buddha (the suffering to be extinguished), a contrast scholarship treats as illuminating convergence of imagery, not contact (Kalupahana).",
+  "crossTradition": [
+    {
+      "label": "Dhammacakkappavattana Sutta — the companion First Sermon",
+      "note": "The Fire Sermon is the third of the Buddha's inaugural discourses and presupposes the First Sermon's Four Noble Truths: the 'fire of passion' here is the taṇhā (thirst) named there as the origin of suffering, and the 'going out' of the fire is the cessation (nirodha) named there as the Third Truth. Gethin, The Foundations of Buddhism (1998), pp. 59–62, 74–79, treats the two suttas as a single doctrinal unit of the early teaching.",
+      "textId": "dhammacakkappavattana-sutta"
+    },
+    {
+      "label": "Heraclitus — fire as the ever-living LOGOS (the instructive contrast)",
+      "note": "The most instructive juxtaposition in the corpus, and a contrast rather than a wire. For Heraclitus (DK B30) the 'ever-living Fire' is the divine cosmic order, the Logos to be grasped and lived in accord with; for the Buddha the fire is precisely what burns and binds — the passion, hatred, and infatuation to be extinguished. Kalupahana, A History of Buddhist Philosophy (1992), and his comparative studies of Heraclitus and the Buddha, present this as a convergence of the fire-image onto opposite valuations, with no historical contact between Ephesus and Magadha.",
+      "textId": "heraclitus-fragments"
+    },
+    {
+      "label": "Ecclesiastes — 'all is vanity' / the world's unsatisfactoriness",
+      "note": "Qoheleth's verdict that all striving 'under the sun' is hevel ('vapour, futility') is a Hebrew-wisdom analogue to the Fire Sermon's diagnosis of all sense-experience as burning and unsatisfactory (dukkha); a thematic convergence in the axial-age 'unsatisfactoriness of the world' register, not a transmission. Offered modestly, as in the companion First-Sermon entry.",
+      "textId": "ecclesiastes-1"
+    },
+    {
+      "label": "Sacred fire — the cult the metaphor subverts",
+      "note": "The thousand hearers were jaṭila fire-ascetics whose religious life centred on tending the sacred sacrificial fire (the Vedic agnihotra milieu, cognate with the wider Indo-Iranian fire cult). The sermon's rhetorical force is the inversion of their own holiest emblem: the fire to be served becomes the fire to be quenched. Rhys Davids & Oldenberg, Vinaya Texts I (Sacred Books of the East vol. XIII, 1881), frame the discourse by the Uruvela-Kassapa fire-ascetic narrative."
+    }
+  ],
+  "sections": [
+    {
+      "heading": "The Setting at Gayā",
+      "verses": [
+        {
+          "ref": "§ 73 (Mahāvagga I.21)",
+          "text": "And there in Gayā, on Gayā Head, The Blessed One dwelt, together with the thousand priests.",
+          "textVersions": {
+            "warren": "And there in Gayā, on Gayā Head, The Blessed One dwelt, together with the thousand priests."
+          },
+          "entities": [
+            {
+              "word": "The Blessed One",
+              "node": "siddhartha-gautama-buddha",
+              "type": "person",
+              "note": "The Buddha (here 'The Blessed One,' Bhagavā) preaches at Gayā Head to the thousand newly-ordained jaṭila fire-ascetics led by Uruvela-Kassapa, whose conversion immediately precedes this discourse in the Vinaya narrative. Rhys Davids & Oldenberg, Vinaya Texts I (SBE XIII, 1881), set the Fire Sermon directly after the Kassapa fire-ascetics' submission.",
+              "parallels": [
+                {
+                  "label": "Dhammacakka Sutta — the first preaching at Benares",
+                  "note": "The same teacher's inaugural discourse to the five companions; the Fire Sermon is the third such foundational sermon. Gethin (1998), pp. 7–10.",
+                  "textId": "dhammacakkappavattana-sutta"
+                }
+              ]
+            },
+            {
+              "word": "the thousand priests",
+              "node": "monastic-asceticism",
+              "type": "theme",
+              "note": "The 'thousand priests' are the matted-hair fire-ascetics (jaṭilas) of Uruvela, just converted — the very class of self-mortifying renouncers the Buddha's Middle Path is defined against. Warren renders bhikkhū as 'priests' throughout. Gethin, The Foundations of Buddhism (1998), pp. 59–63, situates such ascetics in the śramaṇa milieu the Buddha both emerged from and critiqued.",
+              "parallels": [
+                {
+                  "label": "Jain austerity (tapas)",
+                  "note": "The contemporary śramaṇa ideal of severe bodily austerity, the type-case of the asceticism the Middle Path avoids; Gethin (1998) treats the two movements as sharing the Greater-Magadha ascetic milieu.",
+                  "textId": "acaranga-sutra"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "All Things Are on Fire",
+      "verses": [
+        {
+          "ref": "§ 73",
+          "text": "All things, O priests, are on fire.",
+          "textVersions": {
+            "warren": "All things, O priests, are on fire."
+          },
+          "entities": [
+            {
+              "word": "All things, O priests, are on fire",
+              "node": "four-noble-truths",
+              "type": "theme",
+              "note": "The thesis of the sermon is the First Noble Truth (dukkha) stated through the fire-image: the whole field of sense-experience is 'on fire' — unsatisfactory, consuming, painful. Gethin, The Foundations of Buddhism (1998), pp. 59–62, reads dukkha not as mere pain but as the unsatisfactoriness inherent in all conditioned existence — exactly what 'all things are on fire' asserts.",
+              "parallels": [
+                {
+                  "label": "Ecclesiastes — 'all is vanity'",
+                  "note": "Qoheleth's hevel ('all is vapour, futility') is the Hebrew-wisdom counterpart to the verdict that all experience burns; a thematic convergence, not a link. Offered modestly.",
+                  "textId": "ecclesiastes-1"
+                },
+                {
+                  "label": "Heraclitus — the ever-living Fire (DK B30)",
+                  "note": "Heraclitus too makes fire the universal principle — but as the divine order to be lived by, the exact inverse of the Buddha's fire to be quenched. Kalupahana (1992) reads the shared image with opposite valuation as convergence, not contact.",
+                  "textId": "heraclitus-fragments"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "§ 73",
+          "text": "The eye, O priests, is on fire; forms are on fire; eye-consciousness is on fire; impressions received by the eye are on fire; and whatever sensation, pleasant, unpleasant, or indifferent, originates in dependence on impressions received by the eye, that also is on fire.",
+          "textVersions": {
+            "warren": "The eye, O priests, is on fire; forms are on fire; eye-consciousness is on fire; impressions received by the eye are on fire; and whatever sensation, pleasant, unpleasant, or indifferent, originates in dependence on impressions received by the eye, that also is on fire."
+          },
+          "entities": [
+            {
+              "word": "eye-consciousness",
+              "node": "anatman-no-self",
+              "type": "theme",
+              "note": "The sermon analyses the 'person' away into impersonal processes: sense-faculty (eye), object (forms), the consciousness that arises from their contact, the contact-impression, and the resulting feeling — no self behind any of them, only conditioned events that 'burn.' This is the anattā analysis by way of the sense-bases (āyatana). Gethin, The Foundations of Buddhism (1998), pp. 133–139, treats such enumerations as the Buddhist reduction of the self to impersonal factors.",
+              "parallels": [
+                {
+                  "label": "Five aggregates of the First Sermon",
+                  "note": "The First Sermon's 'five aggregates which spring from attachment' are the same self-less analysis; the Fire Sermon runs it through the six senses instead. Gethin (1998).",
+                  "textId": "dhammacakkappavattana-sutta"
+                }
+              ]
+            },
+            {
+              "word": "whatever sensation, pleasant, unpleasant, or indifferent, originates in dependence on impressions received by the eye",
+              "node": "pratitya-samutpada",
+              "type": "theme",
+              "note": "'Originates in dependence on' is the formula of dependent origination (paṭicca-samuppāda): feeling (vedanā) arises conditioned by sense-contact (phassa), which in the twelvefold chain is the link that gives rise to craving. The Fire Sermon walks the early links of the causal chain through each sense. Gethin, The Foundations of Buddhism (1998), pp. 141–149.",
+              "parallels": [
+                {
+                  "label": "Second Sermon-truth — thirst causing renewal of existence",
+                  "note": "Contact-conditioned feeling is precisely what gives rise to the taṇhā ('thirst') named in the First Sermon as the origin of suffering; the two suttas describe the same causal sequence. Gethin (1998), pp. 141–149.",
+                  "textId": "dhammacakkappavattana-sutta"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "§ 73",
+          "text": "And with what are these on fire? With the fire of passion, say I, with the fire of hatred, with the fire of infatuation; with birth, old age, death, sorrow, lamentation, misery, grief, and despair are they on fire.",
+          "textVersions": {
+            "warren": "And with what are these on fire? With the fire of passion, say I, with the fire of hatred, with the fire of infatuation; with birth, old age, death, sorrow, lamentation, misery, grief, and despair are they on fire."
+          },
+          "entities": [
+            {
+              "word": "the fire of passion",
+              "node": "four-noble-truths",
+              "type": "theme",
+              "note": "The 'fire of passion' (rāga), hatred (dosa), and infatuation (moha) are the three unwholesome roots — the engine of craving (taṇhā) that the First Sermon names as the Second Noble Truth, the origin of suffering. The Fire Sermon images that craving as combustion. Gethin, The Foundations of Buddhism (1998), pp. 74–79.",
+              "parallels": [
+                {
+                  "label": "Heraclitus — fire kindling and going out 'in measure'",
+                  "note": "Where Heraclitus' fire is the rational measure of the cosmos, the Buddha's three fires are the irrational measure of bondage; the instructive inversion of the same image (Kalupahana, A History of Buddhist Philosophy, 1992).",
+                  "textId": "heraclitus-fragments"
+                }
+              ]
+            },
+            {
+              "word": "birth, old age, death, sorrow, lamentation, misery, grief, and despair",
+              "node": "pratitya-samutpada",
+              "type": "theme",
+              "note": "This is the standard close of the dependent-origination formula — the whole mass of suffering (jāti, jarā-maraṇa, soka-parideva-dukkha-domanassupāyāsā) that conditioned arising produces. The same litany ends the twelvefold chain and the First Sermon's account of dukkha. Gethin, The Foundations of Buddhism (1998), pp. 141–149.",
+              "parallels": [
+                {
+                  "label": "First Sermon — 'birth is attended with pain, decay is painful, disease is painful, death is painful'",
+                  "note": "The Fire Sermon's closing litany is verbally the same suffering-formula stated in the First Sermon's First Noble Truth. Gethin (1998), pp. 59–62.",
+                  "textId": "dhammacakkappavattana-sutta"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "The Six Senses and the Mind",
+      "verses": [
+        {
+          "ref": "§ 73",
+          "text": "The ear is on fire; sounds are on fire; . . . the nose is on fire; odors are on fire; . . . the tongue is on fire; tastes are on fire; . . . the body is on fire; things tangible are on fire; . . . the mind is on fire; ideas are on fire; mind-consciousness is on fire; impressions received by the mind are on fire; and whatever sensation, pleasant, unpleasant, or indifferent, originates in dependence on impressions received by the mind, that also is on fire.",
+          "textVersions": {
+            "warren": "The ear is on fire; sounds are on fire; . . . the nose is on fire; odors are on fire; . . . the tongue is on fire; tastes are on fire; . . . the body is on fire; things tangible are on fire; . . . the mind is on fire; ideas are on fire; mind-consciousness is on fire; impressions received by the mind are on fire; and whatever sensation, pleasant, unpleasant, or indifferent, originates in dependence on impressions received by the mind, that also is on fire."
+          },
+          "entities": [
+            {
+              "word": "the mind is on fire; ideas are on fire",
+              "node": "anatman-no-self",
+              "type": "theme",
+              "note": "The Buddhist sixfold sense-scheme counts the mind (mano) as a sixth sense, with mental objects ('ideas,' dhammā) as its field and mind-consciousness as its arising — so even thought is an impersonal, burning sense-process, not the seat of an enduring self. Warren prints the ear/nose/tongue/body block in compressed form with the ellipses '(. . .)' as given here. Gethin, The Foundations of Buddhism (1998), pp. 133–139, on the six sense-bases as a self-less analysis of experience.",
+              "parallels": []
+            },
+            {
+              "word": "originates in dependence on impressions received by the mind",
+              "node": "pratitya-samutpada",
+              "type": "theme",
+              "note": "The dependent-origination formula is applied identically to the mind: mental feeling too arises conditioned by mind-contact. The sermon's force is its exhaustiveness — every one of the six sense-doors is shown to burn by the same causal mechanism. Gethin, The Foundations of Buddhism (1998), pp. 141–149.",
+              "parallels": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Aversion, Dispassion, and Liberation",
+      "verses": [
+        {
+          "ref": "§ 73",
+          "text": "Perceiving this, O priests, the learned and noble disciple conceives an aversion for the eye, conceives an aversion for forms, conceives an aversion for eye-consciousness, and whatever sensation, pleasant, unpleasant, or indifferent, originates in dependence on impressions received by the eye, for that also he conceives an aversion.",
+          "textVersions": {
+            "warren": "Perceiving this, O priests, the learned and noble disciple conceives an aversion for the eye, conceives an aversion for forms, conceives an aversion for eye-consciousness, and whatever sensation, pleasant, unpleasant, or indifferent, originates in dependence on impressions received by the eye, for that also he conceives an aversion."
+          },
+          "entities": [
+            {
+              "word": "conceives an aversion",
+              "node": "four-noble-truths",
+              "type": "theme",
+              "note": "'Aversion' renders nibbidā — the turning-away, disenchantment, that begins the path of release once the burning of all experience is seen. It is the practical pivot from the diagnosis (all is on fire) to the cure (the going-out of the fire), i.e. from the First/Second to the Third Noble Truth. Gethin, The Foundations of Buddhism (1998), pp. 74–79, on nibbidā as the prelude to liberation.",
+              "parallels": [
+                {
+                  "label": "Tao Te Ching — quenching desire to behold the mystery",
+                  "note": "The Daodejing's counsel to 'have no desires' (ch. 1) is a convergent East-Asian ideal of release through the quieting of craving; a thematic parallel only, not a transmission — as cross-referenced in the companion First-Sermon entry.",
+                  "textId": "tao-te-ching-1"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "§ 73",
+          "text": "And in conceiving this aversion, he becomes divested of passion, and by the absence of passion he becomes free, and when he is free he becomes aware that he is free; and he knows that rebirth is exhausted, that he has lived the holy life, that he has done what it behooved him to do, and that he is no more for this world.",
+          "textVersions": {
+            "warren": "And in conceiving this aversion, he becomes divested of passion, and by the absence of passion he becomes free, and when he is free he becomes aware that he is free; and he knows that rebirth is exhausted, that he has lived the holy life, that he has done what it behooved him to do, and that he is no more for this world."
+          },
+          "entities": [
+            {
+              "word": "divested of passion",
+              "node": "four-noble-truths",
+              "type": "theme",
+              "note": "'Divested of passion' (virāga) is the going-out of the fire — the extinction of craving that IS the Third Noble Truth (nirodha) and the meaning of nibbāna ('blowing out'). The Codex has no dedicated nirvāṇa/nibbāna node, so the liberation is carried on the Four Noble Truths, whose Third Truth names exactly this cessation. Gethin, The Foundations of Buddhism (1998), pp. 74–79.",
+              "parallels": [
+                {
+                  "label": "Heraclitus — fire 'going out in measure' (DK B30)",
+                  "note": "Heraclitus' cosmic fire 'kindling and going out in measure' uses the same extinction-image the Buddha makes soteriological: here the going-out of the fire is salvation itself (Kalupahana, A History of Buddhist Philosophy, 1992).",
+                  "textId": "heraclitus-fragments"
+                }
+              ]
+            },
+            {
+              "word": "rebirth is exhausted",
+              "node": "pratitya-samutpada",
+              "type": "theme",
+              "note": "'Rebirth is exhausted' (khīṇā jāti) is the liberated disciple's knowledge that the causal chain of dependent origination — whose driving link is craving — has been cut, so that no further becoming (bhava) or birth (jāti) will arise. It is the dismantling of the very chain the sermon traced through the senses. Gethin, The Foundations of Buddhism (1998), pp. 141–149.",
+              "parallels": [
+                {
+                  "label": "Descent-and-return cycles vs. release from the cycle",
+                  "note": "Where the ancient Near-Eastern dying-and-rising and rebirth motifs affirm the cycle of return, the Buddhist goal is the breaking of the cycle ('rebirth is exhausted'); a structural inversion noted in comparative axial-age scholarship (Gethin 1998)."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
+
+// -- Quran 112 (Al-Ikhlas) + 2:255 (Ayat al-Kursi) — Al-Ikhlas & the Throne Verse (the pure declaration of tawhid) --
+SCRIPTURE_TEXTS['quran-ikhlas-throne'] = {
+  "id": "quran-ikhlas-throne",
+  "title": "Quran 112 (Al-Ikhlas) + 2:255 (Ayat al-Kursi) — Al-Ikhlas & the Throne Verse (the pure declaration of tawhid)",
+  "shortTitle": "Al-Ikhlas & the Throne Verse",
+  "corpus": "Quran (Meccan · Surah 112 Al-Ikhlas; Medinan · Surah 2 Al-Baqara, the Throne Verse)",
+  "tradId": "tradition-islam",
+  "date": "c. 610–632 CE (recited); compiled in the Uthmanic codex c. 650 CE",
+  "docNode": "phase-4-034-quran",
+  "language": "Arabic · J. M. Rodwell translation (1861; Project Gutenberg ebook 3434) — public domain",
+  "translations": [
+    {
+      "id": "rodwell",
+      "label": "Rodwell 1861",
+      "note": "J.M. Rodwell, The Koran, 1861 (Project Gutenberg #3434) — public domain"
+    }
+  ],
+  "intro": "The two summits of Quranic monotheism. Surah Al-Ikhlas (112) — four lines tradition holds equal to a third of the Quran, also called Surat al-Tawhid, \"the sura of divine oneness\" — compresses the whole doctrine of tawhid into a divine command to \"Say\": God is one (al-Ahad), the Eternal/Impenetrable (al-Samad), unbegetting and unbegotten, incomparable. Its third line, \"He begetteth not, and He is not begotten,\" is a deliberate, point-by-point negation of the Nicene \"begotten, not made\" (Reynolds 2010; Neuwirth 2010). The Throne Verse, Ayat al-Kursi (2:255), is the verse most revered in Muslim devotion: God the Living and the Eternal, untouched by slumber, whose Throne (al-kursi) \"reacheth over the Heavens and the Earth.\" Together they are the Quranic counterpart to the Shema and to Deutero-Isaiah's \"I am the LORD, and there is none else\" — the Abrahamic confession of one God carried into Arabic, and the throne-of-God imagery inherited from the Hebrew merkabah tradition (Jeffery 1938; Sinai 2017). This is the dedicated tawhid reader; the Throne Verse also appears in the broader Quran key-verses entry (quran-fatiha-nur), there in copyrighted modern translations — here it is given in verbatim public-domain Rodwell.",
+  "crossTradition": [
+    {
+      "label": "Deuteronomy 6 — the Shema (\"the LORD our God is one LORD\")",
+      "note": "The direct Jewish monotheist antecedent. Al-Ikhlas functions in Islam as the Shema functions in Judaism — a terse, supreme, constantly-recited statement of divine oneness. Arabic ahad and Hebrew echad descend from the same Proto-Semitic root ʾḥd (Mark S. Smith, The Early History of God, 2002; the Study Quran, Nasr ed. 2015, pp.1577–1580).",
+      "textId": "deuteronomy-6"
+    },
+    {
+      "label": "Isaiah 45 — \"I am the LORD, and there is none else\"",
+      "note": "Deutero-Isaiah's exclusive-monotheist refrain (45:5–6, 18, 22) is the prophetic formula the shahada-style negation \"there is no God but He\" recapitulates: the denial of every rival divinity before the affirmation of the one (Mark S. Smith 2002; Angelika Neuwirth 2010 on the Quran's monotheist rhetoric).",
+      "textId": "isaiah-45"
+    },
+    {
+      "label": "Ezekiel 1 — the merkabah throne (Ayat al-Kursi)",
+      "note": "The Throne Verse's al-kursi belongs to the same throne-of-God complex as Ezekiel's chariot-throne (merkabah) and Isaiah 6's exalted throne. Arthur Jeffery (Foreign Vocabulary of the Qur'an, 1938) identifies kursi as an Aramaic loanword for 'throne'; the Jewish merkabah/throne imagery is the most likely background (Gershom Scholem, Major Trends in Jewish Mysticism, 1941; Nicolai Sinai 2017).",
+      "textId": "ezekiel-1"
+    },
+    {
+      "label": "Quran — Al-Fatiha · Ayat al-Kursi · Nur Verse (key verses)",
+      "note": "The Throne Verse also appears in the broader Quran key-verses reader, there set beside Al-Fatiha and the Light Verse and given in modern (copyrighted) translations. This entry is the dedicated tawhid reader and supplies the public-domain Rodwell text.",
+      "textId": "quran-fatiha-nur"
+    },
+    {
+      "label": "Isaiah 6 — the exalted throne and the threefold holy",
+      "note": "Isaiah's vision of the Lord 'high and lofty' upon the throne is the prophetic throne-theology that, with Ezekiel 1, stands behind Islamic al-kursi and al-ʿarsh; the same enthroned-sovereign image runs the length of the Abrahamic traditions (Scholem 1941).",
+      "textId": "isaiah-6"
+    },
+    {
+      "label": "Chandogya Upanishad 6.2 — \"one only, without a second\"",
+      "note": "The Upanishadic ekam eva advitiyam is the Indic formulation of strict oneness that the al-Ahad of Al-Ikhlas reaches by a different route — a convergence, not a transmission: the Quran's monotheism is genealogically Abrahamic, while the Vedantic non-dual One is an independent metaphysical claim (the Study Quran 2015; Mark S. Smith 2002 distinguishes the lineages).",
+      "textId": "chandogya-621"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "Surah 112 — Al-Ikhlas (The Unity): the pure declaration of tawhid",
+      "verses": [
+        {
+          "ref": "112:1",
+          "text": "SAY: He is God alone:",
+          "textVersions": {
+            "rodwell": "SAY: He is God alone:"
+          },
+          "entities": [
+            {
+              "word": "God alone",
+              "node": "monotheism-strict",
+              "type": "theme",
+              "note": "Qul huwa Allahu ahad — 'Say: He is God, the One (al-Ahad).' The sura is called Surat al-Tawhid, and tawhid is the explicit aka of the strict-monotheism node. The command 'Say' frames the creed as dictated revelation; al-Ahad asserts not merely numerical singularity but indivisible uniqueness (Angelika Neuwirth, Der Koran als Text der Spätantike, 2010; Nicolai Sinai 2017).",
+              "parallels": [
+                {
+                  "label": "Deuteronomy 6:4 — \"the LORD our God is one LORD\"",
+                  "note": "Arabic ahad and Hebrew echad descend from the same Proto-Semitic root ʾḥd; the Shema and Al-Ikhlas are the two most-recited oneness-creeds of the Semitic monotheist tradition (Mark S. Smith 2002; Study Quran 2015).",
+                  "textId": "deuteronomy-6"
+                },
+                {
+                  "label": "Isaiah 45:5 — \"I am the LORD, and there is none else\"",
+                  "note": "Deutero-Isaiah's exclusive-monotheist refrain is the prophetic root of the 'God alone' formula (Mark S. Smith 2002).",
+                  "textId": "isaiah-45"
+                },
+                {
+                  "label": "Chandogya 6.2.1 — \"one only, without a second\"",
+                  "note": "The Vedantic ekam eva advitiyam reaches singular ultimacy independently — convergence, not transmission (Study Quran 2015).",
+                  "textId": "chandogya-621"
+                }
+              ]
+            },
+            {
+              "word": "He is God",
+              "node": "allah",
+              "type": "deity",
+              "note": "Allah, al-Ilah, 'the God' — the one and exclusive divinity of Islam, described apophatically (Quran 42:11, 'There is no thing like Him'). Al-Ikhlas is the Quran's most concentrated statement of who Allah is, answering the Meccan question about the nature of the one God (Neuwirth 2010; Study Quran, Nasr ed. 2015).",
+              "parallels": [
+                {
+                  "label": "YHWH — the one God of Israel",
+                  "note": "Allah and YHWH are the same Abrahamic high-god confessed under different Semitic names; Isaiah 45 and Al-Ikhlas make the identical exclusivity claim (Mark S. Smith 2002).",
+                  "textId": "isaiah-45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "112:2",
+          "text": "God the eternal!",
+          "textVersions": {
+            "rodwell": "God the eternal!"
+          },
+          "entities": [
+            {
+              "word": "the eternal",
+              "node": "name-of-god",
+              "type": "theme",
+              "note": "Rodwell renders the divine name al-Samad — a Quranic hapax legomenon (it occurs only here) whose meaning is famously contested: 'the Eternal/Everlasting,' 'the Self-Sufficient,' 'the Impenetrable/Solid One' on whom all depend, possibly echoing the Hebrew ṣur, 'rock' (Arthur Jeffery 1938; Nicolai Sinai 2017; Corpus Coranicum). Like al-Ahad and al-Hayy it belongs to the Beautiful Names (al-Asma' al-Husna), the divine-name theology this node tracks.",
+              "parallels": [
+                {
+                  "label": "The 99 Beautiful Names of Allah",
+                  "note": "al-Ahad, al-Samad, al-Hayy, al-Qayyum are members of the asma al-husna; Islamic divine-name piety is the closest Abrahamic parallel to the Tetragrammaton and the Shem-ha-Mephorash (Jeffery 1938)."
+                },
+                {
+                  "label": "Exodus 3:14 — \"I AM THAT I AM\"",
+                  "note": "The Hebrew ehyeh names God as self-subsisting Being; the contested 'Eternal/Self-Sufficient' sense of al-Samad reaches for the same aseity (Sinai 2017). [not yet staged]"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "112:3",
+          "text": "He begetteth not, and He is not begotten;",
+          "textVersions": {
+            "rodwell": "He begetteth not, and He is not begotten;"
+          },
+          "entities": [
+            {
+              "word": "begetteth not, and He is not begotten",
+              "node": "hidden-god",
+              "type": "theme",
+              "note": "Lam yalid wa-lam yulad. This line is a deliberate negation aimed at the Nicene Creed's 'begotten, not made' (gennethenta ou poiethenta): it denies that God has any son, consort, or partner, drawing the boundary that separates Islamic tawhid from Christian Trinitarianism. It was inscribed in the Dome of the Rock (691 CE), the earliest dated Quranic inscription (Gabriel Said Reynolds, The Qur'an and Its Biblical Subtext, 2010, pp.231–235; Sidney Griffith, The Bible in Arabic, 2013; Neuwirth 2010).",
+              "parallels": [
+                {
+                  "label": "Nicene Creed — \"begotten, not made\"",
+                  "note": "The Trinitarian 'eternally begotten Son' (325 CE) is the precise doctrine Al-Ikhlas 112:3 negates; the sura is an anti-Nicene counter-creed (Reynolds 2010; Griffith 2013). [not yet staged]"
+                },
+                {
+                  "label": "Deuteronomy 6:4 — undivided oneness",
+                  "note": "The Shema's echad (against any internal plurality in the godhead) is the Jewish monotheist logic Al-Ikhlas extends into an explicit rejection of divine sonship (Mark S. Smith 2002).",
+                  "textId": "deuteronomy-6"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "112:4",
+          "text": "And there is none like unto Him.",
+          "textVersions": {
+            "rodwell": "And there is none like unto Him."
+          },
+          "entities": [
+            {
+              "word": "none like unto Him",
+              "node": "apophatic-mysticism",
+              "type": "theme",
+              "note": "Wa-lam yakun lahu kufuwan ahad — 'there is none comparable to Him.' Divine incomparability (tanzih) is the apophatic heart of Islamic theology, crystallised again in Quran 42:11 ('laysa ka-mithlihi shay'un', 'there is nothing like Him'). It strips every created likeness from God — the same via negativa later systematised by al-Ghazali and, in parallel, by Maimonides (Sinai 2017; Neuwirth 2010).",
+              "parallels": [
+                {
+                  "label": "Advaita 'neti neti' — \"not this, not this\"",
+                  "note": "The Upanishadic stripping of all predications from Brahman is the Indic apophatic logic parallel to Islamic tanzih; both deny that any name or form captures the ultimate (Study Quran 2015)."
+                },
+                {
+                  "label": "Deus absconditus — the incomparable hidden God",
+                  "note": "'There is none like unto Him' places the Quranic God within the deus-absconditus / apophatic-absolute family this node tracks (Sinai 2017)."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Surah 2:255 — Ayat al-Kursi (the Throne Verse): the living, sovereign God",
+      "verses": [
+        {
+          "ref": "2:255",
+          "text": "God! There is no God but He; the Living, the Eternal; Nor slumber seizeth Him, nor sleep; His, whatsoever is in the Heavens and whatsoever is in the Earth! Who is he that can intercede with Him but by His own permission? He knoweth what hath been before them and what shall be after them; yet nought of His knowledge shall they grasp, save what He willeth. His Throne reacheth over the Heavens and the Earth, and the upholding of both burdeneth Him not; and He is the High, the Great!",
+          "textVersions": {
+            "rodwell": "God! There is no God but He; the Living, the Eternal; Nor slumber seizeth Him, nor sleep; His, whatsoever is in the Heavens and whatsoever is in the Earth! Who is he that can intercede with Him but by His own permission? He knoweth what hath been before them and what shall be after them; yet nought of His knowledge shall they grasp, save what He willeth. His Throne reacheth over the Heavens and the Earth, and the upholding of both burdeneth Him not; and He is the High, the Great!"
+          },
+          "entities": [
+            {
+              "word": "There is no God but He",
+              "node": "monotheism-strict",
+              "type": "theme",
+              "note": "La ilaha illa huwa — the core of the shahada, structurally apophatic: the negation ('no god') precedes the affirmation ('but He'). Theologians stress that the denial of all rival divinity is the decisive move (Sinai 2017; Neuwirth 2010). This is the same exclusivity Deutero-Isaiah declares in 'there is none else.'",
+              "parallels": [
+                {
+                  "label": "Isaiah 45:5,18 — \"I am the LORD, and there is none else\"",
+                  "note": "The Deutero-Isaian formula of sole divinity is the prophetic antecedent of la ilaha illa huwa (Mark S. Smith 2002).",
+                  "textId": "isaiah-45"
+                },
+                {
+                  "label": "Deuteronomy 6:4 — the Shema",
+                  "note": "The oneness-creed both verses recapitulate; ahad / echad share the root ʾḥd (Study Quran 2015).",
+                  "textId": "deuteronomy-6"
+                }
+              ]
+            },
+            {
+              "word": "the Living, the Eternal",
+              "node": "name-of-god",
+              "type": "theme",
+              "note": "al-Hayy al-Qayyum — 'the Living, the Self-Subsisting (Sustainer).' Two of the greatest Beautiful Names: al-Hayy (life that needs no source) and al-Qayyum (the self-standing one who sustains all else). Qayyum, like Samad, expresses divine aseity — God depends on nothing and all depends on Him (Jeffery 1938 on the name; Sinai 2017).",
+              "parallels": [
+                {
+                  "label": "Exodus 3:14 / the living God of the prophets",
+                  "note": "The 'living God' who neither slumbers nor sleeps echoes the Hebrew el hai and Psalm 121:4 ('he that keepeth Israel shall neither slumber nor sleep') — a near-verbatim scriptural inheritance (Reynolds 2010).",
+                  "textId": "isaiah-45"
+                }
+              ]
+            },
+            {
+              "word": "His Throne reacheth over the Heavens and the Earth",
+              "node": "divine-kingship",
+              "type": "theme",
+              "note": "al-kursi — the cosmic Throne, the Quran's image of God's sovereign kingship over all creation. Arthur Jeffery (Foreign Vocabulary of the Qur'an, 1938) identifies kursi as an Aramaic loanword (kursya, 'throne'); the throne-of-God imagery is inherited from the Jewish merkabah and biblical throne-vision tradition. Islamic theology distinguishes al-kursi (footstool/throne of this verse) from the greater al-ʿarsh (Sinai 2017; Scholem 1941).",
+              "parallels": [
+                {
+                  "label": "Ezekiel 1 — the merkabah chariot-throne",
+                  "note": "Ezekiel's wheeled throne and sapphire seat of the divine Glory is the fountainhead of Jewish throne-mysticism that supplies the Quranic kursi its imagery and its loanword (Jeffery 1938; Scholem 1941).",
+                  "textId": "ezekiel-1"
+                },
+                {
+                  "label": "Isaiah 6:1 — the Lord 'high and lofty' upon the throne",
+                  "note": "Isaiah's exalted-throne vision is the other great Hebrew throne-theology behind al-kursi; both stage God as enthroned cosmic sovereign (Scholem 1941).",
+                  "textId": "isaiah-6"
+                }
+              ]
+            },
+            {
+              "word": "God! There is no God but He",
+              "node": "allah",
+              "type": "deity",
+              "note": "Allah named as the sole divinity at the verse's opening — the Throne Verse is the Quran's fullest single-verse portrait of the one God's attributes: unity, life, omniscience, and sustaining sovereignty (Study Quran, Nasr ed. 2015, pp.108–115; Sinai 2017).",
+              "parallels": [
+                {
+                  "label": "al-Ahad of Al-Ikhlas",
+                  "note": "The Throne Verse's la ilaha illa huwa and Al-Ikhlas's huwa Allahu ahad are the two summits of Quranic oneness-doctrine — the same tawhid stated as sovereignty (kursi) and as essence (ahad) (Neuwirth 2010)."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
+
+// -- Psalm 19:1–11 (The heavens declare the glory of God; the law of the LORD is perfect) --
+SCRIPTURE_TEXTS['psalm-19'] = {
+  "id": "psalm-19",
+  "title": "Psalm 19:1–11 (The heavens declare the glory of God; the law of the LORD is perfect)",
+  "shortTitle": "Psalm 19",
+  "corpus": "Hebrew Bible (Psalms)",
+  "tradId": "tradition-second-temple-judaism",
+  "date": "c. 10th–6th century BCE (a Davidic creation-and-Torah psalm; widely read as two originally distinct poems joined)",
+  "docNode": "phase-2-005-davidic-psalms",
+  "language": "Hebrew · King James Version (1611). Verse text verbatim from the public-domain KJV (standard Blayney-1769 textual tradition, per the aruljohn/Bible-kjv public-domain KJV text used elsewhere in this corpus); wording unaltered.",
+  "translations": [
+    {
+      "id": "kjv",
+      "label": "KJV (1611)",
+      "note": "King James Version — public domain"
+    }
+  ],
+  "intro": "Psalm 19 is the great \"double psalm\" of the Psalter, joining two revelations. Its first half (vv. 1–6) is wordless, cosmic revelation — the heavens \"declare the glory of God\" in a speech without language, and the sun crosses the sky \"as a bridegroom coming out of his chamber,\" rejoicing \"as a strong man to run a race.\" Its second half (vv. 7–11) is worded revelation — \"the law of the LORD is perfect, converting the soul.\" C. S. Lewis called it \"the greatest poem in the Psalter and one of the greatest lyrics in the world,\" and Hermann Gunkel and modern critics have long argued the two halves were originally distinct compositions (a solar creation-hymn and a Torah-psalm) deliberately welded into one (Gunkel 1926; Kraus 1988). Its cross-tradition charge is the sun as the hinge: the solar imagery of vv. 4–6 sits over the same ancient Near-Eastern ground as the Egyptian Aten-hymn and the Mesopotamian Shamash, the sun-god who was himself the patron of law and justice — so that the psalm's own move from sun (vv. 1–6) to law (vv. 7–11) silently retraces the old solar-justice link while subordinating the sun to a \"tabernacle\" set for it by YHWH.",
+  "crossTradition": [
+    {
+      "label": "The Great Hymn to the Aten — solar revelation",
+      "note": "Akhenaten's hymn celebrates the sun-disk (Aten) crossing the sky as the universal life-giver whose light reaches the ends of the earth. Psalm 19:4–6's sun, whose 'going forth is from the end of the heaven' and from whose heat 'there is nothing hid,' shares the solar-hymn vocabulary. The classic Aten/Psalm comparand is Psalm 104, not 19 (Breasted 1912; Assmann 1995 frames the relation as either transmission or a shared Near-Eastern solar-hymn genre), but Psalm 19's solar half belongs to the same genre.",
+      "textId": "hymn-to-aten"
+    },
+    {
+      "label": "The Code of Hammurabi — Shamash, sun-god of justice",
+      "note": "The Hammurabi stele is crowned by the sun-god Shamash investing the king with the rod of justice; Shamash, 'the sun who sees all,' was the Mesopotamian patron of law and oaths (Jacobsen 1976). Psalm 19's own pivot from the sun (vv. 1–6) to the law (vv. 7–11) silently recapitulates the ancient solar-justice link that Hammurabi makes explicit (Walton, Ancient Near Eastern Thought and the Old Testament, 2006).",
+      "textId": "code-of-hammurabi"
+    },
+    {
+      "label": "Psalm 104 — the creation-praise companion",
+      "note": "The Psalter's other great creation-hymn, and the classic comparand for Egyptian solar parallels. Psalm 104 sets the sun and moon for seasons and bounds the chaos-deep; Psalm 19 compresses the same ordered-cosmos praise into its wordless first half before turning to Torah (Day 1985).",
+      "textId": "psalm-104"
+    },
+    {
+      "label": "Genesis 1 — the ordered cosmos and the lights set in the firmament",
+      "note": "Psalm 19's 'firmament' (raqia') and its sun set in a 'tabernacle' are the poetic counterpart to the Priestly Genesis 1, where God fixes the lights in the firmament and the sun is a created lamp, not a god — the same demythologising of the solar deity (Gunkel 1895; Day 1985).",
+      "textId": "genesis-1"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "The wordless revelation of the heavens (vv. 1–6)",
+      "verses": [
+        {
+          "ref": "19:1",
+          "text": "The heavens declare the glory of God; and the firmament sheweth his handywork.",
+          "textVersions": {
+            "kjv": "The heavens declare the glory of God; and the firmament sheweth his handywork."
+          },
+          "entities": [
+            {
+              "word": "glory of God",
+              "node": "name-of-god",
+              "type": "theme",
+              "note": "The 'glory' (kabod) of God here is the visible weight of the divine presence proclaimed by creation itself — the cosmos as a non-verbal disclosure of who God is, akin to the revelatory force of the divine Name (von Rad, Old Testament Theology, 1962).",
+              "parallels": [
+                {
+                  "label": "Aten as the visible glory of the one god (Egyptian)",
+                  "note": "the Aten-hymn makes the sun-disk the visible radiance through which the sole god is known; Psalm 19 likewise reads created light as the showing-forth of divine glory (Assmann 1995)",
+                  "textId": "hymn-to-aten"
+                }
+              ]
+            },
+            {
+              "word": "The heavens declare",
+              "node": "wisdom-as-cosmic-order",
+              "type": "theme",
+              "note": "Creation is itself ordered speech: the heavens 'declare' an intelligible order, the wordless witness to a cosmos founded in wisdom — the same theme by which Wisdom is present at creation in Proverbs 8 (Gunkel 1926; von Rad 1972).",
+              "parallels": [
+                {
+                  "label": "Maat — cosmic order made visible (Egyptian)",
+                  "note": "Egyptian thought grounds the ordered cosmos in maat, the order/truth the sun-god re-establishes daily; Frankfort (Kingship and the Gods, 1948) sets this beside Israelite and Mesopotamian sacral order"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "19:2",
+          "text": "Day unto day uttereth speech, and night unto night sheweth knowledge.",
+          "textVersions": {
+            "kjv": "Day unto day uttereth speech, and night unto night sheweth knowledge."
+          },
+          "entities": []
+        },
+        {
+          "ref": "19:3",
+          "text": "There is no speech nor language, where their voice is not heard.",
+          "textVersions": {
+            "kjv": "There is no speech nor language, where their voice is not heard."
+          },
+          "entities": [
+            {
+              "word": "no speech nor language",
+              "node": "wisdom-as-cosmic-order",
+              "type": "theme",
+              "note": "The revelation of the heavens is universal precisely because it is wordless — it crosses every human language, a silent knowledge available to all nations, in contrast to the verbal Torah given to Israel (Kraus, Psalms 1–59, 1988).",
+              "parallels": [
+                {
+                  "label": "The Aten's light reaching every land (Egyptian)",
+                  "note": "the Aten-hymn stresses that the sun's gift reaches all peoples and lands; the universality of solar revelation is shared (Assmann 1995)",
+                  "textId": "hymn-to-aten"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "19:4",
+          "text": "Their line is gone out through all the earth, and their words to the end of the world. In them hath he set a tabernacle for the sun,",
+          "textVersions": {
+            "kjv": "Their line is gone out through all the earth, and their words to the end of the world. In them hath he set a tabernacle for the sun,"
+          },
+          "entities": [
+            {
+              "word": "a tabernacle for the sun",
+              "node": "sun-disk",
+              "type": "symbol",
+              "note": "The sun is given a 'tent' in the heavens by YHWH — the solar disk, elsewhere a god in its own right (Aten, Shamash, Helios), is here demoted to a creature housed in a tabernacle God sets for it (Gunkel 1926; Day 1985).",
+              "parallels": [
+                {
+                  "label": "Aten — the sun-disk made the sole god (Egyptian)",
+                  "note": "where Akhenaten makes the solar disk the one god, Psalm 19 makes the same disk a lamp God tents in the sky (Hornung 1999; Assmann 1995)",
+                  "textId": "hymn-to-aten"
+                },
+                {
+                  "label": "Shamash / Utu — the sun in his daily course (Mesopotamian)",
+                  "note": "the Mesopotamian sun-god traverses the heavens daily as cosmic judge; Psalm 19 keeps the solar journey but subordinates the sun to its maker (Jacobsen 1976)",
+                  "textId": "code-of-hammurabi"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "19:5",
+          "text": "Which is as a bridegroom coming out of his chamber, and rejoiceth as a strong man to run a race.",
+          "textVersions": {
+            "kjv": "Which is as a bridegroom coming out of his chamber, and rejoiceth as a strong man to run a race."
+          },
+          "entities": [
+            {
+              "word": "a strong man to run a race",
+              "node": "theme-solar-deity-as-cosmic-charioteer",
+              "type": "theme",
+              "note": "The sun's daily crossing imagined as an athlete or runner is the Hebrew reflex of the wide ancient image of the solar deity racing across the sky — the charioteer-sun of Indo-European and Near-Eastern myth, here a 'strong man' running a course rather than a god driving a chariot (West, Indo-European Poetry and Myth, 2007).",
+              "parallels": [
+                {
+                  "label": "Helios / Surya — the solar charioteer (Greek / Vedic)",
+                  "note": "Helios drives the sun-chariot across heaven, as Surya does in the Veda; Psalm 19 retains the racing-sun image stripped of the chariot-god (West 2007)"
+                },
+                {
+                  "label": "The Aten's daily rising and setting (Egyptian)",
+                  "note": "the Aten-hymn structures the day around the sun's joyful rising and its course; the rejoicing-sun motif is shared (Assmann 1995)",
+                  "textId": "hymn-to-aten"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "19:6",
+          "text": "His going forth is from the end of the heaven, and his circuit unto the ends of it: and there is nothing hid from the heat thereof.",
+          "textVersions": {
+            "kjv": "His going forth is from the end of the heaven, and his circuit unto the ends of it: and there is nothing hid from the heat thereof."
+          },
+          "entities": [
+            {
+              "word": "nothing hid from the heat thereof",
+              "node": "utu-shamash",
+              "type": "deity",
+              "note": "The all-seeing, all-reaching sun is the figure the Mesopotamian tradition makes the very ground of justice: Shamash/Utu, 'the sun who sees all,' from whom nothing is hidden, is the divine judge and patron of law — the conceptual bridge from the psalm's sun (vv. 1–6) to its law (vv. 7–11) (Jacobsen 1976; Walton 2006).",
+              "parallels": [
+                {
+                  "label": "Shamash invests Hammurabi with the law (Mesopotamian)",
+                  "note": "the sun-god who sees all hands the king the rod of justice on the Hammurabi stele; the sun-justice link that the psalm's structure silently follows (Jacobsen 1976; Walton 2006)",
+                  "textId": "code-of-hammurabi"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "The worded revelation of the law (vv. 7–11)",
+      "verses": [
+        {
+          "ref": "19:7",
+          "text": "The law of the LORD is perfect, converting the soul: the testimony of the LORD is sure, making wise the simple.",
+          "textVersions": {
+            "kjv": "The law of the LORD is perfect, converting the soul: the testimony of the LORD is sure, making wise the simple."
+          },
+          "entities": [
+            {
+              "word": "The law of the LORD",
+              "node": "covenant",
+              "type": "theme",
+              "note": "The Torah — the covenant instruction of YHWH — is the second, worded revelation; its perfection 'converts' (restores) the soul. The psalm's hinge from cosmic to covenantal revelation is its theological heart (Kraus 1988; Goldingay, Psalms vol. 1, 2006).",
+              "parallels": [
+                {
+                  "label": "Hammurabi's law as divine commission (Mesopotamian)",
+                  "note": "Hammurabi frames his law as a divine charge from the gods via Shamash; both traditions ground written law in a divine source, but Psalm 19 makes the law itself the object of delight (Walton 2006)",
+                  "textId": "code-of-hammurabi"
+                }
+              ]
+            },
+            {
+              "word": "of the LORD",
+              "node": "yahweh",
+              "type": "deity",
+              "note": "YHWH, the God of Israel and covenant-giver, is the single source of both revelations — the glory the heavens declare (v.1) and the perfect law that converts the soul (v.7) issue from the same God (von Rad 1962).",
+              "parallels": [
+                {
+                  "label": "Aten as sole god and giver of order (Egyptian)",
+                  "note": "Akhenaten's hymn likewise makes one god the source of both the world's order and the king's instruction; the structural monolatry is parallel (Assmann 1995)",
+                  "textId": "hymn-to-aten"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "19:8",
+          "text": "The statutes of the LORD are right, rejoicing the heart: the commandment of the LORD is pure, enlightening the eyes.",
+          "textVersions": {
+            "kjv": "The statutes of the LORD are right, rejoicing the heart: the commandment of the LORD is pure, enlightening the eyes."
+          },
+          "entities": [
+            {
+              "word": "enlightening the eyes",
+              "node": "wisdom-as-cosmic-order",
+              "type": "theme",
+              "note": "The law 'enlightens' — the same light-language used of the sun in vv. 1–6 is now transferred to the Torah, so that the worded revelation completes and surpasses the wordless one. The poet binds the two halves by their shared imagery of light (Kraus 1988).",
+              "parallels": []
+            }
+          ]
+        },
+        {
+          "ref": "19:9",
+          "text": "The fear of the LORD is clean, enduring for ever: the judgments of the LORD are true and righteous altogether.",
+          "textVersions": {
+            "kjv": "The fear of the LORD is clean, enduring for ever: the judgments of the LORD are true and righteous altogether."
+          },
+          "entities": []
+        },
+        {
+          "ref": "19:10",
+          "text": "More to be desired are they than gold, yea, than much fine gold: sweeter also than honey and the honeycomb.",
+          "textVersions": {
+            "kjv": "More to be desired are they than gold, yea, than much fine gold: sweeter also than honey and the honeycomb."
+          },
+          "entities": []
+        },
+        {
+          "ref": "19:11",
+          "text": "Moreover by them is thy servant warned: and in keeping of them there is great reward.",
+          "textVersions": {
+            "kjv": "Moreover by them is thy servant warned: and in keeping of them there is great reward."
+          },
+          "entities": []
+        }
+      ]
+    }
+  ]
+};
+
+// -- Bhagavad Gita 2:11–30 (The imperishable Self — "as a man casts off worn-out garments") --
+SCRIPTURE_TEXTS['bhagavad-gita-2'] = {
+  "id": "bhagavad-gita-2",
+  "title": "Bhagavad Gita 2:11–30 (The imperishable Self — \"as a man casts off worn-out garments\")",
+  "shortTitle": "Bhagavad Gita 2",
+  "corpus": "Hindu · Sanskrit epic (Mahābhārata, Bhīṣmaparvan)",
+  "tradId": "tradition-hinduism",
+  "date": "c. 200 BCE – 200 CE (present form; embedded in Mahābhārata Book 6)",
+  "docNode": "phase-2-027-bhagavad-gita",
+  "language": "Sanskrit · Edwin Arnold, The Song Celestial (1885) — public domain (Project Gutenberg ebook #2388)",
+  "translations": [
+    {
+      "id": "arnold",
+      "label": "Arnold 1885",
+      "note": "Edwin Arnold, The Song Celestial, 1885 (Project Gutenberg #2388) — public domain"
+    }
+  ],
+  "intro": "Bhagavad Gita 2:11–30 is Krishna's first teaching to the despairing Arjuna, who has collapsed at the prospect of killing his own kinsmen on the field of Kurukshetra. Krishna answers not with consolation but with metaphysics: the Self (ātman) is unborn and undying — \"Never the spirit was born; the spirit shall cease to be never\" — and as a man casts off worn-out garments and takes new ones, so the embodied Self casts off worn-out bodies and enters new ones. This is the locus classicus of the immortality-of-the-soul / reincarnation cluster in Hindu thought, and it openly quotes the Katha Upanishad's verse on the self that \"neither slays nor is slain.\" Across the Greek, Iranian, and Vedic Indo-European world the same claim recurs — Plato's Phaedo argues the soul's deathlessness in nearly the same breath — making this passage one of the densest cross-tradition nodes on what survives death.",
+  "crossTradition": [
+    {
+      "label": "Katha Upanishad — \"the slayer who thinks he slays… neither slays nor is slain\"",
+      "note": "BG 2:19–20 quotes Katha 2:18–19 almost verbatim (na jāyate mriyate vā, \"it is not born, nor does it die\"); Arnold renders both with the same \"Life cannot slay; Life is not slain.\" Edgerton (The Bhagavad Gita, 1944) and Zaehner (The Bhagavad Gita, 1969) both note this is the Gita's most direct Upanishadic citation — Nachiketa receives the teaching from Death himself, Arjuna from Krishna on the battlefield.",
+      "textId": "katha-upanishad"
+    },
+    {
+      "label": "Bhagavad Gita 4 — Krishna's repeated births",
+      "note": "The same deathless-Self logic, turned to the divine: in BG 4:7–8 Krishna says he is born age after age (sambhavāmi yuge yuge). Zaehner reads chapters 2 and 4 as the two faces of one doctrine — the imperishable ātman in every creature, and its supreme instance in the avatar who descends and returns at will.",
+      "textId": "bhagavad-gita-4"
+    },
+    {
+      "label": "Bhagavad Gita 11 — the theophany (Vishvarupa)",
+      "note": "The Self declared invisible and ineffable here (2:25) is shown directly in chapter 11, when Krishna grants Arjuna divine eyes to behold the Universal Form that contains all births and deaths — the visionary climax of the teaching begun in chapter 2.",
+      "textId": "bhagavad-gita-11"
+    },
+    {
+      "label": "Plato, Phaedo — the soul's deathlessness",
+      "note": "Socrates argues on the day of his own death that the soul is uncompounded, akin to the deathless, and survives the body's dissolution — the Greek counterpart to BG 2's unborn ātman. Zaehner and Edgerton both flag the Indo-European convergence; whether the parallel reflects shared Indo-European inheritance or independent convergence on the same intuition is debated, not demonstrated transmission. (Plato's Phaedo is being staged separately; referenced here in prose only.)"
+    },
+    {
+      "label": "1 Corinthians 15 — \"sown perishable, raised imperishable\"",
+      "note": "Paul's answer to \"what survives death?\" is bodily transformation (the soma pneumatikon); the Gita's answer is that the deepest Self was never born and so needs no transformation. The honest comparison is of two contrasting solutions to one question, not of a shared doctrine — Hindu transmigration vs Christian resurrection.",
+      "textId": "1-corinthians-15"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "Krishna's rebuke: the wise mourn neither the living nor the dead (2:11–13)",
+      "verses": [
+        {
+          "ref": "2:11",
+          "text": "Thou grievest where no grief should be! thou speak'st Words lacking wisdom! for the wise in heart Mourn not for those that live, nor those that die.",
+          "textVersions": {
+            "arnold": "Thou grievest where no grief should be! thou speak'st Words lacking wisdom! for the wise in heart Mourn not for those that live, nor those that die."
+          },
+          "entities": [
+            {
+              "word": "those that live, nor those that die",
+              "node": "soul-immortality",
+              "type": "theme",
+              "note": "Krishna's opening move is the immortality of the Self: because what is essential in a person is deathless, grief over death rests on a misperception. Edgerton (1944) calls 2:11–30 the Gita's \"argument from the indestructibility of the soul.\"",
+              "parallels": [
+                {
+                  "label": "Katha Upanishad — Death teaches the deathless",
+                  "note": "Yama tells Nachiketa the same: the knowing Self \"is not slain when the body is slain\" — the verse the Gita is about to quote.",
+                  "textId": "katha-upanishad"
+                },
+                {
+                  "label": "Plato, Phaedo — the philosopher does not fear death",
+                  "note": "Socrates, like Krishna, grounds fearlessness before death in the soul's deathlessness (Zaehner notes the Indo-European parallel; not transmission)."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "2:13",
+          "text": "All, that doth live, lives always! To man's frame As there come infancy and youth and age, So come there raisings-up and layings-down Of other and of other life-abodes, Which the wise know, and fear not.",
+          "textVersions": {
+            "arnold": "All, that doth live, lives always! To man's frame As there come infancy and youth and age, So come there raisings-up and layings-down Of other and of other life-abodes, Which the wise know, and fear not."
+          },
+          "entities": [
+            {
+              "word": "raisings-up and layings-down Of other and of other life-abodes",
+              "node": "reincarnation",
+              "type": "theme",
+              "note": "The doctrine of saṃsāra: as the embodied one passes through childhood, youth, and age within a single life, so it passes through successive bodies (\"life-abodes\"). O'Flaherty (Karma and Rebirth in Classical Indian Traditions, 1980) treats BG 2:13 as a canonical Hindu statement of transmigration; the Sanskrit dehinaḥ asmin yathā dehe (\"of the embodied one in this body\") is the seed of the worn-garments simile that follows.",
+              "parallels": [
+                {
+                  "label": "Plato, Phaedo / Republic — metempsychosis",
+                  "note": "The Greek doctrine of the soul's transmigration through successive bodies; O'Flaherty (Karma and Rebirth in Classical Indian Traditions, 1980) documents the structural parallel and the long debate over Indian–Pythagorean contact, which remains unproven."
+                },
+                {
+                  "label": "Bardo Thodol — passage between bodies",
+                  "note": "The Tibetan Buddhist map of the between-death interval and re-embodiment — the same conviction that consciousness moves from one body to the next, framed by the Buddhist anātman rather than a permanent Self.",
+                  "textId": "bardo-thodol"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "The Self is unborn, unslain, and unslaying (2:18–21)",
+      "verses": [
+        {
+          "ref": "2:19",
+          "text": "He who shall say, \"Lo! I have slain a man!\" He who shall think, \"Lo! I am slain!\" those both Know naught! Life cannot slay. Life is not slain!",
+          "textVersions": {
+            "arnold": "He who shall say, \"Lo! I have slain a man!\" He who shall think, \"Lo! I am slain!\" those both Know naught! Life cannot slay. Life is not slain!"
+          },
+          "entities": [
+            {
+              "word": "Life cannot slay. Life is not slain!",
+              "node": "soul-immortality",
+              "type": "theme",
+              "note": "This is BG 2:19, and it is a near-direct quotation of Katha Upanishad 2:18 (\"if the killer thinks he kills… both fail to perceive: this one neither kills nor is killed\"). Edgerton (1944) and Zaehner (1969) both identify it as the Gita's clearest Upanishadic borrowing — the metaphysical premise that licenses Arjuna to fight without incurring the guilt of true killing.",
+              "parallels": [
+                {
+                  "label": "Katha Upanishad 2:18 — \"neither slays nor is slain\"",
+                  "note": "The verse the Gita quotes; Nachiketa hears it from Yama, god of Death — the supreme irony Zaehner highlights, Death testifying that the Self cannot die.",
+                  "textId": "katha-upanishad"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "2:20",
+          "text": "Never the spirit was born; the spirit shall cease to be never; Never was time it was not; End and Beginning are dreams! Birthless and deathless and changeless remaineth the spirit for ever; Death hath not touched it at all, dead though the house of it seems!",
+          "textVersions": {
+            "arnold": "Never the spirit was born; the spirit shall cease to be never; Never was time it was not; End and Beginning are dreams! Birthless and deathless and changeless remaineth the spirit for ever; Death hath not touched it at all, dead though the house of it seems!"
+          },
+          "entities": [
+            {
+              "word": "Never the spirit was born; the spirit shall cease to be never",
+              "node": "soul-immortality",
+              "type": "theme",
+              "note": "BG 2:20, Arnold's most famous line. The Sanskrit (na jāyate mriyate vā kadācit) is verbatim Katha Upanishad 2:18. Zaehner (1969) stresses that the ātman here is not something that survives death like a ghost but something never subject to birth or death at all — \"immortality\" in the strong sense of being prior to time.",
+              "parallels": [
+                {
+                  "label": "Katha Upanishad — \"Unborn, eternal, everlasting, primeval\"",
+                  "note": "The directly quoted source; Olivelle's rendering of Katha 2:18 matches the Gita line for line.",
+                  "textId": "katha-upanishad"
+                },
+                {
+                  "label": "Plotinus, Enneads — the soul prior to birth and death",
+                  "note": "The Neoplatonic soul, originating in and returning to the One, is likewise prior to the temporal order — a Greek convergence on the timeless-self intuition rather than a documented borrowing.",
+                  "textId": "plotinus-enneads"
+                }
+              ]
+            },
+            {
+              "word": "the house of it",
+              "node": "reincarnation",
+              "type": "theme",
+              "note": "The body is the \"house\" the deathless spirit temporarily inhabits — the image that the worn-garments simile (2:22) will make explicit. O'Flaherty (1980) reads the body-as-dwelling trope as the standard Indian figure for the transmigrating Self.",
+              "parallels": [
+                {
+                  "label": "Katha Upanishad — \"the body is slain\" but the Self is not",
+                  "note": "Same body/Self distinction: the dwelling perishes, its occupant does not.",
+                  "textId": "katha-upanishad"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "As a man casts off worn-out garments (2:22)",
+      "verses": [
+        {
+          "ref": "2:22",
+          "text": "Nay, but as when one layeth His worn-out robes away, And taking new ones, sayeth, \"These will I wear to-day!\" So putteth by the spirit Lightly its garb of flesh, And passeth to inherit A residence afresh.",
+          "textVersions": {
+            "arnold": "Nay, but as when one layeth His worn-out robes away, And taking new ones, sayeth, \"These will I wear to-day!\" So putteth by the spirit Lightly its garb of flesh, And passeth to inherit A residence afresh."
+          },
+          "entities": [
+            {
+              "word": "as when one layeth His worn-out robes away",
+              "node": "reincarnation",
+              "type": "theme",
+              "note": "BG 2:22 — the single most quoted image of Hindu transmigration. The Sanskrit (vāsāṃsi jīrṇāni yathā vihāya… navāni gṛhṇāti naro 'parāṇi) compares discarding worn garments for new ones to the embodied Self discarding worn bodies for new ones. O'Flaherty (1980) treats it as the canonical Gita statement of saṃsāra; Zaehner (1969) notes its function here is ethical — death is mere change of clothing, so Arjuna need not grieve.",
+              "parallels": [
+                {
+                  "label": "Bhagavad Gita 4 — Krishna's own repeated births",
+                  "note": "The avatar applies the same logic to the divine: Krishna takes on bodies age after age (4:7–8). Zaehner reads chapters 2 and 4 as one doctrine seen in creature and in God.",
+                  "textId": "bhagavad-gita-4"
+                },
+                {
+                  "label": "Bardo Thodol — re-embodiment after death",
+                  "note": "The Tibetan account of taking a new body in the between-state; the same image of the self changing its vehicle, recast within Buddhist no-self.",
+                  "textId": "bardo-thodol"
+                }
+              ]
+            },
+            {
+              "word": "So putteth by the spirit Lightly its garb of flesh",
+              "node": "soul-immortality",
+              "type": "theme",
+              "note": "The corollary of the garment image: because the wearer (the ātman) is untouched by the changing of clothes, it is deathless. Edgerton (1944) underlines that the simile carries the whole argument — the Self's immortality is shown precisely by the body's disposability.",
+              "parallels": [
+                {
+                  "label": "1 Corinthians 15 — perishable clothed with imperishable",
+                  "note": "Paul too uses a clothing image (\"this mortal must put on immortality,\" 15:53) — but for him the new garment is a transformed body raised at the end, not a series of bodies the deathless self cycles through. A genuine contrast within a shared metaphor.",
+                  "textId": "1-corinthians-15"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "The Self that weapons cannot cut (2:23–25)",
+      "verses": [
+        {
+          "ref": "2:23–24",
+          "text": "I say to thee weapons reach not the Life; Flame burns it not, waters cannot o'erwhelm, Nor dry winds wither it. Impenetrable, Unentered, unassailed, unharmed, untouched, Immortal, all-arriving, stable, sure, Invisible, ineffable, by word And thought uncompassed, ever all itself, Thus is the Soul declared!",
+          "textVersions": {
+            "arnold": "I say to thee weapons reach not the Life; Flame burns it not, waters cannot o'erwhelm, Nor dry winds wither it. Impenetrable, Unentered, unassailed, unharmed, untouched, Immortal, all-arriving, stable, sure, Invisible, ineffable, by word And thought uncompassed, ever all itself, Thus is the Soul declared!"
+          },
+          "entities": [
+            {
+              "word": "weapons reach not the Life; Flame burns it not, waters cannot o'erwhelm",
+              "node": "soul-immortality",
+              "type": "theme",
+              "note": "BG 2:23–24: the Self is impervious to the four elements (weapon/earth, fire, water, wind) — the standard Vedāntic demonstration of its non-material, deathless nature. Zaehner (1969) notes the list catalogues the Self by negation, what cannot affect it.",
+              "parallels": [
+                {
+                  "label": "Katha Upanishad — \"not slain when the body is slain\"",
+                  "note": "Same conclusion reached by the same via negativa: the Self exceeds every physical category.",
+                  "textId": "katha-upanishad"
+                }
+              ]
+            },
+            {
+              "word": "Invisible, ineffable, by word And thought uncompassed, ever all itself",
+              "node": "brahman-impersonal",
+              "type": "theme",
+              "note": "The Self described in purely apophatic terms (acintya, avyakta — \"unmanifest, unthinkable\") points beyond the personal Krishna to the impersonal Absolute (nirguṇa Brahman) with which the ātman is identical. Deutsch (Advaita Vedanta, 1969) reads such Gita passages as the seedbed Śaṅkara develops into the doctrine that the Self IS Brahman without qualities.",
+              "parallels": [
+                {
+                  "label": "Plotinus, Enneads — the One beyond word and thought",
+                  "note": "The Neoplatonic One, ineffable and uncompassed by thought, is the closest Greek analogue to nirguṇa Brahman — a structural convergence Deutsch and others note, not a line of transmission.",
+                  "textId": "plotinus-enneads"
+                },
+                {
+                  "label": "Katha Upanishad — \"subtler than the subtle, greater than the great\"",
+                  "note": "The same apophatic register: the Self that exceeds all spatial and quantitative measure.",
+                  "textId": "katha-upanishad"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Birth and death as ordained cycle (2:27–28)",
+      "verses": [
+        {
+          "ref": "2:27",
+          "text": "The end of birth is death; the end of death Is birth: this is ordained! and mournest thou, Chief of the stalwart arm! for what befalls Which could not otherwise befall?",
+          "textVersions": {
+            "arnold": "The end of birth is death; the end of death Is birth: this is ordained! and mournest thou, Chief of the stalwart arm! for what befalls Which could not otherwise befall?"
+          },
+          "entities": [
+            {
+              "word": "The end of birth is death; the end of death Is birth",
+              "node": "reincarnation",
+              "type": "theme",
+              "note": "BG 2:27 states the saṃsāric cycle as fixed law (dhruva, \"certain/ordained\"): for whatever is born, death is sure, and for the dead, rebirth — so grief is pointless. O'Flaherty (1980) reads this as the Gita compressing the Upanishadic rebirth-cosmology into a single consoling axiom.",
+              "parallels": [
+                {
+                  "label": "Plato, Phaedo — the living come from the dead and the dead from the living",
+                  "note": "Socrates' \"cyclical argument\" for the soul's deathlessness runs that opposites generate opposites, so the living arise from the dead as the dead from the living — the same reciprocal birth-death cycle. Edgerton flags the parallel; it is convergence, not contact. (Phaedo referenced in prose only.)"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
+
+// -- Plato, Phaedo 78b–84b (selections) — The Soul Akin to the Eternal; Philosophy as the Practice of Dying --
+SCRIPTURE_TEXTS['phaedo'] = {
+  "id": "phaedo",
+  "title": "Plato, Phaedo 78b–84b (selections) — The Soul Akin to the Eternal; Philosophy as the Practice of Dying",
+  "shortTitle": "Plato — Phaedo",
+  "corpus": "Ancient Greek Philosophy (Platonic dialogues)",
+  "tradId": "tradition-hellenistic-philosophy",
+  "date": null,
+  "docNode": "phase-3-002-plato-dialogues",
+  "language": "Greek · English translation by Benjamin Jowett, The Dialogues of Plato, 3rd ed. (Oxford, 1892; first ed. 1871) — public domain (Project Gutenberg etext 1658). Verses quoted verbatim; the plain-text edition renders dashes as a double hyphen (--), preserved here.",
+  "translations": [
+    {
+      "id": "jowett",
+      "label": "Jowett 1892",
+      "note": "Benjamin Jowett, The Dialogues of Plato 3rd ed., 1892 (Project Gutenberg #1658) — public domain"
+    }
+  ],
+  "intro": "On his last day, in Socrates' final hours before drinking the hemlock, the Phaedo stages the \"Affinity Argument\" (Stephanus 78b–84b): the soul is deathless because it is akin (syngenes) to the eternal, unchanging, invisible Forms, while the body belongs with the seen, the composite, and the perishable. From this Socrates draws his most famous claim — that the philosopher's whole life is a \"practice of dying,\" a deliberate freeing of the soul from the body so that, at death, the soul departs \"to the invisible world, to the divine and immortal and rational.\" This is the headwater text of the Western body-as-prison dualism: read directly by Plotinus and the late Neoplatonic commentators (Olympiodorus, Damascius, Proclus) and, far afield, structurally paralleled by the deathless Self of the Upanishads and the soul that \"casts off worn-out bodies\" in the Gita — though the comparison is one of typological convergence, not demonstrable transmission.",
+  "crossTradition": [
+    {
+      "label": "Plato — Timaeus (the eternal pattern and the World-Soul)",
+      "note": "Plato's own cosmology supplies the metaphysics the Phaedo presupposes: the eternal Forms (Being) versus the changing material world (Becoming), and time as 'a moving image of eternity.' The Phaedo's deathless soul is kindred to the Timaeus's intelligible, unchanging realm. The two dialogues are routinely read together as the core of Plato's theology (Sedley & Long, eds., Plato: Meno and Phaedo, Cambridge 2010).",
+      "textId": "plato-timaeus"
+    },
+    {
+      "label": "Plotinus — Enneads (the soul's ascent and return)",
+      "note": "Plotinus inherits the Phaedo's affinity argument directly: the soul is divine and immortal because consubstantial with the intelligible, and salvation is its ascent back to its source. The late Neoplatonic Phaedo-commentaries of Olympiodorus and Damascius (analysed in Gertz, Death and Immortality in Late Neoplatonism, Brill 2011) make this reception explicit.",
+      "textId": "plotinus-enneads"
+    },
+    {
+      "label": "Katha Upanishad — the deathless Self (ātman)",
+      "note": "Yama teaches Nachiketas that the Self 'is not born, nor does it die'; it is unborn, eternal, and not slain when the body is slain (Katha 1.2.18). The Indian 'deathless Self' and Plato's deathless soul are the two great independent statements of soul-immortality — a typological, not historical, parallel (Obeyesekere, Imagining Karma, 2002, treats Greek and Indic rebirth as transformations of a shared type rather than a borrowing).",
+      "textId": "katha-upanishad"
+    },
+    {
+      "label": "Bhagavad Gita 4 — reincarnation and the imperishable",
+      "note": "Krishna's teaching that the embodied self passes through many births while remaining unborn and imperishable mirrors the Phaedo's claim that the soul survives the body's dissolution. Pythagorean and Platonic Greece and Vedic India both built rebirth-eschatologies on an indestructible soul; Obeyesekere (Imagining Karma, 2002) cautions that the convergence is structural, ethicised differently in each (karma in India, purification in Plato).",
+      "textId": "bhagavad-gita-4"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "I. The Affinity Argument — the Uncompounded and the Unchanging (78b–79a)",
+      "verses": [
+        {
+          "ref": "Phaedo 78c",
+          "text": "Now the compound or composite may be supposed to be naturally capable, as of being compounded, so also of being dissolved; but that which is uncompounded, and that only, must be, if anything is, indissoluble.",
+          "textVersions": {
+            "jowett": "Now the compound or composite may be supposed to be naturally capable, as of being compounded, so also of being dissolved; but that which is uncompounded, and that only, must be, if anything is, indissoluble."
+          },
+          "entities": [
+            {
+              "word": "uncompounded",
+              "node": "soul-immortality",
+              "type": "theme",
+              "note": "The Affinity Argument's premise: what is dissolved at death must be composite; only the uncompounded (asyntheton) is immune to dissolution. Socrates assigns the soul to the uncompounded class — the structural ground of the whole proof of immortality (Ebrey, Plato's Phaedo: Forms, Death, and the Philosophical Life, 2023).",
+              "parallels": [
+                {
+                  "label": "Plotinus — the simple, indivisible soul",
+                  "note": "Plotinus develops exactly this: the soul is immortal because simple and partless, not a composite that could come apart (Enneads IV.7, On the Immortality of the Soul) — a direct elaboration of the Phaedo's uncompounded-soul premise.",
+                  "textId": "plotinus-enneads"
+                }
+              ]
+            },
+            {
+              "word": "indissoluble",
+              "node": "forms-and-archetypes",
+              "type": "theme",
+              "note": "The indissoluble is the realm of the Forms (eidē) — the self-identical, unchanging essences the dialogue has just defined ('essence of equality, beauty'). The soul is deathless precisely by its kinship (syngeneia) with these eternal intelligibles (Ross, Plato's Theory of Ideas, 1951).",
+              "parallels": [
+                {
+                  "label": "Plato — the eternal pattern (Being vs Becoming)",
+                  "note": "The Timaeus's distinction between 'that which always is and has no becoming' and 'that which is always becoming and never is' is the same Being/Becoming axis the Phaedo uses to separate the indissoluble soul from the dissoluble body.",
+                  "textId": "plato-timaeus"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "Phaedo 79a",
+          "text": "Well, then, added Socrates, let us suppose that there are two sorts of existences--one seen, the other unseen. Let us suppose them. The seen is the changing, and the unseen is the unchanging?",
+          "textVersions": {
+            "jowett": "Well, then, added Socrates, let us suppose that there are two sorts of existences--one seen, the other unseen. Let us suppose them. The seen is the changing, and the unseen is the unchanging?"
+          },
+          "entities": [
+            {
+              "word": "two sorts of existences",
+              "node": "forms-and-archetypes",
+              "type": "theme",
+              "note": "The two-world ontology: the seen/changing (the sensible, perceived through the body) versus the unseen/unchanging (the intelligible Forms, grasped only by mind). This is the founding dualism of Platonism and the matrix for every later 'two worlds' theology (Krämer, Plato and the Foundations of Metaphysics, 1990).",
+              "parallels": [
+                {
+                  "label": "Plato — the Demiurge orders Becoming by the eternal Forms",
+                  "note": "The Timaeus's craftsman imposes the unchanging intelligible paradigm onto disordered Becoming — the cosmological version of the Phaedo's seen/unseen division.",
+                  "textId": "plato-timaeus"
+                }
+              ]
+            },
+            {
+              "word": "the unseen is the unchanging",
+              "node": "soul-as-spark",
+              "type": "theme",
+              "note": "The soul belongs with the unseen and unchanging; the body with the seen and changing. This alignment — an invisible, divine kernel trapped in a visible, perishable shell — is the seed of the 'divine spark in the body' motif that the Hermetic and Gnostic traditions would inherit through Platonism (Couliano, Out of This World, 1991).",
+              "parallels": [
+                {
+                  "label": "Plotinus — the soul's affinity with the invisible One",
+                  "note": "For Plotinus the soul's true home is the invisible intelligible realm; embodiment is a descent, and ascent is the recovery of its unseen, unchanging nature — the Neoplatonic reading of Phaedo 79a.",
+                  "textId": "plotinus-enneads"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "II. The Soul Dragged by the Body, and the Region of Purity (79c–79d)",
+      "verses": [
+        {
+          "ref": "Phaedo 79c",
+          "text": "the soul too is then dragged by the body into the region of the changeable, and wanders and is confused; the world spins round her, and she is like a drunkard, when she touches change?",
+          "textVersions": {
+            "jowett": "the soul too is then dragged by the body into the region of the changeable, and wanders and is confused; the world spins round her, and she is like a drunkard, when she touches change?"
+          },
+          "entities": [
+            {
+              "word": "dragged by the body into the region of the changeable",
+              "node": "soul-as-spark",
+              "type": "theme",
+              "note": "The body as the soul's corrupting drag: through the senses the soul is pulled into the realm of flux and grows 'confused,' 'like a drunkard.' This is the locus classicus of the body-as-prison / body-as-intoxication trope (sōma sēma) that runs through Orphism into Neoplatonism and Gnosticism (Bremmer, The Rise and Fall of the Afterlife, 2002).",
+              "parallels": [
+                {
+                  "label": "Plotinus — embodiment as the soul's drunkenness and forgetting",
+                  "note": "Plotinus repeatedly figures the embodied soul as fallen into forgetfulness and intoxication by matter, needing to 'sober up' and turn inward — a direct development of Phaedo 79c.",
+                  "textId": "plotinus-enneads"
+                }
+              ]
+            },
+            {
+              "word": "she touches change",
+              "node": "soul-immortality",
+              "type": "theme",
+              "note": "The soul's confusion arises only on contact with the changeable; its native state is stability. The argument is that the soul's immortality follows from its kinship with the stable, not from any property of the body (Ebrey, Plato's Phaedo: Forms, Death, and the Philosophical Life, 2023).",
+              "parallels": [
+                {
+                  "label": "Bhagavad Gita 4 — the imperishable self amid the flux of births",
+                  "note": "The Gita likewise locates the changeless self behind the changing embodied states; Obeyesekere (Imagining Karma, 2002) treats this as a typological convergence with Greek soul-doctrine, not a transmission.",
+                  "textId": "bhagavad-gita-4"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "Phaedo 79d",
+          "text": "But when returning into herself she reflects, then she passes into the other world, the region of purity, and eternity, and immortality, and unchangeableness, which are her kindred, and with them she ever lives, when she is by herself and is not let or hindered; then she ceases from her erring ways, and being in communion with the unchanging is unchanging. And this state of the soul is called wisdom?",
+          "textVersions": {
+            "jowett": "But when returning into herself she reflects, then she passes into the other world, the region of purity, and eternity, and immortality, and unchangeableness, which are her kindred, and with them she ever lives, when she is by herself and is not let or hindered; then she ceases from her erring ways, and being in communion with the unchanging is unchanging. And this state of the soul is called wisdom?"
+          },
+          "entities": [
+            {
+              "word": "the region of purity, and eternity, and immortality",
+              "node": "ascent-of-the-soul",
+              "type": "theme",
+              "note": "The soul 'returning into herself' and passing to the realm of purity and eternity is the prototypical inward ascent — withdrawal from the body to reach the soul's divine kindred. This interiorised ascent is the headwater of the Neoplatonic anabasis and henōsis (Couliano, Out of This World, 1991; Himmelfarb, Ascent to Heaven, 1993).",
+              "parallels": [
+                {
+                  "label": "Plotinus — the flight of the alone to the Alone",
+                  "note": "Plotinus's mystical ascent of the soul back to its source (Enneads VI.9) is the developed Neoplatonic form of the Phaedo's soul 'returning into herself' toward the eternal.",
+                  "textId": "plotinus-enneads"
+                }
+              ]
+            },
+            {
+              "word": "this state of the soul is called wisdom",
+              "node": "soul-immortality",
+              "type": "theme",
+              "note": "Wisdom (phronēsis) is defined as the soul's communion with the unchanging — knowing as becoming-like-the-known. Immortality and intellection are fused: the soul is deathless in the same act by which it grasps the eternal Forms (Sedley & Long, eds., Plato: Meno and Phaedo, 2010).",
+              "parallels": [
+                {
+                  "label": "Katha Upanishad — knowing the deathless Self",
+                  "note": "In the Katha, liberation comes through knowing the Self that is 'not born and does not die'; as in the Phaedo, immortality is bound to a kind of saving knowledge — a structural, not historical, parallel (Obeyesekere, Imagining Karma, 2002).",
+                  "textId": "katha-upanishad"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "III. The Soul in the Likeness of the Divine (80b)",
+      "verses": [
+        {
+          "ref": "Phaedo 80b",
+          "text": "the soul is in the very likeness of the divine, and immortal, and intellectual, and uniform, and indissoluble, and unchangeable; and that the body is in the very likeness of the human, and mortal, and unintellectual, and multiform, and dissoluble, and changeable.",
+          "textVersions": {
+            "jowett": "the soul is in the very likeness of the divine, and immortal, and intellectual, and uniform, and indissoluble, and unchangeable; and that the body is in the very likeness of the human, and mortal, and unintellectual, and multiform, and dissoluble, and changeable."
+          },
+          "entities": [
+            {
+              "word": "in the very likeness of the divine",
+              "node": "soul-immortality",
+              "type": "theme",
+              "note": "The conclusion of the Affinity Argument: the soul shares six attributes with the divine — immortal, intellectual, uniform, indissoluble, unchangeable, intelligible. This is the single most influential statement of soul-divinity in Western thought, the root of the doctrine that the soul is 'akin to God' (syngenes tōi theiōi) (Bremmer, The Rise and Fall of the Afterlife, 2002).",
+              "parallels": [
+                {
+                  "label": "Plotinus — the soul as divine and akin to the intelligible gods",
+                  "note": "Plotinus's insistence on the soul's divinity and its non-descent of the highest part rests on this Phaedo conclusion; the late commentators (Olympiodorus, Damascius) debate it line by line (Gertz, Death and Immortality in Late Neoplatonism, Brill 2011).",
+                  "textId": "plotinus-enneads"
+                },
+                {
+                  "label": "Plato — the soul kindred to the eternal pattern",
+                  "note": "The Timaeus makes the rational soul a product of the same mixture as the World-Soul and akin to the eternal; the Phaedo's 'likeness of the divine' is the eschatological face of that cosmology.",
+                  "textId": "plato-timaeus"
+                }
+              ]
+            },
+            {
+              "word": "and immortal, and intellectual",
+              "node": "forms-and-archetypes",
+              "type": "theme",
+              "note": "Immortality is yoked to intellectuality: the soul is deathless because it is the faculty that apprehends the unchanging Forms. To be intelligent (noētikon) and to be immortal are, for Plato, two names for the soul's kinship with the intelligible realm (Ross, Plato's Theory of Ideas, 1951).",
+              "parallels": [
+                {
+                  "label": "Katha Upanishad — the Self beyond the senses, knowable by the subtle intellect",
+                  "note": "The Katha sets the deathless Self above the senses, mind, and intellect, reached by the discerning faculty — paralleling Plato's identification of the immortal with the intellectual; a typological convergence (Obeyesekere, Imagining Karma, 2002).",
+                  "textId": "katha-upanishad"
+                }
+              ]
+            },
+            {
+              "word": "in the very likeness of the human",
+              "node": "soul-as-spark",
+              "type": "theme",
+              "note": "The body is consigned to the mortal, multiform, dissoluble, and changeable — the antithesis of the soul. This radical body/soul asymmetry (the body as the alien, perishable shell of a divine kernel) is the philosophical charter of the body-as-prison tradition (Couliano, Out of This World, 1991).",
+              "parallels": [
+                {
+                  "label": "Plotinus — the body as the soul's tomb and burden",
+                  "note": "Plotinus radicalises the Phaedo's body/soul split, treating embodiment as a fall the soul must reverse; the Gnostic body-as-prison cosmology draws on the same Platonic asymmetry.",
+                  "textId": "plotinus-enneads"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "IV. Philosophy as the Practice of Dying (80e–81a)",
+      "verses": [
+        {
+          "ref": "Phaedo 80e–81a",
+          "text": "has in fact been always engaged in the practice of dying? For is not philosophy the practice of death?--",
+          "textVersions": {
+            "jowett": "has in fact been always engaged in the practice of dying? For is not philosophy the practice of death?--"
+          },
+          "entities": [
+            {
+              "word": "the practice of dying",
+              "node": "socrates",
+              "type": "person",
+              "note": "Socrates, on the day of his execution, defines philosophy itself as meletē thanatou — a 'practice of dying,' the lifelong discipline of separating the soul from the body. The serenity with which the historical Socrates met the hemlock is, in the Phaedo, the proof of the doctrine he teaches (Sedley & Long, eds., Plato: Meno and Phaedo, 2010).",
+              "parallels": [
+                {
+                  "label": "Plotinus — the philosophic life as separation from the body",
+                  "note": "Plotinus makes the purificatory virtues (the soul's separation from the body) the heart of the philosophic ascent — a direct continuation of the Socratic 'practice of dying.'",
+                  "textId": "plotinus-enneads"
+                }
+              ]
+            },
+            {
+              "word": "philosophy the practice of death",
+              "node": "plato",
+              "type": "person",
+              "note": "Plato, writing the Phaedo, frames the master-thesis of his soul-doctrine through Socrates' mouth: the philosopher welcomes death because it completes the separation he has rehearsed all his life. The definition of philosophy as practice-of-death became a topos for the entire later Platonic and Christian-ascetic tradition (Ebrey, Plato's Phaedo: Forms, Death, and the Philosophical Life, 2023).",
+              "parallels": [
+                {
+                  "label": "Katha Upanishad — the discipline that wins the deathless",
+                  "note": "The Katha frames its teaching as a discipline (yoga) by which the wise leave grief and reach the deathless Self; like Plato's 'practice of dying,' liberation is a trained release from the body — a structural, not historical, parallel (Obeyesekere, Imagining Karma, 2002).",
+                  "textId": "katha-upanishad"
+                },
+                {
+                  "label": "Bhagavad Gita 4 — the self that lays aside worn bodies",
+                  "note": "The Gita's image of the embodied self serenely casting off worn-out bodies for new ones echoes the Phaedo's calm acceptance of death; both make equanimity before death the fruit of right knowledge of the soul.",
+                  "textId": "bhagavad-gita-4"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
