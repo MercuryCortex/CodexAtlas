@@ -37154,3 +37154,1502 @@ SCRIPTURE_TEXTS['vendidad-fargard-1'] = {
     }
   ]
 };
+
+// -- Aristotle, Metaphysics XII (Lambda) 1072a–1072b (the Unmoved Mover — that moves by being loved) --
+SCRIPTURE_TEXTS['aristotle-metaphysics-12'] = {
+  "id": "aristotle-metaphysics-12",
+  "title": "Aristotle, Metaphysics XII (Lambda) 1072a–1072b (the Unmoved Mover — that moves by being loved)",
+  "shortTitle": "Aristotle — Metaphysics XII",
+  "corpus": "Greek · Hellenistic Philosophy (Peripatetic)",
+  "tradId": "tradition-hellenistic-philosophy",
+  "date": "c. 350 BCE (Aristotle of Stagira, -384 to -322; lectures compiled posthumously by Andronicus of Rhodes c. 50 BCE)",
+  "docNode": "phase-3-003-aristotle-metaphysics",
+  "language": "Classical Greek · W. D. Ross translation, The Works of Aristotle Translated into English, Vol. VIII: Metaphysica (Oxford: Clarendon Press, 1908) — public domain",
+  "translations": [
+    {
+      "id": "ross",
+      "label": "Ross 1908",
+      "note": "W.D. Ross, The Works of Aristotle vol. VIII: Metaphysica, 1908 — public domain"
+    }
+  ],
+  "intro": "Book XII (Lambda), chapter 7, of Aristotle's Metaphysics is the founding text of philosophical theology in the West: the argument that the eternal circular motion of the heavens requires a first mover that is itself wholly unmoved, an eternal and necessary substance whose own actuality is pure thought. Aristotle's decisive move is that this first principle moves not by pushing but as a final cause — \"it produces motion as being loved\" — an object of desire and intelligence toward which the cosmos eternally strives. Its life is the self-contemplation of thought thinking itself (noēsis noēseōs), and \"on such a principle depend the heavens and the world of nature.\" The passage is the philosophical headwater the Neoplatonists (Plotinus' Nous and the One) develop, that the Stoic and Johannine cosmic-Logos converge upon, and that medieval Jewish, Christian, and Islamic theology (Maimonides, Aquinas, Ibn Rushd) adopt as the God of the philosophers — a convergence on a transcendent first cause reached by argument rather than by transmission of myth.",
+  "crossTradition": [
+    {
+      "label": "Plotinus — Enneads VI.9 (the One / Nous)",
+      "note": "Plotinus' Nous — the Divine Mind that eternally contemplates itself and the Forms — is the direct Neoplatonic development of Aristotle's self-thinking Unmoved Mover, now subordinated beneath a One beyond Being. Sorabji (Time, Creation and the Continuum, 1983, pp. 249–252) and Lloyd Gerson trace the lineage by which Aristotle's noēsis noēseōs becomes the second hypostasis.",
+      "textId": "plotinus-enneads"
+    },
+    {
+      "label": "John 1 — 'In the beginning was the Logos'",
+      "note": "A convergence, not a borrowing: the Johannine divine Reason that grounds the cosmos and the Aristotelian first cause that is pure thought meet in the late-antique synthesis. W. K. C. Guthrie and Werner Jaeger (Aristotle: Fundamentals of the History of His Development, 1934) note that Aristotelian and Logos-theology were fused only by later Platonizing readers, not by Aristotle himself.",
+      "textId": "john-1"
+    },
+    {
+      "label": "Cleanthes — Hymn to Zeus (the Stoic governing principle)",
+      "note": "The Stoic cosmic Logos that 'steers all things' (Cleanthes) is a rival Hellenistic answer to the same problem of a divine governing principle — but immanent and providential where Aristotle's mover is transcendent and self-absorbed. A.A. Long contrasts the two as the two poles of Greek philosophical theology.",
+      "textId": "cleanthes-hymn"
+    },
+    {
+      "label": "Plato — Timaeus (the Demiurge)",
+      "note": "Aristotle's Lambda critiques and transforms his teacher's craftsman-god: where the Platonic Demiurge fashions the cosmos by efficient causation, Aristotle's mover acts only as a final cause (object of desire), removing the maker-god in favor of an eternal attractor. Ross (Aristotle, 1923, ch. VII) frames Lambda as Aristotle's settled alternative to the Timaeus.",
+      "textId": "plato-timaeus"
+    },
+    {
+      "label": "Maimonides / Aquinas / Ibn Rushd — the God of the philosophers",
+      "note": "The medieval Abrahamic appropriation: Aquinas' First Mover (Summa Theologiae I q.2 'the way from motion'), Maimonides' Guide, and Ibn Rushd's commentaries all build directly on Lambda. Étienne Gilson and Sorabji (1983) document this transmission via the Arabic Theology of Aristotle. [not yet staged]"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "The Eternal Unmoved Substance (1072a)",
+      "verses": [
+        {
+          "ref": "XII.7 (1072a)",
+          "text": "There is, then, something which is always moved with an unceasing motion, which is motion in a circle; and this is plain not in theory only but in fact. Therefore the first heaven must be eternal. There is therefore also something which moves it. And since that which moves and is moved is intermediate, there is something which moves without being moved, being eternal, substance, and actuality.",
+          "textVersions": {
+            "ross": "There is, then, something which is always moved with an unceasing motion, which is motion in a circle; and this is plain not in theory only but in fact. Therefore the first heaven must be eternal. There is therefore also something which moves it. And since that which moves and is moved is intermediate, there is something which moves without being moved, being eternal, substance, and actuality."
+          },
+          "entities": [
+            {
+              "word": "always moved with an unceasing motion",
+              "node": "unmoved-mover",
+              "type": "theme",
+              "note": "Aristotle's argument from the eternal rotation of the heavens (the 'first heaven') to a first cause: a ceaseless motion requires an eternal source of motion. The originating statement of the theme 'unmoved mover' (prōton kinoun akinēton).",
+              "parallels": [
+                {
+                  "label": "Plotinus — eternal motion toward the One",
+                  "note": "The eternal striving of the lower hypostases toward their source develops Aristotle's eternal heavenly motion. Sorabji (1983).",
+                  "textId": "plotinus-enneads"
+                }
+              ]
+            },
+            {
+              "word": "something which moves without being moved",
+              "node": "unmoved-mover",
+              "type": "theme",
+              "note": "The decisive formula: the first mover is itself unmoved — eternal, substance (ousia), and pure actuality (energeia) — terminating the regress of moved movers. Ross (Aristotle, 1923) calls this Aristotle's strictest proof of a transcendent first principle.",
+              "parallels": [
+                {
+                  "label": "Aquinas — the unmoved First Mover",
+                  "note": "The 'first way' of the Summa Theologiae (I q.2 a.3) restates this argument almost verbatim through the Arabic-Latin transmission. Gilson; Sorabji (1983)."
+                },
+                {
+                  "label": "Plato — Demiurge (contrast)",
+                  "note": "Aristotle replaces the Platonic craftsman-god's efficient causation with a mover that causes only as a final cause.",
+                  "textId": "plato-timaeus"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "It Moves By Being Loved (1072b)",
+      "verses": [
+        {
+          "ref": "XII.7 (1072b)",
+          "text": "The object of desire and the object of thought move in this way; they move without being moved. The primary objects of desire and of thought are the same. For the apparent good is the object of appetite, and the real good is the primary object of rational wish. But desire is consequent on opinion rather than opinion on desire; for the thinking is the starting-point. And thought is moved by the object of thought, and one of the two columns of opposites is in itself the object of thought; and in this, substance is first, and in substance, that which is simple and exists actually. The final cause, then, produces motion as being loved, but all other things move by being moved. On such a principle, then, depend the heavens and the world of nature.",
+          "textVersions": {
+            "ross": "The object of desire and the object of thought move in this way; they move without being moved. The primary objects of desire and of thought are the same. For the apparent good is the object of appetite, and the real good is the primary object of rational wish. But desire is consequent on opinion rather than opinion on desire; for the thinking is the starting-point. And thought is moved by the object of thought, and one of the two columns of opposites is in itself the object of thought; and in this, substance is first, and in substance, that which is simple and exists actually. The final cause, then, produces motion as being loved, but all other things move by being moved. On such a principle, then, depend the heavens and the world of nature."
+          },
+          "entities": [
+            {
+              "word": "object of desire and the object of thought",
+              "node": "unmoved-mover",
+              "type": "theme",
+              "note": "How the unmoved mover moves: not mechanically but as an object of desire (orekton) and of thought (noēton). The cosmos is moved by being drawn toward it. Ross (Aristotle, 1923, ch. VII).",
+              "parallels": [
+                {
+                  "label": "Plotinus — the One as object of all striving",
+                  "note": "Plotinus' One toward which all reality 'turns' in eros develops Aristotle's mover-as-beloved. Sorabji (1983).",
+                  "textId": "plotinus-enneads"
+                }
+              ]
+            },
+            {
+              "word": "The final cause, then, produces motion as being loved",
+              "node": "unmoved-mover",
+              "type": "theme",
+              "note": "The single most influential sentence of the passage (kinei dē hōs erōmenon): the first cause moves the heavens as the beloved moves the lover — by attraction, not propulsion. Sorabji (1983, pp. 249–252) makes this the hinge of the Neoplatonic and medieval reception.",
+              "parallels": [
+                {
+                  "label": "Cleanthes — Zeus who steers all things",
+                  "note": "The Stoic answer is an immanent providential Logos, not a transcendent beloved; A.A. Long contrasts the two models of divine governance.",
+                  "textId": "cleanthes-hymn"
+                },
+                {
+                  "label": "Dante — 'the Love that moves the sun and the other stars'",
+                  "note": "Paradiso XXXIII closes on this Aristotelian conception transmitted through Aquinas. Sorabji (1983). [not staged]"
+                }
+              ]
+            },
+            {
+              "word": "On such a principle, then, depend the heavens and the world of nature",
+              "node": "unmoved-mover",
+              "type": "theme",
+              "note": "The cosmological claim: all of nature 'depends' (ērtētai) on this single first principle — the seed of every later first-cause cosmology.",
+              "parallels": [
+                {
+                  "label": "John 1 — the Logos as ground of all that is made",
+                  "note": "Convergence on a single transcendent ground of the cosmos; the synthesis was made by later Platonizing readers, not by Aristotle. Jaeger (1934).",
+                  "textId": "john-1"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "The Life of God: Thought Thinking Itself (1072b)",
+      "verses": [
+        {
+          "ref": "XII.7 (1072b)",
+          "text": "And life also belongs to God; for the actuality of thought is life, and God is that actuality; and God's self-dependent actuality is life most good and eternal. We say therefore that God is a living being, eternal, most good, so that life and duration continuous and eternal belong to God; for this is God.",
+          "textVersions": {
+            "ross": "And life also belongs to God; for the actuality of thought is life, and God is that actuality; and God's self-dependent actuality is life most good and eternal. We say therefore that God is a living being, eternal, most good, so that life and duration continuous and eternal belong to God; for this is God."
+          },
+          "entities": [
+            {
+              "word": "the actuality of thought is life, and God is that actuality",
+              "node": "unmoved-mover",
+              "type": "theme",
+              "note": "The unmoved mover's life is energeia — the eternal activity of thought (noēsis), here identified with God (theos). Aristotle's later remark that 'its thinking is a thinking on thinking' (noēsis noēseōs) names God as thought thinking itself. Ross (Aristotle, 1923).",
+              "parallels": [
+                {
+                  "label": "Plotinus — Nous, the Divine Mind contemplating itself",
+                  "note": "Plotinus' second hypostasis, Nous, the Intellect eternally thinking the Forms, is the direct development of Aristotle's noēsis noēseōs. Sorabji (1983); the deity node nous-plotinus records this lineage.",
+                  "textId": "plotinus-enneads"
+                }
+              ]
+            },
+            {
+              "word": "God",
+              "node": "aristotle",
+              "type": "person",
+              "note": "Aristotle of Stagira (-384 to -322), originator of the unmoved-mover argument; Lambda 7 is his most concentrated theology, the 'God of the philosophers' reached by demonstration rather than revelation. Jaeger (1934) dates Lambda to Aristotle's mature period.",
+              "parallels": [
+                {
+                  "label": "Cleanthes — the Stoic divine principle",
+                  "note": "A contemporaneous Greek philosophical theology, immanent where Aristotle's is transcendent. A.A. Long.",
+                  "textId": "cleanthes-hymn"
+                }
+              ]
+            },
+            {
+              "word": "a living being, eternal, most good",
+              "node": "logos-cosmic-reason",
+              "type": "theme",
+              "note": "Aristotle's eternal, perfect, self-thinking God supplies the philosophical template that the Stoic, Philonic, and Johannine cosmic-Logos traditions later inhabit — divine reason as the ground and goal of the ordered cosmos. The theme node logos-cosmic-reason records the Heraclitus–Stoa–Philo–John line into which Aristotle's mover feeds.",
+              "parallels": [
+                {
+                  "label": "John 1 — the divine Logos as eternal ground",
+                  "note": "Convergence of philosophical first-cause and theological Logos in late antiquity; fused by Platonizing readers, not by Aristotle. Jaeger (1934); Guthrie.",
+                  "textId": "john-1"
+                },
+                {
+                  "label": "Plotinus — eternity as the life of Nous",
+                  "note": "Plotinus' account of eternal life as the activity of Intellect develops Aristotle's 'life most good and eternal.' Sorabji (1983).",
+                  "textId": "plotinus-enneads"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
+
+// -- Summa Theologica I, q.2, a.3 — The Five Ways (the Quinque Viae) --
+SCRIPTURE_TEXTS['aquinas-five-ways'] = {
+  "id": "aquinas-five-ways",
+  "title": "Summa Theologica I, q.2, a.3 — The Five Ways (the Quinque Viae)",
+  "shortTitle": "Aquinas, the Five Ways",
+  "corpus": "Latin Christian · Scholastic (Dominican Thomism)",
+  "tradId": "tradition-medieval-christianity",
+  "date": "c. 1265–1274 CE (Prima Pars of the Summa Theologiae)",
+  "docNode": "phase-5-024-aquinas-summa-theologiae",
+  "language": "Latin · Fathers of the English Dominican Province translation (2nd & revised edition, 1920; first edition 1911–1925) — public domain, mirrored on New Advent and Project Gutenberg",
+  "translations": [
+    {
+      "id": "dominican",
+      "label": "English Dominican 1920",
+      "note": "Fathers of the English Dominican Province, Summa Theologica, 1920 — public domain"
+    }
+  ],
+  "intro": "In the third article of the second question of the Summa Theologiae's Prima Pars, Aquinas asks \"Whether God exists?\" and answers with five compact a posteriori demonstrations — the Quinque Viae or Five Ways: from motion (the unmoved mover), from efficient causation (the first cause), from possibility and necessity (the necessary being), from the gradation of perfections, and from the governance of things (the argument from finality). Each closes with the refrain \"and this everyone understands to be God.\" The argument is the keystone of Western natural theology — the project of reasoning to God from the observable world without appeal to revelation. Its cross-tradition weight is that the First Way is not original to Christianity: it is Aristotle's unmoved mover (Metaphysics Lambda), transmitted to the Latin West through Arabic Aristotelianism (Avicenna, Averroes) and baptized by Aquinas — the same Logos-as-divine-ground that John 1 and the Hermetica reach by a different road. The Five Ways are thus a node where Greek metaphysics, Islamic falsafa, and Christian theology converge on a single first principle.",
+  "crossTradition": [
+    {
+      "label": "John 1:1–18 — the Logos as the divine ground",
+      "note": "The Johannine Logos ('In the beginning was the Word... all things were made by him') is the scriptural counterpart to the Five Ways' first principle: where Aquinas reasons up to the source of being and motion, John names that source as the pre-existent Word through whom all things are. Aquinas reads John's Logos and Aristotle's first cause as the same God (Davies, The Thought of Thomas Aquinas, 1992).",
+      "textId": "john-1"
+    },
+    {
+      "label": "Corpus Hermeticum IV — Nous as the source poured into the world",
+      "note": "The Hermetic Krater reaches a structurally similar conclusion by a non-rational, gnostic route: a single divine Mind (Nous) is the ground from which the world derives. Both the Hermetica and the Five Ways posit one supreme intelligence behind cosmic order — the convergence Aquinas argues for in the Fifth Way (Copenhaver, Hermetica, 1992; Kenny, The Five Ways, 1969, on the design strand).",
+      "textId": "corpus-hermeticum-4"
+    },
+    {
+      "label": "Aristotle, Metaphysics Lambda — the unmoved mover",
+      "note": "The First Way IS Aristotle's argument from motion baptized: the regress of moved movers terminates in a prime mover that is itself unmoved (prōton kinoun akinēton). Aquinas inherits it through William of Moerbeke's Latin Aristotle and the Arabic commentators. Aristotle is being staged in this same batch, so no reader id yet (Kenny, The Five Ways, 1969, ch. 1; Davies 1992)."
+    },
+    {
+      "label": "Avicenna (Ibn Sīnā) — contingency and the Necessary Being",
+      "note": "The Third Way's contrast of the possible (contingent) and the necessary is closer to Avicenna's distinction between the merely possible-in-itself and the wājib al-wujūd (the Necessary Existent) than to Aristotle. Aquinas's cosmological argument carries an Islamic falsafa inheritance, not only a Greek one (Davies 1992; Kenny 1969)."
+    }
+  ],
+  "sections": [
+    {
+      "heading": "Whether God exists — the Five Ways",
+      "verses": [
+        {
+          "ref": "I.2.3 — The First Way (from motion)",
+          "text": "The first and more manifest way is the argument from motion. It is certain, and evident to our senses, that in the world some things are in motion. Now whatever is in motion is put in motion by another, for nothing can be in motion except it is in potentiality to that towards which it is in motion; whereas a thing moves inasmuch as it is in act. … But this cannot go on to infinity, because then there would be no first mover, and, consequently, no other mover; seeing that subsequent movers move only inasmuch as they are put in motion by the first mover; as the staff moves only because it is put in motion by the hand. Therefore it is necessary to arrive at a first mover, put in motion by no other; and this everyone understands to be God.",
+          "textVersions": {
+            "dominican": "The first and more manifest way is the argument from motion. It is certain, and evident to our senses, that in the world some things are in motion. Now whatever is in motion is put in motion by another, for nothing can be in motion except it is in potentiality to that towards which it is in motion; whereas a thing moves inasmuch as it is in act. … But this cannot go on to infinity, because then there would be no first mover, and, consequently, no other mover; seeing that subsequent movers move only inasmuch as they are put in motion by the first mover; as the staff moves only because it is put in motion by the hand. Therefore it is necessary to arrive at a first mover, put in motion by no other; and this everyone understands to be God."
+          },
+          "entities": [
+            {
+              "word": "the argument from motion",
+              "node": "unmoved-mover",
+              "type": "theme",
+              "note": "The First Way is Aristotle's argument from motion (Metaphysics Lambda): every moved thing is moved by another, and the regress must terminate in a first mover that is itself unmoved — the prōton kinoun akinēton. Aquinas takes it over directly from the Aristotelian corpus (Kenny, The Five Ways, 1969, ch. 1).",
+              "parallels": [
+                {
+                  "label": "Aristotle — the unmoved mover",
+                  "note": "The Stagirite's prime mover; the First Way is this argument baptized into Christian theology. Aristotle is being staged in this batch, so referenced in prose only (Davies, The Thought of Thomas Aquinas, 1992)."
+                }
+              ]
+            },
+            {
+              "word": "a first mover, put in motion by no other",
+              "node": "five-ways",
+              "type": "theme",
+              "note": "The conclusion of the First Way and the template for all five: a regress of dependent causes is impossible, so there must be a first term. Aquinas does not argue for a temporal first event but for an ontological first member of a per se ordered series (Kenny 1969; Wippel, The Metaphysical Thought of Thomas Aquinas, 2000).",
+              "parallels": [
+                {
+                  "label": "John 1 — the Logos through whom all things were made",
+                  "note": "The scriptural naming of the same ground of being that the First Way reasons toward (Davies 1992).",
+                  "textId": "john-1"
+                }
+              ]
+            },
+            {
+              "word": "this everyone understands to be God",
+              "node": "god-the-father-christian",
+              "type": "deity",
+              "note": "The refrain closing each Way — 'et hoc omnes intelligunt Deum.' Aquinas identifies the philosophical first principle (mover, cause, necessary being, maximum, governor) with the God of Christian faith. Critics from Kenny on note the gap between proving 'a first mover' and proving the full classical-theist God (Kenny, The Five Ways, 1969, conclusion).",
+              "parallels": []
+            }
+          ]
+        },
+        {
+          "ref": "I.2.3 — The Second Way (from efficient cause)",
+          "text": "The second way is from the nature of the efficient cause. In the world of sense we find there is an order of efficient causes. There is no case known (neither is it, indeed, possible) in which a thing is found to be the efficient cause of itself; for so it would be prior to itself, which is impossible. Now in efficient causes it is not possible to go on to infinity … Therefore it is necessary to admit a first efficient cause, to which everyone gives the name of God.",
+          "textVersions": {
+            "dominican": "The second way is from the nature of the efficient cause. In the world of sense we find there is an order of efficient causes. There is no case known (neither is it, indeed, possible) in which a thing is found to be the efficient cause of itself; for so it would be prior to itself, which is impossible. Now in efficient causes it is not possible to go on to infinity … Therefore it is necessary to admit a first efficient cause, to which everyone gives the name of God."
+          },
+          "entities": [
+            {
+              "word": "an order of efficient causes",
+              "node": "five-ways",
+              "type": "theme",
+              "note": "The Second Way, the cosmological argument proper: efficient causes are ordered, nothing is its own efficient cause, and an infinite regress of essentially-ordered causes is impossible, so there is a first efficient cause. The 'order' is again a per se series (the cause sustaining its effect here and now), not a temporal chain (Wippel 2000; Davies 1992).",
+              "parallels": [
+                {
+                  "label": "Avicenna — the chain of contingent causes resolving in the Necessary",
+                  "note": "The Islamic falsafa form of the same causal argument that fed the Latin scholastics (Davies 1992). Staged in prose only."
+                }
+              ]
+            },
+            {
+              "word": "a first efficient cause",
+              "node": "thomas-aquinas",
+              "type": "person",
+              "note": "Aquinas (1225–1274), the Dominican author of the Summa, originator of the Five Ways. He distinguished his a posteriori proofs from Anselm's a priori ontological argument, which he rejected (ST I.2.1; Davies 1992).",
+              "parallels": []
+            }
+          ]
+        },
+        {
+          "ref": "I.2.3 — The Third Way (from possibility and necessity)",
+          "text": "The third way is taken from possibility and necessity, and runs thus. We find in nature things that are possible to be and not to be, since they are found to be generated, and to corrupt, and consequently, they are possible to be and not to be. But it is impossible for these always to exist, for that which is possible not to be at some time is not. … Therefore we cannot but postulate the existence of some being having of itself its own necessity, and not receiving it from another, but rather causing in others their necessity. This all men speak of as God.",
+          "textVersions": {
+            "dominican": "The third way is taken from possibility and necessity, and runs thus. We find in nature things that are possible to be and not to be, since they are found to be generated, and to corrupt, and consequently, they are possible to be and not to be. But it is impossible for these always to exist, for that which is possible not to be at some time is not. … Therefore we cannot but postulate the existence of some being having of itself its own necessity, and not receiving it from another, but rather causing in others their necessity. This all men speak of as God."
+          },
+          "entities": [
+            {
+              "word": "possibility and necessity",
+              "node": "five-ways",
+              "type": "theme",
+              "note": "The Third Way (ex possibili et necessario): contingent beings (which can be and not-be) cannot account for their own existence; there must be a being whose existence is necessary of itself (a se). This is the strand closest to Avicenna's distinction between the possible-in-itself and the Necessary Existent (wājib al-wujūd), and the most contested step in the Five Ways (Kenny, The Five Ways, 1969, ch. 3).",
+              "parallels": [
+                {
+                  "label": "Avicenna — the wājib al-wujūd (Necessary Existent)",
+                  "note": "The Third Way's necessary-being is closer to Avicenna's metaphysics of contingency than to Aristotle (Davies 1992). Prose only."
+                }
+              ]
+            },
+            {
+              "word": "some being having of itself its own necessity",
+              "node": "chain-of-being",
+              "type": "theme",
+              "note": "The necessary being that grounds the existence of all contingent things sits at the apex of the scholastic scala — the hierarchy of being descending from God as ipsum esse subsistens through which lower beings receive their existence (Lovejoy, The Great Chain of Being, 1936; Wippel 2000).",
+              "parallels": []
+            }
+          ]
+        },
+        {
+          "ref": "I.2.3 — The Fourth Way (from gradation)",
+          "text": "The fourth way is taken from the gradation to be found in things. Among beings there are some more and some less good, true, noble and the like. But 'more' and 'less' are predicated of different things, according as they resemble in their different ways something which is the maximum … Therefore there must also be something which is to all beings the cause of their being, goodness, and every other perfection; and this we call God.",
+          "textVersions": {
+            "dominican": "The fourth way is taken from the gradation to be found in things. Among beings there are some more and some less good, true, noble and the like. But 'more' and 'less' are predicated of different things, according as they resemble in their different ways something which is the maximum … Therefore there must also be something which is to all beings the cause of their being, goodness, and every other perfection; and this we call God."
+          },
+          "entities": [
+            {
+              "word": "the gradation to be found in things",
+              "node": "chain-of-being",
+              "type": "theme",
+              "note": "The Fourth Way (ex gradibus) is the most Platonic: degrees of goodness, truth and nobility imply a maximum that is their cause. It presupposes the participation-metaphysics of the Great Chain of Being, mediated to Aquinas through Augustine and Pseudo-Dionysius (Lovejoy 1936; Davies, The Thought of Thomas Aquinas, 1992, who notes its Neoplatonic rather than Aristotelian pedigree).",
+              "parallels": [
+                {
+                  "label": "Plotinus / Pseudo-Dionysius — the hierarchy of being descending from the One",
+                  "note": "The Neoplatonic participation-ladder that supplies the Fourth Way's metaphysics (Lovejoy 1936). Prose only."
+                }
+              ]
+            },
+            {
+              "word": "the cause of their being, goodness, and every other perfection",
+              "node": "five-ways",
+              "type": "theme",
+              "note": "The maximum of being is the cause of being in all else — Aquinas's doctrine that God is ipsum esse subsistens, being itself, from which all finite beings derive. Kenny regards this Way as the weakest, resting on a contested inference from 'more and less' to a real maximum (Kenny, The Five Ways, 1969, ch. 4).",
+              "parallels": []
+            }
+          ]
+        },
+        {
+          "ref": "I.2.3 — The Fifth Way (from the governance of things)",
+          "text": "The fifth way is taken from the governance of the world. We see that things which lack intelligence, such as natural bodies, act for an end, and this is evident from their acting always, or nearly always, in the same way, so as to obtain the best result. Hence it is plain that not fortuitously, but designedly, do they achieve their end. Now whatever lacks intelligence cannot move towards an end, unless it be directed by some being endowed with knowledge and intelligence; as the arrow is shot to its mark by the archer. Therefore some intelligent being exists by whom all natural things are directed to their end; and this being we call God.",
+          "textVersions": {
+            "dominican": "The fifth way is taken from the governance of the world. We see that things which lack intelligence, such as natural bodies, act for an end, and this is evident from their acting always, or nearly always, in the same way, so as to obtain the best result. Hence it is plain that not fortuitously, but designedly, do they achieve their end. Now whatever lacks intelligence cannot move towards an end, unless it be directed by some being endowed with knowledge and intelligence; as the arrow is shot to its mark by the archer. Therefore some intelligent being exists by whom all natural things are directed to their end; and this being we call God."
+          },
+          "entities": [
+            {
+              "word": "the governance of the world",
+              "node": "providence-and-fate",
+              "type": "theme",
+              "note": "The Fifth Way (ex gubernatione rerum) is the argument from finality / design: unintelligent natural things act regularly toward ends, which presupposes an intelligence directing them — divine governance (providence). It is the medieval ancestor of Paley's later design argument, though Aquinas grounds it in Aristotelian final causality, not in biological contrivance (Kenny, The Five Ways, 1969, ch. 5).",
+              "parallels": [
+                {
+                  "label": "Corpus Hermeticum IV — Nous ordering the cosmos",
+                  "note": "The Hermetic single divine Mind behind cosmic order is the gnostic analogue of the Fifth Way's directing intelligence (Copenhaver, Hermetica, 1992).",
+                  "textId": "corpus-hermeticum-4"
+                }
+              ]
+            },
+            {
+              "word": "things which lack intelligence, such as natural bodies, act for an end",
+              "node": "teleology",
+              "type": "theme",
+              "note": "The Fifth Way rests on Aristotelian teleology — the doctrine that natural processes are directed toward ends (final causes). Aquinas converts Aristotle's immanent teleology into an argument for a transcendent ordering intelligence; the move from natural ends to an external designer is the step modern critics most question (Davies 1992; Kenny 1969).",
+              "parallels": [
+                {
+                  "label": "Aristotle — final causation in nature",
+                  "note": "The telos-directed nature Aquinas inherits and theologizes (Kenny 1969). Aristotle staged in this batch; prose only."
+                }
+              ]
+            },
+            {
+              "word": "some intelligent being exists by whom all natural things are directed to their end",
+              "node": "god-the-father-christian",
+              "type": "deity",
+              "note": "The Fifth Way's directing intelligence, identified with the Christian God. The cumulative claim of all Five Ways is that mover, cause, necessary being, maximum and governor are one and the same — the God of revelation reached by reason (Davies, The Thought of Thomas Aquinas, 1992).",
+              "parallels": [
+                {
+                  "label": "John 1 — the Word through whom all things were made and ordered",
+                  "note": "Scripture names the same ordering Logos the Fifth Way infers (Davies 1992).",
+                  "textId": "john-1"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
+
+// -- Plato, Republic X 614b–621d (The Myth of Er — judgment, the spindle of Necessity, and the choice of lives) --
+SCRIPTURE_TEXTS['myth-of-er'] = {
+  "id": "myth-of-er",
+  "title": "Plato, Republic X 614b–621d (The Myth of Er — judgment, the spindle of Necessity, and the choice of lives)",
+  "shortTitle": "Myth of Er",
+  "corpus": "Greek · Platonic Dialogues (Republic, Book X)",
+  "tradId": "tradition-ancient-greek",
+  "date": "c. 380–375 BCE (Republic, Book X)",
+  "docNode": "phase-3-002-plato-dialogues",
+  "language": "Greek · Benjamin Jowett translation (The Republic, 3rd ed. 1888 / rev. 1892; public domain — Project Gutenberg #1497)",
+  "translations": [
+    {
+      "id": "jowett",
+      "label": "Jowett 1892",
+      "note": "Benjamin Jowett, The Republic of Plato 3rd ed., 1892 (Project Gutenberg #1497) — public domain"
+    }
+  ],
+  "intro": "The Myth of Er closes Plato's Republic: Er, a warrior slain in battle, revives on the funeral pyre and reports the journey of the soul after death. Souls are judged at a meeting of four openings — the just sent up to heaven, the unjust down for a thousand-year penalty — then gather at the spindle of Necessity, where the eight planetary whorls turn to the song of the Sirens and the three Fates (Lachesis, Clotho, Atropos) spin past, present, and future. Each soul then CHOOSES its next life (\"the responsibility is with the chooser — God is justified\"), drinks from the river of Unmindfulness on the plain of Forgetfulness (Lethe), and is reborn, driven up \"like stars shooting.\" It is Plato's great eschatological myth of judgment, cosmic order, and metempsychosis, and the philosophical capstone of an afterlife tradition he inherits from Orphic-Pythagorean religion. Its convergence with the Egyptian, Zoroastrian, and Tibetan judgment-and-rebirth visions makes it a hub of the cross-tradition afterlife-judgment cluster.",
+  "crossTradition": [
+    {
+      "label": "Orphic Gold Tablets — the soul's afterlife instructions and the springs of Memory and Forgetting",
+      "note": "The Orphic-Pythagorean afterlife religion Plato draws on directly. The gold leaves warn the dead soul to drink from the lake of Memory (Mnemosyne) and shun the spring of Forgetting; Er's souls drink from the river of Unmindfulness (Lethe) on the plain of Forgetfulness — the same memory/forgetting topography. Burkert (Lore and Science in Ancient Pythagoreanism, 1972) traces Plato's metempsychosis and afterlife eschatology to this Orphic-Pythagorean stratum.",
+      "textId": "orphic-gold-tablets"
+    },
+    {
+      "label": "Book of the Dead, Ch. 125 — the judgment of the dead",
+      "note": "The Egyptian weighing of the heart before Osiris is the oldest fully developed judgment-of-the-dead scene; Er's judges who sort the just upward and the unjust downward are the Greek philosophical analogue. Annas (An Introduction to Plato's Republic, 1981) reads the myth as Plato giving moral judgment a cosmic stage; the convergence with the Egyptian tribunal is typological, not a claim of transmission.",
+      "textId": "book-of-dead-125"
+    },
+    {
+      "label": "Ardā Vīrāf Nāmag — the Zoroastrian heaven-and-hell vision",
+      "note": "Like Er, the righteous Vīrāf travels to the otherworld and returns to report the rewards of the just and the torments of the wicked. Both are otherworld-journey-and-return revelations structured around post-mortem judgment — a shared eschatological form across the Greek and Iranian worlds.",
+      "textId": "arda-viraf-namag-1"
+    },
+    {
+      "label": "Bardo Thodol — judgment and the soul's choice of rebirth in the after-death state",
+      "note": "The Tibetan after-death bardo stages a judgment and a moment where the consciousness is drawn toward its next rebirth; Er's souls likewise choose their next life and are reborn. A striking typological convergence — Plato's choice-of-lives and the bardo's drift toward rebirth — though the traditions are historically independent.",
+      "textId": "bardo-thodol"
+    },
+    {
+      "label": "Plato, Phaedo — the immortality of the soul and the afterlife geography",
+      "note": "The Phaedo's arguments for the soul's immortality and its closing afterlife myth (the true earth, the rivers of the underworld) are the companion piece to Er; both make immortality and post-mortem fate the ground of the philosophical life. Annas (1981) treats them as Plato's paired eschatological myths.",
+      "textId": "phaedo"
+    },
+    {
+      "label": "Plato, Allegory of the Cave (Republic VII) — the soul's ascent toward the light",
+      "note": "The Cave (Book VII) and the Myth of Er (Book X) frame the Republic's account of the soul: the Cave is the ascent toward the Good in this life, Er the soul's journey and re-embodiment after death. Both make the orientation of the soul — toward the heavenly way or the shadows — the decisive thing.",
+      "textId": "plato-cave"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "The vision of Er and the judgment of souls (614b–615a)",
+      "verses": [
+        {
+          "ref": "614b",
+          "text": "Well, I said, I will tell you a tale; not one of the tales which Odysseus tells to the hero Alcinous, yet this too is a tale of a hero, Er the son of Armenius, a Pamphylian by birth. He was slain in battle, and ten days afterwards, when the bodies of the dead were taken up already in a state of corruption, his body was found unaffected by decay, and carried away home to be buried. And on the twelfth day, as he was lying on the funeral pile, he returned to life and told them what he had seen in the other world.",
+          "textVersions": {
+            "jowett": "Well, I said, I will tell you a tale; not one of the tales which Odysseus tells to the hero Alcinous, yet this too is a tale of a hero, Er the son of Armenius, a Pamphylian by birth. He was slain in battle, and ten days afterwards, when the bodies of the dead were taken up already in a state of corruption, his body was found unaffected by decay, and carried away home to be buried. And on the twelfth day, as he was lying on the funeral pile, he returned to life and told them what he had seen in the other world."
+          },
+          "entities": [
+            {
+              "word": "Er the son of Armenius",
+              "node": "plato",
+              "type": "person",
+              "note": "The framing fiction of Plato's own eschatological myth: Er the revived warrior is Plato's narrative device for a revelation of the afterlife. Annas (An Introduction to Plato's Republic, 1981) notes the deliberate echo of the Odyssey's underworld book (Nekyia) Plato signals by contrasting Er with Odysseus's tales to Alcinous.",
+              "parallels": [
+                {
+                  "label": "Ardā Vīrāf — the righteous otherworld traveller who returns to report",
+                  "note": "Both stage a chosen visitor who journeys to the world of the dead and returns to tell the living what awaits — the otherworld-journey-and-return revelation form.",
+                  "textId": "arda-viraf-namag-1"
+                }
+              ]
+            },
+            {
+              "word": "what he had seen in the other world",
+              "node": "afterlife-judgment",
+              "type": "theme",
+              "note": "Er's report inaugurates the Greek philosophical judgment-of-the-dead: souls are sorted by their justice and injustice. Annas (1981) reads the myth as the moral capstone of the Republic, giving the just life a reward that outlasts death.",
+              "parallels": [
+                {
+                  "label": "Book of the Dead, Ch. 125 — the weighing of the heart",
+                  "note": "The Egyptian tribunal before Osiris is the oldest developed judgment scene; Er's judges are its Greek philosophical analogue (typological, not transmitted).",
+                  "textId": "book-of-dead-125"
+                },
+                {
+                  "label": "Ardā Vīrāf — the otherworld vision of reward and torment",
+                  "note": "The Zoroastrian report of the fates of the just and the wicked, structurally parallel to Er's account.",
+                  "textId": "arda-viraf-namag-1"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "614c",
+          "text": "He said that when his soul left the body he went on a journey with a great company, and that they came to a mysterious place at which there were two openings in the earth; they were near together, and over against them were two other openings in the heaven above. In the intermediate space there were judges seated, who commanded the just, after they had given judgment on them and had bound their sentences in front of them, to ascend by the heavenly way on the right hand; and in like manner the unjust were bidden by them to descend by the lower way on the left hand; these also bore the symbols of their deeds, but fastened on their backs.",
+          "textVersions": {
+            "jowett": "He said that when his soul left the body he went on a journey with a great company, and that they came to a mysterious place at which there were two openings in the earth; they were near together, and over against them were two other openings in the heaven above. In the intermediate space there were judges seated, who commanded the just, after they had given judgment on them and had bound their sentences in front of them, to ascend by the heavenly way on the right hand; and in like manner the unjust were bidden by them to descend by the lower way on the left hand; these also bore the symbols of their deeds, but fastened on their backs."
+          },
+          "entities": [
+            {
+              "word": "there were judges seated",
+              "node": "afterlife-judgment",
+              "type": "theme",
+              "note": "The post-mortem tribunal that sorts the just upward and the unjust downward. Annas (1981) stresses that Plato moralises the older mythic underworld into a precise system of desert — a thousandfold recompense, ten times over a thousand years.",
+              "parallels": [
+                {
+                  "label": "Book of the Dead, Ch. 125 — the tribunal of Osiris and the forty-two assessors",
+                  "note": "The Egyptian judgment-hall where the heart is weighed and the deceased declared justified or condemned — the closest ancient analogue to Er's seated judges.",
+                  "textId": "book-of-dead-125"
+                },
+                {
+                  "label": "Ardā Vīrāf — the Činvat bridge and the sorting of souls",
+                  "note": "The Zoroastrian sorting of the righteous toward heaven and the wicked toward hell mirrors Er's right-hand and left-hand ways.",
+                  "textId": "arda-viraf-namag-1"
+                }
+              ]
+            },
+            {
+              "word": "to ascend by the heavenly way on the right hand",
+              "node": "soul-immortality",
+              "type": "theme",
+              "note": "The just soul's ascent presupposes the soul's survival of bodily death — the doctrine Plato argues at length in the Phaedo and asserts again at the close of the Republic. Burkert (Lore and Science, 1972) locates the source of this immortality-and-ascent doctrine in Orphic-Pythagorean religion.",
+              "parallels": [
+                {
+                  "label": "Plato, Phaedo — the immortality of the soul",
+                  "note": "The companion dialogue arguing the soul's deathlessness; Er presupposes what the Phaedo demonstrates.",
+                  "textId": "phaedo"
+                },
+                {
+                  "label": "Orphic Gold Tablets — the deified soul's heavenly destiny",
+                  "note": "The gold leaves promise the initiate's soul a blessed afterlife among the heroes/gods — the Orphic background of Plato's heavenly way.",
+                  "textId": "orphic-gold-tablets"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "The spindle of Necessity and the Fates (616b–617c)",
+      "verses": [
+        {
+          "ref": "616c",
+          "text": "From these ends is extended the spindle of Necessity, on which all the revolutions turn. The shaft and hook of this spindle are made of steel, and the whorl is made partly of steel and also partly of other materials. Now the whorl is in form like the whorl used on earth; and the description of it implied that there is one large hollow whorl which is quite scooped out, and into this is fitted another lesser one, and another, and another, and four others, making eight in all, like vessels which fit into one another.",
+          "textVersions": {
+            "jowett": "From these ends is extended the spindle of Necessity, on which all the revolutions turn. The shaft and hook of this spindle are made of steel, and the whorl is made partly of steel and also partly of other materials. Now the whorl is in form like the whorl used on earth; and the description of it implied that there is one large hollow whorl which is quite scooped out, and into this is fitted another lesser one, and another, and another, and four others, making eight in all, like vessels which fit into one another."
+          },
+          "entities": [
+            {
+              "word": "the spindle of Necessity",
+              "node": "ananke",
+              "type": "deity",
+              "note": "Necessity (Anankē) holds the cosmic spindle on her knees; in Orphic cosmogony she is the primordial power who encircles and orders the cosmos. Burkert (Lore and Science, 1972) connects the spindle-cosmos image to the Pythagorean harmonic ordering of the heavens.",
+              "parallels": [
+                {
+                  "label": "The Moirai turning the spindle of fate",
+                  "note": "Necessity is the mother of the Fates who spin destiny; the Orphic-Pythagorean milieu that produced the gold tablets is the home of this fate-cosmology.",
+                  "textId": "orphic-gold-tablets"
+                }
+              ]
+            },
+            {
+              "word": "making eight in all",
+              "node": "providence-and-fate",
+              "type": "theme",
+              "note": "The eight nested whorls are the fixed stars and the seven planets — the cosmos itself rendered as the apparatus of Necessity, so that fate and the structure of the heavens are one. Burkert (1972) reads this as the literary monument of Pythagorean cosmic harmony built into the world-order of the Fates.",
+              "parallels": [
+                {
+                  "label": "Phaedo — the cosmic geography of the soul's fate",
+                  "note": "The Phaedo likewise embeds the soul's destiny in a detailed cosmic structure; both myths make fate a feature of the order of the universe.",
+                  "textId": "phaedo"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "617b",
+          "text": "The spindle turns on the knees of Necessity; and on the upper surface of each circle is a siren, who goes round with them, hymning a single tone or note. The eight together form one harmony; and round about, at equal intervals, there is another band, three in number, each sitting upon her throne: these are the Fates, daughters of Necessity, who are clothed in white robes and have chaplets upon their heads, Lachesis and Clotho and Atropos, who accompany with their voices the harmony of the sirens—Lachesis singing of the past, Clotho of the present, Atropos of the future.",
+          "textVersions": {
+            "jowett": "The spindle turns on the knees of Necessity; and on the upper surface of each circle is a siren, who goes round with them, hymning a single tone or note. The eight together form one harmony; and round about, at equal intervals, there is another band, three in number, each sitting upon her throne: these are the Fates, daughters of Necessity, who are clothed in white robes and have chaplets upon their heads, Lachesis and Clotho and Atropos, who accompany with their voices the harmony of the sirens—Lachesis singing of the past, Clotho of the present, Atropos of the future."
+          },
+          "entities": [
+            {
+              "word": "The eight together form one harmony",
+              "node": "providence-and-fate",
+              "type": "theme",
+              "note": "The Sirens' eight tones sounding as one is the locus classicus of the 'harmony of the spheres' — the Pythagorean doctrine that the planetary motions produce cosmic music. Burkert (Lore and Science, 1972) treats this passage as a key witness to the Pythagorean planetary harmony.",
+              "parallels": [
+                {
+                  "label": "Phaedo — the ordered cosmos as the frame of the soul's destiny",
+                  "note": "Plato's paired afterlife myth likewise sets the soul's fate within a precisely ordered cosmos.",
+                  "textId": "phaedo"
+                }
+              ]
+            },
+            {
+              "word": "these are the Fates, daughters of Necessity",
+              "node": "the-moirai",
+              "type": "deity",
+              "note": "The three Moirai — Lachesis (past), Clotho (present), Atropos (future) — spin and ratify each soul's destiny. The Moirai node itself cites 'Plato Republic 617c (the Spindle of Necessity)' as a primary attestation. Hesiod (Theogony 904) makes them daughters of Zeus and Themis; Plato makes them daughters of Necessity.",
+              "parallels": [
+                {
+                  "label": "The thread of fate the Moirai spin and cut",
+                  "note": "The spinning-and-cutting of the life-thread is the shared Greek image of allotted destiny that frames the soul's afterlife in the Orphic milieu.",
+                  "textId": "orphic-gold-tablets"
+                }
+              ]
+            },
+            {
+              "word": "Atropos",
+              "node": "thread-of-fate",
+              "type": "symbol",
+              "note": "Atropos ('the unturnable') is the Fate who makes the thread irreversible; the spun thread is the symbol of the life allotted and fixed. At 620e the genius carries each soul to Atropos, 'who spun the threads and made them irreversible.'",
+              "parallels": [
+                {
+                  "label": "The cutting of the life-thread as the end of an allotted span",
+                  "note": "The thread-of-fate imagery pervades the Greek-Orphic conception of an allotted, measured life.",
+                  "textId": "orphic-gold-tablets"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "The choice of lives and the river of Forgetfulness (617d–621b)",
+      "verses": [
+        {
+          "ref": "617e",
+          "text": "‘Hear the word of Lachesis, the daughter of Necessity. Mortal souls, behold a new cycle of life and mortality. Your genius will not be allotted to you, but you will choose your genius; and let him who draws the first lot have the first choice, and the life which he chooses shall be his destiny. Virtue is free, and as a man honours or dishonours her he will have more or less of her; the responsibility is with the chooser—God is justified.’",
+          "textVersions": {
+            "jowett": "‘Hear the word of Lachesis, the daughter of Necessity. Mortal souls, behold a new cycle of life and mortality. Your genius will not be allotted to you, but you will choose your genius; and let him who draws the first lot have the first choice, and the life which he chooses shall be his destiny. Virtue is free, and as a man honours or dishonours her he will have more or less of her; the responsibility is with the chooser—God is justified.’"
+          },
+          "entities": [
+            {
+              "word": "behold a new cycle of life and mortality",
+              "node": "reincarnation",
+              "type": "theme",
+              "note": "The 'new cycle' is metempsychosis — the soul's rebirth into a new life it must choose. Burkert (Lore and Science, 1972) identifies the transmigration of souls as a defining Orphic-Pythagorean doctrine that Plato adopts and philosophises.",
+              "parallels": [
+                {
+                  "label": "Orphic Gold Tablets — the soul's escape from 'the grievous circle' of rebirth",
+                  "note": "The gold leaves speak of fleeing the painful cycle of births; Plato's 'new cycle of life and mortality' is the same Orphic wheel of reincarnation.",
+                  "textId": "orphic-gold-tablets"
+                },
+                {
+                  "label": "Bardo Thodol — the consciousness drawn toward its next rebirth",
+                  "note": "The Tibetan after-death state likewise turns on the soul's movement into a new birth — a typological convergence of rebirth-cosmologies.",
+                  "textId": "bardo-thodol"
+                }
+              ]
+            },
+            {
+              "word": "the responsibility is with the chooser—God is justified",
+              "node": "providence-and-fate",
+              "type": "theme",
+              "note": "Plato's resolution of the fate/freedom problem: Necessity sets the frame, but the soul freely chooses its life, so the gods are absolved of responsibility for evil — 'God is justified' (theos anaitios). Annas (An Introduction to Plato's Republic, 1981) reads this as the ethical point of the whole myth: character, formed by philosophy, determines the wisdom of the choice.",
+              "parallels": [
+                {
+                  "label": "Bardo Thodol — the dead consciousness's own disposition shapes its rebirth",
+                  "note": "In both, the soul's prior formation, not an external decree, governs the life it falls into — moral responsibility carried across death.",
+                  "textId": "bardo-thodol"
+                },
+                {
+                  "label": "Book of the Dead, Ch. 125 — the deceased's own deeds determine the verdict",
+                  "note": "The Egyptian judgment too turns on the soul's own record; the recompense is earned, not arbitrarily imposed.",
+                  "textId": "book-of-dead-125"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "620e",
+          "text": "this genius led the souls first to Clotho, and drew them within the revolution of the spindle impelled by her hand, thus ratifying the destiny of each; and then, when they were fastened to this, carried them to Atropos, who spun the threads and made them irreversible, whence without turning round they passed beneath the throne of Necessity.",
+          "textVersions": {
+            "jowett": "this genius led the souls first to Clotho, and drew them within the revolution of the spindle impelled by her hand, thus ratifying the destiny of each; and then, when they were fastened to this, carried them to Atropos, who spun the threads and made them irreversible, whence without turning round they passed beneath the throne of Necessity."
+          },
+          "entities": [
+            {
+              "word": "thus ratifying the destiny of each",
+              "node": "the-moirai",
+              "type": "deity",
+              "note": "Clotho ratifies the soul's chosen life and Atropos makes it irreversible — the Fates execute the choice the soul has made, binding freedom and necessity into a single act. The Moirai node attests this Republic passage directly.",
+              "parallels": [
+                {
+                  "label": "The Fates spinning the allotted thread of a life",
+                  "note": "The allotment and fixing of the life-thread is the shared Greek-Orphic mechanism of destiny.",
+                  "textId": "orphic-gold-tablets"
+                }
+              ]
+            },
+            {
+              "word": "who spun the threads and made them irreversible",
+              "node": "thread-of-fate",
+              "type": "symbol",
+              "note": "Atropos's spun, irreversible thread is the symbol of the destiny now fixed beyond recall — the life chosen becomes the life that must be lived.",
+              "parallels": [
+                {
+                  "label": "The unturnable cutting of the life-thread",
+                  "note": "Atropos 'the unturnable' embodies the finality of the allotted span in Greek-Orphic fate-imagery.",
+                  "textId": "orphic-gold-tablets"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "621a",
+          "text": "and when they had all passed, they marched on in a scorching heat to the plain of Forgetfulness, which was a barren waste destitute of trees and verdure; and then towards evening they encamped by the river of Unmindfulness, whose water no vessel can hold; of this they were all obliged to drink a certain quantity, and those who were not saved by wisdom drank more than was necessary; and each one as he drank forgot all things.",
+          "textVersions": {
+            "jowett": "and when they had all passed, they marched on in a scorching heat to the plain of Forgetfulness, which was a barren waste destitute of trees and verdure; and then towards evening they encamped by the river of Unmindfulness, whose water no vessel can hold; of this they were all obliged to drink a certain quantity, and those who were not saved by wisdom drank more than was necessary; and each one as he drank forgot all things."
+          },
+          "entities": [
+            {
+              "word": "the plain of Forgetfulness",
+              "node": "reincarnation",
+              "type": "theme",
+              "note": "The waterless plain of Lethe and the river of Unmindfulness erase the soul's memory before rebirth — the forgetting that makes a fresh incarnation possible. Burkert (Lore and Science, 1972) ties the Lethe/Mnemosyne motif to the Orphic-Pythagorean afterlife the gold tablets attest.",
+              "parallels": [
+                {
+                  "label": "Orphic Gold Tablets — the spring of Forgetting shunned for the lake of Memory",
+                  "note": "The clearest source-parallel: the gold leaves instruct the soul NOT to drink from the spring of Forgetting (Lethe) but from the lake of Memory (Mnemosyne). Plato's Lethe-drinking is the same eschatological topography, inverted into the mechanism of rebirth.",
+                  "textId": "orphic-gold-tablets"
+                }
+              ]
+            },
+            {
+              "word": "the river of Unmindfulness",
+              "node": "reincarnation",
+              "type": "theme",
+              "note": "Lethe, the river of forgetting; 'those who were not saved by wisdom drank more than was necessary' — the philosophically formed soul retains more, carrying virtue across the rebirth. Annas (1981) notes this is how the myth rewards the philosophical life even through the loss of memory.",
+              "parallels": [
+                {
+                  "label": "Orphic Gold Tablets — 'I am parched with thirst; give me to drink of the lake of Memory'",
+                  "note": "The gold-tablet soul's thirst at the waters of the otherworld is the direct Orphic counterpart to Er's souls drinking at Lethe.",
+                  "textId": "orphic-gold-tablets"
+                },
+                {
+                  "label": "Bardo Thodol — the loss of clear awareness as the soul moves toward rebirth",
+                  "note": "A typological echo: in the bardo too the dimming of awareness accompanies the descent into a new birth.",
+                  "textId": "bardo-thodol"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "621b",
+          "text": "Now after they had gone to rest, about the middle of the night there was a thunderstorm and earthquake, and then in an instant they were driven upwards in all manner of ways to their birth, like stars shooting. He himself was hindered from drinking the water. But in what manner or by what means he returned to the body he could not say; only, in the morning, awaking suddenly, he found himself lying on the pyre.",
+          "textVersions": {
+            "jowett": "Now after they had gone to rest, about the middle of the night there was a thunderstorm and earthquake, and then in an instant they were driven upwards in all manner of ways to their birth, like stars shooting. He himself was hindered from drinking the water. But in what manner or by what means he returned to the body he could not say; only, in the morning, awaking suddenly, he found himself lying on the pyre."
+          },
+          "entities": [
+            {
+              "word": "they were driven upwards in all manner of ways to their birth, like stars shooting",
+              "node": "reincarnation",
+              "type": "theme",
+              "note": "The souls are launched into new bodies 'like stars shooting' — the culminating image of metempsychosis, the soul's return to embodied life. Burkert (Lore and Science, 1972) reads the whole sequence as Plato's literary monument to the Pythagorean transmigration doctrine.",
+              "parallels": [
+                {
+                  "label": "Bardo Thodol — the consciousness propelled into its next embodiment",
+                  "note": "Both myths end with the soul driven into a new birth; the convergence of the rebirth-launch image is typological.",
+                  "textId": "bardo-thodol"
+                },
+                {
+                  "label": "Orphic Gold Tablets — the cyclic return of the soul to bodily life",
+                  "note": "The Orphic wheel of births Plato inherits: the soul cycles back into incarnation until liberated.",
+                  "textId": "orphic-gold-tablets"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
+
+// -- The Platform Sutra of the Sixth Patriarch — The Mind-Verses and Sudden Awakening --
+SCRIPTURE_TEXTS['platform-sutra-huineng'] = {
+  "id": "platform-sutra-huineng",
+  "title": "The Platform Sutra of the Sixth Patriarch — The Mind-Verses and Sudden Awakening",
+  "shortTitle": "Platform Sutra (Huineng)",
+  "corpus": "Chan / Zen Buddhism (Chinese Mahāyāna · Southern School)",
+  "tradId": "tradition-chan",
+  "date": "c. 780 CE (Dunhuang stratum; events set c. 661 CE; attributed to Huineng, 638–713)",
+  "docNode": "phase-5-004-platform-sutra-huineng",
+  "language": "Literary Chinese · Wong Mou-lam translation, The Sutra of Wei Lang (Hui Neng), Yu Ching Press, Shanghai, 1930 — public domain",
+  "translations": [
+    {
+      "id": "wong",
+      "label": "Wong Mou-lam 1930",
+      "note": "Wong Mou-lam, The Sutra of Wei Lang (Hui Neng), 1930 — public domain"
+    }
+  ],
+  "intro": "The founding scene of Chan/Zen. The Fifth Patriarch calls for a verse to test who has realized the self-nature; the head monk Shen Hsiu (Shenxiu) writes that the mind is a bright mirror to be wiped clean of dust, hour by hour — the gradualist program. The illiterate Huineng has his answering gatha chalked up for him, denying the mirror, the tree, and the dust alike: \"There is no Bodhi-tree, / Nor stand of a mirror bright. / Since all is Void, / Where can the dust alight?\" He wins the patriarchate and the robe is passed in secret by night, when the Fifth Patriarch expounds the Diamond Sutra and Huineng is enlightened at the words \"One should use one's mind in such a way that it will be free from any attachment.\" The text is the charter of sudden enlightenment (dunwu), of the intrinsically pure self-nature, and of \"no-thought\" (wu-nian) as practice. Its cross-tradition weight is double: it crystallizes the Prajñāpāramitā \"emptiness\" of the Heart and Diamond Sutras into a Chinese idiom, and it does so on a Daoist substrate of wu (nothingness) and wu-wei (non-action) — the geyi reception by which Indian Buddhism became Chinese Chan.",
+  "crossTradition": [
+    {
+      "label": "Heart Sutra — 'form is emptiness, emptiness is form'",
+      "note": "Huineng's 'Since all is Void' is the Prajñāpāramitā śūnyatā of the Heart Sutra rendered as a one-line refutation; Yampolsky (1967) and McRae (2003) read the Platform Sutra as Prajñāpāramitā preaching naturalized into Chan.",
+      "textId": "heart-sutra"
+    },
+    {
+      "label": "Diamond Sutra — 'a mind that abides nowhere'",
+      "note": "The Platform Sutra makes the Diamond Sutra (Vajracchedikā) the trigger of Huineng's awakening: he is enlightened at 'One should use one's mind in such a way that it will be free from any attachment' (the apratiṣṭhita-citta, the non-abiding mind). Yampolsky (1967) notes the Southern School's deliberate substitution of the Diamond Sutra for the Laṅkāvatāra as its charter text.",
+      "textId": "diamond-sutra"
+    },
+    {
+      "label": "Tao Te Ching 1 — the Dao that cannot be named / the fertile nothing (wu)",
+      "note": "Chan was received into Daoist soil: the wu (nothingness) and wu-wei (non-action) of the Daodejing supplied the vocabulary by which śūnyatā became 'no-thing' and meditation became 'no-thought' (wu-nian). McRae (2003) and the geyi ('matching concepts') scholarship treat this Daoist reception as constitutive of Chan, not incidental.",
+      "textId": "tao-te-ching-1"
+    },
+    {
+      "label": "Shenxiu and the Northern (gradual) School",
+      "note": "The contest of verses dramatizes a real eighth-century schism: Shenxiu's mirror-wiping = gradual cultivation (jianwu); Huineng's = sudden awakening (dunwu). McRae (2003) shows the 'sudden vs gradual' opposition was largely constructed by Huineng's disciple Shenhui as polemic, the verse-contest itself being later hagiography."
+    },
+    {
+      "label": "Bodhidharma and the Chan transmission lineage",
+      "note": "The robe Huineng receives is the patriarchal token traced back through Bodhidharma to the Buddha — the lineage (denglu) myth by which Chan claimed a 'separate transmission outside the scriptures.' Yampolsky (1967) treats the Platform Sutra as a key document in the fabrication of this lineage."
+    }
+  ],
+  "sections": [
+    {
+      "heading": "The Two Mind-Verses",
+      "verses": [
+        {
+          "ref": "Ch. I (Autobiography) — Shen Hsiu's stanza",
+          "text": "Our body is the Bodhi-tree, / And our mind a mirror bright. / Carefully we wipe them hour by hour, / And let no dust alight.",
+          "textVersions": {
+            "wong": "Our body is the Bodhi-tree, / And our mind a mirror bright. / Carefully we wipe them hour by hour, / And let no dust alight."
+          },
+          "entities": [
+            {
+              "word": "Bodhi-tree",
+              "node": "bodhi-tree",
+              "type": "symbol",
+              "note": "The tree under which the Buddha attained awakening (Ficus religiosa) becomes, in Shen Hsiu's verse, a metaphor for the cultivable mind — the very image Huineng will deny. Yampolsky (1967) reads the gatha-contest as staging the difference between the body/mind as a thing to be polished and the self-nature as already void.",
+              "parallels": [
+                {
+                  "label": "The Buddha's awakening at Bodh Gaya",
+                  "note": "Shen Hsiu transposes the historical Bodhi-tree of Śākyamuni's enlightenment into an interior metaphor for the practitioner's mind."
+                }
+              ]
+            },
+            {
+              "word": "mirror bright",
+              "node": "sacred-mirror",
+              "type": "symbol",
+              "note": "The 'bright mirror' (mingjing) is Shen Hsiu's figure for the mind that reflects reality once polished of defilement — the gradualist program of incremental cleansing. McRae (2003) identifies this with the Northern School's 'mind-as-mirror' contemplation. The Codex's sacred-mirror node lists 'The Polished Heart' among its names, the exact trope at issue here.",
+              "parallels": [
+                {
+                  "label": "The mirror as polished heart (cross-cultural)",
+                  "note": "The mind-as-mirror-to-be-wiped is a recurrent contemplative figure; Shen Hsiu's gradualism makes the polishing itself the practice — what Huineng's verse abolishes."
+                }
+              ]
+            },
+            {
+              "word": "wipe them hour by hour",
+              "node": "non-duality",
+              "type": "theme",
+              "note": "The phrase encapsulates gradual cultivation (jianwu): continuous effortful purification. Yampolsky (1967) and McRae (2003) frame the whole episode as the Southern School's polemic contrast — Shen Hsiu's incremental wiping versus Huineng's claim that, since the self-nature is already void and non-dual, there is nothing to wipe.",
+              "parallels": [
+                {
+                  "label": "Daoist wu-wei (non-action)",
+                  "note": "Where Shen Hsiu prescribes constant doing, the Chan ideal that overtakes him is closer to the Daodejing's wu-wei — accomplishing through non-striving.",
+                  "textId": "tao-te-ching-1"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "Ch. I (Autobiography) — Hui Neng's answering stanza",
+          "text": "There is no Bodhi-tree, / Nor stand of a mirror bright. / Since all is Void, / Where can the dust alight?",
+          "textVersions": {
+            "wong": "There is no Bodhi-tree, / Nor stand of a mirror bright. / Since all is Void, / Where can the dust alight?"
+          },
+          "entities": [
+            {
+              "word": "There is no Bodhi-tree",
+              "node": "emptiness-sunyata",
+              "type": "theme",
+              "note": "Huineng's first line negates Shen Hsiu's metaphor outright: there is no tree to cultivate because the self-nature is intrinsically empty (śūnya). Yampolsky (1967) reads the verse as Prajñāpāramitā emptiness applied to the mind itself — there is no 'thing' to be purified.",
+              "parallels": [
+                {
+                  "label": "'Form is emptiness' (Heart Sutra)",
+                  "note": "The Heart Sutra's śūnyatā — that no dharma has own-being — is the doctrine Huineng's negations enact line by line.",
+                  "textId": "heart-sutra"
+                },
+                {
+                  "label": "'Fundamentally not a single thing' (Dunhuang reading)",
+                  "note": "The oldest Dunhuang manuscript reads 'Fundamentally there is not a single thing' (benlai wu yi wu) where Wong Mou-lam's later vulgate has 'Since all is Void'; Yampolsky (1967) prints and discusses the variant, treating the 'not a single thing' line as the more radical original."
+                }
+              ]
+            },
+            {
+              "word": "Nor stand of a mirror bright",
+              "node": "sacred-mirror",
+              "type": "symbol",
+              "note": "Huineng dissolves Shen Hsiu's mirror: not only is there no dust, there is no mirror-stand and no mirror — no substrate for defilement to settle on. McRae (2003) treats this as the Southern School's signature move, collapsing the gradualist apparatus of cultivation.",
+              "parallels": [
+                {
+                  "label": "The mirror that holds nothing",
+                  "note": "Against the polished-heart mirror of Shen Hsiu, Huineng's verse leaves no reflecting surface at all — the figure is voided rather than cleaned."
+                }
+              ]
+            },
+            {
+              "word": "Since all is Void",
+              "node": "emptiness-sunyata",
+              "type": "theme",
+              "note": "The pivot of the verse: emptiness (śūnyatā) means there is no substantial self-nature for dust/defilement to alight upon. Yampolsky (1967) and McRae (2003) both locate the Platform Sutra's doctrine here — the self-nature is already pure and void, so awakening is sudden recognition, not gradual repair.",
+              "parallels": [
+                {
+                  "label": "Prajñāpāramitā emptiness (Heart Sutra)",
+                  "note": "'Since all is Void' is the Heart Sutra's emptiness compressed into a refutation of practice-as-polishing.",
+                  "textId": "heart-sutra"
+                },
+                {
+                  "label": "The Daoist wu / fertile nothingness",
+                  "note": "Chinese readers received śūnyatā through the Daodejing's wu; the 'Void' of Huineng's verse carries the resonance of the Daoist nothing, per the geyi reception described by McRae (2003).",
+                  "textId": "tao-te-ching-1"
+                }
+              ]
+            },
+            {
+              "word": "Where can the dust alight?",
+              "node": "non-duality",
+              "type": "theme",
+              "note": "The closing question voids the entire gradualist premise: with no mirror and no self-substance, defilement has nowhere to land — purity is original, not achieved. This is the no-thought (wu-nian) teaching of the Southern School. McRae (2003) shows the 'sudden' reading was sharpened into doctrine by Shenhui's later polemic.",
+              "parallels": [
+                {
+                  "label": "The non-abiding mind (Diamond Sutra)",
+                  "note": "'Nowhere for dust to alight' anticipates the Diamond Sutra's apratiṣṭhita-citta, the mind that abides nowhere, at which Huineng is enlightened in the next scene.",
+                  "textId": "diamond-sutra"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "The Diamond Sutra and Sudden Enlightenment",
+      "verses": [
+        {
+          "ref": "Ch. I (Autobiography) — the secret transmission",
+          "text": "When he came to the sentence, 'One should use one's mind in such a way that it will be free from any attachment,' I at once became thoroughly enlightened.",
+          "textVersions": {
+            "wong": "When he came to the sentence, 'One should use one's mind in such a way that it will be free from any attachment,' I at once became thoroughly enlightened."
+          },
+          "entities": [
+            {
+              "word": "use one's mind in such a way that it will be free from any attachment",
+              "node": "non-duality",
+              "type": "theme",
+              "note": "Wong Mou-lam's rendering of the Diamond Sutra's apratiṣṭhita-citta — the mind that 'abides nowhere.' Yampolsky (1967) emphasizes that the Platform Sutra deliberately makes the Diamond (Vajracchedikā), not the Laṅkāvatāra, the Southern School's awakening-text, signalling its Prajñāpāramitā allegiance.",
+              "parallels": [
+                {
+                  "label": "'A mind that abides nowhere' (Diamond Sutra)",
+                  "note": "This is the Platform Sutra's own citation of the Diamond Sutra; the non-abiding mind is the practical face of emptiness, the 'no-thought' (wu-nian) that Huineng will teach.",
+                  "textId": "diamond-sutra"
+                },
+                {
+                  "label": "Wu-wei / non-attachment (Daodejing)",
+                  "note": "The non-grasping mind echoes the Daoist non-action; McRae (2003) reads Chan's 'no-thought' as the Buddhist transform of the Daoist substrate.",
+                  "textId": "tao-te-ching-1"
+                }
+              ]
+            },
+            {
+              "word": "thoroughly enlightened",
+              "node": "emptiness-sunyata",
+              "type": "theme",
+              "note": "Sudden enlightenment (dunwu): awakening as an instantaneous recognition of the already-pure self-nature, not the terminus of gradual effort. The whole Platform Sutra is the charter of this doctrine. McRae (2003) cautions that 'sudden vs gradual' was a constructed polemic, but the Dunhuang text already centres dunwu as Huineng's distinctive teaching.",
+              "parallels": [
+                {
+                  "label": "Awakening hearing the Diamond Sutra",
+                  "note": "The Platform Sutra grounds sudden awakening in a single sentence of Prajñāpāramitā scripture — emptiness heard, not cultivated.",
+                  "textId": "diamond-sutra"
+                },
+                {
+                  "label": "Self-nature intrinsically pure",
+                  "note": "Yampolsky (1967): the Platform Sutra teaches that the self-nature (zixing) is from the first complete and pure, so enlightenment is its sudden self-recognition."
+                }
+              ]
+            },
+            {
+              "word": "use one's mind in such a way that it will be free from any attachment",
+              "node": "huineng",
+              "type": "person",
+              "note": "Huineng (638–713), the illiterate firewood-seller who becomes the Sixth Patriarch and founder of the Southern School. McRae (2003) demonstrates that the historical Huineng is largely a construction of his disciple Shenhui's eighth-century polemic; Yampolsky (1967) reconstructs the layered redaction (Fahai and later hands) behind the attributed text.",
+              "parallels": [
+                {
+                  "label": "Shenhui, the disciple-polemicist",
+                  "note": "McRae (2003): the 'sudden' Huineng of legend was built by Shenhui's campaign against Shenxiu's Northern School — the verse-contest is its founding myth, not bare history."
+                },
+                {
+                  "label": "The Bodhidharma transmission lineage",
+                  "note": "The robe passed to Huineng links him to the patriarchal succession from Bodhidharma; Yampolsky (1967) treats the Platform Sutra as central to fabricating that lineage's authority."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
+
+// -- Quran 18:9–26 (Surat al-Kahf — the Companions of the Cave / the Seven Sleepers) --
+SCRIPTURE_TEXTS['quran-18-kahf'] = {
+  "id": "quran-18-kahf",
+  "title": "Quran 18:9–26 (Surat al-Kahf — the Companions of the Cave / the Seven Sleepers)",
+  "shortTitle": "Quran 18 — The Cave",
+  "corpus": "Islam · Quran (Meccan sura)",
+  "tradId": "tradition-islam",
+  "date": "c. 615–620 CE (Meccan revelation; Sūra 18)",
+  "docNode": "document-quran-al-kahf",
+  "language": "Classical Arabic · J. M. Rodwell, The Koran (1861; text from the Project Gutenberg edition, ebook #2800) — public domain. Rodwell's marginal footnote-superscripts are omitted from the quoted verse text.",
+  "translations": [
+    {
+      "id": "rodwell",
+      "label": "Rodwell 1861",
+      "note": "J.M. Rodwell, The Koran, 1861 (Project Gutenberg #3434) — public domain"
+    }
+  ],
+  "intro": "Surat al-Kahf opens with the Companions of the Cave: young believers who flee a persecuting king into a cave, where God \"strikes upon their ears with deafness\" — a miraculous sleep of three hundred years \"and nine years over\" — turning them side to side while their dog lies at the threshold; they wake thinking a day has passed. The sura frames the episode explicitly as a sign of the resurrection (\"that the promise of God is true, and that as to 'the Hour' there is no doubt of its coming\"). It is the Quranic recension of the Christian Seven Sleepers of Ephesus — youths who hid under Decius and woke under Theodosius — the clearest single shared Christian-Islamic legend, whose Syriac form (Jacob of Serugh's verse homily) circulated widely across late-antique Arabia before entering the Quran (Griffith 2008; Reynolds 2010). It belongs to the same long Near Eastern grammar in which sleep figures the resurrection — Daniel's \"many that sleep in the dust shall awake,\" Paul's \"we shall not all sleep, but we shall all be changed.\"",
+  "crossTradition": [
+    {
+      "label": "Daniel 12 — many that sleep in the dust shall awake",
+      "note": "The earliest explicit Hebrew-Bible resurrection text uses the same sleep-and-waking figure the Cave-sleepers dramatize: bodily death imaged as sleep, resurrection as waking (Collins, Daniel [Hermeneia] 1993; Levenson, Resurrection and the Restoration of Israel 2006).",
+      "textId": "daniel-12"
+    },
+    {
+      "label": "1 Corinthians 15 — we shall not all sleep, but we shall all be changed",
+      "note": "Paul's resurrection chapter calls the dead 'them which are asleep' and the resurrection a waking/changing; the Cave is a narrative enactment of the same sleep-as-death/waking-as-resurrection scheme (Wright, The Resurrection of the Son of God 2003).",
+      "textId": "1-corinthians-15"
+    },
+    {
+      "label": "Seven Sleepers of Ephesus (Christian / Syriac)",
+      "note": "The direct source-legend: Christian youths who slept in a cave from the persecution of Decius (c. 250) to the reign of Theodosius (c. 450) and woke as a proof of the resurrection. Jacob of Serugh's Syriac metrical homily (early 6th c.) is the key transmitting form behind the Quranic version (Griffith, 'Christian Lore and the Arabic Qur'an,' in The Qurʾān in Its Historical Context 2008; Reynolds, The Qur'an and Its Biblical Subtext 2010, pp. 167–185)."
+    },
+    {
+      "label": "Descent of Inanna — the three days below",
+      "note": "The wider Near Eastern motif of a fixed sojourn in death (three days; here three centuries) from which the sleeper returns; the Cave reuses the interval-of-death structure rather than borrowing from Mesopotamia directly (Eliade, The Myth of the Eternal Return 1954, on cyclic death-and-return).",
+      "textId": "descent-inanna"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "The Inmates of the Cave",
+      "verses": [
+        {
+          "ref": "18:9",
+          "text": "Hast thou reflected that the Inmates of THE CAVE and of Al Rakim were on our wondrous signs?",
+          "textVersions": {
+            "rodwell": "Hast thou reflected that the Inmates of THE CAVE and of Al Rakim were on our wondrous signs?"
+          },
+          "entities": [
+            {
+              "word": "Inmates of THE CAVE",
+              "node": "sacred-cave",
+              "type": "symbol",
+              "note": "The cave (al-kahf) is the refuge and the womb-tomb of the sleepers; the sura is named for it. In Near Eastern cosmology the cave is the liminal interior where death and rebirth are enacted (Eliade, Patterns in Comparative Religion 1958, on the cave as cosmic interior).",
+              "parallels": [
+                {
+                  "label": "Cave of the Seven Sleepers (Ephesus)",
+                  "note": "The Christian legend's cave at Ephesus, shown to pilgrims; the Quran's 'Al Rakim' is variously read as the cave's name or an inscription naming the youths (Griffith 2008)."
+                }
+              ]
+            },
+            {
+              "word": "wondrous signs",
+              "node": "resurrection-of-the-dead",
+              "type": "theme",
+              "note": "The sura presents the sleepers as one of God's 'signs' (āyāt) — specifically a sign of the resurrection, made explicit at v. 21 ('that the promise of God is true, and that as to the Hour there is no doubt of its coming') (Reynolds, The Qur'an and Its Biblical Subtext 2010).",
+              "parallels": [
+                {
+                  "label": "Daniel 12 — awake to everlasting life",
+                  "note": "Resurrection as the waking of those who 'sleep in the dust' — the same sign read forward to the final judgment (Collins, Daniel 1993).",
+                  "textId": "daniel-12"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "18:10",
+          "text": "When the youths betook them to the cave they said, \"O our Lord! grant us mercy from before thee, and order for us our affair aright.\"",
+          "textVersions": {
+            "rodwell": "When the youths betook them to the cave they said, \"O our Lord! grant us mercy from before thee, and order for us our affair aright.\""
+          },
+          "entities": [
+            {
+              "word": "the youths betook them to the cave",
+              "node": "martyrdom-theology",
+              "type": "theme",
+              "note": "The fityān (young men) flee idolatry and a persecuting king — the confessor-under-persecution who suffers exile rather than apostatize; the Christian Sleepers fled the Decian persecution (Griffith 2008; Brown, The Cult of the Saints 1981, on the late-antique martyr-confessor).",
+              "parallels": [
+                {
+                  "label": "Seven Sleepers of Ephesus",
+                  "note": "Christian youths who hid in the cave from Decius rather than sacrifice to idols — the source-legend's persecution frame (Reynolds 2010, pp. 167–185)."
+                }
+              ]
+            },
+            {
+              "word": "grant us mercy from before thee",
+              "node": "allah",
+              "type": "deity",
+              "note": "Allah, the one God the youths invoke against the idols of their people; the prayer for mercy and right ordering frames the whole episode as an act of divine guidance and protection.",
+              "parallels": [
+                {
+                  "label": "the LORD who keeps Israel (Ps 121)",
+                  "note": "The monotheist's plea for protection against an idolatrous power; the same confessor-prayer pattern (Griffith 2008)."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "18:11",
+          "text": "Then struck we upon their ears with deafness in the cave for many a year:",
+          "textVersions": {
+            "rodwell": "Then struck we upon their ears with deafness in the cave for many a year:"
+          },
+          "entities": [
+            {
+              "word": "struck we upon their ears with deafness",
+              "node": "resurrection-of-the-dead",
+              "type": "theme",
+              "note": "God seals the sleepers' senses — the miraculous sleep that stands for death, from which the waking is a rehearsal of the resurrection. Rodwell's 'struck upon their ears with deafness' renders the Arabic 'we set a covering / a seal upon their ears' (Reynolds 2010).",
+              "parallels": [
+                {
+                  "label": "1 Corinthians 15 — we shall not all sleep, but we shall all be changed",
+                  "note": "Paul's the-dead-are-asleep / the-living-shall-be-changed grammar: sleep as the figure for death, waking for resurrection (Wright 2003).",
+                  "textId": "1-corinthians-15"
+                },
+                {
+                  "label": "Daniel 12 — many that sleep in the dust shall awake",
+                  "note": "The seed-image of resurrection as awaking from a sleep in the earth (Levenson 2006).",
+                  "textId": "daniel-12"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "18:12",
+          "text": "Then we awaked them that we might know which of the two parties could best reckon the space of their abiding.",
+          "textVersions": {
+            "rodwell": "Then we awaked them that we might know which of the two parties could best reckon the space of their abiding."
+          },
+          "entities": []
+        }
+      ]
+    },
+    {
+      "heading": "Turned to right and left — the dog at the threshold",
+      "verses": [
+        {
+          "ref": "18:17",
+          "text": "And thou wouldst have deemed them awake, though they were sleeping: and we turned them to the right and to the left. And in the entry lay their dog with paws outstretched.",
+          "textVersions": {
+            "rodwell": "And thou wouldst have deemed them awake, though they were sleeping: and we turned them to the right and to the left. And in the entry lay their dog with paws outstretched."
+          },
+          "entities": [
+            {
+              "word": "we turned them to the right and to the left",
+              "node": "resurrection-of-the-dead",
+              "type": "theme",
+              "note": "God turns the sleeping bodies side to side over the centuries to preserve them — the body kept incorrupt in its death-sleep, the condition of its eventual waking (Reynolds 2010).",
+              "parallels": [
+                {
+                  "label": "incorruption of the saints",
+                  "note": "The Christian Sleepers' bodies preserved unchanged across two centuries, a stock proof of bodily resurrection in the hagiography (Griffith 2008)."
+                }
+              ]
+            },
+            {
+              "word": "their dog with paws outstretched",
+              "node": "theme-cave-as-cosmic-interior",
+              "type": "theme",
+              "note": "The dog (later named Qitmir in the tafsir) lies at the threshold of the cave with forelegs stretched out — the guardian at the boundary between the world and the death-interior. The detail is part of the inherited Ephesus tale, not a Quranic invention (Reynolds 2010; Griffith 2008).",
+              "parallels": [
+                {
+                  "label": "the dog of the Sleepers (Christian legend)",
+                  "note": "Present in the Syriac/Greek versions of the Seven Sleepers; the Quran preserves and even debates the dog (v. 22) — a marker of shared transmission (Griffith 2008)."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "18:21",
+          "text": "And thus made we their adventure known to their fellow citizens, that they might learn that the promise of God is true, and that as to \"the Hour\" there is no doubt of its coming.",
+          "textVersions": {
+            "rodwell": "And thus made we their adventure known to their fellow citizens, that they might learn that the promise of God is true, and that as to \"the Hour\" there is no doubt of its coming."
+          },
+          "entities": [
+            {
+              "word": "the promise of God is true",
+              "node": "resurrection-of-the-dead",
+              "type": "theme",
+              "note": "The sura's own gloss: the sleepers' waking is given as evidence that the resurrection ('the Hour') is real and certain — the legend pressed into service as proof of the general resurrection, exactly its function in the Christian original (Griffith 2008; Reynolds 2010).",
+              "parallels": [
+                {
+                  "label": "Seven Sleepers as proof of the resurrection",
+                  "note": "In the Ephesus legend the youths wake precisely to settle a dispute about whether the dead rise bodily — the same apologetic use (Griffith, 'Christian Lore and the Arabic Qur'an' 2008)."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "18:22",
+          "text": "Some say, \"They were three; their dog the fourth:\" others say, \"Five; their dog the sixth,\" guessing at the secret: others say, \"Seven; and their dog the eighth.\" SAY: My Lord best knoweth the number: none, save a few, shall know them.",
+          "textVersions": {
+            "rodwell": "Some say, \"They were three; their dog the fourth:\" others say, \"Five; their dog the sixth,\" guessing at the secret: others say, \"Seven; and their dog the eighth.\" SAY: My Lord best knoweth the number: none, save a few, shall know them."
+          },
+          "entities": [
+            {
+              "word": "My Lord best knoweth the number",
+              "node": "allah",
+              "type": "deity",
+              "note": "Rodwell's gloss of v. 22's close; the dispute over the sleepers' number (three, five, seven) and the dog reflects the variant Christian tellings the Quran knows and adjudicates — God alone 'best knoweth the number,' asserting the divine source over the contested Christian transmission (Griffith 2008; Reynolds 2010).",
+              "parallels": [
+                {
+                  "label": "variant Christian recensions",
+                  "note": "The 'seven' of the Greek tradition vs. other counts; the Quran's awareness of competing versions is itself evidence of live cross-tradition contact (Reynolds 2010)."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Three hundred years and nine",
+      "verses": [
+        {
+          "ref": "18:25",
+          "text": "And they tarried in their cave 300 years, and 9 years over.",
+          "textVersions": {
+            "rodwell": "And they tarried in their cave 300 years, and 9 years over."
+          },
+          "entities": [
+            {
+              "word": "tarried in their cave 300 years, and 9 years over",
+              "node": "resurrection-of-the-dead",
+              "type": "theme",
+              "note": "Three hundred and nine years (309 solar ≈ 300 lunar) — the Quranic span of the death-sleep, longer than the Christian legend's ~200 years (Decius to Theodosius); the sleepers wake thinking 'a day or part of a day' has passed (v. 19), the contraction of time that marks the threshold of resurrection (Reynolds 2010; Griffith 2008).",
+              "parallels": [
+                {
+                  "label": "Seven Sleepers — Decius to Theodosius",
+                  "note": "The Christian legend's roughly two-century sleep; the Quran's longer figure and the gloss 'God best knoweth how long they tarried' (v. 26) show it reworking, not merely copying, the source (Griffith 2008)."
+                },
+                {
+                  "label": "'a day, or part of a day' (Quran 18:19)",
+                  "note": "The waking sleepers misjudge their span as a single day — the same time-compression by which the dead, at the resurrection, feel they have slept only briefly (cf. Quran 2:259; Reynolds 2010)."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "18:26",
+          "text": "SAY: God best knoweth how long they tarried: With Him are the secrets of the Heavens and of the Earth: Look thou and hearken unto Him alone.",
+          "textVersions": {
+            "rodwell": "SAY: God best knoweth how long they tarried: With Him are the secrets of the Heavens and of the Earth: Look thou and hearken unto Him alone."
+          },
+          "entities": []
+        }
+      ]
+    }
+  ]
+};
+
+// -- Tao Te Ching — Chapters 42 & 40: The Dao Gives Birth to the One --
+SCRIPTURE_TEXTS['tao-te-ching-42'] = {
+  "id": "tao-te-ching-42",
+  "title": "Tao Te Ching — Chapters 42 & 40: The Dao Gives Birth to the One",
+  "shortTitle": "Tao Te Ching 42 & 40",
+  "corpus": "Daoist · Classical Chinese",
+  "tradId": "tradition-daoism",
+  "date": "c. 4th–3rd century BCE (attributed to Laozi; received Wang Bi recension c. 226–249 CE)",
+  "docNode": "phase-2-014-daodejing",
+  "language": "Classical Chinese · James Legge translation (The Texts of Taoism, Part I = The Tao Teh King, Sacred Books of the East vol. 39, Oxford 1891) — public domain",
+  "translations": [
+    {
+      "id": "legge",
+      "label": "Legge 1891 (SBE 39)",
+      "note": "James Legge, The Tao Teh King (Sacred Books of the East vol. 39), 1891 — public domain"
+    }
+  ],
+  "intro": "Chapter 42 of the Tao Te Ching is the single most concentrated cosmogonic sentence in the Daoist canon: \"The Tao produced One; One produced Two; Two produced Three; Three produced All things.\" It names the generation of multiplicity out of an undifferentiated source as a staged emanation — One, Two, Three, the ten-thousand things (wanwu) — and grounds it in the polarity of yin and yang held in harmony by the \"Breath of Vacancy\" (qi). Chapter 40 supplies the counter-motion: \"The movement of the Tao by contraries proceeds,\" and \"all things sprang from It as existing; that existence sprang from It as non-existent\" — being (you) born of non-being (wu). Together the two chapters give the outward unfolding and the inward return. This is the same generation-of-the-many-from-the-One that the Yijing's Great Treatise frames as the Grand Terminus producing the two Forms, that the Rigvedic Nasadiya Sukta poses as \"the One that breathed, windless,\" and that the Hiranyagarbha hymn casts as the Golden Embryo — a cosmogonic grammar reached by several traditions, here in its distinctively impersonal, self-unfolding Chinese form.",
+  "crossTradition": [
+    {
+      "label": "Yijing — Great Treatise (taiji produces the two Forms)",
+      "note": "The closest intra-Chinese parallel: the Great Treatise's Grand Terminus (taiji) → two Forms → four Symbols → eight Trigrams is the same staged generation as Laozi's Dao → One → Two → Three → ten-thousand things, both naming the totality as wanwu. Needham (Science and Civilisation in China vol. 2, 1956) treats both as expressions of one organic-correlative Chinese cosmology; Graham (Disputers of the Tao, 1989) reads DDJ 42 as the proto-form of the later Chinese cosmogonic sequence.",
+      "textId": "yijing-great-treatise"
+    },
+    {
+      "label": "Nasadiya Sukta (RV 10.129) — the One that breathed, windless",
+      "note": "The Rigvedic Hymn of Creation posits 'the One' (tad ekam) breathing windless before any differentiation of being and non-being — a primal undifferentiated source from which the cosmos unfolds, structurally parallel to the Dao before it produced the One. The convergence is on the cosmogonic problem, not on transmission. Brereton and Jamison stress the hymn's pre-differentiation theme; the DDJ 40 'being born of non-being' poses the same priority puzzle.",
+      "textId": "nasadiya-sukta"
+    },
+    {
+      "label": "Rigveda 10.121 — Hiranyagarbha, the Golden Embryo",
+      "note": "The Golden Embryo (Hiranyagarbha) is the Vedic cosmic-unity / world-egg from which the ordered cosmos arises — the Indian member of the primal-unity-generates-the-cosmos pattern that DDJ 42 expresses as the One producing the Two and Three. Eliade (Patterns in Comparative Religion, 1958) groups the cosmic-egg / golden-germ motifs as one cross-cultural cosmogonic type, of which the Chinese Pangu-egg is also an instance.",
+      "textId": "rigveda-10-121"
+    },
+    {
+      "label": "Tao Te Ching 1 — the nameless Dao as Mother of all things",
+      "note": "The companion Daodejing reader entry: where Ch.1 sets the Dao beyond predication as the nameless Originator and 'Mother of all things,' Ch.42 gives the dynamic sequence by which that source generates the ten-thousand things. Graham (Disputers of the Tao, 1989) reads the two as the static (Ch.1) and processive (Ch.42) faces of one cosmogony.",
+      "textId": "tao-te-ching-1"
+    },
+    {
+      "label": "Enuma Elish — cosmos generated from a primordial pair",
+      "note": "The Babylonian epic opens with the primordial waters Apsu and Tiamat commingling to beget the first generation of gods — a cosmogony of differentiation out of an original undivided water, contrasting with DDJ 42's impersonal, non-genealogical emanation. The contrast is the point: Graham (Disputers of the Tao, 1989) stresses that the Daoist 'shēng' ('produced / gave birth to') resists the personal, mythic genealogy of Near Eastern theogonies even while sharing the One-to-many shape.",
+      "textId": "enuma-elish-1"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "Chapter 42 — The Dao Produces the One",
+      "verses": [
+        {
+          "ref": "Ch. 42 (opening)",
+          "text": "The Tao produced One; One produced Two; Two produced Three; Three produced All things. All things leave behind them the Obscurity (out of which they have come), and go forward to embrace the Brightness (into which they have emerged), while they are harmonised by the Breath of Vacancy.",
+          "textVersions": {
+            "legge": "The Tao produced One; One produced Two; Two produced Three; Three produced All things. All things leave behind them the Obscurity (out of which they have come), and go forward to embrace the Brightness (into which they have emerged), while they are harmonised by the Breath of Vacancy."
+          },
+          "entities": [
+            {
+              "word": "The Tao produced One; One produced Two; Two produced Three; Three produced All things",
+              "node": "dao",
+              "type": "theme",
+              "note": "DDJ 42's cosmogonic sequence — Legge's 'The Tao produced One; One produced Two...' renders the Chinese 'dao sheng yi, yi sheng er, er sheng san, san sheng wanwu.' The dao node identifies the Dao as 'the nameless source from which Heaven, Earth, and the ten-thousand things arise.' Graham (Disputers of the Tao, 1989) reads this as the staged emanation of multiplicity from an undifferentiated source; the verb sheng ('produces / gives birth to') is generative but not the instrumental mediation of a personal creator. Legge himself (SBE 39 introduction, 1891) stressed the impersonal, self-unfolding character that distinguishes the Dao's production from the Hebrew Creator's word.",
+              "parallels": [
+                {
+                  "label": "Yijing — Grand Terminus produces the two Forms",
+                  "note": "taiji → two Forms → four Symbols → eight Trigrams is the same generation-of-the-many; Needham (SCC vol. 2, 1956) calls both expressions of one Chinese correlative cosmology.",
+                  "textId": "yijing-great-treatise"
+                },
+                {
+                  "label": "Nasadiya Sukta — the One (tad ekam) before being and non-being",
+                  "note": "The Vedic 'One that breathed, windless' is the undifferentiated source before the One produced the Two — the same problem of the prior unity, posed interrogatively (Brereton & Jamison).",
+                  "textId": "nasadiya-sukta"
+                },
+                {
+                  "label": "The One (Plotinus)",
+                  "note": "Plotinian emanation — the One overflowing into Nous, then Soul, then the sensible world — is the Mediterranean staged-procession parallel; Graham (1989) and the comparative literature note the homology of unfolding from a simple source, while cautioning the Dao is not hypostatized as Plotinus's One is."
+                }
+              ]
+            },
+            {
+              "word": "Three produced All things",
+              "node": "evolutionary-cosmogony",
+              "type": "theme",
+              "note": "The numbered staging (One → Two → Three → the ten-thousand things) is a staged / emergent cosmogony: the cosmos unfolds through discrete grades rather than appearing whole. The evolutionary-cosmogony node groups this 'progressive creation' shape, also seen in the Hawaiian Kumulipo's sixteen eras and the Maori Te Kore → Te Po grades. Graham (Disputers of the Tao, 1989) reads DDJ 42's sequence as the seed-cell of the later Chinese numerological cosmogony elaborated by Zhou Dunyi.",
+              "parallels": [
+                {
+                  "label": "Yijing — taiji → two Forms → four Symbols → eight Trigrams",
+                  "note": "The Great Treatise's doubling sequence is the most explicit Chinese staged cosmogony; Needham (SCC vol. 2, 1956) traces both to one correlative substrate.",
+                  "textId": "yijing-great-treatise"
+                },
+                {
+                  "label": "Rigveda 10.121 — Hiranyagarbha as the staged emergence of the ordered cosmos",
+                  "note": "The Golden Embryo from which the gods and the cosmos progressively arise; Eliade (Patterns in Comparative Religion, 1958) classes the cosmic-egg / golden-germ as one cross-cultural emergent-cosmogony type.",
+                  "textId": "rigveda-10-121"
+                }
+              ]
+            },
+            {
+              "word": "All things leave behind them the Obscurity",
+              "node": "divine-emanation",
+              "type": "theme",
+              "note": "The procession from the One into the many — the ten-thousand things issuing from the Dao and then carrying yin (the 'Obscurity') and yang (the 'Brightness') — is the Daoist member of the cross-tradition emanation pattern catalogued under divine-emanation (Neoplatonic procession, Kabbalistic aṣilut, Sufi fayd). Graham (Disputers of the Tao, 1989) and the comparative literature treat the Dao's sheng as an emanative generation distinct from creation ex nihilo; Pierre Hadot's work on Plotinus (Plotinus or the Simplicity of Vision, 1993) frames the Neoplatonic analogue.",
+              "parallels": [
+                {
+                  "label": "Divine Emanation (Plotinus / Kabbalah / Sufism)",
+                  "note": "The cross-tradition pattern of the many proceeding from a simple source — the Atlas hub for Neoplatonic procession, Kabbalistic emanation, and Sufi self-disclosure, of which the Dao's production of the ten-thousand things is the Chinese instance."
+                },
+                {
+                  "label": "The One (Plotinus)",
+                  "note": "The One's overflow into the hypostases is the paradigm emanative source; the homology with the Dao's production is noted in comparative scholarship even as the Dao resists hypostatization (Graham, 1989)."
+                }
+              ]
+            },
+            {
+              "word": "harmonised by the Breath of Vacancy",
+              "node": "yin-yang",
+              "type": "symbol",
+              "note": "Legge's 'they leave behind the Obscurity... embrace the Brightness... harmonised by the Breath of Vacancy' renders the Chinese 'wanwu fu yin er bao yang, chong qi yi wei he' — the ten-thousand things carry the yin on their backs and embrace the yang, blended into harmony by the surging qi (the 'Breath of Vacancy'). The yin-yang node records that the philosophical concept (陰陽) is attested in the Warring States Daodejing and Yijing, far older than the canonical Song-dynasty taijitu diagram (Zhou Dunyi, c. 1060). This is the earliest yin-yang pairing in the Daodejing itself.",
+              "parallels": [
+                {
+                  "label": "Yijing — 'one yin, one yang: this is the Dao'",
+                  "note": "The Great Treatise makes the bipolar alternation of yin and yang the Way itself; Needham (SCC vol. 2, 1956) calls this the foundational 'two fundamental forces' of Chinese correlative thought, the same polarity DDJ 42 names in the ten-thousand things.",
+                  "textId": "yijing-great-treatise"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Chapter 40 — Returning Is the Motion of the Dao",
+      "verses": [
+        {
+          "ref": "Ch. 40 (full)",
+          "text": "The movement of the Tao by contraries proceeds; And weakness marks the course of Tao's mighty deeds. All things under heaven sprang from It as existing (and named); that existence sprang from It as non-existent (and not named).",
+          "textVersions": {
+            "legge": "The movement of the Tao by contraries proceeds; And weakness marks the course of Tao's mighty deeds. All things under heaven sprang from It as existing (and named); that existence sprang from It as non-existent (and not named)."
+          },
+          "entities": [
+            {
+              "word": "The movement of the Tao by contraries proceeds",
+              "node": "dao",
+              "type": "theme",
+              "note": "Legge's 'The movement of the Tao by contraries proceeds' renders 'fan zhe dao zhi dong' — reversal / returning (fan) is the motion of the Dao. The dao node's domains include 'the pattern of nature (ziran)' and the cyclical return of all things to their source; the Daodejing doc node records 'Returning — fan / gui: the dao moves by reversal; things return to their origin' as one of the text's core concepts. Graham (Disputers of the Tao, 1989) treats reversal-to-origin as the structural complement to DDJ 42's outward production.",
+              "parallels": [
+                {
+                  "label": "Tao Te Ching 1 — the Dao as the return of all things to their source",
+                  "note": "Ch.1's nameless Originator and Ch.40's reversal-to-origin frame the same cycle of emission and return; the Atlas dao node lists fan (return) as the Dao's characteristic motion (Graham, 1989).",
+                  "textId": "tao-te-ching-1"
+                }
+              ]
+            },
+            {
+              "word": "that existence sprang from It as non-existent (and not named)",
+              "node": "divine-unity",
+              "type": "theme",
+              "note": "Legge's 'all things sprang from It as existing; that existence sprang from It as non-existent' renders 'tianxia wanwu sheng yu you, you sheng yu wu' — the ten-thousand things are born of being (you), and being is born of non-being (wu). This grounds plurality in a prior non-differentiated unity: the wu (non-being) is not nothingness but the unnameable source preceding all determinate existence. The divine-unity node catalogues the cross-tradition doctrine of the One as the ground of the many; Graham (Disputers of the Tao, 1989) reads DDJ 40's 'being born of non-being' as the metaphysical pivot of the whole text.",
+              "parallels": [
+                {
+                  "label": "Nasadiya Sukta — neither existence nor non-existence at the origin",
+                  "note": "The Vedic refusal to assign the primordial to either being or non-being parallels DDJ 40's grounding of being in non-being; both pose the priority of the undifferentiated over the differentiated (Brereton & Jamison).",
+                  "textId": "nasadiya-sukta"
+                },
+                {
+                  "label": "Divine Unity — the One as ground of the many",
+                  "note": "The cross-tradition doctrine that all multiplicity rests on a prior unity; the Daoist wu (non-being as source of being) is its distinctively apophatic Chinese formulation."
+                }
+              ]
+            },
+            {
+              "word": "non-existent (and not named)",
+              "node": "apophatic-mysticism",
+              "type": "theme",
+              "note": "The grounding of being in wu (non-being, 'the not-named') is the Daodejing's apophatic move: the ultimate source is approached by negation, nameless and prior to all predication, as DDJ 1 ('the name that can be named is not the enduring name') already established. Michael Sells (Mystical Languages of Unsaying, 1994) anatomizes this performative 'unsaying' across Plotinus, Eriugena, Ibn Arabi, and Eckhart; the apophatic-mysticism node names the via negativa pattern of which the Daoist wu is the East Asian instance. (Applying Sells's model to the Daoist case is the Atlas's extension; Daoism is not itself one of his chapters.)",
+              "parallels": [
+                {
+                  "label": "Tao Te Ching 1 — the nameless Dao beyond predication",
+                  "note": "Ch.1's unnameable Dao and Ch.40's 'being born of the non-existent and not named' are the same apophatic ground in static and processive aspect (Sells, 1994; Graham, 1989).",
+                  "textId": "tao-te-ching-1"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
