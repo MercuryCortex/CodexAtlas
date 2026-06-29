@@ -35641,3 +35641,1516 @@ SCRIPTURE_TEXTS['empedocles-roots-love-strife'] = {
     }
   ]
 };
+
+// -- The Hymn of the Pearl (Acts of Thomas 108–113) — The Hymn of the Robe of Glory --
+SCRIPTURE_TEXTS['hymn-of-the-pearl'] = {
+  "id": "hymn-of-the-pearl",
+  "title": "The Hymn of the Pearl (Acts of Thomas 108–113) — The Hymn of the Robe of Glory",
+  "shortTitle": "Hymn of the Pearl",
+  "corpus": "Gnostic / Apocryphal Acts · Hymn of the Robe of Glory (embedded in the Acts of Thomas)",
+  "tradId": "tradition-gnosticism",
+  "date": "c. 2nd–3rd century CE (Syriac; the Acts of Thomas, often attributed to the school of Bardaiṣan of Edessa)",
+  "docNode": "phase-7-013-gnostic-religion",
+  "language": "Syriac (original) · G. R. S. Mead, \"The Hymn of the Robe of Glory,\" from Fragments of a Faith Forgotten (1900) / Echoes from the Gnosis vol. X (1908) — public domain",
+  "translations": [
+    {
+      "id": "mead",
+      "label": "Mead 1908",
+      "note": "G.R.S. Mead, The Hymn of the Robe of Glory (Echoes from the Gnosis vol. X), 1908 — public domain"
+    }
+  ],
+  "intro": "The Hymn of the Pearl (the Hymn of the Robe of Glory, or Hymn of the Soul) is a short verse-tale embedded in the apocryphal Acts of Thomas, sung by the apostle in prison. A king's son is sent from his Father's House in the East down into Egypt to win the one Pearl that lies in the sea guarded by a loud-breathing serpent; in Egypt he eats the people's food, forgets that he is a king's son, forgets the Pearl, and sinks into a deep sleep — until a letter from his parents awakens his memory, he charms the serpent and seizes the Pearl, and re-ascends to put on once more his shining Robe of Glory, his own higher self left behind at home. Hans Jonas (1958) made it the paradigm of the Gnostic \"call from without\": the soul's descent into matter, its forgetting, the summons that re-awakens it, and gnosis as the recovery of an identity that was always its own. The allegory is the most luminous narrative statement of the Gnostic myth — the same drama the Apocryphon of John tells as Sophia's fall and the awakening Pronoia, and that the Hermetic Poimandres tells as the descent and re-ascent of Anthrōpos.",
+  "crossTradition": [
+    {
+      "label": "Apocryphon of John (Sethian)",
+      "note": "The Sethian myth in narrative form: the divine spark falls into the lower world and is roused by the awakening call of Pronoia/Epinoia. Jonas, The Gnostic Religion (1958), and Layton, The Gnostic Scriptures (1987), read the Hymn's 'letter' and the Apocryphon's saving 'call' as the same motif — the summons from the world of light that re-awakens the forgetful soul.",
+      "textId": "apocryphon-of-john"
+    },
+    {
+      "label": "Poimandres / Corpus Hermeticum I (Hermetic)",
+      "note": "The Hermetic descent of Anthrōpos (the luminous Man) into matter and his re-ascent through the spheres is the Hermetic twin of the prince's journey down to Egypt and home again. Jonas (1958) groups the Hymn and Poimandres as two expressions of the one descent-and-return Gnostic pattern.",
+      "textId": "poimandres"
+    },
+    {
+      "label": "Gospel of Thomas (Thomasine)",
+      "note": "Saying 3 ('the kingdom is within you and outside you'; self-knowledge as knowing 'the sons of the living Father') and the bringing-forth of 'what is within you' (saying 70) make gnosis a recovery of one's own forgotten origin — the Hymn's robe 'I saw it in all of me, and saw me all in it.' Both belong to the Thomas-name Syriac milieu (Layton 1987).",
+      "textId": "gospel-of-thomas"
+    },
+    {
+      "label": "Thunder, Perfect Mind (Nag Hammadi)",
+      "note": "A revealer-voice speaking in the first person to summon the hearer to recognition; the same 'call from without' that wakes the sleeper, here in self-proclamatory aretalogy form (Layton 1987). Parallel of the awakening-call structure, not of the descent narrative.",
+      "textId": "thunder-perfect-mind"
+    },
+    {
+      "label": "Descent of Inanna (Sumerian)",
+      "note": "The far older Near-Eastern descent into a realm of forgetting and the return: structurally the prince's katabasis to Egypt and re-ascent. Jonas (1958) treats the Gnostic descent as a re-mythologising of the ancient Near-Eastern descent pattern that the Inanna/Ishtar myth first attests — convergent structure, not direct dependence."
+    }
+  ],
+  "sections": [
+    {
+      "heading": "The Commission: down to Egypt for the Pearl",
+      "verses": [
+        {
+          "ref": "Hymn 12–15 (Mead vv.)",
+          "text": "If thou goest down into Egypt, / And thence thou bring'st the one Pearl / [The Pearl] that lies in the Sea, / Hard by the loud-breathing Serpent,",
+          "textVersions": {
+            "mead": "If thou goest down into Egypt, / And thence thou bring'st the one Pearl / [The Pearl] that lies in the Sea, / Hard by the loud-breathing Serpent,"
+          },
+          "entities": [
+            {
+              "word": "down into Egypt",
+              "node": "underworld-descent",
+              "type": "theme",
+              "note": "In the Gnostic allegory Egypt is the lower world of matter and forgetfulness; the prince's journey 'down' is a descent-narrative (katabasis) of the soul into the body. Jonas, The Gnostic Religion (1958), reads Egypt as the standing Gnostic cipher for the material world; the descent is the same downward movement the Apocryphon of John tells of the fallen spark.",
+              "parallels": [
+                {
+                  "label": "Descent of Inanna (Sumerian)",
+                  "note": "The oldest Near-Eastern descent into a realm of forgetting and return; the structural ancestor of the soul's katabasis (Jonas 1958)."
+                },
+                {
+                  "label": "Poimandres — Anthrōpos descends",
+                  "note": "The luminous Man falls into Nature/matter and must re-ascend; the Hermetic form of the same downward movement (Jonas 1958).",
+                  "textId": "poimandres"
+                }
+              ]
+            },
+            {
+              "word": "into Egypt",
+              "node": "dualism-spirit-matter",
+              "type": "theme",
+              "note": "Egypt = hylē, matter, the realm opposed to the world of spirit/light from which the prince comes. The descent dramatises the pneumatic–hylic dualism that structures the whole Gnostic myth. Jonas (1958); Layton, The Gnostic Scriptures (1987).",
+              "parallels": [
+                {
+                  "label": "Apocryphon of John — spark in the lower world",
+                  "note": "The divine spark imprisoned in the material body it must be roused from — the dualism Egypt allegorises (Layton 1987).",
+                  "textId": "apocryphon-of-john"
+                }
+              ]
+            },
+            {
+              "word": "the one Pearl",
+              "node": "soul-as-spark",
+              "type": "theme",
+              "note": "The single Pearl is the prince's own true self — the divine spark (pneumatic seed) he goes to reclaim. Jonas (1958) reads the Pearl as the soul/spirit itself; Layton (1987) as the lost portion of light. Recovering it is recovering one's own forgotten identity.",
+              "parallels": [
+                {
+                  "label": "Gospel of Thomas — 'what is within you'",
+                  "note": "Saying 70: 'If you bring forth what is within you, what you have will save you' — gnosis as the recovery of the indwelling spark (Layton 1987).",
+                  "textId": "gospel-of-thomas"
+                },
+                {
+                  "label": "Apocryphon of John — the divine spark",
+                  "note": "The pneumatic seed/light-spark in humanity that the saving call awakens (Jonas 1958).",
+                  "textId": "apocryphon-of-john"
+                }
+              ]
+            },
+            {
+              "word": "the loud-breathing Serpent",
+              "node": "serpent-wisdom-chthonic",
+              "type": "symbol",
+              "note": "A chthonic guardian-serpent coiled in the sea around the Pearl — the dragon that must be charmed before the treasure can be won. The treasure-guarding serpent is a widespread mytheme; here it figures the powers of the material world (the archons) that keep the soul from its own (Jonas 1958).",
+              "parallels": [
+                {
+                  "label": "Apocryphon of John — the archons guarding the spark",
+                  "note": "The serpent stands for the cosmic powers (archons) that imprison and guard the captive light (Jonas 1958).",
+                  "textId": "apocryphon-of-john"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "The Forgetting and the Deep Sleep",
+      "verses": [
+        {
+          "ref": "Hymn 32–35 (Mead vv.)",
+          "text": "I forgot that I was a King's son, / And became a slave to their king. / I forgot all concerning the Pearl / For which my Parents had sent me; / And from the weight of their victuals / I sank down into a deep sleep.",
+          "textVersions": {
+            "mead": "I forgot that I was a King's son, / And became a slave to their king. / I forgot all concerning the Pearl / For which my Parents had sent me; / And from the weight of their victuals / I sank down into a deep sleep."
+          },
+          "entities": [
+            {
+              "word": "I forgot that I was a King's son",
+              "node": "soul-as-spark",
+              "type": "theme",
+              "note": "Forgetting one's royal origin = the soul's forgetting of its divine descent, the central Gnostic affliction. The prince is 'a King's son' because the spark is of the Father's own substance; to forget it is to forget that one is light. Jonas (1958), 'the soul's forgetting'.",
+              "parallels": [
+                {
+                  "label": "Gospel of Thomas — knowing 'the sons of the living Father'",
+                  "note": "Saying 3: to know oneself is to know one is a child of the living Father; the cure for the prince's forgetting (Layton 1987).",
+                  "textId": "gospel-of-thomas"
+                }
+              ]
+            },
+            {
+              "word": "a slave to their king",
+              "node": "soul-exile-longing",
+              "type": "theme",
+              "note": "Exile and enslavement in a foreign land — the soul's ghurba, its estrangement in matter, far from the Father's House. Jonas (1958) treats the Hymn as the classic statement of the soul's exile; Layton (1987) as the Gnostic 'alienation' motif.",
+              "parallels": [
+                {
+                  "label": "Apocryphon of John — the soul's estrangement",
+                  "note": "The captive spark longing for the realm of light it came from (Jonas 1958).",
+                  "textId": "apocryphon-of-john"
+                }
+              ]
+            },
+            {
+              "word": "a deep sleep",
+              "node": "gnosis-as-salvation",
+              "type": "theme",
+              "note": "Sleep, drunkenness, and forgetfulness are the Gnostic figures for the soul's condition in the world before gnosis; the antidote is awakening. Jonas (1958) names 'sleep' and 'awakening' as the master-pair of Gnostic soteriology, salvation being the rousing of the sleeper into self-knowledge.",
+              "parallels": [
+                {
+                  "label": "Apocryphon of John — the call that wakes the sleeper",
+                  "note": "Pronoia's descent and cry 'Awake!' to the one sunk in the sleep of death (Jonas 1958; Layton 1987).",
+                  "textId": "apocryphon-of-john"
+                },
+                {
+                  "label": "Thunder, Perfect Mind — the rousing voice",
+                  "note": "A revealer-voice summoning the hearer out of forgetfulness to recognition (Layton 1987).",
+                  "textId": "thunder-perfect-mind"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "The Letter: the Call that Awakens",
+      "verses": [
+        {
+          "ref": "Hymn 43–45 (Mead vv.)",
+          "text": "Remember that thou art a King's son; / See whom thou hast served in thy slavedom. / Bethink thyself of the Pearl,",
+          "textVersions": {
+            "mead": "Remember that thou art a King's son; / See whom thou hast served in thy slavedom. / Bethink thyself of the Pearl,"
+          },
+          "entities": [
+            {
+              "word": "Remember that thou art a King's son",
+              "node": "gnosis-as-salvation",
+              "type": "theme",
+              "note": "The letter is the 'call from without' — saving knowledge sent from the world of light that re-awakens the soul's memory of its own origin. Jonas (1958) made this letter the type-specimen of the Gnostic call; gnosis here is precisely recollection of who one is. Layton (1987) reads it as revealed knowledge that liberates.",
+              "parallels": [
+                {
+                  "label": "Apocryphon of John — the awakening call of Pronoia",
+                  "note": "The threefold descent of the saving Pronoia who cries to the sleeper to remember and arise (Jonas 1958; Layton 1987).",
+                  "textId": "apocryphon-of-john"
+                },
+                {
+                  "label": "Poimandres — the revealer's instruction",
+                  "note": "Poimandres reveals to the seer his divine origin and the way of re-ascent — the Hermetic form of the saving call (Jonas 1958).",
+                  "textId": "poimandres"
+                }
+              ]
+            },
+            {
+              "word": "art a King's son",
+              "node": "alien-god",
+              "type": "theme",
+              "note": "The 'King of all Kings' who sends the letter is the transcendent Father beyond the cosmos — the Gnostic alien/unknown God, of whose substance the spark is. The prince's true allegiance is to a Father wholly outside the world of Egypt. Jonas (1958), the 'alien God'.",
+              "parallels": [
+                {
+                  "label": "Poimandres — the Father-Mind beyond the spheres",
+                  "note": "The transcendent Nous/Father from whom Anthrōpos descends and to whom he returns (Jonas 1958).",
+                  "textId": "poimandres"
+                }
+              ]
+            },
+            {
+              "word": "Bethink thyself of the Pearl",
+              "node": "soul-as-spark",
+              "type": "theme",
+              "note": "To 'bethink thyself of the Pearl' is to recover awareness of one's own divine self left in the world; the awakening restores the very identity the forgetting lost. Jonas (1958); Layton (1987).",
+              "parallels": [
+                {
+                  "label": "Gospel of Thomas — bring forth what is within",
+                  "note": "Saying 70: the inner treasure that, brought forth, saves — the Pearl recovered (Layton 1987).",
+                  "textId": "gospel-of-thomas"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "The Serpent Charmed, the Pearl Seized",
+      "verses": [
+        {
+          "ref": "Hymn 54–57 (Mead vv.)",
+          "text": "I began [then] to charm him, / The terrible loud-breathing Serpent. / And [thereon] I snatched up the Pearl,",
+          "textVersions": {
+            "mead": "I began [then] to charm him, / The terrible loud-breathing Serpent. / And [thereon] I snatched up the Pearl,"
+          },
+          "entities": [
+            {
+              "word": "to charm him",
+              "node": "serpent-wisdom-chthonic",
+              "type": "symbol",
+              "note": "The guardian-serpent is overcome not by combat but by 'charming' — naming the Father, Mother and the Pearl's brother. The treasure-guarding dragon is mastered so the soul may take its own; here the archontic powers are disarmed by the words of the call (Jonas 1958).",
+              "parallels": [
+                {
+                  "label": "Apocryphon of John — the archons disarmed",
+                  "note": "The cosmic powers that guard the captive light are overcome so the spark may rise (Jonas 1958).",
+                  "textId": "apocryphon-of-john"
+                }
+              ]
+            },
+            {
+              "word": "I snatched up the Pearl",
+              "node": "gnosis-as-salvation",
+              "type": "theme",
+              "note": "Seizing the Pearl is the moment of gnosis-as-deliverance: the soul, awakened, repossesses its own and turns homeward to re-ascend and put on again its Robe of Glory (the higher self left in the Father's House). Jonas (1958) calls this the return; Layton (1987), the re-ascent of the saved.",
+              "parallels": [
+                {
+                  "label": "Poimandres — the re-ascent through the spheres",
+                  "note": "After awakening, Anthrōpos re-ascends, shedding the garments of the spheres to regain his original form (Jonas 1958).",
+                  "textId": "poimandres"
+                },
+                {
+                  "label": "Apocryphon of John — the spark's return to the light",
+                  "note": "The awakened spark ascends out of the lower world back to its origin (Jonas 1958).",
+                  "textId": "apocryphon-of-john"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
+
+// -- Augustine, Confessions XI.13–28 (What then is time? — the distention of the soul) --
+SCRIPTURE_TEXTS['augustine-confessions-11'] = {
+  "id": "augustine-confessions-11",
+  "title": "Augustine, Confessions XI.13–28 (What then is time? — the distention of the soul)",
+  "shortTitle": "Confessions XI",
+  "corpus": "Christian (Latin) · Patristic corpus",
+  "tradId": "tradition-latin-christianity",
+  "date": "397–401 CE (composed at Hippo Regius, North Africa)",
+  "docNode": "phase-4-028-augustine-confessions",
+  "language": "Latin · E. B. Pusey translation (The Confessions of S. Augustine, 1838; text verbatim from the public-domain Project Gutenberg edition #3296, \"The Confessions of Saint Augustine,\" translated by E. B. Pusey)",
+  "translations": [
+    {
+      "id": "pusey",
+      "label": "Pusey 1838",
+      "note": "E.B. Pusey, The Confessions of St. Augustine, 1838 (Project Gutenberg #3296) — public domain"
+    }
+  ],
+  "intro": "Book XI of the Confessions turns from autobiography to a sustained meditation on time and eternity, prompted by the question \"What did God before He made heaven and earth?\" Augustine's answer dissolves the question: time itself is a creature, made with the world, so there was no \"then\" before creation. He then poses his most famous aporia — \"What then is time? If no one asks me, I know: if I wish to explain it to one that asketh, I know not\" — and argues that neither past nor future has being; there is only a present of things past (memory), present (sight), and future (expectation). Time, he concludes, is a \"protraction\" — distentio animi, a distention or stretching-out of the soul — measured not in things but in the mind, against God's eternity, which is an ever-present \"To-day\" whose \"years neither come nor go.\" This is the foundational Western philosophical analysis of subjective time, and Augustine's most direct debt to Neoplatonism: O'Donnell and Chadwick both trace its frame to Plotinus, who defined Time as the moving image of Eternity and the life of the World-Soul.",
+  "crossTradition": [
+    {
+      "label": "Plotinus, Enneads — Time as the moving image of Eternity, the life of the World-Soul",
+      "note": "Augustine's direct Neoplatonic source. Plotinus (Ennead III.7, 'On Eternity and Time') defines Eternity as the changeless life of the intelligible realm and Time as 'the life of the Soul in a movement of passage' — the moving likeness of eternity. Augustine inherits this exact polarity (changeless divine 'To-day' vs. the soul's stretched-out time) and internalises it as distentio animi. O'Donnell (1992, comm. on Bk XI) and Chadwick (1991) both name Ennead III.7 as the structuring text behind Confessions XI.",
+      "textId": "plotinus-enneads"
+    },
+    {
+      "label": "Ecclesiastes 1 — time, transience, and 'nothing new under the sun'",
+      "note": "Qohelet's relentless phenomenology of impermanence (hevel, 'vapor') is the Hebrew wisdom backdrop to Augustine's analysis of the unstable present that is 'always passing into time past.' Both texts hold the fleeting human present against an enduring ground; Augustine's response — the soul's restless distention healed only in God's eternal 'To-day' — answers Qohelet's diagnosis with a specifically Christian resolution.",
+      "textId": "ecclesiastes-1"
+    },
+    {
+      "label": "Psalm 90 — 'a thousand years in thy sight are but as yesterday'",
+      "note": "The very verse Augustine meditates on. Psalm 90 sets God's eternity ('from everlasting to everlasting') against human transience ('a thousand years are but as yesterday'); Augustine's contrast of God's standing 'years' that 'neither come nor go' with our years that 'both come and go' is a direct patristic exposition of this Psalm's time-scale. Pusey's marginal references and O'Donnell's commentary both flag the Psalter as Augustine's scriptural anchor here.",
+      "textId": "psalm-90"
+    },
+    {
+      "label": "Plotinus & the ascent of the soul — eternity recovered by interiority",
+      "note": "For both Plotinus and Augustine the remedy for time's dispersion is a turn inward and upward: Plotinus' 'flight of the alone to the Alone' and Augustine's longing to 'flow together into Thee, purified and molten by the fire of Thy love' (XI.29) describe the same Neoplatonic recollection of the scattered self into the One/God. Chadwick (1991) calls Confessions XI Augustine's most Plotinian book.",
+      "textId": "plotinus-enneads"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "God's eternity — an ever-present To-day",
+      "verses": [
+        {
+          "ref": "XI.13",
+          "text": "But Thou precedest all things past, by the sublimity of an ever-present eternity; and surpassest all future because they are future, and when they come, they shall be past; but Thou art the Same, and Thy years fail not. Thy years neither come nor go; whereas ours both come and go, that they all may come.",
+          "textVersions": {
+            "pusey": "But Thou precedest all things past, by the sublimity of an ever-present eternity; and surpassest all future because they are future, and when they come, they shall be past; but Thou art the Same, and Thy years fail not. Thy years neither come nor go; whereas ours both come and go, that they all may come."
+          },
+          "entities": [
+            {
+              "word": "ever-present eternity",
+              "node": "eternal-return",
+              "type": "theme",
+              "note": "Augustine defines divine eternity as a standing, changeless 'now' that precedes all times — the opposite of the cyclic-time cosmologies catalogued under this theme. Where Greco-Stoic recurrence and Hindu yuga-cycles dissolve the present into endlessly returning ages, Augustine fixes a single eternal 'To-day' above a strictly linear created time. O'Donnell (1992) notes Augustine constructs this eternity explicitly against the philosophers' eternal world.",
+              "parallels": [
+                {
+                  "label": "Plotinus — the changeless life of Eternity",
+                  "note": "Plotinus (Ennead III.7) makes Eternity the life of the intelligible realm 'abiding in unity,' the model Augustine adapts for God's 'ever-present eternity' (Chadwick 1991).",
+                  "textId": "plotinus-enneads"
+                },
+                {
+                  "label": "Psalm 90 — 'from everlasting to everlasting, thou art God'",
+                  "note": "The scriptural source of the eternal/transient contrast Augustine is expounding.",
+                  "textId": "psalm-90"
+                }
+              ]
+            },
+            {
+              "word": "Thy years neither come nor go",
+              "node": "cosmic-cycles",
+              "type": "theme",
+              "note": "Augustine's contrast of God's static 'years' with our passing years is his rejection of cyclic and recurring time. Time for Augustine is created, linear, and irreversible — a position that, per O'Donnell (1992), sets the Latin-Christian model against the cyclical cosmic time of late-antique Platonism and Stoic recurrence.",
+              "parallels": [
+                {
+                  "label": "Psalm 90 — 'a thousand years are but as yesterday'",
+                  "note": "The very verse Augustine meditates on: God's eternity makes vast spans 'as yesterday when it is past.'",
+                  "textId": "psalm-90"
+                },
+                {
+                  "label": "Ecclesiastes — 'one generation passeth away, and another generation cometh'",
+                  "note": "Qohelet's passing generations against the abiding earth parallels Augustine's passing years against God's standing years.",
+                  "textId": "ecclesiastes-1"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "What then is time?",
+      "verses": [
+        {
+          "ref": "XI.14",
+          "text": "What then is time? If no one asks me, I know: if I wish to explain it to one that asketh, I know not: yet I say boldly that I know, that if nothing passed away, time past were not; and if nothing were coming, a time to come were not; and if nothing were, time present were not.",
+          "textVersions": {
+            "pusey": "What then is time? If no one asks me, I know: if I wish to explain it to one that asketh, I know not: yet I say boldly that I know, that if nothing passed away, time past were not; and if nothing were coming, a time to come were not; and if nothing were, time present were not."
+          },
+          "entities": [
+            {
+              "word": "What then is time?",
+              "node": "augustine-of-hippo",
+              "type": "person",
+              "note": "The single most quoted sentence in the philosophy of time, marking Augustine's pivot from cosmology to phenomenology: time is intimately known yet conceptually elusive. Chadwick (1991) and O'Donnell (1992) treat Confessions XI as the foundational Western analysis of subjective, mind-relative time, decisively influencing Husserl's and Heidegger's phenomenologies of temporality.",
+              "parallels": [
+                {
+                  "label": "Plotinus — the prior philosophical puzzle of time",
+                  "note": "Plotinus' Ennead III.7 opens by asking what eternity and time are and faulting prior answers; Augustine reframes the same puzzle subjectively (O'Donnell 1992).",
+                  "textId": "plotinus-enneads"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Three times — memory, sight, expectation",
+      "verses": [
+        {
+          "ref": "XI.20",
+          "text": "Nor is it properly said, \"there be three times, past, present, and to come\": yet perchance it might be properly said, \"there be three times; a present of things past, a present of things present, and a present of things future.\" For these three do exist in some sort, in the soul, but otherwhere do I not see them; present of things past, memory; present of things present, sight; present of things future, expectation.",
+          "textVersions": {
+            "pusey": "Nor is it properly said, \"there be three times, past, present, and to come\": yet perchance it might be properly said, \"there be three times; a present of things past, a present of things present, and a present of things future.\" For these three do exist in some sort, in the soul, but otherwhere do I not see them; present of things past, memory; present of things present, sight; present of things future, expectation."
+          },
+          "entities": [
+            {
+              "word": "present of things past, memory",
+              "node": "soul-immortality",
+              "type": "theme",
+              "note": "Augustine relocates past and future into the present soul: the past survives only as memory, the future only as expectation. This interiorising of time presupposes the soul as the bearer of memory and self-presence — the same inner faculty whose nature and survival the Confessions repeatedly probe. O'Donnell (1992) links this to the great memory-meditation of Book X.",
+              "parallels": [
+                {
+                  "label": "Plotinus — time as the life of the Soul",
+                  "note": "Plotinus grounds time in the World-Soul's movement; Augustine grounds the measure of time in the individual soul's memory and expectation (Chadwick 1991).",
+                  "textId": "plotinus-enneads"
+                }
+              ]
+            },
+            {
+              "word": "present of things future, expectation",
+              "node": "ascent-of-the-soul",
+              "type": "theme",
+              "note": "For Augustine the soul stretched between memory and expectation is dispersed in time; its proper movement is the inward-and-upward recollection that gathers the scattered self toward God — the Neoplatonic ascent baptised. Chadwick (1991) reads Book XI's close as this ascent: the soul 'flowing together' into the eternal One.",
+              "parallels": [
+                {
+                  "label": "Plotinus — the soul's return from dispersion to the One",
+                  "note": "Plotinus' soul recollects itself from multiplicity to unity; Augustine's soul is 're-collected from my old conversation, to follow The One' (XI.29).",
+                  "textId": "plotinus-enneads"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Time is a protraction of the mind",
+      "verses": [
+        {
+          "ref": "XI.26",
+          "text": "Whence it seemed to me, that time is nothing else than protraction; but of what, I know not; and I marvel, if it be not of the mind itself?",
+          "textVersions": {
+            "pusey": "Whence it seemed to me, that time is nothing else than protraction; but of what, I know not; and I marvel, if it be not of the mind itself?"
+          },
+          "entities": [
+            {
+              "word": "time is nothing else than protraction",
+              "node": "soul-immortality",
+              "type": "theme",
+              "note": "This is Pusey's rendering of Augustine's celebrated definition distentio animi — time as a 'distention' or stretching-out of the soul. (Pusey translates distentio as 'protraction' here and as 'distraction' at XI.29; the Latin is the same word.) O'Donnell (1992) and Chadwick (1991) identify distentio animi as the conceptual heart of Book XI and the origin of all later phenomenological accounts of inner time-consciousness.",
+              "parallels": [
+                {
+                  "label": "Plotinus — time as the diastasis (extension) of the Soul's life",
+                  "note": "Plotinus describes time as the extension/interval of the Soul's life; Augustine's distentio animi is the Latin-Christian internalisation of this, applied to the individual mind (O'Donnell 1992).",
+                  "textId": "plotinus-enneads"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "XI.27",
+          "text": "It is in thee, my mind, that I measure times. Interrupt me not, that is, interrupt not thyself with the tumults of thy impressions. In thee I measure times; the impression, which things as they pass by cause in thee, remains even when they are gone; this it is which still present, I measure, not the things which pass by to make this impression.",
+          "textVersions": {
+            "pusey": "It is in thee, my mind, that I measure times. Interrupt me not, that is, interrupt not thyself with the tumults of thy impressions. In thee I measure times; the impression, which things as they pass by cause in thee, remains even when they are gone; this it is which still present, I measure, not the things which pass by to make this impression."
+          },
+          "entities": [
+            {
+              "word": "It is in thee, my mind, that I measure times",
+              "node": "soul-immortality",
+              "type": "theme",
+              "note": "Augustine completes the interiorisation: time is measured not in external motions but in the abiding impression things leave in the mind. This makes temporality a property of the soul's own activity. Chadwick (1991) notes this anticipates Kant's and Husserl's location of time in the structure of consciousness.",
+              "parallels": [
+                {
+                  "label": "Plotinus — the soul as the seat of temporal extension",
+                  "note": "Both make the soul, not the cosmos of external bodies, the proper locus of time (Chadwick 1991).",
+                  "textId": "plotinus-enneads"
+                },
+                {
+                  "label": "Ecclesiastes — the passing things the mind cannot hold",
+                  "note": "Qohelet's vapor-like passing of all things is the impermanence Augustine measures only as a present impression in the mind.",
+                  "textId": "ecclesiastes-1"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
+
+// -- Yijing — The Great Treatise (Xici I): The Grand Terminus Produces the Two Forms --
+SCRIPTURE_TEXTS['yijing-great-treatise'] = {
+  "id": "yijing-great-treatise",
+  "title": "Yijing — The Great Treatise (Xici I): The Grand Terminus Produces the Two Forms",
+  "shortTitle": "Yijing — Great Treatise",
+  "corpus": "Chinese · Confucian Classics (Yijing, Ten Wings)",
+  "tradId": "tradition-confucianism",
+  "date": "Zhou Yi core c. 900–200 BCE; the Xici / Great Treatise (one of the Ten Wings) compiled c. 3rd–2nd century BCE (Warring States to early Han)",
+  "docNode": "phase-1-026-yijing",
+  "language": "Classical Chinese · James Legge translation (The Yî King, Sacred Books of the East vol. 16, 2nd ed. Oxford 1899; first ed. 1882) — public domain",
+  "translations": [
+    {
+      "id": "legge",
+      "label": "Legge 1882 (SBE 16)",
+      "note": "James Legge, The Yi King (Sacred Books of the East vol. 16), 1882 — public domain"
+    }
+  ],
+  "intro": "The Great Treatise (Xici zhuan / Dazhuan, \"the Great Appendix\") is the cosmological wing appended to the Yijing — the philosophical commentary that turns a divination manual into a metaphysics. Its most influential sentence is the seed-cell of all Chinese correlative cosmology: \"In the Yi there is the Grand Terminus, which produced the two elementary Forms\" — the Great Ultimate (taiji 太極) generating yin and yang, then the four emblems, then the eight trigrams. This is the Chinese statement of the generation of the many from a primal undifferentiated unity, the same cosmogonic grammar Laozi gives as \"the Dao gives birth to One, One to Two, Two to Three, Three to the ten thousand things\" (Daodejing 42). The text is the source of the entire later metaphysics of Zhou Dunyi and Neo-Confucianism. This entry stages the Great Treatise's cosmogonic core; the already-staged 'i-ching-1' covers a different layer — Hexagram 1 (Qian) and its Wenyan commentary — and uses the copyrighted Wilhelm/Baynes rendering, where this entry uses the public-domain Legge.",
+  "crossTradition": [
+    {
+      "label": "Daodejing 42 — 'the Dao gives birth to One, One to Two...'",
+      "note": "The closest intra-Chinese parallel: Laozi's 'Dao sheng yi, yi sheng er, er sheng san, san sheng wanwu' (Ch. 42) is the same generation-of-the-many-from-the-One that the Great Treatise gives as Grand Terminus → two Forms → four Symbols → eight Trigrams. Both name the totality as the 'ten thousand things' (wanwu). The Daodejing Ch.42 reader entry is not yet staged; cross-linked here to the staged Daodejing Ch.1 entry (the unnameable Dao as mother of the ten thousand things). Needham, Science and Civilisation in China vol. 2, treats both as expressions of one organic-correlative Chinese cosmology.",
+      "textId": "tao-te-ching-1"
+    },
+    {
+      "label": "Nasadiya Sukta (RV 10.129) — the One that breathed, windless",
+      "note": "The Rigvedic 'Hymn of Creation' posits 'the One' (tad ekam) breathing windless before any differentiation of being and non-being — a primal undifferentiated source from which the cosmos unfolds, structurally parallel to the Grand Terminus before the two Forms. The convergence is on the cosmogonic problem (the One generating the many), not transmission. Brereton and Jamison's translation work on RV 10.129 stresses its interrogative, pre-differentiation theme.",
+      "textId": "nasadiya-sukta"
+    },
+    {
+      "label": "Rigveda 10.121 — Hiranyagarbha, the Golden Embryo",
+      "note": "The Golden Embryo (Hiranyagarbha) is the Vedic cosmic-unity / world-egg from which the ordered cosmos arises — the Indian member of the primal-unity-generates-the-cosmos pattern. Eliade (Patterns in Comparative Religion) groups the cosmic-egg / golden-germ motifs as one cross-cultural cosmogonic type that the Chinese Pangu-egg also exemplifies.",
+      "textId": "rigveda-10-121"
+    },
+    {
+      "label": "Genesis 1 — ordered creation from the formless",
+      "note": "The Priestly cosmogony moves from tohu wabohu (formless void) to a sequentially differentiated cosmos by divine speech — a different mechanism (creation by a personal God's word, not impersonal self-generation) but the same shape of differentiation-out-of-undifferentiated-origin. The contrast is the point: Legge himself in his SBE introduction stressed that the Yijing's Grand Terminus is impersonal and self-unfolding, unlike the Hebrew Creator.",
+      "textId": "genesis-1"
+    },
+    {
+      "label": "I Ching Hexagram 1 — Qian, the Creative (Wilhelm)",
+      "note": "Companion Yijing reader entry: where this Great-Treatise passage gives the cosmogonic generation (taiji → yin-yang → trigrams), 'i-ching-1' reads the first hexagram Qian and its Wenyan commentary on the Creative as source of the ten thousand things. The two are non-overlapping layers of the same canon.",
+      "textId": "i-ching-1"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "The Inactive and Active Operations (Xici I, Chapter V)",
+      "verses": [
+        {
+          "ref": "Great Treatise I.5 (Legge §51)",
+          "text": "The successive movement of the inactive and active operations constitutes what is called the course (of things). That which ensues as the result (of their movement) is goodness; that which shows it in its completeness is the natures (of men and things).",
+          "textVersions": {
+            "legge": "The successive movement of the inactive and active operations constitutes what is called the course (of things). That which ensues as the result (of their movement) is goodness; that which shows it in its completeness is the natures (of men and things)."
+          },
+          "entities": [
+            {
+              "word": "inactive and active operations",
+              "node": "yin-yang",
+              "type": "symbol",
+              "note": "Legge renders yin and yang as the 'inactive and active operations' — the two complementary cosmic principles whose alternation (yi yin yi yang) the Great Treatise calls 'the course (of things),' i.e. the Dao. The yin-yang node records that the philosophical concept (陰陽) is attested in the Warring States Yijing and Daodejing, far older than the canonical Song-dynasty taijitu diagram.",
+              "parallels": [
+                {
+                  "label": "Dao as the alternation of yin and yang",
+                  "note": "The Great Treatise's 'one yin, one yang — this is the Dao' makes the bipolar alternation itself the Way; Laozi's Dao is the same ordering source. Needham (SCC vol. 2) calls this the foundational 'two fundamental forces' of Chinese correlative thinking.",
+                  "textId": "tao-te-ching-1"
+                }
+              ]
+            },
+            {
+              "word": "the course (of things)",
+              "node": "dao",
+              "type": "theme",
+              "note": "Legge's 'the course (of things)' translates dao 道 — the Way as the patterned alternation of the two operations. The dao node identifies the Dao as 'the source of the ten-thousand things,' the Chinese occupant of the cosmic-ground / ordering-principle slot.",
+              "parallels": [
+                {
+                  "label": "Dao of the Daodejing",
+                  "note": "The same term dao; the Yijing's Confucian-classical usage and Laozi's Daoist usage of dao as cosmic order are recognized by Needham (SCC vol. 2) as parallel developments of one Chinese cosmological vocabulary.",
+                  "textId": "tao-te-ching-1"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "The Grand Terminus and the Eight Trigrams (Xici I, Chapter XI)",
+      "verses": [
+        {
+          "ref": "Great Treatise I.11 (Legge §70–71)",
+          "text": "Therefore in (the system of) the Yi there is the Grand Terminus, which produced the two elementary Forms. Those two Forms produced the Four emblematic Symbols, which again produced the eight Trigrams. The eight trigrams served to determine the good and evil (issues of events), and from this determination was produced the (successful prosecution of the) great business (of life).",
+          "textVersions": {
+            "legge": "Therefore in (the system of) the Yi there is the Grand Terminus, which produced the two elementary Forms. Those two Forms produced the Four emblematic Symbols, which again produced the eight Trigrams. The eight trigrams served to determine the good and evil (issues of events), and from this determination was produced the (successful prosecution of the) great business (of life)."
+          },
+          "entities": [
+            {
+              "word": "the Grand Terminus",
+              "node": "yin-yang",
+              "type": "symbol",
+              "note": "Legge's 'Grand Terminus' translates taiji 太極 — the Great Ultimate, the primal undifferentiated unity from which the two Forms (yin and yang) emerge. The Codex has no dedicated taiji node; the yin-yang (Taijitu) node is the nearest home, since its aka explicitly includes 太極 / 'supreme-ultimate-diagram' and it records that the visual taijitu is Zhou Dunyi's Song-dynasty Neo-Confucian formalization of exactly this Great-Treatise cosmogony.",
+              "parallels": [
+                {
+                  "label": "the Dao generates One, then Two, then the ten thousand things",
+                  "note": "Daodejing 42's serial generation from the One is the Daoist twin of the Grand Terminus producing the two Forms; both are read by Needham (SCC vol. 2) as the same monistic-generative Chinese cosmogony.",
+                  "textId": "tao-te-ching-1"
+                },
+                {
+                  "label": "the One that breathed, windless (RV 10.129)",
+                  "note": "The Rigvedic 'One' (tad ekam) before differentiation is the Indian convergence on a primal undifferentiated source; a convergence on the cosmogonic problem, not a transmission (Eliade, Patterns in Comparative Religion).",
+                  "textId": "nasadiya-sukta"
+                }
+              ]
+            },
+            {
+              "word": "the two elementary Forms",
+              "node": "yin-yang",
+              "type": "symbol",
+              "note": "The 'two elementary Forms' (liang yi 兩儀) are yin and yang — the first differentiation out of the Grand Terminus. From them come the four emblems (sixiang) and the eight trigrams (bagua), the combinatorial scaffold of the whole Yijing. Leibniz (per Needham, SCC vol. 2) recognized the doubling 1→2→4→8 as binary expansion.",
+              "parallels": [
+                {
+                  "label": "the cosmic egg splits into Pangu's heaven and earth",
+                  "note": "In the later Chinese Pangu myth the primordial egg separates into the pure-light (yang) heaven and turbid (yin) earth — a narrative cosmogony of the same yin-yang bifurcation the Great Treatise states abstractly. Eliade groups Pangu's egg with the world-egg cosmogonies (cosmic-egg / Hiranyagarbha)."
+                }
+              ]
+            },
+            {
+              "word": "the eight Trigrams",
+              "node": "fuxi",
+              "type": "person",
+              "note": "The bagua 八卦 (eight trigrams) are by tradition attributed to the culture-hero Fuxi, who in the Great Treatise's own narrative 'looked up and contemplated the brilliant forms of the heavens' and devised the trigrams. They are the eight three-line figures that combine into the sixty-four hexagrams. The fuxi node is the Codex home for the legendary author of the trigram system.",
+              "parallels": [
+                {
+                  "label": "Genesis 1 — ordered cosmos differentiated from the formless",
+                  "note": "The trigrams' role as the determinate categories distinguishing 'good and evil issues' parallels the Priestly act of separation (light/dark, waters above/below) that brings ordered distinction out of tohu wabohu — order-by-differentiation in both, though by impersonal generation here versus divine fiat there (Legge, SBE 16 introduction).",
+                  "textId": "genesis-1"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
+
+// -- Hesiod, Works and Days 42–105 (Prometheus and Pandora — the origin of human toil and evil) --
+SCRIPTURE_TEXTS['hesiod-pandora'] = {
+  "id": "hesiod-pandora",
+  "title": "Hesiod, Works and Days 42–105 (Prometheus and Pandora — the origin of human toil and evil)",
+  "shortTitle": "Hesiod, Pandora",
+  "corpus": "Greek · Archaic didactic epic (Hesiod)",
+  "tradId": "tradition-greek-religion",
+  "date": "c. 700 BCE (Archaic Greece)",
+  "docNode": "phase-2-009-hesiod-theogony-works-and-days",
+  "language": "Greek (Archaic dactylic hexameter) · Hugh G. Evelyn-White translation (Loeb Classical Library, 1914) — public domain (Project Gutenberg #348; the same edition as the staged hesiod-theogony and hesiod-five-ages)",
+  "translations": [
+    {
+      "id": "evelyn-white",
+      "label": "Evelyn-White 1914",
+      "note": "H.G. Evelyn-White, Hesiod, the Homeric Hymns and Homerica (Loeb), 1914 — public domain"
+    }
+  ],
+  "intro": "Hesiod's Pandora narrative is the Greek tradition's foundational answer to why human life is full of labour, sickness, and sorrow rather than the ease of a lost golden time. The Titan Prometheus steals fire back for mortals in a hollow fennel-stalk; Zeus, in revenge, has the gods fashion the first woman — Hephaestus moulding her of clay, Athene clothing her, Aphrodite shedding grace, Hermes putting in \"a shameless mind and a deceitful nature\" — and names her Pandora, \"all-gift,\" given to men as the price of fire. When she lifts the lid of the great jar she looses \"countless plagues\" upon mankind, leaving only Hope within. The passage is the headwater of the Western \"origin of evil / first-woman / lost paradise of toil-less life\" complex, and its long-discussed convergence with the Eden story of Genesis 2–3 is the classic test-case for distinguishing genuine transmission from independent typological parallel (West 1997).",
+  "crossTradition": [
+    {
+      "label": "Genesis 2–3 — Eve, the first woman, and the loss of an easy life",
+      "note": "The most-discussed parallel: in both myths an irreversible turn from a primordial life 'remote and free from ills and hard toil' to a condition of labour, pain, and death is bound up with the first woman (Pandora / Eve) and a single act of transgression (opening the jar / eating the fruit). M. L. West, The East Face of Helicon (1997), and his Works and Days commentary (1978), set this within the shared Eastern-Mediterranean wisdom milieu while warning that the resemblance is typological convergence, not demonstrated literary dependence.",
+      "textId": "genesis-3"
+    },
+    {
+      "label": "Genesis 2 — the gods/God fashion the human from earth",
+      "note": "Hephaestus 'mixes earth with water' to mould Pandora as Yahweh forms the adam from the dust of the ground (Gen 2:7); the moulded-from-clay anthropogony is a widespread Near-Eastern topos (West 1997; cf. the Mesopotamian creation of mankind from clay), so the shared motif marks a common ancient grammar rather than borrowing.",
+      "textId": "genesis-2"
+    },
+    {
+      "label": "Hesiod, Theogony 507–616 — the fuller Prometheus narrative",
+      "note": "The Theogony tells the companion and fuller version of the same Prometheus cycle (the trick at Mecone, the theft of fire, the making of woman); West (1978/1966) reads Works and Days 42–105 as the moralised Pandora-focused retelling of the Theogony's account.",
+      "textId": "hesiod-theogony"
+    },
+    {
+      "label": "Hesiod, Works and Days 106–201 — the Five Races of Man",
+      "note": "Immediately following in the same poem, the Five Races give the second, parallel myth of decline from a toil-less golden race to the present iron age — the metallic-decline companion to the Pandora aetiology of toil; Vernant (1960) reads the two myths as complementary accounts of the human condition.",
+      "textId": "hesiod-five-ages"
+    },
+    {
+      "label": "Mesopotamian wisdom — the gods withhold immortality/ease from mankind",
+      "note": "The premise that 'the gods keep hidden from men the means of life' echoes the broader Near-Eastern wisdom theme (Adapa, Gilgamesh) that the gods reserve ease and eternal life for themselves; West, The East Face of Helicon (1997), places Hesiod inside this transmitted Eastern-Mediterranean horizon."
+    }
+  ],
+  "sections": [
+    {
+      "heading": "The gods hide the means of life; Prometheus steals fire (ll. 42–53)",
+      "verses": [
+        {
+          "ref": "ll. 42–53",
+          "text": "For the gods keep hidden from men the means of life. Else you would easily do work enough in a day to supply you for a full year even without working; soon would you put away your rudder over the smoke, and the fields worked by ox and sturdy mule would run to waste. But Zeus in the anger of his heart hid it, because Prometheus the crafty deceived him; therefore he planned sorrow and mischief against men. He hid fire; but that the noble son of Iapetus stole again for men from Zeus the counsellor in a hollow fennel-stalk, so that Zeus who delights in thunder did not see it.",
+          "textVersions": {
+            "evelyn-white": "For the gods keep hidden from men the means of life. Else you would easily do work enough in a day to supply you for a full year even without working; soon would you put away your rudder over the smoke, and the fields worked by ox and sturdy mule would run to waste. But Zeus in the anger of his heart hid it, because Prometheus the crafty deceived him; therefore he planned sorrow and mischief against men. He hid fire; but that the noble son of Iapetus stole again for men from Zeus the counsellor in a hollow fennel-stalk, so that Zeus who delights in thunder did not see it."
+          },
+          "entities": [
+            {
+              "word": "the gods keep hidden from men the means of life",
+              "node": "fall-of-humanity",
+              "type": "theme",
+              "note": "The opening premise — that mortal life is hard because the gods withhold the easy livelihood mankind once had — is Hesiod's aetiology of the human fall from a toil-less condition, the Greek analogue of the lost ease of Eden. West (1997) sets it inside the Eastern-Mediterranean wisdom horizon of gods who reserve ease for themselves.",
+              "parallels": [
+                {
+                  "label": "the ground cursed with toil (Genesis 3)",
+                  "note": "Yahweh's sentence that man shall eat bread 'in the sweat of thy face' is the Hebrew aetiology of the same fall into labour; West 1997 treats the resemblance as typological convergence, not transmission",
+                  "textId": "genesis-3"
+                }
+              ]
+            },
+            {
+              "word": "Prometheus the crafty",
+              "node": "prometheus",
+              "type": "deity",
+              "note": "Prometheus, the Titan son of Iapetus, the crafty benefactor of mankind whose deception of Zeus and theft of fire trigger the whole sequence of human suffering; the type-specimen of the trickster culture-hero who steals a divine good for mortals. West (1978) notes his name was already glossed in antiquity as 'forethinker.'",
+              "parallels": [
+                {
+                  "label": "the fire-stealing trickster (cross-cultural)",
+                  "note": "the culture-hero who steals fire or another divine good for humanity recurs worldwide (e.g. the Polynesian Maui, North American Raven/Coyote); a widely-noted typological pattern, not a transmission claim"
+                }
+              ]
+            },
+            {
+              "word": "Zeus in the anger of his heart hid it",
+              "node": "zeus",
+              "type": "deity",
+              "note": "Zeus, king of the Olympian gods, who hides the means of life and then engineers Pandora as the retaliatory 'evil thing' given to mankind as the price of fire — the divine author of the human condition of toil in Hesiod's theology.",
+              "parallels": []
+            },
+            {
+              "word": "stole again for men from Zeus the counsellor in a hollow fennel-stalk",
+              "node": "sacred-fire",
+              "type": "symbol",
+              "note": "The stolen fire carried in a hollow fennel-stalk (narthex) is the divine gift that founds human civilisation and craft; its theft is the act that provokes Zeus's revenge. The fire-theft as the origin of human technical life is the durable core of the Prometheus myth (West 1978).",
+              "parallels": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Zeus orders the making of the first woman (ll. 54–82)",
+      "verses": [
+        {
+          "ref": "ll. 54–59",
+          "text": "But afterwards Zeus who gathers the clouds said to him in anger: 'Son of Iapetus, surpassing all in cunning, you are glad that you have outwitted me and stolen fire—a great plague to you yourself and to men that shall be. But I will give men as the price for fire an evil thing in which they may all be glad of heart while they embrace their own destruction.'",
+          "textVersions": {
+            "evelyn-white": "But afterwards Zeus who gathers the clouds said to him in anger: 'Son of Iapetus, surpassing all in cunning, you are glad that you have outwitted me and stolen fire—a great plague to you yourself and to men that shall be. But I will give men as the price for fire an evil thing in which they may all be glad of heart while they embrace their own destruction.'"
+          },
+          "entities": [
+            {
+              "word": "an evil thing in which they may all be glad of heart while they embrace their own destruction",
+              "node": "origin-of-evil",
+              "type": "theme",
+              "note": "Pandora is Zeus's deliberately ambivalent 'beautiful evil' (kalon kakon, the Theogony's phrase) — a delight that is also the source of mankind's ruin; this is the Greek aetiology of the origin of evil in human life. West (1978/1997) identifies the 'beautiful evil' as the crux of the Pandora myth's misogynistic theology of suffering.",
+              "parallels": [
+                {
+                  "label": "the alluring forbidden good (Genesis 3)",
+                  "note": "the fruit 'pleasant to the eyes, and a tree to be desired' that brings death; the alluring good that ruins is the shared shape, read by West 1997 as convergence not borrowing",
+                  "textId": "genesis-3"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "ll. 60–68",
+          "text": "So said the father of men and gods, and laughed aloud. And he bade famous Hephaestus make haste and mix earth with water and to put in it the voice and strength of human kind, and fashion a sweet, lovely maiden-shape, like to the immortal goddesses in face; and Athene to teach her needlework and the weaving of the varied web; and golden Aphrodite to shed grace upon her head and cruel longing and cares that weary the limbs. And he charged Hermes the guide, the Slayer of Argus, to put in her a shameless mind and a deceitful nature.",
+          "textVersions": {
+            "evelyn-white": "So said the father of men and gods, and laughed aloud. And he bade famous Hephaestus make haste and mix earth with water and to put in it the voice and strength of human kind, and fashion a sweet, lovely maiden-shape, like to the immortal goddesses in face; and Athene to teach her needlework and the weaving of the varied web; and golden Aphrodite to shed grace upon her head and cruel longing and cares that weary the limbs. And he charged Hermes the guide, the Slayer of Argus, to put in her a shameless mind and a deceitful nature."
+          },
+          "entities": [
+            {
+              "word": "Hephaestus make haste and mix earth with water",
+              "node": "hephaestus",
+              "type": "deity",
+              "note": "Hephaestus, the divine smith and craftsman, moulds the first woman of clay at Zeus's command — the craft-god as maker of the artificial first human. The moulding of the human from earth-and-water is a widespread Near-Eastern anthropogony (West 1997).",
+              "parallels": [
+                {
+                  "label": "man formed of the dust of the ground (Genesis 2)",
+                  "note": "Yahweh forms the adam from the ground (Gen 2:7); the formed-from-clay creation is the shared ancient topos, per West 1997",
+                  "textId": "genesis-2"
+                }
+              ]
+            },
+            {
+              "word": "Athene to teach her needlework and the weaving of the varied web",
+              "node": "athena",
+              "type": "deity",
+              "note": "Athene (Athena), goddess of crafts and weaving, clothes and instructs the new woman — one of the Olympians whose collective gifts make up Pandora ('all-gift'). West (1978) notes the procession of gods each adding an adornment.",
+              "parallels": []
+            }
+          ]
+        },
+        {
+          "ref": "ll. 69–82",
+          "text": "So he ordered. And they obeyed the lord Zeus the son of Cronos. Forthwith the famous Lame God moulded clay in the likeness of a modest maid, as the son of Cronos purposed. And the goddess bright-eyed Athene girded and clothed her, and the divine Graces and queenly Persuasion put necklaces of gold upon her, and the rich-haired Hours crowned her head with spring flowers. And Pallas Athene bedecked her form with all manners of finery. Also the Guide, the Slayer of Argus, contrived within her lies and crafty words and a deceitful nature at the will of loud thundering Zeus, and the Herald of the gods put speech in her. And he called this woman Pandora, because all they who dwelt on Olympus gave each a gift, a plague to men who eat bread.",
+          "textVersions": {
+            "evelyn-white": "So he ordered. And they obeyed the lord Zeus the son of Cronos. Forthwith the famous Lame God moulded clay in the likeness of a modest maid, as the son of Cronos purposed. And the goddess bright-eyed Athene girded and clothed her, and the divine Graces and queenly Persuasion put necklaces of gold upon her, and the rich-haired Hours crowned her head with spring flowers. And Pallas Athene bedecked her form with all manners of finery. Also the Guide, the Slayer of Argus, contrived within her lies and crafty words and a deceitful nature at the will of loud thundering Zeus, and the Herald of the gods put speech in her. And he called this woman Pandora, because all they who dwelt on Olympus gave each a gift, a plague to men who eat bread."
+          },
+          "entities": [
+            {
+              "word": "he called this woman Pandora, because all they who dwelt on Olympus gave each a gift, a plague to men who eat bread",
+              "node": "origin-of-evil",
+              "type": "theme",
+              "note": "Pandora, 'all-gift' (pan-dora), the first woman, fashioned by the gods as a 'plague to men' — the Greek first-woman whose creation is the origin of human suffering. Hesiod's etymology ('all gave a gift') and his 'beautiful evil' frame make her the archetype of the blame-the-woman aetiology of evil (West 1978). No Pandora node yet exists in the vault; surfaced here as a theme and cross-tradition parallel.",
+              "parallels": [
+                {
+                  "label": "Eve, the mother of all living (Genesis 3)",
+                  "note": "the first woman through whom, in the received reading, suffering and death enter human life; the Pandora/Eve 'first-woman-as-origin-of-evil' parallel is the classic test-case, hedged by West 1997 as typological convergence, not transmission",
+                  "textId": "genesis-3"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Epimetheus takes the gift; the jar is opened (ll. 83–105)",
+      "verses": [
+        {
+          "ref": "ll. 83–89",
+          "text": "But when he had finished the sheer, hopeless snare, the Father sent glorious Argos-Slayer, the swift messenger of the gods, to take it to Epimetheus as a gift. And Epimetheus did not think on what Prometheus had said to him, bidding him never take a gift of Olympian Zeus, but to send it back for fear it might prove to be something harmful to men. But he took the gift, and afterwards, when the evil thing was already his, he understood.",
+          "textVersions": {
+            "evelyn-white": "But when he had finished the sheer, hopeless snare, the Father sent glorious Argos-Slayer, the swift messenger of the gods, to take it to Epimetheus as a gift. And Epimetheus did not think on what Prometheus had said to him, bidding him never take a gift of Olympian Zeus, but to send it back for fear it might prove to be something harmful to men. But he took the gift, and afterwards, when the evil thing was already his, he understood."
+          },
+          "entities": [
+            {
+              "word": "Epimetheus",
+              "node": "epimetheus",
+              "type": "deity",
+              "note": "Epimetheus ('afterthought'), the foolish brother of the forethinking Prometheus, accepts Pandora against his brother's warning — the dupe whose lack of foresight admits evil into the world. West (1978) notes the brothers' names form a fore-thought / after-thought pair that moralises the tale.",
+              "parallels": []
+            },
+            {
+              "word": "what Prometheus had said to him, bidding him never take a gift of Olympian Zeus",
+              "node": "prometheus",
+              "type": "deity",
+              "note": "Prometheus the forethinker had warned against accepting Zeus's gift; his foresight is set against Epimetheus's folly. The Titan's role as mankind's would-be protector against Zeus frames him as the trickster-benefactor of the human race.",
+              "parallels": [
+                {
+                  "label": "the trickster benefactor (cross-cultural)",
+                  "note": "the clever culture-hero who outwits the high god on humanity's behalf; a noted comparative archetype, not a transmission claim"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "ll. 90–105",
+          "text": "For ere this the tribes of men lived on earth remote and free from ills and hard toil and heavy sickness which bring the Fates upon men; for in misery men grow old quickly. But the woman took off the great lid of the jar with her hands and scattered all these and her thought caused sorrow and mischief to men. Only Hope remained there in an unbreakable home within under the rim of the great jar, and did not fly out at the door; for ere that, the lid of the jar stopped her, by the will of Aegis-holding Zeus who gathers the clouds. But the rest, countless plagues, wander amongst men; for earth is full of evils and the sea is full. Of themselves diseases come upon men continually by day and by night, bringing mischief to mortals silently; for wise Zeus took away speech from them. So is there no way to escape the will of Zeus.",
+          "textVersions": {
+            "evelyn-white": "For ere this the tribes of men lived on earth remote and free from ills and hard toil and heavy sickness which bring the Fates upon men; for in misery men grow old quickly. But the woman took off the great lid of the jar with her hands and scattered all these and her thought caused sorrow and mischief to men. Only Hope remained there in an unbreakable home within under the rim of the great jar, and did not fly out at the door; for ere that, the lid of the jar stopped her, by the will of Aegis-holding Zeus who gathers the clouds. But the rest, countless plagues, wander amongst men; for earth is full of evils and the sea is full. Of themselves diseases come upon men continually by day and by night, bringing mischief to mortals silently; for wise Zeus took away speech from them. So is there no way to escape the will of Zeus."
+          },
+          "entities": [
+            {
+              "word": "the tribes of men lived on earth remote and free from ills and hard toil",
+              "node": "fall-of-humanity",
+              "type": "theme",
+              "note": "The lost primordial state of mankind 'free from ills and hard toil' before Pandora's jar is the Greek paradise-lost — the toil-less condition whose loss is the human fall. It directly anticipates the toil-less golden race of the Five Ages that follows in the same poem (West 1978; Vernant 1960).",
+              "parallels": [
+                {
+                  "label": "Eden before the curse of toil (Genesis 2–3)",
+                  "note": "the easy garden life before the ground is cursed with labour; the lost-paradise-of-ease motif, read by West 1997 as convergence",
+                  "textId": "genesis-2"
+                },
+                {
+                  "label": "the toil-less golden race",
+                  "note": "the companion myth in the same poem: the golden race 'remote and free from toil' from which mankind declines",
+                  "textId": "hesiod-five-ages"
+                }
+              ]
+            },
+            {
+              "word": "the woman took off the great lid of the jar with her hands and scattered all these",
+              "node": "origin-of-evil",
+              "type": "theme",
+              "note": "Pandora's opening of the great jar (pithos — 'box' is Erasmus's later mistranslation) looses the world's evils upon mankind: this single act is Hesiod's mythic origin of all the plagues, sicknesses, and sorrows of human life. West (1978) is the standard commentary on the jar's contents and the famous crux of Hope.",
+              "parallels": [
+                {
+                  "label": "the transgression that admits death (Genesis 3)",
+                  "note": "eating the forbidden fruit looses death and suffering on the race; the single-act-admits-evil structure, hedged by West 1997 as typological",
+                  "textId": "genesis-3"
+                }
+              ]
+            },
+            {
+              "word": "Only Hope remained there in an unbreakable home within under the rim of the great jar",
+              "node": "origin-of-evil",
+              "type": "theme",
+              "note": "The famous crux: Hope (Elpis) alone stays in the jar while the evils escape. Whether Hope is mankind's one consolation retained, or a final evil withheld/trapped (false hope), is the central interpretive debate of the passage; West, Works and Days (1978), surveys both readings without resolving it.",
+              "parallels": []
+            },
+            {
+              "word": "to escape the will of Zeus",
+              "node": "zeus",
+              "type": "deity",
+              "note": "The passage closes on Zeus's inescapable will as the ground of the human condition — the Hesiodic theology that mortal suffering is ordained by the king of the gods and cannot be evaded.",
+              "parallels": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
+
+// -- The Golden Verses of Pythagoras (the Pythagorean rule of life and the soul's ascent to the immortal) --
+SCRIPTURE_TEXTS['golden-verses-pythagoras'] = {
+  "id": "golden-verses-pythagoras",
+  "title": "The Golden Verses of Pythagoras (the Pythagorean rule of life and the soul's ascent to the immortal)",
+  "shortTitle": "Golden Verses of Pythagoras",
+  "corpus": "Greek · Pythagorean philosophy (Carmen Aureum)",
+  "tradId": "tradition-pythagorean",
+  "date": "Compiled c. 100 CE (Hellenistic-imperial); Pythagorean doctrine from the school of Pythagoras of Samos (~570–495 BCE), Croton",
+  "docNode": "document-pythagorean-golden-verses",
+  "language": "Ancient Greek (epic hexameter) · English: Florence M. Firth, The Golden Verses of Pythagoras and Other Pythagorean Fragments (Theosophical Publishing Society, Bradford, 1904), following André Dacier's French via N. Rowe's 1707 rendering — public domain. Verses numbered as printed by Firth.",
+  "translations": [
+    {
+      "id": "firth",
+      "label": "Firth 1904",
+      "note": "Florence M. Firth, The Golden Verses of Pythagoras (after Fabre d’Olivet), 1904 — public domain"
+    }
+  ],
+  "intro": "The Golden Verses (Carmen Aureum) are a Hellenistic-imperial compendium in epic hexameter that crystallises the Pythagorean way of life: a ladder from ethics through self-examination to the soul's deification. They open with a graded order of worship — the immortal gods, the oath, the heroes, and the terrestrial daemons — then prescribe the famous nightly self-audit (\"Never suffer sleep to close thy eyelids... Till thou hast examined by thy reason all thy actions of the day\"), the mastery of the body's appetites, and reverence for the Sacred Quaternion (the tetractys). The poem closes with the doctrine that distinguishes the Pythagorean-Orphic milieu from ordinary Greek religion: \"the race of man is divine,\" and the purified soul, once \"divested... of thy mortal body,\" becomes \"a God, immortal, incorruptible,\" over whom death has no more dominion. Burkert (Lore and Science in Ancient Pythagoreanism, 1972) and Kahn (Pythagoras and the Pythagoreans, 2001) place the poem in the same southern-Italian current as the Orphic gold tablets and Empedocles — a current that fuses an ascetic rule of life with the divine origin of the soul and release from the wheel of rebirth.",
+  "crossTradition": [
+    {
+      "label": "The Orphic Gold Tablets — the soul's divine descent and release",
+      "note": "The tablets and the Golden Verses emerge from the same Magna-Graecian Orphic-Bacchic milieu and share the core claim that the soul is of divine race and can win release. The tablets' password — 'I am a child of Earth and of starry Heaven, but my race is of Heaven alone' — is the funerary counterpart of the Verses' 'the race of man is divine.' Burkert (Lore and Science in Ancient Pythagoreanism, 1972) and West (The Orphic Poems, 1983) treat the Orphic-Pythagorean overlap on the divine soul and metempsychosis as documented, not coincidental.",
+      "textId": "orphic-gold-tablets"
+    },
+    {
+      "label": "Empedocles — the transmigrating, purified daimon",
+      "note": "Empedocles of Acragas, an adjacent figure in the Pythagorean line, carries the same Orphic-Pythagorean doctrine of the soul's fall, its purification, and its release into godhood ('I go about among you an immortal god, no longer mortal'). Kahn (Pythagoras and the Pythagoreans, 2001) and Burkert (1972) read the Verses and Empedocles's Purifications as parallel expressions of the same ascetic-soteriological programme.",
+      "textId": "empedocles-roots-love-strife"
+    },
+    {
+      "label": "Plato, Phaedo — philosophy as the purification of the soul from the body",
+      "note": "Plato inherits and rationalises the Pythagorean rule: the philosopher purifies the soul from the body and practises dying, so the soul akin to the eternal may be released. Burkert (1972) and Kahn (2001) trace the Phaedo's purification-and-release schema directly to the Pythagorean-Orphic tradition the Golden Verses codify.",
+      "textId": "phaedo"
+    },
+    {
+      "label": "Bhagavad-Gita 2 — the imperishable self passing through bodies",
+      "note": "Krishna's teaching that the embodied self casts off worn bodies as a man changes garments is the Indian metempsychosis the Verses presuppose. West (Early Greek Philosophy and the Orient, 1971) and Kahn (2001) note the recurring Greek-Indian convergence on transmigration but treat the streams as parallel, not demonstrably connected — convergence, not transmission.",
+      "textId": "bhagavad-gita-2"
+    },
+    {
+      "label": "The Descent of Inanna — the underworld journey of the soul",
+      "note": "The Mesopotamian katabasis supplies the deep background grammar of a soul's passage through the underworld and return; the Pythagorean release from the kuklos geneseos (the wheel of rebirth) reworks that descent-and-return into a doctrine of escape from the cycle. Burkert (1972) cautions that such Near-Eastern parallels are structural background, not direct source for the Pythagorean soul-doctrine.",
+      "textId": "descent-inanna"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "The Order of Worship and the Mastery of the Passions",
+      "verses": [
+        {
+          "ref": "1–3",
+          "text": "First worship the Immortal Gods, as they are established and ordained by the Law. Reverence the Oath, and next the Heroes, full of goodness and light. Honour likewise the Terrestrial Daemons by rendering them the worship lawfully due to them.",
+          "textVersions": {
+            "firth": "First worship the Immortal Gods, as they are established and ordained by the Law. Reverence the Oath, and next the Heroes, full of goodness and light. Honour likewise the Terrestrial Daemons by rendering them the worship lawfully due to them."
+          },
+          "entities": [
+            {
+              "word": "the Immortal Gods",
+              "node": "apollo",
+              "type": "deity",
+              "note": "The Verses open with a graded order of worship; in Pythagorean tradition Apollo holds first place — Pythagoras was reputed a son or favourite of Apollo (Apollonios = 'of Apollo'), and the school's cult centred on the god of Delphi and the Muses. Kahn (Pythagoras and the Pythagoreans, 2001) details the Apolline framing of the Pythagorean life.",
+              "parallels": []
+            },
+            {
+              "word": "the Terrestrial Daemons",
+              "node": "soul-as-spark",
+              "type": "theme",
+              "note": "The graded hierarchy — gods, heroes, daemons — reflects the Pythagorean cosmology in which the human soul is itself a divine daimon temporarily fallen into the body; Burkert (Lore and Science in Ancient Pythagoreanism, 1972) connects this daemonology to the doctrine of the soul's divine origin and its kinship with the immortal.",
+              "parallels": [
+                {
+                  "label": "Empedocles — the fallen daimon",
+                  "note": "Empedocles names the soul a polluted daimon wandering through bodies — the same daemonology Burkert reads in the Pythagorean line",
+                  "textId": "empedocles-roots-love-strife"
+                },
+                {
+                  "label": "The Orphic gold tablets — 'my race is of Heaven'",
+                  "note": "the initiate's divine descent, the funerary form of the same soul-as-daimon doctrine",
+                  "textId": "orphic-gold-tablets"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "9–10",
+          "text": "Know that all these things are as I have told thee; and accustom thyself to overcome and vanquish these passions:- First gluttony, sloth, sensuality, and anger.",
+          "textVersions": {
+            "firth": "Know that all these things are as I have told thee; and accustom thyself to overcome and vanquish these passions:- First gluttony, sloth, sensuality, and anger."
+          },
+          "entities": [
+            {
+              "word": "overcome and vanquish these passions",
+              "node": "monastic-asceticism",
+              "type": "theme",
+              "note": "The Pythagorean bios was an ascetic regimen — control of appetite (here gluttony, sloth, sensuality, anger) was the practical discipline through which the soul was purified for release. Burkert (1972) describes the akousmata and dietary rules as the lived asceticism the Golden Verses summarise; Kahn (2001) frames it as the ethical floor of the soul's ascent.",
+              "parallels": [
+                {
+                  "label": "Plato, Phaedo — purifying the soul from bodily appetite",
+                  "note": "the philosopher who masters the body's pleasures to free the soul; Burkert traces this directly to Pythagorean asceticism",
+                  "textId": "phaedo"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "The Nightly Self-Examination and the Sacred Quaternion",
+      "verses": [
+        {
+          "ref": "40–42",
+          "text": "Never suffer sleep to close thy eyelids, after thy going to bed, Till thou hast examined by thy reason all thy actions of the day. Wherein have I done amiss? What have I done? What have I omitted that I ought to have done?",
+          "textVersions": {
+            "firth": "Never suffer sleep to close thy eyelids, after thy going to bed, Till thou hast examined by thy reason all thy actions of the day. Wherein have I done amiss? What have I done? What have I omitted that I ought to have done?"
+          },
+          "entities": [
+            {
+              "word": "examined by thy reason all thy actions of the day",
+              "node": "monastic-asceticism",
+              "type": "theme",
+              "note": "The most famous of the Verses: the nightly audit of conscience. Kahn (Pythagoras and the Pythagoreans, 2001) and Burkert (1972) note that this daily self-scrutiny — preserved also in the Pythagorean akousmata and later adopted by the Stoics (Seneca, Epictetus) and by Christian monastic examen — is the technology by which the Pythagorean trained the soul, memory being central to the doctrine of recollection across lives.",
+              "parallels": [
+                {
+                  "label": "Plato, Phaedo — philosophy as the practice of dying and self-purification",
+                  "note": "the disciplined turning of the soul inward, away from the body, that Burkert reads as Pythagorean in origin",
+                  "textId": "phaedo"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "46–47",
+          "text": "'Tis they that will put thee in the way of divine virtue. I swear it by him who has transmitted into our souls the Sacred Quaternion, the source of nature, whose cause is eternal.",
+          "textVersions": {
+            "firth": "'Tis they that will put thee in the way of divine virtue. I swear it by him who has transmitted into our souls the Sacred Quaternion, the source of nature, whose cause is eternal."
+          },
+          "entities": [
+            {
+              "word": "the Sacred Quaternion",
+              "node": "monad-pythagorean",
+              "type": "symbol",
+              "note": "The Sacred Quaternion is the tetractys (1+2+3+4=10) — the holy figure by which Pythagoreans swore, generated from the Monad, the source of number and so of the cosmos. Burkert (Lore and Science in Ancient Pythagoreanism, 1972) shows the tetractys-oath is a genuinely archaic Pythagorean formula; Kahn (2001) treats it as the emblem of the Pythagorean conviction that number is the principle of nature.",
+              "parallels": []
+            },
+            {
+              "word": "divine virtue",
+              "node": "ascent-of-the-soul",
+              "type": "theme",
+              "note": "The ethical discipline is explicitly a ladder ('the way of divine virtue') toward the soul's ascent and deification announced in the closing verses; Kahn (2001) reads the poem's architecture as a graded ascent from ethics to the soul's release.",
+              "parallels": [
+                {
+                  "label": "Plato, Phaedo — the soul akin to the eternal ascends",
+                  "note": "the purified soul rises to the realm akin to itself; the philosophical heir of the Pythagorean ascent",
+                  "textId": "phaedo"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "The Divine Race of Man and the Deification of the Soul",
+      "verses": [
+        {
+          "ref": "63",
+          "text": "But take courage; the race of man is divine.",
+          "textVersions": {
+            "firth": "But take courage; the race of man is divine."
+          },
+          "entities": [
+            {
+              "word": "the race of man is divine",
+              "node": "soul-as-spark",
+              "type": "theme",
+              "note": "The doctrinal heart of the poem: the human soul is of divine stock, a fallen spark of the immortal — the conviction that separates the Pythagorean-Orphic stream from ordinary Greek mortality-religion. Burkert (1972) and Kahn (2001) identify this divine-soul doctrine as the shared root of Pythagoreanism, Orphism, and Empedocles.",
+              "parallels": [
+                {
+                  "label": "The Orphic gold tablets — 'my race is of Heaven alone'",
+                  "note": "the funerary password asserting the soul's divine descent; West (1983) and Burkert (1972) read it as the same doctrine",
+                  "textId": "orphic-gold-tablets"
+                },
+                {
+                  "label": "Empedocles — 'an immortal god, no longer mortal'",
+                  "note": "the purified daimon's deification, the parallel claim of the Pythagorean line",
+                  "textId": "empedocles-roots-love-strife"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "66–67",
+          "text": "And by the healing of thy soul, thou wilt deliver it from all evils, from all afflictions. But abstain thou from the meats, which we have forbidden in the purifications and in the deliverance of the soul;",
+          "textVersions": {
+            "firth": "And by the healing of thy soul, thou wilt deliver it from all evils, from all afflictions. But abstain thou from the meats, which we have forbidden in the purifications and in the deliverance of the soul;"
+          },
+          "entities": [
+            {
+              "word": "the deliverance of the soul",
+              "node": "reincarnation",
+              "type": "theme",
+              "note": "'Deliverance of the soul' is release from the cycle of metempsychosis — the kuklos geneseos, the wheel of rebirth. The dietary abstentions are purifications that free the transmigrating soul from the body and from further incarnation; Burkert (Lore and Science in Ancient Pythagoreanism, 1972) documents metempsychosis as the oldest securely Pythagorean doctrine (attested already by Xenophanes' mockery), and Kahn (2001) makes release from rebirth the goal of the Pythagorean life.",
+              "parallels": [
+                {
+                  "label": "Empedocles — the daimon's thrice-ten-thousand-season wandering through bodies",
+                  "note": "the explicit Greek statement of transmigration through plant, animal, and human forms; Burkert pairs it with the Pythagorean doctrine",
+                  "textId": "empedocles-roots-love-strife"
+                },
+                {
+                  "label": "Bhagavad-Gita 2 — the self casting off worn bodies",
+                  "note": "the Indian transmigration; West (1971) and Kahn (2001) treat the Greek-Indian parallel as convergence, transmission unproven",
+                  "textId": "bhagavad-gita-2"
+                },
+                {
+                  "label": "The Orphic gold tablets — escape from the 'sorrowful weary Wheel'",
+                  "note": "the Orphic kuklos geneseos the initiate flies out of; the shared Magna-Graecian doctrine of release",
+                  "textId": "orphic-gold-tablets"
+                }
+              ]
+            },
+            {
+              "word": "the healing of thy soul",
+              "node": "soul-exile-longing",
+              "type": "theme",
+              "note": "The soul in the body is in a fallen, ailing condition needing 'healing' — the Orphic-Pythagorean image of the soul exiled from its divine home and longing for return, which purification cures. Burkert (1972) connects the medical-purificatory language to the Pythagorean fusion of healing and soul-care.",
+              "parallels": [
+                {
+                  "label": "Plato, Phaedo — the soul imprisoned in the body",
+                  "note": "the soul bound to the body as in a prison, released by philosophy; the Platonic heir of the Pythagorean exile-motif",
+                  "textId": "phaedo"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "70–71",
+          "text": "And when, after having divested thyself of thy mortal body, thou arrivest at the most pure Æther, Thou shalt be a God, immortal, incorruptible, and Death shall have no more dominion over thee.",
+          "textVersions": {
+            "firth": "And when, after having divested thyself of thy mortal body, thou arrivest at the most pure Æther, Thou shalt be a God, immortal, incorruptible, and Death shall have no more dominion over thee."
+          },
+          "entities": [
+            {
+              "word": "divested thyself of thy mortal body",
+              "node": "ascent-of-the-soul",
+              "type": "theme",
+              "note": "The poem ends with the soul's final ascent: stripped of the body, the purified soul rises through the pure aether to its divine origin. Kahn (Pythagoras and the Pythagoreans, 2001) reads this ascent-to-the-aether as the culmination of the Pythagorean catechism, anticipating the celestial soul-ascent of later Platonism.",
+              "parallels": [
+                {
+                  "label": "Plato, Phaedo — the soul released to the realm akin to itself",
+                  "note": "the soul freed from the body returns to the pure, eternal realm; Burkert traces this ascent to the Pythagorean source",
+                  "textId": "phaedo"
+                }
+              ]
+            },
+            {
+              "word": "Thou shalt be a God, immortal, incorruptible",
+              "node": "soul-immortality",
+              "type": "theme",
+              "note": "The climactic promise of deification: the soul that completes the discipline becomes an immortal, incorruptible god beyond death's dominion. Burkert (1972) and Kahn (2001) identify this apotheosis of the purified soul as the soteriological goal that the Pythagorean-Orphic stream contributed to Greek thought and bequeathed to Platonism and the later mysteries.",
+              "parallels": [
+                {
+                  "label": "Empedocles — 'I go about among you an immortal god, no longer mortal'",
+                  "note": "the near-identical claim of deification; Kahn (2001) reads the two as parallel statements of the same doctrine",
+                  "textId": "empedocles-roots-love-strife"
+                },
+                {
+                  "label": "The Orphic gold tablets — 'a god instead of a mortal'",
+                  "note": "the initiate hailed as having 'become a god instead of a mortal'; the funerary form of the same apotheosis, per Graf & Johnston (2007)",
+                  "textId": "orphic-gold-tablets"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
+
+// -- Vendidad — Fargard 1 (The Sixteen Good Lands and the Counter-Creations of Angra Mainyu) --
+SCRIPTURE_TEXTS['vendidad-fargard-1'] = {
+  "id": "vendidad-fargard-1",
+  "title": "Vendidad — Fargard 1 (The Sixteen Good Lands and the Counter-Creations of Angra Mainyu)",
+  "shortTitle": "Vendidad 1",
+  "corpus": "Avesta · Zoroastrian sacred corpus (Younger Avesta · Vendidad)",
+  "tradId": "tradition-zoroastrianism",
+  "date": "c. 1000–400 BCE composition (Younger Avestan); the Vendidad (Vidēvdād, \"law against the daēvas\") is the latest stratum of the Younger Avesta — some scholars date its core to the Arsacid period (Boyce defends a substantially earlier core); redacted under the Sasanians (~500 CE) and preserved in priestly transmission",
+  "docNode": "phase-2-004-yasna-younger-avesta",
+  "language": "Avestan · James Darmesteter translation (The Zend-Avesta, Part I: The Vendîdâd, Sacred Books of the East vol. 4, Clarendon Press, 1880; quoted from the verbatim public-domain American Edition reprint, 1898). Footnote-marker digits and bracketed editorial interpolations of the digital edition are omitted; Darmesteter's wording, spelling, and punctuation are preserved exactly.",
+  "translations": [
+    {
+      "id": "darmesteter",
+      "label": "Darmesteter 1880 (SBE 4)",
+      "note": "James Darmesteter, The Zend-Avesta Part I: The Vendidad (Sacred Books of the East vol. 4), 1880 — public domain"
+    }
+  ],
+  "intro": "Fargard 1 of the Vendidad is the Zoroastrian geography of creation cast as a litany of cosmic dualism. Ahura Mazda enumerates sixteen perfect lands he created — Airyana Vaeja, Sughdha, Mouru, Bakhdhi, and on across the Iranian world to the Seven Rivers and the Rangha — and for each one the hostile spirit Angra Mainyu (later Pahlavi Ahriman) \"counter-creates\" an answering plague: the serpent and Winter, the locust, plunder and sin, the sin of unbelief, witchcraft, the burying of the dead. The narrative form is the doctrine of the Two Spirits (Yasna 30) projected onto the map: every good of creation is shadowed by an opposing evil, so that the cosmos itself is the field of the Asha/Druj combat. As a creation-text it is the sharpest possible foil to the monotheist Genesis 1, where a single creator calls the world \"good\" with no co-equal counter-creator — the contrast the prophet of Isaiah 45:7 answers head-on (\"I make peace, and create evil: I the LORD do all these things\").",
+  "crossTradition": [
+    {
+      "label": "Yasna 30 — the Two Spirits and the primal choice",
+      "note": "Fargard 1 is the doctrinal core of Yasna 30 turned into geography. Boyce (A History of Zoroastrianism vol. I, 1975) shows that the Gathic Two-Spirits doctrine — the better and the worse spirit who chose Truth (Asha) and the Lie (Druj) at the cosmic foundation — is the theology the Vendidad narrates land by land: each good creation of Ahura Mazda is answered by a counter-creation of Angra Mainyu.",
+      "textId": "yasna-30"
+    },
+    {
+      "label": "Bundahishn — the systematic Zoroastrian cosmogony",
+      "note": "The 9th-c. Pahlavi Bundahishn ('Primal Creation') is the systematic theological development of the same dualist creation; Darmesteter's own commentary on Fargard 1 repeatedly cites the Greater Bundahishn for the identification of the lands and plagues (Darmesteter 1880, SBE 4). Ohrmazd/Ahriman of the Bundahishn = the Ahura Mazda/Angra Mainyu of the Vendidad.",
+      "textId": "bundahishn-1"
+    },
+    {
+      "label": "Genesis 1 — creation called 'good,' with no counter-creator",
+      "note": "The structural antithesis. In the Priestly Genesis 1 a single God pronounces each work 'good' and there is no co-equal adversary creating a counter-world; the Vendidad's good-land/counter-plague litany is precisely the dualist alternative the Hebrew monotheist cosmogony excludes (Boyce 1975 on Zoroastrian dualism vs. Hebrew monotheism).",
+      "textId": "genesis-1"
+    },
+    {
+      "label": "Isaiah 45:7 — 'I make peace, and create evil'",
+      "note": "The monotheist polemical response to dualism. Deutero-Isaiah's 'I form the light, and create darkness: I make peace, and create evil' is widely read (Boyce 1982; Barr 1985) as the exilic prophet's deliberate insistence — against the Persian dualist environment — that a single God is the source of both, denying Angra Mainyu the independent counter-creating role he holds in Fargard 1.",
+      "textId": "isaiah-45"
+    },
+    {
+      "label": "Šābuhragān — Mani's reuse of the Zoroastrian dualist frame",
+      "note": "Mani's Šābuhragān recasts the Ohrmazd/Ahriman light-vs-darkness scheme of the Zoroastrian creation into Manichaean cosmology for the Sasanian court (Boyce 1975); the good-creation/counter-creation grammar of Fargard 1 is one ancestor of Manichaean cosmological dualism.",
+      "textId": "shabuhragan-1"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "The Frame — Ahura Mazda Speaks to Zarathushtra",
+      "verses": [
+        {
+          "ref": "Vd 1.1",
+          "text": "Ahura Mazda spake unto Spitama Zarathushtra, saying: I have made every land dear (to its people), even though it had no charms whatever in it: had I not made every land dear (to its people), even though it had no charms whatever in it, then the whole living world would have invaded the Airyana Vaeja.",
+          "textVersions": {
+            "darmesteter": "Ahura Mazda spake unto Spitama Zarathushtra, saying: I have made every land dear (to its people), even though it had no charms whatever in it: had I not made every land dear (to its people), even though it had no charms whatever in it, then the whole living world would have invaded the Airyana Vaeja."
+          },
+          "entities": [
+            {
+              "word": "Ahura Mazda",
+              "node": "ahura-mazda",
+              "type": "deity",
+              "note": "Ahura Mazda ('Wise Lord'), the supreme creator-god of Zoroastrianism, sole maker of the sixteen good lands; the source of Asha (Truth/Order). Boyce (1975) treats him as the one wholly good and uncreated creator whose creation is the field on which the cosmic combat is fought.",
+              "parallels": [
+                {
+                  "label": "Ohrmazd (Bundahishn)",
+                  "note": "the Middle Persian form of Ahura Mazda; in the Bundahishn the creator of the world of light, separated from Ahriman at the primal beginning (Boyce 1975).",
+                  "textId": "bundahishn-1"
+                },
+                {
+                  "label": "the one God of Genesis 1",
+                  "note": "the sole creator who calls creation 'good' — but, unlike Ahura Mazda, with no co-equal counter-creator opposing him (Boyce 1975 on the dualism/monotheism contrast).",
+                  "textId": "genesis-1"
+                }
+              ]
+            },
+            {
+              "word": "Spitama Zarathushtra",
+              "node": "zarathustra",
+              "type": "person",
+              "note": "Zarathushtra (Zoroaster), the prophet of the Avesta, addressed by patronymic 'Spitama' (Darmesteter's note: descended from Spitama in the fifth generation). The Vendidad is framed throughout as Ahura Mazda's revelation to him. Boyce (1975) treats Zarathushtra as the world's first historically named prophet.",
+              "parallels": [
+                {
+                  "label": "the prophet of Yasna 30",
+                  "note": "the same Zarathushtra who in the Gathas proclaims the choice between the two primal Spirits (Boyce 1975).",
+                  "textId": "yasna-30"
+                }
+              ]
+            },
+            {
+              "word": "every land dear",
+              "node": "ahura-mazda",
+              "type": "deity",
+              "note": "The frame-motif: Ahura Mazda makes each land beloved to its own people so the whole world will not crowd into the paradisal first land. Darmesteter's commentary cites the Greater Bundahishn for this 'Genius of the native place' tradition (Darmesteter 1880, SBE 4).",
+              "parallels": [
+                {
+                  "label": "the dispersal of peoples (Genesis 11)",
+                  "note": "a structurally comparable etiology of why humankind is scattered across many lands rather than gathered in one — though Genesis frames it as judgment, not as protective gift (Darmesteter 1880, comm.)."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "The First Land — Airyana Vaeja: the Serpent and Winter",
+      "verses": [
+        {
+          "ref": "Vd 1.2",
+          "text": "The first of the good lands and countries which I, Ahura Mazda, created, was the Airyana Vaeja, by the Vanguhi Daitya. Thereupon came Angra Mainyu, who is all death, and he counter-created the serpent in the river and Winter, a work of the Daevas.",
+          "textVersions": {
+            "darmesteter": "The first of the good lands and countries which I, Ahura Mazda, created, was the Airyana Vaeja, by the Vanguhi Daitya. Thereupon came Angra Mainyu, who is all death, and he counter-created the serpent in the river and Winter, a work of the Daevas."
+          },
+          "entities": [
+            {
+              "word": "Airyana Vaeja",
+              "node": "tradition-zoroastrianism",
+              "type": "tradition",
+              "note": "Airyana Vaeja ('the Iranian seed/expanse'), the holy land of Zoroastrianism — where, by tradition, Zarathushtra was born and founded the religion and the first animal couple appeared (Darmesteter 1880, citing the Bundahishn). The mythic homeland from which the enumeration of the good lands sets out.",
+              "parallels": [
+                {
+                  "label": "Eran-Vej of the Bundahishn",
+                  "note": "the same primal Iranian homeland in the Pahlavi cosmogony (Boyce 1975; Darmesteter 1880).",
+                  "textId": "bundahishn-1"
+                }
+              ]
+            },
+            {
+              "word": "Angra Mainyu",
+              "node": "angra-mainyu-ahriman",
+              "type": "deity",
+              "note": "Angra Mainyu ('Hostile/Destructive Spirit'), later Pahlavi Ahriman, the adversary who 'counter-creates' an evil to answer each of Ahura Mazda's good lands. Boyce (1975) identifies this counter-creating role as the defining act of the Zoroastrian evil principle: he originates nothing of his own, only spoils and opposes the good creation.",
+              "parallels": [
+                {
+                  "label": "the worse Spirit of Yasna 30",
+                  "note": "the primal Spirit who chose the Lie (Druj); Angra Mainyu's counter-creation in Fargard 1 is that Gathic choice made concrete (Boyce 1975).",
+                  "textId": "yasna-30"
+                },
+                {
+                  "label": "Ahriman of the Bundahishn",
+                  "note": "the Middle Persian counter-creator whose assault on Ohrmazd's world organizes the whole Bundahishn cosmology (Boyce 1975).",
+                  "textId": "bundahishn-1"
+                },
+                {
+                  "label": "the 'evil' the LORD creates (Isaiah 45:7)",
+                  "note": "Deutero-Isaiah's insistence that the one God 'creates evil' is read as a monotheist denial of exactly this independent counter-creator (Boyce 1982; Barr 1985).",
+                  "textId": "isaiah-45"
+                }
+              ]
+            },
+            {
+              "word": "counter-created the serpent in the river and Winter",
+              "node": "dualism-cosmic",
+              "type": "theme",
+              "note": "The signature dualist formula of Fargard 1: for every good land a 'counter-creation' (Avestan paitiiāra). The serpent (the venomous khrafstra of the river) and Winter are the evils set against Airyana Vaeja. Boyce (1975) reads the counter-creation litany as the narrative expression of cosmic dualism — good and its opposing evil paired across the whole map of creation.",
+              "parallels": [
+                {
+                  "label": "the Two Spirits as 'a pair' (Yasna 30.3)",
+                  "note": "'the primeval Spirits who, as a pair combining their opposite strivings' — the Gathic statement of the paired good/evil structure the Vendidad maps land by land (Boyce 1975).",
+                  "textId": "yasna-30"
+                },
+                {
+                  "label": "the mixing of the two creations (Bundahishn)",
+                  "note": "the Bundahishn's 'Mixture' (gumēzišn), in which Ahriman's counter-creations contaminate Ohrmazd's good world, is the systematic form of the same idea (Boyce 1975).",
+                  "textId": "bundahishn-1"
+                }
+              ]
+            },
+            {
+              "word": "a work of the Daevas",
+              "node": "theme-asha-druj-cosmic-opposition",
+              "type": "theme",
+              "note": "The daēvas are the demonic host of Angra Mainyu — the false gods rejected by Zoroastrian reform (the very name Vidēvdād means 'law against the daēvas'). Their works fall on the side of Druj (the Lie) against Asha (Truth). Skjærvø (Encyclopaedia Iranica, 'Daēva') notes the Avestan inversion by which the Indo-Iranian *daiva became demons in Iran.",
+              "parallels": [
+                {
+                  "label": "Druj against Asha",
+                  "note": "the cosmic Lie opposing cosmic Truth — the foundational Zoroastrian axis the daēvas serve (Boyce 1975; Skjærvø 1987 'Aša')."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "Vd 1.3",
+          "text": "There are ten winter months there, two summer months; and those are cold for the waters, cold for the earth, cold for the trees. Winter falls there, the worst of all plagues.",
+          "textVersions": {
+            "darmesteter": "There are ten winter months there, two summer months; and those are cold for the waters, cold for the earth, cold for the trees. Winter falls there, the worst of all plagues."
+          },
+          "entities": [
+            {
+              "word": "the worst of all plagues",
+              "node": "origin-of-evil",
+              "type": "theme",
+              "note": "Winter — ten months long in the first land — is singled out as 'the worst of all plagues,' the most severe of Angra Mainyu's counter-creations. The passage makes cold and death, not a moral fall, the primal evil intruded into the good world (Boyce 1975 on Zoroastrian theodicy: evil is an invasion of the good creation, not a flaw within it).",
+              "parallels": [
+                {
+                  "label": "evil as Ahriman's assault, not a defect of creation",
+                  "note": "the Bundahishn likewise locates the origin of evil in the adversary's assault on a wholly good creation (Boyce 1975).",
+                  "textId": "bundahishn-1"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "The Litany Continues — Locust, Plunder, Unbelief",
+      "verses": [
+        {
+          "ref": "Vd 1.4",
+          "text": "The second of the good lands and countries which I, Ahura Mazda, created, was the plain which the Sughdhas inhabit. Thereupon came Angra Mainyu, who is all death, and he counter-created the locust, which brings death unto cattle and plants.",
+          "textVersions": {
+            "darmesteter": "The second of the good lands and countries which I, Ahura Mazda, created, was the plain which the Sughdhas inhabit. Thereupon came Angra Mainyu, who is all death, and he counter-created the locust, which brings death unto cattle and plants."
+          },
+          "entities": [
+            {
+              "word": "counter-created the locust",
+              "node": "dualism-cosmic",
+              "type": "theme",
+              "note": "Against the second good land (Sogdiana) Angra Mainyu sets the locust 'which brings death unto cattle and plants' — the evil aimed at the Zoroastrian good of the herd and the harvest. Darmesteter (1880) cites the Greater Bundahishn: 'the plague that fell to that country was the bad locust.' The pattern (good land → answering plague) is now fixed as the engine of the whole Fargard (Boyce 1975).",
+              "parallels": [
+                {
+                  "label": "the paired counter-creation of Yasna 30",
+                  "note": "each plague is the Lie-spirit's act answering the Truth-spirit's creation — the Gathic pairing in narrative form (Boyce 1975).",
+                  "textId": "yasna-30"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "Vd 1.5",
+          "text": "The third of the good lands and countries which I, Ahura Mazda, created, was the strong, holy Mouru. Thereupon came Angra Mainyu, who is all death, and he counter-created plunder and sin.",
+          "textVersions": {
+            "darmesteter": "The third of the good lands and countries which I, Ahura Mazda, created, was the strong, holy Mouru. Thereupon came Angra Mainyu, who is all death, and he counter-created plunder and sin."
+          },
+          "entities": [
+            {
+              "word": "counter-created plunder and sin",
+              "node": "theme-asha-druj-cosmic-opposition",
+              "type": "theme",
+              "note": "Against Mouru (Marv) the counter-creation shifts from natural plague (winter, locust) to moral evil — 'plunder and sin.' Darmesteter (1880) glosses it from the Greater Bundahishn as 'the coming and going of troops... thieves, robbers, and heretics, who speak untruth and oppress the righteous': the works of Druj (the Lie). Boyce (1975) notes that the Vendidad's counter-creations span the natural and the moral, both belonging to Angra Mainyu's single hostile order.",
+              "parallels": [
+                {
+                  "label": "the followers of the Lie (Yasna 30)",
+                  "note": "'those who speak untruth and oppress the righteous' are the drujvant, the Lie-followers of the Gathas (Boyce 1975; Skjærvø 1996 'Drug').",
+                  "textId": "yasna-30"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "Vd 1.7",
+          "text": "The fifth of the good lands and countries which I, Ahura Mazda, created, was Nisaya, that lies between the Mouru and Bakhdhi. Thereupon came Angra Mainyu, who is all death, and he counter-created the sin of unbelief.",
+          "textVersions": {
+            "darmesteter": "The fifth of the good lands and countries which I, Ahura Mazda, created, was Nisaya, that lies between the Mouru and Bakhdhi. Thereupon came Angra Mainyu, who is all death, and he counter-created the sin of unbelief."
+          },
+          "entities": [
+            {
+              "word": "counter-created the sin of unbelief",
+              "node": "theme-asha-druj-cosmic-opposition",
+              "type": "theme",
+              "note": "Against Nisaya the counter-creation is 'the sin of unbelief' — Darmesteter's commentary: 'There are people there who doubt the existence of God.' Here the cosmic dualism becomes explicitly doctrinal: doubt and false belief are themselves an evil counter-creation of Angra Mainyu, an act of Druj against the Truth of Ahura Mazda (Boyce 1975; Skjærvø 1996 on Druj as cosmic deceit).",
+              "parallels": [
+                {
+                  "label": "the choice for the Lie (Yasna 30)",
+                  "note": "unbelief is alignment with Druj rather than Asha — the wrong side of the Gathic primal choice (Boyce 1975).",
+                  "textId": "yasna-30"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "The Open Horizon — Lands Still Asking for the Good",
+      "verses": [
+        {
+          "ref": "Vd 1.20",
+          "text": "There are still other lands and countries, beautiful and deep, longing and asking for the good, and bright.",
+          "textVersions": {
+            "darmesteter": "There are still other lands and countries, beautiful and deep, longing and asking for the good, and bright."
+          },
+          "entities": [
+            {
+              "word": "other lands and countries",
+              "node": "ahura-mazda",
+              "type": "deity",
+              "note": "The Fargard closes by leaving the enumeration open beyond the sixteen named lands — the whole of creation remains Ahura Mazda's. Darmesteter's note records the Commentary's gloss 'Some say: Persis.' The catalogue of good lands is not exhaustive but a sample of a world made good (Darmesteter 1880).",
+              "parallels": [
+                {
+                  "label": "the good creation of the Bundahishn",
+                  "note": "the Bundahishn's full cosmography of the world Ohrmazd made and Ahriman assaults (Boyce 1975).",
+                  "textId": "bundahishn-1"
+                }
+              ]
+            },
+            {
+              "word": "longing and asking for the good",
+              "node": "frashokereti-cosmic-renovation",
+              "type": "theme",
+              "note": "The closing image of lands 'longing and asking for the good' opens onto the forward orientation of Zoroastrian cosmology: the good creation, though invaded by counter-plagues, yearns toward its restoration. Boyce (1975) reads Zoroastrian dualism as ultimately optimistic — the combat ends in Frashokereti, the renovation when Ahura Mazda's good prevails and Angra Mainyu's counter-creations are undone.",
+              "parallels": [
+                {
+                  "label": "the final renovation (Frashokereti)",
+                  "note": "the Bundahishn's eschatological purification in which the good creation is made perfect and evil annihilated — the resolution of the dualism Fargard 1 narrates (Boyce 1975).",
+                  "textId": "bundahishn-1"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
