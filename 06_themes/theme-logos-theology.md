@@ -13,6 +13,9 @@ deity-instances:
   - "[[logos-christian]]"
   - "[[ptah]]"
   - "[[sophia-gnostic]]"
+  - "[[logos-stoic]]"
+  - "[[logos-philonic]]"
+  - "[[logos-johannine]]"
 related-persons:
   - "[[philo-of-alexandria]]"
   - "[[heraclitus]]"

@@ -21,6 +21,11 @@ tags:
 geo: "Mediterranean / Europe"
 
 cross-moral-edges:
+  - target: theme-logos-theology
+    type: grounded-in
+    source: "Aquinas *Summa Theologiae* I-II qq.90-91; Porter, J. 2005 *Nature as Reason: A Thomistic Theory of the Natural Law* Eerdmans"
+    source-tier: T1
+    note: "Aquinas: the eternal law is God's Reason (the Logos) governing creation; natural law is the rational creature's participation in that eternal law. The Christian-scholastic form of natural law rests on Logos theology — the divine Word/Reason of John 1 as the cosmic order reason discovers. Cross-lens 13_morals -> 06_themes; cross-branch link to the Vedic ṛta / Zoroastrian aša cosmic-order family already wired on this node."
   - target: moral-divine-command-theory
     type: critique-of
     note: "Natural law arose partly as the alternative to divine command: moral norms are rationally discoverable independent of divine revelation, not merely commanded by God."

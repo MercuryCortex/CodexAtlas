@@ -6,6 +6,7 @@ philosophy-type: school
 tradition: tradition-roman-catholicism
 also-in-traditions:
   - tradition-neoplatonism
+influenced-by: ["[[theme-logos-theology]]"]
 date_earliest: 1100
 date_latest: 1600
 date-earliest: 1100

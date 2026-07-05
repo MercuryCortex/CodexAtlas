@@ -7,6 +7,8 @@ tradition: "[[tradition-roman-catholicism]]"
 also-in-traditions:
   - tradition-scholasticism
   - tradition-aristotelianism
+influenced-by: ["[[theme-logos-theology]]"]
+parallels: ["[[moral-natural-law]]"]
 date_earliest: 1265
 date_latest: 2025
 date-earliest: 1265
