@@ -719,6 +719,7 @@ def collect_node_edges(nodes_by_id):
             ("cross-links",             "ancestor-of",     None),           # 03_deities/ (Celtic/Welsh anchors)
             ("connections",             "parallel-form",   None),           # 09_symbols/ (older convention used by a few nodes)
             ("connects-to",             "connects-to",     None),           # 04_persons/ (uses `relation:` instead of `type:`)
+            ("hub-edges",               "hub-edge",        None),           # 02_documents/,03_deities/,06_themes/ — cross-lens transmission wires (registered 2026-07-06; recovered 80 previously-inert sourced edges)
         ]
         SLUG_RE = re.compile(r"^[a-z0-9_-]+$")
         for field, default_etype, etype_prefix in STRUCTURED_EDGE_FIELDS:
