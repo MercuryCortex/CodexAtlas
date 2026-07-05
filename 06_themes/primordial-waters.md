@@ -5,7 +5,7 @@ name: "Primordial waters"
 category: "cosmogonic"
 appearances: ["[[phase-1-008-enuma-elish]]", "[[phase-1-002-pyramid-texts]]", "[[phase-1-031-rigveda]]", "[[phase-8-001-popol-vuh]]"]
 deity-instances: ["[[tehom]]", "[[tiamat]]", "[[apsu]]", "[[nun]]", "[[nammu]]", "[[ginnungagap]]", "[[chaos-primordial]]", "[[apas]]", "[[primordial-sea-popol-vuh]]"]
-parallels: ["[[cosmic-ocean]]", "[[flood-motif]]", "[[chaoskampf]]"]
+parallels: ["[[cosmic-ocean]]", "[[flood-motif]]", "[[chaoskampf]]", "[[philosophy-apeiron]]"]
 status: "full"
 refs:
   - title: "The Babylonian Genesis"

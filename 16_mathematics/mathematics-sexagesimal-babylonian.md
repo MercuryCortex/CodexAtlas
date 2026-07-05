@@ -13,6 +13,12 @@ dating-basis: B5
 dating-basis-source: "Robson, E. 2008 *Mathematics in Ancient Iraq*; Friberg, J. 2007 *A Remarkable Collection of Babylonian Mathematical Texts*"
 dating-basis-notes: "Sexagesimal numeration appears in Sumerian administrative cuneiform from c. -3000; the system reaches full positional sophistication (including placeholder-zero) in the Old Babylonian period (c. -1900 to -1600). The 60-second minute and 60-minute hour and 360-degree circle survive in modern measurement as direct inheritances."
 tags: [mathematics, sexagesimal, base-60, babylonian, sumerian, place-value, plimpton-322]
+cross-tradition-edges:
+  - target: "[[astronomy-mul-apin]]"
+    type: "computational-substrate-of"
+    source: "Robson, E. 2008 *Mathematics in Ancient Iraq* Princeton; Hunger, H. & Pingree, D. 1989 *MUL.APIN*"
+    source-tier: T1
+    note: "Babylonian astronomy is computed ENTIRELY in sexagesimal: the MUL.APIN intercalation rules, rising-time and shadow-length tables, and the 360° / 12×30 ideal-year scheme (ancestor of the zodiac and the 360-degree circle) are base-60 arithmetic. The number system is the computational substrate of the celestial order the Enuma Elish cosmogony establishes."
 refs:
   - title: "Mathematics in Ancient Iraq"
     author: "Robson, Eleanor"

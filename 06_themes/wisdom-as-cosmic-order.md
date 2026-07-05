@@ -2,12 +2,13 @@
 type: theme
 id: "wisdom-as-cosmic-order"
 name: "Wisdom as Cosmic Order"
-aka: ["*rita*", "*dharma*", "*ma'at*", "*asha*", "*chokhmah* (in the cosmic-order sense)", "Heraclitean *logos*"]
+aka: ["*rita*", "*dharma*", "*ma'at*", "*asha*", "*chokhmah* (in the cosmic-order sense)", "Heraclitean *logos*", "*kittum u mīšarum* (Mesopotamian truth-and-justice)"]
 category: "ethical"
-traditions-where-attested: ["Egyptian (Ma'at)", "Vedic (Rita / Dharma)", "Zoroastrian (Asha)", "Hebrew Wisdom literature (Chokhmah)", "Heraclitean (Logos)", "Stoic (Logos)", "Confucian (Tian / Dao)"]
-appearances: ["[[document-instruction-of-ptahhotep|Instruction of Ptahhotep]]", "[[phase-2-001-rig-veda-family-books]]", "[[phase-2-002-gathas-of-zarathustra]]", "[[phase-2-041-book-of-proverbs]]", "[[phase-3-005-stoic-foundational-texts]]"]
-deity-instances: ["[[ma-at]]", "[[asha-vahishta]]"]
-status: "stub"
+traditions-where-attested: ["Mesopotamian (Kittum u Mīšarum)", "Egyptian (Ma'at)", "Vedic (Rita / Dharma)", "Zoroastrian (Asha)", "Hebrew Wisdom literature (Chokhmah)", "Heraclitean (Logos)", "Stoic (Logos)", "Confucian (Tian / Dao)"]
+appearances: ["[[phase-1-008-enuma-elish]]", "[[phase-1-007-code-of-hammurabi]]", "[[document-instruction-of-ptahhotep|Instruction of Ptahhotep]]", "[[phase-2-001-rig-veda-family-books]]", "[[phase-2-002-gathas-of-zarathustra]]", "[[phase-2-041-book-of-proverbs]]", "[[phase-3-005-stoic-foundational-texts]]"]
+deity-instances: ["[[utu-shamash]]", "[[ma-at]]", "[[asha-vahishta]]"]
+parallels: ["[[moral-rta-cosmic-order]]", "[[moral-natural-law]]"]
+status: "developing"
 refs:
   - title: "Ma'at, the Moral Ideal in Ancient Egypt"
     author: "Karenga, Maulana"

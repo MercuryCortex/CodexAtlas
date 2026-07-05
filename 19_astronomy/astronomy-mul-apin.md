@@ -21,6 +21,11 @@ key-claims:
   - "Intercalation rules for the lunisolar calendar"
   - "Shadow-length tables (a gnomon-based observational method for time-of-day + season)"
 syncretic-edges:
+  - target: "[[phase-1-008-enuma-elish]]"
+    type: "celestial-order-established-by"
+    source: "Enuma Elish Tablet V; Horowitz, W. 1998 *Mesopotamian Cosmic Geography* Eisenbrauns; Rochberg, F. 2004 *The Heavenly Writing* CUP"
+    source-tier: "T1"
+    notes: "The astronomical/calendrical order MUL.APIN catalogs is, in Babylonian theology, the order Marduk imposes on the chaos-deep in the Enuma Elish cosmogony (Tablet V: he fixes the constellations, defines the year, and sets the moon to mark the months). Cross-lens: 19_astronomy → 02_documents — the cosmogony → astronomy wire."
   - target: "[[hipparchus-astronomer]]"
     type: "ancestor-of"
     source: "Rochberg 2004 *The Heavenly Writing*; Pingree 1997 *From Astral Omens to Astrology* IsIAO; Steele, J. M. 2008 *A Brief Introduction to Astronomy in the Middle East* Saqi"

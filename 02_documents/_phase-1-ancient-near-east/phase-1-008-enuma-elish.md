@@ -17,10 +17,10 @@ region: "Mesopotamia (Babylon and its sphere; later copied throughout Assyrian e
 city-of-origin: "Babylon"
 authorship: "anonymous (Babylonian priestly scribes); final form likely under Nebuchadnezzar I (~1125–1104 BCE)"
 key-figures: []
-themes: ["[[chaoskampf]]", "[[primordial-waters]]", "[[divine-council]]", "[[divine-kingship]]"]
+themes: ["[[chaoskampf]]", "[[primordial-waters]]", "[[divine-council]]", "[[divine-kingship]]", "[[wisdom-as-cosmic-order]]"]
 parallels: ["[[phase-1-006-atrahasis]]", "[[phase-1-013-baal-cycle]]"]
 influenced-by: ["earlier Sumerian creation/combat traditions (e.g., Ninurta-Anzu myth)"]
-influences: ["Hebrew Bible Genesis 1 cosmogony (contested mechanism — common-stock vs. literary dependence)", "later Near Eastern combat-creation imagery"]
+influences: ["Hebrew Bible Genesis 1 cosmogony (contested mechanism — common-stock vs. literary dependence)", "later Near Eastern combat-creation imagery", "[[astronomy-mul-apin]] (Tablet V — Marduk fixes the constellations, the year, and the lunar month, establishing the celestial/calendrical order the MUL.APIN compendium later catalogs)"]
 deities-mentioned: ["[[marduk]]", "[[tiamat]]", "[[apsu]]", "[[an-sumerian]]", "[[enlil]]", "[[enki-ea]]", "[[kingu]]", "[[damkina]]"]
 events-context: ["Read aloud during the Babylonian Akitu (New Year) festival, days 4–5 of Nisanu"]
 hub-edges:

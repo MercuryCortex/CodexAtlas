@@ -16,7 +16,7 @@ texts-authored:
   - "(lost) *On Nature* (Περὶ Φύσεως) — the first known prose treatise in Greek"
 texts-attributed-to: []
 originator-of:
-  - "[[apeiron]]"
+  - "[[philosophy-apeiron]]"
 events-participated: []
 mentioned-in:
   - "[[phase-3-003-aristotle-metaphysics]]"

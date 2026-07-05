@@ -16,6 +16,7 @@ consort: ["Aya (Akkadian dawn-goddess; Utu/Shamash's consort — no node yet)"]
 attributes: ["solar disc", "rod-and-ring (handed to kings as authority)", "saw (with which he cuts through mountains at sunrise)", "rays emanating from shoulders"]
 attested-in: ["[[phase-1-007-code-of-hammurabi]]", "[[phase-1-004-gilgamesh-old-babylonian]]", "[[phase-1-012-amarna-letters]]"]
 equivalents: []
+themes: ["[[wisdom-as-cosmic-order]]"]
 status: "metadata"
 refs:
   - title: "Encounters with the Divine in Mesopotamia"
