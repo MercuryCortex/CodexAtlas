@@ -14,6 +14,7 @@ dating-basis: B5
 dating-basis-source: "Clooney, F.X. 1990 *Thinking Ritually: Rediscovering the Pūrva Mīmāṃsā of Jaimini*; Pollock, S. 2006 *The Language of the Gods in the World of Men*"
 dating-basis-notes: "Jaimini's *Mīmāṃsā-sūtra* (c. -200) is the foundational text; the principal early bhāṣya is Śabara's *Śābara-bhāṣya* (c. 4th-5th c. CE); the school's mature classical articulation is Kumārila Bhaṭṭa's *Ślokavārttika*, *Tantravārttika*, *Ṭupṭīkā* (c. 700 CE) and Prabhākara Miśra's slightly later commentaries (c. 750 CE) — the school splits into the Bhāṭṭa and Prābhākara sub-schools that continue through the medieval period to the 17th c. Khaṇḍadeva (1605-1665)."
 tags: [philosophy, mimamsa, purva-mimamsa, sabara, kumarila, prabhakara, vedic-ritual, apurva, dharma, eternal-vedas, hermeneutics]
+parallels: ["[[ritual-yajna-vedic-fire]]", "[[moral-rta-cosmic-order]]", "[[moral-dharma-svadharma-hindu-station-duty]]"]
 refs:
   - title: "Thinking Ritually: Rediscovering the Pūrva Mīmāṃsā of Jaimini"
     author: "Clooney, Francis X."

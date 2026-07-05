@@ -30,6 +30,22 @@ astronomical-basis:
   - "Solar tropical year"
   - "Nakshatra 27-fold ecliptic division"
   - "Jovian 60-year cycle for high-precision long-period reckoning"
+cross-tradition-edges:
+  - target: "[[astronomy-indian-nakshatras]]"
+    type: "built-on"
+    source: "Plofker, K. 2009 *Mathematics in India* Princeton UP"
+    source-tier: T1
+    note: "The panchāṅga's tithi + nakshatra limbs rest on the 27-fold nakshatra ecliptic division — the calendar is the civil face of the Vedic star-order."
+  - target: "[[ritual-yajna-vedic-fire]]"
+    type: "times"
+    source: "Plofker 2009; Pingree 1981 *Jyotiḥśāstra*"
+    source-tier: T1
+    note: "The calendar's founding purpose is fixing the auspicious days for sacrifice and festival — the yajna's civil timekeeper."
+  - target: "[[babylonian-calendar]]"
+    type: "parallel-form"
+    source: "Pingree, D. 1963 'Astronomy and Astrology in India and Iran' Isis 54; Stern, S. 2012 *Calendars in Antiquity* OUP"
+    source-tier: T1
+    note: "Both are lunisolar with a ~19-year / 7-leap Metonic-style intercalation and a 60-unit long cycle (Babylonian sexagesimal / Indian 60-year Jovian). Hellenistic transmission carried Babylonian astronomy into India c. -200 to +200; the shared intercalation structure joins the Vedic branch to the Mesopotamian one. Cross-branch wire: Indra ↔ Tiamat."
 yuga-cosmic-cycles:
   - "Kali Yuga: 432,000 years (current age)"
   - "Dvapara Yuga: 864,000 years"

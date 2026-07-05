@@ -21,6 +21,10 @@ tags:
   - agni
   - proto-indo-european
 
+deities-mentioned: ["[[indra]]", "[[agni]]"]
+key-documents: ["[[phase-2-001-rig-veda-family-books]]"]
+themes: ["[[moral-rta-cosmic-order]]"]
+
 cross-music-edges:
   - target: music-sama-veda
     type: parent-of

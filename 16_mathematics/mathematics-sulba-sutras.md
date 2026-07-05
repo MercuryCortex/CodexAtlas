@@ -19,6 +19,7 @@ tags:
   - pythagorean-theorem
   - sacred-architecture
 
+influenced-by: ["[[ritual-yajna-vedic-fire]]"]
 cross-tradition-edges:
   - target: mathematics-babylonian-temple
     type: parallel
