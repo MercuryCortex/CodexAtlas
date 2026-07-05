@@ -12,6 +12,7 @@ date-died: 1891
 historicity: "documented"
 texts-authored: ["[[phase-7-005-isis-unveiled]]", "[[phase-7-006-secret-doctrine]]", "[[phase-7-034-blavatsky-atlantis-root-race]]", "*The Key to Theosophy* (1889)", "*The Voice of the Silence* (1889)"]
 originator-of: ["[[root-races]]"]
+influenced-by: ["[[hermes-trismegistus]]", "[[alchemy-hermetic-corpus]]"]
 status: "metadata"
 refs:
   - title: "Helena Blavatsky"

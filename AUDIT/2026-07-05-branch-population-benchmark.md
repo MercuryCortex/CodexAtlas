@@ -152,6 +152,25 @@ Run 2 added: **esagila** → Enuma Elish + Marduk (architecture), Enuma Elish �
 | **🕳 GENUINE GAP — node missing** (≈2) | **places (Babylon has no node — only Sumerian Ur)** · math tablet `plimpton-322` | create, demand-ranked |
 | **⬜ NO-ENDPOINT — honestly off-branch** (≈4) | consciousness · attire · material-culture (no cylinder-seal node) · alchemy (Hellenistic-later) | a cosmogony root legitimately doesn't reach these; marking it is the point |
 
+## 11. REACH-TO-TODAY is a required axis (John, 2026-07-05 — "till today's / as modern as possible")
+
+A branch is **not populated until it lands in the present.** The original exercise mandate had
+TWO axes — *all lenses* AND *till today's* — and lens-breadth in antiquity is only half. A
+transmission that stops at Aquinas is not a transmission to **us**. So every branch must be
+carried forward to its most-contemporary terminus (a living practice, a still-used institution,
+or the modern discipline that re-synthesized it). Same node-rich/wire-poor rule: the modern
+bridge nodes almost always already exist (150 persons ≥1700, 108 ≥1900) but dangle un-wired.
+
+**The four branches' modern termini (wired 2026-07-05):**
+- **Tiamat** → living astrology (`divination-astrology-comparative`, 2026) · Jung + Campbell (chaoskampf → the monomyth) · base-60 still in every clock/circle.
+- **Indra** → `swami-vivekananda` (neo-Vedanta to the modern West, 1893) · `yoga-asana-postural` (global modern yoga) · living Ayurveda.
+- **Hermes** → `helena-blavatsky` / Theosophy · `aleister-crowley` / Thelema · `tradition-new-age` (the living occult revival) · Jung (alchemy → depth psychology).
+- **Jesus** → `john-locke` → **`moral-human-rights`** (natural law → natural rights → UDHR 1948, the modern moral lingua franca) · neo-Thomism (living).
+
+**Checklist addition:** a branch's coverage grid (§10) now has a fifth bucket — **⏩ REACH-TO-TODAY**: does the chain terminate in a living/contemporary node? If it dead-ends before ~1700, the branch is unfinished.
+
+---
+
 **The benchmark result:** from ONE transmission root, following real wires, **~17 of 29 lenses light up**,
 another ~6 are a single wire away, only ~2 are true node-gaps, and ~4 are honestly out of branch.
 And the dominant cost was **wiring existing nodes**, not creating new ones — the thesis, proven end-to-end.

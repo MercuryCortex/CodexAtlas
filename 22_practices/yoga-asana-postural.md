@@ -5,6 +5,7 @@ title: "Yoga Āsana — Postural Practice"
 aka: ["asana", "yoga postures", "hatha yoga", "modern postural yoga", "MPY"]
 category: "embodied-discipline"
 tradition: "[[tradition-hinduism]]"
+influenced-by: ["[[tradition-samkhya-yoga]]", "[[patanjali-yoga-sutras-author]]"]
 date-attested-earliest: -200
 date-attested-latest: 2026
 region: "Indian subcontinent (origin); global modern diffusion via 20th-century Krishnamacharya lineage"

@@ -6,6 +6,7 @@ aka: ["Edward Alexander Crowley", "Frater Perdurabo", "Master Therion", "The Bea
 tradition: "Thelema"
 role-tokens: ["founder", "prophet-non-abrahamic", "magus", "mystic-syncretic"]
 role-description: "Aleister Crowley — founder of Thelema; self-styled 'Prophet of the Aeon of Horus'; Liber AL vel Legis 1904."
+influenced-by: ["[[hermes-trismegistus]]", "[[alchemy-the-great-work]]"]
 polemical-framing:
   - by: "mainline-Christianity + older academy"
     label: "occultist"

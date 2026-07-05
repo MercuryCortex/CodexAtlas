@@ -11,6 +11,7 @@ date-born: 1863
 date-died: 1902
 historicity: "documented"
 texts-authored: ["*Raja Yoga* (1896)", "*Jnana Yoga*", "*Karma Yoga*", "*Bhakti Yoga*", "Chicago World's Parliament of Religions addresses (1893)"]
+influenced-by: ["[[philosophy-advaita-vedanta]]", "[[ramakrishna]]"]
 status: "metadata"
 refs:
   - title: "Swami Vivekananda"
