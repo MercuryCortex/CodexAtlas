@@ -49,7 +49,7 @@ related-traditions:
 related-events:
   - "[[event-council-of-nicaea-325]] (Paschal canon)"
 hub-edges:
-  - target: "soma-haoma-eucharist"
+  - target: "theme-soma-haoma-eucharist"
     type: "calendrical-framework-of-Christian-Eucharistic-temporality"
     source: "Talley 1991 *The Origins of the Liturgical Year*; Bradshaw 2002 *The Search for the Origins of Christian Worship* — the liturgical year is the calendrical-temporal framework within which Christian Eucharistic practice is structured (every Sunday as weekly Pascha + Holy Thursday institution-narrative + Easter as the supreme Eucharistic celebration). The Quartodeciman controversy (2nd c.) and the Nicaea 325 Paschal settlement directly determined the rhythm of Christian sacramental life"
     notes: "Cross-lens: 26_calendars → 06_themes. The liturgical year is the temporal infrastructure of the Christian sacramental cycle that anchors the soma/haoma/Eucharist transmission chain"

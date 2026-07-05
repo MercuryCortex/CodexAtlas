@@ -20,7 +20,7 @@ hub-edges:
     type: "principal-ritual-locus"
     source: "Mojsov 2005; Smith 2017 *Following Osiris*; the **Mysteries of Osiris** were performed annually at Abydos throughout the Middle and New Kingdoms — a passion-play reenactment of Osiris's death, dismemberment, mourning by Isis and Nephthys, mummification by Anubis, vindication by Horus, and resurrection. The festival is one of the very few documented examples of large-scale public passion-drama in Egyptian religion; it is the principal precedent for later Mediterranean mystery-religion performance traditions"
     notes: "Cross-lens: 08_places → 14_rituals. MASSIVE-WIN: The Abydos Mysteries are the earliest documented *passion play* in religious history — Pinch 2002 dates them from at least the 12th Dynasty (~ -2000), with continuity into the Ptolemaic period. The structural parallel with the Christian Passion (death of the god, mourning by the women, vindication, resurrection) is one of the most-discussed cross-tradition resonances in 19th-c and 20th-c comparative religion."
-  - target: "phase-1-008-shabaka-stone"
+  - target: "phase-1-027-memphite-theology-shabaka-stone"
     type: "regional-rival-cult-text"
     source: "Allen 1988 *Genesis in Egypt*; Lichtheim 1973 *Ancient Egyptian Literature* I; the Memphite Theology (Shabaka Stone) is the Memphis priesthood's polemical response to the Heliopolitan and Theban theologies — and indirectly to the Osirian theology centred at Abydos. The Abydos Osiris cult and the Memphite Ptah cult constitute a north-south theological axis across the Old and Middle Kingdoms."
     notes: "Cross-lens: 08_places → 02_documents"
