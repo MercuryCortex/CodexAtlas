@@ -1,0 +1,241 @@
+{
+  "generatedAt": "2026-07-05",
+  "note": "Top-10 deities by transmission score; heatmap sorted by civilization-lens reach (mention-count lower bound).",
+  "lensKeys": [
+    "law",
+    "phil",
+    "math",
+    "med",
+    "astr",
+    "div",
+    "cal",
+    "mus",
+    "alch"
+  ],
+  "roots": [
+    {
+      "slug": "indra",
+      "name": "Indra",
+      "tradition": "Vedic / Hindu",
+      "transmissionRank": 1,
+      "transmissionScore": 63.5,
+      "sourced": 12,
+      "equiv": 25,
+      "cross": 22,
+      "civScore": 97,
+      "lenses": {
+        "law": 8,
+        "phil": 5,
+        "math": 13,
+        "med": 4,
+        "astr": 5,
+        "div": 6,
+        "cal": 5,
+        "mus": 42,
+        "alch": 9
+      }
+    },
+    {
+      "slug": "hermes-greek",
+      "name": "Hermes",
+      "tradition": "Greek",
+      "transmissionRank": 10,
+      "transmissionScore": 40.5,
+      "sourced": 1,
+      "equiv": 21,
+      "cross": 19,
+      "civScore": 92,
+      "lenses": {
+        "law": 1,
+        "phil": 3,
+        "math": 8,
+        "med": 3,
+        "astr": 6,
+        "div": 10,
+        "cal": 2,
+        "mus": 27,
+        "alch": 32
+      }
+    },
+    {
+      "slug": "jesus-christ-deity",
+      "name": "Jesus Christ (divine)",
+      "tradition": "Christianity",
+      "transmissionRank": 3,
+      "transmissionScore": 55.5,
+      "sourced": 24,
+      "equiv": 3,
+      "cross": 12,
+      "civScore": 88,
+      "lenses": {
+        "law": 14,
+        "phil": 13,
+        "math": 3,
+        "med": 2,
+        "astr": 0,
+        "div": 2,
+        "cal": 7,
+        "mus": 32,
+        "alch": 15
+      }
+    },
+    {
+      "slug": "zeus",
+      "name": "Zeus",
+      "tradition": "Greek",
+      "transmissionRank": 2,
+      "transmissionScore": 62.5,
+      "sourced": 5,
+      "equiv": 29,
+      "cross": 27,
+      "civScore": 28,
+      "lenses": {
+        "law": 1,
+        "phil": 0,
+        "math": 3,
+        "med": 1,
+        "astr": 3,
+        "div": 4,
+        "cal": 2,
+        "mus": 13,
+        "alch": 1
+      }
+    },
+    {
+      "slug": "inanna-sumerian",
+      "name": "Inanna",
+      "tradition": "Sumerian",
+      "transmissionRank": 9,
+      "transmissionScore": 41.5,
+      "sourced": 8,
+      "equiv": 14,
+      "cross": 15,
+      "civScore": 24,
+      "lenses": {
+        "law": 1,
+        "phil": 0,
+        "math": 5,
+        "med": 1,
+        "astr": 0,
+        "div": 4,
+        "cal": 1,
+        "mus": 7,
+        "alch": 5
+      }
+    },
+    {
+      "slug": "osiris",
+      "name": "Osiris",
+      "tradition": "Egyptian",
+      "transmissionRank": 4,
+      "transmissionScore": 52.5,
+      "sourced": 4,
+      "equiv": 27,
+      "cross": 22,
+      "civScore": 20,
+      "lenses": {
+        "law": 3,
+        "phil": 0,
+        "math": 1,
+        "med": 0,
+        "astr": 8,
+        "div": 1,
+        "cal": 0,
+        "mus": 4,
+        "alch": 3
+      }
+    },
+    {
+      "slug": "mary-theotokos",
+      "name": "Mary (Theotokos)",
+      "tradition": "Christianity",
+      "transmissionRank": 7,
+      "transmissionScore": 48.0,
+      "sourced": 10,
+      "equiv": 12,
+      "cross": 18,
+      "civScore": 18,
+      "lenses": {
+        "law": 4,
+        "phil": 1,
+        "math": 0,
+        "med": 1,
+        "astr": 0,
+        "div": 2,
+        "cal": 5,
+        "mus": 4,
+        "alch": 1
+      }
+    },
+    {
+      "slug": "thor",
+      "name": "Þórr",
+      "tradition": "Norse / Germanic",
+      "transmissionRank": 6,
+      "transmissionScore": 50.5,
+      "sourced": 9,
+      "equiv": 20,
+      "cross": 18,
+      "civScore": 7,
+      "lenses": {
+        "law": 0,
+        "phil": 0,
+        "math": 0,
+        "med": 0,
+        "astr": 0,
+        "div": 2,
+        "cal": 0,
+        "mus": 3,
+        "alch": 2
+      }
+    },
+    {
+      "slug": "tiamat",
+      "name": "Tiamat",
+      "tradition": "Babylonian (Akkadian) — drawing on Sumerian prototypes",
+      "transmissionRank": 5,
+      "transmissionScore": 51.0,
+      "sourced": 9,
+      "equiv": 24,
+      "cross": 17,
+      "civScore": 6,
+      "lenses": {
+        "law": 0,
+        "phil": 1,
+        "math": 2,
+        "med": 0,
+        "astr": 1,
+        "div": 0,
+        "cal": 1,
+        "mus": 0,
+        "alch": 1
+      }
+    },
+    {
+      "slug": "perun",
+      "name": "Perun",
+      "tradition": "Pre-Christian Slavic",
+      "transmissionRank": 8,
+      "transmissionScore": 44.5,
+      "sourced": 8,
+      "equiv": 20,
+      "cross": 15,
+      "civScore": 1,
+      "lenses": {
+        "law": 0,
+        "phil": 0,
+        "math": 0,
+        "med": 0,
+        "astr": 0,
+        "div": 0,
+        "cal": 1,
+        "mus": 0,
+        "alch": 0
+      }
+    }
+  ],
+  "methodology": {
+    "transmissionScore": "sourced syncretic-edges + 1.5*distinct-cross-traditions + 0.5*equivalents + 0.5*T1-edges",
+    "civReach": "per hard lens, count of nodes mentioning the root's branch tokens (word-boundaried); a LOWER BOUND — tradition-anchored roots undercounted."
+  }
+}

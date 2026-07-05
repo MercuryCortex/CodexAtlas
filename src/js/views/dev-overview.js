@@ -103,8 +103,12 @@
     // `python3 scripts/audit_scripture_coverage.py`.
     const scriptureCov = fetch('src/data/scripture-coverage.json?_=' + Date.now(), { cache: 'no-store' })
       .then(r => r.ok ? r.json() : null).catch(() => null);
-    return Promise.all([health, bench, docBench, wireCov, scriptureCov]).then(([d, b, db, wc, sc]) => {
-      STATE.cache = d; STATE.bench = b; STATE.docBench = db; STATE.wireCov = wc; STATE.scriptureCov = sc; return d;
+    // Deity transmission ranking + civilization-lens reach heatmap. Rebuilt via
+    // `python3 scripts/build_transmission_ranking.py`.
+    const transmission = fetch('src/data/transmission-ranking.json?_=' + Date.now(), { cache: 'no-store' })
+      .then(r => r.ok ? r.json() : null).catch(() => null);
+    return Promise.all([health, bench, docBench, wireCov, scriptureCov, transmission]).then(([d, b, db, wc, sc, tr]) => {
+      STATE.cache = d; STATE.bench = b; STATE.docBench = db; STATE.wireCov = wc; STATE.scriptureCov = sc; STATE.transmission = tr; return d;
     });
   }
 
@@ -127,6 +131,7 @@
     const overallPct = totalBaseline ? Math.round(d.vault.totalNodes / totalBaseline * 100) : 0;
     const lensBands = countBands(d.lenses);
     body.innerHTML = [
+      renderTransmissionRanking(STATE.transmission),
       renderDeityBenchmark(STATE.bench),
       renderDocumentBenchmark(STATE.docBench),
       renderWireCoverage(STATE.wireCov),
@@ -137,6 +142,78 @@
       renderMethodology(d.methodology, d.unmatchedTraditionsTop || []),
       renderFooter(d),
     ].join('');
+  }
+
+  // ── DEITY TRANSMISSION RANKING (civilization-lens reach heatmap) ────────
+  // The top-10 deities by transmission score, and how far each root's branch
+  // reaches into the 9 "civilization" lenses (law/phil/math/med/astr/div/cal/
+  // mus/alch) — the lenses that discriminate (the mythology spine is dense for
+  // all). Reach = mention-count LOWER BOUND. Data: src/data/transmission-ranking.json
+  // (rebuilt via `python3 scripts/build_transmission_ranking.py`).
+  function renderTransmissionRanking(t) {
+    if (!t || !Array.isArray(t.roots) || !t.roots.length) return '';
+    const keys = t.lensKeys || ['law','phil','math','med','astr','div','cal','mus','alch'];
+    // heatmap cell — blue sequential ramp, bucketed. Fills are light so dark
+    // text reads; the two darkest buckets flip to white text.
+    const cell = (n) => {
+      n = n || 0;
+      let bg, fg;
+      if (n === 0)      { bg = 'transparent';        fg = 'var(--text-3, #7a756a)'; }
+      else if (n <= 2)  { bg = '#E6F1FB'; fg = '#0C447C'; }
+      else if (n <= 6)  { bg = '#B5D4F4'; fg = '#042C53'; }
+      else if (n <= 14) { bg = '#378ADD'; fg = '#ffffff'; }
+      else              { bg = '#185FA5'; fg = '#ffffff'; }
+      return '<td style="background:' + bg + ';color:' + fg + ';text-align:center;'
+        + 'font-variant-numeric:tabular-nums;padding:6px 0;border-radius:3px;font-size:12px;">'
+        + (n === 0 ? '·' : n) + '</td>';
+    };
+    const head = '<tr>'
+      + '<th style="text-align:left;">root</th>'
+      + '<th style="text-align:center;" title="rank by transmission score">t-rank</th>'
+      + '<th style="text-align:center;" title="sum of the 9 civilization-lens reach counts">civ</th>'
+      + keys.map(k => '<th style="text-align:center;">' + escapeHtml(k) + '</th>').join('')
+      + '</tr>';
+    const rows = t.roots.map((r, i) => {
+      const nm = String(r.name || r.slug).replace(/\s*\(.*$/, '');
+      const lead = i === 0;
+      return '<tr>'
+        + '<td style="text-align:left;white-space:nowrap;' + (lead ? 'font-weight:500;' : '') + '">'
+        +   escapeHtml(nm)
+        +   '<span class="dev-overview-cell-sub"> ' + escapeHtml(String(r.tradition || '').split(/[(—;,/]/)[0].trim()) + '</span>'
+        + '</td>'
+        + '<td style="text-align:center;color:var(--text-2,#a89);font-variant-numeric:tabular-nums;">#' + (r.transmissionRank || (i + 1)) + '</td>'
+        + '<td style="text-align:center;font-weight:500;font-variant-numeric:tabular-nums;">' + (r.civScore || 0) + '</td>'
+        + keys.map(k => cell(r.lenses && r.lenses[k])).join('')
+        + '</tr>';
+    }).join('');
+    const legend = ['0','1–2','3–6','7–14','15+'];
+    const legBg = ['transparent','#E6F1FB','#B5D4F4','#378ADD','#185FA5'];
+    const legendHtml = legend.map((lb, i) =>
+      '<span style="display:inline-flex;align-items:center;gap:5px;margin-right:12px;">'
+      + '<span style="width:13px;height:13px;border-radius:3px;background:' + legBg[i]
+      + (i === 0 ? ';border:1px solid var(--line,#443)' : '') + ';display:inline-block;"></span>'
+      + escapeHtml(lb) + '</span>').join('');
+    return ''
+      + '<section class="dev-overview-section dev-overview-summary">'
+      +   '<h2 class="dev-overview-section-h">🧬 Deity transmission ranking '
+      +     '<span class="dev-overview-h-hint">top-10 roots · civilization-lens reach</span></h2>'
+      +   '<div class="dev-overview-cell-sub" style="margin:0 0 10px;line-height:1.6;">'
+      +     'Each cell = how many nodes in that lens the root&rsquo;s branch reaches (grep-verified mention count; a lower bound). '
+      +     'The mythology spine (deities, themes, symbols) is dense for every root and omitted — this shows only where the branches differ. '
+      +     'Sorted by civilization-lens reach. Three roots (Indra, Hermes, Jesus) carry the exact sciences; the rest are mostly spine.'
+      +   '</div>'
+      +   '<div style="font-size:11px;color:var(--text-2,#a89);margin:0 0 10px;">reach: ' + legendHtml + '</div>'
+      +   '<div class="dev-overview-table-wrap">'
+      +     '<table class="dev-overview-table dev-overview-heatmap" style="border-collapse:separate;border-spacing:3px;">'
+      +       '<thead>' + head + '</thead>'
+      +       '<tbody>' + rows + '</tbody>'
+      +     '</table>'
+      +   '</div>'
+      +   '<div class="dev-overview-cell-sub" style="margin-top:8px;">'
+      +     'transmission score = sourced cross-tradition edges + 1.5&times;distinct-traditions-reached + 0.5&times;equivalents. '
+      +     'As of ' + escapeHtml(t.generatedAt || '') + ' · rebuild: <code>python3 scripts/build_transmission_ranking.py</code>'
+      +   '</div>'
+      + '</section>';
   }
 
   // ── DEITY PRODUCT-GRADE BENCHMARK ──────────────────────────────────────
