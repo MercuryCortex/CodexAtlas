@@ -14,6 +14,8 @@ also-in-traditions:
   - tradition-egyptian-religion
 date_earliest: 100
 date_latest: 300
+key-figures: ["[[hermes-trismegistus]]"]
+attested-in: ["[[phase-4-011-corpus-hermeticum-i]]"]
 tags:
   - alchemy
   - text

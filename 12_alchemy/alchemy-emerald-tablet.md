@@ -15,6 +15,7 @@ tags:
   - macrocosm-microcosm
   - as-above-so-below
   - foundation-text
+key-figures: ["[[hermes-trismegistus]]"]
 geo: Islamic world / Latin Europe
 
 cross-alchemy-edges:

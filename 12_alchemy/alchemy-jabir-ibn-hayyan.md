@@ -14,6 +14,7 @@ tags:
   - islamic-alchemy
   - sulfur-mercury-theory
   - transmission
+influenced-by: ["[[alchemy-emerald-tablet]]", "[[hermes-trismegistus]]"]
 geo: Iraq / Abbasid Caliphate
 
 cross-alchemy-edges:

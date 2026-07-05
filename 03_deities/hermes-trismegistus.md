@@ -16,6 +16,8 @@ consort: []
 attributes: ["scribe's palette and reed pen", "winged caduceus", "Egyptian solar disc atop a Greek herald's staff", "ibis (Thoth-attribute)"]
 attested-in: ["[[phase-3-021-hermetic-corpus-earliest]]", "[[phase-3-026-diodorus-bibliotheca-book-1]]", "[[phase-4-012-asclepius]]", "[[phase-4-011-corpus-hermeticum-i]]", "[[phase-4-072-plutarch-de-iside-et-osiride]]"]
 equivalents: ["[[thoth]]", "[[hermes-greek]]", "[[nabu]]", "[[mercury-roman]]"]
+texts-attributed-to: ["[[alchemy-emerald-tablet]]", "[[alchemy-hermetic-corpus]]"]
+influences: ["[[philosophy-neoplatonism]]"]
 syncretic-edges:
   - target: "thoth"
     type: "ancient-identification"

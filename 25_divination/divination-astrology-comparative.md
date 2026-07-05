@@ -16,6 +16,7 @@ methods:
 parallels:
   - "[[phase-1-019-enuma-anu-enlil]] (the Babylonian celestial-omen series — head of the transmission chain)"
   - "[[astronomy-babylonian-zodiac]] (the 12-sign coordinate frame the chain is built on)"
+  - "[[alchemy-emerald-tablet]] (the Hermetic 'as above, so below' correspondence axiom that underwrites astrological influence — attributed to [[hermes-trismegistus]])"
   - "[[phase-3-040-dorotheus-carmen-astrologicum]] (early Hellenistic katarchic/horary astrology)"
   - "[[phase-3-038-ptolemy-tetrabiblos]] (the Hellenistic theoretical codification — the Tetrabiblos)"
   - "[[phase-3-041-yavanajataka]] (the Greek -> India transmission text — 'Greek horoscopy')"
