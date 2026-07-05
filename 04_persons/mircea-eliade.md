@@ -17,6 +17,8 @@ date-born: 1907
 date-died: 1986
 historicity: "documented"
 texts-authored: ["[[phase-7-021-patterns-comparative-religion]]", "[[phase-7-022-sacred-and-profane]]", "*Yoga: Immortality and Freedom* (1954)", "*Shamanism: Archaic Techniques of Ecstasy* (1951/1964)", "*The Myth of the Eternal Return* (1954)", "*A History of Religious Ideas* (3 vols, 1976–1985)"]
+influenced-by: ["[[james-frazer]]"]
+originator-of: ["[[eternal-return]]", "[[hierophany]]", "[[sacred-and-profane]]"]
 status: "full"
 refs:
   - title: "Mircea Eliade: A Biography"

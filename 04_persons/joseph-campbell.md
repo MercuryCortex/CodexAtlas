@@ -10,7 +10,7 @@ date-born: 1904
 date-died: 1987
 historicity: "documented"
 texts-authored: ["*The Hero with a Thousand Faces* (1949)", "*The Masks of God* (4 vols, 1959–1968)", "*Myths to Live By* (1972)", "*The Power of Myth* (1988, with Bill Moyers)"]
-influenced-by: ["[[chaoskampf]]", "[[dying-rising-god]]"]
+influenced-by: ["[[chaoskampf]]", "[[dying-rising-god]]", "[[james-frazer]]", "[[carl-gustav-jung]]"]
 status: "metadata"
 refs:
   - title: "A Fire in the Mind: The Life of Joseph Campbell"
