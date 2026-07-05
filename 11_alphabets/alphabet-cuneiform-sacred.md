@@ -29,6 +29,8 @@ cross-alphabet-edges:
     note: "Distant cultural context: Phoenician cities were in the orbit of Babylonian cuneiform diplomacy (Amarna letters are in Akkadian cuneiform); the alphabetic revolution is partly a reaction to cuneiform's scribal complexity"
 alphabet-tradition-context:
   - "[[tradition-sumerian-mesopotamian]]"
+attested-in:
+  - "[[phase-1-008-enuma-elish]]"
 refs:
   - "Nissen, Hans J., Peter Damerow, and Robert K. Englund. *Archaic Bookkeeping: Early Writing and Techniques of Economic Administration in the Ancient Near East*. University of Chicago Press, 1993. [T1 — primary evidence from Uruk administrative tablets]"
   - "Kramer, Samuel Noah. *The Sumerians: Their History, Culture, and Character*. University of Chicago Press, 1963. [T2 — foundational scholarly synthesis]"

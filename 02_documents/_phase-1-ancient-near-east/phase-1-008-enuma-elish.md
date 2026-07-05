@@ -22,7 +22,7 @@ parallels: ["[[phase-1-006-atrahasis]]", "[[phase-1-013-baal-cycle]]"]
 influenced-by: ["earlier Sumerian creation/combat traditions (e.g., Ninurta-Anzu myth)"]
 influences: ["Hebrew Bible Genesis 1 cosmogony (contested mechanism — common-stock vs. literary dependence)", "later Near Eastern combat-creation imagery", "[[astronomy-mul-apin]] (Tablet V — Marduk fixes the constellations, the year, and the lunar month, establishing the celestial/calendrical order the MUL.APIN compendium later catalogs)"]
 deities-mentioned: ["[[marduk]]", "[[tiamat]]", "[[apsu]]", "[[an-sumerian]]", "[[enlil]]", "[[enki-ea]]", "[[kingu]]", "[[damkina]]"]
-events-context: ["Read aloud during the Babylonian Akitu (New Year) festival, days 4–5 of Nisanu"]
+events-context: ["[[ritual-akitu-new-year]] — Read aloud during the Babylonian Akitu (New Year) festival, days 4–5 of Nisanu"]
 hub-edges:
   - target: "theme-rebel-against-the-divine"
     type: "founding-cosmogonic-combat-text"
