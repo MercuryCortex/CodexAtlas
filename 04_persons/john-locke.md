@@ -9,6 +9,7 @@ region: "Somerset → Oxford → London → Rotterdam (exile) → Oates (Essex)"
 date-born: 1632
 date-died: 1704
 historicity: "documented"
+influenced-by: ["[[moral-natural-law]]"]
 status: "stub"
 tags: [person, philosopher, british, empiricism, social-contract, natural-rights, political-theory, locke]
 ---
