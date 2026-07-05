@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-05",
+  "generatedAt": "2026-07-06",
   "note": "Top-10 deities by transmission score; heatmap sorted by civilization-lens reach (mention-count lower bound).",
   "lensKeys": [
     "law",
@@ -22,9 +22,9 @@
       "sourced": 12,
       "equiv": 25,
       "cross": 22,
-      "civScore": 97,
+      "civScore": 99,
       "lenses": {
-        "law": 8,
+        "law": 10,
         "phil": 5,
         "math": 13,
         "med": 4,
@@ -44,14 +44,14 @@
       "sourced": 1,
       "equiv": 21,
       "cross": 19,
-      "civScore": 92,
+      "civScore": 93,
       "lenses": {
         "law": 1,
         "phil": 3,
         "math": 8,
         "med": 3,
         "astr": 6,
-        "div": 10,
+        "div": 11,
         "cal": 2,
         "mus": 27,
         "alch": 32
@@ -66,10 +66,10 @@
       "sourced": 24,
       "equiv": 3,
       "cross": 12,
-      "civScore": 88,
+      "civScore": 90,
       "lenses": {
-        "law": 14,
-        "phil": 13,
+        "law": 15,
+        "phil": 14,
         "math": 3,
         "med": 2,
         "astr": 0,
@@ -132,7 +132,7 @@
       "sourced": 4,
       "equiv": 27,
       "cross": 22,
-      "civScore": 20,
+      "civScore": 21,
       "lenses": {
         "law": 3,
         "phil": 0,
@@ -140,7 +140,7 @@
         "med": 0,
         "astr": 8,
         "div": 1,
-        "cal": 0,
+        "cal": 1,
         "mus": 4,
         "alch": 3
       }
@@ -168,6 +168,28 @@
       }
     },
     {
+      "slug": "tiamat",
+      "name": "Tiamat",
+      "tradition": "Babylonian (Akkadian) — drawing on Sumerian prototypes",
+      "transmissionRank": 5,
+      "transmissionScore": 51.0,
+      "sourced": 9,
+      "equiv": 24,
+      "cross": 17,
+      "civScore": 7,
+      "lenses": {
+        "law": 0,
+        "phil": 1,
+        "math": 2,
+        "med": 0,
+        "astr": 1,
+        "div": 0,
+        "cal": 2,
+        "mus": 0,
+        "alch": 1
+      }
+    },
+    {
       "slug": "thor",
       "name": "Þórr",
       "tradition": "Norse / Germanic",
@@ -187,28 +209,6 @@
         "cal": 0,
         "mus": 3,
         "alch": 2
-      }
-    },
-    {
-      "slug": "tiamat",
-      "name": "Tiamat",
-      "tradition": "Babylonian (Akkadian) — drawing on Sumerian prototypes",
-      "transmissionRank": 5,
-      "transmissionScore": 51.0,
-      "sourced": 9,
-      "equiv": 24,
-      "cross": 17,
-      "civScore": 6,
-      "lenses": {
-        "law": 0,
-        "phil": 1,
-        "math": 2,
-        "med": 0,
-        "astr": 1,
-        "div": 0,
-        "cal": 1,
-        "mus": 0,
-        "alch": 1
       }
     },
     {
