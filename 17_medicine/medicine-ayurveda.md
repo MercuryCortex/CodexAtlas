@@ -20,6 +20,11 @@ tags:
   - tridosha
 
 cross-tradition-edges:
+  - target: phase-2-003-atharva-veda
+    type: rooted-in
+    source: "Wujastyk, D. 2003 *The Roots of Ayurveda* Penguin; Zysk, K. 1991 *Asceticism and Healing in Ancient India* OUP"
+    source-tier: T1
+    note: "Ayurveda's textual roots are Vedic — the Atharvaveda's healing hymns, then the Caraka + Suśruta Saṃhitās — placing it on the Vedic (Indra) branch: the same ṛta-ordered cosmos the yajna maintains. A LIVING tradition — Ayurveda is a global modern integrative-medicine system today (WHO-recognized) — so this branch reaches the present through it. Cross-lens 17_medicine -> 02_documents."
   - target: medicine-hippocratic
     type: parallel
     note: The tridosha system (vata/pitta/kapha) and Hippocratic humoral theory (blood/yellow bile/black bile/phlegm) are structurally identical frameworks — health as dynamic balance of physiological forces, disease as imbalance, treatment as restoration. Both codified c. 400–300 BCE with no documented cross-contact.

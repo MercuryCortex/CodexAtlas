@@ -20,6 +20,11 @@ tags:
   - pharmacology
 
 cross-tradition-edges:
+  - target: shumma-alu-terrestrial-omens
+    type: shares-diagnostic-corpus
+    source: "Heeßel, N. 2000 *Babylonische Diagnostik*; Scurlock, J. 2014 *Sourcebook for Ancient Mesopotamian Medicine*; Geller, M. 2010 *Ancient Babylonian Medicine*"
+    source-tier: T1
+    note: "Mesopotamian medicine + the omen-sciences share the Sa-gig (SA.GIG) medical-diagnostic omen series — disease is read as a sign within the same divinely-ordered omen-cosmos that MUL.APIN's astronomy and extispicy read. The āšipu is a diviner of the body. Cross-lens 17_medicine -> 25_divination; ties the medicine lens into the Enuma-Elish cosmogonic-order branch (via extispicy -> mul-apin -> enuma-elish)."
   - target: medicine-egyptian-temple
     type: parallel
     note: Two independent temple-medicine systems developed simultaneously — both fusing empirical pharmacology with ritual incantation, both centered on a priestly healer class trained in sacred scribal schools. The Mesopotamian Āšipu and Egyptian Sekhmet-priest occupy identical institutional roles separated by 2,000 km.

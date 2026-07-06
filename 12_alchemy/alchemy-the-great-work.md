@@ -22,6 +22,11 @@ tags:
 geo: Universal (cross-tradition comparative)
 
 cross-alchemy-edges:
+  - target: alchemy-emerald-tablet
+    type: founded-on
+    source: "Principe, L. 2013 *The Secrets of Alchemy* Chicago; Linden, S. 2003 *The Alchemy Reader* Cambridge"
+    source-tier: T1
+    note: "The Great Work (the color-stage operation from prima materia to the Stone) takes its charter axiom from the Emerald Tablet's 'as above, so below' — the macrocosm-microcosm correspondence attributed to [[hermes-trismegistus]]. The operational core of alchemy rests on the Hermetic foundation; the physical opus is simultaneously the perfection of the operator's soul. Anchors the alchemy operations to the Hermes branch."
   - target: alchemy-opus-magnum
     type: parallel-form
     note: "The Latin Opus Magnum is the Western articulation of the Great Work — the full operation from prima materia through the color stages to the Stone. This comparative spine is the Opus generalised across traditions: the Latin opus is the single best-documented instance of the shared structure (perfection of matter / perfection of self), not its origin. Principe, Secrets of Alchemy (2013), is the controlling history."

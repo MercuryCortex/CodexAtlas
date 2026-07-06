@@ -43,6 +43,7 @@ music-tradition-context:
 music-appearances:
   - [[gregory-the-great]]
   - [[boethius]]
+  - [[ritual-eucharist-communion]]
 
 refs:
   - "Aurelian of Réôme, Musica Disciplina (c. 850 CE) — first systematic treatment of the church mode system"
