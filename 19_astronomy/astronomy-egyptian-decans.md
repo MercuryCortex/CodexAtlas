@@ -12,6 +12,11 @@ dating-basis-notes: "Earliest preserved decanal lists are painted on the inside 
 region: "Egypt (Middle Kingdom origin → Hellenistic Alexandrian elaboration)"
 languages-composed-in: "Egyptian (hieroglyphic + hieratic); later Greek (in Hermetic astrological texts)"
 syncretic-edges:
+  - target: "[[osiris]]"
+    type: "governs-duat-hours"
+    source: "Neugebauer, O. & Parker, R. 1960 *Egyptian Astronomical Texts*; Conman, J. 2003 'It's About Time: Ancient Egyptian Cosmology' SAK 31"
+    source-tier: "T1"
+    notes: "The 36 decans are the star-clock of the night, marking the twelve hours through which the sun-god (and the deceased, with [[osiris]]) travel in the Duat before rebirth at dawn; they line coffin-lids + tomb ceilings as the stellar map of the Osirian afterlife-journey. Cross-lens 19_astronomy -> 03_deities — the Egyptian astronomy of the Osiris death-and-rebirth branch."
   - target: "[[hermes-trismegistus]]"
     type: "ancestor-of"
     source: "Festugière 1944 *La révélation d'Hermès Trismégiste* vol. I Astrologie et sciences occultes; Fowden 1986 *The Egyptian Hermes* Cambridge UP; Bull, C. 2018 *The Tradition of Hermes Trismegistus* Brill"

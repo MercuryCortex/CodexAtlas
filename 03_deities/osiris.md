@@ -16,6 +16,7 @@ consort: ["[[isis-egyptian]]"]
 attributes: ["green or black skin (vegetation and Nile silt)", "mummiform body", "atef crown (white crown flanked by ostrich plumes)", "crook and flail", "djed pillar"]
 attested-in: ["[[phase-1-002-pyramid-texts]]", "[[phase-1-009-coffin-texts]]", "[[phase-1-010-book-of-the-dead]]", "[[phase-2-028-herodotus-histories-book-2]]", "[[phase-3-025-manetho-aegyptiaca]]", "[[phase-3-026-diodorus-bibliotheca-book-1]]", "[[phase-4-072-plutarch-de-iside-et-osiride]]"]
 equivalents: ["[[dionysus]]", "[[serapis]]", "[[attis]]", "[[dumuzi-tammuz]]", "[[adonis]]", "[[ra]]", "[[melqart]]", "[[yama-vedic]]", "[[hades]]", "[[pluto-roman]]", "[[ah-puch]]", "[[apis-bull]]", "[[charun-etruscan]]", "[[corn-mother]]", "[[dionysus-mystery]]", "[[donn-celtic]]", "[[hun-hunahpu]]", "[[hunahpu]]", "[[ixbalanque]]", "[[lleu-llaw-gyffes]]", "[[lono]]", "[[okuninushi]]", "[[rongo-maori]]", "[[sedna-inuit]]", "[[sigyn]]", "[[xipe-totec]]", "[[yan-wang]]"]
+themes: ["[[dying-rising-god]]", "[[wisdom-as-cosmic-order]]"]
 syncretic-edges:
   - target: "[[dumuzi-tammuz]]"
     type: "scholarly-parallel"
