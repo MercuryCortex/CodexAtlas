@@ -7,7 +7,8 @@ category: "ritual"
 traditions-where-attested: ["19th-c. comparative philology (Müller)", "early 20th-c. phenomenology (van der Leeuw, Otto)", "mid-20th-c. history of religions (Eliade, Wach)", "late 20th-c. critique (J.Z. Smith, Asad, McCutcheon)", "cognitive science of religion (Boyer, Atran)"]
 appearances: ["[[phase-7-007-golden-bough]]", "[[phase-7-011-idea-of-the-holy]]", "[[phase-7-013-eliade-myth-of-eternal-return]]"]
 deity-instances: []
-status: "stub"
+parallels: ["[[chaoskampf]]", "[[dying-rising-god]]", "[[primordial-waters]]", "[[perkwunos]]"]
+status: "developing"
 refs:
   - title: "Imagining Religion: From Babylon to Jonestown"
     author: "Smith, Jonathan Z."

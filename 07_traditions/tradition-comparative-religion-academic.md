@@ -8,7 +8,7 @@ date-end: ""
 region-origin: "Germany / United Kingdom / France"
 regions-spread: ["Western Europe", "United States", "global academic"]
 key-deities: []
-key-persons: ["[[max-muller]]", "[[james-frazer]]", "[[william-robertson-smith]]", "[[emile-durkheim]]", "[[rudolf-otto]]", "[[carl-gustav-jung]]", "[[mircea-eliade]]", "[[hans-jonas]]", "[[gershom-scholem]]", "[[joseph-campbell]]", "[[elaine-pagels]]", "[[bart-ehrman]]", "[[karen-king]]", "[[frances-yates]]", "[[wendy-doniger]]", "[[karen-armstrong]]"]
+key-persons: ["[[max-muller]]", "[[james-frazer]]", "[[georges-dumezil]]", "[[william-robertson-smith]]", "[[emile-durkheim]]", "[[rudolf-otto]]", "[[carl-gustav-jung]]", "[[mircea-eliade]]", "[[hans-jonas]]", "[[gershom-scholem]]", "[[joseph-campbell]]", "[[elaine-pagels]]", "[[bart-ehrman]]", "[[karen-king]]", "[[frances-yates]]", "[[wendy-doniger]]", "[[karen-armstrong]]"]
 key-documents: ["[[phase-7-007-golden-bough]]", "[[phase-7-010-elementary-forms-religious-life]]", "[[phase-7-011-idea-of-the-holy]]", "[[phase-7-012-major-trends-jewish-mysticism]]", "[[phase-7-013-gnostic-religion]]", "[[phase-7-014-gnostic-gospels]]", "[[phase-7-021-patterns-comparative-religion]]", "[[phase-7-023-bruno-and-hermetic-tradition]]", "Müller's *Sacred Books of the East* series (1879–1910)"]
 sister-traditions: []
 status: "metadata"
