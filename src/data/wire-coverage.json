@@ -1,6 +1,6 @@
 {
- "generatedAt": "2026-06-09",
- "indexedSlugs": 15235,
+ "generatedAt": "2026-07-06",
+ "indexedSlugs": 16009,
  "neighborhoodsWhole": true,
  "neighborhoods": [
   {
@@ -426,14 +426,6 @@
  ],
  "topDemand": [
   {
-   "refs": 13,
-   "target": "julius-caesar"
-  },
-  {
-   "refs": 10,
-   "target": "tradition-vaishnavism"
-  },
-  {
    "refs": 2,
    "target": "ancestral-beings"
   },
@@ -447,10 +439,6 @@
   },
   {
    "refs": 2,
-   "target": "anthropogony"
-  },
-  {
-   "refs": 2,
    "target": "anti-jesuit-resistance"
   },
   {
@@ -460,10 +448,6 @@
   {
    "refs": 2,
    "target": "apocalyptic-tradition"
-  },
-  {
-   "refs": 2,
-   "target": "apostle-philip"
   },
   {
    "refs": 2,
@@ -523,10 +507,6 @@
   },
   {
    "refs": 2,
-   "target": "divine-intoxication"
-  },
-  {
-   "refs": 2,
    "target": "ecclesiastical-canon-law"
   },
   {
@@ -559,10 +539,6 @@
   },
   {
    "refs": 2,
-   "target": "fana-annihilation"
-  },
-  {
-   "refs": 2,
    "target": "fate-and-doom"
   },
   {
@@ -579,15 +555,7 @@
   },
   {
    "refs": 2,
-   "target": "gatumdug"
-  },
-  {
-   "refs": 2,
    "target": "genesis-5-antediluvian-patriarchs"
-  },
-  {
-   "refs": 2,
-   "target": "golden-age-decline"
   },
   {
    "refs": 2,
@@ -624,6 +592,38 @@
   {
    "refs": 2,
    "target": "jahiliyyah"
+  },
+  {
+   "refs": 2,
+   "target": "jihad-offensive"
+  },
+  {
+   "refs": 2,
+   "target": "kshemaraja"
+  },
+  {
+   "refs": 2,
+   "target": "landscape-cosmogony"
+  },
+  {
+   "refs": 2,
+   "target": "lwa-pantheon"
+  },
+  {
+   "refs": 2,
+   "target": "mythological-systematization"
+  },
+  {
+   "refs": 2,
+   "target": "oral-textuality"
+  },
+  {
+   "refs": 2,
+   "target": "phase-2-004-old-testament-hebrew-bible"
+  },
+  {
+   "refs": 2,
+   "target": "phase-2-018-pali-canon-suttas"
   }
  ]
 }

@@ -1,13 +1,13 @@
 {
- "generatedAt": "2026-06-14",
+ "generatedAt": "2026-07-06",
  "indexedDocs": 621,
  "canons": [
   {
    "canon": "Bible (Christianity)",
    "total": 79,
-   "dedicated": 79,
+   "dedicated": 76,
    "folded": 0,
-   "absent": 0,
+   "absent": 3,
    "books": [
     {
      "book": "Genesis",
@@ -198,8 +198,8 @@
     },
     {
      "book": "Job",
-     "status": "DEDICATED",
-     "node": "phase-2-job",
+     "status": "ABSENT",
+     "node": null,
      "canons": [
       "C",
       "E",
@@ -231,8 +231,8 @@
     },
     {
      "book": "Ecclesiastes",
-     "status": "DEDICATED",
-     "node": "phase-2-ecclesiastes",
+     "status": "ABSENT",
+     "node": null,
      "canons": [
       "C",
       "E",
@@ -242,8 +242,8 @@
     },
     {
      "book": "Song of Songs",
-     "status": "DEDICATED",
-     "node": "phase-2-song-of-songs",
+     "status": "ABSENT",
+     "node": null,
      "canons": [
       "C",
       "E",
