@@ -27,6 +27,7 @@ cross-tradition-parallels:
 appearances:
   - "[[phase-2-035-job]]"
   - "[[phase-1-032-babylonian-theodicy]]"
+  - "[[document-dispute-man-and-his-ba]]"
   - "[[phase-3-032-4-ezra-ethiopic-recension]]"
   - "[[phase-4-029-augustine-city-of-god]]"
   - "[[phase-2-002-gathas-of-zarathustra]]"
