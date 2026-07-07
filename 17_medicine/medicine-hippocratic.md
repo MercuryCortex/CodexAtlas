@@ -26,6 +26,11 @@ cross-tradition-edges:
   - target: medicine-islamic-golden-age
     type: ancestor-of
     note: The entire Hippocratic corpus and Galenic synthesis was translated into Arabic at the House of Wisdom (8th–9th century CE). Avicenna's Canon is explicitly organized around Galenic/Hippocratic categories. The humoral system survived in Islamic medicine for 900 years after Hippocrates.
+  - target: phase-2-045-hippocratic-corpus
+    type: canonical-source
+    source: "Lloyd, G.E.R. 1979 *Magic, Reason and Experience* Cambridge; Nutton, V. 2004 *Ancient Medicine* Routledge"
+    source-tier: T1
+    note: "The Hippocratic Corpus is the primary source document of this medicine-hub — On the Sacred Disease (the sacred→natural turn), the Oath, and the humoral treatises. This wires the hub to its own source text (previously unwired). See the reader entry `hippocratic-corpus`. Cross-lens 17_medicine -> 02_documents."
 dating-basis: B1
 dating-basis-source: "\"Lloyd, G.E.R. 1979 *Magic, Reason and Experience*. Cambridge\""
 dating-basis-notes: "Hippocratic Corpus c. -460 to -370."

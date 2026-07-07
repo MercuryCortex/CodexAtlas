@@ -34,7 +34,11 @@ cross-tradition-edges:
   - target: medicine-shamanic
     type: ancestor-of
     note: Atharva Veda healing hymns (c. 1200 BCE) — the pre-Ayurvedic stratum — are structurally shamanic: disease as supernatural possession, healing as priestly ritual, plant medicines as sacred entities. Ayurveda rationalized this shamanic substratum without eliminating it.
-dating-basis: B5
+  - target: phase-3-036-charaka-samhita
+    type: canonical-source
+    source: "Wujastyk, D. 2003 *The Roots of Ayurveda* Penguin; Kaviratna & Sharma (trans.) *The Charaka-Samhita* (public domain)"
+    source-tier: T1
+    note: "The Charaka Saṃhitā is the foundational classical treatise of Āyurveda — the tridoṣa (vāta-pitta-kapha) framework and the physician's ethical charge (the Ayurvedic counterpart of the Hippocratic Oath). This wires the Ayurveda medicine-hub to its primary source document (previously the doc was near-orphaned). See the reader entry `charaka-samhita-1`. Cross-lens 17_medicine -> 02_documents."
 dating-basis-source: "\"Wujastyk, D. 2003 *The Roots of Ayurveda*. Penguin\""
 dating-basis-notes: "Charaka Samhita c. -100 to 200; Sushruta c. 600 CE; Vedic Atharva-veda substrate -1000."
 ---
