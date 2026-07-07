@@ -1,7 +1,7 @@
 ---
 type: theme
 id: "chaoskampf"
-parallels: ["[[tishpak]]", "[[anzu]]", "[[apollo]]", "[[horus]]", "[[set]]", "[[lugh]]", "[[balor]]", "[[fenrir]]", "[[vidar]]", "[[surtr]]", "[[gonggong]]", "[[yu-the-great]]", "[[quetzalcoatl]]", "[[tezcatlipoca]]", "[[cipactli]]", "[[saoshyant]]", "[[tehom]]", "[[susanoo]]"]
+parallels: ["[[tishpak]]", "[[anzu]]", "[[apollo]]", "[[horus]]", "[[set]]", "[[lugh]]", "[[balor]]", "[[fenrir]]", "[[vidar]]", "[[surtr]]", "[[gonggong]]", "[[yu-the-great]]", "[[quetzalcoatl]]", "[[tezcatlipoca]]", "[[cipactli]]", "[[saoshyant]]", "[[tehom]]", "[[susanoo]]", "[[durga]]"]
 name: "Chaoskampf (combat with chaos)"
 aka: ["combat myth", "dragon-slaying creation", "primordial-waters combat", "storm-god vs serpent", "creation-from-corpse"]
 category: "cosmogonic / mythological"
@@ -13,6 +13,7 @@ appearances:
   - "[[phase-1-033-anzu-myth]]"
   - "[[phase-2-001-rig-veda-family-books]]"
   - "[[phase-2-009-hesiod-theogony-works-and-days]]"
+  - "[[phase-5-001-devi-mahatmya]]"
   - "[[phase-8-015-prose-edda-snorri]]"
   - "[[phase-3-004-1-enoch]]"
 deity-instances:
