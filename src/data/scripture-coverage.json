@@ -1,6 +1,6 @@
 {
- "generatedAt": "2026-07-06",
- "indexedDocs": 621,
+ "generatedAt": "2026-07-07",
+ "indexedDocs": 622,
  "canons": [
   {
    "canon": "Bible (Christianity)",
@@ -1674,6 +1674,11 @@
   {
    "key": "christian-bestiary",
    "label": "christian-bestiary",
+   "docs": 1
+  },
+  {
+   "key": "dharmasastra",
+   "label": "dharmasastra",
    "docs": 1
   },
   {
