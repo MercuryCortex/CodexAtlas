@@ -9,6 +9,21 @@ role-tokens: ["emperor"]
 date_earliest: -304
 date_latest: -232
 region: "Maurya Empire (South Asia)"
+parallels:
+  - "[[theme-mandate-of-heaven]]"
+connects-to:
+  - target: "[[phase-3-030-asokan-edicts]]"
+    relation: "proclaimed"
+    source: "Hultzsch, Inscriptions of Asoka (1925) — the edicts are Ashoka's own royal proclamations"
+    source-tier: "T1"
+  - target: "[[buddha-shakyamuni]]"
+    relation: "devotee-of"
+    source: "Thapar, Aśoka and the Decline of the Mauryas (1961) — Ashoka's conversion to and patronage of the Buddha's dhamma"
+    source-tier: "T1"
+  - target: "[[asoka-maurya]]"
+    relation: "same-as"
+    source: "duplicate node for the same historical figure (Ashoka Maurya); flagged for consolidation"
+    source-tier: "T1"
 tags:
   - person
   - buddhism
