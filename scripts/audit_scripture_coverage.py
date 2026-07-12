@@ -336,9 +336,56 @@ print(f"\nSCRIPTURE CORPORA — document coverage ({len(corpora_out)} corpora):"
 for c in corpora_out[:45]:
     print(f"   {c['docs']:3d}  {c['label']}")
 
+# ── READ COVERAGE — THE HEADLINE METRIC (added 2026-07-12, audit finding 1a) ──
+# "READ progress" = distinct DOCUMENT NODES with at least one reader text, NOT
+# texts staged (multiple texts can cover one doc — 384 texts ≈ 229 docs). Both
+# quote styles matched per reference-read-coverage-worklist-2026-07-07.
+# Also gates finding 1b: every docNode must resolve to a real 02_documents id.
+_dn_re = re.compile(r'docNode["\']?\s*:\s*["\']([^"\']+)')
+try:
+    _st = open("src/data/scripture-texts.js", encoding="utf-8").read()
+except OSError:
+    _st = ""
+_docnode_refs = _dn_re.findall(_st)
+_docnodes = set(_docnode_refs)
+_covered = _docnodes & present_ids
+_bad_docnodes = sorted(_docnodes - present_ids)
+
+# distinguish "points at a non-document node" from "dead id" (index ALL node dirs)
+_all_ids = set()
+for _d in sorted(glob.glob("[0-9][0-9]_*/")):
+    if _d.startswith(("00_", "99_")):
+        continue
+    for _f in glob.glob(_d + "**/*.md", recursive=True):
+        if os.path.basename(_f).lower() == "readme.md":
+            continue
+        try:
+            _t = open(_f, encoding="utf-8").read(1500)
+        except OSError:
+            continue
+        _m = idre.search(_t)
+        _all_ids.add(_m.group(1) if _m else os.path.basename(_f)[:-3])
+
+print(f"\n=== READ COVERAGE (headline) ===")
+print(f"  docs covered: {len(_covered)}/{len(present_ids)}  ({100*len(_covered)//max(1,len(present_ids))}%)   "
+      f"[secondary: {len(_docnode_refs)} texts staged, {len(_docnodes)} distinct docNodes]")
+if _bad_docnodes:
+    print(f"  !! {len(_bad_docnodes)} docNode(s) do NOT resolve to a 02_documents id (fix before shipping):")
+    for _b in _bad_docnodes:
+        kind = "non-document node" if _b in _all_ids else "DEAD id"
+        print(f"     - {_b}  ({kind})")
+else:
+    print("  docNode integrity: OK — every docNode resolves to a document node")
+
 out = {
     "generatedAt": datetime.date.today().isoformat(),
     "indexedDocs": len(present_ids),
+    "readCoverage": {
+        "docsCovered": len(_covered),
+        "docsTotal": len(present_ids),
+        "textsStaged": len(_docnode_refs),
+        "badDocNodes": _bad_docnodes,
+    },
     "canons": canon_out,
     "corpora": corpora_out,
 }

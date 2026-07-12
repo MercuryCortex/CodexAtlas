@@ -1,6 +1,12 @@
 {
- "generatedAt": "2026-07-11",
+ "generatedAt": "2026-07-12",
  "indexedDocs": 622,
+ "readCoverage": {
+  "docsCovered": 232,
+  "docsTotal": 622,
+  "textsStaged": 384,
+  "badDocNodes": []
+ },
  "canons": [
   {
    "canon": "Bible (Christianity)",
