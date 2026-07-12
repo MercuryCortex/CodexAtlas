@@ -9,6 +9,8 @@ died: 1939
 region: "Austria / United Kingdom"
 city: "Vienna (primary); London (final years)"
 roles: ["neurologist", "psychiatrist", "founder of psychoanalysis", "theorist of the unconscious"]
+influences: ["[[carl-gustav-jung]] (designated heir 1910–1913; the 1913 break over libido and religion produced analytical psychology)", "[[tradition-jungian-depth-psychology]]"]
+influenced-by: ["[[james-frazer]] (*Totem and Taboo* 1913 builds explicitly on Frazer's *Totemism and Exogamy* 1910)"]
 status: "metadata"
 ---
 

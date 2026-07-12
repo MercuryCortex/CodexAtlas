@@ -18,7 +18,7 @@ date-died: 1961
 historicity: "documented"
 texts-authored: ["[[phase-7-017-psychology-and-alchemy]]", "[[phase-7-018-aion]]", "[[phase-7-019-mysterium-coniunctionis]]", "[[phase-7-020-answer-to-job]]", "*Psychological Types* (1921)", "*Symbols of Transformation* (1912/1952)", "*Modern Man in Search of a Soul* (1933, English)", "*Memories, Dreams, Reflections* (1962, with Aniela Jaffé)", "*The Red Book / Liber Novus* (composed 1914–1930; published 2009)"]
 originator-of: ["[[archetype]]"]
-influenced-by: ["[[alchemy-the-great-work]]", "[[hermes-trismegistus]]"]
+influenced-by: ["[[alchemy-the-great-work]]", "[[hermes-trismegistus]]", "[[sigmund-freud]] (mentor 1907–1913; the break is the founding event of analytical psychology)", "[[tradition-gnosticism]] (Septem Sermones ad Mortuos 1916; the Gnosis research program culminating in Aion)"]
 status: "metadata"
 refs:
   - title: "Jung: A Biography"
