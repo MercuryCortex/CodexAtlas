@@ -9,8 +9,10 @@ region-origin: "United States (New York)"
 regions-spread: ["United States", "India (Adyar HQ from 1882)", "United Kingdom", "Continental Europe", "Latin America", "global"]
 key-deities: []
 key-persons: ["[[helena-blavatsky]]", "[[henry-steel-olcott]]", "[[annie-besant]]", "Charles Webster Leadbeater", "William Quan Judge", "Alice Bailey"]
-key-documents: ["[[phase-7-005-isis-unveiled]]", "[[phase-7-006-secret-doctrine]]", "Blavatsky's *The Key to Theosophy* (1889)", "Blavatsky's *The Voice of the Silence* (1889)", "Sinnett's *Esoteric Buddhism* (1883)"]
+key-documents: ["[[phase-7-005-isis-unveiled]]", "[[phase-7-006-secret-doctrine]]", "Blavatsky's *The Key to Theosophy* (1889)", "Blavatsky's *The Voice of the Silence* (1889)", "Sinnett's *Esoteric Buddhism* (1883)", "[[phase-7-034-blavatsky-atlantis-root-race]]"]
 sister-traditions: ["[[tradition-anthroposophy]]", "[[tradition-new-age]]", "[[tradition-spiritualism]]"]
+influenced-by: ["[[tradition-spiritualism]] (emerged from and against the seance milieu; Godwin 1994)"]
+influences: ["[[tradition-anthroposophy]] (Steiner led the German TS section 1902–1912; Staudenmaier 2014)", "[[tradition-new-age]] (perennialist vocabulary and the Bailey substrate; Hanegraaff 1996)"]
 status: "metadata"
 refs:
   - title: "The Theosophical Enlightenment"

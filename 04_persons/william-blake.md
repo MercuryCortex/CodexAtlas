@@ -28,6 +28,7 @@ mentioned-in:
   - "Coleridge: 'He is a man of Genius — and I apprehend a Swedenborgian'"
   - "Alexander Gilchrist, *Life of William Blake* (1863) — the posthumous rediscovery"
   - "W.B. Yeats and E.J. Ellis, *The Works of William Blake* (1893) — Yeats's Hermetic/Kabbalistic reading"
+influenced-by: ["[[emanuel-swedenborg]] (annotated three volumes; signed the April 1789 New Church register; Bentley 2001)"]
 status: "full"
 refs:
   - title: "William Blake: A Biography"

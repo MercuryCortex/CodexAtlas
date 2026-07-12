@@ -8,7 +8,7 @@ date-end: ""
 region-origin: "China (Tang dynasty)"
 regions-spread: ["China (Chan), Korea (Seon), Vietnam (Thiền), Japan (Zen — Rinzai, Sōtō, Ōbaku), modern global"]
 key-deities: []
-key-persons: ["[[bodhidharma]]", "[[huineng]]", "[[mazu-daoyi]]", "[[linji-yixuan]]", "[[dogen]]", "[[hakuin]] (Phase 6)"]
+key-persons: ["[[bodhidharma]]", "[[huineng]]", "[[mazu-daoyi]]", "[[linji-yixuan]]", "[[dogen]]", "[[hakuin]] (Phase 6)", "[[alan-watts]] (Western popularizer; The Way of Zen 1957)"]
 key-documents: ["[[phase-5-004-platform-sutra-huineng]]", "[[phase-5-002-heart-sutra]]", "Diamond Sutra", "Bi-yan Lu (Blue Cliff Record)", "Wumen Guan (Gateless Gate)", "Dogen's *Shōbōgenzō*"]
 sister-traditions: ["[[tradition-mahayana-buddhism]]", "[[tradition-daoism]] (substrate-influence)"]
 key-themes:

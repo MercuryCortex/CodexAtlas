@@ -12,6 +12,7 @@ historicity: "documented"
 texts-authored: ["*Essays in Zen Buddhism* (3 series, 1927–1934)", "*An Introduction to Zen Buddhism* (1934)", "*Zen and Japanese Culture* (1938 enlarged 1959)", "*Mysticism: Christian and Buddhist* (1957)"]
 mentioned-in: ["[[event-parliament-of-world-religions-1893]]"]
 influenced-by: ["[[phase-5-004-platform-sutra-huineng]]", "[[phase-5-002-heart-sutra]]"]
+influences: ["[[alan-watts]]"]
 status: "metadata"
 refs:
   - title: "The Zen of Japanese Nationalism"

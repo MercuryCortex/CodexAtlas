@@ -11,7 +11,7 @@ key-deities: []
 key-persons: ["Alice Bailey (1880–1949)", "[[helen-schucman]]", "[[marshall-vian-summers]]", "Shirley MacLaine", "Marianne Williamson", "Eckhart Tolle", "Neale Donald Walsch", "Esther Hicks (Abraham)", "JZ Knight (Ramtha)"]
 key-documents: ["[[phase-7-031-course-in-miracles]]", "The Urantia Book (1955)", "Bailey's twenty-four books (1919–1949)", "Seth material (Jane Roberts, 1972 onward)", "*The Secret* (Rhonda Byrne, 2006)"]
 sister-traditions: ["[[tradition-theosophy]]", "[[tradition-spiritualism]]"]
-influenced-by: ["[[hermes-trismegistus]]", "[[alchemy-hermetic-corpus]]"]
+influenced-by: ["[[hermes-trismegistus]]", "[[alchemy-hermetic-corpus]]", "[[tradition-mesmerism]] (mind-cure/energy-healing lineage; Hanegraaff 1996; Albanese 2007)", "[[tradition-theosophy]] (perennialist vocabulary, ascended masters, Bailey corpus; Hanegraaff 1996)", "[[tradition-spiritualism]] (channeling as continuation of mediumship; Hanegraaff 1996)", "[[alan-watts]] (paperback/taped-lecture presence in the counterculture; Fields 1981)", "[[timothy-leary]] (psychedelic-spirituality vocabulary; Hanegraaff 1996)"]
 status: "metadata"
 refs:
   - title: "New Age Religion and Western Culture: Esotericism in the Mirror of Secular Thought"

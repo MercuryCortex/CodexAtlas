@@ -20,6 +20,17 @@ influenced-by:
   - "[[swami-vivekananda]]"
   - "[[tradition-advaita-vedanta]]"
   - "[[perennial-philosophy]]"
+  - "[[meister-eckhart]] (the most heavily anthologized author in The Perennial Philosophy)"
+influences: ["[[timothy-leary]] (advised the Harvard Psilocybin Project from its 1960 inception; Lattin 2010)", "[[consciousness-entheogen-pahnke-good-friday-experiment]] (Doors of Perception's drug-mysticism equivalence thesis, operationalized by Pahnke 1962)", "[[tradition-new-age]] (perennialist frame + psychedelic-mystical equivalence; Hanegraaff 1996)"]
+connects-to:
+  - target: "[[alan-watts]]"
+    relation: "fellow-popularizer — Los Angeles Vedanta circle from the 1940s; Watts credits the Huxley–Heard milieu"
+    source: "Watts, In My Own Way (1972); Furlong 1986"
+    source-tier: "T2"
+  - target: "[[consciousness-katz-constructivism-vs-perennialism]]"
+    relation: "position-critiqued-by — Huxley's universal-mystical-core claim is the named target of the constructivist critique"
+    source: "Katz 1978, Language, Epistemology, and Mysticism; Zaehner 1957, Mysticism Sacred and Profane (direct rebuttal of Doors of Perception)"
+    source-tier: "T1"
 status: "stub"
 refs:
   - title: "The Perennial Philosophy"

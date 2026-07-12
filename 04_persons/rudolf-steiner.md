@@ -11,6 +11,7 @@ date-born: 1861
 date-died: 1925
 historicity: "documented"
 texts-authored: ["*The Philosophy of Freedom* (1894)", "*Theosophy* (1904)", "*Knowledge of the Higher Worlds* (1904)", "[[phase-7-009-outline-of-esoteric-science]]", "thousands of recorded lectures (the *Gesamtausgabe* runs to ~360 volumes)"]
+influenced-by: ["[[tradition-theosophy]] (general secretary of the German Section 1902–1912; Anthroposophy founded on the break; Staudenmaier 2014)"]
 status: "metadata"
 refs:
   - title: "Rudolf Steiner"

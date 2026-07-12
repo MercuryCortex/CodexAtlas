@@ -20,7 +20,7 @@ key-figures: ["[[emanuel-swedenborg]]"]
 themes: ["[[hidden-god]]", "[[afterlife-judgment]]", "[[ascent-of-the-soul]]", "[[creation-by-word]]", "[[microcosm-macrocosm]]"]
 parallels: ["[[phase-6-017-boehme-aurora-mysterium-magnum]] (parallel rather than influence — Swedenborg denied reading Böhme)"]
 influenced-by: ["Lutheran Bible (Genesis-Exodus + Apocalypse the principal exegeted books)", "Cartesian-Newtonian natural philosophy (Swedenborg was a major scientist before his theological turn)", "the Lutheran spiritualist tradition (though Swedenborg disclaimed direct knowledge of Böhme)"]
-influences: ["William Blake (Phase 7) — *Marriage of Heaven and Hell* engages and partly satirizes Swedenborg", "Ralph Waldo Emerson and the New England Transcendentalists (Phase 7)", "the Swedenborgian New Church (founded 1787 in England)", "Henry James Sr.", "C.G. Jung (Phase 7) — read Swedenborg as a teenager", "modern Spiritualism (Phase 7) — Swedenborg as a primary precursor"]
+influences: ["[[william-blake]] — *Marriage of Heaven and Hell* engages and partly satirizes Swedenborg", "[[ralph-waldo-emerson]] and the New England Transcendentalists (Phase 7)", "the Swedenborgian New Church (founded 1787 in England)", "Henry James Sr.", "[[carl-gustav-jung]] — read Swedenborg as a teenager", "[[tradition-spiritualism]] — Swedenborg as a primary precursor"]
 deities-mentioned: ["the Lord (= the Trinity unified in the person of Jesus Christ, per Swedenborg's distinctive non-Nicene Christology)"]
 events-context: ["Swedenborg's 1745 visionary experience (in a London tavern) initiating his theological career; his subsequent reports of daily conversations with angels and spirits over 27 years"]
 status: "metadata"

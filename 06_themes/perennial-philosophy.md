@@ -10,6 +10,7 @@ region: "Global"
 key-figures:
   - "[[marsilio-ficino]]"
   - "[[frances-yates]]"
+  - "[[aldous-huxley]] (The Perennial Philosophy 1945; Schmitt 1966 for the older philosophia perennis)"
 parallels:
   - "[[prisca-theologia]]"
   - "[[neoplatonic-henosis]]"

@@ -20,7 +20,7 @@ key-figures: ["[[padmasambhava]]", "[[karma-lingpa]]"]
 themes: ["[[afterlife-judgment]]", "[[non-duality]]", "[[soul-immortality]]", "[[psychopomp]]", "[[mystery-initiation]]"]
 parallels: ["[[phase-1-010-book-of-the-dead]]", "[[phase-2-040-orphic-gold-tablets]]", "other Nyingma terma cycles; Tibetan dzogchen literature"]
 influenced-by: ["earlier Indian Vajrayāna scriptures (Guhyasamāja, Cakrasaṃvara cycles)", "Indian Buddhist death-yoga literature", "indigenous Tibetan Bön funerary traditions", "Mahāyāna Pure Land conceptions"]
-influences: ["all Tibetan Buddhist death-and-bardo practice", "modern Western death-and-dying literature (Evans-Wentz 1927 translation; Sogyal Rinpoche's *Tibetan Book of Living and Dying* 1992)", "Jung's introduction to the 1935 Evans-Wentz edition"]
+influences: ["all Tibetan Buddhist death-and-bardo practice", "modern Western death-and-dying literature (Evans-Wentz 1927 translation; Sogyal Rinpoche's *Tibetan Book of Living and Dying* 1992)", "Jung's introduction to the 1935 Evans-Wentz edition", "[[timothy-leary]] (The Psychedelic Experience 1964 — the Leary–Metzner–Alpert psychedelic re-keying of the Evans-Wentz edition; Cuevas 2003)"]
 deities-mentioned: ["[[the-peaceful-and-wrathful-deities]]", "[[vajrasattva]]", "[[samantabhadra-buddha]]", "[[the-five-buddha-families]]"]
 events-context: []
 status: "metadata"

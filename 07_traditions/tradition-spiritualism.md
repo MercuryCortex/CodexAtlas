@@ -11,6 +11,8 @@ key-deities: []
 key-persons: ["Fox sisters (Margaretta, Catherine, Leah)", "Andrew Jackson Davis (1826–1910, 'Poughkeepsie Seer')", "Daniel Dunglas Home (1833–1886)", "Allan Kardec (Hippolyte Léon Denizard Rivail, 1804–1869) — French Spiritism"]
 key-documents: ["Kardec's *The Spirits' Book* (1857)", "Andrew Jackson Davis's *The Principles of Nature* (1847)", "Arthur Conan Doyle's *History of Spiritualism* (1926)"]
 sister-traditions: ["[[tradition-theosophy]]", "[[tradition-new-age]]"]
+influenced-by: ["[[tradition-mesmerism]] (trance technique and the somnambule as proto-medium; Ellenberger 1970; Taves 1999)", "[[emanuel-swedenborg]] (afterlife cosmology entering via Andrew Jackson Davis's Harmonial Philosophy; Taves 1999; Podmore 1902)"]
+influences: ["[[tradition-theosophy]] (Blavatsky and Olcott met via Spiritualism, Eddy farmstead 1874; Godwin 1994)", "[[tradition-new-age]] (channeling as functional continuation of mediumship; Hanegraaff 1996)", "[[william-james]] (SPR psychical research; Leonora Piper as James's 'white crow'; Taves 1999)"]
 status: "metadata"
 refs:
   - title: "Radical Spirits: Spiritualism and Women's Rights in Nineteenth-Century America"

@@ -10,6 +10,12 @@ date-born: 1688
 date-died: 1772
 historicity: "documented"
 texts-authored: ["[[phase-6-027-swedenborg-arcana-heaven-and-hell]] (Arcana Coelestia 1749–1756; Heaven and Hell 1758)", "pre-1745 scientific corpus including *Opera Philosophica et Mineralia* (3 vols. 1734) and *Oeconomia Regni Animalis*", "post-1745 theological corpus: *Apocalypsis Explicata*, *Apocalypsis Revelata*, *Divine Love and Wisdom*, *Divine Providence*, *True Christian Religion*, *Conjugial Love*, etc. (~20 substantial Latin works)"]
+influences: ["[[william-blake]] (annotated Swedenborg; April 1789 New Church conference; Marriage of Heaven and Hell as critical response; Bentley 2001)", "[[ralph-waldo-emerson]] ('Swedenborg; or, the Mystic' in Representative Men 1850)", "[[tradition-spiritualism]] (afterlife cartography via A.J. Davis; Taves 1999)", "[[carl-gustav-jung]] (student reading; Charet 1993)", "[[d-t-suzuki]] (Suzuki translated four Swedenborg works into Japanese; 1913 monograph)"]
+connects-to:
+  - target: "[[tradition-mesmerism]]"
+    relation: "fused-with-in-reception — A.J. Davis poured Swedenborgian cosmology into the mesmeric trance-vessel (Principles of Nature 1847), the working theology of Spiritualism"
+    source: "Crabtree 1993; Godwin 1994; Taves 1999"
+    source-tier: "T1"
 status: "metadata"
 refs:
   - title: "Emanuel Swedenborg: Visionary Savant in the Age of Reason"

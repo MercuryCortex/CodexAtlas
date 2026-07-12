@@ -12,6 +12,7 @@ date-died: 1541
 historicity: "documented"
 texts-authored: ["[[phase-6-008-paracelsus-corpus]] — *Volumen Paramirum*, *Opus Paramirum*, *Astronomia Magna* (*Philosophia Sagax*), *De Natura Rerum*, *Liber de Nymphis*, *Archidoxis*, etc., plus theological writings"]
 texts-attributed-to: ["substantial *Pseudo-Paracelsica* corpus"]
+influences: ["[[tradition-mesmerism]] (the magnetic-medicine lineage: Paracelsus's magnetic cures → van Helmont → Maxwell → animal magnetism; Ellenberger 1970)"]
 status: "metadata"
 refs:
   - title: "Paracelsus: An Introduction to Philosophical Medicine in the Era of the Renaissance"
