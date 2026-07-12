@@ -576,7 +576,7 @@ function setView(name) {
       }
     } catch (e) { /* not fatal */ }
   }
-  document.querySelectorAll('.list-pane,.about-pane,.legacy-pane,.alch-toolbox,.alch-palette,.tl-zoom-presets,.alch-board-root,.alch-menu,.astrology-pane,.alpha-pane').forEach(el => el.remove());
+  document.querySelectorAll('.list-pane,.about-pane,.legacy-pane,.alch-toolbox,.alch-palette,.tl-zoom-presets,.astrology-pane,.alpha-pane').forEach(el => el.remove());
   hideTooltip();
   // 2026-05-30 — reset aside.detail to its CSS default at the start of
   // every view change. Per cardinal rule #8 (HOW-WE-WORK.md §5), each
@@ -1098,9 +1098,8 @@ VIEWS.forge = {
 
 // VIEWS.boards — Boards V2 (free-form investigation surface). Skeleton
 // landed 2026-05-27 per AUDIT/2026-05-28-boards-v2-new-ux-spec.md.
-// Step 10 of the carve plan will redirect VIEWS.transmutation here +
-// move legacy src/js/alchemy/board.js to _legacy_alchemy_board.js.
-// Until then the legacy board remains reachable at VIEWS.transmutation.
+// Step 10 shipped: VIEWS.transmutation redirects here; the legacy board
+// was sunset 2026-07-12 to _legacy/alchemy-board.js (script tag removed).
 VIEWS.boards = {
   title: 'Boards',
   subtitle: 'free-form investigation surface — cards, edges, lineages',
@@ -6718,31 +6717,12 @@ function alchemyShortestPath(srcId, dstId, maxHops) {
   return null;
 }
 
-// ============================================================
-// Load a preset directly onto the Alchemy card board (bypasses Transmission graph).
-function alchemyLoadPresetToCards(presetId) {
-  const preset = findPresetOrTree(presetId);
-  if (!preset) return;
-  const valid = preset.picks.filter(id => NODES_BY_ID[id]);
-  STATE.alchemyActivePreset = presetId;
-  requestAnimationFrame(() => requestAnimationFrame(() => {
-    if (!window._alchemyBoard) return;
-    window._alchemyBoard.clearBoard();
-    const R = 320, total = valid.length;
-    valid.forEach((id, i) => {
-      const ang = (i / total) * Math.PI * 2 - Math.PI / 2;
-      window._alchemyBoard.addCard(id, Math.cos(ang) * R, Math.sin(ang) * R);
-    });
-    if (typeof window._alchemyBoard.zoomToFit === 'function') window._alchemyBoard.zoomToFit();
-  }));
-}
-
 // VIEWS.transmutation — 2026-05-28 LEGACY CUTOVER per
 // AUDIT/2026-05-28-boards-v2-new-ux-spec.md §6 step 10.
 // All routes that used to land on the legacy alchemy board now
 // redirect to VIEWS.boards (the V2 surface). The legacy implementation
-// still lives at src/js/alchemy/board.js but is unreachable from any
-// V2 entry point — only via the _legacy/ snapshot for reference.
+// was moved to _legacy/alchemy-board.js on 2026-07-12 (sunset per the
+// spec's §4) and is no longer loaded by the live shell.
 //
 // We keep a thin redirect rather than `VIEWS.transmutation = VIEWS.boards`
 // so deep-links to `?view=transmutation` still resolve, and the
@@ -6757,115 +6737,6 @@ VIEWS.transmutation = {
     // app-pill's syncPillLabel which flips the master label to BOARD.
     if (typeof setView === 'function') setView('boards');
   },
-};
-
-// VIEWS._legacyTransmutation — preserved one release for emergency
-// rollback. To re-enable: assign VIEWS.transmutation = VIEWS._legacyTransmutation
-// in the console. The legacy alchemy board reaches src/js/alchemy/board.js.
-VIEWS._legacyTransmutation = {
-  title: 'Transmutation (legacy)',
-  subtitle: 'free-form alchemy board — load presets · pin cards · trace paths',
-  render() {
-    {const _vc = document.getElementById('view-controls'); if (_vc) _vc.innerHTML = ''; }
-    legend.style('display', 'none').html('');
-    document.querySelectorAll('.alch-presets-dropdown').forEach(el => el.remove());
-    // Tear down any previous mount + create a fresh host div appended to #canvas
-    document.querySelectorAll('.alch-board-root').forEach(el => el.remove());
-    const host = document.createElement('div');
-    host.className = 'alch-board-root';
-    const canvas = document.getElementById('canvas');
-    canvas.appendChild(host);
-
-    // Defer to next tick so the host has a measured size before the renderer reads it.
-    // After the board mounts, wire the Presets button (injected by board.js) to the dropdown.
-    queueMicrotask(() => {
-      if (window._alchemyBoard) window._alchemyBoard.mount(host);
-
-      // --- Presets dropdown (same collapsible structure; load → cards directly) ---
-      requestAnimationFrame(() => {
-        const trigger = document.getElementById('alch-btn-presets');
-        if (!trigger) return;
-        const customTrees = loadCustomTrees();
-        const dropdown = document.createElement('div');
-        dropdown.className = 'alch-presets-dropdown';
-        dropdown.style.display = 'none';
-        const _renderCard = (p) => {
-          const isActive = STATE.alchemyActivePreset === p.id;
-          const blurb = p.headline ? p.headline.split('—')[0].trim() + '.' : '';
-          const tag = p.category
-            ? `<span class="alch-preset-tag ${p.category}">${PRESET_CATEGORY_LABELS[p.category] || p.category}</span>`
-            : '';
-          return `
-            <div class="alch-preset-card${isActive ? ' active' : ''}" data-preset="${p.id}">
-              <div class="alch-preset-name">${tag}${p.name}</div>
-              ${blurb ? `<div class="alch-preset-headline">${blurb}</div>` : ''}
-              <div class="alch-preset-action-row">
-                <button class="alch-preset-load" data-preset="${p.id}">${isActive ? 'reload' : 'load'}</button>
-                <span class="alch-preset-meta">${p.picks.length} seeds</span>
-              </div>
-            </div>`;
-        };
-        dropdown.innerHTML = `
-          <div class="alch-presets-intro">Load a curated exploration — nodes land instantly as cards on the board.</div>
-          <div class="alch-presets-body">
-            ${PRESET_CATEGORY_ORDER.map(cat => {
-              const catPresets = ALCHEMY_PRESETS.filter(p => p.category === cat.key);
-              if (!catPresets.length) return '';
-              const collapsed = !!cat.collapsed;
-              return `
-                <div class="alch-presets-section-label${collapsed ? ' alch-section-collapsed' : ''}" data-section-key="${cat.key}">
-                  <span class="alch-section-caret">${collapsed ? '▶' : '▾'}</span>${cat.label}
-                </div>
-                <div class="alch-presets-list${collapsed ? ' alch-section-hidden' : ''}" data-section-body="${cat.key}">
-                  ${catPresets.map(p => _renderCard(p)).join('')}
-                </div>`;
-            }).join('')}
-            ${customTrees.length > 0 ? `
-              <div class="alch-presets-section-label" data-section-key="__custom">
-                <span class="alch-section-caret">▾</span>Your saved trees
-              </div>
-              <div class="alch-presets-list" data-section-body="__custom">
-                ${customTrees.slice().reverse().map(t => _renderCard(t)).join('')}
-              </div>` : ''}
-          </div>`;
-        canvas.appendChild(dropdown);
-
-        function _posDropdown() {
-          const rect = trigger.getBoundingClientRect();
-          const cr = canvas.getBoundingClientRect();
-          dropdown.style.top = (rect.bottom - cr.top + 6) + 'px';
-          dropdown.style.left = (rect.left - cr.left) + 'px';
-          dropdown.style.right = 'auto';
-        }
-        function _closeDropdown() { dropdown.style.display = 'none'; document.removeEventListener('click', _closeOnOutside); }
-        function _closeOnOutside(ev) {
-          if (dropdown.contains(ev.target) || trigger.contains(ev.target)) return;
-          _closeDropdown();
-        }
-        trigger.onclick = (ev) => {
-          ev.stopPropagation();
-          if (dropdown.style.display === 'none') { _posDropdown(); dropdown.style.display = ''; setTimeout(() => document.addEventListener('click', _closeOnOutside), 0); }
-          else _closeDropdown();
-        };
-        dropdown.querySelectorAll('.alch-preset-load').forEach(btn => {
-          btn.addEventListener('click', (ev) => { ev.stopPropagation(); alchemyLoadPresetToCards(btn.dataset.preset); _closeDropdown(); });
-        });
-        dropdown.querySelectorAll('.alch-presets-section-label[data-section-key]').forEach(label => {
-          label.style.cursor = 'pointer';
-          label.addEventListener('click', (ev) => {
-            ev.stopPropagation();
-            const body = dropdown.querySelector(`.alch-presets-list[data-section-body="${label.dataset.sectionKey}"]`);
-            if (!body) return;
-            const nowCollapsed = !label.classList.contains('alch-section-collapsed');
-            label.classList.toggle('alch-section-collapsed', nowCollapsed);
-            body.classList.toggle('alch-section-hidden', nowCollapsed);
-            const caret = label.querySelector('.alch-section-caret');
-            if (caret) caret.textContent = nowCollapsed ? '▶' : '▾';
-          });
-        });
-      });
-    });
-  }
 };
 
 // VIEWS.alchemy — soul alchemy · physical alchemy · cross-tradition investigation.
@@ -7100,27 +6971,12 @@ VIEWS.transmission = {
     if (_toCardsBtn) _toCardsBtn.onclick = () => {
       const allNodeIds = nodes.map(n => n.id);
       if (!allNodeIds.length) return;
-      setView('transmutation');
-      // FIX (bug #2 — Transmission→Transmutation cards):
-      // VIEWS.transmutation.render() uses queueMicrotask() to mount _alchemyBoard on
-      // the host div. If the user has never visited Alchemy, _alchemyBoard.mount()
-      // has never run and rootEl is null → addCard() silently no-ops.
-      // Two rAFs (≈32 ms) let: (1) the microtask run, (2) the host get a measured
-      // size so mount() can centre the pan correctly.
-      // After adding all cards, call zoomToFit() so they land on-screen regardless
-      // of where the board pan/zoom was left.
+      setView('transmutation');   // redirects to VIEWS.boards (V2)
+      // Hand the picked nodes to the V2 Boards surface once its pane has
+      // mounted (two rAFs ≈ 32 ms, same timing the redirect chain needs).
       requestAnimationFrame(() => requestAnimationFrame(() => {
-        if (!window._alchemyBoard) return;
-        window._alchemyBoard.clearBoard();
-        const R = 320, total = allNodeIds.length;
-        allNodeIds.forEach((id, i) => {
-          const ang = (i / total) * Math.PI * 2 - Math.PI / 2;
-          window._alchemyBoard.addCard(id, Math.cos(ang) * R, Math.sin(ang) * R);
-        });
-        // Bring the newly-placed cards into view — without this, cards land at
-        // world coords that may be outside the current viewport if pan differs.
-        if (typeof window._alchemyBoard.zoomToFit === 'function') {
-          window._alchemyBoard.zoomToFit();
+        if (window._boardsView && typeof window._boardsView.loadPreset === 'function') {
+          window._boardsView.loadPreset({ picks: allNodeIds, replace: true });
         }
       }));
     };
