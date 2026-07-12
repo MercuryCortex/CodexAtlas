@@ -231,9 +231,10 @@
      boards-controls.js so window.BOARDS_LIBRARY exists when the
      Investigation menu builds. -->
 <script src="src/data/boards-library.js?v=20260712-tr-namespace"></script>
+<script src="src/data/boards-presets.js?v=20260712-presets-migration"></script>
 <!-- Boards V2 contextual pill — step 4 of the carve plan. Sibling to
      codex-controls; same .app-pill-wrap parent, body-class visibility. -->
-<script src="src/js/forge/boards-controls.js?v=20260604-addnode-init-fix"></script>
+<script src="src/js/forge/boards-controls.js?v=20260712-presets-migration"></script>
 <!-- V2 skeletons for MAP + STAR MAP (filed 2026-05-28 alongside the
      legacy-isolation lock). Empty stages, ready to build into; the
      legacy MapLibre + astrology stays in _legacy/ for reference. -->
@@ -264,7 +265,7 @@
      window.selectNode for every non-Forge surface; replaces the deleted
      V01 renderDetail(). Loads BEFORE app.js (boot-race rule). -->
 <script src="src/js/inspector.js?v=20260613-mapwires"></script>
-<script src="src/js/app.js?v=20260712-board-sunset"></script>
+<script src="src/js/app.js?v=20260712-presets-migration"></script>
 <!-- Phase 22-B (2026-05-23) — app-shell top-bar pill wiring.
      Loads AFTER app.js so window.STATE + window.setView are defined.
      Self-installing IIFE; exposes window._appPill for debug. -->

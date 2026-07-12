@@ -217,13 +217,12 @@
   // Each entry click → window._boardsView.loadPreset({name, picks, replace:true}).
   function buildInvestigationMenu(menuEl) {
     const lib   = window.BOARDS_LIBRARY || { massiveWins: [], transmissions: [] };
-    // ALCHEMY_PRESETS + PRESET_CATEGORY_ORDER are top-level const in app.js —
-    // accessible by bare name from any script loaded after app.js (in the
-    // global lexical scope), but NOT on window. Wrap in try/catch in case
-    // of future refactors that move them.
-    let presets = [], presetCats = [];
-    try { if (typeof ALCHEMY_PRESETS !== 'undefined' && Array.isArray(ALCHEMY_PRESETS)) presets = ALCHEMY_PRESETS; } catch (_) {}
-    try { if (typeof PRESET_CATEGORY_ORDER !== 'undefined' && Array.isArray(PRESET_CATEGORY_ORDER)) presetCats = PRESET_CATEGORY_ORDER; } catch (_) {}
+    // AI presets live in src/data/boards-presets.js (window.BOARDS_PRESETS)
+    // since 2026-07-12 — the canonical data-layer home. app.js keeps thin
+    // ALCHEMY_PRESETS aliases for the Transmission view only.
+    const _bp = window.BOARDS_PRESETS || {};
+    const presets    = Array.isArray(_bp.presets) ? _bp.presets : [];
+    const presetCats = Array.isArray(_bp.order)   ? _bp.order   : [];
 
     // Load saved boards. Step 9 — the data is now live; saving a tree
     // populates this list, loading replaces the current board, delete
