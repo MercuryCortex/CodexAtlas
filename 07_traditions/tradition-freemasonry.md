@@ -8,7 +8,7 @@ date-end: ""
 region-origin: "England (London) and Scotland"
 regions-spread: ["Britain", "continental Europe", "the Americas", "global expansion through British and French colonial networks"]
 key-deities: ["the Great Architect of the Universe (G.A.O.T.U.) — non-confessional monotheist"]
-key-persons: ["James Anderson (1679–1739, compiler of the Constitutions)", "John Theophilus Desaguliers (1683–1744, Newtonian natural philosopher, Grand Master)", "Elias Ashmole (1617–1692, early speculative initiation 1646)", "Robert Moray (1641 Edinburgh lodge reception)"]
+key-persons: ["James Anderson (1679–1739, compiler of the Constitutions)", "John Theophilus Desaguliers (1683–1744, Newtonian natural philosopher, Grand Master)", "Elias Ashmole (1617–1692, early speculative initiation 1646)", "Robert Moray (1641 Edinburgh lodge reception)", "[[arthur-edward-waite]] (1857–1942, esoteric-Masonic historiographer — A New Encyclopaedia of Freemasonry 1921)"]
 key-documents: ["[[phase-6-026-anderson-constitutions-free-masons]] (1723)", "the Old Charges manuscript tradition (Regius ms. ~1390; Cooke ms. ~1410; ~100 later)", "the 1738 second edition of Anderson's Constitutions", "the various higher-degree rituals of the 18th c. (Scottish Rite, York Rite, Rectified Scottish Rite)"]
 sister-traditions: ["[[tradition-rosicrucianism]]", "[[tradition-renaissance-hermeticism]] (indirect)"]
 hub-edges:
@@ -22,6 +22,7 @@ hub-edges:
   - target: "templar-gnostic-transmission-hypothesis"
     type: "post-1751-Templar-revivalist-tradition"
     source: "Stevenson 1988 (the debunking of the Scottish-Templar lineage as 18th-c. construction); Goodrick-Clarke 1985 — Freemasonry's Strict Templar Observance (Karl Gotthelf von Hund, ~1751) is the first systematized post-1312 positive (rather than prosecutorial) construction of a continuous Templar tradition. Stevenson 1988 demonstrates the Scottish-Templar lineage is an 18th-c. invention; the seed of every subsequent positive-Templar esoteric construction. See [[templar-gnostic-transmission-hypothesis]]"
+influences: ["[[tradition-hermetic-order-golden-dawn]]"]
 status: "metadata"
 refs:
   - title: "The Origins of Freemasonry: Facts and Fictions"

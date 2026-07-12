@@ -13,6 +13,7 @@ texts-authored: ["*The Tree of Life* (1932)", "*A Garden of Pomegranates* (1932)
 texts-attributed-to: []
 events-participated: []
 mentioned-in: []
+influenced-by: ["[[tradition-hermetic-order-golden-dawn]]"]
 status: "stub"
 refs:
   - title: "The Golden Dawn (rev. ed. of the 1937–1940 4-vol publication)"

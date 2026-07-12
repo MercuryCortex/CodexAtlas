@@ -11,6 +11,7 @@ date-born: 1527
 date-died: 1609
 historicity: "documented"
 texts-authored: ["[[phase-6-012-dee-monas-hieroglyphica]] (1564)", "*Mathematicall Praeface* to Henry Billingsley's Euclid (1570)", "*General and Rare Memorials Pertayning to the Perfect Arte of Navigation* (1577)", "*Mysteriorum Libri Quinque* and other angelic-conversation diaries (1581–1607)"]
+influences: ["[[tradition-hermetic-order-golden-dawn]]"]
 status: "metadata"
 events-participated: ["1583–1589 continental tour with Edward Kelley; visits to Polish and Bohemian courts"]
 hub-edges:

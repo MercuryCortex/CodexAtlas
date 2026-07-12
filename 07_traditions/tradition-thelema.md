@@ -11,6 +11,7 @@ key-deities: ["Nuit", "Hadit", "Ra-Hoor-Khuit"]
 key-persons: ["[[aleister-crowley]]"]
 key-documents: ["[[phase-7-008-book-of-the-law]]", "[[phase-7-016-magick-in-theory-and-practice]]", "*The Holy Books of Thelema*", "*Liber Aleph*"]
 sister-traditions: ["[[tradition-wicca-modern-pagan]]"]
+influenced-by: ["[[tradition-hermetic-order-golden-dawn]]"]
 status: "metadata"
 refs:
   - title: "Aleister Crowley and Western Esotericism"

@@ -11,6 +11,7 @@ key-deities: ["the Goddess", "the Horned God"]
 key-persons: ["[[gerald-gardner]]", "[[doreen-valiente]]", "Alex Sanders (1926–1988; Alexandrian Wicca)", "Z. Budapest (1940–; Dianic Wicca)", "Raymond Buckland (1934–2017; brought Wicca to US 1964)", "Starhawk (1951–; eclectic feminist Wicca)"]
 key-documents: ["[[phase-7-024-witchcraft-today]]", "Gardner's *The Meaning of Witchcraft* (1959)", "the *Book of Shadows* (the central ritual liturgical text of a Gardnerian coven; not a single canonical text but a lineage-transmitted body)", "Starhawk's *The Spiral Dance* (1979)"]
 sister-traditions: ["[[tradition-thelema]]", "[[tradition-asatru]]", "[[tradition-new-age]]"]
+influenced-by: ["[[tradition-hermetic-order-golden-dawn]]"]
 status: "metadata"
 refs:
   - title: "The Triumph of the Moon: A History of Modern Pagan Witchcraft"

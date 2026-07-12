@@ -21,6 +21,7 @@ key-documents:
   - "Éliphas Lévi, Dogme et Rituel de la Haute Magie (1854-1856) — tarot/Hebrew-alphabet/Kabbalah correspondence"
   - "Arthur Edward Waite + Pamela Colman Smith, Rider-Waite-Smith deck (Rider 1909)"
 key-figures:
+  - "[[arthur-edward-waite]] (1857–1942) + Pamela Colman Smith (1878–1951) — pictorial minor arcana, the Anglophone standard deck"
   - "Antoine Court de Gébelin (1725-1784) — origin of the Egyptian-mystery thesis"
   - "Jean-Baptiste Alliette / Etteilla (1738-1791) — first occult cartomantic system"
   - "Éliphas Lévi (1810-1875) — tarot ↔ Hebrew alphabet ↔ Kabbalah systematizer"

@@ -23,6 +23,7 @@ variants:
     description: "**Aleister Crowley** and **Lady Frieda Harris** (*The Book of Thoth*, 1944): the Thoth Tarot, designed with **projective geometry** encoding every card (Harris's study of Rudolf Steiner's projective geometry methods). The Thoth Tarot re-sequences and re-names several cards (Strength → Lust; Justice → Adjustment; Wheel of Fortune → Fortune; The World → The Universe), following Crowley's *Thelema* system. It is the second most-used tarot deck globally after the Rider-Waite-Smith."
 appearances: []
 tradition-context:
+  - "[[tradition-hermetic-order-golden-dawn]]"
   - "[[tradition-hermeticism]]"
   - "[[tradition-renaissance-hermeticism]]"
   - "[[tradition-rosicrucianism]]"
@@ -42,6 +43,12 @@ cross-symbol-edges:
     notes: "The Rosicrucian tradition and the esoteric tarot are contemporaneous and deeply interconnected in the Golden Dawn synthesis. The Rider-Waite-Smith deck's imagery is explicitly Rosicrucian: the rose appears on The Fool's white rose, The Magician's garden, Death's banner, The High Priestess's veil. A.E. Waite was a Rosicrucian scholar. The Rose Cross and the Tarot share the same 19th-century Hermetic synthesis context."
     refs: ["Waite 1910", "Yates 1972"]
 mystery-status: "documented"
+key-figures: ["[[arthur-edward-waite]] (Rider-Waite-Smith deck 1909, drawn by Pamela Colman Smith; The Pictorial Key to the Tarot 1910)"]
+connections:
+  - target: "papus"
+    type: "systematized-by"
+    source: "Papus, Le Tarot des Bohémiens (1889; Eng. 1892/1910) — generally regarded as the first book-length systematization of Lévi's tarot–Kabbalah correspondence (Decker & Dummett 2002)."
+    source-tier: T1
 status: "metadata"
 refs:
   - title: "The Game of Tarot: From Ferrara to Salt Lake City"

@@ -16,6 +16,7 @@ hub-edges:
     type: "Phase-5-esoteric-response-to-Casaubon-rupture"
     source: "Yates 1972 *The Rosicrucian Enlightenment*; Hanegraaff 2012; van Dülmen 1978 *Die Rosenkreuzer* — Rosicrucianism (the 1614-15 Manifestos + 1616 *Chymical Wedding*) is the Phase 5 esoteric response to the 1614 Casaubon rupture: the year Casaubon demonstrates the Hermetic Corpus is post-Mosaic, the Rosicrucian Brotherhood (likely never a real organization) claims to have preserved the Hermetic synthesis underground via secret initiatory lineage. The move from textual-tradition to initiatory-lineage is the defining gesture of modern esotericism. See [[hermetic-transmission-chain]] Phase 5"
     notes: "MASSIVE-WIN: same-year coincidence between Casaubon's rupture + Rosicrucian Manifestos is the documented historical hinge of modern Western esotericism"
+influences: ["[[tradition-hermetic-order-golden-dawn]]"]
 status: "metadata"
 refs:
   - title: "The Rosicrucian Enlightenment"
