@@ -50,6 +50,11 @@ related-themes:
   - "[[apocalyptic-thunderer-vs-serpent]]"
   - "[[chosen-people]]"
   - "[[divine-council]]"
+hub-edges:
+  - target: "calvert-watkins"
+    type: "reconstructed-by"
+    source: "Watkins, C. 1995 *How to Kill a Dragon: Aspects of Indo-European Poetics* OUP"
+    notes: "Cross-lens: 06_themes -> 04_persons. Watkins's PIE serpent-slaying formula *gʷhent h₃égʷhim ('he slew the serpent') is the philological backbone of this hub's Indo-European wing (see the MASSIVE-WIN section, which already presents his reconstruction)."
 status: "full"
 refs:
   - title: "Schöpfung und Chaos in Urzeit und Endzeit"

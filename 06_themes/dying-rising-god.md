@@ -10,7 +10,7 @@ region: "Egypt; Mesopotamia; Levant; Greece; Rome; Near East"
 key-figures: ["[[osiris]]", "[[dumuzi-tammuz]]", "[[baal]]", "[[adonis]]", "[[attis]]", "[[dionysus]]", "[[melqart]]", "[[eshmun]]", "[[jesus-christ-deity]]", "[[mettinger]]"]
 documents: ["[[phase-1-027-memphite-theology-shabaka-stone]]", "[[phase-1-013-baal-cycle]]"]
 traditions: ["[[tradition-egyptian]]", "[[tradition-early-christianity]]", "[[tradition-mystery-cults]]"]
-parallels: ["[[ma-at-logos-sophia]]", "[[neoplatonic-henosis]]", "[[psychostasia-soul-weighing]]"]
+parallels: ["[[ma-at-logos-sophia]]", "[[neoplatonic-henosis]]", "[[psychostasia-soul-weighing]]", "[[theme-monomyth]]"]
 appearances: ["[[osiris]]", "[[dumuzi-tammuz]]", "[[baal]]", "[[adonis]]", "[[attis]]", "[[dionysus]]", "[[melqart]]", "[[eshmun]]", "[[jesus-christ-deity]]"]
 deity-instances: ["[[osiris]]", "[[dumuzi-tammuz]]", "[[baal]]", "[[adonis]]", "[[attis]]", "[[dionysus]]", "[[melqart]]", "[[eshmun]]", "[[jesus-christ-deity]]", "[[quetzalcoatl]]"]
 status: "full"

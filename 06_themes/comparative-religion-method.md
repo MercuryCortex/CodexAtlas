@@ -8,6 +8,7 @@ traditions-where-attested: ["19th-c. comparative philology (Müller)", "early 20
 appearances: ["[[phase-7-007-golden-bough]]", "[[phase-7-011-idea-of-the-holy]]", "[[phase-7-013-eliade-myth-of-eternal-return]]"]
 deity-instances: []
 parallels: ["[[chaoskampf]]", "[[dying-rising-god]]", "[[primordial-waters]]", "[[perkwunos]]"]
+key-figures: ["[[edward-tylor]]", "[[jaan-puhvel]]"]
 status: "developing"
 refs:
   - title: "Imagining Religion: From Babylon to Jonestown"

@@ -4,6 +4,7 @@ id: "underworld-descent"
 name: "Underworld Descent"
 aka: ["descent to the underworld", "katabasis", "descent narrative"]
 category: "mythological / soteriological"
+parallels: ["[[theme-monomyth]]"]
 status: "stub"
 tags: [theme, underworld, katabasis, descent, cross-tradition]
 date-earliest: -2100

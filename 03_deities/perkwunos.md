@@ -41,6 +41,11 @@ syncretic-edges:
     source: "West 2007; Watkins 1995"
     source-tier: "T1"
     notes: "Greek Zeus continues the PIE sky/weather-king function (Zeus vs Typhon = the serpent-combat) but his name reflexes *Dyēus (the sky-father, see [[dyaus-pita]]), not *Perkʷunos. Zeus is a mytheme-cognate, not a name-reflex."
+hub-edges:
+  - target: "calvert-watkins"
+    type: "reconstructed-by"
+    source: "Watkins 1995 *How to Kill a Dragon* OUP; West 2007 *Indo-European Poetry and Myth* OUP"
+    notes: "Cross-lens: 03_deities -> 04_persons. Watkins's formulaic evidence (Vedic/Avestan/Hittite/Greek/Germanic reflexes of the serpent-slaying formula) is the poetic-linguistic proof of the mytheme line of descent this node separates from the etymological name-reflexes; the body prose already names Dumezil and Watkins as the modern re-synthesizers."
 status: "full"
 refs:
   - title: "Indo-European Poetry and Myth"

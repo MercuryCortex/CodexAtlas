@@ -12,6 +12,8 @@ date-died: 1941
 historicity: "documented"
 texts-authored: ["[[phase-7-007-golden-bough]]", "*Totemism and Exogamy* (1910, 4 vols)", "*Folk-Lore in the Old Testament* (1918, 3 vols)", "*The Worship of Nature* (1926)", "translation and commentary on Pausanias (1898)", "translation of Ovid's *Fasti* (1929)"]
 originator-of: ["[[dying-rising-god]]"]
+influences: ["[[theme-monomyth]]"]
+influenced-by: ["[[edward-tylor]]"]
 status: "metadata"
 refs:
   - title: "J.G. Frazer: His Life and Work"

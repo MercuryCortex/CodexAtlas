@@ -6,6 +6,7 @@ category: "cosmogonic"
 appearances: ["[[phase-8-001-popol-vuh]]"]
 deity-instances: []
 cross-tradition-parallels: ["[[divine-twins]]"]
+parallels: ["[[theme-monomyth]]"]
 status: "metadata"
 refs:
   - title: "Popol Vuh: The Definitive Edition of the Mayan Book of the Dawn of Life"
