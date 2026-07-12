@@ -20,7 +20,10 @@
 //                     PRIMARY USER FLOW in step 4 — gives John an
 //                     interactive way to populate the board without
 //                     relying on seedTest().
-//   Save tree       — placeholder until step 9 (LS persistence).
+//   Save tree       — LS persistence (step 9 shipped): prompts for a
+//                     name → _boardsView.saveCurrentBoard/updateBoard
+//                     (atlas.boards.v1); saved boards list under
+//                     MY BOARDS in the Investigation Library.
 //
 // Visibility:
 //   · Body class `app-pill-boards-visible` is added by VIEWS.boards
