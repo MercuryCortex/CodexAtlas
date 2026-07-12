@@ -63,7 +63,10 @@ with open(DST, 'w') as out:
     out.write('  const TRANSMISSIONS_BOARDS = [\n')
     for e in transmissions:
         out.write('    {\n')
-        out.write(f"      id: {js_str(e['id'])},\n")
+        # tr- namespace: transmissions must not reuse massiveWins mw- ids —
+        # boards-controls looks entries up per-category, but shared ids made
+        # the two categories look like the same board (2026-07-12 sweep).
+        out.write(f"      id: {js_str('tr-%03d' % e['num'])},\n")
         out.write(f"      name: {js_str(str(e['num']) + '. ' + e['name'])},\n")
         out.write(f"      headline: {js_str(e['headline'])},\n")
         out.write(f"      picks: [{', '.join(js_str(p) for p in e['picks'])}],\n")
