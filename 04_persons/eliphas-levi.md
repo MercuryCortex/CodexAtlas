@@ -66,7 +66,7 @@ Lévi is **one of the foundational bridges** between (a) the 19th-c. French Cath
 
 ## Historical evidence
 - Substantial published corpus across his career.
-- Personal correspondence with Bulwer-Lytton, Stanislas de Guaita, Papus, and other contemporary occult-revival figures.
+- Personal correspondence with Bulwer-Lytton and other contemporary occult-revival figures. (Stanislas de Guaita and [[papus]] were *posthumous disciples*, not correspondents — Lévi died 1875, when Guaita was 14 and Papus 10; their reception of him is transmission, carried by the influences wires.)
 - French police records (his 1841 and 1846 imprisonments).
 - Modern critical biographical scholarship (McIntosh 1972 / 2011; Hanegraaff 2012).
 
