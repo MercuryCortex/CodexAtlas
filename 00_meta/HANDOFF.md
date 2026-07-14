@@ -1,3 +1,5 @@
+> **🟢🟢🟢 NEWEST — START AT [`HANDOFF-2026-07-12.md`](HANDOFF-2026-07-12.md)** (session end 2026-07-12, account swap). Self-contained: state, the keystone-relay plan (phases 1-3 DONE, phase 4 next), the three-engine method, ranked next steps. Everything below this line is older history.
+
 # Session HANDOFF — 2026-06-09 LATE-NIGHT (🎉 THE QURAN IS COMPLETE — 37/37 within-reason suras distinguished)
 
 > **🟢🟢🟢 START HERE (NEWEST — 2026-06-09 LATE-NIGHT).** Per John (*"your recco"* → finish the Quran).
