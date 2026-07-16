@@ -272,6 +272,13 @@
      V01 renderDetail(). Loads BEFORE app.js (boot-race rule). -->
 <script src="src/js/inspector.js?v=20260613-mapwires"></script>
 <script src="src/js/app.js?v=20260716-themes"></script>
+<!-- Supabase (Phase B, 2026-07-17) — vendored client + config + the auth seam.
+     Signed out → app is 100% local; signed in → Folio/boards use RLS-guarded
+     rows. The only runtime network calls are to OUR backend, only when signed
+     in. Publishable key only (RLS-gated); no service_role. -->
+<script src="_assets/vendor/supabase/supabase.js?v=20260717"></script>
+<script src="src/js/supabase-config.js?v=20260717"></script>
+<script src="src/js/auth.js?v=20260717"></script>
 <!-- Phase 22-B (2026-05-23) — app-shell top-bar pill wiring.
      Loads AFTER app.js so window.STATE + window.setView are defined.
      Self-installing IIFE; exposes window._appPill for debug. -->
