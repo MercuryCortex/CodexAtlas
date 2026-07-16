@@ -204,19 +204,25 @@ body.style-quantum {
   --panel-shadow: 0 14px 34px -10px rgba(0, 0, 0, 0.7);
 }
 
-/* HUMAN — warm light, Aesop-apothecary calm. Greige paper base, warm near-black
-   ink, cool + warm greys, muted-pastel semantic accents. Modern and quiet. */
+/* HUMAN — modern & quiet. Neutral muted-grey dark palette at the same
+   brightness as the working dark themes (so the graph stays clean), with the
+   identity carried by a super-clean modern SANS (Inter) rather than colour.
+   DELIBERATE architecture-§6 exception (John, 2026-07-16): --serif is set to a
+   sans here on purpose — Human's whole character is the clean sans display
+   type, so headings intentionally render in Inter, not a serif. Accent stays a
+   restrained warm neutral so the greys + type do the standing-out. */
 body.style-human {
-  --bg-0: #ece9e1; --bg-1: #f5f3ed; --bg-2: #e5e1d7; --bg-3: #d8d3c6;
-  --border: #cac4b6; --border-soft: #ddd8cc;
-  --text-0: #262420; --text-1: #4e4a41; --text-2: #837c6e; --text-3: #a49d8e;
-  --gold: #9c6f4e; --gold-soft: #b28a63;                 /* muted terracotta accent */
-  --copper: #b8825f; --sage: #7f9670; --crimson: #b0707c; --indigo: #7787a8; --slate: #8791a0;
-  --panel-bg: rgba(245, 243, 237, 0.82);
-  --panel-blur: blur(16px) saturate(118%);
-  --panel-edge: 1px solid rgba(140, 128, 104, 0.22);
-  --panel-shadow: 0 14px 34px -12px rgba(60, 50, 34, 0.28);
-  --serif: "EB Garamond", "Cormorant Garamond", "Iowan Old Style", Palatino, Georgia, serif;
+  --bg-0: #0f0f11; --bg-1: #161619; --bg-2: #1e1e22; --bg-3: #28282e;
+  --border: #34343b; --border-soft: #202024;
+  --text-0: #f2f2f4; --text-1: #c2c2c8; --text-2: #86868e; --text-3: #56565e;
+  --gold: #c2b4a2; --gold-soft: #8f8477;                 /* restrained warm-neutral accent */
+  --copper: #b28d74; --sage: #8b9a86; --crimson: #b1848c; --indigo: #8b93ac; --slate: #797f8a;
+  --panel-bg: rgba(22, 22, 25, 0.74);
+  --panel-blur: blur(16px) saturate(105%);
+  --panel-edge: 1px solid rgba(255, 255, 255, 0.07);
+  --panel-shadow: 0 14px 34px -12px rgba(0, 0, 0, 0.6);
+  --serif: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --sans:  "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 /* MYSTIC — a smooth blue→purple field, gold + white type, and glass panels
