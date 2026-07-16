@@ -9707,21 +9707,15 @@ window.addEventListener('resize', () => {
 // ============================================================
 // STYLE PRESET SWITCHER (palette + typography bundled)
 // ============================================================
-const STYLES = ['codex', 'crypt', 'mystic', 'twilight', 'technical', 'parchment', 'vatican', 'nag-hammadi', 'passion', 'orthodox', 'atlantis', 'eye', 'hermes'];
+// Curated 2026-07-16 (John): Codex (default, :root) + three top-tier alternates.
+// Retired the 12 experimental presets same commit (CSS block + these entries).
+// Saved styles outside this set fall back to 'codex' via applyStyle's guard.
+const STYLES = ['codex', 'quantum', 'human', 'mystic'];
 const STYLE_LABELS = {
-  'codex':       'Codex',
-  'crypt':       'Crypt',
-  'mystic':      'Mystic',
-  'twilight':    'Twilight',
-  'technical':   'Technical',
-  'parchment':   'Parchment',
-  'vatican':     'Vatican',
-  'nag-hammadi': 'Nag Hammadi',
-  'passion':     'Passion',
-  'orthodox':    'Orthodox',
-  'atlantis':    'Atlantis',
-  'eye':         'All-Seeing Eye',
-  'hermes':      'Hermes',
+  'codex':   'Codex',
+  'quantum': 'Quantum',
+  'human':   'Human',
+  'mystic':  'Mystic',
 };
 function applyStyle(name) {
   if (!STYLES.includes(name)) name = 'codex';

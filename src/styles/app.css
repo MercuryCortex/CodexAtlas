@@ -183,132 +183,63 @@ html, body {
 /* ---------- STYLE PRESETS (palette + typography fused) ---------- */
 /* Default = Codex (defined in :root). Each body.style-* class overrides BOTH color vars and font vars. */
 
-body.style-crypt {
-  --bg-0: #000000; --bg-1: #050505; --bg-2: #0c0c0c; --bg-3: #161616;
-  --border: #1f1f1f; --border-soft: #131313;
-  --text-0: #f4d890; --text-1: #c8a868; --text-2: #886a3a; --text-3: #4a3818;
-  --gold: #ffd980; --gold-soft: #b08840;
-  --copper: #d48868; --sage: #889060; --crimson: #c46868; --indigo: #6878b0;
-  --serif: "EB Garamond", "Cormorant Garamond", Palatino, Georgia, serif;
+/* Default = Codex (defined in :root — kept unchanged). The featured set was
+   curated 2026-07-16 (John's direction) down to three top-tier alternates:
+   Quantum (mono-minimal), Human (warm light), Mystic (blue→purple glass).
+   The prior 12 experimental presets were retired the same commit. Each
+   body.style-* rebinds tokens only (+ a small scoped tweak where the
+   preset's identity demands it — architecture §6). --serif stays a serif. */
+
+/* QUANTUM — mono-minimal. Near-black + greys + white; the chrome desaturates
+   to silver so the colourful lore imagery on the canvas speaks for itself. */
+body.style-quantum {
+  --bg-0: #060607; --bg-1: #0e0e10; --bg-2: #161618; --bg-3: #202023;
+  --border: #2b2b2f; --border-soft: #191919;
+  --text-0: #fafafa; --text-1: #c6c6ca; --text-2: #86868c; --text-3: #55555b;
+  --gold: #f0f0f2; --gold-soft: #9a9aa0;                 /* accent = near-white, not gold */
+  --copper: #b8b8bc; --sage: #a4a4a8; --crimson: #cccccf; --indigo: #b0b0b6; --slate: #6c6c72;
+  --panel-bg: rgba(14, 14, 16, 0.74);
+  --panel-blur: blur(14px) saturate(105%);
+  --panel-edge: 1px solid rgba(255, 255, 255, 0.08);
+  --panel-shadow: 0 14px 34px -10px rgba(0, 0, 0, 0.7);
 }
 
-body.style-mystic {
-  --bg-0: #0a0814; --bg-1: #110c20; --bg-2: #18142e; --bg-3: #221a3e;
-  --border: #2a244a; --border-soft: #1f1a36;
-  --text-0: #ece4f4; --text-1: #c8b8d8; --text-2: #9888a8; --text-3: #685a78;
-  --gold: #c8a4e0; --gold-soft: #9878b0;
-  --copper: #c878a8; --sage: #8898c4; --crimson: #c45a8a; --indigo: #6a78d4;
-  --slate: #5a4a78;
-}
-
-body.style-twilight {
-  --bg-0: #08101c; --bg-1: #0d1828; --bg-2: #15243a; --bg-3: #1e304c;
-  --border: #2a4060; --border-soft: #1c2e48;
-  --text-0: #f0e4dc; --text-1: #cab8a8; --text-2: #908070; --text-3: #5a4e42;
-  --gold: #e8a888; --gold-soft: #b07858;
-  --copper: #e08858; --sage: #80a098; --crimson: #d06878; --indigo: #5878c8;
-  --slate: #50607a;
-  /* --serif must remain a serif family (architecture §6). The prior value was Inter
-     (sans), which silently flipped every serif-dependent component. */
+/* HUMAN — warm light, Aesop-apothecary calm. Greige paper base, warm near-black
+   ink, cool + warm greys, muted-pastel semantic accents. Modern and quiet. */
+body.style-human {
+  --bg-0: #ece9e1; --bg-1: #f5f3ed; --bg-2: #e5e1d7; --bg-3: #d8d3c6;
+  --border: #cac4b6; --border-soft: #ddd8cc;
+  --text-0: #262420; --text-1: #4e4a41; --text-2: #837c6e; --text-3: #a49d8e;
+  --gold: #9c6f4e; --gold-soft: #b28a63;                 /* muted terracotta accent */
+  --copper: #b8825f; --sage: #7f9670; --crimson: #b0707c; --indigo: #7787a8; --slate: #8791a0;
+  --panel-bg: rgba(245, 243, 237, 0.82);
+  --panel-blur: blur(16px) saturate(118%);
+  --panel-edge: 1px solid rgba(140, 128, 104, 0.22);
+  --panel-shadow: 0 14px 34px -12px rgba(60, 50, 34, 0.28);
   --serif: "EB Garamond", "Cormorant Garamond", "Iowan Old Style", Palatino, Georgia, serif;
 }
 
-/* Technical — hyper-functional, neutral grays, IBM Plex, smaller base type. No warm gold. */
-body.style-technical {
-  --bg-0: #0a0a0a; --bg-1: #121212; --bg-2: #1a1a1a; --bg-3: #232323;
-  --border: #2a2a2a; --border-soft: #1c1c1c;
-  --text-0: #e8e8e8; --text-1: #b8b8b8; --text-2: #808080; --text-3: #555555;
-  --gold: #5e95d9; --gold-soft: #3e6ea0;
-  --copper: #9080a0; --sage: #7a9080; --crimson: #b06868; --indigo: #5878b0; --slate: #606870;
-  --serif: "IBM Plex Sans", "Inter", system-ui, sans-serif;
-  --sans:  "IBM Plex Sans", "Inter", system-ui, sans-serif;
-  --mono:  "IBM Plex Mono", "JetBrains Mono", "SF Mono", Menlo, monospace;
-  font-size: 13px;
+/* MYSTIC — a smooth blue→purple field, gold + white type, and glass panels
+   (12px blur, low opacity) that float for a 3-D read. Restrained, not garish. */
+body.style-mystic {
+  --bg-0: #0b0a1e; --bg-1: #141232; --bg-2: #1d1a44; --bg-3: #2a2660;
+  --border: #3a3470; --border-soft: #241f4e;
+  --text-0: #ffffff; --text-1: #d9d3ec; --text-2: #a49ccb; --text-3: #6f68a0;
+  --gold: #e8c878; --gold-soft: #b89a54;                 /* gold type */
+  --copper: #c88fd6; --sage: #8fa4e6; --crimson: #d67aae; --indigo: #7c86ec; --slate: #5a5490;
+  --panel-bg: rgba(24, 20, 54, 0.52);                    /* low-opacity glass */
+  --panel-blur: blur(12px) saturate(150%);               /* the 12px John asked for */
+  --panel-edge: 1px solid rgba(184, 164, 230, 0.20);
+  --panel-shadow: 0 18px 44px -12px rgba(0, 0, 0, 0.62);
 }
-body.style-technical .brand h1 { letter-spacing: 0.04em; font-weight: 500; text-transform: none; font-size: 14px; }
-body.style-technical .brand .glyph { display: none; }
-body.style-technical .tagline { font-style: normal; opacity: 0.7; }
-body.style-technical header::after { background: none; opacity: 0; }
-body.style-technical .stat strong { color: var(--text-0); }
-
-/* Parchment — LIGHT mode, paper/manuscript */
-body.style-parchment {
-  --bg-0: #f4ecd8; --bg-1: #ede4ca; --bg-2: #e2d7b8; --bg-3: #d2c4a0;
-  --border: #c0b094; --border-soft: #d8cab0;
-  --text-0: #2a2014; --text-1: #50402c; --text-2: #786648; --text-3: #a08c70;
-  --gold: #6e4818; --gold-soft: #9a7034;
-  --copper: #a04818; --sage: #607848; --crimson: #903a3a; --indigo: #3a4870; --slate: #485870;
-  --serif: "EB Garamond", "Cormorant Garamond", Palatino, Georgia, serif;
-}
-
-/* Nag Hammadi — papyrus brown, faded ochre (high-contrast redo) */
-body.style-nag-hammadi {
-  --bg-0: #120c06; --bg-1: #1c140a; --bg-2: #281c0e; --bg-3: #382814;
-  --border: #50381e; --border-soft: #281c12;
-  --text-0: #f4e0b4; --text-1: #d8bc8c; --text-2: #b09660; --text-3: #80683c;
-  --gold: #e4b070; --gold-soft: #b08448;
-  --copper: #d49060; --sage: #98a070; --crimson: #c46050; --indigo: #788090; --slate: #645640;
-  --serif: "Cormorant Garamond", "EB Garamond", Palatino, Georgia, serif;
-}
-
-/* Passion (Christ) — wine-blood, mournful gold, liturgical serif */
-body.style-passion {
-  --bg-0: #14080a; --bg-1: #1c0c10; --bg-2: #2a1218; --bg-3: #3a1c24;
-  --border: #4a2028; --border-soft: #2c161c;
-  --text-0: #f0d8c4; --text-1: #d4b09a; --text-2: #a08074; --text-3: #685248;
-  --gold: #c08440; --gold-soft: #8c5c2c;
-  --copper: #c44a3a; --sage: #6a7c5c; --crimson: #d04030; --indigo: #5870a0; --slate: #5c4c50;
-  --serif: "EB Garamond", "Cormorant Garamond", Georgia, serif;
-}
-
-/* Atlantis — submerged civilization, deep teal + aged gold */
-body.style-atlantis {
-  --bg-0: #061824; --bg-1: #082230; --bg-2: #0e2e3c; --bg-3: #163e4c;
-  --border: #1e4858; --border-soft: #122c38;
-  --text-0: #d8eef0; --text-1: #a8c8cc; --text-2: #708890; --text-3: #406068;
-  --gold: #d8b478; --gold-soft: #9c7c4c;
-  --copper: #c0936c; --sage: #6c9c98; --crimson: #c45a68; --indigo: #4878a8; --slate: #4a6878;
-  --serif: "Cormorant Garamond", "EB Garamond", Georgia, serif;
-}
-
-/* All-Seeing Eye — black + iris gold, masonic-occult */
-body.style-eye {
-  --bg-0: #050505; --bg-1: #0c0c0c; --bg-2: #161614; --bg-3: #20201c;
-  --border: #2a2820; --border-soft: #181814;
-  --text-0: #f4dc94; --text-1: #c8a868; --text-2: #8c7440; --text-3: #4c4028;
-  --gold: #f0c860; --gold-soft: #b08838;
-  --copper: #e09848; --sage: #80785a; --crimson: #c47868; --indigo: #786e88; --slate: #5c544c;
-  --serif: "EB Garamond", "Cormorant Garamond", Georgia, serif;
-}
-
-/* Hermes — mercury silver + alchemical gold, hermetic-philosophical */
-body.style-hermes {
-  --bg-0: #16181c; --bg-1: #1c1f24; --bg-2: #24282e; --bg-3: #2e333a;
-  --border: #38404a; --border-soft: #232830;
-  --text-0: #e4e6ea; --text-1: #b8bcc4; --text-2: #80868e; --text-3: #555a62;
-  --gold: #c8b890; --gold-soft: #908068;
-  --copper: #b09878; --sage: #8898a0; --crimson: #a47878; --indigo: #6878a0; --slate: #50606c;
-  --serif: "Cormorant Garamond", "EB Garamond", Georgia, serif;
-}
-
-/* Vatican — LIGHT, marble + papal red + gilt, high Catholic */
-body.style-vatican {
-  --bg-0: #f0e8d4; --bg-1: #e8e0c8; --bg-2: #dcd2b4; --bg-3: #c8be9c;
-  --border: #a89c78; --border-soft: #c8be9c;
-  --text-0: #2a1c10; --text-1: #4a3828; --text-2: #786448; --text-3: #98886c;
-  --gold: #903828; --gold-soft: #6c2818;
-  --copper: #a04830; --sage: #607858; --crimson: #b03430; --indigo: #38486c; --slate: #4c5060;
-  --serif: "EB Garamond", "Cormorant Garamond", Georgia, serif;
-}
-
-/* Orthodox (Christian) — Byzantine deep wine + gold-leaf icon-screen */
-body.style-orthodox {
-  --bg-0: #1a0810; --bg-1: #241018; --bg-2: #321820; --bg-3: #422430;
-  --border: #582c38; --border-soft: #341820;
-  --text-0: #f0d8a8; --text-1: #c8a878; --text-2: #98785c; --text-3: #685040;
-  --gold: #e8b860; --gold-soft: #b0883c;
-  --copper: #d09844; --sage: #80784c; --crimson: #c44848; --indigo: #5868a0; --slate: #58484c;
-  --serif: "EB Garamond", "Cormorant Garamond", Georgia, serif;
+/* Smooth blue→purple field behind the glass. Scoped bg tweak — precedent:
+   style-technical's scoped rules. Kept subtle so panels stay readable. */
+body.style-mystic {
+  background:
+    radial-gradient(ellipse at 18% -5%, rgba(96, 116, 224, 0.30), transparent 55%),
+    radial-gradient(ellipse at 88% 105%, rgba(150, 92, 214, 0.32), transparent 55%),
+    linear-gradient(152deg, #0b0a1e 0%, #171338 46%, #241a48 100%);
+  background-attachment: fixed;
 }
 
 /* ---------- STYLE DROPDOWN (preset picker button + menu) ---------- */
