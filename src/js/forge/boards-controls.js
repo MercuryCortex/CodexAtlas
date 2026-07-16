@@ -73,8 +73,12 @@
       '<span class="app-pill-divider" aria-hidden="true"></span>',
       '<button class="app-pill-side app-pill-boards-save" id="app-pill-boards-save"',
       '        type="button"',
-      '        title="Save the current board (LS persistence lands in step 9)">',
+      '        title="Save the current board">',
       '  <span class="app-pill-label" id="app-pill-boards-save-label">Save tree</span>',
+      // Gold "unsaved changes" dot — shown via .has-unsaved when the board
+      // has edits since the last save/load (boards.js dispatches
+      // `boards:dirty-changed`; the listener is wired in init below).
+      '  <span class="boards-save-dot" aria-hidden="true"></span>',
       '</button>',
     ].join('\n');
 
@@ -444,6 +448,13 @@
     if (document.getElementById('app-pill-boards')) return;   // idempotent (pill already mounted)
     const built = installPill();
     if (!built) return;
+
+    // Unsaved-changes dot: reflect boards.js's dirty flag on the Save-tree
+    // button. Listener registered once here; boards.js is the source of truth.
+    document.addEventListener('boards:dirty-changed', (ev) => {
+      const btn = document.getElementById('app-pill-boards-save');
+      if (btn) btn.classList.toggle('has-unsaved', !!(ev.detail && ev.detail.dirty));
+    });
 
     document.getElementById('app-pill-boards-investigation').addEventListener('click', (ev) => {
       ev.stopPropagation();

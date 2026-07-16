@@ -63,6 +63,83 @@
   const _selected = new Set();   // card IDs currently selected
   let _spaceHeld = false;        // space-key state for pan-mode override
 
+  // ── SEALED-LOOP STATE (2026-07-16, alpha) ────────────────────
+  // _dirty = the board has user changes since the last save/load. Drives
+  // the gold "unsaved" dot on the Save-tree pill (boards-controls listens
+  // to `boards:dirty-changed`). Cleared by save/load, set by any mutation.
+  let _dirty = false;
+  function markDirty() {
+    if (_dirty) return;
+    _dirty = true;
+    document.dispatchEvent(new CustomEvent('boards:dirty-changed', { detail: { dirty: true } }));
+  }
+  function markClean() {
+    if (!_dirty) return;
+    _dirty = false;
+    document.dispatchEvent(new CustomEvent('boards:dirty-changed', { detail: { dirty: false } }));
+  }
+
+  // Empty-state card — shown on the stage when the board has no cards, so a
+  // first-time tester meets an invitation instead of a black void. Its two
+  // actions re-fire the existing pill buttons (single source of truth for the
+  // Add-node picker + Investigation library — no duplicated wiring).
+  function updateEmptyState() {
+    if (!_stage) return;
+    const empty = _cards.size === 0;
+    let el = _stage.querySelector('.boards-empty');
+    if (empty && !el) {
+      el = document.createElement('div');
+      el.className = 'boards-empty';
+      el.innerHTML = [
+        '<div class="boards-empty-card">',
+        '  <div class="boards-empty-glyph">✦</div>',
+        '  <h2 class="boards-empty-title">An empty board is a question.</h2>',
+        '  <p class="boards-empty-sub">Pin gods, books and symbols side by side — the Atlas draws the wires it already knows between them.</p>',
+        '  <div class="boards-empty-actions">',
+        '    <button type="button" class="btn btn-mini boards-empty-add">Add node ▾</button>',
+        '    <button type="button" class="btn btn-mini boards-empty-lib">Open library ▾</button>',
+        '  </div>',
+        '</div>',
+      ].join('');
+      el.querySelector('.boards-empty-add').addEventListener('click', () => {
+        const b = document.getElementById('app-pill-boards-addnode');
+        if (b) b.click();
+      });
+      el.querySelector('.boards-empty-lib').addEventListener('click', () => {
+        const b = document.getElementById('app-pill-boards-investigation');
+        if (b) b.click();
+      });
+      _stage.appendChild(el);
+    } else if (!empty && el) {
+      el.parentNode.removeChild(el);
+    }
+  }
+
+  // "Sealed" toast — the felt confirmation on save. Serif name does the brand
+  // work, mono receipt the signal work. Auto-dismisses; reduced-motion safe
+  // (CSS handles the entrance). One at a time — replaces any live toast.
+  function showSealedToast(name, count) {
+    const prior = document.querySelector('.boards-toast');
+    if (prior && prior.parentNode) prior.parentNode.removeChild(prior);
+    const t = document.createElement('div');
+    t.className = 'boards-toast';
+    t.setAttribute('role', 'status');
+    const n = (typeof count === 'number') ? count : _cards.size;
+    t.innerHTML = [
+      '<span class="boards-toast-glyph">✦</span>',
+      '<span class="boards-toast-title">Sealed — <em>' + escapeHtml(name || 'Untitled board') + '</em></span>',
+      '<span class="boards-toast-meta">' + n + ' node' + (n === 1 ? '' : 's') + '</span>',
+    ].join('');
+    document.body.appendChild(t);
+    // force reflow then add .in so the CSS transition runs on first paint
+    void t.offsetWidth;
+    t.classList.add('is-in');
+    setTimeout(() => {
+      t.classList.remove('is-in');
+      setTimeout(() => { if (t.parentNode) t.parentNode.removeChild(t); }, 320);
+    }, 2600);
+  }
+
   // Edge visibility — step 6. Default ON; toggleable via the pill.
   // Persists to LS so John's preference survives reloads even before
   // the full board persistence ships in step 9.
@@ -360,6 +437,7 @@
       const wasMove = _dragState.moved;
       el.classList.remove('is-dragging');
       _dragState = null;
+      if (wasMove) markDirty();          // moving a card is an unsaved change
       if (!wasMove) handleCardClick(card, ev);
     };
     el.addEventListener('pointerup',     finishDrag);
@@ -615,6 +693,7 @@
 
     applyTransform();
     attachPanZoom();
+    updateEmptyState();   // invitation card when the board is empty
     // Initial edge pass — defer one tick so card .offsetWidth is measurable.
     // setTimeout(0) instead of rAF (rAF doesn't fire in backgrounded tabs
     // or headless browsers; we just need to wait one tick for layout).
@@ -681,6 +760,8 @@
       // for testing — same "defer one tick" semantics, runs regardless.
       setTimeout(rebuildEdges, 0);
     }
+    markDirty();
+    updateEmptyState();
     return card;
   }
 
@@ -704,6 +785,7 @@
     _cards.forEach(c => { if (c.el && c.el.parentNode) c.el.parentNode.removeChild(c.el); });
     _cards.clear();
     rebuildEdges();   // step 6 — clear any rendered edges
+    updateEmptyState();
   }
 
   // Step 7 — remove a single card by id.
@@ -713,6 +795,8 @@
     if (card.el && card.el.parentNode) card.el.parentNode.removeChild(card.el);
     _cards.delete(cardId);
     rebuildEdges();
+    markDirty();
+    updateEmptyState();
     return true;
   }
 
@@ -777,6 +861,8 @@
     // Cap at 100 boards to avoid LS bloat — drop the oldest.
     if (state.boards.length > 100) state.boards.length = 100;
     saveLS(state);
+    markClean();
+    showSealedToast(board.name, board.cards.length);
     document.dispatchEvent(new CustomEvent('boards:library-changed', { detail: { kind: 'save', id: board.id } }));
     return board;
   }
@@ -797,6 +883,8 @@
     state.boards[idx] = next;
     state.currentBoardId = id;
     saveLS(state);
+    markClean();
+    showSealedToast(next.name, (next.cards || []).length);
     document.dispatchEvent(new CustomEvent('boards:library-changed', { detail: { kind: 'update', id: id } }));
     return next;
   }
@@ -814,6 +902,8 @@
     (board.cards || []).forEach(c => addCard(c));
     state.currentBoardId = id;
     saveLS(state);
+    markClean();
+    updateEmptyState();
     document.dispatchEvent(new CustomEvent('boards:library-changed', { detail: { kind: 'load', id: id } }));
     return board;
   }

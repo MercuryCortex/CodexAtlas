@@ -8946,6 +8946,82 @@ body.view-forge.fx-belowfifteen .forge-labels-overlay { display: none !important
   will-change: transform;
 }
 
+/* ── BOARDS empty-state (2026-07-16, alpha "Sealed" loop) ──────
+   Shown on an empty board so a first-time tester meets an invitation, not a
+   void. Follows the Scripture empty-state pattern (architecture §3): serif
+   headline, italic-serif microcopy, mono action buttons. */
+.boards-empty {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  pointer-events: none;          /* clicks pass through to the stage… */
+  z-index: 4;
+}
+.boards-empty-card {
+  pointer-events: auto;          /* …except on the card itself */
+  width: min(430px, 84%);
+  text-align: center;
+  background: var(--bg-1);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 32px 34px 26px;
+  box-shadow: var(--panel-shadow);
+}
+.boards-empty-glyph {
+  color: var(--gold); font-size: 18px; letter-spacing: 0.4em; text-indent: 0.4em;
+}
+.boards-empty-title {
+  font-family: var(--serif); font-weight: 500; font-size: 22px;
+  color: var(--text-0); letter-spacing: 0.02em; margin: 10px 0 0;
+}
+.boards-empty-sub {
+  font-family: var(--serif); font-style: italic; font-size: 13.5px;
+  color: var(--text-2); line-height: 1.55; margin: 9px auto 0; max-width: 340px;
+}
+.boards-empty-actions {
+  display: flex; gap: 9px; justify-content: center; margin-top: 20px;
+}
+
+/* ── BOARDS "Sealed" toast (save confirmation) ─────────────────
+   Fixed-chrome tier (z 50–60). Serif name does the brand work, mono receipt
+   the signal work. Glass panel via the --panel-* tokens so it inherits each
+   theme's treatment (incl. Mystic's 12px blur). */
+.boards-toast {
+  position: fixed; left: 50%; bottom: 26px;
+  transform: translate(-50%, 12px);
+  display: flex; align-items: center; gap: 13px;
+  padding: 11px 20px;
+  background: var(--panel-bg);
+  -webkit-backdrop-filter: var(--panel-blur); backdrop-filter: var(--panel-blur);
+  border: 1px solid rgba(212,165,90,0.40);
+  border-radius: 10px;
+  box-shadow: var(--panel-shadow);
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity var(--t-overlay) var(--ease), transform var(--t-overlay) var(--ease);
+  z-index: 60;
+}
+.boards-toast.is-in { opacity: 1; transform: translate(-50%, 0); }
+.boards-toast-glyph { color: var(--gold); font-size: 15px; }
+.boards-toast-title { font-family: var(--serif); font-size: 15px; color: var(--text-0); letter-spacing: 0.02em; }
+.boards-toast-title em { font-style: italic; color: var(--gold); }
+.boards-toast-meta { font-family: var(--mono); font-size: var(--micro); letter-spacing: 0.14em; color: var(--text-3); text-transform: uppercase; }
+@media (prefers-reduced-motion: reduce) {
+  .boards-toast { transition: opacity 120ms linear; transform: translate(-50%, 0); }
+}
+
+/* ── BOARDS unsaved-changes dot on the Save-tree pill ──────────
+   Hidden by default; the .has-unsaved class (toggled by boards-controls from
+   the boards:dirty-changed event) reveals a soft-glowing gold dot. */
+.boards-save-dot {
+  display: inline-block; width: 6px; height: 6px; margin-left: 7px;
+  border-radius: 50%; background: var(--gold);
+  box-shadow: 0 0 7px rgba(212,165,90,0.85);
+  opacity: 0; transform: scale(0.5);
+  transition: opacity var(--t-micro) var(--ease), transform var(--t-micro) var(--ease);
+  vertical-align: middle;
+}
+.app-pill-boards-save.has-unsaved .boards-save-dot { opacity: 1; transform: scale(1); }
+
 /* Individual card — V2 design 2026-05-28 per John: "all the same
    thumbnail size compact with image and the light information of classes,
    with a drop to expand to more — naturally the side panel is where all
