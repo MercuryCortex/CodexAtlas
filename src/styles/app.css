@@ -11013,3 +11013,99 @@ body.view-boards .boards-multi-bar { bottom: 64px; }
   max-width: 440px;
   color: rgba(232, 226, 214, 0.34);
 }
+
+/* ════════════════════════════════════════════════════════════
+   THE THRESHOLD — first-run door (2026-07-16, alpha go-online)
+   Full-screen overlay OVER the live Forge wheel. Full-screen-modal
+   z-tier (100–110, architecture §2). The card is glass (inherits each
+   theme's --panel-* tokens) so it frosts the wheel behind it.
+   ════════════════════════════════════════════════════════════ */
+.threshold {
+  position: fixed; inset: 0;
+  z-index: 105;
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; visibility: hidden;
+  transition: opacity var(--t-overlay) var(--ease), visibility 0s linear var(--t-overlay);
+}
+.threshold.is-open { opacity: 1; visibility: visible; transition: opacity var(--t-overlay) var(--ease); }
+
+.threshold-scrim {
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 50% 46%,
+    rgba(7,9,15,0.82) 0%, rgba(7,9,15,0.58) 52%, rgba(7,9,15,0.28) 100%);
+  cursor: pointer;
+}
+
+.threshold-card {
+  position: relative;
+  width: min(660px, 88%);
+  text-align: center;
+  padding: 42px 48px 26px;
+  border-radius: 12px;
+  background: var(--panel-bg);
+  -webkit-backdrop-filter: var(--panel-blur); backdrop-filter: var(--panel-blur);
+  border: 1px solid rgba(212,165,90,0.28);
+  box-shadow: 0 20px 60px -12px rgba(0,0,0,0.7);
+  transform: translateY(8px) scale(0.985);
+  transition: transform var(--t-overlay) var(--ease-out-expo);
+}
+.threshold.is-open .threshold-card { transform: translateY(0) scale(1); }
+
+.threshold-glyph { color: var(--gold); font-size: 19px; letter-spacing: 0.5em; text-indent: 0.5em; }
+.threshold-title {
+  font-family: var(--serif); font-weight: 500; font-size: 40px; letter-spacing: 0.075em;
+  color: var(--text-0); margin: 12px 0 0;
+}
+.threshold-rule {
+  width: 42px; height: 1px; margin: 18px auto;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+.threshold-line {
+  font-family: var(--serif); font-style: italic; font-size: 16px; line-height: 1.5;
+  color: var(--text-1); max-width: 470px; margin: 0 auto;
+}
+.threshold-stats {
+  font-family: var(--mono); font-size: var(--lbl-sm); letter-spacing: 0.2em;
+  color: var(--gold-soft); text-transform: uppercase; margin-top: 16px;
+}
+
+.threshold-doors {
+  display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-top: 26px;
+}
+@media (max-width: 640px) { .threshold-doors { grid-template-columns: 1fr; } }
+.threshold-door {
+  text-align: left; cursor: pointer;
+  padding: 15px 14px 13px; border-radius: 4px;
+  background: rgba(20,26,38,0.55);
+  border: 1px solid var(--border);
+  transition: border-color var(--t-micro) var(--ease), background var(--t-micro) var(--ease), transform var(--t-micro) var(--ease);
+}
+.threshold-door:hover {
+  border-color: rgba(212,165,90,0.55);
+  background: var(--bg-3);
+  transform: translateY(-1px);
+}
+.threshold-door-label {
+  display: block;
+  font-family: var(--mono); font-size: var(--lbl-md); letter-spacing: 0.14em;
+  color: var(--gold); text-transform: uppercase;
+}
+.threshold-door-copy {
+  display: block; margin-top: 6px;
+  font-family: var(--serif); font-style: italic; font-size: 12.5px; line-height: 1.45;
+  color: var(--text-2);
+}
+.threshold-door:hover .threshold-door-copy { color: var(--text-1); }
+
+.threshold-exit {
+  display: block; margin: 24px auto 0; background: transparent; border: 0; cursor: pointer;
+  font-family: var(--mono); font-size: var(--micro); letter-spacing: 0.18em;
+  color: var(--text-3); text-transform: uppercase;
+  transition: color var(--t-micro) var(--ease);
+}
+.threshold-exit:hover { color: var(--gold-soft); }
+
+@media (prefers-reduced-motion: reduce) {
+  .threshold, .threshold-card { transition: opacity 120ms linear; }
+  .threshold-card { transform: none; }
+}

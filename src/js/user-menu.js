@@ -38,6 +38,7 @@
     {
       label: 'Atlas',
       items: [
+        { id: 'welcome',   glyph: '✦', label: 'Welcome',  hint: '(the threshold)', action: 'welcome' },
         { id: 'statement', glyph: '§', label: 'Atlas Statement',           action: 'statement' },
         { id: 'shop',      glyph: '⛀', label: 'Codex Shop',  hint: '(soon)', action: null      },
       ],
@@ -147,6 +148,13 @@
         // For now, surface a clear stub message so the slot is honest
         // rather than silently swallowing the click.
         alert('Sign in / Sign up — coming with the SaaS launch.\n\nCodex Atlas is in active development; account features ship with the premium viewer rollout.');
+        break;
+      case 'welcome':
+        if (window._threshold && typeof window._threshold.open === 'function') {
+          window._threshold.open();
+        } else {
+          console.warn('user-menu: _threshold not loaded');
+        }
         break;
       case 'statement':
         alert('Atlas Statement — coming soon.\n\nThe cross-tradition investigation premise lives in the project README + AUDIT folder for now. A polished public-facing statement page is on the roadmap.');
