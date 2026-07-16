@@ -174,8 +174,12 @@
 </div>
 
 <script src="data.js?v=20260621-035413" onerror="document.getElementById('missing-data').style.display='flex'"></script>
-<script src="https://d3js.org/d3.v7.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<!-- Vendored 2026-07-16 (pre-alpha hardening): d3 v7.9.0 + marked v12.0.2
+     pulled off d3js.org / jsdelivr into _assets/vendor so the app makes
+     ZERO third-party calls at runtime (Anonymity Law — no tester IP leaks
+     to a CDN) and can't blank-screen if a CDN is blocked/offline. -->
+<script src="_assets/vendor/d3/d3.v7.min.js"></script>
+<script src="_assets/vendor/marked/marked.min.js"></script>
 <script src="_assets/vendor/maplibre/maplibre-gl.js"></script>
 <script src="_assets/vendor/pmtiles/pmtiles.js"></script>
 <script src="_assets/vendor/astronomy/astronomy.browser.min.js"></script>
