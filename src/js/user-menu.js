@@ -31,8 +31,8 @@
     {
       label: 'Account',
       items: [
-        { id: 'signin',  glyph: '↦', label: 'Sign in',  hint: '(stub · SaaS pivot WIP)', action: 'signin'  },
-        { id: 'signup',  glyph: '＋', label: 'Sign up',  hint: '(stub · SaaS pivot WIP)', action: 'signup'  },
+        { id: 'folio',   glyph: '❦', label: 'Your Folio', hint: '(your page)', action: 'folio' },
+        { id: 'signin',  glyph: '↦', label: 'Sign in',  hint: '(soon · alpha)', action: 'signin'  },
       ],
     },
     {
@@ -148,6 +148,13 @@
         // For now, surface a clear stub message so the slot is honest
         // rather than silently swallowing the click.
         alert('Sign in / Sign up — coming with the SaaS launch.\n\nCodex Atlas is in active development; account features ship with the premium viewer rollout.');
+        break;
+      case 'folio':
+        if (window._folio && typeof window._folio.open === 'function') {
+          window._folio.open();
+        } else {
+          console.warn('user-menu: _folio not loaded');
+        }
         break;
       case 'welcome':
         if (window._threshold && typeof window._threshold.open === 'function') {

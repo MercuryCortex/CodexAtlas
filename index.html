@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=EB+Garamond:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&family=Noto+Serif+Hebrew:wght@400;700&family=Noto+Sans+Egyptian+Hieroglyphs&family=Noto+Sans+Syriac&family=Noto+Sans+Imperial+Aramaic&family=Noto+Sans+Samaritan&family=Noto+Sans+Coptic&family=Noto+Sans+Georgian&family=Noto+Sans+Armenian&family=Noto+Sans+Ethiopic&family=Noto+Sans+Cherokee&family=Noto+Sans+Old+Italic&family=Noto+Sans+Ugaritic&family=Noto+Sans+Glagolitic&family=Noto+Sans+Avestan&family=Noto+Sans+Brahmi&family=Noto+Sans+Tibetan&family=Noto+Sans+Old+South+Arabian&family=Noto+Sans+Nabataean&family=Noto+Sans+Sogdian&family=Noto+Sans+Mongolian&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="_assets/vendor/maplibre/maplibre-gl.css?v=5.24.0" />
-<link rel="stylesheet" href="src/styles/app.css?v=20260716-threshold" />
+<link rel="stylesheet" href="src/styles/app.css?v=20260716-folio" />
 </head>
 <body class="nav-hidden detail-collapsed">
 <!-- ════════════════════════════════════════════════════════════════
@@ -276,12 +276,17 @@
 <script src="src/js/app-pill.js?v=20260613-map-lenses"></script>
 <!-- ✦ User menu (account drawer) — rebuilt V2-native 2026-05-28.
      Dev Overview entry added 2026-05-29. -->
-<script src="src/js/user-menu.js?v=20260716-threshold-welcome"></script>
+<script src="src/js/user-menu.js?v=20260716-folio"></script>
 <!-- The Threshold — first-run door (2026-07-16). Loads after app.js +
      user-menu.js so window.setView, window.VAULT_DATA, and the ✦ menu
      exist. Self-installs window._threshold; the ✦ menu's "Welcome" item
      re-opens it. -->
 <script src="src/js/threshold.js?v=20260716-threshold"></script>
+<!-- The Folio — personal page (2026-07-16). Loads after app.js + boards +
+     user-menu so setView/applyStyle/_boardsView/the ✦ menu exist.
+     Self-installs window._folio; the ✦ menu's "Your Folio" item opens it.
+     All state local (Supabase-ready seam) — Phase B swaps the store. -->
+<script src="src/js/folio.js?v=20260716-folio"></script>
 <!-- Dev Overview panel (operator-facing vault-coverage view).
      Self-installs window._devOverview; launched from user-menu → Dev. -->
 <script src="src/js/views/dev-overview.js?v=20260705-transmission-ranking"></script>

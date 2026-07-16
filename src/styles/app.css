@@ -11109,3 +11109,164 @@ body.view-boards .boards-multi-bar { bottom: 64px; }
   .threshold, .threshold-card { transition: opacity 120ms linear; }
   .threshold-card { transform: none; }
 }
+
+/* ════════════════════════════════════════════════════════════
+   THE FOLIO — personal page (2026-07-16, alpha go-online)
+   Full-screen glass overlay reached from ✦ → Your Folio. Identity card
+   (avatar + badge picker + name + seal + theme picker) left, boards shelf
+   right. Full-screen-modal z-tier (100–110, architecture §2).
+   ════════════════════════════════════════════════════════════ */
+.folio {
+  position: fixed; inset: 0; z-index: 104;
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; visibility: hidden;
+  transition: opacity var(--t-overlay) var(--ease), visibility 0s linear var(--t-overlay);
+}
+.folio.is-open { opacity: 1; visibility: visible; transition: opacity var(--t-overlay) var(--ease); }
+.folio-scrim {
+  position: absolute; inset: 0; cursor: pointer;
+  background: radial-gradient(ellipse at 50% 40%, rgba(7,9,15,0.72), rgba(7,9,15,0.9));
+}
+.folio-card {
+  position: relative;
+  width: min(920px, 92%); max-height: 88vh; overflow: hidden;
+  display: flex; flex-direction: column;
+  border-radius: 12px;
+  background: var(--panel-bg);
+  -webkit-backdrop-filter: var(--panel-blur); backdrop-filter: var(--panel-blur);
+  border: 1px solid rgba(212,165,90,0.24);
+  box-shadow: 0 24px 64px -14px rgba(0,0,0,0.72);
+  transform: translateY(8px) scale(0.99);
+  transition: transform var(--t-overlay) var(--ease-out-expo);
+}
+.folio.is-open .folio-card { transform: translateY(0) scale(1); }
+.folio-topbar {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 18px; border-bottom: 1px solid var(--border-soft);
+  flex-shrink: 0;
+}
+.folio-brand { font-family: var(--mono); font-size: var(--lbl-sm); letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold-soft); }
+.folio-brand-glyph { color: var(--gold); margin-right: 4px; }
+.folio-close {
+  background: transparent; border: 0; cursor: pointer; color: var(--text-2);
+  font-size: 20px; line-height: 1; padding: 2px 6px; border-radius: 3px;
+  transition: color var(--t-micro) var(--ease);
+}
+.folio-close:hover { color: var(--gold); }
+
+.folio-grid {
+  display: grid; grid-template-columns: 300px 1fr; gap: 0;
+  overflow-y: auto;
+}
+@media (max-width: 780px) { .folio-grid { grid-template-columns: 1fr; } }
+
+.folio-identity {
+  padding: 28px 24px; text-align: center;
+  border-right: 1px solid var(--border-soft);
+}
+@media (max-width: 780px) { .folio-identity { border-right: 0; border-bottom: 1px solid var(--border-soft); } }
+
+.folio-avatar {
+  width: 104px; height: 104px; border-radius: 50%;
+  margin: 0 auto; position: relative;
+  border: 1px solid rgba(212,165,90,0.6);
+  padding: 5px;
+  box-shadow: 0 0 0 5px rgba(212,165,90,0.12);
+}
+.folio-avatar-bg {
+  position: absolute; inset: 5px; border-radius: 50%; overflow: hidden;
+}
+.folio-avatar-bg svg { width: 100%; height: 100%; display: block; }
+.folio-avatar-initial {
+  position: absolute; inset: 5px; display: flex; align-items: center; justify-content: center;
+  font-family: var(--serif); font-weight: 500; font-size: 46px; color: #fff;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.55);
+}
+.folio-name-row {
+  margin-top: 18px; display: flex; align-items: baseline; gap: 8px; justify-content: center;
+}
+.folio-name { font-family: var(--serif); font-size: var(--h1-size); font-weight: 500; color: var(--text-0); letter-spacing: 0.02em; }
+.folio-name-edit {
+  background: transparent; border: 1px solid var(--border); border-radius: 3px; cursor: pointer;
+  color: var(--text-3); font-size: 10px; padding: 2px 6px;
+  transition: color var(--t-micro) var(--ease), border-color var(--t-micro) var(--ease);
+}
+.folio-name-edit:hover { color: var(--gold); border-color: rgba(212,165,90,0.45); }
+
+.folio-id-rows { margin-top: 18px; border-top: 1px solid var(--border-soft); }
+.folio-id-row {
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding: 8px 2px; border-bottom: 1px solid var(--border-soft); font-family: var(--mono);
+}
+.folio-id-row .rk { font-size: var(--micro); letter-spacing: 0.18em; color: var(--text-3); text-transform: uppercase; }
+.folio-id-row .rv { font-size: var(--lbl-md); color: var(--text-1); letter-spacing: 0.03em; }
+.folio-id-row .rv.gold { color: var(--gold); }
+
+.folio-sect { margin-top: 20px; text-align: left; }
+.folio-sect-label {
+  font-family: var(--mono); font-size: var(--micro); letter-spacing: 0.2em;
+  color: var(--text-3); text-transform: uppercase; margin-bottom: 10px;
+}
+.folio-badge-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.folio-badge-swatch {
+  aspect-ratio: 1; border-radius: 50%; overflow: hidden; cursor: pointer; padding: 0;
+  border: 1px solid var(--border);
+  transition: transform var(--t-micro) var(--ease), box-shadow var(--t-micro) var(--ease);
+}
+.folio-badge-swatch svg { width: 100%; height: 100%; display: block; }
+.folio-badge-swatch:hover { transform: scale(1.08); }
+.folio-badge-swatch.is-active { box-shadow: 0 0 0 2px var(--gold); border-color: var(--gold); }
+
+.folio-theme-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.folio-theme-swatch {
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  background: transparent; border: 0; cursor: pointer; padding: 4px 0;
+}
+.folio-theme-chip {
+  width: 34px; height: 34px; border-radius: 8px; border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  transition: box-shadow var(--t-micro) var(--ease), transform var(--t-micro) var(--ease);
+}
+.folio-theme-swatch:hover .folio-theme-chip { transform: scale(1.08); }
+.folio-theme-swatch.is-active .folio-theme-chip { box-shadow: 0 0 0 2px var(--gold); }
+.folio-theme-dot { width: 10px; height: 10px; border-radius: 50%; }
+.folio-theme-name {
+  font-family: var(--mono); font-size: 8.5px; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--text-3);
+}
+.folio-theme-swatch.is-active .folio-theme-name { color: var(--gold); }
+
+.folio-shelf { padding: 24px 26px; min-width: 0; }
+.folio-shelf-head { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+.folio-shelf-label { font-family: var(--mono); font-size: var(--lbl-sm); letter-spacing: 0.22em; color: var(--gold-soft); text-transform: uppercase; }
+.folio-shelf-count { font-family: var(--mono); font-size: var(--micro); color: var(--text-2); border: 1px solid var(--border); border-radius: 999px; padding: 1px 8px; }
+
+.folio-board-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+@media (max-width: 560px) { .folio-board-grid { grid-template-columns: 1fr; } }
+.folio-board-card {
+  text-align: left; cursor: pointer;
+  background: var(--bg-1); border: 1px solid var(--border); border-radius: 4px;
+  padding: 13px 14px; display: flex; flex-direction: column; gap: 5px;
+  transition: border-color var(--t-micro) var(--ease), background var(--t-micro) var(--ease), transform var(--t-micro) var(--ease);
+}
+.folio-board-card:hover { border-color: rgba(212,165,90,0.5); background: var(--bg-2); transform: translateY(-2px); }
+.folio-board-name { font-family: var(--serif); font-size: 15.5px; font-weight: 500; color: var(--text-0); letter-spacing: 0.02em; }
+.folio-board-meta { font-family: var(--mono); font-size: var(--micro); letter-spacing: 0.08em; color: var(--text-3); text-transform: uppercase; }
+
+.folio-boards-empty {
+  border: 1px dashed var(--border); border-radius: 4px; padding: 22px 20px; text-align: center;
+}
+.folio-boards-empty p { font-family: var(--serif); font-style: italic; font-size: 13.5px; color: var(--text-2); line-height: 1.55; margin: 0 0 14px; }
+.folio-boards-empty em { color: var(--gold); font-style: italic; }
+
+.folio-ghost {
+  margin-top: 16px; border: 1px dashed var(--border); border-radius: 4px;
+  padding: 12px 16px; display: flex; align-items: baseline; gap: 12px; opacity: 0.5;
+}
+.folio-ghost-k { font-family: var(--mono); font-size: var(--lbl-sm); letter-spacing: 0.18em; color: var(--text-3); text-transform: uppercase; white-space: nowrap; }
+.folio-ghost-c { font-family: var(--serif); font-style: italic; font-size: 12.5px; color: var(--text-3); }
+
+@media (prefers-reduced-motion: reduce) {
+  .folio, .folio-card { transition: opacity 120ms linear; }
+  .folio-card { transform: none; }
+}
