@@ -11397,3 +11397,71 @@ body.view-boards .boards-multi-bar { bottom: 64px; }
   .user-menu-identity-link,
   .app-pill-menu-copy { transition: none; }
 }
+
+/* ════════════════════════════════════════════════════════════
+   ✦ SIGN-IN — "Enter the Codex" magic-link modal (2026-07-17, Phase B)
+   Full-screen-modal z-tier. Glass card inherits the active theme's --panel-*.
+   ════════════════════════════════════════════════════════════ */
+.signin {
+  position: fixed; inset: 0; z-index: 106;
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; visibility: hidden;
+  transition: opacity var(--t-overlay) var(--ease), visibility 0s linear var(--t-overlay);
+}
+.signin.is-open { opacity: 1; visibility: visible; transition: opacity var(--t-overlay) var(--ease); }
+.signin-scrim {
+  position: absolute; inset: 0; cursor: pointer;
+  background: radial-gradient(ellipse at 50% 42%, rgba(7,9,15,0.78), rgba(7,9,15,0.92));
+}
+.signin-card {
+  position: relative; width: min(380px, 90%);
+  text-align: center; padding: 36px 34px 26px; border-radius: 12px;
+  background: var(--panel-bg);
+  -webkit-backdrop-filter: var(--panel-blur); backdrop-filter: var(--panel-blur);
+  border: 1px solid rgba(212,165,90,0.26);
+  box-shadow: 0 22px 60px -14px rgba(0,0,0,0.72);
+  transform: translateY(8px) scale(0.99);
+  transition: transform var(--t-overlay) var(--ease-out-expo);
+}
+.signin.is-open .signin-card { transform: translateY(0) scale(1); }
+.signin-close {
+  position: absolute; top: 12px; right: 14px; background: transparent; border: 0; cursor: pointer;
+  color: var(--text-3); font-size: 20px; line-height: 1; padding: 2px 6px; border-radius: 3px;
+  transition: color var(--t-micro) var(--ease);
+}
+.signin-close:hover { color: var(--gold); }
+.signin-glyph { color: var(--gold); font-size: 16px; letter-spacing: 0.4em; text-indent: 0.4em; }
+.signin-title { font-family: var(--serif); font-weight: 500; font-size: var(--h1-size); letter-spacing: 0.05em; color: var(--text-0); margin: 10px 0 0; }
+.signin-copy { font-family: var(--serif); font-style: italic; font-size: 13.5px; line-height: 1.5; color: var(--text-2); margin: 8px auto 0; max-width: 280px; }
+.signin-form { margin-top: 22px; display: flex; flex-direction: column; gap: 12px; }
+.signin-field {
+  width: 100%; background: var(--bg-2); border: 1px solid var(--border); border-radius: 3px;
+  padding: 11px 13px; font-family: var(--mono); font-size: var(--lbl-lg); letter-spacing: 0.03em;
+  color: var(--text-0); text-align: left;
+  transition: border-color var(--t-micro) var(--ease);
+}
+.signin-field::placeholder { color: var(--text-3); }
+.signin-field:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; border-color: rgba(212,165,90,0.5); }
+.signin-btn {
+  width: 100%; background: rgba(212,165,90,0.12); border: 1px solid rgba(212,165,90,0.5); border-radius: 3px;
+  padding: 11px; font-family: var(--mono); font-size: var(--lbl-md); letter-spacing: 0.2em;
+  color: var(--gold); text-transform: uppercase; cursor: pointer;
+  transition: background var(--t-micro) var(--ease), color var(--t-micro) var(--ease);
+}
+.signin-btn:hover { background: rgba(212,165,90,0.2); color: var(--text-0); }
+.signin-btn:disabled { opacity: 0.6; cursor: default; }
+.signin-error { font-family: var(--mono); font-size: var(--lbl-sm); letter-spacing: 0.04em; color: var(--crimson); min-height: 12px; }
+.signin-foot { margin-top: 18px; font-family: var(--mono); font-size: var(--micro); letter-spacing: 0.16em; color: var(--text-3); text-transform: uppercase; }
+.signin-sent-glyph { font-size: 26px; color: var(--gold); margin-top: 20px; }
+.signin-sent-email { font-family: var(--mono); font-size: var(--lbl-lg); color: var(--text-0); letter-spacing: 0.03em; margin-top: 14px; word-break: break-all; }
+.signin-again {
+  margin-top: 20px; background: transparent; border: 1px solid var(--border); border-radius: 3px;
+  padding: 8px 14px; cursor: pointer;
+  font-family: var(--mono); font-size: var(--lbl-sm); letter-spacing: 0.16em; color: var(--text-2); text-transform: uppercase;
+  transition: color var(--t-micro) var(--ease), border-color var(--t-micro) var(--ease);
+}
+.signin-again:hover { color: var(--gold); border-color: rgba(212,165,90,0.45); }
+@media (prefers-reduced-motion: reduce) {
+  .signin, .signin-card { transition: opacity 120ms linear; }
+  .signin-card { transform: none; }
+}

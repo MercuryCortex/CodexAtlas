@@ -32,7 +32,7 @@
       label: 'Account',
       items: [
         { id: 'folio',   glyph: '❦', label: 'Your Folio', hint: '(your page)', action: 'folio' },
-        { id: 'signin',  glyph: '↦', label: 'Sign in',  hint: '(soon · alpha)', action: 'signin'  },
+        { id: 'signin',  glyph: '↦', label: 'Sign in',  hint: '(email link)', action: 'signin'  },
       ],
     },
     {
@@ -104,7 +104,14 @@
       if (si > 0) html.push('<div class="user-menu-divider"></div>');
       html.push('<div class="user-menu-section">');
       html.push(  '<div class="user-menu-section-label">' + sec.label + '</div>');
-      sec.items.forEach(item => {
+      sec.items.forEach(rawItem => {
+        // Auth-aware: the "Sign in" slot becomes "Sign out (email)" when signed in.
+        let item = rawItem;
+        if (rawItem.id === 'signin' && window._auth && window._auth.isSignedIn && window._auth.isSignedIn()) {
+          const u = (window._auth.getUser && window._auth.getUser()) || {};
+          item = { id: 'signout', glyph: '↤', label: 'Sign out',
+                   hint: u.email ? '(' + escapeHtml(u.email) + ')' : '', action: 'signout' };
+        }
         const disabled = !item.action;
         html.push(
           '<button class="user-menu-item' + (disabled ? ' is-disabled' : '') + '"'
@@ -176,11 +183,12 @@
         catch (e) { console.warn('user-menu legacy open failed', e); }
         break;
       case 'signin':
-      case 'signup':
-        // Premium SaaS pivot WIP — see memory `project_premium_saas_shift`.
-        // For now, surface a clear stub message so the slot is honest
-        // rather than silently swallowing the click.
-        alert('Sign in / Sign up — coming with the SaaS launch.\n\nCodex Atlas is in active development; account features ship with the premium viewer rollout.');
+        // Phase B (2026-07-17): the real magic-link modal.
+        if (window._signin && window._signin.open) window._signin.open();
+        else console.warn('user-menu: _signin not loaded');
+        break;
+      case 'signout':
+        if (window._auth && window._auth.signOut) window._auth.signOut();
         break;
       case 'folio':
         if (window._folio && typeof window._folio.open === 'function') {

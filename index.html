@@ -10,7 +10,7 @@
      tester IP leaks to Google on load (Anonymity Law). -->
 <link rel="stylesheet" href="_assets/vendor/fonts/fonts.css?v=20260717-fonts" />
 <link rel="stylesheet" href="_assets/vendor/maplibre/maplibre-gl.css?v=5.24.0" />
-<link rel="stylesheet" href="src/styles/app.css?v=20260716-nav" />
+<link rel="stylesheet" href="src/styles/app.css?v=20260717-phaseb" />
 </head>
 <body class="nav-hidden detail-collapsed">
 <!-- ════════════════════════════════════════════════════════════════
@@ -285,7 +285,7 @@
 <script src="src/js/app-pill.js?v=20260716-nav"></script>
 <!-- ✦ User menu (account drawer) — rebuilt V2-native 2026-05-28.
      Dev Overview entry added 2026-05-29. -->
-<script src="src/js/user-menu.js?v=20260716-nav"></script>
+<script src="src/js/user-menu.js?v=20260717-phaseb"></script>
 <!-- The Threshold — first-run door (2026-07-16). Loads after app.js +
      user-menu.js so window.setView, window.VAULT_DATA, and the ✦ menu
      exist. Self-installs window._threshold; the ✦ menu's "Welcome" item
@@ -296,6 +296,8 @@
      Self-installs window._folio; the ✦ menu's "Your Folio" item opens it.
      All state local (Supabase-ready seam) — Phase B swaps the store. -->
 <script src="src/js/folio.js?v=20260716-folio"></script>
+<!-- Sign-in modal (Phase B, 2026-07-17) — magic-link. After auth.js + folio. -->
+<script src="src/js/signin.js?v=20260717-phaseb"></script>
 <!-- Dev Overview panel (operator-facing vault-coverage view).
      Self-installs window._devOverview; launched from user-menu → Dev. -->
 <script src="src/js/views/dev-overview.js?v=20260705-transmission-ranking"></script>
