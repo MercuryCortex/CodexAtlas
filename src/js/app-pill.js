@@ -72,6 +72,28 @@
     { id: 'investigation', target: 'investigation',                  icon: '◈', label: 'INVESTIGATION' },
   ];
 
+  // ── MASTER MENU NARRATION (surface 05, 2026-07-16) ─────────
+  // The dropdown groups the SAME MASTER_VIEWS entries under three
+  // narrated sections and gives each row one italic-serif line of
+  // microcopy. Framing only — targets, routing and the pill face
+  // are untouched (AUDIT/2026-07-16-fable-design-next-level-plan.md §4).
+  // Any MASTER_VIEWS id missing from MASTER_NARRATION falls through
+  // to EXPLORE with no copy line — a working view is never dropped.
+  const MASTER_SECTIONS = [
+    { id: 'explore', label: 'Explore' },
+    { id: 'study',   label: 'Study'   },
+    { id: 'yours',   label: 'Yours'   },
+  ];
+  const MASTER_NARRATION = {
+    forge:         { section: 'explore', copy: 'the whole map, every tradition' },
+    timeline:      { section: 'explore', copy: 'the same map, laid on time' },
+    map:           { section: 'explore', copy: 'where it happened, on the earth' },
+    starmap:       { section: 'explore', copy: 'the sky the ancients read' },
+    alphabets:     { section: 'study',   copy: 'every writing system, one genealogy' },
+    investigation: { section: 'study',   copy: 'documented cross-tradition finds' },
+    board:         { section: 'yours',   copy: 'your pinboard — save what you find' },
+  };
+
   // Reverse lookup: (STATE.view, _forge.getLayout()) → master view entry.
   // The Forge engine carries TWO master views (FORGE wheel + TIMELINE
   // layout) so a simple STATE.view → master lookup isn't enough. We
@@ -105,6 +127,11 @@
 
   // The icon span lives inside masterBtn; grab via class.
   const masterIcon  = masterBtn.querySelector('.app-pill-icon');
+
+  // Surface 05 (2026-07-16) — the master menu renders grouped +
+  // narrated rows (wider panel, two-line items). One-time modifier
+  // class scopes the CSS so the class menu keeps its compact layout.
+  masterMenu.classList.add('app-pill-menu--narrated');
 
   // ── CLASS SELECTOR (Phase 22-C) ─────────────────────────────
   // The right-side pill lists every CLASS the active master view
@@ -180,16 +207,35 @@
   }
 
   // ── BUILD MASTER MENU ───────────────────────────────────────
+  // Surface 05 (2026-07-16) — grouped + narrated. Same buttons,
+  // same data-master ids, same click routing below; the menu only
+  // gains EXPLORE / STUDY / YOURS section headers and a one-line
+  // italic-serif copy per row.
   function buildMasterMenu() {
     const cur = currentMaster();
-    const html = MASTER_VIEWS.map(mv => (
-      '<button class="app-pill-menu-item' + (mv.id === cur.id ? ' is-active' : '') + '"'
-      + ' role="menuitem" data-master="' + mv.id + '" type="button">'
-      +   '<span class="app-pill-menu-icon">' + mv.icon + '</span>'
-      +   '<span class="app-pill-menu-label">' + mv.label + '</span>'
-      +   (mv.id === cur.id ? '<span class="app-pill-menu-check">●</span>' : '')
-      + '</button>'
-    )).join('')
+    const itemHtml = (mv) => {
+      const n = MASTER_NARRATION[mv.id] || {};
+      return (
+        '<button class="app-pill-menu-item app-pill-menu-item--narrated' + (mv.id === cur.id ? ' is-active' : '') + '"'
+        + ' role="menuitem" data-master="' + mv.id + '" type="button">'
+        +   '<span class="app-pill-menu-icon">' + mv.icon + '</span>'
+        +   '<span class="app-pill-menu-text">'
+        +     '<span class="app-pill-menu-label">' + mv.label + '</span>'
+        +     (n.copy ? '<span class="app-pill-menu-copy">' + n.copy + '</span>' : '')
+        +   '</span>'
+        +   (mv.id === cur.id ? '<span class="app-pill-menu-check">●</span>' : '')
+        + '</button>'
+      );
+    };
+    const html = MASTER_SECTIONS.map(sec => {
+      const views = MASTER_VIEWS.filter(mv => {
+        const n = MASTER_NARRATION[mv.id];
+        return (n ? n.section : 'explore') === sec.id;   // unmapped id → EXPLORE
+      });
+      if (!views.length) return '';
+      return '<div class="app-pill-menu-section-label">' + sec.label + '</div>'
+        + views.map(itemHtml).join('');
+    }).join('')
       + '<div class="app-pill-menu-divider"></div>'
       + '<button class="app-pill-menu-item app-pill-menu-item--meta" role="menuitem"'
       +   ' id="app-pill-old-prototypes" type="button"'

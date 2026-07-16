@@ -60,9 +60,42 @@
     },
   ];
 
+  // ── FOLIO IDENTITY (surface 05, 2026-07-16) ─────────────────
+  // The drawer opens with the tester's own mark: illuminated-initial
+  // avatar in a gold ring + Folio display name (serif) + a mono
+  // "View folio ↦" link. The whole strip is ONE button with
+  // data-action="folio", so the existing click router opens the
+  // Folio (window._folio.open) — avatar, name and link all work.
+  // Name is read live from LS on every open (buildMenu runs on
+  // open), so a rename in the Folio pane shows up immediately.
+  const FOLIO_LS_KEY = 'codex-atlas/folio-v1';
+  function escapeHtml(s) {
+    return String(s).replace(/[&<>"']/g, c => ({
+      '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;',
+    }[c]));
+  }
+  function readFolioName() {
+    try {
+      const p = JSON.parse(localStorage.getItem(FOLIO_LS_KEY) || 'null');
+      if (p && typeof p.name === 'string' && p.name.trim()) {
+        return p.name.trim().slice(0, 40);   // same 40-char cap as folio.js
+      }
+    } catch (e) { /* corrupted LS → default */ }
+    return 'Seeker';   // folio.js default display name
+  }
+
   // ── BUILD ────────────────────────────────────────────────────
   function buildMenu() {
     const html = [];
+    const folioName = readFolioName();
+    html.push('<button class="user-menu-identity" type="button" data-action="folio" title="Open your Folio">');
+    html.push(  '<span class="user-menu-identity-avatar">' + escapeHtml(folioName.charAt(0).toUpperCase()) + '</span>');
+    html.push(  '<span class="user-menu-identity-text">');
+    html.push(    '<span class="user-menu-identity-name">' + escapeHtml(folioName) + '</span>');
+    html.push(    '<span class="user-menu-identity-link">View folio ↦</span>');
+    html.push(  '</span>');
+    html.push('</button>');
+    html.push('<div class="user-menu-divider"></div>');
     html.push('<div class="user-menu-header">');
     html.push(  '<span class="user-menu-brand-glyph">✦</span>');
     html.push(  '<span class="user-menu-brand-text">Codex Atlas</span>');

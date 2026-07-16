@@ -103,3 +103,6 @@ secrets.json
 # === Per-machine Claude config (path/identity-bearing; workflows stay tracked) ===
 .claude/settings.json
 .claude/settings.local.json
+
+# Island identity (pseudonymous layout — kept out of the repo per Anonymity Law)
+PROJECT-IDENTITY.md

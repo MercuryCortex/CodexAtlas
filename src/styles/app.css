@@ -11270,3 +11270,130 @@ body.view-boards .boards-multi-bar { bottom: 64px; }
   .folio, .folio-card { transition: opacity 120ms linear; }
   .folio-card { transform: none; }
 }
+
+/* ============================================================
+ * master-pill dropdown — grouped + narrated (2026-07-16)
+ * Surface 05 ("A narrated map"). Same 7 targets, same routing —
+ * the master menu only gains EXPLORE / STUDY / YOURS headers
+ * (reusing .app-pill-menu-section-label) and one italic-serif
+ * microcopy line per row. Modifier classes scope the two-line
+ * layout so the class menu keeps its compact form. Base row
+ * hover / :focus / .is-focused / .is-active states come from the
+ * existing .app-pill-menu-item rules (architecture §4).
+ * ============================================================ */
+.app-pill-menu--narrated {
+  min-width: 232px;         /* room for the microcopy line */
+}
+.app-pill-menu-item--narrated {
+  align-items: flex-start;  /* two-line rows top-align */
+}
+.app-pill-menu-item--narrated .app-pill-menu-check {
+  margin-top: 3px;          /* optically centers ● on the label line */
+}
+.app-pill-menu-text {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.app-pill-menu-copy {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: var(--lbl-md);
+  letter-spacing: 0.02em;
+  text-transform: none;
+  color: var(--text-2);
+  transition: color var(--t-micro) var(--ease);
+}
+/* engaged rows (hover / keyboard focus / active view) lift the
+   microcopy one text step so the narration reads with the label */
+.app-pill-menu-item--narrated:hover .app-pill-menu-copy,
+.app-pill-menu-item--narrated:focus .app-pill-menu-copy,
+.app-pill-menu-item--narrated.is-focused .app-pill-menu-copy,
+.app-pill-menu-item--narrated.is-active .app-pill-menu-copy {
+  color: var(--text-1);
+}
+
+/* ============================================================
+ * ✦ menu identity header (2026-07-16 — surface 05)
+ * Top of the account drawer: illuminated-initial avatar in a gold
+ * ring + Folio display name (serif) + mono "View folio ↦" link.
+ * The whole strip is ONE <button data-action="folio"> — it rides
+ * the existing user-menu action router to window._folio.open().
+ * Gold rgba steps (0.08 / 0.12 / 0.14) match the existing
+ * user-menu / app-pill hover vocabulary — no new color values.
+ * ============================================================ */
+.user-menu-identity {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 8px 14px;
+  background: transparent;
+  border: 0;
+  text-align: left;
+  cursor: pointer;
+  transition: background var(--t-micro) var(--ease);
+}
+.user-menu-identity:hover {
+  background: rgba(212,165,90,0.08);
+}
+.user-menu-identity:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: -2px;
+  border-radius: 3px;
+  background: rgba(212,165,90,0.08);
+}
+.user-menu-identity:active {
+  background: rgba(212,165,90,0.14);
+}
+.user-menu-identity-avatar {
+  flex: 0 0 auto;
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  border: 1px solid var(--gold);
+  box-shadow: 0 0 0 3px rgba(212,165,90,0.12);  /* faint outer ring */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--serif);
+  font-size: var(--h3-size);
+  line-height: 1;
+  color: var(--gold);
+}
+.user-menu-identity-text {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.user-menu-identity-name {
+  font-family: var(--serif);
+  font-size: var(--h3-size);
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  color: var(--text-0);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.user-menu-identity-link {
+  font-family: var(--mono);
+  font-size: var(--lbl-sm);
+  letter-spacing: 0.08em;
+  color: var(--text-2);
+  transition: color var(--t-micro) var(--ease);
+}
+.user-menu-identity:hover .user-menu-identity-link,
+.user-menu-identity:focus-visible .user-menu-identity-link,
+.user-menu-identity:active .user-menu-identity-link {
+  color: var(--gold);
+}
+@media (prefers-reduced-motion: reduce) {
+  .user-menu-identity,
+  .user-menu-identity-link,
+  .app-pill-menu-copy { transition: none; }
+}
