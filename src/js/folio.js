@@ -49,6 +49,8 @@
     var p = profile();
     for (var k in patch) p[k] = patch[k];
     writeProfile(p);
+    // let sync.js push to the cloud when signed in (no-op when local)
+    document.dispatchEvent(new CustomEvent('codex:profile-changed'));
     return p;
   }
   function escapeHtml(s) {
@@ -218,6 +220,8 @@
     var p = profile();
     var badgeIdx = p.badge || 0;
     var seal = ('00' + p.sealNo).slice(-3);
+    var signedIn = !!(window._auth && window._auth.isSignedIn && window._auth.isSignedIn());
+    var statusVal = signedIn ? 'Alpha · synced' : 'Alpha · local';
 
     var badgePicker = BADGES.map(function (b, i) {
       return '<button type="button" class="folio-badge-swatch' + (i === badgeIdx ? ' is-active' : '') +
@@ -245,7 +249,7 @@
       '  </div>',
       '  <div class="folio-id-rows">',
       '    <div class="folio-id-row"><span class="rk">Alpha seal</span><span class="rv gold">Nº ' + seal + '</span></div>',
-      '    <div class="folio-id-row"><span class="rk">Status</span><span class="rv">Alpha · local</span></div>',
+      '    <div class="folio-id-row"><span class="rk">Status</span><span class="rv' + (signedIn ? ' gold' : '') + '">' + statusVal + '</span></div>',
       '  </div>',
       '  <div class="folio-sect">',
       '    <div class="folio-sect-label">Badge</div>',
@@ -289,6 +293,7 @@
       btn.addEventListener('click', function () {
         var key = btn.getAttribute('data-folio-theme');
         if (typeof window.applyStyle === 'function') window.applyStyle(key);
+        document.dispatchEvent(new CustomEvent('codex:profile-changed'));   // theme is part of the cloud profile
         render();
       });
     });
