@@ -11465,3 +11465,17 @@ body.view-boards .boards-multi-bar { bottom: 64px; }
   .signin, .signin-card { transition: opacity 120ms linear; }
   .signin-card { transform: none; }
 }
+
+/* ── Alpha gate (2026-07-17) — the sign-in wall on real hosts ──
+   In gate mode the modal can't be dismissed (no ✕), and the app behind the
+   door is blurred + inert until sign-in. localhost is never gated (dev). */
+.signin.is-gate .signin-close { display: none; }
+body.alpha-gated #svg-wrap,
+body.alpha-gated .canvas,
+body.alpha-gated #app-pill-wrap,
+body.alpha-gated .user-menu-trigger,
+body.alpha-gated .forge-bottombar {
+  filter: blur(7px);
+  pointer-events: none;
+  user-select: none;
+}

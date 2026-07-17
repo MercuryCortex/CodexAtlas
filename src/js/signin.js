@@ -14,6 +14,7 @@
   'use strict';
 
   var _el = null;
+  var _gateMode = false;   // when true (alpha gate) the modal cannot be dismissed
 
   function escapeHtml(s) {
     return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
@@ -115,9 +116,11 @@
     return 'Could not send the key. Try again in a moment.';
   }
 
-  function open() {
+  function open(opts) {
     if (window._auth && window._auth.isSignedIn && window._auth.isSignedIn()) return; // already in
     if (!_el) _el = build();
+    _gateMode = !!(opts && opts.gate);
+    _el.classList.toggle('is-gate', _gateMode);   // hides the ✕ via CSS
     showState('request');
     _el.setAttribute('aria-hidden', 'false');
     void _el.offsetWidth;
@@ -125,8 +128,15 @@
     document.addEventListener('keydown', _onKey);
   }
   function close() {
-    if (!_el) return;
+    if (!_el || _gateMode) return;   // the gate cannot be dismissed — sign in to pass
     _el.classList.remove('is-open');
+    _el.setAttribute('aria-hidden', 'true');
+    document.removeEventListener('keydown', _onKey);
+  }
+  function _forceClose() {   // used internally once auth succeeds
+    if (!_el) return;
+    _gateMode = false;
+    _el.classList.remove('is-open', 'is-gate');
     _el.setAttribute('aria-hidden', 'true');
     document.removeEventListener('keydown', _onKey);
   }
@@ -134,7 +144,7 @@
 
   // Auto-close when auth succeeds (magic-link return or same-tab sign-in).
   document.addEventListener('codex:auth-changed', function (ev) {
-    if (ev.detail && ev.detail.signedIn) close();
+    if (ev.detail && ev.detail.signedIn) _forceClose();   // passes the gate
   });
 
   window._signin = { open: open, close: close };
