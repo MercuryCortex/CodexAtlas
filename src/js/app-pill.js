@@ -72,6 +72,15 @@
     { id: 'investigation', target: 'investigation',                  icon: '◈', label: 'INVESTIGATION' },
   ];
 
+  // Alpha deploy (2026-07-17): the MAP view needs the 185 MB basemap that
+  // can't ship to Cloudflare Pages (25 MB/file cap). When the alpha flag is
+  // set (dist index.html), hide MAP + STAR MAP. Dev (no flag) shows all.
+  if (window.CODEX_ALPHA_HIDE_MAP) {
+    for (let i = MASTER_VIEWS.length - 1; i >= 0; i--) {
+      if (MASTER_VIEWS[i].id === 'map' || MASTER_VIEWS[i].id === 'starmap') MASTER_VIEWS.splice(i, 1);
+    }
+  }
+
   // ── MASTER MENU NARRATION (surface 05, 2026-07-16) ─────────
   // The dropdown groups the SAME MASTER_VIEWS entries under three
   // narrated sections and gives each row one italic-serif line of
