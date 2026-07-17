@@ -20,17 +20,20 @@ os.makedirs(DIST)
 shutil.copytree(rel('src'), os.path.join(DIST, 'src'))
 # _assets: only the runtime bits (NOT basemap)
 os.makedirs(os.path.join(DIST, '_assets'))
-# bg/ excluded: the two HD background videos are 27 MB each (>25 MB Pages cap)
-# and only decorative — the app falls back to the dark canvas without them.
-for name in ('vendor', 'audio', 'data', 'placeholders'):
+for name in ('vendor', 'bg', 'audio', 'data', 'placeholders'):
     src = rel('_assets', name)
     if os.path.isdir(src):
         shutil.copytree(src, os.path.join(DIST, '_assets', name))
 for f in ('thumbs_cache.json',):
     if os.path.exists(rel('_assets', f)):
         shutil.copy2(rel('_assets', f), os.path.join(DIST, '_assets', f))
-# vendor/bin/ is the 55 MB pmtiles CLI (a dev tool) — never used in the browser.
+# Drop the >25 MB files Cloudflare Pages rejects (the app doesn't use them):
+#  · vendor/bin/pmtiles — 55 MB pmtiles CLI (a dev tool, never in the browser)
+#  · bg/bg-x{1,2}-hd.mov — 27 MB HD bg videos (app uses the 2.9 MB bg-t01.mov)
 shutil.rmtree(os.path.join(DIST, '_assets', 'vendor', 'bin'), ignore_errors=True)
+for f in ('bg-x1-hd.mov', 'bg-x2-hd.mov'):
+    try: os.remove(os.path.join(DIST, '_assets', 'bg', f))
+    except OSError: pass
 
 # ── split data.js into <25MB chunks ─────────────────────────────────────
 raw = open(rel('data.js'), 'r', encoding='utf-8').read()

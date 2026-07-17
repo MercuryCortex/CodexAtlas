@@ -1204,7 +1204,7 @@
           '<div class="forge-fxpanel-row"><label>pulse duration <span class="forge-fxpanel-val" data-val="pulse-duration">0.8s</span></label><input type="range" data-fx="pulse-duration" min="0.2" max="2.0" step="0.05" value="0.8"></div>' +
           // Phase 22-I (2026-05-24) — Hulls section is WHEEL-only.
           // Timeline has no convex hulls (band rectangles instead).
-          '<div class="forge-fxpanel-section fv-wheel-only">Hulls (calm layer)</div>' +
+          '<div class="forge-fxpanel-section fv-wheel-only">Tradition wedges (colour)</div>' +
           '<div class="forge-fxpanel-row fv-wheel-only"><label>brightness <span class="forge-fxpanel-val" data-val="hull-bright-peak">1.30</span></label><input type="range" data-fx="hull-bright-peak" min="0.8" max="2" step="0.01" value="1.30"></div>' +
           '<div class="forge-fxpanel-row fv-wheel-only"><label>saturate <span class="forge-fxpanel-val" data-val="hull-sat-peak">1.55</span></label><input type="range" data-fx="hull-sat-peak" min="0.5" max="2.5" step="0.01" value="1.55"></div>' +
           '<div class="forge-fxpanel-row fv-wheel-only"><label>hue shift <span class="forge-fxpanel-val" data-val="hull-hue-peak">10°</span></label><input type="range" data-fx="hull-hue-peak" min="-60" max="60" step="1" value="10"></div>' +
@@ -1374,7 +1374,9 @@
     // master into _assets/bg/<stable-name>.<ext>, edit these two
     // constants, bump the cache-bust string in index.html.
     // ───────────────────────────────────────────────────────────
-    const BG_ASSET_URL  = '_assets/bg/bg-x1-hd.mov?v=20260522-21ac';
+    // bg-t01.mov (2.9 MB) not bg-x1-hd.mov (27 MB) — the HD file exceeds the
+    // Cloudflare Pages 25 MB/file cap; the small one is fine for an ambient bg.
+    const BG_ASSET_URL  = '_assets/bg/bg-t01.mov?v=20260717-alpha';
     const BG_ASSET_KIND = 'video';   // 'image' | 'video'
     let bgImage = document.getElementById('forge-bg-image');
     // If the cached element is the WRONG tag for the current asset
