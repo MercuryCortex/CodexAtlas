@@ -97,17 +97,21 @@
         _el.querySelector('.signin-sent-email').textContent = email;
         showState('sent');
       } else {
-        err.textContent = friendlyError(r && r.error);
+        err.textContent = friendlyError(r);
       }
     });
   }
 
   // Turn Supabase/allowlist errors into plain, non-leaky language.
-  function friendlyError(msg) {
-    msg = String(msg || '');
-    if (/allowlist|not on the alpha/i.test(msg)) return 'That email isn’t on the alpha list yet.';
+  function friendlyError(r) {
+    var msg = String((r && r.error) || '');
+    var status = r && r.status;
+    if (/rate|too many|only request|seconds/i.test(msg)) return 'Too many tries — wait a minute and retry.';
+    if (/allowlist|not on the alpha/i.test(msg)) return 'That email isn’t on the alpha invite list yet.';
+    // A 500 (or empty body) on send = the signup gate blocked a non-listed
+    // email at user-creation. This is the by-far most common cause.
+    if (status === 500 || msg === '' || msg === '{}') return 'That email isn’t on the alpha invite list yet.';
     if (/redirect|not allowed|url/i.test(msg)) return 'Sign-in isn’t fully configured yet — hang tight.';
-    if (/rate|too many/i.test(msg)) return 'Too many tries — wait a minute and retry.';
     return 'Could not send the key. Try again in a moment.';
   }
 

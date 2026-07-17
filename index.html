@@ -278,7 +278,7 @@
      in. Publishable key only (RLS-gated); no service_role. -->
 <script src="_assets/vendor/supabase/supabase.js?v=20260717"></script>
 <script src="src/js/supabase-config.js?v=20260717"></script>
-<script src="src/js/auth.js?v=20260717"></script>
+<script src="src/js/auth.js?v=20260717b"></script>
 <!-- Phase 22-B (2026-05-23) — app-shell top-bar pill wiring.
      Loads AFTER app.js so window.STATE + window.setView are defined.
      Self-installing IIFE; exposes window._appPill for debug. -->
@@ -297,7 +297,7 @@
      All state local (Supabase-ready seam) — Phase B swaps the store. -->
 <script src="src/js/folio.js?v=20260717-phaseb"></script>
 <!-- Sign-in modal (Phase B, 2026-07-17) — magic-link. After auth.js + folio. -->
-<script src="src/js/signin.js?v=20260717-phaseb"></script>
+<script src="src/js/signin.js?v=20260717b"></script>
 <!-- Cloud sync (Phase B, 2026-07-17) — local-first ⇄ Supabase; after auth+boards+folio. -->
 <script src="src/js/sync.js?v=20260717-phaseb"></script>
 <!-- Dev Overview panel (operator-facing vault-coverage view).

@@ -72,7 +72,7 @@
       email: String(email || '').trim(),
       options: { emailRedirectTo: redirect },
     }).then(function (r) {
-      if (r.error) return { ok: false, error: r.error.message || String(r.error) };
+      if (r.error) return { ok: false, error: r.error.message || String(r.error), status: r.error.status };
       return { ok: true };
     }).catch(function (e) { return { ok: false, error: String(e) }; });
   }
