@@ -11350,18 +11350,27 @@ body.view-boards .boards-multi-bar { bottom: 64px; }
 }
 .user-menu-identity-avatar {
   flex: 0 0 auto;
-  width: 28px;
-  height: 28px;
+  position: relative;
+  width: 30px;
+  height: 30px;
   border-radius: 999px;
-  border: 1px solid var(--gold);
+  overflow: hidden;
+  border: 1px solid rgba(212,165,90,0.7);
   box-shadow: 0 0 0 3px rgba(212,165,90,0.12);  /* faint outer ring */
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--serif);
-  font-size: var(--h3-size);
-  line-height: 1;
-  color: var(--gold);
+  display: inline-flex; align-items: center; justify-content: center;
+}
+.user-menu-identity-avatar .uma-badge { position: absolute; inset: 0; }
+.user-menu-identity-avatar .uma-badge svg { width: 100%; height: 100%; display: block; }
+/* Frosted-glass disc behind the initial — blurs the badge so the letter reads. */
+.user-menu-identity-avatar .uma-letter {
+  position: relative; z-index: 1;
+  display: flex; align-items: center; justify-content: center;
+  width: 20px; height: 20px; border-radius: 50%;
+  -webkit-backdrop-filter: blur(4px) saturate(120%); backdrop-filter: blur(4px) saturate(120%);
+  background: rgba(10,12,20,0.28);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.16);
+  font-family: var(--serif); font-weight: 600; font-size: 14px; line-height: 1;
+  color: #fff; text-shadow: 0 1px 4px rgba(0,0,0,0.6);
 }
 .user-menu-identity-text {
   flex: 1 1 auto;

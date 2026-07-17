@@ -364,5 +364,9 @@
   }
   function _onKey(ev) { if (ev.key === 'Escape') close(); }
 
-  window._folio = { open: open, close: close };
+  window._folio = {
+    open: open, close: close,
+    badgeSvg: badgeSvg,                          // (idx, tiny) → svg string
+    badgeIndex: function () { return profile().badge || 0; },
+  };
 })();

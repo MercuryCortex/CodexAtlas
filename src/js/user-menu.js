@@ -31,7 +31,6 @@
     {
       label: 'Account',
       items: [
-        { id: 'folio',   glyph: '❦', label: 'Your Folio', hint: '(your page)', action: 'folio' },
         { id: 'signin',  glyph: '↦', label: 'Sign in',  hint: '(email link)', action: 'signin'  },
       ],
     },
@@ -47,7 +46,6 @@
       label: 'Project',
       items: [
         { id: 'about',    glyph: 'ⓘ',  label: 'About',                action: 'about'    },
-        { id: 'legacy',   glyph: '🗄', label: 'V01 prototype',        hint: '(reference · new tab)', action: 'legacy' },
       ],
     },
     {
@@ -89,7 +87,14 @@
     const html = [];
     const folioName = readFolioName();
     html.push('<button class="user-menu-identity" type="button" data-action="folio" title="Open your Folio">');
-    html.push(  '<span class="user-menu-identity-avatar">' + escapeHtml(folioName.charAt(0).toUpperCase()) + '</span>');
+    // Avatar = the chosen Folio badge behind a frosted-glass disc + the initial
+    // (glass makes the letter readable over the busy badge).
+    var badgeHtml = '';
+    try { if (window._folio && window._folio.badgeSvg) badgeHtml = window._folio.badgeSvg(window._folio.badgeIndex(), false); } catch (e) {}
+    html.push(  '<span class="user-menu-identity-avatar">');
+    html.push(    '<span class="uma-badge">' + badgeHtml + '</span>');
+    html.push(    '<span class="uma-letter">' + escapeHtml(folioName.charAt(0).toUpperCase()) + '</span>');
+    html.push(  '</span>');
     html.push(  '<span class="user-menu-identity-text">');
     html.push(    '<span class="user-menu-identity-name">' + escapeHtml(folioName) + '</span>');
     html.push(    '<span class="user-menu-identity-link">View folio ↦</span>');
