@@ -58,6 +58,11 @@ refs:
     tier: 1
     notes: "The classic narrative history; still cited for the movement's long persistence into late antiquity."
 syncretic-edges:
+  - target: diogenes-of-sinope
+    type: founding-figure
+    source: "Codex Atlas reciprocal wiring — founder node created 2026-07-18; see the person node."
+    source-tier: T1
+    note: "Diogenes of Sinope (c. 412–323 BCE) is the archetypal Cynic and the school's defining exemplar; the movement crystallized around his life."
   - target: philosophy-stoicism
     type: ancestor-of
     source: "Diog. Laert. VI.15, VII.2-4; Goulet-Cazé in Branham & Goulet-Cazé 1996"

@@ -65,6 +65,16 @@ refs:
     tier: 1
     notes: "The principal ancient witness and simultaneously the movement's hostile prosecutor: the man-measure doctrine is stated and refuted at Theaetetus 152a-171d; rhetoric-vs-philosophy is fought out in Gorgias; the nomos-physis speech is Hippias' at Protagoras 337c-d; the Sophist attempts a formal definition of the sophistēs (as maker of appearances). Read as tradition-shaped polemic, not neutral report."
 syncretic-edges:
+  - target: protagoras
+    type: leading-figure
+    source: "Codex Atlas reciprocal wiring — founder node created 2026-07-18; see the person node."
+    source-tier: T1
+    note: "Protagoras of Abdera (c. 490–420 BCE), the first Sophist — 'man is the measure of all things' and the agnostic On the Gods."
+  - target: gorgias
+    type: leading-figure
+    source: "Codex Atlas reciprocal wiring — founder node created 2026-07-18; see the person node."
+    source-tier: T1
+    note: "Gorgias of Leontini (c. 483–375 BCE), the rhetorician and author of On Nature / On the Non-Existent."
   - target: philosophy-platonism
     type: antagonist-of
     source: "Plato, *Protagoras*, *Gorgias*, *Theaetetus* 152a-171d, *Sophist* 216a-231e; Kerferd 1981 chs. 1-2"

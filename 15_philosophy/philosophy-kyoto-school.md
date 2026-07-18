@@ -13,6 +13,11 @@ dating-basis-source: "Heisig, J.W. 2001 *Philosophers of Nothingness*; Davis, B.
 dating-basis-notes: "Conventionally dated from Nishida Kitarō's *Zen no kenkyū* (*An Inquiry into the Good*, 1911), the movement's founding text, through the mature systems of Tanabe Hajime (*Philosophy as Metanoetics*, 1946) and Nishitani Keiji (*Religion and Nothingness*, 1961). Founders: Nishida Kitarō (1870–1945), Tanabe Hajime (1885–1962), Nishitani Keiji (1900–1990). The school remains an active tradition of comparative philosophy of religion into the present (third- and fourth-generation figures; continuous English-language reception since the 1980s), hence the open date range."
 tags: [philosophy, kyoto-school, nishida, tanabe, nishitani, absolute-nothingness, zettai-mu, basho, sunyata, zen, german-idealism, phenomenology, comparative-philosophy, MASSIVE-WIN-candidate, east-west-synthesis]
 hub-edges:
+  - target: "[[nishida-kitaro]]"
+    type: founded-by
+    source: "Codex Atlas reciprocal wiring — founder node created 2026-07-18; see the person node."
+    source-tier: T1
+    note: "Nishida Kitarō (1870–1945) founded the Kyoto School with Zen no kenkyū (1911); 'absolute nothingness' and the logic of basho are his."
   - target: "[[emptiness-sunyata]]"
     type: "reappropriates"
     source: "Nishitani, *Religion and Nothingness* (1961/1982); Heisig 2001"

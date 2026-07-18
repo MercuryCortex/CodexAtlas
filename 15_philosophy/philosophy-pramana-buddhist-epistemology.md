@@ -17,6 +17,16 @@ dating-basis-notes: "The school is founded by Dignāga (c. 480–540 CE) with th
 tags: [philosophy, pramana, pramanavada, epistemology, buddhist-logic, dignaga, dharmakirti, apoha, svalaksana, svasamvedana, pratyaksa, anumana, arthakriya, ksanikavada, nominalism, yogacara, tshad-ma, indian-logic]
 parallels: ["[[philosophy-nyaya-vaisheshika-realism]]", "[[philosophy-yogacara]]", "[[philosophy-abhidharma]]", "[[philosophy-madhyamaka]]", "[[philosophy-mimamsa-purva-ritual-metaphysics]]", "[[anatman-no-self]]", "[[emptiness-sunyata]]"]
 hub-edges:
+  - target: "[[dignaga]]"
+    type: founded-by
+    source: "Codex Atlas reciprocal wiring — founder node created 2026-07-18; see the person node."
+    source-tier: T1
+    note: "Dignāga (c. 480–540) is the founder of the Buddhist pramāṇa school; his Pramāṇasamuccaya is its constitutive text."
+  - target: "[[dharmakirti]]"
+    type: systematized-by
+    source: "Codex Atlas reciprocal wiring — founder node created 2026-07-18; see the person node."
+    source-tier: T1
+    note: "Dharmakīrti (c. 600–660) systematized and perfected the school after Dignāga in the Pramāṇavārttika."
   - target: "[[philosophy-nyaya-vaisheshika-realism]]"
     type: "rival-school"
     source: "Buddhist pramāṇavāda and Nyāya-Vaiśeṣika are the two great debating rivals of classical Indian epistemology. Dignāga's reduction of the means of knowledge to two (pratyakṣa, anumāna) directly attacks the Nyāya list of four (adding upamāna and śabda), and his apoha semantics denies the real universals (jāti/sāmānya) that Nyāya realism affirms. The Naiyāyika Uddyotakara's Nyāyavārttika is written expressly against Dignāga; Vācaspati Miśra, Jayanta Bhaṭṭa and Udayana carry the realist reply forward. Matilal, Perception (1986) and Hayes, Dignāga on the Interpretation of Signs (1988) treat this as the central axis of the classical debate."

@@ -13,6 +13,11 @@ key-figures: ["[[parmenides]]"]
 attested-in: ["[[document-parmenides-poem]]"]
 parallels: ["[[parmenides]]", "[[philosophy-atomism-greek]]", "[[philosophy-apeiron]]"]
 cross-tradition-parallels:
+  - target: "[[zeno-of-elea]]"
+    type: key-figure
+    source: "Codex Atlas reciprocal wiring — founder node created 2026-07-18; see the person node."
+    source-tier: T1
+    note: "Zeno of Elea (c. 490–430 BCE), pupil of Parmenides, defended Eleatic monism with his paradoxes of motion and plurality."
   - target: "[[divine-unity]]"
     type: "genealogical-and-typological"
     source: "Palmer, J. 2009 *Parmenides and Presocratic Philosophy* OUP; Kirk-Raven-Schofield 1983 chs. 8-10"

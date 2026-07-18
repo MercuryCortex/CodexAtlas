@@ -29,6 +29,11 @@ key-figures:
   - "Abū al-Ḥasan al-Ashʿarī (874–936; formulated the mediating uncreated-*kalām-nafsī* position)"
   - "ʿAbd al-Jabbār al-Hamadhānī (935–1024; the classical Muʿtazilī systematiser of createdness)"
 syncretic-edges:
+  - target: "[[ibn-hanbal]]"
+    type: traditionalist-champion
+    source: "Codex Atlas reciprocal wiring — founder node created 2026-07-18; see the person node."
+    source-tier: T1
+    note: "Aḥmad ibn Ḥanbal (780–855 CE), flogged in the Miḥna for holding the Qurʾān uncreated/eternal against the Muʿtazila."
   - target: "[[doctrine-mutazila-rationalist-kalam]]"
     type: "constituent-of"
     source: "Watt 1973; Madelung 1974; van Ess 1991–97"

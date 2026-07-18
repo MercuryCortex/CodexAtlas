@@ -30,6 +30,11 @@ key-figures:
   - "Prosper of Aquitaine (~390–~455; Augustine's disciple and the chief anti-Pelagian polemicist after his death) — NO vault node yet (demand)"
   - "Caesarius of Arles (~470–542; convener of Orange II, 529, which closed the controversy) — NO vault node yet (demand)"
 syncretic-edges:
+  - target: "[[pelagius]]"
+    type: eponymous-founder
+    source: "Codex Atlas reciprocal wiring — founder node created 2026-07-18; see the person node."
+    source-tier: T1
+    note: "Pelagius (c. 354–418 CE), the eponym, whose denial of inherited original guilt provoked Augustine's systematic doctrine of grace."
   - target: "[[doctrine-original-sin-augustinian]]"
     type: "polemic-against"
     source: "Brown, P. 1967 *Augustine of Hippo* University of California Press; Bonner, G. 1972 *Augustine and Modern Research on Pelagianism*; Wiley, T. 2002 *Original Sin* Paulist; Kelly, J.N.D. 1977 *Early Christian Doctrines*"
