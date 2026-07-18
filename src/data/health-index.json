@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-07-18T20:40:22Z",
+  "generatedAt": "2026-07-18T21:43:23Z",
   "vault": {
-    "totalNodes": 5448,
+    "totalNodes": 5469,
     "lensCount": 30,
     "familyCount": 14,
     "unmatchedTradNodes": 38,
@@ -51,16 +51,16 @@
     {
       "folder": "04_persons",
       "label": "Persons",
-      "count": 1233,
+      "count": 1245,
       "baseline": 750,
-      "ratio": 1.644,
+      "ratio": 1.66,
       "band": "over-baseline",
       "baselineNote": "EoR religious figures + Bowker Oxford Dict. World Religions biographical entries",
       "statuses": {
-        "metadata": 481,
+        "metadata": 482,
         "stub": 686,
-        "full": 39,
-        "(no status)": 27
+        "full": 42,
+        "(no status)": 35
       }
     },
     {
@@ -81,16 +81,16 @@
     {
       "folder": "06_themes",
       "label": "Themes / motifs",
-      "count": 521,
+      "count": 524,
       "baseline": 350,
-      "ratio": 1.489,
+      "ratio": 1.497,
       "band": "rich",
       "baselineNote": "EoR concept/topic entries (Bynum 2011 + Eliade themes vocabulary)",
       "statuses": {
         "stub": 298,
-        "full": 59,
-        "metadata": 147,
-        "(no status)": 11,
+        "full": 60,
+        "metadata": 148,
+        "(no status)": 12,
         "partial": 2,
         "developing": 3,
         "redirect": 1
@@ -288,14 +288,14 @@
     {
       "folder": "21_theology",
       "label": "Theology / doctrine",
-      "count": 63,
+      "count": 69,
       "baseline": 240,
-      "ratio": 0.263,
+      "ratio": 0.287,
       "band": "developing",
       "baselineNote": "EoR doctrine/dogma entries across all traditions",
       "statuses": {
         "stub": 14,
-        "(no status)": 46,
+        "(no status)": 52,
         "metadata": 3
       }
     },
@@ -470,16 +470,16 @@
     {
       "key": "abrahamic",
       "label": "Abrahamic",
-      "count": 1062,
+      "count": 1073,
       "baseline": 700,
-      "ratio": 1.517,
+      "ratio": 1.533,
       "band": "over-baseline",
       "perLens": {
         "02_documents": 315,
         "03_deities": 128,
-        "04_persons": 412,
+        "04_persons": 415,
         "05_events": 2,
-        "06_themes": 1,
+        "06_themes": 3,
         "09_symbols": 2,
         "10_music": 21,
         "11_alphabets": 12,
@@ -491,7 +491,7 @@
         "17_medicine": 4,
         "18_languages": 13,
         "20_sacred_architecture": 16,
-        "21_theology": 28,
+        "21_theology": 34,
         "22_practices": 14,
         "23_material_culture": 13,
         "26_calendars": 8,
@@ -502,14 +502,14 @@
     {
       "key": "greco-roman",
       "label": "Greco-Roman",
-      "count": 385,
+      "count": 389,
       "baseline": 380,
-      "ratio": 1.013,
+      "ratio": 1.024,
       "band": "rich",
       "perLens": {
         "02_documents": 56,
         "03_deities": 134,
-        "04_persons": 89,
+        "04_persons": 93,
         "06_themes": 1,
         "09_symbols": 1,
         "10_music": 23,
@@ -552,14 +552,15 @@
     {
       "key": "indic",
       "label": "Indic (Hindu / Jain / Sikh)",
-      "count": 292,
+      "count": 295,
       "baseline": 520,
-      "ratio": 0.562,
+      "ratio": 0.567,
       "band": "developing",
       "perLens": {
         "02_documents": 48,
         "03_deities": 100,
-        "04_persons": 50,
+        "04_persons": 52,
+        "06_themes": 1,
         "10_music": 14,
         "11_alphabets": 2,
         "12_alchemy": 1,
@@ -582,14 +583,14 @@
     {
       "key": "buddhist",
       "label": "Buddhist",
-      "count": 180,
+      "count": 183,
       "baseline": 380,
-      "ratio": 0.474,
+      "ratio": 0.482,
       "band": "developing",
       "perLens": {
         "02_documents": 36,
         "03_deities": 41,
-        "04_persons": 37,
+        "04_persons": 40,
         "10_music": 4,
         "11_alphabets": 1,
         "13_morals": 3,

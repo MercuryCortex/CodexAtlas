@@ -10,8 +10,8 @@
  "rowCount": 7,
  "dupClusters": {
   "document-1-timothy+document-2-timothy+document-titus": [
-   "document-1-timothy",
    "document-titus",
+   "document-1-timothy",
    "document-2-timothy"
   ],
   "document-boethius-consolation+phase-4-049-boethius-consolation-of-philosophy": [
@@ -19,56 +19,56 @@
    "document-boethius-consolation"
   ],
   "document-corpus-areopagiticum+phase-4-030-pseudo-dionysius": [
-   "phase-4-030-pseudo-dionysius",
-   "document-corpus-areopagiticum"
+   "document-corpus-areopagiticum",
+   "phase-4-030-pseudo-dionysius"
   ],
   "document-corpus-areopagiticum+phase-4-100-celestial-hierarchy": [
-   "phase-4-100-celestial-hierarchy",
-   "document-corpus-areopagiticum"
+   "document-corpus-areopagiticum",
+   "phase-4-100-celestial-hierarchy"
   ],
   "document-derveni-papyrus+phase-3-027-derveni-papyrus": [
-   "document-derveni-papyrus",
-   "phase-3-027-derveni-papyrus"
+   "phase-3-027-derveni-papyrus",
+   "document-derveni-papyrus"
   ],
   "document-ezra+document-nehemiah": [
    "document-ezra",
    "document-nehemiah"
   ],
   "document-heraclitus-fragments+document-parmenides-poem": [
-   "document-parmenides-poem",
-   "document-heraclitus-fragments"
+   "document-heraclitus-fragments",
+   "document-parmenides-poem"
   ],
   "document-jonah+document-quran-yunus": [
    "document-jonah",
    "document-quran-yunus"
   ],
   "document-ludlul-bel-nemeqi+phase-1-032-babylonian-theodicy": [
-   "document-ludlul-bel-nemeqi",
-   "phase-1-032-babylonian-theodicy"
+   "phase-1-032-babylonian-theodicy",
+   "document-ludlul-bel-nemeqi"
   ],
   "document-orphic-gold-tablets+phase-2-040-orphic-gold-tablets": [
-   "phase-2-040-orphic-gold-tablets",
-   "document-orphic-gold-tablets"
+   "document-orphic-gold-tablets",
+   "phase-2-040-orphic-gold-tablets"
   ],
   "document-porphyry-isagoge-and-life+phase-5-017-peter-lombard-sentences": [
-   "document-porphyry-isagoge-and-life",
-   "phase-5-017-peter-lombard-sentences"
+   "phase-5-017-peter-lombard-sentences",
+   "document-porphyry-isagoge-and-life"
   ],
   "document-proclus-platonic-theology+phase-6-002-ficino-theologia-platonica": [
-   "phase-6-002-ficino-theologia-platonica",
-   "document-proclus-platonic-theology"
+   "document-proclus-platonic-theology",
+   "phase-6-002-ficino-theologia-platonica"
   ],
   "document-quran-al-falaq+document-quran-al-nas": [
    "document-quran-al-nas",
    "document-quran-al-falaq"
   ],
   "document-quran-al-nas+phase-8-001-popol-vuh": [
-   "phase-8-001-popol-vuh",
-   "document-quran-al-nas"
+   "document-quran-al-nas",
+   "phase-8-001-popol-vuh"
   ],
   "document-quran-al-nur+phase-5-038-mashafa-berhan": [
-   "document-quran-al-nur",
-   "phase-5-038-mashafa-berhan"
+   "phase-5-038-mashafa-berhan",
+   "document-quran-al-nur"
   ]
  },
  "rows": [
