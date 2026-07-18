@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-06",
+  "generatedAt": "2026-07-18",
   "note": "Top-10 deities by transmission score; heatmap sorted by civilization-lens reach (mention-count lower bound).",
   "lensKeys": [
     "law",
@@ -66,7 +66,7 @@
       "sourced": 24,
       "equiv": 3,
       "cross": 12,
-      "civScore": 90,
+      "civScore": 91,
       "lenses": {
         "law": 15,
         "phil": 14,
@@ -75,7 +75,7 @@
         "astr": 0,
         "div": 2,
         "cal": 7,
-        "mus": 32,
+        "mus": 33,
         "alch": 15
       }
     },
@@ -132,13 +132,13 @@
       "sourced": 4,
       "equiv": 27,
       "cross": 22,
-      "civScore": 21,
+      "civScore": 22,
       "lenses": {
         "law": 3,
         "phil": 0,
         "math": 1,
         "med": 0,
-        "astr": 8,
+        "astr": 9,
         "div": 1,
         "cal": 1,
         "mus": 4,
@@ -176,12 +176,12 @@
       "sourced": 9,
       "equiv": 24,
       "cross": 17,
-      "civScore": 7,
+      "civScore": 8,
       "lenses": {
         "law": 0,
         "phil": 1,
         "math": 2,
-        "med": 0,
+        "med": 1,
         "astr": 1,
         "div": 0,
         "cal": 2,

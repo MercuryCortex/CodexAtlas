@@ -1,6 +1,6 @@
 {
- "generatedAt": "2026-06-14",
- "totalDocuments": 621,
+ "generatedAt": "2026-07-18",
+ "totalDocuments": 622,
  "citationAudit": {
   "count": 112,
   "lastSweep": "2026-06-04"
@@ -11,8 +11,8 @@
  "dupClusters": {
   "document-1-timothy+document-2-timothy+document-titus": [
    "document-1-timothy",
-   "document-2-timothy",
-   "document-titus"
+   "document-titus",
+   "document-2-timothy"
   ],
   "document-boethius-consolation+phase-4-049-boethius-consolation-of-philosophy": [
    "phase-4-049-boethius-consolation-of-philosophy",
@@ -27,12 +27,12 @@
    "document-corpus-areopagiticum"
   ],
   "document-derveni-papyrus+phase-3-027-derveni-papyrus": [
-   "phase-3-027-derveni-papyrus",
-   "document-derveni-papyrus"
+   "document-derveni-papyrus",
+   "phase-3-027-derveni-papyrus"
   ],
   "document-ezra+document-nehemiah": [
-   "document-nehemiah",
-   "document-ezra"
+   "document-ezra",
+   "document-nehemiah"
   ],
   "document-heraclitus-fragments+document-parmenides-poem": [
    "document-parmenides-poem",
@@ -47,12 +47,12 @@
    "phase-1-032-babylonian-theodicy"
   ],
   "document-orphic-gold-tablets+phase-2-040-orphic-gold-tablets": [
-   "document-orphic-gold-tablets",
-   "phase-2-040-orphic-gold-tablets"
+   "phase-2-040-orphic-gold-tablets",
+   "document-orphic-gold-tablets"
   ],
   "document-porphyry-isagoge-and-life+phase-5-017-peter-lombard-sentences": [
-   "phase-5-017-peter-lombard-sentences",
-   "document-porphyry-isagoge-and-life"
+   "document-porphyry-isagoge-and-life",
+   "phase-5-017-peter-lombard-sentences"
   ],
   "document-proclus-platonic-theology+phase-6-002-ficino-theologia-platonica": [
    "phase-6-002-ficino-theologia-platonica",
@@ -84,7 +84,7 @@
    "key": "tradition",
    "label": "Has home tradition (wedge)",
    "target": "100%",
-   "current": "621/621",
+   "current": "622/622",
    "ok": true,
    "detail": "the scripture-exception singular origin"
   },
@@ -92,7 +92,7 @@
    "key": "dates",
    "label": "Has dates",
    "target": "100%",
-   "current": "621/621",
+   "current": "622/622",
    "ok": true,
    "detail": ""
   },

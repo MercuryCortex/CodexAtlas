@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-07-06T02:39:37Z",
+  "generatedAt": "2026-07-18T12:09:30Z",
   "vault": {
-    "totalNodes": 5393,
+    "totalNodes": 5408,
     "lensCount": 30,
     "familyCount": 14,
-    "unmatchedTradNodes": 33,
-    "intentionallyCrossTradition": 32
+    "unmatchedTradNodes": 36,
+    "intentionallyCrossTradition": 33
   },
   "lenses": [
     {
@@ -23,44 +23,44 @@
     {
       "folder": "02_documents",
       "label": "Documents",
-      "count": 629,
+      "count": 630,
       "baseline": 550,
-      "ratio": 1.144,
+      "ratio": 1.145,
       "band": "rich",
       "baselineNote": "EoR — scripture + commentary entries across 15 vols (~16% of corpus)",
       "statuses": {
         "metadata": 435,
-        "full": 178,
+        "full": 179,
         "(no status)": 16
       }
     },
     {
       "folder": "03_deities",
       "label": "Deities",
-      "count": 1011,
+      "count": 1012,
       "baseline": 900,
-      "ratio": 1.123,
+      "ratio": 1.124,
       "band": "rich",
       "baselineNote": "EoR deity/numina entries + Leeming Oxford Companion to World Mythology (~3,000 entries)",
       "statuses": {
         "metadata": 914,
         "(no status)": 70,
-        "full": 27
+        "full": 28
       }
     },
     {
       "folder": "04_persons",
       "label": "Persons",
-      "count": 1223,
+      "count": 1233,
       "baseline": 750,
-      "ratio": 1.631,
+      "ratio": 1.644,
       "band": "over-baseline",
       "baselineNote": "EoR religious figures + Bowker Oxford Dict. World Religions biographical entries",
       "statuses": {
-        "metadata": 479,
+        "metadata": 481,
         "stub": 686,
-        "(no status)": 23,
-        "full": 35
+        "full": 39,
+        "(no status)": 27
       }
     },
     {
@@ -81,34 +81,34 @@
     {
       "folder": "06_themes",
       "label": "Themes / motifs",
-      "count": 520,
+      "count": 521,
       "baseline": 350,
-      "ratio": 1.486,
+      "ratio": 1.489,
       "band": "rich",
       "baselineNote": "EoR concept/topic entries (Bynum 2011 + Eliade themes vocabulary)",
       "statuses": {
-        "stub": 300,
+        "stub": 298,
         "full": 59,
         "metadata": 147,
-        "(no status)": 10,
+        "(no status)": 11,
         "partial": 2,
-        "redirect": 1,
-        "developing": 1
+        "developing": 3,
+        "redirect": 1
       }
     },
     {
       "folder": "07_traditions",
       "label": "Traditions",
-      "count": 332,
+      "count": 334,
       "baseline": 280,
-      "ratio": 1.186,
+      "ratio": 1.193,
       "band": "rich",
       "baselineNote": "EoR + Bowker — named living + extinct religious traditions and schools",
       "statuses": {
         "stub": 168,
         "metadata": 143,
         "full": 13,
-        "(no status)": 7,
+        "(no status)": 9,
         "partial": 1
       }
     },
@@ -422,14 +422,14 @@
     {
       "key": "mesopotamian",
       "label": "Mesopotamian",
-      "count": 205,
+      "count": 206,
       "baseline": 280,
-      "ratio": 0.732,
+      "ratio": 0.736,
       "band": "rich",
       "perLens": {
         "02_documents": 32,
         "03_deities": 124,
-        "04_persons": 21,
+        "04_persons": 22,
         "05_events": 1,
         "10_music": 3,
         "11_alphabets": 4,
@@ -470,14 +470,14 @@
     {
       "key": "abrahamic",
       "label": "Abrahamic",
-      "count": 1048,
+      "count": 1050,
       "baseline": 700,
-      "ratio": 1.497,
-      "band": "rich",
+      "ratio": 1.5,
+      "band": "over-baseline",
       "perLens": {
         "02_documents": 315,
         "03_deities": 128,
-        "04_persons": 410,
+        "04_persons": 412,
         "05_events": 2,
         "06_themes": 1,
         "09_symbols": 2,
@@ -552,12 +552,12 @@
     {
       "key": "indic",
       "label": "Indic (Hindu / Jain / Sikh)",
-      "count": 284,
+      "count": 285,
       "baseline": 520,
-      "ratio": 0.546,
+      "ratio": 0.548,
       "band": "developing",
       "perLens": {
-        "02_documents": 47,
+        "02_documents": 48,
         "03_deities": 100,
         "04_persons": 50,
         "10_music": 14,
@@ -582,14 +582,14 @@
     {
       "key": "buddhist",
       "label": "Buddhist",
-      "count": 171,
+      "count": 172,
       "baseline": 380,
-      "ratio": 0.45,
+      "ratio": 0.453,
       "band": "developing",
       "perLens": {
         "02_documents": 36,
         "03_deities": 41,
-        "04_persons": 36,
+        "04_persons": 37,
         "10_music": 4,
         "11_alphabets": 1,
         "13_morals": 3,
@@ -732,14 +732,14 @@
     {
       "key": "modern-syncretic",
       "label": "Modern / syncretic / esoteric",
-      "count": 133,
+      "count": 137,
       "baseline": 240,
-      "ratio": 0.554,
+      "ratio": 0.571,
       "band": "developing",
       "perLens": {
         "02_documents": 38,
         "03_deities": 3,
-        "04_persons": 66,
+        "04_persons": 70,
         "10_music": 6,
         "12_alchemy": 1,
         "13_morals": 2,
@@ -776,7 +776,7 @@
     },
     {
       "tradition": "tradition-proto-indo-european-religion",
-      "count": 3
+      "count": 4
     },
     {
       "tradition": "phrygian",
@@ -808,6 +808,14 @@
     },
     {
       "tradition": "aksumite religion",
+      "count": 1
+    },
+    {
+      "tradition": "western esoteric (french occult revival / martinism)",
+      "count": 1
+    },
+    {
+      "tradition": "psychedelic counterculture spirituality",
       "count": 1
     },
     {
