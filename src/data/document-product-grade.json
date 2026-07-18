@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-07-18",
+ "generatedAt": "2026-07-19",
  "totalDocuments": 622,
  "citationAudit": {
   "count": 112,
@@ -15,12 +15,12 @@
    "document-2-timothy"
   ],
   "document-boethius-consolation+phase-4-049-boethius-consolation-of-philosophy": [
-   "phase-4-049-boethius-consolation-of-philosophy",
-   "document-boethius-consolation"
+   "document-boethius-consolation",
+   "phase-4-049-boethius-consolation-of-philosophy"
   ],
   "document-corpus-areopagiticum+phase-4-030-pseudo-dionysius": [
-   "document-corpus-areopagiticum",
-   "phase-4-030-pseudo-dionysius"
+   "phase-4-030-pseudo-dionysius",
+   "document-corpus-areopagiticum"
   ],
   "document-corpus-areopagiticum+phase-4-100-celestial-hierarchy": [
    "document-corpus-areopagiticum",
@@ -31,40 +31,40 @@
    "document-derveni-papyrus"
   ],
   "document-ezra+document-nehemiah": [
-   "document-ezra",
-   "document-nehemiah"
+   "document-nehemiah",
+   "document-ezra"
   ],
   "document-heraclitus-fragments+document-parmenides-poem": [
-   "document-heraclitus-fragments",
-   "document-parmenides-poem"
+   "document-parmenides-poem",
+   "document-heraclitus-fragments"
   ],
   "document-jonah+document-quran-yunus": [
-   "document-jonah",
-   "document-quran-yunus"
+   "document-quran-yunus",
+   "document-jonah"
   ],
   "document-ludlul-bel-nemeqi+phase-1-032-babylonian-theodicy": [
-   "phase-1-032-babylonian-theodicy",
-   "document-ludlul-bel-nemeqi"
+   "document-ludlul-bel-nemeqi",
+   "phase-1-032-babylonian-theodicy"
   ],
   "document-orphic-gold-tablets+phase-2-040-orphic-gold-tablets": [
    "document-orphic-gold-tablets",
    "phase-2-040-orphic-gold-tablets"
   ],
   "document-porphyry-isagoge-and-life+phase-5-017-peter-lombard-sentences": [
-   "phase-5-017-peter-lombard-sentences",
-   "document-porphyry-isagoge-and-life"
+   "document-porphyry-isagoge-and-life",
+   "phase-5-017-peter-lombard-sentences"
   ],
   "document-proclus-platonic-theology+phase-6-002-ficino-theologia-platonica": [
-   "document-proclus-platonic-theology",
-   "phase-6-002-ficino-theologia-platonica"
+   "phase-6-002-ficino-theologia-platonica",
+   "document-proclus-platonic-theology"
   ],
   "document-quran-al-falaq+document-quran-al-nas": [
-   "document-quran-al-nas",
-   "document-quran-al-falaq"
+   "document-quran-al-falaq",
+   "document-quran-al-nas"
   ],
   "document-quran-al-nas+phase-8-001-popol-vuh": [
-   "document-quran-al-nas",
-   "phase-8-001-popol-vuh"
+   "phase-8-001-popol-vuh",
+   "document-quran-al-nas"
   ],
   "document-quran-al-nur+phase-5-038-mashafa-berhan": [
    "phase-5-038-mashafa-berhan",

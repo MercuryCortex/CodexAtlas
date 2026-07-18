@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-07-18T22:49:35Z",
+  "generatedAt": "2026-07-18T23:27:07Z",
   "vault": {
-    "totalNodes": 5481,
+    "totalNodes": 5492,
     "lensCount": 30,
     "familyCount": 14,
-    "unmatchedTradNodes": 38,
-    "intentionallyCrossTradition": 36
+    "unmatchedTradNodes": 40,
+    "intentionallyCrossTradition": 42
   },
   "lenses": [
     {
@@ -233,14 +233,14 @@
     {
       "folder": "17_medicine",
       "label": "Medicine",
-      "count": 20,
+      "count": 31,
       "baseline": 90,
-      "ratio": 0.222,
-      "band": "anemic",
+      "ratio": 0.344,
+      "band": "developing",
       "baselineNote": "Porter Cambridge Illustrated Hist. of Medicine — religious/traditional-medicine slice",
       "statuses": {
-        "full": 8,
-        "(no status)": 12
+        "full": 15,
+        "(no status)": 16
       }
     },
     {
@@ -470,9 +470,9 @@
     {
       "key": "abrahamic",
       "label": "Abrahamic",
-      "count": 1080,
+      "count": 1081,
       "baseline": 700,
-      "ratio": 1.543,
+      "ratio": 1.544,
       "band": "over-baseline",
       "perLens": {
         "02_documents": 315,
@@ -488,7 +488,7 @@
         "14_rituals": 31,
         "15_philosophy": 13,
         "16_mathematics": 3,
-        "17_medicine": 4,
+        "17_medicine": 5,
         "18_languages": 13,
         "20_sacred_architecture": 16,
         "21_theology": 34,
@@ -610,9 +610,9 @@
     {
       "key": "east-asian",
       "label": "East Asian (Daoist / Confucian / folk)",
-      "count": 175,
+      "count": 177,
       "baseline": 320,
-      "ratio": 0.547,
+      "ratio": 0.553,
       "band": "developing",
       "perLens": {
         "02_documents": 34,
@@ -626,7 +626,7 @@
         "14_rituals": 5,
         "15_philosophy": 8,
         "16_mathematics": 2,
-        "17_medicine": 2,
+        "17_medicine": 4,
         "18_languages": 2,
         "20_sacred_architecture": 5,
         "22_practices": 2,
@@ -829,6 +829,14 @@
     },
     {
       "tradition": "tradition-early-modern-rationalism",
+      "count": 1
+    },
+    {
+      "tradition": "tradition-shaivism",
+      "count": 1
+    },
+    {
+      "tradition": "tradition-western-astrology",
       "count": 1
     },
     {
