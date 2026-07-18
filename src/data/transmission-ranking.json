@@ -22,10 +22,10 @@
       "sourced": 12,
       "equiv": 25,
       "cross": 22,
-      "civScore": 99,
+      "civScore": 107,
       "lenses": {
         "law": 10,
-        "phil": 5,
+        "phil": 13,
         "math": 13,
         "med": 4,
         "astr": 5,
@@ -33,28 +33,6 @@
         "cal": 5,
         "mus": 42,
         "alch": 9
-      }
-    },
-    {
-      "slug": "hermes-greek",
-      "name": "Hermes",
-      "tradition": "Greek",
-      "transmissionRank": 10,
-      "transmissionScore": 40.5,
-      "sourced": 1,
-      "equiv": 21,
-      "cross": 19,
-      "civScore": 93,
-      "lenses": {
-        "law": 1,
-        "phil": 3,
-        "math": 8,
-        "med": 3,
-        "astr": 6,
-        "div": 11,
-        "cal": 2,
-        "mus": 27,
-        "alch": 32
       }
     },
     {
@@ -66,10 +44,10 @@
       "sourced": 24,
       "equiv": 3,
       "cross": 12,
-      "civScore": 91,
+      "civScore": 101,
       "lenses": {
         "law": 15,
-        "phil": 14,
+        "phil": 24,
         "math": 3,
         "med": 2,
         "astr": 0,
@@ -77,6 +55,28 @@
         "cal": 7,
         "mus": 33,
         "alch": 15
+      }
+    },
+    {
+      "slug": "hermes-greek",
+      "name": "Hermes",
+      "tradition": "Greek",
+      "transmissionRank": 10,
+      "transmissionScore": 40.5,
+      "sourced": 1,
+      "equiv": 21,
+      "cross": 19,
+      "civScore": 95,
+      "lenses": {
+        "law": 1,
+        "phil": 5,
+        "math": 8,
+        "med": 3,
+        "astr": 6,
+        "div": 11,
+        "cal": 2,
+        "mus": 27,
+        "alch": 32
       }
     },
     {
@@ -154,10 +154,10 @@
       "sourced": 10,
       "equiv": 12,
       "cross": 18,
-      "civScore": 18,
+      "civScore": 20,
       "lenses": {
         "law": 4,
-        "phil": 1,
+        "phil": 3,
         "math": 0,
         "med": 1,
         "astr": 0,
@@ -198,10 +198,10 @@
       "sourced": 9,
       "equiv": 20,
       "cross": 18,
-      "civScore": 7,
+      "civScore": 8,
       "lenses": {
         "law": 0,
-        "phil": 0,
+        "phil": 1,
         "math": 0,
         "med": 0,
         "astr": 0,

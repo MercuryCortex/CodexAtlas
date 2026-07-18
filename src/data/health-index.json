@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-07-18T12:09:30Z",
+  "generatedAt": "2026-07-18T18:57:19Z",
   "vault": {
-    "totalNodes": 5408,
+    "totalNodes": 5439,
     "lensCount": 30,
     "familyCount": 14,
-    "unmatchedTradNodes": 36,
+    "unmatchedTradNodes": 38,
     "intentionallyCrossTradition": 33
   },
   "lenses": [
@@ -207,14 +207,14 @@
     {
       "folder": "15_philosophy",
       "label": "Philosophy",
-      "count": 36,
+      "count": 67,
       "baseline": 300,
-      "ratio": 0.12,
+      "ratio": 0.223,
       "band": "anemic",
       "baselineNote": "Religious-philosophy slice of Stanford Encyc. Philosophy + Routledge Encyc. Philosophy",
       "statuses": {
-        "full": 10,
-        "(no status)": 26
+        "full": 33,
+        "(no status)": 34
       }
     },
     {
@@ -470,9 +470,9 @@
     {
       "key": "abrahamic",
       "label": "Abrahamic",
-      "count": 1050,
+      "count": 1054,
       "baseline": 700,
-      "ratio": 1.5,
+      "ratio": 1.506,
       "band": "over-baseline",
       "perLens": {
         "02_documents": 315,
@@ -486,7 +486,7 @@
         "12_alchemy": 3,
         "13_morals": 10,
         "14_rituals": 31,
-        "15_philosophy": 9,
+        "15_philosophy": 13,
         "16_mathematics": 3,
         "17_medicine": 4,
         "18_languages": 13,
@@ -502,9 +502,9 @@
     {
       "key": "greco-roman",
       "label": "Greco-Roman",
-      "count": 376,
+      "count": 385,
       "baseline": 380,
-      "ratio": 0.989,
+      "ratio": 1.013,
       "band": "rich",
       "perLens": {
         "02_documents": 56,
@@ -517,7 +517,7 @@
         "12_alchemy": 26,
         "13_morals": 6,
         "14_rituals": 6,
-        "15_philosophy": 7,
+        "15_philosophy": 16,
         "16_mathematics": 7,
         "17_medicine": 3,
         "18_languages": 3,
@@ -552,9 +552,9 @@
     {
       "key": "indic",
       "label": "Indic (Hindu / Jain / Sikh)",
-      "count": 285,
+      "count": 292,
       "baseline": 520,
-      "ratio": 0.548,
+      "ratio": 0.562,
       "band": "developing",
       "perLens": {
         "02_documents": 48,
@@ -565,7 +565,7 @@
         "12_alchemy": 1,
         "13_morals": 6,
         "14_rituals": 14,
-        "15_philosophy": 8,
+        "15_philosophy": 15,
         "16_mathematics": 4,
         "17_medicine": 2,
         "18_languages": 3,
@@ -582,9 +582,9 @@
     {
       "key": "buddhist",
       "label": "Buddhist",
-      "count": 172,
+      "count": 179,
       "baseline": 380,
-      "ratio": 0.453,
+      "ratio": 0.471,
       "band": "developing",
       "perLens": {
         "02_documents": 36,
@@ -594,7 +594,7 @@
         "11_alphabets": 1,
         "13_morals": 3,
         "14_rituals": 6,
-        "15_philosophy": 2,
+        "15_philosophy": 9,
         "17_medicine": 2,
         "18_languages": 4,
         "20_sacred_architecture": 10,
@@ -609,9 +609,9 @@
     {
       "key": "east-asian",
       "label": "East Asian (Daoist / Confucian / folk)",
-      "count": 173,
+      "count": 175,
       "baseline": 320,
-      "ratio": 0.541,
+      "ratio": 0.547,
       "band": "developing",
       "perLens": {
         "02_documents": 34,
@@ -623,7 +623,7 @@
         "12_alchemy": 1,
         "13_morals": 6,
         "14_rituals": 5,
-        "15_philosophy": 6,
+        "15_philosophy": 8,
         "16_mathematics": 2,
         "17_medicine": 2,
         "18_languages": 2,
@@ -820,6 +820,14 @@
     },
     {
       "tradition": "italian renaissance (western european)",
+      "count": 1
+    },
+    {
+      "tradition": "early-modern rationalism (dutch republic)",
+      "count": 1
+    },
+    {
+      "tradition": "tradition-early-modern-rationalism",
       "count": 1
     },
     {
