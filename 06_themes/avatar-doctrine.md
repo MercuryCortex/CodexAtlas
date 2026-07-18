@@ -9,6 +9,12 @@ deities-associated: ["[[krishna]]", "[[rama]]", "[[vishnu]]"]
 parent-theme: ""
 child-themes: ["[[bhakti-devotion]]"]
 status: "stub"
+cross-tradition-parallels:
+  - target: doctrine-incarnation
+    type: parallel-motif
+    source: "Parrinder, *Avatar and Incarnation* (1970); Bhagavad Gītā 4.7-8"
+    source-tier: T1
+    note: "MASSIVE-WIN comparison: the avatāra (divine 'descent', avataraṇa, to restore dharma — BhG 4.7-8) is the closest structural parallel to the Christian [[doctrine-incarnation]], the divine taking flesh. But the contrast is decisive and must be framed carefully: avatāras are REPEATED and cyclical (the daśāvatāra across the yugas), often partial and tending to the docetic (Vishnu only appears to be born), whereas the Incarnation is UNIQUE, once-for-all, and a full hypostatic union (true God and true man, really born and really dying). Parrinder's 1970 study is the classic comparative treatment. Structural convergence, NOT historical transmission."
 refs:
   - title: "Avatar and Incarnation"
     author: "Parrinder, Geoffrey"
