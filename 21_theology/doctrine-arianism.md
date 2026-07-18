@@ -22,13 +22,13 @@ key-figures:
   - "[[arius]] (256-336; Alexandrian presbyter; the eponym)"
   - "Eusebius of Nicomedia (d. 341; Arius's powerful court patron; DEMAND — no node yet)"
   - "Alexander of Alexandria (d. 328; the bishop who first condemned Arius; DEMAND — no node yet)"
-  - "Athanasius of Alexandria (296-373; the principal anti-Arian defender of homoousios; DEMAND — no node yet)"
+  - "[[athanasius-of-alexandria]] (296-373; the principal anti-Arian defender of homoousios)"
   - "Aetius (d. 367) and Eunomius (d. 393; the developed Anomoean / neo-Arian systematisers)"
   - "Ulfilas / Wulfila (~311-383; Gothic missionary-bishop who carried Arian Christianity to the Goths; DEMAND — no node yet)"
 relations:
   - "condemned-at [[event-council-of-nicaea-325]]"
   - "resolved-by [[doctrine-trinity-nicene]]"
-  - "principal-opponent Athanasius of Alexandria (DEMAND — no node)"
+  - "principal-opponent [[athanasius-of-alexandria]]"
 syncretic-edges:
   - target: "[[doctrine-trinity-nicene]]"
     type: "condemned-by"
@@ -98,7 +98,7 @@ Arianism is the subordinationist Christology named for the Alexandrian presbyter
 
 ## The doctrine
 
-The core Arian claims, as reconstructed from Arius's *Thalia* and letters (surviving only through opponents, chiefly Athanasius of Alexandria) and from the Nicene anathemas that target them:
+The core Arian claims, as reconstructed from Arius's *Thalia* and letters (surviving only through opponents, chiefly [[athanasius-of-alexandria]]) and from the Nicene anathemas that target them:
 
 1. **The Son is created** — "made of things that were not" (*ex ouk ontōn*). He is not eternally generated from the Father's own being but produced, like all creatures, by the Father's will.
 2. **"There was when he was not"** (*ēn hote ouk ēn*) — there is a "before" to the Son. He is prior to time and to all other creatures, but not co-eternal with the unbegotten Father.
@@ -111,7 +111,7 @@ Gregg and Groh (1981) stress that this was not merely a metaphysical puzzle but 
 
 The dispute opened around 318 when Arius's preaching clashed with Bishop **Alexander of Alexandria**. Backed by the influential **Eusebius of Nicomedia** at the imperial court, the quarrel spread through the Eastern church until Constantine convened the **Council of Nicaea (325)** ([[event-council-of-nicaea-325]]). Nicaea condemned Arius, exiled him, and issued a creed engineered to exclude his teaching word by word: the Son is "true God of true God, **begotten not made**, of **one substance** (*homoousios*) with the Father," with explicit anathemas on "there was when he was not" and "made of things that were not."
 
-Nicaea did not end the fight. Under Constantius II the Eastern church was largely anti-Nicene for a generation; the term *homoousios* was itself suspect to many bishops who were not Arians but feared it collapsed the Father and Son into one (Sabellianism). The controversy fractured into homoousian, homoiousian ("of *like* substance"), homoian ("of *like*" without essence-language), and the radical **Anomoean** neo-Arianism of Aetius and Eunomius. It was the labor of **Athanasius of Alexandria** (his *Orations against the Arians*) and then the **Cappadocians** ([[gregory-of-nazianzus]], [[gregory-of-nyssa]]) that rebuilt a durable pro-Nicene consensus, ratified at the **Council of Constantinople (381)**.
+Nicaea did not end the fight. Under Constantius II the Eastern church was largely anti-Nicene for a generation; the term *homoousios* was itself suspect to many bishops who were not Arians but feared it collapsed the Father and Son into one (Sabellianism). The controversy fractured into homoousian, homoiousian ("of *like* substance"), homoian ("of *like*" without essence-language), and the radical **Anomoean** neo-Arianism of Aetius and Eunomius. It was the labor of **[[athanasius-of-alexandria|Athanasius]]** (his *Orations against the Arians*) and then the **Cappadocians** ([[gregory-of-nazianzus]], [[gregory-of-nyssa]]) that rebuilt a durable pro-Nicene consensus, ratified at the **Council of Constantinople (381)**.
 
 ## Afterlife — the barbarian creed
 

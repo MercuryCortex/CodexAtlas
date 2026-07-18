@@ -11,8 +11,8 @@ date_latest: 1900
 dating-basis: B5
 dating-basis-source: "Ingalls, D.H.H. 1951 *Materials for the Study of Navya-Nyāya Logic* Harvard UP; Matilal, B.K. 1968 *The Navya-Nyāya Doctrine of Negation* Harvard UP; Ganeri, J. 2011 *The Lost Age of Reason* OUP"
 dating-basis-notes: "Navya-Nyāya ('New Nyāya', navya = 'new') is conventionally dated from Gaṅgeśa Upādhyāya's *Tattvacintāmaṇi* ('Jewel-of-Thought about the Categories of Reality'), composed in Mithilā c. 1325 CE — the text that founds the school and displaces the older sūtra-and-bhāṣya format with a running analytic discourse. The centre of gravity then shifts east to Navadvīpa (Nabadwip, Bengal), where Vāsudeva Sārvabhauma (c. 1450-1525) transplants the school and Raghunātha Śiromaṇi (c. 1477-1547) writes the *Dīdhiti*, among the most influential commentaries; the tradition continues through Mathurānātha Tarkavāgīśa (16th c.), Jagadīśa Tarkālaṃkāra, and Gadādhara Bhaṭṭācārya (fl. c. 1650), whose *Vyutpattivāda* and *Śaktivāda* are the technical high-water mark. The productive classical phase runs c. 1325-1750; the pandit tradition of Navadvīpa and Mithilā continued teaching the corpus into the 19th-20th centuries (Maheśa Chandra Nyāyaratna, 1836-1906), so the school is a living Sanskrit-śāstric discipline rather than a closed period. Gaṅgeśa's exact dates are uncertain (floruit c. 1300-1350 on the standard reckoning; some scholars argue late 13th c.)."
-founder: "Gaṅgeśa Upādhyāya"
-key-figures: ["Gaṅgeśa Upādhyāya", "Raghunātha Śiromaṇi", "Gadādhara Bhaṭṭācārya", "Udayana", "[[panini-grammarian]]"]
+founder: "[[gangesa-upadhyaya|Gaṅgeśa Upādhyāya]]"
+key-figures: ["[[gangesa-upadhyaya|Gaṅgeśa Upādhyāya]]", "Raghunātha Śiromaṇi", "Gadādhara Bhaṭṭācārya", "[[udayana|Udayana]]", "[[panini-grammarian]]"]
 attested-in: []
 parallels:
   - "[[philosophy-nyaya-vaisheshika-realism]]"
@@ -26,6 +26,11 @@ syncretic-edges:
     source: "Ingalls 1951 *Materials for the Study of Navya-Nyāya Logic*, Harvard Oriental Series 40; Matilal 1968 *The Navya-Nyāya Doctrine of Negation*, HOS 46"
     source-tier: T1
     note: "Navya-Nyāya IS the formal-logical culmination of classical Nyāya-Vaiśeṣika: Gaṅgeśa's *Tattvacintāmaṇi* (c. 1325) is organised around the four Nyāya *pramāṇas* (perception, inference, comparison, testimony) inherited from Akṣapāda's *Nyāya-sūtra*, but replaces the old five-membered syllogism and loose sūtra idiom with a precision technical language for the anatomy of cognition. Same realist ontology (the padārtha categories, *vyāpti* / pervasion, *abhāva* / absence), new analytic instrument. This node is the 'New' (navya) phase of that hub; the pre-Gaṅgeśa material is the 'Old' (prācīna) Nyāya."
+  - target: udayana
+    type: culminates-old-nyaya-of
+    source: "Ingalls 1951, HOS 40; Matilal 1977 *Nyāya-Vaiśeṣika* (A History of Indian Literature VI.2), Harrassowitz"
+    source-tier: T1
+    note: "Udayana (c. 1000 CE) is the last great figure of the OLD Nyāya and the immediate ancestor of the new school; his refinements of inference-theory and the pervasion relation are the direct starting point of Gaṅgeśa's *Tattvacintāmaṇi*, which quotes and reworks him constantly. Navya-Nyāya begins where Udayana leaves off."
   - target: philosophy-scholasticism
     type: convergent-parallel
     source: "Staal 1988 *Universals: Studies in Indian Logic and Linguistics*, University of Chicago Press; Ganeri 2011 *The Lost Age of Reason*, OUP"
