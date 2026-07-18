@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-07-18T18:57:19Z",
+  "generatedAt": "2026-07-18T20:40:22Z",
   "vault": {
-    "totalNodes": 5439,
+    "totalNodes": 5448,
     "lensCount": 30,
     "familyCount": 14,
     "unmatchedTradNodes": 38,
@@ -288,14 +288,14 @@
     {
       "folder": "21_theology",
       "label": "Theology / doctrine",
-      "count": 54,
+      "count": 63,
       "baseline": 240,
-      "ratio": 0.225,
-      "band": "anemic",
+      "ratio": 0.263,
+      "band": "developing",
       "baselineNote": "EoR doctrine/dogma entries across all traditions",
       "statuses": {
         "stub": 14,
-        "(no status)": 37,
+        "(no status)": 46,
         "metadata": 3
       }
     },
@@ -470,9 +470,9 @@
     {
       "key": "abrahamic",
       "label": "Abrahamic",
-      "count": 1054,
+      "count": 1062,
       "baseline": 700,
-      "ratio": 1.506,
+      "ratio": 1.517,
       "band": "over-baseline",
       "perLens": {
         "02_documents": 315,
@@ -491,7 +491,7 @@
         "17_medicine": 4,
         "18_languages": 13,
         "20_sacred_architecture": 16,
-        "21_theology": 20,
+        "21_theology": 28,
         "22_practices": 14,
         "23_material_culture": 13,
         "26_calendars": 8,
@@ -582,9 +582,9 @@
     {
       "key": "buddhist",
       "label": "Buddhist",
-      "count": 179,
+      "count": 180,
       "baseline": 380,
-      "ratio": 0.471,
+      "ratio": 0.474,
       "band": "developing",
       "perLens": {
         "02_documents": 36,
@@ -598,7 +598,7 @@
         "17_medicine": 2,
         "18_languages": 4,
         "20_sacred_architecture": 10,
-        "21_theology": 5,
+        "21_theology": 6,
         "22_practices": 6,
         "23_material_culture": 7,
         "26_calendars": 2,
