@@ -243,8 +243,8 @@
 <script>
 (function(){
   'use strict';
-  var motionPref = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var S = { mode:'hero', theme:'obsidian', motion:!motionPref };
+  /* motion defaults ON — motion is the thing under evaluation in this lab */
+  var S = { mode:'hero', theme:'obsidian', motion:true };
 
   var FAM = { amber:'#e8b06a', rose:'#e07a8a', teal:'#6fd0c3', sage:'#a9c98a', lav:'#9d8fe0', ice:'#8fb8e0' };
   var CARD_COLOR = { ring:FAM.amber, glass:FAM.rose, core:FAM.teal, star:FAM.lav };
@@ -314,14 +314,19 @@
       ctx.save(); ctx.beginPath(); ctx.arc(x,y,r*.96,0,7); ctx.clip();
       ctx.globalCompositeOperation='screen';
       for(var i=0;i<3;i++){
-        var ang=t*(.14+.05*i)+i*2.1, d=r*.34;
+        var ang=t*(.5+.14*i)+i*2.1, d=r*.4;
         var bx=x+Math.cos(ang)*d, by=y+Math.sin(ang*.8)*d;
-        var ink=ctx.createRadialGradient(bx,by,0,bx,by,r*.62);
-        ink.addColorStop(0, rgba(mix(col, i===1?'#ffffff':'#4030a0', .35), .34));
+        var br=r*(.55+.09*Math.sin(t*.9+i*1.7));
+        var ink=ctx.createRadialGradient(bx,by,0,bx,by,br);
+        ink.addColorStop(0, rgba(mix(col, i===1?'#ffffff':'#4030a0', .35), .42));
         ink.addColorStop(1,'rgba(0,0,0,0)');
         ctx.fillStyle=ink; ctx.fillRect(x-r,y-r,r*2,r*2);
       }
       ctx.restore();
+      var breath=.10+.06*Math.sin(t*.8);
+      var hg=ctx.createRadialGradient(x,y,r,x,y,r*1.6);
+      hg.addColorStop(0,rgba(col,breath)); hg.addColorStop(1,'rgba(0,0,0,0)');
+      ctx.fillStyle=hg; ctx.beginPath(); ctx.arc(x,y,r*1.6,0,7); ctx.fill();
     }
 
     /* fresnel rim */
@@ -335,7 +340,8 @@
       ctx.save(); ctx.globalCompositeOperation='screen'; ctx.lineWidth=Math.max(1,r*.06);
       var P=[['rgba(255,90,90,.75)',-.5],['rgba(110,255,150,.7)',1.6],['rgba(110,150,255,.8)',3.7]];
       for(var p=0;p<3;p++){ ctx.strokeStyle=P[p][0];
-        ctx.beginPath(); ctx.arc(x,y,r*.97,P[p][1],P[p][1]+2.2); ctx.stroke(); }
+        var po=P[p][1]+t*.4;
+        ctx.beginPath(); ctx.arc(x,y,r*.97,po,po+2.2); ctx.stroke(); }
       ctx.restore();
     }
 
@@ -543,10 +549,7 @@
   var rs; window.addEventListener('resize',function(){ clearTimeout(rs); rs=setTimeout(paintAll,120); });
 
   /* boot */
-  if(motionPref){ S.motion=false;
-    document.querySelectorAll('#segMotion button').forEach(function(b){b.classList.toggle('on',b.dataset.m==='off');});
-  }
   paintAll();
-  if(S.motion) loop();
+  loop();
 })();
 </script>
