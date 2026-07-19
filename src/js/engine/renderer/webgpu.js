@@ -220,13 +220,41 @@
       let state_alpha = segA * segB_factor;
       let rgb_fill    = in.inst_color.rgb;
 
+      // ── GLASS bead shading (2026-07-19) — spherical depth + prism-on-hover.
+      //   A node reads as a glass cabochon instead of a flat dot: a fake
+      //   hemisphere normal drives a top-left specular glint + a fresnel
+      //   silhouette rim; hover (sel) intensifies both and splits the rim
+      //   into R/G/B (chromatic dispersion) = the prism. Entirely in-fragment
+      //   — no extra pass, no framebuffer read — so it stays instanced,
+      //   60fps, and Safari-WebGPU-safe. Dimmed nodes (state→1) are calmed
+      //   by g_focus so the wheel doesn't glitter when faded.
+      let g_nz     = sqrt(max(0.0, 1.0 - dist * dist));      // hemisphere height: 1 center → 0 rim
+      let g_normal = vec3<f32>(in.local_pos, g_nz);
+      let g_L      = normalize(vec3<f32>(-0.5, 0.55, 0.75)); // key light, upper-left
+      let g_H      = normalize(g_L + vec3<f32>(0.0, 0.0, 1.0));
+      let g_hover  = clamp(in.sel, 0.0, 1.0);
+      let g_focus  = 1.0 - 0.55 * min(in.state, 1.0);        // calm the dimmed nodes
+      let g_lamb   = clamp(dot(g_normal, g_L), 0.0, 1.0);
+      let g_body   = rgb_fill * mix(0.80, 1.10, g_lamb);     // top-lit → 3-D bead
+      let g_fres   = pow(1.0 - g_nz, 2.5);                   // brighter silhouette
+      let g_rimcol = mix(rgb_fill, vec3<f32>(1.0), 0.5);
+      let g_spec   = pow(max(dot(g_normal, g_H), 0.0), mix(30.0, 85.0, g_hover));
+      let g_disp   = g_hover * 0.6;                          // dispersion only on hover
+      let g_prism  = vec3<f32>(pow(1.0 - g_nz, 2.5 - g_disp),
+                               g_fres,
+                               pow(1.0 - g_nz, 2.5 + g_disp)) - vec3<f32>(g_fres);
+      var g_rgb    = g_body
+                   + g_rimcol      * g_fres * (0.45 + 0.6 * g_hover) * g_focus
+                   + vec3<f32>(1.0) * g_spec * (0.6  + 0.8 * g_hover) * g_focus
+                   + g_prism       * (1.4 * g_hover)               * g_focus;
+
       // Selected stroke (only painted when sel = 1).
       // The stroke band sits inside the disk's outer edge,
       // thickness = selected_stroke_w as a fraction of radius.
       let stroke_inner = 1.0 - v.selected_stroke_w;
       let stroke_band  = smoothstep(stroke_inner - aa, stroke_inner, dist);
       let stroke_mix   = in.sel * stroke_band;
-      let rgb          = mix(rgb_fill, v.selected_stroke.rgb, stroke_mix);
+      let rgb          = mix(g_rgb, v.selected_stroke.rgb, stroke_mix);
 
       // Final alpha = state_alpha × disk_alpha.
       //   - state_alpha: 1.0 (idle/over), 0.25 (faded), 0 (hidden)
