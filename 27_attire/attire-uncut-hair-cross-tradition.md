@@ -9,6 +9,22 @@ traditions-related: ["[[tradition-sikhism]]", "[[tradition-judaism]]", "[[tradit
 key-figures-worn-by: ["Khalsa Sikhs (kesh, one of the Five Ks)", "Nazirites (Samson; Samuel; the vow of Numbers 6)", "Hindu Naga sādhus + Shaiva ascetics (matted jaṭā)", "Rastafari (dreadlocks)"]
 liturgical-occasion: ["lifelong observance (Khalsa)", "temporary or lifelong vow (Nazirite)", "ascetic renunciation (jaṭā, dreadlocks)"]
 parallel-attire: ["[[sikh-five-ks]]", "[[attire-monk-tonsure-cross-tradition]]"]
+hub-edges:
+  - target: "attire-monk-tonsure-cross-tradition"
+    type: "inverse-hair-observance"
+    source: "W. H. McLeod, *Sikhism* (Penguin, 1997) — the Khalsa's uncut kesh is the deliberate theological opposite of the Buddhist/Catholic/Hindu tonsure."
+    source-tier: "T1"
+    notes: "Cross-attire: the two poles of the head-hair observance (never-cut vs shaved)."
+  - target: "attire-sacred-beard-cross-tradition"
+    type: "cognate-uncut-hair-covenant"
+    source: "McLeod 1997 — the uncut beard is part of the same kesh discipline."
+    source-tier: "T1"
+    notes: "Cross-attire: head-hair and facial-hair as one covenant of non-cutting."
+  - target: "sikh-five-ks"
+    type: "instance-of"
+    source: "McLeod 1997 — kesh is the first of the Five Ks."
+    source-tier: "T1"
+    notes: "The paradigm case of the uncut-hair vow."
 related-symbols: []
 related-rituals: []
 material-fiber: []

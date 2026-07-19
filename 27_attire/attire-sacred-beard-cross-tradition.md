@@ -9,6 +9,22 @@ traditions-related: ["[[tradition-sikhism]]", "[[tradition-islam]]", "[[traditio
 key-figures-worn-by: ["Khalsa Sikhs (the uncut beard, part of kesh)", "observant Muslim men (the sunnah beard)", "Orthodox + Hasidic Jewish men (beard + peyot)", "Eastern Orthodox clergy + monastics (the uncut beard)"]
 liturgical-occasion: ["lifelong observance", "clerical + monastic identity"]
 parallel-attire: ["[[sikh-five-ks]]", "[[attire-uncut-hair-cross-tradition]]"]
+hub-edges:
+  - target: "sikh-five-ks"
+    type: "instance-of"
+    source: "W. H. McLeod, *Sikhism* (Penguin, 1997) — the uncut beard within kesh."
+    source-tier: "T1"
+    notes: "The beard as part of the Khalsa covenant."
+  - target: "attire-uncut-hair-cross-tradition"
+    type: "cognate-non-cutting-covenant"
+    source: "McLeod 1997 — head-hair and beard share the leave-as-God-made-it logic."
+    source-tier: "T1"
+    notes: "Cross-attire: facial + head hair as one observance-family."
+  - target: "attire-monk-tonsure-cross-tradition"
+    type: "inverse-observance"
+    source: "comparative — the beard marks by restraint-from-removal where tonsure marks by removal."
+    source-tier: "T2"
+    notes: "Cross-attire: the two opposite logics of hair as religious sign."
 related-symbols: []
 related-rituals: []
 material-fiber: []

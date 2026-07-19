@@ -9,6 +9,17 @@ traditions-related: ["[[tradition-islam]]", "[[tradition-hinduism]]", "[[traditi
 key-figures-worn-by: ["Moses at the burning bush ('put off thy shoes')", "Muslims entering the mosque", "Hindus + Sikhs + Jains entering temple / gurdwara / derasar", "Japanese entering shrine + home (Shinto)", "barefoot penitents + pilgrims"]
 liturgical-occasion: ["entering sacred space", "prayer + pilgrimage", "penance"]
 parallel-attire: ["[[ihram-pilgrim-garment]]"]
+hub-edges:
+  - target: "ihram-pilgrim-garment"
+    type: "cognate-purity-threshold"
+    source: "F. E. Peters, *The Hajj* (Princeton UP, 1994) — the pilgrim's stripped, sandaled-or-bare state entering the sacred precinct."
+    source-tier: "T2"
+    notes: "Both strip the road-worn self at the sacred threshold."
+  - target: "attire-white-garment-cross-tradition"
+    type: "cognate-purity-observance"
+    source: "comparative — bare feet and white cloth both signal purity before the sacred."
+    source-tier: "T2"
+    notes: "Cross-attire: two purity-threshold observances."
 related-symbols: []
 related-rituals: []
 material-fiber: []

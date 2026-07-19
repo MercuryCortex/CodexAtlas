@@ -9,6 +9,17 @@ traditions-related: ["[[tradition-jainism]]", "[[tradition-hinduism]]"]
 key-figures-worn-by: ["Digambara Jain monks ('sky-clad')", "Naga sādhus + some Shaiva ascetics", "certain tantric practitioners", "modern Wiccan 'skyclad' practice"]
 liturgical-occasion: ["lifelong renunciation (Digambara)", "ascetic + tantric rites"]
 parallel-attire: ["[[attire-jain-monastic-svetambara-digambara]]", "[[attire-renunciant-robe-cross-tradition]]"]
+hub-edges:
+  - target: "attire-jain-monastic-svetambara-digambara"
+    type: "instance-of-digambara"
+    source: "Paul Dundas, *The Jains* (Routledge, 2002) — the sky-clad Digambara ideal of total non-possession."
+    source-tier: "T1"
+    notes: "The schism-defining case of ritual nudity."
+  - target: "attire-renunciant-robe-cross-tradition"
+    type: "extreme-limit-of"
+    source: "Dundas 2002 — nudity is the renunciant robe's logic taken to zero."
+    source-tier: "T2"
+    notes: "Cross-attire: subtraction of dress completed."
 related-symbols: []
 related-rituals: []
 material-fiber: []

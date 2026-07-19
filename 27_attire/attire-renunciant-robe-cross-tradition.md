@@ -9,6 +9,27 @@ traditions-related: ["[[tradition-theravada-buddhism]]", "[[tradition-hinduism]]
 key-figures-worn-by: ["Buddhist monastics (the kāṣāya)", "Hindu sannyāsins (saffron)", "Christian monastics (the habit)", "Sufi dervishes (the patched khirqah)", "Jain monks + nuns (white or none)"]
 liturgical-occasion: ["monastic ordination + lifelong wear"]
 parallel-attire: ["[[kasaya-buddhist-robe]]", "[[sannyasin-saffron]]", "[[monastic-habit-benedictine]]", "[[sufi-khirqah]]"]
+hub-edges:
+  - target: "kasaya-buddhist-robe"
+    type: "instance-of"
+    source: "Mohan Wijayaratna, *Buddhist Monastic Life* (Cambridge UP, 1990) — the rag-cloth ochre kāṣāya."
+    source-tier: "T1"
+    notes: "Poverty patterned into cloth."
+  - target: "sannyasin-saffron"
+    type: "instance-of"
+    source: "Patrick Olivelle, *The Āśrama System* (Oxford UP, 1993) — the sannyāsin's fire-coloured wrap."
+    source-tier: "T1"
+    notes: "The world burned away."
+  - target: "monastic-habit-benedictine"
+    type: "instance-of"
+    source: "Giles Constable, *The Reformation of the Twelfth Century* (Cambridge UP, 1996) — the habit as the death of self-will."
+    source-tier: "T2"
+    notes: "Taking the habit = entering the order."
+  - target: "sufi-khirqah"
+    type: "instance-of"
+    source: "J. Spencer Trimingham, *The Sufi Orders in Islam* (Oxford UP, 1971) — the patched wool robe of faqr."
+    source-tier: "T1"
+    notes: "Poverty worn as lineage."
 related-symbols: []
 related-rituals: []
 material-fiber: []

@@ -9,6 +9,22 @@ traditions-related: ["[[tradition-roman-catholicism]]", "[[tradition-egyptian]]"
 key-figures-worn-by: ["the Pope (the triple tiara, unused since 1963)", "the pharaoh (the Double Crown of Upper + Lower Egypt with the uraeus)", "consecrated + crowned monarchs (coronation as sacrament)", "crowned deities + Buddhas (mukuṭa; the celestial-king imagery)"]
 liturgical-occasion: ["coronation + enthronement", "state + liturgical processions", "iconographic depiction of divine/royal power"]
 parallel-attire: ["[[papal-tiara]]", "[[pharaonic-nemes-and-uraeus]]"]
+hub-edges:
+  - target: "papal-tiara"
+    type: "instance-of"
+    source: "Bernhard Sirch, *Der Ursprung der bischöflichen Mitra und päpstlichen Tiara* (EOS, 1975) — the triple crown of papal authority, set aside 1963."
+    source-tier: "T2"
+    notes: "Sacred regalia + its modern un-crowning."
+  - target: "pharaonic-nemes-and-uraeus"
+    type: "instance-of"
+    source: "Toby Wilkinson, *The Rise and Fall of Ancient Egypt* (Random House, 2010) — the Double Crown + uraeus of divine kingship."
+    source-tier: "T1"
+    notes: "Kingship as divine office marked at the brow."
+  - target: "attire-renunciant-robe-cross-tradition"
+    type: "inverse-status-marking"
+    source: "comparative — regalia concentrates status where the renunciant's robe dissolves it."
+    source-tier: "T2"
+    notes: "Cross-attire: the two opposite poles of what dress does to status."
 related-symbols: []
 related-rituals: []
 material-fiber: []

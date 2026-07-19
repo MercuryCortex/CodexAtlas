@@ -9,6 +9,17 @@ traditions-related: ["[[tradition-roman-catholicism]]", "[[tradition-judaism]]",
 key-figures-worn-by: ["the bereaved (black in the Christian/Western world)", "the bereaved (white in China, India, much of Asia)", "Jewish mourners (the torn garment; sitting shiva)", "biblical + Near-Eastern mourners (sackcloth + ashes)"]
 liturgical-occasion: ["death + funerary rites", "periods of mourning", "penitence + lament"]
 parallel-attire: ["[[attire-white-garment-cross-tradition]]"]
+hub-edges:
+  - target: "attire-white-garment-cross-tradition"
+    type: "shared-white-symbolism"
+    source: "James L. Watson & Evelyn S. Rawski (eds.), *Death Ritual in Late Imperial and Modern China* (UC Press, 1988) — white as the East-Asian mourning colour."
+    source-tier: "T2"
+    notes: "The same white cloth means bereavement here, baptism/equality there."
+  - target: "attire-liturgical-colors-cross-tradition"
+    type: "cognate-colour-coding"
+    source: "comparative — mourning dress is a colour-code of grief, the inverse of the festive/solemn liturgical cycle."
+    source-tier: "T2"
+    notes: "Cross-attire: colour as legible ritual state."
 related-symbols: []
 related-rituals: []
 material-fiber: []

@@ -9,6 +9,22 @@ traditions-related: ["[[tradition-roman-catholicism]]", "[[tradition-islam]]", "
 key-figures-worn-by: ["ordinands vested at ordination (Christian)", "Sufi initiates given the khirqah by the shaykh", "Buddhist monastics receiving robes (upasampadā; kaṭhina)", "the twice-born receiving the sacred thread (upanayana)"]
 liturgical-occasion: ["ordination + enthronement", "Sufi initiation (khirqah)", "monastic higher-ordination + kaṭhina", "upanayana (sacred-thread investiture)"]
 parallel-attire: ["[[sufi-khirqah]]", "[[vestment-chasuble]]", "[[kasaya-buddhist-robe]]"]
+hub-edges:
+  - target: "sufi-khirqah"
+    type: "conferred-in"
+    source: "J. Spencer Trimingham, *The Sufi Orders in Islam* (Oxford UP, 1971) — the khirqah is bestowed by the shaykh as the transmission of the silsila."
+    source-tier: "T1"
+    notes: "The clearest case: the robe IS the lineage conferred."
+  - target: "vestment-chasuble"
+    type: "conferred-in"
+    source: "Maureen C. Miller, *Clothing the Clergy* (Cornell UP, 2014) — the ordinand is vested with the order's insignia."
+    source-tier: "T2"
+    notes: "Christian vesting as clothing-conferral of office."
+  - target: "kasaya-buddhist-robe"
+    type: "conferred-in"
+    source: "Mohan Wijayaratna, *Buddhist Monastic Life* (Cambridge UP, 1990) — the kāṣāya received at higher ordination."
+    source-tier: "T1"
+    notes: "Robe-giving as monastic investiture."
 related-symbols: []
 related-rituals: []
 material-fiber: []

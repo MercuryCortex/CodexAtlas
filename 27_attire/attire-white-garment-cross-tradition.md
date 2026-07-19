@@ -9,6 +9,22 @@ traditions-related: ["[[tradition-early-christianity]]", "[[tradition-islam]]", 
 key-figures-worn-by: ["the newly baptized (Christian white robe)", "hajj + umrah pilgrims (the two white ihrām cloths)", "Śvetāmbara Jain monks + nuns ('white-clad')", "Jewish worshippers at Yom Kippur + grooms + the dead (kittel)", "Shinto priests + purified participants"]
 liturgical-occasion: ["baptism", "pilgrimage (ihrām)", "Day of Atonement + burial (kittel)", "purity + festival rites (Shinto)"]
 parallel-attire: ["[[ihram-pilgrim-garment]]", "[[attire-jain-monastic-svetambara-digambara]]", "[[vestment-chasuble]]"]
+hub-edges:
+  - target: "ihram-pilgrim-garment"
+    type: "instance-of"
+    source: "F. E. Peters, *The Hajj* (Princeton UP, 1994) — the two white iḥrām cloths as the equalizing pilgrim garment."
+    source-tier: "T1"
+    notes: "White cloth erasing rank before God."
+  - target: "attire-jain-monastic-svetambara-digambara"
+    type: "instance-of"
+    source: "Paul Dundas, *The Jains* (Routledge, 2002) — the 'white-clad' Śvetāmbara order."
+    source-tier: "T1"
+    notes: "White as the minimum of possession."
+  - target: "attire-mourning-dress-cross-tradition"
+    type: "shared-white-symbolism"
+    source: "Watson & Rawski (eds.), *Death Ritual in Late Imperial and Modern China* (UC Press, 1988) — white as the Asian/Jewish mourning colour."
+    source-tier: "T2"
+    notes: "Cross-attire: the same white cloth means baptism/equality here, bereavement there."
 related-symbols: []
 related-rituals: []
 material-fiber: []

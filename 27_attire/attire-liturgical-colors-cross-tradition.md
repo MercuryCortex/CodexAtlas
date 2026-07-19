@@ -9,6 +9,22 @@ traditions-related: ["[[tradition-roman-catholicism]]", "[[tradition-eastern-ort
 key-figures-worn-by: ["Christian clergy (colour changes with the liturgical season/feast)", "Theravāda monastics (ochre/saffron dye)", "Tibetan monastics (maroon + saffron)", "Hindu sannyāsins (saffron/ochre — the fire colour)"]
 liturgical-occasion: ["the liturgical year (Christian)", "monastic ordination + daily wear (Buddhist, Hindu)"]
 parallel-attire: ["[[vestment-chasuble]]", "[[kasaya-buddhist-robe]]", "[[sannyasin-saffron]]"]
+hub-edges:
+  - target: "vestment-chasuble"
+    type: "carries-colour-system"
+    source: "Adrian Fortescue & J. B. O'Connell, *The Ceremonies of the Roman Rite Described* — the seasonal colour is worn on the chasuble."
+    source-tier: "T1"
+    notes: "The temporal (calendar) colour system."
+  - target: "kasaya-buddhist-robe"
+    type: "instance-of-humble-colour"
+    source: "Mohan Wijayaratna, *Buddhist Monastic Life* (Cambridge UP, 1990) — the ochre/saffron dye of the kāṣāya."
+    source-tier: "T2"
+    notes: "The existential (renunciation) colour system."
+  - target: "sannyasin-saffron"
+    type: "instance-of-fire-colour"
+    source: "Patrick Olivelle, *The Āśrama System* (Oxford UP, 1993) — saffron as the fire of renunciation."
+    source-tier: "T2"
+    notes: "Colour marking what has been renounced."
 related-symbols: []
 related-rituals: []
 material-fiber: []

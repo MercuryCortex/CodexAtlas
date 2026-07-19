@@ -9,6 +9,17 @@ traditions-related: ["[[tradition-zoroastrianism]]", "[[tradition-persian-zoroas
 key-figures-worn-by: ["Zoroastrians (the kushti, tied and retied daily over the sudreh)", "Christian monastics + clergy (the cincture over the alb/habit)", "Hasidic Jewish men (the gartel at prayer)", "the Israelite priest (the avnet / girdle of Exodus 28)"]
 liturgical-occasion: ["daily tying (kushti)", "vesting for prayer + liturgy", "the initiation that first binds the cord (Zoroastrian navjote)"]
 parallel-attire: ["[[attire-zoroastrian-sudreh-kushti]]", "[[monastic-habit-benedictine]]"]
+hub-edges:
+  - target: "attire-zoroastrian-sudreh-kushti"
+    type: "instance-of-kushti"
+    source: "Mary Boyce, *Zoroastrians* (Routledge, 1979) — the kushti tied and retied daily over the sudreh."
+    source-tier: "T1"
+    notes: "The clearest daily-renewed girding."
+  - target: "monastic-habit-benedictine"
+    type: "instance-of-cincture"
+    source: "Maureen C. Miller, *Clothing the Clergy* (Cornell UP, 2014) — the cincture as chastity and readiness."
+    source-tier: "T2"
+    notes: "The Christian girding of the loins."
 related-symbols: []
 related-rituals: []
 material-fiber: []

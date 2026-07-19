@@ -9,6 +9,22 @@ traditions-related: ["[[tradition-islam]]", "[[tradition-judaism]]", "[[traditio
 key-figures-worn-by: ["Muslim women (hijab) + men (in prayer)", "Jewish men (kippah) + married women (tichel)", "Catholic women historically (the chapel veil / mantilla); nuns (the veil)", "Sikh men + women (the dastār)"]
 liturgical-occasion: ["daily observance + prayer", "entering sacred space", "marital-status marking"]
 parallel-attire: ["[[attire-imam-turban-amama]]", "[[tallit-with-tzitzit]]", "[[sikh-five-ks]]"]
+hub-edges:
+  - target: "attire-imam-turban-amama"
+    type: "instance-of"
+    source: "Leila Ahmed, *Women and Gender in Islam* (Yale UP, 1992) — the Islamic covered head (turban, veil)."
+    source-tier: "T2"
+    notes: "The Islamic register of head-covering."
+  - target: "sikh-five-ks"
+    type: "instance-of"
+    source: "W. H. McLeod, *Sikhism* (Penguin, 1997) — the dastār covering the uncut hair."
+    source-tier: "T1"
+    notes: "Head-covering worn as sovereignty, not concealment."
+  - target: "tallit-with-tzitzit"
+    type: "cognate-covering-in-prayer"
+    source: "comparative — the tallit drawn over the head in Jewish prayer alongside the kippah."
+    source-tier: "T2"
+    notes: "The Jewish register of covering the head before God."
 related-symbols: []
 related-rituals: []
 material-fiber: []
