@@ -11,7 +11,7 @@ school: "Medieval Jewish philosophy (intellectual conjunction) · theosophic Kab
 domains: ["devekut (cleaving / attachment to God)", "communion vs. union in Jewish mysticism", "intellectual conjunction with the Active Intellect (Maimonides)", "continuous God-consciousness in worldly activity", "avodah be-gashmiyut (worship through corporeality)", "bittul ha-yesh (self-nullification, Chabad)"]
 source-tier: "T1"
 political-risk-flag: false
-founders: ["[[baal-shem-tov]]"]
+founders: ["[[maimonides]]", "[[baal-shem-tov]]"]
 attested-in: ["[[tradition-judaism]]", "[[tradition-hasidism]]", "[[maimonides]]"]
 syncretic-edges:
   - target: "[[henosis]]"

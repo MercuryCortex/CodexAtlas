@@ -38,7 +38,7 @@ syncretic-edges:
     type: "cross-tradition-instance"
     source: "Māṇḍūkya Upaniṣad; Zaehner, R.C. (1957) *Mysticism Sacred and Profane*"
     source-tier: "T1"
-    notes: "The Upaniṣadic occupant: turīya, the 'fourth' — pure non-dual awareness underlying waking/dream/deep-sleep. The oldest datable member of the family (Māṇḍūkya, c. 4th c. BCE or earlier), and the Advaita ground for the identity reading (ātman = brahman): where there is no second, there is nothing to be united WITH."
+    notes: "The Upaniṣadic occupant: turīya, the 'fourth' — pure non-dual awareness underlying waking/dream/deep-sleep. One of the earliest explicit textual formulations of a non-dual fourth state (though the Māṇḍūkya is among the later principal Upaniṣads and its date is disputed; the Chāndogya's tat tvam asi is the older non-dual formula), and the Advaita ground for the identity reading (ātman = brahman): where there is no second, there is nothing to be united WITH."
   - target: "[[consciousness-dzogchen-rigpa-recognition]]"
     type: "cross-tradition-instance"
     source: "Germano, D. & Waldron, W. (2006) 'A Comparison of Ālaya-vijñāna and rigpa'; Higgins, D. (2013) *The Philosophical Foundations of Classical rDzogs chen*. ITBTS Vienna"

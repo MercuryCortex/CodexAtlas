@@ -38,7 +38,7 @@ syncretic-edges:
     type: "exemplar-shatah"
     source: "Ernst, C.W. (1985) *Words of Ecstasy in Sufism*, SUNY Press; Massignon, L., *The Passion of al-Hallāj*, tr. H. Mason (1982), Princeton UP."
     source-tier: "T1"
-    notes: "Al-Ḥallāj's 'anā al-ḥaqq' ('I am the Real/the Truth', d. 922) is the paradigmatic shaṭḥ (ecstatic utterance) of the intoxicated pole and the one that cost him his life — the limit case where sukr collides with sharīʿa-orthodoxy."
+    notes: "Al-Ḥallāj's 'anā al-ḥaqq' ('I am the Real/the Truth', d. 922) is the paradigmatic shaṭḥ (ecstatic utterance) of the intoxicated pole and popularly held to be what cost him his life (though his trial's actual charges were more complex — public scandal, heresy, and political ties; Massignon 1982) — the limit case where sukr collides with sharīʿa-orthodoxy."
   - target: "[[al-junayd]]"
     type: "sober-antitype"
     source: "al-Hujwīrī, *Kashf al-Maḥjūb* (c. 1075), tr. R.A. Nicholson (1911), Gibb Memorial Series; Mojaddedi 2003."

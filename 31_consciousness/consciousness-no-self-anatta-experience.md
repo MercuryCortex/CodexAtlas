@@ -8,7 +8,7 @@ region: "India → Sri Lanka → Burma → Thailand → international"
 period-active-earliest: -450
 period-active-latest: 2024
 school: "Theravāda vipassanā phenomenology · early Buddhist insight-meditation"
-founders: ["[gautama-buddha]", "[buddhaghosa]"]
+founders: ["[siddhartha-gautama-buddha]"]
 domains: ["anattā (not-self) as lived realization", "anattānupassanā — contemplation of not-self", "insight into the five aggregates (pañca-khandhā) as empty of a self", "the deconstructive (as opposed to absorptive) contemplative state", "de-reification of the felt 'I'"]
 source-tier: "T1"
 political-risk-flag: false
