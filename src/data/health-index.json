@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-07-19T05:35:39Z",
+  "generatedAt": "2026-07-19T12:35:39Z",
   "vault": {
-    "totalNodes": 5552,
+    "totalNodes": 5564,
     "lensCount": 30,
     "familyCount": 14,
     "unmatchedTradNodes": 52,
@@ -259,13 +259,13 @@
     {
       "folder": "19_astronomy",
       "label": "Astronomy",
-      "count": 25,
+      "count": 37,
       "baseline": 80,
-      "ratio": 0.312,
+      "ratio": 0.463,
       "band": "developing",
       "baselineNote": "Walker Astronomy Before the Telescope + cultural-astronomy entries",
       "statuses": {
-        "(no status)": 6,
+        "(no status)": 18,
         "metadata": 19
       }
     },
@@ -446,9 +446,9 @@
     {
       "key": "egyptian",
       "label": "Egyptian",
-      "count": 145,
+      "count": 146,
       "baseline": 240,
-      "ratio": 0.604,
+      "ratio": 0.608,
       "band": "rich",
       "perLens": {
         "02_documents": 21,
@@ -463,6 +463,7 @@
         "16_mathematics": 1,
         "17_medicine": 1,
         "18_languages": 3,
+        "19_astronomy": 1,
         "20_sacred_architecture": 6,
         "26_calendars": 2,
         "27_attire": 1
@@ -471,9 +472,9 @@
     {
       "key": "abrahamic",
       "label": "Abrahamic",
-      "count": 1094,
+      "count": 1095,
       "baseline": 700,
-      "ratio": 1.563,
+      "ratio": 1.564,
       "band": "over-baseline",
       "perLens": {
         "02_documents": 315,
@@ -491,6 +492,7 @@
         "16_mathematics": 3,
         "17_medicine": 5,
         "18_languages": 13,
+        "19_astronomy": 1,
         "20_sacred_architecture": 16,
         "21_theology": 34,
         "22_practices": 21,
@@ -714,9 +716,9 @@
     {
       "key": "indigenous-other",
       "label": "Indigenous (N.American / Oceanic / Australian / Arctic)",
-      "count": 90,
+      "count": 91,
       "baseline": 200,
-      "ratio": 0.45,
+      "ratio": 0.455,
       "band": "developing",
       "perLens": {
         "02_documents": 8,
@@ -728,6 +730,7 @@
         "14_rituals": 9,
         "17_medicine": 1,
         "18_languages": 1,
+        "19_astronomy": 1,
         "20_sacred_architecture": 3,
         "22_practices": 3
       }
