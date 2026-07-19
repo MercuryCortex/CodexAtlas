@@ -18,7 +18,7 @@ key-personnel:
   - "Jagannatha Samrat (Pandit Jagannatha; fl. 1720s-1730s; chief Sanskrit astronomer; translated Ptolemy's Almagest — via al-Tusi's Arabic Tahrir al-Majisti — into Sanskrit as the *Samrat Siddhanta*, + Euclid's *Elements* as the *Rekhaganita*)"
   - "Kevalarama (court pandit + astronomer; author of astronomical tables for Jai Singh)"
   - "Muslim zij-tradition astronomers of the court (working the Ulugh Beg + Islamic astronomical-table lineage)"
-  - "Manuel de Figueiredo + the Portuguese/Jesuit embassy (sent by Jai Singh to King Joao V of Portugal c. 1727-1730; returned with Philippe de La Hire's *Tabulae Astronomicae*, 1702, + reportedly instruments); Fr. Claude Boudier SJ (Jesuit who observed at Jaipur, 1734)"
+  - "Manuel de Figueiredo + the Portuguese/Jesuit embassy (sent by Jai Singh to King Joao V of Portugal c. 1727-1730; returned with Philippe de La Hire's *Tabulae Astronomicae* (2nd ed., 1727; tables first issued 1702), + reportedly instruments); Fr. Claude Boudier SJ (Jesuit who observed at Jaipur, 1734)"
 key-instruments:
   - "**Samrat Yantra** ('Supreme Instrument') — a giant equinoctial gnomon-sundial; at Jaipur the gnomon wall stands ~27 m high with its hypotenuse set parallel to Earth's axis (latitude ~27 deg N), reading local apparent solar time to an accuracy of ~2 seconds. The largest masonry sundial ever built (Sharma 1995)"
   - "**Jai Prakash Yantra** — paired hemispherical concave bowls mapping the celestial sphere, giving direct-reading celestial coordinates of the Sun + stars"
@@ -113,7 +113,7 @@ The Jantar Mantar is unusual in the Atlas because its cross-tradition character 
 
 1. **Hindu Siddhantic astronomy** — the [[astronomy-surya-siddhanta|Surya Siddhanta]] and the wider jyotisha tradition, carried by his chief pandit **Jagannatha Samrat**;
 2. **Islamic zij astronomy** — the [[samarkand-ulugh-beg-observatory|Ulugh Beg]] / [[astronomy-zij-i-ilkhani|Ilkhanid]] table tradition and the monumental-instrument practice of [[maragha-observatory|Maragha]] and Samarkand, which he had translated and used as his benchmark;
-3. **Contemporary European astronomy** — Philippe de La Hire's *Tabulae Astronomicae* (Paris, 1702), obtained through a **Portuguese/Jesuit embassy** Jai Singh sent to King Joao V of Portugal (c. 1727-1730), the Jesuit **Manuel de Figueiredo** returning with the tables and reportedly instruments; the Jesuit **Claude Boudier** later observed at Jaipur in 1734.
+3. **Contemporary European astronomy** — Philippe de La Hire's *Tabulae Astronomicae* (Paris; 2nd ed. 1727, first issued 1702), obtained through a **Portuguese/Jesuit embassy** Jai Singh sent to King Joao V of Portugal (c. 1727-1730), the Jesuit **Manuel de Figueiredo** returning with the tables and reportedly instruments; the Jesuit **Claude Boudier** later observed at Jaipur in 1734.
 
 That Jai Singh had Jagannatha translate **Ptolemy's *Almagest* into Sanskrit** (as the *Samrat Siddhanta*, via al-Tusi's Arabic recension) and **Euclid's *Elements*** (as the *Rekhaganita*) makes the point concrete: the same court was simultaneously reading Greek geometry through Arabic, computing in the Sanskrit Siddhantic mode, and consulting French tables. Here the transmission is **attested in the primary record**, not inferred from a parallel — the honest contrast with most cross-tradition claims in the vault, where dependence must be argued.
 

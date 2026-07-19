@@ -63,7 +63,7 @@ refs:
   - title: "Eclipses in Australian Aboriginal Astronomy"
     author: "Hamacher, Duane W. & Norris, Ray P."
     year: 2011
-    publisher: "Journal of Astronomical History and Heritage 14(1): 21-34"
+    publisher: "Journal of Astronomical History and Heritage 14(2): 103-114"
     type: "journal-article"
     tier: 1
     notes: "Survey of oral-tradition records of solar and lunar eclipses (frequently framed as the Sun-woman and Moon-man)."
@@ -91,7 +91,7 @@ refs:
   - title: "The Aboriginal Australian Cosmic Landscape. Part 1: The Ethnobotany of the Skyworld"
     author: "Clarke, Philip A."
     year: 2015
-    publisher: "Journal of Astronomical History and Heritage 18(1): 23-38"
+    publisher: "Journal of Astronomical History and Heritage 18(1): 23-37"
     type: "journal-article"
     tier: 1
     notes: "A more source-critical voice; useful counterweight cautioning against reading recently recorded ethnography as evidence of ancient astronomy."
@@ -162,11 +162,11 @@ Two narrower disputes follow. The **Wurdi Youang** solar interpretation rests on
 
 1. Norris, Ray P. "Dawes Review 5: Australian Aboriginal Astronomy and Navigation." *Publications of the Astronomical Society of Australia* 33 (2016): e039. Tier 1 (anchor).
 2. Norris, Ray P. & Priscilla M. Norris. *Emu Dreaming: An Introduction to Australian Aboriginal Astronomy*. Emu Dreaming, 2009. Tier 2.
-3. Hamacher, Duane W. & Ray P. Norris. "Eclipses in Australian Aboriginal Astronomy." *Journal of Astronomical History and Heritage* 14, no. 1 (2011): 21-34. Tier 1.
+3. Hamacher, Duane W. & Ray P. Norris. "Eclipses in Australian Aboriginal Astronomy." *Journal of Astronomical History and Heritage* 14, no. 2 (2011): 103-114. Tier 1.
 4. Fuller, Robert S., Michael G. Anderson, Ray P. Norris & Michelle Trudgett. "The Emu Sky Knowledge of the Kamilaroi and Euahlayi Peoples." *JAHH* 17, no. 2 (2014): 171-179. Tier 1.
 5. Norris, Ray P., Priscilla M. Norris, Duane W. Hamacher & Ray Abrahams. "Wurdi Youang: an Australian Aboriginal stone arrangement with possible solar indications." *Rock Art Research* 30, no. 1 (2013): 55-65. Tier 1.
 6. Hamacher, Duane W. "Observations of red-giant variable stars by Aboriginal Australians." *The Australian Journal of Anthropology* 29, no. 1 (2018): 89-107. Tier 2 (venue to verify).
-7. Clarke, Philip A. "The Aboriginal Australian Cosmic Landscape. Part 1." *JAHH* 18, no. 1 (2015): 23-38. Tier 1 (source-critical).
+7. Clarke, Philip A. "The Aboriginal Australian Cosmic Landscape. Part 2: Plant Connections with the Skyworld." *JAHH* 18, no. 1 (2015): 23-37. Tier 1 (source-critical).
 8. Nunn, Patrick D. & Nicholas J. Reid. "Aboriginal Memories of Inundation of the Australian Coast Dating from More than 7000 Years Ago." *Australian Geographer* 47, no. 1 (2016): 11-47. Tier 1.
 9. Urton, Gary. *At the Crossroads of the Earth and the Sky: An Andean Cosmology*. University of Texas Press, 1981. Tier 1 (Andean dark-cloud comparison).
 10. Clarkson, Chris, et al. "Human occupation of northern Australia by 65,000 years ago." *Nature* 547 (2017): 306-310. Tier 1.

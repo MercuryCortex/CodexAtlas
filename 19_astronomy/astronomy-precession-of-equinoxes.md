@@ -2,7 +2,7 @@
 type: astronomy
 id: "astronomy-precession-of-equinoxes"
 title: "Precession of the Equinoxes"
-aka: ["precession of the equinoxes", "axial precession", "the precession of the solstitial and equinoctial points", "the Great Year", "the Platonic Year (later identification)", "prokēgēsis / metaptōsis tōn isēmerinōn"]
+aka: ["precession of the equinoxes", "axial precession", "the precession of the solstitial and equinoctial points", "the Great Year", "the Platonic Year (later identification)"]
 category: "phenomenon"
 date-earliest: -128
 date-latest: 150
