@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-07-18T23:27:07Z",
+  "generatedAt": "2026-07-19T02:16:53Z",
   "vault": {
-    "totalNodes": 5492,
+    "totalNodes": 5516,
     "lensCount": 30,
     "familyCount": 14,
     "unmatchedTradNodes": 40,
-    "intentionallyCrossTradition": 42
+    "intentionallyCrossTradition": 55
   },
   "lenses": [
     {
@@ -182,13 +182,13 @@
     {
       "folder": "13_morals",
       "label": "Morals / ethics",
-      "count": 37,
+      "count": 49,
       "baseline": 180,
-      "ratio": 0.206,
-      "band": "anemic",
+      "ratio": 0.272,
+      "band": "developing",
       "baselineNote": "Singer Companion to Ethics + EoR ethical-systems entries",
       "statuses": {
-        "full": 37
+        "full": 49
       }
     },
     {
@@ -315,14 +315,15 @@
     {
       "folder": "23_material_culture",
       "label": "Material culture",
-      "count": 36,
+      "count": 48,
       "baseline": 180,
-      "ratio": 0.2,
-      "band": "anemic",
+      "ratio": 0.267,
+      "band": "developing",
       "baselineNote": "Morgan Religion & Material Culture + relic / instrument / regalia entries",
       "statuses": {
         "stub": 14,
-        "full": 22
+        "full": 32,
+        "(no status)": 2
       }
     },
     {
@@ -470,9 +471,9 @@
     {
       "key": "abrahamic",
       "label": "Abrahamic",
-      "count": 1081,
+      "count": 1088,
       "baseline": 700,
-      "ratio": 1.544,
+      "ratio": 1.554,
       "band": "over-baseline",
       "perLens": {
         "02_documents": 315,
@@ -484,7 +485,7 @@
         "10_music": 21,
         "11_alphabets": 12,
         "12_alchemy": 3,
-        "13_morals": 10,
+        "13_morals": 17,
         "14_rituals": 31,
         "15_philosophy": 13,
         "16_mathematics": 3,
@@ -552,9 +553,9 @@
     {
       "key": "indic",
       "label": "Indic (Hindu / Jain / Sikh)",
-      "count": 296,
+      "count": 297,
       "baseline": 520,
-      "ratio": 0.569,
+      "ratio": 0.571,
       "band": "developing",
       "perLens": {
         "02_documents": 48,
@@ -564,7 +565,7 @@
         "10_music": 14,
         "11_alphabets": 2,
         "12_alchemy": 1,
-        "13_morals": 6,
+        "13_morals": 7,
         "14_rituals": 14,
         "15_philosophy": 15,
         "16_mathematics": 4,
@@ -583,9 +584,9 @@
     {
       "key": "buddhist",
       "label": "Buddhist",
-      "count": 184,
+      "count": 186,
       "baseline": 380,
-      "ratio": 0.484,
+      "ratio": 0.489,
       "band": "developing",
       "perLens": {
         "02_documents": 36,
@@ -593,7 +594,7 @@
         "04_persons": 40,
         "10_music": 4,
         "11_alphabets": 1,
-        "13_morals": 3,
+        "13_morals": 5,
         "14_rituals": 6,
         "15_philosophy": 9,
         "17_medicine": 2,
@@ -713,9 +714,9 @@
     {
       "key": "indigenous-other",
       "label": "Indigenous (N.American / Oceanic / Australian / Arctic)",
-      "count": 89,
+      "count": 90,
       "baseline": 200,
-      "ratio": 0.445,
+      "ratio": 0.45,
       "band": "developing",
       "perLens": {
         "02_documents": 8,
@@ -723,6 +724,7 @@
         "04_persons": 3,
         "05_events": 1,
         "10_music": 8,
+        "13_morals": 1,
         "14_rituals": 9,
         "17_medicine": 1,
         "18_languages": 1,
