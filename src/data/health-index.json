@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-07-19T02:16:53Z",
+  "generatedAt": "2026-07-19T04:19:34Z",
   "vault": {
-    "totalNodes": 5516,
+    "totalNodes": 5540,
     "lensCount": 30,
     "familyCount": 14,
-    "unmatchedTradNodes": 40,
+    "unmatchedTradNodes": 52,
     "intentionallyCrossTradition": 55
   },
   "lenses": [
@@ -329,14 +329,14 @@
     {
       "folder": "24_pharmacology",
       "label": "Pharmacology",
-      "count": 17,
+      "count": 29,
       "baseline": 70,
-      "ratio": 0.243,
-      "band": "anemic",
+      "ratio": 0.414,
+      "band": "developing",
       "baselineNote": "Schultes-Hofmann Plants of the Gods + sacred-entheogen / pharmacy entries",
       "statuses": {
         "(no status)": 12,
-        "metadata": 2,
+        "metadata": 14,
         "stub": 3
       }
     },
@@ -371,13 +371,13 @@
     {
       "folder": "27_attire",
       "label": "Attire",
-      "count": 19,
+      "count": 31,
       "baseline": 90,
-      "ratio": 0.211,
-      "band": "anemic",
+      "ratio": 0.344,
+      "band": "developing",
       "baselineNote": "Welters-Lillethun Fashion Studies religious-vestment / regalia entries",
       "statuses": {
-        "(no status)": 19
+        "(no status)": 31
       }
     },
     {
@@ -776,6 +776,10 @@
     {
       "tradition": "roman",
       "count": 15
+    },
+    {
+      "tradition": "`cross-tradition`",
+      "count": 12
     },
     {
       "tradition": "tradition-proto-indo-european-religion",
