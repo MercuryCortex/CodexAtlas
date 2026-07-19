@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-07-19T04:19:34Z",
+  "generatedAt": "2026-07-19T05:35:39Z",
   "vault": {
-    "totalNodes": 5540,
+    "totalNodes": 5552,
     "lensCount": 30,
     "familyCount": 14,
     "unmatchedTradNodes": 52,
-    "intentionallyCrossTradition": 55
+    "intentionallyCrossTradition": 58
   },
   "lenses": [
     {
@@ -409,13 +409,13 @@
     {
       "folder": "31_consciousness",
       "label": "Consciousness",
-      "count": 25,
+      "count": 37,
       "baseline": 90,
-      "ratio": 0.278,
+      "ratio": 0.411,
       "band": "developing",
       "baselineNote": "James Varieties + Forman Innate Capacity + contemplative-studies entries",
       "statuses": {
-        "(no status)": 25
+        "(no status)": 37
       }
     }
   ],
@@ -471,9 +471,9 @@
     {
       "key": "abrahamic",
       "label": "Abrahamic",
-      "count": 1088,
+      "count": 1094,
       "baseline": 700,
-      "ratio": 1.554,
+      "ratio": 1.563,
       "band": "over-baseline",
       "perLens": {
         "02_documents": 315,
@@ -497,7 +497,7 @@
         "23_material_culture": 13,
         "26_calendars": 8,
         "27_attire": 11,
-        "31_consciousness": 2
+        "31_consciousness": 8
       }
     },
     {
@@ -553,9 +553,9 @@
     {
       "key": "indic",
       "label": "Indic (Hindu / Jain / Sikh)",
-      "count": 297,
+      "count": 298,
       "baseline": 520,
-      "ratio": 0.571,
+      "ratio": 0.573,
       "band": "developing",
       "perLens": {
         "02_documents": 48,
@@ -578,15 +578,15 @@
         "25_divination": 1,
         "26_calendars": 2,
         "27_attire": 3,
-        "31_consciousness": 2
+        "31_consciousness": 3
       }
     },
     {
       "key": "buddhist",
       "label": "Buddhist",
-      "count": 186,
+      "count": 188,
       "baseline": 380,
-      "ratio": 0.489,
+      "ratio": 0.495,
       "band": "developing",
       "perLens": {
         "02_documents": 36,
@@ -605,7 +605,7 @@
         "23_material_culture": 7,
         "26_calendars": 2,
         "27_attire": 1,
-        "31_consciousness": 5
+        "31_consciousness": 7
       }
     },
     {

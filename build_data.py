@@ -58,7 +58,7 @@ NODE_DIRS = {
     # profiles. For TL-1-validation we whitelist consciousness-figure
     # (Jung is the seed). Other sub-types whitelist when their first
     # batch lands. Full lens awaits per-item §10 checklist greenlight.
-    "consciousness-figure": ["31_consciousness/figures"],
+    "consciousness-figure": ["31_consciousness"],
 }
 
 # ---------- minimal YAML parser tailored to our schema ----------
