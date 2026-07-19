@@ -105,19 +105,12 @@
     font-family:var(--mono);font-size:9px;letter-spacing:.14em;color:#231b08;
     background:var(--gold);padding:3px 7px;border-radius:2px;text-transform:uppercase;
   }
+  .tile .rec.ok{background:transparent;color:#8fd6a8;border:1px solid rgba(143,214,168,.4)}
   .tile.on{box-shadow:0 0 0 1px var(--gold)}
 
-  /* ---------- hulls ---------- */
+  /* ---------- the Eye toy ---------- */
   .wide{border:1px solid rgba(233,229,244,.08);border-radius:4px;overflow:hidden}
-  .wide canvas{display:block;width:100%;height:320px}
-  .board{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:18px}
-  .frame{border:1px solid rgba(233,229,244,.08);border-radius:4px;overflow:hidden}
-  .frame canvas{display:block;width:100%;height:190px}
-  .frame .cap{
-    padding:9px 12px;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;
-    color:var(--dim);border-top:1px solid rgba(233,229,244,.06);
-  }
-  .frame .cap b{color:var(--gold);font-weight:600;letter-spacing:.16em}
+  .wide canvas{display:block;width:100%;height:460px}
 
   /* ---------- principles / ship ---------- */
   .rules{margin:26px 0 0;padding:0;list-style:none;max-width:66ch}
@@ -133,14 +126,13 @@
   .ship .lbl{font-family:var(--mono);font-size:10px;letter-spacing:.24em;color:var(--gold);text-transform:uppercase;margin-bottom:14px}
   .ship p{color:var(--dim);font-size:15px;max-width:70ch;margin:8px 0}
   .ship p b{color:var(--ink)}
-  @media (prefers-reduced-motion:reduce){ /* JS also defaults motion OFF */ }
 </style>
 
 <div class="wrap">
 <header>
-  <div class="eyebrow">Codex Atlas · Design Lab · 2026-07-19</div>
+  <div class="eyebrow">Codex Atlas · Design Lab · Round 2 · 2026-07-20</div>
   <h1>The Node</h1>
-  <p class="dek">Four treatments, one geometry. Every hero look strips cleanly back to the canonical ring — the minimal toggle and the zoom ladder are the same axis.</p>
+  <p class="dek">The ring won. Nothing replaces it — every hero look is a dress over the canonical ring: liquid held inside it, light moving on it, breath around it. At rest, each is allowed to be perfectly still.</p>
 </header>
 
 <div class="bar">
@@ -152,10 +144,10 @@
   </div>
   <div class="grp">
     <span class="lbl">Ground</span>
-    <button class="sw" data-t="nebula" title="Nebula (current)" style="background:linear-gradient(135deg,#1c1547,#31226b)"></button>
-    <button class="sw on" data-t="obsidian" title="Obsidian" style="background:linear-gradient(135deg,#0b0918,#171231)"></button>
+    <button class="sw on" data-t="obsidian" title="Obsidian (default)" style="background:linear-gradient(135deg,#0b0918,#171231)"></button>
     <button class="sw" data-t="void" title="Deep Void" style="background:linear-gradient(135deg,#04060d,#0b101f)"></button>
-    <button class="sw" data-t="inkwell" title="Inkwell" style="background:linear-gradient(135deg,#140f0b,#211711)"></button>
+    <button class="sw" data-t="nebula" title="Nebula (theme)" style="background:linear-gradient(135deg,#1c1547,#31226b)"></button>
+    <button class="sw" data-t="inkwell" title="Inkwell (theme)" style="background:linear-gradient(135deg,#140f0b,#211711)"></button>
   </div>
   <div class="grp">
     <span class="lbl">Motion</span>
@@ -170,31 +162,31 @@
     <span class="snum">01</span><h2>Node treatments</h2>
     <span class="snote">hover the large node · click = locked<br>ladder proves the read at map scale</span>
   </div>
-  <p class="intro">The rule: <em>geometry is canon, light is dress.</em> All four share the same disk, ring and core — what changes is how light sits on the glass. Anything that can't survive the strip back to Minimal doesn't ship.</p>
+  <p class="intro">Round 2, after review: <em>the solid bead is out.</em> The canonical ring is the winner and the canon — so the organic life now lives <em>with</em> the ring, not instead of it. Toggle Minimal and each one strips back to the exact same ring.</p>
   <div class="cards">
     <div class="card" data-tr="ring">
-      <div class="head"><h3>Canonical Ring</h3><span class="chip fallback">Fallback / Minimal</span></div>
-      <p class="desc">The floor. Crisp rim, quiet core, breath of halo. This is the Minimal view and the sub-8px read everywhere.</p>
+      <div class="head"><h3>Canonical Ring</h3><span class="chip fallback">The floor</span></div>
+      <p class="desc">Untouched. The most elegant read at every size — everything below builds on this and only this.</p>
       <canvas></canvas>
       <div class="foot"><span>cost: baseline</span><span>always available</span></div>
     </div>
-    <div class="card" data-tr="glass">
-      <div class="head"><h3>Glass Cabochon</h3><span class="chip shipped">Hero v1 · Shipped</span></div>
-      <p class="desc">Top-lit hemisphere: specular glint, fresnel rim. Hover splits the rim into a prism. Already live in the shader.</p>
+    <div class="card" data-tr="dew">
+      <div class="head"><h3>Dew Core</h3><span class="chip candidate">Hero candidate · the drop</span></div>
+      <p class="desc">The core becomes a held drop of liquid — translucent, softly organic, a slow living meniscus inside the ring. Still reads as a perfect node from afar.</p>
       <canvas></canvas>
-      <div class="foot"><span>cost: in-fragment WGSL</span><span>no new pass · 60fps</span></div>
+      <div class="foot"><span>cost: in-fragment WGSL</span><span>LOD: plain core under 12px</span></div>
     </div>
-    <div class="card" data-tr="core">
-      <div class="head"><h3>Living Core</h3><span class="chip candidate">Hero v2 · Recommended</span></div>
-      <p class="desc">The cabochon with slow ink drifting inside the glass — the node breathes. Motion so slow it reads as presence, not animation.</p>
+    <div class="card" data-tr="lring">
+      <div class="head"><h3>Living Ring</h3><span class="chip candidate">Hero candidate · circulating light</span></div>
+      <p class="desc">Light slowly circulates the rim while the core breathes. Pure geometry, quietly alive — the most restrained of the three.</p>
       <canvas></canvas>
-      <div class="foot"><span>cost: +noise term in fragment</span><span>LOD: stills under 14px</span></div>
+      <div class="foot"><span>cost: one phase term</span><span>LOD: static rim under 10px</span></div>
     </div>
-    <div class="card" data-tr="star">
-      <div class="head"><h3>Starglass</h3><span class="chip candidate">Reserved · Locked nodes</span></div>
-      <p class="desc">Cabochon plus a fine diffraction halo and a four-point glint. Too loud for the whole field — earned only by the selected node.</p>
+    <div class="card" data-tr="bloom">
+      <div class="head"><h3>Ink Bloom</h3><span class="chip candidate">Aura · selected node only</span></div>
+      <p class="desc">An organic breath of ink blooms outside the ring — like pigment dispersing in water. Too much for the whole field; a state the chosen node earns.</p>
       <canvas></canvas>
-      <div class="foot"><span>cost: +2 rings, hover glint</span><span>selection state only</span></div>
+      <div class="foot"><span>cost: +noise term</span><span>selection state only</span></div>
     </div>
   </div>
 </section>
@@ -204,27 +196,22 @@
     <span class="snum">02</span><h2>The ground</h2>
     <span class="snote">click a tile — the whole lab re-grounds</span>
   </div>
-  <p class="intro">The wheel reads by the contrast between rim-light and ground. Same node field on four candidate grounds — the current nebula stays as a theme; <em>Obsidian</em> is the proposed default: two steps darker, the glass does the glowing instead of the sky.</p>
+  <p class="intro"><em>Obsidian and Deep Void approved.</em> Obsidian is the working default, Void the high-contrast sibling; the current Nebula and Inkwell stay in the theme drawer.</p>
   <div class="tiles">
-    <button class="tile" data-t="nebula"><canvas></canvas><span class="tl">I · Nebula — current</span></button>
-    <button class="tile on" data-t="obsidian"><canvas></canvas><span class="tl">II · Obsidian</span><span class="rec">Proposed default</span></button>
-    <button class="tile" data-t="void"><canvas></canvas><span class="tl">III · Deep Void</span></button>
-    <button class="tile" data-t="inkwell"><canvas></canvas><span class="tl">IV · Inkwell</span></button>
+    <button class="tile on" data-t="obsidian"><canvas></canvas><span class="tl">I · Obsidian</span><span class="rec">Default ✓</span></button>
+    <button class="tile" data-t="void"><canvas></canvas><span class="tl">II · Deep Void</span><span class="rec ok">Approved ✓</span></button>
+    <button class="tile" data-t="nebula"><canvas></canvas><span class="tl">III · Nebula — theme</span></button>
+    <button class="tile" data-t="inkwell"><canvas></canvas><span class="tl">IV · Inkwell — theme</span></button>
   </div>
 </section>
 
 <section>
   <div class="shead">
-    <span class="snum">03</span><h2>Hulls &amp; the Eye</h2>
-    <span class="snote">isolate = a camera move, not a new page</span>
+    <span class="snum">03</span><h2>The Eye — play with it</h2>
+    <span class="snote">hover a family = the hull lifts · click = dive in<br>◂ THE EYE brings you back</span>
   </div>
-  <p class="intro">Families get a hull: hairline contour, a breath of fill, the label sitting <em>on</em> the hull. Click a hull and the camera dives — everything else recedes, the ground tints toward the family, and one breadcrumb takes you back to the Eye.</p>
-  <div class="wide"><canvas id="hullCanvas"></canvas></div>
-  <div class="board">
-    <div class="frame"><canvas data-f="1"></canvas><div class="cap"><b>1 · The Eye</b> — full wheel; hover lifts a hull</div></div>
-    <div class="frame"><canvas data-f="2"></canvas><div class="cap"><b>2 · The Dive</b> — hull expands, siblings recede</div></div>
-    <div class="frame"><canvas data-f="3"></canvas><div class="cap"><b>3 · Family Field</b> — ground tints; ◂ breadcrumb returns</div></div>
-  </div>
+  <p class="intro">The toy you asked for. Families sit in the wheel — <em>the well-shaped logic always comes first.</em> Hover one and its hull lifts (hairline + a breath of fill, label on the edge). Click and the camera dives: siblings recede, the ground tints toward the family. One breadcrumb returns.</p>
+  <div class="wide"><canvas id="eyeCanvas"></canvas></div>
   <ul class="rules">
     <li><b>Hairline, never blob.</b> 1px contour at ~25% + 4% fill. The hull is a whisper of territory, not a colored puddle.</li>
     <li><b>Labels live on the hull edge,</b> replacing the floating ring of tradition names once you're close enough to see hulls.</li>
@@ -234,9 +221,9 @@
 
 <div class="ship">
   <div class="lbl">How it ships</div>
-  <p><b>Same instanced disks, same single pass.</b> Every treatment here is dress inside the existing node fragment shader — no framebuffer reads, no extra draw calls, Safari-first.</p>
+  <p><b>The ring is canon; light is dress.</b> Dew, Living Ring and Bloom are all in-fragment dress on the existing instanced disks — no new pass, no framebuffer reads, Safari-first.</p>
   <p><b>Minimal toggle = LOD floor = same dial.</b> Dress level is one uniform: the zoom ladder lowers it automatically at small radii, the Minimal toggle pins it to zero. One axis, no forked renderer.</p>
-  <p><b>Starglass is a state, not a style.</b> The field stays quiet; only lock/selection earns the halo. Restraint is what keeps the hero look classy at 3,000 nodes.</p>
+  <p><b>Bloom is a state, not a style.</b> The field stays quiet; only the selected node blooms. Restraint is what keeps this classy at 3,000 nodes.</p>
 </div>
 </div>
 
@@ -246,8 +233,8 @@
   /* motion defaults ON — motion is the thing under evaluation in this lab */
   var S = { mode:'hero', theme:'obsidian', motion:true };
 
-  var FAM = { amber:'#e8b06a', rose:'#e07a8a', teal:'#6fd0c3', sage:'#a9c98a', lav:'#9d8fe0', ice:'#8fb8e0' };
-  var CARD_COLOR = { ring:FAM.amber, glass:FAM.rose, core:FAM.teal, star:FAM.lav };
+  var FAM = { amber:'#e8b06a', rose:'#e07a8a', teal:'#6fd0c3', sage:'#a9c98a', lav:'#9d8fe0', ice:'#8fb8e0', plum:'#c99ad6', sand:'#d9c08a' };
+  var CARD_COLOR = { ring:FAM.amber, dew:FAM.teal, lring:FAM.amber, bloom:FAM.lav };
 
   function hx(c){
     if(c.charAt(0)==='#'){ var n=parseInt(c.slice(1),16); return [n>>16&255,n>>8&255,n&255]; }
@@ -265,12 +252,12 @@
     void:    { a:'#04060d', b:'#0a0e1c', glow:'rgba(70,100,180,.10)', star:1 },
     inkwell: { a:'#140f0b', b:'#1e1610', glow:'rgba(200,150,80,.10)', star:0 }
   };
-  function paintBG(ctx,w,h,name,tint){
+  function paintBG(ctx,w,h,name,tint,tintA){
     var T=THEMES[name];
     var g=ctx.createLinearGradient(0,0,0,h);
     g.addColorStop(0,T.a); g.addColorStop(1,T.b);
     ctx.fillStyle=g; ctx.fillRect(0,0,w,h);
-    if(tint){ ctx.fillStyle=rgba(tint,.07); ctx.fillRect(0,0,w,h); }
+    if(tint&&tintA>0.001){ ctx.fillStyle=rgba(tint,.09*tintA); ctx.fillRect(0,0,w,h); }
     var r=ctx.createRadialGradient(w*.72,h*.15,0,w*.72,h*.15,w*.8);
     r.addColorStop(0,T.glow); r.addColorStop(1,'rgba(0,0,0,0)');
     ctx.fillStyle=r; ctx.fillRect(0,0,w,h);
@@ -280,62 +267,90 @@
     }}
   }
 
+  /* ---------- organic blob path (harmonic wobble; still = organic but frozen) ---------- */
+  function blobPath(ctx,x,y,R,t,seed){
+    var N=40; ctx.beginPath();
+    for(var i=0;i<=N;i++){
+      var th=i/N*Math.PI*2;
+      var w=1 + .05*Math.sin(2*th + t*.6 + seed)
+            + .035*Math.sin(3*th - t*.42 + seed*2.1)
+            + .025*Math.sin(5*th + t*.3 + seed*3.7);
+      var px=x+Math.cos(th)*R*w, py=y+Math.sin(th)*R*w;
+      if(i===0) ctx.moveTo(px,py); else ctx.lineTo(px,py);
+    }
+    ctx.closePath();
+  }
+
   /* ---------- the node painter ---------- */
-  /* st: 0 rest · 1 hover · 2 locked · 3 dim */
-  function drawNode(ctx,x,y,r,tr,st,mode,color,t){
+  /* st: 0 rest · 1 hover · 2 locked · 3 dim — every treatment is the ring + dress */
+  function drawNode(ctx,x,y,r,tr,st,mode,color,t,seed){
     var dim = st===3, a = dim?0.32:1;
     var col = dim? mix(color,'#3a3752',0.55) : color;
-    if(mode==='minimal' || r<5) tr='ring';
-
-    if(tr==='ring'){
-      var halo=ctx.createRadialGradient(x,y,r*.5,x,y,r*1.9);
-      halo.addColorStop(0,rgba(color,(st===1||st===2?0.20:0.10)*a));
-      halo.addColorStop(1,'rgba(0,0,0,0)');
-      ctx.fillStyle=halo; ctx.beginPath(); ctx.arc(x,y,r*1.9,0,7); ctx.fill();
-      ctx.lineWidth=Math.max(1.1,r*.10);
-      ctx.strokeStyle = st===1? mix(col,'#ffffff',.35) : rgba(col,.95*a);
-      ctx.beginPath(); ctx.arc(x,y,r*.86,0,7); ctx.stroke();
-      ctx.fillStyle=rgba(mix(col,'#ffffff',.25),.92*a);
-      ctx.beginPath(); ctx.arc(x,y,r*.32,0,7); ctx.fill();
-      if(st===2){ ctx.lineWidth=1; ctx.strokeStyle=rgba('#d3b877',.8);
-        ctx.beginPath(); ctx.arc(x,y,r*1.28,0,7); ctx.stroke(); }
-      return;
-    }
-
-    /* glass base — top-lit cabochon */
-    var body=ctx.createRadialGradient(x-r*.38,y-r*.42,r*.1,x,y,r);
-    body.addColorStop(0, mix(col,'#ffffff',.42));
-    body.addColorStop(.55, col);
-    body.addColorStop(1, mix(col,'#0d0a1c',.62));
-    ctx.globalAlpha=a;
-    ctx.fillStyle=body; ctx.beginPath(); ctx.arc(x,y,r,0,7); ctx.fill();
-
-    if(tr==='core' && r>=14 && !dim){            /* ink drifting inside the glass */
-      ctx.save(); ctx.beginPath(); ctx.arc(x,y,r*.96,0,7); ctx.clip();
-      ctx.globalCompositeOperation='screen';
-      for(var i=0;i<3;i++){
-        var ang=t*(.5+.14*i)+i*2.1, d=r*.4;
-        var bx=x+Math.cos(ang)*d, by=y+Math.sin(ang*.8)*d;
-        var br=r*(.55+.09*Math.sin(t*.9+i*1.7));
-        var ink=ctx.createRadialGradient(bx,by,0,bx,by,br);
-        ink.addColorStop(0, rgba(mix(col, i===1?'#ffffff':'#4030a0', .35), .42));
-        ink.addColorStop(1,'rgba(0,0,0,0)');
-        ctx.fillStyle=ink; ctx.fillRect(x-r,y-r,r*2,r*2);
-      }
-      ctx.restore();
-      var breath=.10+.06*Math.sin(t*.8);
-      var hg=ctx.createRadialGradient(x,y,r,x,y,r*1.6);
-      hg.addColorStop(0,rgba(col,breath)); hg.addColorStop(1,'rgba(0,0,0,0)');
-      ctx.fillStyle=hg; ctx.beginPath(); ctx.arc(x,y,r*1.6,0,7); ctx.fill();
-    }
-
-    /* fresnel rim */
+    if(mode==='minimal' || r<6) tr='ring';
     var hov = st===1||st===2;
-    ctx.lineWidth=Math.max(1,r*.09);
-    ctx.strokeStyle=rgba(mix(col,'#ffffff',hov?.55:.3),(hov?.85:.55)*a);
-    ctx.beginPath(); ctx.arc(x,y,r*.93,0,7); ctx.stroke();
+    if(seed===undefined) seed=(x*.37+y*.53)%6.28;
 
-    /* prism split on hover (shipped look) */
+    /* halo */
+    var halo=ctx.createRadialGradient(x,y,r*.5,x,y,r*1.9);
+    halo.addColorStop(0,rgba(col,(hov?0.20:0.10)*a));
+    halo.addColorStop(1,'rgba(0,0,0,0)');
+    ctx.fillStyle=halo; ctx.beginPath(); ctx.arc(x,y,r*1.9,0,7); ctx.fill();
+
+    /* bloom aura — behind the ring */
+    if(tr==='bloom' && !dim && r>=6){
+      ctx.save(); ctx.globalCompositeOperation='screen';
+      for(var i=0;i<3;i++){
+        var br=r*(1.2+.28*i+.12*Math.sin(t*.5+i*2.1+seed));
+        ctx.globalAlpha=.17-.035*i;
+        blobPath(ctx,x,y,br,t*.75,seed+i*2.3);
+        var bg=ctx.createRadialGradient(x,y,r*.7,x,y,br);
+        bg.addColorStop(0,rgba(col,.55)); bg.addColorStop(1,'rgba(0,0,0,0)');
+        ctx.fillStyle=bg; ctx.fill();
+      }
+      ctx.restore(); ctx.globalAlpha=1;
+    }
+
+    /* THE RING — canon, identical in every treatment */
+    var rw=Math.max(1.1,r*.10);
+    ctx.lineWidth=rw;
+    ctx.strokeStyle = hov? mix(col,'#ffffff',.35) : rgba(col,.95*a);
+    ctx.beginPath(); ctx.arc(x,y,r*.86,0,7); ctx.stroke();
+
+    /* circulating light on the rim */
+    if(tr==='lring' && !dim && r>=6){
+      ctx.save(); ctx.globalCompositeOperation='screen';
+      var ga=t*.8+seed;
+      for(var k=0;k<5;k++){
+        ctx.globalAlpha=.5-.09*k;
+        ctx.lineWidth=rw*1.15;
+        ctx.strokeStyle=mix(col,'#ffffff',.75);
+        ctx.beginPath(); ctx.arc(x,y,r*.86,ga-k*.28,ga-k*.28+.3); ctx.stroke();
+      }
+      ctx.restore(); ctx.globalAlpha=1;
+    }
+
+    /* the core: canonical dot, or the held drop */
+    if(tr==='dew' && !dim && r>=6){
+      var R=r*.52;
+      blobPath(ctx,x,y,R,t,seed);
+      var lg=ctx.createRadialGradient(x-R*.3,y-R*.35,R*.1,x,y,R*1.05);
+      lg.addColorStop(0,rgba(mix(col,'#ffffff',.55),.55*a));
+      lg.addColorStop(.6,rgba(col,.30*a));
+      lg.addColorStop(1,rgba(col,.16*a));
+      ctx.fillStyle=lg; ctx.fill();
+      ctx.lineWidth=1; ctx.strokeStyle=rgba(mix(col,'#ffffff',.5),.5*a);
+      blobPath(ctx,x,y,R,t,seed); ctx.stroke();
+      var hxp=x-R*.32+Math.cos(t*.5+seed)*R*.12, hyp=y-R*.38+Math.sin(t*.4+seed)*R*.10;
+      var sp=ctx.createRadialGradient(hxp,hyp,0,hxp,hyp,R*.30);
+      sp.addColorStop(0,'rgba(255,255,255,'+(.65*a)+')'); sp.addColorStop(1,'rgba(255,255,255,0)');
+      ctx.fillStyle=sp; ctx.beginPath(); ctx.arc(hxp,hyp,R*.30,0,7); ctx.fill();
+    } else {
+      var ca=(tr==='lring'&&!dim)? .78+.16*Math.sin(t*.9+seed) : .92;
+      ctx.fillStyle=rgba(mix(col,'#ffffff',.25),ca*a);
+      ctx.beginPath(); ctx.arc(x,y,r*.32,0,7); ctx.fill();
+    }
+
+    /* hover prism — the shipped look, kept on every treatment */
     if(st===1 && r>=10){
       ctx.save(); ctx.globalCompositeOperation='screen'; ctx.lineWidth=Math.max(1,r*.06);
       var P=[['rgba(255,90,90,.75)',-.5],['rgba(110,255,150,.7)',1.6],['rgba(110,150,255,.8)',3.7]];
@@ -344,30 +359,8 @@
         ctx.beginPath(); ctx.arc(x,y,r*.97,po,po+2.2); ctx.stroke(); }
       ctx.restore();
     }
-
-    /* specular glint */
-    var sp=ctx.createRadialGradient(x-r*.38,y-r*.44,0,x-r*.38,y-r*.44,r*.34);
-    sp.addColorStop(0,'rgba(255,255,255,'+(hov?.95:.75)*a+')');
-    sp.addColorStop(1,'rgba(255,255,255,0)');
-    ctx.fillStyle=sp; ctx.beginPath(); ctx.arc(x-r*.38,y-r*.44,r*.34,0,7); ctx.fill();
-
-    if(tr==='star' && r>=14 && !dim){            /* diffraction halo + glint cross */
-      ctx.lineWidth=1; ctx.strokeStyle=rgba(col,.4);
-      ctx.beginPath(); ctx.arc(x,y,r*1.42,0,7); ctx.stroke();
-      ctx.strokeStyle=rgba(mix(col,'#8fb8e0',.6),.22);
-      ctx.beginPath(); ctx.arc(x,y,r*1.52,0,7); ctx.stroke();
-      if(hov){ ctx.save(); ctx.globalCompositeOperation='screen';
-        for(var k=0;k<4;k++){ var A=k*Math.PI/2 + Math.PI/4*0;
-          var gx=Math.cos(A),gy=Math.sin(A);
-          var ln=ctx.createLinearGradient(x,y,x+gx*r*2.1,y+gy*r*2.1);
-          ln.addColorStop(0,'rgba(255,255,255,.55)'); ln.addColorStop(1,'rgba(255,255,255,0)');
-          ctx.strokeStyle=ln; ctx.lineWidth=1.1;
-          ctx.beginPath(); ctx.moveTo(x+gx*r*.5,y+gy*r*.5); ctx.lineTo(x+gx*r*2.1,y+gy*r*2.1); ctx.stroke(); }
-        ctx.restore(); }
-    }
     if(st===2){ ctx.lineWidth=1; ctx.strokeStyle=rgba('#d3b877',.85);
-      ctx.beginPath(); ctx.arc(x,y,r*1.3,0,7); ctx.stroke(); }
-    ctx.globalAlpha=1;
+      ctx.beginPath(); ctx.arc(x,y,r*1.28,0,7); ctx.stroke(); }
   }
 
   /* ---------- canvas plumbing ---------- */
@@ -381,9 +374,9 @@
   }
   var MONO='ui-monospace,"SF Mono",Menlo,monospace';
   function tag(ctx,txt,x,y,dim){
-    ctx.font='600 8.5px '+MONO; ctx.textAlign='center'; ctx.letterSpacing='1px';
+    ctx.font='600 8.5px '+MONO; ctx.textAlign='center';
     ctx.fillStyle='rgba(233,229,244,'+(dim?.35:.5)+')';
-    ctx.fillText(txt.toUpperCase(),x,y); ctx.letterSpacing='0px';
+    ctx.fillText(txt.toUpperCase(),x,y);
   }
 
   /* ---------- treatment cards ---------- */
@@ -394,27 +387,26 @@
       var b=cd._cv.getBoundingClientRect();
       var dx=e.clientX-b.left-120, dy=e.clientY-b.top-140;
       cd._hov = dx*dx+dy*dy < 66*66;
-      if(!S.motion) paintAll();
     });
-    cd._cv.addEventListener('pointerleave',function(){ cd._hov=false; if(!S.motion) paintAll(); });
-    cd._cv.addEventListener('click',function(){ if(cd._hov){ cd._lock=!cd._lock; if(!S.motion) paintAll(); } });
+    cd._cv.addEventListener('pointerleave',function(){ cd._hov=false; });
+    cd._cv.addEventListener('click',function(){ if(cd._hov) cd._lock=!cd._lock; });
   });
 
   function paintCard(cd,t){
     var f=fit(cd._cv), ctx=f.ctx, col=CARD_COLOR[cd._tr];
     paintBG(ctx,f.w,f.h,S.theme);
     var heroSt = cd._lock?2 : cd._hov?1 : 0;
-    drawNode(ctx,120,140,58,cd._tr,heroSt,S.mode,col,t);
+    drawNode(ctx,120,140,58,cd._tr,heroSt,S.mode,col,t,1.3);
     tag(ctx,cd._lock?'locked':cd._hov?'hover':'rest',120,236);
 
     var sx=f.w-232, states=['rest','hover','locked','dim'];
     for(var i=0;i<4;i++){
-      drawNode(ctx,sx+i*58,78,17,cd._tr,i,S.mode,col,t);
+      drawNode(ctx,sx+i*58,78,17,cd._tr,i,S.mode,col,t,i*1.7);
       tag(ctx,states[i],sx+i*58,116,i===3);
     }
     var ladder=[22,14,8,4,2], lx=sx;
     for(var j=0;j<5;j++){
-      drawNode(ctx,lx,196,ladder[j],cd._tr,0,S.mode,col,t);
+      drawNode(ctx,lx,196,ladder[j],cd._tr,0,S.mode,col,t,j*2.2);
       tag(ctx,(ladder[j]*2)+'px',lx,240,true);
       lx+=ladder[j]+38;
     }
@@ -429,103 +421,139 @@
     for(var i=0;i<34;i++){
       var x=14+srand(i*5+2)*(f.w-28), y=14+srand(i*9+5)*(f.h-40);
       var rr=2+srand(i*3+7)*5.5;
-      drawNode(ctx,x,y,rr,rr>5?'glass':'ring',0,S.mode,cols[i%6],0);
+      drawNode(ctx,x,y,rr,rr>4.5?'dew':'ring',0,S.mode,cols[i%6],0,i);
     }
-    drawNode(ctx,f.w*.62,f.h*.42,11,'glass',1,S.mode,FAM.amber,0);
+    drawNode(ctx,f.w*.62,f.h*.42,11,'dew',1,S.mode,FAM.amber,0,9);
   }
 
-  /* ---------- hulls ---------- */
-  function hullPath(ctx,cx,cy,rx,ry,seed){
-    var N=10; ctx.beginPath();
-    for(var i=0;i<=N;i++){
-      var a=i/N*Math.PI*2;
-      var w=1+ (srand(seed+i%N)*0.16-0.08);
-      var px=cx+Math.cos(a)*rx*w, py=cy+Math.sin(a)*ry*w;
-      if(i===0) ctx.moveTo(px,py);
-      else {
-        var a0=(i-.5)/N*Math.PI*2, w0=1+(srand(seed+(i-1)%N)*0.16-0.08);
-        ctx.quadraticCurveTo(cx+Math.cos(a0)*rx*1.03*w0, cy+Math.sin(a0)*ry*1.03*w0, px, py);
+  /* ---------- THE EYE — interactive toy ---------- */
+  var FAMS=[
+    {name:'GREEK',    col:FAM.amber, n:214},
+    {name:'NORSE',    col:FAM.ice,   n:118},
+    {name:'VEDIC',    col:FAM.teal,  n:167},
+    {name:'EGYPTIAN', col:FAM.sand,  n:141},
+    {name:'GNOSTIC',  col:FAM.lav,   n:64},
+    {name:'YORUBA',   col:FAM.rose,  n:87},
+    {name:'CHINESE',  col:FAM.plum,  n:132},
+    {name:'CELTIC',   col:FAM.sage,  n:96}
+  ];
+  var eyeCv=document.getElementById('eyeCanvas');
+  var eye={ hov:-1, sel:-1, back:false, cam:{s:1,x:0,y:0}, tgt:{s:1,x:0,y:0}, overCrumb:false };
+
+  function eyeGeom(w,h){
+    var Rw=Math.min(w,h)*.33, spread=Math.min(w,h)*.105;
+    return { cx:w/2, cy:h/2+6, Rw:Rw, spread:spread };
+  }
+  function famCenter(g,i){
+    var a=i/FAMS.length*Math.PI*2-Math.PI/2;
+    return { x:Math.cos(a)*g.Rw, y:Math.sin(a)*g.Rw*.82, a:a };
+  }
+  function paintEye(t){
+    var f=fit(eyeCv), ctx=f.ctx, w=f.w, h=f.h, g=eyeGeom(w,h);
+    /* camera easing */
+    eye.cam.s+=(eye.tgt.s-eye.cam.s)*.10;
+    eye.cam.x+=(eye.tgt.x-eye.cam.x)*.10;
+    eye.cam.y+=(eye.tgt.y-eye.cam.y)*.10;
+    if(eye.back && eye.cam.s<1.06){ eye.sel=-1; eye.back=false; }
+    var prog=Math.min(1,Math.max(0,(eye.cam.s-1)/1.6));   /* 0=eye · 1=family */
+    var selCol = eye.sel>=0? FAMS[eye.sel].col : null;
+    paintBG(ctx,w,h,S.theme,selCol,prog);
+
+    function scr(wx,wy){ return [ g.cx+(wx-eye.cam.x)*eye.cam.s, g.cy+(wy-eye.cam.y)*eye.cam.s ]; }
+
+    for(var i=0;i<FAMS.length;i++){
+      var F=FAMS[i], c=famCenter(g,i);
+      var alpha = (i===eye.sel||eye.sel<0)? 1 : Math.max(0,1-prog*1.15);
+      if(alpha<.03) continue;
+      var p=scr(c.x,c.y);
+
+      /* hull: on hover in the Eye, always on the diving family */
+      var hull = (i===eye.hov&&prog<.2) || i===eye.sel;
+      if(hull){
+        var hr=g.spread*1.55*eye.cam.s;
+        blobPath(ctx,p[0],p[1],hr,t*.25,i*1.9);
+        ctx.fillStyle=rgba(F.col,.045*alpha); ctx.fill();
+        ctx.lineWidth=1; ctx.strokeStyle=rgba(F.col,(.32+.25*(1-prog))*alpha);
+        blobPath(ctx,p[0],p[1],hr,t*.25,i*1.9); ctx.stroke();
+        ctx.font='600 9px '+MONO; ctx.textAlign='center';
+        ctx.fillStyle=rgba(F.col,.85*alpha);
+        ctx.fillText(F.name+' — '+F.n, p[0], p[1]-hr-8);
+      } else if(prog<.4){
+        var lp=scr(c.x*1.52,c.y*1.55);
+        ctx.font='600 9px '+MONO; ctx.textAlign='center';
+        ctx.fillStyle=rgba(F.col,.4*(1-prog*2)*alpha);
+        ctx.fillText(F.name, lp[0], lp[1]);
       }
+
+      /* nodes */
+      ctx.globalAlpha=alpha;
+      for(var j=0;j<16;j++){
+        var ox=(srand(i*40+j)-.5)*2*g.spread, oy=(srand(i*40+j+20)-.5)*1.7*g.spread;
+        var np=scr(c.x+ox,c.y+oy);
+        var nr=(2.2+srand(i*7+j*3)*3)*eye.cam.s;
+        var st=(i===eye.sel&&j===0&&prog>.8)?2:0;
+        drawNode(ctx,np[0],np[1],j===0?6*eye.cam.s:nr,'dew',st,S.mode,F.col,t,i*10+j);
+      }
+      ctx.globalAlpha=1;
     }
-    ctx.closePath();
-  }
-  function cluster(ctx,cx,cy,n,spread,col,seed,rmax,st){
-    for(var i=0;i<n;i++){
-      var a=srand(seed+i)*Math.PI*2, d=Math.sqrt(srand(seed+i*3+1))*spread;
-      var x=cx+Math.cos(a)*d, y=cy+Math.sin(a)*d*0.8;
-      drawNode(ctx,x,y,1.6+srand(seed+i*7)*rmax,'glass',st||0,S.mode,col,0);
+
+    /* breadcrumb */
+    if(prog>.5){
+      ctx.font='600 10px '+MONO; ctx.textAlign='left';
+      ctx.fillStyle=eye.overCrumb?'rgba(211,184,119,1)':'rgba(211,184,119,.8)';
+      ctx.fillText('◂  THE EYE', 16, 24);
     }
-  }
-  function paintHull(){
-    var cv=document.getElementById('hullCanvas'), f=fit(cv), ctx=f.ctx;
-    paintBG(ctx,f.w,f.h,S.theme);
-    cluster(ctx,f.w*.16,f.h*.5,26,52,FAM.teal,40,3,3);
-    tag(ctx,'vedic',f.w*.16,f.h*.5+80,true);
-    cluster(ctx,f.w*.84,f.h*.46,24,50,FAM.lav,80,3,3);
-    tag(ctx,'gnostic',f.w*.84,f.h*.46+78,true);
-    var cx=f.w*.5, cy=f.h*.48;
-    hullPath(ctx,cx,cy,150,96,7);
-    ctx.fillStyle=rgba(FAM.amber,.045); ctx.fill();
-    ctx.lineWidth=1; ctx.strokeStyle=rgba(FAM.amber,.30); ctx.stroke();
-    cluster(ctx,cx,cy,34,78,FAM.amber,10,4.4,0);
-    drawNode(ctx,cx+22,cy-12,10,'glass',1,S.mode,FAM.amber,0);
-    ctx.font='600 10px '+MONO; ctx.textAlign='center'; ctx.letterSpacing='3px';
-    ctx.fillStyle=rgba(FAM.amber,.85);
-    ctx.fillText('GREEK — 214',cx,cy-108); ctx.letterSpacing='0px';
+    if(prog<.04 && eye.hov<0){
+      ctx.font='600 9px '+MONO; ctx.textAlign='center';
+      ctx.fillStyle='rgba(233,229,244,.30)';
+      ctx.fillText('HOVER A FAMILY · CLICK TO DIVE', w/2, h-14);
+    }
   }
 
-  /* ---------- storyboard ---------- */
-  function paintFrame(cv){
-    var f=fit(cv), ctx=f.ctx, n=cv.dataset.f;
-    var cols=[FAM.amber,FAM.rose,FAM.teal,FAM.sage,FAM.lav,FAM.ice];
-    if(n==='1'){
-      paintBG(ctx,f.w,f.h,S.theme);
-      var cx=f.w/2, cy=f.h/2+4;
-      for(var i=0;i<8;i++){
-        var a=i/8*Math.PI*2-Math.PI/2, d=58;
-        var x=cx+Math.cos(a)*d, y=cy+Math.sin(a)*d*0.78;
-        cluster(ctx,x,y,9,15,cols[i%6],i*30+5,1.8, i===1?0:3);
-        if(i===1){ hullPath(ctx,x,y,26,22,3);
-          ctx.fillStyle=rgba(cols[1],.06); ctx.fill();
-          ctx.lineWidth=1; ctx.strokeStyle=rgba(cols[1],.5); ctx.stroke(); }
+  eyeCv.addEventListener('pointermove',function(e){
+    var b=eyeCv.getBoundingClientRect(), w=b.width, h=b.height, g=eyeGeom(w,h);
+    var mx=e.clientX-b.left, my=e.clientY-b.top;
+    eye.overCrumb = eye.sel>=0 && mx<110 && my<36;
+    eye.hov=-1;
+    if(eye.sel<0){
+      for(var i=0;i<FAMS.length;i++){
+        var c=famCenter(g,i);
+        var dx=mx-(g.cx+c.x), dy=my-(g.cy+c.y);
+        if(dx*dx+dy*dy < Math.pow(g.spread*1.6,2)){ eye.hov=i; break; }
       }
-    } else if(n==='2'){
-      paintBG(ctx,f.w,f.h,S.theme);
-      for(var j=0;j<5;j++)
-        cluster(ctx,30+srand(j*9)*(f.w-60), 24+srand(j*13+3)*(f.h-48), 6, 12, cols[(j+2)%6], j*50+7, 1.5, 3);
-      var hx2=f.w*.5, hy2=f.h*.52;
-      hullPath(ctx,hx2,hy2,74,52,5);
-      ctx.fillStyle=rgba(FAM.rose,.05); ctx.fill();
-      ctx.lineWidth=1; ctx.strokeStyle=rgba(FAM.rose,.45); ctx.stroke();
-      cluster(ctx,hx2,hy2,20,44,FAM.rose,60,2.6,0);
-    } else {
-      paintBG(ctx,f.w,f.h,S.theme,FAM.rose);
-      cluster(ctx,f.w*.5,f.h*.52,30,70,FAM.rose,90,3.2,0);
-      drawNode(ctx,f.w*.5,f.h*.5,9,'glass',2,S.mode,FAM.rose,0);
-      ctx.font='600 8.5px '+MONO; ctx.textAlign='left';
-      ctx.fillStyle='rgba(211,184,119,.9)'; ctx.letterSpacing='1.5px';
-      ctx.fillText('◂ THE EYE',12,18); ctx.letterSpacing='0px';
     }
-  }
+    eyeCv.style.cursor=(eye.hov>=0||eye.overCrumb)?'pointer':'default';
+  });
+  eyeCv.addEventListener('pointerleave',function(){ eye.hov=-1; eye.overCrumb=false; });
+  eyeCv.addEventListener('click',function(e){
+    var b=eyeCv.getBoundingClientRect(), g=eyeGeom(b.width,b.height);
+    if(eye.sel<0 && eye.hov>=0){
+      var c=famCenter(g,eye.hov);
+      eye.sel=eye.hov; eye.hov=-1; eye.back=false;
+      eye.tgt={s:2.6,x:c.x,y:c.y};
+    } else if(eye.sel>=0 && eye.overCrumb){
+      eye.tgt={s:1,x:0,y:0}; eye.back=true;
+    }
+  });
 
   /* ---------- paint everything ---------- */
-  var frames=[].slice.call(document.querySelectorAll('.frame canvas'));
-  function paintStatics(){ tiles.forEach(paintTile); paintHull(); frames.forEach(paintFrame); }
+  function paintStatics(){ tiles.forEach(paintTile); }
   function paintCards(t){ cards.forEach(function(cd){ paintCard(cd,t); }); }
-  function paintAll(){ paintCards(perfT()); paintStatics(); }
-  var t0=performance.now();
-  function perfT(){ return (performance.now()-t0)/1000; }
 
-  var raf=null;
+  /* one always-running loop: ambient clock advances only while Motion is ON;
+     the Eye camera + interactions stay live either way */
+  var t0=performance.now(), last=0, amb=0;
   function loop(){
-    paintCards(perfT());
-    raf = S.motion ? requestAnimationFrame(loop) : null;
+    var now=(performance.now()-t0)/1000;
+    if(S.motion) amb+=now-last;
+    last=now;
+    paintCards(amb);
+    paintEye(amb);
+    requestAnimationFrame(loop);
   }
-  function setMotion(on){
-    S.motion=on;
-    if(raf) cancelAnimationFrame(raf), raf=null;
-    if(on) loop(); else paintCards(perfT());
-  }
+
+  /* debug handle (lab page only): lets tooling step frames without rAF */
+  window.__lab = { S:S, eye:eye, step:function(dt){ amb+=(dt||.5); paintCards(amb); paintEye(amb); } };
 
   /* ---------- controls ---------- */
   function seg(el,fn){
@@ -535,21 +563,21 @@
       fn(b.dataset.m);
     });
   }
-  seg(document.getElementById('segMode'),function(m){ S.mode=m; paintAll(); });
-  seg(document.getElementById('segMotion'),function(m){ setMotion(m==='on'); });
+  seg(document.getElementById('segMode'),function(m){ S.mode=m; paintStatics(); });
+  seg(document.getElementById('segMotion'),function(m){ S.motion=(m==='on'); });
   function setTheme(t){
     S.theme=t;
     [].forEach.call(document.querySelectorAll('.sw'),function(s){s.classList.toggle('on',s.dataset.t===t);});
     tiles.forEach(function(tl){tl.classList.toggle('on',tl.dataset.t===t);});
-    paintAll();
+    paintStatics();
   }
   [].forEach.call(document.querySelectorAll('.sw'),function(s){ s.addEventListener('click',function(){setTheme(s.dataset.t);}); });
   tiles.forEach(function(tl){ tl.addEventListener('click',function(){setTheme(tl.dataset.t);}); });
 
-  var rs; window.addEventListener('resize',function(){ clearTimeout(rs); rs=setTimeout(paintAll,120); });
+  var rs; window.addEventListener('resize',function(){ clearTimeout(rs); rs=setTimeout(paintStatics,120); });
 
   /* boot */
-  paintAll();
+  paintStatics();
   loop();
 })();
 </script>
