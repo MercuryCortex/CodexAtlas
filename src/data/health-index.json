@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-07-19T12:35:39Z",
+  "generatedAt": "2026-07-19T13:27:24Z",
   "vault": {
-    "totalNodes": 5564,
+    "totalNodes": 5576,
     "lensCount": 30,
     "familyCount": 14,
     "unmatchedTradNodes": 52,
@@ -343,14 +343,14 @@
     {
       "folder": "25_divination",
       "label": "Divination",
-      "count": 29,
+      "count": 41,
       "baseline": 110,
-      "ratio": 0.264,
+      "ratio": 0.373,
       "band": "developing",
       "baselineNote": "Greer 2003 + Loewe-Blacker Oracles & Divination cross-cultural entries",
       "statuses": {
         "metadata": 25,
-        "(no status)": 4
+        "(no status)": 16
       }
     },
     {
@@ -505,9 +505,9 @@
     {
       "key": "greco-roman",
       "label": "Greco-Roman",
-      "count": 389,
+      "count": 391,
       "baseline": 380,
-      "ratio": 1.024,
+      "ratio": 1.029,
       "band": "rich",
       "perLens": {
         "02_documents": 56,
@@ -525,7 +525,7 @@
         "17_medicine": 3,
         "18_languages": 3,
         "20_sacred_architecture": 10,
-        "25_divination": 1
+        "25_divination": 3
       }
     },
     {
@@ -613,9 +613,9 @@
     {
       "key": "east-asian",
       "label": "East Asian (Daoist / Confucian / folk)",
-      "count": 177,
+      "count": 179,
       "baseline": 320,
-      "ratio": 0.553,
+      "ratio": 0.559,
       "band": "developing",
       "perLens": {
         "02_documents": 34,
@@ -633,7 +633,7 @@
         "18_languages": 2,
         "20_sacred_architecture": 5,
         "22_practices": 2,
-        "25_divination": 3,
+        "25_divination": 5,
         "26_calendars": 2,
         "27_attire": 1
       }
@@ -659,9 +659,9 @@
     {
       "key": "african",
       "label": "African (Yoruba / Bantu / Akan / Nilotic etc.)",
-      "count": 78,
+      "count": 79,
       "baseline": 260,
-      "ratio": 0.3,
+      "ratio": 0.304,
       "band": "developing",
       "perLens": {
         "02_documents": 2,
@@ -672,7 +672,7 @@
         "14_rituals": 6,
         "17_medicine": 2,
         "21_theology": 2,
-        "25_divination": 2
+        "25_divination": 3
       }
     },
     {
