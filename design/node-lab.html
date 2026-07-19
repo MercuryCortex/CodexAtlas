@@ -1,0 +1,552 @@
+<meta charset="utf-8">
+<title>Codex Atlas — Node Lab</title>
+<style>
+  :root{
+    --void:#0d0a1c;
+    --panel:#151130;
+    --panel-2:#1a1538;
+    --ink:#e9e5f4;
+    --dim:#918ab4;
+    --faint:#5e5885;
+    --gold:#d3b877;
+    --hair:rgba(211,184,119,.16);
+    --hairline:1px solid rgba(211,184,119,.14);
+    --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+    --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  }
+  html{background:var(--void)}
+  body{
+    background:
+      radial-gradient(1200px 700px at 70% -10%, rgba(90,70,150,.14), transparent 60%),
+      var(--void);
+    color:var(--ink);
+    font-family:var(--serif);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1060px;margin:0 auto;padding:0 28px 90px}
+
+  /* ---------- header ---------- */
+  header{padding:64px 0 30px}
+  .eyebrow{
+    font-family:var(--mono);font-size:11px;letter-spacing:.28em;
+    text-transform:uppercase;color:var(--gold);margin-bottom:18px;
+  }
+  h1{
+    font-size:clamp(38px,6vw,58px);font-weight:500;letter-spacing:-.01em;
+    line-height:1.05;margin:0 0 14px;text-wrap:balance;
+  }
+  .dek{max-width:56ch;color:var(--dim);font-size:17px;font-style:italic}
+
+  /* ---------- control bar ---------- */
+  .bar{
+    position:sticky;top:0;z-index:40;
+    display:flex;flex-wrap:wrap;align-items:center;gap:22px;
+    padding:14px 18px;margin:26px 0 0;
+    background:rgba(13,10,28,.82);backdrop-filter:blur(14px);
+    border-top:var(--hairline);border-bottom:var(--hairline);
+  }
+  .bar .grp{display:flex;align-items:center;gap:10px}
+  .bar .lbl{font-family:var(--mono);font-size:10px;letter-spacing:.22em;color:var(--faint);text-transform:uppercase}
+  .seg{display:flex;border:1px solid rgba(211,184,119,.25);border-radius:3px;overflow:hidden}
+  .seg button{
+    font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+    background:transparent;color:var(--dim);border:0;padding:7px 14px;cursor:pointer;
+  }
+  .seg button.on{background:var(--gold);color:#231b08}
+  .seg button:focus-visible,.sw:focus-visible,.tile:focus-visible{outline:1px solid var(--gold);outline-offset:2px}
+  .sw{
+    width:26px;height:26px;border-radius:50%;cursor:pointer;padding:0;
+    border:1px solid rgba(233,229,244,.25);
+  }
+  .sw.on{box-shadow:0 0 0 2px var(--void),0 0 0 3.5px var(--gold)}
+
+  /* ---------- sections ---------- */
+  section{margin-top:74px}
+  .shead{display:flex;align-items:baseline;gap:16px;border-bottom:var(--hairline);padding-bottom:12px;margin-bottom:8px}
+  .snum{font-family:var(--mono);font-size:11px;color:var(--gold);letter-spacing:.2em}
+  h2{font-size:26px;font-weight:500;margin:0;letter-spacing:-.005em}
+  .snote{margin-left:auto;font-family:var(--mono);font-size:10.5px;color:var(--faint);letter-spacing:.08em;text-align:right}
+  .intro{max-width:62ch;color:var(--dim);font-size:15.5px;margin:14px 0 26px}
+  .intro em{color:var(--ink)}
+
+  /* ---------- treatment cards ---------- */
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(440px,1fr));gap:22px}
+  @media (max-width:520px){.cards{grid-template-columns:1fr}}
+  .card{background:var(--panel);border:1px solid rgba(233,229,244,.07);border-radius:4px;overflow:hidden}
+  .card .head{display:flex;align-items:center;gap:10px;padding:14px 16px 0}
+  .card h3{font-family:var(--mono);font-size:13px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;margin:0}
+  .chip{
+    font-family:var(--mono);font-size:9px;letter-spacing:.16em;text-transform:uppercase;
+    padding:3px 8px;border-radius:2px;border:1px solid;
+  }
+  .chip.shipped{color:#8fd6a8;border-color:rgba(143,214,168,.4)}
+  .chip.candidate{color:var(--gold);border-color:rgba(211,184,119,.4)}
+  .chip.fallback{color:var(--dim);border-color:rgba(145,138,180,.35)}
+  .card .desc{padding:6px 16px 10px;color:var(--dim);font-size:14px;max-width:52ch}
+  .card canvas{display:block;width:100%;height:290px;cursor:crosshair}
+  .card .foot{
+    display:flex;justify-content:space-between;gap:12px;
+    padding:10px 16px;border-top:1px solid rgba(233,229,244,.06);
+    font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--faint);
+  }
+
+  /* ---------- ground tiles ---------- */
+  .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+  .tile{position:relative;border:1px solid rgba(233,229,244,.09);border-radius:4px;overflow:hidden;cursor:pointer;padding:0;background:none;text-align:left}
+  .tile canvas{display:block;width:100%;height:190px}
+  .tile .tl{
+    position:absolute;left:12px;bottom:10px;
+    font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--ink);text-transform:uppercase;
+    text-shadow:0 1px 6px rgba(0,0,0,.7);
+  }
+  .tile .rec{
+    position:absolute;right:10px;top:10px;
+    font-family:var(--mono);font-size:9px;letter-spacing:.14em;color:#231b08;
+    background:var(--gold);padding:3px 7px;border-radius:2px;text-transform:uppercase;
+  }
+  .tile.on{box-shadow:0 0 0 1px var(--gold)}
+
+  /* ---------- hulls ---------- */
+  .wide{border:1px solid rgba(233,229,244,.08);border-radius:4px;overflow:hidden}
+  .wide canvas{display:block;width:100%;height:320px}
+  .board{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:18px}
+  .frame{border:1px solid rgba(233,229,244,.08);border-radius:4px;overflow:hidden}
+  .frame canvas{display:block;width:100%;height:190px}
+  .frame .cap{
+    padding:9px 12px;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;
+    color:var(--dim);border-top:1px solid rgba(233,229,244,.06);
+  }
+  .frame .cap b{color:var(--gold);font-weight:600;letter-spacing:.16em}
+
+  /* ---------- principles / ship ---------- */
+  .rules{margin:26px 0 0;padding:0;list-style:none;max-width:66ch}
+  .rules li{
+    padding:13px 0;border-bottom:1px solid rgba(233,229,244,.06);
+    color:var(--dim);font-size:15px;
+  }
+  .rules li b{color:var(--ink);font-weight:600}
+  .ship{
+    margin-top:80px;padding:26px;border:var(--hairline);border-radius:4px;
+    background:linear-gradient(180deg,rgba(211,184,119,.05),transparent);
+  }
+  .ship .lbl{font-family:var(--mono);font-size:10px;letter-spacing:.24em;color:var(--gold);text-transform:uppercase;margin-bottom:14px}
+  .ship p{color:var(--dim);font-size:15px;max-width:70ch;margin:8px 0}
+  .ship p b{color:var(--ink)}
+  @media (prefers-reduced-motion:reduce){ /* JS also defaults motion OFF */ }
+</style>
+
+<div class="wrap">
+<header>
+  <div class="eyebrow">Codex Atlas · Design Lab · 2026-07-19</div>
+  <h1>The Node</h1>
+  <p class="dek">Four treatments, one geometry. Every hero look strips cleanly back to the canonical ring — the minimal toggle and the zoom ladder are the same axis.</p>
+</header>
+
+<div class="bar">
+  <div class="grp">
+    <span class="lbl">Dress</span>
+    <div class="seg" id="segMode">
+      <button data-m="hero" class="on">Hero</button><button data-m="minimal">Minimal</button>
+    </div>
+  </div>
+  <div class="grp">
+    <span class="lbl">Ground</span>
+    <button class="sw" data-t="nebula" title="Nebula (current)" style="background:linear-gradient(135deg,#1c1547,#31226b)"></button>
+    <button class="sw on" data-t="obsidian" title="Obsidian" style="background:linear-gradient(135deg,#0b0918,#171231)"></button>
+    <button class="sw" data-t="void" title="Deep Void" style="background:linear-gradient(135deg,#04060d,#0b101f)"></button>
+    <button class="sw" data-t="inkwell" title="Inkwell" style="background:linear-gradient(135deg,#140f0b,#211711)"></button>
+  </div>
+  <div class="grp">
+    <span class="lbl">Motion</span>
+    <div class="seg" id="segMotion">
+      <button data-m="on" class="on">On</button><button data-m="off">Off</button>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="shead">
+    <span class="snum">01</span><h2>Node treatments</h2>
+    <span class="snote">hover the large node · click = locked<br>ladder proves the read at map scale</span>
+  </div>
+  <p class="intro">The rule: <em>geometry is canon, light is dress.</em> All four share the same disk, ring and core — what changes is how light sits on the glass. Anything that can't survive the strip back to Minimal doesn't ship.</p>
+  <div class="cards">
+    <div class="card" data-tr="ring">
+      <div class="head"><h3>Canonical Ring</h3><span class="chip fallback">Fallback / Minimal</span></div>
+      <p class="desc">The floor. Crisp rim, quiet core, breath of halo. This is the Minimal view and the sub-8px read everywhere.</p>
+      <canvas></canvas>
+      <div class="foot"><span>cost: baseline</span><span>always available</span></div>
+    </div>
+    <div class="card" data-tr="glass">
+      <div class="head"><h3>Glass Cabochon</h3><span class="chip shipped">Hero v1 · Shipped</span></div>
+      <p class="desc">Top-lit hemisphere: specular glint, fresnel rim. Hover splits the rim into a prism. Already live in the shader.</p>
+      <canvas></canvas>
+      <div class="foot"><span>cost: in-fragment WGSL</span><span>no new pass · 60fps</span></div>
+    </div>
+    <div class="card" data-tr="core">
+      <div class="head"><h3>Living Core</h3><span class="chip candidate">Hero v2 · Recommended</span></div>
+      <p class="desc">The cabochon with slow ink drifting inside the glass — the node breathes. Motion so slow it reads as presence, not animation.</p>
+      <canvas></canvas>
+      <div class="foot"><span>cost: +noise term in fragment</span><span>LOD: stills under 14px</span></div>
+    </div>
+    <div class="card" data-tr="star">
+      <div class="head"><h3>Starglass</h3><span class="chip candidate">Reserved · Locked nodes</span></div>
+      <p class="desc">Cabochon plus a fine diffraction halo and a four-point glint. Too loud for the whole field — earned only by the selected node.</p>
+      <canvas></canvas>
+      <div class="foot"><span>cost: +2 rings, hover glint</span><span>selection state only</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="shead">
+    <span class="snum">02</span><h2>The ground</h2>
+    <span class="snote">click a tile — the whole lab re-grounds</span>
+  </div>
+  <p class="intro">The wheel reads by the contrast between rim-light and ground. Same node field on four candidate grounds — the current nebula stays as a theme; <em>Obsidian</em> is the proposed default: two steps darker, the glass does the glowing instead of the sky.</p>
+  <div class="tiles">
+    <button class="tile" data-t="nebula"><canvas></canvas><span class="tl">I · Nebula — current</span></button>
+    <button class="tile on" data-t="obsidian"><canvas></canvas><span class="tl">II · Obsidian</span><span class="rec">Proposed default</span></button>
+    <button class="tile" data-t="void"><canvas></canvas><span class="tl">III · Deep Void</span></button>
+    <button class="tile" data-t="inkwell"><canvas></canvas><span class="tl">IV · Inkwell</span></button>
+  </div>
+</section>
+
+<section>
+  <div class="shead">
+    <span class="snum">03</span><h2>Hulls &amp; the Eye</h2>
+    <span class="snote">isolate = a camera move, not a new page</span>
+  </div>
+  <p class="intro">Families get a hull: hairline contour, a breath of fill, the label sitting <em>on</em> the hull. Click a hull and the camera dives — everything else recedes, the ground tints toward the family, and one breadcrumb takes you back to the Eye.</p>
+  <div class="wide"><canvas id="hullCanvas"></canvas></div>
+  <div class="board">
+    <div class="frame"><canvas data-f="1"></canvas><div class="cap"><b>1 · The Eye</b> — full wheel; hover lifts a hull</div></div>
+    <div class="frame"><canvas data-f="2"></canvas><div class="cap"><b>2 · The Dive</b> — hull expands, siblings recede</div></div>
+    <div class="frame"><canvas data-f="3"></canvas><div class="cap"><b>3 · Family Field</b> — ground tints; ◂ breadcrumb returns</div></div>
+  </div>
+  <ul class="rules">
+    <li><b>Hairline, never blob.</b> 1px contour at ~25% + 4% fill. The hull is a whisper of territory, not a colored puddle.</li>
+    <li><b>Labels live on the hull edge,</b> replacing the floating ring of tradition names once you're close enough to see hulls.</li>
+    <li><b>Isolate is state, not navigation.</b> Same Forge engine, same instanced nodes — a camera fit plus a dim-others flag plus a ground tint. Back is one click, and it's instant.</li>
+  </ul>
+</section>
+
+<div class="ship">
+  <div class="lbl">How it ships</div>
+  <p><b>Same instanced disks, same single pass.</b> Every treatment here is dress inside the existing node fragment shader — no framebuffer reads, no extra draw calls, Safari-first.</p>
+  <p><b>Minimal toggle = LOD floor = same dial.</b> Dress level is one uniform: the zoom ladder lowers it automatically at small radii, the Minimal toggle pins it to zero. One axis, no forked renderer.</p>
+  <p><b>Starglass is a state, not a style.</b> The field stays quiet; only lock/selection earns the halo. Restraint is what keeps the hero look classy at 3,000 nodes.</p>
+</div>
+</div>
+
+<script>
+(function(){
+  'use strict';
+  var motionPref = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var S = { mode:'hero', theme:'obsidian', motion:!motionPref };
+
+  var FAM = { amber:'#e8b06a', rose:'#e07a8a', teal:'#6fd0c3', sage:'#a9c98a', lav:'#9d8fe0', ice:'#8fb8e0' };
+  var CARD_COLOR = { ring:FAM.amber, glass:FAM.rose, core:FAM.teal, star:FAM.lav };
+
+  function hx(c){
+    if(c.charAt(0)==='#'){ var n=parseInt(c.slice(1),16); return [n>>16&255,n>>8&255,n&255]; }
+    var m=c.match(/(\d+)\s*,\s*(\d+)\s*,\s*(\d+)/); return m?[+m[1],+m[2],+m[3]]:[0,0,0];
+  }
+  function rgba(c,a){ var r=hx(c); return 'rgba('+r[0]+','+r[1]+','+r[2]+','+a+')'; }
+  function mix(c1,c2,t){ var a=hx(c1),b=hx(c2);
+    return 'rgb('+Math.round(a[0]+(b[0]-a[0])*t)+','+Math.round(a[1]+(b[1]-a[1])*t)+','+Math.round(a[2]+(b[2]-a[2])*t)+')'; }
+  function srand(i){ var x=Math.sin(i*127.1+311.7)*43758.5453; return x-Math.floor(x); }
+
+  /* ---------- grounds ---------- */
+  var THEMES = {
+    nebula:  { a:'#1c1547', b:'#2a1e5e', glow:'rgba(150,70,180,.20)', star:0 },
+    obsidian:{ a:'#0b0918', b:'#151129', glow:'rgba(100,80,170,.13)', star:0 },
+    void:    { a:'#04060d', b:'#0a0e1c', glow:'rgba(70,100,180,.10)', star:1 },
+    inkwell: { a:'#140f0b', b:'#1e1610', glow:'rgba(200,150,80,.10)', star:0 }
+  };
+  function paintBG(ctx,w,h,name,tint){
+    var T=THEMES[name];
+    var g=ctx.createLinearGradient(0,0,0,h);
+    g.addColorStop(0,T.a); g.addColorStop(1,T.b);
+    ctx.fillStyle=g; ctx.fillRect(0,0,w,h);
+    if(tint){ ctx.fillStyle=rgba(tint,.07); ctx.fillRect(0,0,w,h); }
+    var r=ctx.createRadialGradient(w*.72,h*.15,0,w*.72,h*.15,w*.8);
+    r.addColorStop(0,T.glow); r.addColorStop(1,'rgba(0,0,0,0)');
+    ctx.fillStyle=r; ctx.fillRect(0,0,w,h);
+    if(T.star){ for(var i=0;i<90;i++){
+      ctx.fillStyle='rgba(220,225,255,'+(0.04+srand(i)*0.13)+')';
+      ctx.fillRect(srand(i*3+1)*w, srand(i*7+2)*h, 1, 1);
+    }}
+  }
+
+  /* ---------- the node painter ---------- */
+  /* st: 0 rest · 1 hover · 2 locked · 3 dim */
+  function drawNode(ctx,x,y,r,tr,st,mode,color,t){
+    var dim = st===3, a = dim?0.32:1;
+    var col = dim? mix(color,'#3a3752',0.55) : color;
+    if(mode==='minimal' || r<5) tr='ring';
+
+    if(tr==='ring'){
+      var halo=ctx.createRadialGradient(x,y,r*.5,x,y,r*1.9);
+      halo.addColorStop(0,rgba(color,(st===1||st===2?0.20:0.10)*a));
+      halo.addColorStop(1,'rgba(0,0,0,0)');
+      ctx.fillStyle=halo; ctx.beginPath(); ctx.arc(x,y,r*1.9,0,7); ctx.fill();
+      ctx.lineWidth=Math.max(1.1,r*.10);
+      ctx.strokeStyle = st===1? mix(col,'#ffffff',.35) : rgba(col,.95*a);
+      ctx.beginPath(); ctx.arc(x,y,r*.86,0,7); ctx.stroke();
+      ctx.fillStyle=rgba(mix(col,'#ffffff',.25),.92*a);
+      ctx.beginPath(); ctx.arc(x,y,r*.32,0,7); ctx.fill();
+      if(st===2){ ctx.lineWidth=1; ctx.strokeStyle=rgba('#d3b877',.8);
+        ctx.beginPath(); ctx.arc(x,y,r*1.28,0,7); ctx.stroke(); }
+      return;
+    }
+
+    /* glass base — top-lit cabochon */
+    var body=ctx.createRadialGradient(x-r*.38,y-r*.42,r*.1,x,y,r);
+    body.addColorStop(0, mix(col,'#ffffff',.42));
+    body.addColorStop(.55, col);
+    body.addColorStop(1, mix(col,'#0d0a1c',.62));
+    ctx.globalAlpha=a;
+    ctx.fillStyle=body; ctx.beginPath(); ctx.arc(x,y,r,0,7); ctx.fill();
+
+    if(tr==='core' && r>=14 && !dim){            /* ink drifting inside the glass */
+      ctx.save(); ctx.beginPath(); ctx.arc(x,y,r*.96,0,7); ctx.clip();
+      ctx.globalCompositeOperation='screen';
+      for(var i=0;i<3;i++){
+        var ang=t*(.14+.05*i)+i*2.1, d=r*.34;
+        var bx=x+Math.cos(ang)*d, by=y+Math.sin(ang*.8)*d;
+        var ink=ctx.createRadialGradient(bx,by,0,bx,by,r*.62);
+        ink.addColorStop(0, rgba(mix(col, i===1?'#ffffff':'#4030a0', .35), .34));
+        ink.addColorStop(1,'rgba(0,0,0,0)');
+        ctx.fillStyle=ink; ctx.fillRect(x-r,y-r,r*2,r*2);
+      }
+      ctx.restore();
+    }
+
+    /* fresnel rim */
+    var hov = st===1||st===2;
+    ctx.lineWidth=Math.max(1,r*.09);
+    ctx.strokeStyle=rgba(mix(col,'#ffffff',hov?.55:.3),(hov?.85:.55)*a);
+    ctx.beginPath(); ctx.arc(x,y,r*.93,0,7); ctx.stroke();
+
+    /* prism split on hover (shipped look) */
+    if(st===1 && r>=10){
+      ctx.save(); ctx.globalCompositeOperation='screen'; ctx.lineWidth=Math.max(1,r*.06);
+      var P=[['rgba(255,90,90,.75)',-.5],['rgba(110,255,150,.7)',1.6],['rgba(110,150,255,.8)',3.7]];
+      for(var p=0;p<3;p++){ ctx.strokeStyle=P[p][0];
+        ctx.beginPath(); ctx.arc(x,y,r*.97,P[p][1],P[p][1]+2.2); ctx.stroke(); }
+      ctx.restore();
+    }
+
+    /* specular glint */
+    var sp=ctx.createRadialGradient(x-r*.38,y-r*.44,0,x-r*.38,y-r*.44,r*.34);
+    sp.addColorStop(0,'rgba(255,255,255,'+(hov?.95:.75)*a+')');
+    sp.addColorStop(1,'rgba(255,255,255,0)');
+    ctx.fillStyle=sp; ctx.beginPath(); ctx.arc(x-r*.38,y-r*.44,r*.34,0,7); ctx.fill();
+
+    if(tr==='star' && r>=14 && !dim){            /* diffraction halo + glint cross */
+      ctx.lineWidth=1; ctx.strokeStyle=rgba(col,.4);
+      ctx.beginPath(); ctx.arc(x,y,r*1.42,0,7); ctx.stroke();
+      ctx.strokeStyle=rgba(mix(col,'#8fb8e0',.6),.22);
+      ctx.beginPath(); ctx.arc(x,y,r*1.52,0,7); ctx.stroke();
+      if(hov){ ctx.save(); ctx.globalCompositeOperation='screen';
+        for(var k=0;k<4;k++){ var A=k*Math.PI/2 + Math.PI/4*0;
+          var gx=Math.cos(A),gy=Math.sin(A);
+          var ln=ctx.createLinearGradient(x,y,x+gx*r*2.1,y+gy*r*2.1);
+          ln.addColorStop(0,'rgba(255,255,255,.55)'); ln.addColorStop(1,'rgba(255,255,255,0)');
+          ctx.strokeStyle=ln; ctx.lineWidth=1.1;
+          ctx.beginPath(); ctx.moveTo(x+gx*r*.5,y+gy*r*.5); ctx.lineTo(x+gx*r*2.1,y+gy*r*2.1); ctx.stroke(); }
+        ctx.restore(); }
+    }
+    if(st===2){ ctx.lineWidth=1; ctx.strokeStyle=rgba('#d3b877',.85);
+      ctx.beginPath(); ctx.arc(x,y,r*1.3,0,7); ctx.stroke(); }
+    ctx.globalAlpha=1;
+  }
+
+  /* ---------- canvas plumbing ---------- */
+  var dpr = Math.min(2, window.devicePixelRatio||1);
+  function fit(cv){
+    var w=cv.clientWidth, h=cv.clientHeight;
+    if(cv.width!==w*dpr||cv.height!==h*dpr){ cv.width=w*dpr; cv.height=h*dpr; }
+    var ctx=cv.getContext('2d');
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    return {ctx:ctx,w:w,h:h};
+  }
+  var MONO='ui-monospace,"SF Mono",Menlo,monospace';
+  function tag(ctx,txt,x,y,dim){
+    ctx.font='600 8.5px '+MONO; ctx.textAlign='center'; ctx.letterSpacing='1px';
+    ctx.fillStyle='rgba(233,229,244,'+(dim?.35:.5)+')';
+    ctx.fillText(txt.toUpperCase(),x,y); ctx.letterSpacing='0px';
+  }
+
+  /* ---------- treatment cards ---------- */
+  var cards=[].slice.call(document.querySelectorAll('.card'));
+  cards.forEach(function(cd){
+    cd._cv=cd.querySelector('canvas'); cd._tr=cd.dataset.tr; cd._hov=false; cd._lock=false;
+    cd._cv.addEventListener('pointermove',function(e){
+      var b=cd._cv.getBoundingClientRect();
+      var dx=e.clientX-b.left-120, dy=e.clientY-b.top-140;
+      cd._hov = dx*dx+dy*dy < 66*66;
+      if(!S.motion) paintAll();
+    });
+    cd._cv.addEventListener('pointerleave',function(){ cd._hov=false; if(!S.motion) paintAll(); });
+    cd._cv.addEventListener('click',function(){ if(cd._hov){ cd._lock=!cd._lock; if(!S.motion) paintAll(); } });
+  });
+
+  function paintCard(cd,t){
+    var f=fit(cd._cv), ctx=f.ctx, col=CARD_COLOR[cd._tr];
+    paintBG(ctx,f.w,f.h,S.theme);
+    var heroSt = cd._lock?2 : cd._hov?1 : 0;
+    drawNode(ctx,120,140,58,cd._tr,heroSt,S.mode,col,t);
+    tag(ctx,cd._lock?'locked':cd._hov?'hover':'rest',120,236);
+
+    var sx=f.w-232, states=['rest','hover','locked','dim'];
+    for(var i=0;i<4;i++){
+      drawNode(ctx,sx+i*58,78,17,cd._tr,i,S.mode,col,t);
+      tag(ctx,states[i],sx+i*58,116,i===3);
+    }
+    var ladder=[22,14,8,4,2], lx=sx;
+    for(var j=0;j<5;j++){
+      drawNode(ctx,lx,196,ladder[j],cd._tr,0,S.mode,col,t);
+      tag(ctx,(ladder[j]*2)+'px',lx,240,true);
+      lx+=ladder[j]+38;
+    }
+  }
+
+  /* ---------- ground tiles ---------- */
+  var tiles=[].slice.call(document.querySelectorAll('.tile'));
+  function paintTile(tile){
+    var cv=tile.querySelector('canvas'), f=fit(cv), ctx=f.ctx, name=tile.dataset.t;
+    paintBG(ctx,f.w,f.h,name);
+    var cols=[FAM.amber,FAM.rose,FAM.teal,FAM.sage,FAM.lav,FAM.ice];
+    for(var i=0;i<34;i++){
+      var x=14+srand(i*5+2)*(f.w-28), y=14+srand(i*9+5)*(f.h-40);
+      var rr=2+srand(i*3+7)*5.5;
+      drawNode(ctx,x,y,rr,rr>5?'glass':'ring',0,S.mode,cols[i%6],0);
+    }
+    drawNode(ctx,f.w*.62,f.h*.42,11,'glass',1,S.mode,FAM.amber,0);
+  }
+
+  /* ---------- hulls ---------- */
+  function hullPath(ctx,cx,cy,rx,ry,seed){
+    var N=10; ctx.beginPath();
+    for(var i=0;i<=N;i++){
+      var a=i/N*Math.PI*2;
+      var w=1+ (srand(seed+i%N)*0.16-0.08);
+      var px=cx+Math.cos(a)*rx*w, py=cy+Math.sin(a)*ry*w;
+      if(i===0) ctx.moveTo(px,py);
+      else {
+        var a0=(i-.5)/N*Math.PI*2, w0=1+(srand(seed+(i-1)%N)*0.16-0.08);
+        ctx.quadraticCurveTo(cx+Math.cos(a0)*rx*1.03*w0, cy+Math.sin(a0)*ry*1.03*w0, px, py);
+      }
+    }
+    ctx.closePath();
+  }
+  function cluster(ctx,cx,cy,n,spread,col,seed,rmax,st){
+    for(var i=0;i<n;i++){
+      var a=srand(seed+i)*Math.PI*2, d=Math.sqrt(srand(seed+i*3+1))*spread;
+      var x=cx+Math.cos(a)*d, y=cy+Math.sin(a)*d*0.8;
+      drawNode(ctx,x,y,1.6+srand(seed+i*7)*rmax,'glass',st||0,S.mode,col,0);
+    }
+  }
+  function paintHull(){
+    var cv=document.getElementById('hullCanvas'), f=fit(cv), ctx=f.ctx;
+    paintBG(ctx,f.w,f.h,S.theme);
+    cluster(ctx,f.w*.16,f.h*.5,26,52,FAM.teal,40,3,3);
+    tag(ctx,'vedic',f.w*.16,f.h*.5+80,true);
+    cluster(ctx,f.w*.84,f.h*.46,24,50,FAM.lav,80,3,3);
+    tag(ctx,'gnostic',f.w*.84,f.h*.46+78,true);
+    var cx=f.w*.5, cy=f.h*.48;
+    hullPath(ctx,cx,cy,150,96,7);
+    ctx.fillStyle=rgba(FAM.amber,.045); ctx.fill();
+    ctx.lineWidth=1; ctx.strokeStyle=rgba(FAM.amber,.30); ctx.stroke();
+    cluster(ctx,cx,cy,34,78,FAM.amber,10,4.4,0);
+    drawNode(ctx,cx+22,cy-12,10,'glass',1,S.mode,FAM.amber,0);
+    ctx.font='600 10px '+MONO; ctx.textAlign='center'; ctx.letterSpacing='3px';
+    ctx.fillStyle=rgba(FAM.amber,.85);
+    ctx.fillText('GREEK — 214',cx,cy-108); ctx.letterSpacing='0px';
+  }
+
+  /* ---------- storyboard ---------- */
+  function paintFrame(cv){
+    var f=fit(cv), ctx=f.ctx, n=cv.dataset.f;
+    var cols=[FAM.amber,FAM.rose,FAM.teal,FAM.sage,FAM.lav,FAM.ice];
+    if(n==='1'){
+      paintBG(ctx,f.w,f.h,S.theme);
+      var cx=f.w/2, cy=f.h/2+4;
+      for(var i=0;i<8;i++){
+        var a=i/8*Math.PI*2-Math.PI/2, d=58;
+        var x=cx+Math.cos(a)*d, y=cy+Math.sin(a)*d*0.78;
+        cluster(ctx,x,y,9,15,cols[i%6],i*30+5,1.8, i===1?0:3);
+        if(i===1){ hullPath(ctx,x,y,26,22,3);
+          ctx.fillStyle=rgba(cols[1],.06); ctx.fill();
+          ctx.lineWidth=1; ctx.strokeStyle=rgba(cols[1],.5); ctx.stroke(); }
+      }
+    } else if(n==='2'){
+      paintBG(ctx,f.w,f.h,S.theme);
+      for(var j=0;j<5;j++)
+        cluster(ctx,30+srand(j*9)*(f.w-60), 24+srand(j*13+3)*(f.h-48), 6, 12, cols[(j+2)%6], j*50+7, 1.5, 3);
+      var hx2=f.w*.5, hy2=f.h*.52;
+      hullPath(ctx,hx2,hy2,74,52,5);
+      ctx.fillStyle=rgba(FAM.rose,.05); ctx.fill();
+      ctx.lineWidth=1; ctx.strokeStyle=rgba(FAM.rose,.45); ctx.stroke();
+      cluster(ctx,hx2,hy2,20,44,FAM.rose,60,2.6,0);
+    } else {
+      paintBG(ctx,f.w,f.h,S.theme,FAM.rose);
+      cluster(ctx,f.w*.5,f.h*.52,30,70,FAM.rose,90,3.2,0);
+      drawNode(ctx,f.w*.5,f.h*.5,9,'glass',2,S.mode,FAM.rose,0);
+      ctx.font='600 8.5px '+MONO; ctx.textAlign='left';
+      ctx.fillStyle='rgba(211,184,119,.9)'; ctx.letterSpacing='1.5px';
+      ctx.fillText('◂ THE EYE',12,18); ctx.letterSpacing='0px';
+    }
+  }
+
+  /* ---------- paint everything ---------- */
+  var frames=[].slice.call(document.querySelectorAll('.frame canvas'));
+  function paintStatics(){ tiles.forEach(paintTile); paintHull(); frames.forEach(paintFrame); }
+  function paintCards(t){ cards.forEach(function(cd){ paintCard(cd,t); }); }
+  function paintAll(){ paintCards(perfT()); paintStatics(); }
+  var t0=performance.now();
+  function perfT(){ return (performance.now()-t0)/1000; }
+
+  var raf=null;
+  function loop(){
+    paintCards(perfT());
+    raf = S.motion ? requestAnimationFrame(loop) : null;
+  }
+  function setMotion(on){
+    S.motion=on;
+    if(raf) cancelAnimationFrame(raf), raf=null;
+    if(on) loop(); else paintCards(perfT());
+  }
+
+  /* ---------- controls ---------- */
+  function seg(el,fn){
+    el.addEventListener('click',function(e){
+      var b=e.target.closest('button'); if(!b) return;
+      [].forEach.call(el.children,function(c){c.classList.toggle('on',c===b);});
+      fn(b.dataset.m);
+    });
+  }
+  seg(document.getElementById('segMode'),function(m){ S.mode=m; paintAll(); });
+  seg(document.getElementById('segMotion'),function(m){ setMotion(m==='on'); });
+  function setTheme(t){
+    S.theme=t;
+    [].forEach.call(document.querySelectorAll('.sw'),function(s){s.classList.toggle('on',s.dataset.t===t);});
+    tiles.forEach(function(tl){tl.classList.toggle('on',tl.dataset.t===t);});
+    paintAll();
+  }
+  [].forEach.call(document.querySelectorAll('.sw'),function(s){ s.addEventListener('click',function(){setTheme(s.dataset.t);}); });
+  tiles.forEach(function(tl){ tl.addEventListener('click',function(){setTheme(tl.dataset.t);}); });
+
+  var rs; window.addEventListener('resize',function(){ clearTimeout(rs); rs=setTimeout(paintAll,120); });
+
+  /* boot */
+  if(motionPref){ S.motion=false;
+    document.querySelectorAll('#segMotion button').forEach(function(b){b.classList.toggle('on',b.dataset.m==='off');});
+  }
+  paintAll();
+  if(S.motion) loop();
+})();
+</script>
