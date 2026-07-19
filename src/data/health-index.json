@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-07-19T15:08:16Z",
+  "generatedAt": "2026-07-19T18:24:09Z",
   "vault": {
-    "totalNodes": 5587,
+    "totalNodes": 5596,
     "lensCount": 30,
     "familyCount": 14,
     "unmatchedTradNodes": 54,
-    "intentionallyCrossTradition": 59
+    "intentionallyCrossTradition": 61
   },
   "lenses": [
     {
@@ -396,14 +396,15 @@
     {
       "folder": "29_technology",
       "label": "Technology",
-      "count": 25,
+      "count": 34,
       "baseline": 70,
-      "ratio": 0.357,
+      "ratio": 0.486,
       "band": "developing",
       "baselineNote": "Pacey Technology in World Civilization — religious-tech / sacred-craft entries",
       "statuses": {
         "stub": 15,
-        "(no status)": 10
+        "(no status)": 17,
+        "full": 2
       }
     },
     {
@@ -472,9 +473,9 @@
     {
       "key": "abrahamic",
       "label": "Abrahamic",
-      "count": 1097,
+      "count": 1098,
       "baseline": 700,
-      "ratio": 1.567,
+      "ratio": 1.569,
       "band": "over-baseline",
       "perLens": {
         "02_documents": 315,
@@ -499,6 +500,7 @@
         "23_material_culture": 13,
         "26_calendars": 10,
         "27_attire": 11,
+        "29_technology": 1,
         "31_consciousness": 8
       }
     },
