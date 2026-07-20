@@ -176,7 +176,7 @@
   <div class="bench">
   <div class="benchL"><canvas id="benchCanvas"></canvas></div>
   <div class="rig">
-    <div class="ctl"><label>Bubble size <b id="v-bubble"></b></label><input type="range" id="r-bubble" min="1.02" max="1.5" step="0.01"></div>
+    <div class="ctl"><label>Bubble size <b id="v-bubble"></b></label><input type="range" id="r-bubble" min="1" max="1.5" step="0.01"></div>
     <div class="ctl"><label>Hover zoom <b id="v-hoverZ"></b></label><input type="range" id="r-hoverZ" min="1" max="1.5" step="0.01"></div>
     <div class="ctl"><label>Click zoom <b id="v-clickZ"></b></label><input type="range" id="r-clickZ" min="1" max="1.9" step="0.01"></div>
     <div class="ctl"><label>Refraction <b id="v-mag"></b></label><input type="range" id="r-mag" min="1" max="1.35" step="0.01"></div>
@@ -186,10 +186,13 @@
     <div class="ctl"><label>Glow reach <b id="v-glowSize"></b></label><input type="range" id="r-glowSize" min="1.5" max="4.5" step="0.1"></div>
     <div class="ctl"><label>Finish strength <b id="v-finStr"></b></label><input type="range" id="r-finStr" min="0" max="1" step="0.01"></div>
     <div class="ctl"><label>Wake radius <b id="v-wakeR"></b></label><input type="range" id="r-wakeR" min="60" max="240" step="2"></div>
+    <div class="ctl"><label>Chroma spread <b id="v-chromaR"></b></label><input type="range" id="r-chromaR" min="0.5" max="4" step="0.1"></div>
+    <div class="ctl"><label>Depth <b id="v-depth"></b></label><input type="range" id="r-depth" min="0" max="1" step="0.01"></div>
     <div class="fchips">
       <button class="fchip" data-fin="chroma">Chroma</button>
       <button class="fchip" data-fin="sheen">Sheen</button>
       <button class="fchip on" data-fin="irid">Iridescence</button>
+      <button class="fchip on" data-fin="label">Label</button>
     </div>
   </div>
   </div>
@@ -275,7 +278,8 @@
   /* THE RECIPE — every dial writes here; the readout is the snapshot */
   var R = { bubble:1.14, hoverZ:1.12, clickZ:1.32, mag:1.12, frost:1.4,
             glow:.6, pulse:.55, glowSize:2.8, finStr:.6, wakeR:120,
-            fin:{ chroma:false, sheen:false, irid:true } };
+            chromaR:1.4, depth:.5,
+            fin:{ chroma:false, sheen:false, irid:true, label:true } };
 
   var FAM = { amber:'#e8b06a', rose:'#e07a8a', teal:'#6fd0c3', sage:'#a9c98a', lav:'#9d8fe0', ice:'#8fb8e0', plum:'#c99ad6', sand:'#d9c08a' };
   var FCOLS=[FAM.amber,FAM.rose,FAM.teal,FAM.sage,FAM.lav,FAM.ice];
@@ -363,14 +367,26 @@
     ctx.save();
     ctx.beginPath(); ctx.arc(x,y,br,0,7); ctx.clip();
 
-    /* lens: backdrop bends through the bubble */
-    var mag=1+(R.mag-1)*wake, sw=br/mag;
+    /* lens with DEPTH: three bands — the bend grows toward the edge (figma-like bulge) */
+    var mag=1+(R.mag-1)*wake;
+    var BANDS=[[0,.58,-.55],[.5,.85,.15],[.78,1.01,1]];
     try{ ctx.filter='blur('+(R.frost*wake).toFixed(1)+'px)'; }catch(e){}
-    ctx.drawImage(O,(x-sw)*dpr,(y-sw)*dpr,sw*2*dpr,sw*2*dpr, x-br,y-br,br*2,br*2);
+    for(var bi=0;bi<3;bi++){
+      var m=1+(mag-1)*(1+R.depth*BANDS[bi][2]*1.5);
+      var sw2=br/Math.max(1.0001,m);
+      ctx.save();
+      ctx.beginPath();
+      ctx.arc(x,y,br*BANDS[bi][1],0,7);
+      if(BANDS[bi][0]>0) ctx.arc(x,y,br*BANDS[bi][0],0,7,true);
+      ctx.clip();
+      ctx.drawImage(O,(x-sw2)*dpr,(y-sw2)*dpr,sw2*2*dpr,sw2*2*dpr, x-br,y-br,br*2,br*2);
+      ctx.restore();
+    }
     try{ ctx.filter='none'; }catch(e){}
     if(fin.chroma){
       ctx.save(); ctx.globalCompositeOperation='lighter'; ctx.globalAlpha=.12*wake*R.finStr;
-      ctx.drawImage(O,(x-sw)*dpr-1.4*dpr,(y-sw)*dpr,sw*2*dpr,sw*2*dpr, x-br,y-br,br*2,br*2);
+      var swc=br/mag;
+      ctx.drawImage(O,(x-swc)*dpr-R.chromaR*dpr,(y-swc)*dpr,swc*2*dpr,swc*2*dpr, x-br,y-br,br*2,br*2);
       ctx.restore();
     }
 
@@ -389,6 +405,12 @@
 
     /* the symbol under the glass — the canonical ring, zoomed */
     drawRing(ctx,x,y,r,col,0);
+    /* core pulse — the inner fill breathes brighter, never breaking to white */
+    var cp=.5+.5*Math.sin(t*2.1+x*.07);
+    ctx.save(); ctx.globalCompositeOperation='screen';
+    ctx.fillStyle=rgba(mix(col,'#ffffff',.5),.26*wake*cp);
+    ctx.beginPath(); ctx.arc(x,y,r*.32,0,7); ctx.fill();
+    ctx.restore();
 
     /* glass shading */
     var gl=ctx.createLinearGradient(0,y-br,0,y+br);
@@ -397,20 +419,20 @@
     gl.addColorStop(1,'rgba(0,0,0,'+(.11*wake)+')');
     ctx.fillStyle=gl; ctx.fillRect(x-br,y-br,br*2,br*2);
 
-    /* sheen — one band per wake */
+    /* sheen — a glint that flows AROUND the sphere's curve, not a flat stripe */
     if(fin.sheen && sT!==undefined){
-      var p=(t-sT)/.9;
+      var p=(t-sT)/1.1;
       if(p>=0&&p<=1){
-        var dx=Math.cos(.6),dy=Math.sin(.6);
-        var q=(p*2.4-1.2)*br;
-        var sg=ctx.createLinearGradient(x+dx*q-dy*br*.5,y+dy*q+dx*br*.5,x+dx*(q+br*.7)-dy*br*.5,y+dy*(q+br*.7)+dx*br*.5);
-        var sa=.26*wake*R.finStr*Math.sin(Math.PI*p);
-        sg.addColorStop(0,'rgba(255,255,255,0)');
-        sg.addColorStop(.5,'rgba(255,255,255,'+sa+')');
-        sg.addColorStop(1,'rgba(255,255,255,0)');
-        ctx.save(); ctx.globalCompositeOperation='screen';
-        ctx.fillStyle=sg; ctx.fillRect(x-br,y-br,br*2,br*2);
-        ctx.restore();
+        var ang=-2.4+p*3.6;
+        var sa=.30*wake*R.finStr*Math.sin(Math.PI*p);
+        ctx.save(); ctx.globalCompositeOperation='screen'; ctx.lineCap='round';
+        for(var sk=0;sk<3;sk++){
+          ctx.globalAlpha=sa*(1-sk*.3);
+          ctx.lineWidth=br*(.14+sk*.09);
+          ctx.strokeStyle='rgba(255,255,255,1)';
+          ctx.beginPath(); ctx.arc(x,y,br*.78,ang-.45,ang+.45); ctx.stroke();
+        }
+        ctx.restore(); ctx.globalAlpha=1;
       }
     }
 
@@ -423,9 +445,9 @@
       cg.addColorStop(.5, rgba(FAM.teal,.5));
       cg.addColorStop(.75,rgba(FAM.lav,.5));
       cg.addColorStop(1,  rgba(FAM.rose,.5));
-      ctx.save(); ctx.globalCompositeOperation='screen'; ctx.globalAlpha=.22*wake*R.finStr;
-      ctx.lineWidth=br*.18; ctx.strokeStyle=cg;
-      ctx.beginPath(); ctx.arc(x,y,br*.88,0,7); ctx.stroke();
+      ctx.save(); ctx.globalCompositeOperation='screen'; ctx.globalAlpha=.42*wake*R.finStr;
+      ctx.lineWidth=br*.24; ctx.strokeStyle=cg;
+      ctx.beginPath(); ctx.arc(x,y,br*.85,0,7); ctx.stroke();
       ctx.restore(); ctx.globalAlpha=1;
     }
     ctx.restore();
@@ -438,17 +460,12 @@
     ctx.beginPath(); ctx.arc(x,y,br-1.3,0,7); ctx.stroke();
     if(fin.chroma){
       ctx.lineWidth=1;
-      ctx.strokeStyle='rgba(255,120,90,'+(.22*wake*R.finStr)+')';
-      ctx.beginPath(); ctx.arc(x,y,br-1,0,7); ctx.stroke();
-      ctx.strokeStyle='rgba(110,160,255,'+(.22*wake*R.finStr)+')';
-      ctx.beginPath(); ctx.arc(x,y,br+1,0,7); ctx.stroke();
+      ctx.strokeStyle='rgba(255,120,90,'+(.24*wake*R.finStr)+')';
+      ctx.beginPath(); ctx.arc(x,y,br-R.chromaR,0,7); ctx.stroke();
+      ctx.strokeStyle='rgba(110,160,255,'+(.24*wake*R.finStr)+')';
+      ctx.beginPath(); ctx.arc(x,y,br+R.chromaR,0,7); ctx.stroke();
     }
-    var sx=x-br*.36, sy=y-br*.42;
-    var sp=ctx.createRadialGradient(sx,sy,0,sx,sy,br*.3);
-    sp.addColorStop(0,'rgba(255,255,255,'+(.45*wake)+')'); sp.addColorStop(1,'rgba(255,255,255,0)');
-    ctx.fillStyle=sp; ctx.beginPath(); ctx.arc(sx,sy,br*.3,0,7); ctx.fill();
-
-    if(hovered||locked) circ(ctx,x,y,r*.86,t,col,x);
+    /* (specular blob + hover circulation removed — John 2026-07-20) */
     if(locked){ ctx.lineWidth=1; ctx.strokeStyle=rgba('#d3b877',.85);
       ctx.beginPath(); ctx.arc(x,y,br+4,0,7); ctx.stroke(); }
   }
@@ -458,6 +475,7 @@
   var wakeOff=document.createElement('canvas');
   var wnodes=[], wwires=[], wp={x:-9e3,y:-9e3}, whov=-1;
 
+  var NAMES=['ISHTAR','ZEUS','ODIN','ISIS','VISHNU','ENLIL','FREYJA','SEKHMET','INDRA','HERMES','BRIGID','AMATERASU','QUETZALCOATL','OSHUN','TIAMAT','APOLLO','SARASVATI','ANUBIS','PERUN','KUAN YIN'];
   function buildField(w,h){
     wnodes=[]; wwires=[];
     var N=130;
@@ -466,7 +484,7 @@
       wnodes.push({
         x:20+srand(i*3+1)*(w-40), y:20+srand(i*7+2)*(h-40),
         r:big? 9+srand(i*5)*4 : 3+srand(i*5)*4.5,
-        col:FCOLS[i%6], wake:0, sc:1, lock:false, sT:-9
+        col:FCOLS[i%6], name:NAMES[i%NAMES.length], wake:0, sc:1, lock:false, sT:-9
       });
     }
     for(var j=0;j<14;j++){
@@ -514,6 +532,15 @@
       n2.sc+=(1+(ts-1)*Math.min(1,n2.wake*1.4)-n2.sc)*.16;
       if(n2.wake>.02){
         awakeNode(ctx,wakeOff,n2.x,n2.y,n2.r,n2.sc,n2.wake,n2.col,t,wp.x,wp.y,n2.sT,i2===whov,n2.lock,R.fin);
+        /* the copy wakes with the node: fades in + tracking settles */
+        if(R.fin.label && n2.wake>.35){
+          var la=(n2.wake-.35)/.65;
+          ctx.font='600 9px '+MONO; ctx.textAlign='center';
+          try{ ctx.letterSpacing=(3-2*la).toFixed(1)+'px'; }catch(e){}
+          ctx.fillStyle=rgba(mix(n2.col,'#ffffff',.4),.85*la);
+          ctx.fillText(n2.name, n2.x, n2.y+n2.r*n2.sc*R.bubble+16);
+          try{ ctx.letterSpacing='0px'; }catch(e){}
+        }
       } else {
         drawRing(ctx,n2.x,n2.y,n2.r*n2.sc,n2.col,0);
       }
@@ -562,11 +589,18 @@
     bench.hov=hov;
     var ts=bench.lock? R.clickZ : (hov? R.hoverZ : 1);
     bench.sc+=(ts-bench.sc)*.16;
-    var px=over? bench.p.x : cx+Math.cos(t*.35)*f.w*.3;
-    var py=over? bench.p.y : cy+Math.sin(t*.5)*f.h*.25;
+    var px=over? bench.p.x : cx+Math.cos(t*.15)*f.w*.3;
+    var py=over? bench.p.y : cy+Math.sin(t*.22)*f.h*.25;
     /* on the bench only, sheen re-runs every 4s so it can be judged while dialing */
     var sT= R.fin.sheen&&!(bench.hov||bench.lock)? Math.floor(t/4)*4+.5 : bench.sT;
     awakeNode(ctx,benchOff,cx,cy,baseR,bench.sc,1,FAM.amber,t,px,py,sT,hov,bench.lock,R.fin);
+    if(R.fin.label){
+      ctx.font='600 10px '+MONO; ctx.textAlign='center';
+      try{ ctx.letterSpacing='1.5px'; }catch(e){}
+      ctx.fillStyle=rgba(mix(FAM.amber,'#ffffff',.4),.85);
+      ctx.fillText('ISHTAR', cx, cy+baseR*bench.sc*R.bubble+20);
+      try{ ctx.letterSpacing='0px'; }catch(e){}
+    }
     ctx.font='600 8.5px '+MONO; ctx.textAlign='center';
     ctx.fillStyle='rgba(233,229,244,.35)';
     ctx.fillText('YOUR SPECIMEN — ALWAYS AWAKE · HOVER = HOVER ZOOM · CLICK = LOCK + CLICK ZOOM', f.w/2, f.h-12);
@@ -704,7 +738,6 @@
         var nr=(2.2+srand(i*7+j*3)*3)*eye.cam.s;
         var st=(i===eye.sel&&j===0&&prog>.8)?2:0;
         drawRing(ctx,np[0],np[1],j===0?6*eye.cam.s:nr,F.col,st);
-        if(st===2) circ(ctx,np[0],np[1],(6*eye.cam.s)*.86,t,F.col,0);
       }
       ctx.globalAlpha=1;
     }
@@ -746,14 +779,15 @@
   });
 
   /* ================= builder rig wiring ================= */
-  var SLIDERS=['bubble','hoverZ','clickZ','mag','frost','glow','pulse','glowSize','finStr','wakeR'];
+  var SLIDERS=['bubble','hoverZ','clickZ','mag','frost','glow','pulse','glowSize','finStr','wakeR','chromaR','depth'];
   function fmt(k){ var v=R[k]; return (k==='wakeR')? v+'px' : (+v).toFixed(2).replace(/0$/,''); }
   function recipeStr(){
     var f=[]; for(var k in R.fin) if(R.fin[k]) f.push(k);
     return 'bubble '+R.bubble.toFixed(2)+' · hover ×'+R.hoverZ.toFixed(2)+' · click ×'+R.clickZ.toFixed(2)
-      +' · refract '+R.mag.toFixed(2)+' · frost '+R.frost.toFixed(1)
+      +' · refract '+R.mag.toFixed(2)+' depth '+R.depth.toFixed(2)+' · frost '+R.frost.toFixed(1)
       +' · glow '+R.glow.toFixed(2)+' pulse '+R.pulse.toFixed(2)+' reach ×'+R.glowSize.toFixed(1)
-      +' · finish '+R.finStr.toFixed(2)+' ['+(f.join('+')||'pure')+'] · wake '+R.wakeR+'px · ground '+S.theme;
+      +' · finish '+R.finStr.toFixed(2)+' ['+(f.join('+')||'pure')+'] chroma± '+R.chromaR.toFixed(1)+'px'
+      +' · wake '+R.wakeR+'px · ground '+S.theme;
   }
   function syncRig(){
     SLIDERS.forEach(function(k){
