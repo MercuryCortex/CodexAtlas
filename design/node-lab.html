@@ -60,10 +60,14 @@
   .intro{max-width:62ch;color:var(--dim);font-size:15.5px;margin:14px 0 22px}
   .intro em{color:var(--ink)}
 
-  /* ---------- builder rig ---------- */
+  /* ---------- builder rig + bench ---------- */
+  .bench{display:grid;grid-template-columns:minmax(320px,430px) 1fr;gap:18px;margin-bottom:12px;align-items:stretch}
+  @media (max-width:900px){.bench{grid-template-columns:1fr}}
+  .benchL{border:1px solid rgba(233,229,244,.08);border-radius:4px;overflow:hidden;background:var(--panel)}
+  .benchL canvas{display:block;width:100%;height:100%;min-height:400px;cursor:crosshair}
   .rig{
-    display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
-    gap:14px 20px;padding:16px 18px;margin-bottom:12px;
+    display:grid;grid-template-columns:repeat(2,1fr);
+    gap:14px 20px;padding:16px 18px;align-content:start;
     background:var(--panel);border:1px solid rgba(233,229,244,.07);border-radius:4px;
   }
   .ctl label{
@@ -164,11 +168,13 @@
 
 <section>
   <div class="shead">
-    <span class="snum">01</span><h2>The Wake — builder</h2>
-    <span class="snote">hover = wake + zoom · click = keep awake, zoom more<br>the bubble follows the node; the glow lives only when awake</span>
+    <span class="snum">01</span><h2>The Workbench</h2>
+    <span class="snote">the specimen is always awake, right beside the dials<br>hover it = hover zoom · click it = click zoom &amp; lock</span>
   </div>
-  <p class="intro">The tools you asked for. Every dial drives the field and the close-ups live: the bubble sits <em>just</em> over the node and follows its zoom; the old always-on halo is gone — instead a <em>pulsating glow</em> blooms behind awake nodes and bends through the glass. Finishes stack — mix the bits you like, then <em>copy the recipe line</em> and tell me “this one.”</p>
+  <p class="intro">Dial with your eyes on the specimen — it reacts instantly, an inch from the sliders. Finishes stack; mix the bits you like, then <em>copy the recipe line</em> and tell me “this one.” The field below is the same recipe at map scale.</p>
 
+  <div class="bench">
+  <div class="benchL"><canvas id="benchCanvas"></canvas></div>
   <div class="rig">
     <div class="ctl"><label>Bubble size <b id="v-bubble"></b></label><input type="range" id="r-bubble" min="1.02" max="1.5" step="0.01"></div>
     <div class="ctl"><label>Hover zoom <b id="v-hoverZ"></b></label><input type="range" id="r-hoverZ" min="1" max="1.5" step="0.01"></div>
@@ -185,6 +191,7 @@
       <button class="fchip" data-fin="sheen">Sheen</button>
       <button class="fchip on" data-fin="irid">Iridescence</button>
     </div>
+  </div>
   </div>
   <div class="recipe"><span class="r-lbl">RECIPE</span><span id="recipeTxt"></span><button class="copybtn" id="copyBtn">Copy</button></div>
 
@@ -525,6 +532,52 @@
   wakeCv.addEventListener('pointerleave',function(){ wp.x=-9e3; wp.y=-9e3; });
   wakeCv.addEventListener('click',function(){ if(whov>=0){ var n=wnodes[whov]; n.lock=!n.lock; if(n.lock) n.sT=lastT; } });
 
+  /* ================= THE BENCH — the specimen beside the dials ================= */
+  var benchCv=document.getElementById('benchCanvas');
+  var benchOff=document.createElement('canvas');
+  var bench={sc:1,lock:false,hov:false,sT:.4,p:{x:-9e3,y:-9e3}};
+  function paintBenchOff(w,h){
+    if(benchOff.width!==w*dpr){ benchOff.width=w*dpr; benchOff.height=h*dpr; }
+    var ctx=benchOff.getContext('2d');
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    paintBG(ctx,w,h,S.theme);
+    ctx.lineWidth=1.2;
+    ctx.strokeStyle=rgba(FAM.sand,.30);
+    ctx.beginPath(); ctx.moveTo(-10,h*.68); ctx.quadraticCurveTo(w*.45,h*.32,w+10,h*.60); ctx.stroke();
+    ctx.strokeStyle=rgba(FAM.teal,.25);
+    ctx.beginPath(); ctx.moveTo(-10,h*.30); ctx.quadraticCurveTo(w*.55,h*.70,w+10,h*.42); ctx.stroke();
+    drawRing(ctx,w*.15,h*.26,6,FAM.rose,0);
+    drawRing(ctx,w*.85,h*.72,5.5,FAM.sage,0);
+    drawRing(ctx,w*.82,h*.20,4,FAM.ice,0);
+  }
+  function paintBench(t){
+    var f=fit(benchCv), ctx=f.ctx;
+    if(!f.w) return;
+    if(benchCv._dirty){ benchCv._dirty=false; paintBenchOff(f.w,f.h); }
+    ctx.drawImage(benchOff,0,0,benchOff.width,benchOff.height,0,0,f.w,f.h);
+    var cx=f.w/2, cy=f.h/2-8, baseR=46;
+    var over=bench.p.x>-999;
+    var hov= over && Math.hypot(bench.p.x-cx,bench.p.y-cy)<baseR*2;
+    if(hov&&!bench.hov) bench.sT=t;
+    bench.hov=hov;
+    var ts=bench.lock? R.clickZ : (hov? R.hoverZ : 1);
+    bench.sc+=(ts-bench.sc)*.16;
+    var px=over? bench.p.x : cx+Math.cos(t*.35)*f.w*.3;
+    var py=over? bench.p.y : cy+Math.sin(t*.5)*f.h*.25;
+    /* on the bench only, sheen re-runs every 4s so it can be judged while dialing */
+    var sT= R.fin.sheen&&!(bench.hov||bench.lock)? Math.floor(t/4)*4+.5 : bench.sT;
+    awakeNode(ctx,benchOff,cx,cy,baseR,bench.sc,1,FAM.amber,t,px,py,sT,hov,bench.lock,R.fin);
+    ctx.font='600 8.5px '+MONO; ctx.textAlign='center';
+    ctx.fillStyle='rgba(233,229,244,.35)';
+    ctx.fillText('YOUR SPECIMEN — ALWAYS AWAKE · HOVER = HOVER ZOOM · CLICK = LOCK + CLICK ZOOM', f.w/2, f.h-12);
+  }
+  benchCv.addEventListener('pointermove',function(e){
+    var b=benchCv.getBoundingClientRect();
+    bench.p.x=e.clientX-b.left; bench.p.y=e.clientY-b.top;
+  });
+  benchCv.addEventListener('pointerleave',function(){ bench.p.x=-9e3; bench.p.y=-9e3; });
+  benchCv.addEventListener('click',function(){ bench.lock=!bench.lock; if(bench.lock) bench.sT=lastT; });
+
   /* ================= FINISH CARDS (close-ups; dials drive them too) ================= */
   var cards=[].slice.call(document.querySelectorAll('.card'));
   cards.forEach(function(cd){
@@ -736,7 +789,7 @@
 
   /* ================= loop & controls ================= */
   function paintStatics(){
-    wakeCv._dirty=true;
+    wakeCv._dirty=true; benchCv._dirty=true;
     cards.forEach(function(cd){ cd._cv._dirty=true; });
     tiles.forEach(paintTile);
     document.getElementById('recipeTxt').textContent=recipeStr();
@@ -744,13 +797,14 @@
   var t0=performance.now(), lastT=0;
   function frame(){
     lastT=(performance.now()-t0)/1000;
+    paintBench(lastT);
     paintWake(lastT);
     cards.forEach(function(cd){ paintCard(cd,lastT); });
     paintEye(lastT);
     requestAnimationFrame(frame);
   }
-  window.__lab={ R:R, eye:eye, wnodes:function(){return wnodes;}, wp:wp,
-    step:function(dt){ lastT+=(dt||.3); paintWake(lastT); cards.forEach(function(cd){paintCard(cd,lastT);}); paintEye(lastT); } };
+  window.__lab={ R:R, eye:eye, bench:bench, wnodes:function(){return wnodes;}, wp:wp,
+    step:function(dt){ lastT+=(dt||.3); paintBench(lastT); paintWake(lastT); cards.forEach(function(cd){paintCard(cd,lastT);}); paintEye(lastT); } };
 
   function setTheme(t){
     S.theme=t;
