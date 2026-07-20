@@ -78,6 +78,8 @@
   .ctl label b{color:var(--gold);font-weight:600;letter-spacing:0}
   .ctl input[type=range]{width:100%;accent-color:var(--gold);height:18px;background:transparent}
   .fchips{display:flex;align-items:flex-end;gap:8px;flex-wrap:wrap}
+  .subseg{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+  .mini{font-family:var(--mono);font-size:8.5px;letter-spacing:.2em;color:var(--faint);text-transform:uppercase}
   .fchip{
     font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;
     padding:6px 10px;border-radius:2px;cursor:pointer;
@@ -194,6 +196,14 @@
       <button class="fchip on" data-fin="irid">Iridescence</button>
       <button class="fchip on" data-fin="label">Label</button>
     </div>
+    <div class="ctl" style="grid-column:1/-1"><label>Label voice &amp; motion</label>
+      <div class="subseg">
+        <span class="mini">Font</span>
+        <button class="fchip on" data-lf="mono">Mono</button><button class="fchip" data-lf="serif">Serif</button><button class="fchip" data-lf="sans">Sans</button>
+        <span class="mini" style="margin-left:12px">Motion</span>
+        <button class="fchip on" data-la="condense">Condense</button><button class="fchip" data-la="rise">Rise</button><button class="fchip" data-la="unveil">Unveil</button>
+      </div>
+    </div>
   </div>
   </div>
   <div class="recipe"><span class="r-lbl">RECIPE</span><span id="recipeTxt"></span><button class="copybtn" id="copyBtn">Copy</button></div>
@@ -279,6 +289,7 @@
   var R = { bubble:1.14, hoverZ:1.12, clickZ:1.32, mag:1.12, frost:1.4,
             glow:.6, pulse:.55, glowSize:2.8, finStr:.6, wakeR:120,
             chromaR:1.4, depth:.5,
+            labelFont:'mono', labelAnim:'condense',
             fin:{ chroma:false, sheen:false, irid:true, label:true } };
 
   var FAM = { amber:'#e8b06a', rose:'#e07a8a', teal:'#6fd0c3', sage:'#a9c98a', lav:'#9d8fe0', ice:'#8fb8e0', plum:'#c99ad6', sand:'#d9c08a' };
@@ -339,6 +350,32 @@
     ctx.restore(); ctx.globalAlpha=1;
   }
 
+  /* ---------- the label voice: three fonts × three motions ---------- */
+  function labelFontStr(){
+    if(R.labelFont==='serif') return '500 11px "Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif';
+    if(R.labelFont==='sans')  return '600 9.5px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif';
+    return '600 9px ui-monospace,"SF Mono",Menlo,monospace';
+  }
+  /* rv 0→1 = reveal progress; returns text width for collision checks */
+  function drawLabel(ctx,x,y,name,col,rv,alpha){
+    ctx.font=labelFontStr(); ctx.textAlign='center';
+    var dy=0, tr=0;
+    if(R.labelAnim==='rise') dy=6*(1-rv);
+    if(R.labelAnim==='condense') tr=3-2.2*rv;
+    var base=(R.labelFont==='serif')?1.5:1;
+    try{ ctx.letterSpacing=(base+tr).toFixed(1)+'px'; }catch(e){}
+    var w=ctx.measureText(name).width;
+    if(R.labelAnim==='unveil'){
+      ctx.save(); ctx.beginPath(); ctx.rect(x-w/2-2,y-12+dy,(w+4)*rv,18); ctx.clip();
+    }
+    var a=(R.labelAnim==='unveil')? Math.min(1,rv*1.6) : rv;
+    ctx.fillStyle=rgba(mix(col,'#ffffff',.4),.85*a*(alpha===undefined?1:alpha));
+    ctx.fillText(name,x,y+dy);
+    if(R.labelAnim==='unveil') ctx.restore();
+    try{ ctx.letterSpacing='0px'; }catch(e){}
+    return w;
+  }
+
   var dpr = Math.min(2, window.devicePixelRatio||1);
   function fit(cv){
     var w=cv.clientWidth, h=cv.clientHeight;
@@ -367,40 +404,40 @@
     ctx.save();
     ctx.beginPath(); ctx.arc(x,y,br,0,7); ctx.clip();
 
-    /* lens with DEPTH: three bands — the bend grows toward the edge (figma-like bulge) */
+    /* lens — draws NOTHING unless refraction/frost/depth actually ask for it (zeros are honest) */
     var mag=1+(R.mag-1)*wake;
-    var BANDS=[[0,.58,-.55],[.5,.85,.15],[.78,1.01,1]];
-    try{ ctx.filter='blur('+(R.frost*wake).toFixed(1)+'px)'; }catch(e){}
-    for(var bi=0;bi<3;bi++){
-      var m=1+(mag-1)*(1+R.depth*BANDS[bi][2]*1.5);
-      var sw2=br/Math.max(1.0001,m);
-      ctx.save();
-      ctx.beginPath();
-      ctx.arc(x,y,br*BANDS[bi][1],0,7);
-      if(BANDS[bi][0]>0) ctx.arc(x,y,br*BANDS[bi][0],0,7,true);
-      ctx.clip();
-      ctx.drawImage(O,(x-sw2)*dpr,(y-sw2)*dpr,sw2*2*dpr,sw2*2*dpr, x-br,y-br,br*2,br*2);
-      ctx.restore();
-    }
-    try{ ctx.filter='none'; }catch(e){}
-    if(fin.chroma){
-      ctx.save(); ctx.globalCompositeOperation='lighter'; ctx.globalAlpha=.12*wake*R.finStr;
-      var swc=br/mag;
-      ctx.drawImage(O,(x-swc)*dpr-R.chromaR*dpr,(y-swc)*dpr,swc*2*dpr,swc*2*dpr, x-br,y-br,br*2,br*2);
-      ctx.restore();
-    }
-
-    /* the glow, seen THROUGH the glass: magnified + wobbling (distortion) */
-    if(R.glow>0.02){
-      var wob=1.6*wake;
-      var gx=x+Math.sin(t*1.1+x*.03)*wob, gy=y+Math.cos(t*.9+y*.03)*wob;
-      var gr2=baseR*R.glowSize*scale*mag;
-      var pa2=R.glow*wake*(1-.4*R.pulse+.4*R.pulse*Math.sin(t*1.7+x*.05+1.2));
-      var g2=ctx.createRadialGradient(gx,gy,0,gx,gy,gr2);
-      g2.addColorStop(0,rgba(col,pa2*.45)); g2.addColorStop(.6,rgba(col,pa2*.14)); g2.addColorStop(1,'rgba(0,0,0,0)');
-      ctx.save(); ctx.globalCompositeOperation='screen';
-      ctx.fillStyle=g2; ctx.fillRect(x-br,y-br,br*2,br*2);
-      ctx.restore();
+    var doLens = (mag>1.004 || R.frost*wake>.05 || R.depth>.03);
+    if(doLens){
+      try{ ctx.filter='blur('+(R.frost*wake).toFixed(1)+'px)'; }catch(e){}
+      var sw=br/Math.max(1.0001,mag);
+      ctx.drawImage(O,(x-sw)*dpr,(y-sw)*dpr,sw*2*dpr,sw*2*dpr, x-br,y-br,br*2,br*2);
+      if(R.depth>.03){
+        /* one edge annulus, chord-free (moveTo breaks the seam), bends harder at the rim */
+        var m2=(1+(mag-1)*(1+1.8*R.depth))*(1+.02*R.depth);
+        var sw3=br/m2;
+        ctx.save();
+        ctx.beginPath();
+        ctx.arc(x,y,br*1.01,0,7);
+        ctx.moveTo(x+br*.72,y);
+        ctx.arc(x,y,br*.72,0,7,true);
+        ctx.clip();
+        ctx.drawImage(O,(x-sw3)*dpr,(y-sw3)*dpr,sw3*2*dpr,sw3*2*dpr, x-br,y-br,br*2,br*2);
+        ctx.restore();
+      }
+      try{ ctx.filter='none'; }catch(e){}
+      if(fin.chroma){
+        ctx.save(); ctx.globalCompositeOperation='lighter'; ctx.globalAlpha=.12*wake*R.finStr;
+        ctx.drawImage(O,(x-sw)*dpr-R.chromaR*dpr,(y-sw)*dpr,sw*2*dpr,sw*2*dpr, x-br,y-br,br*2,br*2);
+        ctx.restore();
+      }
+      /* the glow, seen THROUGH the glass — same pulse as outside, just magnified (no wobble) */
+      if(R.glow>0.02){
+        var pa2=R.glow*wake*(1-.5*R.pulse+.5*R.pulse*Math.sin(t*1.7+x*.05));
+        var gr2=baseR*R.glowSize*scale*mag;
+        var g2=ctx.createRadialGradient(x,y,0,x,y,gr2);
+        g2.addColorStop(0,rgba(col,pa2*.5)); g2.addColorStop(.55,rgba(col,pa2*.16)); g2.addColorStop(1,'rgba(0,0,0,0)');
+        ctx.fillStyle=g2; ctx.beginPath(); ctx.arc(x,y,br,0,7); ctx.fill();
+      }
     }
 
     /* the symbol under the glass — the canonical ring, zoomed */
@@ -414,9 +451,9 @@
 
     /* glass shading */
     var gl=ctx.createLinearGradient(0,y-br,0,y+br);
-    gl.addColorStop(0,'rgba(255,255,255,'+(.11*wake)+')');
+    gl.addColorStop(0,'rgba(255,255,255,'+(.10*wake)+')');
     gl.addColorStop(.45,'rgba(255,255,255,0)');
-    gl.addColorStop(1,'rgba(0,0,0,'+(.11*wake)+')');
+    gl.addColorStop(1,'rgba(0,0,0,'+(.06*wake)+')');
     ctx.fillStyle=gl; ctx.fillRect(x-br,y-br,br*2,br*2);
 
     /* sheen — a glint that flows AROUND the sphere's curve, not a flat stripe */
@@ -456,7 +493,7 @@
     ctx.lineWidth=1.2;
     ctx.strokeStyle=rgba(mix(col,'#ffffff',.6),.38*wake);
     ctx.beginPath(); ctx.arc(x,y,br,0,7); ctx.stroke();
-    ctx.strokeStyle='rgba(0,0,0,'+(.15*wake)+')';
+    ctx.strokeStyle='rgba(0,0,0,'+(.08*wake)+')';
     ctx.beginPath(); ctx.arc(x,y,br-1.3,0,7); ctx.stroke();
     if(fin.chroma){
       ctx.lineWidth=1;
@@ -522,6 +559,7 @@
       var d=Math.hypot(wp.x-n.x,wp.y-n.y);
       if(d<Math.max(16,n.r*2.6) && d<best){ best=d; whov=i; }
     }
+    var labelQ=[], hovN=whov>=0? wnodes[whov] : null;
     for(var i2=0;i2<wnodes.length;i2++){
       var n2=wnodes[i2];
       var d2=Math.hypot(wp.x-n2.x,wp.y-n2.y);
@@ -532,17 +570,30 @@
       n2.sc+=(1+(ts-1)*Math.min(1,n2.wake*1.4)-n2.sc)*.16;
       if(n2.wake>.02){
         awakeNode(ctx,wakeOff,n2.x,n2.y,n2.r,n2.sc,n2.wake,n2.col,t,wp.x,wp.y,n2.sT,i2===whov,n2.lock,R.fin);
-        /* the copy wakes with the node: fades in + tracking settles */
-        if(R.fin.label && n2.wake>.35){
-          var la=(n2.wake-.35)/.65;
-          ctx.font='600 9px '+MONO; ctx.textAlign='center';
-          try{ ctx.letterSpacing=(3-2*la).toFixed(1)+'px'; }catch(e){}
-          ctx.fillStyle=rgba(mix(n2.col,'#ffffff',.4),.85*la);
-          ctx.fillText(n2.name, n2.x, n2.y+n2.r*n2.sc*R.bubble+16);
-          try{ ctx.letterSpacing='0px'; }catch(e){}
-        }
+        if(R.fin.label && n2.wake>.35) labelQ.push(n2);
       } else {
         drawRing(ctx,n2.x,n2.y,n2.r*n2.sc,n2.col,0);
+      }
+    }
+    /* labels: hovered + locked win, neighbors yield — no overlapping copy in a group */
+    if(labelQ.length){
+      labelQ.sort(function(a,b){
+        return ((b===hovN?20:0)+(b.lock?10:0)+b.wake) - ((a===hovN?20:0)+(a.lock?10:0)+a.wake);
+      });
+      var placed=[];
+      for(var li=0;li<labelQ.length;li++){
+        var n3=labelQ[li], rv=Math.min(1,(n3.wake-.35)/.65);
+        var ly=n3.y+n3.r*n3.sc*R.bubble+16;
+        ctx.font=labelFontStr();
+        var lw=ctx.measureText(n3.name).width+10;
+        var ok=true;
+        for(var pi=0;pi<placed.length;pi++){
+          var P=placed[pi];
+          if(Math.abs(n3.x-P[0])<(lw+P[2])/2 && Math.abs(ly-P[1])<15){ ok=false; break; }
+        }
+        if(!ok) continue;
+        placed.push([n3.x,ly,lw]);
+        drawLabel(ctx,n3.x,ly,n3.name,n3.col,rv,1);
       }
     }
     if(wp.x<-999){
@@ -595,11 +646,9 @@
     var sT= R.fin.sheen&&!(bench.hov||bench.lock)? Math.floor(t/4)*4+.5 : bench.sT;
     awakeNode(ctx,benchOff,cx,cy,baseR,bench.sc,1,FAM.amber,t,px,py,sT,hov,bench.lock,R.fin);
     if(R.fin.label){
-      ctx.font='600 10px '+MONO; ctx.textAlign='center';
-      try{ ctx.letterSpacing='1.5px'; }catch(e){}
-      ctx.fillStyle=rgba(mix(FAM.amber,'#ffffff',.4),.85);
-      ctx.fillText('ISHTAR', cx, cy+baseR*bench.sc*R.bubble+20);
-      try{ ctx.letterSpacing='0px'; }catch(e){}
+      /* the reveal replays on hover/lock so the motion can be judged */
+      var lrv=(bench.hov||bench.lock)? Math.min(1,(t-bench.sT)/.6) : 1;
+      drawLabel(ctx,cx,cy+baseR*bench.sc*R.bubble+20,'ISHTAR',FAM.amber,Math.max(.02,lrv),1);
     }
     ctx.font='600 8.5px '+MONO; ctx.textAlign='center';
     ctx.fillStyle='rgba(233,229,244,.35)';
@@ -787,6 +836,7 @@
       +' · refract '+R.mag.toFixed(2)+' depth '+R.depth.toFixed(2)+' · frost '+R.frost.toFixed(1)
       +' · glow '+R.glow.toFixed(2)+' pulse '+R.pulse.toFixed(2)+' reach ×'+R.glowSize.toFixed(1)
       +' · finish '+R.finStr.toFixed(2)+' ['+(f.join('+')||'pure')+'] chroma± '+R.chromaR.toFixed(1)+'px'
+      +(R.fin.label? ' · label '+R.labelFont+'/'+R.labelAnim : '')
       +' · wake '+R.wakeR+'px · ground '+S.theme;
   }
   function syncRig(){
@@ -803,13 +853,24 @@
       document.getElementById('recipeTxt').textContent=recipeStr();
     });
   });
-  [].forEach.call(document.querySelectorAll('.fchip'),function(ch){
+  [].forEach.call(document.querySelectorAll('.fchip[data-fin]'),function(ch){
     ch.addEventListener('click',function(){
       var k=ch.dataset.fin; R.fin[k]=!R.fin[k];
       ch.classList.toggle('on',R.fin[k]);
       document.getElementById('recipeTxt').textContent=recipeStr();
     });
   });
+  function radio(attr,fn){
+    [].forEach.call(document.querySelectorAll('.fchip['+attr+']'),function(b){
+      b.addEventListener('click',function(){
+        [].forEach.call(document.querySelectorAll('.fchip['+attr+']'),function(c){c.classList.toggle('on',c===b);});
+        fn(b.getAttribute(attr));
+        document.getElementById('recipeTxt').textContent=recipeStr();
+      });
+    });
+  }
+  radio('data-lf',function(v){ R.labelFont=v; });
+  radio('data-la',function(v){ R.labelAnim=v; });
   document.getElementById('copyBtn').addEventListener('click',function(){
     var txt='NODE RECIPE — '+recipeStr();
     if(navigator.clipboard&&navigator.clipboard.writeText){
