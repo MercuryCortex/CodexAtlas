@@ -45,27 +45,52 @@
   }
   .bar .grp{display:flex;align-items:center;gap:10px}
   .bar .lbl{font-family:var(--mono);font-size:10px;letter-spacing:.22em;color:var(--faint);text-transform:uppercase}
-  .seg{display:flex;border:1px solid rgba(211,184,119,.25);border-radius:3px;overflow:hidden}
-  .seg button{
-    font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;
-    background:transparent;color:var(--dim);border:0;padding:7px 14px;cursor:pointer;
-  }
-  .seg button.on{background:var(--gold);color:#231b08}
-  .seg button:focus-visible,.sw:focus-visible,.tile:focus-visible{outline:1px solid var(--gold);outline-offset:2px}
   .sw{
     width:26px;height:26px;border-radius:50%;cursor:pointer;padding:0;
     border:1px solid rgba(233,229,244,.25);
   }
   .sw.on{box-shadow:0 0 0 2px var(--void),0 0 0 3.5px var(--gold)}
+  .sw:focus-visible,.tile:focus-visible,.fchip:focus-visible,.copybtn:focus-visible{outline:1px solid var(--gold);outline-offset:2px}
 
   section{margin-top:74px}
   .shead{display:flex;flex-wrap:wrap;align-items:center;gap:16px;border-bottom:var(--hairline);padding-bottom:12px;margin-bottom:8px}
   .snum{font-family:var(--mono);font-size:11px;color:var(--gold);letter-spacing:.2em}
   h2{font-size:26px;font-weight:500;margin:0;letter-spacing:-.005em}
   .snote{margin-left:auto;font-family:var(--mono);font-size:10.5px;color:var(--faint);letter-spacing:.08em;text-align:right}
-  .shead .seg{margin-left:auto}
-  .intro{max-width:62ch;color:var(--dim);font-size:15.5px;margin:14px 0 26px}
+  .intro{max-width:62ch;color:var(--dim);font-size:15.5px;margin:14px 0 22px}
   .intro em{color:var(--ink)}
+
+  /* ---------- builder rig ---------- */
+  .rig{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
+    gap:14px 20px;padding:16px 18px;margin-bottom:12px;
+    background:var(--panel);border:1px solid rgba(233,229,244,.07);border-radius:4px;
+  }
+  .ctl label{
+    display:flex;justify-content:space-between;
+    font-family:var(--mono);font-size:9px;letter-spacing:.16em;color:var(--faint);
+    text-transform:uppercase;margin-bottom:5px;
+  }
+  .ctl label b{color:var(--gold);font-weight:600;letter-spacing:0}
+  .ctl input[type=range]{width:100%;accent-color:var(--gold);height:18px;background:transparent}
+  .fchips{display:flex;align-items:flex-end;gap:8px;flex-wrap:wrap}
+  .fchip{
+    font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;
+    padding:6px 10px;border-radius:2px;cursor:pointer;
+    background:transparent;color:var(--dim);border:1px solid rgba(145,138,180,.35);
+  }
+  .fchip.on{color:#231b08;background:var(--gold);border-color:var(--gold)}
+  .recipe{
+    display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+    font-family:var(--mono);font-size:10px;letter-spacing:.06em;color:var(--dim);
+    margin:0 0 14px;padding:8px 12px;border:1px dashed rgba(211,184,119,.25);border-radius:3px;
+  }
+  .recipe .r-lbl{color:var(--gold);letter-spacing:.2em}
+  .copybtn{
+    font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;
+    background:transparent;color:var(--gold);border:1px solid rgba(211,184,119,.4);
+    border-radius:2px;padding:4px 10px;cursor:pointer;margin-left:auto;
+  }
 
   .wide{border:1px solid rgba(233,229,244,.08);border-radius:4px;overflow:hidden}
   .wide canvas{display:block;width:100%;height:480px;cursor:crosshair}
@@ -122,16 +147,16 @@
 
 <div class="wrap">
 <header>
-  <div class="eyebrow">Codex Atlas · Design Lab · Round 3 · 2026-07-20</div>
+  <div class="eyebrow">Codex Atlas · Design Lab · Round 4 · 2026-07-20</div>
   <h1>The Node</h1>
-  <p class="dek">Rest is still. The field is calm canonical rings — the life is liquid glass that grows under your hand, bending the glow and the neighbors behind it. No techno.</p>
+  <p class="dek">Now it's your instrument. Rest is still rings on the deep void — the life is a pulsing glow and a skin of liquid glass that grow under your hand. Dial it, then copy the recipe.</p>
 </header>
 
 <div class="bar">
   <div class="grp">
     <span class="lbl">Ground</span>
-    <button class="sw on" data-t="obsidian" title="Obsidian (default)" style="background:linear-gradient(135deg,#0b0918,#171231)"></button>
-    <button class="sw" data-t="void" title="Deep Void" style="background:linear-gradient(135deg,#04060d,#0b101f)"></button>
+    <button class="sw on" data-t="void" title="Deep Void (lab default)" style="background:linear-gradient(135deg,#04060d,#0b101f)"></button>
+    <button class="sw" data-t="obsidian" title="Obsidian" style="background:linear-gradient(135deg,#0b0918,#171231)"></button>
     <button class="sw" data-t="nebula" title="Nebula (theme)" style="background:linear-gradient(135deg,#1c1547,#31226b)"></button>
     <button class="sw" data-t="inkwell" title="Inkwell (theme)" style="background:linear-gradient(135deg,#140f0b,#211711)"></button>
   </div>
@@ -139,43 +164,61 @@
 
 <section>
   <div class="shead">
-    <span class="snum">01</span><h2>The Wake</h2>
-    <div class="seg" id="segFinish">
-      <button data-f="pure" class="on">Pure</button><button data-f="chroma">Chromatic</button><button data-f="sheen">Sheen</button><button data-f="irid">Iridescent</button>
+    <span class="snum">01</span><h2>The Wake — builder</h2>
+    <span class="snote">hover = wake + zoom · click = keep awake, zoom more<br>the bubble follows the node; the glow lives only when awake</span>
+  </div>
+  <p class="intro">The tools you asked for. Every dial drives the field and the close-ups live: the bubble sits <em>just</em> over the node and follows its zoom; the old always-on halo is gone — instead a <em>pulsating glow</em> blooms behind awake nodes and bends through the glass. Finishes stack — mix the bits you like, then <em>copy the recipe line</em> and tell me “this one.”</p>
+
+  <div class="rig">
+    <div class="ctl"><label>Bubble size <b id="v-bubble"></b></label><input type="range" id="r-bubble" min="1.02" max="1.5" step="0.01"></div>
+    <div class="ctl"><label>Hover zoom <b id="v-hoverZ"></b></label><input type="range" id="r-hoverZ" min="1" max="1.5" step="0.01"></div>
+    <div class="ctl"><label>Click zoom <b id="v-clickZ"></b></label><input type="range" id="r-clickZ" min="1" max="1.9" step="0.01"></div>
+    <div class="ctl"><label>Refraction <b id="v-mag"></b></label><input type="range" id="r-mag" min="1" max="1.35" step="0.01"></div>
+    <div class="ctl"><label>Frost <b id="v-frost"></b></label><input type="range" id="r-frost" min="0" max="4" step="0.1"></div>
+    <div class="ctl"><label>Glow <b id="v-glow"></b></label><input type="range" id="r-glow" min="0" max="1" step="0.01"></div>
+    <div class="ctl"><label>Glow pulse <b id="v-pulse"></b></label><input type="range" id="r-pulse" min="0" max="1" step="0.01"></div>
+    <div class="ctl"><label>Glow reach <b id="v-glowSize"></b></label><input type="range" id="r-glowSize" min="1.5" max="4.5" step="0.1"></div>
+    <div class="ctl"><label>Finish strength <b id="v-finStr"></b></label><input type="range" id="r-finStr" min="0" max="1" step="0.01"></div>
+    <div class="ctl"><label>Wake radius <b id="v-wakeR"></b></label><input type="range" id="r-wakeR" min="60" max="240" step="2"></div>
+    <div class="fchips">
+      <button class="fchip" data-fin="chroma">Chroma</button>
+      <button class="fchip" data-fin="sheen">Sheen</button>
+      <button class="fchip on" data-fin="irid">Iridescence</button>
     </div>
   </div>
-  <p class="intro">Move your hand over the field. At rest every node is the pure canonical ring — <em>nothing moves, ever.</em> Near the cursor, liquid glass grows over the ring: real refraction — the glow, the wires and the neighbors behind each bubble bend through it. Hover starts the Living-Ring light; <em>click keeps one awake.</em> Complexity follows the cursor, not the node count.</p>
+  <div class="recipe"><span class="r-lbl">RECIPE</span><span id="recipeTxt"></span><button class="copybtn" id="copyBtn">Copy</button></div>
+
   <div class="wide"><canvas id="wakeCanvas"></canvas></div>
 </section>
 
 <section>
   <div class="shead">
-    <span class="snum">02</span><h2>Finishes</h2>
-    <span class="snote">the ones you asked for — hover any card to re-trigger<br>every finish rides the wake; rest state never wears them</span>
+    <span class="snum">02</span><h2>Finishes — close up</h2>
+    <span class="snote">reference close-ups; your dials drive these too<br>hover any card to re-trigger &amp; light it</span>
   </div>
-  <p class="intro">Close-ups of the awake glass, each with one finishing filter. Watch the faint wires behind each node — <em>that bend is the refraction.</em> Pick with the switch above and feel it at field scale.</p>
+  <p class="intro">The same awake glass, isolated. Watch the faint wires behind each node — <em>that bend is the refraction</em> — and the glow pulsing through the bubble.</p>
   <div class="cards">
-    <div class="card" data-f="pure">
+    <div class="card" data-fin="">
       <div class="head"><h3>Pure Liquid Glass</h3><span class="chip">The base</span></div>
-      <p class="desc">Just the lens: the ring magnified through its own bubble, frost at the edge, a quiet rim light. No color tricks.</p>
+      <p class="desc">Just the lens and the living glow: refraction, frost, rim light, pulse. No color tricks.</p>
       <canvas></canvas>
-      <div class="foot"><span>refraction + frost + rim</span><span>wake state only</span></div>
+      <div class="foot"><span>refraction + frost + glow</span><span>wake state only</span></div>
     </div>
-    <div class="card" data-f="chroma">
+    <div class="card" data-fin="chroma">
       <div class="head"><h3>Chromatic Edge</h3><span class="chip">Aberration</span></div>
-      <p class="desc">The filter effect you meant — chromatic aberration: a whisper of warm/cool fringing where the lens bends hardest. Held static and subtle; nothing rotates.</p>
+      <p class="desc">A whisper of warm/cool fringing where the lens bends hardest. Held static; nothing rotates.</p>
       <canvas></canvas>
       <div class="foot"><span>±1px channel split at the rim</span><span>wake state only</span></div>
     </div>
-    <div class="card" data-f="sheen">
+    <div class="card" data-fin="sheen">
       <div class="head"><h3>Sheen Sweep</h3><span class="chip">The shine</span></div>
-      <p class="desc">A soft band of light crosses the glass once as the node wakes — then stillness. The shimmer from camera filters, spent in a single gesture.</p>
+      <p class="desc">One soft band of light crosses the glass as the node wakes — then stillness. Never loops.</p>
       <canvas></canvas>
       <div class="foot"><span>one sweep per wake · ~.9s</span><span>never loops at rest</span></div>
     </div>
-    <div class="card" data-f="irid">
+    <div class="card" data-fin="irid">
       <div class="head"><h3>Iridescence</h3><span class="chip">Oil film</span></div>
-      <p class="desc">A faint spectral film around the rim. It answers your cursor — the hue turns as your hand moves around the node — never a clock.</p>
+      <p class="desc">A faint spectral film around the rim, lit by your cursor — the hue turns as your hand moves around the node.</p>
       <canvas></canvas>
       <div class="foot"><span>conic film · cursor-lit</span><span>wake state only</span></div>
     </div>
@@ -187,10 +230,10 @@
     <span class="snum">03</span><h2>The ground</h2>
     <span class="snote">click a tile — the whole lab re-grounds</span>
   </div>
-  <p class="intro"><em>Obsidian default, Deep Void approved.</em> Nebula and Inkwell stay in the theme drawer. The field on each is shown at rest — pure rings, still.</p>
+  <p class="intro"><em>Deep Void is the lab default now — the starfield you loved.</em> Obsidian stays approved; Nebula and Inkwell in the theme drawer. Fields shown at rest: pure rings, still, no halo.</p>
   <div class="tiles">
-    <button class="tile on" data-t="obsidian"><canvas></canvas><span class="tl">I · Obsidian</span><span class="rec">Default ✓</span></button>
-    <button class="tile" data-t="void"><canvas></canvas><span class="tl">II · Deep Void</span><span class="rec ok">Approved ✓</span></button>
+    <button class="tile on" data-t="void"><canvas></canvas><span class="tl">I · Deep Void</span><span class="rec">Lab default ✓</span></button>
+    <button class="tile" data-t="obsidian"><canvas></canvas><span class="tl">II · Obsidian</span><span class="rec ok">Approved ✓</span></button>
     <button class="tile" data-t="nebula"><canvas></canvas><span class="tl">III · Nebula — theme</span></button>
     <button class="tile" data-t="inkwell"><canvas></canvas><span class="tl">IV · Inkwell — theme</span></button>
   </div>
@@ -201,7 +244,7 @@
     <span class="snum">04</span><h2>The Eye</h2>
     <span class="snote">hover a family = the hull lifts · click = dive in<br>◂ THE EYE brings you back</span>
   </div>
-  <p class="intro">The family toy, unchanged: the wheel first — <em>the well-shaped logic always comes first.</em> Hover lifts a hull, click dives, the breadcrumb returns.</p>
+  <p class="intro">The family toy: the wheel first — <em>the well-shaped logic always comes first.</em> Hover lifts a hull, click dives, the breadcrumb returns.</p>
   <div class="wide"><canvas id="eyeCanvas"></canvas></div>
   <ul class="rules">
     <li><b>Hairline, never blob.</b> 1px contour at ~25% + 4% fill. The hull is a whisper of territory, not a colored puddle.</li>
@@ -212,16 +255,20 @@
 
 <div class="ship">
   <div class="lbl">How it ships</div>
-  <p><b>Rest is still — that's the law and the budget.</b> A thousand calm rings cost nothing; only the handful of nodes near the cursor ever run the glass. Aliveness and performance are the same decision.</p>
-  <p><b>Two tiers of refraction.</b> This toy fakes tier two: the engine version starts with the cheap in-shader bend (the ring and its own glow warp through the bubble — no new pass), and graduates to true scene refraction (photograph the frame, bend it through the lens) as the flagship FX — tested carefully on Safari first.</p>
-  <p><b>Finishes ride the wake.</b> Chromatic edge, sheen, iridescence — all exist only while a node is awake or chosen. The resting field never wears them.</p>
+  <p><b>Rest is still — that's the law and the budget.</b> No halo, no motion in the field; only the handful of nodes near the cursor run glow + glass. Aliveness and performance are the same decision.</p>
+  <p><b>The recipe is the spec.</b> Whatever you dial here becomes the exact uniform values in the engine shader — bubble scale, zooms, refraction, frost, glow, pulse, finish mix. Copy the line, and that's the handoff.</p>
+  <p><b>Two tiers of refraction.</b> The engine starts with the cheap in-shader bend (ring + own glow warp through the bubble — no new pass) and graduates to true scene refraction as the flagship FX — tested carefully on Safari first.</p>
 </div>
 </div>
 
 <script>
 (function(){
   'use strict';
-  var S = { theme:'obsidian', finish:'pure' };
+  var S = { theme:'void' };
+  /* THE RECIPE — every dial writes here; the readout is the snapshot */
+  var R = { bubble:1.14, hoverZ:1.12, clickZ:1.32, mag:1.12, frost:1.4,
+            glow:.6, pulse:.55, glowSize:2.8, finStr:.6, wakeR:120,
+            fin:{ chroma:false, sheen:false, irid:true } };
 
   var FAM = { amber:'#e8b06a', rose:'#e07a8a', teal:'#6fd0c3', sage:'#a9c98a', lav:'#9d8fe0', ice:'#8fb8e0', plum:'#c99ad6', sand:'#d9c08a' };
   var FCOLS=[FAM.amber,FAM.rose,FAM.teal,FAM.sage,FAM.lav,FAM.ice];
@@ -250,22 +297,16 @@
     var r=ctx.createRadialGradient(w*.72,h*.15,0,w*.72,h*.15,w*.8);
     r.addColorStop(0,T.glow); r.addColorStop(1,'rgba(0,0,0,0)');
     ctx.fillStyle=r; ctx.fillRect(0,0,w,h);
-    if(T.star){ for(var i=0;i<90;i++){
-      ctx.fillStyle='rgba(220,225,255,'+(0.04+srand(i)*0.13)+')';
+    if(T.star){ for(var i=0;i<110;i++){
+      ctx.fillStyle='rgba(220,225,255,'+(0.04+srand(i)*0.14)+')';
       ctx.fillRect(srand(i*3+1)*w, srand(i*7+2)*h, 1, 1);
     }}
   }
 
-  /* canonical ring — the only rest-state look */
+  /* canonical ring — crisp, NO halo (the glow system owns light now) */
   function drawRing(ctx,x,y,r,col,st,alpha){
     var a=(alpha===undefined?1:alpha)*(st===3?0.32:1);
     var c=st===3? mix(col,'#3a3752',0.55) : col;
-    if(r>4){
-      var halo=ctx.createRadialGradient(x,y,r*.5,x,y,r*1.9);
-      halo.addColorStop(0,rgba(c,(st===1||st===2?0.20:0.10)*a));
-      halo.addColorStop(1,'rgba(0,0,0,0)');
-      ctx.fillStyle=halo; ctx.beginPath(); ctx.arc(x,y,r*1.9,0,7); ctx.fill();
-    }
     ctx.lineWidth=Math.max(1.1,r*.10);
     ctx.strokeStyle=(st===1)? mix(c,'#ffffff',.3) : rgba(c,.95*a);
     ctx.beginPath(); ctx.arc(x,y,r*.86,0,7); ctx.stroke();
@@ -274,16 +315,15 @@
     if(st===2){ ctx.lineWidth=1; ctx.strokeStyle=rgba('#d3b877',.85);
       ctx.beginPath(); ctx.arc(x,y,r*1.28,0,7); ctx.stroke(); }
   }
-
-  /* Living-Ring circulation — the hover/selected accent */
-  function circ(ctx,x,y,R,t,col,k0){
+  /* Living-Ring circulation — hover/selected accent */
+  function circ(ctx,x,y,Rr,t,col,k0){
     ctx.save(); ctx.globalCompositeOperation='screen';
     var ga=t*.9+(k0||0);
     for(var k=0;k<5;k++){
       ctx.globalAlpha=.45-.08*k;
-      ctx.lineWidth=Math.max(1.2,R*.10);
+      ctx.lineWidth=Math.max(1.2,Rr*.10);
       ctx.strokeStyle=mix(col,'#ffffff',.75);
-      ctx.beginPath(); ctx.arc(x,y,R,ga-k*.28,ga-k*.28+.3); ctx.stroke();
+      ctx.beginPath(); ctx.arc(x,y,Rr,ga-k*.28,ga-k*.28+.3); ctx.stroke();
     }
     ctx.restore(); ctx.globalAlpha=1;
   }
@@ -298,41 +338,66 @@
   }
   var MONO='ui-monospace,"SF Mono",Menlo,monospace';
 
-  /* ================= LIQUID GLASS ================= */
-  /* lens: sample the (static) backdrop canvas magnified + frosted inside the bubble */
-  function glass(ctx,O,x,y,br,wake,col,finish,t,px,py,sheenT){
-    if(wake<=0.02) return;
-    var mag=1+.13*wake;
+  /* ============ THE AWAKE NODE — glow + bubble + symbol + finishes ============ */
+  /* O must contain ground+wires only (no rings) so the lens never ghosts */
+  function awakeNode(ctx,O,x,y,baseR,scale,wake,col,t,px,py,sT,hovered,locked,fin){
+    var r=baseR*scale;
+    var br=r*(1+(R.bubble-1)*wake)+2.5*wake;
+
+    /* pulsating glow behind (alive only while awake) */
+    if(R.glow>0.02){
+      var pa=R.glow*wake*(1-.5*R.pulse+.5*R.pulse*Math.sin(t*1.7+x*.05));
+      var gr=baseR*R.glowSize*scale;
+      var gg=ctx.createRadialGradient(x,y,0,x,y,gr);
+      gg.addColorStop(0,rgba(col,pa*.5)); gg.addColorStop(.55,rgba(col,pa*.16)); gg.addColorStop(1,'rgba(0,0,0,0)');
+      ctx.fillStyle=gg; ctx.beginPath(); ctx.arc(x,y,gr,0,7); ctx.fill();
+    }
 
     ctx.save();
     ctx.beginPath(); ctx.arc(x,y,br,0,7); ctx.clip();
 
-    var sw=br/mag;
-    try{ ctx.filter='blur('+(1.6*wake).toFixed(1)+'px)'; }catch(e){}
+    /* lens: backdrop bends through the bubble */
+    var mag=1+(R.mag-1)*wake, sw=br/mag;
+    try{ ctx.filter='blur('+(R.frost*wake).toFixed(1)+'px)'; }catch(e){}
     ctx.drawImage(O,(x-sw)*dpr,(y-sw)*dpr,sw*2*dpr,sw*2*dpr, x-br,y-br,br*2,br*2);
     try{ ctx.filter='none'; }catch(e){}
-
-    if(finish==='chroma'){
-      ctx.save(); ctx.globalCompositeOperation='lighter'; ctx.globalAlpha=.14*wake;
+    if(fin.chroma){
+      ctx.save(); ctx.globalCompositeOperation='lighter'; ctx.globalAlpha=.12*wake*R.finStr;
       ctx.drawImage(O,(x-sw)*dpr-1.4*dpr,(y-sw)*dpr,sw*2*dpr,sw*2*dpr, x-br,y-br,br*2,br*2);
       ctx.restore();
     }
 
+    /* the glow, seen THROUGH the glass: magnified + wobbling (distortion) */
+    if(R.glow>0.02){
+      var wob=1.6*wake;
+      var gx=x+Math.sin(t*1.1+x*.03)*wob, gy=y+Math.cos(t*.9+y*.03)*wob;
+      var gr2=baseR*R.glowSize*scale*mag;
+      var pa2=R.glow*wake*(1-.4*R.pulse+.4*R.pulse*Math.sin(t*1.7+x*.05+1.2));
+      var g2=ctx.createRadialGradient(gx,gy,0,gx,gy,gr2);
+      g2.addColorStop(0,rgba(col,pa2*.45)); g2.addColorStop(.6,rgba(col,pa2*.14)); g2.addColorStop(1,'rgba(0,0,0,0)');
+      ctx.save(); ctx.globalCompositeOperation='screen';
+      ctx.fillStyle=g2; ctx.fillRect(x-br,y-br,br*2,br*2);
+      ctx.restore();
+    }
+
+    /* the symbol under the glass — the canonical ring, zoomed */
+    drawRing(ctx,x,y,r,col,0);
+
     /* glass shading */
     var gl=ctx.createLinearGradient(0,y-br,0,y+br);
-    gl.addColorStop(0,'rgba(255,255,255,'+(.13*wake)+')');
+    gl.addColorStop(0,'rgba(255,255,255,'+(.11*wake)+')');
     gl.addColorStop(.45,'rgba(255,255,255,0)');
-    gl.addColorStop(1,'rgba(0,0,0,'+(.12*wake)+')');
+    gl.addColorStop(1,'rgba(0,0,0,'+(.11*wake)+')');
     ctx.fillStyle=gl; ctx.fillRect(x-br,y-br,br*2,br*2);
 
-    /* sheen: one soft band sweeping across on wake */
-    if(finish==='sheen' && sheenT!==undefined){
-      var p=(t-sheenT)/.9;
+    /* sheen — one band per wake */
+    if(fin.sheen && sT!==undefined){
+      var p=(t-sT)/.9;
       if(p>=0&&p<=1){
         var dx=Math.cos(.6),dy=Math.sin(.6);
         var q=(p*2.4-1.2)*br;
         var sg=ctx.createLinearGradient(x+dx*q-dy*br*.5,y+dy*q+dx*br*.5,x+dx*(q+br*.7)-dy*br*.5,y+dy*(q+br*.7)+dx*br*.5);
-        var sa=.22*wake*Math.sin(Math.PI*p);
+        var sa=.26*wake*R.finStr*Math.sin(Math.PI*p);
         sg.addColorStop(0,'rgba(255,255,255,0)');
         sg.addColorStop(.5,'rgba(255,255,255,'+sa+')');
         sg.addColorStop(1,'rgba(255,255,255,0)');
@@ -342,8 +407,8 @@
       }
     }
 
-    /* iridescent film: conic hue around the rim, lit by cursor angle */
-    if(finish==='irid' && ctx.createConicGradient){
+    /* iridescent film — lit by the cursor angle */
+    if(fin.irid && ctx.createConicGradient){
       var la=Math.atan2((py||0)-y,(px||0)-x);
       var cg=ctx.createConicGradient(la,x,y);
       cg.addColorStop(0,  rgba(FAM.rose,.5));
@@ -351,33 +416,34 @@
       cg.addColorStop(.5, rgba(FAM.teal,.5));
       cg.addColorStop(.75,rgba(FAM.lav,.5));
       cg.addColorStop(1,  rgba(FAM.rose,.5));
-      ctx.save(); ctx.globalCompositeOperation='screen'; ctx.globalAlpha=.14*wake;
-      ctx.lineWidth=br*.2; ctx.strokeStyle=cg;
-      ctx.beginPath(); ctx.arc(x,y,br*.87,0,7); ctx.stroke();
+      ctx.save(); ctx.globalCompositeOperation='screen'; ctx.globalAlpha=.22*wake*R.finStr;
+      ctx.lineWidth=br*.18; ctx.strokeStyle=cg;
+      ctx.beginPath(); ctx.arc(x,y,br*.88,0,7); ctx.stroke();
       ctx.restore(); ctx.globalAlpha=1;
     }
-
     ctx.restore();
 
-    /* rim of the bubble */
+    /* bubble rim + fringing + specular */
     ctx.lineWidth=1.2;
-    ctx.strokeStyle=rgba(mix(col,'#ffffff',.6),.4*wake);
+    ctx.strokeStyle=rgba(mix(col,'#ffffff',.6),.38*wake);
     ctx.beginPath(); ctx.arc(x,y,br,0,7); ctx.stroke();
-    ctx.strokeStyle='rgba(0,0,0,'+(.16*wake)+')';
+    ctx.strokeStyle='rgba(0,0,0,'+(.15*wake)+')';
     ctx.beginPath(); ctx.arc(x,y,br-1.3,0,7); ctx.stroke();
-    if(finish==='chroma'){
+    if(fin.chroma){
       ctx.lineWidth=1;
-      ctx.strokeStyle='rgba(255,120,90,'+(.20*wake)+')';
+      ctx.strokeStyle='rgba(255,120,90,'+(.22*wake*R.finStr)+')';
       ctx.beginPath(); ctx.arc(x,y,br-1,0,7); ctx.stroke();
-      ctx.strokeStyle='rgba(110,160,255,'+(.20*wake)+')';
+      ctx.strokeStyle='rgba(110,160,255,'+(.22*wake*R.finStr)+')';
       ctx.beginPath(); ctx.arc(x,y,br+1,0,7); ctx.stroke();
     }
-
-    /* specular */
     var sx=x-br*.36, sy=y-br*.42;
     var sp=ctx.createRadialGradient(sx,sy,0,sx,sy,br*.3);
-    sp.addColorStop(0,'rgba(255,255,255,'+(.5*wake)+')'); sp.addColorStop(1,'rgba(255,255,255,0)');
+    sp.addColorStop(0,'rgba(255,255,255,'+(.45*wake)+')'); sp.addColorStop(1,'rgba(255,255,255,0)');
     ctx.fillStyle=sp; ctx.beginPath(); ctx.arc(sx,sy,br*.3,0,7); ctx.fill();
+
+    if(hovered||locked) circ(ctx,x,y,r*.86,t,col,x);
+    if(locked){ ctx.lineWidth=1; ctx.strokeStyle=rgba('#d3b877',.85);
+      ctx.beginPath(); ctx.arc(x,y,br+4,0,7); ctx.stroke(); }
   }
 
   /* ================= THE WAKE FIELD ================= */
@@ -393,7 +459,7 @@
       wnodes.push({
         x:20+srand(i*3+1)*(w-40), y:20+srand(i*7+2)*(h-40),
         r:big? 9+srand(i*5)*4 : 3+srand(i*5)*4.5,
-        col:FCOLS[i%6], wake:0, lock:false, sT:-9
+        col:FCOLS[i%6], wake:0, sc:1, lock:false, sT:-9
       });
     }
     for(var j=0;j<14;j++){
@@ -401,6 +467,7 @@
       wwires.push([a,b,srand(j*3)*.5-.25]);
     }
   }
+  /* O = ground + wires ONLY (rings drawn live so they can zoom) */
   function paintWakeOff(){
     var w=wakeCv.clientWidth,h=wakeCv.clientHeight;
     if(!w) return;
@@ -417,10 +484,6 @@
       ctx.quadraticCurveTo((W[0].x+W[1].x)/2+W[2]*160,(W[0].y+W[1].y)/2-W[2]*120,W[1].x,W[1].y);
       ctx.stroke();
     }
-    for(var i=0;i<wnodes.length;i++){
-      var n=wnodes[i];
-      drawRing(ctx,n.x,n.y,n.r,n.col,0);
-    }
   }
   function paintWake(t){
     var f=fit(wakeCv), ctx=f.ctx;
@@ -428,30 +491,30 @@
     if(wakeCv._dirty){ wakeCv._dirty=false; paintWakeOff(); }
     ctx.drawImage(wakeOff,0,0,wakeOff.width,wakeOff.height,0,0,f.w,f.h);
 
-    var WR=120;
     whov=-1; var best=1e9;
     for(var i=0;i<wnodes.length;i++){
       var n=wnodes[i];
       var d=Math.hypot(wp.x-n.x,wp.y-n.y);
-      if(d<Math.max(16,n.r*2.4) && d<best){ best=d; whov=i; }
+      if(d<Math.max(16,n.r*2.6) && d<best){ best=d; whov=i; }
     }
     for(var i2=0;i2<wnodes.length;i2++){
       var n2=wnodes[i2];
       var d2=Math.hypot(wp.x-n2.x,wp.y-n2.y);
-      var tgt=n2.lock||i2===whov? 1 : Math.pow(Math.max(0,1-d2/WR),1.6);
+      var tgt=n2.lock||i2===whov? 1 : Math.pow(Math.max(0,1-d2/R.wakeR),1.6);
       if(n2.wake<.1&&tgt>.2) n2.sT=t;
       n2.wake+=(tgt-n2.wake)*.14;
+      var ts=n2.lock? R.clickZ : (i2===whov? R.hoverZ : 1);
+      n2.sc+=(1+(ts-1)*Math.min(1,n2.wake*1.4)-n2.sc)*.16;
       if(n2.wake>.02){
-        glass(ctx,wakeOff,n2.x,n2.y,n2.r*1.75+3,n2.wake,n2.col,S.finish,t,wp.x,wp.y,n2.sT);
-        if(i2===whov||n2.lock) circ(ctx,n2.x,n2.y,n2.r*.86,t,n2.col,i2);
-        if(n2.lock){ ctx.lineWidth=1; ctx.strokeStyle=rgba('#d3b877',.85);
-          ctx.beginPath(); ctx.arc(n2.x,n2.y,n2.r*1.75+7,0,7); ctx.stroke(); }
+        awakeNode(ctx,wakeOff,n2.x,n2.y,n2.r,n2.sc,n2.wake,n2.col,t,wp.x,wp.y,n2.sT,i2===whov,n2.lock,R.fin);
+      } else {
+        drawRing(ctx,n2.x,n2.y,n2.r*n2.sc,n2.col,0);
       }
     }
     if(wp.x<-999){
       ctx.font='600 9px '+MONO; ctx.textAlign='center';
       ctx.fillStyle='rgba(233,229,244,.30)';
-      ctx.fillText('REST IS STILL — MOVE YOUR HAND OVER THE FIELD · CLICK KEEPS ONE AWAKE', f.w/2, f.h-14);
+      ctx.fillText('REST IS STILL — MOVE YOUR HAND · HOVER ZOOMS · CLICK KEEPS AWAKE & ZOOMS MORE', f.w/2, f.h-14);
     }
     wakeCv.style.cursor= whov>=0?'pointer':'crosshair';
   }
@@ -460,14 +523,14 @@
     wp.x=e.clientX-b.left; wp.y=e.clientY-b.top;
   });
   wakeCv.addEventListener('pointerleave',function(){ wp.x=-9e3; wp.y=-9e3; });
-  wakeCv.addEventListener('click',function(){ if(whov>=0) wnodes[whov].lock=!wnodes[whov].lock; });
+  wakeCv.addEventListener('click',function(){ if(whov>=0){ var n=wnodes[whov]; n.lock=!n.lock; if(n.lock) n.sT=lastT; } });
 
-  /* ================= FINISH CARDS ================= */
+  /* ================= FINISH CARDS (close-ups; dials drive them too) ================= */
   var cards=[].slice.call(document.querySelectorAll('.card'));
   cards.forEach(function(cd){
-    cd._cv=cd.querySelector('canvas'); cd._f=cd.dataset.f;
+    cd._cv=cd.querySelector('canvas'); cd._fin=cd.dataset.fin;
     cd._off=document.createElement('canvas');
-    cd._p={x:-9e3,y:-9e3}; cd._sT=0; cd._hov=false;
+    cd._p={x:-9e3,y:-9e3}; cd._sT=.4; cd._hov=false;
     cd._cv.addEventListener('pointermove',function(e){
       var b=cd._cv.getBoundingClientRect();
       cd._p.x=e.clientX-b.left; cd._p.y=e.clientY-b.top;
@@ -488,7 +551,6 @@
     drawRing(ctx,w*.16,h*.30,7,FAM.rose,0);
     drawRing(ctx,w*.82,h*.68,6,FAM.sage,0);
     drawRing(ctx,w*.78,h*.24,4.5,FAM.ice,0);
-    drawRing(ctx,w/2,h/2,34,FAM.amber,0);
   }
   function paintCard(cd,t){
     var f=fit(cd._cv), ctx=f.ctx;
@@ -496,14 +558,16 @@
     if(cd._cv._dirty){ cd._cv._dirty=false; paintCardOff(cd,f.w,f.h); }
     ctx.drawImage(cd._off,0,0,cd._off.width,cd._off.height,0,0,f.w,f.h);
     var cx=f.w/2, cy=f.h/2;
-    var st= cd._f==='sheen'? (cd._hov? cd._sT : (Math.floor(t/3)*3+.4)) : cd._sT;
+    var fin={ chroma:cd._fin==='chroma', sheen:cd._fin==='sheen', irid:cd._fin==='irid' };
+    if(cd._fin===''){ /* pure */ }
+    var st= cd._fin==='sheen'? (cd._hov? cd._sT : (Math.floor(t/3)*3+.4)) : cd._sT;
     var px= cd._p.x>-999? cd._p.x : cx+Math.cos(t*.4)*80;
     var py= cd._p.y>-999? cd._p.y : cy+Math.sin(t*.4)*60;
-    glass(ctx,cd._off,cx,cy,34*1.75+3,1,FAM.amber,cd._f,t,px,py,st);
-    if(cd._hov) circ(ctx,cx,cy,34*.86,t,FAM.amber,0);
+    var sc= cd._hov? R.hoverZ : 1;
+    awakeNode(ctx,cd._off,cx,cy,30,sc,1,FAM.amber,t,px,py,st,cd._hov,false,fin);
   }
 
-  /* ================= GROUND TILES (rest fields) ================= */
+  /* ================= GROUND TILES ================= */
   var tiles=[].slice.call(document.querySelectorAll('.tile'));
   function paintTile(tile){
     var cv=tile.querySelector('canvas'), f=fit(cv), ctx=f.ctx, name=tile.dataset.t;
@@ -515,15 +579,15 @@
     }
   }
 
-  /* ================= THE EYE (round-2 toy, prism-free, rings only) ================= */
-  function blobPath(ctx,x,y,R,t,seed){
+  /* ================= THE EYE ================= */
+  function blobPath(ctx,x,y,Rr,t,seed){
     var N=40; ctx.beginPath();
     for(var i=0;i<=N;i++){
       var th=i/N*Math.PI*2;
       var w=1 + .05*Math.sin(2*th + t*.6 + seed)
             + .035*Math.sin(3*th - t*.42 + seed*2.1)
             + .025*Math.sin(5*th + t*.3 + seed*3.7);
-      var px=x+Math.cos(th)*R*w, py=y+Math.sin(th)*R*w;
+      var px=x+Math.cos(th)*Rr*w, py=y+Math.sin(th)*Rr*w;
       if(i===0) ctx.moveTo(px,py); else ctx.lineTo(px,py);
     }
     ctx.closePath();
@@ -628,11 +692,54 @@
     }
   });
 
+  /* ================= builder rig wiring ================= */
+  var SLIDERS=['bubble','hoverZ','clickZ','mag','frost','glow','pulse','glowSize','finStr','wakeR'];
+  function fmt(k){ var v=R[k]; return (k==='wakeR')? v+'px' : (+v).toFixed(2).replace(/0$/,''); }
+  function recipeStr(){
+    var f=[]; for(var k in R.fin) if(R.fin[k]) f.push(k);
+    return 'bubble '+R.bubble.toFixed(2)+' · hover ×'+R.hoverZ.toFixed(2)+' · click ×'+R.clickZ.toFixed(2)
+      +' · refract '+R.mag.toFixed(2)+' · frost '+R.frost.toFixed(1)
+      +' · glow '+R.glow.toFixed(2)+' pulse '+R.pulse.toFixed(2)+' reach ×'+R.glowSize.toFixed(1)
+      +' · finish '+R.finStr.toFixed(2)+' ['+(f.join('+')||'pure')+'] · wake '+R.wakeR+'px · ground '+S.theme;
+  }
+  function syncRig(){
+    SLIDERS.forEach(function(k){
+      document.getElementById('r-'+k).value=R[k];
+      document.getElementById('v-'+k).textContent=fmt(k);
+    });
+    document.getElementById('recipeTxt').textContent=recipeStr();
+  }
+  SLIDERS.forEach(function(k){
+    document.getElementById('r-'+k).addEventListener('input',function(e){
+      R[k]=+e.target.value;
+      document.getElementById('v-'+k).textContent=fmt(k);
+      document.getElementById('recipeTxt').textContent=recipeStr();
+    });
+  });
+  [].forEach.call(document.querySelectorAll('.fchip'),function(ch){
+    ch.addEventListener('click',function(){
+      var k=ch.dataset.fin; R.fin[k]=!R.fin[k];
+      ch.classList.toggle('on',R.fin[k]);
+      document.getElementById('recipeTxt').textContent=recipeStr();
+    });
+  });
+  document.getElementById('copyBtn').addEventListener('click',function(){
+    var txt='NODE RECIPE — '+recipeStr();
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(txt).then(function(){ flashCopy(); },function(){ window.prompt('Copy the recipe:',txt); });
+    } else window.prompt('Copy the recipe:',txt);
+  });
+  function flashCopy(){
+    var b=document.getElementById('copyBtn'); b.textContent='Copied ✓';
+    setTimeout(function(){ b.textContent='Copy'; },1200);
+  }
+
   /* ================= loop & controls ================= */
   function paintStatics(){
     wakeCv._dirty=true;
     cards.forEach(function(cd){ cd._cv._dirty=true; });
     tiles.forEach(paintTile);
+    document.getElementById('recipeTxt').textContent=recipeStr();
   }
   var t0=performance.now(), lastT=0;
   function frame(){
@@ -642,18 +749,9 @@
     paintEye(lastT);
     requestAnimationFrame(frame);
   }
-
-  window.__lab={ eye:eye, wnodes:function(){return wnodes;}, wp:wp,
+  window.__lab={ R:R, eye:eye, wnodes:function(){return wnodes;}, wp:wp,
     step:function(dt){ lastT+=(dt||.3); paintWake(lastT); cards.forEach(function(cd){paintCard(cd,lastT);}); paintEye(lastT); } };
 
-  function seg(el,fn){
-    el.addEventListener('click',function(e){
-      var b=e.target.closest('button'); if(!b) return;
-      [].forEach.call(el.children,function(c){c.classList.toggle('on',c===b);});
-      fn(b.dataset.f||b.dataset.m);
-    });
-  }
-  seg(document.getElementById('segFinish'),function(fv){ S.finish=fv; });
   function setTheme(t){
     S.theme=t;
     [].forEach.call(document.querySelectorAll('.sw'),function(s){s.classList.toggle('on',s.dataset.t===t);});
@@ -665,6 +763,7 @@
 
   var rs; window.addEventListener('resize',function(){ clearTimeout(rs); rs=setTimeout(function(){ wnodes=[]; paintStatics(); },120); });
 
+  syncRig();
   paintStatics();
   frame();
 })();
