@@ -4,7 +4,6 @@
   :root{
     --void:#0d0a1c;
     --panel:#151130;
-    --panel-2:#1a1538;
     --ink:#e9e5f4;
     --dim:#918ab4;
     --faint:#5e5885;
@@ -26,7 +25,6 @@
   }
   .wrap{max-width:1060px;margin:0 auto;padding:0 28px 90px}
 
-  /* ---------- header ---------- */
   header{padding:64px 0 30px}
   .eyebrow{
     font-family:var(--mono);font-size:11px;letter-spacing:.28em;
@@ -38,7 +36,6 @@
   }
   .dek{max-width:56ch;color:var(--dim);font-size:17px;font-style:italic}
 
-  /* ---------- control bar ---------- */
   .bar{
     position:sticky;top:0;z-index:40;
     display:flex;flex-wrap:wrap;align-items:center;gap:22px;
@@ -61,16 +58,19 @@
   }
   .sw.on{box-shadow:0 0 0 2px var(--void),0 0 0 3.5px var(--gold)}
 
-  /* ---------- sections ---------- */
   section{margin-top:74px}
-  .shead{display:flex;align-items:baseline;gap:16px;border-bottom:var(--hairline);padding-bottom:12px;margin-bottom:8px}
+  .shead{display:flex;flex-wrap:wrap;align-items:center;gap:16px;border-bottom:var(--hairline);padding-bottom:12px;margin-bottom:8px}
   .snum{font-family:var(--mono);font-size:11px;color:var(--gold);letter-spacing:.2em}
   h2{font-size:26px;font-weight:500;margin:0;letter-spacing:-.005em}
   .snote{margin-left:auto;font-family:var(--mono);font-size:10.5px;color:var(--faint);letter-spacing:.08em;text-align:right}
+  .shead .seg{margin-left:auto}
   .intro{max-width:62ch;color:var(--dim);font-size:15.5px;margin:14px 0 26px}
   .intro em{color:var(--ink)}
 
-  /* ---------- treatment cards ---------- */
+  .wide{border:1px solid rgba(233,229,244,.08);border-radius:4px;overflow:hidden}
+  .wide canvas{display:block;width:100%;height:480px;cursor:crosshair}
+  #eyeCanvas{height:460px;cursor:default}
+
   .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(440px,1fr));gap:22px}
   @media (max-width:520px){.cards{grid-template-columns:1fr}}
   .card{background:var(--panel);border:1px solid rgba(233,229,244,.07);border-radius:4px;overflow:hidden}
@@ -79,19 +79,16 @@
   .chip{
     font-family:var(--mono);font-size:9px;letter-spacing:.16em;text-transform:uppercase;
     padding:3px 8px;border-radius:2px;border:1px solid;
+    color:var(--gold);border-color:rgba(211,184,119,.4);
   }
-  .chip.shipped{color:#8fd6a8;border-color:rgba(143,214,168,.4)}
-  .chip.candidate{color:var(--gold);border-color:rgba(211,184,119,.4)}
-  .chip.fallback{color:var(--dim);border-color:rgba(145,138,180,.35)}
   .card .desc{padding:6px 16px 10px;color:var(--dim);font-size:14px;max-width:52ch}
-  .card canvas{display:block;width:100%;height:290px;cursor:crosshair}
+  .card canvas{display:block;width:100%;height:260px;cursor:crosshair}
   .card .foot{
     display:flex;justify-content:space-between;gap:12px;
     padding:10px 16px;border-top:1px solid rgba(233,229,244,.06);
     font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--faint);
   }
 
-  /* ---------- ground tiles ---------- */
   .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
   .tile{position:relative;border:1px solid rgba(233,229,244,.09);border-radius:4px;overflow:hidden;cursor:pointer;padding:0;background:none;text-align:left}
   .tile canvas{display:block;width:100%;height:190px}
@@ -108,11 +105,6 @@
   .tile .rec.ok{background:transparent;color:#8fd6a8;border:1px solid rgba(143,214,168,.4)}
   .tile.on{box-shadow:0 0 0 1px var(--gold)}
 
-  /* ---------- the Eye toy ---------- */
-  .wide{border:1px solid rgba(233,229,244,.08);border-radius:4px;overflow:hidden}
-  .wide canvas{display:block;width:100%;height:460px}
-
-  /* ---------- principles / ship ---------- */
   .rules{margin:26px 0 0;padding:0;list-style:none;max-width:66ch}
   .rules li{
     padding:13px 0;border-bottom:1px solid rgba(233,229,244,.06);
@@ -130,18 +122,12 @@
 
 <div class="wrap">
 <header>
-  <div class="eyebrow">Codex Atlas · Design Lab · Round 2 · 2026-07-20</div>
+  <div class="eyebrow">Codex Atlas · Design Lab · Round 3 · 2026-07-20</div>
   <h1>The Node</h1>
-  <p class="dek">The ring won. Nothing replaces it — every hero look is a dress over the canonical ring: liquid held inside it, light moving on it, breath around it. At rest, each is allowed to be perfectly still.</p>
+  <p class="dek">Rest is still. The field is calm canonical rings — the life is liquid glass that grows under your hand, bending the glow and the neighbors behind it. No techno.</p>
 </header>
 
 <div class="bar">
-  <div class="grp">
-    <span class="lbl">Dress</span>
-    <div class="seg" id="segMode">
-      <button data-m="hero" class="on">Hero</button><button data-m="minimal">Minimal</button>
-    </div>
-  </div>
   <div class="grp">
     <span class="lbl">Ground</span>
     <button class="sw on" data-t="obsidian" title="Obsidian (default)" style="background:linear-gradient(135deg,#0b0918,#171231)"></button>
@@ -149,54 +135,59 @@
     <button class="sw" data-t="nebula" title="Nebula (theme)" style="background:linear-gradient(135deg,#1c1547,#31226b)"></button>
     <button class="sw" data-t="inkwell" title="Inkwell (theme)" style="background:linear-gradient(135deg,#140f0b,#211711)"></button>
   </div>
-  <div class="grp">
-    <span class="lbl">Motion</span>
-    <div class="seg" id="segMotion">
-      <button data-m="on" class="on">On</button><button data-m="off">Off</button>
-    </div>
-  </div>
 </div>
 
 <section>
   <div class="shead">
-    <span class="snum">01</span><h2>Node treatments</h2>
-    <span class="snote">hover the large node · click = locked<br>ladder proves the read at map scale</span>
+    <span class="snum">01</span><h2>The Wake</h2>
+    <div class="seg" id="segFinish">
+      <button data-f="pure" class="on">Pure</button><button data-f="chroma">Chromatic</button><button data-f="sheen">Sheen</button><button data-f="irid">Iridescent</button>
+    </div>
   </div>
-  <p class="intro">Round 2, after review: <em>the solid bead is out.</em> The canonical ring is the winner and the canon — so the organic life now lives <em>with</em> the ring, not instead of it. Toggle Minimal and each one strips back to the exact same ring.</p>
+  <p class="intro">Move your hand over the field. At rest every node is the pure canonical ring — <em>nothing moves, ever.</em> Near the cursor, liquid glass grows over the ring: real refraction — the glow, the wires and the neighbors behind each bubble bend through it. Hover starts the Living-Ring light; <em>click keeps one awake.</em> Complexity follows the cursor, not the node count.</p>
+  <div class="wide"><canvas id="wakeCanvas"></canvas></div>
+</section>
+
+<section>
+  <div class="shead">
+    <span class="snum">02</span><h2>Finishes</h2>
+    <span class="snote">the ones you asked for — hover any card to re-trigger<br>every finish rides the wake; rest state never wears them</span>
+  </div>
+  <p class="intro">Close-ups of the awake glass, each with one finishing filter. Watch the faint wires behind each node — <em>that bend is the refraction.</em> Pick with the switch above and feel it at field scale.</p>
   <div class="cards">
-    <div class="card" data-tr="ring">
-      <div class="head"><h3>Canonical Ring</h3><span class="chip fallback">The floor</span></div>
-      <p class="desc">Untouched. The most elegant read at every size — everything below builds on this and only this.</p>
+    <div class="card" data-f="pure">
+      <div class="head"><h3>Pure Liquid Glass</h3><span class="chip">The base</span></div>
+      <p class="desc">Just the lens: the ring magnified through its own bubble, frost at the edge, a quiet rim light. No color tricks.</p>
       <canvas></canvas>
-      <div class="foot"><span>cost: baseline</span><span>always available</span></div>
+      <div class="foot"><span>refraction + frost + rim</span><span>wake state only</span></div>
     </div>
-    <div class="card" data-tr="dew">
-      <div class="head"><h3>Dew Core</h3><span class="chip candidate">Hero candidate · the drop</span></div>
-      <p class="desc">The core becomes a held drop of liquid — translucent, softly organic, a slow living meniscus inside the ring. Still reads as a perfect node from afar.</p>
+    <div class="card" data-f="chroma">
+      <div class="head"><h3>Chromatic Edge</h3><span class="chip">Aberration</span></div>
+      <p class="desc">The filter effect you meant — chromatic aberration: a whisper of warm/cool fringing where the lens bends hardest. Held static and subtle; nothing rotates.</p>
       <canvas></canvas>
-      <div class="foot"><span>cost: in-fragment WGSL</span><span>LOD: plain core under 12px</span></div>
+      <div class="foot"><span>±1px channel split at the rim</span><span>wake state only</span></div>
     </div>
-    <div class="card" data-tr="lring">
-      <div class="head"><h3>Living Ring</h3><span class="chip candidate">Hero candidate · circulating light</span></div>
-      <p class="desc">Light slowly circulates the rim while the core breathes. Pure geometry, quietly alive — the most restrained of the three.</p>
+    <div class="card" data-f="sheen">
+      <div class="head"><h3>Sheen Sweep</h3><span class="chip">The shine</span></div>
+      <p class="desc">A soft band of light crosses the glass once as the node wakes — then stillness. The shimmer from camera filters, spent in a single gesture.</p>
       <canvas></canvas>
-      <div class="foot"><span>cost: one phase term</span><span>LOD: static rim under 10px</span></div>
+      <div class="foot"><span>one sweep per wake · ~.9s</span><span>never loops at rest</span></div>
     </div>
-    <div class="card" data-tr="bloom">
-      <div class="head"><h3>Ink Bloom</h3><span class="chip candidate">Aura · selected node only</span></div>
-      <p class="desc">An organic breath of ink blooms outside the ring — like pigment dispersing in water. Too much for the whole field; a state the chosen node earns.</p>
+    <div class="card" data-f="irid">
+      <div class="head"><h3>Iridescence</h3><span class="chip">Oil film</span></div>
+      <p class="desc">A faint spectral film around the rim. It answers your cursor — the hue turns as your hand moves around the node — never a clock.</p>
       <canvas></canvas>
-      <div class="foot"><span>cost: +noise term</span><span>selection state only</span></div>
+      <div class="foot"><span>conic film · cursor-lit</span><span>wake state only</span></div>
     </div>
   </div>
 </section>
 
 <section>
   <div class="shead">
-    <span class="snum">02</span><h2>The ground</h2>
+    <span class="snum">03</span><h2>The ground</h2>
     <span class="snote">click a tile — the whole lab re-grounds</span>
   </div>
-  <p class="intro"><em>Obsidian and Deep Void approved.</em> Obsidian is the working default, Void the high-contrast sibling; the current Nebula and Inkwell stay in the theme drawer.</p>
+  <p class="intro"><em>Obsidian default, Deep Void approved.</em> Nebula and Inkwell stay in the theme drawer. The field on each is shown at rest — pure rings, still.</p>
   <div class="tiles">
     <button class="tile on" data-t="obsidian"><canvas></canvas><span class="tl">I · Obsidian</span><span class="rec">Default ✓</span></button>
     <button class="tile" data-t="void"><canvas></canvas><span class="tl">II · Deep Void</span><span class="rec ok">Approved ✓</span></button>
@@ -207,10 +198,10 @@
 
 <section>
   <div class="shead">
-    <span class="snum">03</span><h2>The Eye — play with it</h2>
+    <span class="snum">04</span><h2>The Eye</h2>
     <span class="snote">hover a family = the hull lifts · click = dive in<br>◂ THE EYE brings you back</span>
   </div>
-  <p class="intro">The toy you asked for. Families sit in the wheel — <em>the well-shaped logic always comes first.</em> Hover one and its hull lifts (hairline + a breath of fill, label on the edge). Click and the camera dives: siblings recede, the ground tints toward the family. One breadcrumb returns.</p>
+  <p class="intro">The family toy, unchanged: the wheel first — <em>the well-shaped logic always comes first.</em> Hover lifts a hull, click dives, the breadcrumb returns.</p>
   <div class="wide"><canvas id="eyeCanvas"></canvas></div>
   <ul class="rules">
     <li><b>Hairline, never blob.</b> 1px contour at ~25% + 4% fill. The hull is a whisper of territory, not a colored puddle.</li>
@@ -221,20 +212,19 @@
 
 <div class="ship">
   <div class="lbl">How it ships</div>
-  <p><b>The ring is canon; light is dress.</b> Dew, Living Ring and Bloom are all in-fragment dress on the existing instanced disks — no new pass, no framebuffer reads, Safari-first.</p>
-  <p><b>Minimal toggle = LOD floor = same dial.</b> Dress level is one uniform: the zoom ladder lowers it automatically at small radii, the Minimal toggle pins it to zero. One axis, no forked renderer.</p>
-  <p><b>Bloom is a state, not a style.</b> The field stays quiet; only the selected node blooms. Restraint is what keeps this classy at 3,000 nodes.</p>
+  <p><b>Rest is still — that's the law and the budget.</b> A thousand calm rings cost nothing; only the handful of nodes near the cursor ever run the glass. Aliveness and performance are the same decision.</p>
+  <p><b>Two tiers of refraction.</b> This toy fakes tier two: the engine version starts with the cheap in-shader bend (the ring and its own glow warp through the bubble — no new pass), and graduates to true scene refraction (photograph the frame, bend it through the lens) as the flagship FX — tested carefully on Safari first.</p>
+  <p><b>Finishes ride the wake.</b> Chromatic edge, sheen, iridescence — all exist only while a node is awake or chosen. The resting field never wears them.</p>
 </div>
 </div>
 
 <script>
 (function(){
   'use strict';
-  /* motion defaults ON — motion is the thing under evaluation in this lab */
-  var S = { mode:'hero', theme:'obsidian', motion:true };
+  var S = { theme:'obsidian', finish:'pure' };
 
   var FAM = { amber:'#e8b06a', rose:'#e07a8a', teal:'#6fd0c3', sage:'#a9c98a', lav:'#9d8fe0', ice:'#8fb8e0', plum:'#c99ad6', sand:'#d9c08a' };
-  var CARD_COLOR = { ring:FAM.amber, dew:FAM.teal, lring:FAM.amber, bloom:FAM.lav };
+  var FCOLS=[FAM.amber,FAM.rose,FAM.teal,FAM.sage,FAM.lav,FAM.ice];
 
   function hx(c){
     if(c.charAt(0)==='#'){ var n=parseInt(c.slice(1),16); return [n>>16&255,n>>8&255,n&255]; }
@@ -245,7 +235,6 @@
     return 'rgb('+Math.round(a[0]+(b[0]-a[0])*t)+','+Math.round(a[1]+(b[1]-a[1])*t)+','+Math.round(a[2]+(b[2]-a[2])*t)+')'; }
   function srand(i){ var x=Math.sin(i*127.1+311.7)*43758.5453; return x-Math.floor(x); }
 
-  /* ---------- grounds ---------- */
   var THEMES = {
     nebula:  { a:'#1c1547', b:'#2a1e5e', glow:'rgba(150,70,180,.20)', star:0 },
     obsidian:{ a:'#0b0918', b:'#151129', glow:'rgba(100,80,170,.13)', star:0 },
@@ -267,7 +256,266 @@
     }}
   }
 
-  /* ---------- organic blob path (harmonic wobble; still = organic but frozen) ---------- */
+  /* canonical ring — the only rest-state look */
+  function drawRing(ctx,x,y,r,col,st,alpha){
+    var a=(alpha===undefined?1:alpha)*(st===3?0.32:1);
+    var c=st===3? mix(col,'#3a3752',0.55) : col;
+    if(r>4){
+      var halo=ctx.createRadialGradient(x,y,r*.5,x,y,r*1.9);
+      halo.addColorStop(0,rgba(c,(st===1||st===2?0.20:0.10)*a));
+      halo.addColorStop(1,'rgba(0,0,0,0)');
+      ctx.fillStyle=halo; ctx.beginPath(); ctx.arc(x,y,r*1.9,0,7); ctx.fill();
+    }
+    ctx.lineWidth=Math.max(1.1,r*.10);
+    ctx.strokeStyle=(st===1)? mix(c,'#ffffff',.3) : rgba(c,.95*a);
+    ctx.beginPath(); ctx.arc(x,y,r*.86,0,7); ctx.stroke();
+    ctx.fillStyle=rgba(mix(c,'#ffffff',.25),.92*a);
+    ctx.beginPath(); ctx.arc(x,y,r*.32,0,7); ctx.fill();
+    if(st===2){ ctx.lineWidth=1; ctx.strokeStyle=rgba('#d3b877',.85);
+      ctx.beginPath(); ctx.arc(x,y,r*1.28,0,7); ctx.stroke(); }
+  }
+
+  /* Living-Ring circulation — the hover/selected accent */
+  function circ(ctx,x,y,R,t,col,k0){
+    ctx.save(); ctx.globalCompositeOperation='screen';
+    var ga=t*.9+(k0||0);
+    for(var k=0;k<5;k++){
+      ctx.globalAlpha=.45-.08*k;
+      ctx.lineWidth=Math.max(1.2,R*.10);
+      ctx.strokeStyle=mix(col,'#ffffff',.75);
+      ctx.beginPath(); ctx.arc(x,y,R,ga-k*.28,ga-k*.28+.3); ctx.stroke();
+    }
+    ctx.restore(); ctx.globalAlpha=1;
+  }
+
+  var dpr = Math.min(2, window.devicePixelRatio||1);
+  function fit(cv){
+    var w=cv.clientWidth, h=cv.clientHeight;
+    if(cv.width!==w*dpr||cv.height!==h*dpr){ cv.width=w*dpr; cv.height=h*dpr; cv._dirty=true; }
+    var ctx=cv.getContext('2d');
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    return {ctx:ctx,w:w,h:h};
+  }
+  var MONO='ui-monospace,"SF Mono",Menlo,monospace';
+
+  /* ================= LIQUID GLASS ================= */
+  /* lens: sample the (static) backdrop canvas magnified + frosted inside the bubble */
+  function glass(ctx,O,x,y,br,wake,col,finish,t,px,py,sheenT){
+    if(wake<=0.02) return;
+    var mag=1+.13*wake;
+
+    ctx.save();
+    ctx.beginPath(); ctx.arc(x,y,br,0,7); ctx.clip();
+
+    var sw=br/mag;
+    try{ ctx.filter='blur('+(1.6*wake).toFixed(1)+'px)'; }catch(e){}
+    ctx.drawImage(O,(x-sw)*dpr,(y-sw)*dpr,sw*2*dpr,sw*2*dpr, x-br,y-br,br*2,br*2);
+    try{ ctx.filter='none'; }catch(e){}
+
+    if(finish==='chroma'){
+      ctx.save(); ctx.globalCompositeOperation='lighter'; ctx.globalAlpha=.14*wake;
+      ctx.drawImage(O,(x-sw)*dpr-1.4*dpr,(y-sw)*dpr,sw*2*dpr,sw*2*dpr, x-br,y-br,br*2,br*2);
+      ctx.restore();
+    }
+
+    /* glass shading */
+    var gl=ctx.createLinearGradient(0,y-br,0,y+br);
+    gl.addColorStop(0,'rgba(255,255,255,'+(.13*wake)+')');
+    gl.addColorStop(.45,'rgba(255,255,255,0)');
+    gl.addColorStop(1,'rgba(0,0,0,'+(.12*wake)+')');
+    ctx.fillStyle=gl; ctx.fillRect(x-br,y-br,br*2,br*2);
+
+    /* sheen: one soft band sweeping across on wake */
+    if(finish==='sheen' && sheenT!==undefined){
+      var p=(t-sheenT)/.9;
+      if(p>=0&&p<=1){
+        var dx=Math.cos(.6),dy=Math.sin(.6);
+        var q=(p*2.4-1.2)*br;
+        var sg=ctx.createLinearGradient(x+dx*q-dy*br*.5,y+dy*q+dx*br*.5,x+dx*(q+br*.7)-dy*br*.5,y+dy*(q+br*.7)+dx*br*.5);
+        var sa=.22*wake*Math.sin(Math.PI*p);
+        sg.addColorStop(0,'rgba(255,255,255,0)');
+        sg.addColorStop(.5,'rgba(255,255,255,'+sa+')');
+        sg.addColorStop(1,'rgba(255,255,255,0)');
+        ctx.save(); ctx.globalCompositeOperation='screen';
+        ctx.fillStyle=sg; ctx.fillRect(x-br,y-br,br*2,br*2);
+        ctx.restore();
+      }
+    }
+
+    /* iridescent film: conic hue around the rim, lit by cursor angle */
+    if(finish==='irid' && ctx.createConicGradient){
+      var la=Math.atan2((py||0)-y,(px||0)-x);
+      var cg=ctx.createConicGradient(la,x,y);
+      cg.addColorStop(0,  rgba(FAM.rose,.5));
+      cg.addColorStop(.25,rgba(FAM.sand,.5));
+      cg.addColorStop(.5, rgba(FAM.teal,.5));
+      cg.addColorStop(.75,rgba(FAM.lav,.5));
+      cg.addColorStop(1,  rgba(FAM.rose,.5));
+      ctx.save(); ctx.globalCompositeOperation='screen'; ctx.globalAlpha=.14*wake;
+      ctx.lineWidth=br*.2; ctx.strokeStyle=cg;
+      ctx.beginPath(); ctx.arc(x,y,br*.87,0,7); ctx.stroke();
+      ctx.restore(); ctx.globalAlpha=1;
+    }
+
+    ctx.restore();
+
+    /* rim of the bubble */
+    ctx.lineWidth=1.2;
+    ctx.strokeStyle=rgba(mix(col,'#ffffff',.6),.4*wake);
+    ctx.beginPath(); ctx.arc(x,y,br,0,7); ctx.stroke();
+    ctx.strokeStyle='rgba(0,0,0,'+(.16*wake)+')';
+    ctx.beginPath(); ctx.arc(x,y,br-1.3,0,7); ctx.stroke();
+    if(finish==='chroma'){
+      ctx.lineWidth=1;
+      ctx.strokeStyle='rgba(255,120,90,'+(.20*wake)+')';
+      ctx.beginPath(); ctx.arc(x,y,br-1,0,7); ctx.stroke();
+      ctx.strokeStyle='rgba(110,160,255,'+(.20*wake)+')';
+      ctx.beginPath(); ctx.arc(x,y,br+1,0,7); ctx.stroke();
+    }
+
+    /* specular */
+    var sx=x-br*.36, sy=y-br*.42;
+    var sp=ctx.createRadialGradient(sx,sy,0,sx,sy,br*.3);
+    sp.addColorStop(0,'rgba(255,255,255,'+(.5*wake)+')'); sp.addColorStop(1,'rgba(255,255,255,0)');
+    ctx.fillStyle=sp; ctx.beginPath(); ctx.arc(sx,sy,br*.3,0,7); ctx.fill();
+  }
+
+  /* ================= THE WAKE FIELD ================= */
+  var wakeCv=document.getElementById('wakeCanvas');
+  var wakeOff=document.createElement('canvas');
+  var wnodes=[], wwires=[], wp={x:-9e3,y:-9e3}, whov=-1;
+
+  function buildField(w,h){
+    wnodes=[]; wwires=[];
+    var N=130;
+    for(var i=0;i<N;i++){
+      var big=srand(i*13+5)>.9;
+      wnodes.push({
+        x:20+srand(i*3+1)*(w-40), y:20+srand(i*7+2)*(h-40),
+        r:big? 9+srand(i*5)*4 : 3+srand(i*5)*4.5,
+        col:FCOLS[i%6], wake:0, lock:false, sT:-9
+      });
+    }
+    for(var j=0;j<14;j++){
+      var a=wnodes[(j*17)%N], b=wnodes[(j*29+7)%N];
+      wwires.push([a,b,srand(j*3)*.5-.25]);
+    }
+  }
+  function paintWakeOff(){
+    var w=wakeCv.clientWidth,h=wakeCv.clientHeight;
+    if(!w) return;
+    if(wakeOff.width!==w*dpr){ wakeOff.width=w*dpr; wakeOff.height=h*dpr; }
+    if(!wnodes.length) buildField(w,h);
+    var ctx=wakeOff.getContext('2d');
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    paintBG(ctx,w,h,S.theme);
+    ctx.lineWidth=1;
+    for(var j=0;j<wwires.length;j++){
+      var W=wwires[j];
+      ctx.strokeStyle=rgba(W[0].col,.14);
+      ctx.beginPath(); ctx.moveTo(W[0].x,W[0].y);
+      ctx.quadraticCurveTo((W[0].x+W[1].x)/2+W[2]*160,(W[0].y+W[1].y)/2-W[2]*120,W[1].x,W[1].y);
+      ctx.stroke();
+    }
+    for(var i=0;i<wnodes.length;i++){
+      var n=wnodes[i];
+      drawRing(ctx,n.x,n.y,n.r,n.col,0);
+    }
+  }
+  function paintWake(t){
+    var f=fit(wakeCv), ctx=f.ctx;
+    if(!f.w) return;
+    if(wakeCv._dirty){ wakeCv._dirty=false; paintWakeOff(); }
+    ctx.drawImage(wakeOff,0,0,wakeOff.width,wakeOff.height,0,0,f.w,f.h);
+
+    var WR=120;
+    whov=-1; var best=1e9;
+    for(var i=0;i<wnodes.length;i++){
+      var n=wnodes[i];
+      var d=Math.hypot(wp.x-n.x,wp.y-n.y);
+      if(d<Math.max(16,n.r*2.4) && d<best){ best=d; whov=i; }
+    }
+    for(var i2=0;i2<wnodes.length;i2++){
+      var n2=wnodes[i2];
+      var d2=Math.hypot(wp.x-n2.x,wp.y-n2.y);
+      var tgt=n2.lock||i2===whov? 1 : Math.pow(Math.max(0,1-d2/WR),1.6);
+      if(n2.wake<.1&&tgt>.2) n2.sT=t;
+      n2.wake+=(tgt-n2.wake)*.14;
+      if(n2.wake>.02){
+        glass(ctx,wakeOff,n2.x,n2.y,n2.r*1.75+3,n2.wake,n2.col,S.finish,t,wp.x,wp.y,n2.sT);
+        if(i2===whov||n2.lock) circ(ctx,n2.x,n2.y,n2.r*.86,t,n2.col,i2);
+        if(n2.lock){ ctx.lineWidth=1; ctx.strokeStyle=rgba('#d3b877',.85);
+          ctx.beginPath(); ctx.arc(n2.x,n2.y,n2.r*1.75+7,0,7); ctx.stroke(); }
+      }
+    }
+    if(wp.x<-999){
+      ctx.font='600 9px '+MONO; ctx.textAlign='center';
+      ctx.fillStyle='rgba(233,229,244,.30)';
+      ctx.fillText('REST IS STILL — MOVE YOUR HAND OVER THE FIELD · CLICK KEEPS ONE AWAKE', f.w/2, f.h-14);
+    }
+    wakeCv.style.cursor= whov>=0?'pointer':'crosshair';
+  }
+  wakeCv.addEventListener('pointermove',function(e){
+    var b=wakeCv.getBoundingClientRect();
+    wp.x=e.clientX-b.left; wp.y=e.clientY-b.top;
+  });
+  wakeCv.addEventListener('pointerleave',function(){ wp.x=-9e3; wp.y=-9e3; });
+  wakeCv.addEventListener('click',function(){ if(whov>=0) wnodes[whov].lock=!wnodes[whov].lock; });
+
+  /* ================= FINISH CARDS ================= */
+  var cards=[].slice.call(document.querySelectorAll('.card'));
+  cards.forEach(function(cd){
+    cd._cv=cd.querySelector('canvas'); cd._f=cd.dataset.f;
+    cd._off=document.createElement('canvas');
+    cd._p={x:-9e3,y:-9e3}; cd._sT=0; cd._hov=false;
+    cd._cv.addEventListener('pointermove',function(e){
+      var b=cd._cv.getBoundingClientRect();
+      cd._p.x=e.clientX-b.left; cd._p.y=e.clientY-b.top;
+      if(!cd._hov){ cd._hov=true; cd._sT=lastT; }
+    });
+    cd._cv.addEventListener('pointerleave',function(){ cd._hov=false; cd._p.x=-9e3; });
+  });
+  function paintCardOff(cd,w,h){
+    if(cd._off.width!==w*dpr){ cd._off.width=w*dpr; cd._off.height=h*dpr; }
+    var ctx=cd._off.getContext('2d');
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    paintBG(ctx,w,h,S.theme);
+    ctx.lineWidth=1.2;
+    ctx.strokeStyle=rgba(FAM.sand,.30);
+    ctx.beginPath(); ctx.moveTo(-10,h*.72); ctx.quadraticCurveTo(w*.45,h*.30,w+10,h*.62); ctx.stroke();
+    ctx.strokeStyle=rgba(FAM.teal,.25);
+    ctx.beginPath(); ctx.moveTo(-10,h*.28); ctx.quadraticCurveTo(w*.55,h*.72,w+10,h*.40); ctx.stroke();
+    drawRing(ctx,w*.16,h*.30,7,FAM.rose,0);
+    drawRing(ctx,w*.82,h*.68,6,FAM.sage,0);
+    drawRing(ctx,w*.78,h*.24,4.5,FAM.ice,0);
+    drawRing(ctx,w/2,h/2,34,FAM.amber,0);
+  }
+  function paintCard(cd,t){
+    var f=fit(cd._cv), ctx=f.ctx;
+    if(!f.w) return;
+    if(cd._cv._dirty){ cd._cv._dirty=false; paintCardOff(cd,f.w,f.h); }
+    ctx.drawImage(cd._off,0,0,cd._off.width,cd._off.height,0,0,f.w,f.h);
+    var cx=f.w/2, cy=f.h/2;
+    var st= cd._f==='sheen'? (cd._hov? cd._sT : (Math.floor(t/3)*3+.4)) : cd._sT;
+    var px= cd._p.x>-999? cd._p.x : cx+Math.cos(t*.4)*80;
+    var py= cd._p.y>-999? cd._p.y : cy+Math.sin(t*.4)*60;
+    glass(ctx,cd._off,cx,cy,34*1.75+3,1,FAM.amber,cd._f,t,px,py,st);
+    if(cd._hov) circ(ctx,cx,cy,34*.86,t,FAM.amber,0);
+  }
+
+  /* ================= GROUND TILES (rest fields) ================= */
+  var tiles=[].slice.call(document.querySelectorAll('.tile'));
+  function paintTile(tile){
+    var cv=tile.querySelector('canvas'), f=fit(cv), ctx=f.ctx, name=tile.dataset.t;
+    if(!f.w) return;
+    paintBG(ctx,f.w,f.h,name);
+    for(var i=0;i<34;i++){
+      var x=14+srand(i*5+2)*(f.w-28), y=14+srand(i*9+5)*(f.h-40);
+      drawRing(ctx,x,y,2+srand(i*3+7)*5.5,FCOLS[i%6],0);
+    }
+  }
+
+  /* ================= THE EYE (round-2 toy, prism-free, rings only) ================= */
   function blobPath(ctx,x,y,R,t,seed){
     var N=40; ctx.beginPath();
     for(var i=0;i<=N;i++){
@@ -280,153 +528,6 @@
     }
     ctx.closePath();
   }
-
-  /* ---------- the node painter ---------- */
-  /* st: 0 rest · 1 hover · 2 locked · 3 dim — every treatment is the ring + dress */
-  function drawNode(ctx,x,y,r,tr,st,mode,color,t,seed){
-    var dim = st===3, a = dim?0.32:1;
-    var col = dim? mix(color,'#3a3752',0.55) : color;
-    if(mode==='minimal' || r<6) tr='ring';
-    var hov = st===1||st===2;
-    if(seed===undefined) seed=(x*.37+y*.53)%6.28;
-
-    /* halo */
-    var halo=ctx.createRadialGradient(x,y,r*.5,x,y,r*1.9);
-    halo.addColorStop(0,rgba(col,(hov?0.20:0.10)*a));
-    halo.addColorStop(1,'rgba(0,0,0,0)');
-    ctx.fillStyle=halo; ctx.beginPath(); ctx.arc(x,y,r*1.9,0,7); ctx.fill();
-
-    /* bloom aura — behind the ring */
-    if(tr==='bloom' && !dim && r>=6){
-      ctx.save(); ctx.globalCompositeOperation='screen';
-      for(var i=0;i<3;i++){
-        var br=r*(1.2+.28*i+.12*Math.sin(t*.5+i*2.1+seed));
-        ctx.globalAlpha=.17-.035*i;
-        blobPath(ctx,x,y,br,t*.75,seed+i*2.3);
-        var bg=ctx.createRadialGradient(x,y,r*.7,x,y,br);
-        bg.addColorStop(0,rgba(col,.55)); bg.addColorStop(1,'rgba(0,0,0,0)');
-        ctx.fillStyle=bg; ctx.fill();
-      }
-      ctx.restore(); ctx.globalAlpha=1;
-    }
-
-    /* THE RING — canon, identical in every treatment */
-    var rw=Math.max(1.1,r*.10);
-    ctx.lineWidth=rw;
-    ctx.strokeStyle = hov? mix(col,'#ffffff',.35) : rgba(col,.95*a);
-    ctx.beginPath(); ctx.arc(x,y,r*.86,0,7); ctx.stroke();
-
-    /* circulating light on the rim */
-    if(tr==='lring' && !dim && r>=6){
-      ctx.save(); ctx.globalCompositeOperation='screen';
-      var ga=t*.8+seed;
-      for(var k=0;k<5;k++){
-        ctx.globalAlpha=.5-.09*k;
-        ctx.lineWidth=rw*1.15;
-        ctx.strokeStyle=mix(col,'#ffffff',.75);
-        ctx.beginPath(); ctx.arc(x,y,r*.86,ga-k*.28,ga-k*.28+.3); ctx.stroke();
-      }
-      ctx.restore(); ctx.globalAlpha=1;
-    }
-
-    /* the core: canonical dot, or the held drop */
-    if(tr==='dew' && !dim && r>=6){
-      var R=r*.52;
-      blobPath(ctx,x,y,R,t,seed);
-      var lg=ctx.createRadialGradient(x-R*.3,y-R*.35,R*.1,x,y,R*1.05);
-      lg.addColorStop(0,rgba(mix(col,'#ffffff',.55),.55*a));
-      lg.addColorStop(.6,rgba(col,.30*a));
-      lg.addColorStop(1,rgba(col,.16*a));
-      ctx.fillStyle=lg; ctx.fill();
-      ctx.lineWidth=1; ctx.strokeStyle=rgba(mix(col,'#ffffff',.5),.5*a);
-      blobPath(ctx,x,y,R,t,seed); ctx.stroke();
-      var hxp=x-R*.32+Math.cos(t*.5+seed)*R*.12, hyp=y-R*.38+Math.sin(t*.4+seed)*R*.10;
-      var sp=ctx.createRadialGradient(hxp,hyp,0,hxp,hyp,R*.30);
-      sp.addColorStop(0,'rgba(255,255,255,'+(.65*a)+')'); sp.addColorStop(1,'rgba(255,255,255,0)');
-      ctx.fillStyle=sp; ctx.beginPath(); ctx.arc(hxp,hyp,R*.30,0,7); ctx.fill();
-    } else {
-      var ca=(tr==='lring'&&!dim)? .78+.16*Math.sin(t*.9+seed) : .92;
-      ctx.fillStyle=rgba(mix(col,'#ffffff',.25),ca*a);
-      ctx.beginPath(); ctx.arc(x,y,r*.32,0,7); ctx.fill();
-    }
-
-    /* hover prism — the shipped look, kept on every treatment */
-    if(st===1 && r>=10){
-      ctx.save(); ctx.globalCompositeOperation='screen'; ctx.lineWidth=Math.max(1,r*.06);
-      var P=[['rgba(255,90,90,.75)',-.5],['rgba(110,255,150,.7)',1.6],['rgba(110,150,255,.8)',3.7]];
-      for(var p=0;p<3;p++){ ctx.strokeStyle=P[p][0];
-        var po=P[p][1]+t*.4;
-        ctx.beginPath(); ctx.arc(x,y,r*.97,po,po+2.2); ctx.stroke(); }
-      ctx.restore();
-    }
-    if(st===2){ ctx.lineWidth=1; ctx.strokeStyle=rgba('#d3b877',.85);
-      ctx.beginPath(); ctx.arc(x,y,r*1.28,0,7); ctx.stroke(); }
-  }
-
-  /* ---------- canvas plumbing ---------- */
-  var dpr = Math.min(2, window.devicePixelRatio||1);
-  function fit(cv){
-    var w=cv.clientWidth, h=cv.clientHeight;
-    if(cv.width!==w*dpr||cv.height!==h*dpr){ cv.width=w*dpr; cv.height=h*dpr; }
-    var ctx=cv.getContext('2d');
-    ctx.setTransform(dpr,0,0,dpr,0,0);
-    return {ctx:ctx,w:w,h:h};
-  }
-  var MONO='ui-monospace,"SF Mono",Menlo,monospace';
-  function tag(ctx,txt,x,y,dim){
-    ctx.font='600 8.5px '+MONO; ctx.textAlign='center';
-    ctx.fillStyle='rgba(233,229,244,'+(dim?.35:.5)+')';
-    ctx.fillText(txt.toUpperCase(),x,y);
-  }
-
-  /* ---------- treatment cards ---------- */
-  var cards=[].slice.call(document.querySelectorAll('.card'));
-  cards.forEach(function(cd){
-    cd._cv=cd.querySelector('canvas'); cd._tr=cd.dataset.tr; cd._hov=false; cd._lock=false;
-    cd._cv.addEventListener('pointermove',function(e){
-      var b=cd._cv.getBoundingClientRect();
-      var dx=e.clientX-b.left-120, dy=e.clientY-b.top-140;
-      cd._hov = dx*dx+dy*dy < 66*66;
-    });
-    cd._cv.addEventListener('pointerleave',function(){ cd._hov=false; });
-    cd._cv.addEventListener('click',function(){ if(cd._hov) cd._lock=!cd._lock; });
-  });
-
-  function paintCard(cd,t){
-    var f=fit(cd._cv), ctx=f.ctx, col=CARD_COLOR[cd._tr];
-    paintBG(ctx,f.w,f.h,S.theme);
-    var heroSt = cd._lock?2 : cd._hov?1 : 0;
-    drawNode(ctx,120,140,58,cd._tr,heroSt,S.mode,col,t,1.3);
-    tag(ctx,cd._lock?'locked':cd._hov?'hover':'rest',120,236);
-
-    var sx=f.w-232, states=['rest','hover','locked','dim'];
-    for(var i=0;i<4;i++){
-      drawNode(ctx,sx+i*58,78,17,cd._tr,i,S.mode,col,t,i*1.7);
-      tag(ctx,states[i],sx+i*58,116,i===3);
-    }
-    var ladder=[22,14,8,4,2], lx=sx;
-    for(var j=0;j<5;j++){
-      drawNode(ctx,lx,196,ladder[j],cd._tr,0,S.mode,col,t,j*2.2);
-      tag(ctx,(ladder[j]*2)+'px',lx,240,true);
-      lx+=ladder[j]+38;
-    }
-  }
-
-  /* ---------- ground tiles ---------- */
-  var tiles=[].slice.call(document.querySelectorAll('.tile'));
-  function paintTile(tile){
-    var cv=tile.querySelector('canvas'), f=fit(cv), ctx=f.ctx, name=tile.dataset.t;
-    paintBG(ctx,f.w,f.h,name);
-    var cols=[FAM.amber,FAM.rose,FAM.teal,FAM.sage,FAM.lav,FAM.ice];
-    for(var i=0;i<34;i++){
-      var x=14+srand(i*5+2)*(f.w-28), y=14+srand(i*9+5)*(f.h-40);
-      var rr=2+srand(i*3+7)*5.5;
-      drawNode(ctx,x,y,rr,rr>4.5?'dew':'ring',0,S.mode,cols[i%6],0,i);
-    }
-    drawNode(ctx,f.w*.62,f.h*.42,11,'dew',1,S.mode,FAM.amber,0,9);
-  }
-
-  /* ---------- THE EYE — interactive toy ---------- */
   var FAMS=[
     {name:'GREEK',    col:FAM.amber, n:214},
     {name:'NORSE',    col:FAM.ice,   n:118},
@@ -439,7 +540,6 @@
   ];
   var eyeCv=document.getElementById('eyeCanvas');
   var eye={ hov:-1, sel:-1, back:false, cam:{s:1,x:0,y:0}, tgt:{s:1,x:0,y:0}, overCrumb:false };
-
   function eyeGeom(w,h){
     var Rw=Math.min(w,h)*.33, spread=Math.min(w,h)*.105;
     return { cx:w/2, cy:h/2+6, Rw:Rw, spread:spread };
@@ -450,24 +550,20 @@
   }
   function paintEye(t){
     var f=fit(eyeCv), ctx=f.ctx, w=f.w, h=f.h, g=eyeGeom(w,h);
-    /* camera easing */
+    if(!w) return;
     eye.cam.s+=(eye.tgt.s-eye.cam.s)*.10;
     eye.cam.x+=(eye.tgt.x-eye.cam.x)*.10;
     eye.cam.y+=(eye.tgt.y-eye.cam.y)*.10;
     if(eye.back && eye.cam.s<1.06){ eye.sel=-1; eye.back=false; }
-    var prog=Math.min(1,Math.max(0,(eye.cam.s-1)/1.6));   /* 0=eye · 1=family */
+    var prog=Math.min(1,Math.max(0,(eye.cam.s-1)/1.6));
     var selCol = eye.sel>=0? FAMS[eye.sel].col : null;
     paintBG(ctx,w,h,S.theme,selCol,prog);
-
     function scr(wx,wy){ return [ g.cx+(wx-eye.cam.x)*eye.cam.s, g.cy+(wy-eye.cam.y)*eye.cam.s ]; }
-
     for(var i=0;i<FAMS.length;i++){
       var F=FAMS[i], c=famCenter(g,i);
       var alpha = (i===eye.sel||eye.sel<0)? 1 : Math.max(0,1-prog*1.15);
       if(alpha<.03) continue;
       var p=scr(c.x,c.y);
-
-      /* hull: on hover in the Eye, always on the diving family */
       var hull = (i===eye.hov&&prog<.2) || i===eye.sel;
       if(hull){
         var hr=g.spread*1.55*eye.cam.s;
@@ -484,20 +580,17 @@
         ctx.fillStyle=rgba(F.col,.4*(1-prog*2)*alpha);
         ctx.fillText(F.name, lp[0], lp[1]);
       }
-
-      /* nodes */
       ctx.globalAlpha=alpha;
       for(var j=0;j<16;j++){
         var ox=(srand(i*40+j)-.5)*2*g.spread, oy=(srand(i*40+j+20)-.5)*1.7*g.spread;
         var np=scr(c.x+ox,c.y+oy);
         var nr=(2.2+srand(i*7+j*3)*3)*eye.cam.s;
         var st=(i===eye.sel&&j===0&&prog>.8)?2:0;
-        drawNode(ctx,np[0],np[1],j===0?6*eye.cam.s:nr,'dew',st,S.mode,F.col,t,i*10+j);
+        drawRing(ctx,np[0],np[1],j===0?6*eye.cam.s:nr,F.col,st);
+        if(st===2) circ(ctx,np[0],np[1],(6*eye.cam.s)*.86,t,F.col,0);
       }
       ctx.globalAlpha=1;
     }
-
-    /* breadcrumb */
     if(prog>.5){
       ctx.font='600 10px '+MONO; ctx.textAlign='left';
       ctx.fillStyle=eye.overCrumb?'rgba(211,184,119,1)':'rgba(211,184,119,.8)';
@@ -509,9 +602,8 @@
       ctx.fillText('HOVER A FAMILY · CLICK TO DIVE', w/2, h-14);
     }
   }
-
   eyeCv.addEventListener('pointermove',function(e){
-    var b=eyeCv.getBoundingClientRect(), w=b.width, h=b.height, g=eyeGeom(w,h);
+    var b=eyeCv.getBoundingClientRect(), g=eyeGeom(b.width,b.height);
     var mx=e.clientX-b.left, my=e.clientY-b.top;
     eye.overCrumb = eye.sel>=0 && mx<110 && my<36;
     eye.hov=-1;
@@ -536,35 +628,32 @@
     }
   });
 
-  /* ---------- paint everything ---------- */
-  function paintStatics(){ tiles.forEach(paintTile); }
-  function paintCards(t){ cards.forEach(function(cd){ paintCard(cd,t); }); }
-
-  /* one always-running loop: ambient clock advances only while Motion is ON;
-     the Eye camera + interactions stay live either way */
-  var t0=performance.now(), last=0, amb=0;
-  function loop(){
-    var now=(performance.now()-t0)/1000;
-    if(S.motion) amb+=now-last;
-    last=now;
-    paintCards(amb);
-    paintEye(amb);
-    requestAnimationFrame(loop);
+  /* ================= loop & controls ================= */
+  function paintStatics(){
+    wakeCv._dirty=true;
+    cards.forEach(function(cd){ cd._cv._dirty=true; });
+    tiles.forEach(paintTile);
+  }
+  var t0=performance.now(), lastT=0;
+  function frame(){
+    lastT=(performance.now()-t0)/1000;
+    paintWake(lastT);
+    cards.forEach(function(cd){ paintCard(cd,lastT); });
+    paintEye(lastT);
+    requestAnimationFrame(frame);
   }
 
-  /* debug handle (lab page only): lets tooling step frames without rAF */
-  window.__lab = { S:S, eye:eye, step:function(dt){ amb+=(dt||.5); paintCards(amb); paintEye(amb); } };
+  window.__lab={ eye:eye, wnodes:function(){return wnodes;}, wp:wp,
+    step:function(dt){ lastT+=(dt||.3); paintWake(lastT); cards.forEach(function(cd){paintCard(cd,lastT);}); paintEye(lastT); } };
 
-  /* ---------- controls ---------- */
   function seg(el,fn){
     el.addEventListener('click',function(e){
       var b=e.target.closest('button'); if(!b) return;
       [].forEach.call(el.children,function(c){c.classList.toggle('on',c===b);});
-      fn(b.dataset.m);
+      fn(b.dataset.f||b.dataset.m);
     });
   }
-  seg(document.getElementById('segMode'),function(m){ S.mode=m; paintStatics(); });
-  seg(document.getElementById('segMotion'),function(m){ S.motion=(m==='on'); });
+  seg(document.getElementById('segFinish'),function(fv){ S.finish=fv; });
   function setTheme(t){
     S.theme=t;
     [].forEach.call(document.querySelectorAll('.sw'),function(s){s.classList.toggle('on',s.dataset.t===t);});
@@ -574,10 +663,9 @@
   [].forEach.call(document.querySelectorAll('.sw'),function(s){ s.addEventListener('click',function(){setTheme(s.dataset.t);}); });
   tiles.forEach(function(tl){ tl.addEventListener('click',function(){setTheme(tl.dataset.t);}); });
 
-  var rs; window.addEventListener('resize',function(){ clearTimeout(rs); rs=setTimeout(paintStatics,120); });
+  var rs; window.addEventListener('resize',function(){ clearTimeout(rs); rs=setTimeout(function(){ wnodes=[]; paintStatics(); },120); });
 
-  /* boot */
   paintStatics();
-  loop();
+  frame();
 })();
 </script>
