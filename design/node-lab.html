@@ -153,7 +153,7 @@
 
 <div class="wrap">
 <header>
-  <div class="eyebrow">Codex Atlas · Design Lab · Round 4 · 2026-07-20</div>
+  <div class="eyebrow">Codex Atlas · Design Lab · Round 5 · 2026-07-22</div>
   <h1>The Node</h1>
   <p class="dek">Now it's your instrument. Rest is still rings on the deep void — the life is a pulsing glow and a skin of liquid glass that grow under your hand. Dial it, then copy the recipe.</p>
 </header>
@@ -171,7 +171,7 @@
 <section>
   <div class="shead">
     <span class="snum">01</span><h2>The Workbench</h2>
-    <span class="snote">the specimen is always awake, right beside the dials<br>hover it = hover zoom · click it = click zoom &amp; lock</span>
+    <span class="snote">the specimen is always awake, right beside the dials<br>hover it = hover zoom · click it = click zoom &amp; lock — locked goes ethereal</span>
   </div>
   <p class="intro">Dial with your eyes on the specimen — it reacts instantly, an inch from the sliders. Finishes stack; mix the bits you like, then <em>copy the recipe line</em> and tell me “this one.” The field below is the same recipe at map scale.</p>
 
@@ -190,6 +190,7 @@
     <div class="ctl"><label>Wake radius <b id="v-wakeR"></b></label><input type="range" id="r-wakeR" min="60" max="240" step="2"></div>
     <div class="ctl"><label>Chroma spread <b id="v-chromaR"></b></label><input type="range" id="r-chromaR" min="0.5" max="4" step="0.1"></div>
     <div class="ctl"><label>Depth <b id="v-depth"></b></label><input type="range" id="r-depth" min="0" max="1" step="0.01"></div>
+    <div class="ctl"><label>Ethereal (selected) <b id="v-ether"></b></label><input type="range" id="r-ether" min="0" max="1" step="0.01"></div>
     <div class="fchips">
       <button class="fchip" data-fin="chroma">Chroma</button>
       <button class="fchip" data-fin="sheen">Sheen</button>
@@ -288,7 +289,7 @@
   /* THE RECIPE — every dial writes here; the readout is the snapshot */
   var R = { bubble:1.14, hoverZ:1.12, clickZ:1.32, mag:1.12, frost:1.4,
             glow:.6, pulse:.55, glowSize:2.8, finStr:.6, wakeR:120,
-            chromaR:1.4, depth:.5,
+            chromaR:1.4, depth:.5, ether:.5,
             labelFont:'mono', labelAnim:'condense',
             fin:{ chroma:false, sheen:false, irid:true, label:true } };
 
@@ -441,7 +442,27 @@
     }
 
     /* the symbol under the glass — the canonical ring, zoomed */
-    drawRing(ctx,x,y,r,col,0);
+    /* ethereal — the SELECTED symbol softens and breathes into light (John 2026-07-22) */
+    var E=R.ether*(locked?1:0);
+    if(E>.02){
+      var ep=.5+.5*Math.sin(t*1.4+x*.03);
+      try{ ctx.filter='blur('+(E*(1.2+2.2*ep)).toFixed(1)+'px)'; }catch(e){}
+      drawRing(ctx,x,y,r,col,0);
+      try{ ctx.filter='none'; }catch(e){}
+      /* the sharp ring stays underneath, fading as the breath peaks */
+      ctx.save(); ctx.globalAlpha=1-.55*E*ep;
+      drawRing(ctx,x,y,r,col,0);
+      ctx.restore();
+      /* a breath of light on the ring itself — never to white */
+      ctx.save(); ctx.globalCompositeOperation='screen';
+      ctx.globalAlpha=.30*E*ep;
+      ctx.lineWidth=Math.max(1.4,r*.16);
+      ctx.strokeStyle=rgba(mix(col,'#ffffff',.6),1);
+      ctx.beginPath(); ctx.arc(x,y,r*.86,0,7); ctx.stroke();
+      ctx.restore(); ctx.globalAlpha=1;
+    } else {
+      drawRing(ctx,x,y,r,col,0);
+    }
     /* core pulse — the inner fill breathes brighter, never breaking to white */
     var cp=.5+.5*Math.sin(t*2.1+x*.07);
     ctx.save(); ctx.globalCompositeOperation='screen';
@@ -828,12 +849,12 @@
   });
 
   /* ================= builder rig wiring ================= */
-  var SLIDERS=['bubble','hoverZ','clickZ','mag','frost','glow','pulse','glowSize','finStr','wakeR','chromaR','depth'];
+  var SLIDERS=['bubble','hoverZ','clickZ','mag','frost','glow','pulse','glowSize','finStr','wakeR','chromaR','depth','ether'];
   function fmt(k){ var v=R[k]; return (k==='wakeR')? v+'px' : (+v).toFixed(2).replace(/0$/,''); }
   function recipeStr(){
     var f=[]; for(var k in R.fin) if(R.fin[k]) f.push(k);
     return 'bubble '+R.bubble.toFixed(2)+' · hover ×'+R.hoverZ.toFixed(2)+' · click ×'+R.clickZ.toFixed(2)
-      +' · refract '+R.mag.toFixed(2)+' depth '+R.depth.toFixed(2)+' · frost '+R.frost.toFixed(1)
+      +' · refract '+R.mag.toFixed(2)+' depth '+R.depth.toFixed(2)+' ether '+R.ether.toFixed(2)+' · frost '+R.frost.toFixed(1)
       +' · glow '+R.glow.toFixed(2)+' pulse '+R.pulse.toFixed(2)+' reach ×'+R.glowSize.toFixed(1)
       +' · finish '+R.finStr.toFixed(2)+' ['+(f.join('+')||'pure')+'] chroma± '+R.chromaR.toFixed(1)+'px'
       +(R.fin.label? ' · label '+R.labelFont+'/'+R.labelAnim : '')
