@@ -153,7 +153,7 @@
 
 <div class="wrap">
 <header>
-  <div class="eyebrow">Codex Atlas · Design Lab · Round 5 · 2026-07-22</div>
+  <div class="eyebrow">Codex Atlas · Design Lab · Round 6 · 2026-07-23</div>
   <h1>The Node</h1>
   <p class="dek">Now it's your instrument. Rest is still rings on the deep void — the life is a pulsing glow and a skin of liquid glass that grow under your hand. Dial it, then copy the recipe.</p>
 </header>
@@ -173,14 +173,14 @@
     <span class="snum">01</span><h2>The Workbench</h2>
     <span class="snote">the specimen is always awake, right beside the dials<br>hover it = hover zoom · click it = click zoom &amp; lock — locked goes ethereal</span>
   </div>
-  <p class="intro">Dial with your eyes on the specimen — it reacts instantly, an inch from the sliders. Finishes stack; mix the bits you like, then <em>copy the recipe line</em> and tell me “this one.” The field below is the same recipe at map scale.</p>
+  <p class="intro">Dial with your eyes on the specimen — it reacts instantly, an inch from the sliders. Finishes stack; mix the bits you like, then <em>copy the recipe line</em> and tell me “this one.” The field below is now <em>map reality</em> — a dense wheel of map-size nodes (the real Atlas is 5–8&nbsp;px at rest); only the few nearest your hand wake, and the glass dresses on only past the gate size.</p>
 
   <div class="bench">
   <div class="benchL"><canvas id="benchCanvas"></canvas></div>
   <div class="rig">
     <div class="ctl"><label>Bubble size <b id="v-bubble"></b></label><input type="range" id="r-bubble" min="1" max="1.5" step="0.01"></div>
-    <div class="ctl"><label>Hover zoom <b id="v-hoverZ"></b></label><input type="range" id="r-hoverZ" min="1" max="1.5" step="0.01"></div>
-    <div class="ctl"><label>Click zoom <b id="v-clickZ"></b></label><input type="range" id="r-clickZ" min="1" max="1.9" step="0.01"></div>
+    <div class="ctl"><label>Hover zoom <b id="v-hoverZ"></b></label><input type="range" id="r-hoverZ" min="1" max="2.2" step="0.01"></div>
+    <div class="ctl"><label>Click zoom <b id="v-clickZ"></b></label><input type="range" id="r-clickZ" min="1" max="3" step="0.01"></div>
     <div class="ctl"><label>Refraction <b id="v-mag"></b></label><input type="range" id="r-mag" min="1" max="1.35" step="0.01"></div>
     <div class="ctl"><label>Frost <b id="v-frost"></b></label><input type="range" id="r-frost" min="0" max="4" step="0.1"></div>
     <div class="ctl"><label>Glow <b id="v-glow"></b></label><input type="range" id="r-glow" min="0" max="1" step="0.01"></div>
@@ -191,9 +191,10 @@
     <div class="ctl"><label>Chroma spread <b id="v-chromaR"></b></label><input type="range" id="r-chromaR" min="0.5" max="4" step="0.1"></div>
     <div class="ctl"><label>Depth <b id="v-depth"></b></label><input type="range" id="r-depth" min="0" max="1" step="0.01"></div>
     <div class="ctl"><label>Ethereal (selected) <b id="v-ether"></b></label><input type="range" id="r-ether" min="0" max="1" step="0.01"></div>
+    <div class="ctl"><label>Dress gate <b id="v-gate"></b></label><input type="range" id="r-gate" min="0" max="24" step="1"></div>
+    <div class="ctl"><label>Wake cap <b id="v-wakeCap"></b></label><input type="range" id="r-wakeCap" min="1" max="24" step="1"></div>
     <div class="fchips">
       <button class="fchip" data-fin="chroma">Chroma</button>
-      <button class="fchip" data-fin="sheen">Sheen</button>
       <button class="fchip on" data-fin="irid">Iridescence</button>
       <button class="fchip on" data-fin="label">Label</button>
     </div>
@@ -230,12 +231,6 @@
       <p class="desc">A whisper of warm/cool fringing where the lens bends hardest. Held static; nothing rotates.</p>
       <canvas></canvas>
       <div class="foot"><span>±1px channel split at the rim</span><span>wake state only</span></div>
-    </div>
-    <div class="card" data-fin="sheen">
-      <div class="head"><h3>Sheen Sweep</h3><span class="chip">The shine</span></div>
-      <p class="desc">One soft band of light crosses the glass as the node wakes — then stillness. Never loops.</p>
-      <canvas></canvas>
-      <div class="foot"><span>one sweep per wake · ~.9s</span><span>never loops at rest</span></div>
     </div>
     <div class="card" data-fin="irid">
       <div class="head"><h3>Iridescence</h3><span class="chip">Oil film</span></div>
@@ -289,12 +284,12 @@
   /* THE RECIPE — every dial writes here; the readout is the snapshot */
   var R = { bubble:1.14, hoverZ:1.12, clickZ:1.32, mag:1.12, frost:1.4,
             glow:.6, pulse:.55, glowSize:2.8, finStr:.6, wakeR:120,
-            chromaR:1.4, depth:.5, ether:.5,
+            chromaR:1.4, depth:.5, ether:.5, gate:14, wakeCap:8,
             labelFont:'mono', labelAnim:'condense',
-            fin:{ chroma:false, sheen:false, irid:true, label:true } };
+            fin:{ chroma:false, irid:true, label:true } };
 
   var FAM = { amber:'#e8b06a', rose:'#e07a8a', teal:'#6fd0c3', sage:'#a9c98a', lav:'#9d8fe0', ice:'#8fb8e0', plum:'#c99ad6', sand:'#d9c08a' };
-  var FCOLS=[FAM.amber,FAM.rose,FAM.teal,FAM.sage,FAM.lav,FAM.ice];
+  var FCOLS=[FAM.amber,FAM.rose,FAM.teal,FAM.sage,FAM.lav,FAM.ice,FAM.plum,FAM.sand];
 
   function hx(c){
     if(c.charAt(0)==='#'){ var n=parseInt(c.slice(1),16); return [n>>16&255,n>>8&255,n&255]; }
@@ -392,6 +387,8 @@
   function awakeNode(ctx,O,x,y,baseR,scale,wake,col,t,px,py,sT,hovered,locked,fin){
     var r=baseR*scale;
     var br=r*(1+(R.bubble-1)*wake)+2.5*wake;
+    /* dress gate — glass only once the node is big enough on screen to carry it (LOD = dress = one dial) */
+    var dress=Math.min(1,Math.max(0,(r-R.gate)/6));
 
     /* pulsating glow behind (alive only while awake) */
     if(R.glow>0.02){
@@ -405,14 +402,14 @@
     ctx.save();
     ctx.beginPath(); ctx.arc(x,y,br,0,7); ctx.clip();
 
-    /* lens — draws NOTHING unless refraction/frost/depth actually ask for it (zeros are honest) */
-    var mag=1+(R.mag-1)*wake;
-    var doLens = (mag>1.004 || R.frost*wake>.05 || R.depth>.03);
+    /* lens — draws NOTHING unless refraction/frost/depth actually ask for it (zeros are honest, and the gate wins) */
+    var mag=1+(R.mag-1)*wake*dress;
+    var doLens = (mag>1.004 || R.frost*wake*dress>.05 || R.depth*dress>.03);
     if(doLens){
-      try{ ctx.filter='blur('+(R.frost*wake).toFixed(1)+'px)'; }catch(e){}
+      try{ ctx.filter='blur('+(R.frost*wake*dress).toFixed(1)+'px)'; }catch(e){}
       var sw=br/Math.max(1.0001,mag);
       ctx.drawImage(O,(x-sw)*dpr,(y-sw)*dpr,sw*2*dpr,sw*2*dpr, x-br,y-br,br*2,br*2);
-      if(R.depth>.03){
+      if(R.depth*dress>.03){
         /* one edge annulus, chord-free (moveTo breaks the seam), bends harder at the rim */
         var m2=(1+(mag-1)*(1+1.8*R.depth))*(1+.02*R.depth);
         var sw3=br/m2;
@@ -427,7 +424,7 @@
       }
       try{ ctx.filter='none'; }catch(e){}
       if(fin.chroma){
-        ctx.save(); ctx.globalCompositeOperation='lighter'; ctx.globalAlpha=.12*wake*R.finStr;
+        ctx.save(); ctx.globalCompositeOperation='lighter'; ctx.globalAlpha=.12*wake*R.finStr*dress;
         ctx.drawImage(O,(x-sw)*dpr-R.chromaR*dpr,(y-sw)*dpr,sw*2*dpr,sw*2*dpr, x-br,y-br,br*2,br*2);
         ctx.restore();
       }
@@ -472,27 +469,12 @@
 
     /* glass shading */
     var gl=ctx.createLinearGradient(0,y-br,0,y+br);
-    gl.addColorStop(0,'rgba(255,255,255,'+(.10*wake)+')');
+    gl.addColorStop(0,'rgba(255,255,255,'+(.10*wake*dress)+')');
     gl.addColorStop(.45,'rgba(255,255,255,0)');
-    gl.addColorStop(1,'rgba(0,0,0,'+(.06*wake)+')');
+    gl.addColorStop(1,'rgba(0,0,0,'+(.06*wake*dress)+')');
     ctx.fillStyle=gl; ctx.fillRect(x-br,y-br,br*2,br*2);
 
-    /* sheen — a glint that flows AROUND the sphere's curve, not a flat stripe */
-    if(fin.sheen && sT!==undefined){
-      var p=(t-sT)/1.1;
-      if(p>=0&&p<=1){
-        var ang=-2.4+p*3.6;
-        var sa=.30*wake*R.finStr*Math.sin(Math.PI*p);
-        ctx.save(); ctx.globalCompositeOperation='screen'; ctx.lineCap='round';
-        for(var sk=0;sk<3;sk++){
-          ctx.globalAlpha=sa*(1-sk*.3);
-          ctx.lineWidth=br*(.14+sk*.09);
-          ctx.strokeStyle='rgba(255,255,255,1)';
-          ctx.beginPath(); ctx.arc(x,y,br*.78,ang-.45,ang+.45); ctx.stroke();
-        }
-        ctx.restore(); ctx.globalAlpha=1;
-      }
-    }
+    /* (sheen sweep removed — John 2026-07-23: "a farcry", dead forever) */
 
     /* iridescent film — lit by the cursor angle */
     if(fin.irid && ctx.createConicGradient){
@@ -503,25 +485,27 @@
       cg.addColorStop(.5, rgba(FAM.teal,.5));
       cg.addColorStop(.75,rgba(FAM.lav,.5));
       cg.addColorStop(1,  rgba(FAM.rose,.5));
-      ctx.save(); ctx.globalCompositeOperation='screen'; ctx.globalAlpha=.42*wake*R.finStr;
+      ctx.save(); ctx.globalCompositeOperation='screen'; ctx.globalAlpha=.42*wake*R.finStr*dress;
       ctx.lineWidth=br*.24; ctx.strokeStyle=cg;
       ctx.beginPath(); ctx.arc(x,y,br*.85,0,7); ctx.stroke();
       ctx.restore(); ctx.globalAlpha=1;
     }
     ctx.restore();
 
-    /* bubble rim + fringing + specular */
-    ctx.lineWidth=1.2;
-    ctx.strokeStyle=rgba(mix(col,'#ffffff',.6),.38*wake);
-    ctx.beginPath(); ctx.arc(x,y,br,0,7); ctx.stroke();
-    ctx.strokeStyle='rgba(0,0,0,'+(.08*wake)+')';
-    ctx.beginPath(); ctx.arc(x,y,br-1.3,0,7); ctx.stroke();
-    if(fin.chroma){
-      ctx.lineWidth=1;
-      ctx.strokeStyle='rgba(255,120,90,'+(.24*wake*R.finStr)+')';
-      ctx.beginPath(); ctx.arc(x,y,br-R.chromaR,0,7); ctx.stroke();
-      ctx.strokeStyle='rgba(110,160,255,'+(.24*wake*R.finStr)+')';
-      ctx.beginPath(); ctx.arc(x,y,br+R.chromaR,0,7); ctx.stroke();
+    /* bubble rim + fringing (all gated — a node too small for glass shows no bubble chrome) */
+    if(dress>.02){
+      ctx.lineWidth=1.2;
+      ctx.strokeStyle=rgba(mix(col,'#ffffff',.6),.38*wake*dress);
+      ctx.beginPath(); ctx.arc(x,y,br,0,7); ctx.stroke();
+      ctx.strokeStyle='rgba(0,0,0,'+(.08*wake*dress)+')';
+      ctx.beginPath(); ctx.arc(x,y,br-1.3,0,7); ctx.stroke();
+      if(fin.chroma){
+        ctx.lineWidth=1;
+        ctx.strokeStyle='rgba(255,120,90,'+(.24*wake*R.finStr*dress)+')';
+        ctx.beginPath(); ctx.arc(x,y,br-R.chromaR,0,7); ctx.stroke();
+        ctx.strokeStyle='rgba(110,160,255,'+(.24*wake*R.finStr*dress)+')';
+        ctx.beginPath(); ctx.arc(x,y,br+R.chromaR,0,7); ctx.stroke();
+      }
     }
     /* (specular blob + hover circulation removed — John 2026-07-20) */
     if(locked){ ctx.lineWidth=1; ctx.strokeStyle=rgba('#d3b877',.85);
@@ -536,16 +520,26 @@
   var NAMES=['ISHTAR','ZEUS','ODIN','ISIS','VISHNU','ENLIL','FREYJA','SEKHMET','INDRA','HERMES','BRIGID','AMATERASU','QUETZALCOATL','OSHUN','TIAMAT','APOLLO','SARASVATI','ANUBIS','PERUN','KUAN YIN'];
   function buildField(w,h){
     wnodes=[]; wwires=[];
-    var N=130;
-    for(var i=0;i<N;i++){
-      var big=srand(i*13+5)>.9;
-      wnodes.push({
-        x:20+srand(i*3+1)*(w-40), y:20+srand(i*7+2)*(h-40),
-        r:big? 9+srand(i*5)*4 : 3+srand(i*5)*4.5,
-        col:FCOLS[i%6], name:NAMES[i%NAMES.length], wake:0, sc:1, lock:false, sT:-9
-      });
+    /* MAP REALITY — a dense wheel: 8 family wedges, ~300 nodes at the real Atlas radii
+       (rest tiers 3.5-8px, like NODE_SHADER's 5-8px + long tail) */
+    var cx=w/2, cy=h/2, idx=0;
+    for(var f=0;f<8;f++){
+      var a0=f/8*Math.PI*2-Math.PI/2;
+      var cnt=30+Math.floor(srand(f*9+3)*14);
+      for(var i=0;i<cnt;i++){
+        var ang=a0+(srand(idx*3+1)-.5)*.72;
+        var rad=.18+Math.sqrt(srand(idx*7+2))*.8;
+        var tt=srand(idx*13+5);
+        wnodes.push({
+          x:cx+Math.cos(ang)*rad*w*.44, y:cy+Math.sin(ang)*rad*h*.40,
+          r: tt>.95? 8 : tt>.82? 6.5 : tt>.5? 5 : 3.5,
+          col:FCOLS[f%FCOLS.length], name:NAMES[idx%NAMES.length], wake:0, sc:1, lock:false, sT:-9
+        });
+        idx++;
+      }
     }
-    for(var j=0;j<14;j++){
+    var N=wnodes.length;
+    for(var j=0;j<26;j++){
       var a=wnodes[(j*17)%N], b=wnodes[(j*29+7)%N];
       wwires.push([a,b,srand(j*3)*.5-.25]);
     }
@@ -577,14 +571,18 @@
     whov=-1; var best=1e9;
     for(var i=0;i<wnodes.length;i++){
       var n=wnodes[i];
-      var d=Math.hypot(wp.x-n.x,wp.y-n.y);
-      if(d<Math.max(16,n.r*2.6) && d<best){ best=d; whov=i; }
+      n._d=Math.hypot(wp.x-n.x,wp.y-n.y);
+      if(n._d<Math.max(16,n.r*2.6) && n._d<best){ best=n._d; whov=i; }
     }
+    /* wake budget — map density: only the cap-nearest inside the radius wake (hover/lock always win) */
+    var near=[];
+    for(var q=0;q<wnodes.length;q++){ wnodes[q]._wk=false; if(wnodes[q]._d<R.wakeR) near.push(wnodes[q]); }
+    near.sort(function(a,b){ return a._d-b._d; });
+    for(var q2=0;q2<near.length&&q2<R.wakeCap;q2++) near[q2]._wk=true;
     var labelQ=[], hovN=whov>=0? wnodes[whov] : null;
     for(var i2=0;i2<wnodes.length;i2++){
       var n2=wnodes[i2];
-      var d2=Math.hypot(wp.x-n2.x,wp.y-n2.y);
-      var tgt=n2.lock||i2===whov? 1 : Math.pow(Math.max(0,1-d2/R.wakeR),1.6);
+      var tgt=n2.lock||i2===whov? 1 : (n2._wk? Math.pow(Math.max(0,1-n2._d/R.wakeR),1.6) : 0);
       if(n2.wake<.1&&tgt>.2) n2.sT=t;
       n2.wake+=(tgt-n2.wake)*.14;
       var ts=n2.lock? R.clickZ : (i2===whov? R.hoverZ : 1);
@@ -663,9 +661,7 @@
     bench.sc+=(ts-bench.sc)*.16;
     var px=over? bench.p.x : cx+Math.cos(t*.15)*f.w*.3;
     var py=over? bench.p.y : cy+Math.sin(t*.22)*f.h*.25;
-    /* on the bench only, sheen re-runs every 4s so it can be judged while dialing */
-    var sT= R.fin.sheen&&!(bench.hov||bench.lock)? Math.floor(t/4)*4+.5 : bench.sT;
-    awakeNode(ctx,benchOff,cx,cy,baseR,bench.sc,1,FAM.amber,t,px,py,sT,hov,bench.lock,R.fin);
+    awakeNode(ctx,benchOff,cx,cy,baseR,bench.sc,1,FAM.amber,t,px,py,bench.sT,hov,bench.lock,R.fin);
     if(R.fin.label){
       /* the reveal replays on hover/lock so the motion can be judged */
       var lrv=(bench.hov||bench.lock)? Math.min(1,(t-bench.sT)/.6) : 1;
@@ -715,13 +711,12 @@
     if(cd._cv._dirty){ cd._cv._dirty=false; paintCardOff(cd,f.w,f.h); }
     ctx.drawImage(cd._off,0,0,cd._off.width,cd._off.height,0,0,f.w,f.h);
     var cx=f.w/2, cy=f.h/2;
-    var fin={ chroma:cd._fin==='chroma', sheen:cd._fin==='sheen', irid:cd._fin==='irid' };
+    var fin={ chroma:cd._fin==='chroma', irid:cd._fin==='irid' };
     if(cd._fin===''){ /* pure */ }
-    var st= cd._fin==='sheen'? (cd._hov? cd._sT : (Math.floor(t/3)*3+.4)) : cd._sT;
     var px= cd._p.x>-999? cd._p.x : cx+Math.cos(t*.4)*80;
     var py= cd._p.y>-999? cd._p.y : cy+Math.sin(t*.4)*60;
     var sc= cd._hov? R.hoverZ : 1;
-    awakeNode(ctx,cd._off,cx,cy,30,sc,1,FAM.amber,t,px,py,st,cd._hov,false,fin);
+    awakeNode(ctx,cd._off,cx,cy,30,sc,1,FAM.amber,t,px,py,cd._sT,cd._hov,false,fin);
   }
 
   /* ================= GROUND TILES ================= */
@@ -849,8 +844,11 @@
   });
 
   /* ================= builder rig wiring ================= */
-  var SLIDERS=['bubble','hoverZ','clickZ','mag','frost','glow','pulse','glowSize','finStr','wakeR','chromaR','depth','ether'];
-  function fmt(k){ var v=R[k]; return (k==='wakeR')? v+'px' : (+v).toFixed(2).replace(/0$/,''); }
+  var SLIDERS=['bubble','hoverZ','clickZ','mag','frost','glow','pulse','glowSize','finStr','wakeR','chromaR','depth','ether','gate','wakeCap'];
+  function fmt(k){ var v=R[k];
+    if(k==='wakeR'||k==='gate') return v+'px';
+    if(k==='wakeCap') return ''+v;
+    return (+v).toFixed(2).replace(/0$/,''); }
   function recipeStr(){
     var f=[]; for(var k in R.fin) if(R.fin[k]) f.push(k);
     return 'bubble '+R.bubble.toFixed(2)+' · hover ×'+R.hoverZ.toFixed(2)+' · click ×'+R.clickZ.toFixed(2)
@@ -858,7 +856,7 @@
       +' · glow '+R.glow.toFixed(2)+' pulse '+R.pulse.toFixed(2)+' reach ×'+R.glowSize.toFixed(1)
       +' · finish '+R.finStr.toFixed(2)+' ['+(f.join('+')||'pure')+'] chroma± '+R.chromaR.toFixed(1)+'px'
       +(R.fin.label? ' · label '+R.labelFont+'/'+R.labelAnim : '')
-      +' · wake '+R.wakeR+'px · ground '+S.theme;
+      +' · wake '+R.wakeR+'px cap '+R.wakeCap+' · gate '+R.gate+'px · ground '+S.theme;
   }
   function syncRig(){
     SLIDERS.forEach(function(k){
