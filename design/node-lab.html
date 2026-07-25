@@ -104,7 +104,15 @@
 
   .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(440px,1fr));gap:22px}
   @media (max-width:520px){.cards{grid-template-columns:1fr}}
-  .card{background:var(--panel);border:1px solid rgba(233,229,244,.07);border-radius:4px;overflow:hidden}
+  .card{background:var(--panel);border:1px solid rgba(233,229,244,.07);border-radius:4px;overflow:hidden;cursor:pointer}
+  .card.on{box-shadow:0 0 0 1px var(--gold)}
+  .card .pick{
+    position:absolute;right:10px;top:10px;display:none;
+    font-family:var(--mono);font-size:9px;letter-spacing:.14em;color:#231b08;
+    background:var(--gold);padding:3px 7px;border-radius:2px;text-transform:uppercase;
+  }
+  .card{position:relative}
+  .card.on .pick{display:block}
   .card .head{display:flex;align-items:center;gap:10px;padding:14px 16px 0}
   .card h3{font-family:var(--mono);font-size:13px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;margin:0}
   .chip{
@@ -153,7 +161,7 @@
 
 <div class="wrap">
 <header>
-  <div class="eyebrow">Codex Atlas · Design Lab · Round 6 · 2026-07-23</div>
+  <div class="eyebrow">Codex Atlas · Design Lab · Round 7 · 2026-07-23</div>
   <h1>The Node</h1>
   <p class="dek">Now it's your instrument. Rest is still rings on the deep void — the life is a pulsing glow and a skin of liquid glass that grow under your hand. Dial it, then copy the recipe.</p>
 </header>
@@ -193,6 +201,15 @@
     <div class="ctl"><label>Ethereal (selected) <b id="v-ether"></b></label><input type="range" id="r-ether" min="0" max="1" step="0.01"></div>
     <div class="ctl"><label>Dress gate <b id="v-gate"></b></label><input type="range" id="r-gate" min="0" max="24" step="1"></div>
     <div class="ctl"><label>Wake cap <b id="v-wakeCap"></b></label><input type="range" id="r-wakeCap" min="1" max="24" step="1"></div>
+    <div class="ctl" style="grid-column:1/-1"><label>Dress — the pass</label>
+      <div class="subseg">
+        <button class="fchip on" data-dress="halo">Halo</button>
+        <button class="fchip" data-dress="icon">Icon</button>
+        <button class="fchip" data-dress="orb">Orb</button>
+        <button class="fchip" data-dress="veil">Veil</button>
+        <button class="fchip" data-dress="ember">Ember</button>
+      </div>
+    </div>
     <div class="fchips">
       <button class="fchip" data-fin="chroma">Chroma</button>
       <button class="fchip on" data-fin="irid">Iridescence</button>
@@ -201,9 +218,9 @@
     <div class="ctl" style="grid-column:1/-1"><label>Label voice &amp; motion</label>
       <div class="subseg">
         <span class="mini">Font</span>
-        <button class="fchip on" data-lf="mono">Mono</button><button class="fchip" data-lf="serif">Serif</button><button class="fchip" data-lf="sans">Sans</button>
+        <button class="fchip" data-lf="mono">Mono</button><button class="fchip" data-lf="serif">Serif</button><button class="fchip on" data-lf="sans">Sans</button>
         <span class="mini" style="margin-left:12px">Motion</span>
-        <button class="fchip on" data-la="condense">Condense</button><button class="fchip" data-la="rise">Rise</button><button class="fchip" data-la="unveil">Unveil</button>
+        <button class="fchip" data-la="condense">Condense</button><button class="fchip on" data-la="rise">Rise</button><button class="fchip" data-la="unveil">Unveil</button>
       </div>
     </div>
   </div>
@@ -215,28 +232,40 @@
 
 <section>
   <div class="shead">
-    <span class="snum">02</span><h2>Finishes — close up</h2>
-    <span class="snote">reference close-ups; your dials drive these too<br>hover any card to re-trigger &amp; light it</span>
+    <span class="snum">02</span><h2>The Dress — a full new pass</h2>
+    <span class="snote">five directions, all full-bodied — no rim chrome, no band tricks<br>click a card = the whole lab wears it · your dials drive them all</span>
   </div>
-  <p class="intro">The same awake glass, isolated. Watch the faint wires behind each node — <em>that bend is the refraction</em> — and the glow pulsing through the bubble.</p>
+  <p class="intro">The band-glass is out — too technical, too many outlines. Every direction here fills the <em>whole circle with material</em>, keeps the canon ring as the only line, and makes the light substantial. Pick the one that feels like a deity.</p>
   <div class="cards">
-    <div class="card" data-fin="">
-      <div class="head"><h3>Pure Liquid Glass</h3><span class="chip">The base</span></div>
-      <p class="desc">Just the lens and the living glow: refraction, frost, rim light, pulse. No color tricks.</p>
-      <canvas></canvas>
-      <div class="foot"><span>refraction + frost + glow</span><span>wake state only</span></div>
+    <div class="card on" data-dress="halo">
+      <div class="head"><h3>Halo</h3><span class="chip">The star</span></div>
+      <p class="desc">The node becomes a body of pure light — a bright heart falling away like a star seen through mist. No edge exists; the ring floats inside as identity.</p>
+      <canvas></canvas><span class="pick">Worn ✓</span>
+      <div class="foot"><span>pure luminosity · no strokes</span><span>glow dial = its life</span></div>
     </div>
-    <div class="card" data-fin="chroma">
-      <div class="head"><h3>Chromatic Edge</h3><span class="chip">Aberration</span></div>
-      <p class="desc">A whisper of warm/cool fringing where the lens bends hardest. Held static; nothing rotates.</p>
-      <canvas></canvas>
-      <div class="foot"><span>±1px channel split at the rim</span><span>wake state only</span></div>
+    <div class="card" data-dress="icon">
+      <div class="head"><h3>Icon</h3><span class="chip">Gold leaf</span></div>
+      <p class="desc">A gilded disc of soft light behind the crisp ring — the halo of icon painting. Flat, calm, art-historical. The most timeless read.</p>
+      <canvas></canvas><span class="pick">Worn ✓</span>
+      <div class="foot"><span>luminous leaf · soft edge</span><span>ring stays crisp</span></div>
     </div>
-    <div class="card" data-fin="irid">
-      <div class="head"><h3>Iridescence</h3><span class="chip">Oil film</span></div>
-      <p class="desc">A faint spectral film around the rim, lit by your cursor — the hue turns as your hand moves around the node.</p>
-      <canvas></canvas>
-      <div class="foot"><span>conic film · cursor-lit</span><span>wake state only</span></div>
+    <div class="card" data-dress="orb">
+      <div class="head"><h3>Orb</h3><span class="chip">The dewdrop</span></div>
+      <p class="desc">Full-body glass done right: the world bends through the <em>whole</em> drop, color deepens toward the limb, light gathers low. No band, no rim stroke.</p>
+      <canvas></canvas><span class="pick">Worn ✓</span>
+      <div class="foot"><span>whole-disc refraction</span><span>depth = curvature</span></div>
+    </div>
+    <div class="card" data-dress="veil">
+      <div class="head"><h3>Veil</h3><span class="chip">The mist</span></div>
+      <p class="desc">A breath of luminous fog condensing around the symbol — the edge is nowhere, the color drifts slowly while awake. The most ethereal.</p>
+      <canvas></canvas><span class="pick">Worn ✓</span>
+      <div class="foot"><span>soft asymmetric light</span><span>drifts only while awake</span></div>
+    </div>
+    <div class="card" data-dress="ember">
+      <div class="head"><h3>Ember</h3><span class="chip">The dark star</span></div>
+      <p class="desc">An obsidian body with a molten heart. The canon ring burns as the only line against the dark — the deity as a black sun.</p>
+      <canvas></canvas><span class="pick">Worn ✓</span>
+      <div class="foot"><span>dark body · molten core</span><span>one line only</span></div>
     </div>
   </div>
 </section>
@@ -282,10 +311,11 @@
   'use strict';
   var S = { theme:'void' };
   /* THE RECIPE — every dial writes here; the readout is the snapshot */
-  var R = { bubble:1.14, hoverZ:1.12, clickZ:1.32, mag:1.12, frost:1.4,
-            glow:.6, pulse:.55, glowSize:2.8, finStr:.6, wakeR:120,
-            chromaR:1.4, depth:.5, ether:.5, gate:14, wakeCap:8,
-            labelFont:'mono', labelAnim:'condense',
+  var R = { bubble:1.1, hoverZ:1.15, clickZ:1.3, mag:1.13, frost:2,
+            glow:.75, pulse:.55, glowSize:2.1, finStr:1, wakeR:240,
+            chromaR:4, depth:.5, ether:1, gate:7, wakeCap:15,
+            dress:'halo',
+            labelFont:'sans', labelAnim:'rise',
             fin:{ chroma:false, irid:true, label:true } };
 
   var FAM = { amber:'#e8b06a', rose:'#e07a8a', teal:'#6fd0c3', sage:'#a9c98a', lav:'#9d8fe0', ice:'#8fb8e0', plum:'#c99ad6', sand:'#d9c08a' };
@@ -382,73 +412,160 @@
   }
   var MONO='ui-monospace,"SF Mono",Menlo,monospace';
 
-  /* ============ THE AWAKE NODE — glow + bubble + symbol + finishes ============ */
-  /* O must contain ground+wires only (no rings) so the lens never ghosts */
+  /* ============ THE AWAKE NODE — glow + dress + symbol ============ */
+  /* O must contain ground+wires only (no rings) so the orb lens never ghosts.
+     ROUND 7 (John): the band-glass was too technical — outline-heavy, thin glow.
+     The dress now fills the WHOLE circle with material; NO stroke belongs to any dress. */
   function awakeNode(ctx,O,x,y,baseR,scale,wake,col,t,px,py,sT,hovered,locked,fin){
     var r=baseR*scale;
     var br=r*(1+(R.bubble-1)*wake)+2.5*wake;
-    /* dress gate — glass only once the node is big enough on screen to carry it (LOD = dress = one dial) */
+    /* dress gate — material only once the node is big enough on screen to carry it (LOD = dress = one dial) */
     var dress=Math.min(1,Math.max(0,(r-R.gate)/6));
+    var D=R.dress;
 
-    /* pulsating glow behind (alive only while awake) */
+    /* the breathing glow behind — substantial, additive light */
     if(R.glow>0.02){
       var pa=R.glow*wake*(1-.5*R.pulse+.5*R.pulse*Math.sin(t*1.7+x*.05));
       var gr=baseR*R.glowSize*scale;
+      ctx.save(); ctx.globalCompositeOperation='screen';
       var gg=ctx.createRadialGradient(x,y,0,x,y,gr);
-      gg.addColorStop(0,rgba(col,pa*.5)); gg.addColorStop(.55,rgba(col,pa*.16)); gg.addColorStop(1,'rgba(0,0,0,0)');
+      gg.addColorStop(0,rgba(col,pa*.75)); gg.addColorStop(.35,rgba(col,pa*.34));
+      gg.addColorStop(.7,rgba(col,pa*.10)); gg.addColorStop(1,'rgba(0,0,0,0)');
       ctx.fillStyle=gg; ctx.beginPath(); ctx.arc(x,y,gr,0,7); ctx.fill();
+      ctx.restore();
     }
 
-    ctx.save();
-    ctx.beginPath(); ctx.arc(x,y,br,0,7); ctx.clip();
-
-    /* lens — draws NOTHING unless refraction/frost/depth actually ask for it (zeros are honest, and the gate wins) */
-    var mag=1+(R.mag-1)*wake*dress;
-    var doLens = (mag>1.004 || R.frost*wake*dress>.05 || R.depth*dress>.03);
-    if(doLens){
-      try{ ctx.filter='blur('+(R.frost*wake*dress).toFixed(1)+'px)'; }catch(e){}
-      var sw=br/Math.max(1.0001,mag);
-      ctx.drawImage(O,(x-sw)*dpr,(y-sw)*dpr,sw*2*dpr,sw*2*dpr, x-br,y-br,br*2,br*2);
-      if(R.depth*dress>.03){
-        /* one edge annulus, chord-free (moveTo breaks the seam), bends harder at the rim */
-        var m2=(1+(mag-1)*(1+1.8*R.depth))*(1+.02*R.depth);
-        var sw3=br/m2;
-        ctx.save();
-        ctx.beginPath();
-        ctx.arc(x,y,br*1.01,0,7);
-        ctx.moveTo(x+br*.72,y);
-        ctx.arc(x,y,br*.72,0,7,true);
-        ctx.clip();
-        ctx.drawImage(O,(x-sw3)*dpr,(y-sw3)*dpr,sw3*2*dpr,sw3*2*dpr, x-br,y-br,br*2,br*2);
+    /* ---- the dress: full-bodied material, no outlines ---- */
+    if(dress>.02 && wake>.02){
+      if(D==='halo'){
+        /* THE STAR — the node becomes a body of light; no edge exists */
+        ctx.save(); ctx.globalCompositeOperation='screen';
+        var ha=wake*dress;
+        var h1=ctx.createRadialGradient(x,y,0,x,y,br*1.5);
+        h1.addColorStop(0,rgba(mix(col,'#ffffff',.55),.80*ha));
+        h1.addColorStop(.3,rgba(col,.42*ha));
+        h1.addColorStop(.65,rgba(col,.14*ha));
+        h1.addColorStop(1,'rgba(0,0,0,0)');
+        ctx.fillStyle=h1; ctx.beginPath(); ctx.arc(x,y,br*1.5,0,7); ctx.fill();
+        ctx.restore();
+      } else if(D==='icon'){
+        /* GOLD LEAF — the gilded disc of icon painting: flat luminous leaf, soft edge */
+        var leaf=mix(col,'#d3b877',.45);
+        ctx.save(); ctx.globalCompositeOperation='screen';
+        var i1=ctx.createRadialGradient(x,y,0,x,y,br*1.06);
+        i1.addColorStop(0,rgba(leaf,.52*wake*dress));
+        i1.addColorStop(.72,rgba(leaf,.44*wake*dress));
+        i1.addColorStop(1,'rgba(0,0,0,0)');
+        ctx.fillStyle=i1; ctx.beginPath(); ctx.arc(x,y,br*1.06,0,7); ctx.fill();
+        ctx.restore();
+      } else if(D==='orb'){
+        /* THE DEWDROP — full-body glass: the world bends through the whole drop */
+        ctx.save(); ctx.beginPath(); ctx.arc(x,y,br,0,7); ctx.clip();
+        var mag=1+(R.mag-1)*wake*dress;
+        if(mag>1.004 || R.frost*wake*dress>.05){
+          try{ ctx.filter='blur('+(R.frost*wake*dress).toFixed(1)+'px)'; }catch(e){}
+          var sw=br/Math.max(1.0001,mag);
+          ctx.drawImage(O,(x-sw)*dpr,(y-sw)*dpr,sw*2*dpr,sw*2*dpr, x-br,y-br,br*2,br*2);
+          try{ ctx.filter='none'; }catch(e){}
+          /* the glow, seen THROUGH the drop — same pulse, magnified */
+          if(R.glow>0.02){
+            var pa2=R.glow*wake*(1-.5*R.pulse+.5*R.pulse*Math.sin(t*1.7+x*.05));
+            var gr2=baseR*R.glowSize*scale*mag;
+            ctx.save(); ctx.globalCompositeOperation='screen';
+            var g2=ctx.createRadialGradient(x,y,0,x,y,gr2);
+            g2.addColorStop(0,rgba(col,pa2*.75)); g2.addColorStop(.35,rgba(col,pa2*.34));
+            g2.addColorStop(.7,rgba(col,pa2*.10)); g2.addColorStop(1,'rgba(0,0,0,0)');
+            ctx.fillStyle=g2; ctx.beginPath(); ctx.arc(x,y,br,0,7); ctx.fill();
+            ctx.restore();
+          }
+        }
+        /* body density — transparent heart, color deepening toward the limb (depth = curvature), stroke-free */
+        var o1=ctx.createRadialGradient(x,y,0,x,y,br);
+        o1.addColorStop(0,rgba(col,.06*wake*dress));
+        o1.addColorStop(.62,rgba(col,(.10+.10*R.depth)*wake*dress));
+        o1.addColorStop(.9,rgba(mix(col,'#000000',.35),(.22+.25*R.depth)*wake*dress));
+        o1.addColorStop(1,rgba(mix(col,'#000000',.5),(.05+.15*R.depth)*wake*dress));
+        ctx.fillStyle=o1; ctx.fillRect(x-br,y-br,br*2,br*2);
+        /* light gathered low in the drop */
+        ctx.save(); ctx.globalCompositeOperation='screen';
+        var c1=ctx.createRadialGradient(x,y+br*.42,0,x,y+br*.42,br*.75);
+        c1.addColorStop(0,rgba(mix(col,'#ffffff',.65),.30*wake*dress));
+        c1.addColorStop(1,'rgba(0,0,0,0)');
+        ctx.fillStyle=c1; ctx.fillRect(x-br,y-br,br*2,br*2);
+        ctx.restore();
+        ctx.restore();
+      } else if(D==='veil'){
+        /* THE MIST — a breath of luminous fog condensing around the symbol; the edge is nowhere */
+        ctx.save(); ctx.globalCompositeOperation='screen';
+        var seed=x*.13+y*.07;
+        for(var vb=0;vb<4;vb++){
+          var va=seed+vb*2.1+t*.15;
+          var vr=br*(.55+.28*vb);
+          var vx=x+Math.cos(va)*br*.22, vy=y+Math.sin(va*.8)*br*.2;
+          var v1=ctx.createRadialGradient(vx,vy,0,vx,vy,vr);
+          v1.addColorStop(0,rgba(mix(col,'#ffffff',.25),.17*wake*dress));
+          v1.addColorStop(1,'rgba(0,0,0,0)');
+          ctx.fillStyle=v1; ctx.beginPath(); ctx.arc(vx,vy,vr,0,7); ctx.fill();
+        }
+        ctx.restore();
+      } else if(D==='ember'){
+        /* THE DARK STAR — an obsidian body with a molten heart; the canon ring is the only line */
+        var e1=ctx.createRadialGradient(x,y,0,x,y,br);
+        e1.addColorStop(0,'rgba(6,5,14,'+(.10*wake*dress)+')');
+        e1.addColorStop(.75,'rgba(6,5,14,'+(.55*wake*dress)+')');
+        e1.addColorStop(1,'rgba(6,5,14,0)');
+        ctx.fillStyle=e1; ctx.beginPath(); ctx.arc(x,y,br,0,7); ctx.fill();
+        var em=.5+.5*Math.sin(t*2.1+x*.07);
+        ctx.save(); ctx.globalCompositeOperation='screen';
+        var e2=ctx.createRadialGradient(x,y,0,x,y,r*.5);
+        e2.addColorStop(0,rgba(mix(col,'#ffffff',.6),(.5+.3*em)*wake*dress));
+        e2.addColorStop(.5,rgba(col,(.30+.2*em)*wake*dress));
+        e2.addColorStop(1,'rgba(0,0,0,0)');
+        ctx.fillStyle=e2; ctx.beginPath(); ctx.arc(x,y,r*.5,0,7); ctx.fill();
         ctx.restore();
       }
-      try{ ctx.filter='none'; }catch(e){}
+      /* chroma — a soft warm/cool light split, full-bodied (no rims) */
       if(fin.chroma){
-        ctx.save(); ctx.globalCompositeOperation='lighter'; ctx.globalAlpha=.12*wake*R.finStr*dress;
-        ctx.drawImage(O,(x-sw)*dpr-R.chromaR*dpr,(y-sw)*dpr,sw*2*dpr,sw*2*dpr, x-br,y-br,br*2,br*2);
+        ctx.save(); ctx.globalCompositeOperation='screen';
+        var ca=.16*wake*R.finStr*dress, co=R.chromaR*2;
+        var cw=ctx.createRadialGradient(x-co,y,0,x-co,y,br);
+        cw.addColorStop(0,'rgba(255,140,90,'+ca+')'); cw.addColorStop(1,'rgba(0,0,0,0)');
+        ctx.fillStyle=cw; ctx.beginPath(); ctx.arc(x-co,y,br,0,7); ctx.fill();
+        var cc=ctx.createRadialGradient(x+co,y,0,x+co,y,br);
+        cc.addColorStop(0,'rgba(110,160,255,'+ca+')'); cc.addColorStop(1,'rgba(0,0,0,0)');
+        ctx.fillStyle=cc; ctx.beginPath(); ctx.arc(x+co,y,br,0,7); ctx.fill();
         ctx.restore();
       }
-      /* the glow, seen THROUGH the glass — same pulse as outside, just magnified (no wobble) */
-      if(R.glow>0.02){
-        var pa2=R.glow*wake*(1-.5*R.pulse+.5*R.pulse*Math.sin(t*1.7+x*.05));
-        var gr2=baseR*R.glowSize*scale*mag;
-        var g2=ctx.createRadialGradient(x,y,0,x,y,gr2);
-        g2.addColorStop(0,rgba(col,pa2*.5)); g2.addColorStop(.55,rgba(col,pa2*.16)); g2.addColorStop(1,'rgba(0,0,0,0)');
-        ctx.fillStyle=g2; ctx.beginPath(); ctx.arc(x,y,br,0,7); ctx.fill();
+      /* iridescence — a full-body film lit by the cursor angle (no band) */
+      if(fin.irid && ctx.createConicGradient){
+        var la=Math.atan2((py||0)-y,(px||0)-x);
+        var cg=ctx.createConicGradient(la,x,y);
+        cg.addColorStop(0,  rgba(FAM.rose,1));
+        cg.addColorStop(.25,rgba(FAM.sand,1));
+        cg.addColorStop(.5, rgba(FAM.teal,1));
+        cg.addColorStop(.75,rgba(FAM.lav,1));
+        cg.addColorStop(1,  rgba(FAM.rose,1));
+        ctx.save(); ctx.beginPath(); ctx.arc(x,y,br,0,7); ctx.clip();
+        ctx.globalCompositeOperation='screen';
+        ctx.globalAlpha=.18*wake*R.finStr*dress;
+        ctx.fillStyle=cg; ctx.fillRect(x-br,y-br,br*2,br*2);
+        ctx.restore(); ctx.globalAlpha=1;
       }
     }
 
-    /* the symbol under the glass — the canonical ring, zoomed */
+    /* ---- the symbol — the canonical ring, dissolved a little into the light ---- */
+    var symA=(D==='halo')? .62 : (D==='veil')? .55 : (D==='ember')? .92 : 1;
+    var sa=1-(1-symA)*wake*dress;
     /* ethereal — the SELECTED symbol softens and breathes into light (John 2026-07-22) */
     var E=R.ether*(locked?1:0);
     if(E>.02){
       var ep=.5+.5*Math.sin(t*1.4+x*.03);
       try{ ctx.filter='blur('+(E*(1.2+2.2*ep)).toFixed(1)+'px)'; }catch(e){}
-      drawRing(ctx,x,y,r,col,0);
+      drawRing(ctx,x,y,r,col,0,sa);
       try{ ctx.filter='none'; }catch(e){}
       /* the sharp ring stays underneath, fading as the breath peaks */
       ctx.save(); ctx.globalAlpha=1-.55*E*ep;
-      drawRing(ctx,x,y,r,col,0);
+      drawRing(ctx,x,y,r,col,0,sa);
       ctx.restore();
       /* a breath of light on the ring itself — never to white */
       ctx.save(); ctx.globalCompositeOperation='screen';
@@ -458,7 +575,7 @@
       ctx.beginPath(); ctx.arc(x,y,r*.86,0,7); ctx.stroke();
       ctx.restore(); ctx.globalAlpha=1;
     } else {
-      drawRing(ctx,x,y,r,col,0);
+      drawRing(ctx,x,y,r,col,0,sa);
     }
     /* core pulse — the inner fill breathes brighter, never breaking to white */
     var cp=.5+.5*Math.sin(t*2.1+x*.07);
@@ -466,50 +583,8 @@
     ctx.fillStyle=rgba(mix(col,'#ffffff',.5),.26*wake*cp);
     ctx.beginPath(); ctx.arc(x,y,r*.32,0,7); ctx.fill();
     ctx.restore();
-
-    /* glass shading */
-    var gl=ctx.createLinearGradient(0,y-br,0,y+br);
-    gl.addColorStop(0,'rgba(255,255,255,'+(.10*wake*dress)+')');
-    gl.addColorStop(.45,'rgba(255,255,255,0)');
-    gl.addColorStop(1,'rgba(0,0,0,'+(.06*wake*dress)+')');
-    ctx.fillStyle=gl; ctx.fillRect(x-br,y-br,br*2,br*2);
-
-    /* (sheen sweep removed — John 2026-07-23: "a farcry", dead forever) */
-
-    /* iridescent film — lit by the cursor angle */
-    if(fin.irid && ctx.createConicGradient){
-      var la=Math.atan2((py||0)-y,(px||0)-x);
-      var cg=ctx.createConicGradient(la,x,y);
-      cg.addColorStop(0,  rgba(FAM.rose,.5));
-      cg.addColorStop(.25,rgba(FAM.sand,.5));
-      cg.addColorStop(.5, rgba(FAM.teal,.5));
-      cg.addColorStop(.75,rgba(FAM.lav,.5));
-      cg.addColorStop(1,  rgba(FAM.rose,.5));
-      ctx.save(); ctx.globalCompositeOperation='screen'; ctx.globalAlpha=.42*wake*R.finStr*dress;
-      ctx.lineWidth=br*.24; ctx.strokeStyle=cg;
-      ctx.beginPath(); ctx.arc(x,y,br*.85,0,7); ctx.stroke();
-      ctx.restore(); ctx.globalAlpha=1;
-    }
-    ctx.restore();
-
-    /* bubble rim + fringing (all gated — a node too small for glass shows no bubble chrome) */
-    if(dress>.02){
-      ctx.lineWidth=1.2;
-      ctx.strokeStyle=rgba(mix(col,'#ffffff',.6),.38*wake*dress);
-      ctx.beginPath(); ctx.arc(x,y,br,0,7); ctx.stroke();
-      ctx.strokeStyle='rgba(0,0,0,'+(.08*wake*dress)+')';
-      ctx.beginPath(); ctx.arc(x,y,br-1.3,0,7); ctx.stroke();
-      if(fin.chroma){
-        ctx.lineWidth=1;
-        ctx.strokeStyle='rgba(255,120,90,'+(.24*wake*R.finStr*dress)+')';
-        ctx.beginPath(); ctx.arc(x,y,br-R.chromaR,0,7); ctx.stroke();
-        ctx.strokeStyle='rgba(110,160,255,'+(.24*wake*R.finStr*dress)+')';
-        ctx.beginPath(); ctx.arc(x,y,br+R.chromaR,0,7); ctx.stroke();
-      }
-    }
-    /* (specular blob + hover circulation removed — John 2026-07-20) */
-    if(locked){ ctx.lineWidth=1; ctx.strokeStyle=rgba('#d3b877',.85);
-      ctx.beginPath(); ctx.arc(x,y,br+4,0,7); ctx.stroke(); }
+    /* (bubble rim / inner rim / chroma rims / locked gold ring / specular / spin / sheen — ALL DEAD.
+       Outlines belong to the symbol alone — John 2026-07-23) */
   }
 
   /* ================= THE WAKE FIELD ================= */
@@ -681,7 +756,7 @@
   /* ================= FINISH CARDS (close-ups; dials drive them too) ================= */
   var cards=[].slice.call(document.querySelectorAll('.card'));
   cards.forEach(function(cd){
-    cd._cv=cd.querySelector('canvas'); cd._fin=cd.dataset.fin;
+    cd._cv=cd.querySelector('canvas'); cd._dress=cd.dataset.dress;
     cd._off=document.createElement('canvas');
     cd._p={x:-9e3,y:-9e3}; cd._sT=.4; cd._hov=false;
     cd._cv.addEventListener('pointermove',function(e){
@@ -711,12 +786,13 @@
     if(cd._cv._dirty){ cd._cv._dirty=false; paintCardOff(cd,f.w,f.h); }
     ctx.drawImage(cd._off,0,0,cd._off.width,cd._off.height,0,0,f.w,f.h);
     var cx=f.w/2, cy=f.h/2;
-    var fin={ chroma:cd._fin==='chroma', irid:cd._fin==='irid' };
-    if(cd._fin===''){ /* pure */ }
     var px= cd._p.x>-999? cd._p.x : cx+Math.cos(t*.4)*80;
     var py= cd._p.y>-999? cd._p.y : cy+Math.sin(t*.4)*60;
     var sc= cd._hov? R.hoverZ : 1;
-    awakeNode(ctx,cd._off,cx,cy,30,sc,1,FAM.amber,t,px,py,cd._sT,cd._hov,false,fin);
+    /* each card wears ITS dress; everything else follows the dials */
+    var dSave=R.dress; R.dress=cd._dress;
+    awakeNode(ctx,cd._off,cx,cy,34,sc,1,FAM.amber,t,px,py,cd._sT,cd._hov,false,R.fin);
+    R.dress=dSave;
   }
 
   /* ================= GROUND TILES ================= */
@@ -851,7 +927,7 @@
     return (+v).toFixed(2).replace(/0$/,''); }
   function recipeStr(){
     var f=[]; for(var k in R.fin) if(R.fin[k]) f.push(k);
-    return 'bubble '+R.bubble.toFixed(2)+' · hover ×'+R.hoverZ.toFixed(2)+' · click ×'+R.clickZ.toFixed(2)
+    return 'dress '+R.dress+' · bubble '+R.bubble.toFixed(2)+' · hover ×'+R.hoverZ.toFixed(2)+' · click ×'+R.clickZ.toFixed(2)
       +' · refract '+R.mag.toFixed(2)+' depth '+R.depth.toFixed(2)+' ether '+R.ether.toFixed(2)+' · frost '+R.frost.toFixed(1)
       +' · glow '+R.glow.toFixed(2)+' pulse '+R.pulse.toFixed(2)+' reach ×'+R.glowSize.toFixed(1)
       +' · finish '+R.finStr.toFixed(2)+' ['+(f.join('+')||'pure')+'] chroma± '+R.chromaR.toFixed(1)+'px'
@@ -890,6 +966,17 @@
   }
   radio('data-lf',function(v){ R.labelFont=v; });
   radio('data-la',function(v){ R.labelAnim=v; });
+  /* the dress is picked in two places — rig chips AND the section-02 cards; keep both lit */
+  function setDress(d){
+    R.dress=d;
+    [].forEach.call(document.querySelectorAll('[data-dress]'),function(el){
+      el.classList.toggle('on',el.getAttribute('data-dress')===d);
+    });
+    document.getElementById('recipeTxt').textContent=recipeStr();
+  }
+  [].forEach.call(document.querySelectorAll('[data-dress]'),function(el){
+    el.addEventListener('click',function(){ setDress(el.getAttribute('data-dress')); });
+  });
   document.getElementById('copyBtn').addEventListener('click',function(){
     var txt='NODE RECIPE — '+recipeStr();
     if(navigator.clipboard&&navigator.clipboard.writeText){
