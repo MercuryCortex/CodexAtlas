@@ -201,13 +201,23 @@
     <div class="ctl"><label>Ethereal (selected) <b id="v-ether"></b></label><input type="range" id="r-ether" min="0" max="1" step="0.01"></div>
     <div class="ctl"><label>Dress gate <b id="v-gate"></b></label><input type="range" id="r-gate" min="0" max="24" step="1"></div>
     <div class="ctl"><label>Wake cap <b id="v-wakeCap"></b></label><input type="range" id="r-wakeCap" min="1" max="24" step="1"></div>
-    <div class="ctl" style="grid-column:1/-1"><label>Dress — the pass</label>
+    <div class="ctl" style="grid-column:1/-1"><label>Dress — the pass (sets all casts)</label>
       <div class="subseg">
         <button class="fchip on" data-dress="halo">Halo</button>
         <button class="fchip" data-dress="icon">Icon</button>
         <button class="fchip" data-dress="orb">Orb</button>
         <button class="fchip" data-dress="veil">Veil</button>
         <button class="fchip" data-dress="ember">Ember</button>
+      </div>
+    </div>
+    <div class="ctl" style="grid-column:1/-1"><label>Cast — a different dress per node size (the wheel below)</label>
+      <div class="subseg">
+        <span class="mini">Hubs</span>
+        <button class="fchip on" data-cast="hub" data-cd="halo">Halo</button><button class="fchip" data-cast="hub" data-cd="icon">Icon</button><button class="fchip" data-cast="hub" data-cd="orb">Orb</button><button class="fchip" data-cast="hub" data-cd="veil">Veil</button><button class="fchip" data-cast="hub" data-cd="ember">Ember</button>
+        <span class="mini" style="margin-left:10px">Mid</span>
+        <button class="fchip on" data-cast="mid" data-cd="halo">Halo</button><button class="fchip" data-cast="mid" data-cd="icon">Icon</button><button class="fchip" data-cast="mid" data-cd="orb">Orb</button><button class="fchip" data-cast="mid" data-cd="veil">Veil</button><button class="fchip" data-cast="mid" data-cd="ember">Ember</button>
+        <span class="mini" style="margin-left:10px">Small</span>
+        <button class="fchip on" data-cast="small" data-cd="halo">Halo</button><button class="fchip" data-cast="small" data-cd="icon">Icon</button><button class="fchip" data-cast="small" data-cd="orb">Orb</button><button class="fchip" data-cast="small" data-cd="veil">Veil</button><button class="fchip" data-cast="small" data-cd="ember">Ember</button>
       </div>
     </div>
     <div class="fchips">
@@ -315,6 +325,7 @@
             glow:.75, pulse:.55, glowSize:2.1, finStr:1, wakeR:240,
             chromaR:4, depth:.5, ether:1, gate:7, wakeCap:15,
             dress:'halo',
+            cast:{ hub:'halo', mid:'halo', small:'halo' },
             labelFont:'sans', labelAnim:'rise',
             fin:{ chroma:false, irid:true, label:true } };
 
@@ -608,6 +619,7 @@
         wnodes.push({
           x:cx+Math.cos(ang)*rad*w*.44, y:cy+Math.sin(ang)*rad*h*.40,
           r: tt>.95? 8 : tt>.82? 6.5 : tt>.5? 5 : 3.5,
+          tier: tt>.95? 'hub' : tt>.5? 'mid' : 'small',
           col:FCOLS[f%FCOLS.length], name:NAMES[idx%NAMES.length], wake:0, sc:1, lock:false, sT:-9
         });
         idx++;
@@ -663,7 +675,10 @@
       var ts=n2.lock? R.clickZ : (i2===whov? R.hoverZ : 1);
       n2.sc+=(1+(ts-1)*Math.min(1,n2.wake*1.4)-n2.sc)*.16;
       if(n2.wake>.02){
+        /* the wheel wears the CAST — each size tier can hold a different dress */
+        var dSave=R.dress; R.dress=R.cast[n2.tier]||R.dress;
         awakeNode(ctx,wakeOff,n2.x,n2.y,n2.r,n2.sc,n2.wake,n2.col,t,wp.x,wp.y,n2.sT,i2===whov,n2.lock,R.fin);
+        R.dress=dSave;
         if(R.fin.label && n2.wake>.35) labelQ.push(n2);
       } else {
         drawRing(ctx,n2.x,n2.y,n2.r*n2.sc,n2.col,0);
@@ -927,7 +942,10 @@
     return (+v).toFixed(2).replace(/0$/,''); }
   function recipeStr(){
     var f=[]; for(var k in R.fin) if(R.fin[k]) f.push(k);
-    return 'dress '+R.dress+' · bubble '+R.bubble.toFixed(2)+' · hover ×'+R.hoverZ.toFixed(2)+' · click ×'+R.clickZ.toFixed(2)
+    var dr=(R.cast.hub===R.cast.mid&&R.cast.mid===R.cast.small)
+      ? 'dress '+R.cast.hub
+      : 'dress hub:'+R.cast.hub+' mid:'+R.cast.mid+' small:'+R.cast.small;
+    return dr+' · bubble '+R.bubble.toFixed(2)+' · hover ×'+R.hoverZ.toFixed(2)+' · click ×'+R.clickZ.toFixed(2)
       +' · refract '+R.mag.toFixed(2)+' depth '+R.depth.toFixed(2)+' ether '+R.ether.toFixed(2)+' · frost '+R.frost.toFixed(1)
       +' · glow '+R.glow.toFixed(2)+' pulse '+R.pulse.toFixed(2)+' reach ×'+R.glowSize.toFixed(1)
       +' · finish '+R.finStr.toFixed(2)+' ['+(f.join('+')||'pure')+'] chroma± '+R.chromaR.toFixed(1)+'px'
@@ -966,16 +984,31 @@
   }
   radio('data-lf',function(v){ R.labelFont=v; });
   radio('data-la',function(v){ R.labelAnim=v; });
-  /* the dress is picked in two places — rig chips AND the section-02 cards; keep both lit */
+  /* the dress is picked in two places — rig chips AND the section-02 cards; keep both lit.
+     the global pick resets the CAST; cast chips then diverge per tier */
+  function syncCast(){
+    [].forEach.call(document.querySelectorAll('[data-cast]'),function(el){
+      el.classList.toggle('on', R.cast[el.getAttribute('data-cast')]===el.getAttribute('data-cd'));
+    });
+  }
   function setDress(d){
     R.dress=d;
+    R.cast={ hub:d, mid:d, small:d };
     [].forEach.call(document.querySelectorAll('[data-dress]'),function(el){
       el.classList.toggle('on',el.getAttribute('data-dress')===d);
     });
+    syncCast();
     document.getElementById('recipeTxt').textContent=recipeStr();
   }
   [].forEach.call(document.querySelectorAll('[data-dress]'),function(el){
     el.addEventListener('click',function(){ setDress(el.getAttribute('data-dress')); });
+  });
+  [].forEach.call(document.querySelectorAll('[data-cast]'),function(el){
+    el.addEventListener('click',function(){
+      R.cast[el.getAttribute('data-cast')]=el.getAttribute('data-cd');
+      syncCast();
+      document.getElementById('recipeTxt').textContent=recipeStr();
+    });
   });
   document.getElementById('copyBtn').addEventListener('click',function(){
     var txt='NODE RECIPE — '+recipeStr();
