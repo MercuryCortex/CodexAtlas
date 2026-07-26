@@ -640,6 +640,10 @@
     recipe_irid:           1,
     recipe_chroma:         0,
     recipe_chroma_px:      4,
+    // Symbol voice — John's whiteness dials (Round 7b).
+    recipe_core_white:     0.25,
+    recipe_core_alpha:     0.92,
+    recipe_ring_alpha:     0.95,
     // The CAST — a dress per size tier (label tiers 0-1 / 2-3 / 4-5):
     // halo · icon · orb (renders halo until tier-b) · veil · ember.
     dress_hub:   'halo',
@@ -2520,6 +2524,7 @@
       // wires / map) + search autocomplete suggestions.
       wireViewSettings();
       wireFXPanel();
+      wireLabPanel();
       wireStylePanel();
       wireSearchAutocomplete();
 
@@ -4131,6 +4136,9 @@
           irid:        !!local.params.recipe_irid,
           chroma:      !!local.params.recipe_chroma,
           chromaPx:    local.params.recipe_chroma_px,
+          coreWhite:   local.params.recipe_core_white,
+          coreAlpha:   local.params.recipe_core_alpha,
+          ringAlpha:   local.params.recipe_ring_alpha,
         } : null,
       });
       }  // end if (!local._debugNoNodes)
@@ -6360,6 +6368,31 @@
     }
 
     // ════════════════════════════════════════════════════════════
+    //  wireLabPanel()  —  ROUND-7b (2026-07-26). The NODE LAB inside
+    //  the Atlas: visible only with ?lab in the URL. Same recipe
+    //  keys as design/node-lab.html, writing local.params.recipe_*
+    //  live (drawFrame reads params every frame — no drift surface:
+    //  the recipe IS the single source of truth). Dress cast changes
+    //  rebuild dressBase + retarget states via recomputeFocus.
+    function wireLabPanel() {
+      if (!/[?&]lab(=|&|$)/.test(window.location.search)) return;
+      if (!(window._forgeLabPanel && typeof window._forgeLabPanel.attach === 'function')) return;
+      try {
+        window._forgeLabPanel.attach({
+          local,
+          api: {
+            redraw() { startAnimLoop(); drawFrame(); },
+            refreshDress() {
+              if (local.mode && local.mode.hitNodes) {
+                local.dressBase = buildDressBase(local.mode.hitNodes);
+              }
+              recomputeFocus();
+            },
+          },
+        });
+      } catch (e) { /* panel is a lab tool — never break the map for it */ }
+    }
+
     //  wireFXPanel()  —  Phase 21AB (2026-05-22)
     // ════════════════════════════════════════════════════════════
     //  Floor-zoom FX dev sliders. Live-tunes CSS vars on

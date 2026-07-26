@@ -158,6 +158,7 @@
       recipe_b:               vec4<f32>,  // hover_zoom, click_zoom, bubble, ether
       recipe_c:               vec4<f32>,  // time_sec, fin_strength, cursor_world.xy
       recipe_d:               vec4<f32>,  // irid_on, chroma_on, chroma_px (FB), gate_slope_px (FB)
+      recipe_e:               vec4<f32>,  // core_white, core_alpha, ring_alpha, spare (symbol voice dials)
     };
     @group(0) @binding(0) var<uniform> v: View;
 
@@ -197,10 +198,11 @@
       let zoom = 1.0 + (mix(hz, cz, locked) - 1.0) * inst_selected * wake;
       let legacy_grow = mix(1.0, v.selected_size_mult, inst_selected);
       let grow = mix(legacy_grow, zoom, use_recipe);
-      // Quad headroom: only awake nodes pay for glow reach. At wake=0
-      // the quad hugs the disk exactly — rest costs what Phase 7 cost.
-      let reach = max(v.recipe_a.z * max(v.recipe_b.z, 1.0), 1.0);
-      let quad_scale = mix(1.0, max(reach, 1.15), clamp(wake * 4.0, 0.0, 1.0) * use_recipe);
+      // Quad headroom: the BODY quad only needs the bubble-bound
+      // material (veil reaches ~1.22×bubble). The far-reaching glow
+      // lives in its own pass now (vs_glow) so body quads stay small
+      // and their depth writes stop occluding neighbors (ROUND-7b).
+      let quad_scale = mix(1.0, 1.9, clamp(wake * 4.0, 0.0, 1.0) * use_recipe);
       let world     = inst_pos + quad_vertex * inst_radius * grow * quad_scale;
       let ndc       = world * v.view_scale + v.view_offset;
       // Depth: selected on top, focused middle, dim back.
@@ -254,28 +256,14 @@
       let bub = max(v.recipe_b.z, 1.0);
 
       // Accumulate premultiplied back-to-front: acc = L + acc*(1-L.a).
+      // (The breathing glow + the HALO star body render in fs_glow —
+      //  their light must never depth-occlude symbols behind it.)
       var acc = vec4<f32>(0.0);
-
-      // 1 ▸ the breathing glow behind (pure added light, alpha 0)
-      if (v.recipe_a.x * wg > 0.004) {
-        let pulse = v.recipe_a.y;
-        let pa = v.recipe_a.x * wg * (1.0 - 0.5 * pulse + 0.5 * pulse * sin(t * 1.7 + seedx * 0.05));
-        let reach = max(v.recipe_a.z * bub, 1.2);
-        let dg = clamp(d / reach, 0.0, 1.0);
-        let prof = 0.75 * pow(1.0 - dg, 1.7);
-        acc = vec4<f32>(col * (pa * prof), 0.0);
-      }
 
       // 2 ▸ the dress body (full circle of material, stroke-free)
       if (wg > 0.01) {
         let db = d / bub;
-        if (dId == 0 || dId == 2) {
-          // HALO — a body of pure light (ORB wears this until tier-b)
-          let dh = clamp(d / (1.5 * bub), 0.0, 1.0);
-          let ha = 0.80 * wg * pow(1.0 - dh, 1.8);
-          let hcol = mix(col, white, 0.55 * (1.0 - dh));
-          acc = vec4<f32>(acc.rgb + hcol * ha, acc.a);
-        } else if (dId == 1) {
+        if (dId == 1) {
           // ICON — the gold-leaf disc: flat luminous leaf, soft edge
           let leaf = mix(col, vec3<f32>(0.827, 0.722, 0.467), 0.45);
           let ia = 0.52 * wg * (1.0 - smoothstep(0.68, 1.0, db / 1.06));
@@ -337,13 +325,18 @@
       let s1 = smoothstep(0.86 - hw - soft, 0.86 - hw + soft, d);
       let s2 = 1.0 - smoothstep(0.86 + hw - soft, 0.86 + hw + soft, d);
       let ring_mask = s1 * s2;
-      let ring_a = 0.95 * sa * ring_mask * (1.0 - 0.35 * E * breath);
+      // Symbol voice dials (recipe_e) — John tunes the whiteness here:
+      // core_white (how far the core leans to white), core/ring alpha.
+      let cw = mix(0.25, v.recipe_e.x, use_recipe);
+      let cal = mix(0.92, v.recipe_e.y, use_recipe);
+      let ral = mix(0.95, v.recipe_e.z, use_recipe);
+      let ring_a = ral * sa * ring_mask * (1.0 - 0.35 * E * breath);
       let ring_rgb = mix(col, white, 0.30 * E * breath);
       acc = vec4<f32>(ring_rgb * ring_a + acc.rgb * (1.0 - ring_a), acc.a * (1.0 - ring_a) + ring_a);
       // core dot — breathes brighter while awake, never to white
       let cp = 0.5 + 0.5 * sin(t * 2.1 + seedx * 0.07);
-      let core_a = 0.92 * sa * (1.0 - smoothstep(0.32 - aa, 0.32 + aa, d));
-      let core_rgb = mix(col, white, 0.25 + 0.20 * w * cp * use_recipe);
+      let core_a = cal * sa * (1.0 - smoothstep(0.32 - aa, 0.32 + aa, d));
+      let core_rgb = mix(col, white, cw + 0.20 * w * cp * use_recipe);
       acc = vec4<f32>(core_rgb * core_a + acc.rgb * (1.0 - core_a), acc.a * (1.0 - core_a) + core_a);
 
       // Legacy compatibility: with no recipe active, the node must
@@ -363,6 +356,89 @@
       acc = acc * state_alpha;
       if (acc.r + acc.g + acc.b + acc.a < 0.006) { discard; }
       return acc;
+    }
+
+    // ── ROUND-7b LIGHT PASS (2026-07-26) ────────────────────────
+    // The breathing glow + the HALO star body render in their OWN
+    // draw, BEFORE the node bodies, with depth writes OFF and depth
+    // test 'always' — light can never occlude a symbol behind it
+    // (fixes the rounded-square clipping John circled in red).
+    // Rest nodes collapse to a zero-area quad here: zero fragments.
+    @vertex
+    fn vs_glow(
+      @location(0) quad_vertex:    vec2<f32>,
+      @location(1) inst_pos_r:     vec4<f32>,
+      @location(2) inst_color:     vec4<f32>,
+      @location(3) inst_sswd:      vec4<f32>,
+    ) -> VsOut {
+      let inst_pos      = inst_pos_r.xy;
+      let inst_radius   = inst_pos_r.z;
+      let inst_state    = inst_sswd.x;
+      let inst_selected = inst_sswd.y;
+      let wake          = clamp(inst_sswd.z, 0.0, 1.0);
+      let packed        = inst_sswd.w;
+      let locked        = select(0.0, 1.0, packed >= 8.0);
+      let dress_id      = packed - locked * 8.0;
+      let use_recipe = step(1.0, v.recipe_b.x);
+      let hz   = max(v.recipe_b.x, 1.0);
+      let cz   = max(v.recipe_b.y, hz);
+      let zoom = 1.0 + (mix(hz, cz, locked) - 1.0) * inst_selected * wake;
+      let bub  = max(v.recipe_b.z, 1.0);
+      // Envelope covers the glow reach AND the halo body (1.5×bub).
+      let reach = max(v.recipe_a.z, 1.5) * bub;
+      let is_halo = select(0.0, 1.0, dress_id < 0.5 || abs(dress_id - 2.0) < 0.5);
+      let emits = max(step(0.02, v.recipe_a.x), is_halo);
+      let live  = step(0.004, wake) * use_recipe * emits;
+      let world = inst_pos + quad_vertex * inst_radius * zoom * reach * live;
+      let ndc   = world * v.view_scale + v.view_offset;
+      var out: VsOut;
+      out.position   = vec4<f32>(ndc, 0.5, 1.0);
+      out.local_pos  = quad_vertex;
+      out.inst_color = inst_color;
+      out.state      = inst_state;
+      out.sel        = inst_selected;
+      out.wake       = wake * use_recipe;
+      let r_px_fb    = inst_radius * zoom * (v.view_scale.x * v.viewport_px.x * 0.5);
+      out.dmeta      = vec4<f32>(reach, r_px_fb, dress_id, locked);
+      out.world_pos  = inst_pos;
+      return out;
+    }
+
+    @fragment
+    fn fs_glow(in: VsOut) -> @location(0) vec4<f32> {
+      let qs  = in.dmeta.x;              // quad envelope in grown-radius units
+      let rpx = max(in.dmeta.y, 0.5);
+      let dId = clamp(i32(in.dmeta.z + 0.5), 0, 4);
+      let d   = length(in.local_pos) * qs;
+      let segA        = mix(1.0, 1.0 - v.dim_amount_nodes, min(in.state, 1.0));
+      let segB_factor = 1.0 - clamp(in.state - 1.0, 0.0, 1.0);
+      let state_alpha = segA * segB_factor;
+      if (state_alpha < 0.005) { discard; }
+      let col = in.inst_color.rgb;
+      let w   = in.wake;
+      let g   = clamp((rpx - v.recipe_a.w) / max(v.recipe_d.w, 1.0), 0.0, 1.0);
+      let wg  = w * g;
+      if (wg < 0.004) { discard; }
+      let t   = v.recipe_c.x;
+      let bub = max(v.recipe_b.z, 1.0);
+      var light = vec3<f32>(0.0);
+      // the breathing glow
+      if (v.recipe_a.x > 0.02) {
+        let pulse = v.recipe_a.y;
+        let pa = v.recipe_a.x * wg * (1.0 - 0.5 * pulse + 0.5 * pulse * sin(t * 1.7 + in.world_pos.x * 0.05));
+        let reach_g = max(v.recipe_a.z * bub, 1.2);
+        let dg = clamp(d / reach_g, 0.0, 1.0);
+        light = light + col * (pa * 0.75 * pow(1.0 - dg, 1.7));
+      }
+      // HALO (and ORB until tier-b) — the star body IS light
+      if (dId == 0 || dId == 2) {
+        let dh = clamp(d / (1.5 * bub), 0.0, 1.0);
+        let ha = 0.80 * wg * pow(1.0 - dh, 1.8);
+        light = light + mix(col, vec3<f32>(1.0, 1.0, 1.0), 0.55 * (1.0 - dh)) * ha;
+      }
+      light = light * state_alpha;
+      if (light.r + light.g + light.b < 0.004) { discard; }
+      return vec4<f32>(light, 0.0);
     }
   `;
 
@@ -810,11 +886,11 @@
     // of (size_mult, glow_strength, glow RGB + extent). Identical
     // binary layout — only the meaning of the values changed when
     // the glow halo was deleted and replaced by a solid stroke ring.
-    // ROUND-7 DRESS (2026-07-26) — grew 192 → 256: four recipe vec4s
+    // ROUND-7 DRESS (2026-07-26) — grew 192 → 272: five recipe vec4s
     // appended AFTER glyph_params, so every pre-existing offset is
     // untouched. Edge + glyph shaders still declare the 192-byte
     // struct; binding a larger buffer is valid (min-binding-size).
-    const VIEW_UBO_SIZE = 256;
+    const VIEW_UBO_SIZE = 272;
     const viewUbo = own(device.createBuffer({
       label: 'forge-view-ubo', size: VIEW_UBO_SIZE,
       usage: GPUBufferUsage.UNIFORM | GPUBufferUsage.COPY_DST,
@@ -984,6 +1060,34 @@
       depthStencil: { format: 'depth24plus', depthWriteEnabled: true, depthCompare: 'less-equal' },
     });
     let glyphInstanceVbo = null, glyphInstanceVboSize = 0;
+
+    // ── ROUND-7b: node LIGHT pipeline (2026-07-26) ──
+    // Same shader module + buffers as the node pass, different
+    // entries (vs_glow/fs_glow). Depth: never writes, always
+    // passes — pure additive light that cannot occlude anything.
+    const nodeGlowPipeline = device.createRenderPipeline({
+      label: 'forge-node-glow-pipeline',
+      layout: device.createPipelineLayout({ bindGroupLayouts: [viewBgl] }),
+      vertex: {
+        module: nodeShaderModule, entryPoint: 'vs_glow',
+        buffers: [
+          { arrayStride: 8, stepMode: 'vertex', attributes: [{ shaderLocation: 0, offset: 0, format: 'float32x2' }] },
+          { arrayStride: 32, stepMode: 'instance', attributes: [
+              { shaderLocation: 1, offset:  0, format: 'float32x4' },
+              { shaderLocation: 2, offset: 16, format: 'float32x4' },
+          ] },
+          { arrayStride: 16, stepMode: 'instance', attributes: [
+              { shaderLocation: 3, offset: 0, format: 'float32x4' },
+          ] },
+        ],
+      },
+      fragment: {
+        module: nodeShaderModule, entryPoint: 'fs_glow',
+        targets: [{ format, blend: premultBlend() }],
+      },
+      primitive: { topology: 'triangle-list' },
+      depthStencil: { format: 'depth24plus', depthWriteEnabled: false, depthCompare: 'always' },
+    });
 
     // ── Instance buffers ─────────────────────────────
     let nodeInstanceVbo     = null, nodeInstanceVboSize     = 0;
@@ -1363,7 +1467,7 @@
         // Phase 6c grew the header 176→192 (added dim_nodes,
         // Phase 7 (2026-05-20) — selected slot now carries
         // (size_mult, stroke_w, stroke RGBA) instead of glow uniforms.
-        const viewData = new Float32Array(64);  // 256 / 4
+        const viewData = new Float32Array(68);  // 272 / 4
         viewData[0]  = viewScaleX;
         viewData[1]  = viewScaleY;
         viewData[2]  = viewOffsetX;
@@ -1411,6 +1515,10 @@
           viewData[61] = rc.chroma ? 1 : 0;
           viewData[62] = (rc.chromaPx || 0) * dpr;
           viewData[63] = 6 * dpr;   // dress-gate ramp width (FB px)
+          viewData[64] = (typeof rc.coreWhite === 'number') ? rc.coreWhite : 0.25;
+          viewData[65] = (typeof rc.coreAlpha === 'number') ? rc.coreAlpha : 0.92;
+          viewData[66] = (typeof rc.ringAlpha === 'number') ? rc.ringAlpha : 0.95;
+          viewData[67] = 0;
         }
         device.queue.writeBuffer(viewUbo, 0, viewData);
 
@@ -1520,6 +1628,16 @@
           pass.setVertexBuffer(1, edgeInstanceVbo);
           pass.setVertexBuffer(2, edgeStateVbo);
           pass.draw(EDGE_RIBBON_COUNT, edgeCount);
+        }
+        // ROUND-7b — the light pass first: glow + halo BEHIND all
+        // symbols, no depth writes (fixes the glow-quad clipping).
+        if (nodeCount > 0 && frame.recipe) {
+          pass.setPipeline(nodeGlowPipeline);
+          pass.setBindGroup(0, viewBg);
+          pass.setVertexBuffer(0, quadVbo);
+          pass.setVertexBuffer(1, nodeInstanceVbo);
+          pass.setVertexBuffer(2, nodeStateVbo);
+          pass.draw(6, nodeCount);
         }
         if (nodeCount > 0) {
           pass.setPipeline(nodePipeline);
