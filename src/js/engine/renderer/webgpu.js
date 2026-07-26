@@ -422,13 +422,19 @@
       let t   = v.recipe_c.x;
       let bub = max(v.recipe_b.z, 1.0);
       var light = vec3<f32>(0.0);
-      // the breathing glow
+      // the breathing glow — ENERGY-CONSERVING (Round 7c): widening
+      // the reach must SOFTEN the light, not flood the field. Peak
+      // scales down and the falloff sharpens as reach grows, so the
+      // fringe never lifts the wires under it into a "reveal"
+      // (John: "the glow doesn't appear — it reveals the wires").
       if (v.recipe_a.x > 0.02) {
         let pulse = v.recipe_a.y;
         let pa = v.recipe_a.x * wg * (1.0 - 0.5 * pulse + 0.5 * pulse * sin(t * 1.7 + in.world_pos.x * 0.05));
         let reach_g = max(v.recipe_a.z * bub, 1.2);
         let dg = clamp(d / reach_g, 0.0, 1.0);
-        light = light + col * (pa * 0.75 * pow(1.0 - dg, 1.7));
+        let conserve = clamp(sqrt(2.1 / max(reach_g, 2.1)), 0.35, 1.0);
+        let fall = 1.7 + 0.5 * max(reach_g - 2.1, 0.0);
+        light = light + col * (pa * 0.75 * conserve * pow(1.0 - dg, fall));
       }
       // HALO (and ORB until tier-b) — the star body IS light
       if (dId == 0 || dId == 2) {

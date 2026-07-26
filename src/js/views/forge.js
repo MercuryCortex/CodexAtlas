@@ -6750,8 +6750,15 @@
         if (local.destroyed) return;
         setHoverId(null);
         // ROUND-7 DRESS — hand off the field: let the wake decay.
+        // ROUND-7c — EXCEPT while the ?lab panel is open: the hand
+        // leaves the canvas to reach the sliders, and the wake dying
+        // meant John could never SEE what he was dialing ("the icons
+        // are not awake?"). Sticky wake keeps the last woken patch
+        // alive while the lab is up.
         if (local._wakeCursor) {
-          local._wakeCursor.active = false;
+          if (!document.getElementById('forge-lab-panel')) {
+            local._wakeCursor.active = false;
+          }
           startAnimLoop();
         }
       });
