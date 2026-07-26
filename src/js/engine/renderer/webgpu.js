@@ -315,29 +315,54 @@
       }
 
       // 5 ▸ THE SYMBOL — canonical ring + core dot, over everything.
-      //     Ethereal: the LOCKED symbol softens and breathes (no gold ring).
+      //     AUDIT P0-2 (2026-07-27): LIGHT dims fully under focus (the
+      //     lab law — life is added light only); the SYMBOL never
+      //     alpha-fades to grey. It tints toward the lab's slate
+      //     (st=3 recipe: 55% toward #3a3752) and keeps 45% ink.
+      acc = acc * state_alpha;
+      let dimf = min(in.state, 1.0) * use_recipe;
+      let symDim = mix(1.0, 0.45, dimf) * segB_factor;
+      let colSym = mix(col, vec3<f32>(0.23, 0.22, 0.32), 0.55 * dimf);
       var symTab = array<f32, 5>(0.62, 1.0, 1.0, 0.55, 0.92);
-      let sa = 1.0 - (1.0 - symTab[dId]) * wg;
+      let sa = (1.0 - (1.0 - symTab[dId]) * wg) * symDim;
       let E = v.recipe_b.w * lockedF * in.sel * use_recipe;
       let breath = 0.5 + 0.5 * sin(t * 1.4 + seedx * 0.03);
       let hw   = max(0.05, 1.2 / rpx);
-      let soft = aa + E * (0.06 + 0.11 * breath);
-      let s1 = smoothstep(0.86 - hw - soft, 0.86 - hw + soft, d);
-      let s2 = 1.0 - smoothstep(0.86 + hw - soft, 0.86 + hw + soft, d);
-      let ring_mask = s1 * s2;
-      // Symbol voice dials (recipe_e) — John tunes the whiteness here:
-      // core_white (how far the core leans to white), core/ring alpha.
+      // Symbol voice dials (recipe_e) — John tunes the whiteness here.
       let cw = mix(0.25, v.recipe_e.x, use_recipe);
       let cal = mix(0.92, v.recipe_e.y, use_recipe);
       let ral = mix(0.95, v.recipe_e.z, use_recipe);
-      let ring_a = ral * sa * ring_mask * (1.0 - 0.35 * E * breath);
-      let ring_rgb = mix(col, white, 0.30 * E * breath);
-      acc = vec4<f32>(ring_rgb * ring_a + acc.rgb * (1.0 - ring_a), acc.a * (1.0 - ring_a) + ring_a);
-      // core dot — breathes brighter while awake, never to white
+      let dprv = max(v.recipe_e.w, 1.0);
+      // AUDIT P0-3 — the lab's ethereal is THREE layers, never a smear:
+      // (1) a SOFT family-colored copy UNDER, blur capped in SCREEN px
+      //     (1.2-3.4 CSS px) so big locked nodes do not dissolve;
+      let widen = clamp((1.2 + 2.2 * breath) * dprv / rpx, 0.0, 0.25) * step(0.02, E);
+      if (widen > 0.001) {
+        let f1 = smoothstep(0.86 - hw - widen - aa, 0.86 - hw + widen + aa, d);
+        let f2 = 1.0 - smoothstep(0.86 + hw - widen - aa, 0.86 + hw + widen + aa, d);
+        let soft_a = ral * sa * (f1 * f2) * 0.55 * E * breath;
+        acc = vec4<f32>(colSym * soft_a + acc.rgb * (1.0 - soft_a), acc.a * (1.0 - soft_a) + soft_a);
+      }
+      // (2) the CRISP ring always on top — aa-sharp, color intact,
+      //     ink never below 45% during the breath (identity anchor);
+      let s1 = smoothstep(0.86 - hw - aa, 0.86 - hw + aa, d);
+      let s2 = 1.0 - smoothstep(0.86 + hw - aa, 0.86 + hw + aa, d);
+      let ring_mask = s1 * s2;
+      let ring_a = ral * sa * ring_mask * (1.0 - 0.55 * E * breath);
+      acc = vec4<f32>(colSym * ring_a + acc.rgb * (1.0 - ring_a), acc.a * (1.0 - ring_a) + ring_a);
+      // core dot — AUDIT P1-5: the FILL is frozen at core_white; the
+      // pulse rides on top as capped added light (never to white).
       let cp = 0.5 + 0.5 * sin(t * 2.1 + seedx * 0.07);
-      let core_a = cal * sa * (1.0 - smoothstep(0.32 - aa, 0.32 + aa, d));
-      let core_rgb = mix(col, white, cw + 0.20 * w * cp * use_recipe);
+      let core_mask = 1.0 - smoothstep(0.32 - aa, 0.32 + aa, d);
+      let core_a = cal * sa * core_mask;
+      let core_rgb = mix(colSym, white, cw);
       acc = vec4<f32>(core_rgb * core_a + acc.rgb * (1.0 - core_a), acc.a * (1.0 - core_a) + core_a);
+      // (3) accents — pure added light (breath stroke + core pulse),
+      //     dimmed under the LIGHT law like every other photon.
+      let accent = (mix(col, white, 0.6) * (0.30 * E * breath) * ring_mask
+                  + mix(col, white, 0.5) * (0.26 * w * cp * use_recipe) * core_mask)
+                  * sa * state_alpha;
+      acc = vec4<f32>(acc.rgb + accent, acc.a);
 
       // Legacy compatibility: with no recipe active, the node must
       // render the Phase-7 FILLED DISK + gold selected stroke exactly.
@@ -352,8 +377,6 @@
         return vec4<f32>(rgb * fa, fa);
       }
 
-      // Whole package dims together under the state law.
-      acc = acc * state_alpha;
       if (acc.r + acc.g + acc.b + acc.a < 0.006) { discard; }
       return acc;
     }
@@ -384,8 +407,9 @@
       let cz   = max(v.recipe_b.y, hz);
       let zoom = 1.0 + (mix(hz, cz, locked) - 1.0) * inst_selected * wake;
       let bub  = max(v.recipe_b.z, 1.0);
-      // Envelope covers the glow reach AND the halo body (1.5×bub).
-      let reach = max(v.recipe_a.z, 1.5) * bub;
+      // Envelope covers the glow reach (no bubble term — P1-6) AND
+      // the halo body (1.5×bub).
+      let reach = max(v.recipe_a.z, 1.5 * bub);
       let is_halo = select(0.0, 1.0, dress_id < 0.5 || abs(dress_id - 2.0) < 0.5);
       let emits = max(step(0.02, v.recipe_a.x), is_halo);
       let live  = step(0.004, wake) * use_recipe * emits;
@@ -418,29 +442,33 @@
       let w   = in.wake;
       let g   = clamp((rpx - v.recipe_a.w) / max(v.recipe_d.w, 1.0), 0.0, 1.0);
       let wg  = w * g;
-      if (wg < 0.004) { discard; }
+      // AUDIT P1-6 — the breathing glow gates on WAKE alone (the lab
+      // guards glow only by glow>0.02): a woken 5px node must glow.
+      // Only the DRESS (halo body below) respects the size gate.
+      if (w < 0.004) { discard; }
       let t   = v.recipe_c.x;
       let bub = max(v.recipe_b.z, 1.0);
       var light = vec3<f32>(0.0);
       // the breathing glow — ENERGY-CONSERVING (Round 7c): widening
-      // the reach must SOFTEN the light, not flood the field. Peak
-      // scales down and the falloff sharpens as reach grows, so the
-      // fringe never lifts the wires under it into a "reveal"
-      // (John: "the glow doesn't appear — it reveals the wires").
+      // the reach must SOFTEN the light, not flood the field.
       if (v.recipe_a.x > 0.02) {
         let pulse = v.recipe_a.y;
-        let pa = v.recipe_a.x * wg * (1.0 - 0.5 * pulse + 0.5 * pulse * sin(t * 1.7 + in.world_pos.x * 0.05));
-        let reach_g = max(v.recipe_a.z * bub, 1.2);
+        let pa = v.recipe_a.x * w * (1.0 - 0.5 * pulse + 0.5 * pulse * sin(t * 1.7 + in.world_pos.x * 0.05));
+        // AUDIT P1-6 sibling: the lab has no bubble term on reach.
+        let reach_g = max(v.recipe_a.z, 1.2);
         let dg = clamp(d / reach_g, 0.0, 1.0);
         let conserve = clamp(sqrt(2.1 / max(reach_g, 2.1)), 0.35, 1.0);
         let fall = 1.7 + 0.5 * max(reach_g - 2.1, 0.0);
         light = light + col * (pa * 0.75 * conserve * pow(1.0 - dg, fall));
       }
-      // HALO (and ORB until tier-b) — the star body IS light
+      // HALO (and ORB until tier-b) — the star body IS light.
+      // AUDIT P0-4a: white lives ONLY at the heart — the lab ramps the
+      // white-mix 0.55→0 across dh 0→0.3; the mid-body is pure family
+      // color (the old full-body whitening made locked hubs cream).
       if (dId == 0 || dId == 2) {
         let dh = clamp(d / (1.5 * bub), 0.0, 1.0);
         let ha = 0.80 * wg * pow(1.0 - dh, 1.8);
-        light = light + mix(col, vec3<f32>(1.0, 1.0, 1.0), 0.55 * (1.0 - dh)) * ha;
+        light = light + mix(col, vec3<f32>(1.0, 1.0, 1.0), 0.55 * max(1.0 - dh / 0.3, 0.0)) * ha;
       }
       light = light * state_alpha;
       if (light.r + light.g + light.b < 0.004) { discard; }
@@ -1089,7 +1117,13 @@
       },
       fragment: {
         module: nodeShaderModule, entryPoint: 'fs_glow',
-        targets: [{ format, blend: premultBlend() }],
+        // AUDIT P0-4b — SCREEN blend (src + dst·(1−src)), the lab's
+        // compositeOperation for its light: self-limiting, saturates
+        // asymptotically, never clips to white the way pure ADD did.
+        targets: [{ format, blend: {
+          color: { srcFactor: 'one', dstFactor: 'one-minus-src', operation: 'add' },
+          alpha: { srcFactor: 'one', dstFactor: 'one-minus-src-alpha', operation: 'add' },
+        } }],
       },
       primitive: { topology: 'triangle-list' },
       depthStencil: { format: 'depth24plus', depthWriteEnabled: false, depthCompare: 'always' },
@@ -1524,7 +1558,7 @@
           viewData[64] = (typeof rc.coreWhite === 'number') ? rc.coreWhite : 0.25;
           viewData[65] = (typeof rc.coreAlpha === 'number') ? rc.coreAlpha : 0.92;
           viewData[66] = (typeof rc.ringAlpha === 'number') ? rc.ringAlpha : 0.95;
-          viewData[67] = 0;
+          viewData[67] = dpr;   // P0-3: the ethereal blur is capped in CSS px
         }
         device.queue.writeBuffer(viewUbo, 0, viewData);
 

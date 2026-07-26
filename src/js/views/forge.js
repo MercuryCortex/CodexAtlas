@@ -4068,7 +4068,12 @@
       const frameNVB  = local.mode.nodePacked.data;
       const frameEVB  = nodeOnly ? null : local.mode.edgePacked.data;
       const glyphsHidden = nodeOnly || edgesAndNodesOnly;
-      const frameGVB = glyphsHidden ? null : (local.glyphInstanceData || null);
+      // AUDIT P0-1 (2026-07-27) — the legacy white type-glyph pass has
+      // no place over the canon ring: it IS the grey double-circle and
+      // the white core of the locked blob (audit SYM-1/SYM-3/CHROME-1).
+      // Recipe off ⇒ glyphs render bit-exact legacy (honest zeros).
+      const recipeOn = (local.params.recipe_hover_zoom || 0) >= 1;
+      const frameGVB = (glyphsHidden || recipeOn) ? null : (local.glyphInstanceData || null);
       // DEBUG (2026-05-27): ?no-nodes=1 URL param skips the entire
       // WebGPU node/edge/glyph draw. Useful for isolating which
       // render layer (nodes / labels / hulls) is paying the per-frame
