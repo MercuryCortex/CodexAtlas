@@ -149,6 +149,15 @@
       selected_stroke:        vec4<f32>,  // stroke RGBA (gold ring)
       bucket_hot_colors:      array<vec4<f32>, 7>,
       glyph_params:           vec4<f32>,
+      // ROUND-7 DRESS (2026-07-26) — the node-lab recipe as uniforms.
+      // recipe_b.x (hover_zoom) >= 1 is the "recipe active" switch:
+      // when the view does not send a recipe, all four vec4s are 0
+      // and every dress term multiplies away (honest zeros) — the
+      // shader renders the legacy Phase-7 look exactly.
+      recipe_a:               vec4<f32>,  // glow, pulse, glow_reach, gate_px (FB px)
+      recipe_b:               vec4<f32>,  // hover_zoom, click_zoom, bubble, ether
+      recipe_c:               vec4<f32>,  // time_sec, fin_strength, cursor_world.xy
+      recipe_d:               vec4<f32>,  // irid_on, chroma_on, chroma_px (FB), gate_slope_px (FB)
     };
     @group(0) @binding(0) var<uniform> v: View;
 
@@ -158,6 +167,9 @@
       @location(1) inst_color: vec4<f32>,
       @location(2) state:      f32,
       @location(3) sel:        f32,
+      @location(4) wake:       f32,
+      @location(5) dmeta:      vec4<f32>,  // quad_scale, grown radius in FB px, dress_id, locked ('meta' is WGSL-reserved)
+      @location(6) world_pos:  vec2<f32>,
     };
 
     @vertex
@@ -165,16 +177,31 @@
       @location(0) quad_vertex:    vec2<f32>,
       @location(1) inst_pos_r:     vec4<f32>,
       @location(2) inst_color:     vec4<f32>,
-      @location(3) inst_state_sel: vec2<f32>,
+      @location(3) inst_sswd:      vec4<f32>,
     ) -> VsOut {
       let inst_pos      = inst_pos_r.xy;
       let inst_radius   = inst_pos_r.z;
-      let inst_state    = inst_state_sel.x;
-      let inst_selected = inst_state_sel.y;
-      // Quad matches the disk exactly. Selected disks grow by size_mult.
-      // No glow → no headroom → no quad_scale. ONE shape, ONE radius.
-      let size_mult = mix(1.0, v.selected_size_mult, inst_selected);
-      let world     = inst_pos + quad_vertex * inst_radius * size_mult;
+      let inst_state    = inst_sswd.x;
+      let inst_selected = inst_sswd.y;
+      let wake          = clamp(inst_sswd.z, 0.0, 1.0);
+      // .w packs dress_id (0..4) + 8*locked — one float, two facts.
+      let packed        = inst_sswd.w;
+      let locked        = select(0.0, 1.0, packed >= 8.0);
+      let dress_id      = packed - locked * 8.0;
+      // Zoom: the recipe's hover/click zooms ride the anchor (selected)
+      // flag — wake neighbors glow but do not zoom (lab law). When no
+      // recipe is active, fall back to the legacy selected_size_mult.
+      let use_recipe = step(1.0, v.recipe_b.x);
+      let hz   = max(v.recipe_b.x, 1.0);
+      let cz   = max(v.recipe_b.y, hz);
+      let zoom = 1.0 + (mix(hz, cz, locked) - 1.0) * inst_selected * wake;
+      let legacy_grow = mix(1.0, v.selected_size_mult, inst_selected);
+      let grow = mix(legacy_grow, zoom, use_recipe);
+      // Quad headroom: only awake nodes pay for glow reach. At wake=0
+      // the quad hugs the disk exactly — rest costs what Phase 7 cost.
+      let reach = max(v.recipe_a.z * max(v.recipe_b.z, 1.0), 1.0);
+      let quad_scale = mix(1.0, max(reach, 1.15), clamp(wake * 4.0, 0.0, 1.0) * use_recipe);
+      let world     = inst_pos + quad_vertex * inst_radius * grow * quad_scale;
       let ndc       = world * v.view_scale + v.view_offset;
       // Depth: selected on top, focused middle, dim back.
       let z_focus = mix(0.3, 0.6, inst_state);
@@ -185,58 +212,157 @@
       out.inst_color = inst_color;
       out.state      = inst_state;
       out.sel        = inst_selected;
+      out.wake       = wake * use_recipe;
+      let r_px_fb    = inst_radius * grow * (v.view_scale.x * v.viewport_px.x * 0.5);
+      out.dmeta      = vec4<f32>(quad_scale, r_px_fb, dress_id, locked);
+      out.world_pos  = inst_pos;
       return out;
     }
 
+    // ── ROUND-7 DRESS fragment (2026-07-26) ─────────────────────
+    // The node is the CANONICAL RING (ring band at 0.86r + core dot
+    // at 0.32r — the lab's drawRing), wearing one of five full-body
+    // light dresses while awake: 0 HALO · 1 ICON · 2 ORB(→halo for
+    // now, tier-b later) · 3 VEIL · 4 EMBER. NO dress strokes — the
+    // only lines on a node are the symbol's own (John 2026-07-23).
+    // Everything scales by wake×gate so rest & legacy are untouched.
     @fragment
     fn fs_main(in: VsOut) -> @location(0) vec4<f32> {
-      // SDF disk: alpha 1 inside, 0 outside, single AA pixel at edge.
-      let dist       = length(in.local_pos);
-      let aa         = fwidth(dist);
-      let disk_alpha = 1.0 - smoothstep(1.0 - aa, 1.0, dist);
-      if (disk_alpha < 0.01) { discard; }
+      let qs   = in.dmeta.x;
+      let rpx  = max(in.dmeta.y, 0.5);
+      let dId  = clamp(i32(in.dmeta.z + 0.5), 0, 4);
+      let lockedF = in.dmeta.w;
+      // d is in units of the (grown) symbol radius: 1.0 = ring edge.
+      let d    = length(in.local_pos) * qs;
+      let aa   = fwidth(d);
 
-      // ── State → alpha (Phase 11, 2026-05-20) ─────────────────
-      //   IDLE   (state = 0): alpha = 1.0                       (full opaque)
-      //   FADED  (state = 1): alpha = 1 - dim_amount_nodes      (e.g. 0.25)
-      //   HIDDEN (state = 2): alpha = 0                          (discarded)
-      //   Animation: state interpolates as a float; alpha rides
-      //   the same curve. 0 → 1 is the IDLE→FADED fade; 1 → 2 is
-      //   the FADED→HIDDEN fade. One scalar input drives the whole
-      //   transition.
-      //
-      // Formula (piecewise linear in state):
-      //   segA = mix(1, 1 - dim_amount, min(state, 1))           // segment 0..1
-      //   segB-factor = 1 - clamp(state - 1, 0, 1)               // segment 1..2 → 1..0
-      //   state_alpha = segA × segB-factor
-      //
-      // Trace:
-      //   state = 0:    1.0  × 1.0 = 1.0
-      //   state = 1:    0.25 × 1.0 = 0.25
-      //   state = 1.5:  0.25 × 0.5 = 0.125
-      //   state = 2:    0.25 × 0.0 = 0.0  → discarded below
+      // State dim (Phase 11 piecewise) — unchanged law.
       let segA        = mix(1.0, 1.0 - v.dim_amount_nodes, min(in.state, 1.0));
       let segB_factor = 1.0 - clamp(in.state - 1.0, 0.0, 1.0);
       let state_alpha = segA * segB_factor;
-      let rgb_fill    = in.inst_color.rgb;
+      if (state_alpha < 0.005) { discard; }
 
-      // Selected stroke (only painted when sel = 1).
-      // The stroke band sits inside the disk's outer edge,
-      // thickness = selected_stroke_w as a fraction of radius.
-      let stroke_inner = 1.0 - v.selected_stroke_w;
-      let stroke_band  = smoothstep(stroke_inner - aa, stroke_inner, dist);
-      let stroke_mix   = in.sel * stroke_band;
-      let rgb          = mix(rgb_fill, v.selected_stroke.rgb, stroke_mix);
+      let col = in.inst_color.rgb;
+      let white = vec3<f32>(1.0, 1.0, 1.0);
+      let use_recipe = step(1.0, v.recipe_b.x);
+      let w = in.wake;
+      // Dress gate: material only past gate_px on screen (FB px).
+      let g  = clamp((rpx - v.recipe_a.w) / max(v.recipe_d.w, 1.0), 0.0, 1.0);
+      let wg = w * g;
+      let t  = v.recipe_c.x;
+      let seedx = in.world_pos.x;
+      let bub = max(v.recipe_b.z, 1.0);
 
-      // Final alpha = state_alpha × disk_alpha.
-      //   - state_alpha: 1.0 (idle/over), 0.25 (faded), 0 (hidden)
-      //   - disk_alpha:  1.0 inside, fades only at the 1-px AA edge
-      let final_a = state_alpha * disk_alpha;
-      // Phase 11 — HIDDEN drops final_a to 0; discard those fragments
-      // so they neither paint nor write depth.
-      if (final_a < 0.005) { discard; }
-      // Premultiplied alpha output.
-      return vec4<f32>(rgb * final_a, final_a);
+      // Accumulate premultiplied back-to-front: acc = L + acc*(1-L.a).
+      var acc = vec4<f32>(0.0);
+
+      // 1 ▸ the breathing glow behind (pure added light, alpha 0)
+      if (v.recipe_a.x * wg > 0.004) {
+        let pulse = v.recipe_a.y;
+        let pa = v.recipe_a.x * wg * (1.0 - 0.5 * pulse + 0.5 * pulse * sin(t * 1.7 + seedx * 0.05));
+        let reach = max(v.recipe_a.z * bub, 1.2);
+        let dg = clamp(d / reach, 0.0, 1.0);
+        let prof = 0.75 * pow(1.0 - dg, 1.7);
+        acc = vec4<f32>(col * (pa * prof), 0.0);
+      }
+
+      // 2 ▸ the dress body (full circle of material, stroke-free)
+      if (wg > 0.01) {
+        let db = d / bub;
+        if (dId == 0 || dId == 2) {
+          // HALO — a body of pure light (ORB wears this until tier-b)
+          let dh = clamp(d / (1.5 * bub), 0.0, 1.0);
+          let ha = 0.80 * wg * pow(1.0 - dh, 1.8);
+          let hcol = mix(col, white, 0.55 * (1.0 - dh));
+          acc = vec4<f32>(acc.rgb + hcol * ha, acc.a);
+        } else if (dId == 1) {
+          // ICON — the gold-leaf disc: flat luminous leaf, soft edge
+          let leaf = mix(col, vec3<f32>(0.827, 0.722, 0.467), 0.45);
+          let ia = 0.52 * wg * (1.0 - smoothstep(0.68, 1.0, db / 1.06));
+          acc = vec4<f32>(acc.rgb + leaf * ia, acc.a);
+        } else if (dId == 3) {
+          // VEIL — luminous mist: three soft off-center breaths, slow drift
+          let pv = in.local_pos * qs;
+          var va = 0.0;
+          var vcol = vec3<f32>(0.0);
+          for (var k = 0; k < 3; k++) {
+            let fk = f32(k);
+            let ang = seedx * 0.13 + in.world_pos.y * 0.07 + fk * 2.1 + t * 0.15;
+            let off = vec2<f32>(cos(ang), sin(ang * 0.8)) * (0.22 * bub);
+            let dk = clamp(length(pv - off) / (bub * (0.62 + 0.30 * fk)), 0.0, 1.0);
+            va = va + 0.17 * wg * pow(1.0 - dk, 2.0);
+          }
+          vcol = mix(col, white, 0.25);
+          acc = vec4<f32>(acc.rgb + vcol * min(va, 0.6), acc.a);
+        } else if (dId == 4) {
+          // EMBER — obsidian body over the glow, molten heart added
+          let body_a = 0.55 * wg * (1.0 - smoothstep(0.78, 1.04, db)) * (0.45 + 0.55 * smoothstep(0.0, 0.6, db));
+          let dark = vec3<f32>(0.024, 0.020, 0.055);
+          acc = vec4<f32>(dark * body_a + acc.rgb * (1.0 - body_a), acc.a * (1.0 - body_a) + body_a);
+          let em = 0.5 + 0.5 * sin(t * 2.1 + seedx * 0.07);
+          let ea = (0.5 + 0.3 * em) * wg * pow(max(1.0 - d / 0.5, 0.0), 1.5);
+          acc = vec4<f32>(acc.rgb + mix(col, white, 0.6) * ea, acc.a);
+        }
+        // 3 ▸ iridescence — full-body film lit by the cursor angle
+        if (v.recipe_d.x > 0.5 && v.recipe_c.y * wg > 0.01 && db < 1.0) {
+          let pv2 = in.local_pos * qs;
+          let dirc = v.recipe_c.zw - in.world_pos;
+          let base = atan2(dirc.y, dirc.x);
+          let hue = atan2(pv2.y, pv2.x) - base;
+          let rainbow = 0.5 + 0.5 * cos(vec3<f32>(hue, hue + 2.09, hue + 4.18));
+          let fa = 0.16 * v.recipe_c.y * wg * (1.0 - smoothstep(0.85, 1.0, db));
+          acc = vec4<f32>(acc.rgb + rainbow * fa, acc.a);
+        }
+        // 4 ▸ chroma — a soft warm/cool light split, no rims
+        if (v.recipe_d.y > 0.5 && v.recipe_c.y * wg > 0.01) {
+          let offr = v.recipe_d.z / rpx * 2.0;
+          let pvx = in.local_pos.x * qs;
+          let ca = 0.14 * v.recipe_c.y * wg;
+          let dwarm = clamp(length(vec2<f32>(pvx + offr, in.local_pos.y * qs)) / bub, 0.0, 1.0);
+          let dcool = clamp(length(vec2<f32>(pvx - offr, in.local_pos.y * qs)) / bub, 0.0, 1.0);
+          acc = vec4<f32>(acc.rgb
+            + vec3<f32>(1.0, 0.55, 0.35) * (ca * pow(1.0 - dwarm, 2.0))
+            + vec3<f32>(0.43, 0.63, 1.0) * (ca * pow(1.0 - dcool, 2.0)), acc.a);
+        }
+      }
+
+      // 5 ▸ THE SYMBOL — canonical ring + core dot, over everything.
+      //     Ethereal: the LOCKED symbol softens and breathes (no gold ring).
+      var symTab = array<f32, 5>(0.62, 1.0, 1.0, 0.55, 0.92);
+      let sa = 1.0 - (1.0 - symTab[dId]) * wg;
+      let E = v.recipe_b.w * lockedF * in.sel * use_recipe;
+      let breath = 0.5 + 0.5 * sin(t * 1.4 + seedx * 0.03);
+      let hw   = max(0.05, 1.2 / rpx);
+      let soft = aa + E * (0.06 + 0.11 * breath);
+      let s1 = smoothstep(0.86 - hw - soft, 0.86 - hw + soft, d);
+      let s2 = 1.0 - smoothstep(0.86 + hw - soft, 0.86 + hw + soft, d);
+      let ring_mask = s1 * s2;
+      let ring_a = 0.95 * sa * ring_mask * (1.0 - 0.35 * E * breath);
+      let ring_rgb = mix(col, white, 0.30 * E * breath);
+      acc = vec4<f32>(ring_rgb * ring_a + acc.rgb * (1.0 - ring_a), acc.a * (1.0 - ring_a) + ring_a);
+      // core dot — breathes brighter while awake, never to white
+      let cp = 0.5 + 0.5 * sin(t * 2.1 + seedx * 0.07);
+      let core_a = 0.92 * sa * (1.0 - smoothstep(0.32 - aa, 0.32 + aa, d));
+      let core_rgb = mix(col, white, 0.25 + 0.20 * w * cp * use_recipe);
+      acc = vec4<f32>(core_rgb * core_a + acc.rgb * (1.0 - core_a), acc.a * (1.0 - core_a) + core_a);
+
+      // Legacy compatibility: with no recipe active, the node must
+      // render the Phase-7 FILLED DISK + gold selected stroke exactly.
+      if (use_recipe < 0.5) {
+        let disk_alpha = 1.0 - smoothstep(1.0 - aa, 1.0, d);
+        if (disk_alpha < 0.01) { discard; }
+        let stroke_inner = 1.0 - v.selected_stroke_w;
+        let stroke_band  = smoothstep(stroke_inner - aa, stroke_inner, d);
+        let rgb = mix(col, v.selected_stroke.rgb, in.sel * stroke_band);
+        let fa = state_alpha * disk_alpha;
+        if (fa < 0.005) { discard; }
+        return vec4<f32>(rgb * fa, fa);
+      }
+
+      // Whole package dims together under the state law.
+      acc = acc * state_alpha;
+      if (acc.r + acc.g + acc.b + acc.a < 0.006) { discard; }
+      return acc;
     }
   `;
 
@@ -684,7 +810,11 @@
     // of (size_mult, glow_strength, glow RGB + extent). Identical
     // binary layout — only the meaning of the values changed when
     // the glow halo was deleted and replaced by a solid stroke ring.
-    const VIEW_UBO_SIZE = 192;
+    // ROUND-7 DRESS (2026-07-26) — grew 192 → 256: four recipe vec4s
+    // appended AFTER glyph_params, so every pre-existing offset is
+    // untouched. Edge + glyph shaders still declare the 192-byte
+    // struct; binding a larger buffer is valid (min-binding-size).
+    const VIEW_UBO_SIZE = 256;
     const viewUbo = own(device.createBuffer({
       label: 'forge-view-ubo', size: VIEW_UBO_SIZE,
       usage: GPUBufferUsage.UNIFORM | GPUBufferUsage.COPY_DST,
@@ -711,11 +841,11 @@
               { shaderLocation: 1, offset:  0, format: 'float32x4' },
               { shaderLocation: 2, offset: 16, format: 'float32x4' },
           ] },
-          // [2] per-instance (state, selected) — Phase 6c bumped
-          // from a single f32 (state only) to a vec2: state in .x,
-          // selected flag in .y. Same VBO, just twice as wide.
-          { arrayStride: 8, stepMode: 'instance', attributes: [
-              { shaderLocation: 3, offset: 0, format: 'float32x2' },
+          // [2] per-instance (state, selected, wake, dress+lock) —
+          // ROUND-7 DRESS bumped the vec2 to a vec4: state in .x,
+          // selected in .y, wake 0..1 in .z, dress_id+8*locked in .w.
+          { arrayStride: 16, stepMode: 'instance', attributes: [
+              { shaderLocation: 3, offset: 0, format: 'float32x4' },
           ] },
         ],
       },
@@ -838,9 +968,10 @@
               { shaderLocation: 2, offset: 16, format: 'float32x4' },
           ] },
           // [2] per-instance state — SAME buffer as the node
-          // pipeline's nodeStateVbo (state, selected) pairs.
-          // 8 bytes per instance.
-          { arrayStride: 8, stepMode: 'instance', attributes: [
+          // pipeline's nodeStateVbo. ROUND-7 DRESS: that buffer is
+          // now vec4 (state, selected, wake, dress) per instance —
+          // 16-byte stride; glyphs still read only (state, selected).
+          { arrayStride: 16, stepMode: 'instance', attributes: [
               { shaderLocation: 3, offset: 0, format: 'float32x2' },
           ] },
         ],
@@ -1232,7 +1363,7 @@
         // Phase 6c grew the header 176→192 (added dim_nodes,
         // Phase 7 (2026-05-20) — selected slot now carries
         // (size_mult, stroke_w, stroke RGBA) instead of glow uniforms.
-        const viewData = new Float32Array(48);  // 192 / 4
+        const viewData = new Float32Array(64);  // 256 / 4
         viewData[0]  = viewScaleX;
         viewData[1]  = viewScaleY;
         viewData[2]  = viewOffsetX;
@@ -1260,6 +1391,27 @@
         viewData[45] = glyphDim;
         viewData[46] = 0;
         viewData[47] = 0;
+        // ROUND-7 DRESS — recipe uniforms (floats 48..63). Absent
+        // recipe ⇒ all zeros ⇒ the shader's honest-zero legacy path.
+        const rc = frame.recipe || null;
+        if (rc) {
+          viewData[48] = rc.glow        || 0;
+          viewData[49] = rc.pulse       || 0;
+          viewData[50] = rc.glowReach   || 0;
+          viewData[51] = (rc.gatePx     || 0) * dpr;
+          viewData[52] = rc.hoverZoom   || 0;
+          viewData[53] = rc.clickZoom   || 0;
+          viewData[54] = rc.bubble      || 0;
+          viewData[55] = rc.ether       || 0;
+          viewData[56] = rc.timeSec     || 0;
+          viewData[57] = rc.finStrength || 0;
+          viewData[58] = (typeof rc.cursorX === 'number') ? rc.cursorX : -1e9;
+          viewData[59] = (typeof rc.cursorY === 'number') ? rc.cursorY : -1e9;
+          viewData[60] = rc.irid   ? 1 : 0;
+          viewData[61] = rc.chroma ? 1 : 0;
+          viewData[62] = (rc.chromaPx || 0) * dpr;
+          viewData[63] = 6 * dpr;   // dress-gate ramp width (FB px)
+        }
         device.queue.writeBuffer(viewUbo, 0, viewData);
 
         // ── Instance buffers (static geometry) ──────
@@ -1318,10 +1470,23 @@
         // 1A-node-atom-2026-05-20.md §3 N5.
         // ════════════════════════════════════════════════════════
         if (nodeCount > 0) {
-          const stateBytes = nodeCount * 8;
+          // ROUND-7 DRESS: 4 floats per instance. A legacy vec2
+          // array (state, selected) is expanded in place so older
+          // callers keep working — wake 0 / dress 0 = no dress.
+          const stateBytes = nodeCount * 16;
           const r = ensureBuffer(nodeStateVbo, nodeStateVboSize, stateBytes, 'forge-node-state-vbo');
           nodeStateVbo = r.buf; nodeStateVboSize = r.size;
-          const stateData = frame.nodeStates || new Float32Array(nodeCount * 2);
+          let stateData = frame.nodeStates;
+          if (!stateData) {
+            stateData = new Float32Array(nodeCount * 4);
+          } else if (stateData.length === nodeCount * 2) {
+            const wide = new Float32Array(nodeCount * 4);
+            for (let i = 0; i < nodeCount; i++) {
+              wide[i * 4]     = stateData[i * 2];
+              wide[i * 4 + 1] = stateData[i * 2 + 1];
+            }
+            stateData = wide;
+          }
           device.queue.writeBuffer(nodeStateVbo, 0, stateData, 0, Math.floor(stateBytes / 4));
         }
         if (edgeCount > 0) {

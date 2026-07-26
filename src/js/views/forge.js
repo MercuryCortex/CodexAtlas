@@ -621,6 +621,30 @@
     pan_tau:   0.18,
     zoom_tau:  0.08,
     flyto_dur: 0.55,
+
+    // ── ROUND-7 DRESS · the node-lab recipe (2026-07-26) ──
+    // John's dialed values from design/node-lab.html Rounds 7-8.
+    // recipe_hover_zoom >= 1 switches the dress system ON; set it
+    // to 0 and the shader renders the legacy Phase-7 disk exactly.
+    recipe_hover_zoom:     1.15,
+    recipe_click_zoom:     1.30,
+    recipe_bubble:         1.10,
+    recipe_glow:           0.75,
+    recipe_pulse:          0.55,
+    recipe_glow_reach:     2.10,
+    recipe_fin_strength:   1.0,
+    recipe_wake_radius_px: 240,
+    recipe_wake_cap:       15,
+    recipe_gate_px:        7,
+    recipe_ether:          1.0,
+    recipe_irid:           1,
+    recipe_chroma:         0,
+    recipe_chroma_px:      4,
+    // The CAST — a dress per size tier (label tiers 0-1 / 2-3 / 4-5):
+    // halo · icon · orb (renders halo until tier-b) · veil · ember.
+    dress_hub:   'halo',
+    dress_mid:   'halo',
+    dress_small: 'halo',
   });
 
   function render(rootEl) {
@@ -3417,6 +3441,8 @@
         if (hn.r > maxRadius) maxRadius = hn.r;
       }
       const hitGridNew = buildHitGrid(hitNodesNew, ext, maxRadius);
+      // ROUND-7 DRESS — per-instance dress ids ride the tier map.
+      local.dressBase = buildDressBase(hitNodesNew);
       _tick('hit-grid');
 
       local.mode = {
@@ -4086,6 +4112,26 @@
         edgeStates:            local.edgeStates,
         glyphInstances:        frameGVB,
         glyphInstancesDirty:   !!local._glyphRebuildDirty,
+        // ROUND-7 DRESS (2026-07-26) — the node-lab recipe, verbatim.
+        // recipe_hover_zoom < 1 sends null → all-zero uniforms → the
+        // shader's honest-zero legacy path (Phase-7 disk exactly).
+        recipe: ((local.params.recipe_hover_zoom || 0) >= 1) ? {
+          glow:        local.params.recipe_glow,
+          pulse:       local.params.recipe_pulse,
+          glowReach:   local.params.recipe_glow_reach,
+          gatePx:      local.params.recipe_gate_px,
+          hoverZoom:   local.params.recipe_hover_zoom,
+          clickZoom:   local.params.recipe_click_zoom,
+          bubble:      local.params.recipe_bubble,
+          ether:       local.params.recipe_ether,
+          timeSec:     local.animElapsed || 0,
+          finStrength: local.params.recipe_fin_strength,
+          cursorX:     (local._wakeCursor && local._wakeCursor.active) ? local._wakeCursor.x : -1e9,
+          cursorY:     (local._wakeCursor && local._wakeCursor.active) ? local._wakeCursor.y : -1e9,
+          irid:        !!local.params.recipe_irid,
+          chroma:      !!local.params.recipe_chroma,
+          chromaPx:    local.params.recipe_chroma_px,
+        } : null,
       });
       }  // end if (!local._debugNoNodes)
       // After the renderer has consumed the dirty buffers, reset
@@ -5271,10 +5317,24 @@
       const stillFadingE = tickEdgeFades(dtClamped);
       const stillFadingN = tickNodeFades(dtClamped);
       const stillFading  = stillFadingE || stillFadingN;
-      if (stillFading && !stillMoving) {
+      // ROUND-7 DRESS (2026-07-26) — the shader clock + the wake.
+      // animElapsed is accumulated (not wall-clock) so a background
+      // tab pause doesn't teleport the pulse phases. The wake pass
+      // moves each node's wake lane toward its cursor-proximity
+      // target; anchors (hover/lock) also keep frames flowing so
+      // the glow pulse + ethereal breath stay alive. At true rest
+      // (no cursor, no anchors, wake decayed) fxAlive goes false
+      // and the loop still dies — REST IS STILL is preserved.
+      local.animElapsed = (local.animElapsed || 0) + dtClamped;
+      const wakeAlive = tickWake(dtClamped);
+      const dressOn = (local.params.recipe_hover_zoom || 0) >= 1;
+      const fxAlive = dressOn && (wakeAlive
+        || (local.lockedSet && local.lockedSet.size > 0)
+        || !!local.hoverId);
+      if ((stillFading || fxAlive) && !stillMoving) {
         drawFrame();
       }
-      if (stillMoving || stillFading) {
+      if (stillMoving || stillFading || fxAlive) {
         local.animRafId = requestAnimationFrame(animTick);
       } else {
         local.animRafId = null;
@@ -5377,7 +5437,7 @@
       // toward them at FADE_DURATION. On first run / mode switch,
       // sizes might mismatch — resize without flashing the user
       // by seeding edgeStates from the targets on initial alloc.
-      const newNodeTargets = interleavePairs(states, selectFlags);
+      const newNodeTargets = interleaveState4(states, selectFlags);
       if (!local.nodeTargets || local.nodeTargets.length !== newNodeTargets.length) {
         local.nodeTargets = newNodeTargets;
       } else {
@@ -5386,6 +5446,10 @@
       if (!local.nodeStates || local.nodeStates.length !== newNodeTargets.length) {
         local.nodeStates = new Float32Array(newNodeTargets);
       }
+      // ROUND-7 DRESS — hover/lock changes need live frames (wake +
+      // ethereal). startAnimLoop is idempotent; the loop dies on its
+      // own once wake decays and no anchors remain.
+      if ((local.params.recipe_hover_zoom || 0) >= 1) startAnimLoop();
       // Phase 2B B6 (2026-05-20) — A3 staggered cascade. Precompute
       // per-node fade delay via BFS from selectedSet (anchors) so
       // tickNodeFades can release each ring after the inner one
@@ -5582,7 +5646,12 @@
       // pair holds its current value, producing a ring-by-ring
       // cascade. Other dim models (A1/A2/A4) skip this branch and
       // tick uniformly across all nodes (existing behavior).
-      const N = cur.length >> 1;   // node count (2 floats per node)
+      // ROUND-7 DRESS — the buffer is 4 floats per node now:
+      // [state, selected, wake, dress+lock]. The fade tween owns
+      // lanes 0/1 only; lane 2 (wake) belongs to tickWake, and
+      // lane 3 (dress id + 8×locked) SNAPS to target — a lock
+      // flip must not tween through fractional dress ids.
+      const N = cur.length >> 2;   // node count (4 floats per node)
       const useDelay = local._dimModel === 'A3'
         && local.scratch.fadeDelay
         && local.scratch.fadeDelay.length === N;
@@ -5593,9 +5662,9 @@
           stillFading = true;
           continue;
         }
-        // Advance both floats for this node (state + selected).
+        // Advance the two tweened floats (state + selected).
         for (let k = 0; k < 2; k++) {
-          const i = (n << 1) + k;
+          const i = (n << 2) + k;
           const c = cur[i];
           const t = tgt[i];
           if (c === t) continue;
@@ -5608,6 +5677,8 @@
             stillFading = true;
           }
         }
+        const di = (n << 2) + 3;
+        if (cur[di] !== tgt[di]) cur[di] = tgt[di];
       }
       // Phase 5C (2026-05-20) — no glyph dirty-flag needed.
       // The glyph fragment shader reads state from nodeStateVbo
@@ -5624,14 +5695,99 @@
       return s;
     }
 
-    function interleavePairs(a, b) {
+    // ROUND-7 DRESS (2026-07-26) — the node state buffer is 4-wide:
+    // [state, selected, wake, dress_id + 8*locked]. This builder
+    // fills lanes 0/1/3. Lane 2 (wake) is owned by tickWake and is
+    // left at 0 in TARGETS — the fade tween never touches it, and
+    // the live buffer's wake survives target.set() because targets
+    // and live are separate arrays.
+    function interleaveState4(a, b) {
       const n = a.length;
-      const out = new Float32Array(n * 2);
+      const hns = local.mode && local.mode.hitNodes;
+      const dressBase = local.dressBase;
+      const out = new Float32Array(n * 4);
       for (let i = 0; i < n; i++) {
-        out[i*2]   = a[i];
-        out[i*2+1] = b[i];
+        out[i*4]   = a[i];
+        out[i*4+1] = b[i];
+        let dp = (dressBase && dressBase.length === n) ? dressBase[i] : 0;
+        if (hns && hns[i] && local.lockedSet && local.lockedSet.has(hns[i].id)) dp += 8;
+        out[i*4+3] = dp;
       }
       return out;
+    }
+
+    // The CAST — dress id per node from its label tier (hubs 0-1 /
+    // mid 2-3 / small 4-5), reading the dress_* params. Rebuilt
+    // wherever hitNodes are rebuilt (mode switch + zoom rebake).
+    const DRESS_IDS = { halo: 0, icon: 1, orb: 2, veil: 3, ember: 4 };
+    function buildDressBase(hitNodes) {
+      const p = local.params;
+      const hub   = DRESS_IDS[p.dress_hub]   !== undefined ? DRESS_IDS[p.dress_hub]   : 0;
+      const mid   = DRESS_IDS[p.dress_mid]   !== undefined ? DRESS_IDS[p.dress_mid]   : 0;
+      const small = DRESS_IDS[p.dress_small] !== undefined ? DRESS_IDS[p.dress_small] : 0;
+      const out = new Float32Array(hitNodes.length);
+      for (let i = 0; i < hitNodes.length; i++) {
+        const t = hitNodes[i].tier | 0;
+        out[i] = t <= 1 ? hub : (t <= 3 ? mid : small);
+      }
+      return out;
+    }
+
+    // ══ ROUND-7 DRESS — THE WAKE (2026-07-26) ══
+    // Cursor-proximity wake, straight from the lab: only the
+    // recipe_wake_cap nearest nodes inside recipe_wake_radius_px
+    // (screen px → world via camera scale) wake; hovered + locked
+    // anchors always wake fully. Writes lane .z of the live 4-wide
+    // state buffer; returns true while any wake is alive so the
+    // anim loop keeps frames flowing. 663 nodes → brute force.
+    function tickWake(dt) {
+      const cur = local.nodeStates;
+      const hns = local.mode && local.mode.hitNodes;
+      if (!cur || !hns || cur.length !== hns.length * 4) return false;
+      const p = local.params;
+      if ((p.recipe_hover_zoom || 0) < 1) return false;
+      const cursor = local._wakeCursor;
+      const camS = (camera && camera.state) ? camera.state.scale : 1;
+      const wr = (p.recipe_wake_radius_px || 0) / Math.max(camS, 1e-6);
+      const cap = Math.max(1, p.recipe_wake_cap || 8);
+      const sm = Math.min(1, dt * 8.4);
+      if (!local._wakeTgt || local._wakeTgt.length !== hns.length) {
+        local._wakeTgt = new Float32Array(hns.length);
+      }
+      const tgt = local._wakeTgt;
+      tgt.fill(0);
+      if (cursor && cursor.active && wr > 0) {
+        const cand = local._wakeCand || (local._wakeCand = []);
+        cand.length = 0;
+        for (let i = 0; i < hns.length; i++) {
+          const dx = hns[i].x - cursor.x, dy = hns[i].y - cursor.y;
+          const d = Math.sqrt(dx * dx + dy * dy);
+          if (d < wr) cand.push([d, i]);
+        }
+        cand.sort((a, b) => a[0] - b[0]);
+        const capN = Math.min(cap, cand.length);
+        for (let k = 0; k < capN; k++) {
+          tgt[cand[k][1]] = Math.pow(Math.max(0, 1 - cand[k][0] / wr), 1.6);
+        }
+      }
+      // Anchors always fully awake (hover + every locked node).
+      const hid = local.hoverId;
+      if (hid || (local.lockedSet && local.lockedSet.size)) {
+        for (let i = 0; i < hns.length; i++) {
+          const id = hns[i].id;
+          if ((hid && id === hid) || (local.lockedSet && local.lockedSet.has(id))) tgt[i] = 1;
+        }
+      }
+      let alive = false;
+      for (let i = 0; i < hns.length; i++) {
+        const zi = i * 4 + 2;
+        const c = cur[zi];
+        const t = tgt[i];
+        const nv = (Math.abs(t - c) < 0.004) ? t : c + (t - c) * sm;
+        cur[zi] = nv;
+        if (nv > 0.004 || t > 0) alive = true;
+      }
+      return alive;
     }
 
     // Update hoverId, then refresh focus. No-op when the hover
@@ -6541,10 +6697,30 @@
         // Hover hit-test in idle state.
         const hit = hitTestAt(cssX, cssY);
         setHoverId(hit);
+        // ROUND-7 DRESS — stash the cursor in WORLD coords for the
+        // wake pass, and make sure frames are flowing while the
+        // hand is on the field (the loop self-terminates once the
+        // wake decays after the hand leaves).
+        if ((local.params.recipe_hover_zoom || 0) >= 1) {
+          const vp = local.lastSize;
+          if (vp && vp.w) {
+            const world = camera.screenToWorld(cssX, cssY, { w: vp.w, h: vp.h });
+            if (!local._wakeCursor) local._wakeCursor = { x: 0, y: 0, active: false };
+            local._wakeCursor.x = world.x;
+            local._wakeCursor.y = world.y;
+            local._wakeCursor.active = true;
+            startAnimLoop();
+          }
+        }
       });
       canvas.addEventListener('pointerleave', () => {
         if (local.destroyed) return;
         setHoverId(null);
+        // ROUND-7 DRESS — hand off the field: let the wake decay.
+        if (local._wakeCursor) {
+          local._wakeCursor.active = false;
+          startAnimLoop();
+        }
       });
 
       // Pan: pointerdown to start; pointerup/cancel to end.
@@ -7064,6 +7240,9 @@
         if (hn.r > maxRadius) maxRadius = hn.r;
       }
       m.hitGrid = buildHitGrid(m.hitNodes, m.worldExtent, maxRadius);
+      // ROUND-7 DRESS — radii/tiers may shift on zoom rebake; keep
+      // the per-instance dress ids in step with the fresh hitNodes.
+      local.dressBase = buildDressBase(m.hitNodes);
       // N2 — fresh nodePack means re-upload on next drawFrame.
       local.nodeInstancesDirty = true;
       // 2026-05-20 — fade-aware (mirror rebakeEdges). Previous
@@ -7091,7 +7270,7 @@
       // out-of-range nodes from state=2 (HIDDEN) back to state=1
       // (FADED). User report: "the hidden nodes appear on zoom back."
       applyTimelineHiddenOverride(np.idIndex, states, local.focusedSet);
-      const newNodeTargets = interleavePairs(states, selectFlags);
+      const newNodeTargets = interleaveState4(states, selectFlags);
       if (!local.nodeTargets || local.nodeTargets.length !== newNodeTargets.length) {
         local.nodeTargets = newNodeTargets;
       } else {
