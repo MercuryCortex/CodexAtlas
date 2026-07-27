@@ -158,9 +158,19 @@
       recipe_b:               vec4<f32>,  // hover_zoom, click_zoom, bubble, ether
       recipe_c:               vec4<f32>,  // time_sec, fin_strength, cursor_world.xy
       recipe_d:               vec4<f32>,  // irid_on, chroma_on, chroma_px (FB), gate_slope_px (FB)
-      recipe_e:               vec4<f32>,  // core_white, core_alpha, ring_alpha, spare (symbol voice dials)
+      recipe_e:               vec4<f32>,  // core_white, core_alpha, ring_alpha, dpr
+      // FULL-TRANSCRIPTION (2026-07-27) — the lens recipe. .w is the
+      // needsBackdrop flag: 0 unless an orb cast is live AND the
+      // backdrop texture holds this frame's ground+wires.
+      recipe_f:               vec4<f32>,  // mag, frost_fb_px, depth, backdrop_live
     };
     @group(0) @binding(0) var<uniform> v: View;
+    // Bound only by the BODY pipeline (the orb lens samples the
+    // backdrop = ground + wires, never rings — the lab's O contract).
+    // fs_glow/vs_glow never reference these, so the glow pipeline's
+    // ubo-only layout stays valid (static-usage is per entry point).
+    @group(0) @binding(1) var backdrop_tex:  texture_2d<f32>;
+    @group(0) @binding(2) var backdrop_samp: sampler;
 
     struct VsOut {
       @builtin(position) position: vec4<f32>,
@@ -171,6 +181,7 @@
       @location(4) wake:       f32,
       @location(5) dmeta:      vec4<f32>,  // quad_scale, grown radius in FB px, dress_id, locked ('meta' is WGSL-reserved)
       @location(6) world_pos:  vec2<f32>,
+      @location(7) center_fb:  vec2<f32>,  // node center in framebuffer px (lens sampling)
     };
 
     @vertex
@@ -218,6 +229,10 @@
       let r_px_fb    = inst_radius * grow * (v.view_scale.x * v.viewport_px.x * 0.5);
       out.dmeta      = vec4<f32>(quad_scale, r_px_fb, dress_id, locked);
       out.world_pos  = inst_pos;
+      // node center in FB px (y flips: ndc is y-up, frag coords y-down)
+      let c_ndc = inst_pos * v.view_scale + v.view_offset;
+      out.center_fb = vec2<f32>((c_ndc.x * 0.5 + 0.5) * v.viewport_px.x,
+                                (0.5 - c_ndc.y * 0.5) * v.viewport_px.y);
       return out;
     }
 
@@ -260,57 +275,158 @@
       //  their light must never depth-occlude symbols behind it.)
       var acc = vec4<f32>(0.0);
 
-      // 2 ▸ the dress body (full circle of material, stroke-free)
+      // 2 ▸ the dress body (full circle of material, stroke-free).
+      //     FULL-TRANSCRIPTION (2026-07-27): every gradient below is
+      //     the lab's piecewise-linear canvas stops VERBATIM — no
+      //     curve approximations (John's law).
       if (wg > 0.01) {
-        let db = d / bub;
+        let db = clamp(d / bub, 0.0, 1.0);
+        let dprv2 = max(v.recipe_e.w, 1.0);
         if (dId == 1) {
-          // ICON — the gold-leaf disc: flat luminous leaf, soft edge
+          // ICON — gold-leaf disc (lab stops: plateau .52→.44 to u=.72, then →0)
           let leaf = mix(col, vec3<f32>(0.827, 0.722, 0.467), 0.45);
-          let ia = 0.52 * wg * (1.0 - smoothstep(0.68, 1.0, db / 1.06));
-          acc = vec4<f32>(acc.rgb + leaf * ia, acc.a);
+          let ui = clamp(db / 1.06, 0.0, 1.0);
+          var ia: f32;
+          if (ui <= 0.72) { ia = mix(0.52, 0.44, ui / 0.72); }
+          else            { ia = 0.44 * (1.0 - (ui - 0.72) / 0.28); }
+          acc = vec4<f32>(acc.rgb + leaf * (ia * wg), acc.a);
+        } else if (dId == 2) {
+          // ORB — THE DEWDROP, real at last: the world bends through
+          // the whole drop (backdrop = ground + wires, the O contract).
+          let mag_core = 1.0 + (max(v.recipe_f.x, 1.0) - 1.0) * wg;
+          let frost_fb = v.recipe_f.y * wg;
+          let dep = v.recipe_f.z;
+          if (v.recipe_f.w > 0.5 && (mag_core > 1.004 || frost_fb > 0.05 * dprv2)) {
+            let p = in.position.xy;
+            // depth = curvature: light bends harder at the limb
+            let mag2 = mag_core * (1.0 + 0.35 * dep * smoothstep(0.55, 1.0, db));
+            let q2 = in.center_fb + (p - in.center_fb) / mag2;
+            let uv = q2 / v.viewport_px;
+            // frost — disc blur, radius = the lab's blur px (tap
+            // pattern is implementation freedom; radius is lab-true)
+            var wrld = textureSampleLevel(backdrop_tex, backdrop_samp, uv, 0.0).rgb;
+            if (frost_fb > 0.3) {
+              let fr = frost_fb / v.viewport_px;
+              var sum = wrld;
+              sum = sum + textureSampleLevel(backdrop_tex, backdrop_samp, uv + vec2<f32>( fr.x,  0.0), 0.0).rgb;
+              sum = sum + textureSampleLevel(backdrop_tex, backdrop_samp, uv + vec2<f32>(-fr.x,  0.0), 0.0).rgb;
+              sum = sum + textureSampleLevel(backdrop_tex, backdrop_samp, uv + vec2<f32>( 0.0,  fr.y), 0.0).rgb;
+              sum = sum + textureSampleLevel(backdrop_tex, backdrop_samp, uv + vec2<f32>( 0.0, -fr.y), 0.0).rgb;
+              sum = sum + textureSampleLevel(backdrop_tex, backdrop_samp, uv + vec2<f32>( fr.x * 0.7,  fr.y * 0.7), 0.0).rgb;
+              sum = sum + textureSampleLevel(backdrop_tex, backdrop_samp, uv + vec2<f32>(-fr.x * 0.7,  fr.y * 0.7), 0.0).rgb;
+              sum = sum + textureSampleLevel(backdrop_tex, backdrop_samp, uv + vec2<f32>( fr.x * 0.7, -fr.y * 0.7), 0.0).rgb;
+              sum = sum + textureSampleLevel(backdrop_tex, backdrop_samp, uv + vec2<f32>(-fr.x * 0.7, -fr.y * 0.7), 0.0).rgb;
+              wrld = sum / 9.0;
+            }
+            // chroma ghost — R/B pulled apart along the radial axis
+            if (v.recipe_d.y > 0.5) {
+              let dirv = normalize(p - in.center_fb + vec2<f32>(0.0001, 0.0));
+              let co2 = dirv * (v.recipe_d.z / v.viewport_px);
+              wrld.r = textureSampleLevel(backdrop_tex, backdrop_samp, uv + co2, 0.0).r;
+              wrld.b = textureSampleLevel(backdrop_tex, backdrop_samp, uv - co2, 0.0).b;
+            }
+            // the lens REPLACES what's behind, inside the bubble (lab drawImage)
+            let la = wg * (1.0 - smoothstep(0.92, 1.0, db));
+            acc = vec4<f32>(wrld * la + acc.rgb * (1.0 - la), acc.a * (1.0 - la) + la);
+            // the glow, seen THROUGH the drop — lab stops verbatim,
+            // radius magnified; bubble-clipped so it can never flood
+            if (v.recipe_a.x > 0.02) {
+              let pa2 = v.recipe_a.x * w * (1.0 - 0.5 * v.recipe_a.y + 0.5 * v.recipe_a.y * sin(t * 1.7 + seedx * 0.05));
+              let rg2 = max(v.recipe_a.z, 1.2) * mag_core;
+              let u2 = clamp(d / rg2, 0.0, 1.0);
+              var gp: f32;
+              if (u2 < 0.35)     { gp = mix(0.75, 0.34, u2 / 0.35); }
+              else if (u2 < 0.7) { gp = mix(0.34, 0.10, (u2 - 0.35) / 0.35); }
+              else               { gp = mix(0.10, 0.0,  (u2 - 0.7) / 0.3); }
+              acc = vec4<f32>(acc.rgb + col * (pa2 * gp * (1.0 - smoothstep(0.96, 1.0, db))), acc.a);
+            }
+          }
+          // body density o1 — transparent heart, color deepening at the
+          // limb; depth = curvature (lab stops verbatim)
+          var da: f32; var dcol2: vec3<f32>;
+          if (db < 0.62) {
+            da = mix(0.06, 0.10 + 0.10 * dep, db / 0.62);
+            dcol2 = col;
+          } else if (db < 0.9) {
+            let u3 = (db - 0.62) / 0.28;
+            da = mix(0.10 + 0.10 * dep, 0.22 + 0.25 * dep, u3);
+            dcol2 = mix(col, mix(col, vec3<f32>(0.0), 0.35), u3);
+          } else {
+            let u3 = (db - 0.9) / 0.1;
+            da = mix(0.22 + 0.25 * dep, 0.05 + 0.15 * dep, u3);
+            dcol2 = mix(mix(col, vec3<f32>(0.0), 0.35), mix(col, vec3<f32>(0.0), 0.5), u3);
+          }
+          da = da * wg * (1.0 - smoothstep(0.98, 1.02, db));
+          acc = vec4<f32>(dcol2 * da + acc.rgb * (1.0 - da), acc.a * (1.0 - da) + da);
+          // gathered light — collected low in the drop (additive)
+          let glc = vec2<f32>(0.0, 0.42 * bub);
+          let dgl = clamp(length(in.local_pos * qs - glc) / (0.75 * bub), 0.0, 1.0);
+          let gla = 0.30 * wg * (1.0 - dgl) * (1.0 - smoothstep(0.96, 1.0, db));
+          acc = vec4<f32>(acc.rgb + mix(col, white, 0.65) * gla, acc.a);
         } else if (dId == 3) {
-          // VEIL — luminous mist: three soft off-center breaths, slow drift
+          // VEIL — luminous mist: FOUR breaths, lab radii, linear falloff
           let pv = in.local_pos * qs;
           var va = 0.0;
-          var vcol = vec3<f32>(0.0);
-          for (var k = 0; k < 3; k++) {
+          for (var k = 0; k < 4; k++) {
             let fk = f32(k);
             let ang = seedx * 0.13 + in.world_pos.y * 0.07 + fk * 2.1 + t * 0.15;
-            let off = vec2<f32>(cos(ang), sin(ang * 0.8)) * (0.22 * bub);
-            let dk = clamp(length(pv - off) / (bub * (0.62 + 0.30 * fk)), 0.0, 1.0);
-            va = va + 0.17 * wg * pow(1.0 - dk, 2.0);
+            let off = vec2<f32>(cos(ang) * 0.22 * bub, sin(ang * 0.8) * 0.20 * bub);
+            let dk = clamp(length(pv - off) / (bub * (0.55 + 0.28 * fk)), 0.0, 1.0);
+            va = va + 0.17 * wg * (1.0 - dk);
           }
-          vcol = mix(col, white, 0.25);
-          acc = vec4<f32>(acc.rgb + vcol * min(va, 0.6), acc.a);
+          // min() saturation stands in for the lab's screen compositing
+          acc = vec4<f32>(acc.rgb + mix(col, white, 0.25) * min(va, 0.6), acc.a);
         } else if (dId == 4) {
-          // EMBER — obsidian body over the glow, molten heart added
-          let body_a = 0.55 * wg * (1.0 - smoothstep(0.78, 1.04, db)) * (0.45 + 0.55 * smoothstep(0.0, 0.6, db));
+          // EMBER — obsidian body (lab stops: .10 center → .55 at .75 → 0)
+          var ba: f32;
+          if (db <= 0.75) { ba = mix(0.10, 0.55, db / 0.75); }
+          else            { ba = 0.55 * (1.0 - (db - 0.75) / 0.25); }
+          let body_a = ba * wg;
           let dark = vec3<f32>(0.024, 0.020, 0.055);
           acc = vec4<f32>(dark * body_a + acc.rgb * (1.0 - body_a), acc.a * (1.0 - body_a) + body_a);
+          // molten heart — white core, FAMILY-COLOR mid band, then dark
           let em = 0.5 + 0.5 * sin(t * 2.1 + seedx * 0.07);
-          let ea = (0.5 + 0.3 * em) * wg * pow(max(1.0 - d / 0.5, 0.0), 1.5);
-          acc = vec4<f32>(acc.rgb + mix(col, white, 0.6) * ea, acc.a);
+          let u4 = clamp(d / 0.5, 0.0, 1.0);
+          var hcol: vec3<f32>; var ha2: f32;
+          if (u4 < 0.5) {
+            hcol = mix(mix(col, white, 0.6), col, u4 / 0.5);
+            ha2 = mix(0.5 + 0.3 * em, 0.30 + 0.2 * em, u4 / 0.5);
+          } else {
+            hcol = col;
+            ha2 = (0.30 + 0.2 * em) * (1.0 - (u4 - 0.5) / 0.5);
+          }
+          acc = vec4<f32>(acc.rgb + hcol * (ha2 * wg), acc.a);
         }
-        // 3 ▸ iridescence — full-body film lit by the cursor angle
+        // 3 ▸ iridescence — the FAM-palette conic film lit by the
+        //     cursor angle (lab palette, NOT a rainbow), hard aa edge
         if (v.recipe_d.x > 0.5 && v.recipe_c.y * wg > 0.01 && db < 1.0) {
           let pv2 = in.local_pos * qs;
           let dirc = v.recipe_c.zw - in.world_pos;
-          let base = atan2(dirc.y, dirc.x);
-          let hue = atan2(pv2.y, pv2.x) - base;
-          let rainbow = 0.5 + 0.5 * cos(vec3<f32>(hue, hue + 2.09, hue + 4.18));
-          let fa = 0.16 * v.recipe_c.y * wg * (1.0 - smoothstep(0.85, 1.0, db));
-          acc = vec4<f32>(acc.rgb + rainbow * fa, acc.a);
+          let frac0 = (atan2(pv2.y, pv2.x) - atan2(dirc.y, dirc.x)) / 6.28318;
+          let fseg = (frac0 - floor(frac0)) * 4.0;
+          let si = i32(fseg);
+          let ft = fseg - f32(si);
+          var stops = array<vec3<f32>, 5>(
+            vec3<f32>(0.878, 0.478, 0.541),   // rose
+            vec3<f32>(0.851, 0.753, 0.541),   // sand
+            vec3<f32>(0.435, 0.816, 0.765),   // teal
+            vec3<f32>(0.616, 0.561, 0.878),   // lav
+            vec3<f32>(0.878, 0.478, 0.541));  // rose (wrap)
+          let film = mix(stops[si], stops[si + 1], ft);
+          let aa_db = aa / bub;
+          let fa = 0.18 * v.recipe_c.y * wg * (1.0 - smoothstep(1.0 - aa_db, 1.0, db));
+          acc = vec4<f32>(acc.rgb + film * fa, acc.a);
         }
-        // 4 ▸ chroma — a soft warm/cool light split, no rims
-        if (v.recipe_d.y > 0.5 && v.recipe_c.y * wg > 0.01) {
+        // 4 ▸ chroma — warm/cool light split (lab: 0.16, LINEAR falloff)
+        if (v.recipe_d.y > 0.5 && v.recipe_c.y * wg > 0.01 && dId != 2) {
           let offr = v.recipe_d.z / rpx * 2.0;
           let pvx = in.local_pos.x * qs;
-          let ca = 0.14 * v.recipe_c.y * wg;
+          let ca = 0.16 * v.recipe_c.y * wg;
           let dwarm = clamp(length(vec2<f32>(pvx + offr, in.local_pos.y * qs)) / bub, 0.0, 1.0);
           let dcool = clamp(length(vec2<f32>(pvx - offr, in.local_pos.y * qs)) / bub, 0.0, 1.0);
           acc = vec4<f32>(acc.rgb
-            + vec3<f32>(1.0, 0.55, 0.35) * (ca * pow(1.0 - dwarm, 2.0))
-            + vec3<f32>(0.43, 0.63, 1.0) * (ca * pow(1.0 - dcool, 2.0)), acc.a);
+            + vec3<f32>(1.0, 0.549, 0.353) * (ca * (1.0 - dwarm))
+            + vec3<f32>(0.431, 0.627, 1.0) * (ca * (1.0 - dcool)), acc.a);
         }
       }
 
@@ -410,7 +526,9 @@
       // Envelope covers the glow reach (no bubble term — P1-6) AND
       // the halo body (1.5×bub).
       let reach = max(v.recipe_a.z, 1.5 * bub);
-      let is_halo = select(0.0, 1.0, dress_id < 0.5 || abs(dress_id - 2.0) < 0.5);
+      // FULL-TRANSCRIPTION: orb no longer borrows the halo body — it
+      // has its real lens in the body pass. Outer glow still emits.
+      let is_halo = select(0.0, 1.0, dress_id < 0.5);
       let emits = max(step(0.02, v.recipe_a.x), is_halo);
       let live  = step(0.004, wake) * use_recipe * emits;
       let world = inst_pos + quad_vertex * inst_radius * zoom * reach * live;
@@ -465,10 +583,14 @@
       // AUDIT P0-4a: white lives ONLY at the heart — the lab ramps the
       // white-mix 0.55→0 across dh 0→0.3; the mid-body is pure family
       // color (the old full-body whitening made locked hubs cream).
-      if (dId == 0 || dId == 2) {
+      if (dId == 0) {
+        // lab stops verbatim: (0,.80)(0.3,.42)(0.65,.14)(1,0) × wg
         let dh = clamp(d / (1.5 * bub), 0.0, 1.0);
-        let ha = 0.80 * wg * pow(1.0 - dh, 1.8);
-        light = light + mix(col, vec3<f32>(1.0, 1.0, 1.0), 0.55 * max(1.0 - dh / 0.3, 0.0)) * ha;
+        var hp: f32;
+        if (dh < 0.3)       { hp = mix(0.80, 0.42, dh / 0.3); }
+        else if (dh < 0.65) { hp = mix(0.42, 0.14, (dh - 0.3) / 0.35); }
+        else                { hp = mix(0.14, 0.0,  (dh - 0.65) / 0.35); }
+        light = light + mix(col, vec3<f32>(1.0, 1.0, 1.0), 0.55 * max(1.0 - dh / 0.3, 0.0)) * (hp * wg);
       }
       light = light * state_alpha;
       if (light.r + light.g + light.b < 0.004) { discard; }
@@ -924,7 +1046,8 @@
     // appended AFTER glyph_params, so every pre-existing offset is
     // untouched. Edge + glyph shaders still declare the 192-byte
     // struct; binding a larger buffer is valid (min-binding-size).
-    const VIEW_UBO_SIZE = 272;
+    // FULL-TRANSCRIPTION (2026-07-27) — 272 → 288: recipe_f (lens).
+    const VIEW_UBO_SIZE = 288;
     const viewUbo = own(device.createBuffer({
       label: 'forge-view-ubo', size: VIEW_UBO_SIZE,
       usage: GPUBufferUsage.UNIFORM | GPUBufferUsage.COPY_DST,
@@ -937,10 +1060,63 @@
       entries: [{ binding: 0, resource: { buffer: viewUbo } }],
     });
 
+    // ── FULL-TRANSCRIPTION (2026-07-27): the backdrop the orb lens
+    // looks through — ground + wires rendered offscreen (the lab's
+    // O canvas). Dummy 1×1 at init (atlasTex pattern) so the node
+    // bind group is always valid even with no orb cast.
+    let backdropTex = own(device.createTexture({
+      label: 'forge-backdrop',
+      size: { width: 1, height: 1, depthOrArrayLayers: 1 },
+      format,
+      usage: GPUTextureUsage.RENDER_ATTACHMENT | GPUTextureUsage.TEXTURE_BINDING,
+    }));
+    let backdropW = 1, backdropH = 1;
+    const backdropSampler = device.createSampler({
+      label: 'forge-backdrop-sampler',
+      magFilter: 'linear', minFilter: 'linear',
+      addressModeU: 'clamp-to-edge', addressModeV: 'clamp-to-edge',
+    });
+    const nodeBgl = device.createBindGroupLayout({
+      label: 'forge-node-bgl',
+      entries: [
+        { binding: 0, visibility: GPUShaderStage.VERTEX | GPUShaderStage.FRAGMENT, buffer: { type: 'uniform' } },
+        { binding: 1, visibility: GPUShaderStage.FRAGMENT, texture: {} },
+        { binding: 2, visibility: GPUShaderStage.FRAGMENT, sampler: {} },
+      ],
+    });
+    function makeNodeBindGroup() {
+      return device.createBindGroup({
+        label: 'forge-node-bg',
+        layout: nodeBgl,
+        entries: [
+          { binding: 0, resource: { buffer: viewUbo } },
+          { binding: 1, resource: backdropTex.createView() },
+          { binding: 2, resource: backdropSampler },
+        ],
+      });
+    }
+    let nodeBg = makeNodeBindGroup();
+    function ensureBackdropTex(fbW, fbH) {
+      if (backdropW === fbW && backdropH === fbH) return;
+      disown(backdropTex);
+      try { backdropTex.destroy(); } catch (e) { /* ignore */ }
+      backdropTex = own(device.createTexture({
+        label: 'forge-backdrop',
+        size: { width: fbW, height: fbH, depthOrArrayLayers: 1 },
+        format,
+        usage: GPUTextureUsage.RENDER_ATTACHMENT | GPUTextureUsage.TEXTURE_BINDING,
+      }));
+      backdropW = fbW; backdropH = fbH;
+      nodeBg = makeNodeBindGroup();
+      blitBg = makeBlitBindGroup();
+    }
+
     // ── Phase 3: NODE pipeline with state attribute ──
+    // FULL-TRANSCRIPTION: the BODY pipeline binds the backdrop
+    // texture (orb lens). Glow/edge/glyph keep their old layouts.
     const nodePipeline = device.createRenderPipeline({
       label: 'forge-node-pipeline',
-      layout: device.createPipelineLayout({ bindGroupLayouts: [viewBgl] }),
+      layout: device.createPipelineLayout({ bindGroupLayouts: [nodeBgl] }),
       vertex: {
         module: nodeShaderModule, entryPoint: 'vs_main',
         buffers: [
@@ -1128,6 +1304,58 @@
       primitive: { topology: 'triangle-list' },
       depthStencil: { format: 'depth24plus', depthWriteEnabled: false, depthCompare: 'always' },
     });
+
+    // ── FULL-TRANSCRIPTION: blit — paints the backdrop into the
+    // main pass as its bottom layer (by sampling — never
+    // copyTextureToTexture into the swapchain; Safari-safe).
+    const BLIT_SHADER = /* wgsl */ `
+      @group(0) @binding(0) var src_tex:  texture_2d<f32>;
+      @group(0) @binding(1) var src_samp: sampler;
+      struct BlitOut {
+        @builtin(position) position: vec4<f32>,
+        @location(0) uv: vec2<f32>,
+      };
+      @vertex
+      fn vs_main(@builtin(vertex_index) vi: u32) -> BlitOut {
+        var out: BlitOut;
+        let x = f32(i32(vi) / 2) * 4.0 - 1.0;
+        let y = f32(i32(vi) % 2) * 4.0 - 1.0;
+        out.position = vec4<f32>(x, y, 0.999, 1.0);
+        out.uv = vec2<f32>((x + 1.0) * 0.5, (1.0 - y) * 0.5);
+        return out;
+      }
+      @fragment
+      fn fs_main(in: BlitOut) -> @location(0) vec4<f32> {
+        return textureSampleLevel(src_tex, src_samp, in.uv, 0.0);
+      }
+    `;
+    const blitModule = device.createShaderModule({ label: 'forge-blit-shader', code: BLIT_SHADER });
+    const blitBgl = device.createBindGroupLayout({
+      label: 'forge-blit-bgl',
+      entries: [
+        { binding: 0, visibility: GPUShaderStage.FRAGMENT, texture: {} },
+        { binding: 1, visibility: GPUShaderStage.FRAGMENT, sampler: {} },
+      ],
+    });
+    const blitPipeline = device.createRenderPipeline({
+      label: 'forge-blit-pipeline',
+      layout: device.createPipelineLayout({ bindGroupLayouts: [blitBgl] }),
+      vertex: { module: blitModule, entryPoint: 'vs_main' },
+      fragment: { module: blitModule, entryPoint: 'fs_main', targets: [{ format }] },
+      primitive: { topology: 'triangle-list' },
+      depthStencil: { format: 'depth24plus', depthWriteEnabled: false, depthCompare: 'always' },
+    });
+    function makeBlitBindGroup() {
+      return device.createBindGroup({
+        label: 'forge-blit-bg',
+        layout: blitBgl,
+        entries: [
+          { binding: 0, resource: backdropTex.createView() },
+          { binding: 1, resource: backdropSampler },
+        ],
+      });
+    }
+    let blitBg = makeBlitBindGroup();
 
     // ── Instance buffers ─────────────────────────────
     let nodeInstanceVbo     = null, nodeInstanceVboSize     = 0;
@@ -1507,7 +1735,7 @@
         // Phase 6c grew the header 176→192 (added dim_nodes,
         // Phase 7 (2026-05-20) — selected slot now carries
         // (size_mult, stroke_w, stroke RGBA) instead of glow uniforms.
-        const viewData = new Float32Array(68);  // 272 / 4
+        const viewData = new Float32Array(72);  // 288 / 4
         viewData[0]  = viewScaleX;
         viewData[1]  = viewScaleY;
         viewData[2]  = viewOffsetX;
@@ -1559,6 +1787,12 @@
           viewData[65] = (typeof rc.coreAlpha === 'number') ? rc.coreAlpha : 0.92;
           viewData[66] = (typeof rc.ringAlpha === 'number') ? rc.ringAlpha : 0.95;
           viewData[67] = dpr;   // P0-3: the ethereal blur is capped in CSS px
+          // FULL-TRANSCRIPTION — the lens recipe (honest zeros hold:
+          // absent values ⇒ 0 ⇒ the orb draws body density only).
+          viewData[68] = rc.mag   || 0;
+          viewData[69] = (rc.frostPx || 0) * dpr;
+          viewData[70] = rc.depth || 0;
+          viewData[71] = rc.needsBackdrop ? 1 : 0;
         }
         device.queue.writeBuffer(viewUbo, 0, viewData);
 
@@ -1648,6 +1882,36 @@
         // ── Encode + submit ───────────────────────────
         const encoder = device.createCommandEncoder({ label: 'forge-frame' });
         const dTex = ensureDepthTex(canvas.width, canvas.height);
+        // FULL-TRANSCRIPTION — when an orb cast is live, ground +
+        // wires render OFFSCREEN first (the lab's O: no rings, no
+        // glow, no symbols) and the main pass starts from a blit of
+        // that backdrop. ONE edge-draw recorder either way — the two
+        // paths can never drift.
+        const needsBackdrop = !!(frame.recipe && frame.recipe.needsBackdrop);
+        const drawEdgesInto = (p) => {
+          if (edgeCount <= 0) return;
+          p.setPipeline(edgePipeline);
+          p.setBindGroup(0, viewBg);
+          p.setVertexBuffer(0, edgeRibbonVbo);
+          p.setVertexBuffer(1, edgeInstanceVbo);
+          p.setVertexBuffer(2, edgeStateVbo);
+          p.draw(EDGE_RIBBON_COUNT, edgeCount);
+        };
+        if (needsBackdrop) {
+          ensureBackdropTex(canvas.width, canvas.height);
+          const bpass = encoder.beginRenderPass({
+            colorAttachments: [{
+              view: backdropTex.createView(),
+              clearValue: CLEAR_COLOR, loadOp: 'clear', storeOp: 'store',
+            }],
+            depthStencilAttachment: {
+              view: dTex.createView(),
+              depthClearValue: 1.0, depthLoadOp: 'clear', depthStoreOp: 'store',
+            },
+          });
+          drawEdgesInto(bpass);
+          bpass.end();
+        }
         const pass = encoder.beginRenderPass({
           colorAttachments: [{
             view: context.getCurrentTexture().createView(),
@@ -1661,13 +1925,13 @@
           },
         });
 
-        if (edgeCount > 0) {
-          pass.setPipeline(edgePipeline);
-          pass.setBindGroup(0, viewBg);
-          pass.setVertexBuffer(0, edgeRibbonVbo);
-          pass.setVertexBuffer(1, edgeInstanceVbo);
-          pass.setVertexBuffer(2, edgeStateVbo);
-          pass.draw(EDGE_RIBBON_COUNT, edgeCount);
+        if (needsBackdrop) {
+          // bottom layer = the backdrop (ground + wires), blitted
+          pass.setPipeline(blitPipeline);
+          pass.setBindGroup(0, blitBg);
+          pass.draw(3);
+        } else {
+          drawEdgesInto(pass);
         }
         // ROUND-7b — the light pass first: glow + halo BEHIND all
         // symbols, no depth writes (fixes the glow-quad clipping).
@@ -1681,7 +1945,7 @@
         }
         if (nodeCount > 0) {
           pass.setPipeline(nodePipeline);
-          pass.setBindGroup(0, viewBg);
+          pass.setBindGroup(0, nodeBg);   // ubo + backdrop (orb lens)
           pass.setVertexBuffer(0, quadVbo);
           pass.setVertexBuffer(1, nodeInstanceVbo);
           pass.setVertexBuffer(2, nodeStateVbo);

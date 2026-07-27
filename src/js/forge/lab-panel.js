@@ -29,6 +29,9 @@
       ['recipe_hover_zoom',  'Hover zoom',   1,    2.2,  0.01, '×'],
       ['recipe_click_zoom',  'Click zoom',   1,    3,    0.01, '×'],
       ['recipe_bubble',      'Bubble',       1,    1.5,  0.01, '×'],
+      ['recipe_mag',         'Refraction',   1,    1.35, 0.01, '×'],
+      ['recipe_frost',       'Frost',        0,    4,    0.1,  'px'],
+      ['recipe_depth',       'Depth',        0,    1,    0.01, ''],
       ['recipe_glow',        'Glow',         0,    1,    0.01, ''],
       ['recipe_pulse',       'Glow pulse',   0,    1,    0.01, ''],
       ['recipe_glow_reach',  'Glow reach',   1.5,  4.5,  0.1,  '×'],
@@ -52,6 +55,12 @@
     const TOGGLES = [
       ['recipe_irid',   'Iridescence'],
       ['recipe_chroma', 'Chroma'],
+      ['recipe_label',  'Label'],
+    ];
+    // The label voice — radio rows like the casts (lab: 3 fonts × 3 motions)
+    const VOICES = [
+      ['label_font', 'Voice — font',   ['mono', 'serif', 'sans']],
+      ['label_anim', 'Voice — motion', ['condense', 'rise', 'unveil']],
     ];
     const DRESSES = ['halo', 'icon', 'orb', 'veil', 'ember'];
     const CASTS = [
@@ -63,6 +72,7 @@
     for (const [k] of SLIDERS) defaults[k] = local.params[k];
     for (const [k] of TOGGLES) defaults[k] = local.params[k];
     for (const [k] of CASTS)   defaults[k] = local.params[k];
+    for (const [k] of VOICES)  defaults[k] = local.params[k];
     const ALL_KEYS = Object.keys(defaults);
 
     // Persistence — John's dials must survive a reload (they reset
@@ -126,7 +136,11 @@
       const fins = [p.recipe_irid ? 'irid' : '', p.recipe_chroma ? 'chroma' : ''].filter(Boolean).join('+') || 'pure';
       return 'NODE RECIPE (live) — ' + cast
         + ' · hover ×' + p.recipe_hover_zoom.toFixed(2) + ' · click ×' + p.recipe_click_zoom.toFixed(2)
-        + ' · bubble ' + p.recipe_bubble.toFixed(2) + ' · ether ' + p.recipe_ether.toFixed(2)
+        + ' · bubble ' + p.recipe_bubble.toFixed(2)
+        + ' · refract ' + (p.recipe_mag || 1).toFixed(2) + ' depth ' + (p.recipe_depth || 0).toFixed(2)
+        + ' · frost ' + (p.recipe_frost || 0).toFixed(1)
+        + ' · ether ' + p.recipe_ether.toFixed(2)
+        + (p.recipe_label ? ' · label ' + (p.label_font || 'sans') + '/' + (p.label_anim || 'rise') : '')
         + ' · glow ' + p.recipe_glow.toFixed(2) + ' pulse ' + p.recipe_pulse.toFixed(2) + ' reach ×' + p.recipe_glow_reach.toFixed(1)
         + ' · finish ' + p.recipe_fin_strength.toFixed(2) + ' [' + fins + '] chroma± ' + p.recipe_chroma_px.toFixed(1) + 'px'
         + ' · wake ' + Math.round(p.recipe_wake_radius_px) + 'px cap ' + Math.round(p.recipe_wake_cap)
@@ -191,6 +205,29 @@
           syncRecipe();
           persist();
           api.refreshDress();
+          api.redraw();
+        });
+        row.appendChild(b);
+      }
+      el.appendChild(row);
+    }
+
+    for (const [key, label, opts] of VOICES) {
+      const cap = document.createElement('div');
+      cap.className = 'lp-cast'; cap.textContent = label;
+      el.appendChild(cap);
+      const row = document.createElement('div');
+      row.className = 'lp-chips';
+      for (const d of opts) {
+        const b = document.createElement('button');
+        b.className = 'lp-chip' + (local.params[key] === d ? ' on' : '');
+        b.dataset.k = key; b.dataset.d = d;
+        b.textContent = d;
+        b.addEventListener('click', () => {
+          local.params[key] = d;
+          for (const s of row.children) s.classList.toggle('on', s.dataset.d === d);
+          syncRecipe();
+          persist();
           api.redraw();
         });
         row.appendChild(b);

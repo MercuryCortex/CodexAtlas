@@ -650,6 +650,14 @@
     // and the max-size clamp is tier-aware so hubs stay hubs.
     recipe_wire_calm:      0.6,
     recipe_hot_wire:       0.55,
+    // FULL-TRANSCRIPTION (2026-07-27) — the lens (orb) + label voice,
+    // John's dialed lab defaults.
+    recipe_mag:            1.13,
+    recipe_frost:          2,
+    recipe_depth:          0.5,
+    recipe_label:          1,
+    label_font:            'sans',
+    label_anim:            'rise',
     node_max_screen_px_hub:   34,
     node_max_screen_px_mid:   26,
     node_max_screen_px_small: 20,
@@ -4163,6 +4171,14 @@
           coreWhite:   local.params.recipe_core_white,
           coreAlpha:   local.params.recipe_core_alpha,
           ringAlpha:   local.params.recipe_ring_alpha,
+          // FULL-TRANSCRIPTION — the lens; backdrop renders only
+          // when some cast tier actually wears the orb.
+          mag:         local.params.recipe_mag,
+          frostPx:     local.params.recipe_frost,
+          depth:       local.params.recipe_depth,
+          needsBackdrop: (local.params.dress_hub === 'orb'
+                       || local.params.dress_mid === 'orb'
+                       || local.params.dress_small === 'orb'),
         } : null,
       });
       }  // end if (!local._debugNoNodes)
@@ -5168,14 +5184,15 @@
       const _lcy = camera.state.centerY;
       const visSet = local.visibleLabelEls;
       const _lvs = visSet ? visSet.size : 0;
-      if (local._labelsIdleCamS === _lcs
+      if (!local._wakeAlive
+          && local._labelsIdleCamS === _lcs
           && local._labelsIdleCamCx === _lcx
           && local._labelsIdleCamCy === _lcy
           && local._labelsIdleVisSet === visSet
           && local._labelsIdleVisSize === _lvs
           && local._labelsIdleW === vp.w
           && local._labelsIdleH === vp.h) {
-        return; // canvas pixels still valid
+        return; // canvas pixels still valid (wake labels animate → no skip while awake)
       }
       local._labelsIdleCamS = _lcs;
       local._labelsIdleCamCx = _lcx;
@@ -5246,6 +5263,87 @@
         // Stroke-then-fill = halo around fill (matches old text-shadow effect).
         ctx.strokeText(title, x, y);
         ctx.fillText(title, x, y);
+      }
+
+      // ── FULL-TRANSCRIPTION (2026-07-27): THE LABEL VOICE ──
+      // Lab law 8: wake reveals · hovered/locked priority · neighbors
+      // that would overlap yield · 3 fonts × 3 motions. Rides THIS
+      // canvas (no bespoke renderer). Verbatim lab math: rv =
+      // (wake−.35)/.65, y below the node + bubble, color 40% toward
+      // white of family color at .85·rv.
+      if ((local.params.recipe_label || 0) >= 1
+          && (local.params.recipe_hover_zoom || 0) >= 1
+          && local.nodeStates && local.mode && local.mode.hitNodes
+          && local.nodeStates.length === local.mode.hitNodes.length * 4) {
+        const hns = local.mode.hitNodes;
+        const np = local.mode.nodePacked;
+        const bubbleK = local.params.recipe_bubble || 1.1;
+        const fontKind = local.params.label_font || 'sans';
+        const anim = local.params.label_anim || 'rise';
+        const wakeFont = fontKind === 'serif'
+          ? '500 11px "Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif'
+          : (fontKind === 'mono'
+            ? '600 9px ui-monospace,"SF Mono",Menlo,monospace'
+            : '600 9.5px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif');
+        const cand = [];
+        for (let i = 0; i < hns.length; i++) {
+          const wk = local.nodeStates[i * 4 + 2];
+          if (wk <= 0.35) continue;
+          const id = hns[i].id;
+          if (visible && visible.has(id)) continue;   // idle tier already shows it
+          const isHov = (local.hoverId === id);
+          const isLock = !!(local.lockedSet && local.lockedSet.has(id));
+          cand.push({ i, wk, pri: (isHov ? 20 : 0) + (isLock ? 10 : 0) + wk });
+        }
+        if (cand.length) {
+          cand.sort((a, b) => b.pri - a.pri);
+          ctx.font = wakeFont;
+          ctx.textBaseline = 'alphabetic';
+          const placed = [];
+          for (const c of cand) {
+            const n = hns[c.i];
+            const s = camera.worldToScreen(n.x, n.y, vp);
+            if (s.x < -vMargin || s.x > vp.w + vMargin
+                || s.y < -vMargin || s.y > vp.h + vMargin) continue;
+            const node = nodesById ? nodesById.get(n.id) : null;
+            const title = (node && node.title) || n.id;
+            const rv = Math.min(1, (c.wk - 0.35) / 0.65);
+            const off = np ? c.i * 8 : -1;
+            const fr = off >= 0 ? Math.round(np.data[off + 4] * 255) : 233;
+            const fg = off >= 0 ? Math.round(np.data[off + 5] * 255) : 229;
+            const fb = off >= 0 ? Math.round(np.data[off + 6] * 255) : 244;
+            const mixW = (v) => Math.round(v + (255 - v) * 0.4);
+            let dy = 0, tr = 0;
+            if (anim === 'rise') dy = 6 * (1 - rv);
+            if (anim === 'condense') tr = 3 - 2.2 * rv;
+            const base = fontKind === 'serif' ? 1.5 : 1;
+            try { ctx.letterSpacing = (base + tr).toFixed(1) + 'px'; } catch (e) { /* Safari quirk */ }
+            const wpx = ctx.measureText(title).width + 10;
+            const ly = s.y + n.r * camScale * bubbleK + 16 + dy;
+            let ok = true;
+            for (const P of placed) {
+              if (Math.abs(s.x - P[0]) < (wpx + P[2]) / 2 && Math.abs(ly - P[1]) < 15) { ok = false; break; }
+            }
+            if (!ok) { try { ctx.letterSpacing = '0px'; } catch (e) { /* ignore */ } continue; }
+            placed.push([s.x, ly, wpx]);
+            const a = (anim === 'unveil') ? Math.min(1, rv * 1.6) : rv;
+            ctx.fillStyle = 'rgba(' + mixW(fr) + ',' + mixW(fg) + ',' + mixW(fb) + ',' + (0.85 * a).toFixed(3) + ')';
+            if (anim === 'unveil') {
+              ctx.save();
+              ctx.beginPath();
+              ctx.rect(s.x - wpx / 2 - 2, ly - 12, (wpx + 4) * rv, 18);
+              ctx.clip();
+              ctx.fillText(title, s.x, ly);
+              ctx.restore();
+            } else {
+              ctx.fillText(title, s.x, ly);
+            }
+            try { ctx.letterSpacing = '0px'; } catch (e) { /* ignore */ }
+          }
+          // restore the idle-label style contract for the next paint
+          ctx.font = '500 ' + _labelSize + 'px Inter, system-ui, -apple-system, sans-serif';
+          ctx.textBaseline = 'bottom';
+        }
       }
     }
 
@@ -5819,6 +5917,9 @@
         cur[zi] = nv;
         if (nv > 0.004 || t > 0) alive = true;
       }
+      // The wake-reveal labels animate with the wake — the label
+      // canvas idle-skip keys off this flag.
+      local._wakeAlive = alive;
       return alive;
     }
 
