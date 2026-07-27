@@ -644,6 +644,15 @@
     recipe_core_white:     0.25,
     recipe_core_alpha:     0.92,
     recipe_ring_alpha:     0.95,
+    // AUDIT P2-9/P2-10 (2026-07-27) — the deep-zoom laws. Wires
+    // recede as you zoom past 120% (the mesh must never dominate
+    // the dress); the hot 1-hop web whispers instead of starbursts;
+    // and the max-size clamp is tier-aware so hubs stay hubs.
+    recipe_wire_calm:      0.6,
+    recipe_hot_wire:       0.55,
+    node_max_screen_px_hub:   34,
+    node_max_screen_px_mid:   26,
+    node_max_screen_px_small: 20,
     // The CAST — a dress per size tier (label tiers 0-1 / 2-3 / 4-5):
     // halo · icon · orb (renders halo until tier-b) · veil · ember.
     dress_hub:   'halo',
@@ -1246,6 +1255,7 @@
       // (see :root block at the top of app.css for defaults).
       '<div class="forge-stylepanel-wrap">' +
         '<button class="forge-stylepanel-btn" id="forge-stylepanel-btn" title="Stroke style tuning" aria-expanded="false">STYLE</button>' +
+        '<button class="forge-fxpanel-btn" id="forge-labpanel-btn" title="Node Lab — live recipe dials" aria-expanded="false">LAB</button>' +
         '<div class="forge-stylepanel" id="forge-stylepanel" aria-hidden="true">' +
           // Phase 22-I (2026-05-24) — Guide rings + Converging
           // separator are RADIAL-only geometry. Hidden in
@@ -3974,6 +3984,15 @@
           if      (zp >= 1.0) wireZoomFade = 0;
           else if (zp <= 0.5) wireZoomFade = 1;
           else                wireZoomFade = (1.0 - zp) / 0.5;
+          // AUDIT P2-9 — the DEEP-zoom side: past 120% the wire mesh
+          // dominated the dress (John: "aliasing / a mask revealing
+          // the wires"). Under the recipe, idle wires recede with
+          // zoom toward recipe_wire_calm (0 = old behavior).
+          if ((local.params.recipe_hover_zoom || 0) >= 1) {
+            const calm = (typeof local.params.recipe_wire_calm === 'number') ? local.params.recipe_wire_calm : 0.6;
+            const deepFade = calm * Math.max(0, Math.min(1, (zp - 1.2) / 1.8));
+            wireZoomFade = Math.max(wireZoomFade, deepFade);
+          }
           // Phase 22-F (2026-05-24) — push floor-FX BELOW 15%
           // entirely. At gizmo 15% the canvas should be CLEAN (no
           // blur, no bloom, no heartbeat). Bloom now enters only
@@ -6380,7 +6399,6 @@
     //  the recipe IS the single source of truth). Dress cast changes
     //  rebuild dressBase + retarget states via recomputeFocus.
     function wireLabPanel() {
-      if (!/[?&]lab(=|&|$)/.test(window.location.search)) return;
       if (!(window._forgeLabPanel && typeof window._forgeLabPanel.attach === 'function')) return;
       try {
         window._forgeLabPanel.attach({
@@ -6393,8 +6411,31 @@
               }
               recomputeFocus();
             },
+            // AUDIT P2-9/P2-10 dials need deeper refreshes:
+            refocus() { recomputeFocus(); startAnimLoop(); drawFrame(); },
+            rebake()  { try { rebakeNodes(); } catch (_) {} startAnimLoop(); drawFrame(); },
           },
         });
+        // The panel always exists now (John kept losing the ?lab URL);
+        // it starts hidden unless ?lab is present, and the LAB button
+        // in the bottom bar toggles it any time.
+        const panel = document.getElementById('forge-lab-panel');
+        const showAtBoot = /[?&]lab(=|&|$)/.test(window.location.search);
+        if (panel && !showAtBoot) panel.style.display = 'none';
+        const btn = document.getElementById('forge-labpanel-btn');
+        if (btn && panel) {
+          btn.setAttribute('aria-expanded', showAtBoot ? 'true' : 'false');
+          // Look the panel up at click time — the panel's Reset
+          // button rebuilds the element, so a captured reference
+          // would go stale.
+          btn.addEventListener('click', () => {
+            const p = document.getElementById('forge-lab-panel');
+            if (!p) return;
+            const hidden = p.style.display === 'none';
+            p.style.display = hidden ? '' : 'none';
+            btn.setAttribute('aria-expanded', hidden ? 'true' : 'false');
+          });
+        }
       } catch (e) { /* panel is a lab tool — never break the map for it */ }
     }
 
@@ -6755,13 +6796,13 @@
         if (local.destroyed) return;
         setHoverId(null);
         // ROUND-7 DRESS — hand off the field: let the wake decay.
-        // ROUND-7c — EXCEPT while the ?lab panel is open: the hand
+        // ROUND-7c — EXCEPT while the lab panel is VISIBLE: the hand
         // leaves the canvas to reach the sliders, and the wake dying
-        // meant John could never SEE what he was dialing ("the icons
-        // are not awake?"). Sticky wake keeps the last woken patch
-        // alive while the lab is up.
+        // meant John could never SEE what he was dialing. (The panel
+        // element always exists now — sticky only when shown.)
         if (local._wakeCursor) {
-          if (!document.getElementById('forge-lab-panel')) {
+          const lp = document.getElementById('forge-lab-panel');
+          if (!(lp && lp.style.display !== 'none')) {
             local._wakeCursor.active = false;
           }
           startAnimLoop();
@@ -7029,11 +7070,18 @@
       return o;
     }
     function nodeOverridesFromParams() {
+      // AUDIT P2-10 — per-tier max clamp (recipe-on only; legacy
+      // keeps the single flat clamp for honest zeros).
+      const p = local.params;
+      const recipeOn = (p.recipe_hover_zoom || 0) >= 1;
+      const mh = p.node_max_screen_px_hub, mm = p.node_max_screen_px_mid, ms = p.node_max_screen_px_small;
+      const maxByTier = (recipeOn && mh && mm && ms) ? [mh, mh, mm, mm, ms, ms] : null;
       return {
         tierRadii:    tierRadiiFromParams(),
         camScale:     (camera && camera.state) ? camera.state.scale : 1,
         minScreenPx:  local.params.node_min_screen_px,
         maxScreenPx:  local.params.node_max_screen_px,
+        maxScreenPxByTier: maxByTier,
         // Phase 21S (2026-05-22) — current ux-mode color override.
         // Null when colorMode === 'default' (preserve baked colors).
         colorOverride: currentColorOverride(),
@@ -7199,9 +7247,15 @@
       const hasHover = (local.hoverId != null);
       const hasLock  = !!(local.lockedSet && local.lockedSet.size > 0);
       const boost = hasHover || hasLock;
+      // AUDIT P2-9 — under the recipe the hot 1-hop web must whisper,
+      // not starburst (the saturated snap was half of the "aliasing
+      // scratches"). recipe_hot_wire 1.0 = old behavior.
+      const soften = ((p.recipe_hover_zoom || 0) >= 1)
+        ? ((typeof p.recipe_hot_wire === 'number') ? p.recipe_hot_wire : 1.0)
+        : 1.0;
       return BUCKET_ORDER.map(b => {
         const baseA = p['active_opacity_' + b];
-        const a = boost ? Math.min(1.0, Math.max(baseA, HOVER_BOOST_ALPHA)) : baseA;
+        const a = (boost ? Math.min(1.0, Math.max(baseA, HOVER_BOOST_ALPHA)) : baseA) * soften;
         return hex2rgba(p['active_color_' + b], a);
       });
     }

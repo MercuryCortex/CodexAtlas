@@ -127,7 +127,12 @@
     const camScale = (opts && typeof opts.camScale    === 'number') ? opts.camScale : null;
     const minPx    = (opts && typeof opts.minScreenPx === 'number') ? opts.minScreenPx : null;
     const maxPx    = (opts && typeof opts.maxScreenPx === 'number') ? opts.maxScreenPx : null;
-    const clampActive = camScale && (minPx !== null || maxPx !== null);
+    // AUDIT P2-10 (2026-07-27) — optional per-tier max clamp (array of
+    // 6, indexed by tier). Deep zoom flattened every tier to one max
+    // size, erasing the hub hierarchy exactly where John lives. When
+    // absent, the single maxPx behaves exactly as before.
+    const maxPxByTier = (opts && Array.isArray(opts.maxScreenPxByTier)) ? opts.maxScreenPxByTier : null;
+    const clampActive = camScale && (minPx !== null || maxPx !== null || maxPxByTier !== null);
     const tierFor = buildTierClassifier(nodes, degree);
 
     // Filter to nodes that actually have a position — defensive,
@@ -149,7 +154,8 @@
       const n   = renderable[i];
       const pos = positions.get(n.id);
       const deg = degree.get(n.id) || 0;
-      let   r   = tiers[tierFor(deg)];
+      const tr  = tierFor(deg);
+      let   r   = tiers[tr];
       // Phase 6: clamp the apparent on-screen radius. At low
       // zoom-out we widen the world radius so dots stay legible;
       // at deep zoom-in we shrink it so a single node doesn't
@@ -158,8 +164,11 @@
       if (clampActive) {
         const screenR = r * camScale;
         let targetScreen = screenR;
+        const mx = maxPxByTier
+          ? (typeof maxPxByTier[tr] === 'number' ? maxPxByTier[tr] : maxPx)
+          : maxPx;
         if (minPx !== null && targetScreen < minPx) targetScreen = minPx;
-        if (maxPx !== null && targetScreen > maxPx) targetScreen = maxPx;
+        if (mx    !== null && targetScreen > mx)    targetScreen = mx;
         r = targetScreen / camScale;
       }
       // Phase 21S (2026-05-22) — view-layer color override. If

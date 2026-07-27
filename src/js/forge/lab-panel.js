@@ -23,6 +23,9 @@
     if (document.getElementById('forge-lab-panel')) return;
 
     const SLIDERS = [
+      // [param, label, min, max, step, unit, mode] — mode: 'redraw'
+      // (default), 'refocus' (state/palette rebuild), 'rebake'
+      // (node radii repack).
       ['recipe_hover_zoom',  'Hover zoom',   1,    2.2,  0.01, '×'],
       ['recipe_click_zoom',  'Click zoom',   1,    3,    0.01, '×'],
       ['recipe_bubble',      'Bubble',       1,    1.5,  0.01, '×'],
@@ -38,6 +41,13 @@
       ['recipe_core_white',  'Core white',   0,    1,    0.01, ''],
       ['recipe_core_alpha',  'Core alpha',   0,    1,    0.01, ''],
       ['recipe_ring_alpha',  'Ring alpha',   0.2,  1,    0.01, ''],
+      // AUDIT P2-9 — the wire laws (deep-zoom calm + hot-web whisper)
+      ['recipe_wire_calm',   'Wire calm',    0,    1,    0.01, '',  'redraw'],
+      ['recipe_hot_wire',    'Hot wires',    0.2,  1,    0.01, '',  'refocus'],
+      // AUDIT P2-10 — tier-aware max size: hubs stay hubs at deep zoom
+      ['node_max_screen_px_hub',   'Hub max size',   24, 48, 1, 'px', 'rebake'],
+      ['node_max_screen_px_mid',   'Mid max size',   16, 36, 1, 'px', 'rebake'],
+      ['node_max_screen_px_small', 'Small max size', 10, 28, 1, 'px', 'rebake'],
     ];
     const TOGGLES = [
       ['recipe_irid',   'Iridescence'],
@@ -53,6 +63,24 @@
     for (const [k] of SLIDERS) defaults[k] = local.params[k];
     for (const [k] of TOGGLES) defaults[k] = local.params[k];
     for (const [k] of CASTS)   defaults[k] = local.params[k];
+    const ALL_KEYS = Object.keys(defaults);
+
+    // Persistence — John's dials must survive a reload (they reset
+    // from PARAM_DEFAULTS every mount otherwise). The recipe line
+    // stays the formal spec; this is just working memory.
+    const LS_KEY = 'forge.labRecipe.v1';
+    function persist() {
+      const o = {};
+      for (const k of ALL_KEYS) o[k] = local.params[k];
+      try { localStorage.setItem(LS_KEY, JSON.stringify(o)); } catch (_) { /* ignore */ }
+    }
+    let stored = null;
+    try { stored = JSON.parse(localStorage.getItem(LS_KEY) || 'null'); } catch (_) { /* ignore */ }
+    if (stored && typeof stored === 'object') {
+      for (const k of ALL_KEYS) if (k in stored) local.params[k] = stored[k];
+      // Applied after mount ⇒ radii/dress may be stale — refresh once.
+      if (local.mode) { api.refreshDress(); if (api.rebake) api.rebake(); }
+    }
 
     const css = document.createElement('style');
     css.textContent = [
@@ -108,7 +136,7 @@
     }
     function syncRecipe() { recipeEl.textContent = recipeStr(); }
 
-    for (const [key, label, min, max, step, unit] of SLIDERS) {
+    for (const [key, label, min, max, step, unit, mode] of SLIDERS) {
       const row = document.createElement('div');
       row.className = 'lp-row';
       row.innerHTML = '<span>' + label + '</span><b></b>';
@@ -121,7 +149,10 @@
         local.params[key] = +inp.value;
         val.textContent = fmt(key, inp.value) + unit;
         syncRecipe();
-        api.redraw();
+        persist();
+        if (mode === 'rebake' && api.rebake) api.rebake();
+        else if (mode === 'refocus' && api.refocus) api.refocus();
+        else api.redraw();
       });
       el.appendChild(row); el.appendChild(inp);
     }
@@ -136,6 +167,7 @@
         local.params[key] = local.params[key] ? 0 : 1;
         b.classList.toggle('on', !!local.params[key]);
         syncRecipe();
+        persist();
         api.redraw();
       });
       tog.appendChild(b);
@@ -157,6 +189,7 @@
           local.params[key] = d;
           for (const s of row.children) s.classList.toggle('on', s.dataset.d === d);
           syncRecipe();
+          persist();
           api.refreshDress();
           api.redraw();
         });
@@ -181,10 +214,12 @@
     const resetB = document.createElement('button');
     resetB.className = 'lp-btn'; resetB.textContent = 'Reset';
     resetB.addEventListener('click', () => {
+      try { localStorage.removeItem(LS_KEY); } catch (_) { /* ignore */ }
       Object.assign(local.params, defaults);
       el.remove(); css.remove();
       attach({ local, api });
       api.refreshDress();
+      if (api.rebake) api.rebake();
       api.redraw();
     });
     btns.appendChild(copyB); btns.appendChild(resetB);
