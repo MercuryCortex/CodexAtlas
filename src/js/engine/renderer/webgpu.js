@@ -346,8 +346,7 @@
               else               { gp = mix(0.10, 0.0,  (u2 - 0.7) / 0.3); }
               // REVIEW: same 7C conservation as the outer glow — no
               // brightness step at the bubble edge at high reach.
-              let cons2 = clamp(sqrt(2.1 / max(rg2, 2.1)), 0.35, 1.0);
-              acc = vec4<f32>(acc.rgb + col * (pa2 * gp * cons2 * (1.0 - smoothstep(0.96, 1.0, db))), acc.a);
+              acc = vec4<f32>(acc.rgb + col * (pa2 * gp * (1.0 - smoothstep(0.96, 1.0, db))), acc.a);
             }
           }
           // body density o1 — transparent heart, color deepening at the
@@ -591,17 +590,22 @@
       let dprg = max(v.recipe_e.w, 1.0);
       let bub = (1.0 + (max(v.recipe_b.z, 1.0) - 1.0) * w) + 2.5 * dprg * w / rpx;
       var light = vec3<f32>(0.0);
-      // the breathing glow — ENERGY-CONSERVING (Round 7c): widening
-      // the reach must SOFTEN the light, not flood the field.
+      // the breathing glow — LAB STOPS VERBATIM. The 7C energy-
+      // conservation law is RETIRED (2026-07-28, John: "NOW there is
+      // NO GLOW" at reach 4.5): it existed to stop the glow flood-
+      // lighting the wires, and the Wire-calm law now solves that at
+      // the source. Reach behaves exactly like the bench again.
       if (v.recipe_a.x > 0.02) {
         let pulse = v.recipe_a.y;
         let pa = v.recipe_a.x * w * (1.0 - 0.5 * pulse + 0.5 * pulse * sin(t * 1.7 + in.world_pos.x * 0.05));
         // AUDIT P1-6 sibling: the lab has no bubble term on reach.
         let reach_g = max(v.recipe_a.z, 1.2);
         let dg = clamp(d / reach_g, 0.0, 1.0);
-        let conserve = clamp(sqrt(2.1 / max(reach_g, 2.1)), 0.35, 1.0);
-        let fall = 1.7 + 0.5 * max(reach_g - 2.1, 0.0);
-        light = light + col * (pa * 0.75 * conserve * pow(1.0 - dg, fall));
+        var gp0: f32;
+        if (dg < 0.35)     { gp0 = mix(0.75, 0.34, dg / 0.35); }
+        else if (dg < 0.7) { gp0 = mix(0.34, 0.10, (dg - 0.35) / 0.35); }
+        else               { gp0 = mix(0.10, 0.0,  (dg - 0.7) / 0.3); }
+        light = light + col * (pa * gp0);
       }
       // HALO (and ORB until tier-b) — the star body IS light.
       // AUDIT P0-4a: white lives ONLY at the heart — the lab ramps the
