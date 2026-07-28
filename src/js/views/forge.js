@@ -3574,8 +3574,12 @@
       //     05-18 flip): 0 = IDLE (safe default), 1 = HOT.
       //   Zero-init is correct by construction; no .fill() needed.
       // ════════════════════════════════════════════════════════════
-      local.nodeStates  = new Float32Array(nodePack.instanceCount * 2);
-      local.nodeTargets = new Float32Array(nodePack.instanceCount * 2);
+      // REVIEW P1 (2026-07-27) — 4 floats per node since ROUND-7
+      // (state, selected, wake, dress). The stale 2-wide alloc here
+      // silently killed the ENTIRE wake system after every mode
+      // rebuild until the first hover forced recomputeFocus.
+      local.nodeStates  = new Float32Array(nodePack.instanceCount * 4);
+      local.nodeTargets = new Float32Array(nodePack.instanceCount * 4);
       local.edgeStates  = new Float32Array(edgePack.instanceCount);
       local.edgeTargets = new Float32Array(edgePack.instanceCount);
       _tick('fade-pipeline-replace');
@@ -4171,14 +4175,19 @@
           coreWhite:   local.params.recipe_core_white,
           coreAlpha:   local.params.recipe_core_alpha,
           ringAlpha:   local.params.recipe_ring_alpha,
-          // FULL-TRANSCRIPTION — the lens; backdrop renders only
-          // when some cast tier actually wears the orb.
+          // FULL-TRANSCRIPTION — the lens; backdrop renders only when
+          // some cast tier wears the orb AND a lens could be live
+          // (REVIEW: an asleep field must not pay the extra pass).
           mag:         local.params.recipe_mag,
           frostPx:     local.params.recipe_frost,
           depth:       local.params.recipe_depth,
-          needsBackdrop: (local.params.dress_hub === 'orb'
+          needsBackdrop: ((local.params.dress_hub === 'orb'
                        || local.params.dress_mid === 'orb'
-                       || local.params.dress_small === 'orb'),
+                       || local.params.dress_small === 'orb')
+                       && (!!local._wakeAlive
+                        || local.hoverId != null
+                        || !!(local.lockedSet && local.lockedSet.size)
+                        || !!(local._wakeCursor && local._wakeCursor.active))),
         } : null,
       });
       }  // end if (!local._debugNoNodes)
@@ -4380,11 +4389,11 @@
         // re-coding this loop.
         const idx = local.mode.nodePacked.idIndex;
         const nt  = local.nodeTargets;
-        if (nt && nt.length === idx.length * 2) {
+        if (nt && nt.length === idx.length * 4) {   // REVIEW P1: 4-wide since ROUND-7
           // Build a "hidden by target state" set in one O(N) pass.
           const hidden = new Set();
           for (let i = 0; i < idx.length; i++) {
-            if (nt[i * 2] >= 1.5) hidden.add(idx[i]);
+            if (nt[i * 4] >= 1.5) hidden.add(idx[i]);
           }
           for (const id of idleSet) if (!hidden.has(id)) visible.add(id);
         } else {
@@ -5225,8 +5234,10 @@
       // Transform to CSS pixels so we can use vp.w/vp.h coordinates.
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       ctx.clearRect(0, 0, vp.w, vp.h);
+      // REVIEW P2 — the wake tail must run even when the idle set is
+      // empty ('hand over unlabeled space' is the label voice's whole
+      // point), so the idle loop is guarded instead of early-returning.
       const visible = local.visibleLabelEls;
-      if (!visible || visible.size === 0) return;
       const hitById = local.mode.hitById;
       const nodesById = local.mode.nodesById;
       const camScale = camera.state.scale;
@@ -5250,7 +5261,7 @@
       ctx.lineWidth = 4;
       ctx.strokeStyle = _labelsHaloColor;
       ctx.fillStyle = _labelsTextColor;
-      for (const id of visible) {
+      if (visible && visible.size) for (const id of visible) {
         const n = hitById ? hitById.get(id) : null;
         if (!n) continue;
         const s = camera.worldToScreen(n.x, n.y, vp);
@@ -5289,6 +5300,8 @@
         for (let i = 0; i < hns.length; i++) {
           const wk = local.nodeStates[i * 4 + 2];
           if (wk <= 0.35) continue;
+          // REVIEW P1: timeline-HIDDEN nodes must not ghost-label.
+          if (local.nodeStates[i * 4] >= 1.5) continue;
           const id = hns[i].id;
           if (visible && visible.has(id)) continue;   // idle tier already shows it
           const isHov = (local.hoverId === id);
@@ -5317,8 +5330,10 @@
             if (anim === 'rise') dy = 6 * (1 - rv);
             if (anim === 'condense') tr = 3 - 2.2 * rv;
             const base = fontKind === 'serif' ? 1.5 : 1;
-            try { ctx.letterSpacing = (base + tr).toFixed(1) + 'px'; } catch (e) { /* Safari quirk */ }
+            // REVIEW P2 — measure UNTRACKED width (the lab's collision
+            // rule), then apply the condense tracking for the draw.
             const wpx = ctx.measureText(title).width + 10;
+            try { ctx.letterSpacing = (base + tr).toFixed(1) + 'px'; } catch (e) { /* Safari quirk */ }
             const ly = s.y + n.r * camScale * bubbleK + 16 + dy;
             let ok = true;
             for (const P of placed) {
@@ -5873,9 +5888,9 @@
     function tickWake(dt) {
       const cur = local.nodeStates;
       const hns = local.mode && local.mode.hitNodes;
-      if (!cur || !hns || cur.length !== hns.length * 4) return false;
+      if (!cur || !hns || cur.length !== hns.length * 4) { local._wakeAlive = false; return false; }
       const p = local.params;
-      if ((p.recipe_hover_zoom || 0) < 1) return false;
+      if ((p.recipe_hover_zoom || 0) < 1) { local._wakeAlive = false; return false; }
       const cursor = local._wakeCursor;
       const camS = (camera && camera.state) ? camera.state.scale : 1;
       const wr = (p.recipe_wake_radius_px || 0) / Math.max(camS, 1e-6);
@@ -5909,17 +5924,21 @@
         }
       }
       let alive = false;
+      let animating = false;
       for (let i = 0; i < hns.length; i++) {
         const zi = i * 4 + 2;
         const c = cur[zi];
         const t = tgt[i];
-        const nv = (Math.abs(t - c) < 0.004) ? t : c + (t - c) * sm;
+        const moving = Math.abs(t - c) >= 0.004;
+        if (moving) animating = true;
+        const nv = moving ? c + (t - c) * sm : t;
         cur[zi] = nv;
         if (nv > 0.004 || t > 0) alive = true;
       }
-      // The wake-reveal labels animate with the wake — the label
-      // canvas idle-skip keys off this flag.
-      local._wakeAlive = alive;
+      // REVIEW P1 — the label canvas repaints only while a wake is
+      // actually CHANGING; a settled locked anchor re-enables the
+      // Safari idle-skip (the render loop still runs off `alive`).
+      local._wakeAlive = animating;
       return alive;
     }
 

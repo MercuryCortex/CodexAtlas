@@ -20,7 +20,14 @@
 // ============================================================
 (function () {
   function attach({ local, api }) {
-    if (document.getElementById('forge-lab-panel')) return;
+    // REVIEW P1 — the panel survives forge view remounts on
+    // document.body; the old early-return left it wired to a DEAD
+    // mount's params (dials inert, persisted recipe silently
+    // reverted). Rebuild against the fresh {local, api} instead.
+    const stale = document.getElementById('forge-lab-panel');
+    if (stale) stale.remove();
+    const staleCss = document.getElementById('forge-lab-panel-css');
+    if (staleCss) staleCss.remove();
 
     const SLIDERS = [
       // [param, label, min, max, step, unit, mode] — mode: 'redraw'
@@ -93,6 +100,7 @@
     }
 
     const css = document.createElement('style');
+    css.id = 'forge-lab-panel-css';
     css.textContent = [
       '#forge-lab-panel{position:fixed;top:64px;right:12px;z-index:220;width:240px;max-height:calc(100vh - 140px);',
       'overflow-y:auto;background:rgba(10,8,22,.92);backdrop-filter:blur(10px);border:1px solid rgba(211,184,119,.28);',

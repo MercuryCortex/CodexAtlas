@@ -209,11 +209,12 @@
       let zoom = 1.0 + (mix(hz, cz, locked) - 1.0) * inst_selected * wake;
       let legacy_grow = mix(1.0, v.selected_size_mult, inst_selected);
       let grow = mix(legacy_grow, zoom, use_recipe);
-      // Quad headroom: the BODY quad only needs the bubble-bound
-      // material (veil reaches ~1.22×bubble). The far-reaching glow
-      // lives in its own pass now (vs_glow) so body quads stay small
-      // and their depth writes stop occluding neighbors (ROUND-7b).
-      let quad_scale = mix(1.0, 1.9, clamp(wake * 4.0, 0.0, 1.0) * use_recipe);
+      // Quad headroom (REVIEW-corrected): veil truly reaches
+      // 1.61×bubble (bubble ≤1.5 ⇒ 2.42) and chroma lobes extend past
+      // the bubble — 2.75 covers the worst lab-legal recipe. Rest
+      // nodes get 1.15 under the recipe so tiny rings don't clip on
+      // 4 sides (legacy rest stays exactly 1.0 — honest zeros).
+      let quad_scale = mix(1.0 + 0.15 * use_recipe, 2.75, clamp(wake * 4.0, 0.0, 1.0) * use_recipe);
       let world     = inst_pos + quad_vertex * inst_radius * grow * quad_scale;
       let ndc       = world * v.view_scale + v.view_offset;
       // Depth: selected on top, focused middle, dim back.
@@ -268,7 +269,11 @@
       let wg = w * g;
       let t  = v.recipe_c.x;
       let seedx = in.world_pos.x;
-      let bub = max(v.recipe_b.z, 1.0);
+      // REVIEW FIX (bubble law verbatim): br = r·(1+(bubble−1)·wake)
+      // + 2.5 CSS px·wake — the engine had dropped both the wake
+      // ramp and the pixel term (dresses ran 30-45% undersized).
+      let dprv0 = max(v.recipe_e.w, 1.0);
+      let bub = (1.0 + (max(v.recipe_b.z, 1.0) - 1.0) * w) + 2.5 * dprv0 * w / rpx;
 
       // Accumulate premultiplied back-to-front: acc = L + acc*(1-L.a).
       // (The breathing glow + the HALO star body render in fs_glow —
@@ -284,8 +289,10 @@
         let dprv2 = max(v.recipe_e.w, 1.0);
         if (dId == 1) {
           // ICON — gold-leaf disc (lab stops: plateau .52→.44 to u=.72, then →0)
+          // REVIEW P0: normalize from the UNCLAMPED ratio — the clamped
+          // db froze the tail at 0.089 and lit a gold square to the quad edge.
           let leaf = mix(col, vec3<f32>(0.827, 0.722, 0.467), 0.45);
-          let ui = clamp(db / 1.06, 0.0, 1.0);
+          let ui = clamp(d / (1.06 * bub), 0.0, 1.0);
           var ia: f32;
           if (ui <= 0.72) { ia = mix(0.52, 0.44, ui / 0.72); }
           else            { ia = 0.44 * (1.0 - (ui - 0.72) / 0.28); }
@@ -298,36 +305,35 @@
           let dep = v.recipe_f.z;
           if (v.recipe_f.w > 0.5 && (mag_core > 1.004 || frost_fb > 0.05 * dprv2)) {
             let p = in.position.xy;
-            // depth = curvature: light bends harder at the limb
-            let mag2 = mag_core * (1.0 + 0.35 * dep * smoothstep(0.55, 1.0, db));
-            let q2 = in.center_fb + (p - in.center_fb) / mag2;
+            // REVIEW: the lab's refraction is UNIFORM — depth drives
+            // only the body-density stops (the limb-bend was invented).
+            let q2 = in.center_fb + (p - in.center_fb) / mag_core;
             let uv = q2 / v.viewport_px;
             // frost — disc blur, radius = the lab's blur px (tap
             // pattern is implementation freedom; radius is lab-true)
-            var wrld = textureSampleLevel(backdrop_tex, backdrop_samp, uv, 0.0).rgb;
+            var smp = textureSampleLevel(backdrop_tex, backdrop_samp, uv, 0.0);
             if (frost_fb > 0.3) {
               let fr = frost_fb / v.viewport_px;
-              var sum = wrld;
-              sum = sum + textureSampleLevel(backdrop_tex, backdrop_samp, uv + vec2<f32>( fr.x,  0.0), 0.0).rgb;
-              sum = sum + textureSampleLevel(backdrop_tex, backdrop_samp, uv + vec2<f32>(-fr.x,  0.0), 0.0).rgb;
-              sum = sum + textureSampleLevel(backdrop_tex, backdrop_samp, uv + vec2<f32>( 0.0,  fr.y), 0.0).rgb;
-              sum = sum + textureSampleLevel(backdrop_tex, backdrop_samp, uv + vec2<f32>( 0.0, -fr.y), 0.0).rgb;
-              sum = sum + textureSampleLevel(backdrop_tex, backdrop_samp, uv + vec2<f32>( fr.x * 0.7,  fr.y * 0.7), 0.0).rgb;
-              sum = sum + textureSampleLevel(backdrop_tex, backdrop_samp, uv + vec2<f32>(-fr.x * 0.7,  fr.y * 0.7), 0.0).rgb;
-              sum = sum + textureSampleLevel(backdrop_tex, backdrop_samp, uv + vec2<f32>( fr.x * 0.7, -fr.y * 0.7), 0.0).rgb;
-              sum = sum + textureSampleLevel(backdrop_tex, backdrop_samp, uv + vec2<f32>(-fr.x * 0.7, -fr.y * 0.7), 0.0).rgb;
-              wrld = sum / 9.0;
+              var sum = smp;
+              sum = sum + textureSampleLevel(backdrop_tex, backdrop_samp, uv + vec2<f32>( fr.x,  0.0), 0.0);
+              sum = sum + textureSampleLevel(backdrop_tex, backdrop_samp, uv + vec2<f32>(-fr.x,  0.0), 0.0);
+              sum = sum + textureSampleLevel(backdrop_tex, backdrop_samp, uv + vec2<f32>( 0.0,  fr.y), 0.0);
+              sum = sum + textureSampleLevel(backdrop_tex, backdrop_samp, uv + vec2<f32>( 0.0, -fr.y), 0.0);
+              sum = sum + textureSampleLevel(backdrop_tex, backdrop_samp, uv + vec2<f32>( fr.x * 0.7,  fr.y * 0.7), 0.0);
+              sum = sum + textureSampleLevel(backdrop_tex, backdrop_samp, uv + vec2<f32>(-fr.x * 0.7,  fr.y * 0.7), 0.0);
+              sum = sum + textureSampleLevel(backdrop_tex, backdrop_samp, uv + vec2<f32>( fr.x * 0.7, -fr.y * 0.7), 0.0);
+              sum = sum + textureSampleLevel(backdrop_tex, backdrop_samp, uv + vec2<f32>(-fr.x * 0.7, -fr.y * 0.7), 0.0);
+              smp = sum / 9.0;
             }
-            // chroma ghost — R/B pulled apart along the radial axis
-            if (v.recipe_d.y > 0.5) {
-              let dirv = normalize(p - in.center_fb + vec2<f32>(0.0001, 0.0));
-              let co2 = dirv * (v.recipe_d.z / v.viewport_px);
-              wrld.r = textureSampleLevel(backdrop_tex, backdrop_samp, uv + co2, 0.0).r;
-              wrld.b = textureSampleLevel(backdrop_tex, backdrop_samp, uv - co2, 0.0).b;
-            }
-            // the lens REPLACES what's behind, inside the bubble (lab drawImage)
-            let la = wg * (1.0 - smoothstep(0.92, 1.0, db));
-            acc = vec4<f32>(wrld * la + acc.rgb * (1.0 - la), acc.a * (1.0 - la) + la);
+            // the lens REPLACES what's behind, inside the bubble (lab
+            // drawImage). REVIEW: coverage rides the sampled alpha so
+            // an EMPTY backdrop stays transparent through the drop
+            // (page ground shows through — no black hole); the
+            // invented R/B ghost is gone — chroma is the lab's
+            // warm/cool split like every other dress.
+            let lg = wg * (1.0 - smoothstep(0.92, 1.0, db));
+            let la = lg * smp.a;
+            acc = vec4<f32>(smp.rgb * lg + acc.rgb * (1.0 - la), acc.a * (1.0 - la) + la);
             // the glow, seen THROUGH the drop — lab stops verbatim,
             // radius magnified; bubble-clipped so it can never flood
             if (v.recipe_a.x > 0.02) {
@@ -338,7 +344,10 @@
               if (u2 < 0.35)     { gp = mix(0.75, 0.34, u2 / 0.35); }
               else if (u2 < 0.7) { gp = mix(0.34, 0.10, (u2 - 0.35) / 0.35); }
               else               { gp = mix(0.10, 0.0,  (u2 - 0.7) / 0.3); }
-              acc = vec4<f32>(acc.rgb + col * (pa2 * gp * (1.0 - smoothstep(0.96, 1.0, db))), acc.a);
+              // REVIEW: same 7C conservation as the outer glow — no
+              // brightness step at the bubble edge at high reach.
+              let cons2 = clamp(sqrt(2.1 / max(rg2, 2.1)), 0.35, 1.0);
+              acc = vec4<f32>(acc.rgb + col * (pa2 * gp * cons2 * (1.0 - smoothstep(0.96, 1.0, db))), acc.a);
             }
           }
           // body density o1 — transparent heart, color deepening at the
@@ -356,7 +365,9 @@
             da = mix(0.22 + 0.25 * dep, 0.05 + 0.15 * dep, u3);
             dcol2 = mix(mix(col, vec3<f32>(0.0), 0.35), mix(col, vec3<f32>(0.0), 0.5), u3);
           }
-          da = da * wg * (1.0 - smoothstep(0.98, 1.02, db));
+          // REVIEW P1: db clamps at 1.0 — the old (0.98,1.02) fade
+          // froze half-done and left a dark film square past the rim.
+          da = da * wg * (1.0 - smoothstep(0.96, 1.0, db));
           acc = vec4<f32>(dcol2 * da + acc.rgb * (1.0 - da), acc.a * (1.0 - da) + da);
           // gathered light — collected low in the drop (additive)
           let glc = vec2<f32>(0.0, 0.42 * bub);
@@ -404,7 +415,7 @@
           let dirc = v.recipe_c.zw - in.world_pos;
           let frac0 = (atan2(pv2.y, pv2.x) - atan2(dirc.y, dirc.x)) / 6.28318;
           let fseg = (frac0 - floor(frac0)) * 4.0;
-          let si = i32(fseg);
+          let si = min(i32(fseg), 3);   // REVIEW: fseg can hit exactly 4.0
           let ft = fseg - f32(si);
           var stops = array<vec3<f32>, 5>(
             vec3<f32>(0.878, 0.478, 0.541),   // rose
@@ -418,7 +429,7 @@
           acc = vec4<f32>(acc.rgb + film * fa, acc.a);
         }
         // 4 ▸ chroma — warm/cool light split (lab: 0.16, LINEAR falloff)
-        if (v.recipe_d.y > 0.5 && v.recipe_c.y * wg > 0.01 && dId != 2) {
+        if (v.recipe_d.y > 0.5 && v.recipe_c.y * wg > 0.01) {
           let offr = v.recipe_d.z / rpx * 2.0;
           let pvx = in.local_pos.x * qs;
           let ca = 0.16 * v.recipe_c.y * wg;
@@ -434,7 +445,9 @@
       //     AUDIT P0-2 (2026-07-27): LIGHT dims fully under focus (the
       //     lab law — life is added light only); the SYMBOL never
       //     alpha-fades to grey. It tints toward the lab's slate
-      //     (st=3 recipe: 55% toward #3a3752) and keeps 45% ink.
+      //     (st=3 recipe: 55% toward #3a3752). Ink floor 45% is a
+      //     RATIFIED divergence from the lab's 32% (AUDIT P0-2 chose
+      //     more presence for the dimmed field — not a transcription slip).
       acc = acc * state_alpha;
       let dimf = min(in.state, 1.0) * use_recipe;
       let symDim = mix(1.0, 0.45, dimf) * segB_factor;
@@ -443,7 +456,8 @@
       let sa = (1.0 - (1.0 - symTab[dId]) * wg) * symDim;
       let E = v.recipe_b.w * lockedF * in.sel * use_recipe;
       let breath = 0.5 + 0.5 * sin(t * 1.4 + seedx * 0.03);
-      let hw   = max(0.05, 1.2 / rpx);
+      // REVIEW: hairline floor scales with dpr (lab: 1.1 CSS px).
+      let hw   = max(0.05, 0.55 * dprv0 / rpx);
       // Symbol voice dials (recipe_e) — John tunes the whiteness here.
       let cw = mix(0.25, v.recipe_e.x, use_recipe);
       let cal = mix(0.92, v.recipe_e.y, use_recipe);
@@ -452,7 +466,8 @@
       // AUDIT P0-3 — the lab's ethereal is THREE layers, never a smear:
       // (1) a SOFT family-colored copy UNDER, blur capped in SCREEN px
       //     (1.2-3.4 CSS px) so big locked nodes do not dissolve;
-      let widen = clamp((1.2 + 2.2 * breath) * dprv / rpx, 0.0, 0.25) * step(0.02, E);
+      // REVIEW: the blur radius scales with the ether dial (lab E·(1.2+2.2·ep))
+      let widen = clamp(E * (1.2 + 2.2 * breath) * dprv / rpx, 0.0, 0.25) * step(0.02, E);
       if (widen > 0.001) {
         let f1 = smoothstep(0.86 - hw - widen - aa, 0.86 - hw + widen + aa, d);
         let f2 = 1.0 - smoothstep(0.86 + hw - widen - aa, 0.86 + hw + widen + aa, d);
@@ -475,9 +490,15 @@
       acc = vec4<f32>(core_rgb * core_a + acc.rgb * (1.0 - core_a), acc.a * (1.0 - core_a) + core_a);
       // (3) accents — pure added light (breath stroke + core pulse),
       //     dimmed under the LIGHT law like every other photon.
-      let accent = (mix(col, white, 0.6) * (0.30 * E * breath) * ring_mask
+      //     REVIEW: the breath stroke gets the lab's WIDER band
+      //     (lineWidth max(1.4, .16r)) and accents drop the dress
+      //     symbol-alpha table (lab applies neither).
+      let hw_b = max(0.08, 0.7 * dprv0 / rpx);
+      let b1 = smoothstep(0.86 - hw_b - aa, 0.86 - hw_b + aa, d);
+      let b2 = 1.0 - smoothstep(0.86 + hw_b - aa, 0.86 + hw_b + aa, d);
+      let accent = (mix(col, white, 0.6) * (0.30 * E * breath) * (b1 * b2)
                   + mix(col, white, 0.5) * (0.26 * w * cp * use_recipe) * core_mask)
-                  * sa * state_alpha;
+                  * symDim * state_alpha;
       acc = vec4<f32>(acc.rgb + accent, acc.a);
 
       // Legacy compatibility: with no recipe active, the node must
@@ -524,8 +545,9 @@
       let zoom = 1.0 + (mix(hz, cz, locked) - 1.0) * inst_selected * wake;
       let bub  = max(v.recipe_b.z, 1.0);
       // Envelope covers the glow reach (no bubble term — P1-6) AND
-      // the halo body (1.5×bub).
-      let reach = max(v.recipe_a.z, 1.5 * bub);
+      // the halo body (1.5×bub_eff; +0.6 margin covers the wake-ramp
+      // bubble law's pixel term at small radii — REVIEW).
+      let reach = max(v.recipe_a.z, 1.5 * bub + 0.6);
       // FULL-TRANSCRIPTION: orb no longer borrows the halo body — it
       // has its real lens in the body pass. Outer glow still emits.
       let is_halo = select(0.0, 1.0, dress_id < 0.5);
@@ -565,7 +587,9 @@
       // Only the DRESS (halo body below) respects the size gate.
       if (w < 0.004) { discard; }
       let t   = v.recipe_c.x;
-      let bub = max(v.recipe_b.z, 1.0);
+      // Bubble law verbatim (REVIEW) — same wake ramp + px term as fs_main.
+      let dprg = max(v.recipe_e.w, 1.0);
+      let bub = (1.0 + (max(v.recipe_b.z, 1.0) - 1.0) * w) + 2.5 * dprg * w / rpx;
       var light = vec3<f32>(0.0);
       // the breathing glow — ENERGY-CONSERVING (Round 7c): widening
       // the reach must SOFTEN the light, not flood the field.
@@ -1096,6 +1120,10 @@
       });
     }
     let nodeBg = makeNodeBindGroup();
+    // Declared HERE (not at the blit block) so ensureBackdropTex's
+    // closure state is fully initialized before any possible call —
+    // REVIEW caught the latent TDZ.
+    let blitBg = null;
     function ensureBackdropTex(fbW, fbH) {
       if (backdropW === fbW && backdropH === fbH) return;
       disown(backdropTex);
@@ -1141,6 +1169,34 @@
       },
       primitive: { topology: 'triangle-list' },
       depthStencil: { format: 'depth24plus', depthWriteEnabled: true, depthCompare: 'less-equal' },
+    });
+    // REVIEW P1 — under the recipe, translucent dress light was
+    // WRITING DEPTH and erasing overlapping neighbor rings (the same
+    // failure class 7B fixed for glow). The recipe path uses this
+    // no-depth-write twin: painter order, which is exactly the lab's
+    // canvas model. Legacy keeps the z-layered pipeline above.
+    const nodePipelineNoZ = device.createRenderPipeline({
+      label: 'forge-node-pipeline-noz',
+      layout: device.createPipelineLayout({ bindGroupLayouts: [nodeBgl] }),
+      vertex: {
+        module: nodeShaderModule, entryPoint: 'vs_main',
+        buffers: [
+          { arrayStride: 8, stepMode: 'vertex', attributes: [{ shaderLocation: 0, offset: 0, format: 'float32x2' }] },
+          { arrayStride: 32, stepMode: 'instance', attributes: [
+              { shaderLocation: 1, offset:  0, format: 'float32x4' },
+              { shaderLocation: 2, offset: 16, format: 'float32x4' },
+          ] },
+          { arrayStride: 16, stepMode: 'instance', attributes: [
+              { shaderLocation: 3, offset: 0, format: 'float32x4' },
+          ] },
+        ],
+      },
+      fragment: {
+        module: nodeShaderModule, entryPoint: 'fs_main',
+        targets: [{ format, blend: premultBlend() }],
+      },
+      primitive: { topology: 'triangle-list' },
+      depthStencil: { format: 'depth24plus', depthWriteEnabled: false, depthCompare: 'always' },
     });
 
     // ── Phase 3: EDGE pipeline with state attribute ──
@@ -1355,7 +1411,7 @@
         ],
       });
     }
-    let blitBg = makeBlitBindGroup();
+    blitBg = makeBlitBindGroup();
 
     // ── Instance buffers ─────────────────────────────
     let nodeInstanceVbo     = null, nodeInstanceVboSize     = 0;
@@ -1944,7 +2000,9 @@
           pass.draw(6, nodeCount);
         }
         if (nodeCount > 0) {
-          pass.setPipeline(nodePipeline);
+          // recipe ⇒ painter-order twin (no depth writes — light can
+          // never erase a neighbor's ring); legacy ⇒ z-layered.
+          pass.setPipeline(frame.recipe ? nodePipelineNoZ : nodePipeline);
           pass.setBindGroup(0, nodeBg);   // ubo + backdrop (orb lens)
           pass.setVertexBuffer(0, quadVbo);
           pass.setVertexBuffer(1, nodeInstanceVbo);
