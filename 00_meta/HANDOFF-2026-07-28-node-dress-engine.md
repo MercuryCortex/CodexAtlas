@@ -91,6 +91,18 @@ specular blob, hover-spin, sheen, gold selected ring, always-on halo, white-out.
 The A4 focus dim + wake coexist (meaning vs material). Labels: wake reveals,
 hovered/locked keep, deep zoom shows; 3 fonts × 3 motions.
 
+## ⭐ THE WIRE DRESS — John's brief, 2026-07-29 (design round of its own)
+
+With the nodes luminous, the wire mesh behind them reads as clutter —
+John: "now we see the Wires behind the nodes (which looks very ugly and
+cluttered)... our wires should also add some fx to match the new nodes
+for elegancy and flair to distinguish the levels of transmission
+hierarchy." NOT urgent — he explicitly deferred it — but it is a
+first-class design round, not a tweak: the wires need their own dressed
+language (their own lab, the way `design/node-lab.html` was for nodes),
+and the fx must ENCODE the transmission hierarchy, not just decorate.
+Wire-calm/hot-wire dials are flood protection, not this.
+
 ## Deferred (known, cited in STATUS 10b)
 
 Body-pass light is ADD not screen (in-shader approximation available); backdrop
