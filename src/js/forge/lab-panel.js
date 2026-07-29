@@ -69,6 +69,13 @@
       ['node_max_screen_px_hub',   'Hub max size',   24, 48, 1, 'px', 'rebake'],
       ['node_max_screen_px_mid',   'Mid max size',   16, 36, 1, 'px', 'rebake'],
       ['node_max_screen_px_small', 'Small max size', 10, 28, 1, 'px', 'rebake'],
+      // THE FILM RAMP (2026-07-29) — John: "WHERE is the FILM RAMP
+      // SLIDER???". The bg movie's visibility curve, dialled instead of
+      // baked in. Floor = how present it is at working zoom (0 = the
+      // original spec: invisible until you zoom out).
+      ['film_floor',    'Film floor',   0,  1,  0.01, '',  'bg'],
+      ['film_full_pct', 'Film full at', 5,  40, 1,    '%'],
+      ['film_fade_pct', 'Film fades by',10, 80, 1,    '%'],
     ];
     const TOGGLES = [
       ['recipe_irid',   'Iridescence'],
@@ -138,6 +145,11 @@
       { id: 'labels', title: 'Labels', open: false, items: [
         { k: 'toggles', keys: ['recipe_label'] },
         { k: 'voices' },
+      ] },
+      { id: 'film', title: 'Film — the bg movie', open: false, items: [
+        { k: 'slider', key: 'film_floor' },
+        { k: 'slider', key: 'film_full_pct' },
+        { k: 'slider', key: 'film_fade_pct' },
       ] },
     ];
 
@@ -231,7 +243,8 @@
     const recipeEl = document.createElement('div');
 
     function fmt(k, v) {
-      if (k === 'recipe_wake_cap' || k === 'recipe_gate_px' || k === 'recipe_wake_radius_px') return String(Math.round(v));
+      if (k === 'recipe_wake_cap' || k === 'recipe_gate_px' || k === 'recipe_wake_radius_px'
+          || k === 'film_full_pct' || k === 'film_fade_pct') return String(Math.round(v));
       return (+v).toFixed(2);
     }
     function recipeStr() {

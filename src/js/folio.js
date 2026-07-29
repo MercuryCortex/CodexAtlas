@@ -199,33 +199,39 @@
     }).join('') + '</div>';
   }
 
-  // ── THEME SWATCHES ───────────────────────────────────────────
-  // The four curated styles. Colours are indicative dots (accent over bg).
-  var THEMES = [
-    { key: 'codex',   label: 'Codex',   bg: '#0d1119', dot: '#d4a55a' },
-    { key: 'quantum', label: 'Quantum', bg: '#0e0e10', dot: '#f0f0f2' },
-    { key: 'human',   label: 'Human',   bg: '#161619', dot: '#c2b4a2' },
-    { key: 'mystic',  label: 'Mystic',  bg: '#171338', dot: '#e8c878' },
+  // ── THE LOOKS — chrome + ground, ONE row ─────────────────────
+  // 2026-07-29. Theme and Ground shipped as two adjacent rows and John
+  // read them as one thing split in half: "the themes STILL separated".
+  // He is right — a theme is a whole look, not half of one. So each
+  // entry here is a COMPLETE look: the app-chrome style class AND the
+  // ground the wheel floats on. Nothing was dropped in the merge; the
+  // four lab grounds became looks in their own right, each paired with
+  // the chrome that suits it. Re-pair freely — it is one line each.
+  var LOOKS = [
+    { key: 'codex',    label: 'Codex',     style: 'codex',   ground: 'film',     bg: '#0d1119', dot: '#d4a55a' },
+    { key: 'quantum',  label: 'Quantum',   style: 'quantum', ground: 'film',     bg: '#0e0e10', dot: '#f0f0f2' },
+    { key: 'human',    label: 'Human',     style: 'human',   ground: 'film',     bg: '#161619', dot: '#c2b4a2' },
+    { key: 'mystic',   label: 'Mystic',    style: 'mystic',  ground: 'film',     bg: '#171338', dot: '#e8c878' },
+    { key: 'void',     label: 'Deep Void', style: 'codex',   ground: 'void',     bg: 'linear-gradient(135deg,#04060d,#0b101f)', dot: '#dce1ff' },
+    { key: 'obsidian', label: 'Obsidian',  style: 'mystic',  ground: 'obsidian', bg: 'linear-gradient(135deg,#0b0918,#171231)', dot: '#8f7fd0' },
+    { key: 'nebula',   label: 'Nebula',    style: 'mystic',  ground: 'nebula',   bg: 'linear-gradient(135deg,#1c1547,#31226b)', dot: '#c46ab4' },
+    { key: 'inkwell',  label: 'Inkwell',   style: 'human',   ground: 'inkwell',  bg: 'linear-gradient(135deg,#140f0b,#211711)', dot: '#c89650' },
   ];
   function currentStyle() {
     try { return localStorage.getItem('codex-style') || 'codex'; } catch (_) { return 'codex'; }
   }
-
-  // ── GROUND SWATCHES (2026-07-29) ─────────────────────────────
-  // The node-lab's §03 colour grounds, offered here beside Badge and
-  // Theme because this — not the dev panel, not the VIEW dropdown —
-  // is the canonical settings surface (John: "i still dont have the
-  // colors bg on the user menu"). THEME restyles the app chrome;
-  // GROUND is what the wheel floats on. Separate settings, adjacent
-  // rows. The list and the paint both come from _forgeGround, so a
-  // swatch can never disagree with what it selects.
-  function groundList() {
-    var g = window._forgeGround;
-    return (g && g.swatches) ? g.swatches : [];
-  }
   function currentGround() {
     var g = window._forgeGround;
     return g ? g.current : 'film';
+  }
+  // A look is active when BOTH halves match — so the highlight tells the
+  // truth even if a ground was set from somewhere else.
+  function currentLook() {
+    var st = currentStyle(), gr = currentGround();
+    for (var i = 0; i < LOOKS.length; i++) {
+      if (LOOKS[i].style === st && LOOKS[i].ground === gr) return LOOKS[i].key;
+    }
+    return null;
   }
 
   // ── RENDER ───────────────────────────────────────────────────
@@ -246,17 +252,10 @@
         badgeSvg(i) + '</button>';
     }).join('');
 
-    var themePicker = THEMES.map(function (t) {
-      return '<button type="button" class="folio-theme-swatch' + (t.key === currentStyle() ? ' is-active' : '') +
-        '" data-folio-theme="' + t.key + '" title="' + t.label + '" aria-label="' + t.label + '">' +
-        '<span class="folio-theme-chip" style="background:' + t.bg + '"><span class="folio-theme-dot" style="background:' + t.dot + '"></span></span>' +
-        '<span class="folio-theme-name">' + t.label + '</span>' +
-        '</button>';
-    }).join('');
-
-    var groundPicker = groundList().map(function (t) {
-      return '<button type="button" class="folio-theme-swatch' + (t.key === currentGround() ? ' is-active' : '') +
-        '" data-folio-ground="' + t.key + '" title="' + t.label + '" aria-label="' + t.label + '">' +
+    var activeLook = currentLook();
+    var themePicker = LOOKS.map(function (t) {
+      return '<button type="button" class="folio-theme-swatch' + (t.key === activeLook ? ' is-active' : '') +
+        '" data-folio-look="' + t.key + '" title="' + t.label + '" aria-label="' + t.label + '">' +
         '<span class="folio-theme-chip" style="background:' + t.bg + '"><span class="folio-theme-dot" style="background:' + t.dot + '"></span></span>' +
         '<span class="folio-theme-name">' + t.label + '</span>' +
         '</button>';
@@ -284,12 +283,6 @@
       '    <div class="folio-sect-label">Theme</div>',
       '    <div class="folio-theme-grid">' + themePicker + '</div>',
       '  </div>',
-      (groundPicker
-        ? '  <div class="folio-sect">'
-          + '    <div class="folio-sect-label">Ground</div>'
-          + '    <div class="folio-theme-grid">' + groundPicker + '</div>'
-          + '  </div>'
-        : ''),
       '</div>',
       '<div class="folio-shelf">',
       '  <div class="folio-shelf-head">',
@@ -319,22 +312,20 @@
         render();
       });
     });
-    // Theme pick — applies immediately (window.applyStyle persists to codex-style)
-    _el.querySelectorAll('[data-folio-theme]').forEach(function (btn) {
+    // Look pick — ONE click sets both halves: the chrome style and the
+    // ground. applyStyle persists to codex-style, _forgeGround.set
+    // persists to codex-ground.
+    _el.querySelectorAll('[data-folio-look]').forEach(function (btn) {
       btn.addEventListener('click', function () {
-        var key = btn.getAttribute('data-folio-theme');
-        if (typeof window.applyStyle === 'function') window.applyStyle(key);
-        document.dispatchEvent(new CustomEvent('codex:profile-changed'));   // theme is part of the cloud profile
-        render();
-      });
-    });
-    // Ground pick — _forgeGround owns the value and the persistence.
-    _el.querySelectorAll('[data-folio-ground]').forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        var key = btn.getAttribute('data-folio-ground');
+        var key = btn.getAttribute('data-folio-look');
+        var look = null;
+        for (var i = 0; i < LOOKS.length; i++) if (LOOKS[i].key === key) look = LOOKS[i];
+        if (!look) return;
+        if (typeof window.applyStyle === 'function') window.applyStyle(look.style);
         if (window._forgeGround) {
-          try { window._forgeGround.set(key); } catch (_) { /* ignore */ }
+          try { window._forgeGround.set(look.ground); } catch (_) { /* ignore */ }
         }
+        document.dispatchEvent(new CustomEvent('codex:profile-changed'));   // theme is part of the cloud profile
         render();
       });
     });

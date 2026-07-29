@@ -682,9 +682,15 @@
     dress_mid:   'orb',
     dress_small: 'orb',
     // NOTE — the GROUND is NOT a param. It is a canonical user
-    // setting (VIEW ▸ Ground), owned by view-settings.js and stored
-    // with the rest of the view state. John, 2026-07-29: "these are
-    // not dev panel". See src/js/forge/ground.js.
+    // setting (THE FOLIO ▸ Theme, merged into the look), owned by
+    // src/js/forge/ground.js. John: "these are not dev panel".
+    // THE FILM RAMP, however, IS a dev dial (LAB ▸ Film) — it is a
+    // tuning curve, not a choice of look. floor 0.12 = the film is
+    // present but faint at working zoom and ramps to full on zoom-out;
+    // floor 0 restores the original 15/30 spec exactly.
+    film_floor:            0.12,
+    film_full_pct:         15,
+    film_fade_pct:         30,
   });
 
   function render(rootEl) {
@@ -5093,10 +5099,25 @@
       // Phase 22-X (2026-05-24) — Opacity ramp: 15% / 30%.
       // John's literal spec: full opacity at gizmo 15% (and below
       // to floor 10%), 0% by gizmo 30%, linear between.
+      //
+      // 2026-07-29 — the ramp is now DIALLED, not hard-coded. John:
+      // "the film only appears in the zoom out … it's not present" and
+      // then "WHERE is the FILM RAMP SLIDER???" — fair. The three
+      // numbers that were baked in are LAB sliders now:
+      //   film_floor    opacity at working zoom (0 = the old spec)
+      //   film_full_pct gizmo % at/below which the film is fully on
+      //   film_fade_pct gizmo % at/above which it sits at the floor
+      // Default floor 0.12 = present but faint everywhere, ramping to
+      // full on zoom-out. Set floor 0 to get the original behaviour
+      // back exactly.
+      const p0 = local.params || {};
+      const fFloor = Math.max(0, Math.min(1, p0.film_floor != null ? p0.film_floor : 0));
+      const fFull  = Math.max(0.02, (p0.film_full_pct != null ? p0.film_full_pct : 15) / 100);
+      const fFade  = Math.max(fFull + 0.01, (p0.film_fade_pct != null ? p0.film_fade_pct : 30) / 100);
       let bgFade;
-      if      (zoomPct >= 0.30) bgFade = 0;
-      else if (zoomPct <= 0.15) bgFade = 1;
-      else                      bgFade = (0.30 - zoomPct) / (0.30 - 0.15);
+      if      (zoomPct >= fFade) bgFade = fFloor;
+      else if (zoomPct <= fFull) bgFade = 1;
+      else bgFade = fFloor + (1 - fFloor) * ((fFade - zoomPct) / (fFade - fFull));
       bgImage.style.opacity = bgFade.toFixed(3);
 
       // 2026-06-10 — playback follows visibility. Browsers pause muted
@@ -5114,7 +5135,10 @@
             const p = bgImage.play();
             if (p && p.catch) p.catch(() => {});
           } catch (_) {}
-        } else if (bgFade === 0 && !bgImage.paused) {
+          // 2026-07-29: threshold, not === 0. With a nonzero film floor
+          // the fade never reaches exactly zero, so an equality test
+          // would keep the decoder running at every zoom forever.
+        } else if (bgFade < 0.02 && !bgImage.paused) {
           try { bgImage.pause(); } catch (_) {}
         }
       }
