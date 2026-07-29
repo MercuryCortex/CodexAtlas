@@ -675,12 +675,10 @@
     dress_hub:   'orb',
     dress_mid:   'orb',
     dress_small: 'orb',
-    // THE GROUND (2026-07-29) — the node-lab's §03 colour schemes,
-    // pickable in the LAB panel. 'film' = the ambient bg movie =
-    // today's look, so the default changes nothing (honest zeros).
-    // The other four (void · obsidian · nebula · inkwell) are
-    // transcribed verbatim in src/js/forge/ground.js.
-    ground_theme: 'film',
+    // NOTE — the GROUND is NOT a param. It is a canonical user
+    // setting (VIEW ▸ Ground), owned by view-settings.js and stored
+    // with the rest of the view state. John, 2026-07-29: "these are
+    // not dev panel". See src/js/forge/ground.js.
   });
 
   function render(rootEl) {
@@ -1168,6 +1166,17 @@
           // Phase 22-M (2026-05-24) — denser tick cadence (more
           // dates onscreen as you zoom in). Off = auto cadence.
           '<button class="forge-viewset-row fv-timeline-only" data-toggle="tlDenseTicks"><span class="vs-check"></span>Dense date ticks</button>' +
+          '<div class="forge-viewset-divider"></div>' +
+          // 2026-07-29 — THE GROUND. The node-lab's §03 colour
+          // schemes, promoted out of the dev panel into the canonical
+          // settings (John: "these are not dev panel"). Film — the
+          // ambient movie — stays the standing default.
+          '<div class="forge-viewset-section">Ground</div>' +
+          '<button class="forge-viewset-row" data-ground="film"><span class="vs-radio"></span>Film <em>(ambient movie — default)</em></button>' +
+          '<button class="forge-viewset-row" data-ground="void"><span class="vs-radio"></span>Deep Void <em>(starfield)</em></button>' +
+          '<button class="forge-viewset-row" data-ground="obsidian"><span class="vs-radio"></span>Obsidian</button>' +
+          '<button class="forge-viewset-row" data-ground="nebula"><span class="vs-radio"></span>Nebula</button>' +
+          '<button class="forge-viewset-row" data-ground="inkwell"><span class="vs-radio"></span>Inkwell</button>' +
           '<div class="forge-viewset-divider"></div>' +
           '<div class="forge-viewset-section">Color theme</div>' +
           '<button class="forge-viewset-row" data-color="default"><span class="vs-radio"></span>Atlas <em>(curated)</em></button>' +

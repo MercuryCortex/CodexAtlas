@@ -50,6 +50,47 @@
   // read as flicker, not sky).
   function srand(i) { const x = Math.sin(i * 127.1 + 311.7) * 43758.5453; return x - Math.floor(x); }
 
+  // ── WHY THIS IS NOT A canvas createLinearGradient ────────────
+  // John, 2026-07-29: "there's a lot of banding in these gradients".
+  // He is right and it is not fixable by nudging colours. These
+  // grounds travel only ~6-15 of the 256 available levels across a
+  // whole screen height (#04060d → #0a0e1c), so 8-bit output has
+  // literally 6-15 steps to spend on ~900px — each band is 60-150px
+  // wide and the eye reads every edge (Mach banding exaggerates it).
+  // Canvas gradients are quantised to 8 bits at fill time, so
+  // post-processing the result can only smear bands that already
+  // exist. The fix is to never let them form: compute the gradient
+  // in FLOAT here and apply an ordered (Bayer 8×8) dither at the
+  // moment of quantisation, so the boundary between two levels is
+  // traded for a fine, stable stipple. This is exactly what GPUs do
+  // for gradient skies. Amplitude is ±0.5 of one level — invisible
+  // as texture, decisive against banding.
+  //
+  // Ordered, NOT random: a random dither re-rolls on every repaint
+  // and would shimmer on resize; the Bayer matrix is fixed, so the
+  // ground is byte-identical every time it is painted.
+  const BAYER8 = new Uint8Array([
+     0, 32,  8, 40,  2, 34, 10, 42,
+    48, 16, 56, 24, 50, 18, 58, 26,
+    12, 44,  4, 36, 14, 46,  6, 38,
+    60, 28, 52, 20, 62, 30, 54, 22,
+     3, 35, 11, 43,  1, 33,  9, 41,
+    51, 19, 59, 27, 49, 17, 57, 25,
+    15, 47,  7, 39, 13, 45,  5, 37,
+    63, 31, 55, 23, 61, 29, 53, 21,
+  ]);
+
+  function hex(h) {
+    return [parseInt(h.slice(1, 3), 16), parseInt(h.slice(3, 5), 16), parseInt(h.slice(5, 7), 16)];
+  }
+  // 'rgba(r,g,b,a)' → [r,g,b,a]
+  function rgba(s) {
+    const m = s.match(/rgba?\(([^)]+)\)/);
+    if (!m) return [0, 0, 0, 0];
+    const p = m[1].split(',').map(v => parseFloat(v));
+    return [p[0] || 0, p[1] || 0, p[2] || 0, p.length > 3 ? p[3] : 1];
+  }
+
   let cv = null;      // the ground canvas
   let current = 'film';
 
@@ -68,35 +109,71 @@
     return cv;
   }
 
-  // paintBG — the lab function, transcribed. Note the tint args the
-  // lab uses for its isolate-state experiments are intentionally
-  // dropped: the Atlas has no isolate ground tint yet.
+  // paintBG — the lab's composition (vertical A→B ramp, then a
+  // radial glow at 72%/15% of radius 0.8w, then the starfield),
+  // reproduced in float and dithered on write. The lab's isolate
+  // tint args are intentionally dropped: the Atlas has no isolate
+  // ground tint yet.
+  //
+  // Canvas gradients interpolate with premultiplied alpha, so the
+  // glow's colour→transparent stop holds its hue and only its ALPHA
+  // ramps to zero — that is what the float model below reproduces.
   function paint() {
     const T = THEMES[current];
     if (!T || !cv) return;
     const dpr = Math.max(1, window.devicePixelRatio || 1);
-    const w = Math.max(1, Math.round(window.innerWidth));
-    const h = Math.max(1, Math.round(window.innerHeight));
-    if (cv.width !== w * dpr || cv.height !== h * dpr) {
-      cv.width = w * dpr; cv.height = h * dpr;
-    }
+    const cssW = Math.max(1, Math.round(window.innerWidth));
+    const cssH = Math.max(1, Math.round(window.innerHeight));
+    const W = Math.max(1, Math.round(cssW * dpr));
+    const H = Math.max(1, Math.round(cssH * dpr));
+    if (cv.width !== W || cv.height !== H) { cv.width = W; cv.height = H; }
     const ctx = cv.getContext('2d');
     if (!ctx) return;
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    ctx.clearRect(0, 0, w, h);
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    ctx.clearRect(0, 0, W, H);
 
-    const g = ctx.createLinearGradient(0, 0, 0, h);
-    g.addColorStop(0, T.a); g.addColorStop(1, T.b);
-    ctx.fillStyle = g; ctx.fillRect(0, 0, w, h);
+    const A = hex(T.a), B = hex(T.b), G = rgba(T.glow);
+    const gx = W * 0.72, gy = H * 0.15, gr = W * 0.8;
+    const img = ctx.createImageData(W, H);
+    const px = img.data;
+    const denomY = H > 1 ? H - 1 : 1;
 
-    const r = ctx.createRadialGradient(w * 0.72, h * 0.15, 0, w * 0.72, h * 0.15, w * 0.8);
-    r.addColorStop(0, T.glow); r.addColorStop(1, 'rgba(0,0,0,0)');
-    ctx.fillStyle = r; ctx.fillRect(0, 0, w, h);
+    let p = 0;
+    for (let y = 0; y < H; y++) {
+      const ty = y / denomY;
+      // the vertical ramp — constant across the row
+      const br = A[0] + (B[0] - A[0]) * ty;
+      const bg = A[1] + (B[1] - A[1]) * ty;
+      const bb = A[2] + (B[2] - A[2]) * ty;
+      const dy = y - gy, dy2 = dy * dy;
+      const bRow = (y & 7) * 8;
+      for (let x = 0; x < W; x++) {
+        const dx = x - gx;
+        let a = 1 - Math.sqrt(dx * dx + dy2) / gr;   // linear stop → radius
+        a = a > 0 ? a * G[3] : 0;
+        const ia = 1 - a;
+        // ordered dither, ±half a level, applied AT quantisation
+        const d = (BAYER8[bRow + (x & 7)] + 0.5) * 0.015625 - 0.5;   // /64 - .5
+        let r = G[0] * a + br * ia + d;
+        let g = G[1] * a + bg * ia + d;
+        let b = G[2] * a + bb * ia + d;
+        r = r < 0 ? 0 : r > 255 ? 255 : r;
+        g = g < 0 ? 0 : g > 255 ? 255 : g;
+        b = b < 0 ? 0 : b > 255 ? 255 : b;
+        px[p++] = (r + 0.5) | 0;
+        px[p++] = (g + 0.5) | 0;
+        px[p++] = (b + 0.5) | 0;
+        px[p++] = 255;
+      }
+    }
+    ctx.putImageData(img, 0, 0);
 
+    // Stars ride on top in CSS px (the lab's own field, 1px each).
     if (T.star) {
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       for (let i = 0; i < 110; i++) {
         ctx.fillStyle = 'rgba(220,225,255,' + (0.04 + srand(i) * 0.14) + ')';
-        ctx.fillRect(srand(i * 3 + 1) * w, srand(i * 7 + 2) * h, 1, 1);
+        ctx.fillRect(srand(i * 3 + 1) * cssW, srand(i * 7 + 2) * cssH, 1, 1);
       }
     }
   }

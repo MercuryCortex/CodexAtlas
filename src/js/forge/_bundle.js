@@ -2879,7 +2879,18 @@
     if (typeof state.tlBands            !== 'boolean') state.tlBands            = true;
     if (typeof state.tlBandLabels       !== 'boolean') state.tlBandLabels       = true;
     if (typeof state.tlDenseTicks       !== 'boolean') state.tlDenseTicks       = false;
+    // 2026-07-29 — THE GROUND lives here, not in the LAB panel
+    // (John: "these are not dev panel"). 'film' = the ambient bg
+    // movie = the standing default; the four colour grounds are the
+    // node-lab's §03 schemes, painted by _forgeGround.
+    if (typeof state.ground !== 'string') state.ground = 'film';
     function applyState() {
+      if (window._forgeGround) {
+        try { window._forgeGround.apply(state.ground); } catch (_) {}
+      }
+      panel.querySelectorAll('.forge-viewset-row[data-ground]').forEach(row => {
+        row.classList.toggle('is-on', row.dataset.ground === state.ground);
+      });
       document.body.classList.toggle('fv-hide-hulls',         !state.hulls);
       document.body.classList.toggle('fv-hide-family-titles', !state.familyTitles);
       const noDividers = !state.dividers && !state.dividersConverging;
@@ -3026,6 +3037,14 @@
         if (key === 'dividersConverging' && state.dividersConverging) {
           state.dividers = false;
         }
+        applyState();
+        return;
+      }
+      // 2026-07-29 — ground radio (film · void · obsidian · nebula · inkwell).
+      if (row.dataset.ground) {
+        const v = row.dataset.ground;
+        if (state.ground === v) return;
+        state.ground = v;
         applyState();
         return;
       }
@@ -4925,6 +4944,47 @@
   // read as flicker, not sky).
   function srand(i) { const x = Math.sin(i * 127.1 + 311.7) * 43758.5453; return x - Math.floor(x); }
 
+  // ── WHY THIS IS NOT A canvas createLinearGradient ────────────
+  // John, 2026-07-29: "there's a lot of banding in these gradients".
+  // He is right and it is not fixable by nudging colours. These
+  // grounds travel only ~6-15 of the 256 available levels across a
+  // whole screen height (#04060d → #0a0e1c), so 8-bit output has
+  // literally 6-15 steps to spend on ~900px — each band is 60-150px
+  // wide and the eye reads every edge (Mach banding exaggerates it).
+  // Canvas gradients are quantised to 8 bits at fill time, so
+  // post-processing the result can only smear bands that already
+  // exist. The fix is to never let them form: compute the gradient
+  // in FLOAT here and apply an ordered (Bayer 8×8) dither at the
+  // moment of quantisation, so the boundary between two levels is
+  // traded for a fine, stable stipple. This is exactly what GPUs do
+  // for gradient skies. Amplitude is ±0.5 of one level — invisible
+  // as texture, decisive against banding.
+  //
+  // Ordered, NOT random: a random dither re-rolls on every repaint
+  // and would shimmer on resize; the Bayer matrix is fixed, so the
+  // ground is byte-identical every time it is painted.
+  const BAYER8 = new Uint8Array([
+     0, 32,  8, 40,  2, 34, 10, 42,
+    48, 16, 56, 24, 50, 18, 58, 26,
+    12, 44,  4, 36, 14, 46,  6, 38,
+    60, 28, 52, 20, 62, 30, 54, 22,
+     3, 35, 11, 43,  1, 33,  9, 41,
+    51, 19, 59, 27, 49, 17, 57, 25,
+    15, 47,  7, 39, 13, 45,  5, 37,
+    63, 31, 55, 23, 61, 29, 53, 21,
+  ]);
+
+  function hex(h) {
+    return [parseInt(h.slice(1, 3), 16), parseInt(h.slice(3, 5), 16), parseInt(h.slice(5, 7), 16)];
+  }
+  // 'rgba(r,g,b,a)' → [r,g,b,a]
+  function rgba(s) {
+    const m = s.match(/rgba?\(([^)]+)\)/);
+    if (!m) return [0, 0, 0, 0];
+    const p = m[1].split(',').map(v => parseFloat(v));
+    return [p[0] || 0, p[1] || 0, p[2] || 0, p.length > 3 ? p[3] : 1];
+  }
+
   let cv = null;      // the ground canvas
   let current = 'film';
 
@@ -4943,35 +5003,71 @@
     return cv;
   }
 
-  // paintBG — the lab function, transcribed. Note the tint args the
-  // lab uses for its isolate-state experiments are intentionally
-  // dropped: the Atlas has no isolate ground tint yet.
+  // paintBG — the lab's composition (vertical A→B ramp, then a
+  // radial glow at 72%/15% of radius 0.8w, then the starfield),
+  // reproduced in float and dithered on write. The lab's isolate
+  // tint args are intentionally dropped: the Atlas has no isolate
+  // ground tint yet.
+  //
+  // Canvas gradients interpolate with premultiplied alpha, so the
+  // glow's colour→transparent stop holds its hue and only its ALPHA
+  // ramps to zero — that is what the float model below reproduces.
   function paint() {
     const T = THEMES[current];
     if (!T || !cv) return;
     const dpr = Math.max(1, window.devicePixelRatio || 1);
-    const w = Math.max(1, Math.round(window.innerWidth));
-    const h = Math.max(1, Math.round(window.innerHeight));
-    if (cv.width !== w * dpr || cv.height !== h * dpr) {
-      cv.width = w * dpr; cv.height = h * dpr;
-    }
+    const cssW = Math.max(1, Math.round(window.innerWidth));
+    const cssH = Math.max(1, Math.round(window.innerHeight));
+    const W = Math.max(1, Math.round(cssW * dpr));
+    const H = Math.max(1, Math.round(cssH * dpr));
+    if (cv.width !== W || cv.height !== H) { cv.width = W; cv.height = H; }
     const ctx = cv.getContext('2d');
     if (!ctx) return;
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    ctx.clearRect(0, 0, w, h);
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    ctx.clearRect(0, 0, W, H);
 
-    const g = ctx.createLinearGradient(0, 0, 0, h);
-    g.addColorStop(0, T.a); g.addColorStop(1, T.b);
-    ctx.fillStyle = g; ctx.fillRect(0, 0, w, h);
+    const A = hex(T.a), B = hex(T.b), G = rgba(T.glow);
+    const gx = W * 0.72, gy = H * 0.15, gr = W * 0.8;
+    const img = ctx.createImageData(W, H);
+    const px = img.data;
+    const denomY = H > 1 ? H - 1 : 1;
 
-    const r = ctx.createRadialGradient(w * 0.72, h * 0.15, 0, w * 0.72, h * 0.15, w * 0.8);
-    r.addColorStop(0, T.glow); r.addColorStop(1, 'rgba(0,0,0,0)');
-    ctx.fillStyle = r; ctx.fillRect(0, 0, w, h);
+    let p = 0;
+    for (let y = 0; y < H; y++) {
+      const ty = y / denomY;
+      // the vertical ramp — constant across the row
+      const br = A[0] + (B[0] - A[0]) * ty;
+      const bg = A[1] + (B[1] - A[1]) * ty;
+      const bb = A[2] + (B[2] - A[2]) * ty;
+      const dy = y - gy, dy2 = dy * dy;
+      const bRow = (y & 7) * 8;
+      for (let x = 0; x < W; x++) {
+        const dx = x - gx;
+        let a = 1 - Math.sqrt(dx * dx + dy2) / gr;   // linear stop → radius
+        a = a > 0 ? a * G[3] : 0;
+        const ia = 1 - a;
+        // ordered dither, ±half a level, applied AT quantisation
+        const d = (BAYER8[bRow + (x & 7)] + 0.5) * 0.015625 - 0.5;   // /64 - .5
+        let r = G[0] * a + br * ia + d;
+        let g = G[1] * a + bg * ia + d;
+        let b = G[2] * a + bb * ia + d;
+        r = r < 0 ? 0 : r > 255 ? 255 : r;
+        g = g < 0 ? 0 : g > 255 ? 255 : g;
+        b = b < 0 ? 0 : b > 255 ? 255 : b;
+        px[p++] = (r + 0.5) | 0;
+        px[p++] = (g + 0.5) | 0;
+        px[p++] = (b + 0.5) | 0;
+        px[p++] = 255;
+      }
+    }
+    ctx.putImageData(img, 0, 0);
 
+    // Stars ride on top in CSS px (the lab's own field, 1px each).
     if (T.star) {
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       for (let i = 0; i < 110; i++) {
         ctx.fillStyle = 'rgba(220,225,255,' + (0.04 + srand(i) * 0.14) + ')';
-        ctx.fillRect(srand(i * 3 + 1) * w, srand(i * 7 + 2) * h, 1, 1);
+        ctx.fillRect(srand(i * 3 + 1) * cssW, srand(i * 7 + 2) * cssH, 1, 1);
       }
     }
   }
@@ -5018,6 +5114,17 @@
 // open the app with `?lab` in the URL and this panel appears,
 // driving the live NODE_SHADER recipe (local.params.recipe_*)
 // on the real 663-deity wheel.
+//
+// 2026-07-29 — the dials are grouped into COLLAPSIBLE SECTIONS by
+// area of interest (John: "make collapsable each area of interest —
+// to easy focus; nodes is nodes related, wires is wires"). The
+// section a dial belongs to is declared once, in SECTIONS below;
+// there is no second list to keep in sync. Open/closed state is
+// remembered per section.
+//
+// The GROUND is NOT here. It graduated to the canonical VIEW panel
+// on 2026-07-29 (John: "these are not dev panel") — see
+// src/js/forge/view-settings.js + src/js/forge/ground.js.
 //
 // BOUNDARY CONTRACT:
 //   window._forgeLabPanel.attach({ local, api })
@@ -5086,29 +5193,63 @@
       ['dress_mid',   'Mid'],
       ['dress_small', 'Small'],
     ];
-    // The GROUND — the lab's §03 colour schemes (2026-07-29). 'film'
-    // is the ambient bg movie = today's look = the honest-zero
-    // default; the other four are `_forgeGround`'s verbatim
-    // transcriptions of the lab THEMES.
-    const GROUNDS = ['film', 'void', 'obsidian', 'nebula', 'inkwell'];
-    // The lab's own §03 swatch gradients — the chip shows the ground
-    // it selects. 'film' has no swatch (it is a movie, not a colour).
-    const GROUND_SWATCH = {
-      void:     'linear-gradient(135deg,#04060d,#0b101f)',
-      obsidian: 'linear-gradient(135deg,#0b0918,#171231)',
-      nebula:   'linear-gradient(135deg,#1c1547,#31226b)',
-      inkwell:  'linear-gradient(135deg,#140f0b,#211711)',
-    };
+
+    // ── THE SECTIONS ────────────────────────────────────────────
+    // One area of interest per section, in the order John reaches
+    // for them. `open` is only the FIRST-RUN state — after that his
+    // own collapse choices win (persisted below). Every slider key
+    // must appear exactly once; anything not listed would silently
+    // never render, so the builder asserts on that at the end.
+    const SECTIONS = [
+      { id: 'nodes', title: 'Nodes', open: true, items: [
+        { k: 'slider', key: 'recipe_hover_zoom' },
+        { k: 'slider', key: 'recipe_click_zoom' },
+        { k: 'slider', key: 'recipe_bubble' },
+        { k: 'slider', key: 'recipe_gate_px' },
+        { k: 'slider', key: 'recipe_core_white' },
+        { k: 'slider', key: 'recipe_core_alpha' },
+        { k: 'slider', key: 'recipe_ring_alpha' },
+        { k: 'casts' },
+      ] },
+      { id: 'light', title: 'Light', open: true, items: [
+        { k: 'slider', key: 'recipe_glow' },
+        { k: 'slider', key: 'recipe_pulse' },
+        { k: 'slider', key: 'recipe_glow_reach' },
+        { k: 'slider', key: 'recipe_ether' },
+        { k: 'slider', key: 'recipe_fin_strength' },
+        { k: 'slider', key: 'recipe_chroma_px' },
+        { k: 'toggles', keys: ['recipe_irid', 'recipe_chroma'] },
+      ] },
+      { id: 'glass', title: 'Glass — the orb lens', open: false, items: [
+        { k: 'slider', key: 'recipe_mag' },
+        { k: 'slider', key: 'recipe_frost' },
+        { k: 'slider', key: 'recipe_depth' },
+      ] },
+      { id: 'wake', title: 'Wake', open: false, items: [
+        { k: 'slider', key: 'recipe_wake_radius_px' },
+        { k: 'slider', key: 'recipe_wake_cap' },
+      ] },
+      { id: 'wires', title: 'Wires', open: false, items: [
+        { k: 'slider', key: 'recipe_wire_calm' },
+        { k: 'slider', key: 'recipe_hot_wire' },
+      ] },
+      { id: 'sizes', title: 'Sizes', open: false, items: [
+        { k: 'slider', key: 'node_max_screen_px_hub' },
+        { k: 'slider', key: 'node_max_screen_px_mid' },
+        { k: 'slider', key: 'node_max_screen_px_small' },
+      ] },
+      { id: 'labels', title: 'Labels', open: false, items: [
+        { k: 'toggles', keys: ['recipe_label'] },
+        { k: 'voices' },
+      ] },
+    ];
+
     const defaults = {};
     for (const [k] of SLIDERS) defaults[k] = local.params[k];
     for (const [k] of TOGGLES) defaults[k] = local.params[k];
     for (const [k] of CASTS)   defaults[k] = local.params[k];
     for (const [k] of VOICES)  defaults[k] = local.params[k];
-    defaults.ground_theme = local.params.ground_theme;
     const ALL_KEYS = Object.keys(defaults);
-    function applyGround() {
-      if (window._forgeGround) window._forgeGround.apply(local.params.ground_theme);
-    }
 
     // Persistence — John's dials must survive a reload (they reset
     // from PARAM_DEFAULTS every mount otherwise). The recipe line
@@ -5126,9 +5267,18 @@
       // Applied after mount ⇒ radii/dress may be stale — refresh once.
       if (local.mode) { api.refreshDress(); if (api.rebake) api.rebake(); }
     }
-    // The ground follows local.params (ONE source of truth) — apply
-    // whatever survived the restore, panel open or not.
-    applyGround();
+    // Which sections are open — remembered separately from the
+    // recipe, because it is workspace state, not a spec value.
+    const OPEN_KEY = 'forge.labPanel.open.v1';
+    let openState = null;
+    try { openState = JSON.parse(localStorage.getItem(OPEN_KEY) || 'null'); } catch (_) { /* ignore */ }
+    if (!openState || typeof openState !== 'object') {
+      openState = {};
+      for (const s of SECTIONS) openState[s.id] = !!s.open;
+    }
+    function persistOpen() {
+      try { localStorage.setItem(OPEN_KEY, JSON.stringify(openState)); } catch (_) { /* ignore */ }
+    }
 
     const css = document.createElement('style');
     css.id = 'forge-lab-panel-css';
@@ -5152,20 +5302,20 @@
       'width:10px;height:10px;margin-top:-4px;border-radius:50%;background:#d3b877;border:none}',
       '#forge-lab-panel input[type=range]::-moz-range-track{height:2px;border-radius:1px;background:rgba(145,138,180,.35)}',
       '#forge-lab-panel input[type=range]::-moz-range-thumb{width:10px;height:10px;border-radius:50%;background:#d3b877;border:none}',
-      // Ground chips carry their own swatch as an inline background,
-      // so the gold FILL cannot signal selection — a gold ring does
-      // (the lab's own .sw.on treatment).
-      '#forge-lab-panel .lp-chip.lp-ground{color:#c9c3e4;text-shadow:0 1px 2px rgba(0,0,0,.9)}',
-      // background:transparent here so FILM (the one ground with no
-      // inline swatch) does not inherit the generic .on gold FILL and
-      // end up pale-on-gold — every ground signals with the ring.
-      '#forge-lab-panel .lp-chip.lp-ground.on{color:#f0e2bd;background:transparent;',
-      'border-color:#d3b877;box-shadow:0 0 0 1px #d3b877}',
       '#forge-lab-panel .lp-chips{display:flex;gap:4px;flex-wrap:wrap;margin:6px 0}',
       '#forge-lab-panel .lp-chip{font:8.5px ui-monospace,Menlo,monospace;letter-spacing:.1em;text-transform:uppercase;',
       'padding:4px 7px;border-radius:2px;cursor:pointer;background:transparent;color:#918ab4;border:1px solid rgba(145,138,180,.35)}',
       '#forge-lab-panel .lp-chip.on{color:#231b08;background:#d3b877;border-color:#d3b877}',
       '#forge-lab-panel .lp-cast{margin:4px 0 2px;font-size:8px;text-transform:uppercase;color:#5e5885}',
+      // ── collapsible section headers ──
+      '#forge-lab-panel .lp-sec{width:100%;display:flex;align-items:center;gap:6px;margin:9px 0 0;padding:5px 0;',
+      'background:none;border:none;border-top:1px solid rgba(211,184,119,.16);cursor:pointer;',
+      'font:9px ui-monospace,Menlo,monospace;letter-spacing:.18em;text-transform:uppercase;color:#d3b877;text-align:left}',
+      '#forge-lab-panel .lp-sec:hover{color:#f0e2bd}',
+      '#forge-lab-panel .lp-sec .lp-caret{display:inline-block;width:8px;color:#5e5885;transition:transform .12s ease-out}',
+      '#forge-lab-panel .lp-sec.open .lp-caret{transform:rotate(90deg);color:#d3b877}',
+      '#forge-lab-panel .lp-secbody{display:none;padding-bottom:2px}',
+      '#forge-lab-panel .lp-secbody.open{display:block}',
       '#forge-lab-panel .lp-recipe{margin-top:10px;padding:6px 8px;border:1px dashed rgba(211,184,119,.3);border-radius:3px;',
       'font-size:8.5px;line-height:1.5;color:#918ab4;word-break:break-word;user-select:all}',
       '#forge-lab-panel .lp-btns{display:flex;gap:6px;margin-top:8px}',
@@ -5205,12 +5355,21 @@
         + ' · wake ' + Math.round(p.recipe_wake_radius_px) + 'px cap ' + Math.round(p.recipe_wake_cap)
         + ' · gate ' + Math.round(p.recipe_gate_px) + 'px'
         + ' · core w ' + p.recipe_core_white.toFixed(2) + ' a ' + p.recipe_core_alpha.toFixed(2)
-        + ' · ring a ' + p.recipe_ring_alpha.toFixed(2)
-        + ' · ground ' + (p.ground_theme || 'film');
+        + ' · ring a ' + p.recipe_ring_alpha.toFixed(2);
     }
     function syncRecipe() { recipeEl.textContent = recipeStr(); }
 
-    for (const [key, label, min, max, step, unit, mode] of SLIDERS) {
+    // ── builders (unchanged behaviour; they just append into a
+    //    section body now instead of straight into the panel) ──
+    const SLIDER_BY_KEY = {};
+    for (const s of SLIDERS) SLIDER_BY_KEY[s[0]] = s;
+    const used = new Set();
+
+    function addSlider(host, key) {
+      const spec = SLIDER_BY_KEY[key];
+      if (!spec) return;
+      used.add(key);
+      const [, label, min, max, step, unit, mode] = spec;
       const row = document.createElement('div');
       row.className = 'lp-row';
       row.innerHTML = '<span>' + label + '</span><b></b>';
@@ -5228,54 +5387,34 @@
         else if (mode === 'refocus' && api.refocus) api.refocus();
         else api.redraw();
       });
-      el.appendChild(row); el.appendChild(inp);
+      host.appendChild(row); host.appendChild(inp);
     }
 
-    const tog = document.createElement('div');
-    tog.className = 'lp-chips';
-    for (const [key, label] of TOGGLES) {
-      const b = document.createElement('button');
-      b.className = 'lp-chip' + (local.params[key] ? ' on' : '');
-      b.textContent = label;
-      b.addEventListener('click', () => {
-        local.params[key] = local.params[key] ? 0 : 1;
-        b.classList.toggle('on', !!local.params[key]);
-        syncRecipe();
-        persist();
-        api.redraw();
-      });
-      tog.appendChild(b);
-    }
-    el.appendChild(tog);
-
-    for (const [key, label] of CASTS) {
-      const cap = document.createElement('div');
-      cap.className = 'lp-cast'; cap.textContent = 'Cast — ' + label;
-      el.appendChild(cap);
-      const row = document.createElement('div');
-      row.className = 'lp-chips';
-      for (const d of DRESSES) {
+    function addToggles(host, keys) {
+      const tog = document.createElement('div');
+      tog.className = 'lp-chips';
+      for (const key of keys) {
+        const spec = TOGGLES.find(t => t[0] === key);
+        if (!spec) continue;
         const b = document.createElement('button');
-        b.className = 'lp-chip' + (local.params[key] === d ? ' on' : '');
-        b.dataset.k = key; b.dataset.d = d;
-        b.textContent = d;
+        b.className = 'lp-chip' + (local.params[key] ? ' on' : '');
+        b.textContent = spec[1];
         b.addEventListener('click', () => {
-          local.params[key] = d;
-          for (const s of row.children) s.classList.toggle('on', s.dataset.d === d);
+          local.params[key] = local.params[key] ? 0 : 1;
+          b.classList.toggle('on', !!local.params[key]);
           syncRecipe();
           persist();
-          api.refreshDress();
           api.redraw();
         });
-        row.appendChild(b);
+        tog.appendChild(b);
       }
-      el.appendChild(row);
+      host.appendChild(tog);
     }
 
-    for (const [key, label, opts] of VOICES) {
+    function addRadioRow(host, key, caption, opts, after) {
       const cap = document.createElement('div');
-      cap.className = 'lp-cast'; cap.textContent = label;
-      el.appendChild(cap);
+      cap.className = 'lp-cast'; cap.textContent = caption;
+      host.appendChild(cap);
       const row = document.createElement('div');
       row.className = 'lp-chips';
       for (const d of opts) {
@@ -5288,39 +5427,44 @@
           for (const s of row.children) s.classList.toggle('on', s.dataset.d === d);
           syncRecipe();
           persist();
+          if (after) after();
           api.redraw();
         });
         row.appendChild(b);
       }
-      el.appendChild(row);
+      host.appendChild(row);
     }
 
-    {
-      const cap = document.createElement('div');
-      cap.className = 'lp-cast'; cap.textContent = 'Ground';
-      el.appendChild(cap);
-      const row = document.createElement('div');
-      row.className = 'lp-chips';
-      for (const g of GROUNDS) {
-        const b = document.createElement('button');
-        b.className = 'lp-chip lp-ground' + (local.params.ground_theme === g ? ' on' : '');
-        b.dataset.d = g;
-        b.textContent = g;
-        // A swatch of the real thing, so the row reads as colour
-        // rather than as five words (film keeps the panel's own ink).
-        const sw = GROUND_SWATCH[g];
-        if (sw) b.style.background = sw;
-        b.addEventListener('click', () => {
-          local.params.ground_theme = g;
-          for (const s of row.children) s.classList.toggle('on', s.dataset.d === g);
-          applyGround();
-          syncRecipe();
-          persist();
-          api.redraw();
-        });
-        row.appendChild(b);
+    for (const sec of SECTIONS) {
+      const head = document.createElement('button');
+      head.className = 'lp-sec' + (openState[sec.id] ? ' open' : '');
+      head.innerHTML = '<span class="lp-caret">▸</span><span>' + sec.title + '</span>';
+      const body = document.createElement('div');
+      body.className = 'lp-secbody' + (openState[sec.id] ? ' open' : '');
+      head.addEventListener('click', () => {
+        openState[sec.id] = !openState[sec.id];
+        head.classList.toggle('open', openState[sec.id]);
+        body.classList.toggle('open', openState[sec.id]);
+        persistOpen();
+      });
+      el.appendChild(head); el.appendChild(body);
+
+      for (const it of sec.items) {
+        if (it.k === 'slider')  addSlider(body, it.key);
+        else if (it.k === 'toggles') addToggles(body, it.keys);
+        else if (it.k === 'casts') {
+          for (const [key, label] of CASTS) {
+            addRadioRow(body, key, 'Cast — ' + label, DRESSES, api.refreshDress);
+          }
+        } else if (it.k === 'voices') {
+          for (const [key, label, opts] of VOICES) addRadioRow(body, key, label, opts);
+        }
       }
-      el.appendChild(row);
+    }
+    // A dial that fell out of SECTIONS would vanish from the panel
+    // silently — loud in the console instead.
+    for (const [k] of SLIDERS) {
+      if (!used.has(k)) console.warn('[lab-panel] slider not placed in any section:', k);
     }
 
     recipeEl.className = 'lp-recipe';

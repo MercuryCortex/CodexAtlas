@@ -8,6 +8,17 @@
 // driving the live NODE_SHADER recipe (local.params.recipe_*)
 // on the real 663-deity wheel.
 //
+// 2026-07-29 — the dials are grouped into COLLAPSIBLE SECTIONS by
+// area of interest (John: "make collapsable each area of interest —
+// to easy focus; nodes is nodes related, wires is wires"). The
+// section a dial belongs to is declared once, in SECTIONS below;
+// there is no second list to keep in sync. Open/closed state is
+// remembered per section.
+//
+// The GROUND is NOT here. It graduated to the canonical VIEW panel
+// on 2026-07-29 (John: "these are not dev panel") — see
+// src/js/forge/view-settings.js + src/js/forge/ground.js.
+//
 // BOUNDARY CONTRACT:
 //   window._forgeLabPanel.attach({ local, api })
 //     local — forge.js per-mount state (reads/writes local.params)
@@ -75,29 +86,63 @@
       ['dress_mid',   'Mid'],
       ['dress_small', 'Small'],
     ];
-    // The GROUND — the lab's §03 colour schemes (2026-07-29). 'film'
-    // is the ambient bg movie = today's look = the honest-zero
-    // default; the other four are `_forgeGround`'s verbatim
-    // transcriptions of the lab THEMES.
-    const GROUNDS = ['film', 'void', 'obsidian', 'nebula', 'inkwell'];
-    // The lab's own §03 swatch gradients — the chip shows the ground
-    // it selects. 'film' has no swatch (it is a movie, not a colour).
-    const GROUND_SWATCH = {
-      void:     'linear-gradient(135deg,#04060d,#0b101f)',
-      obsidian: 'linear-gradient(135deg,#0b0918,#171231)',
-      nebula:   'linear-gradient(135deg,#1c1547,#31226b)',
-      inkwell:  'linear-gradient(135deg,#140f0b,#211711)',
-    };
+
+    // ── THE SECTIONS ────────────────────────────────────────────
+    // One area of interest per section, in the order John reaches
+    // for them. `open` is only the FIRST-RUN state — after that his
+    // own collapse choices win (persisted below). Every slider key
+    // must appear exactly once; anything not listed would silently
+    // never render, so the builder asserts on that at the end.
+    const SECTIONS = [
+      { id: 'nodes', title: 'Nodes', open: true, items: [
+        { k: 'slider', key: 'recipe_hover_zoom' },
+        { k: 'slider', key: 'recipe_click_zoom' },
+        { k: 'slider', key: 'recipe_bubble' },
+        { k: 'slider', key: 'recipe_gate_px' },
+        { k: 'slider', key: 'recipe_core_white' },
+        { k: 'slider', key: 'recipe_core_alpha' },
+        { k: 'slider', key: 'recipe_ring_alpha' },
+        { k: 'casts' },
+      ] },
+      { id: 'light', title: 'Light', open: true, items: [
+        { k: 'slider', key: 'recipe_glow' },
+        { k: 'slider', key: 'recipe_pulse' },
+        { k: 'slider', key: 'recipe_glow_reach' },
+        { k: 'slider', key: 'recipe_ether' },
+        { k: 'slider', key: 'recipe_fin_strength' },
+        { k: 'slider', key: 'recipe_chroma_px' },
+        { k: 'toggles', keys: ['recipe_irid', 'recipe_chroma'] },
+      ] },
+      { id: 'glass', title: 'Glass — the orb lens', open: false, items: [
+        { k: 'slider', key: 'recipe_mag' },
+        { k: 'slider', key: 'recipe_frost' },
+        { k: 'slider', key: 'recipe_depth' },
+      ] },
+      { id: 'wake', title: 'Wake', open: false, items: [
+        { k: 'slider', key: 'recipe_wake_radius_px' },
+        { k: 'slider', key: 'recipe_wake_cap' },
+      ] },
+      { id: 'wires', title: 'Wires', open: false, items: [
+        { k: 'slider', key: 'recipe_wire_calm' },
+        { k: 'slider', key: 'recipe_hot_wire' },
+      ] },
+      { id: 'sizes', title: 'Sizes', open: false, items: [
+        { k: 'slider', key: 'node_max_screen_px_hub' },
+        { k: 'slider', key: 'node_max_screen_px_mid' },
+        { k: 'slider', key: 'node_max_screen_px_small' },
+      ] },
+      { id: 'labels', title: 'Labels', open: false, items: [
+        { k: 'toggles', keys: ['recipe_label'] },
+        { k: 'voices' },
+      ] },
+    ];
+
     const defaults = {};
     for (const [k] of SLIDERS) defaults[k] = local.params[k];
     for (const [k] of TOGGLES) defaults[k] = local.params[k];
     for (const [k] of CASTS)   defaults[k] = local.params[k];
     for (const [k] of VOICES)  defaults[k] = local.params[k];
-    defaults.ground_theme = local.params.ground_theme;
     const ALL_KEYS = Object.keys(defaults);
-    function applyGround() {
-      if (window._forgeGround) window._forgeGround.apply(local.params.ground_theme);
-    }
 
     // Persistence — John's dials must survive a reload (they reset
     // from PARAM_DEFAULTS every mount otherwise). The recipe line
@@ -115,9 +160,18 @@
       // Applied after mount ⇒ radii/dress may be stale — refresh once.
       if (local.mode) { api.refreshDress(); if (api.rebake) api.rebake(); }
     }
-    // The ground follows local.params (ONE source of truth) — apply
-    // whatever survived the restore, panel open or not.
-    applyGround();
+    // Which sections are open — remembered separately from the
+    // recipe, because it is workspace state, not a spec value.
+    const OPEN_KEY = 'forge.labPanel.open.v1';
+    let openState = null;
+    try { openState = JSON.parse(localStorage.getItem(OPEN_KEY) || 'null'); } catch (_) { /* ignore */ }
+    if (!openState || typeof openState !== 'object') {
+      openState = {};
+      for (const s of SECTIONS) openState[s.id] = !!s.open;
+    }
+    function persistOpen() {
+      try { localStorage.setItem(OPEN_KEY, JSON.stringify(openState)); } catch (_) { /* ignore */ }
+    }
 
     const css = document.createElement('style');
     css.id = 'forge-lab-panel-css';
@@ -141,20 +195,20 @@
       'width:10px;height:10px;margin-top:-4px;border-radius:50%;background:#d3b877;border:none}',
       '#forge-lab-panel input[type=range]::-moz-range-track{height:2px;border-radius:1px;background:rgba(145,138,180,.35)}',
       '#forge-lab-panel input[type=range]::-moz-range-thumb{width:10px;height:10px;border-radius:50%;background:#d3b877;border:none}',
-      // Ground chips carry their own swatch as an inline background,
-      // so the gold FILL cannot signal selection — a gold ring does
-      // (the lab's own .sw.on treatment).
-      '#forge-lab-panel .lp-chip.lp-ground{color:#c9c3e4;text-shadow:0 1px 2px rgba(0,0,0,.9)}',
-      // background:transparent here so FILM (the one ground with no
-      // inline swatch) does not inherit the generic .on gold FILL and
-      // end up pale-on-gold — every ground signals with the ring.
-      '#forge-lab-panel .lp-chip.lp-ground.on{color:#f0e2bd;background:transparent;',
-      'border-color:#d3b877;box-shadow:0 0 0 1px #d3b877}',
       '#forge-lab-panel .lp-chips{display:flex;gap:4px;flex-wrap:wrap;margin:6px 0}',
       '#forge-lab-panel .lp-chip{font:8.5px ui-monospace,Menlo,monospace;letter-spacing:.1em;text-transform:uppercase;',
       'padding:4px 7px;border-radius:2px;cursor:pointer;background:transparent;color:#918ab4;border:1px solid rgba(145,138,180,.35)}',
       '#forge-lab-panel .lp-chip.on{color:#231b08;background:#d3b877;border-color:#d3b877}',
       '#forge-lab-panel .lp-cast{margin:4px 0 2px;font-size:8px;text-transform:uppercase;color:#5e5885}',
+      // ── collapsible section headers ──
+      '#forge-lab-panel .lp-sec{width:100%;display:flex;align-items:center;gap:6px;margin:9px 0 0;padding:5px 0;',
+      'background:none;border:none;border-top:1px solid rgba(211,184,119,.16);cursor:pointer;',
+      'font:9px ui-monospace,Menlo,monospace;letter-spacing:.18em;text-transform:uppercase;color:#d3b877;text-align:left}',
+      '#forge-lab-panel .lp-sec:hover{color:#f0e2bd}',
+      '#forge-lab-panel .lp-sec .lp-caret{display:inline-block;width:8px;color:#5e5885;transition:transform .12s ease-out}',
+      '#forge-lab-panel .lp-sec.open .lp-caret{transform:rotate(90deg);color:#d3b877}',
+      '#forge-lab-panel .lp-secbody{display:none;padding-bottom:2px}',
+      '#forge-lab-panel .lp-secbody.open{display:block}',
       '#forge-lab-panel .lp-recipe{margin-top:10px;padding:6px 8px;border:1px dashed rgba(211,184,119,.3);border-radius:3px;',
       'font-size:8.5px;line-height:1.5;color:#918ab4;word-break:break-word;user-select:all}',
       '#forge-lab-panel .lp-btns{display:flex;gap:6px;margin-top:8px}',
@@ -194,12 +248,21 @@
         + ' · wake ' + Math.round(p.recipe_wake_radius_px) + 'px cap ' + Math.round(p.recipe_wake_cap)
         + ' · gate ' + Math.round(p.recipe_gate_px) + 'px'
         + ' · core w ' + p.recipe_core_white.toFixed(2) + ' a ' + p.recipe_core_alpha.toFixed(2)
-        + ' · ring a ' + p.recipe_ring_alpha.toFixed(2)
-        + ' · ground ' + (p.ground_theme || 'film');
+        + ' · ring a ' + p.recipe_ring_alpha.toFixed(2);
     }
     function syncRecipe() { recipeEl.textContent = recipeStr(); }
 
-    for (const [key, label, min, max, step, unit, mode] of SLIDERS) {
+    // ── builders (unchanged behaviour; they just append into a
+    //    section body now instead of straight into the panel) ──
+    const SLIDER_BY_KEY = {};
+    for (const s of SLIDERS) SLIDER_BY_KEY[s[0]] = s;
+    const used = new Set();
+
+    function addSlider(host, key) {
+      const spec = SLIDER_BY_KEY[key];
+      if (!spec) return;
+      used.add(key);
+      const [, label, min, max, step, unit, mode] = spec;
       const row = document.createElement('div');
       row.className = 'lp-row';
       row.innerHTML = '<span>' + label + '</span><b></b>';
@@ -217,54 +280,34 @@
         else if (mode === 'refocus' && api.refocus) api.refocus();
         else api.redraw();
       });
-      el.appendChild(row); el.appendChild(inp);
+      host.appendChild(row); host.appendChild(inp);
     }
 
-    const tog = document.createElement('div');
-    tog.className = 'lp-chips';
-    for (const [key, label] of TOGGLES) {
-      const b = document.createElement('button');
-      b.className = 'lp-chip' + (local.params[key] ? ' on' : '');
-      b.textContent = label;
-      b.addEventListener('click', () => {
-        local.params[key] = local.params[key] ? 0 : 1;
-        b.classList.toggle('on', !!local.params[key]);
-        syncRecipe();
-        persist();
-        api.redraw();
-      });
-      tog.appendChild(b);
-    }
-    el.appendChild(tog);
-
-    for (const [key, label] of CASTS) {
-      const cap = document.createElement('div');
-      cap.className = 'lp-cast'; cap.textContent = 'Cast — ' + label;
-      el.appendChild(cap);
-      const row = document.createElement('div');
-      row.className = 'lp-chips';
-      for (const d of DRESSES) {
+    function addToggles(host, keys) {
+      const tog = document.createElement('div');
+      tog.className = 'lp-chips';
+      for (const key of keys) {
+        const spec = TOGGLES.find(t => t[0] === key);
+        if (!spec) continue;
         const b = document.createElement('button');
-        b.className = 'lp-chip' + (local.params[key] === d ? ' on' : '');
-        b.dataset.k = key; b.dataset.d = d;
-        b.textContent = d;
+        b.className = 'lp-chip' + (local.params[key] ? ' on' : '');
+        b.textContent = spec[1];
         b.addEventListener('click', () => {
-          local.params[key] = d;
-          for (const s of row.children) s.classList.toggle('on', s.dataset.d === d);
+          local.params[key] = local.params[key] ? 0 : 1;
+          b.classList.toggle('on', !!local.params[key]);
           syncRecipe();
           persist();
-          api.refreshDress();
           api.redraw();
         });
-        row.appendChild(b);
+        tog.appendChild(b);
       }
-      el.appendChild(row);
+      host.appendChild(tog);
     }
 
-    for (const [key, label, opts] of VOICES) {
+    function addRadioRow(host, key, caption, opts, after) {
       const cap = document.createElement('div');
-      cap.className = 'lp-cast'; cap.textContent = label;
-      el.appendChild(cap);
+      cap.className = 'lp-cast'; cap.textContent = caption;
+      host.appendChild(cap);
       const row = document.createElement('div');
       row.className = 'lp-chips';
       for (const d of opts) {
@@ -277,39 +320,44 @@
           for (const s of row.children) s.classList.toggle('on', s.dataset.d === d);
           syncRecipe();
           persist();
+          if (after) after();
           api.redraw();
         });
         row.appendChild(b);
       }
-      el.appendChild(row);
+      host.appendChild(row);
     }
 
-    {
-      const cap = document.createElement('div');
-      cap.className = 'lp-cast'; cap.textContent = 'Ground';
-      el.appendChild(cap);
-      const row = document.createElement('div');
-      row.className = 'lp-chips';
-      for (const g of GROUNDS) {
-        const b = document.createElement('button');
-        b.className = 'lp-chip lp-ground' + (local.params.ground_theme === g ? ' on' : '');
-        b.dataset.d = g;
-        b.textContent = g;
-        // A swatch of the real thing, so the row reads as colour
-        // rather than as five words (film keeps the panel's own ink).
-        const sw = GROUND_SWATCH[g];
-        if (sw) b.style.background = sw;
-        b.addEventListener('click', () => {
-          local.params.ground_theme = g;
-          for (const s of row.children) s.classList.toggle('on', s.dataset.d === g);
-          applyGround();
-          syncRecipe();
-          persist();
-          api.redraw();
-        });
-        row.appendChild(b);
+    for (const sec of SECTIONS) {
+      const head = document.createElement('button');
+      head.className = 'lp-sec' + (openState[sec.id] ? ' open' : '');
+      head.innerHTML = '<span class="lp-caret">▸</span><span>' + sec.title + '</span>';
+      const body = document.createElement('div');
+      body.className = 'lp-secbody' + (openState[sec.id] ? ' open' : '');
+      head.addEventListener('click', () => {
+        openState[sec.id] = !openState[sec.id];
+        head.classList.toggle('open', openState[sec.id]);
+        body.classList.toggle('open', openState[sec.id]);
+        persistOpen();
+      });
+      el.appendChild(head); el.appendChild(body);
+
+      for (const it of sec.items) {
+        if (it.k === 'slider')  addSlider(body, it.key);
+        else if (it.k === 'toggles') addToggles(body, it.keys);
+        else if (it.k === 'casts') {
+          for (const [key, label] of CASTS) {
+            addRadioRow(body, key, 'Cast — ' + label, DRESSES, api.refreshDress);
+          }
+        } else if (it.k === 'voices') {
+          for (const [key, label, opts] of VOICES) addRadioRow(body, key, label, opts);
+        }
       }
-      el.appendChild(row);
+    }
+    // A dial that fell out of SECTIONS would vanish from the panel
+    // silently — loud in the console instead.
+    for (const [k] of SLIDERS) {
+      if (!used.has(k)) console.warn('[lab-panel] slider not placed in any section:', k);
     }
 
     recipeEl.className = 'lp-recipe';
