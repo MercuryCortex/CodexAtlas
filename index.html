@@ -214,7 +214,7 @@
 <script src="src/js/engine/graph/hull.js?v=20260530-groupby-swappable"></script>
 <script src="src/js/engine/graph/mode.js?v=20260610-yaml-lanes"></script>
 <script src="src/js/engine/graph/glyph.js?v=20260525-phase24-v1"></script>
-<script src="src/js/engine/renderer/webgpu.js?v=20260729-folioground"></script>
+<script src="src/js/engine/renderer/webgpu.js?v=20260729-groundfilm"></script>
 <!-- Phase TL-2 Step 3 (2026-05-24) — Timeline chrome (SVG axis + ticks).
      Loaded BEFORE forge.js so the global window.AtlasTimelineChrome is
      available when rebuildForMode tries to mount() it. -->
@@ -234,8 +234,8 @@
      forge.js so window.AtlasViewportFilter exists when
      rebuildForMode tries to cull the active set. -->
 <script src="src/js/engine/graph/viewport-filter.js?v=20260527T0625-reverted-blinking"></script>
-<script src="src/js/forge/_bundle.js?v=20260729-folioground"></script>
-<script src="src/js/views/forge.js?v=20260729-folioground"></script>
+<script src="src/js/forge/_bundle.js?v=20260729-groundfilm"></script>
+<script src="src/js/views/forge.js?v=20260729-groundfilm"></script>
 <script src="src/js/views/boards.js?v=20260716-sealed"></script>
 <!-- Boards V2 Investigation Library data — 32 MASSIVE WINS + 11
      TRANSMISSIONS generated from MASSIVE-WINS-INDEX.md. Loads BEFORE
@@ -300,7 +300,7 @@
      user-menu so setView/applyStyle/_boardsView/the ✦ menu exist.
      Self-installs window._folio; the ✦ menu's "Your Folio" item opens it.
      All state local (Supabase-ready seam) — Phase B swaps the store. -->
-<script src="src/js/folio.js?v=20260729-folioground"></script>
+<script src="src/js/folio.js?v=20260729-groundfilm"></script>
 <!-- Sign-in modal (Phase B, 2026-07-17) — magic-link. After auth.js + folio. -->
 <script src="src/js/signin.js?v=20260717b"></script>
 <!-- Cloud sync (Phase B, 2026-07-17) — local-first ⇄ Supabase; after auth+boards+folio. -->

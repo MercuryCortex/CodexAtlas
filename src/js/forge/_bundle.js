@@ -4991,18 +4991,37 @@
   let cv = null;      // the ground canvas
   let current = 'film';
 
+  // THE GROUND SITS UNDER THE FILM, IT DOES NOT REPLACE IT.
+  // John, 2026-07-29: "the GROUND STILL MISSES THE FILM on zoom out —
+  // the BGS needs to be canonical NOT SEPARATED". The first cut treated
+  // ground and film as mutually exclusive: picking a colour hid the
+  // movie, which also killed the movie's zoom-out reveal (forge.js
+  // ramps its opacity by camera scale). That made two rival background
+  // systems out of one. Corrected: the colour ground is the BASE and
+  // the film keeps playing over it with its ramp intact, on every
+  // ground. One background, two layers.
+  //
+  // Layering is by DOM order, not z-index: the movie is also
+  // position:fixed at z-index 0, so whichever comes LAST wins. The
+  // movie is created by the forge on mount — after this module loads —
+  // so the ground must be re-seated before it whenever it appears.
+  // That is what reapply() (called post-mount) is for.
+  function seat() {
+    if (!cv) return;
+    const v = document.getElementById('forge-bg-image');
+    const want = v || document.body.firstChild;
+    if (cv.nextSibling !== v || !cv.isConnected) {
+      document.body.insertBefore(cv, want);
+    }
+  }
   function ensureCanvas() {
-    if (cv && cv.isConnected) return cv;
+    if (cv && cv.isConnected) { seat(); return cv; }
     cv = document.createElement('canvas');
     cv.id = 'forge-ground';
     cv.className = 'forge-ground';
-    // Behind every positioned element, including the bg movie
-    // (which is itself prepended to body at z-index 0 — we sit
-    // before it in DOM order, so it would win a tie; it is hidden
-    // whenever a ground is active, so there is never a tie).
     cv.style.cssText = 'position:fixed;inset:0;width:100%;height:100%;z-index:0;'
                      + 'pointer-events:none;user-select:none;display:block';
-    document.body.insertBefore(cv, document.body.firstChild);
+    seat();
     return cv;
   }
 
@@ -5075,25 +5094,27 @@
     }
   }
 
-  function movie(show) {
+  // The film is NEVER hidden any more (see the seat() note above). Its
+  // own zoom ramp in forge.js owns its visibility, on every ground —
+  // that is what "not separated" means. This only undoes the damage
+  // from the first cut, for anyone whose element still carries it.
+  function unhideMovie() {
     const v = document.getElementById('forge-bg-image');
-    if (!v) return;
-    // display, not opacity: forge.js writes bgImage.style.opacity
-    // every frame from the zoom ramp and would fight an opacity hide.
-    v.style.display = show ? '' : 'none';
+    if (v && v.style.display === 'none') v.style.display = '';
   }
 
   function apply(name) {
     current = NAMES.indexOf(name) >= 0 ? name : 'film';
+    unhideMovie();
     if (current === 'film') {
+      // 'Film' = no colour base: the app's own --bg-0 under the movie,
+      // i.e. exactly today's look.
       if (cv && cv.isConnected) { cv.remove(); }
       cv = null;
-      movie(true);
       return current;
     }
     ensureCanvas();
     paint();
-    movie(false);
     return current;
   }
 
