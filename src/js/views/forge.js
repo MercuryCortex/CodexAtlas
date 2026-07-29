@@ -4825,19 +4825,103 @@
       const LABEL_OUTSIDE_PAD = 44;
       hullLabelsG.style.opacity = '1';
       const labelGroups = hullLabelsG.children;
-      for (let i = 0; i < data.hulls.length && i < labelGroups.length; i++) {
+      // ── WEDGE TITLES STAY ON SCREEN (2026-07-29) ───────────────
+      // John: the wedge titles were cut off at the viewport edge —
+      // "RN-ESOTERIC", "HERMETIC". The cause is that the title sits at
+      // a purely radial pieOuterPx + 44, which leaves the viewport as
+      // soon as you zoom in or pan; the SVG then clips it mid-word.
+      //
+      // Fix, the way a map does it: keep the title on ITS OWN RAY but
+      // slide it inward until it is inside a safe rect, and flip its
+      // text anchor at the vertical edges so a long name grows INTO
+      // the screen instead of off it. The safe rect also reserves the
+      // chrome bands — the app pill at the top and the bottom bar —
+      // so a title can no longer sit behind either.
+      const EDGE_PAD_X = 14;
+      const EDGE_PAD_TOP = 58;      // clears the ATLAS/DEITIES pill
+      const EDGE_PAD_BOTTOM = 62;   // clears the bottom bar
+      const sxMin = EDGE_PAD_X, sxMax = Math.max(sxMin + 1, vp.w - EDGE_PAD_X);
+      const syMin = EDGE_PAD_TOP, syMax = Math.max(syMin + 1, vp.h - EDGE_PAD_BOTTOM);
+      // Placement is priority-ordered by wedge size (a big family's
+      // title matters more than a two-node one) so that when several
+      // rays get clamped onto the same screen edge — which is what
+      // happens at deep zoom — the winners are the ones worth reading
+      // and the rest hide instead of piling into mush.
+      const titleOrder = [];
+      for (let i = 0; i < data.hulls.length && i < labelGroups.length; i++) titleOrder.push(i);
+      titleOrder.sort((i, j) => {
+        const ci = (data.hulls[i].count != null) ? data.hulls[i].count : 0;
+        const cj = (data.hulls[j].count != null) ? data.hulls[j].count : 0;
+        return cj - ci;
+      });
+      const titlePlaced = [];
+      for (let k = 0; k < titleOrder.length; k++) {
+        const i = titleOrder[k];
         const h = data.hulls[i];
         const a = (h.wedgeCenter != null) ? h.wedgeCenter : h.centroidAngle;
-        const rPx = pieOuterPx + LABEL_OUTSIDE_PAD;
-        const lx = centerScreen.x + Math.cos(a) * rPx;
-        const ly = centerScreen.y + Math.sin(a) * rPx;
+        const rWant = pieOuterPx + LABEL_OUTSIDE_PAD;
+        const ux = Math.cos(a), uy = Math.sin(a);
         const labelEl = labelGroups[i].firstChild;
+        // Width, measured once per label and cached — the text never
+        // changes, and getComputedTextLength is a layout flush.
+        if (!labelEl._w) {
+          let w = 0;
+          try { w = labelEl.getComputedTextLength(); } catch (_) { w = 0; }
+          if (w > 0) labelEl._w = w;
+        }
+        const halfW = ((labelEl._w || 80) / 2) + 6;
+        // How far along this ray before the label leaves the safe rect?
+        // Inset by halfW on x so a long centred name cannot hang off
+        // the side — this, not an anchor flip, is what fixed
+        // "AVIC-FINNIC": that title was bound by the TOP edge while
+        // sitting near the left, so it was never pinned to a side edge
+        // for an anchor flip to catch.
+        const xLo = sxMin + halfW, xHi = sxMax - halfW;
+        let rMax = Infinity;
+        if (ux > 1e-6)       rMax = Math.min(rMax, (xHi - centerScreen.x) / ux);
+        else if (ux < -1e-6) rMax = Math.min(rMax, (xLo - centerScreen.x) / ux);
+        if (uy > 1e-6)       rMax = Math.min(rMax, (syMax - centerScreen.y) / uy);
+        else if (uy < -1e-6) rMax = Math.min(rMax, (syMin - centerScreen.y) / uy);
+        if (!isFinite(rMax)) rMax = rWant;
+        const rUse = Math.max(0, Math.min(rWant, rMax));
+        let lx = centerScreen.x + ux * rUse;
+        const ly = centerScreen.y + uy * rUse;
+        // Viewport narrower than the title: centre it rather than
+        // producing a nonsense range.
+        if (xHi > xLo) lx = Math.max(xLo, Math.min(xHi, lx));
+        else lx = (sxMin + sxMax) / 2;
+        // Collision — same rule as the node labels: first come (i.e.
+        // biggest wedge) wins the spot, the loser hides.
+        let ok = true;
+        for (let q = 0; q < titlePlaced.length; q++) {
+          const P = titlePlaced[q];
+          if (Math.abs(lx - P[0]) < (halfW + P[2]) && Math.abs(ly - P[1]) < 13) { ok = false; break; }
+        }
+        const vis = ok ? '' : '0';
+        if (labelEl._lastVis !== vis) {
+          labelEl.style.opacity = vis;
+          labelEl._lastVis = vis;
+        }
+        if (!ok) continue;
+        titlePlaced.push([lx, ly, halfW]);
         // SAFARI-WORKAROUND (2026-05-26): skip no-op x/y writes.
         const lxStr = lx.toFixed(1);
         const lyStr = ly.toFixed(1);
         if (labelEl._lastX !== lxStr) { labelEl.setAttribute('x', lxStr); labelEl._lastX = lxStr; }
         if (labelEl._lastY !== lyStr) { labelEl.setAttribute('y', lyStr); labelEl._lastY = lyStr; }
       }
+      // Publish the title boxes so the NODE labels can avoid them.
+      // Same class of bug as the two node-label systems: two layers
+      // placing text independently means "Tiamat" lands on top of
+      // "MESOPOTAMIAN" and eats the first half of the word. The titles
+      // are fewer and structural, so they place first and the node
+      // names treat them as occupied. Full widths, CSS px, centred y —
+      // the convention renderLabelsCanvas's `placed` array uses.
+      const titlesOn = !document.body.classList.contains('fv-hide-family-titles')
+                    && !document.body.classList.contains('fv-hide-hulls');
+      local._titleRects = titlesOn
+        ? titlePlaced.map((P) => [P[0], P[1], P[2] * 2])
+        : null;
 
       // ── Radial separators between adjacent families.
       // Each line is PERFECTLY RADIAL from the wheel centre at
@@ -5276,6 +5360,16 @@
       const nodesById = local.mode.nodesById;
       const camScale = camera.state.scale;
       const vMargin = 100;
+      // ── CHROME KEEP-OUT (2026-07-29) ────────────────────────────
+      // John: node names were rendering behind the bottom bar (the
+      // "Ax..a M.v.le" mush over FX / STYLE / LAB) and clipping off
+      // the top. The label canvas is full-viewport but the chrome
+      // floats over it, so a name that lands under either band is
+      // unreadable AND makes the chrome look broken. Reserve the two
+      // bands: a name that would land inside one is simply not drawn,
+      // and the tier ladder gives its slot to the next candidate.
+      const KEEPOUT_TOP = 52;
+      const KEEPOUT_BOTTOM = 58;
       // Style setup ONCE per frame (not per label).
       // Font size read from params (label_size, default 14) so the
       // canvas size matches the AABB collision math in label.js +
@@ -5385,7 +5479,12 @@
       // 2 ▸ ONE PLACEMENT PASS — nothing lands on anything else.
       const fade = local._labelFade || (local._labelFade = new Map());
       const bubbleK = local.params.recipe_bubble || 1;
+      // Seed the collision list with the wedge titles (published by
+      // syncHulls) so a node name can never land on a family title.
       const placed = [];
+      if (local._titleRects) {
+        for (let t = 0; t < local._titleRects.length; t++) placed.push(local._titleRects[t]);
+      }
       const seen = new Set();
       const draws = [];
       for (const c of cands) {
@@ -5400,6 +5499,10 @@
         // dress bubble so a woken node's name never sits in its glow.
         const dy = (c.reach && anim === 'rise') ? 6 * (1 - c.rv) : 0;
         const ly = s.y - c.n.r * camScale * (c.reach ? bubbleK : 1) - 6 + dy;
+        // Chrome keep-out: never draw a name into the top pill band or
+        // the bottom bar. Skipping (rather than nudging) is deliberate —
+        // a nudged name would point at the wrong node.
+        if (ly < KEEPOUT_TOP || ly > vp.h - KEEPOUT_BOTTOM) continue;
         let ok = true;
         for (let k = 0; k < placed.length; k++) {
           const P = placed[k];
@@ -5425,6 +5528,7 @@
         const title = (node && node.title) || id;
         const wpx = ctx.measureText(title).width + 10;
         const ly = s.y - n.r * camScale - 6;
+        if (ly < KEEPOUT_TOP || ly > vp.h - KEEPOUT_BOTTOM) { fade.delete(id); continue; }
         let ok = true;
         for (let k = 0; k < placed.length; k++) {
           const P = placed[k];
