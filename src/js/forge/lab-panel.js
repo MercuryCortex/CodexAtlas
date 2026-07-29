@@ -75,12 +75,29 @@
       ['dress_mid',   'Mid'],
       ['dress_small', 'Small'],
     ];
+    // The GROUND — the lab's §03 colour schemes (2026-07-29). 'film'
+    // is the ambient bg movie = today's look = the honest-zero
+    // default; the other four are `_forgeGround`'s verbatim
+    // transcriptions of the lab THEMES.
+    const GROUNDS = ['film', 'void', 'obsidian', 'nebula', 'inkwell'];
+    // The lab's own §03 swatch gradients — the chip shows the ground
+    // it selects. 'film' has no swatch (it is a movie, not a colour).
+    const GROUND_SWATCH = {
+      void:     'linear-gradient(135deg,#04060d,#0b101f)',
+      obsidian: 'linear-gradient(135deg,#0b0918,#171231)',
+      nebula:   'linear-gradient(135deg,#1c1547,#31226b)',
+      inkwell:  'linear-gradient(135deg,#140f0b,#211711)',
+    };
     const defaults = {};
     for (const [k] of SLIDERS) defaults[k] = local.params[k];
     for (const [k] of TOGGLES) defaults[k] = local.params[k];
     for (const [k] of CASTS)   defaults[k] = local.params[k];
     for (const [k] of VOICES)  defaults[k] = local.params[k];
+    defaults.ground_theme = local.params.ground_theme;
     const ALL_KEYS = Object.keys(defaults);
+    function applyGround() {
+      if (window._forgeGround) window._forgeGround.apply(local.params.ground_theme);
+    }
 
     // Persistence — John's dials must survive a reload (they reset
     // from PARAM_DEFAULTS every mount otherwise). The recipe line
@@ -98,6 +115,9 @@
       // Applied after mount ⇒ radii/dress may be stale — refresh once.
       if (local.mode) { api.refreshDress(); if (api.rebake) api.rebake(); }
     }
+    // The ground follows local.params (ONE source of truth) — apply
+    // whatever survived the restore, panel open or not.
+    applyGround();
 
     const css = document.createElement('style');
     css.id = 'forge-lab-panel-css';
@@ -109,7 +129,27 @@
       '#forge-lab-panel h4{margin:0 0 8px;font-size:10px;letter-spacing:.24em;color:#d3b877;font-weight:600}',
       '#forge-lab-panel .lp-row{margin:7px 0 2px;display:flex;justify-content:space-between;text-transform:uppercase;font-size:8.5px}',
       '#forge-lab-panel .lp-row b{color:#d3b877;font-weight:600}',
-      '#forge-lab-panel input[type=range]{width:100%;accent-color:#d3b877;height:14px;background:transparent;margin:0}',
+      // SAFARI FIX (2026-07-29): Safari ignores accent-color on range
+      // inputs and fell back to the fat native white slider — the
+      // panel looked broken next to Chromium. Style the track/thumb
+      // explicitly; -webkit-appearance:none is what unlocks them.
+      '#forge-lab-panel input[type=range]{width:100%;accent-color:#d3b877;height:14px;background:transparent;margin:0;',
+      '-webkit-appearance:none;appearance:none}',
+      '#forge-lab-panel input[type=range]::-webkit-slider-runnable-track{height:2px;border-radius:1px;',
+      'background:rgba(145,138,180,.35)}',
+      '#forge-lab-panel input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;',
+      'width:10px;height:10px;margin-top:-4px;border-radius:50%;background:#d3b877;border:none}',
+      '#forge-lab-panel input[type=range]::-moz-range-track{height:2px;border-radius:1px;background:rgba(145,138,180,.35)}',
+      '#forge-lab-panel input[type=range]::-moz-range-thumb{width:10px;height:10px;border-radius:50%;background:#d3b877;border:none}',
+      // Ground chips carry their own swatch as an inline background,
+      // so the gold FILL cannot signal selection — a gold ring does
+      // (the lab's own .sw.on treatment).
+      '#forge-lab-panel .lp-chip.lp-ground{color:#c9c3e4;text-shadow:0 1px 2px rgba(0,0,0,.9)}',
+      // background:transparent here so FILM (the one ground with no
+      // inline swatch) does not inherit the generic .on gold FILL and
+      // end up pale-on-gold — every ground signals with the ring.
+      '#forge-lab-panel .lp-chip.lp-ground.on{color:#f0e2bd;background:transparent;',
+      'border-color:#d3b877;box-shadow:0 0 0 1px #d3b877}',
       '#forge-lab-panel .lp-chips{display:flex;gap:4px;flex-wrap:wrap;margin:6px 0}',
       '#forge-lab-panel .lp-chip{font:8.5px ui-monospace,Menlo,monospace;letter-spacing:.1em;text-transform:uppercase;',
       'padding:4px 7px;border-radius:2px;cursor:pointer;background:transparent;color:#918ab4;border:1px solid rgba(145,138,180,.35)}',
@@ -154,7 +194,8 @@
         + ' · wake ' + Math.round(p.recipe_wake_radius_px) + 'px cap ' + Math.round(p.recipe_wake_cap)
         + ' · gate ' + Math.round(p.recipe_gate_px) + 'px'
         + ' · core w ' + p.recipe_core_white.toFixed(2) + ' a ' + p.recipe_core_alpha.toFixed(2)
-        + ' · ring a ' + p.recipe_ring_alpha.toFixed(2);
+        + ' · ring a ' + p.recipe_ring_alpha.toFixed(2)
+        + ' · ground ' + (p.ground_theme || 'film');
     }
     function syncRecipe() { recipeEl.textContent = recipeStr(); }
 
@@ -234,6 +275,34 @@
         b.addEventListener('click', () => {
           local.params[key] = d;
           for (const s of row.children) s.classList.toggle('on', s.dataset.d === d);
+          syncRecipe();
+          persist();
+          api.redraw();
+        });
+        row.appendChild(b);
+      }
+      el.appendChild(row);
+    }
+
+    {
+      const cap = document.createElement('div');
+      cap.className = 'lp-cast'; cap.textContent = 'Ground';
+      el.appendChild(cap);
+      const row = document.createElement('div');
+      row.className = 'lp-chips';
+      for (const g of GROUNDS) {
+        const b = document.createElement('button');
+        b.className = 'lp-chip lp-ground' + (local.params.ground_theme === g ? ' on' : '');
+        b.dataset.d = g;
+        b.textContent = g;
+        // A swatch of the real thing, so the row reads as colour
+        // rather than as five words (film keeps the panel's own ink).
+        const sw = GROUND_SWATCH[g];
+        if (sw) b.style.background = sw;
+        b.addEventListener('click', () => {
+          local.params.ground_theme = g;
+          for (const s of row.children) s.classList.toggle('on', s.dataset.d === g);
+          applyGround();
           syncRecipe();
           persist();
           api.redraw();

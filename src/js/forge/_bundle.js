@@ -4872,6 +4872,142 @@
   window._forgeCodexControls = { attach: attach };
 })();
 
+// ─── src/js/forge/ground.js ──────────────────────────────
+// ============================================================
+// FORGE GROUND — the node-lab's colour schemes, in the Atlas.
+// ============================================================
+//
+// 2026-07-29 (John: "there was a colour scheme on the plan that I
+// loved — can you add those colour BGs from the mockups to the
+// options"). The four grounds in `design/node-lab.html` (§03 "The
+// ground") are transcribed here VERBATIM — same hex stops, same
+// radial glow position/radius, same 110-star field with the lab's
+// own deterministic srand. No re-invention: if the lab and the
+// Atlas ever disagree, the lab is right.
+//
+//   FILM      · the ambient bg movie — today's look, the DEFAULT
+//               (honest zero: with 'film' selected this module
+//               paints nothing and the video is untouched)
+//   VOID      · Deep Void — the starfield John loved (lab default)
+//   OBSIDIAN  · approved in round 2
+//   NEBULA    · theme drawer
+//   INKWELL   · theme drawer
+//
+// The ground is a plain 2D canvas pinned behind everything. It is
+// painted ONCE per theme/resize — never per frame — so it costs
+// nothing at runtime. It does not participate in the WebGPU passes:
+// the forge canvas above it stays transparent (Phase 20G), which is
+// exactly why the light-alpha law (ENGINE-DRESS-11) matters — the
+// node light composites onto whichever ground is showing.
+//
+// NOTE on the orb lens: the lens samples the ENGINE's backdrop
+// texture (ground+wires as the GPU knows them), not this DOM layer,
+// so a drop over empty space still shows the page ground through
+// its own transparency (the ENGINE-DRESS-10b rule). Picking a
+// ground here changes what shows through — it does not break the
+// lens contract.
+//
+//   window._forgeGround.apply('void')   → paint + hide the movie
+//   window._forgeGround.apply('film')   → remove + restore the movie
+// ============================================================
+(function () {
+  // Lab THEMES, verbatim (design/node-lab.html).
+  const THEMES = {
+    nebula:   { a: '#1c1547', b: '#2a1e5e', glow: 'rgba(150,70,180,.20)', star: 0 },
+    obsidian: { a: '#0b0918', b: '#151129', glow: 'rgba(100,80,170,.13)', star: 0 },
+    void:     { a: '#04060d', b: '#0a0e1c', glow: 'rgba(70,100,180,.10)',  star: 1 },
+    inkwell:  { a: '#140f0b', b: '#1e1610', glow: 'rgba(200,150,80,.10)',  star: 0 },
+  };
+  const NAMES = ['film', 'void', 'obsidian', 'nebula', 'inkwell'];
+
+  // The lab's own deterministic pseudo-random — the starfield must
+  // be the SAME field every paint (a reshuffle on every resize would
+  // read as flicker, not sky).
+  function srand(i) { const x = Math.sin(i * 127.1 + 311.7) * 43758.5453; return x - Math.floor(x); }
+
+  let cv = null;      // the ground canvas
+  let current = 'film';
+
+  function ensureCanvas() {
+    if (cv && cv.isConnected) return cv;
+    cv = document.createElement('canvas');
+    cv.id = 'forge-ground';
+    cv.className = 'forge-ground';
+    // Behind every positioned element, including the bg movie
+    // (which is itself prepended to body at z-index 0 — we sit
+    // before it in DOM order, so it would win a tie; it is hidden
+    // whenever a ground is active, so there is never a tie).
+    cv.style.cssText = 'position:fixed;inset:0;width:100%;height:100%;z-index:0;'
+                     + 'pointer-events:none;user-select:none;display:block';
+    document.body.insertBefore(cv, document.body.firstChild);
+    return cv;
+  }
+
+  // paintBG — the lab function, transcribed. Note the tint args the
+  // lab uses for its isolate-state experiments are intentionally
+  // dropped: the Atlas has no isolate ground tint yet.
+  function paint() {
+    const T = THEMES[current];
+    if (!T || !cv) return;
+    const dpr = Math.max(1, window.devicePixelRatio || 1);
+    const w = Math.max(1, Math.round(window.innerWidth));
+    const h = Math.max(1, Math.round(window.innerHeight));
+    if (cv.width !== w * dpr || cv.height !== h * dpr) {
+      cv.width = w * dpr; cv.height = h * dpr;
+    }
+    const ctx = cv.getContext('2d');
+    if (!ctx) return;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.clearRect(0, 0, w, h);
+
+    const g = ctx.createLinearGradient(0, 0, 0, h);
+    g.addColorStop(0, T.a); g.addColorStop(1, T.b);
+    ctx.fillStyle = g; ctx.fillRect(0, 0, w, h);
+
+    const r = ctx.createRadialGradient(w * 0.72, h * 0.15, 0, w * 0.72, h * 0.15, w * 0.8);
+    r.addColorStop(0, T.glow); r.addColorStop(1, 'rgba(0,0,0,0)');
+    ctx.fillStyle = r; ctx.fillRect(0, 0, w, h);
+
+    if (T.star) {
+      for (let i = 0; i < 110; i++) {
+        ctx.fillStyle = 'rgba(220,225,255,' + (0.04 + srand(i) * 0.14) + ')';
+        ctx.fillRect(srand(i * 3 + 1) * w, srand(i * 7 + 2) * h, 1, 1);
+      }
+    }
+  }
+
+  function movie(show) {
+    const v = document.getElementById('forge-bg-image');
+    if (!v) return;
+    // display, not opacity: forge.js writes bgImage.style.opacity
+    // every frame from the zoom ramp and would fight an opacity hide.
+    v.style.display = show ? '' : 'none';
+  }
+
+  function apply(name) {
+    current = NAMES.indexOf(name) >= 0 ? name : 'film';
+    if (current === 'film') {
+      if (cv && cv.isConnected) { cv.remove(); }
+      cv = null;
+      movie(true);
+      return current;
+    }
+    ensureCanvas();
+    paint();
+    movie(false);
+    return current;
+  }
+
+  let raf = 0;
+  window.addEventListener('resize', () => {
+    if (current === 'film' || !cv) return;
+    cancelAnimationFrame(raf);
+    raf = requestAnimationFrame(paint);
+  });
+
+  window._forgeGround = { apply, repaint: paint, names: NAMES, get current() { return current; } };
+})();
+
 // ─── src/js/forge/lab-panel.js ──────────────────────────────
 // ============================================================
 // CODEX ATLAS — THE NODE LAB PANEL (in-Atlas)
@@ -4950,12 +5086,29 @@
       ['dress_mid',   'Mid'],
       ['dress_small', 'Small'],
     ];
+    // The GROUND — the lab's §03 colour schemes (2026-07-29). 'film'
+    // is the ambient bg movie = today's look = the honest-zero
+    // default; the other four are `_forgeGround`'s verbatim
+    // transcriptions of the lab THEMES.
+    const GROUNDS = ['film', 'void', 'obsidian', 'nebula', 'inkwell'];
+    // The lab's own §03 swatch gradients — the chip shows the ground
+    // it selects. 'film' has no swatch (it is a movie, not a colour).
+    const GROUND_SWATCH = {
+      void:     'linear-gradient(135deg,#04060d,#0b101f)',
+      obsidian: 'linear-gradient(135deg,#0b0918,#171231)',
+      nebula:   'linear-gradient(135deg,#1c1547,#31226b)',
+      inkwell:  'linear-gradient(135deg,#140f0b,#211711)',
+    };
     const defaults = {};
     for (const [k] of SLIDERS) defaults[k] = local.params[k];
     for (const [k] of TOGGLES) defaults[k] = local.params[k];
     for (const [k] of CASTS)   defaults[k] = local.params[k];
     for (const [k] of VOICES)  defaults[k] = local.params[k];
+    defaults.ground_theme = local.params.ground_theme;
     const ALL_KEYS = Object.keys(defaults);
+    function applyGround() {
+      if (window._forgeGround) window._forgeGround.apply(local.params.ground_theme);
+    }
 
     // Persistence — John's dials must survive a reload (they reset
     // from PARAM_DEFAULTS every mount otherwise). The recipe line
@@ -4973,6 +5126,9 @@
       // Applied after mount ⇒ radii/dress may be stale — refresh once.
       if (local.mode) { api.refreshDress(); if (api.rebake) api.rebake(); }
     }
+    // The ground follows local.params (ONE source of truth) — apply
+    // whatever survived the restore, panel open or not.
+    applyGround();
 
     const css = document.createElement('style');
     css.id = 'forge-lab-panel-css';
@@ -4984,7 +5140,27 @@
       '#forge-lab-panel h4{margin:0 0 8px;font-size:10px;letter-spacing:.24em;color:#d3b877;font-weight:600}',
       '#forge-lab-panel .lp-row{margin:7px 0 2px;display:flex;justify-content:space-between;text-transform:uppercase;font-size:8.5px}',
       '#forge-lab-panel .lp-row b{color:#d3b877;font-weight:600}',
-      '#forge-lab-panel input[type=range]{width:100%;accent-color:#d3b877;height:14px;background:transparent;margin:0}',
+      // SAFARI FIX (2026-07-29): Safari ignores accent-color on range
+      // inputs and fell back to the fat native white slider — the
+      // panel looked broken next to Chromium. Style the track/thumb
+      // explicitly; -webkit-appearance:none is what unlocks them.
+      '#forge-lab-panel input[type=range]{width:100%;accent-color:#d3b877;height:14px;background:transparent;margin:0;',
+      '-webkit-appearance:none;appearance:none}',
+      '#forge-lab-panel input[type=range]::-webkit-slider-runnable-track{height:2px;border-radius:1px;',
+      'background:rgba(145,138,180,.35)}',
+      '#forge-lab-panel input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;',
+      'width:10px;height:10px;margin-top:-4px;border-radius:50%;background:#d3b877;border:none}',
+      '#forge-lab-panel input[type=range]::-moz-range-track{height:2px;border-radius:1px;background:rgba(145,138,180,.35)}',
+      '#forge-lab-panel input[type=range]::-moz-range-thumb{width:10px;height:10px;border-radius:50%;background:#d3b877;border:none}',
+      // Ground chips carry their own swatch as an inline background,
+      // so the gold FILL cannot signal selection — a gold ring does
+      // (the lab's own .sw.on treatment).
+      '#forge-lab-panel .lp-chip.lp-ground{color:#c9c3e4;text-shadow:0 1px 2px rgba(0,0,0,.9)}',
+      // background:transparent here so FILM (the one ground with no
+      // inline swatch) does not inherit the generic .on gold FILL and
+      // end up pale-on-gold — every ground signals with the ring.
+      '#forge-lab-panel .lp-chip.lp-ground.on{color:#f0e2bd;background:transparent;',
+      'border-color:#d3b877;box-shadow:0 0 0 1px #d3b877}',
       '#forge-lab-panel .lp-chips{display:flex;gap:4px;flex-wrap:wrap;margin:6px 0}',
       '#forge-lab-panel .lp-chip{font:8.5px ui-monospace,Menlo,monospace;letter-spacing:.1em;text-transform:uppercase;',
       'padding:4px 7px;border-radius:2px;cursor:pointer;background:transparent;color:#918ab4;border:1px solid rgba(145,138,180,.35)}',
@@ -5029,7 +5205,8 @@
         + ' · wake ' + Math.round(p.recipe_wake_radius_px) + 'px cap ' + Math.round(p.recipe_wake_cap)
         + ' · gate ' + Math.round(p.recipe_gate_px) + 'px'
         + ' · core w ' + p.recipe_core_white.toFixed(2) + ' a ' + p.recipe_core_alpha.toFixed(2)
-        + ' · ring a ' + p.recipe_ring_alpha.toFixed(2);
+        + ' · ring a ' + p.recipe_ring_alpha.toFixed(2)
+        + ' · ground ' + (p.ground_theme || 'film');
     }
     function syncRecipe() { recipeEl.textContent = recipeStr(); }
 
@@ -5109,6 +5286,34 @@
         b.addEventListener('click', () => {
           local.params[key] = d;
           for (const s of row.children) s.classList.toggle('on', s.dataset.d === d);
+          syncRecipe();
+          persist();
+          api.redraw();
+        });
+        row.appendChild(b);
+      }
+      el.appendChild(row);
+    }
+
+    {
+      const cap = document.createElement('div');
+      cap.className = 'lp-cast'; cap.textContent = 'Ground';
+      el.appendChild(cap);
+      const row = document.createElement('div');
+      row.className = 'lp-chips';
+      for (const g of GROUNDS) {
+        const b = document.createElement('button');
+        b.className = 'lp-chip lp-ground' + (local.params.ground_theme === g ? ' on' : '');
+        b.dataset.d = g;
+        b.textContent = g;
+        // A swatch of the real thing, so the row reads as colour
+        // rather than as five words (film keeps the panel's own ink).
+        const sw = GROUND_SWATCH[g];
+        if (sw) b.style.background = sw;
+        b.addEventListener('click', () => {
+          local.params.ground_theme = g;
+          for (const s of row.children) s.classList.toggle('on', s.dataset.d === g);
+          applyGround();
           syncRecipe();
           persist();
           api.redraw();

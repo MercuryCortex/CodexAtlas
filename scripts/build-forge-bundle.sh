@@ -35,6 +35,7 @@ MODULES=(
   src/js/forge/view-settings.js
   src/js/forge/scripture-reader.js
   src/js/forge/codex-controls.js
+  src/js/forge/ground.js
   src/js/forge/lab-panel.js
   src/js/forge/install-public-api.js
 )

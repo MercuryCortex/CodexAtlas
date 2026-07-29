@@ -675,6 +675,12 @@
     dress_hub:   'orb',
     dress_mid:   'orb',
     dress_small: 'orb',
+    // THE GROUND (2026-07-29) — the node-lab's §03 colour schemes,
+    // pickable in the LAB panel. 'film' = the ambient bg movie =
+    // today's look, so the default changes nothing (honest zeros).
+    // The other four (void · obsidian · nebula · inkwell) are
+    // transcribed verbatim in src/js/forge/ground.js.
+    ground_theme: 'film',
   });
 
   function render(rootEl) {
