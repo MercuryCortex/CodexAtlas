@@ -90,7 +90,7 @@ Both are **free** at alpha scale and **neither requires a phone/SMS** (your rule
 ## Step 4 — Leak gate (I run, before deploy)
 From the project root, I run your gate — it must come back clean:
 ```
-bash "/Users/redacted-user/Desktop/PRODUCT DEVELOPMENT/_FOUNDER-PROTOCOL/audit.sh"
+bash "~/Desktop/PRODUCT DEVELOPMENT/_FOUNDER-PROTOCOL/audit.sh"
 ```
 Plus the `SECURITY-CHECKLIST`: real-identity scan returns nothing · only the `anon` key ships (never
 `service_role`) · git authors are the pseudonym only · host account pseudonymous · access is

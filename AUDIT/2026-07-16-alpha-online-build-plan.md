@@ -7,7 +7,7 @@
 
 ## 0. Guardrails (non-negotiable — John's global rules)
 - **Anonymity Law.** New island: its own pseudonym, a per-service **Tuta alias on the privacy domain**, its own
-  git author (already `Codex Atlas` pseudonym — keep it). John's real name/Gmail/`redacted-user` appear NOWHERE in
+  git author (already `Codex Atlas` pseudonym — keep it). John's real name, personal email and machine handle appear NOWHERE in
   repo, configs, deploy logs, dashboards, WHOIS, or provider profiles. Record the chosen identity in a
   `PROJECT-IDENTITY.md` for this project before any account is made.
 - **No account creation by me.** Supabase + Cloudflare accounts are created by **John** (prohibited action for me).
