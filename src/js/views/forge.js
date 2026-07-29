@@ -622,39 +622,45 @@
     zoom_tau:  0.08,
     flyto_dur: 0.55,
 
-    // ── ROUND-7 DRESS · the node-lab recipe (2026-07-26) ──
-    // John's dialed values from design/node-lab.html Rounds 7-8.
+    // ── ROUND-7 DRESS · the node-lab recipe ──
+    // 2026-07-28: JOHN'S FAVORITE (his words: "my favorite so far
+    // with these limited options") — dialed live on the real wheel:
+    // dress ember · hover ×1.15 · click ×1.35 · bubble 1.05 ·
+    // refract 1.16 depth 1.00 · frost 1.7 · ether 1.00 · label
+    // sans/rise · glow 1.00 pulse 1.00 reach ×3.6 · finish 1.00
+    // [irid+chroma] chroma± 8px · wake 140px cap 12 · gate 0 ·
+    // core w .46 a .92 · ring a .20
     // recipe_hover_zoom >= 1 switches the dress system ON; set it
     // to 0 and the shader renders the legacy Phase-7 disk exactly.
     recipe_hover_zoom:     1.15,
-    recipe_click_zoom:     1.30,
-    recipe_bubble:         1.10,
-    recipe_glow:           0.75,
-    recipe_pulse:          0.55,
-    recipe_glow_reach:     2.10,
+    recipe_click_zoom:     1.35,
+    recipe_bubble:         1.05,
+    recipe_glow:           1.0,
+    recipe_pulse:          1.0,
+    recipe_glow_reach:     3.6,
     recipe_fin_strength:   1.0,
-    recipe_wake_radius_px: 240,
-    recipe_wake_cap:       15,
-    recipe_gate_px:        7,
+    recipe_wake_radius_px: 140,
+    recipe_wake_cap:       12,
+    recipe_gate_px:        0,
     recipe_ether:          1.0,
     recipe_irid:           1,
-    recipe_chroma:         0,
-    recipe_chroma_px:      4,
-    // Symbol voice — John's whiteness dials (Round 7b).
-    recipe_core_white:     0.25,
+    recipe_chroma:         1,
+    recipe_chroma_px:      8,
+    // Symbol voice — John's whiteness dials (his favorite, 2026-07-28).
+    recipe_core_white:     0.46,
     recipe_core_alpha:     0.92,
-    recipe_ring_alpha:     0.95,
+    recipe_ring_alpha:     0.20,
     // AUDIT P2-9/P2-10 (2026-07-27) — the deep-zoom laws. Wires
     // recede as you zoom past 120% (the mesh must never dominate
     // the dress); the hot 1-hop web whispers instead of starbursts;
     // and the max-size clamp is tier-aware so hubs stay hubs.
     recipe_wire_calm:      0.6,
-    recipe_hot_wire:       0.55,
+    recipe_hot_wire:       0.5,
     // FULL-TRANSCRIPTION (2026-07-27) — the lens (orb) + label voice,
     // John's dialed lab defaults.
-    recipe_mag:            1.13,
-    recipe_frost:          2,
-    recipe_depth:          0.5,
+    recipe_mag:            1.16,
+    recipe_frost:          1.7,
+    recipe_depth:          1.0,
     recipe_label:          1,
     label_font:            'sans',
     label_anim:            'rise',
@@ -663,9 +669,9 @@
     node_max_screen_px_small: 20,
     // The CAST — a dress per size tier (label tiers 0-1 / 2-3 / 4-5):
     // halo · icon · orb (renders halo until tier-b) · veil · ember.
-    dress_hub:   'halo',
-    dress_mid:   'halo',
-    dress_small: 'halo',
+    dress_hub:   'ember',
+    dress_mid:   'ember',
+    dress_small: 'ember',
   });
 
   function render(rootEl) {
