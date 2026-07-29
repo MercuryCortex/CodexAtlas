@@ -22,7 +22,15 @@
   (this handoff's commit) John's favorite recipe as PARAM_DEFAULTS.
 - **STATUS.md** entries ENGINE-DRESS-7A → 10c tell the whole story with line cites.
 
-## ⚠ STEP 1 — THE ROOT CAUSE (diagnosed 2026-07-28, unfixed)
+## ✅ STEP 1 — SHIPPED 2026-07-29 (`ENGINE-DRESS-11`)
+
+Done exactly as spec'd below: `add_light()` helper + all nine `fs_main`
+emission sites + `fs_glow` alpha. Acceptance test passed (wires hidden,
+A/B vs a reverted build: OFF = discrete dots with dead gaps, ON = one
+continuous bloom on the void). No damping needed yet. `?v=20260729-lightalpha`.
+The diagnosis below is kept verbatim as the record of WHY.
+
+## ⚠ STEP 1 — THE ROOT CAUSE (diagnosed 2026-07-28, FIXED 2026-07-29)
 
 John's decisive test: *"there's no GLOW outside the node except a glow that
 reveals the WIRES — if I turn off the wires idle, no glow."*

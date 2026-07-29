@@ -172,6 +172,22 @@
     @group(0) @binding(1) var backdrop_tex:  texture_2d<f32>;
     @group(0) @binding(2) var backdrop_samp: sampler;
 
+    // ── THE LIGHT-ALPHA LAW (2026-07-29) ────────────────────────
+    // The forge canvas is TRANSPARENT (Phase 20G: clear alpha 0, the
+    // page ground sits behind it). A premultiplied pixel with rgb > a
+    // is INVALID: at the canvas -> page composite the browser clamps
+    // it, so pure light emitted with alpha 0 was ERASED wherever
+    // nothing opaque had been drawn beneath. That is why glow only
+    // ever appeared ON the wires/rings and vanished over the void.
+    // Every added photon must therefore carry its own coverage:
+    // alpha accumulates screen-wise from the light's luminance, so
+    // light floats on emptiness and never double-counts where it
+    // overlaps material already drawn.
+    fn add_light(acc: vec4<f32>, x: vec3<f32>) -> vec4<f32> {
+      let l = clamp(max(max(x.r, x.g), x.b), 0.0, 1.0);
+      return vec4<f32>(acc.rgb + x, acc.a + l * (1.0 - acc.a));
+    }
+
     struct VsOut {
       @builtin(position) position: vec4<f32>,
       @location(0) local_pos:  vec2<f32>,
@@ -296,7 +312,7 @@
           var ia: f32;
           if (ui <= 0.72) { ia = mix(0.52, 0.44, ui / 0.72); }
           else            { ia = 0.44 * (1.0 - (ui - 0.72) / 0.28); }
-          acc = vec4<f32>(acc.rgb + leaf * (ia * wg), acc.a);
+          acc = add_light(acc, leaf * (ia * wg));
         } else if (dId == 2) {
           // ORB — THE DEWDROP, real at last: the world bends through
           // the whole drop (backdrop = ground + wires, the O contract).
@@ -346,7 +362,7 @@
               else               { gp = mix(0.10, 0.0,  (u2 - 0.7) / 0.3); }
               // REVIEW: same 7C conservation as the outer glow — no
               // brightness step at the bubble edge at high reach.
-              acc = vec4<f32>(acc.rgb + col * (pa2 * gp * (1.0 - smoothstep(0.96, 1.0, db))), acc.a);
+              acc = add_light(acc, col * (pa2 * gp * (1.0 - smoothstep(0.96, 1.0, db))));
             }
           }
           // body density o1 — transparent heart, color deepening at the
@@ -372,7 +388,7 @@
           let glc = vec2<f32>(0.0, 0.42 * bub);
           let dgl = clamp(length(in.local_pos * qs - glc) / (0.75 * bub), 0.0, 1.0);
           let gla = 0.30 * wg * (1.0 - dgl) * (1.0 - smoothstep(0.96, 1.0, db));
-          acc = vec4<f32>(acc.rgb + mix(col, white, 0.65) * gla, acc.a);
+          acc = add_light(acc, mix(col, white, 0.65) * gla);
         } else if (dId == 3) {
           // VEIL — luminous mist: FOUR breaths, lab radii, linear falloff
           let pv = in.local_pos * qs;
@@ -385,7 +401,7 @@
             va = va + 0.17 * wg * (1.0 - dk);
           }
           // min() saturation stands in for the lab's screen compositing
-          acc = vec4<f32>(acc.rgb + mix(col, white, 0.25) * min(va, 0.6), acc.a);
+          acc = add_light(acc, mix(col, white, 0.25) * min(va, 0.6));
         } else if (dId == 4) {
           // EMBER — obsidian body (lab stops: .10 center → .55 at .75 → 0)
           var ba: f32;
@@ -405,7 +421,7 @@
             hcol = col;
             ha2 = (0.30 + 0.2 * em) * (1.0 - (u4 - 0.5) / 0.5);
           }
-          acc = vec4<f32>(acc.rgb + hcol * (ha2 * wg), acc.a);
+          acc = add_light(acc, hcol * (ha2 * wg));
         }
         // 3 ▸ iridescence — the FAM-palette conic film lit by the
         //     cursor angle (lab palette, NOT a rainbow), hard aa edge
@@ -425,7 +441,7 @@
           let film = mix(stops[si], stops[si + 1], ft);
           let aa_db = aa / bub;
           let fa = 0.18 * v.recipe_c.y * wg * (1.0 - smoothstep(1.0 - aa_db, 1.0, db));
-          acc = vec4<f32>(acc.rgb + film * fa, acc.a);
+          acc = add_light(acc, film * fa);
         }
         // 4 ▸ chroma — warm/cool light split (lab: 0.16, LINEAR falloff)
         if (v.recipe_d.y > 0.5 && v.recipe_c.y * wg > 0.01) {
@@ -434,9 +450,9 @@
           let ca = 0.16 * v.recipe_c.y * wg;
           let dwarm = clamp(length(vec2<f32>(pvx + offr, in.local_pos.y * qs)) / bub, 0.0, 1.0);
           let dcool = clamp(length(vec2<f32>(pvx - offr, in.local_pos.y * qs)) / bub, 0.0, 1.0);
-          acc = vec4<f32>(acc.rgb
-            + vec3<f32>(1.0, 0.549, 0.353) * (ca * (1.0 - dwarm))
-            + vec3<f32>(0.431, 0.627, 1.0) * (ca * (1.0 - dcool)), acc.a);
+          acc = add_light(acc,
+              vec3<f32>(1.0, 0.549, 0.353) * (ca * (1.0 - dwarm))
+            + vec3<f32>(0.431, 0.627, 1.0) * (ca * (1.0 - dcool)));
         }
       }
 
@@ -498,7 +514,7 @@
       let accent = (mix(col, white, 0.6) * (0.30 * E * breath) * (b1 * b2)
                   + mix(col, white, 0.5) * (0.26 * w * cp * use_recipe) * core_mask)
                   * symDim * state_alpha;
-      acc = vec4<f32>(acc.rgb + accent, acc.a);
+      acc = add_light(acc, accent);
 
       // Legacy compatibility: with no recipe active, the node must
       // render the Phase-7 FILLED DISK + gold selected stroke exactly.
@@ -622,7 +638,11 @@
       }
       light = light * state_alpha;
       if (light.r + light.g + light.b < 0.004) { discard; }
-      return vec4<f32>(light, 0.0);
+      // LIGHT-ALPHA LAW: the glow must carry coverage or the
+      // transparent-canvas composite clamps it away over the void.
+      // The pipeline's alpha blend is one / one-minus-src-alpha and
+      // its colour factors never read src alpha, so screen stays screen.
+      return vec4<f32>(light, clamp(max(max(light.r, light.g), light.b), 0.0, 1.0));
     }
   `;
 
