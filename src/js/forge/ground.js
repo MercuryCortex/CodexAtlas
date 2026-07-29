@@ -44,6 +44,20 @@
     inkwell:  { a: '#140f0b', b: '#1e1610', glow: 'rgba(200,150,80,.10)',  star: 0 },
   };
   const NAMES = ['film', 'void', 'obsidian', 'nebula', 'inkwell'];
+  // Swatch metadata for the pickers (THE FOLIO ▸ Ground). Kept here so
+  // the swatch and the paint can never disagree.
+  const SWATCH = [
+    { key: 'film',     label: 'Film',      bg: 'linear-gradient(135deg,#0d1119,#1b2130)', dot: '#d4a55a' },
+    { key: 'void',     label: 'Deep Void', bg: 'linear-gradient(135deg,#04060d,#0b101f)', dot: '#dce1ff' },
+    { key: 'obsidian', label: 'Obsidian',  bg: 'linear-gradient(135deg,#0b0918,#171231)', dot: '#8f7fd0' },
+    { key: 'nebula',   label: 'Nebula',    bg: 'linear-gradient(135deg,#1c1547,#31226b)', dot: '#c46ab4' },
+    { key: 'inkwell',  label: 'Inkwell',   bg: 'linear-gradient(135deg,#140f0b,#211711)', dot: '#c89650' },
+  ];
+  // ONE SOURCE OF TRUTH (2026-07-29). The ground is a user setting with
+  // exactly one owner: this module. Every surface that offers it —
+  // THE FOLIO ▸ Ground today — calls set() and renders from current.
+  // It is NOT a forge param and NOT part of the node recipe.
+  const LS_KEY = 'codex-ground';
 
   // The lab's own deterministic pseudo-random — the starfield must
   // be the SAME field every paint (a reshuffle on every resize would
@@ -207,5 +221,25 @@
     raf = requestAnimationFrame(paint);
   });
 
-  window._forgeGround = { apply, repaint: paint, names: NAMES, get current() { return current; } };
+  // set() = apply + remember. reapply() re-runs the current choice; the
+  // forge calls it after a mount because the bg movie element only
+  // exists from then on, and 'film' vs a colour ground is decided by
+  // hiding it.
+  function set(name) {
+    const v = apply(name);
+    try { localStorage.setItem(LS_KEY, v); } catch (_) { /* ignore */ }
+    return v;
+  }
+  function reapply() { return apply(current); }
+
+  let saved = 'film';
+  try { saved = localStorage.getItem(LS_KEY) || 'film'; } catch (_) { /* ignore */ }
+  current = NAMES.indexOf(saved) >= 0 ? saved : 'film';
+  if (current !== 'film') { ensureCanvas(); paint(); }
+
+  window._forgeGround = {
+    apply, set, reapply, repaint: paint,
+    names: NAMES, swatches: SWATCH,
+    get current() { return current; },
+  };
 })();

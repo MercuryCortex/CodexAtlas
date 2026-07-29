@@ -2879,18 +2879,15 @@
     if (typeof state.tlBands            !== 'boolean') state.tlBands            = true;
     if (typeof state.tlBandLabels       !== 'boolean') state.tlBandLabels       = true;
     if (typeof state.tlDenseTicks       !== 'boolean') state.tlDenseTicks       = false;
-    // 2026-07-29 — THE GROUND lives here, not in the LAB panel
-    // (John: "these are not dev panel"). 'film' = the ambient bg
-    // movie = the standing default; the four colour grounds are the
-    // node-lab's §03 schemes, painted by _forgeGround.
-    if (typeof state.ground !== 'string') state.ground = 'film';
+    // 2026-07-29 — THE GROUND does NOT live here. John pointed at
+    // THE FOLIO's own Theme/Badge column ("the user menu") as the
+    // canonical home for it, and it is owned end-to-end by
+    // src/js/forge/ground.js — one setting, one owner, one picker.
+    // The only thing VIEW does is re-assert it after a mount, because
+    // the bg movie element the ground has to hide is created by the
+    // forge and does not exist before that.
+    if (window._forgeGround) { try { window._forgeGround.reapply(); } catch (_) { /* ignore */ } }
     function applyState() {
-      if (window._forgeGround) {
-        try { window._forgeGround.apply(state.ground); } catch (_) {}
-      }
-      panel.querySelectorAll('.forge-viewset-row[data-ground]').forEach(row => {
-        row.classList.toggle('is-on', row.dataset.ground === state.ground);
-      });
       document.body.classList.toggle('fv-hide-hulls',         !state.hulls);
       document.body.classList.toggle('fv-hide-family-titles', !state.familyTitles);
       const noDividers = !state.dividers && !state.dividersConverging;
@@ -3037,14 +3034,6 @@
         if (key === 'dividersConverging' && state.dividersConverging) {
           state.dividers = false;
         }
-        applyState();
-        return;
-      }
-      // 2026-07-29 — ground radio (film · void · obsidian · nebula · inkwell).
-      if (row.dataset.ground) {
-        const v = row.dataset.ground;
-        if (state.ground === v) return;
-        state.ground = v;
         applyState();
         return;
       }
@@ -4938,6 +4927,20 @@
     inkwell:  { a: '#140f0b', b: '#1e1610', glow: 'rgba(200,150,80,.10)',  star: 0 },
   };
   const NAMES = ['film', 'void', 'obsidian', 'nebula', 'inkwell'];
+  // Swatch metadata for the pickers (THE FOLIO ▸ Ground). Kept here so
+  // the swatch and the paint can never disagree.
+  const SWATCH = [
+    { key: 'film',     label: 'Film',      bg: 'linear-gradient(135deg,#0d1119,#1b2130)', dot: '#d4a55a' },
+    { key: 'void',     label: 'Deep Void', bg: 'linear-gradient(135deg,#04060d,#0b101f)', dot: '#dce1ff' },
+    { key: 'obsidian', label: 'Obsidian',  bg: 'linear-gradient(135deg,#0b0918,#171231)', dot: '#8f7fd0' },
+    { key: 'nebula',   label: 'Nebula',    bg: 'linear-gradient(135deg,#1c1547,#31226b)', dot: '#c46ab4' },
+    { key: 'inkwell',  label: 'Inkwell',   bg: 'linear-gradient(135deg,#140f0b,#211711)', dot: '#c89650' },
+  ];
+  // ONE SOURCE OF TRUTH (2026-07-29). The ground is a user setting with
+  // exactly one owner: this module. Every surface that offers it —
+  // THE FOLIO ▸ Ground today — calls set() and renders from current.
+  // It is NOT a forge param and NOT part of the node recipe.
+  const LS_KEY = 'codex-ground';
 
   // The lab's own deterministic pseudo-random — the starfield must
   // be the SAME field every paint (a reshuffle on every resize would
@@ -5101,7 +5104,27 @@
     raf = requestAnimationFrame(paint);
   });
 
-  window._forgeGround = { apply, repaint: paint, names: NAMES, get current() { return current; } };
+  // set() = apply + remember. reapply() re-runs the current choice; the
+  // forge calls it after a mount because the bg movie element only
+  // exists from then on, and 'film' vs a colour ground is decided by
+  // hiding it.
+  function set(name) {
+    const v = apply(name);
+    try { localStorage.setItem(LS_KEY, v); } catch (_) { /* ignore */ }
+    return v;
+  }
+  function reapply() { return apply(current); }
+
+  let saved = 'film';
+  try { saved = localStorage.getItem(LS_KEY) || 'film'; } catch (_) { /* ignore */ }
+  current = NAMES.indexOf(saved) >= 0 ? saved : 'film';
+  if (current !== 'film') { ensureCanvas(); paint(); }
+
+  window._forgeGround = {
+    apply, set, reapply, repaint: paint,
+    names: NAMES, swatches: SWATCH,
+    get current() { return current; },
+  };
 })();
 
 // ─── src/js/forge/lab-panel.js ──────────────────────────────
@@ -5183,13 +5206,13 @@
       ['recipe_label',  'Label'],
     ];
     // The label voice — radio rows like the casts (lab: 3 fonts × 3 motions)
+    // 2026-07-29 — plain names, no "voice" jargon (it confused John,
+    // fairly). Two INDEPENDENT axes: size and family. Both apply to
+    // every name on the map, always.
     const VOICES = [
-      // 2026-07-29 — which typography EVERY name on the map wears
-      // (one label system). 'map' = Inter 14px + 4px halo (today);
-      // 'voice' = the dialled voice font at its own size.
-      ['label_face', 'Label face — map / voice', ['map', 'voice']],
-      ['label_font', 'Voice — font',   ['mono', 'serif', 'sans']],
-      ['label_anim', 'Voice — motion', ['condense', 'rise', 'unveil']],
+      ['label_font', 'Label font',   ['mono', 'serif', 'sans']],
+      ['label_face', 'Label size',   ['map', 'voice']],
+      ['label_anim', 'Reveal motion', ['condense', 'rise', 'unveil']],
     ];
     const DRESSES = ['halo', 'icon', 'orb', 'veil', 'ember'];
     const CASTS = [

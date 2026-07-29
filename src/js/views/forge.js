@@ -1173,17 +1173,10 @@
           // dates onscreen as you zoom in). Off = auto cadence.
           '<button class="forge-viewset-row fv-timeline-only" data-toggle="tlDenseTicks"><span class="vs-check"></span>Dense date ticks</button>' +
           '<div class="forge-viewset-divider"></div>' +
-          // 2026-07-29 — THE GROUND. The node-lab's §03 colour
-          // schemes, promoted out of the dev panel into the canonical
-          // settings (John: "these are not dev panel"). Film — the
-          // ambient movie — stays the standing default.
-          '<div class="forge-viewset-section">Ground</div>' +
-          '<button class="forge-viewset-row" data-ground="film"><span class="vs-radio"></span>Film <em>(ambient movie — default)</em></button>' +
-          '<button class="forge-viewset-row" data-ground="void"><span class="vs-radio"></span>Deep Void <em>(starfield)</em></button>' +
-          '<button class="forge-viewset-row" data-ground="obsidian"><span class="vs-radio"></span>Obsidian</button>' +
-          '<button class="forge-viewset-row" data-ground="nebula"><span class="vs-radio"></span>Nebula</button>' +
-          '<button class="forge-viewset-row" data-ground="inkwell"><span class="vs-radio"></span>Inkwell</button>' +
-          '<div class="forge-viewset-divider"></div>' +
+          // NOTE — the GROUND picker is NOT here. It lives in THE FOLIO
+          // (✦ ▸ Ground), next to Badge and Theme, which is what John
+          // meant by the canonical settings page. Owner:
+          // src/js/forge/ground.js.
           '<div class="forge-viewset-section">Color theme</div>' +
           '<button class="forge-viewset-row" data-color="default"><span class="vs-radio"></span>Atlas <em>(curated)</em></button>' +
           '<button class="forge-viewset-row" data-color="roots"><span class="vs-radio"></span>Roots <em>(civilizational families)</em></button>' +
@@ -5311,16 +5304,26 @@
       // neighbour at 60% awake — most of a woken cluster — painted at
       // 0.32. Now full presence lands by mid-wake (0.70) with an ease,
       // the ceiling is 1.0, and reach names get the same halo as rank.
+      // BUG FIX 2026-07-29 (John: "the fonts NOT WORKING"). The two
+      // dials were entangled: the typeface only took effect when the
+      // SIZE was set to 'voice', so picking serif while on 'map' did
+      // nothing at all and read as broken. They are now independent
+      // axes — label_font picks the FAMILY, label_face picks the SIZE —
+      // so every chip always changes something visible.
       const face = (local.params.label_face === 'voice') ? 'voice' : 'map';
       const fontKind = local.params.label_font || 'sans';
       const anim = local.params.label_anim || 'rise';
+      const FAMILY = {
+        sans:  'Inter, system-ui, -apple-system, "Segoe UI", sans-serif',
+        serif: '"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif',
+        mono:  'ui-monospace,"SF Mono",Menlo,monospace',
+      };
+      const fam = FAMILY[fontKind] || FAMILY.sans;
+      // 'map' = the wheel's established scale; 'voice' = the lab's own
+      // per-family sizes (a serif needs more body than a mono).
       const labelFont = (face === 'voice')
-        ? (fontKind === 'serif'
-            ? '500 11px "Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif'
-            : (fontKind === 'mono'
-              ? '600 9px ui-monospace,"SF Mono",Menlo,monospace'
-              : '600 9.5px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif'))
-        : '500 ' + _labelSize + 'px Inter, system-ui, -apple-system, sans-serif';
+        ? ((fontKind === 'serif' ? '500 11px ' : (fontKind === 'mono' ? '600 9px ' : '600 9.5px ')) + fam)
+        : ('500 ' + _labelSize + 'px ' + fam);
       const trackBase = (face === 'voice') ? (fontKind === 'serif' ? 1.5 : 1) : 0;
       ctx.font = labelFont;
       ctx.textAlign = 'center';

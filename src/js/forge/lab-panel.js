@@ -76,13 +76,13 @@
       ['recipe_label',  'Label'],
     ];
     // The label voice — radio rows like the casts (lab: 3 fonts × 3 motions)
+    // 2026-07-29 — plain names, no "voice" jargon (it confused John,
+    // fairly). Two INDEPENDENT axes: size and family. Both apply to
+    // every name on the map, always.
     const VOICES = [
-      // 2026-07-29 — which typography EVERY name on the map wears
-      // (one label system). 'map' = Inter 14px + 4px halo (today);
-      // 'voice' = the dialled voice font at its own size.
-      ['label_face', 'Label face — map / voice', ['map', 'voice']],
-      ['label_font', 'Voice — font',   ['mono', 'serif', 'sans']],
-      ['label_anim', 'Voice — motion', ['condense', 'rise', 'unveil']],
+      ['label_font', 'Label font',   ['mono', 'serif', 'sans']],
+      ['label_face', 'Label size',   ['map', 'voice']],
+      ['label_anim', 'Reveal motion', ['condense', 'rise', 'unveil']],
     ];
     const DRESSES = ['halo', 'icon', 'orb', 'veil', 'ember'];
     const CASTS = [

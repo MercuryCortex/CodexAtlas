@@ -50,18 +50,15 @@
     if (typeof state.tlBands            !== 'boolean') state.tlBands            = true;
     if (typeof state.tlBandLabels       !== 'boolean') state.tlBandLabels       = true;
     if (typeof state.tlDenseTicks       !== 'boolean') state.tlDenseTicks       = false;
-    // 2026-07-29 — THE GROUND lives here, not in the LAB panel
-    // (John: "these are not dev panel"). 'film' = the ambient bg
-    // movie = the standing default; the four colour grounds are the
-    // node-lab's §03 schemes, painted by _forgeGround.
-    if (typeof state.ground !== 'string') state.ground = 'film';
+    // 2026-07-29 — THE GROUND does NOT live here. John pointed at
+    // THE FOLIO's own Theme/Badge column ("the user menu") as the
+    // canonical home for it, and it is owned end-to-end by
+    // src/js/forge/ground.js — one setting, one owner, one picker.
+    // The only thing VIEW does is re-assert it after a mount, because
+    // the bg movie element the ground has to hide is created by the
+    // forge and does not exist before that.
+    if (window._forgeGround) { try { window._forgeGround.reapply(); } catch (_) { /* ignore */ } }
     function applyState() {
-      if (window._forgeGround) {
-        try { window._forgeGround.apply(state.ground); } catch (_) {}
-      }
-      panel.querySelectorAll('.forge-viewset-row[data-ground]').forEach(row => {
-        row.classList.toggle('is-on', row.dataset.ground === state.ground);
-      });
       document.body.classList.toggle('fv-hide-hulls',         !state.hulls);
       document.body.classList.toggle('fv-hide-family-titles', !state.familyTitles);
       const noDividers = !state.dividers && !state.dividersConverging;
@@ -208,14 +205,6 @@
         if (key === 'dividersConverging' && state.dividersConverging) {
           state.dividers = false;
         }
-        applyState();
-        return;
-      }
-      // 2026-07-29 — ground radio (film · void · obsidian · nebula · inkwell).
-      if (row.dataset.ground) {
-        const v = row.dataset.ground;
-        if (state.ground === v) return;
-        state.ground = v;
         applyState();
         return;
       }

@@ -211,6 +211,23 @@
     try { return localStorage.getItem('codex-style') || 'codex'; } catch (_) { return 'codex'; }
   }
 
+  // ── GROUND SWATCHES (2026-07-29) ─────────────────────────────
+  // The node-lab's §03 colour grounds, offered here beside Badge and
+  // Theme because this — not the dev panel, not the VIEW dropdown —
+  // is the canonical settings surface (John: "i still dont have the
+  // colors bg on the user menu"). THEME restyles the app chrome;
+  // GROUND is what the wheel floats on. Separate settings, adjacent
+  // rows. The list and the paint both come from _forgeGround, so a
+  // swatch can never disagree with what it selects.
+  function groundList() {
+    var g = window._forgeGround;
+    return (g && g.swatches) ? g.swatches : [];
+  }
+  function currentGround() {
+    var g = window._forgeGround;
+    return g ? g.current : 'film';
+  }
+
   // ── RENDER ───────────────────────────────────────────────────
   function initialOf(name) {
     var s = String(name || 'S').trim();
@@ -232,6 +249,14 @@
     var themePicker = THEMES.map(function (t) {
       return '<button type="button" class="folio-theme-swatch' + (t.key === currentStyle() ? ' is-active' : '') +
         '" data-folio-theme="' + t.key + '" title="' + t.label + '" aria-label="' + t.label + '">' +
+        '<span class="folio-theme-chip" style="background:' + t.bg + '"><span class="folio-theme-dot" style="background:' + t.dot + '"></span></span>' +
+        '<span class="folio-theme-name">' + t.label + '</span>' +
+        '</button>';
+    }).join('');
+
+    var groundPicker = groundList().map(function (t) {
+      return '<button type="button" class="folio-theme-swatch' + (t.key === currentGround() ? ' is-active' : '') +
+        '" data-folio-ground="' + t.key + '" title="' + t.label + '" aria-label="' + t.label + '">' +
         '<span class="folio-theme-chip" style="background:' + t.bg + '"><span class="folio-theme-dot" style="background:' + t.dot + '"></span></span>' +
         '<span class="folio-theme-name">' + t.label + '</span>' +
         '</button>';
@@ -259,6 +284,12 @@
       '    <div class="folio-sect-label">Theme</div>',
       '    <div class="folio-theme-grid">' + themePicker + '</div>',
       '  </div>',
+      (groundPicker
+        ? '  <div class="folio-sect">'
+          + '    <div class="folio-sect-label">Ground</div>'
+          + '    <div class="folio-theme-grid">' + groundPicker + '</div>'
+          + '  </div>'
+        : ''),
       '</div>',
       '<div class="folio-shelf">',
       '  <div class="folio-shelf-head">',
@@ -294,6 +325,16 @@
         var key = btn.getAttribute('data-folio-theme');
         if (typeof window.applyStyle === 'function') window.applyStyle(key);
         document.dispatchEvent(new CustomEvent('codex:profile-changed'));   // theme is part of the cloud profile
+        render();
+      });
+    });
+    // Ground pick — _forgeGround owns the value and the persistence.
+    _el.querySelectorAll('[data-folio-ground]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var key = btn.getAttribute('data-folio-ground');
+        if (window._forgeGround) {
+          try { window._forgeGround.set(key); } catch (_) { /* ignore */ }
+        }
         render();
       });
     });
