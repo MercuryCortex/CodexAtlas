@@ -37,12 +37,48 @@
 // ============================================================
 (function () {
   // Lab THEMES, verbatim (design/node-lab.html).
+  // 'film' is not a lab theme — it is "no colour ground": the app's own
+  // --bg-0 (read live, so it follows the FOLIO Theme) with no ramp and
+  // no starfield. It is here so the canvas can paint EVERY background,
+  // including today's default. See ATMOSPHERE below for why that matters.
   const THEMES = {
+    film:     { flat: true,                                 glow: null,                  star: 0 },
     nebula:   { a: '#1c1547', b: '#2a1e5e', glow: 'rgba(150,70,180,.20)', star: 0 },
     obsidian: { a: '#0b0918', b: '#151129', glow: 'rgba(100,80,170,.13)', star: 0 },
     void:     { a: '#04060d', b: '#0a0e1c', glow: 'rgba(70,100,180,.10)',  star: 1 },
     inkwell:  { a: '#140f0b', b: '#1e1610', glow: 'rgba(200,150,80,.10)',  star: 0 },
   };
+
+  // ── THE ATMOSPHERE, MOVED OFF CSS (2026-07-29) ───────────────
+  // John, at 253% zoom with a colour ground and no film: "the version
+  // without the film HAS banding — but there's no BANDING in your view
+  // here on the side. what are you talking about?"
+  //
+  // He was right and I had been measuring the wrong layer. `.forge-stage`
+  // painted its own CENTRED radial in CSS —
+  //   radial-gradient(ellipse at center,
+  //     rgba(212,165,90, var(--forge-atmosphere, .025)) 0%, transparent 70%)
+  // — a warm haze worth about SIX of 256 levels spread across ~70% of the
+  // viewport. That is ~120px per band, and **CSS gradients cannot be
+  // dithered**: the browser rasterises them straight to 8 bits. So the
+  // ground canvas underneath was provably smooth while the layer on top
+  // of it banded, and my downscaled pane screenshots averaged the bands
+  // away — which is exactly why his retina display disagreed with them.
+  //
+  // The atmosphere is now composited INTO this canvas, inside the same
+  // dithered float pass, and the CSS one is switched off in view-forge
+  // (--forge-atmosphere: 0). One surface owns the whole background.
+  // Geometry reproduces `ellipse farthest-corner at center`: radii are
+  // (W/2, H/2) × √2, the stop runs 0 → 70% of that, linear.
+  const ATMO = { r: 212, g: 165, b: 90, a: 0.025, stop: 0.7 };
+  const SQRT2 = Math.SQRT2;
+
+  function cssVar(name, fallback) {
+    try {
+      const v = getComputedStyle(document.body).getPropertyValue(name).trim();
+      return v || fallback;
+    } catch (_) { return fallback; }
+  }
   const NAMES = ['film', 'void', 'obsidian', 'nebula', 'inkwell'];
   // Swatch metadata for the pickers (THE FOLIO ▸ Ground). Kept here so
   // the swatch and the paint can never disagree.
@@ -165,8 +201,17 @@
     ctx.setTransform(1, 0, 0, 1, 0, 0);
     ctx.clearRect(0, 0, W, H);
 
-    const A = hex(T.a), B = hex(T.b), G = rgba(T.glow);
+    // 'film' = no colour ramp: the app's own --bg-0, read live so the
+    // background follows whatever THEME is picked in THE FOLIO.
+    const flatHex = T.flat ? cssVar('--bg-0', '#07090f') : null;
+    const A = hex(T.flat ? flatHex : T.a);
+    const B = T.flat ? A : hex(T.b);
+    const G = T.glow ? rgba(T.glow) : [0, 0, 0, 0];
     const gx = W * 0.72, gy = H * 0.15, gr = W * 0.8;
+    // the centred atmosphere (was the .forge-stage CSS radial)
+    const ax = W * 0.5, ay = H * 0.5;
+    const arx = (W * 0.5) * SQRT2 * ATMO.stop;
+    const ary = (H * 0.5) * SQRT2 * ATMO.stop;
     const img = ctx.createImageData(W, H);
     const px = img.data;
     const denomY = H > 1 ? H - 1 : 1;
@@ -179,17 +224,31 @@
       const bg = A[1] + (B[1] - A[1]) * ty;
       const bb = A[2] + (B[2] - A[2]) * ty;
       const dy = y - gy, dy2 = dy * dy;
+      const ady = (y - ay) / ary, ady2 = ady * ady;
       const bRow = (y & 7) * 8;
       for (let x = 0; x < W; x++) {
         const dx = x - gx;
         let a = 1 - Math.sqrt(dx * dx + dy2) / gr;   // linear stop → radius
         a = a > 0 ? a * G[3] : 0;
         const ia = 1 - a;
-        // ordered dither, ±half a level, applied AT quantisation
+        let r = G[0] * a + br * ia;
+        let g = G[1] * a + bg * ia;
+        let b = G[2] * a + bb * ia;
+        // atmosphere over the top — same premultiplied colour→transparent
+        // model as the CSS gradient it replaces, but in float.
+        const adx = (x - ax) / arx;
+        let aa = 1 - Math.sqrt(adx * adx + ady2);
+        if (aa > 0) {
+          aa = aa * ATMO.a;
+          const iaa = 1 - aa;
+          r = ATMO.r * aa + r * iaa;
+          g = ATMO.g * aa + g * iaa;
+          b = ATMO.b * aa + b * iaa;
+        }
+        // ordered dither, ±half a level, applied AT quantisation — the
+        // whole point: the bands never get a chance to form.
         const d = (BAYER8[bRow + (x & 7)] + 0.5) * 0.015625 - 0.5;   // /64 - .5
-        let r = G[0] * a + br * ia + d;
-        let g = G[1] * a + bg * ia + d;
-        let b = G[2] * a + bb * ia + d;
+        r += d; g += d; b += d;
         r = r < 0 ? 0 : r > 255 ? 255 : r;
         g = g < 0 ? 0 : g > 255 ? 255 : g;
         b = b < 0 ? 0 : b > 255 ? 255 : b;
@@ -220,24 +279,25 @@
     if (v && v.style.display === 'none') v.style.display = '';
   }
 
+  // The canvas paints EVERY background now, 'film' included — that is
+  // what makes it the one dithered surface instead of a special case
+  // sitting next to an undithered CSS layer.
   function apply(name) {
     current = NAMES.indexOf(name) >= 0 ? name : 'film';
     unhideMovie();
-    if (current === 'film') {
-      // 'Film' = no colour base: the app's own --bg-0 under the movie,
-      // i.e. exactly today's look.
-      if (cv && cv.isConnected) { cv.remove(); }
-      cv = null;
-      return current;
-    }
     ensureCanvas();
     paint();
     return current;
   }
 
+  // The FOLIO Theme changes --bg-0, which is the 'film' base — repaint.
+  document.addEventListener('codex:profile-changed', () => {
+    if (cv) paint();
+  });
+
   let raf = 0;
   window.addEventListener('resize', () => {
-    if (current === 'film' || !cv) return;
+    if (!cv) return;
     cancelAnimationFrame(raf);
     raf = requestAnimationFrame(paint);
   });
@@ -256,7 +316,7 @@
   let saved = 'film';
   try { saved = localStorage.getItem(LS_KEY) || 'film'; } catch (_) { /* ignore */ }
   current = NAMES.indexOf(saved) >= 0 ? saved : 'film';
-  if (current !== 'film') { ensureCanvas(); paint(); }
+  ensureCanvas(); paint();
 
   window._forgeGround = {
     apply, set, reapply, repaint: paint,

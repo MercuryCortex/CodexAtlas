@@ -1384,6 +1384,16 @@ body.view-forge .forge-stage {
      but drop the opaque base colour so the body-root BG image
      shows through. */
   --forge-bg: transparent;
+  /* 2026-07-29 — THE ATMOSPHERE MOVED TO THE GROUND CANVAS.
+     This centred radial was John's banding: rgba(212,165,90,.025)
+     fading to transparent at 70% is about SIX of 256 levels spread
+     over most of the viewport (~120px per band), and a CSS gradient
+     cannot be dithered — the browser rasterises it straight to 8
+     bits. src/js/forge/ground.js now composites the identical haze
+     inside its float+Bayer-dither pass, so zero here means "drawn
+     once, drawn smooth", not "removed". Non-forge views keep the
+     CSS version (they have no ground canvas). */
+  --forge-atmosphere: 0;
 }
 
 /* ── Phase 21B (2026-05-21) — View-settings dropdown ── */
