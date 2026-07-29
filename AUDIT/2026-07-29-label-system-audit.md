@@ -7,9 +7,24 @@
 >
 > He is right. There are two independent label systems drawing on the same
 > canvas, in two different visual languages, with two independent collision
-> lists. This is the audit and the proposed single behaviour. **Nothing is
-> implemented from this document yet** (AUDIT convention: proposals here are
-> unimplemented).
+> lists. This is the audit and the proposed single behaviour.
+
+## ✅ IMPLEMENTED 2026-07-29 (`ENGINE-DRESS-15`)
+
+Sections 1–4 shipped: one language, two reasons (rank / reach), one
+priority-ordered placement pass, the ramp reshaped, halo on every name,
+and an alpha crossfade so names arrive and leave instead of popping.
+Section 5's open question is answered by a **live switch** instead of a
+decision up front — `LAB ▸ Labels ▸ Label face: map / voice` — because
+John judges typography by eye, not by description. Default stays `map`
+(Inter 14px + 4px halo, i.e. today's look); flipping to `voice` puts the
+whole map in the dialled voice font. Whichever he picks gets frozen into
+PARAM_DEFAULTS.
+
+One extra defect surfaced and fixed on the way — see §7.
+
+Section 6 (family/hull zoom, wedge-title clipping, the wire dress)
+remains unimplemented.
 
 ---
 
@@ -149,3 +164,31 @@ ones.
   `HERMETIC`) and node names colliding with the bottom bar — separate from
   the two-label problem; these are the hull labels + a viewport-inset issue.
 - **The wire dress** — its own design round (see the node-dress handoff).
+
+---
+
+## 7 · Bug found while implementing — BLACK LABELS at boot
+
+Not in the original audit; it surfaced the moment the crossfade landed, and
+it was a **pre-existing latent bug**, not a regression.
+
+`renderLabelsCanvas()` reads `--forge-label-halo` / `--forge-label-text` from
+CSS on a 500ms cadence: `if (now - _labelsHaloRead > 500)`. Both colour vars
+start as `''` and `_labelsHaloRead` starts at `0`. If the forge mounts inside
+the page's first 500 ms, `performance.now() - 0 > 500` is **false**, the read
+is skipped, the two colours stay empty strings, and `ctx.strokeStyle = ''` /
+`ctx.fillStyle = ''` are silently **ignored as invalid** — leaving canvas at
+its initial `#000000`. Result: black text with a black halo.
+
+It stayed invisible for months because some later repaint always re-read the
+vars and fixed it. The label crossfade paints its entire ~10-frame ramp
+inside that first 500 ms and then the camera-idle skip **freezes the black
+pixels on screen** — so the latent bug became the visible state.
+
+Fix: `if (!_labelsHaloColor || now - _labelsHaloRead > 500)`. The first paint
+always reads. Verified: `fillStyle` is `#e8e2d0`, `strokeStyle` `#0a0c10` on
+a cold load.
+
+**Standing lesson**: assigning an empty string to a canvas colour property is
+a silent no-op, not an error. Any lazily-read style must be guarded on
+"never read yet", never on elapsed time alone.

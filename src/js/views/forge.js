@@ -665,6 +665,12 @@
     recipe_frost:          4.0,
     recipe_depth:          1.0,
     recipe_label:          1,
+    // ONE LABEL SYSTEM (2026-07-29) — which typography every name on
+    // the map wears. 'map' = the established Inter 14px + 4px halo;
+    // 'voice' = the lab's dialled voice font at its own size. John
+    // flips this live and we freeze his pick. label_font/label_anim
+    // now steer EVERY label, not just the woken ones.
+    label_face:            'map',
     label_font:            'sans',
     label_anim:            'rise',
     node_max_screen_px_hub:   34,
@@ -5218,6 +5224,7 @@
       const visSet = local.visibleLabelEls;
       const _lvs = visSet ? visSet.size : 0;
       if (!local._wakeAlive
+          && !local._labelFadeAlive   // a name is still arriving/leaving
           && local._labelsIdleCamS === _lcs
           && local._labelsIdleCamCx === _lcx
           && local._labelsIdleCamCy === _lcy
@@ -5248,7 +5255,17 @@
       // getComputedStyle invalidates style cache if called every
       // frame on a hot path).
       const now = performance.now();
-      if (now - _labelsHaloRead > 500) {
+      // BUG FIX 2026-07-29 — `!_labelsHaloColor` is load-bearing, not
+      // belt-and-braces. `_labelsHaloRead` starts at 0, so the 500ms
+      // cadence alone SKIPS the very first read whenever the forge
+      // mounts inside the page's first 500ms — the colours stay '',
+      // both assignments below are ignored as invalid, and canvas
+      // falls back to its initial #000000: black text with a black
+      // halo. It survived this long because a later repaint always
+      // fixed it; the label crossfade (below) paints its whole ramp
+      // inside that window and then the idle-skip freezes the black
+      // pixels on screen.
+      if (!_labelsHaloColor || now - _labelsHaloRead > 500) {
         const cs = getComputedStyle(document.body);
         _labelsHaloColor = (cs.getPropertyValue('--forge-label-halo') || '').trim() || '#0a0d12';
         _labelsTextColor = (cs.getPropertyValue('--forge-label-text') || '').trim() || '#e8eaef';
@@ -5271,7 +5288,41 @@
       // canvas size matches the AABB collision math in label.js +
       // any future FX-panel tuning slider stays the single source.
       const _labelSize = (local.params && local.params.label_size) || 14;
-      ctx.font = '500 ' + _labelSize + 'px Inter, system-ui, -apple-system, sans-serif';
+      // ══ ONE LABEL SYSTEM (2026-07-29) ═══════════════════════════
+      // AUDIT/2026-07-29-label-system-audit.md. John: "we got two
+      // labels now? … i want to flow nice and keep a hierarchy on
+      // zooms but also use the interim reveal flow … which is faded".
+      //
+      // There used to be two systems on this canvas in two visual
+      // languages with two collision lists that could not see each
+      // other: RANK (the tier ladder — Inter 14px, above the node,
+      // haloed, alpha 1) and REACH (the wake voice — 9.5px, below the
+      // node, family-tinted, no halo, alpha 0.85·rv). Now there is ONE
+      // language and TWO REASONS a name appears:
+      //   RANK  — the node is important enough at this zoom (the tier
+      //           ladder in label.js, unchanged)
+      //   REACH — your hand woke it (wake > 0.35, any zoom)
+      // Both draw in the same font, size, position and halo. The only
+      // difference is ARRIVAL: reach names animate in with the voice
+      // motion; rank names crossfade. One priority-ordered placement
+      // pass, so nothing can ever land on top of anything else.
+      //
+      // THE FADE FIX: reach used to be alpha 0.85·(wake−.35)/.65, so a
+      // neighbour at 60% awake — most of a woken cluster — painted at
+      // 0.32. Now full presence lands by mid-wake (0.70) with an ease,
+      // the ceiling is 1.0, and reach names get the same halo as rank.
+      const face = (local.params.label_face === 'voice') ? 'voice' : 'map';
+      const fontKind = local.params.label_font || 'sans';
+      const anim = local.params.label_anim || 'rise';
+      const labelFont = (face === 'voice')
+        ? (fontKind === 'serif'
+            ? '500 11px "Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif'
+            : (fontKind === 'mono'
+              ? '600 9px ui-monospace,"SF Mono",Menlo,monospace'
+              : '600 9.5px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif'))
+        : '500 ' + _labelSize + 'px Inter, system-ui, -apple-system, sans-serif';
+      const trackBase = (face === 'voice') ? (fontKind === 'serif' ? 1.5 : 1) : 0;
+      ctx.font = labelFont;
       ctx.textAlign = 'center';
       ctx.textBaseline = 'bottom';
       ctx.lineJoin = 'round';
@@ -5282,108 +5333,140 @@
       // matters less, so going back to 4px for the chunkier halo look
       // is fine for Safari fluidity. If pan stutters return, drop back
       // to 2px or 3px.
-      ctx.lineWidth = 4;
+      ctx.lineWidth = (face === 'voice') ? 3 : 4;
       ctx.strokeStyle = _labelsHaloColor;
       ctx.fillStyle = _labelsTextColor;
+
+      // 1 ▸ CANDIDATES — rank and reach, merged by id.
+      const cands = [];
+      const byId = new Map();
+      const dressOnL = (local.params.recipe_hover_zoom || 0) >= 1;
+      const revealOn = dressOnL && (local.params.recipe_label || 0) >= 1;
       if (visible && visible.size) for (const id of visible) {
         const n = hitById ? hitById.get(id) : null;
         if (!n) continue;
-        const s = camera.worldToScreen(n.x, n.y, vp);
-        if (s.x < -vMargin || s.x > vp.w + vMargin
-            || s.y < -vMargin || s.y > vp.h + vMargin) continue;
-        const node = nodesById ? nodesById.get(id) : null;
-        const title = (node && node.title) || id;
-        const x = s.x;
-        const y = s.y - n.r * camScale - 6;
-        // Stroke-then-fill = halo around fill (matches old text-shadow effect).
-        ctx.strokeText(title, x, y);
-        ctx.fillText(title, x, y);
+        // Rank priority follows the tier ladder: a hub outranks a
+        // long-tail name, exactly as label.js already decided.
+        const c = { id, n, pri: 1000 - (n.tier | 0) * 10, target: 1, reach: 0, rv: 1 };
+        byId.set(id, c); cands.push(c);
       }
-
-      // ── FULL-TRANSCRIPTION (2026-07-27): THE LABEL VOICE ──
-      // Lab law 8: wake reveals · hovered/locked priority · neighbors
-      // that would overlap yield · 3 fonts × 3 motions. Rides THIS
-      // canvas (no bespoke renderer). Verbatim lab math: rv =
-      // (wake−.35)/.65, y below the node + bubble, color 40% toward
-      // white of family color at .85·rv.
-      if ((local.params.recipe_label || 0) >= 1
-          && (local.params.recipe_hover_zoom || 0) >= 1
-          && local.nodeStates && local.mode && local.mode.hitNodes
+      if (revealOn && local.nodeStates && local.mode.hitNodes
           && local.nodeStates.length === local.mode.hitNodes.length * 4) {
         const hns = local.mode.hitNodes;
-        const np = local.mode.nodePacked;
-        const bubbleK = local.params.recipe_bubble || 1.1;
-        const fontKind = local.params.label_font || 'sans';
-        const anim = local.params.label_anim || 'rise';
-        const wakeFont = fontKind === 'serif'
-          ? '500 11px "Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif'
-          : (fontKind === 'mono'
-            ? '600 9px ui-monospace,"SF Mono",Menlo,monospace'
-            : '600 9.5px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif');
-        const cand = [];
         for (let i = 0; i < hns.length; i++) {
           const wk = local.nodeStates[i * 4 + 2];
           if (wk <= 0.35) continue;
-          // REVIEW P1: timeline-HIDDEN nodes must not ghost-label.
-          if (local.nodeStates[i * 4] >= 1.5) continue;
-          const id = hns[i].id;
-          if (visible && visible.has(id)) continue;   // idle tier already shows it
-          const isHov = (local.hoverId === id);
-          const isLock = !!(local.lockedSet && local.lockedSet.has(id));
-          cand.push({ i, wk, pri: (isHov ? 20 : 0) + (isLock ? 10 : 0) + wk });
-        }
-        if (cand.length) {
-          cand.sort((a, b) => b.pri - a.pri);
-          ctx.font = wakeFont;
-          ctx.textBaseline = 'alphabetic';
-          const placed = [];
-          for (const c of cand) {
-            const n = hns[c.i];
-            const s = camera.worldToScreen(n.x, n.y, vp);
-            if (s.x < -vMargin || s.x > vp.w + vMargin
-                || s.y < -vMargin || s.y > vp.h + vMargin) continue;
-            const node = nodesById ? nodesById.get(n.id) : null;
-            const title = (node && node.title) || n.id;
-            const rv = Math.min(1, (c.wk - 0.35) / 0.65);
-            const off = np ? c.i * 8 : -1;
-            const fr = off >= 0 ? Math.round(np.data[off + 4] * 255) : 233;
-            const fg = off >= 0 ? Math.round(np.data[off + 5] * 255) : 229;
-            const fb = off >= 0 ? Math.round(np.data[off + 6] * 255) : 244;
-            const mixW = (v) => Math.round(v + (255 - v) * 0.4);
-            let dy = 0, tr = 0;
-            if (anim === 'rise') dy = 6 * (1 - rv);
-            if (anim === 'condense') tr = 3 - 2.2 * rv;
-            const base = fontKind === 'serif' ? 1.5 : 1;
-            // REVIEW P2 — measure UNTRACKED width (the lab's collision
-            // rule), then apply the condense tracking for the draw.
-            const wpx = ctx.measureText(title).width + 10;
-            try { ctx.letterSpacing = (base + tr).toFixed(1) + 'px'; } catch (e) { /* Safari quirk */ }
-            const ly = s.y + n.r * camScale * bubbleK + 16 + dy;
-            let ok = true;
-            for (const P of placed) {
-              if (Math.abs(s.x - P[0]) < (wpx + P[2]) / 2 && Math.abs(ly - P[1]) < 15) { ok = false; break; }
-            }
-            if (!ok) { try { ctx.letterSpacing = '0px'; } catch (e) { /* ignore */ } continue; }
-            placed.push([s.x, ly, wpx]);
-            const a = (anim === 'unveil') ? Math.min(1, rv * 1.6) : rv;
-            ctx.fillStyle = 'rgba(' + mixW(fr) + ',' + mixW(fg) + ',' + mixW(fb) + ',' + (0.85 * a).toFixed(3) + ')';
-            if (anim === 'unveil') {
-              ctx.save();
-              ctx.beginPath();
-              ctx.rect(s.x - wpx / 2 - 2, ly - 12, (wpx + 4) * rv, 18);
-              ctx.clip();
-              ctx.fillText(title, s.x, ly);
-              ctx.restore();
-            } else {
-              ctx.fillText(title, s.x, ly);
-            }
-            try { ctx.letterSpacing = '0px'; } catch (e) { /* ignore */ }
+          if (local.nodeStates[i * 4] >= 1.5) continue;   // timeline-HIDDEN must not ghost-label
+          const n = hns[i];
+          const r0 = Math.min(1, (wk - 0.35) / 0.35);     // full by mid-wake, not at wake 1.0
+          const rv = r0 * r0 * (3 - 2 * r0);              // smoothstep ease
+          const isHov = local.hoverId === n.id;
+          const isLock = !!(local.lockedSet && local.lockedSet.has(n.id));
+          const pri = 4000 + (isHov ? 3000 : 0) + (isLock ? 2000 : 0) + rv * 100;
+          const prev = byId.get(n.id);
+          if (prev) {
+            // AUDIT P1 — this name is ALREADY up as a rank label.
+            // Promote it so a woken neighbour can never displace the
+            // node under the cursor, but do not re-animate it: it is
+            // already present, and fading it in would read as a flicker.
+            if (pri > prev.pri) prev.pri = pri;
+          } else {
+            const c = { id: n.id, n, pri, target: rv, reach: 1, rv };
+            byId.set(n.id, c); cands.push(c);
           }
-          // restore the idle-label style contract for the next paint
-          ctx.font = '500 ' + _labelSize + 'px Inter, system-ui, -apple-system, sans-serif';
-          ctx.textBaseline = 'bottom';
         }
       }
+      // AUDIT P0 — ONE list. hovered → locked → woken → tier.
+      cands.sort((a, b) => b.pri - a.pri);
+
+      // 2 ▸ ONE PLACEMENT PASS — nothing lands on anything else.
+      const fade = local._labelFade || (local._labelFade = new Map());
+      const bubbleK = local.params.recipe_bubble || 1;
+      const placed = [];
+      const seen = new Set();
+      const draws = [];
+      for (const c of cands) {
+        const s = camera.worldToScreen(c.n.x, c.n.y, vp);
+        if (s.x < -vMargin || s.x > vp.w + vMargin
+            || s.y < -vMargin || s.y > vp.h + vMargin) continue;
+        const node = nodesById ? nodesById.get(c.id) : null;
+        const title = (node && node.title) || c.id;
+        // Lab law: collision is measured UNTRACKED; tracking is a draw-time affair.
+        const wpx = ctx.measureText(title).width + 10;
+        // ONE position for every name — above the node, clearing the
+        // dress bubble so a woken node's name never sits in its glow.
+        const dy = (c.reach && anim === 'rise') ? 6 * (1 - c.rv) : 0;
+        const ly = s.y - c.n.r * camScale * (c.reach ? bubbleK : 1) - 6 + dy;
+        let ok = true;
+        for (let k = 0; k < placed.length; k++) {
+          const P = placed[k];
+          if (Math.abs(s.x - P[0]) < (wpx + P[2]) / 2 && Math.abs(ly - P[1]) < 15) { ok = false; break; }
+        }
+        if (!ok) continue;
+        placed.push([s.x, ly, wpx]);
+        seen.add(c.id);
+        draws.push({ c, title, x: s.x, y: ly, wpx });
+      }
+      // Names that just lost eligibility keep drawing while they LEAVE
+      // (target 0) — this is what makes a zoom step crossfade instead
+      // of pop. Position is recomputed, so a leaving name still tracks
+      // its node if the camera is moving.
+      for (const [id, v] of fade) {
+        if (seen.has(id) || v <= 0.005) continue;
+        const n = hitById ? hitById.get(id) : null;
+        if (!n) { fade.delete(id); continue; }
+        const s = camera.worldToScreen(n.x, n.y, vp);
+        if (s.x < -vMargin || s.x > vp.w + vMargin
+            || s.y < -vMargin || s.y > vp.h + vMargin) { fade.delete(id); continue; }
+        const node = nodesById ? nodesById.get(id) : null;
+        const title = (node && node.title) || id;
+        const wpx = ctx.measureText(title).width + 10;
+        const ly = s.y - n.r * camScale - 6;
+        let ok = true;
+        for (let k = 0; k < placed.length; k++) {
+          const P = placed[k];
+          if (Math.abs(s.x - P[0]) < (wpx + P[2]) / 2 && Math.abs(ly - P[1]) < 15) { ok = false; break; }
+        }
+        if (!ok) continue;   // an arriving name owns the spot — this one just goes
+        placed.push([s.x, ly, wpx]);
+        draws.push({ c: { id, target: 0, reach: 0, rv: 0 }, title, x: s.x, y: ly, wpx });
+      }
+
+      // 3 ▸ DRAW — one alpha tween per name (John: "flow nice").
+      let fadeAlive = false;
+      for (let d = 0; d < draws.length; d++) {
+        const it = draws[d];
+        const cur = fade.get(it.c.id) || 0;
+        const tgt = it.c.target;
+        let nv = cur + (tgt - cur) * 0.18;
+        if (Math.abs(tgt - nv) < 0.01) nv = tgt; else fadeAlive = true;
+        if (nv <= 0.005) { fade.delete(it.c.id); continue; }
+        fade.set(it.c.id, nv);
+        const a = (it.c.reach && anim === 'unveil') ? Math.min(1, nv * 1.6) : nv;
+        const tr = (it.c.reach && anim === 'condense') ? 3 - 2.2 * it.c.rv : 0;
+        if (trackBase + tr !== 0) {
+          try { ctx.letterSpacing = (trackBase + tr).toFixed(1) + 'px'; } catch (e) { /* Safari quirk */ }
+        }
+        ctx.globalAlpha = a;
+        if (it.c.reach && anim === 'unveil' && nv < 0.999) {
+          // written left→right
+          ctx.save();
+          ctx.beginPath();
+          ctx.rect(it.x - it.wpx / 2 - 2, it.y - 16, (it.wpx + 4) * it.c.rv, 22);
+          ctx.clip();
+          ctx.strokeText(it.title, it.x, it.y);
+          ctx.fillText(it.title, it.x, it.y);
+          ctx.restore();
+        } else {
+          // Stroke-then-fill = halo around fill (matches old text-shadow effect).
+          ctx.strokeText(it.title, it.x, it.y);
+          ctx.fillText(it.title, it.x, it.y);
+        }
+        if (trackBase + tr !== 0) { try { ctx.letterSpacing = '0px'; } catch (e) { /* ignore */ } }
+      }
+      ctx.globalAlpha = 1;
+      local._labelFadeAlive = fadeAlive;
+
     }
 
     // ── Hover hit-test ──────────────────────────────────
@@ -5500,10 +5583,17 @@
       const fxAlive = dressOn && (wakeAlive
         || (local.lockedSet && local.lockedSet.size > 0)
         || !!local.hoverId);
-      if ((stillFading || fxAlive) && !stillMoving) {
+      // 2026-07-29 — label crossfades keep frames flowing too (names
+      // arrive and leave over ~10 frames instead of popping). Not
+      // gated on dressOn: rank labels crossfade on zoom with the
+      // recipe off as well. Converges in a few frames, so REST IS
+      // STILL is preserved — the loop dies right after the last name
+      // settles.
+      const labelFadeAlive = !!local._labelFadeAlive;
+      if ((stillFading || fxAlive || labelFadeAlive) && !stillMoving) {
         drawFrame();
       }
-      if (stillMoving || stillFading || fxAlive) {
+      if (stillMoving || stillFading || fxAlive || labelFadeAlive) {
         local.animRafId = requestAnimationFrame(animTick);
       } else {
         local.animRafId = null;

@@ -5184,6 +5184,10 @@
     ];
     // The label voice — radio rows like the casts (lab: 3 fonts × 3 motions)
     const VOICES = [
+      // 2026-07-29 — which typography EVERY name on the map wears
+      // (one label system). 'map' = Inter 14px + 4px halo (today);
+      // 'voice' = the dialled voice font at its own size.
+      ['label_face', 'Label face — map / voice', ['map', 'voice']],
       ['label_font', 'Voice — font',   ['mono', 'serif', 'sans']],
       ['label_anim', 'Voice — motion', ['condense', 'rise', 'unveil']],
     ];
