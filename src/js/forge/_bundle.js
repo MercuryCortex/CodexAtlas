@@ -5026,6 +5026,14 @@
 
   let cv = null;      // the ground canvas
   let current = 'film';
+  // ISOLATE TINT (2026-07-29) — the third of the lab's three isolate
+  // ingredients ("a camera fit plus a dim-others flag plus a ground
+  // tint"). The lab's paintBG took tint/tintA args; they were dropped
+  // on the first port because nothing set them. Family isolate does.
+  // Applied in the same float pass as everything else, so tinting the
+  // ground cannot reintroduce banding.
+  let tint = null;    // [r,g,b] or null
+  let tintA = 0;      // 0..1
 
   // THE GROUND SITS UNDER THE FILM, IT DOES NOT REPLACE IT.
   // John, 2026-07-29: "the GROUND STILL MISSES THE FILM on zoom out —
@@ -5109,14 +5117,23 @@
       const dy = y - gy, dy2 = dy * dy;
       const ady = (y - ay) / ary, ady2 = ady * ady;
       const bRow = (y & 7) * 8;
+      // isolate tint over the base ramp — the lab's own step
+      // (rgba(tint, .09 * tintA)), constant across the row
+      let brT = br, bgT = bg, bbT = bb;
+      if (tint && tintA > 0.001) {
+        const ta = 0.09 * tintA, ita = 1 - ta;
+        brT = tint[0] * ta + br * ita;
+        bgT = tint[1] * ta + bg * ita;
+        bbT = tint[2] * ta + bb * ita;
+      }
       for (let x = 0; x < W; x++) {
         const dx = x - gx;
         let a = 1 - Math.sqrt(dx * dx + dy2) / gr;   // linear stop → radius
         a = a > 0 ? a * G[3] : 0;
         const ia = 1 - a;
-        let r = G[0] * a + br * ia;
-        let g = G[1] * a + bg * ia;
-        let b = G[2] * a + bb * ia;
+        let r = G[0] * a + brT * ia;
+        let g = G[1] * a + bgT * ia;
+        let b = G[2] * a + bbT * ia;
         // atmosphere over the top — same premultiplied colour→transparent
         // model as the CSS gradient it replaces, but in float.
         const adx = (x - ax) / arx;
@@ -5195,6 +5212,17 @@
     return v;
   }
   function reapply() { return apply(current); }
+  // setTint(hexOrNull, amount) — the isolate ground tint. Repaints.
+  function setTint(hex, amount) {
+    tint = hex ? hexToRgb(hex) : null;
+    tintA = Math.max(0, Math.min(1, amount == null ? 1 : amount));
+    if (cv) paint();
+  }
+  function hexToRgb(h) {
+    const s2 = String(h).trim();
+    if (s2.charAt(0) === '#' && s2.length >= 7) return hex(s2);
+    return [255, 255, 255];
+  }
 
   let saved = 'film';
   try { saved = localStorage.getItem(LS_KEY) || 'film'; } catch (_) { /* ignore */ }
@@ -5202,7 +5230,7 @@
   ensureCanvas(); paint();
 
   window._forgeGround = {
-    apply, set, reapply, repaint: paint,
+    apply, set, reapply, repaint: paint, setTint,
     names: NAMES, swatches: SWATCH,
     get current() { return current; },
   };

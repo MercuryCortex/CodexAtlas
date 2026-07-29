@@ -7946,6 +7946,27 @@ aside.detail { overflow-x: hidden; }
 .forge-hull-label-g {
   /* Wraps a single text element; inherits --family-color. */
 }
+/* FAMILY ISOLATE (2026-07-29) — the title is the click target. The
+   overlay is pointer-events:none so the canvas keeps every node
+   hover; the title opts back in. Deliberately NOT the wedge fill:
+   the hull polys sit above the canvas and would swallow node picks. */
+.forge-hull-label {
+  pointer-events: auto;
+  cursor: pointer;
+}
+.forge-hull-label:hover {
+  fill-opacity: 1;
+}
+/* The isolated family's title stays lit — it is also the way out. */
+.forge-hull-label.is-isolated {
+  fill-opacity: 1;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+}
+/* While isolated, the other titles recede with their families. */
+body.fv-isolated .forge-hull-label:not(.is-isolated) {
+  fill-opacity: 0.3;
+}
 .forge-hull-label {
   fill: var(--family-color, #888);
   fill-opacity: 0.85;

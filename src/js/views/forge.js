@@ -4513,6 +4513,31 @@
       hullsOverlay.appendChild(hullDividersG);
       hullsOverlay.appendChild(hullGuideRingsG);
       hullsOverlay.appendChild(hullLabelsG);
+      // Click a family title to ISOLATE that family; click it again
+      // (or press Escape) to come back. Delegated once — the label
+      // elements are rebuilt on every mode change.
+      hullLabelsG.addEventListener('click', (ev) => {
+        const t = ev.target && ev.target.closest
+          ? ev.target.closest('.forge-hull-label') : null;
+        const fam = t && t.getAttribute('data-family');
+        if (!fam) return;
+        ev.stopPropagation();
+        setIsolateFamily(local._isolateFamily === fam ? null : fam);
+      });
+      // Escape is the other way out. Registered once alongside the
+      // structure it serves; guarded on being isolated so it never
+      // swallows Escape from the reader, the search box or a modal.
+      if (!window.__forgeIsolateEsc) {
+        window.__forgeIsolateEsc = true;
+        document.addEventListener('keydown', (ev) => {
+          if (ev.key !== 'Escape') return;
+          if (!local._isolateFamily) return;
+          const a = document.activeElement;
+          if (a && (a.tagName === 'INPUT' || a.tagName === 'TEXTAREA')) return;
+          ev.stopPropagation();
+          setIsolateFamily(null);
+        });
+      }
     }
     // Phase 21AI (2026-05-22) — guide rings (inner / mid / outer).
     // Three SVG circles, same family colour as the dividers, fixed
@@ -4570,6 +4595,12 @@
         label.setAttribute('class', 'forge-hull-label');
         label.setAttribute('text-anchor', 'middle');
         label.setAttribute('dominant-baseline', 'middle');
+        // FAMILY ISOLATE (2026-07-29) — the title is the click target.
+        // Not the wedge fill: the hull polys sit ABOVE the canvas at
+        // z-index 3, so giving them pointer-events would swallow every
+        // node hover and click. The title lives outside the node rim
+        // where nothing else wants the pointer.
+        label.setAttribute('data-family', h.family);
         label.textContent = h.family;
         lblG.appendChild(label);
         hullLabelsG.appendChild(lblG);
@@ -5752,6 +5783,99 @@
     //  - Undated nodes (no date_earliest) stay visible — never
     //    hidden by the timeline filter.
     // ════════════════════════════════════════════════════════════
+    // ════════════════════════════════════════════════════════════
+    // FAMILY ISOLATE  —  2026-07-29
+    // ════════════════════════════════════════════════════════════
+    // The node-lab's §04 law, verbatim: "Isolate is state, not
+    // navigation. Same Forge engine, same instanced nodes — a camera
+    // fit plus a dim-others flag plus a ground tint. Back is one
+    // click, and it's instant."
+    //
+    // So there is no new view, no new renderer and no re-layout. Three
+    // existing levers, pulled together:
+    //   1. camera.flyTo() onto the family's world extent
+    //   2. this override, which dims every node outside the family
+    //      (state 1 = the SAME dim the hover-focus law uses, so the
+    //      dress/light rules need no special case)
+    //   3. _forgeGround.setTint() with the family's own colour
+    // Nothing here writes layout, so exiting is genuinely instant.
+    function applyIsolateOverride(idx, states) {
+      const fam = local._isolateFamily;
+      if (!fam) return;
+      const nodesById = (local.mode && local.mode.nodesById) || null;
+      if (!nodesById || !nodesById.get) return;
+      for (let i = 0; i < idx.length; i++) {
+        const n = nodesById.get(idx[i]);
+        if (!n) continue;
+        if (n.family !== fam && states[i] < 1) states[i] = 1;
+      }
+    }
+
+    // Fly the camera onto one family and mark the state. `null` exits.
+    function setIsolateFamily(fam) {
+      const hulls = (local.mode && local.mode.hullData && local.mode.hullData.hulls) || null;
+      local._isolateFamily = fam || null;
+      // 3 ▸ ground tint — the family's own colour, or clear.
+      if (window._forgeGround) {
+        let col = null;
+        if (fam && hulls) {
+          for (let i = 0; i < hulls.length; i++) {
+            if (hulls[i].family === fam) { col = hulls[i].color; break; }
+          }
+        }
+        try { window._forgeGround.setTint(fam ? col : null, 1); } catch (_) { /* ignore */ }
+      }
+      // 1 ▸ camera. Extent of the family's own nodes in world space.
+      const vp = local.lastSize;
+      if (fam && local.mode && local.mode.hitNodes && vp && vp.w && vp.h) {
+        const nodesById = local.mode.nodesById;
+        const hns = local.mode.hitNodes;
+        let x0 = Infinity, y0 = Infinity, x1 = -Infinity, y1 = -Infinity, hit = 0;
+        for (let i = 0; i < hns.length; i++) {
+          const n = nodesById && nodesById.get ? nodesById.get(hns[i].id) : null;
+          if (!n || n.family !== fam) continue;
+          const r = hns[i].r || 0;
+          if (hns[i].x - r < x0) x0 = hns[i].x - r;
+          if (hns[i].y - r < y0) y0 = hns[i].y - r;
+          if (hns[i].x + r > x1) x1 = hns[i].x + r;
+          if (hns[i].y + r > y1) y1 = hns[i].y + r;
+          hit++;
+        }
+        if (hit > 0 && x1 > x0 && y1 > y0) {
+          // Same aspect-correct letterbox maths as camera.fitToExtent,
+          // computed here so we can FLY instead of teleport (fitToExtent
+          // cancels animations by design — it is a jump, not an ease).
+          const padW = (x1 - x0) * 0.18, padH = (y1 - y0) * 0.18;
+          const w = (x1 - x0) + padW * 2, h = (y1 - y0) + padH * 2;
+          const s = Math.min(vp.w / w, vp.h / h);
+          camera.flyTo({ centerX: (x0 + x1) / 2, centerY: (y0 + y1) / 2, scale: s }, 0.55);
+        }
+      } else if (!fam) {
+        // Back to the whole wheel — the view's own fit, not a guess.
+        try {
+          const ext = local.mode && local.mode.worldExtent;
+          if (ext && vp && vp.w && vp.h) {
+            const w = (ext.x1 - ext.x0), h = (ext.y1 - ext.y0);
+            const s = Math.min(vp.w / w, vp.h / h);
+            camera.flyTo({ centerX: (ext.x0 + ext.x1) / 2, centerY: (ext.y0 + ext.y1) / 2, scale: s }, 0.55);
+          }
+        } catch (_) { /* ignore */ }
+      }
+      // Mark the active title so the way out is visible.
+      try {
+        const labels = document.querySelectorAll('.forge-hull-label');
+        for (let i = 0; i < labels.length; i++) {
+          const on = !!fam && labels[i].getAttribute('data-family') === fam;
+          labels[i].classList.toggle('is-isolated', on);
+        }
+        document.body.classList.toggle('fv-isolated', !!fam);
+      } catch (_) { /* ignore */ }
+      // 2 ▸ restate + draw.
+      try { recomputeFocus(); } catch (_) { /* ignore */ }
+      startAnimLoop();
+      drawFrame();
+    }
+
     function applyTimelineHiddenOverride(idx, states, focusedSet) {
       const tl = local.timeline;
       if (!tl) return;
@@ -5822,6 +5946,9 @@
       // nodes to FADED and they'd visibly pop back. See helper at
       // the bottom of this file.
       applyTimelineHiddenOverride(idx, states, local.focusedSet);
+      // FAMILY ISOLATE — dims everything outside the isolated family.
+      // Runs after the timeline override so a hidden node stays hidden.
+      applyIsolateOverride(idx, states);
       // 2026-05-19 — node fade. Interleaved (dim, selected) pairs
       // go into nodeTargets; tickNodeFades advances nodeStates
       // toward them at FADE_DURATION. On first run / mode switch,
