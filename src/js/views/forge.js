@@ -7187,6 +7187,17 @@
       let action;   // 'add' | 'remove' | 'clear'
       let changedId = id;
       if (id == null) {
+        // FAMILY ISOLATE (2026-07-29) — an empty click is THE way out.
+        // John: "having to press escape is atrocious, a simple empty
+        // click MUST remove back." Handled here rather than in a new
+        // listener because this is already the app's documented
+        // "click to dismiss" path, so isolate leaves by the same
+        // gesture as everything else. Escape stays as a keyboard
+        // alternative; it is no longer the only way.
+        if (local._isolateFamily) {
+          setIsolateFamily(null);
+          if (local.lockedSet.size === 0) return;
+        }
         if (local.lockedSet.size === 0) return;
         local.lockedSet.clear();
         action = 'clear';
