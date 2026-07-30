@@ -10,7 +10,7 @@
      tester IP leaks to Google on load (Anonymity Law). -->
 <link rel="stylesheet" href="_assets/vendor/fonts/fonts.css?v=20260717-fonts" />
 <link rel="stylesheet" href="_assets/vendor/maplibre/maplibre-gl.css?v=5.24.0" />
-<link rel="stylesheet" href="src/styles/app.css?v=20260730-devdoor" />
+<link rel="stylesheet" href="src/styles/app.css?v=20260730-house" />
 <!-- ?diag=1 — BOOT ERROR RECORDER (2026-07-29). Must be the FIRST script on
      the page: an automated Safari/prod pass connects AFTER load, so without
      this there is no honest way to say "no boot errors" on a browser we
@@ -207,6 +207,7 @@
      Pure function on window.AtlasEngineLayout.timelineLayout. The
      Forge view will consume this in Phase TL-2 mode-switch wiring. -->
 <script src="src/js/engine/layout/timeline.js?v=20260613-genealogy"></script>
+<script src="src/js/engine/layout/familytree.js?v=20260730-house"></script>
 <script src="src/js/engine/graph/node.js?v=20260525-phase24-v1"></script>
 <script src="src/js/engine/graph/edge.js?v=20260525-phase24-v1"></script>
 <script src="src/js/engine/graph/adjacency.js?v=20260525-phase24-v1"></script>
@@ -214,7 +215,7 @@
 <script src="src/js/engine/graph/hull.js?v=20260530-groupby-swappable"></script>
 <script src="src/js/engine/graph/mode.js?v=20260610-yaml-lanes"></script>
 <script src="src/js/engine/graph/glyph.js?v=20260525-phase24-v1"></script>
-<script src="src/js/engine/renderer/webgpu.js?v=20260729-emptyclick"></script>
+<script src="src/js/engine/renderer/webgpu.js?v=20260730-house"></script>
 <!-- Phase TL-2 Step 3 (2026-05-24) — Timeline chrome (SVG axis + ticks).
      Loaded BEFORE forge.js so the global window.AtlasTimelineChrome is
      available when rebuildForMode tries to mount() it. -->
@@ -234,8 +235,8 @@
      forge.js so window.AtlasViewportFilter exists when
      rebuildForMode tries to cull the active set. -->
 <script src="src/js/engine/graph/viewport-filter.js?v=20260527T0625-reverted-blinking"></script>
-<script src="src/js/forge/_bundle.js?v=20260730-devdoor"></script>
-<script src="src/js/views/forge.js?v=20260730-devdoor"></script>
+<script src="src/js/forge/_bundle.js?v=20260730-house"></script>
+<script src="src/js/views/forge.js?v=20260730-house"></script>
 <script src="src/js/views/boards.js?v=20260716-sealed"></script>
 <!-- Boards V2 Investigation Library data — 32 MASSIVE WINS + 11
      TRANSMISSIONS generated from MASSIVE-WINS-INDEX.md. Loads BEFORE

@@ -163,6 +163,13 @@
       // needsBackdrop flag: 0 unless an orb cast is live AND the
       // backdrop texture holds this frame's ground+wires.
       recipe_f:               vec4<f32>,  // mag, frost_fb_px, depth, backdrop_live
+      // THE HOUSE (2026-07-30) — family-isolate layout ramp. .x is
+      // the ONLY live channel (yzw spare, vec4 for alignment). Every
+      // instance carries a second position (buffer B, the tree);
+      // world = mix(posA, posB, layout_mix.x). HONEST ZEROS: with no
+      // isolate the uniform is 0 and mix(a,b,0)=a·1+b·0 — buffer A
+      // (the wheel) renders exactly; B is a zero-initialized buffer.
+      layout_mix:             vec4<f32>,
     };
     @group(0) @binding(0) var<uniform> v: View;
     // Bound only by the BODY pipeline (the orb lens samples the
@@ -206,8 +213,11 @@
       @location(1) inst_pos_r:     vec4<f32>,
       @location(2) inst_color:     vec4<f32>,
       @location(3) inst_sswd:      vec4<f32>,
+      @location(4) inst_pos_b:     vec2<f32>,
     ) -> VsOut {
-      let inst_pos      = inst_pos_r.xy;
+      // THE HOUSE — mix() is exact at both ends (t=0 → a·1+b·0 = a;
+      // t=1 → a·0+b·1 = b), so rest states are bit-true positions.
+      let inst_pos      = mix(inst_pos_r.xy, inst_pos_b, v.layout_mix.x);
       let inst_radius   = inst_pos_r.z;
       let inst_state    = inst_sswd.x;
       let inst_selected = inst_sswd.y;
@@ -545,8 +555,10 @@
       @location(1) inst_pos_r:     vec4<f32>,
       @location(2) inst_color:     vec4<f32>,
       @location(3) inst_sswd:      vec4<f32>,
+      @location(4) inst_pos_b:     vec2<f32>,
     ) -> VsOut {
-      let inst_pos      = inst_pos_r.xy;
+      // THE HOUSE — glow rides the same layout ramp as the body.
+      let inst_pos      = mix(inst_pos_r.xy, inst_pos_b, v.layout_mix.x);
       let inst_radius   = inst_pos_r.z;
       let inst_state    = inst_sswd.x;
       let inst_selected = inst_sswd.y;
@@ -669,6 +681,16 @@
       // zw spare. Lives in the slot freed by collapsing the unused
       // 8th bucket entry (only 7 buckets are real).
       glyph_params:           vec4<f32>,
+      // THE HOUSE (2026-07-30) — pad through the node shader's six
+      // recipe vec4s (unused here) so layout_mix lands at the same
+      // byte offset (288) in the ONE shared view UBO.
+      recipe_pad_a:           vec4<f32>,
+      recipe_pad_b:           vec4<f32>,
+      recipe_pad_c:           vec4<f32>,
+      recipe_pad_d:           vec4<f32>,
+      recipe_pad_e:           vec4<f32>,
+      recipe_pad_f:           vec4<f32>,
+      layout_mix:             vec4<f32>,
     };
     @group(0) @binding(0) var<uniform> v: View;
 
@@ -697,9 +719,13 @@
       @location(2) inst_color:     vec4<f32>,
       @location(3) inst_extra:     vec4<f32>,
       @location(4) inst_state:     f32,
+      @location(5) inst_endpoints_b: vec4<f32>,
     ) -> VsOut {
-      let p0   = inst_endpoints.xy;
-      let p2   = inst_endpoints.zw;
+      // THE HOUSE — endpoints ride the layout ramp; external wires
+      // land on their group's horizon port because the ported nodes
+      // themselves moved there (one pass positions ALL nodes).
+      let p0   = mix(inst_endpoints.xy, inst_endpoints_b.xy, v.layout_mix.x);
+      let p2   = mix(inst_endpoints.zw, inst_endpoints_b.zw, v.layout_mix.x);
       let mid  = (p0 + p2) * 0.5;
       let p1   = mid + (vec2<f32>(0.0, 0.0) - mid) * inst_extra.y;
       let t    = (quad_vertex.x + 1.0) * 0.5;
@@ -869,6 +895,15 @@
       // zw spare. Lives in the slot freed by collapsing the unused
       // 8th bucket entry (only 7 buckets are real).
       glyph_params:           vec4<f32>,
+      // THE HOUSE (2026-07-30) — same padding as the edge shader so
+      // layout_mix reads byte offset 288 of the shared view UBO.
+      recipe_pad_a:           vec4<f32>,
+      recipe_pad_b:           vec4<f32>,
+      recipe_pad_c:           vec4<f32>,
+      recipe_pad_d:           vec4<f32>,
+      recipe_pad_e:           vec4<f32>,
+      recipe_pad_f:           vec4<f32>,
+      layout_mix:             vec4<f32>,
     };
     @group(0) @binding(0) var<uniform> v: View;
     // 17 UV rects in atlas space — (u0,v0,u1,v1) per glyph type.
@@ -916,8 +951,9 @@
       @location(1) inst_pos_r_idx:  vec4<f32>,     // xy=center, z=glyph_radius, w=glyphIdx
       @location(2) inst_tint_alpha: vec4<f32>,     // rgba (carried but unused — see fragment)
       @location(3) inst_state_sel:  vec2<f32>,     // .x = state, .y = selected
+      @location(4) inst_pos_b:      vec2<f32>,     // THE HOUSE — shared node posB VBO (1:1 instances)
     ) -> VsOut {
-      let center   = inst_pos_r_idx.xy;
+      let center   = mix(inst_pos_r_idx.xy, inst_pos_b, v.layout_mix.x);
       let r_base   = inst_pos_r_idx.z;            // already × glyph_scale in JS
       let idx_f    = inst_pos_r_idx.w;
       let idx      = clamp(i32(floor(idx_f + 0.5)), 0, 31);
@@ -1095,7 +1131,10 @@
     // untouched. Edge + glyph shaders still declare the 192-byte
     // struct; binding a larger buffer is valid (min-binding-size).
     // FULL-TRANSCRIPTION (2026-07-27) — 272 → 288: recipe_f (lens).
-    const VIEW_UBO_SIZE = 288;
+    // THE HOUSE (2026-07-30) — 288 → 304: layout_mix vec4 appended
+    // (only .x live). Edge + glyph shaders pad their structs to the
+    // same offset so ONE buffer serves all passes.
+    const VIEW_UBO_SIZE = 304;
     const viewUbo = own(device.createBuffer({
       label: 'forge-view-ubo', size: VIEW_UBO_SIZE,
       usage: GPUBufferUsage.UNIFORM | GPUBufferUsage.COPY_DST,
@@ -1185,6 +1224,10 @@
           { arrayStride: 16, stepMode: 'instance', attributes: [
               { shaderLocation: 3, offset: 0, format: 'float32x4' },
           ] },
+          // [3] THE HOUSE — per-instance position B (the tree).
+          { arrayStride: 8, stepMode: 'instance', attributes: [
+              { shaderLocation: 4, offset: 0, format: 'float32x2' },
+          ] },
         ],
       },
       fragment: {
@@ -1212,6 +1255,9 @@
           ] },
           { arrayStride: 16, stepMode: 'instance', attributes: [
               { shaderLocation: 3, offset: 0, format: 'float32x4' },
+          ] },
+          { arrayStride: 8, stepMode: 'instance', attributes: [
+              { shaderLocation: 4, offset: 0, format: 'float32x2' },
           ] },
         ],
       },
@@ -1258,6 +1304,10 @@
           // [2] per-instance state (single float)
           { arrayStride: 4, stepMode: 'instance', attributes: [
               { shaderLocation: 4, offset: 0, format: 'float32' },
+          ] },
+          // [3] THE HOUSE — per-instance endpoints B (p0b, p2b).
+          { arrayStride: 16, stepMode: 'instance', attributes: [
+              { shaderLocation: 5, offset: 0, format: 'float32x4' },
           ] },
         ],
       },
@@ -1340,6 +1390,12 @@
           { arrayStride: 16, stepMode: 'instance', attributes: [
               { shaderLocation: 3, offset: 0, format: 'float32x2' },
           ] },
+          // [3] THE HOUSE — SAME nodePosBVbo as the node pipeline
+          // (glyph instances are 1:1 with node instances), so glyphs
+          // ride the layout ramp with their parent disks.
+          { arrayStride: 8, stepMode: 'instance', attributes: [
+              { shaderLocation: 4, offset: 0, format: 'float32x2' },
+          ] },
         ],
       },
       fragment: {
@@ -1368,6 +1424,9 @@
           ] },
           { arrayStride: 16, stepMode: 'instance', attributes: [
               { shaderLocation: 3, offset: 0, format: 'float32x4' },
+          ] },
+          { arrayStride: 8, stepMode: 'instance', attributes: [
+              { shaderLocation: 4, offset: 0, format: 'float32x2' },
           ] },
         ],
       },
@@ -1442,6 +1501,13 @@
     let nodeStateVbo        = null, nodeStateVboSize        = 0;
     let edgeInstanceVbo     = null, edgeInstanceVboSize     = 0;
     let edgeStateVbo        = null, edgeStateVboSize        = 0;
+    // THE HOUSE (2026-07-30) — position-B buffers. Always bound
+    // (the pipelines declare the attribute); fresh GPUBuffers are
+    // zero-initialized per spec, and layout_mix=0 multiplies the B
+    // term away, so with no isolate these cost one attribute fetch
+    // and change nothing — honest zeros.
+    let nodePosBVbo         = null, nodePosBVboSize         = 0;
+    let edgePosBVbo         = null, edgePosBVboSize         = 0;
     // Phase 6d — depth attachment for z-layering. Selected
     // nodes paint on top of highlighted on top of dimmed; edges
     // paint behind all nodes. See vs_main z-writes per shader.
@@ -1815,7 +1881,7 @@
         // Phase 6c grew the header 176→192 (added dim_nodes,
         // Phase 7 (2026-05-20) — selected slot now carries
         // (size_mult, stroke_w, stroke RGBA) instead of glow uniforms.
-        const viewData = new Float32Array(72);  // 288 / 4
+        const viewData = new Float32Array(76);  // 304 / 4
         viewData[0]  = viewScaleX;
         viewData[1]  = viewScaleY;
         viewData[2]  = viewOffsetX;
@@ -1874,6 +1940,15 @@
           viewData[70] = rc.depth || 0;
           viewData[71] = rc.needsBackdrop ? 1 : 0;
         }
+        // THE HOUSE — layout ramp (float 72 = byte 288). HONEST LAW:
+        // the mix can only be non-zero when BOTH position-B arrays
+        // are supplied (or there are no edges) — otherwise a lone
+        // node array would blend edges toward the zero-filled B
+        // buffer and collapse them onto the origin.
+        const lmRaw = (typeof frame.layoutMix === 'number') ? frame.layoutMix : 0;
+        const lm = (frame.nodePosB && (frame.edgePosB || edgeCount === 0))
+          ? Math.max(0, Math.min(1, lmRaw)) : 0;
+        viewData[72] = lm;
         device.queue.writeBuffer(viewUbo, 0, viewData);
 
         // ── Instance buffers (static geometry) ──────
@@ -1959,6 +2034,28 @@
           device.queue.writeBuffer(edgeStateVbo, 0, stateData, 0, Math.floor(stateBytes / 4));
         }
 
+        // ── THE HOUSE — position-B buffers (2026-07-30) ──
+        // Always allocated so the pipelines' [3] slot has a buffer to
+        // bind. New GPUBuffers are zero-initialized (WebGPU spec), and
+        // the upload is gated on the caller actually supplying B data,
+        // so the no-isolate path never uploads and never changes.
+        if (nodeCount > 0) {
+          const bytes = nodeCount * 8;
+          const r = ensureBuffer(nodePosBVbo, nodePosBVboSize, bytes, 'forge-node-posb-vbo');
+          nodePosBVbo = r.buf; nodePosBVboSize = r.size;
+          if (frame.nodePosB && (frame.nodePosBDirty || r.grew)) {
+            device.queue.writeBuffer(nodePosBVbo, 0, frame.nodePosB, 0, nodeCount * 2);
+          }
+        }
+        if (edgeCount > 0) {
+          const bytes = edgeCount * 16;
+          const r = ensureBuffer(edgePosBVbo, edgePosBVboSize, bytes, 'forge-edge-posb-vbo');
+          edgePosBVbo = r.buf; edgePosBVboSize = r.size;
+          if (frame.edgePosB && (frame.edgePosBDirty || r.grew)) {
+            device.queue.writeBuffer(edgePosBVbo, 0, frame.edgePosB, 0, edgeCount * 4);
+          }
+        }
+
         // ── Encode + submit ───────────────────────────
         const encoder = device.createCommandEncoder({ label: 'forge-frame' });
         const dTex = ensureDepthTex(canvas.width, canvas.height);
@@ -1975,6 +2072,7 @@
           p.setVertexBuffer(0, edgeRibbonVbo);
           p.setVertexBuffer(1, edgeInstanceVbo);
           p.setVertexBuffer(2, edgeStateVbo);
+          p.setVertexBuffer(3, edgePosBVbo);
           p.draw(EDGE_RIBBON_COUNT, edgeCount);
         };
         if (needsBackdrop) {
@@ -2021,6 +2119,7 @@
           pass.setVertexBuffer(0, quadVbo);
           pass.setVertexBuffer(1, nodeInstanceVbo);
           pass.setVertexBuffer(2, nodeStateVbo);
+          pass.setVertexBuffer(3, nodePosBVbo);
           pass.draw(6, nodeCount);
         }
         if (nodeCount > 0) {
@@ -2031,6 +2130,7 @@
           pass.setVertexBuffer(0, quadVbo);
           pass.setVertexBuffer(1, nodeInstanceVbo);
           pass.setVertexBuffer(2, nodeStateVbo);
+          pass.setVertexBuffer(3, nodePosBVbo);
           pass.draw(6, nodeCount);
         }
         // 2026-05-20 — GPU glyph pass. Replaces the DOM glyph
@@ -2062,6 +2162,9 @@
           // glyphs get the same (state, selected) per instance
           // without duplicating data.
           pass.setVertexBuffer(2, nodeStateVbo);
+          // [3] = same nodePosBVbo — glyph instances are 1:1 with
+          // node instances, so glyphs ride the layout ramp too.
+          pass.setVertexBuffer(3, nodePosBVbo);
           pass.draw(6, glyphCount);
         }
 

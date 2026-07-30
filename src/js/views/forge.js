@@ -691,6 +691,17 @@
     film_floor:            0.12,
     film_full_pct:         15,
     film_fade_pct:         30,
+    // ── THE HOUSE (2026-07-30) — family-isolate tree dials ──
+    // AUDIT/2026-07-29-fable-family-tree-isolate.md + the 07-30
+    // labels/dev-drawer pass. Geometry is a recipe key: Cascade and
+    // Fan are PEERS (John: "i want both cascade and fan"); the
+    // user-facing VIEW radio waits for his verdict — for now these
+    // live behind the DEV door (NODE LAB ▸ The House).
+    house_geometry:        'cascade',   // 'cascade' | 'fan'
+    house_spread:          1.10,
+    house_tween_ms:        450,
+    house_ranks:           'lineage',   // 'lineage' | 'era'
+    house_orphans:         'domain',    // 'domain'  | 'degree'
   });
 
   function render(rootEl) {
@@ -2042,6 +2053,55 @@
       },
       hitTestAt:    (x, y) => hitTestAt(x, y),
       cameraState:  () => camera.state,
+      // ── THE HOUSE (2026-07-30) — verification surfaces ────
+      // Synthetic pointers don't reach the canvas under WebDriver;
+      // harnesses drive the isolate through these instead.
+      enterHouse:   (fam) => setIsolateFamily(fam || null),
+      houseState:   () => ({
+        isolate: local._isolateFamily,
+        mix: local._layoutMix
+          ? { value: +local._layoutMix.value.toFixed(4), target: local._layoutMix.target }
+          : null,
+        traveling: !!local._houseTravel,
+        posBDirty: !!local._housePosBDirty,
+        house: local._house ? (() => {
+          const h = local._house.lay.house;
+          return {
+            fam: local._house.fam,
+            geometry: h.geometry,
+            RK: h.RK,
+            rowSizes: h.rows.map(r => r.length),
+            stats: h.stats,
+            ports: local._house.lay.ports.length,
+            portTop: local._house.lay.ports.slice(0, 5).map(p => [p.group, p.count]),
+            crown: h.crown,
+            railL: h.rails.left ? h.rails.left.count : 0,
+            railR: h.rails.right ? h.rails.right.count : 0,
+          };
+        })() : null,
+      }),
+      housePosBAt:  (i) => (local._house
+        ? [local._house.nodePosB[i * 2], local._house.nodePosB[i * 2 + 1]]
+        : null),
+      lastPlacedRects: () => (local._lastPlacedRects || []).map(P => P.slice()),
+      // Hidden panes freeze rAF, so a pending ramp never settles and
+      // the flight guard eats synthetic input — harnesses call this
+      // to jump the ramp to its target (the toy's _ftDebug.settle
+      // lesson, 2026-07-30). Also completes any house→house morph.
+      houseSettle:  () => {
+        if (local._houseTravel && local._house) {
+          local._house.nodePosB.set(local._houseTravel.toNode);
+          local._house.edgePosB.set(local._houseTravel.toEdge);
+          local._houseTravel = null;
+          local._housePosBDirty = true;
+        }
+        if (local._layoutMix) local._layoutMix.value = local._layoutMix.target;
+        settleHouse();
+        return {
+          isolate: local._isolateFamily,
+          mix: local._layoutMix ? local._layoutMix.value : 0,
+        };
+      },
       lastSize:     () => ({ w: local.lastSize.w, h: local.lastSize.h }),
       hoverId:      () => local.hoverId,
       lockedIds:    () => Array.from(local.lockedSet),
@@ -2711,6 +2771,19 @@
       // local.hoverId = null is correct but doesn't address the
       // pending recompute the rAF still holds.
       cancelHoverCoalesce();
+      // THE HOUSE (2026-07-30) — a mode/layout rebuild replaces the
+      // instance world under the isolate's baked tree positions.
+      // Leave cleanly first: drop the mix to zero, free the house,
+      // clear the tint. (Same node ids may not even exist after.)
+      if (local._isolateFamily || local._house || local._layoutMix) {
+        local._isolateFamily = null;
+        local._house = null;
+        local._layoutMix = null;
+        local._houseTravel = null;
+        local._housePosBDirty = false;
+        try { if (window._forgeGround) window._forgeGround.setTint(null, 1); } catch (_) { /* ignore */ }
+        try { document.body.classList.remove('fv-isolated', 'fv-house-flight'); } catch (_) { /* ignore */ }
+      }
       _tick('preamble');
 
       // Phase 24A v1 (2026-05-25 NIGHT): `modeNodes` and `modeEdges`
@@ -3557,6 +3630,11 @@
         deadLockCenter: (isTimeLayout(local.layoutId) && lay.xRange && window.AtlasEngineLayout && window.AtlasEngineLayout.computeTimelineCenter)
           ? window.AtlasEngineLayout.computeTimelineCenter(lay.xRange, ext)
           : null,
+        // THE HOUSE (2026-07-30) — the grouping key the isolate uses.
+        // Mirrors the wedge/hull grouping (cardinal rule #9: grouping
+        // is a parameter): Codex modes isolate by corpus-section, the
+        // Atlas wheel by n.family. Consumed by isolateGroupOf().
+        isolateGroupBy: _codexGroupBy || null,
       };
       // Phase TL-2 Step 3 (2026-05-24) — mount/unmount the timeline
       // chrome (axis line + tick metrics) based on the active layout.
@@ -4215,6 +4293,14 @@
         edgeStates:            local.edgeStates,
         glyphInstances:        frameGVB,
         glyphInstancesDirty:   !!local._glyphRebuildDirty,
+        // THE HOUSE (2026-07-30) — the second resident position set +
+        // the mix. With no isolate these are null/0 and the renderer's
+        // honest-zero path renders the wheel byte-identically.
+        layoutMix:             local._layoutMix ? easeHouse(local._layoutMix.value) : 0,
+        nodePosB:              local._house ? local._house.nodePosB : null,
+        nodePosBDirty:         !!local._housePosBDirty,
+        edgePosB:              local._house ? local._house.edgePosB : null,
+        edgePosBDirty:         !!local._housePosBDirty,
         // ROUND-7 DRESS (2026-07-26) — the node-lab recipe, verbatim.
         // recipe_hover_zoom < 1 sends null → all-zero uniforms → the
         // shader's honest-zero legacy path (Phase-7 disk exactly).
@@ -4259,6 +4345,7 @@
       local.nodeInstancesDirty  = false;
       local.edgeInstancesDirty  = false;
       local._glyphRebuildDirty  = false;
+      local._housePosBDirty     = false;
       const dt = performance.now() - t0;
       const fEl = document.getElementById('forge-status-frame');
       if (fEl) fEl.textContent = dt.toFixed(1) + ' ms';
@@ -4441,7 +4528,14 @@
         // candidates BEFORE the AABB-collision loop.
         opts.viewport = vp;
         opts.viewportMarginPx = 100;
-        const idleSet = graph.computeIdleLabelVisibility(local.mode.hitNodes, camScale, opts);
+        // THE HOUSE — at rest in the house, only members compete for
+        // idle labels; ported non-members pile on one point and their
+        // names belong to the port label, not the ladder.
+        let labelPool = local.mode.hitNodes;
+        if (houseAtRest() && local._house.memberIds) {
+          labelPool = labelPool.filter(hn => local._house.memberIds.has(hn.id));
+        }
+        const idleSet = graph.computeIdleLabelVisibility(labelPool, camScale, opts);
         // Phase 11C (2026-05-21) — filter out HIDDEN nodes. Labels
         // shouldn't render for nodes the timeline has hidden.
         // The fastest check is the nodeTargets buffer (post-override),
@@ -4980,6 +5074,29 @@
         if (labelEl._lastX !== lxStr) { labelEl.setAttribute('x', lxStr); labelEl._lastX = lxStr; }
         if (labelEl._lastY !== lyStr) { labelEl.setAttribute('y', lyStr); labelEl._lastY = lyStr; }
       }
+      // ── THE HOUSE (2026-07-30) — the family's own hull label RIDES
+      // to become the crown. While isolated at rest, the isolated
+      // title is re-anchored onto the house's crown point (the same
+      // element John clicks to leave — entry/exit unchanged), the
+      // other titles yield to the canvas port labels (CSS hides
+      // them), and the published rect list shrinks to the crown so
+      // node names don't dodge invisible titles.
+      if (houseAtRest() && local._isolateFamily) {
+        for (let i = 0; i < data.hulls.length && i < labelGroups.length; i++) {
+          if (data.hulls[i].family !== local._isolateFamily) continue;
+          const labelEl = labelGroups[i].firstChild;
+          const crown = local._house.lay.house.crown;
+          const s = camera.worldToScreen(crown.x, crown.y, vp);
+          const lxStr = s.x.toFixed(1), lyStr = s.y.toFixed(1);
+          if (labelEl._lastX !== lxStr) { labelEl.setAttribute('x', lxStr); labelEl._lastX = lxStr; }
+          if (labelEl._lastY !== lyStr) { labelEl.setAttribute('y', lyStr); labelEl._lastY = lyStr; }
+          if (labelEl._lastVis !== '') { labelEl.style.opacity = ''; labelEl._lastVis = ''; }
+          const halfW = ((labelEl._w || 80) / 2) + 6;
+          titlePlaced.length = 0;
+          titlePlaced.push([s.x, s.y, halfW]);
+          break;
+        }
+      }
       // Publish the title boxes so the NODE labels can avoid them.
       // Same class of bug as the two node-label systems: two layers
       // placing text independently means "Tiamat" lands on top of
@@ -5363,6 +5480,7 @@
     let _labelsCssW = 0, _labelsCssH = 0;   // last applied size
     let _labelsHaloColor = '';
     let _labelsTextColor = '';
+    let _labelsGoldColor = '';              // THE HOUSE — --gold token cache
     let _labelsHaloRead = 0;                // ms timestamp of last CSS-var read
     function renderLabelsCanvas() {
       const vp = local.lastSize;
@@ -5434,6 +5552,9 @@
         const cs = getComputedStyle(document.body);
         _labelsHaloColor = (cs.getPropertyValue('--forge-label-halo') || '').trim() || '#0a0d12';
         _labelsTextColor = (cs.getPropertyValue('--forge-label-text') || '').trim() || '#e8eaef';
+        // THE HOUSE — the gold token for shelf/era accents (read from
+        // the same cadence-limited computed-style pass; token law).
+        _labelsGoldColor = (cs.getPropertyValue('--gold') || '').trim() || '#d3b877';
         _labelsHaloRead = now;
       }
       const ctx = labelsCanvasCtx;
@@ -5538,10 +5659,14 @@
       if (revealOn && local.nodeStates && local.mode.hitNodes
           && local.nodeStates.length === local.mode.hitNodes.length * 4) {
         const hns = local.mode.hitNodes;
+        const houseMembers = houseAtRest() ? local._house.memberIds : null;
         for (let i = 0; i < hns.length; i++) {
           const wk = local.nodeStates[i * 4 + 2];
           if (wk <= 0.35) continue;
           if (local.nodeStates[i * 4] >= 1.5) continue;   // timeline-HIDDEN must not ghost-label
+          // THE HOUSE — ported non-members pile on one point; waking
+          // them must not spray a random name over the port label.
+          if (houseMembers && !houseMembers.has(hns[i].id)) continue;
           const n = hns[i];
           const r0 = Math.min(1, (wk - 0.35) / 0.35);     // full by mid-wake, not at wake 1.0
           const rv = r0 * r0 * (3 - 2 * r0);              // smoothstep ease
@@ -5572,6 +5697,23 @@
       const placed = [];
       if (local._titleRects) {
         for (let t = 0; t < local._titleRects.length; t++) placed.push(local._titleRects[t]);
+      }
+      // ══ THE HOUSE (2026-07-30) ══════════════════════════════════
+      // Mid-ramp, every word holds its breath (the toy's tween law —
+      // chrome and names return at the settle, which busts the idle
+      // caches). At rest in the house, the tree's chrome — crown
+      // stats, ports, era captions, shelves, orphan captions — is
+      // placed HERE, into this same priority-ordered pass with this
+      // same collision list. ONE registry; a loser hides; nothing
+      // truncates. (Re-introducing a second label system is the exact
+      // bug class killed on 07-29 — don't.)
+      if (houseInFlight()) {
+        local._labelFadeAlive = false;
+        local._lastPlacedRects = [];
+        return;
+      }
+      if (houseAtRest()) {
+        renderHouseChrome(ctx, placed, vp);
       }
       const seen = new Set();
       const draws = [];
@@ -5661,7 +5803,225 @@
       }
       ctx.globalAlpha = 1;
       local._labelFadeAlive = fadeAlive;
+      // Debug/verification surface — the FINAL collision list of this
+      // paint ([centerX, y, width] rects). _forgeDebug.lastPlacedRects
+      // asserts zero overlapping pairs and keep-out compliance.
+      local._lastPlacedRects = placed;
+    }
 
+    // ══ THE HOUSE — tree chrome through the ONE label registry ══
+    // Called from renderLabelsCanvas ONLY, with its live `placed`
+    // list. Priority order (the toy's, ratified): crown stats →
+    // rail obstacles + headers → ports → era captions → (deity names
+    // follow in the caller) → shelf captions + spine names → orphan
+    // domain captions. Whole words or nothing; losers hide; the
+    // chrome keep-outs are the same bands the node names respect.
+    function renderHouseChrome(ctx, placed, vp) {
+      const hs = local._house;
+      if (!hs || !hs.lay || !hs.lay.house) return;
+      const house = hs.lay.house;
+      const ports = hs.lay.ports || [];
+      const m = local.mode;
+      const nodesById = m.nodesById;
+      const MONO = 'ui-monospace,"SF Mono",Menlo,monospace';
+      const KEEPOUT_TOP = 52, KEEPOUT_BOTTOM = 58;
+      const gold = _labelsGoldColor || '#d3b877';
+      const saved = {
+        font: ctx.font, align: ctx.textAlign, base: ctx.textBaseline,
+        lw: ctx.lineWidth, fill: ctx.fillStyle, alpha: ctx.globalAlpha,
+      };
+      ctx.lineWidth = 3;
+      ctx.textBaseline = 'middle';
+      const W2S = (x, y) => camera.worldToScreen(x, y, vp);
+      const yOK = (y) => y >= KEEPOUT_TOP && y <= vp.h - KEEPOUT_BOTTOM;
+      const claim = (cx0, y, w) => {
+        if (!yOK(y)) return false;
+        for (let k = 0; k < placed.length; k++) {
+          const P = placed[k];
+          if (Math.abs(cx0 - P[0]) < (w + P[2]) / 2 && Math.abs(y - P[1]) < 15) return false;
+        }
+        placed.push([cx0, y, w]);
+        return true;
+      };
+      const halo = (t, x, y) => { ctx.strokeText(t, x, y); ctx.fillText(t, x, y); };
+      const fmtD = (d) => (d < 0 ? (-d) + ' BCE' : d + ' CE');
+
+      // 1 ▸ CROWN stats — the crown NAME is the family's own SVG hull
+      // label (repositioned by syncHulls, already seeded into `placed`
+      // via local._titleRects). Two honest mono lines beneath it.
+      const st = house.stats || {};
+      const cs = W2S(house.crown.x, house.crown.y);
+      ctx.font = '500 8.5px ' + MONO;
+      ctx.textAlign = 'center';
+      const nodeWord = (m.id === 'deities') ? 'DEITIES' : 'IN THE LINE';
+      const line1 = st.tree + ' ' + nodeWord + ' · ' + st.kinArcs + ' LINEAGE ARCS · '
+        + st.orphanCount + ' STAND ON THEIR ERA';
+      const w1 = ctx.measureText(line1).width;
+      if (claim(cs.x, cs.y + 18, w1 + 8)) {
+        ctx.fillStyle = _labelsTextColor; ctx.globalAlpha = 0.8;
+        halo(line1, cs.x, cs.y + 18);
+      }
+      if (st.docs || st.court) {
+        const line2 = (st.docs ? st.docs + ' IN THE SCRIPTORIUM' : '')
+          + (st.docs && st.court ? ' · ' : '')
+          + (st.court ? st.court + ' IN THE COURT' : '');
+        const w2 = ctx.measureText(line2).width;
+        if (claim(cs.x, cs.y + 31, w2 + 8)) {
+          ctx.globalAlpha = 0.55;
+          halo(line2, cs.x, cs.y + 31);
+        }
+      }
+      ctx.globalAlpha = 1;
+
+      // 2 ▸ RAIL COLUMNS as obstacles + headers
+      const rails = house.rails || {};
+      for (const rl of [rails.left, rails.right]) {
+        if (!rl || !rl.shelves || !rl.shelves.length) continue;
+        const firstY = rl.shelves[0].capY - 10;
+        const lastY = rl.shelves[rl.shelves.length - 1].y1 + 8;
+        const top = W2S(rl.x, firstY), bot = W2S(rl.x, lastY);
+        for (let y = top.y; y <= bot.y; y += 22) placed.push([top.x, y, 14]);
+        const left = rl.side < 0;
+        const header = left
+          ? ('THE SCRIPTORIUM — ' + rl.count + ' DOCS')
+          : ('THE COURT — ' + rl.count + ' OF ALL KINDS');
+        ctx.font = '600 8px ' + MONO;
+        const hw = ctx.measureText(header).width;
+        const hy = top.y - 14;
+        const hx = left ? Math.max(top.x, 6 + hw) : Math.min(top.x, vp.w - 6 - hw);
+        const hcx = left ? hx - hw / 2 : hx + hw / 2;
+        if (claim(hcx, hy, hw + 6)) {
+          ctx.textAlign = left ? 'right' : 'left';
+          ctx.fillStyle = _labelsTextColor; ctx.globalAlpha = 0.5;
+          halo(header, hx, hy);
+        }
+      }
+      ctx.globalAlpha = 1;
+
+      // 3 ▸ PORTS — the piled family disks are the sigil; the label
+      // carries the real aggregate. Biggest flow first (list is
+      // pre-sorted); collision decides the rest. Clamped, not clipped.
+      ctx.font = '600 8.5px ' + MONO;
+      for (const pt of ports) {
+        const ps = W2S(pt.x, pt.y);
+        if (ps.x < -60 || ps.x > vp.w + 60 || ps.y < -60 || ps.y > vp.h + 60) continue;
+        const left = Math.cos(pt.ang) < 0;
+        const txt = String(pt.group).toUpperCase() + (pt.count ? ' · ' + pt.count : '');
+        const w = ctx.measureText(txt).width;
+        let lx = ps.x + Math.cos(pt.ang) * 13;
+        let ly = ps.y + Math.sin(pt.ang) * 13;
+        lx = left ? Math.max(lx, 6 + w) : Math.min(lx, vp.w - 6 - w);
+        ly = Math.max(KEEPOUT_TOP + 2, Math.min(vp.h - KEEPOUT_BOTTOM - 2, ly));
+        const cx0 = left ? lx - w / 2 : lx + w / 2;
+        if (!claim(cx0, ly, w + 8)) continue;
+        ctx.textAlign = left ? 'right' : 'left';
+        ctx.fillStyle = pt.color || _labelsTextColor;
+        ctx.globalAlpha = pt.count ? 0.85 : 0.38;
+        halo(txt, lx, ly);
+      }
+      ctx.globalAlpha = 1;
+
+      // 4 ▸ ERA CAPTIONS — deduped (a date prints once, not five
+      // times), right-aligned into the gutter (cascade) or on the
+      // ring crest (fan).
+      ctx.font = '500 8.5px ' + MONO;
+      ctx.fillStyle = _labelsTextColor;
+      let lastCap = null;
+      if (house.geometry === 'cascade') {
+        ctx.textAlign = 'right';
+        for (const rm of house.rowMeta) {
+          if (rm.dmin == null) continue;
+          const txt = fmtD(rm.dmin);
+          if (txt === lastCap) continue;
+          const w = ctx.measureText(txt).width;
+          const es = W2S(house.center.x - rm.w / 2, rm.y);
+          const ex = es.x - 14, ey = es.y;
+          if (ex - w < 4) continue;
+          if (!claim(ex - w / 2, ey, w + 4)) continue;
+          ctx.globalAlpha = 0.6;
+          halo(txt, ex, ey);
+          lastCap = txt;
+        }
+      } else {
+        ctx.textAlign = 'center';
+        for (const rm of house.rowMeta) {
+          if (rm.dmin == null) continue;
+          const txt = fmtD(rm.dmin);
+          if (txt === lastCap) continue;
+          const w = ctx.measureText(txt).width;
+          const es = W2S(house.center.x, house.center.y - rm.rad);
+          const ey = es.y - 8;
+          if (!claim(es.x, ey, w + 4)) continue;
+          ctx.globalAlpha = 0.6;
+          halo(txt, es.x, ey);
+          lastCap = txt;
+        }
+      }
+      ctx.globalAlpha = 1;
+
+      // 5 ▸ THE LIBRARY — shelf captions with counts (gold), then one
+      // spine name per shelf (its highest-degree member, whole title).
+      for (const rl of [rails.left, rails.right]) {
+        if (!rl || !rl.shelves) continue;
+        const left = rl.side < 0;
+        ctx.textAlign = left ? 'right' : 'left';
+        for (const sh of rl.shelves) {
+          const cp = W2S(rl.x, sh.capY);
+          const txt = sh.label + ' · ' + sh.count;
+          ctx.font = '600 7.5px ' + MONO;
+          const w = ctx.measureText(txt).width;
+          let lx = left ? cp.x - 10 : cp.x + 10;
+          lx = left ? Math.max(lx, 6 + w) : Math.min(lx, vp.w - 6 - w);
+          const cx0 = left ? lx - w / 2 : lx + w / 2;
+          if (claim(cx0, cp.y, w + 4)) {
+            ctx.fillStyle = gold; ctx.globalAlpha = 0.66;
+            halo(txt, lx, cp.y);
+          }
+        }
+        for (const sh of rl.shelves) {
+          if (!sh.spineId) continue;
+          const node = nodesById && nodesById.get ? nodesById.get(sh.spineId) : null;
+          const title = (node && node.title) || sh.spineId;
+          const it = sh.items.find(x => x.id === sh.spineId) || sh.items[0];
+          if (!it) continue;
+          const sp = W2S(rl.x, it.y);
+          ctx.font = '500 7.5px ' + MONO;
+          const w = ctx.measureText(title).width;
+          let lx = left ? sp.x - 9 : sp.x + 9;
+          lx = left ? Math.max(lx, 6 + w) : Math.min(lx, vp.w - 6 - w);
+          const cx0 = left ? lx - w / 2 : lx + w / 2;
+          if (claim(cx0, sp.y, w + 4)) {
+            ctx.fillStyle = _labelsTextColor; ctx.globalAlpha = 0.72;
+            halo(title, lx, sp.y);
+          }
+        }
+      }
+      ctx.globalAlpha = 1;
+
+      // 6 ▸ ORPHAN DOMAIN CAPTIONS — last in line, yield to everything.
+      ctx.font = '500 7.5px ' + MONO;
+      ctx.textAlign = 'center';
+      for (const oc of (house.orphanCaptions || [])) {
+        const s = W2S(oc.x, oc.y);
+        const w = ctx.measureText(oc.label).width;
+        if (!claim(s.x, s.y, w + 4)) continue;
+        ctx.fillStyle = _labelsTextColor; ctx.globalAlpha = 0.45;
+        halo(oc.label, s.x, s.y);
+      }
+
+      // 7 ▸ the way out, spelled — sits above the bottom keep-out.
+      ctx.font = '500 9px ' + MONO;
+      ctx.textAlign = 'center';
+      const exitTxt = 'CLICK EMPTY SPACE OR ESC — THE WHEEL · CLICK A PORT — TRAVEL';
+      const we = ctx.measureText(exitTxt).width;
+      const eyy = vp.h - KEEPOUT_BOTTOM - 10;
+      if (claim(vp.w / 2, eyy, we + 8)) {
+        ctx.fillStyle = _labelsTextColor; ctx.globalAlpha = 0.45;
+        halo(exitTxt, vp.w / 2, eyy);
+      }
+
+      ctx.font = saved.font; ctx.textAlign = saved.align; ctx.textBaseline = saved.base;
+      ctx.lineWidth = saved.lw; ctx.fillStyle = saved.fill; ctx.globalAlpha = saved.alpha;
     }
 
     // ── Hover hit-test ──────────────────────────────────
@@ -5681,6 +6041,11 @@
       // even see. Matches the body.fx-belowfifteen class set in
       // drawFrame.
       if (local._fxBelowFifteen) return null;
+      // THE HOUSE — mid-ramp the hit world is stale (hitNodes carry
+      // the PREVIOUS rest); same guard as the toy's tween. An empty
+      // click mid-flight therefore reads as empty → toggleLock(null)
+      // → retarget home, which is exactly the ratified gesture.
+      if (houseInFlight()) return null;
       const w = local.lastSize.w;
       const h = local.lastSize.h;
       if (!w || !h) return null;
@@ -5785,10 +6150,15 @@
       // STILL is preserved — the loop dies right after the last name
       // settles.
       const labelFadeAlive = !!local._labelFadeAlive;
-      if ((stillFading || fxAlive || labelFadeAlive) && !stillMoving) {
+      // THE HOUSE (2026-07-30) — the layout ramp is a loop-keeper
+      // exactly like the fades: in flight it keeps frames flowing,
+      // settled it contributes nothing and the loop dies (rest is
+      // still). tickLayoutMix also advances any house→house morph.
+      const layoutMixAlive = tickLayoutMix(dtClamped);
+      if ((stillFading || fxAlive || labelFadeAlive || layoutMixAlive) && !stillMoving) {
         drawFrame();
       }
-      if (stillMoving || stillFading || fxAlive || labelFadeAlive) {
+      if (stillMoving || stillFading || fxAlive || labelFadeAlive || layoutMixAlive) {
         local.animRafId = requestAnimationFrame(animTick);
       } else {
         local.animRafId = null;
@@ -5817,21 +6187,320 @@
     //    hidden by the timeline filter.
     // ════════════════════════════════════════════════════════════
     // ════════════════════════════════════════════════════════════
-    // FAMILY ISOLATE  —  2026-07-29
+    // FAMILY ISOLATE — THE HOUSE  (2026-07-29 shell · 2026-07-30 tree)
     // ════════════════════════════════════════════════════════════
-    // The node-lab's §04 law, verbatim: "Isolate is state, not
-    // navigation. Same Forge engine, same instanced nodes — a camera
-    // fit plus a dim-others flag plus a ground tint. Back is one
-    // click, and it's instant."
+    // The 07-29 shell (camera fly + dim-others + ground tint) stays;
+    // what changed on 07-30 is WHAT the isolate shows. John: "if i
+    // wanted a zoom i just use the weel" — so the family now
+    // RE-PRESENTS itself as a generational tree (THE HOUSE, spec at
+    // AUDIT/2026-07-29-fable-family-tree-isolate.md), rendered by
+    // the same instanced engine through TWO RESIDENT POSITION SETS:
+    //   buffer A — the wheel (never touched while isolated)
+    //   buffer B — the tree (baked once on enter by familyTreeLayout)
+    // and ONE uniform (layout_mix) that the shaders mix on. Enter
+    // ramps 0→1, exit ramps back — so leaving is exact and cheap,
+    // and with no isolate every added term multiplies away (honest
+    // zeros; the wheel renders byte-identically).
     //
-    // So there is no new view, no new renderer and no re-layout. Three
-    // existing levers, pulled together:
-    //   1. camera.flyTo() onto the family's world extent
-    //   2. this override, which dims every node outside the family
-    //      (state 1 = the SAME dim the hover-focus law uses, so the
-    //      dress/light rules need no special case)
-    //   3. _forgeGround.setTint() with the family's own colour
-    // Nothing here writes layout, so exiting is genuinely instant.
+    // One pass positions ALL nodes: members into the house, every
+    // other family collapsed onto a horizon PORT at its true wheel
+    // bearing — so external wires keep live endpoints and land on
+    // the ports with no pseudo-node hacks. Click a port → travel
+    // (house swaps family-to-family, a CPU-lerped morph of buffer B).
+    //
+    // Grouping stays a parameter (rule #9): membership mirrors the
+    // hull grouping via local.mode.isolateGroupBy — never n.family
+    // hard-coded below this comment.
+    function isolateGroupOf(n) {
+      const gb = local.mode && local.mode.isolateGroupBy;
+      if (gb) {
+        try { return gb(n) || 'Other'; } catch (_) { return 'Other'; }
+      }
+      return (n && n.family) || 'Other';
+    }
+
+    // Vault edge vocabulary → house arc lists. The layout module is
+    // deliberately vocabulary-agnostic; the VIEW resolves types here
+    // (same division of labor as the timeline's genealogy cascade).
+    const HOUSE_ASPECT_RE = /(avatara-of|manifestation-of|aspect-of|emanation-of|constituent-of)$/;
+
+    function houseOptsFromParams() {
+      const p = local.params;
+      return {
+        geometry: (p.house_geometry === 'fan') ? 'fan' : 'cascade',
+        spread:   (typeof p.house_spread === 'number') ? p.house_spread : 1.10,
+        ranks:    (p.house_ranks === 'era') ? 'era' : 'lineage',
+        orphans:  (p.house_orphans === 'degree') ? 'degree' : 'domain',
+      };
+    }
+
+    // Bake the tree into position-B arrays aligned 1:1 with the
+    // packed instances. Node B: 2 floats/instance by idIndex order.
+    function bakeNodePosB(positions) {
+      const np = local.mode.nodePacked;
+      const out = new Float32Array(np.instanceCount * 2);
+      for (let i = 0; i < np.instanceCount; i++) {
+        const p = positions.get(np.idIndex[i]);
+        if (p) { out[i * 2] = p.x; out[i * 2 + 1] = p.y; }
+        else {
+          out[i * 2]     = np.data[i * NODE_FLOATS];
+          out[i * 2 + 1] = np.data[i * NODE_FLOATS + 1];
+        }
+      }
+      return out;
+    }
+    // Edge B: 4 floats/instance (p0b, p2b), iterated with EXACTLY
+    // packEdges' renderable law (both endpoints in the WHEEL
+    // positions map) so instance order aligns; endpoints inset to
+    // the disk perimeter by the same 0.92r law.
+    function bakeEdgePosB(positions) {
+      const m = local.mode;
+      const radii = buildRadiiMap(m.nodePacked);
+      const wheelPos = m.positions;
+      const E = m.edgePacked.instanceCount;
+      const out = new Float32Array(E * 4);
+      let i = 0;
+      for (const e of m.edges) {
+        if (!wheelPos.has(e.source) || !wheelPos.has(e.target)) continue;
+        if (i >= E) break;
+        const sp = positions.get(e.source) || wheelPos.get(e.source);
+        const tp = positions.get(e.target) || wheelPos.get(e.target);
+        let sx = sp.x, sy = sp.y, tx = tp.x, ty = tp.y;
+        const dx = tp.x - sp.x, dy = tp.y - sp.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist > 0.0001) {
+          const nx = dx / dist, ny = dy / dist;
+          const rs = radii.get(e.source) || 0;
+          const rt = radii.get(e.target) || 0;
+          sx = sp.x + nx * rs * 0.92; sy = sp.y + ny * rs * 0.92;
+          tx = tp.x - nx * rt * 0.92; ty = tp.y - ny * rt * 0.92;
+        }
+        const off = i * 4;
+        out[off] = sx; out[off + 1] = sy; out[off + 2] = tx; out[off + 3] = ty;
+        i++;
+      }
+      return out;
+    }
+
+    // Build the house for one group: resolve arcs, aggregate the
+    // external wires per port, run the pure layout, bake buffer B.
+    function buildHouse(fam) {
+      const m = local.mode;
+      if (!m || !m.nodes || !m.nodePacked || !m.edgePacked
+          || typeof layout.familyTreeLayout !== 'function') return null;
+      const nodesById = m.nodesById;
+      if (!nodesById || !nodesById.get) return null;
+      const memberIds = new Set();
+      for (const n of m.nodes) if (isolateGroupOf(n) === fam) memberIds.add(n.id);
+      if (!memberIds.size) return null;
+      const arcs = [], laterals = [], aspects = [];
+      const portWeights = Object.create(null);
+      for (const e of m.edges) {
+        const sIn = memberIds.has(e.source);
+        const tIn = memberIds.has(e.target);
+        if (sIn !== tIn) {
+          // external wire — its aggregate lights the horizon port
+          const other = nodesById.get(sIn ? e.target : e.source);
+          if (other) {
+            const g = isolateGroupOf(other);
+            portWeights[g] = (portWeights[g] || 0) + 1;
+          }
+          continue;
+        }
+        if (!sIn) continue;
+        // member↔member — the bones + laterals
+        if (e.type === 'parent-of')      arcs.push([e.source, e.target]);
+        else if (e.type === 'child-of')  arcs.push([e.target, e.source]);
+        else if (e.type === 'consort')   laterals.push([e.source, e.target]);
+        else if (HOUSE_ASPECT_RE.test(e.type || '')) aspects.push([e.source, e.target]);
+      }
+      // Bearings + colors from the live hull data — the ports sit at
+      // each family's TRUE wheel bearing so the mental map stays warm.
+      const bearings = Object.create(null);
+      const colors = Object.create(null);
+      const hd = m.hullData || {};
+      for (const h of (hd.hulls || [])) {
+        let ang = (h.wedgeCenter != null) ? h.wedgeCenter
+          : ((h.a0 != null && h.a1 != null) ? (h.a0 + h.a1) / 2 : h.centroidAngle);
+        if (typeof ang === 'number' && isFinite(ang)) bearings[h.family] = ang;
+        if (h.color) colors[h.family] = h.color;
+      }
+      const ctr = hd.center || { x: 0, y: 0 };
+      const Rh = Math.max(220, hd.outerRadius || 540);
+      const deg = layout.computeDegree(m.nodes, m.edges);
+      let lay;
+      try {
+        lay = layout.familyTreeLayout(m.nodes, Object.assign({
+          groupBy: isolateGroupOf,
+          groupKey: fam,
+          arcs, laterals, aspects,
+          degree: deg,
+          bearings, groupColor: colors, portWeights,
+          center: { x: ctr.x, y: ctr.y },
+          radius: Rh,
+        }, houseOptsFromParams()));
+      } catch (err) {
+        try { console.error('[forge] familyTreeLayout failed', err); } catch (_) {}
+        return null;
+      }
+      if (!lay || !lay.positions || !lay.positions.size) return null;
+      return {
+        fam,
+        lay,
+        memberIds,
+        nodePosB: bakeNodePosB(lay.positions),
+        edgePosB: bakeEdgePosB(lay.positions),
+      };
+    }
+
+    // ── The layout ramp — one scalar, retargetable, rest is still ──
+    function easeHouse(t) { return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; }
+    function houseInFlight() {
+      return !!(local._houseTravel
+        || (local._layoutMix && local._layoutMix.value !== local._layoutMix.target));
+    }
+    function houseAtRest() {
+      return !!(local._house && local._layoutMix && !local._houseTravel
+        && local._layoutMix.value === 1 && local._layoutMix.target === 1);
+    }
+    function setLayoutMixTarget(t) {
+      if (!local._layoutMix) local._layoutMix = { value: 0, target: 0 };
+      local._layoutMix.target = t;
+      if (local._layoutMix.value !== t) document.body.classList.add('fv-house-flight');
+      startAnimLoop();
+    }
+    // Called from animTick like the fade ticks: advances the mix (and
+    // any house→house morph). A ramp in flight keeps frames flowing;
+    // a settled one returns false and the loop dies — REST IS STILL.
+    function tickLayoutMix(dt) {
+      let alive = false;
+      const lm = local._layoutMix;
+      const dur = Math.max(0.05, (local.params.house_tween_ms || 450) / 1000);
+      if (lm && lm.value !== lm.target) {
+        const step = dt / dur;
+        if (lm.target > lm.value) lm.value = Math.min(lm.target, lm.value + step);
+        else                      lm.value = Math.max(lm.target, lm.value - step);
+        if (lm.value === lm.target) settleHouse();
+        else alive = true;
+      }
+      const tv = local._houseTravel;
+      if (tv && local._house) {
+        tv.t = Math.min(1, tv.t + dt / dur);
+        const k = easeHouse(tv.t);
+        const nO = local._house.nodePosB, nA = tv.fromNode, nB = tv.toNode;
+        for (let i = 0; i < nO.length; i++) nO[i] = nA[i] + (nB[i] - nA[i]) * k;
+        const eO = local._house.edgePosB, eA = tv.fromEdge, eB = tv.toEdge;
+        for (let i = 0; i < eO.length; i++) eO[i] = eA[i] + (eB[i] - eA[i]) * k;
+        local._housePosBDirty = true;
+        if (tv.t >= 1) {
+          nO.set(nB); eO.set(eB);
+          local._houseTravel = null;
+          local._housePosBDirty = true;
+          settleHouse();
+        } else alive = true;
+      }
+      return alive;
+    }
+    // Ramp end — the world is at rest again: rebuild the CPU world
+    // (hit grid, label + hull idle caches), free exit state.
+    function settleHouse() {
+      if (local._layoutMix && local._layoutMix.value === 0
+          && local._layoutMix.target === 0 && !local._isolateFamily) {
+        local._layoutMix = null;
+        local._house = null;
+        local._houseTravel = null;
+      }
+      document.body.classList.remove('fv-house-flight');
+      rebakeHitPositions();
+      local._labelsIdleCamS = null;   // bust the idle-skip caches so
+      local._hullsIdleCamS  = null;   // chrome repaints at the new rest
+      try { syncLabels(); } catch (_) { /* ignore */ }
+      drawFrame();
+    }
+    // Hit-testing + labels follow the DISPLAYED rest positions: tree
+    // at mix 1, wheel otherwise. (Mid-flight, hitTestAt returns null —
+    // same law as the toy's tween guard.)
+    function rebakeHitPositions() {
+      const m = local.mode;
+      if (!m || !m.hitNodes || !m.nodePacked) return;
+      const atHouse = houseAtRest();
+      const np = m.nodePacked;
+      let maxR = 0;
+      for (let i = 0; i < m.hitNodes.length; i++) {
+        const hn = m.hitNodes[i];
+        if (atHouse) {
+          hn.x = local._house.nodePosB[i * 2];
+          hn.y = local._house.nodePosB[i * 2 + 1];
+        } else {
+          hn.x = np.data[i * NODE_FLOATS];
+          hn.y = np.data[i * NODE_FLOATS + 1];
+        }
+        if (hn.r > maxR) maxR = hn.r;
+      }
+      // The house circle sits inside the wheel's world extent (ports
+      // at Rh ≤ rOuter), so the wheel extent serves both grids.
+      m.hitGrid = buildHitGrid(m.hitNodes, m.worldExtent, maxR);
+    }
+    // House→house morph (port travel + geometry-dial flips): buffer A
+    // stays the wheel; the LIVE B arrays lerp toward the new house.
+    function startHouseTravel(next) {
+      const cur = local._house;
+      local._houseTravel = {
+        t: 0,
+        fromNode: cur.nodePosB.slice(),
+        toNode:   next.nodePosB,
+        fromEdge: cur.edgePosB.slice(),
+        toEdge:   next.edgePosB,
+      };
+      // reuse the live arrays as the tween output so the renderer
+      // keeps uploading one stable pair of references
+      next.nodePosB = cur.nodePosB;
+      next.edgePosB = cur.edgePosB;
+      local._house = next;
+      local._housePosBDirty = true;
+      document.body.classList.add('fv-house-flight');
+      startAnimLoop();
+    }
+    // Dial refresh while isolated. tween=true → a morph of one house
+    // (geometry flips TWEEN, John's law); tween=false → snap (the
+    // spread slider is a scrub).
+    function refreshHouse(tween) {
+      const fam = local._isolateFamily;
+      if (!fam) return;
+      const next = buildHouse(fam);
+      if (!next) return;
+      if (tween && houseAtRest()) {
+        startHouseTravel(next);
+      } else {
+        local._house = next;
+        local._houseTravel = null;
+        local._housePosBDirty = true;
+        if (houseAtRest()) settleHouse();
+      }
+      startAnimLoop();
+      drawFrame();
+    }
+    // Port hit-test in world space — checked BEFORE the node test on
+    // click, because the ported nodes pile exactly on the port point.
+    function housePortAt(cssX, cssY) {
+      if (!local._house || !local._house.lay.ports) return null;
+      const vp = local.lastSize;
+      if (!vp.w || !vp.h) return null;
+      const world = camera.screenToWorld(cssX, cssY, vp);
+      const sc = (camera.state && camera.state.scale) || 1;
+      const slackWu = 10 / sc;
+      let best = null, bd = Infinity;
+      for (const pt of local._house.lay.ports) {
+        const dx = world.x - pt.x, dy = world.y - pt.y;
+        const d = Math.sqrt(dx * dx + dy * dy);
+        if (d <= pt.r + slackWu && d < bd) { bd = d; best = pt; }
+      }
+      return best;
+    }
+
+    // Dims every node outside the isolated group (state 1 = the SAME
+    // dim the hover law uses) — the ported pile reads as a quiet
+    // colored sigil at the horizon. Grouping via isolateGroupOf.
     function applyIsolateOverride(idx, states) {
       const fam = local._isolateFamily;
       if (!fam) return;
@@ -5840,14 +6509,60 @@
       for (let i = 0; i < idx.length; i++) {
         const n = nodesById.get(idx[i]);
         if (!n) continue;
-        if (n.family !== fam && states[i] < 1) states[i] = 1;
+        if (isolateGroupOf(n) !== fam && states[i] < 1) states[i] = 1;
       }
     }
 
-    // Fly the camera onto one family and mark the state. `null` exits.
+    // Enter one family's HOUSE (or exit with `null`). The tree is a
+    // second resting arrangement of the SAME instances: bake buffer B,
+    // ramp the mix, fly the camera onto the house circle. Exit ramps
+    // the mix home — buffer A was never touched, so back is exact.
     function setIsolateFamily(fam) {
       const hulls = (local.mode && local.mode.hullData && local.mode.hullData.hulls) || null;
-      local._isolateFamily = fam || null;
+      const wasIsolated = !!local._isolateFamily;
+      const vp = local.lastSize;
+      const flySec = Math.max(0.2, (local.params.house_tween_ms || 450) / 1000);
+      if (fam) {
+        // 0 ▸ THE TREE — bake the house before committing the state;
+        // a group with no members in this mode simply doesn't enter.
+        const prevFam = local._isolateFamily;
+        local._isolateFamily = fam;   // isolateGroupOf is state-free; set first for buildHouse's dim consumers
+        const next = buildHouse(fam);
+        if (!next) { local._isolateFamily = prevFam; return; }
+        if (wasIsolated && local._house && local._layoutMix && local._layoutMix.value > 0) {
+          // PORT TRAVEL / family switch — morph house→house without
+          // going home first (the isolate is a corridor, not a cul-de-sac).
+          startHouseTravel(next);
+          setLayoutMixTarget(1);
+        } else {
+          local._house = next;
+          local._houseTravel = null;
+          local._housePosBDirty = true;
+          setLayoutMixTarget(1);
+        }
+        // 1 ▸ camera — fly onto the house circle (its own extent).
+        if (vp && vp.w && vp.h) {
+          const ext = next.lay.worldExtent;
+          const w = ext.x1 - ext.x0, h = ext.y1 - ext.y0;
+          if (w > 0 && h > 0) {
+            const s = Math.min(vp.w / w, vp.h / h);
+            camera.flyTo({ centerX: (ext.x0 + ext.x1) / 2, centerY: (ext.y0 + ext.y1) / 2, scale: s }, flySec);
+          }
+        }
+      } else {
+        local._isolateFamily = null;
+        // ramp home from wherever the mix is — retargetable mid-flight
+        if (local._layoutMix) setLayoutMixTarget(0);
+        // Back to the whole wheel — the view's own fit, not a guess.
+        try {
+          const ext = local.mode && local.mode.worldExtent;
+          if (ext && vp && vp.w && vp.h) {
+            const w = (ext.x1 - ext.x0), h = (ext.y1 - ext.y0);
+            const s = Math.min(vp.w / w, vp.h / h);
+            camera.flyTo({ centerX: (ext.x0 + ext.x1) / 2, centerY: (ext.y0 + ext.y1) / 2, scale: s }, flySec);
+          }
+        } catch (_) { /* ignore */ }
+      }
       // 3 ▸ ground tint — the family's own colour, or clear.
       if (window._forgeGround) {
         let col = null;
@@ -5857,42 +6572,6 @@
           }
         }
         try { window._forgeGround.setTint(fam ? col : null, 1); } catch (_) { /* ignore */ }
-      }
-      // 1 ▸ camera. Extent of the family's own nodes in world space.
-      const vp = local.lastSize;
-      if (fam && local.mode && local.mode.hitNodes && vp && vp.w && vp.h) {
-        const nodesById = local.mode.nodesById;
-        const hns = local.mode.hitNodes;
-        let x0 = Infinity, y0 = Infinity, x1 = -Infinity, y1 = -Infinity, hit = 0;
-        for (let i = 0; i < hns.length; i++) {
-          const n = nodesById && nodesById.get ? nodesById.get(hns[i].id) : null;
-          if (!n || n.family !== fam) continue;
-          const r = hns[i].r || 0;
-          if (hns[i].x - r < x0) x0 = hns[i].x - r;
-          if (hns[i].y - r < y0) y0 = hns[i].y - r;
-          if (hns[i].x + r > x1) x1 = hns[i].x + r;
-          if (hns[i].y + r > y1) y1 = hns[i].y + r;
-          hit++;
-        }
-        if (hit > 0 && x1 > x0 && y1 > y0) {
-          // Same aspect-correct letterbox maths as camera.fitToExtent,
-          // computed here so we can FLY instead of teleport (fitToExtent
-          // cancels animations by design — it is a jump, not an ease).
-          const padW = (x1 - x0) * 0.18, padH = (y1 - y0) * 0.18;
-          const w = (x1 - x0) + padW * 2, h = (y1 - y0) + padH * 2;
-          const s = Math.min(vp.w / w, vp.h / h);
-          camera.flyTo({ centerX: (x0 + x1) / 2, centerY: (y0 + y1) / 2, scale: s }, 0.55);
-        }
-      } else if (!fam) {
-        // Back to the whole wheel — the view's own fit, not a guess.
-        try {
-          const ext = local.mode && local.mode.worldExtent;
-          if (ext && vp && vp.w && vp.h) {
-            const w = (ext.x1 - ext.x0), h = (ext.y1 - ext.y0);
-            const s = Math.min(vp.w / w, vp.h / h);
-            camera.flyTo({ centerX: (ext.x0 + ext.x1) / 2, centerY: (ext.y0 + ext.y1) / 2, scale: s }, 0.55);
-          }
-        } catch (_) { /* ignore */ }
       }
       // Mark the active title so the way out is visible.
       try {
@@ -6939,6 +7618,10 @@
             // AUDIT P2-9/P2-10 dials need deeper refreshes:
             refocus() { recomputeFocus(); startAnimLoop(); drawFrame(); },
             rebake()  { try { rebakeNodes(); } catch (_) {} startAnimLoop(); drawFrame(); },
+            // THE HOUSE (2026-07-30) — geometry/rank dials TWEEN (a
+            // morph of one house, John's law); the spread scrub snaps.
+            houseMorph() { try { refreshHouse(true); } catch (_) { /* ignore */ } },
+            houseSnap()  { try { refreshHouse(false); } catch (_) { /* ignore */ } },
           },
         });
         // The panel always exists now (John kept losing the ?lab URL);
@@ -7398,6 +8081,19 @@
         if (!local.panMoved) {
           const cssX = ev.clientX - canvasRect.left;
           const cssY = ev.clientY - canvasRect.top;
+          // THE HOUSE — a click on a horizon port TRAVELS: the house
+          // swaps family-to-family without going home first. Checked
+          // BEFORE the node hit-test because the ported nodes pile
+          // exactly on the port point.
+          if (local._isolateFamily && local._house && !houseInFlight()) {
+            const pt = housePortAt(cssX, cssY);
+            if (pt && pt.group !== local._isolateFamily) {
+              local._lastClickId = null;
+              local._lastClickT = 0;
+              setIsolateFamily(pt.group);
+              return;
+            }
+          }
           const hit = hitTestAt(cssX, cssY);
           // Phase 21AG (2026-05-22) — INSTANT click. Post-hoc
           // double-click detection — no defer, ever. The 21AF
@@ -7894,6 +8590,17 @@
       // ROUND-7 DRESS — radii/tiers may shift on zoom rebake; keep
       // the per-instance dress ids in step with the fresh hitNodes.
       local.dressBase = buildDressBase(m.hitNodes);
+      // THE HOUSE — this rebake rebuilt hitNodes from buffer A and
+      // changed disk radii. Refresh the perimeter-inset edge B
+      // endpoints with the fresh radii and re-apply tree positions
+      // to the hit world if the house is at rest.
+      if (local._house) {
+        try {
+          local._house.edgePosB.set(bakeEdgePosB(local._house.lay.positions));
+          local._housePosBDirty = true;
+        } catch (_) { /* ignore */ }
+        rebakeHitPositions();
+      }
       // N2 — fresh nodePack means re-upload on next drawFrame.
       local.nodeInstancesDirty = true;
       // 2026-05-20 — fade-aware (mirror rebakeEdges). Previous

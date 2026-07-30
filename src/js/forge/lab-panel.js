@@ -76,6 +76,18 @@
       ['film_floor',    'Film floor',   0,  1,  0.01, '',  'bg'],
       ['film_full_pct', 'Film full at', 5,  40, 1,    '%'],
       ['film_fade_pct', 'Film fades by',10, 80, 1,    '%'],
+      // THE HOUSE (2026-07-30) — the family-isolate tree. Spread is
+      // a scrub (snaps); the tween length applies to the next ramp.
+      ['house_spread',   'House spread', 0.85, 1.5, 0.01, '×', 'house'],
+      ['house_tween_ms', 'House tween',  200,  800, 10,   'ms'],
+    ];
+    // THE HOUSE — layout radios. Geometry: Cascade and Fan are PEERS
+    // (John: "i want both cascade and fan"); flipping any of these
+    // while isolated TWEENS the house (api.houseMorph), never snaps.
+    const HOUSE_RADIOS = [
+      ['house_geometry', 'Geometry — peers', ['cascade', 'fan']],
+      ['house_ranks',    'Ranks',            ['lineage', 'era']],
+      ['house_orphans',  'Unparented',       ['domain', 'degree']],
     ];
     const TOGGLES = [
       ['recipe_irid',   'Iridescence'],
@@ -151,6 +163,11 @@
         { k: 'slider', key: 'film_full_pct' },
         { k: 'slider', key: 'film_fade_pct' },
       ] },
+      { id: 'house', title: 'The House — family isolate', open: false, items: [
+        { k: 'house' },
+        { k: 'slider', key: 'house_spread' },
+        { k: 'slider', key: 'house_tween_ms' },
+      ] },
     ];
 
     const defaults = {};
@@ -158,6 +175,7 @@
     for (const [k] of TOGGLES) defaults[k] = local.params[k];
     for (const [k] of CASTS)   defaults[k] = local.params[k];
     for (const [k] of VOICES)  defaults[k] = local.params[k];
+    for (const [k] of HOUSE_RADIOS) defaults[k] = local.params[k];
     const ALL_KEYS = Object.keys(defaults);
 
     // Persistence — John's dials must survive a reload (they reset
@@ -244,7 +262,8 @@
 
     function fmt(k, v) {
       if (k === 'recipe_wake_cap' || k === 'recipe_gate_px' || k === 'recipe_wake_radius_px'
-          || k === 'film_full_pct' || k === 'film_fade_pct') return String(Math.round(v));
+          || k === 'film_full_pct' || k === 'film_fade_pct'
+          || k === 'house_tween_ms') return String(Math.round(v));
       return (+v).toFixed(2);
     }
     function recipeStr() {
@@ -265,7 +284,12 @@
         + ' · wake ' + Math.round(p.recipe_wake_radius_px) + 'px cap ' + Math.round(p.recipe_wake_cap)
         + ' · gate ' + Math.round(p.recipe_gate_px) + 'px'
         + ' · core w ' + p.recipe_core_white.toFixed(2) + ' a ' + p.recipe_core_alpha.toFixed(2)
-        + ' · ring a ' + p.recipe_ring_alpha.toFixed(2);
+        + ' · ring a ' + p.recipe_ring_alpha.toFixed(2)
+        + ' · FAMILY-TREE layout=' + (p.house_geometry || 'cascade')
+        + ' ranks=' + (p.house_ranks === 'era' ? 'era' : 'lineage+era')
+        + ' unparented=' + (p.house_orphans || 'domain')
+        + ' spread=' + (+p.house_spread || 1.1).toFixed(2)
+        + ' tween=' + Math.round(p.house_tween_ms || 450);
     }
     function syncRecipe() { recipeEl.textContent = recipeStr(); }
 
@@ -295,6 +319,7 @@
         persist();
         if (mode === 'rebake' && api.rebake) api.rebake();
         else if (mode === 'refocus' && api.refocus) api.refocus();
+        else if (mode === 'house' && api.houseSnap) api.houseSnap();
         else api.redraw();
       });
       host.appendChild(row); host.appendChild(inp);
@@ -368,6 +393,10 @@
           }
         } else if (it.k === 'voices') {
           for (const [key, label, opts] of VOICES) addRadioRow(body, key, label, opts);
+        } else if (it.k === 'house') {
+          for (const [key, label, opts] of HOUSE_RADIOS) {
+            addRadioRow(body, key, label, opts, api.houseMorph);
+          }
         }
       }
     }

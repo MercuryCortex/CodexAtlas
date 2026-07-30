@@ -7963,9 +7963,28 @@ aside.detail { overflow-x: hidden; }
   font-weight: 600;
   letter-spacing: 0.24em;
 }
-/* While isolated, the other titles recede with their families. */
+/* THE HOUSE (2026-07-30) — the tree REPLACES the wedge while
+   isolated: wedge fills, dividers and guide rings retire; the other
+   families' titles yield entirely (their names now live on the
+   canvas port labels, with real wire counts); the family's own
+   title rides to the crown (repositioned by syncHulls). */
 body.fv-isolated .forge-hull-label:not(.is-isolated) {
-  fill-opacity: 0.3;
+  /* opacity, not fill-opacity — the label's black stroke halo
+     (paint-order: stroke fill) kept painting at fill-opacity 0,
+     ghosting every family name behind the canvas port labels. */
+  opacity: 0;
+  pointer-events: none;
+}
+body.fv-isolated #forge-hull-polys,
+body.fv-isolated #forge-hull-dividers,
+body.fv-isolated #forge-hull-guide-rings {
+  display: none;
+}
+/* Mid-ramp (enter/exit/travel) the hull overlay holds its breath —
+   the canvas sprites carry the whole motion; chrome returns at the
+   settle. !important beats syncHulls' per-frame inline opacity. */
+body.fv-house-flight .forge-hulls-overlay {
+  opacity: 0 !important;
 }
 .forge-hull-label {
   fill: var(--family-color, #888);
