@@ -106,3 +106,6 @@ secrets.json
 
 # Island identity (pseudonymous layout — kept out of the repo per Anonymity Law)
 PROJECT-IDENTITY.md
+
+# Wrangler local cache — holds the Cloudflare account id. Never commit.
+.wrangler/
