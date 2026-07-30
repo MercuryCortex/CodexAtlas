@@ -122,6 +122,40 @@ function checkFamily(fam, geometry, expect) {
   }
   if (rankBad === 0) ok('every lineage arc points down a rank (' + h.arcs.length + ' arcs)');
   else fail(rankBad + ' arcs violate rank order');
+  // 2026-07-30 SCALE pass — the bundle invariants:
+  //  1. every member carries a HOUSE radius (the view bakes it into
+  //     position-B; a missing one would render a wheel-sized dot)
+  //  2. no two members overlap (bed/braid spacing law)
+  //  3. gods are BIG — the median house radius must beat the wheel's
+  //     tier radii (8/7/6/5) by a clear margin, or Task 1 regressed
+  {
+    const members = [];
+    for (const row of h.rows) for (const id of row) members.push(id);
+    let noR = 0;
+    const rs = [];
+    for (const id of members) {
+      const r = a.radii && a.radii.get(id);
+      if (!(r > 0)) noR++; else rs.push(r);
+    }
+    if (noR === 0) ok('every member has a house radius');
+    else fail(noR + ' members missing a house radius');
+    rs.sort((x, y) => x - y);
+    const med = rs.length ? rs[Math.floor(rs.length / 2)] : 0;
+    if (med >= 10) ok('median house radius ' + med.toFixed(1) + ' world-units (wheel tiers are 5–8)');
+    else fail('median house radius only ' + med.toFixed(1) + ' — gods are not BIG');
+    let overlaps = 0, worstGap = Infinity;
+    for (let i = 0; i < members.length; i++) {
+      const pi = a.positions.get(members[i]), ri = a.radii.get(members[i]) || 0;
+      for (let j = i + 1; j < members.length; j++) {
+        const pj = a.positions.get(members[j]), rj = a.radii.get(members[j]) || 0;
+        const g = Math.hypot(pi.x - pj.x, pi.y - pj.y) - ri - rj;
+        if (g < worstGap) worstGap = g;
+        if (g < -0.01) overlaps++;
+      }
+    }
+    if (overlaps === 0) ok('zero member overlaps (worst gap ' + worstGap.toFixed(1) + ')');
+    else fail(overlaps + ' overlapping member pairs (worst gap ' + worstGap.toFixed(1) + ')');
+  }
   if (expect) expect(a, h);
   return a;
 }
@@ -140,7 +174,9 @@ checkFamily('Greek', 'fan');
 checkFamily('Chinese', 'cascade', (r, h) => {
   if (h.stats.kinArcs === 0) ok('Chinese has zero kinship — degrades to pure era strata');
   else console.log('  (note: Chinese now has ' + h.stats.kinArcs + ' kin arcs — data grew)');
-  if (h.RK >= 4) ok('rank count floor holds (RK=' + h.RK + ')');
+  // 2026-07-30 — floor dropped 4 → 3: beds absorb density, fewer
+  // ranks = compact house = big gods (the Task-1 scale law).
+  if (h.RK >= 3) ok('rank count floor holds (RK=' + h.RK + ')');
   else fail('RK below floor: ' + h.RK);
 });
 checkFamily('Chinese', 'fan');

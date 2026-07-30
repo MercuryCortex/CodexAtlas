@@ -213,12 +213,16 @@
       @location(1) inst_pos_r:     vec4<f32>,
       @location(2) inst_color:     vec4<f32>,
       @location(3) inst_sswd:      vec4<f32>,
-      @location(4) inst_pos_b:     vec2<f32>,
+      @location(4) inst_pos_b:     vec4<f32>,
     ) -> VsOut {
       // THE HOUSE — mix() is exact at both ends (t=0 → a·1+b·0 = a;
       // t=1 → a·0+b·1 = b), so rest states are bit-true positions.
-      let inst_pos      = mix(inst_pos_r.xy, inst_pos_b, v.layout_mix.x);
-      let inst_radius   = inst_pos_r.z;
+      // 2026-07-30 SCALE pass: position-B carries a RADIUS lane too
+      // (xy = tree position, z = house radius) — gods GROW as the
+      // layout ramps in. At mix 0 the B term multiplies away exactly:
+      // the wheel renders byte-identically (honest zeros).
+      let inst_pos      = mix(inst_pos_r.xy, inst_pos_b.xy, v.layout_mix.x);
+      let inst_radius   = mix(inst_pos_r.z, inst_pos_b.z, v.layout_mix.x);
       let inst_state    = inst_sswd.x;
       let inst_selected = inst_sswd.y;
       let wake          = clamp(inst_sswd.z, 0.0, 1.0);
@@ -555,11 +559,12 @@
       @location(1) inst_pos_r:     vec4<f32>,
       @location(2) inst_color:     vec4<f32>,
       @location(3) inst_sswd:      vec4<f32>,
-      @location(4) inst_pos_b:     vec2<f32>,
+      @location(4) inst_pos_b:     vec4<f32>,
     ) -> VsOut {
-      // THE HOUSE — glow rides the same layout ramp as the body.
-      let inst_pos      = mix(inst_pos_r.xy, inst_pos_b, v.layout_mix.x);
-      let inst_radius   = inst_pos_r.z;
+      // THE HOUSE — glow rides the same layout ramp AND radius lane
+      // as the body (2026-07-30: pos_b.z = house radius; exact at 0).
+      let inst_pos      = mix(inst_pos_r.xy, inst_pos_b.xy, v.layout_mix.x);
+      let inst_radius   = mix(inst_pos_r.z, inst_pos_b.z, v.layout_mix.x);
       let inst_state    = inst_sswd.x;
       let inst_selected = inst_sswd.y;
       let wake          = clamp(inst_sswd.z, 0.0, 1.0);
@@ -951,10 +956,13 @@
       @location(1) inst_pos_r_idx:  vec4<f32>,     // xy=center, z=glyph_radius, w=glyphIdx
       @location(2) inst_tint_alpha: vec4<f32>,     // rgba (carried but unused — see fragment)
       @location(3) inst_state_sel:  vec2<f32>,     // .x = state, .y = selected
-      @location(4) inst_pos_b:      vec2<f32>,     // THE HOUSE — shared node posB VBO (1:1 instances)
+      @location(4) inst_pos_b:      vec4<f32>,     // THE HOUSE — shared node posB VBO (1:1 instances)
     ) -> VsOut {
-      let center   = mix(inst_pos_r_idx.xy, inst_pos_b, v.layout_mix.x);
-      let r_base   = inst_pos_r_idx.z;            // already × glyph_scale in JS
+      let center   = mix(inst_pos_r_idx.xy, inst_pos_b.xy, v.layout_mix.x);
+      // 2026-07-30 SCALE pass — pos_b.z is the house DISK radius;
+      // layout_mix.y carries glyph_scale so the sigil grows with its
+      // disk. At mix 0 the whole B term multiplies away exactly.
+      let r_base   = mix(inst_pos_r_idx.z, inst_pos_b.z * v.layout_mix.y, v.layout_mix.x);
       let idx_f    = inst_pos_r_idx.w;
       let idx      = clamp(i32(floor(idx_f + 0.5)), 0, 31);
       let state    = inst_state_sel.x;
@@ -1224,9 +1232,10 @@
           { arrayStride: 16, stepMode: 'instance', attributes: [
               { shaderLocation: 3, offset: 0, format: 'float32x4' },
           ] },
-          // [3] THE HOUSE — per-instance position B (the tree).
-          { arrayStride: 8, stepMode: 'instance', attributes: [
-              { shaderLocation: 4, offset: 0, format: 'float32x2' },
+          // [3] THE HOUSE — per-instance position B (the tree):
+          // xy = tree position, z = house radius, w = pad (2026-07-30).
+          { arrayStride: 16, stepMode: 'instance', attributes: [
+              { shaderLocation: 4, offset: 0, format: 'float32x4' },
           ] },
         ],
       },
@@ -1256,8 +1265,8 @@
           { arrayStride: 16, stepMode: 'instance', attributes: [
               { shaderLocation: 3, offset: 0, format: 'float32x4' },
           ] },
-          { arrayStride: 8, stepMode: 'instance', attributes: [
-              { shaderLocation: 4, offset: 0, format: 'float32x2' },
+          { arrayStride: 16, stepMode: 'instance', attributes: [
+              { shaderLocation: 4, offset: 0, format: 'float32x4' },
           ] },
         ],
       },
@@ -1392,9 +1401,10 @@
           ] },
           // [3] THE HOUSE — SAME nodePosBVbo as the node pipeline
           // (glyph instances are 1:1 with node instances), so glyphs
-          // ride the layout ramp with their parent disks.
-          { arrayStride: 8, stepMode: 'instance', attributes: [
-              { shaderLocation: 4, offset: 0, format: 'float32x2' },
+          // ride the layout ramp — and the radius lane — with their
+          // parent disks (vec4: xy pos, z house radius, w pad).
+          { arrayStride: 16, stepMode: 'instance', attributes: [
+              { shaderLocation: 4, offset: 0, format: 'float32x4' },
           ] },
         ],
       },
@@ -1425,8 +1435,8 @@
           { arrayStride: 16, stepMode: 'instance', attributes: [
               { shaderLocation: 3, offset: 0, format: 'float32x4' },
           ] },
-          { arrayStride: 8, stepMode: 'instance', attributes: [
-              { shaderLocation: 4, offset: 0, format: 'float32x2' },
+          { arrayStride: 16, stepMode: 'instance', attributes: [
+              { shaderLocation: 4, offset: 0, format: 'float32x4' },
           ] },
         ],
       },
@@ -1949,6 +1959,10 @@
         const lm = (frame.nodePosB && (frame.edgePosB || edgeCount === 0))
           ? Math.max(0, Math.min(1, lmRaw)) : 0;
         viewData[72] = lm;
+        // layout_mix.y = glyph_scale — the glyph shader derives its
+        // house radius from the shared pos_b.z (disk radius) × this.
+        // Multiplied by the mix term, so it is inert at mix 0.
+        viewData[73] = (typeof frame.glyphScale === 'number') ? frame.glyphScale : 0.85;
         device.queue.writeBuffer(viewUbo, 0, viewData);
 
         // ── Instance buffers (static geometry) ──────
@@ -2040,11 +2054,14 @@
         // the upload is gated on the caller actually supplying B data,
         // so the no-isolate path never uploads and never changes.
         if (nodeCount > 0) {
-          const bytes = nodeCount * 8;
+          // 2026-07-30 — 4 floats/instance (xy tree pos, z house
+          // radius, w pad). Fresh buffers stay zero-initialized; the
+          // z lane only matters when layout_mix > 0.
+          const bytes = nodeCount * 16;
           const r = ensureBuffer(nodePosBVbo, nodePosBVboSize, bytes, 'forge-node-posb-vbo');
           nodePosBVbo = r.buf; nodePosBVboSize = r.size;
           if (frame.nodePosB && (frame.nodePosBDirty || r.grew)) {
-            device.queue.writeBuffer(nodePosBVbo, 0, frame.nodePosB, 0, nodeCount * 2);
+            device.queue.writeBuffer(nodePosBVbo, 0, frame.nodePosB, 0, nodeCount * 4);
           }
         }
         if (edgeCount > 0) {

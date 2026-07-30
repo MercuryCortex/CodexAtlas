@@ -78,16 +78,22 @@
       ['film_fade_pct', 'Film fades by',10, 80, 1,    '%'],
       // THE HOUSE (2026-07-30) — the family-isolate tree. Spread is
       // a scrub (snaps); the tween length applies to the next ramp.
+      // BONES: resting visibility of the house's own kinship wires
+      // (0 = the old invisible slate idle, 1 = full hover-hot).
       ['house_spread',   'House spread', 0.85, 1.5, 0.01, '×', 'house'],
+      ['house_bones',    'House bones',  0,    1,   0.01, '',  'refocus'],
+      ['house_veil',     'House veil',   0,    1,   0.01, ''],
       ['house_tween_ms', 'House tween',  200,  800, 10,   'ms'],
     ];
-    // THE HOUSE — layout radios. Geometry: Cascade and Fan are PEERS
-    // (John: "i want both cascade and fan"); flipping any of these
-    // while isolated TWEENS the house (api.houseMorph), never snaps.
+    // THE HOUSE — layout radios. GEOMETRY GRADUATED (2026-07-30):
+    // Cascade | Fan is a CANONICAL view control now — it lives in the
+    // VIEW panel ("House layout") and persists with the view
+    // settings, per John's toggles-change-the-view ruling. The LAB
+    // keeps only the tuning radios; flipping one while isolated
+    // TWEENS the house (api.houseMorph), never snaps.
     const HOUSE_RADIOS = [
-      ['house_geometry', 'Geometry — peers', ['cascade', 'fan']],
-      ['house_ranks',    'Ranks',            ['lineage', 'era']],
-      ['house_orphans',  'Unparented',       ['domain', 'degree']],
+      ['house_ranks',    'Ranks',      ['lineage', 'era']],
+      ['house_orphans',  'Unparented', ['domain', 'degree']],
     ];
     const TOGGLES = [
       ['recipe_irid',   'Iridescence'],
@@ -166,6 +172,8 @@
       { id: 'house', title: 'The House — family isolate', open: false, items: [
         { k: 'house' },
         { k: 'slider', key: 'house_spread' },
+        { k: 'slider', key: 'house_bones' },
+        { k: 'slider', key: 'house_veil' },
         { k: 'slider', key: 'house_tween_ms' },
       ] },
     ];

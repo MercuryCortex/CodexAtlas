@@ -6,15 +6,20 @@
 //
 // AST-VALIDATED DEPS: { COLOR_THEMES, DEFAULT_UX_MODE, DISTRIBUTION_THEMES,
 //   ORDER_THEMES, VIEWSET_CRITERIA, applyUxMode, drawFrame, local,
-//   rebuildForMode, rebuildHullElements, recomputeFocus, syncHulls }
-// (12 deps — biggest dependency surface in the series.)
+//   rebuildForMode, rebuildHullElements, recomputeFocus, syncHulls,
+//   refreshHouse }
+// (13 deps — biggest dependency surface in the series. refreshHouse
+//  added 2026-07-30 for the House-layout radio: Cascade/Fan are
+//  CANONICAL view controls now, per John — the choice of view is
+//  canonical, the tuning numbers stay in the LAB.)
 // BOUNDARY CONTRACT:
-//   window._forgeViewSettings.attach({ ...all 12 deps... })
+//   window._forgeViewSettings.attach({ ...all 13 deps... })
 // ============================================================
 (function () {
   function attach({ COLOR_THEMES, DEFAULT_UX_MODE, DISTRIBUTION_THEMES, ORDER_THEMES,
                     VIEWSET_CRITERIA, applyUxMode, drawFrame, local,
-                    rebuildForMode, rebuildHullElements, recomputeFocus, syncHulls }) {
+                    rebuildForMode, rebuildHullElements, recomputeFocus, syncHulls,
+                    refreshHouse }) {
     const btn   = document.getElementById('forge-viewset-btn');
     const panel = document.getElementById('forge-viewset-panel');
     if (!btn || !panel) return;
@@ -50,6 +55,11 @@
     if (typeof state.tlBands            !== 'boolean') state.tlBands            = true;
     if (typeof state.tlBandLabels       !== 'boolean') state.tlBandLabels       = true;
     if (typeof state.tlDenseTicks       !== 'boolean') state.tlDenseTicks       = false;
+    // THE HOUSE (2026-07-30) — the family-isolate geometry is a
+    // CANONICAL view choice (Cascade | Fan), persisted here with the
+    // other view settings. The LAB no longer owns this key.
+    if (state.houseGeometry !== 'cascade' && state.houseGeometry !== 'fan') state.houseGeometry = 'cascade';
+    local.params.house_geometry = state.houseGeometry;
     // 2026-07-29 — THE GROUND does NOT live here. John pointed at
     // THE FOLIO's own Theme/Badge column ("the user menu") as the
     // canonical home for it, and it is owned end-to-end by
@@ -151,6 +161,10 @@
       panel.querySelectorAll('.forge-viewset-row[data-distribution]').forEach(row => {
         row.classList.toggle('is-on', row.dataset.distribution === (ux.distributionMode || 'organic'));
       });
+      // THE HOUSE — House-layout radio highlight.
+      panel.querySelectorAll('.forge-viewset-row[data-house]').forEach(row => {
+        row.classList.toggle('is-on', row.dataset.house === (state.houseGeometry || 'cascade'));
+      });
       // Phase 21AS (2026-05-23) — when the source-tier set changes,
       // re-run recomputeFocus so edgeTargets pick up the tier-filter
       // (edges whose source_tier ∉ activeTiers get HIDDEN). Skip if
@@ -236,6 +250,23 @@
         local.uxMode.distributionMode = v;
         applyState();
         applyUxMode();
+        return;
+      }
+      // THE HOUSE (2026-07-30) — House-layout radio (Cascade | Fan).
+      // Canonical per John ("we need the toggles to change the view
+      // like we had"). If a house is standing, the flip TWEENS it
+      // (refreshHouse(true) — geometry flips morph, never snap);
+      // otherwise the choice simply waits for the next isolate.
+      if (row.dataset.house) {
+        const v = row.dataset.house;
+        if (v !== 'cascade' && v !== 'fan') return;
+        if (state.houseGeometry === v) return;
+        state.houseGeometry = v;
+        local.params.house_geometry = v;
+        applyState();
+        if (typeof refreshHouse === 'function') {
+          try { refreshHouse(true); } catch (_) { /* no house standing — fine */ }
+        }
         return;
       }
     });

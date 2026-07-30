@@ -697,11 +697,20 @@
     // Fan are PEERS (John: "i want both cascade and fan"); the
     // user-facing VIEW radio waits for his verdict — for now these
     // live behind the DEV door (NODE LAB ▸ The House).
-    house_geometry:        'cascade',   // 'cascade' | 'fan'
+    house_geometry:        'cascade',   // 'cascade' | 'fan' — CANONICAL (VIEW panel owns it, 2026-07-30)
     house_spread:          1.10,
     house_tween_ms:        450,
     house_ranks:           'lineage',   // 'lineage' | 'era'
     house_orphans:         'domain',    // 'domain'  | 'degree'
+    // THE BONES (2026-07-30) — resting edge-state lift for the
+    // house's own kinship wires (0 = old invisible idle, 1 = full
+    // hover-hot). John: crown said "5 LINEAGE ARCS", screen showed
+    // none. Reversible + visual + dev ⇒ it ships as a LAB dial.
+    house_bones:           0.75,
+    // THE VEIL — while isolated, how far the idle external mesh
+    // recedes (0 = full wheel atmosphere, 1 = externals invisible
+    // until hover). Bones + hover wires ride the hot ramp above it.
+    house_veil:            0.55,
   });
 
   function render(rootEl) {
@@ -1220,6 +1229,17 @@
           '<button class="forge-viewset-row fv-wheel-only" data-distribution="age-bands"><span class="vs-radio"></span>Age bands <em>(scholarly chart)</em></button>' +
           '<button class="forge-viewset-row fv-wheel-only" data-distribution="vogel"><span class="vs-radio"></span>Vogel sunflower <em>(phyllotaxis)</em></button>' +
           '<button class="forge-viewset-row fv-wheel-only" data-toggle="reverseAge"><span class="vs-check"></span>Reverse age direction <em>(rim = oldest)</em></button>' +
+          // THE HOUSE (2026-07-30) — Cascade/Fan graduate from the
+          // LAB to canonical view controls (John: "we need the
+          // toggles to change the view like we had … all these
+          // display are gold for the app like we have the view
+          // modes"). The CHOICE of view is canonical; the tuning
+          // numbers (spread, tween, bones) stay LAB. Flipping while
+          // isolated TWEENS the standing house (refreshHouse(true)).
+          '<div class="forge-viewset-divider fv-wheel-only"></div>' +
+          '<div class="forge-viewset-section fv-wheel-only">House layout <em>(family isolate)</em></div>' +
+          '<button class="forge-viewset-row fv-wheel-only" data-house="cascade"><span class="vs-radio"></span>Cascade <em>(generational chart)</em></button>' +
+          '<button class="forge-viewset-row fv-wheel-only" data-house="fan"><span class="vs-radio"></span>Fan <em>(crest of era rings)</em></button>' +
           // Phase 21AY (2026-05-23) — Source-tier + political-risk
           // toggles MOVED to the LEGEND panel where the tier vocabulary
           // is documented. Same vocabulary in one place — the legend's
@@ -2080,9 +2100,33 @@
           };
         })() : null,
       }),
+      // 4 floats/instance since the SCALE pass: [x, y, houseRadius].
       housePosBAt:  (i) => (local._house
-        ? [local._house.nodePosB[i * 2], local._house.nodePosB[i * 2 + 1]]
+        ? [local._house.nodePosB[i * 4], local._house.nodePosB[i * 4 + 1], local._house.nodePosB[i * 4 + 2]]
         : null),
+      // THE BONES — verification surface: how many kinship wires the
+      // standing house lifted, and the live edge-target levels of the
+      // first few (must equal house_bones at rest, 1 when hovered).
+      houseBones: () => {
+        if (!local._house || !local._house.boneIdx) return null;
+        const idx = Array.from(local._house.boneIdx).slice(0, 8);
+        return {
+          bones: local._house.boneIdx.size,
+          lift: local.params.house_bones,
+          sample: idx.map(i => [i, local.edgeTargets ? +(+local.edgeTargets[i]).toFixed(3) : null]),
+        };
+      },
+      // SCALE-pass acceptance surface: the DISPLAYED radius of a node
+      // (hit-world world-units — wheel radii at wheel rest, house
+      // radii at house rest) and its on-screen CSS-px radius at the
+      // current camera. This is the number the task is judged by.
+      nodeInfo: (id) => {
+        const hn = local.mode && local.mode.hitById ? local.mode.hitById.get(id) : null;
+        if (!hn) return null;
+        const sc = (camera && camera.state) ? camera.state.scale : 1;
+        return { id, worldR: +hn.r.toFixed(2), camScale: +sc.toFixed(4),
+                 screenR: +(hn.r * sc).toFixed(2), tier: hn.tier };
+      },
       lastPlacedRects: () => (local._lastPlacedRects || []).map(P => P.slice()),
       // Hidden panes freeze rAF, so a pending ramp never settles and
       // the flight guard eats synthetic input — harnesses call this
@@ -4216,7 +4260,16 @@
       // active focus/selected wires visible. Single-line fix on
       // the existing dim path.
       const wiresHidden   = document.body.classList.contains('fv-hide-wires');
-      const effectiveDim  = wiresHidden ? 1.0 : Math.max(focusDim, wireZoomFade);
+      // THE HOUSE VEIL (2026-07-30) — while isolated, the idle
+      // external mesh (hundreds of member→port wires) recedes so the
+      // lifted BONES read as the skeleton they are. Same uniform the
+      // focus dim rides: state-0 wires attenuate by (1−veil), boned
+      // wires (state 0.65) keep most of their light, hover-hot wires
+      // (state 1) are untouched. Honest zeros: no isolate ⇒ 0.
+      const houseVeil = (local._isolateFamily && local._house)
+        ? Math.max(0, Math.min(1, (typeof local.params.house_veil === 'number') ? local.params.house_veil : 0.55))
+        : 0;
+      const effectiveDim  = wiresHidden ? 1.0 : Math.max(focusDim, wireZoomFade, houseVeil);
       const effectiveDimN = hasFocus ? local.params.dim_amount_nodes * dimMulN : 0;
       // Phase 7 (2026-05-20) — stroke color (replaces deleted glow color).
       // Parsed once per frame; cheap.
@@ -4296,11 +4349,14 @@
         // THE HOUSE (2026-07-30) — the second resident position set +
         // the mix. With no isolate these are null/0 and the renderer's
         // honest-zero path renders the wheel byte-identically.
+        // glyphScale rides layout_mix.y so sigils grow with their
+        // disks' house radii (inert at mix 0).
         layoutMix:             local._layoutMix ? easeHouse(local._layoutMix.value) : 0,
         nodePosB:              local._house ? local._house.nodePosB : null,
         nodePosBDirty:         !!local._housePosBDirty,
         edgePosB:              local._house ? local._house.edgePosB : null,
         edgePosBDirty:         !!local._housePosBDirty,
+        glyphScale:            (typeof local.params.glyph_scale === 'number') ? local.params.glyph_scale : 0.85,
         // ROUND-7 DRESS (2026-07-26) — the node-lab recipe, verbatim.
         // recipe_hover_zoom < 1 sends null → all-zero uniforms → the
         // shader's honest-zero legacy path (Phase-7 disk exactly).
@@ -5943,13 +5999,16 @@
           lastCap = txt;
         }
       } else {
+        // FAN (2026-07-30) — rings orbit the TRUNK (center.y + fanDy),
+        // so era captions anchor on each ring's crest above it.
         ctx.textAlign = 'center';
+        const fanY = house.center.y + (house.fanDy || 0);
         for (const rm of house.rowMeta) {
           if (rm.dmin == null) continue;
           const txt = fmtD(rm.dmin);
           if (txt === lastCap) continue;
           const w = ctx.measureText(txt).width;
-          const es = W2S(house.center.x, house.center.y - rm.rad);
+          const es = W2S(house.center.x, fanY - rm.rad);
           const ey = es.y - 8;
           if (!claim(es.x, ey, w + 4)) continue;
           ctx.globalAlpha = 0.6;
@@ -6235,27 +6294,38 @@
     }
 
     // Bake the tree into position-B arrays aligned 1:1 with the
-    // packed instances. Node B: 2 floats/instance by idIndex order.
-    function bakeNodePosB(positions) {
+    // packed instances. Node B: 4 floats/instance by idIndex order —
+    // xy = tree position, z = HOUSE radius (2026-07-30 SCALE pass:
+    // members carry the layout's big house radii so gods GROW as the
+    // mix ramps; everyone else keeps their wheel radius, so the port
+    // piles stay quiet sigils), w = pad.
+    function bakeNodePosB(positions, houseRadii) {
       const np = local.mode.nodePacked;
-      const out = new Float32Array(np.instanceCount * 2);
+      const out = new Float32Array(np.instanceCount * 4);
       for (let i = 0; i < np.instanceCount; i++) {
         const p = positions.get(np.idIndex[i]);
-        if (p) { out[i * 2] = p.x; out[i * 2 + 1] = p.y; }
-        else {
-          out[i * 2]     = np.data[i * NODE_FLOATS];
-          out[i * 2 + 1] = np.data[i * NODE_FLOATS + 1];
+        const wheelR = np.data[i * NODE_FLOATS + 2];
+        const hr = houseRadii ? houseRadii.get(np.idIndex[i]) : null;
+        if (p) {
+          out[i * 4]     = p.x;
+          out[i * 4 + 1] = p.y;
+        } else {
+          out[i * 4]     = np.data[i * NODE_FLOATS];
+          out[i * 4 + 1] = np.data[i * NODE_FLOATS + 1];
         }
+        out[i * 4 + 2] = (typeof hr === 'number' && hr > 0) ? hr : wheelR;
       }
       return out;
     }
     // Edge B: 4 floats/instance (p0b, p2b), iterated with EXACTLY
     // packEdges' renderable law (both endpoints in the WHEEL
     // positions map) so instance order aligns; endpoints inset to
-    // the disk perimeter by the same 0.92r law.
-    function bakeEdgePosB(positions) {
+    // the disk perimeter by the same 0.92r law — using the HOUSE
+    // radii where the layout supplied them (big gods, honest insets).
+    function bakeEdgePosB(positions, houseRadii) {
       const m = local.mode;
       const radii = buildRadiiMap(m.nodePacked);
+      if (houseRadii) for (const [id, r] of houseRadii) radii.set(id, r);
       const wheelPos = m.positions;
       const E = m.edgePacked.instanceCount;
       const out = new Float32Array(E * 4);
@@ -6295,7 +6365,17 @@
       if (!memberIds.size) return null;
       const arcs = [], laterals = [], aspects = [];
       const portWeights = Object.create(null);
-      for (const e of m.edges) {
+      // THE BONES (2026-07-30) — raw indices into m.edges of every
+      // member↔member kinship wire. John's screenshots: the crown
+      // claimed "5 LINEAGE ARCS" and none were visible — they idle at
+      // slate 10% like any wire. At house rest these indices get a
+      // standing edge-state lift (applyHouseBonesOverride) so the
+      // skeleton actually SHOWS. Index space = raw edges; the packed
+      // instances align because every mode edge is renderable (same
+      // alignment law bakeEdgePosB already relies on).
+      const boneIdx = new Set();
+      for (let ei = 0; ei < m.edges.length; ei++) {
+        const e = m.edges[ei];
         const sIn = memberIds.has(e.source);
         const tIn = memberIds.has(e.target);
         if (sIn !== tIn) {
@@ -6309,10 +6389,10 @@
         }
         if (!sIn) continue;
         // member↔member — the bones + laterals
-        if (e.type === 'parent-of')      arcs.push([e.source, e.target]);
-        else if (e.type === 'child-of')  arcs.push([e.target, e.source]);
-        else if (e.type === 'consort')   laterals.push([e.source, e.target]);
-        else if (HOUSE_ASPECT_RE.test(e.type || '')) aspects.push([e.source, e.target]);
+        if (e.type === 'parent-of')      { arcs.push([e.source, e.target]); boneIdx.add(ei); }
+        else if (e.type === 'child-of')  { arcs.push([e.target, e.source]); boneIdx.add(ei); }
+        else if (e.type === 'consort')   { laterals.push([e.source, e.target]); boneIdx.add(ei); }
+        else if (HOUSE_ASPECT_RE.test(e.type || '')) { aspects.push([e.source, e.target]); boneIdx.add(ei); }
       }
       // Bearings + colors from the live hull data — the ports sit at
       // each family's TRUE wheel bearing so the mental map stays warm.
@@ -6348,9 +6428,31 @@
         fam,
         lay,
         memberIds,
-        nodePosB: bakeNodePosB(lay.positions),
-        edgePosB: bakeEdgePosB(lay.positions),
+        boneIdx,
+        nodePosB: bakeNodePosB(lay.positions, lay.radii),
+        edgePosB: bakeEdgePosB(lay.positions, lay.radii),
       };
+    }
+
+    // THE BONES — a standing edge-state lift for the house's own
+    // kinship wires (lineage + consort + aspect, member↔member).
+    // Edge state is continuous: 0 idle → 1 hot; house_bones (LAB
+    // dial, default 0.75) parks the skeleton at a clearly-visible
+    // fraction of the hot ramp — kinship lilac, wider stroke —
+    // without screaming like a hover. HIDDEN (≥1.5) always wins;
+    // a real hover (1.0) always wins. Honest zeros: no isolate, no
+    // lift. Applied wherever edge targets are recomputed.
+    function applyHouseBonesOverride(targets) {
+      if (!local._isolateFamily || !local._house || !local._house.boneIdx) return;
+      const lift = Math.max(0, Math.min(1,
+        (typeof local.params.house_bones === 'number') ? local.params.house_bones : 0.75));
+      if (!lift) return;
+      for (const ei of local._house.boneIdx) {
+        if (ei >= targets.length) continue;
+        const cur = targets[ei];
+        if (cur >= 1.5) continue;         // hidden stays hidden (tier filter / timeline)
+        if (cur < lift) targets[ei] = lift;
+      }
     }
 
     // ── The layout ramp — one scalar, retargetable, rest is still ──
@@ -6429,11 +6531,16 @@
       for (let i = 0; i < m.hitNodes.length; i++) {
         const hn = m.hitNodes[i];
         if (atHouse) {
-          hn.x = local._house.nodePosB[i * 2];
-          hn.y = local._house.nodePosB[i * 2 + 1];
+          // posB is 4 floats/instance since the SCALE pass —
+          // xy tree position + z HOUSE radius. Hit disks and label
+          // offsets must follow the displayed (big) gods.
+          hn.x = local._house.nodePosB[i * 4];
+          hn.y = local._house.nodePosB[i * 4 + 1];
+          hn.r = local._house.nodePosB[i * 4 + 2] || np.data[i * NODE_FLOATS + 2];
         } else {
           hn.x = np.data[i * NODE_FLOATS];
           hn.y = np.data[i * NODE_FLOATS + 1];
+          hn.r = np.data[i * NODE_FLOATS + 2];
         }
         if (hn.r > maxR) maxR = hn.r;
       }
@@ -6768,6 +6875,10 @@
           }
         }
       }
+      // THE HOUSE (2026-07-30) — the bones lift, after the filters
+      // (hidden wins) and before the snap logic (a wire leaving
+      // hidden snaps straight to its boned level, no orange flash).
+      applyHouseBonesOverride(newTargets);
       // Phase 21AU (2026-05-23) — snap edgeStates around HIDDEN
       // transitions. The fade animation linearly interpolates state
       // toward target, so 0 → 2 passes through state=1 (HOT) for
@@ -7589,6 +7700,9 @@
           COLOR_THEMES, DEFAULT_UX_MODE, DISTRIBUTION_THEMES, ORDER_THEMES,
           VIEWSET_CRITERIA, applyUxMode, drawFrame, local,
           rebuildForMode, rebuildHullElements, recomputeFocus, syncHulls,
+          // THE HOUSE (2026-07-30) — the House-layout radio morphs a
+          // standing house live (tween, John's law for geometry flips).
+          refreshHouse,
         });
       } else if (typeof console !== 'undefined' && console.warn) {
         console.warn('[forge] window._forgeViewSettings not loaded — view settings inert.');
@@ -8591,12 +8705,14 @@
       // the per-instance dress ids in step with the fresh hitNodes.
       local.dressBase = buildDressBase(m.hitNodes);
       // THE HOUSE — this rebake rebuilt hitNodes from buffer A and
-      // changed disk radii. Refresh the perimeter-inset edge B
-      // endpoints with the fresh radii and re-apply tree positions
-      // to the hit world if the house is at rest.
+      // changed disk radii. Refresh BOTH position-B bakes (node B
+      // carries the ported non-members' wheel radii in its z lane;
+      // edge B insets by the blended radii map) and re-apply tree
+      // positions + house radii to the hit world if at rest.
       if (local._house) {
         try {
-          local._house.edgePosB.set(bakeEdgePosB(local._house.lay.positions));
+          local._house.nodePosB.set(bakeNodePosB(local._house.lay.positions, local._house.lay.radii));
+          local._house.edgePosB.set(bakeEdgePosB(local._house.lay.positions, local._house.lay.radii));
           local._housePosBDirty = true;
         } catch (_) { /* ignore */ }
         rebakeHitPositions();
@@ -8664,6 +8780,9 @@
       // (which the next animTick will fade toward) and only
       // resize the live states buffer if the edge count changed.
       const newTargets = graph.computeEdgeStates(m.edges, local.focusedSet);
+      // THE HOUSE (2026-07-30) — the bones lift survives a zoom
+      // rebake too (mirror of the recomputeFocus callsite).
+      applyHouseBonesOverride(newTargets);
       if (!local.edgeTargets || local.edgeTargets.length !== newTargets.length) {
         local.edgeTargets = newTargets;
       } else {

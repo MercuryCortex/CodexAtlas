@@ -314,8 +314,12 @@ function computeHouse(famName){
   }
   var maxLayer=0; layer.forEach(function(l){ if(l>maxLayer)maxLayer=l; });
 
-  // rank count: enough rows for the deepest line AND ~12 per row
-  var RK=Math.max(maxLayer+1, Math.ceil(N/12), 4); RK=Math.min(RK,13);
+  // rank count — 2026-07-30 SCALE pass: the BEDS (staggered sub-rows)
+  // now absorb density horizontally, so ranks no longer multiply to
+  // spread big families vertically (ceil(N/12) was why Vedic needed 9
+  // rows and every house went tall + tiny). Fewer ranks = shorter
+  // house = bigger gods after the fit.
+  var RK=Math.max(maxLayer+1, Math.ceil(N/14), 3); RK=Math.min(RK,13);
   function eraRank(i){ return Math.round(era(i)*(RK-1)); }
 
   var rank=new Array(N);
@@ -406,44 +410,151 @@ function buildTreeScene(famName){
   var S={sprites:{}, mode:'tree', fam:famName, house:house, cx:cx, cy:cy, Rh:Rh,
          ports:[], rails:{left:null,right:null}, rowMeta:[], titles:[]};
 
-  // node radii by degree
-  function nr(i){ return Math.max(2.6, 1.8+Math.sqrt(ds[i][3])*0.42); }
+  // ── 2026-07-30 SCALE + BUNDLES pass ──────────────────────────
+  // John: "TOO tiny … the point of the zoom focus is to SEE ALL GODS
+  // close, not be smaller" + "deities in the same era need to be
+  // bundled in a different shape." Two structural changes:
+  //   1. A rank is a BED, not a queue — same-era deities pack into
+  //      staggered sub-rows (cascade) / braided rings (fan), column-
+  //      major so the barycenter order still reads left→right, with
+  //      wider air at group boundaries so each domain/kin bundle
+  //      reads as one shape.
+  //   2. The pitch P is SOLVED so the beds FILL the fixed house
+  //      circle — a 12-deity family gets a huge P (huge gods), a
+  //      97-deity family a moderate one. Node radius rides P.
+  // node radii: three tiers by degree (mirrors the app's hub/mid/small)
+  var degsSorted=ds.map(function(d){return d[3];}).slice().sort(function(a,b){return b-a;});
+  var tHub=degsSorted[Math.min(degsSorted.length-1, Math.floor(degsSorted.length*0.12))];
+  var tMid=degsSorted[Math.min(degsSorted.length-1, Math.floor(degsSorted.length*0.50))];
+  function tierMult(i){ var g=ds[i][3]; return g>=tHub?1.30 : g>=tMid?1.02 : 0.82; }
+  var P=0;                                    // solved below per geometry
+  function nr(i){ return Math.max(2.6, P*0.34*tierMult(i)); }
+  function keyOf(n){
+    return house.parents[n].length ? ('0c'+house.comp[n])
+      : (R.orphans==='domain' ? ('1'+((ds[n][4]||'').split(' · ')[0]||'~')) : '1~');
+  }
+  // A bed: column-major slots (order flows left→right in columns of
+  // nSub), half-pitch stagger on odd subs (hex packing), +GG units of
+  // air where the leading member's group changes.
+  var GG=0.55, SUBDY=0.78;
+  function bedLayout(row, cmax){
+    var n=row.length;
+    var nSub=Math.max(1, Math.ceil(n/cmax));
+    var cols=Math.ceil(n/nSub);
+    var out={nSub:nSub, cols:cols, slots:[], wU:0, bedU:(nSub-1)*SUBDY};
+    var u=0, prevKey=null;
+    for(var j=0;j<n;j++){
+      var col=Math.floor(j/nSub), sub=j%nSub;
+      if(sub===0){
+        var k=keyOf(row[j]);
+        if(col>0){ u+=1; if(k!==prevKey) u+=GG; }
+        prevKey=k;
+      }
+      var stag=(nSub>1 && (sub%2)===1)?0.5:0;
+      out.slots.push({m:row[j], xU:u+stag, sub:sub});
+    }
+    out.wU=u+(nSub>1?0.5:0);
+    return out;
+  }
+  var C_MAX=Math.max(6, Math.min(14, Math.ceil(Math.sqrt(N)*1.35)));
 
   if(R.layout==='cascade'){
-    var yTop=cy-Rh*0.58, yBot=cy+Rh*0.84;
-    var usable=yBot-yTop;
-    var rowH=(usable/Math.max(1,house.RK-1))*R.spread;
-    if((house.RK-1)*rowH>usable) rowH=usable/Math.max(1,house.RK-1);   // spread stretches until the circle stops it
-    var y0=Math.max(yTop, cy+Rh*0.13-((house.RK-1)*rowH)/2);
-    house.rows.forEach(function(row,r){
-      var y=y0+r*rowH;
-      var dy=y-cy;
-      var half=Math.sqrt(Math.max(0.12,Rh*Rh-dy*dy));
-      var wRow=Math.min(half*2*0.70, W*0.66);
-      row.forEach(function(n){
-        S.sprites['d:'+ds[n][0]]={x:cx-wRow/2+house.ux[n]*wRow, y:y, r:nr(n), col:pack.color, a:1, sh:'dot', di:n};
+    var beds=house.rows.map(function(row){ return row.length?bedLayout(row,C_MAX):null; });
+    var GAP_U=1.5;
+    var totalU=0, maxWU=0, nB=0;
+    beds.forEach(function(b){ if(!b) return; totalU+=b.bedU; maxWU=Math.max(maxWU,b.wU); nB++; });
+    totalU+=GAP_U*Math.max(0,nB-1);
+    var usable=Rh*1.42;                       // -0.58 above cy … +0.84 below
+    // P: fill the vertical band OR the chord, cap the balloon. The
+    // spread dial stretches P but the vertical band ALWAYS re-clamps —
+    // otherwise the bottom bed slides to the rim, its chord goes to
+    // zero and the overflow guard nukes P globally (the Greek bug).
+    P=Math.min(usable/Math.max(1,totalU), (2*Rh*0.74)/Math.max(1,maxWU), Rh*0.16);
+    P=Math.min(P*R.spread, usable/Math.max(1,totalU));
+    // place bands (empty ranks vanish — no dead rows), 2-pass: if a
+    // band overflows its own chord at its y, shrink P and re-place
+    for(var attempt=0; attempt<2; attempt++){
+      var contentH=totalU*P;
+      var y=Math.max(cy-Rh*0.58, Math.min(cy+Rh*0.10-contentH/2, cy+Rh*0.84-contentH));
+      var shrink=1;
+      S.rowMeta=[]; var firstBandTop=null;
+      house.rows.forEach(function(row,r){
+        var b=beds[r];
+        if(!b){ S.rowMeta.push({y:null, n:0, dmin:null, dmax:null}); return; }
+        var bandY=y+b.bedU*P/2;
+        var half=Math.sqrt(Math.max(0.12,Rh*Rh-(bandY-cy)*(bandY-cy)));
+        var fitR=(half*2*0.86)/Math.max(1e-6,b.wU*P);
+        if(fitR<1) shrink=Math.min(shrink,fitR);
+        if(firstBandTop==null) firstBandTop=y;
+        b.slots.forEach(function(sl){
+          S.sprites['d:'+ds[sl.m][0]]={
+            x:cx+(sl.xU-b.wU/2)*P,
+            y:bandY+(sl.sub-(b.nSub-1)/2)*SUBDY*P,
+            r:nr(sl.m), col:pack.color, a:1, sh:'dot', di:sl.m};
+        });
+        var dmin=1e9,dmax=-1e9;
+        row.forEach(function(n){ var d=ds[n][2]; if(d!=null){ if(d<dmin)dmin=d; if(d>dmax)dmax=d; } });
+        S.rowMeta.push({y:bandY, half:half, w:b.wU*P, n:row.length,
+                        lineY:bandY+b.bedU*P/2+P*0.44,
+                        dmin:dmin>dmax?null:dmin, dmax:dmin>dmax?null:dmax});
+        y+=b.bedU*P+GAP_U*P;
       });
-      var dmin=1e9,dmax=-1e9;
-      row.forEach(function(n){ var d=ds[n][2]; if(d!=null){ if(d<dmin)dmin=d; if(d>dmax)dmax=d; } });
-      S.rowMeta.push({y:y, half:half, w:wRow, n:row.length, dmin:dmin>dmax?null:dmin, dmax:dmin>dmax?null:dmax});
-    });
-    // crown clears the top row by its full two stat lines (label law:
-    // the crown seeds the collision list, so it must not shade row 0)
-    S.crown={x:cx, y:Math.max(cy-Rh*0.84, y0-Math.min(rowH*1.3,68))};
-  } else {                                   // FAN — crown at center, rings = ranks
-    var rIn=Rh*0.14, rOut=Rh*0.82;
-    var step=((rOut-rIn)/Math.max(1,house.RK-1))*R.spread;
+      if(shrink>=0.999 || attempt===1) break;   // never shrink after the last placement
+      P*=shrink;                              // deterministic second pass
+    }
+    S.crown={x:cx, y:Math.max(cy-Rh*0.84, (firstBandTop!=null?firstBandTop:cy-Rh*0.58)-Math.min(P*1.5,68))};
+    S.dbg={P:P, totalU:totalU, beds:beds.map(function(b){ return b?{n:b.slots.length,nSub:b.nSub,cols:b.cols,wU:+b.wU.toFixed(2)}:null; })};
+  } else {                                   // FAN — the crown is the TRUNK, rings = ranks
+    // Origin sits BELOW center so the crest of rings fills the house
+    // instead of hugging the top rim. Ring capacity in units is
+    // P-free: at radius radU each member needs 1 unit of arc →
+    // capacity = span×radU. Overfull rings BRAID (alternate ±radial,
+    // angular pitch ×0.72). Windows stay upper-hemisphere (±99°).
+    var span=Math.PI*1.10, rInU=2.3, ringU=1.70;
+    var fanDy=Rh*0.34;                       // origin = (cx, cy+fanDy)
+    var rings=house.rows.map(function(row){ return row.length?bedLayout(row,1e9):null; });  // single-file slots + group gaps
+    var radU=[], braidOn=[], prevRad=0;
     house.rows.forEach(function(row,r){
-      var rad=rIn+r*step;
-      row.forEach(function(n){
-        var ang=-Math.PI/2 + (house.ux[n]-0.5)*Math.PI*1.86;
-        S.sprites['d:'+ds[n][0]]={x:cx+Math.cos(ang)*rad, y:cy+Math.sin(ang)*rad, r:nr(n), col:pack.color, a:1, sh:'dot', di:n};
-      });
-      var dmin=1e9,dmax=-1e9;
-      row.forEach(function(n){ var d=ds[n][2]; if(d!=null){ if(d<dmin)dmin=d; if(d>dmax)dmax=d; } });
-      S.rowMeta.push({rad:rad, n:row.length, dmin:dmin>dmax?null:dmin, dmax:dmin>dmax?null:dmax});
+      var g=rings[r];
+      if(!g){ radU.push(prevRad?prevRad+ringU*0.5:rInU); braidOn.push(false); prevRad=radU[r]; return; }
+      var base=prevRad?prevRad+ringU:rInU;
+      var needFlat=(g.wU+1)/span, needBraid=(g.wU*0.78/2+1)/span;
+      if(needFlat<=base){ radU.push(base); braidOn.push(false); }
+      else if(needBraid<=base){ radU.push(base); braidOn.push(true); }
+      else { radU.push(Math.max(base,needBraid)); braidOn.push(true); }
+      prevRad=radU[r];
     });
-    S.crown={x:cx, y:cy};
+    var outerU=radU.length?radU[radU.length-1]+0.6:rInU;
+    P=Math.min((Rh+fanDy*0.82)/outerU, Rh*0.15);
+    P=Math.min(P*R.spread, (Rh+fanDy*0.92)/outerU);   // spread stretches, the rim re-clamps
+    // 2-pass: place, then if any god leaves the house circle, shrink
+    // P by the worst ratio and place again (deterministic).
+    for(var fAttempt=0; fAttempt<2; fAttempt++){
+      S.rowMeta=[];
+      var worst=1;
+      house.rows.forEach(function(row,r){
+        var g=rings[r];
+        if(!g){ S.rowMeta.push({rad:radU[r]*P, n:0, dmin:null, dmax:null}); return; }
+        var comp=braidOn[r]?0.78:1;
+        g.slots.forEach(function(sl,si){
+          var ang=-Math.PI/2+((sl.xU-g.wU/2)*comp)/radU[r];
+          var rad=(radU[r]+(braidOn[r]?((si%2)?0.30:-0.30):0))*P;   // braid = ±0.30 UNITS flat — ×ringU was the inter-ring collision
+          var x=cx+Math.cos(ang)*rad, y=cy+fanDy+Math.sin(ang)*rad;
+          var dc=Math.sqrt((x-cx)*(x-cx)+(y-cy)*(y-cy));
+          var lim=Rh*0.94-nr(sl.m);
+          if(dc>lim) worst=Math.min(worst, lim/Math.max(1e-6,dc));
+          S.sprites['d:'+ds[sl.m][0]]={x:x, y:y, r:nr(sl.m), col:pack.color, a:1, sh:'dot', di:sl.m};
+        });
+        var dmin=1e9,dmax=-1e9;
+        row.forEach(function(n){ var d=ds[n][2]; if(d!=null){ if(d<dmin)dmin=d; if(d>dmax)dmax=d; } });
+        S.rowMeta.push({rad:radU[r]*P, n:row.length, braid:braidOn[r],
+                        dmin:dmin>dmax?null:dmin, dmax:dmin>dmax?null:dmax});
+      });
+      if(worst>=0.999 || fAttempt===1) break;   // never shrink after the last placement
+      P*=Math.max(0.5, worst);
+    }
+    S.crown={x:cx, y:cy+fanDy};
+    S.fanDy=fanDy;
   }
 
   // court rails — the family's own documents (left) and the rest (right),
@@ -711,14 +822,18 @@ function drawTreeEdges(){
   var railClamp = (R.court==='on') ? scene.Rh*0.84 : 1e9;
   if(R.layout==='cascade'){
     scene.rowMeta.forEach(function(m){
+      if(!m.n || m.y==null) return;          // empty ranks vanished in the bundle pass
+      var ly=(m.lineY!=null)?m.lineY:m.y;    // the shelf the bed stands on, under the whole bed
       var hl=Math.min(m.half*0.94, railClamp);
       ctx.strokeStyle='rgba(145,138,180,.07)';
-      ctx.beginPath(); ctx.moveTo(scene.cx-hl, m.y); ctx.lineTo(scene.cx+hl, m.y); ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(scene.cx-hl, ly); ctx.lineTo(scene.cx+hl, ly); ctx.stroke();
     });
   } else {
+    var fy=scene.cy+(scene.fanDy||0), hw=Math.PI*0.60;
     scene.rowMeta.forEach(function(m){
+      if(!m.n) return;
       ctx.strokeStyle='rgba(145,138,180,.06)';
-      ctx.beginPath(); ctx.arc(scene.cx,scene.cy,m.rad,0,7); ctx.stroke();
+      ctx.beginPath(); ctx.arc(scene.cx,fy,m.rad,-Math.PI/2-hw,-Math.PI/2+hw); ctx.stroke();
     });
   }
   // lineage arcs — primary solid, secondary parents lighter (DAG drawn, not pruned)
@@ -732,7 +847,8 @@ function drawTreeEdges(){
     ctx.beginPath(); ctx.moveTo(p.x,p.y);
     var mx=(p.x+c.x)/2, my=(p.y+c.y)/2;
     var pull=R.layout==='fan'?0.10:0;
-    ctx.quadraticCurveTo(mx+(scene.cx-mx)*pull, my+(scene.cy-my)*pull + (R.layout==='cascade'?(c.y-p.y)*0.18:0), c.x, c.y);
+    var py2=scene.cy+(R.layout==='fan'?(scene.fanDy||0):0);
+    ctx.quadraticCurveTo(mx+(scene.cx-mx)*pull, my+(py2-my)*pull + (R.layout==='cascade'?(c.y-p.y)*0.18:0), c.x, c.y);
     ctx.stroke();
   });
   // aspect arcs — dotted
@@ -947,7 +1063,7 @@ function drawTreeFront(){
       var t=fmtDate(m.dmin).toUpperCase();
       if(t===lastCap) return;
       var w=ctx.measureText(t).width;
-      var ex=scene.cx, ey=scene.cy-m.rad-5;
+      var ex=scene.cx, ey=scene.cy+(scene.fanDy||0)-m.rad-5;
       if(!claim(ex-w/2-2, ey-9, ex+w/2+2, ey+3)) return;
       halo(t, ex, ey, 'rgba(94,88,133,.95)');
       lastCap=t;

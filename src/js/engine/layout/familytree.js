@@ -30,7 +30,10 @@
 //
 // CONTRACT (shared with radialWedgeLayout / timelineLayout):
 //   returns { positions: Map<id,{x,y}>, worldExtent:{x0,y0,x1,y1} }
-//   plus mode metadata (`house`, `ports`) for the view to render.
+//   plus mode metadata (`house`, `ports`) for the view to render,
+//   plus `radii: Map<id,r>` — HOUSE node radii for members (2026-07-30
+//   SCALE pass): the view bakes them into position-B so gods GROW as
+//   the layout ramps in. Wheel radii are untouched (honest zeros).
 //   ONE PASS POSITIONS ALL NODES: members into the house,
 //   non-members onto their group's horizon port — so every edge
 //   keeps live endpoints and external wires land on ports with no
@@ -46,13 +49,27 @@
 
   // Geometry constants — fractions of the house radius Rh, matching
   // the ratified toy (design/family-tree.html buildTreeScene).
+  // 2026-07-30 SCALE + BUNDLES pass: a rank is a BED (staggered
+  // sub-rows) or a braided ring, never a queue, and the pitch P is
+  // SOLVED so the beds FILL the house — a 12-deity family gets a
+  // huge P (huge gods), a 97-deity one a moderate one. Node radius
+  // rides P (returned in `radii`), which is the whole point: the
+  // house re-presents the family CLOSE, not merely re-arranged.
   const CASCADE_TOP    = -0.58;  // yTop  = cy + Rh * CASCADE_TOP
   const CASCADE_BOTTOM =  0.84;  // yBot  = cy + Rh * CASCADE_BOTTOM
-  const CASCADE_BIAS   =  0.13;  // stack centre sits below cy
-  const CASCADE_CHORD  =  0.72;  // row width = chord * this
-  const FAN_R_IN       =  0.14;
-  const FAN_R_OUT      =  0.82;
-  const FAN_SPAN       =  Math.PI * 1.86;  // angular span, crown gap at bottom
+  const CASCADE_BIAS   =  0.10;  // stack centre sits below cy
+  const CASCADE_CHORD  =  0.74;  // coarse chord factor for the P solve
+  const BED_GG         =  0.55;  // extra air (in P) at group boundaries
+  const BED_SUBDY      =  0.78;  // sub-row spacing (in P)
+  const BED_GAP        =  1.5;   // inter-band gap (in P) — arc room
+  const NODE_R_FRAC    =  0.34;  // node radius = P * this * tier mult
+  const TIER_MULTS     =  [1.30, 1.02, 0.82];   // hub / mid / small
+  const FAN_SPAN       =  Math.PI * 1.10;  // per-ring window cap (±99°)
+  const FAN_R_IN_U     =  2.3;   // innermost ring radius (in P)
+  const FAN_RING_U     =  1.70;  // ring pitch (in P)
+  const FAN_BRAID_U    =  0.30;  // braid amplitude (in P, flat)
+  const FAN_COMP       =  0.78;  // braided angular-pitch compression
+  const FAN_DY         =  0.34;  // fan origin sits at cy + Rh * this
   const RAIL_X         =  0.885; // rails at ± Rh * RAIL_X
   const RAIL_Y_SPAN    =  0.60;  // rails run cy ± Rh * RAIL_Y_SPAN
   const WORLD_MARGIN   =  70;    // worldExtent pad beyond Rh
@@ -303,7 +320,12 @@
       const d = dateOf(tree[i]);
       return d == null ? 1 : (d - dmin) / Math.max(1, dmax - dmin);
     };
-    let RK = Math.max(maxLayer + 1, Math.ceil(N / 12), 4);
+    // 2026-07-30 SCALE pass — the BEDS (§6) absorb density
+    // horizontally, so ranks no longer multiply to spread big
+    // families vertically (ceil(N/12) is why Vedic needed 9 rows and
+    // every house went tall + tiny). Fewer ranks = shorter house =
+    // bigger gods after the camera fit.
+    let RK = Math.max(maxLayer + 1, Math.ceil(N / 14), 3);
     RK = Math.min(RK, 13);
     const eraRank = (i) => Math.round(era(i) * (RK - 1));
 
@@ -407,57 +429,164 @@
       }
     }
 
-    // ── 6. Geometry — cascade or fan, chord-aware ───────────
-    const rowMeta = [];
+    // ── 6. Geometry — beds (cascade) or braided crest (fan) ─
+    // Same-era deities BUNDLE: column-major sub-row beds with hex
+    // stagger (cascade) / braided rings (fan), wider air at group
+    // boundaries so each kin/domain bundle reads as one shape. The
+    // pitch P is solved so content FILLS the house (the toy is the
+    // reference implementation; constants ratified there).
+    // Node radii: three degree tiers within the family (mirrors the
+    // app's hub/mid/small), all riding P.
+    const degsSorted = tree.map(n => degOf(n.id)).sort((a, b) => b - a);
+    const tHubDeg = degsSorted[Math.min(N - 1, Math.floor(N * 0.12))] || 0;
+    const tMidDeg = degsSorted[Math.min(N - 1, Math.floor(N * 0.50))] || 0;
+    const tierMult = (i) => {
+      const g = degOf(tree[i].id);
+      return g >= tHubDeg ? TIER_MULTS[0] : (g >= tMidDeg ? TIER_MULTS[1] : TIER_MULTS[2]);
+    };
+    const radii = new Map();
+    let P = 0;
+    const nodeR = (i) => Math.max(3, P * NODE_R_FRAC * tierMult(i));
+    const groupKeyOf = (i) => (parents[i].length
+      ? ('0c' + comp[i])
+      : ('1' + (orphanMode === 'domain' ? (dom0(i) || '~') : '~')));
+    // A bed: column-major slots (order flows left→right in columns of
+    // nSub), half-pitch stagger on odd subs, +BED_GG units of air
+    // where the leading member's group changes. cmax=Infinity gives
+    // the fan's single-file slots with the same group gaps.
+    const bedLayout = (row, cmax) => {
+      const n = row.length;
+      const nSub = Math.max(1, Math.ceil(n / cmax));
+      const out = { nSub, slots: [], wU: 0, bedU: (nSub - 1) * BED_SUBDY };
+      let u = 0, prevKey = null;
+      for (let j = 0; j < n; j++) {
+        const col = Math.floor(j / nSub), sub = j % nSub;
+        if (sub === 0) {
+          const k = groupKeyOf(row[j]);
+          if (col > 0) { u += 1; if (k !== prevKey) u += BED_GG; }
+          prevKey = k;
+        }
+        const stag = (nSub > 1 && (sub % 2) === 1) ? 0.5 : 0;
+        out.slots.push({ m: row[j], xU: u + stag, sub });
+      }
+      out.wU = u + (nSub > 1 ? 0.5 : 0);
+      return out;
+    };
+    const C_MAX = Math.max(6, Math.min(14, Math.ceil(Math.sqrt(N) * 1.35)));
+
+    let rowMeta = [];
     let crown;
+    let fanDy = 0;
     if (geometry === 'cascade') {
-      const yTop = cy + Rh * CASCADE_TOP;
-      const yBot = cy + Rh * CASCADE_BOTTOM;
-      const usable = yBot - yTop;
-      let rowH = (usable / Math.max(1, RK - 1)) * spread;
-      if ((RK - 1) * rowH > usable) rowH = usable / Math.max(1, RK - 1);
-      const y0 = Math.max(yTop, cy + Rh * CASCADE_BIAS - ((RK - 1) * rowH) / 2);
-      rows.forEach((row, r) => {
-        const y = y0 + r * rowH;
-        const dy = y - cy;
-        const half = Math.sqrt(Math.max(Rh * Rh * 0.0144, Rh * Rh - dy * dy));
-        const wRow = half * 2 * CASCADE_CHORD;
-        for (const n of row) {
-          positions.set(tree[n].id, { x: cx - wRow / 2 + ux[n] * wRow, y });
-        }
-        let rdmin = Infinity, rdmax = -Infinity;
-        for (const n of row) {
-          const d = dateOf(tree[n]);
-          if (d != null) { if (d < rdmin) rdmin = d; if (d > rdmax) rdmax = d; }
-        }
-        rowMeta.push({
-          y, half, w: wRow, n: row.length,
-          dmin: rdmin > rdmax ? null : rdmin,
-          dmax: rdmin > rdmax ? null : rdmax,
+      const beds = rows.map(row => (row.length ? bedLayout(row, C_MAX) : null));
+      let totalU = 0, maxWU = 0, nB = 0;
+      for (const b of beds) { if (!b) continue; totalU += b.bedU; maxWU = Math.max(maxWU, b.wU); nB++; }
+      totalU += BED_GAP * Math.max(0, nB - 1);
+      const usable = Rh * (CASCADE_BOTTOM - CASCADE_TOP);
+      // P fills the vertical band OR the chord, capped; the spread
+      // dial stretches but the vertical band ALWAYS re-clamps —
+      // otherwise the bottom bed slides to the rim, its chord goes
+      // to zero and the overflow guard nukes P (the toy's Greek bug).
+      P = Math.min(usable / Math.max(1, totalU), (2 * Rh * CASCADE_CHORD) / Math.max(1, maxWU), Rh * 0.16);
+      P = Math.min(P * spread, usable / Math.max(1, totalU));
+      for (let attempt = 0; attempt < 2; attempt++) {
+        const contentH = totalU * P;
+        let y = Math.max(cy + Rh * CASCADE_TOP,
+          Math.min(cy + Rh * CASCADE_BIAS - contentH / 2, cy + Rh * CASCADE_BOTTOM - contentH));
+        let shrink = 1;
+        rowMeta = [];
+        let firstBandTop = null;
+        rows.forEach((row, r) => {
+          const b = beds[r];
+          if (!b) { rowMeta.push({ y: null, n: 0, dmin: null, dmax: null }); return; }
+          const bandY = y + (b.bedU * P) / 2;
+          const dy = bandY - cy;
+          const half = Math.sqrt(Math.max(Rh * Rh * 0.0144, Rh * Rh - dy * dy));
+          const fitR = (half * 2 * 0.86) / Math.max(1e-6, b.wU * P);
+          if (fitR < 1) shrink = Math.min(shrink, fitR);
+          if (firstBandTop == null) firstBandTop = y;
+          for (const sl of b.slots) {
+            positions.set(tree[sl.m].id, {
+              x: cx + (sl.xU - b.wU / 2) * P,
+              y: bandY + (sl.sub - (b.nSub - 1) / 2) * BED_SUBDY * P,
+            });
+            radii.set(tree[sl.m].id, nodeR(sl.m));
+          }
+          let rdmin = Infinity, rdmax = -Infinity;
+          for (const n of row) {
+            const d = dateOf(tree[n]);
+            if (d != null) { if (d < rdmin) rdmin = d; if (d > rdmax) rdmax = d; }
+          }
+          rowMeta.push({
+            y: bandY, half, w: b.wU * P, n: row.length,
+            lineY: bandY + (b.bedU * P) / 2 + P * 0.44,
+            dmin: rdmin > rdmax ? null : rdmin,
+            dmax: rdmin > rdmax ? null : rdmax,
+          });
+          y += b.bedU * P + BED_GAP * P;
         });
-      });
-      crown = { x: cx, y: Math.max(cy - Rh * 0.84, y0 - Math.min(rowH * 1.3, 68)) };
+        if (shrink >= 0.999 || attempt === 1) break;   // never shrink after the last placement
+        P *= Math.max(0.5, shrink);   // deterministic second pass
+      }
+      const topY = (rowMeta.find(m => m.y != null) || { y: cy + Rh * CASCADE_TOP }).y;
+      crown = { x: cx, y: Math.max(cy - Rh * 0.84, topY - Math.min(P * 1.9, 88)) };
     } else {
-      const rIn = Rh * FAN_R_IN, rOut = Rh * FAN_R_OUT;
-      const step = ((rOut - rIn) / Math.max(1, RK - 1)) * spread;
+      // FAN — the crown is the TRUNK: origin below center so the
+      // crest of rings fills the house instead of hugging the rim.
+      // Ring capacity in units is P-free (each member needs 1 unit
+      // of arc → capacity = span×radU); overfull rings BRAID.
+      fanDy = Rh * FAN_DY;
+      const rings = rows.map(row => (row.length ? bedLayout(row, Infinity) : null));
+      const radU = [], braidOn = [];
+      let prevRad = 0;
       rows.forEach((row, r) => {
-        const rad = Math.min(rOut, rIn + r * step);
-        for (const n of row) {
-          const ang = -Math.PI / 2 + (ux[n] - 0.5) * FAN_SPAN;
-          positions.set(tree[n].id, { x: cx + Math.cos(ang) * rad, y: cy + Math.sin(ang) * rad });
-        }
-        let rdmin = Infinity, rdmax = -Infinity;
-        for (const n of row) {
-          const d = dateOf(tree[n]);
-          if (d != null) { if (d < rdmin) rdmin = d; if (d > rdmax) rdmax = d; }
-        }
-        rowMeta.push({
-          rad, n: row.length,
-          dmin: rdmin > rdmax ? null : rdmin,
-          dmax: rdmin > rdmax ? null : rdmax,
-        });
+        const g = rings[r];
+        if (!g) { radU.push(prevRad || FAN_R_IN_U); braidOn.push(false); prevRad = radU[r]; return; }
+        const base = prevRad ? prevRad + FAN_RING_U : FAN_R_IN_U;
+        const needFlat = (g.wU + 1) / FAN_SPAN;
+        const needBraid = (g.wU * FAN_COMP / 2 + 1) / FAN_SPAN;
+        if (needFlat <= base) { radU.push(base); braidOn.push(false); }
+        else if (needBraid <= base) { radU.push(base); braidOn.push(true); }
+        else { radU.push(Math.max(base, needBraid)); braidOn.push(true); }
+        prevRad = radU[r];
       });
-      crown = { x: cx, y: cy };
+      const outerU = radU.length ? radU[radU.length - 1] + 0.6 : FAN_R_IN_U;
+      P = Math.min((Rh + fanDy * 0.82) / outerU, Rh * 0.15);
+      P = Math.min(P * spread, (Rh + fanDy * 0.92) / outerU);
+      for (let attempt = 0; attempt < 2; attempt++) {
+        rowMeta = [];
+        let worst = 1;
+        rows.forEach((row, r) => {
+          const g = rings[r];
+          if (!g) { rowMeta.push({ rad: radU[r] * P, n: 0, dmin: null, dmax: null }); return; }
+          const compK = braidOn[r] ? FAN_COMP : 1;
+          g.slots.forEach((sl, si) => {
+            const ang = -Math.PI / 2 + ((sl.xU - g.wU / 2) * compK) / radU[r];
+            const rad = (radU[r] + (braidOn[r] ? ((si % 2) ? FAN_BRAID_U : -FAN_BRAID_U) : 0)) * P;
+            const x = cx + Math.cos(ang) * rad;
+            const y = cy + fanDy + Math.sin(ang) * rad;
+            const dc = Math.sqrt((x - cx) * (x - cx) + (y - cy) * (y - cy));
+            const lim = Rh * 0.94 - nodeR(sl.m);
+            if (dc > lim) worst = Math.min(worst, lim / Math.max(1e-6, dc));
+            positions.set(tree[sl.m].id, { x, y });
+            radii.set(tree[sl.m].id, nodeR(sl.m));
+          });
+          let rdmin = Infinity, rdmax = -Infinity;
+          for (const n of row) {
+            const d = dateOf(tree[n]);
+            if (d != null) { if (d < rdmin) rdmin = d; if (d > rdmax) rdmax = d; }
+          }
+          rowMeta.push({
+            rad: radU[r] * P, n: row.length, braid: braidOn[r],
+            dmin: rdmin > rdmax ? null : rdmin,
+            dmax: rdmin > rdmax ? null : rdmax,
+          });
+        });
+        if (worst >= 0.999 || attempt === 1) break;   // never shrink after the last placement
+        P *= Math.max(0.5, worst);
+        radii.clear();   // re-derive at the shrunk P
+      }
+      crown = { x: cx, y: cy + fanDy };
     }
 
     // ── 7. Court rails — SHELVES, not lists ─────────────────
@@ -576,9 +705,12 @@
     ports.sort((a, b) => (b.count - a.count) || (a.group < b.group ? -1 : 1));
 
     // ── 9. Orphan domain caption anchors (cascade only) ─────
+    // Captions sit under the whole BED (lineY), not under a single
+    // row — the bed is the bundle the caption names.
     const orphanCaptions = [];
     if (orphanMode === 'domain' && geometry === 'cascade') {
       rows.forEach((row, ri) => {
+        if (!rowMeta[ri] || rowMeta[ri].y == null) return;
         const groups = new Map(), order = [];
         for (const n of row) {
           if (parents[n].length || children[n].length) continue;
@@ -589,10 +721,11 @@
           groups.get(g).s += p.x;
           groups.get(g).c++;
         }
+        const capY = (rowMeta[ri].lineY != null) ? rowMeta[ri].lineY + 6 : rowMeta[ri].y + 16;
         for (const g of order) {
           const gg = groups.get(g);
           if (gg.c < 3) continue;
-          orphanCaptions.push({ label: g.toUpperCase(), x: gg.s / gg.c, y: rowMeta[ri].y + 16, rank: ri, count: gg.c });
+          orphanCaptions.push({ label: g.toUpperCase(), x: gg.s / gg.c, y: capY, rank: ri, count: gg.c });
         }
       });
     }
@@ -616,10 +749,16 @@
     return {
       positions,
       worldExtent,
+      // House node radii (world units) — members only; the view bakes
+      // these into position-B so gods GROW as the layout ramps in.
+      // Non-members keep their wheel radii (the port piles stay quiet).
+      radii,
       house: {
         groupKey, geometry, RK,
         center: { x: cx, y: cy },
         radius: Rh,
+        pitch: P,
+        fanDy,
         crown,
         rows: rows.map(row => row.map(i => tree[i].id)),
         rowMeta,
