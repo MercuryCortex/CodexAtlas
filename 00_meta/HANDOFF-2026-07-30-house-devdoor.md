@@ -83,6 +83,44 @@ Norse genuinely has only 20 kin arcs across 28 components, so most nodes have
 none — do not mistake sparse data for a bug. Test on **Greek** (96 arcs, depth
 6) before concluding anything.
 
+### ⚠ JOHN'S OPEN COMMENTS — end of session 2026-07-30, nothing done about them
+
+He asked for these to be written down for a clean agent, explicitly **not**
+fixed in that session. Both are his words.
+
+**(a) He cannot find the Cascade/Fan toggle.** *"the name was cascade and fan —
+CANT find that toggle."*
+
+It exists and it works — I verified on the live build that clicking `Fan`
+re-lays Greek into the fan geometry (`houseState().geometry === 'fan'`, node
+positions genuinely change). It is even visible in the screenshot he sent me.
+So this is **a discoverability defect, not a broken control**, and it is worth
+treating as the real bug it is. Three plausible causes, all fixable:
+
+- it is the **last section of a long scrolling VIEW panel**, below Layers,
+  Color theme, Family order and Node distribution — you must scroll to reach it;
+- it is titled **"House layout (family isolate)"**, not "Cascade / Fan", so
+  scanning for the word he remembers fails;
+- it is **inert unless you are already inside a house**, and nothing says so.
+
+Consider surfacing it where the state actually lives — inside the house itself
+(the crown is right there and already carries the family's stats), or making the
+VIEW row self-explanatory about when it applies. Ask him; do not guess and
+re-ship, because he has now rejected two versions of this feature.
+
+**(b) He wants the scriptorium and court counts — because the design promised
+them.** *"regarding the counts … well thats what your plan showed me, so i want
+them."*
+
+He is right and this is the important one. `design/family-tree.html` and
+`AUDIT/2026-07-29-fable-family-tree-isolate.md` both show a family opening with
+**`THE SCRIPTORIUM — 38 DOCS`** on the left and **`THE COURT — 52 PERSONS ·
+PLACES · RITES`** on the right. That is what he approved. The shipped app shows
+neither, on any family, ever — see below for why. **So the mixed-type family
+isolate is not a deferred nice-to-have; it is what closes the gap between what
+he was sold and what he got.** Treat it as the top of the build list, above the
+polish items.
+
 ### Known-empty by construction
 
 The scriptorium/court rails are always empty: **no current view mode carries a
@@ -91,11 +129,12 @@ single-type. That is a mode-level design question for John, not a house bug.
 
 ### Deferred, ranked (from the fable passes)
 
-1. Mixed-type family isolate, to give the rails mass
-2. Marriage-bar / dotted-aspect stroke styling (engine ribbons are uniform)
-3. Rest-wire stub variant (the veil supersedes it for now)
-4. In-house edge bow toward world centre
-5. Rail proximity-reveal + court dial (moot until rails have mass)
+0. **THE RAILS — promoted to the top by John, see (b) above.** Mixed-type family
+   isolate so the scriptorium and court have contents and their counts appear.
+1. Marriage-bar / dotted-aspect stroke styling (engine ribbons are uniform)
+2. Rest-wire stub variant (the veil supersedes it for now)
+3. In-house edge bow toward world centre
+4. Rail proximity-reveal + court dial (unblocked once the rails have mass)
 
 ---
 
@@ -192,8 +231,13 @@ python3 scripts/build_dist.py && npx wrangler pages deploy dist --project-name c
 
 ## 7. Suggested order
 
-1. **The arcs** (§2) — the one open defect, on his screen first.
-2. Whatever he says next after looking at the house — he has rejected two
+1. **The rails** — §2(b). He was shown `THE SCRIPTORIUM — 38 DOCS` and
+   `THE COURT — 52 PERSONS · PLACES · RITES` in the approved design and the app
+   delivers neither. Closing that gap comes before polish.
+2. **The arcs** (§2) — the one open defect; test on Greek, not Norse.
+3. **The Cascade/Fan toggle he cannot find** — §2(a). A discoverability fix, and
+   ask him where he expects it rather than guessing.
+4. Whatever he says next after looking at the house — he has rejected two
    versions of this feature already; his eye decides.
 3. **THE WIRE DRESS** — his standing brief, not yet started: *"our wires should
    also add some fx to match the new nodes for elegancy and flair to
