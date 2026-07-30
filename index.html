@@ -10,7 +10,7 @@
      tester IP leaks to Google on load (Anonymity Law). -->
 <link rel="stylesheet" href="_assets/vendor/fonts/fonts.css?v=20260717-fonts" />
 <link rel="stylesheet" href="_assets/vendor/maplibre/maplibre-gl.css?v=5.24.0" />
-<link rel="stylesheet" href="src/styles/app.css?v=20260729-emptyclick" />
+<link rel="stylesheet" href="src/styles/app.css?v=20260730-devdoor" />
 <!-- ?diag=1 — BOOT ERROR RECORDER (2026-07-29). Must be the FIRST script on
      the page: an automated Safari/prod pass connects AFTER load, so without
      this there is no honest way to say "no boot errors" on a browser we
@@ -234,8 +234,8 @@
      forge.js so window.AtlasViewportFilter exists when
      rebuildForMode tries to cull the active set. -->
 <script src="src/js/engine/graph/viewport-filter.js?v=20260527T0625-reverted-blinking"></script>
-<script src="src/js/forge/_bundle.js?v=20260729-emptyclick"></script>
-<script src="src/js/views/forge.js?v=20260729-emptyclick"></script>
+<script src="src/js/forge/_bundle.js?v=20260730-devdoor"></script>
+<script src="src/js/views/forge.js?v=20260730-devdoor"></script>
 <script src="src/js/views/boards.js?v=20260716-sealed"></script>
 <!-- Boards V2 Investigation Library data — 32 MASSIVE WINS + 11
      TRANSMISSIONS generated from MASSIVE-WINS-INDEX.md. Loads BEFORE
@@ -289,8 +289,8 @@
      Self-installing IIFE; exposes window._appPill for debug. -->
 <script src="src/js/app-pill.js?v=20260717-alpha"></script>
 <!-- ✦ User menu (account drawer) — rebuilt V2-native 2026-05-28.
-     Dev Overview entry added 2026-05-29. -->
-<script src="src/js/user-menu.js?v=20260717-polish"></script>
+     Dev Overview entry moved into the DEV drawer 2026-07-30. -->
+<script src="src/js/user-menu.js?v=20260730-devdoor"></script>
 <!-- The Threshold — first-run door (2026-07-16). Loads after app.js +
      user-menu.js so window.setView, window.VAULT_DATA, and the ✦ menu
      exist. Self-installs window._threshold; the ✦ menu's "Welcome" item

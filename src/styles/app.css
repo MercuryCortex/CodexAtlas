@@ -11519,3 +11519,154 @@ body.alpha-gated .forge-bottombar {
   pointer-events: none;
   user-select: none;
 }
+
+/* ════════════════════════════════════════════════════════════
+   ONE DEV DOOR — the DEV drawer (2026-07-30)
+   ────────────────────────────────────────────────────────────
+   §3 of AUDIT/2026-07-29-fable-dev-drawer-and-tree-labels.md;
+   acceptance test design/dev-drawer.html. One DEV button in the
+   bar's right cluster; a drop-up launcher of five rows (NODE LAB
+   / FX / STYLE / STATS / OVERVIEW); one shared editor slot at
+   top-right (the LAB's spot). Everything lives in the documented
+   200–300 overlay tier (235) — no new tiers, Codex tokens only.
+   JS owner: src/js/forge/dev-drawer.js (orchestration only).
+   ════════════════════════════════════════════════════════════ */
+.forge-devdrawer-wrap {
+  position: relative;
+  display: inline-flex; align-items: center;
+  pointer-events: auto;
+}
+/* The gold dot on DEV — lit while ANY dev surface is open, so a
+   stray panel is always traceable to the bar. */
+.forge-devdot {
+  display: inline-block;
+  width: 5px; height: 5px; border-radius: 50%;
+  background: var(--gold, #d4a55a);
+  margin-left: 7px; vertical-align: 1px;
+  opacity: 0;
+  transition: opacity 140ms ease;
+}
+.forge-devdrawer-btn.has-open .forge-devdot { opacity: 1; }
+
+/* THE LAUNCHER — a cockpit remote, not a menu: it stays open while
+   rows flip panels; click-outside / Esc close it (never a panel). */
+.forge-devdrawer {
+  position: absolute;
+  right: 0; bottom: 40px;      /* drops upward, right-aligned to DEV */
+  width: 264px;
+  padding: 8px;
+  background: rgba(13,17,25,0.94);
+  border: 1px solid rgba(212,165,90,0.22);
+  border-radius: 8px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+  z-index: 235;
+  display: none;
+}
+.forge-devdrawer.is-open { display: block; }
+.forge-devdrawer-cap {
+  font-family: var(--mono, "JetBrains Mono", monospace);
+  font-size: 9px; letter-spacing: 0.24em; text-transform: uppercase;
+  color: var(--gold, #d4a55a);
+  padding: 4px 8px 8px;
+  display: flex; justify-content: space-between; align-items: baseline; gap: 8px;
+}
+.forge-devdrawer-cap span { color: var(--text-3, #6b7280); letter-spacing: 0.1em; }
+/* Rows opt OUT of the bottombar height-parity rule (they are menu
+   rows, not bar cells) — the doubled selector outweighs
+   `.forge-bottombar button`. */
+.forge-bottombar .forge-devdrawer-row,
+.forge-devdrawer-row {
+  display: flex; align-items: center; gap: 10px;
+  width: 100%; height: auto;
+  text-align: left; cursor: pointer;
+  background: none;
+  border: none; border-top: 1px solid rgba(212,165,90,0.10);
+  border-radius: 0;
+  padding: 9px 8px;
+  color: var(--text-1, #e5e7eb);
+  pointer-events: auto;
+}
+.forge-devdrawer-row:hover { background: rgba(20,26,38,0.92); }
+.forge-devdrawer-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  border: 1px solid var(--text-3, #6b7280);
+  flex: none;
+}
+.forge-devdrawer-row.is-open .forge-devdrawer-dot {
+  background: var(--gold, #d4a55a);
+  border-color: var(--gold, #d4a55a);
+}
+.forge-devdrawer-name {
+  font-family: var(--mono, "JetBrains Mono", monospace);
+  font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--text-1, #e5e7eb);
+  width: 86px; flex: none;
+}
+.forge-devdrawer-row.is-open .forge-devdrawer-name { color: var(--gold, #d4a55a); }
+.forge-devdrawer-hint {
+  font-family: var(--serif, "Iowan Old Style", Georgia, serif);
+  font-size: 12.5px; font-style: italic;
+  color: var(--text-3, #6b7280);
+  line-height: 1.3;
+}
+.forge-devdrawer-foot {
+  font-family: var(--mono, "JetBrains Mono", monospace);
+  font-size: 8.5px; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--text-3, #6b7280);
+  padding: 8px 8px 2px;
+  border-top: 1px solid rgba(212,165,90,0.10);
+}
+
+/* THE SHARED EDITOR SLOT (§3.2 step 2) — LAB / FX / STYLE all
+   render top-right, where the LAB lives today (under the app pill,
+   clear of the bottom bar + its keep-outs). Appended late in the
+   file so it outweighs .forge-fxpanel's bottom:40px/left:0 and
+   .forge-fxpanel--right's right:0 at equal specificity. */
+.forge-devpanel-slot {
+  position: fixed;
+  top: 64px; right: 12px;
+  left: auto; bottom: auto;
+  max-height: calc(100vh - 140px);
+  overflow-y: auto;
+  /* Loose children of the pointer-events:none bar — the old wraps
+     used to re-enable pointer events for them; now they do it
+     themselves (pointer-events INHERITS through the DOM tree even
+     for position:fixed elements). */
+  pointer-events: auto;
+}
+/* FOUND WHILE BUILDING (2026-07-30): the stats popover was ALREADY a
+   loose child of the pointer-events:none bar and had no re-enable of
+   its own — computed pointer-events:none, so its PIN button never
+   took a click (the click fell through to the canvas, and the
+   outside-close handler shut the popover). CSS-only repair; zero
+   edits in debug-stats.js. */
+.forge-debug-panel { pointer-events: auto; }
+/* Tier-align the LAB panel: its own injected sheet says z 220 and
+   loads AFTER app.css (lab-panel.js is untouchable by the door
+   spec), so this override needs the heavier selector to win. */
+body #forge-lab-panel { z-index: 235; }
+
+/* The × every dev panel gets (the LAB idiom). The doubled selector
+   opts out of the bottombar height-parity rule for the in-panel ×s. */
+.forge-bottombar .forge-devpanel-x,
+.forge-devpanel-x {
+  position: absolute;
+  top: 8px; right: 10px;
+  width: auto; height: auto;
+  padding: 0 2px;
+  background: none; border: none;
+  color: var(--text-3, #6b7280);
+  font-family: var(--mono, "JetBrains Mono", monospace);
+  font-size: 13px; line-height: 1;
+  cursor: pointer;
+  pointer-events: auto;
+}
+.forge-devpanel-x:hover { color: var(--gold, #d4a55a); }
+/* The STATS × is a fixed SIBLING (debug-stats.js is untouchable and
+   re-renders its panel innerHTML every 250ms — a child × would be
+   wiped); dev-drawer.js places it over the header strip below. */
+.forge-devpanel-x--stats { position: fixed; z-index: 236; }
+/* …and the strip itself: room for the × above the fps row. */
+.forge-debug-panel.is-open { padding-top: 24px; }

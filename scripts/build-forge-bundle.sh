@@ -37,6 +37,7 @@ MODULES=(
   src/js/forge/codex-controls.js
   src/js/forge/ground.js
   src/js/forge/lab-panel.js
+  src/js/forge/dev-drawer.js
   src/js/forge/install-public-api.js
 )
 

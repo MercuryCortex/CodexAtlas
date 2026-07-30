@@ -113,14 +113,12 @@
       ev.stopPropagation();
       if (panel.classList.contains('is-open')) close(); else open();
     });
-    document.addEventListener('click', (ev) => {
-      if (!panel.classList.contains('is-open')) return;
-      if (panel.contains(ev.target) || btn.contains(ev.target)) return;
-      close();
-    });
-    document.addEventListener('keydown', (ev) => {
-      if (ev.key === 'Escape' && panel.classList.contains('is-open')) close();
-    });
+    // ONE DEV DOOR (2026-07-30, §3.2 step 3) — same deliberate change
+    // as fx-panel.js: outside-click close + own-Esc dropped; the panel
+    // persists until its × (declared in the bottombar template); Esc
+    // is owned by the dev-drawer walk-back (src/js/forge/dev-drawer.js).
+    const xBtn = panel.querySelector('.forge-devpanel-x');
+    if (xBtn) xBtn.addEventListener('click', close);
 
     loadSaved();
   }

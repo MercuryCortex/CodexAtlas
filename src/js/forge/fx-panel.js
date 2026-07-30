@@ -144,14 +144,14 @@
       ev.stopPropagation();
       if (panel.classList.contains('is-open')) close(); else open();
     });
-    document.addEventListener('click', (ev) => {
-      if (!panel.classList.contains('is-open')) return;
-      if (panel.contains(ev.target) || btn.contains(ev.target)) return;
-      close();
-    });
-    document.addEventListener('keydown', (ev) => {
-      if (ev.key === 'Escape' && panel.classList.contains('is-open')) close();
-    });
+    // ONE DEV DOOR (2026-07-30, §3.2 step 3) — close-on-outside-click
+    // + the module's own Esc DROPPED, deliberately: a tuning panel
+    // that vanishes when you click the canvas to test the effect is
+    // a broken tuning panel. The panel persists until its × (the LAB
+    // idiom, declared in the bottombar template); Esc is owned by
+    // the dev-drawer walk-back cascade (src/js/forge/dev-drawer.js).
+    const xBtn = panel.querySelector('.forge-devpanel-x');
+    if (xBtn) xBtn.addEventListener('click', close);
 
     loadSaved();
   }

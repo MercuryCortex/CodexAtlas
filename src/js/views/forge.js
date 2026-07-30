@@ -1216,9 +1216,8 @@
           // dedicated VIEW section is gone. See wireLegend() below.
         '</div>' +
       '</div>',
-      // Phase 21AJ (2026-05-22) — FX wrap moved to the right side
-      // of the bottom bar (next to the # debug button). See the
-      // forge-debug-btn site below for the new position.
+      // 2026-07-30 — the FX/STYLE/LAB/⌗ right-cluster is gone; dev
+      // tools live behind the ONE DEV door (forge-devdrawer-wrap below).
       '<div class="forge-search-wrap">' +
         '<input type="text" class="forge-bottom-search" id="forge-status-search" placeholder="search…" autocomplete="off" spellcheck="false">' +
         '<div class="forge-search-suggest" id="forge-search-suggest" aria-hidden="true"></div>' +
@@ -1254,13 +1253,40 @@
       // playhead (Timeline) inherits them. CSS hides them under
       // body.view-forge only.
       '<div class="forge-scrub-box forge-scrub-present" id="forge-scrub-present" title="PRESENT: scrub playhead">—</div>',
-      // Phase 21AJ (2026-05-23) — FX + Style dev panels, grouped on
-      // the right side of the bottom bar next to the # debug button.
-      // Both anchor their dropdowns to the RIGHT edge of the wrap so
-      // the panels don't overflow the viewport's right side.
-      '<div class="forge-fxpanel-wrap forge-fxpanel-wrap--right">' +
-        '<button class="forge-fxpanel-btn" id="forge-fxpanel-btn" title="Floor-zoom FX tuning" aria-expanded="false">FX</button>' +
-        '<div class="forge-fxpanel forge-fxpanel--right" id="forge-fxpanel" aria-hidden="true">' +
+      // ═══ ONE DEV DOOR (2026-07-30) ══════════════════════════
+      // §3 of AUDIT/2026-07-29-fable-dev-drawer-and-tree-labels.md,
+      // acceptance test design/dev-drawer.html. The FX · STYLE ·
+      // LAB · ⌗ cells (and the ✦-menu Dev item) collapsed into ONE
+      // `DEV` button + this drop-up launcher — declarative per the
+      // menu pattern below (JS attaches handlers only, never builds
+      // DOM; orchestration owner: src/js/forge/dev-drawer.js).
+      // The rows ADOPT the retired buttons' ids, so lab-panel.js +
+      // debug-stats.js (zero edits) and fx-panel.js/style-panel.js
+      // bind to them byte-identically and never notice the move.
+      // The FX + STYLE panel divs live on below as loose fixed-
+      // position children (the legend tooltip is precedent), sharing
+      // ONE editor slot at top-right — where the LAB lives — via
+      // .forge-devpanel-slot. LEGEND · VIEW · ✦ FOLIO stay canonical
+      // on the bar (John's ruling, twice over).
+      '<div class="forge-devdrawer-wrap" id="forge-devdrawer-wrap">' +
+        '<button class="forge-fxpanel-btn forge-devdrawer-btn" id="forge-devdrawer-btn" type="button" title="Developer panels — one door" aria-haspopup="true" aria-expanded="false" aria-controls="forge-devdrawer">DEV<span class="forge-devdot"></span></button>' +
+        '<div class="forge-devdrawer" id="forge-devdrawer" aria-hidden="true">' +
+          '<div class="forge-devdrawer-cap">DEV — THE WORKSHOP<span>one editor at a time</span></div>' +
+          '<button class="forge-devdrawer-row" id="forge-labpanel-btn" type="button" data-dev-panel="lab" aria-expanded="false"><span class="forge-devdrawer-dot"></span><span class="forge-devdrawer-name">Node Lab</span><span class="forge-devdrawer-hint">the recipe dials — nodes, light, wires, film</span></button>' +
+          '<button class="forge-devdrawer-row" id="forge-fxpanel-btn" type="button" data-dev-panel="fx" aria-expanded="false"><span class="forge-devdrawer-dot"></span><span class="forge-devdrawer-name">FX</span><span class="forge-devdrawer-hint">floor-zoom effects &amp; pulse</span></button>' +
+          '<button class="forge-devdrawer-row" id="forge-stylepanel-btn" type="button" data-dev-panel="style" aria-expanded="false"><span class="forge-devdrawer-dot"></span><span class="forge-devdrawer-name">Style</span><span class="forge-devdrawer-hint">ring / separator / timeline strokes</span></button>' +
+          '<button class="forge-devdrawer-row" id="forge-debug-btn" type="button" data-dev-panel="stats" aria-expanded="false" aria-controls="forge-debug-panel"><span class="forge-devdrawer-dot"></span><span class="forge-devdrawer-name">Stats</span><span class="forge-devdrawer-hint">engine HUD — read-only, pins beside an editor</span></button>' +
+          '<button class="forge-devdrawer-row" id="forge-devoverview-btn" type="button" data-dev-panel="overview"><span class="forge-devdrawer-dot"></span><span class="forge-devdrawer-name">Overview</span><span class="forge-devdrawer-hint">vault coverage — the operator dashboard</span></button>' +
+          '<div class="forge-devdrawer-foot">VIEW · LEGEND · ✦ FOLIO STAY CANONICAL</div>' +
+        '</div>' +
+      '</div>',
+      // FX panel — module src/js/forge/fx-panel.js (LS forge.fxParams.v4).
+      // Loose fixed child; its trigger is the launcher FX row above.
+      // Persists until its × (the LAB idiom) — outside-click close was
+      // dropped 2026-07-30: a tuning panel that vanishes when you click
+      // the canvas to test the effect is a broken tuning panel.
+      '<div class="forge-fxpanel forge-fxpanel--right forge-devpanel-slot" id="forge-fxpanel" aria-hidden="true">' +
+          '<button class="forge-devpanel-x" type="button" title="close">×</button>' +
           '<div class="forge-fxpanel-section">Heartbeat rhythm</div>' +
           '<div class="forge-fxpanel-row"><label>period <span class="forge-fxpanel-val" data-val="period">7.0s</span></label><input type="range" data-fx="period" min="1.5" max="14" step="0.1" value="7.0"></div>' +
           '<div class="forge-fxpanel-section">Disk — rest</div>' +
@@ -1283,17 +1309,16 @@
           '<div class="forge-fxpanel-row fv-wheel-only"><label>saturate <span class="forge-fxpanel-val" data-val="hull-sat-peak">1.55</span></label><input type="range" data-fx="hull-sat-peak" min="0.5" max="2.5" step="0.01" value="1.55"></div>' +
           '<div class="forge-fxpanel-row fv-wheel-only"><label>hue shift <span class="forge-fxpanel-val" data-val="hull-hue-peak">10°</span></label><input type="range" data-fx="hull-hue-peak" min="-60" max="60" step="1" value="10"></div>' +
           '<button class="forge-fxpanel-reset" id="forge-fxpanel-reset">RESET TO DEFAULTS</button>' +
-        '</div>' +
       '</div>',
       // Phase 21AJ (2026-05-23) — Style dev panel. Controls the
       // stroke style of the guide-ring circles + the endpoint
       // colors of the long-centered converging separator gradient.
       // Sliders + color pickers write to CSS vars on body.view-forge
       // (see :root block at the top of app.css for defaults).
-      '<div class="forge-stylepanel-wrap">' +
-        '<button class="forge-stylepanel-btn" id="forge-stylepanel-btn" title="Stroke style tuning" aria-expanded="false">STYLE</button>' +
-        '<button class="forge-fxpanel-btn" id="forge-labpanel-btn" title="Node Lab — live recipe dials" aria-expanded="false">LAB</button>' +
-        '<div class="forge-stylepanel" id="forge-stylepanel" aria-hidden="true">' +
+      // 2026-07-30 — trigger moved into the DEV launcher above; the
+      // panel is a loose fixed child in the shared editor slot.
+      '<div class="forge-stylepanel forge-devpanel-slot" id="forge-stylepanel" aria-hidden="true">' +
+          '<button class="forge-devpanel-x" type="button" title="close">×</button>' +
           // Phase 22-I (2026-05-24) — Guide rings + Converging
           // separator are RADIAL-only geometry. Hidden in
           // timeline mode via body.fv-layout-timeline.
@@ -1335,11 +1360,14 @@
           '<div class="forge-fxpanel-row fv-timeline-only"><label>tick size <span class="forge-fxpanel-val" data-val="tl-yr0-size">12px</span></label><input type="range" data-style="tl-yr0-size" min="4" max="32" step="1" value="12"></div>' +
           '<div class="forge-fxpanel-row fv-timeline-only"><label>line width <span class="forge-fxpanel-val" data-val="tl-yr0-width">1.8px</span></label><input type="range" data-style="tl-yr0-width" min="0.5" max="4" step="0.1" value="1.8"></div>' +
           '<button class="forge-fxpanel-reset" id="forge-stylepanel-reset">RESET TO DEFAULTS</button>' +
-        '</div>' +
       '</div>',
-      // Phase 21A2 (2026-05-21) — debug-stats toggle. Tiny
-      // square button next to the present-date box.
-      '<button class="forge-debug-btn" id="forge-debug-btn" type="button" title="Show engine stats" aria-expanded="false" aria-controls="forge-debug-panel">⌗</button>',
+      // Phase 21A2 (2026-05-21) — debug-stats popover (owner:
+      // src/js/forge/debug-stats.js, untouched). Its ⌗ bar cell
+      // retired 2026-07-30 — the launcher's STATS row adopted the
+      // forge-debug-btn id. The panel itself was already fixed-
+      // positioned (bottom-right, z 235), so it keeps its berth;
+      // its × is a fixed sibling owned by dev-drawer.js (the panel
+      // innerHTML re-renders every 250ms, a child × would be wiped).
       '<div class="forge-debug-panel" id="forge-debug-panel" aria-hidden="true"></div>',
       // Phase 22-AB-fix4 (2026-05-24) — TIMELINE SEGMENT.
       // Lives inside the canonical .forge-bottombar so it shares
@@ -2573,6 +2601,11 @@
       wireFXPanel();
       wireLabPanel();
       wireStylePanel();
+      // ONE DEV DOOR (2026-07-30) — launcher orchestration (single-
+      // open, dots, Esc cascade). Must wire AFTER the four dev
+      // modules so its first dot-sync reads their settled state
+      // (?lab boot force-open, pinned perf HUD hydrated from LS).
+      wireDevDrawer();
       wireSearchAutocomplete();
 
       // Phase 5B M-F2 (2026-05-20) — apply LS-saved timeline +
@@ -6974,6 +7007,22 @@
         window._forgeStylePanel.attach({ drawFrame, local, rebuildHullElements, syncHulls });
       } else if (typeof console !== 'undefined' && console.warn) {
         console.warn('[forge] window._forgeStylePanel not loaded — style panel inert.');
+      }
+    }
+
+    // ════════════════════════════════════════════════════════════
+    //  wireDevDrawer()  —  ONE DEV DOOR (2026-07-30)
+    // ════════════════════════════════════════════════════════════
+    //  The launcher above the DEV button (§3 of AUDIT/2026-07-29-
+    //  fable-dev-drawer-and-tree-labels.md). Orchestration only:
+    //  single-open editors, row/DEV dots, the Esc walk-back. The
+    //  four panel modules keep their own toggles — the launcher
+    //  rows carry their old button ids.
+    function wireDevDrawer() {
+      if (window._forgeDevDrawer && typeof window._forgeDevDrawer.attach === 'function') {
+        window._forgeDevDrawer.attach({ local });
+      } else if (typeof console !== 'undefined' && console.warn) {
+        console.warn('[forge] window._forgeDevDrawer not loaded — dev drawer inert.');
       }
     }
 

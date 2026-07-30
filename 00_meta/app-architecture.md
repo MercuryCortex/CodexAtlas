@@ -72,6 +72,7 @@ All tokens are defined in `src/styles/app.css` `:root`. Style presets (`body.sty
 | Empty-state card | `.empty-card` (alias to `.scripture-empty` pattern) | Any view's no-data state |
 | Pill chip | `.chip` (TBD — currently bespoke per location) | Status chips, active-filter chips |
 | Floating dropdown | `.scripture-corpus-popup` pattern | Custom popovers richer than a `<select>` |
+| Dev launcher | `.forge-devdrawer-*` (one `DEV` door, drop-up row list, z 235) | EVERY workshop panel. One door, panels open individually, one editor at a time in the fixed top-right slot; the read-only STATS HUD is the only exemption. Added 2026-07-30. **Do not add a new button to the bottom bar for a dev surface — add a launcher row.** Canonical reader controls (`VIEW`, `LEGEND`, ✦ `FOLIO`) keep their own places and must never move into it. |
 
 **Rule:** if your new view needs a primitive that isn't in this list, propose it here first as a new row, then implement it.
 
