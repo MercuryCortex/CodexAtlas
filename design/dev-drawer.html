@@ -1,0 +1,426 @@
+<meta charset="utf-8">
+<title>Codex Atlas — One Dev Door (drawer mockup)</title>
+<style>
+  :root{
+    /* mirrors src/styles/app.css :root — the ship build reads the real tokens */
+    --bg-0:#07090f; --bg-1:#0d1119; --bg-2:#141a26; --bg-3:#1c2333;
+    --border:#232b3d; --border-soft:#1a2030;
+    --text-0:#f1ede2; --text-1:#c8c4b8; --text-2:#8b8e98; --text-3:#5a5e6a;
+    --gold:#d4a55a; --gold-soft:#a87f3e;
+    --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+    --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  }
+  html{background:var(--bg-0)}
+  body{
+    background:
+      radial-gradient(1100px 640px at 72% -8%, rgba(90,108,196,.10), transparent 60%),
+      var(--bg-0);
+    color:var(--text-0); font-family:var(--serif); line-height:1.55;
+    -webkit-font-smoothing:antialiased; margin:0;
+  }
+  .wrap{max-width:1180px;margin:0 auto;padding:0 28px 90px}
+  header{padding:56px 0 20px}
+  .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+  h1{font-size:clamp(36px,5.5vw,54px);font-weight:500;letter-spacing:-.01em;line-height:1.05;margin:0 0 12px;text-wrap:balance}
+  .dek{max-width:64ch;color:var(--text-2);font-size:16.5px;font-style:italic;margin:0}
+  .dek b{color:var(--text-0);font-weight:600}
+
+  /* ── the stage: a framed slice of the Atlas with its bottom bar ── */
+  .stage{
+    position:relative;margin-top:26px;height:600px;border:1px solid var(--border-soft);
+    border-radius:4px;overflow:hidden;background:var(--bg-0);
+  }
+  .stage canvas{position:absolute;inset:0;width:100%;height:100%}
+  .hintline{
+    position:absolute;top:12px;left:0;right:0;text-align:center;pointer-events:none;
+    font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--text-3);
+  }
+
+  /* bottom bar — height parity with the real .forge-bottombar */
+  .bar{
+    position:absolute;left:14px;right:14px;bottom:14px;display:flex;align-items:center;gap:10px;
+  }
+  .bbtn{
+    font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;
+    background:rgba(13,17,25,.85);color:var(--text-2);border:1px solid var(--border);
+    border-radius:3px;padding:7px 12px;cursor:pointer;backdrop-filter:blur(8px);
+  }
+  .bbtn:hover{color:var(--gold);border-color:var(--gold-soft)}
+  .bbtn:focus-visible{outline:1px solid var(--gold);outline-offset:2px}
+  .bbtn[aria-expanded="true"]{color:var(--gold);border-color:var(--gold)}
+  .bsearch{
+    flex:1;max-width:250px;font-family:var(--mono);font-size:10px;letter-spacing:.08em;
+    background:rgba(13,17,25,.85);color:var(--text-1);border:1px solid var(--border);
+    border-radius:3px;padding:7px 12px;
+  }
+  .bscrub{flex:1;height:3px;border-radius:2px;background:var(--border-soft);position:relative;min-width:60px}
+  .bscrub i{position:absolute;left:22%;right:31%;top:0;bottom:0;background:var(--gold-soft);border-radius:2px;opacity:.5}
+  .devdot{display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--gold);margin-left:7px;vertical-align:1px;opacity:0;transition:opacity .14s}
+  #devBtn.has-open .devdot{opacity:1}
+
+  /* ── THE LAUNCHER — one dev door, five rooms ── */
+  .launcher{
+    position:absolute;right:14px;bottom:56px;width:264px;display:none;
+    background:rgba(13,17,25,.94);border:1px solid var(--border);border-radius:4px;
+    padding:8px;backdrop-filter:blur(12px);box-shadow:0 8px 30px rgba(0,0,0,.5);
+  }
+  .launcher.open{display:block}
+  .launcher .l-cap{
+    font-family:var(--mono);font-size:9px;letter-spacing:.24em;text-transform:uppercase;
+    color:var(--gold);padding:4px 8px 8px;display:flex;justify-content:space-between;align-items:baseline;
+  }
+  .launcher .l-cap span{color:var(--text-3);letter-spacing:.1em}
+  .lrow{
+    display:flex;align-items:center;gap:10px;width:100%;text-align:left;cursor:pointer;
+    background:none;border:none;border-top:1px solid var(--border-soft);
+    padding:9px 8px;color:var(--text-1);
+  }
+  .lrow:hover{background:var(--bg-2)}
+  .lrow:focus-visible{outline:1px solid var(--gold);outline-offset:-1px}
+  .lrow .l-dot{width:6px;height:6px;border-radius:50%;border:1px solid var(--text-3);flex:none}
+  .lrow.is-open .l-dot{background:var(--gold);border-color:var(--gold)}
+  .lrow .l-name{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--text-0);width:86px;flex:none}
+  .lrow.is-open .l-name{color:var(--gold)}
+  .lrow .l-hint{font-size:12.5px;font-style:italic;color:var(--text-3);line-height:1.3}
+  .l-foot{
+    font-family:var(--mono);font-size:8.5px;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--text-3);padding:8px 8px 2px;border-top:1px solid var(--border-soft);
+  }
+
+  /* ── dev panels — ONE fixed slot at top-right (where the LAB lives
+     today), so the bottom-right launcher never covers an open panel ── */
+  .devpanel{
+    position:absolute;right:12px;top:44px;width:240px;max-height:400px;display:none;
+    overflow-y:auto;background:rgba(10,13,20,.93);border:1px solid rgba(212,165,90,.28);
+    border-radius:4px;padding:10px 12px;font-family:var(--mono);font-size:10px;
+    color:var(--text-2);letter-spacing:.06em;backdrop-filter:blur(10px);
+  }
+  .devpanel.open{display:block}
+  .devpanel h4{margin:0 0 8px;font-size:10px;letter-spacing:.24em;color:var(--gold);font-weight:600;text-transform:uppercase}
+  .devpanel .p-x{position:absolute;top:8px;right:10px;cursor:pointer;color:var(--text-3);background:none;border:none;font-size:12px}
+  .devpanel .p-x:hover{color:var(--text-0)}
+  .p-sec{
+    width:100%;display:flex;align-items:center;gap:6px;margin:8px 0 0;padding:5px 0;background:none;border:none;
+    border-top:1px solid rgba(212,165,90,.16);cursor:pointer;text-align:left;
+    font-family:var(--mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);
+  }
+  .p-sec .caret{display:inline-block;width:8px;color:var(--text-3);transition:transform .12s}
+  .p-sec.open .caret{transform:rotate(90deg);color:var(--gold)}
+  .p-body{display:none;padding-bottom:2px}
+  .p-body.open{display:block}
+  .p-row{margin:7px 0 2px;display:flex;justify-content:space-between;text-transform:uppercase;font-size:8.5px}
+  .p-row b{color:var(--gold);font-weight:600}
+  .devpanel input[type=range]{width:100%;accent-color:var(--gold);height:14px;background:transparent;margin:0;-webkit-appearance:none;appearance:none}
+  .devpanel input[type=range]::-webkit-slider-runnable-track{height:2px;border-radius:1px;background:rgba(139,142,152,.35)}
+  .devpanel input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:10px;height:10px;margin-top:-4px;border-radius:50%;background:var(--gold);border:none}
+  .p-note{margin-top:9px;padding:6px 8px;border:1px dashed rgba(212,165,90,.3);border-radius:3px;font-size:8.5px;line-height:1.5;color:var(--text-3)}
+
+  /* stats HUD — read-only, pinnable, coexists with an editor: it gets
+     its own berth LEFT of the editor slot so the two never overlap */
+  #p-stats{width:190px;right:292px;top:44px}
+  #p-stats.pinned{
+    right:auto;left:50%;transform:translateX(-50%);bottom:auto;top:34px;width:auto;max-height:none;
+    display:flex;gap:14px;align-items:center;padding:6px 14px;white-space:nowrap;
+  }
+  #p-stats.pinned h4,#p-stats.pinned .p-note{display:none}
+  #p-stats .s-kv{display:flex;justify-content:space-between;margin:5px 0}
+  #p-stats.pinned .s-kv{margin:0;gap:6px}
+  #p-stats .s-kv b{color:#7fc98f;font-weight:600}
+  .pinchip{
+    font-family:var(--mono);font-size:8.5px;letter-spacing:.12em;text-transform:uppercase;
+    background:transparent;color:var(--gold);border:1px solid rgba(212,165,90,.4);border-radius:2px;
+    padding:4px 8px;cursor:pointer;margin-top:8px;
+  }
+  #p-stats.pinned .pinchip{margin-top:0}
+
+  /* overview — a full-stage operator surface, not a floating panel */
+  #p-overview{
+    inset:0;right:0;bottom:0;width:auto;max-height:none;border:none;border-radius:0;
+    background:rgba(7,9,15,.96);padding:36px 44px;
+  }
+  #p-overview h3{font-family:var(--serif);font-weight:500;font-size:22px;letter-spacing:0;color:var(--text-0);margin:0 0 4px;text-transform:none}
+  #p-overview .ov-sub{font-size:12.5px;font-style:italic;font-family:var(--serif);color:var(--text-3);letter-spacing:0;text-transform:none;margin-bottom:18px}
+  #p-overview .ov-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;max-width:640px}
+  #p-overview .ov-cell{border:1px solid var(--border-soft);border-radius:3px;padding:10px;background:var(--bg-1)}
+  #p-overview .ov-cell b{display:block;color:var(--gold);font-size:14px;margin-bottom:2px}
+
+  /* canonical panels (VIEW / LEGEND) — deliberately NOT in the drawer */
+  .canonpanel{
+    position:absolute;bottom:56px;width:230px;display:none;
+    background:rgba(13,17,25,.94);border:1px solid var(--border);border-radius:4px;
+    padding:10px 12px;font-family:var(--mono);font-size:10px;color:var(--text-2);backdrop-filter:blur(12px);
+  }
+  .canonpanel.open{display:block}
+  .canonpanel .c-sec{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin:6px 0 4px}
+  .canonpanel .c-row{display:flex;align-items:center;gap:8px;padding:4px 0;color:var(--text-1)}
+  .canonpanel .c-row i{width:10px;height:10px;border:1px solid var(--text-3);border-radius:2px;flex:none}
+  .canonpanel .c-row.on i{background:var(--gold);border-color:var(--gold)}
+  .canonpanel .c-note{margin-top:8px;padding-top:8px;border-top:1px solid var(--border-soft);font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--text-3)}
+
+  .rules{margin:40px 0 0;padding:0;list-style:none;max-width:74ch}
+  .rules li{padding:13px 0;border-bottom:1px solid rgba(241,237,226,.06);color:var(--text-2);font-size:15px}
+  .rules li b{color:var(--text-0);font-weight:600}
+  .rules li code{font-family:var(--mono);font-size:12px;color:var(--gold);background:var(--bg-1);padding:1px 5px;border-radius:2px}
+  .foot{margin-top:36px;font-family:var(--mono);font-size:10px;letter-spacing:.08em;color:var(--text-3)}
+</style>
+
+<div class="wrap">
+<header>
+  <div class="eyebrow">Codex Atlas · Design Lab · One Dev Door · 2026-07-30</div>
+  <h1>The Dev Drawer</h1>
+  <p class="dek">Six buttons had accumulated on the bottom bar; four of them are workshop tools. Now there is <b>one DEV door</b>: click it and a launcher lists the dev panels — <b>each opens individually</b>, one editor at a time, in one fixed slot. The read-only <b>STATS</b> HUD may stay pinned beside an editor. <b>VIEW and LEGEND are not here</b> — they are canonical reader controls and they keep their own places on the bar. Click everything below; it behaves as specified.</p>
+</header>
+
+<div class="stage" id="stage">
+  <canvas id="bgcv"></canvas>
+  <div class="hintline">A SLICE OF THE ATLAS · CLICK DEV — THE LAUNCHER · OPEN PANELS ONE AT A TIME · STATS PINS · ESC WALKS IT BACK</div>
+
+  <!-- one fixed dev slot -->
+  <div class="devpanel" id="p-lab">
+    <button class="p-x" data-close="p-lab" title="close">×</button>
+    <h4>Node Lab · Live</h4>
+    <button class="p-sec open" data-sec="s1"><span class="caret">▸</span><span>Nodes</span></button>
+    <div class="p-body open" id="s1">
+      <div class="p-row"><span>Hover zoom</span><b data-v>1.28×</b></div><input type="range" min="1" max="2.2" step="0.01" value="1.28" data-unit="×">
+      <div class="p-row"><span>Bubble</span><b data-v>1.12×</b></div><input type="range" min="1" max="1.5" step="0.01" value="1.12" data-unit="×">
+    </div>
+    <button class="p-sec" data-sec="s2"><span class="caret">▸</span><span>Light</span></button>
+    <div class="p-body" id="s2">
+      <div class="p-row"><span>Glow</span><b data-v>0.55</b></div><input type="range" min="0" max="1" step="0.01" value="0.55" data-unit="">
+      <div class="p-row"><span>Ethereal</span><b data-v>0.30</b></div><input type="range" min="0" max="1" step="0.01" value="0.30" data-unit="">
+    </div>
+    <button class="p-sec" data-sec="s3"><span class="caret">▸</span><span>Film — the bg movie</span></button>
+    <div class="p-body" id="s3">
+      <div class="p-row"><span>Film floor</span><b data-v>0.18</b></div><input type="range" min="0" max="1" step="0.01" value="0.18" data-unit="">
+    </div>
+    <div class="p-note">MOCK DIALS — the real panel keeps its module (lab-panel.js) and its recipe line, unchanged. Only the trigger moves into the launcher.</div>
+  </div>
+
+  <div class="devpanel" id="p-fx">
+    <button class="p-x" data-close="p-fx" title="close">×</button>
+    <h4>FX · Floor Zoom</h4>
+    <div class="p-row"><span>Period</span><b data-v>7.0s</b></div><input type="range" min="1.5" max="14" step="0.1" value="7" data-unit="s">
+    <div class="p-row"><span>Blur — rest</span><b data-v>20.0px</b></div><input type="range" min="0" max="30" step="0.1" value="20" data-unit="px">
+    <div class="p-row"><span>Brightness</span><b data-v>1.50</b></div><input type="range" min="0.3" max="3" step="0.01" value="1.5" data-unit="">
+    <div class="p-note">MOCK — fx-panel.js unchanged; it gains an × and loses close-on-outside-click (the LAB idiom).</div>
+  </div>
+
+  <div class="devpanel" id="p-style">
+    <button class="p-x" data-close="p-style" title="close">×</button>
+    <h4>Style · Strokes</h4>
+    <div class="p-row"><span>Ring width</span><b data-v>0.5px</b></div><input type="range" min="0.2" max="6" step="0.1" value="0.5" data-unit="px">
+    <div class="p-row"><span>Ring opacity</span><b data-v>0.50</b></div><input type="range" min="0" max="1" step="0.01" value="0.5" data-unit="">
+    <div class="p-row"><span>Separator width</span><b data-v>0.5px</b></div><input type="range" min="0.2" max="6" step="0.1" value="0.5" data-unit="px">
+    <div class="p-note">MOCK — style-panel.js unchanged; same × + no outside-close change as FX.</div>
+  </div>
+
+  <div class="devpanel" id="p-stats">
+    <button class="p-x" data-close="p-stats" title="close">×</button>
+    <h4>Stats · Engine</h4>
+    <div class="s-kv"><span>fps</span><b>60</b></div>
+    <div class="s-kv"><span>raf p95</span><b>16.9ms</b></div>
+    <div class="s-kv"><span>nodes</span><b>4 746</b></div>
+    <div class="s-kv"><span>edges</span><b>21 757</b></div>
+    <button class="pinchip" id="pinBtn">Pin as top bar</button>
+    <div class="p-note">READ-ONLY HUD — exempt from the one-editor rule: it may stay open (or pinned) while a LAB slider is dragged.</div>
+  </div>
+
+  <div class="devpanel" id="p-overview">
+    <button class="p-x" data-close="p-overview" title="close">×</button>
+    <h3>Dev Overview</h3>
+    <div class="ov-sub">The operator's coverage dashboard — a full surface, so opening it closes the launcher.</div>
+    <div class="ov-grid">
+      <div class="ov-cell"><b>4 746</b>nodes</div>
+      <div class="ov-cell"><b>21 757</b>edges</div>
+      <div class="ov-cell"><b>622</b>reader texts</div>
+      <div class="ov-cell"><b>29</b>traditions</div>
+    </div>
+  </div>
+
+  <!-- canonical, NOT in the drawer -->
+  <div class="canonpanel" id="c-view" style="left:170px">
+    <div class="c-sec">Layers</div>
+    <div class="c-row on" data-t><i></i>Show wedge hulls</div>
+    <div class="c-row on" data-t><i></i>Show wedge titles</div>
+    <div class="c-row" data-t><i></i>Show guide rings</div>
+    <div class="c-sec">Node distribution</div>
+    <div class="c-row on"><i></i>Organic (age-radial fan)</div>
+    <div class="c-row"><i></i>Vogel sunflower</div>
+    <div class="c-note">Canonical — stays on the bar, not in the drawer</div>
+  </div>
+  <div class="canonpanel" id="c-legend" style="left:80px">
+    <div class="c-sec">Wire color · connection</div>
+    <div class="c-row"><i style="background:#d4a55a;border-color:#d4a55a"></i>Fusion</div>
+    <div class="c-row"><i style="background:#5a6cc4;border-color:#5a6cc4"></i>Parallel</div>
+    <div class="c-row"><i style="background:#6e8c6b;border-color:#6e8c6b"></i>Transmission</div>
+    <div class="c-sec">Source tier · click to toggle</div>
+    <div class="c-row on" data-t><i></i>T1 · Mainstream</div>
+    <div class="c-row on" data-t><i></i>T2 · Academic minority</div>
+    <div class="c-row" data-t><i></i>T5 · High-risk (opt-in)</div>
+    <div class="c-note">The map key + what the map claims — canonical, never dev</div>
+  </div>
+
+  <!-- the launcher -->
+  <div class="launcher" id="launcher">
+    <div class="l-cap">DEV — THE WORKSHOP <span>one editor at a time</span></div>
+    <button class="lrow" data-panel="p-lab"><span class="l-dot"></span><span class="l-name">Node Lab</span><span class="l-hint">the recipe dials — nodes, light, wires, film</span></button>
+    <button class="lrow" data-panel="p-fx"><span class="l-dot"></span><span class="l-name">FX</span><span class="l-hint">floor-zoom effects &amp; pulse</span></button>
+    <button class="lrow" data-panel="p-style"><span class="l-dot"></span><span class="l-name">Style</span><span class="l-hint">ring / separator / timeline strokes</span></button>
+    <button class="lrow" data-panel="p-stats"><span class="l-dot"></span><span class="l-name">Stats</span><span class="l-hint">engine HUD — read-only, pins beside an editor</span></button>
+    <button class="lrow" data-panel="p-overview"><span class="l-dot"></span><span class="l-name">Overview</span><span class="l-hint">vault coverage — the operator dashboard</span></button>
+    <div class="l-foot">VIEW · LEGEND · ✦ FOLIO STAY CANONICAL — NEVER IN HERE</div>
+  </div>
+
+  <!-- the bar -->
+  <div class="bar">
+    <button class="bbtn" title="zoom — click to fit">100%</button>
+    <button class="bbtn" id="legendBtn" aria-expanded="false">Legend</button>
+    <button class="bbtn" id="viewBtn" aria-expanded="false">View</button>
+    <input class="bsearch" placeholder="search…">
+    <div class="bscrub"><i></i></div>
+    <button class="bbtn" id="devBtn" aria-expanded="false" title="Developer panels — one door">Dev<span class="devdot"></span></button>
+  </div>
+</div>
+
+<ul class="rules">
+  <li><b>One door.</b> FX, STYLE, LAB and ⌗ leave the bar; the ✦-menu Dev item moves here too. One <code>DEV</code> button remains, in the right cluster where the four used to sit. A gold dot on it means something dev is open somewhere — a stray panel is always traceable to the bar.</li>
+  <li><b>The launcher is a cockpit remote, not a menu.</b> It stays open while you flip between panels (switching is one click), and closing it does <b>not</b> close an open panel. Click-outside or Esc closes the launcher only.</li>
+  <li><b>One editor at a time.</b> LAB, FX and STYLE share one fixed slot (right edge, above the bar — the LAB's spot today); opening one closes the others. <b>STATS is exempt</b>: a read-only HUD may sit beside an editor — watching fps while dragging a slider is the whole point — and its PIN mode survives as-is. OVERVIEW is a full surface; opening it closes the launcher.</li>
+  <li><b>Panels persist until closed.</b> Every dev panel gets the LAB idiom — an × and Esc, no close-on-outside-click. A tuning panel that vanishes when you click the canvas to test the effect is a broken tuning panel (FX and STYLE lose that behaviour, deliberately).</li>
+  <li><b>Nothing else moves.</b> The four panel modules keep their code, their dials, their LS keys (<code>forge.fxParams.v4</code> · <code>forge.styleParams.v1</code> · <code>forge.labRecipe.v1</code> · <code>forge.viewSettings.v7</code>) and the <code>?lab</code> boot flag. The launcher rows simply <b>become</b> the old trigger buttons (same ids), so the modules never notice the move.</li>
+  <li><b>VIEW and LEGEND are canonical, and defended.</b> VIEW is user settings (layers, themes, distribution). LEGEND is the map key <b>and</b> the source-tier filter — it changes <b>what the map claims</b> (T1–T5, political-risk), not how pixels are tuned. Dev = dials that tune the rendering; canonical = controls that change meaning. Same ruling as the ground colours: "these are not dev panel."</li>
+</ul>
+
+<div class="foot">CLICK-THROUGH MOCKUP — no app code touched. Spec + migration order: AUDIT/2026-07-29-fable-dev-drawer-and-tree-labels.md · z-index: launcher + panels in the 200–300 overlay tier (235), no new tiers · companion: design/family-tree.html</div>
+</div>
+
+<script>
+(function(){
+'use strict';
+/* faint wheel backdrop — dots only, still at rest */
+var cv=document.getElementById('bgcv'), ctx=cv.getContext('2d');
+function srand(s){ var x=Math.sin(s*127.1+311.7)*43758.5453; return x-Math.floor(x); }
+function paint(){
+  var dpr=Math.min(2,window.devicePixelRatio||1);
+  var w=cv.clientWidth,h=cv.clientHeight;
+  cv.width=w*dpr; cv.height=h*dpr; ctx.setTransform(dpr,0,0,dpr,0,0);
+  var g=ctx.createLinearGradient(0,0,0,h); g.addColorStop(0,'#04060d'); g.addColorStop(1,'#0a0e1c');
+  ctx.fillStyle=g; ctx.fillRect(0,0,w,h);
+  var cx=w/2, cy=h*0.46, R=Math.min(w,h)*0.42;
+  var cols=['#d4a55a','#5a6cc4','#6e8c6b','#c47453','#c44a5a','#4a5a7a','#8b8e98','#a87f3e'];
+  for(var f=0;f<8;f++){
+    var a0=f/8*Math.PI*2-Math.PI/2+0.06, a1=(f+1)/8*Math.PI*2-Math.PI/2-0.06;
+    for(var i=0;i<64;i++){
+      var t=srand(f*997+i*7), u=srand(f*131+i*13);
+      var ang=a0+(a1-a0)*u, rad=R*(0.30+0.62*t);
+      ctx.fillStyle=cols[f]; ctx.globalAlpha=0.16+0.22*srand(i+f);
+      ctx.beginPath(); ctx.arc(cx+Math.cos(ang)*rad, cy+Math.sin(ang)*rad, 1.1+t*1.6, 0, 7); ctx.fill();
+    }
+  }
+  ctx.globalAlpha=1;
+}
+paint(); window.addEventListener('resize', paint);
+
+/* ── the drawer contract ─────────────────────────────────────── */
+var EDITORS=['p-lab','p-fx','p-style'];             // one at a time
+var devBtn=document.getElementById('devBtn');
+var launcher=document.getElementById('launcher');
+function isOpen(id){ return document.getElementById(id).classList.contains('open'); }
+function anyDevOpen(){
+  return EDITORS.concat(['p-stats','p-overview']).some(isOpen);
+}
+function syncDots(){
+  document.querySelectorAll('.lrow').forEach(function(r){
+    r.classList.toggle('is-open', isOpen(r.getAttribute('data-panel')));
+  });
+  devBtn.classList.toggle('has-open', anyDevOpen());
+}
+function setPanel(id, open){
+  document.getElementById(id).classList.toggle('open', open);
+  syncDots();
+}
+function openLauncher(open){
+  launcher.classList.toggle('open', open);
+  devBtn.setAttribute('aria-expanded', open?'true':'false');
+}
+devBtn.addEventListener('click', function(ev){
+  ev.stopPropagation();
+  openLauncher(!launcher.classList.contains('open'));
+});
+document.querySelectorAll('.lrow').forEach(function(r){
+  r.addEventListener('click', function(ev){
+    ev.stopPropagation();
+    var id=r.getAttribute('data-panel');
+    if(id==='p-overview'){ setPanel(id, !isOpen(id)); openLauncher(false); return; }
+    if(EDITORS.indexOf(id)>=0){
+      var was=isOpen(id);
+      EDITORS.forEach(function(e){ setPanel(e,false); });
+      setPanel(id, !was);                    // toggle; others closed
+      return;                                // launcher STAYS open — cockpit remote
+    }
+    setPanel(id, !isOpen(id));               // stats — independent
+  });
+});
+document.querySelectorAll('.p-x').forEach(function(x){
+  x.addEventListener('click', function(){ setPanel(x.getAttribute('data-close'), false); });
+});
+/* click-outside closes the LAUNCHER (and canonical popovers) — never a dev panel */
+document.addEventListener('click', function(ev){
+  if(!launcher.contains(ev.target) && ev.target!==devBtn && !devBtn.contains(ev.target)) openLauncher(false);
+  ['c-view','c-legend'].forEach(function(id){
+    var p=document.getElementById(id), b=document.getElementById(id==='c-view'?'viewBtn':'legendBtn');
+    if(p.classList.contains('open') && !p.contains(ev.target) && !b.contains(ev.target)){
+      p.classList.remove('open'); b.setAttribute('aria-expanded','false');
+    }
+  });
+});
+/* Esc walks it back: overview → launcher → open editor */
+document.addEventListener('keydown', function(ev){
+  if(ev.key!=='Escape') return;
+  if(isOpen('p-overview')){ setPanel('p-overview',false); return; }
+  if(launcher.classList.contains('open')){ openLauncher(false); return; }
+  for(var i=0;i<EDITORS.length;i++) if(isOpen(EDITORS[i])){ setPanel(EDITORS[i],false); return; }
+  if(isOpen('p-stats')) setPanel('p-stats',false);
+});
+
+/* stats pin */
+document.getElementById('pinBtn').addEventListener('click', function(){
+  var s=document.getElementById('p-stats');
+  s.classList.toggle('pinned');
+  this.textContent=s.classList.contains('pinned')?'Unpin':'Pin as top bar';
+});
+
+/* collapsible sections (LAB idiom) */
+document.querySelectorAll('.p-sec').forEach(function(h){
+  h.addEventListener('click', function(){
+    var b=document.getElementById(h.getAttribute('data-sec'));
+    h.classList.toggle('open'); b.classList.toggle('open');
+  });
+});
+/* mock sliders update their value chip */
+document.querySelectorAll('.devpanel input[type=range]').forEach(function(s){
+  s.addEventListener('input', function(){
+    var v=s.previousElementSibling.querySelector('[data-v]');
+    var u=s.getAttribute('data-unit')||'';
+    var n=parseFloat(s.value);
+    v.textContent=(s.step==='0.1'?n.toFixed(1):n.toFixed(2))+u;
+  });
+});
+
+/* canonical popovers — today's behaviour, untouched */
+[['viewBtn','c-view'],['legendBtn','c-legend']].forEach(function(pair){
+  var b=document.getElementById(pair[0]), p=document.getElementById(pair[1]);
+  b.addEventListener('click', function(ev){
+    ev.stopPropagation();
+    var open=!p.classList.contains('open');
+    p.classList.toggle('open', open);
+    b.setAttribute('aria-expanded', open?'true':'false');
+  });
+  p.addEventListener('click', function(ev){
+    var row=ev.target.closest('.c-row'); if(!row||!row.hasAttribute('data-t')) return;
+    row.classList.toggle('on');
+    ev.stopPropagation();
+  });
+});
+})();
+</script>

@@ -91,9 +91,9 @@
 
 <div class="wrap">
 <header>
-  <div class="eyebrow">Codex Atlas · Design Lab · Family Isolate · 2026-07-29</div>
+  <div class="eyebrow">Codex Atlas · Design Lab · Family Isolate · 2026-07-29 · labels pass 2026-07-30</div>
   <h1>The House</h1>
-  <p class="dek">Click a family title on the wheel and the family <b>re-presents itself as a tree</b> — lineage arcs as the bones, every rank an era, the unparented standing on their age, and every wire that leaves the family landing on a <b>horizon port</b> at that tradition's true bearing. Click empty space, and it all glides home. <b>Real Atlas data</b> — six families extracted from data.js, nothing invented.</p>
+  <p class="dek">Click a family title on the wheel and the family <b>re-presents itself as a tree</b> — lineage arcs as the bones, every rank an era, the unparented standing on their age, and every wire that leaves the family landing on a <b>horizon port</b> at that tradition's true bearing. <b>Cascade and Fan are peers</b> — two geometries of the same house, one dial, a live tween between them. Click empty space, and it all glides home. <b>Real Atlas data</b> — six families extracted from data.js, nothing invented.</p>
 </header>
 
 <div class="bar">
@@ -153,6 +153,9 @@
   <li><b>Isolate is state, not navigation.</b> Same dots, two resting positions — wheel and house — one position tween between them, then stillness. Rest is still: nothing here animates at rest. Back is click-empty-space or Escape, and it is instant.</li>
   <li><b>The Atlas stays present.</b> Every wire that leaves the family lands on a horizon port at that tradition's true bearing on the wheel. Hover a deity to see its wires; hover a port to see everything flowing to that tradition; <b>click a port to travel</b> — family to family, without ever going home first.</li>
   <li><b>Multi-parent is drawn, not pruned.</b> The data is a DAG (34 of 80 Greek deities have 2+ parents). One parent anchors placement; every other lineage arc still draws. Consorts are lateral — a bar, never a rank. Avatars and aspects hang dotted beneath their greater form.</li>
+  <li><b>One label law.</b> Every word on the stage — crown, era dates, deity names, ports, shelf captions — is placed by <b>one priority-ordered pass with one collision list</b>; a word that would land on another hides instead of overlapping (the app's renderLabelsCanvas law, mirrored). Names draw whole with a dark halo, or not at all — no mid-word <b>…</b> anywhere.</li>
+  <li><b>The rails are shelves, not lists.</b> The Scriptorium groups its documents into era shelves, the Court groups by kind — each shelf a mono caption with a count and <b>one spine name</b> (its highest-degree member). The rest of the mass stays visible as glyphs; titles arrive when the pointer approaches the rail, and the hovercard always carries the full record.</li>
+  <li><b>Cascade and Fan are peers.</b> Both are view modes in waiting — the same house re-projected, tweened live when you flip the dial. Neither is the fallback: the recipe records whichever John dials, and the engine spec treats them as two entries in the same layout vocabulary the wheel and timeline already share.</li>
 </ul>
 
 <div class="foot">DATA: extracted 2026-07-29 from data.js (4,746 nodes · 28,798 edges) — Norse · Greek · Egyptian · Vedic · Mesopotamian · Chinese, with per-deity external wires. The wheel here is a geometric sketch (no edges at wheel level); the engine wheel keeps its own law. Companion audit: AUDIT/2026-07-29-fable-family-tree-isolate.md</div>
@@ -197,6 +200,12 @@ function srand(s){ var x=Math.sin(s*127.1+311.7)*43758.5453; return x-Math.floor
 function strHash(s){ var h=2166136261>>>0; for(var i=0;i<s.length;i++){ h^=s.charCodeAt(i); h=(h+((h<<1)+(h<<4)+(h<<7)+(h<<8)+(h<<24)))>>>0; } return h>>>0; }
 function h01(s){ return strHash(s)/4294967295; }
 function fmtDate(d){ if(d==null) return 'undated'; return d<0 ? (-d)+' BCE' : d+' CE'; }
+function fmtRange(a,b){                       // shelf caption: compact era span
+  if(a==null||b==null||a===b) return fmtDate(a==null?b:a).toUpperCase();
+  if(a<0&&b<0) return (-a)+'–'+(-b)+' BCE';
+  if(a>=0&&b>=0) return a+'–'+b+' CE';
+  return (-a)+' BCE–'+b+' CE';
+}
 function ease(t){ return t<0.5 ? 4*t*t*t : 1-Math.pow(-2*t+2,3)/2; }
 
 /* ---------------- wheel geometry (radial.js law: sqrt weights + gap) ---- */
@@ -395,7 +404,7 @@ function buildTreeScene(famName){
   computeWheel();
   var cx=wheel.cx, cy=wheel.cy, Rh=wheel.R*0.985;
   var S={sprites:{}, mode:'tree', fam:famName, house:house, cx:cx, cy:cy, Rh:Rh,
-         ports:[], rails:{left:[],right:[]}, rowMeta:[], titles:[]};
+         ports:[], rails:{left:null,right:null}, rowMeta:[], titles:[]};
 
   // node radii by degree
   function nr(i){ return Math.max(2.6, 1.8+Math.sqrt(ds[i][3])*0.42); }
@@ -416,9 +425,11 @@ function buildTreeScene(famName){
       });
       var dmin=1e9,dmax=-1e9;
       row.forEach(function(n){ var d=ds[n][2]; if(d!=null){ if(d<dmin)dmin=d; if(d>dmax)dmax=d; } });
-      S.rowMeta.push({y:y, half:half, n:row.length, dmin:dmin>dmax?null:dmin, dmax:dmin>dmax?null:dmax});
+      S.rowMeta.push({y:y, half:half, w:wRow, n:row.length, dmin:dmin>dmax?null:dmin, dmax:dmin>dmax?null:dmax});
     });
-    S.crown={x:cx, y:Math.max(cy-Rh*0.80, y0-Math.min(rowH*0.9,46))};
+    // crown clears the top row by its full two stat lines (label law:
+    // the crown seeds the collision list, so it must not shade row 0)
+    S.crown={x:cx, y:Math.max(cy-Rh*0.84, y0-Math.min(rowH*1.3,68))};
   } else {                                   // FAN — crown at center, rings = ranks
     var rIn=Rh*0.14, rOut=Rh*0.82;
     var step=((rOut-rIn)/Math.max(1,house.RK-1))*R.spread;
@@ -435,25 +446,88 @@ function buildTreeScene(famName){
     S.crown={x:cx, y:cy};
   }
 
-  // court rails — the family's own documents (left) and persons/rest (right)
+  // court rails — the family's own documents (left) and the rest (right),
+  // grouped into SHELVES: era buckets on the scriptorium side, kind buckets
+  // on the court side. Mass stays visible as glyphs; captions carry counts.
   if(R.court==='on'){
     var docs=[], rest=[];
     pack.court.forEach(function(c,i){ (c[3]==='doc'?docs:rest).push(i); });
     docs.sort(function(a,b){ var da=pack.court[a][2], db=pack.court[b][2];
       return (da==null?9e9:da)-(db==null?9e9:db); });
     rest.sort(function(a,b){ return pack.court[b][4]-pack.court[a][4]; });
-    function rail(list, side, arr){
-      var x=cx+side*Rh*0.885;
-      var yA=cy-Rh*0.55, yB=cy+Rh*0.55;
-      list.forEach(function(ci,k){
-        var y=list.length<2? cy : yA+(yB-yA)*(k/(list.length-1));
-        var c=pack.court[ci];
-        S.sprites['c:'+famName+':'+c[0]]={x:x, y:y, r:2.1, col:mix(pack.color,'#918ab4',0.45), a:0.8,
-          sh:c[3]==='doc'?'sq':'di', ci:ci};
-        arr.push({ci:ci, x:x, y:y});
+
+    // era shelves — split the date-sorted docs at large gaps (≤5 shelves + undated)
+    function docShelves(list){
+      var dated=list.filter(function(ci){ return pack.court[ci][2]!=null; });
+      var und  =list.filter(function(ci){ return pack.court[ci][2]==null; });
+      var out=[];
+      if(dated.length){
+        var span=Math.max(1, pack.court[dated[dated.length-1]][2]-pack.court[dated[0]][2]);
+        var cur=[dated[0]];
+        for(var i=1;i<dated.length;i++){
+          var gap=pack.court[dated[i]][2]-pack.court[dated[i-1]][2];
+          if(out.length+1<5 && cur.length>=2 && gap>span/6){ out.push(cur); cur=[]; }
+          else if(cur.length>=12 && out.length+1<5){ out.push(cur); cur=[]; }
+          cur.push(dated[i]);
+        }
+        if(cur.length) out.push(cur);
+      }
+      var g=out.map(function(items){
+        var a=pack.court[items[0]][2], b=pack.court[items[items.length-1]][2];
+        return {label:fmtRange(a,b), items:items};
       });
+      if(und.length) g.push({label:'UNDATED', items:und});
+      return g;
     }
-    rail(docs,-1,S.rails.left); rail(rest,+1,S.rails.right);
+    // kind shelves — grouped by the vault type prefix, biggest first, tail lumped
+    var KIND_NAME={doc:'DOCUMENTS',sym:'SYMBOLS',per:'PERSONS',rit:'RITES',mus:'MUSIC',
+      lan:'LANGUAGES',sac:'SACRED PLACES',mat:'MATERIALS',phi:'PHILOSOPHIES',med:'MEDICINE',
+      mor:'MORALS',alp:'ALPHABETS',the:'THEOLOGIES',cal:'CALENDARS',div:'DIVINATION',
+      ast:'ASTRONOMY',att:'ATTIRE',sub:'SUBSTANCES',eve:'EVENTS',alc:'ALCHEMY',pra:'PRACTICES'};
+    function kindShelves(list){
+      var by={}, order=[];
+      list.forEach(function(ci){ var k=pack.court[ci][3];
+        if(!by[k]){ by[k]=[]; order.push(k); } by[k].push(ci); });
+      order.sort(function(a,b){ return by[b].length-by[a].length || (a<b?-1:1); });
+      var g=[], more=[];
+      order.forEach(function(k){
+        if(g.length<4 && by[k].length>=2) g.push({label:KIND_NAME[k]||k.toUpperCase(), items:by[k]});
+        else more=more.concat(by[k]);
+      });
+      if(more.length){ more.sort(function(a,b){ return pack.court[b][4]-pack.court[a][4]; });
+        g.push({label:'MORE', items:more}); }
+      return g;
+    }
+    function rail(groups, side){
+      var x=cx+side*Rh*0.885;
+      var yA=cy-Rh*0.60, yB=cy+Rh*0.60;
+      var T=0; groups.forEach(function(g){ T+=g.items.length; });
+      var capH=13, pad=4, gap=10, G=groups.length;
+      var fixed=G*(capH+pad)+(G-1)*gap;
+      var pitch=Math.max(3.8, Math.min(9, (yB-yA-fixed)/Math.max(1,T-1)));
+      var total=fixed+(T-G)*pitch;
+      var y=Math.max(yA, cy-total/2);
+      var out={x:x, side:side, items:[], groups:[]};
+      groups.forEach(function(g){
+        var meta={label:g.label, count:g.items.length, capY:y+capH/2, best:-1, y0:y, items:[]};
+        y+=capH+pad;
+        var bd=-1;
+        g.items.forEach(function(ci,k){
+          var c=pack.court[ci];
+          S.sprites['c:'+famName+':'+c[0]]={x:x, y:y, r:2.1, col:mix(pack.color,'#918ab4',0.45), a:0.8,
+            sh:c[3]==='doc'?'sq':'di', ci:ci};
+          var it={ci:ci, x:x, y:y};
+          out.items.push(it); meta.items.push(it);
+          if(c[4]>bd){ bd=c[4]; meta.best=ci; }
+          if(k<g.items.length-1) y+=pitch;
+        });
+        meta.y1=y; y+=gap;
+        out.groups.push(meta);
+      });
+      return out;
+    }
+    S.rails.left =rail(docShelves(docs), -1);
+    S.rails.right=rail(kindShelves(rest),+1);
   } else {
     pack.court.forEach(function(c){ S.sprites['c:'+famName+':'+c[0]]={x:cx, y:cy-wheel.R*1.05, r:1.2, col:pack.color, a:0, sh:'sq'}; });
   }
@@ -488,6 +562,7 @@ function buildTreeScene(famName){
 var scene=null;                    // current resting scene (built after first fit)
 var prevScene=null, tw=null;       // tween state {t0, dur}
 var hover=null, pinned=null;       // {kind:'node'|'port'|'court'|'title', ...}
+var mouse={x:-1,y:-1};             // last pointer pos — drives the rail proximity reveal
 
 function enterFamily(fam){
   if(!PACKS[fam]) return;
@@ -631,27 +706,19 @@ function drawTreeChrome(al){
 function drawTreeEdges(){
   var hs=scene.house, pack=hs.pack, ds=pack.deities;
   function P(i){ return scene.sprites['d:'+ds[i][0]]; }
-  // era strata
-  ctx.font='500 8.5px '+MONO; ctx.textAlign='left'; ctx.textBaseline='middle';
+  // era strata — LINES only; every caption now lives in drawTreeFront's
+  // single placement pass so nothing can land on anything else
+  var railClamp = (R.court==='on') ? scene.Rh*0.84 : 1e9;
   if(R.layout==='cascade'){
     scene.rowMeta.forEach(function(m){
+      var hl=Math.min(m.half*0.94, railClamp);
       ctx.strokeStyle='rgba(145,138,180,.07)';
-      ctx.beginPath(); ctx.moveTo(scene.cx-m.half*0.94, m.y); ctx.lineTo(scene.cx+m.half*0.94, m.y); ctx.stroke();
-      if(m.dmin!=null){
-        ctx.fillStyle='rgba(94,88,133,.85)'; ctx.textBaseline='middle';
-        ctx.fillText(fmtDate(m.dmin), scene.cx-m.half*0.94, m.y+1);
-        ctx.textBaseline='alphabetic';
-      }
+      ctx.beginPath(); ctx.moveTo(scene.cx-hl, m.y); ctx.lineTo(scene.cx+hl, m.y); ctx.stroke();
     });
   } else {
-    scene.rowMeta.forEach(function(m,ri){
+    scene.rowMeta.forEach(function(m){
       ctx.strokeStyle='rgba(145,138,180,.06)';
       ctx.beginPath(); ctx.arc(scene.cx,scene.cy,m.rad,0,7); ctx.stroke();
-      if(m.dmin!=null && ri%2===0){
-        ctx.fillStyle='rgba(94,88,133,.85)'; ctx.textAlign='center';
-        ctx.fillText(fmtDate(m.dmin), scene.cx, scene.cy-m.rad-5);
-        ctx.textAlign='left';
-      }
     });
   }
   // lineage arcs — primary solid, secondary parents lighter (DAG drawn, not pruned)
@@ -761,109 +828,246 @@ function hoverLineage(){
 
 function drawTreeFront(){
   var hs=scene.house, pack=hs.pack, ds=pack.deities;
-  // labels — degree priority + reservation so nothing lands on anything
-  var thr = R.labels==='all'?0 : (R.labels==='many'?4:14);
-  ctx.textAlign='center'; ctx.textBaseline='alphabetic';
-  var order=[]; for(var oi=0;oi<hs.N;oi++) order.push(oi);
-  order.sort(function(a,b){ return ds[b][3]-ds[a][3]; });
+  // ══ ONE LABEL LAW (2026-07-30) ═══════════════════════════════
+  // Every word on the stage goes through ONE priority-ordered pass
+  // with ONE collision list — the renderLabelsCanvas / syncHulls law
+  // from forge.js, mirrored. Structure seeds first (crown → rails →
+  // ports → era gutter), content second (deity names, hover always
+  // first), the library last. A loser HIDES — nothing overlaps, and
+  // names draw WHOLE with a dark halo or not at all (no mid-word …).
   var placed=[];
-  function fits(x0,x1,y){
-    for(var q=0;q<placed.length;q++){
-      var p=placed[q];
-      if(x0<p[1] && x1>p[0] && Math.abs(y-p[2])<11) return false;
-    }
+  function free(x0,y0,x1,y1){
+    for(var q=0;q<placed.length;q++){ var p=placed[q];
+      if(x0<p[2] && x1>p[0] && y0<p[3] && y1>p[1]) return false; }
     return true;
   }
+  function block(x0,y0,x1,y1){ placed.push([x0,y0,x1,y1]); }
+  function claim(x0,y0,x1,y1){ if(!free(x0,y0,x1,y1)) return false; block(x0,y0,x1,y1); return true; }
+  function halo(t,x,y,fill,w){                 // stroke = the void, so names read across arcs
+    ctx.lineJoin='round';
+    ctx.strokeStyle='rgba(6,8,17,.92)'; ctx.lineWidth=w||3;
+    ctx.strokeText(t,x,y);
+    ctx.fillStyle=fill; ctx.fillText(t,x,y);
+  }
+
+  // 1 ▸ CROWN — structural seed: title + two honest stat lines
+  ctx.textAlign='center'; ctx.textBaseline='alphabetic';
+  ctx.font='500 21px '+SERIF;
+  var cw=ctx.measureText(scene.fam).width;
+  halo(scene.fam, scene.crown.x, scene.crown.y, 'rgba(233,229,244,.96)', 4);
+  ctx.strokeStyle=rgba(pack.color,0.9); ctx.lineWidth=1;
+  ctx.beginPath(); ctx.moveTo(scene.crown.x-cw/2, scene.crown.y+7); ctx.lineTo(scene.crown.x+cw/2, scene.crown.y+7); ctx.stroke();
+  block(scene.crown.x-cw/2-6, scene.crown.y-20, scene.crown.x+cw/2+6, scene.crown.y+10);
+  ctx.font='500 8.5px '+MONO;
+  var extra=Math.max(0, pack.courtTotal-pack.court.length);
+  var stat1=(hs.N+' DEITIES · '+hs.kin.length+' LINEAGE ARCS · '+hs.orphanCount+' STAND ON THEIR ERA').toUpperCase();
+  var stat2=(R.court==='on' && scene.rails.left)
+    ? (scene.rails.left.items.length+' IN THE SCRIPTORIUM · '+scene.rails.right.items.length+' IN THE COURT'+(extra?' · +'+extra+' BEYOND THE PACK':''))
+    : ('COURT HIDDEN — '+pack.court.length+' HELD'+(extra?' · +'+extra+' BEYOND THE PACK':''));
+  var sw1=ctx.measureText(stat1).width;
+  halo(stat1, scene.crown.x, scene.crown.y+22, 'rgba(145,138,180,.85)');
+  block(scene.crown.x-sw1/2-4, scene.crown.y+13, scene.crown.x+sw1/2+4, scene.crown.y+25);
+  var sw2=ctx.measureText(stat2).width;
+  halo(stat2, scene.crown.x, scene.crown.y+34, 'rgba(94,88,133,.9)');
+  block(scene.crown.x-sw2/2-4, scene.crown.y+26, scene.crown.x+sw2/2+4, scene.crown.y+38);
+
+  // 2 ▸ RAIL COLUMNS + HEADERS — the glyph columns become obstacles
+  if(R.court==='on' && scene.rails.left){
+    [scene.rails.left, scene.rails.right].forEach(function(rl){
+      if(!rl.items.length) return;
+      block(rl.x-5, rl.items[0].y-8, rl.x+5, rl.items[rl.items.length-1].y+8);
+    });
+    ctx.font='600 8px '+MONO; ctx.textBaseline='middle';
+    var hy=scene.cy-scene.Rh*0.68;
+    if(scene.rails.left.items.length){
+      var hL='THE SCRIPTORIUM — '+scene.rails.left.items.length+' DOCS';
+      ctx.textAlign='left';
+      var wL=ctx.measureText(hL).width, xL=scene.rails.left.x;
+      if(claim(xL-2,hy-6,xL+wL+2,hy+6)) halo(hL, xL, hy, 'rgba(94,88,133,.9)');
+    }
+    if(scene.rails.right.items.length){
+      var hR='THE COURT — '+scene.rails.right.items.length+' OF ALL KINDS';
+      ctx.textAlign='right';
+      var wR=ctx.measureText(hR).width, xR=scene.rails.right.x;
+      if(claim(xR-wR-2,hy-6,xR+2,hy+6)) halo(hR, xR, hy, 'rgba(94,88,133,.9)');
+    }
+  }
+
+  // 3 ▸ PORTS — dots, then labels biggest-flow-first (hover always first)
+  ctx.textBaseline='middle';
+  scene.ports.forEach(function(pt){
+    ctx.fillStyle=rgba(pt.col, pt.count?0.95:0.35);
+    ctx.beginPath(); ctx.arc(pt.x,pt.y,pt.r,0,7); ctx.fill();
+    if(pt.pack){ ctx.strokeStyle=rgba(pt.col,0.8); ctx.lineWidth=1;
+      ctx.beginPath(); ctx.arc(pt.x,pt.y,pt.r+2.5,0,7); ctx.stroke(); }
+    block(pt.x-pt.r-2, pt.y-pt.r-2, pt.x+pt.r+2, pt.y+pt.r+2);
+  });
+  var pOrder=scene.ports.slice().sort(function(a,b){
+    var ha=(hover&&hover.kind==='port'&&hover.fam===a.fam)?1:0;
+    var hb=(hover&&hover.kind==='port'&&hover.fam===b.fam)?1:0;
+    if(ha!==hb) return hb-ha;
+    return b.count-a.count;
+  });
+  ctx.font='600 8.5px '+MONO;
+  pOrder.forEach(function(pt){
+    var isH=hover&&hover.kind==='port'&&hover.fam===pt.fam;
+    if(!(pt.count>=30 || isH || pt.pack)) return;
+    var left=Math.cos(pt.ang)<0;
+    ctx.textAlign=left?'right':'left';
+    var ptxt=pt.fam.toUpperCase()+(pt.count?' · '+pt.count:'');
+    var pw=ctx.measureText(ptxt).width;
+    var lx=pt.x+Math.cos(pt.ang)*10, ly=pt.y+Math.sin(pt.ang)*10;
+    lx=left?Math.max(lx,4+pw):Math.min(lx,W-4-pw);        // clamped — never clipped
+    var x0=left?lx-pw:lx, x1=left?lx:lx+pw;
+    if(isH){ block(x0-2,ly-6,x1+2,ly+6); halo(ptxt,lx,ly,rgba(pt.col,1)); }
+    else if(claim(x0-2,ly-6,x1+2,ly+6)) halo(ptxt,lx,ly,rgba(pt.col,0.75));
+  });
+
+  // 4 ▸ ERA CAPTIONS — deduped (a date prints once, not five times),
+  // right-aligned into the gutter between the rows and the rail
+  ctx.font='500 8.5px '+MONO;
+  var lastCap=null;
+  if(R.layout==='cascade'){
+    ctx.textAlign='right'; ctx.textBaseline='middle';
+    scene.rowMeta.forEach(function(m){
+      if(m.dmin==null) return;
+      var t=fmtDate(m.dmin).toUpperCase();
+      if(t===lastCap) return;
+      var w=ctx.measureText(t).width;
+      var ex=scene.cx-m.w/2-14, ey=m.y;
+      if(ex-w<4) return;
+      if(!claim(ex-w-2, ey-6, ex+2, ey+6)) return;
+      halo(t, ex, ey, 'rgba(94,88,133,.95)');
+      lastCap=t;
+    });
+  } else {
+    ctx.textAlign='center'; ctx.textBaseline='alphabetic';
+    scene.rowMeta.forEach(function(m){
+      if(m.dmin==null) return;
+      var t=fmtDate(m.dmin).toUpperCase();
+      if(t===lastCap) return;
+      var w=ctx.measureText(t).width;
+      var ex=scene.cx, ey=scene.cy-m.rad-5;
+      if(!claim(ex-w/2-2, ey-9, ex+w/2+2, ey+3)) return;
+      halo(t, ex, ey, 'rgba(94,88,133,.95)');
+      lastCap=t;
+    });
+  }
+
+  // 5 ▸ DEITY NAMES — hover first, then degree; WHOLE names or nothing
+  ctx.textAlign='center'; ctx.textBaseline='alphabetic';
+  var thr = R.labels==='all'?0 : (R.labels==='many'?4:14);
+  var order=[]; for(var oi=0;oi<hs.N;oi++) order.push(oi);
+  order.sort(function(a,b){
+    var ha=(hover&&hover.kind==='node'&&hover.di===a)?1:0;
+    var hb=(hover&&hover.kind==='node'&&hover.di===b)?1:0;
+    if(ha!==hb) return hb-ha;
+    return ds[b][3]-ds[a][3];
+  });
   order.forEach(function(i){
     var sp=scene.sprites['d:'+ds[i][0]]; if(!sp) return;
     var isH = hover && hover.kind==='node' && hover.di===i;
     if(ds[i][3]<thr && !isH) return;
     ctx.font=(isH?'600 10.5px ':'500 9px ')+'-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif';
-    var t=ds[i][1]; if(t.length>18 && !isH) t=t.slice(0,17)+'…';
+    var t=ds[i][1];
     var w2=ctx.measureText(t).width;
-    var lx=sp.x, ly=sp.y-sp.r-4;
-    if(!isH && !fits(lx-w2/2-3, lx+w2/2+3, ly)) return;
-    placed.push([lx-w2/2-3, lx+w2/2+3, ly]);
-    ctx.fillStyle=isH?'rgba(233,229,244,.98)':rgba(mix(pack.color,'#ffffff',0.45),0.78);
-    ctx.fillText(t, lx, ly);
+    var lx=sp.x, ly=sp.y-sp.r-5;
+    var x0=lx-w2/2-5, x1=lx+w2/2+5;    // 10px min gap — the app's pad
+    if(isH){ block(x0,ly-10,x1,ly+3); halo(t,lx,ly,'rgba(233,229,244,.98)',3.5); return; }
+    if(!claim(x0,ly-10,x1,ly+3)) return;
+    halo(t, lx, ly, rgba(mix(pack.color,'#ffffff',0.45),0.85));
   });
-  // orphan domain captions
+
+  // 6 ▸ THE LIBRARY — hovered member, shelf captions, one spine name
+  // per shelf, then titles arriving on approach
+  if(R.court==='on' && scene.rails.left){
+    ctx.textBaseline='middle';
+    var drawnCI={};
+    function railTitle(rl, it, bright, must){
+      if(drawnCI[it.ci]!==undefined) return false;
+      var c=pack.court[it.ci], t=c[1];
+      ctx.font=(bright?'600 8.5px ':'500 7.5px ')+MONO;
+      var w=ctx.measureText(t).width;
+      var left=rl.side<0;
+      var lx=left?rl.x-9:rl.x+9;
+      lx=left?Math.max(lx,4+w):Math.min(lx,W-4-w);
+      ctx.textAlign=left?'right':'left';
+      var x0=left?lx-w:lx, x1=left?lx:lx+w;
+      if(must){ block(x0-2,it.y-6,x1+2,it.y+6); }
+      else if(!claim(x0-2,it.y-5,x1+2,it.y+5)) return false;
+      halo(t, lx, it.y, bright?'rgba(233,229,244,.95)':'rgba(145,138,180,.72)');
+      drawnCI[it.ci]=1;
+      return true;
+    }
+    var rails=[scene.rails.left, scene.rails.right];
+    if(hover&&hover.kind==='court'){
+      rails.forEach(function(rl){ rl.items.forEach(function(it){
+        if(it.ci===hover.ci) railTitle(rl,it,true,true); }); });
+    }
+    ctx.font='600 7.5px '+MONO;
+    rails.forEach(function(rl){
+      rl.groups.forEach(function(g){
+        var t=g.label+' · '+g.count;
+        ctx.font='600 7.5px '+MONO;
+        var w=ctx.measureText(t).width;
+        var left=rl.side<0;
+        var lx=left?rl.x-9:rl.x+9;
+        lx=left?Math.max(lx,4+w):Math.min(lx,W-4-w);
+        ctx.textAlign=left?'right':'left';
+        var x0=left?lx-w:lx, x1=left?lx:lx+w;
+        if(claim(x0-2,g.capY-6,x1+2,g.capY+6)) halo(t, lx, g.capY, 'rgba(211,184,119,.62)');
+      });
+    });
+    rails.forEach(function(rl){
+      rl.groups.forEach(function(g){
+        var byDeg=g.items.slice().sort(function(a,b){ return pack.court[b.ci][4]-pack.court[a.ci][4]; });
+        for(var k2=0;k2<byDeg.length;k2++){
+          if(drawnCI[byDeg[k2].ci]!==undefined) break;        // shelf already has its name up
+          if(railTitle(rl,byDeg[k2],false)) break;            // one spine name per shelf
+        }
+      });
+    });
+    rails.forEach(function(rl){
+      if(mouse.x<0 || Math.abs(mouse.x-rl.x)>52) return;
+      var near=rl.items.slice().sort(function(a,b){
+        return Math.abs(a.y-mouse.y)-Math.abs(b.y-mouse.y); });
+      for(var k3=0;k3<near.length&&k3<7;k3++) railTitle(rl,near[k3],false);
+    });
+    if(extra && scene.rails.right.items.length){
+      var rl2=scene.rails.right, t2='+'+extra+' MORE IN THE FAMILY';
+      ctx.font='500 7.5px '+MONO; ctx.textAlign='left';
+      var w4=ctx.measureText(t2).width;
+      var ly2=rl2.items[rl2.items.length-1].y+16;
+      var lx2=Math.min(rl2.x+9, W-4-w4);
+      if(claim(lx2-2,ly2-6,lx2+w4+2,ly2+6)) halo(t2, lx2, ly2, 'rgba(94,88,133,.85)');
+    }
+    ctx.textBaseline='alphabetic';
+  }
+
+  // 7 ▸ ORPHAN DOMAIN CAPTIONS — last in line; they yield to everything
   if(R.orphans==='domain' && R.layout==='cascade'){
+    ctx.font='500 7.5px '+MONO; ctx.textAlign='center'; ctx.textBaseline='alphabetic';
     scene.rowMeta.forEach(function(m,ri){
-      var row=hs.rows[ri], groups={},order=[];
+      var row=hs.rows[ri], groups={}, order2=[];
       row.forEach(function(n){
         if(hs.parents[n].length||hs.children[n].length) return;
         var g=(ds[n][4]||'').split(' · ')[0]; if(!g) return;
-        if(!groups[g]){groups[g]={s:0,c:0}; order.push(g);}
+        if(!groups[g]){groups[g]={s:0,c:0}; order2.push(g);}
         var sp2=scene.sprites['d:'+ds[n][0]]; groups[g].s+=sp2.x; groups[g].c++;
       });
-      ctx.font='500 7.5px '+MONO; ctx.fillStyle='rgba(94,88,133,.8)';
-      order.forEach(function(g){
+      order2.forEach(function(g){
         if(groups[g].c<3) return;
-        ctx.fillText(g.toUpperCase(), groups[g].s/groups[g].c, m.y+16);
+        var t=g.toUpperCase();
+        var w=ctx.measureText(t).width;
+        var gx=groups[g].s/groups[g].c, gy=m.y+16;
+        if(!claim(gx-w/2-2, gy-8, gx+w/2+2, gy+3)) return;
+        halo(t, gx, gy, 'rgba(94,88,133,.85)');
       });
     });
   }
-  // ports + labels
-  ctx.textBaseline='middle';
-  scene.ports.forEach(function(pt){
-    var isH=hover&&hover.kind==='port'&&hover.fam===pt.fam;
-    ctx.fillStyle=rgba(pt.col, pt.count?0.95:0.35);
-    ctx.beginPath(); ctx.arc(pt.x,pt.y,pt.r,0,7); ctx.fill();
-    if(pt.pack){ ctx.strokeStyle=rgba(pt.col,0.8); ctx.lineWidth=1;
-      ctx.beginPath(); ctx.arc(pt.x,pt.y,pt.r+2.5,0,7); ctx.stroke(); }
-    if(pt.count>=30 || isH || pt.pack){
-      var left=Math.cos(pt.ang)<0;
-      ctx.font='600 8.5px '+MONO; ctx.textAlign=left?'right':'left';
-      ctx.fillStyle=rgba(pt.col, isH?1:0.75);
-      var ptxt=pt.fam.toUpperCase()+(pt.count?' · '+pt.count:'');
-      var pw=ctx.measureText(ptxt).width;
-      var lx=pt.x+Math.cos(pt.ang)*10, ly=pt.y+Math.sin(pt.ang)*10;
-      lx=left?Math.max(lx,4+pw):Math.min(lx,W-4-pw);        // clamped — never clipped
-      ctx.fillText(ptxt, lx, ly);
-    }
-  });
-  // crown
-  ctx.textAlign='center';
-  ctx.font='500 21px '+SERIF; ctx.fillStyle='rgba(233,229,244,.96)';
-  ctx.fillText(scene.fam, scene.crown.x, scene.crown.y);
-  ctx.strokeStyle=rgba(pack.color,0.9); ctx.lineWidth=1;
-  var cw=ctx.measureText(scene.fam).width;
-  ctx.beginPath(); ctx.moveTo(scene.crown.x-cw/2, scene.crown.y+7); ctx.lineTo(scene.crown.x+cw/2, scene.crown.y+7); ctx.stroke();
-  ctx.font='500 8.5px '+MONO; ctx.fillStyle='rgba(145,138,180,.85)';
-  ctx.fillText((hs.N+' DEITIES · '+hs.kin.length+' LINEAGE ARCS · '+hs.orphanCount+' STAND ON THEIR ERA · '+
-    (pack.court.length+ (R.court==='on'?' IN COURT':' COURT HIDDEN'))).toUpperCase(), scene.crown.x, scene.crown.y+22);
-  // rails captions
-  if(R.court==='on'){
-    ctx.font='600 8px '+MONO; ctx.fillStyle='rgba(94,88,133,.9)'; ctx.textBaseline='middle';
-    if(scene.rails.left.length){ ctx.textAlign='left';
-      ctx.fillText('THE SCRIPTORIUM — '+scene.rails.left.length+' DOCS', scene.cx-scene.Rh*0.885, scene.cy-scene.Rh*0.62); }
-    if(scene.rails.right.length){ ctx.textAlign='right';
-      ctx.fillText('THE COURT — '+scene.rails.right.length+' PERSONS · PLACES · RITES', scene.cx+scene.Rh*0.885, scene.cy-scene.Rh*0.62); }
-    // rail labels sit OUTWARD of the glyphs (clamped to the canvas edge),
-    // and a density budget keeps them from fusing into a block
-    ctx.font='500 7.5px '+MONO;
-    function railLabels(list, side){
-      if(!list.length) return;
-      var railH=Math.abs(list[list.length-1].y-list[0].y)||1;
-      var every=Math.max(1, Math.ceil(list.length/Math.max(1,Math.floor(railH/11))));
-      ctx.textAlign=side<0?'right':'left';
-      list.forEach(function(rr,k){
-        if(k%every) return;
-        var c=scene.house.pack.court[rr.ci];
-        var t=c[1].length>24?c[1].slice(0,23)+'…':c[1];
-        var w3=ctx.measureText(t).width;
-        var lx=side<0?Math.max(rr.x-7,4+w3):Math.min(rr.x+7,W-4-w3);
-        ctx.fillStyle='rgba(145,138,180,.62)';
-        ctx.fillText(t, lx, rr.y);
-      });
-    }
-    railLabels(scene.rails.left,-1);
-    railLabels(scene.rails.right,+1);
-    ctx.textBaseline='alphabetic';
-  }
+
   // exit affordance
-  ctx.textAlign='center';
+  ctx.textAlign='center'; ctx.textBaseline='alphabetic';
   ctx.font='500 9px '+MONO; ctx.fillStyle='rgba(145,138,180,.6)';
   ctx.fillText('CLICK EMPTY SPACE OR ESC — THE WHEEL', scene.cx, H-14);
 }
@@ -893,7 +1097,10 @@ function hitTest(mx,my){
   for(var p=0;p<scene.ports.length;p++){
     var pt=scene.ports[p];
     var d2=(mx-pt.x)*(mx-pt.x)+(my-pt.y)*(my-pt.y);
-    if(d2<Math.max(64,(pt.r+5)*(pt.r+5))) return {kind:'port', fam:pt.fam, pack:pt.pack, count:pt.count};
+    // dead ports (no wires) get a tiny hit zone so they can't mask
+    // rail glyphs that share the horizon band
+    var hit=pt.count?Math.max(64,(pt.r+5)*(pt.r+5)):16;
+    if(d2<hit) return {kind:'port', fam:pt.fam, pack:pt.pack, count:pt.count};
   }
   var best=null, bd=169;
   for(var i2=0;i2<ds.length;i2++){
@@ -902,12 +1109,15 @@ function hitTest(mx,my){
     if(dd<bd){ bd=dd; best={kind:'node', di:i2}; }
   }
   if(best) return best;
-  if(R.court==='on'){
-    var rails=scene.rails.left.concat(scene.rails.right);
-    for(var r3=0;r3<rails.length;r3++){
-      var rr=rails[r3];
-      if(Math.abs(mx-rr.x)<7 && Math.abs(my-rr.y)<5) return {kind:'court', ci:rr.ci};
-    }
+  if(R.court==='on' && scene.rails.left){
+    var bc=null, bd2=100;   // nearest glyph within 10px — shelf pitch is tight
+    [scene.rails.left, scene.rails.right].forEach(function(rl){
+      rl.items.forEach(function(rr){
+        var dd2=(mx-rr.x)*(mx-rr.x)+(my-rr.y)*(my-rr.y);
+        if(dd2<bd2){ bd2=dd2; bc={kind:'court', ci:rr.ci}; }
+      });
+    });
+    if(bc) return bc;
   }
   return null;
 }
@@ -944,18 +1154,25 @@ function hoverHTML(h){
   return '';
 }
 
+var _revealY=-1e9;
 cv.addEventListener('mousemove', function(ev){
   if(tw) return;
   var b=cv.getBoundingClientRect();
   var mx=ev.clientX-b.left, my=ev.clientY-b.top;
+  mouse.x=mx; mouse.y=my;
   var h=hitTest(mx,my);
   var key=h?JSON.stringify(h):'';
   var prev=hover?JSON.stringify(hover):'';
   cv.style.cursor=(h&&(h.kind==='title'&&h.pack||h.kind==='port'&&h.pack||h.kind==='node'))?'pointer':'default';
-  if(key!==prev){ hover=h; draw(); }
+  // the proximity reveal tracks the pointer along the rails, so a move
+  // inside the rail band repaints even when the hover target is unchanged
+  var nearRail = scene.mode==='tree' && R.court==='on' && scene.rails.left &&
+    (Math.abs(mx-scene.rails.left.x)<=52 || Math.abs(mx-scene.rails.right.x)<=52);
+  if(key!==prev){ hover=h; _revealY=my; draw(); }
+  else if(nearRail && Math.abs(my-_revealY)>2){ _revealY=my; draw(); }
   if(h){ showHC(hoverHTML(h), mx, my); } else hideHC();
 });
-cv.addEventListener('mouseleave', function(){ if(hover){hover=null; draw();} hideHC(); });
+cv.addEventListener('mouseleave', function(){ mouse.x=-1; mouse.y=-1; hover=null; hideHC(); draw(); });
 cv.addEventListener('click', function(ev){
   var b=cv.getBoundingClientRect();
   var h=hitTest(ev.clientX-b.left, ev.clientY-b.top);
@@ -979,7 +1196,7 @@ function setHint(){
   document.getElementById('hintL').textContent =
     scene.mode==='wheel'
       ? 'Wheel — click a bright family title to open its house'
-      : scene.fam+' — hover a deity for its wires · hover a port for the flow · click a ringed port to travel';
+      : scene.fam+' — hover a deity for its wires · approach a rail and its titles arrive · click a ringed port to travel';
 }
 var famChips=document.getElementById('famChips');
 Object.keys(PACKS).forEach(function(f){
@@ -1006,7 +1223,11 @@ document.querySelectorAll('.fchip[data-k]').forEach(function(b){
       document.querySelectorAll('.fchip[data-k="'+k+'"]').forEach(function(x){ x.classList.toggle('on',x===b); });
     }
     syncRecipe();
-    if(scene.mode==='tree') rebuildTree(); else draw();
+    if(scene.mode!=='tree'){ draw(); return; }
+    // draw-time dials repaint in place; GEOMETRY dials tween — flipping
+    // Cascade⇄Fan is a first-class morph of one house, never a snap
+    if(k==='labels'||k==='restwires'){ draw(); }
+    else startTween(buildTreeScene(scene.fam));
   });
 });
 var rS=document.getElementById('r-spread'), rT=document.getElementById('r-tween');
@@ -1043,7 +1264,10 @@ window._ftDebug = {
   exit: exitToWheel,
   house: computeHouse,
   setHover: function(h){ hover=h; draw(); },
-  redraw: function(){ draw(); }
+  redraw: function(){ draw(); },
+  // hidden panes freeze rAF, so a pending tween never settles and the
+  // tw-guard eats synthetic mousemoves — harnesses call settle() first
+  settle: function(){ tw=null; prevScene=null; lastT=1; draw(); }
 };
 })();
 </script>
