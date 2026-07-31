@@ -183,6 +183,40 @@
     // must appear exactly once; anything not listed would silently
     // never render, so the builder asserts on that at the end.
     const SECTIONS = [
+      // THE HOUSE SITS FIRST (2026-07-31). John, twice: he could not
+      // find the Cascade/Fan toggle, then could not find this panel
+      // at all — "theres no the house ..". Both existed and both were
+      // collapsed at the bottom of ten sections. The house is the
+      // surface under active work; it goes where his eye lands.
+      { id: 'house', title: 'The House — family isolate', open: true, items: [
+        { k: 'house' },
+        { k: 'slider', key: 'house_spread' },
+        { k: 'slider', key: 'house_bones' },
+        { k: 'slider', key: 'house_bone_secondary' },
+        { k: 'slider', key: 'house_arc_sag' },
+        { k: 'slider', key: 'house_bone_px' },
+        { k: 'slider', key: 'house_veil' },
+        { k: 'slider', key: 'house_tween_ms' },
+        { k: 'slider', key: 'house_rail_cap' },
+        { k: 'slider', key: 'house_rail_hit' },
+        { k: 'slider', key: 'house_exit_r' },
+        { k: 'slider', key: 'house_port_hit' },
+        { k: 'slider', key: 'house_hint_line' },
+      ] },
+      // THE SIZES PANEL (2026-07-31 wave 3) — John, by name: "it will
+      // be easier to dev this if you add also a panel just dedicated
+      // to the sizes macro of these three sections". The three
+      // concentric zones of the house (ports ring / inner band /
+      // tree zone), the band's glyph size, and the chrome type scale.
+      { id: 'housesizes', title: 'House sizes — the three zones', open: true, items: [
+        { k: 'slider', key: 'house_port_inset' },
+        { k: 'slider', key: 'house_band_r' },
+        { k: 'slider', key: 'house_band_gap' },
+        { k: 'slider', key: 'house_band_rows' },
+        { k: 'slider', key: 'house_rail_glyph' },
+        { k: 'slider', key: 'house_tree_r' },
+        { k: 'slider', key: 'house_type_scale' },
+      ] },
       { id: 'nodes', title: 'Nodes', open: true, items: [
         { k: 'slider', key: 'recipe_hover_zoom' },
         { k: 'slider', key: 'recipe_click_zoom' },
@@ -232,35 +266,6 @@
         { k: 'slider', key: 'film_full_pct' },
         { k: 'slider', key: 'film_fade_pct' },
       ] },
-      { id: 'house', title: 'The House — family isolate', open: false, items: [
-        { k: 'house' },
-        { k: 'slider', key: 'house_spread' },
-        { k: 'slider', key: 'house_bones' },
-        { k: 'slider', key: 'house_bone_secondary' },
-        { k: 'slider', key: 'house_arc_sag' },
-        { k: 'slider', key: 'house_bone_px' },
-        { k: 'slider', key: 'house_veil' },
-        { k: 'slider', key: 'house_tween_ms' },
-        { k: 'slider', key: 'house_rail_cap' },
-        { k: 'slider', key: 'house_rail_hit' },
-        { k: 'slider', key: 'house_exit_r' },
-        { k: 'slider', key: 'house_port_hit' },
-        { k: 'slider', key: 'house_hint_line' },
-      ] },
-      // THE SIZES PANEL (2026-07-31 wave 3) — John, by name: "it will
-      // be easier to dev this if you add also a panel just dedicated
-      // to the sizes macro of these three sections". The three
-      // concentric zones of the house (ports ring / inner band /
-      // tree zone), the band's glyph size, and the chrome type scale.
-      { id: 'housesizes', title: 'House sizes — the three zones', open: false, items: [
-        { k: 'slider', key: 'house_port_inset' },
-        { k: 'slider', key: 'house_band_r' },
-        { k: 'slider', key: 'house_band_gap' },
-        { k: 'slider', key: 'house_band_rows' },
-        { k: 'slider', key: 'house_rail_glyph' },
-        { k: 'slider', key: 'house_tree_r' },
-        { k: 'slider', key: 'house_type_scale' },
-      ] },
     ];
 
     const defaults = {};
@@ -292,9 +297,15 @@
     const OPEN_KEY = 'forge.labPanel.open.v1';
     let openState = null;
     try { openState = JSON.parse(localStorage.getItem(OPEN_KEY) || 'null'); } catch (_) { /* ignore */ }
-    if (!openState || typeof openState !== 'object') {
-      openState = {};
-      for (const s of SECTIONS) openState[s.id] = !!s.open;
+    if (!openState || typeof openState !== 'object') openState = {};
+    // 2026-07-31 — a section added AFTER this key was first written had
+    // no entry here, and `undefined` is falsy, so every new section
+    // silently shipped COLLAPSED to anyone who had ever opened the LAB.
+    // That is exactly how the "House sizes" panel John asked for BY NAME
+    // arrived invisible to him. An id we have never stored falls back to
+    // its DECLARED default; one he has actually toggled keeps his choice.
+    for (const sec of SECTIONS) {
+      if (!Object.prototype.hasOwnProperty.call(openState, sec.id)) openState[sec.id] = !!sec.open;
     }
     function persistOpen() {
       try { localStorage.setItem(OPEN_KEY, JSON.stringify(openState)); } catch (_) { /* ignore */ }
