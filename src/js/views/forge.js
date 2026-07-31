@@ -7386,6 +7386,28 @@
     // stays the wheel; the LIVE B arrays lerp toward the new house.
     function startHouseTravel(next) {
       const cur = local._house;
+      // 2026-07-31 — A MORPH IS ONLY MEANINGFUL AT A FIXED INSTANCE
+      // COUNT. Before the rails every house drew the same instances in
+      // the same order, so cur and next were always the same length and
+      // reusing cur's arrays as the tween output was free. Now each
+      // family brings its OWN documents and court into the pack (Greek
+      // +161, Norse +27), so travelling between them changes both the
+      // count AND the instance→id mapping: index i is a different node
+      // on each side, so there is nothing to lerp. Reusing the shorter
+      // array also made drawFrame upload nodeCount*4 floats out of a
+      // shorter buffer — `writeBuffer: Number of bytes to write is too
+      // large`, which killed every travel into a bigger family.
+      // Different sizes ⇒ take the new house whole. The layout_mix ramp
+      // still carries the eye across; only the per-instance lerp is
+      // skipped, which could not have been correct anyway.
+      if (cur.nodePosB.length !== next.nodePosB.length
+          || cur.edgePosB.length !== next.edgePosB.length) {
+        local._house = next;
+        local._houseTravel = null;
+        local._housePosBDirty = true;
+        startAnimLoop();
+        return;
+      }
       local._houseTravel = {
         t: 0,
         fromNode: cur.nodePosB.slice(),
