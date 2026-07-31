@@ -84,6 +84,13 @@
       ['house_bones',    'House bones',  0,    1,   0.01, '',  'refocus'],
       ['house_veil',     'House veil',   0,    1,   0.01, ''],
       ['house_tween_ms', 'House tween',  200,  800, 10,   'ms'],
+      // THE RAILS (2026-07-31) — the Scriptorium + the Court are real
+      // mass now, so their three numbers are dials, not baked constants.
+      // Cap = how many slots a rail may DISPLAY (the family's true count
+      // is what the header and the crown claim either way).
+      ['house_rail_cap',   'Rail cap',   20,   400, 10,   '',  'house'],
+      ['house_rail_glyph', 'Rail glyph', 0.2,  0.7, 0.02, '×', 'house'],
+      ['house_rail_hit',   'Rail hit',   0,    12,  0.5,  'wu', 'house'],
     ];
     // THE HOUSE — layout radios. GEOMETRY GRADUATED (2026-07-30):
     // Cascade | Fan is a CANONICAL view control now — it lives in the
@@ -94,6 +101,9 @@
     const HOUSE_RADIOS = [
       ['house_ranks',    'Ranks',      ['lineage', 'era']],
       ['house_orphans',  'Unparented', ['domain', 'degree']],
+      // THE RAILS (2026-07-31) — 'off' is the honest zero: the house
+      // holds deities only, exactly as it did on 07-30.
+      ['house_rails',    'Rails',      ['on', 'off']],
     ];
     const TOGGLES = [
       ['recipe_irid',   'Iridescence'],
@@ -175,6 +185,9 @@
         { k: 'slider', key: 'house_bones' },
         { k: 'slider', key: 'house_veil' },
         { k: 'slider', key: 'house_tween_ms' },
+        { k: 'slider', key: 'house_rail_cap' },
+        { k: 'slider', key: 'house_rail_glyph' },
+        { k: 'slider', key: 'house_rail_hit' },
       ] },
     ];
 
