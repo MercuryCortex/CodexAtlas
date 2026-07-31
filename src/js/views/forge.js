@@ -571,6 +571,15 @@
     // ── WIRES · ZOOM CLAMP ── narrower band than pre-bake (was 0.5/4)
     wire_min_screen_px:   1,
     wire_max_screen_px:   2,
+    // 2026-07-31 — THE WIDTH CHANNEL WAS DEAD. min/max alone are a
+    // FLAT band: at any zoom below ~1.5× fit, fb_w_raw sits under the
+    // 1 CSS-px floor for an idle wire, a boned wire AND a fully-hot
+    // wire alike, so all three clamped to the identical hairline and
+    // the idle→hot width ramp never reached a pixel. This is the
+    // width a fully-HOT wire is guaranteed to reach (CSS px); the
+    // floor now rides the edge state between wire_min and this.
+    // 0 = off ⇒ the shader collapses to the old flat clamp exactly.
+    wire_hot_screen_px:   2.5,
 
     // ── GLYPHS ──
     glyph_scale:   0.85,
@@ -707,6 +716,35 @@
     // hover-hot). John: crown said "5 LINEAGE ARCS", screen showed
     // none. Reversible + visual + dev ⇒ it ships as a LAB dial.
     house_bones:           0.75,
+    // A child with several parents draws every arc, but only ONE of
+    // them is the primary (highest-degree) parent the layout anchored
+    // it under — familytree.js flags it. The secondary arcs are true
+    // and must still draw; they just must not shout as loud as the
+    // spine. Multiplier off house_bones. 1 = the old flat lift.
+    house_bone_secondary:  0.40,
+    // THE ARC — how far a lineage bone bows off its own chord, as a
+    // fraction of that chord. The generic engine wire bows toward
+    // WORLD ORIGIN, which for a radial parent→child pair inside a
+    // house is ALONG the chord (measured bow/chord 0.10 — a straight
+    // tick). A bone bows PERPENDICULAR instead. 0 = a straight bone.
+    house_arc_sag:         0.18,
+    // The width floor (CSS px) of a PRIMARY lineage bone, applied on
+    // top of the state-ridden band above — this is what makes the
+    // skeleton read as a skeleton rather than as one more hairline.
+    // 0 = the bone keeps only its state-derived width.
+    house_bone_px:         2.6,
+    // REST WIRES — the isolate drags the ENTIRE rest of the wheel
+    // into the house: ~4,400 wires between two OTHER families (both
+    // endpoints collapsed onto horizon ports) plus ~2,000 zero-length
+    // ones that render as solid radial spikes off every port. None of
+    // them says anything about THIS house, and measured they cover
+    // 50–59% of the tree's own pixels at a p90 stack of 23 deep.
+    //   'full'  — draw them all (the pre-07-31 picture)
+    //   'stubs' — hide only port↔port; a member's own reach still draws
+    //   'off'   — hide every external wire at rest (DEFAULT)
+    // Hover is unaffected either way: a hovered deity's own external
+    // wires come back, because the focus pass drives their state hot.
+    house_rest_wires:      'off',
     // THE VEIL — while isolated, how far the idle external mesh
     // recedes (0 = full wheel atmosphere, 1 = externals invisible
     // until hover). Bones + hover wires ride the hot ramp above it.
@@ -2113,16 +2151,36 @@
       housePosBAt:  (i) => (local._house
         ? [local._house.nodePosB[i * 4], local._house.nodePosB[i * 4 + 1], local._house.nodePosB[i * 4 + 2]]
         : null),
-      // THE BONES — verification surface: how many kinship wires the
-      // standing house lifted, and the live edge-target levels of the
-      // first few (must equal house_bones at rest, 1 when hovered).
+      // THE BONES — verification surface. 2026-07-31: reports BOTH
+      // populations, because the old single number counted raw vault
+      // edge types and could never agree with the crown's arc count —
+      // which is exactly what made the arcs defect undiagnosable.
+      //   arcs      — lay.house.stats.kinArcs, the crown's own number
+      //   arcPairs  — how many of those arcs found a vault wire (must
+      //               equal `arcs`, or the crown counts an invisible arc)
+      //   lifted    — raw wires lifted (> arcPairs where the vault
+      //               states a pair BOTH ways: 13 such pairs in Greek)
+      //   externals — how many wires the rest-wires chip is hiding
       houseBones: () => {
-        if (!local._house || !local._house.boneIdx) return null;
-        const idx = Array.from(local._house.boneIdx).slice(0, 8);
+        const h = local._house;
+        if (!h || !h.bones) return null;
+        const b = h.bones;
+        let ext = 0;
+        const minC = houseRestMinClass();
+        for (let i = 0; i < b.extern.length; i++) if (b.extern[i] >= minC) ext++;
+        const idx = Array.from(b.arc.keys()).slice(0, 8);
         return {
-          bones: local._house.boneIdx.size,
-          lift: local.params.house_bones,
-          sample: idx.map(i => [i, local.edgeTargets ? +(+local.edgeTargets[i]).toFixed(3) : null]),
+          arcs:      h.lay.house.stats.kinArcs,
+          arcPairs:  b.arcPairs,
+          lifted:    b.arc.size,
+          primary:   b.primary,
+          secondary: b.arc.size - b.primary,
+          lateral:   b.lat.size,
+          restWires: local.params.house_rest_wires,
+          externals: ext,
+          lift:      local.params.house_bones,
+          sample: idx.map(i => [i, +(b.arc.get(i)).toFixed(2),
+            local.edgeTargets ? +(+local.edgeTargets[i]).toFixed(3) : null]),
         };
       },
       // SCALE-pass acceptance surface: the DISPLAYED radius of a node
@@ -4269,12 +4327,13 @@
       // active focus/selected wires visible. Single-line fix on
       // the existing dim path.
       const wiresHidden   = document.body.classList.contains('fv-hide-wires');
-      // THE HOUSE VEIL (2026-07-30) — while isolated, the idle
-      // external mesh (hundreds of member→port wires) recedes so the
+      // THE HOUSE VEIL (2026-07-30) — while isolated, whatever idle
+      // mesh the rest-wires chip still lets through recedes so the
       // lifted BONES read as the skeleton they are. Same uniform the
       // focus dim rides: state-0 wires attenuate by (1−veil), boned
-      // wires (state 0.65) keep most of their light, hover-hot wires
-      // (state 1) are untouched. Honest zeros: no isolate ⇒ 0.
+      // wires (state house_bones, default 0.75) keep most of their
+      // light, hover-hot wires (state 1) are untouched. Honest zeros:
+      // no isolate ⇒ 0.
       const houseVeil = (local._isolateFamily && local._house)
         ? Math.max(0, Math.min(1, (typeof local.params.house_veil === 'number') ? local.params.house_veil : 0.55))
         : 0;
@@ -4324,6 +4383,12 @@
         dimAmountNodes:        effectiveDimN,
         wireMinScreenPx:       local.params.wire_min_screen_px,
         wireMaxScreenPx:       local.params.wire_max_screen_px,
+        // 2026-07-31 — the width a fully-HOT wire is guaranteed to
+        // reach. Without it min/max are a flat band and idle, boned
+        // and hot all clamp to the same hairline below ~1.5× fit.
+        // 0 restores the old flat clamp exactly.
+        wireHotScreenPx:       (typeof local.params.wire_hot_screen_px === 'number')
+                                 ? local.params.wire_hot_screen_px : 0,
         // Phase 7 (2026-05-20) — SELECTED uniforms: size + stroke.
         // Glow halo deleted. Stroke is a solid ring inside the disk edge.
         selectedSizeMult:      local.params.selected_size_mult,
@@ -4365,6 +4430,15 @@
         nodePosBDirty:         !!local._housePosBDirty,
         edgePosB:              local._house ? local._house.edgePosB : null,
         edgePosBDirty:         !!local._housePosBDirty,
+        // THE BONE + REST WIRES (2026-07-31). Both only reach a pixel
+        // through the per-instance house lane in edgePosB, which is
+        // zero-filled with no isolate — so these are honest zeros by
+        // construction, whatever John dials them to.
+        houseArcSag:           (typeof local.params.house_arc_sag === 'number')
+                                 ? local.params.house_arc_sag : 0,
+        houseBonePx:           (typeof local.params.house_bone_px === 'number')
+                                 ? local.params.house_bone_px : 0,
+        houseRestMinClass:     houseRestMinClass(),
         glyphScale:            (typeof local.params.glyph_scale === 'number') ? local.params.glyph_scale : 0.85,
         // ROUND-7 DRESS (2026-07-26) — the node-lab recipe, verbatim.
         // recipe_hover_zoom < 1 sends null → all-zero uniforms → the
@@ -6300,6 +6374,13 @@
     // Vault edge vocabulary → house arc lists. The layout module is
     // deliberately vocabulary-agnostic; the VIEW resolves types here
     // (same division of labor as the timeline's genealogy cascade).
+    // 2026-07-31 — every alternation below is now routed to the
+    // KINSHIP bucket in src/js/edge-buckets.js (including the
+    // `syncretic-` twins, which fell through to 'association' and
+    // split the aspect bars across two hues), with ONE deliberate
+    // exception: `syncretic-aspect-of` stays in FUSION per ONTOLOGY
+    // §3. It reaches the house only as a lateral bar, never as a
+    // lineage bone, so the skeleton itself is one hue in every family.
     const HOUSE_ASPECT_RE = /(avatara-of|manifestation-of|aspect-of|emanation-of|constituent-of)$/;
 
     function houseOptsFromParams() {
@@ -6553,15 +6634,30 @@
     // positions map) so instance order aligns; endpoints inset to
     // the disk perimeter by the same 0.92r law — using the HOUSE
     // radii where the layout supplied them (big gods, honest insets).
-    function bakeEdgePosB(positions, houseRadii) {
+    // 2026-07-31 — 6 floats/instance now. The two new lanes are THE
+    // HOUSE LANE, read only by the edge shader and only through
+    // layout_mix, so they are inert on the wheel:
+    //   [4] bone   — 0 for anything that is not a lineage arc of this
+    //                house; ±1.0 primary parent arc, ±0.5 secondary.
+    //                The SIGN is which side of its own chord the arc
+    //                bows to, baked from the arc's parent→child
+    //                direction so a `child-of` row and a `parent-of`
+    //                row on the same pair bow the SAME way.
+    //   [5] extern — 0 both endpoints in the house · 1 exactly one ·
+    //                2 neither (the information-free port↔port mesh).
+    // `bones` is the map built in buildHouse; the zoom-rebake caller
+    // (rebakeNodes) omits it and the standing house's own map is used.
+    function bakeEdgePosB(positions, houseRadii, bones) {
       const m = local.mode;
+      const bn = bones || (local._house && local._house.bones) || null;
       const radii = buildRadiiMap(m.nodePacked);
       if (houseRadii) for (const [id, r] of houseRadii) radii.set(id, r);
       const wheelPos = m.positions;
       const E = m.edgePacked.instanceCount;
-      const out = new Float32Array(E * 4);
+      const out = new Float32Array(E * 6);
       let i = 0;
-      for (const e of m.edges) {
+      for (let ei = 0; ei < m.edges.length; ei++) {
+        const e = m.edges[ei];
         if (!wheelPos.has(e.source) || !wheelPos.has(e.target)) continue;
         if (i >= E) break;
         const sp = positions.get(e.source) || wheelPos.get(e.source);
@@ -6576,8 +6672,13 @@
           sx = sp.x + nx * rs * 0.92; sy = sp.y + ny * rs * 0.92;
           tx = tp.x - nx * rt * 0.92; ty = tp.y - ny * rt * 0.92;
         }
-        const off = i * 4;
+        const off = i * 6;
         out[off] = sx; out[off + 1] = sy; out[off + 2] = tx; out[off + 3] = ty;
+        if (bn) {
+          const b = bn.arc.get(ei);
+          if (b) out[off + 4] = b;           // already signed ±1.0 / ±0.5
+          out[off + 5] = bn.extern[ei] || 0;
+        }
         i++;
       }
       return out;
@@ -6596,20 +6697,29 @@
       if (!memberIds.size) return null;
       const arcs = [], laterals = [], aspects = [];
       const portWeights = Object.create(null);
-      // THE BONES (2026-07-30) — raw indices into m.edges of every
-      // member↔member kinship wire. John's screenshots: the crown
-      // claimed "5 LINEAGE ARCS" and none were visible — they idle at
-      // slate 10% like any wire. At house rest these indices get a
-      // standing edge-state lift (applyHouseBonesOverride) so the
-      // skeleton actually SHOWS. Index space = raw edges; the packed
-      // instances align because every mode edge is renderable (same
-      // alignment law bakeEdgePosB already relies on).
-      const boneIdx = new Set();
+      // THE EXTERNAL CLASS (2026-07-31) — per raw edge index:
+      // 0 = both endpoints are members of this house, 1 = exactly one
+      // is, 2 = neither. Class 2 is the ~4,400-wire mesh between two
+      // OTHER families that the isolate drags in (and every one of the
+      // ~2,000 zero-length spikes, since both its endpoints sit on the
+      // same horizon port). The edge shader hides by class, gated on
+      // layout_mix — see house_rest_wires.
+      const extern = new Uint8Array(m.edges.length);
+      // CANDIDATE KINSHIP WIRES, keyed by unordered id-pair. The BONES
+      // themselves are resolved AFTER the layout returns (below), not
+      // from raw vault types — see the boneIdx REDO note there.
+      const pairKey = (a, b) => (a < b) ? (a + ' ' + b) : (b + ' ' + a);
+      const arcPairEi = new Map();   // pair → [raw edge indices] for lineage
+      const latPairEi = new Map();   // pair → [raw edge indices] for consort/aspect
+      const pushPair = (map, k, ei) => {
+        const l = map.get(k); if (l) l.push(ei); else map.set(k, [ei]);
+      };
       for (let ei = 0; ei < m.edges.length; ei++) {
         const e = m.edges[ei];
         const sIn = memberIds.has(e.source);
         const tIn = memberIds.has(e.target);
         if (sIn !== tIn) {
+          extern[ei] = 1;
           // external wire — its aggregate lights the horizon port
           const other = nodesById.get(sIn ? e.target : e.source);
           if (other) {
@@ -6618,12 +6728,13 @@
           }
           continue;
         }
-        if (!sIn) continue;
+        if (!sIn) { extern[ei] = 2; continue; }
         // member↔member — the bones + laterals
-        if (e.type === 'parent-of')      { arcs.push([e.source, e.target]); boneIdx.add(ei); }
-        else if (e.type === 'child-of')  { arcs.push([e.target, e.source]); boneIdx.add(ei); }
-        else if (e.type === 'consort')   { laterals.push([e.source, e.target]); boneIdx.add(ei); }
-        else if (HOUSE_ASPECT_RE.test(e.type || '')) { aspects.push([e.source, e.target]); boneIdx.add(ei); }
+        const pk = pairKey(e.source, e.target);
+        if (e.type === 'parent-of')      { arcs.push([e.source, e.target]); pushPair(arcPairEi, pk, ei); }
+        else if (e.type === 'child-of')  { arcs.push([e.target, e.source]); pushPair(arcPairEi, pk, ei); }
+        else if (e.type === 'consort')   { laterals.push([e.source, e.target]); pushPair(latPairEi, pk, ei); }
+        else if (HOUSE_ASPECT_RE.test(e.type || '')) { aspects.push([e.source, e.target]); pushPair(latPairEi, pk, ei); }
       }
       // Bearings + colors from the live hull data — the ports sit at
       // each family's TRUE wheel bearing so the mental map stays warm.
@@ -6655,35 +6766,136 @@
         return null;
       }
       if (!lay || !lay.positions || !lay.positions.size) return null;
+      // ── THE BONES, RESOLVED FROM THE LAYOUT (REDO 2026-07-31) ────
+      // This used to be built from RAW VAULT EDGE TYPES in the sweep
+      // above, before the layout ran. It therefore lifted a DIFFERENT
+      // population than the crown counts — 39 Norse wires against a
+      // crown reading "20 LINEAGE ARCS", because 19 of them were
+      // consorts, aspects and cycle-broken arcs the tree never draws
+      // as lineage. That mismatch is what made the arcs defect
+      // undiagnosable: the previous session reasoned from "39 lifted"
+      // to "they must be occluded". Derived from lay.house.arcs the
+      // lifted wires ARE the arcs the crown counts — and the layout's
+      // own `primary` flag comes along for free, so the anchor arc can
+      // outrank the secondary parents.
+      const H = lay.house;
+      const bones = { arc: new Map(), lat: new Set(), extern,
+                      arcPairs: 0, latPairs: 0, primary: 0 };
+      for (const a of (H.arcs || [])) {
+        const l = arcPairEi.get(pairKey(a.parent, a.child));
+        if (!l) continue;                       // an arc with no vault wire draws nothing
+        bones.arcPairs++;
+        for (const ei of l) {
+          const e = m.edges[ei];
+          // The bow side is baked from the ARC's direction, not the
+          // raw row's: a `child-of` row points the other way, and 13
+          // Greek pairs carry BOTH rows — they must bow together.
+          const side = (e.source === a.parent) ? 1 : -1;
+          bones.arc.set(ei, side * (a.primary ? 1.0 : 0.5));
+          if (a.primary) bones.primary++;
+        }
+      }
+      const latPair = (p, c) => latPairEi.get(pairKey(p, c));
+      for (const c of (H.consorts || [])) {
+        const l = latPair(c.a, c.b);
+        if (!l) continue; bones.latPairs++;
+        for (const ei of l) bones.lat.add(ei);
+      }
+      for (const a of (H.aspectArcs || [])) {
+        const l = latPair(a.hub, a.aspect);
+        if (!l) continue; bones.latPairs++;
+        for (const ei of l) bones.lat.add(ei);
+      }
       return {
         fam,
         lay,
         memberIds,
-        boneIdx,
+        bones,
         nodePosB: bakeNodePosB(lay.positions, lay.radii),
-        edgePosB: bakeEdgePosB(lay.positions, lay.radii),
+        edgePosB: bakeEdgePosB(lay.positions, lay.radii, bones),
       };
     }
 
     // THE BONES — a standing edge-state lift for the house's own
-    // kinship wires (lineage + consort + aspect, member↔member).
-    // Edge state is continuous: 0 idle → 1 hot; house_bones (LAB
-    // dial, default 0.75) parks the skeleton at a clearly-visible
-    // fraction of the hot ramp — kinship lilac, wider stroke —
-    // without screaming like a hover. HIDDEN (≥1.5) always wins;
-    // a real hover (1.0) always wins. Honest zeros: no isolate, no
-    // lift. Applied wherever edge targets are recomputed.
+    // kinship wires. Edge state is continuous: 0 idle → 1 hot;
+    // house_bones (LAB dial, default 0.75) parks the skeleton at a
+    // clearly-visible fraction of the hot ramp — wider stroke, the
+    // kinship hue — without screaming like a hover. The PRIMARY
+    // parent arc of each child gets the full lift; the secondary
+    // parents and the lateral bars (consorts, aspects) get
+    // house_bone_secondary of it, so the spine outranks the rest.
+    // HIDDEN (≥1.5) always wins; a real hover (1.0) always wins.
+    //
+    // 2026-07-31: the population is the LAYOUT's arcs, not the raw
+    // vault types — see the REDO note in buildHouse. Colour: these
+    // are the kinship bucket's ACTIVE colour (John's palette,
+    // active_color_kinship = '#0f8f31' green), NOT the '#C9A5D4'
+    // lilac the old comment here claimed — that hex is the bucket's
+    // IDLE base, which a boned wire has already mixed away from.
+    //
+    // Honest zeros: no house, no lift. Applied wherever edge targets
+    // are recomputed (recomputeFocus AND rebakeEdges).
+    //
+    // WHY THE GATE IS `_isolateFamily` AND NOT `_house` — do not
+    // "fix" this without also making settleHouse recomputeFocus.
+    // setIsolateFamily(null) nulls _isolateFamily and then calls
+    // recomputeFocus() at once, so the lift leaves the TARGETS the
+    // moment the exit starts and tickEdgeFades walks the bones back
+    // to idle over 100 ms while the 450 ms ramp flies home — a fade,
+    // not a pop. Gate on _house instead and nothing recomputes the
+    // targets after settleHouse frees it, so 146 kinship wires would
+    // stay lifted on the WHEEL until the next hover. The mesh hide
+    // has no such asymmetry: it rides layout_mix in the shader, so it
+    // fades out with the ramp and owns no target state at all.
     function applyHouseBonesOverride(targets) {
-      if (!local._isolateFamily || !local._house || !local._house.boneIdx) return;
+      const h = local._house;
+      if (!local._isolateFamily || !h || !h.bones) return;
       const lift = Math.max(0, Math.min(1,
         (typeof local.params.house_bones === 'number') ? local.params.house_bones : 0.75));
       if (!lift) return;
-      for (const ei of local._house.boneIdx) {
-        if (ei >= targets.length) continue;
+      const sec = lift * Math.max(0, Math.min(1,
+        (typeof local.params.house_bone_secondary === 'number')
+          ? local.params.house_bone_secondary : 0.40));
+      const put = (ei, level) => {
+        if (ei >= targets.length) return;
         const cur = targets[ei];
-        if (cur >= 1.5) continue;         // hidden stays hidden (tier filter / timeline)
-        if (cur < lift) targets[ei] = lift;
+        if (cur >= 1.5) return;           // hidden stays hidden (tier filter / timeline)
+        if (cur < level) targets[ei] = level;
+      };
+      for (const [ei, w] of h.bones.arc) put(ei, (Math.abs(w) >= 0.75) ? lift : sec);
+      for (const ei of h.bones.lat) put(ei, sec);
+    }
+    // Phase 21AS/21AX's source-tier + political-risk filters, lifted
+    // out of recomputeFocus (2026-07-31) so the SECOND edge-target
+    // site — rebakeEdges, the zoom re-pack path — applies them too.
+    // It did not, so any ≥15% zoom inside a house silently un-hid
+    // every tier-filtered and political-risk edge while the VIEW
+    // panel still showed those tiers as off. That is a content-safety
+    // leak, not a cosmetic one. HIDDEN wins, so this must run BEFORE
+    // applyHouseBonesOverride at both sites.
+    function applyEdgeHiddenFilters(targets) {
+      const activeTiers   = local._activeTiers;
+      const showPolitical = !!local._showPoliticalRisk;
+      const tierFilterOn  = activeTiers && activeTiers.size < 5;
+      if (!tierFilterOn && showPolitical) return;
+      const edges = local.mode.edges;
+      const n = Math.min(edges.length, targets.length);
+      for (let i = 0; i < n; i++) {
+        const e = edges[i];
+        const tier = e.source_tier || 'T1';
+        if (tierFilterOn && !activeTiers.has(tier)) { targets[i] = 2.0; continue; }
+        if (!showPolitical && e.political_risk_flag) targets[i] = 2.0;
       }
+    }
+    // The rest-wires chip → the shader's external-class threshold.
+    // An edge whose baked class is >= this is hidden at rest while
+    // the layout mix is up. 3 = hide nothing (and is also what the
+    // renderer assumes if this is ever absent).
+    function houseRestMinClass() {
+      const mode = local.params.house_rest_wires;
+      if (mode === 'off')   return 1;   // hide member↔port AND port↔port
+      if (mode === 'stubs') return 2;   // hide port↔port only
+      return 3;                         // 'full'
     }
 
     // ── The layout ramp — one scalar, retargetable, rest is still ──
@@ -7149,25 +7361,11 @@
       // with AND: an edge must pass BOTH (its tier is on AND either
       // it is not political-risk-flagged OR politicalRisk toggle is
       // ON) to render. Triple-checked-default policy from §IV.5.
-      const activeTiers     = local._activeTiers;
-      const showPolitical   = !!local._showPoliticalRisk;
-      const tierFilterOn    = activeTiers && activeTiers.size < 5;
-      if (tierFilterOn || !showPolitical) {
-        const edges = local.mode.edges;
-        for (let i = 0; i < edges.length; i++) {
-          const e = edges[i];
-          const tier = e.source_tier || 'T1';
-          // Hide by tier?
-          if (tierFilterOn && !activeTiers.has(tier)) {
-            newTargets[i] = 2.0;
-            continue;
-          }
-          // Hide by political-risk-flag? (independent of tier)
-          if (!showPolitical && e.political_risk_flag) {
-            newTargets[i] = 2.0;
-          }
-        }
-      }
+      // 2026-07-31 — extracted to applyEdgeHiddenFilters so the OTHER
+      // edge-target site (rebakeEdges) gets the identical treatment;
+      // it did not, and a >15% zoom inside a house resurrected every
+      // tier-filtered and political-risk wire.
+      applyEdgeHiddenFilters(newTargets);
       // THE HOUSE (2026-07-30) — the bones lift, after the filters
       // (hidden wins) and before the snap logic (a wire leaving
       // hidden snaps straight to its boned level, no orange flash).
@@ -9095,9 +9293,25 @@
       // (which the next animTick will fade toward) and only
       // resize the live states buffer if the edge count changed.
       const newTargets = graph.computeEdgeStates(m.edges, local.focusedSet);
+      // 2026-07-31 — the tier / political-risk filter must land here
+      // too. Without it a >15% zoom (which trips the re-pack) silently
+      // un-hid every wire the user had filtered off, with the VIEW
+      // panel still showing those tiers as off. Order matches
+      // recomputeFocus: hidden wins, then the bones lift.
+      applyEdgeHiddenFilters(newTargets);
       // THE HOUSE (2026-07-30) — the bones lift survives a zoom
       // rebake too (mirror of the recomputeFocus callsite).
       applyHouseBonesOverride(newTargets);
+      // Same HIDDEN snap the focus path uses (Phase 21AU): now that
+      // this path can also produce 2.0, a 0→2 transition must not
+      // fade THROUGH state 1 and flash the wire hot on its way out.
+      const prevStates = local.edgeStates;
+      if (prevStates && prevStates.length === newTargets.length) {
+        for (let i = 0; i < newTargets.length; i++) {
+          if (newTargets[i] >= 1.5) prevStates[i] = 2.0;
+          else if (prevStates[i] >= 1.5) prevStates[i] = newTargets[i];
+        }
+      }
       if (!local.edgeTargets || local.edgeTargets.length !== newTargets.length) {
         local.edgeTargets = newTargets;
       } else {

@@ -682,9 +682,16 @@
       // Phase 5C (2026-05-20) — node-unified opacity. Both disk
       // and glyph share the same dim formula now (uniform-driven,
       // state-derived), so glyph opacity no longer needs CPU per-
-      // frame computation. xy carries glyph_opacity + dim_amount_glyphs;
-      // zw spare. Lives in the slot freed by collapsing the unused
-      // 8th bucket entry (only 7 buckets are real).
+      // frame computation. xy carries glyph_opacity + dim_amount_glyphs.
+      // 2026-07-31 THE BONE — the two spare lanes are now live for the
+      // EDGE pipeline only (the node/glyph shaders still ignore them):
+      //   z = wire_hot_screen_px  (FB px; the width a fully-HOT wire
+      //       is guaranteed to reach — 0 restores the pre-07-31 clamp
+      //       exactly, which is this feature's honest-zero position)
+      //   w = house_arc_sag       (bone bow as a fraction of its own
+      //       chord; only reaches geometry through the house lane)
+      // Lives in the slot freed by collapsing the unused 8th bucket
+      // entry (only 7 buckets are real).
       glyph_params:           vec4<f32>,
       // THE HOUSE (2026-07-30) — pad through the node shader's six
       // recipe vec4s (unused here) so layout_mix lands at the same
@@ -695,6 +702,11 @@
       recipe_pad_d:           vec4<f32>,
       recipe_pad_e:           vec4<f32>,
       recipe_pad_f:           vec4<f32>,
+      // x = layout ramp 0..1 · y = glyph_scale (glyph pipeline) ·
+      // 2026-07-31: z = house_bone_px (FB px floor for a PRIMARY
+      // lineage bone) · w = rest-wires min external class (3 = hide
+      // nothing). Both z and w only bite through the per-instance
+      // house lane, which is zero-filled with no isolate.
       layout_mix:             vec4<f32>,
     };
     @group(0) @binding(0) var<uniform> v: View;
@@ -706,6 +718,7 @@
       @location(2) state:        f32,
       @location(3) bucket_index: f32,    // interpolated; floor() in fs
       @location(4) edge_t:       f32,    // 0 at source, 1 at target — gradient direction
+      @location(5) ext_class:    f32,    // instance-constant; 0 in-house, 1 member↔port, 2 port↔port
     };
 
     fn bezier_pos(p0: vec2<f32>, p1: vec2<f32>, p2: vec2<f32>, t: f32) -> vec2<f32> {
@@ -725,6 +738,7 @@
       @location(3) inst_extra:     vec4<f32>,
       @location(4) inst_state:     f32,
       @location(5) inst_endpoints_b: vec4<f32>,
+      @location(6) inst_house:     vec2<f32>,
     ) -> VsOut {
       // THE HOUSE — endpoints ride the layout ramp; external wires
       // land on their group's horizon port because the ported nodes
@@ -732,11 +746,40 @@
       let p0   = mix(inst_endpoints.xy, inst_endpoints_b.xy, v.layout_mix.x);
       let p2   = mix(inst_endpoints.zw, inst_endpoints_b.zw, v.layout_mix.x);
       let mid  = (p0 + p2) * 0.5;
-      let p1   = mid + (vec2<f32>(0.0, 0.0) - mid) * inst_extra.y;
+      // ── THE BONE (2026-07-31) ──────────────────────────────────
+      // inst_house.x is the house lane: 0 for every wire that is not
+      // a lineage arc of the standing house, ±1.0 for a PRIMARY
+      // parent arc, ±0.5 for a secondary one. The sign is which side
+      // of its own chord the arc bows to (baked so parent→child is
+      // consistent whichever way the raw vault edge points).
+      //
+      // The legacy control point pulls every wire toward WORLD ORIGIN,
+      // which for a radial parent→child pair inside a house is ALONG
+      // the chord — measured bow/chord 0.10, i.e. a straight tick. A
+      // bone instead bows PERPENDICULAR to its own chord by
+      // house_arc_sag × chord length, so it reads as an arc at any
+      // orientation. HONEST ZEROS: lane 0 or layout_mix 0 ⇒ the mix
+      // collapses to the original expression, bit for bit.
+      let hx        = v.layout_mix.x;
+      let bmag      = abs(inst_house.x);
+      let is_bone   = step(0.25, bmag);
+      let is_prim   = step(0.75, bmag);
+      let origin_p1 = mid + (vec2<f32>(0.0, 0.0) - mid) * inst_extra.y;
+      let chord     = p2 - p0;
+      let clen      = length(chord);
+      let perp_u    = select(vec2<f32>(0.0, 0.0), vec2<f32>(-chord.y, chord.x) / clen, clen > 1e-6);
+      let bone_p1   = mid + perp_u * (v.glyph_params.w * 2.0 * clen * sign(inst_house.x));
+      let p1        = mix(origin_p1, bone_p1, is_bone * hx);
       let t    = (quad_vertex.x + 1.0) * 0.5;
       let pos  = bezier_pos(p0, p1, p2, t);
       let tan  = bezier_tan(p0, p1, p2, t);
-      let tnorm = normalize(tan);
+      // A zero-length wire (both endpoints on one horizon port — the
+      // isolate makes ~2,000 of them) gives a zero tangent at t=0.5,
+      // and normalize(0) is NaN. Same value as normalize() wherever
+      // the tangent is real; a defined direction where it is not, so
+      // the quad degenerates to zero area instead of producing NaN.
+      let tlen  = length(tan);
+      let tnorm = select(vec2<f32>(1.0, 0.0), tan / tlen, tlen > 1e-9);
       let perp  = vec2<f32>(-tnorm.y, tnorm.x);
       // Phase 6: per-bucket idle + hot stroke widths are baked
       // into the instance attribute. inst_extra.x = idle width,
@@ -754,7 +797,25 @@
       // at zoom-out + stops them bloating at zoom-in.
       let world_to_fb = v.view_scale.x * v.viewport_px.x * 0.5;
       let fb_w_raw    = world_w_raw * world_to_fb;
-      let fb_w        = clamp(fb_w_raw, v.wire_min_screen_px, v.wire_max_screen_px);
+      // ── THE DEAD WIDTH CHANNEL (fixed 2026-07-31) ──────────────
+      // The old line was clamp(fb_w_raw, wire_min, wire_max). At the
+      // house camera (camScale 0.672, dpr 2) the idle wire computes
+      // 0.887 FB px, a boned wire 1.353 and a fully-HOT wire 1.508 —
+      // ALL THREE below wire_min (2 FB px), so all three clamped to
+      // the identical hairline and the entire idle→hot width channel
+      // was dead at every zoom below ~1.5× fit. The floor now RIDES
+      // the state: idle keeps wire_min, a hot wire is guaranteed
+      // glyph_params.z (wire_hot_screen_px), and a PRIMARY lineage
+      // bone gets its own floor on top (layout_mix.z, house-gated).
+      // The max() on every bound makes an inverted clamp impossible
+      // whatever John dials. HONEST ZEROS: glyph_params.z = 0 and a
+      // zero house lane reduce this to clamp(raw, wire_min, wire_max).
+      let st_w    = clamp(inst_state, 0.0, 1.0);
+      let hot_px  = max(v.wire_min_screen_px, v.glyph_params.z);
+      let bone_px = v.layout_mix.z * is_prim * hx;
+      let w_lo    = max(mix(v.wire_min_screen_px, hot_px, st_w), bone_px);
+      let w_hi    = max(v.wire_max_screen_px, w_lo);
+      let fb_w    = clamp(fb_w_raw, w_lo, w_hi);
       let world_w     = select(world_w_raw, fb_w / world_to_fb, world_to_fb > 0.0);
       let half_w      = world_w * 0.5;
       let world  = pos + perp * quad_vertex.y * half_w;
@@ -776,6 +837,7 @@
       out.state        = inst_state;
       out.bucket_index = inst_extra.z;
       out.edge_t       = t;
+      out.ext_class    = inst_house.y;
       return out;
     }
 
@@ -804,7 +866,23 @@
       // and zero the alpha so the fragment is discarded; this is
       // the same HIDDEN convention the node shader already uses.
       let vis_state = clamp(in.state, 0.0, 1.0);
-      let hidden    = step(1.5, in.state);            // 1.0 if HIDDEN, else 0.0
+      // ── REST WIRES (2026-07-31) ────────────────────────────────
+      // The isolate drags the whole rest of the wheel into the house:
+      // ~4,400 wires between two OTHER families, collapsed onto two
+      // horizon points, plus ~2,000 zero-length ones that render as
+      // solid radial spikes. A wire between two families neither of
+      // which is this house encodes NOTHING about this house, so
+      // hiding it is honest, not cosmetic. ext_class is baked per
+      // instance (0 = both endpoints in the house, 1 = one endpoint,
+      // 2 = neither); layout_mix.w is the LAB chip's threshold
+      // (3 = hide nothing). Hovering a deity still lights its own
+      // external wires because the focus pass drives their state to
+      // 1 and the ramp below hands them back.
+      // HONEST ZEROS: layout_mix.x is 0 with no isolate ⇒ ext == 0 ⇒
+      // 'hidden' is exactly the pre-07-31 step(1.5, state).
+      let ext       = step(v.layout_mix.w, in.ext_class) * v.layout_mix.x
+                      * (1.0 - smoothstep(0.55, 0.95, vis_state));
+      let hidden    = max(step(1.5, in.state), ext);  // 1.0 if HIDDEN, else 0.0
       let color    = mix(in.edge_color, hot, vis_state);
       // Dim multiplier: idle (state=0) is dimmed by dim_amount
       // when a focus is active. The view layer passes
@@ -1314,9 +1392,13 @@
           { arrayStride: 4, stepMode: 'instance', attributes: [
               { shaderLocation: 4, offset: 0, format: 'float32' },
           ] },
-          // [3] THE HOUSE — per-instance endpoints B (p0b, p2b).
-          { arrayStride: 16, stepMode: 'instance', attributes: [
-              { shaderLocation: 5, offset: 0, format: 'float32x4' },
+          // [3] THE HOUSE — per-instance endpoints B (p0b, p2b) plus
+          // the 2026-07-31 house lane (bone weight+side, external
+          // class). 6 floats / 24 bytes per instance; zero-filled and
+          // never uploaded while no house has been entered.
+          { arrayStride: 24, stepMode: 'instance', attributes: [
+              { shaderLocation: 5, offset:  0, format: 'float32x4' },
+              { shaderLocation: 6, offset: 16, format: 'float32x2' },
           ] },
         ],
       },
@@ -1917,8 +1999,13 @@
         viewData.set(bucketPalette, 16);
         viewData[44] = glyphOp;
         viewData[45] = glyphDim;
-        viewData[46] = 0;
-        viewData[47] = 0;
+        // 2026-07-31 — the two spare glyph_params lanes go live for
+        // the EDGE pipeline. Absent ⇒ 0 ⇒ the pre-07-31 clamp and a
+        // dead-flat bone, i.e. the honest-zero position for both.
+        viewData[46] = (typeof frame.wireHotScreenPx === 'number')
+          ? Math.max(0, frame.wireHotScreenPx) * dpr : 0;   // hot-wire FB px floor
+        viewData[47] = (typeof frame.houseArcSag === 'number')
+          ? frame.houseArcSag : 0;                          // bone bow / chord
         // ROUND-7 DRESS — recipe uniforms (floats 48..63). Absent
         // recipe ⇒ all zeros ⇒ the shader's honest-zero legacy path.
         const rc = frame.recipe || null;
@@ -1963,6 +2050,15 @@
         // house radius from the shared pos_b.z (disk radius) × this.
         // Multiplied by the mix term, so it is inert at mix 0.
         viewData[73] = (typeof frame.glyphScale === 'number') ? frame.glyphScale : 0.85;
+        // layout_mix.z = the PRIMARY lineage bone's width floor in FB
+        // px; .w = the rest-wires threshold (an external class >= this
+        // is hidden at rest). 3 hides nothing — and both only reach a
+        // pixel through the per-instance house lane, which is zero
+        // with no isolate, so the wheel is untouched either way.
+        viewData[74] = (typeof frame.houseBonePx === 'number')
+          ? Math.max(0, frame.houseBonePx) * dpr : 0;
+        viewData[75] = (typeof frame.houseRestMinClass === 'number')
+          ? frame.houseRestMinClass : 3;
         device.queue.writeBuffer(viewUbo, 0, viewData);
 
         // ── Instance buffers (static geometry) ──────
@@ -2065,11 +2161,14 @@
           }
         }
         if (edgeCount > 0) {
-          const bytes = edgeCount * 16;
+          // 2026-07-31 — 6 floats/instance: p0b.xy, p2b.xy, then the
+          // house lane (bone weight×side, external class). Widened
+          // from 4; the caller's array grew with it.
+          const bytes = edgeCount * 24;
           const r = ensureBuffer(edgePosBVbo, edgePosBVboSize, bytes, 'forge-edge-posb-vbo');
           edgePosBVbo = r.buf; edgePosBVboSize = r.size;
           if (frame.edgePosB && (frame.edgePosBDirty || r.grew)) {
-            device.queue.writeBuffer(edgePosBVbo, 0, frame.edgePosB, 0, edgeCount * 4);
+            device.queue.writeBuffer(edgePosBVbo, 0, frame.edgePosB, 0, edgeCount * 6);
           }
         }
 
