@@ -396,6 +396,12 @@
     const ranksMode = (o.ranks === 'era') ? 'era' : 'lineage';
     const orphanMode = (o.orphans === 'degree') ? 'degree' : 'domain';
     const spread = Math.max(0.6, Math.min(2, num(o.spread, 1.10)));
+    // THE GOD-SIZE DIAL (2026-07-31, postmortem worklist #5). John
+    // asked for a direct god-size control "many times" and was given
+    // adjacent P-side terms instead. This is the direct one: a
+    // multiplier on NODE_R_FRAC, so node radius scales without moving
+    // a single position. 1 = the ratified 0.34.
+    const godSize = Math.max(0.4, Math.min(2.2, num(o.godSize, 1)));
     // WAVE 5 — the packing law (see THE TWO PACKINGS above) and the
     // two pitch terms that decide god size, both dials now.
     const pack = (o.pack === 'toy') ? 'toy' : 'bed';
@@ -571,8 +577,31 @@
         seenAsp.add(key);
         aspectArcs.push({ p: hub, c: asp });
         if (parents[asp].length === 0) {
-          parents[asp].push(hub);
-          children[hub].push(asp);
+          // REACHABILITY GUARD (2026-07-31, ratified in the build-order
+          // and finally applied). If `asp` is already an ANCESTOR of
+          // `hub` through real kinship, a placement arc hub→asp
+          // manufactures a cycle — and the cycle breaker then deletes
+          // a REAL lineage arc to resolve it (the Celtic case: the
+          // lleu↔arianrhod aspect pair cost the true arianrhod→lleu
+          // arc on every build). An aspect whose hub descends from it
+          // simply keeps no placement parent; the lateral bar still
+          // draws either way.
+          let reaches = false;
+          {
+            const seen2 = new Set([hub]);
+            const st2 = [hub];
+            while (st2.length) {
+              const v = st2.pop();
+              if (v === asp) { reaches = true; break; }
+              for (const pp of parents[v]) {
+                if (!seen2.has(pp)) { seen2.add(pp); st2.push(pp); }
+              }
+            }
+          }
+          if (!reaches) {
+            parents[asp].push(hub);
+            children[hub].push(asp);
+          }
         }
       }
     }
@@ -590,8 +619,11 @@
     for (const a of arcs) a.primary = (primaryParent[a.c] === a.p);
 
     // ── 2b. Cycle guard — deterministic break, logged ───────
-    // Today this fires zero times (verified across all 30 families);
-    // the guard exists so bad data degrades a picture, not the app.
+    // With the aspect reachability guard above, this fires zero times
+    // across the gate families (asserted per family in
+    // check-familytree.mjs since 2026-07-31 — it used to be asserted
+    // for Greek only while Celtic's break printed mid-run unchecked).
+    // The guard exists so bad DATA degrades a picture, not the app.
     let cyclesBroken = 0;
     {
       const state = new Array(N).fill(0);   // 0 unvisited, 1 in-stack, 2 done
@@ -693,7 +725,11 @@
     // every house went tall + tiny). Fewer ranks = shorter house =
     // bigger gods after the camera fit.
     let RK = Math.max(maxLayer + 1, Math.ceil(N / 14), 3);
-    RK = Math.min(RK, 13);
+    // The 13-cap tames DENSITY ranks, never LINEAGE depth: a real
+    // chain of 14 generations must keep 14 rows or two generations
+    // collapse into one bed and the DAG lies (ratified 2026-07-31,
+    // applied with the other build-order fixes).
+    RK = Math.max(maxLayer + 1, Math.min(RK, 13));
     const eraRank = (i) => Math.round(era(i) * (RK - 1));
 
     const rank = new Array(N).fill(0);
@@ -871,7 +907,7 @@
     let P = 0;
     // Pack diff #6 — the node-radius floor (toy 2.6 wu, app 3).
     const nodeRMin = (pack === 'toy') ? TOY_NODE_R_MIN : BED_NODE_R_MIN;
-    const nodeR = (i) => Math.max(nodeRMin, P * NODE_R_FRAC * tierMult(i));
+    const nodeR = (i) => Math.max(nodeRMin, P * NODE_R_FRAC * godSize * tierMult(i));
     const groupKeyOf = (i) => (parents[i].length
       ? ('0c' + comp[i])
       : ('1' + (orphanMode === 'domain' ? (dom0(i) || '~') : '~')));
@@ -1083,7 +1119,14 @@
         }
         const base = prevRad ? prevRad + FAN_RING_U : FAN_R_IN_U;
         const needFlat = (g.wU + 1) / FAN_SPAN;
-        const needBraid = (g.wU * FAN_COMP / 2 + 1) / FAN_SPAN;
+        // THE /2 IS GONE (2026-07-31, ratified in the build-order,
+        // measured there at 350°+ closed annuli on Vedic/Israelite).
+        // The braid staggers members ±radially but every member still
+        // occupies its own ANGULAR slot at pitch ×FAN_COMP — halving
+        // the need let a ring accept twice what ±99° can hold, and the
+        // placement below (ang = xU·comp / radU) faithfully wrote the
+        // overflow all the way round the circle.
+        const needBraid = (g.wU * FAN_COMP + 1) / FAN_SPAN;
         if (needFlat <= base) { radU.push(base); braidOn.push(false); }
         else if (needBraid <= base) { radU.push(base); braidOn.push(true); }
         else { radU.push(Math.max(base, needBraid)); braidOn.push(true); }
@@ -1426,7 +1469,21 @@
       cols.forEach((c, gi) => {
         run += Math.max(0, c - 1) * pitch + (nSub > 1 ? pitch / 2 : 0) + spills[gi];
       });
-      let u = headArc + Math.max(0, (L - headArc - BAND_END_PAD - run) / 2);
+      // BALANCED ABOUT THE HORIZONTAL AXIS (2026-07-31, postmortem
+      // worklist #3 — "the side scriptorium and court nodes are NOT
+      // centered and unbalanced to the bottom"). Centring the run in
+      // the USABLE arc (after the head reserve, before the foot pad)
+      // biased every family's glyph mass low: the top gap is 24°, the
+      // bottom 12°, and the 230wu head reserve eats the top end — so
+      // the usable arc's middle sits well below 3/9 o'clock. The run
+      // now centres on the HORIZONTAL AXIS itself (angAt(u)=0), and
+      // only slides off it when the run is too long for the room on
+      // one side — the bottom capacity John asked for in wave 4 is
+      // still there for the families that need it.
+      const uAxis = L * ((Math.PI / 2 - gapRad) / bandSpan);
+      let u = uAxis - run / 2;
+      u = Math.min(u, L - BAND_END_PAD - run);
+      u = Math.max(headArc, u);
       // `parkedIds` is the remainder's id list — the view needs it to
       // bake an honest external class for the wires that land on the
       // crown (wave 2, EDGE-2), and re-deriving it in the view would

@@ -518,7 +518,7 @@ function buildTreeScene(famName){
       var g=rings[r];
       if(!g){ radU.push(prevRad?prevRad+ringU*0.5:rInU); braidOn.push(false); prevRad=radU[r]; return; }
       var base=prevRad?prevRad+ringU:rInU;
-      var needFlat=(g.wU+1)/span, needBraid=(g.wU*0.78/2+1)/span;
+      var needFlat=(g.wU+1)/span, needBraid=(g.wU*0.78+1)/span;   // /2 removed 2026-07-31 — braid compresses pitch, it does not halve need (350° annuli otherwise)
       if(needFlat<=base){ radU.push(base); braidOn.push(false); }
       else if(needBraid<=base){ radU.push(base); braidOn.push(true); }
       else { radU.push(Math.max(base,needBraid)); braidOn.push(true); }

@@ -364,6 +364,49 @@ checkFamily('Chinese', 'fan');
   else { console.log(''); fail('cascade vs fan changed rank membership'); }
 }
 
+// ── W6 · THE GUARD IS IDLE EVERYWHERE + THE FAN KEEPS ITS WINDOW ──
+// (2026-07-31 — the two build-order fixes finally applied, and the
+// two assertion GAPS that let them ship unfixed closed with them:
+// cyclesBroken===0 was asserted for Greek alone while Celtic's break
+// printed mid-run and the gate still passed; and nothing bounded a
+// fan ring's angular extent, so the braid /2 bug shipped 350° closed
+// annuli under a declared ±99° window.)
+console.log('\n── W6 · cycle guard idle + fan span, every gate family ──');
+{
+  const W6_FAMS = ['Greek', 'Norse', 'Vedic', 'Christian', 'Chinese', 'Egyptian',
+    'Mesopotamian', 'Celtic', 'Mesoamerican', 'Baltic', 'Other', 'Islamic', 'Buddhist'];
+  const FAN_SPAN_LIM = Math.PI * 1.10 + 0.03;   // the declared window + rounding air
+  let w6cyc = 0, w6span = 0, w6worst = 0;
+  for (const fam of W6_FAMS) {
+    for (const geo of ['cascade', 'fan']) {
+      const lay = houseFor(fam, geo);
+      if (!lay || !lay.house) continue;
+      const cb = (lay.house.stats && lay.house.stats.cyclesBroken) || 0;
+      if (cb !== 0) { w6cyc++; fail(fam + '/' + geo + ': cycle guard fired ' + cb + '× (a real arc was deleted)'); }
+      if (geo !== 'fan') continue;
+      const ctr = lay.house.center, fy = ctr.y + (lay.house.fanDy || 0);
+      for (const row of lay.house.rows) {
+        if (!row || row.length < 2) continue;
+        let amin = Infinity, amax = -Infinity, all = true;
+        for (const id of row) {
+          const p = lay.positions.get(id);
+          if (!p) { all = false; break; }
+          let a = Math.atan2(p.y - fy, p.x - ctr.x) + Math.PI / 2;   // 0 = 12 o'clock
+          if (a > Math.PI) a -= 2 * Math.PI;
+          if (a < amin) amin = a;
+          if (a > amax) amax = a;
+        }
+        if (!all) continue;   // parked/absent members are not a span question
+        const ext = amax - amin;
+        if (ext > w6worst) w6worst = ext;
+        if (ext > FAN_SPAN_LIM) { w6span++; fail(fam + ': fan ring spans ' + (ext * 180 / Math.PI).toFixed(1) + '° (window is 198°)'); }
+      }
+    }
+  }
+  if (w6cyc === 0) ok('cycle guard idle across ' + W6_FAMS.length + ' families × both geometries');
+  if (w6span === 0) ok('every fan ring inside its ±99° window (worst ' + (w6worst * 180 / Math.PI).toFixed(1) + '°)');
+}
+
 // THE RAILS (2026-07-31) — the union input the view now feeds.
 // Greek is the reference family: 241 vault nodes = 80 deities +
 // 24 documents + 137 court. If any of these three numbers moves,
@@ -1730,7 +1773,13 @@ else fail('(layout) CASCADE_BIAS still exists: the tree is still being pushed as
   // cascade that did reach its lane, in the fan geometry).
   const FLOOR = {
     Greek: 19.0, Norse: 20.8, Vedic: 16.8, Christian: 28.0, Chinese: 22.8,
-    Egyptian: 16.6, Mesopotamian: 16.4, Celtic: 24.0, Mesoamerican: 20.0, Baltic: 32.6,
+    // Celtic re-measured 24.0 → 23.0 on 2026-07-31: the aspect
+    // reachability guard restored the REAL arianrhod→lleu lineage arc
+    // (the old floor was measured on a tree the cycle breaker had
+    // silently shallowed by deleting it). One true generation deeper
+    // = 3.75% smaller gods. Honest depth beats a flattering number;
+    // the god-size dial exists for taste.
+    Egyptian: 16.6, Mesopotamian: 16.4, Celtic: 23.0, Mesoamerican: 20.0, Baltic: 32.6,
   };
   let low = 0;
   const line = [];
