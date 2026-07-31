@@ -6117,11 +6117,30 @@
         // names, orphan captions) paints AFTER the deity-name pass
         // below, so a caption can never outrank a god's name —
         // audit: house-chrome-priority-order-inverted.
+        local._bandSpineIds = new Set();
         renderHouseChrome(ctx, placed, vp);
+      } else {
+        local._bandSpineIds = null;
       }
+      // Filled by renderBandCaptions (which runs inside the call above,
+      // i.e. BEFORE this pass) with every id it has already named in
+      // mono on the ring. Null off the ring ⇒ honest zero, this pass
+      // behaves exactly as it did before the band existed.
+      const bandSpokeFor = local._bandSpineIds;
       const seen = new Set();
       const draws = [];
       for (const c of cands) {
+        // ONE NAME PER NODE (2026-07-31, John: "there are many labels
+        // over and randomly always on, what are these?????"). A shelf's
+        // SPINE has already been named in mono by renderBandCaptions,
+        // which runs earlier in this same paint. This pass would then
+        // name it AGAIN in the big face, outboard of the ring — the
+        // same string twice, in two type sizes, a few px apart. It got
+        // past claim() legitimately: the two rects are far enough apart
+        // that they do not collide, so nothing was overlapping and
+        // nothing was wrong except that it said the same thing twice.
+        // He caught it in the Mesoamerican house on `Tonalpohualli`.
+        if (bandSpokeFor && bandSpokeFor.has(c.id)) continue;
         const s = camera.worldToScreen(c.n.x, c.n.y, vp);
         if (s.x < -vMargin || s.x > vp.w + vMargin
             || s.y < -vMargin || s.y > vp.h + vMargin) continue;
@@ -6807,6 +6826,12 @@
             if (claim(scx, spineY, sw + 4)) {
               ctx.fillStyle = _labelsTextColor; ctx.globalAlpha = 0.9;
               halo(title, sx, spineY);
+              // This node is now named. The reach pass must not name it
+              // a second time in the big face — see the ONE NAME PER
+              // NODE note there. Recorded only on a successful claim:
+              // a spine that lost its rect was never drawn, so it is
+              // still free for the reach pass to pick up.
+              if (local._bandSpineIds) local._bandSpineIds.add(sh.spineId);
             }
           }
         }
