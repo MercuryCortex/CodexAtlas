@@ -1,7 +1,7 @@
 # HANDOFF — THE RAILS (2026-07-31)
 
 > Self-contained pickup. Everything below is **committed on `main`** and
-> **DEPLOYED 2026-07-31** — `codexatlas.org` serves `?v=20260731-wave3b` (THE RING + the type scale + the three interaction laws), verified in real Safari against the live domain. Read this,
+> **DEPLOYED 2026-07-31** — `codexatlas.org` serves `?v=20260731-wave3d` (THE RING + the type scale + the three interaction laws), verified in real Safari against the live domain. Read this,
 > then `00_meta/HOW-WE-WORK.md`.
 >
 > Supersedes `HANDOFF-2026-07-30-house-devdoor.md`.
