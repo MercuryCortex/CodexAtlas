@@ -106,6 +106,19 @@
       ['house_rail_cap',   'Rail cap',   20,   400, 10,   '',  'house'],
       ['house_rail_glyph', 'Rail glyph', 0.2,  0.7, 0.02, '×', 'house'],
       ['house_rail_hit',   'Rail hit',   0,    12,  0.5,  'wu', 'house'],
+      // THE THREE ZONES (2026-07-31 wave 3) — John asked for this
+      // panel by name: "a panel just dedicated to the sizes macro of
+      // these three sections". Outside in: the horizon ports ring,
+      // the inner band (Scriptorium + Court on one arc-sectioned
+      // ring), and the tree zone the cascade/fan solves against.
+      // Plus the house chrome's type scale. All live on the standing
+      // house (they re-run the layout via houseSnap).
+      ['house_port_inset', 'Ports ring',  0.85, 1.15, 0.005, '×', 'house'],
+      ['house_band_r',     'Band radius', 0.60, 1.00, 0.005, '×', 'house'],
+      ['house_band_gap',   'Band gap',    8,    45,   1,     '°', 'house'],
+      ['house_band_rows',  'Band rows',   1,    4,    1,     '',  'house'],
+      ['house_tree_r',     'Tree zone',   0.50, 1.00, 0.005, '×', 'house'],
+      ['house_type_scale', 'Type scale',  0.8,  1.6,  0.05,  '×', 'house'],
       // The wheel-state "CLICK A FAMILY TITLE — THE HOUSE" line. 0 =
       // the wheel paints byte-identical to before the hint existed.
       // (Agent C shipped the dial; its LAB row could not be added from
@@ -222,9 +235,22 @@
         { k: 'slider', key: 'house_veil' },
         { k: 'slider', key: 'house_tween_ms' },
         { k: 'slider', key: 'house_rail_cap' },
-        { k: 'slider', key: 'house_rail_glyph' },
         { k: 'slider', key: 'house_rail_hit' },
         { k: 'slider', key: 'house_hint_line' },
+      ] },
+      // THE SIZES PANEL (2026-07-31 wave 3) — John, by name: "it will
+      // be easier to dev this if you add also a panel just dedicated
+      // to the sizes macro of these three sections". The three
+      // concentric zones of the house (ports ring / inner band /
+      // tree zone), the band's glyph size, and the chrome type scale.
+      { id: 'housesizes', title: 'House sizes — the three zones', open: false, items: [
+        { k: 'slider', key: 'house_port_inset' },
+        { k: 'slider', key: 'house_band_r' },
+        { k: 'slider', key: 'house_band_gap' },
+        { k: 'slider', key: 'house_band_rows' },
+        { k: 'slider', key: 'house_rail_glyph' },
+        { k: 'slider', key: 'house_tree_r' },
+        { k: 'slider', key: 'house_type_scale' },
       ] },
     ];
 
@@ -321,7 +347,8 @@
     function fmt(k, v) {
       if (k === 'recipe_wake_cap' || k === 'recipe_gate_px' || k === 'recipe_wake_radius_px'
           || k === 'film_full_pct' || k === 'film_fade_pct'
-          || k === 'house_tween_ms') return String(Math.round(v));
+          || k === 'house_tween_ms' || k === 'house_band_gap'
+          || k === 'house_band_rows' || k === 'house_rail_cap') return String(Math.round(v));
       return (+v).toFixed(2);
     }
     function recipeStr() {
@@ -353,6 +380,12 @@
         + ' sag ' + (+p.house_arc_sag || 0).toFixed(2)
         + ' ' + (+p.house_bone_px || 0).toFixed(1) + 'px'
         + ' · rest-wires ' + (p.house_rest_wires || 'off')
+        + ' · ZONES port ' + (+p.house_port_inset || 1).toFixed(2)
+        + ' band ' + (+p.house_band_r || 0.86).toFixed(2)
+        + ' gap ' + Math.round(p.house_band_gap || 24)
+        + ' rows ' + Math.round(p.house_band_rows || 3)
+        + ' tree ' + (+p.house_tree_r || 0.86).toFixed(2)
+        + ' type x' + (+p.house_type_scale || 1).toFixed(2)
         + ' · WIRE px ' + (+p.wire_min_screen_px || 0).toFixed(1)
         + '/' + (+p.wire_max_screen_px || 0).toFixed(1)
         + ' hot ' + (+p.wire_hot_screen_px || 0).toFixed(1);

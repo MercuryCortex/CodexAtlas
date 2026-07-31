@@ -193,17 +193,61 @@ function checkUnion(fam, geometry, expect) {
     if (shelfSum === rail.shown) ok(side + ' rail: shelf slots sum to shown (' + shelfSum + ')');
     else fail(side + ' rail: shelves hold ' + shelfSum + ' but shown says ' + rail.shown);
   }
-  // 4 ▸ no rail slot may sit on top of another
-  let railOverlap = 0;
-  for (const rail of [rl, rr]) {
-    if (!rail) continue;
-    const ys = [];
-    for (const sh of rail.shelves) for (const it of sh.items) ys.push(it.y);
-    ys.sort((x, y) => x - y);
-    for (let i = 1; i < ys.length; i++) if (ys[i] - ys[i - 1] < 2 * rail.glyphR - 0.01) railOverlap++;
+  // 4 ▸ no band slot may sit on top of another (2D — the rails are a
+  // ring since wave 3: sub-rows + stagger, so a 1D y-sort would both
+  // miss real overlaps and invent false ones)
+  {
+    const pts = [];
+    for (const rail of [rl, rr]) {
+      if (!rail) continue;
+      for (const sh of rail.shelves) for (const it of sh.items) pts.push({ x: it.x, y: it.y, r: rail.glyphR });
+    }
+    let railOverlap = 0, worstGap = Infinity;
+    for (let i = 0; i < pts.length; i++) for (let j = i + 1; j < pts.length; j++) {
+      const g = Math.hypot(pts[i].x - pts[j].x, pts[i].y - pts[j].y) - pts[i].r - pts[j].r;
+      if (g < worstGap) worstGap = g;
+      if (g < -0.01) railOverlap++;
+    }
+    if (railOverlap === 0) ok('zero overlapping band slots (' + pts.length + ' slots, worst gap '
+      + (worstGap === Infinity ? '—' : worstGap.toFixed(2) + ' wu') + ')');
+    else fail(railOverlap + ' overlapping band slots (worst gap ' + worstGap.toFixed(2) + ')');
   }
-  if (railOverlap === 0) ok('zero overlapping rail slots');
-  else fail(railOverlap + ' overlapping rail slots');
+  // 5 ▸ THE RING'S OWN GEOMETRY (wave 3): every slot inside its
+  // rail's annulus, on its own side, outside the 12/6 o'clock gaps;
+  // the cascade fully inside the band's inner edge.
+  {
+    let annBad = 0, sideBad = 0, gapBad = 0;
+    for (const rail of [rl, rr]) {
+      if (!rail) continue;
+      for (const sh of rail.shelves) for (const it of sh.items) {
+        const rr2 = Math.hypot(it.x, it.y);
+        if (rr2 + rail.glyphR > rail.rOut + 0.01 || rr2 - rail.glyphR < rail.rIn - 0.01) annBad++;
+        if (Math.sign(it.x) !== Math.sign(rail.side)) sideBad++;
+        // bearing distance from the vertical axis must beat the gap
+        const fromVert = Math.abs(Math.abs(Math.atan2(it.y, it.x)) - Math.PI / 2);
+        if (fromVert < rail.gapRad - 1e-6) gapBad++;
+      }
+    }
+    if (annBad === 0) ok('every band slot inside its annulus [rIn, rOut]');
+    else fail(annBad + ' band slots leave their annulus');
+    if (sideBad === 0) ok('every slot on its own side (docs left, court right)');
+    else fail(sideBad + ' slots crossed to the wrong side');
+    if (gapBad === 0) ok('the 12 & 6 o\'clock gaps hold — no slot under the crown or the foot');
+    else fail(gapBad + ' slots inside the crown/foot gaps');
+    let maxExt = 0;
+    for (const row of h.rows) for (const id of row) {
+      const p = a.positions.get(id);
+      const e = Math.hypot(p.x, p.y) + (a.radii.get(id) || 0);
+      if (e > maxExt) maxExt = e;
+    }
+    const rIn = Math.min(rl ? rl.rIn : Infinity, rr ? rr.rIn : Infinity);
+    if (rIn === Infinity || maxExt < rIn) {
+      ok('cascade stays inside the band (max member extent ' + maxExt.toFixed(0)
+        + ' wu < band inner ' + (rIn === Infinity ? '—' : rIn.toFixed(0)) + ')');
+    } else {
+      fail('cascade pokes into the band: extent ' + maxExt.toFixed(0) + ' vs rIn ' + rIn.toFixed(0));
+    }
+  }
   if (expect) expect(a, h);
   return a;
 }
@@ -558,116 +602,269 @@ for (const [fam, modeType] of [['Christian', 'deity'], ['Other', 'deity'], ['Oth
   }
 }
 
-// ── W2-D ▸ EVERY PROMISED STRING CAN ACTUALLY LAND ──────────
-// claim() refuses a rect whose centre is within 15px of one already
-// placed. Two rail strings were geometrically unable to clear it at
-// any viewport: the shelf spine name (10.5 WORLD units under its own
-// caption = 6.9-8.6 screen px) and every rail item's REACH name (the
-// obstacle column sits at the rail's own screen x).
-console.log('\n── W2-D · the rails\' own names can land (the 15px rule) ──');
-must(/const RAIL_ROW = 17;/, 'the rail row pitch is SCREEN px, not world geometry');
-must(/const RAIL_CAP_DX = 10, RAIL_NAME_DX = 11;/, 'the outboard x offsets clear the 14-wide obstacle');
-must(/lx = s\.x \+ rs \* \(rBub \+ 9 \+ wpx \/ 2\);/, 'a rail item\'s name is placed OUTBOARD of the rail');
-const RAIL_ROW = 17, RAIL_CAP_DX = 10, RAIL_NAME_DX = 11;
-const OBST_W = 14, OBST_PITCH = 22, KEEPOUT_TOP = 52, KEEPOUT_BOTTOM = 58;
-for (const fam of ['Greek', 'Norse', 'Egyptian', 'Mesopotamian', 'Christian']) {
-  const h = houseUnion(fam, 'cascade').house;
-  let spineBad = 0, spineTot = 0, nameBlocked = 0, nameTot = 0;
-  for (const vp of [{ w: 1440, h: 900 }, { w: 1280, h: 800 }, { w: 1000, h: 1000 }, { w: 900, h: 1600 }]) {
-    const camScale = Math.min(vp.w / (2 * (540 + 70)), vp.h / (2 * (540 + 70)));
-    const W2S = (x, y) => ({ x: vp.w / 2 + x * camScale, y: vp.h / 2 + y * camScale });
-    for (const rl of [h.rails.left, h.rails.right]) {
-      if (!rl || !rl.shelves.length) continue;
-      // the obstacle column, exactly as renderHouseChrome claims it
-      const top = W2S(rl.x, rl.shelves[0].capY - 10);
-      const bot = W2S(rl.x, rl.shelves[rl.shelves.length - 1].y1 + 8);
-      const obst = [];
-      for (let y = Math.max(top.y, KEEPOUT_TOP); y <= Math.min(bot.y, vp.h - KEEPOUT_BOTTOM); y += OBST_PITCH) {
-        obst.push([top.x, y, OBST_W]);
-      }
-      // 1 ▸ the spine name vs its OWN caption (the measured defect)
-      for (const sh of rl.shelves) {
-        if (!sh.spineId) continue;
-        spineTot++;
-        const cp = W2S(rl.x, sh.capY);
-        const w = 70;                       // representative title width
-        const capCx = rl.side < 0 ? cp.x - RAIL_CAP_DX - w / 2 : cp.x + RAIL_CAP_DX + w / 2;
-        const spCx  = rl.side < 0 ? cp.x - RAIL_NAME_DX - w / 2 : cp.x + RAIL_NAME_DX + w / 2;
-        const sy = cp.y + RAIL_ROW;
-        if (Math.abs(spCx - capCx) < (w + w + 4) / 2 && Math.abs(sy - cp.y) < 15) spineBad++;
-        for (const P of obst) {
-          if (Math.abs(spCx - P[0]) < (w + P[2]) / 2 && Math.abs(sy - P[1]) < 15) { spineBad++; break; }
-        }
-      }
-      // 2 ▸ every rail item's REACH name, placed outboard. A name that
-      //     does not FIT beside the rail (a narrow viewport puts the
-      //     rail ~100px from the edge) is a geometric loss, not this
-      //     defect — the defect was that a name which fits was blocked
-      //     by the column anyway, 463 of 463 slots at 1440x900.
-      for (const sh of rl.shelves) for (const it of sh.items) {
-        const s = W2S(rl.x, it.y);
-        const wpx = 90, rBub = 5 * camScale;      // house_rail_hit floor
-        const want = s.x + rl.side * (rBub + 9 + wpx / 2);
-        if (want - wpx / 2 < 6 || want + wpx / 2 > vp.w - 6) continue;   // off-viewport
-        nameTot++;
-        const ly = s.y + 4;
-        for (const P of obst) {
-          if (Math.abs(want - P[0]) < (wpx + P[2]) / 2 && Math.abs(ly - P[1]) < 15) { nameBlocked++; break; }
-        }
-      }
-    }
+// ── W3 ▸ THE RING — every promised string can land, and the probe ──
+// (2026-07-31 wave 3 — supersedes W2-D and its vertical-rail
+// tripwires: the rails are ONE RING now, sectioned by arc, docs
+// left / court right, with the band as an arc-shaped obstacle
+// shield. See familytree.js §7 for the ratified design argument.)
+//
+// claim() refuses a rect whose centre is within 15px vertically AND
+// (w+P.w)/2 horizontally of one already placed. Every string the
+// ring promises — both headers, every shelf caption, every spine
+// name, the overflow foot, and every slot's radially-outboard REACH
+// name — is replayed here through the exact placement arithmetic at
+// four viewports, in the view's real paint order (crown stack →
+// band shield → headers, then the LOW half). PROVE A PROMISED
+// STRING ACTUALLY PRINTS — the standing law that bit three times.
+console.log('\n── W3 · THE RING — every promised string can land (the 15px rule) ──');
+// the view's laws, pinned so this mirror cannot drift silently
+must(/const TYPE = \{ head: 11 \* ts, name: 10 \* ts, cap: 9\.5 \* ts \};/,
+  'the type scale steps are HEAD 11 / NAME 10 / CAP 9.5 CSS px');
+must(/const row = \(px\) => Math\.max\(16, Math\.round\(px \* 1\.9\)\);/,
+  'row pitch DERIVES from the step size and always clears the 15px rule');
+must(/const CROWN_ROW = row\(TYPE\.head\);/, 'the crown stack pitch derives from the HEAD step');
+must(/const aStep = 22 \/ Math\.max\(1e-6, rl\.r \* camS\);/,
+  'the band obstacle shield follows the ARC at 22px screen pitch');
+must(/let hx = hp\.x \+ rl\.head\.ux \* 26;/,
+  'the header steps 26px outward along its arc-end bearing');
+must(/const cx0 = outR \? lx \+ w \/ 2 : lx - w \/ 2;/,
+  'a shelf caption extends AWAY from the band (the √(7²+15²) argument)');
+must(/spineY = ly \+ \(sh\.uy < -0\.35 \? -row\(TYPE\.cap\) : row\(TYPE\.cap\)\);/,
+  'the spine sits one DERIVED type row off its caption, away from the band');
+must(/lx = s\.x \+ ux \* \(rBub \+ 32 \+ wpx \/ 2\);/,
+  'a rail slot\'s reach name goes RADIALLY outboard, 32px off the glyph');
+must(/renderBandCaptions\(ctx, claim, halo, W2S, TYPE, row, font, house, vp\);/,
+  'shelf captions + spines claim in the HIGH half, BEFORE the ports (canonical beats wayfinding)');
+must(/const glyphR = Math\.min\(RAIL_R_MAX, Math\.max\(0\.8, pitch \* rFrac\), 0\.49 \* minDist\);/,
+  '(layout) glyphs cap at 0.49·minDist — no dial position can make two slots touch', treeSrc);
+must(/const hasBand = \(docs\.length \+ court\.length\) > 0;/,
+  '(layout) no docs + no court ⇒ no band ⇒ pre-ring geometry, byte-identical (honest zero)', treeSrc);
+must(/const minDist = Math\.min\(BAND_SHELF_GAP,/,
+  '(layout) the shelf gap bounds the glyph too, or max-size glyphs touch across shelf borders', treeSrc);
+
+// The mirror. Mono advance ≈ 0.6em; 0.62 is the conservative bound.
+const T_HEAD = 11, T_NAME = 10, T_CAP = 9.5;
+const rowOf = (px) => Math.max(16, Math.round(px * 1.9));
+const mw = (str, px) => String(str).length * px * 0.62 + 8;
+const KO_TOP = 52, KO_BOT = 58;
+function claimSim(placed, cx0, y, w, vpH) {
+  if (y < KO_TOP || y > vpH - KO_BOT) return false;
+  for (const P of placed) {
+    if (Math.abs(cx0 - P[0]) < (w + P[2]) / 2 && Math.abs(y - P[1]) < 15) return false;
   }
-  if (spineBad === 0) ok(fam + ': all ' + spineTot + ' shelf spine names clear their caption AND the obstacle column (4 viewports)');
-  else fail(fam + ': ' + spineBad + ' of ' + spineTot + ' spine names are still refused');
-  if (nameBlocked === 0) ok(fam + ': 0 of ' + nameTot + ' rail slots are blocked by the obstacle column (4 viewports)');
-  else fail(fam + ': ' + nameBlocked + ' of ' + nameTot + ' rail names still cannot print');
+  placed.push([cx0, y, w]);
+  return true;
 }
-// …and the rules these replaced really were unsatisfiable, at every
-// zoom — not merely unlucky. Both are pure geometry, so this is a
-// standing tripwire against reintroducing a world-space row pitch.
-{
-  const h = houseUnion('Greek', 'cascade').house;
-  let oldSpineRefused = 0, oldSpineTot = 0, oldNameBlocked = 0, oldNameTot = 0;
-  for (const vp of [{ w: 1440, h: 900 }, { w: 1280, h: 800 }, { w: 1000, h: 1000 }]) {
-    const camScale = Math.min(vp.w / (2 * (540 + 70)), vp.h / (2 * (540 + 70)));
-    const W2S = (x, y) => ({ x: vp.w / 2 + x * camScale, y: vp.h / 2 + y * camScale });
+const RING_VPS = [{ w: 1440, h: 900 }, { w: 1280, h: 800 }, { w: 1000, h: 1000 }, { w: 900, h: 1600 }];
+for (const fam of ['Greek', 'Christian', 'Norse', 'Egyptian', 'Mesopotamian', 'Other']) {
+  const lay = houseUnion(fam, 'cascade');
+  const h = lay.house;
+  let headerFail = 0, capFail = 0, capTot = 0, spineFail = 0, spineTot = 0;
+  let footFail = 0, footTot = 0, nameBlocked = 0, nameTot = 0, clampSkip = 0;
+  for (const vp of RING_VPS) {
+    const scale = Math.min(vp.w, vp.h) / (2 * (540 + 70));
+    const W2S = (x, y) => ({ x: vp.w / 2 + x * scale, y: vp.h / 2 + y * scale });
+    const placed = [];
+    // 1 ▸ the crown stack (HIGH half, before the rails) — width from
+    // the real strings the crown prints for this family.
+    const st = h.stats;
+    const cs = W2S(h.crown.x, h.crown.y);
+    const CROWN_ROW = rowOf(T_HEAD);
+    const noun = st.treeKind ? (String(st.treeKind) + 's').replace(/ys$/, 'ies').toUpperCase() : 'MEMBERS';
+    const line1 = st.tree + ' ' + noun + ' · ' + st.kinArcs + ' LINEAGE ARCS · ' + st.orphanCount + ' STAND ON THEIR ERA';
+    const line2 = st.docs + ' IN THE SCRIPTORIUM · ' + st.court + ' IN THE COURT';
+    claimSim(placed, cs.x, cs.y + CROWN_ROW, mw(line1, T_HEAD), vp.h);
+    claimSim(placed, cs.x, cs.y + CROWN_ROW * 2, mw(line2, T_CAP), vp.h);
+    claimSim(placed, cs.x, cs.y + CROWN_ROW * 3, 110, vp.h);          // CASCADE/FAN chip reserve
+    // 2 ▸ the band shield, exactly as renderHouseChrome claims it
     for (const rl of [h.rails.left, h.rails.right]) {
       if (!rl || !rl.shelves.length) continue;
-      const top = W2S(rl.x, rl.shelves[0].capY - 10);
-      const bot = W2S(rl.x, rl.shelves[rl.shelves.length - 1].y1 + 8);
-      const obst = [];
-      for (let y = Math.max(top.y, KEEPOUT_TOP); y <= Math.min(bot.y, vp.h - KEEPOUT_BOTTOM); y += OBST_PITCH) obst.push(y);
-      // The COURT is the sharp case: kindShelves sorts each kind by
-      // DEGREE, so its spine is always items[0] — 10.5 world units
-      // under its own caption, always. (A Scriptorium shelf is sorted
-      // by DATE, so its spine sometimes lands further down the ladder
-      // and cleared by luck — which is why this went unnoticed.)
-      if (rl.side < 0) continue;
-      for (const sh of rl.shelves) {
-        if (!sh.spineId) continue;
-        oldSpineTot++;
-        const it = sh.items.find(x => x.id === sh.spineId) || sh.items[0];
-        // OLD: the spine sat at the ITEM's world y.
-        if (Math.abs((it.y - sh.capY) * camScale) < 15) oldSpineRefused++;
+      const aStep = 22 / Math.max(1e-6, rl.r * scale);
+      const aA = Math.min(rl.runA0, rl.runA1) - aStep * 0.5;
+      const aB = Math.max(rl.runA0, rl.runA1) + aStep * 0.5;
+      for (let ang = aA; ang <= aB; ang += aStep) {
+        const p = W2S(Math.cos(ang) * rl.r, Math.sin(ang) * rl.r);
+        claimSim(placed, p.x, p.y, 14, vp.h);
       }
+    }
+    // 3 ▸ the two headers — MUST land (they are the canonical counts)
+    for (const rl of [h.rails.left, h.rails.right]) {
+      if (!rl || !rl.shelves.length) continue;
+      const header = rl.side < 0
+        ? ('THE SCRIPTORIUM — ' + rl.count + ' DOCS')
+        : ('THE COURT — ' + rl.count + ' OF ALL KINDS');
+      const hw = mw(header, T_HEAD);
+      const hp = W2S(rl.head.x, rl.head.y);
+      let hx = hp.x + rl.head.ux * 26;
+      const hy = hp.y + rl.head.uy * 26;
+      hx = Math.max(6 + hw / 2, Math.min(vp.w - 6 - hw / 2, hx));
+      if (!claimSim(placed, hx, hy, hw + 6, vp.h)) headerFail++;
+    }
+    // 4 ▸ shelf captions + spine names — HIGH half, BEFORE the ports
+    // (wave 3 priority: canonical counts beat wayfinding). All MUST
+    // land wherever the unclamped rect fits in the viewport.
+    for (const rl of [h.rails.left, h.rails.right]) {
+      if (!rl) continue;
+      for (const sh of rl.shelves) {
+        const cp = W2S(sh.capX, sh.capY);
+        const outR = sh.ux >= 0;
+        const txt = sh.label + ' · ' + ((sh.shown < sh.count) ? (sh.shown + ' OF ' + sh.count) : sh.count);
+        const w = mw(txt, T_CAP);
+        let lx = cp.x + sh.ux * 5;
+        const ly = cp.y + sh.uy * 5;
+        const fits = outR ? (lx + w <= vp.w - 6) : (lx - w >= 6);
+        lx = outR ? Math.min(lx, vp.w - 6 - w) : Math.max(lx, 6 + w);
+        const cx0 = outR ? lx + w / 2 : lx - w / 2;
+        if (!fits) { clampSkip++; continue; }
+        capTot++;
+        const capOK = claimSim(placed, cx0, ly, w + 4, vp.h);
+        if (!capOK) { capFail++; continue; }
+        if (!sh.spineId) continue;
+        const node = NODE_BY_ID.get(sh.spineId);
+        const title = (node && node.title) || sh.spineId;
+        const sw = mw(title, T_NAME);
+        const spineY = ly + (sh.uy < -0.35 ? -rowOf(T_CAP) : rowOf(T_CAP));
+        let sx = lx + sh.ux * 2;
+        const sFits = outR ? (sx + sw <= vp.w - 6) : (sx - sw >= 6);
+        sx = outR ? Math.min(sx, vp.w - 6 - sw) : Math.max(sx, 6 + sw);
+        if (!sFits) { clampSkip++; continue; }
+        spineTot++;
+        if (!claimSim(placed, outR ? sx + sw / 2 : sx - sw / 2, spineY, sw + 4, vp.h)) spineFail++;
+      }
+    }
+    // 5 ▸ the port labels claim between the captions and the names
+    // in the real paint — replayed so nothing passes here and loses
+    // to a port in the app.
+    for (const pt of lay.ports) {
+      const ps = W2S(pt.x, pt.y);
+      if (ps.x < -60 || ps.x > vp.w + 60 || ps.y < -60 || ps.y > vp.h + 60) continue;
+      const left = Math.cos(pt.ang) < 0;
+      const txt = String(pt.group).toUpperCase() + (pt.count ? ' · ' + pt.count : '');
+      const w = mw(txt, T_NAME);
+      let lx = ps.x + Math.cos(pt.ang) * 13;
+      let ly = ps.y + Math.sin(pt.ang) * 13;
+      lx = left ? Math.max(lx, 6 + w) : Math.min(lx, vp.w - 6 - w);
+      ly = Math.max(KO_TOP + 2, Math.min(vp.h - KO_BOT - 2, ly));
+      claimSim(placed, left ? lx - w / 2 : lx + w / 2, ly, w + 8, vp.h);
+    }
+    // 6 ▸ every slot's radially-outboard REACH name vs the shield
+    // (the wave-2 standard: a name that FITS beside the band must not
+    // be blocked by the shield; a name clamped by the viewport edge
+    // is a geometric loss, not this defect).
+    for (const rl of [h.rails.left, h.rails.right]) {
+      if (!rl) continue;
       for (const sh of rl.shelves) for (const it of sh.items) {
-        oldNameTot++;
-        // OLD: the name sat ABOVE the glyph, on the rail's own screen x,
-        // which is exactly where the obstacle column is claimed.
-        const s = W2S(rl.x, it.y);
-        const ly = s.y - 5 * camScale - 6;
-        for (const oy of obst) if (Math.abs(ly - oy) < 15) { oldNameBlocked++; break; }
+        const s = W2S(it.x, it.y);
+        const wpx = 90, rBub = 5 * scale;
+        let ux = it.x - h.center.x, uy = it.y - h.center.y;
+        const ul = Math.hypot(ux, uy) || 1; ux /= ul; uy /= ul;
+        const lx = s.x + ux * (rBub + 32 + wpx / 2);
+        const ly = s.y + uy * (rBub + 32);
+        if (lx - wpx / 2 < 6 || lx + wpx / 2 > vp.w - 6) { clampSkip++; continue; }
+        if (ly < KO_TOP || ly > vp.h - KO_BOT) { clampSkip++; continue; }
+        nameTot++;
+        for (const P of placed) {
+          if (P[2] !== 14) continue;               // vs the shield only
+          if (Math.abs(lx - P[0]) < (wpx + P[2]) / 2 && Math.abs(ly - P[1]) < 15) { nameBlocked++; break; }
+        }
+      }
+    }
+    // 7 ▸ the LOW half: the overflow foot.
+    for (const rl of [h.rails.left, h.rails.right]) {
+      if (!rl) continue;
+      if (rl.overflow > 0 && rl.foot) {
+        const fp = W2S(rl.foot.x, rl.foot.y);
+        const ftxt = '+' + rl.overflow + ' NOT SHOWN';
+        const w = mw(ftxt, T_CAP);
+        let fx = fp.x + rl.foot.ux * 26;
+        const fy = fp.y + rl.foot.uy * 26;
+        fx = Math.max(6 + w / 2, Math.min(vp.w - 6 - w / 2, fx));
+        footTot++;
+        if (!claimSim(placed, fx, fy, w + 4, vp.h)) footFail++;
       }
     }
   }
-  if (oldSpineRefused === oldSpineTot)
-    ok('tripwire: the OLD world-space COURT spine anchor was refused ' + oldSpineRefused + '/' + oldSpineTot
-      + ' at every viewport — 10.5 world units is 6.9-8.6 screen px against a 15px rule');
-  else fail('tripwire drifted: expected every old spine anchor refused, got ' + oldSpineRefused + '/' + oldSpineTot);
-  if (oldNameBlocked === oldNameTot)
-    ok('tripwire: the OLD above-the-glyph rail name was blocked ' + oldNameBlocked + '/' + oldNameTot
-      + ' — the obstacle column sits at the rail\'s own screen x');
-  else fail('tripwire drifted: expected every old rail name blocked, got ' + oldNameBlocked + '/' + oldNameTot);
+  if (headerFail === 0) ok(fam + ': both headers land at all 4 viewports');
+  else fail(fam + ': ' + headerFail + ' header placements refused');
+  if (capFail === 0) ok(fam + ': all ' + capTot + ' shelf captions land (4 viewports'
+    + (clampSkip ? '; ' + clampSkip + ' viewport-clamped placements excluded' : '') + ')');
+  else fail(fam + ': ' + capFail + ' of ' + capTot + ' shelf captions refused');
+  if (spineFail === 0) ok(fam + ': all ' + spineTot + ' spine names land');
+  else fail(fam + ': ' + spineFail + ' of ' + spineTot + ' spine names refused');
+  if (footTot === 0 || footFail === 0) ok(fam + ': the overflow foot lands (' + footTot + ' placements)');
+  else fail(fam + ': ' + footFail + ' of ' + footTot + ' overflow feet refused');
+  if (nameBlocked === 0) ok(fam + ': 0 of ' + nameTot + ' slot reach-names blocked by the band shield');
+  else fail(fam + ': ' + nameBlocked + ' of ' + nameTot + ' slot reach-names blocked by the shield');
+}
+
+// ── W3-HOSTILE ▸ the dial extremes can never make slots touch ──
+// The overlap that survived first contact: 4 sub-rows at a tight
+// pitch — an INNER sub-row rides a smaller circle, so its chord is
+// rInner/bandR of the centreline pitch, and glyphs sized off the
+// centreline pitch overlapped by exactly that factor (Christian,
+// railMax 400 · rows 4 · gap 8° · glyph 0.7: 107 pairs at −0.01 wu).
+console.log('\n── W3-HOSTILE · dial extremes: zero slot overlaps, zero NaN ──');
+for (const [fam, extra] of [
+  ['Christian', { railMax: 400, bandRows: 4, bandGap: 8, railGlyph: 0.7 }],
+  ['Other',     { railMax: 400, bandRows: 1, bandGap: 45, railGlyph: 0.7, bandR: 1.0, treeR: 0.5 }],
+  ['Other',     { railMax: 20,  bandRows: 4, bandGap: 45, railGlyph: 0.2, bandR: 0.6, treeR: 0.95 }],
+]) {
+  const lay = houseUnion(fam, 'cascade', extra);
+  const h = lay.house;
+  let nan = 0;
+  for (const [, p] of lay.positions) if (!isFinite(p.x) || !isFinite(p.y)) nan++;
+  let overlap = 0, worst = Infinity;
+  for (const rl of [h.rails.left, h.rails.right]) {
+    if (!rl) continue;
+    const pts = [];
+    for (const sh of rl.shelves) for (const it of sh.items) pts.push(it);
+    for (let i = 0; i < pts.length; i++) for (let j = i + 1; j < pts.length; j++) {
+      const d = Math.hypot(pts[i].x - pts[j].x, pts[i].y - pts[j].y) - 2 * rl.glyphR;
+      if (d < worst) worst = d;
+      if (d < -0.01) overlap++;
+    }
+  }
+  const tag = fam + ' ' + JSON.stringify(extra);
+  if (nan === 0 && overlap === 0) ok(tag + ' → 0 overlaps, 0 NaN (worst gap '
+    + (worst === Infinity ? '—' : worst.toFixed(2) + ' wu') + ')');
+  else fail(tag + ' → ' + overlap + ' overlaps, ' + nan + ' NaN');
+}
+
+// ── W3-PROBE ▸ the acceptance numbers, printed from the real data ──
+// Band radii, glyph size in wu AND CSS px at the isolate's own fit
+// scale, per-shelf arc, worst slot gap — the numbers John's round is
+// judged by.
+console.log('\n── W3-PROBE · the ring, measured (fit scale 1440x900 = '
+  + (900 / 1220).toFixed(4) + ') ──');
+for (const fam of ['Greek', 'Christian', 'Norse', 'Other']) {
+  const lay = houseUnion(fam, 'cascade');
+  const h = lay.house;
+  const fit = 900 / 1220;
+  let maxExt = 0;
+  for (const row of h.rows) for (const id of row) {
+    const p = lay.positions.get(id);
+    const e = Math.hypot(p.x, p.y) + (lay.radii.get(id) || 0);
+    if (e > maxExt) maxExt = e;
+  }
+  console.log('  ' + fam + ': treeR=' + h.treeR.toFixed(0) + 'wu portR=' + h.portR.toFixed(0)
+    + 'wu cascadeExtent=' + maxExt.toFixed(0) + 'wu');
+  for (const [nm, rl] of [['SCRIPTORIUM', h.rails.left], ['COURT', h.rails.right]]) {
+    if (!rl) { console.log('    ' + nm + ': —'); continue; }
+    const pts = [];
+    for (const sh of rl.shelves) for (const it of sh.items) pts.push(it);
+    let worst = Infinity;
+    for (let i = 0; i < pts.length; i++) for (let j = i + 1; j < pts.length; j++) {
+      const d = Math.hypot(pts[i].x - pts[j].x, pts[i].y - pts[j].y) - 2 * rl.glyphR;
+      if (d < worst) worst = d;
+    }
+    console.log('    ' + nm + ': r=' + rl.r.toFixed(0) + ' [' + rl.rIn.toFixed(0) + ',' + rl.rOut.toFixed(0)
+      + '] nSub=' + rl.nSub + ' pitch=' + rl.pitch.toFixed(1) + 'wu glyphR=' + rl.glyphR.toFixed(2)
+      + 'wu = ' + (rl.glyphR * fit).toFixed(2) + 'px r (' + (2 * rl.glyphR * fit).toFixed(1)
+      + 'px dia) worstGap=' + (worst === Infinity ? '—' : worst.toFixed(2) + 'wu'));
+    const dg = (a) => (a * 180 / Math.PI).toFixed(0) + '°';
+    console.log('      ' + rl.shelves.map(s => s.label + ' ' + s.shown + '/' + s.count
+      + ' [' + dg(s.a0) + '→' + dg(s.a1) + ']').join(' · '));
+  }
 }
 
 // ── W2-E ▸ A ROW NUMERAL IS A GENERATION OR NOTHING ─────────
