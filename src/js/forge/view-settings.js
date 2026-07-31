@@ -9,11 +9,19 @@
 //   rebuildForMode, rebuildHullElements, recomputeFocus, syncHulls,
 //   refreshHouse }
 // (13 deps — biggest dependency surface in the series. refreshHouse
-//  added 2026-07-30 for the House-layout radio: Cascade/Fan are
-//  CANONICAL view controls now, per John — the choice of view is
-//  canonical, the tuning numbers stay in the LAB.)
+//  added 2026-07-30 for the House-layout choice: Cascade/Fan are
+//  CANONICAL, per John — the choice of view is canonical, the
+//  tuning numbers stay in the LAB. 2026-07-31: the VIEW-panel
+//  radios are GONE — John couldn't find them (they were
+//  fv-wheel-only, never visible inside the house they control).
+//  The control is now the CASCADE/FAN chips on the house crown
+//  (src/js/views/forge.js, ensureHouseChips), which call
+//  setHouseGeometry below. This module stays the ONE owner of the
+//  persisted key.)
 // BOUNDARY CONTRACT:
 //   window._forgeViewSettings.attach({ ...all 13 deps... })
+//   window._forgeViewSettings.setHouseGeometry('cascade'|'fan')
+//     — available after attach; persists + tweens a standing house.
 // ============================================================
 (function () {
   function attach({ COLOR_THEMES, DEFAULT_UX_MODE, DISTRIBUTION_THEMES, ORDER_THEMES,
@@ -37,7 +45,7 @@
         hulls: true, familyTitles: true,
         dividers: true, dividersConverging: false,
         guideRings: false,
-        wires: true, sfx: true, map: false,
+        wires: true, sfx: true,
         reverseAge: false,
         // Phase 22-I (2026-05-24) — timeline layer toggles.
         tlBands: true, tlBandLabels: true,
@@ -74,7 +82,9 @@
       const noDividers = !state.dividers && !state.dividersConverging;
       document.body.classList.toggle('fv-hide-dividers',      noDividers);
       document.body.classList.toggle('fv-hide-wires',         !state.wires);
-      document.body.classList.toggle('fv-hide-map',           !state.map);
+      // 2026-07-31 — fv-hide-map DELETED with the 'Show map (coming
+      // soon)' placeholder row (no CSS consumer existed; dead chrome
+      // leaves the live tree, markup + callsites together).
       document.body.classList.toggle('fv-hide-guide-rings',   !state.guideRings);
       // Phase 22-I — timeline-only layer toggles via body classes.
       // CSS in app.css hides .forge-timeline-bands and
@@ -161,10 +171,8 @@
       panel.querySelectorAll('.forge-viewset-row[data-distribution]').forEach(row => {
         row.classList.toggle('is-on', row.dataset.distribution === (ux.distributionMode || 'organic'));
       });
-      // THE HOUSE — House-layout radio highlight.
-      panel.querySelectorAll('.forge-viewset-row[data-house]').forEach(row => {
-        row.classList.toggle('is-on', row.dataset.house === (state.houseGeometry || 'cascade'));
-      });
+      // THE HOUSE — the geometry control lives on the crown now
+      // (2026-07-31); no panel radio to highlight.
       // Phase 21AS (2026-05-23) — when the source-tier set changes,
       // re-run recomputeFocus so edgeTargets pick up the tier-filter
       // (edges whose source_tier ∉ activeTiers get HIDDEN). Skip if
@@ -252,24 +260,26 @@
         applyUxMode();
         return;
       }
-      // THE HOUSE (2026-07-30) — House-layout radio (Cascade | Fan).
-      // Canonical per John ("we need the toggles to change the view
-      // like we had"). If a house is standing, the flip TWEENS it
-      // (refreshHouse(true) — geometry flips morph, never snap);
-      // otherwise the choice simply waits for the next isolate.
-      if (row.dataset.house) {
-        const v = row.dataset.house;
-        if (v !== 'cascade' && v !== 'fan') return;
-        if (state.houseGeometry === v) return;
-        state.houseGeometry = v;
-        local.params.house_geometry = v;
-        applyState();
-        if (typeof refreshHouse === 'function') {
-          try { refreshHouse(true); } catch (_) { /* no house standing — fine */ }
-        }
-        return;
-      }
     });
+
+    // THE HOUSE (2026-07-31) — the geometry setter, called by the
+    // CASCADE/FAN crown chips (forge.js ensureHouseChips). This
+    // module stays the single owner of the forge.viewSettings.v7
+    // key: state is updated + persisted here, the live param is
+    // written, and a standing house TWEENS (refreshHouse(true) —
+    // geometry flips morph, never snap; no house standing → the
+    // choice simply waits for the next isolate).
+    function setHouseGeometry(v) {
+      if (v !== 'cascade' && v !== 'fan') return;
+      if (state.houseGeometry === v) return;
+      state.houseGeometry = v;
+      local.params.house_geometry = v;
+      try { localStorage.setItem(LS_KEY, JSON.stringify(state)); } catch (_) {}
+      if (typeof refreshHouse === 'function') {
+        try { refreshHouse(true); } catch (_) { /* no house standing — fine */ }
+      }
+    }
+    window._forgeViewSettings.setHouseGeometry = setHouseGeometry;
     document.addEventListener('click', (ev) => {
       if (!panel.classList.contains('is-open')) return;
       if (panel.contains(ev.target) || btn.contains(ev.target)) return;

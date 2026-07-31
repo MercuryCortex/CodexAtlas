@@ -7986,6 +7986,40 @@ body.fv-isolated #forge-hull-guide-rings {
 body.fv-house-flight .forge-hulls-overlay {
   opacity: 0 !important;
 }
+/* THE HOUSE (2026-07-31) — CASCADE / FAN geometry chips on the
+   crown. They exist ONLY while isolated (the control's own house)
+   and ride the hulls overlay, so fv-house-flight above hides them
+   mid-flight for free. Positioned per paint by renderHouseChrome;
+   colour is the family's own token (set inline on the group).
+   Active chip full var(--family-color); inactive at 45%. */
+.forge-house-chips {
+  display: none;
+}
+body.fv-isolated .forge-house-chips {
+  display: initial;
+}
+.forge-house-chip {
+  pointer-events: auto;
+  cursor: pointer;
+  fill: var(--family-color, #888);
+  opacity: 0.45;
+  font-family: var(--mono, "JetBrains Mono", Menlo, monospace);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  paint-order: stroke fill;
+  stroke: rgba(0, 0, 0, 0.7);
+  stroke-width: 3px;
+  stroke-linejoin: round;
+}
+.forge-house-chip:hover {
+  opacity: 0.8;
+}
+.forge-house-chip.is-on {
+  opacity: 1;
+  font-weight: 600;
+  cursor: default;   /* clicking the active chip is a no-op */
+}
 .forge-hull-label {
   fill: var(--family-color, #888);
   fill-opacity: 0.85;

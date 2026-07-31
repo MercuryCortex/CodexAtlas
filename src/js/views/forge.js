@@ -482,6 +482,15 @@
   // Default per-type glyphs apply to every node; icon overrides
   // were a dev-panel feature, removed in Phase 0. Same for font
   // overrides per scope.
+  // THE HOUSE (2026-07-31) — Escape routes to the CURRENT mount.
+  // The document-level keydown below (ensureHullStructure) is
+  // registered ONCE per page (window.__forgeIsolateEsc guard) but
+  // used to close over the FIRST mount's `local` forever — after a
+  // view switch it drove a dead closure and could leave
+  // fv-house-flight stuck (audit: destroy-leaves-house-state-on-body).
+  // Each mount points this ref at itself; destroy() nulls it.
+  let _houseEscRef = null;
+
   const PARAM_DEFAULTS = Object.freeze({
     // ── WIRES · IDLE STATE (per bucket) ── slate atmospheric across all buckets
     idle_color_transmission: '#3a4a66',
@@ -693,11 +702,16 @@
     film_fade_pct:         30,
     // ── THE HOUSE (2026-07-30) — family-isolate tree dials ──
     // AUDIT/2026-07-29-fable-family-tree-isolate.md + the 07-30
-    // labels/dev-drawer pass. Geometry is a recipe key: Cascade and
-    // Fan are PEERS (John: "i want both cascade and fan"); the
-    // user-facing VIEW radio waits for his verdict — for now these
-    // live behind the DEV door (NODE LAB ▸ The House).
-    house_geometry:        'cascade',   // 'cascade' | 'fan' — CANONICAL (VIEW panel owns it, 2026-07-30)
+    // labels/dev-drawer pass. Geometry is CANONICAL: Cascade and
+    // Fan are PEERS (John: "i want both cascade and fan"), chosen
+    // by the CASCADE / FAN chips ON THE CROWN (renderHouseChrome +
+    // the SVG chip group in the hulls overlay — they exist only
+    // under body.fv-isolated, i.e. where the control has effect).
+    // The choice persists in forge.viewSettings.v7 (owner:
+    // src/js/forge/view-settings.js, which writes this param at
+    // mount + on every chip flip). ranks / orphans / spread /
+    // tween / bones / veil are DEV tuning dials (LAB ▸ The House).
+    house_geometry:        'cascade',   // 'cascade' | 'fan' — CANONICAL (crown chips own it, 2026-07-31)
     house_spread:          1.10,
     house_tween_ms:        450,
     house_ranks:           'lineage',   // 'lineage' | 'era'
@@ -711,6 +725,14 @@
     // recedes (0 = full wheel atmosphere, 1 = externals invisible
     // until hover). Bones + hover wires ride the hot ramp above it.
     house_veil:            0.55,
+    // THE HINT LINE (2026-07-31) — the wheel-state hint in the same
+    // slot the house's exit line uses ('CLICK A FAMILY TITLE — THE
+    // HOUSE'). Ship-a-dial law: on by default, 0 = the wheel paints
+    // byte-identical to before the hint existed (the house's own
+    // exit/travel line is NOT gated — it predates this dial).
+    // LAB row: add { k:'slider', key:'house_hint_line' } (0-1 step 1)
+    // to the House group in src/js/forge/lab-panel.js.
+    house_hint_line:       1,
   });
 
   function render(rootEl) {
@@ -1191,7 +1213,10 @@
           // Active wires from lock/hover focus are unaffected.
           '<button class="forge-viewset-row" data-toggle="wires"><span class="vs-check"></span>Show idle wires</button>' +
           '<button class="forge-viewset-row" data-toggle="sfx"><span class="vs-check"></span>Soundtrack <em>(zoom-tied)</em></button>' +
-          '<button class="forge-viewset-row" data-toggle="map" disabled><span class="vs-check"></span>Show map <em>(coming soon)</em></button>' +
+          // 2026-07-31 — the dead 'Show map (coming soon)' row is
+          // DELETED (audit: coming-soon-dead-row; law: dead chrome
+          // leaves the live tree, it is not parked). Reintroduce the
+          // row WITH the feature.
           // Phase 22-I — timeline-only Layers (band rectangles + labels).
           '<button class="forge-viewset-row fv-timeline-only" data-toggle="tlBands"><span class="vs-check"></span>Show family bands</button>' +
           '<button class="forge-viewset-row fv-timeline-only" data-toggle="tlBandLabels"><span class="vs-check"></span>Show family band labels</button>' +
@@ -1229,17 +1254,14 @@
           '<button class="forge-viewset-row fv-wheel-only" data-distribution="age-bands"><span class="vs-radio"></span>Age bands <em>(scholarly chart)</em></button>' +
           '<button class="forge-viewset-row fv-wheel-only" data-distribution="vogel"><span class="vs-radio"></span>Vogel sunflower <em>(phyllotaxis)</em></button>' +
           '<button class="forge-viewset-row fv-wheel-only" data-toggle="reverseAge"><span class="vs-check"></span>Reverse age direction <em>(rim = oldest)</em></button>' +
-          // THE HOUSE (2026-07-30) — Cascade/Fan graduate from the
-          // LAB to canonical view controls (John: "we need the
-          // toggles to change the view like we had … all these
-          // display are gold for the app like we have the view
-          // modes"). The CHOICE of view is canonical; the tuning
-          // numbers (spread, tween, bones) stay LAB. Flipping while
-          // isolated TWEENS the standing house (refreshHouse(true)).
-          '<div class="forge-viewset-divider fv-wheel-only"></div>' +
-          '<div class="forge-viewset-section fv-wheel-only">House layout <em>(family isolate)</em></div>' +
-          '<button class="forge-viewset-row fv-wheel-only" data-house="cascade"><span class="vs-radio"></span>Cascade <em>(generational chart)</em></button>' +
-          '<button class="forge-viewset-row fv-wheel-only" data-house="fan"><span class="vs-radio"></span>Fan <em>(crest of era rings)</em></button>' +
+          // THE HOUSE (2026-07-31) — the Cascade/Fan choice MOVED to
+          // the CROWN CHIPS (renderHouseChrome + the SVG chip group
+          // in the hulls overlay). The VIEW-panel radios were marked
+          // fv-wheel-only, i.e. only visible when NOT in the house
+          // they control — John: "the name was cascade and fan —
+          // CANT find that toggle." The choice stays CANONICAL and
+          // persists in forge.viewSettings.v7 via
+          // _forgeViewSettings.setHouseGeometry; tuning stays LAB.
           // Phase 21AY (2026-05-23) — Source-tier + political-risk
           // toggles MOVED to the LEGEND panel where the tier vocabulary
           // is documented. Same vocabulary in one place — the legend's
@@ -1944,6 +1966,37 @@
     // onto local now so destroy() can pause + detach it.
     if (bgAudio) local._bgAudio = bgAudio;
 
+    // ══ THE HOUSE — ONE exit for the isolate's body/global state ══
+    // (2026-07-31, audit blocker destroy-leaves-house-state-on-body.)
+    // The isolate parks state on shared surfaces that OUTLIVE the
+    // mount: body.fv-isolated / body.fv-house-flight and the ground
+    // tint. destroy() used to clear the fx-* classes but not these,
+    // so leaving the Forge view from inside a house left every hull
+    // label matching `:not(.is-isolated)` — all family titles were
+    // opacity 0 + pointer-events none on the next mount, forever.
+    // This helper restores the body to its pre-mount class state; it
+    // is called from BOTH exits (destroy() and the rebuildForMode
+    // preamble) so the next feature cannot forget one of them.
+    function leaveHouseState() {
+      local._isolateFamily = null;
+      local._house = null;
+      local._layoutMix = null;
+      local._houseTravel = null;
+      local._housePosBDirty = false;
+      local._housePortCounts = null;   // filter-aware port-count cache
+      try { if (window._forgeGround) window._forgeGround.setTint(null, 1); } catch (_) { /* ignore */ }
+      try { document.body.classList.remove('fv-isolated', 'fv-house-flight'); } catch (_) { /* ignore */ }
+    }
+    // Fire only when there is house state to clear (from `local` OR a
+    // stale body class from any source) — the ground setTint(null)
+    // repaints the full viewport, so a plain unmount/mode-change with
+    // no house ever entered must stay a no-op.
+    function houseStateDirty() {
+      return !!(local._isolateFamily || local._house || local._layoutMix
+        || document.body.classList.contains('fv-isolated')
+        || document.body.classList.contains('fv-house-flight'));
+    }
+
     rootEl._engine = {
       destroy() {
         local.destroyed = true;
@@ -1993,6 +2046,13 @@
         document.body.classList.remove('fx-bloom');
         document.body.classList.remove('fx-belowfifteen');
         document.body.classList.remove('fx-pulse-enabled');
+        // THE HOUSE (2026-07-31) — restore the body to its pre-mount
+        // class state (fv-isolated / fv-house-flight / ground tint).
+        // See leaveHouseState above; without this, leaving the view
+        // from inside a house permanently killed every family title.
+        if (houseStateDirty()) leaveHouseState();
+        // Escape must never drive a dead closure after this mount.
+        _houseEscRef = null;
         local._fxBloomActive    = false;
         local._fxBelowFifteen   = false;
         // Phase 21AE (2026-05-22) — pulse cleanup. Any pending
@@ -2819,15 +2879,11 @@
       // instance world under the isolate's baked tree positions.
       // Leave cleanly first: drop the mix to zero, free the house,
       // clear the tint. (Same node ids may not even exist after.)
-      if (local._isolateFamily || local._house || local._layoutMix) {
-        local._isolateFamily = null;
-        local._house = null;
-        local._layoutMix = null;
-        local._houseTravel = null;
-        local._housePosBDirty = false;
-        try { if (window._forgeGround) window._forgeGround.setTint(null, 1); } catch (_) { /* ignore */ }
-        try { document.body.classList.remove('fv-isolated', 'fv-house-flight'); } catch (_) { /* ignore */ }
-      }
+      // 2026-07-31 — shares leaveHouseState with destroy() (one
+      // exit, audit blocker destroy-leaves-house-state-on-body);
+      // houseStateDirty also self-heals a stale body class from any
+      // source without repainting the ground on a plain mode change.
+      if (houseStateDirty()) leaveHouseState();
       _tick('preamble');
 
       // Phase 24A v1 (2026-05-25 NIGHT): `modeNodes` and `modeEdges`
@@ -4710,15 +4766,25 @@
       // Escape is the other way out. Registered once alongside the
       // structure it serves; guarded on being isolated so it never
       // swallows Escape from the reader, the search box or a modal.
+      // 2026-07-31 — the listener used to close over the FIRST
+      // mount's `local` forever (window-once guard + closure), so
+      // after a view switch it drove a dead closure. It now routes
+      // through the module-level _houseEscRef, which every mount
+      // points at itself here and destroy() nulls.
+      _houseEscRef = {
+        isIsolated: () => !!local._isolateFamily,
+        exit: () => setIsolateFamily(null),
+      };
       if (!window.__forgeIsolateEsc) {
         window.__forgeIsolateEsc = true;
         document.addEventListener('keydown', (ev) => {
           if (ev.key !== 'Escape') return;
-          if (!local._isolateFamily) return;
+          const ref = _houseEscRef;
+          if (!ref || !ref.isIsolated()) return;
           const a = document.activeElement;
           if (a && (a.tagName === 'INPUT' || a.tagName === 'TEXTAREA')) return;
           ev.stopPropagation();
-          setIsolateFamily(null);
+          ref.exit();
         });
       }
     }
@@ -5562,6 +5628,14 @@
       const _lcy = camera.state.centerY;
       const visSet = local.visibleLabelEls;
       const _lvs = visSet ? visSet.size : 0;
+      // CANONICAL HONESTY (2026-07-31) — the house's port counts are
+      // now filter-aware (housePortVisibleCounts), so a LEGEND tier /
+      // political-risk flip must bust this idle cache or the horizon
+      // keeps claiming the pre-filter numbers until the next pan.
+      // Cheap: ≤5 tiers, string compare.
+      const _lat = local._activeTiers;
+      const _lfk = (_lat && _lat.size < 5 ? Array.from(_lat).sort().join('') : 'all')
+        + (local._showPoliticalRisk ? '|P' : '');
       if (!local._wakeAlive
           && !local._labelFadeAlive   // a name is still arriving/leaving
           && local._labelsIdleCamS === _lcs
@@ -5569,6 +5643,7 @@
           && local._labelsIdleCamCy === _lcy
           && local._labelsIdleVisSet === visSet
           && local._labelsIdleVisSize === _lvs
+          && local._labelsIdleFilterKey === _lfk
           && local._labelsIdleW === vp.w
           && local._labelsIdleH === vp.h) {
         return; // canvas pixels still valid (wake labels animate → no skip while awake)
@@ -5578,6 +5653,7 @@
       local._labelsIdleCamCy = _lcy;
       local._labelsIdleVisSet = visSet;
       local._labelsIdleVisSize = _lvs;
+      local._labelsIdleFilterKey = _lfk;
       local._labelsIdleW = vp.w;
       local._labelsIdleH = vp.h;
 
@@ -5769,6 +5845,11 @@
         return;
       }
       if (houseAtRest()) {
+        // HIGH half only (crown → rail obstacles/headers → ports →
+        // era/gen captions). The LOW half (shelf captions, spine
+        // names, orphan captions) paints AFTER the deity-name pass
+        // below, so a caption can never outrank a god's name —
+        // audit: house-chrome-priority-order-inverted.
         renderHouseChrome(ctx, placed, vp);
       }
       const seen = new Set();
@@ -5798,6 +5879,14 @@
         placed.push([s.x, ly, wpx]);
         seen.add(c.id);
         draws.push({ c, title, x: s.x, y: ly, wpx });
+      }
+      // THE HOUSE (2026-07-31) — LOW-priority chrome lands here: the
+      // names above have claimed their rects, so shelf captions,
+      // spine names and orphan captions yield to every deity name
+      // (the documented order) while still outranking the LEAVING
+      // names below, which are a crossfade nicety, not content.
+      if (houseAtRest()) {
+        renderHouseChromeLow(ctx, placed, vp);
       }
       // Names that just lost eligibility keep drawing while they LEAVE
       // (target 0) — this is what makes a zoom step crossfade instead
@@ -5859,6 +5948,9 @@
       }
       ctx.globalAlpha = 1;
       local._labelFadeAlive = fadeAlive;
+      // THE HINT LINE — lowest priority of all: one string in one
+      // slot, state-aware (wheel: the way IN; house: the way OUT).
+      renderHintLine(ctx, placed, vp);
       // Debug/verification surface — the FINAL collision list of this
       // paint ([centerX, y, width] rects). _forgeDebug.lastPlacedRects
       // asserts zero overlapping pairs and keep-out compliance.
@@ -5867,21 +5959,24 @@
 
     // ══ THE HOUSE — tree chrome through the ONE label registry ══
     // Called from renderLabelsCanvas ONLY, with its live `placed`
-    // list. Priority order (the toy's, ratified): crown stats →
-    // rail obstacles + headers → ports → era captions → (deity names
-    // follow in the caller) → shelf captions + spine names → orphan
-    // domain captions. Whole words or nothing; losers hide; the
-    // chrome keep-outs are the same bands the node names respect.
-    function renderHouseChrome(ctx, placed, vp) {
-      const hs = local._house;
-      if (!hs || !hs.lay || !hs.lay.house) return;
-      const house = hs.lay.house;
-      const ports = hs.lay.ports || [];
-      const m = local.mode;
-      const nodesById = m.nodesById;
-      const MONO = 'ui-monospace,"SF Mono",Menlo,monospace';
+    // list, in TWO halves around the deity-name pass (2026-07-31,
+    // audit house-chrome-priority-order-inverted — a caption must
+    // never outrank a god's name). Actual paint order:
+    //   HIGH (renderHouseChrome, BEFORE the names): crown stats +
+    //     CASCADE/FAN chips → rail obstacles + headers → ports →
+    //     era/generation captions
+    //   (deity names — hovered > locked > woken > rank — the caller)
+    //   LOW (renderHouseChromeLow, AFTER the names): shelf captions
+    //     → spine names → orphan domain captions
+    //   (leaving-name crossfades, then the hint line — the caller)
+    // Whole words or nothing; losers hide; the chrome keep-outs are
+    // the same bands the node names respect.
+    const HOUSE_MONO = 'ui-monospace,"SF Mono",Menlo,monospace';
+    // Shared per-half ctx setup + the ONE claim() (byte-identical
+    // collision math to the caller's name pass). Each half calls
+    // env.restore() on its single exit.
+    function houseChromeEnv(ctx, placed, vp) {
       const KEEPOUT_TOP = 52, KEEPOUT_BOTTOM = 58;
-      const gold = _labelsGoldColor || '#d3b877';
       const saved = {
         font: ctx.font, align: ctx.textAlign, base: ctx.textBaseline,
         lw: ctx.lineWidth, fill: ctx.fillStyle, alpha: ctx.globalAlpha,
@@ -5900,6 +5995,67 @@
         return true;
       };
       const halo = (t, x, y) => { ctx.strokeText(t, x, y); ctx.fillText(t, x, y); };
+      const restore = () => {
+        ctx.font = saved.font; ctx.textAlign = saved.align; ctx.textBaseline = saved.base;
+        ctx.lineWidth = saved.lw; ctx.fillStyle = saved.fill; ctx.globalAlpha = saved.alpha;
+      };
+      return { KEEPOUT_TOP, KEEPOUT_BOTTOM, W2S, yOK, claim, halo, restore };
+    }
+    // Lineage ranks are GENERATIONS — caption numerals for them.
+    function romanNum(n) {
+      const T = [[100, 'C'], [90, 'XC'], [50, 'L'], [40, 'XL'], [10, 'X'],
+                 [9, 'IX'], [5, 'V'], [4, 'IV'], [1, 'I']];
+      let out = '';
+      for (const [v, s] of T) while (n >= v) { out += s; n -= v; }
+      return out || 'I';
+    }
+    // CANONICAL HONESTY (2026-07-31, port-counts-ignore-filters) —
+    // the horizon may only claim wires inside the map's CURRENTLY
+    // STATED scope: the LEGEND tier filter and the political-risk
+    // toggle are canonical claims, so edges they hide don't count.
+    // Same predicate as recomputeFocus's HIDDEN pass (tier +
+    // political); deliberately NOT read from edgeTargets, because
+    // the house's own rest-wire treatment is a DEV rendering choice
+    // that must not change a canonical number. Cached per (house,
+    // filter fingerprint); the label canvas idle-skip carries the
+    // same fingerprint so a LEGEND flip repaints these counts.
+    function housePortVisibleCounts() {
+      const hs = local._house;
+      if (!hs || !hs.memberIds) return null;
+      const m = local.mode;
+      if (!m || !m.edges || !m.nodesById) return null;
+      const activeTiers = local._activeTiers;
+      const showPolitical = !!local._showPoliticalRisk;
+      const tierFilterOn = !!(activeTiers && activeTiers.size < 5);
+      const key = (tierFilterOn ? Array.from(activeTiers).sort().join('') : 'all')
+        + (showPolitical ? '|P' : '');
+      const cache = local._housePortCounts;
+      if (cache && cache.house === hs && cache.key === key) return cache.counts;
+      const counts = Object.create(null);
+      const members = hs.memberIds;
+      const nodesById = m.nodesById;
+      for (let i = 0; i < m.edges.length; i++) {
+        const e = m.edges[i];
+        const sIn = members.has(e.source);
+        if (sIn === members.has(e.target)) continue;   // not an external wire
+        if (tierFilterOn && !activeTiers.has(e.source_tier || 'T1')) continue;
+        if (!showPolitical && e.political_risk_flag) continue;
+        const other = nodesById.get(sIn ? e.target : e.source);
+        if (!other) continue;
+        const g = isolateGroupOf(other);
+        counts[g] = (counts[g] || 0) + 1;
+      }
+      local._housePortCounts = { house: hs, key, counts };
+      return counts;
+    }
+    function renderHouseChrome(ctx, placed, vp) {
+      const hs = local._house;
+      if (!hs || !hs.lay || !hs.lay.house) return;
+      const house = hs.lay.house;
+      const ports = hs.lay.ports || [];
+      const m = local.mode;
+      const env = houseChromeEnv(ctx, placed, vp);
+      const { KEEPOUT_TOP, KEEPOUT_BOTTOM, W2S, claim, halo } = env;
       const fmtD = (d) => (d < 0 ? (-d) + ' BCE' : d + ' CE');
 
       // 1 ▸ CROWN stats — the crown NAME is the family's own SVG hull
@@ -5907,9 +6063,14 @@
       // via local._titleRects). Two honest mono lines beneath it.
       const st = house.stats || {};
       const cs = W2S(house.crown.x, house.crown.y);
-      ctx.font = '500 8.5px ' + MONO;
+      ctx.font = '500 8.5px ' + HOUSE_MONO;
       ctx.textAlign = 'center';
-      const nodeWord = (m.id === 'deities') ? 'DEITIES' : 'IN THE LINE';
+      // CANONICAL HONESTY (2026-07-31, crown-noun-in-the-line) — the
+      // noun is the mode registry's own label: a Documents house
+      // holds DOCUMENTS, not a 'line'. 'IN THE LINE' asserted
+      // kinship vocabulary the data does not make in 29 of 30 modes.
+      const modeEntry = (modemod.MODES || []).find((x) => x.value === m.id);
+      const nodeWord = String((modeEntry && modeEntry.label) || m.id || 'NODES').toUpperCase();
       const line1 = st.tree + ' ' + nodeWord + ' · ' + st.kinArcs + ' LINEAGE ARCS · '
         + st.orphanCount + ' STAND ON THEIR ERA';
       const w1 = ctx.measureText(line1).width;
@@ -5928,6 +6089,35 @@
         }
       }
       ctx.globalAlpha = 1;
+      // 1b ▸ CASCADE / FAN chips — the geometry control, ON the crown
+      // where his eye already is (ratified 2026-07-31; the VIEW-panel
+      // radios were fv-wheel-only, i.e. never visible inside the
+      // house they control). SVG in the existing hulls overlay —
+      // positioned here, claiming a registry rect so no canvas name
+      // lands beneath them.
+      const chipsG = ensureHouseChips();
+      if (chipsG) {
+        syncHouseChipState();
+        const hd0 = m.hullData || {};
+        for (const h of (hd0.hulls || [])) {
+          if (h.family === house.groupKey) {
+            if (h.color) chipsG.style.setProperty('--family-color', h.color);
+            break;
+          }
+        }
+        const chipY = cs.y + 46;
+        ctx.font = '600 9px ' + HOUSE_MONO;
+        // +12 ≈ the CSS letter-spacing the canvas measure can't see.
+        const wCas = ctx.measureText('CASCADE').width + 12;
+        const wFan = ctx.measureText('FAN').width + 12;
+        claim(cs.x, chipY, wCas + wFan + 22);   // best-effort reserve; the control shows regardless
+        const chips = chipsG.querySelectorAll('.forge-house-chip');
+        for (let ci = 0; ci < chips.length; ci++) {
+          const isCas = chips[ci].getAttribute('data-house') === 'cascade';
+          chips[ci].setAttribute('x', (isCas ? cs.x - 8 : cs.x + 8).toFixed(1));
+          chips[ci].setAttribute('y', chipY.toFixed(1));
+        }
+      }
 
       // 2 ▸ RAIL COLUMNS as obstacles + headers
       const rails = house.rails || {};
@@ -5936,12 +6126,20 @@
         const firstY = rl.shelves[0].capY - 10;
         const lastY = rl.shelves[rl.shelves.length - 1].y1 + 8;
         const top = W2S(rl.x, firstY), bot = W2S(rl.x, lastY);
-        for (let y = top.y; y <= bot.y; y += 22) placed.push([top.x, y, 14]);
+        // Obstacle rects go through claim() — _forgeDebug.lastPlacedRects
+        // publishes a ZERO-overlapping-pairs invariant, and claim also
+        // enforces the keep-out bands (audit: lastPlacedRects-overlap-
+        // invariant-broken). Viewport-clamped so a deep zoom cannot
+        // spin the loop unbounded; claim rejects outside the bands
+        // anyway, so nothing is lost by clamping to them.
+        const oy0 = Math.max(top.y, KEEPOUT_TOP);
+        const oy1 = Math.min(bot.y, vp.h - KEEPOUT_BOTTOM);
+        for (let y = oy0; y <= oy1; y += 22) claim(top.x, y, 14);
         const left = rl.side < 0;
         const header = left
           ? ('THE SCRIPTORIUM — ' + rl.count + ' DOCS')
           : ('THE COURT — ' + rl.count + ' OF ALL KINDS');
-        ctx.font = '600 8px ' + MONO;
+        ctx.font = '600 8px ' + HOUSE_MONO;
         const hw = ctx.measureText(header).width;
         const hy = top.y - 14;
         const hx = left ? Math.max(top.x, 6 + hw) : Math.min(top.x, vp.w - 6 - hw);
@@ -5957,12 +6155,17 @@
       // 3 ▸ PORTS — the piled family disks are the sigil; the label
       // carries the real aggregate. Biggest flow first (list is
       // pre-sorted); collision decides the rest. Clamped, not clipped.
-      ctx.font = '600 8.5px ' + MONO;
+      // The number is the FILTER-AWARE count (housePortVisibleCounts):
+      // with LEGEND tiers off, the horizon's claim shrinks with the
+      // map's stated scope instead of contradicting it.
+      const portCounts = housePortVisibleCounts();
+      ctx.font = '600 8.5px ' + HOUSE_MONO;
       for (const pt of ports) {
         const ps = W2S(pt.x, pt.y);
         if (ps.x < -60 || ps.x > vp.w + 60 || ps.y < -60 || ps.y > vp.h + 60) continue;
         const left = Math.cos(pt.ang) < 0;
-        const txt = String(pt.group).toUpperCase() + (pt.count ? ' · ' + pt.count : '');
+        const cnt = portCounts ? (portCounts[pt.group] || 0) : (pt.count || 0);
+        const txt = String(pt.group).toUpperCase() + (cnt ? ' · ' + cnt : '');
         const w = ctx.measureText(txt).width;
         let lx = ps.x + Math.cos(pt.ang) * 13;
         let ly = ps.y + Math.sin(pt.ang) * 13;
@@ -5972,23 +6175,36 @@
         if (!claim(cx0, ly, w + 8)) continue;
         ctx.textAlign = left ? 'right' : 'left';
         ctx.fillStyle = pt.color || _labelsTextColor;
-        ctx.globalAlpha = pt.count ? 0.85 : 0.38;
+        ctx.globalAlpha = cnt ? 0.85 : 0.38;
         halo(txt, lx, ly);
       }
       ctx.globalAlpha = 1;
 
-      // 4 ▸ ERA CAPTIONS — deduped (a date prints once, not five
-      // times), right-aligned into the gutter (cascade) or on the
-      // ring crest (fan).
-      ctx.font = '500 8.5px ' + MONO;
+      // 4 ▸ RANK CAPTIONS — deduped, right-aligned into the gutter
+      // (cascade) or on the ring crest (fan).
+      // CANONICAL HONESTY (2026-07-31, era-captions-fake-timeline) —
+      // under ranks='lineage' the rows are GENERATIONS, and a date
+      // column down that gutter reads as a time axis running
+      // 800→1400→1200: a chronology claim the data does not make.
+      // So: lineage rows caption as GEN I…GEN N (the rank index the
+      // layout returns); dates are reserved for ranks='era', where
+      // rank IS monotone in date. The caption's CONTENT switches
+      // with the existing house_ranks dial — no new dial.
+      const ranksEra = (local.params.house_ranks === 'era');
+      const capFor = (rm, ri) => {
+        if (ranksEra) return (rm.dmin == null) ? null : fmtD(rm.dmin);
+        return (rm.n > 0) ? ('GEN ' + romanNum(ri + 1)) : null;
+      };
+      ctx.font = '500 8.5px ' + HOUSE_MONO;
       ctx.fillStyle = _labelsTextColor;
       let lastCap = null;
       if (house.geometry === 'cascade') {
         ctx.textAlign = 'right';
-        for (const rm of house.rowMeta) {
-          if (rm.dmin == null) continue;
-          const txt = fmtD(rm.dmin);
-          if (txt === lastCap) continue;
+        for (let ri = 0; ri < house.rowMeta.length; ri++) {
+          const rm = house.rowMeta[ri];
+          if (rm.y == null) continue;
+          const txt = capFor(rm, ri);
+          if (txt == null || txt === lastCap) continue;
           const w = ctx.measureText(txt).width;
           const es = W2S(house.center.x - rm.w / 2, rm.y);
           const ex = es.x - 14, ey = es.y;
@@ -6000,13 +6216,13 @@
         }
       } else {
         // FAN (2026-07-30) — rings orbit the TRUNK (center.y + fanDy),
-        // so era captions anchor on each ring's crest above it.
+        // so rank captions anchor on each ring's crest above it.
         ctx.textAlign = 'center';
         const fanY = house.center.y + (house.fanDy || 0);
-        for (const rm of house.rowMeta) {
-          if (rm.dmin == null) continue;
-          const txt = fmtD(rm.dmin);
-          if (txt === lastCap) continue;
+        for (let ri = 0; ri < house.rowMeta.length; ri++) {
+          const rm = house.rowMeta[ri];
+          const txt = capFor(rm, ri);
+          if (txt == null || txt === lastCap) continue;
           const w = ctx.measureText(txt).width;
           const es = W2S(house.center.x, fanY - rm.rad);
           const ey = es.y - 8;
@@ -6016,7 +6232,20 @@
           lastCap = txt;
         }
       }
-      ctx.globalAlpha = 1;
+      env.restore();
+    }
+
+    // LOW half — called AFTER the deity-name pass (see the caller):
+    // everything here yields to every name, per the documented order.
+    function renderHouseChromeLow(ctx, placed, vp) {
+      const hs = local._house;
+      if (!hs || !hs.lay || !hs.lay.house) return;
+      const house = hs.lay.house;
+      const nodesById = local.mode.nodesById;
+      const gold = _labelsGoldColor || '#d3b877';
+      const env = houseChromeEnv(ctx, placed, vp);
+      const { W2S, claim, halo } = env;
+      const rails = house.rails || {};
 
       // 5 ▸ THE LIBRARY — shelf captions with counts (gold), then one
       // spine name per shelf (its highest-degree member, whole title).
@@ -6027,7 +6256,7 @@
         for (const sh of rl.shelves) {
           const cp = W2S(rl.x, sh.capY);
           const txt = sh.label + ' · ' + sh.count;
-          ctx.font = '600 7.5px ' + MONO;
+          ctx.font = '600 7.5px ' + HOUSE_MONO;
           const w = ctx.measureText(txt).width;
           let lx = left ? cp.x - 10 : cp.x + 10;
           lx = left ? Math.max(lx, 6 + w) : Math.min(lx, vp.w - 6 - w);
@@ -6044,7 +6273,7 @@
           const it = sh.items.find(x => x.id === sh.spineId) || sh.items[0];
           if (!it) continue;
           const sp = W2S(rl.x, it.y);
-          ctx.font = '500 7.5px ' + MONO;
+          ctx.font = '500 7.5px ' + HOUSE_MONO;
           const w = ctx.measureText(title).width;
           let lx = left ? sp.x - 9 : sp.x + 9;
           lx = left ? Math.max(lx, 6 + w) : Math.min(lx, vp.w - 6 - w);
@@ -6058,7 +6287,7 @@
       ctx.globalAlpha = 1;
 
       // 6 ▸ ORPHAN DOMAIN CAPTIONS — last in line, yield to everything.
-      ctx.font = '500 7.5px ' + MONO;
+      ctx.font = '500 7.5px ' + HOUSE_MONO;
       ctx.textAlign = 'center';
       for (const oc of (house.orphanCaptions || [])) {
         const s = W2S(oc.x, oc.y);
@@ -6067,20 +6296,121 @@
         ctx.fillStyle = _labelsTextColor; ctx.globalAlpha = 0.45;
         halo(oc.label, s.x, s.y);
       }
+      env.restore();
+    }
 
-      // 7 ▸ the way out, spelled — sits above the bottom keep-out.
-      ctx.font = '500 9px ' + MONO;
-      ctx.textAlign = 'center';
-      const exitTxt = 'CLICK EMPTY SPACE OR ESC — THE WHEEL · CLICK A PORT — TRAVEL';
-      const we = ctx.measureText(exitTxt).width;
-      const eyy = vp.h - KEEPOUT_BOTTOM - 10;
-      if (claim(vp.w / 2, eyy, we + 8)) {
-        ctx.fillStyle = _labelsTextColor; ctx.globalAlpha = 0.45;
-        halo(exitTxt, vp.w / 2, eyy);
+    // ══ THE HINT SLOT — one string, two states (2026-07-31) ══════
+    // The exit/travel line always painted INSIDE the house; the same
+    // slot now also paints on the WHEEL at rest, telling a first-
+    // time viewer the house exists at all (audit: house-entry-
+    // invisible — the only entry affordance was cursor:pointer on a
+    // title). Same slot, same registry (law 5), and it rides the
+    // caller's camera-idle skip + flight early-return (law 4). The
+    // WHEEL string is gated on the house_hint_line LAB dial — off,
+    // the wheel paint is byte-identical to before the hint existed
+    // (law 3). The house's own exit line predates the dial and is
+    // NOT gated. Painted after everything: the hint yields to every
+    // name and every caption.
+    function renderHintLine(ctx, placed, vp) {
+      const KEEPOUT_BOTTOM = 58;
+      let txt = null;
+      if (houseAtRest()) {
+        txt = 'CLICK EMPTY SPACE OR ESC — THE WHEEL · CLICK A PORT — TRAVEL';
+      } else if (local.params.house_hint_line
+          && !local._isolateFamily && !local._house
+          && document.body.classList.contains('fv-layout-wheel')
+          && !document.body.classList.contains('fv-hide-family-titles')
+          && !document.body.classList.contains('fv-hide-hulls')
+          && local.mode && local.mode.hullData
+          && (local.mode.hullData.hulls || []).length) {
+        // Only claim the way in where the way in exists: wheel
+        // layout, with the family titles actually visible.
+        txt = 'CLICK A FAMILY TITLE — THE HOUSE';
       }
-
+      if (!txt) return;
+      const saved = {
+        font: ctx.font, align: ctx.textAlign, base: ctx.textBaseline,
+        lw: ctx.lineWidth, fill: ctx.fillStyle, alpha: ctx.globalAlpha,
+      };
+      ctx.font = '500 9px ' + HOUSE_MONO;
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.lineWidth = 3;
+      const w = ctx.measureText(txt).width + 8;
+      const hy = vp.h - KEEPOUT_BOTTOM - 10;
+      let ok = true;
+      for (let k = 0; k < placed.length; k++) {
+        const P = placed[k];
+        if (Math.abs(vp.w / 2 - P[0]) < (w + P[2]) / 2 && Math.abs(hy - P[1]) < 15) { ok = false; break; }
+      }
+      if (ok) {
+        placed.push([vp.w / 2, hy, w]);
+        ctx.fillStyle = _labelsTextColor;
+        ctx.globalAlpha = 0.45;
+        ctx.strokeText(txt, vp.w / 2, hy);
+        ctx.fillText(txt, vp.w / 2, hy);
+      }
       ctx.font = saved.font; ctx.textAlign = saved.align; ctx.textBaseline = saved.base;
       ctx.lineWidth = saved.lw; ctx.fillStyle = saved.fill; ctx.globalAlpha = saved.alpha;
+    }
+
+    // ══ CASCADE / FAN — the geometry control ON THE CROWN ════════
+    // (2026-07-31 ratified.) DOM choice, one line of why: the chips
+    // must be CLICKABLE, and canvas text would need a second hit-
+    // test surface — so they are SVG text in the EXISTING hulls/
+    // title overlay (no new layer; law 1 governs vault-node graphs,
+    // and a control chip is chrome). The overlay already dies to
+    // opacity 0 mid-flight (body.fv-house-flight, app.css), and the
+    // chips exist only under body.fv-isolated (CSS) — never an inert
+    // control. The CHOICE is canonical + persistent: clicks route
+    // through _forgeViewSettings.setHouseGeometry, the single owner
+    // of the forge.viewSettings.v7 key. Tuning stays in LAB.
+    function ensureHouseChips() {
+      if (local._houseChipsG && local._houseChipsG.parentNode) return local._houseChipsG;
+      if (!hullLabelsG) return null;
+      const g = document.createElementNS(SVG_NS, 'g');
+      g.setAttribute('id', 'forge-house-chips');
+      g.setAttribute('class', 'forge-house-chips');
+      for (const geo of ['cascade', 'fan']) {
+        const t = document.createElementNS(SVG_NS, 'text');
+        t.setAttribute('class', 'forge-house-chip');
+        t.setAttribute('data-house', geo);
+        t.setAttribute('text-anchor', geo === 'cascade' ? 'end' : 'start');
+        t.textContent = geo.toUpperCase();
+        g.appendChild(t);
+      }
+      g.addEventListener('click', (ev) => {
+        const t = ev.target && ev.target.closest
+          ? ev.target.closest('.forge-house-chip') : null;
+        const v = t && t.getAttribute('data-house');
+        if (!v) return;
+        ev.stopPropagation();
+        const cur = (local.params.house_geometry === 'fan') ? 'fan' : 'cascade';
+        if (v === cur) return;               // clicking the active chip is a no-op
+        const vs = window._forgeViewSettings;
+        if (vs && typeof vs.setHouseGeometry === 'function') {
+          // persists (forge.viewSettings.v7) + tweens the standing
+          // house (refreshHouse(true)) — one owner for the key.
+          vs.setHouseGeometry(v);
+        } else {
+          // defensive fallback — same behavior minus persistence
+          local.params.house_geometry = v;
+          try { refreshHouse(true); } catch (_) { /* ignore */ }
+        }
+        syncHouseChipState();
+      });
+      hullLabelsG.appendChild(g);
+      local._houseChipsG = g;
+      return g;
+    }
+    function syncHouseChipState() {
+      const g = local._houseChipsG;
+      if (!g) return;
+      const cur = (local.params.house_geometry === 'fan') ? 'fan' : 'cascade';
+      const chips = g.querySelectorAll('.forge-house-chip');
+      for (let i = 0; i < chips.length; i++) {
+        chips[i].classList.toggle('is-on', chips[i].getAttribute('data-house') === cur);
+      }
     }
 
     // ── Hover hit-test ──────────────────────────────────
@@ -7647,9 +7977,9 @@
     //  the body so CSS controls visibility:
     //    body.fv-hide-hulls    — pie slices + dividers + labels gone
     //    body.fv-hide-wires    — edge canvas layer dimmed to 0
-    //    body.fv-hide-map      — placeholder, not implemented
     //  CSS in app.css wires the actual visibility — JS only
-    //  flips classes.
+    //  flips classes. (fv-hide-map deleted 2026-07-31 with the
+    //  'coming soon' placeholder row.)
     // ════════════════════════════════════════════════════════════
     // Phase 21T (2026-05-22) — criterion tooltips for the color +
     // order radios. Same pattern as the legend tooltip: dwell on a
